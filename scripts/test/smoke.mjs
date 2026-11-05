@@ -85,11 +85,14 @@ async function open(opts, hash) {
     check(items.length === 3 && /Both/.test(items.join()), `compare shows only/both/only (${items.join(' | ')})`);
   }
   await page.click('.lg-item >> nth=0');
+  const banner = await page.evaluate(() => { const b = document.querySelector('.lg-banner'); return b && !b.hidden ? b.textContent : ''; });
+  check(/countries/.test(banner), `selected category's full name shown on the map (${banner})`);
   const before = await page.evaluate(() => window.atlas.app.renderer.highlight?.size ?? 0);
   await page.evaluate(() => { window.atlas.app.deactivate('organizations'); window.atlas.app.activate('fact-daylight_saving'); });
   await page.waitForTimeout(1200);
   const after = await page.evaluate(() => window.atlas.app.renderer.highlight?.size ?? 0);
   check(before > 0 && after === 0, `legend highlight cleared when the filter changes (${before} -> ${after})`);
+  check(await page.evaluate(() => document.querySelector('.lg-banner').hidden), 'banner hidden once the highlight is cleared');
   check(!errors.length, `no page errors in filters${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
