@@ -47,6 +47,7 @@ export class App {
     setLayerContext({
       data: this.data, gl: this.renderer.gl, lang: () => this.lang,
       requestRender: () => this.renderer.requestRender(),
+      notify: () => this.emit('legend'),
     });
     this.interaction = new Interaction(canvases.fg, this.renderer, {
       onTap: (x, y) => this.emit('tap', x, y),
@@ -136,7 +137,9 @@ export class App {
   deactivate(id: string, notify = true) {
     const i = this.layers.findIndex((l) => l.def.id === id);
     if (i < 0) return;
-    this.layers.splice(i, 1);
+    const [inst] = this.layers.splice(i, 1);
+    if (typeof inst.state.timer === 'number') clearInterval(inst.state.timer);
+    inst.def.onDeactivate?.(inst);
     if (notify) { this.emit('layers'); this.renderer.requestRender(); this.save(); }
   }
 

@@ -37,10 +37,10 @@ export const timezones: LayerDef = {
   desc: { en: 'Nominal time zones with the live local time in each.', es: 'Husos horarios con la hora local en vivo de cada uno.' },
   keywords: 'clock hour utc gmt reloj hora',
   credit: 'Natural Earth time zones (public domain)',
-  async load(ctx) {
+  async load(ctx, inst) {
     if (!zones.length) zones = shapesFrom<ZP>(await loadJSON<Topology>('layers/timezones.json'), 'zones');
-    // Keep the clocks ticking.
-    window.setInterval(() => ctx.requestRender(), 20_000);
+    // Keep the clocks ticking (cleared when the filter is turned off).
+    inst.state.timer = window.setInterval(() => ctx.requestRender(), 20_000);
   },
   drawFill(rc) {
     const { ctx, path } = rc;

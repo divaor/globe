@@ -19,8 +19,8 @@ export const dayNight: LayerDef = {
   desc: { en: 'Where the sun is shining right now, with twilight bands.', es: 'Dónde brilla el sol ahora mismo, con bandas de crepúsculo.' },
   keywords: 'sun night terminator twilight sol noche crepusculo',
   credit: 'Computed from the date and time',
-  async load(ctx) {
-    window.setInterval(() => ctx.requestRender(), 30_000);
+  async load(ctx, inst) {
+    inst.state.timer = window.setInterval(() => ctx.requestRender(), 30_000);
   },
   drawFill(rc) {
     const { ctx, path } = rc;

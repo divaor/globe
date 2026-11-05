@@ -42,6 +42,8 @@ export interface LayerContext {
   gl: GLRaster | null;
   lang: () => Lang;
   requestRender: () => void;
+  /** Tell the UI that a filter's data changed (legend, card). */
+  notify?: () => void;
 }
 
 export interface RenderCtx {
@@ -109,4 +111,6 @@ export interface LayerDef {
   info?(countryId: string, inst: LayerInstance, lang: Lang): InfoRow[] | null;
   pick?(lon: number, lat: number, inst: LayerInstance, lang: Lang): InfoRow[] | null;
   onOptionsChanged?(inst: LayerInstance): void;
+  /** Called when the filter is turned off (stop timers, polling...). */
+  onDeactivate?(inst: LayerInstance): void;
 }

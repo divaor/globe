@@ -23,6 +23,7 @@ export class LegendCard {
     app.on('layers', () => this.render());
     app.on('lang', () => this.render());
     app.on('theme', () => this.render());
+    app.on('legend', () => this.render());
     this.render();
   }
 

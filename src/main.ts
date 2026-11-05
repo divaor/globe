@@ -4,8 +4,11 @@ import { Shell } from './ui/shell';
 import { coreLayers } from './layers';
 import { t } from './app/i18n';
 import { TimeTravel } from './modes';
+import { Tools } from './tools/tools';
+import { Learn } from './learn/learn';
+import { PersonalMaps } from './personal/personal';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps } } }
 
 async function boot() {
   const root = document.getElementById('app')!;
@@ -24,7 +27,10 @@ async function boot() {
   resize();
   const shell = new Shell(app);
   const time = new TimeTravel(app, shell);
-  window.atlas = { app, shell, time };
+  const tools = new Tools(app, shell);
+  const learn = new Learn(app, shell, time);
+  const personal = new PersonalMaps(app, shell);
+  window.atlas = { app, shell, time, tools, learn, personal };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };
@@ -40,6 +46,8 @@ async function boot() {
     try { localStorage.setItem('atlas-globe:hinted', '1'); } catch { /* ignore */ }
   }
   registerSW(shell);
+  // Home-screen shortcut: open straight into ambient mode.
+  if (/ambient=1/.test(location.hash)) setTimeout(() => void shell.ambient.start(), 600);
 }
 
 async function registerSW(shell: Shell) {

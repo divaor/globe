@@ -513,6 +513,31 @@ export class Renderer {
     }
   }
 
+  /**
+   * Renders the current view into a new canvas (map, imagery and effects; no UI). With a size, the
+   * map is re-rendered at cssW×cssH CSS pixels and the given pixel ratio (e.g. 1920×1080 @2 = 4K).
+   */
+  snapshot(cssW?: number, cssH?: number, dpr = 2): HTMLCanvasElement {
+    const view = this.view;
+    const prev = { w: view.w, h: view.h };
+    const custom = !!(cssW && cssH);
+    const canvases = [this.bgCanvas, this.fgCanvas, ...(this.fxCanvas ? [this.fxCanvas] : [])];
+    if (custom) {
+      for (const c of canvases) { c.width = Math.round(cssW! * dpr); c.height = Math.round(cssH! * dpr); }
+      view.resize(cssW!, cssH!, dpr);
+      this.stars = null;
+    }
+    view.update(performance.now());
+    this.draw(performance.now());
+    this.drawFx(performance.now(), 16, this.hasFx());
+    const out = document.createElement('canvas');
+    out.width = this.bgCanvas.width; out.height = this.bgCanvas.height;
+    const o = out.getContext('2d')!;
+    for (const c of canvases) o.drawImage(c, 0, 0);
+    if (custom) this.resize(prev.w, prev.h);
+    return out;
+  }
+
   /** Country under a screen point (uses the loaded geometry; tests the most detailed level first). */
   pickCountry(sx: number, sy: number): string | null {
     const g = this.view.invert(sx, sy);

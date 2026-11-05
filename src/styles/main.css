@@ -310,6 +310,44 @@ html.mode-time .legend { bottom: calc(232px + var(--safe-b)); }
 .tb-range { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); padding: 0 6px; }
 .changes .chip { color: var(--text); }
 
+/* ---------- tools */
+.toolbar { position: absolute; top: calc(66px + var(--safe-t)); left: 50%; transform: translateX(-50%); width: min(460px, calc(100vw - 24px)); border-radius: 16px; padding: 10px 14px 12px; z-index: 4; }
+.tool-head { display: flex; align-items: center; justify-content: space-between; font-size: 14.5px; }
+.tool-value { font-size: 17px; font-weight: 800; margin-top: 4px; font-variant-numeric: tabular-nums; }
+.tool-hint { font-size: 12.5px; color: var(--muted); margin-top: 4px; line-height: 1.35; }
+.tool-actions { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+.cmp { display: flex; flex-direction: column; gap: 2px; }
+.cmp-head, .cmp-row { display: grid; grid-template-columns: 1.3fr 1fr 1fr 44px; gap: 8px; align-items: baseline; padding: 6px 2px; }
+.cmp-head { position: sticky; top: 0; background: var(--glass-strong); font-weight: 800; font-size: 14px; border-bottom: 1px solid var(--line); }
+.cmp-row { border-bottom: 1px solid var(--line); font-size: 13.5px; }
+.cmp-label { color: var(--muted); }
+.cmp-val { font-weight: 650; text-align: right; font-variant-numeric: tabular-nums; }
+.cmp-val.win { color: var(--accent); }
+.cmp-name { text-align: right; }
+.cmp-ratio { font-size: 11.5px; color: var(--muted); text-align: right; }
+
+/* ---------- learn and personal */
+.learn-card { position: absolute; top: calc(66px + var(--safe-t)); left: 50%; transform: translateX(-50%); width: min(520px, calc(100vw - 24px)); border-radius: 16px; padding: 12px 14px 14px; z-index: 4; }
+.quiz-score { margin-left: auto; margin-right: 6px; font-weight: 800; }
+.quiz-q { font-size: 18px; font-weight: 800; margin-top: 6px; line-height: 1.3; }
+.quiz-flag { display: block; width: 140px; height: 105px; object-fit: cover; margin: 10px 0 4px; border-radius: 8px; box-shadow: 0 0 0 1px var(--line-strong); }
+.quiz-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.quiz-opt { justify-content: center; height: auto; min-height: 40px; padding: 8px 10px; text-align: center; }
+.quiz-opt.ok { background: rgba(32,201,151,.25); border-color: #20c997; }
+.quiz-opt.bad { background: rgba(255,107,107,.22); border-color: var(--danger); }
+.quiz-fb { margin-top: 10px; font-weight: 700; font-size: 14px; }
+.quiz-fb.ok { color: #20c997; }
+.quiz-fb.bad { color: #ff8787; }
+.tour-tools { display: inline-flex; align-items: center; gap: 2px; }
+.tour-text { font-size: 14.5px; line-height: 1.45; margin-top: 6px; }
+.otd { display: flex; flex-direction: column; gap: 4px; }
+.otd-item { display: grid; grid-template-columns: 52px 1fr 20px; gap: 10px; align-items: start; text-align: left; padding: 10px 8px; border: 0; border-bottom: 1px solid var(--line); background: none; cursor: pointer; }
+.otd-item:hover { background: var(--chip); }
+.otd-item.noplace { cursor: default; }
+.otd-year { font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
+.otd-text { font-size: 13.5px; line-height: 1.4; }
+.note-input { width: 100%; border-radius: 12px; border: 1px solid var(--line); background: var(--chip); color: var(--text); font: inherit; font-size: 15px; padding: 12px; resize: vertical; }
+
 /* ---------- phones */
 @media (max-width: 720px) {
   .search-btn-label { display: none; }
@@ -328,6 +366,7 @@ html.mode-time .legend { bottom: calc(232px + var(--safe-b)); }
   .sheet-grip { display: block; width: 44px; height: 5px; border-radius: 3px; background: var(--line-strong); margin: 8px auto 0; }
   .country-card { left: 8px; right: 8px; top: auto; bottom: calc(80px + var(--safe-b)); width: auto; max-height: 52vh; z-index: 3; }
   .toast { bottom: calc(176px + var(--safe-b)); }
+  .quiz-opts { grid-template-columns: 1fr; }
   .timebar { bottom: calc(78px + var(--safe-b)); width: calc(100vw - 16px); padding: 8px 10px 6px; }
   .tb-year { font-size: 20px; }
   .tb-list-label, .tb-speed { display: none; }
