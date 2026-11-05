@@ -106,6 +106,14 @@ export function numericLayer(spec: NumericSpec): LayerDef {
       const v = c.vals[id];
       return [{ label: tx(spec.label ?? spec.name), value: v === undefined ? t('noData') : fmt(v) + (spec.unit ? ` ${tx(spec.unit)}` : '') }];
     },
+    valueLabel(id, inst) {
+      const c = cache(inst);
+      const v = c.vals[id] ?? (LC.data.meta[id]?.iso ? c.vals[LC.data.meta[id].iso!] : undefined);
+      if (v === undefined) return null;
+      // Short units ride along ("83%", "14 °C"); long ones ("children per woman") are in the legend.
+      const u = spec.unit ? tx(spec.unit) : '';
+      return u && u.length <= 3 ? `${fmt(v)}${u === '%' ? '' : ' '}${u}` : fmt(v);
+    },
     onOptionsChanged(inst) { delete inst.state.cache; },
   };
 }
@@ -165,6 +173,11 @@ export function categoricalLayer(spec: CategoricalSpec): LayerDef {
         kind: 'categories', title: tx(spec.label ?? spec.name), items,
         note: [rest > 0 ? (LC.lang() === 'es' ? `+${rest} más` : `+${rest} more`) : '', spec.note ? tx(spec.note) : ''].filter(Boolean).join(' · ') || undefined,
       };
+    },
+    valueLabel(id, inst) {
+      const c = cache(inst);
+      const v = c.vals[id] ?? (LC.data.meta[id]?.iso ? c.vals[LC.data.meta[id].iso!] : undefined);
+      return v ? labelOf(inst, v[0]) : null;
     },
     info(id, inst) {
       const c = cache(inst);

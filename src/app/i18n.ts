@@ -33,6 +33,7 @@ const STRINGS: Record<string, [string, string]> = {
   labelCapitals: ['Capitals', 'Capitales'],
   labelCities: ['Cities', 'Ciudades'],
   labelSeas: ['Seas and oceans', 'Mares y océanos'],
+  labelValues: ['Filter values under country names', 'Valores del filtro bajo los nombres de país'],
   labelSize: ['Label size', 'Tamaño de etiquetas'],
   graticule: ['Latitude/longitude grid', 'Cuadrícula de latitud y longitud'],
   rivers: ['Rivers', 'Ríos'],

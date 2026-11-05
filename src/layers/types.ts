@@ -108,6 +108,8 @@ export interface LayerDef {
   drawFx?(rc: RenderCtx, inst: LayerInstance, dt: number): void;
   labels?(rc: RenderCtx, inst: LayerInstance): void;
   legend?(inst: LayerInstance, lang: Lang): Legend | null;
+  /** Short value shown under a country's name on the map (the top filter that has one is used). */
+  valueLabel?(countryId: string, inst: LayerInstance): string | null;
   info?(countryId: string, inst: LayerInstance, lang: Lang): InfoRow[] | null;
   pick?(lon: number, lat: number, inst: LayerInstance, lang: Lang): InfoRow[] | null;
   onOptionsChanged?(inst: LayerInstance): void;

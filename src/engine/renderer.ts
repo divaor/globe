@@ -14,7 +14,7 @@ import type { Lang } from '../app/i18n';
 import { sunVector } from '../layers/sun';
 
 export interface RenderSettings {
-  labels: { countries: boolean; capitals: boolean; cities: boolean; seas: boolean };
+  labels: { countries: boolean; capitals: boolean; cities: boolean; seas: boolean; values: boolean };
   labelScale: number;
   graticule: boolean;
   rivers: boolean;
@@ -59,7 +59,7 @@ export class Renderer {
   baseMap = true;
   moving = false;
   settings: RenderSettings = {
-    labels: { countries: true, capitals: true, cities: true, seas: true },
+    labels: { countries: true, capitals: true, cities: true, seas: true, values: true },
     labelScale: 1, graticule: true, rivers: false, shading: true, quality: 'auto',
   };
   tickers = new Set<Ticker>();
@@ -461,6 +461,8 @@ export class Renderer {
     const set = this.settings.labels;
     const meta = this.data.meta;
     if (set.countries) {
+      // The top filter's value for each country goes under its name (fertility "4.5", "Spanish"...).
+      const valueLayer = set.values ? [...this.layers].reverse().find((l) => l.ready && !l.def.hidden && l.def.valueLabel) : undefined;
       for (const s of rc.visibleShapes(rc.level.countries)) {
         const m = meta[s.id];
         if (!m || wz < m.ml - 0.9) continue;
@@ -468,9 +470,11 @@ export class Renderer {
         if (!p) continue;
         const big = m.lr <= 3;
         const size = Math.max(9.5, Math.min(20, 15.5 - m.lr * 1.3 + (wz - 3) * 1.6));
+        const value = valueLayer ? valueLayer.def.valueLabel!(s.id, valueLayer) : null;
         labels.add({
           text: es ? m.ses ?? m.es : m.sn ?? m.n, x: p[0], y: p[1], priority: 900 - m.lr * 40 + (s.id === this.selection ? 500 : 0),
           size, weight: big ? 700 : 600, color: th.label, halo: th.labelHalo, caps: big && wz < 5.5,
+          sub: value ?? undefined, subSize: Math.max(9.5, Math.min(13, size * 0.8)), subColor: th.label,
         });
       }
     }
