@@ -259,7 +259,7 @@ export class Renderer {
     const idx = ready.map((l, i) => (l.def.kind === 'fill' ? i : -1)).filter((i) => i >= 0);
     if (idx.length && idx[idx.length - 1] - idx[0] !== idx.length - 1) return null;
     const fills = idx.map((i) => ready[i]);
-    if (fills.some((l) => l.def.drawFill || !l.def.countryColor || l.def.animated)) return null;
+    if (fills.some((l) => (l.def.drawFill ? !l.def.bakeable : !l.def.countryColor) || l.def.animated)) return null;
     return fills;
   }
 

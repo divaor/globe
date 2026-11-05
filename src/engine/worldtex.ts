@@ -36,7 +36,18 @@ export function paintWorld(canvas: HTMLCanvasElement, o: WorldPaint) {
   const th = o.theme;
   const countries = o.level.countries;
   if (o.landBase) fill(countries, th.land);
+  // A view-independent context for filters that draw their own fills (layer.bakeable).
+  const flat: RenderCtx = {
+    ...o.rc, ctx, path, lod: o.level.lod, level: o.level, moving: false, webZoom: 3,
+    visibleShapes: (shapes) => shapes, visibleLines: (lines) => lines,
+    project: (lon, lat) => proj([lon, lat]) as [number, number] | null,
+    fillCountry: (id, color) => { const s = o.level.byId.get(id); if (!s) return; ctx.beginPath(); path(s.feature as never); ctx.fillStyle = color; ctx.fill(); },
+  };
   for (const l of o.layers) {
+    if (l.def.drawFill) {
+      ctx.save(); ctx.globalAlpha = l.opacity; l.def.drawFill(flat, l); ctx.restore();
+      continue;
+    }
     if (!l.def.countryColor) continue;
     const groups = new Map<string, Shape[]>();
     for (const s of countries) {

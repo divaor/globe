@@ -99,6 +99,9 @@ export interface LayerDef {
   hidden?: boolean;
   /** Paints every country opaquely, so the plain land underneath need not be drawn. */
   coversLand?: boolean;
+  /** drawFill only uses rc.ctx / rc.path / rc.visibleShapes (no view-dependent logic), so it can be
+   *  painted into the GPU world texture. */
+  bakeable?: boolean;
   /** Keywords for search in the Filters panel. */
   keywords?: string;
   load?(ctx: LayerContext, inst: LayerInstance): Promise<void>;
