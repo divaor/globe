@@ -2,7 +2,7 @@
 // (which organisation, resource, month...) can be changed right here, and tapping a category
 // highlights its countries on the map.
 import { ChevronDown, ChevronUp, X } from 'lucide';
-import { h, icon, clear, add } from './dom';
+import { h, icon, clear, add, fillSelect } from './dom';
 import { t, tx } from '../app/i18n';
 import type { App } from '../app/app';
 import type { Legend, LayerInstance, LegendItem } from '../layers/types';
@@ -90,7 +90,7 @@ export class LegendCard {
     for (const o of inst.def.options ?? []) {
       if (o.type !== 'select' || o.choices.length < 2) continue;
       const sel = h('select', { class: 'lg-select', 'aria-label': tx(o.label) }) as HTMLSelectElement;
-      for (const c of o.choices) sel.append(h('option', { value: c.value }, `${c.icon ? c.icon + ' ' : ''}${tx(c.label)}`));
+      fillSelect(sel, o.choices.map((c) => ({ value: c.value, label: `${c.icon ? c.icon + ' ' : ''}${tx(c.label)}`, group: c.group ? tx(c.group) : undefined })));
       sel.value = String(inst.options[o.id] ?? o.default);
       sel.addEventListener('change', () => this.app.setOption(inst.def.id, o.id, sel.value));
       out.push(h('label', { class: 'lg-opt' }, h('span', { class: 'lg-opt-label' }, tx(o.label)), sel));

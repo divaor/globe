@@ -120,7 +120,7 @@ SOL Somaliland, CYN Northern Cyprus; Taiwan TWN, Western Sahara ESH and Palestin
 | `federal` | politics | boolean | 200 | compiled | CC0-1.0 (compiled facts) |
 | `independence_year` | politics | number | 190 | CIA World Factbook, final edition (2025/26), via github.com/factbook/factbook.json | Public domain (U.S. Government work); repository CC0-1.0 |
 | `independence_from` | politics | category | 166 | CIA World Factbook, final edition (2025/26), via github.com/factbook/factbook.json | Public domain (U.S. Government work); repository CC0-1.0 |
-| `organizations` | politics | list | 160 | compiled | CC0-1.0 (compiled facts) |
+| `organizations` | politics | list | 206 | compiled | CC0-1.0 (compiled facts) |
 | `nuclear_weapons` | politics | category | 9 | compiled | CC0-1.0 (compiled facts) |
 | `forest_pct` | nature | number | 233 | CIA World Factbook, final edition (2025/26), via github.com/factbook/factbook.json | Public domain (U.S. Government work); repository CC0-1.0 |
 | `national_animal` | nature | category | 150 | CIA World Factbook, final edition (2025/26), via github.com/factbook/factbook.json | Public domain (U.S. Government work); repository CC0-1.0 |
@@ -172,10 +172,21 @@ Compiled by hand from well-established facts (no invented precise numbers):
 * main-language order in `languages` – CLDR speaker shares, with hand adjustments where a lingua
   franca would otherwise come first (e.g. Luxembourgish, Filipino, Swahili in Kenya/Tanzania,
   Kazakh, Papiamento in Aruba, Comorian).
-* `organizations` – full members (2026) of the EU, eurozone (21, incl. Bulgaria from 1 Jan 2026),
-  Schengen (29), NATO (32), OECD (38), G7, G20 (19 countries), BRICS (10 full members), OPEC (12),
-  Commonwealth (56), ASEAN (11 incl. Timor-Leste), African Union (55), Arab League (22),
-  Mercosur (full members incl. Bolivia), GCC, EFTA.
+* `organizations` – full members as of November 2026 of 46 organisations: worldwide (UN 193, WTO 165,
+  ICC 125, Non-Aligned Movement 120, OIC 57, Commonwealth 56, Francophonie 50, CPLP 9), economic clubs
+  (G7, G20, OECD 38, BRICS 10, OPEC 11, APEC 21), military and security (NATO 32, CSTO 6, Five Eyes,
+  Quad, AUKUS), Europe (EU 27, eurozone 21, Schengen 29, Council of Europe 46, EFTA, Nordic Council,
+  Visegrád Group, Benelux), the Americas (OAS 33, CELAC 33, CARICOM 15, Mercosur 5, Andean Community,
+  USMCA), Africa (African Union 55, SADC 16, ECOWAS 12, EAC 8, Alliance of Sahel States 3), the
+  Middle East (Arab League 22, GCC), Asia and the Pacific (ASEAN 11, SCO 10, Pacific Islands Forum 18)
+  and Eurasia (CIS 9, EAEU 5, Organization of Turkic States 5). Lists come from the organisations'
+  own pages where reachable, otherwise from Wikipedia permanent links (September–November 2026),
+  cross-checked. Recent changes included: the UAE left OPEC on 1 May 2026; Hungary revoked its ICC
+  withdrawal before it took effect (May 2026); Chile left the Non-Aligned Movement (August 2026);
+  Burkina Faso, Mali and Niger left ECOWAS (January 2025) and the Francophonie. Suspended members
+  count as members (e.g. in the African Union), except Venezuela in Mercosur (suspended since 2016).
+  Members that are not countries (the EU in the G7, G20 and WTO, the African Union in the G20, and
+  Québec, New Brunswick and Wallonia-Brussels in the Francophonie) are not mapped.
 * `monarchy` (43 sovereign monarchies incl. the 15 Commonwealth realms), `federal` (Forum of
   Federations list), `nuclear_weapons` (9 states; Israel undeclared).
 * `world_cup_titles` (men's, 1930–2022; 2026 not included), `womens_world_cup_titles` (1991–2023).

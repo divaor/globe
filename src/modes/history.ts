@@ -1,4 +1,5 @@
-// Political map through time: 54 snapshots of world borders from 123,000 BC to 2010. A timeline
+// Political map through time: world borders from 123,000 BC to today (54 historical snapshots plus
+// a present-day map built from the current borders). A timeline
 // bar picks the start and end; playing crossfades from snapshot to snapshot, and the "What changed"
 // panel lists what appeared, disappeared, grew or shrank.
 import { geoArea, geoCentroid, geoContains } from 'd3-geo';
@@ -15,10 +16,15 @@ import type { Shell } from '../ui/shell';
 import type { LayerDef, RenderCtx } from '../layers/types';
 
 interface Snap { year: number; file: string; label_en: string; label_es: string; features: number }
-interface HP { n?: string; s?: string; p?: string; pr: number; c?: number }
+// d / ds: current English / Spanish name (present-day map, where the entity's name is the 2010 one),
+// rn: name before an official rename since the previous map.
+interface HP { n?: string; s?: string; p?: string; pr: number; c?: number; d?: string; ds?: string; rn?: string; rns?: string }
 interface HShape extends Shape<HP> { area: number; lp: [number, number] }
 interface Loaded { shapes: HShape[]; borders: Line[]; coast: Line[] }
-interface Change { from: number; to: number; appeared: string[]; disappeared: string[]; grew: [string, number][]; shrank: [string, number][] }
+interface Change { from: number; to: number; appeared: string[]; disappeared: string[]; grew: [string, number][]; shrank: [string, number][]; renamed?: string[][] }
+
+/** The name to show for a polity: today's name on the present-day map, else the historical one. */
+const nameOf = (p: HP) => (lang() === 'es' ? p.ds : undefined) ?? p.d ?? p.n ?? '';
 interface Entity { c: number; first: number; last: number; n: number }
 
 const COLORS = Array.from({ length: 24 }, (_, i) => oklch([0.74, 0.64, 0.82][i % 3], [0.12, 0.14, 0.1][i % 3], (i * 137.508 + 20) % 360));
@@ -151,7 +157,7 @@ export class HistoryMode {
       steps: n,
       format: (f) => this.label(Math.round(f * (n - 1))),
       bands: ERAS.map((e) => ({ from: this.yearFrac(e.from), to: this.yearFrac(e.to), color: e.color, label: es ? e.es : e.en })),
-      ticks: [-123000, -3000, -500, 1, 1000, 1500, 1800, 1914, 2010].map((y) => ({ at: this.yearFrac(y), label: y < 0 ? (es ? `${-y} a. C.` : `${-y} BC`) : String(y) })).filter((tk) => tk.at >= 0),
+      ticks: [-123000, -3000, -500, 1, 1000, 1500, 1800, 1914, this.snaps[this.snaps.length - 1].year].map((y) => ({ at: this.yearFrac(y), label: y < 0 ? (es ? `${-y} a. C.` : `${-y} BC`) : String(y) })).filter((tk) => tk.at >= 0),
       start: startIdx / (n - 1), end: 1, pos: startIdx / (n - 1),
       rate: 1 / (n - 1) / 1.8,
       onPos: (f) => this.setPos(f * (n - 1)),
@@ -231,8 +237,8 @@ export class HistoryMode {
     if (!l) return;
     const pxr = rc.view.pxPerRadian;
     for (const s of l.shapes) {
-      const n = s.feature.properties.n;
-      if (!n) continue;
+      if (!s.feature.properties.n) continue;
+      const n = nameOf(s.feature.properties);
       const px = Math.sqrt(s.area) * pxr;
       if (px < 34) continue;
       const pt = rc.project(s.lp[0], s.lp[1]);
@@ -255,14 +261,16 @@ export class HistoryMode {
     const e = this.entities[p.n!];
     const yl = (y: number) => (y < 0 ? (es ? `${fmtNumber(-y)} a. C.` : `${fmtNumber(-y)} BC`) : String(y));
     const rows = [
+      ...(p.rn ? [{ label: es ? 'Antes' : 'Formerly', value: (es ? p.rns : undefined) ?? p.rn, icon: '✏️' }] : []),
       ...(p.s ? [{ label: es ? 'Bajo' : 'Under', value: p.s, icon: '👑' }] : []),
       ...(p.p ? [{ label: es ? 'Parte de' : 'Part of', value: p.p, icon: '🧩' }] : []),
       ...(e ? [{ label: es ? 'En los mapas' : 'On the maps', value: `${yl(e.first)} – ${yl(e.last)}`, icon: '📅' }] : []),
       { label: es ? 'Superficie aprox.' : 'Approx. area', value: `${fmtNumber(Math.round(hit.area * 6371 * 6371 / 1000) * 1000)} km²`, icon: '📐' },
       { label: es ? 'Precisión de la frontera' : 'Border precision', value: [es ? 'aproximada' : 'approximate', es ? 'moderada' : 'moderate', es ? 'reconocida' : 'recognised'][Math.max(0, Math.min(2, (p.pr || 1) - 1))], icon: '📏' },
     ];
-    const wiki = `https://${es ? 'es' : 'en'}.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(p.n!)}`;
-    this.shell.card.showCustom('🏛️', p.n!, this.label(this.dominant()), rows, [{ label: t('wikipedia'), href: wiki }]);
+    const name = nameOf(p);
+    const wiki = `https://${es ? 'es' : 'en'}.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(name)}`;
+    this.shell.card.showCustom('🏛️', name, this.label(this.dominant()), rows, [{ label: t('wikipedia'), href: wiki }]);
     return true;
   }
 
@@ -275,22 +283,36 @@ export class HistoryMode {
     const title = `${t('whatChanged')}: ${this.label(Math.max(0, di - 1))} → ${this.label(di)}`;
     if (!ch) body.append(h('p', { class: 'muted' }, es ? 'Este es el primer mapa.' : 'This is the first map.'));
     else {
-      const section = (label: string, icon: string, items: (string | [string, number])[]) => {
+      // Names as shown on the map they belong to (today's names on the present-day map).
+      const shown = (name: string, i: number) => {
+        const sh = this.loaded.get(i)?.shapes.find((x) => x.feature.properties.n === name);
+        return sh ? nameOf(sh.feature.properties) : name;
+      };
+      const section = (label: string, icon: string, items: (string | [string, number])[], at = di) => {
         if (!items.length) return;
         const list = h('div', { class: 'chip-row' });
         for (const it of items) {
           const name = Array.isArray(it) ? it[0] : it;
           const pct = Array.isArray(it) ? ` ${it[1] > 0 ? '+' : ''}${it[1]}%` : '';
-          const b = h('button', { type: 'button', class: 'chip' }, `${name}${pct}`);
+          const b = h('button', { type: 'button', class: 'chip' }, `${shown(name, at)}${pct}`);
           b.addEventListener('click', () => this.locate(name));
           list.append(b);
         }
         body.append(h('h3', { class: 'sec-title' }, `${icon} ${label}`), list);
       };
       section(es ? 'Aparecen' : 'Appeared', '🟢', ch.appeared);
-      section(es ? 'Desaparecen' : 'Disappeared', '⚫', ch.disappeared);
+      section(es ? 'Desaparecen' : 'Disappeared', '⚫', ch.disappeared, Math.max(0, di - 1));
       section(es ? 'Crecen' : 'Grew', '📈', ch.grew);
       section(es ? 'Se reducen' : 'Shrank', '📉', ch.shrank);
+      if (ch.renamed?.length) {
+        const list = h('div', { class: 'chip-row' });
+        for (const [from, to, fromEs, toEs] of ch.renamed) {
+          const b = h('button', { type: 'button', class: 'chip' }, es ? `${fromEs ?? from} → ${toEs ?? to}` : `${from} → ${to}`);
+          b.addEventListener('click', () => this.locate(from));
+          list.append(b);
+        }
+        body.append(h('h3', { class: 'sec-title' }, `✏️ ${es ? 'Cambian de nombre' : 'Renamed'}`), list);
+      }
       if (!body.childElementCount) body.append(h('p', { class: 'muted' }, es ? 'Sin cambios grandes.' : 'No big changes.'));
     }
     if (refresh) { const el = this.shell.sheet.el.querySelector('.sheet-body'); if (el) { clear(el); el.append(body); } this.shell.sheet.setTitle(title); }

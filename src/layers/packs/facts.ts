@@ -128,6 +128,8 @@ interface PickerSpec {
   /** Colours for: only the first pick, only the second, both. */
   colors: [string, string, string];
   what: I18nText; listLabel: I18nText; defaultPick?: string;
+  /** Optional grouping of the choices (key -> group), groups listed in this order. */
+  groups?: { label: I18nText; keys: string[] }[];
 }
 
 /** "Which countries are in X?" for list fields (organisations, resources), with an optional second
@@ -137,7 +139,11 @@ function pickerLayer(o: PickerSpec): LayerDef {
   const cats = f?.categories ?? {};
   const counts = new Map<string, number>();
   for (const d of Object.values(DS.data)) for (const v of (d[o.field] as string[] | undefined) ?? []) counts.set(v, (counts.get(v) ?? 0) + 1);
-  const keys = Object.keys(cats).filter((k) => counts.get(k)).sort((a, b) => (counts.get(b) ?? 0) - (counts.get(a) ?? 0));
+  const byCount = (a: string, b: string) => (counts.get(b) ?? 0) - (counts.get(a) ?? 0);
+  const groupOf = new Map<string, number>();
+  o.groups?.forEach((g, i) => g.keys.forEach((k) => groupOf.set(k, i)));
+  const keys = Object.keys(cats).filter((k) => counts.get(k))
+    .sort((a, b) => (groupOf.get(a) ?? 99) - (groupOf.get(b) ?? 99) || byCount(a, b));
   const has = (d: Record<string, unknown> | undefined, k: string) => !!k && ((d?.[o.field] as string[] | undefined) ?? []).includes(k);
   const picks = (inst: LayerInstance) => {
     const a = String(inst.options.pick ?? '');
@@ -153,7 +159,10 @@ function pickerLayer(o: PickerSpec): LayerDef {
     }
     return out;
   };
-  const choice = (k: string) => ({ value: k, label: { en: `${cats[k].en} (${counts.get(k)})`, es: `${cats[k].es} (${counts.get(k)})` } });
+  const choice = (k: string) => ({
+    value: k, label: { en: `${cats[k].en} (${counts.get(k)})`, es: `${cats[k].es} (${counts.get(k)})` },
+    group: groupOf.has(k) ? o.groups![groupOf.get(k)!].label : undefined,
+  });
   const base = categoricalLayer({
     id: o.id, category: o.cat, icon: o.icon, name: o.name, desc: o.desc, keywords: o.keywords, credit: f ? credit(f) : '',
     options: [
@@ -446,10 +455,21 @@ export default async function register(app: App, shell: Shell) {
   if (plugs) defs.push(plugs);
   if (DS.fields.organizations) defs.push(pickerLayer({ id: 'organizations', field: 'organizations', icon: '🤝', cat: 'political',
     colors: ['#4dabf7', '#ff922b', '#cc5de8'], defaultPick: 'nato',
+    groups: [
+      { label: { en: '🌐 Worldwide', es: '🌐 Mundiales' }, keys: ['un', 'wto', 'icc', 'nam', 'oic', 'commonwealth', 'francophonie', 'cplp'] },
+      { label: { en: '💼 Economic clubs', es: '💼 Clubes económicos' }, keys: ['g7', 'g20', 'oecd', 'brics', 'opec', 'apec'] },
+      { label: { en: '🛡️ Military and security', es: '🛡️ Militares y de seguridad' }, keys: ['nato', 'csto', 'five-eyes', 'quad', 'aukus'] },
+      { label: { en: '🇪🇺 Europe', es: '🇪🇺 Europa' }, keys: ['eu', 'eurozone', 'schengen', 'coe', 'efta', 'nordic-council', 'v4', 'benelux'] },
+      { label: { en: '🌎 Americas', es: '🌎 América' }, keys: ['oas', 'celac', 'caricom', 'mercosur', 'can', 'usmca'] },
+      { label: { en: '🌍 Africa', es: '🌍 África' }, keys: ['african-union', 'sadc', 'ecowas', 'eac', 'aes'] },
+      { label: { en: '🕌 Middle East', es: '🕌 Oriente Medio' }, keys: ['arab-league', 'gcc'] },
+      { label: { en: '🌏 Asia and Pacific', es: '🌏 Asia y Pacífico' }, keys: ['asean', 'sco', 'pif'] },
+      { label: { en: '🏔️ Eurasia', es: '🏔️ Eurasia' }, keys: ['cis', 'eaeu', 'ots'] },
+    ],
     name: { en: 'Alliances and organisations', es: 'Alianzas y organizaciones' },
-    desc: { en: 'Members of the EU, NATO, the UN, G20, BRICS, OPEC, ASEAN, the African Union, the Commonwealth and more. Pick one, or compare two.', es: 'Miembros de la UE, la OTAN, la ONU, el G20, los BRICS, la OPEP, la ASEAN, la Unión Africana, la Commonwealth y más. Elige una o compara dos.' },
+    desc: { en: '46 alliances and organisations, from the UN, NATO and the EU to BRICS, OPEC, ASEAN, the African Union, Mercosur and the Commonwealth. Pick one, or compare two.', es: '46 alianzas y organizaciones, de la ONU, la OTAN y la UE a los BRICS, la OPEP, la ASEAN, la Unión Africana, Mercosur y la Commonwealth. Elige una o compara dos.' },
     what: { en: 'Organisation', es: 'Organización' }, listLabel: { en: 'Member of', es: 'Miembro de' },
-    keywords: 'alliance organisation organization member eu nato un g7 g20 brics opec asean commonwealth alianza organizacion miembro ue otan onu opep' }));
+    keywords: 'alliance organisation organization member eu nato un wto icc g7 g20 brics opec asean commonwealth oas celac mercosur caricom african union ecowas sadc apec sco csto quad aukus five eyes francophonie arab league alianza organizacion miembro ue otan onu omc cpi opep oea cedeao ocs francofonia liga arabe' }));
   if (DS.fields.natural_resources) defs.push(pickerLayer({ id: 'resource-finder', field: 'natural_resources', icon: '💎', cat: 'economy',
     colors: ['#f59f00', '#22b8cf', '#e64980'],
     name: { en: 'Where is it found?', es: '¿Dónde se encuentra?' },

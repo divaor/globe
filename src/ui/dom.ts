@@ -76,3 +76,17 @@ export function slider(value: number, min: number, max: number, step: number, on
 export function normalize(s: string): string {
   return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 }
+
+/** Fills a <select> with choices, inside <optgroup>s when choices name a group (in order of appearance). */
+export function fillSelect(sel: HTMLSelectElement, choices: { value: string; label: string; group?: string }[]) {
+  let current: HTMLElement = sel;
+  let currentGroup: string | undefined;
+  for (const c of choices) {
+    if (c.group !== currentGroup) {
+      currentGroup = c.group;
+      current = c.group ? h('optgroup', { label: c.group }) : sel;
+      if (c.group) sel.append(current);
+    }
+    current.append(h('option', { value: c.value }, c.label));
+  }
+}
