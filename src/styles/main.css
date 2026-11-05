@@ -235,6 +235,21 @@ a { color: var(--accent); }
 @keyframes pop { from { opacity: 0; transform: translateY(6px) scale(.98); } }
 @keyframes fade-in { from { opacity: 0; } }
 .card-close { position: absolute; top: 8px; right: 8px; }
+.card-less { position: absolute; top: 8px; right: 48px; }
+.card-less + .card-head { margin-right: 76px; }
+/* Compact strip: flag, name and the filters' values; the flag or name opens the full panel. */
+.country-card.compact { padding: 8px 46px 8px 8px; max-height: none; overflow: visible; }
+.country-card.compact .card-close { top: 50%; transform: translateY(-50%); right: 6px; }
+.country-card.compact .card-body { display: flex; align-items: center; gap: 10px; }
+.cc-flag { flex: none; border: 0; padding: 0; background: none; cursor: pointer; border-radius: 6px; line-height: 0; }
+.cc-flag .flag { width: 46px; height: 34px; display: block; }
+.cc-flag .flag-emoji { font-size: 30px; line-height: 1; }
+.cc-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.cc-title { align-self: flex-start; max-width: 100%; border: 0; background: none; padding: 0; text-align: left; font: inherit; font-size: 15px; font-weight: 800; color: var(--text); cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cc-row { display: flex; gap: 6px; align-items: baseline; font-size: 12.5px; min-width: 0; }
+.cc-label { color: var(--muted); white-space: nowrap; flex: none; max-width: 55%; overflow: hidden; text-overflow: ellipsis; }
+.cc-value { font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.cc-more { flex: none; }
 .card-head { display: flex; gap: 12px; align-items: center; margin-right: 32px; }
 .flag { width: 52px; height: 39px; object-fit: cover; border-radius: 6px; box-shadow: 0 0 0 1px var(--line-strong); background: var(--chip); }
 .flag-emoji { font-size: 38px; line-height: 1; }
@@ -381,6 +396,10 @@ html.mode-time .legend { bottom: calc(232px + var(--safe-b)); }
   .sheet.open { transform: none; }
   .sheet-grip { display: block; width: 44px; height: 5px; border-radius: 3px; background: var(--line-strong); margin: 8px auto 0; }
   .country-card { left: 8px; right: 8px; top: auto; bottom: calc(80px + var(--safe-b)); width: auto; max-height: 52vh; z-index: 3; }
+  .country-card.compact { max-height: none; }
+  /* While the compact strip is up, the filter chips step aside and the legend and zoom buttons sit above it. */
+  html.has-cc .chips { display: none; }
+  html.has-cc .legend, html.has-cc .zoombar { bottom: calc(88px + var(--cc-h, 64px) + var(--safe-b)); }
   .toast { bottom: calc(176px + var(--safe-b)); }
   .quiz-opts { grid-template-columns: 1fr; }
   .timebar { bottom: calc(78px + var(--safe-b)); width: calc(100vw - 16px); padding: 8px 10px 6px; }

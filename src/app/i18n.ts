@@ -34,6 +34,8 @@ const STRINGS: Record<string, [string, string]> = {
   labelCities: ['Cities', 'Ciudades'],
   labelSeas: ['Seas and oceans', 'Mares y océanos'],
   labelValues: ['Filter values under country names', 'Valores del filtro bajo los nombres de país'],
+  showAll: ['Everything about', 'Todo sobre'],
+  showLess: ['Show less', 'Ver menos'],
   labelSize: ['Label size', 'Tamaño de etiquetas'],
   graticule: ['Latitude/longitude grid', 'Cuadrícula de latitud y longitud'],
   rivers: ['Rivers', 'Ríos'],

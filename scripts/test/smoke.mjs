@@ -121,6 +121,30 @@ async function open(opts, hash) {
   await ctx.close();
 }
 
+// 5. With a filter on, a tapped country gets the compact strip (outline kept); the flag opens the full panel.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=fact-tobacco_pct&c=0,18,3&lang=en');
+  const tap = (lon, lat) => page.evaluate(([lon, lat]) => { const p = window.atlas.app.renderer.view.project(lon, lat); window.atlas.app.emit('tap', p[0], p[1]); }, [lon, lat]);
+  const state = () => page.evaluate(() => {
+    const c = document.querySelector('.country-card');
+    return { sel: window.atlas.app.selection, compact: c.classList.contains('compact'), hidden: c.hidden, h: c.offsetHeight, text: c.innerText };
+  });
+  await tap(-2, 17);
+  await page.waitForTimeout(600);
+  const a = await state();
+  check(a.sel === 'MLI' && a.compact && !a.hidden && a.h < 120 && /Tobacco/.test(a.text), `compact strip with the filter value (${a.sel}, ${a.h}px)`);
+  await page.click('.cc-flag');
+  await page.waitForTimeout(400);
+  const b = await state();
+  check(!b.compact && b.sel === 'MLI', 'flag opens the full panel, selection kept');
+  await tap(9, 17);
+  await page.waitForTimeout(600);
+  const c = await state();
+  check(c.sel === 'NER' && c.compact, 'next country starts compact again');
+  check(!errors.length, `no page errors with the card${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);
