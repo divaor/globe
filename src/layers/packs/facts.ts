@@ -186,6 +186,7 @@ function pickerLayer(o: PickerSpec): LayerDef {
   });
   return {
     ...base,
+    valueLabel: undefined, // membership is yes/no: the colour already says it
     info(id) {
       const iso = LC.data.meta[id]?.iso;
       const d = DS.data[id] ?? (iso ? DS.data[iso] : undefined);
@@ -242,6 +243,13 @@ function plugsLayer(): LayerDef | null {
   });
   return {
     ...base,
+    // The country's own plugs, also where the legend groups them as "other combinations".
+    valueLabel(id, inst) {
+      if (mode(inst) !== 'all') return null;
+      const iso = LC.data.meta[id]?.iso;
+      const p = plugsOf(DS.data[id] ?? (iso ? DS.data[iso] : undefined));
+      return p.length ? p.join(' + ') : null;
+    },
     info(id) {
       const iso = LC.data.meta[id]?.iso;
       const p = plugsOf(DS.data[id] ?? (iso ? DS.data[iso] : undefined));
@@ -272,6 +280,7 @@ function mineralsLayer(): LayerDef {
   });
   return {
     ...base,
+    valueLabel: undefined, // draws its own "⛏️ 23%" labels
     countryColor(id, inst, rc) {
       const pal = PAL[String(inst.options.res)];
       if (!pal) return base.countryColor!(id, inst, rc);
@@ -315,6 +324,7 @@ function nationalAnimals(): LayerDef {
   });
   return {
     ...layer,
+    valueLabel: undefined, // the emoji (and name, zoomed in) is the label
     labels(rc: RenderCtx) {
       for (const [id, d] of Object.entries(DS.data)) {
         const k = d.national_animal as string | undefined;
@@ -325,7 +335,12 @@ function nationalAnimals(): LayerDef {
           const m = LC.data.meta[nid];
           if (!m || rc.webZoom < m.ml - 1.5) continue;
           const p = rc.project(m.lx, m.ly);
-          if (p) rc.labels.add({ text: emoji, x: p[0], y: p[1] - 14, priority: 990 - m.lr * 10, size: 18, weight: 400, color: '#000', halo: 'rgba(255,255,255,0.0)' });
+          // Zoomed in, the animal's name goes under its emoji.
+          const name = rc.webZoom >= 2.8 && k ? (es() ? cats[k]?.es : cats[k]?.en) : undefined;
+          if (p) rc.labels.add({
+            text: emoji, x: p[0], y: p[1] - 14, priority: 990 - m.lr * 10, size: 18, weight: 400, color: '#000', halo: 'rgba(255,255,255,0.0)',
+            sub: name, subSize: 11.5, subColor: rc.theme.label, subHalo: rc.theme.labelHalo,
+          });
         }
       }
     },

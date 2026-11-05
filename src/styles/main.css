@@ -223,6 +223,7 @@ a { color: var(--accent); }
 .lg-sw.dot { border-radius: 50%; }
 .lg-sw.line { height: 4px; border-radius: 2px; border-width: 2px; border-style: solid; }
 .lg-sw.dash { height: 0; border-top: 3px dashed; border-radius: 0; background: none !important; }
+.lg-sw.hatch { background: repeating-linear-gradient(135deg, var(--sw, #9aa4b2) 0 2px, transparent 2px 5px) !important; border-color: var(--line); }
 .lg-emoji { width: 16px; text-align: center; }
 .lg-bar { height: 12px; border-radius: 6px; }
 .lg-ticks { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); margin-top: 4px; gap: 6px; }

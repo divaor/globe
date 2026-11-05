@@ -14,9 +14,12 @@ export interface LabelSpec {
   caps?: boolean;        // letter-spaced capitals (country / sea names)
   /** Marker drawn at (x, y); text is offset to the right when present. */
   marker?: { kind: 'dot' | 'capital' | 'square' | 'triangle'; color: string; r: number; stroke?: string };
-  /** Optional second line (e.g. a live clock or a value). */
+  /** Optional second line (e.g. a live clock, a value or an animal's name). */
   sub?: string;
   subColor?: string;
+  /** Second line's font size in CSS px (default 85% of size) and halo (default halo). */
+  subSize?: number;
+  subHalo?: string;
   /** Keep the marker when the text does not fit (only where the marker covers nothing). */
   keepMarker?: boolean;
   align?: 'center' | 'left';
@@ -99,7 +102,12 @@ export class LabelEngine {
       const font = this.font(l);
       const tw = this.measure(ctx, text, font, spacing);
       const th = l.size * this.scale * 1.2;
-      const subH = l.sub ? l.size * this.scale * 0.95 : 0;
+      const subPx = l.subSize ?? l.size * 0.85;
+      const subFont = l.sub ? this.font({ ...l, weight: 600, italic: false }, subPx) : '';
+      const subW = l.sub ? this.measure(ctx, l.sub, subFont, 0) : 0;
+      const subH = l.sub ? subPx * this.scale * 1.12 : 0;
+      // The box covers the wider of the two lines.
+      const bw = Math.max(tw, subW);
       const hasMarker = !!l.marker;
       const mr = hasMarker ? l.marker!.r : 0;
       // Where the text can go: centred on the point, or (with a marker) right, left, above or
@@ -108,12 +116,12 @@ export class LabelEngine {
       if (!hasMarker && l.align !== 'left') {
         // Area names (countries, regions) slide inwards rather than run off the screen edge.
         let cx = l.x;
-        if (l.x >= 0 && l.x <= this.w && tw + 8 < this.w) cx = Math.max(tw / 2 + 4, Math.min(this.w - tw / 2 - 4, l.x));
-        spots.push({ tx: cx - tw / 2, ty: l.y, box: [cx - tw / 2 - 2, l.y - th / 2 - 1, cx + tw / 2 + 2, l.y + th / 2 + subH + 1] });
+        if (l.x >= 0 && l.x <= this.w && bw + 8 < this.w) cx = Math.max(bw / 2 + 4, Math.min(this.w - bw / 2 - 4, l.x));
+        spots.push({ tx: cx - tw / 2, ty: l.y, box: [cx - bw / 2 - 2, l.y - th / 2 - 1, cx + bw / 2 + 2, l.y + th / 2 + subH + 1] });
       } else {
         const g = mr + 4;
-        const right = l.x + g, left = l.x - g - tw;
-        spots.push({ tx: right, ty: l.y, box: [l.x - mr - 2, l.y - th / 2 - 1, right + tw + 2, l.y + th / 2 + subH + 1] });
+        const right = l.x + g, left = l.x - g - bw;
+        spots.push({ tx: right, ty: l.y, box: [l.x - mr - 2, l.y - th / 2 - 1, right + bw + 2, l.y + th / 2 + subH + 1] });
         if (hasMarker) {
           spots.push({ tx: left, ty: l.y, box: [left - 2, l.y - th / 2 - 1, l.x + mr + 2, l.y + th / 2 + subH + 1] });
           if (!l.sub) {
@@ -145,11 +153,12 @@ export class LabelEngine {
       ctx.fillStyle = l.color;
       ctx.fillText(text, tx, ty);
       if (l.sub) {
-        const sf = this.font({ ...l, weight: 600, italic: false }, l.size * 0.85);
-        ctx.font = sf;
+        ctx.font = subFont;
         (ctx as unknown as { letterSpacing: string }).letterSpacing = '0px';
         const sy = ty + th / 2 + subH / 2 - 1;
-        const sx = hasMarker || l.align === 'left' ? tx : tx + tw / 2 - this.measure(ctx, l.sub, sf, 0) / 2;
+        const sx = hasMarker || l.align === 'left' ? tx : tx + tw / 2 - subW / 2;
+        ctx.strokeStyle = l.subHalo ?? l.halo;
+        ctx.lineWidth = Math.max(2.5, subPx * this.scale * 0.3);
         ctx.strokeText(l.sub, sx, sy);
         ctx.fillStyle = l.subColor ?? l.color;
         ctx.fillText(l.sub, sx, sy);

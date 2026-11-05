@@ -5,7 +5,8 @@ import { feature } from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry } from 'geojson';
 import { View } from './view';
-import { GLRaster, type RasterDraw } from './gl';
+import { GLRaster, type RasterDraw, type RasterTexture } from './gl';
+import { paintWorld } from './worldtex';
 import { LabelEngine } from './labels';
 import { bboxNear, loadJSON, shapesFrom, type BaseLevel, type DataStore, type LOD, type Line, type Shape } from '../data/store';
 import type { LayerInstance, RenderCtx } from '../layers/types';
@@ -14,12 +15,16 @@ import type { Lang } from '../app/i18n';
 import { sunVector } from '../layers/sun';
 
 export interface RenderSettings {
-  labels: { countries: boolean; capitals: boolean; cities: boolean; seas: boolean };
+  labels: { countries: boolean; capitals: boolean; cities: boolean; seas: boolean; values: boolean };
   labelScale: number;
   graticule: boolean;
   rivers: boolean;
   shading: boolean;
   quality: 'auto' | 'high' | 'low';
+  /** Draw fewer pixels while the map moves (sharp again when it stops). */
+  motionResolution: boolean;
+  /** While the map moves, let the GPU draw it from a pre-painted world texture. */
+  gpuMotion: boolean;
 }
 
 interface Physical { lakes: Shape[]; rivers: Shape<{ sr: number }>[]; glaciers: Shape[]; iceshelves: Shape[] }
@@ -59,8 +64,8 @@ export class Renderer {
   baseMap = true;
   moving = false;
   settings: RenderSettings = {
-    labels: { countries: true, capitals: true, cities: true, seas: true },
-    labelScale: 1, graticule: true, rivers: false, shading: true, quality: 'auto',
+    labels: { countries: true, capitals: true, cities: true, seas: true, values: true },
+    labelScale: 1, graticule: true, rivers: false, shading: true, quality: 'auto', motionResolution: true, gpuMotion: true,
   };
   tickers = new Set<Ticker>();
   overlays = new Set<Overlay>();
@@ -88,8 +93,18 @@ export class Renderer {
     }).catch(() => {});
   }
 
+  /** Device pixel ratio when the map is still; while it moves, frames may use fewer pixels. */
+  private fullDpr = 1;
+  private lowRes = false;
+  private lastMotion = 0;
+  private restoreTimer = 0;
+
   resize(w: number, h: number) {
-    const dpr = Math.min(window.devicePixelRatio || 1, this.settings.quality === 'low' ? 1 : 2);
+    this.fullDpr = Math.min(window.devicePixelRatio || 1, this.settings.quality === 'low' ? 1 : 2);
+    this.applySize(w, h, this.lowRes ? this.motionDpr() : this.fullDpr);
+  }
+
+  private applySize(w: number, h: number, dpr: number) {
     for (const c of [this.bgCanvas, this.fgCanvas, ...(this.fxCanvas ? [this.fxCanvas] : [])]) {
       c.width = Math.round(w * dpr); c.height = Math.round(h * dpr);
       c.style.width = `${w}px`; c.style.height = `${h}px`;
@@ -98,6 +113,26 @@ export class Renderer {
     this.view.resize(w, h, dpr);
     this.stars = null;
     this.requestRender();
+  }
+
+  /** Pixel ratio for frames drawn while the map moves (a quarter of the pixels on a 2x screen). */
+  private motionDpr() { return Math.min(this.fullDpr, 1); }
+
+  /**
+   * While you drag, pinch or fly, frames are drawn at a lower pixel ratio (sharp text is not needed
+   * mid-motion and the fill rate drops 4x); the full resolution returns 180 ms after it stops.
+   */
+  private adaptResolution(now: number) {
+    const moving = this.moving || this.view.animating;
+    if (moving) this.lastMotion = now;
+    const want = this.settings.motionResolution && this.fullDpr > 1.2 && (moving || now - this.lastMotion < 180);
+    if (want !== this.lowRes) {
+      this.lowRes = want;
+      this.applySize(this.view.w, this.view.h, want ? this.motionDpr() : this.fullDpr);
+    }
+    if (this.lowRes && !moving && !this.restoreTimer) {
+      this.restoreTimer = window.setTimeout(() => { this.restoreTimer = 0; this.requestRender(); }, 200);
+    }
   }
 
   requestRender() {
@@ -125,6 +160,7 @@ export class Renderer {
 
   private frame(now: number) {
     this.raf = 0;
+    this.adaptResolution(now);
     const dt = this.lastFrame ? Math.min(100, now - this.lastFrame) : 16;
     this.lastFrame = now;
     if (dt > 0) this.fps = this.fps * 0.9 + (1000 / dt) * 0.1;
@@ -171,10 +207,12 @@ export class Renderer {
     const busy = this.moving || this.view.animating || this.tickers.size > 0;
     const q = this.settings.quality;
     if (q === 'low') return wz < 5 ? '110m' : '50m';
-    if (wz >= 5.3) return '10m';
-    if (wz >= 3.7) return '50m';
-    if (q === 'high') return '50m';
-    return busy ? '110m' : '50m';
+    const idle: LOD = wz >= 5.3 ? '10m' : '50m';
+    if (!busy) return idle;
+    // While the map moves, one level lighter: the full detail comes back as soon as it stops.
+    // ("High" keeps the full level when zoomed in close, where the lighter one looks too coarse.)
+    if (idle === '10m') return q === 'high' && wz >= 6.5 ? '10m' : '50m';
+    return wz >= 3.7 && q === 'high' ? '50m' : '110m';
   }
 
   private ensurePhysical(lod: '50m' | '10m') {
@@ -190,6 +228,76 @@ export class Renderer {
 
   /** The loaded level of detail used in the last frame. */
   lod: LOD = '110m';
+  /** Whether the last frame was drawn from the GPU world texture. */
+  gpuFrame = false;
+
+  /**
+   * Each visible country projected once per frame into a Path2D, then reused for the land, every
+   * fill filter, the legend highlight and hover/selection (projecting is most of a frame's cost).
+   */
+  private framePaths = new Map<string, Path2D>();
+  private countryPath(s: Shape): Path2D {
+    let p = this.framePaths.get(s.id);
+    if (!p) {
+      p = new Path2D();
+      this.path.context(p as unknown as CanvasRenderingContext2D);
+      this.path(s.feature as never);
+      this.path.context(this.fg);
+      this.framePaths.set(s.id, p);
+    }
+    return p;
+  }
+  // ---- GPU motion: the map painted once into a world texture that WebGL reprojects every frame.
+  private worldCanvas: HTMLCanvasElement | null = null;
+  private worldTex: RasterTexture | null = null;
+  private worldKey = '';
+  private worldWanted = '';
+  private worldTimer = 0;
+
+  /** Fill layers that can be baked: contiguous in the stack, coloured per country, not animated. */
+  private bakeableFills(ready: LayerInstance[]): LayerInstance[] | null {
+    const idx = ready.map((l, i) => (l.def.kind === 'fill' ? i : -1)).filter((i) => i >= 0);
+    if (idx.length && idx[idx.length - 1] - idx[0] !== idx.length - 1) return null;
+    const fills = idx.map((i) => ready[i]);
+    if (fills.some((l) => (l.def.drawFill ? !l.def.bakeable : !l.def.countryColor) || l.def.animated)) return null;
+    return fills;
+  }
+
+  private worldKeyFor(fills: LayerInstance[], landBase: boolean, level: BaseLevel): string {
+    return [
+      fills.map((l) => `${l.def.id}~${l.opacity}~${JSON.stringify(l.options)}`).join('|'),
+      this.theme.dark ? 'd' : 'l', landBase ? 'L' : '', level.lod, this.physical['50m'] ? 'k' : '',
+      this.highlight ? [...this.highlight].sort().join(',') : '',
+    ].join('#');
+  }
+
+  /** Repaints and uploads the world texture soon (off the critical path of the current frame). */
+  private scheduleWorld(key: string, fills: LayerInstance[], landBase: boolean) {
+    if (this.worldWanted === key) return;
+    this.worldWanted = key;
+    clearTimeout(this.worldTimer);
+    this.worldTimer = window.setTimeout(() => {
+      if (!this.gl || this.worldWanted !== key || !this.lastRc) return;
+      const level = this.data.best('50m');
+      // 4096×2048 (32 MB) is sharp up to continent zoom; low-memory phones get 2048×1024.
+      const mem = (navigator as Navigator & { deviceMemory?: number }).deviceMemory;
+      const W = Math.min(mem !== undefined && mem <= 4 ? 2048 : 4096, this.gl.maxTextureSize);
+      if (!this.worldCanvas) { this.worldCanvas = document.createElement('canvas'); this.worldCanvas.width = W; this.worldCanvas.height = W / 2; }
+      paintWorld(this.worldCanvas, {
+        level, layers: fills, rc: this.lastRc, theme: this.theme, landBase, highlight: this.highlight,
+        lakes: this.physical['50m']?.lakes ?? [],
+      });
+      this.worldTex = this.gl.upload(this.worldCanvas, this.worldTex);
+      this.worldKey = key;
+    }, 60);
+  }
+
+  private fillShapes(ctx: CanvasRenderingContext2D, shapes: Shape[], style: string) {
+    const all = new Path2D();
+    for (const s of shapes) all.addPath(this.countryPath(s));
+    ctx.fillStyle = style;
+    ctx.fill(all);
+  }
 
   private makeCtx(now: number, level: BaseLevel): RenderCtx {
     const view = this.view;
@@ -207,7 +315,7 @@ export class Renderer {
       fillCountry: (id, color) => {
         const s = level.byId.get(id);
         if (!s) return;
-        ctx.beginPath(); path(s.feature as never); ctx.fillStyle = color; ctx.fill();
+        ctx.fillStyle = color; ctx.fill(this.countryPath(s));
       },
     };
   }
@@ -262,17 +370,27 @@ export class Renderer {
     ctx.clearRect(0, 0, w, h);
     ctx.lineJoin = 'round'; ctx.lineCap = 'round';
     const path = this.path;
+    this.framePaths.clear();
     const countries = rc.visibleShapes(level.countries);
     const ready = this.layers.filter((l) => l.ready);
     const bottom = ready[0];
     const opaqueBase = !!bottom && bottom.def.kind === 'raster' && bottom.def.group === 'imagery' && bottom.opacity > 0.9 && !!this.gl;
+    // The grey land is pointless under a filter that paints every country opaquely (political map).
+    const coveredBase = !!bottom && bottom.def.coversLand === true && bottom.opacity > 0.99;
+    const landBase = !opaqueBase && !coveredBase && this.baseMap;
 
-    if (!opaqueBase && this.baseMap) {
-      ctx.beginPath();
-      for (const s of countries) path(s.feature as never);
-      ctx.fillStyle = th.land;
-      ctx.fill();
+    // GPU motion: while the map moves (zoomed out, where the texture is sharp enough), land, filter
+    // colours, highlight, lakes and borders come from one texture the GPU reprojects.
+    const fills = this.settings.gpuMotion && this.gl && !this.gl.software && this.baseMap ? this.bakeableFills(ready) : null;
+    let gpu = false;
+    if (fills) {
+      const key = this.worldKeyFor(fills, landBase, this.data.best('50m'));
+      if (key !== this.worldKey) this.scheduleWorld(key, fills, landBase);
+      gpu = (this.moving || view.animating) && view.webZoom < 3.6 && !!this.worldTex && this.worldKey === key;
     }
+    this.gpuFrame = gpu;
+
+    if (landBase && !gpu) this.fillShapes(ctx, countries, th.land);
 
     let pending: RasterDraw[] = [];
     const flushRasters = () => {
@@ -284,6 +402,7 @@ export class Renderer {
       ctx.restore();
       pending = [];
     };
+    let worldPushed = false;
     for (const l of ready) {
       if (l.def.kind === 'raster') {
         const d = l.def.raster?.(rc, l);
@@ -291,6 +410,11 @@ export class Renderer {
         continue;
       }
       if (l.def.kind !== 'fill') continue;
+      if (gpu) {
+        // All the (contiguous) fill layers are in the texture, at the place of the first one.
+        if (!worldPushed) { pending.push({ texture: this.worldTex!, opacity: 1 }); worldPushed = true; }
+        continue;
+      }
       flushRasters();
       ctx.save();
       ctx.globalAlpha = l.opacity;
@@ -304,23 +428,16 @@ export class Renderer {
           if (!g) groups.set(c, (g = []));
           g.push(s);
         }
-        for (const [color, list] of groups) {
-          ctx.beginPath();
-          for (const s of list) path(s.feature as never);
-          ctx.fillStyle = color;
-          ctx.fill();
-        }
+        for (const [color, list] of groups) this.fillShapes(ctx, list, color);
       }
       ctx.restore();
     }
+    if (gpu && !worldPushed) pending.push({ texture: this.worldTex!, opacity: 1 });
     flushRasters();
 
     // Highlight from the legend (dim everything else).
-    if (this.highlight && this.highlight.size) {
-      ctx.beginPath();
-      for (const s of countries) if (!this.highlight.has(s.id)) path(s.feature as never);
-      ctx.fillStyle = th.dark ? 'rgba(4,10,24,0.62)' : 'rgba(255,255,255,0.65)';
-      ctx.fill();
+    if (this.highlight && this.highlight.size && !gpu) {
+      this.fillShapes(ctx, countries.filter((s) => !this.highlight!.has(s.id)), th.dark ? 'rgba(4,10,24,0.62)' : 'rgba(255,255,255,0.65)');
     }
 
     // ---- water bodies and ice on top of fills
@@ -328,7 +445,7 @@ export class Renderer {
     this.ensurePhysical('50m');
     if (physLod === '10m') this.ensurePhysical('10m');
     const phys = this.baseMap ? this.physical[physLod] ?? this.physical['50m'] : undefined;
-    if (phys) {
+    if (phys && !gpu) {
       const lakes = rc.visibleShapes(phys.lakes);
       if (lakes.length) {
         ctx.beginPath();
@@ -354,7 +471,7 @@ export class Renderer {
 
     // ---- borders and coastlines
     const bw = th.borderWidth * Math.max(0.6, Math.min(1.8, 0.55 + view.webZoom * 0.14));
-    if (this.baseMap) {
+    if (this.baseMap && !gpu) {
     ctx.beginPath();
     for (const l of rc.visibleLines(level.coast)) path(l.geometry);
     ctx.strokeStyle = th.coast; ctx.lineWidth = bw * 0.9; ctx.stroke();
@@ -377,16 +494,16 @@ export class Renderer {
       if (!id) continue;
       const s = level.byId.get(id);
       if (!s) continue;
+      const p = this.countryPath(s);
       ctx.save();
-      ctx.beginPath(); path(s.feature as never);
       if (strong) {
         ctx.shadowColor = th.selection; ctx.shadowBlur = 12;
         ctx.strokeStyle = th.selection; ctx.lineWidth = 2.2;
       } else {
-        ctx.fillStyle = th.dark ? 'rgba(255,255,255,0.10)' : 'rgba(0,0,0,0.06)'; ctx.fill();
+        ctx.fillStyle = th.dark ? 'rgba(255,255,255,0.10)' : 'rgba(0,0,0,0.06)'; ctx.fill(p);
         ctx.strokeStyle = th.dark ? 'rgba(255,255,255,0.85)' : 'rgba(0,0,0,0.6)'; ctx.lineWidth = 1.2;
       }
-      ctx.stroke();
+      ctx.stroke(p);
       ctx.restore();
     }
 
@@ -461,6 +578,8 @@ export class Renderer {
     const set = this.settings.labels;
     const meta = this.data.meta;
     if (set.countries) {
+      // The top filter's value for each country goes under its name (fertility "4.5", "Spanish"...).
+      const valueLayer = set.values ? [...this.layers].reverse().find((l) => l.ready && !l.def.hidden && l.def.valueLabel) : undefined;
       for (const s of rc.visibleShapes(rc.level.countries)) {
         const m = meta[s.id];
         if (!m || wz < m.ml - 0.9) continue;
@@ -468,9 +587,11 @@ export class Renderer {
         if (!p) continue;
         const big = m.lr <= 3;
         const size = Math.max(9.5, Math.min(20, 15.5 - m.lr * 1.3 + (wz - 3) * 1.6));
+        const value = valueLayer ? valueLayer.def.valueLabel!(s.id, valueLayer) : null;
         labels.add({
           text: es ? m.ses ?? m.es : m.sn ?? m.n, x: p[0], y: p[1], priority: 900 - m.lr * 40 + (s.id === this.selection ? 500 : 0),
           size, weight: big ? 700 : 600, color: th.label, halo: th.labelHalo, caps: big && wz < 5.5,
+          sub: value ?? undefined, subSize: Math.max(9.5, Math.min(13, size * 0.8)), subColor: th.label,
         });
       }
     }

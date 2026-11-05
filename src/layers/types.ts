@@ -21,7 +21,7 @@ export interface LegendItem {
   color: string;
   label: string;
   icon?: string;
-  shape?: 'square' | 'line' | 'dot' | 'dash' | 'emoji';
+  shape?: 'square' | 'line' | 'dot' | 'dash' | 'emoji' | 'hatch';
   /** Country ids this item covers (for highlight on hover). */
   ids?: string[];
 }
@@ -97,6 +97,11 @@ export interface LayerDef {
   group?: string;
   /** Internal layers used by modes (not listed in the Filters panel, not saved). */
   hidden?: boolean;
+  /** Paints every country opaquely, so the plain land underneath need not be drawn. */
+  coversLand?: boolean;
+  /** drawFill only uses rc.ctx / rc.path / rc.visibleShapes (no view-dependent logic), so it can be
+   *  painted into the GPU world texture. */
+  bakeable?: boolean;
   /** Keywords for search in the Filters panel. */
   keywords?: string;
   load?(ctx: LayerContext, inst: LayerInstance): Promise<void>;
@@ -108,6 +113,8 @@ export interface LayerDef {
   drawFx?(rc: RenderCtx, inst: LayerInstance, dt: number): void;
   labels?(rc: RenderCtx, inst: LayerInstance): void;
   legend?(inst: LayerInstance, lang: Lang): Legend | null;
+  /** Short value shown under a country's name on the map (the top filter that has one is used). */
+  valueLabel?(countryId: string, inst: LayerInstance): string | null;
   info?(countryId: string, inst: LayerInstance, lang: Lang): InfoRow[] | null;
   pick?(lon: number, lat: number, inst: LayerInstance, lang: Lang): InfoRow[] | null;
   onOptionsChanged?(inst: LayerInstance): void;

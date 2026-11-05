@@ -8,6 +8,7 @@ import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { ProjectionId } from '../engine/projections';
 import type { TimeTravel } from '../modes';
+import type { RenderSettings } from '../engine/renderer';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -18,7 +19,7 @@ interface Q { id: string; options?: string[] }
 
 export class Learn {
   private card: HTMLElement;
-  private quiz: { kind: QuizKind; region: string; qs: Q[]; i: number; score: number; answered: boolean; savedLabels: { countries: boolean; capitals: boolean; cities: boolean; seas: boolean } } | null = null;
+  private quiz: { kind: QuizKind; region: string; qs: Q[]; i: number; score: number; answered: boolean; savedLabels: RenderSettings['labels'] } | null = null;
   private tour: { steps: TourStep[]; i: number; auto: boolean; timer: number } | null = null;
   private pin: { lon: number; lat: number; text: string } | null = null;
 

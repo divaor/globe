@@ -43,7 +43,8 @@ export function settingsPanel(app: App, reopen: () => void): HTMLElement {
       toggle(s.labels.countries, (v) => { s.labels.countries = v; save(); }, t('labelCountries')),
       toggle(s.labels.capitals, (v) => { s.labels.capitals = v; save(); }, t('labelCapitals')),
       toggle(s.labels.cities, (v) => { s.labels.cities = v; save(); }, t('labelCities')),
-      toggle(s.labels.seas, (v) => { s.labels.seas = v; save(); }, t('labelSeas'))),
+      toggle(s.labels.seas, (v) => { s.labels.seas = v; save(); }, t('labelSeas')),
+      toggle(s.labels.values, (v) => { s.labels.values = v; save(); }, t('labelValues'))),
     field(t('labelSize'), slider(s.labelScale, 0.8, 1.5, 0.05, (v) => { s.labelScale = v; save(); })),
     h('h3', { class: 'sec-title' }, t('settings')),
     h('div', { class: 'toggles' },
@@ -52,6 +53,7 @@ export function settingsPanel(app: App, reopen: () => void): HTMLElement {
     field(t('quality'), segmented<'auto' | 'high' | 'low'>(s.quality, [
       { value: 'auto', label: t('qualityAuto') }, { value: 'high', label: t('qualityHigh') }, { value: 'low', label: t('qualityLow') },
     ], (v) => { s.quality = v; app.renderer.resize(app.renderer.view.w, app.renderer.view.h); save(); })),
+    ...(app.renderer.gl ? [h('div', { class: 'toggles' }, toggle(s.gpuMotion, (v) => { s.gpuMotion = v; app.renderer.requestRender(); save(); }, t('gpuMotion')))] : []),
     h('h3', { class: 'sec-title' }, t('ambient')),
     field(t('ambientSpeed'), slider(app.ambient.speed, 0.25, 4, 0.25, (v) => { app.ambient.speed = v; app.save(); })),
     h('div', { class: 'toggles' },
