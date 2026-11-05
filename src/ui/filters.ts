@@ -1,6 +1,6 @@
 // The Filters panel: active stack (opacity, options, order) + every available filter by category.
 import { ArrowUp, ArrowDown, X, Search, Check } from 'lucide';
-import { h, icon, toggle, slider, normalize, clear } from './dom';
+import { h, icon, toggle, slider, normalize, clear, fillSelect } from './dom';
 import { t, tx } from '../app/i18n';
 import type { App } from '../app/app';
 import type { CategoryId, LayerDef, LayerInstance } from '../layers/types';
@@ -107,7 +107,7 @@ function activeRow(app: App, inst: LayerInstance): HTMLElement {
   for (const o of d.options ?? []) {
     if (o.type === 'select') {
       const sel = h('select', { class: 'select' }) as HTMLSelectElement;
-      for (const c of o.choices) sel.append(h('option', { value: c.value }, `${c.icon ? c.icon + ' ' : ''}${tx(c.label)}`));
+      fillSelect(sel, o.choices.map((c) => ({ value: c.value, label: `${c.icon ? c.icon + ' ' : ''}${tx(c.label)}`, group: c.group ? tx(c.group) : undefined })));
       sel.value = String(inst.options[o.id]);
       sel.addEventListener('change', () => app.setOption(d.id, o.id, sel.value));
       row.append(h('label', { class: 'arow-opt' }, h('span', { class: 'small muted' }, tx(o.label)), sel));

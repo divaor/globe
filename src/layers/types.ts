@@ -34,7 +34,7 @@ export type Legend =
 export interface InfoRow { label: string; value: string; icon?: string }
 
 export type LayerOptionDef =
-  | { id: string; label: I18nText; type: 'select'; choices: { value: string; label: I18nText; icon?: string }[]; default: string }
+  | { id: string; label: I18nText; type: 'select'; choices: { value: string; label: I18nText; icon?: string; group?: I18nText }[]; default: string }
   | { id: string; label: I18nText; type: 'toggle'; default: boolean };
 
 export interface LayerContext {

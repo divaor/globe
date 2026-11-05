@@ -1,7 +1,7 @@
 {
   "name": "globe",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.5.1",
   "description": "Atlas Globe: a detailed, colorful, installable world globe with many map filters, projections, a political timeline and a Pangea animation.",
   "type": "module",
   "license": "GPL-3.0-or-later",
@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "data:base": "node scripts/data/build-base.mjs",
-    "test:smoke": "node scripts/test/smoke.mjs"
+    "test:smoke": "node scripts/test/smoke.mjs",
+    "check:data": "node scripts/data/winding.mjs --check public/data/base/*.json public/data/layers/*.json public/data/history/world_*.json public/data/paleo/*.json"
   },
   "dependencies": {
     "d3-array": "^3.2.5",

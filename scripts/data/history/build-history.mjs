@@ -63,6 +63,8 @@ export function parseArgs(argv) {
     switch (a) {
       case '--repo': opts.repo = next(); break;
       case '--src': opts.src = next(); break;
+      case '--extra': (opts.extra ||= []).push(next()); break;
+      case '--keep-colours': opts.keepColours = next(); break;
       case '--out': opts.out = next(); break;
       case '--work': opts.work = next(); break;
       case '--only': opts.only = next().split(',').map((s) => s.trim()).filter(Boolean); break;
@@ -72,7 +74,7 @@ export function parseArgs(argv) {
       case '--sliver-km2': opts.sliverKm2 = Number(next()); break;
       case '--near-km': opts.nearKm = Number(next()); break;
       case '-h': case '--help':
-        console.log('Usage: build-history.mjs (--repo <historical-basemaps git clone> | --src <dir of world_*.geojson>) [--out dir] [--work dir] [--only bc500,1492] [--interval-km 4] [--target-kb 230] [--sliver-km2 300]');
+        console.log('Usage: build-history.mjs (--repo <historical-basemaps git clone> | --src <dir of world_*.geojson>) [--extra world_2026.geojson] [--out dir] [--work dir] [--only bc500,1492] [--interval-km 4] [--target-kb 230] [--sliver-km2 300]');
         process.exit(0);
         break;
       default: throw new Error(`Unknown argument ${a}`);
@@ -122,9 +124,13 @@ export function collectSources(opts) {
   } else {
     files = fs.readdirSync(opts.src).filter((f) => SNAPSHOT_RE.test(f)).map((f) => path.join(opts.src, f));
   }
+  // --extra: snapshots from elsewhere (the present-day map made by today-snapshot.mjs).
+  const extra = new Set((opts.extra || []).map((f) => path.resolve(f)));
+  files = [...files, ...extra];
   const snaps = files.map((file) => {
     const m = SNAPSHOT_RE.exec(path.basename(file));
-    return { year: yearOf(m), base: path.basename(file, '.geojson'), src: file };
+    if (!m) throw new Error(`Not a world_<year>.geojson file: ${file}`);
+    return { year: yearOf(m), base: path.basename(file, '.geojson'), src: file, extra: extra.has(path.resolve(file)) };
   }).sort((a, b) => a.year - b.year);
   const seen = new Set();
   for (const s of snaps) {
@@ -251,11 +257,17 @@ export function normaliseSnapshot(snap, canon, stats) {
         geometry = { type: 'MultiPolygon', coordinates: g.coordinates.filter((poly) => !hit.includes(poly)) };
       }
     }
+    // Present-day snapshot only: current display names, rename and new-state markers.
+    const extraProps = snap.extra ? {
+      d: n ? cleanText(P.DISPLAY_EN) : null, ds: n ? cleanText(P.DISPLAY_ES) : null,
+      rn: n ? cleanText(P.RENAMED_FROM) : null, rns: n ? cleanText(P.RENAMED_FROM_ES) : null,
+      ns: n && Number(P.NEW_SINCE) ? Number(P.NEW_SINCE) : null,
+    } : {};
     feats.push({
       type: 'Feature',
       properties: n
-        ? { n, s: s && s !== n ? s : null, p: p && p !== n ? p : null, pr }
-        : { n: null, s: null, p: null, pr },
+        ? { n, s: s && s !== n ? s : null, p: p && p !== n ? p : null, pr, ...extraProps }
+        : { n: null, s: null, p: null, pr, ...extraProps },
       geometry,
     });
   }
@@ -496,13 +508,14 @@ export async function processSnapshot(snap, canon, opts) {
     nameFromSubjecto: [], namesFixed: [], missingPrecision: 0, duplicatesDropped: [],
   };
   const feats = await dropDuplicates(normaliseSnapshot(snap, canon, stats), stats);
+  const fields = snap.extra ? 'n,s,p,pr,d,ds,rn,rns,ns' : 'n,s,p,pr';
   const sourceNames = new Set(feats.map((f) => f.properties.n).filter(Boolean));
 
   // Pass 1: resolve overlaps and dissolve. Overlaps go to the named feature, then to the smaller
   // one (small entities drawn on top of a large one keep their territory). Gaps are filled.
   const pass1 = await ms(
     '-i in.json name=world -each "pri=(n==null?1e18:0)+this.area" -sort pri ascending'
-    + ' -clean overlap-rule=min-id -dissolve n,s,p,pr -o out.json format=topojson no-quantization',
+    + ` -clean overlap-rule=min-id -dissolve ${fields} -o out.json format=topojson no-quantization`,
     { 'in.json': JSON.stringify({ type: 'FeatureCollection', features: feats }) },
   );
   let topo = JSON.parse(pass1);
@@ -515,7 +528,7 @@ export async function processSnapshot(snap, canon, opts) {
       stats.sliversMoved += r.moved;
       stats.sliversKm2 += r.movedKm2;
       if (!r.moved) break;
-      topo = JSON.parse(await ms('-i in.json -dissolve n,s,p,pr -o out.json format=topojson no-quantization',
+      topo = JSON.parse(await ms(`-i in.json -dissolve ${fields} -o out.json format=topojson no-quantization`,
         { 'in.json': JSON.stringify(topo) }));
     }
   }
@@ -686,10 +699,13 @@ export function analyse(result, nearKm) {
  * remaining conflicts. Edge weight: per snapshot 1 + ln(1 + shared border km / 100) for touching
  * entities, 0.25 for entities that are only near each other.
  */
-export function assignColours(importance, edges, K) {
+export function assignColours(importance, edges, K, fixed = new Map()) {
   const names = [...importance.keys()].sort((a, b) => importance.get(b) - importance.get(a) || (a < b ? -1 : 1));
   const colour = new Map();
   const usage = new Array(K).fill(0);
+  // Entities with a colour from an earlier build keep it (--keep-colours), so adding a snapshot does
+  // not repaint the existing maps; only new entities are coloured, around their fixed neighbours.
+  for (const name of names) if (fixed.has(name)) { colour.set(name, fixed.get(name)); usage[fixed.get(name)]++; }
   const cost = (name, c) => {
     let s = 0;
     const e = edges.get(name);
@@ -697,6 +713,7 @@ export function assignColours(importance, edges, K) {
     return s;
   };
   for (const name of names) {
+    if (fixed.has(name)) continue;
     let best = 0;
     let bestCost = Infinity;
     for (let c = 0; c < K; c++) {
@@ -709,6 +726,7 @@ export function assignColours(importance, edges, K) {
   for (let pass = 0; pass < 50; pass++) {
     let changed = 0;
     for (const name of names) {
+      if (fixed.has(name)) continue;
       const cur = colour.get(name);
       let best = cur;
       let bestCost = cost(name, cur);
@@ -773,7 +791,24 @@ async function main() {
     for (const [key, km] of r.analysis.touching) { const [a, b] = key.split('\u0000'); addEdge(a, b, 1 + Math.log1p(km / 100)); }
     for (const key of r.analysis.near) { const [a, b] = key.split('\u0000'); addEdge(a, b, 0.25); }
   }
-  const { colour, usage } = assignColours(new Map([...entities].map(([k, v]) => [k, v.importance])), edges, opts.colours);
+  const fixed = new Map();
+  if (opts.keepColours) {
+    for (const [name, e] of Object.entries(JSON.parse(fs.readFileSync(opts.keepColours, 'utf8')))) {
+      if (entities.has(name) && Number.isInteger(e.c) && e.c < opts.colours) fixed.set(name, e.c);
+    }
+    // Two kept colours that now clash on a shared border (a new snapshot made them neighbours): the
+    // smaller entity is recoloured.
+    for (const r of results) {
+      for (const key of r.analysis.touching.keys()) {
+        const [a, b] = key.split('\u0000');
+        if (fixed.has(a) && fixed.has(b) && fixed.get(a) === fixed.get(b)) {
+          fixed.delete(entities.get(a).importance < entities.get(b).importance ? a : b);
+        }
+      }
+    }
+    console.log(`kept the colours of ${fixed.size} entities from ${opts.keepColours}`);
+  }
+  const { colour, usage } = assignColours(new Map([...entities].map(([k, v]) => [k, v.importance])), edges, opts.colours, fixed);
 
   // Conflict statistics (same colour on touching entities), for the log / report.
   let touchingPairs = 0;
@@ -805,13 +840,21 @@ async function main() {
       if (p.p) props.p = p.p;
       props.pr = p.pr;
       if (p.n) props.c = colour.get(p.n);
+      if (p.d) props.d = p.d;
+      if (p.ds) props.ds = p.ds;
+      if (p.rn) props.rn = p.rn;
+      if (p.rns) props.rns = p.rns;
+      if (p.ns) props.ns = p.ns;
       g.properties = props;
     }
     const file = `${r.snap.base}.json`;
     const text = JSON.stringify(r.topology);
     fs.writeFileSync(path.join(opts.out, file), text);
     r.stats.bytes = text.length;
-    index.push({ year: r.snap.year, file, label_en: labelEn(r.snap.year), label_es: labelEs(r.snap.year), features: r.analysis.features });
+    index.push({
+      year: r.snap.year, file, label_en: labelEn(r.snap.year), label_es: labelEs(r.snap.year), features: r.analysis.features,
+      ...(r.snap.extra ? { source: 'Present-day borders: Natural Earth 1:50m (public domain), matched to the 2010 entities by scripts/data/history/today-snapshot.mjs' } : {}),
+    });
   }
 
   const sourceText = `historical-basemaps by André Ourednik and contributors, ${SOURCE_URL}`
@@ -844,7 +887,33 @@ async function main() {
       .sort((x, y) => y.size - x.size);
     const grew = top(both.filter((e) => e.pct >= opts.minChangePct).map((e) => [e.n, e.pct]));
     const shrank = top(both.filter((e) => e.pct <= -opts.minChangePct).map((e) => [e.n, e.pct]));
-    changes.push({ from: results[i].snap.year, to: results[i + 1].snap.year, appeared, disappeared, grew, shrank });
+    const step = { from: results[i].snap.year, to: results[i + 1].snap.year, appeared, disappeared, grew, shrank };
+    if (results[i + 1].snap.extra) {
+      // The present-day map comes from another source with other outlines, so area changes would
+      // mostly be differences between the two datasets. Only real events are listed: states that
+      // came into being since the previous snapshot, the areas they took, and official renames.
+      const props = results[i + 1].topology.objects.world.geometries.map((g) => g.properties || {});
+      const born = [...new Set(props.filter((p) => p.n && p.ns > results[i].snap.year).map((p) => p.n))];
+      step.appeared = born;
+      step.disappeared = [];
+      const fromParents = new Set();
+      for (const n of born) {
+        // The entity that held most of the new state's land in the previous snapshot.
+        const parents = results[i].analysis.areaByName;
+        let best = null;
+        for (const r of rows) if (r.a >= opts.minChangeKm2 && r.b < r.a && r.n !== n && parents.has(r.n)) {
+          const shrinkKm2 = r.a - r.b;
+          const bornKm2 = B.get(n) || 0;
+          if (Math.abs(shrinkKm2 - bornKm2) < 0.35 * bornKm2 && (!best || Math.abs(shrinkKm2 - bornKm2) < Math.abs((best.a - best.b) - bornKm2))) best = r;
+        }
+        if (best) fromParents.add(best.n);
+      }
+      step.grew = [];
+      step.shrank = both.filter((e) => fromParents.has(e.n)).map((e) => [e.n, e.pct]);
+      // [old, new] in English, then in Spanish.
+      step.renamed = [...new Map(props.filter((p) => p.rn).map((p) => [p.rn, [p.rn, p.d || p.n, p.rns || p.rn, p.ds || p.d || p.n]])).values()];
+    }
+    changes.push(step);
   }
   fs.writeFileSync(path.join(opts.out, 'changes.json'), `${JSON.stringify(changes)}\n`);
 

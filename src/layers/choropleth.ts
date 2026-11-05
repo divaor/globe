@@ -36,8 +36,8 @@ export interface CategoryInfo { en: string; es: string; color?: string; icon?: s
 export interface CategoricalSpec extends Common {
   values: (inst: LayerInstance) => Record<string, string | string[] | null | undefined>;
   categories: (inst: LayerInstance) => Record<string, CategoryInfo>;
-  /** Fixed legend order; otherwise by number of countries. */
-  order?: string[];
+  /** Fixed legend order (may depend on the filter's options); otherwise by number of countries. */
+  order?: string[] | ((inst: LayerInstance) => string[]);
   maxLegend?: number;
   label?: I18nText;
   /** Join several values in the card (lists like languages). */
@@ -111,6 +111,7 @@ export function numericLayer(spec: NumericSpec): LayerDef {
 }
 
 export function categoricalLayer(spec: CategoricalSpec): LayerDef {
+  const orderOf = (inst: LayerInstance) => (typeof spec.order === 'function' ? spec.order(inst) : spec.order);
   type Cache = { key: string; vals: Record<string, string[]>; colors: Record<string, string>; counts: Map<string, number> };
   const cache = (inst: LayerInstance): Cache => {
     const key = optKey(inst);
@@ -127,7 +128,7 @@ export function categoricalLayer(spec: CategoricalSpec): LayerDef {
       vals[k] = list;
       counts.set(list[0], (counts.get(list[0]) ?? 0) + 1);
     }
-    const order = spec.order ?? [...counts.keys()].sort((a, b) => (counts.get(b)! - counts.get(a)!));
+    const order = orderOf(inst) ?? [...counts.keys()].sort((a, b) => (counts.get(b)! - counts.get(a)!));
     const auto = categorical(order.length, 18);
     const colors: Record<string, string> = {};
     order.forEach((k, i) => { colors[k] = cats[k]?.color ?? auto[i]; });
@@ -153,7 +154,7 @@ export function categoricalLayer(spec: CategoricalSpec): LayerDef {
     legend(inst): Legend {
       const c = cache(inst);
       const cats = spec.categories(inst);
-      const keys = (spec.order ?? [...c.counts.keys()].sort((a, b) => c.counts.get(b)! - c.counts.get(a)!)).filter((k) => c.counts.has(k));
+      const keys = (orderOf(inst) ?? [...c.counts.keys()].sort((a, b) => c.counts.get(b)! - c.counts.get(a)!)).filter((k) => c.counts.has(k));
       const max = spec.maxLegend ?? 14;
       const items: LegendItem[] = keys.slice(0, max).map((k) => ({
         color: c.colors[k], label: labelOf(inst, k), icon: cats[k]?.icon,

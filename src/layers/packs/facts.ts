@@ -8,7 +8,7 @@ import { categoricalLayer, numericLayer, type CategoryInfo } from '../choropleth
 import { LC } from '../context';
 import type { App } from '../../app/app';
 import type { Shell } from '../../ui/shell';
-import type { CategoryId, InfoRow, LayerDef, LayerInstance, RenderCtx } from '../types';
+import type { CategoryId, I18nText, InfoRow, LayerDef, LayerInstance, RenderCtx } from '../types';
 
 interface Field {
   label_en: string; label_es: string; group: string; type: 'number' | 'category' | 'list' | 'boolean' | 'text';
@@ -61,6 +61,8 @@ const CURATED: Record<string, Curated> = {
   calling_zone: { icon: '☎️' }, paper_size: { icon: '📄', colors: { a4: '#4dabf7', 'us-letter': '#ff6b6b' } }, driving_side: { icon: '🚗', colors: { left: '#e64980', right: '#228be6' }, keywords: 'drive car road left right conducir coche' },
   speed_unit: { icon: '🚦', colors: { kmh: '#20c997', mph: '#fd7e14' } }, world_cup_titles: { icon: '⚽', palette: P.ylorrd }, womens_world_cup_titles: { icon: '⚽', palette: P.purples },
   olympic_medals: { icon: '🏅', palette: P.ylorrd }, olympic_golds: { icon: '🥇', palette: P.ylorrd },
+  plug_types: { skip: true }, mains_voltage: { icon: '⚡', order: ['high', 'low', 'both'], colors: { high: '#4dabf7', low: '#ff922b', both: '#cc5de8' }, keywords: 'volt voltage electricity power travel adapter voltaje electricidad viaje' },
+  mains_frequency: { icon: '〰️', order: ['50', '60', '50-60'], colors: { '50': '#4dabf7', '60': '#ff6b6b', '50-60': '#cc5de8' }, keywords: 'hertz frequency electricity hercios frecuencia electricidad' },
 };
 
 const es = () => lang() === 'es';
@@ -121,18 +123,131 @@ function languagesLayer(): LayerDef {
   });
 }
 
-function pickerLayer(o: { id: string; field: string; icon: string; cat: CategoryId; name: { en: string; es: string }; desc: { en: string; es: string }; keywords: string; color: string }): LayerDef {
+interface PickerSpec {
+  id: string; field: string; icon: string; cat: CategoryId; name: I18nText; desc: I18nText; keywords: string;
+  /** Colours for: only the first pick, only the second, both. */
+  colors: [string, string, string];
+  what: I18nText; listLabel: I18nText; defaultPick?: string;
+  /** Optional grouping of the choices (key -> group), groups listed in this order. */
+  groups?: { label: I18nText; keys: string[] }[];
+}
+
+/** "Which countries are in X?" for list fields (organisations, resources), with an optional second
+ *  pick to compare two (only X, only Y, both). */
+function pickerLayer(o: PickerSpec): LayerDef {
   const f = DS.fields[o.field];
   const cats = f?.categories ?? {};
   const counts = new Map<string, number>();
   for (const d of Object.values(DS.data)) for (const v of (d[o.field] as string[] | undefined) ?? []) counts.set(v, (counts.get(v) ?? 0) + 1);
-  const keys = Object.keys(cats).sort((a, b) => (counts.get(b) ?? 0) - (counts.get(a) ?? 0));
-  return categoricalLayer({
-    id: o.id, category: o.cat, icon: o.icon, name: o.name, desc: o.desc, keywords: o.keywords, credit: f ? credit(f) : '',
-    options: [{ id: 'pick', type: 'select', label: { en: 'Choose', es: 'Elige' }, default: keys[0] ?? '', choices: keys.map((k) => ({ value: k, label: { en: cats[k].en, es: cats[k].es } })) }],
-    values: (inst) => Object.fromEntries(Object.entries(DS.data).map(([id, d]) => [id, ((d[o.field] as string[]) ?? []).includes(String(inst.options.pick)) ? 'yes' : null])),
-    categories: (inst) => ({ yes: { en: cats[String(inst.options.pick)]?.en ?? '', es: cats[String(inst.options.pick)]?.es ?? '', color: o.color } }),
+  const byCount = (a: string, b: string) => (counts.get(b) ?? 0) - (counts.get(a) ?? 0);
+  const groupOf = new Map<string, number>();
+  o.groups?.forEach((g, i) => g.keys.forEach((k) => groupOf.set(k, i)));
+  const keys = Object.keys(cats).filter((k) => counts.get(k))
+    .sort((a, b) => (groupOf.get(a) ?? 99) - (groupOf.get(b) ?? 99) || byCount(a, b));
+  const has = (d: Record<string, unknown> | undefined, k: string) => !!k && ((d?.[o.field] as string[] | undefined) ?? []).includes(k);
+  const picks = (inst: LayerInstance) => {
+    const a = String(inst.options.pick ?? '');
+    const b = String(inst.options.vs ?? '');
+    return { a, b: b && b !== a ? b : '' };
+  };
+  const membership = (inst: LayerInstance) => {
+    const { a, b } = picks(inst);
+    const out: Record<string, 'a' | 'b' | 'both' | null> = {};
+    for (const [id, d] of Object.entries(DS.data)) {
+      const inA = has(d, a), inB = has(d, b);
+      out[id] = inA && inB ? 'both' : inA ? 'a' : inB ? 'b' : null;
+    }
+    return out;
+  };
+  const choice = (k: string) => ({
+    value: k, label: { en: `${cats[k].en} (${counts.get(k)})`, es: `${cats[k].es} (${counts.get(k)})` },
+    group: groupOf.has(k) ? o.groups![groupOf.get(k)!].label : undefined,
   });
+  const base = categoricalLayer({
+    id: o.id, category: o.cat, icon: o.icon, name: o.name, desc: o.desc, keywords: o.keywords, credit: f ? credit(f) : '',
+    options: [
+      { id: 'pick', type: 'select', label: o.what, default: o.defaultPick && keys.includes(o.defaultPick) ? o.defaultPick : keys[0] ?? '', choices: keys.map(choice) },
+      { id: 'vs', type: 'select', label: { en: 'Compare with', es: 'Comparar con' }, default: '',
+        choices: [{ value: '', label: { en: 'Nothing', es: 'Nada' } }, ...keys.map(choice)] },
+    ],
+    values: membership,
+    categories: (inst): Record<string, CategoryInfo> => {
+      const { a, b } = picks(inst);
+      const n = { a: 0, b: 0, both: 0 };
+      for (const v of Object.values(membership(inst))) if (v) n[v]++;
+      const A = cats[a] ?? { en: a, es: a }, B = cats[b] ?? { en: b, es: b };
+      return b ? {
+        a: { en: `Only ${A.en} (${n.a})`, es: `Solo ${A.es} (${n.a})`, color: o.colors[0] },
+        both: { en: `Both (${n.both})`, es: `Ambas (${n.both})`, color: o.colors[2] },
+        b: { en: `Only ${B.en} (${n.b})`, es: `Solo ${B.es} (${n.b})`, color: o.colors[1] },
+      } : { a: { en: `${A.en} (${n.a})`, es: `${A.es} (${n.a})`, color: o.colors[0] } };
+    },
+    order: ['a', 'both', 'b'],
+  });
+  return {
+    ...base,
+    info(id) {
+      const iso = LC.data.meta[id]?.iso;
+      const d = DS.data[id] ?? (iso ? DS.data[iso] : undefined);
+      const list = ((d?.[o.field] as string[] | undefined) ?? []).filter((k) => cats[k]).sort((x, y) => (counts.get(y) ?? 0) - (counts.get(x) ?? 0));
+      return [{ label: tx(o.listLabel), value: list.length ? list.map((k) => tx(cats[k])).join(', ') : es() ? 'Ninguna' : 'None' }];
+    },
+  };
+}
+
+/** Plug types: every combination in use, or where one type is used. */
+function plugsLayer(): LayerDef | null {
+  const f = DS.fields.plug_types;
+  if (!f?.categories) return null;
+  const cats = f.categories;
+  const letters = Object.keys(cats).sort();
+  const plugsOf = (d: Record<string, unknown> | undefined) => ((d?.plug_types as string[] | undefined) ?? []);
+  const mode = (inst: LayerInstance) => String(inst.options.type ?? 'all');
+  // The most common combinations get their own colour; the long tail is grouped as "other".
+  const comboCount = new Map<string, number>();
+  for (const d of Object.values(DS.data)) {
+    const c = [...plugsOf(d)].sort().join(' + ');
+    if (c) comboCount.set(c, (comboCount.get(c) ?? 0) + 1);
+  }
+  const TOP = new Set([...comboCount.entries()].sort((a, b) => b[1] - a[1]).slice(0, 11).map(([c]) => c));
+  const comboOf = (p: string[]) => { const c = [...p].sort().join(' + '); return TOP.has(c) ? c : 'other'; };
+  const base = categoricalLayer({
+    id: 'plug-types', category: 'fun', icon: '🔌',
+    name: { en: 'Plug types', es: 'Tipos de enchufe' },
+    desc: { en: 'Which plugs and sockets each country uses (types A to O): what adapter to pack.', es: 'Qué enchufes y tomas usa cada país (tipos A a O): qué adaptador llevar.' },
+    keywords: 'plug socket adapter travel electricity enchufe toma adaptador viaje electricidad',
+    credit: credit(f),
+    options: [{ id: 'type', type: 'select', label: { en: 'Show', es: 'Mostrar' }, default: 'all',
+      choices: [{ value: 'all', label: { en: 'Every combination', es: 'Todas las combinaciones' } },
+        ...letters.map((k) => ({ value: k, label: { en: cats[k].en, es: cats[k].es } }))] }],
+    values: (inst) => {
+      const m = mode(inst);
+      return Object.fromEntries(Object.entries(DS.data).map(([id, d]) => {
+        const p = plugsOf(d);
+        if (!p.length) return [id, null];
+        return [id, m === 'all' ? comboOf(p) : p.includes(m) ? m : null];
+      }));
+    },
+    categories: (inst): Record<string, CategoryInfo> => {
+      const m = mode(inst);
+      if (m !== 'all') return { [m]: { en: cats[m]?.en ?? m, es: cats[m]?.es ?? m, color: '#ffd43b' } };
+      return {
+        ...Object.fromEntries([...TOP].map((c) => [c, { en: c, es: c }])),
+        other: { en: 'Other combinations', es: 'Otras combinaciones', color: '#adb5bd' },
+      };
+    },
+    order: (inst) => (mode(inst) === 'all' ? [...[...TOP].sort((a, b) => (comboCount.get(b) ?? 0) - (comboCount.get(a) ?? 0)), 'other'] : [mode(inst)]),
+    maxLegend: 12,
+    note: { en: 'C (Europlug) fits most E, F, J, K and L sockets too.', es: 'El C (europeo) también entra en la mayoría de tomas E, F, J, K y L.' },
+  });
+  return {
+    ...base,
+    info(id) {
+      const iso = LC.data.meta[id]?.iso;
+      const p = plugsOf(DS.data[id] ?? (iso ? DS.data[iso] : undefined));
+      return [{ label: es() ? 'Enchufes' : 'Plugs', value: p.length ? p.map((k) => `${es() ? 'tipo' : 'type'} ${k}`).join(', ') : t('noData') }];
+    },
+  };
 }
 
 function mineralsLayer(): LayerDef {
@@ -313,6 +428,11 @@ function cardRows(id: string): InfoRow[] {
   if (f.highest_point_name) f.highest_point_name = { ...f.highest_point_name, label_en: 'Highest point', label_es: 'Punto más alto' };
   add('🏔️', 'highest_point_name', d.highest_point_name ? `${d.highest_point_name}${d.highest_point_m ? `, ${fmtNumber(d.highest_point_m as number)} m` : ''}` : null);
   add('🚗', 'driving_side', d.driving_side ? cat('driving_side', d.driving_side) : null);
+  if (d.mains_volts || d.plug_types) {
+    const hz = d.mains_frequency === '50-60' ? '50/60 Hz' : d.mains_frequency ? `${d.mains_frequency} Hz` : '';
+    const plugs = ((d.plug_types as string[]) ?? []).join(', ');
+    rows.push({ icon: '🔌', label: es() ? 'Electricidad' : 'Electricity', value: [d.mains_volts as string, hz, plugs && `${es() ? 'enchufes' : 'plugs'} ${plugs}`].filter(Boolean).join(' · ') });
+  }
   add('🍽️', 'national_dish', d.national_dish as string);
   add('☎️', 'calling_code', d.calling_code as string);
   add('🌐', 'tld', d.tld as string);
@@ -331,13 +451,30 @@ export default async function register(app: App, shell: Shell) {
   }
   const defs: LayerDef[] = [languagesLayer(), nationalAnimals(), flagsLayer, nationalColours()];
   if (Object.keys(MINERALS).length) defs.push(mineralsLayer());
-  if (DS.fields.organizations) defs.push(pickerLayer({ id: 'organizations', field: 'organizations', icon: '🤝', cat: 'political', color: '#4dabf7',
+  const plugs = plugsLayer();
+  if (plugs) defs.push(plugs);
+  if (DS.fields.organizations) defs.push(pickerLayer({ id: 'organizations', field: 'organizations', icon: '🤝', cat: 'political',
+    colors: ['#4dabf7', '#ff922b', '#cc5de8'], defaultPick: 'nato',
+    groups: [
+      { label: { en: '🌐 Worldwide', es: '🌐 Mundiales' }, keys: ['un', 'wto', 'icc', 'nam', 'oic', 'commonwealth', 'francophonie', 'cplp'] },
+      { label: { en: '💼 Economic clubs', es: '💼 Clubes económicos' }, keys: ['g7', 'g20', 'oecd', 'brics', 'opec', 'apec'] },
+      { label: { en: '🛡️ Military and security', es: '🛡️ Militares y de seguridad' }, keys: ['nato', 'csto', 'five-eyes', 'quad', 'aukus'] },
+      { label: { en: '🇪🇺 Europe', es: '🇪🇺 Europa' }, keys: ['eu', 'eurozone', 'schengen', 'coe', 'efta', 'nordic-council', 'v4', 'benelux'] },
+      { label: { en: '🌎 Americas', es: '🌎 América' }, keys: ['oas', 'celac', 'caricom', 'mercosur', 'can', 'usmca'] },
+      { label: { en: '🌍 Africa', es: '🌍 África' }, keys: ['african-union', 'sadc', 'ecowas', 'eac', 'aes'] },
+      { label: { en: '🕌 Middle East', es: '🕌 Oriente Medio' }, keys: ['arab-league', 'gcc'] },
+      { label: { en: '🌏 Asia and Pacific', es: '🌏 Asia y Pacífico' }, keys: ['asean', 'sco', 'pif'] },
+      { label: { en: '🏔️ Eurasia', es: '🏔️ Eurasia' }, keys: ['cis', 'eaeu', 'ots'] },
+    ],
     name: { en: 'Alliances and organisations', es: 'Alianzas y organizaciones' },
-    desc: { en: 'Members of the EU, NATO, G20, BRICS, OPEC, ASEAN, the Commonwealth and more.', es: 'Miembros de la UE, OTAN, G20, BRICS, OPEP, ASEAN, la Commonwealth y más.' },
-    keywords: 'eu nato g7 g20 brics opec asean commonwealth ue otan opep' }));
-  if (DS.fields.natural_resources) defs.push(pickerLayer({ id: 'resource-finder', field: 'natural_resources', icon: '💎', cat: 'economy', color: '#f59f00',
+    desc: { en: '46 alliances and organisations, from the UN, NATO and the EU to BRICS, OPEC, ASEAN, the African Union, Mercosur and the Commonwealth. Pick one, or compare two.', es: '46 alianzas y organizaciones, de la ONU, la OTAN y la UE a los BRICS, la OPEP, la ASEAN, la Unión Africana, Mercosur y la Commonwealth. Elige una o compara dos.' },
+    what: { en: 'Organisation', es: 'Organización' }, listLabel: { en: 'Member of', es: 'Miembro de' },
+    keywords: 'alliance organisation organization member eu nato un wto icc g7 g20 brics opec asean commonwealth oas celac mercosur caricom african union ecowas sadc apec sco csto quad aukus five eyes francophonie arab league alianza organizacion miembro ue otan onu omc cpi opep oea cedeao ocs francofonia liga arabe' }));
+  if (DS.fields.natural_resources) defs.push(pickerLayer({ id: 'resource-finder', field: 'natural_resources', icon: '💎', cat: 'economy',
+    colors: ['#f59f00', '#22b8cf', '#e64980'],
     name: { en: 'Where is it found?', es: '¿Dónde se encuentra?' },
-    desc: { en: 'Pick a natural resource and see every country that has it.', es: 'Elige un recurso natural y mira todos los países que lo tienen.' },
+    desc: { en: 'Pick a natural resource and see every country that has it, or compare two.', es: 'Elige un recurso natural y mira todos los países que lo tienen, o compara dos.' },
+    what: { en: 'Resource', es: 'Recurso' }, listLabel: { en: 'Natural resources', es: 'Recursos naturales' },
     keywords: 'resource mineral find recurso mineral' }));
   for (const [key, f] of Object.entries(DS.fields)) {
     const l = fieldLayer(key, f);

@@ -35,7 +35,8 @@ const seen = new Map(); // name -> [years]
 let total = 0;
 let clashes = 0;
 let pairs = 0;
-const ALLOWED = new Set(['n', 's', 'p', 'pr', 'c']);
+// d, ds, rn, ns only on the present-day map (current names, renames, new states).
+const ALLOWED = new Set(['n', 's', 'p', 'pr', 'c', 'd', 'ds', 'rn', 'rns', 'ns']);
 
 index.snapshots.forEach((snap, i) => {
   const prev = index.snapshots[i - 1];
@@ -99,6 +100,7 @@ if (changes.length !== index.snapshots.length - 1) err('changes.json: wrong leng
 changes.forEach((c, i) => {
   if (c.from !== index.snapshots[i].year || c.to !== index.snapshots[i + 1].year) err(`changes.json: entry ${i} years`);
   for (const k of ['appeared', 'disappeared', 'grew', 'shrank']) if (!Array.isArray(c[k]) || c[k].length > 12) err(`changes.json: entry ${i} ${k}`);
+  if (c.renamed !== undefined && (!Array.isArray(c.renamed) || c.renamed.some((r) => !Array.isArray(r) || (r.length !== 2 && r.length !== 4)))) err(`changes.json: entry ${i} renamed`);
 });
 
 const all = fs.readdirSync(dir).reduce((s, f) => s + fs.statSync(path.join(dir, f)).size, 0);

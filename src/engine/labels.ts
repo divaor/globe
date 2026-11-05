@@ -17,7 +17,7 @@ export interface LabelSpec {
   /** Optional second line (e.g. a live clock or a value). */
   sub?: string;
   subColor?: string;
-  /** Labels with marker are always drawn even if text collides (marker only). */
+  /** Keep the marker when the text does not fit (only where the marker covers nothing). */
   keepMarker?: boolean;
   align?: 'center' | 'left';
 }
@@ -99,20 +99,42 @@ export class LabelEngine {
       const font = this.font(l);
       const tw = this.measure(ctx, text, font, spacing);
       const th = l.size * this.scale * 1.2;
+      const subH = l.sub ? l.size * this.scale * 0.95 : 0;
       const hasMarker = !!l.marker;
       const mr = hasMarker ? l.marker!.r : 0;
-      const left = l.align === 'left' || hasMarker;
-      const tx = left ? l.x + mr + 4 : l.x - tw / 2;
-      const ty = l.y;
-      const subH = l.sub ? l.size * this.scale * 0.95 : 0;
-      const box: [number, number, number, number] = [
-        Math.min(tx, l.x - mr) - 2, ty - th / 2 - 1, tx + tw + 2, ty + th / 2 + subH + 1,
-      ];
-      const collide = this.collides(box);
-      if (collide && !(hasMarker && l.keepMarker)) continue;
+      // Where the text can go: centred on the point, or (with a marker) right, left, above or
+      // below it. The first spot that is free wins.
+      const spots: { tx: number; ty: number; box: [number, number, number, number] }[] = [];
+      if (!hasMarker && l.align !== 'left') {
+        // Area names (countries, regions) slide inwards rather than run off the screen edge.
+        let cx = l.x;
+        if (l.x >= 0 && l.x <= this.w && tw + 8 < this.w) cx = Math.max(tw / 2 + 4, Math.min(this.w - tw / 2 - 4, l.x));
+        spots.push({ tx: cx - tw / 2, ty: l.y, box: [cx - tw / 2 - 2, l.y - th / 2 - 1, cx + tw / 2 + 2, l.y + th / 2 + subH + 1] });
+      } else {
+        const g = mr + 4;
+        const right = l.x + g, left = l.x - g - tw;
+        spots.push({ tx: right, ty: l.y, box: [l.x - mr - 2, l.y - th / 2 - 1, right + tw + 2, l.y + th / 2 + subH + 1] });
+        if (hasMarker) {
+          spots.push({ tx: left, ty: l.y, box: [left - 2, l.y - th / 2 - 1, l.x + mr + 2, l.y + th / 2 + subH + 1] });
+          if (!l.sub) {
+            const up = l.y - mr - 2 - th / 2, down = l.y + mr + 2 + th / 2;
+            spots.push({ tx: l.x - tw / 2, ty: up, box: [l.x - tw / 2 - 2, up - th / 2 - 1, l.x + tw / 2 + 2, l.y + mr + 1] });
+            spots.push({ tx: l.x - tw / 2, ty: down, box: [l.x - tw / 2 - 2, l.y - mr - 1, l.x + tw / 2 + 2, down + th / 2 + 1] });
+          }
+        }
+      }
+      const spot = spots.find((s) => !this.collides(s.box));
+      if (!spot) {
+        // No room for the text: keep a lone marker (capitals) only where it covers nothing.
+        if (hasMarker && l.keepMarker) {
+          const mb: [number, number, number, number] = [l.x - mr - 1, l.y - mr - 1, l.x + mr + 1, l.y + mr + 1];
+          if (!this.collides(mb)) { this.drawMarker(ctx, l); this.insert(mb); }
+        }
+        continue;
+      }
       if (hasMarker) this.drawMarker(ctx, l);
-      if (collide) { this.insert([l.x - mr, l.y - mr, l.x + mr, l.y + mr]); continue; }
-      this.insert(box);
+      this.insert(spot.box);
+      const { tx, ty } = spot;
       ctx.font = font;
       // letterSpacing is supported in modern browsers; fall back gracefully.
       (ctx as unknown as { letterSpacing: string }).letterSpacing = spacing ? `${spacing}px` : '0px';
@@ -127,7 +149,7 @@ export class LabelEngine {
         ctx.font = sf;
         (ctx as unknown as { letterSpacing: string }).letterSpacing = '0px';
         const sy = ty + th / 2 + subH / 2 - 1;
-        const sx = left ? tx : l.x - this.measure(ctx, l.sub, sf, 0) / 2;
+        const sx = hasMarker || l.align === 'left' ? tx : tx + tw / 2 - this.measure(ctx, l.sub, sf, 0) / 2;
         ctx.strokeText(l.sub, sx, sy);
         ctx.fillStyle = l.subColor ?? l.color;
         ctx.fillText(l.sub, sx, sy);
