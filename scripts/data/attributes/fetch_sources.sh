@@ -13,7 +13,7 @@ cd "$DEST"
 
 fetch() {  # fetch <url> <out-file>
   echo "  get $1"
-  curl -fsSL --retry 3 -o "$2" "$1"
+  curl -fsSL --retry 3 -A "AtlasGlobeDataBuild/1.0 (https://github.com/divaor/globe)" -o "$2" "$1"
 }
 
 echo "== raw files"
@@ -22,10 +22,15 @@ fetch $GH/mledoze/countries/master/countries.json                               
 fetch $GH/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_0_countries.geojson raw/ne_10m_admin_0_countries.geojson
 fetch $GH/owid/co2-data/master/owid-co2-data.csv                                 raw/owid-co2-data.csv
 fetch $GH/owid/energy-data/master/owid-energy-data.csv                           raw/owid-energy-data.csv
-fetch $GH/owid/covid-19-data/master/public/data/latest/owid-covid-latest.json    raw/owid-covid-latest.json
-fetch $GH/owid/covid-19-data/master/public/data/owid-covid-codebook.csv          raw/owid-covid-codebook.csv
 fetch $GH/datasets/gdp/main/data/gdp.csv                                         raw/wb-gdp.csv
 fetch $GH/datasets/population/main/data/population.csv                           raw/wb-population.csv
+
+echo "== Our World in Data charts (latest HDI and World Happiness Report) and Wikipedia (plugs, mains voltage)"
+OWID=https://ourworldindata.org/grapher
+fetch "$OWID/human-development-index.csv?v=1&csvType=full&useColumnShortNames=true"   raw/owid-hdi.csv
+fetch "$OWID/happiness-cantril-ladder.csv?v=1&csvType=full&useColumnShortNames=true"  raw/owid-happiness.csv
+fetch "https://en.wikipedia.org/w/api.php?action=parse&page=Mains_electricity_by_country&prop=wikitext|revid&format=json&formatversion=2" \
+      raw/wikipedia-mains-electricity.json
 
 echo "== git repositories (partial clones, only the files we read)"
 sparse_clone() {  # sparse_clone <owner/repo> <dir> <path>...
@@ -43,8 +48,7 @@ sparse_clone samayo/country-json           samayo_country-json '/src/country-by-
 sparse_clone countries/countries           countries_countries '/lib/countries/cache/countries.json' '/LICENSE'
 sparse_clone vincentarelbundock/WDI        vincentarelbundock_WDI '/data/WDI_data.RData'
 sparse_clone KeithGalli/Olympics-Dataset   KeithGalli_Olympics-Dataset '/clean-data/results.csv' '/LICENSE' '/README.md'
-sparse_clone owid/owid-datasets            owid_owid-datasets \
-  '/datasets/World Happiness Report (2022)/*' '/datasets/Human Height - NCD RisC (2017)/*'
+sparse_clone owid/owid-datasets            owid_owid-datasets '/datasets/Human Height - NCD RisC (2017)/*'
 
 echo "== npm packages (tarballs are only unpacked, never installed or run)"
 npm_get() {  # npm_get <name> <version>

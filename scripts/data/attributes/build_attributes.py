@@ -55,8 +55,10 @@ S = {
     'wb_income': ('World Bank country classification by income, via the WDI R package cache (github.com/vincentarelbundock/WDI, Aug 2026)', 'CC BY 4.0'),
     'owid_co2': ('Our World in Data – CO₂ and greenhouse gas emissions (Global Carbon Project), github.com/owid/co2-data', 'CC BY 4.0'),
     'owid_energy': ('Our World in Data – energy dataset (Ember; Energy Institute Statistical Review), github.com/owid/energy-data', 'CC BY 4.0'),
-    'owid_hdi': ('UNDP Human Development Report 2020 via Our World in Data COVID-19 dataset (github.com/owid/covid-19-data)', 'CC BY 4.0 (OWID); UNDP data CC BY 3.0 IGO'),
-    'owid_whr': ('World Happiness Report 2022 (Gallup World Poll) via Our World in Data (github.com/owid/owid-datasets)', 'CC BY 4.0 (OWID); WHR data free to use with attribution'),
+    'owid_hdi': ('UNDP Human Development Report 2025 via Our World in Data (ourworldindata.org/grapher/human-development-index)', 'CC BY 4.0 (OWID); UNDP data CC BY 3.0 IGO'),
+    'owid_whr': ('World Happiness Report 2026 (Wellbeing Research Centre; Gallup World Poll) via Our World in Data (ourworldindata.org/grapher/happiness-cantril-ladder)',
+                 'CC BY 4.0 (OWID); WHR data free to use with attribution'),
+    'wiki_mains': ('Wikipedia, "Mains electricity by country" (from IEC World Plugs and national standards)', 'CC BY-SA 4.0'),
     'owid_height': ('NCD-RisC (2017) via Our World in Data (github.com/owid/owid-datasets)', 'CC BY 4.0'),
     'cldr': ('Unicode CLDR 49 (cldr-json npm packages)', 'Unicode-3.0'),
     'coder': ('@rapideditor/country-coder 5.6.1 (OpenStreetMap community data)', 'ISC'),
@@ -665,12 +667,25 @@ used = {v['main_power_source'] for v in DATA.values() if 'main_power_source' in 
 field('main_power_source', 'Main source of electricity', 'Principal fuente de electricidad', 'energy', 'category', 'owid_energy', year=2025,
       categories={k: {'en': v[0], 'es': v[1]} for k, v in MP.items() if k in used})
 
-covid = jload('raw', 'owid-covid-latest.json')
-for iso, v in covid.items():
-    if len(iso) == 3 and v.get('human_development_index') is not None:
-        put(iso, 'hdi', round(v['human_development_index'], 3))
-field('hdi', 'Human Development Index', 'Índice de Desarrollo Humano', 'people', 'number', 'owid_hdi', unit='index (0–1)', year=2019, scale='linear', higherIs='good',
-      note='2019 values (most recent HDI available from a reachable open dataset).')
+def grapher_latest(fn, col, minyear):
+    """Latest value per country from an Our World in Data chart CSV (entity, code, year, <col>)."""
+    latest = {}
+    for row in csv_rows('raw', fn):
+        code = 'XKX' if row['code'] == 'OWID_KOS' else row['code']
+        if len(code) != 3 or not row.get(col):
+            continue
+        yy = int(row['year'])
+        if yy >= minyear and yy >= latest.get(code, (0, 0))[0]:
+            latest[code] = (yy, float(row[col]))
+    return latest
+
+
+hdi = grapher_latest('owid-hdi.csv', 'hdi__sex_total', 2018)
+for iso, (yy, v) in hdi.items():
+    put(iso, 'hdi', round(v, 3))
+hdi_year = collections.Counter(yy for yy, _ in hdi.values()).most_common(1)[0][0]
+field('hdi', 'Human Development Index', 'Índice de Desarrollo Humano', 'people', 'number', 'owid_hdi', unit='index (0–1)', year=hdi_year, scale='linear', higherIs='good',
+      note=f'{hdi_year} values from the Human Development Report 2025 (life expectancy, education and income).')
 
 
 def owid_dataset(dirname, colname, fid, nd, minyear):
@@ -694,10 +709,13 @@ def owid_dataset(dirname, colname, fid, nd, minyear):
     return yc.most_common(1)[0][0] if yc else None
 
 
-y = owid_dataset('World Happiness Report (2022)', 'Life satisfaction in Cantril Ladder (World Happiness Report 2022)', 'happiness', 2, 2017)
-if y:
-    field('happiness', 'Life satisfaction (happiness)', 'Satisfacción con la vida (felicidad)', 'people', 'number', 'owid_whr', unit='Cantril ladder score (0–10)',
-          year=y, scale='linear', higherIs='good', note='Three-year average around the year shown (World Happiness Report 2022).')
+whr = grapher_latest('owid-happiness.csv', 'cantril_ladder_score', 2019)
+for iso, (yy, v) in whr.items():
+    put(iso, 'happiness', round(v, 2))
+whr_year = collections.Counter(yy for yy, _ in whr.values()).most_common(1)[0][0]
+field('happiness', 'Life satisfaction (happiness)', 'Satisfacción con la vida (felicidad)', 'people', 'number', 'owid_whr', unit='Cantril ladder score (0–10)',
+      year=whr_year, scale='linear', higherIs='good',
+      note=f'World Happiness Report 2026: average answer, 0 (worst possible life) to 10 (best), {whr_year} or the latest year surveyed.')
 y = owid_dataset('Human Height - NCD RisC (2017)', 'Mean male height (cm)', 'height_male_cm', 1, 1990)
 owid_dataset('Human Height - NCD RisC (2017)', 'Mean female height (cm)', 'height_female_cm', 1, 1990)
 if y:
@@ -1296,6 +1314,89 @@ for mid, m in CM.MINERALS.items():
     if m.get('note'):
         d['note'] = m['note']
     minerals[mid] = d
+
+# ------------------------------------------------------------------ mains electricity (Wikipedia)
+PLUGS = {
+    'A': ('Type A: two flat pins (US, Japan)', 'Tipo A: dos clavijas planas (EE. UU., Japón)'),
+    'B': ('Type B: two flat pins and earth (US)', 'Tipo B: dos clavijas planas y tierra (EE. UU.)'),
+    'C': ('Type C: Europlug, two round pins', 'Tipo C: europeo, dos clavijas redondas'),
+    'D': ('Type D: three large round pins (India)', 'Tipo D: tres clavijas redondas grandes (India)'),
+    'E': ('Type E: two round pins, earth pin in the socket (France)', 'Tipo E: dos clavijas redondas, tierra en la toma (Francia)'),
+    'F': ('Type F: Schuko (Germany)', 'Tipo F: Schuko (Alemania)'),
+    'G': ('Type G: three rectangular pins (UK)', 'Tipo G: tres clavijas rectangulares (Reino Unido)'),
+    'H': ('Type H: three pins (Israel)', 'Tipo H: tres clavijas (Israel)'),
+    'I': ('Type I: angled flat pins (Australia, China)', 'Tipo I: clavijas planas en V (Australia, China)'),
+    'J': ('Type J: three round pins (Switzerland)', 'Tipo J: tres clavijas redondas (Suiza)'),
+    'K': ('Type K: Denmark', 'Tipo K: Dinamarca'),
+    'L': ('Type L: three round pins in a row (Italy)', 'Tipo L: tres clavijas en línea (Italia)'),
+    'M': ('Type M: three large round pins (South Africa)', 'Tipo M: tres clavijas redondas grandes (Sudáfrica)'),
+    'N': ('Type N: three round pins (Brazil)', 'Tipo N: tres clavijas redondas (Brasil)'),
+    'O': ('Type O: Thailand', 'Tipo O: Tailandia'),
+}
+WIKI_ALIASES = {'bahamas': 'BHS', 'turkey': 'TUR', 'gambia': 'GMB', 'congo, republic of the': 'COG', 'congo, democratic republic of the': 'COD',
+                'timor-leste': 'TLS', 'us virgin islands': 'VIR', 'saint helena, ascension and tristan da cunha': 'SHN',
+                'bonaire': 'BES', 'french guiana': 'GUF', 'guadeloupe': 'GLP', 'martinique': 'MTQ', 'réunion': 'REU'}
+
+
+def wiki_mains():
+    path = P('raw', 'wikipedia-mains-electricity.json')
+    if not os.path.exists(path):
+        print('WARNING: no Wikipedia mains table; plug and voltage fields skipped')
+        return {}
+    text = jload('raw', 'wikipedia-mains-electricity.json')['parse']['wikitext']
+    start = text.index('{|')
+    table = text[start:text.index('\n|}', start)]
+    names = dict(samayo_name)
+    names.update(WIKI_ALIASES)
+    clean = lambda x: re.sub(r'<!--.*?-->', '', re.sub(r'<ref[^>]*>.*?</ref>|<ref[^>/]*/>', '', x, flags=re.S), flags=re.S)
+    out, unmatched = {}, []
+    for row in table.split('\n|-')[1:]:
+        cells = [ln[1:].strip() for ln in clean(row).split('\n') if ln.startswith('|')]
+        if len(cells) < 5:
+            continue
+        m = re.search(r'\{\{flag(?:country|u)?\|([^}|]+)', cells[0])
+        name = (m.group(1) if m else cells[0]).strip()
+        iso = names.get(name.lower())
+        if not iso or iso not in KEYS:
+            unmatched.append(name)
+            continue
+        # Source order: where a country lists its main type first (UK "G, D, M") that stays first.
+        plugs = list(dict.fromkeys(re.findall(r'\b([A-O])\b', re.sub(r'<br\s*/?>', ' ', cells[1]).replace('NEMA', ''))))
+        volts = []
+        for part in re.split(r'<br\s*/?>', cells[3].replace('&nbsp;', ' ').replace('&#x20;', ' ')):
+            mm = re.match(r'\s*(\d{3})', part)
+            if mm and int(mm.group(1)) <= 250 and int(mm.group(1)) not in volts:
+                volts.append(int(mm.group(1)))   # single-phase (line to neutral) voltage; 3-phase/industrial values skipped
+        hz = sorted(set(re.findall(r'(50|60)\s*(?:&nbsp;)?\s*(?:\[\[Hertz\|)?Hz', cells[4])))
+        out[iso] = (plugs, volts, hz)
+    if unmatched:
+        print('mains: unmatched', unmatched)
+    return out
+
+
+mains = wiki_mains()
+for iso, (plugs, volts, hz) in mains.items():
+    put(iso, 'plug_types', plugs)
+    low = any(v <= 130 for v in volts)
+    high = any(v >= 220 for v in volts)
+    if volts:
+        put(iso, 'mains_voltage', 'both' if low and high else 'low' if low else 'high')
+        put(iso, 'mains_volts', ' / '.join(f'{v} V' for v in sorted(volts)))
+    if hz:
+        put(iso, 'mains_frequency', '50-60' if len(hz) > 1 else hz[0])
+if mains:
+    used_plugs = {p for v in DATA.values() for p in v.get('plug_types', [])}
+    field('plug_types', 'Plug types', 'Tipos de enchufe', 'fun', 'list', 'wiki_mains',
+          categories={k: {'en': v[0], 'es': v[1]} for k, v in PLUGS.items() if k in used_plugs},
+          note='Plug and socket types in use (letters as in the IEC World Plugs list), main type first where the source says so.')
+    field('mains_voltage', 'Mains voltage', 'Tensión de la red', 'fun', 'category', 'wiki_mains',
+          categories={'low': {'en': '100–127 V', 'es': '100–127 V'}, 'high': {'en': '220–240 V', 'es': '220–240 V'},
+                      'both': {'en': 'Both, by region or building', 'es': 'Ambas, según la región o el edificio'}},
+          note='Household (single-phase) voltage.')
+    field('mains_volts', 'Mains voltage (volts)', 'Tensión de la red (voltios)', 'fun', 'text', 'wiki_mains')
+    field('mains_frequency', 'Mains frequency', 'Frecuencia de la red', 'fun', 'category', 'wiki_mains',
+          categories={'50': {'en': '50 Hz', 'es': '50 Hz'}, '60': {'en': '60 Hz', 'es': '60 Hz'},
+                      '50-60': {'en': 'Both (50 and 60 Hz)', 'es': 'Ambas (50 y 60 Hz)'}})
 
 # ------------------------------------------------------------------ write
 # order fields by group for readability

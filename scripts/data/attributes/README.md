@@ -19,7 +19,7 @@ python3 -I scripts/data/attributes/validate_attributes.py       # coverage table
 ```
 
 * `fetch_sources.sh` only downloads (curl, partial `git clone` + sparse checkout, npm tarballs
-  unpacked with `tar`); nothing downloaded is executed. Reachable hosts needed: GitHub, the npm
+  unpacked with `tar`); nothing downloaded is executed. Reachable hosts needed: GitHub, ourworldindata.org, en.wikipedia.org, the npm
   registry (and PyPI for `rdata`).
 * `build_attributes.py` uses only the Python standard library (3.9+). Run it with `python3 -I`
   and pass the download directory as an argument (it never imports from there). An optional

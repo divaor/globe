@@ -61,6 +61,8 @@ const CURATED: Record<string, Curated> = {
   calling_zone: { icon: '☎️' }, paper_size: { icon: '📄', colors: { a4: '#4dabf7', 'us-letter': '#ff6b6b' } }, driving_side: { icon: '🚗', colors: { left: '#e64980', right: '#228be6' }, keywords: 'drive car road left right conducir coche' },
   speed_unit: { icon: '🚦', colors: { kmh: '#20c997', mph: '#fd7e14' } }, world_cup_titles: { icon: '⚽', palette: P.ylorrd }, womens_world_cup_titles: { icon: '⚽', palette: P.purples },
   olympic_medals: { icon: '🏅', palette: P.ylorrd }, olympic_golds: { icon: '🥇', palette: P.ylorrd },
+  plug_types: { skip: true }, mains_voltage: { icon: '⚡', order: ['high', 'low', 'both'], colors: { high: '#4dabf7', low: '#ff922b', both: '#cc5de8' }, keywords: 'volt voltage electricity power travel adapter voltaje electricidad viaje' },
+  mains_frequency: { icon: '〰️', order: ['50', '60', '50-60'], colors: { '50': '#4dabf7', '60': '#ff6b6b', '50-60': '#cc5de8' }, keywords: 'hertz frequency electricity hercios frecuencia electricidad' },
 };
 
 const es = () => lang() === 'es';
@@ -180,6 +182,61 @@ function pickerLayer(o: PickerSpec): LayerDef {
       const d = DS.data[id] ?? (iso ? DS.data[iso] : undefined);
       const list = ((d?.[o.field] as string[] | undefined) ?? []).filter((k) => cats[k]).sort((x, y) => (counts.get(y) ?? 0) - (counts.get(x) ?? 0));
       return [{ label: tx(o.listLabel), value: list.length ? list.map((k) => tx(cats[k])).join(', ') : es() ? 'Ninguna' : 'None' }];
+    },
+  };
+}
+
+/** Plug types: every combination in use, or where one type is used. */
+function plugsLayer(): LayerDef | null {
+  const f = DS.fields.plug_types;
+  if (!f?.categories) return null;
+  const cats = f.categories;
+  const letters = Object.keys(cats).sort();
+  const plugsOf = (d: Record<string, unknown> | undefined) => ((d?.plug_types as string[] | undefined) ?? []);
+  const mode = (inst: LayerInstance) => String(inst.options.type ?? 'all');
+  // The most common combinations get their own colour; the long tail is grouped as "other".
+  const comboCount = new Map<string, number>();
+  for (const d of Object.values(DS.data)) {
+    const c = [...plugsOf(d)].sort().join(' + ');
+    if (c) comboCount.set(c, (comboCount.get(c) ?? 0) + 1);
+  }
+  const TOP = new Set([...comboCount.entries()].sort((a, b) => b[1] - a[1]).slice(0, 11).map(([c]) => c));
+  const comboOf = (p: string[]) => { const c = [...p].sort().join(' + '); return TOP.has(c) ? c : 'other'; };
+  const base = categoricalLayer({
+    id: 'plug-types', category: 'fun', icon: '🔌',
+    name: { en: 'Plug types', es: 'Tipos de enchufe' },
+    desc: { en: 'Which plugs and sockets each country uses (types A to O): what adapter to pack.', es: 'Qué enchufes y tomas usa cada país (tipos A a O): qué adaptador llevar.' },
+    keywords: 'plug socket adapter travel electricity enchufe toma adaptador viaje electricidad',
+    credit: credit(f),
+    options: [{ id: 'type', type: 'select', label: { en: 'Show', es: 'Mostrar' }, default: 'all',
+      choices: [{ value: 'all', label: { en: 'Every combination', es: 'Todas las combinaciones' } },
+        ...letters.map((k) => ({ value: k, label: { en: cats[k].en, es: cats[k].es } }))] }],
+    values: (inst) => {
+      const m = mode(inst);
+      return Object.fromEntries(Object.entries(DS.data).map(([id, d]) => {
+        const p = plugsOf(d);
+        if (!p.length) return [id, null];
+        return [id, m === 'all' ? comboOf(p) : p.includes(m) ? m : null];
+      }));
+    },
+    categories: (inst): Record<string, CategoryInfo> => {
+      const m = mode(inst);
+      if (m !== 'all') return { [m]: { en: cats[m]?.en ?? m, es: cats[m]?.es ?? m, color: '#ffd43b' } };
+      return {
+        ...Object.fromEntries([...TOP].map((c) => [c, { en: c, es: c }])),
+        other: { en: 'Other combinations', es: 'Otras combinaciones', color: '#adb5bd' },
+      };
+    },
+    order: (inst) => (mode(inst) === 'all' ? [...[...TOP].sort((a, b) => (comboCount.get(b) ?? 0) - (comboCount.get(a) ?? 0)), 'other'] : [mode(inst)]),
+    maxLegend: 12,
+    note: { en: 'C (Europlug) fits most E, F, J, K and L sockets too.', es: 'El C (europeo) también entra en la mayoría de tomas E, F, J, K y L.' },
+  });
+  return {
+    ...base,
+    info(id) {
+      const iso = LC.data.meta[id]?.iso;
+      const p = plugsOf(DS.data[id] ?? (iso ? DS.data[iso] : undefined));
+      return [{ label: es() ? 'Enchufes' : 'Plugs', value: p.length ? p.map((k) => `${es() ? 'tipo' : 'type'} ${k}`).join(', ') : t('noData') }];
     },
   };
 }
@@ -362,6 +419,11 @@ function cardRows(id: string): InfoRow[] {
   if (f.highest_point_name) f.highest_point_name = { ...f.highest_point_name, label_en: 'Highest point', label_es: 'Punto más alto' };
   add('🏔️', 'highest_point_name', d.highest_point_name ? `${d.highest_point_name}${d.highest_point_m ? `, ${fmtNumber(d.highest_point_m as number)} m` : ''}` : null);
   add('🚗', 'driving_side', d.driving_side ? cat('driving_side', d.driving_side) : null);
+  if (d.mains_volts || d.plug_types) {
+    const hz = d.mains_frequency === '50-60' ? '50/60 Hz' : d.mains_frequency ? `${d.mains_frequency} Hz` : '';
+    const plugs = ((d.plug_types as string[]) ?? []).join(', ');
+    rows.push({ icon: '🔌', label: es() ? 'Electricidad' : 'Electricity', value: [d.mains_volts as string, hz, plugs && `${es() ? 'enchufes' : 'plugs'} ${plugs}`].filter(Boolean).join(' · ') });
+  }
   add('🍽️', 'national_dish', d.national_dish as string);
   add('☎️', 'calling_code', d.calling_code as string);
   add('🌐', 'tld', d.tld as string);
@@ -380,6 +442,8 @@ export default async function register(app: App, shell: Shell) {
   }
   const defs: LayerDef[] = [languagesLayer(), nationalAnimals(), flagsLayer, nationalColours()];
   if (Object.keys(MINERALS).length) defs.push(mineralsLayer());
+  const plugs = plugsLayer();
+  if (plugs) defs.push(plugs);
   if (DS.fields.organizations) defs.push(pickerLayer({ id: 'organizations', field: 'organizations', icon: '🤝', cat: 'political',
     colors: ['#4dabf7', '#ff922b', '#cc5de8'], defaultPick: 'nato',
     name: { en: 'Alliances and organisations', es: 'Alianzas y organizaciones' },
