@@ -8,7 +8,7 @@ import { categoricalLayer, numericLayer, type CategoryInfo } from '../choropleth
 import { LC } from '../context';
 import type { App } from '../../app/app';
 import type { Shell } from '../../ui/shell';
-import type { CategoryId, InfoRow, LayerDef, LayerInstance, RenderCtx } from '../types';
+import type { CategoryId, I18nText, InfoRow, LayerDef, LayerInstance, RenderCtx } from '../types';
 
 interface Field {
   label_en: string; label_es: string; group: string; type: 'number' | 'category' | 'list' | 'boolean' | 'text';
@@ -121,18 +121,67 @@ function languagesLayer(): LayerDef {
   });
 }
 
-function pickerLayer(o: { id: string; field: string; icon: string; cat: CategoryId; name: { en: string; es: string }; desc: { en: string; es: string }; keywords: string; color: string }): LayerDef {
+interface PickerSpec {
+  id: string; field: string; icon: string; cat: CategoryId; name: I18nText; desc: I18nText; keywords: string;
+  /** Colours for: only the first pick, only the second, both. */
+  colors: [string, string, string];
+  what: I18nText; listLabel: I18nText; defaultPick?: string;
+}
+
+/** "Which countries are in X?" for list fields (organisations, resources), with an optional second
+ *  pick to compare two (only X, only Y, both). */
+function pickerLayer(o: PickerSpec): LayerDef {
   const f = DS.fields[o.field];
   const cats = f?.categories ?? {};
   const counts = new Map<string, number>();
   for (const d of Object.values(DS.data)) for (const v of (d[o.field] as string[] | undefined) ?? []) counts.set(v, (counts.get(v) ?? 0) + 1);
-  const keys = Object.keys(cats).sort((a, b) => (counts.get(b) ?? 0) - (counts.get(a) ?? 0));
-  return categoricalLayer({
+  const keys = Object.keys(cats).filter((k) => counts.get(k)).sort((a, b) => (counts.get(b) ?? 0) - (counts.get(a) ?? 0));
+  const has = (d: Record<string, unknown> | undefined, k: string) => !!k && ((d?.[o.field] as string[] | undefined) ?? []).includes(k);
+  const picks = (inst: LayerInstance) => {
+    const a = String(inst.options.pick ?? '');
+    const b = String(inst.options.vs ?? '');
+    return { a, b: b && b !== a ? b : '' };
+  };
+  const membership = (inst: LayerInstance) => {
+    const { a, b } = picks(inst);
+    const out: Record<string, 'a' | 'b' | 'both' | null> = {};
+    for (const [id, d] of Object.entries(DS.data)) {
+      const inA = has(d, a), inB = has(d, b);
+      out[id] = inA && inB ? 'both' : inA ? 'a' : inB ? 'b' : null;
+    }
+    return out;
+  };
+  const choice = (k: string) => ({ value: k, label: { en: `${cats[k].en} (${counts.get(k)})`, es: `${cats[k].es} (${counts.get(k)})` } });
+  const base = categoricalLayer({
     id: o.id, category: o.cat, icon: o.icon, name: o.name, desc: o.desc, keywords: o.keywords, credit: f ? credit(f) : '',
-    options: [{ id: 'pick', type: 'select', label: { en: 'Choose', es: 'Elige' }, default: keys[0] ?? '', choices: keys.map((k) => ({ value: k, label: { en: cats[k].en, es: cats[k].es } })) }],
-    values: (inst) => Object.fromEntries(Object.entries(DS.data).map(([id, d]) => [id, ((d[o.field] as string[]) ?? []).includes(String(inst.options.pick)) ? 'yes' : null])),
-    categories: (inst) => ({ yes: { en: cats[String(inst.options.pick)]?.en ?? '', es: cats[String(inst.options.pick)]?.es ?? '', color: o.color } }),
+    options: [
+      { id: 'pick', type: 'select', label: o.what, default: o.defaultPick && keys.includes(o.defaultPick) ? o.defaultPick : keys[0] ?? '', choices: keys.map(choice) },
+      { id: 'vs', type: 'select', label: { en: 'Compare with', es: 'Comparar con' }, default: '',
+        choices: [{ value: '', label: { en: 'Nothing', es: 'Nada' } }, ...keys.map(choice)] },
+    ],
+    values: membership,
+    categories: (inst): Record<string, CategoryInfo> => {
+      const { a, b } = picks(inst);
+      const n = { a: 0, b: 0, both: 0 };
+      for (const v of Object.values(membership(inst))) if (v) n[v]++;
+      const A = cats[a] ?? { en: a, es: a }, B = cats[b] ?? { en: b, es: b };
+      return b ? {
+        a: { en: `Only ${A.en} (${n.a})`, es: `Solo ${A.es} (${n.a})`, color: o.colors[0] },
+        both: { en: `Both (${n.both})`, es: `Ambas (${n.both})`, color: o.colors[2] },
+        b: { en: `Only ${B.en} (${n.b})`, es: `Solo ${B.es} (${n.b})`, color: o.colors[1] },
+      } : { a: { en: `${A.en} (${n.a})`, es: `${A.es} (${n.a})`, color: o.colors[0] } };
+    },
+    order: ['a', 'both', 'b'],
   });
+  return {
+    ...base,
+    info(id) {
+      const iso = LC.data.meta[id]?.iso;
+      const d = DS.data[id] ?? (iso ? DS.data[iso] : undefined);
+      const list = ((d?.[o.field] as string[] | undefined) ?? []).filter((k) => cats[k]).sort((x, y) => (counts.get(y) ?? 0) - (counts.get(x) ?? 0));
+      return [{ label: tx(o.listLabel), value: list.length ? list.map((k) => tx(cats[k])).join(', ') : es() ? 'Ninguna' : 'None' }];
+    },
+  };
 }
 
 function mineralsLayer(): LayerDef {
@@ -331,13 +380,17 @@ export default async function register(app: App, shell: Shell) {
   }
   const defs: LayerDef[] = [languagesLayer(), nationalAnimals(), flagsLayer, nationalColours()];
   if (Object.keys(MINERALS).length) defs.push(mineralsLayer());
-  if (DS.fields.organizations) defs.push(pickerLayer({ id: 'organizations', field: 'organizations', icon: '🤝', cat: 'political', color: '#4dabf7',
+  if (DS.fields.organizations) defs.push(pickerLayer({ id: 'organizations', field: 'organizations', icon: '🤝', cat: 'political',
+    colors: ['#4dabf7', '#ff922b', '#cc5de8'], defaultPick: 'nato',
     name: { en: 'Alliances and organisations', es: 'Alianzas y organizaciones' },
-    desc: { en: 'Members of the EU, NATO, G20, BRICS, OPEC, ASEAN, the Commonwealth and more.', es: 'Miembros de la UE, OTAN, G20, BRICS, OPEP, ASEAN, la Commonwealth y más.' },
-    keywords: 'eu nato g7 g20 brics opec asean commonwealth ue otan opep' }));
-  if (DS.fields.natural_resources) defs.push(pickerLayer({ id: 'resource-finder', field: 'natural_resources', icon: '💎', cat: 'economy', color: '#f59f00',
+    desc: { en: 'Members of the EU, NATO, the UN, G20, BRICS, OPEC, ASEAN, the African Union, the Commonwealth and more. Pick one, or compare two.', es: 'Miembros de la UE, la OTAN, la ONU, el G20, los BRICS, la OPEP, la ASEAN, la Unión Africana, la Commonwealth y más. Elige una o compara dos.' },
+    what: { en: 'Organisation', es: 'Organización' }, listLabel: { en: 'Member of', es: 'Miembro de' },
+    keywords: 'alliance organisation organization member eu nato un g7 g20 brics opec asean commonwealth alianza organizacion miembro ue otan onu opep' }));
+  if (DS.fields.natural_resources) defs.push(pickerLayer({ id: 'resource-finder', field: 'natural_resources', icon: '💎', cat: 'economy',
+    colors: ['#f59f00', '#22b8cf', '#e64980'],
     name: { en: 'Where is it found?', es: '¿Dónde se encuentra?' },
-    desc: { en: 'Pick a natural resource and see every country that has it.', es: 'Elige un recurso natural y mira todos los países que lo tienen.' },
+    desc: { en: 'Pick a natural resource and see every country that has it, or compare two.', es: 'Elige un recurso natural y mira todos los países que lo tienen, o compara dos.' },
+    what: { en: 'Resource', es: 'Recurso' }, listLabel: { en: 'Natural resources', es: 'Recursos naturales' },
     keywords: 'resource mineral find recurso mineral' }));
   for (const [key, f] of Object.entries(DS.fields)) {
     const l = fieldLayer(key, f);

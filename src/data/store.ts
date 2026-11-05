@@ -1,7 +1,7 @@
 // Loads and caches map data. Countries come in three levels of detail (110m, 50m, 10m); the
 // renderer picks one by zoom and whether the view is moving, and culls by bounding box.
 import { feature, mesh } from 'topojson-client';
-import { geoBounds, geoDistance } from 'd3-geo';
+import { geoArea, geoBounds, geoDistance } from 'd3-geo';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry, LineString, MultiLineString } from 'geojson';
 
@@ -89,11 +89,24 @@ export function chunkLines(m: MultiLineString, maxPts = 160): Line[] {
 
 export function shapesFrom<P = Record<string, unknown>>(topo: Topology, objectName: string, idOf?: (p: P, i: number) => string): Shape<P>[] {
   const fc = feature(topo, topo.objects[objectName] as GeometryCollection) as unknown as { features: Feature<Geometry, P>[] };
-  return fc.features.filter((f) => f.geometry).map((f, i) => ({
-    id: idOf ? idOf(f.properties, i) : String(f.id ?? i),
-    feature: f,
-    bbox: bboxOf(f),
-  }));
+  return fc.features.filter((f) => f.geometry).map((f, i) => {
+    fixWinding(f.geometry);
+    return { id: idOf ? idOf(f.properties, i) : String(f.id ?? i), feature: f, bbox: bboxOf(f) };
+  });
+}
+
+/**
+ * d3 draws polygons on the sphere, so a ring wound the wrong way means "the whole Earth except this
+ * shape" and would paint over the map. No shape in this app is bigger than a hemisphere, so any
+ * polygon that is gets its rings reversed.
+ */
+export function fixWinding(g: Geometry): void {
+  const flip = (rings: number[][][]) => rings.map((r) => r.slice().reverse());
+  if (g.type === 'Polygon') {
+    if (geoArea(g) > 2 * Math.PI) g.coordinates = flip(g.coordinates);
+  } else if (g.type === 'MultiPolygon') {
+    g.coordinates = g.coordinates.map((p) => (geoArea({ type: 'Polygon', coordinates: p }) > 2 * Math.PI ? flip(p) : p));
+  }
 }
 
 export class DataStore {

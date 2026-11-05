@@ -5,7 +5,7 @@ import { geoArea, geoCentroid, geoContains, type GeoStream } from 'd3-geo';
 import { feature as topoFeature, mesh } from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry, MultiLineString, Polygon } from 'geojson';
-import { loadJSON } from '../data/store';
+import { loadJSON, fixWinding } from '../data/store';
 import { continentSwatch, mix } from '../engine/colors';
 import { t, lang, fmtNumber } from '../app/i18n';
 import { TimeBar } from '../ui/timebar';
@@ -134,6 +134,7 @@ export class PangeaMode {
     const feats = (topoFeature(topo, obj) as unknown as { features: Feature<Geometry, { p: number | string; b: number; e: number }>[] }).features;
     return feats.map((f, i) => {
       const g = f.geometry;
+      fixWinding(g);
       const polys = g.type === 'Polygon' ? [g.coordinates] : g.type === 'MultiPolygon' ? g.coordinates : [];
       let lines: Float64Array[] = [];
       if (withLines) {

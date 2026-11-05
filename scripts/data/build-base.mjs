@@ -20,6 +20,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import mapshaper from 'mapshaper';
+import { rewindTopology } from './winding.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const CACHE = path.join(ROOT, '.cache/ne');
@@ -138,6 +139,24 @@ async function countries() {
   console.log('countries:', Object.keys(meta).length);
 }
 
+// NAME_EN comes from Wikidata and has a few bad links (Mazatlán labelled "Juarez", Tampico
+// "Ciudad Madero Tamaulipas", Cuttack "Pochinki"). Trust it only when it resembles the place's
+// name in some other language; otherwise use Natural Earth's own NAME.
+const LATIN_NAMES = ['NAME', 'NAMEASCII', 'NAME_ES', 'NAME_DE', 'NAME_FR', 'NAME_PT', 'NAME_IT', 'NAME_NL', 'NAME_SV', 'NAME_PL', 'NAME_HU', 'NAME_ID', 'NAME_VI', 'NAME_TR'];
+const fold = (s) => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z]/g, '');
+const EN_EXONYMS = new Set(['Gothenburg', 'Ghent', 'Bokhtar', 'Konye-Urgench']);
+function englishName(p) {
+  const en = p.NAME_EN;
+  if (!en || en === p.NAME) return p.NAME;
+  if (EN_EXONYMS.has(en)) return en;
+  const a = fold(en);
+  const ok = LATIN_NAMES.some((k) => {
+    const b = fold(p[k]);
+    return b.length > 1 && (a.includes(b) || b.includes(a) || (a.length >= 4 && a.slice(0, 4) === b.slice(0, 4)));
+  });
+  return ok ? en : p.NAME;
+}
+
 async function cities() {
   await countryIds();
   const fc = await readJSON(src('ne_10m_populated_places'));
@@ -149,7 +168,7 @@ async function cities() {
     const cap = p.ADM0CAP === 1 || /Admin-0 capital/.test(cls) ? 2 : /Admin-1 (region )?capital/.test(cls) ? 1 : 0;
     const flags = (p.MEGACITY ? 1 : 0) | (p.WORLDCITY ? 2 : 0) | (/alt/.test(cls) ? 4 : 0);
     const [lon, lat] = f.geometry.coordinates;
-    const name = p.NAME_EN || p.NAME;
+    const name = englishName(p);
     rows.push([round(lon), round(lat), name, p.NAME_ES && p.NAME_ES !== name ? p.NAME_ES : 0,
       p.POP_MAX || 0, Math.round((p.MIN_ZOOM || 10) * 10) / 10, cap, flags, countryId(p.ADM0_A3),
       p.TIMEZONE || 0, p.ADM1NAME || 0]);
@@ -249,5 +268,17 @@ if (process.argv.includes('--download')) {
     if (only.length && !only.includes(name)) continue;
     console.log(`== ${name}`);
     await fn();
+  }
+  // Simplification can flip a tiny ring inside out, which d3 then draws as "everything but this
+  // shape". Rewind any polygon bigger than a hemisphere.
+  for (const dir of [BASE, LAYERS]) {
+    for (const name of await fs.readdir(dir)) {
+      if (!name.endsWith('.json')) continue;
+      const file = path.join(dir, name);
+      const topo = JSON.parse(await fs.readFile(file, 'utf8'));
+      if (topo.type !== 'Topology') continue;
+      const fixed = rewindTopology(topo);
+      if (fixed.length) { await fs.writeFile(file, JSON.stringify(topo)); console.log(`rewound ${name}: ${fixed.join(', ')}`); }
+    }
   }
 }
