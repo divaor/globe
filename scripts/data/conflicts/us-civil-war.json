@@ -1,0 +1,442 @@
+{
+  "id": "us-civil-war",
+  "name": { "en": "American Civil War", "es": "Guerra de Secesión de Estados Unidos" },
+  "icon": "⚔️",
+  "era": "modern",
+  "region": { "en": "United States", "es": "Estados Unidos" },
+  "start": "1860-12-20",
+  "end": "1865-05-26",
+  "summary": {
+    "en": "Eleven slave states broke away to form the Confederacy and fought the United States for four years. The Union won, slavery was abolished, and more Americans died than in any other war.",
+    "es": "Once estados esclavistas se separaron para formar la Confederación y lucharon durante cuatro años contra Estados Unidos. Venció la Unión, se abolió la esclavitud y murieron más estadounidenses que en ninguna otra guerra."
+  },
+  "camera": { "lon": -86, "lat": 36, "zoom": 3.2 },
+  "sides": [
+    { "id": "union", "name": { "en": "Union (United States)", "es": "Unión (Estados Unidos)" }, "color": "#2e6f9e",
+      "members": {
+        "en": "The United States: the free states of the North and West, the slave states of Delaware, Maryland, Kentucky and Missouri, which stayed loyal, and from 1863 West Virginia",
+        "es": "Estados Unidos: los estados libres del Norte y el Oeste, los estados esclavistas de Delaware, Maryland, Kentucky y Misuri, que se mantuvieron leales, y desde 1863 Virginia Occidental"
+      } },
+    { "id": "csa", "name": { "en": "Confederacy (Confederate States)", "es": "Confederación (Estados Confederados)" }, "color": "#5d6d7e",
+      "members": {
+        "en": "Eleven slave states that seceded: South Carolina, Mississippi, Florida, Alabama, Georgia, Louisiana, Texas, Virginia, Arkansas, North Carolina and Tennessee, allied with several nations of the Indian Territory",
+        "es": "Once estados esclavistas que se separaron: Carolina del Sur, Misisipi, Florida, Alabama, Georgia, Luisiana, Texas, Virginia, Arkansas, Carolina del Norte y Tennessee, aliados con varias naciones del Territorio Indio"
+      },
+      "derive": { "minus": [{ "ref": "csa_claim" }, { "cur": "union" }] } }
+  ],
+  "casualties": {
+    "total": [620000, 750000],
+    "note": {
+      "en": "Soldiers who died from all causes, about two-thirds of them from disease. The long-accepted count of about 620,000 (some 360,000 Union and 260,000 Confederate dead) was revised in 2011 to about 750,000 using census data; some estimates are higher still.",
+      "es": "Soldados muertos por todas las causas, unas dos terceras partes por enfermedad. La cifra aceptada durante mucho tiempo, unos 620 000 (unos 360 000 de la Unión y 260 000 confederados), se elevó en 2011 a unos 750 000 a partir de datos censales; algunas estimaciones son aún mayores."
+    }
+  },
+  "casualtiesNote": {
+    "en": "It remains the deadliest war in American history. About 50,000 civilians died, and tens of thousands of people who had escaped slavery died of disease in crowded refugee camps. Some 56,000 soldiers died as prisoners of war, on both sides.",
+    "es": "Sigue siendo la guerra más mortífera de la historia de Estados Unidos. Murieron unos 50 000 civiles, y decenas de miles de personas que habían escapado de la esclavitud murieron de enfermedades en campamentos de refugiados abarrotados. Unos 56 000 soldados murieron como prisioneros de guerra, en ambos bandos."
+  },
+  "defs": {
+    "union_states": { "a1": "USA", "except": ["Alaska", "Hawaii", "South Carolina", "Mississippi", "Florida", "Alabama", "Georgia", "Louisiana", "Texas", "Virginia", "Arkansas", "North Carolina", "Tennessee", "Oklahoma"] },
+    "deep_south": { "a1": "USA", "names": ["South Carolina", "Mississippi", "Florida", "Alabama", "Georgia", "Louisiana", "Texas"] },
+    "upper_south": { "a1": "USA", "names": ["Virginia", "Arkansas", "North Carolina", "Tennessee"] },
+    "indian_territory": { "and": [{ "a1": "USA", "names": ["Oklahoma"] }, { "poly": [[-100.0, 37.5], [-94.0, 37.5], [-94.0, 33.0], [-100.0, 33.0]] }] },
+    "csa_claim": [{ "ref": "deep_south" }, { "ref": "upper_south" }, { "ref": "indian_territory" }],
+    "key_west": { "and": [{ "a1": "USA", "names": ["Florida"] }, { "circle": [-81.78, 24.56], "km": 12 }] },
+    "fort_pickens": { "and": [{ "a1": "USA", "names": ["Florida"] }, { "circle": [-87.29, 30.33], "km": 8 }] },
+    "pensacola": { "and": [{ "a1": "USA", "names": ["Florida"] }, { "circle": [-87.22, 30.42], "km": 20 }] },
+    "st_augustine": { "and": [{ "a1": "USA", "names": ["Florida"] }, { "circle": [-81.31, 29.9], "km": 15 }] },
+    "fernandina": { "and": [{ "a1": "USA", "names": ["Florida"] }, { "circle": [-81.46, 30.67], "km": 12 }] },
+    "jacksonville": { "and": [{ "a1": "USA", "names": ["Florida"] }, { "circle": [-81.66, 30.33], "km": 20 }] },
+    "fl_1862": [{ "ref": "key_west" }, { "ref": "fort_pickens" }, { "ref": "st_augustine" }, { "ref": "fernandina" }],
+    "fl_1862b": [{ "ref": "key_west" }, { "ref": "pensacola" }, { "ref": "st_augustine" }, { "ref": "fernandina" }],
+    "fl_1864": [{ "ref": "fl_1862b" }, { "ref": "jacksonville" }],
+    "arlington": { "and": [{ "a1": "USA", "names": ["Virginia"] }, { "circle": [-77.15, 38.85], "km": 20 }] },
+    "fort_monroe": { "and": [{ "a1": "USA", "names": ["Virginia"] }, { "circle": [-76.3, 37.02], "km": 10 }] },
+    "eastern_shore": { "and": [{ "a1": "USA", "names": ["Virginia"] }, { "poly": [[-76.15, 38.05], [-75.15, 38.05], [-75.65, 37.0], [-76.15, 37.0]] }] },
+    "norfolk": { "and": [{ "a1": "USA", "names": ["Virginia"] }, { "poly": [[-76.75, 36.98], [-75.95, 36.98], [-75.85, 36.55], [-76.75, 36.55]] }] },
+    "va_tidewater": { "and": [{ "a1": "USA", "names": ["Virginia"] }, { "poly": [[-77.2, 37.62], [-76.3, 37.62], [-75.95, 36.55], [-77.25, 36.55], [-77.35, 37.1], [-77.3, 37.3], [-77.2, 37.45]] }] },
+    "nc_sounds": { "and": [{ "a1": "USA", "names": ["North Carolina"] }, { "poly": [[-77.25, 35.7], [-77.2, 35.0], [-76.4, 34.6], [-75.3, 35.15], [-75.45, 36.3], [-76.1, 36.25], [-76.85, 36.0]] }] },
+    "sc_sea_islands": { "and": [{ "a1": "USA", "names": ["South Carolina"] }, { "poly": [[-81.0, 32.05], [-80.5, 32.0], [-80.25, 32.45], [-80.6, 32.65], [-80.95, 32.45]] }] },
+    "new_orleans": { "and": [{ "a1": "USA", "names": ["Louisiana"] }, { "poly": [[-91.35, 30.65], [-90.5, 30.4], [-89.6, 30.2], [-88.8, 29.3], [-89.4, 28.8], [-90.6, 28.95], [-91.1, 29.6]] }] },
+    "la_south": { "and": [{ "a1": "USA", "names": ["Louisiana"] }, { "poly": [[-92.2, 30.5], [-91.3, 30.65], [-91.0, 29.6], [-91.5, 29.2], [-92.3, 29.4]] }] },
+    "tn1862": { "and": [{ "a1": "USA", "names": ["Tennessee"] }, { "poly": [[-89.6, 36.75], [-85.6, 36.75], [-85.8, 35.9], [-86.3, 34.95], [-88.25, 34.95], [-88.4, 35.5], [-88.9, 35.9], [-89.5, 36.1]] }] },
+    "west_tn": { "and": [{ "a1": "USA", "names": ["Tennessee"] }, { "poly": [[-90.5, 36.7], [-88.0, 36.7], [-88.0, 34.9], [-90.5, 34.9]] }] },
+    "corinth": { "and": [{ "a1": "USA", "names": ["Mississippi"] }, { "poly": [[-88.9, 35.05], [-88.05, 35.05], [-88.05, 34.55], [-88.9, 34.55]] }] },
+    "helena": { "and": [{ "a1": "USA", "names": ["Arkansas"] }, { "circle": [-90.59, 34.53], "km": 25 }] },
+    "la_westbank": { "and": [{ "a1": "USA", "names": ["Louisiana"] }, { "poly": [[-91.65, 33.05], [-91.0, 33.05], [-91.0, 31.9], [-91.65, 31.9]] }] },
+    "miss_corridor": { "land": [[-90.3, 35.05], [-91.2, 34.0], [-91.45, 33.0], [-91.5, 32.0], [-91.85, 31.0], [-91.7, 30.5], [-91.1, 30.0], [-90.6, 30.1], [-90.75, 30.6], [-91.0, 31.0], [-90.95, 31.6], [-90.7, 32.3], [-90.55, 33.0], [-90.3, 34.0], [-89.95, 35.05]] },
+    "tn1863": { "and": [{ "a1": "USA", "names": ["Tennessee"] }, { "poly": [[-90.5, 36.75], [-85.6, 36.75], [-85.6, 34.9], [-90.5, 34.9]] }] },
+    "tn1863b": { "and": [{ "a1": "USA", "names": ["Tennessee"] }, { "poly": [[-90.5, 36.75], [-82.9, 36.75], [-82.9, 34.9], [-90.5, 34.9]] }] },
+    "ar_north": { "and": [{ "a1": "USA", "names": ["Arkansas"] }, { "poly": [[-94.7, 36.6], [-89.6, 36.6], [-90.4, 34.25], [-91.95, 34.15], [-92.4, 34.7], [-94.5, 35.25]] }] },
+    "ok_north": { "and": [{ "ref": "indian_territory" }, { "poly": [[-100.0, 37.5], [-94.0, 37.5], [-94.0, 35.5], [-100.0, 35.6]] }] },
+    "n_alabama": { "and": [{ "a1": "USA", "names": ["Alabama"] }, { "poly": [[-88.3, 35.05], [-85.5, 35.05], [-85.5, 34.45], [-88.3, 34.45]] }] },
+    "n_georgia": { "and": [{ "a1": "USA", "names": ["Georgia"] }, { "poly": [[-85.65, 35.05], [-84.55, 35.05], [-84.05, 34.25], [-84.15, 33.55], [-84.75, 33.5], [-85.35, 34.05]] }] },
+    "mobile_forts": { "and": [{ "a1": "USA", "names": ["Alabama"] }, { "circle": [-88.02, 30.23], "km": 12 }] },
+    "ga_coast": { "and": [{ "a1": "USA", "names": ["Georgia"] }, { "poly": [[-82.0, 32.9], [-80.8, 32.2], [-81.2, 30.9], [-81.9, 31.2]] }] },
+    "carolinas_1865": { "and": [{ "a1": "USA", "names": ["North Carolina", "South Carolina"] }, { "poly": [[-81.0, 32.0], [-80.5, 33.6], [-79.3, 34.5], [-78.6, 35.4], [-78.2, 36.0], [-76.0, 36.6], [-75.3, 35.0], [-78.0, 33.7], [-79.5, 32.6]] }] },
+    "csa1865": [
+      { "a1": "USA", "names": ["Texas"] },
+      { "minus": [{ "a1": "USA", "names": ["Louisiana"] }, { "ref": "new_orleans" }, { "ref": "la_south" }, { "ref": "miss_corridor" }] },
+      { "minus": [{ "a1": "USA", "names": ["Arkansas"] }, { "ref": "ar_north" }, { "ref": "miss_corridor" }] },
+      { "minus": [{ "ref": "indian_territory" }, { "ref": "ok_north" }] },
+      { "minus": [{ "a1": "USA", "names": ["Mississippi"] }, { "ref": "miss_corridor" }] },
+      { "minus": [{ "a1": "USA", "names": ["Alabama"] }, { "ref": "n_alabama" }, { "ref": "mobile_forts" }] },
+      { "minus": [{ "a1": "USA", "names": ["Georgia"] }, { "ref": "n_georgia" }, { "ref": "ga_coast" }] },
+      { "minus": [{ "a1": "USA", "names": ["Florida"] }, { "ref": "fl_1864" }] },
+      { "minus": [{ "a1": "USA", "names": ["North Carolina", "South Carolina"] }, { "ref": "carolinas_1865" }, { "ref": "nc_sounds" }, { "ref": "sc_sea_islands" }] },
+      { "and": [{ "a1": "USA", "names": ["Virginia"] }, { "poly": [[-83.7, 36.5], [-83.7, 37.6], [-80.3, 38.4], [-79.3, 37.75], [-78.95, 37.3], [-78.6, 36.5]] }] }
+    ]
+  },
+  "steps": [
+    {
+      "date": "1861-02-04",
+      "title": { "en": "Secession", "es": "La secesión" },
+      "text": {
+        "en": "After Abraham Lincoln, who opposes the spread of slavery, wins the 1860 election, seven slave states of the Deep South secede and form the Confederate States of America.",
+        "es": "Después de que Abraham Lincoln, contrario a la expansión de la esclavitud, gane las elecciones de 1860, siete estados esclavistas del Sur profundo se separan y forman los Estados Confederados de América."
+      },
+      "details": {
+        "en": "Slavery was the root of the crisis. Nearly four million people were enslaved in the South, and their forced labour grew the cotton that made the region rich. Lincoln's Republican Party wanted to keep slavery out of the western territories, and Southern leaders feared it would one day be abolished. South Carolina left the Union on 20 December 1860, followed within six weeks by Mississippi, Florida, Alabama, Georgia, Louisiana and Texas. On 4 February 1861 their delegates met in Montgomery, Alabama, and founded the Confederacy, with Jefferson Davis as president; its vice-president would declare that it rested on 'the great truth that the negro is not equal to the white man'. Federal forts and arsenals across the South were seized.",
+        "es": "La esclavitud estaba en la raíz de la crisis. En el Sur vivían esclavizadas casi cuatro millones de personas, cuyo trabajo forzado producía el algodón que enriquecía a la región. El Partido Republicano de Lincoln quería impedir la esclavitud en los territorios del Oeste, y los dirigentes sureños temían que algún día fuera abolida. Carolina del Sur abandonó la Unión el 20 de diciembre de 1860 y, en seis semanas, la siguieron Misisipi, Florida, Alabama, Georgia, Luisiana y Texas. El 4 de febrero de 1861 sus delegados se reunieron en Montgomery (Alabama) y fundaron la Confederación, con Jefferson Davis como presidente; su vicepresidente proclamaría que se basaba en 'la gran verdad de que el negro no es igual al blanco'. Los fuertes y arsenales federales de todo el Sur fueron ocupados."
+      },
+      "control": {
+        "union": [{ "ref": "union_states" }, { "ref": "upper_south" }, { "ref": "fort_pickens" }, { "ref": "key_west" }],
+        "csa": { "minus": [{ "ref": "deep_south" }, { "ref": "fort_pickens" }, { "ref": "key_west" }] }
+      },
+      "events": [
+        { "icon": "🗳️", "date": "1860-11-06", "text": { "en": "Abraham Lincoln elected president", "es": "Abraham Lincoln, elegido presidente" }, "at": [-89.65, 39.8] },
+        { "icon": "🏛️", "date": "1860-12-20", "text": { "en": "South Carolina secedes", "es": "Carolina del Sur se separa" }, "at": [-81.03, 34.0] },
+        { "icon": "🏛️", "text": { "en": "The Confederacy is founded at Montgomery; Jefferson Davis is its president", "es": "Se funda la Confederación en Montgomery; Jefferson Davis es su presidente" }, "at": [-86.3, 32.38] }
+      ],
+      "camera": { "lon": -88, "lat": 35, "zoom": 3.2 }
+    },
+    {
+      "date": "1861-04-12",
+      "title": { "en": "Fort Sumter", "es": "Fort Sumter" },
+      "text": {
+        "en": "Confederate guns bombard Fort Sumter in Charleston harbour, and its garrison surrenders. Lincoln calls for 75,000 volunteers, and four more slave states join the Confederacy.",
+        "es": "Los cañones confederados bombardean Fort Sumter, en el puerto de Charleston, y su guarnición se rinde. Lincoln pide 75 000 voluntarios, y otros cuatro estados esclavistas se unen a la Confederación."
+      },
+      "details": {
+        "en": "Fort Sumter, on an island at the mouth of Charleston harbour, was one of the few federal posts left in the seceded states. When Lincoln sent supplies, General P. G. T. Beauregard opened fire at dawn on 12 April 1861. After 34 hours of bombardment Major Robert Anderson surrendered; no one had been killed. Lincoln called on the states for troops to put down the rebellion. Virginia, Arkansas, North Carolina and Tennessee refused and seceded between April and June, and the Confederate capital moved to Richmond. Four slave states on the border, Delaware, Maryland, Kentucky and Missouri, stayed in the Union, and the western counties of Virginia broke away to remain loyal.",
+        "es": "Fort Sumter, en una isla a la entrada del puerto de Charleston, era uno de los pocos puestos federales que quedaban en los estados separados. Cuando Lincoln envió suministros, el general P. G. T. Beauregard abrió fuego al amanecer del 12 de abril de 1861. Tras 34 horas de bombardeo, el comandante Robert Anderson se rindió; no había muerto nadie. Lincoln pidió tropas a los estados para sofocar la rebelión. Virginia, Arkansas, Carolina del Norte y Tennessee se negaron y se separaron entre abril y junio, y la capital confederada se trasladó a Richmond. Cuatro estados esclavistas fronterizos, Delaware, Maryland, Kentucky y Misuri, permanecieron en la Unión, y los condados occidentales de Virginia se separaron para seguir siendo leales."
+      },
+      "battles": [
+        { "name": { "en": "Battle of Fort Sumter", "es": "Batalla de Fort Sumter" }, "at": [-79.875, 32.752], "winner": "csa",
+          "casualties": { "union": 0, "csa": 0, "note": { "en": "No one was killed in the bombardment; two Union soldiers died after the surrender, when a gun exploded during the salute to the flag.", "es": "Nadie murió en el bombardeo; dos soldados de la Unión murieron tras la rendición, al estallar un cañón durante el saludo a la bandera." } },
+          "details": { "en": "85 Union soldiers against several thousand Confederates and 43 guns around the harbour.", "es": "85 soldados de la Unión contra varios miles de confederados y 43 cañones alrededor del puerto." } }
+      ],
+      "events": [
+        { "icon": "📢", "date": "1861-04-15", "text": { "en": "Lincoln calls for 75,000 volunteers", "es": "Lincoln pide 75 000 voluntarios" }, "at": [-77.04, 38.9] },
+        { "icon": "🏛️", "date": "1861-04-17", "text": { "en": "Virginia secedes; Richmond becomes the Confederate capital", "es": "Virginia se separa; Richmond se convierte en la capital confederada" }, "at": [-77.44, 37.54] }
+      ],
+      "camera": { "lon": -80, "lat": 35.5, "zoom": 4.5 }
+    },
+    {
+      "date": "1861-07-21",
+      "title": { "en": "Bull Run", "es": "Bull Run" },
+      "text": {
+        "en": "Expecting a quick victory, a Union army marches on Richmond but is routed at Bull Run, near Manassas. Both sides realise the war will be long.",
+        "es": "Esperando una victoria rápida, un ejército de la Unión marcha sobre Richmond, pero es derrotado en Bull Run, cerca de Manassas. Ambos bandos comprenden que la guerra será larga."
+      },
+      "details": {
+        "en": "Northern newspapers cried 'On to Richmond!', and spectators rode out from Washington to watch. General Irvin McDowell's 35,000 raw troops attacked across Bull Run creek on 21 July 1861. The Confederates held, helped by reinforcements brought by train from the Shenandoah Valley and by General Thomas Jackson's brigade, which stood 'like a stone wall'. In the afternoon the Union army broke and fled back to Washington. Lincoln called for long-term volunteers and gave George McClellan the task of building a new army, while the navy tightened the blockade of the Southern coast proclaimed in April, part of General Winfield Scott's 'Anaconda Plan' to strangle the Confederacy.",
+        "es": "Los periódicos del Norte clamaban '¡A Richmond!', y muchos espectadores salieron de Washington para ver la batalla. Los 35 000 soldados bisoños del general Irvin McDowell atacaron al otro lado del arroyo Bull Run el 21 de julio de 1861. Los confederados resistieron, ayudados por refuerzos llegados en tren desde el valle del Shenandoah y por la brigada del general Thomas Jackson, que aguantó 'como un muro de piedra'. Por la tarde, el ejército de la Unión se desbandó y huyó a Washington. Lincoln pidió voluntarios por largo tiempo y encargó a George McClellan formar un nuevo ejército, mientras la marina estrechaba el bloqueo de la costa sureña proclamado en abril, parte del 'Plan Anaconda' del general Winfield Scott para asfixiar a la Confederación."
+      },
+      "control": {
+        "union": [{ "ref": "union_states" }, { "ref": "arlington" }, { "ref": "fort_monroe" }, { "ref": "fort_pickens" }, { "ref": "key_west" }]
+      },
+      "moves": [
+        { "side": "union", "path": [[-77.03, 38.88], [-77.25, 38.84], [-77.46, 38.82]], "label": { "en": "McDowell", "es": "McDowell" } },
+        { "side": "csa", "path": [[-78.16, 39.18], [-77.95, 38.95], [-77.58, 38.8]], "label": { "en": "Johnston, by train", "es": "Johnston, en tren" } }
+      ],
+      "battles": [
+        { "name": { "en": "First Battle of Bull Run", "es": "Primera batalla de Bull Run" }, "at": [-77.523, 38.815], "winner": "csa",
+          "casualties": { "union": 481, "csa": 387, "note": { "en": "Killed. Union: 1,011 wounded and 1,216 missing. Confederates: 1,582 wounded and 13 missing.", "es": "Muertos. Unión: 1011 heridos y 1216 desaparecidos. Confederados: 1582 heridos y 13 desaparecidos." } },
+          "details": { "en": "The Confederates call it the First Battle of Manassas. About 18,000 men were engaged on each side.", "es": "Los confederados la llaman primera batalla de Manassas. Combatieron unos 18 000 hombres por bando." } }
+      ],
+      "events": [
+        { "icon": "⚓", "date": "1861-04-19", "text": { "en": "Union naval blockade of the Southern coast", "es": "Bloqueo naval de la Unión a la costa del Sur" }, "at": [-77.0, 33.6] },
+        { "icon": "🏛️", "date": "1861-06", "text": { "en": "Unionists in western Virginia form a loyal government at Wheeling", "es": "Los unionistas del oeste de Virginia forman un gobierno leal en Wheeling" }, "at": [-80.72, 40.06] }
+      ],
+      "camera": { "lon": -78, "lat": 38.5, "zoom": 6 }
+    },
+    {
+      "date": "1862-04-06",
+      "title": { "en": "Shiloh", "es": "Shiloh" },
+      "text": {
+        "en": "In the west, Ulysses S. Grant takes Forts Henry and Donelson and much of Tennessee. Surprised at Shiloh, his army holds on and wins, but some 23,000 men are killed, wounded or missing in two days.",
+        "es": "En el oeste, Ulysses S. Grant toma los fuertes Henry y Donelson y buena parte de Tennessee. Sorprendido en Shiloh, su ejército resiste y vence, pero unos 23 000 hombres mueren, caen heridos o desaparecen en dos días."
+      },
+      "details": {
+        "en": "Using the rivers as highways, Grant's army and navy gunboats captured Fort Henry on the Tennessee and Fort Donelson on the Cumberland in February 1862, taking about 12,000 prisoners; the Confederates abandoned Kentucky and Nashville, and Grant became famous for demanding 'unconditional surrender'. On 6 April General Albert Sidney Johnston attacked Grant's camps near Shiloh church and drove them back to the river, but Johnston bled to death on the field. Reinforced overnight, the Union counter-attacked on the 7th and won. Shiloh showed the true cost of the war. Meanwhile a Union victory at Pea Ridge secured Missouri, and Union forces seized footholds on the Atlantic coast, from the Carolina sounds to Port Royal and northern Florida.",
+        "es": "Usando los ríos como autopistas, el ejército de Grant y las cañoneras de la marina tomaron el fuerte Henry, en el Tennessee, y el fuerte Donelson, en el Cumberland, en febrero de 1862, con unos 12 000 prisioneros; los confederados abandonaron Kentucky y Nashville, y Grant se hizo famoso por exigir una 'rendición incondicional'. El 6 de abril, el general Albert Sidney Johnston atacó los campamentos de Grant junto a la iglesia de Shiloh y los hizo retroceder hasta el río, pero Johnston murió desangrado en el campo de batalla. Reforzada durante la noche, la Unión contraatacó el día 7 y venció. Shiloh mostró el verdadero coste de la guerra. Mientras tanto, la victoria de la Unión en Pea Ridge aseguró Misuri, y las fuerzas de la Unión ocuparon puntos de apoyo en la costa atlántica, de los estrechos de Carolina a Port Royal y el norte de Florida."
+      },
+      "control": {
+        "union": [{ "ref": "union_states" }, { "ref": "arlington" }, { "ref": "fort_monroe" }, { "ref": "eastern_shore" }, { "ref": "nc_sounds" }, { "ref": "sc_sea_islands" }, { "ref": "fl_1862" }, { "ref": "tn1862" }]
+      },
+      "moves": [
+        { "side": "union", "path": [[-89.18, 37.0], [-88.6, 37.07], [-88.15, 36.75], [-88.0, 36.52]], "label": { "en": "Grant", "es": "Grant" } },
+        { "side": "union", "path": [[-87.95, 36.45], [-88.1, 36.0], [-88.2, 35.6], [-88.3, 35.2]] },
+        { "side": "union", "path": [[-86.78, 36.16], [-87.03, 35.61], [-87.7, 35.3], [-88.22, 35.2]], "label": { "en": "Buell", "es": "Buell" } },
+        { "side": "csa", "path": [[-88.52, 34.93], [-88.42, 35.04], [-88.36, 35.12]], "label": { "en": "A. S. Johnston", "es": "A. S. Johnston" } }
+      ],
+      "battles": [
+        { "name": { "en": "Battle of Fort Donelson", "es": "Batalla del fuerte Donelson" }, "at": [-87.86, 36.49], "date": "1862-02-16", "winner": "union",
+          "casualties": { "union": 507, "csa": 327, "note": { "en": "Killed. About 12,400 Confederates surrendered.", "es": "Muertos. Se rindieron unos 12 400 confederados." } } },
+        { "name": { "en": "Battle of Shiloh", "es": "Batalla de Shiloh" }, "at": [-88.342, 35.139], "winner": "union",
+          "casualties": { "union": 1754, "csa": 1728, "note": { "en": "Killed. Union: 8,408 wounded and 2,885 captured or missing. Confederates: 8,012 wounded and 959 missing.", "es": "Muertos. Unión: 8408 heridos y 2885 prisioneros o desaparecidos. Confederados: 8012 heridos y 959 desaparecidos." } },
+          "details": { "en": "6–7 April 1862: about 67,000 Union soldiers against 45,000 Confederates.", "es": "6 y 7 de abril de 1862: unos 67 000 soldados de la Unión contra 45 000 confederados." } }
+      ],
+      "camera": { "lon": -86.5, "lat": 35.3, "zoom": 4.6 }
+    },
+    {
+      "date": "1862-04-25",
+      "title": { "en": "New Orleans", "es": "Nueva Orleans" },
+      "text": {
+        "en": "Admiral David Farragut's fleet runs past the forts below New Orleans at night. The South's largest city and port surrenders without a fight, and the Union begins to take the Mississippi.",
+        "es": "La flota del almirante David Farragut fuerza de noche el paso de los fuertes que defienden Nueva Orleans. La mayor ciudad y puerto del Sur se rinde sin combatir, y la Unión empieza a adueñarse del Misisipi."
+      },
+      "details": {
+        "en": "Forts Jackson and St. Philip guarded the Mississippi about 110 km below New Orleans. After mortar boats had shelled them for six days, Farragut's warships dashed past in the dark early on 24 April 1862, through fire rafts and a Confederate flotilla. The next day they anchored off the city, where crowds jeered as cotton and ships burned on the levees. General Benjamin Butler's troops occupied New Orleans on 1 May and Baton Rouge soon after. In Virginia, General George McClellan had shipped his 120,000-strong Army of the Potomac to the peninsula between the York and James rivers and was advancing slowly on Richmond.",
+        "es": "Los fuertes Jackson y St. Philip vigilaban el Misisipi unos 110 km río abajo de Nueva Orleans. Tras seis días de bombardeo con lanchas de mortero, los buques de Farragut los rebasaron en la oscuridad la madrugada del 24 de abril de 1862, entre balsas incendiarias y una flotilla confederada. Al día siguiente fondearon frente a la ciudad, donde la multitud los abucheaba mientras el algodón y los barcos ardían en los muelles. Las tropas del general Benjamin Butler ocuparon Nueva Orleans el 1 de mayo y poco después Baton Rouge. En Virginia, el general George McClellan había trasladado por mar su Ejército del Potomac, de 120 000 hombres, a la península entre los ríos York y James, y avanzaba lentamente hacia Richmond."
+      },
+      "control": {
+        "union": [{ "ref": "union_states" }, { "ref": "arlington" }, { "ref": "fort_monroe" }, { "ref": "eastern_shore" }, { "ref": "nc_sounds" }, { "ref": "sc_sea_islands" }, { "ref": "fl_1862" }, { "ref": "tn1862" }, { "ref": "new_orleans" }]
+      },
+      "moves": [
+        { "side": "union", "path": [[-89.1, 28.95], [-89.45, 29.36], [-89.85, 29.75], [-90.05, 29.93]], "label": { "en": "Farragut's fleet", "es": "La flota de Farragut" } },
+        { "side": "union", "path": [[-77.05, 38.8], [-76.6, 38.2], [-76.25, 37.3], [-76.35, 37.05], [-76.6, 37.25], [-77.1, 37.5]], "label": { "en": "McClellan", "es": "McClellan" } }
+      ],
+      "battles": [
+        { "name": { "en": "Forts Jackson and St. Philip", "es": "Fuertes Jackson y St. Philip" }, "at": [-89.45, 29.36], "date": "1862-04-24", "winner": "union",
+          "details": { "en": "Farragut lost one warship; the garrisons of the forts mutinied and surrendered on 28 April.", "es": "Farragut perdió un buque; las guarniciones de los fuertes se amotinaron y se rindieron el 28 de abril." } }
+      ],
+      "events": [
+        { "icon": "🏳️", "date": "1862-04-29", "text": { "en": "New Orleans surrenders", "es": "Nueva Orleans se rinde" }, "at": [-90.07, 29.95] }
+      ],
+      "camera": { "lon": -84, "lat": 33.5, "zoom": 3.8 }
+    },
+    {
+      "date": "1862-09-17",
+      "title": { "en": "Antietam and emancipation", "es": "Antietam y la emancipación" },
+      "text": {
+        "en": "Robert E. Lee drives McClellan away from Richmond and invades Maryland. At Antietam, the bloodiest day in American history, he is stopped, and Lincoln announces the Emancipation Proclamation.",
+        "es": "Robert E. Lee aleja a McClellan de Richmond e invade Maryland. En Antietam, el día más sangriento de la historia estadounidense, es detenido, y Lincoln anuncia la Proclamación de Emancipación."
+      },
+      "details": {
+        "en": "Lee took command of the Army of Northern Virginia in June 1862 and drove McClellan back from the edge of Richmond in the Seven Days Battles, then routed another Union army at Second Bull Run in August. In September he crossed into Maryland, while in the west Braxton Bragg invaded Kentucky. On 17 September McClellan, who had found a copy of Lee's orders, attacked along Antietam Creek near Sharpsburg; by nightfall some 22,700 men had been killed, wounded or captured. Lee retreated to Virginia. Five days later Lincoln issued the preliminary Emancipation Proclamation: from 1 January 1863, enslaved people in areas still in rebellion would be 'forever free'. Britain and France, which had considered recognising the Confederacy, held back.",
+        "es": "Lee tomó el mando del Ejército de Virginia del Norte en junio de 1862 y alejó a McClellan de las puertas de Richmond en las batallas de los Siete Días; en agosto derrotó a otro ejército de la Unión en la segunda batalla de Bull Run. En septiembre entró en Maryland, mientras en el oeste Braxton Bragg invadía Kentucky. El 17 de septiembre, McClellan, que había encontrado una copia de las órdenes de Lee, atacó junto al arroyo Antietam, cerca de Sharpsburg; al caer la noche, unos 22 700 hombres habían muerto, caído heridos o sido capturados. Lee se retiró a Virginia. Cinco días después, Lincoln promulgó la Proclamación de Emancipación preliminar: desde el 1 de enero de 1863, las personas esclavizadas en los territorios aún rebeldes serían 'libres para siempre'. Gran Bretaña y Francia, que habían pensado en reconocer a la Confederación, se contuvieron."
+      },
+      "control": {
+        "union": [{ "ref": "union_states" }, { "ref": "arlington" }, { "ref": "fort_monroe" }, { "ref": "eastern_shore" }, { "ref": "norfolk" }, { "ref": "nc_sounds" }, { "ref": "sc_sea_islands" }, { "ref": "fl_1862b" }, { "ref": "tn1862" }, { "ref": "west_tn" }, { "ref": "corinth" }, { "ref": "helena" }, { "ref": "new_orleans" }]
+      },
+      "moves": [
+        { "side": "csa", "path": [[-77.55, 38.75], [-77.45, 39.1], [-77.42, 39.4], [-77.72, 39.46]], "label": { "en": "Lee invades Maryland", "es": "Lee invade Maryland" } },
+        { "side": "union", "path": [[-77.04, 38.92], [-77.3, 39.2], [-77.55, 39.42], [-77.7, 39.48]], "label": { "en": "McClellan", "es": "McClellan" } },
+        { "side": "csa", "path": [[-85.31, 35.05], [-85.6, 35.9], [-85.75, 36.9], [-85.0, 37.6]], "label": { "en": "Bragg invades Kentucky", "es": "Bragg invade Kentucky" } }
+      ],
+      "battles": [
+        { "name": { "en": "Seven Days Battles", "es": "Batallas de los Siete Días" }, "at": [-77.3, 37.5], "date": "1862-07-01", "winner": "csa",
+          "casualties": { "union": 1734, "csa": 3494, "note": { "en": "Killed, 25 June – 1 July 1862. Union: 8,066 wounded and 6,055 missing. Confederates: 15,758 wounded and 952 missing.", "es": "Muertos, del 25 de junio al 1 de julio de 1862. Unión: 8066 heridos y 6055 desaparecidos. Confederados: 15 758 heridos y 952 desaparecidos." } } },
+        { "name": { "en": "Battle of Antietam", "es": "Batalla de Antietam" }, "at": [-77.745, 39.473], "winner": "union",
+          "casualties": { "union": 2108, "csa": 1546, "note": { "en": "Killed. Union: 9,549 wounded and 753 captured or missing. Confederates: 7,752 wounded and 1,018 captured or missing.", "es": "Muertos. Unión: 9549 heridos y 753 prisioneros o desaparecidos. Confederados: 7752 heridos y 1018 prisioneros o desaparecidos." } },
+          "details": { "en": "About 54,000 Union soldiers against 31,000 Confederates. The Confederates call it the Battle of Sharpsburg.", "es": "Unos 54 000 soldados de la Unión contra 31 000 confederados. Los confederados la llaman batalla de Sharpsburg." } }
+      ],
+      "events": [
+        { "icon": "📜", "date": "1862-09-22", "text": { "en": "Lincoln issues the preliminary Emancipation Proclamation", "es": "Lincoln promulga la Proclamación de Emancipación preliminar" }, "at": [-77.04, 38.9] }
+      ],
+      "camera": { "lon": -81.5, "lat": 37, "zoom": 4.4 }
+    },
+    {
+      "date": "1863-05-06",
+      "title": { "en": "Fredericksburg and Chancellorsville", "es": "Fredericksburg y Chancellorsville" },
+      "text": {
+        "en": "Lee crushes Union attacks at Fredericksburg in December 1862 and outwits a much larger army at Chancellorsville in May 1863, but loses his best general, Stonewall Jackson.",
+        "es": "Lee aplasta los ataques de la Unión en Fredericksburg en diciembre de 1862 y burla a un ejército mucho mayor en Chancellorsville en mayo de 1863, pero pierde a su mejor general, Stonewall Jackson."
+      },
+      "details": {
+        "en": "At Fredericksburg General Ambrose Burnside sent wave after wave of Union soldiers up the open slope below Marye's Heights, where Confederates firing from behind a stone wall shot them down. In the spring General Joseph Hooker's 130,000 men crossed the Rappahannock to outflank Lee, but Lee divided his army, less than half Hooker's size, and sent Jackson on a march around the Union right, which routed it. Riding back in the dark, Jackson was shot by his own men and died eight days later. In the west the Union won at Stones River in Tennessee. On 1 January 1863 the Emancipation Proclamation had taken effect, and the Union began to recruit Black soldiers: by 1865 about 180,000 had served.",
+        "es": "En Fredericksburg, el general Ambrose Burnside lanzó oleada tras oleada de soldados de la Unión cuesta arriba por la ladera despejada bajo las alturas de Marye, donde los confederados, parapetados tras un muro de piedra, los abatían. En primavera, los 130 000 hombres del general Joseph Hooker cruzaron el Rappahannock para rodear a Lee, pero este dividió su ejército, de menos de la mitad que el de Hooker, y envió a Jackson a una marcha alrededor del flanco derecho de la Unión, que lo desbarató. Al volver a caballo en la oscuridad, Jackson fue herido por sus propios hombres y murió ocho días después. En el oeste, la Unión venció en Stones River (Tennessee). El 1 de enero de 1863 había entrado en vigor la Proclamación de Emancipación, y la Unión empezó a reclutar soldados negros: en 1865 habían servido unos 180 000."
+      },
+      "control": {
+        "union": [{ "ref": "union_states" }, { "ref": "arlington" }, { "ref": "fort_monroe" }, { "ref": "eastern_shore" }, { "ref": "norfolk" }, { "ref": "nc_sounds" }, { "ref": "sc_sea_islands" }, { "ref": "fl_1862b" }, { "ref": "tn1862" }, { "ref": "west_tn" }, { "ref": "corinth" }, { "ref": "helena" }, { "ref": "new_orleans" }, { "ref": "la_westbank" }]
+      },
+      "moves": [
+        { "side": "union", "path": [[-77.48, 38.37], [-77.78, 38.48], [-77.72, 38.36], [-77.65, 38.31]], "label": { "en": "Hooker", "es": "Hooker" } },
+        { "side": "csa", "path": [[-77.6, 38.28], [-77.7, 38.27], [-77.75, 38.31], [-77.7, 38.32]], "label": { "en": "Jackson's flank march", "es": "La marcha de flanqueo de Jackson" } },
+        { "side": "union", "path": [[-86.78, 36.16], [-86.6, 36.0], [-86.45, 35.88]], "label": { "en": "Rosecrans", "es": "Rosecrans" } }
+      ],
+      "battles": [
+        { "name": { "en": "Battle of Fredericksburg", "es": "Batalla de Fredericksburg" }, "at": [-77.46, 38.3], "date": "1862-12-13", "winner": "csa",
+          "casualties": { "union": 1284, "csa": 608, "note": { "en": "Killed. Union: 9,600 wounded and 1,769 captured or missing. Confederates: 4,116 wounded and 653 captured or missing.", "es": "Muertos. Unión: 9600 heridos y 1769 prisioneros o desaparecidos. Confederados: 4116 heridos y 653 prisioneros o desaparecidos." } } },
+        { "name": { "en": "Battle of Stones River", "es": "Batalla de Stones River" }, "at": [-86.43, 35.868], "date": "1863-01-02", "winner": "union",
+          "casualties": { "union": 1677, "csa": 1294, "note": { "en": "Killed, 31 December 1862 – 2 January 1863. Union: 7,543 wounded and 4,686 captured or missing. Confederates: 7,945 wounded and 2,500 captured or missing.", "es": "Muertos, del 31 de diciembre de 1862 al 2 de enero de 1863. Unión: 7543 heridos y 4686 prisioneros o desaparecidos. Confederados: 7945 heridos y 2500 prisioneros o desaparecidos." } } },
+        { "name": { "en": "Battle of Chancellorsville", "es": "Batalla de Chancellorsville" }, "at": [-77.648, 38.31], "date": "1863-05-03", "winner": "csa",
+          "casualties": { "union": 1606, "csa": 1665, "note": { "en": "Killed in the campaign. Union: 9,762 wounded and 6,919 captured or missing. Confederates: 9,081 wounded and 2,018 captured or missing.", "es": "Muertos en la campaña. Unión: 9762 heridos y 6919 prisioneros o desaparecidos. Confederados: 9081 heridos y 2018 prisioneros o desaparecidos." } } }
+      ],
+      "events": [
+        { "icon": "📜", "date": "1863-01-01", "text": { "en": "The Emancipation Proclamation takes effect", "es": "Entra en vigor la Proclamación de Emancipación" }, "at": [-77.04, 38.9] },
+        { "icon": "⚱️", "date": "1863-05-10", "text": { "en": "Stonewall Jackson dies of his wounds", "es": "Stonewall Jackson muere de sus heridas" }, "at": [-77.38, 38.12] }
+      ],
+      "camera": { "lon": -81.5, "lat": 37.2, "zoom": 5 }
+    },
+    {
+      "date": "1863-07-04",
+      "title": { "en": "Gettysburg and Vicksburg", "es": "Gettysburg y Vicksburg" },
+      "text": {
+        "en": "Lee's invasion of the North is beaten at Gettysburg on 3 July. The next day Vicksburg surrenders to Grant after a siege: the Union controls the Mississippi and the Confederacy is cut in two.",
+        "es": "La invasión del Norte de Lee es derrotada en Gettysburg el 3 de julio. Al día siguiente, Vicksburg se rinde a Grant tras un asedio: la Unión controla el Misisipi y la Confederación queda partida en dos."
+      },
+      "details": {
+        "en": "Lee marched into Pennsylvania hoping that a victory on Northern soil would break the Union's will. At Gettysburg, from 1 to 3 July 1863, General George Meade's army held the high ground; on the last day some 12,500 Confederates crossed open fields in Pickett's Charge and were cut down. About 50,000 men were killed, wounded or captured, more than in any other battle of the war. Far to the west, Grant had crossed the Mississippi below Vicksburg, marched inland and, after five victories, besieged the fortress city. Its starving soldiers and civilians, many sheltering in caves, surrendered on 4 July, and Port Hudson fell five days later. In New York, riots against the draft in mid-July turned into attacks on Black residents, several of whom were murdered.",
+        "es": "Lee entró en Pensilvania con la esperanza de que una victoria en suelo del Norte quebrara la voluntad de la Unión. En Gettysburg, del 1 al 3 de julio de 1863, el ejército del general George Meade dominó las alturas; el último día, unos 12 500 confederados cruzaron campo abierto en la carga de Pickett y fueron abatidos. Unos 50 000 hombres murieron, cayeron heridos o fueron capturados, más que en ninguna otra batalla de la guerra. Muy al oeste, Grant había cruzado el Misisipi aguas abajo de Vicksburg, marchado tierra adentro y, tras cinco victorias, sitiado la ciudad fortaleza. Sus soldados y civiles, hambrientos y muchos refugiados en cuevas, se rindieron el 4 de julio, y Port Hudson cayó cinco días después. En Nueva York, los disturbios contra el reclutamiento de mediados de julio se convirtieron en ataques contra los vecinos negros, varios de los cuales fueron asesinados."
+      },
+      "control": {
+        "union": [{ "ref": "union_states" }, { "ref": "arlington" }, { "ref": "fort_monroe" }, { "ref": "eastern_shore" }, { "ref": "norfolk" }, { "ref": "nc_sounds" }, { "ref": "sc_sea_islands" }, { "ref": "fl_1862b" }, { "ref": "tn1863" }, { "ref": "corinth" }, { "ref": "new_orleans" }, { "ref": "miss_corridor" }]
+      },
+      "moves": [
+        { "side": "csa", "path": [[-77.47, 38.32], [-78.0, 38.75], [-78.16, 39.18], [-77.73, 39.62], [-77.6, 39.9], [-77.27, 39.84]], "label": { "en": "Lee invades Pennsylvania", "es": "Lee invade Pensilvania" } },
+        { "side": "union", "path": [[-91.07, 32.45], [-91.2, 32.1], [-91.1, 31.97], [-90.98, 31.96], [-90.42, 32.26], [-90.2, 32.3], [-90.55, 32.31], [-90.82, 32.35]], "label": { "en": "Grant", "es": "Grant" } }
+      ],
+      "battles": [
+        { "name": { "en": "Battle of Gettysburg", "es": "Batalla de Gettysburg" }, "at": [-77.226, 39.811], "date": "1863-07-03", "winner": "union",
+          "casualties": { "union": 3155, "csa": 4708, "note": { "en": "Killed. Union: 14,531 wounded and 5,369 captured or missing. Confederate losses are less certain: about 23,000–28,000 in all.", "es": "Muertos. Unión: 14 531 heridos y 5369 prisioneros o desaparecidos. Las pérdidas confederadas son menos seguras: unas 23 000–28 000 en total." } },
+          "details": { "en": "1–3 July 1863: about 100,000 Union soldiers against some 70,000 Confederates.", "es": "Del 1 al 3 de julio de 1863: unos 100 000 soldados de la Unión contra unos 70 000 confederados." } },
+        { "name": { "en": "Siege of Vicksburg", "es": "Sitio de Vicksburg" }, "at": [-90.851, 32.344], "winner": "union",
+          "casualties": { "union": 766, "csa": 3202, "note": { "en": "Union: 766 killed and 3,793 wounded. Confederates: 3,202 killed, wounded or missing, and 29,495 surrendered.", "es": "Unión: 766 muertos y 3793 heridos. Confederados: 3202 muertos, heridos o desaparecidos, y 29 495 rendidos." } },
+          "details": { "en": "18 May – 4 July 1863.", "es": "Del 18 de mayo al 4 de julio de 1863." } }
+      ],
+      "events": [
+        { "icon": "🏳️", "date": "1863-07-09", "text": { "en": "Port Hudson surrenders: the whole Mississippi is in Union hands", "es": "Se rinde Port Hudson: todo el Misisipi queda en manos de la Unión" }, "at": [-91.27, 30.68] },
+        { "icon": "💀", "date": "1863-07-13", "text": { "en": "New York draft riots: mobs attack Black New Yorkers", "es": "Disturbios contra el reclutamiento en Nueva York: turbas atacan a vecinos negros" }, "at": [-73.98, 40.75] }
+      ],
+      "camera": { "lon": -84, "lat": 36.5, "zoom": 3.6 }
+    },
+    {
+      "date": "1863-11-25",
+      "title": { "en": "Chattanooga", "es": "Chattanooga" },
+      "text": {
+        "en": "After a Confederate victory at Chickamauga, a Union army is besieged in Chattanooga. Grant arrives, opens a supply line and drives Bragg off Missionary Ridge, opening the way into Georgia.",
+        "es": "Tras la victoria confederada de Chickamauga, un ejército de la Unión queda sitiado en Chattanooga. Grant llega, abre una línea de suministro y expulsa a Bragg de Missionary Ridge, lo que abre el camino a Georgia."
+      },
+      "details": {
+        "en": "General William Rosecrans had manoeuvred Bragg out of Tennessee, but at Chickamauga, in north Georgia, Bragg, reinforced by Longstreet's corps from Virginia, broke the Union line on 20 September; only General George Thomas's stand, which earned him the name 'Rock of Chickamauga', saved the army. Besieged and short of food in Chattanooga, it was rescued by Grant, who opened a supply route, the 'Cracker Line', and brought in troops from Virginia and Mississippi. On 24–25 November Union soldiers took Lookout Mountain and stormed Missionary Ridge, partly without orders, sending Bragg's army reeling back into Georgia. Union troops also held Knoxville and took Little Rock, Arkansas. On 19 November Lincoln had spoken at Gettysburg of 'a new birth of freedom'.",
+        "es": "El general William Rosecrans había expulsado a Bragg de Tennessee a fuerza de maniobras, pero en Chickamauga, en el norte de Georgia, Bragg, reforzado con el cuerpo de Longstreet llegado de Virginia, rompió la línea de la Unión el 20 de septiembre; solo la resistencia del general George Thomas, que le valió el apodo de 'la Roca de Chickamauga', salvó al ejército. Sitiado y escaso de comida en Chattanooga, fue rescatado por Grant, que abrió una ruta de suministro, la 'Cracker Line', y trajo tropas de Virginia y Misisipi. El 24 y el 25 de noviembre, los soldados de la Unión tomaron Lookout Mountain y asaltaron Missionary Ridge, en parte sin haber recibido la orden, y el ejército de Bragg huyó en desbandada a Georgia. Las tropas de la Unión también controlaban Knoxville y tomaron Little Rock, en Arkansas. El 19 de noviembre, Lincoln había hablado en Gettysburg de 'un nuevo nacimiento de la libertad'."
+      },
+      "control": {
+        "union": [{ "ref": "union_states" }, { "ref": "arlington" }, { "ref": "fort_monroe" }, { "ref": "eastern_shore" }, { "ref": "norfolk" }, { "ref": "nc_sounds" }, { "ref": "sc_sea_islands" }, { "ref": "fl_1862b" }, { "ref": "tn1863b" }, { "ref": "corinth" }, { "ref": "new_orleans" }, { "ref": "miss_corridor" }, { "ref": "ar_north" }, { "ref": "ok_north" }]
+      },
+      "moves": [
+        { "side": "union", "path": [[-86.43, 35.85], [-86.0, 35.4], [-85.6, 35.05], [-85.35, 34.97]], "label": { "en": "Rosecrans", "es": "Rosecrans" } },
+        { "side": "union", "path": [[-90.05, 35.15], [-88.5, 34.95], [-86.6, 34.75], [-85.45, 35.03]], "label": { "en": "Sherman", "es": "Sherman" } }
+      ],
+      "battles": [
+        { "name": { "en": "Battle of Chickamauga", "es": "Batalla de Chickamauga" }, "at": [-85.26, 34.92], "date": "1863-09-20", "winner": "csa",
+          "casualties": { "union": 1657, "csa": 2312, "note": { "en": "Killed. Union: 9,756 wounded and 4,757 captured or missing. Confederates: 14,674 wounded and 1,468 captured or missing.", "es": "Muertos. Unión: 9756 heridos y 4757 prisioneros o desaparecidos. Confederados: 14 674 heridos y 1468 prisioneros o desaparecidos." } } },
+        { "name": { "en": "Battles for Chattanooga", "es": "Batallas de Chattanooga" }, "at": [-85.29, 35.035], "winner": "union",
+          "casualties": { "union": 753, "note": { "en": "Union: 753 killed, 4,722 wounded and 349 missing. Confederates: an estimated 6,000–8,000 killed, wounded or captured.", "es": "Unión: 753 muertos, 4722 heridos y 349 desaparecidos. Confederados: entre 6000 y 8000 muertos, heridos o prisioneros, según estimaciones." } } }
+      ],
+      "events": [
+        { "icon": "🏳️", "date": "1863-09-10", "text": { "en": "Union troops take Little Rock", "es": "Las tropas de la Unión toman Little Rock" }, "at": [-92.29, 34.75] },
+        { "icon": "📜", "date": "1863-11-19", "text": { "en": "Lincoln's Gettysburg Address", "es": "Discurso de Lincoln en Gettysburg" }, "at": [-77.23, 39.82] }
+      ],
+      "camera": { "lon": -86.5, "lat": 35.2, "zoom": 4.4 }
+    },
+    {
+      "date": "1864-09-02",
+      "title": { "en": "Atlanta and Sherman's march", "es": "Atlanta y la marcha de Sherman" },
+      "text": {
+        "en": "Grant, now the Union's commander, pins Lee down at Petersburg while William T. Sherman takes Atlanta in September 1864. Sherman then marches to the sea, wrecking everything of military use in his path.",
+        "es": "Grant, ahora al mando de la Unión, inmoviliza a Lee en Petersburg mientras Sherman toma Atlanta en septiembre de 1864. Después, Sherman marcha hacia el mar destrozando a su paso todo lo que pueda servir a la guerra."
+      },
+      "details": {
+        "en": "In May 1864 Grant attacked Lee in the Wilderness, at Spotsylvania and at Cold Harbor, losing tens of thousands of men but never retreating, and then besieged Petersburg, the railway hub that supplied Richmond. Sherman fought his way from Chattanooga to Atlanta, which fell on 2 September, helping Lincoln win re-election in November. Leaving Atlanta in flames, Sherman's 62,000 men cut loose across Georgia, living off the land and wrecking railways, farms and plantations on a front 100 km wide, while thousands of enslaved people followed the army to freedom. They reached Savannah on 21 December. In Tennessee, Hood's Confederate army was destroyed at Franklin and Nashville. Prisoners suffered terribly on both sides: at Andersonville, Georgia, nearly 13,000 Union prisoners died.",
+        "es": "En mayo de 1864, Grant atacó a Lee en Wilderness, en Spotsylvania y en Cold Harbor, perdiendo decenas de miles de hombres pero sin retroceder nunca, y después sitió Petersburg, el nudo ferroviario que abastecía Richmond. Sherman se abrió paso combatiendo desde Chattanooga hasta Atlanta, que cayó el 2 de septiembre, lo que ayudó a Lincoln a ser reelegido en noviembre. Dejando Atlanta en llamas, los 62 000 hombres de Sherman cruzaron Georgia sin líneas de suministro, viviendo sobre el terreno y destrozando ferrocarriles, granjas y plantaciones en un frente de 100 km de ancho, mientras miles de esclavizados seguían al ejército hacia la libertad. Llegaron a Savannah el 21 de diciembre. En Tennessee, el ejército confederado de Hood fue destruido en Franklin y Nashville. Los prisioneros sufrieron terriblemente en ambos bandos: en Andersonville (Georgia) murieron casi 13 000 prisioneros de la Unión."
+      },
+      "control": {
+        "union": [{ "ref": "union_states" }, { "ref": "arlington" }, { "ref": "eastern_shore" }, { "ref": "va_tidewater" }, { "ref": "nc_sounds" }, { "ref": "sc_sea_islands" }, { "ref": "fl_1864" }, { "ref": "tn1863b" }, { "ref": "new_orleans" }, { "ref": "la_south" }, { "ref": "miss_corridor" }, { "ref": "ar_north" }, { "ref": "ok_north" }, { "ref": "n_alabama" }, { "ref": "n_georgia" }, { "ref": "mobile_forts" }]
+      },
+      "moves": [
+        { "side": "union", "path": [[-85.31, 35.04], [-84.97, 34.77], [-84.94, 34.58], [-84.58, 33.98], [-84.42, 33.78]], "label": { "en": "Sherman", "es": "Sherman" } },
+        { "side": "union", "path": [[-84.35, 33.72], [-83.23, 33.08], [-81.95, 32.8], [-81.13, 32.1]], "label": { "en": "March to the Sea (Nov–Dec)", "es": "Marcha hacia el mar (nov.–dic.)" } },
+        { "side": "union", "path": [[-78.0, 38.47], [-77.75, 38.32], [-77.6, 38.2], [-77.29, 37.59], [-77.36, 37.27]], "label": { "en": "Grant", "es": "Grant" } },
+        { "side": "csa", "path": [[-84.6, 33.6], [-85.5, 34.2], [-87.68, 34.8], [-86.87, 35.92], [-86.8, 36.06]], "label": { "en": "Hood (Nov–Dec)", "es": "Hood (nov.–dic.)" } }
+      ],
+      "battles": [
+        { "name": { "en": "Battle of the Wilderness", "es": "Batalla de Wilderness" }, "at": [-77.756, 38.318], "date": "1864-05-06", "winner": "none",
+          "result": { "en": "Inconclusive, but Grant keeps advancing.", "es": "Indecisa, pero Grant sigue avanzando." },
+          "casualties": { "union": 2246, "csa": 1477, "note": { "en": "Killed. Union: 12,037 wounded and 3,383 captured or missing. Confederates: 7,866 wounded and 1,690 captured or missing.", "es": "Muertos. Unión: 12 037 heridos y 3383 prisioneros o desaparecidos. Confederados: 7866 heridos y 1690 prisioneros o desaparecidos." } } },
+        { "name": { "en": "Atlanta campaign", "es": "Campaña de Atlanta" }, "at": [-84.39, 33.75], "winner": "union",
+          "casualties": { "union": 4423, "csa": 3044, "note": { "en": "Killed in the whole campaign, May–September 1864. Union: 22,822 wounded and 4,442 captured or missing. Confederates: 18,952 wounded and 12,983 captured or missing.", "es": "Muertos en toda la campaña, de mayo a septiembre de 1864. Unión: 22 822 heridos y 4442 prisioneros o desaparecidos. Confederados: 18 952 heridos y 12 983 prisioneros o desaparecidos." } } },
+        { "name": { "en": "Battle of Nashville", "es": "Batalla de Nashville" }, "at": [-86.81, 36.088], "date": "1864-12-16", "winner": "union",
+          "casualties": { "union": 387, "note": { "en": "Union: 387 killed and 2,558 wounded. Confederates: about 6,000 killed, wounded or captured; Hood's army ceased to exist as a fighting force.", "es": "Unión: 387 muertos y 2558 heridos. Confederados: unos 6000 muertos, heridos o prisioneros; el ejército de Hood dejó de existir como fuerza de combate." } } }
+      ],
+      "events": [
+        { "icon": "💀", "date": "1864-04-12", "text": { "en": "Fort Pillow massacre: Confederates kill Black Union soldiers trying to surrender", "es": "Matanza de Fort Pillow: los confederados matan a soldados negros de la Unión que intentaban rendirse" }, "at": [-89.84, 35.63] },
+        { "icon": "⛓️", "text": { "en": "Andersonville prison camp: nearly 13,000 Union prisoners die", "es": "Campo de prisioneros de Andersonville: mueren casi 13 000 prisioneros de la Unión" }, "at": [-84.13, 32.2] },
+        { "icon": "🗳️", "date": "1864-11-08", "text": { "en": "Lincoln re-elected", "es": "Lincoln, reelegido" }, "at": [-77.04, 38.9] },
+        { "icon": "🔥", "date": "1864-11-15", "text": { "en": "Atlanta burns as Sherman leaves", "es": "Atlanta arde cuando Sherman se marcha" }, "at": [-84.36, 33.8] },
+        { "icon": "🏳️", "date": "1864-12-21", "text": { "en": "Sherman takes Savannah", "es": "Sherman toma Savannah" }, "at": [-81.09, 32.08] }
+      ],
+      "camera": { "lon": -82, "lat": 35, "zoom": 4.2 }
+    },
+    {
+      "date": "1865-04-09",
+      "title": { "en": "Appomattox", "es": "Appomattox" },
+      "text": {
+        "en": "Richmond falls, and on 9 April Lee surrenders to Grant at Appomattox Court House. Five days later Lincoln is shot dead in Washington. The last Confederate forces give up by June.",
+        "es": "Richmond cae y, el 9 de abril, Lee se rinde a Grant en Appomattox Court House. Cinco días después, Lincoln es asesinado de un disparo en Washington. Las últimas fuerzas confederadas se rinden en junio."
+      },
+      "details": {
+        "en": "Sherman marched north through the Carolinas, as much of Columbia burned, while Grant stretched Lee's lines until they broke at Five Forks on 1 April 1865. Petersburg and Richmond were abandoned, and Lee's starving army was cut off as it fled west. At Appomattox Court House Grant offered generous terms: Lee's 28,000 men could go home, the officers keeping their side arms and the men their horses. On 14 April the actor John Wilkes Booth, a Confederate sympathiser, shot Lincoln at Ford's Theatre; he died the next morning. Joseph Johnston surrendered in North Carolina on 26 April, and the last Confederate forces west of the Mississippi in June. On 19 June Union troops announced freedom to the enslaved people of Texas, a day now marked as Juneteenth.",
+        "es": "Sherman marchó hacia el norte a través de las Carolinas, mientras ardía buena parte de Columbia, y Grant estiró las líneas de Lee hasta que se rompieron en Five Forks el 1 de abril de 1865. Petersburg y Richmond fueron abandonadas, y el ejército de Lee, hambriento, quedó cortado en su huida hacia el oeste. En Appomattox Court House, Grant ofreció condiciones generosas: los 28 000 hombres de Lee podían volver a casa, los oficiales con sus armas cortas y los soldados con sus caballos. El 14 de abril, el actor John Wilkes Booth, simpatizante confederado, disparó a Lincoln en el teatro Ford; murió a la mañana siguiente. Joseph Johnston se rindió en Carolina del Norte el 26 de abril, y las últimas fuerzas confederadas al oeste del Misisipi, en junio. El 19 de junio, las tropas de la Unión anunciaron la libertad a los esclavizados de Texas, una fecha que hoy se conmemora como Juneteenth."
+      },
+      "control": {
+        "union": [{ "ref": "union_states" }, { "minus": [{ "ref": "csa_claim" }, { "ref": "csa1865" }] }],
+        "csa": { "ref": "csa1865" }
+      },
+      "moves": [
+        { "side": "union", "path": [[-81.09, 32.08], [-81.03, 34.0], [-79.9, 34.6], [-78.88, 35.05], [-77.99, 35.38], [-78.6, 35.76]], "label": { "en": "Sherman through the Carolinas", "es": "Sherman por las Carolinas" } },
+        { "side": "csa", "path": [[-77.4, 37.23], [-77.98, 37.34], [-78.39, 37.3], [-78.77, 37.37]], "label": { "en": "Lee's retreat", "es": "La retirada de Lee" } },
+        { "side": "union", "path": [[-77.45, 37.18], [-78.0, 37.15], [-78.45, 37.24], [-78.74, 37.35]] }
+      ],
+      "battles": [
+        { "name": { "en": "Siege of Petersburg", "es": "Sitio de Petersburg" }, "at": [-77.378, 37.218], "date": "1865-04-02", "winner": "union",
+          "casualties": { "union": 42000, "csa": 28000, "note": { "en": "Estimated killed, wounded and captured over the ten-month siege, June 1864 – April 1865.", "es": "Muertos, heridos y prisioneros estimados en los diez meses de asedio, de junio de 1864 a abril de 1865." } } },
+        { "name": { "en": "Battle of Appomattox Court House", "es": "Batalla de Appomattox Court House" }, "at": [-78.796, 37.378], "winner": "union",
+          "casualties": { "union": 164, "csa": 195, "note": { "en": "Union: 164 killed or wounded. Confederates: 195 killed and 305 wounded; 28,356 surrendered and were sent home on parole.", "es": "Unión: 164 muertos o heridos. Confederados: 195 muertos y 305 heridos; 28 356 se rindieron y fueron enviados a casa bajo palabra." } } }
+      ],
+      "events": [
+        { "icon": "🔥", "date": "1865-04-03", "text": { "en": "Richmond falls; fires set by the retreating Confederates burn its centre", "es": "Cae Richmond; los incendios provocados por los confederados en retirada arrasan su centro" }, "at": [-77.44, 37.54] },
+        { "icon": "⚱️", "date": "1865-04-14", "text": { "en": "Lincoln assassinated at Ford's Theatre", "es": "Lincoln, asesinado en el teatro Ford" }, "at": [-77.026, 38.897] },
+        { "icon": "🏳️", "date": "1865-04-26", "text": { "en": "Johnston surrenders at Bennett Place", "es": "Johnston se rinde en Bennett Place" }, "at": [-78.97, 36.03] },
+        { "icon": "🕊️", "date": "1865-06-19", "text": { "en": "Juneteenth: freedom is announced to the enslaved people of Texas", "es": "Juneteenth: se anuncia la libertad a los esclavizados de Texas" }, "at": [-94.8, 29.3] },
+        { "icon": "📜", "date": "1865-12-06", "text": { "en": "The 13th Amendment abolishes slavery", "es": "La Decimotercera Enmienda pone fin a la esclavitud" }, "at": [-77.0, 38.85] }
+      ],
+      "camera": { "lon": -82, "lat": 35.5, "zoom": 3.9 }
+    }
+  ],
+  "outcome": {
+    "en": "The Union was preserved and slavery was abolished: the 13th Amendment of December 1865 freed some four million people. During Reconstruction formerly enslaved people became citizens and Black men won the vote, but after 1877 Southern states imposed segregation and stripped Black citizens of their rights, a struggle that lasted another century. The war left the federal government far stronger than the states.",
+    "es": "La Unión se mantuvo y la esclavitud fue abolida: la Decimotercera Enmienda, de diciembre de 1865, liberó a unos cuatro millones de personas. Durante la Reconstrucción, las personas antes esclavizadas se convirtieron en ciudadanos y los hombres negros obtuvieron el voto, pero después de 1877 los estados del Sur impusieron la segregación y despojaron de sus derechos a los ciudadanos negros, una lucha que duró otro siglo. La guerra dejó al gobierno federal mucho más fuerte que los estados."
+  },
+  "sources": [
+    { "title": "Wikipedia: American Civil War", "url": "https://en.wikipedia.org/wiki/American_Civil_War" },
+    { "title": "Wikipedia: Battle of Fort Sumter", "url": "https://en.wikipedia.org/wiki/Battle_of_Fort_Sumter" },
+    { "title": "Wikipedia: First Battle of Bull Run", "url": "https://en.wikipedia.org/wiki/First_Battle_of_Bull_Run" },
+    { "title": "Wikipedia: Battle of Shiloh", "url": "https://en.wikipedia.org/wiki/Battle_of_Shiloh" },
+    { "title": "Wikipedia: Capture of New Orleans", "url": "https://en.wikipedia.org/wiki/Capture_of_New_Orleans" },
+    { "title": "Wikipedia: Battle of Antietam", "url": "https://en.wikipedia.org/wiki/Battle_of_Antietam" },
+    { "title": "Wikipedia: Emancipation Proclamation", "url": "https://en.wikipedia.org/wiki/Emancipation_Proclamation" },
+    { "title": "Wikipedia: Battle of Chancellorsville", "url": "https://en.wikipedia.org/wiki/Battle_of_Chancellorsville" },
+    { "title": "Wikipedia: Battle of Gettysburg", "url": "https://en.wikipedia.org/wiki/Battle_of_Gettysburg" },
+    { "title": "Wikipedia: Siege of Vicksburg", "url": "https://en.wikipedia.org/wiki/Siege_of_Vicksburg" },
+    { "title": "Wikipedia: Chattanooga campaign", "url": "https://en.wikipedia.org/wiki/Chattanooga_campaign" },
+    { "title": "Wikipedia: Atlanta campaign", "url": "https://en.wikipedia.org/wiki/Atlanta_campaign" },
+    { "title": "Wikipedia: Sherman's March to the Sea", "url": "https://en.wikipedia.org/wiki/Sherman%27s_March_to_the_Sea" },
+    { "title": "Wikipedia: Andersonville Prison", "url": "https://en.wikipedia.org/wiki/Andersonville_Prison" },
+    { "title": "Wikipedia: Battle of Appomattox Court House", "url": "https://en.wikipedia.org/wiki/Battle_of_Appomattox_Court_House" },
+    { "title": "Wikipedia: Assassination of Abraham Lincoln", "url": "https://en.wikipedia.org/wiki/Assassination_of_Abraham_Lincoln" }
+  ]
+}

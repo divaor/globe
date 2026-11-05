@@ -38,11 +38,11 @@ the wrong way, a battle in the wrong place). Historical maps exist for these yea
 | `region` | where, in a few words |
 | `start`, `end` | dates of the conflict itself |
 | `summary` | 1–2 sentences for the list |
-| `camera` | `{ "lon", "lat", "zoom" }`: zoom 1 = whole globe, 2–3 = a continent, 4–6 = a country |
+| `camera` | `{ "lon", "lat", "zoom" }`: zoom 1 = whole globe, 2–3 = a continent, 4–6 = a country, up to 30 for a front or a siege |
 | `sides` | 2–8 sides: `{ "id", "name", "color": "#rrggbb", "members"?, "derive"? }` |
 | `casualties` | optional overall `{ "<side>" or "total": n or [low, high], "note"? }` |
 | `casualtiesNote` | optional text about the overall human cost |
-| `defs` | optional named areas reused by the steps (`{ "ref": "name" }`) |
+| `defs` | optional named areas reused by the steps (`{ "ref": "name" }`); they are worked out once, so they can't use `prev` or `cur` |
 | `steps` | at least 3; see below |
 | `outcome` | 2–4 sentences: what changed for good |
 | `sources` | `[{ "title", "url" }]`, the pages you used (Wikipedia is fine) |
@@ -57,8 +57,8 @@ the wrong way, a battle in the wrong place). Historical maps exist for these yea
 | `details` | optional, 60–180 words, shown when the reader asks for more |
 | `control` | territory of the sides at this date; sides left out keep their previous territory; `null` = none |
 | `moves` | arrows: `{ "side", "path": [[lon, lat], ...], "label"? }`, in marching order |
-| `battles` | `{ "name", "at": [lon, lat], "date"?, "winner": side or "none", "casualties"?, "result"?, "details"? }` |
-| `events` | `{ "icon", "text", "at"?: [lon, lat], "date"? }`: declarations of war, treaties, deaths of leaders, massacres, famines... |
+| `battles` | `{ "name", "at": [lon, lat], "date"?, "winner": side or "none", "casualties"?, "result"?, "details"? }`; they pop up in date order (undated ones at the step's date) |
+| `events` | `{ "icon", "text", "at"?: [lon, lat], "date"? }`: declarations of war, treaties, deaths of leaders, massacres, famines..., also shown in date order |
 | `deaths` | optional cumulative death toll so far (n or [low, high]); only when a source gives one |
 | `camera` | optional; where to look from this step on |
 | `aftermath` | `true` for steps after the end of the fighting that show the result (new borders, partitions) |
@@ -94,6 +94,10 @@ later step gives it territory again.
 
 Tips:
 
+- Don't mix a country's code with its own provinces in one area (`["TUR", { "a1": "TUR", ... }]`, or
+  `"TUR"` minus some Turkish provinces): the two outlines differ slightly, which leaves hairline gaps and
+  slivers along coasts and borders, and can crash the geometry library. When any part of a side uses a
+  country's provinces, write the whole country as `{ "a1": "TUR" }` (all its provinces) too.
 - Build fronts from real pieces: the part of a country behind a front line is
   `{ "and": ["RUS", { "poly": [ ...front line points..., then far behind it ] }] }`.
 - Use `prev` for gains and losses: `[{ "prev": true }, "FRA"]`, `{ "minus": [{ "prev": true }, "ITA"] }`.

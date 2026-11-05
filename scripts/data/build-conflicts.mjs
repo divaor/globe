@@ -23,7 +23,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import pc from 'polygon-clipping';
-import { feature } from 'topojson-client';
+import { feature, quantize } from 'topojson-client';
 import { topology } from 'topojson-server';
 import { presimplify, simplify, sphericalTriangleArea } from 'topojson-simplify';
 import { geoArea, geoCircle, geoGraticule10, geoOrthographic, geoPath } from 'd3-geo';
@@ -96,6 +96,43 @@ const snapshots = new Map(); // year -> Map(name -> mp)
 function snapshotYears() {
   return readJSON(path.join(DATA, 'history/index.json')).snapshots.map((s) => s.year);
 }
+// Some historical shapes cross ±180° (the Russian Empire, the USSR, Fiji...): their rings jump from
+// 180 to -180, which in the plane is a band around the whole world. Unwrap such polygons so their
+// longitudes run on past ±180, then cut them into the -180..180 window.
+export function splitAntimeridian(mp) {
+  const out = [];
+  const unwrap = (r) => {
+    const o = [[r[0][0], r[0][1]]];
+    for (let i = 1; i < r.length; i++) {
+      let x = r[i][0];
+      const px = o[i - 1][0];
+      while (x - px > 180) x -= 360;
+      while (x - px < -180) x += 360;
+      o.push([x, r[i][1]]);
+    }
+    return o;
+  };
+  for (const poly of mp) {
+    if (!poly.some((r) => r.some((pt, i) => i && Math.abs(pt[0] - r[i - 1][0]) > 180))) { out.push(poly); continue; }
+    const outer = unwrap(poly[0]);
+    // A ring around a pole doesn't close once unwrapped: leave such polygons as they are.
+    if (Math.abs(outer[0][0] - outer[outer.length - 1][0]) > 1e-9) { out.push(poly); continue; }
+    const xs = outer.map((pt) => pt[0]), lo = Math.min(...xs), hi = Math.max(...xs);
+    // Holes go to the copy of themselves that lies inside the outer ring's span.
+    const holes = poly.slice(1).map((r) => {
+      const h = unwrap(r);
+      const k = [0, 360, -360].find((d) => h[0][0] + d >= lo && h[0][0] + d <= hi) ?? 0;
+      return h.map(([x, y]) => [x + k, y]);
+    });
+    for (const shift of [-360, 0, 360]) {
+      if (hi <= -180 + shift || lo >= 180 + shift) continue;
+      const box = [[[-180 + shift, -90], [180 + shift, -90], [180 + shift, 90], [-180 + shift, 90], [-180 + shift, -90]]];
+      for (const part of pc.intersection([[outer, ...holes]], [box])) out.push(part.map((r) => r.map(([x, y]) => [x - shift, y])));
+    }
+  }
+  return out;
+}
+
 function loadSnapshot(year) {
   if (snapshots.has(year)) return snapshots.get(year);
   const idx = readJSON(path.join(DATA, 'history/index.json')).snapshots;
@@ -106,7 +143,7 @@ function loadSnapshot(year) {
   for (const f of feature(topo, topo.objects.world).features) {
     const n = f.properties?.n;
     if (!n) continue;
-    m.set(n, (m.get(n) ?? []).concat(multi(f.geometry)));
+    m.set(n, (m.get(n) ?? []).concat(splitAntimeridian(multi(f.geometry))));
   }
   snapshots.set(year, m);
   return m;
@@ -305,7 +342,7 @@ function validate(c, file) {
   if (typeof c.icon !== 'string' || !c.icon) throw new Error(`${where}: "icon" (an emoji) is missing`);
   const t0 = parseDate(c.start, `${where} start`), t1 = parseDate(c.end, `${where} end`);
   if (t1 < t0) throw new Error(`${where}: "end" is before "start"`);
-  if (!c.camera || !inRange([c.camera.lon, c.camera.lat]) || !(c.camera.zoom >= 1 && c.camera.zoom <= 12)) throw new Error(`${where}: "camera" needs lon, lat and zoom 1..12`);
+  if (!c.camera || !inRange([c.camera.lon, c.camera.lat]) || !(c.camera.zoom >= 1 && c.camera.zoom <= 30)) throw new Error(`${where}: "camera" needs lon, lat and zoom 1..30`);
   if (!Array.isArray(c.sides) || c.sides.length < 2) throw new Error(`${where}: at least two "sides"`);
   const sides = new Set();
   for (const [i, s] of c.sides.entries()) {
@@ -328,7 +365,7 @@ function validate(c, file) {
     text(st.title, `${w}.title`); text(st.text, `${w}.text`); text(st.details, `${w}.details`, false);
     if (i === 0 && !st.control) throw new Error(`${w}: the first step needs "control"`);
     if (st.control) for (const k of Object.keys(st.control)) if (!sides.has(k)) throw new Error(`${w}.control: "${k}" is not a side`);
-    if (st.camera && (!inRange([st.camera.lon, st.camera.lat]) || !(st.camera.zoom >= 1 && st.camera.zoom <= 12))) throw new Error(`${w}.camera: lon, lat and zoom 1..12`);
+    if (st.camera && (!inRange([st.camera.lon, st.camera.lat]) || !(st.camera.zoom >= 1 && st.camera.zoom <= 30))) throw new Error(`${w}.camera: lon, lat and zoom 1..30`);
     for (const [j, mv] of (st.moves ?? []).entries()) {
       if (!sides.has(mv.side)) throw new Error(`${w}.moves[${j}]: "side" "${mv.side}" is not a side`);
       if (!Array.isArray(mv.path) || mv.path.length < 2 || !mv.path.every((p) => isPair(p) && inRange(p))) throw new Error(`${w}.moves[${j}]: "path" needs 2+ [lon, lat] points`);
@@ -393,6 +430,11 @@ async function build(file, opts) {
       control[side] = idx;
     }
     const { control: _c, ...rest } = st;
+    // Battles pop up and events appear in list order: make that the order they happened in
+    // (undated ones count as the step's date; ties keep the author's order).
+    const byDate = (list) => list.map((x, k) => [parseDate(x.date ?? st.date, ''), k, x]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map((e) => e[2]);
+    if (rest.battles) rest.battles = byDate(rest.battles);
+    if (rest.events) rest.events = byDate(rest.events);
     steps.push({ ...rest, t: parseDate(st.date, ''), control });
   }
   if (!steps.some((s) => Object.values(s.control).some((v) => v !== null))) throw new Error(`${c.id}: no step has any territory`);
@@ -401,7 +443,9 @@ async function build(file, opts) {
   // Territory TopoJSON: shared arcs, simplified for world-to-country zoom, quantised.
   const fc = { type: 'FeatureCollection', features: areas.map((mp, i) => ({ type: 'Feature', id: i, properties: {}, geometry: { type: 'MultiPolygon', coordinates: mp } })) };
   let topo = topology({ areas: fc }, 1e5);
-  topo = simplify(presimplify(topo, sphericalTriangleArea), 2e-8);
+  // presimplify decodes the arcs to full-precision floats; quantise again (about 40 m to 400 m
+  // per step depending on the conflict's extent), which makes the file several times smaller.
+  topo = quantize(simplify(presimplify(topo, sphericalTriangleArea), 2e-8), 1e5);
   const fixed = rewindTopology(topo);
   if (fixed.length) console.warn(`  ${c.id}: rewound ${fixed.length} polygon(s)`);
   for (const g of topo.objects.areas.geometries) {

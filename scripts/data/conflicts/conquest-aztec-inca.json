@@ -1,7 +1,7 @@
 {
   "id": "conquest-aztec-inca",
   "name": { "en": "Spanish conquest of the Aztec and Inca empires", "es": "Conquista española de los imperios azteca e inca" },
-  "icon": "⚔️",
+  "icon": "🗡️",
   "era": "early-modern",
   "region": { "en": "Mexico and the Andes", "es": "México y los Andes" },
   "start": "1519-02",
@@ -80,7 +80,7 @@
       ],
       "events": [
         { "icon": "🗣️", "date": "1519-03", "text": { "en": "Malintzin (La Malinche) joins Cortés as interpreter", "es": "Malintzin (la Malinche) se une a Cortés como intérprete" }, "at": [-92.95, 18.25] },
-        { "icon": "🏛️", "date": "1519-06", "text": { "en": "Villa Rica de la Vera Cruz founded; the ships are run aground", "es": "Fundación de la Villa Rica de la Vera Cruz; los barcos son varados" }, "at": [-96.42, 19.66] }
+        { "icon": "🏛️", "date": "1519-07", "text": { "en": "Villa Rica de la Vera Cruz founded; the ships are run aground", "es": "Fundación de la Villa Rica de la Vera Cruz; los barcos son varados" }, "at": [-96.42, 19.66] }
       ],
       "camera": { "lon": -92, "lat": 20, "zoom": 4.6 }
     },
@@ -115,7 +115,7 @@
       "title": { "en": "Tenochtitlan and Moctezuma", "es": "Tenochtitlan y Moctezuma" },
       "text": {
         "en": "After a massacre at Cholula, Cortés reaches Tenochtitlan, an island city of perhaps 200,000 people. Moctezuma welcomes him and within a week is a hostage in his own city.",
-        "es": "Tras una matanza en Cholula, Cortés llega a Tenochtitlan, una ciudad sobre un lago con quizá 200 000 habitantes. Moctezuma lo recibe y en menos de una semana es rehén en su propia ciudad."
+        "es": "Tras una matanza en Cholula, Cortés llega a Tenochtitlan, una ciudad construida sobre un lago, con quizá 200 000 habitantes. Moctezuma lo recibe y en menos de una semana es rehén en su propia ciudad."
       },
       "details": {
         "en": "At Cholula, a holy city allied to the Aztecs, Cortés claimed to have uncovered a plot. On 18 October 1519 his men and their Tlaxcalan allies killed several thousand people, most of them unarmed, in the main square. Crossing the pass between the volcanoes Popocatépetl and Iztaccíhuatl, the Spaniards saw the Valley of Mexico, with Tenochtitlan rising from Lake Texcoco, larger than any city in Spain. Moctezuma II met Cortés on the causeway on 8 November and lodged his men in a palace. Days later, using an attack on Spaniards on the coast as a pretext, Cortés seized the emperor and ruled through him, demanding gold as tribute.",
@@ -191,7 +191,7 @@
       "title": { "en": "The fall of Tenochtitlan", "es": "La caída de Tenochtitlan" },
       "text": {
         "en": "After a siege of nearly three months by about 1,000 Spaniards and tens of thousands of indigenous warriors, starving, disease-ridden Tenochtitlan falls and Cuauhtémoc is captured.",
-        "es": "Tras un asedio de casi tres meses de unos 1000 españoles y decenas de miles de guerreros indígenas, Tenochtitlan, hambrienta y diezmada por la enfermedad, cae y Cuauhtémoc es capturado."
+        "es": "Tras casi tres meses de asedio por unos 1000 españoles y decenas de miles de guerreros indígenas, Tenochtitlan, hambrienta y diezmada por la enfermedad, cae y Cuauhtémoc es capturado."
       },
       "details": {
         "en": "Cortés first won over the cities around the lake, such as Texcoco and Chalco, isolating Tenochtitlan. The brigantines, carried in pieces from Tlaxcala, ruled the lake and stopped the canoes bringing food; the allies cut the aqueduct from Chapultepec. The Mexica defended every street and sacrificed the Spaniards they captured, so Cortés had the city torn down block by block as he advanced. The last defenders held out in Tlatelolco among streets full of the dead. On 13 August 1521 Cuauhtémoc was captured on the lake; he was later tortured to reveal where the gold was hidden and hanged in 1525. Mexico City was built on the ruins, and the empire's provinces passed one by one under Spanish rule.",
@@ -217,7 +217,7 @@
       "title": { "en": "Pizarro at Cajamarca", "es": "Pizarro en Cajamarca" },
       "text": {
         "en": "In an Inca Empire weakened by an epidemic and a civil war, Francisco Pizarro's 168 men ambush Emperor Atahualpa at Cajamarca, kill thousands of his unarmed followers and take him prisoner.",
-        "es": "En un Imperio inca debilitado por una epidemia y una guerra civil, los 168 hombres de Francisco Pizarro tienden una emboscada al emperador Atahualpa en Cajamarca, matan a miles de sus acompañantes desarmados y lo apresan."
+        "es": "En un Imperio inca debilitado por una epidemia y una guerra civil, los 168 hombres de Pizarro tienden una emboscada al emperador Atahualpa en Cajamarca, matan a miles de sus acompañantes desarmados y lo apresan."
       },
       "details": {
         "en": "An epidemic, probably smallpox, had reached the Andes ahead of the Spaniards around 1527, killing the emperor Huayna Capac and his heir. His sons Huáscar and Atahualpa then fought a ruinous civil war. Atahualpa had just won it when Pizarro, after years of probing the coast from Panama, marched inland from Tumbes. At Cajamarca the Spaniards hid their horsemen and guns around the great square. Atahualpa arrived on a litter with thousands of unarmed attendants. When he threw down the prayer book of a friar who demanded that he submit to Christianity and the Spanish king, the Spaniards attacked. In about two hours they killed thousands without losing a single man.",
@@ -347,7 +347,7 @@
   ],
   "outcome": {
     "en": "The Aztec and Inca empires were destroyed and their lands became the heart of Spain's American empire, whose silver flowed to Europe and Asia for three centuries. The conquest was won with huge indigenous armies, but disease was its greatest killer: the native peoples of Mexico and the Andes suffered one of the worst population collapses in history. Their languages, such as Nahuatl and Quechua, and many of their traditions live on today.",
-    "es": "Los imperios azteca e inca fueron destruidos y sus tierras se convirtieron en el corazón del imperio americano de España, cuya plata fluyó hacia Europa y Asia durante tres siglos. La conquista se ganó con enormes ejércitos indígenas, pero la enfermedad fue su mayor asesina: los pueblos nativos de México y los Andes sufrieron uno de los mayores derrumbes de población de la historia. Sus lenguas, como el náhuatl y el quechua, y muchas de sus tradiciones siguen vivas hoy."
+    "es": "Los imperios azteca e inca fueron destruidos y sus tierras se convirtieron en el corazón del imperio americano de España, cuya plata fluyó hacia Europa y Asia durante tres siglos. La conquista se ganó con enormes ejércitos indígenas, pero lo que más vidas se llevó fueron las enfermedades: los pueblos nativos de México y los Andes sufrieron uno de los mayores derrumbes de población de la historia. Sus lenguas, como el náhuatl y el quechua, y muchas de sus tradiciones siguen vivas hoy."
   },
   "sources": [
     { "title": "Wikipedia: Spanish conquest of the Aztec Empire", "url": "https://en.wikipedia.org/wiki/Spanish_conquest_of_the_Aztec_Empire" },

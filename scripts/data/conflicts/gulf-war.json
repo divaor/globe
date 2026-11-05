@@ -1,0 +1,419 @@
+{
+  "id": "gulf-war",
+  "name": { "en": "Gulf War", "es": "Guerra del Golfo" },
+  "icon": "✈️",
+  "era": "contemporary",
+  "region": { "en": "Kuwait, Iraq and Saudi Arabia", "es": "Kuwait, Irak y Arabia Saudí" },
+  "start": "1990-08-02",
+  "end": "1991-02-28",
+  "summary": {
+    "en": "Iraq invaded and annexed Kuwait in August 1990. A coalition of 35 countries led by the United States drove it out in early 1991, after five weeks of bombing and a ground war that lasted just 100 hours.",
+    "es": "Irak invadió y se anexionó Kuwait en agosto de 1990. Una coalición de 35 países dirigida por Estados Unidos lo expulsó a comienzos de 1991, tras cinco semanas de bombardeos y una guerra terrestre de apenas 100 horas."
+  },
+  "camera": { "lon": 45.0, "lat": 29.5, "zoom": 6.0 },
+  "sides": [
+    {
+      "id": "iraq",
+      "name": { "en": "Iraq", "es": "Irak" },
+      "color": "#c0392b",
+      "members": {
+        "en": "Saddam Hussein's Ba'athist regime and its armed forces, including the Republican Guard.",
+        "es": "El régimen baazista de Sadam Husein y sus fuerzas armadas, incluida la Guardia Republicana."
+      }
+    },
+    {
+      "id": "coalition",
+      "name": { "en": "Coalition", "es": "Coalición" },
+      "color": "#2e6f9e",
+      "members": {
+        "en": "A US-led alliance of 35 countries, among them the United Kingdom, Saudi Arabia, Egypt, France, Syria, Kuwait's forces in exile and the other Gulf states, acting under UN Security Council resolutions.",
+        "es": "Una alianza de 35 países dirigida por Estados Unidos, entre ellos el Reino Unido, Arabia Saudí, Egipto, Francia, Siria, las fuerzas kuwaitíes en el exilio y los demás países del Golfo, al amparo de resoluciones del Consejo de Seguridad de la ONU."
+      }
+    }
+  ],
+  "casualties": {
+    "coalition": 712,
+    "iraq": [20000, 50000],
+    "note": {
+      "en": "Soldiers killed. Coalition: 292 in Desert Storm (147 by enemy action) and 420 Kuwaiti soldiers during the invasion. Iraq: estimates. More than 1,000 Kuwaiti and about 3,700 Iraqi civilians were also killed, and tens of thousands more Iraqis died in the uprisings that followed.",
+      "es": "Soldados muertos. Coalición: 292 en Tormenta del Desierto (147 por acción enemiga) y 420 soldados kuwaitíes durante la invasión. Irak: estimaciones. Murieron además más de 1000 civiles kuwaitíes y unos 3700 iraquíes, y decenas de miles de iraquíes más en las revueltas posteriores."
+    }
+  },
+  "casualtiesNote": {
+    "en": "Most of the dead were Iraqi soldiers, many of them conscripts killed by bombing. Civilians died in air raids in Iraq, under the occupation in Kuwait and from Scud missiles in Israel and Saudi Arabia. The damage to Iraq's power plants and water systems, followed by years of sanctions, caused disease and hardship long after the war.",
+    "es": "La mayoría de los muertos fueron soldados iraquíes, muchos de ellos reclutas muertos en los bombardeos. Hubo civiles muertos por los ataques aéreos en Irak, durante la ocupación de Kuwait y por los misiles Scud en Israel y Arabia Saudí. Los daños a las centrales eléctricas y al sistema de aguas de Irak, seguidos de años de sanciones, causaron enfermedades y penurias mucho después de la guerra."
+  },
+  "defs": {
+    "iraq_all": { "a1": "IRQ" },
+    "kuwait": { "a1": "KWT" },
+    "gulf_states": [{ "a1": "SAU" }, { "a1": "BHR" }, { "a1": "QAT" }, { "a1": "ARE" }, { "a1": "OMN" }],
+    "occupied91": {
+      "and": [
+        { "ref": "iraq_all" },
+        {
+          "poly": [[43.3, 29.05], [43.6, 30.3], [44.5, 30.75], [45.25, 31.35], [46.2, 31.05], [46.9, 30.75], [47.3, 30.45], [47.55, 30.25], [47.75, 30.08], [48.2, 29.9], [48.2, 28.9]]
+        }
+      ]
+    }
+  },
+  "steps": [
+    {
+      "date": "1990-08-02",
+      "title": { "en": "Iraq invades Kuwait", "es": "Irak invade Kuwait" },
+      "text": {
+        "en": "Saddam Hussein's army overruns Kuwait in two days. The emir flees to Saudi Arabia, and Iraq annexes the country as its 19th province. The UN condemns the invasion and imposes sanctions.",
+        "es": "El ejército de Sadam Husein arrolla Kuwait en dos días. El emir huye a Arabia Saudí e Irak se anexiona el país como su provincia número 19. La ONU condena la invasión e impone sanciones."
+      },
+      "details": {
+        "en": "Iraq came out of its eight-year war with Iran deep in debt, much of it owed to Kuwait. Saddam accused Kuwait of producing too much oil, which kept prices low, and of drilling into Iraq's Rumaila field across the border, and revived old claims that Kuwait belonged to Iraq. Early on 2 August about 88,000 Iraqi troops crossed the border; the emir's brother was killed defending the Dasman Palace. Hundreds of thousands of Kuwaitis and foreign workers fled. During the seven months of occupation, Kuwaitis who resisted were arrested, tortured or killed, and the country was looted. Iraqi divisions massed on the Saudi border, and the world feared an attack on the Saudi oil fields.",
+        "es": "Irak salió de su guerra de ocho años con Irán muy endeudado, en buena parte con Kuwait. Sadam acusó a Kuwait de producir demasiado petróleo, lo que mantenía bajos los precios, y de extraer crudo del campo iraquí de Rumaila al otro lado de la frontera, y resucitó viejas reclamaciones de que Kuwait pertenecía a Irak. En la madrugada del 2 de agosto, unos 88 000 soldados iraquíes cruzaron la frontera; el hermano del emir murió defendiendo el palacio de Dasman. Cientos de miles de kuwaitíes y trabajadores extranjeros huyeron. Durante los siete meses de ocupación, los kuwaitíes que resistían fueron detenidos, torturados o asesinados, y el país fue saqueado. Las divisiones iraquíes se concentraron en la frontera saudí, y el mundo temió un ataque contra los campos petrolíferos de Arabia Saudí."
+      },
+      "control": { "iraq": [{ "ref": "iraq_all" }, { "ref": "kuwait" }] },
+      "moves": [
+        { "side": "iraq", "path": [[47.71, 30.11], [47.85, 29.7], [47.96, 29.41]] },
+        { "side": "iraq", "path": [[47.4, 30.05], [47.5, 29.6], [47.85, 29.33]] },
+        {
+          "side": "iraq",
+          "path": [[47.95, 29.2], [48.05, 28.85], [48.18, 28.6]],
+          "label": { "en": "To the Saudi border", "es": "Hacia la frontera saudí" }
+        }
+      ],
+      "battles": [
+        {
+          "name": { "en": "Invasion of Kuwait", "es": "Invasión de Kuwait" },
+          "at": [47.98, 29.37],
+          "date": "1990-08-02",
+          "winner": "iraq",
+          "casualties": {
+            "coalition": 420,
+            "iraq": 295,
+            "note": {
+              "en": "Killed: Kuwaiti soldiers, and Iraqi soldiers according to Kuwaiti claims. About 12,000 Kuwaiti soldiers were captured.",
+              "es": "Muertos: soldados kuwaitíes, y soldados iraquíes según fuentes kuwaitíes. Unos 12 000 soldados kuwaitíes fueron capturados."
+            }
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "📜",
+          "date": "1990-08-06",
+          "text": { "en": "The UN Security Council imposes sanctions on Iraq", "es": "El Consejo de Seguridad de la ONU impone sanciones a Irak" }
+        },
+        {
+          "icon": "📜",
+          "date": "1990-08-28",
+          "text": { "en": "Iraq declares Kuwait its 19th province", "es": "Irak declara Kuwait su provincia número 19" },
+          "at": [47.95, 29.25]
+        }
+      ],
+      "camera": { "lon": 46.8, "lat": 29.6, "zoom": 8.0 }
+    },
+    {
+      "date": "1990-08-07",
+      "title": { "en": "Desert Shield", "es": "Escudo del Desierto" },
+      "text": {
+        "en": "At Saudi Arabia's request, the United States sends troops to defend the kingdom. Over five months a coalition of 35 countries gathers some 950,000 soldiers, and the UN gives Iraq until 15 January to leave Kuwait.",
+        "es": "A petición de Arabia Saudí, Estados Unidos envía tropas para defender el reino. En cinco meses, una coalición de 35 países reúne unos 950 000 soldados, y la ONU da a Irak hasta el 15 de enero para salir de Kuwait."
+      },
+      "details": {
+        "en": "Operation Desert Shield was the largest US deployment since Vietnam; Britain, France, Egypt, Syria and many others also sent troops, while Germany and Japan helped pay. Iraq held thousands of Western and Japanese citizens as 'human shields' at strategic sites until December. Diplomacy failed: Saddam offered to withdraw only if Israel left the occupied Palestinian territories, which the coalition rejected. On 29 November, Security Council Resolution 678 authorised 'all necessary means' if Iraq had not left Kuwait by 15 January 1991. In January the US Congress narrowly approved the use of force.",
+        "es": "La operación Escudo del Desierto fue el mayor despliegue estadounidense desde Vietnam; el Reino Unido, Francia, Egipto, Siria y muchos otros enviaron también tropas, mientras Alemania y Japón ayudaban a pagarla. Irak retuvo a miles de ciudadanos occidentales y japoneses como 'escudos humanos' en lugares estratégicos hasta diciembre. La diplomacia fracasó: Sadam solo ofrecía retirarse si Israel abandonaba los territorios palestinos ocupados, algo que la coalición rechazó. El 29 de noviembre, la Resolución 678 del Consejo de Seguridad autorizó 'todos los medios necesarios' si Irak no salía de Kuwait antes del 15 de enero de 1991. En enero, el Congreso de Estados Unidos aprobó por estrecho margen el uso de la fuerza."
+      },
+      "control": { "coalition": { "ref": "gulf_states" } },
+      "moves": [
+        {
+          "side": "coalition",
+          "path": [[56.2, 25.4], [53.0, 26.4], [49.8, 26.95]],
+          "label": { "en": "Troops arrive by sea and air", "es": "Llegan tropas por mar y aire" }
+        },
+        { "side": "coalition", "path": [[37.2, 25.2], [41.5, 26.4], [45.5, 27.6]] }
+      ],
+      "events": [
+        {
+          "icon": "🛡️",
+          "date": "1990-08-07",
+          "text": { "en": "King Fahd asks for US troops", "es": "El rey Fahd pide tropas estadounidenses" },
+          "at": [46.72, 24.69]
+        },
+        {
+          "icon": "🧍",
+          "date": "1990-08",
+          "text": { "en": "Iraq holds foreigners as 'human shields'", "es": "Irak retiene a extranjeros como 'escudos humanos'" },
+          "at": [44.39, 33.34]
+        },
+        {
+          "icon": "📜",
+          "date": "1990-11-29",
+          "text": { "en": "UN Resolution 678 sets a deadline of 15 January", "es": "La Resolución 678 de la ONU fija un plazo hasta el 15 de enero" }
+        }
+      ],
+      "camera": { "lon": 45.5, "lat": 28.0, "zoom": 6.0 }
+    },
+    {
+      "date": "1991-01-17",
+      "title": { "en": "Desert Storm: the air war", "es": "Tormenta del Desierto: la guerra aérea" },
+      "text": {
+        "en": "Hours after the deadline, coalition aircraft and cruise missiles strike Iraq. For five weeks they bomb its air defences, command centres, roads, bridges, power plants and the army in Kuwait.",
+        "es": "Al vencer el plazo, aviones y misiles de crucero de la coalición atacan Irak. Durante cinco semanas bombardean sus defensas aéreas, centros de mando, carreteras, puentes, centrales eléctricas y el ejército en Kuwait."
+      },
+      "details": {
+        "en": "Stealth aircraft, laser-guided bombs and cruise missiles, shown live on television, made it look like a 'clean' war, but most bombs dropped were unguided. Iraq fired Scud missiles at Israel and Saudi Arabia, hoping to draw Israel in and split the Arab members of the coalition; Israel, under US pressure, did not retaliate. Iraqi troops briefly seized the Saudi border town of Khafji before being driven out. On 13 February two US bombs destroyed the Amiriyah shelter in Baghdad, killing at least 408 civilians. Iraqi forces also released millions of barrels of crude oil into the Gulf, one of the largest oil spills in history.",
+        "es": "Los aviones furtivos, las bombas guiadas por láser y los misiles de crucero, emitidos en directo por televisión, hicieron parecer 'limpia' la guerra, pero la mayoría de las bombas lanzadas no eran guiadas. Irak disparó misiles Scud contra Israel y Arabia Saudí, con la esperanza de arrastrar a Israel a la guerra y dividir a los miembros árabes de la coalición; Israel, presionado por Estados Unidos, no respondió. Tropas iraquíes ocuparon brevemente la ciudad fronteriza saudí de Jafyi antes de ser expulsadas. El 13 de febrero, dos bombas estadounidenses destruyeron el refugio de Amiriya, en Bagdad, y mataron al menos a 408 civiles. Las fuerzas iraquíes vertieron además millones de barriles de crudo en el Golfo, uno de los mayores vertidos de petróleo de la historia."
+      },
+      "moves": [
+        { "side": "iraq", "path": [[40.5, 33.2], [37.5, 32.75], [34.9, 32.1]], "label": { "en": "Scud missiles", "es": "Misiles Scud" } },
+        { "side": "iraq", "path": [[46.2, 30.7], [46.5, 27.6], [46.7, 24.8]] },
+        { "side": "iraq", "path": [[47.4, 30.4], [49.0, 28.1], [50.05, 26.35]] },
+        { "side": "iraq", "path": [[48.25, 28.75], [48.42, 28.5]] }
+      ],
+      "battles": [
+        {
+          "name": { "en": "Battle of Khafji", "es": "Batalla de Jafyi" },
+          "at": [48.5, 28.425],
+          "date": "1991-01-29",
+          "winner": "coalition",
+          "casualties": {
+            "coalition": 45,
+            "iraq": [60, 300],
+            "note": {
+              "en": "Killed. Coalition: 11 of them by friendly fire. Iraq: a Saudi estimate; Iraq admitted 71 dead and 702 missing.",
+              "es": "Muertos. Coalición: 11 de ellos por fuego amigo. Irak: estimación saudí; Irak reconoció 71 muertos y 702 desaparecidos."
+            }
+          },
+          "details": {
+            "en": "The first big ground battle of the war: Saudi, Qatari and US troops retook the town.",
+            "es": "La primera gran batalla terrestre de la guerra: tropas saudíes, qataríes y estadounidenses recuperaron la ciudad."
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "✈️",
+          "date": "1991-01-17",
+          "text": { "en": "The air campaign begins with strikes on Baghdad", "es": "La campaña aérea empieza con ataques sobre Bagdad" },
+          "at": [44.39, 33.34]
+        },
+        {
+          "icon": "🛢️",
+          "date": "1991-01-19",
+          "text": { "en": "Iraqi forces release crude oil into the Gulf", "es": "Las fuerzas iraquíes vierten crudo en el Golfo" },
+          "at": [48.6, 28.95]
+        },
+        {
+          "icon": "🕯️",
+          "date": "1991-02-13",
+          "text": {
+            "en": "Amiriyah shelter bombed in Baghdad: at least 408 civilians killed",
+            "es": "Bombardeo del refugio de Amiriya, en Bagdad: al menos 408 civiles muertos"
+          },
+          "at": [44.28, 33.3]
+        },
+        {
+          "icon": "💥",
+          "date": "1991-02-25",
+          "text": {
+            "en": "A Scud hits US barracks in Dhahran, killing 28 soldiers",
+            "es": "Un Scud alcanza un cuartel estadounidense en Dhahran y mata a 28 soldados"
+          },
+          "at": [50.1, 26.29]
+        }
+      ],
+      "camera": { "lon": 43.0, "lat": 29.5, "zoom": 5.5 }
+    },
+    {
+      "date": "1991-02-24",
+      "title": { "en": "The 100-hour ground war", "es": "La guerra terrestre de 100 horas" },
+      "text": {
+        "en": "Coalition armies attack on 24 February. While Marines and Arab forces push into Kuwait, US, British and French armour swings west through the Iraqi desert. Kuwait is freed, and a ceasefire follows on 28 February.",
+        "es": "La coalición ataca el 24 de febrero: marines y fuerzas árabes entran en Kuwait mientras blindados estadounidenses, británicos y franceses dan un rodeo por el desierto iraquí. Kuwait queda libre y el 28 llega el alto el fuego."
+      },
+      "details": {
+        "en": "The Iraqi command expected an attack along the coast, where a US Marine landing seemed likely. Instead General Schwarzkopf sent the XVIII Airborne and VII Corps in a 'left hook' deep into Iraq to cut off the Republican Guard. Worn down by weeks of bombing, Iraqi soldiers surrendered by the tens of thousands. Retreating Iraqi columns were destroyed from the air on the road from Kuwait City to Basra, the 'Highway of Death'. As they left, Iraqi troops set Kuwait's oil wells on fire. President Bush stopped the offensive after 100 hours, before the Republican Guard was destroyed and without marching on Baghdad, which the UN mandate did not cover.",
+        "es": "El mando iraquí esperaba un ataque por la costa, donde parecía probable un desembarco de los marines. En su lugar, el general Schwarzkopf lanzó los cuerpos XVIII Aerotransportado y VII en un 'gancho de izquierda' hacia el interior de Irak para cortar la retirada a la Guardia Republicana. Agotados por semanas de bombardeos, los soldados iraquíes se rindieron por decenas de miles. Las columnas iraquíes en retirada fueron destruidas desde el aire en la carretera de Kuwait a Basora, la 'autopista de la muerte'. Al marcharse, las tropas iraquíes incendiaron los pozos de petróleo de Kuwait. El presidente Bush detuvo la ofensiva a las 100 horas, antes de destruir a la Guardia Republicana y sin marchar sobre Bagdad, algo que el mandato de la ONU no amparaba."
+      },
+      "control": {
+        "iraq": { "minus": [{ "ref": "iraq_all" }, { "ref": "occupied91" }] },
+        "coalition": [{ "ref": "gulf_states" }, { "ref": "kuwait" }, { "ref": "occupied91" }]
+      },
+      "moves": [
+        {
+          "side": "coalition",
+          "path": [[43.6, 29.4], [44.5, 30.45], [45.4, 31.0], [46.05, 30.97]],
+          "label": { "en": "XVIII Airborne Corps", "es": "XVIII Cuerpo Aerotransportado" }
+        },
+        {
+          "side": "coalition",
+          "path": [[45.5, 28.95], [46.3, 29.85], [46.95, 30.12], [47.45, 29.92]],
+          "label": { "en": "VII Corps", "es": "VII Cuerpo" }
+        },
+        {
+          "side": "coalition",
+          "path": [[47.7, 28.6], [47.85, 29.0], [47.96, 29.33]],
+          "label": { "en": "Marines and Arab forces", "es": "Marines y fuerzas árabes" }
+        },
+        { "side": "iraq", "path": [[47.95, 29.42], [47.7, 29.72], [47.72, 30.12]] }
+      ],
+      "battles": [
+        {
+          "name": { "en": "Battle of 73 Easting", "es": "Batalla de 73 Easting" },
+          "at": [46.791, 29.845],
+          "date": "1991-02-26",
+          "winner": "coalition",
+          "casualties": {
+            "coalition": 6,
+            "iraq": [600, 1000],
+            "note": {
+              "en": "Coalition: killed. Iraq: killed and wounded; about 1,300 Iraqis were captured.",
+              "es": "Coalición: muertos. Irak: muertos y heridos; unos 1300 iraquíes fueron capturados."
+            }
+          },
+          "details": {
+            "en": "US and British armour destroyed a Republican Guard division in a sandstorm.",
+            "es": "Blindados estadounidenses y británicos destruyeron una división de la Guardia Republicana en plena tormenta de arena."
+          }
+        },
+        {
+          "name": { "en": "Battle of Medina Ridge", "es": "Batalla de Medina Ridge" },
+          "at": [46.935, 30.174],
+          "date": "1991-02-27",
+          "winner": "coalition",
+          "details": {
+            "en": "The largest tank battle of the war: 186 Iraqi tanks were destroyed for the loss of 4 American tanks.",
+            "es": "La mayor batalla de tanques de la guerra: 186 tanques iraquíes destruidos frente a 4 estadounidenses."
+          }
+        },
+        {
+          "name": { "en": "Highway of Death", "es": "Autopista de la muerte" },
+          "at": [47.652, 29.384],
+          "date": "1991-02-26",
+          "winner": "coalition",
+          "result": {
+            "en": "Retreating Iraqi columns are destroyed from the air.",
+            "es": "Las columnas iraquíes en retirada son destruidas desde el aire."
+          },
+          "casualties": {
+            "iraq": [200, 1000],
+            "note": {
+              "en": "Killed; about 2,000 were captured and up to 2,700 vehicles destroyed or abandoned.",
+              "es": "Muertos; unos 2000 fueron capturados y hasta 2700 vehículos quedaron destruidos o abandonados."
+            }
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "🏳️",
+          "date": "1991-02-27",
+          "text": { "en": "Kuwait City is liberated", "es": "La ciudad de Kuwait queda liberada" },
+          "at": [47.98, 29.37]
+        },
+        {
+          "icon": "✋",
+          "date": "1991-02-28",
+          "text": { "en": "President Bush halts the offensive after 100 hours", "es": "El presidente Bush detiene la ofensiva a las 100 horas" }
+        }
+      ],
+      "camera": { "lon": 46.6, "lat": 29.9, "zoom": 9.0 }
+    },
+    {
+      "date": "1991-03-03",
+      "title": { "en": "Kuwait burns", "es": "Kuwait en llamas" },
+      "text": {
+        "en": "Retreating Iraqi troops have set more than 600 oil wells on fire. Black smoke darkens the sky for months while firefighters from many countries fight the blazes; the ceasefire is agreed at Safwan.",
+        "es": "Las tropas iraquíes en retirada han incendiado más de 600 pozos de petróleo. El humo negro oscurece el cielo durante meses mientras bomberos de muchos países combaten el fuego; el alto el fuego se pacta en Safwan."
+      },
+      "details": {
+        "en": "Between 605 and 732 wells were set ablaze, burning millions of barrels of oil a day, and hundreds of 'oil lakes' soaked the desert. Soot fell as black rain across the region, and the smoke harmed people's health in Kuwait and beyond. The last fire was put out on 6 November 1991. At the airfield of Safwan, just inside Iraq, coalition and Iraqi generals agreed the terms of the ceasefire on 3 March; Iraq was allowed to keep flying its helicopters, which it soon used against rebels. UN Resolution 687 required Iraq to destroy its weapons of mass destruction under international inspection and to pay reparations to Kuwait.",
+        "es": "Entre 605 y 732 pozos ardieron, quemando millones de barriles de petróleo al día, y cientos de 'lagos de petróleo' empaparon el desierto. El hollín cayó como lluvia negra en toda la región, y el humo dañó la salud de la población de Kuwait y de otros países. El último incendio se apagó el 6 de noviembre de 1991. En el aeródromo de Safwan, ya en territorio iraquí, generales de la coalición e iraquíes acordaron el 3 de marzo las condiciones del alto el fuego; Irak pudo seguir usando sus helicópteros, que pronto empleó contra los rebeldes. La Resolución 687 de la ONU obligó a Irak a destruir sus armas de destrucción masiva bajo inspección internacional y a pagar reparaciones a Kuwait."
+      },
+      "events": [
+        {
+          "icon": "🔥",
+          "date": "1991-02",
+          "text": { "en": "Between 605 and 732 oil wells set on fire", "es": "Entre 605 y 732 pozos de petróleo incendiados" },
+          "at": [47.95, 28.95]
+        },
+        {
+          "icon": "🤝",
+          "date": "1991-03-03",
+          "text": { "en": "Ceasefire terms agreed at Safwan", "es": "Se acuerdan en Safwan las condiciones del alto el fuego" },
+          "at": [47.71, 30.11]
+        },
+        {
+          "icon": "🧯",
+          "date": "1991-11-06",
+          "text": { "en": "The last oil fire is put out", "es": "Se apaga el último incendio de petróleo" },
+          "at": [47.75, 29.75]
+        }
+      ],
+      "camera": { "lon": 47.6, "lat": 29.4, "zoom": 10.0 }
+    },
+    {
+      "date": "1992",
+      "title": { "en": "Aftermath: uprisings and no-fly zones", "es": "Después: revueltas y zonas de exclusión aérea" },
+      "text": {
+        "en": "Encouraged by the US, Shiites in the south and Kurds in the north rise against Saddam, who crushes them. Western no-fly zones protect the Kurds, who rule themselves; Iraq stays under sanctions.",
+        "es": "Animados por EE. UU., los chiíes del sur y los kurdos del norte se rebelan contra Sadam, que los aplasta. Las zonas de exclusión aérea protegen a los kurdos, que se gobiernan solos; Irak sigue bajo sanciones."
+      },
+      "details": {
+        "en": "In March 1991 uprisings spread through the Shiite south and the Kurdish north. Saddam's Republican Guard, using tanks and helicopters, retook the cities, killing tens of thousands; the coalition did not intervene. Up to 1.5 million Kurds fled to the freezing mountains on the Turkish and Iranian borders, where thousands died. The United States, Britain and France set up a safe haven and banned Iraqi aircraft north of the 36th parallel, and from August 1992 south of the 32nd. In October 1991 Iraqi forces withdrew from most of the Kurdish region, which became self-governing. Sanctions and a long dispute over weapons inspections followed until the invasion of Iraq in 2003.",
+        "es": "En marzo de 1991 las revueltas se extendieron por el sur chií y el norte kurdo. La Guardia Republicana de Sadam, con tanques y helicópteros, recuperó las ciudades y mató a decenas de miles de personas; la coalición no intervino. Hasta 1,5 millones de kurdos huyeron a las montañas heladas de las fronteras con Turquía e Irán, donde murieron miles. Estados Unidos, el Reino Unido y Francia crearon una zona de refugio y prohibieron los vuelos iraquíes al norte del paralelo 36 y, desde agosto de 1992, al sur del paralelo 32. En octubre de 1991 las fuerzas iraquíes se retiraron de la mayor parte de la región kurda, que pasó a gobernarse sola. Siguieron las sanciones y una larga disputa por las inspecciones de armas hasta la invasión de Irak en 2003."
+      },
+      "aftermath": true,
+      "control": {
+        "iraq": { "a1": "IRQ", "except": ["Duhok", "Erbil", "Sulaymaniyah"] },
+        "coalition": [{ "ref": "gulf_states" }, { "ref": "kuwait" }]
+      },
+      "events": [
+        {
+          "icon": "🕯️",
+          "date": "1991-03",
+          "text": { "en": "The uprisings in the south are crushed", "es": "Las revueltas del sur son aplastadas" },
+          "at": [44.02, 32.62]
+        },
+        {
+          "icon": "⛺",
+          "date": "1991-04",
+          "text": { "en": "Up to 1.5 million Kurds flee to the mountains", "es": "Hasta 1,5 millones de kurdos huyen a las montañas" },
+          "at": [43.9, 37.15]
+        },
+        {
+          "icon": "✈️",
+          "date": "1991-04",
+          "text": {
+            "en": "Northern no-fly zone: no Iraqi aircraft north of the 36th parallel",
+            "es": "Zona de exclusión aérea del norte: ningún avión iraquí al norte del paralelo 36"
+          },
+          "at": [42.6, 36.1]
+        },
+        {
+          "icon": "✈️",
+          "date": "1992-08-26",
+          "text": {
+            "en": "Southern no-fly zone: no Iraqi aircraft south of the 32nd parallel",
+            "es": "Zona de exclusión aérea del sur: ningún avión iraquí al sur del paralelo 32"
+          },
+          "at": [45.5, 31.2]
+        }
+      ],
+      "camera": { "lon": 44.6, "lat": 31.5, "zoom": 5.5 }
+    }
+  ],
+  "outcome": {
+    "en": "Kuwait regained its independence, and the UN later marked out its border with Iraq, but Saddam Hussein stayed in power. US troops remained in Saudi Arabia, which angered Islamist militants such as Osama bin Laden. Iraq lived through twelve years of sanctions, which caused great hardship, and of conflict over weapons inspections, until the US-led invasion of 2003.",
+    "es": "Kuwait recuperó su independencia y la ONU delimitó después su frontera con Irak, pero Sadam Husein siguió en el poder. Las tropas estadounidenses se quedaron en Arabia Saudí, lo que indignó a militantes islamistas como Osama bin Laden. Irak vivió doce años de sanciones, que causaron grandes penurias, y de conflictos por las inspecciones de armas, hasta la invasión encabezada por Estados Unidos en 2003."
+  },
+  "sources": [
+    { "title": "Wikipedia: Gulf War", "url": "https://en.wikipedia.org/wiki/Gulf_War" },
+    { "title": "Wikipedia: Iraqi invasion of Kuwait", "url": "https://en.wikipedia.org/wiki/Iraqi_invasion_of_Kuwait" },
+    { "title": "Wikipedia: Battle of Khafji", "url": "https://en.wikipedia.org/wiki/Battle_of_Khafji" },
+    { "title": "Wikipedia: Battle of 73 Easting", "url": "https://en.wikipedia.org/wiki/Battle_of_73_Easting" },
+    { "title": "Wikipedia: Battle of Medina Ridge", "url": "https://en.wikipedia.org/wiki/Battle_of_Medina_Ridge" },
+    { "title": "Wikipedia: Highway of Death", "url": "https://en.wikipedia.org/wiki/Highway_of_Death" },
+    { "title": "Wikipedia: Amiriyah shelter bombing", "url": "https://en.wikipedia.org/wiki/Amiriyah_shelter_bombing" },
+    { "title": "Wikipedia: Kuwaiti oil fires", "url": "https://en.wikipedia.org/wiki/Kuwaiti_oil_fires" },
+    { "title": "Wikipedia: 1991 Iraqi uprisings", "url": "https://en.wikipedia.org/wiki/1991_Iraqi_uprisings" },
+    { "title": "Wikipedia: Iraqi no-fly zones conflict", "url": "https://en.wikipedia.org/wiki/Iraqi_no-fly_zones_conflict" }
+  ]
+}

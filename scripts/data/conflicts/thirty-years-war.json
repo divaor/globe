@@ -61,7 +61,7 @@
     "sweden": { "minus": [{ "ref": "sweden1645" }, { "ref": "denmark_norway" }] },
     "sweden1648": { "union": [{ "ref": "sweden1645" }, { "and": [{ "ref": "pomerania" }, { "poly": [[12.0, 53.2], [14.85, 53.2], [14.85, 54.8], [12.0, 54.8]] }] }, { "ref": "bremen_verden" }, { "land": { "circle": [11.46, 53.89], "km": 8 } }] },
     "dutch": { "hist": "Dutch Republic", "year": 1600 },
-    "spanish": { "union": ["ESP", { "hist": "Habsburg Netherlands", "year": 1600 }, { "a1": "FRA", "names": ["Doubs", "Jura", "Haute-Saône"] }, { "hist": "Milan", "year": 1600 }, { "hist": "Naples", "year": 1600 }, { "hist": "Sicily", "year": 1600 }, { "hist": "Sardinia", "year": 1600 }] },
+    "spanish": { "union": [{ "a1": "ESP" }, { "hist": "Habsburg Netherlands", "year": 1600 }, { "a1": "FRA", "names": ["Doubs", "Jura", "Haute-Saône"] }, { "hist": "Milan", "year": 1600 }, { "hist": "Naples", "year": 1600 }, { "hist": "Sicily", "year": 1600 }, { "hist": "Sardinia", "year": 1600 }] },
     "france": { "union": [{ "hist": "France", "year": 1600 }, { "a1": "FRA", "names": ["Ain"] }] },
     "lorraine": { "a1": "FRA", "names": ["Moselle", "Meurthe-et-Moselle", "Vosges", "Meuse"] },
     "alsace": { "a1": "FRA", "names": ["Bas-Rhin", "Haut-Rhin", "Territoire de Belfort"] },
@@ -100,7 +100,7 @@
       "title": { "en": "White Mountain", "es": "La Montaña Blanca" },
       "text": {
         "en": "The Bohemians crown a Calvinist king, Frederick of the Palatinate. Near Prague the armies of the Emperor and the Catholic League rout them in about an hour; Frederick flees.",
-        "es": "Los bohemios coronan a un rey calvinista, Federico del Palatinado. Cerca de Praga, los ejércitos del emperador y de la Liga Católica los derrotan en cerca de una hora; Federico huye."
+        "es": "Los bohemios coronan a un rey calvinista, Federico del Palatinado. Cerca de Praga, los ejércitos del emperador y de la Liga Católica los derrotan en apenas una hora; Federico huye."
       },
       "details": {
         "en": "In 1619 the Bohemian rebels, joined by Moravia, Silesia and Lusatia, deposed Ferdinand, just elected Emperor as Ferdinand II, and offered the crown to Frederick V, Elector Palatine and leader of the Protestant Union. Gabriel Bethlen, the Calvinist prince of Transylvania, attacked from the east and even besieged Vienna. But Ferdinand found strong allies: Maximilian of Bavaria and his Catholic League, Spain, and even Lutheran Saxony. On 8 November 1620 their army broke the Bohemians on the White Mountain outside Prague. Frederick, mocked as the 'Winter King' for his single winter on the throne, fled into exile, and Spanish and Bavarian troops occupied his Palatinate. In 1621, 27 leaders of the revolt were executed in Prague's Old Town Square; in the following years Protestantism was banned and much of the Bohemian nobility lost its lands or went into exile.",
