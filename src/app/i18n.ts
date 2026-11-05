@@ -138,6 +138,17 @@ const STRINGS: Record<string, [string, string]> = {
   share: ['Share view', 'Compartir vista'],
   linkCopied: ['Link copied', 'Enlace copiado'],
   tapCountry: ['Tap a country for details', 'Toca un país para ver detalles'],
+  timeTravel: ['Time travel', 'Viaje en el tiempo'],
+  tbRestart: ['Play from the start', 'Reproducir desde el inicio'],
+  tbSpeed: ['Speed', 'Velocidad'],
+  tbFrom: ['From', 'Desde'],
+  tbTo: ['to', 'hasta'],
+  whatChanged: ['What changed', 'Qué cambió'],
+  historyTitle: ['Borders through time', 'Fronteras en el tiempo'],
+  historyDesc: ['Watch the political map change from 123,000 BC to today. Pick a start and an end, then press play.', 'Mira cómo cambia el mapa político desde el 123 000 a. C. hasta hoy. Elige inicio y fin y pulsa reproducir.'],
+  pangeaTitle: ['Pangea to today', 'De Pangea a hoy'],
+  pangeaDesc: ['Plate tectonics: watch the supercontinent break apart into today\u2019s continents (and go back to Rodinia, 1 billion years ago).', 'Tectónica de placas: mira cómo el supercontinente se separa en los continentes actuales (y retrocede hasta Rodinia, hace 1000 millones de años).'],
+  comingSoon: ['Coming soon', 'Próximamente'],
 };
 
 let current: Lang = 'en';

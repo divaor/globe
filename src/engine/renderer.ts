@@ -11,6 +11,7 @@ import { bboxNear, loadJSON, shapesFrom, type BaseLevel, type DataStore, type LO
 import type { LayerInstance, RenderCtx } from '../layers/types';
 import { THEMES, type Theme } from '../app/theme';
 import type { Lang } from '../app/i18n';
+import { sunVector } from '../layers/sun';
 
 export interface RenderSettings {
   labels: { countries: boolean; capitals: boolean; cities: boolean; seas: boolean };
@@ -33,6 +34,11 @@ export class Renderer {
   readonly gl: GLRaster | null;
   private bg: CanvasRenderingContext2D;
   private fg: CanvasRenderingContext2D;
+  private fx: CanvasRenderingContext2D | null = null;
+  private fxCanvas: HTMLCanvasElement | null = null;
+  private fullDirty = true;
+  private lastRc: RenderCtx | null = null;
+  private fxPath: GeoPath | null = null;
   private path: GeoPath;
   private bgPath: GeoPath;
   private stars: HTMLCanvasElement | null = null;
@@ -49,6 +55,8 @@ export class Renderer {
   selection: string | null = null;
   hover: string | null = null;
   highlight: Set<string> | null = null;
+  /** Draw today's countries (land, borders, labels). Time-travel modes switch it off. */
+  baseMap = true;
   moving = false;
   settings: RenderSettings = {
     labels: { countries: true, capitals: true, cities: true, seas: true },
@@ -69,8 +77,11 @@ export class Renderer {
     this.bg = bgCanvas.getContext('2d')!;
     this.fg = fgCanvas.getContext('2d')!;
     this.gl = GLRaster.create(glCanvas);
-    if (!this.gl) glCanvas.style.display = 'none';
+    glCanvas.style.display = 'none'; // offscreen target, composited into the map canvas
     this.path = geoPath(this.view.projection, this.fg);
+    this.fxCanvas = document.getElementById('fx') as HTMLCanvasElement | null;
+    this.fx = this.fxCanvas?.getContext('2d') ?? null;
+    if (this.fx) this.fxPath = geoPath(this.view.projection, this.fx);
     this.bgPath = geoPath(this.view.projection, this.bg);
     loadJSON<{ rows: unknown[][] }>('layers/marine.json').then((m) => {
       this.marine = m.rows.map((r) => ({ lon: r[0] as number, lat: r[1] as number, name: r[2] as string, es: (r[3] as string) || null, kind: r[4] as string, sr: r[5] as number }));
@@ -79,7 +90,7 @@ export class Renderer {
 
   resize(w: number, h: number) {
     const dpr = Math.min(window.devicePixelRatio || 1, this.settings.quality === 'low' ? 1 : 2);
-    for (const c of [this.bgCanvas, this.fgCanvas]) {
+    for (const c of [this.bgCanvas, this.fgCanvas, ...(this.fxCanvas ? [this.fxCanvas] : [])]) {
       c.width = Math.round(w * dpr); c.height = Math.round(h * dpr);
       c.style.width = `${w}px`; c.style.height = `${h}px`;
     }
@@ -90,14 +101,24 @@ export class Renderer {
   }
 
   requestRender() {
+    this.fullDirty = true;
     if (!this.raf) this.raf = requestAnimationFrame((t) => this.frame(t));
+  }
+
+  /** Schedule a frame that only redraws animated effects (the map stays as it is). */
+  requestFx() {
+    if (!this.raf) this.raf = requestAnimationFrame((t) => this.frame(t));
+  }
+
+  private hasFx(): boolean {
+    return this.layers.some((l) => l.ready && l.def.drawFx);
   }
 
   private needsContinuous(): boolean {
     if (this.view.animating) return true;
     for (const l of this.layers) {
       const a = l.def.animated;
-      if (l.ready && (typeof a === 'function' ? a(l) : a)) return true;
+      if (l.ready && !l.def.drawFx && (typeof a === 'function' ? a(l) : a)) return true;
     }
     return false;
   }
@@ -110,10 +131,39 @@ export class Renderer {
     let busy = false;
     for (const t of this.tickers) if (t(dt, now)) busy = true;
     if (this.view.update(now)) busy = true;
-    this.draw(now);
-    this.onFrame?.();
+    if (busy || this.fullDirty || !this.lastRc) {
+      this.fullDirty = false;
+      this.draw(now);
+      this.onFrame?.();
+    }
+    const fx = this.hasFx();
+    this.drawFx(now, dt, fx);
     if (busy || this.needsContinuous()) this.requestRender();
+    else if (fx) this.requestFx();
     else this.lastFrame = 0;
+  }
+
+  private fxWasDrawn = false;
+  private drawFx(now: number, dt: number, any: boolean) {
+    const ctx = this.fx;
+    if (!ctx || !this.fxPath) return;
+    const { w, h, dpr } = this.view;
+    if (!any) {
+      if (this.fxWasDrawn) { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height); this.fxWasDrawn = false; }
+      return;
+    }
+    const base = this.lastRc;
+    if (!base) return;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    const rc: RenderCtx = { ...base, ctx, path: this.fxPath, now, moving: this.moving || this.view.animating };
+    for (const l of this.layers) {
+      if (!l.ready || !l.def.drawFx) continue;
+      ctx.save(); ctx.globalAlpha = l.opacity;
+      l.def.drawFx(rc, l, dt);
+      ctx.restore();
+    }
+    this.fxWasDrawn = true;
   }
 
   private wantLOD(): LOD {
@@ -174,6 +224,8 @@ export class Renderer {
     }
     this.lod = level.lod;
     const rc = this.makeCtx(now, level);
+    this.lastRc = rc;
+    if (this.gl) this.gl.sun = sunVector(new Date());
     const th = this.theme;
     const globe = view.current.kind !== 'flat' || view.morphing;
 
@@ -183,7 +235,8 @@ export class Renderer {
     this.drawSpace(bg, w, h);
     const R = view.zoom * view.fb;
     const [cx, cy] = [w / 2, view.translate[1] - (view.current.kind === 'flat' ? 0 : 0)];
-    if (view.current.kind === 'globe' && !view.morphing) this.drawAtmosphere(bg, w / 2, h / 2, R);
+    const gy = view.translate[1];
+    if (view.current.kind === 'globe' && !view.morphing) this.drawAtmosphere(bg, w / 2, gy, R);
     bg.beginPath();
     this.bgPath({ type: 'Sphere' });
     if (view.current.kind === 'flat' && !view.morphing) {
@@ -195,42 +248,50 @@ export class Renderer {
       bg.restore();
     }
     const og = globe
-      ? bg.createRadialGradient(w / 2 - R * 0.35, h / 2 - R * 0.4, R * 0.05, w / 2, h / 2, R * 1.02)
+      ? bg.createRadialGradient(w / 2 - R * 0.35, gy - R * 0.4, R * 0.05, w / 2, gy, R * 1.02)
       : bg.createLinearGradient(0, cy - R * 1.5, 0, cy + R * 1.5);
     og.addColorStop(0, th.ocean[0]); og.addColorStop(0.55, th.ocean[1]); og.addColorStop(1, th.ocean[2]);
     bg.fillStyle = og;
     bg.fill();
 
-    // ---- imagery
-    const draws: RasterDraw[] = [];
-    let opaqueBase = false;
-    for (const l of this.layers) {
-      if (!l.ready || l.def.kind !== 'raster' || !l.def.raster) continue;
-      const d = l.def.raster(rc, l);
-      if (d) {
-        draws.push(...d);
-        if (l.def.group === 'imagery' && l.opacity > 0.9) opaqueBase = true;
-      }
-    }
-    this.gl?.render(view, draws);
-
-    // ---- vectors
+    // ---- the filter stack, bottom to top: imagery and data grids are rendered by WebGL and
+    // composited into the map canvas at their place in the stack, so a filter on top always
+    // covers the ones below it.
     const ctx = this.fg;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, w, h);
     ctx.lineJoin = 'round'; ctx.lineCap = 'round';
     const path = this.path;
     const countries = rc.visibleShapes(level.countries);
+    const ready = this.layers.filter((l) => l.ready);
+    const bottom = ready[0];
+    const opaqueBase = !!bottom && bottom.def.kind === 'raster' && bottom.def.group === 'imagery' && bottom.opacity > 0.9 && !!this.gl;
 
-    if (!opaqueBase) {
+    if (!opaqueBase && this.baseMap) {
       ctx.beginPath();
       for (const s of countries) path(s.feature as never);
       ctx.fillStyle = th.land;
       ctx.fill();
     }
 
-    for (const l of this.layers) {
-      if (!l.ready || l.def.kind !== 'fill') continue;
+    let pending: RasterDraw[] = [];
+    const flushRasters = () => {
+      if (!pending.length || !this.gl) { pending = []; return; }
+      this.gl.render(view, pending);
+      ctx.save();
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.drawImage(this.glCanvas, 0, 0);
+      ctx.restore();
+      pending = [];
+    };
+    for (const l of ready) {
+      if (l.def.kind === 'raster') {
+        const d = l.def.raster?.(rc, l);
+        if (d) pending.push(...d);
+        continue;
+      }
+      if (l.def.kind !== 'fill') continue;
+      flushRasters();
       ctx.save();
       ctx.globalAlpha = l.opacity;
       if (l.def.drawFill) l.def.drawFill(rc, l);
@@ -252,6 +313,7 @@ export class Renderer {
       }
       ctx.restore();
     }
+    flushRasters();
 
     // Highlight from the legend (dim everything else).
     if (this.highlight && this.highlight.size) {
@@ -265,7 +327,7 @@ export class Renderer {
     const physLod = level.lod === '10m' ? '10m' : '50m';
     this.ensurePhysical('50m');
     if (physLod === '10m') this.ensurePhysical('10m');
-    const phys = this.physical[physLod] ?? this.physical['50m'];
+    const phys = this.baseMap ? this.physical[physLod] ?? this.physical['50m'] : undefined;
     if (phys) {
       const lakes = rc.visibleShapes(phys.lakes);
       if (lakes.length) {
@@ -292,12 +354,14 @@ export class Renderer {
 
     // ---- borders and coastlines
     const bw = th.borderWidth * Math.max(0.6, Math.min(1.8, 0.55 + view.webZoom * 0.14));
+    if (this.baseMap) {
     ctx.beginPath();
     for (const l of rc.visibleLines(level.coast)) path(l.geometry);
     ctx.strokeStyle = th.coast; ctx.lineWidth = bw * 0.9; ctx.stroke();
     ctx.beginPath();
     for (const l of rc.visibleLines(level.borders)) path(l.geometry);
     ctx.strokeStyle = th.border; ctx.lineWidth = bw; ctx.stroke();
+    }
 
     // ---- overlays from filters and tools
     for (const l of this.layers) {
@@ -328,7 +392,7 @@ export class Renderer {
 
     // ---- 3D shading of the globe
     if (this.settings.shading && view.current.kind === 'globe' && !view.morphing) {
-      const g = ctx.createRadialGradient(w / 2 - R * 0.38, h / 2 - R * 0.42, R * 0.1, w / 2, h / 2, R);
+      const g = ctx.createRadialGradient(w / 2 - R * 0.38, gy - R * 0.42, R * 0.1, w / 2, gy, R);
       g.addColorStop(0, th.dark ? 'rgba(255,255,255,0.10)' : 'rgba(255,255,255,0.18)');
       g.addColorStop(0.45, 'rgba(0,0,0,0)');
       g.addColorStop(0.85, `rgba(0,8,25,${th.shade * 0.45})`);
@@ -347,7 +411,7 @@ export class Renderer {
     // ---- labels
     this.labels.scale = this.settings.labelScale;
     this.labels.begin(w, h);
-    this.baseLabels(rc);
+    if (this.baseMap) this.baseLabels(rc);
     for (const l of this.layers) if (l.ready && l.def.labels) l.def.labels(rc, l);
     this.labels.draw(ctx);
   }
@@ -405,7 +469,7 @@ export class Renderer {
         const big = m.lr <= 3;
         const size = Math.max(9.5, Math.min(20, 15.5 - m.lr * 1.3 + (wz - 3) * 1.6));
         labels.add({
-          text: es ? m.es : m.n, x: p[0], y: p[1], priority: 900 - m.lr * 40 + (s.id === this.selection ? 500 : 0),
+          text: es ? m.ses ?? m.es : m.sn ?? m.n, x: p[0], y: p[1], priority: 900 - m.lr * 40 + (s.id === this.selection ? 500 : 0),
           size, weight: big ? 700 : 600, color: th.label, halo: th.labelHalo, caps: big && wz < 5.5,
         });
       }

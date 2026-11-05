@@ -9,7 +9,7 @@ export type LOD = '110m' | '50m' | '10m';
 export type BBox = [number, number, number, number]; // west, south, east, north (west > east when crossing 180°)
 
 export interface CountryMeta {
-  n: string; es: string; ab?: string | null; ct: string; rg: string; sr: string; mc: number; mc13: number;
+  n: string; es: string; sn?: string; ses?: string; ab?: string | null; ct: string; rg: string; sr: string; mc: number; mc13: number;
   lx: number; ly: number; lr: number; ml: number; pop: number; gdp: number; eco: string; inc: string;
   type: string; sov: string; sovA3?: string; iso?: string; a2: string | null; wd?: string;
 }

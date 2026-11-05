@@ -132,7 +132,7 @@ void main() {
   float dux = abs(dx1.x) < abs(dx2.x) ? dx1.x : dx2.x;
   float duy = abs(dy1.x) < abs(dy2.x) ? dy1.x : dy2.x;
   vec4 c = textureGrad(u_tex, vec2(u1, v), vec2(dux, dv.x), vec2(duy, dv.y));
-  float night = smoothstep(0.08, -0.12, dot(g, u_sun));
+  float night = 1.0 - smoothstep(-0.12, 0.08, dot(g, u_sun));
   if (u_mode == 1) {
     float val = c.r;
     if (val < 0.5 / 255.0) discard;

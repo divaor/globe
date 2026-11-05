@@ -27,7 +27,27 @@ export class CountryCard {
 
   setPicks(p: { title: string; rows: InfoRow[] }[]) { this.pickRows = p; }
 
+  hide() { this.el.hidden = true; }
+
+  /** Shows arbitrary content (historical polities, quiz feedback...) in the card. */
+  showCustom(iconText: string, title: string, sub: string, rows: InfoRow[], links: { label: string; href?: string; onClick?: () => void }[] = []) {
+    clear(this.body);
+    const actions = h('div', { class: 'card-actions' });
+    for (const l of links) {
+      const el = l.href ? h('a', { class: 'pill', href: l.href, target: '_blank', rel: 'noopener' }, icon(ExternalLink, 16), l.label)
+        : h('button', { type: 'button', class: 'pill' }, l.label);
+      if (l.onClick) el.addEventListener('click', l.onClick);
+      actions.append(el);
+    }
+    add(this.body,
+      h('div', { class: 'card-head' }, h('span', { class: 'flag-emoji' }, iconText), h('div', null, h('div', { class: 'card-title' }, title), h('div', { class: 'card-sub' }, sub))),
+      h('div', { class: 'rows' }, rows.map(rowEl)),
+      links.length ? actions : null);
+    this.el.hidden = false;
+  }
+
   render() {
+    if (this.app.mode) return;
     const id = this.app.selection;
     if (!id) { this.el.hidden = true; return; }
     const m = this.app.data.meta[id];

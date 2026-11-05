@@ -1,6 +1,6 @@
 // Imagery bases draped by WebGL: satellite (Blue Marble), shaded relief and elevation colours.
 import { dataUrl } from '../data/store';
-import { LC } from './context';
+import { isDayNightOn } from './rasterdata';
 import type { LayerDef, LayerInstance } from './types';
 import type { RasterTexture } from '../engine/gl';
 
@@ -21,11 +21,10 @@ function imageLayer(o: {
       const file = lowMemory() ? o.files.lo : o.files.hi;
       inst.state.tex = await ctx.gl.load(dataUrl(`raster/${file}`));
     },
-    raster(rc, inst: LayerInstance) {
+    raster(_rc, inst: LayerInstance) {
       const tex = inst.state.tex as RasterTexture | undefined;
       if (!tex) return null;
-      const night = LC && rc.view && (inst.state.nightShade as boolean | undefined);
-      return [{ texture: tex, opacity: inst.opacity, shadeNight: !!night }];
+      return [{ texture: tex, opacity: inst.opacity, shadeNight: isDayNightOn() }];
     },
   };
 }

@@ -37,6 +37,8 @@ export class View {
   w = 800; h = 600; dpr = 1;
   lon = 0; lat = 18; zoom = 1;
   minZoom = 0.6; maxZoom = 400;
+  /** Pixels at the bottom covered by panels (e.g. a timeline bar); the map centres above them. */
+  insetBottom = 0;
 
   /** Morph state: from `a` to `b`; t = 1 means the view is fully `b`. */
   a: ProjectionDef = PROJECTIONS.globe;
@@ -149,14 +151,15 @@ export class View {
 
   private build(): void {
     const { a, b, t } = this;
-    this.fa = fitScale(a, this.w, this.h);
-    this.fb = fitScale(b, this.w, this.h);
+    const H = Math.max(200, this.h - this.insetBottom);
+    this.fa = fitScale(a, this.w, H);
+    this.fb = fitScale(b, this.w, H);
     const phi0 = lerp(this.phi0For(a), this.phi0For(b), t);
     this.rotate = [-this.lon, phi0, 0];
     const raw = morphRaw(a.raw, b.raw, t, this.fa, this.fb);
     const p0 = (this.lat + phi0) * RAD;
     const yc = raw(0, Math.max(-Math.PI / 2, Math.min(Math.PI / 2, p0)))[1];
-    this.translate = [this.w / 2, this.h / 2 + this.zoom * yc];
+    this.translate = [this.w / 2, H / 2 + this.zoom * yc];
 
     const ca = a.kind === 'flat' ? 180 : a.clipAngle ?? 180;
     const cb = b.kind === 'flat' ? 180 : b.clipAngle ?? 180;
@@ -200,8 +203,9 @@ export class View {
       this.lat = Math.max(-89, Math.min(89, this.lat));
       return;
     }
-    const f = fitScale(def, this.w, this.h);
-    const half = this.h / (2 * this.zoom * f);
+    const H = Math.max(200, this.h - this.insetBottom);
+    const f = fitScale(def, this.w, H);
+    const half = H / (2 * this.zoom * f);
     const [, y0, , y1] = def.bounds;
     if ((y1 - y0) / 2 <= half) {
       // Whole map fits vertically: keep it centred.
@@ -217,7 +221,7 @@ export class View {
   panBy(dx: number, dy: number): void {
     const def = this.b;
     if (def.kind === 'flat') {
-      const f = fitScale(def, this.w, this.h) * this.zoom;
+      const f = fitScale(def, this.w, Math.max(200, this.h - this.insetBottom)) * this.zoom;
       this.lon -= (dx / (f * xFactor(def))) * DEG;
       const y = def.raw(0, this.lat * RAD)[1] + dy / f;
       this.lat = invertY(def, y);

@@ -3,8 +3,9 @@ import { App } from './app/app';
 import { Shell } from './ui/shell';
 import { coreLayers } from './layers';
 import { t } from './app/i18n';
+import { TimeTravel } from './modes';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel } } }
 
 async function boot() {
   const root = document.getElementById('app')!;
@@ -22,7 +23,8 @@ async function boot() {
   new ResizeObserver(resize).observe(root);
   resize();
   const shell = new Shell(app);
-  window.atlas = { app, shell };
+  const time = new TimeTravel(app, shell);
+  window.atlas = { app, shell, time };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };

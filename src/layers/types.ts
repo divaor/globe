@@ -89,8 +89,12 @@ export interface LayerDef {
   credit?: string;
   /** Needs a new frame every animation tick (winds, live clocks...). */
   animated?: boolean | ((inst: LayerInstance) => boolean);
+  /** Higher values stay above lower ones in the filter stack when turned on (default 0). */
+  stackOrder?: number;
   /** Filters in the same group replace each other when turned on (e.g. imagery bases). */
   group?: string;
+  /** Internal layers used by modes (not listed in the Filters panel, not saved). */
+  hidden?: boolean;
   /** Keywords for search in the Filters panel. */
   keywords?: string;
   load?(ctx: LayerContext, inst: LayerInstance): Promise<void>;
@@ -98,6 +102,8 @@ export interface LayerDef {
   countryColor?(id: string, inst: LayerInstance, rc: RenderCtx): string | null | undefined;
   drawFill?(rc: RenderCtx, inst: LayerInstance): void;
   drawOverlay?(rc: RenderCtx, inst: LayerInstance): void;
+  /** Animated effects drawn every frame on their own canvas (winds, pulses); the map underneath is not redrawn. */
+  drawFx?(rc: RenderCtx, inst: LayerInstance, dt: number): void;
   labels?(rc: RenderCtx, inst: LayerInstance): void;
   legend?(inst: LayerInstance, lang: Lang): Legend | null;
   info?(countryId: string, inst: LayerInstance, lang: Lang): InfoRow[] | null;

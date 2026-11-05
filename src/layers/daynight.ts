@@ -1,8 +1,7 @@
 // Live day and night: the real sun position, twilight bands and (with imagery) city lights.
 import { geoCircle } from 'd3-geo';
 import { lang } from '../app/i18n';
-import { subsolarPoint, sunVector } from './sun';
-import { LC } from './context';
+import { subsolarPoint } from './sun';
 import type { LayerDef } from './types';
 
 const circle = geoCircle().precision(3);
@@ -15,7 +14,7 @@ export function nightPolygons(date: Date) {
 }
 
 export const dayNight: LayerDef = {
-  id: 'daynight', category: 'live', icon: '🌗', kind: 'overlay',
+  id: 'daynight', category: 'live', icon: '🌗', kind: 'fill', stackOrder: 4,
   name: { en: 'Day and night (live)', es: 'Día y noche (en vivo)' },
   desc: { en: 'Where the sun is shining right now, with twilight bands.', es: 'Dónde brilla el sol ahora mismo, con bandas de crepúsculo.' },
   keywords: 'sun night terminator twilight sol noche crepusculo',
@@ -23,12 +22,11 @@ export const dayNight: LayerDef = {
   async load(ctx) {
     window.setInterval(() => ctx.requestRender(), 30_000);
   },
-  drawOverlay(rc) {
+  drawFill(rc) {
     const { ctx, path } = rc;
     const now = new Date();
-    if (LC.gl) LC.gl.sun = sunVector(now);
     const polys = nightPolygons(now);
-    ctx.fillStyle = rc.theme.dark ? 'rgba(2,6,24,0.16)' : 'rgba(10,20,60,0.12)';
+    ctx.fillStyle = rc.theme.dark ? 'rgba(2,6,24,0.2)' : 'rgba(10,20,60,0.14)';
     for (const p of polys) { ctx.beginPath(); path(p); ctx.fill(); }
     const [lon, lat] = subsolarPoint(now);
     const pt = rc.project(lon, lat);

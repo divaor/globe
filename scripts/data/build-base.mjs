@@ -100,6 +100,16 @@ async function countryIds() {
 }
 const countryId = (adm0) => idMap.get(adm0) || (adm0 === 'KOS' ? 'XKX' : adm0);
 
+// Short map labels for long names (cards and search keep the full names).
+const SHORT_EN = { CHN: 'China', USA: 'United States', COD: 'DR Congo', COG: 'Congo', FSM: 'Micronesia', USG: 'Guantánamo' };
+const SHORT_ES = {
+  COD: 'R. D. del Congo', COG: 'Rep. del Congo', CAF: 'Rep. Centroafricana', DOM: 'Rep. Dominicana', CYN: 'Chipre del Norte',
+  USG: 'Guantánamo', ATF: 'Tierras Australes Fr.', UMI: 'Islas ultram. de EE. UU.', VIR: 'Islas Vírgenes (EE. UU.)',
+  VGB: 'Islas Vírgenes Brit.', IOA: 'Terr. Austr. del Índico', IOT: 'Terr. Brit. del Índico', SGS: 'Georgias del Sur',
+  FSM: 'Micronesia', MNP: 'Islas Marianas del N.', VCT: 'San Vicente y Granadinas', SPI: 'Campo de hielo Pat. Sur',
+  HMD: 'Islas Heard y McDonald', CNM: 'Línea Verde', SPM: 'San Pedro y Miquelón',
+};
+
 async function countries() {
   await countryIds();
   for (const [res, q, simplify] of [['110m', '1e5', ''], ['50m', '1e5', ''], ['10m', '4e5', '-simplify 40% keep-shapes']]) {
@@ -114,6 +124,8 @@ async function countries() {
     const iso = p.ISO_A3_EH && p.ISO_A3_EH !== '-99' ? p.ISO_A3_EH : null;
     meta[id] = {
       n: p.NAME_EN || p.NAME, es: p.NAME_ES || p.NAME_EN || p.NAME, ab: p.ABBREV,
+      sn: SHORT_EN[p.ADM0_A3] ?? ((p.NAME_EN || p.NAME).length > 18 ? p.NAME : undefined),
+      ses: SHORT_ES[p.ADM0_A3],
       ct: CONTINENTS[p.CONTINENT] || 'SS', rg: p.REGION_UN, sr: p.SUBREGION,
       mc: p.MAPCOLOR9, mc13: p.MAPCOLOR13, lx: round(p.LABEL_X, 2), ly: round(p.LABEL_Y, 2),
       lr: p.LABELRANK, ml: p.MIN_LABEL, pop: p.POP_EST, gdp: p.GDP_MD, eco: p.ECONOMY, inc: p.INCOME_GRP,

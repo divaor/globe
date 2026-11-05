@@ -56,7 +56,7 @@ export function filtersPanel(app: App): HTMLElement {
   const renderList = () => {
     clear(list);
     for (const cat of CATEGORY_ORDER) {
-      const defs = [...app.registry.values()].filter((d) => d.category === cat.id && matches(d));
+      const defs = [...app.registry.values()].filter((d) => !d.hidden && d.category === cat.id && matches(d));
       if (!defs.length) continue;
       const grid = h('div', { class: 'card-grid' });
       for (const d of defs) grid.append(filterCard(app, d, () => { renderActive(); renderList(); }));

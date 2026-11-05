@@ -100,8 +100,14 @@ export class App {
       def, opacity: spec?.opacity ?? def.defaultOpacity ?? (this.layers.some((l) => l.def.kind === 'fill') && def.kind === 'fill' ? 0.75 : 1),
       options, ready: !def.load, state: {},
     };
-    // Imagery goes to the bottom of the stack; everything else on top.
-    if (def.kind === 'raster') this.layers.unshift(inst); else this.layers.push(inst);
+    // Imagery goes to the bottom of the stack; everything else on top, respecting stackOrder hints
+    // (e.g. city lights stay above the night shading).
+    if (def.kind === 'raster' && def.group === 'imagery') this.layers.unshift(inst);
+    else {
+      const mine = def.stackOrder ?? 0;
+      const i = this.layers.findIndex((l) => (l.def.stackOrder ?? 0) > mine);
+      if (i < 0) this.layers.push(inst); else this.layers.splice(i, 0, inst);
+    }
     this.emit('layers');
     this.renderer.requestRender();
     if (def.load) {
@@ -246,7 +252,7 @@ export class App {
     const r = this.renderer;
     return {
       lang: this.lang, theme: this.themeId, projection: this.projection,
-      active: this.layers.map((l) => ({ id: l.def.id, opacity: Math.round(l.opacity * 100) / 100, options: l.options })),
+      active: this.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, opacity: Math.round(l.opacity * 100) / 100, options: l.options })),
       labels: r.settings.labels, graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality,
       labelScale: r.settings.labelScale,
       ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock },

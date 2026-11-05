@@ -116,6 +116,7 @@ export class Shell {
   private renderChips() {
     clear(this.chips);
     for (const inst of [...this.app.layers].reverse()) {
+      if (inst.def.hidden) continue;
       const chip = h('div', { class: `fchip glass${inst.ready ? '' : ' loading'}${inst.error ? ' error' : ''}` },
         h('button', { type: 'button', class: 'fchip-main', title: tx(inst.def.desc) }, h('span', { class: 'fchip-icon' }, inst.def.icon), h('span', { class: 'fchip-name' }, tx(inst.def.name))),
         h('button', { type: 'button', class: 'fchip-x', 'aria-label': t('remove'), title: t('remove') }, icon(X, 14)));

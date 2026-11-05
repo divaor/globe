@@ -44,7 +44,9 @@ a { color: var(--accent); }
 
 #app { position: fixed; inset: 0; overflow: hidden; }
 #app canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#fx { pointer-events: none; z-index: 1; }
 #fg { cursor: grab; }
+#ui { z-index: 2; }
 #fg:active { cursor: grabbing; }
 #ui { position: absolute; inset: 0; pointer-events: none; }
 #ui > * { pointer-events: auto; }
@@ -272,6 +274,42 @@ html.ambient #ui > *:not(.amb-overlay) { opacity: 0; pointer-events: none !impor
 .splash-name { font-size: 26px; font-weight: 800; letter-spacing: .02em; }
 .splash-text { font-size: 14px; opacity: .7; }
 
+/* ---------- time travel */
+.mode-list { display: flex; flex-direction: column; gap: 10px; }
+.mode-card { display: flex; gap: 14px; align-items: flex-start; text-align: left; padding: 16px; border-radius: 16px; border: 1px solid var(--line); background: var(--chip); cursor: pointer; }
+.mode-card:hover { border-color: var(--line-strong); }
+.mode-card.on { border-color: var(--accent); background: var(--chip-on); }
+.mode-icon { font-size: 34px; line-height: 1; }
+.mode-text { display: flex; flex-direction: column; gap: 4px; }
+.mode-title { font-weight: 800; font-size: 16px; }
+.mode-desc { font-size: 13px; color: var(--muted); line-height: 1.4; }
+html.mode-time .chips { display: none; }
+html.mode-time .legend { bottom: calc(232px + var(--safe-b)); }
+.timebar { position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(86px + var(--safe-b)); width: min(880px, calc(100vw - 24px)); border-radius: 20px; padding: 10px 16px 8px; z-index: 3; }
+.tb-top { display: flex; align-items: center; gap: 12px; }
+.tb-play { width: 46px; height: 46px; border-radius: 23px; border: 0; background: var(--accent-grad); color: #fff; display: grid; place-items: center; cursor: pointer; flex: none; box-shadow: 0 4px 16px rgba(63,208,224,.35); }
+.tb-title { flex: 1; min-width: 0; }
+.tb-year { font-size: 24px; font-weight: 800; letter-spacing: .01em; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.tb-sub { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tb-tools { display: flex; align-items: center; gap: 4px; }
+.tb-speed { height: 32px; }
+.pill.sm { height: 32px; padding: 0 11px; font-size: 12.5px; }
+.tb-track { position: relative; height: 30px; margin: 12px 8px 16px; border-radius: 8px; background: var(--chip); cursor: pointer; touch-action: none; outline: none; }
+.tb-track:focus-visible { box-shadow: 0 0 0 2px var(--accent); }
+.tb-band { position: absolute; top: 0; bottom: 0; opacity: .55; overflow: hidden; }
+.tb-band:first-child { border-radius: 8px 0 0 8px; }
+.tb-band span { position: absolute; left: 6px; top: 50%; transform: translateY(-50%); font-size: 10.5px; font-weight: 700; color: #fff; white-space: nowrap; text-shadow: 0 1px 3px rgba(0,0,0,.5); pointer-events: none; }
+.tb-step { position: absolute; top: 50%; width: 3px; height: 3px; margin: -1.5px 0 0 -1.5px; border-radius: 50%; background: rgba(255,255,255,.55); pointer-events: none; }
+.tb-tick { position: absolute; top: 100%; transform: translateX(-50%); font-size: 10px; color: var(--muted); white-space: nowrap; padding-top: 3px; pointer-events: none; }
+.tb-tick::before { content: ''; position: absolute; top: -4px; left: 50%; width: 1px; height: 4px; background: var(--line-strong); }
+.tb-sel { position: absolute; top: 0; bottom: 0; background: rgba(63,208,224,.22); border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent); pointer-events: none; }
+.tb-handle { position: absolute; top: -9px; width: 16px; height: 48px; margin-left: -8px; cursor: ew-resize; touch-action: none; }
+.tb-handle::before { content: ''; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--accent); }
+.tb-handle::after { content: ''; position: absolute; left: 2px; top: 0; border: 6px solid transparent; border-top: 8px solid var(--accent); }
+.tb-thumb { position: absolute; top: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.45), 0 0 0 4px rgba(63,208,224,.45); cursor: grab; touch-action: none; z-index: 2; }
+.tb-range { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); padding: 0 6px; }
+.changes .chip { color: var(--text); }
+
 /* ---------- phones */
 @media (max-width: 720px) {
   .search-btn-label { display: none; }
@@ -290,6 +328,11 @@ html.ambient #ui > *:not(.amb-overlay) { opacity: 0; pointer-events: none !impor
   .sheet-grip { display: block; width: 44px; height: 5px; border-radius: 3px; background: var(--line-strong); margin: 8px auto 0; }
   .country-card { left: 8px; right: 8px; top: auto; bottom: calc(80px + var(--safe-b)); width: auto; max-height: 52vh; z-index: 3; }
   .toast { bottom: calc(176px + var(--safe-b)); }
+  .timebar { bottom: calc(78px + var(--safe-b)); width: calc(100vw - 16px); padding: 8px 10px 6px; }
+  .tb-year { font-size: 20px; }
+  .tb-list-label, .tb-speed { display: none; }
+  html.mode-time .legend { display: none; }
+  html.mode-time .zoombar { bottom: calc(232px + var(--safe-b)); }
   .card-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 380px) {
