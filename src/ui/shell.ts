@@ -152,7 +152,7 @@ export class Shell {
   openFilters(force = false) {
     if (!force && this.sheet.isOpen('filters')) { this.sheet.close(); this.renderDock(); return; }
     const panel = filtersPanel(this.app);
-    this.sheet.open('filters', t('filters'), panel, () => { (panel as unknown as { dispose: () => void }).dispose?.(); this.renderDock(); });
+    this.sheet.open('filters', t('filters'), panel, () => { panel.dispose(); this.renderDock(); }, panel.bar);
     this.renderDock();
   }
 

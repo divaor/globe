@@ -4,7 +4,8 @@
 // Checks: the app boots without errors; country colours survive at the most detailed zoom
 // (a flipped lake polygon once painted over them); the More menu sits above the legend; a legend
 // highlight is dropped when the filter changes; the organisations filter can compare two; frames
-// get lighter while the map moves.
+// get lighter while the map moves; the compact country strip; the filters search box stays clear
+// of the scrolled list.
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 let chromium, devices;
@@ -142,6 +143,35 @@ async function open(opts, hash) {
   const c = await state();
   check(c.sel === 'NER' && c.compact, 'next country starts compact again');
   check(!errors.length, `no page errors with the card${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 6. Filters sheet on a phone: the search box stays above the list, so scrolled cards never show
+// through it (it used to scroll with the list and was see-through), and it still filters.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=-100,60,3&lang=en');
+  await page.click('[data-dock="filters"]');
+  await page.waitForTimeout(500);
+  const r = await page.evaluate(async () => {
+    const body = document.querySelector('.sheet-body');
+    body.scrollTop = 900;
+    await new Promise((res) => setTimeout(res, 300));
+    const s = document.querySelector('.search-row').getBoundingClientRect();
+    const v = body.getBoundingClientRect();
+    // A card shows only where the scrolling body doesn't clip it.
+    const behind = [...body.querySelectorAll('.fcard')].filter((c) => {
+      const b = c.getBoundingClientRect();
+      const top = Math.max(b.top, v.top), bottom = Math.min(b.bottom, v.bottom);
+      return bottom > top && bottom > s.top && top < s.bottom && b.right > s.left && b.left < s.right;
+    }).length;
+    return { scrolled: body.scrollTop, behind, shown: s.height > 0 };
+  });
+  check(r.scrolled > 0 && r.shown && r.behind === 0, `filter search stays clear of the scrolled list (${r.behind} card(s) behind it)`);
+  await page.fill('.search-input', 'tobacco');
+  await page.waitForTimeout(200);
+  const names = await page.$$eval('.sheet-body .fcard-name', (els) => els.map((e) => e.textContent));
+  check(names.length > 0 && names.some((n) => /tobacco/i.test(n)), `filter search still filters (${names.length} result(s) for "tobacco")`);
+  check(!errors.length, `no page errors in the filters sheet${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

@@ -120,7 +120,9 @@ a { color: var(--accent); }
 .small { font-size: 12.5px; }
 
 /* ---------- filters panel */
-.search-row { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 8px; padding: 0 12px; height: 42px; border-radius: 12px; background: var(--chip); border: 1px solid var(--line); color: var(--muted); }
+.sheet-bar { padding: 2px 16px 8px; }
+.filters > .sec-title:first-child { margin-top: 8px; }
+.search-row { display: flex; align-items: center; gap: 8px; padding: 0 12px; height: 42px; border-radius: 12px; background: var(--chip); border: 1px solid var(--line); color: var(--muted); }
 .search-input { flex: 1; border: 0; background: none; outline: none; color: var(--text); font: inherit; font-size: 15px; min-width: 0; }
 .active-stack { display: flex; flex-direction: column; gap: 8px; }
 .arow { padding: 10px 12px; border-radius: 14px; background: var(--chip); border: 1px solid var(--line); }

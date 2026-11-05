@@ -12,7 +12,10 @@ export const CATEGORY_ORDER: { id: CategoryId; icon: string }[] = [
   { id: 'fun', icon: '🎲' }, { id: 'imagery', icon: '🛰️' }, { id: 'live', icon: '📡' },
 ];
 
-export function filtersPanel(app: App): HTMLElement {
+/** The panel, its search box (shown above the list so the list never scrolls under it) and cleanup. */
+export type FiltersPanel = HTMLElement & { bar: HTMLElement; dispose: () => void };
+
+export function filtersPanel(app: App): FiltersPanel {
   const root = h('div', { class: 'filters' });
   let query = '';
   const search = h('input', { class: 'search-input', type: 'search', placeholder: t('searchFilters'), 'aria-label': t('searchFilters') }) as HTMLInputElement;
@@ -21,7 +24,7 @@ export function filtersPanel(app: App): HTMLElement {
   const active = h('div', { class: 'active-stack' });
   const labelsRow = h('div', { class: 'chip-row' });
   const list = h('div', { class: 'cat-list' });
-  root.append(searchRow, h('h3', { class: 'sec-title' }, t('activeFilters')), active, h('h3', { class: 'sec-title' }, t('labels')), labelsRow, list);
+  root.append(h('h3', { class: 'sec-title' }, t('activeFilters')), active, h('h3', { class: 'sec-title' }, t('labels')), labelsRow, list);
 
   const renderActive = () => {
     clear(active);
@@ -68,8 +71,7 @@ export function filtersPanel(app: App): HTMLElement {
   renderActive(); renderLabels(); renderList();
   const off1 = app.on('layers', () => { renderActive(); updateCards(list, app); });
   const off2 = app.on('registry', () => renderList());
-  (root as unknown as { dispose: () => void }).dispose = () => { off1(); off2(); };
-  return root;
+  return Object.assign(root, { bar: searchRow, dispose: () => { off1(); off2(); } });
 }
 
 function updateCards(list: HTMLElement, app: App) {
