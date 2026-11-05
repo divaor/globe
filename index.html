@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <title>Atlas Globe</title>
+    <meta name="description" content="A detailed, colourful world globe with many map filters, projections, a political timeline and a Pangea animation." />
+    <meta name="theme-color" content="#07101f" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Atlas" />
+    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="bg" aria-hidden="true"></canvas>
+      <canvas id="gl" aria-hidden="true"></canvas>
+      <canvas id="fx" aria-hidden="true"></canvas>
+      <canvas id="fg" aria-label="Interactive world map. Drag to rotate, pinch or scroll to zoom, tap a country for details." role="img"></canvas>
+      <div id="ui"></div>
+    </div>
+    <div id="splash">
+      <div class="splash-globe"></div>
+      <div class="splash-name">Atlas Globe</div>
+      <div class="splash-text">Loading the world…</div>
+    </div>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

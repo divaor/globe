@@ -1,0 +1,384 @@
+{
+ "source": "historical-basemaps by André Ourednik and contributors, https://github.com/aourednik/historical-basemaps (commit 4b5039e, 2026-11-02)",
+ "license": "GPL-3.0",
+ "snapshots": [
+  {
+   "year": -123000,
+   "file": "world_bc123000.json",
+   "label_en": "123,000 BC",
+   "label_es": "123 000 a. C.",
+   "features": 4
+  },
+  {
+   "year": -10000,
+   "file": "world_bc10000.json",
+   "label_en": "10,000 BC",
+   "label_es": "10 000 a. C.",
+   "features": 14
+  },
+  {
+   "year": -8000,
+   "file": "world_bc8000.json",
+   "label_en": "8000 BC",
+   "label_es": "8000 a. C.",
+   "features": 15
+  },
+  {
+   "year": -5000,
+   "file": "world_bc5000.json",
+   "label_en": "5000 BC",
+   "label_es": "5000 a. C.",
+   "features": 29
+  },
+  {
+   "year": -4000,
+   "file": "world_bc4000.json",
+   "label_en": "4000 BC",
+   "label_es": "4000 a. C.",
+   "features": 24
+  },
+  {
+   "year": -3000,
+   "file": "world_bc3000.json",
+   "label_en": "3000 BC",
+   "label_es": "3000 a. C.",
+   "features": 26
+  },
+  {
+   "year": -2000,
+   "file": "world_bc2000.json",
+   "label_en": "2000 BC",
+   "label_es": "2000 a. C.",
+   "features": 46
+  },
+  {
+   "year": -1500,
+   "file": "world_bc1500.json",
+   "label_en": "1500 BC",
+   "label_es": "1500 a. C.",
+   "features": 69
+  },
+  {
+   "year": -1000,
+   "file": "world_bc1000.json",
+   "label_en": "1000 BC",
+   "label_es": "1000 a. C.",
+   "features": 70
+  },
+  {
+   "year": -700,
+   "file": "world_bc700.json",
+   "label_en": "700 BC",
+   "label_es": "700 a. C.",
+   "features": 74
+  },
+  {
+   "year": -500,
+   "file": "world_bc500.json",
+   "label_en": "500 BC",
+   "label_es": "500 a. C.",
+   "features": 75
+  },
+  {
+   "year": -400,
+   "file": "world_bc400.json",
+   "label_en": "400 BC",
+   "label_es": "400 a. C.",
+   "features": 77
+  },
+  {
+   "year": -323,
+   "file": "world_bc323.json",
+   "label_en": "323 BC",
+   "label_es": "323 a. C.",
+   "features": 69
+  },
+  {
+   "year": -300,
+   "file": "world_bc300.json",
+   "label_en": "300 BC",
+   "label_es": "300 a. C.",
+   "features": 75
+  },
+  {
+   "year": -200,
+   "file": "world_bc200.json",
+   "label_en": "200 BC",
+   "label_es": "200 a. C.",
+   "features": 87
+  },
+  {
+   "year": -100,
+   "file": "world_bc100.json",
+   "label_en": "100 BC",
+   "label_es": "100 a. C.",
+   "features": 85
+  },
+  {
+   "year": -1,
+   "file": "world_bc1.json",
+   "label_en": "1 BC",
+   "label_es": "1 a. C.",
+   "features": 80
+  },
+  {
+   "year": 100,
+   "file": "world_100.json",
+   "label_en": "AD 100",
+   "label_es": "100 d. C.",
+   "features": 84
+  },
+  {
+   "year": 200,
+   "file": "world_200.json",
+   "label_en": "AD 200",
+   "label_es": "200 d. C.",
+   "features": 70
+  },
+  {
+   "year": 300,
+   "file": "world_300.json",
+   "label_en": "AD 300",
+   "label_es": "300 d. C.",
+   "features": 72
+  },
+  {
+   "year": 400,
+   "file": "world_400.json",
+   "label_en": "AD 400",
+   "label_es": "400 d. C.",
+   "features": 80
+  },
+  {
+   "year": 500,
+   "file": "world_500.json",
+   "label_en": "AD 500",
+   "label_es": "500 d. C.",
+   "features": 88
+  },
+  {
+   "year": 600,
+   "file": "world_600.json",
+   "label_en": "AD 600",
+   "label_es": "600 d. C.",
+   "features": 84
+  },
+  {
+   "year": 700,
+   "file": "world_700.json",
+   "label_en": "AD 700",
+   "label_es": "700 d. C.",
+   "features": 125
+  },
+  {
+   "year": 800,
+   "file": "world_800.json",
+   "label_en": "AD 800",
+   "label_es": "800 d. C.",
+   "features": 118
+  },
+  {
+   "year": 900,
+   "file": "world_900.json",
+   "label_en": "AD 900",
+   "label_es": "900 d. C.",
+   "features": 135
+  },
+  {
+   "year": 1000,
+   "file": "world_1000.json",
+   "label_en": "1000",
+   "label_es": "1000",
+   "features": 130
+  },
+  {
+   "year": 1100,
+   "file": "world_1100.json",
+   "label_en": "1100",
+   "label_es": "1100",
+   "features": 140
+  },
+  {
+   "year": 1200,
+   "file": "world_1200.json",
+   "label_en": "1200",
+   "label_es": "1200",
+   "features": 130
+  },
+  {
+   "year": 1279,
+   "file": "world_1279.json",
+   "label_en": "1279",
+   "label_es": "1279",
+   "features": 114
+  },
+  {
+   "year": 1300,
+   "file": "world_1300.json",
+   "label_en": "1300",
+   "label_es": "1300",
+   "features": 114
+  },
+  {
+   "year": 1400,
+   "file": "world_1400.json",
+   "label_en": "1400",
+   "label_es": "1400",
+   "features": 116
+  },
+  {
+   "year": 1492,
+   "file": "world_1492.json",
+   "label_en": "1492",
+   "label_es": "1492",
+   "features": 1297
+  },
+  {
+   "year": 1500,
+   "file": "world_1500.json",
+   "label_en": "1500",
+   "label_es": "1500",
+   "features": 139
+  },
+  {
+   "year": 1530,
+   "file": "world_1530.json",
+   "label_en": "1530",
+   "label_es": "1530",
+   "features": 270
+  },
+  {
+   "year": 1600,
+   "file": "world_1600.json",
+   "label_en": "1600",
+   "label_es": "1600",
+   "features": 638
+  },
+  {
+   "year": 1650,
+   "file": "world_1650.json",
+   "label_en": "1650",
+   "label_es": "1650",
+   "features": 592
+  },
+  {
+   "year": 1700,
+   "file": "world_1700.json",
+   "label_en": "1700",
+   "label_es": "1700",
+   "features": 586
+  },
+  {
+   "year": 1715,
+   "file": "world_1715.json",
+   "label_en": "1715",
+   "label_es": "1715",
+   "features": 602
+  },
+  {
+   "year": 1783,
+   "file": "world_1783.json",
+   "label_en": "1783",
+   "label_es": "1783",
+   "features": 548
+  },
+  {
+   "year": 1800,
+   "file": "world_1800.json",
+   "label_en": "1800",
+   "label_es": "1800",
+   "features": 548
+  },
+  {
+   "year": 1815,
+   "file": "world_1815.json",
+   "label_en": "1815",
+   "label_es": "1815",
+   "features": 315
+  },
+  {
+   "year": 1878,
+   "file": "world_1878.json",
+   "label_en": "1878",
+   "label_es": "1878",
+   "features": 173
+  },
+  {
+   "year": 1880,
+   "file": "world_1880.json",
+   "label_en": "1880",
+   "label_es": "1880",
+   "features": 170
+  },
+  {
+   "year": 1900,
+   "file": "world_1900.json",
+   "label_en": "1900",
+   "label_es": "1900",
+   "features": 166
+  },
+  {
+   "year": 1914,
+   "file": "world_1914.json",
+   "label_en": "1914",
+   "label_es": "1914",
+   "features": 143
+  },
+  {
+   "year": 1920,
+   "file": "world_1920.json",
+   "label_en": "1920",
+   "label_es": "1920",
+   "features": 164
+  },
+  {
+   "year": 1930,
+   "file": "world_1930.json",
+   "label_en": "1930",
+   "label_es": "1930",
+   "features": 164
+  },
+  {
+   "year": 1938,
+   "file": "world_1938.json",
+   "label_en": "1938",
+   "label_es": "1938",
+   "features": 167
+  },
+  {
+   "year": 1945,
+   "file": "world_1945.json",
+   "label_en": "1945",
+   "label_es": "1945",
+   "features": 185
+  },
+  {
+   "year": 1960,
+   "file": "world_1960.json",
+   "label_en": "1960",
+   "label_es": "1960",
+   "features": 158
+  },
+  {
+   "year": 1994,
+   "file": "world_1994.json",
+   "label_en": "1994",
+   "label_es": "1994",
+   "features": 194
+  },
+  {
+   "year": 2000,
+   "file": "world_2000.json",
+   "label_en": "2000",
+   "label_es": "2000",
+   "features": 194
+  },
+  {
+   "year": 2010,
+   "file": "world_2010.json",
+   "label_en": "2010",
+   "label_es": "2010",
+   "features": 194
+  }
+ ]
+}

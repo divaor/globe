@@ -1,0 +1,387 @@
+{
+ "Af": {
+  "color": "#0000ff",
+  "group": "A",
+  "en": "Tropical rainforest",
+  "es": "Selva tropical",
+  "desc_en": "Hot and wet all year: every month averages at least 18 °C and gets at least 60 mm of rain. Amazon and Congo basins, Malaysia and Indonesia.",
+  "desc_es": "Cálido y lluvioso todo el año: todos los meses superan los 18 °C de media y reciben al menos 60 mm de lluvia. Amazonía, cuenca del Congo, Malasia e Indonesia.",
+  "biome": "tropical_rainforest"
+ },
+ "Am": {
+  "color": "#0078ff",
+  "group": "A",
+  "en": "Tropical monsoon",
+  "es": "Tropical monzónico",
+  "desc_en": "Always hot, with a short dry season offset by torrential monsoon rains that still sustain forest. Western coast of India, Bangladesh, Myanmar, the Guinea coast of West Africa.",
+  "desc_es": "Siempre cálido, con una estación seca breve compensada por lluvias monzónicas torrenciales que mantienen el bosque. Costa occidental de la India, Bangladés, Birmania y la costa de Guinea.",
+  "biome": "tropical_monsoon_forest"
+ },
+ "As": {
+  "color": "#82c3fa",
+  "group": "A",
+  "en": "Tropical savanna, dry summer",
+  "es": "Sabana tropical de verano seco",
+  "desc_en": "Hot all year, with the dry season in the high-sun (summer) months, an uncommon pattern. Northeastern coast of Brazil, southeastern India and Sri Lanka, parts of East Africa and Hawaii.",
+  "desc_es": "Cálido todo el año, con la estación seca en los meses de sol alto (verano), una pauta poco común. Costa nordeste de Brasil, sureste de la India y Sri Lanka, partes de África oriental y Hawái.",
+  "biome": "savanna"
+ },
+ "Aw": {
+  "color": "#46aafa",
+  "group": "A",
+  "en": "Tropical savanna",
+  "es": "Sabana tropical",
+  "desc_en": "Hot all year, with a marked dry season in winter (low-sun months) and a rainy summer. African savannas, the Brazilian cerrado, much of India, northern Australia and Central America.",
+  "desc_es": "Cálido todo el año, con una estación seca marcada en invierno y un verano lluvioso. Sabanas africanas, cerrado brasileño, gran parte de la India, norte de Australia y Centroamérica.",
+  "biome": "savanna"
+ },
+ "BWh": {
+  "color": "#ff0000",
+  "group": "B",
+  "en": "Hot desert",
+  "es": "Desierto cálido",
+  "desc_en": "Very little rain, far below evaporation, and a mean annual temperature of 18 °C or more. Sahara, Arabian Peninsula, Thar, interior Australia, Sonoran Desert.",
+  "desc_es": "Lluvias escasísimas, muy por debajo de la evaporación, y temperatura media anual de 18 °C o más. Sahara, península arábiga, desierto de Thar, interior de Australia, desierto de Sonora.",
+  "biome": "hot_desert"
+ },
+ "BWk": {
+  "color": "#ff9696",
+  "group": "B",
+  "en": "Cold desert",
+  "es": "Desierto frío",
+  "desc_en": "Arid, with a mean annual temperature below 18 °C and cold winters. Gobi, Taklamakan, the deserts of Central Asia, the Great Basin, parts of Patagonia.",
+  "desc_es": "Árido, con temperatura media anual inferior a 18 °C e inviernos fríos. Gobi, Taklamakán, desiertos de Asia central, Gran Cuenca de Estados Unidos y partes de la Patagonia.",
+  "biome": "cold_desert"
+ },
+ "BSh": {
+  "color": "#f5a500",
+  "group": "B",
+  "en": "Hot steppe",
+  "es": "Estepa cálida",
+  "desc_en": "Semi-arid and hot: rain stays below evaporation but above desert levels, and the mean annual temperature is 18 °C or more. Sahel, edges of the Kalahari, northwestern India, northern Mexico, inland northern Australia.",
+  "desc_es": "Semiárido y cálido: llueve menos de lo que se evapora, aunque más que en el desierto, y la media anual alcanza los 18 °C. Sahel, bordes del Kalahari, noroeste de la India, norte de México e interior del norte de Australia.",
+  "biome": "steppe"
+ },
+ "BSk": {
+  "color": "#ffdc64",
+  "group": "B",
+  "en": "Cold steppe",
+  "es": "Estepa fría",
+  "desc_en": "Semi-arid, with a mean annual temperature below 18 °C: dry grasslands with cold winters. Western Great Plains, the steppes of Kazakhstan and Mongolia, the Anatolian and Iranian plateaus, inland Spain, Patagonia.",
+  "desc_es": "Semiárido, con temperatura media anual inferior a 18 °C: praderas secas de inviernos fríos. Oeste de las Grandes Llanuras, estepas de Kazajistán y Mongolia, mesetas de Anatolia e Irán, interior de España y Patagonia.",
+  "biome": "steppe"
+ },
+ "Csa": {
+  "color": "#ffff00",
+  "group": "C",
+  "en": "Hot-summer Mediterranean",
+  "es": "Mediterráneo de verano cálido",
+  "desc_en": "Mild, wet winters and dry, hot summers (warmest month at least 22 °C). Most of the Mediterranean basin, California's Central Valley, Perth and Adelaide.",
+  "desc_es": "Inviernos suaves y lluviosos y veranos secos y calurosos (mes más cálido de al menos 22 °C). Casi toda la cuenca mediterránea, el valle Central de California, Perth y Adelaida.",
+  "biome": "mediterranean"
+ },
+ "Csb": {
+  "color": "#c8c800",
+  "group": "C",
+  "en": "Warm-summer Mediterranean",
+  "es": "Mediterráneo de verano templado",
+  "desc_en": "Dry summers that stay mild (warmest month below 22 °C) and wet winters. Coastal California, central Chile, northwestern Iberia, Cape Town.",
+  "desc_es": "Veranos secos pero suaves (mes más cálido por debajo de 22 °C) e inviernos húmedos. Costa de California, Chile central, noroeste de la península ibérica, Ciudad del Cabo.",
+  "biome": "mediterranean"
+ },
+ "Csc": {
+  "color": "#969600",
+  "group": "C",
+  "en": "Cold-summer Mediterranean",
+  "es": "Mediterráneo de verano fresco",
+  "desc_en": "A rare dry-summer climate with short, cool summers (only 1 to 3 months above 10 °C), found at high elevations. Upper Cascades and Sierra Nevada in the US, the southern Andes.",
+  "desc_es": "Variante rara de verano seco con veranos cortos y frescos (solo de 1 a 3 meses por encima de 10 °C), propia de zonas altas. Cumbres de las Cascadas y de Sierra Nevada en EE. UU., Andes del sur.",
+  "biome": "mediterranean"
+ },
+ "Cwa": {
+  "color": "#96ff96",
+  "group": "C",
+  "en": "Humid subtropical, dry winter",
+  "es": "Subtropical húmedo de invierno seco",
+  "desc_en": "Hot, rainy summers and mild, dry winters set by the monsoon. Northern India, southern China, Hong Kong, parts of southern Africa and inland Brazil.",
+  "desc_es": "Veranos cálidos y lluviosos e inviernos suaves y secos, al ritmo del monzón. Norte de la India, sur de China, Hong Kong, partes del sur de África y del interior de Brasil.",
+  "biome": "humid_subtropical"
+ },
+ "Cwb": {
+  "color": "#64c864",
+  "group": "C",
+  "en": "Subtropical highland",
+  "es": "Subtropical de altura",
+  "desc_en": "Mild all year with a dry winter, typical of tropical and subtropical highlands. Mexican Plateau, Ethiopian and East African highlands, Andean valleys, the South African Highveld.",
+  "desc_es": "Templado todo el año con invierno seco, típico de las tierras altas tropicales y subtropicales. Altiplano mexicano, macizo etíope y tierras altas de África oriental, valles andinos, Highveld sudafricano.",
+  "biome": "humid_subtropical"
+ },
+ "Cwc": {
+  "color": "#329632",
+  "group": "C",
+  "en": "Cold subtropical highland",
+  "es": "Subtropical de altura frío",
+  "desc_en": "Highland climate with a dry winter and short, cool summers (1 to 3 months above 10 °C). Small areas of the Andes and the Himalayan and Tibetan margins.",
+  "desc_es": "Clima de montaña con invierno seco y veranos cortos y frescos (de 1 a 3 meses por encima de 10 °C). Pequeñas zonas de los Andes y de los márgenes del Himalaya y el Tíbet.",
+  "biome": "temperate_broadleaf"
+ },
+ "Cfa": {
+  "color": "#c8ff50",
+  "group": "C",
+  "en": "Humid subtropical",
+  "es": "Subtropical húmedo",
+  "desc_en": "Hot, humid summers (warmest month at least 22 °C), mild winters and rain all year. Southeastern US, eastern China, southern Japan, the Río de la Plata basin, eastern Australia.",
+  "desc_es": "Veranos cálidos y húmedos (mes más cálido de al menos 22 °C), inviernos suaves y lluvias todo el año. Sureste de EE. UU., este de China, sur de Japón, cuenca del Río de la Plata, este de Australia.",
+  "biome": "humid_subtropical"
+ },
+ "Cfb": {
+  "color": "#64ff50",
+  "group": "C",
+  "en": "Oceanic",
+  "es": "Oceánico",
+  "desc_en": "Mild summers (warmest month below 22 °C), cool winters with little frost and rain spread through the year. Western and central Europe, New Zealand, Tasmania, southern Chile, the Pacific Northwest coast.",
+  "desc_es": "Veranos suaves (mes más cálido por debajo de 22 °C), inviernos frescos con pocas heladas y lluvias repartidas todo el año. Europa occidental y central, Nueva Zelanda, Tasmania, sur de Chile, costa del Pacífico noroeste.",
+  "biome": "temperate_broadleaf"
+ },
+ "Cfc": {
+  "color": "#32c800",
+  "group": "C",
+  "en": "Subpolar oceanic",
+  "es": "Oceánico subpolar",
+  "desc_en": "Cool, cloudy and wet, with short cool summers (1 to 3 months above 10 °C) and winters mild for the latitude. Coasts of Iceland and Norway, the Faroe Islands, southern Chile and Tierra del Fuego.",
+  "desc_es": "Fresco, nuboso y húmedo, con veranos cortos y frescos (de 1 a 3 meses por encima de 10 °C) e inviernos suaves para su latitud. Costas de Islandia y Noruega, islas Feroe, sur de Chile y Tierra del Fuego.",
+  "biome": "temperate_broadleaf"
+ },
+ "Dsa": {
+  "color": "#ff00ff",
+  "group": "D",
+  "en": "Continental, dry hot summer",
+  "es": "Continental de verano seco y cálido",
+  "desc_en": "Cold winters (coldest month at or below −3 °C) and hot, dry summers. Small areas of eastern Turkey, Iran, Central Asian valleys and the US Intermountain West.",
+  "desc_es": "Inviernos fríos (mes más frío de −3 °C o menos) y veranos secos y calurosos. Pequeñas zonas del este de Turquía, Irán, valles de Asia central y el oeste interior de EE. UU.",
+  "biome": "temperate_mixed"
+ },
+ "Dsb": {
+  "color": "#c800c8",
+  "group": "D",
+  "en": "Continental, dry warm summer",
+  "es": "Continental de verano seco y templado",
+  "desc_en": "Cold winters and mild, dry summers, usually in mid-latitude uplands. Eastern Anatolia, the Iranian and Afghan mountains, interior valleys of the Rockies and the Cascades.",
+  "desc_es": "Inviernos fríos y veranos suaves y secos, normalmente en tierras altas de latitudes medias. Este de Anatolia, montañas de Irán y Afganistán, valles interiores de las Rocosas y las Cascadas.",
+  "biome": "temperate_mixed"
+ },
+ "Dsc": {
+  "color": "#963296",
+  "group": "D",
+  "en": "Subarctic, dry summer",
+  "es": "Subártico de verano seco",
+  "desc_en": "Long, cold winters and short, cool, relatively dry summers. Scattered uplands of the western US, Central Asia and northeastern Siberia.",
+  "desc_es": "Inviernos largos y fríos y veranos cortos, frescos y relativamente secos. Zonas montañosas dispersas del oeste de EE. UU., Asia central y el nordeste de Siberia.",
+  "biome": "boreal"
+ },
+ "Dsd": {
+  "color": "#966496",
+  "group": "D",
+  "en": "Extreme subarctic, dry summer",
+  "es": "Subártico extremo de verano seco",
+  "desc_en": "Like Dsc but with a coldest month below −38 °C. The rarest class, limited to a few spots of northeastern Siberia.",
+  "desc_es": "Como Dsc, pero con un mes más frío por debajo de −38 °C. Es la clase más rara y se limita a unos pocos puntos del nordeste de Siberia.",
+  "biome": "boreal"
+ },
+ "Dwa": {
+  "color": "#aaafff",
+  "group": "D",
+  "en": "Continental, dry winter, hot summer",
+  "es": "Continental de invierno seco y verano cálido",
+  "desc_en": "Monsoon-influenced: very cold, dry winters and hot, rainy summers. Northeastern China around Beijing and the north of the Korean Peninsula.",
+  "desc_es": "Influido por el monzón: inviernos muy fríos y secos y veranos calurosos y lluviosos. Nordeste de China en torno a Pekín y norte de la península de Corea.",
+  "biome": "temperate_mixed"
+ },
+ "Dwb": {
+  "color": "#5a78dc",
+  "group": "D",
+  "en": "Continental, dry winter, warm summer",
+  "es": "Continental de invierno seco y verano templado",
+  "desc_en": "Cold, dry winters and mild, wet summers. Northern China and Manchuria, the Russian Far East, the edges of Mongolia.",
+  "desc_es": "Inviernos fríos y secos y veranos suaves y lluviosos. Norte de China y Manchuria, Extremo Oriente ruso y bordes de Mongolia.",
+  "biome": "temperate_mixed"
+ },
+ "Dwc": {
+  "color": "#4b50b4",
+  "group": "D",
+  "en": "Subarctic, dry winter",
+  "es": "Subártico de invierno seco",
+  "desc_en": "Very cold, dry winters and short summers that bring most of the year's rain. Eastern Siberia, northern Mongolia, margins of the Tibetan Plateau.",
+  "desc_es": "Inviernos muy fríos y secos y veranos cortos que concentran casi toda la lluvia. Siberia oriental, norte de Mongolia y márgenes de la meseta tibetana.",
+  "biome": "boreal"
+ },
+ "Dwd": {
+  "color": "#320087",
+  "group": "D",
+  "en": "Extreme subarctic, dry winter",
+  "es": "Subártico extremo de invierno seco",
+  "desc_en": "Coldest month below −38 °C and dry winters: the coldest inhabited region on Earth, around Yakutsk, Verkhoyansk and Oymyakon in Siberia.",
+  "desc_es": "Mes más frío por debajo de −38 °C e inviernos secos: la región habitada más fría del planeta, en torno a Yakutsk, Verjoyansk y Oimiakón, en Siberia.",
+  "biome": "boreal"
+ },
+ "Dfa": {
+  "color": "#00ffff",
+  "group": "D",
+  "en": "Hot-summer humid continental",
+  "es": "Continental húmedo de verano cálido",
+  "desc_en": "Cold winters (coldest month at or below −3 °C), hot summers (warmest month at least 22 °C) and precipitation all year. The US Corn Belt and lower Great Lakes, southern Russia along the lower Volga.",
+  "desc_es": "Inviernos fríos (mes más frío de −3 °C o menos), veranos calurosos (mes más cálido de al menos 22 °C) y precipitación todo el año. Cinturón del maíz de EE. UU. y Grandes Lagos inferiores, sur de Rusia en el bajo Volga.",
+  "biome": "temperate_mixed"
+ },
+ "Dfb": {
+  "color": "#37c8ff",
+  "group": "D",
+  "en": "Warm-summer humid continental",
+  "es": "Continental húmedo de verano templado",
+  "desc_en": "Cold, snowy winters, mild summers (warmest month below 22 °C) and precipitation all year. Eastern Europe, southern Scandinavia, much of European Russia, southern Canada, New England.",
+  "desc_es": "Inviernos fríos y nevados, veranos suaves (mes más cálido por debajo de 22 °C) y precipitación todo el año. Europa oriental, sur de Escandinavia, gran parte de la Rusia europea, sur de Canadá y Nueva Inglaterra.",
+  "biome": "temperate_mixed"
+ },
+ "Dfc": {
+  "color": "#007d7d",
+  "group": "D",
+  "en": "Subarctic",
+  "es": "Subártico",
+  "desc_en": "Long, harsh winters and short, cool summers (1 to 3 months above 10 °C) with precipitation all year: the taiga belt of Canada, Alaska, northern Scandinavia and Siberia.",
+  "desc_es": "Inviernos largos y rigurosos y veranos cortos y frescos (de 1 a 3 meses por encima de 10 °C), con precipitación todo el año: la franja de la taiga en Canadá, Alaska, el norte de Escandinavia y Siberia.",
+  "biome": "boreal"
+ },
+ "Dfd": {
+  "color": "#00465f",
+  "group": "D",
+  "en": "Extreme subarctic",
+  "es": "Subártico extremo",
+  "desc_en": "Subarctic with a coldest month below −38 °C and no dry season, limited to parts of Yakutia (Sakha Republic) in eastern Siberia.",
+  "desc_es": "Subártico con un mes más frío por debajo de −38 °C y sin estación seca, limitado a partes de Yakutia (República de Sajá), en Siberia oriental.",
+  "biome": "boreal"
+ },
+ "ET": {
+  "color": "#b2b2b2",
+  "group": "E",
+  "en": "Tundra",
+  "es": "Tundra",
+  "desc_en": "Warmest month between 0 and 10 °C: too cold for trees, with low shrubs, mosses and permafrost. Arctic coasts of Siberia and Canada, coastal Greenland, high mountains such as Tibet and the Andes.",
+  "desc_es": "Mes más cálido entre 0 y 10 °C: demasiado frío para los árboles, con arbustos bajos, musgos y permafrost. Costas árticas de Siberia y Canadá, litoral de Groenlandia y altas montañas como el Tíbet y los Andes.",
+  "biome": "tundra"
+ },
+ "EF": {
+  "color": "#666666",
+  "group": "E",
+  "en": "Ice cap",
+  "es": "Hielo perpetuo",
+  "desc_en": "Every month averages below 0 °C, so snow and ice last all year. Antarctica and the interior of Greenland.",
+  "desc_es": "Todos los meses tienen una media inferior a 0 °C, así que la nieve y el hielo duran todo el año. Antártida e interior de Groenlandia.",
+  "biome": "ice"
+ },
+ "biomes": {
+  "tropical_rainforest": {
+   "color": "#0b5d1e",
+   "en": "Tropical rainforest",
+   "es": "Selva tropical",
+   "desc_en": "Dense, evergreen, many-layered forest with the richest biodiversity on land.",
+   "desc_es": "Bosque denso, siempre verde y de varios estratos, con la mayor biodiversidad terrestre.",
+   "emoji": "🦜"
+  },
+  "tropical_monsoon_forest": {
+   "color": "#3f8f29",
+   "en": "Tropical monsoon forest",
+   "es": "Bosque tropical monzónico",
+   "desc_en": "Tall tropical forest, partly deciduous, that drops its leaves in the short dry season.",
+   "desc_es": "Bosque tropical alto, en parte caducifolio, que pierde las hojas durante la breve estación seca.",
+   "emoji": "🐅"
+  },
+  "savanna": {
+   "color": "#b5b83c",
+   "en": "Savanna",
+   "es": "Sabana",
+   "desc_en": "Tropical grassland with scattered trees, shaped by the dry season and by fire.",
+   "desc_es": "Pradera tropical con árboles dispersos, modelada por la estación seca y el fuego.",
+   "emoji": "🦒"
+  },
+  "hot_desert": {
+   "color": "#ebc97f",
+   "en": "Hot desert",
+   "es": "Desierto cálido",
+   "desc_en": "Sparse, drought-adapted plants such as cacti, succulents and acacias on sand, gravel and rock.",
+   "desc_es": "Vegetación escasa y adaptada a la sequía, como cactus, suculentas y acacias, sobre arena, grava y roca.",
+   "emoji": "🏜️"
+  },
+  "cold_desert": {
+   "color": "#c9b8a3",
+   "en": "Cold desert",
+   "es": "Desierto frío",
+   "desc_en": "Dry basins and plateaus with cold winters, dotted with sagebrush and saltbush.",
+   "desc_es": "Cuencas y mesetas secas de inviernos fríos, salpicadas de artemisas y matorral salino.",
+   "emoji": "🐫"
+  },
+  "steppe": {
+   "color": "#c8a951",
+   "en": "Steppe and dry grassland",
+   "es": "Estepa y pradera seca",
+   "desc_en": "Treeless grassland and scrub where rain is too scarce for forest.",
+   "desc_es": "Pastizales y matorrales sin árboles donde la lluvia no alcanza para el bosque.",
+   "emoji": "🌾"
+  },
+  "mediterranean": {
+   "color": "#8a8f3a",
+   "en": "Mediterranean scrub",
+   "es": "Matorral mediterráneo",
+   "desc_en": "Evergreen, hard-leaved shrubs and oaks adapted to summer drought and fire: maquis, chaparral, fynbos.",
+   "desc_es": "Arbustos y encinas de hoja dura y perenne adaptados a la sequía estival y al fuego: maquia, chaparral, fynbos.",
+   "emoji": "🫒"
+  },
+  "humid_subtropical": {
+   "color": "#5baa5b",
+   "en": "Humid subtropical forest",
+   "es": "Bosque subtropical húmedo",
+   "desc_en": "Warm-temperate evergreen and mixed forests of laurels, oaks, pines and bamboo.",
+   "desc_es": "Bosques templado-cálidos, perennifolios y mixtos, de laureles, robles, pinos y bambú.",
+   "emoji": "🎋"
+  },
+  "temperate_broadleaf": {
+   "color": "#2f8f5b",
+   "en": "Temperate broadleaf and oceanic forest",
+   "es": "Bosque templado caducifolio y oceánico",
+   "desc_en": "Deciduous forests of beech, oak and maple, and temperate rainforests on the rainiest coasts.",
+   "desc_es": "Bosques caducifolios de hayas, robles y arces, y bosques lluviosos templados en las costas más húmedas.",
+   "emoji": "🍂"
+  },
+  "temperate_mixed": {
+   "color": "#4c7a3d",
+   "en": "Temperate mixed (continental) forest",
+   "es": "Bosque mixto templado continental",
+   "desc_en": "Mixed conifer and broadleaf forest and forest-steppe under cold winters.",
+   "desc_es": "Bosque mixto de coníferas y frondosas, y estepa arbolada, con inviernos fríos.",
+   "emoji": "🌳"
+  },
+  "boreal": {
+   "color": "#1f4e45",
+   "en": "Boreal forest (taiga)",
+   "es": "Bosque boreal (taiga)",
+   "desc_en": "Vast conifer forests of spruce, fir, pine and larch under long, snowy winters.",
+   "desc_es": "Inmensos bosques de coníferas (píceas, abetos, pinos y alerces) con inviernos largos y nevados.",
+   "emoji": "🌲"
+  },
+  "tundra": {
+   "color": "#9aa58f",
+   "en": "Tundra",
+   "es": "Tundra",
+   "desc_en": "Treeless plains of mosses, lichens, sedges and dwarf shrubs over permafrost.",
+   "desc_es": "Llanuras sin árboles de musgos, líquenes, juncias y arbustos enanos sobre permafrost.",
+   "emoji": "🦌"
+  },
+  "ice": {
+   "color": "#eef4f8",
+   "en": "Ice",
+   "es": "Hielo",
+   "desc_en": "Permanent ice and snow with almost no vegetation.",
+   "desc_es": "Hielo y nieve permanentes, casi sin vegetación.",
+   "emoji": "🧊"
+  }
+ }
+}

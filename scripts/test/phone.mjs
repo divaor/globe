@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+// Phone-size walkthrough (Spanish UI): home, filters, projections, history, Pangea, quiz, light theme.
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
+const { chromium, devices } = require('playwright');
+const [url, outDir] = process.argv.slice(2);
+const browser = await chromium.launch({ args: ['--disable-accelerated-2d-canvas'] });
+const ctx = await browser.newContext({ ...devices['Pixel 7'], locale: 'es-ES' });
+const page = await ctx.newPage();
+const logs = [];
+page.on('pageerror', (e) => logs.push(`[pageerror] ${e.message}`));
+await page.goto(url, { waitUntil: 'networkidle' });
+await page.waitForFunction(() => document.getElementById('splash')?.classList.contains('hide') ?? true, null, { timeout: 30000 });
+const shot = async (name, ms = 2500) => { await page.waitForTimeout(ms); await page.screenshot({ path: `${outDir}/m-${name}.png` }); };
+await shot('home', 3000);
+await page.evaluate(() => window.atlas.shell.openFilters());
+await shot('filters', 1500);
+await page.evaluate(() => window.atlas.shell.sheet.close());
+await page.evaluate(() => window.atlas.shell.openProjections());
+await shot('projections', 1500);
+await page.evaluate(() => { window.atlas.shell.sheet.close(); return window.atlas.time.enter('history'); });
+await shot('history', 3000);
+await page.evaluate(() => window.atlas.time.enter('pangea'));
+await shot('pangea', 5000);
+await page.evaluate(() => window.atlas.time.modes.find((m) => m.id === 'pangea').exit());
+await page.evaluate(() => window.atlas.learn['startQuiz']('find', 'SA'));
+await shot('quiz', 2500);
+await page.evaluate(() => { window.atlas.learn['stopQuiz'](); window.atlas.app.setTheme('light'); window.atlas.app.flyToCountry('MEX'); });
+await shot('light', 3500);
+console.log(logs.join('\n') || 'no console errors');
+await browser.close();

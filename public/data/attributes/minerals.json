@@ -1,0 +1,1391 @@
+{
+ "oil": {
+  "en": "Oil",
+  "es": "Petróleo",
+  "emoji": "🛢️",
+  "unit": "% of world production (energy content)",
+  "unit_es": "% de la producción mundial (contenido energético)",
+  "year": 2024,
+  "source": "Our World in Data – energy dataset (Ember; Energy Institute Statistical Review), github.com/owid/energy-data – Energy Institute Statistical Review of World Energy",
+  "license": "CC BY 4.0",
+  "producers": [
+   [
+    "USA",
+    18.9
+   ],
+   [
+    "RUS",
+    11.6
+   ],
+   [
+    "SAU",
+    11.2
+   ],
+   [
+    "CAN",
+    6.4
+   ],
+   [
+    "IRN",
+    5.2
+   ],
+   [
+    "CHN",
+    4.7
+   ],
+   [
+    "IRQ",
+    4.7
+   ],
+   [
+    "BRA",
+    4.0
+   ],
+   [
+    "ARE",
+    4.0
+   ],
+   [
+    "KWT",
+    2.9
+   ],
+   [
+    "MEX",
+    2.1
+   ],
+   [
+    "KAZ",
+    1.9
+   ],
+   [
+    "NOR",
+    1.9
+   ],
+   [
+    "NGA",
+    1.7
+   ],
+   [
+    "QAT",
+    1.7
+   ],
+   [
+    "DZA",
+    1.3
+   ],
+   [
+    "AGO",
+    1.3
+   ],
+   [
+    "ARG",
+    1.3
+   ],
+   [
+    "LBY",
+    1.2
+   ],
+   [
+    "OMN",
+    1.1
+   ],
+   [
+    "VEN",
+    1.1
+   ],
+   [
+    "COL",
+    0.9
+   ],
+   [
+    "EGY",
+    0.7
+   ],
+   [
+    "GUY",
+    0.7
+   ],
+   [
+    "IND",
+    0.7
+   ],
+   [
+    "IDN",
+    0.7
+   ],
+   [
+    "GBR",
+    0.7
+   ],
+   [
+    "AZE",
+    0.6
+   ],
+   [
+    "ECU",
+    0.6
+   ],
+   [
+    "MYS",
+    0.5
+   ],
+   [
+    "AUS",
+    0.3
+   ],
+   [
+    "COG",
+    0.3
+   ],
+   [
+    "THA",
+    0.3
+   ],
+   [
+    "GAB",
+    0.2
+   ],
+   [
+    "TKM",
+    0.2
+   ],
+   [
+    "VNM",
+    0.2
+   ],
+   [
+    "BRN",
+    0.1
+   ],
+   [
+    "TCD",
+    0.1
+   ],
+   [
+    "DNK",
+    0.1
+   ],
+   [
+    "GNQ",
+    0.1
+   ],
+   [
+    "ITA",
+    0.1
+   ],
+   [
+    "PER",
+    0.1
+   ],
+   [
+    "ROU",
+    0.1
+   ],
+   [
+    "SSD",
+    0.1
+   ],
+   [
+    "TTO",
+    0.1
+   ]
+  ]
+ },
+ "natural-gas": {
+  "en": "Natural gas",
+  "es": "Gas natural",
+  "emoji": "🔥",
+  "unit": "% of world production (energy content)",
+  "unit_es": "% de la producción mundial (contenido energético)",
+  "year": 2024,
+  "source": "Our World in Data – energy dataset (Ember; Energy Institute Statistical Review), github.com/owid/energy-data – Energy Institute Statistical Review of World Energy",
+  "license": "CC BY 4.0",
+  "producers": [
+   [
+    "USA",
+    25.0
+   ],
+   [
+    "RUS",
+    15.3
+   ],
+   [
+    "IRN",
+    6.4
+   ],
+   [
+    "CHN",
+    6.0
+   ],
+   [
+    "CAN",
+    4.7
+   ],
+   [
+    "QAT",
+    4.4
+   ],
+   [
+    "AUS",
+    3.6
+   ],
+   [
+    "SAU",
+    2.9
+   ],
+   [
+    "NOR",
+    2.7
+   ],
+   [
+    "DZA",
+    2.3
+   ],
+   [
+    "MYS",
+    1.9
+   ],
+   [
+    "TKM",
+    1.8
+   ],
+   [
+    "IDN",
+    1.7
+   ],
+   [
+    "ARE",
+    1.5
+   ],
+   [
+    "EGY",
+    1.2
+   ],
+   [
+    "ARG",
+    1.1
+   ],
+   [
+    "NGA",
+    1.1
+   ],
+   [
+    "OMN",
+    1.1
+   ],
+   [
+    "UZB",
+    1.0
+   ],
+   [
+    "AZE",
+    0.9
+   ],
+   [
+    "MEX",
+    0.9
+   ],
+   [
+    "IND",
+    0.8
+   ],
+   [
+    "VEN",
+    0.8
+   ],
+   [
+    "KAZ",
+    0.7
+   ],
+   [
+    "THA",
+    0.7
+   ],
+   [
+    "GBR",
+    0.7
+   ],
+   [
+    "BRA",
+    0.6
+   ],
+   [
+    "PAK",
+    0.6
+   ],
+   [
+    "TTO",
+    0.6
+   ],
+   [
+    "BGD",
+    0.5
+   ],
+   [
+    "ISR",
+    0.5
+   ],
+   [
+    "BHR",
+    0.4
+   ],
+   [
+    "KWT",
+    0.4
+   ],
+   [
+    "MMR",
+    0.4
+   ],
+   [
+    "PER",
+    0.4
+   ],
+   [
+    "UKR",
+    0.4
+   ],
+   [
+    "BOL",
+    0.3
+   ],
+   [
+    "BRN",
+    0.3
+   ],
+   [
+    "COL",
+    0.3
+   ],
+   [
+    "IRQ",
+    0.3
+   ],
+   [
+    "LBY",
+    0.3
+   ],
+   [
+    "NLD",
+    0.2
+   ],
+   [
+    "ROU",
+    0.2
+   ],
+   [
+    "DEU",
+    0.1
+   ],
+   [
+    "ITA",
+    0.1
+   ],
+   [
+    "POL",
+    0.1
+   ],
+   [
+    "SYR",
+    0.1
+   ],
+   [
+    "VNM",
+    0.1
+   ]
+  ]
+ },
+ "coal": {
+  "en": "Coal",
+  "es": "Carbón",
+  "emoji": "🪨",
+  "unit": "% of world production (energy content)",
+  "unit_es": "% de la producción mundial (contenido energético)",
+  "year": 2024,
+  "source": "Our World in Data – energy dataset (Ember; Energy Institute Statistical Review), github.com/owid/energy-data – Energy Institute Statistical Review of World Energy",
+  "license": "CC BY 4.0",
+  "producers": [
+   [
+    "CHN",
+    51.8
+   ],
+   [
+    "IND",
+    9.9
+   ],
+   [
+    "IDN",
+    9.3
+   ],
+   [
+    "AUS",
+    6.5
+   ],
+   [
+    "USA",
+    5.8
+   ],
+   [
+    "RUS",
+    5.0
+   ],
+   [
+    "ZAF",
+    3.1
+   ],
+   [
+    "KAZ",
+    1.1
+   ],
+   [
+    "MNG",
+    1.1
+   ],
+   [
+    "COL",
+    0.8
+   ],
+   [
+    "POL",
+    0.8
+   ],
+   [
+    "CAN",
+    0.6
+   ],
+   [
+    "VNM",
+    0.6
+   ],
+   [
+    "DEU",
+    0.5
+   ],
+   [
+    "TUR",
+    0.4
+   ],
+   [
+    "CZE",
+    0.2
+   ],
+   [
+    "PAK",
+    0.2
+   ],
+   [
+    "UKR",
+    0.2
+   ],
+   [
+    "BRA",
+    0.1
+   ],
+   [
+    "BGR",
+    0.1
+   ],
+   [
+    "MEX",
+    0.1
+   ],
+   [
+    "SRB",
+    0.1
+   ],
+   [
+    "THA",
+    0.1
+   ],
+   [
+    "ZWE",
+    0.1
+   ]
+  ]
+ },
+ "gold": {
+  "en": "Gold",
+  "es": "Oro",
+  "emoji": "🪙",
+  "unit": "% of world mine production (by mass)",
+  "unit_es": "% de la producción minera mundial (en masa)",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "CHN",
+    11
+   ],
+   [
+    "RUS",
+    10
+   ],
+   [
+    "AUS",
+    9
+   ],
+   [
+    "CAN",
+    6
+   ],
+   [
+    "USA",
+    5
+   ],
+   [
+    "GHA",
+    4
+   ],
+   [
+    "MEX",
+    4
+   ],
+   [
+    "KAZ",
+    4
+   ],
+   [
+    "IDN",
+    4
+   ],
+   [
+    "UZB",
+    4
+   ],
+   [
+    "PER",
+    3
+   ],
+   [
+    "ZAF",
+    3
+   ]
+  ]
+ },
+ "silver": {
+  "en": "Silver",
+  "es": "Plata",
+  "emoji": "🥈",
+  "unit": "% of world mine production (by mass)",
+  "unit_es": "% de la producción minera mundial (en masa)",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "MEX",
+    24
+   ],
+   [
+    "CHN",
+    13
+   ],
+   [
+    "PER",
+    13
+   ],
+   [
+    "BOL",
+    5
+   ],
+   [
+    "POL",
+    5
+   ],
+   [
+    "RUS",
+    5
+   ],
+   [
+    "CHL",
+    5
+   ],
+   [
+    "AUS",
+    4
+   ],
+   [
+    "USA",
+    4
+   ],
+   [
+    "KAZ",
+    4
+   ]
+  ]
+ },
+ "copper": {
+  "en": "Copper",
+  "es": "Cobre",
+  "emoji": "🟠",
+  "unit": "% of world mine production (Cu content)",
+  "unit_es": "% de la producción minera mundial (contenido de cobre)",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "CHL",
+    23
+   ],
+   [
+    "COD",
+    14
+   ],
+   [
+    "PER",
+    11
+   ],
+   [
+    "CHN",
+    8
+   ],
+   [
+    "IDN",
+    5
+   ],
+   [
+    "USA",
+    5
+   ],
+   [
+    "RUS",
+    4
+   ],
+   [
+    "AUS",
+    3
+   ],
+   [
+    "KAZ",
+    3
+   ],
+   [
+    "MEX",
+    3
+   ],
+   [
+    "ZMB",
+    3
+   ]
+  ]
+ },
+ "iron-ore": {
+  "en": "Iron ore",
+  "es": "Mineral de hierro",
+  "emoji": "🧲",
+  "unit": "% of world usable-ore production",
+  "unit_es": "% de la producción mundial de mineral utilizable",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "AUS",
+    37
+   ],
+   [
+    "BRA",
+    17
+   ],
+   [
+    "CHN",
+    11
+   ],
+   [
+    "IND",
+    11
+   ],
+   [
+    "RUS",
+    4
+   ],
+   [
+    "IRN",
+    4
+   ],
+   [
+    "CAN",
+    2
+   ],
+   [
+    "ZAF",
+    2
+   ],
+   [
+    "KAZ",
+    2
+   ],
+   [
+    "UKR",
+    1
+   ],
+   [
+    "SWE",
+    1
+   ]
+  ]
+ },
+ "bauxite": {
+  "en": "Bauxite (aluminium ore)",
+  "es": "Bauxita (mena de aluminio)",
+  "emoji": "🟫",
+  "unit": "% of world mine production",
+  "unit_es": "% de la producción minera mundial",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "GIN",
+    29
+   ],
+   [
+    "AUS",
+    22
+   ],
+   [
+    "CHN",
+    21
+   ],
+   [
+    "BRA",
+    7
+   ],
+   [
+    "IND",
+    5
+   ],
+   [
+    "IDN",
+    4
+   ],
+   [
+    "JAM",
+    1
+   ],
+   [
+    "RUS",
+    1
+   ],
+   [
+    "SAU",
+    1
+   ],
+   [
+    "KAZ",
+    1
+   ]
+  ]
+ },
+ "aluminium": {
+  "en": "Aluminium (primary smelting)",
+  "es": "Aluminio (fundición primaria)",
+  "emoji": "✈️",
+  "unit": "% of world smelter production",
+  "unit_es": "% de la producción mundial de las fundiciones",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "CHN",
+    60
+   ],
+   [
+    "IND",
+    6
+   ],
+   [
+    "RUS",
+    5
+   ],
+   [
+    "CAN",
+    4
+   ],
+   [
+    "ARE",
+    4
+   ],
+   [
+    "BHR",
+    2
+   ],
+   [
+    "AUS",
+    2
+   ],
+   [
+    "NOR",
+    2
+   ],
+   [
+    "BRA",
+    1
+   ],
+   [
+    "MYS",
+    1
+   ]
+  ]
+ },
+ "lithium": {
+  "en": "Lithium",
+  "es": "Litio",
+  "emoji": "🔋",
+  "unit": "% of world mine production (Li content)",
+  "unit_es": "% de la producción minera mundial (contenido de litio)",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "AUS",
+    37
+   ],
+   [
+    "CHL",
+    20
+   ],
+   [
+    "CHN",
+    17
+   ],
+   [
+    "ZWE",
+    9
+   ],
+   [
+    "ARG",
+    8
+   ],
+   [
+    "BRA",
+    4
+   ],
+   [
+    "CAN",
+    2
+   ]
+  ]
+ },
+ "cobalt": {
+  "en": "Cobalt",
+  "es": "Cobalto",
+  "emoji": "🔵",
+  "unit": "% of world mine production",
+  "unit_es": "% de la producción minera mundial",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "COD",
+    76
+   ],
+   [
+    "IDN",
+    10
+   ],
+   [
+    "RUS",
+    3
+   ],
+   [
+    "AUS",
+    1
+   ],
+   [
+    "PHL",
+    1
+   ],
+   [
+    "CAN",
+    1
+   ],
+   [
+    "CUB",
+    1
+   ],
+   [
+    "PNG",
+    1
+   ],
+   [
+    "MDG",
+    1
+   ],
+   [
+    "TUR",
+    1
+   ]
+  ]
+ },
+ "nickel": {
+  "en": "Nickel",
+  "es": "Níquel",
+  "emoji": "⚪",
+  "unit": "% of world mine production",
+  "unit_es": "% de la producción minera mundial",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "IDN",
+    59
+   ],
+   [
+    "PHL",
+    9
+   ],
+   [
+    "RUS",
+    5
+   ],
+   [
+    "CAN",
+    5
+   ],
+   [
+    "CHN",
+    3
+   ],
+   [
+    "NCL",
+    3
+   ],
+   [
+    "AUS",
+    2
+   ],
+   [
+    "BRA",
+    2
+   ]
+  ]
+ },
+ "rare-earths": {
+  "en": "Rare earth elements",
+  "es": "Tierras raras",
+  "emoji": "🧪",
+  "unit": "% of world mine production (REO)",
+  "unit_es": "% de la producción minera mundial (óxidos de tierras raras)",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "CHN",
+    69
+   ],
+   [
+    "USA",
+    11
+   ],
+   [
+    "MMR",
+    8
+   ],
+   [
+    "AUS",
+    3
+   ],
+   [
+    "NGA",
+    3
+   ],
+   [
+    "THA",
+    3
+   ],
+   [
+    "IND",
+    1
+   ],
+   [
+    "RUS",
+    1
+   ],
+   [
+    "MDG",
+    1
+   ]
+  ]
+ },
+ "uranium": {
+  "en": "Uranium",
+  "es": "Uranio",
+  "emoji": "☢️",
+  "unit": "% of world mine production (tU)",
+  "unit_es": "% de la producción minera mundial (toneladas de uranio)",
+  "year": 2024,
+  "source": "compiled (approx., World Nuclear Association)",
+  "approximate": true,
+  "producers": [
+   [
+    "KAZ",
+    39
+   ],
+   [
+    "CAN",
+    24
+   ],
+   [
+    "NAM",
+    12
+   ],
+   [
+    "AUS",
+    8
+   ],
+   [
+    "UZB",
+    7
+   ],
+   [
+    "RUS",
+    4
+   ],
+   [
+    "CHN",
+    3
+   ],
+   [
+    "NER",
+    2
+   ],
+   [
+    "IND",
+    1
+   ]
+  ]
+ },
+ "diamonds": {
+  "en": "Diamonds (natural, by carats)",
+  "es": "Diamantes (naturales, en quilates)",
+  "emoji": "💎",
+  "unit": "% of world production (carats)",
+  "unit_es": "% de la producción mundial (quilates)",
+  "year": 2024,
+  "source": "compiled (approx., Kimberley Process / USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "RUS",
+    32
+   ],
+   [
+    "BWA",
+    15
+   ],
+   [
+    "CAN",
+    12
+   ],
+   [
+    "AGO",
+    12
+   ],
+   [
+    "COD",
+    10
+   ],
+   [
+    "ZAF",
+    6
+   ],
+   [
+    "ZWE",
+    4
+   ],
+   [
+    "NAM",
+    2
+   ]
+  ]
+ },
+ "platinum": {
+  "en": "Platinum",
+  "es": "Platino",
+  "emoji": "💍",
+  "unit": "% of world mine production",
+  "unit_es": "% de la producción minera mundial",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "ZAF",
+    70
+   ],
+   [
+    "RUS",
+    11
+   ],
+   [
+    "ZWE",
+    11
+   ],
+   [
+    "CAN",
+    3
+   ],
+   [
+    "USA",
+    1
+   ],
+   [
+    "CHN",
+    1
+   ]
+  ]
+ },
+ "zinc": {
+  "en": "Zinc",
+  "es": "Zinc",
+  "emoji": "🔩",
+  "unit": "% of world mine production",
+  "unit_es": "% de la producción minera mundial",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "CHN",
+    33
+   ],
+   [
+    "PER",
+    11
+   ],
+   [
+    "AUS",
+    9
+   ],
+   [
+    "IND",
+    7
+   ],
+   [
+    "USA",
+    6
+   ],
+   [
+    "MEX",
+    5
+   ],
+   [
+    "BOL",
+    4
+   ],
+   [
+    "RUS",
+    2
+   ],
+   [
+    "KAZ",
+    2
+   ],
+   [
+    "SWE",
+    2
+   ]
+  ]
+ },
+ "tin": {
+  "en": "Tin",
+  "es": "Estaño",
+  "emoji": "🥫",
+  "unit": "% of world mine production",
+  "unit_es": "% de la producción minera mundial",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "CHN",
+    23
+   ],
+   [
+    "IDN",
+    17
+   ],
+   [
+    "MMR",
+    11
+   ],
+   [
+    "PER",
+    10
+   ],
+   [
+    "COD",
+    9
+   ],
+   [
+    "BRA",
+    7
+   ],
+   [
+    "BOL",
+    6
+   ],
+   [
+    "AUS",
+    3
+   ]
+  ]
+ },
+ "phosphate": {
+  "en": "Phosphate rock",
+  "es": "Roca fosfórica",
+  "emoji": "🌾",
+  "unit": "% of world mine production",
+  "unit_es": "% de la producción minera mundial",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "CHN",
+    46
+   ],
+   [
+    "MAR",
+    14
+   ],
+   [
+    "USA",
+    8
+   ],
+   [
+    "RUS",
+    6
+   ],
+   [
+    "JOR",
+    5
+   ],
+   [
+    "SAU",
+    4
+   ],
+   [
+    "BRA",
+    3
+   ],
+   [
+    "EGY",
+    2
+   ],
+   [
+    "VNM",
+    2
+   ],
+   [
+    "PER",
+    2
+   ]
+  ],
+  "note": "Morocco and Western Sahara hold about 70% of world reserves"
+ },
+ "potash": {
+  "en": "Potash",
+  "es": "Potasa",
+  "emoji": "🌱",
+  "unit": "% of world mine production (K2O)",
+  "unit_es": "% de la producción minera mundial (K2O)",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "CAN",
+    32
+   ],
+   [
+    "RUS",
+    19
+   ],
+   [
+    "BLR",
+    16
+   ],
+   [
+    "CHN",
+    13
+   ],
+   [
+    "ISR",
+    5
+   ],
+   [
+    "DEU",
+    5
+   ],
+   [
+    "JOR",
+    4
+   ],
+   [
+    "LAO",
+    3
+   ],
+   [
+    "CHL",
+    2
+   ],
+   [
+    "USA",
+    1
+   ]
+  ]
+ },
+ "graphite": {
+  "en": "Graphite (natural)",
+  "es": "Grafito (natural)",
+  "emoji": "✏️",
+  "unit": "% of world mine production",
+  "unit_es": "% de la producción minera mundial",
+  "year": 2024,
+  "source": "compiled (approx., USGS MCS)",
+  "approximate": true,
+  "producers": [
+   [
+    "CHN",
+    79
+   ],
+   [
+    "MDG",
+    6
+   ],
+   [
+    "MOZ",
+    5
+   ],
+   [
+    "BRA",
+    4
+   ],
+   [
+    "IND",
+    2
+   ],
+   [
+    "RUS",
+    1
+   ],
+   [
+    "PRK",
+    1
+   ],
+   [
+    "CAN",
+    1
+   ]
+  ]
+ }
+}
