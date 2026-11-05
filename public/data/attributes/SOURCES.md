@@ -234,3 +234,23 @@ Compiled by hand from well-established facts (no invented precise numbers):
   lag recent events. Survey years differ between countries for literacy, Gini, religions.
 * `avg_temperature` (samayo/country-json) has no documented original source or reference period.
 * `vat_rate` only covers EU/EEA countries, the UK and Switzerland.
+
+
+## regional-languages.json (Regional languages filter)
+
+Languages spoken at home in 1,592 first-level regions (Natural Earth admin-1, as drawn by the app) of
+137 countries, 680 languages with English and Spanish names, family and approximate L1 speakers.
+Each region lists its languages, the one most people speak at home first, then other languages that
+are widely spoken or co-official there; a few secondary entries are smaller minorities and say so in
+their note (Breton, Low German, Nahuatl, Scots). Regions that only speak the national main language
+are omitted. Built by `scripts/data/attributes/regional/build_regional.py` from the hand-compiled
+tables next to it (`rl_europe.py`, `rl_asia.py`, `rl_africa.py`, `rl_americas.py`, `rl_langs.py`,
+`rl_notes.py`); the sources are listed in `scripts/data/attributes/regional/SOURCES.txt`.
+
+* Census or survey figures where they exist: Catalonia EULP 2023 (IDESCAT), Galicia IGE 2023, ISTAT
+  2015, INEGI 2020, Guatemala 2018, Peru 2017, Bolivia 2024, Pakistan 2023, Paraguay 2024, Taiwan
+  2020, Canada, the Balkans, the Baltics and more (many via citypopulation.de).
+* Estimates from ethnolinguistic sources (Wikipedia and its references) where no census asks about
+  language: much of Africa, Iran, Turkey, Myanmar and Tanzania. These are the least certain.
+* Codes are ISO 639-3; `nah` (Nahuatl) and `ber` are collective codes. "zho" is shown as
+  "Chinese (Mandarin)". Licence: CC BY-SA 4.0 (Wikipedia-derived compilation).

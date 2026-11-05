@@ -14,9 +14,13 @@ import type { App } from '../../app/app';
 import type { InfoRow, LayerDef, LegendItem, RenderCtx } from '../types';
 
 interface LangInfo { en: string; es: string; family?: string; speakers?: number }
-interface RLData { source?: string; license?: string; languages: Record<string, LangInfo>; regions: Record<string, string[]> }
+interface RLData {
+  source?: string; license?: string; languages: Record<string, LangInfo>; regions: Record<string, string[]>;
+  notes?: Record<string, string>; countryNotes?: Record<string, string>;
+}
 interface AP { n: string; es?: string; a: string; lx: number; ly: number }
-type Region = Shape<AP> & { langs: string[]; shown: string; area: number };
+// first: the language most people speak at home; also: a regional language also widely spoken (stripes).
+type Region = Shape<AP> & { langs: string[]; first: string; also: string | null; area: number };
 
 let D: RLData = { languages: {}, regions: {} };
 let regions: Region[] = [];
@@ -55,8 +59,28 @@ function colourOf(code: string) {
   }
   return c;
 }
-/** The language a region is shown in: a regional language where one is widely spoken, else the main one. */
-const shownLang = (langs: string[], main: string | undefined) => langs.find((l) => l !== main) ?? langs[0] ?? main ?? '';
+/** A regional language also widely spoken in a region (not its first, not the national language). */
+const alsoLang = (langs: string[], main: string | undefined) => langs.slice(1).find((l) => l !== main && l !== langs[0]) ?? null;
+
+/** Diagonal stripes in a language's colour, drawn at device resolution. */
+const patterns = new Map<string, CanvasPattern | null>();
+function stripes(ctx: CanvasRenderingContext2D, colour: string, scale: number): CanvasPattern | null {
+  const key = `${colour}@${scale}`;
+  if (patterns.has(key)) return patterns.get(key)!;
+  const n = Math.max(4, Math.round(8 * scale));
+  const c = document.createElement('canvas');
+  c.width = c.height = n;
+  const g = c.getContext('2d')!;
+  g.strokeStyle = colour;
+  g.lineWidth = Math.max(1.5, 2.6 * scale);
+  g.beginPath();
+  for (const o of [-n, 0, n]) { g.moveTo(o, n); g.lineTo(o + n, 0); }
+  g.stroke();
+  const p = ctx.createPattern(c, 'repeat');
+  p?.setTransform(new DOMMatrix().scale(1 / scale));
+  patterns.set(key, p);
+  return p;
+}
 
 async function load() {
   if (regions.length) return;
@@ -73,29 +97,36 @@ async function load() {
   }
   for (const [id, m] of Object.entries(LC.data.meta)) if (!mainOf[id] && m.iso && mainOf[m.iso]) mainOf[id] = mainOf[m.iso];
   for (const key of Object.keys(D.regions)) byCountry.add(key.split('|')[0]);
-  const langsOf = (p: AP) => D.regions[`${p.a}|${p.n}`] ?? (mainOf[p.a] ? [mainOf[p.a]] : []);
+  const langsOf = (p: AP): string[] => D.regions[`${p.a}|${p.n}`] ?? (mainOf[p.a] ? [mainOf[p.a]] : []);
   regions = shapesFrom<AP>(topo, 'admin1').filter((s) => byCountry.has(s.feature.properties.a)).map((s) => {
     const langs = langsOf(s.feature.properties);
-    return { ...s, langs, shown: shownLang(langs, mainOf[s.feature.properties.a]), area: geoArea(s.feature as never) };
+    const main = mainOf[s.feature.properties.a];
+    return { ...s, langs, first: langs[0] ?? main ?? '', also: alsoLang(langs, main), area: geoArea(s.feature as never) };
   });
-  // Dashed lines where the language changes between neighbouring regions.
+  // Dashed lines where the language most people speak changes between neighbouring regions.
   const obj = topo.objects.admin1 as GeometryCollection;
-  const shownOf = (g: unknown) => {
+  const firstOf = (g: unknown) => {
     const p = (g as { properties?: AP }).properties;
-    return p && byCountry.has(p.a) ? shownLang(langsOf(p), mainOf[p.a]) : null;
+    return p && byCountry.has(p.a) ? langsOf(p)[0] ?? null : null;
   };
-  edges = chunkLines(mesh(topo, obj, (a, b) => a !== b && shownOf(a) !== null && shownOf(b) !== null && shownOf(a) !== shownOf(b)) as MultiLineString);
-  // One name per regional language and country, at its largest region.
+  edges = chunkLines(mesh(topo, obj, (a, b) => a !== b && firstOf(a) !== null && firstOf(b) !== null && firstOf(a) !== firstOf(b)) as MultiLineString);
+  // One name per regional language and country: at its largest region where it is spoken most,
+  // else where it is also widely spoken.
   const best = new Map<string, Region>();
   const total = new Map<string, number>();
   for (const r of regions) {
-    areaOf.set(r.shown, (areaOf.get(r.shown) ?? 0) + r.area);
-    if (r.shown === mainOf[r.feature.properties.a]) continue;
-    const k = `${r.feature.properties.a}|${r.shown}`;
-    total.set(k, (total.get(k) ?? 0) + r.area);
-    if (!best.has(k) || best.get(k)!.area < r.area) best.set(k, r);
+    areaOf.set(r.first, (areaOf.get(r.first) ?? 0) + r.area);
+    const main = mainOf[r.feature.properties.a];
+    for (const [code, rank] of [[r.first, 0], [r.also, 1]] as const) {
+      if (!code || code === main) continue;
+      const k = `${r.feature.properties.a}|${code}`;
+      total.set(k, (total.get(k) ?? 0) + r.area);
+      const cur = best.get(k);
+      const curRank = cur ? (cur.first === code ? 0 : 1) : 2;
+      if (rank < curRank || (rank === curRank && cur!.area < r.area)) best.set(k, r);
+    }
   }
-  anchors = [...best].map(([k, r]) => ({ code: r.shown, lon: r.feature.properties.lx, lat: r.feature.properties.ly, area: total.get(k)! }));
+  anchors = [...best].map(([k, r]) => ({ code: k.split('|')[1], lon: r.feature.properties.lx, lat: r.feature.properties.ly, area: total.get(k)! }));
   for (const s of LC.data.best('110m').countries) {
     if (byCountry.has(s.id) || !mainOf[s.id]) continue;
     areaOf.set(mainOf[s.id], (areaOf.get(mainOf[s.id]) ?? 0) + geoArea(s.feature as never));
@@ -124,21 +155,34 @@ const regional: LayerDef = {
   drawFill(rc: RenderCtx) {
     const { ctx, path } = rc;
     const groups = new Map<string, Shape<unknown>[]>();
-    const add = (color: string, s: Shape<unknown>) => {
-      let g = groups.get(color);
-      if (!g) groups.set(color, (g = []));
+    const add = (key: string, s: Shape<unknown>) => {
+      let g = groups.get(key);
+      if (!g) groups.set(key, (g = []));
       g.push(s);
     };
     for (const s of rc.visibleShapes(rc.level.countries)) {
       if (byCountry.has(s.id)) continue; // drawn region by region below
       const m = mainOf[s.id];
-      if (m) add(colourOf(m), s);
+      if (m) add(m, s);
     }
-    for (const r of rc.visibleShapes(regions)) if (r.shown) add(colourOf(r.shown), r);
-    for (const [color, list] of groups) {
+    const visible = rc.visibleShapes(regions);
+    for (const r of visible) if (r.first) add(r.first, r);
+    for (const [code, list] of groups) {
       ctx.beginPath();
       for (const s of list) path(s.feature as never);
-      ctx.fillStyle = color;
+      ctx.fillStyle = colourOf(code);
+      ctx.fill();
+    }
+    // Stripes: another language widely spoken there (Catalan in Barcelona, Maya in Yucatán...).
+    const also = new Map<string, Shape<unknown>[]>();
+    for (const r of visible) if (r.also) { let g = also.get(r.also); if (!g) also.set(r.also, (g = [])); g.push(r); }
+    const scale = ctx.getTransform().a || 1;
+    for (const [code, list] of also) {
+      const pat = stripes(ctx, colourOf(code), scale);
+      if (!pat) continue;
+      ctx.beginPath();
+      for (const s of list) path(s.feature as never);
+      ctx.fillStyle = pat;
       ctx.fill();
     }
     ctx.beginPath();
@@ -165,34 +209,41 @@ const regional: LayerDef = {
   legend() {
     const regionalCodes = new Set(anchors.map((a) => a.code));
     const codes = [...areaOf.keys()].sort((a, b) => Number(regionalCodes.has(b)) - Number(regionalCodes.has(a)) || areaOf.get(b)! - areaOf.get(a)!);
-    const items: LegendItem[] = codes.slice(0, 16).map((c) => ({ color: colourOf(c), label: nameOf(c) }));
+    const items: LegendItem[] = codes.slice(0, 15).map((c) => ({ color: colourOf(c), label: nameOf(c) }));
+    items.push({ color: '#9aa4b2', label: es() ? 'Rayas: otra lengua muy hablada allí' : 'Stripes: another language widely spoken there', shape: 'hatch' });
     return {
       kind: 'categories', title: es() ? 'Lengua de cada región' : 'Language of each region', items,
       note: es()
-        ? 'Cada región, en el color de su lengua regional donde esta se habla mucho; si no, en el de la lengua principal del país. Toca una región para ver sus lenguas.'
-        : 'Each region in the colour of its regional language where one is widely spoken, otherwise its country’s main language. Tap a region to see its languages.',
+        ? 'Color: la lengua que más se habla en casa en cada región; rayas: otra lengua regional muy hablada. Toca una región para ver sus lenguas.'
+        : 'Colour: the language most people speak at home in each region; stripes: another regional language widely spoken there. Tap a region to see its languages.',
     };
   },
   pick(lon, lat) {
     const r = regionAt(lon, lat);
     if (!r) return null;
     const p = r.feature.properties;
+    const note = D.notes?.[`${p.a}|${p.n}`];
     return [
       { icon: '📍', label: es() ? 'Región' : 'Region', value: es() && p.es ? p.es : p.n },
-      { icon: '💬', label: es() ? 'Lenguas' : 'Languages', value: r.langs.map(nameOf).join(', ') },
+      { icon: '💬', label: es() ? 'Lenguas (la más hablada primero)' : 'Languages (most spoken first)', value: r.langs.map(nameOf).join(', ') },
+      ...(note ? [{ icon: '📝', label: es() ? 'Nota' : 'Note', value: note }] : []),
     ];
   },
   info(id) {
     if (!byCountry.has(id)) return mainOf[id] ? [{ label: es() ? 'Lengua principal' : 'Main language', value: nameOf(mainOf[id]) }] : null;
     const counts = new Map<string, number>();
-    for (const r of regions) if (r.feature.properties.a === id && r.shown !== mainOf[id]) counts.set(r.shown, (counts.get(r.shown) ?? 0) + 1);
+    for (const r of regions) {
+      if (r.feature.properties.a !== id) continue;
+      for (const c of [r.first, r.also]) if (c && c !== mainOf[id]) counts.set(c, (counts.get(c) ?? 0) + 1);
+    }
     const list = [...counts].sort((a, b) => b[1] - a[1]).map(([c]) => nameOf(c));
-    return [{ label: es() ? 'Lenguas regionales' : 'Regional languages', value: list.length ? list.join(', ') : es() ? 'Ninguna' : 'None' }];
+    const rows: InfoRow[] = [{ label: es() ? 'Lenguas regionales' : 'Regional languages', value: list.length ? list.join(', ') : es() ? 'Ninguna' : 'None' }];
+    const note = D.countryNotes?.[id];
+    if (note) rows.push({ label: es() ? 'Nota' : 'Note', value: note });
+    return rows;
   },
 };
 
-export default async function register(app: App) {
-  // Only offered once its data is present (the file is built by the data scripts).
-  try { await loadJSON<RLData>('attributes/regional-languages.json'); } catch { return; }
+export default function register(app: App) {
   app.register([regional]);
 }

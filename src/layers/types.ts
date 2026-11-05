@@ -21,7 +21,7 @@ export interface LegendItem {
   color: string;
   label: string;
   icon?: string;
-  shape?: 'square' | 'line' | 'dot' | 'dash' | 'emoji';
+  shape?: 'square' | 'line' | 'dot' | 'dash' | 'emoji' | 'hatch';
   /** Country ids this item covers (for highlight on hover). */
   ids?: string[];
 }
