@@ -28,6 +28,12 @@ export interface RenderSettings {
 }
 
 interface Physical { lakes: Shape[]; rivers: Shape<{ sr: number }>[]; glaciers: Shape[]; iceshelves: Shape[] }
+
+/** The two GPU world textures: under the data grids and over them (see Renderer.planWorld). */
+type WorldSlot = 'under' | 'over';
+/** What one world texture holds, and the key that says when it must be repainted. */
+interface WorldPart { land: boolean; layers: LayerInstance[]; top: boolean; lakeFill: string | null; key: string }
+type WorldPlan = { under: WorldPart | null; over: WorldPart };
 interface Marine { lon: number; lat: number; name: string; es: string | null; kind: string; sr: number }
 
 export type Ticker = (dt: number, now: number) => boolean;
@@ -247,12 +253,13 @@ export class Renderer {
     }
     return p;
   }
-  // ---- GPU motion: the map painted once into a world texture that WebGL reprojects every frame.
+  // ---- GPU motion: the map painted into world textures that WebGL reprojects every frame.
   private worldCanvas: HTMLCanvasElement | null = null;
-  private worldTex: RasterTexture | null = null;
-  private worldKey = '';
-  private worldWanted = '';
-  private worldTimer = 0;
+  /** 'under' goes below the data grids (plain land, and fills below the grids); 'over' on top. */
+  private world: Record<WorldSlot, { tex: RasterTexture | null; key: string; wanted: string; timer: number }> = {
+    under: { tex: null, key: '', wanted: '', timer: 0 },
+    over: { tex: null, key: '', wanted: '', timer: 0 },
+  };
 
   /** Fill layers that can be baked: contiguous in the stack, coloured per country, not animated. */
   private bakeableFills(ready: LayerInstance[]): LayerInstance[] | null {
@@ -263,32 +270,58 @@ export class Renderer {
     return fills;
   }
 
-  private worldKeyFor(fills: LayerInstance[], landBase: boolean, level: BaseLevel): string {
-    return [
-      fills.map((l) => `${l.def.id}~${l.opacity}~${JSON.stringify(l.options)}`).join('|'),
-      this.theme.dark ? 'd' : 'l', landBase ? 'L' : '', level.lod, this.physical['50m'] ? 'k' : '',
-      this.highlight ? [...this.highlight].sort().join(',') : '',
-    ].join('#');
+  /**
+   * What the world textures hold, so that a moving frame matches a still one. A still frame paints
+   * the plain land first, then the stack (data grids such as rainfall or imagery, and fills), then
+   * the legend highlight, lakes, coasts and borders. Without grids one texture holds it all; with
+   * grids, the land (and fills below every grid) go in a texture under the grids, and the fills
+   * above them plus the highlight, lakes, coasts and borders in one over them. Null when no
+   * textures can match: fills that can't be baked, or grids between fills.
+   */
+  private planWorld(ready: LayerInstance[], landBase: boolean, opaqueBase: boolean): WorldPlan | null {
+    const fills = this.bakeableFills(ready);
+    if (!fills) return null;
+    const grids = ready.flatMap((l, i) => (l.def.kind === 'raster' ? [i] : []));
+    const level = this.data.best('50m');
+    const part = (land: boolean, layers: LayerInstance[], top: boolean): WorldPart => ({
+      land, layers, top, lakeFill: opaqueBase ? null : this.theme.lake,
+      key: [
+        land ? 'L' : '', top ? 'T' : '', layers.map((l) => `${l.def.id}~${l.opacity}~${JSON.stringify(l.options)}`).join('|'),
+        this.theme.dark ? 'd' : 'l', level.lod, this.physical['50m'] ? 'k' : '', opaqueBase ? 'o' : '',
+        top && this.highlight ? [...this.highlight].sort().join(',') : '',
+      ].join('#'),
+    });
+    if (!grids.length) return { under: null, over: part(landBase, fills, true) };
+    const first = ready.indexOf(fills[0]), last = first + fills.length - 1;
+    const fillsUnder = fills.length > 0 && last < grids[0];
+    const fillsOver = fills.length > 0 && first > grids[grids.length - 1];
+    if (fills.length && !fillsUnder && !fillsOver) return null;
+    return {
+      under: landBase || fillsUnder ? part(landBase, fillsUnder ? fills : [], false) : null,
+      over: part(false, fillsOver ? fills : [], true),
+    };
   }
 
-  /** Repaints and uploads the world texture soon (off the critical path of the current frame). */
-  private scheduleWorld(key: string, fills: LayerInstance[], landBase: boolean) {
-    if (this.worldWanted === key) return;
-    this.worldWanted = key;
-    clearTimeout(this.worldTimer);
-    this.worldTimer = window.setTimeout(() => {
-      if (!this.gl || this.worldWanted !== key || !this.lastRc) return;
+  /** Repaints and uploads a world texture soon (off the critical path of the current frame). */
+  private scheduleWorld(slot: WorldSlot, p: WorldPart) {
+    const w = this.world[slot];
+    if (w.wanted === p.key) return;
+    w.wanted = p.key;
+    clearTimeout(w.timer);
+    w.timer = window.setTimeout(() => {
+      if (!this.gl || w.wanted !== p.key || !this.lastRc) return;
       const level = this.data.best('50m');
       // 4096×2048 (32 MB) is sharp up to continent zoom; low-memory phones get 2048×1024.
       const mem = (navigator as Navigator & { deviceMemory?: number }).deviceMemory;
       const W = Math.min(mem !== undefined && mem <= 4 ? 2048 : 4096, this.gl.maxTextureSize);
+      // One canvas to paint in; each texture keeps its own copy on the GPU.
       if (!this.worldCanvas) { this.worldCanvas = document.createElement('canvas'); this.worldCanvas.width = W; this.worldCanvas.height = W / 2; }
       paintWorld(this.worldCanvas, {
-        level, layers: fills, rc: this.lastRc, theme: this.theme, landBase, highlight: this.highlight,
-        lakes: this.physical['50m']?.lakes ?? [],
+        level, layers: p.layers, rc: this.lastRc, theme: this.theme, landBase: p.land, top: p.top, lakeFill: p.lakeFill,
+        highlight: this.highlight, lakes: this.physical['50m']?.lakes ?? [],
       });
-      this.worldTex = this.gl.upload(this.worldCanvas, this.worldTex);
-      this.worldKey = key;
+      w.tex = this.gl.upload(this.worldCanvas, w.tex);
+      w.key = p.key;
     }, 60);
   }
 
@@ -379,14 +412,20 @@ export class Renderer {
     const coveredBase = !!bottom && bottom.def.coversLand === true && bottom.opacity > 0.99;
     const landBase = !opaqueBase && !coveredBase && this.baseMap;
 
-    // GPU motion: while the map moves (zoomed out, where the texture is sharp enough), land, filter
-    // colours, highlight, lakes and borders come from one texture the GPU reprojects.
-    const fills = this.settings.gpuMotion && this.gl && !this.gl.software && this.baseMap ? this.bakeableFills(ready) : null;
+    // GPU motion: while the map moves (zoomed out, where the textures are sharp enough), land, filter
+    // colours, highlight, lakes and borders come from textures the GPU reprojects (see planWorld).
+    const plan = this.settings.gpuMotion && this.gl && !this.gl.software && this.baseMap ? this.planWorld(ready, landBase, opaqueBase) : null;
     let gpu = false;
-    if (fills) {
-      const key = this.worldKeyFor(fills, landBase, this.data.best('50m'));
-      if (key !== this.worldKey) this.scheduleWorld(key, fills, landBase);
-      gpu = (this.moving || view.animating) && view.webZoom < 3.6 && !!this.worldTex && this.worldKey === key;
+    if (plan) {
+      let ready2 = true;
+      for (const slot of ['under', 'over'] as const) {
+        const p = plan[slot];
+        if (!p) continue;
+        const w = this.world[slot];
+        if (p.key !== w.key) this.scheduleWorld(slot, p);
+        if (!w.tex || w.key !== p.key) ready2 = false;
+      }
+      gpu = (this.moving || view.animating) && view.webZoom < 3.6 && ready2;
     }
     this.gpuFrame = gpu;
 
@@ -402,19 +441,16 @@ export class Renderer {
       ctx.restore();
       pending = [];
     };
-    let worldPushed = false;
+    // In a GPU frame the fills are in the world textures: the 'under' one goes below every data
+    // grid, the 'over' one above them all.
+    if (gpu && plan?.under) pending.push({ texture: this.world.under.tex!, opacity: 1 });
     for (const l of ready) {
       if (l.def.kind === 'raster') {
         const d = l.def.raster?.(rc, l);
         if (d) pending.push(...d);
         continue;
       }
-      if (l.def.kind !== 'fill') continue;
-      if (gpu) {
-        // All the (contiguous) fill layers are in the texture, at the place of the first one.
-        if (!worldPushed) { pending.push({ texture: this.worldTex!, opacity: 1 }); worldPushed = true; }
-        continue;
-      }
+      if (l.def.kind !== 'fill' || gpu) continue;
       flushRasters();
       ctx.save();
       ctx.globalAlpha = l.opacity;
@@ -432,7 +468,7 @@ export class Renderer {
       }
       ctx.restore();
     }
-    if (gpu && !worldPushed) pending.push({ texture: this.worldTex!, opacity: 1 });
+    if (gpu) pending.push({ texture: this.world.over.tex!, opacity: 1 });
     flushRasters();
 
     // Highlight from the legend (dim everything else).

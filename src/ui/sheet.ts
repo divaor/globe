@@ -10,6 +10,8 @@ export class Sheet {
   private bar: HTMLElement;
   private titleEl: HTMLElement;
   private onCloseCb: (() => void) | null = null;
+  /** How far each panel was scrolled when last seen. */
+  private scrolls = new Map<string, number>();
   current: string | null = null;
 
   constructor(root: HTMLElement) {
@@ -23,6 +25,8 @@ export class Sheet {
       this.bar,
       this.body);
     root.append(this.el);
+    // Remember where each panel was scrolled to, so it opens again at the same place.
+    this.body.addEventListener('scroll', () => { if (this.current && !this.el.hidden) this.scrolls.set(this.current, this.body.scrollTop); }, { passive: true });
     // Swipe down on the grip/header closes the sheet on phones.
     let y0 = -1;
     const head = this.el.querySelector('.sheet-head') as HTMLElement;
@@ -44,6 +48,7 @@ export class Sheet {
     this.body.append(content);
     this.el.hidden = false;
     this.el.dataset.sheet = id;
+    this.body.scrollTop = this.scrolls.get(id) ?? 0;
     requestAnimationFrame(() => this.el.classList.add('open'));
     this.onCloseCb = onClose ?? null;
   }

@@ -59,6 +59,8 @@ export class View {
   antimeridian = false;
   private lastKey = '';
   private c: [number, number] = [0, 0];
+  /** The geographic point in the middle of the screen. */
+  private mid: [number, number] = [0, 0];
   private cx = 1; private cy = 0; private cz = 0; private cosClip = 0;
 
   constructor() {
@@ -174,8 +176,13 @@ export class View {
     }
     const proj = this.projection;
     proj.rotate(this.rotate).scale(this.zoom).translate(this.translate);
-    const c = geoRotation(this.rotate).invert([0, 0]);
+    const rot = geoRotation(this.rotate);
+    const c = rot.invert([0, 0]);
     this.c = [c[0], c[1]];
+    // Flat maps reach a latitude by moving the map, not by rotating it, so the middle of the
+    // screen is not the rotation centre there (it is on the globe).
+    const m = rot.invert([0, Math.max(-90, Math.min(90, this.lat + phi0))]);
+    this.mid = [m[0], m[1]];
     this.cx = Math.cos(c[1] * RAD) * Math.cos(c[0] * RAD);
     this.cy = Math.cos(c[1] * RAD) * Math.sin(c[0] * RAD);
     this.cz = Math.sin(c[1] * RAD);
@@ -266,9 +273,12 @@ export class View {
     return cp * Math.cos(l) * this.cx + cp * Math.sin(l) * this.cy + Math.sin(p) * this.cz > this.cosClip;
   }
 
-  /** The geographic point at the centre of the rotation (what the globe faces). */
+  /**
+   * The geographic point in the middle of the screen, used with visibleRadius() to skip what is off
+   * screen. On flat maps this is not the rotation centre, which always sits on the equator there.
+   */
   center(): [number, number] {
-    return this.c;
+    return this.mid;
   }
 
   /** Screen position of a point, or null when hidden. */

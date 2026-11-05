@@ -5,7 +5,9 @@
 // (a flipped lake polygon once painted over them); the More menu sits above the legend; a legend
 // highlight is dropped when the filter changes; the organisations filter can compare two; frames
 // get lighter while the map moves; the compact country strip; the filters search box stays clear
-// of the scrolled list.
+// of the scrolled list; the filters list stays put when you tap a filter and when you reopen it;
+// data grids keep their colours over land while the map moves; northern countries stay drawn on
+// zoomed-in flat maps; yesterday's satellite picture is not empty (needs NASA GIBS online).
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 let chromium, devices;
@@ -172,6 +174,134 @@ async function open(opts, hash) {
   const names = await page.$$eval('.sheet-body .fcard-name', (els) => els.map((e) => e.textContent));
   check(names.length > 0 && names.some((n) => /tobacco/i.test(n)), `filter search still filters (${names.length} result(s) for "tobacco")`);
   check(!errors.length, `no page errors in the filters sheet${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 7. Filters list on a phone: the tapped filter stays under your finger (also once its data has
+// loaded, and at the top of the list, where the browser doesn't hold it), and the list reopens
+// where it was left after the sheet is closed by tapping the map.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=-100,40,2&lang=en');
+  await page.waitForTimeout(4800); // let the gesture hint go
+  await page.tap('[data-dock="filters"]');
+  await page.waitForTimeout(600);
+  const where = (id) => page.evaluate((id) => {
+    const body = document.querySelector('.sheet-body');
+    const c = body.querySelector(`.fcard[data-id="${id}"]`);
+    return { top: Math.round(c.getBoundingClientRect().top), scroll: Math.round(body.scrollTop) };
+  }, id);
+  const pickCard = () => page.evaluate(() => {
+    const b = document.querySelector('.sheet-body').getBoundingClientRect();
+    return [...document.querySelectorAll('.sheet-body .fcard')].find((c) => c.getBoundingClientRect().top > b.top + 150 && c.getBoundingClientRect().bottom < b.bottom && !c.classList.contains('on')).dataset.id;
+  });
+  const tapAndWait = async (id) => {
+    await page.tap(`.sheet-body .fcard[data-id="${id}"]`);
+    await page.waitForTimeout(150);
+    const tapped = await where(id);
+    await page.waitForFunction((id) => window.atlas.app.layers.find((l) => l.def.id === id)?.ready, id, { timeout: 30000 }).catch(() => {});
+    await page.waitForTimeout(400);
+    return { tapped, loaded: await where(id) };
+  };
+  const a = await pickCard();
+  const a0 = await where(a);
+  const at = await tapAndWait(a);
+  check(a0.scroll === 0 && Math.abs(at.tapped.top - a0.top) <= 2 && Math.abs(at.loaded.top - a0.top) <= 2, `tapped filter stays put at the top of the list (${a0.top} -> ${at.tapped.top} -> ${at.loaded.top} px)`);
+  await page.evaluate(() => { document.querySelector('.sheet-body').scrollTop += 1200; });
+  await page.waitForTimeout(300);
+  const b = await pickCard();
+  const b0 = await where(b);
+  const bt = await tapAndWait(b);
+  check(Math.abs(bt.tapped.top - b0.top) <= 2 && Math.abs(bt.loaded.top - b0.top) <= 2, `tapped filter stays put further down (${b0.top} -> ${bt.tapped.top} -> ${bt.loaded.top} px)`);
+  await page.touchscreen.tap(200, 150); // the map above the sheet closes it on a phone
+  await page.waitForTimeout(600);
+  const closed = await page.evaluate(() => document.querySelector('.sheet').hidden);
+  await page.tap('[data-dock="filters"]');
+  await page.waitForTimeout(700);
+  const back = await where(b);
+  check(closed && Math.abs(back.top - b0.top) <= 2 && Math.abs(back.scroll - bt.loaded.scroll) <= 2, `filters list reopens where it was left (scroll ${bt.loaded.scroll} -> ${back.scroll})`);
+  check(!errors.length, `no page errors in the filters list${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 8. Data grids (rainfall) keep their colours over land while the map moves: the GPU textures go
+// under the grid (plain land) and over it (lakes, borders), as in a still frame.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=precipitation&c=-55,-12,1.6&lang=en');
+  const r = await page.evaluate(async () => {
+    const ren = window.atlas.app.renderer;
+    ren.settings.labels = { countries: false, capitals: false, cities: false, seas: false, values: false };
+    ren.settings.graticule = false;
+    Object.defineProperty(ren.gl, 'software', { value: false, configurable: true });
+    const wait = (ms) => new Promise((res) => setTimeout(res, ms));
+    const px = (lon, lat) => {
+      const p = ren.view.project(lon, lat);
+      const d = document.getElementById('fg').getContext('2d').getImageData(Math.round(p[0] * ren.view.dpr), Math.round(p[1] * ren.view.dpr), 1, 1).data;
+      return [d[0], d[1], d[2]];
+    };
+    ren.requestRender();
+    await wait(800);
+    const pts = [[-60, -5], [-50, -12], [-65, -20]]; // Amazon, central Brazil, Bolivia
+    const still = pts.map(([a, b]) => px(a, b));
+    ren.moving = true;
+    for (let i = 0; i < 60 && !ren.gpuFrame; i++) { ren.requestRender(); await wait(100); }
+    const moving = pts.map(([a, b]) => px(a, b));
+    const gpu = ren.gpuFrame;
+    ren.moving = false; ren.requestRender(); await wait(600);
+    return { gpu, still, moving };
+  });
+  const worst = Math.max(...r.still.map((s, i) => Math.hypot(...s.map((v, k) => v - r.moving[i][k]))));
+  check(r.gpu && worst < 40, `rainfall keeps its colours over land while moving (GPU ${r.gpu}, largest difference ${Math.round(worst)})`);
+  check(!errors.length, `no page errors with rainfall in motion${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 9. Zoomed-in flat maps draw the countries far from the equator (they were skipped as off screen).
+for (const proj of ['equirectangular', 'mercator', 'miller']) {
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, `#p=${proj}&l=political&c=-18.6,64.9,6&lang=en`);
+  const r = await page.evaluate(async () => {
+    const ren = window.atlas.app.renderer;
+    ren.settings.labels = { countries: false, capitals: false, cities: false, seas: false, values: false };
+    ren.settings.graticule = false;
+    // Pinch in on Iceland (links cap the zoom of flat maps).
+    const at = ren.view.project(-18.6, 64.9);
+    ren.view.zoomAt(8, at[0], at[1]);
+    ren.requestRender();
+    await new Promise((res) => setTimeout(res, 1500));
+    const px = (lon, lat) => {
+      const p = ren.view.project(lon, lat);
+      const d = document.getElementById('fg').getContext('2d').getImageData(Math.round(p[0] * ren.view.dpr), Math.round(p[1] * ren.view.dpr), 1, 1).data;
+      return [d[0], d[1], d[2], d[3]];
+    };
+    return { iceland: px(-18.6, 64.9), kind: ren.view.current.kind, zoom: Math.round(ren.view.webZoom * 10) / 10 };
+  });
+  // The map canvas is see-through where nothing is drawn (the sea is painted underneath it).
+  check(r.kind === 'flat' && r.iceland[3] === 255, `${proj}: Iceland drawn when zoomed in (zoom ${r.zoom}, pixel ${r.iceland.join(',')})`);
+  check(!errors.length, `no page errors on ${proj}${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 10. Yesterday's satellite picture is not empty (a satellite that sent nothing comes back black).
+{
+  const { page, errors, ctx } = await open({ viewport: { width: 1000, height: 600 } }, '#p=globe&l=gibs&c=-60,0,1.2&lang=en');
+  await page.waitForFunction(() => { const l = window.atlas.app.layers.find((x) => x.def.id === 'gibs'); return l && (l.ready || l.error); }, null, { timeout: 90000 }).catch(() => {});
+  await page.waitForTimeout(1500);
+  const r = await page.evaluate(() => {
+    const ren = window.atlas.app.renderer;
+    const l = window.atlas.app.layers.find((x) => x.def.id === 'gibs');
+    const c = document.getElementById('fg');
+    const g = c.getContext('2d');
+    // Share of lit pixels on a grid of points across the visible globe.
+    let lit = 0, n = 0;
+    for (let lon = -100; lon <= -20; lon += 5) for (let lat = -50; lat <= 50; lat += 5) {
+      const p = ren.view.project(lon, lat);
+      if (!p) continue;
+      const d = g.getImageData(Math.round(p[0] * ren.view.dpr), Math.round(p[1] * ren.view.dpr), 1, 1).data;
+      n++; if (d[0] + d[1] + d[2] > 60) lit++;
+    }
+    return { ready: !!l?.ready, error: l?.error ? String(l.error) : null, sat: l?.state.sat ?? null, date: l?.state.date ?? null, lit: n ? lit / n : 0 };
+  });
+  check(r.ready && r.lit > 0.5 && !!r.sat, `satellite picture of ${r.date} from ${r.sat} is not empty (${Math.round(r.lit * 100)}% lit${r.error ? ', ' + r.error : ''})`);
+  check(!errors.length, `no page errors with the satellite picture${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 
