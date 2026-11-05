@@ -15,11 +15,15 @@ export const CATEGORY_ORDER: { id: CategoryId; icon: string }[] = [
 /** The panel, its search box (shown above the list so the list never scrolls under it) and cleanup. */
 export type FiltersPanel = HTMLElement & { bar: HTMLElement; dispose: () => void };
 
+/** The search text, kept between openings so the list comes back as you left it (the sheet keeps the scroll). */
+let keptQuery = '';
+
 export function filtersPanel(app: App): FiltersPanel {
   const root = h('div', { class: 'filters' });
-  let query = '';
+  let query = normalize(keptQuery.trim());
   const search = h('input', { class: 'search-input', type: 'search', placeholder: t('searchFilters'), 'aria-label': t('searchFilters') }) as HTMLInputElement;
-  search.addEventListener('input', () => { query = normalize(search.value.trim()); renderList(); });
+  search.value = keptQuery;
+  search.addEventListener('input', () => { keptQuery = search.value; query = normalize(search.value.trim()); renderList(); });
   const searchRow = h('div', { class: 'search-row' }, icon(Search, 18), search);
   const active = h('div', { class: 'active-stack' });
   const labelsRow = h('div', { class: 'chip-row' });
@@ -62,15 +66,41 @@ export function filtersPanel(app: App): FiltersPanel {
       const defs = [...app.registry.values()].filter((d) => !d.hidden && d.category === cat.id && matches(d));
       if (!defs.length) continue;
       const grid = h('div', { class: 'card-grid' });
-      for (const d of defs) grid.append(filterCard(app, d, () => { renderActive(); renderList(); }));
+      for (const d of defs) grid.append(filterCard(app, d, tap));
       list.append(h('section', { class: 'cat' }, h('h3', { class: 'cat-title' }, h('span', { class: 'cat-icon' }, cat.icon), t(`cat.${cat.id}`), h('span', { class: 'cat-count' }, String(defs.length))), grid));
     }
     if (!list.childElementCount) list.append(h('p', { class: 'muted' }, t('noResults')));
   };
 
+  /**
+   * Re-renders without moving the list: the card `id` (the one just tapped), or else the first card
+   * in view, stays where it was on screen while the active filters above it grow or shrink. At the
+   * very top nothing is held, so a filter that finishes loading shows up there as usual.
+   */
+  const steady = (fn: () => void, id?: string) => {
+    const body = root.parentElement;
+    if (!body || !root.isConnected || (!id && body.scrollTop <= 0)) { fn(); return; }
+    const top = body.getBoundingClientRect().top;
+    const cards = [...list.querySelectorAll<HTMLElement>('.fcard')];
+    const ref = id ? cards.find((c) => c.dataset.id === id) : cards.find((c) => c.getBoundingClientRect().bottom > top);
+    const key = ref?.dataset.id;
+    const before = ref?.getBoundingClientRect().top;
+    fn();
+    const now = key ? list.querySelector<HTMLElement>(`.fcard[data-id="${CSS.escape(key)}"]`) : null;
+    if (before !== undefined && now) body.scrollTop += now.getBoundingClientRect().top - before;
+  };
+  let tapping = false;
+  function tap(id: string) {
+    tapping = true;
+    try { steady(() => { app.toggle(id); renderActive(); renderList(); }, id); } finally { tapping = false; }
+  }
+
   renderActive(); renderLabels(); renderList();
-  const off1 = app.on('layers', () => { renderActive(); updateCards(list, app); });
-  const off2 = app.on('registry', () => renderList());
+  const off1 = app.on('layers', () => {
+    const update = () => { renderActive(); updateCards(list, app); };
+    if (tapping) update(); else steady(update);
+  });
+  const off2 = app.on('registry', () => steady(renderList));
   return Object.assign(root, { bar: searchRow, dispose: () => { off1(); off2(); } });
 }
 
@@ -82,13 +112,13 @@ function updateCards(list: HTMLElement, app: App) {
   });
 }
 
-function filterCard(app: App, d: LayerDef, after: () => void): HTMLElement {
+function filterCard(app: App, d: LayerDef, onTap: (id: string) => void): HTMLElement {
   const on = app.isActive(d.id);
   const card = h('button', { type: 'button', class: `fcard${on ? ' on' : ''}`, 'data-id': d.id, 'aria-pressed': String(on), title: tx(d.desc) },
     h('span', { class: 'fcard-icon' }, d.icon),
     h('span', { class: 'fcard-text' }, h('span', { class: 'fcard-name' }, tx(d.name)), h('span', { class: 'fcard-desc' }, tx(d.desc))),
     h('span', { class: 'fcard-check' }, icon(Check, 14)));
-  card.addEventListener('click', () => { app.toggle(d.id); after(); });
+  card.addEventListener('click', () => onTap(d.id));
   return card;
 }
 

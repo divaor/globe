@@ -2,7 +2,8 @@
 // painted once into a plate carrée (equirectangular) canvas. Uploaded as a WebGL texture, the GPU
 // can then reproject it at any projection every frame, which is far cheaper than projecting and
 // filling thousands of polygons on the CPU. The renderer uses it while the map moves and goes back
-// to sharp vectors as soon as it stops.
+// to sharp vectors as soon as it stops. With data grids (rainfall, imagery...) in the stack it is
+// painted in two parts, one under the grids (land) and one over them (lakes, borders...).
 import { geoEquirectangular, geoPath } from 'd3-geo';
 import type { BaseLevel, Shape } from '../data/store';
 import type { LayerInstance, RenderCtx } from '../layers/types';
@@ -10,10 +11,12 @@ import type { Theme } from '../app/theme';
 
 export interface WorldPaint {
   level: BaseLevel;
-  layers: LayerInstance[]; // the ready fill layers, bottom to top
+  layers: LayerInstance[]; // the fill layers to paint, bottom to top
   rc: RenderCtx; // passed to countryColor (theme, zoom...)
   theme: Theme;
   landBase: boolean; // draw plain land under the filters
+  top: boolean; // the legend highlight, lakes, coasts and borders (what goes over data grids)
+  lakeFill: string | null; // null: lake shores only (over satellite imagery)
   highlight: Set<string> | null;
   lakes: Shape[];
 }
@@ -61,9 +64,12 @@ export function paintWorld(canvas: HTMLCanvasElement, o: WorldPaint) {
     for (const [color, list] of groups) fill(list, color);
     ctx.globalAlpha = 1;
   }
+  if (!o.top) return;
   if (o.highlight && o.highlight.size) fill(countries.filter((s) => !o.highlight!.has(s.id)), th.dark ? 'rgba(4,10,24,0.62)' : 'rgba(255,255,255,0.65)');
   if (o.lakes.length) {
-    fill(o.lakes, th.lake);
+    ctx.beginPath();
+    for (const s of o.lakes) path(s.feature as never);
+    if (o.lakeFill) { ctx.fillStyle = o.lakeFill; ctx.fill(); }
     ctx.lineWidth = 0.8; ctx.strokeStyle = th.coast; ctx.stroke();
   }
   const lw = Math.max(1, W / 3600);

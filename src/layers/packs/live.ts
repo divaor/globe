@@ -213,27 +213,70 @@ function yesterdayUTC(days = 1) {
   return d.toISOString().slice(0, 10);
 }
 
+// Satellites with a daily true-colour picture, best first. A satellite that sent nothing that day
+// still gets an image from GIBS, an all-black one (Suomi NPP from 2 November 2026), so each is
+// checked on a small preview before the full picture is loaded.
+const GIBS_SATELLITES = [
+  { layer: 'VIIRS_NOAA20_CorrectedReflectance_TrueColor', name: 'NOAA-20 (VIIRS)' },
+  { layer: 'VIIRS_NOAA21_CorrectedReflectance_TrueColor', name: 'NOAA-21 (VIIRS)' },
+  { layer: 'VIIRS_SNPP_CorrectedReflectance_TrueColor', name: 'Suomi NPP (VIIRS)' },
+  { layer: 'MODIS_Aqua_CorrectedReflectance_TrueColor', name: 'Aqua (MODIS)' },
+  { layer: 'MODIS_Terra_CorrectedReflectance_TrueColor', name: 'Terra (MODIS)' },
+];
+
+const gibsUrl = (layer: string, date: string, w: number) =>
+  `https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=${layer}&STYLES=&CRS=EPSG:4326&BBOX=-90,-180,90,180&WIDTH=${w}&HEIGHT=${w / 2}&FORMAT=image/jpeg&TIME=${date}`;
+
+/** Share of a small preview that shows something (not black): about 0.8 on a normal day. */
+async function gibsCoverage(layer: string, date: string): Promise<number> {
+  try {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.src = gibsUrl(layer, date, 128);
+    await img.decode();
+    const c = document.createElement('canvas');
+    c.width = img.naturalWidth; c.height = img.naturalHeight;
+    const g = c.getContext('2d', { willReadFrequently: true })!;
+    g.drawImage(img, 0, 0);
+    const d = g.getImageData(0, 0, c.width, c.height).data;
+    let lit = 0;
+    for (let i = 0; i < d.length; i += 4) if (d[i] + d[i + 1] + d[i + 2] > 30) lit++;
+    return lit / (d.length / 4);
+  } catch { return 0; }
+}
+
 const gibs: LayerDef = {
   id: 'gibs', category: 'imagery', icon: '🌍', kind: 'raster', group: 'imagery', defaultOpacity: 1,
   name: { en: 'Satellite: yesterday (NASA)', es: 'Satélite: ayer (NASA)' },
   desc: { en: 'Yesterday’s real Earth with clouds, storms and smoke (NASA VIIRS/MODIS).', es: 'La Tierra real de ayer, con nubes, tormentas y humo (NASA VIIRS/MODIS).' },
   keywords: 'satellite clouds today yesterday nasa live nubes satelite ayer',
-  credit: 'NASA EOSDIS GIBS / Worldview (VIIRS SNPP corrected reflectance)',
+  credit: 'NASA EOSDIS GIBS / Worldview (VIIRS and MODIS corrected reflectance)',
   async load(ctx, inst) {
     if (!ctx.gl) throw new Error('WebGL2 is needed');
-    let lastErr: unknown = null;
+    // The first satellite (in the order above) with a well-covered picture of yesterday, else of the
+    // day before (yesterday's can still be filling in early in the day); failing both, the
+    // best-covered picture found.
+    type Pick = { sat: (typeof GIBS_SATELLITES)[number]; date: string; cover: number };
+    let pick: Pick | null = null, best: Pick | null = null;
     for (const day of [1, 2]) {
-      const url = `https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=VIIRS_SNPP_CorrectedReflectance_TrueColor&STYLES=&CRS=EPSG:4326&BBOX=-90,-180,90,180&WIDTH=4096&HEIGHT=2048&FORMAT=image/jpeg&TIME=${yesterdayUTC(day)}`;
-      try { inst.state.tex = await ctx.gl.load(url); inst.state.date = yesterdayUTC(day); return; } catch (e) { lastErr = e; }
+      const date = yesterdayUTC(day);
+      const covers = await Promise.all(GIBS_SATELLITES.map((s) => gibsCoverage(s.layer, date)));
+      const i = covers.findIndex((c) => c >= 0.6);
+      if (i >= 0) { pick = { sat: GIBS_SATELLITES[i], date, cover: covers[i] }; break; }
+      for (let k = 0; k < covers.length; k++) if (!best || covers[k] > best.cover) best = { sat: GIBS_SATELLITES[k], date, cover: covers[k] };
     }
-    throw lastErr ?? new Error('GIBS unavailable');
+    pick ??= best;
+    if (!pick || pick.cover < 0.05) throw new Error('No satellite picture for yesterday yet');
+    inst.state.tex = await ctx.gl.load(gibsUrl(pick.sat.layer, pick.date, 4096));
+    inst.state.date = pick.date;
+    inst.state.sat = pick.sat.name;
   },
   raster(_rc, inst) {
     const tex = inst.state.tex as RasterTexture | undefined;
     return tex ? [{ texture: tex, opacity: inst.opacity }] : null;
   },
   legend(inst) {
-    return { kind: 'html', title: L('NASA satellite view', 'Vista satelital de la NASA'), html: `<div class="lg-row">📅 ${inst.state.date ?? ''} (UTC)</div><div class="lg-row muted">${L('Black wedges are gaps between satellite passes.', 'Las cuñas negras son huecos entre pasadas del satélite.')}</div>` };
+    return { kind: 'html', title: L('NASA satellite view', 'Vista satelital de la NASA'), html: `<div class="lg-row">📅 ${inst.state.date ?? ''} (UTC)</div><div class="lg-row">🛰️ ${inst.state.sat ?? ''}</div><div class="lg-row muted">${L('Black areas are gaps between satellite passes and the polar night.', 'Las zonas negras son huecos entre pasadas del satélite y la noche polar.')}</div>` };
   },
 };
 
