@@ -227,8 +227,8 @@ export class Tools {
         if (!moved) return;
         const { ctx, path } = rc;
         ctx.beginPath(); path(moved as never);
-        ctx.fillStyle = 'rgba(255,146,43,0.45)'; ctx.fill();
-        ctx.strokeStyle = '#ff922b'; ctx.lineWidth = 2.5; ctx.stroke();
+        ctx.fillStyle = 'rgba(255,146,43,0.62)'; ctx.fill();
+        ctx.strokeStyle = '#fff3bf'; ctx.lineWidth = 3; ctx.stroke();
         const c = geoCentroid(moved as never);
         const p = rc.project(c[0], c[1]);
         if (p && id) rc.labels.add({ text: this.app.data.name(id, lang()), x: p[0], y: p[1], priority: 2000, size: 14, weight: 800, color: '#fff', halo: 'rgba(0,0,0,0.8)' });

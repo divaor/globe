@@ -1,33 +1,57 @@
 # Atlas Globe
 
-A detailed, colourful, installable world globe (PWA) with many stackable map filters, smooth
-globe-to-flat-map projection morphs, a political timeline and a Pangea animation. English and Spanish.
+A detailed, colourful, installable world globe (PWA). Stack any of ~140 map filters, morph between 14
+projections, travel through 123,000 years of borders and a billion years of plate tectonics, and leave it
+spinning full-screen as an ambient display. English and Spanish.
 
-- **Live app:** https://divaor.github.io/globe/ (deployed by GitHub Actions from `main`)
-- **Install:** open it in Chrome, Edge or Safari and use "Install app" / "Add to Home Screen".
+- **App:** https://divaor.github.io/globe/ (GitHub Pages, deployed from `main`)
+- **Install:** open it in Chrome, Edge or Safari, then "Install app" / "Add to Home Screen". Works offline after the first visit.
 
-## Features (v0.1.0)
+| | |
+|---|---|
+| ![Political globe](docs/screenshots/globe.jpg) | ![Robinson projection](docs/screenshots/robinson.jpg) |
+| ![Earth at night](docs/screenshots/night.jpg) | ![Köppen climate](docs/screenshots/climate.jpg) |
+| ![Borders in 1400](docs/screenshots/history.jpg) | ![Pangea](docs/screenshots/pangea.jpg) |
+| ![Flags on the map](docs/screenshots/flags.jpg) | ![Live layers](docs/screenshots/live.jpg) |
 
-- Political map by default: every country has its own shade, and the colour family shows its continent.
-  Capitals and major cities appear as you zoom.
-- Drag (with fling), pinch, wheel and double-tap zoom; tap a country for its card; search any country or city.
-- 14 projections with a smooth morph: Globe, Plate Carrée, Mercator, Miller, Robinson, Winkel Tripel,
-  Equal Earth, Natural Earth, Mollweide, Gall–Peters, Eckert IV, azimuthal equidistant, Lambert azimuthal,
-  stereographic. Every filter works in every projection.
-- Filter stack: turn on several filters, set opacity, reorder; legends and country values for each.
-- Ambient mode: full-screen rotating globe with your filters, screen kept awake, optional clock.
-- Works offline after the first visit.
+## What it does
+
+- **Political map (default):** every country has its own shade; the colour family shows its continent.
+  Capitals, cities and sea names appear as you zoom. Tap a country for a card with its flag and facts.
+- **Navigation:** drag with fling, pinch, mouse wheel, double-tap, keyboard; search any country or city.
+- **14 projections, smooth morph:** Globe, Plate Carrée, Mercator, Miller, Robinson, Winkel Tripel, Equal Earth,
+  Natural Earth, Mollweide, Gall–Peters, Eckert IV, azimuthal equidistant, Lambert azimuthal, stereographic.
+  Every filter (vector and imagery) works in every projection.
+- **Filter stack:** turn on several filters, set opacity and order; each has a legend (tap an entry to highlight
+  its countries) and values in the country card. Filters include:
+  - Political: time zones with live clocks, alliances (EU, NATO, G20, BRICS…), government, independence…
+  - People: population, density glow, life expectancy, median age, languages (main / family / branch), religion…
+  - Climate & weather: Köppen climate zones, temperature, rainfall, sea temperature, animated winds.
+  - Landforms & water: mountain ranges, deserts, plateaus, peaks, rivers and lakes, shaded relief, elevation.
+  - Flora & fauna: vegetation zones, forest cover, animal realms with the Wallace Line, 60 iconic animals,
+    animated migrations, biodiversity hotspots, national animals and plants.
+  - Earth science: tectonic plates by boundary type, volcanoes, animated ocean currents.
+  - Economy & energy: GDP, income groups, top producers of 21 resources (oil, lithium, cobalt…), CO₂, renewables…
+  - Culture & fun: flags on the map, national colours, driving side, calling codes, Olympic medals and more.
+  - Imagery: NASA Blue Marble, yesterday's real satellite view (NASA GIBS), shaded relief, ETOPO.
+  - Live: day and night with city lights, earthquakes (USGS), weather now (Open-Meteo), the ISS.
+- **Time travel:** borders through time (54 maps, 123,000 BC → 2010) with start/end, play, speed and
+  "What changed"; Pangea to today (Merdith et al. 2021 plate model, 1,000 Ma → today) with the geological time scale.
+- **Explore:** measure distances (great circles, flight time), compare two countries, "true size" of countries.
+- **Learn & play:** quizzes (find the country, flags, capitals), guided tours, "On this day" (Wikipedia).
+- **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
+- **Ambient mode:** full-screen rotating globe with your filters, screen kept awake, clock, optional filter cycling.
 
 ## Development
 
 ```bash
 npm install
 npm run dev        # http://localhost:5173
-npm run build      # type-check + production build into dist/
+npm run build      # type-check + production build (with service worker) into dist/
 ```
 
-Data are pre-built and committed under `public/data/`. The scripts that build them live in
-`scripts/data/` (each folder has a README); sources and licences are listed in `public/data/*/SOURCES.md`.
+Browser checks (Playwright, pre-installed in CI images):
+`node scripts/test/shot.mjs <url> out.png`, `scripts/test/hero-shots.mjs`, `phone.mjs`, `live-mock.mjs` (live APIs mocked).
 
 ## Adding a filter
 
@@ -39,14 +63,23 @@ export const myFilter = numericLayer({
   id: 'my-filter', category: 'economy', icon: '📈',
   name: { en: 'My filter', es: 'Mi filtro' }, desc: { en: '…', es: '…' },
   palette: SEQUENTIAL.viridis, scale: 'log',
-  values: () => ({ USA: 1, MEX: 2 /* country id → value */ }),
+  values: () => ({ USA: 1, MEX: 2 /* ISO alpha-3 → value */ }),
 });
 ```
 
-Register it in `src/layers/index.ts` (or drop a module in `src/layers/packs/` that exports a default
-function registering filters) and it appears in the Filters panel.
+Register it in `src/layers/index.ts`, or drop a module in `src/layers/packs/` whose default export registers
+filters. Even simpler: add a field to `public/data/attributes/countries.json` (with `label_en`, `label_es`,
+`type`…) and it becomes a filter automatically.
+
+## Data
+
+All data are pre-built and committed under `public/data/`; the scripts that build them are in `scripts/data/`
+(each folder has a README) and every folder has a `SOURCES.md` with sources, licences and attribution.
+Main sources: Natural Earth (public domain), NASA Blue Marble and GIBS, NOAA ETOPO1 and ERSST, ECMWF ERA-Interim,
+GPCP, Köppen–Geiger (Kottek/Rubel), GeoNames (CC BY 4.0), aourednik/historical-basemaps (GPL-3.0),
+Merdith et al. 2021 plate model (CC BY 4.0), PB2002 plates (ODC-By), CIA World Factbook, World Bank,
+Our World in Data (CC BY 4.0), mledoze/countries (ODbL), Unicode CLDR, flag-icons (MIT).
 
 ## Licence
 
-Code: GPL-3.0-or-later. Data keep their own licences (Natural Earth public domain, NASA public domain,
-historical borders GPL-3.0, plate model CC BY 4.0, and others listed in the SOURCES files).
+Code: GPL-3.0-or-later. Data keep their own licences as listed in the SOURCES files.
