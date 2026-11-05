@@ -39,6 +39,7 @@ const STRINGS: Record<string, [string, string]> = {
   rivers: ['Rivers', 'Ríos'],
   shading: ['3D shading', 'Sombreado 3D'],
   quality: ['Detail', 'Detalle'],
+  gpuMotion: ['Smooth motion: let the graphics chip (GPU) draw the map while it moves', 'Movimiento fluido: que el chip gráfico (GPU) dibuje el mapa mientras se mueve'],
   qualityAuto: ['Auto', 'Auto'],
   qualityHigh: ['High', 'Alto'],
   qualityLow: ['Battery saver', 'Ahorro de batería'],

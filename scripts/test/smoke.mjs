@@ -3,7 +3,8 @@
 //   npm run build && npx vite preview --port 4173 &   then   npm run test:smoke [-- http://localhost:4173/]
 // Checks: the app boots without errors; country colours survive at the most detailed zoom
 // (a flipped lake polygon once painted over them); the More menu sits above the legend; a legend
-// highlight is dropped when the filter changes; the organisations filter can compare two.
+// highlight is dropped when the filter changes; the organisations filter can compare two; frames
+// get lighter while the map moves.
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 let chromium, devices;
@@ -94,6 +95,29 @@ async function open(opts, hash) {
   check(before > 0 && after === 0, `legend highlight cleared when the filter changes (${before} -> ${after})`);
   check(await page.evaluate(() => document.querySelector('.lg-banner').hidden), 'banner hidden once the highlight is cleared');
   check(!errors.length, `no page errors in filters${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 4. Motion: lighter frames while moving, GPU world texture when forced on, sharp again after.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,15,1.3&lang=en');
+  const r = await page.evaluate(async () => {
+    const ren = window.atlas.app.renderer;
+    const frames = () => new Promise((res) => requestAnimationFrame(() => requestAnimationFrame(res)));
+    const full = ren.view.dpr;
+    Object.defineProperty(ren.gl, 'software', { value: false, configurable: true });
+    ren.requestRender();
+    await new Promise((res) => setTimeout(res, 500));
+    ren.moving = true; ren.view.lon += 1; ren.requestRender();
+    await frames();
+    const moving = { dpr: ren.view.dpr, gpu: ren.gpuFrame, lod: ren.lod };
+    ren.moving = false; ren.requestRender();
+    await new Promise((res) => setTimeout(res, 600));
+    return { full, moving, after: { dpr: ren.view.dpr, gpu: ren.gpuFrame } };
+  });
+  check(r.moving.dpr < r.full && r.after.dpr === r.full, `fewer pixels while moving (${r.full} -> ${r.moving.dpr} -> ${r.after.dpr})`);
+  check(r.moving.gpu && !r.after.gpu, `GPU world texture while moving, vectors when still (${r.moving.gpu} / ${r.after.gpu})`);
+  check(!errors.length, `no page errors in motion${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

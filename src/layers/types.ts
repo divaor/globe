@@ -97,6 +97,8 @@ export interface LayerDef {
   group?: string;
   /** Internal layers used by modes (not listed in the Filters panel, not saved). */
   hidden?: boolean;
+  /** Paints every country opaquely, so the plain land underneath need not be drawn. */
+  coversLand?: boolean;
   /** Keywords for search in the Filters panel. */
   keywords?: string;
   load?(ctx: LayerContext, inst: LayerInstance): Promise<void>;

@@ -180,8 +180,14 @@ export class GLRaster {
     }
   }
 
+  /** WebGL emulated on the CPU (no usable GPU): GPU motion would be slower than vectors there. */
+  readonly software: boolean;
+
   private constructor(gl: WebGL2RenderingContext) {
     this.gl = gl;
+    const dbg = gl.getExtension('WEBGL_debug_renderer_info');
+    const name = String(dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER));
+    this.software = /swiftshader|llvmpipe|softpipe|software|basic render/i.test(name);
     const sh = (type: number, src: string) => {
       const s = gl.createShader(type)!;
       gl.shaderSource(s, src); gl.compileShader(s);
@@ -258,6 +264,19 @@ export class GLRaster {
     if (aniso) gl.texParameterf(gl.TEXTURE_2D, aniso.TEXTURE_MAX_ANISOTROPY_EXT, Math.min(8, gl.getParameter(aniso.MAX_TEXTURE_MAX_ANISOTROPY_EXT)));
     return { tex, width: img.width, height: img.height };
   }
+
+  /** Uploads a canvas, reusing `into`'s texture object when given (re-uploads keep one GPU texture). */
+  upload(canvas: HTMLCanvasElement, into?: RasterTexture | null): RasterTexture {
+    if (!into) return this.texture(canvas);
+    const gl = this.gl;
+    gl.bindTexture(gl.TEXTURE_2D, into.tex);
+    gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, canvas);
+    gl.generateMipmap(gl.TEXTURE_2D);
+    return { tex: into.tex, width: canvas.width, height: canvas.height };
+  }
+
+  get maxTextureSize(): number { return this.gl.getParameter(this.gl.MAX_TEXTURE_SIZE) as number; }
 
   async load(url: string): Promise<RasterTexture> {
     const img = new Image();

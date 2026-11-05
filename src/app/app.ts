@@ -16,10 +16,11 @@ interface Saved {
   theme?: 'dark' | 'light';
   projection?: ProjectionId;
   active?: ActiveSpec[];
-  labels?: { countries: boolean; capitals: boolean; cities: boolean; seas: boolean };
+  labels?: { countries: boolean; capitals: boolean; cities: boolean; seas: boolean; values?: boolean };
   graticule?: boolean;
   shading?: boolean;
   quality?: 'auto' | 'high' | 'low';
+  gpuMotion?: boolean;
   labelScale?: number;
   ambient?: { speed: number; cycle: boolean; clock: boolean };
   camera?: { lon: number; lat: number; zoom: number };
@@ -265,7 +266,7 @@ export class App {
     return {
       lang: this.lang, theme: this.themeId, projection: this.projection,
       active: this.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, opacity: Math.round(l.opacity * 100) / 100, options: l.options })),
-      labels: r.settings.labels, graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality,
+      labels: r.settings.labels, graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality, gpuMotion: r.settings.gpuMotion,
       labelScale: r.settings.labelScale,
       ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock },
       camera: r.view.camera(),
@@ -328,6 +329,7 @@ export class App {
     if (saved.graticule !== undefined) r.settings.graticule = saved.graticule;
     if (saved.shading !== undefined) r.settings.shading = saved.shading;
     if (saved.quality) r.settings.quality = saved.quality;
+    if (saved.gpuMotion !== undefined) r.settings.gpuMotion = saved.gpuMotion;
     if (saved.labelScale) r.settings.labelScale = saved.labelScale;
     if (saved.ambient) Object.assign(this.ambient, saved.ambient);
     if (saved.projection && PROJECTIONS[saved.projection]) r.view.setProjection(saved.projection, false);

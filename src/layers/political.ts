@@ -11,6 +11,7 @@ export const political: LayerDef = {
   category: 'political',
   icon: '🗺️',
   kind: 'fill',
+  coversLand: true,
   name: { en: 'Political map', es: 'Mapa político' },
   desc: {
     en: 'Every country with its own colour; the colour family shows the continent.',
