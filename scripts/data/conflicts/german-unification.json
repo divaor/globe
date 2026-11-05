@@ -1,0 +1,249 @@
+{
+  "id": "german-unification",
+  "name": { "en": "Wars of German unification", "es": "Guerras de unificación alemana" },
+  "icon": "🦅",
+  "era": "modern",
+  "region": { "en": "Central Europe and France", "es": "Europa central y Francia" },
+  "start": "1864-02-01",
+  "end": "1871-05-10",
+  "summary": {
+    "en": "In three short wars, against Denmark, Austria and France, Bismarck's Prussia turned a patchwork of German states into the German Empire and took Alsace-Lorraine from France.",
+    "es": "En tres guerras cortas, contra Dinamarca, Austria y Francia, la Prusia de Bismarck convirtió un mosaico de estados alemanes en el Imperio alemán y arrebató Alsacia-Lorena a Francia."
+  },
+  "camera": { "lon": 10.5, "lat": 50.5, "zoom": 5.2 },
+  "sides": [
+    { "id": "prussia", "name": { "en": "Prussia and its allies", "es": "Prusia y sus aliados" }, "color": "#1f5fa8" },
+    { "id": "germany", "name": { "en": "German Empire", "es": "Imperio alemán" }, "color": "#1f5fa8" },
+    { "id": "austria", "name": { "en": "Austrian Empire", "es": "Imperio austríaco" }, "color": "#d4a017",
+      "members": { "en": "With Saxony, Hanover, Bavaria, Württemberg, Baden and the Hesses in 1866", "es": "Con Sajonia, Hannover, Baviera, Wurtemberg, Baden y los Hesses en 1866" } },
+    { "id": "states", "name": { "en": "Other German states", "es": "Otros estados alemanes" }, "color": "#8e9aa6" },
+    { "id": "south", "name": { "en": "South German states", "es": "Estados del sur de Alemania" }, "color": "#16a085",
+      "members": { "en": "Bavaria, Württemberg, Baden", "es": "Baviera, Wurtemberg, Baden" } },
+    { "id": "denmark", "name": { "en": "Denmark", "es": "Dinamarca" }, "color": "#c0392b" },
+    { "id": "france", "name": { "en": "France", "es": "Francia" }, "color": "#7d3c98" }
+  ],
+  "casualties": {
+    "germany": 44700,
+    "france": 138871,
+    "note": {
+      "en": "Dead in the Franco-Prussian War (1870–71), including those who died of wounds and disease; the wars of 1864 and 1866 killed thousands more.",
+      "es": "Muertos en la guerra franco-prusiana (1870-1871), incluidos los fallecidos por heridas y enfermedades; las guerras de 1864 y 1866 causaron miles de muertos más."
+    }
+  },
+  "casualtiesNote": {
+    "en": "Civilians suffered too: hunger and cold in besieged Paris and Strasbourg, a smallpox epidemic that spread from prisoner camps, and the thousands of Communards killed when the French army retook Paris in May 1871.",
+    "es": "También sufrieron los civiles: hambre y frío en el París y el Estrasburgo sitiados, una epidemia de viruela que se extendió desde los campos de prisioneros y los miles de comuneros muertos cuando el ejército francés retomó París en mayo de 1871."
+  },
+  "defs": {
+    "prussia": { "hist": "Prussia", "year": 1815 },
+    "austria": { "and": [{ "minus": [[{ "hist": "Austrian Empire", "year": 1815 }, { "hist": "Venetia", "year": 1815 }], { "land": [[8.4, 46.6], [10.5, 46.6], [10.7, 45.0], [10.0, 44.85], [8.9, 44.95], [8.4, 45.5]] }] }, { "poly": [[8.9, 40.0], [32.0, 40.0], [32.0, 52.5], [8.9, 52.5]] }] },
+    "venetia": { "hist": "Venetia", "year": 1815 },
+    "schleswig": { "hist": "Schleswig", "year": 1815 },
+    "holstein": { "hist": "Holstein", "year": 1815 },
+    "denmark": { "hist": "Denmark", "year": 1815 },
+    "annexed1866": [
+      { "hist": "Hanover", "year": 1815 }, { "hist": "Electoral Hesse", "year": 1815 }, { "hist": "Nassau", "year": 1815 }
+    ],
+    "north_allies": [
+      { "hist": "Saxony", "year": 1815 }, { "hist": "Mecklenburg-Schwerin", "year": 1815 }, { "hist": "Mecklenburg-Strelitz", "year": 1815 },
+      { "hist": "Oldenburg", "year": 1815 }, { "hist": "Brunswick", "year": 1815 }, { "hist": "Thuringia", "year": 1815 },
+      { "hist": "Lippe-Detmold", "year": 1815 }, { "hist": "Schaumburg-Lippe", "year": 1815 }, { "hist": "Hamburg", "year": 1815 },
+      { "hist": "Bremen", "year": 1815 }, { "hist": "Lübeck", "year": 1815 }
+    ],
+    "hesse": { "hist": "Grand Duchy of Hesse", "year": 1815 },
+    "south": { "minus": [[{ "hist": "Bavaria", "year": 1815 }, { "hist": "Württemberg", "year": 1815 }, { "hist": "Baden", "year": 1815 }], "FRA"] },
+    "france": { "and": ["FRA", { "poly": [[-5.5, 51.3], [9.8, 51.3], [9.8, 41.2], [-5.5, 41.2]] }] },
+    "occupied1870": { "and": [{ "ref": "france" }, { "poly": [[1.6, 50.2], [4.9, 50.2], [8.3, 49.0], [7.6, 47.5], [5.2, 47.4], [3.0, 48.4], [2.0, 49.0]] }] },
+    "occupied1871": { "and": [{ "ref": "france" }, { "poly": [[0.0, 50.2], [4.9, 50.2], [8.3, 49.0], [7.6, 47.5], [6.0, 46.9], [3.9, 46.9], [1.2, 47.2], [-0.6, 47.8], [-0.3, 49.4]] }] },
+    "germany1878": { "hist": "Germany", "year": 1878 },
+    "france1878": { "and": [{ "hist": "France", "year": 1878 }, { "poly": [[-5.5, 51.3], [9.8, 51.3], [9.8, 41.2], [-5.5, 41.2]] }] }
+  },
+  "steps": [
+    {
+      "date": "1864-02-01",
+      "title": { "en": "Denmark's duchies", "es": "Los ducados de Dinamarca" },
+      "text": {
+        "en": "When Denmark tries to bind the duchy of Schleswig more closely to itself, Prussia and Austria, the two great German powers, invade together.",
+        "es": "Cuando Dinamarca intenta unir más estrechamente a sí el ducado de Schleswig, Prusia y Austria, las dos grandes potencias alemanas, la invaden juntas."
+      },
+      "details": {
+        "en": "Germany was then a loose German Confederation of 39 states dominated by Austria. Otto von Bismarck, Prussia's minister-president since 1862, believed that 'the great questions of the day will not be decided by speeches and majority votes... but by iron and blood'. The duchies of Schleswig and Holstein, ruled by the Danish king but largely German-speaking, gave him his first chance. Prussian and Austrian troops crossed the Eider on 1 February 1864.",
+        "es": "Alemania era entonces una laxa Confederación Germánica de 39 estados dominada por Austria. Otto von Bismarck, ministro-presidente de Prusia desde 1862, creía que 'las grandes cuestiones de la época no se resolverán con discursos y votaciones de mayoría... sino con hierro y sangre'. Los ducados de Schleswig y Holstein, gobernados por el rey danés pero de habla mayoritariamente alemana, le dieron su primera oportunidad. Las tropas prusianas y austriacas cruzaron el Eider el 1 de febrero de 1864."
+      },
+      "control": {
+        "prussia": { "ref": "prussia" },
+        "austria": { "ref": "austria" },
+        "states": [{ "ref": "annexed1866" }, { "ref": "north_allies" }, { "ref": "hesse" }],
+        "south": { "ref": "south" },
+        "denmark": [{ "ref": "denmark" }, { "ref": "schleswig" }, { "ref": "holstein" }],
+        "france": { "ref": "france" }
+      },
+      "moves": [
+        { "side": "prussia", "path": [[10.0, 53.6], [9.9, 54.3], [9.55, 54.8], [9.75, 54.92]] }
+      ],
+      "battles": [
+        { "name": { "en": "Battle of Dybbøl", "es": "Batalla de Dybbøl" }, "at": [9.75, 54.92], "date": "1864-04-18", "winner": "prussia",
+          "details": { "en": "After a long bombardment, Prussian troops stormed the Danish earthworks at Dybbøl on 18 April; the defeat became a national trauma in Denmark.", "es": "Tras un largo bombardeo, las tropas prusianas asaltaron las fortificaciones danesas de Dybbøl el 18 de abril; la derrota se convirtió en un trauma nacional en Dinamarca." } }
+      ],
+      "events": [
+        { "icon": "🎩", "date": "1862-09-23", "text": { "en": "Bismarck becomes minister-president of Prussia (1862)", "es": "Bismarck, ministro-presidente de Prusia (1862)" }, "at": [13.4, 52.52] }
+      ]
+    },
+    {
+      "date": "1864-10-30",
+      "title": { "en": "Denmark gives up the duchies", "es": "Dinamarca cede los ducados" },
+      "text": {
+        "en": "Beaten, Denmark cedes Schleswig, Holstein and Lauenburg to Prussia and Austria, which soon quarrel over them.",
+        "es": "Derrotada, Dinamarca cede Schleswig, Holstein y Lauenburgo a Prusia y Austria, que pronto se pelean por ellos."
+      },
+      "control": { "prussia": [{ "ref": "prussia" }, { "ref": "schleswig" }], "austria": [{ "ref": "austria" }, { "ref": "holstein" }], "denmark": { "ref": "denmark" } },
+      "battles": [],
+      "events": [
+        { "icon": "🕊️", "text": { "en": "Treaty of Vienna; from 1865 Prussia runs Schleswig and Austria runs Holstein", "es": "Tratado de Viena; desde 1865 Prusia administra Schleswig y Austria Holstein" }, "at": [16.37, 48.21] }
+      ]
+    },
+    {
+      "date": "1866-07-03",
+      "title": { "en": "Königgrätz: Prussia beats Austria", "es": "Königgrätz: Prusia vence a Austria" },
+      "text": {
+        "en": "Bismarck provokes a war with Austria over Holstein. Most German states side with Austria, but in seven weeks Prussia wins, crushing the Austrians at Königgrätz.",
+        "es": "Bismarck provoca una guerra con Austria por Holstein. La mayoría de los estados alemanes se pone del lado de Austria, pero en siete semanas Prusia gana y aplasta a los austriacos en Königgrätz."
+      },
+      "details": {
+        "en": "Prussia had secretly allied with the new Kingdom of Italy, which attacked Austria in the south. Prussian railways moved three armies to the Bohemian border, and the new breech-loading needle gun let Prussian infantry fire lying down, several times faster than the Austrians could. At Königgrätz (Sadová), more than 400,000 men fought; the Austrian army was saved from destruction only by its artillery. Italy, beaten at Custoza and Lissa, still gained Venetia at the peace.",
+        "es": "Prusia se había aliado en secreto con el nuevo Reino de Italia, que atacó a Austria por el sur. Los ferrocarriles prusianos llevaron tres ejércitos a la frontera de Bohemia, y el nuevo fusil de aguja de retrocarga permitía a la infantería prusiana disparar tumbada, varias veces más rápido que los austriacos. En Königgrätz (Sadová) combatieron más de 400 000 hombres; solo su artillería salvó al ejército austriaco de la destrucción. Italia, derrotada en Custoza y Lissa, obtuvo aun así el Véneto en la paz."
+      },
+      "control": {
+        "prussia": [{ "ref": "prussia" }, { "ref": "schleswig" }, { "ref": "holstein" }],
+        "austria": { "ref": "austria" },
+        "states": [{ "ref": "annexed1866" }, { "ref": "north_allies" }, { "ref": "hesse" }]
+      },
+      "moves": [
+        { "side": "prussia", "path": [[13.4, 52.0], [14.6, 51.0], [15.4, 50.5], [15.83, 50.21]], "label": { "en": "Three Prussian armies", "es": "Tres ejércitos prusianos" } },
+        { "side": "prussia", "path": [[17.0, 51.1], [16.4, 50.6], [15.83, 50.21]] },
+        { "side": "prussia", "path": [[11.8, 52.1], [10.6, 51.1]] }
+      ],
+      "battles": [
+        { "name": { "en": "Battle of Langensalza", "es": "Batalla de Langensalza" }, "at": [10.65, 51.1], "date": "1866-06-27", "winner": "none",
+          "result": { "en": "Hanover wins the battle but, surrounded, its army surrenders two days later.", "es": "Hannover gana la batalla pero, rodeado, su ejército se rinde dos días después." } },
+        { "name": { "en": "Battle of Königgrätz", "es": "Batalla de Königgrätz" }, "at": [15.83, 50.21], "date": "1866-07-03", "winner": "prussia",
+          "casualties": { "prussia": 9172, "austria": [43000, 44200], "note": { "en": "Killed, wounded, missing and captured; the Austrian side includes its Saxon allies and over 22,000 prisoners. Commonly cited figures.", "es": "Muertos, heridos, desaparecidos y prisioneros; el bando austriaco incluye a sus aliados sajones y más de 22 000 prisioneros. Cifras comúnmente citadas." } },
+          "details": { "en": "About 220,000 Prussians against about 215,000 Austrians and Saxons.", "es": "Unos 220 000 prusianos contra unos 215 000 austriacos y sajones." } }
+      ],
+      "camera": { "lon": 12.5, "lat": 50.5, "zoom": 5.2 }
+    },
+    {
+      "date": "1867-07-01",
+      "title": { "en": "The North German Confederation", "es": "La Confederación Alemana del Norte" },
+      "text": {
+        "en": "Prussia annexes Hanover, Hesse-Kassel, Nassau, Frankfurt and the duchies, and leads a new confederation of all states north of the river Main. Austria is shut out of Germany.",
+        "es": "Prusia se anexiona Hannover, Hesse-Kassel, Nassau, Fráncfort y los ducados, y encabeza una nueva confederación de todos los estados al norte del río Meno. Austria queda fuera de Alemania."
+      },
+      "control": {
+        "prussia": [{ "ref": "prussia" }, { "ref": "schleswig" }, { "ref": "holstein" }, { "ref": "annexed1866" }, { "ref": "north_allies" }, { "ref": "hesse" }],
+        "states": null,
+        "austria": { "minus": [{ "ref": "austria" }, { "ref": "venetia" }] }
+      },
+      "events": [
+        { "icon": "🕊️", "date": "1866-08-23", "text": { "en": "Peace of Prague ends the German Confederation", "es": "La Paz de Praga pone fin a la Confederación Germánica" }, "at": [14.42, 50.09] },
+        { "icon": "🇮🇹", "date": "1866-10", "text": { "en": "Venetia passes to Italy", "es": "El Véneto pasa a Italia" }, "at": [12.33, 45.44] }
+      ]
+    },
+    {
+      "date": "1870-09-02",
+      "title": { "en": "Sedan: an emperor captured", "es": "Sedán: un emperador capturado" },
+      "text": {
+        "en": "Goaded by Bismarck's edited 'Ems Dispatch', France declares war. The south German states join Prussia, and within six weeks Napoleon III surrenders at Sedan with 104,000 men.",
+        "es": "Provocada por el 'telegrama de Ems' retocado por Bismarck, Francia declara la guerra. Los estados del sur de Alemania se unen a Prusia y en seis semanas Napoleón III se rinde en Sedán con 104 000 hombres."
+      },
+      "details": {
+        "en": "A dispute over a Hohenzollern prince's candidacy for the Spanish throne ended with a telegram from the Prussian king at Ems, which Bismarck shortened so that it read like an insult. France declared war on 19 July 1870. German armies, mobilised by railway in days, beat the French in Alsace and Lorraine and trapped one French army in the fortress of Metz. The relief army, with the emperor himself, was surrounded at Sedan. Two days later Paris overthrew the Empire and proclaimed the Third Republic, which fought on.",
+        "es": "Una disputa por la candidatura de un príncipe Hohenzollern al trono de España terminó con un telegrama del rey de Prusia desde Ems, que Bismarck recortó para que pareciera un insulto. Francia declaró la guerra el 19 de julio de 1870. Los ejércitos alemanes, movilizados en tren en pocos días, vencieron a los franceses en Alsacia y Lorena y encerraron a un ejército francés en la fortaleza de Metz. El ejército de socorro, con el propio emperador, fue rodeado en Sedán. Dos días después París derribó el Imperio y proclamó la Tercera República, que siguió luchando."
+      },
+      "control": {
+        "prussia": [{ "prev": true }, { "ref": "south" }, { "ref": "occupied1870" }],
+        "south": null,
+        "france": { "minus": [{ "ref": "france" }, { "ref": "occupied1870" }] }
+      },
+      "moves": [
+        { "side": "prussia", "path": [[7.6, 49.4], [7.2, 49.1], [6.9, 48.9], [6.17, 49.12]] },
+        { "side": "prussia", "path": [[8.2, 49.0], [7.8, 48.9], [7.0, 48.6], [5.9, 49.0], [4.95, 49.7]] },
+        { "side": "prussia", "path": [[4.95, 49.7], [4.3, 49.3], [3.3, 48.9], [2.35, 48.86]], "label": { "en": "On to Paris", "es": "Hacia París" } }
+      ],
+      "battles": [
+        { "name": { "en": "Battle of Gravelotte", "es": "Batalla de Gravelotte" }, "at": [6.03, 49.11], "date": "1870-08-18", "winner": "prussia",
+          "casualties": { "prussia": 20160, "france": 12275, "note": { "en": "Killed, wounded and missing; the French army then withdrew into Metz.", "es": "Muertos, heridos y desaparecidos; el ejército francés se retiró después a Metz." } } },
+        { "name": { "en": "Battle of Sedan", "es": "Batalla de Sedán" }, "at": [4.94, 49.7], "date": "1870-09-01", "winner": "prussia",
+          "casualties": { "prussia": 9000, "france": 17000, "note": { "en": "Killed and wounded (commonly cited figures); 104,000 French soldiers and the emperor were captured.", "es": "Muertos y heridos (cifras comúnmente citadas); 104 000 soldados franceses y el emperador fueron capturados." } } }
+      ],
+      "events": [
+        { "icon": "📜", "date": "1870-07-19", "text": { "en": "France declares war on Prussia", "es": "Francia declara la guerra a Prusia" }, "at": [2.35, 48.86] },
+        { "icon": "🏛️", "date": "1870-09-04", "text": { "en": "The Third Republic is proclaimed in Paris", "es": "Se proclama la Tercera República en París" }, "at": [2.35, 48.86] }
+      ],
+      "camera": { "lon": 6, "lat": 49.5, "zoom": 5.4 }
+    },
+    {
+      "date": "1871-01-18",
+      "title": { "en": "An empire proclaimed at Versailles", "es": "Un imperio proclamado en Versalles" },
+      "text": {
+        "en": "With Paris besieged and starving, King Wilhelm I of Prussia is proclaimed German Emperor in the Hall of Mirrors of the French kings' palace. Paris surrenders ten days later.",
+        "es": "Con París sitiada y hambrienta, el rey Guillermo I de Prusia es proclamado emperador alemán en la Galería de los Espejos del palacio de los reyes de Francia. París capitula diez días después."
+      },
+      "details": {
+        "en": "Metz surrendered in October with its whole army. Paris, besieged since September, held out for four months: balloons carried mail and people out over the German lines, and Parisians ate horses, dogs and even the animals of the zoo. The proclamation of the German Empire at Versailles, a deliberate humiliation, would be repaid in the same hall in 1919.",
+        "es": "Metz capituló en octubre con todo su ejército. París, sitiada desde septiembre, resistió cuatro meses: globos llevaban correo y personas por encima de las líneas alemanas, y los parisinos comieron caballos, perros e incluso los animales del zoo. La proclamación del Imperio alemán en Versalles, una humillación deliberada, sería devuelta en la misma sala en 1919."
+      },
+      "control": {
+        "prussia": null,
+        "germany": [{ "ref": "prussia" }, { "ref": "schleswig" }, { "ref": "holstein" }, { "ref": "annexed1866" }, { "ref": "north_allies" }, { "ref": "hesse" }, { "ref": "south" }, { "ref": "occupied1871" }],
+        "france": { "minus": [{ "ref": "france" }, { "ref": "occupied1871" }] }
+      },
+      "battles": [
+        { "name": { "en": "Siege of Metz", "es": "Asedio de Metz" }, "at": [6.17, 49.12], "date": "1870-10-27", "winner": "germany",
+          "casualties": { "germany": 5740, "france": 12481, "note": { "en": "Killed and wounded; about 193,000 French soldiers were taken prisoner when the fortress surrendered.", "es": "Muertos y heridos; unos 193 000 soldados franceses fueron hechos prisioneros al rendirse la fortaleza." } } },
+        { "name": { "en": "Siege of Paris", "es": "Asedio de París" }, "at": [2.35, 48.86], "date": "1871-01-28", "winner": "germany",
+          "details": { "en": "19 September 1870 – 28 January 1871. Thousands of Parisians died of hunger and cold.", "es": "Del 19 de septiembre de 1870 al 28 de enero de 1871. Miles de parisinos murieron de hambre y frío." } }
+      ],
+      "events": [
+        { "icon": "👑", "text": { "en": "Wilhelm I proclaimed German Emperor at Versailles", "es": "Guillermo I, proclamado emperador alemán en Versalles" }, "at": [2.12, 48.8] }
+      ],
+      "camera": { "lon": 6, "lat": 49.5, "zoom": 4.8 }
+    },
+    {
+      "date": "1871-05-10",
+      "title": { "en": "Alsace-Lorraine lost", "es": "Alsacia-Lorena perdida" },
+      "text": {
+        "en": "By the Treaty of Frankfurt, France gives Alsace and part of Lorraine to Germany and pays five billion francs. In Paris, the army crushes the Commune.",
+        "es": "Por el Tratado de Fráncfort, Francia entrega Alsacia y parte de Lorena a Alemania y paga cinco mil millones de francos. En París, el ejército aplasta la Comuna."
+      },
+      "details": {
+        "en": "German troops occupied north-eastern France until the indemnity was paid in 1873. Meanwhile Parisians who refused the peace had set up the revolutionary Paris Commune in March; in the 'Bloody Week' of May 1871 the French army retook the city, and thousands of Communards were killed. The loss of Alsace-Lorraine left a lasting grievance in France and helped set the two countries against each other in 1914.",
+        "es": "Las tropas alemanas ocuparon el noreste de Francia hasta que se pagó la indemnización en 1873. Mientras, los parisinos que rechazaban la paz habían creado en marzo la revolucionaria Comuna de París; en la 'Semana Sangrienta' de mayo de 1871 el ejército francés retomó la ciudad y miles de comuneros murieron. La pérdida de Alsacia-Lorena dejó un agravio duradero en Francia y contribuyó a enfrentar a ambos países en 1914."
+      },
+      "aftermath": true,
+      "control": {
+        "germany": { "ref": "germany1878" },
+        "france": { "ref": "france1878" },
+        "austria": { "hist": "Austria Hungary", "year": 1878 },
+        "denmark": { "hist": "Denmark", "year": 1878 }
+      },
+      "events": [
+        { "icon": "🕊️", "text": { "en": "Treaty of Frankfurt", "es": "Tratado de Fráncfort" }, "at": [8.68, 50.11] },
+        { "icon": "🚩", "date": "1871-05-28", "text": { "en": "End of the Paris Commune", "es": "Fin de la Comuna de París" }, "at": [2.35, 48.86] }
+      ],
+      "camera": { "lon": 9, "lat": 50, "zoom": 4.6 }
+    }
+  ],
+  "outcome": {
+    "en": "A united German Empire under Prussian leadership became the strongest power on the continent. Austria turned towards the Balkans as Austria-Hungary, and France's wish to recover Alsace-Lorraine poisoned relations with Germany until the First World War.",
+    "es": "Un Imperio alemán unificado bajo el liderazgo prusiano se convirtió en la mayor potencia del continente. Austria se volcó hacia los Balcanes como Austria-Hungría, y el deseo francés de recuperar Alsacia-Lorena envenenó las relaciones con Alemania hasta la Primera Guerra Mundial."
+  },
+  "sources": [
+    { "title": "Wikipedia: Unification of Germany", "url": "https://en.wikipedia.org/wiki/Unification_of_Germany" },
+    { "title": "Wikipedia: Second Schleswig War", "url": "https://en.wikipedia.org/wiki/Second_Schleswig_War" },
+    { "title": "Wikipedia: Austro-Prussian War", "url": "https://en.wikipedia.org/wiki/Austro-Prussian_War" },
+    { "title": "Wikipedia: Franco-Prussian War", "url": "https://en.wikipedia.org/wiki/Franco-Prussian_War" },
+    { "title": "Wikipedia: Battle of Gravelotte", "url": "https://en.wikipedia.org/wiki/Battle_of_Gravelotte" },
+    { "title": "Wikipedia: Siege of Metz (1870)", "url": "https://en.wikipedia.org/wiki/Siege_of_Metz_(1870)" }
+  ]
+}
