@@ -57,8 +57,16 @@ export class App {
     this.data.onLevelLoaded = () => this.renderer.requestRender();
   }
 
+  /** Filters requested before they were registered (packs that load in the background). */
+  private pending = new Map<string, Partial<ActiveSpec>>();
+
   register(defs: LayerDef[]) {
     for (const d of defs) this.registry.set(d.id, d);
+    for (const d of defs) {
+      const spec = this.pending.get(d.id);
+      if (spec) { this.pending.delete(d.id); void this.activate(d.id, spec); }
+    }
+    this.emit('registry');
   }
 
   on(evt: string, fn: Listener) {
@@ -91,7 +99,8 @@ export class App {
   // ---- filters ----------------------------------------------------------------------------
   async activate(id: string, spec?: Partial<ActiveSpec>) {
     const def = this.registry.get(id);
-    if (!def || this.isActive(id)) return;
+    if (!def) { this.pending.set(id, spec ?? {}); return; }
+    if (this.isActive(id)) return;
     if (def.group) for (const l of [...this.layers]) if (l.def.group === def.group) this.deactivate(l.def.id, false);
     const options: Record<string, string | boolean> = {};
     for (const o of def.options ?? []) options[o.id] = o.default;

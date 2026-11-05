@@ -67,7 +67,7 @@ export function filtersPanel(app: App): HTMLElement {
 
   renderActive(); renderLabels(); renderList();
   const off1 = app.on('layers', () => { renderActive(); updateCards(list, app); });
-  const off2 = app.on('lang', () => { /* the shell re-opens the panel on language change */ });
+  const off2 = app.on('registry', () => renderList());
   (root as unknown as { dispose: () => void }).dispose = () => { off1(); off2(); };
   return root;
 }

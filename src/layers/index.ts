@@ -6,14 +6,13 @@ import { timezones } from './timezones';
 import { landforms, rivers } from './landforms';
 import { satellite, relief, elevation } from './imagery';
 import { dayNight } from './daynight';
-import { incomeGroups, economyType, gdpPerCapitaNE, populationNE } from './basics';
+import { economyType } from './basics';
 
 export function coreLayers(): LayerDef[] {
   return [
     political, timezones,
-    populationNE,
     landforms, rivers,
-    gdpPerCapitaNE, incomeGroups, economyType,
+    economyType,
     satellite, relief, elevation,
     dayNight,
   ];

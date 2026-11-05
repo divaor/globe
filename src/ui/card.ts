@@ -75,6 +75,9 @@ export class CountryCard {
       if (!r?.length) continue;
       for (const row of r) filterRows.push(rowEl({ ...row, icon: row.icon ?? inst.def.icon }));
     }
+    const shown = new Set(filterRows.map((el) => el.querySelector('.row-label')?.textContent));
+    const keep = rows.filter((r) => !shown.has(r.label));
+    rows.length = 0; rows.push(...keep);
     const pickEls: HTMLElement[] = [];
     for (const p of this.pickRows) for (const row of p.rows) pickEls.push(rowEl(row));
 

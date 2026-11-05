@@ -6,7 +6,7 @@ import type { App } from '../app/app';
 import type { Ticker } from '../engine/renderer';
 
 const CYCLE: string[][] = [
-  ['political'], ['satellite', 'daynight'], ['timezones'], ['koppen'], ['relief', 'landforms'], ['population'],
+  ['political'], ['satellite', 'daynight'], ['timezones'], ['koppen'], ['relief', 'landforms'], ['popdensity'], ['realms', 'animals'], ['sst', 'currents'],
 ];
 
 export class Ambient {
