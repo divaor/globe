@@ -6,6 +6,8 @@ import { t } from '../app/i18n';
 export class Sheet {
   readonly el: HTMLElement;
   private body: HTMLElement;
+  /** Stays put under the header while the body scrolls (the filters' search box). */
+  private bar: HTMLElement;
   private titleEl: HTMLElement;
   private onCloseCb: (() => void) | null = null;
   current: string | null = null;
@@ -13,10 +15,12 @@ export class Sheet {
   constructor(root: HTMLElement) {
     this.titleEl = h('h2', { class: 'sheet-title' });
     this.body = h('div', { class: 'sheet-body' });
+    this.bar = h('div', { class: 'sheet-bar', hidden: true });
     const grip = h('div', { class: 'sheet-grip', 'aria-hidden': 'true' });
     this.el = h('section', { class: 'sheet glass', role: 'dialog', 'aria-modal': 'false', hidden: true },
       grip,
       h('header', { class: 'sheet-head' }, this.titleEl, button({ icon: X, title: t('close'), cls: 'icon-btn', onClick: () => this.close() })),
+      this.bar,
       this.body);
     root.append(this.el);
     // Swipe down on the grip/header closes the sheet on phones.
@@ -28,11 +32,15 @@ export class Sheet {
     }
   }
 
-  open(id: string, title: string, content: HTMLElement, onClose?: () => void) {
+  /** Shows `content` in the sheet; `bar` (a search box...) sits above it, outside the scrolling part. */
+  open(id: string, title: string, content: HTMLElement, onClose?: () => void, bar?: HTMLElement) {
     if (this.current && this.current !== id) this.onCloseCb?.();
     this.current = id;
     this.titleEl.textContent = title;
     clear(this.body);
+    clear(this.bar);
+    if (bar) this.bar.append(bar);
+    this.bar.hidden = !bar;
     this.body.append(content);
     this.el.hidden = false;
     this.el.dataset.sheet = id;
