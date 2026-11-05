@@ -18,7 +18,7 @@ interface Q { id: string; options?: string[] }
 
 export class Learn {
   private card: HTMLElement;
-  private quiz: { kind: QuizKind; region: string; qs: Q[]; i: number; score: number; answered: boolean; savedLabels: boolean } | null = null;
+  private quiz: { kind: QuizKind; region: string; qs: Q[]; i: number; score: number; answered: boolean; savedLabels: { countries: boolean; capitals: boolean; cities: boolean; seas: boolean } } | null = null;
   private tour: { steps: TourStep[]; i: number; auto: boolean; timer: number } | null = null;
   private pin: { lon: number; lat: number; text: string } | null = null;
 
@@ -93,8 +93,8 @@ export class Learn {
       const others = shuffle(pool.filter((x) => x !== id)).slice(0, 3);
       return { id, options: shuffle([id, ...others]) };
     });
-    const labels = this.app.renderer.settings.labels.countries;
-    if (kind === 'find') this.app.renderer.settings.labels.countries = false;
+    const labels = { ...this.app.renderer.settings.labels };
+    if (kind === 'find') Object.assign(this.app.renderer.settings.labels, { countries: false, capitals: false, cities: false });
     this.quiz = { kind, region, qs, i: 0, score: 0, answered: false, savedLabels: labels };
     this.app.select(null);
     if (this.app.renderer.view.current.kind !== 'globe' && kind === 'find') this.app.setProjection('globe');
@@ -197,7 +197,7 @@ export class Learn {
 
   private stopQuiz() {
     if (!this.quiz) return;
-    this.app.renderer.settings.labels.countries = this.quiz.savedLabels;
+    this.app.renderer.settings.labels = { ...this.quiz.savedLabels };
     this.quiz = null;
     this.card.hidden = true;
     this.app.select(null);

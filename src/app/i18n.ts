@@ -139,6 +139,7 @@ const STRINGS: Record<string, [string, string]> = {
   linkCopied: ['Link copied', 'Enlace copiado'],
   tapCountry: ['Tap a country for details', 'Toca un país para ver detalles'],
   timeTravel: ['Time travel', 'Viaje en el tiempo'],
+  timeTravelShort: ['Time travel', 'Tiempo'],
   tbRestart: ['Play from the start', 'Reproducir desde el inicio'],
   tbSpeed: ['Speed', 'Velocidad'],
   tbFrom: ['From', 'Desde'],
@@ -150,6 +151,20 @@ const STRINGS: Record<string, [string, string]> = {
   pangeaDesc: ['Plate tectonics: watch the supercontinent break apart into today\u2019s continents (and go back to Rodinia, 1 billion years ago).', 'Tectónica de placas: mira cómo el supercontinente se separa en los continentes actuales (y retrocede hasta Rodinia, hace 1000 millones de años).'],
   comingSoon: ['Coming soon', 'Próximamente'],
 };
+
+const SUBREGIONS_ES: Record<string, string> = {
+  'Central America': 'América Central', 'Northern America': 'América del Norte', 'South America': 'América del Sur', Caribbean: 'Caribe',
+  'Western Europe': 'Europa occidental', 'Eastern Europe': 'Europa oriental', 'Northern Europe': 'Europa del norte', 'Southern Europe': 'Europa del sur',
+  'Northern Africa': 'África del norte', 'Western Africa': 'África occidental', 'Middle Africa': 'África central', 'Eastern Africa': 'África oriental',
+  'Southern Africa': 'África austral', 'Western Asia': 'Asia occidental', 'Central Asia': 'Asia central', 'Southern Asia': 'Asia del sur',
+  'South-Eastern Asia': 'Sudeste asiático', 'Eastern Asia': 'Asia oriental', 'Australia and New Zealand': 'Australia y Nueva Zelanda',
+  Melanesia: 'Melanesia', Micronesia: 'Micronesia', Polynesia: 'Polinesia', Antarctica: 'Antártida', 'Seven seas (open ocean)': 'Islas oceánicas',
+};
+
+/** Natural Earth subregion name in the current language. */
+export function subregion(name: string): string {
+  return current === 'es' ? SUBREGIONS_ES[name] ?? name : name;
+}
 
 let current: Lang = 'en';
 

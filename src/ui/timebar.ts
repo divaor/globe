@@ -40,6 +40,7 @@ export class TimeBar {
   private last = 0;
   playing = false;
   speed = 1;
+  private decluttered = false;
   start: number;
   end: number;
   pos: number;
@@ -97,6 +98,8 @@ export class TimeBar {
       if (e.key === ' ') { this.toggle(); e.preventDefault(); }
     });
     this.render();
+    window.addEventListener('resize', () => this.declutter());
+    requestAnimationFrame(() => requestAnimationFrame(() => this.declutter()));
   }
 
   private fracAt(clientX: number) {
@@ -151,7 +154,27 @@ export class TimeBar {
     this.render();
   }
 
+  /** Hide tick labels that would overlap (narrow phone screens). */
+  private declutter() {
+    const w = this.track.getBoundingClientRect().width;
+    if (!w) return;
+    let last = -1e9;
+    this.track.querySelectorAll<HTMLElement>('.tb-tick').forEach((el, i, all) => {
+      const x = (parseFloat(el.style.left) / 100) * w;
+      const isLast = i === all.length - 1;
+      const room = isLast ? 34 : 46;
+      const show = x - last >= room;
+      el.style.visibility = show ? 'visible' : 'hidden';
+      if (show) last = x;
+    });
+    this.track.querySelectorAll<HTMLElement>('.tb-band span').forEach((el) => {
+      const band = el.parentElement!.getBoundingClientRect().width;
+      el.style.visibility = band > el.getBoundingClientRect().width + 10 ? 'visible' : 'hidden';
+    });
+  }
+
   render() {
+    if (!this.decluttered && this.el.isConnected) { this.decluttered = true; requestAnimationFrame(() => this.declutter()); }
     const pct = (f: number) => `${f * 100}%`;
     this.thumb.style.left = pct(this.pos);
     this.hStart.style.left = pct(this.start);

@@ -3,7 +3,7 @@
 // give the important ones better icons, palettes and categories; a few get special filters.
 import { SEQUENTIAL, categorical } from '../../engine/colors';
 import { loadJSON, dataUrl } from '../../data/store';
-import { lang, fmtNumber, fmtCompact, tx } from '../../app/i18n';
+import { lang, fmtNumber, fmtCompact, fmtMoney, tx, t } from '../../app/i18n';
 import { categoricalLayer, numericLayer, type CategoryInfo } from '../choropleth';
 import { LC } from '../context';
 import type { App } from '../../app/app';
@@ -299,6 +299,10 @@ function cardRows(id: string): InfoRow[] {
   const cat = (k: string, v: unknown) => (typeof v === 'string' && f[k]?.categories?.[v] ? tx(f[k].categories![v]) : String(v));
   const rows: InfoRow[] = [];
   const add = (icon: string, k: string, value: string | undefined | null) => { if (value) rows.push({ icon, label: es() ? f[k]?.label_es ?? k : f[k]?.label_en ?? k, value }); };
+  const meta = LC.data.meta[id];
+  const pop = typeof d.population === 'number' ? d.population : meta?.pop;
+  if (pop) rows.push({ icon: '👥', label: t('population'), value: fmtCompact(pop) });
+  if (typeof d.gdp_per_capita === 'number') rows.push({ icon: '💰', label: t('gdpPerCapita'), value: fmtMoney(d.gdp_per_capita) });
   add('🗣️', 'languages', ((d.languages as string[]) ?? []).slice(0, 3).map((x) => cat('languages', x)).join(', '));
   add('💱', 'currency', ((d.currency as string[]) ?? []).map((x) => cat('currency', x)).join(', '));
   add('📐', 'area_km2', typeof d.area_km2 === 'number' ? `${fmtNumber(d.area_km2)} km²` : null);
@@ -306,6 +310,7 @@ function cardRows(id: string): InfoRow[] {
   add('🛐', 'religion', d.religion ? cat('religion', d.religion) : null);
   add('🏛️', 'government_type', d.government_type ? cat('government_type', d.government_type) : null);
   add('🎆', 'independence_year', d.independence_year ? `${d.independence_year}${d.independence_from ? ` (${cat('independence_from', d.independence_from)})` : ''}` : null);
+  if (f.highest_point_name) f.highest_point_name = { ...f.highest_point_name, label_en: 'Highest point', label_es: 'Punto más alto' };
   add('🏔️', 'highest_point_name', d.highest_point_name ? `${d.highest_point_name}${d.highest_point_m ? `, ${fmtNumber(d.highest_point_m as number)} m` : ''}` : null);
   add('🚗', 'driving_side', d.driving_side ? cat('driving_side', d.driving_side) : null);
   add('🍽️', 'national_dish', d.national_dish as string);
@@ -339,7 +344,8 @@ export default async function register(app: App, shell: Shell) {
     if (l) defs.push(l);
   }
   app.register(defs);
-  shell.card.extraRows.push(cardRows);
+  shell.card.extraRows.unshift(cardRows);
+  shell.card.factsProvider = true;
   app.renderer.requestRender();
 }
 
