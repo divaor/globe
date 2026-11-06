@@ -1,0 +1,3403 @@
+{
+  "id": "dawn-of-farming",
+  "name": {
+    "en": "The dawn of farming",
+    "es": "Los albores de la agricultura"
+  },
+  "icon": "🌾",
+  "era": "ancient",
+  "region": {
+    "en": "The world's first farming regions",
+    "es": "Las primeras regiones agrícolas del mundo"
+  },
+  "start": "-12400",
+  "end": "-2000",
+  "summary": {
+    "en": "People in about a dozen places tamed their own plants and animals: wheat and sheep, rice and millet, maize, potatoes, taro, sorghum...",
+    "es": "En una docena de lugares se domesticaron plantas y animales propios: trigo y ovejas, arroz y mijo, maíz, papas, taro, sorgo..."
+  },
+  "camera": {
+    "lon": 40,
+    "lat": 25,
+    "zoom": 1.3
+  },
+  "sides": [
+    {
+      "id": "fc",
+      "name": {
+        "en": "Fertile Crescent",
+        "es": "Creciente Fértil"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "china",
+      "name": {
+        "en": "Yangtze and Yellow River",
+        "es": "Yangtsé y río Amarillo"
+      },
+      "color": "#d4ac0d"
+    },
+    {
+      "id": "meso",
+      "name": {
+        "en": "Mesoamerica",
+        "es": "Mesoamérica"
+      },
+      "color": "#e67e22"
+    },
+    {
+      "id": "andes",
+      "name": {
+        "en": "Andes and Amazonia",
+        "es": "Andes y Amazonia"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "png",
+      "name": {
+        "en": "New Guinea highlands",
+        "es": "Tierras altas de Nueva Guinea"
+      },
+      "color": "#16a085"
+    },
+    {
+      "id": "sasia",
+      "name": {
+        "en": "South Asia",
+        "es": "Sur de Asia"
+      },
+      "color": "#2e6f9e"
+    },
+    {
+      "id": "africa",
+      "name": {
+        "en": "Sahel and Ethiopian highlands",
+        "es": "Sahel y altiplano etíope"
+      },
+      "color": "#c2185b"
+    },
+    {
+      "id": "ena",
+      "name": {
+        "en": "Eastern North America",
+        "es": "Este de Norteamérica"
+      },
+      "color": "#5d6d7e"
+    }
+  ],
+  "defs": {
+    "fertile_crescent": {
+      "land": [
+        [
+          34.2,
+          31.2
+        ],
+        [
+          34.9,
+          32.8
+        ],
+        [
+          35.6,
+          34.6
+        ],
+        [
+          35.8,
+          36.3
+        ],
+        [
+          36.4,
+          37.2
+        ],
+        [
+          37.8,
+          37.9
+        ],
+        [
+          39.5,
+          38.5
+        ],
+        [
+          41.5,
+          38.4
+        ],
+        [
+          43.5,
+          37.7
+        ],
+        [
+          45.2,
+          36.6
+        ],
+        [
+          46.8,
+          35.4
+        ],
+        [
+          48.0,
+          34.4
+        ],
+        [
+          48.8,
+          33.0
+        ],
+        [
+          49.8,
+          31.2
+        ],
+        [
+          49.2,
+          30.0
+        ],
+        [
+          47.8,
+          30.4
+        ],
+        [
+          46.5,
+          30.8
+        ],
+        [
+          44.8,
+          31.8
+        ],
+        [
+          43.5,
+          33.0
+        ],
+        [
+          42.0,
+          34.2
+        ],
+        [
+          40.5,
+          34.8
+        ],
+        [
+          39.0,
+          35.3
+        ],
+        [
+          37.6,
+          35.3
+        ],
+        [
+          36.9,
+          34.2
+        ],
+        [
+          36.6,
+          33.0
+        ],
+        [
+          36.0,
+          31.5
+        ],
+        [
+          35.6,
+          30.6
+        ],
+        [
+          34.6,
+          30.7
+        ]
+      ]
+    },
+    "yangtze": {
+      "land": [
+        [
+          110.8,
+          30.8
+        ],
+        [
+          112.5,
+          31.0
+        ],
+        [
+          114.5,
+          30.9
+        ],
+        [
+          116.5,
+          30.6
+        ],
+        [
+          118.5,
+          31.8
+        ],
+        [
+          120.5,
+          32.1
+        ],
+        [
+          121.9,
+          31.6
+        ],
+        [
+          122.2,
+          30.2
+        ],
+        [
+          121.8,
+          29.6
+        ],
+        [
+          120.6,
+          29.0
+        ],
+        [
+          119.0,
+          28.9
+        ],
+        [
+          117.0,
+          28.4
+        ],
+        [
+          115.0,
+          28.2
+        ],
+        [
+          113.0,
+          28.3
+        ],
+        [
+          111.3,
+          28.8
+        ]
+      ]
+    },
+    "yellow_river": {
+      "land": [
+        [
+          105.8,
+          34.0
+        ],
+        [
+          107.5,
+          35.3
+        ],
+        [
+          110.5,
+          36.5
+        ],
+        [
+          113.0,
+          38.2
+        ],
+        [
+          115.5,
+          38.6
+        ],
+        [
+          117.0,
+          37.8
+        ],
+        [
+          119.0,
+          37.3
+        ],
+        [
+          120.0,
+          36.5
+        ],
+        [
+          118.5,
+          34.8
+        ],
+        [
+          116.5,
+          34.2
+        ],
+        [
+          113.5,
+          33.3
+        ],
+        [
+          110.5,
+          33.5
+        ],
+        [
+          107.0,
+          33.3
+        ]
+      ]
+    },
+    "new_guinea": {
+      "land": [
+        [
+          138.2,
+          -3.9
+        ],
+        [
+          140.5,
+          -4.4
+        ],
+        [
+          142.5,
+          -5.0
+        ],
+        [
+          144.0,
+          -5.2
+        ],
+        [
+          145.5,
+          -5.6
+        ],
+        [
+          146.6,
+          -6.2
+        ],
+        [
+          146.8,
+          -7.0
+        ],
+        [
+          145.6,
+          -7.0
+        ],
+        [
+          144.0,
+          -6.6
+        ],
+        [
+          142.5,
+          -6.0
+        ],
+        [
+          140.5,
+          -5.3
+        ],
+        [
+          138.2,
+          -4.8
+        ]
+      ]
+    },
+    "mesoamerica": {
+      "land": [
+        [
+          -105.3,
+          21.3
+        ],
+        [
+          -102.5,
+          22.2
+        ],
+        [
+          -99.0,
+          22.4
+        ],
+        [
+          -97.6,
+          21.4
+        ],
+        [
+          -96.2,
+          19.3
+        ],
+        [
+          -94.2,
+          18.4
+        ],
+        [
+          -91.0,
+          18.7
+        ],
+        [
+          -90.4,
+          21.2
+        ],
+        [
+          -87.0,
+          21.6
+        ],
+        [
+          -87.3,
+          18.5
+        ],
+        [
+          -87.0,
+          15.8
+        ],
+        [
+          -86.0,
+          13.5
+        ],
+        [
+          -87.5,
+          13.0
+        ],
+        [
+          -89.5,
+          13.4
+        ],
+        [
+          -91.5,
+          14.0
+        ],
+        [
+          -94.5,
+          16.0
+        ],
+        [
+          -97.0,
+          15.8
+        ],
+        [
+          -99.5,
+          16.6
+        ],
+        [
+          -102.0,
+          17.8
+        ],
+        [
+          -104.6,
+          19.0
+        ],
+        [
+          -105.6,
+          20.2
+        ]
+      ]
+    },
+    "amazon_sw": {
+      "land": [
+        [
+          -67.5,
+          -11.0
+        ],
+        [
+          -65.0,
+          -10.2
+        ],
+        [
+          -62.5,
+          -9.0
+        ],
+        [
+          -60.5,
+          -9.5
+        ],
+        [
+          -60.0,
+          -12.5
+        ],
+        [
+          -61.5,
+          -15.0
+        ],
+        [
+          -63.5,
+          -16.2
+        ],
+        [
+          -65.5,
+          -15.8
+        ],
+        [
+          -67.2,
+          -14.2
+        ]
+      ]
+    },
+    "central_andes": {
+      "land": [
+        [
+          -80.9,
+          -2.0
+        ],
+        [
+          -78.8,
+          0.8
+        ],
+        [
+          -77.4,
+          -0.2
+        ],
+        [
+          -78.3,
+          -4.5
+        ],
+        [
+          -77.2,
+          -8.8
+        ],
+        [
+          -75.0,
+          -10.8
+        ],
+        [
+          -73.6,
+          -12.6
+        ],
+        [
+          -71.0,
+          -13.6
+        ],
+        [
+          -68.8,
+          -14.8
+        ],
+        [
+          -67.5,
+          -16.5
+        ],
+        [
+          -65.0,
+          -17.5
+        ],
+        [
+          -63.6,
+          -19.0
+        ],
+        [
+          -63.6,
+          -22.2
+        ],
+        [
+          -65.8,
+          -22.6
+        ],
+        [
+          -67.5,
+          -23.0
+        ],
+        [
+          -69.0,
+          -21.0
+        ],
+        [
+          -70.3,
+          -18.3
+        ],
+        [
+          -72.5,
+          -16.8
+        ],
+        [
+          -76.0,
+          -14.2
+        ],
+        [
+          -77.8,
+          -11.8
+        ],
+        [
+          -79.3,
+          -8.5
+        ],
+        [
+          -80.6,
+          -6.2
+        ],
+        [
+          -81.3,
+          -4.2
+        ]
+      ]
+    },
+    "sahel": {
+      "land": [
+        [
+          -16.4,
+          15.5
+        ],
+        [
+          -12.5,
+          15.5
+        ],
+        [
+          -8.0,
+          16.8
+        ],
+        [
+          -4.0,
+          16.5
+        ],
+        [
+          -1.0,
+          17.8
+        ],
+        [
+          1.5,
+          18.0
+        ],
+        [
+          4.5,
+          16.5
+        ],
+        [
+          9.0,
+          15.0
+        ],
+        [
+          14.0,
+          14.8
+        ],
+        [
+          19.0,
+          15.0
+        ],
+        [
+          24.0,
+          14.8
+        ],
+        [
+          29.0,
+          15.0
+        ],
+        [
+          33.0,
+          16.5
+        ],
+        [
+          36.8,
+          16.8
+        ],
+        [
+          36.8,
+          14.2
+        ],
+        [
+          33.0,
+          12.5
+        ],
+        [
+          29.0,
+          11.0
+        ],
+        [
+          24.0,
+          10.5
+        ],
+        [
+          19.0,
+          10.5
+        ],
+        [
+          14.0,
+          11.0
+        ],
+        [
+          9.0,
+          11.5
+        ],
+        [
+          4.0,
+          11.5
+        ],
+        [
+          0.0,
+          12.0
+        ],
+        [
+          -4.0,
+          12.0
+        ],
+        [
+          -8.0,
+          12.5
+        ],
+        [
+          -12.0,
+          13.0
+        ],
+        [
+          -16.5,
+          13.8
+        ]
+      ]
+    },
+    "ethiopia": {
+      "land": [
+        [
+          36.4,
+          14.8
+        ],
+        [
+          38.5,
+          15.6
+        ],
+        [
+          39.6,
+          14.5
+        ],
+        [
+          40.0,
+          12.5
+        ],
+        [
+          39.8,
+          10.0
+        ],
+        [
+          41.8,
+          9.3
+        ],
+        [
+          40.5,
+          7.2
+        ],
+        [
+          39.0,
+          5.8
+        ],
+        [
+          37.5,
+          5.4
+        ],
+        [
+          35.8,
+          6.2
+        ],
+        [
+          35.2,
+          7.8
+        ],
+        [
+          35.6,
+          10.6
+        ],
+        [
+          36.3,
+          12.6
+        ]
+      ]
+    },
+    "eastern_na": {
+      "land": [
+        [
+          -95.0,
+          39.0
+        ],
+        [
+          -92.5,
+          41.5
+        ],
+        [
+          -88.5,
+          42.0
+        ],
+        [
+          -84.5,
+          41.2
+        ],
+        [
+          -81.8,
+          39.5
+        ],
+        [
+          -81.8,
+          37.2
+        ],
+        [
+          -84.0,
+          35.0
+        ],
+        [
+          -87.5,
+          34.6
+        ],
+        [
+          -90.5,
+          35.0
+        ],
+        [
+          -93.5,
+          36.5
+        ]
+      ]
+    },
+    "indus": {
+      "land": [
+        [
+          66.3,
+          30.6
+        ],
+        [
+          67.5,
+          31.0
+        ],
+        [
+          69.5,
+          31.8
+        ],
+        [
+          71.8,
+          33.0
+        ],
+        [
+          73.8,
+          32.6
+        ],
+        [
+          74.8,
+          31.4
+        ],
+        [
+          73.5,
+          30.0
+        ],
+        [
+          71.5,
+          28.4
+        ],
+        [
+          70.0,
+          26.5
+        ],
+        [
+          69.0,
+          24.6
+        ],
+        [
+          67.8,
+          23.8
+        ],
+        [
+          67.0,
+          24.6
+        ],
+        [
+          67.3,
+          26.5
+        ],
+        [
+          66.8,
+          28.0
+        ]
+      ]
+    },
+    "ganges": {
+      "land": [
+        [
+          77.5,
+          29.8
+        ],
+        [
+          80.0,
+          28.8
+        ],
+        [
+          83.5,
+          27.6
+        ],
+        [
+          86.0,
+          27.0
+        ],
+        [
+          88.2,
+          26.4
+        ],
+        [
+          88.6,
+          24.2
+        ],
+        [
+          86.5,
+          24.6
+        ],
+        [
+          84.0,
+          24.8
+        ],
+        [
+          81.5,
+          25.0
+        ],
+        [
+          79.0,
+          25.8
+        ],
+        [
+          77.3,
+          27.0
+        ]
+      ]
+    }
+  },
+  "steps": [
+    {
+      "date": "-12400",
+      "title": {
+        "en": "Bread before farming",
+        "es": "Pan antes de la agricultura"
+      },
+      "camera": {
+        "lon": 28.0,
+        "lat": 37.0,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "Long before farming, hunter-gatherers ground wild grains into flour. About 14,400 years ago, at Shubayqa in Jordan, they baked the oldest bread yet found.",
+        "es": "Mucho antes de la agricultura, los cazadores-recolectores ya molían granos silvestres. Hace unos 14 400 años, en Shubayqa (Jordania), cocieron el pan más antiguo hallado hasta hoy."
+      },
+      "details": {
+        "en": "The Natufians of the Levant lived in small villages and harvested wild wheat and barley with flint sickles, but they did not yet sow them. They also had dogs, the first animal people ever tamed: at Ain Mallaha, in Galilee, a woman was buried about 12,000 years ago with her hand resting on a puppy. Farming was not needed to make bread or beer; it came later, perhaps partly to grow more of the grains people already loved.",
+        "es": "Los natufienses del Levante vivían en pequeñas aldeas y cosechaban trigo y cebada silvestres con hoces de sílex, pero aún no los sembraban. También tenían perros, el primer animal que domesticó el ser humano: en Ain Mallaha, en Galilea, una mujer fue enterrada hace unos 12 000 años con la mano sobre un cachorro. No hizo falta la agricultura para hacer pan o cerveza: llegó después, quizá en parte para cultivar más de los granos que ya gustaban tanto."
+      },
+      "places": [
+        {
+          "id": "paglicci-cave",
+          "name": {
+            "en": "Paglicci Cave",
+            "es": "Cueva de Paglicci"
+          },
+          "at": [
+            15.6152,
+            41.6544
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-30600",
+          "place": {
+            "en": "Rignano Garganico, Italy",
+            "es": "Rignano Garganico, Italia"
+          },
+          "text": {
+            "en": "A grinding stone about 32,600 years old from this cave still holds starch from wild oats. People dried and ground wild grains long before anyone farmed.",
+            "es": "Una piedra de moler de unos 32 600 años hallada en esta cueva aún conserva almidón de avena silvestre. Se secaban y molían granos silvestres mucho antes de que nadie cultivara."
+          },
+          "wiki": {
+            "en": "Paglicci Cave",
+            "es": "Historia del pan"
+          }
+        },
+        {
+          "id": "ohalo-ii",
+          "name": {
+            "en": "Ohalo II",
+            "es": "Ohalo II"
+          },
+          "at": [
+            35.5721,
+            32.7221
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-21000",
+          "place": {
+            "en": "Sea of Galilee, Israel",
+            "es": "Mar de Galilea, Israel"
+          },
+          "text": {
+            "en": "A 23,000-year-old fishers' camp on the Sea of Galilee. Its people gathered wild wheat and barley, ground them on a stone slab and may even have tried sowing small plots.",
+            "es": "Un campamento de pescadores de hace 23 000 años a orillas del mar de Galilea. Recogían trigo y cebada silvestres, los molían sobre una losa y quizá probaron a sembrar pequeñas parcelas."
+          },
+          "wiki": {
+            "en": "Ohalo II",
+            "es": "Revolución neolítica"
+          }
+        },
+        {
+          "id": "shubayqa-1",
+          "name": {
+            "en": "Shubayqa 1",
+            "es": "Shubayqa 1"
+          },
+          "at": [
+            37.15,
+            32.35
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-12400",
+          "place": {
+            "en": "Black Desert, Jordan",
+            "es": "Desierto Negro, Jordania"
+          },
+          "text": {
+            "en": "Charred crumbs from a fireplace here are the oldest bread yet found, about 14,400 years old: a flatbread of wild cereals and tubers, baked 4,000 years before farming.",
+            "es": "Unas migas carbonizadas de un hogar son el pan más antiguo hallado, de hace unos 14 400 años: una torta de cereales silvestres y tubérculos, cocida 4000 años antes de la agricultura."
+          },
+          "wiki": {
+            "en": "History of bread",
+            "es": "Historia del pan"
+          }
+        },
+        {
+          "id": "raqefet-cave",
+          "name": {
+            "en": "Raqefet Cave",
+            "es": "Cueva de Raqefet"
+          },
+          "at": [
+            35.0774,
+            32.654
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-11000",
+          "place": {
+            "en": "Mount Carmel, Israel",
+            "es": "Monte Carmelo, Israel"
+          },
+          "text": {
+            "en": "Stone mortars in this Natufian burial cave hold traces that may come from brewing beer for funeral feasts about 13,000 years ago. Not all experts agree.",
+            "es": "Unos morteros de piedra de esta cueva funeraria natufiense guardan restos que podrían venir de elaborar cerveza para banquetes fúnebres hace unos 13 000 años. No todos los expertos están de acuerdo."
+          },
+          "wiki": {
+            "en": "Raqefet Cave",
+            "es": "Historia de la cerveza"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-9500",
+      "title": {
+        "en": "Sowing wild cereals",
+        "es": "Sembrar cereales silvestres"
+      },
+      "camera": {
+        "lon": 39.0,
+        "lat": 34.8,
+        "zoom": 4.6
+      },
+      "text": {
+        "en": "As the Ice Age ended, people in the Fertile Crescent began to sow the wild cereals they had always gathered. Villages grew up beside their fields.",
+        "es": "Al acabar la Edad de Hielo, la gente del Creciente Fértil empezó a sembrar los cereales silvestres que siempre había recolectado. Junto a los campos crecieron aldeas."
+      },
+      "details": {
+        "en": "Farming was not invented in a day. For a thousand years or more, people sowed and harvested wild wheat, barley and pulses before the plants changed. Ears that did not shatter when ripe were easier to reap, so their seeds were sown again and again, and slowly the plants came to depend on people. This happened in several places, from the Jordan valley to the Zagros mountains of Iran.",
+        "es": "La agricultura no se inventó en un día. Durante mil años o más, la gente sembró y cosechó trigo, cebada y legumbres silvestres antes de que las plantas cambiaran. Las espigas que no se desgranaban al madurar eran más fáciles de segar, así que sus semillas se sembraban una y otra vez, y poco a poco las plantas pasaron a depender de las personas. Ocurrió en varios lugares, del valle del Jordán a los montes Zagros de Irán."
+      },
+      "control": {
+        "fc": {
+          "ref": "fertile_crescent"
+        }
+      },
+      "events": [
+        {
+          "icon": "🌡️",
+          "text": {
+            "en": "The last cold snap of the Ice Age ends and the climate grows warmer and steadier",
+            "es": "Termina el último frío de la Edad de Hielo y el clima se vuelve más cálido y estable"
+          },
+          "date": "-9700"
+        }
+      ],
+      "places": [
+        {
+          "id": "abu-hureyra",
+          "name": {
+            "en": "Tell Abu Hureyra",
+            "es": "Tell Abu Hureyra"
+          },
+          "at": [
+            38.4,
+            35.8667
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-11000",
+          "place": {
+            "en": "Euphrates valley, Syria",
+            "es": "Valle del Éufrates, Siria"
+          },
+          "text": {
+            "en": "Its people began as hunter-gatherers and slowly became farmers. Rye grown here about 13,000 years ago may be the first cultivated cereal, though this is debated. The site now lies under Lake Assad.",
+            "es": "Sus habitantes empezaron como cazadores-recolectores y poco a poco se hicieron agricultores. El centeno cultivado aquí hace unos 13 000 años podría ser el primer cereal sembrado, aunque se discute. Hoy está bajo el lago Asad."
+          },
+          "wiki": {
+            "en": "Tell Abu Hureyra",
+            "es": "Tell Abu Hureyra"
+          }
+        },
+        {
+          "id": "gobekli-tepe",
+          "name": {
+            "en": "Göbekli Tepe",
+            "es": "Göbekli Tepe"
+          },
+          "at": [
+            38.9225,
+            37.2231
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-9500",
+          "place": {
+            "en": "Şanlıurfa, Turkey",
+            "es": "Şanlıurfa, Turquía"
+          },
+          "text": {
+            "en": "People raised huge carved stone pillars here about 11,500 years ago. Over 7,000 grinding stones show they processed cereals, though no one knows if they were wild or sown.",
+            "es": "Hace unos 11 500 años se alzaron aquí enormes pilares de piedra tallada. Más de 7000 piedras de moler muestran que procesaban cereales, aunque no se sabe si eran silvestres o sembrados."
+          },
+          "wiki": {
+            "en": "Göbekli Tepe",
+            "es": "Göbekli Tepe"
+          }
+        },
+        {
+          "id": "gilgal-i",
+          "name": {
+            "en": "Gilgal I",
+            "es": "Gilgal I"
+          },
+          "at": [
+            35.4756,
+            32.0328
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-9400",
+          "place": {
+            "en": "Jordan valley, West Bank",
+            "es": "Valle del Jordán, Cisjordania"
+          },
+          "text": {
+            "en": "Figs about 11,400 years old found here come from a seedless tree that only grows if people plant its cuttings: perhaps the first cultivated plant. Stores of wild barley and oats lay with them.",
+            "es": "Unos higos de hace unos 11 400 años proceden de una higuera sin semillas que solo crece si se plantan sus esquejes: quizá la primera planta cultivada. Junto a ellos había reservas de cebada y avena silvestres."
+          },
+          "wiki": {
+            "en": "Gilgal I",
+            "es": "Ficus carica"
+          }
+        },
+        {
+          "id": "jericho",
+          "name": {
+            "en": "Jericho (Tell es-Sultan)",
+            "es": "Jericó (Tell es-Sultán)"
+          },
+          "at": [
+            35.4446,
+            31.8717
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-9500",
+          "place": {
+            "en": "Jericho, West Bank",
+            "es": "Jericó, Cisjordania"
+          },
+          "text": {
+            "en": "One of the first farming towns, by an oasis spring. Its people grew emmer, barley and pulses, and about 8300 BC built a stone tower over 8 m tall inside a town wall.",
+            "es": "Una de las primeras poblaciones agrícolas, junto al manantial de un oasis. Cultivaban farro, cebada y legumbres, y hacia el 8300 a. C. levantaron una torre de piedra de más de 8 m dentro de una muralla."
+          },
+          "wiki": {
+            "en": "Tell es-Sultan",
+            "es": "Tell es-Sultan"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-8500",
+      "title": {
+        "en": "The founder crops",
+        "es": "Los cultivos fundadores"
+      },
+      "camera": {
+        "lon": 39.5,
+        "lat": 35.0,
+        "zoom": 4.6
+      },
+      "text": {
+        "en": "Eight founder crops fed the first farms: einkorn and emmer wheat, barley, lentils, peas, chickpeas, bitter vetch and flax, grown for linen and oil.",
+        "es": "Ocho cultivos fundadores alimentaron las primeras granjas: la escaña y el farro (dos trigos), la cebada, las lentejas, los guisantes, los garbanzos, los yeros y el lino, para tela y aceite."
+      },
+      "details": {
+        "en": "Cereals gave energy and pulses gave protein, a pairing that still feeds the region in bread and lentil soup, or hummus. Each crop was tamed from a wild plant of the Fertile Crescent, mostly between 10,500 and 9,500 years ago. Scholars now think more plants were tamed here too, such as figs, rye and broad beans.",
+        "es": "Los cereales daban energía y las legumbres, proteínas: una pareja que aún alimenta la región en el pan y la sopa de lentejas, o en el hummus. Cada cultivo salió de una planta silvestre del Creciente Fértil, sobre todo hace entre 10 500 y 9500 años. Hoy se cree que aquí se domesticaron más plantas, como la higuera, el centeno y las habas."
+      },
+      "places": [
+        {
+          "id": "einkorn",
+          "name": {
+            "en": "Einkorn wheat",
+            "es": "Escaña menor (trigo einkorn)"
+          },
+          "at": [
+            39.75,
+            37.58
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-8000",
+          "place": {
+            "en": "Karacadağ, southeast Turkey",
+            "es": "Karacadağ, sureste de Turquía"
+          },
+          "text": {
+            "en": "One of the first wheats. DNA traces it to the slopes of Karacadağ, an old volcano in southeast Turkey, where it was tamed about 10,000 years ago.",
+            "es": "Uno de los primeros trigos. El ADN lo sitúa en las laderas del Karacadağ, un viejo volcán del sureste de Turquía, donde se domesticó hace unos 10 000 años."
+          },
+          "wiki": {
+            "en": "Einkorn",
+            "es": "Triticum monococcum"
+          }
+        },
+        {
+          "id": "emmer",
+          "name": {
+            "en": "Emmer wheat",
+            "es": "Farro (trigo emmer)"
+          },
+          "at": [
+            39.725,
+            38.216
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-8300",
+          "place": {
+            "en": "Çayönü, southeast Turkey",
+            "es": "Çayönü, sureste de Turquía"
+          },
+          "text": {
+            "en": "The wheat of ancient Egypt and of Europe's first farmers. The oldest sure remains of tamed emmer, over 10,000 years old, come from the village of Çayönü.",
+            "es": "El trigo del antiguo Egipto y de los primeros agricultores de Europa. Los restos seguros más antiguos de farro domesticado, de hace más de 10 000 años, vienen de la aldea de Çayönü."
+          },
+          "wiki": {
+            "en": "Emmer",
+            "es": "Triticum dicoccum"
+          }
+        },
+        {
+          "id": "barley",
+          "name": {
+            "en": "Barley",
+            "es": "Cebada"
+          },
+          "at": [
+            36.55,
+            33.4
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-8200",
+          "place": {
+            "en": "Tell Aswad, near Damascus, Syria",
+            "es": "Tell Aswad, cerca de Damasco, Siria"
+          },
+          "text": {
+            "en": "Hardy and quick to ripen, barley made porridge, bread and beer. The oldest known domestic barley, about 10,200 years old, comes from Tell Aswad.",
+            "es": "Resistente y rápida en madurar, la cebada daba gachas, pan y cerveza. La cebada domesticada más antigua conocida, de hace unos 10 200 años, procede de Tell Aswad."
+          },
+          "wiki": {
+            "en": "Barley",
+            "es": "Hordeum vulgare"
+          }
+        },
+        {
+          "id": "lentil",
+          "name": {
+            "en": "Lentil",
+            "es": "Lenteja"
+          },
+          "at": [
+            35.2277,
+            32.7554
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-7500",
+          "place": {
+            "en": "Yiftahel, Galilee, Israel",
+            "es": "Yiftahel, Galilea, Israel"
+          },
+          "text": {
+            "en": "Lentils were tamed in the Fertile Crescent. In the Stone Age village of Yiftahel, archaeologists found over a million of them, a sure sign they were grown on purpose.",
+            "es": "La lenteja se domesticó en el Creciente Fértil. En la aldea neolítica de Yiftahel se hallaron más de un millón, señal segura de que se cultivaban a propósito."
+          },
+          "wiki": {
+            "en": "Lentil",
+            "es": "Lens culinaris"
+          }
+        },
+        {
+          "id": "pea",
+          "name": {
+            "en": "Pea",
+            "es": "Guisante"
+          },
+          "at": [
+            44.9303,
+            35.5558
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-7000",
+          "place": {
+            "en": "Jarmo, Iraqi Kurdistan",
+            "es": "Jarmo, Kurdistán iraquí"
+          },
+          "text": {
+            "en": "Peas were tamed with the first cereals; wild peas still grow in the region. Early farming villages such as Jarmo, in the Zagros foothills, ate them about 9,000 years ago.",
+            "es": "El guisante se domesticó junto a los primeros cereales; aún crece silvestre en la región. Aldeas agrícolas como Jarmo, al pie de los Zagros, los comían hace unos 9000 años."
+          },
+          "wiki": {
+            "en": "Pea",
+            "es": "Pisum sativum"
+          }
+        },
+        {
+          "id": "chickpea",
+          "name": {
+            "en": "Chickpea",
+            "es": "Garbanzo"
+          },
+          "at": [
+            40.75,
+            37.35
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-8000",
+          "place": {
+            "en": "Southeast Turkey",
+            "es": "Sureste de Turquía"
+          },
+          "text": {
+            "en": "Its wild ancestor grows only in a small corner of southeast Turkey and nearby Syria, where chickpeas were tamed about 10,000 years ago. Hummus and falafel come from them.",
+            "es": "Su antepasado silvestre solo crece en un pequeño rincón del sureste de Turquía y de Siria, donde se domesticó el garbanzo hace unos 10 000 años. De él salen el hummus y el falafel."
+          },
+          "wiki": {
+            "en": "Chickpea",
+            "es": "Cicer arietinum"
+          }
+        },
+        {
+          "id": "flax",
+          "name": {
+            "en": "Flax",
+            "es": "Lino"
+          },
+          "at": [
+            35.2939,
+            31.1392
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-7700",
+          "place": {
+            "en": "Nahal Hemar cave, near the Dead Sea",
+            "es": "Cueva de Nahal Hemar, junto al mar Muerto"
+          },
+          "text": {
+            "en": "The first crop grown for oil and cloth rather than food. Tamed flax appears at Jericho nearly 10,000 years ago, and linen pieces over 8,000 years old survive in this desert cave.",
+            "es": "El primer cultivo para aceite y tela, no para comer. El lino domesticado aparece en Jericó hace casi 10 000 años, y en esta cueva del desierto se conservan tejidos de más de 8000 años."
+          },
+          "wiki": {
+            "en": "Flax",
+            "es": "Linum usitatissimum"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-8200",
+      "title": {
+        "en": "Taming the herds",
+        "es": "Domesticar los rebaños"
+      },
+      "camera": {
+        "lon": 40.5,
+        "lat": 36.3,
+        "zoom": 4.2
+      },
+      "text": {
+        "en": "Hunters began to keep the animals they had chased: wild goats, sheep, aurochs and boars. Over generations they became the goats, sheep, cattle and pigs of today.",
+        "es": "Los cazadores empezaron a criar los animales que antes perseguían: cabras y ovejas salvajes, uros y jabalíes. Con las generaciones se convirtieron en las cabras, ovejas, vacas y cerdos de hoy."
+      },
+      "details": {
+        "en": "Herds gave meat, milk, leather and dung for fuel, and much later wool and pulling power. The first signs of tame herds appear between about 8700 and 8200 BC. Cats came on their own, hunting the mice that raided the grain stores: on Cyprus, a cat was buried beside a person about 9,500 years ago.",
+        "es": "Los rebaños daban carne, leche, cuero y estiércol para el fuego, y mucho más tarde lana y fuerza de tiro. Los primeros indicios de rebaños domésticos aparecen hacia el 8700-8200 a. C. Los gatos llegaron por su cuenta, a cazar los ratones que asaltaban los graneros: en Chipre, un gato fue enterrado junto a una persona hace unos 9500 años."
+      },
+      "places": [
+        {
+          "id": "goat",
+          "name": {
+            "en": "Goat",
+            "es": "Cabra"
+          },
+          "at": [
+            47.4758,
+            34.2721
+          ],
+          "cat": "animal",
+          "type": "animal",
+          "date": "-8000",
+          "place": {
+            "en": "Ganj Dareh, Zagros mountains, Iran",
+            "es": "Ganj Dareh, montes Zagros, Irán"
+          },
+          "text": {
+            "en": "Goats were among the first herd animals, tamed from the wild bezoar goat. At Ganj Dareh, in the Zagros, people were keeping goats about 10,000 years ago.",
+            "es": "La cabra fue uno de los primeros animales de rebaño, domesticada a partir de la cabra salvaje. En Ganj Dareh, en los Zagros, ya se criaban cabras hace unos 10 000 años."
+          },
+          "wiki": {
+            "en": "Goat",
+            "es": "Capra aegagrus hircus"
+          }
+        },
+        {
+          "id": "sheep",
+          "name": {
+            "en": "Sheep",
+            "es": "Oveja"
+          },
+          "at": [
+            34.23,
+            38.349
+          ],
+          "cat": "animal",
+          "type": "animal",
+          "date": "-8500",
+          "place": {
+            "en": "Aşıklı Höyük, central Turkey",
+            "es": "Aşıklı Höyük, centro de Turquía"
+          },
+          "text": {
+            "en": "Sheep come from the wild mouflon and were tamed between 9000 and 8500 BC, in southeast Turkey and the Zagros and perhaps also at villages like Aşıklı Höyük.",
+            "es": "La oveja viene del muflón salvaje y se domesticó entre el 9000 y el 8500 a. C., en el sureste de Turquía y los Zagros, y quizá también en aldeas como Aşıklı Höyük."
+          },
+          "wiki": {
+            "en": "Sheep",
+            "es": "Ovis orientalis aries"
+          }
+        },
+        {
+          "id": "cattle",
+          "name": {
+            "en": "Cattle",
+            "es": "Vaca"
+          },
+          "at": [
+            38.1833,
+            36.3833
+          ],
+          "cat": "animal",
+          "type": "animal",
+          "date": "-8500",
+          "place": {
+            "en": "Dja'de el-Mughara, Euphrates valley, Syria",
+            "es": "Dja'de el-Mughara, valle del Éufrates, Siria"
+          },
+          "text": {
+            "en": "Wild aurochs were huge and fierce. DNA suggests that cattle descend from perhaps 80 aurochs tamed about 10,500 years ago near villages such as Dja'de and Çayönü.",
+            "es": "Los uros salvajes eran enormes y bravos. El ADN sugiere que las vacas descienden de quizá 80 uros domesticados hace unos 10 500 años cerca de aldeas como Dja'de y Çayönü."
+          },
+          "wiki": {
+            "en": "Cattle",
+            "es": "Bos taurus"
+          }
+        },
+        {
+          "id": "pig",
+          "name": {
+            "en": "Pig",
+            "es": "Cerdo"
+          },
+          "at": [
+            41.2417,
+            38.2242
+          ],
+          "cat": "animal",
+          "type": "animal",
+          "date": "-8500",
+          "place": {
+            "en": "Hallan Çemi, upper Tigris, Turkey",
+            "es": "Hallan Çemi, alto Tigris, Turquía"
+          },
+          "text": {
+            "en": "Pigs were tamed from wild boar around the upper Tigris. At Hallan Çemi, one of the oldest villages, pig bones already show early signs of taming. China tamed pigs separately.",
+            "es": "El cerdo se domesticó a partir del jabalí en el alto Tigris. En Hallan Çemi, una de las aldeas más antiguas, los huesos de cerdo ya muestran los primeros rasgos domésticos. China lo domesticó por separado."
+          },
+          "wiki": {
+            "en": "Domestic pig",
+            "es": "Sus scrofa domestica"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-8000",
+      "title": {
+        "en": "Gardens in the Amazon",
+        "es": "Huertos en la Amazonia"
+      },
+      "camera": {
+        "lon": -63.5,
+        "lat": -14.5,
+        "zoom": 4.0
+      },
+      "text": {
+        "en": "Half a world away, people in the wetlands and forests of southern Amazonia were growing manioc and squash over 10,000 years ago.",
+        "es": "Al otro lado del mundo, en los humedales y bosques del sur de la Amazonia, ya se cultivaban yuca y calabaza hace más de 10 000 años."
+      },
+      "details": {
+        "en": "The Amazon was once thought too poor to farm. In fact its peoples tamed many plants and enriched the soil with charcoal and waste, making the dark earth called terra preta. Several crops, including manioc, squash, peanuts, some chilies and beans, are close cousins of wild plants of the Llanos de Moxos, so they may have been tamed there.",
+        "es": "Antes se creía que la Amazonia era demasiado pobre para cultivar. En realidad, sus pueblos domesticaron muchas plantas y enriquecieron el suelo con carbón y desechos, creando la tierra oscura llamada terra preta. Varios cultivos, como la yuca, la calabaza, el maní, algunos ajíes y frijoles, son parientes cercanos de plantas silvestres de los Llanos de Moxos, así que quizá se domesticaron allí."
+      },
+      "control": {
+        "andes": {
+          "ref": "amazon_sw"
+        }
+      },
+      "places": [
+        {
+          "id": "llanos-de-moxos",
+          "name": {
+            "en": "Llanos de Moxos",
+            "es": "Llanos de Moxos"
+          },
+          "at": [
+            -65.0,
+            -14.0
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-8350",
+          "place": {
+            "en": "Beni, Bolivia",
+            "es": "Beni, Bolivia"
+          },
+          "text": {
+            "en": "In these flooded grasslands, people built thousands of forest islands. Plant traces in them show manioc grown about 10,350 years ago and squash soon after.",
+            "es": "En estas sabanas inundables se levantaron miles de islas de bosque. Los restos vegetales muestran yuca cultivada hace unos 10 350 años y calabaza poco después."
+          },
+          "wiki": {
+            "en": "Llanos de Moxos",
+            "es": "Llanos de Moxos"
+          }
+        },
+        {
+          "id": "cassava",
+          "name": {
+            "en": "Cassava (manioc)",
+            "es": "Yuca (mandioca)"
+          },
+          "at": [
+            -61.6,
+            -11.6
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-8000",
+          "place": {
+            "en": "Southern edge of the Amazon, Brazil",
+            "es": "Borde sur de la Amazonia, Brasil"
+          },
+          "text": {
+            "en": "Tamed on the southern edge of the Amazon, no more than 10,000 years ago. Its roots are poisonous raw, so people learned to grate, soak and cook them. It feeds millions today.",
+            "es": "Se domesticó en el borde sur de la Amazonia hace como mucho 10 000 años. Su raíz es venenosa cruda, así que se aprendió a rallarla, remojarla y cocinarla. Hoy alimenta a millones de personas."
+          },
+          "wiki": {
+            "en": "Cassava",
+            "es": "Manihot esculenta"
+          }
+        },
+        {
+          "id": "peanut",
+          "name": {
+            "en": "Peanut",
+            "es": "Maní (cacahuete)"
+          },
+          "at": [
+            -64.3,
+            -20.8
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-5600",
+          "place": {
+            "en": "Southern Bolivia",
+            "es": "Sur de Bolivia"
+          },
+          "text": {
+            "en": "Peanuts arose from a cross of two wild species in southern Bolivia or northwest Argentina. The oldest known pods, about 7,600 years old, were found in dry caves in Peru.",
+            "es": "El maní nació del cruce de dos especies silvestres en el sur de Bolivia o el noroeste de Argentina. Las vainas más antiguas conocidas, de hace unos 7600 años, se hallaron en cuevas secas de Perú."
+          },
+          "wiki": {
+            "en": "Peanut",
+            "es": "Arachis hypogaea"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-8000",
+      "title": {
+        "en": "China's two cradles",
+        "es": "Las dos cunas de China"
+      },
+      "camera": {
+        "lon": 116.0,
+        "lat": 32.5,
+        "zoom": 3.8
+      },
+      "text": {
+        "en": "In China, farming began twice: with rice in the warm, wet south along the Yangtze, and with millet in the dry north along the Yellow River.",
+        "es": "En China la agricultura nació dos veces: con el arroz en el sur cálido y húmedo, junto al Yangtsé, y con el mijo en el norte seco, junto al río Amarillo."
+      },
+      "details": {
+        "en": "In China, pottery came before farming: people were cooking in pots thousands of years before they grew crops. Taming rice was slow. For millennia, villagers along the Yangtze grew rice while still gathering acorns, water chestnuts and fish, and only around 4000 BC was the rice fully domestic. In the north, millet fed villages like Cishan, where pigs and dogs were also kept.",
+        "es": "En China la cerámica llegó antes que la agricultura: se cocinaba en ollas miles de años antes de cultivar. Domesticar el arroz fue lento. Durante milenios, las aldeas del Yangtsé cultivaron arroz sin dejar de recoger bellotas, castañas de agua y peces, y solo hacia el 4000 a. C. el arroz fue del todo doméstico. En el norte, el mijo alimentaba aldeas como Cishan, que también criaban cerdos y perros."
+      },
+      "control": {
+        "china": [
+          {
+            "ref": "yangtze"
+          },
+          {
+            "ref": "yellow_river"
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "shangshan",
+          "name": {
+            "en": "Shangshan",
+            "es": "Shangshan"
+          },
+          "at": [
+            119.9714,
+            29.4558
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-8000",
+          "place": {
+            "en": "Pujiang, Zhejiang, China",
+            "es": "Pujiang, Zhejiang, China"
+          },
+          "text": {
+            "en": "Pots here were tempered with rice husks about 10,000 years ago, and residues in them show the oldest known rice beer. Its people also gathered acorns and hunted deer.",
+            "es": "Aquí se hacían ollas con cascarilla de arroz hace unos 10 000 años, y sus restos revelan la cerveza de arroz más antigua conocida. Sus habitantes también recogían bellotas y cazaban ciervos."
+          },
+          "wiki": {
+            "en": "Shangshan",
+            "es": "Producción de arroz en China"
+          }
+        },
+        {
+          "id": "rice",
+          "name": {
+            "en": "Rice",
+            "es": "Arroz"
+          },
+          "at": [
+            111.6789,
+            29.6822
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-8000",
+          "place": {
+            "en": "Middle Yangtze, Hunan, China",
+            "es": "Yangtsé medio, Hunan, China"
+          },
+          "text": {
+            "en": "Wild rice was slowly tamed along the middle and lower Yangtze. Rice at Pengtoushan, in Hunan, has been dated to about 8000 BC. It now feeds more than half of humanity.",
+            "es": "El arroz silvestre se domesticó despacio en el Yangtsé medio y bajo. El arroz de Pengtoushan, en Hunan, se ha fechado hacia el 8000 a. C. Hoy alimenta a más de la mitad de la humanidad."
+          },
+          "wiki": {
+            "en": "Rice",
+            "es": "Arroz"
+          }
+        },
+        {
+          "id": "broomcorn-millet",
+          "name": {
+            "en": "Broomcorn millet",
+            "es": "Mijo común"
+          },
+          "at": [
+            114.2,
+            36.7
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-8000",
+          "place": {
+            "en": "Cishan, Hebei, China",
+            "es": "Cishan, Hebei, China"
+          },
+          "text": {
+            "en": "Over 500 pits at Cishan held stored millet. Some dates suggest it was grown here 10,000 years ago, though they are debated. Millet fed northern China for thousands of years.",
+            "es": "Más de 500 fosas de Cishan guardaban mijo. Algunas dataciones indican que se cultivaba aquí hace 10 000 años, aunque se discuten. El mijo alimentó el norte de China durante milenios."
+          },
+          "wiki": {
+            "en": "Proso millet",
+            "es": "Panicum miliaceum"
+          }
+        },
+        {
+          "id": "jiahu",
+          "name": {
+            "en": "Jiahu",
+            "es": "Jiahu"
+          },
+          "at": [
+            113.6614,
+            33.6144
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-7000",
+          "place": {
+            "en": "Wuyang, Henan, China",
+            "es": "Wuyang, Henan, China"
+          },
+          "text": {
+            "en": "A 9,000-year-old village whose people grew rice and millet, kept pigs, played bone flutes and brewed one of the oldest known fermented drinks, from rice, honey and hawthorn.",
+            "es": "Una aldea de hace 9000 años donde se cultivaba arroz y mijo, se criaban cerdos, se tocaban flautas de hueso y se elaboraba una de las bebidas fermentadas más antiguas, de arroz, miel y espino."
+          },
+          "wiki": {
+            "en": "Jiahu",
+            "es": "Jiahu"
+          }
+        },
+        {
+          "id": "hemudu",
+          "name": {
+            "en": "Hemudu",
+            "es": "Hemudu"
+          },
+          "at": [
+            121.3444,
+            29.9642
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-5000",
+          "place": {
+            "en": "Yuyao, Zhejiang, China",
+            "es": "Yuyao, Zhejiang, China"
+          },
+          "text": {
+            "en": "A rice village of wooden houses on stilts, about 7,000 years old. Thick layers of rice husks, bone hoes and pig bones were found in its waterlogged soil.",
+            "es": "Una aldea arrocera de casas de madera sobre pilotes, de hace unos 7000 años. En su suelo encharcado se hallaron gruesas capas de cascarilla de arroz, azadas de hueso y huesos de cerdo."
+          },
+          "wiki": {
+            "en": "Hemudu culture",
+            "es": "Cultura Hemudu"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-7000",
+      "title": {
+        "en": "Squash, maize and beans",
+        "es": "Calabaza, maíz y frijol"
+      },
+      "camera": {
+        "lon": -98.5,
+        "lat": 18.3,
+        "zoom": 4.6
+      },
+      "text": {
+        "en": "In Mexico, people tamed squash about 10,000 years ago, then turned a wild grass, teosinte, into maize. Beans and chilies came too.",
+        "es": "En México se domesticó la calabaza hace unos 10 000 años, y luego una hierba silvestre, el teocintle, se convirtió en maíz. También llegaron el frijol y el chile."
+      },
+      "details": {
+        "en": "Teosinte looks nothing like maize: it has a handful of hard seeds on a tiny ear. Yet genetic studies show that maize was tamed from it only once, about 9,000 years ago, in the Balsas River valley. Farmers later grew maize, beans and squash together, and the meal they made was complete: beans give the protein that maize lacks.",
+        "es": "El teocintle no se parece en nada al maíz: tiene unas pocas semillas duras en una espiga diminuta. Sin embargo, los estudios genéticos muestran que el maíz salió de él una sola vez, hace unos 9000 años, en el valle del río Balsas. Después se cultivaron juntos maíz, frijol y calabaza, una comida completa: el frijol aporta la proteína que le falta al maíz."
+      },
+      "control": {
+        "meso": {
+          "ref": "mesoamerica"
+        }
+      },
+      "places": [
+        {
+          "id": "guila-naquitz",
+          "name": {
+            "en": "Guilá Naquitz Cave",
+            "es": "Cueva de Guilá Naquitz"
+          },
+          "at": [
+            -96.3089,
+            16.9753
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-8000",
+          "place": {
+            "en": "Oaxaca, Mexico",
+            "es": "Oaxaca, México"
+          },
+          "text": {
+            "en": "Seeds in this cave show squash was tamed here 8,000 to 10,000 years ago, among the first crops of the Americas. It also held some of the oldest known maize cobs, about 6,250 years old.",
+            "es": "Las semillas de esta cueva muestran que la calabaza se domesticó aquí hace entre 8000 y 10 000 años, uno de los primeros cultivos de América. También guardaba algunas de las mazorcas más antiguas conocidas, de unos 6250 años."
+          },
+          "wiki": {
+            "en": "Guilá Naquitz Cave",
+            "es": "Guilá Naquitz"
+          }
+        },
+        {
+          "id": "maize",
+          "name": {
+            "en": "Maize",
+            "es": "Maíz"
+          },
+          "at": [
+            -99.55,
+            18.35
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-7000",
+          "place": {
+            "en": "Balsas valley, near Iguala, Guerrero, Mexico",
+            "es": "Valle del Balsas, cerca de Iguala, Guerrero, México"
+          },
+          "text": {
+            "en": "Maize was tamed only once, about 9,000 years ago, from the teosinte of the Balsas valley. Grinding stones from a rock shelter near Iguala hold maize traces 8,700 years old.",
+            "es": "El maíz se domesticó una sola vez, hace unos 9000 años, a partir del teocintle del valle del Balsas. Unas piedras de moler de un abrigo rocoso cerca de Iguala tienen restos de maíz de hace 8700 años."
+          },
+          "wiki": {
+            "en": "Maize",
+            "es": "Zea mays"
+          }
+        },
+        {
+          "id": "common-bean",
+          "name": {
+            "en": "Common bean",
+            "es": "Frijol (judía)"
+          },
+          "at": [
+            -102.3,
+            20.2
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-6000",
+          "place": {
+            "en": "Western Mexico",
+            "es": "Occidente de México"
+          },
+          "text": {
+            "en": "Beans were tamed twice, in Mexico and in the Andes, around 8,000 years ago. With maize they make a full meal: beans supply the protein that maize lacks.",
+            "es": "El frijol se domesticó dos veces, en México y en los Andes, hace unos 8000 años. Con el maíz forma una comida completa: el frijol aporta la proteína que le falta al maíz."
+          },
+          "wiki": {
+            "en": "Phaseolus vulgaris",
+            "es": "Phaseolus vulgaris"
+          }
+        },
+        {
+          "id": "chili-pepper",
+          "name": {
+            "en": "Chili pepper",
+            "es": "Chile (ají)"
+          },
+          "at": [
+            -97.4,
+            18.6
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-6000",
+          "place": {
+            "en": "East-central Mexico",
+            "es": "Centro-este de México"
+          },
+          "text": {
+            "en": "Chilies come from the Andes of Peru and Bolivia and were tamed several times, in South America and Mexico. In east-central Mexico they were grown 6,000 to 9,000 years ago.",
+            "es": "Los chiles proceden de los Andes de Perú y Bolivia y se domesticaron varias veces, en Sudamérica y en México. En el centro-este de México se cultivaban hace entre 6000 y 9000 años."
+          },
+          "wiki": {
+            "en": "Chili pepper",
+            "es": "Ají"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-7000",
+      "title": {
+        "en": "Gardens of New Guinea",
+        "es": "Los huertos de Nueva Guinea"
+      },
+      "camera": {
+        "lon": 144.6,
+        "lat": -5.9,
+        "zoom": 9.0
+      },
+      "text": {
+        "en": "In the highlands of New Guinea, farmers dug drains in swampy valleys to grow taro, bananas and sugar cane: farming invented all on their own.",
+        "es": "En las tierras altas de Nueva Guinea, los agricultores cavaron zanjas en valles pantanosos para cultivar taro, plátanos y caña de azúcar: una agricultura inventada por su cuenta."
+      },
+      "details": {
+        "en": "Highland farmers planted cuttings and suckers rather than seeds, in mounds raised above the wet ground. Bananas and sugar cane from New Guinea were later carried by sailors across Southeast Asia, to India and as far as Africa. Kuk Swamp was made a World Heritage Site in 2008 as one of the few places where farming was invented independently.",
+        "es": "Los agricultores de las tierras altas plantaban esquejes y retoños, no semillas, en montículos sobre el suelo encharcado. Más tarde, navegantes llevaron los plátanos y la caña de azúcar de Nueva Guinea por el Sudeste Asiático, hasta la India y África. Kuk fue declarado Patrimonio de la Humanidad en 2008 como uno de los pocos lugares donde la agricultura nació de forma independiente."
+      },
+      "control": {
+        "png": {
+          "ref": "new_guinea"
+        }
+      },
+      "places": [
+        {
+          "id": "kuk-swamp",
+          "name": {
+            "en": "Kuk Swamp",
+            "es": "Kuk"
+          },
+          "at": [
+            144.33,
+            -5.7825
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-7000",
+          "place": {
+            "en": "Wahgi valley, Papua New Guinea",
+            "es": "Valle de Wahgi, Papúa Nueva Guinea"
+          },
+          "text": {
+            "en": "Pits, stake holes and drains show people tending plants here about 9,000 years ago, perhaps earlier. By 6,900 years ago they were growing bananas. It is a World Heritage Site.",
+            "es": "Fosas, agujeros de estacas y zanjas muestran que aquí se cuidaban plantas hace unos 9000 años, quizá antes. Hace 6900 años ya cultivaban plátanos. Es Patrimonio de la Humanidad."
+          },
+          "wiki": {
+            "en": "Kuk Swamp",
+            "es": "Kuk"
+          }
+        },
+        {
+          "id": "taro",
+          "name": {
+            "en": "Taro",
+            "es": "Taro"
+          },
+          "at": [
+            144.85,
+            -6.3
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-8100",
+          "place": {
+            "en": "New Guinea highlands",
+            "es": "Tierras altas de Nueva Guinea"
+          },
+          "text": {
+            "en": "A plant grown for its starchy corm, still a staple across the Pacific. Starch on stone tools at Kuk shows taro was being used about 10,000 years ago.",
+            "es": "Una planta cultivada por su cormo feculento, aún básica en todo el Pacífico. El almidón en herramientas de piedra de Kuk muestra que el taro se usaba hace unos 10 000 años."
+          },
+          "wiki": {
+            "en": "Taro",
+            "es": "Colocasia esculenta"
+          }
+        },
+        {
+          "id": "banana",
+          "name": {
+            "en": "Banana",
+            "es": "Plátano (banana)"
+          },
+          "at": [
+            143.4,
+            -5.45
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-4950",
+          "place": {
+            "en": "New Guinea highlands",
+            "es": "Tierras altas de Nueva Guinea"
+          },
+          "text": {
+            "en": "Bananas were first tamed in New Guinea from wild plants with few or no seeds. Remains at Kuk show deliberate planting about 6,900 years ago; bananas later spread across Asia and to Africa.",
+            "es": "El plátano se domesticó primero en Nueva Guinea a partir de plantas silvestres con pocas o ninguna semilla. Los restos de Kuk muestran plantación deliberada hace unos 6900 años; luego se extendió por Asia y hasta África."
+          },
+          "wiki": {
+            "en": "Banana",
+            "es": "Banana"
+          }
+        },
+        {
+          "id": "sugar-cane",
+          "name": {
+            "en": "Sugar cane",
+            "es": "Caña de azúcar"
+          },
+          "at": [
+            145.75,
+            -6.15
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-4000",
+          "place": {
+            "en": "New Guinea highlands",
+            "es": "Tierras altas de Nueva Guinea"
+          },
+          "text": {
+            "en": "First tamed in New Guinea, perhaps 6,000–7,000 years ago, for its sweet stems, chewed raw and also fed to pigs. Sailors later carried it to India, where people learned to make sugar.",
+            "es": "Se domesticó primero en Nueva Guinea, quizá hace 6000-7000 años, por sus tallos dulces, que se masticaban crudos y también se daban a los cerdos. Navegantes la llevaron a la India, donde se aprendió a hacer azúcar."
+          },
+          "wiki": {
+            "en": "Sugarcane",
+            "es": "Saccharum officinarum"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-6500",
+      "title": {
+        "en": "Farmers reach Europe",
+        "es": "Los agricultores llegan a Europa"
+      },
+      "camera": {
+        "lon": 14.0,
+        "lat": 46.0,
+        "zoom": 2.4
+      },
+      "text": {
+        "en": "Farmers from Anatolia carried wheat, barley, lentils, sheep and goats into Europe: by land up the Danube, and by boat along the Mediterranean.",
+        "es": "Agricultores de Anatolia llevaron el trigo, la cebada, las lentejas, las ovejas y las cabras a Europa: por tierra, remontando el Danubio, y en barca por el Mediterráneo."
+      },
+      "details": {
+        "en": "Ancient DNA shows that Europe's first farmers came largely from Anatolia and the Aegean, and mixed only slowly with the hunter-gatherers they met. Their journey from Greece to Britain took about 2,500 years, from 6500 to 4000 BC, hopping from one patch of good soil to the next. The only crop that did not come from the Near East was broomcorn millet, from China.",
+        "es": "El ADN antiguo muestra que los primeros agricultores de Europa procedían sobre todo de Anatolia y el Egeo, y se mezclaron poco a poco con los cazadores-recolectores que encontraron. Su viaje de Grecia a Gran Bretaña duró unos 2500 años, del 6500 al 4000 a. C., saltando de un buen suelo a otro. El único cultivo que no vino de Oriente Próximo fue el mijo, llegado de China."
+      },
+      "moves": [
+        {
+          "side": "fc",
+          "path": [
+            [
+              32.8,
+              37.7
+            ],
+            [
+              29.5,
+              40.0
+            ],
+            [
+              26.5,
+              41.2
+            ],
+            [
+              23.5,
+              41.0
+            ],
+            [
+              21.6,
+              42.6
+            ],
+            [
+              20.4,
+              44.8
+            ],
+            [
+              18.6,
+              46.3
+            ],
+            [
+              16.6,
+              48.0
+            ],
+            [
+              13.0,
+              49.6
+            ],
+            [
+              9.0,
+              50.1
+            ],
+            [
+              5.6,
+              50.6
+            ],
+            [
+              2.0,
+              49.6
+            ],
+            [
+              -1.0,
+              50.8
+            ],
+            [
+              -4.5,
+              52.6
+            ],
+            [
+              -8.2,
+              53.8
+            ]
+          ],
+          "label": {
+            "en": "Up the Danube and on to Britain",
+            "es": "Por el Danubio hasta Gran Bretaña"
+          }
+        },
+        {
+          "side": "fc",
+          "path": [
+            [
+              26.5,
+              38.4
+            ],
+            [
+              24.5,
+              37.3
+            ],
+            [
+              22.8,
+              36.2
+            ],
+            [
+              19.0,
+              36.8
+            ],
+            [
+              15.6,
+              36.4
+            ],
+            [
+              13.0,
+              36.9
+            ],
+            [
+              11.8,
+              37.6
+            ],
+            [
+              11.6,
+              39.0
+            ],
+            [
+              11.0,
+              41.0
+            ],
+            [
+              9.8,
+              43.5
+            ],
+            [
+              7.0,
+              43.2
+            ],
+            [
+              4.5,
+              43.0
+            ],
+            [
+              3.6,
+              41.6
+            ],
+            [
+              1.5,
+              40.8
+            ],
+            [
+              0.3,
+              39.4
+            ]
+          ],
+          "label": {
+            "en": "Along the Mediterranean",
+            "es": "Por el Mediterráneo"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "catalhoyuk",
+          "name": {
+            "en": "Çatalhöyük",
+            "es": "Çatalhöyük"
+          },
+          "at": [
+            32.8283,
+            37.6675
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-7100",
+          "place": {
+            "en": "Konya plain, Turkey",
+            "es": "Llanura de Konya, Turquía"
+          },
+          "text": {
+            "en": "A crowded town of mud-brick houses entered through the roof, about 9,000 years old. Its people grew wheat, barley and peas, kept sheep and baked bread in dome ovens.",
+            "es": "Una población apiñada de casas de adobe con entrada por el tejado, de hace unos 9000 años. Cultivaban trigo, cebada y guisantes, criaban ovejas y cocían pan en hornos de cúpula."
+          },
+          "wiki": {
+            "en": "Çatalhöyük",
+            "es": "Çatalhöyük"
+          }
+        },
+        {
+          "id": "linear-pottery",
+          "name": {
+            "en": "Linear Pottery farmers",
+            "es": "Agricultores de la cerámica de bandas"
+          },
+          "at": [
+            18.6,
+            52.7
+          ],
+          "cat": "site",
+          "icon": "🧀",
+          "type": "site",
+          "date": "-5500",
+          "place": {
+            "en": "Kuyavia, Poland",
+            "es": "Cuyavia, Polonia"
+          },
+          "text": {
+            "en": "From about 5500 BC these farmers spread across central Europe, building longhouses. Their pottery sieves in Kuyavia, Poland, hold the oldest known traces of cheese-making.",
+            "es": "Desde hacia el 5500 a. C. estos agricultores se extendieron por Europa central y construyeron casas alargadas. Sus coladores de cerámica de Cuyavia, en Polonia, guardan los restos de quesería más antiguos conocidos."
+          },
+          "wiki": {
+            "en": "Linear Pottery culture",
+            "es": "Cultura de la cerámica de bandas"
+          }
+        },
+        {
+          "id": "ceide-fields",
+          "name": {
+            "en": "Céide Fields",
+            "es": "Campos de Céide"
+          },
+          "at": [
+            -9.4578,
+            54.3072
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-3500",
+          "place": {
+            "en": "County Mayo, Ireland",
+            "es": "Condado de Mayo, Irlanda"
+          },
+          "text": {
+            "en": "Stone walls under the bog of western Ireland mark out fields. Most archaeologists date them to about 3500 BC, which would make them among the oldest field systems known.",
+            "es": "Bajo la turbera del oeste de Irlanda, muros de piedra delimitan campos. La mayoría de los arqueólogos los fechan hacia el 3500 a. C., lo que los situaría entre los sistemas de campos más antiguos conocidos."
+          },
+          "wiki": {
+            "en": "Céide Fields",
+            "es": "Neolítico en Europa"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-6000",
+      "title": {
+        "en": "The first wine",
+        "es": "El primer vino"
+      },
+      "camera": {
+        "lon": 45.0,
+        "lat": 39.5,
+        "zoom": 5.0
+      },
+      "text": {
+        "en": "In the hills of the South Caucasus, farmers made wine from grapes about 8,000 years ago. Brewing and fermenting spread wherever crops were grown.",
+        "es": "En las colinas del Cáucaso Sur, los agricultores hacían vino de uva hace unos 8000 años. Fermentar y hacer cerveza se extendió allí donde se cultivaba."
+      },
+      "details": {
+        "en": "Fermenting turned grain and fruit into drinks that kept, and gave feasts their cheer. Even older fermented drinks are known from China, at Shangshan and Jiahu. At Hajji Firuz Tepe in Iran, jars from about 5400 BC held wine flavoured with tree resin, and at Godin Tepe, also in Iran, jars about 5,000 years old held traces of wine and barley beer.",
+        "es": "Fermentar convertía el grano y la fruta en bebidas que se conservaban y alegraban las fiestas. En China se conocen bebidas fermentadas aún más antiguas, en Shangshan y Jiahu. En Hajji Firuz Tepe (Irán), unas tinajas de hacia el 5400 a. C. contenían vino aromatizado con resina, y en Godin Tepe, también en Irán, tinajas de unos 5000 años guardaban restos de vino y de cerveza de cebada."
+      },
+      "places": [
+        {
+          "id": "gadachrili-gora",
+          "name": {
+            "en": "Gadachrili Gora",
+            "es": "Gadachrili Gora"
+          },
+          "at": [
+            44.82,
+            41.39
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-5900",
+          "place": {
+            "en": "Kvemo Kartli, Georgia",
+            "es": "Kvemo Kartli, Georgia"
+          },
+          "text": {
+            "en": "Jars from this village, about 8,000 years old, hold the oldest known traces of grape wine. Georgia still makes wine in big clay jars buried in the ground, called qvevri.",
+            "es": "Las vasijas de esta aldea, de unos 8000 años, guardan los restos de vino de uva más antiguos conocidos. Georgia aún elabora vino en grandes tinajas de barro enterradas, los qvevri."
+          },
+          "wiki": {
+            "en": "Gadachrili Gora",
+            "es": "Vino de Georgia"
+          }
+        },
+        {
+          "id": "areni-1-winery",
+          "name": {
+            "en": "Areni-1 winery",
+            "es": "Bodega de Areni-1"
+          },
+          "at": [
+            45.2036,
+            39.7313
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-4100",
+          "place": {
+            "en": "Vayots Dzor, Armenia",
+            "es": "Vayots Dzor, Armenia"
+          },
+          "text": {
+            "en": "The world's oldest known winery, about 6,100 years old: a clay basin for treading grapes, a vat for fermenting and drinking cups, in a cave that also kept the oldest leather shoe.",
+            "es": "La bodega más antigua conocida, de hace unos 6100 años: una pila de barro para pisar la uva, una tina para fermentar y copas, en una cueva que también guardaba el zapato de cuero más antiguo."
+          },
+          "wiki": {
+            "en": "Areni-1 winery",
+            "es": "Bodega de Areni-1"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-5500",
+      "title": {
+        "en": "Mehrgarh and the zebu",
+        "es": "Mehrgarh y el cebú"
+      },
+      "camera": {
+        "lon": 76.0,
+        "lat": 27.5,
+        "zoom": 3.3
+      },
+      "text": {
+        "en": "At the foot of the Bolan Pass, in Pakistan, farmers grew wheat and barley that came from the west and tamed the local humped cattle: the zebu.",
+        "es": "Al pie del paso de Bolán, en Pakistán, los agricultores cultivaron el trigo y la cebada llegados del oeste y domesticaron el ganado local con joroba: el cebú."
+      },
+      "details": {
+        "en": "South Asia's farmers were not only borrowers. Besides the zebu, they tamed crops of their own over the following millennia, such as mung beans, sesame and later cotton, and in time the Indus civilisation grew from villages like Mehrgarh. How old Mehrgarh is remains debated: it was first dated to about 7000 BC, but newer dates put its first village closer to 5200 BC.",
+        "es": "Los agricultores del sur de Asia no solo tomaron prestado. Además del cebú, en los milenios siguientes domesticaron cultivos propios, como la judía mungo, el sésamo y más tarde el algodón, y de aldeas como Mehrgarh surgió con el tiempo la civilización del Indo. La antigüedad de Mehrgarh se discute: primero se fechó hacia el 7000 a. C., pero dataciones más recientes acercan su primera aldea al 5200 a. C."
+      },
+      "control": {
+        "sasia": [
+          {
+            "ref": "indus"
+          },
+          {
+            "ref": "ganges"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "fc",
+          "path": [
+            [
+              47.5,
+              34.3
+            ],
+            [
+              51.5,
+              33.0
+            ],
+            [
+              55.5,
+              31.0
+            ],
+            [
+              60.0,
+              29.8
+            ],
+            [
+              64.0,
+              29.6
+            ],
+            [
+              67.3,
+              29.4
+            ]
+          ],
+          "label": {
+            "en": "Wheat, barley, sheep and goats",
+            "es": "Trigo, cebada, ovejas y cabras"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "mehrgarh",
+          "name": {
+            "en": "Mehrgarh",
+            "es": "Mehrgarh"
+          },
+          "at": [
+            67.6167,
+            29.3833
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-7000",
+          "place": {
+            "en": "Balochistan, Pakistan",
+            "es": "Baluchistán, Pakistán"
+          },
+          "text": {
+            "en": "One of South Asia's oldest farming villages, with mud-brick houses and granaries for barley and wheat. It was dated to about 7000 BC; newer dates say about 5200 BC.",
+            "es": "Una de las aldeas agrícolas más antiguas del sur de Asia, con casas de adobe y graneros de cebada y trigo. Se fechó hacia el 7000 a. C.; dataciones más recientes la sitúan hacia el 5200 a. C."
+          },
+          "wiki": {
+            "en": "Mehrgarh",
+            "es": "Mejergar"
+          }
+        },
+        {
+          "id": "zebu",
+          "name": {
+            "en": "Zebu",
+            "es": "Cebú"
+          },
+          "at": [
+            68.6,
+            28.3
+          ],
+          "cat": "animal",
+          "type": "animal",
+          "date": "-5000",
+          "place": {
+            "en": "Indus plain, Pakistan",
+            "es": "Llanura del Indo, Pakistán"
+          },
+          "text": {
+            "en": "Humped zebu cattle were tamed from the Indian aurochs around Mehrgarh, 6,000 to 7,000 years ago. They thrive in the heat and now live all across the tropics.",
+            "es": "El cebú, ganado con joroba, se domesticó a partir del uro indio cerca de Mehrgarh hace entre 6000 y 7000 años. Soporta bien el calor y hoy vive en todos los trópicos."
+          },
+          "wiki": {
+            "en": "Zebu",
+            "es": "Bos indicus"
+          }
+        },
+        {
+          "id": "lahuradewa",
+          "name": {
+            "en": "Lahuradewa",
+            "es": "Lahuradewa"
+          },
+          "at": [
+            82.9497,
+            26.77
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-6500",
+          "place": {
+            "en": "Ganges plain, Uttar Pradesh, India",
+            "es": "Llanura del Ganges, Uttar Pradesh, India"
+          },
+          "text": {
+            "en": "Rice grains here were dated to the 7th millennium BC, which would make it one of the oldest rice sites anywhere. Whether they were grown or wild, and how old they are, is debated.",
+            "es": "Aquí se fecharon granos de arroz en el VII milenio a. C., lo que lo convertiría en uno de los yacimientos de arroz más antiguos. Se discute si eran cultivados o silvestres, y su edad."
+          },
+          "wiki": {
+            "en": "Lahuradewa",
+            "es": "Arroz"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-5000",
+      "title": {
+        "en": "The green Sahara",
+        "es": "El Sáhara verde"
+      },
+      "camera": {
+        "lon": 19.0,
+        "lat": 25.0,
+        "zoom": 2.8
+      },
+      "text": {
+        "en": "The Sahara was then a land of grass and lakes, roamed by herders and their cattle. Wheat, barley, sheep and goats from the Levant reached the Nile.",
+        "es": "El Sáhara era entonces una tierra de hierba y lagos, recorrida por pastores con su ganado. El trigo, la cebada, las ovejas y las cabras del Levante llegaron al Nilo."
+      },
+      "moves": [
+        {
+          "side": "fc",
+          "path": [
+            [
+              35.2,
+              31.7
+            ],
+            [
+              33.8,
+              31.0
+            ],
+            [
+              32.2,
+              30.9
+            ],
+            [
+              31.2,
+              30.3
+            ],
+            [
+              30.75,
+              29.65
+            ]
+          ],
+          "label": {
+            "en": "Crops and herds reach the Nile",
+            "es": "Cultivos y rebaños llegan al Nilo"
+          }
+        },
+        {
+          "side": "fc",
+          "path": [
+            [
+              30.0,
+              22.8
+            ],
+            [
+              25.0,
+              23.8
+            ],
+            [
+              19.0,
+              24.6
+            ],
+            [
+              14.0,
+              25.0
+            ],
+            [
+              9.8,
+              25.4
+            ]
+          ],
+          "label": {
+            "en": "Herders cross the green Sahara",
+            "es": "Pastores por el Sáhara verde"
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "🎨",
+          "text": {
+            "en": "Herders paint their cattle on the rocks of the Tassili n'Ajjer, in today's Algeria",
+            "es": "Los pastores pintan su ganado en las rocas del Tassili n'Ajjer, en la actual Argelia"
+          },
+          "at": [
+            9.0,
+            25.5
+          ],
+          "date": "-5500"
+        }
+      ],
+      "places": [
+        {
+          "id": "nabta-playa",
+          "name": {
+            "en": "Nabta Playa",
+            "es": "Nabta Playa"
+          },
+          "at": [
+            30.7257,
+            22.5079
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-7500",
+          "place": {
+            "en": "Western Desert, Egypt",
+            "es": "Desierto Occidental, Egipto"
+          },
+          "text": {
+            "en": "From about 7500 BC people camped by this rain-filled lake, gathering wild sorghum and millet. Cattle, sheep and goats came later, and they raised a circle of standing stones.",
+            "es": "Desde hacia el 7500 a. C. se acampaba junto a este lago de lluvia para recoger sorgo y mijo silvestres. Después llegaron vacas, ovejas y cabras, y se levantó un círculo de piedras."
+          },
+          "wiki": {
+            "en": "Nabta Playa",
+            "es": "Nabta Playa"
+          }
+        },
+        {
+          "id": "faiyum",
+          "name": {
+            "en": "Faiyum",
+            "es": "El Fayún"
+          },
+          "at": [
+            30.75,
+            29.56
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-5600",
+          "place": {
+            "en": "Faiyum oasis, Egypt",
+            "es": "Oasis de El Fayún, Egipto"
+          },
+          "text": {
+            "en": "Egypt's first farmers lived by the lake of the Faiyum from about 5600 BC. They stored emmer and barley from Asia in pits lined with baskets, and also kept fishing.",
+            "es": "Los primeros agricultores de Egipto vivieron junto al lago de El Fayún desde hacia el 5600 a. C. Guardaban farro y cebada de Asia en silos forrados de cestería, y seguían pescando."
+          },
+          "wiki": {
+            "en": "Prehistoric Egypt",
+            "es": "Periodo predinástico de Egipto"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-4500",
+      "title": {
+        "en": "Potatoes, quinoa and llamas",
+        "es": "Papas, quinua y llamas"
+      },
+      "camera": {
+        "lon": -74.0,
+        "lat": -10.0,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "High in the Andes, farmers tamed potatoes and quinoa, and herders tamed llamas, alpacas and guinea pigs. Maize arrived from Mexico.",
+        "es": "En lo alto de los Andes se domesticaron la papa y la quinua, y los pastores, la llama, la alpaca y el cuy. Desde México llegó el maíz."
+      },
+      "details": {
+        "en": "Andean farmers learned to freeze-dry potatoes into chuño, which keeps for years. Llamas carried loads and gave meat, wool and dung for fuel and fields; alpacas gave fine wool. Maize reached highland Ecuador at least 8,000 years ago and became sacred in the Andes, where it was brewed into chicha beer. Later Andean peoples built terraces and raised fields to farm steep slopes and cold lake shores.",
+        "es": "Los agricultores andinos aprendieron a liofilizar la papa en chuño, que se conserva durante años. La llama cargaba bultos y daba carne, lana y estiércol para el fuego y los campos; la alpaca daba lana fina. El maíz llegó a la sierra de Ecuador hace al menos 8000 años y se volvió sagrado en los Andes, donde se hacía con él la chicha. Más tarde, los pueblos andinos construyeron terrazas y camellones para cultivar laderas empinadas y orillas de lagos frías."
+      },
+      "control": {
+        "andes": [
+          {
+            "ref": "amazon_sw"
+          },
+          {
+            "ref": "central_andes"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "meso",
+          "path": [
+            [
+              -96.5,
+              17.0
+            ],
+            [
+              -91.0,
+              15.0
+            ],
+            [
+              -85.5,
+              11.8
+            ],
+            [
+              -80.5,
+              8.6
+            ],
+            [
+              -77.2,
+              5.0
+            ],
+            [
+              -78.4,
+              0.0
+            ],
+            [
+              -79.2,
+              -3.5
+            ]
+          ],
+          "label": {
+            "en": "Maize goes south",
+            "es": "El maíz viaja al sur"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "potato",
+          "name": {
+            "en": "Potato",
+            "es": "Papa (patata)"
+          },
+          "at": [
+            -70.6,
+            -15.2
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-6000",
+          "place": {
+            "en": "Around Lake Titicaca, Peru",
+            "es": "Alrededor del lago Titicaca, Perú"
+          },
+          "text": {
+            "en": "All potatoes come from one taming, around Lake Titicaca in southern Peru and Bolivia, 7,000 to 10,000 years ago. The Andes still grow thousands of varieties.",
+            "es": "Todas las papas vienen de una sola domesticación, en torno al lago Titicaca, en el sur de Perú y Bolivia, hace entre 7000 y 10 000 años. Los Andes aún cultivan miles de variedades."
+          },
+          "wiki": {
+            "en": "Potato",
+            "es": "Solanum tuberosum"
+          }
+        },
+        {
+          "id": "quinoa",
+          "name": {
+            "en": "Quinoa",
+            "es": "Quinua"
+          },
+          "at": [
+            -68.4,
+            -16.9
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-2000",
+          "place": {
+            "en": "Lake Titicaca basin, Bolivia",
+            "es": "Cuenca del Titicaca, Bolivia"
+          },
+          "text": {
+            "en": "A hardy seed crop of the Titicaca basin. It was fed to herds 5,000 to 7,000 years ago and was a staple food for people by 3,000 to 4,000 years ago.",
+            "es": "Un cultivo de grano resistente de la cuenca del Titicaca. Se daba al ganado hace entre 5000 y 7000 años y ya era alimento básico de las personas hace entre 3000 y 4000 años."
+          },
+          "wiki": {
+            "en": "Quinoa",
+            "es": "Chenopodium quinoa"
+          }
+        },
+        {
+          "id": "llama",
+          "name": {
+            "en": "Llama",
+            "es": "Llama"
+          },
+          "at": [
+            -69.4,
+            -18.0
+          ],
+          "cat": "animal",
+          "type": "animal",
+          "date": "-4000",
+          "place": {
+            "en": "Andean altiplano",
+            "es": "Altiplano andino"
+          },
+          "text": {
+            "en": "Llamas were tamed from wild guanacos in the high Andes at least 5,000 years ago. The Andes' only beasts of burden, they later carried the loads of the Inca Empire.",
+            "es": "La llama se domesticó a partir del guanaco salvaje en los Andes hace al menos 5000 años. Única bestia de carga de los Andes, más tarde llevó los fardos del Imperio inca."
+          },
+          "wiki": {
+            "en": "Llama",
+            "es": "Lama glama"
+          }
+        },
+        {
+          "id": "alpaca",
+          "name": {
+            "en": "Alpaca",
+            "es": "Alpaca"
+          },
+          "at": [
+            -75.8702,
+            -11.1772
+          ],
+          "cat": "animal",
+          "type": "animal",
+          "date": "-4000",
+          "place": {
+            "en": "Junín highlands, Peru",
+            "es": "Puna de Junín, Perú"
+          },
+          "text": {
+            "en": "Alpacas were tamed from the wild vicuña for their soft wool, at least 5,000 to 6,000 years ago. Rock shelters in the high grasslands of Junín hold early traces of herding.",
+            "es": "La alpaca se domesticó a partir de la vicuña por su lana suave, hace al menos 5000 o 6000 años. Los abrigos rocosos de la puna de Junín guardan huellas tempranas de pastoreo."
+          },
+          "wiki": {
+            "en": "Alpaca",
+            "es": "Vicugna pacos"
+          }
+        },
+        {
+          "id": "guinea-pig",
+          "name": {
+            "en": "Guinea pig",
+            "es": "Cuy (cobaya)"
+          },
+          "at": [
+            -78.9,
+            -2.9
+          ],
+          "cat": "animal",
+          "type": "animal",
+          "date": "-5000",
+          "place": {
+            "en": "Andes of Ecuador",
+            "es": "Andes de Ecuador"
+          },
+          "text": {
+            "en": "Called cuy, the guinea pig was tamed for food in the Andes as early as 5000 BC. It is still a festive dish in Peru and Ecuador.",
+            "es": "El cuy se domesticó para comer en los Andes ya hacia el 5000 a. C. Sigue siendo un plato de fiesta en Perú y Ecuador."
+          },
+          "wiki": {
+            "en": "Guinea pig",
+            "es": "Cavia porcellus"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-3000",
+      "title": {
+        "en": "Africa's own crops",
+        "es": "Los cultivos propios de África"
+      },
+      "camera": {
+        "lon": 17.0,
+        "lat": 12.0,
+        "zoom": 2.4
+      },
+      "text": {
+        "en": "As the Sahara dried, herders moved south. Along the Sahel, farmers tamed sorghum, pearl millet and African rice; in the Ethiopian highlands, teff and enset.",
+        "es": "Al secarse el Sáhara, los pastores bajaron al sur. En el Sahel se domesticaron el sorgo, el mijo perla y el arroz africano; en el altiplano etíope, el tef y el ensete."
+      },
+      "details": {
+        "en": "These crops stand heat and drought that would kill wheat. West African farmers also tamed yams, cowpeas, oil palms and the kola nut. Sorghum and pearl millet later crossed the Arabian Sea to India, about 4,000 years ago. In Ethiopia, coffee grew wild in the forests long before it became the world's favourite drink. In northeast Africa, people also tamed the donkey, from the wild ass.",
+        "es": "Estos cultivos aguantan un calor y una sequía que matarían al trigo. Los agricultores de África occidental también domesticaron el ñame, el caupí, la palma de aceite y la nuez de cola. El sorgo y el mijo perla cruzaron después el mar Arábigo hasta la India, hace unos 4000 años. En Etiopía, el café crecía silvestre en los bosques mucho antes de convertirse en la bebida favorita del mundo. En el nordeste de África, además, se domesticó el burro a partir del asno salvaje."
+      },
+      "control": {
+        "africa": [
+          {
+            "ref": "sahel"
+          },
+          {
+            "ref": "ethiopia"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "africa",
+          "path": [
+            [
+              8.6,
+              24.6
+            ],
+            [
+              5.6,
+              21.2
+            ],
+            [
+              2.4,
+              18.6
+            ]
+          ],
+          "label": {
+            "en": "Herders move south",
+            "es": "Los pastores bajan al sur"
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "🏜️",
+          "text": {
+            "en": "The green Sahara dries into desert",
+            "es": "El Sáhara verde se convierte en desierto"
+          },
+          "date": "-3500"
+        }
+      ],
+      "places": [
+        {
+          "id": "sorghum",
+          "name": {
+            "en": "Sorghum",
+            "es": "Sorgo"
+          },
+          "at": [
+            36.3,
+            15.5
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-3500",
+          "place": {
+            "en": "Near Kassala, eastern Sudan",
+            "es": "Cerca de Kassala, este de Sudán"
+          },
+          "text": {
+            "en": "Tamed from a wild grass in eastern Sudan more than 5,000 years ago; the oldest finds come from near Kassala. Sorghum is now the world's fifth most important cereal.",
+            "es": "Se domesticó a partir de una hierba silvestre en el este de Sudán hace más de 5000 años; los hallazgos más antiguos son de cerca de Kassala. Hoy es el quinto cereal más importante del mundo."
+          },
+          "wiki": {
+            "en": "Sorghum",
+            "es": "Sorghum bicolor"
+          }
+        },
+        {
+          "id": "pearl-millet",
+          "name": {
+            "en": "Pearl millet",
+            "es": "Mijo perla"
+          },
+          "at": [
+            0.3,
+            17.2
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-2500",
+          "place": {
+            "en": "Tilemsi valley, northern Mali",
+            "es": "Valle del Tilemsi, norte de Malí"
+          },
+          "text": {
+            "en": "A grain that thrives in drought, heat and poor soil. Tamed pearl millet appears in the Sahel of northern Mali between 2500 and 2000 BC, and it still feeds millions across Africa and India.",
+            "es": "Un grano que prospera con sequía, calor y suelos pobres. El mijo perla domesticado aparece en el Sahel del norte de Malí entre el 2500 y el 2000 a. C., y aún alimenta a millones en África y la India."
+          },
+          "wiki": {
+            "en": "Pearl millet",
+            "es": "Cenchrus americanus"
+          }
+        },
+        {
+          "id": "african-rice",
+          "name": {
+            "en": "African rice",
+            "es": "Arroz africano"
+          },
+          "at": [
+            -4.2,
+            14.4
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-1000",
+          "place": {
+            "en": "Inner Niger Delta, Mali",
+            "es": "Delta interior del Níger, Malí"
+          },
+          "text": {
+            "en": "A rice species of its own, tamed about 3,000 years ago in the inland delta of the Niger from a wild African rice. Asia's rice is a different species.",
+            "es": "Una especie de arroz propia, domesticada hace unos 3000 años en el delta interior del Níger a partir de un arroz silvestre africano. El arroz de Asia es otra especie."
+          },
+          "wiki": {
+            "en": "Oryza glaberrima",
+            "es": "Oryza glaberrima"
+          }
+        },
+        {
+          "id": "teff",
+          "name": {
+            "en": "Teff",
+            "es": "Tef"
+          },
+          "at": [
+            39.5,
+            11.5
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-1000",
+          "place": {
+            "en": "Ethiopian highlands",
+            "es": "Altiplano etíope"
+          },
+          "text": {
+            "en": "Its seeds are smaller than 1 mm, but teff is the grain of injera, the spongy flatbread of Ethiopia and Eritrea. It has been grown since at least 1000 BC, perhaps since 4000 BC.",
+            "es": "Sus semillas miden menos de 1 mm, pero el tef es el grano de la injera, el pan esponjoso de Etiopía y Eritrea. Se cultiva al menos desde el 1000 a. C., quizá desde el 4000 a. C."
+          },
+          "wiki": {
+            "en": "Teff",
+            "es": "Eragrostis tef"
+          }
+        },
+        {
+          "id": "enset",
+          "name": {
+            "en": "Enset",
+            "es": "Ensete (falsa banana)"
+          },
+          "at": [
+            38.3,
+            6.4
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-3000",
+          "place": {
+            "en": "Southern Ethiopian highlands",
+            "es": "Tierras altas del sur de Etiopía"
+          },
+          "text": {
+            "en": "The false banana is grown for its starchy stem, not its fruit, and feeds some 20 million Ethiopians. Its farming may be very old, but no one knows how old.",
+            "es": "La falsa banana se cultiva por su tallo feculento, no por su fruto, y alimenta a unos 20 millones de etíopes. Su cultivo podría ser muy antiguo, pero nadie sabe cuánto."
+          },
+          "wiki": {
+            "en": "Ensete ventricosum",
+            "es": "Ensete ventricosum"
+          }
+        },
+        {
+          "id": "wild-coffee",
+          "name": {
+            "en": "Coffee",
+            "es": "Café"
+          },
+          "at": [
+            36.1,
+            7.6
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "1450",
+          "place": {
+            "en": "Kaffa forests, southwest Ethiopia",
+            "es": "Bosques de Kaffa, suroeste de Etiopía"
+          },
+          "text": {
+            "en": "Wild arabica coffee grows in the forests of southwest Ethiopia. It was used there long ago, but coffee as a drink appears only in the 1400s, among Sufis in Yemen.",
+            "es": "El café arábica crece silvestre en los bosques del suroeste de Etiopía. Allí se usaba desde antiguo, pero el café como bebida solo aparece en el siglo XV, entre los sufíes de Yemen."
+          },
+          "wiki": {
+            "en": "History of coffee",
+            "es": "Historia del café"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-2500",
+      "title": {
+        "en": "Seeds of eastern North America",
+        "es": "Semillas del este de Norteamérica"
+      },
+      "camera": {
+        "lon": -88.0,
+        "lat": 37.8,
+        "zoom": 5.0
+      },
+      "text": {
+        "en": "In the river valleys of eastern North America, Native peoples tamed their own seed plants, such as squash, sunflower and goosefoot, long before maize arrived.",
+        "es": "En los valles fluviales del este de Norteamérica, los pueblos nativos domesticaron sus propias plantas de semilla, como la calabaza, el girasol y el quenopodio, mucho antes de que llegara el maíz."
+      },
+      "details": {
+        "en": "Archaeologists call these crops the Eastern Agricultural Complex. They fed villages for over 2,000 years. After maize arrived from Mexico, about 200 BC, most of them were slowly abandoned and went back to the wild, except squash and the sunflower, which became a world crop. Later, maize, beans and squash grown together, the Three Sisters, fed great towns such as Cahokia.",
+        "es": "Los arqueólogos llaman a estos cultivos el Complejo Agrícola del Este. Alimentaron aldeas durante más de 2000 años. Cuando llegó el maíz de México, hacia el 200 a. C., la mayoría se fue abandonando y volvió a ser silvestre, salvo la calabaza y el girasol, que se convirtió en un cultivo mundial. Más tarde, el maíz, el frijol y la calabaza cultivados juntos, las Tres Hermanas, alimentaron grandes poblados como Cahokia."
+      },
+      "control": {
+        "ena": {
+          "ref": "eastern_na"
+        }
+      },
+      "places": [
+        {
+          "id": "squash-eastern-na",
+          "name": {
+            "en": "Squash of the Mississippi",
+            "es": "Calabaza del Misisipi"
+          },
+          "at": [
+            -93.35,
+            38.0
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-3000",
+          "place": {
+            "en": "Phillips Spring, Missouri, USA",
+            "es": "Phillips Spring, Misuri, EE. UU."
+          },
+          "text": {
+            "en": "Squash was tamed a second time here, from wild gourds. At Phillips Spring, seeds about 5,000 years old are larger than wild ones: one of the oldest signs of farming in the US.",
+            "es": "Aquí se domesticó la calabaza por segunda vez, a partir de calabazas silvestres. En Phillips Spring hay semillas de unos 5000 años mayores que las silvestres: uno de los indicios de cultivo más antiguos de EE. UU."
+          },
+          "wiki": {
+            "en": "Cucurbita pepo",
+            "es": "Cucurbita pepo"
+          }
+        },
+        {
+          "id": "sunflower",
+          "name": {
+            "en": "Sunflower",
+            "es": "Girasol"
+          },
+          "at": [
+            -86.9,
+            35.9
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-2300",
+          "place": {
+            "en": "Middle Tennessee, USA",
+            "es": "Centro de Tennessee, EE. UU."
+          },
+          "text": {
+            "en": "The oldest fully tamed sunflowers known in the US, from about 2300 BC, come from Tennessee; it may have been tamed in Mexico too. Today it is a major oil crop of Ukraine and Russia.",
+            "es": "Los girasoles plenamente domesticados más antiguos de EE. UU., de hacia el 2300 a. C., proceden de Tennessee; quizá también se domesticó en México. Hoy es un gran cultivo oleaginoso de Ucrania y Rusia."
+          },
+          "wiki": {
+            "en": "Common sunflower",
+            "es": "Helianthus annuus"
+          }
+        },
+        {
+          "id": "goosefoot",
+          "name": {
+            "en": "Goosefoot",
+            "es": "Quenopodio"
+          },
+          "at": [
+            -87.5756,
+            39.0217
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-1800",
+          "place": {
+            "en": "Riverton Site, Illinois, USA",
+            "es": "Yacimiento de Riverton, Illinois, EE. UU."
+          },
+          "text": {
+            "en": "A cousin of quinoa grown for its starchy seeds. By 1800 BC the villagers of Riverton were growing it, with thinner husks than the wild plant.",
+            "es": "Un pariente de la quinua cultivado por sus semillas feculentas. Hacia el 1800 a. C., los aldeanos de Riverton ya lo cultivaban, con cáscaras más finas que las de la planta silvestre."
+          },
+          "wiki": {
+            "en": "Chenopodium berlandieri",
+            "es": "Chenopodium berlandieri"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-2000",
+      "title": {
+        "en": "A world of farmers",
+        "es": "Un mundo de agricultores"
+      },
+      "camera": {
+        "lon": 75.0,
+        "lat": 25.0,
+        "zoom": 1.4
+      },
+      "text": {
+        "en": "By 2000 BC most people lived by farming, and crops were on the move: wheat to China, sorghum to India, rice to Southeast Asia.",
+        "es": "Hacia el 2000 a. C. la mayoría de la gente vivía de la agricultura, y los cultivos viajaban: el trigo a China, el sorgo a la India y el arroz al Sudeste Asiático."
+      },
+      "details": {
+        "en": "Farming fed more people, and villages became towns and cities. But it also meant harder work, poorer diets for many, and new diseases caught from animals. Hunter-gatherers still lived in much of the world, including Australia, where people harvested and ground wild grass seeds. Over the next 4,000 years, traders, migrants and conquerors would carry crops across every sea, until the foods of each cradle reached the whole world.",
+        "es": "La agricultura alimentó a más gente, y las aldeas se convirtieron en pueblos y ciudades. Pero también trajo más trabajo, dietas más pobres para muchos y nuevas enfermedades contagiadas por los animales. Aún había cazadores-recolectores en gran parte del mundo, como en Australia, donde se recogían y molían semillas de hierbas silvestres. En los 4000 años siguientes, comerciantes, emigrantes y conquistadores llevarían los cultivos por todos los mares, hasta que los alimentos de cada cuna llegaron al mundo entero."
+      },
+      "moves": [
+        {
+          "side": "fc",
+          "path": [
+            [
+              52.0,
+              35.5
+            ],
+            [
+              59.0,
+              37.5
+            ],
+            [
+              66.0,
+              39.5
+            ],
+            [
+              72.0,
+              41.5
+            ],
+            [
+              77.0,
+              43.0
+            ],
+            [
+              84.0,
+              43.5
+            ],
+            [
+              92.0,
+              41.5
+            ],
+            [
+              98.0,
+              39.5
+            ],
+            [
+              103.0,
+              36.5
+            ]
+          ],
+          "label": {
+            "en": "Wheat and barley to China",
+            "es": "Trigo y cebada hacia China"
+          }
+        },
+        {
+          "side": "africa",
+          "path": [
+            [
+              37.0,
+              15.0
+            ],
+            [
+              43.5,
+              12.8
+            ],
+            [
+              52.0,
+              15.0
+            ],
+            [
+              61.0,
+              20.5
+            ],
+            [
+              69.5,
+              22.2
+            ]
+          ],
+          "label": {
+            "en": "Sorghum and millet to India",
+            "es": "Sorgo y mijo hacia la India"
+          }
+        },
+        {
+          "side": "china",
+          "path": [
+            [
+              112.5,
+              28.0
+            ],
+            [
+              109.5,
+              24.5
+            ],
+            [
+              106.5,
+              21.4
+            ],
+            [
+              104.2,
+              18.0
+            ],
+            [
+              102.6,
+              15.2
+            ]
+          ],
+          "label": {
+            "en": "Rice to Southeast Asia",
+            "es": "Arroz hacia el Sudeste Asiático"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "lajia-noodles-find",
+          "name": {
+            "en": "Lajia noodles",
+            "es": "Fideos de Lajia"
+          },
+          "at": [
+            102.8542,
+            35.8278
+          ],
+          "cat": "site",
+          "icon": "🍜",
+          "type": "site",
+          "date": "-2000",
+          "place": {
+            "en": "Minhe, Qinghai, China",
+            "es": "Minhe, Qinghai, China"
+          },
+          "text": {
+            "en": "The oldest known noodles, about 4,000 years old, lay in an upturned bowl buried in mud when a disaster struck the village. They were thought to be millet; tests suggest other grains were mixed in.",
+            "es": "Los fideos más antiguos conocidos, de unos 4000 años, estaban en un cuenco volcado, enterrado en barro cuando una catástrofe arrasó la aldea. Se creyó que eran de mijo; las pruebas indican que llevaban otros granos."
+          },
+          "wiki": {
+            "en": "Lajia",
+            "es": "Fideos"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Almost everything we eat was first tamed by these ancient farmers, on several continents and with no contact between them. Farming fed the rise of towns, cities and states, but it also brought harder work, new diseases and, in time, kings and taxes. Wheat, rice, maize, potatoes, sorghum and the rest still feed the world: the gift of countless unnamed farmers from the Andes to New Guinea.",
+    "es": "Casi todo lo que comemos lo domesticaron estos antiguos agricultores, en varios continentes y sin contacto entre ellos. La agricultura impulsó el nacimiento de pueblos, ciudades y estados, pero también trajo más trabajo, nuevas enfermedades y, con el tiempo, reyes e impuestos. El trigo, el arroz, el maíz, la papa, el sorgo y los demás siguen alimentando al mundo: un regalo de innumerables agricultores anónimos, de los Andes a Nueva Guinea."
+  },
+  "sources": [
+    {
+      "title": "Neolithic Revolution (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Neolithic_Revolution"
+    },
+    {
+      "title": "Founder crops (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Founder_crops"
+    },
+    {
+      "title": "Origins of agriculture in West Asia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Origins_of_agriculture_in_West_Asia"
+    },
+    {
+      "title": "History of bread (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_bread"
+    },
+    {
+      "title": "Shangshan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shangshan"
+    },
+    {
+      "title": "Kuk Swamp (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kuk_Swamp"
+    },
+    {
+      "title": "Maize (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maize"
+    },
+    {
+      "title": "Llanos de Moxos (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Llanos_de_Moxos"
+    },
+    {
+      "title": "Mehrgarh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mehrgarh"
+    },
+    {
+      "title": "Neolithic Europe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Neolithic_Europe"
+    },
+    {
+      "title": "Gadachrili Gora (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gadachrili_Gora"
+    },
+    {
+      "title": "Sorghum (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sorghum"
+    },
+    {
+      "title": "Oryza glaberrima (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Oryza_glaberrima"
+    },
+    {
+      "title": "Eastern Agricultural Complex (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Eastern_Agricultural_Complex"
+    },
+    {
+      "title": "Lajia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lajia"
+    }
+  ]
+}
