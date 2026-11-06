@@ -1053,34 +1053,10 @@
             "en": "Zimbabwe Bird",
             "es": "Ave de Zimbabue"
           }
-        },
-        {
-          "id": "kingdom-of-zimbabwe",
-          "name": {
-            "en": "Kingdom of Zimbabwe",
-            "es": "Reino de Zimbabue"
-          },
-          "at": [
-            30.5,
-            -19.8
-          ],
-          "cat": "culture",
-          "type": "culture",
-          "date": "1220",
-          "until": "1450",
-          "place": {
-            "en": "Zimbabwe plateau",
-            "es": "Meseta de Zimbabue"
-          },
-          "text": {
-            "en": "The Shona kingdom ruled from Great Zimbabwe, perhaps covering 50,000 km². Its kings controlled the cattle herds and the gold from the plateau that was sold to the coast.",
-            "es": "El reino shona gobernado desde el Gran Zimbabue, que quizá abarcó 50 000 km². Sus reyes controlaban los rebaños y el oro de la meseta que se vendía a la costa."
-          },
-          "wiki": {
-            "en": "Kingdom of Great Zimbabwe",
-            "es": "Reino de Zimbabue"
-          }
         }
+      ],
+      "show": [
+        "kingdom-of-great-zimbabwe"
       ]
     },
     {
@@ -1735,33 +1711,6 @@
       },
       "places": [
         {
-          "id": "mutapa-empire",
-          "name": {
-            "en": "Mutapa Empire",
-            "es": "Imperio de Monomotapa"
-          },
-          "at": [
-            31.2,
-            -16.4
-          ],
-          "cat": "culture",
-          "type": "culture",
-          "date": "1450",
-          "until": "1760",
-          "place": {
-            "en": "Northern Zimbabwe plateau and Zambezi valley",
-            "es": "Norte de la meseta de Zimbabue y valle del Zambeze"
-          },
-          "text": {
-            "en": "A Shona empire in the north of the Zimbabwe plateau, whose rulers took the title Mwenemutapa, \"lord of the conquered lands\", which the Portuguese wrote as Monomotapa.",
-            "es": "Un imperio shona en el norte de la meseta de Zimbabue, cuyos soberanos usaban el título de Mwenemutapa, «señor de las tierras conquistadas», que los portugueses escribieron Monomotapa."
-          },
-          "wiki": {
-            "en": "Mutapa Empire",
-            "es": "Monomotapa"
-          }
-        },
-        {
           "id": "nyatsimba-mutota",
           "name": {
             "en": "Nyatsimba Mutota",
@@ -1814,6 +1763,9 @@
             "es": "Khami"
           }
         }
+      ],
+      "show": [
+        "kingdom-of-mutapa"
       ]
     },
     {

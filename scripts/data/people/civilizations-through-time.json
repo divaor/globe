@@ -1,0 +1,1973 @@
+{
+  "id": "civilizations-through-time",
+  "name": {
+    "en": "Civilizations through time",
+    "es": "Las civilizaciones a través del tiempo"
+  },
+  "icon": "🏺",
+  "era": "ancient",
+  "region": {
+    "en": "The whole world",
+    "es": "Todo el mundo"
+  },
+  "start": "-4000",
+  "end": "1600",
+  "summary": {
+    "en": "Five and a half thousand years of civilizations rising and falling on every continent, from the first cities of Mesopotamia to the empires of 1600.",
+    "es": "Cinco mil quinientos años de civilizaciones que surgen y caen en todos los continentes, de las primeras ciudades de Mesopotamia a los imperios de 1600."
+  },
+  "catalog": "all",
+  "camera": {
+    "lon": 60,
+    "lat": 30,
+    "zoom": 1.0
+  },
+  "sides": [
+    {
+      "id": "voyages",
+      "name": {
+        "en": "Migrations and voyages",
+        "es": "Migraciones y viajes"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "trade",
+      "name": {
+        "en": "Trade routes",
+        "es": "Rutas comerciales"
+      },
+      "color": "#16a085"
+    }
+  ],
+  "steps": [
+    {
+      "date": "-3300",
+      "title": {
+        "en": "The first cities",
+        "es": "Las primeras ciudades"
+      },
+      "camera": {
+        "lon": 78,
+        "lat": 34,
+        "zoom": 1.15
+      },
+      "text": {
+        "en": "In a few fertile valleys, farmers grew enough food to feed towns of craftsmen and priests. Uruk, in Sumer, grew into the first true city, and around 3200 BC its scribes began to write.",
+        "es": "En unos pocos valles fértiles, los campesinos produjeron comida para alimentar a artesanos y sacerdotes. Uruk, en Sumeria, fue la primera ciudad de verdad, y hacia el 3200 a. C. sus escribas empezaron a escribir."
+      },
+      "details": {
+        "en": "Thousands of years after the first farming villages, some places grew much bigger. In southern Iraq, Uruk had temples on raised platforms, workshops and tens of thousands of people; to keep their accounts, its officials invented cuneiform writing, and Egypt, Elam and later the Indus valley soon developed scripts of their own. Not every big settlement was a city of kings: in Ukraine, Cucuteni–Trypillia farmers had already lived in 'mega-sites' of over a thousand houses, with no palace in sight. Along the Nile, Naqada chiefs grew rich on gold, and in China the millet villages of the Yangshao and the jade-working Liangzhu culture were thriving. In Japan, the Jōmon lived well from forests and seas without farming at all.",
+        "es": "Miles de años después de las primeras aldeas agrícolas, algunos lugares crecieron mucho más. En el sur de Irak, Uruk tenía templos sobre plataformas, talleres y decenas de miles de habitantes; para llevar sus cuentas, sus funcionarios inventaron la escritura cuneiforme, y Egipto, Elam y más tarde el valle del Indo pronto crearon escrituras propias. No todos los grandes asentamientos eran ciudades de reyes: en Ucrania, los agricultores de Cucuteni-Trypillia ya habían vivido en «megasitios» de más de mil casas, sin palacio alguno. A orillas del Nilo, los jefes de Naqada se enriquecían con el oro, y en China prosperaban las aldeas de mijo de Yangshao y la cultura de Liangzhu, que tallaba el jade. En Japón, los jōmon vivían bien de los bosques y los mares sin practicar la agricultura."
+      },
+      "show": [
+        "sumerian-civilization",
+        "predynastic-naqada",
+        "cucuteni-trypillia-culture",
+        "indus-valley-civilization",
+        "yangshao-neolithic",
+        "liangzhu-culture",
+        "jomon-culture"
+      ]
+    },
+    {
+      "date": "-2300",
+      "title": {
+        "en": "Pyramids and the first empire",
+        "es": "Pirámides y el primer imperio"
+      },
+      "camera": {
+        "lon": -10,
+        "lat": 23,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Egypt's kings had built the pyramids of Giza, and in Peru the people of Caral raised pyramids of their own. In Mesopotamia, Sargon of Akkad conquered the Sumerian cities and founded the first empire.",
+        "es": "Los reyes de Egipto habían construido las pirámides de Guiza, y en Perú el pueblo de Caral alzaba sus propias pirámides. En Mesopotamia, Sargón de Acad conquistó las ciudades sumerias y fundó el primer imperio."
+      },
+      "details": {
+        "en": "By 2300 BC several civilizations had grown up far apart. Egypt's Old Kingdom had built the Great Pyramid around 2560 BC, with the work of thousands of paid labourers and farmers serving in turns. In the Supe valley of Peru, with no contact with the Old World, the Caral–Supe people built stepped pyramids around sunken plazas. Along the Indus, planned brick cities such as Mohenjo-daro and Harappa were at their height and traded with Mesopotamia by sea. On Crete the Minoans were building towns, and in Nubia the kingdom of Kerma was growing. Around 2334 BC Sargon of Akkad conquered the quarrelling city-states of Sumer and sent his armies to Syria and Elam: the first empire, held together by force.",
+        "es": "Hacia el 2300 a. C., varias civilizaciones habían surgido lejos unas de otras. El Imperio Antiguo de Egipto había construido la Gran Pirámide hacia el 2560 a. C., con el trabajo de miles de obreros pagados y de campesinos que se turnaban. En el valle de Supe, en Perú, sin contacto con el Viejo Mundo, el pueblo de Caral-Supe levantaba pirámides escalonadas en torno a plazas hundidas. A orillas del Indo, ciudades de ladrillo planificadas como Mohenjo-Daro y Harappa vivían su apogeo y comerciaban por mar con Mesopotamia. En Creta, los minoicos construían ciudades, y en Nubia crecía el reino de Kerma. Hacia el 2334 a. C., Sargón de Acad conquistó las ciudades-estado rivales de Sumeria y envió sus ejércitos a Siria y Elam: el primer imperio, sostenido por la fuerza."
+      },
+      "show": [
+        "caral-supe-civilization",
+        "ancient-egypt",
+        "sumerian-civilization",
+        "empire-of-akkad",
+        "elamite-civilization",
+        "kerma-culture",
+        "minoan-civilization",
+        "indus-valley-civilization"
+      ]
+    },
+    {
+      "date": "-1750",
+      "title": {
+        "en": "Law codes and palaces",
+        "es": "Leyes y palacios"
+      },
+      "camera": {
+        "lon": 60,
+        "lat": 32,
+        "zoom": 1.05
+      },
+      "text": {
+        "en": "Hammurabi of Babylon carved his laws in stone, Assyrian merchants traded with Anatolia and Minoan palaces ruled Crete. In China, the first palace city rose at Erlitou.",
+        "es": "Hammurabi de Babilonia grabó sus leyes en piedra, los mercaderes asirios comerciaban con Anatolia y los palacios minoicos gobernaban Creta. En China surgió la primera ciudad palaciega, en Erlitou."
+      },
+      "details": {
+        "en": "Around 1750 BC Hammurabi had united southern Mesopotamia under Babylon and set up his laws on stone stelae, with 'an eye for an eye', fixed fees for doctors and punishments that depended on social rank. To the north, the merchants of Assur sent caravans of tin and cloth to Anatolia. Egypt's Middle Kingdom was drawing to a close, while Kerma, in Nubia, reached its height. On Crete the palace of Knossos was rebuilt, and on the Greek mainland the first Mycenaean chiefs were rising. In Central Asia the oasis towns of the Oxus civilization were fading, and the great cities of the Indus were emptying. In the Yellow River valley, Erlitou built palaces and cast China's first bronze vessels.",
+        "es": "Hacia el 1750 a. C., Hammurabi había unido el sur de Mesopotamia bajo Babilonia y había expuesto sus leyes en estelas de piedra, con el «ojo por ojo», tarifas fijas para los médicos y castigos que dependían del rango social. Al norte, los mercaderes de Asur enviaban caravanas de estaño y telas a Anatolia. El Imperio Medio de Egipto llegaba a su fin, mientras Kerma, en Nubia, vivía su apogeo. En Creta se reconstruyó el palacio de Cnosos, y en la Grecia continental surgían los primeros jefes micénicos. En Asia central, las ciudades-oasis de la civilización del Oxus se apagaban, y las grandes ciudades del Indo se vaciaban. En el valle del río Amarillo, Erlitou construía palacios y fundía las primeras vasijas de bronce de China."
+      },
+      "show": [
+        "babylonia",
+        "assyrian-empire",
+        "ancient-egypt",
+        "kerma-culture",
+        "minoan-civilization",
+        "mycenaean-greece",
+        "oxus-civilization",
+        "indus-valley-civilization",
+        "erlitou-culture"
+      ]
+    },
+    {
+      "date": "-1350",
+      "title": {
+        "en": "Bronze Age empires",
+        "es": "Imperios de la Edad del Bronce"
+      },
+      "camera": {
+        "lon": 62,
+        "lat": 33,
+        "zoom": 1.2
+      },
+      "text": {
+        "en": "The great kings of Egypt, the Hittites, Mitanni, Babylon and Assyria wrote to each other as 'brothers', trading gold and princesses. Far to the east, Shang kings asked their ancestors for advice.",
+        "es": "Los grandes reyes de Egipto, los hititas, Mitani, Babilonia y Asiria se escribían como «hermanos» e intercambiaban oro y princesas. Muy al este, los reyes Shang pedían consejo a sus antepasados."
+      },
+      "details": {
+        "en": "Clay tablets found at Amarna, in Egypt, preserve letters of the 1350s and 1340s BC between the pharaohs and the kings of Babylon, Mitanni, Assyria and the Hittites, written in Akkadian cuneiform, the shared language of diplomacy. The kings bargain over gold, chariots and royal marriages, and complain when gifts are too small. It was an age of chariot warfare and of trade in copper, tin and glass across the eastern Mediterranean, where Mycenaean Greeks now ruled Knossos. Soon the Hittites crushed Mitanni, and Assyria took its lands. In China, the Shang kings at Yin carved questions to their ancestors on oracle bones, the oldest Chinese writing known.",
+        "es": "Las tablillas de arcilla halladas en Amarna, en Egipto, conservan cartas de las décadas de 1350 y 1340 a. C. entre los faraones y los reyes de Babilonia, Mitani, Asiria y los hititas, escritas en cuneiforme acadio, la lengua común de la diplomacia. Los reyes regatean oro, carros y bodas reales, y se quejan cuando los regalos son pequeños. Era una época de guerra con carros y de comercio de cobre, estaño y vidrio por el Mediterráneo oriental, donde los griegos micénicos gobernaban ya Cnosos. Poco después, los hititas aplastaron a Mitani, y Asiria se quedó con sus tierras. En China, los reyes Shang de Yin grababan preguntas a sus antepasados en huesos oraculares, la escritura china más antigua que se conoce."
+      },
+      "show": [
+        "ancient-egypt",
+        "hittite-empire",
+        "mitanni",
+        "assyrian-empire",
+        "babylonia",
+        "elamite-civilization",
+        "mycenaean-greece",
+        "minoan-civilization",
+        "shang-china"
+      ]
+    },
+    {
+      "date": "-1180",
+      "title": {
+        "en": "The Bronze Age collapse",
+        "es": "El colapso de la Edad del Bronce"
+      },
+      "camera": {
+        "lon": 34,
+        "lat": 34.5,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "Around 1200–1150 BC the connected world of the Bronze Age fell apart: the Hittite Empire collapsed, Mycenaean palaces burned and raiders called the Sea Peoples attacked Egypt.",
+        "es": "Entre el 1200 y el 1150 a. C., más o menos, el mundo interconectado de la Edad del Bronce se vino abajo: cayó el Imperio hitita, ardieron los palacios micénicos y unos invasores, los Pueblos del Mar, atacaron Egipto."
+      },
+      "details": {
+        "en": "In a few decades, cities across the eastern Mediterranean were destroyed or abandoned. Egyptian inscriptions blame the 'Sea Peoples', bands of warriors and migrants from the Aegean and beyond who came with their families by land and sea. But they were probably as much a symptom as a cause: historians also point to long droughts and famine, earthquakes, revolts and the breakdown of the trade in tin and copper on which bronze depended. The last letters of Ugarit plead for help against enemy ships on the coast. Egypt survived, weakened; Assyria, Babylon and Elam held on. In the ruins new peoples took the stage, among them the Phoenician city-states, the Philistines, the Israelites and the Arameans, and the age of iron began.",
+        "es": "En pocas décadas, ciudades de todo el Mediterráneo oriental fueron destruidas o abandonadas. Las inscripciones egipcias culpan a los «Pueblos del Mar», grupos de guerreros y migrantes del Egeo y de más allá que llegaron con sus familias por tierra y por mar. Pero probablemente fueron tanto un síntoma como una causa: los historiadores señalan también largas sequías y hambrunas, terremotos, revueltas y la ruptura del comercio de estaño y cobre del que dependía el bronce. Las últimas cartas de Ugarit piden ayuda contra barcos enemigos en la costa. Egipto sobrevivió, debilitado; Asiria, Babilonia y Elam resistieron. Entre las ruinas entraron en escena nuevos pueblos, entre ellos las ciudades-estado fenicias, los filisteos, los israelitas y los arameos, y comenzó la Edad del Hierro."
+      },
+      "moves": [
+        {
+          "side": "voyages",
+          "path": [
+            [
+              25.4,
+              37.3
+            ],
+            [
+              27.6,
+              36.4
+            ],
+            [
+              30.6,
+              36.0
+            ],
+            [
+              32.7,
+              34.8
+            ]
+          ],
+          "label": {
+            "en": "Sea Peoples (routes uncertain)",
+            "es": "Pueblos del Mar (rutas inciertas)"
+          }
+        },
+        {
+          "side": "voyages",
+          "path": [
+            [
+              33.4,
+              35.1
+            ],
+            [
+              35.4,
+              35.6
+            ]
+          ],
+          "label": {
+            "en": "Ugarit burns",
+            "es": "Arde Ugarit"
+          }
+        },
+        {
+          "side": "voyages",
+          "path": [
+            [
+              34.4,
+              34.4
+            ],
+            [
+              34.75,
+              33.1
+            ],
+            [
+              34.35,
+              31.75
+            ],
+            [
+              32.4,
+              31.4
+            ]
+          ],
+          "label": {
+            "en": "To the Nile Delta, about 1175 BC",
+            "es": "Al delta del Nilo, hacia 1175 a. C."
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "🔥",
+          "date": "-1185",
+          "at": [
+            35.7836,
+            35.6019
+          ],
+          "text": {
+            "en": "Ugarit, a rich port of Syria, is burned and never rebuilt",
+            "es": "Ugarit, un rico puerto de Siria, es incendiado y nunca se reconstruye"
+          }
+        },
+        {
+          "icon": "🏚️",
+          "date": "-1180",
+          "at": [
+            34.6153,
+            40.0197
+          ],
+          "text": {
+            "en": "The Hittite capital, Hattusa, is abandoned",
+            "es": "La capital hitita, Hattusa, es abandonada"
+          }
+        },
+        {
+          "icon": "🔥",
+          "date": "-1180",
+          "at": [
+            21.6966,
+            37.0275
+          ],
+          "text": {
+            "en": "The Mycenaean palace of Pylos burns",
+            "es": "Arde el palacio micénico de Pilos"
+          }
+        },
+        {
+          "icon": "⚓",
+          "date": "-1175",
+          "at": [
+            31.6,
+            31.25
+          ],
+          "text": {
+            "en": "Ramesses III fights off the Sea Peoples in the Nile Delta",
+            "es": "Ramsés III rechaza a los Pueblos del Mar en el delta del Nilo"
+          }
+        }
+      ],
+      "show": [
+        "hittite-empire",
+        "mycenaean-greece",
+        "ancient-egypt",
+        "phoenicia",
+        "assyrian-empire",
+        "babylonia",
+        "elamite-civilization",
+        "minoan-civilization"
+      ]
+    },
+    {
+      "date": "-750",
+      "title": {
+        "en": "Iron, alphabets and colonies",
+        "es": "Hierro, alfabetos y colonias"
+      },
+      "camera": {
+        "lon": 28,
+        "lat": 33,
+        "zoom": 2.0
+      },
+      "text": {
+        "en": "Phoenician ships spread their alphabet and founded Carthage. Greeks and Etruscans built city-states, Rome was born, Assyria's iron armies conquered the Near East and Kush ruled Egypt.",
+        "es": "Los barcos fenicios difundieron su alfabeto y fundaron Cartago. Griegos y etruscos crearon ciudades-estado, nació Roma, los ejércitos de hierro de Asiria conquistaron Oriente Próximo y Kush gobernó Egipto."
+      },
+      "details": {
+        "en": "Iron, now common and cheap, gave tools and weapons to many more people. Phoenician merchants sailed as far as Spain and founded Carthage around 814 BC, spreading their alphabet as they went; the Greeks added vowels, and the Etruscans and Romans borrowed it in turn. By tradition the first Olympic Games were held in 776 BC, and in 753 BC, says the legend, Romulus founded Rome. Assyria, with iron weapons and siege engines, was conquering the Levant; the Kingdom of Israel would fall to it around 720 BC. From Napata, the kings of Kush marched north and ruled Egypt as pharaohs. In southern Arabia, Saba grew rich on incense caravans, and north of the Alps, Celtic chiefs of the Hallstatt culture traded salt and iron.",
+        "es": "El hierro, ya común y barato, puso herramientas y armas en manos de mucha más gente. Los mercaderes fenicios navegaron hasta Hispania y fundaron Cartago hacia el 814 a. C., y difundieron su alfabeto a su paso; los griegos le añadieron vocales, y los etruscos y los romanos lo tomaron a su vez. Según la tradición, en el 776 a. C. se celebraron los primeros Juegos Olímpicos, y en el 753 a. C., dice la leyenda, Rómulo fundó Roma. Asiria, con armas de hierro y máquinas de asedio, conquistaba Levante; el reino de Israel caería ante ella hacia el 720 a. C. Desde Napata, los reyes de Kush marcharon hacia el norte y gobernaron Egipto como faraones. En el sur de Arabia, Saba se enriquecía con las caravanas del incienso, y al norte de los Alpes, los jefes celtas de la cultura de Hallstatt comerciaban con sal y hierro."
+      },
+      "show": [
+        "phoenicia",
+        "ancient-carthage",
+        "assyrian-empire",
+        "israel-and-judah",
+        "greek-city-states",
+        "etruscan-civilization",
+        "ancient-rome",
+        "kingdom-of-kush",
+        "kingdom-of-saba",
+        "celts"
+      ]
+    },
+    {
+      "date": "-700",
+      "title": {
+        "en": "Voyagers and temple builders",
+        "es": "Navegantes y constructores de templos"
+      },
+      "camera": {
+        "lon": -140,
+        "lat": -2,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Lapita sailors had reached Tonga and Samoa, islands no human had ever seen. In the Americas the Olmecs carved colossal heads, and pilgrims climbed to the temple of Chavín in the Andes.",
+        "es": "Los navegantes lapita habían llegado a Tonga y Samoa, islas que ningún ser humano había visto. En América, los olmecas tallaban cabezas colosales y los peregrinos subían al templo de Chavín, en los Andes."
+      },
+      "details": {
+        "en": "While the Old World rebuilt after the Bronze Age collapse, other peoples were reaching new frontiers. Lapita seafarers, with outrigger canoes, pigs, chickens and root crops, had sailed from the Bismarck Archipelago across open ocean to Fiji, and by about 850 BC to Tonga and Samoa. In Mexico the Olmecs of La Venta built an early pyramid and buried offerings of jade, and Zapotec farming villages were growing in the Valley of Oaxaca. Maya villages were becoming towns in the lowlands of Guatemala. In Peru the temple of Chavín de Huántar drew pilgrims from the coast and the mountains, and on the southern coast the Paracas people were beginning to weave their famous textiles.",
+        "es": "Mientras el Viejo Mundo se reconstruía tras el colapso de la Edad del Bronce, otros pueblos alcanzaban nuevas fronteras. Los navegantes lapita, con canoas de balancín, cerdos, gallinas y tubérculos, habían cruzado el océano abierto desde el archipiélago Bismarck hasta Fiyi, y hacia el 850 a. C. hasta Tonga y Samoa. En México, los olmecas de La Venta construían una pirámide temprana y enterraban ofrendas de jade, y las aldeas agrícolas zapotecas crecían en el valle de Oaxaca. Las aldeas mayas se convertían en pueblos en las tierras bajas de Guatemala. En Perú, el templo de Chavín de Huántar atraía peregrinos de la costa y la sierra, y en la costa sur el pueblo paracas empezaba a tejer sus famosas telas."
+      },
+      "moves": [
+        {
+          "side": "voyages",
+          "path": [
+            [
+              149.82,
+              -1.58
+            ],
+            [
+              153.5,
+              -5.6
+            ],
+            [
+              160.0,
+              -9.6
+            ],
+            [
+              166.0,
+              -10.6
+            ],
+            [
+              168.3,
+              -17.6
+            ],
+            [
+              177.4,
+              -17.9
+            ],
+            [
+              -175.2,
+              -21.1
+            ]
+          ],
+          "label": {
+            "en": "Lapita voyages, about 1600–850 BC",
+            "es": "Viajes lapita, hacia 1600-850 a. C."
+          }
+        },
+        {
+          "side": "voyages",
+          "path": [
+            [
+              177.4,
+              -17.9
+            ],
+            [
+              -172.3,
+              -13.8
+            ]
+          ],
+          "label": {
+            "en": "To Samoa",
+            "es": "A Samoa"
+          }
+        },
+        {
+          "side": "voyages",
+          "path": [
+            [
+              167.6,
+              -16.6
+            ],
+            [
+              165.0,
+              -21.0
+            ]
+          ],
+          "label": {
+            "en": "To New Caledonia",
+            "es": "A Nueva Caledonia"
+          }
+        }
+      ],
+      "show": [
+        "lapita-people",
+        "olmec-civilization",
+        "zapotec-civilization",
+        "maya-civilization",
+        "chavin-culture",
+        "paracas-culture"
+      ]
+    },
+    {
+      "date": "-500",
+      "title": {
+        "en": "The Axial Age",
+        "es": "La Era Axial"
+      },
+      "camera": {
+        "lon": 58,
+        "lat": 30,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Persia ruled the largest empire yet seen. In these centuries the Buddha in India, Confucius in China and Greek philosophers asked new questions about how to live, and Athens tried democracy.",
+        "es": "Persia gobernaba el mayor imperio visto hasta entonces. En estos siglos, el Buda en la India, Confucio en China y los filósofos griegos se hicieron nuevas preguntas sobre cómo vivir, y Atenas probó la democracia."
+      },
+      "details": {
+        "en": "The philosopher Karl Jaspers called the centuries around 500 BC the 'Axial Age', when thinkers in several regions, apparently independently, reshaped ideas of right and wrong. In Magadha and its neighbours, the Buddha and Mahavira taught paths to liberation free of animal sacrifice, as the older Vedic world of the Kuru lands gave way to new kingdoms. In China, Confucius sought harmony amid the wars of the Zhou states. Greek thinkers looked for natural causes, and in 508 BC Athens became a democracy for its male citizens. The Persian kings ruled from Egypt to the Indus and fought the Scythians of the steppe, while Rome had just become a republic and Carthage commanded the western seas. South of the Sahara, Nok artists modelled terracotta heads, and iron was being smelted.",
+        "es": "El filósofo Karl Jaspers llamó «Era Axial» a los siglos en torno al 500 a. C., cuando pensadores de varias regiones, al parecer sin influirse, transformaron las ideas sobre el bien y el mal. En Magadha y sus vecinos, el Buda y Mahavira enseñaron caminos de liberación sin sacrificios de animales, mientras el antiguo mundo védico de las tierras de Kuru daba paso a nuevos reinos. En China, Confucio buscaba la armonía en medio de las guerras de los Estados Zhou. Los pensadores griegos buscaban causas naturales, y en el 508 a. C. Atenas se convirtió en una democracia para sus ciudadanos varones. Los reyes persas gobernaban de Egipto al Indo y luchaban contra los escitas de la estepa, mientras Roma acababa de convertirse en república y Cartago dominaba los mares de Occidente. Al sur del Sahara, los artistas nok modelaban cabezas de terracota y ya se fundía el hierro."
+      },
+      "show": [
+        "achaemenid-empire",
+        "greek-city-states",
+        "ancient-rome",
+        "ancient-carthage",
+        "scythians",
+        "kuru-kingdom",
+        "magadha",
+        "zhou-dynasty",
+        "kingdom-of-kush",
+        "nok-culture"
+      ]
+    },
+    {
+      "date": "-200",
+      "title": {
+        "en": "Classical empires",
+        "es": "Imperios clásicos"
+      },
+      "camera": {
+        "lon": 68,
+        "lat": 30,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "After Alexander, great empires held Eurasia: Rome fought Carthage, the Mauryas ruled India and the Han followed China's First Emperor. On the steppe, the Xiongnu built a nomad empire.",
+        "es": "Tras Alejandro, grandes imperios dominaban Eurasia: Roma luchaba contra Cartago, los maurya gobernaban la India y los Han sucedían al Primer Emperador de China. En la estepa, los xiongnu crearon un imperio nómada."
+      },
+      "details": {
+        "en": "Alexander the Great's conquests of 334–323 BC left Greek kingdoms from Egypt to Bactria, where a Greek king now ruled from Bactra. In India the Maurya Empire, which Ashoka had turned towards Buddhism, was nearing its end, and Buddhism had reached Sri Lanka. In China the king of Qin had conquered his rivals in 221 BC and made himself the First Emperor, standardizing writing, coins and weights; his dynasty soon collapsed, and in 202 BC the Han took over. On the northern steppe, Modu Chanyu united the Xiongnu. In the west, Rome and Carthage fought the Second Punic War, while the Parthians were rising in Iran. In northern Vietnam, Đông Sơn smiths cast great bronze drums.",
+        "es": "Las conquistas de Alejandro Magno, en el 334-323 a. C., dejaron reinos griegos de Egipto a Bactriana, donde ahora gobernaba un rey griego desde Bactra. En la India, el Imperio maurya, que Ashoka había llevado hacia el budismo, se acercaba a su fin, y el budismo había llegado a Sri Lanka. En China, el rey de Qin había vencido a sus rivales en el 221 a. C. y se había proclamado Primer Emperador, y unificó la escritura, la moneda y las pesas; su dinastía se derrumbó pronto, y en el 202 a. C. tomaron el poder los Han. En la estepa del norte, Modu Chanyu unió a los xiongnu. En Occidente, Roma y Cartago libraban la segunda guerra púnica, mientras los partos ascendían en Irán. En el norte de Vietnam, los herreros de Đông Sơn fundían grandes tambores de bronce."
+      },
+      "events": [
+        {
+          "icon": "👑",
+          "date": "-221",
+          "at": [
+            108.7088,
+            34.3299
+          ],
+          "text": {
+            "en": "The king of Qin unites China and takes the title of First Emperor",
+            "es": "El rey de Qin unifica China y toma el título de Primer Emperador"
+          }
+        },
+        {
+          "icon": "🐘",
+          "date": "-218",
+          "at": [
+            6.9,
+            45.2
+          ],
+          "text": {
+            "en": "Hannibal crosses the Alps with war elephants",
+            "es": "Aníbal cruza los Alpes con elefantes de guerra"
+          }
+        }
+      ],
+      "show": [
+        "han-dynasty",
+        "maurya-empire",
+        "ancient-rome",
+        "ancient-carthage",
+        "greco-bactrian-kingdom",
+        "parthia",
+        "xiongnu",
+        "anuradhapura-kingdom",
+        "dong-son-culture"
+      ]
+    },
+    {
+      "date": "100",
+      "title": {
+        "en": "The Silk Road world",
+        "es": "El mundo de la Ruta de la Seda"
+      },
+      "camera": {
+        "lon": 68,
+        "lat": 26,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "Han China and Rome each ruled some 60 million people. Caravans and monsoon ships linked them through Parthia, the Kushans, Aksum and Funan, carrying silk, spices, glass and ideas.",
+        "es": "La China Han y Roma gobernaban cada una a unos 60 millones de personas. Caravanas y barcos del monzón las unían a través de Partia, los kushanes, Aksum y Funán, y llevaban seda, especias, vidrio e ideas."
+      },
+      "details": {
+        "en": "Around AD 100 the Han and Roman empires knew of each other only by rumour, but their goods met. Chinese silk travelled west in stages, passing from Chinese to Sogdian, Kushan and Parthian traders, while horses, glass, gold and silver went east. Greek and Indian sailors who had learned to ride the monsoon winds crossed the Indian Ocean between Egypt's Red Sea ports and southern India, and Funan's port of Óc Eo linked these routes to China. Aksum traded ivory through its port of Adulis, and Meroë, in Kush, smelted iron. Ideas travelled too: Kushan monks carried Buddhism into China. In Rome, Pliny the Elder complained that luxuries from India and China drained the empire of its gold.",
+        "es": "Hacia el año 100, los imperios Han y romano solo sabían el uno del otro de oídas, pero sus mercancías se encontraban. La seda china viajaba hacia el oeste por etapas, de mano en mano entre comerciantes chinos, sogdianos, kushanes y partos, mientras los caballos, el vidrio, el oro y la plata iban hacia el este. Marinos griegos e indios que habían aprendido a navegar con los vientos del monzón cruzaban el océano Índico entre los puertos egipcios del mar Rojo y el sur de la India, y el puerto de Óc Eo, en Funán, unía estas rutas con China. Aksum comerciaba marfil por su puerto de Adulis, y Meroe, en Kush, fundía hierro. También viajaban las ideas: los monjes kushanes llevaron el budismo a China. En Roma, Plinio el Viejo se quejaba de que los lujos de la India y China vaciaban al imperio de su oro."
+      },
+      "moves": [
+        {
+          "side": "trade",
+          "path": [
+            [
+              108.94,
+              34.34
+            ],
+            [
+              103.83,
+              36.06
+            ],
+            [
+              98.5,
+              39.75
+            ],
+            [
+              94.66,
+              40.14
+            ],
+            [
+              89.19,
+              42.95
+            ],
+            [
+              82.96,
+              41.72
+            ],
+            [
+              75.99,
+              39.47
+            ],
+            [
+              66.98,
+              39.65
+            ],
+            [
+              61.84,
+              37.66
+            ],
+            [
+              54.4,
+              36.6
+            ],
+            [
+              48.5,
+              34.8
+            ],
+            [
+              44.58,
+              33.09
+            ],
+            [
+              38.27,
+              34.55
+            ],
+            [
+              36.16,
+              36.2
+            ]
+          ],
+          "label": {
+            "en": "Silk Roads",
+            "es": "Rutas de la Seda"
+          }
+        },
+        {
+          "side": "trade",
+          "path": [
+            [
+              105.15,
+              10.0
+            ],
+            [
+              101.5,
+              8.0
+            ],
+            [
+              99.2,
+              9.5
+            ],
+            [
+              97.5,
+              8.0
+            ],
+            [
+              86.0,
+              6.5
+            ],
+            [
+              80.5,
+              5.6
+            ],
+            [
+              76.2,
+              10.15
+            ],
+            [
+              62.0,
+              13.0
+            ],
+            [
+              50.0,
+              12.8
+            ],
+            [
+              43.4,
+              12.6
+            ],
+            [
+              39.65,
+              15.27
+            ],
+            [
+              35.48,
+              23.91
+            ]
+          ],
+          "label": {
+            "en": "Monsoon sea routes",
+            "es": "Rutas marítimas del monzón"
+          }
+        }
+      ],
+      "show": [
+        "han-dynasty",
+        "ancient-rome",
+        "parthia",
+        "kushan-empire",
+        "sogdia",
+        "kingdom-of-aksum",
+        "kingdom-of-kush",
+        "kingdom-of-funan"
+      ]
+    },
+    {
+      "date": "400",
+      "title": {
+        "en": "Pyramids of the Americas",
+        "es": "Pirámides de América"
+      },
+      "camera": {
+        "lon": -86,
+        "lat": 13,
+        "zoom": 1.75
+      },
+      "text": {
+        "en": "Teotihuacan, with perhaps 100,000 people, was the largest city of the Americas, and Maya kings ruled rival city-states. In Peru the Moche and Nazca shaped the desert; in Ohio the Hopewell built earthworks.",
+        "es": "Teotihuacán, con quizá 100 000 habitantes, era la mayor ciudad de América, y los reyes mayas gobernaban ciudades-estado rivales. En Perú, moches y nazcas daban forma al desierto; en Ohio, los hopewell construían terraplenes."
+      },
+      "details": {
+        "en": "The Americas had their own classical age, with no contact with Europe, Asia or Africa. Teotihuacan's influence reached far: in 378 its warriors helped to place a new king on the throne of Tikal. The Maya carved stelae dated in their Long Count calendar, which used a sign for zero, and the Zapotecs ruled from their mountaintop at Monte Albán. On Peru's north coast the Moche raised adobe pyramids and buried their lords in gold, while to the south the Nazca drew giant figures on the desert floor. In the woodlands of North America, Hopewell communities traded copper, shells and obsidian across half a continent. Maize, first tamed in Mexico thousands of years before, fed most of these peoples.",
+        "es": "América tuvo su propia época clásica, sin contacto con Europa, Asia ni África. La influencia de Teotihuacán llegaba lejos: en el 378, sus guerreros ayudaron a poner a un nuevo rey en el trono de Tikal. Los mayas tallaban estelas fechadas con su calendario de Cuenta Larga, que usaba un signo para el cero, y los zapotecas gobernaban desde su montaña de Monte Albán. En la costa norte de Perú, los moches alzaban pirámides de adobe y enterraban a sus señores cubiertos de oro, mientras más al sur los nazcas dibujaban figuras gigantes en el suelo del desierto. En los bosques de Norteamérica, las comunidades hopewell comerciaban cobre, conchas y obsidiana a través de medio continente. El maíz, domesticado en México miles de años antes, alimentaba a la mayoría de estos pueblos."
+      },
+      "show": [
+        "teotihuacan-civilization",
+        "maya-civilization",
+        "zapotec-civilization",
+        "moche-culture",
+        "nazca-culture",
+        "hopewell-culture"
+      ]
+    },
+    {
+      "date": "476",
+      "title": {
+        "en": "Rome falls in the west",
+        "es": "Cae Roma en Occidente"
+      },
+      "camera": {
+        "lon": 62,
+        "lat": 28,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "In 476 the last western Roman emperor was deposed, but Constantinople carried on. The Sasanians ruled Persia, the Guptas northern India, and Aksum, now Christian, traded across the Red Sea.",
+        "es": "En el 476 fue depuesto el último emperador romano de Occidente, pero Constantinopla siguió adelante. Los sasánidas gobernaban Persia, los Gupta el norte de la India, y Aksum, ya cristiano, comerciaba a través del mar Rojo."
+      },
+      "details": {
+        "en": "Rome's western half had been weakened by civil wars, epidemics and the cost of defending its frontiers, and Germanic peoples, pushed in part by the Huns, had settled inside its borders. In 476 the general Odoacer deposed the boy emperor Romulus Augustulus. The eastern Roman, or Byzantine, Empire, the Sasanian kings of Persia and the Gupta emperors of India remained great powers. Christianity had spread to Aksum and Armenia, and Buddhism from India to China, Korea and Southeast Asia. In Korea, Goguryeo and Silla were two of three rival kingdoms. Funan and the Cham states traded along the coasts of Southeast Asia, and in the western Sahel the Ghana Empire was taking shape as camel caravans crossed the Sahara.",
+        "es": "La mitad occidental de Roma se había debilitado por las guerras civiles, las epidemias y el costo de defender sus fronteras, y pueblos germánicos, empujados en parte por los hunos, se habían asentado dentro de ella. En el 476, el general Odoacro depuso al joven emperador Rómulo Augústulo. El Imperio romano de Oriente, o bizantino, los reyes sasánidas de Persia y los emperadores Gupta de la India seguían siendo grandes potencias. El cristianismo había llegado a Aksum y Armenia, y el budismo, de la India a China, Corea y el Sudeste Asiático. En Corea, Goguryeo y Silla eran dos de tres reinos rivales. Funán y los Estados chams comerciaban por las costas del Sudeste Asiático, y en el Sahel occidental tomaba forma el Imperio de Ghana mientras las caravanas de camellos cruzaban el Sahara."
+      },
+      "events": [
+        {
+          "icon": "👑",
+          "date": "476-09-04",
+          "at": [
+            12.1983,
+            44.4184
+          ],
+          "text": {
+            "en": "At Ravenna, Odoacer deposes Romulus Augustulus, the last western Roman emperor",
+            "es": "En Rávena, Odoacro depone a Rómulo Augústulo, el último emperador romano de Occidente"
+          }
+        }
+      ],
+      "show": [
+        "ancient-rome",
+        "byzantine-empire",
+        "sasanian-persia",
+        "gupta-empire",
+        "kingdom-of-aksum",
+        "empire-of-ghana",
+        "kingdom-of-funan",
+        "champa",
+        "goguryeo",
+        "silla"
+      ]
+    },
+    {
+      "date": "750",
+      "title": {
+        "en": "Faith, caliphs and the Tang",
+        "es": "Fe, califas y los Tang"
+      },
+      "camera": {
+        "lon": 65,
+        "lat": 32,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Within a century of the Prophet, Islam had spread from Arabia to Spain and Central Asia, and in 750 the Abbasids replaced the Umayyads. Tang China was at its height, and Buddhism flourished from Tibet to Java.",
+        "es": "Un siglo después del Profeta, el islam se había extendido de Arabia a Hispania y Asia central, y en el 750 los abasíes sustituyeron a los omeyas. La China Tang vivía su apogeo, y el budismo florecía del Tíbet a Java."
+      },
+      "details": {
+        "en": "After the Prophet Muhammad died in 632, Arab armies conquered the Sasanian Empire and many Byzantine lands, and under the Umayyads of Damascus the caliphate reached from Spain to the Indus. In 750 the Abbasid revolution overthrew them; the new caliphs soon founded Baghdad. The Franks had beaten a Muslim army near Tours in 732, and their Carolingian kings were rising. In Asia, Tang Chang'an was perhaps the largest city in the world, though the An Lushan rebellion would soon devastate it, and Tibet's kings rivalled the Tang. Monks and pilgrims carried Buddhism along the sea routes: Srivijaya was a centre of Buddhist study, Nara Japan was casting the great Buddha of Tōdai-ji, and Java's kings would soon raise Borobudur.",
+        "es": "Tras la muerte del profeta Mahoma en el 632, los ejércitos árabes conquistaron el Imperio sasánida y muchas tierras bizantinas, y con los omeyas de Damasco el califato llegó de Hispania al Indo. En el 750, la revolución abasí los derrocó; los nuevos califas fundaron pronto Bagdad. Los francos habían vencido a un ejército musulmán cerca de Tours en el 732, y sus reyes carolingios iban en ascenso. En Asia, la Chang'an de los Tang era quizá la mayor ciudad del mundo, aunque la rebelión de An Lushan pronto la devastaría, y los reyes del Tíbet rivalizaban con los Tang. Monjes y peregrinos llevaban el budismo por las rutas marítimas: Srivijaya era un centro de estudios budistas, el Japón de Nara fundía el gran Buda de Tōdai-ji y los reyes de Java pronto alzarían Borobudur."
+      },
+      "show": [
+        "umayyad-caliphate",
+        "abbasid-caliphate",
+        "al-andalus",
+        "frankish-kingdom",
+        "byzantine-empire",
+        "tibetan-empire",
+        "tang-dynasty",
+        "nara-japan",
+        "srivijaya-empire",
+        "mataram-kingdom"
+      ]
+    },
+    {
+      "date": "1000",
+      "title": {
+        "en": "The Americas around 1000",
+        "es": "América hacia el año 1000"
+      },
+      "camera": {
+        "lon": -95,
+        "lat": 5,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "In the Andes, Tiwanaku and Wari were fading as the Chimú rose. Toltec Tula ruled central Mexico, Chaco Canyon and Cahokia grew in the north, and far out in the Pacific, Tonga's sacred kings began their line.",
+        "es": "En los Andes, Tiahuanaco y Wari se apagaban y surgían los chimúes. La Tula tolteca dominaba el centro de México, el Chaco y Cahokia crecían en el norte y, en pleno Pacífico, los reyes sagrados de Tonga iniciaban su linaje."
+      },
+      "details": {
+        "en": "Around the year 1000 the Americas were full of change. In the Andes a long drought was bringing down the highland states of Tiwanaku and Wari, while on the north coast of Peru the Chimú were building Chan Chan. In Colombia the Muisca worked gold, and at the mouth of the Amazon the Marajoara lived on great earth mounds. In Mexico, Tula had risen after Teotihuacan, and the Maya of Yucatán made Chichen Itza a capital of trade. Farther north, maize fed the great houses of Chaco Canyon and the new town of Cahokia on the Mississippi. Norse sailors briefly camped in Newfoundland. In the Pacific, the line of the Tuʻi Tonga began, by tradition, around 950, and Polynesian voyagers would soon reach Hawaiʻi, Rapa Nui and Aotearoa.",
+        "es": "Hacia el año 1000, América vivía grandes cambios. En los Andes, una larga sequía derribaba a los Estados serranos de Tiahuanaco y Wari, mientras en la costa norte de Perú los chimúes construían Chan Chan. En Colombia, los muiscas trabajaban el oro, y en la desembocadura del Amazonas los marajoaras vivían sobre grandes montículos de tierra. En México, Tula había surgido tras Teotihuacán, y los mayas de Yucatán hicieron de Chichén Itzá una capital del comercio. Más al norte, el maíz alimentaba a las grandes casas del cañón del Chaco y a la nueva ciudad de Cahokia, junto al Misisipi. Marinos nórdicos acamparon por un tiempo en Terranova. En el Pacífico, el linaje de los Tuʻi Tonga comenzó, según la tradición, hacia el 950, y los navegantes polinesios pronto llegarían a Hawái, Rapa Nui y Aotearoa."
+      },
+      "events": [
+        {
+          "icon": "⛵",
+          "date": "1021",
+          "at": [
+            -55.5336,
+            51.5958
+          ],
+          "text": {
+            "en": "Norse voyagers have a camp at L'Anse aux Meadows, Newfoundland",
+            "es": "Viajeros nórdicos tienen un campamento en L'Anse aux Meadows, Terranova"
+          }
+        }
+      ],
+      "show": [
+        "tiwanaku-civilization",
+        "wari-empire",
+        "chimu-kingdom",
+        "muisca-confederations",
+        "marajoara-culture",
+        "toltecs",
+        "maya-civilization",
+        "ancestral-puebloans",
+        "mississippian-culture",
+        "tui-tonga-empire"
+      ]
+    },
+    {
+      "date": "1050",
+      "title": {
+        "en": "Medieval kingdoms",
+        "es": "Reinos medievales"
+      },
+      "camera": {
+        "lon": 76,
+        "lat": 40,
+        "zoom": 1.15
+      },
+      "text": {
+        "en": "Song China printed books and paper money, Heian Japan wrote novels and Chola fleets ruled the Bay of Bengal. Byzantium, the Fatimids and Kievan Rus' prospered, and the Seljuk Turks were on the move.",
+        "es": "La China Song imprimía libros y papel moneda, el Japón de Heian escribía novelas y las flotas chola dominaban el golfo de Bengala. Bizancio, los fatimíes y la Rus de Kiev prosperaban, y los turcos selyúcidas avanzaban."
+      },
+      "details": {
+        "en": "Around 1050 Song China was the most populous and inventive state on Earth, with movable type invented in the 1040s and cities of perhaps a million people. In Japan, Murasaki Shikibu's Tale of Genji had recently been written at the Heian court. The Chola Empire of southern India had raided Srivijaya in 1025, and the Khmer kings were building ever larger temples at Angkor. Seljuk Turks from Central Asia had conquered Persia and in 1055 would enter Baghdad. Fatimid Cairo and Byzantine Constantinople were among the richest cities in the world. In Europe, Kievan Rus' was now Orthodox Christian, the Holy Roman emperors claimed the heritage of Rome, and the Viking Age was ending as the Scandinavian kingdoms became Christian.",
+        "es": "Hacia 1050, la China Song era el Estado más poblado e inventivo del mundo, con los tipos móviles inventados en la década de 1040 y ciudades de quizá un millón de habitantes. En Japón, La historia de Genji, de Murasaki Shikibu, se había escrito hacía poco en la corte de Heian. El Imperio chola del sur de la India había atacado Srivijaya en 1025, y los reyes jemeres construían templos cada vez mayores en Angkor. Los turcos selyúcidas de Asia central habían conquistado Persia y en 1055 entrarían en Bagdad. El Cairo fatimí y la Constantinopla bizantina estaban entre las ciudades más ricas del mundo. En Europa, la Rus de Kiev ya era cristiana ortodoxa, los emperadores del Sacro Imperio reclamaban la herencia de Roma, y la época vikinga terminaba a medida que los reinos escandinavos se hacían cristianos."
+      },
+      "show": [
+        "song-dynasty",
+        "heian-japan",
+        "chola-empire",
+        "khmer-civilization",
+        "seljuk-empire",
+        "fatimid-caliphate",
+        "byzantine-empire",
+        "kievan-rus",
+        "holy-roman-empire",
+        "vikings"
+      ]
+    },
+    {
+      "date": "1250",
+      "title": {
+        "en": "The Mongol storm",
+        "es": "La tormenta mongola"
+      },
+      "camera": {
+        "lon": 55,
+        "lat": 32,
+        "zoom": 1.05
+      },
+      "text": {
+        "en": "Genghis Khan's heirs conquered from Korea to Russia, sacking Kyiv and Baghdad. The Mamluks stopped them in Syria and the Delhi sultans held them off, while Mali rose in West Africa.",
+        "es": "Los herederos de Gengis Kan conquistaron de Corea a Rusia y saquearon Kiev y Bagdad. Los mamelucos los frenaron en Siria y los sultanes de Delhi los contuvieron, mientras Malí surgía en África occidental."
+      },
+      "details": {
+        "en": "In 1206 the Mongol clans proclaimed Temüjin Genghis Khan. Within fifty years his armies and those of his heirs took northern China, Central Asia, Persia and the Russian principalities, and raided Poland and Hungary. Cities that resisted were destroyed, and millions died. In 1258 Baghdad fell and the Abbasid caliph was killed. In 1260 the Mamluks of Egypt beat a Mongol army at Ain Jalut, and the Delhi Sultanate threw back several invasions. Song China held out in the south until 1279, and Pagan broke apart after Mongol attacks in the 1280s. Far from the steppe, Sundiata founded the Mali Empire around 1235, and in Ethiopia the Zagwe kings had carved churches into the rock at Lalibela.",
+        "es": "En 1206, los clanes mongoles proclamaron a Temuyín Gengis Kan. En cincuenta años, sus ejércitos y los de sus herederos tomaron el norte de China, Asia central, Persia y los principados rusos, y atacaron Polonia y Hungría. Las ciudades que resistían eran destruidas, y murieron millones de personas. En 1258 cayó Bagdad y el califa abasí fue asesinado. En 1260, los mamelucos de Egipto vencieron a un ejército mongol en Ain Jalut, y el Sultanato de Delhi rechazó varias invasiones. La China Song resistió en el sur hasta 1279, y Pagan se desintegró tras los ataques mongoles de la década de 1280. Lejos de la estepa, Sundiata fundó el Imperio de Malí hacia 1235, y en Etiopía los reyes zagüe habían tallado iglesias en la roca de Lalibela."
+      },
+      "events": [
+        {
+          "icon": "🔥",
+          "date": "1240-12-06",
+          "at": [
+            30.525,
+            50.45
+          ],
+          "text": {
+            "en": "The Mongols sack Kyiv",
+            "es": "Los mongoles saquean Kiev"
+          }
+        },
+        {
+          "icon": "🔥",
+          "date": "1258-02-10",
+          "at": [
+            44.3661,
+            33.3153
+          ],
+          "text": {
+            "en": "The Mongols sack Baghdad and kill the caliph",
+            "es": "Los mongoles saquean Bagdad y matan al califa"
+          }
+        },
+        {
+          "icon": "⚔️",
+          "date": "1260-09-03",
+          "at": [
+            35.3667,
+            32.55
+          ],
+          "text": {
+            "en": "The Mamluks defeat the Mongols at Ain Jalut",
+            "es": "Los mamelucos derrotan a los mongoles en Ain Jalut"
+          }
+        }
+      ],
+      "show": [
+        "mongol-empire",
+        "song-dynasty",
+        "abbasid-caliphate",
+        "mamluk-sultanate",
+        "delhi-sultanate",
+        "khmer-civilization",
+        "pagan-kingdom",
+        "zagwe-dynasty",
+        "empire-of-mali"
+      ]
+    },
+    {
+      "date": "1350",
+      "title": {
+        "en": "Gold and the monsoon",
+        "es": "Oro y monzón"
+      },
+      "camera": {
+        "lon": 55,
+        "lat": 2,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Africa's gold made kings rich: Mali's Mansa Musa dazzled Cairo, and Great Zimbabwe traded through Swahili ports linked by the monsoon to India and China. Ife and Benin cast masterpieces in brass.",
+        "es": "El oro de África enriqueció a sus reyes: Mansa Musa de Malí deslumbró a El Cairo, y Gran Zimbabue comerciaba por puertos suajilis unidos por el monzón a la India y China. Ife y Benín fundían obras maestras en latón."
+      },
+      "details": {
+        "en": "In the 14th century much of the gold used in the Mediterranean world came from West Africa. Camel caravans carried it north across the Sahara from Mali, whose ruler Mansa Musa spent so much in Cairo in 1324 that its value fell; salt, cloth and books came south, and Timbuktu grew into a centre of learning. Around Lake Chad, Kanem traded with Libya and Egypt, and in the forests to the south Ife and Benin cast brass heads and plaques. On the east coast, Swahili towns such as Kilwa shipped gold from Great Zimbabwe, and ivory, to Arabia, India and China, and received cloth, beads and porcelain. Christian Makuria was fading on the Nile, and Majapahit dominated the islands of Southeast Asia. In 1347–1349 the Black Death swept through Egypt and Europe.",
+        "es": "En el siglo XIV, gran parte del oro que se usaba en el mundo mediterráneo venía de África occidental. Las caravanas de camellos lo llevaban al norte a través del Sahara desde Malí, cuyo soberano, Mansa Musa, gastó tanto en El Cairo en 1324 que su valor cayó; al sur llegaban sal, telas y libros, y Tombuctú se convirtió en un centro de saber. En torno al lago Chad, Kanem comerciaba con Libia y Egipto, y en las selvas del sur Ife y Benín fundían cabezas y placas de latón. En la costa oriental, ciudades suajilis como Kilwa enviaban el oro de Gran Zimbabue, y marfil, a Arabia, la India y China, y recibían telas, cuentas y porcelana. La cristiana Makuria se apagaba a orillas del Nilo, y Majapahit dominaba las islas del Sudeste Asiático. En 1347-1349, la peste negra arrasó Egipto y Europa."
+      },
+      "moves": [
+        {
+          "side": "trade",
+          "path": [
+            [
+              -8.38,
+              11.38
+            ],
+            [
+              -3.0,
+              16.77
+            ],
+            [
+              -4.97,
+              23.6
+            ],
+            [
+              -4.27,
+              31.28
+            ]
+          ],
+          "label": {
+            "en": "Gold and salt across the Sahara",
+            "es": "Oro y sal a través del Sahara"
+          }
+        },
+        {
+          "side": "trade",
+          "path": [
+            [
+              30.93,
+              -20.27
+            ],
+            [
+              34.75,
+              -20.2
+            ],
+            [
+              40.3,
+              -15.0
+            ],
+            [
+              39.52,
+              -8.96
+            ]
+          ],
+          "label": {
+            "en": "Gold to the coast",
+            "es": "El oro hacia la costa"
+          }
+        },
+        {
+          "side": "trade",
+          "path": [
+            [
+              39.52,
+              -8.96
+            ],
+            [
+              40.1,
+              -4.2
+            ],
+            [
+              44.0,
+              -1.0
+            ],
+            [
+              55.0,
+              5.0
+            ],
+            [
+              68.0,
+              10.0
+            ],
+            [
+              75.78,
+              11.25
+            ],
+            [
+              77.0,
+              7.2
+            ],
+            [
+              80.5,
+              5.6
+            ],
+            [
+              90.0,
+              6.0
+            ],
+            [
+              97.0,
+              5.5
+            ],
+            [
+              100.5,
+              3.4
+            ],
+            [
+              103.8,
+              1.2
+            ],
+            [
+              107.5,
+              6.0
+            ],
+            [
+              110.5,
+              14.0
+            ],
+            [
+              114.5,
+              20.6
+            ],
+            [
+              118.6,
+              24.9
+            ]
+          ],
+          "label": {
+            "en": "Monsoon trade",
+            "es": "Comercio del monzón"
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "🐫",
+          "date": "1324",
+          "at": [
+            31.2357,
+            30.0444
+          ],
+          "text": {
+            "en": "Mansa Musa of Mali passes through Cairo on his way to Mecca, spending so much gold that its price falls",
+            "es": "Mansa Musa de Malí pasa por El Cairo camino de La Meca y gasta tanto oro que su precio cae"
+          }
+        },
+        {
+          "icon": "🕌",
+          "date": "1331",
+          "at": [
+            39.5228,
+            -8.9578
+          ],
+          "text": {
+            "en": "The traveller Ibn Battuta visits Kilwa and praises its beauty",
+            "es": "El viajero Ibn Battuta visita Kilwa y elogia su belleza"
+          }
+        },
+        {
+          "icon": "💀",
+          "date": "1347",
+          "at": [
+            29.9187,
+            31.2001
+          ],
+          "text": {
+            "en": "The Black Death reaches Alexandria",
+            "es": "La peste negra llega a Alejandría"
+          }
+        }
+      ],
+      "show": [
+        "empire-of-mali",
+        "kanem-bornu-empire",
+        "ife-empire",
+        "kingdom-of-benin",
+        "makuria",
+        "mamluk-sultanate",
+        "swahili-city-states",
+        "kingdom-of-great-zimbabwe",
+        "majapahit"
+      ]
+    },
+    {
+      "date": "1470",
+      "title": {
+        "en": "Empires of the fifteenth century",
+        "es": "Imperios del siglo XV"
+      },
+      "camera": {
+        "lon": 60,
+        "lat": 25,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "The Ottomans had taken Constantinople, Ming fleets had sailed to Africa and Korea's King Sejong had created an alphabet. In Africa, Songhai rose on the Niger, and Kongo and Mutapa grew strong.",
+        "es": "Los otomanos habían tomado Constantinopla, las flotas Ming habían navegado hasta África y el rey Sejong de Corea había creado un alfabeto. En África, Songhai surgía a orillas del Níger, y el Congo y Mutapa se hacían fuertes."
+      },
+      "details": {
+        "en": "Between 1405 and 1433 the Ming admiral Zheng He led seven fleets of hundreds of ships across the Indian Ocean to Malacca, India, Arabia and East Africa; then the voyages stopped. In 1453 the cannon of Sultan Mehmed II broke the walls of Constantinople, ending the Byzantine Empire after more than 1,100 years. In Samarkand, Timur's grandson Ulugh Beg had measured the stars, and in Seoul King Sejong introduced hangul. Vijayanagara ruled southern India, and Ayutthaya and Malacca prospered on the trade in spices and cloth. In West Africa, Sonni Ali made Songhai an empire after 1464, while in Central and southern Africa the kingdoms of Kongo and Mutapa grew strong. Portuguese ships were edging down the African coast.",
+        "es": "Entre 1405 y 1433, el almirante Ming Zheng He dirigió siete flotas de cientos de barcos a través del océano Índico hasta Malaca, la India, Arabia y África oriental; luego los viajes se suspendieron. En 1453, los cañones del sultán Mehmed II derribaron las murallas de Constantinopla y pusieron fin al Imperio bizantino tras más de 1100 años. En Samarcanda, Ulugh Beg, nieto de Timur, había medido las estrellas, y en Seúl el rey Sejong introdujo el hangul. Vijayanagara gobernaba el sur de la India, y Ayutthaya y Malaca prosperaban con el comercio de especias y telas. En África occidental, Sonni Ali convirtió Songhai en un imperio después de 1464, mientras en África central y del sur se fortalecían los reinos del Congo y Mutapa. Los barcos portugueses avanzaban poco a poco por la costa africana."
+      },
+      "events": [
+        {
+          "icon": "⛵",
+          "date": "1405",
+          "at": [
+            118.7969,
+            32.0603
+          ],
+          "text": {
+            "en": "Zheng He's first treasure fleet sets sail from China",
+            "es": "Zarpa de China la primera flota del tesoro de Zheng He"
+          }
+        },
+        {
+          "icon": "📜",
+          "date": "1443",
+          "at": [
+            126.9775,
+            37.58
+          ],
+          "text": {
+            "en": "King Sejong creates the hangul alphabet",
+            "es": "El rey Sejong crea el alfabeto hangul"
+          }
+        },
+        {
+          "icon": "🏰",
+          "date": "1453-05-29",
+          "at": [
+            28.98,
+            41.0083
+          ],
+          "text": {
+            "en": "The Ottomans take Constantinople; the Byzantine Empire ends",
+            "es": "Los otomanos toman Constantinopla; termina el Imperio bizantino"
+          }
+        }
+      ],
+      "show": [
+        "ottoman-empire",
+        "timurid-empire",
+        "ming-dynasty",
+        "joseon",
+        "vijayanagara-empire",
+        "ayutthaya-kingdom",
+        "malacca-sultanate",
+        "empire-of-songhai",
+        "kingdom-of-kongo",
+        "kingdom-of-mutapa"
+      ]
+    },
+    {
+      "date": "1500",
+      "title": {
+        "en": "The Americas and the Pacific in 1500",
+        "es": "América y el Pacífico en 1500"
+      },
+      "camera": {
+        "lon": -125,
+        "lat": -2,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "On the eve of contact, the Aztecs and the Inca ruled the two largest empires of the Americas, and Polynesians had settled the farthest islands of the Pacific. In 1492 Columbus reached the Caribbean.",
+        "es": "En vísperas del contacto, aztecas e incas gobernaban los dos mayores imperios de América, y los polinesios habían poblado las islas más lejanas del Pacífico. En 1492, Colón llegó al Caribe."
+      },
+      "details": {
+        "en": "By 1500 Tenochtitlan was one of the largest cities in the world, at the heart of a tribute empire, though the Purépecha to the west had beaten the Aztecs back. The Inca ruled perhaps 12 million people from Ecuador to Chile. In the north-east, the Haudenosaunee Confederacy united five nations under its Great Law of Peace. Across the Pacific, Polynesian navigators had settled every habitable island, from Hawaiʻi to Rapa Nui and Aotearoa, where the Māori had arrived around 1320–1350, and on Pohnpei the Saudeleur kings ruled from Nan Madol. In 1492 Columbus landed in the Bahamas. Within a few decades Spanish conquest, enslavement and epidemics of smallpox and other diseases would kill a great part of the Indigenous peoples of the Caribbean and the Americas.",
+        "es": "Hacia 1500, Tenochtitlan era una de las mayores ciudades del mundo, en el corazón de un imperio tributario, aunque los purépechas, al oeste, habían rechazado a los aztecas. Los incas gobernaban a quizá 12 millones de personas de Ecuador a Chile. En el noreste, la Confederación haudenosaunee unía a cinco naciones bajo su Gran Ley de la Paz. Al otro lado del Pacífico, los navegantes polinesios habían poblado todas las islas habitables, de Hawái a Rapa Nui y Aotearoa, adonde los maoríes habían llegado hacia 1320-1350, y en Pohnpei los reyes saudeleur gobernaban desde Nan Madol. En 1492, Colón desembarcó en las Bahamas. En pocas décadas, la conquista española, la esclavitud y las epidemias de viruela y otras enfermedades matarían a gran parte de los pueblos indígenas del Caribe y de América."
+      },
+      "moves": [
+        {
+          "side": "voyages",
+          "path": [
+            [
+              -151.45,
+              -16.83
+            ],
+            [
+              -153.6,
+              0.0
+            ],
+            [
+              -155.7,
+              18.9
+            ]
+          ],
+          "label": {
+            "en": "To Hawaiʻi, about 1000–1250",
+            "es": "A Hawái, hacia 1000-1250"
+          }
+        },
+        {
+          "side": "voyages",
+          "path": [
+            [
+              -151.45,
+              -16.83
+            ],
+            [
+              -134.97,
+              -23.12
+            ],
+            [
+              -109.4,
+              -27.1
+            ]
+          ],
+          "label": {
+            "en": "To Rapa Nui, about 1150–1280",
+            "es": "A Rapa Nui, hacia 1150-1280"
+          }
+        },
+        {
+          "side": "voyages",
+          "path": [
+            [
+              -151.45,
+              -16.83
+            ],
+            [
+              -159.78,
+              -21.23
+            ],
+            [
+              -177.9,
+              -29.25
+            ],
+            [
+              175.6,
+              -37.6
+            ]
+          ],
+          "label": {
+            "en": "To Aotearoa, about 1320–1350",
+            "es": "A Aotearoa, hacia 1320-1350"
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "⛵",
+          "date": "1492-10-12",
+          "at": [
+            -74.48,
+            24.05
+          ],
+          "text": {
+            "en": "Columbus lands in the Bahamas, home of the Lucayan Taíno",
+            "es": "Colón desembarca en las Bahamas, tierra de los taínos lucayos"
+          }
+        }
+      ],
+      "show": [
+        "mexica-aztecs",
+        "purepecha-empire",
+        "inca-empire",
+        "taino",
+        "haudenosaunee-confederacy",
+        "hawaiian-chiefdoms",
+        "rapa-nui-people",
+        "maori",
+        "saudeleur-dynasty"
+      ]
+    },
+    {
+      "date": "1600",
+      "title": {
+        "en": "The world in 1600",
+        "es": "El mundo en 1600"
+      },
+      "camera": {
+        "lon": 55,
+        "lat": 20,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "By 1600 great Islamic empires ruled from the Balkans to Bengal, and Ming China drew in American silver. In Africa, Bornu, Kongo and Benin flourished, but European ships and the slave trade were reshaping the world.",
+        "es": "Hacia 1600, grandes imperios islámicos gobernaban de los Balcanes a Bengala, y la China Ming atraía la plata americana. En África florecían Bornu, el Congo y Benín, pero los barcos europeos y la trata de esclavos cambiaban el mundo."
+      },
+      "details": {
+        "en": "In 1600 the Ottomans, the Safavids of Shah Abbas and the Mughals of Akbar, three empires with gunpowder armies, ruled most of the Islamic world. Ming China and Joseon Korea had just fought off a Japanese invasion of Korea. Silver mined by Indigenous forced labourers and enslaved Africans in Spanish America reached China through Manila and Europe, tying the continents into one trading world for the first time. In Africa, Bornu under Idris Alooma was at its height, Kongo and Benin traded with the Portuguese, and the Atlantic slave trade was growing; Songhai had fallen to a Moroccan army in 1591. In the Americas, the Aztec and Inca empires had been destroyed and epidemics had killed millions. Yet the civilizations of this tour live on in their languages, faiths, foods and peoples.",
+        "es": "En 1600, los otomanos, los safávidas del sah Abás y los mogoles de Akbar, tres imperios con ejércitos de pólvora, gobernaban la mayor parte del mundo islámico. La China Ming y la Corea Joseon acababan de rechazar una invasión japonesa de Corea. La plata que extraían trabajadores indígenas forzados y africanos esclavizados en la América española llegaba a China a través de Manila y de Europa, y unía por primera vez a los continentes en un solo mundo comercial. En África, Bornu vivía su apogeo con Idris Alooma, el Congo y Benín comerciaban con los portugueses, y la trata atlántica de esclavos crecía; Songhai había caído ante un ejército marroquí en 1591. En América, los imperios azteca e inca habían sido destruidos y las epidemias habían matado a millones de personas. Aun así, las civilizaciones de este recorrido siguen vivas en sus lenguas, sus creencias, sus comidas y sus pueblos."
+      },
+      "events": [
+        {
+          "icon": "⚔️",
+          "date": "1591-03-13",
+          "at": [
+            -0.25,
+            16.7
+          ],
+          "text": {
+            "en": "A Moroccan army with firearms defeats Songhai at Tondibi",
+            "es": "Un ejército marroquí con armas de fuego derrota a Songhai en Tondibi"
+          }
+        },
+        {
+          "icon": "⛵",
+          "date": "1571",
+          "at": [
+            120.9842,
+            14.5995
+          ],
+          "text": {
+            "en": "The Spanish found Manila; galleons start carrying American silver to China",
+            "es": "Los españoles fundan Manila; los galeones empiezan a llevar plata americana a China"
+          }
+        }
+      ],
+      "show": [
+        "ottoman-empire",
+        "safavid-iran",
+        "mughal-empire",
+        "ming-dynasty",
+        "joseon",
+        "kanem-bornu-empire",
+        "kingdom-of-benin",
+        "kingdom-of-kongo",
+        "kingdom-of-mutapa"
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Between 4000 BC and 1600, civilizations rose on every inhabited continent, often with no contact between them, and almost all of them fell. They left writing and numbers, laws and faiths, crops, roads, cities and ideas that the whole world now shares. Their peoples did not vanish: the Maya, Quechua, Yoruba, Shona, Māori, Haudenosaunee and many others are their living heirs.",
+    "es": "Entre el 4000 a. C. y 1600 surgieron civilizaciones en todos los continentes habitados, muchas veces sin contacto entre sí, y casi todas cayeron. Dejaron la escritura y los números, leyes y religiones, cultivos, caminos, ciudades e ideas que hoy comparte el mundo entero. Sus pueblos no desaparecieron: mayas, quechuas, yorubas, shonas, maoríes, haudenosaunee y muchos otros son sus herederos vivos."
+  },
+  "sources": [
+    {
+      "title": "Cradle of civilization (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cradle_of_civilization"
+    },
+    {
+      "title": "Amarna letters (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Amarna_letters"
+    },
+    {
+      "title": "Late Bronze Age collapse (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Late_Bronze_Age_collapse"
+    },
+    {
+      "title": "Sea Peoples (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sea_Peoples"
+    },
+    {
+      "title": "Axial Age (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Axial_Age"
+    },
+    {
+      "title": "Silk Road (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Silk_Road"
+    },
+    {
+      "title": "Maritime Silk Road (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maritime_Silk_Road"
+    },
+    {
+      "title": "Indo-Roman trade relations (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Indo-Roman_trade_relations"
+    },
+    {
+      "title": "Fall of the Western Roman Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_the_Western_Roman_Empire"
+    },
+    {
+      "title": "Early Muslim conquests (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Early_Muslim_conquests"
+    },
+    {
+      "title": "Mongol conquests (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mongol_conquests"
+    },
+    {
+      "title": "Trans-Saharan trade (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Trans-Saharan_trade"
+    },
+    {
+      "title": "Indian Ocean trade (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Indian_Ocean_trade"
+    },
+    {
+      "title": "Ming treasure voyages (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ming_treasure_voyages"
+    },
+    {
+      "title": "Fall of Constantinople (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Constantinople"
+    },
+    {
+      "title": "Polynesian navigation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Polynesian_navigation"
+    },
+    {
+      "title": "Spanish conquest of the Aztec Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Spanish_conquest_of_the_Aztec_Empire"
+    },
+    {
+      "title": "Spanish conquest of the Inca Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Spanish_conquest_of_the_Inca_Empire"
+    },
+    {
+      "title": "Manila galleon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Manila_galleon"
+    },
+    {
+      "title": "Battle of Tondibi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Tondibi"
+    },
+    {
+      "title": "L'Anse aux Meadows (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/L'Anse_aux_Meadows"
+    },
+    {
+      "title": "Jōmon people (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jōmon_people"
+    },
+    {
+      "title": "Cucuteni–Trypillia culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cucuteni–Trypillia_culture"
+    },
+    {
+      "title": "Yangshao culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yangshao_culture"
+    },
+    {
+      "title": "Naqada culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Naqada_culture"
+    },
+    {
+      "title": "Sumer (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sumer"
+    },
+    {
+      "title": "Caral–Supe civilization (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Caral–Supe_civilization"
+    },
+    {
+      "title": "Indus Valley Civilisation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Indus_Valley_Civilisation"
+    },
+    {
+      "title": "Liangzhu culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Liangzhu_culture"
+    },
+    {
+      "title": "Elam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Elam"
+    },
+    {
+      "title": "Ancient Egypt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Egypt"
+    },
+    {
+      "title": "Minoan civilization (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Minoan_civilization"
+    },
+    {
+      "title": "Kerma culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kerma_culture"
+    },
+    {
+      "title": "Akkadian Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Akkadian_Empire"
+    },
+    {
+      "title": "Bactria–Margiana Archaeological Complex (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bactria–Margiana_Archaeological_Complex"
+    },
+    {
+      "title": "Assyria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Assyria"
+    },
+    {
+      "title": "Maya civilization (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maya_civilization"
+    },
+    {
+      "title": "Babylonia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Babylonia"
+    },
+    {
+      "title": "Erlitou culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Erlitou_culture"
+    },
+    {
+      "title": "Mycenaean Greece (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mycenaean_Greece"
+    },
+    {
+      "title": "Hittites (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hittites"
+    },
+    {
+      "title": "Lapita culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lapita_culture"
+    },
+    {
+      "title": "Shang dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shang_dynasty"
+    },
+    {
+      "title": "Mitanni (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mitanni"
+    },
+    {
+      "title": "Nok culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nok_culture"
+    },
+    {
+      "title": "Kuru kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kuru_kingdom"
+    },
+    {
+      "title": "Olmecs (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Olmecs"
+    },
+    {
+      "title": "Phoenicia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Phoenicia"
+    },
+    {
+      "title": "Zhou dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zhou_dynasty"
+    },
+    {
+      "title": "Đông Sơn culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Đông_Sơn_culture"
+    },
+    {
+      "title": "Ancient Israel and Judah (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Israel_and_Judah"
+    },
+    {
+      "title": "Sheba (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sheba"
+    },
+    {
+      "title": "Chavín culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chavín_culture"
+    },
+    {
+      "title": "Etruscan civilization (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Etruscan_civilization"
+    },
+    {
+      "title": "Ancient Carthage (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Carthage"
+    },
+    {
+      "title": "Celts (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Celts"
+    },
+    {
+      "title": "Ancient Greece (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Greece"
+    },
+    {
+      "title": "Paracas culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Paracas_culture"
+    },
+    {
+      "title": "Scythians (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Scythians"
+    },
+    {
+      "title": "Kingdom of Kush (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kush"
+    },
+    {
+      "title": "Ancient Rome (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Rome"
+    },
+    {
+      "title": "Zapotec civilization (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zapotec_civilization"
+    },
+    {
+      "title": "Magadha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Magadha"
+    },
+    {
+      "title": "Achaemenid Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Achaemenid_Empire"
+    },
+    {
+      "title": "Sogdia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sogdia"
+    },
+    {
+      "title": "Anuradhapura kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Anuradhapura_kingdom"
+    },
+    {
+      "title": "Maurya Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maurya_Empire"
+    },
+    {
+      "title": "Greco-Bactrian Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Greco-Bactrian_Kingdom"
+    },
+    {
+      "title": "Parthian Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Parthian_Empire"
+    },
+    {
+      "title": "Xiongnu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Xiongnu"
+    },
+    {
+      "title": "Han dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Han_dynasty"
+    },
+    {
+      "title": "Hopewell tradition (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hopewell_tradition"
+    },
+    {
+      "title": "Nazca culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nazca_culture"
+    },
+    {
+      "title": "Teotihuacan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Teotihuacan"
+    },
+    {
+      "title": "Silla (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Silla"
+    },
+    {
+      "title": "Goguryeo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Goguryeo"
+    },
+    {
+      "title": "Kushan Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kushan_Empire"
+    },
+    {
+      "title": "Kingdom of Aksum (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum"
+    },
+    {
+      "title": "Funan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Funan"
+    },
+    {
+      "title": "Moche culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Moche_culture"
+    },
+    {
+      "title": "Champa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Champa"
+    },
+    {
+      "title": "Sasanian Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sasanian_Empire"
+    },
+    {
+      "title": "Gupta Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gupta_Empire"
+    },
+    {
+      "title": "Ghana Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ghana_Empire"
+    },
+    {
+      "title": "Byzantine Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Byzantine_Empire"
+    },
+    {
+      "title": "Francia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Francia"
+    },
+    {
+      "title": "Makuria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Makuria"
+    },
+    {
+      "title": "Tiwanaku polity (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tiwanaku_polity"
+    },
+    {
+      "title": "Wari Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wari_Empire"
+    },
+    {
+      "title": "Tang dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tang_dynasty"
+    },
+    {
+      "title": "Tibetan Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tibetan_Empire"
+    },
+    {
+      "title": "Umayyad Caliphate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Umayyad_Caliphate"
+    },
+    {
+      "title": "Srivijaya (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Srivijaya"
+    },
+    {
+      "title": "Kanem–Bornu Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kanem–Bornu_Empire"
+    },
+    {
+      "title": "Nara period (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nara_period"
+    },
+    {
+      "title": "Al-Andalus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Al-Andalus"
+    },
+    {
+      "title": "Mataram kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mataram_kingdom"
+    },
+    {
+      "title": "Abbasid Caliphate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Abbasid_Caliphate"
+    },
+    {
+      "title": "Ancestral Puebloans (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ancestral_Puebloans"
+    },
+    {
+      "title": "Vikings (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vikings"
+    },
+    {
+      "title": "Heian period (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Heian_period"
+    },
+    {
+      "title": "Marajoara culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Marajoara_culture"
+    },
+    {
+      "title": "Muisca Confederations (political units) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Muisca_Confederations_(political_units)"
+    },
+    {
+      "title": "Swahili coast (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Swahili_coast"
+    },
+    {
+      "title": "Khmer Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khmer_Empire"
+    },
+    {
+      "title": "Chola dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chola_dynasty"
+    },
+    {
+      "title": "Pagan Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pagan_Kingdom"
+    },
+    {
+      "title": "Kievan Rus' (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kievan_Rus'"
+    },
+    {
+      "title": "Chimor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chimor"
+    },
+    {
+      "title": "Fatimid Caliphate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fatimid_Caliphate"
+    },
+    {
+      "title": "Toltec (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Toltec"
+    },
+    {
+      "title": "Tuʻi Tonga Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tuʻi_Tonga_Empire"
+    },
+    {
+      "title": "Song dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Song_dynasty"
+    },
+    {
+      "title": "Holy Roman Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Holy_Roman_Empire"
+    },
+    {
+      "title": "Ife Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ife_Empire"
+    },
+    {
+      "title": "Mississippian period (archaeology) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mississippian_period_(archaeology)"
+    },
+    {
+      "title": "Seljuk Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Seljuk_Empire"
+    },
+    {
+      "title": "Ancient Hawaii (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Hawaii"
+    },
+    {
+      "title": "Saudeleur dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Saudeleur_dynasty"
+    },
+    {
+      "title": "Zagwe dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zagwe_dynasty"
+    },
+    {
+      "title": "Kingdom of Benin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Benin"
+    },
+    {
+      "title": "Rapa Nui people (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rapa_Nui_people"
+    },
+    {
+      "title": "Taíno (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Taíno"
+    },
+    {
+      "title": "Delhi Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Delhi_Sultanate"
+    },
+    {
+      "title": "Mongol Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mongol_Empire"
+    },
+    {
+      "title": "Kingdom of Great Zimbabwe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Great_Zimbabwe"
+    },
+    {
+      "title": "Mali Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mali_Empire"
+    },
+    {
+      "title": "Mamluk Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mamluk_Sultanate"
+    },
+    {
+      "title": "Majapahit (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Majapahit"
+    },
+    {
+      "title": "Ottoman Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ottoman_Empire"
+    },
+    {
+      "title": "Purépecha Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Purépecha_Empire"
+    },
+    {
+      "title": "Māori people (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Māori_people"
+    },
+    {
+      "title": "Aztecs (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aztecs"
+    },
+    {
+      "title": "Vijayanagara Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vijayanagara_Empire"
+    },
+    {
+      "title": "Ayutthaya Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ayutthaya_Kingdom"
+    },
+    {
+      "title": "Ming dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ming_dynasty"
+    },
+    {
+      "title": "Timurid Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Timurid_Empire"
+    },
+    {
+      "title": "Kingdom of Kongo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kongo"
+    },
+    {
+      "title": "Joseon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Joseon"
+    },
+    {
+      "title": "Malacca Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Malacca_Sultanate"
+    },
+    {
+      "title": "Mutapa Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mutapa_Empire"
+    },
+    {
+      "title": "Inca Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Inca_Empire"
+    },
+    {
+      "title": "Haudenosaunee (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Haudenosaunee"
+    },
+    {
+      "title": "Songhai Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Songhai_Empire"
+    },
+    {
+      "title": "Safavid Iran (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Safavid_Iran"
+    },
+    {
+      "title": "Mughal Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mughal_Empire"
+    },
+    {
+      "title": "Asante Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Asante_Empire"
+    }
+  ]
+}

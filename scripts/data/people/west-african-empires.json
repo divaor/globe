@@ -490,37 +490,6 @@
       ],
       "places": [
         {
-          "id": "ghana-empire",
-          "name": {
-            "en": "Ghana Empire (Wagadu)",
-            "es": "Imperio de Ghana (Wagadu)"
-          },
-          "at": [
-            -8.5,
-            15.3
-          ],
-          "cat": "culture",
-          "type": "culture",
-          "date": "300",
-          "until": "1240",
-          "place": {
-            "en": "Southeast Mauritania and western Mali",
-            "es": "Sureste de Mauritania y oeste de Malí"
-          },
-          "text": {
-            "en": "The Soninke kingdom of Wagadu, which Arab writers called Ghana after the title of its king, \"war chief\". It grew rich by taxing gold going north and salt coming south.",
-            "es": "El reino soninké de Wagadu, que los escritores árabes llamaron Ghana por el título de su rey, «jefe de guerra». Se enriqueció cobrando impuestos al oro que iba al norte y a la sal que venía al sur."
-          },
-          "details": {
-            "en": "No one knows when it began; many historians suggest around the 3rd to 4th century, when camels reached the western Sahara. Soninke tradition says the hero Dinga won the land from a great serpent, Bida, who gave rain and gold in return for a maiden every year, and that Wagadu fell when a young man killed the snake to save his bride; drought and dispersal followed. Ghana did not own the goldfields, which lay far to the south.",
-            "es": "Nadie sabe cuándo empezó; muchos historiadores proponen hacia los siglos III o IV, cuando los camellos llegaron al Sahara occidental. La tradición soninké cuenta que el héroe Dinga ganó la tierra a una gran serpiente, Bida, que daba lluvia y oro a cambio de una doncella cada año, y que Wagadu cayó cuando un joven mató a la serpiente para salvar a su novia; luego vinieron la sequía y la dispersión. Ghana no poseía los yacimientos de oro, que estaban mucho más al sur."
-          },
-          "wiki": {
-            "en": "Ghana Empire",
-            "es": "Imperio de Ghana"
-          }
-        },
-        {
           "id": "camel-caravans",
           "name": {
             "en": "Camel caravans",
@@ -598,6 +567,9 @@
             "es": "Siyilmasa"
           }
         }
+      ],
+      "show": [
+        "empire-of-ghana"
       ]
     },
     {
@@ -1167,34 +1139,10 @@
             "en": "Niani, Guinea",
             "es": "Niani"
           }
-        },
-        {
-          "id": "mali-empire",
-          "name": {
-            "en": "Mali Empire",
-            "es": "Imperio de Malí"
-          },
-          "at": [
-            -7.2,
-            12.0
-          ],
-          "cat": "culture",
-          "type": "culture",
-          "date": "1235",
-          "until": "1670",
-          "place": {
-            "en": "Mali, Senegal, the Gambia, Guinea and Mauritania",
-            "es": "Malí, Senegal, Gambia, Guinea y Mauritania"
-          },
-          "text": {
-            "en": "The empire of the Mande peoples, from about 1235 to the 1600s. At its peak under Mansa Musa it covered some 1.3 million km², from the Atlantic to beyond the Niger bend.",
-            "es": "El imperio de los pueblos mandinga, de hacia 1235 a los años 1600. En su apogeo, con Mansa Musa, abarcaba unos 1,3 millones de km², del Atlántico hasta más allá del recodo del Níger."
-          },
-          "wiki": {
-            "en": "Mali Empire",
-            "es": "Imperio de Mali"
-          }
         }
+      ],
+      "show": [
+        "empire-of-mali"
       ]
     },
     {
@@ -1698,33 +1646,6 @@
       ],
       "places": [
         {
-          "id": "songhai-empire",
-          "name": {
-            "en": "Songhai Empire",
-            "es": "Imperio songhai"
-          },
-          "at": [
-            -0.5,
-            15.6
-          ],
-          "cat": "culture",
-          "type": "culture",
-          "date": "1464",
-          "until": "1591",
-          "place": {
-            "en": "Niger valley, Mali and Niger",
-            "es": "Valle del Níger, Malí y Níger"
-          },
-          "text": {
-            "en": "The Songhai people of the middle Niger built the largest of the three empires in the 15th and 16th centuries, ruled first by the Sunni and then by the Askia dynasty.",
-            "es": "El pueblo songhai del curso medio del Níger construyó el mayor de los tres imperios en los siglos XV y XVI, gobernado primero por la dinastía Sunni y después por la Askia."
-          },
-          "wiki": {
-            "en": "Songhai Empire",
-            "es": "Imperio songhai"
-          }
-        },
-        {
           "id": "gao",
           "name": {
             "en": "Gao",
@@ -1776,6 +1697,9 @@
             "es": "Sonni Alí"
           }
         }
+      ],
+      "show": [
+        "empire-of-songhai"
       ]
     },
     {

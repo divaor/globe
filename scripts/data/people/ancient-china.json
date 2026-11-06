@@ -724,37 +724,6 @@
       },
       "places": [
         {
-          "id": "yangshao-culture",
-          "name": {
-            "en": "Yangshao culture",
-            "es": "Cultura de Yangshao"
-          },
-          "at": [
-            111.77,
-            34.81
-          ],
-          "cat": "culture",
-          "type": "culture",
-          "date": "-5000",
-          "until": "-3000",
-          "place": {
-            "en": "Middle Yellow River, China (type site: Yangshao, Henan)",
-            "es": "Curso medio del río Amarillo, China (sitio tipo: Yangshao, Henan)"
-          },
-          "text": {
-            "en": "Farming villages of the middle Yellow River from about 5000 to 3000 BC. They grew millet, kept pigs and dogs, and painted red pottery with fish, faces and spirals.",
-            "es": "Aldeas agrícolas del curso medio del río Amarillo, entre el 5000 y el 3000 a. C. Cultivaban mijo, criaban cerdos y perros y pintaban cerámica roja con peces, rostros y espirales."
-          },
-          "details": {
-            "en": "The culture is named after Yangshao village in Henan, where the Swedish geologist Johan Gunnar Andersson dug in 1921. Thousands of Yangshao sites are now known. People lived in round or square houses half sunk into the ground, made fine painted pots without a potter's wheel and brewed a kind of beer from millet and rice. Late in the period the first rammed-earth town wall in China rose at Xishan, near Zhengzhou.",
-            "es": "La cultura lleva el nombre de la aldea de Yangshao, en Henan, donde excavó en 1921 el geólogo sueco Johan Gunnar Andersson. Hoy se conocen miles de sitios Yangshao. La gente vivía en casas redondas o cuadradas medio hundidas en el suelo, hacía finas vasijas pintadas sin torno y elaboraba una especie de cerveza de mijo y arroz. Al final del período se levantó en Xishan, cerca de Zhengzhou, la primera muralla de tierra apisonada de China."
-          },
-          "wiki": {
-            "en": "Yangshao culture",
-            "es": "Cultura de Yangshao"
-          }
-        },
-        {
           "id": "banpo",
           "name": {
             "en": "Banpo village",
@@ -811,6 +780,9 @@
             "es": "Cultura Hemudu"
           }
         }
+      ],
+      "show": [
+        "yangshao-neolithic"
       ]
     },
     {
@@ -1151,33 +1123,6 @@
       },
       "places": [
         {
-          "id": "shang-dynasty",
-          "name": {
-            "en": "Shang dynasty",
-            "es": "Dinastía Shang"
-          },
-          "at": [
-            112.765,
-            34.708
-          ],
-          "cat": "culture",
-          "type": "culture",
-          "date": "-1600",
-          "until": "-1046",
-          "place": {
-            "en": "Yellow River plain, China (Yanshi Shang City, an early capital)",
-            "es": "Llanura del río Amarillo, China (ciudad Shang de Yanshi, una capital temprana)"
-          },
-          "text": {
-            "en": "China's first dynasty known from its own writing, about 1600 to 1046 BC. Tradition says its founder Tang overthrew the last Xia king; its 31 kings ruled with bronze, chariots and divination.",
-            "es": "La primera dinastía china conocida por su propia escritura, hacia el 1600-1046 a. C. La tradición dice que su fundador, Tang, derrocó al último rey Xia; sus 31 reyes gobernaron con bronce, carros y adivinación."
-          },
-          "wiki": {
-            "en": "Shang dynasty",
-            "es": "Dinastía Shang"
-          }
-        },
-        {
           "id": "zhengzhou-shang-city",
           "name": {
             "en": "Zhengzhou Shang City",
@@ -1231,6 +1176,9 @@
             "es": "Panlongcheng"
           }
         }
+      ],
+      "show": [
+        "shang-china"
       ]
     },
     {

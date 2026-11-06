@@ -165,37 +165,6 @@
       ],
       "places": [
         {
-          "id": "funan",
-          "name": {
-            "en": "Funan",
-            "es": "Funán"
-          },
-          "at": [
-            104.95,
-            10.93
-          ],
-          "cat": "culture",
-          "type": "culture",
-          "date": "100",
-          "until": "600",
-          "place": {
-            "en": "Mekong delta, Cambodia and Vietnam",
-            "es": "Delta del Mekong, Camboya y Vietnam"
-          },
-          "text": {
-            "en": "The Chinese name for the first great kingdom of the Mekong delta, from about the 1st to the 6th century. Its kings took Indian titles, and its ports linked India with China.",
-            "es": "El nombre chino del primer gran reino del delta del Mekong, entre los siglos I y VI aproximadamente. Sus reyes usaban títulos indios y sus puertos unían la India con China."
-          },
-          "details": {
-            "en": "We do not know what its people called it: \"Funan\" comes from Chinese books, based largely on two envoys, Kang Tai and Zhu Ying, who stayed there around 245–250. They described walled towns, a king in a palace, taxes paid in gold, silver and pearls, and books kept in archives. A founding legend tells of a foreign Brahmin, Kaundinya, who married the local naga princess Soma; later Khmer kings still claimed descent from them.",
-            "es": "No sabemos cómo lo llamaba su gente: «Funán» viene de libros chinos, basados sobre todo en dos enviados, Kang Tai y Zhu Ying, que estuvieron allí hacia el 245-250. Describieron ciudades amuralladas, un rey en un palacio, impuestos pagados en oro, plata y perlas, y libros guardados en archivos. Una leyenda fundacional cuenta que un brahmán extranjero, Kaundinya, se casó con la princesa naga del lugar, Soma; los reyes jemeres posteriores aún decían descender de ellos."
-          },
-          "wiki": {
-            "en": "Funan",
-            "es": "Reino de Funan"
-          }
-        },
-        {
           "id": "oc-eo",
           "name": {
             "en": "Óc Eo",
@@ -247,6 +216,9 @@
             "es": "Angkor Borei"
           }
         }
+      ],
+      "show": [
+        "kingdom-of-funan"
       ]
     },
     {
@@ -504,34 +476,10 @@
             "en": "Hariharalaya",
             "es": "Indravarman I"
           }
-        },
-        {
-          "id": "khmer-empire",
-          "name": {
-            "en": "Khmer Empire",
-            "es": "Imperio jemer"
-          },
-          "at": [
-            103.875,
-            13.43
-          ],
-          "cat": "culture",
-          "type": "culture",
-          "date": "802",
-          "until": "1431",
-          "place": {
-            "en": "Mainland Southeast Asia, centred on Angkor, Cambodia",
-            "es": "Sudeste asiático continental, con centro en Angkor, Camboya"
-          },
-          "text": {
-            "en": "The empire its people called Kambuja, from 802 to 1431. At its height it ruled most of Cambodia, Thailand, Laos and southern Vietnam from Angkor.",
-            "es": "El imperio que su gente llamaba Kambuja, del 802 al 1431. En su apogeo gobernó desde Angkor la mayor parte de Camboya, Tailandia, Laos y el sur de Vietnam."
-          },
-          "wiki": {
-            "en": "Khmer Empire",
-            "es": "Imperio jemer"
-          }
         }
+      ],
+      "show": [
+        "khmer-civilization"
       ]
     },
     {
@@ -1925,33 +1873,6 @@
       ],
       "places": [
         {
-          "id": "ayutthaya",
-          "name": {
-            "en": "Ayutthaya",
-            "es": "Ayutthaya"
-          },
-          "at": [
-            100.5683,
-            14.3556
-          ],
-          "cat": "city",
-          "type": "site",
-          "date": "1351",
-          "until": "1767",
-          "place": {
-            "en": "Ayutthaya, Thailand",
-            "es": "Ayutthaya, Tailandia"
-          },
-          "text": {
-            "en": "The Siamese capital founded in 1351, which became Angkor's great rival. Its armies besieged Angkor in 1352 and sacked it in 1431.",
-            "es": "La capital siamesa fundada en 1351, que se convirtió en la gran rival de Angkor. Sus ejércitos asediaron Angkor en 1352 y la saquearon en 1431."
-          },
-          "wiki": {
-            "en": "Ayutthaya Kingdom",
-            "es": "Reino de Ayutthaya"
-          }
-        },
-        {
           "id": "phnom-penh",
           "name": {
             "en": "Phnom Penh and Wat Phnom",
@@ -2057,6 +1978,9 @@
             "es": "Angkor Wat"
           }
         }
+      ],
+      "show": [
+        "ayutthaya-kingdom"
       ]
     },
     {
