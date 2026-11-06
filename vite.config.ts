@@ -52,7 +52,10 @@ export default defineConfig({
           { urlPattern: ({ url }) => url.pathname.includes('/flags/'), handler: 'CacheFirst', options: { cacheName: 'atlas-flags', expiration: { maxEntries: 300 } } },
           // Pictures on the stories' cards: Wikipedia summaries and their thumbnails, kept once seen.
           { urlPattern: ({ url }) => /\.wikipedia\.org$/.test(url.hostname) && url.pathname.startsWith('/api/rest_v1/page/summary/'), handler: 'StaleWhileRevalidate', options: { cacheName: 'atlas-wiki', expiration: { maxEntries: 600, maxAgeSeconds: 60 * 60 * 24 * 60 }, cacheableResponse: { statuses: [0, 200] } } },
-          { urlPattern: ({ url }) => url.hostname === 'upload.wikimedia.org', handler: 'CacheFirst', options: { cacheName: 'atlas-wiki-img', expiration: { maxEntries: 600, maxAgeSeconds: 60 * 60 * 24 * 90 }, cacheableResponse: { statuses: [0, 200] } } },
+          // A story item's own picture: Commons answers with a redirect to the thumbnail.
+          { urlPattern: ({ url }) => url.hostname === 'commons.wikimedia.org' && url.pathname.startsWith('/wiki/Special:FilePath/'), handler: 'CacheFirst', options: { cacheName: 'atlas-wiki-img', expiration: { maxEntries: 600, maxAgeSeconds: 60 * 60 * 24 * 90 }, cacheableResponse: { statuses: [0, 200] } } },
+          // Wikimedia serves pictures from thumb.wikimedia.org now, and from upload.wikimedia.org before.
+          { urlPattern: ({ url }) => url.hostname === 'upload.wikimedia.org' || url.hostname === 'thumb.wikimedia.org', handler: 'CacheFirst', options: { cacheName: 'atlas-wiki-img', expiration: { maxEntries: 600, maxAgeSeconds: 60 * 60 * 24 * 90 }, cacheableResponse: { statuses: [0, 200] } } },
         ],
       },
     }),

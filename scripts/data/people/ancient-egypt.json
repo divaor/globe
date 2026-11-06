@@ -1,0 +1,2878 @@
+{
+  "id": "ancient-egypt",
+  "name": {
+    "en": "Ancient Egypt",
+    "es": "El antiguo Egipto"
+  },
+  "icon": "🪲",
+  "era": "ancient",
+  "region": {
+    "en": "The Nile valley, Egypt and Nubia",
+    "es": "El valle del Nilo, Egipto y Nubia"
+  },
+  "start": "-3500",
+  "end": "-30",
+  "summary": {
+    "en": "For 3,000 years the pharaohs ruled the Nile valley: from Narmer and the pyramids through Hatshepsut, Akhenaten and Ramesses II to Cleopatra, the last of them, in 30 BC.",
+    "es": "Durante 3000 años los faraones gobernaron el valle del Nilo: de Narmer y las pirámides a Hatshepsut, Akenatón y Ramsés II, y hasta Cleopatra, la última, en el 30 a. C."
+  },
+  "camera": {
+    "lon": 31.5,
+    "lat": 27,
+    "zoom": 5
+  },
+  "sides": [
+    {
+      "id": "upper",
+      "name": {
+        "en": "Upper Egypt (Naqada)",
+        "es": "Alto Egipto (Naqada)"
+      },
+      "color": "#e67e22"
+    },
+    {
+      "id": "lower",
+      "name": {
+        "en": "Lower Egypt (Maadi-Buto)",
+        "es": "Bajo Egipto (Maadi-Buto)"
+      },
+      "color": "#16a085"
+    },
+    {
+      "id": "egypt",
+      "name": {
+        "en": "Kingdom of Egypt",
+        "es": "Reino de Egipto"
+      },
+      "color": "#d4a017"
+    },
+    {
+      "id": "hyksos",
+      "name": {
+        "en": "Hyksos kingdom",
+        "es": "Reino de los hicsos"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "kush",
+      "name": {
+        "en": "Kush (Nubia)",
+        "es": "Kush (Nubia)"
+      },
+      "color": "#8e5a2b"
+    },
+    {
+      "id": "persia",
+      "name": {
+        "en": "Persian Empire",
+        "es": "Imperio persa"
+      },
+      "color": "#5d6d7e"
+    },
+    {
+      "id": "ptolemies",
+      "name": {
+        "en": "Ptolemaic Egypt",
+        "es": "Egipto ptolemaico"
+      },
+      "color": "#2e6f9e"
+    },
+    {
+      "id": "rome",
+      "name": {
+        "en": "Roman Empire",
+        "es": "Imperio romano"
+      },
+      "color": "#c0392b"
+    }
+  ],
+  "defs": {
+    "eg3000": {
+      "hist": "Egypt",
+      "year": -3000
+    },
+    "eg2000": {
+      "hist": "Egypt",
+      "year": -2000
+    },
+    "semna": {
+      "land": [
+        [
+          30.5,
+          21.3
+        ],
+        [
+          31.6,
+          21.3
+        ],
+        [
+          32.2,
+          22.4
+        ],
+        [
+          31.0,
+          22.4
+        ]
+      ]
+    },
+    "upper_3500": {
+      "and": [
+        {
+          "ref": "eg3000"
+        },
+        {
+          "poly": [
+            [
+              24.0,
+              24.0
+            ],
+            [
+              37.0,
+              24.0
+            ],
+            [
+              37.0,
+              28.6
+            ],
+            [
+              24.0,
+              28.6
+            ]
+          ]
+        }
+      ]
+    },
+    "lower_3500": {
+      "and": [
+        {
+          "ref": "eg3000"
+        },
+        {
+          "poly": [
+            [
+              24.0,
+              29.7
+            ],
+            [
+              37.0,
+              29.7
+            ],
+            [
+              37.0,
+              32.0
+            ],
+            [
+              24.0,
+              32.0
+            ]
+          ]
+        }
+      ]
+    },
+    "egypt_old": {
+      "and": [
+        {
+          "ref": "eg3000"
+        },
+        {
+          "poly": [
+            [
+              24.0,
+              24.0
+            ],
+            [
+              37.0,
+              24.0
+            ],
+            [
+              37.0,
+              32.0
+            ],
+            [
+              24.0,
+              32.0
+            ]
+          ]
+        }
+      ]
+    },
+    "egypt_mk": [
+      {
+        "ref": "eg2000"
+      },
+      {
+        "ref": "semna"
+      }
+    ],
+    "hyksos_1650": {
+      "and": [
+        {
+          "ref": "eg2000"
+        },
+        {
+          "poly": [
+            [
+              24.0,
+              27.4
+            ],
+            [
+              37.0,
+              27.4
+            ],
+            [
+              37.0,
+              32.0
+            ],
+            [
+              24.0,
+              32.0
+            ]
+          ]
+        }
+      ]
+    },
+    "thebes_1650": {
+      "and": [
+        {
+          "ref": "eg2000"
+        },
+        {
+          "poly": [
+            [
+              24.0,
+              24.0
+            ],
+            [
+              37.0,
+              24.0
+            ],
+            [
+              37.0,
+              27.4
+            ],
+            [
+              24.0,
+              27.4
+            ]
+          ]
+        }
+      ]
+    },
+    "kerma_1650": [
+      {
+        "hist": "Kerma",
+        "year": -2000
+      },
+      {
+        "and": [
+          {
+            "ref": "eg2000"
+          },
+          {
+            "poly": [
+              [
+                24.0,
+                15.0
+              ],
+              [
+                37.0,
+                15.0
+              ],
+              [
+                37.0,
+                24.0
+              ],
+              [
+                24.0,
+                24.0
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "ref": "semna"
+      }
+    ],
+    "nubia_nk": {
+      "and": [
+        {
+          "hist": "Kush",
+          "year": -1500
+        },
+        {
+          "poly": [
+            [
+              24.0,
+              18.2
+            ],
+            [
+              37.0,
+              18.2
+            ],
+            [
+              37.0,
+              24.0
+            ],
+            [
+              24.0,
+              24.0
+            ]
+          ]
+        }
+      ]
+    },
+    "sinai": {
+      "land": [
+        [
+          32.3,
+          31.3
+        ],
+        [
+          34.25,
+          31.32
+        ],
+        [
+          34.95,
+          29.5
+        ],
+        [
+          34.3,
+          27.8
+        ],
+        [
+          33.5,
+          28.3
+        ],
+        [
+          32.55,
+          29.95
+        ]
+      ]
+    },
+    "levant_1450": {
+      "land": [
+        [
+          34.25,
+          31.32
+        ],
+        [
+          34.55,
+          31.6
+        ],
+        [
+          34.95,
+          32.6
+        ],
+        [
+          35.1,
+          33.2
+        ],
+        [
+          35.5,
+          34.0
+        ],
+        [
+          35.85,
+          35.0
+        ],
+        [
+          35.9,
+          35.8
+        ],
+        [
+          36.2,
+          36.4
+        ],
+        [
+          37.2,
+          36.6
+        ],
+        [
+          38.0,
+          36.8
+        ],
+        [
+          38.2,
+          36.3
+        ],
+        [
+          38.4,
+          35.5
+        ],
+        [
+          37.6,
+          34.6
+        ],
+        [
+          37.0,
+          33.6
+        ],
+        [
+          36.7,
+          32.6
+        ],
+        [
+          36.4,
+          31.6
+        ],
+        [
+          35.6,
+          30.4
+        ],
+        [
+          35.0,
+          29.5
+        ]
+      ]
+    },
+    "levant_1270": {
+      "land": [
+        [
+          34.25,
+          31.32
+        ],
+        [
+          34.55,
+          31.6
+        ],
+        [
+          34.95,
+          32.6
+        ],
+        [
+          35.1,
+          33.2
+        ],
+        [
+          35.5,
+          34.0
+        ],
+        [
+          35.9,
+          34.6
+        ],
+        [
+          36.6,
+          34.5
+        ],
+        [
+          36.9,
+          33.6
+        ],
+        [
+          36.6,
+          32.6
+        ],
+        [
+          36.3,
+          31.6
+        ],
+        [
+          35.6,
+          30.4
+        ],
+        [
+          35.0,
+          29.5
+        ]
+      ]
+    },
+    "egypt_nk": [
+      {
+        "hist": "Egypt",
+        "year": -1500
+      },
+      {
+        "ref": "nubia_nk"
+      },
+      {
+        "ref": "sinai"
+      },
+      {
+        "ref": "levant_1450"
+      }
+    ],
+    "egypt_1270": [
+      {
+        "hist": "Egypt",
+        "year": -1500
+      },
+      {
+        "ref": "nubia_nk"
+      },
+      {
+        "ref": "sinai"
+      },
+      {
+        "ref": "levant_1270"
+      }
+    ],
+    "egypt_1175": [
+      {
+        "hist": "Egypt",
+        "year": -1000
+      },
+      {
+        "and": [
+          {
+            "hist": "Kush",
+            "year": -1000
+          },
+          {
+            "poly": [
+              [
+                24.0,
+                18.2
+              ],
+              [
+                37.0,
+                18.2
+              ],
+              [
+                37.0,
+                24.0
+              ],
+              [
+                24.0,
+                24.0
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "ref": "sinai"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "date": "-3500",
+      "title": {
+        "en": "Naqada and the first kings",
+        "es": "Naqada y los primeros reyes"
+      },
+      "camera": {
+        "lon": 31.4,
+        "lat": 26.8,
+        "zoom": 6.0
+      },
+      "text": {
+        "en": "As the Sahara dried, its herders joined the farmers of the Nile. In the south the Naqada culture grew rich on gold and trade, and its chiefs at Hierakonpolis and Naqada were buried like kings.",
+        "es": "Al secarse el Sahara, sus pastores se unieron a los agricultores del Nilo. En el sur, la cultura de Naqada se enriqueció con el oro y el comercio, y sus jefes de Hieracómpolis y Naqada fueron enterrados como reyes."
+      },
+      "details": {
+        "en": "Every summer the Nile flooded and left a layer of black silt on its banks, so farmers could grow wheat, barley and flax with almost no rain; Egyptians called their land Kemet, 'the black land'. Egypt's roots were African. Cattle herders from the Sahara, which was drying out, moved into the valley with their herds and, many scholars think, with beliefs about cattle and kingship. By 3500 BC the Naqada culture of the south made fine painted pots and stone vases, mined gold in the eastern desert and traded with Nubia and the Near East. In the north, the Maadi-Buto culture traded with Canaan. Over the next centuries the southern way of life spread down the whole valley.",
+        "es": "Cada verano el Nilo se desbordaba y dejaba en sus orillas una capa de limo negro, así que los agricultores podían cultivar trigo, cebada y lino casi sin lluvia; los egipcios llamaban a su tierra Kemet, «la tierra negra». Las raíces de Egipto eran africanas. Pastores del Sahara, que se iba secando, llegaron al valle con sus rebaños y, según muchos estudiosos, con creencias sobre el ganado y la realeza. Hacia el 3500 a. C., la cultura de Naqada del sur hacía fina cerámica pintada y vasos de piedra, extraía oro en el desierto oriental y comerciaba con Nubia y el Oriente Próximo. En el norte, la cultura de Maadi-Buto comerciaba con Canaán. En los siglos siguientes, el modo de vida del sur se extendió por todo el valle."
+      },
+      "control": {
+        "upper": {
+          "ref": "upper_3500"
+        },
+        "lower": {
+          "ref": "lower_3500"
+        }
+      },
+      "places": [
+        {
+          "id": "nabta-playa",
+          "name": {
+            "en": "Nabta Playa",
+            "es": "Nabta Playa"
+          },
+          "at": [
+            30.7256,
+            22.508
+          ],
+          "cat": "art",
+          "type": "site",
+          "date": "-7500",
+          "place": {
+            "en": "Western Desert, west of Abu Simbel, Egypt",
+            "es": "Desierto Occidental, al oeste de Abu Simbel, Egipto"
+          },
+          "text": {
+            "en": "A seasonal lake in the Sahara where herders gathered from about 7500 BC. Later they buried cattle under stone mounds and set up a ring of stones that seems to point to the summer sunrise.",
+            "es": "Un lago estacional del Sahara donde se reunían pastores desde hacia el 7500 a. C. Más tarde enterraron ganado bajo túmulos de piedra y levantaron un círculo de piedras que parece señalar la salida del sol en verano."
+          },
+          "wiki": {
+            "en": "Nabta Playa",
+            "es": "Nabta Playa"
+          }
+        },
+        {
+          "id": "hierakonpolis",
+          "name": {
+            "en": "Hierakonpolis (Nekhen)",
+            "es": "Hieracómpolis (Nejen)"
+          },
+          "at": [
+            32.7794,
+            25.0972
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-3500",
+          "place": {
+            "en": "Kom el-Ahmar, Aswan, Egypt",
+            "es": "Kom el-Ahmar, Asuán, Egipto"
+          },
+          "text": {
+            "en": "The 'city of the falcon', capital of Upper Egypt before unification and sacred to the god Horus. It had breweries and the oldest painted tomb in Egypt, from about 3500–3200 BC.",
+            "es": "La «ciudad del halcón», capital del Alto Egipto antes de la unificación y consagrada al dios Horus. Tenía cervecerías y la tumba pintada más antigua de Egipto, de hacia 3500-3200 a. C."
+          },
+          "wiki": {
+            "en": "Hierakonpolis",
+            "es": "Hieracómpolis"
+          }
+        },
+        {
+          "id": "maadi-buto-culture",
+          "name": {
+            "en": "Maadi-Buto culture",
+            "es": "Cultura de Maadi-Buto"
+          },
+          "at": [
+            31.262,
+            29.975
+          ],
+          "cat": "culture",
+          "type": "culture",
+          "date": "-3900",
+          "until": "-3300",
+          "place": {
+            "en": "Maadi (Cairo) and Buto, Egypt",
+            "es": "Maadi (El Cairo) y Buto, Egipto"
+          },
+          "text": {
+            "en": "The culture of Lower Egypt and the Delta, with villages of oval huts and underground houses. Its traders dealt in copper and wine with Canaan before the Naqada way of life replaced it.",
+            "es": "La cultura del Bajo Egipto y el delta, con aldeas de chozas ovaladas y casas subterráneas. Sus comerciantes intercambiaban cobre y vino con Canaán, hasta que el modo de vida de Naqada la reemplazó."
+          },
+          "wiki": {
+            "en": "Maadi-Buto culture",
+            "es": "Maadi"
+          }
+        },
+        {
+          "id": "gerzeh-iron-beads",
+          "name": {
+            "en": "Gerzeh iron beads",
+            "es": "Cuentas de hierro de Gerzeh"
+          },
+          "at": [
+            31.2,
+            29.45
+          ],
+          "cat": "knowledge",
+          "type": "work",
+          "date": "-3200",
+          "place": {
+            "en": "Gerzeh, near the Faiyum, Egypt",
+            "es": "Gerzeh, cerca de El Fayum, Egipto"
+          },
+          "text": {
+            "en": "Tube beads hammered from meteorite iron and buried around 3200 BC: the oldest iron objects from Egypt, 2,000 years before iron was smelted there. Later Egyptians called iron 'metal of heaven'.",
+            "es": "Cuentas hechas a martillo con hierro de meteorito y enterradas hacia el 3200 a. C.: los objetos de hierro más antiguos de Egipto, 2000 años antes de que allí se fundiera hierro. Luego lo llamaron «metal del cielo»."
+          },
+          "wiki": {
+            "en": "Meteoric iron",
+            "es": "Hierro meteórico"
+          }
+        }
+      ],
+      "show": [
+        "predynastic-naqada"
+      ]
+    },
+    {
+      "date": "-3100",
+      "title": {
+        "en": "Narmer unites Egypt",
+        "es": "Narmer une Egipto"
+      },
+      "camera": {
+        "lon": 31.4,
+        "lat": 27.2,
+        "zoom": 6.0
+      },
+      "text": {
+        "en": "Around 3100 BC Narmer, a king from the south, ruled both Upper and Lower Egypt. His dynasty founded Memphis, wrote with the first hieroglyphs and began 3,000 years of pharaohs.",
+        "es": "Hacia el 3100 a. C., Narmer, un rey del sur, gobernó a la vez el Alto y el Bajo Egipto. Su dinastía fundó Menfis, escribió con los primeros jeroglíficos e inició 3000 años de faraones."
+      },
+      "details": {
+        "en": "No one knows exactly how unification happened: it may have taken generations of war, marriage and trade. Later Egyptians remembered a first king called Menes, and most Egyptologists think he was Narmer. On the Narmer Palette the king wears the white crown of the south on one side and the red crown of the north on the other. The kings of the First Dynasty were buried at Abydos, some with hundreds of servants who were killed to go with them, a custom that soon ended. They ruled from Memphis, where the valley opens into the Delta, and their officials used hieroglyphs to label goods and name the years.",
+        "es": "Nadie sabe con exactitud cómo ocurrió la unificación: quizá llevó generaciones de guerras, matrimonios y comercio. Los egipcios posteriores recordaban a un primer rey llamado Menes, y la mayoría de los egiptólogos cree que fue Narmer. En la Paleta de Narmer el rey lleva en un lado la corona blanca del sur y en el otro la corona roja del norte. Los reyes de la I Dinastía se enterraron en Abidos, algunos con cientos de sirvientes a los que mataron para que los acompañaran, una costumbre que pronto terminó. Gobernaban desde Menfis, donde el valle se abre en el delta, y sus funcionarios usaban jeroglíficos para etiquetar productos y nombrar los años."
+      },
+      "control": {
+        "egypt": {
+          "ref": "egypt_old"
+        },
+        "upper": null,
+        "lower": null
+      },
+      "places": [
+        {
+          "id": "narmer",
+          "name": {
+            "en": "Narmer",
+            "es": "Narmer"
+          },
+          "at": [
+            31.89,
+            26.34
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-3100",
+          "place": {
+            "en": "Thinis, near Girga, and Abydos, Egypt",
+            "es": "Tinis, cerca de Girga, y Abidos, Egipto"
+          },
+          "text": {
+            "en": "The king who united Egypt around 3100 BC, perhaps the legendary Menes. He came from the south, probably from Thinis near Abydos, where he was buried.",
+            "es": "El rey que unió Egipto hacia el 3100 a. C., quizá el legendario Menes. Venía del sur, probablemente de Tinis, cerca de Abidos, donde fue enterrado."
+          },
+          "wiki": {
+            "en": "Narmer",
+            "es": "Narmer"
+          }
+        },
+        {
+          "id": "narmer-palette",
+          "name": {
+            "en": "Narmer Palette",
+            "es": "Paleta de Narmer"
+          },
+          "at": [
+            32.7815,
+            25.0995
+          ],
+          "cat": "art",
+          "type": "work",
+          "date": "-3100",
+          "place": {
+            "en": "Found at Hierakonpolis; Egyptian Museum, Cairo",
+            "es": "Hallada en Hieracómpolis; Museo Egipcio, El Cairo"
+          },
+          "text": {
+            "en": "A 64 cm stone palette showing Narmer in the crowns of south and north, striking down an enemy. It bears some of the earliest hieroglyphs and has been called Egypt's oldest historical record.",
+            "es": "Una paleta de piedra de 64 cm que muestra a Narmer con las coronas del sur y del norte, golpeando a un enemigo. Lleva algunos de los primeros jeroglíficos y se la ha llamado el documento histórico más antiguo de Egipto."
+          },
+          "wiki": {
+            "en": "Narmer Palette",
+            "es": "Paleta de Narmer"
+          }
+        },
+        {
+          "id": "memphis",
+          "name": {
+            "en": "Memphis",
+            "es": "Menfis"
+          },
+          "at": [
+            31.255,
+            29.8494
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-3100",
+          "place": {
+            "en": "Mit Rahina, south of Cairo, Egypt",
+            "es": "Mit Rahina, al sur de El Cairo, Egipto"
+          },
+          "text": {
+            "en": "Egypt's first capital, said to have been founded by Menes where the valley meets the Delta. For 3,000 years it was a royal and religious centre; its stones were later used to build Cairo.",
+            "es": "La primera capital de Egipto, fundada según la tradición por Menes donde el valle se une al delta. Durante 3000 años fue un centro real y religioso; sus piedras se usaron después para construir El Cairo."
+          },
+          "wiki": {
+            "en": "Memphis, Egypt",
+            "es": "Menfis"
+          }
+        },
+        {
+          "id": "egyptian-hieroglyphs",
+          "name": {
+            "en": "Egyptian hieroglyphs",
+            "es": "Jeroglíficos egipcios"
+          },
+          "at": [
+            31.92,
+            26.2
+          ],
+          "cat": "writing",
+          "type": "invention",
+          "date": "-3250",
+          "place": {
+            "en": "First found at Abydos, Egypt",
+            "es": "Hallados primero en Abidos, Egipto"
+          },
+          "text": {
+            "en": "Picture signs that stood for sounds as well as ideas. The earliest, on bone labels from a ruler's tomb at Abydos, date to about 3250 BC, as old as the first writing of Mesopotamia.",
+            "es": "Signos con dibujos que representaban sonidos además de ideas. Los más antiguos, en etiquetas de hueso de una tumba real de Abidos, son de hacia el 3250 a. C., tan antiguos como la primera escritura de Mesopotamia."
+          },
+          "wiki": {
+            "en": "Egyptian hieroglyphs",
+            "es": "Jeroglíficos egipcios"
+          }
+        }
+      ],
+      "show": [
+        "ancient-egypt"
+      ]
+    },
+    {
+      "date": "-2560",
+      "title": {
+        "en": "The age of the pyramids",
+        "es": "La era de las pirámides"
+      },
+      "camera": {
+        "lon": 31.6,
+        "lat": 28.6,
+        "zoom": 7.5
+      },
+      "text": {
+        "en": "Old Kingdom kings were buried under mountains of stone. Djoser's step pyramid came first, around 2670 BC; a century later Khufu's Great Pyramid at Giza rose 146 m, built by thousands of paid workers.",
+        "es": "Los reyes del Imperio Antiguo se enterraban bajo montañas de piedra. Primero fue la pirámide escalonada de Zoser, hacia el 2670 a. C.; un siglo después, la Gran Pirámide de Keops alcanzó 146 m, obra de miles de obreros pagados."
+      },
+      "details": {
+        "en": "The architect Imhotep stacked six stone platforms for King Djoser at Saqqara. His successors learned by trial and error: Sneferu built three pyramids, one of them bent because its slope was changed halfway. His son Khufu's pyramid used about 2.3 million blocks and stayed the world's tallest building for more than 3,700 years. It was not built by slaves: crews of farmers and skilled workers, perhaps 20,000 at a time, lived in a town beside the site, ate bread, beer and meat, and were buried in tombs of their own. Papyri found in 2013 even record a team's trips bringing limestone by boat. Around 2350 BC the first religious texts, the Pyramid Texts, were carved inside a pyramid.",
+        "es": "El arquitecto Imhotep apiló seis plataformas de piedra para el rey Zoser en Saqqara. Sus sucesores aprendieron a base de pruebas y errores: Seneferu construyó tres pirámides, una de ellas acodada porque se cambió su inclinación a medio camino. La pirámide de su hijo Keops usó unos 2,3 millones de bloques y fue el edificio más alto del mundo durante más de 3700 años. No la construyeron esclavos: cuadrillas de campesinos y obreros especializados, quizá 20 000 a la vez, vivían en una ciudad junto a la obra, comían pan, cerveza y carne, y se enterraban en tumbas propias. Unos papiros hallados en 2013 registran incluso los viajes de un equipo que traía caliza en barco. Hacia el 2350 a. C. se tallaron dentro de una pirámide los primeros textos religiosos, los Textos de las Pirámides."
+      },
+      "events": [
+        {
+          "icon": "📜",
+          "date": "-2350",
+          "at": [
+            31.2149,
+            29.8682
+          ],
+          "text": {
+            "en": "The Pyramid Texts, the oldest religious writings of Egypt, are carved in the pyramid of Unas",
+            "es": "Los Textos de las Pirámides, los escritos religiosos más antiguos de Egipto, se tallan en la pirámide de Unas"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "pyramid-of-djoser",
+          "name": {
+            "en": "Step Pyramid of Djoser",
+            "es": "Pirámide escalonada de Zoser"
+          },
+          "at": [
+            31.2167,
+            29.8711
+          ],
+          "cat": "tomb",
+          "type": "structure",
+          "date": "-2670",
+          "place": {
+            "en": "Saqqara, Giza, Egypt",
+            "es": "Saqqara, Guiza, Egipto"
+          },
+          "text": {
+            "en": "The first pyramid, built around 2670 BC: six stone platforms stacked 62 m high by the architect Imhotep for King Djoser. It is one of the oldest large buildings of cut stone in the world.",
+            "es": "La primera pirámide, construida hacia el 2670 a. C.: seis plataformas de piedra apiladas hasta 62 m por el arquitecto Imhotep para el rey Zoser. Es uno de los grandes edificios de piedra tallada más antiguos del mundo."
+          },
+          "by": {
+            "en": "Imhotep",
+            "es": "Imhotep"
+          },
+          "wiki": {
+            "en": "Pyramid of Djoser",
+            "es": "Pirámide escalonada de Zoser"
+          }
+        },
+        {
+          "id": "great-pyramid-of-giza",
+          "name": {
+            "en": "Great Pyramid of Giza",
+            "es": "Gran Pirámide de Guiza"
+          },
+          "at": [
+            31.1342,
+            29.9792
+          ],
+          "cat": "tomb",
+          "type": "structure",
+          "date": "-2560",
+          "place": {
+            "en": "Giza, Egypt",
+            "es": "Guiza, Egipto"
+          },
+          "text": {
+            "en": "Khufu's tomb, finished around 2560 BC: 2.3 million blocks rising to 146.6 m. The last of the Seven Wonders still standing, it was the tallest building on Earth for more than 3,700 years.",
+            "es": "La tumba de Keops, terminada hacia el 2560 a. C.: 2,3 millones de bloques hasta 146,6 m. La última de las siete maravillas que sigue en pie, fue el edificio más alto de la Tierra durante más de 3700 años."
+          },
+          "wiki": {
+            "en": "Great Pyramid of Giza",
+            "es": "Gran Pirámide de Guiza"
+          }
+        },
+        {
+          "id": "great-sphinx-of-giza",
+          "name": {
+            "en": "Great Sphinx of Giza",
+            "es": "Gran Esfinge de Guiza"
+          },
+          "at": [
+            31.1376,
+            29.9753
+          ],
+          "cat": "temple",
+          "type": "structure",
+          "date": "-2550",
+          "place": {
+            "en": "Giza, Egypt",
+            "es": "Guiza, Egipto"
+          },
+          "text": {
+            "en": "A lion with a king's face, probably Khafre's, carved from the bedrock around 2550 BC: 73 m long and 20 m high. Its nose was lost centuries ago, long before Napoleon's soldiers came.",
+            "es": "Un león con rostro de rey, probablemente Kefrén, tallado en la roca madre hacia el 2550 a. C.: 73 m de largo y 20 de alto. Perdió la nariz hace siglos, mucho antes de que llegaran los soldados de Napoleón."
+          },
+          "wiki": {
+            "en": "Great Sphinx of Giza",
+            "es": "Gran Esfinge de Guiza"
+          }
+        },
+        {
+          "id": "diary-of-merer",
+          "name": {
+            "en": "Diary of Merer",
+            "es": "Diario de Merer"
+          },
+          "at": [
+            32.6583,
+            28.8917
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-2560",
+          "place": {
+            "en": "Found at Wadi al-Jarf, Red Sea coast, Egypt",
+            "es": "Hallado en Uadi al-Yarf, costa del mar Rojo, Egipto"
+          },
+          "text": {
+            "en": "The oldest papyri with writing, found in 2013: the logbook of an official named Merer, whose team ferried limestone blocks on the Nile from the Tura quarries to the Great Pyramid.",
+            "es": "Los papiros escritos más antiguos, hallados en 2013: el diario de un funcionario llamado Merer, cuyo equipo llevaba bloques de caliza por el Nilo desde las canteras de Tura hasta la Gran Pirámide."
+          },
+          "wiki": {
+            "en": "Diary of Merer",
+            "es": "Diario de Merer"
+          }
+        },
+        {
+          "id": "pyramid-builders-town",
+          "name": {
+            "en": "Pyramid builders' town",
+            "es": "La ciudad de los constructores"
+          },
+          "at": [
+            31.1365,
+            29.9715
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-2560",
+          "place": {
+            "en": "Heit el-Ghurab, Giza, Egypt",
+            "es": "Heit el-Ghurab, Guiza, Egipto"
+          },
+          "text": {
+            "en": "South of the pyramids lay a town for the workers, with bakeries, breweries and barracks. Their own tombs, found in 1990, show they were respected labourers, not slaves; some had broken bones set.",
+            "es": "Al sur de las pirámides había una ciudad para los trabajadores, con panaderías, cervecerías y barracas. Sus propias tumbas, halladas en 1990, muestran que eran obreros respetados, no esclavos; a algunos les curaron fracturas."
+          },
+          "wiki": {
+            "en": "Giza pyramid complex",
+            "es": "Necrópolis de Guiza"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-1950",
+      "title": {
+        "en": "The Middle Kingdom",
+        "es": "El Imperio Medio"
+      },
+      "camera": {
+        "lon": 31.6,
+        "lat": 26.0,
+        "zoom": 5.2
+      },
+      "text": {
+        "en": "After a time of famine and civil war, Mentuhotep II of Thebes reunited Egypt around 2055 BC. Middle Kingdom pharaohs built forts in Nubia, won farmland in the Faiyum and wrote Egypt's classic literature.",
+        "es": "Tras hambrunas y guerras civiles, Mentuhotep II de Tebas reunificó Egipto hacia el 2055 a. C. Los faraones del Imperio Medio levantaron fuertes en Nubia, ganaron tierras en El Fayum y escribieron la literatura clásica egipcia."
+      },
+      "details": {
+        "en": "Around 2200 BC the Old Kingdom broke apart, perhaps helped by failing Nile floods; texts of the time describe hunger and chaos. Thebes, in the south, won the civil war that followed. The Middle Kingdom (about 2055–1650 BC) was an age of order and writing: stories like Sinuhe and teachings for scribes were copied in schools for a thousand years. Kings such as Senusret III pushed into Nubia for its gold and built a chain of mud-brick forts at the Second Cataract. Around 1850 BC, Semitic-speaking workers in Egypt turned a few dozen hieroglyphs into letters for sounds: the ancestor of almost every alphabet used today.",
+        "es": "Hacia el 2200 a. C. el Imperio Antiguo se desmoronó, quizá en parte por crecidas del Nilo que fallaron; los textos de la época describen hambre y caos. Tebas, en el sur, ganó la guerra civil que siguió. El Imperio Medio (hacia 2055-1650 a. C.) fue una época de orden y escritura: relatos como el de Sinuhé y enseñanzas para escribas se copiaron en las escuelas durante mil años. Reyes como Sesostris III avanzaron en Nubia en busca de su oro y construyeron una cadena de fuertes de adobe en la Segunda Catarata. Hacia el 1850 a. C., trabajadores de lengua semítica en Egipto convirtieron unas pocas decenas de jeroglíficos en letras para sonidos: el antepasado de casi todos los alfabetos que se usan hoy."
+      },
+      "control": {
+        "egypt": {
+          "ref": "egypt_mk"
+        }
+      },
+      "places": [
+        {
+          "id": "mentuhotep-ii",
+          "name": {
+            "en": "Mentuhotep II",
+            "es": "Mentuhotep II"
+          },
+          "at": [
+            32.608,
+            25.7365
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-2055",
+          "place": {
+            "en": "Thebes (Luxor), Egypt",
+            "es": "Tebas (Luxor), Egipto"
+          },
+          "text": {
+            "en": "A Theban king who reunited Egypt around 2055 BC after more than a century of division. His terraced tomb temple at Deir el-Bahari later inspired the one built by Hatshepsut beside it.",
+            "es": "Un rey tebano que reunificó Egipto hacia el 2055 a. C. tras más de un siglo de división. Su templo funerario en terrazas de Deir el-Bahari inspiró después el que Hatshepsut construyó a su lado."
+          },
+          "wiki": {
+            "en": "Mentuhotep II",
+            "es": "Mentuhotep II"
+          }
+        },
+        {
+          "id": "senusret-iii",
+          "name": {
+            "en": "Senusret III",
+            "es": "Sesostris III"
+          },
+          "at": [
+            30.95,
+            21.5
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-1878",
+          "place": {
+            "en": "Semna, Second Cataract, Sudan",
+            "es": "Semna, Segunda Catarata, Sudán"
+          },
+          "text": {
+            "en": "One of the mightiest pharaohs (reigned about 1878–1839 BC). He conquered Lower Nubia and set a boundary stone at Semna, forbidding Nubians to pass except to trade. His statues show a careworn face.",
+            "es": "Uno de los faraones más poderosos (reinó hacia 1878-1839 a. C.). Conquistó la Baja Nubia y puso una estela fronteriza en Semna que prohibía pasar a los nubios salvo para comerciar. Sus estatuas muestran un rostro cansado."
+          },
+          "wiki": {
+            "en": "Senusret III",
+            "es": "Sesostris III"
+          }
+        },
+        {
+          "id": "buhen",
+          "name": {
+            "en": "Buhen fortress",
+            "es": "Fortaleza de Buhen"
+          },
+          "at": [
+            31.2833,
+            21.9167
+          ],
+          "cat": "war",
+          "type": "structure",
+          "date": "-1900",
+          "place": {
+            "en": "Near Wadi Halfa, Sudan (now under Lake Nasser)",
+            "es": "Cerca de Wadi Halfa, Sudán (hoy bajo el lago Nasser)"
+          },
+          "text": {
+            "en": "A great mud-brick fortress at the Second Cataract, with towers, ditches and slits for archers, built to control Nubia and its gold. Kerma's army sacked it around 1675 BC; it now lies under Lake Nasser.",
+            "es": "Una gran fortaleza de adobe en la Segunda Catarata, con torres, fosos y saeteras, construida para controlar Nubia y su oro. El ejército de Kerma la saqueó hacia el 1675 a. C.; hoy yace bajo el lago Nasser."
+          },
+          "wiki": {
+            "en": "Buhen",
+            "es": "Buhen"
+          }
+        },
+        {
+          "id": "story-of-sinuhe",
+          "name": {
+            "en": "Story of Sinuhe",
+            "es": "Historia de Sinuhé"
+          },
+          "at": [
+            31.2203,
+            29.5727
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-1875",
+          "place": {
+            "en": "Court of Itjtawy, near el-Lisht, Egypt",
+            "es": "Corte de Itjtawy, cerca de El Lisht, Egipto"
+          },
+          "text": {
+            "en": "A courtier flees Egypt in panic, becomes a rich chief in Canaan, and longs to be buried at home. Written around 1875 BC, it was one of the most copied stories of ancient Egypt.",
+            "es": "Un cortesano huye de Egipto presa del pánico, se vuelve un rico jefe en Canaán y ansía ser enterrado en su tierra. Escrita hacia el 1875 a. C., fue una de las historias más copiadas del antiguo Egipto."
+          },
+          "wiki": {
+            "en": "Story of Sinuhe",
+            "es": "Historia de Sinuhé"
+          },
+          "img": "Lintel of Amenemhat I and Deities MET DP322051.jpg"
+        },
+        {
+          "id": "wadi-el-hol-inscriptions",
+          "name": {
+            "en": "Wadi el-Hol inscriptions",
+            "es": "Inscripciones de Wadi el-Hol"
+          },
+          "at": [
+            32.4,
+            25.95
+          ],
+          "cat": "writing",
+          "type": "invention",
+          "date": "-1850",
+          "place": {
+            "en": "Desert road west of Luxor, Egypt",
+            "es": "Camino del desierto al oeste de Luxor, Egipto"
+          },
+          "text": {
+            "en": "Two short texts carved around 1850 BC by Semitic-speaking workers or soldiers, using a few dozen signs borrowed from hieroglyphs for sounds: among the oldest alphabetic writing known.",
+            "es": "Dos breves textos tallados hacia el 1850 a. C. por trabajadores o soldados de lengua semítica, con unas decenas de signos tomados de los jeroglíficos para los sonidos: de la escritura alfabética más antigua conocida."
+          },
+          "wiki": {
+            "en": "Wadi el-Hol inscriptions",
+            "es": "Alfabeto protosinaítico"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-1650",
+      "title": {
+        "en": "The Hyksos",
+        "es": "Los hicsos"
+      },
+      "camera": {
+        "lon": 31.4,
+        "lat": 25.0,
+        "zoom": 4.8
+      },
+      "text": {
+        "en": "Around 1650 BC the Hyksos, kings of Canaanite origin settled in the Delta, ruled northern Egypt from Avaris. Thebes held the south and Kush ruled Nubia, until Ahmose drove the Hyksos out around 1550 BC.",
+        "es": "Hacia el 1650 a. C., los hicsos, reyes de origen cananeo asentados en el delta, gobernaron el norte de Egipto desde Avaris. Tebas dominaba el sur y Kush, Nubia, hasta que Ahmosis expulsó a los hicsos hacia el 1550 a. C."
+      },
+      "details": {
+        "en": "The Hyksos, 'rulers of foreign lands', were not a sudden invasion: people from the Levant had settled in the eastern Delta for generations. Their kings took Egyptian titles and gods, and their era brought the horse, the war chariot and the composite bow into Egypt. A scribe copied the Rhind mathematical papyrus in the reign of the Hyksos king Apepi. In Nubia, the kingdom of Kush at Kerma took the Egyptian forts and allied with the Hyksos. The Theban kings fought back: Seqenenre Tao died of terrible head wounds, and his son Ahmose finally took Avaris and founded the New Kingdom.",
+        "es": "Los hicsos, «gobernantes de tierras extranjeras», no fueron una invasión repentina: gente del Levante llevaba generaciones asentada en el delta oriental. Sus reyes adoptaron títulos y dioses egipcios, y su época trajo a Egipto el caballo, el carro de guerra y el arco compuesto. Un escriba copió el papiro matemático de Rhind en el reinado del rey hicso Apepi. En Nubia, el reino de Kush, con capital en Kerma, tomó los fuertes egipcios y se alió con los hicsos. Los reyes tebanos contraatacaron: Seqenenre Tao murió con terribles heridas en la cabeza, y su hijo Ahmosis tomó por fin Avaris y fundó el Imperio Nuevo."
+      },
+      "control": {
+        "hyksos": {
+          "ref": "hyksos_1650"
+        },
+        "egypt": {
+          "ref": "thebes_1650"
+        },
+        "kush": {
+          "ref": "kerma_1650"
+        }
+      },
+      "places": [
+        {
+          "id": "hyksos",
+          "name": {
+            "en": "Hyksos",
+            "es": "Hicsos"
+          },
+          "at": [
+            31.62,
+            30.55
+          ],
+          "cat": "culture",
+          "type": "culture",
+          "date": "-1650",
+          "until": "-1550",
+          "place": {
+            "en": "Eastern Nile Delta, Egypt",
+            "es": "Delta oriental del Nilo, Egipto"
+          },
+          "text": {
+            "en": "Kings of Canaanite origin who ruled northern Egypt for about a century as the 15th Dynasty. Their age brought horses, chariots and new bronze weapons, and they took Egyptian titles and gods.",
+            "es": "Reyes de origen cananeo que gobernaron el norte de Egipto durante casi un siglo como la XV Dinastía. Su época trajo caballos, carros y nuevas armas de bronce, y adoptaron títulos y dioses egipcios."
+          },
+          "wiki": {
+            "en": "Hyksos",
+            "es": "Hicsos"
+          }
+        },
+        {
+          "id": "avaris",
+          "name": {
+            "en": "Avaris",
+            "es": "Avaris"
+          },
+          "at": [
+            31.8214,
+            30.7874
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-1800",
+          "until": "-1550",
+          "place": {
+            "en": "Tell el-Dab'a, Sharqia, Egypt",
+            "es": "Tell el-Dab'a, Sharqia, Egipto"
+          },
+          "text": {
+            "en": "The Hyksos capital in the eastern Delta, with houses, tombs and temples in the style of the Levant. Ahmose sacked it around 1550 BC; Ramesses II later built his new capital close by.",
+            "es": "La capital hicsa en el delta oriental, con casas, tumbas y templos al estilo del Levante. Ahmosis la saqueó hacia el 1550 a. C.; Ramsés II construyó después muy cerca su nueva capital."
+          },
+          "wiki": {
+            "en": "Avaris",
+            "es": "Avaris"
+          }
+        },
+        {
+          "id": "rhind-papyrus",
+          "name": {
+            "en": "Rhind Mathematical Papyrus",
+            "es": "Papiro matemático de Rhind"
+          },
+          "at": [
+            32.63,
+            25.7
+          ],
+          "cat": "knowledge",
+          "type": "work",
+          "date": "-1550",
+          "place": {
+            "en": "Bought in Luxor; British Museum, London",
+            "es": "Comprado en Luxor; Museo Británico, Londres"
+          },
+          "text": {
+            "en": "A 5 m scroll of maths problems copied by the scribe Ahmes around 1550 BC: fractions, areas, the volumes of granaries and pyramids. It shows how Egyptian surveyors and builders worked.",
+            "es": "Un rollo de 5 m con problemas de matemáticas copiado por el escriba Ahmes hacia el 1550 a. C.: fracciones, áreas, volúmenes de graneros y pirámides. Muestra cómo trabajaban los agrimensores y constructores egipcios."
+          },
+          "wiki": {
+            "en": "Rhind Mathematical Papyrus",
+            "es": "Papiro de Ahmes"
+          }
+        },
+        {
+          "id": "seqenenre-tao",
+          "name": {
+            "en": "Seqenenre Tao",
+            "es": "Seqenenre Tao"
+          },
+          "at": [
+            32.604,
+            25.7395
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-1558",
+          "place": {
+            "en": "Thebes (Luxor), Egypt",
+            "es": "Tebas (Luxor), Egipto"
+          },
+          "text": {
+            "en": "A Theban king who fought the Hyksos and died around 1555 BC from axe and dagger blows to the head. His mummy suggests he could not defend himself: he may have been executed after capture.",
+            "es": "Un rey tebano que luchó contra los hicsos y murió hacia el 1555 a. C. por golpes de hacha y daga en la cabeza. Su momia sugiere que no pudo defenderse: quizá lo ejecutaron tras capturarlo."
+          },
+          "wiki": {
+            "en": "Seqenenre Tao",
+            "es": "Seqenenra Taa"
+          }
+        },
+        {
+          "id": "ahmose-i",
+          "name": {
+            "en": "Ahmose I",
+            "es": "Ahmosis I"
+          },
+          "at": [
+            31.85,
+            30.7
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-1550",
+          "place": {
+            "en": "Thebes and Avaris, Egypt",
+            "es": "Tebas y Avaris, Egipto"
+          },
+          "text": {
+            "en": "Seqenenre's son, who took Avaris around 1550 BC, chased the Hyksos into Canaan and reunited Egypt. He founded the 18th Dynasty and the New Kingdom.",
+            "es": "Hijo de Seqenenre, tomó Avaris hacia el 1550 a. C., persiguió a los hicsos hasta Canaán y reunificó Egipto. Fundó la XVIII Dinastía y el Imperio Nuevo."
+          },
+          "wiki": {
+            "en": "Ahmose I",
+            "es": "Amosis I"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-1470",
+      "title": {
+        "en": "Hatshepsut and Thutmose III",
+        "es": "Hatshepsut y Tutmosis III"
+      },
+      "camera": {
+        "lon": 34.0,
+        "lat": 26.0,
+        "zoom": 3.7
+      },
+      "text": {
+        "en": "Hatshepsut ruled as pharaoh for about 20 years and sent a trading fleet to the land of Punt. Her stepson Thutmose III then made Egypt an empire stretching from Syria to the heart of Nubia.",
+        "es": "Hatshepsut gobernó como faraón unos 20 años y envió una flota comercial a la tierra de Punt. Su hijastro Tutmosis III convirtió luego a Egipto en un imperio que iba de Siria al corazón de Nubia."
+      },
+      "details": {
+        "en": "Hatshepsut (reigned about 1479–1458 BC) was first regent for the boy Thutmose III, then had herself crowned king, often shown with a king's false beard. Her reign was peaceful and rich: her temple at Deir el-Bahari shows ships returning from Punt, probably on the African coast of the Red Sea, loaded with incense trees, ebony, ivory and baboons. Thutmose III later led 17 campaigns into Canaan and Syria, beginning with the battle of Megiddo in 1457 BC, and his armies reached the Euphrates. Late in his reign, Hatshepsut's images were hacked from monuments, perhaps to secure his son's claim to the throne.",
+        "es": "Hatshepsut (reinó hacia 1479-1458 a. C.) fue primero regente del niño Tutmosis III y luego se hizo coronar rey; a menudo se la representa con la barba postiza de los reyes. Su reinado fue pacífico y próspero: su templo de Deir el-Bahari muestra barcos que vuelven de Punt, probablemente en la costa africana del mar Rojo, cargados de árboles de incienso, ébano, marfil y babuinos. Tutmosis III dirigió después 17 campañas en Canaán y Siria, empezando por la batalla de Megido en el 1457 a. C., y sus ejércitos llegaron al Éufrates. Al final de su reinado se borraron a golpes las imágenes de Hatshepsut de los monumentos, quizá para asegurar el trono a su hijo."
+      },
+      "control": {
+        "egypt": {
+          "ref": "egypt_nk"
+        },
+        "hyksos": null,
+        "kush": null
+      },
+      "places": [
+        {
+          "id": "hatshepsut",
+          "name": {
+            "en": "Hatshepsut",
+            "es": "Hatshepsut"
+          },
+          "at": [
+            32.6583,
+            25.7183
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-1479",
+          "place": {
+            "en": "Thebes (Luxor), Egypt",
+            "es": "Tebas (Luxor), Egipto"
+          },
+          "text": {
+            "en": "One of the few women to rule Egypt as pharaoh (about 1479–1458 BC). She built temples, raised obelisks almost 30 m tall at Karnak and kept the peace; later kings tried to erase her memory.",
+            "es": "Una de las pocas mujeres que gobernaron Egipto como faraón (hacia 1479-1458 a. C.). Construyó templos, alzó en Karnak obeliscos de casi 30 m y mantuvo la paz; reyes posteriores intentaron borrar su memoria."
+          },
+          "wiki": {
+            "en": "Hatshepsut",
+            "es": "Hatshepsut"
+          }
+        },
+        {
+          "id": "temple-of-hatshepsut",
+          "name": {
+            "en": "Temple of Hatshepsut",
+            "es": "Templo de Hatshepsut"
+          },
+          "at": [
+            32.6066,
+            25.7383
+          ],
+          "cat": "temple",
+          "type": "structure",
+          "date": "-1470",
+          "place": {
+            "en": "Deir el-Bahari, Luxor, Egypt",
+            "es": "Deir el-Bahari, Luxor, Egipto"
+          },
+          "text": {
+            "en": "Hatshepsut's terraced temple against the cliffs of western Thebes, designed by her steward Senenmut. Its colonnades show her divine birth and the voyage to Punt.",
+            "es": "El templo en terrazas de Hatshepsut al pie de los acantilados de Tebas occidental, diseñado por su mayordomo Senenmut. Sus columnatas muestran su nacimiento divino y el viaje a Punt."
+          },
+          "by": {
+            "en": "Senenmut",
+            "es": "Senenmut"
+          },
+          "wiki": {
+            "en": "Mortuary temple of Hatshepsut",
+            "es": "Templo funerario de Hatshepsut"
+          }
+        },
+        {
+          "id": "land-of-punt",
+          "name": {
+            "en": "Land of Punt",
+            "es": "Tierra de Punt"
+          },
+          "at": [
+            39.0,
+            15.6
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "-1470",
+          "place": {
+            "en": "Probably the Red Sea coast of Eritrea or Sudan",
+            "es": "Probablemente la costa del mar Rojo de Eritrea o Sudán"
+          },
+          "text": {
+            "en": "A rich land reached by sea, probably on the African coast of the Red Sea. Hatshepsut's ships brought back myrrh trees, ebony, ivory, gold and baboons; studies of baboon mummies point to Eritrea.",
+            "es": "Una tierra rica a la que se llegaba por mar, quizá en la costa africana del mar Rojo. Los barcos de Hatshepsut trajeron árboles de mirra, ébano, marfil, oro y babuinos; el estudio de babuinos momificados apunta a Eritrea."
+          },
+          "wiki": {
+            "en": "Land of Punt",
+            "es": "Punt"
+          }
+        },
+        {
+          "id": "thutmose-iii",
+          "name": {
+            "en": "Thutmose III",
+            "es": "Tutmosis III"
+          },
+          "at": [
+            32.645,
+            25.7
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-1479",
+          "place": {
+            "en": "Thebes; campaigns in Canaan and Syria",
+            "es": "Tebas; campañas en Canaán y Siria"
+          },
+          "text": {
+            "en": "Egypt's great conqueror (reigned about 1479–1425 BC). He led 17 campaigns in the Levant, crossed the Euphrates, and brought princes of conquered cities to be raised at his court.",
+            "es": "El gran conquistador de Egipto (reinó hacia 1479-1425 a. C.). Dirigió 17 campañas en el Levante, cruzó el Éufrates y llevó a su corte a príncipes de las ciudades vencidas para educarlos."
+          },
+          "wiki": {
+            "en": "Thutmose III",
+            "es": "Tutmosis III"
+          }
+        },
+        {
+          "id": "battle-of-megiddo",
+          "name": {
+            "en": "Battle of Megiddo",
+            "es": "Batalla de Megido"
+          },
+          "at": [
+            35.1844,
+            32.5853
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "-1457",
+          "place": {
+            "en": "Megiddo, northern Israel",
+            "es": "Megido, norte de Israel"
+          },
+          "text": {
+            "en": "In 1457 BC Thutmose III surprised a coalition of Canaanite kings by marching through a narrow pass, then besieged Megiddo for seven months. It is the first battle recorded in detail.",
+            "es": "En el 1457 a. C., Tutmosis III sorprendió a una coalición de reyes cananeos marchando por un estrecho paso, y luego sitió Megido durante siete meses. Es la primera batalla registrada con detalle."
+          },
+          "wiki": {
+            "en": "Battle of Megiddo (15th century BC)",
+            "es": "Batalla de Megido (siglo XV a. C.)"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-1346",
+      "title": {
+        "en": "Akhenaten's revolution",
+        "es": "La revolución de Akenatón"
+      },
+      "camera": {
+        "lon": 31.5,
+        "lat": 27.0,
+        "zoom": 5.0
+      },
+      "text": {
+        "en": "Akhenaten worshipped one god above all others, the Aten, the disc of the sun. He built a new capital at Amarna, where artists showed the royal family as never before: kissing, playing, eating.",
+        "es": "Akenatón adoró a un dios por encima de todos, Atón, el disco solar. Construyó una nueva capital en Amarna, donde los artistas mostraron a la familia real como nunca: besándose, jugando, comiendo."
+      },
+      "details": {
+        "en": "Akhenaten (reigned about 1353–1336 BC) closed the temples of Amun and other gods and had their names chiselled away. Around 1346 BC he founded Akhetaten, 'horizon of the Aten', on an empty stretch of desert, and moved the court there with his queen Nefertiti and their six daughters. Some call him the first monotheist; others say his religion served above all to glorify the king. Excavations show the cost: many of the people who built Amarna died young, with signs of heavy labour and poor food. After his death the old gods returned, the city was abandoned and his name was struck from the lists of kings.",
+        "es": "Akenatón (reinó hacia 1353-1336 a. C.) cerró los templos de Amón y de otros dioses e hizo borrar sus nombres a cincel. Hacia el 1346 a. C. fundó Ajetatón, «horizonte de Atón», en un tramo vacío del desierto, y trasladó allí la corte con su reina Nefertiti y sus seis hijas. Algunos lo llaman el primer monoteísta; otros dicen que su religión servía sobre todo para glorificar al rey. Las excavaciones muestran el costo: muchas de las personas que construyeron Amarna murieron jóvenes, con huellas de trabajo pesado y mala alimentación. Tras su muerte volvieron los viejos dioses, la ciudad se abandonó y su nombre fue tachado de las listas de reyes."
+      },
+      "places": [
+        {
+          "id": "akhenaten",
+          "name": {
+            "en": "Akhenaten",
+            "es": "Akenatón"
+          },
+          "at": [
+            30.904,
+            27.662
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-1353",
+          "place": {
+            "en": "Amarna, Egypt",
+            "es": "Amarna, Egipto"
+          },
+          "text": {
+            "en": "The pharaoh who made the sun disc, the Aten, the supreme god and moved the capital to Amarna (reigned about 1353–1336 BC). Later kings erased him from history as 'the criminal of Akhetaten'.",
+            "es": "El faraón que hizo del disco solar, Atón, el dios supremo y llevó la capital a Amarna (reinó hacia 1353-1336 a. C.). Los reyes posteriores lo borraron de la historia como «el criminal de Ajetatón»."
+          },
+          "wiki": {
+            "en": "Akhenaten",
+            "es": "Akenatón"
+          }
+        },
+        {
+          "id": "amarna",
+          "name": {
+            "en": "Amarna (Akhetaten)",
+            "es": "Amarna (Ajetatón)"
+          },
+          "at": [
+            30.8964,
+            27.6453
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-1346",
+          "until": "-1332",
+          "place": {
+            "en": "Tell el-Amarna, Minya, Egypt",
+            "es": "Tell el-Amarna, Menia, Egipto"
+          },
+          "text": {
+            "en": "Akhenaten's capital, built in a few years on empty desert and abandoned soon after his death. Because it was never rebuilt, it shows an Egyptian city as it was: palaces, workshops, homes.",
+            "es": "La capital de Akenatón, construida en pocos años en un desierto vacío y abandonada poco después de su muerte. Como nunca se reconstruyó, muestra una ciudad egipcia tal como era: palacios, talleres, casas."
+          },
+          "wiki": {
+            "en": "Amarna",
+            "es": "Amarna"
+          }
+        },
+        {
+          "id": "nefertiti-bust",
+          "name": {
+            "en": "Nefertiti Bust",
+            "es": "Busto de Nefertiti"
+          },
+          "at": [
+            30.905,
+            27.644
+          ],
+          "cat": "art",
+          "type": "work",
+          "date": "-1345",
+          "place": {
+            "en": "Found at Amarna; Neues Museum, Berlin",
+            "es": "Hallado en Amarna; Neues Museum, Berlín"
+          },
+          "text": {
+            "en": "A painted limestone bust of Queen Nefertiti, found in 1912 by a German team in the workshop of the sculptor Thutmose. Egypt has long asked Germany to return it.",
+            "es": "Un busto de caliza pintada de la reina Nefertiti, hallado en 1912 por un equipo alemán en el taller del escultor Tutmose. Egipto lleva mucho tiempo pidiendo a Alemania que lo devuelva."
+          },
+          "wiki": {
+            "en": "Nefertiti Bust",
+            "es": "Busto de Nefertiti"
+          }
+        },
+        {
+          "id": "great-hymn-to-the-aten",
+          "name": {
+            "en": "Great Hymn to the Aten",
+            "es": "Gran himno a Atón"
+          },
+          "at": [
+            30.89,
+            27.66
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-1345",
+          "place": {
+            "en": "Tomb of Ay, Amarna, Egypt",
+            "es": "Tumba de Ay, Amarna, Egipto"
+          },
+          "text": {
+            "en": "A hymn carved in a tomb at Amarna: 'How manifold are your deeds... O sole god, like whom there is no other.' Some scholars hear echoes of it in Psalm 104 of the Bible.",
+            "es": "Un himno tallado en una tumba de Amarna: «¡Qué numerosas son tus obras!... Oh dios único, sin otro igual». Algunos estudiosos oyen ecos suyos en el Salmo 104 de la Biblia."
+          },
+          "wiki": {
+            "en": "Great Hymn to the Aten",
+            "es": "Himno a Atón"
+          }
+        },
+        {
+          "id": "amarna-letters",
+          "name": {
+            "en": "Amarna letters",
+            "es": "Cartas de Amarna"
+          },
+          "at": [
+            30.899,
+            27.643
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-1360",
+          "place": {
+            "en": "Amarna, Egypt",
+            "es": "Amarna, Egipto"
+          },
+          "text": {
+            "en": "Clay tablets in Akkadian cuneiform from the pharaoh's 'house of letters' at Amarna: messages from the kings of Babylon, Mitanni and the Hittites, and pleas for help from rulers in Canaan.",
+            "es": "Tablillas de arcilla en cuneiforme acadio de la «casa de las cartas» del faraón en Amarna: mensajes de los reyes de Babilonia, Mitanni y los hititas, y súplicas de ayuda de gobernantes de Canaán."
+          },
+          "wiki": {
+            "en": "Amarna letters",
+            "es": "Cartas de Amarna"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-1323",
+      "title": {
+        "en": "Tutankhamun",
+        "es": "Tutankamón"
+      },
+      "camera": {
+        "lon": 32.0,
+        "lat": 26.5,
+        "zoom": 6.0
+      },
+      "text": {
+        "en": "The boy king Tutankhamun restored the old gods and died at about 19, around 1323 BC. His small tomb in the Valley of the Kings, found almost intact in 1922, held over 5,000 objects.",
+        "es": "El rey niño Tutankamón restauró a los antiguos dioses y murió hacia el 1323 a. C., con unos 19 años. Su pequeña tumba del Valle de los Reyes, hallada casi intacta en 1922, guardaba más de 5000 objetos."
+      },
+      "details": {
+        "en": "Tutankhamun was probably Akhenaten's son. Crowned at about nine, he changed his name from Tutankhaten, 'living image of the Aten', to Tutankhamun, and his officials reopened the temples of the old gods. Scans and DNA show that he had a clubfoot, walked with canes and had malaria. He was a minor king, buried in a hurry in a small tomb, and that saved him: robbers who emptied the other royal tombs of the Valley of the Kings missed his. When Howard Carter's team opened it in 1922, its gold mask, chariots, beds and jewels made him the most famous pharaoh of all.",
+        "es": "Tutankamón era probablemente hijo de Akenatón. Coronado hacia los nueve años, cambió su nombre de Tutankatón, «imagen viva de Atón», por Tutankamón, y sus funcionarios reabrieron los templos de los viejos dioses. Los escáneres y el ADN muestran que tenía un pie zambo, caminaba con bastones y padeció malaria. Fue un rey menor, enterrado a toda prisa en una tumba pequeña, y eso lo salvó: los ladrones que vaciaron las demás tumbas reales del Valle de los Reyes no dieron con la suya. Cuando el equipo de Howard Carter la abrió en 1922, su máscara de oro, sus carros, sus camas y sus joyas lo volvieron el faraón más famoso de todos."
+      },
+      "places": [
+        {
+          "id": "tutankhamun",
+          "name": {
+            "en": "Tutankhamun",
+            "es": "Tutankamón"
+          },
+          "at": [
+            32.6583,
+            25.7183
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-1332",
+          "place": {
+            "en": "Memphis and Thebes, Egypt",
+            "es": "Menfis y Tebas, Egipto"
+          },
+          "text": {
+            "en": "Pharaoh from about 1332 to 1323 BC, crowned at nine. His Restoration Stela at Karnak reopened the temples of Amun after the reforms of Akhenaten.",
+            "es": "Faraón hacia 1332-1323 a. C., coronado a los nueve años. Su Estela de la Restauración, en Karnak, reabrió los templos de Amón tras las reformas de Akenatón."
+          },
+          "wiki": {
+            "en": "Tutankhamun",
+            "es": "Tutankamón"
+          }
+        },
+        {
+          "id": "tomb-of-tutankhamun",
+          "name": {
+            "en": "Tomb of Tutankhamun (KV62)",
+            "es": "Tumba de Tutankamón (KV62)"
+          },
+          "at": [
+            32.6014,
+            25.7404
+          ],
+          "cat": "tomb",
+          "type": "site",
+          "date": "-1323",
+          "place": {
+            "en": "Valley of the Kings, Luxor, Egypt",
+            "es": "Valle de los Reyes, Luxor, Egipto"
+          },
+          "text": {
+            "en": "Opened in November 1922 by Howard Carter's team, funded by Lord Carnarvon: four small rooms crammed with treasure. The mummy still lies in the tomb; the objects are in the Grand Egyptian Museum.",
+            "es": "Abierta en noviembre de 1922 por el equipo de Howard Carter, financiado por lord Carnarvon: cuatro pequeñas salas repletas de tesoros. La momia sigue en la tumba; los objetos están en el Gran Museo Egipcio."
+          },
+          "wiki": {
+            "en": "Tomb of Tutankhamun",
+            "es": "KV62"
+          }
+        },
+        {
+          "id": "mask-of-tutankhamun",
+          "name": {
+            "en": "Mask of Tutankhamun",
+            "es": "Máscara de Tutankamón"
+          },
+          "at": [
+            32.603,
+            25.7392
+          ],
+          "cat": "art",
+          "type": "work",
+          "date": "-1323",
+          "place": {
+            "en": "Grand Egyptian Museum, Giza",
+            "es": "Gran Museo Egipcio, Guiza"
+          },
+          "text": {
+            "en": "A funeral mask of over 10 kg of gold inlaid with coloured glass and stones, which covered the king's mummy. It has become the best-known image of ancient Egypt.",
+            "es": "Una máscara funeraria de más de 10 kg de oro con incrustaciones de vidrio de colores y piedras, que cubría la momia del rey. Se ha vuelto la imagen más conocida del antiguo Egipto."
+          },
+          "wiki": {
+            "en": "Mask of Tutankhamun",
+            "es": "Máscara funeraria de Tutankamón"
+          }
+        },
+        {
+          "id": "valley-of-the-kings",
+          "name": {
+            "en": "Valley of the Kings",
+            "es": "Valle de los Reyes"
+          },
+          "at": [
+            32.5995,
+            25.742
+          ],
+          "cat": "tomb",
+          "type": "site",
+          "date": "-1500",
+          "until": "-1075",
+          "place": {
+            "en": "West bank of the Nile, Luxor, Egypt",
+            "es": "Orilla oeste del Nilo, Luxor, Egipto"
+          },
+          "text": {
+            "en": "The burial valley of New Kingdom pharaohs from about 1500 to 1075 BC, with more than 60 rock-cut tombs painted with guides to the underworld. Almost all were robbed in ancient times.",
+            "es": "El valle funerario de los faraones del Imperio Nuevo hacia 1500-1075 a. C., con más de 60 tumbas excavadas en la roca y pintadas con guías del inframundo. Casi todas fueron saqueadas en la Antigüedad."
+          },
+          "wiki": {
+            "en": "Valley of the Kings",
+            "es": "Valle de los Reyes"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-1274",
+      "title": {
+        "en": "Ramesses the Great",
+        "es": "Ramsés el Grande"
+      },
+      "camera": {
+        "lon": 33.6,
+        "lat": 29.5,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "Ramesses II reigned for 66 years. He fought the Hittites at Kadesh in 1274 BC, later made the oldest peace treaty that survives, and filled Egypt and Nubia with colossal temples.",
+        "es": "Ramsés II reinó 66 años. Luchó contra los hititas en Qadesh en el 1274 a. C., después firmó el tratado de paz más antiguo que se conserva y llenó Egipto y Nubia de templos colosales."
+      },
+      "details": {
+        "en": "Ramesses II (reigned 1279–1213 BC) built a new capital, Pi-Ramesses, in the Delta, close to his wars in the Levant. At Kadesh, in Syria, a Hittite ambush nearly destroyed his army; the battle ended in a draw, but he had it carved on temple walls as a great victory. Sixteen years later Egypt and the Hittites made peace, and Ramesses married a Hittite princess. He had more than 100 children and outlived many of them. His temples, from Abu Simbel to Karnak and the Ramesseum, were meant to awe Nubians and Egyptians alike.",
+        "es": "Ramsés II (reinó 1279-1213 a. C.) construyó una nueva capital, Pi-Ramsés, en el delta, cerca de sus guerras en el Levante. En Qadesh, en Siria, una emboscada hitita casi destruyó su ejército; la batalla acabó en empate, pero él la hizo tallar en los muros de los templos como una gran victoria. Dieciséis años después, Egipto y los hititas hicieron la paz, y Ramsés se casó con una princesa hitita. Tuvo más de 100 hijos y sobrevivió a muchos de ellos. Sus templos, de Abu Simbel a Karnak y el Rameseo, debían impresionar por igual a nubios y egipcios."
+      },
+      "control": {
+        "egypt": {
+          "ref": "egypt_1270"
+        }
+      },
+      "places": [
+        {
+          "id": "ramesses-ii",
+          "name": {
+            "en": "Ramesses II",
+            "es": "Ramsés II"
+          },
+          "at": [
+            31.8358,
+            30.7989
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-1279",
+          "life": [
+            "-1303",
+            "-1213"
+          ],
+          "place": {
+            "en": "Pi-Ramesses (Qantir), Nile Delta, Egypt",
+            "es": "Pi-Ramsés (Qantir), delta del Nilo, Egipto"
+          },
+          "text": {
+            "en": "Egypt's most famous builder-king (reigned 1279–1213 BC). He ruled from his new Delta capital, Pi-Ramesses, and was so admired that nine later pharaohs took his name.",
+            "es": "El rey constructor más famoso de Egipto (reinó 1279-1213 a. C.). Gobernó desde su nueva capital en el delta, Pi-Ramsés, y fue tan admirado que nueve faraones posteriores tomaron su nombre."
+          },
+          "wiki": {
+            "en": "Ramesses II",
+            "es": "Ramsés II"
+          }
+        },
+        {
+          "id": "battle-of-kadesh",
+          "name": {
+            "en": "Battle of Kadesh",
+            "es": "Batalla de Qadesh"
+          },
+          "at": [
+            36.51,
+            34.57
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "-1274",
+          "place": {
+            "en": "On the Orontes, near Homs, Syria",
+            "es": "Junto al Orontes, cerca de Homs, Siria"
+          },
+          "text": {
+            "en": "The largest chariot battle known, with perhaps 5,000 chariots, fought in 1274 BC on the Orontes in Syria. Ramesses nearly lost to a Hittite ambush; both sides claimed victory.",
+            "es": "La mayor batalla de carros conocida, con quizá 5000 carros, librada en el 1274 a. C. junto al Orontes, en Siria. Ramsés casi perdió ante una emboscada hitita; ambos bandos se proclamaron vencedores."
+          },
+          "wiki": {
+            "en": "Battle of Kadesh",
+            "es": "Batalla de Qadesh"
+          }
+        },
+        {
+          "id": "egyptian-hittite-treaty",
+          "name": {
+            "en": "Egyptian–Hittite peace treaty",
+            "es": "Tratado de paz egipcio-hitita"
+          },
+          "at": [
+            34.6153,
+            40.0197
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-1259",
+          "place": {
+            "en": "Copies at Hattusa (Turkey) and Karnak (Egypt)",
+            "es": "Copias en Hattusa (Turquía) y Karnak (Egipto)"
+          },
+          "text": {
+            "en": "Made around 1259 BC by Ramesses II and the Hittite king Hattusili III: the oldest peace treaty that survives, and the only one of its time with both sides' versions. A copy hangs at the UN.",
+            "es": "Firmado hacia el 1259 a. C. por Ramsés II y el rey hitita Hattusili III: el tratado de paz más antiguo que se conserva, y el único de su época con las versiones de ambas partes. Hay una copia en la ONU."
+          },
+          "wiki": {
+            "en": "Egyptian–Hittite peace treaty",
+            "es": "Tratado de Qadesh"
+          }
+        },
+        {
+          "id": "abu-simbel",
+          "name": {
+            "en": "Abu Simbel",
+            "es": "Abu Simbel"
+          },
+          "at": [
+            31.6256,
+            22.3369
+          ],
+          "cat": "temple",
+          "type": "structure",
+          "date": "-1264",
+          "end": "-1244",
+          "place": {
+            "en": "Aswan, Egypt (Nubia)",
+            "es": "Asuán, Egipto (Nubia)"
+          },
+          "text": {
+            "en": "Two temples cut into a Nubian cliff, with four 20 m statues of Ramesses at the door. Twice a year the sun reaches the inner shrine. In 1964–68 they were cut up and moved 65 m higher, away from Lake Nasser.",
+            "es": "Dos templos excavados en un acantilado de Nubia, con cuatro estatuas de Ramsés de 20 m en la entrada. Dos veces al año el sol llega al santuario interior. En 1964-1968 se cortaron y se subieron 65 m, lejos del lago Nasser."
+          },
+          "wiki": {
+            "en": "Abu Simbel",
+            "es": "Abu Simbel"
+          }
+        },
+        {
+          "id": "karnak",
+          "name": {
+            "en": "Karnak",
+            "es": "Karnak"
+          },
+          "at": [
+            32.6583,
+            25.7183
+          ],
+          "cat": "temple",
+          "type": "structure",
+          "date": "-2000",
+          "place": {
+            "en": "Luxor, Egypt",
+            "es": "Luxor, Egipto"
+          },
+          "text": {
+            "en": "Egypt's largest temple, enlarged for 2,000 years for the god Amun. Its Great Hypostyle Hall, finished under Ramesses II, has 134 columns, the tallest 21 m high.",
+            "es": "El mayor templo de Egipto, ampliado durante 2000 años para el dios Amón. Su gran sala hipóstila, terminada bajo Ramsés II, tiene 134 columnas, las más altas de 21 m."
+          },
+          "wiki": {
+            "en": "Karnak",
+            "es": "Karnak"
+          }
+        }
+      ],
+      "show": [
+        "hittite-empire"
+      ]
+    },
+    {
+      "date": "-1175",
+      "title": {
+        "en": "The Sea Peoples",
+        "es": "Los Pueblos del Mar"
+      },
+      "camera": {
+        "lon": 31.6,
+        "lat": 27.0,
+        "zoom": 5.0
+      },
+      "text": {
+        "en": "Around 1175 BC Ramesses III beat off the Sea Peoples, raiders and migrants who had helped bring down the Hittites. But Egypt grew poorer: royal workers went on strike, and the empire was lost.",
+        "es": "Hacia el 1175 a. C., Ramsés III rechazó a los Pueblos del Mar, saqueadores y migrantes que habían ayudado a hundir a los hititas. Pero Egipto se empobreció: los obreros reales hicieron huelga y el imperio se perdió."
+      },
+      "details": {
+        "en": "Around 1200 BC a wave of crises, drought, earthquakes, war and migration, brought down the great kingdoms of the eastern Mediterranean. Ramesses III's temple at Medinet Habu shows his victory over the Sea Peoples. Yet in his 29th year, around 1157 BC, the tomb builders of Deir el-Medina laid down their tools because their grain rations had not arrived: the first recorded strike in history. Ramesses III was later murdered in a palace plot. Under his successors, robbers plundered the royal tombs, the kings lost Canaan and Nubia, and by about 1070 BC Egypt was split between the priests of Amun at Thebes and kings at Tanis.",
+        "es": "Hacia el 1200 a. C., una ola de crisis, sequías, terremotos, guerras y migraciones derribó los grandes reinos del Mediterráneo oriental. El templo de Ramsés III en Medinet Habu muestra su victoria sobre los Pueblos del Mar. Pero en su año 29, hacia el 1157 a. C., los constructores de tumbas de Deir el-Medina dejaron de trabajar porque no les llegaban las raciones de grano: la primera huelga registrada de la historia. Ramsés III fue asesinado después en una conjura palaciega. Con sus sucesores, los ladrones saquearon las tumbas reales, los reyes perdieron Canaán y Nubia, y hacia el 1070 a. C. Egipto quedó dividido entre los sacerdotes de Amón en Tebas y los reyes de Tanis."
+      },
+      "control": {
+        "egypt": {
+          "ref": "egypt_1175"
+        }
+      },
+      "places": [
+        {
+          "id": "ramesses-iii",
+          "name": {
+            "en": "Ramesses III",
+            "es": "Ramsés III"
+          },
+          "at": [
+            32.63,
+            25.705
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-1186",
+          "place": {
+            "en": "Thebes (Luxor), Egypt",
+            "es": "Tebas (Luxor), Egipto"
+          },
+          "text": {
+            "en": "The last great pharaoh of the New Kingdom (reigned about 1186–1155 BC). He defeated the Sea Peoples, then was murdered in a plot led by one of his wives; scans show his throat was cut.",
+            "es": "El último gran faraón del Imperio Nuevo (reinó hacia 1186-1155 a. C.). Venció a los Pueblos del Mar y luego fue asesinado en un complot de una de sus esposas; los escáneres muestran que le cortaron la garganta."
+          },
+          "wiki": {
+            "en": "Ramesses III",
+            "es": "Ramsés III"
+          }
+        },
+        {
+          "id": "medinet-habu",
+          "name": {
+            "en": "Medinet Habu",
+            "es": "Medinet Habu"
+          },
+          "at": [
+            32.6008,
+            25.7197
+          ],
+          "cat": "temple",
+          "type": "structure",
+          "date": "-1175",
+          "place": {
+            "en": "West bank, Luxor, Egypt",
+            "es": "Orilla oeste, Luxor, Egipto"
+          },
+          "text": {
+            "en": "Ramesses III's temple in western Thebes. Its walls hold the earliest known picture of a sea battle: Egyptian ships fighting the Sea Peoples, whose warriors wear horned or feathered helmets.",
+            "es": "El templo de Ramsés III en Tebas occidental. Sus muros tienen la imagen más antigua conocida de una batalla naval: barcos egipcios contra los Pueblos del Mar, cuyos guerreros llevan cascos con cuernos o plumas."
+          },
+          "wiki": {
+            "en": "Medinet Habu",
+            "es": "Medinet Habu"
+          }
+        },
+        {
+          "id": "sea-peoples",
+          "name": {
+            "en": "Sea Peoples",
+            "es": "Pueblos del Mar"
+          },
+          "at": [
+            31.3,
+            31.45
+          ],
+          "cat": "culture",
+          "type": "culture",
+          "date": "-1208",
+          "until": "-1150",
+          "place": {
+            "en": "Coasts of the eastern Mediterranean",
+            "es": "Costas del Mediterráneo oriental"
+          },
+          "text": {
+            "en": "Seafaring raiders and migrants, among them the Peleset (Philistines) and Sherden, who attacked Egypt around 1208 and 1175 BC. Where they came from is still debated: the Aegean, Anatolia or Sardinia.",
+            "es": "Saqueadores y migrantes marinos, entre ellos los peleset (filisteos) y los sherden, que atacaron Egipto hacia el 1208 y el 1175 a. C. Su origen aún se discute: el Egeo, Anatolia o Cerdeña."
+          },
+          "wiki": {
+            "en": "Sea Peoples",
+            "es": "Pueblos del mar"
+          }
+        },
+        {
+          "id": "deir-el-medina",
+          "name": {
+            "en": "Deir el-Medina",
+            "es": "Deir el-Medina"
+          },
+          "at": [
+            32.6014,
+            25.7283
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-1500",
+          "until": "-1070",
+          "place": {
+            "en": "West bank, Luxor, Egypt",
+            "es": "Orilla oeste, Luxor, Egipto"
+          },
+          "text": {
+            "en": "The village of the craftsmen who cut and painted the royal tombs. They left thousands of notes on pottery shards, and around 1157 BC they held the first recorded strike, over late grain rations.",
+            "es": "La aldea de los artesanos que excavaban y pintaban las tumbas reales. Dejaron miles de notas en trozos de cerámica, y hacia el 1157 a. C. hicieron la primera huelga registrada, por raciones de grano atrasadas."
+          },
+          "wiki": {
+            "en": "Deir el-Medina",
+            "es": "Deir el-Medina"
+          }
+        },
+        {
+          "id": "tanis",
+          "name": {
+            "en": "Tanis",
+            "es": "Tanis"
+          },
+          "at": [
+            31.88,
+            30.9769
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-1070",
+          "place": {
+            "en": "San el-Hagar, Sharqia, Egypt",
+            "es": "San el-Hagar, Sharqia, Egipto"
+          },
+          "text": {
+            "en": "Capital of the kings of the 21st and 22nd Dynasties, built partly with stones taken from older cities. In 1939–40 Pierre Montet found royal tombs here with silver coffins and gold masks.",
+            "es": "Capital de los reyes de las dinastías XXI y XXII, construida en parte con piedras de ciudades más antiguas. En 1939-1940 Pierre Montet halló aquí tumbas reales con ataúdes de plata y máscaras de oro."
+          },
+          "wiki": {
+            "en": "Tanis",
+            "es": "Tanis (Egipto)"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-525",
+      "title": {
+        "en": "Foreign kings and a last revival",
+        "es": "Reyes extranjeros y un último renacer"
+      },
+      "camera": {
+        "lon": 33.5,
+        "lat": 28.0,
+        "zoom": 3.4
+      },
+      "text": {
+        "en": "Kushite pharaohs from Nubia ruled Egypt until Assyria drove them out; then the kings of Sais revived the old glories. In 525 BC the Persian king Cambyses conquered Egypt at Pelusium.",
+        "es": "Faraones kushitas de Nubia gobernaron Egipto hasta que Asiria los expulsó; después los reyes de Sais revivieron las viejas glorias. En el 525 a. C., el rey persa Cambises conquistó Egipto en Pelusio."
+      },
+      "details": {
+        "en": "Around 727 BC Piye, king of Kush, sailed north and made himself master of a divided Egypt; his family ruled as the 25th Dynasty and revived the building of pyramids. The Assyrians invaded and sacked Thebes in 663 BC, but their vassal Psamtik I of Sais soon threw them off and reunited Egypt. The Saite kings copied Old Kingdom art, hired Greek and Carian soldiers and let Greek merchants trade at Naukratis. After the Persian conquest Egypt rebelled again and again, and its last native pharaoh, Nectanebo II, fled south in 343 BC. The Greek writer Herodotus, who visited around 450 BC, called Egypt 'the gift of the river'.",
+        "es": "Hacia el 727 a. C., Piye, rey de Kush, navegó hacia el norte y se adueñó de un Egipto dividido; su familia reinó como la XXV Dinastía y volvió a construir pirámides. Los asirios invadieron y saquearon Tebas en el 663 a. C., pero su vasallo Psamético I de Sais pronto se libró de ellos y reunificó Egipto. Los reyes saítas copiaron el arte del Imperio Antiguo, contrataron soldados griegos y carios y dejaron comerciar a los mercaderes griegos en Náucratis. Tras la conquista persa, Egipto se rebeló una y otra vez, y su último faraón nativo, Nectanebo II, huyó al sur en el 343 a. C. El escritor griego Heródoto, que lo visitó hacia el 450 a. C., llamó a Egipto «el regalo del río»."
+      },
+      "control": {
+        "egypt": null,
+        "persia": {
+          "hist": "Achaemenid Empire",
+          "year": -500
+        },
+        "kush": {
+          "minus": [
+            {
+              "hist": "Meroe",
+              "year": -500
+            },
+            {
+              "hist": "Achaemenid Empire",
+              "year": -500
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "icon": "🔥",
+          "date": "-663",
+          "at": [
+            32.6103,
+            25.7206
+          ],
+          "text": {
+            "en": "Assyrian troops sack Thebes",
+            "es": "Las tropas asirias saquean Tebas"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "piye",
+          "name": {
+            "en": "Piye",
+            "es": "Piye"
+          },
+          "at": [
+            31.27,
+            29.87
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-727",
+          "place": {
+            "en": "From Napata (Sudan) to Memphis (Egypt)",
+            "es": "De Napata (Sudán) a Menfis (Egipto)"
+          },
+          "text": {
+            "en": "The king of Kush who conquered Egypt around 727 BC, sailing north from Napata. His victory stela tells how he took Memphis, spared its people and scolded a defeated prince for starving his horses.",
+            "es": "El rey de Kush que conquistó Egipto hacia el 727 a. C., navegando río abajo desde Napata. Su estela cuenta cómo tomó Menfis, perdonó a sus habitantes y regañó a un príncipe vencido por matar de hambre a sus caballos."
+          },
+          "wiki": {
+            "en": "Piye",
+            "es": "Pianjy"
+          }
+        },
+        {
+          "id": "psamtik-i",
+          "name": {
+            "en": "Psamtik I",
+            "es": "Psamético I"
+          },
+          "at": [
+            30.7683,
+            30.9647
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-664",
+          "place": {
+            "en": "Sais, Nile Delta, Egypt",
+            "es": "Sais, delta del Nilo, Egipto"
+          },
+          "text": {
+            "en": "A prince of Sais who began as a vassal of Assyria and made himself master of all Egypt (reigned 664–610 BC). He hired Greek and Carian soldiers and brought half a century of peace.",
+            "es": "Un príncipe de Sais que empezó como vasallo de Asiria y se adueñó de todo Egipto (reinó 664-610 a. C.). Contrató soldados griegos y carios y trajo medio siglo de paz."
+          },
+          "wiki": {
+            "en": "Psamtik I",
+            "es": "Psamético I"
+          }
+        },
+        {
+          "id": "naukratis",
+          "name": {
+            "en": "Naukratis",
+            "es": "Náucratis"
+          },
+          "at": [
+            30.5925,
+            30.9011
+          ],
+          "cat": "trade",
+          "type": "site",
+          "date": "-630",
+          "place": {
+            "en": "Kom Ge'if, Beheira, Egypt",
+            "es": "Kom Ge'if, Beheira, Egipto"
+          },
+          "text": {
+            "en": "A port on a branch of the Nile where Greek merchants could trade from the 7th century BC, exchanging silver, wine and olive oil for Egyptian grain, linen and papyrus.",
+            "es": "Un puerto en un brazo del Nilo donde los mercaderes griegos pudieron comerciar desde el siglo VII a. C.: cambiaban plata, vino y aceite de oliva por grano, lino y papiro egipcios."
+          },
+          "wiki": {
+            "en": "Naucratis",
+            "es": "Náucratis"
+          }
+        },
+        {
+          "id": "battle-of-pelusium",
+          "name": {
+            "en": "Battle of Pelusium",
+            "es": "Batalla de Pelusio"
+          },
+          "at": [
+            32.545,
+            31.0417
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "-525",
+          "place": {
+            "en": "Tell el-Farama, near Port Said, Egypt",
+            "es": "Tell el-Farama, cerca de Port Said, Egipto"
+          },
+          "text": {
+            "en": "In 525 BC Cambyses II of Persia defeated Psamtik III at Pelusium, on the edge of the Delta. Egypt became part of the Persian Empire for most of the next two centuries.",
+            "es": "En el 525 a. C., Cambises II de Persia venció a Psamético III en Pelusio, a la entrada del delta. Egipto pasó a formar parte del Imperio persa durante casi dos siglos."
+          },
+          "wiki": {
+            "en": "Battle of Pelusium",
+            "es": "Batalla de Pelusio"
+          }
+        },
+        {
+          "id": "nectanebo-ii",
+          "name": {
+            "en": "Nectanebo II",
+            "es": "Nectanebo II"
+          },
+          "at": [
+            31.2,
+            30.97
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-360",
+          "place": {
+            "en": "Sebennytos, Nile Delta, Egypt",
+            "es": "Sebennitos, delta del Nilo, Egipto"
+          },
+          "text": {
+            "en": "The last native pharaoh of ancient Egypt (reigned 360–343 BC), a great builder of temples. When the Persians returned in 343 BC he fled south, and Egypt was not ruled by Egyptians again for over 2,000 years.",
+            "es": "El último faraón nativo del antiguo Egipto (reinó 360-343 a. C.), gran constructor de templos. Cuando los persas volvieron en el 343 a. C. huyó al sur, y Egipto no volvió a ser gobernado por egipcios en más de 2000 años."
+          },
+          "wiki": {
+            "en": "Nectanebo II",
+            "es": "Nectanebo II"
+          }
+        }
+      ],
+      "show": [
+        "kingdom-of-kush",
+        "achaemenid-empire"
+      ]
+    },
+    {
+      "date": "-196",
+      "title": {
+        "en": "The Greek pharaohs",
+        "es": "Los faraones griegos"
+      },
+      "camera": {
+        "lon": 30.5,
+        "lat": 28.5,
+        "zoom": 4.2
+      },
+      "text": {
+        "en": "Alexander the Great took Egypt in 332 BC and founded Alexandria. The family of his general Ptolemy ruled as pharaohs for 300 years and made Alexandria the Greek world's capital of learning.",
+        "es": "Alejandro Magno tomó Egipto en el 332 a. C. y fundó Alejandría. La familia de su general Ptolomeo gobernó como faraones durante 300 años e hizo de Alejandría la capital del saber del mundo griego."
+      },
+      "details": {
+        "en": "Egyptians welcomed Alexander as a liberator from Persia, and the oracle of Amun at Siwa greeted him as son of the god. After his death in 323 BC, Ptolemy took Egypt, and his heirs ruled in Greek from Alexandria while appearing as pharaohs on temple walls. They built the Library and the Museum, where scholars measured the size of the Earth and edited Homer, and the great lighthouse of Pharos. They also taxed Egyptian farmers hard, and revolts broke out in the south. In 196 BC priests at Memphis issued a decree honouring the young Ptolemy V in three scripts, hieroglyphs, demotic and Greek: the Rosetta Stone.",
+        "es": "Los egipcios recibieron a Alejandro como libertador de los persas, y el oráculo de Amón en Siwa lo saludó como hijo del dios. Tras su muerte en el 323 a. C., Ptolomeo se quedó con Egipto, y sus herederos gobernaron en griego desde Alejandría mientras aparecían como faraones en los muros de los templos. Construyeron la Biblioteca y el Museo, donde los sabios midieron el tamaño de la Tierra y editaron a Homero, y el gran faro de Faros. También cobraron duros impuestos a los campesinos egipcios, y estallaron revueltas en el sur. En el 196 a. C., los sacerdotes de Menfis publicaron un decreto en honor del joven Ptolomeo V en tres escrituras, jeroglífica, demótica y griega: la Piedra de Rosetta."
+      },
+      "control": {
+        "persia": null,
+        "ptolemies": {
+          "minus": [
+            {
+              "hist": "Ptolemaic Kingdom",
+              "year": -200
+            },
+            {
+              "poly": [
+                [
+                  34.2,
+                  31.25
+                ],
+                [
+                  38.0,
+                  31.25
+                ],
+                [
+                  38.0,
+                  37.5
+                ],
+                [
+                  34.2,
+                  37.5
+                ]
+              ]
+            }
+          ]
+        },
+        "kush": {
+          "minus": [
+            {
+              "hist": "Meroe",
+              "year": -200
+            },
+            {
+              "hist": "Ptolemaic Kingdom",
+              "year": -200
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "alexander-the-great",
+          "name": {
+            "en": "Alexander the Great",
+            "es": "Alejandro Magno"
+          },
+          "at": [
+            25.5194,
+            29.2053
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-332",
+          "life": [
+            "-356",
+            "-323"
+          ],
+          "place": {
+            "en": "Memphis, Siwa and Alexandria, Egypt",
+            "es": "Menfis, Siwa y Alejandría, Egipto"
+          },
+          "text": {
+            "en": "The Macedonian king who took Egypt from Persia in 332 BC without a battle. At the oasis of Siwa the oracle of Amun hailed him as the son of the god; he founded Alexandria and left within months.",
+            "es": "El rey macedonio que arrebató Egipto a Persia en el 332 a. C. sin batallar. En el oasis de Siwa el oráculo de Amón lo saludó como hijo del dios; fundó Alejandría y se marchó a los pocos meses."
+          },
+          "wiki": {
+            "en": "Alexander the Great",
+            "es": "Alejandro Magno"
+          }
+        },
+        {
+          "id": "alexandria",
+          "name": {
+            "en": "Alexandria",
+            "es": "Alejandría"
+          },
+          "at": [
+            29.8925,
+            31.1975
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-331",
+          "place": {
+            "en": "Alexandria, Egypt",
+            "es": "Alejandría, Egipto"
+          },
+          "text": {
+            "en": "Founded by Alexander in 331 BC, it grew into the largest city of the Mediterranean, home to Greeks, Egyptians and Jews. Much of the ancient city lies under the modern one and the sea.",
+            "es": "Fundada por Alejandro en el 331 a. C., llegó a ser la mayor ciudad del Mediterráneo, hogar de griegos, egipcios y judíos. Gran parte de la ciudad antigua yace bajo la moderna y bajo el mar."
+          },
+          "wiki": {
+            "en": "Alexandria",
+            "es": "Alejandría"
+          }
+        },
+        {
+          "id": "library-of-alexandria",
+          "name": {
+            "en": "Library of Alexandria",
+            "es": "Biblioteca de Alejandría"
+          },
+          "at": [
+            29.9092,
+            31.2089
+          ],
+          "cat": "knowledge",
+          "type": "institution",
+          "date": "-285",
+          "place": {
+            "en": "Alexandria, Egypt",
+            "es": "Alejandría, Egipto"
+          },
+          "text": {
+            "en": "The great library of the Ptolemies, which tried to collect every book written in Greek. Its scholars measured the Earth and edited Homer; it declined over centuries rather than burning in one fire.",
+            "es": "La gran biblioteca de los Ptolomeos, que quiso reunir todos los libros escritos en griego. Sus sabios midieron la Tierra y editaron a Homero; decayó durante siglos en lugar de arder en un solo incendio."
+          },
+          "wiki": {
+            "en": "Library of Alexandria",
+            "es": "Biblioteca de Alejandría"
+          }
+        },
+        {
+          "id": "lighthouse-of-alexandria",
+          "name": {
+            "en": "Lighthouse of Alexandria",
+            "es": "Faro de Alejandría"
+          },
+          "at": [
+            29.886,
+            31.2148
+          ],
+          "cat": "knowledge",
+          "type": "structure",
+          "date": "-280",
+          "until": "1323",
+          "place": {
+            "en": "Pharos island, Alexandria, Egypt",
+            "es": "Isla de Faros, Alejandría, Egipto"
+          },
+          "text": {
+            "en": "A tower perhaps 100 m tall on the island of Pharos, finished around 280 BC, with a fire on top to guide ships. One of the Seven Wonders, it was wrecked by earthquakes by 1323.",
+            "es": "Una torre de quizá 100 m en la isla de Faros, terminada hacia el 280 a. C., con un fuego en lo alto para guiar a los barcos. Una de las siete maravillas, los terremotos la derrumbaron hacia 1323."
+          },
+          "wiki": {
+            "en": "Lighthouse of Alexandria",
+            "es": "Faro de Alejandría"
+          }
+        },
+        {
+          "id": "rosetta-stone",
+          "name": {
+            "en": "Rosetta Stone",
+            "es": "Piedra de Rosetta"
+          },
+          "at": [
+            30.4167,
+            31.4
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-196",
+          "place": {
+            "en": "Found at Rashid (Rosetta), Egypt; British Museum, London",
+            "es": "Hallada en Rashid (Rosetta), Egipto; Museo Británico, Londres"
+          },
+          "text": {
+            "en": "A decree of 196 BC in hieroglyphs, demotic and Greek, found by French soldiers in 1799. Because its Greek could be read, it became the key to hieroglyphs. Egypt has asked for its return.",
+            "es": "Un decreto del 196 a. C. en jeroglíficos, demótico y griego, hallado por soldados franceses en 1799. Como su griego podía leerse, fue la clave de los jeroglíficos. Egipto ha pedido que se le devuelva."
+          },
+          "wiki": {
+            "en": "Rosetta Stone",
+            "es": "Piedra de Rosetta"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-30-08",
+      "title": {
+        "en": "Cleopatra, the last pharaoh",
+        "es": "Cleopatra, la última faraona"
+      },
+      "camera": {
+        "lon": 27.0,
+        "lat": 31.5,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "Cleopatra VII, the last of the Ptolemies, tried to keep Egypt free by allying with Julius Caesar and then Mark Antony. After their defeat at Actium she died in August 30 BC, and Egypt became Roman.",
+        "es": "Cleopatra VII, la última de los Ptolomeos, intentó mantener libre a Egipto aliándose con Julio César y luego con Marco Antonio. Tras su derrota en Accio murió en agosto del 30 a. C., y Egipto pasó a ser romano."
+      },
+      "details": {
+        "en": "Cleopatra (69–30 BC) was brilliant and well educated, and the first of her Macedonian family to speak Egyptian. She had a son, Caesarion, with Julius Caesar, and three children with Mark Antony, who gave her lands around the eastern Mediterranean. Rome's Octavian declared war on her, and in 31 BC his fleet beat theirs at Actium, in Greece. As Octavian's army entered Alexandria, Antony killed himself, and Cleopatra died soon after, by tradition from the bite of a snake; Caesarion was put to death. For almost seven centuries Egypt belonged to Rome and then Byzantium, and its grain fed their capitals.",
+        "es": "Cleopatra (69-30 a. C.) era brillante y culta, y fue la primera de su familia macedonia en hablar egipcio. Tuvo un hijo, Cesarión, con Julio César, y tres hijos con Marco Antonio, que le dio tierras en todo el Mediterráneo oriental. Octavio, en Roma, le declaró la guerra, y en el 31 a. C. su flota venció a la de ellos en Accio, en Grecia. Cuando el ejército de Octavio entró en Alejandría, Antonio se suicidó y Cleopatra murió poco después, según la tradición por la mordedura de una serpiente; a Cesarión lo mataron. Durante casi siete siglos Egipto perteneció a Roma y luego a Bizancio, y su grano alimentó a sus capitales."
+      },
+      "control": {
+        "ptolemies": null,
+        "rome": {
+          "hist": "Roman Empire",
+          "year": -1
+        },
+        "kush": {
+          "minus": [
+            {
+              "hist": "Meroe",
+              "year": -1
+            },
+            {
+              "hist": "Roman Empire",
+              "year": -1
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "cleopatra-vii",
+          "name": {
+            "en": "Cleopatra VII",
+            "es": "Cleopatra VII"
+          },
+          "at": [
+            29.9,
+            31.205
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-51",
+          "life": [
+            "-69",
+            "-30"
+          ],
+          "place": {
+            "en": "Alexandria, Egypt",
+            "es": "Alejandría, Egipto"
+          },
+          "text": {
+            "en": "The last ruler of Ptolemaic Egypt (51–30 BC), a gifted politician who spoke many languages, Egyptian among them. Roman propaganda painted her as a seductress; she was above all a queen fighting for her country.",
+            "es": "La última gobernante del Egipto ptolemaico (51-30 a. C.), una política hábil que hablaba muchas lenguas, entre ellas el egipcio. La propaganda romana la pintó como seductora; fue ante todo una reina que luchaba por su país."
+          },
+          "wiki": {
+            "en": "Cleopatra",
+            "es": "Cleopatra"
+          }
+        },
+        {
+          "id": "battle-of-actium",
+          "name": {
+            "en": "Battle of Actium",
+            "es": "Batalla de Accio"
+          },
+          "at": [
+            20.725,
+            38.925
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "-31-09-02",
+          "place": {
+            "en": "Off Actium, western Greece",
+            "es": "Frente a Accio, Grecia occidental"
+          },
+          "text": {
+            "en": "On 2 September 31 BC Octavian's fleet, led by Agrippa, defeated the ships of Antony and Cleopatra off western Greece. The couple escaped to Egypt, but their cause was lost.",
+            "es": "El 2 de septiembre del 31 a. C., la flota de Octavio, al mando de Agripa, venció a los barcos de Antonio y Cleopatra frente a Grecia occidental. La pareja huyó a Egipto, pero su causa estaba perdida."
+          },
+          "wiki": {
+            "en": "Battle of Actium",
+            "es": "Batalla de Accio"
+          }
+        },
+        {
+          "id": "temple-of-dendera",
+          "name": {
+            "en": "Temple of Dendera",
+            "es": "Templo de Dendera"
+          },
+          "at": [
+            32.6703,
+            26.1417
+          ],
+          "cat": "temple",
+          "type": "structure",
+          "date": "-54",
+          "place": {
+            "en": "Dendera, Qena, Egypt",
+            "es": "Dendera, Qena, Egipto"
+          },
+          "text": {
+            "en": "The temple of the goddess Hathor, one of the best preserved in Egypt, begun in 54 BC. Its back wall shows Cleopatra and her son Caesarion as pharaohs making offerings to the gods.",
+            "es": "El templo de la diosa Hathor, uno de los mejor conservados de Egipto, comenzado en el 54 a. C. Su muro trasero muestra a Cleopatra y a su hijo Cesarión como faraones haciendo ofrendas a los dioses."
+          },
+          "wiki": {
+            "en": "Dendera temple complex",
+            "es": "Templo de Dendera"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2025",
+      "title": {
+        "en": "Egypt's past today",
+        "es": "El pasado de Egipto hoy"
+      },
+      "camera": {
+        "lon": 17.5,
+        "lat": 37.0,
+        "zoom": 2.5
+      },
+      "text": {
+        "en": "The last hieroglyphs were carved in AD 394, and no one could read them until Champollion cracked the script in 1822. Today Egypt's monuments draw millions of visitors, and its museums tell the story.",
+        "es": "Los últimos jeroglíficos se tallaron en el 394 d. C., y nadie pudo leerlos hasta que Champollion descifró la escritura en 1822. Hoy los monumentos de Egipto atraen a millones de visitantes, y sus museos cuentan la historia."
+      },
+      "details": {
+        "en": "Under Roman rule Christianity spread, the old temples closed, and Egyptian came to be written in Greek letters as Coptic. A priest at Philae carved the last known hieroglyphic inscription on 24 August 394. Napoleon's invasion of 1798 brought scholars, and the Rosetta Stone, to light, and in 1822 Jean-François Champollion, who knew Coptic, showed that hieroglyphs wrote sounds as well as ideas. Archaeology since then has been both science and treasure hunt, and many objects left for Europe and America. In the 1960s the world helped move Nubian temples away from Lake Nasser, which flooded the homeland of about 100,000 Nubians. The Grand Egyptian Museum near Giza opened fully in 2025.",
+        "es": "Bajo el dominio romano se extendió el cristianismo, cerraron los viejos templos, y el egipcio pasó a escribirse con letras griegas: el copto. Un sacerdote de File talló la última inscripción jeroglífica conocida el 24 de agosto del 394. La invasión de Napoleón de 1798 sacó a la luz a sus sabios y la Piedra de Rosetta, y en 1822 Jean-François Champollion, que sabía copto, demostró que los jeroglíficos escribían sonidos además de ideas. Desde entonces la arqueología ha sido ciencia y también caza de tesoros, y muchos objetos se fueron a Europa y América. En los años 1960 el mundo ayudó a trasladar templos de Nubia lejos del lago Nasser, que anegó la tierra natal de unos 100 000 nubios. El Gran Museo Egipcio, junto a Guiza, abrió por completo en 2025."
+      },
+      "control": {
+        "rome": null,
+        "kush": null
+      },
+      "places": [
+        {
+          "id": "last-hieroglyphs",
+          "name": {
+            "en": "The last hieroglyphs",
+            "es": "Los últimos jeroglíficos"
+          },
+          "at": [
+            32.8894,
+            24.0208
+          ],
+          "cat": "writing",
+          "type": "event",
+          "date": "394-08-24",
+          "place": {
+            "en": "Temple of Isis, Philae, Aswan, Egypt",
+            "es": "Templo de Isis, File, Asuán, Egipto"
+          },
+          "text": {
+            "en": "On 24 August 394 a priest at the temple of Isis on Philae carved the last known hieroglyphic inscription. The temple, the last of the old gods, was closed about 537 and moved to a nearby island in the 1970s.",
+            "es": "El 24 de agosto del 394, un sacerdote del templo de Isis en File talló la última inscripción jeroglífica conocida. El templo, último de los viejos dioses, se cerró hacia el 537 y en los años 1970 se trasladó a otra isla."
+          },
+          "wiki": {
+            "en": "Graffito of Esmet-Akhom",
+            "es": "Inscripción de Esmet-Akhom"
+          }
+        },
+        {
+          "id": "coptic-language",
+          "name": {
+            "en": "Coptic",
+            "es": "El copto"
+          },
+          "at": [
+            30.35,
+            30.33
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "200",
+          "place": {
+            "en": "Egypt; prayers of the Coptic Church",
+            "es": "Egipto; oraciones de la Iglesia copta"
+          },
+          "text": {
+            "en": "The last stage of the Egyptian language, written in Greek letters plus seven signs from demotic. Arabic slowly replaced it after 641, but it lives on in the prayers of Egypt's Coptic Christians.",
+            "es": "La última etapa de la lengua egipcia, escrita con letras griegas más siete signos del demótico. El árabe la fue reemplazando tras el 641, pero sigue viva en las oraciones de los cristianos coptos de Egipto."
+          },
+          "wiki": {
+            "en": "Coptic language",
+            "es": "Idioma copto"
+          }
+        },
+        {
+          "id": "champollion",
+          "name": {
+            "en": "Jean-François Champollion",
+            "es": "Jean-François Champollion"
+          },
+          "at": [
+            2.3376,
+            48.8566
+          ],
+          "cat": "person",
+          "type": "person",
+          "date": "1822",
+          "life": [
+            "1790",
+            "1832"
+          ],
+          "place": {
+            "en": "Paris, France",
+            "es": "París, Francia"
+          },
+          "text": {
+            "en": "The French scholar who announced in 1822 that he had deciphered hieroglyphs, using the Rosetta Stone and his knowledge of Coptic. He showed that the signs wrote sounds as well as ideas.",
+            "es": "El erudito francés que anunció en 1822 que había descifrado los jeroglíficos, con la Piedra de Rosetta y su conocimiento del copto. Demostró que los signos escribían sonidos además de ideas."
+          },
+          "wiki": {
+            "en": "Jean-François Champollion",
+            "es": "Jean-François Champollion"
+          }
+        },
+        {
+          "id": "saving-nubian-monuments",
+          "name": {
+            "en": "Saving the monuments of Nubia",
+            "es": "El salvamento de los monumentos de Nubia"
+          },
+          "at": [
+            32.3,
+            22.9
+          ],
+          "cat": "place",
+          "type": "event",
+          "date": "1960",
+          "end": "1980",
+          "place": {
+            "en": "Lake Nasser, Egypt and Sudan",
+            "es": "Lago Nasser, Egipto y Sudán"
+          },
+          "text": {
+            "en": "When the Aswan High Dam was built, UNESCO led a campaign (1960–80) to move 22 monuments, among them Abu Simbel and Philae. The lake drowned the villages of 100,000 to 120,000 Nubians, who had to leave.",
+            "es": "Cuando se construyó la gran presa de Asuán, la UNESCO dirigió una campaña (1960-1980) para trasladar 22 monumentos, entre ellos Abu Simbel y File. El lago anegó las aldeas de 100 000 a 120 000 nubios, que tuvieron que irse."
+          },
+          "wiki": {
+            "en": "International Campaign to Save the Monuments of Nubia",
+            "es": "Campaña de salvamento de los monumentos de Nubia"
+          }
+        },
+        {
+          "id": "grand-egyptian-museum",
+          "name": {
+            "en": "Grand Egyptian Museum",
+            "es": "Gran Museo Egipcio"
+          },
+          "at": [
+            31.1193,
+            29.995
+          ],
+          "cat": "place",
+          "type": "institution",
+          "date": "2025-11-01",
+          "place": {
+            "en": "Giza, Egypt",
+            "es": "Guiza, Egipto"
+          },
+          "text": {
+            "en": "A vast museum beside the Giza pyramids, devoted to Egypt's ancient civilization. Fully opened on 1 November 2025, it shows all of Tutankhamun's treasures together for the first time.",
+            "es": "Un enorme museo junto a las pirámides de Guiza, dedicado a la antigua civilización egipcia. Abrió por completo el 1 de noviembre de 2025 y muestra por primera vez juntos todos los tesoros de Tutankamón."
+          },
+          "wiki": {
+            "en": "Grand Egyptian Museum",
+            "es": "Gran Museo Egipcio"
+          }
+        }
+      ],
+      "aftermath": true
+    }
+  ],
+  "outcome": {
+    "en": "Ancient Egypt lasted longer than almost any civilization and left the pyramids, the temples of Karnak and Abu Simbel, one of the first scripts and, through its letters, the ancestor of most alphabets. Its calendar of 365 days became ours, by way of Rome. Its language survives in Coptic prayers, and its monuments, studied since Champollion, still draw the world to the Nile.",
+    "es": "El antiguo Egipto duró más que casi cualquier otra civilización y dejó las pirámides, los templos de Karnak y Abu Simbel, una de las primeras escrituras y, a través de sus letras, el antepasado de la mayoría de los alfabetos. Su calendario de 365 días llegó a ser el nuestro, a través de Roma. Su lengua sobrevive en las oraciones coptas, y sus monumentos, estudiados desde Champollion, aún atraen al mundo hacia el Nilo."
+  },
+  "sources": [
+    {
+      "title": "Ancient Egypt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ancient_Egypt"
+    },
+    {
+      "title": "Naqada culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Naqada_culture"
+    },
+    {
+      "title": "Nabta Playa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nabta_Playa"
+    },
+    {
+      "title": "Narmer (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Narmer"
+    },
+    {
+      "title": "Narmer Palette (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Narmer_Palette"
+    },
+    {
+      "title": "Great Pyramid of Giza (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
+    },
+    {
+      "title": "Diary of Merer (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Diary_of_Merer"
+    },
+    {
+      "title": "Middle Kingdom of Egypt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Middle_Kingdom_of_Egypt"
+    },
+    {
+      "title": "Wadi el-Hol inscriptions (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wadi_el-Hol_inscriptions"
+    },
+    {
+      "title": "Hyksos (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hyksos"
+    },
+    {
+      "title": "Seqenenre Tao (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Seqenenre_Tao"
+    },
+    {
+      "title": "Hatshepsut (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hatshepsut"
+    },
+    {
+      "title": "Land of Punt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Land_of_Punt"
+    },
+    {
+      "title": "Akhenaten (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Akhenaten"
+    },
+    {
+      "title": "Tutankhamun (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tutankhamun"
+    },
+    {
+      "title": "Mask of Tutankhamun (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mask_of_Tutankhamun"
+    },
+    {
+      "title": "Egyptian–Hittite peace treaty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Egyptian%E2%80%93Hittite_peace_treaty"
+    },
+    {
+      "title": "Battle of Kadesh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Kadesh"
+    },
+    {
+      "title": "Deir el-Medina (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Deir_el-Medina"
+    },
+    {
+      "title": "Late Period of ancient Egypt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Late_Period_of_ancient_Egypt"
+    },
+    {
+      "title": "Ptolemaic Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ptolemaic_Kingdom"
+    },
+    {
+      "title": "Rosetta Stone (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rosetta_Stone"
+    },
+    {
+      "title": "Cleopatra (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cleopatra"
+    },
+    {
+      "title": "Graffito of Esmet-Akhom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Graffito_of_Esmet-Akhom"
+    },
+    {
+      "title": "Coptic language (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Coptic_language"
+    },
+    {
+      "title": "International Campaign to Save the Monuments of Nubia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/International_Campaign_to_Save_the_Monuments_of_Nubia"
+    },
+    {
+      "title": "Aswan Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aswan_Dam"
+    },
+    {
+      "title": "Grand Egyptian Museum (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Grand_Egyptian_Museum"
+    }
+  ]
+}

@@ -34,7 +34,7 @@ the wrong way, a battle in the wrong place). Historical maps exist for these yea
 | `id` | same as the file name |
 | `name` | the conflict's usual name |
 | `icon` | one emoji for the list (⚔️ 🏹 🐎 🛡️ 🚢 ✈️ 💣 🏰 ⛵ 🗡️ ...) |
-| `era` | `ancient` (to 500), `medieval` (500–1500), `early-modern` (1500–1800), `modern` (1800–1945), `contemporary` (after 1945) |
+| `era` | `prehistory` (before writing, to about 3000 BC), `ancient` (to 500), `medieval` (500–1500), `early-modern` (1500–1800), `modern` (1800–1945), `contemporary` (after 1945) |
 | `region` | where, in a few words |
 | `start`, `end` | dates of the conflict itself |
 | `summary` | 1–2 sentences for the list |

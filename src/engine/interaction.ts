@@ -181,7 +181,7 @@ export class Interaction {
   animateZoom(factor: number, sx?: number, sy?: number, ms = 320) {
     this.stopInertia();
     const view = this.r.view;
-    const x = sx ?? view.w / 2, y = sy ?? view.h / 2;
+    const x = sx ?? view.w / 2, y = sy ?? view.midY;
     let done = 0;
     const total = Math.log(factor);
     this.r.moving = true;

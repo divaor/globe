@@ -29,8 +29,12 @@ interface WarEvent { icon: string; text: Text; at?: Pt; date?: string }
 /** A marker of the stories other than wars: a person, work, site, dish, structure... */
 export interface Item {
   id?: string; name: Text; at: Pt; cat: string; icon: string; date: string; t: number; end?: string; life?: [string, string | null];
+  /** When it stopped existing (a civilization's end); `tu` is that time. Off the map after it. */
+  until?: string; tu?: number;
   type?: string; country?: string; place?: Text; text: Text; details?: Text; why?: Text; how?: Text; by?: Text; size?: Text; status?: Text;
   facts?: { label: Text; value: Text }[]; wiki?: Text;
+  /** A Wikimedia Commons file for the card, when the article has no picture of its own. */
+  img?: string;
   /** The first step that shows it (-1: a time tour's catalogue item, shown from its date). */
   first: number;
 }
@@ -48,22 +52,25 @@ interface Entry {
   id: string; name: Text; icon: string; era: string; region: Text; summary: Text; start: string; end: string; t0: number; t1: number; steps: number;
   sides: { name: Text; color: string }[]; items?: number; cats?: string[];
 }
+/** Where an item's marker is drawn this frame: (x, y), moved apart from crowded neighbours, and (ax, ay), its true place. */
+interface Spot { k: number; x: number; y: number; ax: number; ay: number; r: number; wt: number }
 /** A collection's items.json row: an item and where it first appears. */
 export interface CollectionItem extends Omit<Item, 'first'> { story: string; step: number }
 
-/** The four collections of stories. */
-export type StoryKind = 'wars' | 'eras' | 'food' | 'structures';
-export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures'];
+/** The collections of stories. */
+export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people';
+export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people'];
 const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text }> = {
   wars: { dir: 'conflicts', hash: 'war', icon: '⚔️', name: { en: 'Wars and conquests', es: 'Guerras y conquistas' } },
   eras: { dir: 'eras', hash: 'eras', icon: '🎨', name: { en: 'Eras and ideas', es: 'Épocas e ideas' } },
   food: { dir: 'food', hash: 'food', icon: '🌾', name: { en: 'Food through time', es: 'La comida en el tiempo' } },
   structures: { dir: 'structures', hash: 'structures', icon: '🏛️', name: { en: 'Great structures', es: 'Grandes construcciones' } },
+  people: { dir: 'people', hash: 'people', icon: '🏺', name: { en: 'Peoples and civilizations', es: 'Pueblos y civilizaciones' } },
 };
 export const storyHashKey = (k: StoryKind) => KINDS[k].hash;
 interface Area extends Shape { lp: Pt; area: number }
 
-export const ERAS = ['ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
+export const ERAS = ['prehistory', 'ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
 const MONTHS: Record<'en' | 'es', string[]> = {
   en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
@@ -77,11 +84,36 @@ const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
 const ease = (x: number) => { const t = clamp01(x); return t * t * (3 - 2 * t); };
 const pop = (x: number) => { const t = clamp01(x); return t < 1 ? 1 - Math.pow(1 - t, 3) * (1 - 2.2 * t) : 1; };
 
-/** "1 September 1939", "May 334 BC", "336 a. C."... */
+/** Dates older than 10,000 BC are written as years ago: -3200000 is 3.2 million years ago. */
+const AGO = -10000;
+function group(n: number, sep: string): string { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, sep); }
+/** How long ago: ["3.2", million] or ["300,000", years]. */
+function agoNum(n: number, es: boolean): [string, boolean] {
+  // Millions to two decimals at most, as the stories give them: 7, 3.2, 3.66.
+  if (n >= 1e6) { const m = Math.round(n / 1e4) / 100; return [es ? String(m).replace('.', ',') : String(m), true]; }
+  const r = n >= 1e5 ? Math.round(n / 1e3) * 1e3 : Math.round(n / 100) * 100;
+  return [group(r, es ? '\u00a0' : ','), false];
+}
+/** "3.2 million years ago", "300,000 years ago", "hace 14\u00a0400 años". */
+function fmtAgo(y: number): string {
+  const es = lang() === 'es', [v, mill] = agoNum(-y, es);
+  if (mill) return es ? `hace ${v}\u00a0${v === '1' ? 'millón' : 'millones'} de años` : `${v}\u00a0million years ago`;
+  return es ? `hace ${v}\u00a0años` : `${v}\u00a0years ago`;
+}
+/** "7–2 million years ago", "300,000–40,000 years ago", "3.3 million – 300,000 years ago". */
+function fmtAgoRange(y0: number, y1: number): string {
+  const es = lang() === 'es', [a, ma] = agoNum(-y0, es), [b, mb] = agoNum(-y1, es);
+  if (ma && mb) return es ? `hace ${a}–${b}\u00a0millones de años` : `${a}–${b}\u00a0million years ago`;
+  if (!ma && !mb) return es ? `hace ${a}–${b}\u00a0años` : `${a}–${b}\u00a0years ago`;
+  return es ? `hace ${a}\u00a0millones – ${b}\u00a0años` : `${a}\u00a0million – ${b}\u00a0years ago`;
+}
+
+/** "1 September 1939", "May 334 BC", "336 a. C.", "3.2 million years ago"... */
 export function fmtWhen(d: string, eraHint = 1): string {
   const m = /^(-?\d+)(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(d);
   if (!m) return d;
   const y = Number(m[1]), mo = m[2] ? Number(m[2]) : 0, day = m[3] ? Number(m[3]) : 0;
+  if (y < AGO) return fmtAgo(y);
   const es = lang() === 'es';
   // Non-breaking spaces keep "216 a. C." and "AD 476" together when the text wraps.
   const year = y < 0 ? (es ? `${-y}\u00a0a.\u00a0C.` : `${-y}\u00a0BC`) : eraHint < 0 && y < 1000 ? (es ? `${y}\u00a0d.\u00a0C.` : `AD\u00a0${y}`) : String(y);
@@ -93,6 +125,7 @@ export function fmtWhen(d: string, eraHint = 1): string {
 /** "1939–1945", "334–323 BC", "509 BC – AD 117". */
 function fmtYears(start: string, end: string): string {
   const y0 = Number(/^-?\d+/.exec(start)?.[0]), y1 = Number(/^-?\d+/.exec(end)?.[0]);
+  if (y0 < AGO) return y1 < AGO ? fmtAgoRange(y0, y1) : `${fmtAgo(y0)} – ${fmtWhen(end, y0)}`;
   const es = lang() === 'es';
   if (y0 < 0 && y1 < 0) return `${-y0}–${-y1}\u00a0${es ? 'a.\u00a0C.' : 'BC'}`;
   if (y0 < 0) return es ? `${-y0}\u00a0a.\u00a0C. – ${y1}\u00a0d.\u00a0C.` : `${-y0}\u00a0BC – AD\u00a0${y1}`;
@@ -147,6 +180,11 @@ export class StoryMode {
   private snaps: { year: number; astro: number; file: string }[] = [];
   private borders = new Map<string, Line[] | 'loading'>();
   private onKey = (e: KeyboardEvent) => this.key(e);
+  private onResize = () => { this.fitText(); this.measureBar(); };
+  /** The step text is shown whole (tapped open) rather than in three lines. */
+  private textOpen = false;
+  /** The markers as drawn in the last frame (story and step, item index → spot): taps and labels use them. */
+  private spots: { key: string; at: Map<number, Spot> } = { key: '', at: new Map() };
   readonly layer: LayerDef;
 
   constructor(private app: App, private shell: Shell, readonly kind: StoryKind = 'wars') {
@@ -225,6 +263,7 @@ export class StoryMode {
     this.c = c;
     this.areas = new Map(shapesFrom(topo, 'areas').map((s) => [Number(s.id), { ...s, ...labelPoint(s.feature) }]));
     this.step = Math.max(0, Math.min(c.steps.length - 1, at)); this.prev = -1;
+    this.textOpen = false;
     this.buildBar();
     this.go(this.step, { fly: !focus });
     this.playing = !focus;
@@ -249,6 +288,7 @@ export class StoryMode {
     app.renderer.baseMap = false;
     await app.setStack([this.layer.id]);
     window.addEventListener('keydown', this.onKey);
+    window.addEventListener('resize', this.onResize);
   }
 
   async exit() {
@@ -258,6 +298,7 @@ export class StoryMode {
     this.bar?.remove();
     this.bar = null; this.ui = null; this.c = null;
     window.removeEventListener('keydown', this.onKey);
+    window.removeEventListener('resize', this.onResize);
     app.renderer.view.insetBottom = 0;
     app.mode = null;
     document.documentElement.classList.remove('mode-time', 'mode-story', `mode-${this.kind}`);
@@ -279,13 +320,43 @@ export class StoryMode {
     return c.camera;
   }
 
+  /**
+   * The step's camera, zoomed out (at most 4 times) when the step's own markers would not all be in
+   * view on this screen: a phone's map between the panels is much smaller than the one it was set for.
+   */
+  private fitCam(cam: Cam, st: Step): Cam {
+    const c = this.c!;
+    if (!c.items || !st.show?.length) return cam;
+    const v = this.app.renderer.view;
+    const perZoom = v.pxPerRadian / v.zoom;
+    const halfW = v.w / 2 - 30, halfH = v.mapH / 2 - 30;
+    const R = Math.PI / 180;
+    let k = Infinity;
+    for (const i of st.show) {
+      const [lon, lat] = c.items[i].at;
+      const dx = Math.abs(((lon - cam.lon + 540) % 360) - 180) * R * Math.cos(lat * R), dy = Math.abs(lat - cam.lat) * R;
+      if (dx > 1e-9) k = Math.min(k, halfW / dx);
+      if (dy > 1e-9) k = Math.min(k, halfH / dy);
+    }
+    const z = k / perZoom;
+    return isFinite(z) && z < cam.zoom ? { ...cam, zoom: Math.max(z, cam.zoom / 4, 1) } : cam;
+  }
+
   /** Shows step `i`; the camera moves when the step (or a jump) asks for another view. */
   private go(i: number, o: { fly?: boolean; user?: boolean; stay?: boolean } = {}) {
     const c = this.c!;
     i = Math.max(0, Math.min(c.steps.length - 1, i));
     this.prev = i === this.step ? -1 : this.step;
     this.step = i;
-    const cam = this.cameraAt(i);
+    // The address names the war and the step, so the page can be shared or reloaded there.
+    history.replaceState(null, '', `#${KINDS[this.kind].hash}=${c.id}&step=${i + 1}&p=${this.app.projection}&lang=${lang()}`);
+    void this.ensureBorders(c.steps[i]);
+    if (this.shell.sheet.isOpen('war-step')) this.openDetails(true);
+    this.shell.card.hide();
+    this.renderBar();
+    // The bar is up with this step's text, so the camera knows how much map is left above it.
+    this.measureBar();
+    const cam = this.fitCam(this.cameraAt(i), c.steps[i]);
     let delay = 0;
     if (!o.stay && (o.fly || o.user || c.steps[i].camera)) {
       const v = this.app.renderer.view;
@@ -293,12 +364,6 @@ export class StoryMode {
       if (far) { v.flyTo(cam, 1300); delay = 700; }
     }
     this.stepAt = performance.now() + delay;
-    // The address names the war and the step, so the page can be shared or reloaded there.
-    history.replaceState(null, '', `#${KINDS[this.kind].hash}=${c.id}&step=${i + 1}&p=${this.app.projection}&lang=${lang()}`);
-    void this.ensureBorders(c.steps[i]);
-    if (this.shell.sheet.isOpen('war-step')) this.openDetails(true);
-    this.shell.card.hide();
-    this.renderBar();
     this.kick();
   }
 
@@ -515,25 +580,75 @@ export class StoryMode {
     });
     if (c.items) {
       // Earlier items (and, in a time tour, everything built by now) as dots, this step's popping up.
+      // Crowded markers move apart, each with a line to its true place, so every one can be tapped.
       const now = new Set(st.show ?? []);
       const zoomed = rc.view.pxPerRadian > 1600;
-      c.items.forEach((it, k) => { if (!now.has(k) && this.onMap(it, st)) this.drawItem(rc, it, 1, 0, true, zoomed); });
+      const spots = this.layout(rc, st, zoomed);
+      this.spots = { key: `${c.id}:${this.step}`, at: spots };
+      const popAt = new Map((st.show ?? []).map((k, n) => [k, pop((el - BATTLE_FROM - n * ITEM_GAP) / POP)]));
+      this.drawLeaders(rc, spots, (k) => popAt.get(k) ?? 1);
+      c.items.forEach((it, k) => { if (!now.has(k) && this.onMap(it, st)) this.drawItem(rc, it, 1, 0, true, zoomed, spots.get(k)); });
       (st.show ?? []).forEach((k, n) => {
         const at = BATTLE_FROM + n * ITEM_GAP;
-        this.drawItem(rc, c.items![k], pop((el - at) / POP), (el - at) / PULSE, false, zoomed);
+        this.drawItem(rc, c.items![k], pop((el - at) / POP), (el - at) / PULSE, false, zoomed, spots.get(k));
       });
     }
   }
 
   /** Is an item on the map at this step (other than as one of the step's own)? */
   private onMap(it: Item, st: Step) {
+    if (it.tu != null && st.t > it.tu + 1e-6) return false;
     return (it.first >= 0 && it.first < this.step) || (this.c?.catalog === 'all' && it.t <= st.t + 1e-6);
   }
 
   private catOf(id: string): Cat | undefined { return this.c?.cats?.find((k) => k.id === id) ?? this.cats.get(id); }
 
-  private drawItem(rc: RenderCtx, it: Item, s: number, pulse: number, small: boolean, zoomed: boolean) {
-    const p = rc.project(it.at[0], it.at[1]);
+  /**
+   * Where the markers go: the step's own (big) markers, and zoomed in every marker on the map, move
+   * apart when they overlap, as little as they must; the step's own move least.
+   */
+  private layout(rc: RenderCtx, st: Step, zoomed: boolean): Map<number, Spot> {
+    const c = this.c!, out = new Map<number, Spot>();
+    const { w, h } = rc.view, M = 90;
+    const pts: Spot[] = [];
+    const add = (k: number, r: number, wt: number) => {
+      const it = c.items![k];
+      const p = rc.project(it.at[0], it.at[1]);
+      if (!p || p[0] < -M || p[0] > w + M || p[1] < -M || p[1] > h + M) return;
+      pts.push({ k, x: p[0], y: p[1], ax: p[0], ay: p[1], r, wt });
+    };
+    const now = st.show ?? [];
+    for (const k of now) add(k, 12.5, 3);
+    if (zoomed) {
+      const mine = new Set(now);
+      c.items!.forEach((it, k) => { if (!mine.has(k) && this.onMap(it, st)) add(k, 8.5, 1); });
+    }
+    spread(pts, 3);
+    for (const p of pts) out.set(p.k, p);
+    return out;
+  }
+
+  /** A thin line from each moved marker to a dot at its true place (under all the markers). */
+  private drawLeaders(rc: RenderCtx, spots: Map<number, Spot>, scale: (k: number) => number) {
+    const { ctx } = rc;
+    const ink = rc.theme.dark ? 'rgba(232,238,247,0.8)' : 'rgba(28,34,46,0.62)';
+    ctx.save();
+    for (const sp of spots.values()) {
+      const dx = sp.x - sp.ax, dy = sp.y - sp.ay, d = Math.hypot(dx, dy);
+      const s = scale(sp.k);
+      if (d < sp.r * 0.7 || s <= 0) continue;
+      ctx.globalAlpha = Math.min(1, s);
+      ctx.beginPath(); ctx.moveTo(sp.ax, sp.ay); ctx.lineTo(sp.x - (dx / d) * sp.r * s, sp.y - (dy / d) * sp.r * s);
+      ctx.lineWidth = 1.4; ctx.strokeStyle = ink; ctx.stroke();
+      ctx.beginPath(); ctx.arc(sp.ax, sp.ay, 2.8, 0, Math.PI * 2);
+      ctx.fillStyle = this.catOf(this.c!.items![sp.k].cat)?.color ?? '#59616b'; ctx.fill();
+      ctx.lineWidth = 1; ctx.strokeStyle = '#fff'; ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  private drawItem(rc: RenderCtx, it: Item, s: number, pulse: number, small: boolean, zoomed: boolean, spot?: Spot) {
+    const p = spot ? [spot.x, spot.y] : rc.project(it.at[0], it.at[1]);
     if (!p || s <= 0) return;
     const { ctx } = rc;
     const col = this.catOf(it.cat)?.color ?? '#59616b';
@@ -608,10 +723,14 @@ export class StoryMode {
     });
     if (c.items) {
       const now = st.show ?? [];
+      const spot = (k: number): [number, number] | null => {
+        const sp = this.spots.key === `${c.id}:${this.step}` ? this.spots.at.get(k) : undefined;
+        return sp ? [sp.x, sp.y] : rc.project(c.items![k].at[0], c.items![k].at[1]);
+      };
       now.forEach((k, n) => {
         if (el < BATTLE_FROM + n * ITEM_GAP + POP * 0.6) return;
         const it = c.items![k];
-        const p = rc.project(it.at[0], it.at[1]);
+        const p = spot(k);
         if (!p) return;
         rc.labels.add({
           text: tx(it.name), x: p[0], y: p[1], gap: 16, priority: 1350 - n, size: 12, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo,
@@ -622,7 +741,7 @@ export class StoryMode {
       if (rc.view.pxPerRadian > 1600) {
         c.items.forEach((it, k) => {
           if (now.includes(k) || !this.onMap(it, st)) return;
-          const p = rc.project(it.at[0], it.at[1]);
+          const p = spot(k);
           if (p) rc.labels.add({ text: tx(it.name), x: p[0], y: p[1], gap: 11, priority: 520, size: 10.5, weight: 600, color: rc.theme.label, halo: rc.theme.labelHalo });
         });
       }
@@ -638,13 +757,15 @@ export class StoryMode {
     const here = v.project(lon, lat);
     const st = c.steps[this.step];
     if (c.items && here) {
-      // An item near the tap: this step's first, then the others on the map.
+      // An item near the tap (where its marker is drawn): this step's first, then the others on the map.
       const now = st.show ?? [];
       const rest = c.items.map((_, k) => k).filter((k) => !now.includes(k) && this.onMap(c.items![k], st));
+      const drawn = this.spots.key === `${c.id}:${this.step}` ? this.spots.at : null;
       for (const [n, pool] of [now, rest].entries()) {
         let best = -1, bestD = n === 0 ? 26 : 16;
         for (const k of pool) {
-          const p = v.project(c.items[k].at[0], c.items[k].at[1]);
+          const sp = drawn?.get(k);
+          const p = sp ? [sp.x, sp.y] : v.project(c.items[k].at[0], c.items[k].at[1]);
           if (!p) continue;
           const d = Math.hypot(p[0] - here[0], p[1] - here[1]);
           if (d < bestD) { bestD = d; best = k; }
@@ -699,7 +820,7 @@ export class StoryMode {
     this.shell.card.showCustom(it.icon, tx(it.name), sub, rows, links, notes, this.wikiThumb(it));
   }
 
-  private wikiThumb(it: Omit<Item, 'first'>) { return wikiThumb(it.wiki); }
+  private wikiThumb(it: Omit<Item, 'first'>) { return itemThumb(it); }
 
   /** Stops playing (a tour or a quiz opened the story). */
   pause() { if (this.playing) { this.playing = false; this.renderBar(); } }
@@ -841,7 +962,14 @@ export class StoryMode {
     const date = h('div', { class: 'wb-date' });
     const count = h('span', { class: 'wb-count' });
     const title = h('div', { class: 'wb-title' });
-    const text = h('p', { class: 'wb-text' });
+    // Three lines of the step's text; a tap shows all of it (and folds it again).
+    const text = h('p', { class: 'wb-text', role: 'button', tabindex: '0', 'aria-expanded': 'false', title: t('storyReadAll') });
+    const flip = () => {
+      if (!text.classList.contains('cut') && !text.classList.contains('open')) return; // all of it is shown already
+      this.textOpen = !this.textOpen; this.fitText(); this.measureBar();
+    };
+    text.addEventListener('click', flip);
+    text.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } });
     const meta = h('div', { class: 'wb-meta' });
     const track = h('div', { class: 'wb-track', role: 'slider', tabindex: '0', 'aria-label': tx(c.name) });
     c.steps.forEach((s, i) => {
@@ -868,7 +996,7 @@ export class StoryMode {
     ui.count.textContent = ` · ${t('warStepOf', { k: this.step + 1, n: c.steps.length })}`;
     clear(ui.title);
     ui.title.append(...(st.aftermath ? [h('span', { class: 'wb-tag' }, t('warAftermath')), ' '] : []), stepTitle(st));
-    ui.text.textContent = tx(st.text);
+    this.fitText();
     clear(ui.play);
     ui.play.append(icon(this.playing ? Pause : Play, 22));
     ui.play.setAttribute('aria-label', this.playing ? 'Pause' : 'Play');
@@ -893,14 +1021,41 @@ export class StoryMode {
     const more = h('button', { type: 'button', class: 'pill sm wb-more' }, icon(BookOpen, 15), t('warDetails'));
     more.addEventListener('click', () => this.openDetails());
     ui.meta.append(more);
-    requestAnimationFrame(() => {
-      if (!this.bar) return;
-      const r = this.bar.getBoundingClientRect();
-      const covered = Math.max(0, window.innerHeight - r.top + 6);
-      this.app.renderer.view.insetBottom = covered;
-      document.documentElement.style.setProperty('--wb-h', `${Math.round(r.height)}px`);
-      this.app.renderer.requestRender();
-    });
+    requestAnimationFrame(() => this.measureBar());
+  }
+
+  /** The map centres above the bar, and the card sits over it. */
+  private measureBar() {
+    if (!this.bar) return;
+    const r = this.bar.getBoundingClientRect();
+    const covered = Math.max(0, window.innerHeight - r.top + 6);
+    this.app.renderer.view.insetBottom = covered;
+    document.documentElement.style.setProperty('--wb-h', `${Math.round(r.height)}px`);
+    this.app.renderer.requestRender();
+  }
+
+  /** The step's text: all of it when opened, else three lines that end, when it is longer, in "… more". */
+  private fitText() {
+    const el = this.ui?.text, c = this.c;
+    if (!el || !c) return;
+    const full = tx(c.steps[this.step].text);
+    const link = (key: string) => h('span', { class: 'wb-text-more' }, t(key));
+    el.classList.remove('open', 'cut');
+    el.textContent = full;
+    el.setAttribute('aria-expanded', 'false');
+    const fits = () => el.scrollHeight <= el.clientHeight + 1;
+    if (!el.clientHeight || fits()) return;
+    if (this.textOpen) { el.classList.add('open'); el.append(' ', link('storyLess')); el.setAttribute('aria-expanded', 'true'); return; }
+    el.classList.add('cut');
+    // The longest start of the text, cut at a word, that leaves room for "… more".
+    const show = (n: number) => { el.textContent = `${cutAt(full, n)}… `; el.append(link('storyMore')); };
+    let lo = 0, hi = full.length;
+    while (lo < hi) {
+      const mid = (lo + hi + 1) >> 1;
+      show(mid);
+      if (fits()) lo = mid; else hi = mid - 1;
+    }
+    show(lo);
   }
 
   /** Counts the death toll up (or down) from the previous step's figure. */
@@ -927,6 +1082,8 @@ export class StoryMode {
     const st = c.steps[this.step];
     const body = h('div', { class: 'war-details' });
     if (this.step === 0) body.append(h('p', { class: 'war-summary' }, tx(c.summary)));
+    // The bar's text first (it may have been cut there), then the longer notes.
+    if (st.details && tx(st.details) !== tx(st.text)) body.append(h('p', { class: 'war-lead' }, tx(st.text)));
     body.append(h('p', null, tx(st.details) || tx(st.text)));
     if (st.battles?.length) {
       body.append(h('h3', { class: 'sec-title' }, `⚔️ ${t('warBattles')}`));
@@ -976,6 +1133,12 @@ export class StoryMode {
 
 const yearOf = (d: string) => /^-?\d+/.exec(d)?.[0] ?? d;
 
+/** An item's picture: its own Commons file if it has one, else its article's. */
+export function itemThumb(it: { wiki?: Text; img?: string }): Promise<string | null> {
+  if (it.img) return Promise.resolve(`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(it.img.replace(/ /g, '_'))}?width=330`);
+  return wikiThumb(it.wiki);
+}
+
 const thumbs = new Map<string, Promise<string | null>>();
 /** The picture of a Wikipedia article (in the reader's language, else English), or null. */
 export function wikiThumb(wiki?: Text): Promise<string | null> {
@@ -1005,6 +1168,7 @@ export function wikiThumb(wiki?: Text): Promise<string | null> {
 export function itemWhen(it: Omit<Item, 'first'>, eraHint: number): string {
   if (it.life) return it.life[1] ? fmtYears(it.life[0], it.life[1]) : `${fmtWhen(yearOf(it.life[0]), eraHint)}–`;
   if (it.end && yearOf(it.end) !== yearOf(it.date)) return fmtYears(it.date, it.end);
+  if (it.until && yearOf(it.until) !== yearOf(it.date)) return fmtYears(it.date, it.until);
   return fmtWhen(it.date, eraHint);
 }
 
@@ -1012,6 +1176,7 @@ export function itemWhen(it: Omit<Item, 'first'>, eraHint: number): string {
 function itemYears(it: Omit<Item, 'first'>, eraHint: number): string {
   if (it.life) return it.life[1] ? fmtYears(it.life[0], it.life[1]) : `${fmtWhen(yearOf(it.life[0]), eraHint)}–`;
   if (it.end && yearOf(it.end) !== yearOf(it.date)) return fmtYears(it.date, it.end);
+  if (it.until && yearOf(it.until) !== yearOf(it.date)) return fmtYears(it.date, it.until);
   return fmtWhen(yearOf(it.date), eraHint);
 }
 
@@ -1048,6 +1213,54 @@ function fmtShort(v: [number, number]): string {
 }
 
 /** Shrinks an element's text until it fits on its one line (long dates on phones). */
+/**
+ * Moves overlapping markers apart until every pair is at least their radii plus `gap` apart; a
+ * heavier marker (wt) moves less. Markers on the very same spot fan out in fixed directions, so
+ * the layout is the same from frame to frame.
+ */
+function spread(pts: Spot[], gap: number) {
+  const n = pts.length;
+  if (n < 2) return;
+  const cell = 2 * Math.max(...pts.map((p) => p.r)) + gap;
+  const key = (gx: number, gy: number) => (gx + 32768) * 65536 + (gy + 32768);
+  for (let iter = 0; iter < 60; iter++) {
+    const grid = new Map<number, number[]>();
+    pts.forEach((p, i) => {
+      const g = key(Math.floor(p.x / cell), Math.floor(p.y / cell));
+      const b = grid.get(g);
+      if (b) b.push(i); else grid.set(g, [i]);
+    });
+    let moved = false;
+    for (let i = 0; i < n; i++) {
+      const a = pts[i];
+      const gx = Math.floor(a.x / cell), gy = Math.floor(a.y / cell);
+      for (let dx = -1; dx <= 1; dx++) for (let dy = -1; dy <= 1; dy++) {
+        for (const j of grid.get(key(gx + dx, gy + dy)) ?? []) {
+          if (j <= i) continue;
+          const b = pts[j];
+          const need = a.r + b.r + gap;
+          let ux = b.x - a.x, uy = b.y - a.y;
+          const d = Math.hypot(ux, uy);
+          if (d >= need) continue;
+          if (d < 0.01) { const t = (i * 0.618 + j * 0.382) * Math.PI * 2; ux = Math.cos(t); uy = Math.sin(t); } else { ux /= d; uy /= d; }
+          const push = need - d, fa = b.wt / (a.wt + b.wt), fb = 1 - fa;
+          a.x -= ux * push * fa; a.y -= uy * push * fa;
+          b.x += ux * push * fb; b.y += uy * push * fb;
+          moved = true;
+        }
+      }
+    }
+    if (!moved) break;
+  }
+}
+
+/** The first `n` characters of a text, cut back to the end of a word. */
+function cutAt(s: string, n: number): string {
+  if (n >= s.length) return s;
+  const x = s.slice(0, n), sp = x.lastIndexOf(' ');
+  return (sp > n * 0.6 ? x.slice(0, sp) : x).replace(/[\s,;:.\-–—(]+$/, '');
+}
+
 function fitLine(el: HTMLElement, min = 13) {
   el.style.fontSize = '';
   let size = parseFloat(getComputedStyle(el).fontSize);

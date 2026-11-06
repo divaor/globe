@@ -1,0 +1,2398 @@
+{
+  "id": "west-african-empires",
+  "name": {
+    "en": "Ghana, Mali and Songhai",
+    "es": "Ghana, Malí y Songhai"
+  },
+  "icon": "🐪",
+  "era": "medieval",
+  "region": {
+    "en": "West Africa, the Sahel and the Sahara",
+    "es": "África occidental, el Sahel y el Sahara"
+  },
+  "start": "-250",
+  "end": "1591",
+  "summary": {
+    "en": "Gold, salt and camels across the Sahara: the empires of Ghana, Mali and Songhai, from Djenné-Djenno and Wagadu to Sundiata, Mansa Musa, the scholars of Timbuktu and the battle of Tondibi.",
+    "es": "Oro, sal y camellos a través del Sahara: los imperios de Ghana, Malí y Songhai, de Djenné-Djenno y Wagadu a Sundiata, Mansa Musa, los eruditos de Tombuctú y la batalla de Tondibi."
+  },
+  "camera": {
+    "lon": -5.0,
+    "lat": 18.0,
+    "zoom": 3.2
+  },
+  "sides": [
+    {
+      "id": "early",
+      "name": {
+        "en": "Early towns and villages",
+        "es": "Primeras ciudades y aldeas"
+      },
+      "color": "#e67e22"
+    },
+    {
+      "id": "ghana",
+      "name": {
+        "en": "Ghana (Wagadu)",
+        "es": "Ghana (Wagadu)"
+      },
+      "color": "#d4a017"
+    },
+    {
+      "id": "almoravid",
+      "name": {
+        "en": "Almoravids",
+        "es": "Almorávides"
+      },
+      "color": "#2e6f9e"
+    },
+    {
+      "id": "mali",
+      "name": {
+        "en": "Mali",
+        "es": "Malí"
+      },
+      "color": "#16a085"
+    },
+    {
+      "id": "songhai",
+      "name": {
+        "en": "Songhai",
+        "es": "Songhai"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "morocco",
+      "name": {
+        "en": "Saadi Morocco",
+        "es": "Marruecos saadí"
+      },
+      "color": "#922b21",
+      "members": {
+        "en": "Morocco and, from 1591, the pashas of the Niger bend",
+        "es": "Marruecos y, desde 1591, los pachás del recodo del Níger"
+      }
+    },
+    {
+      "id": "routes",
+      "name": {
+        "en": "Trans-Saharan routes",
+        "es": "Rutas transaharianas"
+      },
+      "color": "#8e5a2b"
+    },
+    {
+      "id": "today",
+      "name": {
+        "en": "Countries named after them",
+        "es": "Países que llevan su nombre"
+      },
+      "color": "#5d6d7e"
+    }
+  ],
+  "defs": {
+    "tichitt": {
+      "land": [
+        [
+          -12.2,
+          17.6
+        ],
+        [
+          -11.4,
+          18.9
+        ],
+        [
+          -9.6,
+          19.0
+        ],
+        [
+          -7.6,
+          18.2
+        ],
+        [
+          -7.2,
+          17.2
+        ],
+        [
+          -9.0,
+          17.0
+        ],
+        [
+          -11.0,
+          17.1
+        ]
+      ]
+    },
+    "niger_delta": {
+      "land": [
+        [
+          -5.6,
+          13.4
+        ],
+        [
+          -5.0,
+          14.6
+        ],
+        [
+          -4.4,
+          15.6
+        ],
+        [
+          -3.6,
+          16.2
+        ],
+        [
+          -2.8,
+          16.0
+        ],
+        [
+          -3.2,
+          15.0
+        ],
+        [
+          -3.6,
+          14.2
+        ],
+        [
+          -4.2,
+          13.4
+        ],
+        [
+          -4.9,
+          13.1
+        ]
+      ]
+    },
+    "niger_bend": {
+      "land": [
+        [
+          -6.0,
+          13.2
+        ],
+        [
+          -5.0,
+          15.0
+        ],
+        [
+          -4.6,
+          16.2
+        ],
+        [
+          -3.4,
+          17.2
+        ],
+        [
+          -1.0,
+          17.3
+        ],
+        [
+          0.6,
+          16.6
+        ],
+        [
+          0.9,
+          15.8
+        ],
+        [
+          -0.5,
+          15.6
+        ],
+        [
+          -2.2,
+          15.3
+        ],
+        [
+          -3.2,
+          14.4
+        ],
+        [
+          -3.8,
+          13.3
+        ],
+        [
+          -4.8,
+          12.8
+        ]
+      ]
+    },
+    "dendi": {
+      "land": [
+        [
+          1.2,
+          14.6
+        ],
+        [
+          2.1,
+          14.2
+        ],
+        [
+          3.3,
+          13.0
+        ],
+        [
+          3.8,
+          11.8
+        ],
+        [
+          3.2,
+          11.3
+        ],
+        [
+          2.0,
+          12.0
+        ],
+        [
+          1.2,
+          13.0
+        ],
+        [
+          0.9,
+          14.0
+        ]
+      ]
+    },
+    "mali_1235": {
+      "land": [
+        [
+          -10.2,
+          11.0
+        ],
+        [
+          -10.0,
+          12.4
+        ],
+        [
+          -9.0,
+          13.2
+        ],
+        [
+          -7.6,
+          13.2
+        ],
+        [
+          -6.9,
+          12.6
+        ],
+        [
+          -7.3,
+          11.4
+        ],
+        [
+          -8.6,
+          10.6
+        ],
+        [
+          -9.6,
+          10.6
+        ]
+      ]
+    }
+  },
+  "steps": [
+    {
+      "date": "-250",
+      "title": {
+        "en": "Towns before empires",
+        "es": "Ciudades antes de los imperios"
+      },
+      "camera": {
+        "lon": -7.0,
+        "lat": 16.0,
+        "zoom": 4.6
+      },
+      "text": {
+        "en": "Long before any empire, herders and millet farmers built stone villages on the cliffs of Tichitt, and about 250 BC people settled Djenné-Djenno on the Niger, a town of iron-workers and traders.",
+        "es": "Mucho antes de cualquier imperio, pastores y cultivadores de mijo construyeron aldeas de piedra en los acantilados de Tichitt, y hacia el 250 a. C. se pobló Djenné-Djenno, junto al Níger, una ciudad de herreros y comerciantes."
+      },
+      "details": {
+        "en": "The Sahara was greener then, and drying slowly. As it dried, people moved south towards the great rivers. The Inland Niger Delta, which floods every year, gave fish, rice, pasture and easy transport by boat, and towns there traded with each other long before camels crossed the desert. These are the deep roots of the empires that followed. Fishing peoples such as the Bozo still live in the delta today.",
+        "es": "El Sahara era entonces más verde y se iba secando poco a poco. A medida que se secaba, la gente se trasladó al sur, hacia los grandes ríos. El delta interior del Níger, que se inunda cada año, daba pescado, arroz, pastos y transporte fácil en barca, y sus ciudades comerciaban entre sí mucho antes de que los camellos cruzaran el desierto. Estas son las raíces profundas de los imperios que vinieron después. Pueblos pescadores como los bozo siguen viviendo hoy en el delta."
+      },
+      "control": {
+        "early": [
+          {
+            "ref": "tichitt"
+          },
+          {
+            "ref": "niger_delta"
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "dhar-tichitt",
+          "name": {
+            "en": "Dhar Tichitt",
+            "es": "Dhar Tichitt"
+          },
+          "at": [
+            -9.4053,
+            18.4517
+          ],
+          "cat": "farming",
+          "type": "site",
+          "date": "-2000",
+          "until": "-300",
+          "place": {
+            "en": "Tagant, Mauritania",
+            "es": "Tagant, Mauritania"
+          },
+          "text": {
+            "en": "Cliffs in what was then savanna, with about 500 stone villages of herders and millet farmers from about 2000 to 300 BC. They are thought to be ancestors of the Soninke, the people of Ghana.",
+            "es": "Acantilados en lo que entonces era sabana, con unas 500 aldeas de piedra de pastores y cultivadores de mijo de hacia el 2000 al 300 a. C. Se cree que eran antepasados de los soninké, el pueblo de Ghana."
+          },
+          "wiki": {
+            "en": "Dhar Tichitt",
+            "es": "Tichit"
+          }
+        },
+        {
+          "id": "djenne-djenno",
+          "name": {
+            "en": "Djenné-Djenno",
+            "es": "Djenné-Djenno"
+          },
+          "at": [
+            -4.5403,
+            13.8906
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-250",
+          "until": "1400",
+          "place": {
+            "en": "Near Djenné, Inland Niger Delta, Mali",
+            "es": "Cerca de Djenné, delta interior del Níger, Malí"
+          },
+          "text": {
+            "en": "One of the oldest towns south of the Sahara, settled about 250 BC on a mound in the Niger floodplain. It grew to perhaps 33 hectares of mud houses, workshops and cemeteries, with no sign of a palace.",
+            "es": "Una de las ciudades más antiguas al sur del Sahara, poblada hacia el 250 a. C. sobre un montículo en la llanura inundable del Níger. Llegó a ocupar quizá 33 hectáreas de casas de barro, talleres y cementerios, sin rastro de un palacio."
+          },
+          "details": {
+            "en": "Archaeologists Roderick and Susan McIntosh showed in the 1970s that Djenné-Djenno grew from local trade in fish, rice, iron, copper and gold, long before traders from North Africa arrived. That overturned the old idea that cities came to West Africa from outside. Its craftspeople smelted iron from the start and made fine terracotta figures. The town was abandoned around 1400, when the new Djenné nearby took over.",
+            "es": "Los arqueólogos Roderick y Susan McIntosh mostraron en los años setenta que Djenné-Djenno creció gracias al comercio local de pescado, arroz, hierro, cobre y oro, mucho antes de que llegaran comerciantes del norte de África. Eso derribó la vieja idea de que las ciudades llegaron a África occidental desde fuera. Sus artesanos fundían hierro desde el principio y hacían finas figuras de terracota. La ciudad se abandonó hacia el 1400, cuando la nueva Djenné cercana tomó el relevo."
+          },
+          "status": {
+            "en": "Archaeological mound; UNESCO World Heritage Site with the old town of Djenné",
+            "es": "Montículo arqueológico; Patrimonio de la Humanidad junto con la ciudad vieja de Djenné"
+          },
+          "wiki": {
+            "en": "Djenné-Djenno",
+            "es": "Djenné-Djenno"
+          }
+        },
+        {
+          "id": "west-african-iron",
+          "name": {
+            "en": "Iron smelting",
+            "es": "Fundición de hierro"
+          },
+          "at": [
+            -4.56,
+            13.87
+          ],
+          "cat": "tools",
+          "type": "invention",
+          "date": "-250",
+          "place": {
+            "en": "Djenné-Djenno and sites across West Africa",
+            "es": "Djenné-Djenno y otros sitios de África occidental"
+          },
+          "text": {
+            "en": "West Africans smelted iron in clay furnaces from the first millennium BC; at Djenné-Djenno it was made from the very first settlement. Iron hoes and weapons opened the savanna to farmers.",
+            "es": "Los africanos occidentales fundían hierro en hornos de arcilla desde el primer milenio a. C.; en Djenné-Djenno se producía desde el primer asentamiento. Las azadas y armas de hierro abrieron la sabana a los agricultores."
+          },
+          "wiki": {
+            "en": "Iron metallurgy in Africa",
+            "es": "Metalurgia del hierro en África"
+          }
+        }
+      ]
+    },
+    {
+      "date": "750",
+      "title": {
+        "en": "Wagadu, the land of gold",
+        "es": "Wagadu, la tierra del oro"
+      },
+      "camera": {
+        "lon": -7.5,
+        "lat": 21.0,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "Camels made the Sahara crossable, and the Soninke kingdom of Wagadu, which Arab writers called Ghana, grew rich in the middle: gold came up from the south, salt and goods down from the north.",
+        "es": "Los camellos hicieron posible cruzar el Sahara, y el reino soninké de Wagadu, que los escritores árabes llamaron Ghana, se enriqueció en medio: el oro subía del sur y la sal y las mercancías bajaban del norte."
+      },
+      "control": {
+        "early": null,
+        "ghana": {
+          "hist": "Empire of Ghana",
+          "year": 700
+        }
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "path": [
+            [
+              -4.28,
+              31.28
+            ],
+            [
+              -5.6,
+              28.5
+            ],
+            [
+              -7.6,
+              25.0
+            ],
+            [
+              -9.6,
+              21.0
+            ],
+            [
+              -10.42,
+              17.42
+            ],
+            [
+              -7.97,
+              15.77
+            ]
+          ],
+          "label": {
+            "en": "Gold road: Sijilmasa to Ghana",
+            "es": "Camino del oro: de Siyilmasa a Ghana"
+          }
+        },
+        {
+          "side": "routes",
+          "path": [
+            [
+              -11.3,
+              13.2
+            ],
+            [
+              -9.8,
+              14.4
+            ],
+            [
+              -7.97,
+              15.77
+            ]
+          ],
+          "label": {
+            "en": "Gold from Bambuk",
+            "es": "Oro de Bambuk"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "camel-caravans",
+          "name": {
+            "en": "Camel caravans",
+            "es": "Caravanas de camellos"
+          },
+          "at": [
+            -6.5,
+            22.0
+          ],
+          "cat": "trade",
+          "type": "invention",
+          "date": "300",
+          "place": {
+            "en": "Western Sahara",
+            "es": "Sahara occidental"
+          },
+          "text": {
+            "en": "Camels, which can go days without water, reached the western Sahara around the 3rd century. Caravans of hundreds or thousands of them crossed the desert in about two months.",
+            "es": "Los camellos, que aguantan días sin agua, llegaron al Sahara occidental hacia el siglo III. Caravanas de cientos o miles de ellos cruzaban el desierto en unos dos meses."
+          },
+          "wiki": {
+            "en": "Dromedary",
+            "es": "Camelus dromedarius"
+          }
+        },
+        {
+          "id": "bambuk-gold",
+          "name": {
+            "en": "Gold of Bambuk",
+            "es": "El oro de Bambuk"
+          },
+          "at": [
+            -11.3,
+            13.2
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "700",
+          "place": {
+            "en": "Bambuk, between Senegal, Mali and Guinea",
+            "es": "Bambuk, entre Senegal, Malí y Guinea"
+          },
+          "text": {
+            "en": "Goldfields along the upper Senegal and Falémé rivers, where farmers dug and panned gold in the dry season. With Bure, further south, they supplied much of the medieval world's gold.",
+            "es": "Yacimientos de oro junto a los ríos Senegal y Falémé, donde los campesinos excavaban y lavaban oro en la estación seca. Con Bure, más al sur, abastecían gran parte del oro del mundo medieval."
+          },
+          "wiki": {
+            "en": "Bambouk",
+            "es": "Bambuque"
+          }
+        },
+        {
+          "id": "sijilmasa",
+          "name": {
+            "en": "Sijilmasa",
+            "es": "Siyilmasa"
+          },
+          "at": [
+            -4.28,
+            31.28
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "757",
+          "place": {
+            "en": "Near Rissani, Tafilalt, Morocco",
+            "es": "Cerca de Rissani, Tafilalet, Marruecos"
+          },
+          "text": {
+            "en": "An oasis city founded in 757 at the northern edge of the Sahara, the great market where gold from the south was traded and minted into coins for the Islamic world.",
+            "es": "Una ciudad oasis fundada en el 757 en el borde norte del Sahara, el gran mercado donde el oro del sur se cambiaba y se acuñaba en monedas para el mundo islámico."
+          },
+          "wiki": {
+            "en": "Sijilmasa",
+            "es": "Siyilmasa"
+          }
+        }
+      ],
+      "show": [
+        "empire-of-ghana"
+      ]
+    },
+    {
+      "date": "1068",
+      "title": {
+        "en": "Al-Bakri's Ghana",
+        "es": "La Ghana de al-Bakri"
+      },
+      "camera": {
+        "lon": -6.0,
+        "lat": 25.0,
+        "zoom": 2.6
+      },
+      "text": {
+        "en": "In 1068 al-Bakri described Ghana's capital: a Muslim merchants' town with twelve mosques and, 10 km away, the king's town with its palace and sacred groves.",
+        "es": "En 1068 al-Bakri describió la capital de Ghana: una ciudad de mercaderes musulmanes con doce mezquitas y, a 10 km, la ciudad del rey, con su palacio y sus bosques sagrados."
+      },
+      "details": {
+        "en": "Ghana was a meeting place of religions: the king followed the old faith of his ancestors, but his treasurer, interpreters and most of his ministers were Muslims. Caravans from Sijilmasa brought salt, copper, horses, cloth and beads, and took back gold, ivory and enslaved captives. Trans-Saharan trade carried people too, in chains, for centuries, and that is part of this story.",
+        "es": "Ghana era un lugar de encuentro de religiones: el rey seguía la antigua fe de sus antepasados, pero su tesorero, sus intérpretes y la mayoría de sus ministros eran musulmanes. Las caravanas de Siyilmasa traían sal, cobre, caballos, telas y cuentas, y se llevaban oro, marfil y cautivos esclavizados. El comercio transahariano también transportó personas encadenadas durante siglos, y eso es parte de esta historia."
+      },
+      "control": {
+        "ghana": {
+          "hist": "Ghana",
+          "year": 1000
+        }
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "path": [
+            [
+              -4.28,
+              31.28
+            ],
+            [
+              -4.9,
+              27.0
+            ],
+            [
+              -5.0,
+              23.6
+            ],
+            [
+              -6.2,
+              20.5
+            ],
+            [
+              -7.03,
+              17.3
+            ],
+            [
+              -7.97,
+              15.77
+            ]
+          ],
+          "label": {
+            "en": "Salt road by Taghaza",
+            "es": "Camino de la sal por Taghaza"
+          }
+        },
+        {
+          "side": "routes",
+          "path": [
+            [
+              -4.28,
+              31.28
+            ],
+            [
+              -5.6,
+              28.5
+            ],
+            [
+              -7.6,
+              25.0
+            ],
+            [
+              -9.6,
+              21.0
+            ],
+            [
+              -10.42,
+              17.42
+            ],
+            [
+              -7.97,
+              15.77
+            ]
+          ],
+          "label": {
+            "en": "Western caravan road",
+            "es": "Camino occidental de caravanas"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "koumbi-saleh",
+          "name": {
+            "en": "Koumbi Saleh",
+            "es": "Kumbi Saleh"
+          },
+          "at": [
+            -7.9686,
+            15.7656
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1068",
+          "until": "1400",
+          "place": {
+            "en": "Hodh Ech Chargui, Mauritania",
+            "es": "Hodh Ech Chargui, Mauritania"
+          },
+          "text": {
+            "en": "Ruins of a stone town with a great mosque, probably the merchants' half of Ghana's capital. Al-Bakri said the king's town, with its sacred groves, lay about 10 km away; it has not been found.",
+            "es": "Ruinas de una ciudad de piedra con una gran mezquita, probablemente la mitad de los mercaderes de la capital de Ghana. Al-Bakri decía que la ciudad del rey, con sus bosques sagrados, estaba a unos 10 km; no se ha hallado."
+          },
+          "wiki": {
+            "en": "Koumbi Saleh",
+            "es": "Kumbi Saleh"
+          },
+          "img": "Archaeological site of Koumbi Saleh.jpg"
+        },
+        {
+          "id": "tunka-manin",
+          "name": {
+            "en": "Tunka Manin",
+            "es": "Tunka Manin"
+          },
+          "at": [
+            -7.95,
+            15.79
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1063",
+          "place": {
+            "en": "Capital of Ghana (Koumbi Saleh?), Mauritania",
+            "es": "Capital de Ghana (¿Kumbi Saleh?), Mauritania"
+          },
+          "text": {
+            "en": "The king of Ghana in al-Bakri's time. He held court under a domed pavilion, guarded by men with gold-hilted swords and dogs with gold collars, and could raise 200,000 warriors.",
+            "es": "El rey de Ghana en tiempos de al-Bakri. Celebraba audiencia bajo un pabellón con cúpula, custodiado por hombres con espadas de empuñadura de oro y perros con collares de oro, y podía reunir 200 000 guerreros."
+          },
+          "details": {
+            "en": "Al-Bakri reports that the king kept every nugget of gold found in his lands and left only the gold dust to the people, so that gold would not lose its value. Muslim merchants and ministers served him, though he kept the old religion and was buried under a great mound with his servants. The 200,000 warriors may be an exaggeration.",
+            "es": "Al-Bakri cuenta que el rey se quedaba con todas las pepitas de oro halladas en sus tierras y dejaba a la gente solo el polvo de oro, para que el oro no perdiera valor. Lo servían mercaderes y ministros musulmanes, aunque él conservaba la religión antigua y era enterrado bajo un gran túmulo con sus sirvientes. Los 200 000 guerreros quizá sean una exageración."
+          },
+          "wiki": {
+            "en": "Tunka Manin",
+            "es": "Imperio de Ghana"
+          }
+        },
+        {
+          "id": "al-bakri",
+          "name": {
+            "en": "Al-Bakri",
+            "es": "Al-Bakri"
+          },
+          "at": [
+            -4.779,
+            37.888
+          ],
+          "cat": "writing",
+          "type": "person",
+          "date": "1068",
+          "life": [
+            "1040",
+            "1094"
+          ],
+          "place": {
+            "en": "Wrote in Córdoba and Seville, al-Andalus (Spain)",
+            "es": "Escribió en Córdoba y Sevilla, al-Ándalus (España)"
+          },
+          "text": {
+            "en": "An Andalusian geographer who never crossed the Sahara but questioned merchants. His Book of Roads and Kingdoms (1068) is our best picture of Ghana at its height.",
+            "es": "Un geógrafo andalusí que nunca cruzó el Sahara pero interrogó a los mercaderes. Su Libro de los caminos y los reinos (1068) es nuestra mejor imagen de Ghana en su apogeo."
+          },
+          "wiki": {
+            "en": "Al-Bakri",
+            "es": "Abdallah al-Bakri"
+          }
+        },
+        {
+          "id": "aoudaghost",
+          "name": {
+            "en": "Awdaghust",
+            "es": "Audagost"
+          },
+          "at": [
+            -10.4167,
+            17.4167
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "900",
+          "place": {
+            "en": "Tegdaoust, Mauritania",
+            "es": "Tegdaoust, Mauritania"
+          },
+          "text": {
+            "en": "An oasis town at the southern end of the caravan road from Sijilmasa, full of merchants, gardens and markets. The Almoravids sacked it in 1054.",
+            "es": "Una ciudad oasis en el extremo sur del camino de caravanas desde Siyilmasa, llena de mercaderes, huertos y mercados. Los almorávides la saquearon en 1054."
+          },
+          "wiki": {
+            "en": "Aoudaghost",
+            "es": "Audagost"
+          }
+        },
+        {
+          "id": "taghaza",
+          "name": {
+            "en": "Taghaza salt mines",
+            "es": "Minas de sal de Taghaza"
+          },
+          "at": [
+            -5.0,
+            23.6
+          ],
+          "cat": "trade",
+          "type": "site",
+          "date": "1050",
+          "until": "1590",
+          "place": {
+            "en": "Sahara, northern Mali",
+            "es": "Sahara, norte de Malí"
+          },
+          "text": {
+            "en": "A salt mine in the middle of the desert where houses and a mosque were built of salt blocks. Slabs of salt carried south on camels were worth a great deal in the Sahel, where salt was scarce.",
+            "es": "Una mina de sal en pleno desierto donde las casas y una mezquita se construían con bloques de sal. Las losas de sal llevadas al sur en camello valían mucho en el Sahel, donde la sal escaseaba."
+          },
+          "details": {
+            "en": "The miners were enslaved people who lived on dates and camel meat brought from far away, as Ibn Battuta saw in 1352. Salt was needed by people and herds in the hot south, and it also served as money. Taghaza was abandoned around the 1590s, after Morocco seized it, and mining moved to Taoudenni, where slabs are still cut by hand today.",
+            "es": "Los mineros eran personas esclavizadas que vivían de dátiles y carne de camello traídos de lejos, como vio Ibn Battuta en 1352. La gente y los rebaños del cálido sur necesitaban sal, que además servía como moneda. Taghaza se abandonó hacia la década de 1590, tras la conquista marroquí, y la minería pasó a Taoudenni, donde las losas aún se cortan a mano."
+          },
+          "wiki": {
+            "en": "Taghaza",
+            "es": "Taghaza"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1076",
+      "title": {
+        "en": "The Almoravids",
+        "es": "Los almorávides"
+      },
+      "camera": {
+        "lon": -8.0,
+        "lat": 23.0,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "Berber reformers called the Almoravids united the western Sahara, took Awdaghust in 1054 and founded Marrakesh. Later tradition says they conquered Ghana in 1076; many historians now doubt it.",
+        "es": "Unos reformadores bereberes, los almorávides, unieron el Sahara occidental, tomaron Audagost en 1054 y fundaron Marrakech. Una tradición posterior dice que conquistaron Ghana en 1076; hoy muchos historiadores lo dudan."
+      },
+      "details": {
+        "en": "The story of a conquest first appears in Ibn Khaldun, writing 300 years later, and archaeology at Koumbi Saleh shows no sign of sudden destruction. What is clear is that Ghana's rulers became Muslim around this time and that the empire slowly declined, as the Sahel dried and trade moved south and east. Around 1200 the Sosso, a kingdom of blacksmiths, took over what was left.",
+        "es": "El relato de una conquista aparece por primera vez en Ibn Jaldún, que escribió 300 años después, y la arqueología de Kumbi Saleh no muestra señales de una destrucción repentina. Lo que sí está claro es que los gobernantes de Ghana se hicieron musulmanes por entonces y que el imperio decayó poco a poco, a medida que el Sahel se secaba y el comercio se desplazaba al sur y al este. Hacia el 1200 los sosso, un reino de herreros, se adueñaron de lo que quedaba."
+      },
+      "control": {
+        "ghana": {
+          "hist": "Ghana",
+          "year": 1100
+        },
+        "almoravid": {
+          "hist": "Almoravid dynasty",
+          "year": 1100
+        }
+      },
+      "events": [
+        {
+          "icon": "⚔️",
+          "date": "1054",
+          "at": [
+            -10.42,
+            17.42
+          ],
+          "text": {
+            "en": "The Almoravids sack Awdaghust",
+            "es": "Los almorávides saquean Audagost"
+          }
+        },
+        {
+          "icon": "❓",
+          "date": "1076",
+          "at": [
+            -7.97,
+            15.77
+          ],
+          "text": {
+            "en": "Ghana's capital falls to the Almoravids, says a later tradition",
+            "es": "La capital de Ghana cae ante los almorávides, según una tradición posterior"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "almoravids",
+          "name": {
+            "en": "Almoravids",
+            "es": "Almorávides"
+          },
+          "at": [
+            -7.0,
+            27.5
+          ],
+          "cat": "culture",
+          "type": "culture",
+          "date": "1040",
+          "until": "1147",
+          "place": {
+            "en": "Western Sahara, Morocco and al-Andalus",
+            "es": "Sahara occidental, Marruecos y al-Ándalus"
+          },
+          "text": {
+            "en": "A movement of strict Muslim reform among the Sanhaja Berber nomads of the western Sahara, which grew into an empire stretching from the Senegal River to Spain.",
+            "es": "Un movimiento de reforma musulmana estricta entre los nómadas bereberes sanhaya del Sahara occidental, que se convirtió en un imperio desde el río Senegal hasta España."
+          },
+          "wiki": {
+            "en": "Almoravid dynasty",
+            "es": "Almorávides"
+          }
+        },
+        {
+          "id": "abu-bakr-ibn-umar",
+          "name": {
+            "en": "Abu Bakr ibn Umar",
+            "es": "Abu Bakr ibn Umar"
+          },
+          "at": [
+            -11.5,
+            18.5
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1056",
+          "place": {
+            "en": "Adrar and Tagant, Mauritania",
+            "es": "Adrar y Tagant, Mauritania"
+          },
+          "text": {
+            "en": "The Almoravid leader who handed the north to his cousin Yusuf ibn Tashfin and returned to the Sahara to fight in the south. He died there in 1087.",
+            "es": "El jefe almorávide que entregó el norte a su primo Yusuf ibn Tashfin y volvió al Sahara a combatir en el sur. Murió allí en 1087."
+          },
+          "wiki": {
+            "en": "Abu Bakr ibn Umar",
+            "es": "Abubaker Ben Omar"
+          }
+        },
+        {
+          "id": "marrakesh",
+          "name": {
+            "en": "Marrakesh",
+            "es": "Marrakech"
+          },
+          "at": [
+            -7.9811,
+            31.6295
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1070",
+          "place": {
+            "en": "Marrakesh, Morocco",
+            "es": "Marrakech, Marruecos"
+          },
+          "text": {
+            "en": "Founded by the Almoravids around 1070 as their capital. Gold from the Sahara paid for its walls and mosques, and five centuries later for the palace of al-Mansur.",
+            "es": "Fundada por los almorávides hacia el 1070 como su capital. El oro del Sahara pagó sus murallas y mezquitas, y cinco siglos después el palacio de al-Mansur."
+          },
+          "wiki": {
+            "en": "Marrakesh",
+            "es": "Marrakech"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1235",
+      "title": {
+        "en": "Sundiata and the Kouroukan Fouga",
+        "es": "Sundiata y el Kurukan Fuga"
+      },
+      "camera": {
+        "lon": -8.5,
+        "lat": 12.5,
+        "zoom": 7.5
+      },
+      "text": {
+        "en": "About 1235 Sundiata Keita and the Mande clans defeated Soumaoro of Sosso at Kirina. At the Kouroukan Fouga assembly, tradition says, they agreed the laws of the new Mali Empire.",
+        "es": "Hacia el 1235 Sundiata Keita y los clanes mandinga vencieron a Soumaoro de Sosso en Kirina. En la asamblea del Kurukan Fuga, dice la tradición, acordaron las leyes del nuevo Imperio de Malí."
+      },
+      "details": {
+        "en": "Almost everything we know of Sundiata comes from the epic sung by griots, which mixes history with magic: his mother Sogolon, the buffalo woman; his years of exile; his griot Balla Fasséké; the hidden secret of Soumaoro's power, revealed by Sundiata's sister. The empire he founded was a federation of clans under a mansa, and it soon took over the gold lands of Bure and Bambuk.",
+        "es": "Casi todo lo que sabemos de Sundiata viene de la epopeya que cantan los griots, que mezcla historia y magia: su madre Sogolon, la mujer búfalo; sus años de exilio; su griot Balla Fasséké; el secreto oculto del poder de Soumaoro, revelado por la hermana de Sundiata. El imperio que fundó era una federación de clanes bajo un mansa, y pronto se adueñó de las tierras del oro de Bure y Bambuk."
+      },
+      "control": {
+        "ghana": null,
+        "almoravid": null,
+        "mali": {
+          "ref": "mali_1235"
+        }
+      },
+      "places": [
+        {
+          "id": "sundiata-keita",
+          "name": {
+            "en": "Sundiata Keita",
+            "es": "Sundiata Keita"
+          },
+          "at": [
+            -8.3833,
+            11.3833
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1235",
+          "life": [
+            "1217",
+            "1255"
+          ],
+          "place": {
+            "en": "Manden, upper Niger (Mali and Guinea)",
+            "es": "Manden, alto Níger (Malí y Guinea)"
+          },
+          "text": {
+            "en": "The \"Lion of Mali\", founder of the Mali Empire. In the epic he is a boy who could not walk, mocked with his mother, who rises, goes into exile and returns to free the Manden.",
+            "es": "El «León de Malí», fundador del Imperio de Malí. En la epopeya es un niño que no podía caminar, burlado junto con su madre, que se levanta, parte al exilio y vuelve para liberar el Manden."
+          },
+          "wiki": {
+            "en": "Sundiata Keita",
+            "es": "Sundiata Keita"
+          }
+        },
+        {
+          "id": "battle-of-kirina",
+          "name": {
+            "en": "Battle of Kirina",
+            "es": "Batalla de Kirina"
+          },
+          "at": [
+            -8.1516,
+            12.3063
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "1235",
+          "place": {
+            "en": "Kirina (Krina), Koulikoro, Mali",
+            "es": "Kirina (Krina), Koulikoro, Malí"
+          },
+          "text": {
+            "en": "About 1235 Sundiata's allied Mande clans defeated Soumaoro Kanté, the sorcerer-king of Sosso. In the epic, an arrow tipped with a white cock's spur breaks his magic.",
+            "es": "Hacia el 1235 los clanes mandinga aliados de Sundiata vencieron a Soumaoro Kanté, el rey hechicero de Sosso. En la epopeya, una flecha con punta de espolón de gallo blanco rompe su magia."
+          },
+          "wiki": {
+            "en": "Battle of Kirina",
+            "es": "Batalla de Kirina"
+          }
+        },
+        {
+          "id": "soumaoro-kante",
+          "name": {
+            "en": "Soumaoro Kanté",
+            "es": "Soumaoro Kanté"
+          },
+          "at": [
+            -7.6,
+            12.9
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1200",
+          "place": {
+            "en": "Sosso, west of Bamako, Mali (location uncertain)",
+            "es": "Sosso, al oeste de Bamako, Malí (ubicación incierta)"
+          },
+          "text": {
+            "en": "The king of Sosso, a blacksmith clan that took over the remains of Ghana around 1200 and conquered the Manden. Tradition remembers him as a great sorcerer and a cruel ruler.",
+            "es": "El rey de Sosso, un clan de herreros que se adueñó de los restos de Ghana hacia el 1200 y conquistó el Manden. La tradición lo recuerda como un gran hechicero y un gobernante cruel."
+          },
+          "wiki": {
+            "en": "Soumaoro Kanté",
+            "es": "Pueblo sosso"
+          }
+        },
+        {
+          "id": "kouroukan-fouga",
+          "name": {
+            "en": "Kouroukan Fouga",
+            "es": "Kurukan Fuga"
+          },
+          "at": [
+            -8.4167,
+            11.9333
+          ],
+          "cat": "knowledge",
+          "type": "event",
+          "date": "1236",
+          "place": {
+            "en": "Near Kangaba, Mali",
+            "es": "Cerca de Kangaba, Malí"
+          },
+          "text": {
+            "en": "The assembly where, according to oral tradition, Sundiata and the clans agreed the rules of the new empire: who would rule, the duties of each clan and the rights of people.",
+            "es": "La asamblea donde, según la tradición oral, Sundiata y los clanes acordaron las reglas del nuevo imperio: quién gobernaría, los deberes de cada clan y los derechos de las personas."
+          },
+          "details": {
+            "en": "The charter was handed down by griots for centuries and written down only in the 20th century; a modern version recorded from griots has 44 articles, on social organisation, property, the environment and personal duties. Historians cannot know how much of it goes back to 1236, but it shows how the Manden remember the founding of their state. UNESCO listed the \"Manden Charter, proclaimed in Kurukan Fuga\" as intangible heritage in 2009.",
+            "es": "La carta fue transmitida por los griots durante siglos y solo se puso por escrito en el siglo XX; una versión moderna recogida de los griots tiene 44 artículos, sobre la organización social, la propiedad, el medio ambiente y los deberes personales. Los historiadores no pueden saber cuánto se remonta al 1236, pero muestra cómo recuerda el Manden la fundación de su estado. La UNESCO inscribió en 2009 la «Carta del Manden, proclamada en Kurukan Fuga» como patrimonio inmaterial."
+          },
+          "wiki": {
+            "en": "Kouroukan Fouga",
+            "es": "Kurukan Fuga"
+          }
+        },
+        {
+          "id": "griots",
+          "name": {
+            "en": "Griots and the Epic of Sundiata",
+            "es": "Los griots y la Epopeya de Sundiata"
+          },
+          "at": [
+            -8.35,
+            11.9
+          ],
+          "cat": "writing",
+          "type": "culture",
+          "date": "1250",
+          "place": {
+            "en": "Mande lands of Mali, Guinea, Senegal and the Gambia",
+            "es": "Tierras mandinga de Malí, Guinea, Senegal y Gambia"
+          },
+          "text": {
+            "en": "Griots (jeli) are hereditary keepers of history, songs and genealogies. For almost 800 years they have sung the Epic of Sundiata to the sound of the kora and the balafon.",
+            "es": "Los griots (jeli) son guardianes hereditarios de la historia, los cantos y las genealogías. Desde hace casi 800 años cantan la Epopeya de Sundiata al son de la kora y el balafón."
+          },
+          "wiki": {
+            "en": "Griot",
+            "es": "Griot"
+          }
+        },
+        {
+          "id": "niani",
+          "name": {
+            "en": "Niani",
+            "es": "Niani"
+          },
+          "at": [
+            -8.3833,
+            11.39
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1240",
+          "place": {
+            "en": "Niani, Guinea (one proposed site)",
+            "es": "Niani, Guinea (uno de los lugares propuestos)"
+          },
+          "text": {
+            "en": "The town in Guinea long thought to be the capital of Mali. Where the capital really stood is still debated, and it may have moved more than once.",
+            "es": "La ciudad de Guinea que durante mucho tiempo se creyó capital de Malí. Aún se discute dónde estuvo realmente la capital, que quizá cambió de lugar más de una vez."
+          },
+          "wiki": {
+            "en": "Niani, Guinea",
+            "es": "Niani"
+          }
+        }
+      ],
+      "show": [
+        "empire-of-mali"
+      ]
+    },
+    {
+      "date": "1324",
+      "title": {
+        "en": "Mansa Musa's hajj",
+        "es": "La peregrinación de Mansa Musa"
+      },
+      "camera": {
+        "lon": 10.0,
+        "lat": 22.0,
+        "zoom": 2.0
+      },
+      "text": {
+        "en": "In 1324 Mansa Musa crossed the Sahara to Mecca with a huge caravan and so much gold that his gifts in Cairo were remembered for years. Half a century later a European atlas drew him holding a gold nugget.",
+        "es": "En 1324 Mansa Musa cruzó el Sahara hacia La Meca con una enorme caravana y tanto oro que sus regalos en El Cairo se recordaron durante años. Medio siglo después, un atlas europeo lo dibujó con una pepita de oro en la mano."
+      },
+      "control": {
+        "mali": {
+          "hist": "Mali",
+          "year": 1300
+        }
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "path": [
+            [
+              -8.4,
+              11.4
+            ],
+            [
+              -6.5,
+              14.0
+            ],
+            [
+              -7.03,
+              17.3
+            ],
+            [
+              -3.5,
+              20.0
+            ],
+            [
+              0.2,
+              27.0
+            ],
+            [
+              6.0,
+              28.8
+            ],
+            [
+              13.0,
+              29.5
+            ],
+            [
+              20.0,
+              30.0
+            ],
+            [
+              25.5,
+              29.4
+            ],
+            [
+              31.2,
+              30.0
+            ],
+            [
+              33.0,
+              28.0
+            ],
+            [
+              36.5,
+              25.0
+            ],
+            [
+              39.8,
+              21.4
+            ]
+          ],
+          "label": {
+            "en": "Mansa Musa's road to Mecca",
+            "es": "El camino de Mansa Musa a La Meca"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "mansa-musa",
+          "name": {
+            "en": "Mansa Musa",
+            "es": "Mansa Musa"
+          },
+          "at": [
+            -8.37,
+            11.41
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1324",
+          "place": {
+            "en": "Mali Empire (capital in the upper Niger)",
+            "es": "Imperio de Malí (capital en el alto Níger)"
+          },
+          "text": {
+            "en": "The ninth mansa (emperor) of Mali, from about 1312 to 1337. His pilgrimage to Mecca made him famous as one of the richest people who ever lived.",
+            "es": "El noveno mansa (emperador) de Malí, de hacia 1312 a 1337. Su peregrinación a La Meca lo hizo famoso como una de las personas más ricas que han existido."
+          },
+          "details": {
+            "en": "He set out in 1324 with an enormous caravan, said to include thousands of people, many of them enslaved, and 80 camels each loaded with gold dust; such figures come from later writers and may be exaggerated. In Cairo he gave away so much gold that, according to al-Umari, its value there was still lower twelve years later. He came home with scholars and an architect, took Timbuktu and Gao into his empire and spent heavily on mosques.",
+            "es": "Partió en 1324 con una caravana enorme, que según se dice incluía miles de personas, muchas de ellas esclavizadas, y 80 camellos cargados cada uno de polvo de oro; esas cifras vienen de escritores posteriores y quizá sean exageradas. En El Cairo regaló tanto oro que, según al-Umari, su valor allí seguía más bajo doce años después. Volvió con eruditos y un arquitecto, incorporó Tombuctú y Gao a su imperio y gastó mucho en mezquitas."
+          },
+          "wiki": {
+            "en": "Mansa Musa",
+            "es": "Mansa Musa"
+          }
+        },
+        {
+          "id": "musa-in-cairo",
+          "name": {
+            "en": "Mansa Musa in Cairo",
+            "es": "Mansa Musa en El Cairo"
+          },
+          "at": [
+            31.2357,
+            30.0444
+          ],
+          "cat": "trade",
+          "type": "event",
+          "date": "1324",
+          "place": {
+            "en": "Cairo, Egypt",
+            "es": "El Cairo, Egipto"
+          },
+          "text": {
+            "en": "Musa's caravan camped by the pyramids in July 1324 and stayed three months. He met the Mamluk sultan, and his gifts of gold made Mali famous across the Islamic world.",
+            "es": "La caravana de Musa acampó junto a las pirámides en julio de 1324 y se quedó tres meses. Se reunió con el sultán mameluco, y sus regalos de oro hicieron famoso a Malí en todo el mundo islámico."
+          },
+          "wiki": {
+            "en": "Cairo",
+            "es": "El Cairo"
+          }
+        },
+        {
+          "id": "catalan-atlas",
+          "name": {
+            "en": "Catalan Atlas",
+            "es": "Atlas catalán"
+          },
+          "at": [
+            2.6502,
+            39.5696
+          ],
+          "cat": "art",
+          "type": "work",
+          "date": "1375",
+          "place": {
+            "en": "Made in Majorca; now in the National Library of France, Paris",
+            "es": "Hecho en Mallorca; hoy en la Biblioteca Nacional de Francia, París"
+          },
+          "text": {
+            "en": "A world map made in Majorca around 1375 by Cresques Abraham. It shows Mansa Musa enthroned in West Africa, holding a gold nugget, as \"the richest and noblest king\".",
+            "es": "Un mapamundi hecho en Mallorca hacia 1375 por Cresques Abraham. Muestra a Mansa Musa en su trono en África occidental, con una pepita de oro en la mano, como «el rey más rico y noble»."
+          },
+          "wiki": {
+            "en": "Catalan Atlas",
+            "es": "Atlas Catalán"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1352",
+      "title": {
+        "en": "Timbuktu and Djenné",
+        "es": "Tombuctú y Djenné"
+      },
+      "camera": {
+        "lon": -5.0,
+        "lat": 18.0,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "Under Mali, Timbuktu and Djenné grew into cities of mosques, markets and scholars. When Ibn Battuta crossed the Sahara in 1352, he found the roads of Mali safe for any traveller.",
+        "es": "Bajo Malí, Tombuctú y Djenné se convirtieron en ciudades de mezquitas, mercados y eruditos. Cuando Ibn Battuta cruzó el Sahara en 1352, halló los caminos de Malí seguros para cualquier viajero."
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "path": [
+            [
+              -4.28,
+              31.28
+            ],
+            [
+              -4.9,
+              27.0
+            ],
+            [
+              -5.0,
+              23.6
+            ],
+            [
+              -6.2,
+              20.5
+            ],
+            [
+              -7.03,
+              17.3
+            ],
+            [
+              -8.0,
+              14.0
+            ],
+            [
+              -8.4,
+              11.5
+            ],
+            [
+              -5.0,
+              14.0
+            ],
+            [
+              -3.01,
+              16.77
+            ],
+            [
+              -0.04,
+              16.27
+            ],
+            [
+              3.0,
+              17.5
+            ],
+            [
+              6.8,
+              17.5
+            ]
+          ],
+          "label": {
+            "en": "Ibn Battuta's journey, 1352–1353",
+            "es": "El viaje de Ibn Battuta, 1352-1353"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "timbuktu",
+          "name": {
+            "en": "Timbuktu",
+            "es": "Tombuctú"
+          },
+          "at": [
+            -3.0074,
+            16.7735
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1100",
+          "place": {
+            "en": "Timbuktu, Mali",
+            "es": "Tombuctú, Malí"
+          },
+          "text": {
+            "en": "A town at the edge of the desert and the river, where camels met boats. Under Mali and Songhai it became a great market and a famous centre of Islamic learning.",
+            "es": "Una ciudad en el borde del desierto y el río, donde los camellos se encontraban con las barcas. Bajo Malí y Songhai se convirtió en un gran mercado y un famoso centro del saber islámico."
+          },
+          "status": {
+            "en": "Living city; UNESCO World Heritage Site since 1988",
+            "es": "Ciudad viva; Patrimonio de la Humanidad desde 1988"
+          },
+          "wiki": {
+            "en": "Timbuktu",
+            "es": "Tombuctú"
+          }
+        },
+        {
+          "id": "djinguereber-mosque",
+          "name": {
+            "en": "Djinguereber Mosque",
+            "es": "Mezquita de Djinguereber"
+          },
+          "at": [
+            -3.01,
+            16.7714
+          ],
+          "cat": "temple",
+          "type": "structure",
+          "date": "1327",
+          "place": {
+            "en": "Timbuktu, Mali",
+            "es": "Tombuctú, Malí"
+          },
+          "text": {
+            "en": "The great mosque of Timbuktu, built in 1327 after Mansa Musa's return, of mud brick and wood. Tradition credits the Andalusian poet al-Sahili, though its style is mainly Sahelian.",
+            "es": "La gran mezquita de Tombuctú, construida en 1327 tras el regreso de Mansa Musa, de adobe y madera. La tradición la atribuye al poeta andalusí al-Sahili, aunque su estilo es sobre todo saheliano."
+          },
+          "wiki": {
+            "en": "Djinguereber Mosque",
+            "es": "Mezquita de Djingareyber"
+          }
+        },
+        {
+          "id": "sankore",
+          "name": {
+            "en": "Sankoré",
+            "es": "Sankoré"
+          },
+          "at": [
+            -3.0056,
+            16.7759
+          ],
+          "cat": "knowledge",
+          "type": "institution",
+          "date": "1400",
+          "place": {
+            "en": "Timbuktu, Mali",
+            "es": "Tombuctú, Malí"
+          },
+          "text": {
+            "en": "A mosque paid for by a Tuareg woman of the Aghlal in the 14th or 15th century, around which scholars taught law, grammar, astronomy and medicine to their students.",
+            "es": "Una mezquita pagada por una mujer tuareg de los aghlal en el siglo XIV o XV, alrededor de la cual los eruditos enseñaban derecho, gramática, astronomía y medicina a sus alumnos."
+          },
+          "details": {
+            "en": "People sometimes call it the \"University of Sankoré\", but there was no single institution: each scholar taught his own students in mosques and homes, and some built private libraries of more than 1,600 books. Scholars from as far as Cairo and Fez came to study and debate. Its golden age came under the Askia rulers of Songhai, and it declined after the Moroccan conquest of 1591.",
+            "es": "A veces se la llama «Universidad de Sankoré», pero no era una sola institución: cada erudito enseñaba a sus propios alumnos en mezquitas y casas, y algunos reunieron bibliotecas privadas de más de 1600 libros. Venían a estudiar y debatir eruditos desde El Cairo y Fez. Su edad de oro llegó con los askia de Songhai, y decayó tras la conquista marroquí de 1591."
+          },
+          "wiki": {
+            "en": "Sankoré Madrasah",
+            "es": "Universidad de Sankore"
+          }
+        },
+        {
+          "id": "great-mosque-of-djenne",
+          "name": {
+            "en": "Djenné and its Great Mosque",
+            "es": "Djenné y su Gran Mezquita"
+          },
+          "at": [
+            -4.5556,
+            13.9053
+          ],
+          "cat": "temple",
+          "type": "structure",
+          "date": "1250",
+          "place": {
+            "en": "Djenné, Mali",
+            "es": "Djenné, Malí"
+          },
+          "text": {
+            "en": "A trading town on the Bani River whose first great mosque was built, tradition says, by a king named Kunburu who turned his palace into one. The present mosque dates from 1907.",
+            "es": "Una ciudad comercial junto al río Bani cuya primera gran mezquita la construyó, según la tradición, un rey llamado Kunburu que convirtió su palacio en ella. La mezquita actual es de 1907."
+          },
+          "details": {
+            "en": "It is the largest mud-brick building in the world. Every year, before the rains, the whole town takes part in the Crépissage, a festival in which the walls are coated with fresh mud plaster while children race to bring the water. The palm-wood beams that stick out of the walls hold the scaffolding. The old towns of Djenné were listed by UNESCO in 1988.",
+            "es": "Es el mayor edificio de adobe del mundo. Cada año, antes de las lluvias, toda la ciudad participa en el Crépissage, una fiesta en la que los muros se cubren con un nuevo revoque de barro mientras los niños corren a traer el agua. Las vigas de palmera que sobresalen de los muros sostienen los andamios. La UNESCO inscribió las ciudades antiguas de Djenné en 1988."
+          },
+          "status": {
+            "en": "Rebuilt in 1907 and replastered every year; UNESCO World Heritage Site",
+            "es": "Reconstruida en 1907 y revocada cada año; Patrimonio de la Humanidad"
+          },
+          "wiki": {
+            "en": "Great Mosque of Djenné",
+            "es": "Gran Mezquita de Djenné"
+          }
+        },
+        {
+          "id": "ibn-battuta",
+          "name": {
+            "en": "Ibn Battuta",
+            "es": "Ibn Battuta"
+          },
+          "at": [
+            -7.025,
+            17.3
+          ],
+          "cat": "journey",
+          "type": "person",
+          "date": "1352",
+          "life": [
+            "1304",
+            "1369"
+          ],
+          "place": {
+            "en": "Travelled from Tangier, Morocco; in Mali in 1352–1353",
+            "es": "Viajero de Tánger, Marruecos; en Malí en 1352-1353"
+          },
+          "text": {
+            "en": "The Moroccan traveller crossed the Sahara in 1352 by Taghaza to Walata and the capital of Mali. He praised the safety of its roads and its love of the Quran, and criticised many of its customs.",
+            "es": "El viajero marroquí cruzó el Sahara en 1352 por Taghaza hasta Ualata y la capital de Malí. Elogió la seguridad de sus caminos y su amor por el Corán, y criticó muchas de sus costumbres."
+          },
+          "wiki": {
+            "en": "Ibn Battuta",
+            "es": "Ibn Battuta"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1468",
+      "title": {
+        "en": "Sunni Ali and Songhai",
+        "es": "Sunni Alí y Songhai"
+      },
+      "camera": {
+        "lon": -4.0,
+        "lat": 15.5,
+        "zoom": 4.2
+      },
+      "text": {
+        "en": "As Mali weakened, the Songhai of Gao rose. Their king Sunni Ali took Timbuktu in 1468 and, after a long siege, Djenné in 1473, with cavalry on land and war canoes on the Niger.",
+        "es": "A medida que Malí se debilitaba, se alzaron los songhai de Gao. Su rey Sunni Alí tomó Tombuctú en 1468 y, tras un largo asedio, Djenné en 1473, con caballería en tierra y canoas de guerra en el Níger."
+      },
+      "control": {
+        "mali": {
+          "hist": "Mali",
+          "year": 1492
+        },
+        "songhai": {
+          "hist": "Songhai",
+          "year": 1492
+        }
+      },
+      "moves": [
+        {
+          "side": "songhai",
+          "path": [
+            [
+              -0.04,
+              16.27
+            ],
+            [
+              -1.2,
+              16.9
+            ],
+            [
+              -2.2,
+              16.9
+            ],
+            [
+              -3.01,
+              16.77
+            ]
+          ],
+          "label": {
+            "en": "Up the Niger to Timbuktu",
+            "es": "Remontando el Níger hasta Tombuctú"
+          }
+        },
+        {
+          "side": "songhai",
+          "path": [
+            [
+              -3.01,
+              16.77
+            ],
+            [
+              -3.6,
+              15.9
+            ],
+            [
+              -4.1,
+              14.9
+            ],
+            [
+              -4.55,
+              13.95
+            ]
+          ],
+          "label": {
+            "en": "Siege of Djenné",
+            "es": "Asedio de Djenné"
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "⚔️",
+          "date": "1468",
+          "at": [
+            -3.01,
+            16.77
+          ],
+          "text": {
+            "en": "Sunni Ali takes Timbuktu",
+            "es": "Sunni Alí toma Tombuctú"
+          }
+        },
+        {
+          "icon": "⚔️",
+          "date": "1473",
+          "at": [
+            -4.5556,
+            13.9053
+          ],
+          "text": {
+            "en": "Djenné surrenders after a long siege",
+            "es": "Djenné se rinde tras un largo asedio"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "gao",
+          "name": {
+            "en": "Gao",
+            "es": "Gao"
+          },
+          "at": [
+            -0.0447,
+            16.2717
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "800",
+          "place": {
+            "en": "Gao, Mali",
+            "es": "Gao, Malí"
+          },
+          "text": {
+            "en": "An old trading town on the Niger, known to Arab writers from the 9th century as Kawkaw. Its kings became Muslim early, and it was the Songhai capital.",
+            "es": "Una antigua ciudad comercial junto al Níger, que los escritores árabes conocían desde el siglo IX como Kawkaw. Sus reyes se hicieron musulmanes pronto, y fue la capital songhai."
+          },
+          "wiki": {
+            "en": "Gao",
+            "es": "Gao"
+          }
+        },
+        {
+          "id": "sonni-ali",
+          "name": {
+            "en": "Sunni Ali",
+            "es": "Sunni Alí"
+          },
+          "at": [
+            -0.03,
+            16.26
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1464",
+          "place": {
+            "en": "Gao, Mali",
+            "es": "Gao, Malí"
+          },
+          "text": {
+            "en": "The warrior king (ruled about 1464–1492) who turned Songhai into an empire with cavalry and a river fleet. He took Timbuktu and Djenné, and dealt harshly with Timbuktu's scholars.",
+            "es": "El rey guerrero (gobernó hacia 1464-1492) que convirtió Songhai en un imperio con caballería y una flota fluvial. Tomó Tombuctú y Djenné, y trató con dureza a los eruditos de Tombuctú."
+          },
+          "wiki": {
+            "en": "Sonni Ali",
+            "es": "Sonni Alí"
+          }
+        }
+      ],
+      "show": [
+        "empire-of-songhai"
+      ]
+    },
+    {
+      "date": "1497",
+      "title": {
+        "en": "Askia the Great",
+        "es": "Askia el Grande"
+      },
+      "camera": {
+        "lon": -3.0,
+        "lat": 16.5,
+        "zoom": 4.2
+      },
+      "text": {
+        "en": "Askia Muhammad seized power in 1493, made the hajj and organised Songhai into the largest empire in West African history. Timbuktu's scholars and libraries had their golden age.",
+        "es": "Askia Mohamed tomó el poder en 1493, peregrinó a La Meca y organizó Songhai como el mayor imperio de la historia de África occidental. Los eruditos y las bibliotecas de Tombuctú vivieron su edad de oro."
+      },
+      "control": {
+        "mali": {
+          "hist": "Mali",
+          "year": 1500
+        },
+        "songhai": {
+          "hist": "Songhai",
+          "year": 1500
+        }
+      },
+      "places": [
+        {
+          "id": "askia-muhammad",
+          "name": {
+            "en": "Askia Muhammad",
+            "es": "Askia Mohamed"
+          },
+          "at": [
+            -0.05,
+            16.29
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1493",
+          "life": [
+            "1443",
+            "1538"
+          ],
+          "place": {
+            "en": "Gao, Mali",
+            "es": "Gao, Malí"
+          },
+          "text": {
+            "en": "A general who seized power in 1493 and ruled until 1528, known as Askia the Great. He set standard weights and measures, policed the trade routes and favoured Islamic scholars.",
+            "es": "Un general que tomó el poder en 1493 y gobernó hasta 1528, conocido como Askia el Grande. Fijó pesos y medidas comunes, vigiló las rutas comerciales y favoreció a los eruditos musulmanes."
+          },
+          "details": {
+            "en": "He went to Mecca in 1496–1498 with 500 horsemen and 1,000 foot soldiers, and in Cairo the Abbasid caliph named him his deputy, caliph of the western Sudan. He divided the empire into provinces with governors, kept a standing army and a fleet on the Niger, and sent armies as far as the Hausa cities and the Aïr. In old age he went blind and was deposed by his son Askia Musa in 1528.",
+            "es": "Fue a La Meca en 1496-1498 con 500 jinetes y 1000 soldados de a pie, y en El Cairo el califa abasí lo nombró su lugarteniente, califa del Sudán occidental. Dividió el imperio en provincias con gobernadores, mantuvo un ejército permanente y una flota en el Níger, y envió ejércitos hasta las ciudades hausa y el Aïr. Ya anciano, quedó ciego y su hijo Askia Musa lo depuso en 1528."
+          },
+          "wiki": {
+            "en": "Askia Muhammad I",
+            "es": "Askia Mohamed I el Grande"
+          }
+        },
+        {
+          "id": "tomb-of-askia",
+          "name": {
+            "en": "Tomb of Askia",
+            "es": "Tumba de los Askia"
+          },
+          "at": [
+            -0.0444,
+            16.2897
+          ],
+          "cat": "tomb",
+          "type": "structure",
+          "date": "1495",
+          "place": {
+            "en": "Gao, Mali",
+            "es": "Gao, Malí"
+          },
+          "text": {
+            "en": "A pyramid of mud brick 17 m high, bristling with wooden beams, built at the end of the 15th century as the tomb of Askia Muhammad, with two mosques and a cemetery.",
+            "es": "Una pirámide de adobe de 17 m de alto, erizada de vigas de madera, construida a fines del siglo XV como tumba de Askia Mohamed, con dos mezquitas y un cementerio."
+          },
+          "status": {
+            "en": "Standing; UNESCO World Heritage Site since 2004",
+            "es": "En pie; Patrimonio de la Humanidad desde 2004"
+          },
+          "wiki": {
+            "en": "Tomb of Askia",
+            "es": "Tumba de los Askia"
+          }
+        },
+        {
+          "id": "leo-africanus",
+          "name": {
+            "en": "Leo Africanus",
+            "es": "León el Africano"
+          },
+          "at": [
+            -3.0,
+            16.78
+          ],
+          "cat": "journey",
+          "type": "person",
+          "date": "1510",
+          "life": [
+            "1494",
+            "1554"
+          ],
+          "place": {
+            "en": "Visited Timbuktu around 1510; born in Granada",
+            "es": "Visitó Tombuctú hacia 1510; nacido en Granada"
+          },
+          "text": {
+            "en": "A diplomat from Fez who reached Timbuktu around 1510. He wrote of its many judges, doctors and scholars, and that manuscripts sold there for more than any other merchandise.",
+            "es": "Un diplomático de Fez que llegó a Tombuctú hacia 1510. Escribió sobre sus muchos jueces, médicos y eruditos, y que allí los manuscritos se vendían por más que cualquier otra mercancía."
+          },
+          "wiki": {
+            "en": "Leo Africanus",
+            "es": "León el Africano"
+          }
+        },
+        {
+          "id": "timbuktu-manuscripts",
+          "name": {
+            "en": "Timbuktu manuscripts",
+            "es": "Manuscritos de Tombuctú"
+          },
+          "at": [
+            -3.004,
+            16.77
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "1500",
+          "place": {
+            "en": "Family libraries of Timbuktu, Mali",
+            "es": "Bibliotecas familiares de Tombuctú, Malí"
+          },
+          "text": {
+            "en": "Hundreds of thousands of handwritten books on law, religion, astronomy, medicine, poetry and history, many kept by Timbuktu families for centuries, some in local languages written in Arabic script.",
+            "es": "Cientos de miles de libros escritos a mano sobre derecho, religión, astronomía, medicina, poesía e historia, muchos guardados durante siglos por familias de Tombuctú, algunos en lenguas locales escritas con letras árabes."
+          },
+          "wiki": {
+            "en": "Timbuktu Manuscripts",
+            "es": "Manuscritos de Tombuctú"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1591-03",
+      "title": {
+        "en": "Tondibi: the Moroccan invasion",
+        "es": "Tondibi: la invasión marroquí"
+      },
+      "camera": {
+        "lon": -3.5,
+        "lat": 23.0,
+        "zoom": 2.6
+      },
+      "text": {
+        "en": "Seeking the gold, Sultan Ahmad al-Mansur sent an army with guns across the Sahara. At Tondibi, in March 1591, it routed the Songhai; Gao and Timbuktu fell and the empire broke apart.",
+        "es": "En busca del oro, el sultán Ahmad al-Mansur envió un ejército con armas de fuego a través del Sahara. En Tondibi, en marzo de 1591, derrotó a los songhai; Gao y Tombuctú cayeron y el imperio se desintegró."
+      },
+      "details": {
+        "en": "The march took four months, with 8,000 camels, and many men died of thirst on the way. The Moroccans found no gold mines, which lay far to the south beyond their reach. They ruled the Niger bend through pashas in Timbuktu, who soon became independent of Morocco, while Songhai princes held out in Dendi to the southeast. Scholars were arrested and exiled, trade shifted towards European ships on the Atlantic coast, and the region broke into smaller states.",
+        "es": "La marcha duró cuatro meses, con 8000 camellos, y muchos hombres murieron de sed por el camino. Los marroquíes no hallaron minas de oro, que estaban mucho más al sur, fuera de su alcance. Gobernaron el recodo del Níger mediante pachás en Tombuctú, que pronto se independizaron de Marruecos, mientras los príncipes songhai resistían en Dendi, al sureste. Los eruditos fueron arrestados y desterrados, el comercio se desplazó hacia los barcos europeos de la costa atlántica y la región se dividió en estados más pequeños."
+      },
+      "control": {
+        "mali": null,
+        "songhai": {
+          "ref": "dendi"
+        },
+        "morocco": [
+          {
+            "hist": "Watassid Morocco",
+            "year": 1600
+          },
+          {
+            "ref": "niger_bend"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "morocco",
+          "path": [
+            [
+              -7.98,
+              31.63
+            ],
+            [
+              -6.9,
+              30.3
+            ],
+            [
+              -5.8,
+              28.6
+            ],
+            [
+              -5.2,
+              26.0
+            ],
+            [
+              -5.0,
+              23.6
+            ],
+            [
+              -4.0,
+              20.5
+            ],
+            [
+              -2.4,
+              17.6
+            ],
+            [
+              -1.0,
+              16.9
+            ],
+            [
+              -0.22,
+              16.62
+            ]
+          ],
+          "label": {
+            "en": "Judar Pasha's march, 1590–1591",
+            "es": "La marcha de Yuder Pachá, 1590-1591"
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "⚔️",
+          "date": "1591-03-13",
+          "at": [
+            -0.22,
+            16.62
+          ],
+          "text": {
+            "en": "Battle of Tondibi",
+            "es": "Batalla de Tondibi"
+          }
+        },
+        {
+          "icon": "⛓️",
+          "date": "1594",
+          "at": [
+            -3.01,
+            16.77
+          ],
+          "text": {
+            "en": "Timbuktu's scholars are arrested and deported to Morocco",
+            "es": "Los eruditos de Tombuctú son arrestados y deportados a Marruecos"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "battle-of-tondibi",
+          "name": {
+            "en": "Battle of Tondibi",
+            "es": "Batalla de Tondibi"
+          },
+          "at": [
+            -0.22,
+            16.62
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "1591-03-13",
+          "place": {
+            "en": "Tondibi, north of Gao, Mali",
+            "es": "Tondibi, al norte de Gao, Malí"
+          },
+          "text": {
+            "en": "On 13 March 1591 a Moroccan army of about 4,000 men with arquebuses and cannon routed the much larger Songhai army of Askia Ishaq II. A stampede of 1,000 cattle turned back on the Songhai.",
+            "es": "El 13 de marzo de 1591 un ejército marroquí de unos 4000 hombres con arcabuces y cañones derrotó al mucho más numeroso ejército songhai de Askia Ishaq II. Una estampida de 1000 vacas se volvió contra los songhai."
+          },
+          "wiki": {
+            "en": "Battle of Tondibi",
+            "es": "Batalla de Tondibi"
+          }
+        },
+        {
+          "id": "judar-pasha",
+          "name": {
+            "en": "Judar Pasha",
+            "es": "Yuder Pachá"
+          },
+          "at": [
+            -0.15,
+            16.55
+          ],
+          "cat": "war",
+          "type": "person",
+          "date": "1591",
+          "place": {
+            "en": "Born in Spain; commanded in the Niger valley",
+            "es": "Nacido en España; mandó en el valle del Níger"
+          },
+          "text": {
+            "en": "A Spanish-born commander, captured as a child and raised at the Moroccan court, who led the army across the Sahara. Most of his officers and half his infantry were converts or exiles from Granada.",
+            "es": "Un comandante nacido en España, capturado de niño y criado en la corte marroquí, que llevó el ejército a través del Sahara. La mayoría de sus oficiales y la mitad de su infantería eran conversos o exiliados de Granada."
+          },
+          "wiki": {
+            "en": "Judar Pasha",
+            "es": "Yuder Pachá"
+          }
+        },
+        {
+          "id": "ahmad-al-mansur",
+          "name": {
+            "en": "Ahmad al-Mansur",
+            "es": "Ahmad al-Mansur"
+          },
+          "at": [
+            -7.9858,
+            31.6185
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1590",
+          "life": [
+            "1549",
+            "1603"
+          ],
+          "place": {
+            "en": "Marrakesh, Morocco (El Badi Palace)",
+            "es": "Marrakech, Marruecos (palacio El Badi)"
+          },
+          "text": {
+            "en": "The Saadi sultan of Morocco who, against his advisers, sent an army across the desert to seize the gold trade. He built the El Badi palace in Marrakesh, decorated with Italian marble.",
+            "es": "El sultán saadí de Marruecos que, contra sus consejeros, envió un ejército a través del desierto para apoderarse del comercio del oro. Construyó en Marrakech el palacio El Badi, decorado con mármol italiano."
+          },
+          "wiki": {
+            "en": "Ahmad al-Mansur",
+            "es": "Áhmad al-Mansur"
+          }
+        },
+        {
+          "id": "askia-ishaq-ii",
+          "name": {
+            "en": "Askia Ishaq II",
+            "es": "Askia Ishaq II"
+          },
+          "at": [
+            -0.04,
+            16.28
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1588",
+          "place": {
+            "en": "Gao, Mali",
+            "es": "Gao, Malí"
+          },
+          "text": {
+            "en": "The last ruler of the united Songhai Empire. After Tondibi he offered tribute in gold and slaves to Morocco, was refused, and was deposed; Songhai princes fought on from Dendi.",
+            "es": "El último soberano del Imperio songhai unido. Después de Tondibi ofreció a Marruecos un tributo en oro y esclavos, fue rechazado y depuesto; los príncipes songhai siguieron luchando desde Dendi."
+          },
+          "wiki": {
+            "en": "Askia Ishaq II",
+            "es": "Askia Ishaq II"
+          }
+        },
+        {
+          "id": "ahmad-baba",
+          "name": {
+            "en": "Ahmad Baba",
+            "es": "Ahmad Baba"
+          },
+          "at": [
+            -3.003,
+            16.776
+          ],
+          "cat": "knowledge",
+          "type": "person",
+          "date": "1594",
+          "life": [
+            "1556",
+            "1627"
+          ],
+          "place": {
+            "en": "Timbuktu, Mali; exiled to Morocco 1594–1608",
+            "es": "Tombuctú, Malí; desterrado en Marruecos en 1594-1608"
+          },
+          "text": {
+            "en": "A Timbuktu scholar who wrote more than 40 books. In 1594 the Moroccans deported him to Morocco with other scholars; he was allowed home only in 1608.",
+            "es": "Un erudito de Tombuctú que escribió más de 40 libros. En 1594 los marroquíes lo deportaron a Marruecos con otros eruditos; solo pudo volver a casa en 1608."
+          },
+          "wiki": {
+            "en": "Ahmad Baba al-Timbukti",
+            "es": "Ahmad Baba al-Timbukti"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2013",
+      "title": {
+        "en": "What remains",
+        "es": "Lo que queda"
+      },
+      "camera": {
+        "lon": -3.5,
+        "lat": 12.5,
+        "zoom": 3.4
+      },
+      "text": {
+        "en": "Timbuktu, Djenné and the Tomb of Askia are World Heritage Sites, griots still sing of Sundiata, and two modern nations took the old names: Ghana in 1957 and Mali in 1960.",
+        "es": "Tombuctú, Djenné y la Tumba de los Askia son Patrimonio de la Humanidad, los griots siguen cantando a Sundiata y dos naciones modernas tomaron los viejos nombres: Ghana en 1957 y Malí en 1960."
+      },
+      "details": {
+        "en": "In 2012 armed groups occupied northern Mali and destroyed shrines of Timbuktu's saints; local masons rebuilt them by 2015 with UNESCO, and in 2016 the International Criminal Court convicted one of the men responsible for the destruction. Conflict still makes the region hard to visit. The manuscripts saved in Bamako are being digitised so that anyone can read them, and griots still sing the Epic of Sundiata at weddings and festivals.",
+        "es": "En 2012 grupos armados ocuparon el norte de Malí y destruyeron santuarios de los santos de Tombuctú; los albañiles locales los reconstruyeron hacia 2015 con la UNESCO, y en 2016 la Corte Penal Internacional condenó a uno de los responsables de la destrucción. Los conflictos aún hacen difícil visitar la región. Los manuscritos salvados en Bamako se están digitalizando para que cualquiera pueda leerlos, y los griots siguen cantando la Epopeya de Sundiata en bodas y fiestas."
+      },
+      "control": {
+        "songhai": null,
+        "morocco": null,
+        "today": [
+          "MLI",
+          "GHA"
+        ]
+      },
+      "aftermath": true,
+      "places": [
+        {
+          "id": "ahmed-baba-institute",
+          "name": {
+            "en": "Ahmed Baba Institute",
+            "es": "Instituto Ahmed Baba"
+          },
+          "at": [
+            -3.006,
+            16.779
+          ],
+          "cat": "writing",
+          "type": "institution",
+          "date": "1973",
+          "place": {
+            "en": "Timbuktu, Mali",
+            "es": "Tombuctú, Malí"
+          },
+          "text": {
+            "en": "A library and research centre named after Ahmad Baba. When armed groups held Timbuktu in 2012–2013, 4,203 manuscripts were burned or stolen, but librarians smuggled about 350,000 to safety in Bamako.",
+            "es": "Una biblioteca y centro de investigación con el nombre de Ahmad Baba. Cuando grupos armados ocuparon Tombuctú en 2012-2013, 4203 manuscritos fueron quemados o robados, pero los bibliotecarios llevaron unos 350 000 a salvo a Bamako."
+          },
+          "wiki": {
+            "en": "Ahmed Baba Institute",
+            "es": "Manuscritos de Tombuctú"
+          }
+        },
+        {
+          "id": "great-mosque-of-djenne",
+          "name": {
+            "en": "Djenné and its Great Mosque",
+            "es": "Djenné y su Gran Mezquita"
+          },
+          "at": [
+            -4.5556,
+            13.9053
+          ],
+          "cat": "temple",
+          "type": "structure",
+          "date": "1250",
+          "place": {
+            "en": "Djenné, Mali",
+            "es": "Djenné, Malí"
+          },
+          "text": {
+            "en": "A trading town on the Bani River whose first great mosque was built, tradition says, by a king named Kunburu who turned his palace into one. The present mosque dates from 1907.",
+            "es": "Una ciudad comercial junto al río Bani cuya primera gran mezquita la construyó, según la tradición, un rey llamado Kunburu que convirtió su palacio en ella. La mezquita actual es de 1907."
+          },
+          "details": {
+            "en": "It is the largest mud-brick building in the world. Every year, before the rains, the whole town takes part in the Crépissage, a festival in which the walls are coated with fresh mud plaster while children race to bring the water. The palm-wood beams that stick out of the walls hold the scaffolding. The old towns of Djenné were listed by UNESCO in 1988.",
+            "es": "Es el mayor edificio de adobe del mundo. Cada año, antes de las lluvias, toda la ciudad participa en el Crépissage, una fiesta en la que los muros se cubren con un nuevo revoque de barro mientras los niños corren a traer el agua. Las vigas de palmera que sobresalen de los muros sostienen los andamios. La UNESCO inscribió las ciudades antiguas de Djenné en 1988."
+          },
+          "status": {
+            "en": "Rebuilt in 1907 and replastered every year; UNESCO World Heritage Site",
+            "es": "Reconstruida en 1907 y revocada cada año; Patrimonio de la Humanidad"
+          },
+          "wiki": {
+            "en": "Great Mosque of Djenné",
+            "es": "Gran Mezquita de Djenné"
+          }
+        },
+        {
+          "id": "tomb-of-askia",
+          "name": {
+            "en": "Tomb of Askia",
+            "es": "Tumba de los Askia"
+          },
+          "at": [
+            -0.0444,
+            16.2897
+          ],
+          "cat": "tomb",
+          "type": "structure",
+          "date": "1495",
+          "place": {
+            "en": "Gao, Mali",
+            "es": "Gao, Malí"
+          },
+          "text": {
+            "en": "A pyramid of mud brick 17 m high, bristling with wooden beams, built at the end of the 15th century as the tomb of Askia Muhammad, with two mosques and a cemetery.",
+            "es": "Una pirámide de adobe de 17 m de alto, erizada de vigas de madera, construida a fines del siglo XV como tumba de Askia Mohamed, con dos mezquitas y un cementerio."
+          },
+          "status": {
+            "en": "Standing; UNESCO World Heritage Site since 2004",
+            "es": "En pie; Patrimonio de la Humanidad desde 2004"
+          },
+          "wiki": {
+            "en": "Tomb of Askia",
+            "es": "Tumba de los Askia"
+          }
+        },
+        {
+          "id": "republic-of-ghana",
+          "name": {
+            "en": "Republic of Ghana",
+            "es": "República de Ghana"
+          },
+          "at": [
+            -0.187,
+            5.6037
+          ],
+          "cat": "place",
+          "type": "place",
+          "date": "1957",
+          "place": {
+            "en": "Accra, Ghana",
+            "es": "Acra, Ghana"
+          },
+          "text": {
+            "en": "When the Gold Coast won independence in 1957, Kwame Nkrumah named it Ghana after the old empire, although the two lie hundreds of kilometres apart.",
+            "es": "Cuando la Costa de Oro logró la independencia en 1957, Kwame Nkrumah le puso el nombre de Ghana por el antiguo imperio, aunque los separan cientos de kilómetros."
+          },
+          "wiki": {
+            "en": "Ghana",
+            "es": "Ghana"
+          }
+        },
+        {
+          "id": "republic-of-mali",
+          "name": {
+            "en": "Republic of Mali",
+            "es": "República de Malí"
+          },
+          "at": [
+            -8.0029,
+            12.6392
+          ],
+          "cat": "place",
+          "type": "place",
+          "date": "1960",
+          "place": {
+            "en": "Bamako, Mali",
+            "es": "Bamako, Malí"
+          },
+          "text": {
+            "en": "In 1960 the French Sudan became independent as Mali, after the empire of Sundiata and Mansa Musa. Bamako, its capital, lies in the old Mande heartland.",
+            "es": "En 1960 el Sudán francés se independizó con el nombre de Malí, por el imperio de Sundiata y Mansa Musa. Bamako, su capital, está en el antiguo corazón mandinga."
+          },
+          "wiki": {
+            "en": "Mali",
+            "es": "Mali"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "For a thousand years the empires of the western Sahel linked Africa with the Mediterranean, supplying much of the gold of the medieval world and building cities of learning such as Timbuktu and Djenné. Their oral epics, mud-brick mosques and manuscripts survive, and the modern states of Ghana and Mali carry their names.",
+    "es": "Durante mil años los imperios del Sahel occidental unieron África con el Mediterráneo, dieron gran parte del oro del mundo medieval y construyeron ciudades del saber como Tombuctú y Djenné. Sus epopeyas orales, sus mezquitas de adobe y sus manuscritos perduran, y los estados modernos de Ghana y Malí llevan sus nombres."
+  },
+  "sources": [
+    {
+      "title": "Djenné-Djenno (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Djenné-Djenno"
+    },
+    {
+      "title": "Dhar Tichitt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dhar_Tichitt"
+    },
+    {
+      "title": "Ghana Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ghana_Empire"
+    },
+    {
+      "title": "Koumbi Saleh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Koumbi_Saleh"
+    },
+    {
+      "title": "Al-Bakri (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Al-Bakri"
+    },
+    {
+      "title": "Aoudaghost (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aoudaghost"
+    },
+    {
+      "title": "Sijilmasa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sijilmasa"
+    },
+    {
+      "title": "Taghaza (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Taghaza"
+    },
+    {
+      "title": "Trans-Saharan trade (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Trans-Saharan_trade"
+    },
+    {
+      "title": "Almoravid dynasty (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Almoravid_dynasty"
+    },
+    {
+      "title": "Sundiata Keita (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sundiata_Keita"
+    },
+    {
+      "title": "Battle of Kirina (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Kirina"
+    },
+    {
+      "title": "Kouroukan Fouga (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kouroukan_Fouga"
+    },
+    {
+      "title": "Mali Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mali_Empire"
+    },
+    {
+      "title": "Mansa Musa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mansa_Musa"
+    },
+    {
+      "title": "Catalan Atlas (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Catalan_Atlas"
+    },
+    {
+      "title": "Djinguereber Mosque (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Djinguereber_Mosque"
+    },
+    {
+      "title": "Sankoré Madrasah (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sankoré_Madrasah"
+    },
+    {
+      "title": "Great Mosque of Djenné (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Mosque_of_Djenné"
+    },
+    {
+      "title": "Timbuktu Manuscripts (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Timbuktu_Manuscripts"
+    },
+    {
+      "title": "Ibn Battuta (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ibn_Battuta"
+    },
+    {
+      "title": "Songhai Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Songhai_Empire"
+    },
+    {
+      "title": "Sonni Ali (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sonni_Ali"
+    },
+    {
+      "title": "Askia Muhammad I (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Askia_Muhammad_I"
+    },
+    {
+      "title": "Tomb of Askia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tomb_of_Askia"
+    },
+    {
+      "title": "Leo Africanus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Leo_Africanus"
+    },
+    {
+      "title": "Battle of Tondibi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Tondibi"
+    },
+    {
+      "title": "Ahmad Baba al-Timbukti (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ahmad_Baba_al-Timbukti"
+    },
+    {
+      "title": "Pashalik of Timbuktu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pashalik_of_Timbuktu"
+    }
+  ]
+}
