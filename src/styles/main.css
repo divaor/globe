@@ -37,7 +37,11 @@
 
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; overflow: hidden; background: var(--bg); color: var(--text); font-family: var(--font); -webkit-font-smoothing: antialiased; }
-body { overscroll-behavior: none; -webkit-tap-highlight-color: transparent; }
+/* The app is not a page of text to select. A tap on the map opens a card under the finger, and phone
+   browsers took that same tap as one on the card's words: selecting a word, or opening their dictionary
+   bar. Fields, and the paragraphs of the side sheet (Details and the like), stay selectable. */
+body { overscroll-behavior: none; -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+input, textarea, [contenteditable], .sheet-body p, .sheet-body li { -webkit-user-select: text; user-select: text; -webkit-touch-callout: default; }
 button { font: inherit; color: inherit; }
 a { color: var(--accent); }
 [hidden] { display: none !important; }

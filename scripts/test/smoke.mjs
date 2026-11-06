@@ -364,6 +364,14 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(900);
   const card = await page.evaluate(() => { const c = document.querySelector('.country-card'); return c && !c.hidden ? { text: c.innerText, img: !!c.querySelector('.card-img') } : null; });
   check(!!card && /Great Pyramid of Giza/.test(card.text) && /2600–2560/.test(card.text) && card.img, `a marker opens its card with a picture slot (${card?.text.split('\n')[0]})`);
+  // A tap that opens a card under the finger must not also select its words (phones then open a dictionary bar).
+  const picked = [];
+  for (const q of ['.country-card .card-title', '.wb-title']) {
+    const box = await page.locator(q).first().boundingBox();
+    await page.mouse.dblclick(box.x + 30, box.y + box.height / 2);
+    picked.push(await page.evaluate(() => { const s = window.getSelection().toString(); window.getSelection().removeAllRanges(); return s; }));
+  }
+  check(picked.every((s) => !s.trim()), `the card and the step bar are not text to select${picked.some((s) => s.trim()) ? ` (selected: ${picked.join(' | ')})` : ''}`);
   await page.tap('.country-card .card-close');
   await page.waitForTimeout(300);
   check(await page.evaluate(() => document.querySelector('.country-card').hidden), 'the X closes an item card in Time travel');
