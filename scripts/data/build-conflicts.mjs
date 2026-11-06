@@ -38,7 +38,7 @@ import pc from 'polygon-clipping';
 import { feature, quantize } from 'topojson-client';
 import { topology } from 'topojson-server';
 import { presimplify, simplify, sphericalTriangleArea } from 'topojson-simplify';
-import { geoArea, geoCircle, geoGraticule10, geoOrthographic, geoPath } from 'd3-geo';
+import { geoArea, geoCircle, geoDistance, geoGraticule10, geoOrthographic, geoPath } from 'd3-geo';
 import { rewindTopology } from './winding.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -557,8 +557,11 @@ async function build(file, opts) {
   }
   if (wars && !steps.some((s) => Object.values(s.control).some((v) => v !== null))) throw new Error(`${c.id}: no step has any territory`);
   if (c.catalog === 'all') {
-    // A time tour: every catalogue item appears on the map from its date on.
-    for (const it of [...coll.catalog.values()].sort((a, b) => parseDate(a.date, '') - parseDate(b.date, ''))) addItem(it, -1);
+    // A time tour: every catalogue item appears on the map from its date on (up to the last step).
+    const last = steps[steps.length - 1].t;
+    for (const it of [...coll.catalog.values()].sort((a, b) => parseDate(a.date, '') - parseDate(b.date, ''))) {
+      if (parseDate(it.date, '') <= last + 1e-6) addItem(it, -1);
+    }
   }
   if (opts.lint) lint(c, steps, areas);
 
@@ -657,8 +660,11 @@ async function preview(c, topo, dir) {
   const jobs = [];
   c.steps.forEach((st, i) => {
     cam = st.camera ?? cam;
-    const proj = geoOrthographic().rotate([-cam.lon, -cam.lat]).scale(290 * cam.zoom).translate([W / 2, H / 2 + 20]).clipAngle(90).precision(0.3);
-    const p = geoPath(proj);
+    const proj0 = geoOrthographic().rotate([-cam.lon, -cam.lat]).scale(290 * cam.zoom).translate([W / 2, H / 2 + 20]).clipAngle(90).precision(0.3);
+    // Points on the far side of the globe are hidden (paths are clipped by clipAngle; points aren't).
+    const centre = [cam.lon, cam.lat];
+    const proj = Object.assign((pt) => (geoDistance(centre, pt) < Math.PI / 2 - 0.005 ? proj0(pt) : null), proj0);
+    const p = geoPath(proj0);
     const parts = [`<rect width="${W}" height="${H}" fill="#ffffff"/>`, `<path d="${p({ type: 'Sphere' })}" fill="#cfe3f3"/>`,
       `<path d="${p(geoGraticule10())}" fill="none" stroke="#b5cde2" stroke-width="0.5"/>`, `<path d="${p(landF)}" fill="#ece6d6" stroke="#9aa5ad" stroke-width="0.4"/>`];
     for (const s of c.sides) {
