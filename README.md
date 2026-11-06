@@ -46,11 +46,18 @@ spinning full-screen as an ambient display. English and Spanish.
     spices, sugar, coffee, tea and chocolate) and 248 dishes of the world, with where and when they were born.
   - Great structures: about 220 structures from Göbekli Tepe to the Burj Khalifa (why, how and by whom), the
     Seven Wonders, the race to the sky, and bridges, canals and dams.
+  - Peoples and civilizations: 18 stories and 936 items. The human story from Toumaï, 7 million years ago, to
+    Homo erectus, the Neanderthals and Denisovans, Out of Africa, the peopling of the Americas and the
+    Austronesian voyages; eleven civilizations (Mesopotamia, Egypt, the Indus, Persia, Kush and Aksum, ancient
+    China, the Khmer, Ghana-Mali-Songhai, Great Zimbabwe and the Swahili coast, the Olmecs and Maya, the Andes);
+    and 126 civilizations rising and falling in a time tour from 3300 BC to 1600. Dates before 10,000 BC read
+    "N years ago".
   - Browse and search every item of a story or a whole collection; shared links open a story at its step.
 - **Explore:** measure distances (great circles, flight time), compare two countries, "true size" of countries.
 - **Learn & play:** quizzes (find the country, flags, capitals, where in the world, when was it built or made,
-  dishes of the world, which era), guided tours (our planet, eight cities through time, history and culture),
-  "On this day" (Wikipedia).
+  dishes of the world, which era, which civilization), each ending with every answer and its picture; guided
+  tours (our planet, eight cities through time, history and culture, Out of Africa, capitals of the ancient
+  world); "On this day" (Wikipedia).
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Ambient mode:** full-screen rotating globe with your filters, screen kept awake, clock, optional filter cycling.
 
@@ -93,7 +100,7 @@ Merdith et al. 2021 plate model (CC BY 4.0), PB2002 plates (ODC-By), CIA World F
 Our World in Data (CC BY 4.0), mledoze/countries (ODbL), Unicode CLDR, flag-icons (MIT).
 The Time travel stories are written from Wikipedia and the sources listed in each story
 (`scripts/data/conflicts/README.md`, `scripts/data/STORIES.md`); item pictures are Wikipedia page images,
-loaded from Wikipedia when a card opens.
+loaded from Wikipedia when a card opens, or a Wikimedia Commons file named by the item.
 
 ## Licence
 
