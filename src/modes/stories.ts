@@ -33,6 +33,8 @@ export interface Item {
   until?: string; tu?: number;
   type?: string; country?: string; place?: Text; text: Text; details?: Text; why?: Text; how?: Text; by?: Text; size?: Text; status?: Text;
   facts?: { label: Text; value: Text }[]; wiki?: Text;
+  /** A Wikimedia Commons file for the card, when the article has no picture of its own. */
+  img?: string;
   /** The first step that shows it (-1: a time tour's catalogue item, shown from its date). */
   first: number;
 }
@@ -817,7 +819,7 @@ export class StoryMode {
     this.shell.card.showCustom(it.icon, tx(it.name), sub, rows, links, notes, this.wikiThumb(it));
   }
 
-  private wikiThumb(it: Omit<Item, 'first'>) { return wikiThumb(it.wiki); }
+  private wikiThumb(it: Omit<Item, 'first'>) { return itemThumb(it); }
 
   /** Stops playing (a tour or a quiz opened the story). */
   pause() { if (this.playing) { this.playing = false; this.renderBar(); } }
@@ -1129,6 +1131,12 @@ export class StoryMode {
 }
 
 const yearOf = (d: string) => /^-?\d+/.exec(d)?.[0] ?? d;
+
+/** An item's picture: its own Commons file if it has one, else its article's. */
+export function itemThumb(it: { wiki?: Text; img?: string }): Promise<string | null> {
+  if (it.img) return Promise.resolve(`https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(it.img.replace(/ /g, '_'))}?width=330`);
+  return wikiThumb(it.wiki);
+}
 
 const thumbs = new Map<string, Promise<string | null>>();
 /** The picture of a Wikipedia article (in the reader's language, else English), or null. */

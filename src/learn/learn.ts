@@ -4,7 +4,7 @@ import { geoDistance } from 'd3-geo';
 import { h, icon, clear, add } from '../ui/dom';
 import { t, tx, lang, flagEmoji } from '../app/i18n';
 import { dataUrl, loadJSON } from '../data/store';
-import { fmtWhen, itemWhen, wikiThumb, type CollectionItem, type StoryKind } from '../modes/stories';
+import { fmtWhen, itemWhen, itemThumb, type CollectionItem, type StoryKind } from '../modes/stories';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { TimeTravel } from '../modes';
@@ -315,7 +315,7 @@ export class Learn {
     const it = cur.item!;
     const img = h('img', { class: 'quiz-img', alt: '', hidden: true }) as HTMLImageElement;
     img.addEventListener('load', () => { img.hidden = false; });
-    void wikiThumb(it.wiki).then((src) => { if (src && img.isConnected) img.src = src; });
+    void itemThumb(it).then((src) => { if (src && img.isConnected) img.src = src; });
     add(this.card, h('div', { class: 'quiz-q' }, this.itemQuestion(kind, it)), h('div', { class: 'quiz-item' }, `${it.icon} ${tx(it.name)}`), img);
     if (cur.options) {
       const opts = h('div', { class: 'quiz-opts' });
@@ -429,7 +429,7 @@ export class Learn {
     const yours = cur.ok ? '' : kind === 'where' || kind === 'find' ? (cur.given ?? '') : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : L('no answer', 'sin respuesta');
     const pic = h('span', { class: 'quiz-thumb' }, it ? it.icon : '');
     if (it) {
-      void wikiThumb(it.wiki).then((src) => {
+      void itemThumb(it).then((src) => {
         if (!src || !pic.isConnected) return;
         const img = h('img', { alt: '' }) as HTMLImageElement;
         img.addEventListener('load', () => { clear(pic); pic.append(img); });

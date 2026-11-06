@@ -379,7 +379,9 @@ function checkItem(it, where, coll, catalog = false) {
   for (const [j, f] of (it.facts ?? []).entries()) { text(f?.label, `${where}.facts[${j}].label`); text(f?.value, `${where}.facts[${j}].value`); }
   if (it.wiki != null && (typeof it.wiki !== 'object' || typeof it.wiki.en !== 'string' || typeof it.wiki.es !== 'string' || !it.wiki.en)) throw new Error(`${where}: "wiki" is { "en": "Article title", "es": "Título del artículo" }`);
   if (it.country != null && !loadCountries().has(it.country)) throw new Error(`${where}: "country" "${it.country}" is not a country code (see --list countries)`);
-  const known = new Set(['id', 'name', 'at', 'cat', 'icon', 'type', 'date', 'end', 'until', 'life', 'text', 'facts', 'wiki', 'country', ...ITEM_TEXTS]);
+  // "img": a Wikimedia Commons file for the card, when the article has no picture of its own.
+  if (it.img != null && (typeof it.img !== 'string' || !/\.(jpe?g|png|gif|tiff?|webp)$/i.test(it.img) || /^(File:|https?:)/i.test(it.img))) throw new Error(`${where}: "img" is a Commons file name such as "Pompeii bread.jpg" (no "File:", no address)`);
+  const known = new Set(['id', 'name', 'at', 'cat', 'icon', 'type', 'date', 'end', 'until', 'life', 'text', 'facts', 'wiki', 'img', 'country', ...ITEM_TEXTS]);
   for (const k of Object.keys(it)) if (!known.has(k)) throw new Error(`${where}: unknown field "${k}"`);
   return t;
 }
@@ -387,7 +389,7 @@ function checkItem(it, where, coll, catalog = false) {
 /** An item as the app gets it: fixed field order, with its time and icon filled in. */
 function normItem(it, coll) {
   const o = { id: it.id, name: it.name, at: it.at.map((v) => Math.round(v * 1e4) / 1e4), cat: it.cat, icon: it.icon ?? coll.cats.get(it.cat).icon, date: it.date, t: parseDate(it.date, '') };
-  for (const k of ['end', 'until', 'life', 'type', 'country', 'place', 'text', 'details', 'why', 'how', 'by', 'size', 'status', 'facts', 'wiki']) if (it[k] != null) o[k] = it[k];
+  for (const k of ['end', 'until', 'life', 'type', 'country', 'place', 'text', 'details', 'why', 'how', 'by', 'size', 'status', 'facts', 'wiki', 'img']) if (it[k] != null) o[k] = it[k];
   if (it.until != null) o.tu = parseDate(it.until, '');
   if (o.id == null) delete o.id;
   return o;
