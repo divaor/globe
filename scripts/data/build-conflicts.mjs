@@ -619,7 +619,8 @@ function lint(c, steps, areas) {
     else if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) if (k !== 'control' && k !== 'defs') walk(x, `${where}.${k}`);
   };
   walk(c, '');
-  for (const [v, where] of texts) if (v.en === v.es && v.en.split(' ').length > 3) warn(`${where}: Spanish text identical to English`);
+  // Names and Wikipedia titles are often the same in both languages; only flag real sentences.
+  for (const [v, where] of texts) if (v.en === v.es && v.en.split(' ').length > 3 && !/\.wiki$/.test(where)) warn(`${where}: Spanish text identical to English`);
   steps.forEach((st, i) => {
     if (st.text.en.length > 260) warn(`steps[${i}].text is ${st.text.en.length} characters (aim for 220 or less)`);
     if (st.title.en.length > 60) warn(`steps[${i}].title is long (${st.title.en.length} characters)`);
