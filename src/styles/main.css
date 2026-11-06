@@ -402,7 +402,10 @@ html.mode-time .legend { bottom: calc(232px + var(--safe-b)); }
 .wb-top { display: flex; align-items: center; gap: 10px; }
 .wb-head { flex: 1; min-width: 0; }
 .wb-date { font-size: 20px; font-weight: 800; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.wb-name { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wb-name { display: flex; font-size: 12px; color: var(--muted); white-space: nowrap; min-width: 0; }
+/* A long conflict name gives way so the step count ("step 12 of 31") stays visible. */
+.wb-title-short { overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.wb-count { flex: none; white-space: pre; }
 .wb-tools { display: flex; align-items: center; gap: 2px; }
 .wb-title { margin: 8px 2px 2px; font-weight: 800; font-size: 15.5px; line-height: 1.25; }
 .wb-text { margin: 0 2px; font-size: 13.5px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }

@@ -594,7 +594,7 @@ export class WarsMode {
     this.bar = h('section', { class: 'warbar glass', 'aria-label': tx(c.name) },
       h('div', { class: 'wb-top' },
         play,
-        h('div', { class: 'wb-head' }, date, h('div', { class: 'wb-name' }, `${c.icon} ${tx(c.name)}`, count)),
+        h('div', { class: 'wb-head' }, date, h('div', { class: 'wb-name' }, h('span', { class: 'wb-title-short' }, `${c.icon} ${tx(c.name)}`), count)),
         h('div', { class: 'wb-tools' }, list, exit)),
       title, text, meta, h('div', { class: 'wb-nav' }, prev, track, next));
     this.ui = { date, title, text, meta, play, track, count };
