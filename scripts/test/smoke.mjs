@@ -364,6 +364,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(900);
   const card = await page.evaluate(() => { const c = document.querySelector('.country-card'); return c && !c.hidden ? { text: c.innerText, img: !!c.querySelector('.card-img') } : null; });
   check(!!card && /Great Pyramid of Giza/.test(card.text) && /2600–2560/.test(card.text) && card.img, `a marker opens its card with a picture slot (${card?.text.split('\n')[0]})`);
+  await page.tap('.country-card .card-close');
+  await page.waitForTimeout(300);
+  check(await page.evaluate(() => document.querySelector('.country-card').hidden), 'the X closes an item card in Time travel');
   await page.tap('.wb-browse');
   await page.waitForTimeout(500);
   const rows = await page.evaluate(() => document.querySelectorAll('.story-list .story-item').length);
@@ -379,6 +382,46 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const after = await page.evaluate(() => ({ mode: window.atlas.app.mode, bar: !!document.querySelector('.warbar'), base: window.atlas.app.renderer.baseMap, story: document.documentElement.classList.contains('mode-story') }));
   check(after.mode === null && !after.bar && after.base && !after.story, 'leaving a story restores the map');
   check(!errors.length, `no page errors in a story${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 12b. Crowded markers move apart (with a line to their place), so each can be tapped; a step text
+// too long for the bar ends in "… more" and opens whole when tapped.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#eras=renaissance&step=10&p=globe&lang=en');
+  await page.waitForSelector('.warbar', { timeout: 30000 });
+  await page.waitForTimeout(6000);
+  await page.evaluate(() => { const b = document.querySelector('.warbar .tb-play'); if (b && b.getAttribute('aria-label') === 'Pause') b.click(); });
+  await page.waitForTimeout(500);
+  const sp = await page.evaluate(() => {
+    const pts = [...window.atlas.time.stories.eras.spots.at.values()];
+    let worst = Infinity;
+    for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) worst = Math.min(worst, Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y) - pts[i].r - pts[j].r);
+    return { n: pts.length, moved: pts.filter((p) => Math.hypot(p.x - p.ax, p.y - p.ay) > p.r * 0.7).length, worst };
+  });
+  check(sp.n >= 10 && sp.moved > 0 && sp.worst >= 2, `crowded markers in Florence move apart (${sp.moved} of ${sp.n} moved; closest gap ${sp.worst.toFixed(1)} px)`);
+  const tap = await page.evaluate(() => {
+    const s = window.atlas.time.stories.eras;
+    const k = s.c.items.findIndex((it) => /Machiavelli/.test(it.name.en));
+    const p = s.spots.at.get(k);
+    return p ? [p.x, p.y] : null;
+  });
+  if (tap) await page.touchscreen.tap(tap[0], tap[1]);
+  await page.waitForTimeout(700);
+  const title = await page.evaluate(() => { const c = document.querySelector('.country-card'); return c.hidden ? '' : c.querySelector('.card-title')?.textContent; });
+  check(/Machiavelli/.test(title ?? ''), `a moved marker opens its own card (${title})`);
+  await page.tap('.country-card .card-close');
+  await page.waitForTimeout(300);
+  // Great structures, castles and cathedrals: three lines and "… more", then all of it.
+  await page.goto(`${url}?r=2#structures=great-structures-ancient&step=15&p=globe&lang=en`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('.warbar', { timeout: 30000 });
+  await page.waitForTimeout(2500);
+  const cut = await page.evaluate(() => { const e = document.querySelector('.wb-text'); return { cut: e.classList.contains('cut'), more: /… more$/.test(e.textContent), h: e.clientHeight }; });
+  await page.tap('.wb-text');
+  await page.waitForTimeout(300);
+  const whole = await page.evaluate(() => { const e = document.querySelector('.wb-text'); return { open: e.classList.contains('open'), h: e.clientHeight, less: /less$/.test(e.textContent) }; });
+  check(cut.cut && cut.more && whole.open && whole.less && whole.h > cut.h, `a long step text ends in "… more" and opens whole (${cut.h} → ${whole.h} px)`);
+  check(!errors.length, `no page errors with crowded markers${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 
@@ -405,6 +448,37 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     const story = await page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].some((b) => /See it in the story/.test(b.textContent)));
     check(/1\/10/.test(q.head) && q.opts.length === 4 && new Set(q.opts).size === 4 && !!q.item && !!fb && story, `quiz "${kind}": ${q.q} ${q.item} (${q.opts.join(' / ')})`);
   }
+  // The quiz card folds to show the map ("Map") and comes back ("Quiz"); the answer's pin is named
+  // and sits below the card; after ten questions the result lists each with right or wrong.
+  await menu('Quiz');
+  await page.evaluate(() => document.querySelector('[data-quiz="dish"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .quiz-opt', { timeout: 30000 });
+  await page.evaluate(() => document.querySelector('.learn-card .quiz-opt').click());
+  await page.waitForTimeout(2600);
+  const ans = await page.evaluate(() => {
+    const v = window.atlas.app.renderer.view, q = window.atlas.learn.quiz, cur = q.qs[0];
+    const pin = window.atlas.learn.pin, p = pin && v.project(pin.lon, pin.lat);
+    const marked = [...document.querySelectorAll('.learn-card .quiz-opt')].filter((b) => b.classList.contains('ok') || b.classList.contains('bad')).length;
+    return { bottom: document.querySelector('.learn-card').getBoundingClientRect().bottom, inset: v.insetTop, pinY: p ? p[1] : -1, named: window.atlas.app.renderer.labels.items.some((l) => l.text === pin?.text), marked: cur.ok ? marked === 1 : marked === 2 };
+  });
+  check(ans.inset > ans.bottom && ans.pinY > ans.bottom && ans.named && ans.marked, `the answer's pin is named and in view below the card (pin at ${Math.round(ans.pinY)} px, card ends at ${Math.round(ans.bottom)})`);
+  await page.evaluate(() => document.querySelector('.learn-card .quiz-peek').click());
+  await page.waitForTimeout(400);
+  const folded = await page.evaluate(() => ({ opts: document.querySelectorAll('.learn-card .quiz-opt').length, h: document.querySelector('.learn-card').getBoundingClientRect().height, next: !!document.querySelector('.learn-card .primary') }));
+  await page.evaluate(() => document.querySelector('.learn-card .quiz-peek').click());
+  await page.waitForTimeout(400);
+  const back = await page.evaluate(() => document.querySelectorAll('.learn-card .quiz-opt').length);
+  check(folded.opts === 0 && folded.h < 200 && folded.next && back === 4, `"Map" folds the quiz to one line (${Math.round(folded.h)} px) and "Quiz" brings it back`);
+  for (let i = 0; i < 10; i++) {
+    if (i > 0) await page.evaluate(() => document.querySelector('.learn-card .quiz-opt')?.click());
+    await page.waitForTimeout(250);
+    await page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /Next|See result/.test(b.textContent))?.click());
+    await page.waitForTimeout(300);
+  }
+  const res = await page.evaluate(() => ({ head: document.querySelector('.learn-card .tool-head')?.textContent ?? '', rows: document.querySelectorAll('.quiz-sum-row').length, marks: [...document.querySelectorAll('.quiz-sum-mark')].map((m) => m.textContent).join(''), thumbs: document.querySelectorAll('.quiz-sum-row .quiz-thumb').length }));
+  check(/Result \d+\/10/.test(res.head) && res.rows === 10 && /^[✓✗]{10}$/.test(res.marks) && res.thumbs === 10, `the result lists all ten questions with a picture each (${res.marks})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
   // Where in the world: a tap on the globe is the answer; then the story opens at the item.
   await menu('Quiz');
   await page.evaluate(() => document.querySelector('[data-quiz="where"]').click());
@@ -429,6 +503,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const near = (s) => Math.abs(s.lon - 28.97) < 0.3 && Math.abs(s.lat - 41.01) < 0.3 && s.zoom > 15;
   const s1 = await stop();
   check(s1.mode === 'structures' && near(s1) && /1\/9/.test(s1.n), `a city tour opens a Great structures step over Istanbul (${s1.bar}, zoom ${s1.zoom.toFixed(0)})`);
+  const below = await page.evaluate(() => ({ inset: window.atlas.app.renderer.view.insetTop, bottom: document.querySelector('.learn-card').getBoundingClientRect().bottom, mid: window.atlas.app.renderer.view.midY }));
+  check(below.inset > below.bottom && below.mid > below.bottom, `the tour's map centres below its card (middle at ${Math.round(below.mid)} px, card ends at ${Math.round(below.bottom)})`);
   await page.evaluate(() => document.querySelector('.learn-card [aria-label="Next"]').click());
   const s2 = await stop();
   check(s2.mode === 'wars' && near(s2) && /2\/9/.test(s2.n), `its next stop is a Wars step, still over Istanbul (${s2.bar})`);

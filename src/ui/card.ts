@@ -23,7 +23,8 @@ export class CountryCard {
   constructor(private app: App, root: HTMLElement) {
     this.body = h('div', { class: 'card-body' });
     const close = h('button', { type: 'button', class: 'icon-btn card-close', title: t('close'), 'aria-label': t('close') }, icon(X, 18));
-    close.addEventListener('click', () => app.select(null));
+    // Hidden here too: in Time travel nothing is selected, so deselecting alone left the card open.
+    close.addEventListener('click', () => { this.hide(); app.select(null); });
     this.el = h('aside', { class: 'country-card glass', hidden: true, 'aria-live': 'polite' }, close, this.body);
     root.append(this.el);
     app.on('select', () => { this.expanded = false; this.render(); });

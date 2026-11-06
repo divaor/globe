@@ -516,6 +516,10 @@ export class Renderer {
     ctx.strokeStyle = th.border; ctx.lineWidth = bw; ctx.stroke();
     }
 
+    // Labels are collected from here on (overlays add some: a quiz pin, measured distances), drawn last.
+    this.labels.scale = this.settings.labelScale;
+    this.labels.begin(w, h);
+
     // ---- overlays from filters and tools
     for (const l of this.layers) {
       if (!l.ready || !l.def.drawOverlay) continue;
@@ -562,8 +566,6 @@ export class Renderer {
     }
 
     // ---- labels
-    this.labels.scale = this.settings.labelScale;
-    this.labels.begin(w, h);
     if (this.baseMap) this.baseLabels(rc);
     for (const l of this.layers) if (l.ready && l.def.labels) l.def.labels(rc, l);
     this.labels.draw(ctx);

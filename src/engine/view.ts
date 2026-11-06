@@ -39,6 +39,8 @@ export class View {
   minZoom = 0.6; maxZoom = 400;
   /** Pixels at the bottom covered by panels (e.g. a timeline bar); the map centres above them. */
   insetBottom = 0;
+  /** Pixels at the top covered by panels (a tour or quiz card); the map centres below them. */
+  insetTop = 0;
 
   /** Morph state: from `a` to `b`; t = 1 means the view is fully `b`. */
   a: ProjectionDef = PROJECTIONS.globe;
@@ -78,6 +80,13 @@ export class View {
     this.lastKey = '';
     this.update(performance.now());
   }
+
+  /** The height the map fits in and centres on: the screen less what panels cover (at least 200 px). */
+  get mapH(): number { return Math.max(200, this.h - this.insetBottom - this.insetTop); }
+  /** The top of that area: the top inset, unless the panels leave less than 200 px between them. */
+  private get mapTop(): number { return Math.max(0, Math.min(this.insetTop, this.h - this.insetBottom - 200)); }
+  /** The screen height of the middle of that area (where the camera's point is shown). */
+  get midY(): number { return this.mapTop + this.mapH / 2; }
 
   /** Pixels per radian at the centre of the view (for zoom levels and dragging). */
   get pxPerRadian(): number {
@@ -153,7 +162,7 @@ export class View {
 
   private build(): void {
     const { a, b, t } = this;
-    const H = Math.max(200, this.h - this.insetBottom);
+    const H = this.mapH;
     this.fa = fitScale(a, this.w, H);
     this.fb = fitScale(b, this.w, H);
     const phi0 = lerp(this.phi0For(a), this.phi0For(b), t);
@@ -161,7 +170,7 @@ export class View {
     const raw = morphRaw(a.raw, b.raw, t, this.fa, this.fb);
     const p0 = (this.lat + phi0) * RAD;
     const yc = raw(0, Math.max(-Math.PI / 2, Math.min(Math.PI / 2, p0)))[1];
-    this.translate = [this.w / 2, H / 2 + this.zoom * yc];
+    this.translate = [this.w / 2, this.mapTop + H / 2 + this.zoom * yc];
 
     const ca = a.kind === 'flat' ? 180 : a.clipAngle ?? 180;
     const cb = b.kind === 'flat' ? 180 : b.clipAngle ?? 180;
@@ -210,7 +219,7 @@ export class View {
       this.lat = Math.max(-89, Math.min(89, this.lat));
       return;
     }
-    const H = Math.max(200, this.h - this.insetBottom);
+    const H = this.mapH;
     const f = fitScale(def, this.w, H);
     const half = H / (2 * this.zoom * f);
     const [, y0, , y1] = def.bounds;
@@ -228,7 +237,7 @@ export class View {
   panBy(dx: number, dy: number): void {
     const def = this.b;
     if (def.kind === 'flat') {
-      const f = fitScale(def, this.w, Math.max(200, this.h - this.insetBottom)) * this.zoom;
+      const f = fitScale(def, this.w, this.mapH) * this.zoom;
       this.lon -= (dx / (f * xFactor(def))) * DEG;
       const y = def.raw(0, this.lat * RAD)[1] + dy / f;
       this.lat = invertY(def, y);
