@@ -341,11 +341,43 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(details.open && details.battles === 1 && details.text > 300, `step details (${details.battles} battle, ${details.text} characters)`);
   await page.tap('.sheet .sheet-head .icon-btn');
   await page.waitForTimeout(300);
-  await page.tap('.wb-tools .icon-btn:last-child');
+  await page.tap('.wb-exit');
   await page.waitForTimeout(800);
   const after = await page.evaluate(() => ({ mode: window.atlas.app.mode, bar: !!document.querySelector('.warbar'), stack: window.atlas.app.layers.map((l) => l.def.id).join(','), base: window.atlas.app.renderer.baseMap }));
   check(after.mode === null && !after.bar && after.stack === 'political' && after.base, `leaving restores the map (${after.stack})`);
   check(!errors.length, `no page errors in wars mode${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 12. Story collections (Great structures): a shared link opens a story at its step; a marker
+// opens its card; Browse lists the story's items; exiting brings the normal map back.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#structures=seven-wonders&step=1&p=globe&lang=en');
+  await page.waitForSelector('.warbar', { timeout: 30000 });
+  await page.waitForTimeout(4500);
+  await page.evaluate(() => { const b = document.querySelector('.warbar .tb-play'); if (b && b.getAttribute('aria-label') === 'Pause') b.click(); });
+  const st = await page.evaluate(() => ({ mode: window.atlas.app.mode, title: document.querySelector('.wb-title')?.textContent, ticks: document.querySelectorAll('.wb-tick').length, on: [...document.querySelectorAll('.wb-tick')].findIndex((t) => t.classList.contains('on')) }));
+  check(st.mode === 'structures' && st.on === 0 && st.ticks >= 8 && /Pyramid/.test(st.title), `a shared link opens a structures story (${st.title}, step ${st.on + 1} of ${st.ticks})`);
+  const at = await page.evaluate(() => window.atlas.app.renderer.view.project(31.1342, 29.9792));
+  await page.touchscreen.tap(at[0], at[1]);
+  await page.waitForTimeout(900);
+  const card = await page.evaluate(() => { const c = document.querySelector('.country-card'); return c && !c.hidden ? { text: c.innerText, img: !!c.querySelector('.card-img') } : null; });
+  check(!!card && /Great Pyramid of Giza/.test(card.text) && /2600–2560/.test(card.text) && card.img, `a marker opens its card with a picture slot (${card?.text.split('\n')[0]})`);
+  await page.tap('.wb-browse');
+  await page.waitForTimeout(500);
+  const rows = await page.evaluate(() => document.querySelectorAll('.story-list .story-item').length);
+  check(rows === 8, `Browse lists the story's items (${rows})`);
+  await page.fill('.story-browse-head input', 'colossus');
+  await page.waitForTimeout(300);
+  const found = await page.evaluate(() => [...document.querySelectorAll('.story-list .story-item-name')].map((e) => e.textContent));
+  check(found.length === 1 && /Colossus/.test(found[0]), `Browse search finds one (${found.join(', ')})`);
+  await page.tap('.sheet .sheet-head .icon-btn');
+  await page.waitForTimeout(300);
+  await page.tap('.wb-exit');
+  await page.waitForTimeout(800);
+  const after = await page.evaluate(() => ({ mode: window.atlas.app.mode, bar: !!document.querySelector('.warbar'), base: window.atlas.app.renderer.baseMap, story: document.documentElement.classList.contains('mode-story') }));
+  check(after.mode === null && !after.bar && after.base && !after.story, 'leaving a story restores the map');
+  check(!errors.length, `no page errors in a story${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 
