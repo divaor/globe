@@ -203,6 +203,12 @@ export class Learn {
   /** The question for an item. */
   private itemQuestion(kind: QuizKind, it: QItem): string {
     const ty = it.type ?? '';
+    // The dish catalogue has drinks, spices and sauces too.
+    const drink = it.cat === 'drink', spice = it.cat === 'spice';
+    if (kind === 'where' && ty === 'dish' && drink) return L('Where does this drink come from?', '¿De dónde es esta bebida?');
+    if (kind === 'where' && ty === 'dish' && spice) return L('Where does this spice or sauce come from?', '¿De dónde es esta especia o salsa?');
+    if (kind === 'dish' && drink) return L('Which country does this drink come from?', '¿De qué país es esta bebida?');
+    if (kind === 'dish' && spice) return L('Which country does this spice or sauce come from?', '¿De qué país es esta especia o salsa?');
     if (kind === 'where') return ty === 'dish' ? L('Where does this dish come from?', '¿De dónde es este plato?') : ty === 'fossil' ? L('Where was this found?', '¿Dónde se encontró?') : ty === 'culture' ? L('Where was this civilization centred?', '¿Dónde tenía su centro esta civilización?') : ty === 'work' ? L('Where was this made?', '¿Dónde se hizo?') : ty === 'invention' ? L('Where was this invented?', '¿Dónde se inventó?') : ty === 'event' ? L('Where did this happen?', '¿Dónde ocurrió?') : L('Where in the world is this?', '¿Dónde está?');
     if (kind === 'when') return it.end ? L('When was it completed?', '¿Cuándo se terminó?') : ty === 'dish' ? L('When was it first recorded?', '¿Cuándo aparece por primera vez?') : ty === 'work' ? L('When was it made?', '¿Cuándo se hizo?') : ty === 'invention' ? L('When was it invented?', '¿Cuándo se inventó?') : ty === 'event' ? L('When did it happen?', '¿Cuándo ocurrió?') : L('When was it built?', '¿Cuándo se construyó?');
     if (kind === 'dish') return L('Which country does this dish come from?', '¿De qué país es este plato?');
