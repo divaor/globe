@@ -54,6 +54,11 @@ same here. `structures/seven-wonders.json` is a complete example that uses the c
 
 A step usually shows 2–8 items; a story has 8–16 steps (up to about 20 for a big time tour) and 30–80 items.
 
+**One thing, one entry.** A dish or structure that is in the catalogue is shown with `show`, not written again
+in `places`. When the same person, place or crop appears in several stories of a collection, give it the same
+`id` in each: each story keeps its own text, and Browse everything and the quizzes list it once. A full build
+warns when two items of a collection have the same name.
+
 ## The collection file
 
 `scripts/data/<folder>/_collection.json` holds the collection's `name`, its fixed `categories` (id, icon,

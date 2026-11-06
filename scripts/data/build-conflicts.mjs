@@ -751,6 +751,17 @@ function collectionItems(results) {
   return out;
 }
 
+/** Warns when two items of a collection have the same name: the same thing told by two stories
+ * should share one id (or, for a catalogue item, be shown with `show`), so it is listed once. */
+function repeatedNames(kind, items) {
+  const norm = (x) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  const by = new Map();
+  for (const it of items) { const k = norm(it.name.en); by.set(k, [...(by.get(k) ?? []), it]); }
+  for (const list of by.values()) {
+    if (list.length > 1) console.warn(`  warn ${kind}: "${list[0].name.en}" is listed ${list.length} times (${list.map((it) => it.story).join(', ')}); give them one id`);
+  }
+}
+
 /** What the picker needs before a conflict is opened. */
 function indexEntry(m) {
   // Only the sides that hold territory at some step (not the ones of the aftermath alone).
@@ -828,6 +839,7 @@ async function main() {
     if (!only) {
       const index = indexOf(kind, coll, results.map((r) => r.meta));
       const items = kind === 'wars' ? null : { items: collectionItems(results) };
+      if (items) repeatedNames(kind, items.items);
       if (check) {
         // CI: the picker's list (and the collection's items) must match the sources too.
         if (!same(path.join(OUT, 'index.json'), index) || (items && !same(path.join(OUT, 'items.json'), items))) {

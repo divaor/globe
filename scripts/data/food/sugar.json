@@ -888,7 +888,8 @@
           "wiki": {
             "en": "Sugarcane",
             "es": "Saccharum officinarum"
-          }
+          },
+          "id": "sugar-cane"
         },
         {
           "name": {
@@ -913,7 +914,8 @@
           "wiki": {
             "en": "Kuk Swamp",
             "es": "Kuk"
-          }
+          },
+          "id": "kuk-swamp"
         }
       ]
     },
@@ -1104,31 +1106,6 @@
       "places": [
         {
           "name": {
-            "en": "Crystal sugar",
-            "es": "Azúcar cristalizado"
-          },
-          "at": [
-            85.1283,
-            25.6125
-          ],
-          "cat": "sweet",
-          "type": "invention",
-          "date": "350",
-          "place": {
-            "en": "Pataliputra (Patna), India, the Gupta capital",
-            "es": "Pataliputra (Patna), India, capital gupta"
-          },
-          "text": {
-            "en": "Indians of the Gupta age learned to crystallise cane juice into khanda, easy to store and trade. From khanda comes 'candy', and from Sanskrit śarkarā, 'sugar'.",
-            "es": "Los indios de la época gupta aprendieron a cristalizar el jugo de caña en khanda, fácil de guardar y comerciar. De khanda viene «cande», y del sánscrito śarkarā, «azúcar»."
-          },
-          "wiki": {
-            "en": "Sugar",
-            "es": "Azúcar"
-          }
-        },
-        {
-          "name": {
             "en": "Taizong's envoys",
             "es": "Los emisarios de Taizong"
           },
@@ -1153,6 +1130,9 @@
             "es": "Li Shimin"
           }
         }
+      ],
+      "show": [
+        "crystal-sugar"
       ]
     },
     {
@@ -1541,34 +1521,12 @@
           "wiki": {
             "en": "São Tomé",
             "es": "Isla de Santo Tomé"
-          }
-        },
-        {
-          "name": {
-            "en": "Marzipan of Toledo",
-            "es": "Mazapán de Toledo"
           },
-          "at": [
-            -4.0273,
-            39.8628
-          ],
-          "cat": "sweet",
-          "type": "dish",
-          "date": "1512",
-          "place": {
-            "en": "Toledo, Spain",
-            "es": "Toledo, España"
-          },
-          "text": {
-            "en": "A paste of almonds and sugar from the Arab tradition. Its first written mention in Toledo dates from 1512, and the city makes it all year round.",
-            "es": "Una pasta de almendra y azúcar de tradición árabe. Su primera mención escrita en Toledo es de 1512, y la ciudad lo hace todo el año."
-          },
-          "country": "ESP",
-          "wiki": {
-            "en": "Marzipan",
-            "es": "Mazapán"
-          }
+          "id": "sao-tome"
         }
+      ],
+      "show": [
+        "marzipan"
       ]
     },
     {
@@ -1868,31 +1826,6 @@
         },
         {
           "name": {
-            "en": "Rum",
-            "es": "Ron"
-          },
-          "at": [
-            -76.79,
-            17.97
-          ],
-          "cat": "drink",
-          "type": "dish",
-          "date": "1650",
-          "place": {
-            "en": "The Caribbean",
-            "es": "El Caribe"
-          },
-          "text": {
-            "en": "Distilled from molasses, the sticky leftover of sugar-making. It was probably first made by enslaved people on Caribbean plantations in the 1600s, and became a currency of the slave trade.",
-            "es": "Destilado de la melaza, el resto pegajoso de la fabricación del azúcar. Probablemente lo hicieron por primera vez esclavos de las plantaciones del Caribe en el siglo XVII, y se volvió moneda de la trata."
-          },
-          "wiki": {
-            "en": "Rum",
-            "es": "Ron"
-          }
-        },
-        {
-          "name": {
             "en": "International Slavery Museum",
             "es": "Museo Internacional de la Esclavitud"
           },
@@ -1916,6 +1849,9 @@
             "es": "Comercio atlántico de esclavos"
           }
         }
+      ],
+      "show": [
+        "rum"
       ]
     },
     {
@@ -2544,32 +2480,6 @@
         },
         {
           "name": {
-            "en": "Brigadeiro",
-            "es": "Brigadeiro"
-          },
-          "at": [
-            -43.1729,
-            -22.9068
-          ],
-          "cat": "sweet",
-          "type": "dish",
-          "date": "1945",
-          "place": {
-            "en": "Rio de Janeiro, Brazil",
-            "es": "Río de Janeiro, Brasil"
-          },
-          "text": {
-            "en": "Balls of condensed milk, cocoa and butter rolled in chocolate sprinkles, created in 1945 to promote a presidential candidate, Brigadier Eduardo Gomes.",
-            "es": "Bolitas de leche condensada, cacao y mantequilla rebozadas en fideos de chocolate, creadas en 1945 para promocionar a un candidato a presidente, el brigadier Eduardo Gomes."
-          },
-          "country": "BRA",
-          "wiki": {
-            "en": "Brigadeiro",
-            "es": "Brigadeiro"
-          }
-        },
-        {
-          "name": {
             "en": "Sugar beet",
             "es": "Remolacha azucarera"
           },
@@ -2593,6 +2503,9 @@
             "es": "Beta vulgaris subsp. vulgaris var. altissima"
           }
         }
+      ],
+      "show": [
+        "brigadeiro"
       ]
     }
   ],

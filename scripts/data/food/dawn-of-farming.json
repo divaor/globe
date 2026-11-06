@@ -1019,33 +1019,10 @@
             "en": "History of bread",
             "es": "Historia del pan"
           }
-        },
-        {
-          "id": "raqefet-cave",
-          "name": {
-            "en": "Raqefet Cave",
-            "es": "Cueva de Raqefet"
-          },
-          "at": [
-            35.0774,
-            32.654
-          ],
-          "cat": "site",
-          "type": "site",
-          "date": "-11000",
-          "place": {
-            "en": "Mount Carmel, Israel",
-            "es": "Monte Carmelo, Israel"
-          },
-          "text": {
-            "en": "Stone mortars in this Natufian burial cave hold traces that may come from brewing beer for funeral feasts about 13,000 years ago. Not all experts agree.",
-            "es": "Unos morteros de piedra de esta cueva funeraria natufiense guardan restos que podrían venir de elaborar cerveza para banquetes fúnebres hace unos 13 000 años. No todos los expertos están de acuerdo."
-          },
-          "wiki": {
-            "en": "Raqefet Cave",
-            "es": "Historia de la cerveza"
-          }
         }
+      ],
+      "show": [
+        "first-beer"
       ]
     },
     {
@@ -2334,33 +2311,10 @@
             "en": "Gadachrili Gora",
             "es": "Vino de Georgia"
           }
-        },
-        {
-          "id": "areni-1-winery",
-          "name": {
-            "en": "Areni-1 winery",
-            "es": "Bodega de Areni-1"
-          },
-          "at": [
-            45.2036,
-            39.7313
-          ],
-          "cat": "site",
-          "type": "site",
-          "date": "-4100",
-          "place": {
-            "en": "Vayots Dzor, Armenia",
-            "es": "Vayots Dzor, Armenia"
-          },
-          "text": {
-            "en": "The world's oldest known winery, about 6,100 years old: a clay basin for treading grapes, a vat for fermenting and drinking cups, in a cave that also kept the oldest leather shoe.",
-            "es": "La bodega más antigua conocida, de hace unos 6100 años: una pila de barro para pisar la uva, una tina para fermentar y copas, en una cueva que también guardaba el zapato de cuero más antiguo."
-          },
-          "wiki": {
-            "en": "Areni-1 winery",
-            "es": "Bodega de Areni-1"
-          }
         }
+      ],
+      "show": [
+        "areni-winery"
       ]
     },
     {
@@ -3049,8 +3003,8 @@
         {
           "id": "wild-coffee",
           "name": {
-            "en": "Coffee",
-            "es": "Café"
+            "en": "Coffee plant",
+            "es": "Cafeto"
           },
           "at": [
             36.1,

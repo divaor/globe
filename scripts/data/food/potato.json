@@ -1068,7 +1068,8 @@
           "wiki": {
             "en": "Potato",
             "es": "Solanum tuberosum"
-          }
+          },
+          "id": "potato"
         },
         {
           "name": {
@@ -1143,7 +1144,8 @@
           "wiki": {
             "en": "Quinoa",
             "es": "Chenopodium quinoa"
-          }
+          },
+          "id": "quinoa"
         }
       ]
     },
@@ -1172,36 +1174,6 @@
         }
       },
       "places": [
-        {
-          "name": {
-            "en": "Chuño",
-            "es": "Chuño"
-          },
-          "at": [
-            -69.6375,
-            -16.0844
-          ],
-          "cat": "ferment",
-          "icon": "🥔",
-          "type": "dish",
-          "date": "500",
-          "place": {
-            "en": "Altiplano of Peru and Bolivia",
-            "es": "Altiplano del Perú y Bolivia"
-          },
-          "text": {
-            "en": "Potatoes freeze-dried by the frost and sun of the altiplano. Light and almost weightless, chuño keeps for years.",
-            "es": "Papas deshidratadas por la helada y el sol del altiplano. Ligero, casi sin peso, el chuño se conserva durante años."
-          },
-          "details": {
-            "en": "The word comes from Quechua ch'uñu, 'frozen potato'. Quechua and Aymara communities still make it every winter, and it goes into soups and stews such as Bolivia's chairo. The Spanish chronicler José de Acosta described it in 1590.",
-            "es": "La palabra viene del quechua ch'uñu, «papa helada». Las comunidades quechuas y aimaras lo siguen haciendo cada invierno, y va en sopas y guisos como el chairo boliviano. El cronista español José de Acosta lo describió en 1590."
-          },
-          "wiki": {
-            "en": "Chuño",
-            "es": "Chuño"
-          }
-        },
         {
           "name": {
             "en": "Tiwanaku",
@@ -1252,6 +1224,9 @@
             "es": "Camellón (agricultura)"
           }
         }
+      ],
+      "show": [
+        "chuno"
       ]
     },
     {
@@ -2092,83 +2067,6 @@
       "places": [
         {
           "name": {
-            "en": "Tortilla de patatas",
-            "es": "Tortilla de patatas"
-          },
-          "at": [
-            -1.6432,
-            42.8125
-          ],
-          "cat": "main",
-          "type": "dish",
-          "date": "1817",
-          "place": {
-            "en": "Navarre, Spain",
-            "es": "Navarra, España"
-          },
-          "text": {
-            "en": "Potatoes and eggs, with or without onion: Spain's best-loved dish. Its oldest known mention is in a petition from Navarre in 1817.",
-            "es": "Patatas y huevos, con o sin cebolla: el plato más querido de España. Su mención más antigua conocida está en un memorial navarro de 1817."
-          },
-          "country": "ESP",
-          "wiki": {
-            "en": "Spanish omelette",
-            "es": "Tortilla de patatas"
-          }
-        },
-        {
-          "name": {
-            "en": "French fries",
-            "es": "Papas fritas"
-          },
-          "at": [
-            2.3488,
-            48.8534
-          ],
-          "cat": "street",
-          "type": "dish",
-          "date": "1840",
-          "place": {
-            "en": "Paris, France, and Belgium",
-            "es": "París, Francia, y Bélgica"
-          },
-          "text": {
-            "en": "Fried potato sticks were street food in Paris by the 1840s. Belgium and France still argue over who invented them.",
-            "es": "Los bastones de papa fritos eran comida callejera en París hacia 1840. Bélgica y Francia aún discuten quién los inventó."
-          },
-          "wiki": {
-            "en": "French fries",
-            "es": "Papas fritas"
-          }
-        },
-        {
-          "name": {
-            "en": "Fish and chips",
-            "es": "Fish and chips"
-          },
-          "at": [
-            -0.06,
-            51.52
-          ],
-          "cat": "street",
-          "type": "dish",
-          "date": "1860",
-          "place": {
-            "en": "London, England",
-            "es": "Londres, Inglaterra"
-          },
-          "text": {
-            "en": "Battered fried fish, a Sephardic Jewish recipe, met fried chips in the 1860s. The first shops opened in London and Lancashire.",
-            "es": "El pescado rebozado y frito, receta judía sefardí, se unió a las papas fritas en la década de 1860. Las primeras tiendas abrieron en Londres y Lancashire."
-          },
-          "country": "GBR",
-          "wiki": {
-            "en": "Fish and chips",
-            "es": "Fish and chips"
-          }
-        },
-        {
-          "name": {
             "en": "Rösti",
             "es": "Rösti"
           },
@@ -2193,6 +2091,11 @@
             "es": "Rösti"
           }
         }
+      ],
+      "show": [
+        "tortilla-de-patatas",
+        "french-fries",
+        "fish-and-chips"
       ]
     },
     {
@@ -2609,36 +2512,6 @@
       "places": [
         {
           "name": {
-            "en": "Vada pav",
-            "es": "Vada pav"
-          },
-          "at": [
-            72.8426,
-            19.0178
-          ],
-          "cat": "street",
-          "type": "dish",
-          "date": "1966",
-          "place": {
-            "en": "Dadar, Mumbai, India",
-            "es": "Dadar, Bombay, India"
-          },
-          "text": {
-            "en": "A spiced potato fritter, batata vada, in a soft bread roll, pav, a word from Portuguese pão: Mumbai's favourite snack since 1966.",
-            "es": "Una fritura de papa especiada, el batata vada, dentro de un panecillo, el pav, palabra que viene del portugués pão: el tentempié favorito de Bombay desde 1966."
-          },
-          "details": {
-            "en": "Ashok Vaidya is said to have started selling it outside Dadar station in 1966, as a cheap meal for mill workers. Both the potato and the chilli in it came from the Americas, and the bread from Portuguese bakers.",
-            "es": "Se dice que Ashok Vaidya empezó a venderlo frente a la estación de Dadar en 1966, como comida barata para los obreros de las fábricas textiles. La papa y el chile que lleva vinieron de América, y el pan, de panaderos portugueses."
-          },
-          "country": "IND",
-          "wiki": {
-            "en": "Vada pav",
-            "es": "Vada pav"
-          }
-        },
-        {
-          "name": {
             "en": "Nikujaga",
             "es": "Nikujaga"
           },
@@ -2688,6 +2561,9 @@
             "es": "Ruanda"
           }
         }
+      ],
+      "show": [
+        "vada-pav"
       ]
     },
     {
@@ -2783,33 +2659,10 @@
             "en": "Papa a la Huancaína",
             "es": "Papa a la huancaína"
           }
-        },
-        {
-          "name": {
-            "en": "Poutine",
-            "es": "Poutine"
-          },
-          "at": [
-            -71.9967,
-            45.9506
-          ],
-          "cat": "street",
-          "type": "dish",
-          "date": "1957",
-          "place": {
-            "en": "Centre-du-Québec, Canada",
-            "es": "Centre-du-Québec, Canadá"
-          },
-          "text": {
-            "en": "Fries, squeaky cheese curds and hot gravy, born in rural Quebec in the late 1950s. Warwick and Drummondville both claim it.",
-            "es": "Papas fritas, cuajada de queso que cruje y salsa caliente, nacida en el Quebec rural a finales de la década de 1950. Warwick y Drummondville se la disputan."
-          },
-          "country": "CAN",
-          "wiki": {
-            "en": "Poutine",
-            "es": "Poutine"
-          }
         }
+      ],
+      "show": [
+        "poutine"
       ]
     }
   ],

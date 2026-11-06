@@ -611,33 +611,12 @@
           "wiki": {
             "en": "Theobroma cacao",
             "es": "Theobroma cacao"
-          }
-        },
-        {
-          "name": {
-            "en": "Santa Ana-La Florida",
-            "es": "Santa Ana-La Florida"
           },
-          "at": [
-            -79.13,
-            -4.65
-          ],
-          "cat": "site",
-          "type": "site",
-          "date": "-3300",
-          "place": {
-            "en": "Palanda, Zamora-Chinchipe, Ecuador",
-            "es": "Palanda, Zamora Chinchipe, Ecuador"
-          },
-          "text": {
-            "en": "A ceremonial site of the Mayo-Chinchipe culture, where vessels about 5,300 years old held traces of cacao: the earliest known use of the plant.",
-            "es": "Un lugar ceremonial de la cultura Mayo-Chinchipe donde unas vasijas de unos 5300 años guardaban restos de cacao: el uso más antiguo conocido de la planta."
-          },
-          "wiki": {
-            "en": "Mayo-Chinchipe",
-            "es": "Santa Ana-La Florida"
-          }
+          "id": "cacao"
         }
+      ],
+      "show": [
+        "first-cacao"
       ]
     },
     {
@@ -1071,32 +1050,10 @@
             "en": "Pu'er tea",
             "es": "Pu-erh"
           }
-        },
-        {
-          "name": {
-            "en": "Butter tea",
-            "es": "Té con mantequilla"
-          },
-          "at": [
-            91.1408,
-            29.6458
-          ],
-          "cat": "drink",
-          "type": "dish",
-          "date": "800",
-          "place": {
-            "en": "Lhasa, Tibet",
-            "es": "Lhasa, Tíbet"
-          },
-          "text": {
-            "en": "Tibetans churn strong tea with yak butter and salt into a warming, rich drink, the end of the tea's long journey from Sichuan and Yunnan.",
-            "es": "Los tibetanos baten té fuerte con mantequilla de yak y sal hasta obtener una bebida espesa que da calor: el final del largo viaje del té desde Sichuan y Yunnan."
-          },
-          "wiki": {
-            "en": "Butter tea",
-            "es": "Lhasa"
-          }
         }
+      ],
+      "show": [
+        "butter-tea"
       ]
     },
     {
@@ -1284,8 +1241,8 @@
       "places": [
         {
           "name": {
-            "en": "Coffee",
-            "es": "Café"
+            "en": "Coffee plant",
+            "es": "Cafeto"
           },
           "at": [
             36.24,
@@ -1309,7 +1266,8 @@
           "wiki": {
             "en": "Coffea arabica",
             "es": "Coffea arabica"
-          }
+          },
+          "id": "wild-coffee"
         },
         {
           "name": {
@@ -1709,33 +1667,10 @@
             "en": "Al-Azhar Mosque",
             "es": "Mezquita de al-Azhar"
           }
-        },
-        {
-          "name": {
-            "en": "Turkish coffee",
-            "es": "Café turco"
-          },
-          "at": [
-            28.9705,
-            41.0158
-          ],
-          "cat": "drink",
-          "type": "dish",
-          "date": "1554",
-          "place": {
-            "en": "Istanbul, Turkey",
-            "es": "Estambul, Turquía"
-          },
-          "text": {
-            "en": "Finely ground coffee boiled in a small pot, the cezve, and served unfiltered. Istanbul's first coffeehouses opened in 1554 or 1555 in the Tahtakale market.",
-            "es": "Café molido muy fino, hervido en un cacillo, el cezve, y servido sin filtrar. Los primeros cafés de Estambul abrieron en 1554 o 1555 en el mercado de Tahtakale."
-          },
-          "country": "TUR",
-          "wiki": {
-            "en": "Turkish coffee",
-            "es": "Café turco"
-          }
         }
+      ],
+      "show": [
+        "turkish-coffee"
       ]
     },
     {
@@ -2200,32 +2135,6 @@
         },
         {
           "name": {
-            "en": "Assam tea",
-            "es": "Té de Assam"
-          },
-          "at": [
-            95.18,
-            27.48
-          ],
-          "cat": "drink",
-          "type": "dish",
-          "date": "1839",
-          "place": {
-            "en": "Chabua, Assam, India",
-            "es": "Chabua, Assam, India"
-          },
-          "text": {
-            "en": "A strong black tea from a local variety the Singpho people already brewed. Chabua, 'tea plantation', is said to be the first place in India where tea was planted.",
-            "es": "Un té negro fuerte de una variedad local que el pueblo singpho ya preparaba. Chabua, «plantación de té», pasa por ser el primer lugar de la India donde se plantó té."
-          },
-          "country": "IND",
-          "wiki": {
-            "en": "Assam tea",
-            "es": "Assam"
-          }
-        },
-        {
-          "name": {
             "en": "Darjeeling tea",
             "es": "Té de Darjeeling"
           },
@@ -2250,6 +2159,9 @@
             "es": "Té Darjeeling"
           }
         }
+      ],
+      "show": [
+        "assam-tea"
       ]
     },
     {
@@ -2376,7 +2288,8 @@
           "wiki": {
             "en": "Gabriel de Clieu",
             "es": "Historia del café"
-          }
+          },
+          "id": "gabriel-de-clieu"
         },
         {
           "name": {
@@ -2648,33 +2561,10 @@
             "en": "Bioko",
             "es": "Bioko"
           }
-        },
-        {
-          "name": {
-            "en": "Milk chocolate",
-            "es": "Chocolate con leche"
-          },
-          "at": [
-            6.8433,
-            46.4628
-          ],
-          "cat": "sweet",
-          "type": "dish",
-          "date": "1875",
-          "place": {
-            "en": "Vevey, Switzerland",
-            "es": "Vevey, Suiza"
-          },
-          "text": {
-            "en": "Daniel Peter of Vevey added powdered milk, made by his neighbour Henri Nestlé, to chocolate in 1875 or 1876, creating milk chocolate.",
-            "es": "Daniel Peter, de Vevey, añadió al chocolate leche en polvo de su vecino Henri Nestlé en 1875 o 1876 y creó el chocolate con leche."
-          },
-          "country": "CHE",
-          "wiki": {
-            "en": "Daniel Peter",
-            "es": "Daniel Peter"
-          }
         }
+      ],
+      "show": [
+        "milk-chocolate"
       ]
     }
   ],

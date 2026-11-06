@@ -495,7 +495,8 @@
           "wiki": {
             "en": "Sugarcane",
             "es": "Saccharum officinarum"
-          }
+          },
+          "id": "sugar-cane"
         },
         {
           "name": {
@@ -525,7 +526,8 @@
           "wiki": {
             "en": "Juan Garrido",
             "es": "Juan Garrido"
-          }
+          },
+          "id": "juan-garrido"
         }
       ]
     },
@@ -841,7 +843,8 @@
           "wiki": {
             "en": "Elmina Castle",
             "es": "Castillo de Elmina"
-          }
+          },
+          "id": "elmina-castle"
         },
         {
           "name": {
@@ -866,7 +869,8 @@
           "wiki": {
             "en": "São Tomé Island",
             "es": "Isla de Santo Tomé"
-          }
+          },
+          "id": "sao-tome"
         },
         {
           "name": {
@@ -916,7 +920,8 @@
           "wiki": {
             "en": "Oryza glaberrima",
             "es": "Oryza glaberrima"
-          }
+          },
+          "id": "african-rice"
         }
       ]
     },
@@ -1018,7 +1023,8 @@
           "wiki": {
             "en": "Maize",
             "es": "Zea mays"
-          }
+          },
+          "id": "maize"
         },
         {
           "name": {
@@ -1217,7 +1223,8 @@
           "wiki": {
             "en": "Potato",
             "es": "Solanum tuberosum"
-          }
+          },
+          "id": "potato"
         },
         {
           "name": {
@@ -1267,7 +1274,8 @@
           "wiki": {
             "en": "Peanut",
             "es": "Arachis hypogaea"
-          }
+          },
+          "id": "peanut"
         },
         {
           "name": {
@@ -1292,7 +1300,8 @@
           "wiki": {
             "en": "Theobroma cacao",
             "es": "Theobroma cacao"
-          }
+          },
+          "id": "cacao"
         },
         {
           "name": {
@@ -1452,7 +1461,8 @@
           "wiki": {
             "en": "Polenta",
             "es": "Polenta"
-          }
+          },
+          "id": "polenta"
         }
       ]
     },
@@ -1947,60 +1957,13 @@
           "wiki": {
             "en": "Old Goa",
             "es": "Goa Vieja"
-          }
-        },
-        {
-          "name": {
-            "en": "Kimchi",
-            "es": "Kimchi"
           },
-          "at": [
-            126.978,
-            37.5665
-          ],
-          "cat": "ferment",
-          "type": "dish",
-          "date": "1614",
-          "place": {
-            "en": "Korea",
-            "es": "Corea"
-          },
-          "text": {
-            "en": "Chili reached Korea around 1600 and is first mentioned in 1614. By the 1800s red chili flakes had turned kimchi, Korea's fermented vegetables, red.",
-            "es": "El chile llegó a Corea hacia 1600 y se menciona por primera vez en 1614. En el siglo XIX, el chile en escamas ya había teñido de rojo el kimchi, las verduras fermentadas de Corea."
-          },
-          "country": "KOR",
-          "wiki": {
-            "en": "Kimchi",
-            "es": "Kimchi"
-          }
-        },
-        {
-          "name": {
-            "en": "Mapo tofu",
-            "es": "Mapo tofu"
-          },
-          "at": [
-            104.0665,
-            30.5723
-          ],
-          "cat": "main",
-          "type": "dish",
-          "date": "1860",
-          "place": {
-            "en": "Chengdu, Sichuan, China",
-            "es": "Chengdu, Sichuan, China"
-          },
-          "text": {
-            "en": "Tofu in a fiery red sauce of chili bean paste, born in a Chengdu restaurant in the 1860s or 1870s. Sichuan cooking made the American chili its own.",
-            "es": "Tofu en una salsa roja y picante de pasta de habas y chile, nacido en un restaurante de Chengdu en la década de 1860 o 1870. La cocina de Sichuan hizo suyo el chile americano."
-          },
-          "country": "CHN",
-          "wiki": {
-            "en": "Mapo tofu",
-            "es": "Mapo doufu"
-          }
+          "id": "old-goa"
         }
+      ],
+      "show": [
+        "kimchi",
+        "mapo-tofu"
       ]
     },
     {
@@ -2161,59 +2124,9 @@
         "en": "Antonio Latini, steward to the Spanish viceroy's first minister in Naples, published Lo scalco alla moderna in 1692–1694, the first Italian cookbook with tomato sauce; pasta with tomato sauce first appears in print in 1790. Mole poblano combines American chilies, tomatoes and cacao with Asian cinnamon, cloves and black pepper, African sesame and European almonds; legend credits the nuns of a Puebla convent. By 1700 Europeans ate turkey at feasts, Africans grew maize and cassava, Asians cooked with chili and sweet potatoes, and the Americas raised cattle, wheat and sugar cane.",
         "es": "Antonio Latini, mayordomo del primer ministro del virrey español en Nápoles, publicó Lo scalco alla moderna en 1692–1694, el primer recetario italiano con salsa de tomate; la pasta con tomate aparece impresa por primera vez en 1790. El mole poblano combina chiles, tomates y cacao americanos con canela, clavo y pimienta de Asia, sésamo africano y almendras europeas; la leyenda lo atribuye a las monjas de un convento de Puebla. Hacia 1700, los europeos comían pavo en sus banquetes, los africanos cultivaban maíz y yuca, los asiáticos cocinaban con chile y batata, y en América se criaban vacas y se cultivaban trigo y caña de azúcar."
       },
-      "places": [
-        {
-          "name": {
-            "en": "Tomato sauce",
-            "es": "Salsa de tomate"
-          },
-          "at": [
-            14.2681,
-            40.8518
-          ],
-          "cat": "spice",
-          "type": "dish",
-          "date": "1692",
-          "place": {
-            "en": "Naples, Italy",
-            "es": "Nápoles, Italia"
-          },
-          "text": {
-            "en": "In 1692 Antonio Latini, a steward in Spanish-ruled Naples, printed the first Italian recipe for tomato sauce, 'in the Spanish style'.",
-            "es": "En 1692, Antonio Latini, mayordomo en el Nápoles español, publicó la primera receta italiana de salsa de tomate, «a la española»."
-          },
-          "country": "ITA",
-          "wiki": {
-            "en": "Tomato sauce",
-            "es": "Salsa de tomate"
-          }
-        },
-        {
-          "name": {
-            "en": "Mole poblano",
-            "es": "Mole poblano"
-          },
-          "at": [
-            -98.2063,
-            19.0414
-          ],
-          "cat": "spice",
-          "type": "dish",
-          "date": "1700",
-          "place": {
-            "en": "Puebla, Mexico",
-            "es": "Puebla, México"
-          },
-          "text": {
-            "en": "Puebla's dark sauce blends American chilies, tomato and cacao with Asian spices, African sesame and European almonds: the exchange in a single dish.",
-            "es": "La salsa oscura de Puebla mezcla chiles, tomate y cacao americanos con especias de Asia, sésamo africano y almendras europeas: el intercambio en un solo plato."
-          },
-          "country": "MEX",
-          "wiki": {
-            "en": "Mole (sauce)",
-            "es": "Mole poblano"
-          }
-        }
+      "show": [
+        "tomato-sauce",
+        "mole-poblano"
       ]
     },
     {
@@ -2327,7 +2240,8 @@
           "wiki": {
             "en": "Gabriel de Clieu",
             "es": "Historia del café"
-          }
+          },
+          "id": "gabriel-de-clieu"
         },
         {
           "name": {

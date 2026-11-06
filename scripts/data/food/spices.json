@@ -344,31 +344,6 @@
       "places": [
         {
           "name": {
-            "en": "Black pepper",
-            "es": "Pimienta negra"
-          },
-          "at": [
-            76.08,
-            11.6
-          ],
-          "cat": "spice",
-          "type": "crop",
-          "date": "-1213",
-          "place": {
-            "en": "Malabar Coast, Kerala, India",
-            "es": "Costa de Malabar, Kerala, India"
-          },
-          "text": {
-            "en": "A vine of the rainy forests of the Western Ghats. For thousands of years the Malabar Coast was the only source of this 'black gold'.",
-            "es": "Una enredadera de los bosques lluviosos de los Ghats occidentales. Durante miles de años, la costa de Malabar fue la única fuente de este «oro negro»."
-          },
-          "wiki": {
-            "en": "Black pepper",
-            "es": "Piper nigrum"
-          }
-        },
-        {
-          "name": {
             "en": "Ramesses II",
             "es": "Ramsés II"
           },
@@ -472,6 +447,9 @@
             "es": "Cinnamomum verum"
           }
         }
+      ],
+      "show": [
+        "black-pepper"
       ]
     },
     {
@@ -1079,7 +1057,8 @@
           "wiki": {
             "en": "Alexandria",
             "es": "Alejandría"
-          }
+          },
+          "id": "alexandria"
         },
         {
           "name": {
@@ -1277,7 +1256,8 @@
           "wiki": {
             "en": "Old Goa",
             "es": "Goa Vieja"
-          }
+          },
+          "id": "old-goa"
         },
         {
           "name": {

@@ -2379,59 +2379,9 @@
           }
         ]
       },
-      "places": [
-        {
-          "name": {
-            "en": "Paella",
-            "es": "Paella"
-          },
-          "at": [
-            -0.3522,
-            39.3317
-          ],
-          "cat": "rice",
-          "type": "dish",
-          "date": "1850",
-          "country": "ESP",
-          "place": {
-            "en": "Albufera, Valencia, Spain",
-            "es": "La Albufera, Valencia, España"
-          },
-          "text": {
-            "en": "A rice dish cooked in a wide, shallow pan over an open fire. Its modern form comes from the farms around the Albufera lagoon near Valencia, in the mid-1800s.",
-            "es": "Un arroz cocinado en una sartén ancha y plana al fuego de leña. Su forma moderna nació en las huertas en torno a la Albufera, cerca de Valencia, a mediados del siglo XIX."
-          },
-          "wiki": {
-            "en": "Paella",
-            "es": "Paella"
-          }
-        },
-        {
-          "name": {
-            "en": "Risotto",
-            "es": "Risotto"
-          },
-          "at": [
-            9.19,
-            45.4642
-          ],
-          "cat": "rice",
-          "type": "dish",
-          "date": "1809",
-          "country": "ITA",
-          "place": {
-            "en": "Milan, Italy",
-            "es": "Milán, Italia"
-          },
-          "text": {
-            "en": "Rice stirred slowly in broth until creamy. The first recipe that is clearly a risotto dates from 1809, in Lombardy; risotto alla milanese is coloured gold with saffron.",
-            "es": "Arroz removido despacio en caldo hasta quedar cremoso. La primera receta claramente de risotto es de 1809, en Lombardía; el risotto a la milanesa se tiñe de oro con azafrán."
-          },
-          "wiki": {
-            "en": "Risotto",
-            "es": "Risotto"
-          }
-        }
+      "show": [
+        "paella",
+        "risotto-milanese"
       ]
     },
     {
@@ -2604,86 +2554,14 @@
             "en": "Basmati",
             "es": "Basmati"
           }
-        },
-        {
-          "name": {
-            "en": "Biryani",
-            "es": "Biryani"
-          },
-          "at": [
-            78.0081,
-            27.1767
-          ],
-          "cat": "rice",
-          "type": "dish",
-          "date": "1600",
-          "place": {
-            "en": "Agra, India",
-            "es": "Agra, India"
-          },
-          "text": {
-            "en": "Rice layered with spiced meat and slow-cooked. It probably grew from Persian pilau in the kitchens of the Mughal court, though its origins are debated; it is loved all over South Asia.",
-            "es": "Arroz en capas con carne especiada, cocido a fuego lento. Probablemente nació del pilau persa en las cocinas de la corte mogola, aunque su origen se discute; es un plato muy querido en todo el sur de Asia."
-          },
-          "wiki": {
-            "en": "Biryani",
-            "es": "Biryani"
-          }
-        },
-        {
-          "name": {
-            "en": "Sushi",
-            "es": "Sushi"
-          },
-          "at": [
-            139.7671,
-            35.6812
-          ],
-          "cat": "rice",
-          "type": "dish",
-          "date": "1824",
-          "country": "JPN",
-          "place": {
-            "en": "Tokyo, Japan",
-            "es": "Tokio, Japón"
-          },
-          "text": {
-            "en": "It began as fish fermented in rice in Southeast Asia. In Edo, today's Tokyo, Hanaya Yohei is credited with inventing nigiri, fresh fish on vinegared rice, around 1824.",
-            "es": "Empezó como pescado fermentado en arroz en el Sudeste Asiático. En Edo, la actual Tokio, a Hanaya Yohei se le atribuye haber inventado el nigiri, pescado fresco sobre arroz avinagrado, hacia 1824."
-          },
-          "wiki": {
-            "en": "Sushi",
-            "es": "Sushi"
-          }
-        },
-        {
-          "name": {
-            "en": "Jollof rice",
-            "es": "Arroz jollof"
-          },
-          "at": [
-            -16.5,
-            16.0333
-          ],
-          "cat": "rice",
-          "type": "dish",
-          "date": "1850",
-          "country": "SEN",
-          "place": {
-            "en": "Saint-Louis, Senegal",
-            "es": "Saint-Louis, Senegal"
-          },
-          "text": {
-            "en": "Rice cooked in one pot with tomatoes, peppers and spices, loved across West Africa. It goes back to the Wolof (Jolof) lands of Senegal, where thieboudienne, rice with fish, was born in Saint-Louis.",
-            "es": "Arroz cocinado en una sola olla con tomate, pimientos y especias, querido en toda África occidental. Se remonta a las tierras wolof (Jolof) de Senegal, donde nació en Saint-Louis el thieboudienne, arroz con pescado."
-          },
-          "wiki": {
-            "en": "Jollof rice",
-            "es": "Arroz jollof"
-          }
         }
       ],
-      "aftermath": true
+      "aftermath": true,
+      "show": [
+        "biryani",
+        "sushi",
+        "jollof-rice"
+      ]
     }
   ],
   "outcome": {

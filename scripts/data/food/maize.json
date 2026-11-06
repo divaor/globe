@@ -1794,32 +1794,10 @@
             "en": "Huaca Prieta",
             "es": "Huaca Prieta"
           }
-        },
-        {
-          "name": {
-            "en": "Chicha",
-            "es": "Chicha"
-          },
-          "at": [
-            -71.9675,
-            -13.5319
-          ],
-          "cat": "drink",
-          "type": "dish",
-          "date": "1450",
-          "place": {
-            "en": "Cusco, Peru",
-            "es": "Cusco, Perú"
-          },
-          "text": {
-            "en": "The maize beer of the Andes, made from sprouted maize and fermented in big clay vats. The Inca used chicha in their ceremonies; it is still sold in chicherías.",
-            "es": "La cerveza de maíz de los Andes, hecha con maíz germinado y fermentada en grandes tinajas de barro. Los incas la usaban en sus ceremonias; aún se vende en las chicherías."
-          },
-          "wiki": {
-            "en": "Chicha",
-            "es": "Chicha"
-          }
         }
+      ],
+      "show": [
+        "chicha"
       ]
     },
     {
@@ -2025,33 +2003,6 @@
       },
       "places": [
         {
-          "id": "nixtamalization",
-          "name": {
-            "en": "Nixtamalization",
-            "es": "Nixtamalización"
-          },
-          "at": [
-            -91.75,
-            14.35
-          ],
-          "cat": "site",
-          "icon": "🌽",
-          "type": "invention",
-          "date": "-1350",
-          "place": {
-            "en": "Pacific coast of Guatemala",
-            "es": "Costa del Pacífico de Guatemala"
-          },
-          "text": {
-            "en": "Cooking maize in water with lime or ash. The oldest evidence, from 1500 to 1200 BC, comes from Guatemala's Pacific coast; it may have begun with hot limestone cooking stones.",
-            "es": "Cocer el maíz en agua con cal o ceniza. Los indicios más antiguos, del 1500 al 1200 a. C., vienen de la costa del Pacífico de Guatemala; quizá empezó con piedras calizas calientes para cocinar."
-          },
-          "wiki": {
-            "en": "Nixtamalization",
-            "es": "Nixtamalización"
-          }
-        },
-        {
           "name": {
             "en": "Corn tortilla",
             "es": "Tortilla de maíz"
@@ -2128,6 +2079,9 @@
             "es": "Pozole"
           }
         }
+      ],
+      "show": [
+        "nixtamal-tortilla"
       ]
     },
     {
@@ -2177,32 +2131,6 @@
           }
         },
         {
-          "name": {
-            "en": "Tamale",
-            "es": "Tamal"
-          },
-          "at": [
-            -90.6,
-            16.6
-          ],
-          "cat": "main",
-          "icon": "🫔",
-          "type": "dish",
-          "date": "-100",
-          "place": {
-            "en": "Mexico and Central America",
-            "es": "México y Centroamérica"
-          },
-          "text": {
-            "en": "Masa steamed in a corn husk or leaf, often with a filling. Maya art about 2,000 years old already shows them, and Aztec markets sold dozens of kinds.",
-            "es": "Masa cocida al vapor en hoja de maíz o de plátano, a menudo rellena. El arte maya de hace unos 2000 años ya los muestra, y los mercados mexicas vendían decenas de tipos."
-          },
-          "wiki": {
-            "en": "Tamale",
-            "es": "Tamal"
-          }
-        },
-        {
           "id": "popol-vuh",
           "name": {
             "en": "Popol Vuh",
@@ -2229,6 +2157,9 @@
             "es": "Popol Vuh"
           }
         }
+      ],
+      "show": [
+        "tamales"
       ]
     },
     {
@@ -2876,33 +2807,8 @@
           "wiki": {
             "en": "Polenta",
             "es": "Polenta"
-          }
-        },
-        {
-          "name": {
-            "en": "Mămăligă",
-            "es": "Mămăligă"
           },
-          "at": [
-            27.6,
-            47.1
-          ],
-          "cat": "bread",
-          "type": "dish",
-          "date": "1700",
-          "country": "ROU",
-          "place": {
-            "en": "Moldavia, Romania",
-            "es": "Moldavia, Rumanía"
-          },
-          "text": {
-            "en": "Romania's and Moldova's maize porridge, eaten with cheese and sour cream. It replaced an older millet mush; maize grows well in the warm, damp lands of the Danube.",
-            "es": "Las gachas de maíz de Rumanía y Moldavia, con queso y nata agria. Sustituyeron a unas gachas de mijo más antiguas; el maíz crece bien en las tierras cálidas y húmedas del Danubio."
-          },
-          "wiki": {
-            "en": "Mămăligă",
-            "es": "Mămăligă"
-          }
+          "id": "polenta"
         },
         {
           "name": {
@@ -2930,6 +2836,9 @@
             "es": "Borona"
           }
         }
+      ],
+      "show": [
+        "mamaliga"
       ]
     },
     {

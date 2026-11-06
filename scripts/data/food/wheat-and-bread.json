@@ -2521,32 +2521,6 @@
       },
       "places": [
         {
-          "id": "hierakonpolis",
-          "name": {
-            "en": "Hierakonpolis brewery",
-            "es": "Cervecería de Hieracómpolis"
-          },
-          "at": [
-            32.7794,
-            25.0972
-          ],
-          "cat": "site",
-          "type": "site",
-          "date": "-3500",
-          "place": {
-            "en": "Upper Egypt",
-            "es": "Alto Egipto"
-          },
-          "text": {
-            "en": "Vats here hold some of the earliest physical evidence of beer-making in Egypt, more than 5,000 years old, with traces of barley, wheat, dates and grapes.",
-            "es": "Sus tinas guardan algunas de las pruebas físicas más antiguas de elaboración de cerveza en Egipto, de más de 5000 años, con restos de cebada, trigo, dátiles y uva."
-          },
-          "wiki": {
-            "en": "Hierakonpolis",
-            "es": "Hieracómpolis"
-          }
-        },
-        {
           "id": "giza-workers-town",
           "name": {
             "en": "Pyramid builders' town",
@@ -2598,6 +2572,9 @@
             "es": "Deir el-Medina"
           }
         }
+      ],
+      "show": [
+        "egyptian-beer"
       ]
     },
     {
@@ -3142,33 +3119,10 @@
             "en": "Mantou",
             "es": "Mantou"
           }
-        },
-        {
-          "name": {
-            "en": "Jiaozi",
-            "es": "Jiaozi"
-          },
-          "at": [
-            89.527,
-            42.882
-          ],
-          "cat": "noodles",
-          "type": "dish",
-          "date": "700",
-          "country": "CHN",
-          "place": {
-            "en": "Astana tombs, Turpan, China",
-            "es": "Tumbas de Astana, Turfán, China"
-          },
-          "text": {
-            "en": "Crescent-shaped dumplings of wheat dough. A bowl of real jiaozi, dried for over 1,200 years, was found in Tang dynasty tombs at Turpan, on the Silk Road.",
-            "es": "Empanadillas de masa de trigo con forma de media luna. En tumbas de la dinastía Tang de Turfán, en la Ruta de la Seda, se halló un cuenco de jiaozi auténticos, secos desde hace más de 1200 años."
-          },
-          "wiki": {
-            "en": "Jiaozi",
-            "es": "Jiaozi"
-          }
         }
+      ],
+      "show": [
+        "jiaozi"
       ]
     },
     {
@@ -4051,83 +4005,6 @@
       "places": [
         {
           "name": {
-            "en": "Naan",
-            "es": "Naan"
-          },
-          "at": [
-            77.209,
-            28.6139
-          ],
-          "cat": "bread",
-          "type": "dish",
-          "date": "1300",
-          "place": {
-            "en": "Delhi, India",
-            "es": "Delhi, India"
-          },
-          "text": {
-            "en": "A soft, leavened flatbread baked in a tandoor; its name is Persian for bread. In India it is first mentioned by the poet Amir Khusrau in the 1300s, as a food of nobles.",
-            "es": "Un pan plano, blando y fermentado, cocido en el tandur; su nombre es la palabra persa para pan. En la India lo menciona por primera vez el poeta Amir Jusró en el siglo XIV, como comida de nobles."
-          },
-          "wiki": {
-            "en": "Naan",
-            "es": "Naan"
-          }
-        },
-        {
-          "name": {
-            "en": "Bagel",
-            "es": "Bagel"
-          },
-          "at": [
-            19.945,
-            50.0647
-          ],
-          "cat": "bread",
-          "type": "dish",
-          "date": "1610",
-          "country": "POL",
-          "place": {
-            "en": "Kraków, Poland",
-            "es": "Cracovia, Polonia"
-          },
-          "text": {
-            "en": "A ring of dough boiled, then baked. Bagels were first mentioned in 1610 in the rules of Kraków's Jewish community; Jewish immigrants later made them famous in New York.",
-            "es": "Un aro de masa hervido y luego horneado. Se mencionan por primera vez en 1610 en las normas de la comunidad judía de Cracovia; los inmigrantes judíos los hicieron después famosos en Nueva York."
-          },
-          "wiki": {
-            "en": "Bagel",
-            "es": "Bagel"
-          }
-        },
-        {
-          "name": {
-            "en": "Baguette",
-            "es": "Baguette"
-          },
-          "at": [
-            2.3522,
-            48.8566
-          ],
-          "cat": "bread",
-          "type": "dish",
-          "date": "1920",
-          "country": "FRA",
-          "place": {
-            "en": "Paris, France",
-            "es": "París, Francia"
-          },
-          "text": {
-            "en": "The long French loaf got its name in a Paris-area rule of 1920, though long breads go back to the 1700s. UNESCO listed the craft of the baguette as heritage in 2022.",
-            "es": "La barra larga francesa recibió su nombre en una norma de la región de París de 1920, aunque los panes largos se remontan al siglo XVIII. La Unesco reconoció su elaboración como patrimonio en 2022."
-          },
-          "wiki": {
-            "en": "Baguette",
-            "es": "Baguette"
-          }
-        },
-        {
-          "name": {
             "en": "Sliced bread",
             "es": "Pan de molde en rebanadas"
           },
@@ -4178,7 +4055,12 @@
           }
         }
       ],
-      "aftermath": true
+      "aftermath": true,
+      "show": [
+        "naan",
+        "bagel",
+        "baguette"
+      ]
     }
   ],
   "outcome": {
