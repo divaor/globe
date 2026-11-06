@@ -1,0 +1,539 @@
+{
+  "id": "mongols",
+  "name": { "en": "Mongol conquests", "es": "Conquistas mongolas" },
+  "icon": "🐎",
+  "era": "medieval",
+  "region": { "en": "Asia, the Middle East and Eastern Europe", "es": "Asia, Oriente Próximo y Europa oriental" },
+  "start": "1206",
+  "end": "1294-02-18",
+  "summary": {
+    "en": "Genghis Khan and his heirs rode out of the Mongolian steppe and in less than a century built the largest contiguous empire in history, from Korea to Hungary, at a terrible human cost.",
+    "es": "Gengis Kan y sus herederos salieron de la estepa mongola y en menos de un siglo levantaron el mayor imperio continuo de la historia, de Corea a Hungría, con un terrible coste humano."
+  },
+  "camera": { "lon": 90, "lat": 42, "zoom": 1.6 },
+  "sides": [
+    { "id": "mongols", "name": { "en": "Mongol Empire", "es": "Imperio mongol" }, "color": "#c0392b",
+      "members": { "en": "Genghis Khan's empire, with many allied and conquered peoples in its armies; after 1260 the Great Khan's own realm, Kublai's Yuan dynasty", "es": "El imperio de Gengis Kan, con muchos pueblos aliados y sometidos en sus ejércitos; desde 1260, el dominio propio del gran kan, la dinastía Yuan de Kublai" } },
+    { "id": "jin", "name": { "en": "Jin dynasty", "es": "Dinastía Jin" }, "color": "#2e6f9e",
+      "derive": { "minus": [{ "ref": "jin" }, { "cur": "mongols" }] },
+      "members": { "en": "The Jurchen empire of northern China and Manchuria (1115–1234)", "es": "El imperio yurchen del norte de China y Manchuria (1115–1234)" } },
+    { "id": "song", "name": { "en": "Song dynasty", "es": "Dinastía Song" }, "color": "#16a085",
+      "derive": { "minus": [{ "ref": "song" }, { "cur": "mongols" }] },
+      "members": { "en": "The Southern Song empire of southern China (1127–1279)", "es": "El imperio de los Song del Sur, en el sur de China (1127–1279)" } },
+    { "id": "khwarazm", "name": { "en": "Khwarazmian Empire", "es": "Imperio corasmio" }, "color": "#7d3c98",
+      "derive": { "minus": [{ "ref": "khwarazm1218" }, { "cur": "mongols" }] },
+      "members": { "en": "The empire of Shah Muhammad II in Central Asia and Iran, and later of his son Jalal al-Din", "es": "El imperio del sah Mohamed II en Asia central e Irán y, después, de su hijo Yalal al-Din" } },
+    { "id": "mamluks", "name": { "en": "Mamluk Sultanate", "es": "Sultanato mameluco" }, "color": "#e67e22",
+      "members": { "en": "The slave-soldier rulers of Egypt and, from 1260, Syria", "es": "Los soldados esclavos que gobernaban Egipto y, desde 1260, Siria" } },
+    { "id": "golden", "name": { "en": "Golden Horde", "es": "Horda de Oro" }, "color": "#d4a017" },
+    { "id": "chagatai", "name": { "en": "Chagatai Khanate", "es": "Kanato de Chagatai" }, "color": "#5d6d7e" },
+    { "id": "ilkhan", "name": { "en": "Ilkhanate", "es": "Iljanato" }, "color": "#8e5a2b" }
+  ],
+  "casualties": {
+    "total": [20000000, 60000000],
+    "note": { "en": "Estimates vary widely and are disputed.", "es": "Las estimaciones varían mucho y se discuten." }
+  },
+  "casualtiesNote": {
+    "en": "The Mongol conquests were among the deadliest wars in history, but no reliable count exists. Estimates range from about 20 to 60 million deaths across Asia and Europe, many from massacres, famine and the ruin of farmland. The often quoted 40–60 million goes back to a 1978 population atlas and is disputed; China's census figures of the time, which seem to show a fall from about 120 to 60 million people, are especially hard to interpret.",
+    "es": "Las conquistas mongolas estuvieron entre las guerras más mortíferas de la historia, pero no existe un recuento fiable. Las estimaciones van de unos 20 a 60 millones de muertos en Asia y Europa, muchos por masacres, hambrunas y la ruina de los campos. La cifra de 40–60 millones, muy citada, procede de un atlas de población de 1978 y se discute; los censos chinos de la época, que parecen mostrar una caída de unos 120 a 60 millones de habitantes, son especialmente difíciles de interpretar."
+  },
+  "defs": {
+    "mong1206": ["MNG",
+      { "and": ["CHN", { "poly": [[100.5, 43.3], [105.0, 42.2], [109.0, 41.7], [110.8, 41.0], [111.4, 40.8], [112.5, 41.3], [114.0, 41.9], [115.5, 42.4], [117.0, 43.2], [118.5, 44.2], [119.6, 45.5], [120.8, 47.0], [121.8, 49.0], [121.5, 53.3], [116.0, 53.0], [110.0, 47.0], [104.0, 45.0]] }] },
+      { "and": ["RUS", { "poly": [[100.0, 50.3], [104.0, 51.6], [108.0, 52.5], [112.0, 51.6], [116.0, 50.0], [117.0, 48.5], [112.0, 48.5], [104.0, 49.3], [100.0, 49.5]] }] }],
+    "forest": { "and": ["RUS", { "poly": [[82.0, 50.5], [82.0, 54.8], [86.0, 55.5], [92.0, 56.0], [100.0, 55.5], [106.0, 54.5], [109.0, 53.5], [108.0, 52.5], [104.0, 51.6], [100.0, 50.3], [95.0, 50.0], [90.0, 49.0], [86.0, 49.0], [82.0, 50.0]] }] },
+    "west1211": { "land": [[77.5, 43.3], [77.3, 45.6], [80.5, 47.0], [83.5, 48.0], [87.6, 49.6], [91.5, 48.2], [94.5, 45.8], [97.0, 43.2], [95.0, 41.0], [92.0, 40.6], [88.0, 41.0], [84.0, 40.8], [83.0, 41.2], [82.5, 43.2], [80.0, 43.1]] },
+    "xia": { "land": [[94.0, 39.4], [94.0, 40.6], [95.0, 43.3], [100.5, 43.3], [105.0, 42.2], [109.0, 41.7], [110.8, 41.0], [111.0, 40.1], [110.5, 39.2], [110.0, 38.4], [108.8, 37.6], [108.0, 37.0], [106.8, 36.6], [105.8, 35.9], [104.6, 36.2], [103.8, 36.4], [102.5, 36.9], [101.0, 37.6], [99.0, 38.3], [97.0, 39.0], [95.5, 39.2]] },
+    "jin": { "minus": [{ "land": [[120.4, 34.3], [119.0, 33.3], [117.5, 32.9], [116.0, 32.6], [114.5, 32.4], [113.5, 32.3], [112.3, 32.7], [111.0, 33.1], [109.5, 33.6], [108.0, 33.9], [106.8, 34.15], [105.5, 34.3], [104.3, 34.6], [103.6, 35.2], [103.8, 36.4], [104.6, 36.2], [105.8, 35.9], [106.8, 36.6], [108.0, 37.0], [108.8, 37.6], [110.0, 38.4], [110.5, 39.2], [111.0, 40.1], [111.4, 40.8], [112.5, 41.3], [114.0, 41.9], [115.5, 42.4], [117.0, 43.2], [118.5, 44.2], [119.6, 45.5], [120.8, 47.0], [121.8, 49.0], [121.5, 53.3], [124.5, 53.2], [126.5, 52.0], [127.5, 50.3], [130.5, 48.9], [132.5, 47.7], [135.0, 48.4], [137.0, 49.8], [140.0, 52.5], [141.5, 53.3], [142.0, 51.0], [140.5, 48.0], [138.0, 45.5], [135.0, 43.2], [131.0, 42.4], [130.5, 42.5], [129.0, 42.6], [126.5, 41.8], [124.3, 39.9], [122.5, 39.0], [121.0, 38.4], [122.9, 37.3], [121.5, 36.5], [120.4, 34.3]] }, "PRK", "KOR", { "ref": "xia" }, { "ref": "mong1206" }] },
+    "song": { "minus": [{ "and": ["CHN", { "poly": [[120.4, 34.3], [119.0, 33.3], [117.5, 32.9], [116.0, 32.6], [114.5, 32.4], [113.5, 32.3], [112.3, 32.7], [111.0, 33.1], [109.5, 33.6], [108.0, 33.9], [106.8, 34.15], [105.5, 34.3], [104.3, 34.6], [103.2, 34.2], [103.0, 32.5], [102.6, 31.0], [102.4, 30.0], [102.0, 29.0], [101.0, 27.0], [102.0, 25.0], [104.0, 22.8], [107.0, 21.0], [108.0, 18.0], [111.5, 17.5], [117.0, 22.0], [121.0, 26.5], [123.0, 30.5], [122.5, 32.5]] }] }, { "ref": "jin" }, { "ref": "dali" }] },
+    "north1215": { "and": [{ "ref": "jin" }, { "poly": [[109.5, 39.6], [112.5, 39.6], [114.5, 39.2], [116.0, 38.9], [117.6, 38.6], [119.0, 39.2], [121.0, 38.6], [126.0, 38.6], [145.0, 40.0], [145.0, 56.0], [109.5, 56.0]] }] },
+    "jin1227": { "and": [{ "ref": "jin" }, { "poly": [[103.0, 35.7], [106.0, 35.5], [108.0, 35.3], [110.3, 35.1], [111.5, 35.2], [113.0, 35.25], [114.8, 35.3], [116.5, 34.7], [118.5, 33.9], [121.0, 34.0], [121.0, 31.5], [103.0, 31.5]] }] },
+    "qara": { "land": [[69.0, 42.6], [69.5, 43.8], [71.0, 44.2], [75.0, 44.5], [77.5, 43.3], [80.0, 43.1], [82.5, 43.2], [83.0, 41.2], [84.0, 40.8], [84.5, 38.5], [83.5, 36.5], [80.0, 35.8], [77.0, 36.3], [75.0, 36.8], [73.5, 38.5], [72.5, 40.0], [71.3, 40.5]] },
+    "east_steppe": { "land": [[75.0, 44.5], [74.0, 47.5], [75.0, 51.0], [77.5, 53.5], [80.5, 54.0], [84.0, 52.5], [87.6, 50.5], [87.6, 49.2], [83.5, 48.0], [80.5, 47.0], [77.3, 45.6]] },
+    "khwarazm1218": { "land": [[49.0, 37.5], [48.3, 37.0], [47.5, 36.0], [46.8, 34.8], [47.5, 33.0], [48.5, 31.5], [50.0, 30.5], [51.5, 29.5], [52.5, 27.5], [55.0, 26.8], [57.5, 25.8], [61.5, 25.1], [63.5, 26.5], [65.5, 29.0], [66.6, 30.8], [68.5, 32.0], [70.0, 33.2], [71.0, 34.0], [71.6, 36.0], [73.0, 37.5], [73.5, 39.0], [72.8, 40.3], [71.3, 41.5], [70.0, 42.3], [69.0, 43.0], [68.0, 43.5], [65.0, 44.6], [61.5, 44.8], [58.5, 45.0], [56.0, 44.5], [54.0, 43.0], [52.8, 41.5], [53.5, 39.5], [54.0, 37.5], [51.5, 36.8], [50.0, 37.2]] },
+    "transox": { "and": [{ "ref": "khwarazm1218" }, { "poly": [[63.6, 39.1], [65.5, 38.0], [67.3, 37.2], [69.5, 37.0], [71.5, 37.5], [73.5, 39.0], [73.0, 41.0], [71.0, 42.0], [69.5, 42.5], [68.3, 43.2], [66.0, 43.5], [63.0, 42.5], [61.5, 41.5]] }] },
+    "khw_west": { "and": [{ "ref": "khwarazm1218" }, { "poly": [[44.0, 40.0], [54.5, 38.6], [55.2, 36.0], [56.5, 33.0], [58.5, 29.5], [59.5, 25.0], [44.0, 25.0]] }] },
+    "khw_core": { "minus": [{ "ref": "khwarazm1218" }, { "ref": "khw_west" }] },
+    "azerbaijan": { "land": [[44.0, 39.8], [48.0, 39.7], [49.0, 38.4], [48.8, 37.6], [48.3, 37.0], [47.5, 36.0], [46.0, 35.8], [44.8, 37.0], [44.0, 38.4]] },
+    "steppe1240": { "land": [[28.2, 45.3], [27.0, 46.5], [26.0, 47.8], [25.5, 48.35], [28.0, 48.3], [30.5, 48.0], [33.0, 49.8], [36.5, 50.8], [40.0, 52.2], [44.0, 53.3], [46.5, 55.0], [49.5, 57.5], [54.0, 58.5], [58.0, 57.0], [62.0, 56.0], [66.0, 55.5], [70.0, 55.0], [74.0, 54.0], [77.5, 53.5], [74.0, 47.5], [75.0, 44.5], [70.0, 43.5], [68.0, 43.5], [65.0, 44.6], [61.5, 44.5], [58.5, 44.0], [55.5, 41.5], [53.0, 40.0], [48.6, 41.8], [46.5, 41.9], [44.0, 42.7], [41.5, 43.4], [40.0, 43.4], [37.5, 44.6], [36.5, 45.2], [35.0, 44.8], [33.5, 44.4], [32.5, 45.4], [30.5, 45.8]] },
+    "rus": { "land": [[23.5, 50.8], [24.0, 52.0], [27.0, 52.2], [30.5, 52.3], [31.5, 53.5], [33.5, 54.4], [35.0, 55.6], [35.5, 56.8], [37.5, 57.8], [40.0, 58.3], [43.5, 58.3], [46.0, 57.3], [46.5, 55.0], [44.0, 53.3], [40.0, 52.2], [36.5, 50.8], [33.0, 49.8], [30.5, 48.0], [28.0, 48.2], [25.5, 48.3], [23.8, 49.2]] },
+    "caucasus": ["GEO", "ARM", "AZE", { "and": ["TUR", { "poly": [[40.5, 41.6], [44.5, 41.6], [44.8, 39.0], [42.0, 39.0], [40.5, 40.0]] }] }],
+    "hungary1241": { "and": [{ "hist": "Hungary", "year": 1200 }, { "poly": [[18.85, 47.85], [19.1, 47.4], [18.9, 46.0], [19.4, 45.2], [21.5, 44.6], [27.0, 45.0], [27.0, 49.5], [20.5, 49.5], [18.85, 48.6]] }] },
+    "anatolia": { "and": ["TUR", { "poly": [[30.0, 42.3], [45.0, 42.3], [45.0, 36.0], [30.0, 36.0]] }] },
+    "dali": { "and": ["CHN", { "poly": [[98.65, 28.95], [99.0, 29.2], [100.5, 29.0], [103.6, 29.0], [103.6, 28.6], [103.85, 28.6], [104.4, 28.65], [104.25, 28.55], [104.35, 27.95], [104.9, 27.9], [105.05, 28.1], [105.3, 28.0], [105.3, 27.7], [105.2, 27.4], [103.9, 27.4], [103.7, 27.15], [103.85, 26.55], [104.35, 26.65], [104.7, 26.4], [104.3, 25.65], [104.7, 25.2], [104.5, 24.6], [104.6, 24.4], [105.05, 24.45], [105.45, 24.05], [105.95, 24.1], [106.2, 23.85], [106.15, 23.55], [105.85, 23.5], [106.2, 22.2], [104.0, 20.5], [100.0, 19.5], [96.0, 22.5], [97.2, 27.6], [98.1, 28.15], [98.65, 28.4]] }] },
+    "nw_fill": { "and": ["CHN", { "poly": [[89.0, 35.5], [89.0, 40.8], [94.0, 40.8], [97.0, 39.2], [99.0, 38.6], [101.0, 37.9], [102.5, 37.2], [104.0, 36.7], [106.5, 35.6], [106.8, 34.0], [105.5, 32.4], [103.0, 32.4], [100.0, 33.4], [96.0, 34.3], [92.0, 34.8]] }] },
+    "tibet": { "hist": "Tibet", "year": 1279 },
+    "wsichuan": { "and": ["CHN", { "poly": [[100.0, 34.5], [106.5, 34.5], [106.6, 31.6], [105.5, 30.3], [104.5, 29.3], [103.5, 28.3], [102.0, 27.5], [100.0, 28.0]] }] },
+    "xiangyang": { "and": ["CHN", { "poly": [[110.5, 33.3], [113.6, 33.0], [113.4, 31.6], [111.2, 31.6], [110.2, 32.3]] }] },
+    "egypt": { "and": [{ "hist": "Mamluke Sultanate", "year": 1279 }, { "poly": [[24.5, 32.0], [34.9, 31.5], [35.2, 27.5], [35.0, 21.5], [24.5, 21.5]] }] }
+  },
+  "steps": [
+    {
+      "date": "1206",
+      "title": { "en": "Temüjin becomes Genghis Khan", "es": "Temuyín se convierte en Gengis Kan" },
+      "text": {
+        "en": "After years of war among the steppe tribes, Temüjin unites the Mongols and their neighbours. A great assembly by the Onon River proclaims him Genghis Khan.",
+        "es": "Tras años de guerras entre las tribus de la estepa, Temuyín une a los mongoles y a sus vecinos. Una gran asamblea junto al río Onón lo proclama Gengis Kan."
+      },
+      "details": {
+        "en": "Temüjin was born around 1162 into a minor noble family; after his father was poisoned, his clan abandoned the family and he grew up in poverty. Through alliances, loyalty and ruthless war he defeated the Tatars, the Keraites, the Naimans and the Merkits, and in 1206 a kurultai, the assembly of the steppe nobles, gave him the title Genghis Khan, probably meaning 'universal' or 'fierce' ruler. He reorganised the tribes into an army of units of ten, a hundred, a thousand and ten thousand, led by men chosen for loyalty rather than birth, and gave them a code of laws. To the south lay rich settled states: Western Xia, the Jin empire of northern China and, beyond it, the Song.",
+        "es": "Temuyín nació hacia 1162 en una familia noble menor; tras el envenenamiento de su padre, su clan abandonó a la familia y creció en la pobreza. Con alianzas, lealtades y guerras despiadadas derrotó a tártaros, keraítas, naimanos y merkitas, y en 1206 un kurultái, la asamblea de los nobles de la estepa, le dio el título de Gengis Kan, que probablemente significa soberano 'universal' o 'feroz'. Reorganizó las tribus en un ejército de unidades de diez, cien, mil y diez mil hombres, dirigidas por jefes elegidos por su lealtad y no por su linaje, y les dio un código de leyes. Al sur se extendían ricos estados sedentarios: Xia Occidental, el imperio Jin del norte de China y, más allá, los Song."
+      },
+      "control": { "mongols": { "ref": "mong1206" }, "khwarazm": null },
+      "events": [
+        { "icon": "👑", "text": { "en": "A kurultai by the Onon River proclaims Temüjin Genghis Khan", "es": "Un kurultái junto al río Onón proclama a Temuyín Gengis Kan" }, "at": [109.5, 48.8] }
+      ],
+      "camera": { "lon": 108, "lat": 42, "zoom": 2.6 }
+    },
+    {
+      "date": "1210-01",
+      "title": { "en": "Western Xia submits", "es": "Xia Occidental se somete" },
+      "text": {
+        "en": "Genghis Khan's first great campaign strikes the Tangut kingdom of Western Xia. After a long siege of its capital, its emperor submits and pays tribute.",
+        "es": "La primera gran campaña de Gengis Kan golpea el reino tangut de Xia Occidental. Tras un largo asedio de su capital, su emperador se somete y paga tributo."
+      },
+      "details": {
+        "en": "Western Xia, a Buddhist kingdom of the Tanguts, controlled the Gansu corridor, a key stretch of the Silk Road. In 1209 the Mongols defeated its armies, took the fortress guarding the Helan mountains by feigning a retreat, and besieged the capital, Zhongxing, today's Yinchuan. New to siege warfare, they tried to flood the city by damming the Yellow River, but the dyke burst and flooded their own camp. Still, in January 1210 Emperor Xiangzong submitted, gave Genghis a daughter in marriage and promised troops and tribute. In the same years the Uyghurs of the Turfan oasis and the Karluks further west joined the Mongols of their own accord, and Genghis's eldest son Jochi subdued the forest peoples of southern Siberia.",
+        "es": "Xia Occidental, un reino budista de los tangutos, controlaba el corredor de Gansu, un tramo clave de la Ruta de la Seda. En 1209 los mongoles derrotaron a sus ejércitos, tomaron con una falsa retirada la fortaleza que guardaba los montes Helan y sitiaron la capital, Zhongxing, la actual Yinchuan. Novatos en la guerra de asedio, intentaron inundar la ciudad represando el río Amarillo, pero el dique reventó e inundó su propio campamento. Aun así, en enero de 1210 el emperador Xiangzong se sometió, entregó a Gengis una hija en matrimonio y prometió tropas y tributo. En esos mismos años, los uigures del oasis de Turfán y los karlucos, más al oeste, se unieron por propia voluntad a los mongoles, y Jochi, el hijo mayor de Gengis, sometió a los pueblos de los bosques del sur de Siberia."
+      },
+      "control": { "mongols": [{ "prev": true }, { "ref": "forest" }, { "ref": "west1211" }] },
+      "moves": [
+        { "side": "mongols", "path": [[106.5, 45.0], [106.8, 42.5], [107.5, 41.1], [106.3, 39.4], [106.0, 38.9], [106.2, 38.55]], "label": { "en": "Invasion of Western Xia (1209)", "es": "Invasión de Xia Occidental (1209)" } }
+      ],
+      "battles": [
+        { "name": { "en": "Siege of Zhongxing", "es": "Asedio de Zhongxing" }, "at": [106.27, 38.47], "date": "1209", "winner": "mongols",
+          "result": { "en": "Western Xia submits and becomes a vassal (January 1210).", "es": "Xia Occidental se somete y se convierte en vasallo (enero de 1210)." },
+          "details": { "en": "The Mongols' attempt to flood the city by diverting the Yellow River flooded their own camp instead.", "es": "El intento mongol de inundar la ciudad desviando el río Amarillo acabó inundando su propio campamento." } }
+      ],
+      "events": [
+        { "icon": "🤝", "date": "1209", "text": { "en": "The Uyghurs of Qocho submit of their own accord", "es": "Los uigures de Qocho se someten por propia voluntad" }, "at": [89.19, 42.95] }
+      ],
+      "camera": { "lon": 100, "lat": 44, "zoom": 2.8 }
+    },
+    {
+      "date": "1215-05-31",
+      "title": { "en": "The fall of Zhongdu", "es": "La caída de Zhongdu" },
+      "text": {
+        "en": "Genghis Khan invades the Jin empire of northern China. In 1215 its capital, Zhongdu, today's Beijing, falls after a long siege and is sacked.",
+        "es": "Gengis Kan invade el imperio Jin del norte de China. En 1215 su capital, Zhongdu, la actual Pekín, cae tras un largo asedio y es saqueada."
+      },
+      "details": {
+        "en": "The Jin dynasty, founded by the Jurchens of Manchuria, ruled northern China with a population many times larger than the Mongols'. In 1211 the Mongols broke through the passes north of Zhongdu and routed the Jin field army at Yehuling. They could not yet take walled cities easily, so they ravaged the countryside, recruited Chinese and Khitan engineers and deserters, and came back year after year. In 1214 the Jin emperor bought a truce with tribute and a princess, then moved his court south to Kaifeng. Genghis treated this as a betrayal. Zhongdu, besieged and starving, fell in May 1215 and was plundered and burned. The war in northern China went on under his general Muqali, while Genghis turned west.",
+        "es": "La dinastía Jin, fundada por los yurchen de Manchuria, gobernaba el norte de China con una población muchas veces mayor que la mongola. En 1211 los mongoles cruzaron los pasos al norte de Zhongdu y derrotaron al ejército Jin en Yehuling. Aún no sabían tomar con facilidad ciudades amuralladas, así que arrasaron los campos, reclutaron ingenieros y desertores chinos y kitanos y volvieron año tras año. En 1214 el emperador Jin compró una tregua con tributo y una princesa y después trasladó su corte al sur, a Kaifeng. Gengis lo consideró una traición. Zhongdu, sitiada y hambrienta, cayó en mayo de 1215 y fue saqueada e incendiada. La guerra en el norte de China siguió a cargo de su general Muqali, mientras Gengis se volvía hacia el oeste."
+      },
+      "control": { "mongols": [{ "prev": true }, { "ref": "north1215" }] },
+      "moves": [
+        { "side": "mongols", "path": [[111.5, 44.5], [113.2, 42.5], [114.7, 41.0], [115.9, 40.4], [116.3, 40.0]], "label": { "en": "Into the Jin empire (1211)", "es": "Hacia el imperio Jin (1211)" } }
+      ],
+      "battles": [
+        { "name": { "en": "Battle of Yehuling", "es": "Batalla de Yehuling" }, "at": [114.7, 40.95], "date": "1211", "winner": "mongols",
+          "details": { "en": "The Jin army was routed in the mountain passes north of Zhongdu; claims that it numbered hundreds of thousands are unreliable.", "es": "El ejército Jin fue derrotado en los pasos de montaña al norte de Zhongdu; las cifras de cientos de miles de soldados Jin no son fiables." } },
+        { "name": { "en": "Siege of Zhongdu", "es": "Asedio de Zhongdu" }, "at": [116.38, 39.88], "date": "1215-05-31", "winner": "mongols",
+          "details": { "en": "After a long blockade and famine the city surrendered; it was looted and set on fire, and many of its people were killed.", "es": "Tras un largo bloqueo y una hambruna, la ciudad se rindió; fue saqueada e incendiada, y muchos de sus habitantes murieron." } }
+      ],
+      "events": [
+        { "icon": "🏃", "date": "1214", "text": { "en": "The Jin court moves south to Kaifeng", "es": "La corte Jin se traslada al sur, a Kaifeng" }, "at": [114.31, 34.8] }
+      ],
+      "camera": { "lon": 114, "lat": 40, "zoom": 3.2 }
+    },
+    {
+      "date": "1220-03",
+      "title": { "en": "Khwarazm: Bukhara and Samarkand", "es": "Corasmia: Bujará y Samarcanda" },
+      "text": {
+        "en": "After the Shah of Khwarazm's governor massacres a Mongol caravan at Otrar and the Shah kills an envoy, Genghis Khan marches west. Bukhara and Samarkand fall in 1220.",
+        "es": "Después de que el gobernador del sah de Corasmia masacre una caravana mongola en Otrar y el sah mate a un enviado, Gengis Kan marcha hacia el oeste. Bujará y Samarcanda caen en 1220."
+      },
+      "details": {
+        "en": "In 1218 Jebe destroyed the Qara Khitai state of the Naiman prince Kuchlug, and the Mongols now bordered the Khwarazmian Empire of Shah Muhammad II, which stretched from the Syr Darya to western Iran. Genghis sent a caravan of some 450 merchants; the governor of Otrar had them killed as spies, and the Shah executed one of the envoys sent to demand justice. In 1219 a large Mongol army crossed the mountains. The Shah spread his forces among the cities, which fell one by one: Otrar after a five-month siege, then Bukhara in February 1220, where the townspeople were driven out and the city burned, and Samarkand in March. The Shah fled west with Jebe and Subutai at his heels and died, abandoned, on an island in the Caspian Sea.",
+        "es": "En 1218 Jebe destruyó el estado kara-kitai del príncipe naimano Kuchlug, y los mongoles pasaron a lindar con el Imperio corasmio del sah Mohamed II, que iba del Sir Daria al oeste de Irán. Gengis envió una caravana de unos 450 mercaderes; el gobernador de Otrar los hizo matar acusándolos de espías, y el sah ejecutó a uno de los enviados que fueron a pedir justicia. En 1219 un gran ejército mongol cruzó las montañas. El sah repartió sus fuerzas entre las ciudades, que cayeron una tras otra: Otrar tras cinco meses de asedio, después Bujará en febrero de 1220, donde los habitantes fueron expulsados y la ciudad incendiada, y Samarcanda en marzo. El sah huyó hacia el oeste con Jebe y Subotai pisándole los talones y murió, abandonado, en una isla del mar Caspio."
+      },
+      "control": {
+        "mongols": [{ "prev": true }, { "ref": "qara" }, { "ref": "east_steppe" }, { "ref": "transox" }],
+        "khwarazm": { "minus": [{ "ref": "khwarazm1218" }, { "cur": "mongols" }] }
+      },
+      "moves": [
+        { "side": "mongols", "path": [[87.0, 46.5], [81.0, 44.6], [76.0, 43.3], [71.0, 42.6], [68.45, 42.85]], "label": { "en": "Genghis Khan's army (1219)", "es": "El ejército de Gengis Kan (1219)" } },
+        { "side": "mongols", "path": [[68.25, 42.8], [66.2, 41.2], [64.5, 39.82]], "label": { "en": "To Bukhara", "es": "Hacia Bujará" } },
+        { "side": "mongols", "path": [[64.45, 39.73], [65.8, 39.7], [66.9, 39.65]] },
+        { "side": "mongols", "path": [[66.96, 39.58], [64.0, 37.4], [59.6, 36.45], [55.5, 36.5], [54.0, 36.9]], "label": { "en": "Jebe and Subutai pursue the Shah", "es": "Jebe y Subotai persiguen al sah" } }
+      ],
+      "battles": [
+        { "name": { "en": "Siege of Otrar", "es": "Asedio de Otrar" }, "at": [68.3, 42.85], "date": "1220-02", "winner": "mongols",
+          "details": { "en": "The governor who had ordered the massacre of the merchants held out for five months; he was captured and executed.", "es": "El gobernador que había ordenado matar a los mercaderes resistió cinco meses; fue capturado y ejecutado." } },
+        { "name": { "en": "Siege of Bukhara", "es": "Asedio de Bujará" }, "at": [64.41, 39.77], "date": "1220-02", "winner": "mongols",
+          "details": { "en": "The garrison in the citadel was killed and the city burned; many townspeople were forced to serve in the next sieges.", "es": "La guarnición de la ciudadela fue aniquilada y la ciudad incendiada; muchos habitantes fueron obligados a servir en los asedios siguientes." } },
+        { "name": { "en": "Siege of Samarkand", "es": "Asedio de Samarcanda" }, "at": [66.96, 39.65], "date": "1220-03", "winner": "mongols",
+          "details": { "en": "The city surrendered after a few days. Much of the garrison was killed and many thousands of craftsmen and young men were carried off; a medieval claim of 2.5 million dead is wildly exaggerated.", "es": "La ciudad se rindió a los pocos días. Buena parte de la guarnición murió y muchos miles de artesanos y jóvenes fueron deportados; una cifra medieval de 2,5 millones de muertos es una enorme exageración." } }
+      ],
+      "events": [
+        { "icon": "⚠️", "date": "1218", "text": { "en": "Otrar: a Mongol caravan of some 450 merchants massacred", "es": "Otrar: masacre de una caravana mongola de unos 450 mercaderes" } },
+        { "icon": "🗡️", "date": "1218", "text": { "en": "Kuchlug of Qara Khitai hunted down and killed", "es": "Kuchlug, señor de Kara-Kitai, perseguido y muerto" }, "at": [73.8, 37.5] },
+        { "icon": "⚱️", "date": "1220-12", "text": { "en": "Shah Muhammad II dies on an island in the Caspian Sea", "es": "El sah Mohamed II muere en una isla del mar Caspio" }, "at": [53.95, 36.95] }
+      ],
+      "camera": { "lon": 66, "lat": 40, "zoom": 3.2 }
+    },
+    {
+      "date": "1221-11-24",
+      "title": { "en": "Urgench, Merv and Nishapur", "es": "Urgench, Merv y Nishapur" },
+      "text": {
+        "en": "The Mongols crush the great cities of Khwarazm and Khorasan. Urgench is flooded, and at Merv and Nishapur almost the whole population is killed. Jalal al-Din flees across the Indus.",
+        "es": "Los mongoles aplastan las grandes ciudades de Corasmia y el Jorasán. Urgench es inundada, y en Merv y Nishapur casi toda la población es asesinada. Yalal al-Din huye cruzando el Indo."
+      },
+      "details": {
+        "en": "Cities that surrendered at once were usually spared after paying tribute; those that resisted were made an example. Urgench, the capital of Khwarazm, fought street by street for months until the Mongols broke the dams of the Amu Darya and flooded it; the craftsmen were deported and, chroniclers say, the rest of the people killed. Genghis's youngest son Tolui took Merv, where the population was massacred, and Nishapur, where his brother-in-law Toquchar had been killed by an arrow from the walls: in revenge every inhabitant was killed, even, it was said, the cats and dogs. The medieval figures of more than a million dead in a single city are impossible, but these were among the worst massacres of the Middle Ages. The Shah's son Jalal al-Din beat a Mongol army at Parwan, then was cornered by Genghis on the Indus and escaped by riding his horse into the river.",
+        "es": "Las ciudades que se rendían enseguida solían salvarse tras pagar tributo; las que resistían servían de escarmiento. Urgench, la capital de Corasmia, luchó calle por calle durante meses hasta que los mongoles rompieron los diques del Amu Daria y la inundaron; los artesanos fueron deportados y, según los cronistas, el resto de la población asesinada. Tolui, el hijo menor de Gengis, tomó Merv, cuya población fue masacrada, y Nishapur, donde su cuñado Toquchar había muerto por una flecha disparada desde las murallas: como venganza mataron a todos sus habitantes, y se dijo que hasta a los perros y los gatos. Las cifras medievales de más de un millón de muertos en una sola ciudad son imposibles, pero fueron de las peores masacres de la Edad Media. Yalal al-Din, hijo del sah, venció a un ejército mongol en Parwan y después, acorralado por Gengis junto al Indo, escapó lanzándose al río con su caballo."
+      },
+      "control": { "mongols": [{ "prev": true }, { "ref": "khw_core" }] },
+      "moves": [
+        { "side": "mongols", "path": [[66.9, 39.62], [63.6, 41.0], [59.35, 42.25]], "label": { "en": "To Urgench", "es": "Hacia Urgench" } },
+        { "side": "mongols", "path": [[66.9, 39.5], [65.2, 37.9], [62.35, 37.65], [60.5, 36.8], [58.95, 36.25]], "label": { "en": "Tolui in Khorasan", "es": "Tolui en el Jorasán" } },
+        { "side": "mongols", "path": [[67.0, 39.5], [67.8, 37.2], [69.0, 36.3], [69.2, 34.6], [68.4, 33.6], [70.5, 33.9], [72.05, 33.8]], "label": { "en": "Pursuit of Jalal al-Din", "es": "Persecución de Yalal al-Din" } }
+      ],
+      "battles": [
+        { "name": { "en": "Siege of Urgench", "es": "Asedio de Urgench" }, "at": [59.15, 42.32], "date": "1221-04", "winner": "mongols",
+          "details": { "en": "After months of street fighting the Mongols broke the river dams and flooded the city; craftsmen were deported and the rest of the people killed.", "es": "Tras meses de lucha calle por calle, los mongoles rompieron los diques del río e inundaron la ciudad; los artesanos fueron deportados y el resto de la población asesinada." } },
+        { "name": { "en": "Siege of Merv", "es": "Asedio de Merv" }, "at": [62.19, 37.66], "date": "1221", "winner": "mongols",
+          "details": { "en": "The people were led out of the city and massacred. Chroniclers claimed 700,000 to 1.3 million dead, figures historians reject, but the city never fully recovered.", "es": "La población fue sacada de la ciudad y masacrada. Los cronistas hablaron de 700 000 a 1,3 millones de muertos, cifras que los historiadores rechazan, pero la ciudad nunca se recuperó del todo." } },
+        { "name": { "en": "Siege of Nishapur", "es": "Asedio de Nishapur" }, "at": [58.8, 36.21], "date": "1221-04", "winner": "mongols",
+          "result": { "en": "Mongol victory, followed by the massacre of the whole population.", "es": "Victoria mongola, seguida de la masacre de toda la población." },
+          "details": { "en": "Revenge for the death of Toquchar: chroniclers say the skulls of men, women and children were piled in separate pyramids.", "es": "Venganza por la muerte de Toquchar: según los cronistas, los cráneos de hombres, mujeres y niños se apilaron en pirámides separadas." } },
+        { "name": { "en": "Battle of Parwan", "es": "Batalla de Parwan" }, "at": [69.0, 35.0], "date": "1221-09", "winner": "khwarazm",
+          "details": { "en": "Jalal al-Din routed a Mongol army under Shigi Qutuqu, a rare Mongol defeat.", "es": "Yalal al-Din derrotó a un ejército mongol al mando de Shigi Qutuqu, una rara derrota mongola." } },
+        { "name": { "en": "Battle of the Indus", "es": "Batalla del Indo" }, "at": [72.18, 33.77], "date": "1221-11-24", "winner": "mongols",
+          "details": { "en": "Jalal al-Din's army was destroyed against the river; he escaped by leaping into the Indus on horseback, and fled to India.", "es": "El ejército de Yalal al-Din fue aniquilado contra el río; él escapó saltando a caballo al Indo y huyó a la India." } }
+      ],
+      "camera": { "lon": 64, "lat": 37.5, "zoom": 3.2 }
+    },
+    {
+      "date": "1223-05-31",
+      "title": { "en": "The Kalka River", "es": "El río Kalka" },
+      "text": {
+        "en": "Jebe and Subutai ride around the Caspian Sea, through Georgia and over the Caucasus. On the Kalka River they destroy an army of Rus' princes and Cumans.",
+        "es": "Jebe y Subotai rodean el mar Caspio, atraviesan Georgia y cruzan el Cáucaso. Junto al río Kalka aniquilan un ejército de príncipes de la Rus y cumanos."
+      },
+      "details": {
+        "en": "After chasing the Shah, Genghis's two best generals made one of the longest cavalry raids in history. They sacked cities in northern Iran, beat the Georgians in 1221, crossed the Caucasus and defeated the Alans and the Cumans, nomads of the steppe north of the Black Sea. The Cumans asked their neighbours, the princes of the Rus', for help. A large Rus' and Cuman army followed the Mongols' feigned retreat for days, then was beaten on the Kalka. Several princes died in the battle; Mstislav of Kiev and two others, captured, were crushed to death under wooden boards on which the Mongol commanders feasted, and chronicles say only one Rus' soldier in ten came home. The Mongols then turned east to rejoin Genghis, and Western Europe barely noticed.",
+        "es": "Tras perseguir al sah, los dos mejores generales de Gengis protagonizaron una de las incursiones de caballería más largas de la historia. Saquearon ciudades del norte de Irán, vencieron a los georgianos en 1221, cruzaron el Cáucaso y derrotaron a los alanos y a los cumanos, nómadas de la estepa al norte del mar Negro. Los cumanos pidieron ayuda a sus vecinos, los príncipes de la Rus. Un gran ejército de la Rus y cumano siguió durante días la falsa retirada mongola y fue derrotado junto al Kalka. Varios príncipes murieron en la batalla; Mstislav de Kiev y otros dos, capturados, murieron aplastados bajo unas tablas sobre las que banquetearon los jefes mongoles, y las crónicas dicen que solo uno de cada diez soldados de la Rus volvió a casa. Después los mongoles regresaron al este para reunirse con Gengis, y Europa occidental apenas se enteró."
+      },
+      "moves": [
+        { "side": "mongols", "path": [[51.4, 35.6], [48.6, 37.1], [46.3, 38.1], [45.0, 40.6], [46.5, 41.4], [48.3, 42.05], [46.5, 44.0], [43.0, 45.0], [40.0, 46.5], [37.65, 47.2]], "label": { "en": "Jebe and Subutai (1220–1223)", "es": "Jebe y Subotai (1220–1223)" } },
+        { "side": "mongols", "path": [[37.6, 47.35], [41.0, 48.3], [45.0, 50.0], [48.5, 52.3], [52.5, 51.5]], "label": { "en": "Return east", "es": "Regreso al este" } }
+      ],
+      "battles": [
+        { "name": { "en": "Battle of the Kalka River", "es": "Batalla del río Kalka" }, "at": [37.5, 47.25], "date": "1223-05-31", "winner": "mongols",
+          "details": { "en": "About 20,000 Mongols against perhaps 20,000–45,000 Rus' and Cumans (modern estimates). Only a fraction of the Rus' army returned home.", "es": "Unos 20 000 mongoles contra quizá 20 000–45 000 guerreros de la Rus y cumanos (estimaciones actuales). Solo una pequeña parte del ejército de la Rus volvió a casa." } }
+      ],
+      "camera": { "lon": 44, "lat": 44, "zoom": 3.0 }
+    },
+    {
+      "date": "1227-08",
+      "title": { "en": "The death of Genghis Khan", "es": "La muerte de Gengis Kan" },
+      "text": {
+        "en": "Genghis Khan returns to punish Western Xia, which had refused to send him troops. He dies during the siege of its capital in August 1227; the city falls a month later and its people are massacred.",
+        "es": "Gengis Kan vuelve para castigar a Xia Occidental, que se había negado a enviarle tropas. Muere durante el asedio de su capital en agosto de 1227; la ciudad cae un mes después y sus habitantes son masacrados."
+      },
+      "details": {
+        "en": "Western Xia had refused to send troops for the war in the west and then sided with the Jin. In 1226 Genghis invaded with great ferocity, destroying town after town. He died on 18 or 25 August 1227, aged about 65; the cause is unknown, perhaps illness or the after-effects of a fall from his horse, and so is his grave. His death was kept secret, and when Zhongxing surrendered the following month its people were put to the sword. The Tangut state disappeared. In northern China Muqali had taken most of the Jin lands north of the Yellow River before his own death in 1223. Genghis divided his empire among his sons, with his third son Ögedei as heir. Meanwhile Jalal al-Din had come back from India to rule western Iran.",
+        "es": "Xia Occidental se había negado a enviar tropas para la guerra del oeste y después se alió con los Jin. En 1226 Gengis la invadió con gran ferocidad, destruyendo una ciudad tras otra. Murió el 18 o el 25 de agosto de 1227, con unos 65 años; se desconoce la causa, quizá una enfermedad o las secuelas de una caída del caballo, y también su tumba. Su muerte se mantuvo en secreto y, cuando Zhongxing se rindió al mes siguiente, sus habitantes fueron pasados a cuchillo. El estado tangut desapareció. En el norte de China, Muqali había tomado la mayor parte de las tierras Jin al norte del río Amarillo antes de morir en 1223. Gengis repartió su imperio entre sus hijos y nombró heredero al tercero, Ögedei. Entretanto, Yalal al-Din había regresado de la India para gobernar el oeste de Irán."
+      },
+      "control": {
+        "mongols": [{ "prev": true }, { "ref": "xia" }, { "minus": [{ "ref": "jin" }, { "ref": "jin1227" }] }],
+        "khwarazm": { "minus": [[{ "ref": "khw_west" }, { "ref": "azerbaijan" }], { "cur": "mongols" }] }
+      },
+      "moves": [
+        { "side": "mongols", "path": [[103.0, 44.0], [104.5, 41.5], [105.5, 39.6], [106.15, 38.6]], "label": { "en": "Last campaign (1226–1227)", "es": "Última campaña (1226–1227)" } }
+      ],
+      "battles": [
+        { "name": { "en": "Fall of Zhongxing", "es": "Caída de Zhongxing" }, "at": [106.27, 38.47], "date": "1227-09", "winner": "mongols",
+          "details": { "en": "The Xia capital surrendered a month after Genghis Khan's death; its population was massacred and the Tangut state wiped out.", "es": "La capital Xia se rindió un mes después de la muerte de Gengis Kan; su población fue masacrada y el estado tangut, borrado del mapa." } }
+      ],
+      "events": [
+        { "icon": "⚱️", "date": "1227-08", "text": { "en": "Genghis Khan dies during the siege; his burial place is unknown", "es": "Gengis Kan muere durante el asedio; se desconoce dónde fue enterrado" } }
+      ],
+      "camera": { "lon": 104, "lat": 39, "zoom": 2.6 }
+    },
+    {
+      "date": "1234-02-09",
+      "title": { "en": "The end of the Jin", "es": "El fin de los Jin" },
+      "text": {
+        "en": "Under Genghis's son Ögedei, the Mongols, now allied with the Song, destroy the Jin dynasty. The last Jin emperor dies at Caizhou in 1234, and all of northern China is Mongol.",
+        "es": "Con Ögedei, hijo de Gengis, los mongoles, aliados ahora con los Song, destruyen la dinastía Jin. El último emperador Jin muere en Caizhou en 1234 y todo el norte de China pasa a ser mongol."
+      },
+      "details": {
+        "en": "Ögedei was elected Great Khan in 1229 and soon began building a capital at Karakorum. To get round the Jin defences along the Yellow River, his brother Tolui led an army on a long march through Song territory and fell on the Jin from the south, destroying their main army at Sanfengshan in a snowstorm in 1232. Kaifeng, crowded with refugees and struck by an epidemic, held out for a year, its defenders hurling gunpowder bombs, before it surrendered. The Jin emperor Aizong fled to Caizhou, where Mongol and Song troops besieged him; he took his own life as the city fell in February 1234. In the west, Mongol armies under Chormaqan conquered Iran, and Jalal al-Din was killed in 1231.",
+        "es": "Ögedei fue elegido gran kan en 1229 y pronto empezó a construir una capital en Karakórum. Para rodear las defensas Jin del río Amarillo, su hermano Tolui dirigió un ejército en una larga marcha por territorio Song y cayó sobre los Jin desde el sur; en 1232 aniquiló su ejército principal en Sanfengshan, en medio de una tormenta de nieve. Kaifeng, abarrotada de refugiados y azotada por una epidemia, resistió un año, con sus defensores lanzando bombas de pólvora, antes de rendirse. El emperador Jin Aizong huyó a Caizhou, donde lo sitiaron tropas mongolas y Song; se quitó la vida cuando cayó la ciudad, en febrero de 1234. En el oeste, los ejércitos mongoles de Chormaqan conquistaron Irán, y Yalal al-Din murió asesinado en 1231."
+      },
+      "control": {
+        "mongols": [{ "prev": true }, { "ref": "jin" }, "IRN", { "ref": "azerbaijan" }],
+        "jin": null,
+        "khwarazm": null
+      },
+      "moves": [
+        { "side": "mongols", "path": [[106.3, 34.6], [106.9, 33.1], [109.0, 32.7], [111.5, 32.8], [113.0, 33.8]], "label": { "en": "Tolui's march through Song land (1231–1232)", "es": "Marcha de Tolui por tierras Song (1231–1232)" } },
+        { "side": "mongols", "path": [[112.5, 36.5], [113.6, 35.3], [114.2, 34.9]], "label": { "en": "Ögedei", "es": "Ögedei" } }
+      ],
+      "battles": [
+        { "name": { "en": "Battle of Sanfengshan", "es": "Batalla de Sanfengshan" }, "at": [113.3, 34.05], "date": "1232-02-09", "winner": "mongols",
+          "details": { "en": "In a snowstorm the Mongols wore down and destroyed a Jin army of about 150,000.", "es": "En medio de una tormenta de nieve, los mongoles desgastaron y aniquilaron a un ejército Jin de unos 150 000 hombres." } },
+        { "name": { "en": "Siege of Kaifeng", "es": "Asedio de Kaifeng" }, "at": [114.31, 34.8], "date": "1233-05", "winner": "mongols",
+          "details": { "en": "During the year-long siege an epidemic killed a huge part of the crowded city. It surrendered in May 1233 and, unusually, was spared a massacre.", "es": "Durante el año de asedio, una epidemia mató a buena parte de la abarrotada ciudad. Se rindió en mayo de 1233 y, algo poco habitual, se libró de una masacre." } },
+        { "name": { "en": "Siege of Caizhou", "es": "Asedio de Caizhou" }, "at": [114.37, 33.0], "date": "1234-02-09", "winner": "mongols",
+          "result": { "en": "Mongol and Song victory: the Jin dynasty ends.", "es": "Victoria mongola y Song: fin de la dinastía Jin." },
+          "details": { "en": "Emperor Aizong took his own life; the prince he had named as successor was killed the same day.", "es": "El emperador Aizong se quitó la vida; el príncipe al que había nombrado sucesor murió ese mismo día." } }
+      ],
+      "events": [
+        { "icon": "👑", "date": "1229", "text": { "en": "Ögedei elected Great Khan", "es": "Ögedei, elegido gran kan" } }
+      ],
+      "camera": { "lon": 111, "lat": 36, "zoom": 3.0 }
+    },
+    {
+      "date": "1240-12-06",
+      "title": { "en": "The Rus' laid waste", "es": "La Rus arrasada" },
+      "text": {
+        "en": "Batu and Subutai conquer the steppe peoples and fall on the principalities of the Rus'. Ryazan, Vladimir and finally Kiev are stormed, and the Rus' must pay tribute for two centuries.",
+        "es": "Batú y Subotai someten a los pueblos de la estepa y caen sobre los principados de la Rus. Riazán, Vladímir y finalmente Kiev son asaltadas, y la Rus tendrá que pagar tributo durante dos siglos."
+      },
+      "details": {
+        "en": "In 1235 a kurultai sent a great army west under Batu, a grandson of Genghis, with Subutai as its real commander. It destroyed Volga Bulgaria in 1236 and scattered the Cumans of the steppe. In December 1237 it attacked the divided Rus' principalities in winter, using frozen rivers as roads. Ryazan was burned and its people killed; Kolomna, Moscow, then a small town, and Vladimir followed, where the grand prince's family died in the burning cathedral. The grand prince himself fell on the Sit River in March 1238, and the spring thaw saved Novgorod. After campaigns in the south and the Caucasus, the Mongols took Chernigov and Pereyaslavl and, in December 1240, stormed Kiev; a papal envoy who passed six years later counted barely 200 houses standing. The Rus' princes now had to seek their titles from the khans and pay tribute: the 'Tatar yoke'.",
+        "es": "En 1235 un kurultái envió hacia el oeste un gran ejército al mando de Batú, nieto de Gengis, con Subotai como verdadero jefe. Destruyó la Bulgaria del Volga en 1236 y dispersó a los cumanos de la estepa. En diciembre de 1237 atacó en pleno invierno los divididos principados de la Rus, usando los ríos helados como caminos. Riazán fue incendiada y sus habitantes asesinados; siguieron Kolomna, Moscú, entonces una pequeña ciudad, y Vladímir, donde la familia del gran príncipe murió en la catedral en llamas. El propio gran príncipe cayó junto al río Sit en marzo de 1238, y el deshielo de primavera salvó a Nóvgorod. Tras campañas en el sur y el Cáucaso, los mongoles tomaron Chernígov y Pereyáslav y, en diciembre de 1240, asaltaron Kiev; un enviado del papa que pasó por allí seis años después contó apenas 200 casas en pie. Los príncipes de la Rus tuvieron que pedir sus títulos a los kanes y pagar tributo: el 'yugo tártaro'."
+      },
+      "control": { "mongols": [{ "prev": true }, { "ref": "steppe1240" }, { "ref": "rus" }, { "ref": "caucasus" }] },
+      "moves": [
+        { "side": "mongols", "path": [[52.5, 53.5], [50.0, 54.9], [46.0, 54.5], [41.8, 54.3], [40.55, 54.4]], "label": { "en": "Batu's army (1236–1237)", "es": "El ejército de Batú (1236–1237)" } },
+        { "side": "mongols", "path": [[40.4, 54.5], [38.8, 55.05], [37.6, 55.75], [39.8, 56.1], [40.3, 56.13]], "label": { "en": "Winter campaign (1237–1238)", "es": "Campaña de invierno (1237–1238)" } },
+        { "side": "mongols", "path": [[38.5, 49.0], [35.0, 49.8], [32.5, 50.0], [30.65, 50.42]], "label": { "en": "To Kiev (1240)", "es": "Hacia Kiev (1240)" } }
+      ],
+      "battles": [
+        { "name": { "en": "Siege of Ryazan", "es": "Asedio de Riazán" }, "at": [40.42, 54.41], "date": "1237-12-21", "winner": "mongols",
+          "details": { "en": "The first Rus' city to fall, after a siege of five days; it was burned and its people killed.", "es": "La primera ciudad de la Rus en caer, tras cinco días de asedio; fue incendiada y sus habitantes asesinados." } },
+        { "name": { "en": "Siege of Vladimir", "es": "Asedio de Vladímir" }, "at": [40.42, 56.13], "date": "1238-02-08", "winner": "mongols",
+          "details": { "en": "The grand prince's family and the bishop died when the cathedral where they had taken refuge was set on fire.", "es": "La familia del gran príncipe y el obispo murieron cuando fue incendiada la catedral en la que se habían refugiado." } },
+        { "name": { "en": "Siege of Kiev", "es": "Asedio de Kiev" }, "at": [30.52, 50.45], "date": "1240-12-06", "winner": "mongols",
+          "casualties": { "total": 48000, "note": { "en": "Modern estimate of the dead, most of them civilians.", "es": "Estimación actual de los muertos, en su mayoría civiles." } },
+          "details": { "en": "The once great capital of the Rus' was stormed after about a week.", "es": "La que había sido gran capital de la Rus fue asaltada tras una semana de asedio." } }
+      ],
+      "events": [
+        { "icon": "🛡️", "date": "1238", "text": { "en": "Little Kozelsk holds out for seven weeks", "es": "La pequeña Kozelsk resiste siete semanas" }, "at": [35.78, 54.04] }
+      ],
+      "camera": { "lon": 40, "lat": 52, "zoom": 3.2 }
+    },
+    {
+      "date": "1241-04-11",
+      "title": { "en": "Legnica and Mohi", "es": "Legnica y Mohi" },
+      "text": {
+        "en": "The Mongols strike Central Europe. Within two days in April 1241 they destroy the army of Duke Henry II at Legnica and the Hungarian army at Mohi, then occupy Hungary for a year.",
+        "es": "Los mongoles atacan Europa central. En dos días de abril de 1241 aniquilan el ejército del duque Enrique II en Legnica y el ejército húngaro en Mohi, y ocupan Hungría durante un año."
+      },
+      "details": {
+        "en": "King Béla IV of Hungary had taken in tens of thousands of Cumans fleeing the Mongols, and refused to hand them over. A northern force ravaged Poland, burned Kraków and at Legnica on 9 April killed Duke Henry II of Silesia, whose head was paraded before the town's walls. Two days later the main army under Batu and Subutai surrounded Béla's army in its wagon camp by the Sajó River at Mohi and cut it down as it fled. The Mongols then laid waste to the Hungarian plain; massacre, famine and flight cost Hungary perhaps 15–25% of its people. In early 1242 they crossed the frozen Danube and chased Béla to the Adriatic coast. Then, in spring 1242, they withdrew: Great Khan Ögedei had died in December, and historians also point to their losses and to a wet spring that turned the plain to marsh.",
+        "es": "El rey Bela IV de Hungría había acogido a decenas de miles de cumanos que huían de los mongoles y se negó a entregarlos. Una fuerza del norte devastó Polonia, incendió Cracovia y el 9 de abril, en Legnica, mató al duque Enrique II de Silesia, cuya cabeza pasearon ante las murallas de la ciudad. Dos días después, el ejército principal de Batú y Subotai rodeó al ejército de Bela en su campamento de carros junto al río Sajó, en Mohi, y lo masacró mientras huía. Los mongoles arrasaron después la llanura húngara; las matanzas, el hambre y la huida costaron a Hungría quizá entre el 15 y el 25% de su población. A comienzos de 1242 cruzaron el Danubio helado y persiguieron a Bela hasta la costa del Adriático. Luego, en la primavera de 1242, se retiraron: el gran kan Ögedei había muerto en diciembre, y los historiadores señalan también sus pérdidas y una primavera lluviosa que convirtió la llanura en un pantano."
+      },
+      "control": { "mongols": [{ "prev": true }, { "ref": "hungary1241" }] },
+      "moves": [
+        { "side": "mongols", "path": [[25.0, 50.4], [21.75, 50.68], [19.94, 50.06], [17.03, 51.1], [16.3, 51.17]], "label": { "en": "Northern army", "es": "Ejército del norte" } },
+        { "side": "mongols", "path": [[25.5, 48.6], [23.13, 48.83], [21.6, 48.25], [20.98, 48.0]], "label": { "en": "Batu and Subutai", "es": "Batú y Subotai" } },
+        { "side": "mongols", "path": [[19.5, 46.0], [17.5, 45.6], [16.0, 44.5], [16.25, 43.6]], "label": { "en": "Pursuit of King Béla (1242)", "es": "Persecución del rey Bela (1242)" } },
+        { "side": "mongols", "path": [[20.5, 44.8], [23.0, 44.0], [26.0, 43.6], [28.5, 44.6], [30.5, 46.0]], "label": { "en": "Withdrawal (1242)", "es": "Retirada (1242)" } }
+      ],
+      "battles": [
+        { "name": { "en": "Battle of Legnica", "es": "Batalla de Legnica" }, "at": [16.22, 51.15], "date": "1241-04-09", "winner": "mongols",
+          "details": { "en": "A few thousand Mongol horsemen destroyed an army of Polish knights, levies and military orders; Duke Henry II was killed.", "es": "Unos pocos miles de jinetes mongoles aniquilaron un ejército de caballeros polacos, milicias y órdenes militares; el duque Enrique II murió." } },
+        { "name": { "en": "Battle of Mohi", "es": "Batalla de Mohi" }, "at": [20.91, 47.98], "date": "1241-04-11", "winner": "mongols",
+          "details": { "en": "The Hungarian army was trapped in its camp and cut down as it fled; contemporary sources speak of about 10,000 dead. Mongol losses were also heavy.", "es": "El ejército húngaro quedó atrapado en su campamento y fue masacrado en la huida; las fuentes de la época hablan de unos 10 000 muertos. Las pérdidas mongolas también fueron grandes." } }
+      ],
+      "events": [
+        { "icon": "⚱️", "date": "1241-12-11", "text": { "en": "Great Khan Ögedei dies in Mongolia", "es": "Muere en Mongolia el gran kan Ögedei" } },
+        { "icon": "☠️", "text": { "en": "Hungary loses perhaps a fifth of its people", "es": "Hungría pierde quizá una quinta parte de su población" }, "at": [19.9, 46.9] }
+      ],
+      "camera": { "lon": 21, "lat": 48, "zoom": 3.8 }
+    },
+    {
+      "date": "1258-02-10",
+      "title": { "en": "Hulagu takes Baghdad", "es": "Hulagu toma Bagdad" },
+      "text": {
+        "en": "Great Khan Möngke sends his brother Hulagu west. He destroys the mountain castles of the Ismaili 'Assassins' and sacks Baghdad, ending the Abbasid caliphate.",
+        "es": "El gran kan Möngke envía al oeste a su hermano Hulagu. Destruye los castillos de montaña de los 'asesinos' ismailíes y saquea Bagdad, poniendo fin al califato abasí."
+      },
+      "details": {
+        "en": "After years of quarrels over the succession, Möngke, a son of Tolui, became Great Khan in 1251 and launched new wars: his brother Kublai attacked the Song from the south-west, conquering the Dali kingdom in Yunnan in 1253, while Hulagu marched on Iran. In 1256 the Nizari Ismailis surrendered Alamut and their other mountain strongholds. Hulagu then ordered the Abbasid caliph al-Musta'sim, nominal head of Sunni Islam, to submit. The caliph refused but did little to prepare. In January 1258 the Mongols, with Georgian, Armenian and Chinese contingents, breached the walls in days. The city was looted for a week; tens of thousands, perhaps hundreds of thousands, were killed, and its great libraries were destroyed. The caliph was put to death, by tradition rolled in a carpet and trampled by horses.",
+        "es": "Tras años de disputas por la sucesión, Möngke, hijo de Tolui, se convirtió en gran kan en 1251 y lanzó nuevas guerras: su hermano Kublai atacó a los Song desde el suroeste y conquistó el reino de Dali, en Yunnan, en 1253, mientras Hulagu marchaba sobre Irán. En 1256 los nizaríes ismailíes entregaron Alamut y sus demás fortalezas de montaña. Hulagu ordenó entonces al califa abasí al-Mustasim, cabeza nominal del islam suní, que se sometiera. El califa se negó, pero apenas se preparó. En enero de 1258 los mongoles, con contingentes georgianos, armenios y chinos, abrieron brecha en las murallas en pocos días. La ciudad fue saqueada durante una semana; murieron decenas de miles de personas, quizá cientos de miles, y sus grandes bibliotecas fueron destruidas. El califa fue ejecutado, según la tradición enrollado en una alfombra y pisoteado por caballos."
+      },
+      "control": {
+        "mongols": [{ "minus": [{ "prev": true }, { "ref": "hungary1241" }] }, { "ref": "anatolia" }, "IRQ", { "ref": "dali" }, { "ref": "tibet" }, { "ref": "wsichuan" }, { "ref": "nw_fill" }],
+        "mamluks": { "ref": "egypt" }
+      },
+      "moves": [
+        { "side": "mongols", "path": [[63.0, 37.6], [58.8, 36.3], [54.4, 36.4], [50.7, 36.45]], "label": { "en": "Hulagu's army (1256)", "es": "El ejército de Hulagu (1256)" } },
+        { "side": "mongols", "path": [[50.6, 36.38], [48.5, 34.8], [46.4, 34.3], [44.45, 33.38]], "label": { "en": "To Baghdad (1258)", "es": "Hacia Bagdad (1258)" } }
+      ],
+      "battles": [
+        { "name": { "en": "Siege of Alamut", "es": "Asedio de Alamut" }, "at": [50.58, 36.44], "date": "1256-12", "winner": "mongols",
+          "details": { "en": "The Nizari Ismaili state surrendered its mountain castles; its last imam was later killed, and most of the famous library of Alamut was burned.", "es": "El estado nizarí ismailí entregó sus castillos de montaña; su último imán fue asesinado después, y la mayor parte de la famosa biblioteca de Alamut ardió." } },
+        { "name": { "en": "Siege of Baghdad", "es": "Asedio de Bagdad" }, "at": [44.34, 33.35], "date": "1258-02-10", "winner": "mongols",
+          "casualties": { "total": 200000, "note": { "en": "Hulagu's own estimate of the dead, most of them civilians; later Muslim chroniclers claimed 800,000 or more.", "es": "Estimación del propio Hulagu, en su mayoría civiles; cronistas musulmanes posteriores hablaron de 800 000 o más." } },
+          "details": { "en": "A Mongol army of perhaps 150,000 or more, with allied contingents, against about 50,000 defenders.", "es": "Un ejército mongol de quizá 150 000 hombres o más, con contingentes aliados, contra unos 50 000 defensores." } }
+      ],
+      "events": [
+        { "icon": "⚔️", "date": "1243", "text": { "en": "Köse Dağ: the Seljuk sultans of Anatolia become Mongol vassals", "es": "Köse Dağ: los sultanes selyúcidas de Anatolia pasan a ser vasallos mongoles" }, "at": [38.75, 40.1] },
+        { "icon": "🏔️", "date": "1253", "text": { "en": "Kublai conquers the Dali kingdom in Yunnan", "es": "Kublai conquista el reino de Dali, en Yunnan" } }
+      ],
+      "camera": { "lon": 46, "lat": 36, "zoom": 3.2 }
+    },
+    {
+      "date": "1260-09-03",
+      "title": { "en": "Ain Jalut", "es": "Ain Yalut" },
+      "text": {
+        "en": "Hulagu takes Aleppo and Damascus, then leaves with most of his army when Möngke dies. At Ain Jalut the Mamluks of Egypt defeat the Mongols left behind: their first great defeat.",
+        "es": "Hulagu toma Alepo y Damasco, pero se marcha con la mayor parte de su ejército al morir Möngke. En Ain Yalut, los mamelucos de Egipto derrotan a los mongoles que quedaron: su primera gran derrota."
+      },
+      "details": {
+        "en": "Möngke died in August 1259 while besieging a Song fortress in Sichuan. Hulagu, who had stormed Aleppo in January 1260 and received the surrender of Damascus, pulled most of his troops back towards Iran to follow the struggle for the throne, leaving his general Kitbuqa with perhaps 10,000–20,000 men. The Mamluks, slave-soldiers who had seized power in Egypt ten years earlier, executed the Mongol envoys and marched north under Sultan Qutuz and the general Baybars. At Ain Jalut, in Galilee, they drew the Mongols into an ambush; Kitbuqa was captured and beheaded. The Mamluks took over Syria, and the Euphrates became the frontier between them and Hulagu's realm. Meanwhile Kublai and his brother Ariq Böke both claimed to be Great Khan, and the Mongol Empire began to break apart.",
+        "es": "Möngke murió en agosto de 1259 mientras asediaba una fortaleza Song en Sichuan. Hulagu, que había tomado Alepo al asalto en enero de 1260 y recibido la rendición de Damasco, retiró la mayor parte de sus tropas hacia Irán para seguir la lucha por el trono, y dejó a su general Kitbuqa con quizá 10 000–20 000 hombres. Los mamelucos, soldados esclavos que habían tomado el poder en Egipto diez años antes, ejecutaron a los enviados mongoles y marcharon al norte con el sultán Qutuz y el general Baibars. En Ain Yalut, en Galilea, atrajeron a los mongoles a una emboscada; Kitbuqa fue capturado y decapitado. Los mamelucos se adueñaron de Siria, y el Éufrates se convirtió en la frontera entre ellos y el dominio de Hulagu. Entretanto, Kublai y su hermano Ariq Böke se proclamaron ambos gran kan, y el Imperio mongol empezó a fragmentarse."
+      },
+      "control": {
+        "mongols": [{ "prev": true }, "KOR", "PRK"],
+        "mamluks": { "minus": [{ "hist": "Mamluke Sultanate", "year": 1279 }, { "cur": "mongols" }, { "poly": [[34.95, 29.5], [36.5, 25.0], [38.5, 21.0], [42.0, 15.0], [50.0, 15.0], [50.0, 29.5]] }] }
+      },
+      "moves": [
+        { "side": "mongols", "path": [[44.0, 37.5], [40.5, 37.0], [37.3, 36.25]], "label": { "en": "Hulagu takes Aleppo (January 1260)", "es": "Hulagu toma Alepo (enero de 1260)" } },
+        { "side": "mongols", "path": [[37.1, 36.1], [36.4, 33.6], [35.6, 32.8], [35.42, 32.6]], "label": { "en": "Kitbuqa", "es": "Kitbuqa" } },
+        { "side": "mamluks", "path": [[31.24, 30.05], [32.5, 30.9], [34.3, 31.4], [35.0, 32.0], [35.3, 32.5]], "label": { "en": "Qutuz and Baybars", "es": "Qutuz y Baibars" } }
+      ],
+      "battles": [
+        { "name": { "en": "Siege of Aleppo", "es": "Asedio de Alepo" }, "at": [37.16, 36.2], "date": "1260-01", "winner": "mongols",
+          "details": { "en": "The city was taken after a short siege and many of its people were massacred.", "es": "La ciudad fue tomada tras un breve asedio y muchos de sus habitantes fueron masacrados." } },
+        { "name": { "en": "Battle of Ain Jalut", "es": "Batalla de Ain Yalut" }, "at": [35.36, 32.55], "date": "1260-09-03", "winner": "mamluks",
+          "details": { "en": "Perhaps 10,000–20,000 men on each side. The Mamluks lured the Mongols into the hills where their main force waited; Kitbuqa was captured and executed.", "es": "Quizá entre 10 000 y 20 000 hombres por bando. Los mamelucos atrajeron a los mongoles hacia las colinas donde esperaba su fuerza principal; Kitbuqa fue capturado y ejecutado." } }
+      ],
+      "events": [
+        { "icon": "⚱️", "date": "1259-08-11", "text": { "en": "Great Khan Möngke dies besieging a Song fortress in Sichuan", "es": "El gran kan Möngke muere asediando una fortaleza Song en Sichuan" } },
+        { "icon": "⚔️", "date": "1260", "text": { "en": "Kublai and Ariq Böke both claim the throne: civil war until 1264", "es": "Kublai y Ariq Böke reclaman ambos el trono: guerra civil hasta 1264" } }
+      ],
+      "camera": { "lon": 40, "lat": 34, "zoom": 3.4 }
+    },
+    {
+      "date": "1273-03-14",
+      "title": { "en": "The siege of Xiangyang", "es": "El asedio de Xiangyang" },
+      "text": {
+        "en": "Kublai, now ruling China as emperor of a new Yuan dynasty, besieges the Song fortress city of Xiangyang for five years. Its fall in 1273 opens the way down the Yangtze.",
+        "es": "Kublai, que gobierna ya China como emperador de una nueva dinastía Yuan, asedia durante cinco años la ciudad fortaleza Song de Xiangyang. Su caída en 1273 abre el camino del Yangtsé."
+      },
+      "details": {
+        "en": "Kublai won the civil war in 1264, moved his capital to Dadu, today's Beijing, and in 1271 proclaimed the Yuan dynasty. The Song still held southern China, defended by rivers, walled cities and a strong navy. The twin cities of Xiangyang and Fancheng, on either bank of the Han River, blocked the way south. From 1268 Kublai's generals, among them Song defectors, surrounded them and built a fleet, but supplies kept getting through by river. Then two Muslim engineers sent from the Mongol khanate in Persia built counterweight trebuchets that hurled huge stones. Fancheng was stormed early in 1273 and its people killed, and in March Xiangyang's commander surrendered. Song resistance in the middle Yangtze soon collapsed.",
+        "es": "Kublai ganó la guerra civil en 1264, trasladó su capital a Dadu, la actual Pekín, y en 1271 proclamó la dinastía Yuan. Los Song aún dominaban el sur de China, defendido por ríos, ciudades amuralladas y una fuerte marina. Las ciudades gemelas de Xiangyang y Fancheng, a ambas orillas del río Han, cerraban el camino hacia el sur. Desde 1268, los generales de Kublai, entre ellos desertores Song, las rodearon y construyeron una flota, pero los suministros seguían llegando por el río. Entonces dos ingenieros musulmanes enviados desde el kanato mongol de Persia construyeron trabuquetes de contrapeso que lanzaban enormes piedras. Fancheng fue tomada al asalto a comienzos de 1273 y sus habitantes asesinados, y en marzo el comandante de Xiangyang se rindió. La resistencia Song en el Yangtsé medio no tardó en derrumbarse."
+      },
+      "control": { "mongols": [{ "prev": true }, { "ref": "xiangyang" }] },
+      "moves": [
+        { "side": "mongols", "path": [[113.6, 35.0], [112.8, 33.6], [112.2, 32.2]], "label": { "en": "Kublai's armies (1268)", "es": "Los ejércitos de Kublai (1268)" } }
+      ],
+      "battles": [
+        { "name": { "en": "Siege of Xiangyang", "es": "Asedio de Xiangyang" }, "at": [112.14, 32.01], "date": "1273-03-14", "winner": "mongols",
+          "details": { "en": "About 100,000 Mongol and Chinese troops with a large fleet against a small Song garrison resupplied by river; the counterweight trebuchets decided the five-year siege.", "es": "Unos 100 000 soldados mongoles y chinos con una gran flota contra una pequeña guarnición Song abastecida por el río; los trabuquetes de contrapeso decidieron un asedio de cinco años." } }
+      ],
+      "events": [
+        { "icon": "👑", "date": "1271-12-18", "text": { "en": "Kublai proclaims the Yuan dynasty in Dadu (Beijing)", "es": "Kublai proclama la dinastía Yuan en Dadu (Pekín)" }, "at": [116.4, 39.9] }
+      ],
+      "camera": { "lon": 113, "lat": 34, "zoom": 3.4 }
+    },
+    {
+      "date": "1279-03-19",
+      "title": { "en": "Yamen: the end of the Song", "es": "Yamen: el fin de los Song" },
+      "text": {
+        "en": "Bayan's armies sweep down the Yangtze and take the Song capital in 1276. Loyalists fight on in the south until the sea battle of Yamen in 1279. All of China is now under Mongol rule.",
+        "es": "Los ejércitos de Bayan bajan por el Yangtsé y toman la capital Song en 1276. Los leales siguen luchando en el sur hasta la batalla naval de Yamen, en 1279. Toda China queda bajo dominio mongol."
+      },
+      "details": {
+        "en": "The general Bayan led a huge army down the Yangtze, routing the Song forces at Dingjiazhou in 1275. The capital, Lin'an (Hangzhou), surrendered without a fight in 1276, and the child emperor and the empress dowager were taken north. Loyal officials crowned two more child emperors and fled south by sea. In March 1279, at Yamen near today's Macau, the Yuan fleet broke the last Song fleet, which had chained its ships together. The minister Lu Xiufu jumped into the sea with the seven-year-old emperor in his arms, and tens of thousands of courtiers, soldiers and their families died. For the first time all of China was ruled by a dynasty from the steppe. The Mongol realms, though already divided, now covered some 24 million km², the largest contiguous empire in history.",
+        "es": "El general Bayan bajó por el Yangtsé con un enorme ejército y derrotó a las fuerzas Song en Dingjiazhou en 1275. La capital, Lin'an (Hangzhou), se rindió sin luchar en 1276, y el niño emperador y la emperatriz viuda fueron llevados al norte. Funcionarios leales coronaron a otros dos niños emperadores y huyeron al sur por mar. En marzo de 1279, en Yamen, cerca de la actual Macao, la flota Yuan destrozó a la última flota Song, que había encadenado sus barcos entre sí. El ministro Lu Xiufu se arrojó al mar con el emperador, de siete años, en brazos, y murieron decenas de miles de cortesanos, soldados y sus familias. Por primera vez, toda China quedó gobernada por una dinastía venida de la estepa. Los dominios mongoles, aunque ya divididos, cubrían unos 24 millones de km², el mayor imperio continuo de la historia."
+      },
+      "control": { "mongols": [{ "prev": true }, { "ref": "song" }, "CHN"], "song": null },
+      "moves": [
+        { "side": "mongols", "path": [[112.2, 32.0], [113.5, 30.6], [114.3, 30.5], [116.0, 29.8], [117.6, 30.8], [118.8, 32.0], [119.6, 31.0], [120.1, 30.32]], "label": { "en": "Bayan to Lin'an (1274–1276)", "es": "Bayan hacia Lin'an (1274–1276)" } },
+        { "side": "mongols", "path": [[120.1, 30.2], [119.3, 26.1], [116.7, 23.4], [114.5, 22.6], [113.2, 22.3]], "label": { "en": "Pursuit of the Song court", "es": "Persecución de la corte Song" } }
+      ],
+      "battles": [
+        { "name": { "en": "Battle of Yamen", "es": "Batalla de Yamen" }, "at": [113.08, 22.27], "date": "1279-03-19", "winner": "mongols",
+          "casualties": { "song": 100000, "note": { "en": "At least; most were courtiers, sailors and their families, killed in the fighting or drowned.", "es": "Como mínimo; la mayoría eran cortesanos, marinos y sus familias, muertos en el combate o ahogados." } },
+          "details": { "en": "A Yuan fleet of about 50 warships and 20,000 men against the last Song fleet of over 1,000 ships, most of them transports carrying the court.", "es": "Una flota Yuan de unos 50 barcos de guerra y 20 000 hombres contra la última flota Song, de más de 1000 barcos, la mayoría transportes con la corte a bordo." } }
+      ],
+      "events": [
+        { "icon": "🏳️", "date": "1276", "text": { "en": "Lin'an (Hangzhou), the Song capital, surrenders", "es": "Se rinde Lin'an (Hangzhou), la capital Song" }, "at": [120.15, 30.25] }
+      ],
+      "camera": { "lon": 114, "lat": 28, "zoom": 3.0 }
+    },
+    {
+      "date": "1281-08-15",
+      "title": { "en": "The 'divine wind' over Japan", "es": "El 'viento divino' sobre Japón" },
+      "text": {
+        "en": "Kublai twice sends fleets against Japan. In 1274 the invaders withdraw after landing at Hakata Bay; in 1281 a huge armada is wrecked by a typhoon, the 'kamikaze'.",
+        "es": "Kublai envía dos veces flotas contra Japón. En 1274 los invasores se retiran tras desembarcar en la bahía de Hakata; en 1281 una enorme armada naufraga en un tifón, el 'kamikaze'."
+      },
+      "details": {
+        "en": "Japan's military government at Kamakura ignored Kublai's demands to submit. In November 1274 a Mongol, Chinese and Korean force of about 30,000 sailed from Korea, killed many of the people of Tsushima and Iki and landed at Hakata Bay. After a day of fighting it went back to its ships, and a storm sank many of them on the way home. The Japanese then built a stone wall along the bay. In 1281 two fleets came, one from Korea and a much larger one from southern China, with perhaps 140,000 men. Held off for weeks by the wall and by Japanese night raids, they were struck on 15 August by a typhoon that wrecked most of the ships; the soldiers left on shore were killed or enslaved. Kublai's later expeditions to Vietnam and Java also failed.",
+        "es": "El gobierno militar de Japón, en Kamakura, ignoró las exigencias de sumisión de Kublai. En noviembre de 1274 una fuerza mongola, china y coreana de unos 30 000 hombres zarpó de Corea, mató a muchos habitantes de Tsushima e Iki y desembarcó en la bahía de Hakata. Tras un día de combates volvió a sus barcos, y una tormenta hundió muchos de ellos en el regreso. Los japoneses levantaron después un muro de piedra a lo largo de la bahía. En 1281 llegaron dos flotas, una desde Corea y otra mucho mayor desde el sur de China, con quizá 140 000 hombres. Contenidas durante semanas por el muro y por las incursiones nocturnas japonesas, el 15 de agosto las golpeó un tifón que destrozó la mayoría de los barcos; los soldados que quedaron en tierra fueron asesinados o esclavizados. Las expediciones posteriores de Kublai a Vietnam y Java también fracasaron."
+      },
+      "moves": [
+        { "side": "mongols", "path": [[128.6, 35.2], [129.25, 34.45], [129.7, 33.8], [130.28, 33.65]], "label": { "en": "1274: Hakata Bay", "es": "1274: bahía de Hakata" } },
+        { "side": "mongols", "path": [[121.6, 29.9], [124.5, 31.0], [127.5, 32.6], [129.62, 33.36]], "label": { "en": "1281: fleet from southern China", "es": "1281: flota del sur de China" } }
+      ],
+      "battles": [
+        { "name": { "en": "Battle of Bun'ei", "es": "Batalla de Bun'ei" }, "at": [130.35, 33.62], "date": "1274-11-19", "winner": "none",
+          "result": { "en": "The invaders withdraw, and a storm sinks many of their ships.", "es": "Los invasores se retiran y una tormenta hunde muchos de sus barcos." },
+          "casualties": { "mongols": 13500, "note": { "en": "Invaders lost, most of them drowned on the way home (estimate).", "es": "Pérdidas de los invasores, la mayoría ahogados en el regreso (estimación)." } } },
+        { "name": { "en": "Battle of Kōan", "es": "Batalla de Kōan" }, "at": [129.73, 33.4], "date": "1281-08-15", "winner": "none",
+          "result": { "en": "Japanese victory: a typhoon destroys most of the invasion fleet.", "es": "Victoria japonesa: un tifón destruye la mayor parte de la flota invasora." },
+          "casualties": { "mongols": 120000, "note": { "en": "Killed, drowned or captured, by one modern estimate; Japanese losses were far smaller.", "es": "Muertos, ahogados o capturados, según una estimación actual; las pérdidas japonesas fueron mucho menores." } } }
+      ],
+      "events": [
+        { "icon": "🧱", "date": "1276", "text": { "en": "The Japanese build a stone wall along Hakata Bay", "es": "Los japoneses levantan un muro de piedra a lo largo de la bahía de Hakata" } }
+      ],
+      "camera": { "lon": 127, "lat": 33.5, "zoom": 4.0 }
+    },
+    {
+      "date": "1294-02-18",
+      "title": { "en": "Four khanates", "es": "Cuatro kanatos" },
+      "text": {
+        "en": "When Kublai dies in 1294, the empire is in practice four separate states: his Yuan dynasty in China and Mongolia (red), the Golden Horde, the Chagatai Khanate and the Ilkhanate.",
+        "es": "Cuando Kublai muere en 1294, el imperio son en la práctica cuatro estados distintos: su dinastía Yuan en China y Mongolia (en rojo), la Horda de Oro, el kanato de Chagatai y el Iljanato."
+      },
+      "details": {
+        "en": "The empire's unity had ended in the civil wars that followed Möngke's death. The Golden Horde of Batu's descendants ruled the steppe from the Danube to Siberia and took tribute from the Rus' principalities; it fought Hulagu's heirs over the Caucasus. The Chagatai Khanate held Central Asia, where Kaidu, a grandson of Ögedei, fought Kublai for decades. The Ilkhanate of Hulagu's line ruled Iran, Iraq and Anatolia and converted to Islam in 1295. The Yuan emperors kept the title of Great Khan, and in 1304 the other khanates recognised it again, but only in name. Across this vast space trade and travel flourished, as the journey of Marco Polo shows, and the same routes may later have helped carry the Black Death west.",
+        "es": "La unidad del imperio terminó con las guerras civiles que siguieron a la muerte de Möngke. La Horda de Oro, de los descendientes de Batú, dominaba la estepa desde el Danubio hasta Siberia y cobraba tributo a los principados de la Rus; luchó contra los herederos de Hulagu por el Cáucaso. El kanato de Chagatai ocupaba Asia central, donde Kaidu, nieto de Ögedei, combatió a Kublai durante décadas. El Iljanato de la estirpe de Hulagu gobernaba Irán, Irak y Anatolia y se convirtió al islam en 1295. Los emperadores Yuan conservaron el título de gran kan, y en 1304 los demás kanatos volvieron a reconocerlo, pero solo de nombre. En este enorme espacio florecieron el comercio y los viajes, como muestra el de Marco Polo, y esas mismas rutas quizá ayudaron después a llevar la peste negra hacia el oeste."
+      },
+      "aftermath": true,
+      "control": {
+        "mongols": [{ "hist": "Great Khanate", "year": 1300 }, { "hist": "Tibet", "year": 1300 }],
+        "mamluks": { "minus": [{ "hist": "Mamluke Sultanate", "year": 1300 }, { "cur": "mongols" }] },
+        "golden": { "minus": [[{ "hist": "Khanate of the Golden Horde", "year": 1300 }, { "hist": "Grand Duchy of Moscow", "year": 1300 }, { "hist": "Ryazan", "year": 1300 }], { "cur": "mongols" }, { "cur": "mamluks" }] },
+        "chagatai": { "minus": [{ "hist": "Chagatai Khanate", "year": 1300 }, { "cur": "mongols" }, { "cur": "golden" }] },
+        "ilkhan": { "minus": [[{ "hist": "Ilkhanate", "year": 1300 }, { "hist": "Seljuk Caliphate", "year": 1300 }, { "hist": "Georgia", "year": 1300 }], { "cur": "mongols" }, { "cur": "mamluks" }, { "cur": "golden" }, { "cur": "chagatai" }] }
+      },
+      "events": [
+        { "icon": "⚱️", "text": { "en": "Kublai Khan dies in Dadu (Beijing)", "es": "Kublai Kan muere en Dadu (Pekín)" }, "at": [116.4, 39.9] }
+      ],
+      "camera": { "lon": 78, "lat": 45, "zoom": 1.5 }
+    }
+  ],
+  "outcome": {
+    "en": "The conquests killed millions and destroyed cities from China to Hungary, some of which never recovered. They also tied Eurasia together: under Mongol protection, goods, ideas, technologies and travellers moved between China, Persia and Europe as never before. Their successor states shaped modern Russia, China, Iran and Central Asia; the Yuan fell in 1368, while the Golden Horde lasted into the 15th century.",
+    "es": "Las conquistas mataron a millones de personas y destruyeron ciudades de China a Hungría, algunas de las cuales nunca se recuperaron. También unieron Eurasia: bajo protección mongola, mercancías, ideas, técnicas y viajeros circularon entre China, Persia y Europa como nunca antes. Sus estados sucesores marcaron la historia de las actuales Rusia, China, Irán y Asia central; los Yuan cayeron en 1368, y la Horda de Oro duró hasta el siglo XV."
+  },
+  "sources": [
+    { "title": "Wikipedia: Mongol conquests", "url": "https://en.wikipedia.org/wiki/Mongol_conquests" },
+    { "title": "Wikipedia: Destruction under the Mongol Empire", "url": "https://en.wikipedia.org/wiki/Destruction_under_the_Mongol_Empire" },
+    { "title": "Wikipedia: Genghis Khan", "url": "https://en.wikipedia.org/wiki/Genghis_Khan" },
+    { "title": "Wikipedia: Mongol conquest of Western Xia", "url": "https://en.wikipedia.org/wiki/Mongol_conquest_of_Western_Xia" },
+    { "title": "Wikipedia: Mongol conquest of the Jin dynasty", "url": "https://en.wikipedia.org/wiki/Mongol_conquest_of_the_Jin_dynasty" },
+    { "title": "Wikipedia: Mongol invasion of the Khwarazmian Empire", "url": "https://en.wikipedia.org/wiki/Mongol_invasion_of_the_Khwarazmian_Empire" },
+    { "title": "Wikipedia: Battle of the Kalka River", "url": "https://en.wikipedia.org/wiki/Battle_of_the_Kalka_River" },
+    { "title": "Wikipedia: Mongol invasion of Kievan Rus'", "url": "https://en.wikipedia.org/wiki/Mongol_invasion_of_Kievan_Rus%27" },
+    { "title": "Wikipedia: First Mongol invasion of Hungary", "url": "https://en.wikipedia.org/wiki/First_Mongol_invasion_of_Hungary" },
+    { "title": "Wikipedia: Siege of Baghdad (1258)", "url": "https://en.wikipedia.org/wiki/Siege_of_Baghdad_(1258)" },
+    { "title": "Wikipedia: Battle of Ain Jalut", "url": "https://en.wikipedia.org/wiki/Battle_of_Ain_Jalut" },
+    { "title": "Wikipedia: Battle of Xiangyang", "url": "https://en.wikipedia.org/wiki/Battle_of_Xiangyang" },
+    { "title": "Wikipedia: Battle of Yamen", "url": "https://en.wikipedia.org/wiki/Battle_of_Yamen" },
+    { "title": "Wikipedia: Mongol invasions of Japan", "url": "https://en.wikipedia.org/wiki/Mongol_invasions_of_Japan" },
+    { "title": "Wikipedia: Division of the Mongol Empire", "url": "https://en.wikipedia.org/wiki/Division_of_the_Mongol_Empire" },
+    { "title": "Historical borders: aourednik/historical-basemaps", "url": "https://github.com/aourednik/historical-basemaps" }
+  ]
+}

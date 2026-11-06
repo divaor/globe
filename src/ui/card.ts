@@ -44,8 +44,8 @@ export class CountryCard {
     if (on) requestAnimationFrame(() => document.documentElement.style.setProperty('--cc-h', `${this.el.offsetHeight}px`));
   }
 
-  /** Shows arbitrary content (historical polities, quiz feedback...) in the card. */
-  showCustom(iconText: string, title: string, sub: string, rows: InfoRow[], links: { label: string; href?: string; onClick?: () => void }[] = []) {
+  /** Shows arbitrary content (historical polities, battles, quiz feedback...) in the card; `notes` are paragraphs under the rows. */
+  showCustom(iconText: string, title: string, sub: string, rows: InfoRow[], links: { label: string; href?: string; onClick?: () => void }[] = [], notes: string[] = []) {
     clear(this.body);
     const actions = h('div', { class: 'card-actions' });
     for (const l of links) {
@@ -57,6 +57,7 @@ export class CountryCard {
     add(this.body,
       h('div', { class: 'card-head' }, h('span', { class: 'flag-emoji' }, iconText), h('div', null, h('div', { class: 'card-title' }, title), h('div', { class: 'card-sub' }, sub))),
       h('div', { class: 'rows' }, rows.map(rowEl)),
+      ...notes.map((n) => h('p', { class: 'card-note' }, n)),
       links.length ? actions : null);
     this.el.hidden = false;
     this.setCompact(false);

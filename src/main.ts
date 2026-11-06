@@ -11,6 +11,8 @@ import { PersonalMaps } from './personal/personal';
 declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps } } }
 
 async function boot() {
+  // Read before the app rewrites the address with its own state.
+  const shared = new URLSearchParams(location.hash.slice(1));
   const root = document.getElementById('app')!;
   const canvases = {
     bg: document.getElementById('bg') as HTMLCanvasElement,
@@ -48,6 +50,9 @@ async function boot() {
   registerSW(shell);
   // Home-screen shortcut: open straight into ambient mode.
   if (/ambient=1/.test(location.hash)) setTimeout(() => void shell.ambient.start(), 600);
+  // A shared war: #war=<id>&step=<n>.
+  const war = shared.get('war');
+  if (war) setTimeout(() => void time.wars.open(war, Number(shared.get('step') ?? 1) - 1).catch(() => {}), 300);
 }
 
 async function registerSW(shell: Shell) {

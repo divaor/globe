@@ -1,9 +1,11 @@
-// Time-travel modes (political history, plate tectonics) behind the "Time travel" dock button.
+// Time-travel modes (political history, plate tectonics, wars and conquests) behind the "Time
+// travel" dock button.
 import { History } from 'lucide';
 import { h } from '../ui/dom';
 import { t } from '../app/i18n';
 import { HistoryMode } from './history';
 import { PangeaMode } from './pangea';
+import { WarsMode } from './wars';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 
@@ -19,6 +21,7 @@ export interface Mode {
 
 export class TimeTravel {
   readonly modes: Mode[] = [];
+  readonly wars: WarsMode;
 
   constructor(private app: App, private shell: Shell) {
     const history = new HistoryMode(app, shell);
@@ -30,6 +33,12 @@ export class TimeTravel {
     this.add({
       id: 'pangea', icon: '🌋', title: () => t('pangeaTitle'), desc: () => t('pangeaDesc'),
       enter: () => pangea.enter(), exit: () => pangea.exit(), tap: (lon, lat) => pangea.tap(lon, lat),
+    });
+    // Choosing it opens the list of conflicts; the mode starts when one is picked.
+    const wars = (this.wars = new WarsMode(app, shell));
+    this.add({
+      id: 'wars', icon: '⚔️', title: () => t('warsTitle'), desc: () => t('warsDesc'),
+      enter: () => wars.pick(), exit: () => wars.exit(), tap: (lon, lat) => wars.tap(lon, lat),
     });
     shell.addDock({ id: 'time', icon: History, label: () => t('timeTravelShort'), order: 30, onClick: () => this.open() });
     // In a mode, taps go to the mode instead of selecting today's countries.

@@ -293,6 +293,8 @@ export class App {
   }
 
   shareUrl(): string {
+    // A time-travel mode that keeps its own place in the address (a war and its step) shares that.
+    if (this.mode && /[#&]war=/.test(location.hash)) return location.href;
     return `${location.origin}${location.pathname}#${this.shareHash()}`;
   }
 

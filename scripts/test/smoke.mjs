@@ -7,7 +7,8 @@
 // get lighter while the map moves; the compact country strip; the filters search box stays clear
 // of the scrolled list; the filters list stays put when you tap a filter and when you reopen it;
 // data grids keep their colours over land while the map moves; northern countries stay drawn on
-// zoomed-in flat maps; yesterday's satellite picture is not empty (needs NASA GIBS online).
+// zoomed-in flat maps; yesterday's satellite picture is not empty (needs NASA GIBS online); the
+// wars and conquests mode plays a conflict, with battle cards and step details.
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 let chromium, devices;
@@ -302,6 +303,49 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   });
   check(r.ready && r.lit > 0.5 && !!r.sat, `satellite picture of ${r.date} from ${r.sat} is not empty (${Math.round(r.lit * 100)}% lit${r.error ? ', ' + r.error : ''})`);
   check(!errors.length, `no page errors with the satellite picture${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 11. Wars and conquests: pick a conflict from Time travel, it plays on the map; a battle marker
+// opens its card; "Details" tells the step; exiting brings the normal map back.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=30,35,1.5&lang=en');
+  await page.waitForTimeout(4200);
+  await page.tap('[data-dock="time"]');
+  await page.waitForTimeout(400);
+  await page.locator('.mode-card', { hasText: 'Wars' }).tap();
+  await page.waitForSelector('.war-card[data-war="alexander"]', { timeout: 15000 });
+  const listed = await page.$$eval('.war-card', (els) => els.length);
+  await page.tap('.war-card[data-war="alexander"]');
+  await page.waitForSelector('.warbar', { timeout: 15000 });
+  await page.waitForTimeout(2500);
+  const first = await page.evaluate(() => ({ mode: window.atlas.app.mode, date: document.querySelector('.wb-date').textContent, ticks: document.querySelectorAll('.wb-tick').length, playing: !!document.querySelector('.warbar .tb-play svg') }));
+  check(first.mode === 'wars' && first.ticks >= 3 && /BC/.test(first.date), `wars mode plays a conflict (${listed} listed; ${first.date}, ${first.ticks} steps)`);
+  // Step 4 of Alexander is Issus: territory drawn, battle marker tappable.
+  await page.evaluate(() => document.querySelectorAll('.wb-tick')[3].click());
+  await page.waitForTimeout(3200);
+  const r = await page.evaluate(() => {
+    const ren = window.atlas.app.renderer;
+    const px = (lon, lat) => { const p = ren.view.project(lon, lat); const d = document.getElementById('fg').getContext('2d').getImageData(Math.round(p[0] * ren.view.dpr), Math.round(p[1] * ren.view.dpr), 1, 1).data; return [...d]; };
+    return { macedon: px(22.5, 40.0), persia: px(44.4, 32.5), issus: ren.view.project(36.2, 36.85) };
+  });
+  const red = r.macedon[0] > r.macedon[2] + 40, blue = r.persia[2] > r.persia[0] + 30;
+  check(red && blue, `sides drawn in their colours (Macedon ${r.macedon.slice(0, 3)}, Persia ${r.persia.slice(0, 3)})`);
+  await page.touchscreen.tap(r.issus[0], r.issus[1]);
+  await page.waitForTimeout(600);
+  const card = await page.evaluate(() => { const c = document.querySelector('.country-card'); return c && !c.hidden ? c.innerText : ''; });
+  check(/Issus/.test(card) && /150/.test(card), `battle card with casualties (${card.split('\n')[0]})`);
+  await page.tap('.wb-more');
+  await page.waitForTimeout(500);
+  const details = await page.evaluate(() => ({ open: !document.querySelector('.sheet').hidden, battles: document.querySelectorAll('.war-battle').length, text: document.querySelector('.war-details')?.innerText.length ?? 0 }));
+  check(details.open && details.battles === 1 && details.text > 300, `step details (${details.battles} battle, ${details.text} characters)`);
+  await page.tap('.sheet .sheet-head .icon-btn');
+  await page.waitForTimeout(300);
+  await page.tap('.wb-tools .icon-btn:last-child');
+  await page.waitForTimeout(800);
+  const after = await page.evaluate(() => ({ mode: window.atlas.app.mode, bar: !!document.querySelector('.warbar'), stack: window.atlas.app.layers.map((l) => l.def.id).join(','), base: window.atlas.app.renderer.baseMap }));
+  check(after.mode === null && !after.bar && after.stack === 'political' && after.base, `leaving restores the map (${after.stack})`);
+  check(!errors.length, `no page errors in wars mode${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

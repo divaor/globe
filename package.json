@@ -1,7 +1,7 @@
 {
   "name": "globe",
   "private": true,
-  "version": "0.6.3",
+  "version": "0.7.0",
   "description": "Atlas Globe: a detailed, colorful, installable world globe with many map filters, projections, a political timeline and a Pangea animation.",
   "type": "module",
   "license": "GPL-3.0-or-later",
@@ -12,7 +12,9 @@
     "typecheck": "tsc --noEmit",
     "data:base": "node scripts/data/build-base.mjs",
     "test:smoke": "node scripts/test/smoke.mjs",
-    "check:data": "node scripts/data/winding.mjs --check public/data/base/*.json public/data/layers/*.json public/data/history/world_*.json public/data/paleo/*.json"
+    "test:wars": "node scripts/test/wars.mjs",
+    "check:data": "node scripts/data/winding.mjs --check public/data/base/*.json public/data/layers/*.json public/data/history/world_*.json public/data/paleo/*.json public/data/conflicts/*-areas.json && node scripts/data/build-conflicts.mjs --check",
+    "data:conflicts": "node scripts/data/build-conflicts.mjs"
   },
   "dependencies": {
     "d3-array": "^3.2.5",
@@ -38,6 +40,7 @@
     "@types/topojson-specification": "^1.0.5",
     "flag-icons": "^7.6.0",
     "mapshaper": "^0.7.101",
+    "polygon-clipping": "^0.15.7",
     "sharp": "^0.35.5",
     "topojson-server": "^3.0.1",
     "topojson-simplify": "^3.0.3",
