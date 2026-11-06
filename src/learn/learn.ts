@@ -7,9 +7,9 @@ import { dataUrl, loadJSON } from '../data/store';
 import { fmtWhen, itemWhen, wikiThumb, type CollectionItem, type StoryKind } from '../modes/stories';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
-import type { ProjectionId } from '../engine/projections';
 import type { TimeTravel } from '../modes';
 import type { RenderSettings } from '../engine/renderer';
+import { TOURS, type Tour, type TourStep } from './tours';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -375,14 +375,19 @@ export class Learn {
 
   // ---- Tours ----------------------------------------------------------------------------------
   private openTours() {
-    const list = h('div', { class: 'mode-list' });
-    for (const tour of TOURS) {
-      const c = h('button', { type: 'button', class: 'mode-card' }, h('span', { class: 'mode-icon' }, tour.icon),
-        h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, es() ? tour.es : tour.en), h('span', { class: 'mode-desc' }, `${tour.steps.length} ${L('stops', 'paradas')}`)));
-      c.addEventListener('click', () => void this.startTour(tour));
-      list.append(c);
+    const body = h('div');
+    const groups: [Tour['group'], string][] = [[undefined, L('Our planet', 'Nuestro planeta')], ['cities', L('Cities through time', 'Ciudades a través del tiempo')], ['history', L('History and culture', 'Historia y cultura')]];
+    for (const [group, title] of groups) {
+      const list = h('div', { class: 'mode-list' });
+      for (const tour of TOURS.filter((x) => x.group === group)) {
+        const c = h('button', { type: 'button', class: 'mode-card', 'data-tour': tour.en }, h('span', { class: 'mode-icon' }, tour.icon),
+          h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, es() ? tour.es : tour.en), h('span', { class: 'mode-desc' }, `${tour.steps.length} ${L('stops', 'paradas')}`)));
+        c.addEventListener('click', () => void this.startTour(tour));
+        list.append(c);
+      }
+      body.append(h('h3', { class: 'sec-title' }, title), list);
     }
-    this.shell.openPanel('tours', L('Guided tours', 'Visitas guiadas'), list);
+    this.shell.openPanel('tours', L('Guided tours', 'Visitas guiadas'), body);
   }
 
   private async startTour(tour: Tour) {
@@ -495,42 +500,3 @@ export class Learn {
     return null;
   }
 }
-
-// ---- Tour content ----------------------------------------------------------------------------
-interface TourStep {
-  title_en: string; title_es: string; en: string; es: string; icon?: string; fly?: [number, number, number]; projection?: ProjectionId; stack?: string[]; mode?: string;
-  /** A story step to show: [collection, story id, step number (from 1)]. */
-  story?: [StoryKind, string, number];
-}
-interface Tour { icon: string; en: string; es: string; steps: TourStep[] }
-
-const TOURS: Tour[] = [
-  { icon: '🌋', en: 'The Ring of Fire', es: 'El Cinturón de Fuego', steps: [
-    { title_en: 'The Ring of Fire', title_es: 'El Cinturón de Fuego', projection: 'globe', stack: ['plates', 'volcanoes'], fly: [-170, 10, 1], en: 'Three quarters of the world’s active volcanoes ring the Pacific Ocean, where ocean plates dive under their neighbours (blue lines).', es: 'Tres cuartas partes de los volcanes activos rodean el Pacífico, donde las placas oceánicas se hunden bajo sus vecinas (líneas azules).' },
-    { title_en: 'Japan', title_es: 'Japón', fly: [139, 36, 4], en: 'Four plates meet under Japan. Mount Fuji last erupted in 1707; Sakurajima erupts almost every day.', es: 'Cuatro placas se encuentran bajo Japón. El Fuji entró en erupción por última vez en 1707; el Sakurajima lo hace casi a diario.' },
-    { title_en: 'Indonesia', title_es: 'Indonesia', fly: [115, -6, 4], en: 'Tambora (1815) was the largest eruption in recorded history; the next year Europe had a "year without a summer".', es: 'El Tambora (1815) fue la mayor erupción de la historia registrada; al año siguiente Europa tuvo un «año sin verano».' },
-    { title_en: 'The Andes', title_es: 'Los Andes', fly: [-72, -20, 2.6], en: 'The Nazca plate sinks under South America, lifting the Andes and feeding volcanoes like Cotopaxi and Ojos del Salado, the highest on Earth.', es: 'La placa de Nazca se hunde bajo Sudamérica, levanta los Andes y alimenta volcanes como el Cotopaxi y el Ojos del Salado, el más alto del mundo.' },
-    { title_en: 'Alaska and the Cascades', title_es: 'Alaska y las Cascadas', fly: [-140, 52, 2.4], en: 'From the Aleutians to Mount St. Helens (1980), the northern Pacific rim is just as restless.', es: 'De las Aleutianas al Monte Santa Helena (1980), el borde norte del Pacífico es igual de inquieto.' },
-  ] },
-  { icon: '🌦️', en: 'Climates of the world', es: 'Los climas del mundo', steps: [
-    { title_en: 'Köppen climate zones', title_es: 'Zonas climáticas de Köppen', projection: 'equalEarth', stack: ['koppen'], fly: [0, 0, 1], en: 'Five letters, five families: A tropical, B dry, C temperate, D continental, E polar. They follow latitude, oceans and mountains.', es: 'Cinco letras, cinco familias: A tropical, B seco, C templado, D continental, E polar. Siguen la latitud, los océanos y las montañas.' },
-    { title_en: 'The Amazon (Af)', title_es: 'La Amazonía (Af)', fly: [-62, -4, 3], en: 'Rain every month and 27 °C all year: the largest rainforest on Earth.', es: 'Lluvia todos los meses y 27 °C todo el año: la mayor selva del planeta.' },
-    { title_en: 'The Sahara (BWh)', title_es: 'El Sáhara (BWh)', fly: [10, 23, 3], en: 'The largest hot desert: some places get rain only once in years.', es: 'El mayor desierto cálido: en algunos lugares solo llueve una vez en varios años.' },
-    { title_en: 'The Mediterranean (Cs)', title_es: 'El Mediterráneo (Cs)', fly: [15, 39, 4], en: 'Dry, hot summers and mild, wet winters, shared with California, central Chile, the Cape and south-west Australia.', es: 'Veranos secos y cálidos e inviernos suaves y húmedos, como en California, Chile central, El Cabo y el suroeste de Australia.' },
-    { title_en: 'Siberia (Dfc, Dfd)', title_es: 'Siberia (Dfc, Dfd)', fly: [120, 62, 2.6], en: 'The most extreme seasons: Verkhoyansk has recorded −68 °C and +38 °C.', es: 'Las estaciones más extremas: en Verjoyansk se han medido −68 °C y +38 °C.' },
-  ] },
-  { icon: '🌃', en: 'Earth at night', es: 'La Tierra de noche', steps: [
-    { title_en: 'Day and night, live', title_es: 'Día y noche, en vivo', projection: 'globe', stack: ['satellite', 'daynight', 'citylights'], fly: [20, 20, 1], en: 'The shadow line is where the sun is setting or rising right now. City lights glow on the night side.', es: 'La línea de sombra es donde el sol se pone o sale ahora mismo. Las luces de las ciudades brillan en el lado nocturno.' },
-    { title_en: 'Europe', title_es: 'Europa', fly: [10, 50, 3.5], en: 'A dense web of cities: the Po valley, the Rhine and the Ruhr, London and Paris.', es: 'Una densa red de ciudades: el valle del Po, el Rin y el Ruhr, Londres y París.' },
-    { title_en: 'The Nile', title_es: 'El Nilo', fly: [31, 27, 4], en: 'Almost all of Egypt’s 110 million people live along a thin green river line in the desert.', es: 'Casi todos los 110 millones de egipcios viven en una fina línea verde junto al río, en pleno desierto.' },
-    { title_en: 'India', title_es: 'India', fly: [80, 22, 3.2], en: 'The Ganges plain is one of the most densely populated places on Earth.', es: 'La llanura del Ganges es uno de los lugares más poblados de la Tierra.' },
-  ] },
-  { icon: '📐', en: 'Why maps lie about size', es: 'Por qué los mapas mienten sobre el tamaño', steps: [
-    { title_en: 'Mercator', title_es: 'Mercator', projection: 'mercator', stack: ['political'], fly: [0, 30, 1], en: 'On the Mercator map, Greenland looks as big as Africa.', es: 'En el mapa de Mercator, Groenlandia parece tan grande como África.' },
-    { title_en: 'The truth', title_es: 'La verdad', projection: 'equalEarth', fly: [0, 20, 1], en: 'On an equal-area map you see the truth: Africa is 14 times larger than Greenland. Try "True size" in the More menu.', es: 'En un mapa de áreas iguales se ve la verdad: África es 14 veces mayor que Groenlandia. Prueba «Tamaño real» en el menú Más.' },
-    { title_en: 'The globe', title_es: 'El globo', projection: 'globe', fly: [-30, 40, 1], en: 'Only a globe shows sizes, shapes and distances all at once.', es: 'Solo un globo muestra a la vez tamaños, formas y distancias.' },
-  ] },
-  { icon: '🦕', en: 'From Pangea to today', es: 'De Pangea a hoy', steps: [
-    { title_en: 'Pangea', title_es: 'Pangea', mode: 'pangea', en: 'Press play on the timeline: 250 million years of drifting continents. Africa and South America fit like puzzle pieces.', es: 'Pulsa reproducir en la línea de tiempo: 250 millones de años de continentes a la deriva. África y Sudamérica encajan como piezas de puzle.' },
-  ] },
-];

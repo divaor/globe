@@ -8,7 +8,8 @@
 // of the scrolled list; the filters list stays put when you tap a filter and when you reopen it;
 // data grids keep their colours over land while the map moves; northern countries stay drawn on
 // zoomed-in flat maps; yesterday's satellite picture is not empty (needs NASA GIBS online); the
-// wars and conquests mode plays a conflict, with battle cards and step details.
+// wars and conquests mode plays a conflict, with battle cards and step details; a story opens from a
+// shared link; the quizzes made from the stories, and a city tour that hops between collections.
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 let chromium, devices;
@@ -378,6 +379,63 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const after = await page.evaluate(() => ({ mode: window.atlas.app.mode, bar: !!document.querySelector('.warbar'), base: window.atlas.app.renderer.baseMap, story: document.documentElement.classList.contains('mode-story') }));
   check(after.mode === null && !after.bar && after.base && !after.story, 'leaving a story restores the map');
   check(!errors.length, `no page errors in a story${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 13. Learn: the quizzes made from the stories ask ten questions with four answers (or a tap on the
+// globe), and "See it in the story" opens the story at the item; a city tour opens steps of stories
+// from different collections and flies to the city each time.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en');
+  const menu = async (re) => {
+    await page.tap('[data-dock="more"]');
+    await page.waitForTimeout(300);
+    await page.evaluate((re) => [...document.querySelectorAll('.menu-item')].find((x) => new RegExp(re).test(x.textContent))?.click(), re);
+    await page.waitForTimeout(400);
+  };
+  const storyButton = () => page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /See it in the story/.test(b.textContent)));
+  for (const kind of ['when', 'dish', 'era']) {
+    await menu('Quiz');
+    await page.evaluate((k) => document.querySelector(`[data-quiz="${k}"]`).click(), kind);
+    await page.waitForSelector('.learn-card:not([hidden]) .quiz-opt', { timeout: 30000 });
+    const q = await page.evaluate(() => ({ head: document.querySelector('.learn-card .tool-head')?.textContent ?? '', q: document.querySelector('.learn-card .quiz-q')?.textContent, item: document.querySelector('.learn-card .quiz-item')?.textContent, opts: [...document.querySelectorAll('.learn-card .quiz-opt')].map((b) => b.textContent) }));
+    await page.evaluate(() => document.querySelector('.learn-card .quiz-opt').click());
+    await page.waitForTimeout(400);
+    const fb = await page.evaluate(() => document.querySelector('.learn-card .quiz-fb')?.textContent ?? '');
+    const story = await page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].some((b) => /See it in the story/.test(b.textContent)));
+    check(/1\/10/.test(q.head) && q.opts.length === 4 && new Set(q.opts).size === 4 && !!q.item && !!fb && story, `quiz "${kind}": ${q.q} ${q.item} (${q.opts.join(' / ')})`);
+  }
+  // Where in the world: a tap on the globe is the answer; then the story opens at the item.
+  await menu('Quiz');
+  await page.evaluate(() => document.querySelector('[data-quiz="where"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .quiz-item', { timeout: 30000 });
+  await page.touchscreen.tap(206, 640);
+  await page.waitForTimeout(700);
+  const fb = await page.evaluate(() => document.querySelector('.learn-card .quiz-fb')?.textContent ?? '');
+  check(/km/.test(fb), `quiz "where": a tap on the globe is scored by distance (${fb.slice(0, 70)})`);
+  await page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /See it in the story/.test(b.textContent))?.click());
+  await page.waitForSelector('.warbar', { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(1500);
+  const opened = await page.evaluate(() => ({ mode: window.atlas.app.mode, card: !!document.querySelector('.country-card:not([hidden])') }));
+  check(['eras', 'food', 'structures'].includes(opened.mode) && opened.card, `"See it in the story" opens the story at the item (${opened.mode})`);
+  // A city tour: Hagia Sophia (Great structures), then the siege of 717 (Wars), both over Istanbul.
+  await menu('Guided tours');
+  await page.evaluate(() => document.querySelector('[data-tour="Istanbul through time"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
+  const stop = async () => {
+    await page.waitForTimeout(3500);
+    return page.evaluate(() => { const v = window.atlas.app.renderer.view; return { mode: window.atlas.app.mode, lon: v.lon, lat: v.lat, zoom: v.zoom, n: document.querySelector('.learn-card .tour-tools')?.textContent ?? '', bar: document.querySelector('.wb-title')?.textContent ?? '' }; });
+  };
+  const near = (s) => Math.abs(s.lon - 28.97) < 0.3 && Math.abs(s.lat - 41.01) < 0.3 && s.zoom > 15;
+  const s1 = await stop();
+  check(s1.mode === 'structures' && near(s1) && /1\/9/.test(s1.n), `a city tour opens a Great structures step over Istanbul (${s1.bar}, zoom ${s1.zoom.toFixed(0)})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Next"]').click());
+  const s2 = await stop();
+  check(s2.mode === 'wars' && near(s2) && /2\/9/.test(s2.n), `its next stop is a Wars step, still over Istanbul (${s2.bar})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
+  check(await page.evaluate(() => document.querySelector('.learn-card').hidden), 'closing the tour hides its card');
+  check(!errors.length, `no page errors in quizzes and tours${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

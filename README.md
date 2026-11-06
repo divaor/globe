@@ -37,8 +37,20 @@ spinning full-screen as an ambient display. English and Spanish.
   - Live: day and night with city lights, earthquakes (USGS), weather now (Open-Meteo), the ISS.
 - **Time travel:** borders through time (54 maps, 123,000 BC → 2010) with start/end, play, speed and
   "What changed"; Pangea to today (Merdith et al. 2021 plate model, 1,000 Ma → today) with the geological time scale.
+  Researched stories play step by step on the map, with territory, routes, markers and a card with a Wikipedia
+  picture for every person, work, place, dish or building:
+  - Wars and conquests: 26 conflicts, from Alexander and Rome to the World Wars, with battles and aftermath.
+  - Eras and ideas: 11 stories, from classical Athens and the Islamic Golden Age to the Renaissance, the
+    Enlightenment, the Industrial Revolution, modern art, rights and freedom, the Space Age and computing.
+  - Food through time: 10 stories (the dawn of farming, maize, wheat, rice, the potato, the Columbian Exchange,
+    spices, sugar, coffee, tea and chocolate) and 248 dishes of the world, with where and when they were born.
+  - Great structures: about 220 structures from Göbekli Tepe to the Burj Khalifa (why, how and by whom), the
+    Seven Wonders, the race to the sky, and bridges, canals and dams.
+  - Browse and search every item of a story or a whole collection; shared links open a story at its step.
 - **Explore:** measure distances (great circles, flight time), compare two countries, "true size" of countries.
-- **Learn & play:** quizzes (find the country, flags, capitals), guided tours, "On this day" (Wikipedia).
+- **Learn & play:** quizzes (find the country, flags, capitals, where in the world, when was it built or made,
+  dishes of the world, which era), guided tours (our planet, eight cities through time, history and culture),
+  "On this day" (Wikipedia).
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Ambient mode:** full-screen rotating globe with your filters, screen kept awake, clock, optional filter cycling.
 
@@ -79,6 +91,9 @@ Main sources: Natural Earth (public domain), NASA Blue Marble and GIBS, NOAA ETO
 GPCP, Köppen–Geiger (Kottek/Rubel), GeoNames (CC BY 4.0), aourednik/historical-basemaps (GPL-3.0),
 Merdith et al. 2021 plate model (CC BY 4.0), PB2002 plates (ODC-By), CIA World Factbook, World Bank,
 Our World in Data (CC BY 4.0), mledoze/countries (ODbL), Unicode CLDR, flag-icons (MIT).
+The Time travel stories are written from Wikipedia and the sources listed in each story
+(`scripts/data/conflicts/README.md`, `scripts/data/STORIES.md`); item pictures are Wikipedia page images,
+loaded from Wikipedia when a card opens.
 
 ## Licence
 
