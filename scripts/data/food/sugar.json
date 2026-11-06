@@ -1,0 +1,2657 @@
+{
+  "id": "sugar",
+  "name": {
+    "en": "Sugar",
+    "es": "El azúcar"
+  },
+  "icon": "🍬",
+  "era": "ancient",
+  "region": {
+    "en": "New Guinea, India, the Mediterranean, the Atlantic and the Caribbean",
+    "es": "Nueva Guinea, la India, el Mediterráneo, el Atlántico y el Caribe"
+  },
+  "start": "-7000",
+  "end": "2024",
+  "summary": {
+    "en": "From a sweet grass in New Guinea to the world's biggest crop: how sugar travelled, and the millions of enslaved and indentured people who paid for it.",
+    "es": "De una hierba dulce de Nueva Guinea al mayor cultivo del mundo: cómo viajó el azúcar y los millones de esclavos y trabajadores contratados que lo pagaron."
+  },
+  "camera": {
+    "lon": 145.5,
+    "lat": -5.8,
+    "zoom": 4.0
+  },
+  "sides": [
+    {
+      "id": "cane",
+      "name": {
+        "en": "Where sugar cane is grown",
+        "es": "Donde se cultiva la caña de azúcar"
+      },
+      "color": "#1e8449"
+    },
+    {
+      "id": "beet",
+      "name": {
+        "en": "Where sugar beet is grown",
+        "es": "Donde se cultiva la remolacha azucarera"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "haiti",
+      "name": {
+        "en": "Free Haiti",
+        "es": "Haití libre"
+      },
+      "color": "#2e86c1"
+    },
+    {
+      "id": "spread",
+      "name": {
+        "en": "How sugar spread",
+        "es": "Cómo se extendió el azúcar"
+      },
+      "color": "#d4a017"
+    },
+    {
+      "id": "slave",
+      "name": {
+        "en": "Slave ships (the Middle Passage)",
+        "es": "Barcos negreros (el pasaje del medio)"
+      },
+      "color": "#4a4a4a"
+    },
+    {
+      "id": "goods",
+      "name": {
+        "en": "Goods, sugar and rum",
+        "es": "Mercancías, azúcar y ron"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "indenture",
+      "name": {
+        "en": "Indentured labourers",
+        "es": "Trabajadores contratados"
+      },
+      "color": "#d35400"
+    }
+  ],
+  "defs": {
+    "new_guinea": [
+      "PNG",
+      {
+        "a1": "IDN",
+        "names": [
+          "Papua",
+          "West Papua"
+        ]
+      }
+    ],
+    "asia_cane": [
+      {
+        "a1": "IDN"
+      },
+      "PHL",
+      "MYS",
+      "TWN",
+      {
+        "and": [
+          "CHN",
+          {
+            "poly": [
+              [
+                104.0,
+                26.5
+              ],
+              [
+                120.5,
+                28.5
+              ],
+              [
+                122.0,
+                30.5
+              ],
+              [
+                121.0,
+                22.0
+              ],
+              [
+                108.0,
+                18.0
+              ],
+              [
+                104.0,
+                21.5
+              ]
+            ]
+          }
+        ]
+      },
+      "VNM",
+      "THA",
+      "KHM",
+      "LAO",
+      "MMR",
+      "IND",
+      "BGD",
+      "LKA",
+      "NPL"
+    ],
+    "khuzestan": {
+      "and": [
+        "IRN",
+        {
+          "poly": [
+            [
+              47.6,
+              33.0
+            ],
+            [
+              50.4,
+              32.6
+            ],
+            [
+              50.5,
+              30.2
+            ],
+            [
+              48.0,
+              29.9
+            ],
+            [
+              47.6,
+              31.0
+            ]
+          ]
+        }
+      ]
+    },
+    "med_cane": [
+      {
+        "and": [
+          "EGY",
+          {
+            "poly": [
+              [
+                29.0,
+                31.8
+              ],
+              [
+                32.6,
+                31.8
+              ],
+              [
+                33.0,
+                29.5
+              ],
+              [
+                32.9,
+                24.0
+              ],
+              [
+                31.3,
+                24.0
+              ],
+              [
+                30.4,
+                29.5
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "and": [
+          [
+            "LBN",
+            "ISR",
+            "PSE",
+            "SYR"
+          ],
+          {
+            "poly": [
+              [
+                34.2,
+                31.2
+              ],
+              [
+                35.4,
+                31.2
+              ],
+              [
+                36.3,
+                34.8
+              ],
+              [
+                35.6,
+                35.6
+              ],
+              [
+                35.0,
+                33.0
+              ]
+            ]
+          }
+        ]
+      },
+      "CYP",
+      {
+        "and": [
+          "ITA",
+          {
+            "poly": [
+              [
+                12.2,
+                38.4
+              ],
+              [
+                15.7,
+                38.4
+              ],
+              [
+                15.7,
+                36.6
+              ],
+              [
+                12.2,
+                36.6
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "and": [
+          {
+            "a1": "ESP",
+            "names": [
+              "Granada",
+              "Málaga",
+              "Almería"
+            ]
+          },
+          {
+            "poly": [
+              [
+                -5.0,
+                36.85
+              ],
+              [
+                -1.6,
+                37.0
+              ],
+              [
+                -1.6,
+                36.5
+              ],
+              [
+                -5.0,
+                36.3
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "atlantic": [
+      {
+        "a1": "PRT",
+        "names": [
+          "Madeira"
+        ]
+      },
+      {
+        "a1": "ESP",
+        "names": [
+          "Las Palmas",
+          "Santa Cruz de Tenerife"
+        ]
+      },
+      "STP"
+    ],
+    "brazil": [
+      {
+        "and": [
+          "BRA",
+          {
+            "poly": [
+              [
+                -34.6,
+                -6.5
+              ],
+              [
+                -34.6,
+                -9.5
+              ],
+              [
+                -37.6,
+                -13.5
+              ],
+              [
+                -38.8,
+                -15.6
+              ],
+              [
+                -39.6,
+                -15.4
+              ],
+              [
+                -39.3,
+                -12.2
+              ],
+              [
+                -37.0,
+                -9.6
+              ],
+              [
+                -35.6,
+                -6.6
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "and": [
+          "BRA",
+          {
+            "poly": [
+              [
+                -47.2,
+                -23.4
+              ],
+              [
+                -45.6,
+                -23.4
+              ],
+              [
+                -45.6,
+                -24.4
+              ],
+              [
+                -47.2,
+                -24.4
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "caribbean": [
+      "CUB",
+      "HTI",
+      "DOM",
+      "PRI",
+      "JAM",
+      "BRB",
+      "TTO",
+      "GUY",
+      "SUR",
+      "ATG",
+      "KNA",
+      "LCA",
+      "VCT",
+      "GRD",
+      "DMA",
+      {
+        "and": [
+          "FRA",
+          {
+            "poly": [
+              [
+                -61.95,
+                14.3
+              ],
+              [
+                -60.75,
+                14.3
+              ],
+              [
+                -60.75,
+                16.6
+              ],
+              [
+                -61.95,
+                16.6
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "indenture_lands": [
+      "MUS",
+      {
+        "and": [
+          "FRA",
+          {
+            "poly": [
+              [
+                55.1,
+                -20.8
+              ],
+              [
+                55.9,
+                -20.8
+              ],
+              [
+                55.9,
+                -21.5
+              ],
+              [
+                55.1,
+                -21.5
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "and": [
+          "FJI",
+          {
+            "poly": [
+              [
+                176.5,
+                -15.5
+              ],
+              [
+                179.9,
+                -15.5
+              ],
+              [
+                179.9,
+                -19.5
+              ],
+              [
+                176.5,
+                -19.5
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "and": [
+          "ZAF",
+          {
+            "poly": [
+              [
+                29.5,
+                -27.0
+              ],
+              [
+                33.0,
+                -26.8
+              ],
+              [
+                32.0,
+                -31.5
+              ],
+              [
+                29.5,
+                -31.0
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "and": [
+          "USA",
+          {
+            "poly": [
+              [
+                -93.8,
+                31.0
+              ],
+              [
+                -89.5,
+                31.0
+              ],
+              [
+                -89.0,
+                28.9
+              ],
+              [
+                -93.8,
+                29.4
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "and": [
+          "AUS",
+          {
+            "poly": [
+              [
+                145.0,
+                -16.0
+              ],
+              [
+                147.5,
+                -16.0
+              ],
+              [
+                153.6,
+                -24.5
+              ],
+              [
+                153.6,
+                -28.5
+              ],
+              [
+                150.0,
+                -28.0
+              ],
+              [
+                145.0,
+                -20.0
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "beet1801": [
+      {
+        "and": [
+          "POL",
+          {
+            "poly": [
+              [
+                15.5,
+                51.6
+              ],
+              [
+                18.2,
+                51.6
+              ],
+              [
+                18.2,
+                50.2
+              ],
+              [
+                15.5,
+                50.6
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "and": [
+          "DEU",
+          {
+            "poly": [
+              [
+                10.5,
+                52.6
+              ],
+              [
+                12.6,
+                52.6
+              ],
+              [
+                12.6,
+                51.3
+              ],
+              [
+                10.5,
+                51.3
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "and": [
+          "FRA",
+          {
+            "poly": [
+              [
+                1.5,
+                51.1
+              ],
+              [
+                4.3,
+                50.2
+              ],
+              [
+                3.8,
+                48.6
+              ],
+              [
+                1.5,
+                49.0
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "beet_today": [
+      {
+        "and": [
+          "FRA",
+          {
+            "poly": [
+              [
+                -5.5,
+                51.3
+              ],
+              [
+                8.5,
+                51.3
+              ],
+              [
+                8.5,
+                42.2
+              ],
+              [
+                -5.5,
+                42.2
+              ]
+            ]
+          }
+        ]
+      },
+      "DEU",
+      "POL",
+      "BEL",
+      "NLD",
+      "CZE",
+      "UKR",
+      "AUT",
+      "HUN",
+      "DNK",
+      "GBR",
+      {
+        "and": [
+          "RUS",
+          {
+            "poly": [
+              [
+                30.0,
+                56.5
+              ],
+              [
+                55.0,
+                56.5
+              ],
+              [
+                55.0,
+                44.0
+              ],
+              [
+                36.0,
+                44.0
+              ],
+              [
+                30.0,
+                50.0
+              ]
+            ]
+          }
+        ]
+      },
+      "TUR"
+    ],
+    "cane_today": [
+      {
+        "and": [
+          "BRA",
+          {
+            "poly": [
+              [
+                -53.5,
+                -15.0
+              ],
+              [
+                -39.0,
+                -15.0
+              ],
+              [
+                -42.0,
+                -23.5
+              ],
+              [
+                -50.0,
+                -26.0
+              ],
+              [
+                -55.0,
+                -23.0
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "and": [
+          "MEX",
+          {
+            "poly": [
+              [
+                -106.0,
+                23.0
+              ],
+              [
+                -96.0,
+                23.0
+              ],
+              [
+                -94.0,
+                20.0
+              ],
+              [
+                -86.7,
+                21.5
+              ],
+              [
+                -90.0,
+                14.5
+              ],
+              [
+                -100.0,
+                16.5
+              ],
+              [
+                -105.5,
+                19.5
+              ]
+            ]
+          }
+        ]
+      },
+      "GTM",
+      {
+        "and": [
+          "COL",
+          {
+            "poly": [
+              [
+                -77.0,
+                5.0
+              ],
+              [
+                -75.5,
+                5.0
+              ],
+              [
+                -75.5,
+                2.8
+              ],
+              [
+                -77.0,
+                2.8
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "and": [
+          "PAK",
+          {
+            "poly": [
+              [
+                67.0,
+                24.0
+              ],
+              [
+                72.0,
+                24.0
+              ],
+              [
+                75.0,
+                32.5
+              ],
+              [
+                71.0,
+                33.5
+              ],
+              [
+                68.0,
+                28.0
+              ]
+            ]
+          }
+        ]
+      },
+      "SWZ"
+    ]
+  },
+  "steps": [
+    {
+      "date": "-7000",
+      "title": {
+        "en": "The sweet grass of New Guinea",
+        "es": "La hierba dulce de Nueva Guinea"
+      },
+      "camera": {
+        "lon": 145.5,
+        "lat": -5.8,
+        "zoom": 4.0
+      },
+      "text": {
+        "en": "In New Guinea's highlands, farmers began draining swamps to plant crops about 9,000 years ago. Sugar cane, at first food for their pigs, was among them.",
+        "es": "En las tierras altas de Nueva Guinea, los campesinos empezaron a desecar pantanos para sembrar hace unos 9000 años. La caña de azúcar, al principio comida para sus cerdos, fue uno de sus cultivos."
+      },
+      "details": {
+        "en": "Papuan farmers bred sugar cane from a wild cane of the island. Estimates of when range from about 8000 to 4000 BC; at Kuk Swamp, evidence of bananas and sugar cane in the fields is 6,900–6,400 years old. People chewed the stalks for their sweet juice, and fed the cane to their pigs. Austronesian sailors carried it west through the islands of Southeast Asia, where it crossed with other wild canes, and on to India and southern China by about 1000 BC; another cane was tamed separately in southern China and Taiwan.",
+        "es": "Los campesinos papúes obtuvieron la caña de azúcar de una caña silvestre de la isla. Las estimaciones de cuándo van de hacia el 8000 al 4000 a. C.; en el pantano de Kuk, los indicios de plátanos y caña de azúcar en los campos tienen 6900–6400 años. La gente masticaba los tallos por su jugo dulce y daba la caña a sus cerdos. Los navegantes austronesios la llevaron al oeste por las islas del Sudeste Asiático, donde se cruzó con otras cañas silvestres, y hasta la India y el sur de China hacia el 1000 a. C.; otra caña se domesticó por separado en el sur de China y Taiwán."
+      },
+      "control": {
+        "cane": {
+          "ref": "new_guinea"
+        }
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Sugar cane",
+            "es": "Caña de azúcar"
+          },
+          "at": [
+            146.98,
+            -6.73
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-4500",
+          "place": {
+            "en": "New Guinea",
+            "es": "Nueva Guinea"
+          },
+          "text": {
+            "en": "A giant grass full of sweet juice, bred by Papuan farmers from a wild cane of New Guinea. It is now the world's biggest crop by weight.",
+            "es": "Una hierba gigante llena de jugo dulce, obtenida por los campesinos papúes de una caña silvestre de Nueva Guinea. Hoy es el mayor cultivo del mundo por peso."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "World harvest",
+                "es": "Cosecha mundial"
+              },
+              "value": {
+                "en": "About 1.9 billion tonnes (2020), 40% in Brazil",
+                "es": "Unos 1900 millones de toneladas (2020), el 40 % en Brasil"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Sugarcane",
+            "es": "Saccharum officinarum"
+          }
+        },
+        {
+          "name": {
+            "en": "Kuk Swamp",
+            "es": "Pantano de Kuk"
+          },
+          "at": [
+            144.33,
+            -5.7825
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-7000",
+          "place": {
+            "en": "Western Highlands, Papua New Guinea",
+            "es": "Tierras Altas Occidentales, Papúa Nueva Guinea"
+          },
+          "text": {
+            "en": "Farmers drained this highland swamp from about 9,000 years ago, one of the few places where farming was invented. Bananas and sugar cane grew here by about 4500 BC.",
+            "es": "Los campesinos desecaron este pantano de montaña desde hace unos 9000 años, uno de los pocos lugares donde se inventó la agricultura. Hacia el 4500 a. C. ya había plátanos y caña de azúcar."
+          },
+          "wiki": {
+            "en": "Kuk Swamp",
+            "es": "Kuk"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-326",
+      "title": {
+        "en": "Honey without bees",
+        "es": "Miel sin abejas"
+      },
+      "camera": {
+        "lon": 80,
+        "lat": 18,
+        "zoom": 2.2
+      },
+      "text": {
+        "en": "Sugar cane reached India by about 1000 BC. When Alexander the Great's army arrived in 326 BC, his men marvelled at a reed that 'makes honey without bees'.",
+        "es": "La caña de azúcar llegó a la India hacia el 1000 a. C. Cuando el ejército de Alejandro Magno llegó en el 326 a. C., sus hombres se maravillaron ante una caña que «da miel sin abejas»."
+      },
+      "details": {
+        "en": "Indians boiled cane juice into a sticky brown sugar, like today's jaggery, and their medicine prized it. Greek writers credited Nearchus, Alexander's admiral, with reporting the honey-making reed. For centuries the Mediterranean world knew sugar only as a rare medicine from the East: in the 1st century AD the Greek doctor Dioscorides described 'a kind of coalesced honey called sakcharon, found in reeds in India', brittle enough to break between the teeth like salt, and Pliny wrote that Indian sugar was the best.",
+        "es": "Los indios hervían el jugo de caña hasta obtener un azúcar moreno y pegajoso, como la panela de hoy, y su medicina lo apreciaba mucho. Los autores griegos atribuyeron a Nearco, almirante de Alejandro, la noticia de la caña que daba miel. Durante siglos, el mundo mediterráneo solo conoció el azúcar como una medicina rara de Oriente: en el siglo I d. C., el médico griego Dioscórides describió «una especie de miel cuajada llamada sakcharon, que se encuentra en cañas de la India», tan quebradiza que se partía entre los dientes como la sal, y Plinio escribió que el mejor azúcar era el indio."
+      },
+      "control": {
+        "cane": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "asia_cane"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [
+            [
+              146.0,
+              -6.5
+            ],
+            [
+              138.0,
+              -2.5
+            ],
+            [
+              128.0,
+              -3.0
+            ],
+            [
+              120.0,
+              -4.0
+            ],
+            [
+              110.0,
+              -6.0
+            ],
+            [
+              104.6,
+              1.0
+            ],
+            [
+              97.0,
+              5.0
+            ],
+            [
+              90.0,
+              12.0
+            ],
+            [
+              86.5,
+              19.5
+            ]
+          ],
+          "label": {
+            "en": "With Austronesian sailors",
+            "es": "Con los navegantes austronesios"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Nearchus",
+            "es": "Nearco"
+          },
+          "at": [
+            67.9,
+            24.5
+          ],
+          "cat": "trade",
+          "icon": "⛵",
+          "type": "person",
+          "date": "-326",
+          "life": [
+            "-360",
+            "-300"
+          ],
+          "place": {
+            "en": "Indus delta, Pakistan",
+            "es": "Delta del Indo, Pakistán"
+          },
+          "text": {
+            "en": "Alexander the Great's admiral, who sailed down the Indus in 326–325 BC. Greek writers credited him with telling of a reed that 'makes honey without bees'.",
+            "es": "Almirante de Alejandro Magno que navegó por el Indo en 326–325 a. C. Los autores griegos le atribuyeron la noticia de una caña que «da miel sin abejas»."
+          },
+          "wiki": {
+            "en": "Nearchus",
+            "es": "Nearco"
+          }
+        },
+        {
+          "name": {
+            "en": "Jaggery",
+            "es": "Panela"
+          },
+          "at": [
+            83.0,
+            25.3
+          ],
+          "cat": "sweet",
+          "type": "dish",
+          "date": "-500",
+          "place": {
+            "en": "Ganges plain, India",
+            "es": "Llanura del Ganges, India"
+          },
+          "text": {
+            "en": "Cane juice boiled down to a solid brown sugar, molasses and all. South Asians have made it since ancient times; Sanskrit śarkarā gave both 'jaggery' and 'sugar'.",
+            "es": "Jugo de caña hervido hasta formar un azúcar moreno sólido, con toda su melaza. En el sur de Asia se hace desde la Antigüedad; del sánscrito śarkarā vienen «jaggery» y «azúcar»."
+          },
+          "wiki": {
+            "en": "Jaggery",
+            "es": "Panela"
+          }
+        }
+      ]
+    },
+    {
+      "date": "350",
+      "title": {
+        "en": "Crystals called khanda",
+        "es": "Cristales llamados khanda"
+      },
+      "camera": {
+        "lon": 96,
+        "lat": 28,
+        "zoom": 2.4
+      },
+      "text": {
+        "en": "Around AD 350, under the Gupta kings, Indians learned to turn cane juice into crystals called khanda, the origin of the word candy. Sugar could now be stored and shipped.",
+        "es": "Hacia el 350 d. C., en tiempos de los reyes gupta, los indios aprendieron a convertir el jugo de caña en cristales llamados khanda, origen de «azúcar cande». El azúcar ya podía guardarse y enviarse lejos."
+      },
+      "details": {
+        "en": "Crystal sugar kept for months and travelled well, so Indian traders began to sell it abroad as a 'sweet spice', and Indian sailors carried it as ship's food. The Sanskrit word śarkarā, 'gravel', passed through Persian and Arabic into many languages: sugar, azúcar, sucre, Zucker. Buddhist monks carried sugar-making to China, and in 647 the Tang emperor Taizong sent envoys to India to learn how to refine it; China planted its first sugar cane plantations in the same century.",
+        "es": "El azúcar cristalizado se conservaba meses y viajaba bien, así que los comerciantes indios empezaron a venderlo fuera como una «especia dulce», y los marineros indios lo llevaban como provisión. La palabra sánscrita śarkarā, «grava», pasó por el persa y el árabe a muchas lenguas: azúcar, sugar, sucre, Zucker. Los monjes budistas llevaron a China el arte de hacer azúcar, y en 647 el emperador Taizong de la dinastía Tang envió emisarios a la India para aprender a refinarlo; en ese mismo siglo China plantó sus primeros cañaverales."
+      },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [
+            [
+              85.1,
+              25.6
+            ],
+            [
+              90.0,
+              27.5
+            ],
+            [
+              97.0,
+              30.5
+            ],
+            [
+              103.0,
+              31.5
+            ],
+            [
+              108.9,
+              34.25
+            ]
+          ],
+          "label": {
+            "en": "Sugar-making to China",
+            "es": "El arte del azúcar a China"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Crystal sugar",
+            "es": "Azúcar cristalizado"
+          },
+          "at": [
+            85.1283,
+            25.6125
+          ],
+          "cat": "sweet",
+          "type": "invention",
+          "date": "350",
+          "place": {
+            "en": "Pataliputra (Patna), India, the Gupta capital",
+            "es": "Pataliputra (Patna), India, capital gupta"
+          },
+          "text": {
+            "en": "Indians of the Gupta age learned to crystallise cane juice into khanda, easy to store and trade. From khanda comes 'candy', and from Sanskrit śarkarā, 'sugar'.",
+            "es": "Los indios de la época gupta aprendieron a cristalizar el jugo de caña en khanda, fácil de guardar y comerciar. De khanda viene «cande», y del sánscrito śarkarā, «azúcar»."
+          },
+          "wiki": {
+            "en": "Sugar",
+            "es": "Azúcar"
+          }
+        },
+        {
+          "name": {
+            "en": "Taizong's envoys",
+            "es": "Los emisarios de Taizong"
+          },
+          "at": [
+            108.94,
+            34.26
+          ],
+          "cat": "trade",
+          "icon": "📜",
+          "type": "event",
+          "date": "647",
+          "place": {
+            "en": "Chang'an (Xi'an), China",
+            "es": "Chang'an (Xi'an), China"
+          },
+          "text": {
+            "en": "In 647 the Tang emperor Taizong sent envoys to India to learn how to refine sugar. China soon had its own cane plantations.",
+            "es": "En 647, el emperador Taizong de la dinastía Tang envió emisarios a la India para aprender a refinar el azúcar. China pronto tuvo sus propios cañaverales."
+          },
+          "wiki": {
+            "en": "Emperor Taizong of Tang",
+            "es": "Li Shimin"
+          }
+        }
+      ]
+    },
+    {
+      "date": "638",
+      "title": {
+        "en": "From Persia to al-Andalus",
+        "es": "De Persia a al-Ándalus"
+      },
+      "camera": {
+        "lon": 24,
+        "lat": 33,
+        "zoom": 2.2
+      },
+      "text": {
+        "en": "Persia was growing and processing sugar cane by the 500s. After the Arab conquest, cane and the art of refining spread to Egypt, Syria, Sicily and al-Andalus.",
+        "es": "Persia ya cultivaba y procesaba caña de azúcar en el siglo VI. Tras la conquista árabe, la caña y el arte de refinarla se extendieron a Egipto, Siria, Sicilia y al-Ándalus."
+      },
+      "details": {
+        "en": "In Khuzestan, in southwestern Persia, Sasanian engineers had built great irrigation works, and the region became famous for sugar. Gundeshapur, its city of learning and medicine, surrendered to the Arabs in 638. 'Wherever they went, the medieval Arabs brought with them sugar, the product and the technology of its production,' one historian wrote. Egypt became the greatest sugar producer of the medieval Mediterranean, and cane was planted in Syria, Cyprus, Sicily and, in the 900s, on the warm coast of al-Andalus around Motril and Málaga. Arabic gave Spanish azúcar, almíbar, alfeñique and many sweets of sugar and almonds.",
+        "es": "En Juzestán, al suroeste de Persia, los ingenieros sasánidas habían construido grandes obras de riego, y la región se hizo famosa por su azúcar. Gundishapur, su ciudad del saber y la medicina, se rindió a los árabes en 638. «Allí donde fueran, los árabes medievales llevaban consigo el azúcar, el producto y la técnica para producirlo», escribió un historiador. Egipto se convirtió en el mayor productor de azúcar del Mediterráneo medieval, y se plantó caña en Siria, Chipre, Sicilia y, en el siglo X, en la cálida costa de al-Ándalus, en torno a Motril y Málaga. Del árabe vienen azúcar, almíbar, alfeñique y muchos dulces de azúcar y almendra."
+      },
+      "control": {
+        "cane": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "khuzestan"
+          },
+          {
+            "ref": "med_cane"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [
+            [
+              48.6,
+              31.6
+            ],
+            [
+              44.4,
+              33.3
+            ],
+            [
+              38.0,
+              34.0
+            ],
+            [
+              36.3,
+              33.5
+            ],
+            [
+              33.5,
+              31.2
+            ],
+            [
+              31.2,
+              30.05
+            ]
+          ],
+          "label": {
+            "en": "To Egypt",
+            "es": "A Egipto"
+          }
+        },
+        {
+          "side": "spread",
+          "path": [
+            [
+              31.0,
+              30.6
+            ],
+            [
+              25.0,
+              32.0
+            ],
+            [
+              20.0,
+              32.2
+            ],
+            [
+              10.2,
+              36.9
+            ],
+            [
+              13.36,
+              38.05
+            ]
+          ],
+          "label": {
+            "en": "To Sicily",
+            "es": "A Sicilia"
+          }
+        },
+        {
+          "side": "spread",
+          "path": [
+            [
+              10.2,
+              36.8
+            ],
+            [
+              3.0,
+              36.9
+            ],
+            [
+              -1.0,
+              36.5
+            ],
+            [
+              -3.5,
+              36.7
+            ]
+          ],
+          "label": {
+            "en": "To al-Andalus",
+            "es": "A al-Ándalus"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Gundeshapur",
+            "es": "Gundishapur"
+          },
+          "at": [
+            48.5167,
+            32.2833
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "600",
+          "place": {
+            "en": "Khuzestan, Iran",
+            "es": "Juzestán, Irán"
+          },
+          "text": {
+            "en": "The Sasanian empire's great city of learning and medicine, in sugar-growing Khuzestan. It surrendered to the Arabs in 638.",
+            "es": "La gran ciudad del saber y la medicina del Imperio sasánida, en Juzestán, tierra de azúcar. Se rindió a los árabes en 638."
+          },
+          "wiki": {
+            "en": "Gundeshapur",
+            "es": "Gundeshapur"
+          }
+        },
+        {
+          "name": {
+            "en": "Sugar in al-Andalus",
+            "es": "El azúcar de al-Ándalus"
+          },
+          "at": [
+            -3.5206,
+            36.7453
+          ],
+          "cat": "trade",
+          "icon": "🎋",
+          "type": "event",
+          "date": "950",
+          "place": {
+            "en": "Motril, Granada, Spain",
+            "es": "Motril, Granada, España"
+          },
+          "text": {
+            "en": "Arab farmers brought sugar cane to the warm coast of Granada and Málaga in the 900s. It was grown there for about a thousand years.",
+            "es": "Los campesinos árabes llevaron la caña de azúcar a la cálida costa de Granada y Málaga en el siglo X. Allí se cultivó durante unos mil años."
+          },
+          "wiki": {
+            "en": "Motril",
+            "es": "Industria azucarera de Andalucía"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1124",
+      "title": {
+        "en": "Sweet salt for the Crusaders",
+        "es": "La sal dulce de los cruzados"
+      },
+      "camera": {
+        "lon": 30,
+        "lat": 35,
+        "zoom": 4.5
+      },
+      "text": {
+        "en": "Crusaders in the Holy Land met caravans of 'sweet salt'. Venice ran sugar estates around Tyre from 1124, and Cyprus became a sugar island.",
+        "es": "Los cruzados encontraron en Tierra Santa caravanas de «sal dulce». Venecia explotó plantaciones de azúcar en torno a Tiro desde 1124, y Chipre se convirtió en una isla del azúcar."
+      },
+      "details": {
+        "en": "Until then most Europeans had sweetened their food with honey. The crusader chronicler William of Tyre, writing in the late 1100s, called sugar 'very necessary for the use and health of mankind'. Venetian and Genoese merchants shipped it from the Levant, Cyprus and Egypt and sold it as a costly spice and medicine. On Cyprus, the Knights Hospitaller ran a sugar works beside their castle at Kolossi, with water-driven mills; Cypriot sugar was one of the island's chief exports.",
+        "es": "Hasta entonces, casi todos los europeos endulzaban con miel. El cronista de las cruzadas Guillermo de Tiro, que escribía a finales del siglo XII, llamó al azúcar «muy necesario para el uso y la salud de los hombres». Los mercaderes venecianos y genoveses lo traían de Levante, Chipre y Egipto y lo vendían como especia y medicina caras. En Chipre, los caballeros hospitalarios tenían un ingenio azucarero junto a su castillo de Kolossi, con molinos movidos por agua; el azúcar chipriota era una de las principales exportaciones de la isla."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Tyre",
+            "es": "Tiro"
+          },
+          "at": [
+            35.1939,
+            33.2704
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "1124",
+          "place": {
+            "en": "Tyre, Lebanon",
+            "es": "Tiro, Líbano"
+          },
+          "text": {
+            "en": "After helping the Crusaders take Tyre in 1124, Venice ran sugar estates in the villages around it and shipped the 'sweet salt' to Europe.",
+            "es": "Tras ayudar a los cruzados a tomar Tiro en 1124, Venecia explotó plantaciones de azúcar en las aldeas de alrededor y llevó la «sal dulce» a Europa."
+          },
+          "wiki": {
+            "en": "Tyre, Lebanon",
+            "es": "Tiro (Líbano)"
+          }
+        },
+        {
+          "name": {
+            "en": "Kolossi Castle",
+            "es": "Castillo de Kolossi"
+          },
+          "at": [
+            32.9342,
+            34.665
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "1210",
+          "end": "1454",
+          "place": {
+            "en": "Limassol, Cyprus",
+            "es": "Limasol, Chipre"
+          },
+          "text": {
+            "en": "A castle of the Knights Hospitaller with a large sugar works beside it. Cypriot sugar was one of the island's main exports in the Middle Ages.",
+            "es": "Un castillo de los caballeros hospitalarios con un gran ingenio azucarero al lado. El azúcar chipriota fue una de las principales exportaciones de la isla en la Edad Media."
+          },
+          "wiki": {
+            "en": "Kolossi Castle",
+            "es": "Castillo de Kolossi"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1425",
+      "title": {
+        "en": "Atlantic sugar islands",
+        "es": "Las islas atlánticas del azúcar"
+      },
+      "camera": {
+        "lon": -8,
+        "lat": 20,
+        "zoom": 2.0
+      },
+      "text": {
+        "en": "Portugal planted cane on Madeira from 1425, Spain on the Canaries, and Portugal on São Tomé. The islands' plantations used the forced labour of enslaved Africans.",
+        "es": "Portugal plantó caña en Madeira desde 1425, España en Canarias y Portugal en Santo Tomé. Las plantaciones de las islas usaban el trabajo forzado de africanos esclavizados."
+      },
+      "details": {
+        "en": "By 1492 Madeira was producing over 1,400 tonnes of sugar a year, its 'white gold'. Enslaved Africans, Canary Islanders and Moors worked in its fields and mills. On São Tomé, off the coast of Central Africa, the Portuguese built the first sugar colony worked almost entirely by enslaved Africans: the plantation system later copied in Brazil and the Caribbean. As sugar became less rare, Europe's confectioners worked it into sweets such as marzipan, first recorded in Toledo in 1512, and Madeira still bakes a Christmas cake with cane molasses, bolo de mel.",
+        "es": "En 1492, Madeira producía más de 1400 toneladas de azúcar al año, su «oro blanco». En sus campos e ingenios trabajaban africanos esclavizados, canarios y moriscos. En Santo Tomé, frente a la costa de África central, los portugueses crearon la primera colonia azucarera trabajada casi solo por africanos esclavizados: el sistema de plantación que después se copió en Brasil y el Caribe. A medida que el azúcar dejaba de ser tan raro, los confiteros europeos hicieron con él dulces como el mazapán, documentado en Toledo en 1512, y Madeira aún hornea en Navidad un pastel de miel de caña, el bolo de mel."
+      },
+      "control": {
+        "cane": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "atlantic"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [
+            [
+              -9.2,
+              38.6
+            ],
+            [
+              -12.5,
+              35.5
+            ],
+            [
+              -16.9,
+              32.7
+            ]
+          ],
+          "label": {
+            "en": "To Madeira, 1425",
+            "es": "A Madeira, 1425"
+          }
+        },
+        {
+          "side": "spread",
+          "path": [
+            [
+              -9.2,
+              38.5
+            ],
+            [
+              -13.5,
+              30.0
+            ],
+            [
+              -18.0,
+              20.0
+            ],
+            [
+              -17.0,
+              12.0
+            ],
+            [
+              -8.0,
+              4.0
+            ],
+            [
+              2.0,
+              1.5
+            ],
+            [
+              6.6,
+              0.4
+            ]
+          ],
+          "label": {
+            "en": "To São Tomé",
+            "es": "A Santo Tomé"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Funchal",
+            "es": "Funchal"
+          },
+          "at": [
+            -16.9167,
+            32.65
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "1425",
+          "place": {
+            "en": "Madeira, Portugal",
+            "es": "Madeira, Portugal"
+          },
+          "text": {
+            "en": "Henry the Navigator had cane planted on Madeira in 1425. By 1492 the island made over 1,400 tonnes of sugar a year, and its capital grew rich on it.",
+            "es": "Enrique el Navegante hizo plantar caña en Madeira en 1425. En 1492 la isla producía más de 1400 toneladas de azúcar al año, y su capital se enriqueció con ella."
+          },
+          "wiki": {
+            "en": "Funchal",
+            "es": "Funchal"
+          }
+        },
+        {
+          "name": {
+            "en": "São Tomé",
+            "es": "Santo Tomé"
+          },
+          "at": [
+            6.7273,
+            0.3365
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "1500",
+          "place": {
+            "en": "São Tomé and Príncipe",
+            "es": "Santo Tomé y Príncipe"
+          },
+          "text": {
+            "en": "Portuguese planters built sugar estates here worked almost entirely by enslaved Africans, the model later copied in Brazil and the Caribbean.",
+            "es": "Los colonos portugueses levantaron aquí ingenios trabajados casi solo por africanos esclavizados, el modelo que luego se copió en Brasil y el Caribe."
+          },
+          "wiki": {
+            "en": "São Tomé",
+            "es": "Isla de Santo Tomé"
+          }
+        },
+        {
+          "name": {
+            "en": "Marzipan of Toledo",
+            "es": "Mazapán de Toledo"
+          },
+          "at": [
+            -4.0273,
+            39.8628
+          ],
+          "cat": "sweet",
+          "type": "dish",
+          "date": "1512",
+          "place": {
+            "en": "Toledo, Spain",
+            "es": "Toledo, España"
+          },
+          "text": {
+            "en": "A paste of almonds and sugar from the Arab tradition. Its first written mention in Toledo dates from 1512, and the city makes it all year round.",
+            "es": "Una pasta de almendra y azúcar de tradición árabe. Su primera mención escrita en Toledo es de 1512, y la ciudad lo hace todo el año."
+          },
+          "country": "ESP",
+          "wiki": {
+            "en": "Marzipan",
+            "es": "Mazapán"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1550",
+      "title": {
+        "en": "Brazil's engenhos",
+        "es": "Los engenhos de Brasil"
+      },
+      "camera": {
+        "lon": -41,
+        "lat": -15,
+        "zoom": 3.4
+      },
+      "text": {
+        "en": "Brazil's sugar mills, the engenhos, worked by enslaved Africans, made it the world's biggest sugar producer. People who escaped built free communities such as Palmares.",
+        "es": "Los ingenios de Brasil, los engenhos, trabajados por africanos esclavizados, lo convirtieron en el mayor productor de azúcar del mundo. Quienes escapaban fundaban comunidades libres como Palmares."
+      },
+      "details": {
+        "en": "An engenho was a sugar mill and plantation in one: cane fields, a mill turned by water or oxen, boiling and purging houses, and the owner's 'big house'. At harvest the work went on day and night, and accidents at the rollers and boiling pans were common. So many enslaved people died that planters kept buying new captives from Africa rather than letting families grow. The Dutch held Pernambuco from 1630 to 1654 and then took their know-how to the Caribbean. Palmares, in the hills of Alagoas, sheltered thousands of people from 1605 until it was destroyed in 1694; its last leader, Zumbi, was killed on 20 November 1695, now Brazil's Black Consciousness Day.",
+        "es": "Un engenho era a la vez ingenio y plantación: cañaverales, un molino movido por agua o bueyes, casas de calderas y de purga, y la «casa grande» del dueño. En la zafra se trabajaba día y noche, y los accidentes en los rodillos y las calderas eran frecuentes. Morían tantos esclavizados que los hacendados preferían comprar nuevos cautivos en África a dejar que crecieran las familias. Los neerlandeses ocuparon Pernambuco de 1630 a 1654 y después llevaron su saber al Caribe. Palmares, en las sierras de Alagoas, acogió a miles de personas desde 1605 hasta su destrucción en 1694; su último jefe, Zumbi, murió asesinado el 20 de noviembre de 1695, hoy Día de la Conciencia Negra en Brasil."
+      },
+      "control": {
+        "cane": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "brazil"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "slave",
+          "path": [
+            [
+              13.2,
+              -8.8
+            ],
+            [
+              5.0,
+              -10.5
+            ],
+            [
+              -15.0,
+              -11.0
+            ],
+            [
+              -30.0,
+              -9.5
+            ],
+            [
+              -34.8,
+              -8.1
+            ]
+          ],
+          "label": {
+            "en": "From Angola",
+            "es": "Desde Angola"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Engenho dos Erasmos",
+            "es": "Engenho dos Erasmos"
+          },
+          "at": [
+            -46.363,
+            -23.9477
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "1534",
+          "place": {
+            "en": "Santos, São Paulo, Brazil",
+            "es": "Santos, São Paulo, Brasil"
+          },
+          "text": {
+            "en": "The ruins of one of Brazil's first sugar mills, built around 1534 on the island of São Vicente. Today they are a national monument.",
+            "es": "Las ruinas de uno de los primeros ingenios de Brasil, construido hacia 1534 en la isla de São Vicente. Hoy son monumento nacional."
+          },
+          "wiki": {
+            "en": "Engenho dos Erasmos",
+            "es": "Engenho dos Erasmos"
+          }
+        },
+        {
+          "name": {
+            "en": "Recife",
+            "es": "Recife"
+          },
+          "at": [
+            -34.8811,
+            -8.0539
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "1630",
+          "place": {
+            "en": "Pernambuco, Brazil",
+            "es": "Pernambuco, Brasil"
+          },
+          "text": {
+            "en": "The port of Pernambuco, Brazil's richest sugar region. The Dutch held it from 1630 to 1654 and then carried their sugar know-how to the Caribbean.",
+            "es": "El puerto de Pernambuco, la región azucarera más rica de Brasil. Los neerlandeses lo ocuparon de 1630 a 1654 y después llevaron su saber azucarero al Caribe."
+          },
+          "wiki": {
+            "en": "Recife",
+            "es": "Recife"
+          }
+        },
+        {
+          "name": {
+            "en": "Palmares",
+            "es": "Palmares"
+          },
+          "at": [
+            -36.0475,
+            -9.1695
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "1605",
+          "end": "1694",
+          "place": {
+            "en": "União dos Palmares, Alagoas, Brazil",
+            "es": "União dos Palmares, Alagoas, Brasil"
+          },
+          "text": {
+            "en": "A free community of people who escaped slavery, in the hills of Alagoas, from 1605 to 1694. Its last leader, Zumbi, is a hero of Black Brazilians.",
+            "es": "Una comunidad libre de personas que habían escapado de la esclavitud, en las sierras de Alagoas, de 1605 a 1694. Su último jefe, Zumbi, es un héroe de los afrobrasileños."
+          },
+          "wiki": {
+            "en": "Palmares (quilombo)",
+            "es": "Palmares (quilombo)"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1645",
+      "title": {
+        "en": "Sugar islands and slave ships",
+        "es": "Islas del azúcar y barcos negreros"
+      },
+      "camera": {
+        "lon": -32,
+        "lat": 22,
+        "zoom": 1.5
+      },
+      "text": {
+        "en": "In the 1640s Barbados turned to sugar, and the English, French and Dutch filled the Caribbean with plantations. Millions of enslaved Africans were shipped across the Atlantic to work them.",
+        "es": "En la década de 1640, Barbados se pasó al azúcar, e ingleses, franceses y neerlandeses llenaron el Caribe de plantaciones. Millones de africanos esclavizados fueron llevados a través del Atlántico para trabajarlas."
+      },
+      "details": {
+        "en": "This was the triangular trade: ships took cloth, guns and metal goods from Europe to West Africa, carried captives across the Atlantic in the Middle Passage, and came home with sugar, molasses and rum. Of about 12.5 million Africans forced onto slave ships, the largest share went to sugar colonies. Work in the heat, poor food and disease killed so many that the enslaved population could only be kept up by new arrivals. Enslaved people resisted in every way they could, from slowing work to running away and revolt. Caribbean plantations came to supply 80–90% of the sugar eaten in Western Europe, and Britain ate five times as much sugar in 1770 as in 1710.",
+        "es": "Era el comercio triangular: los barcos llevaban telas, armas y objetos de metal de Europa a África occidental, cruzaban el Atlántico con cautivos por el pasaje del medio y volvían con azúcar, melaza y ron. De los unos 12,5 millones de africanos embarcados a la fuerza en barcos negreros, la mayor parte fue a las colonias azucareras. El trabajo bajo el calor, la mala comida y las enfermedades mataban a tantos que la población esclavizada solo se mantenía con nuevas llegadas. Los esclavizados resistieron de todas las formas posibles, desde trabajar más despacio hasta huir y rebelarse. Las plantaciones del Caribe llegaron a dar el 80–90 % del azúcar que se comía en Europa occidental, y Gran Bretaña comía en 1770 cinco veces más azúcar que en 1710."
+      },
+      "control": {
+        "cane": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "caribbean"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "goods",
+          "path": [
+            [
+              -3.0,
+              53.4
+            ],
+            [
+              -6.0,
+              50.0
+            ],
+            [
+              -14.0,
+              40.0
+            ],
+            [
+              -18.0,
+              22.0
+            ],
+            [
+              -14.0,
+              10.0
+            ],
+            [
+              -4.0,
+              4.6
+            ]
+          ],
+          "label": {
+            "en": "Goods to Africa",
+            "es": "Mercancías a África"
+          }
+        },
+        {
+          "side": "slave",
+          "path": [
+            [
+              -1.4,
+              4.9
+            ],
+            [
+              -15.0,
+              7.5
+            ],
+            [
+              -35.0,
+              11.5
+            ],
+            [
+              -55.0,
+              13.0
+            ],
+            [
+              -59.5,
+              13.1
+            ]
+          ],
+          "label": {
+            "en": "The Middle Passage",
+            "es": "El pasaje del medio"
+          }
+        },
+        {
+          "side": "goods",
+          "path": [
+            [
+              -59.5,
+              13.3
+            ],
+            [
+              -55.0,
+              22.0
+            ],
+            [
+              -45.0,
+              35.0
+            ],
+            [
+              -25.0,
+              46.0
+            ],
+            [
+              -9.0,
+              51.0
+            ],
+            [
+              -5.0,
+              52.0
+            ],
+            [
+              -3.1,
+              53.4
+            ]
+          ],
+          "label": {
+            "en": "Sugar and rum to Europe",
+            "es": "Azúcar y ron a Europa"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Barbados",
+            "es": "Barbados"
+          },
+          "at": [
+            -59.5432,
+            13.1939
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "1640",
+          "place": {
+            "en": "Barbados",
+            "es": "Barbados"
+          },
+          "text": {
+            "en": "From the 1640s planters, helped by Dutch know-how from Brazil, turned the island to sugar. Enslaved Africans soon far outnumbered settlers, and sugar made up 93% of exports.",
+            "es": "Desde la década de 1640, los hacendados, con el saber neerlandés traído de Brasil, pasaron la isla al azúcar. Pronto los esclavizados superaron con creces a los colonos, y el azúcar era el 93 % de las exportaciones."
+          },
+          "wiki": {
+            "en": "Barbados",
+            "es": "Barbados"
+          }
+        },
+        {
+          "name": {
+            "en": "Rum",
+            "es": "Ron"
+          },
+          "at": [
+            -76.79,
+            17.97
+          ],
+          "cat": "drink",
+          "type": "dish",
+          "date": "1650",
+          "place": {
+            "en": "The Caribbean",
+            "es": "El Caribe"
+          },
+          "text": {
+            "en": "Distilled from molasses, the sticky leftover of sugar-making. It was probably first made by enslaved people on Caribbean plantations in the 1600s, and became a currency of the slave trade.",
+            "es": "Destilado de la melaza, el resto pegajoso de la fabricación del azúcar. Probablemente lo hicieron por primera vez esclavos de las plantaciones del Caribe en el siglo XVII, y se volvió moneda de la trata."
+          },
+          "wiki": {
+            "en": "Rum",
+            "es": "Ron"
+          }
+        },
+        {
+          "name": {
+            "en": "International Slavery Museum",
+            "es": "Museo Internacional de la Esclavitud"
+          },
+          "at": [
+            -2.9925,
+            53.4013
+          ],
+          "cat": "site",
+          "type": "place",
+          "date": "2007",
+          "place": {
+            "en": "Liverpool, England",
+            "es": "Liverpool, Inglaterra"
+          },
+          "text": {
+            "en": "Liverpool was the busiest slave-trading port in Britain. This museum on its docks, opened in 2007, tells the story of the trade and of the fight against it.",
+            "es": "Liverpool fue el puerto negrero más activo de Gran Bretaña. Este museo de sus muelles, abierto en 2007, cuenta la historia de la trata y de la lucha contra ella."
+          },
+          "wiki": {
+            "en": "International Slavery Museum",
+            "es": "Comercio atlántico de esclavos"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1791-08-14",
+      "title": {
+        "en": "Haiti breaks its chains",
+        "es": "Haití rompe sus cadenas"
+      },
+      "camera": {
+        "lon": -80,
+        "lat": 24,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "Saint-Domingue, the richest sugar colony in the world, held about half a million enslaved people. In August 1791 they rose up, and in 1804 they founded Haiti.",
+        "es": "Saint-Domingue, la colonia azucarera más rica del mundo, tenía cerca de medio millón de esclavos. En agosto de 1791 se sublevaron, y en 1804 fundaron Haití."
+      },
+      "details": {
+        "en": "In 1789 Saint-Domingue produced 40% of the sugar imported by France and Britain and 60% of the world's coffee; so many newly arrived Africans died that planters imported tens of thousands every year. On 14 August 1791 enslaved leaders met at Bois Caïman, and a week later the northern plain was in flames. Toussaint Louverture, born into slavery, became the revolution's great general; France abolished slavery in 1794, but Napoleon sent an army to restore it, and Toussaint died in a French prison in 1803. On 1 January 1804 Jean-Jacques Dessalines declared independence. In 1825 France forced Haiti to pay 150 million francs to its former slave owners, a debt that weighed on the country for over a century.",
+        "es": "En 1789, Saint-Domingue producía el 40 % del azúcar que importaban Francia y Gran Bretaña y el 60 % del café del mundo; morían tantos africanos recién llegados que los hacendados importaban decenas de miles cada año. El 14 de agosto de 1791, líderes esclavizados se reunieron en Bois Caïman, y una semana después la llanura del norte ardía. Toussaint Louverture, nacido esclavo, fue el gran general de la revolución; Francia abolió la esclavitud en 1794, pero Napoleón envió un ejército para restablecerla, y Toussaint murió en una prisión francesa en 1803. El 1 de enero de 1804, Jean-Jacques Dessalines proclamó la independencia. En 1825, Francia obligó a Haití a pagar 150 millones de francos a sus antiguos amos, una deuda que pesó sobre el país más de un siglo."
+      },
+      "control": {
+        "cane": {
+          "minus": [
+            {
+              "prev": true
+            },
+            "HTI"
+          ]
+        },
+        "haiti": "HTI"
+      },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [
+            [
+              -72.2,
+              19.85
+            ],
+            [
+              -74.5,
+              20.6
+            ],
+            [
+              -79.0,
+              22.8
+            ],
+            [
+              -84.0,
+              24.6
+            ],
+            [
+              -88.5,
+              28.8
+            ],
+            [
+              -90.0,
+              29.9
+            ]
+          ],
+          "label": {
+            "en": "Planters flee to Louisiana",
+            "es": "Los hacendados huyen a Luisiana"
+          }
+        },
+        {
+          "side": "spread",
+          "path": [
+            [
+              -72.3,
+              19.9
+            ],
+            [
+              -74.0,
+              20.0
+            ],
+            [
+              -75.8,
+              20.0
+            ]
+          ],
+          "label": {
+            "en": "and to Cuba",
+            "es": "y a Cuba"
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "🗽",
+          "date": "1804-01-01",
+          "at": [
+            -72.6889,
+            19.4469
+          ],
+          "text": {
+            "en": "Dessalines declares Haiti independent at Gonaïves",
+            "es": "Dessalines proclama la independencia de Haití en Gonaïves"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Bois Caïman",
+            "es": "Bois Caïman"
+          },
+          "at": [
+            -72.25,
+            19.7
+          ],
+          "cat": "site",
+          "icon": "🔥",
+          "type": "event",
+          "date": "1791-08-14",
+          "place": {
+            "en": "Near Cap-Haïtien, Haiti",
+            "es": "Cerca de Cabo Haitiano, Haití"
+          },
+          "text": {
+            "en": "On the night of 14 August 1791 about 200 enslaved people met in these woods and planned the uprising that began the Haitian Revolution a week later.",
+            "es": "La noche del 14 de agosto de 1791, unos 200 esclavizados se reunieron en estos bosques y planearon el levantamiento que, una semana después, inició la Revolución haitiana."
+          },
+          "wiki": {
+            "en": "Bois Caïman",
+            "es": "Bois Caïman"
+          }
+        },
+        {
+          "name": {
+            "en": "Toussaint Louverture",
+            "es": "Toussaint Louverture"
+          },
+          "at": [
+            -72.3333,
+            18.5333
+          ],
+          "cat": "trade",
+          "icon": "⚔️",
+          "type": "person",
+          "date": "1791",
+          "life": [
+            "1743-05-20",
+            "1803-04-07"
+          ],
+          "place": {
+            "en": "Saint-Domingue (Haiti)",
+            "es": "Saint-Domingue (Haití)"
+          },
+          "text": {
+            "en": "Born into slavery, he became the brilliant general and leader of the revolution. Captured by Napoleon's army, he died in a French prison in 1803.",
+            "es": "Nacido esclavo, se convirtió en el brillante general y líder de la revolución. Capturado por el ejército de Napoleón, murió en una prisión francesa en 1803."
+          },
+          "wiki": {
+            "en": "Toussaint Louverture",
+            "es": "Toussaint Louverture"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1801",
+      "title": {
+        "en": "Sugar from beets",
+        "es": "Azúcar de remolacha"
+      },
+      "camera": {
+        "lon": 8,
+        "lat": 50.5,
+        "zoom": 4.4
+      },
+      "text": {
+        "en": "In 1801 Franz Karl Achard opened the world's first beet-sugar factory, at Cunern in Silesia. Cut off from Caribbean sugar, Napoleon made French farmers grow beets.",
+        "es": "En 1801, Franz Karl Achard abrió la primera fábrica de azúcar de remolacha del mundo, en Cunern, Silesia. Sin azúcar del Caribe, Napoleón obligó a los campesinos franceses a cultivar remolacha."
+      },
+      "details": {
+        "en": "In 1747 the Berlin chemist Andreas Marggraf showed that beets contain the same sugar as cane. His student Achard bred beets for sweetness and, with the backing of the king of Prussia, built the factory at Cunern, today Konary in Poland. During the Napoleonic Wars the British blockade cut France off from the Caribbean, and Napoleon ordered 32,000 hectares of beet to be planted; the factory of the banker Benjamin Delessert near Paris showed that the new industry could work. By 1899 beets gave about two-thirds of the world's sugar, and Europe could make its own without slave labour.",
+        "es": "En 1747, el químico berlinés Andreas Marggraf demostró que la remolacha contiene el mismo azúcar que la caña. Su discípulo Achard seleccionó remolachas más dulces y, con el apoyo del rey de Prusia, construyó la fábrica de Cunern, hoy Konary, en Polonia. Durante las guerras napoleónicas, el bloqueo británico dejó a Francia sin el Caribe, y Napoleón ordenó plantar 32 000 hectáreas de remolacha; la fábrica del banquero Benjamin Delessert, cerca de París, demostró que la nueva industria funcionaba. En 1899, la remolacha daba cerca de dos tercios del azúcar del mundo, y Europa podía hacer el suyo sin mano de obra esclava."
+      },
+      "control": {
+        "haiti": null,
+        "beet": {
+          "ref": "beet1801"
+        }
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Andreas Marggraf",
+            "es": "Andreas Marggraf"
+          },
+          "at": [
+            13.405,
+            52.52
+          ],
+          "cat": "trade",
+          "icon": "⚗️",
+          "type": "person",
+          "date": "1747",
+          "life": [
+            "1709-03-03",
+            "1782-08-07"
+          ],
+          "place": {
+            "en": "Berlin, Germany",
+            "es": "Berlín, Alemania"
+          },
+          "text": {
+            "en": "A Berlin chemist who showed in 1747 that beets contain the same sugar as cane, and found a way to extract it.",
+            "es": "Químico berlinés que demostró en 1747 que la remolacha contiene el mismo azúcar que la caña y halló la forma de extraerlo."
+          },
+          "wiki": {
+            "en": "Andreas Sigismund Marggraf",
+            "es": "Andreas Sigismund Marggraf"
+          }
+        },
+        {
+          "name": {
+            "en": "Franz Karl Achard",
+            "es": "Franz Karl Achard"
+          },
+          "at": [
+            16.7,
+            51.2
+          ],
+          "cat": "trade",
+          "icon": "🏭",
+          "type": "person",
+          "date": "1801",
+          "life": [
+            "1753-04-28",
+            "1821-04-20"
+          ],
+          "place": {
+            "en": "Konary (Cunern), Poland",
+            "es": "Konary (Cunern), Polonia"
+          },
+          "text": {
+            "en": "Marggraf's student, who bred sweeter beets and opened the world's first beet-sugar factory at Cunern, in Silesia, in 1801.",
+            "es": "Discípulo de Marggraf, seleccionó remolachas más dulces y abrió en 1801 la primera fábrica de azúcar de remolacha del mundo, en Cunern, Silesia."
+          },
+          "wiki": {
+            "en": "Franz Karl Achard",
+            "es": "Franz Karl Achard"
+          }
+        },
+        {
+          "name": {
+            "en": "Benjamin Delessert",
+            "es": "Benjamin Delessert"
+          },
+          "at": [
+            2.2833,
+            48.8583
+          ],
+          "cat": "trade",
+          "icon": "🏭",
+          "type": "person",
+          "date": "1812",
+          "life": [
+            "1773-02-14",
+            "1847-03-01"
+          ],
+          "place": {
+            "en": "Passy, Paris, France",
+            "es": "Passy, París, Francia"
+          },
+          "text": {
+            "en": "A Paris banker and naturalist whose factory at Passy made beet sugar work as an industry in 1812, at the height of Napoleon's blockade.",
+            "es": "Banquero y naturalista parisino cuya fábrica de Passy hizo del azúcar de remolacha una industria en 1812, en pleno bloqueo napoleónico."
+          },
+          "wiki": {
+            "en": "Benjamin Delessert",
+            "es": "Benjamin Delessert"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1837",
+      "title": {
+        "en": "Cuba's sugar boom",
+        "es": "El auge azucarero de Cuba"
+      },
+      "camera": {
+        "lon": -79,
+        "lat": 22,
+        "zoom": 4.2
+      },
+      "text": {
+        "en": "After Haiti's revolution, Cuba became the world's biggest sugar producer, with steam mills, railways and slavery, which lasted there until 1886.",
+        "es": "Tras la revolución de Haití, Cuba se convirtió en el mayor productor de azúcar del mundo, con ingenios de vapor, ferrocarriles y esclavitud, que allí duró hasta 1886."
+      },
+      "details": {
+        "en": "Cuban planters bought steam engines, vacuum pans and, from 1837, railways to carry cane and sugar to the ports. In the Valle de los Ingenios near Trinidad, more than fifty mills and over 30,000 enslaved people worked at the industry's height. As the British navy tried to stop the slave trade, planters also brought in tens of thousands of Chinese contract workers, from 1847, under harsh terms. Cuba stayed the world's leading sugar exporter well into the 20th century.",
+        "es": "Los hacendados cubanos compraron máquinas de vapor, tachos al vacío y, desde 1837, ferrocarriles para llevar la caña y el azúcar a los puertos. En el Valle de los Ingenios, cerca de Trinidad, trabajaban en el apogeo de la industria más de cincuenta ingenios y más de 30 000 esclavos. Mientras la marina británica intentaba frenar la trata, los hacendados trajeron también, desde 1847, a decenas de miles de trabajadores chinos contratados en duras condiciones. Cuba siguió siendo el primer exportador de azúcar del mundo hasta bien entrado el siglo XX."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Valle de los Ingenios",
+            "es": "Valle de los Ingenios"
+          },
+          "at": [
+            -79.82,
+            21.83
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "1790",
+          "place": {
+            "en": "Trinidad, Cuba",
+            "es": "Trinidad, Cuba"
+          },
+          "text": {
+            "en": "Three valleys near Trinidad where, at the peak, more than fifty sugar mills and over 30,000 enslaved people worked. Their ruins are a World Heritage Site.",
+            "es": "Tres valles cerca de Trinidad donde, en su apogeo, funcionaban más de cincuenta ingenios con más de 30 000 esclavos. Sus ruinas son Patrimonio de la Humanidad."
+          },
+          "wiki": {
+            "en": "Valle de los Ingenios",
+            "es": "Valle de los Ingenios"
+          }
+        },
+        {
+          "name": {
+            "en": "Chinese contract workers",
+            "es": "Los culíes chinos"
+          },
+          "at": [
+            -82.3666,
+            23.1136
+          ],
+          "cat": "trade",
+          "icon": "⛓️",
+          "type": "event",
+          "date": "1847",
+          "place": {
+            "en": "Havana, Cuba",
+            "es": "La Habana, Cuba"
+          },
+          "text": {
+            "en": "From 1847 tens of thousands of Chinese men were shipped to Cuba on long, harsh contracts to work on sugar estates beside enslaved Africans.",
+            "es": "Desde 1847, decenas de miles de chinos fueron llevados a Cuba con contratos largos y duros para trabajar en los ingenios junto a los esclavos africanos."
+          },
+          "wiki": {
+            "en": "Chinese Cubans",
+            "es": "Inmigración china en Cuba"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1849",
+      "title": {
+        "en": "Indentured labour",
+        "es": "El trabajo por contrato"
+      },
+      "camera": {
+        "lon": 115,
+        "lat": -15,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "When the British Empire freed its slaves in 1834, planters turned to India. Over 1.6 million Indians went to sugar colonies on contracts that historians call 'a new form of slavery'.",
+        "es": "Cuando el Imperio británico liberó a sus esclavos en 1834, los hacendados recurrieron a la India. Más de 1,6 millones de indios fueron a las colonias azucareras con contratos que los historiadores llaman «una nueva forma de esclavitud»."
+      },
+      "details": {
+        "en": "The system began with a voyage to Mauritius in 1834. Many recruits were deceived or kidnapped, and early voyages lost more than 17% of their passengers. From 1849 to 1923 half a million Indian labourers passed through the Immigration Depot in Port Louis, today a World Heritage Site; others went to Trinidad, Guyana, Natal, Fiji and Réunion. Pacific Islanders were taken to Queensland, Chinese and Japanese workers to Hawaii. Their descendants now make up a large part of the population of Mauritius, Guyana, Trinidad and Fiji, and their foods, from curries to roti, became part of island cooking.",
+        "es": "El sistema empezó con un viaje a Mauricio en 1834. Muchos reclutados eran engañados o raptados, y en los primeros viajes murió más del 17 % de los pasajeros. De 1849 a 1923, medio millón de trabajadores indios pasaron por el depósito de inmigrantes de Port Louis, hoy Patrimonio de la Humanidad; otros fueron a Trinidad, Guyana, Natal, Fiyi y Reunión. A Queensland se llevó a isleños del Pacífico, y a Hawái, a trabajadores chinos y japoneses. Sus descendientes son hoy gran parte de la población de Mauricio, Guyana, Trinidad y Fiyi, y sus comidas, del curri al roti, entraron en la cocina de las islas."
+      },
+      "control": {
+        "cane": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "indenture_lands"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "indenture",
+          "path": [
+            [
+              88.3,
+              22.2
+            ],
+            [
+              87.5,
+              15.0
+            ],
+            [
+              82.0,
+              5.0
+            ],
+            [
+              70.0,
+              -8.0
+            ],
+            [
+              57.6,
+              -20.1
+            ]
+          ],
+          "label": {
+            "en": "Calcutta to Mauritius",
+            "es": "De Calcuta a Mauricio"
+          }
+        },
+        {
+          "side": "indenture",
+          "path": [
+            [
+              88.3,
+              22.2
+            ],
+            [
+              86.0,
+              10.0
+            ],
+            [
+              80.0,
+              -2.0
+            ],
+            [
+              60.0,
+              -25.0
+            ],
+            [
+              35.0,
+              -33.0
+            ],
+            [
+              31.1,
+              -29.9
+            ]
+          ],
+          "label": {
+            "en": "To Natal",
+            "es": "A Natal"
+          }
+        },
+        {
+          "side": "indenture",
+          "path": [
+            [
+              88.3,
+              22.2
+            ],
+            [
+              91.0,
+              14.0
+            ],
+            [
+              96.0,
+              6.5
+            ],
+            [
+              100.5,
+              3.4
+            ],
+            [
+              103.5,
+              1.2
+            ],
+            [
+              108.0,
+              -4.5
+            ],
+            [
+              118.0,
+              -7.8
+            ],
+            [
+              128.0,
+              -9.0
+            ],
+            [
+              138.0,
+              -10.4
+            ],
+            [
+              142.3,
+              -10.6
+            ],
+            [
+              150.0,
+              -13.0
+            ],
+            [
+              165.0,
+              -17.0
+            ],
+            [
+              177.3,
+              -17.9
+            ]
+          ],
+          "label": {
+            "en": "To Fiji",
+            "es": "A Fiyi"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Aapravasi Ghat",
+            "es": "Aapravasi Ghat"
+          },
+          "at": [
+            57.5031,
+            -20.1586
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "1849",
+          "place": {
+            "en": "Port Louis, Mauritius",
+            "es": "Port Louis, Mauricio"
+          },
+          "text": {
+            "en": "The immigration depot of Port Louis, Mauritius. From 1849 to 1923 half a million Indian labourers passed through it on their way to plantations.",
+            "es": "El depósito de inmigrantes de Port Louis, en Mauricio. De 1849 a 1923 pasaron por él medio millón de trabajadores indios camino de las plantaciones."
+          },
+          "wiki": {
+            "en": "Aapravasi Ghat",
+            "es": "Aapravasi Ghat"
+          }
+        },
+        {
+          "name": {
+            "en": "Indo-Fijians",
+            "es": "Indofiyianos"
+          },
+          "at": [
+            177.45,
+            -17.8
+          ],
+          "cat": "trade",
+          "icon": "⛵",
+          "type": "event",
+          "date": "1879",
+          "place": {
+            "en": "Viti Levu, Fiji",
+            "es": "Viti Levu, Fiyi"
+          },
+          "text": {
+            "en": "From 1879 to 1916 the British brought tens of thousands of Indian labourers to Fiji's cane fields. Their descendants are about a third of Fiji's people.",
+            "es": "De 1879 a 1916, los británicos llevaron a decenas de miles de trabajadores indios a los cañaverales de Fiyi. Sus descendientes son cerca de un tercio de la población."
+          },
+          "wiki": {
+            "en": "Indo-Fijians",
+            "es": "Diáspora india"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2024",
+      "title": {
+        "en": "Sugar today",
+        "es": "El azúcar hoy"
+      },
+      "aftermath": true,
+      "camera": {
+        "lon": -30,
+        "lat": 10,
+        "zoom": 1.15
+      },
+      "text": {
+        "en": "Sugar cane is now the world's biggest crop by weight, and Brazil grows 40% of it, also turning it into car fuel. Beets, led by Russia and Germany, give most of the rest.",
+        "es": "La caña de azúcar es hoy el mayor cultivo del mundo por peso, y Brasil produce el 40 %, que también convierte en combustible para coches. La remolacha, con Rusia y Alemania a la cabeza, da casi todo el resto."
+      },
+      "details": {
+        "en": "In about 400 years sugar went from a medicine for the rich to an everyday food. Brazil began turning cane into ethanol fuel in 1975, and India is the other giant of cane. Doctors and the World Health Organization advise keeping 'free sugars' below a tenth of daily energy, because too much is linked to tooth decay, obesity and diabetes. Cutting cane is still hard, poorly paid work in many countries. Sweets carry the long story: Spain's turrón and marzipan, India's jalebi, Madeira's honey cake and Brazil's brigadeiro.",
+        "es": "En unos 400 años, el azúcar pasó de medicina de ricos a alimento de todos los días. Brasil empezó a convertir la caña en etanol combustible en 1975, y la India es el otro gigante de la caña. Los médicos y la Organización Mundial de la Salud aconsejan que los «azúcares libres» no pasen de una décima parte de la energía diaria, porque su exceso se asocia a caries, obesidad y diabetes. Cortar caña sigue siendo un trabajo duro y mal pagado en muchos países. Los dulces cuentan la larga historia: el turrón y el mazapán de España, el yalebi de la India, el bolo de mel de Madeira y el brigadeiro de Brasil."
+      },
+      "control": {
+        "cane": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "cane_today"
+          },
+          "HTI"
+        ],
+        "beet": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "beet_today"
+          }
+        ]
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Cane ethanol",
+            "es": "Etanol de caña"
+          },
+          "at": [
+            -47.8103,
+            -21.1775
+          ],
+          "cat": "trade",
+          "icon": "⛽",
+          "type": "event",
+          "date": "1975",
+          "place": {
+            "en": "São Paulo state, Brazil",
+            "es": "Estado de São Paulo, Brasil"
+          },
+          "text": {
+            "en": "From 1975 Brazil turned part of its cane into fuel. Millions of Brazilian cars now run on ethanol made around towns such as Ribeirão Preto.",
+            "es": "Desde 1975, Brasil convierte parte de su caña en combustible. Millones de coches brasileños funcionan hoy con etanol hecho en torno a ciudades como Ribeirão Preto."
+          },
+          "wiki": {
+            "en": "Ethanol fuel in Brazil",
+            "es": "Bioetanol"
+          }
+        },
+        {
+          "name": {
+            "en": "Brigadeiro",
+            "es": "Brigadeiro"
+          },
+          "at": [
+            -43.1729,
+            -22.9068
+          ],
+          "cat": "sweet",
+          "type": "dish",
+          "date": "1945",
+          "place": {
+            "en": "Rio de Janeiro, Brazil",
+            "es": "Río de Janeiro, Brasil"
+          },
+          "text": {
+            "en": "Balls of condensed milk, cocoa and butter rolled in chocolate sprinkles, created in 1945 to promote a presidential candidate, Brigadier Eduardo Gomes.",
+            "es": "Bolitas de leche condensada, cacao y mantequilla rebozadas en fideos de chocolate, creadas en 1945 para promocionar a un candidato a presidente, el brigadier Eduardo Gomes."
+          },
+          "country": "BRA",
+          "wiki": {
+            "en": "Brigadeiro",
+            "es": "Brigadeiro"
+          }
+        },
+        {
+          "name": {
+            "en": "Sugar beet",
+            "es": "Remolacha azucarera"
+          },
+          "at": [
+            13.5786,
+            52.5122
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "1783",
+          "place": {
+            "en": "Kaulsdorf, Berlin, Germany",
+            "es": "Kaulsdorf, Berlín, Alemania"
+          },
+          "text": {
+            "en": "A white beet bred for sugar near Berlin, where Achard made his first beet sugar in 1783. It grows where it is too cold for cane; Russia and Germany grow the most.",
+            "es": "Una remolacha blanca seleccionada para dar azúcar cerca de Berlín, donde Achard obtuvo su primer azúcar de remolacha en 1783. Crece donde hace demasiado frío para la caña; Rusia y Alemania son sus mayores productores."
+          },
+          "wiki": {
+            "en": "Sugar beet",
+            "es": "Beta vulgaris subsp. vulgaris var. altissima"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Sugar changed what the world eats and drinks, and who lives where. Its plantations drove the Atlantic slave trade and, after slavery, the indenture of Indian, Chinese and Pacific workers, whose descendants shape the Caribbean, Brazil, Mauritius and Fiji today. Cane is now the world's largest crop, and sugar is so cheap and plentiful that the challenge has turned from getting enough to eating less.",
+    "es": "El azúcar cambió lo que el mundo come y bebe, y quién vive dónde. Sus plantaciones impulsaron la trata atlántica de esclavos y, tras la esclavitud, la contratación de trabajadores indios, chinos y del Pacífico, cuyos descendientes dan forma hoy al Caribe, Brasil, Mauricio y Fiyi. La caña es ahora el mayor cultivo del mundo, y el azúcar es tan barato y abundante que el reto ha pasado de conseguirlo a comer menos."
+  },
+  "sources": [
+    {
+      "title": "History of sugar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_sugar"
+    },
+    {
+      "title": "Sugarcane (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sugarcane"
+    },
+    {
+      "title": "Kuk Swamp (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kuk_Swamp"
+    },
+    {
+      "title": "Industria azucarera de Andalucía (Wikipedia, Spanish)",
+      "url": "https://es.wikipedia.org/wiki/Industria_azucarera_de_Andaluc%C3%ADa"
+    },
+    {
+      "title": "Kolossi Castle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kolossi_Castle"
+    },
+    {
+      "title": "Palmares (quilombo) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Palmares_(quilombo)"
+    },
+    {
+      "title": "Sugar plantations in the Caribbean (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sugar_plantations_in_the_Caribbean"
+    },
+    {
+      "title": "Atlantic slave trade (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Atlantic_slave_trade"
+    },
+    {
+      "title": "Haitian Revolution (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Haitian_Revolution"
+    },
+    {
+      "title": "Valle de los Ingenios (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Valle_de_los_Ingenios"
+    },
+    {
+      "title": "Indian indenture system (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Indian_indenture_system"
+    },
+    {
+      "title": "Aapravasi Ghat (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aapravasi_Ghat"
+    },
+    {
+      "title": "Sugar beet (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sugar_beet"
+    }
+  ]
+}

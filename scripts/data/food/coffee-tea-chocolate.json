@@ -1,0 +1,2747 @@
+{
+  "id": "coffee-tea-chocolate",
+  "name": {
+    "en": "Coffee, tea and chocolate",
+    "es": "Café, té y chocolate"
+  },
+  "icon": "☕",
+  "era": "ancient",
+  "region": {
+    "en": "The Amazon and Mesoamerica, China and Japan, Ethiopia and Yemen, then the world",
+    "es": "La Amazonia y Mesoamérica, China y Japón, Etiopía y Yemen, y después el mundo"
+  },
+  "start": "-3300",
+  "end": "1905",
+  "summary": {
+    "en": "Three drinks from three corners of the world: cacao from the Amazon, tea from the hills of Yunnan and coffee from Ethiopia. How they conquered the world, and at what human cost.",
+    "es": "Tres bebidas de tres rincones del mundo: el cacao de la Amazonia, el té de las colinas de Yunnan y el café de Etiopía. Cómo conquistaron el mundo, y a qué precio humano."
+  },
+  "camera": {
+    "lon": -78.8,
+    "lat": -5.0,
+    "zoom": 6.0
+  },
+  "sides": [
+    {
+      "id": "cacao",
+      "name": {
+        "en": "Cacao",
+        "es": "Cacao"
+      },
+      "color": "#7a4419"
+    },
+    {
+      "id": "tea",
+      "name": {
+        "en": "Tea",
+        "es": "Té"
+      },
+      "color": "#1e8449"
+    },
+    {
+      "id": "coffee",
+      "name": {
+        "en": "Coffee",
+        "es": "Café"
+      },
+      "color": "#c0392b"
+    }
+  ],
+  "defs": {
+    "cacao_amazon": {
+      "and": [
+        [
+          "ECU",
+          "PER"
+        ],
+        {
+          "poly": [
+            [
+              -79.7,
+              -3.2
+            ],
+            [
+              -77.6,
+              -3.0
+            ],
+            [
+              -77.3,
+              -5.0
+            ],
+            [
+              -78.1,
+              -6.5
+            ],
+            [
+              -79.5,
+              -5.7
+            ]
+          ]
+        }
+      ]
+    },
+    "cacao_meso": {
+      "and": [
+        [
+          "MEX",
+          "GTM",
+          "BLZ",
+          "SLV",
+          "HND"
+        ],
+        {
+          "poly": [
+            [
+              -96.6,
+              19.2
+            ],
+            [
+              -94.0,
+              18.8
+            ],
+            [
+              -91.0,
+              18.7
+            ],
+            [
+              -88.4,
+              18.6
+            ],
+            [
+              -87.6,
+              15.8
+            ],
+            [
+              -88.0,
+              13.1
+            ],
+            [
+              -91.6,
+              13.5
+            ],
+            [
+              -93.6,
+              15.4
+            ],
+            [
+              -95.6,
+              16.9
+            ]
+          ]
+        }
+      ]
+    },
+    "cacao_spanish": [
+      "TTO",
+      "JAM",
+      {
+        "and": [
+          "VEN",
+          {
+            "poly": [
+              [
+                -72.0,
+                11.2
+              ],
+              [
+                -61.8,
+                11.2
+              ],
+              [
+                -61.8,
+                9.4
+              ],
+              [
+                -72.0,
+                8.8
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "and": [
+          "ECU",
+          {
+            "poly": [
+              [
+                -80.6,
+                -0.8
+              ],
+              [
+                -79.2,
+                -0.8
+              ],
+              [
+                -79.2,
+                -3.2
+              ],
+              [
+                -80.6,
+                -3.2
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "cacao_africa": [
+      "STP",
+      {
+        "and": [
+          "GNQ",
+          {
+            "poly": [
+              [
+                8.3,
+                3.9
+              ],
+              [
+                9.1,
+                3.9
+              ],
+              [
+                9.1,
+                3.1
+              ],
+              [
+                8.3,
+                3.1
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "and": [
+          "GHA",
+          {
+            "poly": [
+              [
+                -3.2,
+                7.7
+              ],
+              [
+                0.7,
+                7.7
+              ],
+              [
+                0.7,
+                5.6
+              ],
+              [
+                -3.2,
+                4.8
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "tea_origin": {
+      "and": [
+        [
+          "CHN",
+          "MMR"
+        ],
+        {
+          "poly": [
+            [
+              97.4,
+              28.6
+            ],
+            [
+              103.5,
+              31.6
+            ],
+            [
+              106.2,
+              29.0
+            ],
+            [
+              105.2,
+              22.6
+            ],
+            [
+              100.2,
+              21.1
+            ],
+            [
+              97.0,
+              23.6
+            ]
+          ]
+        }
+      ]
+    },
+    "tea_china": {
+      "and": [
+        "CHN",
+        {
+          "poly": [
+            [
+              103.5,
+              31.6
+            ],
+            [
+              111.0,
+              33.2
+            ],
+            [
+              121.8,
+              31.6
+            ],
+            [
+              122.2,
+              29.0
+            ],
+            [
+              119.6,
+              24.4
+            ],
+            [
+              111.0,
+              21.8
+            ],
+            [
+              105.2,
+              22.6
+            ],
+            [
+              106.2,
+              29.0
+            ]
+          ]
+        }
+      ]
+    },
+    "tea_japan": {
+      "and": [
+        "JPN",
+        {
+          "poly": [
+            [
+              129.6,
+              34.0
+            ],
+            [
+              135.0,
+              35.4
+            ],
+            [
+              138.9,
+              35.5
+            ],
+            [
+              138.9,
+              34.4
+            ],
+            [
+              135.0,
+              33.4
+            ],
+            [
+              130.6,
+              30.9
+            ],
+            [
+              129.6,
+              32.0
+            ]
+          ]
+        }
+      ]
+    },
+    "tea_india": {
+      "and": [
+        "IND",
+        {
+          "poly": [
+            [
+              88.0,
+              27.3
+            ],
+            [
+              88.6,
+              27.3
+            ],
+            [
+              88.6,
+              26.7
+            ],
+            [
+              88.0,
+              26.7
+            ]
+          ]
+        }
+      ]
+    },
+    "tea_assam": {
+      "and": [
+        "IND",
+        {
+          "poly": [
+            [
+              89.9,
+              27.2
+            ],
+            [
+              96.0,
+              28.0
+            ],
+            [
+              96.0,
+              26.6
+            ],
+            [
+              92.5,
+              25.8
+            ],
+            [
+              89.9,
+              25.8
+            ]
+          ]
+        }
+      ]
+    },
+    "coffee_origin": [
+      {
+        "and": [
+          "ETH",
+          {
+            "poly": [
+              [
+                34.8,
+                9.3
+              ],
+              [
+                38.5,
+                9.3
+              ],
+              [
+                42.6,
+                9.9
+              ],
+              [
+                42.6,
+                8.6
+              ],
+              [
+                38.6,
+                5.5
+              ],
+              [
+                35.0,
+                6.0
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "and": [
+          "YEM",
+          {
+            "poly": [
+              [
+                43.2,
+                16.5
+              ],
+              [
+                44.7,
+                16.3
+              ],
+              [
+                44.7,
+                13.4
+              ],
+              [
+                43.4,
+                13.3
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "coffee_asia": [
+      {
+        "and": [
+          "IND",
+          {
+            "poly": [
+              [
+                75.0,
+                14.0
+              ],
+              [
+                76.4,
+                14.0
+              ],
+              [
+                76.6,
+                11.4
+              ],
+              [
+                75.4,
+                11.4
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "a1": "IDN",
+        "names": [
+          "West Java",
+          "Central Java",
+          "East Java",
+          "Banten",
+          "Yogyakarta",
+          "Jakarta"
+        ]
+      }
+    ],
+    "coffee_americas": [
+      {
+        "and": [
+          "FRA",
+          {
+            "poly": [
+              [
+                -61.3,
+                14.3
+              ],
+              [
+                -60.75,
+                14.3
+              ],
+              [
+                -60.75,
+                14.95
+              ],
+              [
+                -61.3,
+                14.95
+              ]
+            ]
+          }
+        ]
+      },
+      "HTI",
+      {
+        "and": [
+          "BRA",
+          {
+            "poly": [
+              [
+                -48.6,
+                -19.4
+              ],
+              [
+                -41.0,
+                -19.4
+              ],
+              [
+                -42.4,
+                -23.0
+              ],
+              [
+                -45.2,
+                -23.9
+              ],
+              [
+                -48.6,
+                -23.0
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "steps": [
+    {
+      "date": "-3300",
+      "title": {
+        "en": "The first cacao",
+        "es": "El primer cacao"
+      },
+      "camera": {
+        "lon": -78.8,
+        "lat": -5.0,
+        "zoom": 6.0
+      },
+      "text": {
+        "en": "About 5,300 years ago, people of the Mayo-Chinchipe culture, on the Amazon slopes of the Andes in Ecuador, were using cacao: the oldest evidence found so far.",
+        "es": "Hace unos 5300 años, la gente de la cultura Mayo-Chinchipe, en la vertiente amazónica de los Andes de Ecuador, ya usaba el cacao: la prueba más antigua hallada hasta hoy."
+      },
+      "details": {
+        "en": "At Santa Ana-La Florida, near Palanda, archaeologists found traces of cacao in pots and stone vessels from about 3300 BC, including theobromine, the bitter stimulant of chocolate. The cacao tree grows wild in the upper Amazon, and its seeds sit in a sweet white pulp that was probably enjoyed first; the Olmec later fermented such pulp into an alcoholic drink. Long before chocolate, then, cacao was being eaten and drunk in South America, and from there the tree was carried north to Mexico and Central America.",
+        "es": "En Santa Ana-La Florida, cerca de Palanda, los arqueólogos hallaron restos de cacao en vasijas de cerámica y de piedra de hacia el 3300 a. C., entre ellos teobromina, el estimulante amargo del chocolate. El cacao crece silvestre en la alta Amazonia, y sus semillas están envueltas en una pulpa blanca y dulce que probablemente se disfrutó primero; los olmecas fermentarían después una pulpa así para hacer una bebida alcohólica. Mucho antes del chocolate, pues, el cacao ya se comía y se bebía en Sudamérica, y desde allí el árbol llegó al norte, a México y Centroamérica."
+      },
+      "control": {
+        "cacao": {
+          "ref": "cacao_amazon"
+        }
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Cacao",
+            "es": "Cacao"
+          },
+          "at": [
+            -78.53,
+            -5.64
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-3300",
+          "place": {
+            "en": "Upper Amazon, Ecuador and Peru",
+            "es": "Alta Amazonia, Ecuador y Perú"
+          },
+          "text": {
+            "en": "A small tree of the upper Amazon whose pods hold bitter seeds in a sweet pulp. Its seeds, fermented and roasted, give cocoa and chocolate.",
+            "es": "Un arbolito de la alta Amazonia cuyas mazorcas guardan semillas amargas en una pulpa dulce. Sus semillas, fermentadas y tostadas, dan el cacao y el chocolate."
+          },
+          "wiki": {
+            "en": "Theobroma cacao",
+            "es": "Theobroma cacao"
+          }
+        },
+        {
+          "name": {
+            "en": "Santa Ana-La Florida",
+            "es": "Santa Ana-La Florida"
+          },
+          "at": [
+            -79.13,
+            -4.65
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-3300",
+          "place": {
+            "en": "Palanda, Zamora-Chinchipe, Ecuador",
+            "es": "Palanda, Zamora Chinchipe, Ecuador"
+          },
+          "text": {
+            "en": "A ceremonial site of the Mayo-Chinchipe culture, where vessels about 5,300 years old held traces of cacao: the earliest known use of the plant.",
+            "es": "Un lugar ceremonial de la cultura Mayo-Chinchipe donde unas vasijas de unos 5300 años guardaban restos de cacao: el uso más antiguo conocido de la planta."
+          },
+          "wiki": {
+            "en": "Mayo-Chinchipe",
+            "es": "Santa Ana-La Florida"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-1900",
+      "title": {
+        "en": "Cacao comes to Mesoamerica",
+        "es": "El cacao llega a Mesoamérica"
+      },
+      "camera": {
+        "lon": -93.5,
+        "lat": 16.5,
+        "zoom": 4.2
+      },
+      "text": {
+        "en": "Carried north from South America, cacao took root in Mexico and Central America. By 1900 BC the Mokaya of the Chiapas coast were drinking frothy cacao.",
+        "es": "Llevado al norte desde Sudamérica, el cacao arraigó en México y Centroamérica. Hacia el 1900 a. C., los mokayas de la costa de Chiapas ya bebían cacao espumoso."
+      },
+      "details": {
+        "en": "The oldest cacao drinks in Mesoamerica come from the Pacific coast of Chiapas, in the region later called Soconusco, where the Mokaya made bitter, frothy, watery cacao drinks by 1900 BC. On the Gulf coast of Veracruz, people were preparing cacao by about 1750 BC, and the Olmec, the first great civilisation of Mexico, used it at their capital, San Lorenzo, perhaps in large ceremonies. The word cacao itself may come from the Mixe-Zoque languages spoken by the Olmec.",
+        "es": "Las bebidas de cacao más antiguas de Mesoamérica proceden de la costa del Pacífico de Chiapas, en la región que después se llamó Soconusco, donde los mokayas preparaban hacia el 1900 a. C. bebidas de cacao amargas, espumosas y aguadas. En la costa del Golfo, en Veracruz, se preparaba cacao hacia el 1750 a. C., y los olmecas, la primera gran civilización de México, lo usaban en su capital, San Lorenzo, quizá en grandes ceremonias. La propia palabra cacao podría venir de las lenguas mixe-zoques que hablaban los olmecas."
+      },
+      "control": {
+        "cacao": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "cacao_meso"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "cacao",
+          "path": [
+            [
+              -78.6,
+              -5.0
+            ],
+            [
+              -79.6,
+              0.0
+            ],
+            [
+              -78.6,
+              4.0
+            ],
+            [
+              -77.4,
+              7.6
+            ],
+            [
+              -81.5,
+              8.4
+            ],
+            [
+              -85.6,
+              11.2
+            ],
+            [
+              -88.6,
+              13.6
+            ],
+            [
+              -92.2,
+              14.9
+            ]
+          ],
+          "label": {
+            "en": "Cacao travels north",
+            "es": "El cacao viaja al norte"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Paso de la Amada",
+            "es": "Paso de la Amada"
+          },
+          "at": [
+            -92.4907,
+            14.8765
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-1900",
+          "place": {
+            "en": "Soconusco, Chiapas, Mexico",
+            "es": "Soconusco, Chiapas, México"
+          },
+          "text": {
+            "en": "A village of the Mokaya people on the Chiapas coast, with the oldest known ballcourt. Its people were drinking frothy cacao by about 1900 BC.",
+            "es": "Una aldea de los mokayas en la costa de Chiapas, con el juego de pelota más antiguo que se conoce. Su gente ya bebía cacao espumoso hacia el 1900 a. C."
+          },
+          "wiki": {
+            "en": "Paso de la Amada",
+            "es": "Paso de la Amada"
+          }
+        },
+        {
+          "name": {
+            "en": "San Lorenzo",
+            "es": "San Lorenzo"
+          },
+          "at": [
+            -94.76,
+            17.7536
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-1400",
+          "place": {
+            "en": "Veracruz, Mexico",
+            "es": "Veracruz, México"
+          },
+          "text": {
+            "en": "The first great Olmec city, famous for its colossal stone heads. There are signs that its people used cacao, perhaps in large ceremonies.",
+            "es": "La primera gran ciudad olmeca, famosa por sus cabezas colosales de piedra. Hay indicios de que su gente usaba el cacao, quizá en grandes ceremonias."
+          },
+          "wiki": {
+            "en": "San Lorenzo Tenochtitlán",
+            "es": "San Lorenzo Tenochtitlán"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-141",
+      "title": {
+        "en": "Tea from Yunnan",
+        "es": "El té de Yunnan"
+      },
+      "camera": {
+        "lon": 104.5,
+        "lat": 28.5,
+        "zoom": 2.8
+      },
+      "text": {
+        "en": "The tea plant comes from the mountains where China, Tibet, Myanmar and India meet. People in Yunnan first used it as medicine; a Han emperor buried in 141 BC took tea to his tomb.",
+        "es": "La planta del té procede de las montañas donde se juntan China, el Tíbet, Birmania y la India. En Yunnan se usó primero como medicina; un emperador Han enterrado en el 141 a. C. se llevó té a su tumba."
+      },
+      "details": {
+        "en": "Tea was probably first chewed or brewed as a medicine in Yunnan in the 2nd millennium BC, and in Sichuan people began to boil the leaves into a bitter, stimulating drink. Legend says the emperor Shennong discovered it in 2737 BC when leaves blew into his boiling water. The oldest tea ever found, identified in 2016, was buried with Emperor Jing of Han near Xi'an. In the 1st century BC tea was being grown on Mount Meng near Chengdu, and a Han contract for a servant lists 'boil tea' and 'buy tea' among his chores.",
+        "es": "El té se masticó o se coció probablemente como medicina en Yunnan en el segundo milenio a. C., y en Sichuan se empezaron a hervir las hojas para hacer una bebida amarga y estimulante. La leyenda dice que el emperador Shennong lo descubrió en el 2737 a. C., cuando unas hojas cayeron en su agua hirviendo. El té más antiguo jamás hallado, identificado en 2016, se enterró con el emperador Jing de la dinastía Han cerca de Xi'an. En el siglo I a. C. ya se cultivaba té en el monte Meng, cerca de Chengdu, y un contrato Han de un criado incluye entre sus tareas «hervir té» y «comprar té»."
+      },
+      "control": {
+        "tea": {
+          "ref": "tea_origin"
+        }
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Tea plant",
+            "es": "Planta del té"
+          },
+          "at": [
+            100.1,
+            23.9
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-1500",
+          "place": {
+            "en": "Yunnan, China",
+            "es": "Yunnan, China"
+          },
+          "text": {
+            "en": "An evergreen camellia native to the hills of Yunnan, northern Myanmar and Assam. All true tea, green, black, oolong or pu'er, comes from its leaves.",
+            "es": "Una camelia de hoja perenne nativa de las colinas de Yunnan, el norte de Birmania y Assam. Todo el té verdadero, verde, negro, oolong o pu'er, sale de sus hojas."
+          },
+          "wiki": {
+            "en": "Camellia sinensis",
+            "es": "Camellia sinensis"
+          }
+        },
+        {
+          "name": {
+            "en": "Tomb of Emperor Jing",
+            "es": "Tumba del emperador Jing"
+          },
+          "at": [
+            108.9407,
+            34.4438
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-141",
+          "place": {
+            "en": "Xianyang, near Xi'an, China",
+            "es": "Xianyang, cerca de Xi'an, China"
+          },
+          "text": {
+            "en": "The mausoleum of Emperor Jing of Han, who died in 141 BC. Leaves found here in 2016 are the oldest tea ever discovered.",
+            "es": "El mausoleo del emperador Jing de la dinastía Han, muerto en el 141 a. C. Unas hojas halladas aquí en 2016 son el té más antiguo jamás descubierto."
+          },
+          "wiki": {
+            "en": "Yangling Mausoleum of Han",
+            "es": "Dinastía Han"
+          }
+        }
+      ]
+    },
+    {
+      "date": "500",
+      "title": {
+        "en": "The Maya and their cacao",
+        "es": "Los mayas y su cacao"
+      },
+      "camera": {
+        "lon": -89.4,
+        "lat": 16.0,
+        "zoom": 5.0
+      },
+      "text": {
+        "en": "For the Maya, cacao was a gift of the gods, drunk as a frothy, bitter chocolate. Its beans were used as money by 400 BC, and even village farmers grew it.",
+        "es": "Para los mayas, el cacao era un regalo de los dioses, que se bebía como un chocolate amargo y espumoso. Sus granos ya se usaban como dinero hacia el 400 a. C., y hasta los campesinos de las aldeas lo cultivaban."
+      },
+      "details": {
+        "en": "The Maya were drinking chocolate by about 600 BC. They ground roasted cacao on stone metates, mixed it with water, chilli or maize, and poured it from a height to raise a foam, the most prized part. Cacao, and the painted vessels for serving it, were given as gifts and tribute, and Ek Chuah was the patron god of cacao and merchants. In a royal tomb at Río Azul, archaeologists found a lidded pot painted with the glyph for kakaw and still holding chocolate residue. At Joya de Cerén, a farming village buried by ash around AD 600, families grew cacao beside their maize, beans and manioc.",
+        "es": "Los mayas ya bebían chocolate hacia el 600 a. C. Molían el cacao tostado en metates de piedra, lo mezclaban con agua, chile o maíz y lo vertían desde lo alto para levantar espuma, la parte más apreciada. El cacao y las vasijas pintadas para servirlo se daban como regalo y tributo, y Ek Chuah era el dios del cacao y de los mercaderes. En una tumba real de Río Azul, los arqueólogos hallaron una vasija con tapa pintada con el glifo kakaw y con restos de chocolate. En Joya de Cerén, una aldea de campesinos sepultada por la ceniza hacia el 600 d. C., las familias cultivaban cacao junto al maíz, el frijol y la yuca."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Río Azul",
+            "es": "Río Azul"
+          },
+          "at": [
+            -89.28,
+            17.7791
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "500",
+          "place": {
+            "en": "Petén, Guatemala",
+            "es": "Petén, Guatemala"
+          },
+          "text": {
+            "en": "A Maya city whose royal tomb held a lidded pot of about AD 500 painted with the glyph for cacao, kakaw, and still holding traces of chocolate.",
+            "es": "Una ciudad maya cuya tumba real guardaba una vasija con tapa de hacia el 500 d. C. pintada con el glifo del cacao, kakaw, y con restos de chocolate."
+          },
+          "wiki": {
+            "en": "Río Azul",
+            "es": "Cultura maya"
+          }
+        },
+        {
+          "name": {
+            "en": "Joya de Cerén",
+            "es": "Joya de Cerén"
+          },
+          "at": [
+            -89.3561,
+            13.8275
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "600",
+          "place": {
+            "en": "La Libertad, El Salvador",
+            "es": "La Libertad, El Salvador"
+          },
+          "text": {
+            "en": "A Maya farming village buried by a volcanic eruption around AD 600, the 'Pompeii of the Americas'. Its farmers grew cacao, maize, beans, manioc and guava.",
+            "es": "Una aldea maya de campesinos sepultada por una erupción hacia el 600 d. C., la «Pompeya de América». Sus vecinos cultivaban cacao, maíz, frijol, yuca y guayaba."
+          },
+          "wiki": {
+            "en": "Joya de Cerén",
+            "es": "Joya de Cerén"
+          }
+        }
+      ]
+    },
+    {
+      "date": "760",
+      "title": {
+        "en": "The Classic of Tea",
+        "es": "El Clásico del té"
+      },
+      "camera": {
+        "lon": 106.0,
+        "lat": 27.5,
+        "zoom": 2.0
+      },
+      "text": {
+        "en": "Under the Tang dynasty, tea became China's everyday drink. Around 760, Lu Yu wrote The Classic of Tea, and caravans began trading tea bricks for Tibetan horses.",
+        "es": "Con la dinastía Tang, el té se convirtió en la bebida diaria de China. Hacia el 760, Lu Yu escribió el Clásico del té, y las caravanas empezaron a cambiar ladrillos de té por caballos tibetanos."
+      },
+      "details": {
+        "en": "Lu Yu (733–804), an orphan raised in a Buddhist monastery, became the 'Sage of Tea'. His Classic of Tea, the first book devoted to it, describes how to grow, pick, process and brew tea and the tools to serve it. Tea was then pressed into cakes, roasted and boiled; under the Song it was whisked as a powder. The Tang spread tea to Korea, Japan and Vietnam. Along the Tea Horse Road, porters and mule trains carried bricks of tea from Ya'an in Sichuan and Pu'er in Yunnan over the mountains to Lhasa, where Tibetans churned it with yak butter and salt, and traded horses in return.",
+        "es": "Lu Yu (733–804), un huérfano criado en un monasterio budista, se convirtió en el «Sabio del té». Su Clásico del té, el primer libro dedicado a él, explica cómo cultivar, recoger, preparar y servir el té y con qué utensilios. Entonces el té se prensaba en tortas, se tostaba y se hervía; con los Song se batía en polvo. Los Tang lo extendieron a Corea, Japón y Vietnam. Por el Camino del Té y los Caballos, porteadores y recuas de mulas llevaban ladrillos de té desde Ya'an, en Sichuan, y Pu'er, en Yunnan, por las montañas hasta Lhasa, donde los tibetanos lo batían con mantequilla de yak y sal, y daban caballos a cambio."
+      },
+      "control": {
+        "tea": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "tea_china"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "tea",
+          "path": [
+            [
+              103.0,
+              30.0
+            ],
+            [
+              102.0,
+              30.05
+            ],
+            [
+              100.0,
+              30.4
+            ],
+            [
+              97.2,
+              30.1
+            ],
+            [
+              94.4,
+              29.7
+            ],
+            [
+              91.2,
+              29.65
+            ]
+          ],
+          "label": {
+            "en": "Tea Horse Road from Ya'an",
+            "es": "Camino del Té y los Caballos desde Ya'an"
+          }
+        },
+        {
+          "side": "tea",
+          "path": [
+            [
+              100.97,
+              22.79
+            ],
+            [
+              100.2,
+              25.6
+            ],
+            [
+              100.23,
+              26.87
+            ],
+            [
+              99.7,
+              27.8
+            ],
+            [
+              98.9,
+              29.1
+            ],
+            [
+              96.5,
+              29.9
+            ],
+            [
+              91.3,
+              29.6
+            ]
+          ],
+          "label": {
+            "en": "From Pu'er by Dali and Lijiang",
+            "es": "Desde Pu'er por Dali y Lijiang"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Lu Yu",
+            "es": "Lu Yu"
+          },
+          "at": [
+            120.09,
+            30.89
+          ],
+          "cat": "trade",
+          "icon": "✍️",
+          "type": "person",
+          "date": "760",
+          "life": [
+            "733",
+            "804"
+          ],
+          "place": {
+            "en": "Huzhou, Zhejiang, China",
+            "es": "Huzhou, Zhejiang, China"
+          },
+          "text": {
+            "en": "The 'Sage of Tea' (733–804), whose Classic of Tea, the first book about tea, taught how to grow, prepare and drink it.",
+            "es": "El «Sabio del té» (733–804), cuyo Clásico del té, el primer libro sobre el té, enseñaba a cultivarlo, prepararlo y beberlo."
+          },
+          "wiki": {
+            "en": "Lu Yu",
+            "es": "Té"
+          }
+        },
+        {
+          "name": {
+            "en": "Pu'er tea",
+            "es": "Té pu-erh"
+          },
+          "at": [
+            100.97,
+            22.79
+          ],
+          "cat": "drink",
+          "type": "dish",
+          "date": "750",
+          "place": {
+            "en": "Pu'er, Yunnan, China",
+            "es": "Pu'er, Yunnan, China"
+          },
+          "text": {
+            "en": "Yunnan's fermented tea, pressed into cakes and bricks. Carried by mule trains along the Tea Horse Road, it was traded in Tibet for horses.",
+            "es": "El té fermentado de Yunnan, prensado en tortas y ladrillos. Llevado por recuas de mulas por el Camino del Té y los Caballos, se cambiaba en el Tíbet por caballos."
+          },
+          "country": "CHN",
+          "wiki": {
+            "en": "Pu'er tea",
+            "es": "Pu-erh"
+          }
+        },
+        {
+          "name": {
+            "en": "Butter tea",
+            "es": "Té con mantequilla"
+          },
+          "at": [
+            91.1408,
+            29.6458
+          ],
+          "cat": "drink",
+          "type": "dish",
+          "date": "800",
+          "place": {
+            "en": "Lhasa, Tibet",
+            "es": "Lhasa, Tíbet"
+          },
+          "text": {
+            "en": "Tibetans churn strong tea with yak butter and salt into a warming, rich drink, the end of the tea's long journey from Sichuan and Yunnan.",
+            "es": "Los tibetanos baten té fuerte con mantequilla de yak y sal hasta obtener una bebida espesa que da calor: el final del largo viaje del té desde Sichuan y Yunnan."
+          },
+          "wiki": {
+            "en": "Butter tea",
+            "es": "Lhasa"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1191",
+      "title": {
+        "en": "Tea and Zen in Japan",
+        "es": "Té y zen en Japón"
+      },
+      "camera": {
+        "lon": 134.6,
+        "lat": 34.3,
+        "zoom": 6.5
+      },
+      "text": {
+        "en": "In 1191 the monk Eisai brought Zen and tea seeds home from China. Four centuries later, the tea master Sen no Rikyū shaped the Japanese tea ceremony.",
+        "es": "En 1191, el monje Eisai trajo de China el zen y semillas de té. Cuatro siglos después, el maestro del té Sen no Rikyū dio forma a la ceremonia japonesa del té."
+      },
+      "details": {
+        "en": "Eisai brought the custom of whisking powdered green tea, matcha, in a bowl, and wrote Japan's first book on tea, which begins: 'Tea is the ultimate mental and medical remedy.' Warriors took to tea, holding contests to guess where a tea came from. In the 1500s Sen no Rikyū, born to a merchant family of Sakai, turned tea into a spiritual art of rustic simplicity, wabi, served in tiny tea houses with rough, handmade bowls. He was tea master to the ruler Toyotomi Hideyoshi, who in 1591 ordered him to take his own life. Three schools founded by his great-grandchildren still teach his way of tea.",
+        "es": "Eisai trajo la costumbre de batir té verde en polvo, el matcha, en un cuenco, y escribió el primer libro japonés sobre el té, que empieza: «El té es el remedio supremo para la mente y el cuerpo». Los guerreros se aficionaron al té y hacían concursos para adivinar su origen. En el siglo XVI, Sen no Rikyū, de una familia de mercaderes de Sakai, convirtió el té en un arte espiritual de sencillez rústica, el wabi, servido en casitas de té diminutas con cuencos toscos hechos a mano. Fue maestro del té del gobernante Toyotomi Hideyoshi, que en 1591 le ordenó quitarse la vida. Tres escuelas fundadas por sus bisnietos siguen enseñando su camino del té."
+      },
+      "control": {
+        "tea": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "tea_japan"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "tea",
+          "path": [
+            [
+              121.6,
+              29.9
+            ],
+            [
+              125.0,
+              31.0
+            ],
+            [
+              129.0,
+              33.2
+            ],
+            [
+              130.9,
+              33.9
+            ],
+            [
+              133.0,
+              34.2
+            ],
+            [
+              135.2,
+              34.6
+            ],
+            [
+              135.75,
+              34.95
+            ]
+          ],
+          "label": {
+            "en": "Eisai's tea seeds, 1191",
+            "es": "Las semillas de té de Eisai, 1191"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Eisai",
+            "es": "Eisai"
+          },
+          "at": [
+            135.7737,
+            35.001
+          ],
+          "cat": "trade",
+          "icon": "🍵",
+          "type": "person",
+          "date": "1191",
+          "life": [
+            "1141-05-27",
+            "1215-08-01"
+          ],
+          "place": {
+            "en": "Kennin-ji, Kyoto, Japan",
+            "es": "Kennin-ji, Kioto, Japón"
+          },
+          "text": {
+            "en": "A Japanese monk who brought Zen and tea seeds from China in 1191 and wrote the first Japanese book on tea. He founded Kennin-ji, Kyoto's oldest Zen temple.",
+            "es": "Monje japonés que trajo de China el zen y semillas de té en 1191 y escribió el primer libro japonés sobre el té. Fundó Kennin-ji, el templo zen más antiguo de Kioto."
+          },
+          "wiki": {
+            "en": "Eisai",
+            "es": "Eisai"
+          }
+        },
+        {
+          "name": {
+            "en": "Sen no Rikyū",
+            "es": "Sen no Rikyū"
+          },
+          "at": [
+            135.4828,
+            34.5733
+          ],
+          "cat": "trade",
+          "icon": "🍵",
+          "type": "person",
+          "date": "1580",
+          "life": [
+            "1522",
+            "1591-04-21"
+          ],
+          "place": {
+            "en": "Sakai, Osaka, Japan",
+            "es": "Sakai, Osaka, Japón"
+          },
+          "text": {
+            "en": "The tea master from Sakai who made the tea ceremony an art of rustic simplicity, wabi. Three schools descended from him still teach it.",
+            "es": "El maestro del té de Sakai que convirtió la ceremonia del té en un arte de sencillez rústica, el wabi. Tres escuelas que descienden de él la siguen enseñando."
+          },
+          "wiki": {
+            "en": "Sen no Rikyū",
+            "es": "Sen no Rikyū"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1450",
+      "title": {
+        "en": "Coffee among Yemen's Sufis",
+        "es": "El café de los sufíes de Yemen"
+      },
+      "camera": {
+        "lon": 41.0,
+        "lat": 11.0,
+        "zoom": 4.0
+      },
+      "text": {
+        "en": "Coffee grows wild in Ethiopia's forests. In the 1400s Sufis in Yemen brewed its roasted beans to stay awake for night prayers, and terraces of coffee spread over Yemen's mountains.",
+        "es": "El café crece silvestre en los bosques de Etiopía. En el siglo XV, los sufíes de Yemen preparaban sus granos tostados para mantenerse despiertos en los rezos nocturnos, y las terrazas de café cubrieron las montañas de Yemen."
+      },
+      "details": {
+        "en": "Coffea arabica comes from the highland forests of southwestern Ethiopia, around the old kingdom of Kaffa. A famous legend tells of a goatherd, later named Kaldi, whose goats danced after eating the red berries; it was first written down in Rome in 1671, so it is probably a tale. There is no sure evidence of coffee as a drink before the 1400s, when Sufi brotherhoods in Yemen drank it to keep alert while chanting the name of God. Yemen's farmers grew it on terraces in highlands such as Haraz and Bani Matar, and for two centuries the Red Sea port of Mocha was the world's coffee market; the name 'mocha' still recalls it.",
+        "es": "Coffea arabica procede de los bosques de montaña del suroeste de Etiopía, en torno al antiguo reino de Kaffa. Una leyenda famosa cuenta que un cabrero, al que más tarde llamaron Kaldi, vio bailar a sus cabras tras comer las bayas rojas; se escribió por primera vez en Roma en 1671, así que probablemente es un cuento. No hay pruebas seguras del café como bebida antes del siglo XV, cuando las hermandades sufíes de Yemen lo tomaban para mantenerse despiertas mientras recitaban el nombre de Dios. Los campesinos yemeníes lo cultivaban en terrazas en montañas como Haraz y Bani Matar, y durante dos siglos el puerto de Moca, en el mar Rojo, fue el mercado del café del mundo; el nombre «moca» aún lo recuerda."
+      },
+      "control": {
+        "coffee": {
+          "ref": "coffee_origin"
+        }
+      },
+      "moves": [
+        {
+          "side": "coffee",
+          "path": [
+            [
+              42.1,
+              9.3
+            ],
+            [
+              43.2,
+              11.3
+            ],
+            [
+              43.4,
+              12.6
+            ],
+            [
+              43.27,
+              13.3
+            ]
+          ],
+          "label": {
+            "en": "From Ethiopia to Yemen",
+            "es": "De Etiopía a Yemen"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Coffee",
+            "es": "Café"
+          },
+          "at": [
+            36.24,
+            7.27
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "1450",
+          "place": {
+            "en": "Kaffa, Ethiopia",
+            "es": "Kaffa, Etiopía"
+          },
+          "text": {
+            "en": "A shrub of the highland forests of southwestern Ethiopia, around the old kingdom of Kaffa. Its red cherries hold two seeds: the coffee beans.",
+            "es": "Un arbusto de los bosques de montaña del suroeste de Etiopía, en torno al antiguo reino de Kaffa. Sus cerezas rojas guardan dos semillas: los granos de café."
+          },
+          "details": {
+            "en": "Legend tells of a goatherd, later called Kaldi, who saw his goats dancing after they ate the berries. The story first appears in print in 1671, so it is probably a tale, but Ethiopians have long roasted coffee in a ceremony shared with neighbours.",
+            "es": "La leyenda cuenta que un cabrero, al que después llamaron Kaldi, vio bailar a sus cabras tras comer las bayas. La historia aparece impresa por primera vez en 1671, así que probablemente es un cuento, pero los etíopes llevan mucho tiempo tostando café en una ceremonia compartida con los vecinos."
+          },
+          "wiki": {
+            "en": "Coffea arabica",
+            "es": "Coffea arabica"
+          }
+        },
+        {
+          "name": {
+            "en": "Harar",
+            "es": "Harar"
+          },
+          "at": [
+            42.12,
+            9.31
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "1500",
+          "place": {
+            "en": "Harar, Ethiopia",
+            "es": "Harar, Etiopía"
+          },
+          "text": {
+            "en": "A walled Muslim city of eastern Ethiopia, the 'City of Saints'. Coffee from Harar and its hills was traded across the Red Sea for centuries.",
+            "es": "Una ciudad musulmana amurallada del este de Etiopía, la «Ciudad de los Santos». El café de Harar y sus colinas se comerció durante siglos a través del mar Rojo."
+          },
+          "wiki": {
+            "en": "Harar",
+            "es": "Harar"
+          }
+        },
+        {
+          "name": {
+            "en": "Mocha",
+            "es": "Moca"
+          },
+          "at": [
+            43.25,
+            13.3203
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "1550",
+          "place": {
+            "en": "Mokha, Yemen",
+            "es": "Moca, Yemen"
+          },
+          "text": {
+            "en": "Until about 1700 this Red Sea port was the world's only big coffee market, and its name became a word for coffee itself.",
+            "es": "Hasta hacia 1700, este puerto del mar Rojo fue el único gran mercado de café del mundo, y su nombre se convirtió en una palabra para el propio café."
+          },
+          "wiki": {
+            "en": "Mokha",
+            "es": "Moca (Yemen)"
+          }
+        },
+        {
+          "name": {
+            "en": "Coffee terraces of Haraz",
+            "es": "Las terrazas de café de Haraz"
+          },
+          "at": [
+            43.75,
+            15.1667
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "1450",
+          "place": {
+            "en": "Haraz, Yemen",
+            "es": "Haraz, Yemen"
+          },
+          "text": {
+            "en": "In mountains such as Haraz, Yemeni farmers grew coffee on stone terraces from the 1400s: the first farms to grow coffee as a crop.",
+            "es": "En montañas como Haraz, los campesinos yemeníes cultivaron café en terrazas de piedra desde el siglo XV: las primeras fincas que lo sembraron como cultivo."
+          },
+          "wiki": {
+            "en": "Haraz Mountains",
+            "es": "Coffea arabica"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1520",
+      "title": {
+        "en": "Cacao money and Spanish chocolate",
+        "es": "Cacao como dinero y chocolate español"
+      },
+      "camera": {
+        "lon": -45,
+        "lat": 23,
+        "zoom": 1.3
+      },
+      "text": {
+        "en": "The Aztecs drank chocolate at court and used cacao beans as money: in 1545 a hundred bought a turkey hen. The Spaniards took to it, and in 1585 the first cargo reached Seville.",
+        "es": "Los aztecas bebían chocolate en la corte y usaban los granos de cacao como moneda: en 1545, cien compraban una gallina de pavo. Los españoles se aficionaron, y en 1585 llegó a Sevilla el primer cargamento."
+      },
+      "details": {
+        "en": "Frost kept cacao out of the Valley of Mexico, so the Aztecs conquered Soconusco, where 1.5 million cacao trees were tended at the time of the conquest, and made it pay tribute in beans. Merchants, the pochteca, carried loads of 24,000 beans on their backs. Chocolate, often flavoured with vanilla or chilli, was a drink of nobles and warriors. Cortés saw it at Moctezuma's court in 1520. The Spaniards disliked it at first, then added sugar and cinnamon. Q'eqchi' Maya nobles brought by Dominican friars introduced it to the Spanish court in 1544, and in 1585 the first official cargo of cacao reached Spain; from there chocolate spread to Italy, France and England.",
+        "es": "Las heladas impedían cultivar cacao en el valle de México, así que los aztecas conquistaron el Soconusco, donde al llegar los españoles se cuidaban 1,5 millones de árboles de cacao, y le exigieron tributo en granos. Los mercaderes, los pochtecas, cargaban a la espalda fardos de 24 000 granos. El chocolate, a menudo con vainilla o chile, era bebida de nobles y guerreros. Cortés lo vio en la corte de Moctezuma en 1520. A los españoles al principio no les gustó; luego le añadieron azúcar y canela. Unos nobles mayas q'eqchi', llevados por frailes dominicos, lo presentaron en la corte española en 1544, y en 1585 llegó a España el primer cargamento oficial de cacao; desde allí el chocolate pasó a Italia, Francia e Inglaterra."
+      },
+      "control": {
+        "cacao": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "cacao_spanish"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "cacao",
+          "path": [
+            [
+              -96.13,
+              19.2
+            ],
+            [
+              -91.0,
+              21.5
+            ],
+            [
+              -86.0,
+              23.3
+            ],
+            [
+              -82.35,
+              23.25
+            ],
+            [
+              -80.0,
+              24.6
+            ],
+            [
+              -79.0,
+              28.0
+            ],
+            [
+              -70.0,
+              34.0
+            ],
+            [
+              -40.0,
+              38.0
+            ],
+            [
+              -27.0,
+              38.5
+            ],
+            [
+              -15.0,
+              37.4
+            ],
+            [
+              -6.4,
+              36.8
+            ],
+            [
+              -6.0,
+              37.35
+            ]
+          ],
+          "label": {
+            "en": "The first cacao cargo, 1585",
+            "es": "El primer cargamento de cacao, 1585"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Soconusco",
+            "es": "Soconusco"
+          },
+          "at": [
+            -92.7264,
+            15.3156
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "1500",
+          "place": {
+            "en": "Chiapas, Mexico",
+            "es": "Chiapas, México"
+          },
+          "text": {
+            "en": "A rich cacao coast that the Aztecs conquered for its beans. When the Spaniards arrived, 1.5 million cacao trees were tended here.",
+            "es": "Una rica costa cacaotera que los aztecas conquistaron por sus granos. Cuando llegaron los españoles, aquí se cuidaban 1,5 millones de árboles de cacao."
+          },
+          "wiki": {
+            "en": "Soconusco",
+            "es": "Soconusco"
+          }
+        },
+        {
+          "name": {
+            "en": "Pochteca",
+            "es": "Pochtecas"
+          },
+          "at": [
+            -99.1375,
+            19.4511
+          ],
+          "cat": "trade",
+          "icon": "🫘",
+          "type": "person",
+          "date": "1500",
+          "place": {
+            "en": "Tlatelolco, Mexico City, Mexico",
+            "es": "Tlatelolco, Ciudad de México, México"
+          },
+          "text": {
+            "en": "Aztec long-distance merchants who carried cacao and traded in markets such as Tlatelolco, where beans served as small change: one bought a large tomato.",
+            "es": "Mercaderes aztecas de larga distancia que llevaban cacao y comerciaban en mercados como el de Tlatelolco, donde los granos servían de calderilla: uno compraba un tomate grande."
+          },
+          "wiki": {
+            "en": "Pochteca",
+            "es": "Pochteca"
+          }
+        },
+        {
+          "name": {
+            "en": "Chocolate in Spain",
+            "es": "El chocolate en España"
+          },
+          "at": [
+            -5.9845,
+            37.3891
+          ],
+          "cat": "drink",
+          "icon": "🍫",
+          "type": "event",
+          "date": "1585",
+          "place": {
+            "en": "Seville, Spain",
+            "es": "Sevilla, España"
+          },
+          "text": {
+            "en": "Q'eqchi' Maya nobles presented chocolate at the Spanish court in 1544, and the first official cargo of cacao reached Seville in 1585. Spaniards sweetened it with sugar.",
+            "es": "Unos nobles mayas q'eqchi' presentaron el chocolate en la corte española en 1544, y el primer cargamento oficial de cacao llegó a Sevilla en 1585. Los españoles lo endulzaron con azúcar."
+          },
+          "wiki": {
+            "en": "History of chocolate",
+            "es": "Historia del chocolate"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1554",
+      "title": {
+        "en": "Coffeehouses of the Ottomans",
+        "es": "Los cafés otomanos"
+      },
+      "camera": {
+        "lon": 35,
+        "lat": 31,
+        "zoom": 2.4
+      },
+      "text": {
+        "en": "From Yemen, coffee spread to Mecca, Cairo and Damascus. In 1554 or 1555 two Syrian merchants opened the first coffeehouses in Istanbul.",
+        "es": "Desde Yemen, el café se extendió a La Meca, El Cairo y Damasco. En 1554 o 1555, dos mercaderes sirios abrieron los primeros cafés de Estambul."
+      },
+      "details": {
+        "en": "Coffee was known in Mecca by 1414, and in 1511 religious judges there banned it as an intoxicant; Cairo saw a ban in 1532, when coffeehouses were sacked. Yet coffeehouses, filled with students of al-Azhar and Sufis, kept spreading. According to the chronicler Peçevi, Hakem of Aleppo and Shems of Damascus opened shops in the Tahtakale district of Istanbul, and soon the city was full of coffeehouses where men talked, played backgammon and listened to storytellers. Sultans tried to close them more than once, fearing gossip and plots, but failed. Turkish coffee, boiled in a small pot and served unfiltered, is now on UNESCO's heritage list.",
+        "es": "El café ya se conocía en La Meca en 1414, y en 1511 unos jueces religiosos lo prohibieron allí como embriagante; en El Cairo se prohibió en 1532, y los cafés fueron saqueados. Aun así, los cafés, llenos de estudiantes de al-Azhar y de sufíes, siguieron extendiéndose. Según el cronista Peçevi, Hakem de Alepo y Shems de Damasco abrieron sus locales en el barrio de Tahtakale, en Estambul, y pronto la ciudad se llenó de cafés donde los hombres conversaban, jugaban al backgammon y escuchaban a los cuentacuentos. Los sultanes intentaron cerrarlos más de una vez, temiendo chismes y conjuras, pero fracasaron. El café turco, hervido en un cacillo y servido sin filtrar, figura hoy en la lista del patrimonio de la UNESCO."
+      },
+      "control": {
+        "coffee": [
+          {
+            "prev": true
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "coffee",
+          "path": [
+            [
+              43.25,
+              13.4
+            ],
+            [
+              42.5,
+              16.0
+            ],
+            [
+              39.2,
+              21.5
+            ],
+            [
+              37.0,
+              25.0
+            ],
+            [
+              34.0,
+              27.5
+            ],
+            [
+              32.6,
+              29.9
+            ],
+            [
+              31.3,
+              30.05
+            ]
+          ],
+          "label": {
+            "en": "Coffee by the Red Sea",
+            "es": "El café por el mar Rojo"
+          }
+        },
+        {
+          "side": "coffee",
+          "path": [
+            [
+              31.4,
+              30.1
+            ],
+            [
+              34.5,
+              31.5
+            ],
+            [
+              36.3,
+              33.5
+            ],
+            [
+              37.15,
+              36.2
+            ],
+            [
+              35.0,
+              38.5
+            ],
+            [
+              30.5,
+              40.5
+            ],
+            [
+              29.0,
+              41.0
+            ]
+          ],
+          "label": {
+            "en": "North to Istanbul",
+            "es": "Al norte, hacia Estambul"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Mecca",
+            "es": "La Meca"
+          },
+          "at": [
+            39.8233,
+            21.4225
+          ],
+          "cat": "trade",
+          "icon": "☕",
+          "type": "event",
+          "date": "1511",
+          "place": {
+            "en": "Mecca, Saudi Arabia",
+            "es": "La Meca, Arabia Saudí"
+          },
+          "text": {
+            "en": "Pilgrims helped spread coffee across the Muslim world. In 1511 religious judges here banned it as an intoxicant, but the ban did not last.",
+            "es": "Los peregrinos ayudaron a extender el café por el mundo musulmán. En 1511, unos jueces religiosos lo prohibieron aquí como embriagante, pero la prohibición no duró."
+          },
+          "wiki": {
+            "en": "Mecca",
+            "es": "La Meca"
+          }
+        },
+        {
+          "name": {
+            "en": "Al-Azhar",
+            "es": "Al-Azhar"
+          },
+          "at": [
+            31.2627,
+            30.0457
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "1520",
+          "place": {
+            "en": "Cairo, Egypt",
+            "es": "El Cairo, Egipto"
+          },
+          "text": {
+            "en": "Cairo's great mosque and university. In the early 1500s coffeehouses sprang up around it, frequented by Sufis and students.",
+            "es": "La gran mezquita y universidad de El Cairo. A comienzos del siglo XVI surgieron cafés a su alrededor, frecuentados por sufíes y estudiantes."
+          },
+          "wiki": {
+            "en": "Al-Azhar Mosque",
+            "es": "Mezquita de al-Azhar"
+          }
+        },
+        {
+          "name": {
+            "en": "Turkish coffee",
+            "es": "Café turco"
+          },
+          "at": [
+            28.9705,
+            41.0158
+          ],
+          "cat": "drink",
+          "type": "dish",
+          "date": "1554",
+          "place": {
+            "en": "Istanbul, Turkey",
+            "es": "Estambul, Turquía"
+          },
+          "text": {
+            "en": "Finely ground coffee boiled in a small pot, the cezve, and served unfiltered. Istanbul's first coffeehouses opened in 1554 or 1555 in the Tahtakale market.",
+            "es": "Café molido muy fino, hervido en un cacillo, el cezve, y servido sin filtrar. Los primeros cafés de Estambul abrieron en 1554 o 1555 en el mercado de Tahtakale."
+          },
+          "country": "TUR",
+          "wiki": {
+            "en": "Turkish coffee",
+            "es": "Café turco"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1652",
+      "title": {
+        "en": "Europe's new hot drinks",
+        "es": "Las nuevas bebidas calientes de Europa"
+      },
+      "camera": {
+        "lon": 6,
+        "lat": 49.5,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "Dutch ships brought the first tea to Amsterdam early in the 1600s. Coffeehouses opened in Venice, Oxford, London and Vienna, and chocolate reached England around 1657.",
+        "es": "Los barcos neerlandeses trajeron el primer té a Ámsterdam a principios del siglo XVII. Abrieron cafés en Venecia, Oxford, Londres y Viena, y el chocolate llegó a Inglaterra hacia 1657."
+      },
+      "details": {
+        "en": "Tea came to Europe as a costly medicine; in England it was first sold in coffeehouses, advertised in 1658, and made fashionable at court by the Portuguese princess Catherine of Braganza, who married Charles II in 1662. Venice opened mainland Europe's first coffeehouse in 1645, Oxford England's first in 1650, and by 1675 there were over 3,000 coffeehouses in England, nicknamed 'penny universities', where merchants, scholars and gossips met; Lloyd's insurance began in one. In Vienna, an Armenian merchant, Johannes Diodato, received the first licence to serve coffee in 1685. Britain's thirst for Chinese tea, paid for in silver, later led it to sell Indian opium in China.",
+        "es": "El té llegó a Europa como una medicina cara; en Inglaterra se vendió primero en los cafés, se anunció en 1658 y lo puso de moda en la corte la princesa portuguesa Catalina de Braganza, que se casó con Carlos II en 1662. Venecia abrió el primer café de la Europa continental en 1645, Oxford el primero de Inglaterra en 1650, y en 1675 ya había en Inglaterra más de 3000 cafés, apodados «universidades de un penique», donde se reunían mercaderes, sabios y chismosos; los seguros Lloyd's nacieron en uno de ellos. En Viena, un mercader armenio, Johannes Diodato, obtuvo en 1685 la primera licencia para servir café. La sed británica de té chino, pagado en plata, la llevó después a vender opio indio en China."
+      },
+      "moves": [
+        {
+          "side": "tea",
+          "path": [
+            [
+              -12.0,
+              40.0
+            ],
+            [
+              -10.0,
+              45.5
+            ],
+            [
+              -5.5,
+              48.6
+            ],
+            [
+              -1.0,
+              50.3
+            ],
+            [
+              2.0,
+              51.2
+            ],
+            [
+              3.8,
+              52.1
+            ],
+            [
+              4.9,
+              52.37
+            ]
+          ],
+          "label": {
+            "en": "Tea on Dutch ships",
+            "es": "El té en barcos neerlandeses"
+          }
+        },
+        {
+          "side": "coffee",
+          "path": [
+            [
+              28.97,
+              41.0
+            ],
+            [
+              26.0,
+              42.4
+            ],
+            [
+              23.3,
+              42.7
+            ],
+            [
+              20.5,
+              44.8
+            ],
+            [
+              19.0,
+              47.5
+            ],
+            [
+              16.37,
+              48.2
+            ]
+          ],
+          "label": {
+            "en": "Coffee from the Ottoman lands",
+            "es": "El café de las tierras otomanas"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Tea reaches Amsterdam",
+            "es": "El té llega a Ámsterdam"
+          },
+          "at": [
+            4.9,
+            52.37
+          ],
+          "cat": "drink",
+          "icon": "🍵",
+          "type": "event",
+          "date": "1610",
+          "place": {
+            "en": "Amsterdam, Netherlands",
+            "es": "Ámsterdam, Países Bajos"
+          },
+          "text": {
+            "en": "Early in the 1600s a Dutch East India Company ship brought the first green tea from China to Amsterdam. Tea spread from Holland to the rest of Europe.",
+            "es": "A principios del siglo XVII, un barco de la Compañía Neerlandesa de las Indias Orientales trajo a Ámsterdam el primer té verde de China. Desde Holanda se extendió al resto de Europa."
+          },
+          "wiki": {
+            "en": "History of tea",
+            "es": "Té"
+          }
+        },
+        {
+          "name": {
+            "en": "Pasqua Rosée's coffeehouse",
+            "es": "El café de Pasqua Rosée"
+          },
+          "at": [
+            -0.087,
+            51.5133
+          ],
+          "cat": "drink",
+          "type": "place",
+          "date": "1652",
+          "place": {
+            "en": "Cornhill, London, England",
+            "es": "Cornhill, Londres, Inglaterra"
+          },
+          "text": {
+            "en": "London's first coffeehouse, opened in 1652 in St Michael's Alley by Pasqua Rosée, a Greek servant of a merchant who had lived in Smyrna.",
+            "es": "El primer café de Londres, abierto en 1652 en St Michael's Alley por Pasqua Rosée, criado griego de un mercader que había vivido en Esmirna."
+          },
+          "wiki": {
+            "en": "Pasqua Rosée",
+            "es": "Cafetería"
+          }
+        },
+        {
+          "name": {
+            "en": "Viennese coffee house",
+            "es": "El café vienés"
+          },
+          "at": [
+            16.3738,
+            48.2082
+          ],
+          "cat": "drink",
+          "type": "place",
+          "date": "1685",
+          "place": {
+            "en": "Vienna, Austria",
+            "es": "Viena, Austria"
+          },
+          "text": {
+            "en": "In 1685 the Armenian merchant Johannes Diodato got the first licence to serve coffee in Vienna. Its coffee houses became famous places to linger and read.",
+            "es": "En 1685, el mercader armenio Johannes Diodato obtuvo la primera licencia para servir café en Viena. Sus cafés se hicieron famosos como lugares para quedarse y leer."
+          },
+          "wiki": {
+            "en": "Viennese coffee house",
+            "es": "Café vienés"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1699",
+      "title": {
+        "en": "Coffee leaves Arabia",
+        "es": "El café sale de Arabia"
+      },
+      "camera": {
+        "lon": 92,
+        "lat": 3,
+        "zoom": 1.8
+      },
+      "text": {
+        "en": "A Sufi pilgrim smuggled seven coffee beans out of Mocha to India in 1670. In 1699 the Dutch planted coffee on Java, and 'Java' became a name for coffee.",
+        "es": "Un peregrino sufí sacó de contrabando siete granos de café de Moca hacia la India en 1670. En 1699, los neerlandeses plantaron café en Java, y «java» se convirtió en un nombre del café."
+      },
+      "details": {
+        "en": "Baba Budan is said to have hidden the seven beans in his beard on his way home from the hajj, and planted them in the hills of Karnataka that now bear his name. The Dutch East India Company tried in 1696 with seedlings from Malabar, which were lost in a flood at Batavia; the second shipment, in 1699, took root, and Java coffee was first exported in 1711. From 1830 to about 1870 the colonial government forced Javanese farmers to grow coffee for export under the Cultivation System, taking land and labour from rice; the novel Max Havelaar (1860), by Multatuli, exposed the abuses.",
+        "es": "Se cuenta que Baba Budan escondió los siete granos en la barba al volver de la peregrinación a La Meca y los plantó en las colinas de Karnataka que hoy llevan su nombre. La Compañía Neerlandesa de las Indias Orientales lo intentó en 1696 con plantones de Malabar, que se perdieron en una inundación en Batavia; el segundo envío, en 1699, arraigó, y el café de Java se exportó por primera vez en 1711. De 1830 a hacia 1870, el Gobierno colonial obligó a los campesinos javaneses a cultivar café para exportar con el sistema de cultivos, quitando tierra y trabajo al arroz; la novela Max Havelaar (1860), de Multatuli, denunció los abusos."
+      },
+      "control": {
+        "coffee": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "coffee_asia"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "coffee",
+          "path": [
+            [
+              43.25,
+              13.3
+            ],
+            [
+              48.0,
+              12.4
+            ],
+            [
+              56.0,
+              13.0
+            ],
+            [
+              66.0,
+              13.5
+            ],
+            [
+              74.0,
+              13.4
+            ],
+            [
+              75.72,
+              13.42
+            ]
+          ],
+          "label": {
+            "en": "Baba Budan's seven beans, 1670",
+            "es": "Los siete granos de Baba Budan, 1670"
+          }
+        },
+        {
+          "side": "coffee",
+          "path": [
+            [
+              75.9,
+              10.3
+            ],
+            [
+              77.5,
+              7.6
+            ],
+            [
+              81.0,
+              5.6
+            ],
+            [
+              95.0,
+              5.8
+            ],
+            [
+              100.6,
+              3.2
+            ],
+            [
+              103.5,
+              1.15
+            ],
+            [
+              105.5,
+              -3.0
+            ],
+            [
+              106.8,
+              -6.0
+            ]
+          ],
+          "label": {
+            "en": "To Java, 1699",
+            "es": "A Java, 1699"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Baba Budan",
+            "es": "Baba Budan"
+          },
+          "at": [
+            75.72,
+            13.42
+          ],
+          "cat": "trade",
+          "icon": "☕",
+          "type": "person",
+          "date": "1670",
+          "place": {
+            "en": "Baba Budan Hills, Chikkamagaluru, India",
+            "es": "Colinas de Baba Budan, Chikkamagaluru, India"
+          },
+          "text": {
+            "en": "A Sufi saint who, legend says, smuggled seven coffee beans out of Mocha in his beard in 1670 and planted them in the hills of Karnataka.",
+            "es": "Un santo sufí que, según la leyenda, sacó de Moca siete granos de café escondidos en la barba en 1670 y los plantó en las colinas de Karnataka."
+          },
+          "wiki": {
+            "en": "Baba Budan",
+            "es": "Chikmagalur"
+          }
+        },
+        {
+          "name": {
+            "en": "Java coffee",
+            "es": "El café de Java"
+          },
+          "at": [
+            107.6,
+            -6.9
+          ],
+          "cat": "drink",
+          "icon": "☕",
+          "type": "event",
+          "date": "1699",
+          "place": {
+            "en": "West Java, Indonesia",
+            "es": "Java Occidental, Indonesia"
+          },
+          "text": {
+            "en": "The Dutch planted coffee on Java in 1699 and exported it from 1711. From 1830 farmers were forced to grow it, abuses exposed in the novel Max Havelaar.",
+            "es": "Los neerlandeses plantaron café en Java en 1699 y lo exportaron desde 1711. Desde 1830 se obligó a los campesinos a cultivarlo, abusos que denunció la novela Max Havelaar."
+          },
+          "wiki": {
+            "en": "Coffee production in Indonesia",
+            "es": "Max Havelaar"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1848",
+      "title": {
+        "en": "Tea plants smuggled to India",
+        "es": "Plantas de té robadas para la India"
+      },
+      "camera": {
+        "lon": 103,
+        "lat": 26,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "To break China's hold on tea, the East India Company sent Robert Fortune, partly disguised as a Chinese merchant, to take tea plants and tea makers to India in 1848–1851.",
+        "es": "Para romper el dominio de China sobre el té, la Compañía Británica de las Indias Orientales envió a Robert Fortune, en parte disfrazado de mercader chino, a llevarse plantas de té y maestros teteros a la India en 1848–1851."
+      },
+      "details": {
+        "en": "Buying tea plants was forbidden, and Fortune went far beyond the treaty ports. Using glass Wardian cases, he sent about 20,000 plants and seedlings to the Himalayas, with skilled Chinese workers; Darjeeling still grows Chinese varieties. In Assam, the Singpho people had long brewed a local wild tea, which a Scottish trader, Robert Bruce, saw in 1823; the first Assam tea was auctioned in London in 1839. Plantations were cleared from forest and worked by indentured labourers, many of them recruited by deceit from Bihar and central India, and most of them women, paid less than men. Many died of disease. When coffee rust destroyed Ceylon's coffee, the island turned to tea too.",
+        "es": "Comprar plantas de té estaba prohibido, y Fortune fue mucho más allá de los puertos abiertos a los extranjeros. Con cajas de cristal de Ward envió unas 20 000 plantas y plantones al Himalaya, con trabajadores chinos expertos; Darjeeling sigue cultivando variedades chinas. En Assam, el pueblo singpho llevaba mucho tiempo preparando un té silvestre local, que un comerciante escocés, Robert Bruce, vio en 1823; el primer té de Assam se subastó en Londres en 1839. Las plantaciones se abrieron talando la selva y las trabajaron jornaleros contratados, muchos reclutados con engaños en Bihar y el centro de la India, y en su mayoría mujeres, peor pagadas que los hombres. Muchos murieron de enfermedades. Cuando la roya acabó con el café de Ceilán, la isla también se pasó al té."
+      },
+      "control": {
+        "tea": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "tea_india"
+          },
+          {
+            "ref": "tea_assam"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "tea",
+          "path": [
+            [
+              117.7,
+              27.7
+            ],
+            [
+              119.5,
+              26.0
+            ],
+            [
+              117.0,
+              23.0
+            ],
+            [
+              114.2,
+              22.25
+            ],
+            [
+              110.0,
+              17.0
+            ],
+            [
+              107.0,
+              9.0
+            ],
+            [
+              104.4,
+              1.3
+            ],
+            [
+              100.6,
+              3.2
+            ],
+            [
+              95.0,
+              6.0
+            ],
+            [
+              88.0,
+              15.0
+            ],
+            [
+              88.3,
+              21.8
+            ],
+            [
+              88.4,
+              22.6
+            ],
+            [
+              88.4,
+              25.5
+            ],
+            [
+              88.27,
+              27.0
+            ]
+          ],
+          "label": {
+            "en": "Fortune's tea plants, 1848–1851",
+            "es": "Las plantas de té de Fortune, 1848–1851"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Robert Fortune",
+            "es": "Robert Fortune"
+          },
+          "at": [
+            117.6833,
+            27.7167
+          ],
+          "cat": "trade",
+          "icon": "🌱",
+          "type": "person",
+          "date": "1848",
+          "life": [
+            "1812-09-16",
+            "1880-04-13"
+          ],
+          "place": {
+            "en": "Wuyi Mountains, Fujian, China",
+            "es": "Montes Wuyi, Fujian, China"
+          },
+          "text": {
+            "en": "A Scottish plant hunter who smuggled tea plants and Chinese tea makers from hills such as the Wuyi Mountains to India for the East India Company.",
+            "es": "Cazador de plantas escocés que sacó de contrabando plantas de té y maestros teteros chinos de montañas como las de Wuyi hacia la India para la Compañía de las Indias Orientales."
+          },
+          "wiki": {
+            "en": "Robert Fortune",
+            "es": "Robert Fortune"
+          }
+        },
+        {
+          "name": {
+            "en": "Assam tea",
+            "es": "Té de Assam"
+          },
+          "at": [
+            95.18,
+            27.48
+          ],
+          "cat": "drink",
+          "type": "dish",
+          "date": "1839",
+          "place": {
+            "en": "Chabua, Assam, India",
+            "es": "Chabua, Assam, India"
+          },
+          "text": {
+            "en": "A strong black tea from a local variety the Singpho people already brewed. Chabua, 'tea plantation', is said to be the first place in India where tea was planted.",
+            "es": "Un té negro fuerte de una variedad local que el pueblo singpho ya preparaba. Chabua, «plantación de té», pasa por ser el primer lugar de la India donde se plantó té."
+          },
+          "country": "IND",
+          "wiki": {
+            "en": "Assam tea",
+            "es": "Assam"
+          }
+        },
+        {
+          "name": {
+            "en": "Darjeeling tea",
+            "es": "Té de Darjeeling"
+          },
+          "at": [
+            88.2636,
+            27.041
+          ],
+          "cat": "drink",
+          "type": "dish",
+          "date": "1856",
+          "place": {
+            "en": "Darjeeling, West Bengal, India",
+            "es": "Darjeeling, Bengala Occidental, India"
+          },
+          "text": {
+            "en": "Grown on Himalayan slopes from Chinese plants; the first commercial gardens opened in 1856. Its light 'champagne of teas' is a protected name.",
+            "es": "Se cultiva en laderas del Himalaya a partir de plantas chinas; los primeros jardines comerciales abrieron en 1856. Su té ligero, el «champán de los tés», es una denominación protegida."
+          },
+          "country": "IND",
+          "wiki": {
+            "en": "Darjeeling tea",
+            "es": "Té Darjeeling"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1850",
+      "title": {
+        "en": "Brazil's coffee and slavery",
+        "es": "El café y la esclavitud en Brasil"
+      },
+      "camera": {
+        "lon": -50,
+        "lat": -5,
+        "zoom": 1.6
+      },
+      "text": {
+        "en": "Coffee reached the Americas around 1720. By the 1840s Brazil was the world's largest producer, its plantations worked by enslaved Africans until slavery ended in 1888.",
+        "es": "El café llegó a América hacia 1720. En la década de 1840, Brasil ya era el mayor productor del mundo, con plantaciones trabajadas por africanos esclavizados hasta el fin de la esclavitud en 1888."
+      },
+      "details": {
+        "en": "Gabriel de Clieu took a coffee seedling to Martinique around 1720, and Saint-Domingue was producing 60% of the world's coffee by 1789. In 1727 Francisco de Melo Palheta planted Brazil's first coffee in Pará. The great boom came after independence in 1822, as forests of the Paraíba valley, between Rio and São Paulo, were cleared for coffee. In the first half of the 1800s about 1.5 million enslaved Africans were brought to Brazil to work the plantations. After the slave trade was banned in 1850, planters turned to European and later Japanese immigrants; slavery itself ended only on 13 May 1888, with the Golden Law, making Brazil the last country in the Americas to abolish it.",
+        "es": "Gabriel de Clieu llevó un plantón de café a Martinica hacia 1720, y en 1789 Saint-Domingue producía el 60 % del café del mundo. En 1727, Francisco de Melo Palheta plantó el primer café de Brasil, en Pará. El gran auge llegó tras la independencia, en 1822, cuando se talaron los bosques del valle del Paraíba, entre Río y São Paulo, para plantar café. En la primera mitad del siglo XIX fueron llevados a Brasil unos 1,5 millones de africanos esclavizados para trabajar en las plantaciones. Cuando se prohibió la trata en 1850, los hacendados recurrieron a inmigrantes europeos y, después, japoneses; la esclavitud no terminó hasta el 13 de mayo de 1888, con la Ley Áurea, y Brasil fue el último país de América en abolirla."
+      },
+      "control": {
+        "coffee": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "coffee_americas"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "coffee",
+          "path": [
+            [
+              -1.6,
+              47.1
+            ],
+            [
+              -8.0,
+              44.0
+            ],
+            [
+              -20.0,
+              30.0
+            ],
+            [
+              -40.0,
+              18.0
+            ],
+            [
+              -60.9,
+              14.65
+            ]
+          ],
+          "label": {
+            "en": "To Martinique, about 1720",
+            "es": "A Martinica, hacia 1720"
+          }
+        },
+        {
+          "side": "coffee",
+          "path": [
+            [
+              -52.3,
+              4.95
+            ],
+            [
+              -50.5,
+              2.5
+            ],
+            [
+              -48.6,
+              -1.3
+            ]
+          ],
+          "label": {
+            "en": "To Brazil, 1727",
+            "es": "A Brasil, 1727"
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "⛓️",
+          "date": "1888-05-13",
+          "at": [
+            -43.1729,
+            -22.9068
+          ],
+          "text": {
+            "en": "The Golden Law ends slavery in Brazil",
+            "es": "La Ley Áurea acaba con la esclavitud en Brasil"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Gabriel de Clieu",
+            "es": "Gabriel de Clieu"
+          },
+          "at": [
+            -61.0,
+            14.65
+          ],
+          "cat": "trade",
+          "icon": "☕",
+          "type": "person",
+          "date": "1720",
+          "life": [
+            "1687",
+            "1774-11-29"
+          ],
+          "place": {
+            "en": "Martinique",
+            "es": "Martinica"
+          },
+          "text": {
+            "en": "A French naval officer who took a coffee seedling to Martinique around 1720, sharing his water ration with it during the crossing, he said.",
+            "es": "Oficial de marina francés que llevó un plantón de café a Martinica hacia 1720 y que, según contó, compartió con él su ración de agua en la travesía."
+          },
+          "wiki": {
+            "en": "Gabriel de Clieu",
+            "es": "Historia del café"
+          }
+        },
+        {
+          "name": {
+            "en": "Brazil's first coffee",
+            "es": "El primer café de Brasil"
+          },
+          "at": [
+            -48.5044,
+            -1.4558
+          ],
+          "cat": "trade",
+          "icon": "☕",
+          "type": "event",
+          "date": "1727",
+          "place": {
+            "en": "Belém, Pará, Brazil",
+            "es": "Belém, Pará, Brasil"
+          },
+          "text": {
+            "en": "In 1727 Francisco de Melo Palheta, sent to French Guiana, came back with coffee seeds and planted Brazil's first coffee bush in Pará.",
+            "es": "En 1727, Francisco de Melo Palheta, enviado a la Guayana Francesa, volvió con semillas de café y plantó el primer cafeto de Brasil, en Pará."
+          },
+          "wiki": {
+            "en": "Coffee production in Brazil",
+            "es": "Producción de café en Brasil"
+          }
+        },
+        {
+          "name": {
+            "en": "Paraíba Valley",
+            "es": "Valle del Paraíba"
+          },
+          "at": [
+            -43.66,
+            -22.4
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "1830",
+          "place": {
+            "en": "Rio de Janeiro and São Paulo, Brazil",
+            "es": "Río de Janeiro y São Paulo, Brasil"
+          },
+          "text": {
+            "en": "Its forests were cleared in the 1830s–1850s for coffee estates worked by enslaved Africans, which made Brazil the world's largest coffee producer.",
+            "es": "Sus bosques se talaron entre las décadas de 1830 y 1850 para hacer cafetales trabajados por africanos esclavizados, que convirtieron a Brasil en el mayor productor de café del mundo."
+          },
+          "wiki": {
+            "en": "Paraíba Valley",
+            "es": "Valle del Paraíba"
+          }
+        },
+        {
+          "name": {
+            "en": "Santos",
+            "es": "Santos"
+          },
+          "at": [
+            -46.3336,
+            -23.9608
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "1870",
+          "place": {
+            "en": "São Paulo state, Brazil",
+            "es": "Estado de São Paulo, Brasil"
+          },
+          "text": {
+            "en": "The port through which São Paulo's coffee went to the world. Its old coffee exchange, where world prices were once set, is now the Coffee Museum.",
+            "es": "El puerto por el que el café de São Paulo salía al mundo. Su antigua bolsa del café, donde antes se fijaban los precios mundiales, es hoy el Museo del Café."
+          },
+          "wiki": {
+            "en": "Santos, São Paulo",
+            "es": "Santos (São Paulo)"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1879",
+      "title": {
+        "en": "Chocolate bars and African cacao",
+        "es": "Tabletas de chocolate y cacao africano"
+      },
+      "aftermath": true,
+      "camera": {
+        "lon": 3,
+        "lat": 26,
+        "zoom": 1.6
+      },
+      "text": {
+        "en": "European factories turned cacao into cocoa powder, bars and milk chocolate. The beans came more and more from West Africa, where cacao was planted from 1824.",
+        "es": "Las fábricas europeas convirtieron el cacao en cacao en polvo, tabletas y chocolate con leche. Los granos llegaban cada vez más de África occidental, donde se plantó cacao desde 1824."
+      },
+      "details": {
+        "en": "In 1828 the van Houtens patented a press that squeezed out cocoa butter, making cocoa powder; Fry's of Bristol made Britain's first solid chocolate bar in 1847; Daniel Peter made milk chocolate in Vevey in 1875, with powdered milk from his neighbour Henri Nestlé, and in 1879 Rodolphe Lindt invented conching, which made chocolate smooth. The Portuguese brought cacao from Brazil to São Tomé in 1824 and rebuilt the slave plantation system; even after slavery was abolished in 1869, forced labour went on, and in 1909 British chocolate makers boycotted São Tomé's cocoa. On the Gold Coast, the blacksmith Tetteh Quarshie planted cacao beans from Fernando Po around 1876; Ghana and Côte d'Ivoire now grow almost 60% of the world's cocoa, still too often with child labour.",
+        "es": "En 1828, los van Houten patentaron una prensa que extraía la manteca de cacao y daba cacao en polvo; Fry's, de Bristol, hizo en 1847 la primera tableta de chocolate británica; Daniel Peter creó en Vevey en 1875 el chocolate con leche, con leche en polvo de su vecino Henri Nestlé, y en 1879 Rodolphe Lindt inventó el conchado, que lo hizo suave. Los portugueses llevaron el cacao de Brasil a Santo Tomé en 1824 y rehicieron el sistema de plantación esclavista; incluso después de abolir la esclavitud en 1869 siguió el trabajo forzado, y en 1909 los chocolateros británicos boicotearon el cacao de Santo Tomé. En la Costa de Oro, el herrero Tetteh Quarshie plantó hacia 1876 granos de cacao de Fernando Poo; Ghana y Costa de Marfil cultivan hoy casi el 60 % del cacao del mundo, todavía demasiadas veces con trabajo infantil."
+      },
+      "control": {
+        "cacao": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "cacao_africa"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "cacao",
+          "path": [
+            [
+              -38.5,
+              -13.0
+            ],
+            [
+              -25.0,
+              -9.0
+            ],
+            [
+              -5.0,
+              -3.0
+            ],
+            [
+              6.5,
+              0.2
+            ]
+          ],
+          "label": {
+            "en": "From Brazil to São Tomé, 1824",
+            "es": "De Brasil a Santo Tomé, 1824"
+          }
+        },
+        {
+          "side": "cacao",
+          "path": [
+            [
+              8.75,
+              3.6
+            ],
+            [
+              5.0,
+              3.6
+            ],
+            [
+              1.0,
+              4.9
+            ],
+            [
+              -0.15,
+              5.6
+            ],
+            [
+              -0.135,
+              5.9
+            ]
+          ],
+          "label": {
+            "en": "Quarshie's beans, about 1876",
+            "es": "Los granos de Quarshie, hacia 1876"
+          }
+        }
+      ],
+      "places": [
+        {
+          "name": {
+            "en": "Tetteh Quarshie",
+            "es": "Tetteh Quarshie"
+          },
+          "at": [
+            -0.135,
+            5.915
+          ],
+          "cat": "trade",
+          "icon": "🌱",
+          "type": "person",
+          "date": "1876",
+          "life": [
+            "1842",
+            "1892-12-25"
+          ],
+          "place": {
+            "en": "Akuapem Mampong, Ghana",
+            "es": "Akuapem Mampong, Ghana"
+          },
+          "text": {
+            "en": "A Ghanaian blacksmith who brought cacao beans from Fernando Po (Bioko) around 1876 and planted them at Mampong. Ghana became a cacao giant.",
+            "es": "Herrero ghanés que trajo granos de cacao de Fernando Poo (Bioko) hacia 1876 y los plantó en Mampong. Ghana se convirtió en un gigante del cacao."
+          },
+          "wiki": {
+            "en": "Tetteh Quarshie",
+            "es": "Ghana"
+          }
+        },
+        {
+          "name": {
+            "en": "Cacao of São Tomé",
+            "es": "El cacao de Santo Tomé"
+          },
+          "at": [
+            6.6,
+            0.25
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "1824",
+          "place": {
+            "en": "São Tomé and Príncipe",
+            "es": "Santo Tomé y Príncipe"
+          },
+          "text": {
+            "en": "The Portuguese planted cacao here in 1824 with forced labour. By 1905 the islands were the world's largest producer; British firms boycotted them in 1909.",
+            "es": "Los portugueses plantaron aquí cacao en 1824 con trabajo forzado. En 1905 las islas eran el mayor productor del mundo; las empresas británicas las boicotearon en 1909."
+          },
+          "wiki": {
+            "en": "São Tomé Island",
+            "es": "Santo Tomé y Príncipe"
+          }
+        },
+        {
+          "name": {
+            "en": "Van Houten's cocoa",
+            "es": "El cacao de Van Houten"
+          },
+          "at": [
+            4.9,
+            52.37
+          ],
+          "cat": "drink",
+          "icon": "🏭",
+          "type": "invention",
+          "date": "1828",
+          "place": {
+            "en": "Amsterdam, Netherlands",
+            "es": "Ámsterdam, Países Bajos"
+          },
+          "text": {
+            "en": "In 1828 the Dutch van Houtens patented a press that squeezed the fat out of cacao, giving cocoa powder; they later made it milder with alkali.",
+            "es": "En 1828, los neerlandeses Van Houten patentaron una prensa que extraía la grasa del cacao y daba cacao en polvo; después lo suavizaron con álcali."
+          },
+          "wiki": {
+            "en": "Coenraad Johannes van Houten",
+            "es": "Coenraad Johannes van Houten"
+          }
+        },
+        {
+          "name": {
+            "en": "Bioko (Fernando Po)",
+            "es": "Bioko (Fernando Poo)"
+          },
+          "at": [
+            8.75,
+            3.5
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "1870",
+          "place": {
+            "en": "Bioko, Equatorial Guinea",
+            "es": "Bioko, Guinea Ecuatorial"
+          },
+          "text": {
+            "en": "By the 1870s this island, then the Spanish colony of Fernando Po, already grew cacao. Tetteh Quarshie brought his first beans to the Gold Coast from here.",
+            "es": "En la década de 1870, esta isla, entonces la colonia española de Fernando Poo, ya cultivaba cacao. De aquí llevó Tetteh Quarshie sus primeros granos a la Costa de Oro."
+          },
+          "wiki": {
+            "en": "Bioko",
+            "es": "Bioko"
+          }
+        },
+        {
+          "name": {
+            "en": "Milk chocolate",
+            "es": "Chocolate con leche"
+          },
+          "at": [
+            6.8433,
+            46.4628
+          ],
+          "cat": "sweet",
+          "type": "dish",
+          "date": "1875",
+          "place": {
+            "en": "Vevey, Switzerland",
+            "es": "Vevey, Suiza"
+          },
+          "text": {
+            "en": "Daniel Peter of Vevey added powdered milk, made by his neighbour Henri Nestlé, to chocolate in 1875 or 1876, creating milk chocolate.",
+            "es": "Daniel Peter, de Vevey, añadió al chocolate leche en polvo de su vecino Henri Nestlé en 1875 o 1876 y creó el chocolate con leche."
+          },
+          "country": "CHE",
+          "wiki": {
+            "en": "Daniel Peter",
+            "es": "Daniel Peter"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Coffee, tea and chocolate became daily pleasures for billions and gave the world its coffeehouses, tea ceremonies and chocolate bars. Their spread was driven by empires and paid for by enslaved Africans in Brazil and the Caribbean, forced farmers in Java, indentured workers in Assam and, still today, poorly paid farmers and child labourers in the cocoa fields of West Africa. Fair-trade labels, one of them named after Max Havelaar, try to change that.",
+    "es": "El café, el té y el chocolate se convirtieron en placeres diarios de miles de millones de personas y dieron al mundo sus cafés, sus ceremonias del té y sus tabletas de chocolate. Su expansión la impulsaron los imperios y la pagaron africanos esclavizados en Brasil y el Caribe, campesinos forzados en Java, jornaleros contratados en Assam y, todavía hoy, agricultores mal pagados y niños trabajadores en los campos de cacao de África occidental. Los movimientos de comercio justo, uno de los cuales lleva el nombre de Max Havelaar, intentan cambiarlo."
+  },
+  "sources": [
+    {
+      "title": "History of chocolate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_chocolate"
+    },
+    {
+      "title": "Mayo-Chinchipe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mayo-Chinchipe"
+    },
+    {
+      "title": "Cocoa bean (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cocoa_bean"
+    },
+    {
+      "title": "History of tea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_tea"
+    },
+    {
+      "title": "Lu Yu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lu_Yu"
+    },
+    {
+      "title": "Tea Horse Road (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tea_Horse_Road"
+    },
+    {
+      "title": "Japanese tea ceremony (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Japanese_tea_ceremony"
+    },
+    {
+      "title": "Robert Fortune (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Robert_Fortune"
+    },
+    {
+      "title": "Assam tea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Assam_tea"
+    },
+    {
+      "title": "History of tea in India (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_tea_in_India"
+    },
+    {
+      "title": "History of coffee (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_coffee"
+    },
+    {
+      "title": "Coffeehouse (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Coffeehouse"
+    },
+    {
+      "title": "Coffee production in Indonesia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Coffee_production_in_Indonesia"
+    },
+    {
+      "title": "Coffee production in Brazil (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Coffee_production_in_Brazil"
+    },
+    {
+      "title": "Tetteh Quarshie (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tetteh_Quarshie"
+    }
+  ]
+}
