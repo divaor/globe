@@ -1,0 +1,479 @@
+{
+  "name": {
+    "en": "Great structures",
+    "es": "Grandes construcciones"
+  },
+  "categories": [
+    {
+      "id": "megalith",
+      "icon": "🗿",
+      "color": "#8e5a2b",
+      "name": {
+        "en": "Megaliths and first monuments",
+        "es": "Megalitos y primeros monumentos"
+      }
+    },
+    {
+      "id": "pyramid",
+      "icon": "🔺",
+      "color": "#d4a017",
+      "name": {
+        "en": "Pyramids and tombs",
+        "es": "Pirámides y tumbas"
+      }
+    },
+    {
+      "id": "temple",
+      "icon": "🛕",
+      "color": "#c0392b",
+      "name": {
+        "en": "Temples, shrines and stupas",
+        "es": "Templos, santuarios y estupas"
+      }
+    },
+    {
+      "id": "church",
+      "icon": "⛪",
+      "color": "#2e6f9e",
+      "name": {
+        "en": "Churches and cathedrals",
+        "es": "Iglesias y catedrales"
+      }
+    },
+    {
+      "id": "mosque",
+      "icon": "🕌",
+      "color": "#16a085",
+      "name": {
+        "en": "Mosques",
+        "es": "Mezquitas"
+      }
+    },
+    {
+      "id": "fort",
+      "icon": "🏯",
+      "color": "#5d6d7e",
+      "name": {
+        "en": "Walls, castles and forts",
+        "es": "Murallas, castillos y fortalezas"
+      }
+    },
+    {
+      "id": "palace",
+      "icon": "🏰",
+      "color": "#7d3c98",
+      "name": {
+        "en": "Palaces",
+        "es": "Palacios"
+      }
+    },
+    {
+      "id": "city",
+      "icon": "🏙️",
+      "color": "#e67e22",
+      "name": {
+        "en": "Ancient cities",
+        "es": "Ciudades antiguas"
+      }
+    },
+    {
+      "id": "bridge",
+      "icon": "🌉",
+      "color": "#2980b9",
+      "name": {
+        "en": "Bridges",
+        "es": "Puentes"
+      }
+    },
+    {
+      "id": "water",
+      "icon": "🚢",
+      "color": "#1abc9c",
+      "name": {
+        "en": "Canals, dams and aqueducts",
+        "es": "Canales, presas y acueductos"
+      }
+    },
+    {
+      "id": "tunnel",
+      "icon": "🚇",
+      "color": "#34495e",
+      "name": {
+        "en": "Roads, railways and tunnels",
+        "es": "Caminos, ferrocarriles y túneles"
+      }
+    },
+    {
+      "id": "tower",
+      "icon": "🗼",
+      "color": "#b03a2e",
+      "name": {
+        "en": "Towers, lighthouses and skyscrapers",
+        "es": "Torres, faros y rascacielos"
+      }
+    },
+    {
+      "id": "monument",
+      "icon": "🗽",
+      "color": "#27ae60",
+      "name": {
+        "en": "Monuments and statues",
+        "es": "Monumentos y estatuas"
+      }
+    },
+    {
+      "id": "arena",
+      "icon": "🏟️",
+      "color": "#d35400",
+      "name": {
+        "en": "Stadiums, theatres and halls",
+        "es": "Estadios, teatros y salas"
+      }
+    },
+    {
+      "id": "science",
+      "icon": "🔭",
+      "color": "#6c5ce7",
+      "name": {
+        "en": "Observatories and science",
+        "es": "Observatorios y ciencia"
+      }
+    }
+  ],
+  "catalog": [
+    {
+      "id": "great-pyramid-giza",
+      "name": {
+        "en": "Great Pyramid of Giza",
+        "es": "Gran Pirámide de Guiza"
+      },
+      "at": [
+        31.1342,
+        29.9792
+      ],
+      "cat": "pyramid",
+      "type": "structure",
+      "date": "-2600",
+      "end": "-2560",
+      "place": {
+        "en": "Giza, Egypt",
+        "es": "Guiza, Egipto"
+      },
+      "text": {
+        "en": "The tomb of the pharaoh Khufu, and for almost 4,000 years the tallest building on Earth.",
+        "es": "La tumba del faraón Keops y, durante casi 4000 años, el edificio más alto de la Tierra."
+      },
+      "by": {
+        "en": "Pharaoh Khufu's builders; his vizier Hemiunu is thought to have been the architect",
+        "es": "Los constructores del faraón Keops; se cree que su visir Hemiunu fue el arquitecto"
+      },
+      "why": {
+        "en": "A tomb to carry the king into the afterlife and to show his power",
+        "es": "Una tumba para llevar al rey a la otra vida y mostrar su poder"
+      },
+      "how": {
+        "en": "About 2.3 million limestone and granite blocks, cut with copper tools and hauled up ramps by a paid workforce of perhaps 20,000–30,000",
+        "es": "Unos 2,3 millones de bloques de caliza y granito, tallados con herramientas de cobre y subidos por rampas por unos 20 000–30 000 trabajadores pagados"
+      },
+      "size": {
+        "en": "146.6 m tall when built (138.5 m today); each side 230 m",
+        "es": "146,6 m de alto al construirse (138,5 m hoy); 230 m de lado"
+      },
+      "status": {
+        "en": "Standing: the only ancient wonder that survives",
+        "es": "En pie: la única maravilla antigua que se conserva"
+      },
+      "facts": [
+        {
+          "label": {
+            "en": "Record",
+            "es": "Récord"
+          },
+          "value": {
+            "en": "Tallest structure in the world until about AD 1311",
+            "es": "Estructura más alta del mundo hasta hacia 1311"
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Great Pyramid of Giza",
+        "es": "Gran Pirámide de Guiza"
+      }
+    },
+    {
+      "id": "hanging-gardens-babylon",
+      "name": {
+        "en": "Hanging Gardens of Babylon",
+        "es": "Jardines Colgantes de Babilonia"
+      },
+      "at": [
+        44.4209,
+        32.5364
+      ],
+      "cat": "palace",
+      "type": "structure",
+      "date": "-600",
+      "place": {
+        "en": "Babylon, Iraq",
+        "es": "Babilonia, Irak"
+      },
+      "text": {
+        "en": "Terraced gardens said to rise like a green mountain beside the Euphrates. No trace of them has ever been found.",
+        "es": "Jardines en terrazas que, según se decía, se alzaban como una montaña verde junto al Éufrates. Nunca se ha hallado rastro de ellos."
+      },
+      "by": {
+        "en": "King Nebuchadnezzar II, according to later Greek writers; some scholars think they were really built by Sennacherib at Nineveh",
+        "es": "El rey Nabucodonosor II, según autores griegos posteriores; algunos estudiosos creen que en realidad los construyó Senaquerib en Nínive"
+      },
+      "why": {
+        "en": "Legend says the king built them for his wife Amytis, who missed the green hills of her homeland",
+        "es": "La leyenda dice que el rey los construyó para su esposa Amitis, que añoraba las colinas verdes de su tierra"
+      },
+      "how": {
+        "en": "Stepped terraces on vaults, watered with river water lifted by chain pumps or screws",
+        "es": "Terrazas escalonadas sobre bóvedas, regadas con agua del río elevada con norias o tornillos"
+      },
+      "status": {
+        "en": "Lost; whether they existed is still debated",
+        "es": "Desaparecidos; aún se discute si existieron"
+      },
+      "wiki": {
+        "en": "Hanging Gardens of Babylon",
+        "es": "Jardines Colgantes de Babilonia"
+      }
+    },
+    {
+      "id": "temple-artemis-ephesus",
+      "name": {
+        "en": "Temple of Artemis at Ephesus",
+        "es": "Templo de Artemisa en Éfeso"
+      },
+      "at": [
+        27.3639,
+        37.9497
+      ],
+      "cat": "temple",
+      "type": "structure",
+      "date": "-550",
+      "place": {
+        "en": "Ephesus, Turkey",
+        "es": "Éfeso, Turquía"
+      },
+      "text": {
+        "en": "A vast marble temple to the goddess Artemis, paid for by King Croesus of Lydia. It was burned down in 356 BC and rebuilt even larger.",
+        "es": "Un enorme templo de mármol a la diosa Artemisa, pagado por el rey Creso de Lidia. Fue incendiado en el 356 a. C. y reconstruido aún más grande."
+      },
+      "by": {
+        "en": "The architect Chersiphron and his son Metagenes, with gifts from Croesus",
+        "es": "El arquitecto Quersifrón y su hijo Metágenes, con donaciones de Creso"
+      },
+      "why": {
+        "en": "To honour Artemis, the protector of Ephesus, and to show the city's wealth",
+        "es": "Para honrar a Artemisa, protectora de Éfeso, y mostrar la riqueza de la ciudad"
+      },
+      "how": {
+        "en": "Built of marble on marshy ground, on a bed of charcoal and fleeces; about 127 columns, each some 18 m tall",
+        "es": "De mármol sobre terreno pantanoso, sobre un lecho de carbón y pieles; unas 127 columnas de unos 18 m de alto"
+      },
+      "size": {
+        "en": "About 115 m long and 46 m wide",
+        "es": "Unos 115 m de largo y 46 m de ancho"
+      },
+      "status": {
+        "en": "Destroyed by AD 401; one column has been put back up",
+        "es": "Destruido hacia el 401; se ha vuelto a levantar una columna"
+      },
+      "wiki": {
+        "en": "Temple of Artemis",
+        "es": "Templo de Artemisa (Éfeso)"
+      }
+    },
+    {
+      "id": "statue-zeus-olympia",
+      "name": {
+        "en": "Statue of Zeus at Olympia",
+        "es": "Estatua de Zeus en Olimpia"
+      },
+      "at": [
+        21.63,
+        37.6379
+      ],
+      "cat": "monument",
+      "type": "structure",
+      "date": "-435",
+      "place": {
+        "en": "Olympia, Greece",
+        "es": "Olimpia, Grecia"
+      },
+      "text": {
+        "en": "A giant seated Zeus of ivory and gold, made by the sculptor Phidias for the temple where the Olympic Games were held.",
+        "es": "Un Zeus sedente gigante de marfil y oro, obra del escultor Fidias para el templo donde se celebraban los Juegos Olímpicos."
+      },
+      "by": {
+        "en": "Phidias, the sculptor of the Parthenon's Athena; his workshop has been found at Olympia",
+        "es": "Fidias, escultor de la Atenea del Partenón; su taller se ha encontrado en Olimpia"
+      },
+      "why": {
+        "en": "To honour the king of the gods at his greatest sanctuary",
+        "es": "Para honrar al rey de los dioses en su mayor santuario"
+      },
+      "how": {
+        "en": "Ivory plates and gold sheets over a wooden frame, kept supple with olive oil",
+        "es": "Placas de marfil y láminas de oro sobre un armazón de madera, que se mantenía flexible con aceite de oliva"
+      },
+      "size": {
+        "en": "About 12.4 m tall",
+        "es": "Unos 12,4 m de alto"
+      },
+      "status": {
+        "en": "Lost in the 5th century AD, probably to fire",
+        "es": "Perdida en el siglo V, probablemente en un incendio"
+      },
+      "wiki": {
+        "en": "Statue of Zeus at Olympia",
+        "es": "Estatua de Zeus en Olimpia"
+      }
+    },
+    {
+      "id": "mausoleum-halicarnassus",
+      "name": {
+        "en": "Mausoleum at Halicarnassus",
+        "es": "Mausoleo de Halicarnaso"
+      },
+      "at": [
+        27.4241,
+        37.0379
+      ],
+      "cat": "pyramid",
+      "type": "structure",
+      "date": "-353",
+      "end": "-350",
+      "place": {
+        "en": "Bodrum, Turkey",
+        "es": "Bodrum, Turquía"
+      },
+      "text": {
+        "en": "The tomb of Mausolus, ruler of Caria, so splendid that every grand tomb since has been called a mausoleum.",
+        "es": "La tumba de Mausolo, gobernante de Caria, tan espléndida que desde entonces toda gran tumba se llama mausoleo."
+      },
+      "by": {
+        "en": "His widow Artemisia II; the architects Satyros and Pytheos and four of the best Greek sculptors",
+        "es": "Su viuda Artemisia II; los arquitectos Sátiro y Piteo y cuatro de los mejores escultores griegos"
+      },
+      "why": {
+        "en": "A tomb for Mausolus and a monument to his dynasty",
+        "es": "Una tumba para Mausolo y un monumento a su dinastía"
+      },
+      "how": {
+        "en": "A stone base, a ring of 36 columns and a stepped pyramid roof topped by a four-horse chariot, all covered in sculpture",
+        "es": "Un basamento de piedra, un anillo de 36 columnas y un tejado piramidal escalonado coronado por una cuadriga, todo cubierto de esculturas"
+      },
+      "size": {
+        "en": "About 45 m tall",
+        "es": "Unos 45 m de alto"
+      },
+      "status": {
+        "en": "Toppled by earthquakes; its stones went into Bodrum Castle in 1494–1522. Some sculptures are in the British Museum",
+        "es": "Derribado por terremotos; sus piedras se usaron en el castillo de Bodrum en 1494–1522. Algunas esculturas están en el Museo Británico"
+      },
+      "wiki": {
+        "en": "Mausoleum at Halicarnassus",
+        "es": "Mausoleo de Halicarnaso"
+      }
+    },
+    {
+      "id": "colossus-rhodes",
+      "name": {
+        "en": "Colossus of Rhodes",
+        "es": "Coloso de Rodas"
+      },
+      "at": [
+        28.2272,
+        36.451
+      ],
+      "cat": "monument",
+      "type": "structure",
+      "date": "-292",
+      "end": "-280",
+      "place": {
+        "en": "Rhodes, Greece",
+        "es": "Rodas, Grecia"
+      },
+      "text": {
+        "en": "A bronze statue of the sun god Helios, about as tall as the Statue of Liberty without its base. It stood for only 54 years.",
+        "es": "Una estatua de bronce del dios del sol Helios, casi tan alta como la Estatua de la Libertad sin su pedestal. Solo se mantuvo en pie 54 años."
+      },
+      "by": {
+        "en": "The sculptor Chares of Lindos",
+        "es": "El escultor Cares de Lindos"
+      },
+      "why": {
+        "en": "To thank Helios for the city's survival of a year-long siege, paid for by selling the siege engines left behind",
+        "es": "Para agradecer a Helios que la ciudad resistiera un asedio de un año; se pagó vendiendo las máquinas de asedio abandonadas"
+      },
+      "how": {
+        "en": "Bronze plates on an iron frame, weighted with stone, built up from earth ramps over 12 years",
+        "es": "Placas de bronce sobre un armazón de hierro, lastrado con piedra, levantado con rampas de tierra durante 12 años"
+      },
+      "size": {
+        "en": "About 33 m tall",
+        "es": "Unos 33 m de alto"
+      },
+      "status": {
+        "en": "Toppled by an earthquake in 226 BC; the ruins were sold for scrap in AD 654",
+        "es": "Derribado por un terremoto en el 226 a. C.; sus restos se vendieron como chatarra en el 654"
+      },
+      "wiki": {
+        "en": "Colossus of Rhodes",
+        "es": "Coloso de Rodas"
+      }
+    },
+    {
+      "id": "lighthouse-alexandria",
+      "name": {
+        "en": "Lighthouse of Alexandria",
+        "es": "Faro de Alejandría"
+      },
+      "at": [
+        29.8856,
+        31.214
+      ],
+      "cat": "tower",
+      "type": "structure",
+      "date": "-280",
+      "end": "-247",
+      "place": {
+        "en": "Alexandria, Egypt",
+        "es": "Alejandría, Egipto"
+      },
+      "text": {
+        "en": "A tower on the island of Pharos that guided ships into Alexandria for more than 1,500 years. Its name gave the word for lighthouse in many languages.",
+        "es": "Una torre en la isla de Faros que guió a los barcos hasta Alejandría durante más de 1500 años. Su nombre dio la palabra «faro» en muchas lenguas."
+      },
+      "by": {
+        "en": "Ptolemy I and Ptolemy II; the architect Sostratus of Cnidus",
+        "es": "Ptolomeo I y Ptolomeo II; el arquitecto Sóstrato de Cnido"
+      },
+      "why": {
+        "en": "To guide ships past the reefs into the busiest port of the Mediterranean, and to show off the new city",
+        "es": "Para guiar a los barcos entre los arrecifes hasta el puerto más activo del Mediterráneo y lucir la nueva ciudad"
+      },
+      "how": {
+        "en": "Three stages of limestone and granite, square, octagonal and round, with a fire at the top and probably a bronze mirror",
+        "es": "Tres cuerpos de caliza y granito, cuadrado, octogonal y redondo, con un fuego en lo alto y probablemente un espejo de bronce"
+      },
+      "size": {
+        "en": "About 100 m tall",
+        "es": "Unos 100 m de alto"
+      },
+      "status": {
+        "en": "Ruined by earthquakes between 956 and 1323; its stones were used for the Citadel of Qaitbay in 1477",
+        "es": "Arruinado por terremotos entre 956 y 1323; sus piedras se usaron en la ciudadela de Qaitbay en 1477"
+      },
+      "wiki": {
+        "en": "Lighthouse of Alexandria",
+        "es": "Faro de Alejandría"
+      }
+    }
+  ]
+}

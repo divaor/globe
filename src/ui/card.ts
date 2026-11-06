@@ -45,8 +45,14 @@ export class CountryCard {
   }
 
   /** Shows arbitrary content (historical polities, battles, quiz feedback...) in the card; `notes` are paragraphs under the rows. */
-  showCustom(iconText: string, title: string, sub: string, rows: InfoRow[], links: { label: string; href?: string; onClick?: () => void }[] = [], notes: string[] = []) {
+  showCustom(iconText: string, title: string, sub: string, rows: InfoRow[], links: { label: string; href?: string; onClick?: () => void }[] = [], notes: string[] = [], image?: Promise<string | null>) {
     clear(this.body);
+    // A picture (from Wikipedia) appears on top once it has loaded, if the card is still open.
+    const img = image ? (h('img', { class: 'card-img', alt: '', hidden: true }) as HTMLImageElement) : null;
+    if (img) {
+      img.addEventListener('load', () => { img.hidden = false; });
+      void image!.then((src) => { if (src && img.isConnected) img.src = src; });
+    }
     const actions = h('div', { class: 'card-actions' });
     for (const l of links) {
       const el = l.href ? h('a', { class: 'pill', href: l.href, target: '_blank', rel: 'noopener' }, icon(ExternalLink, 16), l.label)
@@ -55,6 +61,7 @@ export class CountryCard {
       actions.append(el);
     }
     add(this.body,
+      img,
       h('div', { class: 'card-head' }, h('span', { class: 'flag-emoji' }, iconText), h('div', null, h('div', { class: 'card-title' }, title), h('div', { class: 'card-sub' }, sub))),
       h('div', { class: 'rows' }, rows.map(rowEl)),
       ...notes.map((n) => h('p', { class: 'card-note' }, n)),

@@ -1,14 +1,15 @@
-// Wars and conquests: famous conflicts played step by step on the map. Each step shows the
-// territory every side holds (crossfading from the step before), the routes armies take (drawn as
-// they march), the battles of the moment (markers that pop up; tap one for its casualties) and
-// events such as declarations of war. A bar under the map tells the story; "Details" opens the
-// longer notes, every battle, the outcome and the sources. Data: public/data/conflicts/, built by
-// scripts/data/build-conflicts.mjs from scripts/data/conflicts/*.json.
+// Stories played step by step on the map: Wars and conquests, Eras and ideas, Food through time
+// and Great structures. Each step shows the territory of its sides (crossfading from the step
+// before), routes (drawn as they go), battles (wars: tap one for its casualties), items (people,
+// works, sites, dishes, structures: markers that pop up, then stay as dots; tap one for its card
+// with a picture from Wikipedia) and dated events. A bar under the map tells the story; "Details"
+// opens the longer notes, the step's items, the outcome and the sources; "Browse" lists everything.
+// Data: public/data/<collection>/, built by scripts/data/build-conflicts.mjs.
 import { geoArea, geoCentroid, geoContains, geoDistance, geoInterpolate } from 'd3-geo';
 import { mesh } from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry, MultiLineString, Polygon } from 'geojson';
-import { Play, Pause, X, ChevronLeft, ChevronRight, ListOrdered, BookOpen } from 'lucide';
+import { Play, Pause, X, ChevronLeft, ChevronRight, ListOrdered, BookOpen, Search } from 'lucide';
 import { loadJSON, shapesFrom, chunkLines, type Shape, type Line } from '../data/store';
 import { t, tx, lang, fmtNumber, fmtCompact } from '../app/i18n';
 import { h, icon, clear } from '../ui/dom';
@@ -25,15 +26,41 @@ type Losses = { [side: string]: Range | Text | undefined; note?: Text };
 interface Battle { name: Text; at: Pt; date?: string; winner?: string; casualties?: Losses; result?: Text; details?: Text }
 interface Move { side: string; path: Pt[]; label?: Text }
 interface WarEvent { icon: string; text: Text; at?: Pt; date?: string }
+/** A marker of the stories other than wars: a person, work, site, dish, structure... */
+export interface Item {
+  id?: string; name: Text; at: Pt; cat: string; icon: string; date: string; t: number; end?: string; life?: [string, string | null];
+  type?: string; country?: string; place?: Text; text: Text; details?: Text; why?: Text; how?: Text; by?: Text; size?: Text; status?: Text;
+  facts?: { label: Text; value: Text }[]; wiki?: Text;
+  /** The first step that shows it (-1: a time tour's catalogue item, shown from its date). */
+  first: number;
+}
+export interface Cat { id: string; name: Text; icon: string; color: string }
 interface Step {
   date: string; t: number; title: Text; text: Text; details?: Text; control: Record<string, number | null>;
-  moves?: Move[]; battles?: Battle[]; events?: WarEvent[]; deaths?: Range; camera?: Cam; aftermath?: boolean;
+  moves?: Move[]; battles?: Battle[]; events?: WarEvent[]; deaths?: Range; camera?: Cam; aftermath?: boolean; show?: number[];
 }
 interface Conflict {
   id: string; name: Text; icon: string; era: string; region: Text; summary: Text; start: string; end: string; t0: number; t1: number;
   camera: Cam; sides: Side[]; casualties?: Losses; casualtiesNote?: Text; outcome: Text; sources: { title: string; url: string }[]; steps: Step[];
+  kind?: string; items?: Item[]; cats?: Cat[]; catalog?: 'all' | 'shown';
 }
-interface Entry { id: string; name: Text; icon: string; era: string; region: Text; summary: Text; start: string; end: string; t0: number; t1: number; steps: number; sides: { name: Text; color: string }[] }
+interface Entry {
+  id: string; name: Text; icon: string; era: string; region: Text; summary: Text; start: string; end: string; t0: number; t1: number; steps: number;
+  sides: { name: Text; color: string }[]; items?: number; cats?: string[];
+}
+/** A collection's items.json row: an item and where it first appears. */
+export interface CollectionItem extends Omit<Item, 'first'> { story: string; step: number }
+
+/** The four collections of stories. */
+export type StoryKind = 'wars' | 'eras' | 'food' | 'structures';
+export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures'];
+const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text }> = {
+  wars: { dir: 'conflicts', hash: 'war', icon: '⚔️', name: { en: 'Wars and conquests', es: 'Guerras y conquistas' } },
+  eras: { dir: 'eras', hash: 'eras', icon: '🎨', name: { en: 'Eras and ideas', es: 'Épocas e ideas' } },
+  food: { dir: 'food', hash: 'food', icon: '🌾', name: { en: 'Food through time', es: 'La comida en el tiempo' } },
+  structures: { dir: 'structures', hash: 'structures', icon: '🏛️', name: { en: 'Great structures', es: 'Grandes construcciones' } },
+};
+export const storyHashKey = (k: StoryKind) => KINDS[k].hash;
 interface Area extends Shape { lp: Pt; area: number }
 
 export const ERAS = ['ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
@@ -42,8 +69,9 @@ const MONTHS: Record<'en' | 'es', string[]> = {
   es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
 };
 
-// Timing of a step, in ms at 1×: the territory fades in, arrows draw, battles pop up one by one.
-const FADE = 900, MOVE_FROM = 250, MOVE_MS = 2300, BATTLE_FROM = 700, BATTLE_GAP = 420, POP = 380, PULSE = 1500;
+// Timing of a step, in ms at 1×: the territory fades in, arrows draw, battles and items pop up one
+// by one.
+const FADE = 900, MOVE_FROM = 250, MOVE_MS = 2300, BATTLE_FROM = 700, BATTLE_GAP = 420, POP = 380, PULSE = 1500, ITEM_GAP = 300;
 
 const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
 const ease = (x: number) => { const t = clamp01(x); return t * t * (3 - 2 * t); };
@@ -100,8 +128,10 @@ function routeTo(path: Pt[], q: number): Pt[] {
   return out;
 }
 
-export class WarsMode {
+export class StoryMode {
   private index: Entry[] = [];
+  private cats = new Map<string, Cat>();
+  private all: CollectionItem[] | null = null;
   private c: Conflict | null = null;
   private areas = new Map<number, Area>();
   private step = 0;
@@ -119,13 +149,14 @@ export class WarsMode {
   private onKey = (e: KeyboardEvent) => this.key(e);
   readonly layer: LayerDef;
 
-  constructor(private app: App, private shell: Shell) {
+  constructor(private app: App, private shell: Shell, readonly kind: StoryKind = 'wars') {
     const self = this;
+    const k = KINDS[kind];
     this.layer = {
-      id: 'wars', category: 'political', icon: '⚔️', kind: 'fill', hidden: true, animated: true,
-      name: { en: 'Wars and conquests', es: 'Guerras y conquistas' },
-      desc: { en: 'Conflicts step by step.', es: 'Conflictos paso a paso.' },
-      credit: 'Wars and conquests: Atlas Globe (sources listed with each conflict); historical borders: aourednik/historical-basemaps (GPL-3.0)',
+      id: kind === 'wars' ? 'wars' : `story-${kind}`, category: 'political', icon: k.icon, kind: 'fill', hidden: true, animated: true,
+      name: k.name,
+      desc: { en: 'Stories step by step.', es: 'Historias paso a paso.' },
+      credit: `${k.name.en}: Atlas Globe (sources listed with each story); pictures: Wikipedia; historical borders: aourednik/historical-basemaps (GPL-3.0)`,
       drawFill(rc) { self.drawFill(rc); },
       drawOverlay(rc) { self.drawOverlay(rc); },
       labels(rc) { self.labels(rc); },
@@ -134,20 +165,32 @@ export class WarsMode {
     app.on('lang', () => { if (this.active && this.c) { this.buildBar(); this.renderBar(); } });
   }
 
-  get active() { return this.app.mode === 'wars'; }
+  get active() { return this.app.mode === this.kind; }
+  get wars() { return this.kind === 'wars'; }
+  private get dir() { return KINDS[this.kind].dir; }
+  private tr(key: 'Title' | 'Intro') { return this.wars ? t(`wars${key}`) : t(`${this.kind}${key}`); }
 
   private async ensureIndex() {
-    if (!this.index.length) this.index = (await loadJSON<{ conflicts: Entry[] }>('conflicts/index.json')).conflicts;
+    if (!this.index.length) {
+      const idx = await loadJSON<{ conflicts?: Entry[]; stories?: Entry[]; categories?: Cat[] }>(`${this.dir}/index.json`);
+      this.index = idx.conflicts ?? idx.stories ?? [];
+      this.cats = new Map((idx.categories ?? []).map((c) => [c.id, c]));
+    }
     if (!this.snaps.length) {
       const idx = await loadJSON<{ snapshots: { year: number; file: string }[] }>('history/index.json');
       this.snaps = idx.snapshots.map((s) => ({ ...s, astro: s.year < 0 ? s.year + 1 : s.year }));
     }
   }
 
-  /** The list of conflicts, by era (from the Time travel menu or the bar's list button). */
+  /** The list of stories, by era (from the Time travel menu or the bar's list button). */
   async pick() {
     await this.ensureIndex();
-    const wrap = h('div', { class: 'war-list' }, h('p', { class: 'muted small' }, t('warsIntro')));
+    const wrap = h('div', { class: 'war-list' }, h('p', { class: 'muted small' }, this.tr('Intro')));
+    if (!this.wars) {
+      const browse = h('button', { type: 'button', class: 'pill story-browse-all' }, icon(Search, 16), t('storyBrowseAll'));
+      browse.addEventListener('click', () => void this.browseCollection());
+      wrap.append(browse);
+    }
     for (const era of ERAS) {
       const items = this.index.filter((c) => c.era === era);
       if (!items.length) continue;
@@ -159,40 +202,52 @@ export class WarsMode {
             h('span', { class: 'war-name' }, tx(c.name)),
             h('span', { class: 'war-sub' }, `${fmtYears(c.start, c.end)} · ${tx(c.region)}`),
             h('span', { class: 'war-sum' }, tx(c.summary)),
-            h('span', { class: 'war-sides' }, c.sides.map((s) => h('span', { class: 'war-side' }, h('i', { style: { background: s.color } }), tx(s.name))))));
+            h('span', { class: 'war-sides' },
+              c.sides.map((s) => h('span', { class: 'war-side' }, h('i', { style: { background: s.color } }), tx(s.name))),
+              (c.cats ?? []).map((id) => this.cats.get(id)).filter((x): x is Cat => !!x)
+                .map((k) => h('span', { class: 'war-side' }, h('b', { class: 'story-cat' }, k.icon), tx(k.name))))));
         card.addEventListener('click', () => void this.open(c.id));
         wrap.append(card);
       }
     }
-    this.shell.openPanel('wars', t('warsTitle'), wrap);
+    this.shell.openPanel(this.sheetId, this.tr('Title'), wrap);
   }
 
-  /** Opens a conflict (at a step, from a shared link) and starts playing it. */
-  async open(id: string, at = 0) {
+  private get sheetId() { return this.wars ? 'wars' : `story-${this.kind}`; }
+
+  /** Opens a story (at a step, from a shared link) and starts playing it; `focus` shows one item. */
+  async open(id: string, at = 0, focus?: { name: string; at: Pt }) {
     this.shell.sheet.close();
     await this.ensureIndex();
-    const [c, topo] = await Promise.all([loadJSON<Conflict>(`conflicts/${id}.json`), loadJSON<Topology>(`conflicts/${id}-areas.json`)]);
+    const [c, topo] = await Promise.all([loadJSON<Conflict>(`${this.dir}/${id}.json`), loadJSON<Topology>(`${this.dir}/${id}-areas.json`)]);
     if (!this.active) await this.enterMode();
     this.stop();
     this.c = c;
     this.areas = new Map(shapesFrom(topo, 'areas').map((s) => [Number(s.id), { ...s, ...labelPoint(s.feature) }]));
     this.step = Math.max(0, Math.min(c.steps.length - 1, at)); this.prev = -1;
     this.buildBar();
-    this.go(this.step, { fly: true });
-    this.playing = true;
+    this.go(this.step, { fly: !focus });
+    this.playing = !focus;
     this.renderBar();
-    this.app.emit('mode', 'wars');
+    this.app.emit('mode', this.kind);
+    if (focus) {
+      // Opened for one item (from Browse or a quiz): fly to it and open its card.
+      const k = c.items?.findIndex((it) => tx(it.name) === focus.name && Math.abs(it.at[0] - focus.at[0]) < 1e-3 && Math.abs(it.at[1] - focus.at[1]) < 1e-3) ?? -1;
+      const v = this.app.renderer.view;
+      v.flyTo({ lon: focus.at[0], lat: focus.at[1], zoom: Math.max(v.zoom, 4.5) }, 1300);
+      if (k >= 0) setTimeout(() => { if (this.c === c) this.itemCard(c.items![k]); }, 1350);
+    }
   }
 
   private async enterMode() {
     const app = this.app;
     this.savedStack = app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id);
     this.savedProjection = app.projection;
-    app.mode = 'wars';
-    document.documentElement.classList.add('mode-time', 'mode-wars');
+    app.mode = this.kind;
+    document.documentElement.classList.add('mode-time', 'mode-story', `mode-${this.kind}`);
     app.select(null);
     app.renderer.baseMap = false;
-    await app.setStack(['wars']);
+    await app.setStack([this.layer.id]);
     window.addEventListener('keydown', this.onKey);
   }
 
@@ -205,9 +260,9 @@ export class WarsMode {
     window.removeEventListener('keydown', this.onKey);
     app.renderer.view.insetBottom = 0;
     app.mode = null;
-    document.documentElement.classList.remove('mode-time', 'mode-wars');
+    document.documentElement.classList.remove('mode-time', 'mode-story', `mode-${this.kind}`);
     app.renderer.baseMap = true;
-    for (const id of ['wars', 'war-step']) if (this.shell.sheet.isOpen(id)) this.shell.sheet.close();
+    for (const id of [this.sheetId, 'war-step', 'story-browse']) if (this.shell.sheet.isOpen(id)) this.shell.sheet.close();
     app.select(null);
     this.shell.card.hide();
     await app.setStack(this.savedStack.length ? this.savedStack : ['political']);
@@ -225,21 +280,21 @@ export class WarsMode {
   }
 
   /** Shows step `i`; the camera moves when the step (or a jump) asks for another view. */
-  private go(i: number, o: { fly?: boolean; user?: boolean } = {}) {
+  private go(i: number, o: { fly?: boolean; user?: boolean; stay?: boolean } = {}) {
     const c = this.c!;
     i = Math.max(0, Math.min(c.steps.length - 1, i));
     this.prev = i === this.step ? -1 : this.step;
     this.step = i;
     const cam = this.cameraAt(i);
     let delay = 0;
-    if (o.fly || o.user || c.steps[i].camera) {
+    if (!o.stay && (o.fly || o.user || c.steps[i].camera)) {
       const v = this.app.renderer.view;
       const far = geoDistance([v.lon, v.lat], [cam.lon, cam.lat]) > 0.05 || Math.abs(Math.log(v.zoom / cam.zoom)) > 0.15;
       if (far) { v.flyTo(cam, 1300); delay = 700; }
     }
     this.stepAt = performance.now() + delay;
     // The address names the war and the step, so the page can be shared or reloaded there.
-    history.replaceState(null, '', `#war=${c.id}&step=${i + 1}&p=${this.app.projection}&lang=${lang()}`);
+    history.replaceState(null, '', `#${KINDS[this.kind].hash}=${c.id}&step=${i + 1}&p=${this.app.projection}&lang=${lang()}`);
     void this.ensureBorders(c.steps[i]);
     if (this.shell.sheet.isOpen('war-step')) this.openDetails(true);
     this.shell.card.hide();
@@ -250,8 +305,8 @@ export class WarsMode {
   private stepMs() {
     const st = this.c!.steps[this.step];
     const len = tx(st.text).length + tx(st.title).length;
-    const battles = (st.battles?.length ?? 0) * BATTLE_GAP;
-    return Math.max(5200, Math.min(12000, 3200 + len * 32 + battles)) / this.speed;
+    const battles = (st.battles?.length ?? 0) * BATTLE_GAP + (st.show?.length ?? 0) * ITEM_GAP;
+    return Math.max(5200, Math.min(13000, 3200 + len * 32 + battles)) / this.speed;
   }
 
   private kick() { if (!this.raf) this.raf = requestAnimationFrame(this.loop); }
@@ -266,7 +321,8 @@ export class WarsMode {
       this.playing = false;
       this.renderBar();
     }
-    const animating = el < MOVE_FROM + MOVE_MS + Math.max(FADE, BATTLE_FROM + (this.c.steps[this.step].battles?.length ?? 0) * BATTLE_GAP + PULSE);
+    const cur = this.c.steps[this.step];
+    const animating = el < MOVE_FROM + MOVE_MS + Math.max(FADE, BATTLE_FROM + (cur.battles?.length ?? 0) * BATTLE_GAP + (cur.show?.length ?? 0) * ITEM_GAP + PULSE);
     if (animating) this.app.renderer.requestRender();
     if (animating || this.playing) this.raf = requestAnimationFrame(this.loop);
   };
@@ -457,6 +513,51 @@ export class WarsMode {
       const at = BATTLE_FROM + k * BATTLE_GAP;
       this.drawBattle(rc, b, pop((el - at) / POP), (el - at) / PULSE, false);
     });
+    if (c.items) {
+      // Earlier items (and, in a time tour, everything built by now) as dots, this step's popping up.
+      const now = new Set(st.show ?? []);
+      const zoomed = rc.view.pxPerRadian > 1600;
+      c.items.forEach((it, k) => { if (!now.has(k) && this.onMap(it, st)) this.drawItem(rc, it, 1, 0, true, zoomed); });
+      (st.show ?? []).forEach((k, n) => {
+        const at = BATTLE_FROM + n * ITEM_GAP;
+        this.drawItem(rc, c.items![k], pop((el - at) / POP), (el - at) / PULSE, false, zoomed);
+      });
+    }
+  }
+
+  /** Is an item on the map at this step (other than as one of the step's own)? */
+  private onMap(it: Item, st: Step) {
+    return (it.first >= 0 && it.first < this.step) || (this.c?.catalog === 'all' && it.t <= st.t + 1e-6);
+  }
+
+  private catOf(id: string): Cat | undefined { return this.c?.cats?.find((k) => k.id === id) ?? this.cats.get(id); }
+
+  private drawItem(rc: RenderCtx, it: Item, s: number, pulse: number, small: boolean, zoomed: boolean) {
+    const p = rc.project(it.at[0], it.at[1]);
+    if (!p || s <= 0) return;
+    const { ctx } = rc;
+    const col = this.catOf(it.cat)?.color ?? '#59616b';
+    ctx.save();
+    if (small && !zoomed) {
+      ctx.beginPath(); ctx.arc(p[0], p[1], 3.8, 0, Math.PI * 2);
+      ctx.fillStyle = col; ctx.globalAlpha *= 0.9; ctx.fill();
+      ctx.lineWidth = 1.2; ctx.strokeStyle = '#fff'; ctx.stroke();
+      ctx.restore();
+      return;
+    }
+    if (!small && pulse > 0 && pulse < 1) {
+      ctx.beginPath(); ctx.arc(p[0], p[1], 11 + pulse * 24, 0, Math.PI * 2);
+      ctx.strokeStyle = col; ctx.globalAlpha = (1 - pulse) * 0.75; ctx.lineWidth = 3; ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+    const r = (small ? 8.5 : 12.5) * s;
+    ctx.beginPath(); ctx.arc(p[0], p[1], r, 0, Math.PI * 2);
+    ctx.fillStyle = rc.theme.dark ? '#1b2230' : '#ffffff'; ctx.fill();
+    ctx.lineWidth = small ? 1.8 : 2.8; ctx.strokeStyle = col; ctx.stroke();
+    ctx.font = `${Math.round((small ? 9.5 : 13.5) * s)}px system-ui, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText(it.icon, p[0], p[1] + 0.5);
+    ctx.restore();
   }
 
   private labels(rc: RenderCtx) {
@@ -502,6 +603,27 @@ export class WarsMode {
       if (!p) return;
       rc.labels.add({ text: tx(mv.label), x: p[0], y: p[1] - 12, priority: 700 - k, size: 11.5, weight: 700, italic: true, color: darker(this.sideColor(mv.side), 0.75), halo: rc.theme.labelHalo });
     });
+    if (c.items) {
+      const now = st.show ?? [];
+      now.forEach((k, n) => {
+        if (el < BATTLE_FROM + n * ITEM_GAP + POP * 0.6) return;
+        const it = c.items![k];
+        const p = rc.project(it.at[0], it.at[1]);
+        if (!p) return;
+        rc.labels.add({
+          text: tx(it.name), x: p[0], y: p[1], gap: 16, priority: 1350 - n, size: 12, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo,
+          sub: itemYears(it, c.t0), subColor: rc.theme.dark ? '#c3ccd6' : '#5b6470', subSize: 10.5,
+        });
+      });
+      // Zoomed in, the earlier ones get their names too.
+      if (rc.view.pxPerRadian > 1600) {
+        c.items.forEach((it, k) => {
+          if (now.includes(k) || !this.onMap(it, st)) return;
+          const p = rc.project(it.at[0], it.at[1]);
+          if (p) rc.labels.add({ text: tx(it.name), x: p[0], y: p[1], gap: 11, priority: 520, size: 10.5, weight: 600, color: rc.theme.label, halo: rc.theme.labelHalo });
+        });
+      }
+    }
   }
 
   // ---- taps
@@ -512,6 +634,21 @@ export class WarsMode {
     const v = this.app.renderer.view;
     const here = v.project(lon, lat);
     const st = c.steps[this.step];
+    if (c.items && here) {
+      // An item near the tap: this step's first, then the others on the map.
+      const now = st.show ?? [];
+      const rest = c.items.map((_, k) => k).filter((k) => !now.includes(k) && this.onMap(c.items![k], st));
+      for (const [n, pool] of [now, rest].entries()) {
+        let best = -1, bestD = n === 0 ? 26 : 16;
+        for (const k of pool) {
+          const p = v.project(c.items[k].at[0], c.items[k].at[1]);
+          if (!p) continue;
+          const d = Math.hypot(p[0] - here[0], p[1] - here[1]);
+          if (d < bestD) { bestD = d; best = k; }
+        }
+        if (best >= 0) { this.itemCard(c.items[best]); return true; }
+      }
+    }
     // A battle marker near the tap: this step's first, then earlier ones.
     const pools: Battle[][] = [st.battles ?? [], c.steps.slice(0, this.step).reverse().flatMap((s) => s.battles ?? [])];
     for (const [k, pool] of pools.entries()) {
@@ -537,6 +674,117 @@ export class WarsMode {
     }
     this.shell.card.hide();
     return true;
+  }
+
+  /** An item's card: when, where, who, size, what remains, its story, and a picture from Wikipedia. */
+  itemCard(it: Omit<Item, 'first'>) {
+    const c = this.c;
+    const cat = this.catOf(it.cat);
+    const rows: { label: string; value: string; icon: string }[] = [];
+    rows.push({ label: it.life ? t('storyLived') : t('storyWhen'), value: itemWhen(it, c?.t0 ?? 1), icon: '📅' });
+    if (it.place) rows.push({ label: t('storyWhere'), value: tx(it.place), icon: '📍' });
+    if (it.size) rows.push({ label: t('storySize'), value: tx(it.size), icon: '📏' });
+    if (it.status) rows.push({ label: t('storyStatus'), value: tx(it.status), icon: '🏷️' });
+    for (const f of it.facts ?? []) rows.push({ label: tx(f.label), value: tx(f.value), icon: '⭐' });
+    const notes = [tx(it.text)];
+    if (it.by) notes.push(`${t('storyBy')}: ${tx(it.by)}`);
+    if (it.why) notes.push(`${t('storyWhy')}: ${tx(it.why)}`);
+    if (it.how) notes.push(`${t('storyHow')}: ${tx(it.how)}`);
+    if (it.details) notes.push(tx(it.details));
+    const links = it.wiki ? [{ label: t('wikipedia'), href: wikiUrl(it.wiki) }] : [];
+    const sub = [cat ? `${cat.icon} ${tx(cat.name)}` : '', c ? tx(c.name) : ''].filter(Boolean).join(' · ');
+    this.shell.card.showCustom(it.icon, tx(it.name), sub, rows, links, notes, this.wikiThumb(it));
+  }
+
+  private wikiThumb(it: Omit<Item, 'first'>) { return wikiThumb(it.wiki); }
+
+  /** Stops playing (a tour or a quiz opened the story). */
+  pause() { if (this.playing) { this.playing = false; this.renderBar(); } }
+
+  /** Shows a story at a step, paused (guided tours): opens it, or just moves when it is open. */
+  async show(id: string, step: number) {
+    if (this.active && this.c?.id === id) { this.shell.card.hide(); this.go(step, { user: true }); }
+    else await this.open(id, step);
+    this.pause();
+  }
+
+  /** Flies to an item and opens its card. */
+  private focusItem(it: Omit<Item, 'first'>) {
+    const v = this.app.renderer.view;
+    v.flyTo({ lon: it.at[0], lat: it.at[1], zoom: Math.max(v.zoom, 4.5) }, 1200);
+    setTimeout(() => this.itemCard(it), 1250);
+  }
+
+  /** A row in a list of items (details, Browse). */
+  private itemRow(it: Omit<Item, 'first'>, onClick: () => void, extra?: string) {
+    const b = h('button', { type: 'button', class: 'story-item' },
+      h('span', { class: 'story-item-icon', style: { borderColor: this.catOf(it.cat)?.color ?? 'var(--line)' } }, it.icon),
+      h('span', { class: 'story-item-text' },
+        h('span', { class: 'story-item-name' }, tx(it.name)),
+        h('span', { class: 'story-item-sub' }, [itemWhen(it, this.c?.t0 ?? 1), it.place ? tx(it.place) : '', extra ?? ''].filter(Boolean).join(' · ')),
+        h('span', { class: 'story-item-desc' }, tx(it.text))));
+    b.addEventListener('click', onClick);
+    return b;
+  }
+
+  /** A searchable list of items, filtered by category. */
+  private openBrowser(entries: { it: Omit<Item, 'first'>; extra?: string; go: () => void }[], title: string) {
+    const cats = [...new Set(entries.map((e) => e.it.cat))].map((id) => this.catOf(id)).filter((x): x is Cat => !!x);
+    let q = '', cat = '';
+    const input = h('input', { type: 'search', class: 'search-input', placeholder: t('storySearch'), 'aria-label': t('storySearch') }) as HTMLInputElement;
+    const chips = h('div', { class: 'chip-row story-chips' });
+    const count = h('p', { class: 'muted small' });
+    const list = h('div', { class: 'story-list' });
+    const norm = (x: string) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    const draw = () => {
+      clear(list);
+      const nq = norm(q.trim());
+      const shown = entries.filter((e) => (!cat || e.it.cat === cat) && (!nq || norm(`${tx(e.it.name)} ${e.it.place ? tx(e.it.place) : ''} ${tx(e.it.text)}`).includes(nq)));
+      count.textContent = t('storyCount', { n: shown.length });
+      if (!shown.length) list.append(h('p', { class: 'muted' }, t('storyNothing')));
+      for (const e of shown.slice(0, 300)) list.append(this.itemRow(e.it, e.go, e.extra));
+    };
+    const drawChips = () => {
+      clear(chips);
+      for (const k of [null, ...cats]) {
+        const b = h('button', { type: 'button', class: `chip${(k?.id ?? '') === cat ? ' on' : ''}` }, k ? `${k.icon} ${tx(k.name)}` : t('storyAllCats'));
+        b.addEventListener('click', () => { cat = k?.id ?? ''; drawChips(); draw(); });
+        chips.append(b);
+      }
+    };
+    input.addEventListener('input', () => { q = input.value; draw(); });
+    drawChips(); draw();
+    this.shell.openPanel('story-browse', title, h('div', null, count, list), undefined, h('div', { class: 'story-browse-head' }, input, chips));
+  }
+
+  /** Everything in the story on show, by date. */
+  private browse() {
+    const c = this.c;
+    if (!c?.items) return;
+    if (this.playing) { this.playing = false; this.renderBar(); }
+    const entries = c.items.map((it) => ({
+      it,
+      go: () => {
+        const step = it.first >= 0 ? it.first : Math.max(0, c.steps.findIndex((st) => st.t >= it.t));
+        this.shell.sheet.close();
+        this.playing = false;
+        if (step !== this.step) this.go(step, { stay: true });
+        this.focusItem(it);
+      },
+    })).sort((a, b) => a.it.t - b.it.t);
+    this.openBrowser(entries, `${t('storyBrowse')} · ${tx(c.name)}`);
+  }
+
+  /** Everything in the collection, from every story (the picker's "Browse everything"). */
+  async browseCollection() {
+    await this.ensureIndex();
+    if (!this.all) this.all = (await loadJSON<{ items: CollectionItem[] }>(`${this.dir}/items.json`)).items;
+    const names = new Map(this.index.map((e) => [e.id, tx(e.name)]));
+    const entries = [...this.all].sort((a, b) => a.t - b.t).map((it) => ({
+      it, extra: names.get(it.story),
+      go: () => void this.open(it.story, it.step, { name: tx(it.name), at: it.at }),
+    }));
+    this.openBrowser(entries, `${KINDS[this.kind].icon} ${this.tr('Title')}`);
   }
 
   /** A battle's facts as rows, and its notes as paragraphs. */
@@ -576,10 +824,17 @@ export class WarsMode {
     prev.addEventListener('click', () => { this.playing = false; this.go(this.step - 1, { user: true }); });
     const next = h('button', { type: 'button', class: 'icon-btn', title: t('warNext'), 'aria-label': t('warNext') }, icon(ChevronRight, 20));
     next.addEventListener('click', () => { this.playing = false; this.go(this.step + 1, { user: true }); });
-    const list = h('button', { type: 'button', class: 'icon-btn', title: t('warsAll'), 'aria-label': t('warsAll') }, icon(ListOrdered, 18));
+    const allLabel = this.wars ? t('warsAll') : t('storyAll');
+    const list = h('button', { type: 'button', class: 'icon-btn wb-list', title: allLabel, 'aria-label': allLabel }, icon(ListOrdered, 18));
     list.addEventListener('click', () => void this.pick());
-    const exit = h('button', { type: 'button', class: 'icon-btn', title: t('close'), 'aria-label': t('close') }, icon(X, 18));
+    const exit = h('button', { type: 'button', class: 'icon-btn wb-exit', title: t('close'), 'aria-label': t('close') }, icon(X, 18));
     exit.addEventListener('click', () => void this.exit());
+    const tools: HTMLElement[] = [list, exit];
+    if (c.items) {
+      const browse = h('button', { type: 'button', class: 'icon-btn wb-browse', title: t('storyBrowse'), 'aria-label': t('storyBrowse') }, icon(Search, 18));
+      browse.addEventListener('click', () => this.browse());
+      tools.unshift(browse);
+    }
     const date = h('div', { class: 'wb-date' });
     const count = h('span', { class: 'wb-count' });
     const title = h('div', { class: 'wb-title' });
@@ -595,7 +850,7 @@ export class WarsMode {
       h('div', { class: 'wb-top' },
         play,
         h('div', { class: 'wb-head' }, date, h('div', { class: 'wb-name' }, h('span', { class: 'wb-title-short' }, `${c.icon} ${tx(c.name)}`), count)),
-        h('div', { class: 'wb-tools' }, list, exit)),
+        h('div', { class: 'wb-tools' }, ...tools)),
       title, text, meta, h('div', { class: 'wb-nav' }, prev, track, next));
     this.ui = { date, title, text, meta, play, track, count };
     this.app.root.append(this.bar);
@@ -618,6 +873,15 @@ export class WarsMode {
     clear(ui.meta);
     const shown = c.sides.filter((s) => st.control[s.id] != null || (st.moves ?? []).some((m) => m.side === s.id));
     for (const s of shown) ui.meta.append(h('span', { class: 'wb-side' }, h('i', { style: { background: s.color } }), tx(s.name)));
+    if (c.items && st.show?.length) {
+      // The kinds of things this step shows (people, works, dishes...), most common first.
+      const n = new Map<string, number>();
+      for (const k of st.show) n.set(c.items[k].cat, (n.get(c.items[k].cat) ?? 0) + 1);
+      for (const [id] of [...n].sort((a, b) => b[1] - a[1]).slice(0, shown.length ? 2 : 3)) {
+        const k = this.catOf(id);
+        if (k) ui.meta.append(h('span', { class: 'wb-side' }, h('b', { class: 'story-cat' }, k.icon), tx(k.name)));
+      }
+    }
     if (st.deaths != null) {
       const el = h('span', { class: 'wb-deaths', title: t('warDeathsSoFar') });
       ui.meta.append(el);
@@ -670,19 +934,31 @@ export class WarsMode {
           notes.map((n) => h('p', { class: 'card-note' }, n))));
       }
     }
+    if (c.items && st.show?.length) {
+      body.append(h('h3', { class: 'sec-title' }, `📍 ${t('storyOnMap')}`));
+      for (const k of st.show) {
+        const it = c.items[k];
+        body.append(this.itemRow(it, () => { this.shell.sheet.close(); this.focusItem(it); }));
+      }
+    }
     if (st.events?.length) {
       body.append(h('h3', { class: 'sec-title' }, `📜 ${t('warEvents')}`));
       body.append(h('ul', { class: 'war-events' }, st.events.map((e) => h('li', null, `${e.icon} ${e.date ? `${fmtWhen(e.date, c.t0)}: ` : ''}${tx(e.text)}`))));
     }
     const lastFight = c.steps.reduce((k, s, i) => (s.aftermath ? k : i), 0);
     if (this.step >= lastFight) {
-      body.append(h('h3', { class: 'sec-title' }, `🏁 ${t('warOutcome')}`), h('p', null, tx(c.outcome)));
+      body.append(h('h3', { class: 'sec-title' }, this.wars ? `🏁 ${t('warOutcome')}` : `🌍 ${t('storyLegacy')}`), h('p', null, tx(c.outcome)));
       const total = c.casualties ? Object.entries(c.casualties).filter(([k, v]) => k !== 'note' && v != null) : [];
       if (total.length || c.casualtiesNote) {
         body.append(h('h3', { class: 'sec-title' }, `☠️ ${t('warHumanCost')}`));
         for (const [k, v] of total) body.append(h('div', { class: 'row' }, h('span', { class: 'row-icon' }, '☠️'), h('span', { class: 'row-label' }, k === 'total' ? t('warTotal') : tx(c.sides.find((s) => s.id === k)?.name)), h('span', { class: 'row-value' }, fmtRange(v as Range))));
         if (c.casualtiesNote) body.append(h('p', { class: 'muted' }, tx(c.casualtiesNote)));
       }
+    }
+    if (c.items) {
+      const all = h('button', { type: 'button', class: 'pill story-browse-all' }, icon(Search, 16), t('storyBrowse'));
+      all.addEventListener('click', () => this.browse());
+      body.append(all);
     }
     body.append(h('h3', { class: 'sec-title' }, `📚 ${t('warSources')}`),
       h('ul', { class: 'war-sources' }, c.sources.map((s) => h('li', null, h('a', { href: s.url, target: '_blank', rel: 'noopener' }, s.title)))));
@@ -693,6 +969,53 @@ export class WarsMode {
       this.shell.sheet.setTitle(title);
     } else this.shell.openPanel('war-step', title, body);
   }
+}
+
+const yearOf = (d: string) => /^-?\d+/.exec(d)?.[0] ?? d;
+
+const thumbs = new Map<string, Promise<string | null>>();
+/** The picture of a Wikipedia article (in the reader's language, else English), or null. */
+export function wikiThumb(wiki?: Text): Promise<string | null> {
+  if (!wiki) return Promise.resolve(null);
+  const l = lang() === 'es' ? 'es' : 'en';
+  const key = `${l}:${wiki[l]}`;
+  let p = thumbs.get(key);
+  if (!p) {
+    p = (async () => {
+      for (const [ll, title] of [[l, wiki[l]], ['en', wiki.en]] as const) {
+        if (!title) continue;
+        try {
+          const r = await fetch(`https://${ll}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title.replace(/ /g, '_'))}`);
+          if (!r.ok) continue;
+          const j = (await r.json()) as { thumbnail?: { source: string } };
+          if (j.thumbnail?.source) return j.thumbnail.source;
+        } catch { /* offline */ }
+      }
+      return null;
+    })();
+    thumbs.set(key, p);
+  }
+  return p;
+}
+
+/** When an item was: "1452–1519" (a life), "2600–2560 BC" (built), "c. 1503" style dates. */
+export function itemWhen(it: Omit<Item, 'first'>, eraHint: number): string {
+  if (it.life) return it.life[1] ? fmtYears(it.life[0], it.life[1]) : `${fmtWhen(yearOf(it.life[0]), eraHint)}–`;
+  if (it.end && yearOf(it.end) !== yearOf(it.date)) return fmtYears(it.date, it.end);
+  return fmtWhen(it.date, eraHint);
+}
+
+/** The years under an item's name on the map. */
+function itemYears(it: Omit<Item, 'first'>, eraHint: number): string {
+  if (it.life) return it.life[1] ? fmtYears(it.life[0], it.life[1]) : `${fmtWhen(yearOf(it.life[0]), eraHint)}–`;
+  if (it.end && yearOf(it.end) !== yearOf(it.date)) return fmtYears(it.date, it.end);
+  return fmtWhen(yearOf(it.date), eraHint);
+}
+
+/** The item's Wikipedia article in the reader's language. */
+function wikiUrl(w: Text): string {
+  const l = lang() === 'es' && w.es ? 'es' : 'en';
+  return `https://${l}.wikipedia.org/wiki/${encodeURIComponent(w[l].replace(/ /g, '_'))}`;
 }
 
 /** A step's title; aftermath steps get a tag in the bar, so a leading "Aftermath:" is dropped. */

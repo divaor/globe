@@ -172,8 +172,8 @@ export class Shell {
     this.sheet.open('about', t('about'), aboutPanel(this.app));
   }
 
-  openPanel(id: string, title: string, el: HTMLElement, onClose?: () => void) {
-    this.sheet.open(id, title, el, () => { onClose?.(); this.renderDock(); });
+  openPanel(id: string, title: string, el: HTMLElement, onClose?: () => void, bar?: HTMLElement) {
+    this.sheet.open(id, title, el, () => { onClose?.(); this.renderDock(); }, bar);
     this.renderDock();
   }
 

@@ -2,7 +2,7 @@
 // Finds polygons whose rings run the wrong way round and flips them. d3 draws polygons on the
 // sphere, so a ring with reversed winding means "the whole Earth except this shape" and paints over
 // everything (a 10m lake did exactly that). Usage: node scripts/data/winding.mjs file.json [...]
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { geoArea } from 'd3-geo';
 import { feature } from 'topojson-client';
@@ -36,6 +36,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const files = process.argv.slice(2).filter((a) => a !== '--check');
   let bad = 0;
   for (const file of files) {
+    // A shell glob that matched nothing (an empty collection) arrives as the pattern itself.
+    if (!existsSync(file)) { if (/[*?]/.test(file)) continue; throw new Error(`${file}: no such file`); }
     const topo = JSON.parse(readFileSync(file, 'utf8'));
     if (topo.type !== 'Topology') continue;
     const fixed = rewindTopology(topo);

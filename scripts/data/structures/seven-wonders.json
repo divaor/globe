@@ -1,0 +1,296 @@
+{
+  "id": "seven-wonders",
+  "name": {
+    "en": "The Seven Wonders of the Ancient World",
+    "es": "Las siete maravillas del mundo antiguo"
+  },
+  "icon": "🏛️",
+  "era": "ancient",
+  "region": {
+    "en": "The eastern Mediterranean and Mesopotamia",
+    "es": "El Mediterráneo oriental y Mesopotamia"
+  },
+  "start": "-2600",
+  "end": "-140",
+  "summary": {
+    "en": "Greek travellers listed seven sights every traveller should see. One was already 2,000 years old; only it still stands.",
+    "es": "Los viajeros griegos enumeraron siete lugares que todo viajero debía ver. Uno ya tenía 2000 años; solo él sigue en pie."
+  },
+  "camera": {
+    "lon": 30,
+    "lat": 34,
+    "zoom": 3.2
+  },
+  "steps": [
+    {
+      "date": "-2560",
+      "title": {
+        "en": "The Great Pyramid",
+        "es": "La Gran Pirámide"
+      },
+      "camera": {
+        "lon": 31.2,
+        "lat": 30,
+        "zoom": 6
+      },
+      "text": {
+        "en": "The oldest wonder was built for the pharaoh Khufu around 2560 BC. When the Greeks made their list it was already ancient.",
+        "es": "La maravilla más antigua se construyó para el faraón Keops hacia el 2560 a. C. Cuando los griegos hicieron su lista ya era antiquísima."
+      },
+      "details": {
+        "en": "Khufu's pyramid was the largest of three at Giza, guarded by the Great Sphinx. It was built by paid workers, not slaves: their village, bakeries and graves have been found nearby. Papyri found in 2013 record a team carrying limestone from Tura by boat. For about 3,800 years no human-made structure was taller.",
+        "es": "La pirámide de Keops es la mayor de las tres de Guiza, guardadas por la Gran Esfinge. La construyeron trabajadores pagados, no esclavos: se han hallado cerca su aldea, sus panaderías y sus tumbas. Unos papiros hallados en 2013 cuentan cómo un equipo llevaba caliza de Tura en barco. Durante unos 3800 años ninguna construcción humana fue más alta."
+      },
+      "show": [
+        "great-pyramid-giza"
+      ]
+    },
+    {
+      "date": "-600",
+      "title": {
+        "en": "The Hanging Gardens",
+        "es": "Los Jardines Colgantes"
+      },
+      "camera": {
+        "lon": 40,
+        "lat": 33,
+        "zoom": 4.5
+      },
+      "text": {
+        "en": "Greek writers described terraced gardens in Babylon, built by Nebuchadnezzar II. Babylonian texts never mention them.",
+        "es": "Los autores griegos describieron unos jardines en terrazas en Babilonia, obra de Nabucodonosor II. Los textos babilonios nunca los mencionan."
+      },
+      "show": [
+        "hanging-gardens-babylon"
+      ]
+    },
+    {
+      "date": "-550",
+      "title": {
+        "en": "The Temple of Artemis",
+        "es": "El templo de Artemisa"
+      },
+      "camera": {
+        "lon": 27.5,
+        "lat": 37.5,
+        "zoom": 6
+      },
+      "text": {
+        "en": "In Ephesus, a marble temple to Artemis rose with the help of King Croesus, the richest man of his age.",
+        "es": "En Éfeso se levantó un templo de mármol a Artemisa con la ayuda del rey Creso, el hombre más rico de su tiempo."
+      },
+      "show": [
+        "temple-artemis-ephesus"
+      ],
+      "events": [
+        {
+          "icon": "🔥",
+          "date": "-356",
+          "at": [
+            27.3639,
+            37.9497
+          ],
+          "text": {
+            "en": "Herostratus burns the temple to make himself famous",
+            "es": "Eróstrato incendia el templo para hacerse famoso"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-435",
+      "title": {
+        "en": "Zeus at Olympia",
+        "es": "Zeus en Olimpia"
+      },
+      "camera": {
+        "lon": 22,
+        "lat": 37.7,
+        "zoom": 6
+      },
+      "text": {
+        "en": "Phidias made a 12-metre Zeus of ivory and gold for the temple at Olympia, home of the Olympic Games.",
+        "es": "Fidias hizo un Zeus de 12 metros de marfil y oro para el templo de Olimpia, sede de los Juegos Olímpicos."
+      },
+      "show": [
+        "statue-zeus-olympia"
+      ]
+    },
+    {
+      "date": "-350",
+      "title": {
+        "en": "The Mausoleum",
+        "es": "El Mausoleo"
+      },
+      "camera": {
+        "lon": 27.4,
+        "lat": 37,
+        "zoom": 6
+      },
+      "text": {
+        "en": "Artemisia II built a tomb for her husband Mausolus so grand that his name became the word for any great tomb.",
+        "es": "Artemisia II construyó una tumba para su esposo Mausolo tan grandiosa que su nombre pasó a designar cualquier gran tumba."
+      },
+      "show": [
+        "mausoleum-halicarnassus"
+      ]
+    },
+    {
+      "date": "-280",
+      "title": {
+        "en": "The Colossus of Rhodes",
+        "es": "El Coloso de Rodas"
+      },
+      "camera": {
+        "lon": 28.2,
+        "lat": 36.4,
+        "zoom": 6
+      },
+      "text": {
+        "en": "After beating off a year-long siege, the Rhodians sold the enemy's siege engines and raised a bronze giant to the sun god.",
+        "es": "Tras resistir un asedio de un año, los rodios vendieron las máquinas de asedio enemigas y alzaron un gigante de bronce al dios del sol."
+      },
+      "show": [
+        "colossus-rhodes"
+      ],
+      "events": [
+        {
+          "icon": "💥",
+          "date": "-226",
+          "at": [
+            28.2272,
+            36.451
+          ],
+          "text": {
+            "en": "An earthquake topples the Colossus",
+            "es": "Un terremoto derriba el Coloso"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-247",
+      "title": {
+        "en": "The Lighthouse of Alexandria",
+        "es": "El Faro de Alejandría"
+      },
+      "camera": {
+        "lon": 29.9,
+        "lat": 31.2,
+        "zoom": 6
+      },
+      "text": {
+        "en": "In Alexandria, the city founded by Alexander the Great, the Ptolemies built a lighthouse about 100 metres tall.",
+        "es": "En Alejandría, la ciudad fundada por Alejandro Magno, los Ptolomeos construyeron un faro de unos 100 metros."
+      },
+      "show": [
+        "lighthouse-alexandria"
+      ]
+    },
+    {
+      "date": "-140",
+      "title": {
+        "en": "The list",
+        "es": "La lista"
+      },
+      "camera": {
+        "lon": 30,
+        "lat": 34,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "The poet Antipater of Sidon listed the seven sights, a travel guide for the Greek world Alexander had opened up.",
+        "es": "El poeta Antípatro de Sidón enumeró los siete lugares, una guía de viaje para el mundo griego que Alejandro había abierto."
+      },
+      "details": {
+        "en": "Lists of theamata, 'things to be seen', were popular after Alexander's conquests made travel across the Greek-speaking world easier. Antipater's poem and a text attributed to Philo of Byzantium name the same seven, except that some lists put the walls of Babylon in place of the lighthouse. The idea of seven wonders has inspired countless lists since.",
+        "es": "Las listas de theamata, «cosas que hay que ver», se pusieron de moda cuando las conquistas de Alejandro facilitaron los viajes por el mundo de habla griega. El poema de Antípatro y un texto atribuido a Filón de Bizancio nombran las mismas siete, aunque algunas listas ponen las murallas de Babilonia en lugar del faro. La idea de las siete maravillas ha inspirado innumerables listas desde entonces."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Antipater of Sidon",
+            "es": "Antípatro de Sidón"
+          },
+          "at": [
+            35.3714,
+            33.5606
+          ],
+          "cat": "monument",
+          "icon": "✍️",
+          "type": "person",
+          "date": "-140",
+          "text": {
+            "en": "A Greek poet from Sidon whose epigram is the oldest surviving list of the seven wonders.",
+            "es": "Poeta griego de Sidón cuyo epigrama es la lista más antigua que se conserva de las siete maravillas."
+          },
+          "wiki": {
+            "en": "Antipater of Sidon",
+            "es": "Antípatro de Sidón"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1480",
+      "title": {
+        "en": "What remains",
+        "es": "Lo que queda"
+      },
+      "aftermath": true,
+      "camera": {
+        "lon": 30,
+        "lat": 34,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "Fire, earthquakes and stone robbers took the others. By 1480 only the Great Pyramid still stood, as it does today.",
+        "es": "El fuego, los terremotos y los saqueadores de piedra acabaron con las demás. Hacia 1480 solo seguía en pie la Gran Pirámide, como hoy."
+      },
+      "events": [
+        {
+          "icon": "🏰",
+          "date": "1477",
+          "at": [
+            29.8856,
+            31.214
+          ],
+          "text": {
+            "en": "The Citadel of Qaitbay is built from the lighthouse's ruins",
+            "es": "Se construye la ciudadela de Qaitbay con las ruinas del faro"
+          }
+        },
+        {
+          "icon": "🏰",
+          "date": "1494",
+          "at": [
+            27.4241,
+            37.0379
+          ],
+          "text": {
+            "en": "The Knights of St John start reusing the Mausoleum's stones for Bodrum Castle",
+            "es": "Los caballeros de San Juan empiezan a reutilizar las piedras del Mausoleo en el castillo de Bodrum"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Only the Great Pyramid survives, but the list lives on: it gave us the word mausoleum, the word for lighthouse in many languages, and countless new lists of wonders.",
+    "es": "Solo sobrevive la Gran Pirámide, pero la lista sigue viva: nos dio la palabra mausoleo, la palabra faro en muchas lenguas e innumerables listas nuevas de maravillas."
+  },
+  "sources": [
+    {
+      "title": "Seven Wonders of the Ancient World (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Seven_Wonders_of_the_Ancient_World"
+    },
+    {
+      "title": "Great Pyramid of Giza (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
+    },
+    {
+      "title": "Lighthouse of Alexandria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lighthouse_of_Alexandria"
+    }
+  ]
+}

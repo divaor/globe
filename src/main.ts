@@ -4,6 +4,7 @@ import { Shell } from './ui/shell';
 import { coreLayers } from './layers';
 import { t } from './app/i18n';
 import { TimeTravel } from './modes';
+import { STORY_KINDS, storyHashKey } from './modes/stories';
 import { Tools } from './tools/tools';
 import { Learn } from './learn/learn';
 import { PersonalMaps } from './personal/personal';
@@ -50,9 +51,11 @@ async function boot() {
   registerSW(shell);
   // Home-screen shortcut: open straight into ambient mode.
   if (/ambient=1/.test(location.hash)) setTimeout(() => void shell.ambient.start(), 600);
-  // A shared war: #war=<id>&step=<n>.
-  const war = shared.get('war');
-  if (war) setTimeout(() => void time.wars.open(war, Number(shared.get('step') ?? 1) - 1).catch(() => {}), 300);
+  // A shared story: #war=<id>&step=<n> (or #eras=, #food=, #structures=).
+  for (const kind of STORY_KINDS) {
+    const id = shared.get(storyHashKey(kind));
+    if (id) setTimeout(() => void time.stories[kind].open(id, Number(shared.get('step') ?? 1) - 1).catch(() => {}), 300);
+  }
 }
 
 async function registerSW(shell: Shell) {
