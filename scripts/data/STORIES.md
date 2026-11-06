@@ -26,8 +26,9 @@ same here. `structures/seven-wonders.json` is a complete example that uses the c
 
   Each step's items pop up on the map. Items from earlier steps stay as small dots, and tapping any of
   them opens its card, with a picture from Wikipedia.
-- `"catalog": "all"` at the top of a story makes a **time tour**: every catalogue item appears on the map
-  from its `date` on, while the steps tell the story and `show` the highlights.
+- `"catalog": "all"` at the top of a story makes a **time tour**: every catalogue item dated from the
+  story's `start` to its last step appears on the map from its `date` on, while the steps tell the story
+  and `show` the highlights (a step can also `show` an older item).
 
 ## Items
 

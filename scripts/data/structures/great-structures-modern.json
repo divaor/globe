@@ -1,0 +1,592 @@
+{
+  "id": "great-structures-modern",
+  "name": {
+    "en": "Great structures: from St Peter's to the skyscrapers",
+    "es": "Grandes construcciones: de San Pedro a los rascacielos"
+  },
+  "icon": "🏗️",
+  "era": "early-modern",
+  "region": {
+    "en": "The whole world",
+    "es": "Todo el mundo"
+  },
+  "start": "1500",
+  "end": "2023",
+  "summary": {
+    "en": "Five centuries of building on every continent: Renaissance domes, Mughal tombs, iron bridges, canals, skyscrapers and giant dams, and the people who built them.",
+    "es": "Cinco siglos de construcción en todos los continentes: cúpulas del Renacimiento, tumbas mogolas, puentes de hierro, canales, rascacielos y presas gigantes, y la gente que los levantó."
+  },
+  "camera": {
+    "lon": 10,
+    "lat": 30,
+    "zoom": 1.2
+  },
+  "catalog": "all",
+  "steps": [
+    {
+      "date": "1506",
+      "title": {
+        "en": "Rome and Istanbul",
+        "es": "Roma y Estambul"
+      },
+      "camera": {
+        "lon": 24,
+        "lat": 49,
+        "zoom": 3.5
+      },
+      "text": {
+        "en": "In 1506 Rome began a new St Peter's, the greatest church of the Renaissance. In Istanbul the architect Sinan raised domes for Suleiman, while Moscow built St Basil's.",
+        "es": "En 1506 Roma empezó una nueva basílica de San Pedro, la mayor iglesia del Renacimiento. En Estambul, el arquitecto Sinan alzaba cúpulas para Solimán, y Moscú levantaba San Basilio."
+      },
+      "details": {
+        "en": "Renaissance architects looked back to ancient Rome for domes, columns and perfect proportions; Michelangelo designed St Peter's great dome. In the Ottoman Empire, Mimar Sinan, who began as a military engineer, built more than 300 works, from mosques to bridges and baths, and one of his pupils built the Old Bridge at Mostar. Far to the north, Ivan the Terrible celebrated his conquest of Kazan with St Basil's Cathedral and its crowd of domes.",
+        "es": "Los arquitectos del Renacimiento miraban a la antigua Roma en busca de cúpulas, columnas y proporciones perfectas; Miguel Ángel diseñó la gran cúpula de San Pedro. En el Imperio otomano, Mimar Sinan, que empezó como ingeniero militar, levantó más de 300 obras, de mezquitas a puentes y baños, y uno de sus discípulos construyó el Puente Viejo de Mostar. Mucho más al norte, Iván el Terrible celebró la conquista de Kazán con la catedral de San Basilio y su multitud de cúpulas."
+      },
+      "show": [
+        "st-peters-basilica",
+        "suleymaniye-mosque",
+        "st-basils-cathedral",
+        "stari-most",
+        "selimiye-mosque"
+      ]
+    },
+    {
+      "date": "1559",
+      "title": {
+        "en": "Philip II's world",
+        "es": "El mundo de Felipe II"
+      },
+      "camera": {
+        "lon": -26,
+        "lat": 19,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Philip II of Spain ruled an empire on which, it was said, the sun never set. He built the Escorial, while his colonies raised cathedrals on Inca and Aztec ground and a fort at Mombasa.",
+        "es": "Felipe II de España reinaba sobre un imperio en el que, se decía, nunca se ponía el sol. Construyó El Escorial, mientras sus colonias alzaban catedrales sobre suelo inca y mexica y un fuerte en Mombasa."
+      },
+      "details": {
+        "en": "Much of the empire's wealth came from American silver, mined by forced Indigenous labour at Potosí and in Mexico, and from a trade in which enslaved Africans were bought and sold. In Cusco and Mexico City, cathedrals rose on the sites of Inca palaces and Aztec temples, built by Indigenous masons. From 1580 Philip was also king of Portugal, whose forts, such as Fort Jesus, guarded the sea route to India.",
+        "es": "Buena parte de la riqueza del imperio procedía de la plata americana, extraída con trabajo forzoso indígena en Potosí y en México, y de un comercio en el que se compraban y vendían africanos esclavizados. En Cusco y Ciudad de México, las catedrales se alzaron sobre palacios incas y templos mexicas, levantadas por canteros indígenas. Desde 1580 Felipe fue además rey de Portugal, cuyos fuertes, como el Fuerte Jesús, vigilaban la ruta marítima a la India."
+      },
+      "show": [
+        "el-escorial",
+        "cusco-cathedral",
+        "mexico-city-cathedral",
+        "fort-jesus"
+      ]
+    },
+    {
+      "date": "1565",
+      "title": {
+        "en": "Mughals, Safavids and shoguns",
+        "es": "Mogoles, safávidas y sogunes"
+      },
+      "camera": {
+        "lon": 94,
+        "lat": 46,
+        "zoom": 1.3
+      },
+      "text": {
+        "en": "Asia's empires built on a grand scale: Mughal tombs and cities in India, a royal square in Isfahan, white castles in Japan and, on a hill above Lhasa, the Potala Palace.",
+        "es": "Los imperios de Asia construían a lo grande: tumbas y ciudades mogolas en la India, una plaza real en Isfahán, castillos blancos en Japón y, sobre una colina de Lhasa, el palacio de Potala."
+      },
+      "details": {
+        "en": "Persian architects shaped Humayun's Tomb, the model for the Taj Mahal, which Shah Jahan began for his wife in 1631 with more than 20,000 workers. Akbar's red city of Fatehpur Sikri mixed Hindu and Islamic ideas, and the Sikh gurus built the Golden Temple, open to all. In Isfahan, Shah Abbas laid out a vast square framed by mosques of blue tiles. In Japan, peace under the Tokugawa shoguns brought Himeji Castle and the golden shrine at Nikkō.",
+        "es": "Arquitectos persas dieron forma a la tumba de Humayun, modelo del Taj Mahal, que Sha Jahan empezó para su esposa en 1631 con más de 20 000 trabajadores. La ciudad roja de Fatehpur Sikri, de Akbar, mezclaba ideas hindúes e islámicas, y los gurús sijs construyeron el Templo Dorado, abierto a todos. En Isfahán, el sah Abás trazó una enorme plaza enmarcada por mezquitas de azulejos azules. En Japón, la paz de los sogunes Tokugawa trajo el castillo de Himeji y el santuario dorado de Nikkō."
+      },
+      "show": [
+        "humayuns-tomb",
+        "fatehpur-sikri",
+        "golden-temple",
+        "naqsh-e-jahan-square",
+        "shah-mosque",
+        "himeji-castle",
+        "nikko-toshogu",
+        "taj-mahal",
+        "red-fort",
+        "potala-palace"
+      ]
+    },
+    {
+      "date": "1639",
+      "title": {
+        "en": "Kings, forts and missions",
+        "es": "Reyes, fuertes y misiones"
+      },
+      "camera": {
+        "lon": -20,
+        "lat": 16,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Kings built to show their power: Louis XIV at Versailles, the emperors of Ethiopia at Gondar. London rose again after its Great Fire, and Spain fortified Cartagena with enslaved labour.",
+        "es": "Los reyes construían para mostrar su poder: Luis XIV en Versalles, los emperadores de Etiopía en Gondar. Londres renació tras su Gran Incendio, y España fortificó Cartagena con mano de obra esclavizada."
+      },
+      "details": {
+        "en": "Kings across Europe copied Versailles. In France, Riquet's Canal du Midi joined the Atlantic to the Mediterranean, and in London Christopher Wren rebuilt St Paul's and more than 50 churches after the fire of 1666. In South America, Jesuit missionaries and the Guaraní people built mission towns of stone such as Trinidad, where Guaraní carvers and musicians worked, sheltered for a time from slave raiders.",
+        "es": "Los reyes de toda Europa copiaron Versalles. En Francia, el canal del Mediodía de Riquet unió el Atlántico y el Mediterráneo, y en Londres Christopher Wren reconstruyó San Pablo y más de 50 iglesias tras el incendio de 1666. En Sudamérica, los misioneros jesuitas y el pueblo guaraní levantaron pueblos de piedra como Trinidad, donde trabajaban tallistas y músicos guaraníes, protegidos durante un tiempo de los cazadores de esclavos."
+      },
+      "show": [
+        "castillo-san-felipe-de-barajas",
+        "fasil-ghebbi",
+        "palace-of-versailles",
+        "canal-du-midi",
+        "st-pauls-cathedral",
+        "trinidad-jesuit-mission"
+      ]
+    },
+    {
+      "date": "1728",
+      "title": {
+        "en": "Stars, tsars and emperors",
+        "es": "Estrellas, zares y emperadores"
+      },
+      "camera": {
+        "lon": 82,
+        "lat": 44,
+        "zoom": 1.3
+      },
+      "text": {
+        "en": "In Jaipur, Jai Singh II built giant stone instruments to watch the sky. China's emperor made a summer palace, Russia's empress a winter one, and new royal cities rose in Bangkok and Suwon.",
+        "es": "En Jaipur, Jai Singh II alzó instrumentos de piedra gigantes para observar el cielo. El emperador chino se hizo un palacio de verano, la emperatriz rusa uno de invierno, y surgieron ciudades reales en Bangkok y Suwon."
+      },
+      "details": {
+        "en": "Jai Singh's instruments were built huge so that they could be read precisely without lenses. The Qianlong Emperor's Summer Palace was burned by British and French troops in 1860 and rebuilt by the Empress Dowager Cixi. In Korea, the scholar Jeong Yak-yong designed cranes that helped build Hwaseong Fortress in under three years, and every stage of the work was written down in detail.",
+        "es": "Los instrumentos de Jai Singh eran enormes para poder leerlos con precisión sin lentes. El Palacio de Verano del emperador Qianlong fue incendiado por tropas británicas y francesas en 1860 y reconstruido por la emperatriz viuda Cixí. En Corea, el sabio Jeong Yak-yong diseñó grúas que ayudaron a levantar la fortaleza de Hwaseong en menos de tres años, y cada fase de la obra quedó anotada al detalle."
+      },
+      "show": [
+        "jantar-mantar-jaipur",
+        "summer-palace",
+        "winter-palace",
+        "grand-palace-bangkok",
+        "hwaseong-fortress"
+      ]
+    },
+    {
+      "date": "1777",
+      "title": {
+        "en": "Iron and revolution",
+        "es": "Hierro y revolución"
+      },
+      "camera": {
+        "lon": -42,
+        "lat": 44,
+        "zoom": 1.3
+      },
+      "text": {
+        "en": "Britain's Industrial Revolution produced the first iron bridge and a tunnel under the Thames. Across the Atlantic, free Haiti built a mountain fortress and Washington began its great obelisk.",
+        "es": "La Revolución Industrial británica dio el primer puente de hierro y un túnel bajo el Támesis. Al otro lado del Atlántico, el Haití libre construyó una fortaleza en la montaña y Washington empezó su gran obelisco."
+      },
+      "details": {
+        "en": "Cheap iron, steam engines and canals changed how things were built, while child labour and dangerous work were common in mines and mills. In 1804 Haiti became the first nation founded by people who had freed themselves from slavery, and Henri Christophe's Citadelle guarded that freedom. In London and Hamburg, great fires led to rebuilding in Gothic style: the new Palace of Westminster with its clock tower, and St Nicholas' Church.",
+        "es": "El hierro barato, las máquinas de vapor y los canales cambiaron la forma de construir, mientras el trabajo infantil y los empleos peligrosos eran habituales en minas y fábricas. En 1804 Haití se convirtió en la primera nación fundada por personas que se habían liberado de la esclavitud, y la Ciudadela de Henri Christophe protegía esa libertad. En Londres y Hamburgo, grandes incendios llevaron a reconstruir en estilo gótico: el nuevo Palacio de Westminster con su torre del reloj y la iglesia de San Nicolás."
+      },
+      "show": [
+        "iron-bridge",
+        "citadelle-laferriere",
+        "thames-tunnel",
+        "big-ben",
+        "st-nikolai-hamburg",
+        "washington-monument"
+      ]
+    },
+    {
+      "date": "1850",
+      "title": {
+        "en": "Glass, canals and rails",
+        "es": "Vidrio, canales y raíles"
+      },
+      "camera": {
+        "lon": -28,
+        "lat": 67,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "The Crystal Palace of 1851 showed what iron and glass could do. Then the Suez Canal and the first railroad across the United States, both opened in 1869, shrank the world.",
+        "es": "El Palacio de Cristal de 1851 mostró lo que podían hacer el hierro y el vidrio. Después, el canal de Suez y el primer ferrocarril que cruzaba Estados Unidos, abiertos ambos en 1869, encogieron el mundo."
+      },
+      "details": {
+        "en": "The Crystal Palace was put together from standard parts in 39 weeks, a lesson in prefabrication. The Suez Canal was first dug by Egyptian peasants under forced labour, and thousands died. The hardest stretch of the transcontinental railroad, through the Sierra Nevada, was cut by thousands of Chinese workers. In New York, work began in 1870 on the Brooklyn Bridge, hung from cables of steel wire.",
+        "es": "El Palacio de Cristal se montó con piezas normalizadas en 39 semanas, una lección de prefabricación. El canal de Suez lo cavaron primero campesinos egipcios obligados a trabajar, y murieron miles. El tramo más duro del ferrocarril transcontinental, a través de Sierra Nevada, lo abrieron miles de obreros chinos. En Nueva York, en 1870 empezó la construcción del puente de Brooklyn, colgado de cables de alambre de acero."
+      },
+      "show": [
+        "crystal-palace",
+        "suez-canal",
+        "first-transcontinental-railroad",
+        "brooklyn-bridge"
+      ]
+    },
+    {
+      "date": "1875",
+      "title": {
+        "en": "Iron and steel",
+        "es": "Hierro y acero"
+      },
+      "camera": {
+        "lon": -42,
+        "lat": 55,
+        "zoom": 1.4
+      },
+      "text": {
+        "en": "Iron and steel reached for the sky: the Statue of Liberty, the Forth Bridge, the first skyscraper in Chicago and, in 1889, the Eiffel Tower. In Barcelona, Gaudí took over the Sagrada Família.",
+        "es": "El hierro y el acero subían hacia el cielo: la Estatua de la Libertad, el puente de Forth, el primer rascacielos en Chicago y, en 1889, la torre Eiffel. En Barcelona, Gaudí se hizo cargo de la Sagrada Familia."
+      },
+      "details": {
+        "en": "Gustave Eiffel's company built both the iron skeleton of the Statue of Liberty and the tower in Paris. Old cathedrals were finished too, now with the help of iron: Rouen's cast-iron spire in 1876 and Ulm's stone spire in 1890, the tallest church spire in the world for 135 years. In Chicago, William Le Baron Jenney carried the walls of the Home Insurance Building on a metal frame, the idea behind every skyscraper since.",
+        "es": "La empresa de Gustave Eiffel construyó el esqueleto de hierro de la Estatua de la Libertad y la torre de París. También se terminaron viejas catedrales, ahora con ayuda del hierro: la aguja de hierro fundido de Ruan en 1876 y la de piedra de Ulm en 1890, la aguja de iglesia más alta del mundo durante 135 años. En Chicago, William Le Baron Jenney apoyó los muros del Home Insurance Building en un armazón metálico, la idea en la que se basan todos los rascacielos desde entonces."
+      },
+      "show": [
+        "statue-of-liberty",
+        "rouen-cathedral",
+        "sagrada-familia",
+        "forth-bridge",
+        "home-insurance-building",
+        "eiffel-tower",
+        "ulm-minster"
+      ]
+    },
+    {
+      "date": "1878",
+      "title": {
+        "en": "Railways for empires",
+        "es": "Ferrocarriles para los imperios"
+      },
+      "camera": {
+        "lon": 46,
+        "lat": 27,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "Railways bound empires together: Mumbai's grand Victoria Terminus, the Trans-Siberian across Russia and a bridge over the Zambezi gorge. In Mali, masons rebuilt the great mosque of Djenné.",
+        "es": "Los ferrocarriles unían los imperios: la gran estación Victoria de Bombay, el Transiberiano a través de Rusia y un puente sobre el cañón del Zambeze. En Malí, los albañiles reconstruyeron la gran mezquita de Djenné."
+      },
+      "details": {
+        "en": "Railways carried soldiers, settlers, raw materials and pilgrims, and they redrew the map. India's railways were built by Indian workers, while the profits of their British investors were guaranteed out of Indian taxes. Russia pushed the Trans-Siberian east to the Pacific. In Africa, the Victoria Falls Bridge was part of Cecil Rhodes's dream of a Cape-to-Cairo railway under British rule. In 1907, under French colonial rule, the masons of Djenné rebuilt the largest mud-brick building in the world.",
+        "es": "Los ferrocarriles llevaban soldados, colonos, materias primas y peregrinos, y redibujaron el mapa. Los ferrocarriles de la India los construyeron obreros indios, mientras los beneficios de sus inversores británicos se garantizaban con los impuestos de la India. Rusia llevó el Transiberiano hacia el este, hasta el Pacífico. En África, el puente de las cataratas Victoria formaba parte del sueño de Cecil Rhodes de un ferrocarril de El Cabo a El Cairo bajo dominio británico. En 1907, bajo dominio colonial francés, los albañiles de Djenné reconstruyeron el mayor edificio de adobe del mundo."
+      },
+      "show": [
+        "chhatrapati-shivaji-terminus",
+        "trans-siberian-railway",
+        "victoria-falls-bridge",
+        "great-mosque-djenne"
+      ]
+    },
+    {
+      "date": "1889",
+      "title": {
+        "en": "The Americas build big",
+        "es": "América construye a lo grande"
+      },
+      "camera": {
+        "lon": -80,
+        "lat": 9,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "From Buenos Aires to New York the Americas built big: a great opera house, the Panama Canal, Christ on Corcovado and, in the 1930s, the Empire State Building, the Hoover Dam and the Golden Gate.",
+        "es": "De Buenos Aires a Nueva York, América construía a lo grande: un gran teatro de ópera, el canal de Panamá, el Cristo del Corcovado y, en los años treinta, el Empire State, la presa Hoover y el Golden Gate."
+      },
+      "details": {
+        "en": "In New York, the Woolworth, Chrysler and Empire State buildings each became the tallest in the world. The Panama Canal opened in 1914 after more than 25,000 workers had died, most of them from the Caribbean. During the Great Depression of the 1930s, giant projects gave work to thousands of jobless men; at least 96 died at the Hoover Dam and eleven on the Golden Gate Bridge. In Colombia, pilgrims paid for a Gothic church built on a bridge over a gorge.",
+        "es": "En Nueva York, los edificios Woolworth, Chrysler y Empire State fueron uno tras otro los más altos del mundo. El canal de Panamá se abrió en 1914 después de que murieran más de 25 000 trabajadores, la mayoría del Caribe. Durante la Gran Depresión de los años treinta, las obras gigantes dieron trabajo a miles de parados; al menos 96 murieron en la presa Hoover y once en el puente Golden Gate. En Colombia, los peregrinos pagaron una iglesia gótica construida sobre un puente en un cañón."
+      },
+      "show": [
+        "teatro-colon",
+        "woolworth-building",
+        "panama-canal",
+        "las-lajas-sanctuary",
+        "christ-the-redeemer",
+        "chrysler-building",
+        "empire-state-building",
+        "hoover-dam",
+        "golden-gate-bridge"
+      ]
+    },
+    {
+      "date": "1948",
+      "title": {
+        "en": "The southern half",
+        "es": "La mitad sur"
+      },
+      "camera": {
+        "lon": -12,
+        "lat": -80,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "After the Second World War the south built boldly: the Maracanã for the 1950 World Cup, a new capital at Brasília, the Kariba Dam, Sydney's Opera House and a research station at the South Pole.",
+        "es": "Tras la Segunda Guerra Mundial, el sur construyó con audacia: el Maracaná para el Mundial de 1950, una nueva capital en Brasilia, la presa de Kariba, la Ópera de Sídney y una base científica en el Polo Sur."
+      },
+      "details": {
+        "en": "Brazil built Brasília from nothing in under four years, with Oscar Niemeyer's curving concrete and tens of thousands of workers from all over the country, many from the poor north-east. In Australia, migrants from more than 30 countries built the Snowy Mountains Scheme, while Sydney's Harbour Bridge (1932) and Melbourne's Royal Exhibition Building (1880) were already landmarks. The Kariba Dam forced about 57,000 Tonga people from the Zambezi valley. At the South Pole, US Navy builders set up the first station in 1956.",
+        "es": "Brasil construyó Brasilia de la nada en menos de cuatro años, con el hormigón curvo de Oscar Niemeyer y decenas de miles de obreros llegados de todo el país, muchos del pobre noreste. En Australia, inmigrantes de más de 30 países construyeron el plan hidroeléctrico de las Snowy Mountains, mientras el puente de la bahía de Sídney (1932) y el Palacio Real de Exposiciones de Melbourne (1880) ya eran emblemas. La presa de Kariba obligó a unas 57 000 personas del pueblo tonga a dejar el valle del Zambeze. En el Polo Sur, constructores de la Marina de Estados Unidos levantaron la primera base en 1956."
+      },
+      "show": [
+        "maracana-stadium",
+        "brasilia-cathedral",
+        "national-congress-brazil",
+        "kariba-dam",
+        "south-pole-station",
+        "royal-exhibition-building",
+        "sydney-harbour-bridge",
+        "snowy-mountains-scheme",
+        "sydney-opera-house"
+      ]
+    },
+    {
+      "date": "1960",
+      "title": {
+        "en": "Walls, towers and dams",
+        "es": "Muros, torres y presas"
+      },
+      "camera": {
+        "lon": -24,
+        "lat": 22,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "In the Cold War a wall split Berlin, and both sides built big: Moscow's Ostankino Tower, the World Trade Center and the Sears Tower, the CN Tower, and great dams at Aswan and Itaipu.",
+        "es": "En la Guerra Fría un muro partió Berlín, y ambos bandos construyeron a lo grande: la torre Ostánkino de Moscú, el World Trade Center y la Sears Tower, la torre CN, y grandes presas en Asuán e Itaipú."
+      },
+      "details": {
+        "en": "The Berlin Wall went up in 1961, and between 136 and more than 200 people died trying to cross it before crowds opened it in 1989. Concrete towers carried TV signals: Ostankino and the CN Tower were the tallest freestanding structures of their day. The Soviet Union helped Egypt build the Aswan High Dam, which displaced more than 100,000 Nubians. In Puerto Rico, the Arecibo radio telescope listened to the universe for 57 years.",
+        "es": "El Muro de Berlín se levantó en 1961, y entre 136 y más de 200 personas murieron intentando cruzarlo antes de que la multitud lo abriera en 1989. Torres de hormigón llevaban la señal de televisión: Ostánkino y la torre CN fueron las estructuras autoportantes más altas de su tiempo. La Unión Soviética ayudó a Egipto a construir la presa de Asuán, que desplazó a más de 100 000 nubios. En Puerto Rico, el radiotelescopio de Arecibo escuchó el universo durante 57 años."
+      },
+      "show": [
+        "berlin-wall",
+        "ostankino-tower",
+        "world-trade-center",
+        "willis-tower",
+        "cn-tower",
+        "aswan-high-dam",
+        "itaipu-dam",
+        "arecibo-telescope"
+      ]
+    },
+    {
+      "date": "1985",
+      "title": {
+        "en": "Faith, tunnels and particles",
+        "es": "Fe, túneles y partículas"
+      },
+      "camera": {
+        "lon": -34,
+        "lat": 13,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "Africa raised giant houses of worship at Yamoussoukro and Casablanca. Europe tunnelled under the sea and the Alps and built a 27 km ring for colliding protons; New York rebuilt after 2001.",
+        "es": "África alzó enormes templos en Yamusukro y Casablanca. Europa excavó túneles bajo el mar y los Alpes y construyó un anillo de 27 km para hacer chocar protones; Nueva York se reconstruyó tras 2001."
+      },
+      "details": {
+        "en": "On 11 September 2001 terrorists flew hijacked planes into the Twin Towers of the World Trade Center; both towers fell, and 2,753 people died there, among them 343 firefighters. One World Trade Center rose beside the site, where two memorial pools now fill the towers' footprints. In Chile's Atacama Desert, an international team set up ALMA, 66 antennas at 5,000 m, and in France the Millau Viaduct became the tallest bridge in the world.",
+        "es": "El 11 de septiembre de 2001 unos terroristas estrellaron aviones secuestrados contra las Torres Gemelas del World Trade Center; ambas torres cayeron, y allí murieron 2753 personas, entre ellas 343 bomberos. One World Trade Center se levantó junto a ese lugar, donde dos estanques en su memoria ocupan hoy la planta de las torres. En el desierto de Atacama, en Chile, un equipo internacional instaló ALMA, 66 antenas a 5000 m, y en Francia el viaducto de Millau se convirtió en el puente más alto del mundo."
+      },
+      "show": [
+        "basilica-our-lady-of-peace",
+        "hassan-ii-mosque",
+        "channel-tunnel",
+        "large-hadron-collider",
+        "gotthard-base-tunnel",
+        "millau-viaduct",
+        "alma-observatory",
+        "one-world-trade-center"
+      ],
+      "events": [
+        {
+          "icon": "🕯️",
+          "date": "2001-09-11",
+          "at": [
+            -74.0125,
+            40.7117
+          ],
+          "text": {
+            "en": "The Twin Towers are destroyed in terrorist attacks; 2,753 people die in New York",
+            "es": "Las Torres Gemelas son destruidas en atentados terroristas; mueren 2753 personas en Nueva York"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1988",
+      "title": {
+        "en": "Asia and the Pacific rise",
+        "es": "Asia y el Pacífico se elevan"
+      },
+      "camera": {
+        "lon": 148,
+        "lat": 3,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "Asia built the tallest buildings: the Petronas Towers in 1998 and Taipei 101 in 2004. Japan bridged the Akashi Strait, and China dammed the Yangtze at the Three Gorges.",
+        "es": "Asia levantó los edificios más altos: las torres Petronas en 1998 y Taipei 101 en 2004. Japón tendió un puente sobre el estrecho de Akashi, y China cerró el Yangtsé en las Tres Gargantas."
+      },
+      "details": {
+        "en": "The Petronas Towers were the first tallest building in the world outside the United States since 1894. Jakarta's Istiqlal Mosque, finished in 1978 to the design of a Christian architect, was already the largest mosque in Southeast Asia. Beijing's 'Bird's Nest' stadium was built for the 2008 Olympics, and Auckland's Sky Tower became the tallest freestanding structure in the Southern Hemisphere. The Three Gorges Dam moved more than a million people.",
+        "es": "Las torres Petronas fueron el primer edificio más alto del mundo fuera de Estados Unidos desde 1894. La mezquita Istiqlal de Yakarta, terminada en 1978 según el diseño de un arquitecto cristiano, ya era la mayor del sudeste asiático. El estadio «Nido de Pájaro» de Pekín se construyó para los Juegos de 2008, y la Sky Tower de Auckland se convirtió en la estructura autoportante más alta del hemisferio sur. La presa de las Tres Gargantas desplazó a más de un millón de personas."
+      },
+      "show": [
+        "akashi-kaikyo-bridge",
+        "petronas-towers",
+        "three-gorges-dam",
+        "sky-tower-auckland",
+        "taipei-101",
+        "istiqlal-mosque",
+        "beijing-national-stadium"
+      ]
+    },
+    {
+      "date": "2004",
+      "title": {
+        "en": "Higher and longer",
+        "es": "Más alto y más largo"
+      },
+      "camera": {
+        "lon": 94,
+        "lat": 41,
+        "zoom": 1.3
+      },
+      "text": {
+        "en": "Dubai built the Burj Khalifa, 828 m, and an island shaped like a palm tree. China built the longest bridge, the Shanghai Tower and the largest dish telescope; Tokyo, the tallest tower.",
+        "es": "Dubái construyó el Burj Khalifa, de 828 m, y una isla con forma de palmera. China levantó el puente más largo, la torre de Shanghái y el mayor radiotelescopio de plato; Tokio, la torre más alta."
+      },
+      "details": {
+        "en": "The Burj Khalifa took every height record. It was built mostly by migrant workers from South and East Asia, who were poorly paid and badly housed; in 2006 about 2,500 of them protested. China's high-speed railways crossed the country on viaducts such as the 164.8 km Danyang–Kunshan Grand Bridge, and in 2018 a 55 km chain of bridges and a tunnel crossed the Pearl River estuary. In Guizhou, the FAST telescope has found more than 1,000 pulsars.",
+        "es": "El Burj Khalifa se llevó todos los récords de altura. Lo construyeron sobre todo trabajadores inmigrantes del sur y el este de Asia, mal pagados y mal alojados; en 2006 unos 2500 de ellos protestaron. Los trenes de alta velocidad chinos cruzaron el país sobre viaductos como el gran puente Danyang-Kunshan, de 164,8 km, y en 2018 una cadena de 55 km de puentes y un túnel atravesó el estuario del río de las Perlas. En Guizhou, el telescopio FAST ha descubierto más de 1000 púlsares."
+      },
+      "show": [
+        "burj-khalifa",
+        "palm-jumeirah",
+        "danyang-kunshan-bridge",
+        "shanghai-tower",
+        "tokyo-skytree",
+        "hong-kong-zhuhai-macau-bridge",
+        "fast-telescope"
+      ]
+    },
+    {
+      "date": "2023",
+      "title": {
+        "en": "Records of our time",
+        "es": "Los récords de nuestro tiempo"
+      },
+      "camera": {
+        "lon": 62,
+        "lat": 33,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "By 2023 new records stood across Africa and Asia: the tallest minaret in Algiers, the tallest statue in India, the longest suspension span over the Dardanelles and Merdeka 118 in Kuala Lumpur.",
+        "es": "En 2023 había nuevos récords por toda África y Asia: el minarete más alto en Argel, la estatua más alta en la India, el mayor vano colgante sobre los Dardanelos y el Merdeka 118 en Kuala Lumpur."
+      },
+      "details": {
+        "en": "Egypt built Africa's tallest building in a new capital in the desert, and in 2025 Ethiopia opened Africa's largest hydroelectric dam on the Blue Nile, while Egypt and Sudan worried about the river downstream. Builders today face new questions: how much energy and concrete a project uses, and who pays the price, from displaced villagers to the workers on site. In Barcelona, the Sagrada Família, begun in 1882, became the tallest church in the world in 2025 and is still being built.",
+        "es": "Egipto levantó el edificio más alto de África en una nueva capital en el desierto, y en 2025 Etiopía inauguró sobre el Nilo Azul la mayor presa hidroeléctrica de África, mientras Egipto y Sudán se preocupaban por el río aguas abajo. Los constructores de hoy se enfrentan a nuevas preguntas: cuánta energía y cuánto hormigón usa una obra, y quién paga el precio, de los vecinos desplazados a los obreros. En Barcelona, la Sagrada Familia, empezada en 1882, se convirtió en 2025 en la iglesia más alta del mundo y sigue en obras."
+      },
+      "show": [
+        "djamaa-el-djazair",
+        "statue-of-unity",
+        "merdeka-118",
+        "canakkale-1915-bridge",
+        "iconic-tower-egypt",
+        "grand-ethiopian-renaissance-dam"
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "In five centuries, building moved from stone and timber to iron, steel and concrete, and from the courts of kings to cities, companies and nations. The great structures that remain tell of faith, power and invention, and of the millions of workers, free and unfree, who built them.",
+    "es": "En cinco siglos la construcción pasó de la piedra y la madera al hierro, el acero y el hormigón, y de las cortes de los reyes a las ciudades, las empresas y las naciones. Las grandes obras que quedan hablan de fe, de poder y de ingenio, y de los millones de trabajadores, libres y no libres, que las levantaron."
+  },
+  "sources": [
+    {
+      "title": "St. Peter's Basilica (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/St._Peter's_Basilica"
+    },
+    {
+      "title": "Süleymaniye Mosque (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Süleymaniye_Mosque"
+    },
+    {
+      "title": "El Escorial (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/El_Escorial"
+    },
+    {
+      "title": "Taj Mahal (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Taj_Mahal"
+    },
+    {
+      "title": "Naqsh-e Jahan Square (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Naqsh-e_Jahan_Square"
+    },
+    {
+      "title": "Potala Palace (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Potala_Palace"
+    },
+    {
+      "title": "Palace of Versailles (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Palace_of_Versailles"
+    },
+    {
+      "title": "Citadelle Laferrière (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Citadelle_Laferrière"
+    },
+    {
+      "title": "The Iron Bridge (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/The_Iron_Bridge"
+    },
+    {
+      "title": "The Crystal Palace (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/The_Crystal_Palace"
+    },
+    {
+      "title": "Suez Canal (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Suez_Canal"
+    },
+    {
+      "title": "Eiffel Tower (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Eiffel_Tower"
+    },
+    {
+      "title": "Home Insurance Building (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Home_Insurance_Building"
+    },
+    {
+      "title": "Trans-Siberian Railway (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Trans-Siberian_Railway"
+    },
+    {
+      "title": "Panama Canal (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Panama_Canal"
+    },
+    {
+      "title": "Empire State Building (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Empire_State_Building"
+    },
+    {
+      "title": "Brasília (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Brasília"
+    },
+    {
+      "title": "Berlin Wall (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Berlin_Wall"
+    },
+    {
+      "title": "World Trade Center (1973–2001) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/World_Trade_Center_(1973–2001)"
+    },
+    {
+      "title": "Burj Khalifa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Burj_Khalifa"
+    },
+    {
+      "title": "Three Gorges Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Three_Gorges_Dam"
+    },
+    {
+      "title": "Grand Ethiopian Renaissance Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Grand_Ethiopian_Renaissance_Dam"
+    }
+  ]
+}

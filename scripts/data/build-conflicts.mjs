@@ -557,10 +557,13 @@ async function build(file, opts) {
   }
   if (wars && !steps.some((s) => Object.values(s.control).some((v) => v !== null))) throw new Error(`${c.id}: no step has any territory`);
   if (c.catalog === 'all') {
-    // A time tour: every catalogue item appears on the map from its date on (up to the last step).
+    // A time tour: every catalogue item of the story's period (from its start to its last step)
+    // appears on the map from its date on. Older items appear only when a step shows them.
+    const first = c.start != null ? parseDate(c.start, '') : -Infinity;
     const last = steps[steps.length - 1].t;
     for (const it of [...coll.catalog.values()].sort((a, b) => parseDate(a.date, '') - parseDate(b.date, ''))) {
-      if (parseDate(it.date, '') <= last + 1e-6) addItem(it, -1);
+      const t = parseDate(it.date, '');
+      if (t >= first - 1e-6 && t <= last + 1e-6) addItem(it, -1);
     }
   }
   if (opts.lint) lint(c, steps, areas);

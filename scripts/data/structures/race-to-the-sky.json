@@ -1,0 +1,754 @@
+{
+  "id": "race-to-the-sky",
+  "name": {
+    "en": "The race to the sky",
+    "es": "La carrera hacia el cielo"
+  },
+  "icon": "🏙️",
+  "era": "ancient",
+  "region": {
+    "en": "The whole world",
+    "es": "Todo el mundo"
+  },
+  "start": "-2600",
+  "end": "2010",
+  "summary": {
+    "en": "From the Great Pyramid to the Burj Khalifa: 4,500 years of the tallest things people have built, from stone tombs and church spires to masts and skyscrapers.",
+    "es": "De la Gran Pirámide al Burj Khalifa: 4500 años de las construcciones más altas de la humanidad, de tumbas de piedra y agujas de iglesia a mástiles y rascacielos."
+  },
+  "camera": {
+    "lon": 10,
+    "lat": 40,
+    "zoom": 1.3
+  },
+  "steps": [
+    {
+      "date": "-2560",
+      "title": {
+        "en": "The Great Pyramid",
+        "es": "La Gran Pirámide"
+      },
+      "camera": {
+        "lon": 31.1,
+        "lat": 30.0,
+        "zoom": 6
+      },
+      "text": {
+        "en": "Finished around 2560 BC for the pharaoh Khufu, the Great Pyramid rose 146.6 m. For nearly 4,000 years nothing built by people was taller.",
+        "es": "Terminada hacia el 2560 a. C. para el faraón Keops, la Gran Pirámide se alzaba 146,6 m. Durante casi 4000 años nada construido por el ser humano fue más alto."
+      },
+      "details": {
+        "en": "Earlier pyramids had already broken records: Djoser's step pyramid, then Sneferu's pyramids at Meidum and Dahshur, each taller than the last. Khufu's topped them all. A pyramid is a structure, not a building: nobody lived or worked inside it. A few later towers may have come close, such as the wooden Yongning Pagoda in Luoyang, China, which stood from 516 to 534, but their heights are uncertain.",
+        "es": "Las pirámides anteriores ya habían batido récords: la pirámide escalonada de Zoser y después las de Seneferu en Meidum y Dahshur, cada una más alta que la anterior. La de Keops las superó a todas. Una pirámide es una estructura, no un edificio: nadie vivía ni trabajaba dentro. Algunas torres posteriores quizá se le acercaron, como la pagoda de madera de Yongning, en Luoyang (China), que se alzó del 516 al 534, pero no se sabe con certeza su altura."
+      },
+      "show": [
+        "great-pyramid-giza"
+      ]
+    },
+    {
+      "date": "1311",
+      "title": {
+        "en": "Lincoln's spire",
+        "es": "La aguja de Lincoln"
+      },
+      "camera": {
+        "lon": -0.5,
+        "lat": 53.0,
+        "zoom": 6
+      },
+      "text": {
+        "en": "A lead-covered timber spire raised Lincoln Cathedral in England to about 160 m, making it the tallest building on Earth. A storm brought the spire down in 1548.",
+        "es": "Una aguja de madera forrada de plomo elevó la catedral de Lincoln, en Inglaterra, a unos 160 m y la convirtió en el edificio más alto de la Tierra. Una tormenta derribó la aguja en 1548."
+      },
+      "details": {
+        "en": "Medieval towns competed to raise ever taller spires to the glory of God and of themselves. London's Old St Paul's Cathedral, with a spire of about 149 m, may already have passed the Great Pyramid, whose top had been worn and stripped away. Lincoln's central spire, finished around 1311, went higher still and held the record for more than 230 years. Spires of timber and lead were light but fragile, and lightning and storms destroyed many of them. Lincoln's was never rebuilt.",
+        "es": "Las ciudades medievales competían por levantar agujas cada vez más altas para gloria de Dios y de sí mismas. La antigua catedral de San Pablo de Londres, con una aguja de unos 149 m, quizá ya había superado a la Gran Pirámide, cuya cima se había desgastado y expoliado. La aguja central de Lincoln, terminada hacia 1311, subió aún más y mantuvo el récord más de 230 años. Las agujas de madera y plomo eran ligeras pero frágiles, y los rayos y las tormentas destruyeron muchas."
+      },
+      "show": [
+        "lincoln-cathedral"
+      ],
+      "events": [
+        {
+          "icon": "⛪",
+          "date": "1221",
+          "at": [
+            -0.0983,
+            51.5138
+          ],
+          "text": {
+            "en": "Old St Paul's in London, with a spire of about 149 m, may already be taller than the pyramid",
+            "es": "La antigua San Pablo de Londres, con una aguja de unos 149 m, quizá ya supera a la pirámide"
+          }
+        },
+        {
+          "icon": "🌪️",
+          "date": "1548",
+          "at": [
+            -0.5361,
+            53.2344
+          ],
+          "text": {
+            "en": "A storm brings down Lincoln's spire",
+            "es": "Una tormenta derriba la aguja de Lincoln"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1548",
+      "title": {
+        "en": "Stralsund's brick tower",
+        "es": "La torre de ladrillo de Stralsund"
+      },
+      "camera": {
+        "lon": 7.5,
+        "lat": 52.0,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "With Lincoln's spire gone, the record passed to St Mary's Church in Stralsund, a Baltic port of the Hanseatic League, whose spire was 151 m tall.",
+        "es": "Caída la aguja de Lincoln, el récord pasó a la iglesia de Santa María de Stralsund, un puerto báltico de la Liga Hanseática, cuya aguja medía 151 m."
+      },
+      "details": {
+        "en": "For four years the crown went to Beauvais Cathedral in France, whose builders raised a 153 m tower in 1569 on a church they never finished. It collapsed in 1573, and Stralsund was the tallest again until lightning set its spire on fire in 1647. Its tower now ends in a baroque dome, 104 m high. Brick was the building stone of the Baltic, where good rock was scarce.",
+        "es": "Durante cuatro años la corona pasó a la catedral de Beauvais, en Francia, cuyos constructores alzaron en 1569 una torre de 153 m sobre una iglesia que nunca terminaron. Se derrumbó en 1573, y Stralsund volvió a ser la más alta hasta que un rayo incendió su aguja en 1647. Su torre termina hoy en una cúpula barroca de 104 m. El ladrillo era la piedra del Báltico, donde escaseaba la buena roca."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Beauvais Cathedral",
+            "es": "Catedral de Beauvais"
+          },
+          "at": [
+            2.0814,
+            49.4326
+          ],
+          "cat": "church",
+          "type": "structure",
+          "date": "1225",
+          "place": {
+            "en": "Beauvais, France",
+            "es": "Beauvais, Francia"
+          },
+          "text": {
+            "en": "Its builders wanted the tallest Gothic cathedral in France. A 153 m tower raised in 1569 made it the tallest building in the world until the tower fell in 1573.",
+            "es": "Sus constructores quisieron la catedral gótica más alta de Francia. Una torre de 153 m alzada en 1569 la hizo el edificio más alto del mundo, hasta que la torre se vino abajo en 1573."
+          },
+          "size": {
+            "en": "Its choir vault, 48 m high, is the highest Gothic vault ever built",
+            "es": "La bóveda de su coro, de 48 m, es la bóveda gótica más alta jamás construida"
+          },
+          "status": {
+            "en": "Unfinished: only the choir and transept were ever built",
+            "es": "Sin terminar: solo llegaron a construirse el coro y el crucero"
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Record",
+                "es": "Récord"
+              },
+              "value": {
+                "en": "Tallest building in the world 1569–1573",
+                "es": "Edificio más alto del mundo de 1569 a 1573"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Beauvais Cathedral",
+            "es": "Catedral de Beauvais"
+          }
+        }
+      ],
+      "show": [
+        "st-marys-stralsund"
+      ],
+      "events": [
+        {
+          "icon": "💥",
+          "date": "1573",
+          "at": [
+            2.0814,
+            49.4326
+          ],
+          "text": {
+            "en": "Beauvais Cathedral's tower collapses",
+            "es": "Se derrumba la torre de la catedral de Beauvais"
+          }
+        },
+        {
+          "icon": "⚡",
+          "date": "1647",
+          "at": [
+            13.0878,
+            54.3102
+          ],
+          "text": {
+            "en": "Lightning burns down Stralsund's spire",
+            "es": "Un rayo incendia la aguja de Stralsund"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1647",
+      "title": {
+        "en": "Strasbourg's single spire",
+        "es": "La aguja única de Estrasburgo"
+      },
+      "camera": {
+        "lon": 7.75,
+        "lat": 48.58,
+        "zoom": 6
+      },
+      "text": {
+        "en": "Strasbourg Cathedral, whose only spire had been finished in 1439, became the tallest building in the world at 142 m. It kept the title for 227 years.",
+        "es": "La catedral de Estrasburgo, cuya única aguja se había terminado en 1439, pasó a ser el edificio más alto del mundo, con 142 m. Conservó el título durante 227 años."
+      },
+      "details": {
+        "en": "Strasbourg's long reign shows how slowly heights grew before the age of iron: it was lower than Lincoln or Stralsund had been, yet nothing taller was built for more than two centuries. Its Gothic masons worked with stone, lime mortar and wooden cranes turned by men walking inside great treadwheels. As a student, the poet Goethe climbed the spire again and again to cure his fear of heights.",
+        "es": "El largo reinado de Estrasburgo muestra lo despacio que crecían las alturas antes de la era del hierro: era más baja de lo que habían sido Lincoln o Stralsund, y aun así no se construyó nada más alto en más de dos siglos. Sus canteros góticos trabajaban con piedra, mortero de cal y grúas de madera movidas por hombres que caminaban dentro de grandes ruedas. De estudiante, el poeta Goethe subió a la aguja una y otra vez para curarse el vértigo."
+      },
+      "show": [
+        "strasbourg-cathedral"
+      ]
+    },
+    {
+      "date": "1874",
+      "title": {
+        "en": "Hamburg's new Gothic",
+        "es": "El nuevo gótico de Hamburgo"
+      },
+      "camera": {
+        "lon": 10.0,
+        "lat": 53.55,
+        "zoom": 6
+      },
+      "text": {
+        "en": "In the 1870s new Gothic spires broke the record three times in six years. First came St Nicholas' Church in Hamburg, rebuilt after a great fire, at 147 m.",
+        "es": "En la década de 1870 nuevas agujas góticas batieron el récord tres veces en seis años. Primero llegó la iglesia de San Nicolás de Hamburgo, reconstruida tras un gran incendio, con 147 m."
+      },
+      "details": {
+        "en": "The Great Fire of Hamburg in 1842 destroyed the medieval church. The English architect George Gilbert Scott won the competition to rebuild it in Gothic style, which was being revived all over Europe. Its tower was finished in 1874. Allied bombing wrecked the church in 1943; its spire still stands over the ruins as a memorial to the victims of war.",
+        "es": "El Gran Incendio de Hamburgo de 1842 destruyó la iglesia medieval. El arquitecto inglés George Gilbert Scott ganó el concurso para reconstruirla en estilo gótico, que renacía en toda Europa. Su torre se terminó en 1874. Los bombardeos aliados arruinaron la iglesia en 1943; su aguja sigue en pie sobre las ruinas como memorial a las víctimas de la guerra."
+      },
+      "show": [
+        "st-nikolai-hamburg"
+      ]
+    },
+    {
+      "date": "1876",
+      "title": {
+        "en": "Rouen's iron spire",
+        "es": "La aguja de hierro de Ruan"
+      },
+      "camera": {
+        "lon": 1.1,
+        "lat": 49.44,
+        "zoom": 6
+      },
+      "text": {
+        "en": "In 1876 Rouen Cathedral got a new spire of cast iron, 151 m tall, after lightning had destroyed the old one of wood and lead. Iron was starting to replace stone.",
+        "es": "En 1876 la catedral de Ruan recibió una nueva aguja de hierro fundido, de 151 m, después de que un rayo destruyera la vieja de madera y plomo. El hierro empezaba a sustituir a la piedra."
+      },
+      "show": [
+        "rouen-cathedral"
+      ]
+    },
+    {
+      "date": "1880",
+      "title": {
+        "en": "Cologne finished at last",
+        "es": "Colonia, por fin terminada"
+      },
+      "camera": {
+        "lon": 6.96,
+        "lat": 50.94,
+        "zoom": 6
+      },
+      "text": {
+        "en": "Begun in 1248 and left unfinished for about 300 years, Cologne Cathedral was completed to its medieval plans in 1880. Its twin spires reached 157 m.",
+        "es": "Empezada en 1248 y abandonada sin terminar unos 300 años, la catedral de Colonia se completó según sus planos medievales en 1880. Sus dos agujas alcanzaron 157 m."
+      },
+      "details": {
+        "en": "Work stopped around 1560, and for centuries a medieval crane stood on the stump of the south tower. When the original drawings were found again in the early 1800s, Germans saw finishing the cathedral as a national cause. Using modern methods, including an iron frame for the roof, the builders completed it in 1880, and the emperor Wilhelm I came to celebrate.",
+        "es": "Las obras se pararon hacia 1560, y durante siglos una grúa medieval siguió sobre el muñón de la torre sur. Cuando reaparecieron los dibujos originales a principios del siglo XIX, los alemanes vieron en terminar la catedral una causa nacional. Con métodos modernos, como una armadura de hierro para el tejado, los constructores la completaron en 1880, y el emperador Guillermo I acudió a celebrarlo."
+      },
+      "show": [
+        "cologne-cathedral"
+      ]
+    },
+    {
+      "date": "1884",
+      "title": {
+        "en": "A monument, not a church",
+        "es": "Un monumento, no una iglesia"
+      },
+      "camera": {
+        "lon": -77.04,
+        "lat": 38.89,
+        "zoom": 6
+      },
+      "text": {
+        "en": "When its capstone was set in 1884, the Washington Monument became the tallest structure on Earth, at 169 m. Cologne stayed the tallest building: an obelisk has no floors.",
+        "es": "Al colocarse su piedra de remate en 1884, el Monumento a Washington se convirtió en la estructura más alta de la Tierra, con 169 m. Colonia siguió siendo el edificio más alto: un obelisco no tiene plantas."
+      },
+      "details": {
+        "en": "From here on the record splits in two. A building is made to be lived or worked in and has floors; a structure can be anything people build, from obelisks and towers to radio masts. Most lists count churches as buildings. The monument's tip is a small pyramid of aluminium, a metal then as costly as silver. Building stopped for 23 years for lack of money and because of the Civil War, which is why the marble changes colour part of the way up.",
+        "es": "A partir de aquí el récord se divide en dos. Un edificio está hecho para vivir o trabajar y tiene plantas; una estructura puede ser cualquier cosa construida, de obeliscos y torres a mástiles de radio. La mayoría de las listas cuenta las iglesias como edificios. La punta del monumento es una pequeña pirámide de aluminio, un metal entonces tan caro como la plata. La obra se paró 23 años por falta de dinero y por la guerra de Secesión, y por eso el mármol cambia de color a cierta altura."
+      },
+      "show": [
+        "washington-monument"
+      ]
+    },
+    {
+      "date": "1889",
+      "title": {
+        "en": "The iron tower",
+        "es": "La torre de hierro"
+      },
+      "camera": {
+        "lon": 6.0,
+        "lat": 48.8,
+        "zoom": 4.5
+      },
+      "text": {
+        "en": "Gustave Eiffel's 300 m tower almost doubled the record in 1889. A year later Ulm Minster's 161.5 m spire made it the tallest church, and for a time the tallest building.",
+        "es": "La torre de 300 m de Gustave Eiffel casi duplicó el récord en 1889. Un año después, la aguja de 161,5 m del Münster de Ulm lo hizo la iglesia más alta y, por un tiempo, el edificio más alto."
+      },
+      "details": {
+        "en": "The Eiffel Tower was the first structure to pass 200 m and then 300 m, and it held the record for all structures for 41 years. Ulm's spire, finished in 1890 to medieval plans, kept the title of tallest church until the Sagrada Família overtook it in October 2025. Before the tower went up, writers and artists such as Guy de Maupassant protested against this 'useless and monstrous' tower; it soon became the symbol of Paris.",
+        "es": "La torre Eiffel fue la primera estructura en pasar de 200 m y luego de 300 m, y mantuvo el récord de todas las estructuras durante 41 años. La aguja de Ulm, terminada en 1890 según planos medievales, conservó el título de iglesia más alta hasta que la Sagrada Familia la superó en octubre de 2025. Antes de que se levantara, escritores y artistas como Guy de Maupassant protestaron contra esta torre «inútil y monstruosa»; pronto se convirtió en el símbolo de París."
+      },
+      "show": [
+        "eiffel-tower",
+        "ulm-minster"
+      ]
+    },
+    {
+      "date": "1930",
+      "title": {
+        "en": "The race in New York",
+        "es": "La carrera de Nueva York"
+      },
+      "camera": {
+        "lon": -74.6,
+        "lat": 40.4,
+        "zoom": 6
+      },
+      "text": {
+        "en": "From 1894 the record for buildings went to American towers of steel. In 1930 the Chrysler Building raised a secret spire and beat both 40 Wall Street and the Eiffel Tower: 319 m.",
+        "es": "Desde 1894 el récord de los edificios pasó a torres estadounidenses de acero. En 1930 el edificio Chrysler alzó una aguja secreta y superó a 40 Wall Street y a la torre Eiffel: 319 m."
+      },
+      "details": {
+        "en": "Steel frames, safe lifts and costly land made cities grow upwards. Philadelphia City Hall (1894), then New York's Singer Building (1908), Metropolitan Life Tower (1909) and Woolworth Building (1913) each became the tallest building in the world. In 1929–30 the Chrysler Building and 40 Wall Street raced each other. 40 Wall Street thought it had won, until the Chrysler's steel spire, assembled in secret inside its crown, was hoisted into place in about 90 minutes.",
+        "es": "Los armazones de acero, los ascensores seguros y el precio del suelo hicieron crecer las ciudades hacia arriba. El ayuntamiento de Filadelfia (1894) y después el Singer Building (1908), la torre de la Metropolitan Life (1909) y el edificio Woolworth (1913), en Nueva York, fueron uno tras otro el edificio más alto del mundo. En 1929–30 el Chrysler y 40 Wall Street compitieron entre sí. 40 Wall Street creyó haber ganado, hasta que la aguja de acero del Chrysler, montada en secreto dentro de su corona, se izó en unos 90 minutos."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Philadelphia City Hall",
+            "es": "Ayuntamiento de Filadelfia"
+          },
+          "at": [
+            -75.1636,
+            39.9524
+          ],
+          "cat": "tower",
+          "type": "structure",
+          "date": "1871",
+          "end": "1901",
+          "place": {
+            "en": "Philadelphia, United States",
+            "es": "Filadelfia, Estados Unidos"
+          },
+          "text": {
+            "en": "A city hall of brick, marble and granite crowned by a 167 m tower with a statue of William Penn. From 1894 to 1908 it was counted as the tallest building in the world.",
+            "es": "Un ayuntamiento de ladrillo, mármol y granito coronado por una torre de 167 m con una estatua de William Penn. De 1894 a 1908 se consideró el edificio más alto del mundo."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Record",
+                "es": "Récord"
+              },
+              "value": {
+                "en": "Tallest building in the world 1894–1908",
+                "es": "Edificio más alto del mundo de 1894 a 1908"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Philadelphia City Hall",
+            "es": "Ayuntamiento de Filadelfia"
+          }
+        },
+        {
+          "name": {
+            "en": "Singer Building",
+            "es": "Singer Building"
+          },
+          "at": [
+            -74.0108,
+            40.7097
+          ],
+          "cat": "tower",
+          "type": "structure",
+          "date": "1906",
+          "end": "1908",
+          "place": {
+            "en": "Manhattan, New York City, United States",
+            "es": "Manhattan, Nueva York, Estados Unidos"
+          },
+          "text": {
+            "en": "A slender tower for the Singer sewing-machine company, the first skyscraper to hold the record for the tallest building in the world, in 1908–1909. It was pulled down in the late 1960s.",
+            "es": "Una esbelta torre para la compañía de máquinas de coser Singer, el primer rascacielos con el récord de edificio más alto del mundo, en 1908–1909. Se derribó a finales de los años sesenta."
+          },
+          "status": {
+            "en": "Demolished in 1967–1969",
+            "es": "Derribado en 1967–1969"
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Record",
+                "es": "Récord"
+              },
+              "value": {
+                "en": "Tallest building in the world 1908–1909",
+                "es": "Edificio más alto del mundo de 1908 a 1909"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Singer Building",
+            "es": "Singer Building"
+          }
+        },
+        {
+          "name": {
+            "en": "Metropolitan Life Tower",
+            "es": "Torre de la Metropolitan Life"
+          },
+          "at": [
+            -73.9875,
+            40.7411
+          ],
+          "cat": "tower",
+          "type": "structure",
+          "date": "1905",
+          "end": "1909",
+          "place": {
+            "en": "Manhattan, New York City, United States",
+            "es": "Manhattan, Nueva York, Estados Unidos"
+          },
+          "text": {
+            "en": "An insurance company's clock tower modelled on the bell tower of St Mark's in Venice. At 213 m it was the tallest building in the world from 1909 to 1913.",
+            "es": "La torre del reloj de una aseguradora, inspirada en el campanario de San Marcos de Venecia. Con 213 m fue el edificio más alto del mundo de 1909 a 1913."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Record",
+                "es": "Récord"
+              },
+              "value": {
+                "en": "Tallest building in the world 1909–1913",
+                "es": "Edificio más alto del mundo de 1909 a 1913"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Metropolitan Life Insurance Company Tower",
+            "es": "Metropolitan Life Insurance Company Tower"
+          }
+        },
+        {
+          "name": {
+            "en": "40 Wall Street",
+            "es": "40 Wall Street"
+          },
+          "at": [
+            -74.0097,
+            40.7069
+          ],
+          "cat": "tower",
+          "type": "structure",
+          "date": "1929",
+          "end": "1930",
+          "place": {
+            "en": "Manhattan, New York City, United States",
+            "es": "Manhattan, Nueva York, Estados Unidos"
+          },
+          "text": {
+            "en": "The Bank of Manhattan's tower, 283 m, raced the Chrysler Building in 1929–30. It was briefly the tallest building in the world in 1930, until the Chrysler was finished.",
+            "es": "La torre del Bank of Manhattan, de 283 m, compitió con el edificio Chrysler en 1929–30. Fue por poco tiempo el edificio más alto del mundo en 1930, hasta que se terminó el Chrysler."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Record",
+                "es": "Récord"
+              },
+              "value": {
+                "en": "Tallest building in the world for a few weeks in 1930",
+                "es": "Edificio más alto del mundo durante unas semanas de 1930"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "40 Wall Street",
+            "es": "The Trump Building"
+          }
+        }
+      ],
+      "show": [
+        "woolworth-building",
+        "chrysler-building"
+      ]
+    },
+    {
+      "date": "1931",
+      "title": {
+        "en": "The Empire State",
+        "es": "El Empire State"
+      },
+      "camera": {
+        "lon": -74.0,
+        "lat": 40.75,
+        "zoom": 6
+      },
+      "text": {
+        "en": "Eleven months later the Empire State Building opened, 381 m tall with 102 floors. Built in 410 days, it stayed the tallest building in the world for almost 40 years.",
+        "es": "Once meses después se inauguró el Empire State Building, de 381 m y 102 plantas. Construido en 410 días, siguió siendo el edificio más alto del mundo durante casi 40 años."
+      },
+      "details": {
+        "en": "It went up during the Great Depression at four and a half floors a week, built by thousands of workers, many of them Irish and Italian immigrants and Mohawk ironworkers from Kahnawake, near Montreal. Its mast was meant for mooring airships, which proved far too dangerous. It was the tallest structure of any kind until 1954 and the tallest freestanding one until 1967.",
+        "es": "Se levantó en plena Gran Depresión a un ritmo de cuatro plantas y media por semana, obra de miles de obreros, muchos de ellos inmigrantes irlandeses e italianos y montadores mohawk de Kahnawake, cerca de Montreal. Su mástil debía servir para amarrar dirigibles, algo que resultó demasiado peligroso. Fue la estructura más alta de cualquier tipo hasta 1954 y la autoportante más alta hasta 1967."
+      },
+      "show": [
+        "empire-state-building"
+      ]
+    },
+    {
+      "date": "1954",
+      "title": {
+        "en": "Masts on cables",
+        "es": "Mástiles sobre cables"
+      },
+      "camera": {
+        "lon": -44,
+        "lat": 67,
+        "zoom": 1.2
+      },
+      "text": {
+        "en": "From 1954 the tallest structures were TV and radio masts: thin steel lattices held up by guy cables. The tallest of all, near Warsaw, reached 646 m in 1974 and fell in 1991.",
+        "es": "Desde 1954 las estructuras más altas fueron mástiles de radio y televisión: finas celosías de acero sujetas por cables tensores. El más alto de todos, cerca de Varsovia, llegó a 646 m en 1974 y cayó en 1991."
+      },
+      "details": {
+        "en": "A TV mast in Oklahoma City passed the Empire State Building in 1954, and other American masts soon went higher. In 1963 the KVLY-TV mast in North Dakota reached 628.8 m. The Warsaw radio mast, finished in 1974, was taller still. When it collapsed in 1991 while its cables were being replaced, KVLY became the tallest structure again until 2008. Masts are not freestanding: without their cables they would fall. These are records for structures; the tallest building was still the Empire State.",
+        "es": "Un mástil de televisión de Oklahoma City superó al Empire State en 1954, y pronto otros mástiles estadounidenses subieron más. En 1963 el mástil de KVLY-TV, en Dakota del Norte, llegó a 628,8 m. El mástil de radio de Varsovia, terminado en 1974, fue aún más alto. Cuando se derrumbó en 1991 mientras se cambiaban sus cables, KVLY volvió a ser la estructura más alta hasta 2008. Los mástiles no son autoportantes: sin sus cables se caerían. Son récords de estructuras; el edificio más alto seguía siendo el Empire State."
+      },
+      "show": [
+        "kvly-tv-mast",
+        "warsaw-radio-mast"
+      ],
+      "events": [
+        {
+          "icon": "📡",
+          "date": "1954",
+          "at": [
+            -97.4973,
+            35.5496
+          ],
+          "text": {
+            "en": "A TV mast in Oklahoma City passes the Empire State Building",
+            "es": "Un mástil de televisión de Oklahoma City supera al Empire State"
+          }
+        },
+        {
+          "icon": "💥",
+          "date": "1991-08-08",
+          "at": [
+            19.8025,
+            52.3678
+          ],
+          "text": {
+            "en": "The Warsaw radio mast collapses",
+            "es": "Se derrumba el mástil de radio de Varsovia"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1967",
+      "title": {
+        "en": "Ostankino Tower",
+        "es": "La torre Ostánkino"
+      },
+      "camera": {
+        "lon": 37.6,
+        "lat": 55.8,
+        "zoom": 6
+      },
+      "text": {
+        "en": "Moscow's concrete Ostankino Tower, 540 m, became the tallest freestanding structure: one that stands up without cables. The guyed masts were still taller.",
+        "es": "La torre Ostánkino de Moscú, de hormigón y 540 m, se convirtió en la estructura autoportante más alta: la que se sostiene sin cables. Los mástiles atirantados seguían siendo más altos."
+      },
+      "show": [
+        "ostankino-tower"
+      ]
+    },
+    {
+      "date": "1973",
+      "title": {
+        "en": "Towers of offices",
+        "es": "Torres de oficinas"
+      },
+      "camera": {
+        "lon": -80,
+        "lat": 42,
+        "zoom": 6.0
+      },
+      "text": {
+        "en": "The record for buildings stayed in the United States: New York's Twin Towers took it in 1970, and Chicago's Sears Tower, 442 m, in 1973. It held it for 25 years.",
+        "es": "El récord de los edificios siguió en Estados Unidos: las Torres Gemelas de Nueva York lo lograron en 1970, y la Sears Tower de Chicago, de 442 m, en 1973. La conservó 25 años."
+      },
+      "details": {
+        "en": "New ways of building tall made these towers possible. Instead of a forest of columns inside, their outer walls worked as a stiff tube against the wind; Fazlur Rahman Khan, the engineer of the Sears Tower, bundled nine such tubes together. The Twin Towers were destroyed in the terrorist attacks of 11 September 2001, in which 2,753 people died in New York. The Sears Tower, now the Willis Tower, still stands.",
+        "es": "Nuevas formas de construir en altura hicieron posibles estas torres. En vez de un bosque de columnas en el interior, sus muros exteriores funcionaban como un tubo rígido contra el viento; Fazlur Rahman Khan, ingeniero de la Sears Tower, agrupó nueve de esos tubos. Las Torres Gemelas fueron destruidas en los atentados terroristas del 11 de septiembre de 2001, en los que murieron 2753 personas en Nueva York. La Sears Tower, hoy torre Willis, sigue en pie."
+      },
+      "show": [
+        "world-trade-center",
+        "willis-tower"
+      ]
+    },
+    {
+      "date": "1975",
+      "title": {
+        "en": "The CN Tower",
+        "es": "La torre CN"
+      },
+      "camera": {
+        "lon": -79.4,
+        "lat": 43.64,
+        "zoom": 6
+      },
+      "text": {
+        "en": "Toronto's CN Tower, 553 m, took the record for freestanding structures in 1975 and kept it for 32 years. It opened in 1976.",
+        "es": "La torre CN de Toronto, de 553 m, se llevó el récord de las estructuras autoportantes en 1975 y lo mantuvo 32 años. Se inauguró en 1976."
+      },
+      "details": {
+        "en": "Its concrete shaft was poured without stopping into a mould that climbed as it went, and a giant helicopter lifted the antenna into place piece by piece. Even so, the CN Tower was never the tallest structure of all: the Warsaw mast and, after 1991, the KVLY mast were taller, thanks to their cables. Its glass floor and restaurant made it one of Canada's best-loved sights.",
+        "es": "Su fuste de hormigón se vertió sin parar en un molde que iba trepando, y un helicóptero gigante colocó la antena pieza a pieza. Aun así, la torre CN nunca fue la estructura más alta de todas: el mástil de Varsovia y, desde 1991, el de KVLY eran más altos gracias a sus cables. Su suelo de cristal y su restaurante la convirtieron en uno de los lugares más queridos de Canadá."
+      },
+      "show": [
+        "cn-tower"
+      ]
+    },
+    {
+      "date": "2010",
+      "title": {
+        "en": "The Burj Khalifa",
+        "es": "El Burj Khalifa"
+      },
+      "camera": {
+        "lon": 88,
+        "lat": 29,
+        "zoom": 1.5
+      },
+      "text": {
+        "en": "After the Petronas Towers (1998) and Taipei 101 (2004), the Burj Khalifa opened in Dubai in 2010 at 828 m: the tallest building and the tallest structure ever made.",
+        "es": "Tras las torres Petronas (1998) y Taipei 101 (2004), el Burj Khalifa se inauguró en Dubái en 2010 con 828 m: el edificio y la estructura más altos jamás construidos."
+      },
+      "details": {
+        "en": "For the first time since 1894 the tallest building was not in the United States: the Petronas Towers took the title to Malaysia and Taipei 101 to Taiwan. The Burj Khalifa beat them all and, while still being built, passed the CN Tower in 2007 and the KVLY mast in 2008, so that one structure held every record at once. It was built mostly by migrant workers from South and East Asia, many of them poorly paid. Jeddah Tower in Saudi Arabia, still under construction, is planned to pass 1,000 m.",
+        "es": "Por primera vez desde 1894 el edificio más alto no estaba en Estados Unidos: las torres Petronas llevaron el título a Malasia y Taipei 101 a Taiwán. El Burj Khalifa los superó a todos y, aún en obras, adelantó a la torre CN en 2007 y al mástil de KVLY en 2008, de modo que una sola estructura reunió todos los récords. Lo construyeron sobre todo trabajadores inmigrantes del sur y el este de Asia, muchos de ellos mal pagados. La torre Jeddah, en Arabia Saudí, aún en obras, aspira a superar los 1000 m."
+      },
+      "show": [
+        "petronas-towers",
+        "taipei-101",
+        "burj-khalifa"
+      ],
+      "events": [
+        {
+          "icon": "🏗️",
+          "at": [
+            39.0829,
+            21.734
+          ],
+          "text": {
+            "en": "Jeddah Tower, under construction, is planned to be the first building over 1 km tall",
+            "es": "La torre Jeddah, en obras, aspira a ser el primer edificio de más de 1 km"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "In 4,500 years the record went from a stone tomb to church spires and then to iron, steel and concrete, from 146 m to 828 m. Each leap came with a new material or idea and with the pride of those who paid for it; the race goes on.",
+    "es": "En 4500 años el récord pasó de una tumba de piedra a las agujas de las iglesias y después al hierro, el acero y el hormigón, de 146 a 828 m. Cada salto llegó con un nuevo material o una nueva idea y con el orgullo de quienes lo pagaban; la carrera continúa."
+  },
+  "sources": [
+    {
+      "title": "History of the world's tallest structures (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_the_world's_tallest_structures"
+    },
+    {
+      "title": "History of the world's tallest buildings (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_the_world's_tallest_buildings"
+    },
+    {
+      "title": "Lincoln Cathedral (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lincoln_Cathedral"
+    },
+    {
+      "title": "St. Mary's Church, Stralsund (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/St._Mary's_Church,_Stralsund"
+    },
+    {
+      "title": "Beauvais Cathedral (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Beauvais_Cathedral"
+    },
+    {
+      "title": "Strasbourg Cathedral (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Strasbourg_Cathedral"
+    },
+    {
+      "title": "Washington Monument (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Washington_Monument"
+    },
+    {
+      "title": "Eiffel Tower (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Eiffel_Tower"
+    },
+    {
+      "title": "Chrysler Building (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chrysler_Building"
+    },
+    {
+      "title": "Empire State Building (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Empire_State_Building"
+    },
+    {
+      "title": "KVLY-TV mast (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/KVLY-TV_mast"
+    },
+    {
+      "title": "Warsaw radio mast (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_radio_mast"
+    },
+    {
+      "title": "Ostankino Tower (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ostankino_Tower"
+    },
+    {
+      "title": "CN Tower (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/CN_Tower"
+    },
+    {
+      "title": "Burj Khalifa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Burj_Khalifa"
+    }
+  ]
+}
