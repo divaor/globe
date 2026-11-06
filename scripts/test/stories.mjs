@@ -10,7 +10,7 @@ let chromium, devices;
 try { ({ chromium, devices } = require('playwright')); } catch { ({ chromium, devices } = require(require.resolve('playwright', { paths: [process.env.NODE_PATH || '', '/opt/node-tools/node_modules', '/usr/local/lib/node_modules', '/usr/lib/node_modules'] }))); }
 
 const url = process.argv[2] || 'http://localhost:4173/';
-const kindsArg = process.argv[3] || 'eras,food,structures';
+const kindsArg = process.argv[3] || 'eras,food,structures,people';
 const kinds = kindsArg === 'all' ? ['wars', 'eras', 'food', 'structures', 'people'] : kindsArg.split(',');
 const only = process.argv[4]?.split(',');
 const DIR = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people' };

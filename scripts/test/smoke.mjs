@@ -425,6 +425,23 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 12c. Peoples and civilizations: a shared link opens a story millions of years back, with its date
+// in years ago (in English and Spanish).
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#people=earliest-ancestors&step=1&p=globe&lang=en');
+  await page.waitForSelector('.warbar', { timeout: 30000 });
+  await page.waitForTimeout(2500);
+  const en = await page.evaluate(() => ({ mode: window.atlas.app.mode, date: document.querySelector('.wb-date')?.textContent ?? '', title: document.querySelector('.wb-title')?.textContent ?? '' }));
+  check(en.mode === 'people' && /^7\smillion years ago$/.test(en.date) && /Touma/.test(en.title), `a people story opens in deep time (${en.date}: ${en.title})`);
+  await page.goto(`${url}?r=3#people=earliest-ancestors&step=5&p=globe&lang=es`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('.warbar', { timeout: 30000 });
+  await page.waitForTimeout(2500);
+  const es = await page.evaluate(() => document.querySelector('.wb-date')?.textContent ?? '');
+  check(/^hace 3,66\smillones de años$/.test(es), `deep-time dates in Spanish (${es})`);
+  check(!errors.length, `no page errors in Peoples and civilizations${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 // 13. Learn: the quizzes made from the stories ask ten questions with four answers (or a tap on the
 // globe), and "See it in the story" opens the story at the item; a city tour opens steps of stories
 // from different collections and flies to the city each time.
@@ -437,7 +454,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.waitForTimeout(400);
   };
   const storyButton = () => page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /See it in the story/.test(b.textContent)));
-  for (const kind of ['when', 'dish', 'era']) {
+  for (const kind of ['when', 'dish', 'era', 'civ']) {
     await menu('Quiz');
     await page.evaluate((k) => document.querySelector(`[data-quiz="${k}"]`).click(), kind);
     await page.waitForSelector('.learn-card:not([hidden]) .quiz-opt', { timeout: 30000 });
@@ -447,6 +464,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     const fb = await page.evaluate(() => document.querySelector('.learn-card .quiz-fb')?.textContent ?? '');
     const story = await page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].some((b) => /See it in the story/.test(b.textContent)));
     check(/1\/10/.test(q.head) && q.opts.length === 4 && new Set(q.opts).size === 4 && !!q.item && !!fb && story, `quiz "${kind}": ${q.q} ${q.item} (${q.opts.join(' / ')})`);
+    // Closed, so the next quiz's card is not this one.
+    await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+    await page.waitForTimeout(300);
   }
   // The quiz card folds to show the map ("Map") and comes back ("Quiz"); the answer's pin is named
   // and sits below the card; after ten questions the result lists each with right or wrong.

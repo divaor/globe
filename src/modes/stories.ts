@@ -89,7 +89,8 @@ const AGO = -10000;
 function group(n: number, sep: string): string { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, sep); }
 /** How long ago: ["3.2", million] or ["300,000", years]. */
 function agoNum(n: number, es: boolean): [string, boolean] {
-  if (n >= 1e6) { const m = Math.round(n / 1e5) / 10; return [es ? String(m).replace('.', ',') : String(m), true]; }
+  // Millions to two decimals at most, as the stories give them: 7, 3.2, 3.66.
+  if (n >= 1e6) { const m = Math.round(n / 1e4) / 100; return [es ? String(m).replace('.', ',') : String(m), true]; }
   const r = n >= 1e5 ? Math.round(n / 1e3) * 1e3 : Math.round(n / 100) * 100;
   return [group(r, es ? '\u00a0' : ','), false];
 }
