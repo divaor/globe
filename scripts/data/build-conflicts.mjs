@@ -654,8 +654,10 @@ async function preview(c, topo, dir) {
   const sharp = (await import('sharp')).default;
   fs.mkdirSync(dir, { recursive: true });
   const areas = feature(topo, topo.objects.areas).features;
-  const landTopo = readJSON(path.join(DATA, 'base/land-110m.json'));
-  const landF = feature(landTopo, landTopo.objects.land);
+  // Land drawn country by country: the single Afro-Eurasian land polygon gets clipped wrongly in
+  // close-up views and paints the land as sea.
+  const landTopo = readJSON(path.join(DATA, 'base/countries-50m.json'));
+  const landF = feature(landTopo, landTopo.objects.countries);
   const W = 640, H = 640;
   let cam = c.camera;
   const jobs = [];
