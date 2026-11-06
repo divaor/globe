@@ -1,11 +1,11 @@
-// Time-travel modes (political history, plate tectonics, wars and conquests) behind the "Time
-// travel" dock button.
+// Time-travel modes behind the "Time travel" dock button: political history, plate tectonics, and the
+// story collections (wars and conquests, eras and ideas, food through time, great structures).
 import { History } from 'lucide';
 import { h } from '../ui/dom';
 import { t } from '../app/i18n';
 import { HistoryMode } from './history';
 import { PangeaMode } from './pangea';
-import { WarsMode } from './wars';
+import { StoryMode, STORY_KINDS, type StoryKind } from './stories';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 
@@ -21,7 +21,8 @@ export interface Mode {
 
 export class TimeTravel {
   readonly modes: Mode[] = [];
-  readonly wars: WarsMode;
+  readonly stories = {} as Record<StoryKind, StoryMode>;
+  get wars() { return this.stories.wars; }
 
   constructor(private app: App, private shell: Shell) {
     const history = new HistoryMode(app, shell);
@@ -34,12 +35,15 @@ export class TimeTravel {
       id: 'pangea', icon: '🌋', title: () => t('pangeaTitle'), desc: () => t('pangeaDesc'),
       enter: () => pangea.enter(), exit: () => pangea.exit(), tap: (lon, lat) => pangea.tap(lon, lat),
     });
-    // Choosing it opens the list of conflicts; the mode starts when one is picked.
-    const wars = (this.wars = new WarsMode(app, shell));
-    this.add({
-      id: 'wars', icon: '⚔️', title: () => t('warsTitle'), desc: () => t('warsDesc'),
-      enter: () => wars.pick(), exit: () => wars.exit(), tap: (lon, lat) => wars.tap(lon, lat),
-    });
+    // Each story collection opens its list of stories; the mode starts when one is picked.
+    const icons: Record<StoryKind, string> = { wars: '⚔️', eras: '🎨', food: '🌾', structures: '🏛️' };
+    for (const kind of STORY_KINDS) {
+      const m = (this.stories[kind] = new StoryMode(app, shell, kind));
+      this.add({
+        id: kind, icon: icons[kind], title: () => t(`${kind}Title`), desc: () => t(`${kind}Desc`),
+        enter: () => m.pick(), exit: () => m.exit(), tap: (lon, lat) => m.tap(lon, lat),
+      });
+    }
     shell.addDock({ id: 'time', icon: History, label: () => t('timeTravelShort'), order: 30, onClick: () => this.open() });
     // In a mode, taps go to the mode instead of selecting today's countries.
     shell.tapHandlers.unshift((_x, _y, g) => {

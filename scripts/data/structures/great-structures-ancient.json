@@ -1,0 +1,762 @@
+{
+  "id": "great-structures-ancient",
+  "name": {
+    "en": "Great structures: from Göbekli Tepe to the cathedrals",
+    "es": "Grandes construcciones: de Göbekli Tepe a las catedrales"
+  },
+  "icon": "🧱",
+  "era": "ancient",
+  "region": {
+    "en": "The whole world",
+    "es": "Todo el mundo"
+  },
+  "start": "-9600",
+  "end": "1500",
+  "summary": {
+    "en": "Eleven thousand years of building on every continent: stone rings raised by hunter-gatherers, pyramids, temples, walls, roads, mosques and Gothic spires.",
+    "es": "Once mil años de construcción en todos los continentes: anillos de piedra de cazadores-recolectores, pirámides, templos, murallas, caminos, mezquitas y agujas góticas."
+  },
+  "catalog": "all",
+  "camera": {
+    "lon": 30,
+    "lat": 25,
+    "zoom": 1
+  },
+  "steps": [
+    {
+      "date": "-7100",
+      "title": {
+        "en": "The first monuments",
+        "es": "Los primeros monumentos"
+      },
+      "camera": {
+        "lon": 36.6,
+        "lat": 36.0,
+        "zoom": 6.0
+      },
+      "text": {
+        "en": "Long before writing, hunter-gatherers in Anatolia raised rings of carved stone pillars. Later, early farmers built a stone tower at Jericho and packed mud houses together at Çatalhöyük.",
+        "es": "Mucho antes de la escritura, cazadores-recolectores de Anatolia alzaron anillos de pilares de piedra tallada. Después, los primeros agricultores levantaron una torre en Jericó y apiñaron casas de adobe en Çatalhöyük."
+      },
+      "details": {
+        "en": "Around 9500 BC, at Göbekli Tepe and Karahan Tepe in what is now south-eastern Turkey, people who still lived mostly by hunting and gathering cut T-shaped limestone pillars, carved them with foxes, snakes and vultures, and set them in great stone rings. Gathering enough hands for such work may have helped draw people into larger, settled communities. Within a few centuries, farming took hold in the Fertile Crescent. At Jericho, by about 8000 BC, villagers built a stone tower 8.5 m tall with a staircase inside. By 7100 BC the farming families of Çatalhöyük lived in houses so close together that the roofs were their streets.",
+        "es": "Hacia el 9500 a. C., en Göbekli Tepe y Karahan Tepe, en el actual sureste de Turquía, gentes que aún vivían sobre todo de la caza y la recolección tallaron pilares de caliza en forma de T, los decoraron con zorros, serpientes y buitres y los colocaron en grandes anillos de piedra. Reunir tantas manos para esa obra quizá ayudó a que la gente se agrupara en comunidades más grandes y estables. En pocos siglos, la agricultura arraigó en el Creciente Fértil. En Jericó, hacia el 8000 a. C., los aldeanos construyeron una torre de piedra de 8,5 m con una escalera interior. Hacia el 7100 a. C., las familias campesinas de Çatalhöyük vivían en casas tan juntas que los tejados eran sus calles."
+      },
+      "show": [
+        "gobekli-tepe",
+        "karahan-tepe",
+        "tower-of-jericho",
+        "catalhoyuk"
+      ]
+    },
+    {
+      "date": "-3100",
+      "title": {
+        "en": "Megaliths and the first city",
+        "es": "Megalitos y la primera ciudad"
+      },
+      "camera": {
+        "lon": 70,
+        "lat": 15,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Farmers across Europe raised giant stones for their dead and lined them up with the sun. In Iraq, Uruk grew into the first true city; in Australia, the Gunditjmara built traps for eels.",
+        "es": "Agricultores de toda Europa alzaron piedras gigantes para sus muertos y las alinearon con el sol. En Irak, Uruk se convirtió en la primera ciudad de verdad; en Australia, los gunditjmara construyeron trampas para anguilas."
+      },
+      "details": {
+        "en": "Between about 4500 and 2500 BC, farming peoples along the Atlantic coasts and around the Mediterranean built megaliths, monuments of huge stones. At Carnac, in Brittany, more than 3,000 stones stand in rows. On Malta, islanders built the temples of Ġgantija. In Ireland, the great tomb of Newgrange catches the dawn of the winter solstice, and in England work began on Stonehenge around 3100 BC. Their builders left no writing, so we can only guess why. On the plains of Mesopotamia, meanwhile, Uruk grew to perhaps 50,000 people, with temples on raised platforms and some of the earliest writing ever found. And in south-eastern Australia, the Gunditjmara had already been farming eels for well over a thousand years.",
+        "es": "Entre el 4500 y el 2500 a. C., pueblos agricultores de las costas atlánticas y del Mediterráneo construyeron megalitos, monumentos de piedras enormes. En Carnac, en Bretaña, más de 3000 piedras se alinean en filas. En Malta, los isleños levantaron los templos de Ġgantija. En Irlanda, la gran tumba de Newgrange recibe el alba del solsticio de invierno, y en Inglaterra Stonehenge empezó a construirse hacia el 3100 a. C. Sus constructores no dejaron escritos, así que solo podemos adivinar por qué lo hicieron. Mientras tanto, en las llanuras de Mesopotamia, Uruk llegó a tener quizá 50 000 habitantes, con templos sobre plataformas y parte de la escritura más antigua que se conoce. Y en el sureste de Australia, los gunditjmara llevaban ya más de mil años criando anguilas."
+      },
+      "show": [
+        "budj-bim",
+        "carnac-stones",
+        "uruk",
+        "ggantija",
+        "newgrange",
+        "stonehenge"
+      ]
+    },
+    {
+      "date": "-2500",
+      "title": {
+        "en": "The pyramid age",
+        "es": "La era de las pirámides"
+      },
+      "camera": {
+        "lon": 0,
+        "lat": 12,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Egypt's kings turned their tombs into mountains of stone, from Djoser's steps to Khufu's Great Pyramid. Far away, Caral in Peru built pyramids too, and the Indus people planned whole cities.",
+        "es": "Los reyes de Egipto convirtieron sus tumbas en montañas de piedra, de los escalones de Zoser a la Gran Pirámide de Keops. Muy lejos, Caral, en Perú, también alzó pirámides, y el pueblo del Indo planificó ciudades enteras."
+      },
+      "details": {
+        "en": "Around 2650 BC the architect Imhotep stacked six stone platforms for King Djoser: the first pyramid. His successors learned fast. King Sneferu built three pyramids, getting the smooth sides right at last with the Red Pyramid, and his son Khufu built the Great Pyramid of Giza, the tallest structure on Earth for some 3,800 years. Its builders were not slaves but paid workers and farmers serving in turns, who lived in a town nearby with its own bakeries; injured workers were cared for, and some were buried with honour beside the pyramids. With no contact with Egypt, the people of Caral, in Peru, built platform pyramids around sunken plazas, and in the Indus Valley, Mohenjo-daro was laid out on a grid with drains for every street.",
+        "es": "Hacia el 2650 a. C., el arquitecto Imhotep apiló seis plataformas de piedra para el rey Zoser: la primera pirámide. Sus sucesores aprendieron deprisa. El rey Snefru construyó tres pirámides y por fin consiguió las caras lisas con la Pirámide Roja, y su hijo Keops levantó la Gran Pirámide de Guiza, la estructura más alta de la Tierra durante unos 3800 años. No la construyeron esclavos, sino trabajadores pagados y campesinos que se turnaban, y que vivían en un pueblo cercano con sus propias panaderías; se atendía a los heridos, y algunos fueron enterrados con honores junto a las pirámides. Sin contacto alguno con Egipto, el pueblo de Caral, en Perú, construyó pirámides de plataforma alrededor de plazas hundidas, y en el valle del Indo se trazó Mohenjo-Daro en cuadrícula, con desagües en todas sus calles."
+      },
+      "show": [
+        "pyramid-djoser",
+        "red-pyramid",
+        "great-pyramid-giza",
+        "caral",
+        "mohenjo-daro"
+      ]
+    },
+    {
+      "date": "-1250",
+      "title": {
+        "en": "Temples, ziggurats and palaces",
+        "es": "Templos, zigurats y palacios"
+      },
+      "camera": {
+        "lon": 35.2,
+        "lat": 27.6,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "Bronze Age kings built homes for their gods: ziggurats in Mesopotamia and Elam, a mud-brick temple in Nubia and Egypt's vast temples at Thebes. On Crete, the Minoans built a maze-like palace.",
+        "es": "Los reyes de la Edad del Bronce construyeron casas para sus dioses: zigurats en Mesopotamia y Elam, un templo de adobe en Nubia y los inmensos templos egipcios de Tebas. En Creta, los minoicos levantaron un palacio laberíntico."
+      },
+      "details": {
+        "en": "Temples became the biggest buildings of their cities. In Nubia, Kerma, capital of Egypt's great southern rival, grew around a mud-brick temple about 20 m high. Around 2100 BC King Ur-Nammu raised the Ziggurat of Ur for the moon god. At Thebes, about thirty pharaohs over 2,000 years enlarged the temple of Amun at Karnak, and Hatshepsut, one of the few women to rule as pharaoh, set her terraced temple against the cliffs across the Nile. Ramesses II had Abu Simbel carved into a Nubian cliff, and around 1250 BC the Elamite king Untash-Napirisha built the ziggurat of Chogha Zanbil in Iran. On Crete, the Minoan palace of Knossos, with its halls, stairs and storerooms, may lie behind the Greek legend of the Labyrinth.",
+        "es": "Los templos se convirtieron en los mayores edificios de sus ciudades. En Nubia, Kerma, capital del gran rival de Egipto en el sur, creció en torno a un templo de adobe de unos 20 m. Hacia el 2100 a. C., el rey Ur-Nammu alzó el zigurat de Ur para el dios de la luna. En Tebas, unos treinta faraones ampliaron durante 2000 años el templo de Amón en Karnak, y Hatshepsut, una de las pocas mujeres que reinaron como faraón, levantó su templo en terrazas al pie de los acantilados, al otro lado del Nilo. Ramsés II hizo tallar Abu Simbel en un acantilado de Nubia, y hacia el 1250 a. C. el rey elamita Untash-Napirisha construyó el zigurat de Choga Zanbil, en Irán. En Creta, el palacio minoico de Cnosos, con sus salas, escaleras y almacenes, quizá esté detrás de la leyenda griega del Laberinto."
+      },
+      "show": [
+        "western-deffufa",
+        "ziggurat-ur",
+        "karnak",
+        "knossos",
+        "hatshepsut-temple",
+        "abu-simbel",
+        "chogha-zanbil"
+      ]
+    },
+    {
+      "date": "-500",
+      "title": {
+        "en": "Kings and engineers",
+        "es": "Reyes e ingenieros"
+      },
+      "camera": {
+        "lon": 39.9,
+        "lat": 31.1,
+        "zoom": 2.8
+      },
+      "text": {
+        "en": "Iron Age kingdoms showed off their wealth: Saba's great dam, Babylon's legendary gardens, the marble temple of Ephesus, a tunnel through a Greek mountain and the Persian kings' Persepolis.",
+        "es": "Los reinos de la Edad del Hierro lucieron su riqueza: la gran presa de Saba, los legendarios jardines de Babilonia, el templo de mármol de Éfeso, un túnel a través de una montaña griega y la Persépolis de los reyes persas."
+      },
+      "details": {
+        "en": "In south-western Arabia, the kingdom of Saba, the biblical Sheba, grew rich on incense and built the great dam of Marib to water its desert fields. In Babylon, Nebuchadnezzar II rebuilt his capital; Greek writers later told of hanging gardens there, though Babylonian texts never mention them. In Ephesus, King Croesus helped pay for a marble temple to Artemis, and on the island of Samos the engineer Eupalinos had a kilometre-long water tunnel dug from both ends at once, so precisely that the two teams met in the middle. Then the Persian Empire, the largest the world had yet seen, gathered workers from many lands to build Persepolis. Clay tablets found there record that they were paid in food and silver.",
+        "es": "En el suroeste de Arabia, el reino de Saba se enriqueció con el incienso y construyó la gran presa de Marib para regar sus campos en el desierto. En Babilonia, Nabucodonosor II reconstruyó su capital; los autores griegos hablaron después de unos jardines colgantes, aunque los textos babilonios nunca los mencionan. En Éfeso, el rey Creso ayudó a pagar un templo de mármol a Artemisa, y en la isla de Samos el ingeniero Eupalino hizo excavar un túnel de agua de un kilómetro desde los dos extremos a la vez, con tanta precisión que los dos equipos se encontraron en el centro. Después, el Imperio persa, el mayor que el mundo había visto, reunió obreros de muchas tierras para construir Persépolis. Las tablillas de arcilla halladas allí registran que cobraban en alimentos y plata."
+      },
+      "events": [
+        {
+          "icon": "🔥",
+          "date": "-330",
+          "at": [
+            52.89,
+            29.935
+          ],
+          "text": {
+            "en": "Alexander the Great burns Persepolis",
+            "es": "Alejandro Magno incendia Persépolis"
+          }
+        }
+      ],
+      "show": [
+        "marib-dam",
+        "hanging-gardens-babylon",
+        "temple-artemis-ephesus",
+        "tunnel-eupalinos",
+        "persepolis"
+      ]
+    },
+    {
+      "date": "-280",
+      "title": {
+        "en": "Greece and its wonders",
+        "es": "Grecia y sus maravillas"
+      },
+      "camera": {
+        "lon": 25.6,
+        "lat": 34.8,
+        "zoom": 6.5
+      },
+      "text": {
+        "en": "Greek cities competed in marble and bronze: the Parthenon in Athens, Zeus at Olympia, a perfect theatre at Epidaurus. After Alexander, his heirs raised a bronze giant at Rhodes and a lighthouse at Alexandria.",
+        "es": "Las ciudades griegas compitieron en mármol y bronce: el Partenón de Atenas, el Zeus de Olimpia, un teatro perfecto en Epidauro. Tras Alejandro, sus herederos alzaron un gigante de bronce en Rodas y un faro en Alejandría."
+      },
+      "details": {
+        "en": "In the 5th century BC Athens, at the height of its democracy and its empire, rebuilt the Acropolis that the Persians had burned and crowned it with the Parthenon. Its sculptor, Phidias, then made the giant gold-and-ivory Zeus at Olympia. In the next century the theatre of Epidaurus was built for the festivals of Asclepius, the god of healing, and its sound still amazes visitors. After Alexander the Great's conquests, Greek kings and cities around the eastern Mediterranean built on a new scale: the Mausoleum at Halicarnassus, the bronze Colossus of Rhodes and the Lighthouse of Alexandria, about 100 m tall. Greek travellers would soon list them among the Seven Wonders of the World.",
+        "es": "En el siglo V a. C., Atenas, en el apogeo de su democracia y su imperio, reconstruyó la Acrópolis que habían quemado los persas y la coronó con el Partenón. Su escultor, Fidias, hizo después el gigantesco Zeus de oro y marfil de Olimpia. Al siglo siguiente se construyó el teatro de Epidauro para las fiestas de Asclepio, el dios de la medicina, y su sonido aún asombra a los visitantes. Tras las conquistas de Alejandro Magno, reyes y ciudades griegas del Mediterráneo oriental construyeron a una nueva escala: el Mausoleo de Halicarnaso, el Coloso de bronce de Rodas y el Faro de Alejandría, de unos 100 m. Pronto los viajeros griegos los incluirían entre las siete maravillas del mundo."
+      },
+      "show": [
+        "parthenon",
+        "statue-zeus-olympia",
+        "mausoleum-halicarnassus",
+        "epidaurus-theatre",
+        "colossus-rhodes",
+        "lighthouse-alexandria"
+      ]
+    },
+    {
+      "date": "-210",
+      "title": {
+        "en": "Empires build roads and walls",
+        "es": "Imperios de caminos y murallas"
+      },
+      "camera": {
+        "lon": 93.4,
+        "lat": 38.7,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "New empires needed to move armies and grain. Rome paved the Appian Way; China dug canals, tamed rivers and joined walls along its northern frontier; in India, Emperor Ashoka built stupas.",
+        "es": "Los nuevos imperios necesitaban mover ejércitos y grano. Roma empedró la Vía Apia; China excavó canales, domó ríos y unió murallas en su frontera norte; en la India, el emperador Ashoka levantó estupas."
+      },
+      "details": {
+        "en": "In 312 BC Rome began the Appian Way, a paved military road running south from the city. In China, the kingdom of Wu had dug the first stretch of what became the Grand Canal in 486 BC, and the State of Qin built the Dujiangyan irrigation works in 256 BC. In 221 BC the king of Qin conquered his rivals and became Qin Shi Huang, the First Emperor. He made writing, coins and cart axles the same everywhere, sent General Meng Tian to join older walls against the Xiongnu nomads, and had some 700,000 workers build his tomb and its army of clay soldiers. Forced labour on the walls cost many lives, remembered in the legend of Lady Meng Jiang. In India, the Maurya emperor Ashoka, sickened by war, spread Buddhism and built stupas like the one at Sanchi.",
+        "es": "En el 312 a. C., Roma empezó la Vía Apia, una calzada militar empedrada hacia el sur. En China, el reino de Wu había excavado en el 486 a. C. el primer tramo de lo que sería el Gran Canal, y el reino de Qin construyó el regadío de Dujiangyan en el 256 a. C. En el 221 a. C., el rey de Qin venció a sus rivales y se convirtió en Qin Shi Huang, el Primer Emperador. Unificó la escritura, la moneda y el ancho de los ejes de los carros, envió al general Meng Tian a unir viejas murallas contra los nómadas xiongnu e hizo construir a unos 700 000 trabajadores su tumba y su ejército de soldados de barro. El trabajo forzado en las murallas costó muchas vidas, que recuerda la leyenda de la dama Meng Jiang. En la India, el emperador maurya Ashoka, asqueado de la guerra, difundió el budismo y construyó estupas como la de Sanchi."
+      },
+      "show": [
+        "grand-canal-china",
+        "via-appia",
+        "dujiangyan",
+        "sanchi-stupa",
+        "qin-mausoleum",
+        "great-wall-qin"
+      ]
+    },
+    {
+      "date": "238",
+      "title": {
+        "en": "Rome and its neighbours",
+        "es": "Roma y sus vecinos"
+      },
+      "camera": {
+        "lon": 14,
+        "lat": 36,
+        "zoom": 1.8
+      },
+      "text": {
+        "en": "Roman engineers built with arches, concrete and vast labour: aqueducts, bridges, a lighthouse, a frontier wall, the Colosseum and the Pantheon. Beyond the empire, Kush and the Nabataeans built wonders too.",
+        "es": "Los ingenieros romanos construyeron con arcos, hormigón y un trabajo inmenso: acueductos, puentes, un faro, una muralla fronteriza, el Coliseo y el Panteón. Fuera del imperio, Kush y los nabateos también levantaron maravillas."
+      },
+      "details": {
+        "en": "Rome ruled the whole Mediterranean, and its engineers used arches and a new material, concrete, to build on a huge scale. Aqueducts like the Pont du Gard and the one at Segovia carried water many kilometres to fountains and baths, the bridge at Alcántara spanned a deep gorge, and the Tower of Hercules guided ships off Spain. In Rome, the Colosseum, paid for with loot from the Temple in Jerusalem and probably built largely by enslaved prisoners, held crowds of 50,000 or more, and the Pantheon's concrete dome is still the largest of its kind. Hadrian had a wall built across Britain. Beyond the frontiers, the Nabataeans carved tombs into the cliffs of Petra, and the kings and queens of Kush raised steep pyramids at Meroë.",
+        "es": "Roma dominaba todo el Mediterráneo, y sus ingenieros usaron el arco y un material nuevo, el hormigón, para construir a gran escala. Acueductos como el puente del Gard o el de Segovia llevaban agua durante kilómetros a fuentes y termas, el puente de Alcántara salvó un profundo cañón y la Torre de Hércules guiaba a los barcos frente a Hispania. En Roma, el Coliseo, pagado con el botín del Templo de Jerusalén y levantado probablemente sobre todo por prisioneros esclavizados, acogía a 50 000 espectadores o más, y la cúpula de hormigón del Panteón sigue siendo la mayor de su clase. Adriano mandó construir una muralla de lado a lado de Britania. Más allá de las fronteras, los nabateos tallaron tumbas en los acantilados de Petra, y los reyes y reinas de Kush alzaron empinadas pirámides en Meroe."
+      },
+      "events": [
+        {
+          "icon": "⚔️",
+          "date": "70",
+          "at": [
+            35.2354,
+            31.778
+          ],
+          "text": {
+            "en": "Rome destroys Jerusalem and its Temple; the loot pays for the Colosseum",
+            "es": "Roma destruye Jerusalén y su Templo; el botín paga el Coliseo"
+          }
+        }
+      ],
+      "show": [
+        "meroe-pyramids",
+        "petra-treasury",
+        "pont-du-gard",
+        "colosseum",
+        "tower-of-hercules",
+        "aqueduct-segovia",
+        "alcantara-bridge",
+        "pantheon-rome",
+        "hadrians-wall",
+        "el-djem"
+      ]
+    },
+    {
+      "date": "500",
+      "title": {
+        "en": "Pyramids of the Americas",
+        "es": "Pirámides de América"
+      },
+      "camera": {
+        "lon": -87.4,
+        "lat": 6.5,
+        "zoom": 1.6
+      },
+      "text": {
+        "en": "In the Americas, the Olmecs, Zapotecs and Maya built pyramids and cities, and Teotihuacan grew to about 100,000 people. In the Andes, the peoples of Nazca and Tiwanaku shaped deserts and mountains.",
+        "es": "En América, olmecas, zapotecas y mayas construyeron pirámides y ciudades, y Teotihuacán llegó a tener unas 100 000 personas. En los Andes, los pueblos de Nazca y Tiahuanaco dieron forma a desiertos y montañas."
+      },
+      "details": {
+        "en": "With no contact with the rest of the world, the peoples of the Americas built great centres of their own. The Olmecs of La Venta raised one of the first pyramids of Mesoamerica and carved colossal heads of their rulers. The Zapotecs levelled a mountaintop for their capital, Monte Albán, and Maya kings built temple-pyramids above the rainforest at Tikal. In central Mexico, the pyramid of Cholula grew over centuries into the largest by volume on Earth, and Teotihuacan, laid out along a great avenue around the Pyramid of the Sun, became the largest city in the Americas. In Peru, the thirteen towers of Chankillo tracked the sun and the Nazca drew giant figures in the desert, while Tiwanaku rose near Lake Titicaca.",
+        "es": "Sin contacto con el resto del mundo, los pueblos de América construyeron grandes centros propios. Los olmecas de La Venta alzaron una de las primeras pirámides de Mesoamérica y tallaron cabezas colosales de sus gobernantes. Los zapotecas allanaron la cima de una montaña para su capital, Monte Albán, y los reyes mayas levantaron templos-pirámide sobre la selva en Tikal. En el centro de México, la pirámide de Cholula creció durante siglos hasta ser la mayor del mundo por volumen, y Teotihuacán, trazada a lo largo de una gran avenida en torno a la Pirámide del Sol, se convirtió en la mayor ciudad de América. En Perú, las trece torres de Chankillo seguían el sol y los nazcas dibujaron figuras gigantes en el desierto, mientras Tiahuanaco crecía junto al lago Titicaca."
+      },
+      "show": [
+        "la-venta",
+        "monte-alban",
+        "nazca-lines",
+        "tikal",
+        "cholula-pyramid",
+        "chankillo",
+        "pyramid-of-the-sun",
+        "tiwanaku"
+      ]
+    },
+    {
+      "date": "605",
+      "title": {
+        "en": "Stelae, tombs and a great dome",
+        "es": "Estelas, tumbas y una gran cúpula"
+      },
+      "camera": {
+        "lon": 78.6,
+        "lat": 33.8,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "As Rome's western empire fell, other kingdoms built big: Aksum's carved stelae, Japan's keyhole-shaped tombs, a palace on a rock in Sri Lanka, Justinian's Hagia Sophia and a daring stone bridge in China.",
+        "es": "Al caer la Roma de Occidente, otros reinos construyeron a lo grande: las estelas de Aksum, las tumbas con forma de cerradura de Japón, un palacio sobre una roca en Sri Lanka, la Santa Sofía de Justiniano y un audaz puente chino."
+      },
+      "details": {
+        "en": "In the 4th century the kingdom of Aksum, in today's Ethiopia and Eritrea, traded across the Red Sea, minted its own coins and became Christian; its kings marked their tombs with giant carved stelae. In Japan, the great kings of the Kofun period were buried under keyhole-shaped mounds, the largest almost half a kilometre long. In Sri Lanka, King Kashyapa built a palace on top of the rock of Sigiriya. In Constantinople, capital of the Eastern Roman Empire, Justinian rebuilt Hagia Sophia in under six years after riots had burned the old church; its dome seemed to hang from heaven on a ring of light. In China, the reunited empire of the Sui built the Zhaozhou Bridge, still standing after 1,400 years.",
+        "es": "En el siglo IV, el reino de Aksum, en las actuales Etiopía y Eritrea, comerciaba a través del mar Rojo, acuñaba su propia moneda y se hizo cristiano; sus reyes señalaban sus tumbas con enormes estelas talladas. En Japón, los grandes reyes del periodo Kofun se enterraban bajo túmulos con forma de ojo de cerradura, el mayor de casi medio kilómetro. En Sri Lanka, el rey Kashyapa construyó un palacio en lo alto de la roca de Sigiriya. En Constantinopla, capital del Imperio romano de Oriente, Justiniano reconstruyó Santa Sofía en menos de seis años después de que unas revueltas quemaran la iglesia anterior; su cúpula parecía colgar del cielo sobre un anillo de luz. En China, el imperio reunificado de los Sui construyó el puente de Zhaozhou, que sigue en pie 1400 años después."
+      },
+      "events": [
+        {
+          "icon": "🔥",
+          "date": "532-01",
+          "at": [
+            28.98,
+            41.0083
+          ],
+          "text": {
+            "en": "The Nika riots burn the old church of Hagia Sophia",
+            "es": "La revuelta de Niká quema la antigua iglesia de Santa Sofía"
+          }
+        }
+      ],
+      "show": [
+        "aksum-stelae",
+        "daisen-kofun",
+        "sigiriya",
+        "hagia-sophia",
+        "zhaozhou-bridge"
+      ]
+    },
+    {
+      "date": "833",
+      "title": {
+        "en": "Buddhism's monuments",
+        "es": "Los monumentos del budismo"
+      },
+      "camera": {
+        "lon": 114.3,
+        "lat": 26.5,
+        "zoom": 1.3
+      },
+      "text": {
+        "en": "Buddhism spread from India along trade routes and seas. Monks painted caves at Ajanta, Japan built temples of wood and bronze, a giant Buddha was carved in China and Java raised Borobudur.",
+        "es": "El budismo se extendió desde la India por rutas comerciales y mares. Los monjes pintaron cuevas en Ajanta, Japón levantó templos de madera y bronce, en China se talló un Buda gigante y Java alzó Borobudur."
+      },
+      "details": {
+        "en": "From its homeland in India, Buddhism travelled with merchants and monks along the Silk Roads and the sea routes of Asia. At Ajanta, monks and craftsmen carved halls into a cliff and covered them with paintings. In Japan, Prince Shōtoku founded Hōryū-ji with builders trained in Korean methods, and Emperor Shōmu, after years of smallpox and famine, raised a giant bronze Buddha at Tōdai-ji with help gathered from ordinary people by the monk Gyōki. In Korea, Queen Seondeok of Silla built a stone tower to watch the sky. In China, the monk Haitong began carving the Leshan Buddha to calm a dangerous river, and on Java the Sailendra kings built Borobudur, the largest Buddhist temple in the world.",
+        "es": "Desde su tierra natal, la India, el budismo viajó con mercaderes y monjes por las Rutas de la Seda y las rutas marítimas de Asia. En Ajanta, monjes y artesanos excavaron salas en un acantilado y las cubrieron de pinturas. En Japón, el príncipe Shōtoku fundó Hōryū-ji con constructores formados en técnicas coreanas, y el emperador Shōmu, tras años de viruela y hambre, alzó un Buda gigante de bronce en Tōdai-ji con la ayuda que el monje Gyōki reunió entre la gente común. En Corea, la reina Seondeok de Silla construyó una torre de piedra para observar el cielo. En China, el monje Haitong empezó a tallar el Buda de Leshan para calmar un río peligroso, y en Java los reyes Sailendra construyeron Borobudur, el mayor templo budista del mundo."
+      },
+      "show": [
+        "ajanta-caves",
+        "horyu-ji",
+        "cheomseongdae",
+        "leshan-buddha",
+        "todai-ji",
+        "borobudur"
+      ]
+    },
+    {
+      "date": "860",
+      "title": {
+        "en": "Islam's great mosques",
+        "es": "Las grandes mezquitas del islam"
+      },
+      "camera": {
+        "lon": 24,
+        "lat": 34,
+        "zoom": 2.1
+      },
+      "text": {
+        "en": "Within a century of Muhammad, Muslim rule stretched from Spain to Central Asia. Caliphs and emirs built shrines and great mosques, from Jerusalem and Damascus to Kairouan, Córdoba, Samarra and Fez.",
+        "es": "Un siglo después de Mahoma, el dominio musulmán se extendía de Hispania a Asia central. Califas y emires levantaron santuarios y grandes mezquitas, de Jerusalén y Damasco a Kairuán, Córdoba, Samarra y Fez."
+      },
+      "details": {
+        "en": "The first great works of Islamic architecture borrowed the skills of Roman, Byzantine and Persian builders and put them to new uses. In Jerusalem, Caliph Abd al-Malik built the Dome of the Rock over a rock sacred to Muslims, Jews and Christians. In Damascus, al-Walid I filled his great mosque with golden mosaics. The mosque of Kairouan became the model for North Africa, and in Córdoba the Umayyad emirs of al-Andalus raised a forest of red-and-white arches. In Iraq, the Abbasid caliph al-Mutawakkil built what was then the largest mosque in the world, with a spiral minaret. And in Fez, according to tradition, a merchant's daughter, Fatima al-Fihri, founded the mosque of al-Qarawiyyin, which became a great centre of learning.",
+        "es": "Las primeras grandes obras de la arquitectura islámica tomaron las técnicas de los constructores romanos, bizantinos y persas y les dieron usos nuevos. En Jerusalén, el califa Abd al-Malik construyó la Cúpula de la Roca sobre una roca sagrada para musulmanes, judíos y cristianos. En Damasco, al-Walid I llenó su gran mezquita de mosaicos dorados. La mezquita de Kairuán fue el modelo del norte de África, y en Córdoba los emires omeyas de al-Ándalus alzaron un bosque de arcos rojos y blancos. En Irak, el califa abasí al-Mutawakkil construyó la que fue entonces la mayor mezquita del mundo, con un alminar en espiral. Y en Fez, según la tradición, la hija de un comerciante, Fátima al-Fihri, fundó la mezquita de al-Qarawiyyin, que llegó a ser un gran centro de saber."
+      },
+      "show": [
+        "kairouan-mosque",
+        "dome-of-the-rock",
+        "umayyad-mosque",
+        "cordoba-mezquita",
+        "samarra-mosque",
+        "qarawiyyin"
+      ]
+    },
+    {
+      "date": "1250",
+      "title": {
+        "en": "The Americas and the Pacific",
+        "es": "América y el Pacífico"
+      },
+      "camera": {
+        "lon": -130,
+        "lat": 12,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Between about 900 and 1250, Chichen Itza led Yucatán, Cahokia grew into the largest town north of Mexico and the Chimú built Chan Chan. In the Pacific, islanders raised Nan Madol and the first moai.",
+        "es": "Entre el 900 y el 1250, más o menos, Chichén Itzá dominó Yucatán, Cahokia se convirtió en el mayor poblado al norte de México y los chimúes construyeron Chan Chan. En el Pacífico se alzaron Nan Madol y los primeros moáis."
+      },
+      "details": {
+        "en": "In Yucatán, the Maya city of Chichen Itza became a capital of trade and pilgrimage, crowned by the pyramid of Kukulcán. Far to the north, by the Mississippi, the people of Cahokia carried millions of baskets of earth to build Monks Mound, the largest earthwork of the Americas, at the heart of a town of many thousands. In the deserts of the south-west, Ancestral Puebloans built Pueblo Bonito, a stone 'great house' of some 800 rooms, and later tucked whole villages such as Cliff Palace under the cliffs of Mesa Verde. On the dry coast of Peru, the Chimú built Chan Chan, where each king's palace became his tomb. Across the Pacific, the Saudeleur rulers of Pohnpei built Nan Madol on a coral reef, and the Rapa Nui began carving their moai.",
+        "es": "En Yucatán, la ciudad maya de Chichén Itzá se convirtió en una capital del comercio y la peregrinación, coronada por la pirámide de Kukulcán. Muy al norte, junto al Misisipi, el pueblo de Cahokia acarreó millones de cestos de tierra para construir Monks Mound, la mayor obra de tierra de América, en el corazón de un poblado de muchos miles de personas. En los desiertos del suroeste, los ancestros de los indios pueblo construyeron Pueblo Bonito, una «gran casa» de piedra de unas 800 habitaciones, y más tarde metieron aldeas enteras, como Cliff Palace, bajo los acantilados de Mesa Verde. En la árida costa de Perú, los chimúes construyeron Chan Chan, donde el palacio de cada rey se convertía en su tumba. Al otro lado del Pacífico, los soberanos saudeleur de Pohnpei levantaron Nan Madol sobre un arrecife de coral, y los rapanui empezaron a tallar sus moáis."
+      },
+      "show": [
+        "chichen-itza",
+        "pueblo-bonito",
+        "chan-chan",
+        "monks-mound",
+        "nan-madol",
+        "cliff-palace",
+        "rapa-nui-moai"
+      ]
+    },
+    {
+      "date": "1250",
+      "title": {
+        "en": "Temples and towers of Asia",
+        "es": "Templos y torres de Asia"
+      },
+      "camera": {
+        "lon": 86.2,
+        "lat": 19.3,
+        "zoom": 2.5
+      },
+      "text": {
+        "en": "Hindu and Buddhist kings built temple-mountains of stone: Kailasa carved from one rock, the Chola temple at Thanjavur, the plain of Bagan and Angkor Wat. In Delhi, new sultans raised the Qutb Minar.",
+        "es": "Reyes hindúes y budistas construyeron templos-montaña de piedra: Kailasa, tallado en una sola roca, el templo chola de Thanjavur, la llanura de Bagan y Angkor Wat. En Delhi, los nuevos sultanes alzaron el Qutb Minar."
+      },
+      "details": {
+        "en": "Across South and Southeast Asia, temples were built as models of the holy mountains where the gods lived. At Ellora, workers of the Rashtrakuta kings carved the Kailasa temple down into a cliff. In southern India, the Chola emperor Rajaraja I, whose fleets reached Southeast Asia, built the Brihadeeswarar Temple with its 66 m tower. In Myanmar, the kings and people of Bagan raised more than 10,000 Buddhist monuments in about 250 years, and in Cambodia the Khmer king Suryavarman II built Angkor Wat, the largest religious complex in the world. In the 1190s armies from Afghanistan conquered northern India; their general Qutb ud-Din Aibak began the Qutb Minar and founded the Delhi Sultanate. Around 1250, a king of Odisha built the Konark Sun Temple as a giant stone chariot.",
+        "es": "Por el sur y el sudeste de Asia, los templos se construían como maquetas de las montañas sagradas donde vivían los dioses. En Ellora, obreros de los reyes rashtrakuta tallaron el templo de Kailasa hacia abajo en un acantilado. En el sur de la India, el emperador chola Rajaraja I, cuyas flotas llegaban al Sudeste Asiático, construyó el templo de Brihadisvara con su torre de 66 m. En Myanmar, los reyes y el pueblo de Bagan alzaron más de 10 000 monumentos budistas en unos 250 años, y en Camboya el rey jemer Suryavarman II construyó Angkor Wat, el mayor complejo religioso del mundo. En la década de 1190, ejércitos llegados de Afganistán conquistaron el norte de la India; su general Qutb ud-Din Aibak empezó el Qutb Minar y fundó el sultanato de Delhi. Hacia 1250, un rey de Odisha construyó el templo del Sol de Konark como un gigantesco carro de piedra."
+      },
+      "show": [
+        "kailasa-ellora",
+        "brihadeeswarar",
+        "bagan-temples",
+        "angkor-wat",
+        "qutb-minar",
+        "konark-sun-temple"
+      ]
+    },
+    {
+      "date": "1311",
+      "title": {
+        "en": "Castles and cathedrals",
+        "es": "Castillos y catedrales"
+      },
+      "camera": {
+        "lon": 16,
+        "lat": 43,
+        "zoom": 2.1
+      },
+      "text": {
+        "en": "In medieval Europe, kings and lords built stone castles, and towns competed to raise Gothic cathedrals full of light. In 1311 Lincoln's spire overtook the Great Pyramid as the world's tallest structure.",
+        "es": "En la Europa medieval, reyes y señores construyeron castillos de piedra, y las ciudades compitieron por alzar catedrales góticas llenas de luz. En 1311 la aguja de Lincoln superó a la Gran Pirámide como la estructura más alta del mundo."
+      },
+      "details": {
+        "en": "After 1066 the Normans held down England with castles like the Tower of London. Crusaders and knightly orders built huge fortresses in the Levant, such as Krak des Chevaliers, and the kings of France ringed Carcassonne with double walls. From the 1140s a new style, later called Gothic, used pointed arches, ribbed vaults and flying buttresses to raise tall, thin walls filled with stained glass, as at Notre-Dame and Chartres. Cologne began a cathedral so ambitious that it was only finished in 1880. Each cathedral took generations of masons, carpenters and labourers, working in real danger, and was paid for by bishops, kings, guilds and ordinary townspeople. Far to the south, in Granada, the Nasrid sultans were building the Alhambra.",
+        "es": "Después de 1066, los normandos dominaron Inglaterra con castillos como la Torre de Londres. Los cruzados y las órdenes militares construyeron enormes fortalezas en Levante, como el Crac de los Caballeros, y los reyes de Francia rodearon Carcasona de murallas dobles. Desde la década de 1140, un estilo nuevo, al que luego se llamó gótico, usó arcos apuntados, bóvedas de crucería y arbotantes para alzar muros altos y finos llenos de vidrieras, como en Notre-Dame y Chartres. Colonia empezó una catedral tan ambiciosa que no se terminó hasta 1880. Cada catedral exigió generaciones de canteros, carpinteros y peones, que trabajaban con verdadero peligro, y la pagaron obispos, reyes, gremios y vecinos corrientes. Muy al sur, en Granada, los sultanes nazaríes construían la Alhambra."
+      },
+      "events": [
+        {
+          "icon": "🏆",
+          "date": "1311",
+          "at": [
+            -0.5361,
+            53.2344
+          ],
+          "text": {
+            "en": "Lincoln Cathedral's spire makes it the tallest building on Earth",
+            "es": "La aguja de la catedral de Lincoln la convierte en el edificio más alto de la Tierra"
+          }
+        }
+      ],
+      "show": [
+        "mont-saint-michel",
+        "tower-of-london",
+        "krak-des-chevaliers",
+        "notre-dame-paris",
+        "leaning-tower-pisa",
+        "chartres-cathedral",
+        "alhambra",
+        "carcassonne",
+        "cologne-cathedral",
+        "lincoln-cathedral"
+      ]
+    },
+    {
+      "date": "1350",
+      "title": {
+        "en": "Africa's builders",
+        "es": "Los constructores de África"
+      },
+      "camera": {
+        "lon": 23,
+        "lat": 2,
+        "zoom": 1.7
+      },
+      "text": {
+        "en": "African kingdoms grew rich on gold, salt and ivory. Their builders carved churches from the rock in Ethiopia, raised stone walls in Zimbabwe, built coral towns on the Swahili coast and mosques of earth in Mali.",
+        "es": "Los reinos africanos se enriquecieron con el oro, la sal y el marfil. Sus constructores tallaron iglesias en la roca en Etiopía, alzaron murallas de piedra en Zimbabue, ciudades de coral en la costa suajili y mezquitas de tierra en Malí."
+      },
+      "details": {
+        "en": "In the highlands of Ethiopia, King Lalibela had eleven churches cut down into the rock as a new Jerusalem. On the plateau of southern Africa, the ancestors of the Shona built Great Zimbabwe, whose granite walls rise 11 m without mortar. Gold from the interior was traded through Swahili ports such as Kilwa, whose coral-stone mosque and palace impressed the traveller Ibn Battuta in 1331. In West Africa, the Mali Empire controlled the gold of the upper Niger; its ruler Mansa Musa made a famous pilgrimage to Mecca in 1324 and, on his return, had the Djinguereber Mosque built in Timbuktu. In Djenné, a great mosque of mud brick first rose around the 13th century; the one that stands today, from 1907, is still replastered by the whole town each year.",
+        "es": "En las tierras altas de Etiopía, el rey Lalibela hizo excavar once iglesias hacia abajo en la roca como una nueva Jerusalén. En la meseta del sur de África, los antepasados de los shona construyeron Gran Zimbabue, cuyos muros de granito se alzan 11 m sin argamasa. El oro del interior se comerciaba en puertos suajilis como Kilwa, cuya mezquita y cuyo palacio de piedra de coral impresionaron al viajero Ibn Battuta en 1331. En África occidental, el Imperio de Malí controlaba el oro del alto Níger; su soberano, Mansa Musa, hizo una famosa peregrinación a La Meca en 1324 y, a su regreso, mandó construir la mezquita de Djinguereber en Tombuctú. En Djenné, una gran mezquita de adobe se alzó por primera vez hacia el siglo XIII; la actual, de 1907, la sigue revocando todo el pueblo cada año."
+      },
+      "events": [
+        {
+          "icon": "🐫",
+          "date": "1324",
+          "at": [
+            -3.01,
+            16.7714
+          ],
+          "text": {
+            "en": "Mansa Musa of Mali sets off on his pilgrimage to Mecca, laden with gold",
+            "es": "Mansa Musa de Malí parte en peregrinación a La Meca cargado de oro"
+          }
+        }
+      ],
+      "show": [
+        "kilwa-kisiwani",
+        "great-zimbabwe",
+        "lalibela-churches",
+        "djenne-mosque",
+        "djinguereber-mosque"
+      ]
+    },
+    {
+      "date": "1436",
+      "title": {
+        "en": "The Ming and Florence's dome",
+        "es": "Los Ming y la cúpula de Florencia"
+      },
+      "camera": {
+        "lon": 70,
+        "lat": 40,
+        "zoom": 1.15
+      },
+      "text": {
+        "en": "In China, the Ming emperors built the Forbidden City and the Temple of Heaven and began a new Great Wall. In Samarkand, Ulugh Beg measured the stars, and in Florence, Brunelleschi raised his giant dome.",
+        "es": "En China, los emperadores Ming construyeron la Ciudad Prohibida y el Templo del Cielo y empezaron una nueva Gran Muralla. En Samarcanda, Ulugh Beg midió las estrellas, y en Florencia, Brunelleschi alzó su enorme cúpula."
+      },
+      "details": {
+        "en": "In 1368 the Ming dynasty drove the Mongol-led Yuan out of China. The Yongle Emperor moved the capital to Beijing and, with more than a million workers, built the Forbidden City and the Temple of Heaven by 1420. Ming forts guarded the mountain passes from the start; after the Mongols captured an emperor in 1449, they grew into the brick-and-stone Great Wall seen today. In Samarkand, Timur's grandson Ulugh Beg built an observatory that measured the year to within about a minute. In Prague, the stone bridge begun for Charles IV was finished in 1402. And in Florence, Filippo Brunelleschi solved a problem that had defeated everyone: between 1420 and 1436 he raised the largest masonry dome ever built, without scaffolding from the ground.",
+        "es": "En 1368, la dinastía Ming expulsó de China a los Yuan, dirigidos por los mongoles. El emperador Yongle trasladó la capital a Pekín y, con más de un millón de trabajadores, construyó la Ciudad Prohibida y el Templo del Cielo hacia 1420. Los fuertes Ming vigilaron los pasos de montaña desde el principio; después de que los mongoles capturaran a un emperador en 1449, se convirtieron en la Gran Muralla de ladrillo y piedra que se ve hoy. En Samarcanda, Ulugh Beg, nieto de Tamerlán, construyó un observatorio que midió el año con un error de un minuto. En Praga, el puente de piedra iniciado para Carlos IV se terminó en 1402. Y en Florencia, Filippo Brunelleschi resolvió un problema que había derrotado a todos: entre 1420 y 1436 levantó la mayor cúpula de fábrica jamás construida, sin andamios desde el suelo."
+      },
+      "events": [
+        {
+          "icon": "🗡️",
+          "date": "1449",
+          "at": [
+            67.005,
+            39.675
+          ],
+          "text": {
+            "en": "Ulugh Beg is murdered; his observatory is torn down",
+            "es": "Asesinan a Ulugh Beg; su observatorio es derribado"
+          }
+        }
+      ],
+      "show": [
+        "charles-bridge",
+        "great-wall-ming",
+        "forbidden-city",
+        "temple-of-heaven",
+        "ulugh-beg-observatory",
+        "florence-cathedral"
+      ]
+    },
+    {
+      "date": "1500",
+      "title": {
+        "en": "The world in 1500",
+        "es": "El mundo en 1500"
+      },
+      "camera": {
+        "lon": -32,
+        "lat": 18,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "By 1500 the Aztecs had rebuilt their great temple many times, the Inca had tied the Andes together with roads, Benin had its walls, Songhai its royal tomb and Moscow its new Kremlin.",
+        "es": "Hacia 1500, los aztecas habían rehecho muchas veces su gran templo, los incas habían unido los Andes con caminos, Benín tenía sus murallas, Songhai su tumba real y Moscú su nuevo Kremlin."
+      },
+      "details": {
+        "en": "In the Valley of Mexico, the Mexica rebuilt the Templo Mayor of Tenochtitlan again and again, each time bigger. In the Andes, the Inca emperor Pachacuti and his heirs built an empire of about 12 million people, held together by 40,000 km of roads, and built Sacsayhuamán and Machu Picchu with stone fitted without mortar, using the labour that every community owed the state. In West Africa, the Edo kings ringed Benin City with a great moat, and Askia Muhammad of Songhai built his pyramid-shaped tomb at Gao. In Moscow, Italian masters gave Ivan III new red-brick walls. Then, in 1492, Columbus reached the Caribbean. For the peoples of the Americas, invasion, enslavement and epidemics would follow, and many of their great structures would be torn down.",
+        "es": "En el valle de México, los mexicas rehicieron una y otra vez el Templo Mayor de Tenochtitlan, cada vez más grande. En los Andes, el emperador inca Pachacútec y sus herederos forjaron un imperio de unos 12 millones de personas, unido por 40 000 km de caminos, y construyeron Sacsayhuamán y Machu Picchu con piedras encajadas sin argamasa, gracias al trabajo que cada comunidad debía al Estado. En África occidental, los reyes edo rodearon la ciudad de Benín con un gran foso, y Askia Mohamed de Songhai construyó su tumba piramidal en Gao. En Moscú, maestros italianos dieron a Iván III nuevas murallas de ladrillo rojo. Entonces, en 1492, Colón llegó al Caribe. Para los pueblos de América vendrían la invasión, la esclavitud y las epidemias, y muchas de sus grandes construcciones serían derribadas."
+      },
+      "events": [
+        {
+          "icon": "⛵",
+          "date": "1492-10-12",
+          "at": [
+            -74.48,
+            24.05
+          ],
+          "text": {
+            "en": "Columbus reaches the Bahamas; for the peoples of the Americas, invasion and epidemics will follow",
+            "es": "Colón llega a las Bahamas; para los pueblos de América vendrán la invasión y las epidemias"
+          }
+        }
+      ],
+      "show": [
+        "templo-mayor",
+        "sacsayhuaman",
+        "inca-road-system",
+        "machu-picchu",
+        "walls-of-benin",
+        "moscow-kremlin",
+        "tomb-of-askia"
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "By 1500, people on every inhabited continent had built monuments to their gods, kings and dead, and roads, canals and bridges that still work. Most builders' names are lost: many were farmers paying their taxes in labour, conscripts or enslaved captives. Most of these places are now World Heritage Sites, cared for as an inheritance shared by everyone.",
+    "es": "Hacia 1500, pueblos de todos los continentes habitados habían construido monumentos a sus dioses, sus reyes y sus muertos, y caminos, canales y puentes que aún funcionan. Casi todos los nombres de sus constructores se han perdido: muchos eran campesinos que pagaban sus impuestos con trabajo, reclutas o cautivos esclavizados. Hoy la mayoría de estos lugares son Patrimonio de la Humanidad, una herencia que nos pertenece a todos."
+  },
+  "sources": [
+    {
+      "title": "Göbekli Tepe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Göbekli_Tepe"
+    },
+    {
+      "title": "Budj Bim heritage areas (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Budj_Bim_heritage_areas"
+    },
+    {
+      "title": "Stonehenge (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Stonehenge"
+    },
+    {
+      "title": "Uruk (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Uruk"
+    },
+    {
+      "title": "Pyramid of Djoser (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pyramid_of_Djoser"
+    },
+    {
+      "title": "Caral (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Caral"
+    },
+    {
+      "title": "Western Deffufa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Western_Deffufa"
+    },
+    {
+      "title": "Karnak (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Karnak"
+    },
+    {
+      "title": "Marib Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Marib_Dam"
+    },
+    {
+      "title": "Persepolis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Persepolis"
+    },
+    {
+      "title": "Parthenon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Parthenon"
+    },
+    {
+      "title": "History of the Great Wall of China (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_the_Great_Wall_of_China"
+    },
+    {
+      "title": "Grand Canal (China) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Grand_Canal_(China)"
+    },
+    {
+      "title": "Mausoleum of Qin Shi Huang (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mausoleum_of_Qin_Shi_Huang"
+    },
+    {
+      "title": "Colosseum (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Colosseum"
+    },
+    {
+      "title": "Pantheon, Rome (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pantheon,_Rome"
+    },
+    {
+      "title": "Teotihuacan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Teotihuacan"
+    },
+    {
+      "title": "Hagia Sophia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hagia_Sophia"
+    },
+    {
+      "title": "Borobudur (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Borobudur"
+    },
+    {
+      "title": "Great Mosque of Samarra (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Mosque_of_Samarra"
+    },
+    {
+      "title": "Chan Chan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chan_Chan"
+    },
+    {
+      "title": "Angkor Wat (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Angkor_Wat"
+    },
+    {
+      "title": "Great Zimbabwe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Zimbabwe"
+    },
+    {
+      "title": "Lincoln Cathedral (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lincoln_Cathedral"
+    },
+    {
+      "title": "Cologne Cathedral (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cologne_Cathedral"
+    },
+    {
+      "title": "Florence Cathedral (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Florence_Cathedral"
+    },
+    {
+      "title": "Ming Great Wall (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ming_Great_Wall"
+    },
+    {
+      "title": "Forbidden City (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Forbidden_City"
+    },
+    {
+      "title": "Inca road system (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Inca_road_system"
+    },
+    {
+      "title": "Benin Moat (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Benin_Moat"
+    }
+  ]
+}

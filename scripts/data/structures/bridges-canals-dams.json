@@ -1,0 +1,487 @@
+{
+  "id": "bridges-canals-dams",
+  "name": {
+    "en": "Bridges, canals and dams",
+    "es": "Puentes, canales y presas"
+  },
+  "icon": "🌉",
+  "era": "ancient",
+  "region": {
+    "en": "The whole world",
+    "es": "Todo el mundo"
+  },
+  "start": "50",
+  "end": "2025",
+  "summary": {
+    "en": "Two thousand years of crossing rivers and seas and taming water: Roman aqueducts, China's Grand Canal, iron and steel bridges, great canals and giant dams, and the workers who paid the price.",
+    "es": "Dos mil años cruzando ríos y mares y domando el agua: acueductos romanos, el Gran Canal de China, puentes de hierro y acero, grandes canales y presas gigantes, y los trabajadores que pagaron el precio."
+  },
+  "camera": {
+    "lon": 20,
+    "lat": 30,
+    "zoom": 1.3
+  },
+  "steps": [
+    {
+      "date": "50",
+      "title": {
+        "en": "Roman water bridges",
+        "es": "Puentes de agua romanos"
+      },
+      "camera": {
+        "lon": 0.2,
+        "lat": 42.4,
+        "zoom": 4.2
+      },
+      "text": {
+        "en": "Roman engineers carried water to their cities across valleys on tiers of stone arches, laid without mortar. Gravity alone moved the water.",
+        "es": "Los ingenieros romanos llevaban el agua a sus ciudades a través de los valles sobre pisos de arcos de piedra, colocados sin argamasa. Solo la gravedad movía el agua."
+      },
+      "details": {
+        "en": "An aqueduct is mostly a channel, often underground, with a gentle and steady slope; bridges like these carried it over valleys. The aqueduct of Nîmes, which crosses the Gard river on the Pont du Gard, falls only about 12 m in some 50 km. The aqueduct of Segovia in Spain, built of granite blocks held only by their weight, still strides through the middle of the city.",
+        "es": "Un acueducto es sobre todo un canal, a menudo subterráneo, con una pendiente suave y constante; puentes como estos lo llevaban sobre los valles. El acueducto de Nimes, que cruza el río Gardon por el Pont du Gard, solo baja unos 12 m en unos 50 km. El acueducto de Segovia, de bloques de granito sujetos solo por su peso, sigue atravesando el centro de la ciudad."
+      },
+      "show": [
+        "pont-du-gard",
+        "aqueduct-segovia"
+      ]
+    },
+    {
+      "date": "605",
+      "title": {
+        "en": "China's Grand Canal",
+        "es": "El Gran Canal de China"
+      },
+      "camera": {
+        "lon": 117.0,
+        "lat": 33.5,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "Sui China joined its rivers into a Grand Canal linking the north to the Yangtze, and built the Zhaozhou Bridge, a stone arch lightened by four small arches, which still stands.",
+        "es": "La China de los Sui unió sus ríos en un Gran Canal que enlazaba el norte con el Yangtsé, y construyó el puente de Zhaozhou, un arco de piedra aligerado por cuatro arcos pequeños, que sigue en pie."
+      },
+      "details": {
+        "en": "Emperor Yang of Sui linked older canals into a waterway more than 1,000 km long to carry grain from the rich south to the north, at a terrible cost in forced labour. In the same years the craftsman Li Chun built the Zhaozhou Bridge: its shallow arch, with open spandrels that let floodwater through and save stone, is the oldest of its kind in the world.",
+        "es": "El emperador Yang de Sui unió canales más antiguos en una vía de agua de más de 1000 km para llevar el grano del rico sur al norte, a un coste terrible en trabajos forzados. En esos mismos años, el artesano Li Chun construyó el puente de Zhaozhou: su arco rebajado, con tímpanos abiertos que dejan pasar las crecidas y ahorran piedra, es el más antiguo de su tipo en el mundo."
+      },
+      "show": [
+        "grand-canal-china",
+        "zhaozhou-bridge"
+      ]
+    },
+    {
+      "date": "1557",
+      "title": {
+        "en": "An Ottoman arch",
+        "es": "Un arco otomano"
+      },
+      "camera": {
+        "lon": 17.8,
+        "lat": 43.34,
+        "zoom": 6
+      },
+      "text": {
+        "en": "In Mostar, Sinan's pupil Hayruddin spanned the Neretva with a single stone arch. The bridge stood for 427 years, until it was shelled in the Bosnian war in 1993.",
+        "es": "En Mostar, Hayruddin, discípulo de Sinan, salvó el Neretva con un solo arco de piedra. El puente se mantuvo en pie 427 años, hasta que fue bombardeado en la guerra de Bosnia en 1993."
+      },
+      "details": {
+        "en": "A legend says Hayruddin feared the arch would fall when the timber centring was taken away, and prepared his own funeral; it held. Its destruction in 1993 shocked the world. Divers raised stones of the old bridge from the river, though most were too damaged to use again; it was rebuilt with stone from the same local quarries and the old techniques, and reopened in 2004 as a symbol of a city trying to heal.",
+        "es": "Cuenta la leyenda que Hayruddin temía que el arco se cayera al quitar la cimbra de madera y preparó su propio funeral; el arco aguantó. Su destrucción en 1993 conmocionó al mundo. Unos buceadores sacaron del río piedras del puente antiguo, aunque la mayoría estaban demasiado dañadas para reutilizarlas; se reconstruyó con piedra de las mismas canteras y las técnicas antiguas, y reabrió en 2004 como símbolo de una ciudad que intenta cicatrizar."
+      },
+      "show": [
+        "stari-most"
+      ]
+    },
+    {
+      "date": "1666",
+      "title": {
+        "en": "A canal over the hills",
+        "es": "Un canal sobre las colinas"
+      },
+      "camera": {
+        "lon": 2.4,
+        "lat": 43.4,
+        "zoom": 6
+      },
+      "text": {
+        "en": "Pierre-Paul Riquet's Canal du Midi climbed the hills of Languedoc by locks, fed at its summit by streams led from the Montagne Noire. It opened in 1681.",
+        "es": "El canal del Mediodía de Pierre-Paul Riquet trepaba por las colinas del Languedoc con esclusas, alimentado en su punto más alto por arroyos traídos desde la Montaña Negra. Se abrió en 1681."
+      },
+      "details": {
+        "en": "A canal that crosses a watershed needs water at its highest point, or its locks run dry. Riquet's answer was a network of channels and the great Saint-Ferréol dam to gather mountain streams. Some 12,000 men and women dug it by hand. The canal has the first tunnel ever dug for a canal, at Malpas, and oval locks whose curved walls resist the pressure of the earth.",
+        "es": "Un canal que cruza una divisoria de aguas necesita agua en su punto más alto, o sus esclusas se quedan secas. La respuesta de Riquet fue una red de canales y la gran presa de Saint-Ferréol para reunir los arroyos de la montaña. Unos 12 000 hombres y mujeres lo cavaron a mano. El canal tiene el primer túnel excavado para un canal, en Malpas, y esclusas ovaladas cuyos muros curvos resisten el empuje de la tierra."
+      },
+      "show": [
+        "canal-du-midi"
+      ]
+    },
+    {
+      "date": "1777",
+      "title": {
+        "en": "The first iron bridge",
+        "es": "El primer puente de hierro"
+      },
+      "camera": {
+        "lon": -2.49,
+        "lat": 52.63,
+        "zoom": 6
+      },
+      "text": {
+        "en": "Near Coalbrookdale, where iron smelted with coke had become cheap, Abraham Darby III cast the first major iron bridge. It opened in 1781 and showed what the new material could do.",
+        "es": "Cerca de Coalbrookdale, donde el hierro fundido con coque se había abaratado, Abraham Darby III fundió el primer gran puente de hierro. Se abrió en 1781 y mostró lo que podía hacer el nuevo material."
+      },
+      "show": [
+        "iron-bridge"
+      ]
+    },
+    {
+      "date": "1825",
+      "title": {
+        "en": "Under the Thames",
+        "es": "Bajo el Támesis"
+      },
+      "camera": {
+        "lon": -0.05,
+        "lat": 51.5,
+        "zoom": 6
+      },
+      "text": {
+        "en": "Marc Brunel and his son Isambard dug the first tunnel known under a navigable river, working inside an iron shield. Floods, sickness and debts stretched the work to 18 years.",
+        "es": "Marc Brunel y su hijo Isambard excavaron el primer túnel conocido bajo un río navegable, trabajando dentro de un escudo de hierro. Las inundaciones, las enfermedades y las deudas alargaron la obra 18 años."
+      },
+      "details": {
+        "en": "The shield, inspired by the shipworm that bores through ships' timbers, let miners dig a few centimetres at a time in separate cells while bricklayers lined the tunnel behind them. The river broke in several times; in 1828 Isambard nearly drowned and six men died. Almost every tunnelling machine since, including those that dug the Channel Tunnel, follows Brunel's idea.",
+        "es": "El escudo, inspirado en la broma, un molusco que perfora la madera de los barcos, permitía a los mineros cavar unos centímetros cada vez en celdas separadas mientras los albañiles revestían el túnel detrás. El río irrumpió varias veces; en 1828 Isambard estuvo a punto de ahogarse y murieron seis hombres. Casi todas las tuneladoras posteriores, incluidas las que abrieron el Eurotúnel, siguen la idea de Brunel."
+      },
+      "show": [
+        "thames-tunnel"
+      ]
+    },
+    {
+      "date": "1869",
+      "title": {
+        "en": "Joining seas and coasts",
+        "es": "Unir mares y costas"
+      },
+      "camera": {
+        "lon": -28,
+        "lat": 67,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "In 1869 two great links opened six months apart: the Suez Canal, between the Mediterranean and the Red Sea, and the first railroad across the United States.",
+        "es": "En 1869 se abrieron, con seis meses de diferencia, dos grandes enlaces: el canal de Suez, entre el Mediterráneo y el mar Rojo, y el primer ferrocarril que cruzaba Estados Unidos."
+      },
+      "details": {
+        "en": "Both had a high human cost. In Egypt, peasants were forced to dig in shifts until the forced labour was stopped in the 1860s, and thousands died, many of cholera. In the American West, thousands of Chinese workers blasted a way through the Sierra Nevada for the Central Pacific, for low pay, and the railroad brought settlers and soldiers onto the lands of the Plains nations.",
+        "es": "Ambos tuvieron un alto coste humano. En Egipto, los campesinos fueron obligados a cavar por turnos hasta que se suprimió el trabajo forzoso en la década de 1860, y murieron miles, muchos de cólera. En el Oeste americano, miles de obreros chinos abrieron a fuerza de explosiones un paso por Sierra Nevada para la Central Pacific, por un sueldo bajo, y el tren llevó colonos y soldados a las tierras de los pueblos de las Grandes Llanuras."
+      },
+      "show": [
+        "suez-canal",
+        "first-transcontinental-railroad"
+      ],
+      "events": [
+        {
+          "icon": "🚂",
+          "date": "1869-05-10",
+          "at": [
+            -112.5516,
+            41.6179
+          ],
+          "text": {
+            "en": "The last spike joins the rails at Promontory, Utah",
+            "es": "El último clavo une los raíles en Promontory (Utah)"
+          }
+        },
+        {
+          "icon": "🚢",
+          "date": "1869-11-17",
+          "at": [
+            32.3,
+            31.26
+          ],
+          "text": {
+            "en": "The Suez Canal opens at Port Said",
+            "es": "Se inaugura el canal de Suez en Port Said"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1883",
+      "title": {
+        "en": "Steel spans",
+        "es": "Vanos de acero"
+      },
+      "camera": {
+        "lon": -14,
+        "lat": 20,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Steel wire and girders made much longer spans possible: the Brooklyn Bridge in 1883, Scotland's Forth Bridge in 1890 and the Victoria Falls Bridge over the Zambezi in 1905.",
+        "es": "El alambre y las vigas de acero permitieron vanos mucho más largos: el puente de Brooklyn en 1883, el de Forth, en Escocia, en 1890 y el de las cataratas Victoria, sobre el Zambeze, en 1905."
+      },
+      "details": {
+        "en": "Under the Brooklyn Bridge's towers, men dug in caissons full of compressed air; many fell ill with the bends, and the chief engineer, Washington Roebling, was left disabled, so his wife Emily Warren Roebling ran the work. The Forth Bridge was built extra strong after the Tay Bridge collapsed in a storm in 1879, killing everyone on a train crossing it; at least 73 men died building it.",
+        "es": "Bajo las torres del puente de Brooklyn, los hombres cavaban en cajones llenos de aire comprimido; muchos enfermaron por la descompresión, y el ingeniero jefe, Washington Roebling, quedó impedido, así que su esposa, Emily Warren Roebling, dirigió la obra. El puente de Forth se hizo extrafuerte después de que el del Tay se hundiera en una tormenta en 1879 y murieran todos los ocupantes de un tren que lo cruzaba; al menos 73 hombres murieron construyéndolo."
+      },
+      "show": [
+        "brooklyn-bridge",
+        "forth-bridge",
+        "victoria-falls-bridge"
+      ]
+    },
+    {
+      "date": "1914",
+      "title": {
+        "en": "The Panama Canal",
+        "es": "El canal de Panamá"
+      },
+      "camera": {
+        "lon": -79.7,
+        "lat": 9.1,
+        "zoom": 6
+      },
+      "text": {
+        "en": "Opened in 1914, the Panama Canal lifts ships 26 m by locks to a lake made by a dam. A French attempt in the 1880s had failed; in all, more than 25,000 workers died.",
+        "es": "Inaugurado en 1914, el canal de Panamá eleva los barcos 26 m con esclusas hasta un lago creado por una presa. Un intento francés en la década de 1880 había fracasado; en total murieron más de 25 000 trabajadores."
+      },
+      "details": {
+        "en": "Ferdinand de Lesseps, builder of the Suez Canal, tried to dig a sea-level canal here and failed: about 22,000 workers died, mostly of yellow fever and malaria. The United States took over in 1904, chose locks and fought the mosquitoes that spread the diseases. Even so, about 5,600 more died, most of them Black labourers from Barbados and other Caribbean islands, who were paid less and housed worse than white Americans.",
+        "es": "Ferdinand de Lesseps, constructor del canal de Suez, intentó abrir aquí un canal a nivel del mar y fracasó: murieron unos 22 000 trabajadores, sobre todo de fiebre amarilla y malaria. Estados Unidos tomó el relevo en 1904, optó por las esclusas y combatió a los mosquitos que transmitían las enfermedades. Aun así murieron unos 5600 más, la mayoría peones negros de Barbados y otras islas del Caribe, peor pagados y peor alojados que los estadounidenses blancos."
+      },
+      "show": [
+        "panama-canal"
+      ]
+    },
+    {
+      "date": "1932",
+      "title": {
+        "en": "Giants of the Depression",
+        "es": "Gigantes de la Depresión"
+      },
+      "camera": {
+        "lon": -162,
+        "lat": 1,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "During the Great Depression these giant works gave jobs to thousands: the Sydney Harbour Bridge (1932), the Hoover Dam (1936) and the Golden Gate Bridge (1937).",
+        "es": "Durante la Gran Depresión estas obras gigantes dieron trabajo a miles de personas: el puente de la bahía de Sídney (1932), la presa Hoover (1936) y el puente Golden Gate (1937)."
+      },
+      "details": {
+        "en": "The work was dangerous. Sixteen men died building the Sydney Harbour Bridge and at least 96 at the Hoover Dam, where workers hung from ropes to clear the canyon walls in fierce heat. On the Golden Gate Bridge a safety net under the deck saved many lives, but eleven men died, ten of them when a scaffold broke through the net in 1937.",
+        "es": "Era un trabajo peligroso. Dieciséis hombres murieron construyendo el puente de Sídney y al menos 96 en la presa Hoover, donde los obreros colgaban de cuerdas para limpiar las paredes del cañón con un calor feroz. En el Golden Gate, una red bajo el tablero salvó muchas vidas, pero murieron once hombres, diez de ellos cuando un andamio rompió la red en 1937."
+      },
+      "show": [
+        "sydney-harbour-bridge",
+        "hoover-dam",
+        "golden-gate-bridge"
+      ]
+    },
+    {
+      "date": "1960",
+      "title": {
+        "en": "Dams that moved people",
+        "es": "Presas que desplazaron pueblos"
+      },
+      "camera": {
+        "lon": -10,
+        "lat": -2,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "After 1950 giant dams brought power and water to new nations, but their lakes drowned whole valleys, and at each dam tens of thousands of people had to leave their homes.",
+        "es": "Después de 1950 las presas gigantes llevaron energía y agua a países nuevos, pero sus lagos anegaron valles enteros, y en cada presa decenas de miles de personas tuvieron que dejar sus casas."
+      },
+      "details": {
+        "en": "Kariba on the Zambezi forced about 57,000 Tonga people from their valley. Lake Nasser behind the Aswan High Dam flooded Nubia, the home of more than 100,000 people in Egypt and Sudan; an international rescue moved the temples of Abu Simbel to higher ground. Itaipu, built by Brazil and Paraguay, displaced about 10,000 families and drowned the Guaíra Falls, but has made more electricity than almost any other power station.",
+        "es": "Kariba, en el Zambeze, obligó a unas 57 000 personas del pueblo tonga a dejar su valle. El lago Nasser, tras la presa de Asuán, inundó Nubia, la tierra de más de 100 000 personas en Egipto y Sudán; un rescate internacional trasladó los templos de Abu Simbel a un lugar más alto. Itaipú, construida por Brasil y Paraguay, desplazó a unas 10 000 familias y sumergió los saltos del Guairá, pero ha producido más electricidad que casi cualquier otra central."
+      },
+      "show": [
+        "kariba-dam",
+        "aswan-high-dam",
+        "itaipu-dam"
+      ]
+    },
+    {
+      "date": "1988",
+      "title": {
+        "en": "Under the sea, over the strait",
+        "es": "Bajo el mar, sobre el estrecho"
+      },
+      "camera": {
+        "lon": 88,
+        "lat": 68,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "In 1994 the Channel Tunnel joined Britain to France under the sea, and in 1998 Japan's Akashi Kaikyō Bridge opened with a 1,991 m span, the longest in the world.",
+        "es": "En 1994 el Eurotúnel unió Gran Bretaña y Francia bajo el mar, y en 1998 se abrió en Japón el puente del estrecho de Akashi, con un vano de 1991 m, el más largo del mundo."
+      },
+      "details": {
+        "en": "Eleven tunnel-boring machines, heirs of Brunel's shield, dug the Channel Tunnel through chalk marl; British and French crews met in December 1990, and ten workers died. In Japan, ferries had sunk in storms on the strait; the new bridge was built to withstand typhoons and earthquakes, and when the Kobe earthquake struck in 1995 it pushed the towers almost a metre apart.",
+        "es": "Once tuneladoras, herederas del escudo de Brunel, excavaron el Eurotúnel en la marga calcárea; los equipos británico y francés se encontraron en diciembre de 1990, y murieron diez obreros. En Japón se habían hundido transbordadores en las tormentas del estrecho; el nuevo puente se pensó para resistir tifones y terremotos, y cuando llegó el terremoto de Kobe, en 1995, separó las torres casi un metro."
+      },
+      "show": [
+        "channel-tunnel",
+        "akashi-kaikyo-bridge"
+      ]
+    },
+    {
+      "date": "2004",
+      "title": {
+        "en": "Higher and longer",
+        "es": "Más alto y más largo"
+      },
+      "camera": {
+        "lon": 70,
+        "lat": 57,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "France's Millau Viaduct became the tallest bridge in 2004. China finished the Three Gorges Dam, the largest power station on Earth, and the 164.8 km Danyang–Kunshan viaduct.",
+        "es": "El viaducto de Millau, en Francia, se convirtió en 2004 en el puente más alto. China terminó la presa de las Tres Gargantas, la mayor central eléctrica del mundo, y el viaducto Danyang-Kunshan, de 164,8 km."
+      },
+      "details": {
+        "en": "The Three Gorges Dam tamed the floods of the Yangtze and makes clean power, but it flooded towns, farmland and ancient sites, and between 1.1 and 1.4 million people had to move. The Danyang–Kunshan Grand Bridge is a viaduct for high-speed trains, raised on piers so that the line stays straight and level over rice fields, canals and lakes. The Millau Viaduct's seven piers carry a steel deck that was slid out across the valley from both sides.",
+        "es": "La presa de las Tres Gargantas domó las crecidas del Yangtsé y produce energía limpia, pero anegó pueblos, tierras de cultivo y lugares antiguos, y entre 1,1 y 1,4 millones de personas tuvieron que mudarse. El gran puente Danyang-Kunshan es un viaducto para trenes de alta velocidad, elevado sobre pilas para que la vía siga recta y llana sobre arrozales, canales y lagos. Las siete pilas del viaducto de Millau sostienen un tablero de acero que se empujó sobre el valle desde ambos lados."
+      },
+      "show": [
+        "millau-viaduct",
+        "three-gorges-dam",
+        "danyang-kunshan-bridge"
+      ]
+    },
+    {
+      "date": "2016",
+      "title": {
+        "en": "Today's giants",
+        "es": "Los gigantes de hoy"
+      },
+      "camera": {
+        "lon": 68,
+        "lat": 40,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "The Gotthard Base Tunnel (2016) runs 57 km under the Alps, a 55 km bridge and tunnel crosses the Pearl River estuary (2018), and the Çanakkale Bridge (2022) spans the Dardanelles.",
+        "es": "El túnel de base de San Gotardo (2016) recorre 57 km bajo los Alpes, un puente-túnel de 55 km cruza el estuario del río de las Perlas (2018) y el puente de Çanakkale (2022) salva los Dardanelos."
+      },
+      "details": {
+        "en": "Nine workers died building the Gotthard Base Tunnel, now the longest railway tunnel in the world. The 1915 Çanakkale Bridge took the record for the longest suspension span, 2,023 m, from the Akashi Kaikyō Bridge. In 2025 Ethiopia opened Africa's largest hydroelectric dam on the Blue Nile, paid for largely by its own people, while Egypt and Sudan downstream fear for their share of the river.",
+        "es": "Nueve obreros murieron construyendo el túnel de base de San Gotardo, hoy el túnel ferroviario más largo del mundo. El puente Çanakkale 1915 arrebató al de Akashi el récord del mayor vano colgante, con 2023 m. En 2025 Etiopía inauguró sobre el Nilo Azul la mayor presa hidroeléctrica de África, pagada en gran parte por su propia gente, mientras Egipto y Sudán, río abajo, temen por su parte del agua."
+      },
+      "show": [
+        "gotthard-base-tunnel",
+        "hong-kong-zhuhai-macau-bridge",
+        "canakkale-1915-bridge",
+        "grand-ethiopian-renaissance-dam"
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Bridges, canals, tunnels and dams shrank the world, fed its cities and lit its homes. They were also paid for with the lives of many workers and the homes of people whose valleys were flooded, a cost that today's builders are asked to weigh.",
+    "es": "Puentes, canales, túneles y presas empequeñecieron el mundo, alimentaron sus ciudades e iluminaron sus casas. También se pagaron con la vida de muchos trabajadores y con los hogares de quienes vieron inundados sus valles, un coste que hoy se pide a los constructores que tengan en cuenta."
+  },
+  "sources": [
+    {
+      "title": "Pont du Gard (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pont_du_Gard"
+    },
+    {
+      "title": "Aqueduct of Segovia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aqueduct_of_Segovia"
+    },
+    {
+      "title": "Grand Canal (China) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Grand_Canal_(China)"
+    },
+    {
+      "title": "Anji Bridge (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Anji_Bridge"
+    },
+    {
+      "title": "Stari Most (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Stari_Most"
+    },
+    {
+      "title": "Canal du Midi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Canal_du_Midi"
+    },
+    {
+      "title": "The Iron Bridge (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/The_Iron_Bridge"
+    },
+    {
+      "title": "Thames Tunnel (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Thames_Tunnel"
+    },
+    {
+      "title": "Suez Canal (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Suez_Canal"
+    },
+    {
+      "title": "First transcontinental railroad (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/First_transcontinental_railroad"
+    },
+    {
+      "title": "Brooklyn Bridge (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Brooklyn_Bridge"
+    },
+    {
+      "title": "Forth Bridge (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Forth_Bridge"
+    },
+    {
+      "title": "Panama Canal (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Panama_Canal"
+    },
+    {
+      "title": "Hoover Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hoover_Dam"
+    },
+    {
+      "title": "Golden Gate Bridge (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Golden_Gate_Bridge"
+    },
+    {
+      "title": "Kariba Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kariba_Dam"
+    },
+    {
+      "title": "Aswan High Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aswan_High_Dam"
+    },
+    {
+      "title": "Itaipu Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Itaipu_Dam"
+    },
+    {
+      "title": "Channel Tunnel (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Channel_Tunnel"
+    },
+    {
+      "title": "Akashi Kaikyo Bridge (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Akashi_Kaikyo_Bridge"
+    },
+    {
+      "title": "Three Gorges Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Three_Gorges_Dam"
+    },
+    {
+      "title": "Gotthard Base Tunnel (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gotthard_Base_Tunnel"
+    },
+    {
+      "title": "1915 Çanakkale Bridge (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1915_Çanakkale_Bridge"
+    },
+    {
+      "title": "Grand Ethiopian Renaissance Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Grand_Ethiopian_Renaissance_Dam"
+    }
+  ]
+}

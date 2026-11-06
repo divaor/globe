@@ -2,26 +2,49 @@
 import { GraduationCap, Compass, CalendarDays, X, ChevronLeft, ChevronRight, Play, Pause } from 'lucide';
 import { geoDistance } from 'd3-geo';
 import { h, icon, clear, add } from '../ui/dom';
-import { t, lang, flagEmoji } from '../app/i18n';
-import { dataUrl } from '../data/store';
+import { t, tx, lang, flagEmoji } from '../app/i18n';
+import { dataUrl, loadJSON } from '../data/store';
+import { fmtWhen, itemWhen, wikiThumb, type CollectionItem, type StoryKind } from '../modes/stories';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
-import type { ProjectionId } from '../engine/projections';
 import type { TimeTravel } from '../modes';
 import type { RenderSettings } from '../engine/renderer';
+import { TOURS, type Tour, type TourStep } from './tours';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
 const shuffle = <T,>(a: T[]) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 
-type QuizKind = 'find' | 'flag' | 'capital';
-interface Q { id: string; options?: string[] }
+type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era';
+/** An item of a story collection, tagged with its collection. */
+interface QItem extends CollectionItem { kind: StoryKind }
+interface Q { id: string; options?: string[]; item?: QItem }
+const ITEM_QUIZZES: QuizKind[] = ['where', 'when', 'dish', 'era'];
+const COLLECTION_DIR: Record<StoryKind, string> = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures' };
+const yearOf = (d: string) => Number(/^-?\d+/.exec(d)?.[0] ?? 0);
+
+/** Four years to choose from: the right one and three plausible others (no year 0, none in the future). */
+function yearOptions(y: number): number[] {
+  const age = Math.max(60, 2026 - y);
+  const step = age > 3000 ? 500 : age > 1000 ? 100 : age > 300 ? 50 : age > 120 ? 10 : 5;
+  const opts = new Set([y]);
+  for (let guard = 0; opts.size < 4 && guard < 200; guard++) {
+    const f = (0.15 + Math.random() * 0.65) * (Math.random() < 0.5 ? -1 : 1);
+    let o = Math.round((y + f * age) / step) * step;
+    if (o > 2024) o = 2024 - step * (1 + Math.floor(Math.random() * 3));
+    if (o === 0) o = -1;
+    if ([...opts].every((x) => Math.abs(x - o) >= step)) opts.add(o);
+  }
+  return [...opts].sort((a, b) => a - b);
+}
 
 export class Learn {
   private card: HTMLElement;
   private quiz: { kind: QuizKind; region: string; qs: Q[]; i: number; score: number; answered: boolean; savedLabels: RenderSettings['labels'] } | null = null;
   private tour: { steps: TourStep[]; i: number; auto: boolean; timer: number } | null = null;
   private pin: { lon: number; lat: number; text: string } | null = null;
+  private items: Partial<Record<StoryKind, CollectionItem[]>> = {};
+  private eras = new Map<string, { name: { en: string; es: string }; icon: string }>();
 
   constructor(private app: App, private shell: Shell, private time: TimeTravel) {
     this.card = h('section', { class: 'learn-card glass', hidden: true });
@@ -30,8 +53,9 @@ export class Learn {
     shell.addMenu({ id: 'tours', icon: Compass, label: () => L('Guided tours', 'Visitas guiadas'), order: 31, onClick: () => this.openTours() });
     shell.addMenu({ id: 'onthisday', icon: CalendarDays, label: () => L('On this day', 'Tal día como hoy'), order: 32, onClick: () => void this.openOnThisDay() });
     shell.tapHandlers.unshift((_x, _y, g) => {
-      if (!this.quiz || this.quiz.kind !== 'find' || this.quiz.answered) return false;
-      if (g) this.answerFind(app.renderer.countryAt(g[0], g[1]));
+      if (!this.quiz || this.quiz.answered || (this.quiz.kind !== 'find' && this.quiz.kind !== 'where')) return false;
+      if (g && this.quiz.kind === 'find') this.answerFind(app.renderer.countryAt(g[0], g[1]));
+      if (g && this.quiz.kind === 'where') this.answerWhere(g as [number, number]);
       return true;
     });
     app.renderer.overlays.add((rc) => {
@@ -81,12 +105,28 @@ export class Learn {
       c.addEventListener('click', () => this.startQuiz(k, region));
       list.append(c);
     }
-    this.shell.openPanel('quiz', L('Quiz', 'Concurso'), h('div', null, h('h3', { class: 'sec-title' }, L('Region', 'Región')), regionRow, h('h3', { class: 'sec-title' }, L('Game', 'Juego')), list));
+    const more: [QuizKind, string, string, string][] = [
+      ['where', '📍', L('Where in the world?', '¿Dónde está?'), L('Tap on the globe where a monument, a work or a dish comes from.', 'Toca en el globo de dónde es un monumento, una obra o un plato.')],
+      ['when', '⏳', L('When was it?', '¿Cuándo fue?'), L('Pick the year it was built, made or first recorded.', 'Elige el año en que se construyó, se hizo o aparece por primera vez.')],
+      ['dish', '🍲', L('Dishes of the world', 'Platos del mundo'), L('Which country does this dish come from?', '¿De qué país es este plato?')],
+      ['era', '🎨', L('Which era?', '¿Qué época?'), L('Match people, works and inventions to their era.', 'Relaciona personas, obras e inventos con su época.')],
+    ];
+    const list2 = h('div', { class: 'mode-list' });
+    for (const [k, ic, title, desc] of more) {
+      const best = localStorage.getItem(`atlas-quiz-best:${k}`);
+      const c = h('button', { type: 'button', class: 'mode-card', 'data-quiz': k }, h('span', { class: 'mode-icon' }, ic),
+        h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, title), h('span', { class: 'mode-desc' }, `${desc}${best ? ` · ${L('Best', 'Récord')}: ${best}/10` : ''}`)));
+      c.addEventListener('click', () => void this.startQuiz(k, region));
+      list2.append(c);
+    }
+    this.shell.openPanel('quiz', L('Quiz', 'Concurso'), h('div', null, h('h3', { class: 'sec-title' }, L('Region', 'Región')), regionRow, h('h3', { class: 'sec-title' }, L('Game', 'Juego')), list,
+      h('h3', { class: 'sec-title' }, L('History, art and food', 'Historia, arte y comida')), list2));
   }
 
-  private startQuiz(kind: QuizKind, region: string) {
+  private async startQuiz(kind: QuizKind, region: string) {
     this.stopTour();
     this.shell.sheet.close();
+    if (ITEM_QUIZZES.includes(kind)) { await this.startItemQuiz(kind); return; }
     const pool = this.pool(region);
     const ids = shuffle(pool.slice()).slice(0, 10);
     const qs: Q[] = ids.map((id) => {
@@ -102,6 +142,88 @@ export class Learn {
     this.renderQuiz();
   }
 
+  private async loadItems(kinds: StoryKind[]) {
+    await Promise.all(kinds.map(async (k) => {
+      if (!this.items[k]) this.items[k] = (await loadJSON<{ items: CollectionItem[] }>(`${COLLECTION_DIR[k]}/items.json`)).items;
+    }));
+    if (kinds.includes('eras') && !this.eras.size) {
+      for (const st of (await loadJSON<{ stories: { id: string; name: { en: string; es: string }; icon: string }[] }>('eras/index.json')).stories) this.eras.set(st.id, st);
+    }
+  }
+
+  /** The quizzes about the story collections: their items make the questions. */
+  private async startItemQuiz(kind: QuizKind) {
+    if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
+    const needs: StoryKind[] = kind === 'dish' ? ['food'] : kind === 'era' ? ['eras'] : ['structures', 'eras', 'food'];
+    try { await this.loadItems(needs); } catch { /* offline: the pool stays small */ }
+    const tag = (k: StoryKind): QItem[] => (this.items[k] ?? []).map((it) => ({ ...it, kind: k }));
+    const is = (it: QItem, ...types: string[]) => !!it.type && types.includes(it.type);
+    let pool: QItem[] = [];
+    if (kind === 'where') pool = [...tag('structures'), ...tag('eras').filter((it) => !is(it, 'person')), ...tag('food').filter((it) => is(it, 'dish', 'site'))];
+    if (kind === 'when') pool = [...tag('structures'), ...tag('eras').filter((it) => is(it, 'work', 'invention', 'structure', 'event', 'institution')), ...tag('food').filter((it) => is(it, 'dish'))];
+    if (kind === 'dish') pool = tag('food').filter((it) => is(it, 'dish') && !!it.country && !!this.app.data.meta[it.country]);
+    if (kind === 'era') pool = tag('eras').filter((it) => is(it, 'person', 'work', 'invention') && this.eras.has(it.story));
+    if (pool.length < 10 || (kind === 'era' && this.eras.size < 4)) {
+      clear(this.card);
+      const close = h('button', { type: 'button', class: 'pill sm' }, t('close'));
+      close.addEventListener('click', () => { this.card.hidden = true; });
+      add(this.card, h('div', { class: 'tool-hint' }, L('This quiz needs the story collections; check your connection.', 'Este concurso necesita las colecciones de historias; revisa tu conexión.')), h('div', { class: 'tool-actions' }, close));
+      this.card.hidden = false;
+      return;
+    }
+    const picks = shuffle(pool.slice()).slice(0, 10);
+    const countries = [...new Set(pool.map((x) => x.country).filter((c): c is string => !!c))];
+    const qs: Q[] = picks.map((it) => {
+      if (kind === 'when') { const y = yearOf(it.end ?? it.date); return { id: String(y), item: it, options: yearOptions(y).map(String) }; }
+      if (kind === 'dish') return { id: it.country!, item: it, options: shuffle([it.country!, ...shuffle(countries.filter((c) => c !== it.country)).slice(0, 3)]) };
+      if (kind === 'era') return { id: it.story, item: it, options: shuffle([it.story, ...shuffle([...this.eras.keys()].filter((x) => x !== it.story)).slice(0, 3)]) };
+      return { id: it.story, item: it };
+    });
+    const labels = { ...this.app.renderer.settings.labels };
+    if (kind === 'where') Object.assign(this.app.renderer.settings.labels, { countries: false, capitals: false, cities: false });
+    this.quiz = { kind, region: 'world', qs, i: 0, score: 0, answered: false, savedLabels: labels };
+    this.app.select(null);
+    if (kind === 'where' && this.app.renderer.view.current.kind !== 'globe') this.app.setProjection('globe');
+    this.renderQuiz();
+  }
+
+  /** The question for an item. */
+  private itemQuestion(kind: QuizKind, it: QItem): string {
+    const ty = it.type ?? '';
+    if (kind === 'where') return ty === 'dish' ? L('Where does this dish come from?', '¿De dónde es este plato?') : ty === 'work' ? L('Where was this made?', '¿Dónde se hizo?') : ty === 'invention' ? L('Where was this invented?', '¿Dónde se inventó?') : ty === 'event' ? L('Where did this happen?', '¿Dónde ocurrió?') : L('Where in the world is this?', '¿Dónde está?');
+    if (kind === 'when') return it.end ? L('When was it completed?', '¿Cuándo se terminó?') : ty === 'dish' ? L('When was it first recorded?', '¿Cuándo aparece por primera vez?') : ty === 'work' ? L('When was it made?', '¿Cuándo se hizo?') : ty === 'invention' ? L('When was it invented?', '¿Cuándo se inventó?') : ty === 'event' ? L('When did it happen?', '¿Cuándo ocurrió?') : L('When was it built?', '¿Cuándo se construyó?');
+    if (kind === 'dish') return L('Which country does this dish come from?', '¿De qué país es este plato?');
+    return L('Which era does this belong to?', '¿A qué época pertenece?');
+  }
+
+  private optionLabel(kind: QuizKind, o: string, q: Q): string {
+    if (kind === 'when') return fmtWhen(o, Math.min(...(q.options ?? [o]).map(Number)));
+    if (kind === 'dish') return `${flagEmoji(this.app.data.meta[o]?.a2)} ${this.app.data.name(o, lang())}`;
+    if (kind === 'era') { const e = this.eras.get(o); return e ? `${e.icon} ${tx(e.name)}` : o; }
+    return kind === 'capital' ? this.capital(o) : `${this.app.data.name(o, lang())}`;
+  }
+
+  /** "Where in the world?": the answer is where the player tapped. */
+  private answerWhere(g: [number, number] | null) {
+    const q = this.quiz!;
+    const it = q.qs[q.i].item!;
+    q.answered = true;
+    const km = g ? Math.round(geoDistance(g, it.at) * 6371) : null;
+    const ok = km != null && km <= 500;
+    if (ok) q.score++;
+    this.showItem(it);
+    const where = it.place ? tx(it.place) : '';
+    const dist = km == null ? '' : L(`${km.toLocaleString('en-GB')} km away. `, `A ${km.toLocaleString('es-ES')} km. `);
+    this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${dist}${tx(it.name)}${where ? `: ${where}` : ''}.` });
+  }
+
+  /** Puts a pin on the item and flies there. */
+  private showItem(it: QItem) {
+    this.pin = { lon: it.at[0], lat: it.at[1], text: tx(it.name) };
+    this.app.flyTo(it.at[0], it.at[1], Math.max(3, this.app.renderer.view.zoom));
+    this.app.renderer.requestRender();
+  }
+
   private capital(id: string) {
     const c = this.app.data.cities.find((x) => x.country === id && x.capital === 2 && !(x.flags & 4));
     return c ? (es() && c.es ? c.es : c.name) : '?';
@@ -115,6 +237,7 @@ export class Learn {
     close.addEventListener('click', () => this.stopQuiz());
     add(this.card, h('div', { class: 'tool-head' }, h('strong', null, `${L('Question', 'Pregunta')} ${q.i + 1}/${q.qs.length}`), h('span', { class: 'quiz-score' }, `⭐ ${q.score}`), close));
     if (!cur) return;
+    if (cur.item) { this.renderItemQuestion(q.kind, cur, feedback); return; }
     const name = this.app.data.name(cur.id, lang());
     if (q.kind === 'find') add(this.card, h('div', { class: 'quiz-q' }, L(`Where is ${name}?`, `¿Dónde está ${name}?`)));
     if (q.kind === 'flag') add(this.card, h('div', { class: 'quiz-q' }, L('Which country has this flag?', '¿De qué país es esta bandera?')),
@@ -143,6 +266,41 @@ export class Learn {
     this.card.hidden = false;
   }
 
+  /** A question about an item: its picture, the options or the globe, and what the answer was. */
+  private renderItemQuestion(kind: QuizKind, cur: Q, feedback?: { ok: boolean; text: string }) {
+    const q = this.quiz!;
+    const it = cur.item!;
+    const img = h('img', { class: 'quiz-img', alt: '', hidden: true }) as HTMLImageElement;
+    img.addEventListener('load', () => { img.hidden = false; });
+    void wikiThumb(it.wiki).then((src) => { if (src && img.isConnected) img.src = src; });
+    add(this.card, h('div', { class: 'quiz-q' }, this.itemQuestion(kind, it)), h('div', { class: 'quiz-item' }, `${it.icon} ${tx(it.name)}`), img);
+    if (cur.options) {
+      const opts = h('div', { class: 'quiz-opts' });
+      for (const o of cur.options) {
+        const b = h('button', { type: 'button', class: 'pill quiz-opt' }, this.optionLabel(kind, o, cur)) as HTMLButtonElement;
+        if (q.answered) { b.disabled = true; if (o === cur.id) b.classList.add('ok'); }
+        b.addEventListener('click', () => this.answerOption(o, b));
+        opts.append(b);
+      }
+      add(this.card, opts);
+    } else if (!q.answered) {
+      const skip = h('button', { type: 'button', class: 'pill sm' }, L('Show me', 'Muéstramelo'));
+      skip.addEventListener('click', () => this.answerWhere(null));
+      add(this.card, h('div', { class: 'tool-hint' }, L('Tap the place on the globe (within 500 km to score).', 'Toca el lugar en el globo (a menos de 500 km para puntuar).')), h('div', { class: 'tool-actions' }, skip));
+    }
+    if (feedback) {
+      const next = h('button', { type: 'button', class: 'pill primary sm' }, q.i + 1 < q.qs.length ? L('Next', 'Siguiente') : L('See result', 'Ver resultado'));
+      next.addEventListener('click', () => this.nextQuestion());
+      const story = h('button', { type: 'button', class: 'pill sm' }, L('See it in the story', 'Verlo en la historia'));
+      story.addEventListener('click', () => {
+        this.stopQuiz();
+        void this.time.stories[it.kind].open(it.story, it.step, { name: tx(it.name), at: it.at });
+      });
+      add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text), h('div', { class: 'tool-actions' }, story, next));
+    }
+    this.card.hidden = false;
+  }
+
   private answerOption(o: string, b: HTMLButtonElement) {
     const q = this.quiz!;
     if (q.answered) return;
@@ -151,6 +309,13 @@ export class Learn {
     const ok = o === cur.id;
     if (ok) q.score++;
     b.classList.add(ok ? 'ok' : 'bad');
+    if (cur.item) {
+      const it = cur.item;
+      this.showItem(it);
+      const right = q.kind === 'when' ? itemWhen(it, Math.min(...(cur.options ?? [cur.id]).map(Number))) : this.optionLabel(q.kind, cur.id, cur);
+      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${right}.` });
+      return;
+    }
     this.app.flyToCountry(cur.id);
     const name = this.app.data.name(cur.id, lang());
     this.renderQuiz({ ok, text: ok ? L(`Correct! ${flagEmoji(this.app.data.meta[cur.id].a2)} ${name}`, `¡Correcto! ${flagEmoji(this.app.data.meta[cur.id].a2)} ${name}`)
@@ -177,6 +342,7 @@ export class Learn {
   private nextQuestion() {
     const q = this.quiz!;
     this.app.select(null);
+    this.pin = null;
     q.i++; q.answered = false;
     if (q.i >= q.qs.length) { this.finishQuiz(); return; }
     this.renderQuiz();
@@ -192,7 +358,8 @@ export class Learn {
     again.addEventListener('click', () => this.startQuiz(q.kind, q.region));
     const done = h('button', { type: 'button', class: 'pill sm' }, L('Done', 'Terminar'));
     done.addEventListener('click', () => this.stopQuiz());
-    const msg = q.score >= 9 ? L('Geography master! 🏆', '¡Maestro de la geografía! 🏆') : q.score >= 6 ? L('Great job! 🌍', '¡Muy bien! 🌍') : L('Keep exploring! 🧭', '¡Sigue explorando! 🧭');
+    const top = ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
+    const msg = q.score >= 9 ? top : q.score >= 6 ? L('Great job! 🌍', '¡Muy bien! 🌍') : L('Keep exploring! 🧭', '¡Sigue explorando! 🧭');
     add(this.card, h('div', { class: 'quiz-q' }, `${q.score}/10 · ${msg}`), q.score > best ? h('div', { class: 'tool-hint' }, L('New personal best!', '¡Nuevo récord personal!')) : null, h('div', { class: 'tool-actions' }, again, done));
   }
 
@@ -200,6 +367,7 @@ export class Learn {
     if (!this.quiz) return;
     this.app.renderer.settings.labels = { ...this.quiz.savedLabels };
     this.quiz = null;
+    this.pin = null;
     this.card.hidden = true;
     this.app.select(null);
     this.app.renderer.requestRender();
@@ -207,14 +375,19 @@ export class Learn {
 
   // ---- Tours ----------------------------------------------------------------------------------
   private openTours() {
-    const list = h('div', { class: 'mode-list' });
-    for (const tour of TOURS) {
-      const c = h('button', { type: 'button', class: 'mode-card' }, h('span', { class: 'mode-icon' }, tour.icon),
-        h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, es() ? tour.es : tour.en), h('span', { class: 'mode-desc' }, `${tour.steps.length} ${L('stops', 'paradas')}`)));
-      c.addEventListener('click', () => void this.startTour(tour));
-      list.append(c);
+    const body = h('div');
+    const groups: [Tour['group'], string][] = [[undefined, L('Our planet', 'Nuestro planeta')], ['cities', L('Cities through time', 'Ciudades a través del tiempo')], ['history', L('History and culture', 'Historia y cultura')]];
+    for (const [group, title] of groups) {
+      const list = h('div', { class: 'mode-list' });
+      for (const tour of TOURS.filter((x) => x.group === group)) {
+        const c = h('button', { type: 'button', class: 'mode-card', 'data-tour': tour.en }, h('span', { class: 'mode-icon' }, tour.icon),
+          h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, es() ? tour.es : tour.en), h('span', { class: 'mode-desc' }, `${tour.steps.length} ${L('stops', 'paradas')}`)));
+        c.addEventListener('click', () => void this.startTour(tour));
+        list.append(c);
+      }
+      body.append(h('h3', { class: 'sec-title' }, title), list);
     }
-    this.shell.openPanel('tours', L('Guided tours', 'Visitas guiadas'), list);
+    this.shell.openPanel('tours', L('Guided tours', 'Visitas guiadas'), body);
   }
 
   private async startTour(tour: Tour) {
@@ -228,7 +401,11 @@ export class Learn {
   private async showStep() {
     const tr = this.tour!;
     const s = tr.steps[tr.i];
-    if (s.mode) { await this.time.enter(s.mode); }
+    if (s.story) {
+      const [kind, id, step] = s.story;
+      if (this.app.mode && this.app.mode !== kind) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
+      try { await this.time.stories[kind].show(id, step - 1); } catch { /* offline */ }
+    } else if (s.mode) { await this.time.enter(s.mode); }
     else {
       if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
       if (s.projection && this.app.projection !== s.projection) this.app.setProjection(s.projection);
@@ -323,38 +500,3 @@ export class Learn {
     return null;
   }
 }
-
-// ---- Tour content ----------------------------------------------------------------------------
-interface TourStep { title_en: string; title_es: string; en: string; es: string; icon?: string; fly?: [number, number, number]; projection?: ProjectionId; stack?: string[]; mode?: string }
-interface Tour { icon: string; en: string; es: string; steps: TourStep[] }
-
-const TOURS: Tour[] = [
-  { icon: '🌋', en: 'The Ring of Fire', es: 'El Cinturón de Fuego', steps: [
-    { title_en: 'The Ring of Fire', title_es: 'El Cinturón de Fuego', projection: 'globe', stack: ['plates', 'volcanoes'], fly: [-170, 10, 1], en: 'Three quarters of the world’s active volcanoes ring the Pacific Ocean, where ocean plates dive under their neighbours (blue lines).', es: 'Tres cuartas partes de los volcanes activos rodean el Pacífico, donde las placas oceánicas se hunden bajo sus vecinas (líneas azules).' },
-    { title_en: 'Japan', title_es: 'Japón', fly: [139, 36, 4], en: 'Four plates meet under Japan. Mount Fuji last erupted in 1707; Sakurajima erupts almost every day.', es: 'Cuatro placas se encuentran bajo Japón. El Fuji entró en erupción por última vez en 1707; el Sakurajima lo hace casi a diario.' },
-    { title_en: 'Indonesia', title_es: 'Indonesia', fly: [115, -6, 4], en: 'Tambora (1815) was the largest eruption in recorded history; the next year Europe had a "year without a summer".', es: 'El Tambora (1815) fue la mayor erupción de la historia registrada; al año siguiente Europa tuvo un «año sin verano».' },
-    { title_en: 'The Andes', title_es: 'Los Andes', fly: [-72, -20, 2.6], en: 'The Nazca plate sinks under South America, lifting the Andes and feeding volcanoes like Cotopaxi and Ojos del Salado, the highest on Earth.', es: 'La placa de Nazca se hunde bajo Sudamérica, levanta los Andes y alimenta volcanes como el Cotopaxi y el Ojos del Salado, el más alto del mundo.' },
-    { title_en: 'Alaska and the Cascades', title_es: 'Alaska y las Cascadas', fly: [-140, 52, 2.4], en: 'From the Aleutians to Mount St. Helens (1980), the northern Pacific rim is just as restless.', es: 'De las Aleutianas al Monte Santa Helena (1980), el borde norte del Pacífico es igual de inquieto.' },
-  ] },
-  { icon: '🌦️', en: 'Climates of the world', es: 'Los climas del mundo', steps: [
-    { title_en: 'Köppen climate zones', title_es: 'Zonas climáticas de Köppen', projection: 'equalEarth', stack: ['koppen'], fly: [0, 0, 1], en: 'Five letters, five families: A tropical, B dry, C temperate, D continental, E polar. They follow latitude, oceans and mountains.', es: 'Cinco letras, cinco familias: A tropical, B seco, C templado, D continental, E polar. Siguen la latitud, los océanos y las montañas.' },
-    { title_en: 'The Amazon (Af)', title_es: 'La Amazonía (Af)', fly: [-62, -4, 3], en: 'Rain every month and 27 °C all year: the largest rainforest on Earth.', es: 'Lluvia todos los meses y 27 °C todo el año: la mayor selva del planeta.' },
-    { title_en: 'The Sahara (BWh)', title_es: 'El Sáhara (BWh)', fly: [10, 23, 3], en: 'The largest hot desert: some places get rain only once in years.', es: 'El mayor desierto cálido: en algunos lugares solo llueve una vez en varios años.' },
-    { title_en: 'The Mediterranean (Cs)', title_es: 'El Mediterráneo (Cs)', fly: [15, 39, 4], en: 'Dry, hot summers and mild, wet winters, shared with California, central Chile, the Cape and south-west Australia.', es: 'Veranos secos y cálidos e inviernos suaves y húmedos, como en California, Chile central, El Cabo y el suroeste de Australia.' },
-    { title_en: 'Siberia (Dfc, Dfd)', title_es: 'Siberia (Dfc, Dfd)', fly: [120, 62, 2.6], en: 'The most extreme seasons: Verkhoyansk has recorded −68 °C and +38 °C.', es: 'Las estaciones más extremas: en Verjoyansk se han medido −68 °C y +38 °C.' },
-  ] },
-  { icon: '🌃', en: 'Earth at night', es: 'La Tierra de noche', steps: [
-    { title_en: 'Day and night, live', title_es: 'Día y noche, en vivo', projection: 'globe', stack: ['satellite', 'daynight', 'citylights'], fly: [20, 20, 1], en: 'The shadow line is where the sun is setting or rising right now. City lights glow on the night side.', es: 'La línea de sombra es donde el sol se pone o sale ahora mismo. Las luces de las ciudades brillan en el lado nocturno.' },
-    { title_en: 'Europe', title_es: 'Europa', fly: [10, 50, 3.5], en: 'A dense web of cities: the Po valley, the Rhine and the Ruhr, London and Paris.', es: 'Una densa red de ciudades: el valle del Po, el Rin y el Ruhr, Londres y París.' },
-    { title_en: 'The Nile', title_es: 'El Nilo', fly: [31, 27, 4], en: 'Almost all of Egypt’s 110 million people live along a thin green river line in the desert.', es: 'Casi todos los 110 millones de egipcios viven en una fina línea verde junto al río, en pleno desierto.' },
-    { title_en: 'India', title_es: 'India', fly: [80, 22, 3.2], en: 'The Ganges plain is one of the most densely populated places on Earth.', es: 'La llanura del Ganges es uno de los lugares más poblados de la Tierra.' },
-  ] },
-  { icon: '📐', en: 'Why maps lie about size', es: 'Por qué los mapas mienten sobre el tamaño', steps: [
-    { title_en: 'Mercator', title_es: 'Mercator', projection: 'mercator', stack: ['political'], fly: [0, 30, 1], en: 'On the Mercator map, Greenland looks as big as Africa.', es: 'En el mapa de Mercator, Groenlandia parece tan grande como África.' },
-    { title_en: 'The truth', title_es: 'La verdad', projection: 'equalEarth', fly: [0, 20, 1], en: 'On an equal-area map you see the truth: Africa is 14 times larger than Greenland. Try "True size" in the More menu.', es: 'En un mapa de áreas iguales se ve la verdad: África es 14 veces mayor que Groenlandia. Prueba «Tamaño real» en el menú Más.' },
-    { title_en: 'The globe', title_es: 'El globo', projection: 'globe', fly: [-30, 40, 1], en: 'Only a globe shows sizes, shapes and distances all at once.', es: 'Solo un globo muestra a la vez tamaños, formas y distancias.' },
-  ] },
-  { icon: '🦕', en: 'From Pangea to today', es: 'De Pangea a hoy', steps: [
-    { title_en: 'Pangea', title_es: 'Pangea', mode: 'pangea', en: 'Press play on the timeline: 250 million years of drifting continents. Africa and South America fit like puzzle pieces.', es: 'Pulsa reproducir en la línea de tiempo: 250 millones de años de continentes a la deriva. África y Sudamérica encajan como piezas de puzle.' },
-  ] },
-];

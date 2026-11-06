@@ -1,0 +1,2681 @@
+{
+  "id": "rice",
+  "name": {
+    "en": "Rice",
+    "es": "El arroz"
+  },
+  "icon": "🍚",
+  "era": "ancient",
+  "region": {
+    "en": "Asia, Africa and the world",
+    "es": "Asia, África y el mundo"
+  },
+  "start": "-8000",
+  "end": "2023",
+  "summary": {
+    "en": "From wild rice on the Yangtze and African rice on the Niger to terraces, paella, Carolina's plantations, miracle rice and the food of half the world.",
+    "es": "Del arroz silvestre del Yangtsé y el arroz africano del Níger a las terrazas, la paella, las plantaciones de Carolina, el arroz milagroso y la comida de medio mundo."
+  },
+  "camera": {
+    "lon": 95,
+    "lat": 25,
+    "zoom": 1.4
+  },
+  "sides": [
+    {
+      "id": "african",
+      "name": {
+        "en": "African rice grown",
+        "es": "Donde se cultiva arroz africano"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "asian",
+      "name": {
+        "en": "Asian rice grown",
+        "es": "Donde se cultiva arroz asiático"
+      },
+      "color": "#16a085"
+    },
+    {
+      "id": "slave",
+      "name": {
+        "en": "Atlantic slave trade",
+        "es": "Trata atlántica de esclavos"
+      },
+      "color": "#2c3e50"
+    }
+  ],
+  "defs": {
+    "yangtze": {
+      "land": [
+        [
+          110.8,
+          30.8
+        ],
+        [
+          112.5,
+          31.0
+        ],
+        [
+          114.5,
+          30.9
+        ],
+        [
+          116.5,
+          30.6
+        ],
+        [
+          118.5,
+          31.8
+        ],
+        [
+          120.5,
+          32.1
+        ],
+        [
+          121.9,
+          31.6
+        ],
+        [
+          122.2,
+          30.2
+        ],
+        [
+          121.8,
+          29.6
+        ],
+        [
+          120.6,
+          29.0
+        ],
+        [
+          119.0,
+          28.9
+        ],
+        [
+          117.0,
+          28.4
+        ],
+        [
+          115.0,
+          28.2
+        ],
+        [
+          113.0,
+          28.3
+        ],
+        [
+          111.3,
+          28.8
+        ]
+      ]
+    },
+    "south_china": {
+      "land": [
+        [
+          105.0,
+          22.5
+        ],
+        [
+          108.0,
+          25.5
+        ],
+        [
+          112.0,
+          26.5
+        ],
+        [
+          117.5,
+          27.5
+        ],
+        [
+          120.0,
+          27.8
+        ],
+        [
+          119.5,
+          25.5
+        ],
+        [
+          116.5,
+          23.0
+        ],
+        [
+          113.5,
+          22.2
+        ],
+        [
+          110.0,
+          21.0
+        ],
+        [
+          107.5,
+          21.5
+        ]
+      ]
+    },
+    "ganges": {
+      "land": [
+        [
+          77.5,
+          29.8
+        ],
+        [
+          80.0,
+          28.8
+        ],
+        [
+          83.5,
+          27.6
+        ],
+        [
+          86.0,
+          27.0
+        ],
+        [
+          88.2,
+          26.4
+        ],
+        [
+          89.8,
+          25.5
+        ],
+        [
+          90.5,
+          23.0
+        ],
+        [
+          89.0,
+          21.8
+        ],
+        [
+          86.8,
+          21.6
+        ],
+        [
+          85.5,
+          23.5
+        ],
+        [
+          84.0,
+          24.0
+        ],
+        [
+          81.5,
+          25.0
+        ],
+        [
+          79.0,
+          25.8
+        ],
+        [
+          77.3,
+          27.0
+        ]
+      ]
+    },
+    "indus_rice": {
+      "land": [
+        [
+          71.0,
+          29.5
+        ],
+        [
+          72.5,
+          32.5
+        ],
+        [
+          74.8,
+          31.8
+        ],
+        [
+          74.0,
+          29.5
+        ],
+        [
+          71.0,
+          26.5
+        ],
+        [
+          69.0,
+          24.5
+        ],
+        [
+          67.5,
+          24.5
+        ],
+        [
+          68.5,
+          27.0
+        ]
+      ]
+    },
+    "se_asia": {
+      "land": [
+        [
+          97.5,
+          20.5
+        ],
+        [
+          100.5,
+          22.0
+        ],
+        [
+          104.0,
+          22.5
+        ],
+        [
+          106.5,
+          21.0
+        ],
+        [
+          107.0,
+          17.0
+        ],
+        [
+          109.0,
+          12.0
+        ],
+        [
+          106.5,
+          9.5
+        ],
+        [
+          104.5,
+          10.5
+        ],
+        [
+          103.0,
+          13.0
+        ],
+        [
+          100.0,
+          13.5
+        ],
+        [
+          98.5,
+          16.0
+        ]
+      ]
+    },
+    "korea_south": {
+      "land": [
+        [
+          126.0,
+          34.5
+        ],
+        [
+          126.2,
+          37.6
+        ],
+        [
+          127.6,
+          38.0
+        ],
+        [
+          129.5,
+          36.5
+        ],
+        [
+          129.3,
+          35.0
+        ]
+      ]
+    },
+    "west_japan": {
+      "land": [
+        [
+          129.6,
+          33.0
+        ],
+        [
+          130.5,
+          34.0
+        ],
+        [
+          132.0,
+          34.6
+        ],
+        [
+          135.5,
+          35.0
+        ],
+        [
+          136.8,
+          34.6
+        ],
+        [
+          135.0,
+          33.4
+        ],
+        [
+          132.0,
+          32.8
+        ],
+        [
+          131.2,
+          31.3
+        ],
+        [
+          130.2,
+          31.3
+        ]
+      ]
+    },
+    "java_bali": {
+      "land": [
+        [
+          105.0,
+          -5.8
+        ],
+        [
+          108.0,
+          -6.0
+        ],
+        [
+          112.0,
+          -6.6
+        ],
+        [
+          115.0,
+          -7.8
+        ],
+        [
+          116.0,
+          -8.5
+        ],
+        [
+          114.5,
+          -8.9
+        ],
+        [
+          110.0,
+          -8.3
+        ],
+        [
+          106.0,
+          -7.2
+        ]
+      ]
+    },
+    "niger_delta": {
+      "land": [
+        [
+          -5.8,
+          13.5
+        ],
+        [
+          -4.6,
+          15.1
+        ],
+        [
+          -3.6,
+          16.1
+        ],
+        [
+          -2.6,
+          16.3
+        ],
+        [
+          -3.2,
+          15.2
+        ],
+        [
+          -4.0,
+          13.9
+        ],
+        [
+          -5.0,
+          13.3
+        ]
+      ]
+    },
+    "rice_coast": {
+      "land": [
+        [
+          -17.2,
+          16.0
+        ],
+        [
+          -16.0,
+          16.6
+        ],
+        [
+          -14.0,
+          16.2
+        ],
+        [
+          -13.0,
+          13.0
+        ],
+        [
+          -11.5,
+          10.0
+        ],
+        [
+          -10.5,
+          7.5
+        ],
+        [
+          -11.6,
+          6.8
+        ],
+        [
+          -13.4,
+          8.3
+        ],
+        [
+          -15.2,
+          10.6
+        ],
+        [
+          -16.9,
+          12.3
+        ]
+      ]
+    },
+    "gilan": {
+      "land": [
+        [
+          48.8,
+          38.2
+        ],
+        [
+          50.5,
+          37.2
+        ],
+        [
+          53.5,
+          36.9
+        ],
+        [
+          54.5,
+          36.7
+        ],
+        [
+          54.0,
+          36.2
+        ],
+        [
+          51.0,
+          36.4
+        ],
+        [
+          49.0,
+          36.8
+        ]
+      ]
+    },
+    "iraq_south": {
+      "land": [
+        [
+          44.0,
+          32.5
+        ],
+        [
+          45.5,
+          32.8
+        ],
+        [
+          47.5,
+          31.5
+        ],
+        [
+          48.0,
+          30.2
+        ],
+        [
+          46.5,
+          30.3
+        ],
+        [
+          45.0,
+          31.0
+        ]
+      ]
+    },
+    "nile_delta": {
+      "land": [
+        [
+          29.8,
+          31.3
+        ],
+        [
+          32.3,
+          31.3
+        ],
+        [
+          31.3,
+          30.0
+        ],
+        [
+          30.6,
+          30.2
+        ]
+      ]
+    },
+    "valencia": {
+      "land": [
+        [
+          -0.7,
+          39.7
+        ],
+        [
+          0.0,
+          39.7
+        ],
+        [
+          -0.1,
+          38.9
+        ],
+        [
+          -0.6,
+          39.0
+        ]
+      ]
+    },
+    "veracruz_rice": {
+      "land": [
+        [
+          -96.9,
+          19.9
+        ],
+        [
+          -95.8,
+          19.6
+        ],
+        [
+          -94.8,
+          18.1
+        ],
+        [
+          -96.5,
+          17.9
+        ]
+      ]
+    },
+    "ne_brazil": {
+      "land": [
+        [
+          -46.0,
+          -1.5
+        ],
+        [
+          -44.0,
+          -2.5
+        ],
+        [
+          -41.0,
+          -3.0
+        ],
+        [
+          -38.5,
+          -12.5
+        ],
+        [
+          -39.5,
+          -15.0
+        ],
+        [
+          -41.0,
+          -12.0
+        ],
+        [
+          -44.0,
+          -6.0
+        ],
+        [
+          -46.5,
+          -4.0
+        ]
+      ]
+    },
+    "lowcountry": {
+      "land": [
+        [
+          -81.7,
+          30.8
+        ],
+        [
+          -81.1,
+          32.0
+        ],
+        [
+          -79.8,
+          32.8
+        ],
+        [
+          -78.6,
+          33.9
+        ],
+        [
+          -79.4,
+          34.1
+        ],
+        [
+          -80.7,
+          33.0
+        ],
+        [
+          -81.5,
+          32.0
+        ],
+        [
+          -82.0,
+          31.0
+        ]
+      ]
+    },
+    "italy_po": {
+      "land": [
+        [
+          7.6,
+          45.0
+        ],
+        [
+          8.6,
+          45.6
+        ],
+        [
+          9.6,
+          45.4
+        ],
+        [
+          10.0,
+          45.0
+        ],
+        [
+          9.0,
+          44.8
+        ],
+        [
+          8.0,
+          44.8
+        ]
+      ]
+    },
+    "rice_world": [
+      {
+        "land": [
+          [
+            97.5,
+            24.0
+          ],
+          [
+            99.0,
+            28.0
+          ],
+          [
+            102.0,
+            31.5
+          ],
+          [
+            105.0,
+            33.0
+          ],
+          [
+            110.0,
+            34.5
+          ],
+          [
+            117.0,
+            34.5
+          ],
+          [
+            120.5,
+            34.5
+          ],
+          [
+            121.5,
+            31.0
+          ],
+          [
+            122.0,
+            29.5
+          ],
+          [
+            120.5,
+            27.0
+          ],
+          [
+            117.5,
+            23.5
+          ],
+          [
+            113.0,
+            22.0
+          ],
+          [
+            109.5,
+            21.0
+          ],
+          [
+            108.0,
+            21.5
+          ],
+          [
+            106.0,
+            22.5
+          ],
+          [
+            101.0,
+            21.5
+          ]
+        ]
+      },
+      "TWN",
+      {
+        "land": [
+          [
+            123.5,
+            41.5
+          ],
+          [
+            124.5,
+            45.0
+          ],
+          [
+            126.5,
+            48.0
+          ],
+          [
+            130.0,
+            48.5
+          ],
+          [
+            133.5,
+            47.5
+          ],
+          [
+            131.5,
+            45.0
+          ],
+          [
+            129.0,
+            42.5
+          ],
+          [
+            125.5,
+            40.5
+          ]
+        ]
+      },
+      "IND",
+      "BGD",
+      "NPL",
+      "LKA",
+      "MMR",
+      "THA",
+      "LAO",
+      "KHM",
+      "VNM",
+      "MYS",
+      "IDN",
+      "PHL",
+      "TWN",
+      "JPN",
+      "KOR",
+      "PRK",
+      {
+        "ref": "indus_rice"
+      },
+      {
+        "ref": "gilan"
+      },
+      {
+        "ref": "iraq_south"
+      },
+      {
+        "ref": "nile_delta"
+      },
+      {
+        "ref": "valencia"
+      },
+      {
+        "ref": "italy_po"
+      },
+      "MDG",
+      "SLE",
+      "GIN",
+      "LBR",
+      "CIV",
+      "NGA",
+      "TZA",
+      {
+        "land": [
+          [
+            -91.8,
+            36.3
+          ],
+          [
+            -90.0,
+            36.0
+          ],
+          [
+            -90.5,
+            32.5
+          ],
+          [
+            -91.5,
+            32.5
+          ],
+          [
+            -92.0,
+            34.5
+          ]
+        ]
+      },
+      {
+        "land": [
+          [
+            -122.3,
+            40.0
+          ],
+          [
+            -121.4,
+            40.0
+          ],
+          [
+            -121.4,
+            38.6
+          ],
+          [
+            -122.0,
+            38.6
+          ]
+        ]
+      },
+      {
+        "land": [
+          [
+            -94.0,
+            30.6
+          ],
+          [
+            -91.5,
+            30.5
+          ],
+          [
+            -91.5,
+            29.6
+          ],
+          [
+            -94.0,
+            29.7
+          ]
+        ]
+      },
+      "COL",
+      "ECU",
+      "GUY",
+      "SUR",
+      "DOM",
+      "CUB",
+      {
+        "land": [
+          [
+            -81.0,
+            -4.0
+          ],
+          [
+            -79.0,
+            -5.0
+          ],
+          [
+            -78.0,
+            -8.0
+          ],
+          [
+            -79.5,
+            -8.5
+          ],
+          [
+            -80.5,
+            -6.5
+          ]
+        ]
+      },
+      {
+        "land": [
+          [
+            -57.5,
+            -30.0
+          ],
+          [
+            -53.0,
+            -29.0
+          ],
+          [
+            -50.5,
+            -30.0
+          ],
+          [
+            -52.5,
+            -33.0
+          ],
+          [
+            -55.0,
+            -32.0
+          ]
+        ]
+      },
+      {
+        "ref": "ne_brazil"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "date": "-8000",
+      "title": {
+        "en": "Wild rice on the Yangtze",
+        "es": "Arroz silvestre en el Yangtsé"
+      },
+      "camera": {
+        "lon": 115.5,
+        "lat": 29.5,
+        "zoom": 4.4
+      },
+      "text": {
+        "en": "Along the Yangtze, foragers gathered wild rice and then began to tend it. Over thousands of years it became Asian rice, tamed just once, about 9,000 years ago.",
+        "es": "A orillas del Yangtsé, los recolectores cosechaban arroz silvestre y luego empezaron a cuidarlo. Durante milenios se convirtió en el arroz asiático, domesticado una sola vez, hace unos 9000 años."
+      },
+      "details": {
+        "en": "Rice was tamed from a wild grass of marshes and lake shores, Oryza rufipogon. Genetic studies point to a single taming in southern China about 9,000 years ago. Early farmers grew rice while still gathering acorns, water chestnuts and fish, and it took thousands of years before the ears stopped shattering and the plant came to depend fully on people.",
+        "es": "El arroz se domesticó a partir de una hierba silvestre de marismas y orillas de lagos, Oryza rufipogon. Los estudios genéticos apuntan a una sola domesticación en el sur de China hace unos 9000 años. Los primeros agricultores cultivaban arroz sin dejar de recoger bellotas, castañas de agua y peces, y hicieron falta miles de años para que las espigas dejaran de desgranarse y la planta dependiera del todo de las personas."
+      },
+      "control": {
+        "asian": {
+          "ref": "yangtze"
+        }
+      },
+      "places": [
+        {
+          "id": "xianren-cave",
+          "name": {
+            "en": "Xianren Cave",
+            "es": "Cueva de Xianren"
+          },
+          "at": [
+            117.1732,
+            28.7361
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-18000",
+          "place": {
+            "en": "Wannian, Jiangxi, China",
+            "es": "Wannian, Jiangxi, China"
+          },
+          "text": {
+            "en": "This cave holds the oldest known pottery, about 20,000 years old, made by foragers long before farming, and early traces of rice.",
+            "es": "Esta cueva guarda la cerámica más antigua conocida, de unos 20 000 años, hecha por recolectores mucho antes de la agricultura, y huellas tempranas de arroz."
+          },
+          "wiki": {
+            "en": "Xianren Cave",
+            "es": "Arroz"
+          }
+        },
+        {
+          "id": "shangshan",
+          "name": {
+            "en": "Shangshan",
+            "es": "Shangshan"
+          },
+          "at": [
+            119.9714,
+            29.4558
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-8000",
+          "place": {
+            "en": "Pujiang, Zhejiang, China",
+            "es": "Pujiang, Zhejiang, China"
+          },
+          "text": {
+            "en": "Pots here, about 10,000 years old, were tempered with rice husks, and residues in them show the oldest known rice beer. The rice was still half wild.",
+            "es": "Las ollas halladas aquí, de unos 10 000 años, se hacían con cascarilla de arroz, y sus restos revelan la cerveza de arroz más antigua conocida. El arroz aún era medio silvestre."
+          },
+          "wiki": {
+            "en": "Shangshan",
+            "es": "Producción de arroz en China"
+          }
+        },
+        {
+          "id": "pengtoushan",
+          "name": {
+            "en": "Pengtoushan",
+            "es": "Pengtoushan"
+          },
+          "at": [
+            111.6789,
+            29.6822
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-8000",
+          "place": {
+            "en": "Lixian, Hunan, China",
+            "es": "Lixian, Hunan, China"
+          },
+          "text": {
+            "en": "A village of the middle Yangtze where rice remains have been dated to about 8000 BC. The grains are larger than those of wild rice, a sign of cultivation.",
+            "es": "Una aldea del Yangtsé medio donde se han fechado restos de arroz hacia el 8000 a. C. Sus granos son mayores que los del arroz silvestre, señal de cultivo."
+          },
+          "wiki": {
+            "en": "Pengtoushan culture",
+            "es": "Arroz"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-5000",
+      "title": {
+        "en": "Paddies and stilt houses",
+        "es": "Arrozales y palafitos"
+      },
+      "camera": {
+        "lon": 120.7,
+        "lat": 30.2,
+        "zoom": 12.0
+      },
+      "text": {
+        "en": "Villages of wooden houses on stilts grew up in the wetlands of the lower Yangtze. By 3500 BC, farmers there were growing rice in flooded paddy fields.",
+        "es": "En los humedales del bajo Yangtsé crecieron aldeas de casas de madera sobre pilotes. Hacia el 3500 a. C., sus agricultores cultivaban arroz en arrozales inundados."
+      },
+      "details": {
+        "en": "Growing rice in standing water keeps weeds down and lets the same fields be farmed year after year. Rice-rich Yangtze cultures such as Liangzhu built cities, dams and canals, carved jade and became some of the first states of East Asia, until floods and conflict brought them down around 2300 BC. Liangzhu's rulers were buried with jade, silk and lacquer.",
+        "es": "Cultivar arroz en agua estancada frena las malas hierbas y permite cultivar los mismos campos año tras año. Culturas del Yangtsé ricas en arroz, como Liangzhu, levantaron ciudades, presas y canales, tallaron jade y fueron de los primeros estados de Asia oriental, hasta que las inundaciones y los conflictos las derribaron hacia el 2300 a. C. Los gobernantes de Liangzhu se enterraban con jade, seda y laca."
+      },
+      "places": [
+        {
+          "id": "kuahuqiao",
+          "name": {
+            "en": "Kuahuqiao",
+            "es": "Kuahuqiao"
+          },
+          "at": [
+            120.2183,
+            30.1442
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-6000",
+          "place": {
+            "en": "Xiaoshan, Hangzhou, China",
+            "es": "Xiaoshan, Hangzhou, China"
+          },
+          "text": {
+            "en": "An 8,000-year-old village of houses on stilts by Hangzhou Bay. Its potters mixed wild rice into the clay; the rising sea drowned it about 7,500 years ago.",
+            "es": "Una aldea de hace 8000 años con casas sobre pilotes junto a la bahía de Hangzhou. Sus alfareros mezclaban arroz silvestre con el barro; el mar la anegó hace unos 7500 años."
+          },
+          "wiki": {
+            "en": "Kuahuqiao site",
+            "es": "Producción de arroz en China"
+          }
+        },
+        {
+          "id": "hemudu",
+          "name": {
+            "en": "Hemudu",
+            "es": "Hemudu"
+          },
+          "at": [
+            121.3444,
+            29.9642
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-5000",
+          "place": {
+            "en": "Yuyao, Zhejiang, China",
+            "es": "Yuyao, Zhejiang, China"
+          },
+          "text": {
+            "en": "A rice village of wooden houses on stilts, about 7,000 years old. Thick layers of rice husks, bone hoes for working the fields and pig bones survived in its wet soil.",
+            "es": "Una aldea arrocera de casas de madera sobre pilotes, de hace unos 7000 años. En su suelo húmedo se conservaron gruesas capas de cascarilla de arroz, azadas de hueso para trabajar los campos y huesos de cerdo."
+          },
+          "wiki": {
+            "en": "Hemudu culture",
+            "es": "Cultura Hemudu"
+          }
+        },
+        {
+          "id": "liangzhu",
+          "name": {
+            "en": "Liangzhu",
+            "es": "Liangzhu"
+          },
+          "at": [
+            119.9908,
+            30.3956
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-3300",
+          "end": "-2300",
+          "place": {
+            "en": "Yuhang, Hangzhou, China",
+            "es": "Yuhang, Hangzhou, China"
+          },
+          "text": {
+            "en": "A walled city of rice farmers, from 3300 to 2300 BC, with huge earthen dams to hold back floods and canals for boats. It is a World Heritage Site.",
+            "es": "Una ciudad amurallada de agricultores de arroz, del 3300 al 2300 a. C., con enormes presas de tierra contra las inundaciones y canales para barcas. Es Patrimonio de la Humanidad."
+          },
+          "wiki": {
+            "en": "Liangzhu culture",
+            "es": "Cultura de Liangzhu"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-2500",
+      "title": {
+        "en": "Rice reaches India",
+        "es": "El arroz llega a la India"
+      },
+      "camera": {
+        "lon": 88.0,
+        "lat": 26.0,
+        "zoom": 2.8
+      },
+      "text": {
+        "en": "About 4,500 years ago, japonica rice from China reached India and crossed with local wild rice. The result was indica, the long-grain rice of South Asia.",
+        "es": "Hace unos 4500 años, el arroz japonica de China llegó a la India y se cruzó con arroces silvestres locales. El resultado fue el indica, el arroz de grano largo del sur de Asia."
+      },
+      "details": {
+        "en": "Whether India also tamed rice on its own is still argued. People in the Ganges valley gathered, and perhaps grew, local wild rice long before, but the oldest unmistakably domestic rice in northern India dates from about 2000 BC. Rice was also grown in the Indus cities. Indian rice later went back to China and spread west, towards Persia.",
+        "es": "Aún se discute si la India domesticó también el arroz por su cuenta. En el valle del Ganges se recogía, y quizá se cultivaba, arroz silvestre local mucho antes, pero el arroz claramente doméstico más antiguo del norte de la India es de hacia el 2000 a. C. También se cultivaba en las ciudades del Indo. El arroz indio volvió después a China y se extendió al oeste, hacia Persia."
+      },
+      "control": {
+        "asian": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "south_china"
+          },
+          {
+            "ref": "ganges"
+          },
+          {
+            "ref": "indus_rice"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "asian",
+          "path": [
+            [
+              104.0,
+              25.0
+            ],
+            [
+              99.0,
+              25.5
+            ],
+            [
+              95.0,
+              26.5
+            ],
+            [
+              91.0,
+              26.0
+            ],
+            [
+              87.0,
+              25.5
+            ],
+            [
+              83.5,
+              26.3
+            ]
+          ],
+          "label": {
+            "en": "Japonica reaches India",
+            "es": "El japonica llega a la India"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "lahuradewa",
+          "name": {
+            "en": "Lahuradewa",
+            "es": "Lahuradewa"
+          },
+          "at": [
+            82.9497,
+            26.77
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-6500",
+          "place": {
+            "en": "Ganges plain, Uttar Pradesh, India",
+            "es": "Llanura del Ganges, Uttar Pradesh, India"
+          },
+          "text": {
+            "en": "Rice grains here were dated to the 7th millennium BC, but whether they were grown or gathered wild, and how old they really are, is debated.",
+            "es": "Aquí se fecharon granos de arroz en el VII milenio a. C., pero se discute si eran cultivados o silvestres, y su edad real."
+          },
+          "wiki": {
+            "en": "Lahuradewa",
+            "es": "Arroz"
+          }
+        },
+        {
+          "id": "indica-rice",
+          "name": {
+            "en": "Indica rice",
+            "es": "Arroz indica"
+          },
+          "at": [
+            85.6,
+            25.5
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-2500",
+          "place": {
+            "en": "Ganges plain, India",
+            "es": "Llanura del Ganges, India"
+          },
+          "text": {
+            "en": "The long-grain rice of South Asia, born when japonica from China met local wild rice in India about 4,500 years ago. Today it is grown all across the tropics.",
+            "es": "El arroz de grano largo del sur de Asia, nacido cuando el japonica de China se encontró con arroces silvestres de la India hace unos 4500 años. Hoy se cultiva en todos los trópicos."
+          },
+          "wiki": {
+            "en": "Oryza sativa",
+            "es": "Oryza sativa"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-2000",
+      "title": {
+        "en": "Across the seas",
+        "es": "A través de los mares"
+      },
+      "camera": {
+        "lon": 113.0,
+        "lat": 12.0,
+        "zoom": 2.3
+      },
+      "text": {
+        "en": "Rice spread south into Southeast Asia. Farmers along the Mekong took it up, and Austronesian seafarers from Taiwan carried it to the Philippines and the islands.",
+        "es": "El arroz se extendió al sur, al Sudeste Asiático. Lo adoptaron los agricultores del Mekong, y los navegantes austronesios de Taiwán lo llevaron a Filipinas y las islas."
+      },
+      "details": {
+        "en": "In Taiwan, the site of Nanguanli, from about 2800 BC, has yielded rice and millet. Austronesians later took rice to Borneo, Java and Sumatra, where wet rice farming was well established by 500 BC, and much later across the Indian Ocean to Madagascar. Rice did not survive the long voyages into the Pacific, except to Guam.",
+        "es": "En Taiwán, el yacimiento de Nanguanli, de hacia el 2800 a. C., ha dado arroz y mijo. Los austronesios llevaron después el arroz a Borneo, Java y Sumatra, donde el cultivo en arrozales inundados ya estaba asentado hacia el 500 a. C., y mucho más tarde, a través del océano Índico, hasta Madagascar. El arroz no sobrevivió a los largos viajes por el Pacífico, salvo hasta Guam."
+      },
+      "control": {
+        "asian": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "se_asia"
+          },
+          "TWN",
+          "PHL"
+        ]
+      },
+      "moves": [
+        {
+          "side": "asian",
+          "path": [
+            [
+              120.5,
+              23.0
+            ],
+            [
+              121.0,
+              19.5
+            ],
+            [
+              121.5,
+              15.5
+            ],
+            [
+              120.0,
+              10.5
+            ],
+            [
+              117.0,
+              6.0
+            ],
+            [
+              113.0,
+              1.0
+            ],
+            [
+              110.0,
+              -5.5
+            ]
+          ],
+          "label": {
+            "en": "Austronesian voyages",
+            "es": "Viajes austronesios"
+          }
+        },
+        {
+          "side": "asian",
+          "path": [
+            [
+              112.0,
+              26.0
+            ],
+            [
+              108.0,
+              22.5
+            ],
+            [
+              105.0,
+              19.0
+            ],
+            [
+              103.5,
+              17.6
+            ]
+          ],
+          "label": {
+            "en": "Down the rivers",
+            "es": "Río abajo"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "austronesians",
+          "name": {
+            "en": "Austronesian seafarers",
+            "es": "Navegantes austronesios"
+          },
+          "at": [
+            121.0,
+            23.7
+          ],
+          "cat": "trade",
+          "icon": "⛵",
+          "type": "place",
+          "date": "-2000",
+          "place": {
+            "en": "Taiwan",
+            "es": "Taiwán"
+          },
+          "text": {
+            "en": "From Taiwan, Austronesian seafarers sailed south to the Philippines about 2000–1500 BC, carrying rice. Their descendants settled lands from Madagascar to Hawaii.",
+            "es": "Desde Taiwán, los navegantes austronesios viajaron al sur, a Filipinas, hacia el 2000-1500 a. C., llevando arroz. Sus descendientes poblaron tierras de Madagascar a Hawái."
+          },
+          "wiki": {
+            "en": "Austronesian peoples",
+            "es": "Pueblos austronesios"
+          }
+        },
+        {
+          "id": "ban-chiang",
+          "name": {
+            "en": "Ban Chiang",
+            "es": "Ban Chiang"
+          },
+          "at": [
+            103.2414,
+            17.4069
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-2000",
+          "place": {
+            "en": "Udon Thani, Thailand",
+            "es": "Udon Thani, Tailandia"
+          },
+          "text": {
+            "en": "A village in northeast Thailand with some of the earliest rice farming of mainland Southeast Asia, about 2000–1500 BC, and later bronze-working. It is a World Heritage Site.",
+            "es": "Una aldea del nordeste de Tailandia con uno de los cultivos de arroz más antiguos del Sudeste Asiático continental, hacia el 2000-1500 a. C., y más tarde con trabajo del bronce. Es Patrimonio de la Humanidad."
+          },
+          "wiki": {
+            "en": "Ban Chiang",
+            "es": "Ban Chiang"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-1500",
+      "title": {
+        "en": "Africa's own rice",
+        "es": "El arroz propio de África"
+      },
+      "camera": {
+        "lon": -8.0,
+        "lat": 12.5,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "In the inland delta of the Niger, in Mali, farmers tamed a different rice from a wild African species. From there it spread to the Senegal river and the coast.",
+        "es": "En el delta interior del Níger, en Malí, los agricultores domesticaron otro arroz, a partir de una especie silvestre africana. Desde allí se extendió al río Senegal y a la costa."
+      },
+      "details": {
+        "en": "African rice is hardy: it stands drought, weeds and salty water better than Asian rice, though it yields less. West African women did much of the work of growing, threshing and cooking it. Farmers of the coast learned to grow rice in tidal swamps and mangroves, skills that were later taken across the Atlantic with the people who were enslaved.",
+        "es": "El arroz africano es resistente: aguanta la sequía, las malas hierbas y el agua salobre mejor que el asiático, aunque rinde menos. Las mujeres de África occidental hacían buena parte del trabajo de cultivarlo, trillarlo y cocinarlo. Los agricultores de la costa aprendieron a cultivar arroz en pantanos de marea y manglares, un saber que más tarde cruzó el Atlántico con las personas esclavizadas."
+      },
+      "control": {
+        "african": [
+          {
+            "ref": "niger_delta"
+          },
+          {
+            "ref": "rice_coast"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "african",
+          "path": [
+            [
+              -4.2,
+              14.6
+            ],
+            [
+              -7.0,
+              14.8
+            ],
+            [
+              -10.5,
+              14.8
+            ],
+            [
+              -13.0,
+              15.3
+            ],
+            [
+              -15.3,
+              15.9
+            ]
+          ],
+          "label": {
+            "en": "To the Senegal river",
+            "es": "Hacia el río Senegal"
+          }
+        },
+        {
+          "side": "african",
+          "path": [
+            [
+              -4.6,
+              13.9
+            ],
+            [
+              -8.0,
+              11.0
+            ],
+            [
+              -11.0,
+              9.0
+            ],
+            [
+              -12.8,
+              8.4
+            ]
+          ],
+          "label": {
+            "en": "To the Guinea coast",
+            "es": "Hacia la costa de Guinea"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "african-rice",
+          "name": {
+            "en": "African rice",
+            "es": "Arroz africano"
+          },
+          "at": [
+            -4.2,
+            14.4
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-1500",
+          "place": {
+            "en": "Inner Niger Delta, Mali",
+            "es": "Delta interior del Níger, Malí"
+          },
+          "text": {
+            "en": "A rice species of its own, tamed 3,000 to 3,500 years ago in the inland delta of the Niger from wild African rice. Asian rice is a different species.",
+            "es": "Una especie de arroz propia, domesticada hace entre 3000 y 3500 años en el delta interior del Níger a partir del arroz silvestre africano. El arroz asiático es otra especie."
+          },
+          "wiki": {
+            "en": "Oryza glaberrima",
+            "es": "Oryza glaberrima"
+          }
+        },
+        {
+          "id": "djenne-djeno",
+          "name": {
+            "en": "Djenné-Djeno",
+            "es": "Djenné-Djenno"
+          },
+          "at": [
+            -4.5403,
+            13.89
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-250",
+          "end": "1400",
+          "place": {
+            "en": "Djenné, Mali",
+            "es": "Djenné, Malí"
+          },
+          "text": {
+            "en": "One of West Africa's oldest towns, lived in from about 250 BC to AD 1400 on the floodplain of the Niger, where African rice was grown and traded.",
+            "es": "Una de las ciudades más antiguas de África occidental, habitada desde hacia el 250 a. C. hasta el 1400 en la llanura inundable del Níger, donde se cultivaba y comerciaba arroz africano."
+          },
+          "wiki": {
+            "en": "Djenné-Djenno",
+            "es": "Djenné-Djenno"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-850",
+      "title": {
+        "en": "Korea and Japan",
+        "es": "Corea y Japón"
+      },
+      "camera": {
+        "lon": 128.5,
+        "lat": 35.0,
+        "zoom": 4.6
+      },
+      "text": {
+        "en": "Rice reached Korea and then Japan with farmers from the mainland. Wet paddy farming took hold in Korea by about 850 BC, and in Japan during the Yayoi period.",
+        "es": "El arroz llegó a Corea y después a Japón con agricultores del continente. El cultivo en arrozales inundados arraigó en Corea hacia el 850 a. C., y en Japón durante el período Yayoi."
+      },
+      "details": {
+        "en": "In Japan, rice farming marks the start of the Yayoi period, usually dated from about 300 BC, though radiocarbon dates suggest it may have begun centuries earlier in Kyushu. Rice changed life: people settled in larger villages, built storehouses on stilts and fought over land and water. Rice became the heart of Japanese culture, from offerings to the gods to sake.",
+        "es": "En Japón, el cultivo del arroz marca el inicio del período Yayoi, que suele fecharse desde hacia el 300 a. C., aunque el radiocarbono sugiere que pudo empezar siglos antes en Kyushu. El arroz cambió la vida: la gente se asentó en aldeas mayores, construyó graneros sobre pilotes y luchó por la tierra y el agua. El arroz se volvió el corazón de la cultura japonesa, de las ofrendas a los dioses al sake."
+      },
+      "control": {
+        "asian": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "korea_south"
+          },
+          {
+            "ref": "west_japan"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "asian",
+          "path": [
+            [
+              120.0,
+              36.5
+            ],
+            [
+              123.0,
+              37.6
+            ],
+            [
+              126.4,
+              37.2
+            ],
+            [
+              127.6,
+              35.6
+            ],
+            [
+              128.9,
+              34.9
+            ],
+            [
+              130.2,
+              33.7
+            ]
+          ],
+          "label": {
+            "en": "Rice crosses to Japan",
+            "es": "El arroz pasa a Japón"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "songguk-ri",
+          "name": {
+            "en": "Songguk-ri",
+            "es": "Songguk-ri"
+          },
+          "at": [
+            127.0305,
+            36.2678
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-850",
+          "end": "-300",
+          "place": {
+            "en": "Buyeo, South Korea",
+            "es": "Buyeo, Corea del Sur"
+          },
+          "text": {
+            "en": "The type site of Korea's Middle Mumun period (about 850–550 BC): a village of pit-houses behind a palisade, from the time paddy rice spread in southern Korea.",
+            "es": "El yacimiento tipo del período Mumun medio de Corea (hacia el 850-550 a. C.): una aldea de casas semienterradas tras una empalizada, de cuando los arrozales se extendían por el sur de Corea."
+          },
+          "wiki": {
+            "en": "Songguk-ri",
+            "es": "Periodo de la cerámica Mumun"
+          }
+        },
+        {
+          "id": "yoshinogari",
+          "name": {
+            "en": "Yoshinogari",
+            "es": "Yoshinogari"
+          },
+          "at": [
+            130.384,
+            33.325
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-400",
+          "place": {
+            "en": "Saga, Kyushu, Japan",
+            "es": "Saga, Kyushu, Japón"
+          },
+          "text": {
+            "en": "A large Yayoi settlement begun before 400 BC and later ringed by a 2.5 km moat with watchtowers: rice wealth brought villages that had to be defended.",
+            "es": "Un gran poblado Yayoi iniciado antes del 400 a. C. y rodeado después por un foso de 2,5 km con torres de vigilancia: la riqueza del arroz trajo aldeas que había que defender."
+          },
+          "wiki": {
+            "en": "Yoshinogari site",
+            "es": "Sitio arqueológico Yoshinogari"
+          }
+        }
+      ]
+    },
+    {
+      "date": "700",
+      "title": {
+        "en": "Stairways of rice",
+        "es": "Escaleras de arroz"
+      },
+      "camera": {
+        "lon": 112.0,
+        "lat": 8.0,
+        "zoom": 1.9
+      },
+      "text": {
+        "en": "Mountain farmers carved hillsides into terraces of flooded rice fields, fed by channels from the forests above: the Hani of Yunnan, the Balinese, the Ifugao of Luzon.",
+        "es": "Los agricultores de montaña tallaron las laderas en terrazas de arrozales inundados, regadas con canales desde los bosques: los hani de Yunnan, los balineses, los ifugao de Luzón."
+      },
+      "details": {
+        "en": "Terraces turn steep slopes into flat, flooded fields and stop the soil from washing away. They need constant care and cooperation: in Bali, water temples share out the water among villages, a system called subak. Several of these landscapes are now World Heritage Sites, and keeping them alive takes many hands. In the Ifugao mountains, the know-how and rituals needed to keep the terraces are handed down from one generation to the next.",
+        "es": "Las terrazas convierten laderas empinadas en campos llanos e inundados y evitan que la tierra se pierda. Necesitan cuidados y cooperación constantes: en Bali, los templos del agua la reparten entre las aldeas, un sistema llamado subak. Varios de estos paisajes son hoy Patrimonio de la Humanidad, y mantenerlos vivos exige muchas manos. En las montañas ifugao, el saber y los rituales para cuidar las terrazas pasan de una generación a otra."
+      },
+      "control": {
+        "asian": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "java_bali"
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "hani-terraces",
+          "name": {
+            "en": "Hani rice terraces",
+            "es": "Terrazas de arroz de los hani"
+          },
+          "at": [
+            102.7377,
+            23.1172
+          ],
+          "cat": "site",
+          "type": "structure",
+          "date": "700",
+          "place": {
+            "en": "Yuanyang, Yunnan, China",
+            "es": "Yuanyang, Yunnan, China"
+          },
+          "text": {
+            "en": "For about 1,300 years the Hani people have farmed these terraces in Yuanyang, fed by forest springs through hand-dug channels. They became a World Heritage Site in 2013.",
+            "es": "Desde hace unos 1300 años, el pueblo hani cultiva estas terrazas de Yuanyang, regadas con manantiales del bosque por canales excavados a mano. Son Patrimonio de la Humanidad desde 2013."
+          },
+          "wiki": {
+            "en": "Honghe Hani Rice Terraces",
+            "es": "Paisaje cultural de los arrozales en terrazas de los hani de Honghe"
+          }
+        },
+        {
+          "id": "subak",
+          "name": {
+            "en": "Subak",
+            "es": "Subak"
+          },
+          "at": [
+            115.4028,
+            -8.2592
+          ],
+          "cat": "trade",
+          "type": "institution",
+          "date": "850",
+          "place": {
+            "en": "Bali, Indonesia",
+            "es": "Bali, Indonesia"
+          },
+          "text": {
+            "en": "Bali's way of sharing water among rice terraces, run by farmers' groups and water temples since about the 800s. It is a World Heritage landscape.",
+            "es": "La forma balinesa de repartir el agua entre las terrazas de arroz, gestionada por grupos de campesinos y templos del agua desde hacia el siglo IX. Es un paisaje Patrimonio de la Humanidad."
+          },
+          "wiki": {
+            "en": "Subak (irrigation)",
+            "es": "Subak"
+          }
+        },
+        {
+          "id": "ifugao-terraces",
+          "name": {
+            "en": "Ifugao rice terraces",
+            "es": "Terrazas de arroz ifugao"
+          },
+          "at": [
+            121.1347,
+            16.9347
+          ],
+          "cat": "site",
+          "type": "structure",
+          "date": "1600",
+          "place": {
+            "en": "Banaue, Luzon, Philippines",
+            "es": "Banaue, Luzón, Filipinas"
+          },
+          "text": {
+            "en": "The terraces of Banaue and the Ifugao mountains were long said to be 2,000 years old, but recent digs suggest most were built about 400 years ago, around the time the Spanish arrived.",
+            "es": "Las terrazas de Banaue y de las montañas ifugao se decían de hace 2000 años, pero excavaciones recientes indican que la mayoría se construyó hace unos 400 años, cuando llegaron los españoles."
+          },
+          "wiki": {
+            "en": "Banaue Rice Terraces",
+            "es": "Arrozales en terrazas de las cordilleras de Filipinas"
+          }
+        }
+      ]
+    },
+    {
+      "date": "900",
+      "title": {
+        "en": "West to Persia and Spain",
+        "es": "Hacia Persia y España"
+      },
+      "camera": {
+        "lon": 24.0,
+        "lat": 35.0,
+        "zoom": 1.9
+      },
+      "text": {
+        "en": "Rice spread west to Persia, Mesopotamia and Egypt. Arab rulers brought it to Spain in the 700s, and the Spanish word arroz comes from the Arabic al-ruzz.",
+        "es": "El arroz se extendió al oeste, a Persia, Mesopotamia y Egipto. Los gobernantes árabes lo llevaron a España en el siglo VIII, y la palabra arroz viene del árabe al-ruzz."
+      },
+      "details": {
+        "en": "Greeks learned of rice through Alexander's campaigns, and by Roman times it grew in Babylonia and Persia. After the Arab conquests it spread across the Islamic world, from the shores of the Caspian to Sicily and al-Andalus. Around Valencia, irrigation canals were run by the farmers themselves, whose representatives still meet every Thursday at the cathedral in the Water Tribunal.",
+        "es": "Los griegos conocieron el arroz con las campañas de Alejandro, y en época romana se cultivaba en Babilonia y Persia. Tras las conquistas árabes se extendió por el mundo islámico, de las orillas del Caspio a Sicilia y al-Ándalus. En torno a Valencia, los canales de riego los gestionaban los propios regantes, cuyos representantes aún se reúnen cada jueves ante la catedral en el Tribunal de las Aguas."
+      },
+      "control": {
+        "asian": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "gilan"
+          },
+          {
+            "ref": "iraq_south"
+          },
+          {
+            "ref": "nile_delta"
+          },
+          {
+            "ref": "valencia"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "asian",
+          "path": [
+            [
+              78.0,
+              28.0
+            ],
+            [
+              70.0,
+              30.5
+            ],
+            [
+              62.0,
+              33.5
+            ],
+            [
+              55.0,
+              36.0
+            ],
+            [
+              50.2,
+              37.0
+            ]
+          ],
+          "label": {
+            "en": "To Persia",
+            "es": "Hacia Persia"
+          }
+        },
+        {
+          "side": "asian",
+          "path": [
+            [
+              49.0,
+              35.5
+            ],
+            [
+              45.0,
+              32.5
+            ],
+            [
+              38.5,
+              33.5
+            ],
+            [
+              33.5,
+              31.3
+            ],
+            [
+              31.2,
+              30.8
+            ]
+          ],
+          "label": {
+            "en": "To Egypt",
+            "es": "Hacia Egipto"
+          }
+        },
+        {
+          "side": "asian",
+          "path": [
+            [
+              31.0,
+              31.0
+            ],
+            [
+              20.0,
+              32.8
+            ],
+            [
+              10.0,
+              36.8
+            ],
+            [
+              3.0,
+              37.0
+            ],
+            [
+              -0.3,
+              39.3
+            ]
+          ],
+          "label": {
+            "en": "To al-Andalus",
+            "es": "Hacia al-Ándalus"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "gilan-rice",
+          "name": {
+            "en": "Gilan rice fields",
+            "es": "Arrozales de Guilán"
+          },
+          "at": [
+            49.5886,
+            37.2761
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "700",
+          "place": {
+            "en": "Gilan, Iran",
+            "es": "Guilán, Irán"
+          },
+          "text": {
+            "en": "Rice spread along the wet southern shore of the Caspian Sea after the Arab conquest of Persia. Gilan's farmers bred many local rices, such as Hashemi.",
+            "es": "El arroz se extendió por la húmeda orilla sur del mar Caspio tras la conquista árabe de Persia. Los agricultores de Guilán crearon muchos arroces locales, como el hashemi."
+          },
+          "wiki": {
+            "en": "Gilan province",
+            "es": "Provincia de Guilán"
+          }
+        },
+        {
+          "name": {
+            "en": "Pilaf",
+            "es": "Pilaf"
+          },
+          "at": [
+            37.16,
+            36.2
+          ],
+          "cat": "rice",
+          "type": "dish",
+          "date": "1220",
+          "place": {
+            "en": "Aleppo, Syria",
+            "es": "Alepo, Siria"
+          },
+          "text": {
+            "en": "Rice cooked in broth so the grains stay separate. The first recipe like modern pilaf is in a 13th-century cookbook from Aleppo; it became plov, pulao and pilau from Central Asia to the Balkans.",
+            "es": "Arroz cocido en caldo para que los granos queden sueltos. La primera receta parecida al pilaf moderno está en un recetario de Alepo del siglo XIII; se convirtió en plov, pulao o pilau de Asia central a los Balcanes."
+          },
+          "wiki": {
+            "en": "Pilaf",
+            "es": "Pilaf (comida)"
+          }
+        },
+        {
+          "id": "water-tribunal-valencia",
+          "name": {
+            "en": "Water Tribunal of Valencia",
+            "es": "Tribunal de las Aguas de Valencia"
+          },
+          "at": [
+            -0.3751,
+            39.476
+          ],
+          "cat": "trade",
+          "icon": "💧",
+          "type": "institution",
+          "date": "960",
+          "place": {
+            "en": "Valencia, Spain",
+            "es": "Valencia, España"
+          },
+          "text": {
+            "en": "Every Thursday, representatives of the farmers meet at Valencia's cathedral to settle quarrels over irrigation water. The custom has roots in al-Andalus, in the 900s.",
+            "es": "Cada jueves, los representantes de los regantes se reúnen ante la catedral de Valencia para resolver disputas por el agua de riego. La costumbre tiene raíces en al-Ándalus, en el siglo X."
+          },
+          "wiki": {
+            "en": "Water Tribunal of the plain of Valencia",
+            "es": "Tribunal de las Aguas de Valencia"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1520",
+      "title": {
+        "en": "Rice in the Americas",
+        "es": "El arroz en América"
+      },
+      "camera": {
+        "lon": -55.0,
+        "lat": 5.0,
+        "zoom": 1.5
+      },
+      "text": {
+        "en": "Spanish ships brought Asian rice to Mexico in the 1520s, and the Portuguese to Brazil. Enslaved Africans, many from rice-growing lands, did much to make it grow.",
+        "es": "Los barcos españoles llevaron arroz asiático a México en la década de 1520, y los portugueses a Brasil. Los africanos esclavizados, muchos de tierras arroceras, hicieron mucho por que prosperara."
+      },
+      "details": {
+        "en": "The Americas had a rice of their own: about 4,000 years ago, people in the southwest Amazon tamed a native wild rice. The rice and beans eaten across Latin America and the Caribbean, from Brazil's arroz com feijão to Cuba's moros y cristianos, echo West African dishes kept alive by enslaved people and their descendants.",
+        "es": "América tenía un arroz propio: hace unos 4000 años, en el suroeste de la Amazonia se domesticó un arroz silvestre nativo. El arroz con frijoles que se come en toda América Latina y el Caribe, del arroz con feijão brasileño a los moros y cristianos cubanos, recuerda platos de África occidental que los esclavizados y sus descendientes mantuvieron vivos."
+      },
+      "control": {
+        "asian": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "veracruz_rice"
+          },
+          {
+            "ref": "ne_brazil"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "asian",
+          "path": [
+            [
+              -6.0,
+              37.35
+            ],
+            [
+              -15.5,
+              28.0
+            ],
+            [
+              -40.0,
+              20.0
+            ],
+            [
+              -61.0,
+              16.0
+            ],
+            [
+              -75.0,
+              19.5
+            ],
+            [
+              -85.0,
+              21.5
+            ],
+            [
+              -96.1,
+              19.2
+            ]
+          ],
+          "label": {
+            "en": "Asian rice to New Spain",
+            "es": "Arroz asiático a Nueva España"
+          }
+        },
+        {
+          "side": "slave",
+          "path": [
+            [
+              -13.0,
+              8.5
+            ],
+            [
+              -20.0,
+              4.5
+            ],
+            [
+              -30.0,
+              -3.0
+            ],
+            [
+              -38.4,
+              -12.9
+            ]
+          ],
+          "label": {
+            "en": "Enslaved Africans to Brazil",
+            "es": "Africanos esclavizados a Brasil"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "amazonian-rice",
+          "name": {
+            "en": "Amazonian rice",
+            "es": "Arroz amazónico"
+          },
+          "at": [
+            -63.4,
+            -12.6
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "-2000",
+          "place": {
+            "en": "Rondônia, Brazil",
+            "es": "Rondonia, Brasil"
+          },
+          "text": {
+            "en": "About 4,000 years ago, people in the southwest Amazon tamed a native wild rice and grew it with maize and squash: a third, separate taming of rice.",
+            "es": "Hace unos 4000 años, en el suroeste de la Amazonia se domesticó un arroz silvestre nativo y se cultivó junto al maíz y la calabaza: una tercera domesticación del arroz, independiente."
+          },
+          "wiki": {
+            "en": "History of rice cultivation",
+            "es": "Arroz"
+          }
+        },
+        {
+          "id": "veracruz-rice",
+          "name": {
+            "en": "Veracruz",
+            "es": "Veracruz"
+          },
+          "at": [
+            -96.1342,
+            19.1738
+          ],
+          "cat": "trade",
+          "icon": "⚓",
+          "type": "place",
+          "date": "1520",
+          "place": {
+            "en": "Veracruz, Mexico",
+            "es": "Veracruz, México"
+          },
+          "text": {
+            "en": "Spanish colonists brought Asian rice into Mexico through the port of Veracruz in the 1520s. Mexican rice dishes, red, green and white, grew from it.",
+            "es": "Los colonos españoles introdujeron el arroz asiático en México por el puerto de Veracruz en la década de 1520. De ahí nacieron los arroces mexicanos, rojo, verde y blanco."
+          },
+          "wiki": {
+            "en": "Veracruz",
+            "es": "Veracruz"
+          }
+        },
+        {
+          "name": {
+            "en": "Rice and beans",
+            "es": "Arroz con frijoles"
+          },
+          "at": [
+            -38.5,
+            -12.97
+          ],
+          "cat": "rice",
+          "type": "dish",
+          "date": "1600",
+          "place": {
+            "en": "Bahia, Brazil",
+            "es": "Bahía, Brasil"
+          },
+          "text": {
+            "en": "Rice cooked with beans is daily food from Brazil to the Caribbean. These dishes echo West African cooking kept alive by enslaved Africans and their descendants.",
+            "es": "El arroz con frijoles es comida diaria de Brasil al Caribe. Estos platos recuerdan la cocina de África occidental que los africanos esclavizados y sus descendientes mantuvieron viva."
+          },
+          "wiki": {
+            "en": "Rice and beans",
+            "es": "Arroz con frijoles"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1700",
+      "title": {
+        "en": "Carolina Gold",
+        "es": "El oro de Carolina"
+      },
+      "camera": {
+        "lon": -45.0,
+        "lat": 22.0,
+        "zoom": 1.6
+      },
+      "text": {
+        "en": "In South Carolina, rice made planters rich on the labour of enslaved Africans, many taken from West Africa's Rice Coast for their skill in growing it.",
+        "es": "En Carolina del Sur, el arroz enriqueció a los hacendados con el trabajo de africanos esclavizados, muchos arrancados de la Costa del Arroz de África occidental porque sabían cultivarlo."
+      },
+      "details": {
+        "en": "Rice reached Carolina around 1690. Enslaved Africans dyked the tidal marshes, flooded and drained the fields, pounded the grain in wooden mortars and winnowed it in sweetgrass baskets, as in West Africa. Work in the swamps, in heat and among malarial mosquitoes, was brutal and often deadly. Their descendants, the Gullah Geechee of the Sea Islands, keep a culture with many African roots, rice dishes included.",
+        "es": "El arroz llegó a Carolina hacia 1690. Los africanos esclavizados levantaron diques en las marismas de marea, inundaban y drenaban los campos, machacaban el grano en morteros de madera y lo aventaban en cestas de hierba dulce, como en África occidental. El trabajo en los pantanos, con calor y mosquitos de la malaria, era brutal y a menudo mortal. Sus descendientes, los gullah geechee de las islas del Mar, conservan una cultura con muchas raíces africanas, platos de arroz incluidos."
+      },
+      "control": {
+        "asian": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "lowcountry"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "slave",
+          "path": [
+            [
+              -13.04,
+              8.57
+            ],
+            [
+              -20.0,
+              11.0
+            ],
+            [
+              -40.0,
+              20.0
+            ],
+            [
+              -60.0,
+              27.0
+            ],
+            [
+              -79.93,
+              32.78
+            ]
+          ],
+          "label": {
+            "en": "Captives from the Rice Coast to Charleston",
+            "es": "Cautivos de la Costa del Arroz a Charleston"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "bunce-island",
+          "name": {
+            "en": "Bunce Island",
+            "es": "Isla Bunce"
+          },
+          "at": [
+            -13.0403,
+            8.5699
+          ],
+          "cat": "site",
+          "type": "structure",
+          "date": "1670",
+          "place": {
+            "en": "Sierra Leone River, Sierra Leone",
+            "es": "Río Sierra Leona, Sierra Leona"
+          },
+          "text": {
+            "en": "The largest British slave castle on West Africa's Rice Coast. Tens of thousands of captives, many of them rice farmers, were shipped from here to South Carolina and Georgia.",
+            "es": "El mayor castillo esclavista británico de la Costa del Arroz de África occidental. Desde aquí se envió a decenas de miles de cautivos, muchos de ellos cultivadores de arroz, a Carolina del Sur y Georgia."
+          },
+          "wiki": {
+            "en": "Bunce Island",
+            "es": "Isla Bunce"
+          }
+        },
+        {
+          "id": "carolina-gold",
+          "name": {
+            "en": "Carolina Gold",
+            "es": "Carolina Gold"
+          },
+          "at": [
+            -79.9319,
+            32.7833
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "1785",
+          "place": {
+            "en": "Charleston, South Carolina, USA",
+            "es": "Charleston, Carolina del Sur, EE. UU."
+          },
+          "text": {
+            "en": "A rice named for its golden husks, popular from the 1780s. Grown by enslaved people, it made the Lowcountry rich; the last commercial crop was in 1927, and it has since been revived.",
+            "es": "Un arroz llamado así por su cáscara dorada, popular desde la década de 1780. Cultivado por personas esclavizadas, enriqueció las tierras bajas de Carolina; la última cosecha comercial fue en 1927 y después se ha recuperado."
+          },
+          "wiki": {
+            "en": "Carolina Gold",
+            "es": "Arroz"
+          }
+        },
+        {
+          "id": "gullah-geechee",
+          "name": {
+            "en": "Gullah Geechee",
+            "es": "Gullah geechee"
+          },
+          "at": [
+            -80.6,
+            32.4
+          ],
+          "cat": "trade",
+          "icon": "🧺",
+          "type": "place",
+          "date": "1750",
+          "place": {
+            "en": "Sea Islands, South Carolina and Georgia, USA",
+            "es": "Islas del Mar, Carolina del Sur y Georgia, EE. UU."
+          },
+          "text": {
+            "en": "Descendants of enslaved West and Central Africans on the coasts of the Carolinas and Georgia. Their language, crafts and rice-based cooking keep many African roots.",
+            "es": "Descendientes de africanos occidentales y centrales esclavizados en las costas de las Carolinas y Georgia. Su lengua, su artesanía y su cocina basada en el arroz conservan muchas raíces africanas."
+          },
+          "wiki": {
+            "en": "Gullah",
+            "es": "Gullah"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1850",
+      "title": {
+        "en": "Paella and risotto",
+        "es": "Paella y risotto"
+      },
+      "camera": {
+        "lon": 4.5,
+        "lat": 42.0,
+        "zoom": 4.0
+      },
+      "text": {
+        "en": "In Europe, rice became festive food. Valencians cooked paella in a wide pan near the Albufera lagoon, and the Milanese made creamy risotto with Po valley rice.",
+        "es": "En Europa, el arroz se volvió comida de fiesta. Los valencianos cocinaban la paella en una sartén ancha junto a la Albufera, y los milaneses hacían el cremoso risotto con arroz del valle del Po."
+      },
+      "details": {
+        "en": "Rice was grown in Lombardy from the 1400s, encouraged by the Sforza dukes of Milan. The first recipe recognisable as risotto dates from 1809. Paella, named after the pan, from the Latin patella, took its modern form in the countryside around Valencia in the mid-1800s, with rabbit, chicken, duck and snails; seafood paellas came later.",
+        "es": "En Lombardía se cultivaba arroz desde el siglo XV, impulsado por los duques Sforza de Milán. La primera receta reconocible como risotto es de 1809. La paella, que toma su nombre de la sartén, del latín patella, adquirió su forma moderna en la huerta de Valencia a mediados del siglo XIX, con conejo, pollo, pato y caracoles; las paellas de marisco llegaron después."
+      },
+      "control": {
+        "asian": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "italy_po"
+          }
+        ]
+      },
+      "show": [
+        "paella",
+        "risotto-milanese"
+      ]
+    },
+    {
+      "date": "1966",
+      "title": {
+        "en": "Miracle rice",
+        "es": "El arroz milagroso"
+      },
+      "camera": {
+        "lon": 115.0,
+        "lat": 20.0,
+        "zoom": 2.4
+      },
+      "text": {
+        "en": "In 1966 the International Rice Research Institute released IR8, a short rice that doubled or tripled harvests. In China, Yuan Longping bred the first hybrid rice.",
+        "es": "En 1966, el Instituto Internacional de Investigación del Arroz lanzó el IR8, un arroz bajo que duplicó o triplicó las cosechas. En China, Yuan Longping creó el primer arroz híbrido."
+      },
+      "details": {
+        "en": "IR8 was a cross of a tall Indonesian rice, Peta, and a dwarf rice from Taiwan, Dee-geo-woo-gen. Like Borlaug's wheats, it needed fertilizer and plenty of water, and it did not suit fields that flood deeply, so later varieties improved on it. Yuan's hybrid rice, from the 1970s, is now grown in dozens of countries in Asia, Africa and the Americas.",
+        "es": "El IR8 era un cruce de un arroz alto indonesio, el Peta, y un arroz enano de Taiwán, el Dee-geo-woo-gen. Como los trigos de Borlaug, necesitaba abono y mucha agua, y no se adaptaba a los campos que se inundan mucho, así que variedades posteriores lo mejoraron. El arroz híbrido de Yuan, de los años setenta, se cultiva hoy en decenas de países de Asia, África y América."
+      },
+      "places": [
+        {
+          "id": "irri",
+          "name": {
+            "en": "IRRI",
+            "es": "IRRI"
+          },
+          "at": [
+            121.257,
+            14.17
+          ],
+          "cat": "trade",
+          "type": "institution",
+          "date": "1960",
+          "place": {
+            "en": "Los Baños, Philippines",
+            "es": "Los Baños, Filipinas"
+          },
+          "text": {
+            "en": "The International Rice Research Institute, founded in 1960 with Ford and Rockefeller Foundation support. Its rices helped avert famine in Asia in the 1960s.",
+            "es": "El Instituto Internacional de Investigación del Arroz, fundado en 1960 con apoyo de las fundaciones Ford y Rockefeller. Sus arroces ayudaron a evitar el hambre en Asia en los años sesenta."
+          },
+          "wiki": {
+            "en": "International Rice Research Institute",
+            "es": "Instituto Internacional de Investigación del Arroz"
+          }
+        },
+        {
+          "id": "ir8",
+          "name": {
+            "en": "IR8",
+            "es": "IR8"
+          },
+          "at": [
+            120.9,
+            15.6
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "1966",
+          "place": {
+            "en": "Central Luzon, Philippines",
+            "es": "Luzón central, Filipinas"
+          },
+          "text": {
+            "en": "A semi-dwarf rice bred at IRRI and released in November 1966 in the Philippines and India. Called 'miracle rice', it raised yields from 1–2 tonnes per hectare to 4–5.",
+            "es": "Un arroz semienano creado en el IRRI y difundido en noviembre de 1966 en Filipinas y la India. Llamado «arroz milagroso», elevó las cosechas de 1-2 toneladas por hectárea a 4-5."
+          },
+          "wiki": {
+            "en": "IR8",
+            "es": "Revolución verde"
+          }
+        },
+        {
+          "id": "yuan-longping",
+          "name": {
+            "en": "Yuan Longping",
+            "es": "Yuan Longping"
+          },
+          "at": [
+            109.95,
+            27.12
+          ],
+          "cat": "trade",
+          "icon": "🔬",
+          "type": "person",
+          "date": "1973",
+          "life": [
+            "1930-09-07",
+            "2021-05-22"
+          ],
+          "place": {
+            "en": "Anjiang, Hunan, China",
+            "es": "Anjiang, Hunan, China"
+          },
+          "text": {
+            "en": "A Chinese agronomist, the 'father of hybrid rice'. A teacher at a farm school in Hunan, he bred the first high-yielding hybrid rice in the 1970s.",
+            "es": "Agrónomo chino, el «padre del arroz híbrido». Profesor en una escuela agrícola de Hunan, creó el primer arroz híbrido de alto rendimiento en los años setenta."
+          },
+          "wiki": {
+            "en": "Yuan Longping",
+            "es": "Yuan Longping"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2023",
+      "title": {
+        "en": "Rice today",
+        "es": "El arroz hoy"
+      },
+      "camera": {
+        "lon": 80.0,
+        "lat": 20.0,
+        "zoom": 1.3
+      },
+      "text": {
+        "en": "Rice is the staple food of over half of humanity. In 2023 the world grew 800 million tonnes, more than half of it in China and India.",
+        "es": "El arroz es el alimento básico de más de la mitad de la humanidad. En 2023 el mundo cultivó 800 millones de toneladas, más de la mitad en China y la India."
+      },
+      "details": {
+        "en": "Rice is eaten in a thousand ways: steamed beside every meal in much of Asia, fried as nasi goreng, rolled into sushi, slow-cooked into biryani and pilaf, simmered with tomatoes in West African jollof. Growing it takes a great deal of water, and flooded paddies give off methane, a greenhouse gas, so scientists are breeding rice that needs less water and stands floods, drought and salt.",
+        "es": "El arroz se come de mil maneras: al vapor junto a cada comida en buena parte de Asia, frito como nasi goreng, enrollado en sushi, cocido lentamente en biryani y pilaf, guisado con tomate en el jollof de África occidental. Su cultivo gasta mucha agua y los arrozales inundados emiten metano, un gas de efecto invernadero, así que los científicos crean arroces que necesiten menos agua y aguanten inundaciones, sequías y sal."
+      },
+      "control": {
+        "african": [
+          {
+            "ref": "niger_delta"
+          },
+          {
+            "ref": "rice_coast"
+          }
+        ],
+        "asian": {
+          "minus": [
+            {
+              "ref": "rice_world"
+            },
+            {
+              "cur": "african"
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "basmati",
+          "name": {
+            "en": "Basmati",
+            "es": "Basmati"
+          },
+          "at": [
+            74.3436,
+            31.5497
+          ],
+          "cat": "crop",
+          "type": "crop",
+          "date": "1766",
+          "place": {
+            "en": "Punjab, Pakistan and India",
+            "es": "Punyab, Pakistán e India"
+          },
+          "text": {
+            "en": "A long, slender, fragrant rice of the Punjab and the Himalayan foothills, first mentioned in 1766 in the Punjabi poem Heer Ranjha. India and Pakistan share its trade.",
+            "es": "Un arroz largo, fino y aromático del Punyab y las faldas del Himalaya, mencionado por primera vez en 1766 en el poema punyabí Heer Ranjha. La India y Pakistán se reparten su comercio."
+          },
+          "wiki": {
+            "en": "Basmati",
+            "es": "Basmati"
+          }
+        }
+      ],
+      "aftermath": true,
+      "show": [
+        "biryani",
+        "sushi",
+        "jollof-rice"
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Rice, tamed on the Yangtze and separately in the Niger delta, now feeds more than half of humanity. It shaped landscapes of paddies and terraces, and cultures from Japan to Valencia. Its history also holds hard truths: the wealth of Carolina's rice was built by enslaved Africans, whose knowledge made the crop thrive.",
+    "es": "El arroz, domesticado en el Yangtsé y, por separado, en el delta del Níger, alimenta hoy a más de la mitad de la humanidad. Modeló paisajes de arrozales y terrazas, y culturas de Japón a Valencia. Su historia guarda también verdades duras: la riqueza del arroz de Carolina se levantó con africanos esclavizados, cuyo saber hizo prosperar el cultivo."
+  },
+  "sources": [
+    {
+      "title": "History of rice cultivation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_rice_cultivation"
+    },
+    {
+      "title": "Rice (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rice"
+    },
+    {
+      "title": "Shangshan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shangshan"
+    },
+    {
+      "title": "Pengtoushan culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pengtoushan_culture"
+    },
+    {
+      "title": "Kuahuqiao site (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kuahuqiao_site"
+    },
+    {
+      "title": "Liangzhu culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Liangzhu_culture"
+    },
+    {
+      "title": "Oryza glaberrima (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Oryza_glaberrima"
+    },
+    {
+      "title": "Djenné-Djenno (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Djenn%C3%A9-Djenno"
+    },
+    {
+      "title": "Mumun pottery period (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mumun_pottery_period"
+    },
+    {
+      "title": "Yayoi period (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yayoi_period"
+    },
+    {
+      "title": "Honghe Hani Rice Terraces (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Honghe_Hani_Rice_Terraces"
+    },
+    {
+      "title": "Rice Terraces of the Philippine Cordilleras (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rice_Terraces_of_the_Philippine_Cordilleras"
+    },
+    {
+      "title": "Subak (irrigation) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Subak_(irrigation)"
+    },
+    {
+      "title": "Water Tribunal of the plain of Valencia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Water_Tribunal_of_the_plain_of_Valencia"
+    },
+    {
+      "title": "Pilaf (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pilaf"
+    },
+    {
+      "title": "Rice and beans (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rice_and_beans"
+    },
+    {
+      "title": "Bunce Island (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bunce_Island"
+    },
+    {
+      "title": "Carolina Gold (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Carolina_Gold"
+    },
+    {
+      "title": "Gullah (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gullah"
+    },
+    {
+      "title": "Paella (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Paella"
+    },
+    {
+      "title": "Risotto (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Risotto"
+    },
+    {
+      "title": "IR8 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/IR8"
+    },
+    {
+      "title": "Yuan Longping (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yuan_Longping"
+    },
+    {
+      "title": "Biryani (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Biryani"
+    },
+    {
+      "title": "Sushi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sushi"
+    },
+    {
+      "title": "Jollof rice (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jollof_rice"
+    },
+    {
+      "title": "Basmati (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Basmati"
+    }
+  ]
+}

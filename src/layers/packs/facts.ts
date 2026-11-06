@@ -58,7 +58,7 @@ const CURATED: Record<string, Curated> = {
   main_power_source: { icon: '🏭', colors: { coal: '#495057', gas: '#ff922b', oil: '#8d5524', nuclear: '#9775fa', hydro: '#4dabf7', wind: '#38d9a9', solar: '#ffd43b', bioenergy: '#69db7c', other: '#ced4da' } },
   airports: { icon: '✈️', palette: P.blues }, railways_km: { icon: '🚆', palette: P.purples }, space_agency: { icon: '🚀', colors: { yes: '#7950f2', no: '#495057' } },
   space_launch_site: { icon: '🛰️', colors: { yes: '#f06595', no: '#495057' } }, height_male_cm: { icon: '🧍‍♂️', palette: P.viridis }, height_female_cm: { icon: '🧍‍♀️', palette: P.viridis },
-  calling_zone: { icon: '☎️' }, paper_size: { icon: '📄', colors: { a4: '#4dabf7', 'us-letter': '#ff6b6b' } }, driving_side: { icon: '🚗', colors: { left: '#e64980', right: '#228be6' }, keywords: 'drive car road left right conducir coche' },
+  calling_zone: { icon: '☎️' }, paper_size: { icon: '📄', colors: { a4: '#4dabf7', 'us-letter': '#ff6b6b' } }, driving_side: { icon: '🚗', colors: { left: '#e64980', right: '#228be6' }, keywords: 'drive car road left right conducir manejar coche auto carro' },
   speed_unit: { icon: '🚦', colors: { kmh: '#20c997', mph: '#fd7e14' } }, world_cup_titles: { icon: '⚽', palette: P.ylorrd }, womens_world_cup_titles: { icon: '⚽', palette: P.purples },
   olympic_medals: { icon: '🏅', palette: P.ylorrd }, olympic_golds: { icon: '🥇', palette: P.ylorrd },
   plug_types: { skip: true }, mains_voltage: { icon: '⚡', order: ['high', 'low', 'both'], colors: { high: '#4dabf7', low: '#ff922b', both: '#cc5de8' }, keywords: 'volt voltage electricity power travel adapter voltaje electricidad viaje' },

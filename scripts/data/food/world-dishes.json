@@ -1,0 +1,807 @@
+{
+  "id": "world-dishes",
+  "name": {
+    "en": "Where dishes were born",
+    "es": "Dónde nacieron los platos"
+  },
+  "icon": "🍽️",
+  "era": "ancient",
+  "region": {
+    "en": "The whole world",
+    "es": "Todo el mundo"
+  },
+  "start": "-12500",
+  "end": "2000",
+  "summary": {
+    "en": "From bread baked 14,400 years ago to bubble tea: where and when the world’s dishes were born, and the empires, journeys and migrants that carried them.",
+    "es": "Del pan cocido hace 14 400 años al té de burbujas: dónde y cuándo nacieron los platos del mundo, y los imperios, viajes y migrantes que los llevaron."
+  },
+  "camera": {
+    "lon": 30,
+    "lat": 25,
+    "zoom": 1.0
+  },
+  "catalog": "all",
+  "steps": [
+    {
+      "date": "-3500",
+      "title": {
+        "en": "The first bread, beer and cheese",
+        "es": "Los primeros panes, cervezas y quesos"
+      },
+      "camera": {
+        "lon": 70,
+        "lat": 46,
+        "zoom": 1.2
+      },
+      "text": {
+        "en": "Hunter-gatherers in the Levant baked flatbread 14,400 years ago, long before farming, and may have brewed beer. Early farmers learned to ferment: wine in the Caucasus, cheese in Poland, rice drinks in China.",
+        "es": "Unos cazadores-recolectores del Levante mediterráneo cocieron pan plano hace 14 400 años, mucho antes de la agricultura, y quizá hicieron cerveza. Los primeros agricultores aprendieron a fermentar: vino en el Cáucaso, queso en Polonia, bebidas de arroz en China."
+      },
+      "details": {
+        "en": "Cooking with fire is far older, but bread, beer and cheese mark a turning point: people began to transform food, not just heat it. Some archaeologists think the wish for more bread and beer helped push hunters to plant wild cereals. Fermentation was the great invention of the age. Bacteria and yeasts turned milk into yogurt and cheese, grape juice into wine and fish into food that kept through the winter, at a time with no fridges. Milking spread from the Near East, and on the Kazakh steppe the people of the Botai culture milked horses.",
+        "es": "Cocinar con fuego es mucho más antiguo, pero el pan, la cerveza y el queso marcan un cambio: la gente empezó a transformar los alimentos, no solo a calentarlos. Algunos arqueólogos creen que el deseo de tener más pan y cerveza ayudó a que los cazadores sembraran cereales silvestres. La fermentación fue el gran invento de la época. Bacterias y levaduras convirtieron la leche en yogur y queso, el jugo de uva en vino y el pescado en comida que aguantaba el invierno, cuando no había neveras. El ordeño se extendió desde Oriente Próximo, y en la estepa kazaja la cultura Botai ordeñaba caballos."
+      },
+      "show": [
+        "first-bread",
+        "first-beer",
+        "fermented-fish",
+        "jiahu-drink",
+        "yogurt",
+        "georgian-wine",
+        "first-cheese",
+        "areni-winery",
+        "kumis"
+      ]
+    },
+    {
+      "date": "-1213",
+      "title": {
+        "en": "Kitchens of the first cities",
+        "es": "Las cocinas de las primeras ciudades"
+      },
+      "camera": {
+        "lon": 62,
+        "lat": 27,
+        "zoom": 1.3
+      },
+      "text": {
+        "en": "In the first cities bread and beer became wages. Sumerians wrote a hymn with a beer recipe, Babylonians the oldest recipes; Egyptians fattened geese, and Indus cooks spiced stews with ginger and turmeric.",
+        "es": "En las primeras ciudades el pan y la cerveza se convirtieron en salario. Los sumerios escribieron un himno con una receta de cerveza y los babilonios las recetas más antiguas; los egipcios cebaban ocas y en el Indo se especiaban guisos con jengibre y cúrcuma."
+      },
+      "details": {
+        "en": "Cities needed food that could be stored, counted and shared out. Temple and palace storehouses handed out barley, bread and beer to workers, and the builders of the Giza pyramids lived on them. Writing, invented partly to keep these accounts, also gave us the first recipes: clay tablets of about 1730 BC with stews of lamb and leeks. Trade carried flavours far: when Ramesses II was mummified in 1213 BC, peppercorns from southern India were placed in his nose. In China, a bowl of millet noodles buried by a disaster at Lajia survived for 4,000 years.",
+        "es": "Las ciudades necesitaban alimentos que pudieran guardarse, contarse y repartirse. Los almacenes de templos y palacios daban cebada, pan y cerveza a los trabajadores, y de ellos vivían los constructores de las pirámides de Guiza. La escritura, inventada en parte para llevar esas cuentas, nos dio también las primeras recetas: tablillas de hacia el 1730 a. C. con guisos de cordero y puerro. El comercio llevaba los sabores lejos: cuando se momificó a Ramsés II en el 1213 a. C., le pusieron en la nariz granos de pimienta del sur de la India. En China, un cuenco de fideos de mijo sepultado por una catástrofe en Lajia sobrevivió 4000 años."
+      },
+      "show": [
+        "egyptian-beer",
+        "egyptian-bread",
+        "foie-gras",
+        "proto-curry",
+        "lajia-noodles",
+        "sumerian-beer",
+        "babylonian-stew",
+        "black-pepper"
+      ]
+    },
+    {
+      "date": "79",
+      "title": {
+        "en": "Greece, Rome and Han China",
+        "es": "Grecia, Roma y la China Han"
+      },
+      "camera": {
+        "lon": 55,
+        "lat": 35,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Two great empires stood at the ends of the Silk Road. Romans dressed food with garum and baked bread in Pompeii; in Han China cooks fermented soybeans into jiang, the ancestor of soy sauce, and emperors drank tea.",
+        "es": "Dos grandes imperios ocupaban los extremos de la Ruta de la Seda. Los romanos aliñaban con garum y horneaban pan en Pompeya; en la China Han se fermentaba la soja en jiang, antepasado de la salsa de soja, y los emperadores bebían té."
+      },
+      "details": {
+        "en": "The Greeks loved cheese, fish and wine, and mocked the Spartans for their black blood soup. Rome took in Greek cooks, made garum an industry from Spain to North Africa and fed the poor of the capital with grain handed out by the state. When Vesuvius erupted in AD 79, it preserved loaves in the ovens of Pompeii. At the other end of Eurasia, the Han dynasty (206 BC–AD 220) left bamboo slips listing fermented pastes, tea in an emperor’s tomb and the legend that a Han prince invented tofu. Silk, spices and ideas travelled between the two worlds along the Silk Road.",
+        "es": "A los griegos les encantaban el queso, el pescado y el vino, y se burlaban de los espartanos por su caldo negro de sangre. Roma acogió a cocineros griegos, convirtió el garum en una industria de Hispania al norte de África y alimentó a los pobres de la capital con grano repartido por el Estado. Cuando el Vesubio entró en erupción en el año 79, conservó hogazas en los hornos de Pompeya. En el otro extremo de Eurasia, la dinastía Han (206 a. C.-220 d. C.) dejó tablillas de bambú con pastas fermentadas, té en la tumba de un emperador y la leyenda de que un príncipe Han inventó el tofu. La seda, las especias y las ideas viajaban entre ambos mundos por la Ruta de la Seda."
+      },
+      "show": [
+        "feta",
+        "garum",
+        "black-soup",
+        "zongzi",
+        "soy-sauce",
+        "tofu",
+        "libum",
+        "tea",
+        "pompeii-bread"
+      ]
+    },
+    {
+      "date": "988",
+      "title": {
+        "en": "Silk Roads, monks and caliphs",
+        "es": "Rutas de la Seda, monjes y califas"
+      },
+      "camera": {
+        "lon": 70,
+        "lat": 33,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Buddhist monks carried tea, tofu and noodles across Asia, and the caliphs of Baghdad led a golden age of cooking. Crystal sugar, samosas, couscous and dosa were born, and Kyiv celebrated its new faith with kvass.",
+        "es": "Los monjes budistas llevaron el té, el tofu y los fideos por Asia, y los califas de Bagdad presidieron una edad de oro de la cocina. Nacieron el azúcar cristalizado, la samosa, el cuscús y la dosa, y Kiev celebró su nueva fe con kvas."
+      },
+      "details": {
+        "en": "Around AD 350 Indians learned to make crystal sugar, a new sweetness that Arab conquests would later carry west. Baghdad, founded in 762, became the capital of an empire stretching from North Africa to Central Asia, where cooks mixed Persian, Arab and Indian ideas; poets praised sanbusaj, the ancestor of the samosa. In Japan, rice wine and fish fermented in rice took shape around the Nara court, and in South India fermented batters gave dosa and idli. Hungarian herdsmen settled on the great plain, and in 988 Prince Vladimir’s baptism was celebrated in Kyiv with kvass and mead.",
+        "es": "Hacia el año 350 los indios aprendieron a hacer azúcar cristalizado, un dulzor nuevo que las conquistas árabes llevarían después al oeste. Bagdad, fundada en 762, fue la capital de un imperio que iba del norte de África a Asia central, donde los cocineros mezclaban ideas persas, árabes e indias; los poetas elogiaban el sanbusaj, antepasado de la samosa. En Japón, el vino de arroz y el pescado fermentado en arroz tomaron forma en torno a la corte de Nara, y en el sur de la India las masas fermentadas dieron la dosa y el idli. Los pastores húngaros se instalaron en la gran llanura, y en 988 el bautismo del príncipe Vladímir se celebró en Kiev con kvas e hidromiel."
+      },
+      "show": [
+        "jiaozi",
+        "crystal-sugar",
+        "sake",
+        "funazushi",
+        "dosa",
+        "samosa",
+        "couscous",
+        "goulash",
+        "idli",
+        "dim-sum",
+        "simit",
+        "knafeh",
+        "kvass"
+      ]
+    },
+    {
+      "date": "1330",
+      "title": {
+        "en": "From Cairo to Beijing",
+        "es": "De El Cairo a Pekín"
+      },
+      "camera": {
+        "lon": 80,
+        "lat": 32,
+        "zoom": 1.2
+      },
+      "text": {
+        "en": "Cookbooks flourished in Baghdad and Aleppo, restaurants in Hangzhou. Cairo banned a soup, Song poets slow-cooked pork, Korea pickled radish for winter, and the Mongol court in Beijing recorded its roast duck.",
+        "es": "Florecieron los recetarios en Bagdad y Alepo y los restaurantes en Hangzhou. El Cairo prohibió una sopa, los poetas Song guisaban cerdo a fuego lento, Corea encurtía rábanos para el invierno y la corte mongola de Pekín anotó su pato asado."
+      },
+      "details": {
+        "en": "In Song China, cities like Hangzhou had restaurants, teahouses and street stalls, and legends grew around dishes such as Dongpo pork and youtiao. Arab cookbooks of the 13th century give the first recipes for maqluba, in the Book of Dishes written in Baghdad in 1226, and, in Aleppo, for a cold purée of chickpeas with sesame much like hummus. In 1258 the Mongols sacked Baghdad, but their vast empire also moved cooks and techniques: distilling reached Korea as soju, and in 1330 a court manual of the Yuan emperors in Beijing wrote down roast duck.",
+        "es": "En la China Song, ciudades como Hangzhou tenían restaurantes, casas de té y puestos callejeros, y nacieron leyendas en torno a platos como el cerdo Dongpo y el youtiao. Los recetarios árabes del siglo XIII dan las primeras recetas de la maqluba, en el Libro de los platos escrito en Bagdad en 1226, y, en Alepo, de un puré frío de garbanzos con sésamo muy parecido al hummus. En 1258 los mongoles saquearon Bagdad, pero su inmenso imperio también movió cocineros y técnicas: la destilación llegó a Corea como soju, y en 1330 un manual de la corte de los emperadores Yuan en Pekín anotó el pato asado."
+      },
+      "show": [
+        "mulukhiyah",
+        "dongpo-pork",
+        "lahpet",
+        "youtiao",
+        "khachapuri",
+        "maqluba",
+        "kimchi",
+        "butter-tea",
+        "hummus",
+        "borek",
+        "om-ali",
+        "soju",
+        "naan",
+        "peking-duck"
+      ]
+    },
+    {
+      "date": "1450",
+      "title": {
+        "en": "Medieval Europe at table",
+        "es": "La mesa de la Europa medieval"
+      },
+      "camera": {
+        "lon": 8,
+        "lat": 47,
+        "zoom": 2.6
+      },
+      "text": {
+        "en": "Europe’s towns and courts created great cheeses, sausages and spirits. Sicily dried pasta for export, Dijon ground mustard for the king, and Poland first wrote down the word vodka.",
+        "es": "Las ciudades y cortes de Europa crearon grandes quesos, embutidos y aguardientes. Sicilia secaba pasta para exportar, Dijon molía mostaza para el rey y Polonia escribió por primera vez la palabra vodka."
+      },
+      "details": {
+        "en": "Arab rule had brought sugar, rice and dried pasta to Sicily and Spain. Parmesan and Roquefort were aged for months, and towns guarded their foods with charters and guilds. Spices from Asia, bought through Venice and Genoa, were a sign of wealth. Pilgrims on the road to Santiago ate empanadas, and an English cook wrote down an offal pudding called hagese. Distilling, learned from Arab alchemists, spread from medical schools like Salerno, giving aqua vitae, the \"water of life\". The Black Death of 1347–1351 killed a third or more of Europeans; many survivors ate better as wages rose.",
+        "es": "El dominio árabe había llevado el azúcar, el arroz y la pasta seca a Sicilia y a la península ibérica. El parmesano y el roquefort se curaban durante meses, y las ciudades protegían sus alimentos con fueros y gremios. Las especias de Asia, compradas a través de Venecia y Génova, eran signo de riqueza. Los peregrinos del Camino de Santiago comían empanadas, y un cocinero inglés anotó un embutido de asaduras llamado hagese. La destilación, aprendida de los alquimistas árabes, se extendió desde escuelas de medicina como la de Salerno y dio el aqua vitae, el «agua de vida». La peste negra de 1347-1351 mató a un tercio o más de los europeos; muchos supervivientes comieron mejor al subir los salarios."
+      },
+      "show": [
+        "dried-pasta",
+        "empanada",
+        "parmesan",
+        "lasagne",
+        "dijon-mustard",
+        "cassoulet",
+        "bratwurst",
+        "vodka",
+        "roquefort",
+        "haggis"
+      ]
+    },
+    {
+      "date": "1491",
+      "title": {
+        "en": "The Americas and the Pacific",
+        "es": "América y el Pacífico"
+      },
+      "camera": {
+        "lon": -118,
+        "lat": 0,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Before 1492 the Americas had great cuisines of their own: maize made into tortillas and tamales, cacao, potatoes freeze-dried into chuño, chicha and pulque. Pacific voyagers carried kava, taro and earth ovens.",
+        "es": "Antes de 1492 América tenía sus propias grandes cocinas: maíz convertido en tortillas y tamales, cacao, papas liofilizadas en chuño, chicha y pulque. Los navegantes del Pacífico llevaban el kava, el taro y los hornos de tierra."
+      },
+      "details": {
+        "en": "Peoples of the Americas tamed maize, beans, squash, chilies, tomatoes, potatoes, cacao and avocados, crops that would later change the world’s diet. On the Peruvian coast people were popping corn 6,700 years ago, and cacao was first used in the Amazon of Ecuador before it reached Mexico. The Maya painted tamales on their murals, the Wari brewed chicha on a mountaintop, and Plains peoples made pemmican from bison. Across the Pacific, Austronesian voyagers sailed thousands of kilometres in canoes, carrying taro, kava and the earth oven as far as Hawaii and, around 1300, New Zealand.",
+        "es": "Los pueblos de América domesticaron el maíz, el frijol, la calabaza, el chile, el tomate, la papa, el cacao y el aguacate, cultivos que cambiarían después la dieta del mundo. En la costa peruana se hacían palomitas hace 6700 años, y el cacao se usó primero en la Amazonia ecuatoriana antes de llegar a México. Los mayas pintaron tamales en sus murales, los wari elaboraban chicha en lo alto de una montaña y los pueblos de las Llanuras hacían pemmican con bisonte. En el Pacífico, los navegantes austronesios recorrieron miles de kilómetros en canoas y llevaron el taro, el kava y el horno de tierra hasta Hawái y, hacia 1300, Nueva Zelanda."
+      },
+      "show": [
+        "popcorn",
+        "first-cacao",
+        "cacao-drink",
+        "nixtamal-tortilla",
+        "arepa",
+        "kava",
+        "pemmican",
+        "tamales",
+        "ceviche",
+        "pulque",
+        "chicha",
+        "poi",
+        "chuno",
+        "hangi"
+      ]
+    },
+    {
+      "date": "1600",
+      "title": {
+        "en": "The Columbian Exchange",
+        "es": "El intercambio colombino"
+      },
+      "camera": {
+        "lon": -25,
+        "lat": 25,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "After 1492 foods crossed the oceans. Cassava went to Africa, chilies to Tunisia, cod from Newfoundland to Portugal; Europeans learned the Taíno barbacoa, maple sugar and mate, and sugar sweetened Europe.",
+        "es": "Tras 1492 los alimentos cruzaron los océanos. La mandioca llegó a África, el chile a Túnez y el bacalao de Terranova a Portugal; los europeos aprendieron la barbacoa taína, el azúcar de arce y el mate, y el azúcar endulzó Europa."
+      },
+      "details": {
+        "en": "The historian Alfred Crosby called this movement of plants, animals and diseases the Columbian Exchange. Wheat, cattle, pigs and sugarcane went west; maize, potatoes, tomatoes, cacao, chilies and peanuts went east. The cost was terrible: European diseases and violence killed most of the Indigenous people of the Caribbean and many millions on the mainland, and the colonisers turned to Africa for enslaved labour. In Europe, sugar from the new plantations turned luxuries like marzipan and frozen ices into fashions of the rich.",
+        "es": "El historiador Alfred Crosby llamó intercambio colombino a este movimiento de plantas, animales y enfermedades. El trigo, las vacas, los cerdos y la caña de azúcar fueron al oeste; el maíz, la papa, el tomate, el cacao, el chile y el maní, al este. El precio fue terrible: las enfermedades y la violencia europeas mataron a la mayoría de los indígenas del Caribe y a muchos millones en el continente, y los colonizadores recurrieron a África en busca de mano de obra esclavizada. En Europa, el azúcar de las nuevas plantaciones convirtió lujos como el mazapán y los helados en modas de los ricos."
+      },
+      "events": [
+        {
+          "icon": "⛵",
+          "date": "1492-10-12",
+          "at": [
+            -74.48,
+            24.06
+          ],
+          "text": {
+            "en": "Columbus reaches the Bahamas: the Columbian Exchange begins",
+            "es": "Colón llega a las Bahamas: empieza el intercambio colombino"
+          }
+        }
+      ],
+      "show": [
+        "barbacoa",
+        "maple-syrup",
+        "harissa",
+        "bacalhau",
+        "marzipan",
+        "gelato",
+        "mate",
+        "fufu"
+      ]
+    },
+    {
+      "date": "1650",
+      "title": {
+        "en": "Spice routes and new chilies",
+        "es": "Rutas de las especias y chiles nuevos"
+      },
+      "camera": {
+        "lon": 95,
+        "lat": 20,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "Portuguese, Dutch and Asian ships linked the spice ports of the Indian Ocean. Chili reached Sumatra’s rendang and Korea, Portuguese priests brought frying to Japan, and biryani took shape in Mughal kitchens.",
+        "es": "Barcos portugueses, neerlandeses y asiáticos unían los puertos de las especias del océano Índico. El chile llegó al rendang de Sumatra y a Corea, los sacerdotes portugueses llevaron la fritura a Japón y el biryani tomó forma en las cocinas mogolas."
+      },
+      "details": {
+        "en": "In 1498 Vasco da Gama reached Calicut, and Portugal, then the Dutch East India Company, fought to control the pepper and clove trades, often brutally. Chilies from the Americas spread through Asia and became central to the cooking of India, Thailand, Sichuan and Korea. Persian merchants at Ayutthaya probably inspired massaman curry, and Spanish friars named the vinegar stew of the Philippines adobo. In Japan, fried fish and the buckwheat noodles of Edo became new favourites, and in Ethiopia teff and injera spread through the highlands, where Portuguese Jesuits described royal banquets.",
+        "es": "En 1498 Vasco da Gama llegó a Calicut, y Portugal, y después la Compañía Neerlandesa de las Indias Orientales, lucharon, a menudo con brutalidad, por controlar el comercio de la pimienta y el clavo. Los chiles americanos se extendieron por Asia y se volvieron esenciales en la cocina de la India, Tailandia, Sichuan y Corea. Los comerciantes persas de Ayutthaya probablemente inspiraron el curry massaman, y los frailes españoles llamaron adobo al guiso de vinagre de Filipinas. En Japón el pescado frito y los fideos de alforfón de Edo fueron nuevos favoritos, y en Etiopía el tef y la ínyera se extendieron por el altiplano, donde los jesuitas portugueses describieron banquetes reales."
+      },
+      "show": [
+        "rendang",
+        "tej",
+        "kulfi",
+        "soba",
+        "tempura",
+        "bibimbap",
+        "biryani",
+        "adobo",
+        "injera",
+        "massaman-curry"
+      ]
+    },
+    {
+      "date": "1700",
+      "title": {
+        "en": "The coffeehouse age",
+        "es": "La era de los cafés"
+      },
+      "camera": {
+        "lon": 20,
+        "lat": 40,
+        "zoom": 1.6
+      },
+      "text": {
+        "en": "Coffee spread from Yemen to Istanbul’s first coffeehouse in 1554, then to Venice, London, Paris and Vienna. Europe’s courts and towns invented new dishes, from crème brûlée to Naples’ first tomato sauce.",
+        "es": "El café pasó de Yemen al primer café de Estambul en 1554, y de allí a Venecia, Londres, París y Viena. Las cortes y ciudades de Europa inventaron platos nuevos, de la crème brûlée a la primera salsa de tomate de Nápoles."
+      },
+      "details": {
+        "en": "Coffeehouses were a new kind of public place, where people read newspapers, argued, did business and played games, and rulers often tried to close them. The Ottoman palace kitchens of Topkapı made baklava, and in Vienna, the Habsburg capital, the oldest strudel recipe was written in 1697. Champagne began to sparkle, English merchants shipped port from Porto, and Zürich printed a recipe for melting cheese with wine. Maize from the Americas became Romanian mămăligă and tomatoes a Neapolitan sauce, while in Kraków Jewish bakers made bagels.",
+        "es": "Los cafés fueron un nuevo tipo de lugar público, donde la gente leía periódicos, discutía, hacía negocios y jugaba, y los gobernantes intentaron a menudo cerrarlos. Las cocinas del palacio otomano de Topkapı hacían baklava, y en Viena, la capital de los Habsburgo, se escribió en 1697 la receta de strudel más antigua. El champán empezó a espumar, los comerciantes ingleses embarcaban oporto en Oporto y Zúrich imprimió una receta para fundir queso con vino. El maíz americano se convirtió en la mămăligă rumana y el tomate en salsa napolitana, mientras en Cracovia los panaderos judíos hacían bagels."
+      },
+      "show": [
+        "coffee",
+        "baklava",
+        "turkish-coffee",
+        "halloumi",
+        "jenever",
+        "scotch-whisky",
+        "risotto-milanese",
+        "borscht",
+        "quiche",
+        "bagel",
+        "champagne",
+        "port-wine",
+        "pierogi",
+        "creme-brulee",
+        "tomato-sauce",
+        "mamaliga",
+        "apple-strudel",
+        "fondue"
+      ]
+    },
+    {
+      "date": "1760",
+      "title": {
+        "en": "Sugar, slavery and survival",
+        "es": "Azúcar, esclavitud y supervivencia"
+      },
+      "camera": {
+        "lon": -42,
+        "lat": 0,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Millions of enslaved Africans were forced to produce sugar, gold and coffee in the Americas. Out of that suffering came rum and new cuisines, like Jamaica’s Maroon jerk and the cassava cheese bread of Brazil’s gold towns.",
+        "es": "Millones de africanos esclavizados fueron obligados a producir azúcar, oro y café en América. De ese sufrimiento nacieron el ron y nuevas cocinas, como el jerk de los cimarrones de Jamaica y el pan de queso de mandioca de las ciudades del oro de Brasil."
+      },
+      "details": {
+        "en": "Between the 16th and 19th centuries about 12.5 million Africans were shipped across the Atlantic, and many died on the voyage. On Caribbean sugar plantations molasses was distilled into rum, probably first by enslaved workers, and in Jamaica people who escaped slavery, the Maroons, cooked pork the Taíno way. In Brazil’s gold towns cooks made bread from cassava, and feijoada mixed Portuguese bean stews with the skills of African cooks. In Mexico, legend credits the nuns of Puebla with mole, and tequila was distilled from agave. At the Cape of Good Hope, the Dutch brought enslaved people from Asia, whose cooking shaped bobotie.",
+        "es": "Entre los siglos XVI y XIX unos 12,5 millones de africanos fueron embarcados a través del Atlántico, y muchos murieron en la travesía. En las plantaciones de azúcar del Caribe la melaza se destiló en ron, probablemente primero por trabajadores esclavizados, y en Jamaica quienes escaparon de la esclavitud, los cimarrones, cocinaban el cerdo a la manera taína. En las ciudades del oro de Brasil se hacía pan de mandioca, y la feijoada mezcló los guisos portugueses de frijoles con el saber de cocineros africanos. En México, la leyenda atribuye el mole a las monjas de Puebla, y el tequila se destilaba del agave. En el cabo de Buena Esperanza, los neerlandeses llevaron a personas esclavizadas de Asia, cuya cocina dio forma al bobotie."
+      },
+      "show": [
+        "biltong",
+        "rum",
+        "jerk",
+        "bobotie",
+        "mole-poblano",
+        "pao-de-queijo",
+        "feijoada",
+        "tequila"
+      ]
+    },
+    {
+      "date": "1810",
+      "title": {
+        "en": "Restaurants and revolutions",
+        "es": "Restaurantes y revoluciones"
+      },
+      "camera": {
+        "lon": -25,
+        "lat": 38,
+        "zoom": 1.2
+      },
+      "text": {
+        "en": "Around 1765 a Paris shop served restorative broths at tables, from a menu: the first restaurant. After the French Revolution restaurants multiplied, and free Haitians ate soup joumou on their first day of independence.",
+        "es": "Hacia 1765 una tienda de París servía caldos reconstituyentes en mesas y con carta: el primer restaurante. Tras la Revolución francesa los restaurantes se multiplicaron, y los haitianos libres comieron sopa joumou en su primer día de independencia."
+      },
+      "details": {
+        "en": "The age of revolutions changed eating. In Paris, with the old cooks’ guilds abolished, restaurants spread, and, a popular story says, street vendors on the Pont Neuf fried potatoes, a crop the French had long distrusted. In London an earl lent his name to the sandwich, the port of Mahón probably gave its name to mayonnaise, and Normandy made Camembert. In 1804 Haiti, born from the only successful revolt of enslaved people, made squash soup a symbol of freedom. In New Orleans, which became part of the United States in 1803, gumbo mixed African, Choctaw and French cooking.",
+        "es": "La era de las revoluciones cambió la forma de comer. En París, abolidos los antiguos gremios de cocineros, los restaurantes se extendieron y, según una historia popular, los vendedores del Pont Neuf freían papas, un cultivo del que los franceses habían desconfiado mucho tiempo. En Londres un conde dio su nombre al sándwich, el puerto de Mahón probablemente dio el suyo a la mayonesa y Normandía hizo el camembert. En 1804 Haití, nacido de la única rebelión triunfante de esclavizados, convirtió la sopa de calabaza en símbolo de libertad. En Nueva Orleans, que pasó a Estados Unidos en 1803, el gumbo mezcló las cocinas africana, choctaw y francesa."
+      },
+      "events": [
+        {
+          "icon": "🏛️",
+          "date": "1789-07-14",
+          "at": [
+            2.3691,
+            48.8532
+          ],
+          "text": {
+            "en": "The storming of the Bastille starts the French Revolution",
+            "es": "La toma de la Bastilla inicia la Revolución francesa"
+          }
+        },
+        {
+          "icon": "🕊️",
+          "date": "1804-01-01",
+          "at": [
+            -72.6883,
+            19.4456
+          ],
+          "text": {
+            "en": "Haiti declares independence at Gonaïves",
+            "es": "Haití declara su independencia en Gonaïves"
+          }
+        }
+      ],
+      "show": [
+        "riga-black-balsam",
+        "mayonnaise",
+        "sandwich",
+        "restaurant",
+        "french-fries",
+        "turkish-delight",
+        "camembert",
+        "gumbo",
+        "soup-joumou",
+        "stroopwafel"
+      ]
+    },
+    {
+      "date": "1890",
+      "title": {
+        "en": "Cafés, beer and city streets",
+        "es": "Cafés, cerveza y calles"
+      },
+      "camera": {
+        "lon": -30,
+        "lat": 30,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Railways, factories and new nations remade the table. Vienna had its schnitzel and Sachertorte, Plzeň its golden lager, Switzerland milk chocolate, Naples pizza Margherita and Atlanta Coca-Cola.",
+        "es": "El ferrocarril, las fábricas y las nuevas naciones cambiaron la mesa. Viena tuvo su escalope y su tarta Sacher, Pilsen su lager dorada, Suiza el chocolate con leche, Nápoles la pizza margarita y Atlanta la Coca-Cola."
+      },
+      "details": {
+        "en": "Industrial cities filled with workers who needed cheap, quick food: fish and chips in London, espresso machines in Italian bars. New nations of Latin America adopted dishes as symbols, like Mexico’s chiles en nogada in the colours of the flag, while in Spain the tortilla and paella took their modern forms. Bottling, canning and condensed milk changed what people could buy, and pastry shops spread the croissant from Paris. For Native Americans forced onto reservations, government flour became frybread, a food of survival and a reminder of loss.",
+        "es": "Las ciudades industriales se llenaron de trabajadores que necesitaban comida barata y rápida: fish and chips en Londres, máquinas de expreso en los bares italianos. Las nuevas naciones de América Latina adoptaron platos como símbolos, como los chiles en nogada de México con los colores de la bandera, mientras en España la tortilla y la paella tomaban su forma moderna. El embotellado, las conservas y la leche condensada cambiaron lo que se podía comprar, y las pastelerías difundieron el cruasán desde París. Para los nativos americanos obligados a vivir en reservas, la harina del gobierno se convirtió en frybread, comida de supervivencia y recuerdo de una pérdida."
+      },
+      "show": [
+        "tortilla-de-patatas",
+        "chiles-en-nogada",
+        "wiener-schnitzel",
+        "sachertorte",
+        "pastel-de-nata",
+        "pupusa",
+        "croissant",
+        "pilsner",
+        "paella",
+        "acaraje",
+        "ropa-vieja",
+        "fish-and-chips",
+        "pesto",
+        "frybread",
+        "iskender-kebap",
+        "beef-stroganoff",
+        "milk-chocolate",
+        "espresso",
+        "coca-cola",
+        "pizza-margherita"
+      ]
+    },
+    {
+      "date": "1900",
+      "title": {
+        "en": "Empires, tea and spice",
+        "es": "Imperios, té y especias"
+      },
+      "camera": {
+        "lon": 58,
+        "lat": 22,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "European empires reshaped the kitchens of Asia and Africa. Britain planted tea in Assam and traders brought gunpowder tea to Morocco, while from Senegal to Shanghai cooks created classics like jollof and xiaolongbao.",
+        "es": "Los imperios europeos transformaron las cocinas de Asia y África. Gran Bretaña plantó té en Assam y los comerciantes llevaron té gunpowder a Marruecos, mientras de Senegal a Shanghái los cocineros creaban clásicos como el jollof y el xiaolongbao."
+      },
+      "details": {
+        "en": "Colonial trade moved crops and people: Indian indentured workers to Natal and Trinidad, Chinese workers to Peru, and plantation tea to British cups. In India British officials adopted mulligatawny, and tradition credits Lucknow’s royal kitchens with nihari. In Japan nigiri sushi was the fast food of Edo; in Chengdu a small eatery probably made the first mapo tofu, and a governor of Sichuan gave his title to kung pao chicken. In Africa, rice cooked with American tomatoes became Senegal’s thieboudienne, thought to be the ancestor of jollof, a royal chef of Buganda wrapped luwombo in banana leaves, and koshary fed the people of Suez.",
+        "es": "El comercio colonial movió cultivos y personas: trabajadores indios bajo contrato a Natal y Trinidad, trabajadores chinos al Perú y té de plantación a las tazas británicas. En la India los funcionarios británicos adoptaron el mulligatawny, y la tradición atribuye el nihari a las cocinas reales de Lucknow. En Japón el sushi nigiri era la comida rápida de Edo; en Chengdu una pequeña casa de comidas creó probablemente el mapo tofu, y un gobernador de Sichuan dio su título al pollo Kung Pao. En África, el arroz cocinado con tomate americano se convirtió en el thieboudienne de Senegal, considerado el antepasado del jollof, un cocinero real de Buganda envolvió el luwombo en hojas de plátano y el kushari alimentaba a la gente de Suez."
+      },
+      "show": [
+        "tempeh",
+        "rooibos",
+        "nihari",
+        "mulligatawny",
+        "satay",
+        "mint-tea",
+        "assam-tea",
+        "sushi",
+        "chelow-kabab",
+        "akara",
+        "koshary",
+        "thieboudienne",
+        "mapo-tofu",
+        "rasgulla",
+        "xiaolongbao",
+        "kung-pao-chicken",
+        "jollof-rice",
+        "fesenjan",
+        "mansaf",
+        "luwombo"
+      ]
+    },
+    {
+      "date": "1940",
+      "title": {
+        "en": "Migrants and new mixes",
+        "es": "Migrantes y nuevas mezclas"
+      },
+      "camera": {
+        "lon": -35,
+        "lat": 16,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Millions crossed oceans for work or to flee war, with their recipes. German sausages became hot dogs, Chinese cooks made chop suey, Lebanese brought the spit of tacos al pastor, Indians created doubles and bunny chow.",
+        "es": "Millones de personas cruzaron océanos por trabajo o huyendo de la guerra, con sus recetas. Las salchichas alemanas dieron el perrito caliente, los chinos el chop suey, los libaneses el asador de los tacos al pastor y los indios los doubles y el bunny chow."
+      },
+      "details": {
+        "en": "Between 1850 and 1930 tens of millions of Europeans and Asians emigrated, often facing prejudice: the United States barred most Chinese immigrants from 1882. Migrants adapted their food to new places and neighbours. Japanese immigrants in San Francisco served fortune cookies, an Italian in Tijuana made Caesar salad, Chinese cooks in Lima created lomo saltado, and Greek refugees from Anatolia brought gyros to Athens. Meanwhile new classics appeared, from the Belgian praline and the baguette to the pisco sour, the caipirinha and the chocolate chip cookie.",
+        "es": "Entre 1850 y 1930 emigraron decenas de millones de europeos y asiáticos, a menudo frente a los prejuicios: Estados Unidos prohibió la entrada de la mayoría de los chinos desde 1882. Los migrantes adaptaron su comida a nuevos lugares y vecinos. Los inmigrantes japoneses de San Francisco servían galletas de la suerte, un italiano de Tijuana hizo la ensalada César, los cocineros chinos de Lima crearon el lomo saltado y los refugiados griegos de Anatolia llevaron el gyros a Atenas. Mientras, aparecían nuevos clásicos, del bombón belga y la baguette al pisco sour, la caipiriña y la galleta con pepitas de chocolate."
+      },
+      "events": [
+        {
+          "icon": "🚫",
+          "date": "1882-05-06",
+          "at": [
+            -77.0365,
+            38.8977
+          ],
+          "text": {
+            "en": "The US Chinese Exclusion Act bars most Chinese immigrants",
+            "es": "La Ley de Exclusión China de EE. UU. veta a la mayoría de los inmigrantes chinos"
+          }
+        }
+      ],
+      "show": [
+        "hot-dog",
+        "chop-suey",
+        "hamburger",
+        "milanesa",
+        "cafe-touba",
+        "lomo-saltado",
+        "fortune-cookie",
+        "tequeno",
+        "belgian-praline",
+        "pom",
+        "caipirinha",
+        "baguette",
+        "pisco-sour",
+        "gyros",
+        "caesar-salad",
+        "moussaka",
+        "tacos-al-pastor",
+        "doubles",
+        "chocolate-chip-cookie",
+        "bunny-chow"
+      ]
+    },
+    {
+      "date": "1957",
+      "title": {
+        "en": "War, hunger and invention",
+        "es": "Guerra, hambre e invención"
+      },
+      "camera": {
+        "lon": -40,
+        "lat": 26,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "War and shortages sparked new dishes. Flying-boat travellers warmed up with Irish coffee, Berlin’s rebuilders ate currywurst, a Rio election gave brigadeiros, and an Alba pastry maker created what became Nutella.",
+        "es": "La guerra y la escasez dieron platos nuevos. Los viajeros de los hidroaviones entraban en calor con café irlandés, los reconstructores de Berlín comían currywurst, unas elecciones en Río dieron los brigadeiros y un pastelero de Alba creó lo que sería la Nutella."
+      },
+      "details": {
+        "en": "World War II killed tens of millions of people and left much of Europe hungry and in ruins. In Rome, American officers sought out spaghetti alla carbonara in Trastevere, and on the Mexican border nachos were improvised for the wives of US officers. After the war, a returning emigrant in Porto turned the French croque monsieur into the francesinha, and in rural Quebec fries, cheese curds and gravy became poutine.",
+        "es": "La Segunda Guerra Mundial mató a decenas de millones de personas y dejó gran parte de Europa hambrienta y en ruinas. En Roma, los oficiales estadounidenses buscaban espaguetis a la carbonara en el Trastévere, y en la frontera mexicana se improvisaron los nachos para las esposas de oficiales estadounidenses. Tras la guerra, un emigrante que volvió a Oporto convirtió el croque monsieur francés en la francesinha, y en el Quebec rural las papas fritas, la cuajada de queso y la salsa se convirtieron en poutine."
+      },
+      "show": [
+        "carbonara",
+        "irish-coffee",
+        "nachos",
+        "brigadeiro",
+        "nutella",
+        "currywurst",
+        "francesinha",
+        "poutine"
+      ]
+    },
+    {
+      "date": "1958",
+      "title": {
+        "en": "New classics of Asia and Oceania",
+        "es": "Nuevos clásicos de Asia y Oceanía"
+      },
+      "camera": {
+        "lon": 118,
+        "lat": 0,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Asia’s cities created dishes now loved worldwide: ramen, pho, pad thai and Hainanese chicken rice. War and partition left their mark too, and in 1958 Momofuku Ando launched instant noodles in Osaka.",
+        "es": "Las ciudades de Asia crearon platos hoy queridos en todo el mundo: el ramen, el pho, el pad thai y el arroz con pollo de Hainan. La guerra y las particiones también dejaron huella, y en 1958 Momofuku Ando lanzó los fideos instantáneos en Osaka."
+      },
+      "details": {
+        "en": "Chinese migrants shaped much of this: noodle soups in Yokohama became ramen, Shandong workers brought jjajangmyeon to Incheon, and Hainanese cooks made chicken rice in Singapore. Japan named umami in 1908 and invented takoyaki in 1935. The Partition of India in 1947 sent the cooks of Moti Mahal from Peshawar to Delhi, where they made tandoori chicken famous and served butter chicken; the Korean War left budae-jjigae and spicy tteokbokki; and after the partition of Vietnam in 1954 northerners took pho south, where bánh mì took shape. Australia spread Vegemite on its toast, and New Zealand claimed the pavlova.",
+        "es": "Los migrantes chinos dieron forma a gran parte de esto: las sopas de fideos de Yokohama se convirtieron en ramen, los trabajadores de Shandong llevaron el jajangmyeon a Incheon y los cocineros de Hainan hicieron el arroz con pollo de Singapur. Japón bautizó el umami en 1908 e inventó el takoyaki en 1935. La Partición de la India en 1947 llevó a los cocineros del Moti Mahal de Peshawar a Delhi, donde hicieron famoso el pollo tandoori y sirvieron el pollo a la mantequilla; la guerra de Corea dejó el budae jjigae y el tteokbokki picante; y tras la partición de Vietnam en 1954 los norteños llevaron el pho al sur, donde tomó forma el bánh mì. Australia untó Vegemite en sus tostadas, y Nueva Zelanda reclamó la pavlova."
+      },
+      "events": [
+        {
+          "icon": "💔",
+          "date": "1947-08-15",
+          "at": [
+            74.573,
+            31.605
+          ],
+          "text": {
+            "en": "The Partition of India uproots millions on both sides of the new border",
+            "es": "La Partición de la India desarraiga a millones de personas a ambos lados de la nueva frontera"
+          }
+        }
+      ],
+      "show": [
+        "tonkatsu",
+        "pho",
+        "ramen",
+        "jjajangmyeon",
+        "umami-msg",
+        "lanzhou-beef-noodles",
+        "chongqing-hot-pot",
+        "vegemite",
+        "halo-halo",
+        "pavlova",
+        "tandoori-chicken",
+        "takoyaki",
+        "pad-thai",
+        "egg-coffee",
+        "hainanese-chicken-rice",
+        "butter-chicken",
+        "tteokbokki",
+        "budae-jjigae",
+        "banh-mi",
+        "instant-noodles"
+      ]
+    },
+    {
+      "date": "2000",
+      "title": {
+        "en": "The world on one plate",
+        "es": "El mundo en un plato"
+      },
+      "camera": {
+        "lon": 22,
+        "lat": 66,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Fast food chains, frozen food and jet travel spread dishes everywhere. Buffalo wings, döner sandwiches, chicken tikka masala, California rolls and bubble tea joined pizza, hamburgers and sushi as global favourites.",
+        "es": "La comida rápida, los congelados y los viajes en avión llevaron los platos a todas partes. Las alitas Búfalo, el döner, el pollo tikka masala, el California roll y el té de burbujas se unieron a la pizza, la hamburguesa y el sushi como favoritos globales."
+      },
+      "details": {
+        "en": "In 1948 the McDonald brothers’ fast \"Speedee\" kitchen in California made the hamburger the model for fast food, and chains later carried it around the world. Migrants kept creating: Turkish workers in Berlin, South Asian cooks in Glasgow, Japanese chefs in Los Angeles. Pineapple met pizza in Canada, a Chennai hotel named Chicken 65, and Mumbai’s mill workers lived on vada pav. By 2000 people in most big cities could eat the food of the whole world, though many still cook as their grandparents did, and dishes keep travelling with every new wave of migrants.",
+        "es": "En 1948 la cocina rápida «Speedee» de los hermanos McDonald, en California, convirtió la hamburguesa en el modelo de la comida rápida, y las cadenas la llevaron después por todo el mundo. Los migrantes siguieron creando: trabajadores turcos en Berlín, cocineros del sur de Asia en Glasgow, cocineros japoneses en Los Ángeles. La piña se encontró con la pizza en Canadá, un hotel de Chennai bautizó el Chicken 65 y los obreros textiles de Bombay vivían de vada pav. En 2000 la gente de casi todas las grandes ciudades podía comer la comida del mundo entero, aunque muchos sigan cocinando como sus abuelos, y los platos siguen viajando con cada nueva ola de migrantes."
+      },
+      "show": [
+        "hawaiian-pizza",
+        "buffalo-wings",
+        "chicken-65",
+        "vada-pav",
+        "kottu",
+        "tiramisu",
+        "chicken-tikka-masala",
+        "doner-kebab",
+        "california-roll",
+        "bubble-tea",
+        "hamburger",
+        "pizza-margherita",
+        "sushi",
+        "coca-cola",
+        "croissant",
+        "jollof-rice",
+        "hummus",
+        "couscous",
+        "instant-noodles"
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Almost every dish is a meeting: American chilies in Korean kimchi, Portuguese frying in Japanese tempura, an Ottoman spit in Mexican tacos. Many were born of hardship, from enslaved cooks in the Americas to the hunger after the world wars. Trade and migrants have put the whole world on one plate, and new dishes are still being born.",
+    "es": "Casi todos los platos son un encuentro: chiles americanos en el kimchi coreano, la fritura portuguesa en la tempura japonesa, un asador otomano en los tacos mexicanos. Muchos nacieron de la necesidad, de las cocineras esclavizadas de América al hambre que siguió a las guerras mundiales. El comercio y los migrantes han puesto el mundo entero en un plato, y siguen naciendo platos nuevos."
+  },
+  "sources": [
+    {
+      "title": "Flatbread (Wikipedia): Shubayqa 1, the oldest bread",
+      "url": "https://en.wikipedia.org/wiki/Flatbread"
+    },
+    {
+      "title": "History of beer (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_beer"
+    },
+    {
+      "title": "Cheese (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cheese"
+    },
+    {
+      "title": "Yale culinary tablets (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yale_culinary_tablets"
+    },
+    {
+      "title": "Noodles (Wikipedia): the Lajia noodles",
+      "url": "https://en.wikipedia.org/wiki/Noodles"
+    },
+    {
+      "title": "Garum (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Garum"
+    },
+    {
+      "title": "Chinese tea culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chinese_tea_culture"
+    },
+    {
+      "title": "History of sugar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_sugar"
+    },
+    {
+      "title": "History of chocolate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_chocolate"
+    },
+    {
+      "title": "Coffee (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Coffee"
+    },
+    {
+      "title": "Restaurant (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Restaurant"
+    },
+    {
+      "title": "Pizza Margherita (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pizza_Margherita"
+    },
+    {
+      "title": "Sushi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sushi"
+    },
+    {
+      "title": "Ramen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ramen"
+    },
+    {
+      "title": "Chop suey (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chop_suey"
+    },
+    {
+      "title": "Chicken tikka masala (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chicken_tikka_masala"
+    },
+    {
+      "title": "Jollof rice (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jollof_rice"
+    },
+    {
+      "title": "Doner kebab (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Doner_kebab"
+    }
+  ]
+}

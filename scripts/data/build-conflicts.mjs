@@ -1,17 +1,29 @@
 #!/usr/bin/env node
 /**
- * Builds the "Wars and conquests" time-travel data from the authoring files in
- * scripts/data/conflicts/<id>.json (the format is described in scripts/data/conflicts/README.md):
+ * Builds the time-travel stories from their authoring files. Four collections share one format:
  *
- *   public/data/conflicts/index.json         the list shown in the picker
- *   public/data/conflicts/<id>.json          one conflict: sides, steps (text, moves, battles, events)
- *   public/data/conflicts/<id>-areas.json    TopoJSON: the territory of each side at each step
+ *   wars        scripts/data/conflicts/<id>.json   (format: scripts/data/conflicts/README.md)
+ *   eras        scripts/data/eras/<id>.json        (Eras and ideas; format: scripts/data/STORIES.md)
+ *   food        scripts/data/food/<id>.json        (Food through time)
+ *   structures  scripts/data/structures/<id>.json  (Great structures)
+ *
+ * Each collection is written to public/data/<dir>/:
+ *
+ *   index.json         the list shown in the picker (and, but for wars, the categories)
+ *   <id>.json          one story: sides, steps (text, moves, battles, events, items shown)
+ *   <id>-areas.json    TopoJSON: the territory of each side at each step
+ *   items.json         every marker of the collection, for browsing and quizzes (not wars)
+ *
+ * The collections other than wars also have scripts/data/<dir>/_collection.json: their
+ * categories (icon, colour) and a shared catalogue of items (dishes, structures) that stories
+ * show by id.
  *
  * Territory is written as expressions over real map pieces (today's countries, provinces, the
  * historical snapshots, land) combined with hand-drawn polygons, so rough drawings get real
  * coastlines and borders.
  *
  *   node scripts/data/build-conflicts.mjs                     build everything
+ *   node scripts/data/build-conflicts.mjs --kind eras         build one collection
  *   node scripts/data/build-conflicts.mjs --only ww2,rome     build some
  *   node scripts/data/build-conflicts.mjs --only ww2 --preview <dir>   also draw each step as PNG
  *   node scripts/data/build-conflicts.mjs --check             validate only, write nothing
@@ -26,13 +38,17 @@ import pc from 'polygon-clipping';
 import { feature, quantize } from 'topojson-client';
 import { topology } from 'topojson-server';
 import { presimplify, simplify, sphericalTriangleArea } from 'topojson-simplify';
-import { geoArea, geoCircle, geoGraticule10, geoOrthographic, geoPath } from 'd3-geo';
+import { geoArea, geoCircle, geoDistance, geoGraticule10, geoOrthographic, geoPath } from 'd3-geo';
 import { rewindTopology } from './winding.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-const SRC = path.join(ROOT, 'scripts/data/conflicts');
-const OUT = path.join(ROOT, 'public/data/conflicts');
 const DATA = path.join(ROOT, 'public/data');
+
+/** The collections: where their sources and outputs live. */
+export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures' };
+const srcDir = (kind) => path.join(ROOT, 'scripts/data', KINDS[kind]);
+const outDir = (kind) => path.join(DATA, KINDS[kind]);
+const ITEM_TYPES = ['person', 'work', 'place', 'invention', 'event', 'site', 'dish', 'crop', 'animal', 'structure', 'institution'];
 
 export const ERAS = ['ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
 
@@ -333,7 +349,83 @@ function checkLosses(v, sides, where) {
   }
 }
 
-function validate(c, file) {
+// ---------------------------------------------------------------------------------------------
+// Items: the markers of the stories other than wars (people, works, sites, dishes, structures).
+
+const ID_RE = /^[a-z0-9][a-z0-9-]*$/;
+const ITEM_TEXTS = ['place', 'details', 'why', 'how', 'by', 'size', 'status'];
+
+function checkItem(it, where, coll, catalog = false) {
+  if (!it || typeof it !== 'object' || Array.isArray(it)) throw new Error(`${where}: must be an object`);
+  if ((catalog || it.id != null) && !ID_RE.test(it.id ?? '')) throw new Error(`${where}: "id" must be lowercase letters, digits and hyphens`);
+  text(it.name, `${where}.name`);
+  if (!isPair(it.at) || !inRange(it.at)) throw new Error(`${where}: "at" must be [lon, lat]`);
+  if (!coll.cats.has(it.cat)) throw new Error(`${where}: "cat" "${it.cat}" is not a category of this collection (${[...coll.cats.keys()].join(', ')})`);
+  if (it.icon != null && (typeof it.icon !== 'string' || !it.icon)) throw new Error(`${where}: "icon" must be an emoji`);
+  if (it.type != null && !ITEM_TYPES.includes(it.type)) throw new Error(`${where}: "type" must be one of ${ITEM_TYPES.join(', ')}`);
+  const t = parseDate(it.date, `${where}.date`);
+  if (it.end != null && parseDate(it.end, `${where}.end`) < t) throw new Error(`${where}: "end" is before "date"`);
+  if (it.life != null) {
+    if (!Array.isArray(it.life) || it.life.length !== 2) throw new Error(`${where}: "life" is ["born", "died"] (died may be null)`);
+    parseDate(it.life[0], `${where}.life[0]`);
+    if (it.life[1] != null) parseDate(it.life[1], `${where}.life[1]`);
+  }
+  text(it.text, `${where}.text`);
+  for (const k of ITEM_TEXTS) text(it[k], `${where}.${k}`, false);
+  if (it.facts != null && !Array.isArray(it.facts)) throw new Error(`${where}: "facts" is [{ "label": {en, es}, "value": {en, es} }]`);
+  for (const [j, f] of (it.facts ?? []).entries()) { text(f?.label, `${where}.facts[${j}].label`); text(f?.value, `${where}.facts[${j}].value`); }
+  if (it.wiki != null && (typeof it.wiki !== 'object' || typeof it.wiki.en !== 'string' || typeof it.wiki.es !== 'string' || !it.wiki.en)) throw new Error(`${where}: "wiki" is { "en": "Article title", "es": "Título del artículo" }`);
+  if (it.country != null && !loadCountries().has(it.country)) throw new Error(`${where}: "country" "${it.country}" is not a country code (see --list countries)`);
+  const known = new Set(['id', 'name', 'at', 'cat', 'icon', 'type', 'date', 'end', 'life', 'text', 'facts', 'wiki', 'country', ...ITEM_TEXTS]);
+  for (const k of Object.keys(it)) if (!known.has(k)) throw new Error(`${where}: unknown field "${k}"`);
+  return t;
+}
+
+/** An item as the app gets it: fixed field order, with its time and icon filled in. */
+function normItem(it, coll) {
+  const o = { id: it.id, name: it.name, at: it.at.map((v) => Math.round(v * 1e4) / 1e4), cat: it.cat, icon: it.icon ?? coll.cats.get(it.cat).icon, date: it.date, t: parseDate(it.date, '') };
+  for (const k of ['end', 'life', 'type', 'country', 'place', 'text', 'details', 'why', 'how', 'by', 'size', 'status', 'facts', 'wiki']) if (it[k] != null) o[k] = it[k];
+  if (o.id == null) delete o.id;
+  return o;
+}
+
+/** A collection's categories and shared catalogue (scripts/data/<dir>/_collection.json). */
+function loadCollection(kind) {
+  if (kind === 'wars') return null;
+  const where = `${KINDS[kind]}/_collection.json`;
+  const f = path.join(srcDir(kind), '_collection.json');
+  if (!fs.existsSync(f)) throw new Error(`${where} is missing`);
+  const c = readJSON(f);
+  text(c.name, `${where} name`);
+  const cats = new Map();
+  for (const [i, cat] of (c.categories ?? []).entries()) {
+    const w = `${where} categories[${i}]`;
+    if (!/^[a-z][a-z0-9-]*$/.test(cat.id ?? '')) throw new Error(`${w}: "id" must be lowercase letters, digits and hyphens`);
+    if (cats.has(cat.id)) throw new Error(`${w}: category "${cat.id}" twice`);
+    text(cat.name, `${w}.name`);
+    if (typeof cat.icon !== 'string' || !cat.icon) throw new Error(`${w}: "icon" (an emoji) is missing`);
+    if (!isColor(cat.color)) throw new Error(`${w}: "color" must be #rrggbb`);
+    cats.set(cat.id, { id: cat.id, name: cat.name, icon: cat.icon, color: cat.color });
+  }
+  if (!cats.size) throw new Error(`${where}: at least one category`);
+  const coll = { kind, name: c.name, cats, catalog: new Map() };
+  // The catalogue may be split over _collection.json and any _catalog-*.json files beside it.
+  const parts = [[where, c.catalog ?? []]];
+  for (const f of fs.readdirSync(srcDir(kind)).filter((x) => /^_catalog.*\.json$/.test(x)).sort()) {
+    parts.push([`${KINDS[kind]}/${f}`, readJSON(path.join(srcDir(kind), f)).catalog ?? []]);
+  }
+  for (const [w, list] of parts) {
+    for (const [i, it] of list.entries()) {
+      checkItem(it, `${w} catalog[${i}] (${it?.id})`, coll, true);
+      if (coll.catalog.has(it.id)) throw new Error(`${w}: catalogue item "${it.id}" is already in the catalogue`);
+      coll.catalog.set(it.id, it);
+    }
+  }
+  return coll;
+}
+
+function validate(c, file, kind = 'wars', coll = null) {
+  const wars = kind === 'wars';
   const where = path.basename(file);
   if (c.id !== path.basename(file, '.json')) throw new Error(`${where}: "id" must be the file name ("${path.basename(file, '.json')}")`);
   text(c.name, `${where} name`); text(c.summary, `${where} summary`); text(c.region, `${where} region`); text(c.outcome, `${where} outcome`);
@@ -343,9 +435,14 @@ function validate(c, file) {
   const t0 = parseDate(c.start, `${where} start`), t1 = parseDate(c.end, `${where} end`);
   if (t1 < t0) throw new Error(`${where}: "end" is before "start"`);
   if (!c.camera || !inRange([c.camera.lon, c.camera.lat]) || !(c.camera.zoom >= 1 && c.camera.zoom <= 30)) throw new Error(`${where}: "camera" needs lon, lat and zoom 1..30`);
-  if (!Array.isArray(c.sides) || c.sides.length < 2) throw new Error(`${where}: at least two "sides"`);
+  if (wars && (!Array.isArray(c.sides) || c.sides.length < 2)) throw new Error(`${where}: at least two "sides"`);
+  if (c.sides != null && !Array.isArray(c.sides)) throw new Error(`${where}: "sides" is a list`);
+  if ((c.sides ?? []).length > 8) throw new Error(`${where}: at most 8 "sides"`);
+  if (!wars && c.catalog != null && !['all', 'shown'].includes(c.catalog)) throw new Error(`${where}: "catalog" is "all" (every catalogue item appears from its date on) or "shown" (only the items the steps show)`);
+  if (c.catalog === 'all' && !coll.catalog.size) throw new Error(`${where}: "catalog": "all" but the collection has no catalogue`);
+  if (!wars && c.casualties != null) throw new Error(`${where}: "casualties" is for wars`);
   const sides = new Set();
-  for (const [i, s] of c.sides.entries()) {
+  for (const [i, s] of (c.sides ?? []).entries()) {
     if (!/^[a-z][a-z0-9_]*$/.test(s.id ?? '')) throw new Error(`${where} sides[${i}]: "id" must be lowercase letters, digits or _`);
     if (sides.has(s.id)) throw new Error(`${where}: side "${s.id}" twice`);
     sides.add(s.id);
@@ -363,7 +460,12 @@ function validate(c, file) {
     if (t < last) throw new Error(`${w}: date ${st.date} is before the previous step's`);
     last = t;
     text(st.title, `${w}.title`); text(st.text, `${w}.text`); text(st.details, `${w}.details`, false);
-    if (i === 0 && !st.control) throw new Error(`${w}: the first step needs "control"`);
+    if (wars && i === 0 && !st.control) throw new Error(`${w}: the first step needs "control"`);
+    if (wars && (st.places || st.show)) throw new Error(`${w}: "places" and "show" are for eras, food and structures`);
+    if (st.places != null && !Array.isArray(st.places)) throw new Error(`${w}.places: a list of items`);
+    for (const [j, it] of (st.places ?? []).entries()) checkItem(it, `${w}.places[${j}]`, coll);
+    if (st.show != null && !Array.isArray(st.show)) throw new Error(`${w}.show: a list of catalogue ids`);
+    for (const id of st.show ?? []) if (!coll.catalog.has(id)) throw new Error(`${w}.show: "${id}" is not in the catalogue`);
     if (st.control) for (const k of Object.keys(st.control)) if (!sides.has(k)) throw new Error(`${w}.control: "${k}" is not a side`);
     if (st.camera && (!inRange([st.camera.lon, st.camera.lat]) || !(st.camera.zoom >= 1 && st.camera.zoom <= 30))) throw new Error(`${w}.camera: lon, lat and zoom 1..30`);
     for (const [j, mv] of (st.moves ?? []).entries()) {
@@ -394,8 +496,19 @@ function validate(c, file) {
 
 async function build(file, opts) {
   const c = readJSON(file);
-  validate(c, file);
+  const kind = opts.kind ?? 'wars', coll = opts.coll ?? null, wars = kind === 'wars';
+  validate(c, file, kind, coll);
+  c.sides = c.sides ?? [];
   const sides = c.sides.map((s) => s.id);
+  // Items (not wars): the steps' own places and the catalogue items they show, each listed once.
+  const items = [];
+  const itemOf = new Map();
+  const addItem = (it, first) => {
+    if (it.id != null && itemOf.has(it.id)) return itemOf.get(it.id);
+    const k = items.push({ ...normItem(it, coll), first }) - 1;
+    if (it.id != null) itemOf.set(it.id, k);
+    return k;
+  };
   const ctx = { defs: c.defs ?? {}, refs: new Map(), resolving: new Set(), prev: null, side: null };
   const areas = []; // unique MultiPolygons (d3 winding)
   const keyOf = new Map();
@@ -429,32 +542,56 @@ async function build(file, opts) {
       if (idx === undefined) { idx = areas.length; areas.push(d3mp); keyOf.set(full, idx); }
       control[side] = idx;
     }
-    const { control: _c, ...rest } = st;
+    const { control: _c, places, show: showIds, ...rest } = st;
     // Battles pop up and events appear in list order: make that the order they happened in
     // (undated ones count as the step's date; ties keep the author's order).
     const byDate = (list) => list.map((x, k) => [parseDate(x.date ?? st.date, ''), k, x]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map((e) => e[2]);
     if (rest.battles) rest.battles = byDate(rest.battles);
     if (rest.events) rest.events = byDate(rest.events);
-    steps.push({ ...rest, t: parseDate(st.date, ''), control });
+    const out = { ...rest, t: parseDate(st.date, ''), control };
+    if (!wars) {
+      const shown = [...(places ?? []).map((it) => addItem(it, i)), ...(showIds ?? []).map((id) => addItem(coll.catalog.get(id), i))];
+      out.show = [...new Set(shown)].sort((a, b) => items[a].t - items[b].t || a - b);
+    }
+    steps.push(out);
   }
-  if (!steps.some((s) => Object.values(s.control).some((v) => v !== null))) throw new Error(`${c.id}: no step has any territory`);
+  if (wars && !steps.some((s) => Object.values(s.control).some((v) => v !== null))) throw new Error(`${c.id}: no step has any territory`);
+  if (c.catalog === 'all') {
+    // A time tour: every catalogue item of the story's period (from its start to its last step)
+    // appears on the map from its date on. Older items appear only when a step shows them.
+    const first = c.start != null ? parseDate(c.start, '') : -Infinity;
+    const last = steps[steps.length - 1].t;
+    for (const it of [...coll.catalog.values()].sort((a, b) => parseDate(a.date, '') - parseDate(b.date, ''))) {
+      const t = parseDate(it.date, '');
+      if (t >= first - 1e-6 && t <= last + 1e-6) addItem(it, -1);
+    }
+  }
   if (opts.lint) lint(c, steps, areas);
 
   // Territory TopoJSON: shared arcs, simplified for world-to-country zoom, quantised.
   const fc = { type: 'FeatureCollection', features: areas.map((mp, i) => ({ type: 'Feature', id: i, properties: {}, geometry: { type: 'MultiPolygon', coordinates: mp } })) };
-  let topo = topology({ areas: fc }, 1e5);
-  // presimplify decodes the arcs to full-precision floats; quantise again (about 40 m to 400 m
-  // per step depending on the conflict's extent), which makes the file several times smaller.
-  topo = quantize(simplify(presimplify(topo, sphericalTriangleArea), 2e-8), 1e5);
-  const fixed = rewindTopology(topo);
-  if (fixed.length) console.warn(`  ${c.id}: rewound ${fixed.length} polygon(s)`);
-  for (const g of topo.objects.areas.geometries) {
-    if (g.type == null) throw new Error(`${c.id}: area ${g.id} vanished when simplified (too small?)`);
+  let topo = areas.length ? topology({ areas: fc }, 1e5) : null;
+  if (!topo) topo = { type: 'Topology', objects: { areas: { type: 'GeometryCollection', geometries: [] } }, arcs: [] };
+  else {
+    // presimplify decodes the arcs to full-precision floats; quantise again (about 40 m to 400 m
+    // per step depending on the conflict's extent), which makes the file several times smaller.
+    topo = quantize(simplify(presimplify(topo, sphericalTriangleArea), 2e-8), 1e5);
+    const fixed = rewindTopology(topo);
+    if (fixed.length) console.warn(`  ${c.id}: rewound ${fixed.length} polygon(s)`);
+    for (const g of topo.objects.areas.geometries) {
+      if (g.type == null) throw new Error(`${c.id}: area ${g.id} vanished when simplified (too small?)`);
+    }
   }
 
   const { defs: _d, steps: _s, ...meta } = c;
   const t0 = parseDate(c.start, ''), t1 = parseDate(c.end, '');
   const out = { ...meta, t0, t1, steps };
+  if (!wars) {
+    out.kind = kind;
+    out.items = items;
+    out.cats = [...coll.cats.values()].filter((cat) => items.some((it) => it.cat === cat.id));
+  }
+  const OUT = outDir(kind);
   if (opts.write) {
     fs.mkdirSync(OUT, { recursive: true });
     fs.writeFileSync(path.join(OUT, `${c.id}.json`), JSON.stringify(out));
@@ -466,7 +603,7 @@ async function build(file, opts) {
     // CI: the files the app loads must match their source.
     const same = (f, v) => fs.existsSync(f) && fs.readFileSync(f, 'utf8') === JSON.stringify(v);
     if (!same(path.join(OUT, `${c.id}.json`), out) || !same(path.join(OUT, `${c.id}-areas.json`), topo)) {
-      throw new Error(`public/data/conflicts/${c.id}*.json are out of date; run npm run data:conflicts`);
+      throw new Error(`public/data/${KINDS[kind]}/${c.id}*.json are out of date; run npm run data:stories`);
     }
   }
   return { meta: out, size, areas: areas.length };
@@ -485,7 +622,8 @@ function lint(c, steps, areas) {
     else if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) if (k !== 'control' && k !== 'defs') walk(x, `${where}.${k}`);
   };
   walk(c, '');
-  for (const [v, where] of texts) if (v.en === v.es && v.en.split(' ').length > 3) warn(`${where}: Spanish text identical to English`);
+  // Names and Wikipedia titles are often the same in both languages; only flag real sentences.
+  for (const [v, where] of texts) if (v.en === v.es && v.en.split(' ').length > 3 && !/\.wiki$/.test(where)) warn(`${where}: Spanish text identical to English`);
   steps.forEach((st, i) => {
     if (st.text.en.length > 260) warn(`steps[${i}].text is ${st.text.en.length} characters (aim for 220 or less)`);
     if (st.title.en.length > 60) warn(`steps[${i}].title is long (${st.title.en.length} characters)`);
@@ -519,15 +657,20 @@ async function preview(c, topo, dir) {
   const sharp = (await import('sharp')).default;
   fs.mkdirSync(dir, { recursive: true });
   const areas = feature(topo, topo.objects.areas).features;
-  const landTopo = readJSON(path.join(DATA, 'base/land-110m.json'));
-  const landF = feature(landTopo, landTopo.objects.land);
+  // Land drawn country by country: the single Afro-Eurasian land polygon gets clipped wrongly in
+  // close-up views and paints the land as sea.
+  const landTopo = readJSON(path.join(DATA, 'base/countries-50m.json'));
+  const landF = feature(landTopo, landTopo.objects.countries);
   const W = 640, H = 640;
   let cam = c.camera;
   const jobs = [];
   c.steps.forEach((st, i) => {
     cam = st.camera ?? cam;
-    const proj = geoOrthographic().rotate([-cam.lon, -cam.lat]).scale(290 * cam.zoom).translate([W / 2, H / 2 + 20]).clipAngle(90).precision(0.3);
-    const p = geoPath(proj);
+    const proj0 = geoOrthographic().rotate([-cam.lon, -cam.lat]).scale(290 * cam.zoom).translate([W / 2, H / 2 + 20]).clipAngle(90).precision(0.3);
+    // Points on the far side of the globe are hidden (paths are clipped by clipAngle; points aren't).
+    const centre = [cam.lon, cam.lat];
+    const proj = Object.assign((pt) => (geoDistance(centre, pt) < Math.PI / 2 - 0.005 ? proj0(pt) : null), proj0);
+    const p = geoPath(proj0);
     const parts = [`<rect width="${W}" height="${H}" fill="#ffffff"/>`, `<path d="${p({ type: 'Sphere' })}" fill="#cfe3f3"/>`,
       `<path d="${p(geoGraticule10())}" fill="none" stroke="#b5cde2" stroke-width="0.5"/>`, `<path d="${p(landF)}" fill="#ece6d6" stroke="#9aa5ad" stroke-width="0.4"/>`];
     for (const s of c.sides) {
@@ -550,14 +693,73 @@ async function preview(c, topo, dir) {
       const xy = proj(e.at);
       if (xy) parts.push(`<rect x="${xy[0] - 4}" y="${xy[1] - 4}" width="8" height="8" fill="#f2c14e" stroke="#111"/>`);
     }
+    if (c.items) {
+      // Items: earlier ones (and, in a time tour, every catalogue item built by now) as small dots,
+      // this step's ones as larger dots with their names.
+      const col = new Map(c.cats.map((k) => [k.id, k.color]));
+      const now = new Set(st.show);
+      c.items.forEach((it, k) => {
+        if (now.has(k) || !((it.first >= 0 && it.first < i) || (it.first === -1 && it.t <= st.t))) return;
+        const xy = proj(it.at);
+        if (xy) parts.push(`<circle cx="${xy[0]}" cy="${xy[1]}" r="2.6" fill="${col.get(it.cat)}" fill-opacity="0.75" stroke="#fff" stroke-width="0.8"/>`);
+      });
+      for (const k of st.show) {
+        const it = c.items[k], xy = proj(it.at);
+        if (!xy) continue;
+        parts.push(`<circle cx="${xy[0]}" cy="${xy[1]}" r="5.5" fill="${col.get(it.cat)}" stroke="#fff" stroke-width="1.5"/><text x="${xy[0] + 8}" y="${xy[1] + 4}" font-size="10.5" font-family="sans-serif" fill="#111" stroke="#fff" stroke-width="3" paint-order="stroke">${esc(it.name.en.slice(0, 40))}</text>`);
+      }
+    }
     const markers = c.sides.map((s) => `<marker id="arrow-${s.id}" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="${s.color}"/></marker>`).join('');
-    const shown = c.sides.filter((s) => st.control[s.id] != null || (st.moves ?? []).some((m) => m.side === s.id));
+    const shown = c.items
+      ? [...c.sides.filter((s) => st.control[s.id] != null || (st.moves ?? []).some((m) => m.side === s.id)), ...c.cats.filter((k) => st.show.some((x) => c.items[x].cat === k.id))]
+      : c.sides.filter((s) => st.control[s.id] != null || (st.moves ?? []).some((m) => m.side === s.id));
     const legend = shown.map((s, k) => `<rect x="${12 + (k % 3) * 205}" y="${H - 44 + Math.floor(k / 3) * 18}" width="12" height="12" fill="${s.color}"/><text x="${28 + (k % 3) * 205}" y="${H - 34 + Math.floor(k / 3) * 18}" font-size="12" font-family="sans-serif">${esc(s.name.en.slice(0, 30))}</text>`).join('');
     const title = `<text x="12" y="22" font-size="15" font-weight="bold" font-family="sans-serif">${esc(`${i + 1}/${c.steps.length} · ${fmtDate(st.date)} · ${st.title.en}`)}</text>`;
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}"><defs>${markers}</defs>${parts.join('')}${title}${legend}</svg>`;
     jobs.push(sharp(Buffer.from(svg)).png().toFile(path.join(dir, `${c.id}-${String(i + 1).padStart(2, '0')}.png`)));
   });
   await Promise.all(jobs);
+}
+
+/** What the picker needs before a story is opened (not wars): its most common categories too. */
+function storyEntry(m) {
+  const sides = m.sides.filter((s) => m.steps.some((st) => !st.aftermath && st.control[s.id] != null));
+  const count = new Map();
+  for (const it of m.items) count.set(it.cat, (count.get(it.cat) ?? 0) + 1);
+  return {
+    id: m.id, name: m.name, icon: m.icon, era: m.era, region: m.region, summary: m.summary, start: m.start, end: m.end,
+    t0: m.t0, t1: m.t1, steps: m.steps.length, items: m.items.length, sides: sides.map((s) => ({ name: s.name, color: s.color })),
+    cats: [...count].sort((a, b) => b[1] - a[1]).slice(0, 6).map(([id]) => id),
+  };
+}
+
+/** Every marker of a collection, for browsing and quizzes: where each first appears in a story. */
+function collectionItems(results) {
+  const out = [];
+  const seen = new Map();
+  for (const r of [...results].sort((a, b) => a.meta.t0 - b.meta.t0)) {
+    const m = r.meta;
+    m.items.forEach((it) => {
+      let step = it.first;
+      if (step < 0) { step = m.steps.findIndex((st) => st.t >= it.t); if (step < 0) step = m.steps.length - 1; }
+      if (it.id != null && seen.has(it.id)) return;
+      const { first: _f, details: _d, facts: _x, ...rest } = it;
+      const k = out.push({ ...rest, story: m.id, step }) - 1;
+      if (it.id != null) seen.set(it.id, k);
+    });
+  }
+  return out;
+}
+
+/** Warns when two items of a collection have the same name: the same thing told by two stories
+ * should share one id (or, for a catalogue item, be shown with `show`), so it is listed once. */
+function repeatedNames(kind, items) {
+  const norm = (x) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  const by = new Map();
+  for (const it of items) { const k = norm(it.name.en); by.set(k, [...(by.get(k) ?? []), it]); }
+  for (const list of by.values()) {
+    if (list.length > 1) console.warn(`  warn ${kind}: "${list[0].name.en}" is listed ${list.length} times (${list.map((it) => it.story).join(', ')}); give them one id`);
+  }
 }
 
 /** What the picker needs before a conflict is opened. */
@@ -591,6 +793,13 @@ function find(q) {
   for (const y of snapshotYears()) for (const n of loadSnapshot(y).keys()) if (n.toLowerCase().includes(s)) console.log(`hist\t${y}\t${n}`);
 }
 
+/** A collection's picker list (and, but for wars, its name and categories). */
+function indexOf(kind, coll, metas) {
+  metas = [...metas].sort((a, b) => a.t0 - b.t0);
+  if (kind === 'wars') return { conflicts: metas.map(indexEntry) };
+  return { name: coll.name, categories: [...coll.cats.values()], stories: metas.map(storyEntry) };
+}
+
 async function main() {
   const argv = process.argv.slice(2);
   const get = (k) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : undefined; };
@@ -598,48 +807,71 @@ async function main() {
   if (argv.includes('--find')) { find(get('--find')); return; }
   const only = get('--only')?.split(',').map((s) => s.trim()).filter(Boolean);
   const check = argv.includes('--check');
-  const files = fs.readdirSync(SRC).filter((f) => f.endsWith('.json') && (!only || only.includes(path.basename(f, '.json')))).map((f) => path.join(SRC, f));
-  if (only) for (const id of only) if (!files.some((f) => path.basename(f, '.json') === id)) throw new Error(`no scripts/data/conflicts/${id}.json`);
-  const results = [];
+  const kinds = get('--kind') ? get('--kind').split(',') : Object.keys(KINDS);
+  for (const k of kinds) if (!KINDS[k]) throw new Error(`--kind is one of ${Object.keys(KINDS).join(', ')}`);
+  const same = (f, v) => fs.existsSync(f) && fs.readFileSync(f, 'utf8') === JSON.stringify(v);
+  const found = new Set();
   let failed = 0;
-  for (const file of files) {
-    try {
-      const r = await build(file, { write: !check, preview: get('--preview'), stale: check && !only, lint: argv.includes('--lint') });
-      results.push(r);
-      console.log(`ok   ${r.meta.id}: ${r.meta.steps.length} steps, ${r.areas} areas, ${(r.size / 1024).toFixed(0)} KB`);
-    } catch (e) {
-      failed++;
-      console.error(`FAIL ${path.basename(file)}: ${e.message}`);
+  for (const kind of kinds) {
+    const SRC = srcDir(kind), OUT = outDir(kind);
+    if (!fs.existsSync(SRC)) continue;
+    const files = fs.readdirSync(SRC).filter((f) => f.endsWith('.json') && !f.startsWith('_') && (!only || only.includes(path.basename(f, '.json')))).map((f) => path.join(SRC, f));
+    if (only && !files.length) continue;
+    let coll = null;
+    try { coll = loadCollection(kind); } catch (e) { failed++; console.error(`FAIL ${e.message}`); continue; }
+    const results = [];
+    let kindFailed = 0;
+    for (const file of files) {
+      found.add(path.basename(file, '.json'));
+      try {
+        const r = await build(file, { kind, coll, write: !check, preview: get('--preview'), stale: check && !only, lint: argv.includes('--lint') });
+        results.push(r);
+        const m = r.meta;
+        console.log(`ok   ${kind === 'wars' ? '' : `${kind}/`}${m.id}: ${m.steps.length} steps, ${r.areas} areas${m.items ? `, ${m.items.length} items` : ''}, ${(r.size / 1024).toFixed(0)} KB`);
+      } catch (e) {
+        kindFailed++;
+        console.error(`FAIL ${KINDS[kind]}/${path.basename(file)}: ${e.message}`);
+      }
+    }
+    failed += kindFailed;
+    if (kindFailed) continue;
+    if (!only && !results.length) continue; // a collection with no stories yet publishes nothing
+    if (!only) {
+      const index = indexOf(kind, coll, results.map((r) => r.meta));
+      const items = kind === 'wars' ? null : { items: collectionItems(results) };
+      if (items) repeatedNames(kind, items.items);
+      if (check) {
+        // CI: the picker's list (and the collection's items) must match the sources too.
+        if (!same(path.join(OUT, 'index.json'), index) || (items && !same(path.join(OUT, 'items.json'), items))) {
+          failed++;
+          console.error(`FAIL public/data/${KINDS[kind]}/index.json${items ? ' or items.json' : ''} is out of date; run npm run data:stories`);
+        }
+      } else {
+        fs.mkdirSync(OUT, { recursive: true });
+        fs.writeFileSync(path.join(OUT, 'index.json'), JSON.stringify(index));
+        if (items) fs.writeFileSync(path.join(OUT, 'items.json'), JSON.stringify(items));
+        // Drop outputs whose source is gone.
+        const keep = new Set(results.flatMap((r) => [`${r.meta.id}.json`, `${r.meta.id}-areas.json`]).concat('index.json', 'items.json'));
+        for (const f of fs.readdirSync(OUT)) if (!keep.has(f)) fs.unlinkSync(path.join(OUT, f));
+        console.log(`index: ${results.length} ${kind === 'wars' ? 'conflicts' : `stories in ${KINDS[kind]}`}`);
+      }
+    } else if (!check && results.length) {
+      // Partial build: refresh these entries in the existing index, and the collection's items.
+      const metas = new Map();
+      const f = path.join(OUT, 'index.json');
+      if (fs.existsSync(f)) {
+        const idx = readJSON(f);
+        for (const e of idx.conflicts ?? idx.stories ?? []) {
+          const pf = path.join(OUT, `${e.id}.json`);
+          if (fs.existsSync(pf)) metas.set(e.id, readJSON(pf));
+        }
+      }
+      for (const r of results) metas.set(r.meta.id, r.meta);
+      fs.writeFileSync(f, JSON.stringify(indexOf(kind, coll, metas.values())));
+      if (kind !== 'wars') fs.writeFileSync(path.join(OUT, 'items.json'), JSON.stringify({ items: collectionItems([...metas.values()].map((meta) => ({ meta }))) }));
     }
   }
-  if (check && !only && !failed) {
-    // CI: the picker's list must match the sources too.
-    const index = results.map((r) => r.meta).sort((a, b) => a.t0 - b.t0).map(indexEntry);
-    const f = path.join(OUT, 'index.json');
-    if (!fs.existsSync(f) || fs.readFileSync(f, 'utf8') !== JSON.stringify({ conflicts: index })) {
-      failed++;
-      console.error('FAIL public/data/conflicts/index.json is out of date; run npm run data:conflicts');
-    }
-  } else if (!check && !only && !failed) {
-    // The picker's list: everything needed before a conflict is opened.
-    const index = results.map((r) => r.meta).sort((a, b) => a.t0 - b.t0).map(indexEntry);
-    fs.writeFileSync(path.join(OUT, 'index.json'), JSON.stringify({ conflicts: index }));
-    // Drop outputs whose source is gone.
-    const keep = new Set(index.flatMap((m) => [`${m.id}.json`, `${m.id}-areas.json`]).concat('index.json'));
-    for (const f of fs.readdirSync(OUT)) if (!keep.has(f)) fs.unlinkSync(path.join(OUT, f));
-    console.log(`index: ${index.length} conflicts`);
-  } else if (!check && only && !failed && fs.existsSync(path.join(OUT, 'index.json'))) {
-    // Partial build: refresh these entries in the existing index.
-    const idx = readJSON(path.join(OUT, 'index.json'));
-    for (const r of results) {
-      const m = r.meta;
-      const entry = indexEntry(m);
-      const i = idx.conflicts.findIndex((x) => x.id === m.id);
-      if (i >= 0) idx.conflicts[i] = entry; else idx.conflicts.push(entry);
-    }
-    idx.conflicts.sort((a, b) => a.t0 - b.t0);
-    fs.writeFileSync(path.join(OUT, 'index.json'), JSON.stringify(idx));
-  }
+  if (only) for (const id of only) if (!found.has(id)) { failed++; console.error(`FAIL no story "${id}" in ${kinds.map((k) => `scripts/data/${KINDS[k]}`).join(', ')}`); }
   if (failed) process.exit(1);
 }
 
