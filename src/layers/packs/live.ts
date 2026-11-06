@@ -155,7 +155,7 @@ const tempColor = (t: number) => {
 
 const weather: LayerDef = {
   id: 'weather', category: 'live', icon: '⛅', kind: 'overlay', stackOrder: 6,
-  name: { en: 'Weather now (live)', es: 'El tiempo ahora (en vivo)' },
+  name: { en: 'Weather now (live)', es: 'El clima ahora (en vivo)' },
   desc: { en: 'Current temperature, sky and wind in about 120 capitals and big cities.', es: 'Temperatura, cielo y viento actuales en unas 120 capitales y grandes ciudades.' },
   keywords: 'weather temperature rain live forecast tiempo temperatura lluvia en vivo',
   credit: 'Weather data by Open-Meteo.com (CC BY 4.0)',

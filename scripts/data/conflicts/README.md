@@ -113,8 +113,8 @@ Tips:
 - Be neutral and humane: no glorification. Say who suffered: civilians, massacres, famines, genocides
   (for example the Holocaust in World War II) must be stated plainly and accurately.
 - Plain, vivid language for a curious general reader. Short sentences.
-- Spanish: natural Spanish with the usual Spanish names (Gengis Kan, Normandía, Stalingrado, Aníbal),
-  thousands with a space (`40 000`), BC as `a. C.`.
+- Spanish: natural Latin American Spanish with the usual Spanish names (Gengis Kan, Normandía, Stalingrado,
+  Aníbal), thousands with a space (`40 000`), BC as `a. C.` (see `scripts/data/STORIES.md` for the words to use).
 - Colours: clearly different from each other and from the beige land and blue sea; mid-dark tones
   (`#c0392b`, `#2e6f9e`, `#7d3c98`, `#16a085`, `#d4a017`, `#5d6d7e`, `#e67e22`, `#8e5a2b`...). Use the
   conventional ones where they exist (Axis dark grey or black-brown, Allies blue, the USSR red...).

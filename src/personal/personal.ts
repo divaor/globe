@@ -68,7 +68,7 @@ export class PersonalMaps {
 
     shell.addMenu({ id: 'export', icon: ImageDown, label: () => L('Save image', 'Guardar imagen'), order: 60, onClick: () => void this.exportImage('screen') });
     shell.addMenu({ id: 'export4k', icon: Monitor, label: () => L('4K wallpaper', 'Fondo de pantalla 4K'), order: 61, onClick: () => void this.exportImage('4k') });
-    shell.addMenu({ id: 'exportphone', icon: Smartphone, label: () => L('Phone wallpaper', 'Fondo para el móvil'), order: 62, onClick: () => void this.exportImage('phone') });
+    shell.addMenu({ id: 'exportphone', icon: Smartphone, label: () => L('Phone wallpaper', 'Fondo para el celular'), order: 62, onClick: () => void this.exportImage('phone') });
   }
 
   private save() {

@@ -95,7 +95,9 @@ are small dots. Fix anything in the wrong place (a museum in the sea, a city on 
   Treat religions and cultures with respect, and credit the many places where ideas were born: paper,
   printing and gunpowder in China, mathematics in India and Baghdad, cacao and maize in the Americas.
 - **Write plain, vivid language** for a curious general reader, in short sentences.
-- **Spanish:** write natural Spanish with the usual Spanish names (Miguel Ángel, la Ilustración, Gutenberg,
-  la Gioconda, el maíz). Put a space as the thousands separator (`40 000`) and write BC as `a. C.`.
+- **Spanish:** write natural Latin American Spanish with the usual Spanish names (Miguel Ángel, la Ilustración,
+  Gutenberg, la Gioconda, el maíz): papa, frijol, maní, jugo, crema, carne de res (ternera is veal), camarón,
+  computadora, celular, auto, not the words of Spain (patata, judía, cacahuete, zumo, nata, gamba, ordenador,
+  móvil, coche). Put a space as the thousands separator (`40 000`) and write BC as `a. C.`.
 - **Steps go in date order.** Each step's title is 2–6 words, and its text is 1–2 sentences (at most
   about 220 characters).
