@@ -496,6 +496,15 @@ function validate(c, file, kind = 'wars', coll = null) {
 }
 
 // ---------------------------------------------------------------------------------------------
+/** Spanish writes thousands with a space ("40 000"): make it a no-break space, so a number never
+ * splits across two lines. */
+function keepNumbers(v, es = false) {
+  if (typeof v === 'string') return es ? v.replace(/(\d) (?=\d{3}(?!\d))/g, '$1\u00a0') : v;
+  if (Array.isArray(v)) return v.map((x) => keepNumbers(x, es));
+  if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, k === 'wiki' ? x : keepNumbers(x, k === 'es' || es)]));
+  return v;
+}
+
 // Build one conflict.
 
 async function build(file, opts) {
@@ -591,7 +600,7 @@ async function build(file, opts) {
 
   const { defs: _d, steps: _s, ...meta } = c;
   const t0 = parseDate(c.start, ''), t1 = parseDate(c.end, '');
-  const out = { ...meta, t0, t1, steps };
+  const out = keepNumbers({ ...meta, t0, t1, steps });
   if (!wars) {
     out.kind = kind;
     out.items = items;
