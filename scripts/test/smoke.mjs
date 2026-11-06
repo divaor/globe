@@ -511,7 +511,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForSelector('.warbar', { timeout: 30000 }).catch(() => {});
   await page.waitForTimeout(1500);
   const opened = await page.evaluate(() => ({ mode: window.atlas.app.mode, card: !!document.querySelector('.country-card:not([hidden])') }));
-  check(['eras', 'food', 'structures'].includes(opened.mode) && opened.card, `"See it in the story" opens the story at the item (${opened.mode})`);
+  check(['eras', 'food', 'structures', 'people'].includes(opened.mode) && opened.card, `"See it in the story" opens the story at the item (${opened.mode})`);
   // A city tour: Hagia Sophia (Great structures), then the siege of 717 (Wars), both over Istanbul.
   await menu('Guided tours');
   await page.evaluate(() => document.querySelector('[data-tour="Istanbul through time"]').click());
@@ -531,6 +531,14 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
   await page.waitForTimeout(300);
   check(await page.evaluate(() => document.querySelector('.learn-card').hidden), 'closing the tour hides its card');
+  // Capitals of the ancient world: its first stop opens Mesopotamia and flies to Uruk.
+  await menu('Guided tours');
+  await page.evaluate(() => document.querySelector('[data-tour="Capitals of the ancient world"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
+  const uruk = await stop();
+  check(uruk.mode === 'people' && Math.abs(uruk.lon - 45.64) < 0.3 && Math.abs(uruk.lat - 31.32) < 0.3 && /1\/11/.test(uruk.n), `a tour of ancient capitals starts at Uruk (${uruk.bar})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
   check(!errors.length, `no page errors in quizzes and tours${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
