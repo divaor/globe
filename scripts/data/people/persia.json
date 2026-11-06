@@ -1,0 +1,3006 @@
+{
+  "id": "persia",
+  "name": {
+    "en": "Ancient Persia",
+    "es": "La antigua Persia"
+  },
+  "icon": "👑",
+  "era": "ancient",
+  "region": {
+    "en": "Iran and its empires, from the Aegean to the Indus",
+    "es": "Irán y sus imperios, del Egeo al Indo"
+  },
+  "start": "-3100",
+  "end": "651",
+  "summary": {
+    "en": "From the kingdom of Elam to the Medes, the Persian Empire of Cyrus and Darius, the Parthians and the Sasanians: four thousand years of Iranian kingdoms, until the Arab conquest of 651.",
+    "es": "Del reino de Elam a los medos, el Imperio persa de Ciro y Darío, los partos y los sasánidas: cuatro mil años de reinos iranios, hasta la conquista árabe del 651."
+  },
+  "camera": {
+    "lon": 52,
+    "lat": 32,
+    "zoom": 3.4
+  },
+  "sides": [
+    {
+      "id": "elam",
+      "name": {
+        "en": "Elam",
+        "es": "Elam"
+      },
+      "color": "#e67e22"
+    },
+    {
+      "id": "media",
+      "name": {
+        "en": "Median kingdom",
+        "es": "Reino medo"
+      },
+      "color": "#8e5a2b"
+    },
+    {
+      "id": "achaemenid",
+      "name": {
+        "en": "Achaemenid Empire",
+        "es": "Imperio aqueménida"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "greeks",
+      "name": {
+        "en": "Alexander's empire",
+        "es": "Imperio de Alejandro"
+      },
+      "color": "#2e6f9e"
+    },
+    {
+      "id": "parthia",
+      "name": {
+        "en": "Parthian Empire",
+        "es": "Imperio parto"
+      },
+      "color": "#d4a017"
+    },
+    {
+      "id": "sasanian",
+      "name": {
+        "en": "Sasanian Empire",
+        "es": "Imperio sasánida"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "arabs",
+      "name": {
+        "en": "Rashidun Caliphate",
+        "es": "Califato ortodoxo"
+      },
+      "color": "#2e7d32"
+    },
+    {
+      "id": "rome",
+      "name": {
+        "en": "Rome and Byzantium",
+        "es": "Roma y Bizancio"
+      },
+      "color": "#5d6d7e"
+    }
+  ],
+  "defs": {
+    "media_585": {
+      "land": [
+        [
+          35.9,
+          41.8
+        ],
+        [
+          36.9,
+          41.4
+        ],
+        [
+          38.5,
+          41.0
+        ],
+        [
+          40.5,
+          41.1
+        ],
+        [
+          41.6,
+          41.6
+        ],
+        [
+          43.5,
+          41.2
+        ],
+        [
+          45.5,
+          41.3
+        ],
+        [
+          47.5,
+          40.0
+        ],
+        [
+          49.5,
+          38.8
+        ],
+        [
+          51.0,
+          37.2
+        ],
+        [
+          53.5,
+          37.0
+        ],
+        [
+          56.0,
+          37.5
+        ],
+        [
+          59.0,
+          36.5
+        ],
+        [
+          60.5,
+          34.5
+        ],
+        [
+          59.0,
+          32.0
+        ],
+        [
+          56.0,
+          31.5
+        ],
+        [
+          55.5,
+          29.5
+        ],
+        [
+          53.5,
+          28.0
+        ],
+        [
+          51.5,
+          28.2
+        ],
+        [
+          50.5,
+          30.0
+        ],
+        [
+          49.6,
+          31.3
+        ],
+        [
+          49.5,
+          32.6
+        ],
+        [
+          48.4,
+          33.0
+        ],
+        [
+          47.2,
+          33.7
+        ],
+        [
+          46.0,
+          34.5
+        ],
+        [
+          45.0,
+          35.2
+        ],
+        [
+          44.2,
+          35.6
+        ],
+        [
+          43.6,
+          35.75
+        ],
+        [
+          42.8,
+          36.15
+        ],
+        [
+          42.0,
+          36.6
+        ],
+        [
+          41.0,
+          37.0
+        ],
+        [
+          39.5,
+          37.6
+        ],
+        [
+          38.4,
+          38.4
+        ],
+        [
+          37.2,
+          38.8
+        ],
+        [
+          35.6,
+          39.6
+        ]
+      ]
+    },
+    "elam_late": {
+      "land": [
+        [
+          47.3,
+          31.5
+        ],
+        [
+          47.7,
+          32.9
+        ],
+        [
+          48.6,
+          33.0
+        ],
+        [
+          49.5,
+          32.5
+        ],
+        [
+          49.6,
+          31.3
+        ],
+        [
+          48.9,
+          30.5
+        ],
+        [
+          48.0,
+          30.6
+        ]
+      ]
+    },
+    "achaemenid_500": {
+      "hist": "Achaemenid Empire",
+      "year": -500
+    },
+    "persia_539": {
+      "minus": [
+        {
+          "ref": "achaemenid_500"
+        },
+        {
+          "poly": [
+            [
+              15.0,
+              20.0
+            ],
+            [
+              34.95,
+              20.0
+            ],
+            [
+              34.95,
+              29.45
+            ],
+            [
+              34.25,
+              31.32
+            ],
+            [
+              32.0,
+              31.8
+            ],
+            [
+              15.0,
+              34.0
+            ]
+          ]
+        },
+        {
+          "poly": [
+            [
+              68.3,
+              22.0
+            ],
+            [
+              80.0,
+              22.0
+            ],
+            [
+              80.0,
+              33.2
+            ],
+            [
+              71.5,
+              33.2
+            ],
+            [
+              68.3,
+              28.0
+            ]
+          ]
+        }
+      ]
+    },
+    "thrace": {
+      "land": [
+        [
+          22.6,
+          40.7
+        ],
+        [
+          24.5,
+          40.9
+        ],
+        [
+          26.2,
+          40.6
+        ],
+        [
+          27.5,
+          40.9
+        ],
+        [
+          29.0,
+          41.25
+        ],
+        [
+          28.0,
+          42.0
+        ],
+        [
+          26.3,
+          42.1
+        ],
+        [
+          24.5,
+          41.6
+        ],
+        [
+          23.0,
+          41.4
+        ]
+      ]
+    },
+    "achaemenid_darius": [
+      {
+        "ref": "achaemenid_500"
+      },
+      {
+        "ref": "thrace"
+      }
+    ],
+    "arabia": {
+      "land": [
+        [
+          34.5,
+          29.5
+        ],
+        [
+          35.5,
+          31.5
+        ],
+        [
+          36.4,
+          33.5
+        ],
+        [
+          38.5,
+          35.2
+        ],
+        [
+          41.0,
+          35.6
+        ],
+        [
+          43.0,
+          34.2
+        ],
+        [
+          45.0,
+          32.5
+        ],
+        [
+          47.0,
+          30.6
+        ],
+        [
+          48.0,
+          29.9
+        ],
+        [
+          50.0,
+          26.5
+        ],
+        [
+          51.5,
+          24.0
+        ],
+        [
+          56.4,
+          26.2
+        ],
+        [
+          59.8,
+          22.5
+        ],
+        [
+          52.0,
+          16.5
+        ],
+        [
+          43.5,
+          12.6
+        ],
+        [
+          42.6,
+          15.0
+        ],
+        [
+          39.0,
+          21.0
+        ],
+        [
+          36.5,
+          25.5
+        ],
+        [
+          34.6,
+          28.0
+        ]
+      ]
+    }
+  },
+  "steps": [
+    {
+      "date": "-3100",
+      "title": {
+        "en": "Elam, the first kingdom of Iran",
+        "es": "Elam, el primer reino de Irán"
+      },
+      "camera": {
+        "lon": 52.0,
+        "lat": 31.0,
+        "zoom": 5.0
+      },
+      "text": {
+        "en": "In south-west Iran the people of Elam built cities at Susa and Anshan. Around 3100 BC their scribes invented a script of their own, Proto-Elamite, which is still largely unread.",
+        "es": "En el suroeste de Irán, el pueblo de Elam levantó ciudades en Susa y Anshan. Hacia el 3100 a. C., sus escribas inventaron una escritura propia, el protoelamita, que aún no se puede leer casi en absoluto."
+      },
+      "details": {
+        "en": "Elam joined the lowland plain of Susa, an extension of Mesopotamia, with the highlands of Fars around Anshan. For 2,500 years Elamite kings fought, traded and married with the kings of Sumer, Akkad, Babylon and Assyria. The Elamite language is related to no other known language. Proto-Elamite tablets, used from about 3100 to 2900 BC across Iran, recorded grain, animals and workers, with numbers in tens as well as sixties. Further east, around Jiroft, a rich Bronze Age culture carved bowls of soft green stone with snakes, scorpions and eagles, traded as far as Mesopotamia.",
+        "es": "Elam unía la llanura de Susa, una prolongación de Mesopotamia, con las tierras altas de Fars en torno a Anshan. Durante 2500 años los reyes elamitas guerrearon, comerciaron y se casaron con los reyes de Sumer, Acad, Babilonia y Asiria. La lengua elamita no está emparentada con ninguna otra conocida. Las tablillas protoelamitas, usadas hacia 3100-2900 a. C. en todo Irán, registraban grano, animales y trabajadores, con números de diez en diez además de sesenta en sesenta. Más al este, en torno a Jiroft, una rica cultura de la Edad del Bronce tallaba cuencos de piedra blanda verde con serpientes, escorpiones y águilas, que llegaban hasta Mesopotamia."
+      },
+      "control": {
+        "elam": [
+          {
+            "hist": "Elam",
+            "year": -3000
+          },
+          {
+            "ref": "elam_late"
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "susa",
+          "name": {
+            "en": "Susa",
+            "es": "Susa"
+          },
+          "at": [
+            48.2578,
+            32.1906
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-4200",
+          "place": {
+            "en": "Shush, Khuzestan, Iran",
+            "es": "Shush, Juzestán, Irán"
+          },
+          "text": {
+            "en": "One of the oldest cities in the world, settled about 4200 BC: capital of Elam, then a royal city of the Persian kings. Its ruins rise beside the modern town of Shush.",
+            "es": "Una de las ciudades más antiguas del mundo, habitada desde hacia el 4200 a. C.: capital de Elam y luego ciudad real de los reyes persas. Sus ruinas se alzan junto al actual pueblo de Shush."
+          },
+          "wiki": {
+            "en": "Susa",
+            "es": "Susa"
+          }
+        },
+        {
+          "id": "anshan",
+          "name": {
+            "en": "Anshan",
+            "es": "Anshan"
+          },
+          "at": [
+            52.4086,
+            30.0114
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-3200",
+          "place": {
+            "en": "Tall-i Malyan, Fars, Iran",
+            "es": "Tall-i Malyan, Fars, Irán"
+          },
+          "text": {
+            "en": "The highland capital of Elam, in Fars. Later the Persians settled here, and Cyrus the Great and his forefathers called themselves kings of Anshan.",
+            "es": "La capital de Elam en las tierras altas, en Fars. Más tarde los persas se establecieron aquí, y Ciro el Grande y sus antepasados se llamaban reyes de Anshan."
+          },
+          "wiki": {
+            "en": "Anshan (Persia)",
+            "es": "Anshan (Persia)"
+          }
+        },
+        {
+          "id": "proto-elamite",
+          "name": {
+            "en": "Proto-Elamite tablets",
+            "es": "Tablillas protoelamitas"
+          },
+          "at": [
+            48.262,
+            32.195
+          ],
+          "cat": "writing",
+          "type": "invention",
+          "date": "-3100",
+          "place": {
+            "en": "Susa and other sites across Iran",
+            "es": "Susa y otros sitios de todo Irán"
+          },
+          "text": {
+            "en": "About 1,600 clay tablets from around 3100–2900 BC in a script invented in Iran, soon after the first writing of Mesopotamia. Apart from their numbers, they remain undeciphered.",
+            "es": "Unas 1600 tablillas de arcilla de hacia 3100-2900 a. C. en una escritura inventada en Irán, poco después de la primera escritura de Mesopotamia. Salvo sus números, siguen sin descifrarse."
+          },
+          "wiki": {
+            "en": "Proto-Elamite script",
+            "es": "Elam (reino)"
+          }
+        },
+        {
+          "id": "jiroft-culture",
+          "name": {
+            "en": "Jiroft culture",
+            "es": "Cultura de Jiroft"
+          },
+          "at": [
+            57.7667,
+            28.8
+          ],
+          "cat": "art",
+          "type": "culture",
+          "date": "-3000",
+          "place": {
+            "en": "Konar Sandal, Kerman, Iran",
+            "es": "Konar Sandal, Kermán, Irán"
+          },
+          "text": {
+            "en": "A Bronze Age culture of south-east Iran known for vessels of carved chlorite. Many were looted and sold abroad before archaeologists could study the sites, which makes their dates uncertain.",
+            "es": "Una cultura de la Edad del Bronce del sureste de Irán, conocida por sus vasos de clorita tallada. Muchos se saquearon y vendieron fuera antes de que los arqueólogos estudiaran los sitios, así que sus fechas son inciertas."
+          },
+          "wiki": {
+            "en": "Jiroft culture",
+            "es": "Civilización de Jiroft"
+          }
+        }
+      ],
+      "show": [
+        "elamite-civilization"
+      ]
+    },
+    {
+      "date": "-1250",
+      "title": {
+        "en": "Elam's golden age",
+        "es": "La edad de oro de Elam"
+      },
+      "camera": {
+        "lon": 50.0,
+        "lat": 31.5,
+        "zoom": 5.0
+      },
+      "text": {
+        "en": "Around 1250 BC King Untash-Napirisha built a great ziggurat at Chogha Zanbil. A century later Shutruk-Nakhunte raided Babylon and carried Hammurabi's law stele home to Susa as a trophy.",
+        "es": "Hacia el 1250 a. C., el rey Untash-Napirisha construyó un gran zigurat en Choga Zanbil. Un siglo después, Shutruk-Nakhunte saqueó Babilonia y se llevó a Susa como trofeo la estela de las leyes de Hammurabi."
+      },
+      "details": {
+        "en": "Middle Elamite kings (about 1500–1100 BC) wrote in Elamite with cuneiform signs and worshipped gods such as Inshushinak, protector of Susa, and the great goddess Kiririsha. Untash-Napirisha founded a new holy city, Al-Untash-Napirisha, today Chogha Zanbil, around a brick ziggurat whose bricks bear inscriptions. Around 1158 BC Shutruk-Nakhunte defeated the Kassite king of Babylon and took home the Code of Hammurabi and the Victory Stele of Naram-Sin; French archaeologists found both at Susa in 1898–1902. Much older, from about 2300 to 1880 BC, Elam also used a script of its own, Linear Elamite, which a team led by François Desset proposed to have deciphered in 2022.",
+        "es": "Los reyes del Elam medio (hacia 1500-1100 a. C.) escribían en elamita con signos cuneiformes y adoraban a dioses como Inshushinak, protector de Susa, y la gran diosa Kiririsha. Untash-Napirisha fundó una nueva ciudad santa, Al-Untash-Napirisha, hoy Choga Zanbil, en torno a un zigurat de ladrillos con inscripciones. Hacia el 1158 a. C., Shutruk-Nakhunte venció al rey casita de Babilonia y se llevó el Código de Hammurabi y la Estela de Naram-Sin; arqueólogos franceses hallaron ambos en Susa en 1898-1902. Mucho antes, hacia 2300-1880 a. C., Elam usó una escritura propia, el elamita lineal, que un equipo dirigido por François Desset propuso haber descifrado en 2022."
+      },
+      "control": {
+        "elam": [
+          {
+            "hist": "Elam",
+            "year": -1500
+          },
+          {
+            "ref": "elam_late"
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "chogha-zanbil",
+          "name": {
+            "en": "Chogha Zanbil",
+            "es": "Choga Zanbil"
+          },
+          "at": [
+            48.5208,
+            32.0083
+          ],
+          "cat": "temple",
+          "type": "structure",
+          "date": "-1250",
+          "place": {
+            "en": "Khuzestan, Iran",
+            "es": "Juzestán, Irán"
+          },
+          "text": {
+            "en": "The best-preserved ziggurat in the world, built about 1250 BC for the god Inshushinak. In 1979 it became Iran's first World Heritage Site.",
+            "es": "El zigurat mejor conservado del mundo, construido hacia el 1250 a. C. para el dios Inshushinak. En 1979 fue el primer Patrimonio de la Humanidad de Irán."
+          },
+          "wiki": {
+            "en": "Chogha Zanbil",
+            "es": "Choga Zanbil"
+          }
+        },
+        {
+          "id": "untash-napirisha",
+          "name": {
+            "en": "Untash-Napirisha",
+            "es": "Untash-Napirisha"
+          },
+          "at": [
+            48.525,
+            32.012
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-1275",
+          "place": {
+            "en": "Susa and Chogha Zanbil, Iran",
+            "es": "Susa y Choga Zanbil, Irán"
+          },
+          "text": {
+            "en": "A king of Elam in the 13th century BC who founded the holy city of Chogha Zanbil, with its ziggurat and temples, to unite the gods of the lowlands and the highlands.",
+            "es": "Un rey de Elam del siglo XIII a. C. que fundó la ciudad santa de Choga Zanbil, con su zigurat y sus templos, para unir a los dioses de las tierras bajas y de las altas."
+          },
+          "wiki": {
+            "en": "Untash-Napirisha",
+            "es": "Untash-Naprisha"
+          }
+        },
+        {
+          "id": "shutruk-nakhunte",
+          "name": {
+            "en": "Shutruk-Nakhunte",
+            "es": "Shutruk-Nakhunte"
+          },
+          "at": [
+            48.255,
+            32.187
+          ],
+          "cat": "war",
+          "type": "person",
+          "date": "-1158",
+          "place": {
+            "en": "Susa, Iran",
+            "es": "Susa, Irán"
+          },
+          "text": {
+            "en": "An Elamite king who raided Babylonia around 1158 BC and carried off its most famous monuments, including the Code of Hammurabi, to Susa. He added his own inscription to some of them.",
+            "es": "Un rey elamita que saqueó Babilonia hacia el 1158 a. C. y se llevó a Susa sus monumentos más famosos, entre ellos el Código de Hammurabi. A algunos les añadió su propia inscripción."
+          },
+          "wiki": {
+            "en": "Shutruk-Nakhunte",
+            "es": "Shutruk-Nahhunte"
+          }
+        },
+        {
+          "id": "linear-elamite",
+          "name": {
+            "en": "Linear Elamite",
+            "es": "Elamita lineal"
+          },
+          "at": [
+            48.26,
+            32.185
+          ],
+          "cat": "writing",
+          "type": "invention",
+          "date": "-2300",
+          "place": {
+            "en": "Susa and sites in Fars and Kerman, Iran",
+            "es": "Susa y sitios de Fars y Kermán, Irán"
+          },
+          "text": {
+            "en": "A script used in Elam from about 2300 to 1880 BC on silver vases and stone. In 2022 a team led by François Desset published a near-complete decipherment, which some scholars still question.",
+            "es": "Una escritura usada en Elam hacia 2300-1880 a. C. en vasos de plata y en piedra. En 2022 un equipo dirigido por François Desset publicó un desciframiento casi completo, que algunos estudiosos aún cuestionan."
+          },
+          "wiki": {
+            "en": "Linear Elamite",
+            "es": "Elamita lineal"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-585",
+      "title": {
+        "en": "The Medes",
+        "es": "Los medos"
+      },
+      "camera": {
+        "lon": 48.0,
+        "lat": 35.0,
+        "zoom": 3.8
+      },
+      "text": {
+        "en": "After Assyria sacked Susa in 647 BC, the Medes of the Iranian highlands rose to power. With Babylon they destroyed Assyria in 612 BC, then ruled from Ecbatana as far as Anatolia.",
+        "es": "Después de que Asiria saqueara Susa en el 647 a. C., los medos de las tierras altas de Irán ascendieron al poder. Con Babilonia destruyeron Asiria en el 612 a. C., y luego gobernaron desde Ecbatana hasta Anatolia."
+      },
+      "details": {
+        "en": "Medes and Persians spoke Iranian languages, relatives of Sanskrit, and had reached the Iranian plateau by about 900 BC as herders and horsemen. The Medes, ruling from Ecbatana, joined Babylon to destroy Assyria. In 585 BC they were fighting the Lydians by the river Halys, in Anatolia, when an eclipse of the Sun darkened the sky; frightened, both sides made peace and set the river as their border. The Persians in Fars, around Anshan, were their vassals. Their prophet Zoroaster lived at an uncertain date, perhaps between 1500 and 500 BC, somewhere in eastern Iran or Central Asia.",
+        "es": "Medos y persas hablaban lenguas iranias, parientes del sánscrito, y habían llegado a la meseta iraní hacia el 900 a. C. como pastores y jinetes. Los medos, que gobernaban desde Ecbatana, se unieron a Babilonia para destruir Asiria. En el 585 a. C. luchaban contra los lidios junto al río Halis, en Anatolia, cuando un eclipse de sol oscureció el cielo; asustados, ambos bandos hicieron la paz y fijaron el río como frontera. Los persas de Fars, en torno a Anshan, eran sus vasallos. Su profeta Zoroastro vivió en una fecha incierta, quizá entre el 1500 y el 500 a. C., en algún lugar del este de Irán o de Asia central."
+      },
+      "control": {
+        "media": {
+          "ref": "media_585"
+        },
+        "elam": {
+          "ref": "elam_late"
+        }
+      },
+      "places": [
+        {
+          "id": "sack-of-susa",
+          "name": {
+            "en": "Sack of Susa",
+            "es": "Saqueo de Susa"
+          },
+          "at": [
+            48.25,
+            32.195
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "-647",
+          "place": {
+            "en": "Susa, Khuzestan, Iran",
+            "es": "Susa, Juzestán, Irán"
+          },
+          "text": {
+            "en": "In 647 BC the army of Assyria's King Ashurbanipal destroyed Susa, looted its temples, wrecked the royal tombs and deported its people. Elam survived only as a small kingdom.",
+            "es": "En el 647 a. C., el ejército del rey asirio Asurbanipal destruyó Susa, saqueó sus templos, destrozó las tumbas reales y deportó a su gente. Elam sobrevivió solo como un pequeño reino."
+          },
+          "wiki": {
+            "en": "Battle of Susa",
+            "es": "Batalla de Susa"
+          }
+        },
+        {
+          "id": "ecbatana",
+          "name": {
+            "en": "Ecbatana",
+            "es": "Ecbatana"
+          },
+          "at": [
+            48.5161,
+            34.8064
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-700",
+          "place": {
+            "en": "Hamadan, Iran",
+            "es": "Hamadán, Irán"
+          },
+          "text": {
+            "en": "The capital of the Medes, under modern Hamadan. The Greek writer Herodotus said it had seven circles of walls, each painted a different colour; later it was the Persian kings' summer capital.",
+            "es": "La capital de los medos, bajo la actual Hamadán. El escritor griego Heródoto decía que tenía siete murallas en círculo, cada una pintada de un color; después fue la capital de verano de los reyes persas."
+          },
+          "wiki": {
+            "en": "Ecbatana",
+            "es": "Ecbatana"
+          }
+        },
+        {
+          "id": "cyaxares",
+          "name": {
+            "en": "Cyaxares",
+            "es": "Ciáxares"
+          },
+          "at": [
+            48.525,
+            34.8
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-625",
+          "place": {
+            "en": "Ecbatana (Hamadan), Iran",
+            "es": "Ecbatana (Hamadán), Irán"
+          },
+          "text": {
+            "en": "King of the Medes (about 625–585 BC), who built a strong army of archers and horsemen, destroyed Assyria with Babylon and pushed his kingdom west to the Halys river.",
+            "es": "Rey de los medos (hacia 625-585 a. C.), que formó un fuerte ejército de arqueros y jinetes, destruyó Asiria junto con Babilonia y llevó su reino hacia el oeste, hasta el río Halis."
+          },
+          "wiki": {
+            "en": "Cyaxares",
+            "es": "Ciáxares"
+          }
+        },
+        {
+          "id": "eclipse-of-thales",
+          "name": {
+            "en": "The eclipse battle",
+            "es": "La batalla del eclipse"
+          },
+          "at": [
+            34.6,
+            39.6
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "-585-05-28",
+          "place": {
+            "en": "Halys river (Kızılırmak), Turkey",
+            "es": "Río Halis (Kızılırmak), Turquía"
+          },
+          "text": {
+            "en": "On 28 May 585 BC, by tradition, a total eclipse of the Sun stopped a battle between Medes and Lydians. Both armies took it as a sign, made peace and sealed it with a royal marriage.",
+            "es": "El 28 de mayo del 585 a. C., según la tradición, un eclipse total de sol detuvo una batalla entre medos y lidios. Ambos ejércitos lo tomaron como una señal, hicieron la paz y la sellaron con una boda real."
+          },
+          "wiki": {
+            "en": "Eclipse of Thales",
+            "es": "Eclipse solar del 28 de mayo de 585 a. C."
+          }
+        },
+        {
+          "id": "zoroaster",
+          "name": {
+            "en": "Zoroaster",
+            "es": "Zoroastro"
+          },
+          "at": [
+            66.9,
+            36.75
+          ],
+          "cat": "temple",
+          "type": "person",
+          "date": "-1000",
+          "place": {
+            "en": "Eastern Iran or Central Asia (uncertain)",
+            "es": "Este de Irán o Asia central (incierto)"
+          },
+          "text": {
+            "en": "The prophet of Zoroastrianism, who taught that the wise god Ahura Mazda calls each person to choose good over evil. His dates are unknown, perhaps between 1500 and 500 BC.",
+            "es": "El profeta del zoroastrismo, que enseñó que el sabio dios Ahura Mazda llama a cada persona a elegir el bien frente al mal. Sus fechas se desconocen, quizá entre el 1500 y el 500 a. C."
+          },
+          "wiki": {
+            "en": "Zoroaster",
+            "es": "Zoroastro"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-539",
+      "title": {
+        "en": "Cyrus the Great",
+        "es": "Ciro el Grande"
+      },
+      "camera": {
+        "lon": 46.0,
+        "lat": 34.0,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "In 550 BC Cyrus, king of the Persians of Anshan, overthrew his Median overlord. Within eleven years he took Lydia and Babylon and built the largest empire the world had yet seen.",
+        "es": "En el 550 a. C., Ciro, rey de los persas de Anshan, derrocó a su señor medo. En once años tomó Lidia y Babilonia y formó el mayor imperio que el mundo había visto hasta entonces."
+      },
+      "details": {
+        "en": "Cyrus II (reigned about 559–530 BC) defeated the Median king Astyages, his grandfather according to Herodotus, and took over his kingdom. In 547 BC he captured Sardis, the capital of the rich King Croesus of Lydia, and in 539 BC he entered Babylon. Unlike the Assyrians, he let conquered peoples keep their gods and customs, and allowed the Judeans exiled in Babylon to go home and rebuild their Temple. He built a new capital at Pasargadae, with palaces in walled gardens. He died in 530 BC fighting nomads in Central Asia and was buried in a simple stone tomb, which Alexander the Great later visited and had repaired.",
+        "es": "Ciro II (reinó hacia 559-530 a. C.) venció al rey medo Astiages, su abuelo según Heródoto, y se quedó con su reino. En el 547 a. C. tomó Sardes, la capital del rico rey Creso de Lidia, y en el 539 a. C. entró en Babilonia. A diferencia de los asirios, dejó que los pueblos conquistados conservaran sus dioses y costumbres, y permitió a los judaítas exiliados en Babilonia volver a casa y reconstruir su Templo. Construyó una nueva capital en Pasargada, con palacios en jardines amurallados. Murió en el 530 a. C. luchando contra nómadas de Asia central y fue enterrado en una sencilla tumba de piedra, que Alejandro Magno visitó después e hizo reparar."
+      },
+      "control": {
+        "achaemenid": {
+          "ref": "persia_539"
+        },
+        "media": null,
+        "elam": null
+      },
+      "moves": [
+        {
+          "side": "achaemenid",
+          "path": [
+            [
+              53.179,
+              30.2
+            ],
+            [
+              51.0,
+              33.5
+            ],
+            [
+              48.516,
+              34.806
+            ]
+          ],
+          "label": {
+            "en": "Against the Medes, 550 BC",
+            "es": "Contra los medos, 550 a. C."
+          }
+        },
+        {
+          "side": "achaemenid",
+          "path": [
+            [
+              48.516,
+              34.806
+            ],
+            [
+              44.0,
+              36.5
+            ],
+            [
+              38.5,
+              38.3
+            ],
+            [
+              33.5,
+              39.2
+            ],
+            [
+              30.0,
+              38.8
+            ],
+            [
+              28.04,
+              38.488
+            ]
+          ],
+          "label": {
+            "en": "To Lydia, 547 BC",
+            "es": "A Lidia, 547 a. C."
+          }
+        },
+        {
+          "side": "achaemenid",
+          "path": [
+            [
+              48.516,
+              34.806
+            ],
+            [
+              46.0,
+              33.8
+            ],
+            [
+              44.7,
+              33.18
+            ],
+            [
+              44.421,
+              32.542
+            ]
+          ],
+          "label": {
+            "en": "To Babylon, 539 BC",
+            "es": "A Babilonia, 539 a. C."
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "cyrus-the-great",
+          "name": {
+            "en": "Cyrus the Great",
+            "es": "Ciro el Grande"
+          },
+          "at": [
+            53.172,
+            30.205
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-559",
+          "life": [
+            "-600",
+            "-530"
+          ],
+          "place": {
+            "en": "Anshan and Pasargadae, Fars, Iran",
+            "es": "Anshan y Pasargada, Fars, Irán"
+          },
+          "text": {
+            "en": "The founder of the Persian Empire (reigned about 559–530 BC). He was remembered by Persians as a father, by Greeks as a model ruler, and by Jews as the king who sent them home from exile.",
+            "es": "El fundador del Imperio persa (reinó hacia 559-530 a. C.). Los persas lo recordaban como un padre, los griegos como un gobernante modelo y los judíos como el rey que los devolvió a casa del exilio."
+          },
+          "wiki": {
+            "en": "Cyrus the Great",
+            "es": "Ciro el Grande"
+          }
+        },
+        {
+          "id": "pasargadae",
+          "name": {
+            "en": "Pasargadae",
+            "es": "Pasargada"
+          },
+          "at": [
+            53.1794,
+            30.2
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-546",
+          "place": {
+            "en": "Fars, Iran",
+            "es": "Fars, Irán"
+          },
+          "text": {
+            "en": "Cyrus's capital, begun about 546 BC: palaces and pavilions set in walled gardens watered by stone channels, the oldest known Persian garden. It is a World Heritage Site.",
+            "es": "La capital de Ciro, comenzada hacia el 546 a. C.: palacios y pabellones en jardines amurallados regados por canales de piedra, el jardín persa más antiguo conocido. Es Patrimonio de la Humanidad."
+          },
+          "wiki": {
+            "en": "Pasargadae",
+            "es": "Pasargada"
+          }
+        },
+        {
+          "id": "tomb-of-cyrus",
+          "name": {
+            "en": "Tomb of Cyrus",
+            "es": "Tumba de Ciro"
+          },
+          "at": [
+            53.1672,
+            30.1939
+          ],
+          "cat": "tomb",
+          "type": "structure",
+          "date": "-530",
+          "place": {
+            "en": "Pasargadae, Fars, Iran",
+            "es": "Pasargada, Fars, Irán"
+          },
+          "text": {
+            "en": "A small stone house on six steps, about 11 m high, where Cyrus was buried in 530 BC. Alexander the Great found it robbed and ordered it restored; it still stands in the plain of Pasargadae.",
+            "es": "Una pequeña casa de piedra sobre seis escalones, de unos 11 m de alto, donde se enterró a Ciro en el 530 a. C. Alejandro Magno la halló saqueada y mandó restaurarla; aún se alza en la llanura de Pasargada."
+          },
+          "wiki": {
+            "en": "Tomb of Cyrus the Great",
+            "es": "Tumba de Ciro"
+          }
+        },
+        {
+          "id": "sardis",
+          "name": {
+            "en": "Sardis",
+            "es": "Sardes"
+          },
+          "at": [
+            28.0403,
+            38.4883
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-547",
+          "place": {
+            "en": "Sart, Manisa, Turkey",
+            "es": "Sart, Manisa, Turquía"
+          },
+          "text": {
+            "en": "The capital of Lydia, the rich kingdom of Croesus, where the first coins of gold and silver were struck. Cyrus took it in 547 BC; it became the western end of the Royal Road.",
+            "es": "La capital de Lidia, el rico reino de Creso, donde se acuñaron las primeras monedas de oro y plata. Ciro la tomó en el 547 a. C.; se convirtió en el extremo occidental del Camino Real."
+          },
+          "wiki": {
+            "en": "Sardis",
+            "es": "Sardes"
+          }
+        },
+        {
+          "id": "cyrus-cylinder",
+          "name": {
+            "en": "Cyrus Cylinder",
+            "es": "Cilindro de Ciro"
+          },
+          "at": [
+            44.4195,
+            32.5368
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-539",
+          "place": {
+            "en": "Babylon; British Museum, London",
+            "es": "Babilonia; Museo Británico, Londres"
+          },
+          "text": {
+            "en": "A clay cylinder written in Babylonian for Cyrus after he took Babylon in 539 BC. It tells how he let peoples and their gods return home; Iran sees it as a symbol of tolerance.",
+            "es": "Un cilindro de arcilla escrito en babilonio para Ciro tras tomar Babilonia en el 539 a. C. Cuenta cómo dejó volver a casa a los pueblos y a sus dioses; Irán lo ve como un símbolo de tolerancia."
+          },
+          "wiki": {
+            "en": "Cyrus Cylinder",
+            "es": "Cilindro de Ciro"
+          }
+        }
+      ],
+      "show": [
+        "achaemenid-empire"
+      ]
+    },
+    {
+      "date": "-520",
+      "title": {
+        "en": "Darius and the satrapies",
+        "es": "Darío y las satrapías"
+      },
+      "camera": {
+        "lon": 48.0,
+        "lat": 32.0,
+        "zoom": 2.8
+      },
+      "text": {
+        "en": "Darius I seized the throne in 522 BC and crushed nine rebel kings in a year. He told the story in three languages on the cliff of Behistun, and ran his vast empire through provinces called satrapies.",
+        "es": "Darío I tomó el trono en el 522 a. C. y aplastó a nueve reyes rebeldes en un año. Contó la historia en tres lenguas en el acantilado de Behistún y gobernó su vasto imperio mediante provincias llamadas satrapías."
+      },
+      "details": {
+        "en": "Cyrus's son Cambyses added Egypt in 525 BC; Darius (reigned 522–486 BC) added the Indus valley and Thrace. He divided the empire into about 20 satrapies, each with a governor, the satrap, watched by royal inspectors known as 'the King's Eyes'. Each paid a fixed tribute in silver or goods. Darius issued a gold coin, the daric, and finished a canal from the Nile to the Red Sea. His officials wrote mostly in Aramaic, so that a letter could be read from Egypt to India. The empire was home to many peoples and faiths, and the kings usually ruled through local elites and customs.",
+        "es": "Cambises, hijo de Ciro, añadió Egipto en el 525 a. C.; Darío (reinó 522-486 a. C.) sumó el valle del Indo y Tracia. Dividió el imperio en unas 20 satrapías, cada una con un gobernador, el sátrapa, vigilado por inspectores reales llamados «los ojos del rey». Cada una pagaba un tributo fijo en plata o en productos. Darío acuñó una moneda de oro, el dárico, y terminó un canal del Nilo al mar Rojo. Sus funcionarios escribían sobre todo en arameo, para que una carta pudiera leerse de Egipto a la India. El imperio albergaba muchos pueblos y creencias, y los reyes solían gobernar a través de las élites y costumbres locales."
+      },
+      "control": {
+        "achaemenid": {
+          "ref": "achaemenid_darius"
+        }
+      },
+      "places": [
+        {
+          "id": "darius-i",
+          "name": {
+            "en": "Darius I",
+            "es": "Darío I"
+          },
+          "at": [
+            52.895,
+            29.94
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-522",
+          "life": [
+            "-550",
+            "-486"
+          ],
+          "place": {
+            "en": "Persepolis and Susa, Iran",
+            "es": "Persépolis y Susa, Irán"
+          },
+          "text": {
+            "en": "King of kings from 522 to 486 BC, the great organizer of the Persian Empire. He built Persepolis and the Royal Road, but his invasion of Greece was stopped at Marathon in 490 BC.",
+            "es": "Rey de reyes de 522 a 486 a. C., el gran organizador del Imperio persa. Construyó Persépolis y el Camino Real, pero su invasión de Grecia fue detenida en Maratón en el 490 a. C."
+          },
+          "wiki": {
+            "en": "Darius the Great",
+            "es": "Darío I"
+          }
+        },
+        {
+          "id": "behistun-inscription",
+          "name": {
+            "en": "Behistun inscription",
+            "es": "Inscripción de Behistún"
+          },
+          "at": [
+            47.4358,
+            34.3906
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-520",
+          "place": {
+            "en": "Mount Behistun, Kermanshah, Iran",
+            "es": "Monte Behistún, Kermanshah, Irán"
+          },
+          "text": {
+            "en": "Carved about 100 m up a cliff on the road to Ecbatana: Darius tells how he won the throne, in Old Persian, Elamite and Babylonian. It later became the key to reading cuneiform.",
+            "es": "Tallada a unos 100 m de altura en un acantilado del camino a Ecbatana: Darío cuenta cómo ganó el trono, en persa antiguo, elamita y babilonio. Después fue la clave para leer el cuneiforme."
+          },
+          "wiki": {
+            "en": "Behistun inscription",
+            "es": "Inscripción de Behistún"
+          }
+        },
+        {
+          "id": "satrap",
+          "name": {
+            "en": "Satrapies",
+            "es": "Satrapías"
+          },
+          "at": [
+            48.265,
+            32.182
+          ],
+          "cat": "ruler",
+          "type": "institution",
+          "date": "-520",
+          "place": {
+            "en": "Across the empire, from Egypt to the Indus",
+            "es": "Por todo el imperio, de Egipto al Indo"
+          },
+          "text": {
+            "en": "The provinces of the Persian Empire, each ruled by a satrap ('protector of the realm'). The system was so practical that Alexander, the Seleucids and the Parthians kept it.",
+            "es": "Las provincias del Imperio persa, cada una gobernada por un sátrapa («protector del reino»). El sistema era tan práctico que Alejandro, los seléucidas y los partos lo conservaron."
+          },
+          "wiki": {
+            "en": "Satrap",
+            "es": "Sátrapa"
+          }
+        },
+        {
+          "id": "daric",
+          "name": {
+            "en": "The daric",
+            "es": "El dárico"
+          },
+          "at": [
+            28.045,
+            38.495
+          ],
+          "cat": "trade",
+          "type": "invention",
+          "date": "-515",
+          "place": {
+            "en": "Minted at Sardis and in other cities of the empire",
+            "es": "Acuñado en Sardes y otras ciudades del imperio"
+          },
+          "text": {
+            "en": "A thick gold coin of 8.4 g introduced by Darius, showing the king as an archer. Worth 20 silver coins, it was trusted from Greece to India for two centuries.",
+            "es": "Una gruesa moneda de oro de 8,4 g creada por Darío, con el rey como arquero. Valía 20 monedas de plata y fue aceptada de Grecia a la India durante dos siglos."
+          },
+          "wiki": {
+            "en": "Daric",
+            "es": "Dárico"
+          }
+        },
+        {
+          "id": "canal-of-the-pharaohs",
+          "name": {
+            "en": "Darius's canal",
+            "es": "El canal de Darío"
+          },
+          "at": [
+            32.0,
+            30.55
+          ],
+          "cat": "trade",
+          "type": "structure",
+          "date": "-500",
+          "place": {
+            "en": "Wadi Tumilat to Suez, Egypt",
+            "es": "Del Uadi Tumilat a Suez, Egipto"
+          },
+          "text": {
+            "en": "A canal from the Nile to the Red Sea, begun by Egyptian kings and finished by Darius. His stelae along it boast that ships sailed 'from Egypt to Persia', a forerunner of the Suez Canal.",
+            "es": "Un canal del Nilo al mar Rojo, comenzado por reyes egipcios y terminado por Darío. Sus estelas a lo largo del canal presumen de que los barcos navegaban «de Egipto a Persia», un antecesor del canal de Suez."
+          },
+          "wiki": {
+            "en": "Canal of the Pharaohs",
+            "es": "Canal de los Faraones"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-515",
+      "title": {
+        "en": "Persepolis",
+        "es": "Persépolis"
+      },
+      "camera": {
+        "lon": 52.5,
+        "lat": 30.5,
+        "zoom": 4.2
+      },
+      "text": {
+        "en": "From 518 BC Darius built Persepolis, a terrace of palaces in Fars. On the stairs of its great hall, the Apadana, carved delegates from 23 peoples bring gifts: horses, gold, cloth, camels.",
+        "es": "Desde el 518 a. C., Darío construyó Persépolis, una terraza de palacios en Fars. En las escaleras de su gran sala, la Apadana, delegados tallados de 23 pueblos traen regalos: caballos, oro, telas, camellos."
+      },
+      "details": {
+        "en": "Persepolis, Parsa to the Persians, was built over a century by Darius, his son Xerxes and their heirs. Its builders came from all over the empire, and clay tablets from its archive show they were paid: workers, men and women alike, received rations of grain, beer and wine, and new mothers got extra rations, twice as much for a boy as for a girl. The Apadana's columns rose 24 m, topped by carved bulls. The kings were buried nearby, in tombs cut into the cliff of Naqsh-e Rostam. Greek writers called the kings tyrants, but the reliefs show no battles: only peoples bringing gifts to a king who claimed to rule by the will of Ahura Mazda.",
+        "es": "Persépolis, Parsa para los persas, se construyó durante un siglo con Darío, su hijo Jerjes y sus herederos. Sus constructores llegaron de todo el imperio, y las tablillas de su archivo muestran que se les pagaba: los trabajadores, hombres y mujeres por igual, recibían raciones de grano, cerveza y vino, y las madres recientes recibían raciones extra, el doble por un niño que por una niña. Las columnas de la Apadana alcanzaban 24 m, coronadas por toros tallados. Los reyes se enterraron cerca, en tumbas excavadas en el acantilado de Naqsh-e Rostam. Los escritores griegos llamaban tiranos a los reyes, pero los relieves no muestran batallas: solo pueblos que traen regalos a un rey que decía gobernar por voluntad de Ahura Mazda."
+      },
+      "places": [
+        {
+          "id": "persepolis",
+          "name": {
+            "en": "Persepolis",
+            "es": "Persépolis"
+          },
+          "at": [
+            52.89,
+            29.935
+          ],
+          "cat": "ruler",
+          "type": "site",
+          "date": "-518",
+          "until": "-330",
+          "place": {
+            "en": "Marvdasht, Fars, Iran",
+            "es": "Marvdasht, Fars, Irán"
+          },
+          "text": {
+            "en": "The ceremonial capital of the Persian kings, a stone terrace of palaces and halls begun in 518 BC. Alexander burned it in 330 BC; its ruins are a World Heritage Site.",
+            "es": "La capital ceremonial de los reyes persas, una terraza de piedra con palacios y salas comenzada en el 518 a. C. Alejandro la incendió en el 330 a. C.; sus ruinas son Patrimonio de la Humanidad."
+          },
+          "wiki": {
+            "en": "Persepolis",
+            "es": "Persépolis"
+          }
+        },
+        {
+          "id": "apadana",
+          "name": {
+            "en": "Apadana",
+            "es": "Apadana"
+          },
+          "at": [
+            52.891,
+            29.936
+          ],
+          "cat": "art",
+          "type": "structure",
+          "date": "-515",
+          "place": {
+            "en": "Persepolis, Fars, Iran",
+            "es": "Persépolis, Fars, Irán"
+          },
+          "text": {
+            "en": "The great audience hall of Persepolis, with 72 columns 24 m tall. Its stairways are carved with delegations from 23 lands, from Ethiopians with an okapi to Indians with gold dust.",
+            "es": "La gran sala de audiencias de Persépolis, con 72 columnas de 24 m. Sus escaleras tienen relieves de delegaciones de 23 tierras, de etíopes con un okapi a indios con polvo de oro."
+          },
+          "wiki": {
+            "en": "Apadana",
+            "es": "Apadana"
+          }
+        },
+        {
+          "id": "persepolis-fortification-archive",
+          "name": {
+            "en": "Persepolis tablets",
+            "es": "Tablillas de Persépolis"
+          },
+          "at": [
+            52.888,
+            29.933
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-509",
+          "place": {
+            "en": "Persepolis; Oriental Institute, Chicago",
+            "es": "Persépolis; Instituto Oriental, Chicago"
+          },
+          "text": {
+            "en": "Thousands of clay tablets, mostly in Elamite, recording the food paid to workers and travellers from 509 BC. They show women working and earning, and extra rations for new mothers.",
+            "es": "Miles de tablillas de arcilla, casi todas en elamita, que registran los alimentos pagados a trabajadores y viajeros desde el 509 a. C. Muestran a mujeres que trabajaban y cobraban, y raciones extra para las madres recientes."
+          },
+          "wiki": {
+            "en": "Persepolis Administrative Archives",
+            "es": "Tablillas de la Fortaleza de Persépolis"
+          }
+        },
+        {
+          "id": "naqsh-e-rostam",
+          "name": {
+            "en": "Naqsh-e Rostam",
+            "es": "Naqsh-e Rostam"
+          },
+          "at": [
+            52.8747,
+            29.9889
+          ],
+          "cat": "tomb",
+          "type": "site",
+          "date": "-486",
+          "place": {
+            "en": "Near Persepolis, Fars, Iran",
+            "es": "Cerca de Persépolis, Fars, Irán"
+          },
+          "text": {
+            "en": "A cliff where the tombs of Darius I and three later kings were cut in the shape of a cross, high above the ground. Sasanian kings later carved their own victories below them.",
+            "es": "Un acantilado donde se excavaron, en forma de cruz y muy por encima del suelo, las tumbas de Darío I y de tres reyes posteriores. Los reyes sasánidas tallaron después sus propias victorias debajo."
+          },
+          "wiki": {
+            "en": "Naqsh-e Rostam",
+            "es": "Naqsh-e Rostam"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-500",
+      "title": {
+        "en": "The Royal Road",
+        "es": "El Camino Real"
+      },
+      "camera": {
+        "lon": 40.0,
+        "lat": 36.0,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "A royal road ran 2,700 km from Sardis to Susa, with 111 relay stations. Royal couriers on fresh horses covered it in nine days; 'neither snow nor rain' stopped them, wrote Herodotus.",
+        "es": "Un camino real recorría 2700 km de Sardes a Susa, con 111 postas. Los correos reales, con caballos de refresco, lo cubrían en nueve días; «ni la nieve ni la lluvia» los detenían, escribió Heródoto."
+      },
+      "details": {
+        "en": "A traveller on foot needed about 90 days for the same road. The empire also spread older Iranian inventions: qanats, gently sloping tunnels that carry groundwater for kilometres to fields and villages, and walled gardens that the Persians called pairidaeza, the root of our word 'paradise'. The kings honoured Ahura Mazda, the god of Zoroastrian teaching, while letting each people keep its own gods. In the west, the Greek cities resisted Persian rule: Athens and Sparta defeated the armies of Darius at Marathon in 490 BC and of Xerxes at Salamis and Plataea in 480–479 BC.",
+        "es": "Un viajero a pie necesitaba unos 90 días para el mismo camino. El imperio también difundió inventos iranios más antiguos: los qanats, túneles de suave pendiente que llevan agua subterránea durante kilómetros hasta campos y aldeas, y los jardines amurallados que los persas llamaban pairidaeza, raíz de nuestra palabra «paraíso». Los reyes honraban a Ahura Mazda, el dios de la enseñanza zoroástrica, y dejaban a cada pueblo conservar sus propios dioses. En el oeste, las ciudades griegas resistieron al dominio persa: Atenas y Esparta vencieron a los ejércitos de Darío en Maratón, en el 490 a. C., y de Jerjes en Salamina y Platea, en el 480-479 a. C."
+      },
+      "moves": [
+        {
+          "side": "achaemenid",
+          "path": [
+            [
+              28.04,
+              38.488
+            ],
+            [
+              30.2,
+              39.0
+            ],
+            [
+              32.0,
+              39.6
+            ],
+            [
+              34.5,
+              39.6
+            ],
+            [
+              36.5,
+              38.8
+            ],
+            [
+              38.5,
+              38.3
+            ],
+            [
+              40.2,
+              37.9
+            ],
+            [
+              42.5,
+              37.2
+            ],
+            [
+              43.9,
+              36.2
+            ],
+            [
+              45.5,
+              34.5
+            ],
+            [
+              47.0,
+              33.2
+            ],
+            [
+              48.258,
+              32.191
+            ]
+          ],
+          "label": {
+            "en": "The Royal Road",
+            "es": "El Camino Real"
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "⚓",
+          "date": "-480",
+          "at": [
+            23.5667,
+            37.9514
+          ],
+          "text": {
+            "en": "Greek fleets defeat Xerxes's navy at Salamis",
+            "es": "Las flotas griegas vencen a la armada de Jerjes en Salamina"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "royal-road",
+          "name": {
+            "en": "Royal Road",
+            "es": "Camino Real persa"
+          },
+          "at": [
+            38.5,
+            38.3
+          ],
+          "cat": "trade",
+          "type": "structure",
+          "date": "-500",
+          "place": {
+            "en": "From Sardis (Turkey) to Susa (Iran)",
+            "es": "De Sardes (Turquía) a Susa (Irán)"
+          },
+          "text": {
+            "en": "The great highway of the Persian kings, 2,699 km long according to Herodotus, with guarded stations every day's ride. His praise of its couriers is carved on the main post office of New York.",
+            "es": "La gran vía de los reyes persas, de 2699 km según Heródoto, con estaciones vigiladas a cada jornada de viaje. Su elogio de los correos está grabado en la oficina central de correos de Nueva York."
+          },
+          "wiki": {
+            "en": "Royal Road",
+            "es": "Camino Real Persa"
+          }
+        },
+        {
+          "id": "qanat",
+          "name": {
+            "en": "Qanats",
+            "es": "Qanats"
+          },
+          "at": [
+            54.3,
+            31.9
+          ],
+          "cat": "knowledge",
+          "type": "invention",
+          "date": "-800",
+          "place": {
+            "en": "Iranian plateau, e.g. Yazd and Gonabad",
+            "es": "Meseta iraní, por ejemplo Yazd y Gonabad"
+          },
+          "text": {
+            "en": "Underground channels dug with a line of vertical shafts, carrying water from the foot of the mountains to dry plains without losing it to the sun. Iran still has thousands in use.",
+            "es": "Canales subterráneos excavados con una fila de pozos verticales, que llevan agua del pie de las montañas a las llanuras secas sin que el sol la evapore. Irán aún tiene miles en uso."
+          },
+          "wiki": {
+            "en": "Qanat",
+            "es": "Qanat"
+          }
+        },
+        {
+          "id": "persian-garden",
+          "name": {
+            "en": "Persian garden",
+            "es": "Jardín persa"
+          },
+          "at": [
+            53.185,
+            30.205
+          ],
+          "cat": "art",
+          "type": "place",
+          "date": "-546",
+          "place": {
+            "en": "First known at Pasargadae, Fars, Iran",
+            "es": "El primero conocido, en Pasargada, Fars, Irán"
+          },
+          "text": {
+            "en": "A walled garden divided by water channels into four parts, first known at Pasargadae. The Persian word for such a garden gave English and Spanish the word 'paradise'.",
+            "es": "Un jardín amurallado dividido en cuatro partes por canales de agua, conocido primero en Pasargada. La palabra persa para un jardín así dio al español y al inglés la palabra «paraíso»."
+          },
+          "wiki": {
+            "en": "Persian gardens",
+            "es": "Jardín persa"
+          }
+        },
+        {
+          "id": "zoroastrianism",
+          "name": {
+            "en": "Zoroastrianism",
+            "es": "Zoroastrismo"
+          },
+          "at": [
+            50.0,
+            36.0
+          ],
+          "cat": "temple",
+          "type": "culture",
+          "date": "-600",
+          "place": {
+            "en": "Iran and Central Asia",
+            "es": "Irán y Asia central"
+          },
+          "text": {
+            "en": "The faith taught by Zoroaster, one of the world's oldest living religions: one wise god, Ahura Mazda, a struggle between truth and falsehood, and fire as a sign of purity.",
+            "es": "La fe enseñada por Zoroastro, una de las religiones vivas más antiguas del mundo: un dios sabio, Ahura Mazda, una lucha entre la verdad y la mentira, y el fuego como signo de pureza."
+          },
+          "wiki": {
+            "en": "Zoroastrianism",
+            "es": "Zoroastrismo"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-330",
+      "title": {
+        "en": "Alexander conquers Persia",
+        "es": "Alejandro conquista Persia"
+      },
+      "camera": {
+        "lon": 50.0,
+        "lat": 33.0,
+        "zoom": 2.9
+      },
+      "text": {
+        "en": "Alexander of Macedon invaded in 334 BC, beat Darius III at Gaugamela in 331 BC and burned Persepolis. After his death his general Seleucus took most of Persia and filled it with Greek cities.",
+        "es": "Alejandro de Macedonia invadió en el 334 a. C., venció a Darío III en Gaugamela en el 331 a. C. e incendió Persépolis. Tras su muerte, su general Seleuco se quedó con casi toda Persia y la llenó de ciudades griegas."
+      },
+      "details": {
+        "en": "At Gaugamela, near today's Erbil, the Persian army was far larger, but Alexander's charge broke through and Darius fled. In 330 BC Persepolis burned, perhaps in revenge for the Persian burning of Athens 150 years earlier, and Darius was murdered by one of his own satraps. Alexander then dressed partly as a Persian king, married the Bactrian princess Roxana and, at Susa in 324 BC, held a mass wedding of his officers to Persian noblewomen. He died in Babylon in 323 BC. The Seleucid kings who followed ruled through the old satrapies and founded Greek cities as far as Ai-Khanoum in Afghanistan.",
+        "es": "En Gaugamela, cerca de la actual Erbil, el ejército persa era mucho mayor, pero la carga de Alejandro lo rompió y Darío huyó. En el 330 a. C. ardió Persépolis, quizá como venganza por el incendio persa de Atenas 150 años antes, y Darío fue asesinado por uno de sus propios sátrapas. Alejandro se vistió entonces en parte como un rey persa, se casó con la princesa bactriana Roxana y, en Susa, en el 324 a. C., celebró una boda masiva de sus oficiales con nobles persas. Murió en Babilonia en el 323 a. C. Los reyes seléucidas que lo siguieron gobernaron mediante las antiguas satrapías y fundaron ciudades griegas hasta Ai Khanum, en Afganistán."
+      },
+      "control": {
+        "greeks": {
+          "hist": "Empire of Alexander",
+          "year": -323
+        },
+        "achaemenid": null
+      },
+      "moves": [
+        {
+          "side": "greeks",
+          "path": [
+            [
+              26.4,
+              40.1
+            ],
+            [
+              28.5,
+              39.0
+            ],
+            [
+              32.0,
+              37.5
+            ],
+            [
+              35.5,
+              36.8
+            ],
+            [
+              36.2,
+              36.5
+            ],
+            [
+              38.0,
+              36.6
+            ],
+            [
+              43.44,
+              36.56
+            ]
+          ],
+          "label": {
+            "en": "Alexander, 334–331 BC",
+            "es": "Alejandro, 334-331 a. C."
+          }
+        },
+        {
+          "side": "greeks",
+          "path": [
+            [
+              43.44,
+              36.56
+            ],
+            [
+              44.42,
+              32.6
+            ],
+            [
+              48.26,
+              32.19
+            ],
+            [
+              52.89,
+              29.935
+            ]
+          ]
+        }
+      ],
+      "places": [
+        {
+          "id": "alexander-the-great",
+          "name": {
+            "en": "Alexander the Great",
+            "es": "Alejandro Magno"
+          },
+          "at": [
+            52.9,
+            29.93
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-334",
+          "life": [
+            "-356",
+            "-323"
+          ],
+          "place": {
+            "en": "Gaugamela, Persepolis and Babylon",
+            "es": "Gaugamela, Persépolis y Babilonia"
+          },
+          "text": {
+            "en": "The king of Macedon who conquered the whole Persian Empire between 334 and 330 BC and reached the Indus. He then tried to rule as a Persian king too, angering many Macedonians.",
+            "es": "El rey de Macedonia que conquistó todo el Imperio persa entre el 334 y el 330 a. C. y llegó hasta el Indo. Después intentó reinar también como rey persa, lo que enfureció a muchos macedonios."
+          },
+          "wiki": {
+            "en": "Alexander the Great",
+            "es": "Alejandro Magno"
+          }
+        },
+        {
+          "id": "battle-of-gaugamela",
+          "name": {
+            "en": "Battle of Gaugamela",
+            "es": "Batalla de Gaugamela"
+          },
+          "at": [
+            43.44,
+            36.56
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "-331-10-01",
+          "place": {
+            "en": "Near Erbil and Mosul, Iraq",
+            "es": "Cerca de Erbil y Mosul, Irak"
+          },
+          "text": {
+            "en": "On 1 October 331 BC Alexander's army defeated a much larger Persian army led by Darius III. It decided the fate of the Achaemenid Empire.",
+            "es": "El 1 de octubre del 331 a. C., el ejército de Alejandro venció a un ejército persa mucho mayor dirigido por Darío III. Decidió el destino del Imperio aqueménida."
+          },
+          "wiki": {
+            "en": "Battle of Gaugamela",
+            "es": "Batalla de Gaugamela"
+          }
+        },
+        {
+          "id": "darius-iii",
+          "name": {
+            "en": "Darius III",
+            "es": "Darío III"
+          },
+          "at": [
+            54.6,
+            36.4
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-336",
+          "place": {
+            "en": "Fled east; died near Damghan, Iran",
+            "es": "Huyó al este; murió cerca de Damgan, Irán"
+          },
+          "text": {
+            "en": "The last Achaemenid king (336–330 BC). After two defeats he fled east and was stabbed by the satrap Bessus in 330 BC; Alexander gave him a royal funeral.",
+            "es": "El último rey aqueménida (336-330 a. C.). Tras dos derrotas huyó al este y el sátrapa Beso lo apuñaló en el 330 a. C.; Alejandro le dio un funeral real."
+          },
+          "wiki": {
+            "en": "Darius III",
+            "es": "Darío III"
+          }
+        },
+        {
+          "id": "seleucid-empire",
+          "name": {
+            "en": "Seleucid Empire",
+            "es": "Imperio seléucida"
+          },
+          "at": [
+            44.5222,
+            33.0944
+          ],
+          "cat": "culture",
+          "type": "culture",
+          "date": "-312",
+          "until": "-63",
+          "place": {
+            "en": "From Syria to Afghanistan",
+            "es": "De Siria a Afganistán"
+          },
+          "text": {
+            "en": "The kingdom founded by Alexander's general Seleucus in 312 BC, ruled from Seleucia on the Tigris and Antioch. Greek and Iranian cultures mixed in its cities until the Parthians took Iran.",
+            "es": "El reino fundado en el 312 a. C. por Seleuco, general de Alejandro, gobernado desde Seleucia del Tigris y Antioquía. En sus ciudades se mezclaron las culturas griega e irania hasta que los partos tomaron Irán."
+          },
+          "wiki": {
+            "en": "Seleucid Empire",
+            "es": "Imperio seléucida"
+          }
+        },
+        {
+          "id": "ai-khanoum",
+          "name": {
+            "en": "Ai-Khanoum",
+            "es": "Ai Khanum"
+          },
+          "at": [
+            69.4086,
+            37.1647
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-280",
+          "until": "-145",
+          "place": {
+            "en": "Takhar, Afghanistan",
+            "es": "Tajar, Afganistán"
+          },
+          "text": {
+            "en": "A Greek city on the Oxus, founded around 280 BC, with a theatre, a gymnasium and Delphic maxims carved in stone. Nomads destroyed it around 145 BC; it was badly looted during the Afghan wars.",
+            "es": "Una ciudad griega junto al Oxus, fundada hacia el 280 a. C., con teatro, gimnasio y máximas de Delfos grabadas en piedra. Los nómadas la destruyeron hacia el 145 a. C.; fue muy saqueada durante las guerras afganas."
+          },
+          "wiki": {
+            "en": "Ai-Khanoum",
+            "es": "Alejandría de Oxiana"
+          }
+        }
+      ],
+      "show": [
+        "greco-bactrian-kingdom"
+      ]
+    },
+    {
+      "date": "-53",
+      "title": {
+        "en": "The Parthians",
+        "es": "Los partos"
+      },
+      "camera": {
+        "lon": 50.0,
+        "lat": 34.0,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "Parni horsemen from the steppes founded Parthia around 247 BC and took Mesopotamia from the Seleucids in 141 BC. In 53 BC their archers destroyed a Roman army at Carrhae.",
+        "es": "Jinetes parnos de las estepas fundaron Partia hacia el 247 a. C. y arrebataron Mesopotamia a los seléucidas en el 141 a. C. En el 53 a. C., sus arqueros destruyeron un ejército romano en Carras."
+      },
+      "details": {
+        "en": "The Parthian kings, of the Arsacid family, ruled for almost 500 years with great noble houses such as Suren and Karen. They admired Greek culture, put Greek inscriptions on their coins and built a capital at Ctesiphon on the Tigris. They sat in the middle of the Silk Road: Chinese envoys of the Han emperors reached them, and silk went west through their lands to Rome. At Carrhae, mounted archers who shot backwards while seeming to flee, the famous 'Parthian shot', killed or captured about 30,000 Romans, and the Roman general Crassus died. For seven centuries Rome and Iran would be rivals on the Euphrates.",
+        "es": "Los reyes partos, de la familia arsácida, gobernaron casi 500 años junto con grandes casas nobles como los Surén y los Karén. Admiraban la cultura griega, ponían inscripciones griegas en sus monedas y levantaron una capital en Ctesifonte, junto al Tigris. Estaban en medio de la Ruta de la Seda: llegaron a ellos enviados chinos de los emperadores Han, y la seda iba hacia el oeste por sus tierras hasta Roma. En Carras, arqueros a caballo que disparaban hacia atrás mientras parecían huir, el famoso «tiro parto», mataron o capturaron a unos 30 000 romanos, y murió el general romano Craso. Durante siete siglos Roma e Irán serían rivales en el Éufrates."
+      },
+      "control": {
+        "parthia": {
+          "hist": "Parthian Empire",
+          "year": -1
+        },
+        "greeks": null,
+        "rome": {
+          "and": [
+            {
+              "hist": "Roman Empire",
+              "year": -1
+            },
+            {
+              "poly": [
+                [
+                  24.0,
+                  33.0
+                ],
+                [
+                  45.0,
+                  33.0
+                ],
+                [
+                  45.0,
+                  43.5
+                ],
+                [
+                  24.0,
+                  43.5
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "nisa",
+          "name": {
+            "en": "Nisa",
+            "es": "Nisa"
+          },
+          "at": [
+            58.195,
+            37.9667
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-250",
+          "place": {
+            "en": "Near Ashgabat, Turkmenistan",
+            "es": "Cerca de Asjabad, Turkmenistán"
+          },
+          "text": {
+            "en": "An early Parthian royal city, with fortresses, temples and treasuries. Its excavators found carved ivory drinking horns showing Greek gods, a sign of how Parthians mixed cultures.",
+            "es": "Una de las primeras ciudades reales partas, con fortalezas, templos y tesoros. Sus excavadores hallaron cuernos para beber de marfil tallado con dioses griegos, señal de cómo los partos mezclaban culturas."
+          },
+          "wiki": {
+            "en": "Nisa, Turkmenistan",
+            "es": "Nisa (Turkmenistán)"
+          }
+        },
+        {
+          "id": "ctesiphon",
+          "name": {
+            "en": "Ctesiphon",
+            "es": "Ctesifonte"
+          },
+          "at": [
+            44.5806,
+            33.0936
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-120",
+          "until": "800",
+          "place": {
+            "en": "Salman Pak, south of Baghdad, Iraq",
+            "es": "Salman Pak, al sur de Bagdad, Irak"
+          },
+          "text": {
+            "en": "The capital of the Parthian and Sasanian kings on the Tigris, founded in the 2nd century BC beside Greek Seleucia. Perhaps the largest city in the world around AD 600, it was abandoned after the Arab conquest.",
+            "es": "La capital de los reyes partos y sasánidas junto al Tigris, fundada en el siglo II a. C. al lado de la Seleucia griega. Quizá la mayor ciudad del mundo hacia el 600, fue abandonada tras la conquista árabe."
+          },
+          "wiki": {
+            "en": "Ctesiphon",
+            "es": "Ctesifonte"
+          }
+        },
+        {
+          "id": "battle-of-carrhae",
+          "name": {
+            "en": "Battle of Carrhae",
+            "es": "Batalla de Carras"
+          },
+          "at": [
+            39.0333,
+            36.8667
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "-53",
+          "place": {
+            "en": "Harran, Şanlıurfa, Turkey",
+            "es": "Harrán, Şanlıurfa, Turquía"
+          },
+          "text": {
+            "en": "In 53 BC a small Parthian army of mounted archers and armoured horsemen, led by the general Surena, crushed the legions of Crassus, one of the richest men in Rome.",
+            "es": "En el 53 a. C., un pequeño ejército parto de arqueros a caballo y jinetes acorazados, dirigido por el general Surena, aplastó a las legiones de Craso, uno de los hombres más ricos de Roma."
+          },
+          "wiki": {
+            "en": "Battle of Carrhae",
+            "es": "Batalla de Carras"
+          }
+        },
+        {
+          "id": "silk-road",
+          "name": {
+            "en": "Silk Road",
+            "es": "Ruta de la Seda"
+          },
+          "at": [
+            61.84,
+            37.66
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "-130",
+          "place": {
+            "en": "Through Merv (Turkmenistan) and Iran",
+            "es": "Por Merv (Turkmenistán) e Irán"
+          },
+          "text": {
+            "en": "The web of caravan routes linking China to the Mediterranean, opened by Han envoys around 130 BC. Parthian merchants carried silk, spices and horses, and grew rich as middlemen.",
+            "es": "La red de rutas de caravanas que unía China con el Mediterráneo, abierta por enviados Han hacia el 130 a. C. Los mercaderes partos llevaban seda, especias y caballos, y se enriquecieron como intermediarios."
+          },
+          "wiki": {
+            "en": "Silk Road",
+            "es": "Ruta de la Seda"
+          }
+        }
+      ],
+      "show": [
+        "parthia"
+      ]
+    },
+    {
+      "date": "224",
+      "title": {
+        "en": "The Sasanians",
+        "es": "Los sasánidas"
+      },
+      "camera": {
+        "lon": 50.0,
+        "lat": 33.0,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "In 224 Ardashir, a prince of Fars, killed the last Parthian king in battle and founded the Sasanian Empire. Its kings called themselves 'kings of kings of Iran' and made Zoroastrianism the state faith.",
+        "es": "En el 224, Ardashir, un príncipe de Fars, mató en batalla al último rey parto y fundó el Imperio sasánida. Sus reyes se llamaban «reyes de reyes de Irán» e hicieron del zoroastrismo la religión del estado."
+      },
+      "details": {
+        "en": "The Sasanians came from Fars, the old Persian heartland, and saw themselves as heirs of the Achaemenids. Ardashir I (reigned 224–242) built a round city at Firuzabad and ruled from Ctesiphon. The empire, which its people called Eranshahr, 'the land of the Iranians', had a strong king, a powerful nobility and an organized Zoroastrian clergy. Sacred fires burned in temples such as Adur Gushnasp, at Takht-e Soleyman. The high priest Kartir later boasted of persecuting Jews, Christians, Buddhists and Manichaeans, though most of the time these communities lived and worshipped within the empire.",
+        "es": "Los sasánidas venían de Fars, el viejo corazón persa, y se veían como herederos de los aqueménidas. Ardashir I (reinó 224-242) construyó una ciudad redonda en Firuzabad y gobernó desde Ctesifonte. El imperio, que su gente llamaba Eranshahr, «la tierra de los iranios», tenía un rey fuerte, una nobleza poderosa y un clero zoroástrico organizado. Los fuegos sagrados ardían en templos como Adur Gushnasp, en Tajt-e Soleimán. El sumo sacerdote Kartir presumió después de perseguir a judíos, cristianos, budistas y maniqueos, aunque casi siempre esas comunidades vivieron y rindieron culto dentro del imperio."
+      },
+      "control": {
+        "sasanian": {
+          "hist": "Persia",
+          "year": 400
+        },
+        "parthia": null,
+        "rome": {
+          "minus": [
+            {
+              "and": [
+                {
+                  "hist": "Roman Empire",
+                  "year": 200
+                },
+                {
+                  "poly": [
+                    [
+                      24.0,
+                      0.0
+                    ],
+                    [
+                      90.0,
+                      0.0
+                    ],
+                    [
+                      90.0,
+                      60.0
+                    ],
+                    [
+                      24.0,
+                      60.0
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "cur": "sasanian"
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "ardashir-i",
+          "name": {
+            "en": "Ardashir I",
+            "es": "Ardashir I"
+          },
+          "at": [
+            52.5714,
+            28.8444
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "224",
+          "place": {
+            "en": "Firuzabad (Ardashir-Khwarrah), Fars, Iran",
+            "es": "Firuzabad (Ardashir-Jurrah), Fars, Irán"
+          },
+          "text": {
+            "en": "The founder of the Sasanian dynasty (reigned 224–242). He defeated the Parthian king Artabanus IV in 224 and built a perfectly round city, about 2 km across, at Firuzabad.",
+            "es": "El fundador de la dinastía sasánida (reinó 224-242). Venció al rey parto Artabano IV en el 224 y construyó una ciudad perfectamente redonda, de unos 2 km de diámetro, en Firuzabad."
+          },
+          "wiki": {
+            "en": "Ardashir I",
+            "es": "Ardacher I"
+          }
+        },
+        {
+          "id": "takht-e-soleyman",
+          "name": {
+            "en": "Takht-e Soleyman",
+            "es": "Tajt-e Soleimán"
+          },
+          "at": [
+            47.2359,
+            36.6032
+          ],
+          "cat": "temple",
+          "type": "site",
+          "date": "450",
+          "place": {
+            "en": "West Azerbaijan, Iran",
+            "es": "Azerbaiyán Occidental, Irán"
+          },
+          "text": {
+            "en": "A Sasanian royal sanctuary around a deep spring-fed lake, home of Adur Gushnasp, one of the three most sacred fires of Iran, where kings came on pilgrimage. It is a World Heritage Site.",
+            "es": "Un santuario real sasánida en torno a un hondo lago de manantial, sede de Adur Gushnasp, uno de los tres fuegos más sagrados de Irán, adonde los reyes peregrinaban. Es Patrimonio de la Humanidad."
+          },
+          "wiki": {
+            "en": "Takht-e Soleymān",
+            "es": "Tajt-e Soleimán"
+          }
+        },
+        {
+          "id": "kartir",
+          "name": {
+            "en": "Kartir",
+            "es": "Kartir"
+          },
+          "at": [
+            52.876,
+            29.988
+          ],
+          "cat": "temple",
+          "type": "person",
+          "date": "270",
+          "place": {
+            "en": "Naqsh-e Rostam and Ctesiphon",
+            "es": "Naqsh-e Rostam y Ctesifonte"
+          },
+          "text": {
+            "en": "A powerful Zoroastrian high priest of the 3rd century who served four kings. In his rock inscriptions he boasts of founding fire temples and of persecuting other religions.",
+            "es": "Un poderoso sumo sacerdote zoroástrico del siglo III que sirvió a cuatro reyes. En sus inscripciones en la roca presume de fundar templos del fuego y de perseguir otras religiones."
+          },
+          "wiki": {
+            "en": "Kartir",
+            "es": "Kartir"
+          }
+        }
+      ],
+      "show": [
+        "sasanian-persia"
+      ]
+    },
+    {
+      "date": "260",
+      "title": {
+        "en": "Shapur captures an emperor",
+        "es": "Sapor captura a un emperador"
+      },
+      "camera": {
+        "lon": 46.0,
+        "lat": 33.5,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "Shapur I defeated three Roman emperors and in 260 captured Valerian at Edessa, a scene carved in rock at Naqsh-e Rostam. Roman prisoners built dams and bridges in Iran.",
+        "es": "Sapor I venció a tres emperadores romanos y en el 260 capturó a Valeriano en Edesa, escena tallada en la roca de Naqsh-e Rostam. Los prisioneros romanos construyeron presas y puentes en Irán."
+      },
+      "details": {
+        "en": "Shapur I (reigned about 240–270) beat the Roman emperor Gordian III, forced Philip the Arab to pay for peace, and took Valerian prisoner; the emperor died in captivity. Shapur settled tens of thousands of Roman captives in Iran, where they built the dam-bridge of Band-e Kaisar at Shushtar and new cities such as Gundeshapur. He recorded his deeds in Middle Persian, Parthian and Greek on a tower at Naqsh-e Rostam. At his court the prophet Mani preached a new faith mixing Zoroastrian, Christian and Buddhist ideas; Manichaeism spread from Spain to China, but a later king had Mani executed.",
+        "es": "Sapor I (reinó hacia 240-270) venció al emperador romano Gordiano III, obligó a Filipo el Árabe a pagar por la paz y tomó prisionero a Valeriano, que murió en cautiverio. Sapor asentó en Irán a decenas de miles de cautivos romanos, que construyeron el puente-presa de Band-e Kaisar en Shushtar y nuevas ciudades como Gundeshapur. Registró sus hazañas en persa medio, parto y griego en una torre de Naqsh-e Rostam. En su corte, el profeta Mani predicó una nueva fe que mezclaba ideas zoroástricas, cristianas y budistas; el maniqueísmo se extendió de Hispania a China, pero un rey posterior hizo ejecutar a Mani."
+      },
+      "places": [
+        {
+          "id": "shapur-i",
+          "name": {
+            "en": "Shapur I",
+            "es": "Sapor I"
+          },
+          "at": [
+            52.8735,
+            29.99
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "240",
+          "place": {
+            "en": "Ctesiphon and Bishapur; relief at Naqsh-e Rostam",
+            "es": "Ctesifonte y Bishapur; relieve en Naqsh-e Rostam"
+          },
+          "text": {
+            "en": "King of kings from about 240 to 270, who called himself king of Iran and non-Iran. His rock reliefs show a Roman emperor kneeling before him on horseback.",
+            "es": "Rey de reyes hacia 240-270, que se llamaba rey de Irán y de no Irán. Sus relieves en la roca muestran a un emperador romano arrodillado ante él, que va a caballo."
+          },
+          "wiki": {
+            "en": "Shapur I",
+            "es": "Sapor I"
+          }
+        },
+        {
+          "id": "battle-of-edessa",
+          "name": {
+            "en": "Battle of Edessa",
+            "es": "Batalla de Edesa"
+          },
+          "at": [
+            38.8,
+            37.15
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "260",
+          "place": {
+            "en": "Şanlıurfa, Turkey",
+            "es": "Şanlıurfa, Turquía"
+          },
+          "text": {
+            "en": "In 260 Shapur trapped and captured the Roman emperor Valerian and much of his army near Edessa: the only Roman emperor ever taken prisoner by a foreign enemy.",
+            "es": "En el 260, Sapor rodeó y capturó cerca de Edesa al emperador romano Valeriano y a buena parte de su ejército: el único emperador romano hecho prisionero por un enemigo extranjero."
+          },
+          "wiki": {
+            "en": "Battle of Edessa",
+            "es": "Batalla de Edesa"
+          }
+        },
+        {
+          "id": "band-e-kaisar",
+          "name": {
+            "en": "Band-e Kaisar",
+            "es": "Band-e Kaisar"
+          },
+          "at": [
+            48.8485,
+            32.0538
+          ],
+          "cat": "knowledge",
+          "type": "structure",
+          "date": "260",
+          "place": {
+            "en": "Shushtar, Khuzestan, Iran",
+            "es": "Shushtar, Juzestán, Irán"
+          },
+          "text": {
+            "en": "'Caesar's dam', a bridge-dam of about 500 m across the Karun river, built by Roman prisoners of war. It watered the fields of Shushtar for 1,600 years, until it collapsed in 1885.",
+            "es": "El «dique del César», un puente-presa de unos 500 m sobre el río Karún, construido por prisioneros de guerra romanos. Regó los campos de Shushtar durante 1600 años, hasta que se derrumbó en 1885."
+          },
+          "wiki": {
+            "en": "Band-e Kaisar",
+            "es": "Band-e Kaisar"
+          }
+        },
+        {
+          "id": "mani",
+          "name": {
+            "en": "Mani",
+            "es": "Mani"
+          },
+          "at": [
+            44.59,
+            33.08
+          ],
+          "cat": "temple",
+          "type": "person",
+          "date": "240",
+          "life": [
+            "216",
+            "274"
+          ],
+          "place": {
+            "en": "Ctesiphon, Iraq",
+            "es": "Ctesifonte, Irak"
+          },
+          "text": {
+            "en": "A prophet born near Ctesiphon in 216 who founded Manichaeism, a religion of light against darkness that spread from Spain to China. He died in prison around 274–277.",
+            "es": "Un profeta nacido cerca de Ctesifonte en el 216 que fundó el maniqueísmo, una religión de la luz contra las tinieblas que se extendió de Hispania a China. Murió en prisión hacia el 274-277."
+          },
+          "wiki": {
+            "en": "Mani (prophet)",
+            "es": "Mani"
+          }
+        },
+        {
+          "id": "bishapur",
+          "name": {
+            "en": "Bishapur",
+            "es": "Bishapur"
+          },
+          "at": [
+            51.5708,
+            29.7778
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "266",
+          "place": {
+            "en": "Kazerun, Fars, Iran",
+            "es": "Kazerún, Fars, Irán"
+          },
+          "text": {
+            "en": "A city founded by Shapur I in 266, partly built by Roman captives, with a palace decorated with mosaics in Roman style and great rock reliefs of his victories nearby.",
+            "es": "Una ciudad fundada por Sapor I en el 266, construida en parte por cautivos romanos, con un palacio decorado con mosaicos de estilo romano y grandes relieves de sus victorias en la roca cercana."
+          },
+          "wiki": {
+            "en": "Bishapur",
+            "es": "Bishapur"
+          }
+        }
+      ]
+    },
+    {
+      "date": "540",
+      "title": {
+        "en": "The golden age of Khosrow I",
+        "es": "La edad de oro de Cosroes I"
+      },
+      "camera": {
+        "lon": 50.0,
+        "lat": 33.0,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "Under Khosrow I (531–579) the Sasanian Empire reached its height. Its palace at Ctesiphon had the largest brick vault of its age, and chess and Indian fables arrived at his court.",
+        "es": "Con Cosroes I (531-579), el Imperio sasánida llegó a su apogeo. Su palacio de Ctesifonte tenía la mayor bóveda de ladrillo de su época, y el ajedrez y las fábulas indias llegaron a su corte."
+      },
+      "details": {
+        "en": "Khosrow I, called Anushirvan, 'of the immortal soul', reformed taxes, built walls against nomads and fought Byzantium to a standstill. He welcomed Greek philosophers who left Athens when its schools were closed, and his physician Borzuya brought back from India the fables of the Panchatantra, translated into Middle Persian; they later became the Arabic Kalila wa-Dimna, read from Spain to Java. Chess also came from India in this age. But there was violence too: as crown prince, Khosrow had crushed the movement of Mazdak, which preached sharing wealth, and its followers were massacred.",
+        "es": "Cosroes I, llamado Anushirvan, «el del alma inmortal», reformó los impuestos, levantó murallas contra los nómadas y resistió a Bizancio. Acogió a filósofos griegos que dejaron Atenas cuando se cerraron sus escuelas, y su médico Borzuya trajo de la India las fábulas del Panchatantra, traducidas al persa medio; después fueron el árabe Kalila wa-Dimna, leído de Hispania a Java. También el ajedrez llegó de la India en esta época. Pero hubo violencia: siendo príncipe heredero, Cosroes había aplastado el movimiento de Mazdak, que predicaba compartir la riqueza, y sus seguidores fueron masacrados."
+      },
+      "control": {
+        "sasanian": {
+          "hist": "Sasanian Empire",
+          "year": 500
+        },
+        "rome": {
+          "minus": [
+            {
+              "and": [
+                {
+                  "hist": "Eastern Roman Empire",
+                  "year": 500
+                },
+                {
+                  "poly": [
+                    [
+                      24.0,
+                      0.0
+                    ],
+                    [
+                      90.0,
+                      0.0
+                    ],
+                    [
+                      90.0,
+                      60.0
+                    ],
+                    [
+                      24.0,
+                      60.0
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "cur": "sasanian"
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "khosrow-i",
+          "name": {
+            "en": "Khosrow I",
+            "es": "Cosroes I"
+          },
+          "at": [
+            44.585,
+            33.1
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "531",
+          "life": [
+            "512",
+            "579"
+          ],
+          "place": {
+            "en": "Ctesiphon, Iraq",
+            "es": "Ctesifonte, Irak"
+          },
+          "text": {
+            "en": "The most admired Sasanian king (reigned 531–579). Later Persian and Arab writers made him a model of a just ruler, though he also crushed rebels mercilessly.",
+            "es": "El rey sasánida más admirado (reinó 531-579). Los escritores persas y árabes posteriores lo convirtieron en modelo de gobernante justo, aunque también aplastó sin piedad a los rebeldes."
+          },
+          "wiki": {
+            "en": "Khosrow I",
+            "es": "Cosroes I"
+          }
+        },
+        {
+          "id": "taq-kasra",
+          "name": {
+            "en": "Taq Kasra",
+            "es": "Taq-i Kisra"
+          },
+          "at": [
+            44.5806,
+            33.0936
+          ],
+          "cat": "ruler",
+          "type": "structure",
+          "date": "540",
+          "place": {
+            "en": "Salman Pak, Iraq",
+            "es": "Salman Pak, Irak"
+          },
+          "text": {
+            "en": "The great arch of the royal palace of Ctesiphon, a brick vault about 37 m high and 26 m wide, probably built in Khosrow I's reign. Part of it still stands south of Baghdad.",
+            "es": "El gran arco del palacio real de Ctesifonte, una bóveda de ladrillo de unos 37 m de alto y 26 de ancho, construida probablemente en el reinado de Cosroes I. Parte de ella sigue en pie al sur de Bagdad."
+          },
+          "wiki": {
+            "en": "Taq Kasra",
+            "es": "Taq-i Kisra"
+          }
+        },
+        {
+          "id": "shatranj",
+          "name": {
+            "en": "Chess comes to Persia",
+            "es": "El ajedrez llega a Persia"
+          },
+          "at": [
+            44.57,
+            33.09
+          ],
+          "cat": "knowledge",
+          "type": "invention",
+          "date": "550",
+          "place": {
+            "en": "Ctesiphon, Iraq (from India)",
+            "es": "Ctesifonte, Irak (desde la India)"
+          },
+          "text": {
+            "en": "Chess was invented in India and reached the Persian court in the 6th century as chatrang. The Persian cry 'shah mat', 'the king is helpless', gave us the word checkmate.",
+            "es": "El ajedrez se inventó en la India y llegó a la corte persa en el siglo VI como chatrang. El grito persa «shah mat», «el rey está indefenso», nos dio la palabra jaque mate."
+          },
+          "wiki": {
+            "en": "Shatranj",
+            "es": "Shatranj"
+          }
+        },
+        {
+          "id": "kalila-wa-dimna",
+          "name": {
+            "en": "Kalila wa-Dimna",
+            "es": "Calila e Dimna"
+          },
+          "at": [
+            44.595,
+            33.105
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "570",
+          "place": {
+            "en": "Translated at Ctesiphon from India",
+            "es": "Traducido en Ctesifonte desde la India"
+          },
+          "text": {
+            "en": "Indian animal fables, the Panchatantra, translated into Middle Persian by the physician Borzuya. Through Arabic, they became one of the most read books of the Middle Ages, in Spanish too.",
+            "es": "Fábulas indias de animales, el Panchatantra, traducidas al persa medio por el médico Borzuya. A través del árabe se convirtieron en uno de los libros más leídos de la Edad Media, también en español."
+          },
+          "wiki": {
+            "en": "Kalīla wa-Dimna",
+            "es": "Kalila wa-Dimna"
+          }
+        },
+        {
+          "id": "gundeshapur",
+          "name": {
+            "en": "Gundeshapur",
+            "es": "Gundeshapur"
+          },
+          "at": [
+            48.5167,
+            32.2833
+          ],
+          "cat": "knowledge",
+          "type": "site",
+          "date": "260",
+          "place": {
+            "en": "Near Dezful, Khuzestan, Iran",
+            "es": "Cerca de Dezful, Juzestán, Irán"
+          },
+          "text": {
+            "en": "A city founded by Shapur I for Roman captives, later famous as a centre of medicine where Greek, Syriac, Indian and Persian learning met. Its hospital tradition passed to Baghdad.",
+            "es": "Una ciudad fundada por Sapor I para cautivos romanos, famosa después como centro de medicina donde se unían los saberes griego, siríaco, indio y persa. Su tradición hospitalaria pasó a Bagdad."
+          },
+          "wiki": {
+            "en": "Gundeshapur",
+            "es": "Gundeshapur"
+          }
+        }
+      ]
+    },
+    {
+      "date": "651",
+      "title": {
+        "en": "The end of the Sasanians",
+        "es": "El fin de los sasánidas"
+      },
+      "camera": {
+        "lon": 50.0,
+        "lat": 31.0,
+        "zoom": 2.9
+      },
+      "text": {
+        "en": "Exhausted by a long war with Byzantium, Persia fell to the Arab armies of Islam: Ctesiphon in 637, the battle of Nahavand in 642. The last king, Yazdegerd III, was killed near Merv in 651.",
+        "es": "Agotada por una larga guerra con Bizancio, Persia cayó ante los ejércitos árabes del islam: Ctesifonte en el 637, la batalla de Nahavand en el 642. El último rey, Yazdegerd III, murió asesinado cerca de Merv en el 651."
+      },
+      "details": {
+        "en": "From 602 to 628 Khosrow II fought Byzantium in the last great war of antiquity, taking Jerusalem and Egypt before Emperor Heraclius struck back into Iran. Both empires were ruined, and Persia fell into civil war, with about ten rulers in four years. Then the armies of the new Muslim state came out of Arabia. They won at al-Qadisiyyah around 636, took Ctesiphon in 637 and broke the last Persian army at Nahavand in 642. Yazdegerd III fled from province to province until he was murdered near Merv in 651. Most Iranians became Muslim only slowly, over three centuries.",
+        "es": "Del 602 al 628, Cosroes II luchó contra Bizancio en la última gran guerra de la Antigüedad: tomó Jerusalén y Egipto antes de que el emperador Heraclio contraatacara dentro de Irán. Ambos imperios quedaron arruinados, y Persia cayó en una guerra civil, con unos diez gobernantes en cuatro años. Entonces salieron de Arabia los ejércitos del nuevo estado musulmán. Vencieron en al-Qadisiyya hacia el 636, tomaron Ctesifonte en el 637 y derrotaron al último ejército persa en Nahavand en el 642. Yazdegerd III huyó de provincia en provincia hasta que fue asesinado cerca de Merv en el 651. La mayoría de los iranios se hizo musulmana poco a poco, a lo largo de tres siglos."
+      },
+      "control": {
+        "sasanian": null,
+        "arabs": [
+          {
+            "hist": "Sasanian Empire",
+            "year": 600
+          },
+          {
+            "and": [
+              {
+                "hist": "Umayyad Caliphate",
+                "year": 700
+              },
+              {
+                "poly": [
+                  [
+                    24.0,
+                    0.0
+                  ],
+                  [
+                    90.0,
+                    0.0
+                  ],
+                  [
+                    90.0,
+                    60.0
+                  ],
+                  [
+                    24.0,
+                    60.0
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "ref": "arabia"
+          }
+        ],
+        "rome": {
+          "minus": [
+            {
+              "and": [
+                {
+                  "hist": "Eastern Roman Empire",
+                  "year": 600
+                },
+                {
+                  "poly": [
+                    [
+                      24.0,
+                      0.0
+                    ],
+                    [
+                      90.0,
+                      0.0
+                    ],
+                    [
+                      90.0,
+                      60.0
+                    ],
+                    [
+                      24.0,
+                      60.0
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "cur": "arabs"
+            },
+            {
+              "poly": [
+                [
+                  35.5,
+                  29.0
+                ],
+                [
+                  46.0,
+                  29.0
+                ],
+                [
+                  46.0,
+                  37.4
+                ],
+                [
+                  35.5,
+                  37.4
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "battle-of-al-qadisiyyah",
+          "name": {
+            "en": "Battle of al-Qadisiyyah",
+            "es": "Batalla de al-Qadisiyya"
+          },
+          "at": [
+            44.5,
+            31.5833
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "636",
+          "place": {
+            "en": "Near Kufa, Iraq",
+            "es": "Cerca de Kufa, Irak"
+          },
+          "text": {
+            "en": "Around 636 an Arab army under Sa'd ibn Abi Waqqas defeated the Sasanian army, with its war elephants, after several days of fighting. Mesopotamia was lost to Persia.",
+            "es": "Hacia el 636, un ejército árabe dirigido por Sa'd ibn Abi Waqqas venció al ejército sasánida, con sus elefantes de guerra, tras varios días de lucha. Persia perdió Mesopotamia."
+          },
+          "wiki": {
+            "en": "Battle of al-Qadisiyyah",
+            "es": "Batalla de al-Qadisiyya"
+          }
+        },
+        {
+          "id": "battle-of-nahavand",
+          "name": {
+            "en": "Battle of Nahavand",
+            "es": "Batalla de Nahavand"
+          },
+          "at": [
+            48.3722,
+            34.1883
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "642",
+          "place": {
+            "en": "Nahavand, Hamadan, Iran",
+            "es": "Nahavand, Hamadán, Irán"
+          },
+          "text": {
+            "en": "In 642 the Arabs destroyed the last great Sasanian army near Nahavand, in the Zagros mountains. Arab writers called it the 'victory of victories'.",
+            "es": "En el 642, los árabes destruyeron el último gran ejército sasánida cerca de Nahavand, en los montes Zagros. Los autores árabes la llamaron la «victoria de las victorias»."
+          },
+          "wiki": {
+            "en": "Battle of Nahavand",
+            "es": "Batalla de Nihavand"
+          }
+        },
+        {
+          "id": "yazdegerd-iii",
+          "name": {
+            "en": "Yazdegerd III",
+            "es": "Yazdegerd III"
+          },
+          "at": [
+            62.1925,
+            37.6628
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "632",
+          "life": [
+            "624",
+            "651"
+          ],
+          "place": {
+            "en": "Died near Merv, Turkmenistan",
+            "es": "Murió cerca de Merv, Turkmenistán"
+          },
+          "text": {
+            "en": "The last Sasanian king, crowned as a boy in 632. He fled east before the Arab armies and was murdered near Merv in 651; his son sought help in Tang China.",
+            "es": "El último rey sasánida, coronado de niño en el 632. Huyó al este ante los ejércitos árabes y fue asesinado cerca de Merv en el 651; su hijo buscó ayuda en la China de los Tang."
+          },
+          "wiki": {
+            "en": "Yazdegerd III",
+            "es": "Yazdgerd III"
+          }
+        },
+        {
+          "id": "rashidun-caliphate",
+          "name": {
+            "en": "Rashidun Caliphate",
+            "es": "Califato ortodoxo"
+          },
+          "at": [
+            39.6,
+            24.5
+          ],
+          "cat": "culture",
+          "type": "culture",
+          "date": "632",
+          "until": "661",
+          "place": {
+            "en": "Medina, Arabia",
+            "es": "Medina, Arabia"
+          },
+          "text": {
+            "en": "The Muslim state ruled from Medina by the first four caliphs after the Prophet Muhammad (632–661). In 25 years it conquered the Sasanian Empire and Byzantine Syria and Egypt.",
+            "es": "El estado musulmán gobernado desde Medina por los cuatro primeros califas tras el profeta Mahoma (632-661). En 25 años conquistó el Imperio sasánida y la Siria y el Egipto bizantinos."
+          },
+          "wiki": {
+            "en": "Rashidun Caliphate",
+            "es": "Califato ortodoxo"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1010",
+      "title": {
+        "en": "Persia lives on",
+        "es": "Persia sigue viva"
+      },
+      "camera": {
+        "lon": 60.0,
+        "lat": 30.0,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "Persia's language and memory survived the conquest. Around 1010 Ferdowsi finished the Shahnameh, the 'Book of Kings', in Persian, and Zoroastrians kept their faith in Yazd and, as the Parsis, in India.",
+        "es": "La lengua y la memoria de Persia sobrevivieron a la conquista. Hacia el 1010, Ferdousí terminó el Shahnameh, el «Libro de los reyes», en persa, y los zoroastrianos conservaron su fe en Yazd y, como parsis, en la India."
+      },
+      "details": {
+        "en": "Middle Persian turned into New Persian, written in the Arabic alphabet, which became a language of poetry and government from Anatolia to India. Scholars from the Iranian world, such as al-Khwarizmi and Avicenna, led the golden age of Islamic science. The Shahnameh, some 50,000 couplets long, retells the legends and history of Iran's kings down to Yazdegerd III. Nowruz, the Persian new year at the spring equinox, is still celebrated by about 300 million people. Persepolis, Pasargadae, Behistun and Chogha Zanbil are World Heritage Sites, and the Cyrus Cylinder, in the British Museum, has a copy at the United Nations.",
+        "es": "El persa medio se convirtió en persa moderno, escrito con el alfabeto árabe, que llegó a ser lengua de poesía y de gobierno de Anatolia a la India. Sabios del mundo iranio, como al-Juarismi y Avicena, encabezaron la edad de oro de la ciencia islámica. El Shahnameh, de unos 50 000 dísticos, cuenta las leyendas y la historia de los reyes de Irán hasta Yazdegerd III. El Nouruz, el año nuevo persa del equinoccio de primavera, aún lo celebran unos 300 millones de personas. Persépolis, Pasargada, Behistún y Choga Zanbil son Patrimonio de la Humanidad, y el Cilindro de Ciro, en el Museo Británico, tiene una copia en las Naciones Unidas."
+      },
+      "control": {
+        "arabs": null,
+        "rome": null
+      },
+      "places": [
+        {
+          "id": "shahnameh",
+          "name": {
+            "en": "Shahnameh",
+            "es": "Shahnameh"
+          },
+          "at": [
+            59.4833,
+            36.4167
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "1010",
+          "place": {
+            "en": "Tus, Khorasan, Iran",
+            "es": "Tus, Jorasán, Irán"
+          },
+          "text": {
+            "en": "Ferdowsi's 'Book of Kings', finished around 1010 after some 30 years of work: the epic of Iran from the first kings to the Arab conquest, written in Persian with few Arabic words.",
+            "es": "El «Libro de los reyes» de Ferdousí, terminado hacia el 1010 tras unos 30 años de trabajo: la epopeya de Irán desde los primeros reyes hasta la conquista árabe, escrita en persa con pocas palabras árabes."
+          },
+          "wiki": {
+            "en": "Shahnameh",
+            "es": "Shāhnāmé"
+          }
+        },
+        {
+          "id": "parsis",
+          "name": {
+            "en": "Parsis",
+            "es": "Parsis"
+          },
+          "at": [
+            72.75,
+            20.15
+          ],
+          "cat": "journey",
+          "type": "culture",
+          "date": "900",
+          "place": {
+            "en": "Sanjan and Udvada, Gujarat, India",
+            "es": "Sanjan y Udvada, Guyarat, India"
+          },
+          "text": {
+            "en": "Zoroastrians who left Iran for western India, by tradition landing at Sanjan between the 8th and 10th centuries. Their sacred fire still burns at Udvada, and their community helped build modern Mumbai.",
+            "es": "Zoroastrianos que dejaron Irán rumbo al oeste de la India y, según la tradición, desembarcaron en Sanjan entre los siglos VIII y X. Su fuego sagrado aún arde en Udvada, y su comunidad ayudó a construir la Bombay moderna."
+          },
+          "wiki": {
+            "en": "Parsis",
+            "es": "Parsi"
+          }
+        },
+        {
+          "id": "yazd-atash-behram",
+          "name": {
+            "en": "Fire Temple of Yazd",
+            "es": "Templo del Fuego de Yazd"
+          },
+          "at": [
+            54.3392,
+            31.9056
+          ],
+          "cat": "temple",
+          "type": "structure",
+          "date": "470",
+          "place": {
+            "en": "Yazd, Iran",
+            "es": "Yazd, Irán"
+          },
+          "text": {
+            "en": "A Zoroastrian temple whose 'victorious fire' is said to have burned since AD 470. Yazd remains the heart of Iran's small Zoroastrian community.",
+            "es": "Un templo zoroástrico cuyo «fuego victorioso», según se dice, arde desde el año 470. Yazd sigue siendo el corazón de la pequeña comunidad zoroástrica de Irán."
+          },
+          "wiki": {
+            "en": "Fire Temple of Yazd",
+            "es": "Yazd Atash Behram"
+          }
+        },
+        {
+          "id": "nowruz",
+          "name": {
+            "en": "Nowruz",
+            "es": "Nouruz"
+          },
+          "at": [
+            52.9,
+            30.0
+          ],
+          "cat": "culture",
+          "type": "culture",
+          "date": "-500",
+          "place": {
+            "en": "Iran, Central Asia, the Caucasus and beyond",
+            "es": "Irán, Asia central, el Cáucaso y más allá"
+          },
+          "text": {
+            "en": "The Persian new year, on the spring equinox, with roots in Zoroastrian and Achaemenid times. It is celebrated by about 300 million people from the Balkans to China.",
+            "es": "El año nuevo persa, en el equinoccio de primavera, con raíces en tiempos zoroástricos y aqueménidas. Lo celebran unos 300 millones de personas de los Balcanes a China."
+          },
+          "wiki": {
+            "en": "Nowruz",
+            "es": "Nouruz"
+          }
+        }
+      ],
+      "aftermath": true
+    }
+  ],
+  "outcome": {
+    "en": "Persia gave the ancient world its first great multi-ethnic empire, run with roads, provinces, coins and a common language, and a model of rule through tolerance that later empires copied. Zoroastrian ideas of good and evil, heaven and judgement influenced Judaism, Christianity and Islam. Through the Sasanians, Persian art and government shaped the Islamic world, and the Persian language, Nowruz and the Shahnameh still unite Iranians today.",
+    "es": "Persia dio al mundo antiguo su primer gran imperio de muchos pueblos, organizado con caminos, provincias, monedas y una lengua común, y un modelo de gobierno basado en la tolerancia que copiaron imperios posteriores. Las ideas zoroástricas del bien y del mal, del cielo y del juicio influyeron en el judaísmo, el cristianismo y el islam. A través de los sasánidas, el arte y el gobierno persas moldearon el mundo islámico, y la lengua persa, el Nouruz y el Shahnameh aún unen hoy a los iranios."
+  },
+  "sources": [
+    {
+      "title": "Elam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Elam"
+    },
+    {
+      "title": "Proto-Elamite script (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Proto-Elamite_script"
+    },
+    {
+      "title": "Linear Elamite (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Linear_Elamite"
+    },
+    {
+      "title": "Chogha Zanbil (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chogha_Zanbil"
+    },
+    {
+      "title": "Medes (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Medes"
+    },
+    {
+      "title": "Eclipse of Thales (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Eclipse_of_Thales"
+    },
+    {
+      "title": "Zoroaster (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zoroaster"
+    },
+    {
+      "title": "Cyrus the Great (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cyrus_the_Great"
+    },
+    {
+      "title": "Pasargadae (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pasargadae"
+    },
+    {
+      "title": "Achaemenid Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Achaemenid_Empire"
+    },
+    {
+      "title": "Darius the Great (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Darius_the_Great"
+    },
+    {
+      "title": "Behistun inscription (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Behistun_inscription"
+    },
+    {
+      "title": "Daric (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Daric"
+    },
+    {
+      "title": "Persepolis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Persepolis"
+    },
+    {
+      "title": "Persepolis Administrative Archives (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Persepolis_Administrative_Archives"
+    },
+    {
+      "title": "Royal Road (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Royal_Road"
+    },
+    {
+      "title": "Qanat (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Qanat"
+    },
+    {
+      "title": "Battle of Gaugamela (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Gaugamela"
+    },
+    {
+      "title": "Seleucid Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Seleucid_Empire"
+    },
+    {
+      "title": "Parthian Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Parthian_Empire"
+    },
+    {
+      "title": "Battle of Carrhae (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Carrhae"
+    },
+    {
+      "title": "Sasanian Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sasanian_Empire"
+    },
+    {
+      "title": "Shapur I (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shapur_I"
+    },
+    {
+      "title": "Band-e Kaisar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Band-e_Kaisar"
+    },
+    {
+      "title": "Khosrow I (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khosrow_I"
+    },
+    {
+      "title": "Taq Kasra (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Taq_Kasra"
+    },
+    {
+      "title": "Muslim conquest of Persia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Muslim_conquest_of_Persia"
+    },
+    {
+      "title": "Shahnameh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shahnameh"
+    },
+    {
+      "title": "Fire Temple of Yazd (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fire_Temple_of_Yazd"
+    },
+    {
+      "title": "Nowruz (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nowruz"
+    }
+  ]
+}

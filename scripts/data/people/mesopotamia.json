@@ -1,0 +1,3908 @@
+{
+  "id": "mesopotamia",
+  "name": {
+    "en": "Mesopotamia",
+    "es": "Mesopotamia"
+  },
+  "icon": "🦁",
+  "era": "ancient",
+  "region": {
+    "en": "Between the Tigris and Euphrates (Iraq and Syria)",
+    "es": "Entre el Tigris y el Éufrates (Irak y Siria)"
+  },
+  "start": "-3500",
+  "end": "-539",
+  "summary": {
+    "en": "In the land between the Tigris and Euphrates, Sumerians built the first cities and invented writing. Akkad, Babylon and Assyria followed, until Cyrus of Persia took Babylon in 539 BC.",
+    "es": "En la tierra entre el Tigris y el Éufrates, los sumerios fundaron las primeras ciudades e inventaron la escritura. Siguieron Acad, Babilonia y Asiria, hasta que Ciro de Persia tomó Babilonia en el 539 a. C."
+  },
+  "camera": {
+    "lon": 44,
+    "lat": 33,
+    "zoom": 5
+  },
+  "sides": [
+    {
+      "id": "sumer",
+      "name": {
+        "en": "Sumerian city-states",
+        "es": "Ciudades-estado sumerias"
+      },
+      "color": "#2e6f9e"
+    },
+    {
+      "id": "akkad",
+      "name": {
+        "en": "Akkadian Empire",
+        "es": "Imperio acadio"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "ur3",
+      "name": {
+        "en": "Third Dynasty of Ur",
+        "es": "Tercera Dinastía de Ur"
+      },
+      "color": "#16a085"
+    },
+    {
+      "id": "babylonia",
+      "name": {
+        "en": "Babylonia",
+        "es": "Babilonia"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "assyria",
+      "name": {
+        "en": "Assyria",
+        "es": "Asiria"
+      },
+      "color": "#d4a017"
+    },
+    {
+      "id": "neobab",
+      "name": {
+        "en": "Neo-Babylonian Empire",
+        "es": "Imperio neobabilónico"
+      },
+      "color": "#e67e22"
+    },
+    {
+      "id": "media",
+      "name": {
+        "en": "Median kingdom",
+        "es": "Reino medo"
+      },
+      "color": "#8e5a2b"
+    },
+    {
+      "id": "persia",
+      "name": {
+        "en": "Achaemenid Persia",
+        "es": "Persia aqueménida"
+      },
+      "color": "#5d6d7e"
+    }
+  ],
+  "defs": {
+    "sumer_land": {
+      "land": [
+        [
+          44.1,
+          32.95
+        ],
+        [
+          45.0,
+          32.95
+        ],
+        [
+          45.9,
+          32.55
+        ],
+        [
+          46.7,
+          32.0
+        ],
+        [
+          47.5,
+          31.5
+        ],
+        [
+          48.1,
+          31.0
+        ],
+        [
+          48.7,
+          30.4
+        ],
+        [
+          48.8,
+          29.85
+        ],
+        [
+          48.0,
+          29.8
+        ],
+        [
+          47.3,
+          30.0
+        ],
+        [
+          46.5,
+          30.3
+        ],
+        [
+          45.9,
+          30.6
+        ],
+        [
+          45.3,
+          30.95
+        ],
+        [
+          44.7,
+          31.35
+        ],
+        [
+          44.2,
+          31.9
+        ],
+        [
+          43.9,
+          32.45
+        ]
+      ]
+    },
+    "akkad_land": {
+      "land": [
+        [
+          35.7,
+          36.6
+        ],
+        [
+          36.4,
+          37.3
+        ],
+        [
+          37.6,
+          37.5
+        ],
+        [
+          39.0,
+          37.9
+        ],
+        [
+          40.3,
+          38.1
+        ],
+        [
+          41.8,
+          37.9
+        ],
+        [
+          43.3,
+          37.4
+        ],
+        [
+          44.6,
+          36.6
+        ],
+        [
+          45.5,
+          35.6
+        ],
+        [
+          46.2,
+          34.6
+        ],
+        [
+          47.0,
+          33.6
+        ],
+        [
+          48.2,
+          32.9
+        ],
+        [
+          49.2,
+          32.0
+        ],
+        [
+          49.9,
+          30.9
+        ],
+        [
+          50.3,
+          30.2
+        ],
+        [
+          49.5,
+          29.85
+        ],
+        [
+          48.6,
+          29.8
+        ],
+        [
+          47.5,
+          29.9
+        ],
+        [
+          46.5,
+          30.4
+        ],
+        [
+          45.5,
+          30.9
+        ],
+        [
+          44.6,
+          31.4
+        ],
+        [
+          43.7,
+          32.2
+        ],
+        [
+          42.8,
+          33.0
+        ],
+        [
+          41.6,
+          33.6
+        ],
+        [
+          40.4,
+          34.2
+        ],
+        [
+          39.2,
+          34.7
+        ],
+        [
+          38.0,
+          35.0
+        ],
+        [
+          36.8,
+          35.1
+        ],
+        [
+          35.7,
+          35.4
+        ]
+      ]
+    },
+    "babylon_1750": {
+      "land": [
+        [
+          40.5,
+          34.4
+        ],
+        [
+          40.9,
+          35.0
+        ],
+        [
+          41.8,
+          35.6
+        ],
+        [
+          42.6,
+          36.2
+        ],
+        [
+          43.1,
+          36.8
+        ],
+        [
+          43.9,
+          36.8
+        ],
+        [
+          44.6,
+          36.2
+        ],
+        [
+          45.2,
+          35.2
+        ],
+        [
+          45.9,
+          34.3
+        ],
+        [
+          46.6,
+          33.4
+        ],
+        [
+          47.6,
+          32.4
+        ],
+        [
+          48.3,
+          31.5
+        ],
+        [
+          48.7,
+          30.6
+        ],
+        [
+          48.8,
+          29.85
+        ],
+        [
+          47.9,
+          29.85
+        ],
+        [
+          47.2,
+          30.2
+        ],
+        [
+          46.4,
+          30.5
+        ],
+        [
+          45.5,
+          30.9
+        ],
+        [
+          44.6,
+          31.4
+        ],
+        [
+          43.6,
+          32.3
+        ],
+        [
+          42.6,
+          33.0
+        ],
+        [
+          41.5,
+          33.8
+        ]
+      ]
+    },
+    "kassite": [
+      {
+        "land": [
+          [
+            42.6,
+            33.5
+          ],
+          [
+            43.6,
+            34.2
+          ],
+          [
+            44.6,
+            34.3
+          ],
+          [
+            45.5,
+            33.9
+          ],
+          [
+            46.4,
+            33.3
+          ],
+          [
+            47.4,
+            32.5
+          ],
+          [
+            48.2,
+            31.6
+          ],
+          [
+            48.7,
+            30.5
+          ],
+          [
+            48.8,
+            29.85
+          ],
+          [
+            47.8,
+            29.85
+          ],
+          [
+            47.0,
+            30.3
+          ],
+          [
+            46.0,
+            30.7
+          ],
+          [
+            45.0,
+            31.2
+          ],
+          [
+            44.0,
+            31.9
+          ],
+          [
+            43.0,
+            32.7
+          ]
+        ]
+      },
+      {
+        "land": {
+          "circle": [
+            50.55,
+            26.05
+          ],
+          "km": 45
+        }
+      }
+    ],
+    "assyria_1350": {
+      "land": [
+        [
+          41.9,
+          36.4
+        ],
+        [
+          42.7,
+          37.1
+        ],
+        [
+          43.8,
+          37.2
+        ],
+        [
+          44.6,
+          36.7
+        ],
+        [
+          44.7,
+          35.8
+        ],
+        [
+          44.1,
+          35.0
+        ],
+        [
+          43.5,
+          34.6
+        ],
+        [
+          42.8,
+          34.9
+        ],
+        [
+          42.2,
+          35.6
+        ]
+      ]
+    },
+    "assyria_879": {
+      "land": [
+        [
+          38.6,
+          36.9
+        ],
+        [
+          40.0,
+          37.4
+        ],
+        [
+          41.6,
+          37.6
+        ],
+        [
+          43.4,
+          37.5
+        ],
+        [
+          44.7,
+          37.0
+        ],
+        [
+          45.4,
+          36.0
+        ],
+        [
+          45.0,
+          35.0
+        ],
+        [
+          44.2,
+          34.4
+        ],
+        [
+          43.4,
+          34.2
+        ],
+        [
+          42.3,
+          34.4
+        ],
+        [
+          41.0,
+          34.6
+        ],
+        [
+          39.8,
+          35.0
+        ],
+        [
+          38.9,
+          35.8
+        ]
+      ]
+    },
+    "babylon_879": {
+      "land": [
+        [
+          42.6,
+          33.6
+        ],
+        [
+          43.4,
+          33.95
+        ],
+        [
+          44.2,
+          34.15
+        ],
+        [
+          45.2,
+          33.8
+        ],
+        [
+          46.2,
+          33.2
+        ],
+        [
+          47.3,
+          32.5
+        ],
+        [
+          48.1,
+          31.6
+        ],
+        [
+          48.7,
+          30.5
+        ],
+        [
+          48.8,
+          29.85
+        ],
+        [
+          47.8,
+          29.85
+        ],
+        [
+          47.0,
+          30.3
+        ],
+        [
+          46.0,
+          30.7
+        ],
+        [
+          45.0,
+          31.2
+        ],
+        [
+          44.0,
+          31.9
+        ],
+        [
+          43.0,
+          32.7
+        ]
+      ]
+    },
+    "assyria_701": {
+      "land": [
+        [
+          34.2,
+          31.3
+        ],
+        [
+          34.7,
+          32.2
+        ],
+        [
+          35.0,
+          33.0
+        ],
+        [
+          35.5,
+          34.0
+        ],
+        [
+          35.8,
+          35.2
+        ],
+        [
+          35.8,
+          36.3
+        ],
+        [
+          34.6,
+          36.7
+        ],
+        [
+          35.4,
+          37.3
+        ],
+        [
+          36.8,
+          37.6
+        ],
+        [
+          38.4,
+          37.9
+        ],
+        [
+          40.2,
+          38.3
+        ],
+        [
+          42.2,
+          38.0
+        ],
+        [
+          43.8,
+          37.6
+        ],
+        [
+          44.9,
+          37.0
+        ],
+        [
+          45.9,
+          36.2
+        ],
+        [
+          46.6,
+          35.0
+        ],
+        [
+          47.3,
+          33.9
+        ],
+        [
+          48.0,
+          32.8
+        ],
+        [
+          48.6,
+          31.8
+        ],
+        [
+          48.8,
+          30.6
+        ],
+        [
+          48.8,
+          29.85
+        ],
+        [
+          47.8,
+          29.85
+        ],
+        [
+          46.8,
+          30.3
+        ],
+        [
+          45.6,
+          30.6
+        ],
+        [
+          44.4,
+          31.0
+        ],
+        [
+          43.0,
+          31.6
+        ],
+        [
+          41.5,
+          32.4
+        ],
+        [
+          40.2,
+          32.4
+        ],
+        [
+          38.8,
+          32.2
+        ],
+        [
+          37.6,
+          31.4
+        ],
+        [
+          36.4,
+          30.2
+        ],
+        [
+          35.4,
+          29.6
+        ],
+        [
+          34.9,
+          29.5
+        ],
+        [
+          34.5,
+          30.3
+        ]
+      ]
+    },
+    "assyria_660": [
+      {
+        "ref": "assyria_701"
+      },
+      {
+        "and": [
+          {
+            "hist": "Egypt",
+            "year": -700
+          },
+          {
+            "poly": [
+              [
+                27.0,
+                32.5
+              ],
+              [
+                34.9,
+                32.5
+              ],
+              [
+                34.9,
+                25.4
+              ],
+              [
+                27.0,
+                25.4
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "land": [
+          [
+            32.3,
+            31.3
+          ],
+          [
+            34.3,
+            31.3
+          ],
+          [
+            34.9,
+            29.5
+          ],
+          [
+            33.0,
+            29.9
+          ]
+        ]
+      }
+    ],
+    "assyria_remnant": {
+      "land": [
+        [
+          37.6,
+          36.5
+        ],
+        [
+          38.0,
+          37.4
+        ],
+        [
+          39.6,
+          37.4
+        ],
+        [
+          40.5,
+          36.9
+        ],
+        [
+          40.3,
+          36.2
+        ],
+        [
+          39.0,
+          35.9
+        ],
+        [
+          38.0,
+          36.0
+        ]
+      ]
+    },
+    "neobab_610": {
+      "land": [
+        [
+          40.0,
+          34.6
+        ],
+        [
+          41.0,
+          35.2
+        ],
+        [
+          42.4,
+          35.0
+        ],
+        [
+          43.4,
+          35.3
+        ],
+        [
+          44.0,
+          35.0
+        ],
+        [
+          45.0,
+          34.2
+        ],
+        [
+          46.2,
+          33.3
+        ],
+        [
+          47.3,
+          32.5
+        ],
+        [
+          48.2,
+          31.6
+        ],
+        [
+          48.7,
+          30.5
+        ],
+        [
+          48.8,
+          29.85
+        ],
+        [
+          47.8,
+          29.85
+        ],
+        [
+          47.0,
+          30.3
+        ],
+        [
+          46.0,
+          30.7
+        ],
+        [
+          45.0,
+          31.2
+        ],
+        [
+          44.0,
+          31.9
+        ],
+        [
+          43.0,
+          32.7
+        ],
+        [
+          41.8,
+          33.6
+        ],
+        [
+          40.6,
+          34.1
+        ]
+      ]
+    },
+    "media_610": {
+      "land": [
+        [
+          42.0,
+          36.8
+        ],
+        [
+          42.9,
+          37.4
+        ],
+        [
+          44.2,
+          38.2
+        ],
+        [
+          45.2,
+          39.0
+        ],
+        [
+          46.8,
+          39.2
+        ],
+        [
+          48.5,
+          38.6
+        ],
+        [
+          50.0,
+          37.3
+        ],
+        [
+          52.5,
+          36.6
+        ],
+        [
+          53.5,
+          35.6
+        ],
+        [
+          52.0,
+          34.4
+        ],
+        [
+          50.5,
+          33.4
+        ],
+        [
+          49.0,
+          33.0
+        ],
+        [
+          47.8,
+          33.4
+        ],
+        [
+          46.6,
+          34.0
+        ],
+        [
+          45.6,
+          34.6
+        ],
+        [
+          44.4,
+          35.4
+        ],
+        [
+          43.6,
+          35.5
+        ],
+        [
+          42.8,
+          35.9
+        ],
+        [
+          42.2,
+          36.2
+        ]
+      ]
+    },
+    "neobab_575": {
+      "land": [
+        [
+          34.2,
+          31.3
+        ],
+        [
+          34.7,
+          32.2
+        ],
+        [
+          35.0,
+          33.0
+        ],
+        [
+          35.5,
+          34.0
+        ],
+        [
+          35.8,
+          35.2
+        ],
+        [
+          35.9,
+          36.2
+        ],
+        [
+          36.6,
+          36.9
+        ],
+        [
+          37.8,
+          37.2
+        ],
+        [
+          39.0,
+          37.2
+        ],
+        [
+          40.6,
+          36.8
+        ],
+        [
+          42.0,
+          36.4
+        ],
+        [
+          42.7,
+          35.95
+        ],
+        [
+          43.5,
+          35.55
+        ],
+        [
+          44.1,
+          35.45
+        ],
+        [
+          44.9,
+          35.0
+        ],
+        [
+          45.8,
+          34.3
+        ],
+        [
+          47.0,
+          33.5
+        ],
+        [
+          48.2,
+          32.8
+        ],
+        [
+          48.7,
+          31.6
+        ],
+        [
+          48.8,
+          30.5
+        ],
+        [
+          48.8,
+          29.85
+        ],
+        [
+          47.8,
+          29.85
+        ],
+        [
+          46.8,
+          30.3
+        ],
+        [
+          45.6,
+          30.6
+        ],
+        [
+          44.4,
+          31.0
+        ],
+        [
+          43.0,
+          31.6
+        ],
+        [
+          41.5,
+          32.4
+        ],
+        [
+          40.2,
+          32.4
+        ],
+        [
+          38.8,
+          32.2
+        ],
+        [
+          37.6,
+          31.4
+        ],
+        [
+          36.4,
+          30.2
+        ],
+        [
+          35.4,
+          29.6
+        ],
+        [
+          34.9,
+          29.5
+        ],
+        [
+          34.5,
+          30.3
+        ]
+      ]
+    },
+    "media_585": {
+      "land": [
+        [
+          35.9,
+          41.8
+        ],
+        [
+          36.9,
+          41.4
+        ],
+        [
+          38.5,
+          41.0
+        ],
+        [
+          40.5,
+          41.1
+        ],
+        [
+          41.6,
+          41.6
+        ],
+        [
+          43.5,
+          41.2
+        ],
+        [
+          45.5,
+          41.3
+        ],
+        [
+          47.5,
+          40.0
+        ],
+        [
+          49.5,
+          38.8
+        ],
+        [
+          51.0,
+          37.2
+        ],
+        [
+          53.5,
+          37.0
+        ],
+        [
+          56.0,
+          37.5
+        ],
+        [
+          59.0,
+          36.5
+        ],
+        [
+          60.5,
+          34.5
+        ],
+        [
+          59.0,
+          32.0
+        ],
+        [
+          56.0,
+          31.5
+        ],
+        [
+          53.0,
+          32.0
+        ],
+        [
+          51.0,
+          32.2
+        ],
+        [
+          49.5,
+          32.6
+        ],
+        [
+          48.4,
+          33.0
+        ],
+        [
+          47.2,
+          33.7
+        ],
+        [
+          46.0,
+          34.5
+        ],
+        [
+          45.0,
+          35.2
+        ],
+        [
+          44.2,
+          35.6
+        ],
+        [
+          43.6,
+          35.75
+        ],
+        [
+          42.8,
+          36.15
+        ],
+        [
+          42.0,
+          36.6
+        ],
+        [
+          41.0,
+          37.0
+        ],
+        [
+          39.5,
+          37.6
+        ],
+        [
+          38.4,
+          38.4
+        ],
+        [
+          37.2,
+          38.8
+        ],
+        [
+          35.6,
+          39.6
+        ]
+      ]
+    },
+    "persia_539": {
+      "minus": [
+        {
+          "hist": "Achaemenid Empire",
+          "year": -500
+        },
+        {
+          "poly": [
+            [
+              15.0,
+              20.0
+            ],
+            [
+              34.95,
+              20.0
+            ],
+            [
+              34.95,
+              29.45
+            ],
+            [
+              34.25,
+              31.32
+            ],
+            [
+              32.0,
+              31.8
+            ],
+            [
+              15.0,
+              34.0
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "steps": [
+    {
+      "date": "-3500",
+      "title": {
+        "en": "The first cities",
+        "es": "Las primeras ciudades"
+      },
+      "camera": {
+        "lon": 43.4,
+        "lat": 33.6,
+        "zoom": 5.6
+      },
+      "text": {
+        "en": "In the south of today's Iraq, farmers dug canals to water the dry plain between the Tigris and Euphrates. Temple towns grew into cities, and Uruk became the largest city in the world.",
+        "es": "En el sur del actual Irak, los agricultores cavaron canales para regar la llanura seca entre el Tigris y el Éufrates. Las aldeas con templo se volvieron ciudades, y Uruk llegó a ser la mayor del mundo."
+      },
+      "details": {
+        "en": "Mesopotamia is Greek for 'the land between the rivers'. In the south it hardly ever rains, so everything depended on canals: barley, dates, onions and flax grew along them, and flocks of sheep gave wool for weaving. Eridu, which the Sumerians remembered as the first city, had grown around a temple of the water god Enki since about 5400 BC. Uruk grew fastest: around 3100 BC it may have had up to 50,000 people. Cities rose in the north too, such as Tell Brak in Syria, and Uruk's traders and settlers founded outposts far up the Euphrates, a movement archaeologists call the Uruk expansion.",
+        "es": "Mesopotamia significa en griego «la tierra entre los ríos». En el sur casi nunca llueve, así que todo dependía de los canales: a su orilla crecían cebada, dátiles, cebollas y lino, y los rebaños de ovejas daban lana para tejer. Eridu, que los sumerios recordaban como la primera ciudad, había crecido desde hacia el 5400 a. C. alrededor de un templo de Enki, dios del agua dulce. Uruk creció más rápido que ninguna: hacia el 3100 a. C. quizá tenía hasta 50 000 habitantes. También surgieron ciudades en el norte, como Tell Brak en Siria, y los comerciantes y colonos de Uruk fundaron enclaves muy arriba en el Éufrates, un movimiento que los arqueólogos llaman la expansión de Uruk."
+      },
+      "control": {
+        "sumer": {
+          "ref": "sumer_land"
+        }
+      },
+      "moves": [
+        {
+          "side": "sumer",
+          "path": [
+            [
+              45.637,
+              31.324
+            ],
+            [
+              44.9,
+              32.1
+            ],
+            [
+              44.3,
+              32.9
+            ],
+            [
+              43.8,
+              33.35
+            ],
+            [
+              42.8,
+              33.65
+            ],
+            [
+              41.9,
+              34.45
+            ],
+            [
+              40.9,
+              34.55
+            ],
+            [
+              40.1,
+              35.35
+            ],
+            [
+              39.0,
+              35.95
+            ],
+            [
+              38.15,
+              36.15
+            ]
+          ],
+          "label": {
+            "en": "Uruk expansion",
+            "es": "Expansión de Uruk"
+          }
+        },
+        {
+          "side": "sumer",
+          "path": [
+            [
+              45.637,
+              31.324
+            ],
+            [
+              46.8,
+              31.6
+            ],
+            [
+              47.7,
+              31.9
+            ],
+            [
+              48.2,
+              32.15
+            ]
+          ]
+        }
+      ],
+      "places": [
+        {
+          "id": "eridu",
+          "name": {
+            "en": "Eridu",
+            "es": "Eridu"
+          },
+          "at": [
+            45.9961,
+            30.8158
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-5400",
+          "until": "-600",
+          "place": {
+            "en": "Abu Shahrain, Dhi Qar, Iraq",
+            "es": "Abu Shahrain, Di Qar, Irak"
+          },
+          "text": {
+            "en": "Sumerians believed Eridu was the first city, where kingship came down from heaven. Its temple to Enki, god of fresh water, was rebuilt at least 18 times on the same spot from about 5400 BC.",
+            "es": "Los sumerios creían que Eridu era la primera ciudad, donde la realeza bajó del cielo. Su templo a Enki, dios del agua dulce, se reconstruyó al menos 18 veces en el mismo lugar desde hacia el 5400 a. C."
+          },
+          "wiki": {
+            "en": "Eridu",
+            "es": "Eridu"
+          }
+        },
+        {
+          "id": "uruk",
+          "name": {
+            "en": "Uruk",
+            "es": "Uruk"
+          },
+          "at": [
+            45.6372,
+            31.3242
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-4000",
+          "until": "640",
+          "place": {
+            "en": "Warka, Muthanna, Iraq",
+            "es": "Warka, Al Muthana, Irak"
+          },
+          "text": {
+            "en": "Probably the largest city in the world around 3100 BC, with perhaps 50,000 people. Writing was born in the offices of its temples, and its legendary king Gilgamesh was said to have built its walls.",
+            "es": "Probablemente la mayor ciudad del mundo hacia el 3100 a. C., con quizá 50 000 habitantes. La escritura nació en las oficinas de sus templos, y se decía que su legendario rey Gilgamesh había construido sus murallas."
+          },
+          "wiki": {
+            "en": "Uruk",
+            "es": "Uruk"
+          }
+        },
+        {
+          "id": "tell-brak",
+          "name": {
+            "en": "Tell Brak",
+            "es": "Tell Brak"
+          },
+          "at": [
+            41.0586,
+            36.6676
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-4100",
+          "place": {
+            "en": "Al-Hasakah, Syria",
+            "es": "Al Hasaka, Siria"
+          },
+          "text": {
+            "en": "In north-eastern Syria, Tell Brak grew into a city by about 4000 BC, as early as the cities of the south. Its Eye Temple was full of small stone idols with huge staring eyes.",
+            "es": "En el noreste de Siria, Tell Brak ya era una ciudad hacia el 4000 a. C., tan pronto como las ciudades del sur. Su Templo de los Ojos estaba lleno de pequeños ídolos de piedra con enormes ojos."
+          },
+          "wiki": {
+            "en": "Tell Brak",
+            "es": "Tell Brak"
+          }
+        },
+        {
+          "id": "habuba-kabira",
+          "name": {
+            "en": "Habuba Kabira",
+            "es": "Habuba Kabira"
+          },
+          "at": [
+            38.062,
+            36.1514
+          ],
+          "cat": "trade",
+          "type": "site",
+          "date": "-3400",
+          "until": "-3280",
+          "place": {
+            "en": "Euphrates valley, Aleppo, Syria",
+            "es": "Valle del Éufrates, Alepo, Siria"
+          },
+          "text": {
+            "en": "A planned town in the style of Uruk on the Euphrates in Syria, 1,300 km upstream from Uruk, perhaps a trading colony. Abandoned after about 120 years, it now lies under the waters of Lake Assad.",
+            "es": "Una ciudad planificada al estilo de Uruk junto al Éufrates, en Siria, a 1300 km río arriba de Uruk; quizá una colonia comercial. Abandonada tras unos 120 años, hoy yace bajo las aguas del lago Asad."
+          },
+          "wiki": {
+            "en": "Habuba Kabira",
+            "es": "Habuba Kabira"
+          }
+        }
+      ],
+      "show": [
+        "sumerian-civilization"
+      ]
+    },
+    {
+      "date": "-3200",
+      "title": {
+        "en": "Writing is born",
+        "es": "Nace la escritura"
+      },
+      "camera": {
+        "lon": 46.4,
+        "lat": 31.9,
+        "zoom": 7.5
+      },
+      "text": {
+        "en": "By about 3200 BC officials at Uruk were drawing signs on clay tablets to count barley, beer, sheep and workers. Over centuries the pictures became cuneiform, one of the world's first scripts.",
+        "es": "Hacia el 3200 a. C., los funcionarios de Uruk ya dibujaban signos en tablillas de arcilla para contar cebada, cerveza, ovejas y obreros. Con los siglos, esos dibujos se volvieron el cuneiforme, una de las primeras escrituras."
+      },
+      "details": {
+        "en": "For thousands of years people across the Near East had kept accounts with small clay tokens, sometimes sealed inside clay balls. Between about 3350 and 3200 BC Uruk's temple officials began pressing numbers and picture signs into flat tablets with a reed; about 5,000 of these early tablets survive. Most record goods entering and leaving the stores; others are word lists for training scribes. Egyptians began writing at about the same time, and people later invented writing on their own in China and Mesoamerica. In Mesopotamia the pictures slowly turned into wedge-shaped marks, cuneiform, used for 3,000 years to write Sumerian, Akkadian and many other languages.",
+        "es": "Durante miles de años, en todo el Oriente Próximo se llevaban las cuentas con pequeñas fichas de arcilla, a veces selladas dentro de bolas de barro. Entre el 3350 y el 3200 a. C., más o menos, los funcionarios de los templos de Uruk empezaron a marcar números y signos con dibujos en tablillas planas con una caña; se conservan unas 5000 de esas primeras tablillas. La mayoría registra lo que entraba y salía de los almacenes; otras son listas de palabras para formar escribas. Los egipcios empezaron a escribir casi al mismo tiempo, y más tarde se inventó la escritura por separado en China y Mesoamérica. En Mesopotamia los dibujos se convirtieron poco a poco en marcas en forma de cuña, el cuneiforme, que durante 3000 años sirvió para escribir el sumerio, el acadio y muchas otras lenguas."
+      },
+      "places": [
+        {
+          "id": "proto-cuneiform",
+          "name": {
+            "en": "First tablets of Uruk",
+            "es": "Primeras tablillas de Uruk"
+          },
+          "at": [
+            45.641,
+            31.3222
+          ],
+          "cat": "writing",
+          "type": "invention",
+          "date": "-3300",
+          "place": {
+            "en": "Eanna temple district, Uruk, Iraq",
+            "es": "Recinto del templo Eanna, Uruk, Irak"
+          },
+          "text": {
+            "en": "The oldest writing of Mesopotamia, from about 3350–3000 BC: numbers and picture signs recording rations, fields and animals. No one is sure which language their writers spoke.",
+            "es": "La escritura más antigua de Mesopotamia, de hacia 3350-3000 a. C.: números y signos con dibujos que registran raciones, campos y animales. No se sabe con certeza qué lengua hablaban sus autores."
+          },
+          "wiki": {
+            "en": "Proto-cuneiform",
+            "es": "Protocuneiforme"
+          }
+        },
+        {
+          "id": "cylinder-seal",
+          "name": {
+            "en": "Cylinder seals",
+            "es": "Sellos cilíndricos"
+          },
+          "at": [
+            48.2578,
+            32.1892
+          ],
+          "cat": "writing",
+          "type": "invention",
+          "date": "-3500",
+          "place": {
+            "en": "Uruk (Iraq) and Susa (Iran)",
+            "es": "Uruk (Irak) y Susa (Irán)"
+          },
+          "text": {
+            "en": "Small carved stone cylinders, rolled across wet clay to print a picture: a personal signature for sealing jars, doors and later letters. Invented around 3500 BC, they were used for 3,000 years.",
+            "es": "Pequeños cilindros de piedra tallada que, al rodar sobre arcilla húmeda, imprimían una imagen: una firma personal para sellar jarras, puertas y luego cartas. Inventados hacia el 3500 a. C., se usaron durante 3000 años."
+          },
+          "wiki": {
+            "en": "Cylinder seal",
+            "es": "Sello cilíndrico"
+          }
+        },
+        {
+          "id": "wheel",
+          "name": {
+            "en": "The wheel",
+            "es": "La rueda"
+          },
+          "at": [
+            45.643,
+            31.3205
+          ],
+          "cat": "knowledge",
+          "type": "invention",
+          "date": "-3500",
+          "place": {
+            "en": "Uruk (Iraq), the Caucasus and Europe",
+            "es": "Uruk (Irak), el Cáucaso y Europa"
+          },
+          "text": {
+            "en": "Wheeled wagons appear in pictographs at Uruk about 3500–3350 BC, and at almost the same time in the Caucasus and Europe. No one knows where the wheel was first fitted to a cart.",
+            "es": "Hacia 3500-3350 a. C. aparecen carros con ruedas en pictogramas de Uruk, y casi a la vez en el Cáucaso y en Europa. Nadie sabe dónde se le puso la rueda por primera vez a un carro."
+          },
+          "wiki": {
+            "en": "Wheel",
+            "es": "Rueda"
+          }
+        },
+        {
+          "id": "warka-vase",
+          "name": {
+            "en": "Warka Vase",
+            "es": "Vaso de Warka"
+          },
+          "at": [
+            45.6398,
+            31.3232
+          ],
+          "cat": "art",
+          "type": "work",
+          "date": "-3100",
+          "place": {
+            "en": "Uruk; Iraq Museum, Baghdad",
+            "es": "Uruk; Museo de Irak, Bagdad"
+          },
+          "text": {
+            "en": "One of the oldest stories carved in stone: water and crops, sheep, naked men carrying gifts, and the goddess Inanna. Looted from the Iraq Museum in 2003, it was returned in pieces.",
+            "es": "Una de las historias talladas en piedra más antiguas: agua y cultivos, ovejas, hombres desnudos con ofrendas y la diosa Inanna. Saqueado del Museo de Irak en 2003, fue devuelto en pedazos."
+          },
+          "wiki": {
+            "en": "Warka Vase",
+            "es": "Vaso sagrado de Warka"
+          }
+        },
+        {
+          "id": "jemdet-nasr",
+          "name": {
+            "en": "Jemdet Nasr",
+            "es": "Yemdet Nasr"
+          },
+          "at": [
+            44.7789,
+            32.7169
+          ],
+          "cat": "writing",
+          "type": "site",
+          "date": "-3100",
+          "place": {
+            "en": "Near Kish, Babil, Iraq",
+            "es": "Cerca de Kish, Babil, Irak"
+          },
+          "text": {
+            "en": "A large mud-brick building at Jemdet Nasr held 150 to 180 early tablets from around 3100–2900 BC: by then writing had spread from Uruk to other cities. The site gave its name to that period.",
+            "es": "Un gran edificio de adobe de Yemdet Nasr guardaba entre 150 y 180 tablillas antiguas de hacia 3100-2900 a. C.: la escritura ya se había extendido de Uruk a otras ciudades. El sitio dio nombre al periodo."
+          },
+          "wiki": {
+            "en": "Jemdet Nasr period",
+            "es": "Período Yemdet Nasr"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-2600",
+      "title": {
+        "en": "The royal tombs of Ur",
+        "es": "Las tumbas reales de Ur"
+      },
+      "camera": {
+        "lon": 45.9,
+        "lat": 31.4,
+        "zoom": 8.5
+      },
+      "text": {
+        "en": "Sumer was now a patchwork of rival city-states. At Ur, around 2600 BC, rulers were buried with gold, music and dozens of servants, who were killed to follow them into death.",
+        "es": "Sumer era ya un mosaico de ciudades-estado rivales. En Ur, hacia el 2600 a. C., los gobernantes fueron enterrados con oro, música y decenas de sirvientes, a quienes mataron para que los siguieran en la muerte."
+      },
+      "details": {
+        "en": "Each city, whether Ur, Uruk, Lagash, Umma, Kish or Nippur, belonged to its god and was ruled by a king who led its army, dug its canals and fed its temples. Neighbours fought over fields and water: the Stele of the Vultures celebrates the victory of Lagash over Umma around 2450 BC. In the 1920s Leonard Woolley excavated about 2,000 graves at Ur, sixteen of them so rich that he called them royal. Guards, servants and musicians lay in rows beside their ruler; studies of their skulls show that some were killed with blows to the head. Gold, silver, lapis lazuli from Afghanistan and carnelian from the Indus show how far the trade of Sumer reached.",
+        "es": "Cada ciudad, fuera Ur, Uruk, Lagash, Umma, Kish o Nippur, pertenecía a su dios y la gobernaba un rey que mandaba su ejército, cavaba sus canales y alimentaba sus templos. Los vecinos peleaban por campos y agua: la Estela de los Buitres celebra la victoria de Lagash sobre Umma hacia el 2450 a. C. En la década de 1920, Leonard Woolley excavó unas 2000 tumbas en Ur, dieciséis tan ricas que las llamó reales. Guardias, sirvientes y músicos yacían en filas junto a su señor; el estudio de sus cráneos muestra que a algunos los mataron a golpes en la cabeza. El oro, la plata, el lapislázuli de Afganistán y la cornalina del Indo muestran lo lejos que llegaba el comercio de Sumer."
+      },
+      "events": [
+        {
+          "icon": "📜",
+          "date": "-2350",
+          "at": [
+            46.1776,
+            31.562
+          ],
+          "text": {
+            "en": "Urukagina of Lagash cancels debts and protects widows and orphans: among the first recorded reforms",
+            "es": "Urukagina de Lagash cancela deudas y protege a viudas y huérfanos: una de las primeras reformas registradas"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "royal-cemetery-ur",
+          "name": {
+            "en": "Royal Cemetery of Ur",
+            "es": "Cementerio Real de Ur"
+          },
+          "at": [
+            46.1047,
+            30.962
+          ],
+          "cat": "tomb",
+          "type": "site",
+          "date": "-2600",
+          "place": {
+            "en": "Ur, Dhi Qar, Iraq",
+            "es": "Ur, Di Qar, Irak"
+          },
+          "text": {
+            "en": "About 2,000 graves dug by Leonard Woolley in 1922–34, sixteen of them 'royal'. Their treasures of gold, silver, lapis lazuli and carnelian are now in Baghdad, London and Philadelphia.",
+            "es": "Unas 2000 tumbas excavadas por Leonard Woolley en 1922-1934, dieciséis de ellas «reales». Sus tesoros de oro, plata, lapislázuli y cornalina están hoy en Bagdad, Londres y Filadelfia."
+          },
+          "wiki": {
+            "en": "Royal Cemetery at Ur",
+            "es": "Cementerio Real de Ur"
+          }
+        },
+        {
+          "id": "puabi",
+          "name": {
+            "en": "Puabi",
+            "es": "Puabi"
+          },
+          "at": [
+            46.1056,
+            30.961
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-2600",
+          "place": {
+            "en": "Ur, Iraq",
+            "es": "Ur, Irak"
+          },
+          "text": {
+            "en": "A queen or high priestess of Ur, buried about 2600 BC in a headdress of golden leaves, with her attendants. Her seal names no husband: she may have ruled in her own right.",
+            "es": "Reina o suma sacerdotisa de Ur, enterrada hacia el 2600 a. C. con un tocado de hojas de oro y sus servidores. Su sello no nombra a ningún marido: quizá gobernó por derecho propio."
+          },
+          "wiki": {
+            "en": "Puabi",
+            "es": "Puabi"
+          }
+        },
+        {
+          "id": "standard-of-ur",
+          "name": {
+            "en": "Standard of Ur",
+            "es": "Estandarte de Ur"
+          },
+          "at": [
+            46.104,
+            30.963
+          ],
+          "cat": "art",
+          "type": "work",
+          "date": "-2600",
+          "place": {
+            "en": "Ur; British Museum, London",
+            "es": "Ur; Museo Británico, Londres"
+          },
+          "text": {
+            "en": "A wooden box covered in a mosaic of shell, red limestone and lapis lazuli. One side shows war, with chariots trampling enemies; the other a feast with a lyre player. Its use is unknown.",
+            "es": "Una caja de madera cubierta con un mosaico de concha, caliza roja y lapislázuli. Un lado muestra la guerra, con carros que pisotean enemigos; el otro, un banquete con un músico de lira. Se ignora para qué servía."
+          },
+          "wiki": {
+            "en": "Standard of Ur",
+            "es": "Estandarte de Ur"
+          }
+        },
+        {
+          "id": "royal-game-of-ur",
+          "name": {
+            "en": "Royal Game of Ur",
+            "es": "Juego real de Ur"
+          },
+          "at": [
+            46.1034,
+            30.9612
+          ],
+          "cat": "knowledge",
+          "type": "invention",
+          "date": "-2600",
+          "place": {
+            "en": "Ur; British Museum, London",
+            "es": "Ur; Museo Británico, Londres"
+          },
+          "text": {
+            "en": "One of the oldest board games, a race played for 3,000 years from Crete to Sri Lanka. A Babylonian tablet explains part of its rules; Jews in Kochi, India, played a version until the 1950s.",
+            "es": "Uno de los juegos de mesa más antiguos, una carrera que se jugó durante 3000 años de Creta a Sri Lanka. Una tablilla babilónica explica parte de sus reglas; los judíos de Kochi (India) jugaban una versión hasta los años 1950."
+          },
+          "wiki": {
+            "en": "Royal Game of Ur",
+            "es": "Juego real de Ur"
+          }
+        },
+        {
+          "id": "stele-of-the-vultures",
+          "name": {
+            "en": "Stele of the Vultures",
+            "es": "Estela de los Buitres"
+          },
+          "at": [
+            46.1776,
+            31.562
+          ],
+          "cat": "war",
+          "type": "work",
+          "date": "-2450",
+          "place": {
+            "en": "Girsu (Tello), Iraq; Louvre, Paris",
+            "es": "Girsu (Tello), Irak; Louvre, París"
+          },
+          "text": {
+            "en": "The earliest known war monument: Eannatum, king of Lagash, defeats neighbouring Umma about 2450 BC, in a long war over fields and water. Vultures carry off the dead.",
+            "es": "El monumento bélico más antiguo que se conoce: Eannatum, rey de Lagash, vence a la vecina Umma hacia el 2450 a. C., en una larga guerra por campos y agua. Los buitres se llevan a los muertos."
+          },
+          "wiki": {
+            "en": "Stele of the Vultures",
+            "es": "Estela de los buitres"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-2334",
+      "title": {
+        "en": "Sargon's empire",
+        "es": "El imperio de Sargón"
+      },
+      "camera": {
+        "lon": 43.0,
+        "lat": 32.3,
+        "zoom": 4.3
+      },
+      "text": {
+        "en": "Around 2334 BC Sargon of Akkad conquered the cities of Sumer and built what is often called the first empire, from the Gulf to the Mediterranean. Akkadian became the language of power.",
+        "es": "Hacia el 2334 a. C., Sargón de Acad conquistó las ciudades de Sumer y formó lo que a menudo se llama el primer imperio, del golfo Pérsico al Mediterráneo. El acadio se volvió la lengua del poder."
+      },
+      "details": {
+        "en": "A later legend says Sargon was found as a baby in a basket on the river and became cupbearer to the king of Kish before seizing power. He ruled from a new capital, Akkad, whose ruins have never been found, and boasted that ships from Dilmun (Bahrain), Magan (Oman) and Meluhha (the Indus Valley) moored at its quay. His daughter Enheduanna, high priestess at Ur, wrote hymns under her own name. His grandson Naram-Sin called himself 'king of the four corners of the world' and a god. The empire broke up around 2154 BC amid revolts, raids by the Gutians from the Zagros mountains and, some scholars think, a long drought.",
+        "es": "Una leyenda posterior cuenta que Sargón fue hallado de bebé en una cesta en el río y que llegó a copero del rey de Kish antes de tomar el poder. Gobernó desde una nueva capital, Acad, cuyas ruinas nunca se han encontrado, y presumía de que en su muelle atracaban barcos de Dilmún (Baréin), Magán (Omán) y Meluhha (el valle del Indo). Su hija Enheduanna, suma sacerdotisa en Ur, escribió himnos con su propio nombre. Su nieto Naram-Sin se llamó a sí mismo «rey de las cuatro regiones del mundo» y dios. El imperio se deshizo hacia el 2154 a. C., entre revueltas, incursiones de los guti de los montes Zagros y, según algunos estudiosos, una larga sequía."
+      },
+      "control": {
+        "akkad": {
+          "ref": "akkad_land"
+        },
+        "sumer": null
+      },
+      "moves": [
+        {
+          "side": "akkad",
+          "path": [
+            [
+              44.45,
+              33.25
+            ],
+            [
+              43.2,
+              34.0
+            ],
+            [
+              41.9,
+              34.45
+            ],
+            [
+              40.9,
+              34.6
+            ],
+            [
+              40.1,
+              35.35
+            ],
+            [
+              39.0,
+              35.95
+            ],
+            [
+              37.6,
+              36.15
+            ],
+            [
+              36.3,
+              36.3
+            ]
+          ],
+          "label": {
+            "en": "Sargon's campaigns",
+            "es": "Campañas de Sargón"
+          }
+        },
+        {
+          "side": "akkad",
+          "path": [
+            [
+              44.45,
+              33.25
+            ],
+            [
+              46.2,
+              32.9
+            ],
+            [
+              48.1,
+              32.25
+            ]
+          ]
+        }
+      ],
+      "places": [
+        {
+          "id": "sargon-of-akkad",
+          "name": {
+            "en": "Sargon of Akkad",
+            "es": "Sargón de Acad"
+          },
+          "at": [
+            44.6047,
+            32.5403
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-2334",
+          "place": {
+            "en": "Kish and Akkad, Iraq",
+            "es": "Kish y Acad, Irak"
+          },
+          "text": {
+            "en": "A man of humble birth, legend says, who seized power at Kish and conquered all Sumer. He kept a court of 5,400 men who 'ate bread daily before him' and was remembered as a model king for 2,000 years.",
+            "es": "Un hombre de origen humilde, según la leyenda, que tomó el poder en Kish y conquistó todo Sumer. Mantenía una corte de 5400 hombres que «comían pan cada día ante él» y fue recordado como rey modelo durante 2000 años."
+          },
+          "wiki": {
+            "en": "Sargon of Akkad",
+            "es": "Sargón I de Acad"
+          }
+        },
+        {
+          "id": "enheduanna",
+          "name": {
+            "en": "Enheduanna",
+            "es": "Enheduanna"
+          },
+          "at": [
+            46.1066,
+            30.9642
+          ],
+          "cat": "writing",
+          "type": "person",
+          "date": "-2285",
+          "place": {
+            "en": "Ur, Iraq",
+            "es": "Ur, Irak"
+          },
+          "text": {
+            "en": "Sargon's daughter and high priestess of the moon god Nanna at Ur. Her hymns to the goddess Inanna make her the first author in history known by name.",
+            "es": "Hija de Sargón y suma sacerdotisa del dios luna Nanna en Ur. Sus himnos a la diosa Inanna la convierten en la primera autora de la historia conocida por su nombre."
+          },
+          "wiki": {
+            "en": "Enheduanna",
+            "es": "Enheduanna"
+          }
+        },
+        {
+          "id": "victory-stele-of-naram-sin",
+          "name": {
+            "en": "Victory Stele of Naram-Sin",
+            "es": "Estela de Naram-Sin"
+          },
+          "at": [
+            44.2522,
+            33.0588
+          ],
+          "cat": "art",
+          "type": "work",
+          "date": "-2250",
+          "place": {
+            "en": "Made for Sippar, Iraq; Louvre, Paris",
+            "es": "Hecha para Sippar, Irak; Louvre, París"
+          },
+          "text": {
+            "en": "Naram-Sin, Sargon's grandson, climbs a mountain over his beaten enemies, wearing the horned crown of a god. Elamite raiders carried the stele off to Susa about 1,100 years later.",
+            "es": "Naram-Sin, nieto de Sargón, sube una montaña sobre sus enemigos vencidos, con la corona de cuernos de un dios. Unos invasores elamitas se llevaron la estela a Susa unos 1100 años después."
+          },
+          "wiki": {
+            "en": "Victory Stele of Naram-Sin",
+            "es": "Estela de Naram-Sin"
+          }
+        },
+        {
+          "id": "dilmun",
+          "name": {
+            "en": "Dilmun",
+            "es": "Dilmún"
+          },
+          "at": [
+            50.5206,
+            26.2336
+          ],
+          "cat": "trade",
+          "type": "place",
+          "date": "-2300",
+          "place": {
+            "en": "Qal'at al-Bahrain, Bahrain",
+            "es": "Qal'at al-Bahrain, Baréin"
+          },
+          "text": {
+            "en": "A trading land on the island of Bahrain, halfway along the sea route to Magan (Oman) and Meluhha (the Indus Valley). Copper, timber, carnelian and pearls passed through its port.",
+            "es": "Una tierra comercial en la isla de Baréin, a medio camino de la ruta marítima hacia Magán (Omán) y Meluhha (el valle del Indo). Por su puerto pasaban cobre, madera, cornalina y perlas."
+          },
+          "wiki": {
+            "en": "Dilmun",
+            "es": "Dilmún"
+          }
+        }
+      ],
+      "show": [
+        "empire-of-akkad"
+      ]
+    },
+    {
+      "date": "-2112",
+      "title": {
+        "en": "Ur's golden age",
+        "es": "La edad de oro de Ur"
+      },
+      "camera": {
+        "lon": 45.3,
+        "lat": 32.3,
+        "zoom": 5.8
+      },
+      "text": {
+        "en": "Around 2112 BC Ur-Nammu of Ur reunited Sumer and Akkad. His dynasty built the great ziggurat of Ur, wrote the oldest law code that survives and ran a state that recorded almost everything.",
+        "es": "Hacia el 2112 a. C., Ur-Nammu de Ur volvió a unir Sumer y Acad. Su dinastía construyó el gran zigurat de Ur, redactó el código de leyes más antiguo que se conserva y dirigió un estado que lo anotaba casi todo."
+      },
+      "details": {
+        "en": "The kings of the Third Dynasty of Ur ruled for about a century. Their scribes kept accounts of workers, rations, flocks and harvests on tens of thousands of tablets, and Ur-Nammu set standard weights and measures. His son Shulgi boasted that he ran from Nippur to Ur, some 160 km, in a single day to attend festivals in both cities, and he paid for schools for scribes. Sumerian literature flourished. But in 2004 BC the Elamites from Iran sacked Ur and led its last king, Ibbi-Sin, away captive. The Lament for Ur mourns the ruined city.",
+        "es": "Los reyes de la Tercera Dinastía de Ur gobernaron durante casi un siglo. Sus escribas llevaban la cuenta de trabajadores, raciones, rebaños y cosechas en decenas de miles de tablillas, y Ur-Nammu fijó pesas y medidas comunes. Su hijo Shulgi presumía de haber corrido en un solo día de Nippur a Ur, unos 160 km, para asistir a las fiestas de ambas ciudades, y pagó escuelas para escribas. La literatura sumeria floreció. Pero en el 2004 a. C. los elamitas de Irán saquearon Ur y se llevaron cautivo a su último rey, Ibbi-Sin. El Lamento por Ur llora la ciudad en ruinas."
+      },
+      "control": {
+        "ur3": {
+          "hist": "Ur",
+          "year": -2000
+        },
+        "akkad": null
+      },
+      "events": [
+        {
+          "icon": "🔥",
+          "date": "-2004",
+          "at": [
+            46.1051,
+            30.9617
+          ],
+          "text": {
+            "en": "The Elamites sack Ur and carry off its last king, Ibbi-Sin",
+            "es": "Los elamitas saquean Ur y se llevan a su último rey, Ibbi-Sin"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "ur",
+          "name": {
+            "en": "Ur",
+            "es": "Ur"
+          },
+          "at": [
+            46.1051,
+            30.9617
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-3800",
+          "until": "-500",
+          "place": {
+            "en": "Tell el-Muqayyar, near Nasiriyah, Iraq",
+            "es": "Tell el-Muqayyar, cerca de Nasiriya, Irak"
+          },
+          "text": {
+            "en": "The moon god's city, once a port near the Gulf. Capital of Sumer under Ur-Nammu's dynasty, it was abandoned around 500 BC, perhaps as rivers shifted and the land dried up.",
+            "es": "La ciudad del dios luna, antes un puerto cerca del golfo. Capital de Sumer bajo la dinastía de Ur-Nammu, fue abandonada hacia el 500 a. C., quizá al cambiar los ríos y secarse la tierra."
+          },
+          "wiki": {
+            "en": "Ur",
+            "es": "Ur"
+          }
+        },
+        {
+          "id": "ur-nammu",
+          "name": {
+            "en": "Ur-Nammu",
+            "es": "Ur-Nammu"
+          },
+          "at": [
+            46.1044,
+            30.9636
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-2112",
+          "place": {
+            "en": "Ur, Iraq",
+            "es": "Ur, Irak"
+          },
+          "text": {
+            "en": "Founder of the Third Dynasty of Ur (reigned about 2112–2094 BC). He rebuilt temples and canals and fixed standard weights, so that 'the man of one shekel was not handed over to the man of one mina'.",
+            "es": "Fundador de la Tercera Dinastía de Ur (reinó hacia 2112-2094 a. C.). Reconstruyó templos y canales y fijó pesas comunes, para que «el hombre de un siclo no fuera entregado al hombre de una mina»."
+          },
+          "wiki": {
+            "en": "Ur-Nammu",
+            "es": "Ur-Nammu"
+          }
+        },
+        {
+          "id": "ziggurat-of-ur",
+          "name": {
+            "en": "Great Ziggurat of Ur",
+            "es": "Gran Zigurat de Ur"
+          },
+          "at": [
+            46.1031,
+            30.9628
+          ],
+          "cat": "temple",
+          "type": "structure",
+          "date": "-2100",
+          "place": {
+            "en": "Ur, Iraq",
+            "es": "Ur, Irak"
+          },
+          "text": {
+            "en": "A solid stepped tower of mud brick about 64 × 46 m at the base, topped by a shrine to the moon god Nanna. Its lower stages, restored in the 1980s, still rise above the desert.",
+            "es": "Una torre escalonada maciza de adobe, de unos 64 × 46 m de base, coronada por un santuario del dios luna Nanna. Sus pisos inferiores, restaurados en los años 1980, aún se alzan sobre el desierto."
+          },
+          "wiki": {
+            "en": "Ziggurat of Ur",
+            "es": "Zigurat de Ur"
+          }
+        },
+        {
+          "id": "code-of-ur-nammu",
+          "name": {
+            "en": "Code of Ur-Nammu",
+            "es": "Código de Ur-Nammu"
+          },
+          "at": [
+            45.2334,
+            32.1264
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-2100",
+          "place": {
+            "en": "Copies found at Nippur, Ur and Sippar, Iraq",
+            "es": "Copias halladas en Nippur, Ur y Sippar, Irak"
+          },
+          "text": {
+            "en": "The oldest law code that survives, about 300 years older than Hammurabi's. It protected widows and orphans, and punished many injuries with fines in silver rather than 'an eye for an eye'.",
+            "es": "El código de leyes más antiguo que se conserva, unos 300 años anterior al de Hammurabi. Protegía a viudas y huérfanos y castigaba muchas lesiones con multas en plata en lugar de «ojo por ojo»."
+          },
+          "wiki": {
+            "en": "Code of Ur-Nammu",
+            "es": "Código de Ur-Nammu"
+          }
+        },
+        {
+          "id": "shulgi",
+          "name": {
+            "en": "Shulgi",
+            "es": "Shulgi"
+          },
+          "at": [
+            45.289,
+            32.0582
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-2094",
+          "place": {
+            "en": "Ur and Puzrish-Dagan (Drehem), Iraq",
+            "es": "Ur y Puzrish-Dagan (Drehem), Irak"
+          },
+          "text": {
+            "en": "Ur-Nammu's son, who reigned 48 years (about 2094–2046 BC). He declared himself a god, founded a vast livestock depot at Puzrish-Dagan, paid for scribal schools and boasted he ran 160 km in a day.",
+            "es": "Hijo de Ur-Nammu, que reinó 48 años (hacia 2094-2046 a. C.). Se declaró dios, fundó un enorme depósito de ganado en Puzrish-Dagan, pagó escuelas de escribas y presumía de correr 160 km en un día."
+          },
+          "wiki": {
+            "en": "Shulgi",
+            "es": "Shulgi"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-1754",
+      "title": {
+        "en": "Hammurabi's laws",
+        "es": "Las leyes de Hammurabi"
+      },
+      "camera": {
+        "lon": 43.4,
+        "lat": 33.3,
+        "zoom": 5.4
+      },
+      "text": {
+        "en": "Hammurabi made Babylon, once a small town, the capital of all Mesopotamia. Around 1754 BC he set up a stone with 282 laws, so 'that the strong may not oppress the weak'.",
+        "es": "Hammurabi convirtió Babilonia, antes un pueblo pequeño, en la capital de toda Mesopotamia. Hacia el 1754 a. C. erigió una piedra con 282 leyes, «para que el fuerte no oprima al débil»."
+      },
+      "details": {
+        "en": "After Ur fell, Amorite dynasties ruled rival kingdoms: Isin, Larsa, Eshnunna, Mari, Assyria and Babylon. Hammurabi (reigned about 1792–1750 BC) beat them one by one through alliances, betrayals and war; in 1761 BC he destroyed Mari, the city of his former ally Zimri-Lim. His laws fixed wages, prices and punishments, which were harsher for slaves than for nobles, but they also protected wives, widows and orphans. It was a great age of learning: Babylonian scribes solved equations, knew the rule we call Pythagoras's theorem, counted in base 60, and wrote the first long version of the Epic of Gilgamesh.",
+        "es": "Tras la caída de Ur, dinastías amorreas gobernaron reinos rivales: Isin, Larsa, Eshnunna, Mari, Asiria y Babilonia. Hammurabi (reinó hacia 1792-1750 a. C.) los venció uno a uno con alianzas, traiciones y guerras; en el 1761 a. C. destruyó Mari, la ciudad de su antiguo aliado Zimri-Lim. Sus leyes fijaban salarios, precios y castigos, más duros para los esclavos que para los nobles, pero también protegían a esposas, viudas y huérfanos. Fue una gran época del saber: los escribas babilonios resolvían ecuaciones, conocían la regla que llamamos teorema de Pitágoras, contaban en base 60 y escribieron la primera versión larga de la Epopeya de Gilgamesh."
+      },
+      "control": {
+        "babylonia": {
+          "ref": "babylon_1750"
+        },
+        "ur3": null
+      },
+      "events": [
+        {
+          "icon": "🔥",
+          "date": "-1761",
+          "at": [
+            40.89,
+            34.5494
+          ],
+          "text": {
+            "en": "Hammurabi sacks Mari, the city of his former ally Zimri-Lim",
+            "es": "Hammurabi saquea Mari, la ciudad de su antiguo aliado Zimri-Lim"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "hammurabi",
+          "name": {
+            "en": "Hammurabi",
+            "es": "Hammurabi"
+          },
+          "at": [
+            44.4235,
+            32.5462
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-1792",
+          "life": [
+            "-1810",
+            "-1750"
+          ],
+          "place": {
+            "en": "Babylon, Iraq",
+            "es": "Babilonia, Irak"
+          },
+          "text": {
+            "en": "The sixth king of Babylon's first dynasty (reigned about 1792–1750 BC). A shrewd general and diplomat, he united Mesopotamia, and his letters show him checking canals, taxes and court cases himself.",
+            "es": "Sexto rey de la primera dinastía de Babilonia (reinó hacia 1792-1750 a. C.). General y diplomático astuto, unificó Mesopotamia, y sus cartas lo muestran revisando en persona canales, impuestos y juicios."
+          },
+          "wiki": {
+            "en": "Hammurabi",
+            "es": "Hammurabi"
+          }
+        },
+        {
+          "id": "code-of-hammurabi",
+          "name": {
+            "en": "Code of Hammurabi",
+            "es": "Código de Hammurabi"
+          },
+          "at": [
+            44.256,
+            33.063
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-1754",
+          "place": {
+            "en": "Probably Sippar, Iraq; found at Susa, Iran; Louvre, Paris",
+            "es": "Probablemente Sippar, Irak; hallado en Susa, Irán; Louvre, París"
+          },
+          "text": {
+            "en": "A basalt stele over 2 m tall with 282 laws below the sun god Shamash. 'An eye for an eye' applied only between equals: punishments depended on whether you were noble, commoner or slave.",
+            "es": "Una estela de basalto de más de 2 m con 282 leyes bajo el dios sol Shamash. El «ojo por ojo» solo valía entre iguales: el castigo dependía de si uno era noble, plebeyo o esclavo."
+          },
+          "wiki": {
+            "en": "Code of Hammurabi",
+            "es": "Código de Hammurabi"
+          }
+        },
+        {
+          "id": "babylon",
+          "name": {
+            "en": "Babylon",
+            "es": "Babilonia"
+          },
+          "at": [
+            44.4211,
+            32.5425
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-2300",
+          "place": {
+            "en": "Hillah, Babil, Iraq",
+            "es": "Hilla, Babil, Irak"
+          },
+          "text": {
+            "en": "A small town until Hammurabi made it the capital of an empire. For 1,500 years it was the great city of Mesopotamia, and its name, Bab-ili, 'gate of the gods', became the Hebrew Babel.",
+            "es": "Un pueblo pequeño hasta que Hammurabi lo hizo capital de un imperio. Durante 1500 años fue la gran ciudad de Mesopotamia, y su nombre, Bab-ili, «puerta de los dioses», se volvió en hebreo Babel."
+          },
+          "wiki": {
+            "en": "Babylon",
+            "es": "Babilonia (ciudad)"
+          }
+        },
+        {
+          "id": "mari",
+          "name": {
+            "en": "Mari",
+            "es": "Mari"
+          },
+          "at": [
+            40.89,
+            34.5494
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-2900",
+          "place": {
+            "en": "Tell Hariri, Deir ez-Zor, Syria",
+            "es": "Tell Hariri, Deir ez-Zor, Siria"
+          },
+          "text": {
+            "en": "A rich kingdom on the middle Euphrates. When Hammurabi sacked it in 1761 BC, the 275-room palace of King Zimri-Lim fell onto its archive of 25,000 tablets: letters, treaties, even reports of dreams.",
+            "es": "Un rico reino del Éufrates medio. Cuando Hammurabi lo saqueó en el 1761 a. C., el palacio de 275 salas del rey Zimri-Lim cayó sobre su archivo de 25 000 tablillas: cartas, tratados y hasta relatos de sueños."
+          },
+          "wiki": {
+            "en": "Mari, Syria",
+            "es": "Mari (ciudad)"
+          }
+        },
+        {
+          "id": "plimpton-322",
+          "name": {
+            "en": "Plimpton 322",
+            "es": "Plimpton 322"
+          },
+          "at": [
+            45.8536,
+            31.2858
+          ],
+          "cat": "knowledge",
+          "type": "work",
+          "date": "-1800",
+          "place": {
+            "en": "Probably Larsa, Iraq; Columbia University, New York",
+            "es": "Probablemente Larsa, Irak; Universidad de Columbia, Nueva York"
+          },
+          "text": {
+            "en": "A clay tablet of about 1800 BC listing whole numbers that fit right-angled triangles, 1,200 years before Pythagoras. Babylonians counted in base 60, as our minutes and degrees still do.",
+            "es": "Una tablilla de hacia el 1800 a. C. con números enteros que encajan en triángulos rectángulos, 1200 años antes de Pitágoras. Los babilonios contaban en base 60, como aún lo hacen nuestros minutos y grados."
+          },
+          "wiki": {
+            "en": "Plimpton 322",
+            "es": "Plimpton 322"
+          }
+        },
+        {
+          "id": "epic-of-gilgamesh",
+          "name": {
+            "en": "Epic of Gilgamesh",
+            "es": "Epopeya de Gilgamesh"
+          },
+          "at": [
+            45.646,
+            31.33
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-1800",
+          "place": {
+            "en": "Set in Uruk; copied all over Mesopotamia",
+            "es": "Ambientada en Uruk; copiada en toda Mesopotamia"
+          },
+          "text": {
+            "en": "The world's oldest great epic. Gilgamesh, king of Uruk, loses his friend Enkidu and searches in vain for eternal life. Its first long version was written around 1800 BC.",
+            "es": "La gran epopeya más antigua del mundo. Gilgamesh, rey de Uruk, pierde a su amigo Enkidu y busca en vano la vida eterna. Su primera versión larga se escribió hacia el 1800 a. C."
+          },
+          "wiki": {
+            "en": "Epic of Gilgamesh",
+            "es": "Poema de Gilgamesh"
+          }
+        }
+      ],
+      "show": [
+        "babylonia"
+      ]
+    },
+    {
+      "date": "-1350",
+      "title": {
+        "en": "The age of diplomacy",
+        "es": "La era de la diplomacia"
+      },
+      "camera": {
+        "lon": 38.6,
+        "lat": 31.4,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "After a Hittite raid sacked Babylon in 1595 BC, Kassite kings ruled it for over 400 years. Akkadian became the language of diplomacy: kings from Egypt to Anatolia wrote to each other in cuneiform.",
+        "es": "Tras el saqueo de Babilonia por los hititas en el 1595 a. C., los reyes casitas la gobernaron más de 400 años. El acadio se volvió la lengua de la diplomacia: de Egipto a Anatolia, los reyes se escribían en cuneiforme."
+      },
+      "details": {
+        "en": "The Kassites came from the Zagros mountains, but they adopted Babylon's gods, language and learning, and built a new capital, Dur-Kurigalzu. Babylon was the cultural capital of the Near East, and its scribes were in demand everywhere. In the Amarna letters, found in Egypt, the kings of Babylon, Assyria, Mitanni and the Hittites write to the pharaoh in Akkadian, swapping gold, horses, chariots and princesses as gifts, and complaining when the gifts are too small. In the north, Assyria broke free of Mitanni and, under Ashur-uballit I, became a great power of its own.",
+        "es": "Los casitas venían de los montes Zagros, pero adoptaron los dioses, la lengua y el saber de Babilonia, y construyeron una nueva capital, Dur-Kurigalzu. Babilonia era la capital cultural del Oriente Próximo, y sus escribas eran solicitados en todas partes. En las cartas de Amarna, halladas en Egipto, los reyes de Babilonia, Asiria, Mitanni y los hititas escriben al faraón en acadio; se intercambian oro, caballos, carros y princesas como regalos, y se quejan cuando los regalos son pequeños. En el norte, Asiria se libró de Mitanni y, con Assur-uballit I, se convirtió en una gran potencia."
+      },
+      "control": {
+        "babylonia": {
+          "ref": "kassite"
+        },
+        "assyria": {
+          "ref": "assyria_1350"
+        }
+      },
+      "events": [
+        {
+          "icon": "⚔️",
+          "date": "-1595",
+          "at": [
+            44.4211,
+            32.5425
+          ],
+          "text": {
+            "en": "The Hittite king Mursili I sacks Babylon, ending the dynasty of Hammurabi",
+            "es": "El rey hitita Mursili I saquea Babilonia y pone fin a la dinastía de Hammurabi"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "kassites",
+          "name": {
+            "en": "Kassites",
+            "es": "Casitas"
+          },
+          "at": [
+            44.4,
+            32.62
+          ],
+          "cat": "culture",
+          "type": "culture",
+          "date": "-1595",
+          "until": "-1155",
+          "place": {
+            "en": "Babylonia, Iraq",
+            "es": "Babilonia, Irak"
+          },
+          "text": {
+            "en": "A people from the Zagros mountains whose kings ruled Babylonia from about 1595 to 1155 BC, its longest dynasty. Their carved boundary stones, kudurrus, recorded gifts of land.",
+            "es": "Un pueblo de los montes Zagros cuyos reyes gobernaron Babilonia hacia 1595-1155 a. C., su dinastía más larga. Sus mojones tallados, los kudurrus, registraban donaciones de tierras."
+          },
+          "wiki": {
+            "en": "Kassites",
+            "es": "Casitas"
+          }
+        },
+        {
+          "id": "dur-kurigalzu",
+          "name": {
+            "en": "Dur-Kurigalzu",
+            "es": "Dur-Kurigalzu"
+          },
+          "at": [
+            44.2022,
+            33.3536
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-1390",
+          "place": {
+            "en": "Aqar Quf, near Baghdad, Iraq",
+            "es": "Aqar Quf, cerca de Bagdad, Irak"
+          },
+          "text": {
+            "en": "The capital built by the Kassite king Kurigalzu I in the 14th century BC. The worn core of its ziggurat still rises about 52 m near Baghdad; travellers once mistook it for the Tower of Babel.",
+            "es": "La capital que construyó el rey casita Kurigalzu I en el siglo XIV a. C. El núcleo desgastado de su zigurat aún se alza unos 52 m cerca de Bagdad; los viajeros lo confundían con la torre de Babel."
+          },
+          "wiki": {
+            "en": "Dur-Kurigalzu",
+            "es": "Dur-Kurigalzu"
+          }
+        },
+        {
+          "id": "amarna-letters",
+          "name": {
+            "en": "Amarna letters",
+            "es": "Cartas de Amarna"
+          },
+          "at": [
+            30.899,
+            27.643
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-1360",
+          "place": {
+            "en": "Amarna, Egypt",
+            "es": "Amarna, Egipto"
+          },
+          "text": {
+            "en": "382 clay tablets found in Egypt, mostly in Akkadian: letters to the pharaohs from the kings of Babylon, Assyria, Mitanni and the Hittites, and from rulers in Canaan.",
+            "es": "382 tablillas de arcilla halladas en Egipto, casi todas en acadio: cartas a los faraones de los reyes de Babilonia, Asiria, Mitanni y los hititas, y de gobernantes de Canaán."
+          },
+          "wiki": {
+            "en": "Amarna letters",
+            "es": "Cartas de Amarna"
+          }
+        },
+        {
+          "id": "ashur-uballit-i",
+          "name": {
+            "en": "Ashur-uballit I",
+            "es": "Assur-uballit I"
+          },
+          "at": [
+            43.2668,
+            35.4508
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-1353",
+          "place": {
+            "en": "Ashur, Iraq",
+            "es": "Assur, Irak"
+          },
+          "text": {
+            "en": "The king who made Assyria a great power (reigned about 1353–1318 BC). He wrote to the pharaoh as a 'brother', which angered the king of Babylon, who saw Assyria as his vassal.",
+            "es": "El rey que convirtió a Asiria en gran potencia (reinó hacia 1353-1318 a. C.). Escribía al faraón como a un «hermano», lo que enfureció al rey de Babilonia, que veía a Asiria como su vasalla."
+          },
+          "wiki": {
+            "en": "Ashur-uballit I",
+            "es": "Ashur-uballit I"
+          }
+        }
+      ],
+      "show": [
+        "assyrian-empire"
+      ]
+    },
+    {
+      "date": "-879",
+      "title": {
+        "en": "Assyria's empire",
+        "es": "El imperio de Asiria"
+      },
+      "camera": {
+        "lon": 40.6,
+        "lat": 34.4,
+        "zoom": 4.7
+      },
+      "text": {
+        "en": "In 879 BC Ashurnasirpal II opened his new capital, Kalhu (Nimrud), with a feast for 69,574 guests. Year after year the armies of Assyria, with iron weapons and siege engines, marched out to conquer.",
+        "es": "En el 879 a. C., Asurnasirpal II inauguró su nueva capital, Kalhu (Nimrud), con un banquete para 69 574 invitados. Año tras año, los ejércitos de Asiria, con armas de hierro y máquinas de asedio, salían a conquistar."
+      },
+      "details": {
+        "en": "Around 1200 BC the Bronze Age world of palaces and letters collapsed, and Aramean tribes spread over Syria and Mesopotamia. Assyria survived and, from about 900 BC, struck back. Its kings boasted of terror in words and stone: flayed rebels, impaled prisoners, burned towns. They also uprooted whole peoples and resettled them across the empire, perhaps 4.4 million people in 250 years, to break resistance and farm new land. Captives built the palaces, which were lined with carved stone reliefs and guarded by lamassu, winged bulls and lions with human heads.",
+        "es": "Hacia el 1200 a. C. se derrumbó el mundo de palacios y cartas de la Edad del Bronce, y las tribus arameas se extendieron por Siria y Mesopotamia. Asiria sobrevivió y, desde hacia el 900 a. C., contraatacó. Sus reyes presumían del terror en palabras y en piedra: rebeldes desollados, prisioneros empalados, pueblos quemados. También arrancaban pueblos enteros de su tierra y los reasentaban por todo el imperio, quizá 4,4 millones de personas en 250 años, para quebrar la resistencia y cultivar tierras nuevas. Los cautivos construyeron los palacios, decorados con relieves de piedra y guardados por lamassus, toros y leones alados con cabeza humana."
+      },
+      "control": {
+        "assyria": {
+          "ref": "assyria_879"
+        },
+        "babylonia": {
+          "ref": "babylon_879"
+        }
+      },
+      "places": [
+        {
+          "id": "ashurnasirpal-ii",
+          "name": {
+            "en": "Ashurnasirpal II",
+            "es": "Asurnasirpal II"
+          },
+          "at": [
+            43.3235,
+            36.1
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-883",
+          "place": {
+            "en": "Kalhu (Nimrud), Iraq",
+            "es": "Kalhu (Nimrud), Irak"
+          },
+          "text": {
+            "en": "King of Assyria from 883 to 859 BC. He campaigned almost every year, boasted of his cruelty to rebels, and built a new capital at Kalhu with the labour of captives.",
+            "es": "Rey de Asiria de 883 a 859 a. C. Hizo campañas casi cada año, presumía de su crueldad con los rebeldes y construyó una nueva capital en Kalhu con el trabajo de cautivos."
+          },
+          "wiki": {
+            "en": "Ashurnasirpal II",
+            "es": "Asurnasirpal II"
+          }
+        },
+        {
+          "id": "nimrud",
+          "name": {
+            "en": "Nimrud (Kalhu)",
+            "es": "Nimrud (Kalhu)"
+          },
+          "at": [
+            43.3289,
+            36.0981
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-879",
+          "until": "-612",
+          "place": {
+            "en": "South of Mosul, Nineveh province, Iraq",
+            "es": "Al sur de Mosul, provincia de Nínive, Irak"
+          },
+          "text": {
+            "en": "Assyria's capital from 879 BC, with palaces of carved reliefs and a ziggurat. Queens' tombs full of gold were found here in 1988–89; in 2015 the Islamic State blew up and bulldozed much of the site.",
+            "es": "Capital de Asiria desde el 879 a. C., con palacios de relieves y un zigurat. En 1988-1989 se hallaron aquí tumbas de reinas llenas de oro; en 2015 el Estado Islámico dinamitó y arrasó buena parte del sitio."
+          },
+          "wiki": {
+            "en": "Nimrud",
+            "es": "Nimrud"
+          }
+        },
+        {
+          "id": "lamassu",
+          "name": {
+            "en": "Lamassu",
+            "es": "Lamassu"
+          },
+          "at": [
+            43.333,
+            36.1015
+          ],
+          "cat": "art",
+          "type": "work",
+          "date": "-879",
+          "place": {
+            "en": "Palace gates at Nimrud, Khorsabad and Nineveh",
+            "es": "Puertas de palacios en Nimrud, Jorsabad y Nínive"
+          },
+          "text": {
+            "en": "Protective spirits with a human head, wings and the body of a bull or lion, carved up to 4 m tall to guard palace gates. Seen from the side they walk; from the front they stand still.",
+            "es": "Espíritus protectores con cabeza humana, alas y cuerpo de toro o de león, tallados de hasta 4 m de alto para guardar las puertas de los palacios. De lado caminan; de frente están quietos."
+          },
+          "wiki": {
+            "en": "Lamassu",
+            "es": "Lamassu"
+          }
+        },
+        {
+          "id": "assyrian-deportations",
+          "name": {
+            "en": "Assyrian deportations",
+            "es": "Deportaciones asirias"
+          },
+          "at": [
+            35.1897,
+            32.2803
+          ],
+          "cat": "journey",
+          "type": "event",
+          "date": "-745",
+          "place": {
+            "en": "Across the empire, e.g. Samaria (Israel and Palestine)",
+            "es": "Por todo el imperio, por ejemplo Samaria (Israel y Palestina)"
+          },
+          "text": {
+            "en": "Assyria uprooted whole communities and resettled them far away, among them the Israelites of Samaria after 720 BC. One estimate is 4.4 million people moved over 250 years.",
+            "es": "Asiria arrancó de su tierra a comunidades enteras y las reasentó lejos, entre ellas a los israelitas de Samaria tras el 720 a. C. Se calcula que unos 4,4 millones de personas fueron trasladadas en 250 años."
+          },
+          "wiki": {
+            "en": "Resettlement policy of the Neo-Assyrian Empire",
+            "es": "Deportaciones (Imperio neoasirio)"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-701",
+      "title": {
+        "en": "Sennacherib's Nineveh",
+        "es": "La Nínive de Senaquerib"
+      },
+      "camera": {
+        "lon": 40.0,
+        "lat": 34.0,
+        "zoom": 4.5
+      },
+      "text": {
+        "en": "King Sennacherib made Nineveh the greatest city of its time, with a 'palace without rival', parks and aqueducts. His armies crushed revolts from Judah to Babylon, which he razed in 689 BC.",
+        "es": "El rey Senaquerib hizo de Nínive la mayor ciudad de su tiempo, con un «palacio sin rival», parques y acueductos. Sus ejércitos aplastaron revueltas de Judá a Babilonia, que arrasó en el 689 a. C."
+      },
+      "details": {
+        "en": "Sennacherib (reigned 705–681 BC) surrounded Nineveh with 12 km of walls and 15 gates, and brought water from the mountains along canals and over an aqueduct at Jerwan. Some scholars think the famous Hanging Gardens were really his gardens at Nineveh. In 701 BC his army stormed Lachish in Judah; carved reliefs in his palace show the siege and families led into exile. Jerusalem was spared after King Hezekiah paid a huge tribute. When Babylon kept rebelling, he destroyed it in 689 BC. Two of his sons murdered him; another son, Esarhaddon, rebuilt Babylon and in 671 BC conquered Egypt.",
+        "es": "Senaquerib (reinó 705-681 a. C.) rodeó Nínive con 12 km de murallas y 15 puertas, y trajo agua de las montañas por canales y por un acueducto en Jerwan. Algunos estudiosos creen que los famosos Jardines Colgantes eran en realidad sus jardines de Nínive. En el 701 a. C. su ejército tomó Laquis, en Judá; los relieves de su palacio muestran el asedio y a familias llevadas al exilio. Jerusalén se salvó cuando el rey Ezequías pagó un enorme tributo. Como Babilonia se rebelaba una y otra vez, la destruyó en el 689 a. C. Dos de sus hijos lo asesinaron; otro hijo, Asarhaddón, reconstruyó Babilonia y en el 671 a. C. conquistó Egipto."
+      },
+      "control": {
+        "assyria": {
+          "ref": "assyria_701"
+        },
+        "babylonia": null
+      },
+      "moves": [
+        {
+          "side": "assyria",
+          "path": [
+            [
+              43.153,
+              36.359
+            ],
+            [
+              41.0,
+              36.6
+            ],
+            [
+              38.9,
+              36.6
+            ],
+            [
+              37.2,
+              36.3
+            ],
+            [
+              36.4,
+              35.0
+            ],
+            [
+              35.9,
+              33.8
+            ],
+            [
+              35.3,
+              32.6
+            ],
+            [
+              34.9,
+              31.6
+            ]
+          ],
+          "label": {
+            "en": "Campaign of 701 BC",
+            "es": "Campaña del 701 a. C."
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "🔥",
+          "date": "-689",
+          "at": [
+            44.4211,
+            32.5425
+          ],
+          "text": {
+            "en": "Sennacherib destroys rebellious Babylon",
+            "es": "Senaquerib destruye la rebelde Babilonia"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "sennacherib",
+          "name": {
+            "en": "Sennacherib",
+            "es": "Senaquerib"
+          },
+          "at": [
+            43.1585,
+            36.3645
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-705",
+          "place": {
+            "en": "Nineveh, Iraq",
+            "es": "Nínive, Irak"
+          },
+          "text": {
+            "en": "King of Assyria from 705 to 681 BC. He rebuilt Nineveh as his capital, crushed revolts, razed Babylon in 689 BC, and was murdered by two of his sons.",
+            "es": "Rey de Asiria de 705 a 681 a. C. Reconstruyó Nínive como capital, aplastó revueltas, arrasó Babilonia en el 689 a. C. y fue asesinado por dos de sus hijos."
+          },
+          "wiki": {
+            "en": "Sennacherib",
+            "es": "Senaquerib"
+          }
+        },
+        {
+          "id": "nineveh",
+          "name": {
+            "en": "Nineveh",
+            "es": "Nínive"
+          },
+          "at": [
+            43.1528,
+            36.3594
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-6000",
+          "until": "-612",
+          "place": {
+            "en": "Mosul, Iraq",
+            "es": "Mosul, Irak"
+          },
+          "text": {
+            "en": "On the Tigris, facing today's Mosul. Sennacherib's capital had 12 km of walls and 15 gates and was perhaps the largest city in the world, until it was sacked in 612 BC.",
+            "es": "A orillas del Tigris, frente a la actual Mosul. La capital de Senaquerib tenía 12 km de murallas y 15 puertas, y quizá fue la mayor ciudad del mundo, hasta su saqueo en el 612 a. C."
+          },
+          "wiki": {
+            "en": "Nineveh",
+            "es": "Nínive"
+          }
+        },
+        {
+          "id": "siege-of-lachish",
+          "name": {
+            "en": "Siege of Lachish",
+            "es": "Asedio de Laquis"
+          },
+          "at": [
+            34.8489,
+            31.565
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "-701",
+          "place": {
+            "en": "Tel Lachish, Israel",
+            "es": "Tel Laquis, Israel"
+          },
+          "text": {
+            "en": "In 701 BC Assyria stormed Lachish, the second city of Judah. Sennacherib had the siege carved on his palace walls: ramps, battering rams, impaled prisoners and families walking into exile.",
+            "es": "En el 701 a. C., Asiria tomó Laquis, la segunda ciudad de Judá. Senaquerib hizo tallar el asedio en los muros de su palacio: rampas, arietes, prisioneros empalados y familias camino del exilio."
+          },
+          "wiki": {
+            "en": "Siege of Lachish",
+            "es": "Asedio de Laquis"
+          }
+        },
+        {
+          "id": "jerwan-aqueduct",
+          "name": {
+            "en": "Jerwan aqueduct",
+            "es": "Acueducto de Jerwan"
+          },
+          "at": [
+            43.3936,
+            36.6697
+          ],
+          "cat": "knowledge",
+          "type": "structure",
+          "date": "-690",
+          "place": {
+            "en": "Jerwan, north of Mosul, Iraq",
+            "es": "Jerwan, al norte de Mosul, Irak"
+          },
+          "text": {
+            "en": "A stone bridge carrying Sennacherib's canal across a valley, built of more than two million dressed stones around 690 BC. Some call it the world's oldest aqueduct, five centuries before Rome's.",
+            "es": "Un puente que llevaba el canal de Senaquerib sobre un valle, hecho hacia el 690 a. C. con más de dos millones de piedras talladas. Quizá es el acueducto más antiguo del mundo, cinco siglos anterior a los romanos."
+          },
+          "wiki": {
+            "en": "Jerwan",
+            "es": "Senaquerib"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-660",
+      "title": {
+        "en": "Ashurbanipal's library",
+        "es": "La biblioteca de Asurbanipal"
+      },
+      "camera": {
+        "lon": 39.6,
+        "lat": 31.0,
+        "zoom": 3.5
+      },
+      "text": {
+        "en": "Assyria now ruled from Egypt to Iran. Ashurbanipal, a king who could read, gathered tens of thousands of tablets at Nineveh: medicine, magic, omens, history and the Epic of Gilgamesh.",
+        "es": "Asiria dominaba ya de Egipto a Irán. Asurbanipal, un rey que sabía leer, reunió decenas de miles de tablillas en Nínive: medicina, magia, presagios, historia y la Epopeya de Gilgamesh."
+      },
+      "details": {
+        "en": "Ashurbanipal (reigned 669–631 BC) boasted that he had learned 'the art of the scribe' and could read stone inscriptions from before the Flood. His agents copied or seized tablets all over Babylonia for his library, the oldest surviving royal library in the world. When Nineveh burned in 612 BC, the fire baked its clay tablets hard and preserved them. His reign was also brutal: his armies sacked Thebes in Egypt in 663 BC and Susa, the capital of Elam, in 647 BC, deporting its people and, he claimed, sowing its fields with salt.",
+        "es": "Asurbanipal (reinó 669-631 a. C.) presumía de haber aprendido «el arte del escriba» y de poder leer inscripciones en piedra de antes del Diluvio. Sus agentes copiaban o se llevaban tablillas por toda Babilonia para su biblioteca, la biblioteca real más antigua que se conserva. Cuando Nínive ardió en el 612 a. C., el fuego coció sus tablillas de arcilla y las preservó. Su reinado también fue brutal: sus ejércitos saquearon Tebas, en Egipto, en el 663 a. C., y Susa, capital de Elam, en el 647 a. C.; deportaron a su gente y, según él, sembraron sal en sus campos."
+      },
+      "control": {
+        "assyria": {
+          "ref": "assyria_660"
+        }
+      },
+      "events": [
+        {
+          "icon": "🔥",
+          "date": "-663",
+          "at": [
+            32.6396,
+            25.6872
+          ],
+          "text": {
+            "en": "Assyrian troops sack Thebes in Egypt",
+            "es": "Las tropas asirias saquean Tebas, en Egipto"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "ashurbanipal",
+          "name": {
+            "en": "Ashurbanipal",
+            "es": "Asurbanipal"
+          },
+          "at": [
+            43.1615,
+            36.3655
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-669",
+          "life": [
+            "-685",
+            "-631"
+          ],
+          "place": {
+            "en": "Nineveh, Iraq",
+            "es": "Nínive, Irak"
+          },
+          "text": {
+            "en": "The last great king of Assyria (reigned 669–631 BC). Trained as a scribe, he loved learning and lion hunts, and waged ruthless wars in Egypt, Babylonia and Elam.",
+            "es": "El último gran rey de Asiria (reinó 669-631 a. C.). Formado como escriba, amaba el saber y la caza del león, y libró guerras despiadadas en Egipto, Babilonia y Elam."
+          },
+          "wiki": {
+            "en": "Ashurbanipal",
+            "es": "Asurbanipal"
+          }
+        },
+        {
+          "id": "library-of-ashurbanipal",
+          "name": {
+            "en": "Library of Ashurbanipal",
+            "es": "Biblioteca de Asurbanipal"
+          },
+          "at": [
+            43.156,
+            36.3602
+          ],
+          "cat": "writing",
+          "type": "institution",
+          "date": "-668",
+          "until": "-612",
+          "place": {
+            "en": "Nineveh; British Museum, London",
+            "es": "Nínive; Museo Británico, Londres"
+          },
+          "text": {
+            "en": "More than 30,000 tablets and fragments, dug up in the 1850s and now mostly in the British Museum. The fire that destroyed Nineveh in 612 BC baked the clay and saved them.",
+            "es": "Más de 30 000 tablillas y fragmentos, desenterrados en la década de 1850 y hoy casi todos en el Museo Británico. El incendio que destruyó Nínive en el 612 a. C. coció la arcilla y los salvó."
+          },
+          "wiki": {
+            "en": "Library of Ashurbanipal",
+            "es": "Biblioteca de Asurbanipal"
+          }
+        },
+        {
+          "id": "flood-tablet",
+          "name": {
+            "en": "The Flood Tablet",
+            "es": "La tablilla del Diluvio"
+          },
+          "at": [
+            43.154,
+            36.3578
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-650",
+          "place": {
+            "en": "Nineveh; British Museum, London",
+            "es": "Nínive; Museo Británico, Londres"
+          },
+          "text": {
+            "en": "Tablet 11 of the Epic of Gilgamesh tells of a great flood and a man who builds a boat to save life. When George Smith read it in 1872, its likeness to Noah's story caused a sensation.",
+            "es": "La tablilla 11 de la Epopeya de Gilgamesh narra un gran diluvio y a un hombre que construye un barco para salvar la vida. Cuando George Smith la leyó en 1872, su parecido con el relato de Noé causó sensación."
+          },
+          "wiki": {
+            "en": "Gilgamesh flood myth",
+            "es": "Mito del diluvio de Gilgamesh"
+          }
+        },
+        {
+          "id": "lion-hunt-of-ashurbanipal",
+          "name": {
+            "en": "Lion Hunt of Ashurbanipal",
+            "es": "Cacería de leones de Asurbanipal"
+          },
+          "at": [
+            43.159,
+            36.3705
+          ],
+          "cat": "art",
+          "type": "work",
+          "date": "-645",
+          "place": {
+            "en": "North Palace, Nineveh; British Museum, London",
+            "es": "Palacio Norte, Nínive; Museo Británico, Londres"
+          },
+          "text": {
+            "en": "Carved around 645 BC, these reliefs show lions released from cages to be killed by the king, a ritual of royal power. The dying lions are among the masterpieces of ancient art.",
+            "es": "Tallados hacia el 645 a. C., estos relieves muestran leones liberados de jaulas para que el rey los mate, un ritual del poder real. Los leones moribundos están entre las obras maestras del arte antiguo."
+          },
+          "wiki": {
+            "en": "Lion Hunt of Ashurbanipal",
+            "es": "Cacería de leones de Asurbanipal"
+          }
+        },
+        {
+          "id": "sack-of-susa",
+          "name": {
+            "en": "Sack of Susa",
+            "es": "Saqueo de Susa"
+          },
+          "at": [
+            48.2578,
+            32.1892
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "-647",
+          "place": {
+            "en": "Susa, Khuzestan, Iran",
+            "es": "Susa, Juzestán, Irán"
+          },
+          "text": {
+            "en": "In 647 BC Ashurbanipal's army destroyed Susa, the capital of Elam: it looted temples, smashed royal tombs and deported the people. Elam never fully recovered.",
+            "es": "En el 647 a. C., el ejército de Asurbanipal destruyó Susa, capital de Elam: saqueó los templos, profanó las tumbas reales y deportó a la población. Elam nunca se recuperó del todo."
+          },
+          "wiki": {
+            "en": "Battle of Susa",
+            "es": "Batalla de Susa"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-612",
+      "title": {
+        "en": "The fall of Nineveh",
+        "es": "La caída de Nínive"
+      },
+      "camera": {
+        "lon": 43.0,
+        "lat": 35.0,
+        "zoom": 4.9
+      },
+      "text": {
+        "en": "Assyria was hated by its subjects. Babylonians under Nabopolassar and Medes from Iran under Cyaxares joined forces and in 612 BC sacked Nineveh. Within seven years Assyria was gone.",
+        "es": "Asiria era odiada por sus súbditos. Los babilonios de Nabopolasar y los medos de Irán, con Ciáxares, unieron fuerzas y en el 612 a. C. saquearon Nínive. En siete años Asiria desapareció."
+      },
+      "details": {
+        "en": "After Ashurbanipal died, civil wars weakened Assyria. Babylon rebelled in 626 BC under Nabopolassar. The Medes took Ashur in 614 BC, and after a siege of about three months Nineveh fell in 612 BC. The last Assyrians made a stand at Harran with Egyptian help, but in 605 BC Babylon's crown prince Nebuchadnezzar crushed the Egyptians at Carchemish. The victors shared out the empire: the Medes took the highlands, Babylon the river plains, Syria and the Levant. The Assyrian people lived on, and Christian Assyrians today still trace their roots to them.",
+        "es": "Tras la muerte de Asurbanipal, las guerras civiles debilitaron Asiria. Babilonia se rebeló en el 626 a. C. con Nabopolasar. Los medos tomaron Assur en el 614 a. C., y tras un asedio de unos tres meses Nínive cayó en el 612 a. C. Los últimos asirios resistieron en Harrán con ayuda egipcia, pero en el 605 a. C. el príncipe heredero de Babilonia, Nabucodonosor, aplastó a los egipcios en Karkemish. Los vencedores se repartieron el imperio: los medos se quedaron con las tierras altas y Babilonia con las llanuras de los ríos, Siria y el Levante. El pueblo asirio sobrevivió, y los asirios cristianos de hoy aún se consideran sus descendientes."
+      },
+      "control": {
+        "assyria": {
+          "ref": "assyria_remnant"
+        },
+        "neobab": {
+          "ref": "neobab_610"
+        },
+        "media": {
+          "ref": "media_610"
+        }
+      },
+      "events": [
+        {
+          "icon": "🔥",
+          "date": "-614",
+          "at": [
+            43.2625,
+            35.4567
+          ],
+          "text": {
+            "en": "The Medes sack Ashur, Assyria's holy city",
+            "es": "Los medos saquean Assur, la ciudad santa de Asiria"
+          }
+        },
+        {
+          "icon": "⚔️",
+          "date": "-609",
+          "at": [
+            39.025,
+            36.8708
+          ],
+          "text": {
+            "en": "Harran, the last Assyrian capital, falls",
+            "es": "Cae Harrán, la última capital asiria"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "fall-of-nineveh",
+          "name": {
+            "en": "Fall of Nineveh",
+            "es": "Caída de Nínive"
+          },
+          "at": [
+            43.15,
+            36.3625
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "-612",
+          "place": {
+            "en": "Nineveh, Iraq",
+            "es": "Nínive, Irak"
+          },
+          "text": {
+            "en": "In the summer of 612 BC, after a siege of about three months, Babylonians and Medes stormed Nineveh. The city burned, its last king died, and it was never again a great city.",
+            "es": "En el verano del 612 a. C., tras un asedio de unos tres meses, babilonios y medos asaltaron Nínive. La ciudad ardió, su último rey murió y nunca volvió a ser una gran ciudad."
+          },
+          "wiki": {
+            "en": "Fall of Nineveh",
+            "es": "Batalla de Nínive (612 a. C.)"
+          }
+        },
+        {
+          "id": "nabopolassar",
+          "name": {
+            "en": "Nabopolassar",
+            "es": "Nabopolasar"
+          },
+          "at": [
+            44.418,
+            32.5395
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-626",
+          "place": {
+            "en": "Babylon, Iraq",
+            "es": "Babilonia, Irak"
+          },
+          "text": {
+            "en": "A Chaldean leader who freed Babylon from Assyria in 626 BC and founded the Neo-Babylonian dynasty. Allied with the Medes, he destroyed the Assyrian Empire.",
+            "es": "Un líder caldeo que liberó Babilonia de Asiria en el 626 a. C. y fundó la dinastía neobabilónica. Aliado con los medos, destruyó el Imperio asirio."
+          },
+          "wiki": {
+            "en": "Nabopolassar",
+            "es": "Nabopolasar"
+          }
+        },
+        {
+          "id": "cyaxares",
+          "name": {
+            "en": "Cyaxares",
+            "es": "Ciáxares"
+          },
+          "at": [
+            48.5161,
+            34.8064
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-625",
+          "place": {
+            "en": "Ecbatana (Hamadan), Iran",
+            "es": "Ecbatana (Hamadán), Irán"
+          },
+          "text": {
+            "en": "King of the Medes (about 625–585 BC). He organized an army of archers, spearmen and horsemen, took Ashur in 614 BC and helped destroy Nineveh.",
+            "es": "Rey de los medos (hacia 625-585 a. C.). Organizó un ejército de arqueros, lanceros y jinetes, tomó Assur en el 614 a. C. y ayudó a destruir Nínive."
+          },
+          "wiki": {
+            "en": "Cyaxares",
+            "es": "Ciáxares"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-570",
+      "title": {
+        "en": "Nebuchadnezzar's Babylon",
+        "es": "La Babilonia de Nabucodonosor"
+      },
+      "camera": {
+        "lon": 41.5,
+        "lat": 33.5,
+        "zoom": 4.2
+      },
+      "text": {
+        "en": "Nebuchadnezzar II made Babylon the most splendid city on Earth, with the blue-glazed Ishtar Gate and a vast ziggurat. He also destroyed Jerusalem in 587 BC and deported its people.",
+        "es": "Nabucodonosor II hizo de Babilonia la ciudad más espléndida de la Tierra, con la Puerta de Istar de ladrillos azules y un enorme zigurat. También destruyó Jerusalén en el 587 a. C. y deportó a su gente."
+      },
+      "details": {
+        "en": "Nebuchadnezzar (reigned 605–562 BC) rebuilt Babylon with millions of baked bricks stamped with his name. The Processional Way led through the Ishtar Gate, covered in glazed bricks with bulls and dragons, to the temple of Marduk and its ziggurat, Etemenanki, which may have inspired the story of the Tower of Babel. Greek writers later praised its Hanging Gardens, but no Babylonian text mentions them. For Judah the empire meant catastrophe: Jerusalem and its Temple were destroyed and thousands of Judeans were taken to Babylon. In exile they kept their faith, and much of the Hebrew Bible took shape there.",
+        "es": "Nabucodonosor (reinó 605-562 a. C.) reconstruyó Babilonia con millones de ladrillos cocidos con su nombre estampado. La Vía Procesional pasaba por la Puerta de Istar, cubierta de ladrillos vidriados con toros y dragones, hasta el templo de Marduk y su zigurat, Etemenanki, que quizá inspiró la historia de la torre de Babel. Los escritores griegos alabaron después sus Jardines Colgantes, pero ningún texto babilonio los menciona. Para Judá, el imperio fue una catástrofe: Jerusalén y su Templo fueron destruidos y miles de judaítas fueron llevados a Babilonia. En el exilio conservaron su fe, y allí tomó forma buena parte de la Biblia hebrea."
+      },
+      "control": {
+        "neobab": {
+          "ref": "neobab_575"
+        },
+        "media": {
+          "ref": "media_585"
+        },
+        "assyria": null
+      },
+      "moves": [
+        {
+          "side": "neobab",
+          "path": [
+            [
+              35.234,
+              31.778
+            ],
+            [
+              36.2,
+              33.4
+            ],
+            [
+              37.2,
+              35.2
+            ],
+            [
+              38.6,
+              36.0
+            ],
+            [
+              40.1,
+              35.3
+            ],
+            [
+              41.9,
+              34.4
+            ],
+            [
+              43.8,
+              33.35
+            ],
+            [
+              44.35,
+              32.6
+            ]
+          ],
+          "label": {
+            "en": "Judeans taken to Babylon",
+            "es": "Judaítas llevados a Babilonia"
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "🔥",
+          "date": "-587",
+          "at": [
+            35.2345,
+            31.778
+          ],
+          "text": {
+            "en": "Babylon destroys Jerusalem and Solomon's Temple",
+            "es": "Babilonia destruye Jerusalén y el Templo de Salomón"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "nebuchadnezzar-ii",
+          "name": {
+            "en": "Nebuchadnezzar II",
+            "es": "Nabucodonosor II"
+          },
+          "at": [
+            44.4255,
+            32.5452
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-605",
+          "life": [
+            "-642",
+            "-562"
+          ],
+          "place": {
+            "en": "Babylon, Iraq",
+            "es": "Babilonia, Irak"
+          },
+          "text": {
+            "en": "Babylon's greatest king (reigned 605–562 BC). He took Syria and the Levant from Egypt, rebuilt Babylon on a grand scale and destroyed rebellious Jerusalem in 587 BC.",
+            "es": "El mayor rey de Babilonia (reinó 605-562 a. C.). Arrebató Siria y el Levante a Egipto, reconstruyó Babilonia a lo grande y destruyó la rebelde Jerusalén en el 587 a. C."
+          },
+          "wiki": {
+            "en": "Nebuchadnezzar II",
+            "es": "Nabucodonosor II"
+          }
+        },
+        {
+          "id": "ishtar-gate",
+          "name": {
+            "en": "Ishtar Gate",
+            "es": "Puerta de Istar"
+          },
+          "at": [
+            44.4222,
+            32.5433
+          ],
+          "cat": "city",
+          "type": "structure",
+          "date": "-569",
+          "place": {
+            "en": "Babylon; rebuilt in the Pergamon Museum, Berlin",
+            "es": "Babilonia; reconstruida en el Museo de Pérgamo, Berlín"
+          },
+          "text": {
+            "en": "The eighth gate of Babylon's inner city, built about 569 BC, 15 m high and faced with blue glazed bricks showing bulls and dragons. Its front gate was rebuilt in Berlin in the 1920s.",
+            "es": "La octava puerta de la ciudad interior de Babilonia, de hacia el 569 a. C., de 15 m de alto y revestida de ladrillos azules vidriados con toros y dragones. Su puerta frontal se reconstruyó en Berlín en los años 1920."
+          },
+          "wiki": {
+            "en": "Ishtar Gate",
+            "es": "Puerta de Istar"
+          }
+        },
+        {
+          "id": "etemenanki",
+          "name": {
+            "en": "Etemenanki",
+            "es": "Etemenanki"
+          },
+          "at": [
+            44.4211,
+            32.5364
+          ],
+          "cat": "temple",
+          "type": "structure",
+          "date": "-600",
+          "place": {
+            "en": "Babylon, Iraq",
+            "es": "Babilonia, Irak"
+          },
+          "text": {
+            "en": "Babylon's great ziggurat, 'house of the foundation of heaven and earth'. A Babylonian tablet gives its height as 91 m, though some doubt it. It may have inspired the Tower of Babel; only its base remains.",
+            "es": "El gran zigurat de Babilonia, «casa del fundamento del cielo y la tierra». Una tablilla babilónica dice que medía 91 m, aunque hay quien lo duda. Quizá inspiró la torre de Babel; solo queda su base."
+          },
+          "wiki": {
+            "en": "Etemenanki",
+            "es": "Etemenanki"
+          }
+        },
+        {
+          "id": "hanging-gardens-of-babylon",
+          "name": {
+            "en": "Hanging Gardens of Babylon",
+            "es": "Jardines Colgantes de Babilonia"
+          },
+          "at": [
+            44.4275,
+            32.5355
+          ],
+          "cat": "place",
+          "type": "structure",
+          "date": "-600",
+          "place": {
+            "en": "Babylon (or perhaps Nineveh), Iraq",
+            "es": "Babilonia (o quizá Nínive), Irak"
+          },
+          "text": {
+            "en": "One of the Seven Wonders, said to have been built by Nebuchadnezzar for his homesick Median queen. No trace has been found: they may be a legend, or the gardens of Sennacherib at Nineveh.",
+            "es": "Una de las siete maravillas; se decía que Nabucodonosor las hizo para su reina meda, que añoraba sus montañas. No se ha hallado rastro: quizá son una leyenda, o los jardines de Senaquerib en Nínive."
+          },
+          "wiki": {
+            "en": "Hanging Gardens of Babylon",
+            "es": "Jardines Colgantes de Babilonia"
+          }
+        },
+        {
+          "id": "babylonian-exile",
+          "name": {
+            "en": "Babylonian exile",
+            "es": "Exilio en Babilonia"
+          },
+          "at": [
+            35.2345,
+            31.778
+          ],
+          "cat": "journey",
+          "type": "event",
+          "date": "-587",
+          "place": {
+            "en": "From Jerusalem to Babylon",
+            "es": "De Jerusalén a Babilonia"
+          },
+          "text": {
+            "en": "Thousands of Judeans were taken to Babylon in 597 and 587 BC. 'By the rivers of Babylon, there we sat down, yea, we wept,' says Psalm 137. Many returned under Persian rule.",
+            "es": "Miles de judaítas fueron llevados a Babilonia en el 597 y el 587 a. C. «Junto a los ríos de Babilonia, allí nos sentábamos y llorábamos», dice el Salmo 137. Muchos volvieron bajo el dominio persa."
+          },
+          "wiki": {
+            "en": "Babylonian captivity",
+            "es": "Cautiverio de Babilonia"
+          }
+        },
+        {
+          "id": "babylonian-astronomy",
+          "name": {
+            "en": "Babylonian astronomy",
+            "es": "Astronomía babilónica"
+          },
+          "at": [
+            44.4188,
+            32.5392
+          ],
+          "cat": "knowledge",
+          "type": "work",
+          "date": "-747",
+          "place": {
+            "en": "Babylon, Iraq",
+            "es": "Babilonia, Irak"
+          },
+          "text": {
+            "en": "From about 747 BC Babylon's astronomers kept diaries of the night sky for 700 years. They predicted eclipses and devised the zodiac, and the 360 degrees of our circle come from them.",
+            "es": "Desde hacia el 747 a. C., los astrónomos de Babilonia escribieron diarios del cielo nocturno durante 700 años. Predecían eclipses e idearon el zodiaco, y de ellos vienen los 360 grados de nuestro círculo."
+          },
+          "wiki": {
+            "en": "Babylonian astronomy",
+            "es": "Astronomía babilónica"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-539-10",
+      "title": {
+        "en": "Cyrus takes Babylon",
+        "es": "Ciro toma Babilonia"
+      },
+      "camera": {
+        "lon": 43.0,
+        "lat": 31.5,
+        "zoom": 4.2
+      },
+      "text": {
+        "en": "In 539 BC Cyrus the Great of Persia defeated Babylon's army at Opis, and his troops entered Babylon without a fight. Mesopotamia became part of the largest empire yet seen.",
+        "es": "En el 539 a. C., Ciro el Grande de Persia venció al ejército babilonio en Opis, y sus tropas entraron en Babilonia sin combatir. Mesopotamia pasó a formar parte del mayor imperio visto hasta entonces."
+      },
+      "details": {
+        "en": "Babylon's last king, Nabonidus, had spent ten years at the oasis of Tayma in Arabia and favoured the moon god Sin over Marduk, angering Babylon's priests. His son Belshazzar governed in his place; in the Book of Daniel, a mysterious hand writes his doom on the palace wall. After his victory Cyrus presented himself, on the Cyrus Cylinder, as the king chosen by Marduk, and he allowed deported peoples, including the Judeans, to go home. Babylon remained a great city under Persian rule, and Alexander the Great died there in 323 BC.",
+        "es": "El último rey de Babilonia, Nabonido, había pasado diez años en el oasis de Taima, en Arabia, y prefería al dios luna Sin antes que a Marduk, lo que enfureció a los sacerdotes. Su hijo Baltasar gobernaba en su lugar; en el libro de Daniel, una mano misteriosa escribe su condena en la pared del palacio. Tras su victoria, Ciro se presentó en el Cilindro de Ciro como el rey elegido por Marduk y permitió volver a casa a los pueblos deportados, entre ellos los judaítas. Babilonia siguió siendo una gran ciudad bajo los persas, y Alejandro Magno murió allí en el 323 a. C."
+      },
+      "control": {
+        "persia": {
+          "ref": "persia_539"
+        },
+        "neobab": null,
+        "media": null
+      },
+      "moves": [
+        {
+          "side": "persia",
+          "path": [
+            [
+              48.52,
+              34.81
+            ],
+            [
+              47.1,
+              34.35
+            ],
+            [
+              45.8,
+              34.0
+            ],
+            [
+              44.7,
+              33.18
+            ],
+            [
+              44.45,
+              32.6
+            ]
+          ],
+          "label": {
+            "en": "Cyrus's advance",
+            "es": "Avance de Ciro"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "nabonidus",
+          "name": {
+            "en": "Nabonidus",
+            "es": "Nabonido"
+          },
+          "at": [
+            38.5439,
+            27.6297
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-556",
+          "place": {
+            "en": "Babylon, Iraq, and Tayma, Saudi Arabia",
+            "es": "Babilonia (Irak) y Taima (Arabia Saudita)"
+          },
+          "text": {
+            "en": "The last king of Babylon (reigned 556–539 BC). A devotee of the moon god, he spent ten years at the Arabian oasis of Tayma and dug up ancient temple foundations; some call him the first archaeologist.",
+            "es": "El último rey de Babilonia (reinó 556-539 a. C.). Devoto del dios luna, pasó diez años en el oasis árabe de Taima y desenterró cimientos de templos antiguos; algunos lo llaman el primer arqueólogo."
+          },
+          "wiki": {
+            "en": "Nabonidus",
+            "es": "Nabonido"
+          }
+        },
+        {
+          "id": "battle-of-opis",
+          "name": {
+            "en": "Battle of Opis",
+            "es": "Batalla de Opis"
+          },
+          "at": [
+            44.7,
+            33.1814
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "-539-09",
+          "place": {
+            "en": "On the Tigris near Baghdad, Iraq",
+            "es": "A orillas del Tigris, cerca de Bagdad, Irak"
+          },
+          "text": {
+            "en": "Late in September 539 BC Cyrus's army routed the Babylonians at Opis on the Tigris. About two weeks later Persian troops entered Babylon, apparently without a battle.",
+            "es": "A fines de septiembre del 539 a. C., el ejército de Ciro derrotó a los babilonios en Opis, junto al Tigris. Unas dos semanas después las tropas persas entraron en Babilonia, al parecer sin combatir."
+          },
+          "wiki": {
+            "en": "Battle of Opis",
+            "es": "Batalla de Opis"
+          }
+        },
+        {
+          "id": "cyrus-the-great",
+          "name": {
+            "en": "Cyrus the Great",
+            "es": "Ciro el Grande"
+          },
+          "at": [
+            44.43,
+            32.548
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-539",
+          "life": [
+            "-600",
+            "-530"
+          ],
+          "place": {
+            "en": "Babylon, Iraq (in 539 BC)",
+            "es": "Babilonia, Irak (en el 539 a. C.)"
+          },
+          "text": {
+            "en": "The founder of the Persian Empire. After taking Babylon he honoured its gods and let deported peoples, including the Judeans, return home; the Bible calls him the Lord's anointed.",
+            "es": "El fundador del Imperio persa. Tras tomar Babilonia honró a sus dioses y dejó volver a casa a los pueblos deportados, entre ellos los judaítas; la Biblia lo llama el ungido del Señor."
+          },
+          "wiki": {
+            "en": "Cyrus the Great",
+            "es": "Ciro el Grande"
+          }
+        },
+        {
+          "id": "cyrus-cylinder",
+          "name": {
+            "en": "Cyrus Cylinder",
+            "es": "Cilindro de Ciro"
+          },
+          "at": [
+            44.4195,
+            32.5368
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-539",
+          "place": {
+            "en": "Babylon; British Museum, London",
+            "es": "Babilonia; Museo Británico, Londres"
+          },
+          "text": {
+            "en": "A clay cylinder in Babylonian, written for Cyrus after 539 BC and found in Babylon in 1879. It praises his peaceful entry; often called a charter of human rights, it is also royal propaganda.",
+            "es": "Un cilindro de arcilla en babilonio, escrito para Ciro después del 539 a. C. y hallado en Babilonia en 1879. Elogia su entrada pacífica; a menudo llamado carta de derechos humanos, también es propaganda real."
+          },
+          "wiki": {
+            "en": "Cyrus Cylinder",
+            "es": "Cilindro de Ciro"
+          }
+        },
+        {
+          "id": "ennigaldi-nanna-museum",
+          "name": {
+            "en": "Ennigaldi-Nanna's museum",
+            "es": "Museo de Ennigaldi-Nanna"
+          },
+          "at": [
+            46.1059,
+            30.9622
+          ],
+          "cat": "knowledge",
+          "type": "institution",
+          "date": "-530",
+          "place": {
+            "en": "Ur, Iraq",
+            "es": "Ur, Irak"
+          },
+          "text": {
+            "en": "Around 530 BC Nabonidus's daughter, the high priestess Ennigaldi-Nanna, kept a collection of ancient objects at Ur, with clay labels in three languages. It is often called the first museum.",
+            "es": "Hacia el 530 a. C., la hija de Nabonido, la suma sacerdotisa Ennigaldi-Nanna, reunió en Ur una colección de objetos antiguos con etiquetas de arcilla en tres lenguas. Se la suele llamar el primer museo."
+          },
+          "wiki": {
+            "en": "Ennigaldi-Nanna's museum",
+            "es": "Museo de Ennigaldi-Nanna"
+          }
+        }
+      ],
+      "show": [
+        "achaemenid-empire"
+      ]
+    },
+    {
+      "date": "2019",
+      "title": {
+        "en": "Mesopotamia today",
+        "es": "Mesopotamia hoy"
+      },
+      "camera": {
+        "lon": 44.6,
+        "lat": 33.6,
+        "zoom": 5.0
+      },
+      "text": {
+        "en": "Cuneiform was last written around AD 80, and Mesopotamia was forgotten. Rediscovered in the 1840s, its ruins and tablets are still studied, though war and looting have scarred Iraq and Syria.",
+        "es": "El cuneiforme se escribió por última vez hacia el 80 d. C., y Mesopotamia cayó en el olvido. Redescubiertas desde 1840, sus ruinas y tablillas se siguen estudiando, aunque la guerra y el saqueo han herido a Irak y Siria."
+      },
+      "details": {
+        "en": "Under Persian, Greek and Parthian rule, Aramaic and Greek replaced Akkadian, and the last scribes wrote astronomical tables at Uruk around AD 79/80. For 1,800 years Mesopotamia was known only from the Bible and Greek writers. Then in the 1840s Paul-Émile Botta and Austen Henry Layard dug up Assyrian palaces, and scholars cracked cuneiform with the help of the Behistun inscription in Iran. Today the sites of Iraq are guarded and studied again, but they have suffered: the Iraq Museum was looted in 2003, and in 2015 the Islamic State destroyed parts of Nimrud, Nineveh and Hatra. Babylon became a World Heritage Site in 2019.",
+        "es": "Bajo el dominio persa, griego y parto, el arameo y el griego reemplazaron al acadio, y los últimos escribas copiaron tablas astronómicas en Uruk hacia el 79-80 d. C. Durante 1800 años, Mesopotamia solo se conoció por la Biblia y los autores griegos. En la década de 1840, Paul-Émile Botta y Austen Henry Layard desenterraron palacios asirios, y los eruditos descifraron el cuneiforme con ayuda de la inscripción de Behistún, en Irán. Hoy los sitios de Irak vuelven a ser protegidos y estudiados, pero han sufrido mucho: el Museo de Irak fue saqueado en 2003, y en 2015 el Estado Islámico destruyó partes de Nimrud, Nínive y Hatra. Babilonia fue declarada Patrimonio de la Humanidad en 2019."
+      },
+      "control": {
+        "persia": null
+      },
+      "places": [
+        {
+          "id": "last-cuneiform-tablet",
+          "name": {
+            "en": "The last cuneiform tablet",
+            "es": "La última tablilla cuneiforme"
+          },
+          "at": [
+            45.6445,
+            31.3262
+          ],
+          "cat": "writing",
+          "type": "event",
+          "date": "79",
+          "place": {
+            "en": "Uruk, Iraq",
+            "es": "Uruk, Irak"
+          },
+          "text": {
+            "en": "The latest cuneiform text that can be dated, an astronomical almanac from Uruk, was written in AD 79/80. After 3,300 years, one of the world's two oldest scripts fell silent.",
+            "es": "El último texto cuneiforme que puede fecharse, un almanaque astronómico de Uruk, se escribió en el 79-80 d. C. Tras 3300 años se apagó una de las dos escrituras más antiguas del mundo."
+          },
+          "wiki": {
+            "en": "Cuneiform",
+            "es": "Escritura cuneiforme"
+          }
+        },
+        {
+          "id": "austen-henry-layard",
+          "name": {
+            "en": "Austen Henry Layard",
+            "es": "Austen Henry Layard"
+          },
+          "at": [
+            43.334,
+            36.095
+          ],
+          "cat": "person",
+          "type": "person",
+          "date": "1845",
+          "life": [
+            "1817",
+            "1894"
+          ],
+          "place": {
+            "en": "Nimrud and Nineveh, Iraq",
+            "es": "Nimrud y Nínive, Irak"
+          },
+          "text": {
+            "en": "A young British traveller who dug at Nimrud and Nineveh from 1845 and shipped lamassu and reliefs to the British Museum. His bestselling book made ancient Assyria famous again.",
+            "es": "Un joven viajero británico que excavó en Nimrud y Nínive desde 1845 y envió lamassus y relieves al Museo Británico. Su libro, un éxito de ventas, volvió a hacer famosa a la antigua Asiria."
+          },
+          "wiki": {
+            "en": "Austen Henry Layard",
+            "es": "Austen Henry Layard"
+          }
+        },
+        {
+          "id": "behistun-inscription",
+          "name": {
+            "en": "Behistun inscription",
+            "es": "Inscripción de Behistún"
+          },
+          "at": [
+            47.4358,
+            34.3906
+          ],
+          "cat": "writing",
+          "type": "work",
+          "date": "-520",
+          "place": {
+            "en": "Mount Behistun, Kermanshah, Iran",
+            "es": "Monte Behistún, Kermanshah, Irán"
+          },
+          "text": {
+            "en": "Darius I's cliff inscription in Old Persian, Elamite and Babylonian. Copied by Henry Rawlinson at great risk in the 1830s and 1840s, it was the key to reading cuneiform, deciphered by 1857.",
+            "es": "La inscripción de Darío I en un acantilado, en persa antiguo, elamita y babilonio. Copiada por Henry Rawlinson con gran riesgo en las décadas de 1830 y 1840, fue la clave para leer el cuneiforme, descifrado hacia 1857."
+          },
+          "wiki": {
+            "en": "Behistun inscription",
+            "es": "Inscripción de Behistún"
+          }
+        },
+        {
+          "id": "iraq-museum",
+          "name": {
+            "en": "Iraq Museum",
+            "es": "Museo de Irak"
+          },
+          "at": [
+            44.3858,
+            33.3286
+          ],
+          "cat": "place",
+          "type": "institution",
+          "date": "1926",
+          "place": {
+            "en": "Baghdad, Iraq",
+            "es": "Bagdad, Irak"
+          },
+          "text": {
+            "en": "Iraq's national museum, founded in 1926, holds the world's greatest collection of Mesopotamian art. Thousands of objects were looted in April 2003; many have come back, and it reopened in 2015.",
+            "es": "El museo nacional de Irak, fundado en 1926, guarda la mayor colección de arte mesopotámico del mundo. En abril de 2003 se saquearon miles de piezas; muchas han vuelto, y reabrió en 2015."
+          },
+          "wiki": {
+            "en": "Iraq Museum",
+            "es": "Museo Nacional de Irak"
+          }
+        },
+        {
+          "id": "babylon-world-heritage",
+          "name": {
+            "en": "Babylon, World Heritage Site",
+            "es": "Babilonia, Patrimonio de la Humanidad"
+          },
+          "at": [
+            44.4245,
+            32.5395
+          ],
+          "cat": "place",
+          "type": "event",
+          "date": "2019",
+          "place": {
+            "en": "Hillah, Babil, Iraq",
+            "es": "Hilla, Babil, Irak"
+          },
+          "text": {
+            "en": "Listed by UNESCO in 2019 after decades of damage: Saddam Hussein rebuilt walls with bricks stamped with his own name and built a palace on the ruins, and foreign troops camped there in 2003–04.",
+            "es": "Inscrita por la UNESCO en 2019 tras décadas de daños: Sadam Husein reconstruyó muros con ladrillos con su propio nombre y se hizo un palacio sobre las ruinas, y tropas extranjeras acamparon allí en 2003-2004."
+          },
+          "wiki": {
+            "en": "Babylon",
+            "es": "Babilonia (ciudad)"
+          }
+        }
+      ],
+      "aftermath": true
+    }
+  ],
+  "outcome": {
+    "en": "Mesopotamia gave the world some of its first cities, writing, written laws, schools, epics, and mathematics in base 60 that still count our minutes and degrees. Its peoples, Sumerians, Akkadians, Babylonians and Assyrians, were forgotten for 1,800 years after cuneiform died out around AD 80. Rediscovered in the 1840s, their hundreds of thousands of tablets are still being read, while war and looting threaten the ancient sites of Iraq and Syria.",
+    "es": "Mesopotamia dio al mundo algunas de sus primeras ciudades, la escritura, las leyes escritas, las escuelas, la epopeya y unas matemáticas en base 60 que aún cuentan nuestros minutos y grados. Sus pueblos, sumerios, acadios, babilonios y asirios, quedaron olvidados 1800 años después de que el cuneiforme se extinguiera hacia el 80 d. C. Redescubiertas desde la década de 1840, sus cientos de miles de tablillas se siguen leyendo, mientras la guerra y el saqueo amenazan los sitios antiguos de Irak y Siria."
+  },
+  "sources": [
+    {
+      "title": "Mesopotamia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mesopotamia"
+    },
+    {
+      "title": "Sumer (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sumer"
+    },
+    {
+      "title": "Uruk period (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Uruk_period"
+    },
+    {
+      "title": "Proto-cuneiform (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Proto-cuneiform"
+    },
+    {
+      "title": "Cuneiform (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cuneiform"
+    },
+    {
+      "title": "Wheel (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wheel"
+    },
+    {
+      "title": "Royal Cemetery at Ur (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Royal_Cemetery_at_Ur"
+    },
+    {
+      "title": "Akkadian Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Akkadian_Empire"
+    },
+    {
+      "title": "Sargon of Akkad (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sargon_of_Akkad"
+    },
+    {
+      "title": "Third Dynasty of Ur (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Third_Dynasty_of_Ur"
+    },
+    {
+      "title": "Code of Ur-Nammu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Code_of_Ur-Nammu"
+    },
+    {
+      "title": "Code of Hammurabi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Code_of_Hammurabi"
+    },
+    {
+      "title": "Mari, Syria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mari,_Syria"
+    },
+    {
+      "title": "Kassites (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kassites"
+    },
+    {
+      "title": "Amarna letters (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Amarna_letters"
+    },
+    {
+      "title": "Neo-Assyrian Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Neo-Assyrian_Empire"
+    },
+    {
+      "title": "Resettlement policy of the Neo-Assyrian Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Resettlement_policy_of_the_Neo-Assyrian_Empire"
+    },
+    {
+      "title": "Library of Ashurbanipal (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Library_of_Ashurbanipal"
+    },
+    {
+      "title": "Fall of Nineveh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Nineveh"
+    },
+    {
+      "title": "Neo-Babylonian Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Neo-Babylonian_Empire"
+    },
+    {
+      "title": "Ishtar Gate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ishtar_Gate"
+    },
+    {
+      "title": "Babylonian astronomical diaries (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Babylonian_astronomical_diaries"
+    },
+    {
+      "title": "Fall of Babylon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fall_of_Babylon"
+    },
+    {
+      "title": "Cyrus Cylinder (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cyrus_Cylinder"
+    },
+    {
+      "title": "Iraq Museum (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Iraq_Museum"
+    },
+    {
+      "title": "Babylon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Babylon"
+    }
+  ]
+}
