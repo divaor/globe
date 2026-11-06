@@ -1,0 +1,2712 @@
+{
+  "id": "great-zimbabwe-swahili",
+  "name": {
+    "en": "Great Zimbabwe and the Swahili coast",
+    "es": "El Gran Zimbabue y la costa suajili"
+  },
+  "icon": "⛵",
+  "era": "medieval",
+  "region": {
+    "en": "Southern and East Africa, the Indian Ocean",
+    "es": "África austral y oriental, el océano Índico"
+  },
+  "start": "750",
+  "end": "1505",
+  "summary": {
+    "en": "Gold from the Zimbabwe plateau and the stone towns of the Swahili coast: Mapungubwe, Great Zimbabwe, Kilwa and Malindi, Ibn Battuta and Zheng He's giraffe, then Portuguese cannons and the long denial of who built the stone city.",
+    "es": "El oro de la meseta de Zimbabue y las ciudades de piedra de la costa suajili: Mapungubwe, el Gran Zimbabue, Kilwa y Malindi, Ibn Battuta y la jirafa de Zheng He, y luego los cañones portugueses y la larga negación de quién construyó la ciudad de piedra."
+  },
+  "camera": {
+    "lon": 36.0,
+    "lat": -12.0,
+    "zoom": 2.8
+  },
+  "sides": [
+    {
+      "id": "swahili",
+      "name": {
+        "en": "Swahili city-states",
+        "es": "Ciudades-estado suajilis"
+      },
+      "color": "#16a085",
+      "members": {
+        "en": "Shanga, Lamu, Malindi, Mombasa, Zanzibar, Kilwa, Mozambique, Sofala and others",
+        "es": "Shanga, Lamu, Malindi, Mombasa, Zanzíbar, Kilwa, Mozambique, Sofala y otras"
+      }
+    },
+    {
+      "id": "mapungubwe",
+      "name": {
+        "en": "Mapungubwe",
+        "es": "Mapungubwe"
+      },
+      "color": "#8e5a2b"
+    },
+    {
+      "id": "zimbabwe",
+      "name": {
+        "en": "Kingdom of Zimbabwe",
+        "es": "Reino de Zimbabue"
+      },
+      "color": "#d4a017"
+    },
+    {
+      "id": "mutapa",
+      "name": {
+        "en": "Mutapa",
+        "es": "Mutapa"
+      },
+      "color": "#e67e22"
+    },
+    {
+      "id": "butua",
+      "name": {
+        "en": "Butua (Torwa)",
+        "es": "Butua (torwa)"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "portugal",
+      "name": {
+        "en": "Portuguese",
+        "es": "Portugueses"
+      },
+      "color": "#2e6f9e"
+    },
+    {
+      "id": "oman",
+      "name": {
+        "en": "Oman",
+        "es": "Omán"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "routes",
+      "name": {
+        "en": "Indian Ocean trade",
+        "es": "Comercio del océano Índico"
+      },
+      "color": "#5d6d7e"
+    }
+  ],
+  "defs": {
+    "coast_800": [
+      {
+        "land": [
+          [
+            40.4,
+            -1.6
+          ],
+          [
+            41.6,
+            -1.6
+          ],
+          [
+            41.4,
+            -2.6
+          ],
+          [
+            40.4,
+            -2.6
+          ]
+        ]
+      },
+      {
+        "land": [
+          [
+            39.0,
+            -5.6
+          ],
+          [
+            39.7,
+            -5.6
+          ],
+          [
+            39.7,
+            -6.6
+          ],
+          [
+            39.0,
+            -6.6
+          ]
+        ]
+      }
+    ],
+    "coast_1150": {
+      "and": [
+        {
+          "hist": "Islamic city-states",
+          "year": 1100
+        },
+        {
+          "ref": "coast_strip"
+        }
+      ]
+    },
+    "coast_strip": {
+      "poly": [
+        [
+          38.0,
+          4.0
+        ],
+        [
+          48.0,
+          4.0
+        ],
+        [
+          43.0,
+          -2.5
+        ],
+        [
+          41.0,
+          -6.0
+        ],
+        [
+          40.5,
+          -10.5
+        ],
+        [
+          41.5,
+          -16.0
+        ],
+        [
+          40.0,
+          -16.0
+        ],
+        [
+          38.6,
+          -10.5
+        ],
+        [
+          38.4,
+          -5.5
+        ],
+        [
+          39.0,
+          -3.0
+        ],
+        [
+          41.5,
+          0.5
+        ],
+        [
+          38.0,
+          2.0
+        ]
+      ]
+    },
+    "swahili_1300": {
+      "and": [
+        {
+          "hist": "Islamic city-states",
+          "year": 1300
+        },
+        {
+          "ref": "coast_strip"
+        }
+      ]
+    },
+    "swahili_1500": {
+      "and": [
+        {
+          "hist": "Islamic city-states",
+          "year": 1500
+        },
+        {
+          "ref": "coast_strip"
+        }
+      ]
+    },
+    "mapungubwe": {
+      "land": [
+        [
+          28.0,
+          -21.7
+        ],
+        [
+          29.0,
+          -21.2
+        ],
+        [
+          30.4,
+          -21.4
+        ],
+        [
+          31.0,
+          -22.2
+        ],
+        [
+          30.6,
+          -22.8
+        ],
+        [
+          29.3,
+          -23.0
+        ],
+        [
+          28.2,
+          -22.7
+        ]
+      ]
+    },
+    "butua": {
+      "land": [
+        [
+          26.6,
+          -19.0
+        ],
+        [
+          28.2,
+          -18.6
+        ],
+        [
+          29.6,
+          -19.3
+        ],
+        [
+          29.9,
+          -20.6
+        ],
+        [
+          29.0,
+          -21.4
+        ],
+        [
+          27.6,
+          -21.3
+        ],
+        [
+          26.8,
+          -20.4
+        ]
+      ]
+    },
+    "portuguese_1505": [
+      {
+        "circle": [
+          39.513,
+          -8.957
+        ],
+        "km": 25
+      },
+      {
+        "circle": [
+          34.73,
+          -20.16
+        ],
+        "km": 25
+      },
+      {
+        "circle": [
+          40.736,
+          -15.035
+        ],
+        "km": 25
+      }
+    ],
+    "portuguese_1600": [
+      {
+        "circle": [
+          39.679,
+          -4.063
+        ],
+        "km": 25
+      },
+      {
+        "circle": [
+          34.73,
+          -20.16
+        ],
+        "km": 25
+      },
+      {
+        "circle": [
+          40.736,
+          -15.035
+        ],
+        "km": 30
+      },
+      {
+        "land": [
+          [
+            33.2,
+            -16.0
+          ],
+          [
+            35.6,
+            -17.6
+          ],
+          [
+            36.8,
+            -18.3
+          ],
+          [
+            35.4,
+            -18.9
+          ],
+          [
+            33.6,
+            -17.4
+          ]
+        ]
+      }
+    ],
+    "oman_coast": [
+      {
+        "land": [
+          [
+            39.4,
+            -3.7
+          ],
+          [
+            40.0,
+            -3.7
+          ],
+          [
+            39.9,
+            -4.3
+          ],
+          [
+            39.2,
+            -4.6
+          ],
+          [
+            39.0,
+            -4.4
+          ]
+        ]
+      },
+      {
+        "land": [
+          [
+            38.9,
+            -4.8
+          ],
+          [
+            40.0,
+            -4.8
+          ],
+          [
+            39.8,
+            -6.6
+          ],
+          [
+            38.9,
+            -6.6
+          ]
+        ]
+      },
+      {
+        "land": [
+          [
+            39.2,
+            -8.5
+          ],
+          [
+            39.8,
+            -8.5
+          ],
+          [
+            39.8,
+            -9.4
+          ],
+          [
+            39.2,
+            -9.4
+          ]
+        ]
+      }
+    ],
+    "lamu_1700": {
+      "land": [
+        [
+          40.2,
+          -1.4
+        ],
+        [
+          41.8,
+          -1.4
+        ],
+        [
+          41.0,
+          -2.8
+        ],
+        [
+          40.1,
+          -3.4
+        ],
+        [
+          39.8,
+          -3.4
+        ]
+      ]
+    }
+  },
+  "steps": [
+    {
+      "date": "800",
+      "title": {
+        "en": "Towns of the monsoon coast",
+        "es": "Ciudades de la costa del monzón"
+      },
+      "camera": {
+        "lon": 46.0,
+        "lat": 5.0,
+        "zoom": 2.4
+      },
+      "text": {
+        "en": "Around 800, Bantu-speaking fishers, farmers and traders were building villages along the East African coast, where the monsoon brought dhows from Arabia, the Persian Gulf and India.",
+        "es": "Hacia el 800, pescadores, agricultores y comerciantes de habla bantú construían aldeas a lo largo de la costa de África oriental, adonde el monzón traía dhows de Arabia, el golfo Pérsico y la India."
+      },
+      "details": {
+        "en": "Out went ivory, gold, ambergris, mangrove poles, tortoiseshell, and also captives sold into slavery; in came cloth, beads, glazed pottery and later porcelain. Over the next centuries the coastal people became Muslim and began to build in coral stone. They were the Swahili, an African civilization of the sea, not, as colonial writers later claimed, foreign colonies. Their name comes from the Arabic sawahil, \"coasts\".",
+        "es": "Salían marfil, oro, ámbar gris, postes de mangle, carey y también cautivos vendidos como esclavos; entraban telas, cuentas, cerámica vidriada y más tarde porcelana. En los siglos siguientes la gente de la costa se hizo musulmana y empezó a construir con piedra de coral. Eran los suajilis, una civilización africana del mar, y no, como afirmaron luego los escritores coloniales, colonias extranjeras. Su nombre viene del árabe sawahil, «costas»."
+      },
+      "control": {
+        "swahili": {
+          "ref": "coast_800"
+        }
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "path": [
+            [
+              40.9,
+              -2.3
+            ],
+            [
+              45.5,
+              2.0
+            ],
+            [
+              51.5,
+              11.8
+            ],
+            [
+              54.0,
+              15.0
+            ],
+            [
+              57.5,
+              20.0
+            ],
+            [
+              58.5,
+              23.6
+            ]
+          ],
+          "label": {
+            "en": "To Oman and the Gulf",
+            "es": "Hacia Omán y el Golfo"
+          }
+        },
+        {
+          "side": "routes",
+          "path": [
+            [
+              40.9,
+              -2.3
+            ],
+            [
+              50.0,
+              5.0
+            ],
+            [
+              60.0,
+              12.0
+            ],
+            [
+              68.0,
+              18.0
+            ],
+            [
+              72.6,
+              21.0
+            ]
+          ],
+          "label": {
+            "en": "To India",
+            "es": "Hacia la India"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "shanga",
+          "name": {
+            "en": "Shanga",
+            "es": "Shanga"
+          },
+          "at": [
+            41.03,
+            -2.13
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "750",
+          "until": "1440",
+          "place": {
+            "en": "Pate Island, Lamu archipelago, Kenya",
+            "es": "Isla de Pate, archipiélago de Lamu, Kenia"
+          },
+          "text": {
+            "en": "A trading village founded around 750 on Pate Island, where archaeologists found a series of mosques rebuilt one over another, the earliest from about 780: some of the oldest in Africa south of the Sahara.",
+            "es": "Una aldea comercial fundada hacia el 750 en la isla de Pate, donde los arqueólogos hallaron una serie de mezquitas reconstruidas una sobre otra, la primera de hacia el 780: de las más antiguas de África al sur del Sahara."
+          },
+          "wiki": {
+            "en": "Shanga, Pate Island",
+            "es": "Isla Pate"
+          }
+        },
+        {
+          "id": "unguja-ukuu",
+          "name": {
+            "en": "Unguja Ukuu",
+            "es": "Unguja Ukuu"
+          },
+          "at": [
+            39.4,
+            -6.3
+          ],
+          "cat": "trade",
+          "type": "site",
+          "date": "600",
+          "until": "1000",
+          "place": {
+            "en": "Zanzibar Island, Tanzania",
+            "es": "Isla de Zanzíbar, Tanzania"
+          },
+          "text": {
+            "en": "One of the first ports of the coast, busy from about the 6th to the 10th century, where Persian Gulf pottery, glass and beads were traded for ivory and other goods.",
+            "es": "Uno de los primeros puertos de la costa, activo entre los siglos VI y X aproximadamente, donde la cerámica, el vidrio y las cuentas del golfo Pérsico se cambiaban por marfil y otros productos."
+          },
+          "wiki": {
+            "en": "Unguja Ukuu",
+            "es": "Unguja"
+          }
+        },
+        {
+          "id": "dhow",
+          "name": {
+            "en": "Dhows and the monsoon",
+            "es": "Los dhows y el monzón"
+          },
+          "at": [
+            40.902,
+            -2.2717
+          ],
+          "cat": "journey",
+          "type": "invention",
+          "date": "800",
+          "place": {
+            "en": "Indian Ocean coast of East Africa",
+            "es": "Costa índica de África oriental"
+          },
+          "text": {
+            "en": "Sewn wooden sailing ships rode the monsoon winds: south-west from Arabia and India to Africa in winter, back north-east in summer. A trader could make the round trip in a year.",
+            "es": "Barcos de vela de madera cosida aprovechaban los vientos del monzón: hacia el suroeste, de Arabia y la India a África, en invierno, y de vuelta al noreste en verano. Un comerciante podía hacer el viaje de ida y vuelta en un año."
+          },
+          "wiki": {
+            "en": "Dhow",
+            "es": "Dhow (náutica)"
+          }
+        },
+        {
+          "id": "zanj-rebellion",
+          "name": {
+            "en": "Zanj Rebellion",
+            "es": "Rebelión de los zanj"
+          },
+          "at": [
+            47.81,
+            30.5
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "869",
+          "end": "883",
+          "place": {
+            "en": "Near Basra, Iraq",
+            "es": "Cerca de Basora, Irak"
+          },
+          "text": {
+            "en": "From 869 to 883 enslaved people, many of them East Africans (Zanj) forced to drain salt marshes near Basra, rose up and held out for 14 years. Tens of thousands or more died.",
+            "es": "Del 869 al 883 personas esclavizadas, muchas de ellas africanos orientales (zanj) obligados a desecar salinas cerca de Basora, se rebelaron y resistieron 14 años. Murieron decenas de miles de personas o más."
+          },
+          "wiki": {
+            "en": "Zanj Rebellion",
+            "es": "Rebelión Zanj"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1075",
+      "title": {
+        "en": "Mapungubwe's golden rhino",
+        "es": "El rinoceronte de oro de Mapungubwe"
+      },
+      "camera": {
+        "lon": 32.0,
+        "lat": -21.0,
+        "zoom": 5
+      },
+      "text": {
+        "en": "In the Limpopo valley, the kingdom of Mapungubwe grew rich from cattle, ivory and gold sent down to the coast. Its rulers were buried on their sacred hill with objects of gold.",
+        "es": "En el valle del Limpopo, el reino de Mapungubwe se enriqueció con el ganado y con el marfil y el oro que enviaba a la costa. Sus gobernantes fueron enterrados en su colina sagrada con objetos de oro."
+      },
+      "control": {
+        "mapungubwe": {
+          "ref": "mapungubwe"
+        }
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "path": [
+            [
+              29.39,
+              -22.2
+            ],
+            [
+              31.5,
+              -22.4
+            ],
+            [
+              33.0,
+              -22.5
+            ],
+            [
+              35.33,
+              -22.02
+            ]
+          ],
+          "label": {
+            "en": "Ivory and gold to the coast",
+            "es": "Marfil y oro hacia la costa"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "mapungubwe",
+          "name": {
+            "en": "Mapungubwe",
+            "es": "Mapungubwe"
+          },
+          "at": [
+            29.387,
+            -22.195
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1075",
+          "until": "1300",
+          "place": {
+            "en": "Limpopo–Shashe confluence, South Africa",
+            "es": "Confluencia del Limpopo y el Shashe, Sudáfrica"
+          },
+          "text": {
+            "en": "The capital of the first kingdom of southern Africa, about 1075 to 1300. Around 1220 its rulers moved to the top of a flat hill, set apart from the 5,000 people living below.",
+            "es": "La capital del primer reino del África austral, hacia el 1075-1300. Hacia el 1220 sus gobernantes se instalaron en lo alto de una colina plana, separados de las 5000 personas que vivían abajo."
+          },
+          "details": {
+            "en": "Mapungubwe grew from farming, cattle and trade: ivory and gold went down the Limpopo to the coast, and glass beads and cloth came back. Its people are thought to be ancestors of the Shona and Venda. The local communities always knew it as a sacred place; white scientists \"found\" it in 1932–33. Its finds are in the University of Pretoria, and the site has been a UNESCO landscape since 2003.",
+            "es": "Mapungubwe creció gracias a la agricultura, el ganado y el comercio: el marfil y el oro bajaban por el Limpopo hasta la costa, y volvían cuentas de vidrio y telas. Se cree que su gente fue antepasada de los shona y los venda. Las comunidades locales siempre lo conocieron como lugar sagrado; los científicos blancos lo «descubrieron» en 1932-33. Sus hallazgos están en la Universidad de Pretoria, y el sitio es un paisaje de la UNESCO desde 2003."
+          },
+          "wiki": {
+            "en": "Kingdom of Mapungubwe",
+            "es": "Parque nacional de Mapungubwe"
+          }
+        },
+        {
+          "id": "golden-rhino-of-mapungubwe",
+          "name": {
+            "en": "Golden rhinoceros of Mapungubwe",
+            "es": "Rinoceronte de oro de Mapungubwe"
+          },
+          "at": [
+            29.38,
+            -22.2
+          ],
+          "cat": "art",
+          "type": "work",
+          "date": "1220",
+          "place": {
+            "en": "Royal grave on Mapungubwe Hill; University of Pretoria, South Africa",
+            "es": "Tumba real de la colina de Mapungubwe; Universidad de Pretoria, Sudáfrica"
+          },
+          "text": {
+            "en": "A small one-horned rhinoceros of thin gold foil nailed over a wooden core, small enough to stand in the palm of a hand, found in a royal grave. It has become a symbol of South Africa's past.",
+            "es": "Un pequeño rinoceronte de un cuerno, hecho de fina lámina de oro clavada sobre un núcleo de madera, que cabe en la palma de la mano, hallado en una tumba real. Se ha convertido en un símbolo del pasado de Sudáfrica."
+          },
+          "wiki": {
+            "en": "Golden Rhinoceros of Mapungubwe",
+            "es": "Parque nacional de Mapungubwe"
+          }
+        },
+        {
+          "id": "chibuene",
+          "name": {
+            "en": "Chibuene",
+            "es": "Chibuene"
+          },
+          "at": [
+            35.33,
+            -22.02
+          ],
+          "cat": "trade",
+          "type": "site",
+          "date": "800",
+          "place": {
+            "en": "Near Vilankulo, Mozambique",
+            "es": "Cerca de Vilankulo, Mozambique"
+          },
+          "text": {
+            "en": "A small trading port on the Mozambique coast, the southernmost of the Swahili world, where goods from the interior of southern Africa met ships from the north.",
+            "es": "Un pequeño puerto comercial en la costa de Mozambique, el más meridional del mundo suajili, donde los productos del interior del África austral se encontraban con los barcos del norte."
+          },
+          "wiki": {
+            "en": "Chibuene",
+            "es": "Comercio transíndico"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1150",
+      "title": {
+        "en": "Stone towns and coral mosques",
+        "es": "Ciudades de piedra y mezquitas de coral"
+      },
+      "camera": {
+        "lon": 40.5,
+        "lat": -7.0,
+        "zoom": 4.2
+      },
+      "text": {
+        "en": "From the 11th century the Swahili built towns of coral stone with mosques, from Mogadishu to Mozambique. Kilwa rose to be the greatest, minting its own coins.",
+        "es": "Desde el siglo XI los suajilis construyeron ciudades de piedra de coral con mezquitas, de Mogadiscio a Mozambique. Kilwa llegó a ser la más grande y acuñó sus propias monedas."
+      },
+      "control": {
+        "swahili": {
+          "ref": "coast_1150"
+        }
+      },
+      "places": [
+        {
+          "id": "kilwa-kisiwani",
+          "name": {
+            "en": "Kilwa Kisiwani",
+            "es": "Kilwa Kisiwani"
+          },
+          "at": [
+            39.5125,
+            -8.9575
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1000",
+          "place": {
+            "en": "Kilwa Kisiwani island, Tanzania",
+            "es": "Isla de Kilwa Kisiwani, Tanzania"
+          },
+          "text": {
+            "en": "An island city-state that grew in the 11th–12th centuries and at its height had over 10,000 people and a sultan whose power reached along the whole Swahili coast.",
+            "es": "Una ciudad-estado insular que creció en los siglos XI y XII y en su apogeo tenía más de 10 000 habitantes y un sultán cuyo poder llegaba a toda la costa suajili."
+          },
+          "details": {
+            "en": "The Kilwa Chronicle tells that a Persian prince, Ali ibn al-Hassan of Shiraz, bought the island from a local king for as much coloured cloth as would go round it. Historians read the story as a claim of noble foreign roots: the people of Kilwa were Swahili, an African people of the coast who had become Muslim and traded across the ocean. The ruins of Kilwa and nearby Songo Mnara are a UNESCO site.",
+            "es": "La Crónica de Kilwa cuenta que un príncipe persa, Ali ibn al-Hassan de Shiraz, compró la isla a un rey local por tanta tela de colores como hiciera falta para rodearla. Los historiadores leen el relato como una pretensión de nobles raíces extranjeras: la gente de Kilwa era suajili, un pueblo africano de la costa que se había hecho musulmán y comerciaba a través del océano. Las ruinas de Kilwa y la cercana Songo Mnara son Patrimonio de la Humanidad."
+          },
+          "status": {
+            "en": "Ruins and a small town; UNESCO World Heritage Site since 1981",
+            "es": "Ruinas y un pequeño pueblo; Patrimonio de la Humanidad desde 1981"
+          },
+          "wiki": {
+            "en": "Kilwa Kisiwani",
+            "es": "Kilwa Kisiwani"
+          }
+        },
+        {
+          "id": "great-mosque-of-kilwa",
+          "name": {
+            "en": "Great Mosque of Kilwa",
+            "es": "Gran Mezquita de Kilwa"
+          },
+          "at": [
+            39.5097,
+            -8.9586
+          ],
+          "cat": "temple",
+          "type": "structure",
+          "date": "1100",
+          "place": {
+            "en": "Kilwa Kisiwani, Tanzania",
+            "es": "Kilwa Kisiwani, Tanzania"
+          },
+          "text": {
+            "en": "A mosque of coral stone begun in the 11th century and enlarged in the 14th with rows of domes and vaults: one of the oldest standing mosques on the coast of East Africa.",
+            "es": "Una mezquita de piedra de coral empezada en el siglo XI y ampliada en el XIV con hileras de cúpulas y bóvedas: una de las mezquitas en pie más antiguas de la costa de África oriental."
+          },
+          "wiki": {
+            "en": "Great Mosque of Kilwa",
+            "es": "Gran Mezquita de Kilwa"
+          }
+        },
+        {
+          "id": "kilwa-coins",
+          "name": {
+            "en": "Kilwa coins",
+            "es": "Monedas de Kilwa"
+          },
+          "at": [
+            39.515,
+            -8.96
+          ],
+          "cat": "trade",
+          "type": "invention",
+          "date": "1100",
+          "place": {
+            "en": "Minted at Kilwa, Tanzania",
+            "es": "Acuñadas en Kilwa, Tanzania"
+          },
+          "text": {
+            "en": "For about 500 years, from around 1100, Kilwa minted its own copper coins. They have turned up at Great Zimbabwe and even on the Wessel Islands of northern Australia.",
+            "es": "Durante unos 500 años, desde hacia el 1100, Kilwa acuñó sus propias monedas de cobre. Han aparecido en el Gran Zimbabue e incluso en las islas Wessel, en el norte de Australia."
+          },
+          "wiki": {
+            "en": "Kilwa Sultanate",
+            "es": "Sultanato de Kilwa"
+          }
+        },
+        {
+          "id": "swahili-language",
+          "name": {
+            "en": "Swahili language",
+            "es": "Idioma suajili"
+          },
+          "at": [
+            39.665,
+            -4.05
+          ],
+          "cat": "writing",
+          "type": "culture",
+          "date": "1100",
+          "place": {
+            "en": "Swahili coast, from Somalia to Mozambique",
+            "es": "Costa suajili, de Somalia a Mozambique"
+          },
+          "text": {
+            "en": "A Bantu language of the coast with many words borrowed from Arabic (sawahil means \"coasts\"). It was written in Arabic letters for centuries and its poets wrote long epics.",
+            "es": "Una lengua bantú de la costa con muchas palabras tomadas del árabe (sawahil significa «costas»). Durante siglos se escribió con letras árabes y sus poetas compusieron largas epopeyas."
+          },
+          "wiki": {
+            "en": "Swahili",
+            "es": "Idioma suajili"
+          }
+        },
+        {
+          "id": "mombasa",
+          "name": {
+            "en": "Mombasa",
+            "es": "Mombasa"
+          },
+          "at": [
+            39.679,
+            -4.062
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1100",
+          "place": {
+            "en": "Mombasa, Kenya",
+            "es": "Mombasa, Kenia"
+          },
+          "text": {
+            "en": "An island port that rivalled Kilwa and Malindi. Ibn Battuta stayed there in 1331 and noted that its people grew no grain but bought it from the mainland.",
+            "es": "Un puerto insular que rivalizó con Kilwa y Malindi. Ibn Battuta se alojó allí en 1331 y anotó que su gente no cultivaba cereal, sino que lo compraba en el continente."
+          },
+          "wiki": {
+            "en": "Mombasa",
+            "es": "Mombasa"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1300",
+      "title": {
+        "en": "Great Zimbabwe",
+        "es": "El Gran Zimbabue"
+      },
+      "camera": {
+        "lon": 31.5,
+        "lat": -20.0,
+        "zoom": 6
+      },
+      "text": {
+        "en": "On the plateau between the Limpopo and the Zambezi, the Shona built Great Zimbabwe, a city of granite walls. Its Great Enclosure, raised without mortar, is the largest precolonial stone structure in southern Africa.",
+        "es": "En la meseta entre el Limpopo y el Zambeze, los shona construyeron el Gran Zimbabue, una ciudad de muros de granito. Su Gran Recinto, levantado sin argamasa, es la mayor estructura de piedra precolonial del África austral."
+      },
+      "control": {
+        "mapungubwe": null,
+        "zimbabwe": {
+          "hist": "Great Zimbabwe",
+          "year": 1300
+        },
+        "swahili": {
+          "ref": "swahili_1300"
+        }
+      },
+      "places": [
+        {
+          "id": "great-zimbabwe",
+          "name": {
+            "en": "Great Zimbabwe",
+            "es": "Gran Zimbabue"
+          },
+          "at": [
+            30.9339,
+            -20.2675
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1100",
+          "until": "1550",
+          "place": {
+            "en": "Masvingo, Zimbabwe",
+            "es": "Masvingo, Zimbabue"
+          },
+          "text": {
+            "en": "A city of dry-stone walls covering about 7 km², built from the 11th to the 15th century by ancestors of the Shona people. It was the capital of a kingdom that controlled gold and cattle.",
+            "es": "Una ciudad de muros de piedra seca que ocupaba unos 7 km², construida entre los siglos XI y XV por antepasados del pueblo shona. Fue la capital de un reino que controlaba el oro y el ganado."
+          },
+          "details": {
+            "en": "\"Zimbabwe\" comes from Shona words meaning \"houses of stone\". There were three parts: the Hill Complex, oldest and probably royal and sacred; the Great Enclosure in the valley; and the Valley Complex. Estimates of its population range from 10,000 to about 20,000; most people lived in houses of mud and thatch. Chinese porcelain, Persian pottery and glass beads found there show its trade links with the coast.",
+            "es": "«Zimbabue» viene de palabras shona que significan «casas de piedra». Tenía tres partes: el Complejo de la Colina, el más antiguo y probablemente real y sagrado; el Gran Recinto en el valle; y el Complejo del Valle. Las estimaciones de su población van de 10 000 a unas 20 000 personas; la mayoría vivía en casas de barro y paja. La porcelana china, la cerámica persa y las cuentas de vidrio halladas allí muestran sus vínculos comerciales con la costa."
+          },
+          "status": {
+            "en": "Ruins; UNESCO World Heritage Site since 1986",
+            "es": "Ruinas; Patrimonio de la Humanidad desde 1986"
+          },
+          "wiki": {
+            "en": "Great Zimbabwe",
+            "es": "Gran Zimbabue"
+          }
+        },
+        {
+          "id": "great-enclosure",
+          "name": {
+            "en": "The Great Enclosure",
+            "es": "El Gran Recinto"
+          },
+          "at": [
+            30.936,
+            -20.2725
+          ],
+          "cat": "ruler",
+          "type": "structure",
+          "date": "1250",
+          "place": {
+            "en": "Great Zimbabwe, Masvingo, Zimbabwe",
+            "es": "Gran Zimbabue, Masvingo, Zimbabue"
+          },
+          "text": {
+            "en": "A ring of granite walls up to 11 m high and about 250 m around, laid without mortar in the 13th and 14th centuries, with a solid conical tower 9 m tall inside: the largest precolonial stone structure in southern Africa.",
+            "es": "Un anillo de muros de granito de hasta 11 m de alto y unos 250 m de largo, colocado sin argamasa en los siglos XIII y XIV, con una torre cónica maciza de 9 m dentro: la mayor estructura de piedra precolonial del África austral."
+          },
+          "how": {
+            "en": "Builders split granite from the hills by heating and cooling it, shaped the blocks and laid them in even courses, with chevron patterns along the top of the wall.",
+            "es": "Los constructores partían el granito de las colinas calentándolo y enfriándolo, daban forma a los bloques y los colocaban en hiladas regulares, con dibujos en zigzag en lo alto del muro."
+          },
+          "wiki": {
+            "en": "Great Zimbabwe",
+            "es": "Gran Zimbabue"
+          }
+        },
+        {
+          "id": "zimbabwe-birds",
+          "name": {
+            "en": "Zimbabwe Birds",
+            "es": "Aves de Zimbabue"
+          },
+          "at": [
+            30.93,
+            -20.2665
+          ],
+          "cat": "art",
+          "type": "work",
+          "date": "1300",
+          "place": {
+            "en": "Hill Complex, Great Zimbabwe; now in Harare and Masvingo, Zimbabwe",
+            "es": "Complejo de la Colina, Gran Zimbabue; hoy en Harare y Masvingo, Zimbabue"
+          },
+          "text": {
+            "en": "Eight birds carved in soapstone on top of tall columns, perhaps sacred eagles linked to royal ancestors. Colonists took several to South Africa and Germany; they were returned in 1981 and 2003.",
+            "es": "Ocho aves talladas en esteatita sobre altas columnas, quizá águilas sagradas ligadas a los antepasados reales. Los colonos se llevaron varias a Sudáfrica y Alemania; fueron devueltas en 1981 y 2003."
+          },
+          "wiki": {
+            "en": "Zimbabwe Bird",
+            "es": "Ave de Zimbabue"
+          }
+        },
+        {
+          "id": "kingdom-of-zimbabwe",
+          "name": {
+            "en": "Kingdom of Zimbabwe",
+            "es": "Reino de Zimbabue"
+          },
+          "at": [
+            30.5,
+            -19.8
+          ],
+          "cat": "culture",
+          "type": "culture",
+          "date": "1220",
+          "until": "1450",
+          "place": {
+            "en": "Zimbabwe plateau",
+            "es": "Meseta de Zimbabue"
+          },
+          "text": {
+            "en": "The Shona kingdom ruled from Great Zimbabwe, perhaps covering 50,000 km². Its kings controlled the cattle herds and the gold from the plateau that was sold to the coast.",
+            "es": "El reino shona gobernado desde el Gran Zimbabue, que quizá abarcó 50 000 km². Sus reyes controlaban los rebaños y el oro de la meseta que se vendía a la costa."
+          },
+          "wiki": {
+            "en": "Kingdom of Great Zimbabwe",
+            "es": "Reino de Zimbabue"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1320",
+      "title": {
+        "en": "Gold through Sofala",
+        "es": "El oro por Sofala"
+      },
+      "camera": {
+        "lon": 37.0,
+        "lat": -14.0,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "Gold from the Zimbabwe plateau went down to Sofala, where Kilwa's merchants shipped it north. With the profits, Sultan al-Hasan ibn Sulaiman built the palace of Husuni Kubwa.",
+        "es": "El oro de la meseta de Zimbabue bajaba hasta Sofala, donde los mercaderes de Kilwa lo embarcaban hacia el norte. Con las ganancias, el sultán al-Hasan ibn Sulaiman construyó el palacio de Husuni Kubwa."
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "path": [
+            [
+              30.93,
+              -20.27
+            ],
+            [
+              32.4,
+              -20.4
+            ],
+            [
+              34.73,
+              -20.16
+            ]
+          ],
+          "label": {
+            "en": "Gold to Sofala",
+            "es": "Oro hacia Sofala"
+          }
+        },
+        {
+          "side": "routes",
+          "path": [
+            [
+              34.73,
+              -20.16
+            ],
+            [
+              36.0,
+              -18.5
+            ],
+            [
+              39.0,
+              -16.5
+            ],
+            [
+              40.8,
+              -13.0
+            ],
+            [
+              39.51,
+              -8.96
+            ]
+          ],
+          "label": {
+            "en": "Shipped to Kilwa",
+            "es": "Embarcado hacia Kilwa"
+          }
+        },
+        {
+          "side": "routes",
+          "path": [
+            [
+              39.51,
+              -8.96
+            ],
+            [
+              41.0,
+              -5.0
+            ],
+            [
+              45.5,
+              2.0
+            ],
+            [
+              50.5,
+              10.5
+            ],
+            [
+              45.0,
+              12.7
+            ]
+          ],
+          "label": {
+            "en": "On to Aden and Arabia",
+            "es": "Hacia Adén y Arabia"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "sofala",
+          "name": {
+            "en": "Sofala",
+            "es": "Sofala"
+          },
+          "at": [
+            34.73,
+            -20.16
+          ],
+          "cat": "trade",
+          "type": "site",
+          "date": "1000",
+          "place": {
+            "en": "South of Beira, Mozambique",
+            "es": "Al sur de Beira, Mozambique"
+          },
+          "text": {
+            "en": "The port where gold from the Zimbabwe plateau reached the sea. In the late 13th century Kilwa took control of it, and its gold paid for Kilwa's palaces.",
+            "es": "El puerto donde el oro de la meseta de Zimbabue llegaba al mar. A fines del siglo XIII Kilwa tomó su control, y su oro pagó los palacios de Kilwa."
+          },
+          "wiki": {
+            "en": "Sofala",
+            "es": "Provincia de Sofala"
+          }
+        },
+        {
+          "id": "husuni-kubwa",
+          "name": {
+            "en": "Husuni Kubwa",
+            "es": "Husuni Kubwa"
+          },
+          "at": [
+            39.525,
+            -8.948
+          ],
+          "cat": "ruler",
+          "type": "structure",
+          "date": "1320",
+          "place": {
+            "en": "Kilwa Kisiwani, Tanzania",
+            "es": "Kilwa Kisiwani, Tanzania"
+          },
+          "text": {
+            "en": "A cliff-top palace and warehouse of coral stone built by Sultan al-Hasan ibn Sulaiman in the early 14th century, with courtyards, a reception pavilion and an octagonal pool.",
+            "es": "Un palacio y almacén de piedra de coral sobre un acantilado, construido por el sultán al-Hasan ibn Sulaiman a comienzos del siglo XIV, con patios, un pabellón de recepciones y una piscina octogonal."
+          },
+          "wiki": {
+            "en": "Kilwa Kisiwani",
+            "es": "Kilwa Kisiwani"
+          }
+        },
+        {
+          "id": "al-hasan-ibn-sulaiman",
+          "name": {
+            "en": "Al-Hasan ibn Sulaiman",
+            "es": "Al-Hasan ibn Sulaiman"
+          },
+          "at": [
+            39.511,
+            -8.956
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1310",
+          "place": {
+            "en": "Sultan of Kilwa, Tanzania",
+            "es": "Sultán de Kilwa, Tanzania"
+          },
+          "text": {
+            "en": "The sultan of the Mahdali dynasty who built Husuni Kubwa and enlarged the Great Mosque. Ibn Battuta called him Abu al-Mawahib, \"father of gifts\", for his generosity.",
+            "es": "El sultán de la dinastía mahdalí que construyó Husuni Kubwa y amplió la Gran Mezquita. Ibn Battuta lo llamó Abu al-Mawahib, «padre de los regalos», por su generosidad."
+          },
+          "wiki": {
+            "en": "Al-Hasan ibn Sulaiman",
+            "es": "Sultanato de Kilwa"
+          }
+        },
+        {
+          "id": "chinese-porcelain",
+          "name": {
+            "en": "Chinese porcelain in Zimbabwe",
+            "es": "Porcelana china en Zimbabue"
+          },
+          "at": [
+            30.938,
+            -20.269
+          ],
+          "cat": "trade",
+          "type": "work",
+          "date": "1350",
+          "place": {
+            "en": "Found at Great Zimbabwe",
+            "es": "Hallada en el Gran Zimbabue"
+          },
+          "text": {
+            "en": "Green celadon and blue-and-white porcelain from China, of the 14th and 15th centuries, reached Great Zimbabwe through the Swahili ports in exchange for gold and ivory.",
+            "es": "Porcelana celadón verde y azul y blanca de China, de los siglos XIV y XV, llegó al Gran Zimbabue a través de los puertos suajilis a cambio de oro y marfil."
+          },
+          "wiki": {
+            "en": "Celadon",
+            "es": "Celadón"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1331",
+      "title": {
+        "en": "Ibn Battuta at Kilwa",
+        "es": "Ibn Battuta en Kilwa"
+      },
+      "camera": {
+        "lon": 43.0,
+        "lat": -2.0,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "In 1331 Ibn Battuta sailed from Aden to Mogadishu, Mombasa and Kilwa. He called Kilwa one of the most beautiful and well-built towns in the world.",
+        "es": "En 1331 Ibn Battuta navegó de Adén a Mogadiscio, Mombasa y Kilwa. Llamó a Kilwa una de las ciudades más bellas y mejor construidas del mundo."
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "path": [
+            [
+              45.03,
+              12.8
+            ],
+            [
+              43.47,
+              11.35
+            ],
+            [
+              48.0,
+              9.0
+            ],
+            [
+              50.5,
+              6.5
+            ],
+            [
+              47.0,
+              3.5
+            ],
+            [
+              45.32,
+              2.05
+            ],
+            [
+              42.5,
+              -0.8
+            ],
+            [
+              40.5,
+              -3.2
+            ],
+            [
+              39.68,
+              -4.06
+            ],
+            [
+              39.8,
+              -6.5
+            ],
+            [
+              39.51,
+              -8.96
+            ]
+          ],
+          "label": {
+            "en": "Ibn Battuta's voyage, 1331",
+            "es": "El viaje de Ibn Battuta, 1331"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "ibn-battuta",
+          "name": {
+            "en": "Ibn Battuta",
+            "es": "Ibn Battuta"
+          },
+          "at": [
+            39.508,
+            -8.962
+          ],
+          "cat": "journey",
+          "type": "person",
+          "date": "1331",
+          "life": [
+            "1304",
+            "1369"
+          ],
+          "place": {
+            "en": "Travelled from Tangier, Morocco; on the Swahili coast in 1331",
+            "es": "Viajero de Tánger, Marruecos; en la costa suajili en 1331"
+          },
+          "text": {
+            "en": "The Moroccan traveller sailed down the coast in 1331, called Kilwa one of the most beautiful and well-built towns in the world and praised the piety and generosity of its sultan.",
+            "es": "El viajero marroquí bajó por la costa en 1331, llamó a Kilwa una de las ciudades más bellas y mejor construidas del mundo y elogió la piedad y la generosidad de su sultán."
+          },
+          "wiki": {
+            "en": "Ibn Battuta",
+            "es": "Ibn Battuta"
+          }
+        },
+        {
+          "id": "mogadishu",
+          "name": {
+            "en": "Mogadishu",
+            "es": "Mogadiscio"
+          },
+          "at": [
+            45.3182,
+            2.0469
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "900",
+          "place": {
+            "en": "Mogadishu, Somalia",
+            "es": "Mogadiscio, Somalia"
+          },
+          "text": {
+            "en": "The great Somali port at the north of the coast. Ibn Battuta described its sultan, its rich cloth and its huge meals of rice, butter and bananas.",
+            "es": "El gran puerto somalí del norte de la costa. Ibn Battuta describió a su sultán, sus ricas telas y sus enormes comidas de arroz, manteca y plátanos."
+          },
+          "wiki": {
+            "en": "Mogadishu",
+            "es": "Mogadiscio"
+          }
+        },
+        {
+          "id": "mombasa",
+          "name": {
+            "en": "Mombasa",
+            "es": "Mombasa"
+          },
+          "at": [
+            39.679,
+            -4.062
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1100",
+          "place": {
+            "en": "Mombasa, Kenya",
+            "es": "Mombasa, Kenia"
+          },
+          "text": {
+            "en": "An island port that rivalled Kilwa and Malindi. Ibn Battuta stayed there in 1331 and noted that its people grew no grain but bought it from the mainland.",
+            "es": "Un puerto insular que rivalizó con Kilwa y Malindi. Ibn Battuta se alojó allí en 1331 y anotó que su gente no cultivaba cereal, sino que lo compraba en el continente."
+          },
+          "wiki": {
+            "en": "Mombasa",
+            "es": "Mombasa"
+          }
+        },
+        {
+          "id": "kilwa-kisiwani",
+          "name": {
+            "en": "Kilwa Kisiwani",
+            "es": "Kilwa Kisiwani"
+          },
+          "at": [
+            39.5125,
+            -8.9575
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1000",
+          "place": {
+            "en": "Kilwa Kisiwani island, Tanzania",
+            "es": "Isla de Kilwa Kisiwani, Tanzania"
+          },
+          "text": {
+            "en": "An island city-state that grew in the 11th–12th centuries and at its height had over 10,000 people and a sultan whose power reached along the whole Swahili coast.",
+            "es": "Una ciudad-estado insular que creció en los siglos XI y XII y en su apogeo tenía más de 10 000 habitantes y un sultán cuyo poder llegaba a toda la costa suajili."
+          },
+          "details": {
+            "en": "The Kilwa Chronicle tells that a Persian prince, Ali ibn al-Hassan of Shiraz, bought the island from a local king for as much coloured cloth as would go round it. Historians read the story as a claim of noble foreign roots: the people of Kilwa were Swahili, an African people of the coast who had become Muslim and traded across the ocean. The ruins of Kilwa and nearby Songo Mnara are a UNESCO site.",
+            "es": "La Crónica de Kilwa cuenta que un príncipe persa, Ali ibn al-Hassan de Shiraz, compró la isla a un rey local por tanta tela de colores como hiciera falta para rodearla. Los historiadores leen el relato como una pretensión de nobles raíces extranjeras: la gente de Kilwa era suajili, un pueblo africano de la costa que se había hecho musulmán y comerciaba a través del océano. Las ruinas de Kilwa y la cercana Songo Mnara son Patrimonio de la Humanidad."
+          },
+          "status": {
+            "en": "Ruins and a small town; UNESCO World Heritage Site since 1981",
+            "es": "Ruinas y un pequeño pueblo; Patrimonio de la Humanidad desde 1981"
+          },
+          "wiki": {
+            "en": "Kilwa Kisiwani",
+            "es": "Kilwa Kisiwani"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1418",
+      "title": {
+        "en": "A giraffe for the emperor",
+        "es": "Una jirafa para el emperador"
+      },
+      "camera": {
+        "lon": 75.0,
+        "lat": 10.0,
+        "zoom": 1.5
+      },
+      "text": {
+        "en": "In 1414 a giraffe from Malindi reached the Ming court, where it was hailed as a sacred qilin. Around 1418 Zheng He's treasure fleet itself sailed to Mogadishu, Brava and Malindi.",
+        "es": "En 1414 una jirafa de Malindi llegó a la corte Ming, donde la saludaron como un qilin sagrado. Hacia 1418 la propia flota del tesoro de Zheng He navegó hasta Mogadiscio, Brava y Malindi."
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "path": [
+            [
+              118.8,
+              32.06
+            ],
+            [
+              121.0,
+              30.0
+            ],
+            [
+              119.0,
+              24.5
+            ],
+            [
+              113.0,
+              21.0
+            ],
+            [
+              109.5,
+              15.0
+            ],
+            [
+              106.0,
+              8.5
+            ],
+            [
+              103.5,
+              2.5
+            ],
+            [
+              101.0,
+              3.0
+            ],
+            [
+              98.0,
+              5.5
+            ],
+            [
+              88.0,
+              6.5
+            ],
+            [
+              80.0,
+              6.0
+            ],
+            [
+              75.8,
+              11.25
+            ],
+            [
+              68.0,
+              18.0
+            ],
+            [
+              58.0,
+              22.0
+            ],
+            [
+              56.3,
+              26.4
+            ],
+            [
+              58.0,
+              23.0
+            ],
+            [
+              52.0,
+              13.0
+            ],
+            [
+              51.5,
+              11.0
+            ],
+            [
+              45.32,
+              2.05
+            ],
+            [
+              44.06,
+              1.1
+            ],
+            [
+              40.12,
+              -3.22
+            ]
+          ],
+          "label": {
+            "en": "Zheng He's fifth voyage, 1417–1419",
+            "es": "El quinto viaje de Zheng He, 1417-1419"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "malindi-giraffe",
+          "name": {
+            "en": "A giraffe for the emperor",
+            "es": "Una jirafa para el emperador"
+          },
+          "at": [
+            118.7969,
+            32.0603
+          ],
+          "cat": "journey",
+          "type": "event",
+          "date": "1414",
+          "place": {
+            "en": "Received at the Ming court, Nanjing, China",
+            "es": "Recibida en la corte Ming, Nankín, China"
+          },
+          "text": {
+            "en": "In 1414 a giraffe sent by the ruler of Malindi reached the Ming court on Zheng He's ships (some accounts say by way of Bengal). Courtiers hailed it as a qilin, a sign of heaven's favour.",
+            "es": "En 1414 una jirafa enviada por el soberano de Malindi llegó a la corte Ming en los barcos de Zheng He (algunos relatos dicen que pasó por Bengala). Los cortesanos la saludaron como un qilin, señal del favor del cielo."
+          },
+          "wiki": {
+            "en": "Qilin",
+            "es": "Qilin"
+          }
+        },
+        {
+          "id": "zheng-he",
+          "name": {
+            "en": "Zheng He",
+            "es": "Zheng He"
+          },
+          "at": [
+            40.125,
+            -3.21
+          ],
+          "cat": "journey",
+          "type": "person",
+          "date": "1418",
+          "life": [
+            "1371",
+            "1433"
+          ],
+          "place": {
+            "en": "Ming admiral; his fleet reached Malindi on its fifth voyage",
+            "es": "Almirante Ming; su flota llegó a Malindi en su quinto viaje"
+          },
+          "text": {
+            "en": "A Muslim eunuch admiral of the Ming emperor who led seven huge treasure fleets across the Indian Ocean (1405–1433). On the fifth, around 1418, his ships called at Mogadishu, Brava and Malindi.",
+            "es": "Un almirante eunuco y musulmán del emperador Ming que dirigió siete enormes flotas del tesoro por el océano Índico (1405-1433). En la quinta, hacia 1418, sus barcos hicieron escala en Mogadiscio, Brava y Malindi."
+          },
+          "wiki": {
+            "en": "Zheng He",
+            "es": "Zheng He"
+          }
+        },
+        {
+          "id": "malindi",
+          "name": {
+            "en": "Malindi",
+            "es": "Malindi"
+          },
+          "at": [
+            40.1191,
+            -3.2175
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1100",
+          "place": {
+            "en": "Malindi, Kenya",
+            "es": "Malindi, Kenia"
+          },
+          "text": {
+            "en": "A Swahili town at the mouth of the Galana River, rival of Mombasa. Its rulers sent envoys to China and later welcomed the Portuguese, who were enemies of Mombasa.",
+            "es": "Una ciudad suajili en la desembocadura del río Galana, rival de Mombasa. Sus gobernantes enviaron embajadores a China y luego acogieron a los portugueses, enemigos de Mombasa."
+          },
+          "wiki": {
+            "en": "Malindi",
+            "es": "Malindi"
+          }
+        },
+        {
+          "id": "gedi",
+          "name": {
+            "en": "Gedi",
+            "es": "Gedi"
+          },
+          "at": [
+            40.0172,
+            -3.3092
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1100",
+          "until": "1650",
+          "place": {
+            "en": "Near Watamu, Kenya",
+            "es": "Cerca de Watamu, Kenia"
+          },
+          "text": {
+            "en": "A Swahili town hidden in the forest near Malindi, with a palace, mosques and stone houses with indoor toilets. It was abandoned in the 17th century.",
+            "es": "Una ciudad suajili oculta en el bosque cerca de Malindi, con un palacio, mezquitas y casas de piedra con retretes interiores. Fue abandonada en el siglo XVII."
+          },
+          "wiki": {
+            "en": "Ruins of Gedi",
+            "es": "Ruinas de Gede"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1450",
+      "title": {
+        "en": "Mutapa and Khami",
+        "es": "Mutapa y Khami"
+      },
+      "camera": {
+        "lon": 31.5,
+        "lat": -18.5,
+        "zoom": 5
+      },
+      "text": {
+        "en": "In the 15th century Great Zimbabwe declined, as trade moved north to the Zambezi. Its heirs were Mutapa in the north, founded, tradition says, by Nyatsimba Mutota, and Butua, ruled from Khami.",
+        "es": "En el siglo XV el Gran Zimbabue decayó, a medida que el comercio se desplazaba al norte, hacia el Zambeze. Sus herederos fueron Mutapa, en el norte, fundado según la tradición por Nyatsimba Mutota, y Butua, gobernado desde Khami."
+      },
+      "details": {
+        "en": "No one knows exactly why Great Zimbabwe faded. A slump in world trade in the early 15th century cut the demand for gold, new routes up the Zambezi bypassed it, and the land around a city of thousands may have been worn out. People went on living there for another century or two, but the kings had moved on. Mutapa traded gold and ivory with the coast and later fought, and sometimes bowed to, the Portuguese.",
+        "es": "Nadie sabe con exactitud por qué se apagó el Gran Zimbabue. Una caída del comercio mundial a comienzos del siglo XV redujo la demanda de oro, nuevas rutas por el Zambeze lo dejaron de lado y quizá se agotó la tierra alrededor de una ciudad de miles de habitantes. La gente siguió viviendo allí uno o dos siglos más, pero los reyes se habían ido. Mutapa comerció oro y marfil con la costa y más tarde combatió a los portugueses, y a veces se sometió a ellos."
+      },
+      "control": {
+        "zimbabwe": null,
+        "mutapa": {
+          "minus": [
+            {
+              "hist": "Mwenemutapa",
+              "year": 1492
+            },
+            {
+              "ref": "butua"
+            }
+          ]
+        },
+        "butua": {
+          "ref": "butua"
+        }
+      },
+      "places": [
+        {
+          "id": "mutapa-empire",
+          "name": {
+            "en": "Mutapa Empire",
+            "es": "Imperio de Monomotapa"
+          },
+          "at": [
+            31.2,
+            -16.4
+          ],
+          "cat": "culture",
+          "type": "culture",
+          "date": "1450",
+          "until": "1760",
+          "place": {
+            "en": "Northern Zimbabwe plateau and Zambezi valley",
+            "es": "Norte de la meseta de Zimbabue y valle del Zambeze"
+          },
+          "text": {
+            "en": "A Shona empire in the north of the Zimbabwe plateau, whose rulers took the title Mwenemutapa, \"lord of the conquered lands\", which the Portuguese wrote as Monomotapa.",
+            "es": "Un imperio shona en el norte de la meseta de Zimbabue, cuyos soberanos usaban el título de Mwenemutapa, «señor de las tierras conquistadas», que los portugueses escribieron Monomotapa."
+          },
+          "wiki": {
+            "en": "Mutapa Empire",
+            "es": "Monomotapa"
+          }
+        },
+        {
+          "id": "nyatsimba-mutota",
+          "name": {
+            "en": "Nyatsimba Mutota",
+            "es": "Nyatsimba Mutota"
+          },
+          "at": [
+            31.0,
+            -16.2
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1430",
+          "place": {
+            "en": "Dande, northern Zimbabwe",
+            "es": "Dande, norte de Zimbabue"
+          },
+          "text": {
+            "en": "According to oral tradition, a prince of Great Zimbabwe who led his people north in search of salt in the 15th century and founded the Mutapa state. Some historians think he is partly symbolic.",
+            "es": "Según la tradición oral, un príncipe del Gran Zimbabue que llevó a su gente al norte en busca de sal en el siglo XV y fundó el estado de Mutapa. Algunos historiadores creen que es en parte simbólico."
+          },
+          "wiki": {
+            "en": "Nyatsimba Mutota",
+            "es": "Monomotapa"
+          }
+        },
+        {
+          "id": "khami",
+          "name": {
+            "en": "Khami",
+            "es": "Khami"
+          },
+          "at": [
+            28.377,
+            -20.158
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1450",
+          "until": "1683",
+          "place": {
+            "en": "West of Bulawayo, Zimbabwe",
+            "es": "Al oeste de Bulawayo, Zimbabue"
+          },
+          "text": {
+            "en": "The capital of the Torwa kings of Butua, built on stone terraces decorated with checkerboard and herringbone patterns, until it was burned around 1683. A UNESCO site.",
+            "es": "La capital de los reyes torwa de Butua, construida sobre terrazas de piedra decoradas con dibujos en damero y en espiga, hasta que fue incendiada hacia 1683. Patrimonio de la Humanidad."
+          },
+          "wiki": {
+            "en": "Khami",
+            "es": "Khami"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1498-04",
+      "title": {
+        "en": "Vasco da Gama on the coast",
+        "es": "Vasco da Gama en la costa"
+      },
+      "camera": {
+        "lon": 48.0,
+        "lat": -10.0,
+        "zoom": 2.2
+      },
+      "text": {
+        "en": "In 1498 Portuguese ships under Vasco da Gama sailed up the coast. Mozambique and Mombasa turned them away; Malindi, Mombasa's rival, welcomed them and gave them a pilot for India.",
+        "es": "En 1498 los barcos portugueses de Vasco da Gama remontaron la costa. Mozambique y Mombasa los rechazaron; Malindi, rival de Mombasa, los acogió y les dio un piloto para la India."
+      },
+      "control": {
+        "swahili": {
+          "ref": "swahili_1500"
+        }
+      },
+      "moves": [
+        {
+          "side": "portugal",
+          "path": [
+            [
+              18.5,
+              -34.4
+            ],
+            [
+              25.0,
+              -34.3
+            ],
+            [
+              32.5,
+              -28.5
+            ],
+            [
+              35.5,
+              -24.0
+            ],
+            [
+              35.3,
+              -20.0
+            ],
+            [
+              40.8,
+              -15.0
+            ],
+            [
+              40.5,
+              -10.0
+            ],
+            [
+              39.8,
+              -6.0
+            ],
+            [
+              39.68,
+              -4.06
+            ],
+            [
+              40.12,
+              -3.22
+            ],
+            [
+              58.0,
+              6.0
+            ],
+            [
+              70.0,
+              10.0
+            ],
+            [
+              75.78,
+              11.25
+            ]
+          ],
+          "label": {
+            "en": "Da Gama's fleet to India, 1498",
+            "es": "La flota de da Gama hacia la India, 1498"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "vasco-da-gama",
+          "name": {
+            "en": "Vasco da Gama",
+            "es": "Vasco da Gama"
+          },
+          "at": [
+            40.12,
+            -3.205
+          ],
+          "cat": "journey",
+          "type": "person",
+          "date": "1498",
+          "life": [
+            "1469",
+            "1524"
+          ],
+          "place": {
+            "en": "On the coast of East Africa in March–April 1498",
+            "es": "En la costa de África oriental en marzo y abril de 1498"
+          },
+          "text": {
+            "en": "The Portuguese captain whose fleet rounded southern Africa. At Mozambique and Mombasa he met hostility and fired on the towns; at Malindi the sultan gave him a pilot to India.",
+            "es": "El capitán portugués cuya flota dobló el sur de África. En Mozambique y Mombasa encontró hostilidad y disparó contra las ciudades; en Malindi el sultán le dio un piloto para llegar a la India."
+          },
+          "details": {
+            "en": "The Portuguese arrived poor in goods and rich in guns. Da Gama posed as a Muslim at Mozambique, seized merchant ships off the Kenyan coast, and at Malindi, whose sultan was at odds with Mombasa, hired a Gujarati pilot who knew the monsoon route; later tradition wrongly named the Arab navigator Ibn Majid. In 1502 he came back with warships and forced Kilwa to pay tribute.",
+            "es": "Los portugueses llegaron pobres en mercancías y ricos en cañones. Da Gama se hizo pasar por musulmán en Mozambique, capturó barcos mercantes frente a la costa de Kenia y en Malindi, cuyo sultán estaba enfrentado con Mombasa, contrató a un piloto guyaratí que conocía la ruta del monzón; una tradición posterior nombró por error al navegante árabe Ibn Mayid. En 1502 volvió con barcos de guerra y obligó a Kilwa a pagar tributo."
+          },
+          "wiki": {
+            "en": "Vasco da Gama",
+            "es": "Vasco da Gama"
+          }
+        },
+        {
+          "id": "island-of-mozambique",
+          "name": {
+            "en": "Island of Mozambique",
+            "es": "Isla de Mozambique"
+          },
+          "at": [
+            40.7358,
+            -15.0347
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1000",
+          "place": {
+            "en": "Nampula Province, Mozambique",
+            "es": "Provincia de Nampula, Mozambique"
+          },
+          "text": {
+            "en": "A Swahili trading island where da Gama stopped in March 1498. The Portuguese later made it their capital in East Africa and built the fortress of São Sebastião; it gave its name to Mozambique.",
+            "es": "Una isla comercial suajili donde da Gama se detuvo en marzo de 1498. Los portugueses la hicieron después su capital en África oriental y construyeron la fortaleza de São Sebastião; dio su nombre a Mozambique."
+          },
+          "wiki": {
+            "en": "Island of Mozambique",
+            "es": "Isla de Mozambique"
+          }
+        },
+        {
+          "id": "vasco-da-gama-pillar",
+          "name": {
+            "en": "Vasco da Gama Pillar",
+            "es": "Pilar de Vasco da Gama"
+          },
+          "at": [
+            40.126,
+            -3.224
+          ],
+          "cat": "place",
+          "type": "structure",
+          "date": "1498",
+          "place": {
+            "en": "Malindi, Kenya",
+            "es": "Malindi, Kenia"
+          },
+          "text": {
+            "en": "A stone column topped by a cross, a padrão that the Portuguese raised at Malindi in 1498 to claim the route; it still stands on a headland above the beach.",
+            "es": "Una columna de piedra rematada por una cruz, un padrão que los portugueses levantaron en Malindi en 1498 para reclamar la ruta; todavía se alza en un promontorio sobre la playa."
+          },
+          "wiki": {
+            "en": "Padrão",
+            "es": "Padrão"
+          }
+        },
+        {
+          "id": "malindi",
+          "name": {
+            "en": "Malindi",
+            "es": "Malindi"
+          },
+          "at": [
+            40.1191,
+            -3.2175
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1100",
+          "place": {
+            "en": "Malindi, Kenya",
+            "es": "Malindi, Kenia"
+          },
+          "text": {
+            "en": "A Swahili town at the mouth of the Galana River, rival of Mombasa. Its rulers sent envoys to China and later welcomed the Portuguese, who were enemies of Mombasa.",
+            "es": "Una ciudad suajili en la desembocadura del río Galana, rival de Mombasa. Sus gobernantes enviaron embajadores a China y luego acogieron a los portugueses, enemigos de Mombasa."
+          },
+          "wiki": {
+            "en": "Malindi",
+            "es": "Malindi"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1505-07",
+      "title": {
+        "en": "The sack of Kilwa and Mombasa",
+        "es": "El saqueo de Kilwa y Mombasa"
+      },
+      "camera": {
+        "lon": 40.0,
+        "lat": -11.0,
+        "zoom": 3.4
+      },
+      "text": {
+        "en": "In 1505 a Portuguese fleet under Francisco de Almeida stormed Kilwa and Mombasa, burned and plundered them and built forts. The Portuguese seized the gold trade, and the Swahili towns declined.",
+        "es": "En 1505 una flota portuguesa al mando de Francisco de Almeida asaltó Kilwa y Mombasa, las incendió y saqueó y construyó fuertes. Los portugueses se apoderaron del comercio del oro y las ciudades suajilis decayeron."
+      },
+      "control": {
+        "portugal": {
+          "ref": "portuguese_1505"
+        },
+        "swahili": {
+          "minus": [
+            {
+              "ref": "swahili_1500"
+            },
+            {
+              "ref": "portuguese_1505"
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "icon": "🔥",
+          "date": "1505-07",
+          "at": [
+            39.51,
+            -8.96
+          ],
+          "text": {
+            "en": "Portuguese troops storm and loot Kilwa",
+            "es": "Tropas portuguesas asaltan y saquean Kilwa"
+          }
+        },
+        {
+          "icon": "🔥",
+          "date": "1505-08",
+          "at": [
+            39.68,
+            -4.06
+          ],
+          "text": {
+            "en": "Mombasa is burned and plundered",
+            "es": "Mombasa es incendiada y saqueada"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "francisco-de-almeida",
+          "name": {
+            "en": "Francisco de Almeida",
+            "es": "Francisco de Almeida"
+          },
+          "at": [
+            39.52,
+            -8.955
+          ],
+          "cat": "war",
+          "type": "person",
+          "date": "1505",
+          "life": [
+            "1450",
+            "1510"
+          ],
+          "place": {
+            "en": "Attacked Kilwa and Mombasa, Tanzania and Kenya, in 1505",
+            "es": "Atacó Kilwa y Mombasa, en Tanzania y Kenia, en 1505"
+          },
+          "text": {
+            "en": "The first Portuguese viceroy of India. On his way out in 1505 his fleet stormed Kilwa in July and Mombasa in August, burning and plundering them.",
+            "es": "El primer virrey portugués de la India. De camino, en 1505, su flota asaltó Kilwa en julio y Mombasa en agosto, y las incendió y saqueó."
+          },
+          "details": {
+            "en": "At Kilwa the sultan fled and the Portuguese installed a ruler of their own and built a fort. At Mombasa, a town of perhaps 10,000 people, they fought street by street, set the town on fire and carried off everything they could; a letter from Mombasa's king to Malindi lamented the destruction. The Portuguese wanted to control the gold of Sofala and tax all ships, and their violence ruined the old free trade of the coast.",
+            "es": "En Kilwa el sultán huyó y los portugueses pusieron a un gobernante propio y construyeron un fuerte. En Mombasa, una ciudad de quizá 10 000 habitantes, lucharon calle por calle, prendieron fuego a la ciudad y se llevaron todo lo que pudieron; una carta del rey de Mombasa al de Malindi lamentaba la destrucción. Los portugueses querían controlar el oro de Sofala y cobrar impuestos a todos los barcos, y su violencia arruinó el antiguo comercio libre de la costa."
+          },
+          "wiki": {
+            "en": "Francisco de Almeida",
+            "es": "Francisco de Almeida"
+          }
+        },
+        {
+          "id": "fort-jesus",
+          "name": {
+            "en": "Fort Jesus",
+            "es": "Fuerte Jesús"
+          },
+          "at": [
+            39.6795,
+            -4.0626
+          ],
+          "cat": "war",
+          "type": "structure",
+          "date": "1593",
+          "place": {
+            "en": "Mombasa, Kenya",
+            "es": "Mombasa, Kenia"
+          },
+          "text": {
+            "en": "A Portuguese fortress built in 1593–1596 to guard Mombasa harbour, designed by the Italian Giovanni Battista Cairati. It is now a museum and a UNESCO site.",
+            "es": "Una fortaleza portuguesa construida en 1593-1596 para vigilar el puerto de Mombasa, diseñada por el italiano Giovanni Battista Cairati. Hoy es un museo y Patrimonio de la Humanidad."
+          },
+          "status": {
+            "en": "Standing; museum; UNESCO World Heritage Site since 2011",
+            "es": "En pie; museo; Patrimonio de la Humanidad desde 2011"
+          },
+          "wiki": {
+            "en": "Fort Jesus",
+            "es": "Fuerte Jesús"
+          }
+        },
+        {
+          "id": "kilwa-kisiwani",
+          "name": {
+            "en": "Kilwa Kisiwani",
+            "es": "Kilwa Kisiwani"
+          },
+          "at": [
+            39.5125,
+            -8.9575
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1000",
+          "place": {
+            "en": "Kilwa Kisiwani island, Tanzania",
+            "es": "Isla de Kilwa Kisiwani, Tanzania"
+          },
+          "text": {
+            "en": "An island city-state that grew in the 11th–12th centuries and at its height had over 10,000 people and a sultan whose power reached along the whole Swahili coast.",
+            "es": "Una ciudad-estado insular que creció en los siglos XI y XII y en su apogeo tenía más de 10 000 habitantes y un sultán cuyo poder llegaba a toda la costa suajili."
+          },
+          "details": {
+            "en": "The Kilwa Chronicle tells that a Persian prince, Ali ibn al-Hassan of Shiraz, bought the island from a local king for as much coloured cloth as would go round it. Historians read the story as a claim of noble foreign roots: the people of Kilwa were Swahili, an African people of the coast who had become Muslim and traded across the ocean. The ruins of Kilwa and nearby Songo Mnara are a UNESCO site.",
+            "es": "La Crónica de Kilwa cuenta que un príncipe persa, Ali ibn al-Hassan de Shiraz, compró la isla a un rey local por tanta tela de colores como hiciera falta para rodearla. Los historiadores leen el relato como una pretensión de nobles raíces extranjeras: la gente de Kilwa era suajili, un pueblo africano de la costa que se había hecho musulmán y comerciaba a través del océano. Las ruinas de Kilwa y la cercana Songo Mnara son Patrimonio de la Humanidad."
+          },
+          "status": {
+            "en": "Ruins and a small town; UNESCO World Heritage Site since 1981",
+            "es": "Ruinas y un pequeño pueblo; Patrimonio de la Humanidad desde 1981"
+          },
+          "wiki": {
+            "en": "Kilwa Kisiwani",
+            "es": "Kilwa Kisiwani"
+          }
+        },
+        {
+          "id": "mombasa",
+          "name": {
+            "en": "Mombasa",
+            "es": "Mombasa"
+          },
+          "at": [
+            39.679,
+            -4.062
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1100",
+          "place": {
+            "en": "Mombasa, Kenya",
+            "es": "Mombasa, Kenia"
+          },
+          "text": {
+            "en": "An island port that rivalled Kilwa and Malindi. Ibn Battuta stayed there in 1331 and noted that its people grew no grain but bought it from the mainland.",
+            "es": "Un puerto insular que rivalizó con Kilwa y Malindi. Ibn Battuta se alojó allí en 1331 y anotó que su gente no cultivaba cereal, sino que lo compraba en el continente."
+          },
+          "wiki": {
+            "en": "Mombasa",
+            "es": "Mombasa"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1698",
+      "title": {
+        "en": "Oman and Zanzibar",
+        "es": "Omán y Zanzíbar"
+      },
+      "camera": {
+        "lon": 47.0,
+        "lat": 4.0,
+        "zoom": 2.2
+      },
+      "text": {
+        "en": "In 1698 an Omani army took Fort Jesus after a siege of almost three years. Oman became master of the coast, and in 1840 its sultan moved his capital to Zanzibar, centre of a brutal slave trade.",
+        "es": "En 1698 un ejército omaní tomó el Fuerte Jesús tras un asedio de casi tres años. Omán se adueñó de la costa y en 1840 su sultán trasladó su capital a Zanzíbar, centro de una brutal trata de esclavos."
+      },
+      "control": {
+        "swahili": {
+          "ref": "lamu_1700"
+        },
+        "portugal": {
+          "hist": "Portuguese East Africa",
+          "year": 1700
+        },
+        "oman": [
+          {
+            "hist": "Oman",
+            "year": 1700
+          },
+          {
+            "ref": "oman_coast"
+          }
+        ],
+        "mutapa": null,
+        "butua": null
+      },
+      "places": [
+        {
+          "id": "siege-of-fort-jesus",
+          "name": {
+            "en": "Siege of Fort Jesus",
+            "es": "Asedio del Fuerte Jesús"
+          },
+          "at": [
+            39.681,
+            -4.064
+          ],
+          "cat": "war",
+          "type": "event",
+          "date": "1696",
+          "end": "1698",
+          "place": {
+            "en": "Mombasa, Kenya",
+            "es": "Mombasa, Kenia"
+          },
+          "text": {
+            "en": "From 1696 to 1698 an Omani army besieged Fort Jesus for almost three years, until plague and hunger left only a handful of defenders. Its fall ended Portuguese power north of Mozambique.",
+            "es": "De 1696 a 1698 un ejército omaní asedió el Fuerte Jesús casi tres años, hasta que la peste y el hambre dejaron solo a un puñado de defensores. Su caída acabó con el poder portugués al norte de Mozambique."
+          },
+          "wiki": {
+            "en": "Siege of Mombasa (1696–1698)",
+            "es": "Fuerte Jesús"
+          }
+        },
+        {
+          "id": "stone-town",
+          "name": {
+            "en": "Stone Town, Zanzibar",
+            "es": "Stone Town, Zanzíbar"
+          },
+          "at": [
+            39.1921,
+            -6.1622
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1830",
+          "place": {
+            "en": "Zanzibar City, Tanzania",
+            "es": "Ciudad de Zanzíbar, Tanzania"
+          },
+          "text": {
+            "en": "The old town of Zanzibar, with its carved wooden doors, coral-stone houses and palaces. In 1840 Sultan Said bin Sultan of Oman made it his capital.",
+            "es": "El casco antiguo de Zanzíbar, con sus puertas de madera tallada, sus casas de piedra de coral y sus palacios. En 1840 el sultán Said bin Sultan de Omán lo hizo su capital."
+          },
+          "status": {
+            "en": "Living city; UNESCO World Heritage Site since 2000",
+            "es": "Ciudad viva; Patrimonio de la Humanidad desde 2000"
+          },
+          "wiki": {
+            "en": "Stone Town",
+            "es": "Stone Town"
+          }
+        },
+        {
+          "id": "zanzibar-slave-trade",
+          "name": {
+            "en": "The Zanzibar slave trade",
+            "es": "La trata de esclavos de Zanzíbar"
+          },
+          "at": [
+            39.195,
+            -6.166
+          ],
+          "cat": "trade",
+          "type": "event",
+          "date": "1840",
+          "until": "1909",
+          "place": {
+            "en": "Zanzibar slave market (now Christ Church Cathedral), Tanzania",
+            "es": "Mercado de esclavos de Zanzíbar (hoy catedral de Christ Church), Tanzania"
+          },
+          "text": {
+            "en": "In the 19th century caravans brought hundreds of thousands of captives from the interior to the coast. Enslaved people worked Zanzibar's clove plantations or were shipped to Arabia and beyond.",
+            "es": "En el siglo XIX las caravanas llevaron cientos de miles de cautivos del interior a la costa. Las personas esclavizadas trabajaban en las plantaciones de clavo de Zanzíbar o eran enviadas a Arabia y más allá."
+          },
+          "details": {
+            "en": "Slavery on the coast was old, but it grew enormously under Omani rule, when cloves and ivory made Zanzibar rich; by some estimates enslaved people were up to two-thirds of the islands' population. Many died on the long march from the Great Lakes. Under British pressure the open slave market closed in 1873, and an Anglican cathedral was built on its site; slavery itself was abolished only in 1897–1909.",
+            "es": "La esclavitud en la costa era antigua, pero creció enormemente bajo el dominio omaní, cuando el clavo y el marfil enriquecieron Zanzíbar; según algunas estimaciones, las personas esclavizadas llegaron a ser dos tercios de la población de las islas. Muchas murieron en la larga marcha desde los Grandes Lagos. Por presión británica, el mercado de esclavos se cerró en 1873 y en su lugar se construyó una catedral anglicana; la esclavitud misma solo se abolió en 1897-1909."
+          },
+          "wiki": {
+            "en": "Slavery in Zanzibar",
+            "es": "Esclavitud en África"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1871",
+      "title": {
+        "en": "Who built Great Zimbabwe?",
+        "es": "¿Quién construyó el Gran Zimbabue?"
+      },
+      "camera": {
+        "lon": 31.0,
+        "lat": -19.5,
+        "zoom": 7
+      },
+      "text": {
+        "en": "From 1871 European visitors and settlers claimed that Africans could not have built Great Zimbabwe. Archaeologists proved in 1905 and 1929 that they had, yet Rhodesia's government kept denying it.",
+        "es": "Desde 1871 los visitantes y colonos europeos afirmaron que los africanos no podían haber construido el Gran Zimbabue. Los arqueólogos demostraron en 1905 y 1929 que sí, pero el gobierno de Rodesia siguió negándolo."
+      },
+      "details": {
+        "en": "The myth had a purpose. Cecil Rhodes's British South Africa Company conquered the region in the 1890s, and stories of Phoenicians, Arabs or the Queen of Sheba made the land look like a lost white or \"Semitic\" heritage waiting to be reclaimed, not a country with its own history. Looters carried off gold and the Zimbabwe Birds. African scholars and the Shona people, who had always known whose ancestors built it, were not listened to.",
+        "es": "El mito tenía un propósito. La Compañía Británica de Sudáfrica de Cecil Rhodes conquistó la región en la década de 1890, y los relatos de fenicios, árabes o la reina de Saba hacían parecer la tierra una herencia blanca o «semita» perdida, esperando ser recuperada, y no un país con su propia historia. Los saqueadores se llevaron oro y las Aves de Zimbabue. A los estudiosos africanos y al pueblo shona, que siempre supieron qué antepasados la construyeron, no se los escuchó."
+      },
+      "control": {
+        "swahili": null,
+        "portugal": null,
+        "oman": null
+      },
+      "places": [
+        {
+          "id": "karl-mauch",
+          "name": {
+            "en": "Karl Mauch",
+            "es": "Karl Mauch"
+          },
+          "at": [
+            30.931,
+            -20.264
+          ],
+          "cat": "journey",
+          "type": "person",
+          "date": "1871",
+          "life": [
+            "1837",
+            "1875"
+          ],
+          "place": {
+            "en": "At Great Zimbabwe in 1871; German explorer",
+            "es": "En el Gran Zimbabue en 1871; explorador alemán"
+          },
+          "text": {
+            "en": "A German geologist shown the ruins in 1871. He refused to believe Africans had built them and claimed they were a copy of the Queen of Sheba's palace, a myth settlers loved.",
+            "es": "Un geólogo alemán al que mostraron las ruinas en 1871. Se negó a creer que las hubieran construido africanos y afirmó que eran una copia del palacio de la reina de Saba, un mito que encantó a los colonos."
+          },
+          "wiki": {
+            "en": "Karl Mauch",
+            "es": "Karl Mauch"
+          }
+        },
+        {
+          "id": "theodore-bent",
+          "name": {
+            "en": "Theodore Bent and the treasure hunters",
+            "es": "Theodore Bent y los buscadores de tesoros"
+          },
+          "at": [
+            30.937,
+            -20.274
+          ],
+          "cat": "place",
+          "type": "event",
+          "date": "1891",
+          "place": {
+            "en": "Great Zimbabwe, Zimbabwe",
+            "es": "Gran Zimbabue, Zimbabue"
+          },
+          "text": {
+            "en": "With Cecil Rhodes's money, Theodore Bent dug recklessly in 1891 and blamed \"Phoenicians\" or \"Arabs\". Treasure seekers then looted gold and wrecked the layers that held the site's history.",
+            "es": "Con el dinero de Cecil Rhodes, Theodore Bent excavó sin cuidado en 1891 y atribuyó la obra a «fenicios» o «árabes». Luego los buscadores de tesoros saquearon el oro y destruyeron las capas que guardaban la historia del sitio."
+          },
+          "wiki": {
+            "en": "James Theodore Bent",
+            "es": "Gran Zimbabue"
+          }
+        },
+        {
+          "id": "caton-thompson",
+          "name": {
+            "en": "Gertrude Caton Thompson",
+            "es": "Gertrude Caton Thompson"
+          },
+          "at": [
+            30.9325,
+            -20.27
+          ],
+          "cat": "knowledge",
+          "type": "person",
+          "date": "1929",
+          "life": [
+            "1888",
+            "1985"
+          ],
+          "place": {
+            "en": "Excavated at Great Zimbabwe in 1929; British archaeologist",
+            "es": "Excavó en el Gran Zimbabue en 1929; arqueóloga británica"
+          },
+          "text": {
+            "en": "After David Randall-MacIver in 1905, she proved in 1929 that the city was medieval and African: every object she found fitted \"Bantu origin and medieval date\".",
+            "es": "Después de David Randall-MacIver en 1905, demostró en 1929 que la ciudad era medieval y africana: todos los objetos que halló encajaban con un «origen bantú y fecha medieval»."
+          },
+          "details": {
+            "en": "The evidence was clear, yet the denial went on, because it served colonial rule: if Africans had built Great Zimbabwe, the settlers' claim to be bringing civilisation fell apart. In the 1960s and 1970s the white-minority government of Rhodesia officially held that non-Africans had built it, and censored guidebooks, museum displays, school books and radio. Archaeologists who said otherwise were threatened with losing their jobs, and some left the country.",
+            "es": "Las pruebas eran claras y, sin embargo, la negación continuó, porque servía al dominio colonial: si los africanos habían construido el Gran Zimbabue, se venía abajo la pretensión de los colonos de traer la civilización. En los años sesenta y setenta el gobierno de minoría blanca de Rodesia sostuvo oficialmente que lo habían construido no africanos, y censuró guías, exposiciones de museo, libros escolares y la radio. Los arqueólogos que decían lo contrario fueron amenazados con perder su empleo, y algunos dejaron el país."
+          },
+          "wiki": {
+            "en": "Gertrude Caton Thompson",
+            "es": "Gertrude Caton Thompson"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1980",
+      "title": {
+        "en": "What remains",
+        "es": "Lo que queda"
+      },
+      "camera": {
+        "lon": 35.0,
+        "lat": -12.0,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "In 1980 Rhodesia became Zimbabwe, named after the stone city. Great Zimbabwe, Khami, Mapungubwe, Kilwa, Lamu, Stone Town and Fort Jesus are World Heritage Sites, and tens of millions speak Swahili.",
+        "es": "En 1980 Rodesia pasó a llamarse Zimbabue, por la ciudad de piedra. El Gran Zimbabue, Khami, Mapungubwe, Kilwa, Lamu, Stone Town y el Fuerte Jesús son Patrimonio de la Humanidad, y decenas de millones de personas hablan suajili."
+      },
+      "aftermath": true,
+      "places": [
+        {
+          "id": "flag-of-zimbabwe",
+          "name": {
+            "en": "Flag of Zimbabwe",
+            "es": "Bandera de Zimbabue"
+          },
+          "at": [
+            31.0522,
+            -17.8292
+          ],
+          "cat": "art",
+          "type": "work",
+          "date": "1980",
+          "place": {
+            "en": "Harare, Zimbabwe",
+            "es": "Harare, Zimbabue"
+          },
+          "text": {
+            "en": "When Rhodesia became independent under majority rule in 1980, it took the name Zimbabwe from the stone city and put a Zimbabwe Bird on its flag.",
+            "es": "Cuando Rodesia se independizó con un gobierno de la mayoría en 1980, tomó el nombre de Zimbabue de la ciudad de piedra y puso un Ave de Zimbabue en su bandera."
+          },
+          "wiki": {
+            "en": "Flag of Zimbabwe",
+            "es": "Bandera de Zimbabue"
+          }
+        },
+        {
+          "id": "great-zimbabwe",
+          "name": {
+            "en": "Great Zimbabwe",
+            "es": "Gran Zimbabue"
+          },
+          "at": [
+            30.9339,
+            -20.2675
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1100",
+          "until": "1550",
+          "place": {
+            "en": "Masvingo, Zimbabwe",
+            "es": "Masvingo, Zimbabue"
+          },
+          "text": {
+            "en": "A city of dry-stone walls covering about 7 km², built from the 11th to the 15th century by ancestors of the Shona people. It was the capital of a kingdom that controlled gold and cattle.",
+            "es": "Una ciudad de muros de piedra seca que ocupaba unos 7 km², construida entre los siglos XI y XV por antepasados del pueblo shona. Fue la capital de un reino que controlaba el oro y el ganado."
+          },
+          "details": {
+            "en": "\"Zimbabwe\" comes from Shona words meaning \"houses of stone\". There were three parts: the Hill Complex, oldest and probably royal and sacred; the Great Enclosure in the valley; and the Valley Complex. Estimates of its population range from 10,000 to about 20,000; most people lived in houses of mud and thatch. Chinese porcelain, Persian pottery and glass beads found there show its trade links with the coast.",
+            "es": "«Zimbabue» viene de palabras shona que significan «casas de piedra». Tenía tres partes: el Complejo de la Colina, el más antiguo y probablemente real y sagrado; el Gran Recinto en el valle; y el Complejo del Valle. Las estimaciones de su población van de 10 000 a unas 20 000 personas; la mayoría vivía en casas de barro y paja. La porcelana china, la cerámica persa y las cuentas de vidrio halladas allí muestran sus vínculos comerciales con la costa."
+          },
+          "status": {
+            "en": "Ruins; UNESCO World Heritage Site since 1986",
+            "es": "Ruinas; Patrimonio de la Humanidad desde 1986"
+          },
+          "wiki": {
+            "en": "Great Zimbabwe",
+            "es": "Gran Zimbabue"
+          }
+        },
+        {
+          "id": "lamu",
+          "name": {
+            "en": "Lamu Old Town",
+            "es": "Ciudad vieja de Lamu"
+          },
+          "at": [
+            40.902,
+            -2.2717
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1370",
+          "place": {
+            "en": "Lamu Island, Kenya",
+            "es": "Isla de Lamu, Kenia"
+          },
+          "text": {
+            "en": "The oldest and best-preserved Swahili town still lived in, with narrow lanes, coral-stone houses and donkeys instead of cars. A UNESCO site since 2001.",
+            "es": "La ciudad suajili más antigua y mejor conservada que sigue habitada, con callejuelas, casas de piedra de coral y burros en lugar de autos. Patrimonio de la Humanidad desde 2001."
+          },
+          "wiki": {
+            "en": "Lamu",
+            "es": "Lamu (Kenia)"
+          }
+        },
+        {
+          "id": "stone-town",
+          "name": {
+            "en": "Stone Town, Zanzibar",
+            "es": "Stone Town, Zanzíbar"
+          },
+          "at": [
+            39.1921,
+            -6.1622
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1830",
+          "place": {
+            "en": "Zanzibar City, Tanzania",
+            "es": "Ciudad de Zanzíbar, Tanzania"
+          },
+          "text": {
+            "en": "The old town of Zanzibar, with its carved wooden doors, coral-stone houses and palaces. In 1840 Sultan Said bin Sultan of Oman made it his capital.",
+            "es": "El casco antiguo de Zanzíbar, con sus puertas de madera tallada, sus casas de piedra de coral y sus palacios. En 1840 el sultán Said bin Sultan de Omán lo hizo su capital."
+          },
+          "status": {
+            "en": "Living city; UNESCO World Heritage Site since 2000",
+            "es": "Ciudad viva; Patrimonio de la Humanidad desde 2000"
+          },
+          "wiki": {
+            "en": "Stone Town",
+            "es": "Stone Town"
+          }
+        },
+        {
+          "id": "swahili-language",
+          "name": {
+            "en": "Swahili language",
+            "es": "Idioma suajili"
+          },
+          "at": [
+            39.665,
+            -4.05
+          ],
+          "cat": "writing",
+          "type": "culture",
+          "date": "1100",
+          "place": {
+            "en": "Swahili coast, from Somalia to Mozambique",
+            "es": "Costa suajili, de Somalia a Mozambique"
+          },
+          "text": {
+            "en": "A Bantu language of the coast with many words borrowed from Arabic (sawahil means \"coasts\"). It was written in Arabic letters for centuries and its poets wrote long epics.",
+            "es": "Una lengua bantú de la costa con muchas palabras tomadas del árabe (sawahil significa «costas»). Durante siglos se escribió con letras árabes y sus poetas compusieron largas epopeyas."
+          },
+          "wiki": {
+            "en": "Swahili",
+            "es": "Idioma suajili"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Great Zimbabwe and the Swahili towns show African states building in stone, minting coins, writing poetry and trading across an ocean long before Europeans arrived. Portuguese violence and, later, Omani slave plantations and colonial rule broke that world, and colonial myths tried to erase its builders. Today Zimbabwe bears the city's name and Swahili is one of Africa's great languages.",
+    "es": "El Gran Zimbabue y las ciudades suajilis muestran estados africanos que construían en piedra, acuñaban monedas, escribían poesía y comerciaban a través de un océano mucho antes de que llegaran los europeos. La violencia portuguesa y, después, las plantaciones esclavistas omaníes y el dominio colonial rompieron ese mundo, y los mitos coloniales intentaron borrar a sus constructores. Hoy Zimbabue lleva el nombre de la ciudad y el suajili es una de las grandes lenguas de África."
+  },
+  "sources": [
+    {
+      "title": "Swahili coast (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Swahili_coast"
+    },
+    {
+      "title": "Shanga (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shanga"
+    },
+    {
+      "title": "Unguja Ukuu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Unguja_Ukuu"
+    },
+    {
+      "title": "Zanj Rebellion (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zanj_Rebellion"
+    },
+    {
+      "title": "Kingdom of Mapungubwe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Mapungubwe"
+    },
+    {
+      "title": "Golden Rhinoceros of Mapungubwe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Golden_Rhinoceros_of_Mapungubwe"
+    },
+    {
+      "title": "Kilwa Kisiwani (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kilwa_Kisiwani"
+    },
+    {
+      "title": "Kilwa Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kilwa_Sultanate"
+    },
+    {
+      "title": "Great Mosque of Kilwa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Mosque_of_Kilwa"
+    },
+    {
+      "title": "Swahili (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Swahili"
+    },
+    {
+      "title": "Great Zimbabwe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Zimbabwe"
+    },
+    {
+      "title": "Kingdom of Great Zimbabwe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Great_Zimbabwe"
+    },
+    {
+      "title": "Zimbabwe Bird (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zimbabwe_Bird"
+    },
+    {
+      "title": "Sofala (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sofala"
+    },
+    {
+      "title": "Ibn Battuta (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ibn_Battuta"
+    },
+    {
+      "title": "Malindi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Malindi"
+    },
+    {
+      "title": "Qilin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Qilin"
+    },
+    {
+      "title": "Ming treasure voyages (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ming_treasure_voyages"
+    },
+    {
+      "title": "Mutapa Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mutapa_Empire"
+    },
+    {
+      "title": "Khami (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khami"
+    },
+    {
+      "title": "Vasco da Gama (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vasco_da_Gama"
+    },
+    {
+      "title": "Francisco de Almeida (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Francisco_de_Almeida"
+    },
+    {
+      "title": "Fort Jesus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fort_Jesus"
+    },
+    {
+      "title": "Slavery in Zanzibar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Slavery_in_Zanzibar"
+    },
+    {
+      "title": "Gertrude Caton Thompson (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gertrude_Caton_Thompson"
+    }
+  ]
+}
