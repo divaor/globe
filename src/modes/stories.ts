@@ -576,10 +576,13 @@ export class StoryMode {
       const px = Math.sqrt(a.area) * pxr;
       if (px < 46) continue;
       const p = rc.project(a.lp[0], a.lp[1]);
-      if (!p) continue;
+      // Under the top bar or the story bar it could not be read.
+      if (!p || p[1] < 76 || p[1] > rc.view.h - rc.view.insetBottom - 16) continue;
+      // A long legend name ("Women can vote in national elections") stays small and in lower case.
+      const name = tx(side.name), long = !this.wars && name.length > 24;
       rc.labels.add({
-        text: tx(side.name), x: p[0], y: p[1], priority: 950 + Math.min(300, px), size: Math.max(10.5, Math.min(16, 8 + px / 45)),
-        weight: 800, caps: px > 140, color: '#ffffff', halo: darker(side.color, 0.55),
+        text: name, x: p[0], y: p[1], priority: 950 + Math.min(300, px), size: long ? Math.max(10.5, Math.min(13, 8 + px / 60)) : Math.max(10.5, Math.min(16, 8 + px / 45)),
+        weight: 800, caps: px > 140 && !long, color: '#ffffff', halo: darker(side.color, 0.55),
       });
     }
     (st.battles ?? []).forEach((b, k) => {
