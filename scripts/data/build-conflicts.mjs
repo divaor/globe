@@ -45,12 +45,12 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const DATA = path.join(ROOT, 'public/data');
 
 /** The collections: where their sources and outputs live. */
-export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures' };
+export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people' };
 const srcDir = (kind) => path.join(ROOT, 'scripts/data', KINDS[kind]);
 const outDir = (kind) => path.join(DATA, KINDS[kind]);
-const ITEM_TYPES = ['person', 'work', 'place', 'invention', 'event', 'site', 'dish', 'crop', 'animal', 'structure', 'institution'];
+const ITEM_TYPES = ['person', 'work', 'place', 'invention', 'event', 'site', 'dish', 'crop', 'animal', 'structure', 'institution', 'fossil', 'culture'];
 
-export const ERAS = ['ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
+export const ERAS = ['prehistory', 'ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
 
 // ---------------------------------------------------------------------------------------------
 // Base map pieces, as polygon-clipping MultiPolygons ([polygon][ring][point][x, y]) with boxes.
@@ -315,7 +315,8 @@ function toD3(mp) {
 // Dates: "YYYY", "YYYY-MM" or "YYYY-MM-DD"; negative years are BC (-334 = 334 BC, no year 0).
 
 export function parseDate(s, where) {
-  const m = /^(-?\d{1,6})(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(String(s ?? ''));
+  // Up to ten digits: deep time (7 million years ago is -7000000).
+  const m = /^(-?\d{1,10})(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(String(s ?? ''));
   if (!m) throw new Error(`${where}: date "${s}" must be YYYY, YYYY-MM or YYYY-MM-DD (negative years are BC)`);
   const y = Number(m[1]);
   if (y === 0) throw new Error(`${where}: there is no year 0 (1 BC is -1, AD 1 is 1)`);
@@ -365,6 +366,8 @@ function checkItem(it, where, coll, catalog = false) {
   if (it.type != null && !ITEM_TYPES.includes(it.type)) throw new Error(`${where}: "type" must be one of ${ITEM_TYPES.join(', ')}`);
   const t = parseDate(it.date, `${where}.date`);
   if (it.end != null && parseDate(it.end, `${where}.end`) < t) throw new Error(`${where}: "end" is before "date"`);
+  // "until": when it stopped existing (a civilization's fall, a lost building); time tours hide it after.
+  if (it.until != null && parseDate(it.until, `${where}.until`) < Math.max(t, it.end != null ? parseDate(it.end, '') : t)) throw new Error(`${where}: "until" is before "date" or "end"`);
   if (it.life != null) {
     if (!Array.isArray(it.life) || it.life.length !== 2) throw new Error(`${where}: "life" is ["born", "died"] (died may be null)`);
     parseDate(it.life[0], `${where}.life[0]`);
@@ -376,7 +379,7 @@ function checkItem(it, where, coll, catalog = false) {
   for (const [j, f] of (it.facts ?? []).entries()) { text(f?.label, `${where}.facts[${j}].label`); text(f?.value, `${where}.facts[${j}].value`); }
   if (it.wiki != null && (typeof it.wiki !== 'object' || typeof it.wiki.en !== 'string' || typeof it.wiki.es !== 'string' || !it.wiki.en)) throw new Error(`${where}: "wiki" is { "en": "Article title", "es": "Título del artículo" }`);
   if (it.country != null && !loadCountries().has(it.country)) throw new Error(`${where}: "country" "${it.country}" is not a country code (see --list countries)`);
-  const known = new Set(['id', 'name', 'at', 'cat', 'icon', 'type', 'date', 'end', 'life', 'text', 'facts', 'wiki', 'country', ...ITEM_TEXTS]);
+  const known = new Set(['id', 'name', 'at', 'cat', 'icon', 'type', 'date', 'end', 'until', 'life', 'text', 'facts', 'wiki', 'country', ...ITEM_TEXTS]);
   for (const k of Object.keys(it)) if (!known.has(k)) throw new Error(`${where}: unknown field "${k}"`);
   return t;
 }
@@ -384,7 +387,8 @@ function checkItem(it, where, coll, catalog = false) {
 /** An item as the app gets it: fixed field order, with its time and icon filled in. */
 function normItem(it, coll) {
   const o = { id: it.id, name: it.name, at: it.at.map((v) => Math.round(v * 1e4) / 1e4), cat: it.cat, icon: it.icon ?? coll.cats.get(it.cat).icon, date: it.date, t: parseDate(it.date, '') };
-  for (const k of ['end', 'life', 'type', 'country', 'place', 'text', 'details', 'why', 'how', 'by', 'size', 'status', 'facts', 'wiki']) if (it[k] != null) o[k] = it[k];
+  for (const k of ['end', 'until', 'life', 'type', 'country', 'place', 'text', 'details', 'why', 'how', 'by', 'size', 'status', 'facts', 'wiki']) if (it[k] != null) o[k] = it[k];
+  if (it.until != null) o.tu = parseDate(it.until, '');
   if (o.id == null) delete o.id;
   return o;
 }
@@ -558,12 +562,14 @@ async function build(file, opts) {
   if (wars && !steps.some((s) => Object.values(s.control).some((v) => v !== null))) throw new Error(`${c.id}: no step has any territory`);
   if (c.catalog === 'all') {
     // A time tour: every catalogue item of the story's period (from its start to its last step)
-    // appears on the map from its date on. Older items appear only when a step shows them.
+    // appears on the map from its date on (and goes after its "until"). Older items appear only
+    // when a step shows them, except those still standing in the period ("until" after its start).
     const first = c.start != null ? parseDate(c.start, '') : -Infinity;
     const last = steps[steps.length - 1].t;
     for (const it of [...coll.catalog.values()].sort((a, b) => parseDate(a.date, '') - parseDate(b.date, ''))) {
       const t = parseDate(it.date, '');
-      if (t >= first - 1e-6 && t <= last + 1e-6) addItem(it, -1);
+      const inPeriod = it.until != null ? parseDate(it.until, '') >= first - 1e-6 : t >= first - 1e-6;
+      if (inPeriod && t <= last + 1e-6) addItem(it, -1);
     }
   }
   if (opts.lint) lint(c, steps, areas);
@@ -699,7 +705,7 @@ async function preview(c, topo, dir) {
       const col = new Map(c.cats.map((k) => [k.id, k.color]));
       const now = new Set(st.show);
       c.items.forEach((it, k) => {
-        if (now.has(k) || !((it.first >= 0 && it.first < i) || (it.first === -1 && it.t <= st.t))) return;
+        if (now.has(k) || !((it.first >= 0 && it.first < i) || (it.first === -1 && it.t <= st.t)) || (it.tu != null && it.tu < st.t)) return;
         const xy = proj(it.at);
         if (xy) parts.push(`<circle cx="${xy[0]}" cy="${xy[1]}" r="2.6" fill="${col.get(it.cat)}" fill-opacity="0.75" stroke="#fff" stroke-width="0.8"/>`);
       });

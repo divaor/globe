@@ -1,12 +1,13 @@
-# Eras and ideas, Food through time, Great structures: authoring guide
+# Eras and ideas, Food through time, Great structures, Peoples and civilizations: authoring guide
 
-Three time-travel collections share the story format of Wars and conquests:
+Four time-travel collections share the story format of Wars and conquests:
 
 | Collection | Folder | What a story shows |
 |---|---|---|
 | Eras and ideas | `scripts/data/eras/` | where a movement happened: its cities, people, works, inventions and how the ideas spread |
 | Food through time | `scripts/data/food/` | where crops and animals were tamed, how foods travelled, where dishes were born |
 | Great structures | `scripts/data/structures/` | where and when great structures were built, by whom, why and how |
+| Peoples and civilizations | `scripts/data/people/` | human origins and migrations, and where civilizations rose and fell, with their capitals, works and what remains |
 
 **Read `scripts/data/conflicts/README.md` first.** It covers dates, the camera, sides and their territory
 (`control` with area expressions), `moves` (routes), `events`, `aftermath` and sources, which work the
@@ -39,9 +40,10 @@ same here. `structures/seven-wonders.json` is a complete example that uses the c
 | `at` | `[lon, lat]`, precise (4 decimals) for buildings and sites; for a person, where the step's work happened |
 | `cat` | a category id from `_collection.json` (below) |
 | `icon` | optional emoji; defaults to the category's (✍️ for a writer, 🎭 for a theatre...) |
-| `type` | optional: `person`, `work`, `place`, `invention`, `event`, `site`, `dish`, `crop`, `animal`, `structure`, `institution` (quizzes use it) |
-| `date` | when it happened or was made: a work's creation, an invention, a dish's first record, the start of a building |
+| `type` | optional: `person`, `work`, `place`, `invention`, `event`, `site`, `dish`, `crop`, `animal`, `structure`, `institution`, `fossil` (a fossil find), `culture` (a civilization or people as a whole) (quizzes use it) |
+| `date` | when it happened or was made: a work's creation, an invention, a dish's first record, the start of a building. Dates older than 10,000 BC are written as years ago (14,400 years ago is `-14400`, 3.2 million years ago is `-3200000`); the app shows them as "14,400 years ago" |
 | `end` | optional: when it was finished (a building, a long work) |
+| `until` | optional: when it stopped existing (a civilization's fall, a city abandoned, a building lost). The card shows `date`–`until`, and a time tour takes it off the map after `until` |
 | `life` | people only: `["born", "died"]` dates (`died` may be `null`) |
 | `place` | `{ "en", "es" }`: where, as a reader would say it today ("Florence, Italy") |
 | `text` | **required**: 1–2 sentences (about 220 characters at most): what it is and why it matters |
@@ -70,6 +72,8 @@ across all of them.
 - **Eras:** art, architecture, literature, music, philosophy, science, medicine, technology, exploration,
   politics, learning, economy, space, place.
 - **Food:** crop, animal, site, bread, noodles, rice, stew, street, main, sweet, drink, ferment, spice, trade.
+- **Peoples:** fossil, tools, art, journey, farming, city, temple, ruler, tomb, writing, knowledge, trade, war,
+  person, place, culture.
 - **Structures:** megalith, pyramid, temple, church, mosque, fort, palace, city, bridge, water, tunnel,
   tower, monument, arena, science.
 

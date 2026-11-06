@@ -29,6 +29,8 @@ interface WarEvent { icon: string; text: Text; at?: Pt; date?: string }
 /** A marker of the stories other than wars: a person, work, site, dish, structure... */
 export interface Item {
   id?: string; name: Text; at: Pt; cat: string; icon: string; date: string; t: number; end?: string; life?: [string, string | null];
+  /** When it stopped existing (a civilization's end); `tu` is that time. Off the map after it. */
+  until?: string; tu?: number;
   type?: string; country?: string; place?: Text; text: Text; details?: Text; why?: Text; how?: Text; by?: Text; size?: Text; status?: Text;
   facts?: { label: Text; value: Text }[]; wiki?: Text;
   /** The first step that shows it (-1: a time tour's catalogue item, shown from its date). */
@@ -51,19 +53,20 @@ interface Entry {
 /** A collection's items.json row: an item and where it first appears. */
 export interface CollectionItem extends Omit<Item, 'first'> { story: string; step: number }
 
-/** The four collections of stories. */
-export type StoryKind = 'wars' | 'eras' | 'food' | 'structures';
-export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures'];
+/** The collections of stories. */
+export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people';
+export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people'];
 const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text }> = {
   wars: { dir: 'conflicts', hash: 'war', icon: '⚔️', name: { en: 'Wars and conquests', es: 'Guerras y conquistas' } },
   eras: { dir: 'eras', hash: 'eras', icon: '🎨', name: { en: 'Eras and ideas', es: 'Épocas e ideas' } },
   food: { dir: 'food', hash: 'food', icon: '🌾', name: { en: 'Food through time', es: 'La comida en el tiempo' } },
   structures: { dir: 'structures', hash: 'structures', icon: '🏛️', name: { en: 'Great structures', es: 'Grandes construcciones' } },
+  people: { dir: 'people', hash: 'people', icon: '🏺', name: { en: 'Peoples and civilizations', es: 'Pueblos y civilizaciones' } },
 };
 export const storyHashKey = (k: StoryKind) => KINDS[k].hash;
 interface Area extends Shape { lp: Pt; area: number }
 
-export const ERAS = ['ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
+export const ERAS = ['prehistory', 'ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
 const MONTHS: Record<'en' | 'es', string[]> = {
   en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
@@ -77,11 +80,35 @@ const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
 const ease = (x: number) => { const t = clamp01(x); return t * t * (3 - 2 * t); };
 const pop = (x: number) => { const t = clamp01(x); return t < 1 ? 1 - Math.pow(1 - t, 3) * (1 - 2.2 * t) : 1; };
 
-/** "1 September 1939", "May 334 BC", "336 a. C."... */
+/** Dates older than 10,000 BC are written as years ago: -3200000 is 3.2 million years ago. */
+const AGO = -10000;
+function group(n: number, sep: string): string { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, sep); }
+/** How long ago: ["3.2", million] or ["300,000", years]. */
+function agoNum(n: number, es: boolean): [string, boolean] {
+  if (n >= 1e6) { const m = Math.round(n / 1e5) / 10; return [es ? String(m).replace('.', ',') : String(m), true]; }
+  const r = n >= 1e5 ? Math.round(n / 1e3) * 1e3 : Math.round(n / 100) * 100;
+  return [group(r, es ? '\u00a0' : ','), false];
+}
+/** "3.2 million years ago", "300,000 years ago", "hace 14\u00a0400 años". */
+function fmtAgo(y: number): string {
+  const es = lang() === 'es', [v, mill] = agoNum(-y, es);
+  if (mill) return es ? `hace ${v}\u00a0${v === '1' ? 'millón' : 'millones'} de años` : `${v}\u00a0million years ago`;
+  return es ? `hace ${v}\u00a0años` : `${v}\u00a0years ago`;
+}
+/** "7–2 million years ago", "300,000–40,000 years ago", "3.3 million – 300,000 years ago". */
+function fmtAgoRange(y0: number, y1: number): string {
+  const es = lang() === 'es', [a, ma] = agoNum(-y0, es), [b, mb] = agoNum(-y1, es);
+  if (ma && mb) return es ? `hace ${a}–${b}\u00a0millones de años` : `${a}–${b}\u00a0million years ago`;
+  if (!ma && !mb) return es ? `hace ${a}–${b}\u00a0años` : `${a}–${b}\u00a0years ago`;
+  return es ? `hace ${a}\u00a0millones – ${b}\u00a0años` : `${a}\u00a0million – ${b}\u00a0years ago`;
+}
+
+/** "1 September 1939", "May 334 BC", "336 a. C.", "3.2 million years ago"... */
 export function fmtWhen(d: string, eraHint = 1): string {
   const m = /^(-?\d+)(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(d);
   if (!m) return d;
   const y = Number(m[1]), mo = m[2] ? Number(m[2]) : 0, day = m[3] ? Number(m[3]) : 0;
+  if (y < AGO) return fmtAgo(y);
   const es = lang() === 'es';
   // Non-breaking spaces keep "216 a. C." and "AD 476" together when the text wraps.
   const year = y < 0 ? (es ? `${-y}\u00a0a.\u00a0C.` : `${-y}\u00a0BC`) : eraHint < 0 && y < 1000 ? (es ? `${y}\u00a0d.\u00a0C.` : `AD\u00a0${y}`) : String(y);
@@ -93,6 +120,7 @@ export function fmtWhen(d: string, eraHint = 1): string {
 /** "1939–1945", "334–323 BC", "509 BC – AD 117". */
 function fmtYears(start: string, end: string): string {
   const y0 = Number(/^-?\d+/.exec(start)?.[0]), y1 = Number(/^-?\d+/.exec(end)?.[0]);
+  if (y0 < AGO) return y1 < AGO ? fmtAgoRange(y0, y1) : `${fmtAgo(y0)} – ${fmtWhen(end, y0)}`;
   const es = lang() === 'es';
   if (y0 < 0 && y1 < 0) return `${-y0}–${-y1}\u00a0${es ? 'a.\u00a0C.' : 'BC'}`;
   if (y0 < 0) return es ? `${-y0}\u00a0a.\u00a0C. – ${y1}\u00a0d.\u00a0C.` : `${-y0}\u00a0BC – AD\u00a0${y1}`;
@@ -527,6 +555,7 @@ export class StoryMode {
 
   /** Is an item on the map at this step (other than as one of the step's own)? */
   private onMap(it: Item, st: Step) {
+    if (it.tu != null && st.t > it.tu + 1e-6) return false;
     return (it.first >= 0 && it.first < this.step) || (this.c?.catalog === 'all' && it.t <= st.t + 1e-6);
   }
 
@@ -1005,6 +1034,7 @@ export function wikiThumb(wiki?: Text): Promise<string | null> {
 export function itemWhen(it: Omit<Item, 'first'>, eraHint: number): string {
   if (it.life) return it.life[1] ? fmtYears(it.life[0], it.life[1]) : `${fmtWhen(yearOf(it.life[0]), eraHint)}–`;
   if (it.end && yearOf(it.end) !== yearOf(it.date)) return fmtYears(it.date, it.end);
+  if (it.until && yearOf(it.until) !== yearOf(it.date)) return fmtYears(it.date, it.until);
   return fmtWhen(it.date, eraHint);
 }
 
@@ -1012,6 +1042,7 @@ export function itemWhen(it: Omit<Item, 'first'>, eraHint: number): string {
 function itemYears(it: Omit<Item, 'first'>, eraHint: number): string {
   if (it.life) return it.life[1] ? fmtYears(it.life[0], it.life[1]) : `${fmtWhen(yearOf(it.life[0]), eraHint)}–`;
   if (it.end && yearOf(it.end) !== yearOf(it.date)) return fmtYears(it.date, it.end);
+  if (it.until && yearOf(it.until) !== yearOf(it.date)) return fmtYears(it.date, it.until);
   return fmtWhen(yearOf(it.date), eraHint);
 }
 
