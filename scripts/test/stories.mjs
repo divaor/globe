@@ -47,6 +47,8 @@ const report = (ok, msg) => { if (!ok) failures++; console.log(`${ok ? 'ok  ' : 
 for (const kind of kinds) {
   const idx = await json(`data/${DIR[kind]}/index.json`);
   const list = idx.conflicts ?? idx.stories ?? [];
+  // A story asked for by id must be there (a stale build would otherwise pass without playing it).
+  if (only && kinds.length === 1) for (const id of only) if (!list.some((e) => e.id === id)) report(false, `${kind}/${id}: not in the published index`);
   for (const entry of list) {
     if (only && !only.includes(entry.id)) continue;
     const before = errors.length;
