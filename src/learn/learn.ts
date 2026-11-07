@@ -11,12 +11,13 @@ import type { TimeTravel } from '../modes';
 import type { RenderSettings } from '../engine/renderer';
 import { TOURS, type Tour, type TourStep } from './tours';
 import type { Unit } from '../modes/paleo';
+import { regionCountries, loadRegions, frameRegions, regionAt, regionThumb, drawRegions, type Region, type RegionMark } from './regions';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
 const shuffle = <T,>(a: T[]) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 
-type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period';
+type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region';
 /** An item of a story collection, tagged with its collection. */
 interface QItem extends CollectionItem { kind: StoryKind }
 /** A question; once answered, whether it was right and what the player answered. */
@@ -45,7 +46,8 @@ function yearOptions(y: number): number[] {
 export class Learn {
   private card: HTMLElement;
   /** `peek`: the card is folded to one line so the map can be seen; `done`: the result is up. */
-  private quiz: { kind: QuizKind; region: string; qs: Q[]; i: number; score: number; answered: boolean; savedLabels: RenderSettings['labels']; peek: boolean; fb?: { ok: boolean; text: string }; done?: boolean; best?: number } | null = null;
+  /** `region`: the continent of a country quiz, or the country of a States and provinces quiz (`all`: every region, not ten). */
+  private quiz: { kind: QuizKind; region: string; qs: Q[]; i: number; score: number; answered: boolean; savedLabels: RenderSettings['labels']; peek: boolean; fb?: { ok: boolean; text: string }; done?: boolean; best?: number; all?: boolean } | null = null;
   private tour: { steps: TourStep[]; i: number; auto: boolean; timer: number; fold: boolean } | null = null;
   private pin: { lon: number; lat: number; text: string } | null = null;
   private items: Partial<Record<StoryKind, CollectionItem[]>> = {};
@@ -53,6 +55,9 @@ export class Learn {
   private civs = new Map<string, { name: { en: string; es: string }; icon: string }>();
   /** The geologic periods of the last 1000 million years, oldest first (the answers of "Which period?"). */
   private periods: Unit[] = [];
+  /** States and provinces: the country's regions, and the one picked in the result. */
+  private regions: { a3: string; list: Region[] } | null = null;
+  private focusRegion: string | null = null;
 
   constructor(private app: App, private shell: Shell, private time: TimeTravel) {
     this.card = h('section', { class: 'learn-card glass', hidden: true });
@@ -63,10 +68,20 @@ export class Learn {
     shell.addMenu({ id: 'tours', icon: Compass, label: () => L('Guided tours', 'Visitas guiadas'), order: 31, onClick: () => this.openTours() });
     shell.addMenu({ id: 'onthisday', icon: CalendarDays, label: () => L('On this day', 'Tal día como hoy'), order: 32, onClick: () => void this.openOnThisDay() });
     shell.tapHandlers.unshift((_x, _y, g) => {
-      if (!this.quiz || this.quiz.answered || (this.quiz.kind !== 'find' && this.quiz.kind !== 'where')) return false;
+      if (!this.quiz || this.quiz.answered || this.quiz.done || !['find', 'where', 'region'].includes(this.quiz.kind)) return false;
       if (g && this.quiz.kind === 'find') this.answerFind(app.renderer.countryAt(g[0], g[1]));
       if (g && this.quiz.kind === 'where') this.answerWhere(g as [number, number]);
+      if (g && this.quiz.kind === 'region' && this.regions) {
+        // A tap outside the country is not an answer.
+        const r = regionAt(this.regions.list, g[0], g[1], app.renderer.view);
+        if (r) this.answerRegion(r.id);
+      }
       return true;
+    });
+    app.renderer.overlays.add((rc) => {
+      const q = this.quiz, rg = this.regions;
+      if (!q || q.kind !== 'region' || !rg) return;
+      drawRegions(rc, rg.list, (r) => this.regionMark(r), (r) => this.regionName(r));
     });
     app.renderer.overlays.add((rc) => {
       if (!this.pin) return;
@@ -106,13 +121,14 @@ export class Learn {
       ['find', '📍', L('Find the country', 'Encuentra el país'), L('Tap it on the globe (labels hidden).', 'Tócalo en el globo (sin etiquetas).')],
       ['flag', '🏳️', L('Flags', 'Banderas'), L('Which country has this flag?', '¿De qué país es esta bandera?')],
       ['capital', '🏛️', L('Capitals', 'Capitales'), L('Pick the right capital city.', 'Elige la capital correcta.')],
+      ['region', '🗺️', L('States and provinces', 'Estados y provincias'), L('Tap the state or province in the United States, Mexico, Canada and 45 more countries.', 'Toca el estado o la provincia en Estados Unidos, México, Canadá y 45 países más.')],
     ];
     const list = h('div', { class: 'mode-list' });
     for (const [k, ic, title, desc] of kinds) {
-      const best = localStorage.getItem(`atlas-quiz-best:${k}`);
-      const c = h('button', { type: 'button', class: 'mode-card' }, h('span', { class: 'mode-icon' }, ic),
+      const best = k === 'region' ? null : localStorage.getItem(`atlas-quiz-best:${k}`);
+      const c = h('button', { type: 'button', class: 'mode-card', 'data-quiz': k }, h('span', { class: 'mode-icon' }, ic),
         h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, title), h('span', { class: 'mode-desc' }, `${desc}${best ? ` · ${L('Best', 'Récord')}: ${best}/10` : ''}`)));
-      c.addEventListener('click', () => this.startQuiz(k, region));
+      c.addEventListener('click', () => void (k === 'region' ? this.openRegionPicker(region) : this.startQuiz(k, region)));
       list.append(c);
     }
     const more: [QuizKind, string, string, string][] = [
@@ -138,6 +154,7 @@ export class Learn {
   private async startQuiz(kind: QuizKind, region: string) {
     this.stopTour();
     this.shell.sheet.close();
+    if (kind === 'region') { await this.startRegionQuiz(region, false); return; }
     if (ITEM_QUIZZES.includes(kind)) { await this.startItemQuiz(kind); return; }
     const pool = this.pool(region);
     const ids = shuffle(pool.slice()).slice(0, 10);
@@ -152,6 +169,178 @@ export class Learn {
     this.app.select(null);
     if (this.app.renderer.view.current.kind !== 'globe' && kind === 'find') this.app.setProjection('globe');
     this.renderQuiz();
+  }
+
+  // ---- States and provinces
+
+  private regionName(r: Region) { return es() ? r.es : r.n; }
+
+  /** The best score of a States and provinces quiz, "8/10" (`all`: of every region). */
+  private regionBest(a3: string, all: boolean, n: number): string | null {
+    let v: string | null = null;
+    try { v = localStorage.getItem(`atlas-quiz-best:region-${a3}${all ? '-all' : ''}`); } catch { /* ignore */ }
+    return v ? `${v}/${all ? n : Math.min(10, n)}` : null;
+  }
+
+  /** Picks a country (and ten questions or all of its regions). */
+  private async openRegionPicker(continent = 'world') {
+    let countries;
+    try { countries = await regionCountries(); } catch {
+      this.shell.toast(L('This quiz needs its map data; check your connection.', 'Este concurso necesita sus datos de mapa; revisa tu conexión.'));
+      return;
+    }
+    let all = false;
+    const countRow = h('div', { class: 'chip-row' });
+    const body = h('div', null,
+      h('p', { class: 'muted small' }, L('The names are hidden: tap each state or province on the map. You can move and zoom the map.', 'Los nombres están ocultos: toca cada estado o provincia en el mapa. Puedes mover y acercar el mapa.')),
+      countRow);
+    const meta = this.app.data.meta;
+    const cards: { el: HTMLElement; id: string; n: number }[] = [];
+    const drawBest = () => { for (const c of cards) { const d = c.el.querySelector('.mode-best'); if (d) d.textContent = (() => { const b = this.regionBest(c.id, all, c.n); return b ? ` · ${L('Best', 'Récord')}: ${b}` : ''; })(); } };
+    const drawCount = () => {
+      clear(countRow);
+      for (const [v, label] of [[false, L('10 questions', '10 preguntas')], [true, L('All of them', 'Todos')]] as const) {
+        const b = h('button', { type: 'button', class: `chip${all === v ? ' on' : ''}`, 'data-count': v ? 'all' : '10' }, label);
+        b.addEventListener('click', () => { all = v; drawCount(); drawBest(); });
+        countRow.append(b);
+      }
+    };
+    drawCount();
+    const groups: [string, string][] = [['NA', t('cont.NA')], ['SA', t('cont.SA')], ['EU', t('cont.EU')], ['AS', t('cont.AS')], ['AF', t('cont.AF')], ['OC', t('cont.OC')]];
+    const order = [...groups.filter(([c]) => c === continent), ...groups.filter(([c]) => c !== continent)];
+    for (const [ct, label] of order) {
+      const items = countries.filter((c) => (meta[c.id]?.ct ?? 'SS') === ct)
+        .sort((a, b) => this.app.data.name(a.id, lang()).localeCompare(this.app.data.name(b.id, lang()), lang()));
+      if (!items.length) continue;
+      const grid = h('div', { class: 'mode-list' });
+      for (const c of items) {
+        const a2 = (meta[c.id]?.a2 ?? '').toLowerCase();
+        const card = h('button', { type: 'button', class: 'mode-card', 'data-region': c.id },
+          h('span', { class: 'mode-icon' }, a2 ? h('img', { class: 'quiz-pick-flag', src: dataUrl(`../flags/${a2}.svg`), alt: '' }) : '🗺️'),
+          h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, this.app.data.name(c.id, lang())),
+            h('span', { class: 'mode-desc' }, tx(c.what), h('span', { class: 'mode-best' }))));
+        card.addEventListener('click', () => void this.startRegionQuiz(c.id, all));
+        cards.push({ el: card, id: c.id, n: c.n });
+        grid.append(card);
+      }
+      body.append(h('h3', { class: 'sec-title' }, label), grid);
+    }
+    drawBest();
+    this.shell.openPanel('quiz-regions', L('States and provinces', 'Estados y provincias'), body);
+  }
+
+  /** Ten regions of a country (or all of them) to find on the map, with the country framed below the card. */
+  private async startRegionQuiz(a3: string, all: boolean) {
+    this.stopTour();
+    this.shell.sheet.close();
+    let list: Region[];
+    try { list = await loadRegions(a3); } catch {
+      this.shell.toast(L('This quiz needs its map data; check your connection.', 'Este concurso necesita sus datos de mapa; revisa tu conexión.'));
+      return;
+    }
+    if (this.quiz) this.stopQuiz();
+    const pick = shuffle(list.slice());
+    const qs: Q[] = (all ? pick : pick.slice(0, 10)).map((r) => ({ id: r.id }));
+    const labels = { ...this.app.renderer.settings.labels };
+    Object.assign(this.app.renderer.settings.labels, { countries: false, capitals: false, cities: false });
+    this.regions = { a3, list };
+    this.focusRegion = null;
+    this.quiz = { kind: 'region', region: a3, qs, i: 0, score: 0, answered: false, savedLabels: labels, peek: false, all };
+    this.app.select(null);
+    const flat = this.app.renderer.view.current.kind !== 'globe';
+    if (flat) this.app.setProjection('globe');
+    this.renderQuiz();
+    // Once the card is up (and the globe back), the country is framed in the map left below it.
+    setTimeout(() => {
+      if (this.quiz?.kind !== 'region' || this.regions?.a3 !== a3) return;
+      const m = this.app.data.meta[a3];
+      const v = this.app.renderer.view;
+      // The map's height once the card's inset has settled (it eases in).
+      this.syncInset();
+      const mapH = Math.max(200, v.h - this.insetGoal - (this.app.mode ? v.insetBottom : this.bottomGoal));
+      v.flyTo(frameRegions(v, list, m ? [m.lx, m.ly] : list[0].at, mapH), 1400);
+      this.app.renderer.requestRender();
+    }, flat ? 900 : 120);
+  }
+
+  /** How a region is drawn now (see RegionMark). */
+  private regionMark(r: Region): RegionMark {
+    const q = this.quiz!;
+    if (this.focusRegion === r.id) return 'focus';
+    if (q.done) { const x = q.qs.find((c) => c.id === r.id); return x ? (x.ok ? 'found' : 'lost') : undefined; }
+    const cur = q.qs[q.i];
+    if (q.answered && cur) {
+      if (r.id === cur.id) return cur.ok ? 'ok' : 'answer';
+      if (r.id === cur.pick) return 'wrong';
+    }
+    for (let k = 0; k < q.i; k++) if (q.qs[k].id === r.id) return q.qs[k].ok ? 'found' : 'lost';
+    return undefined;
+  }
+
+  /** Brings a region into view when it is off the map (Alaska, the Canaries...). */
+  private bringIntoView(r: Region) {
+    const v = this.app.renderer.view;
+    const p = v.project(r.at[0], r.at[1]);
+    const inView = p && p[0] > 16 && p[0] < v.w - 16 && p[1] > v.insetTop + 16 && p[1] < v.h - v.insetBottom - 16;
+    if (!inView) { v.flyTo({ lon: r.at[0], lat: r.at[1], zoom: v.zoom }, 1000); this.app.renderer.requestRender(); }
+  }
+
+  /** The player tapped a region (or asked to be shown, `null`). */
+  private answerRegion(id: string | null) {
+    const q = this.quiz, rg = this.regions;
+    const cur = q?.qs[q.i];
+    if (!q || !rg || !cur || q.answered) return;
+    q.answered = true;
+    const ok = id === cur.id;
+    if (ok) q.score++;
+    cur.ok = ok; cur.pick = id ?? undefined;
+    const right = rg.list.find((r) => r.id === cur.id)!, tapped = id ? rg.list.find((r) => r.id === id) : undefined;
+    const name = this.regionName(right);
+    cur.given = tapped ? this.regionName(tapped) : L('no answer', 'sin respuesta');
+    let text = ok ? L(`Correct! That's ${name}.`, `¡Correcto! Es ${name}.`) : L(`${name} is in yellow.`, `${name} está en amarillo.`);
+    if (!ok && tapped) {
+      const km = Math.round(geoDistance(tapped.at, right.at) * 6371);
+      text = L(`You tapped ${cur.given}. ${name} is in yellow, ${km.toLocaleString('en-GB')} km away.`, `Tocaste ${cur.given}. ${name} está en amarillo, a ${km.toLocaleString('es-ES')} km.`);
+    }
+    this.bringIntoView(right);
+    this.renderQuiz({ ok, text });
+    this.app.renderer.requestRender();
+  }
+
+  /** "Where is Jalisco?", the country, and how to answer. */
+  private renderRegionQuestion(cur: Q, feedback?: { ok: boolean; text: string }) {
+    const q = this.quiz!, rg = this.regions;
+    const r = rg?.list.find((x) => x.id === cur.id);
+    if (!rg || !r) return;
+    add(this.card, h('div', { class: 'quiz-q' }, L(`Where is ${this.regionName(r)}?`, `¿Dónde está ${this.regionName(r)}?`)),
+      h('div', { class: 'quiz-item' }, `${flagEmoji(this.app.data.meta[rg.a3]?.a2)} ${this.app.data.name(rg.a3, lang())}`));
+    if (!q.answered) {
+      const skip = h('button', { type: 'button', class: 'pill sm' }, L('Show me', 'Muéstramelo'));
+      skip.addEventListener('click', () => this.answerRegion(null));
+      add(this.card, h('div', { class: 'tool-hint' }, L('Tap it on the map. You can move and zoom the map.', 'Tócalo en el mapa. Puedes mover y acercar el mapa.')), h('div', { class: 'tool-actions' }, skip));
+    }
+    if (feedback) add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text), h('div', { class: 'tool-actions' }, this.nextButton()));
+  }
+
+  /** A region in the result: its shape, its name and, if missed, what was tapped; a tap shows it on the map. */
+  private regionRow(cur: Q): HTMLElement {
+    const r = this.regions?.list.find((x) => x.id === cur.id);
+    const name = r ? this.regionName(r) : cur.id;
+    const pic = h('span', { class: 'quiz-thumb' }, r ? h('img', { alt: '', src: regionThumb(r, cur.ok ? '#2e9e5b' : '#d9534f') }) : '🗺️');
+    const row = h('button', { type: 'button', class: `quiz-sum-row ${cur.ok ? 'ok' : 'bad'}`, role: 'listitem' }, pic,
+      h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, name),
+        h('span', { class: 'quiz-sum-ans' }, cur.ok ? '' : (cur.given ?? ''))),
+      h('span', { class: 'quiz-sum-mark', 'aria-label': cur.ok ? L('right', 'correcto') : L('wrong', 'incorrecto') }, cur.ok ? '✓' : '✗'));
+    row.addEventListener('click', () => {
+      const q = this.quiz;
+      if (!q || !r) return;
+      this.focusRegion = r.id;
+      this.bringIntoView(r);
+      q.peek = true;
+      this.renderQuiz();
+      this.app.renderer.requestRender();
+    });
+    return row;
   }
 
   private async loadItems(kinds: StoryKind[]) {
@@ -332,9 +521,11 @@ export class Learn {
       if (feedback) add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text), h('div', { class: 'tool-actions' }, this.nextButton()));
       else if (q.kind === 'find') add(this.card, h('div', { class: 'quiz-peek-q' }, L(`Where is ${this.app.data.name(cur.id, lang())}?`, `¿Dónde está ${this.app.data.name(cur.id, lang())}?`)));
       else if (q.kind === 'where' && cur.item) add(this.card, h('div', { class: 'quiz-peek-q' }, `${cur.item.icon} ${tx(cur.item.name)}`));
+      else if (q.kind === 'region') { const r = this.regions?.list.find((x) => x.id === cur.id); if (r) add(this.card, h('div', { class: 'quiz-peek-q' }, L(`Where is ${this.regionName(r)}?`, `¿Dónde está ${this.regionName(r)}?`))); }
       return;
     }
     if (cur.item) { this.renderItemQuestion(q.kind, cur, feedback); return; }
+    if (q.kind === 'region') { this.renderRegionQuestion(cur, feedback); return; }
     const name = this.app.data.name(cur.id, lang());
     if (q.kind === 'find') add(this.card, h('div', { class: 'quiz-q' }, L(`Where is ${name}?`, `¿Dónde está ${name}?`)));
     if (q.kind === 'flag') add(this.card, h('div', { class: 'quiz-q' }, L('Which country has this flag?', '¿De qué país es esta bandera?')),
@@ -443,7 +634,7 @@ export class Learn {
 
   private finishQuiz() {
     const q = this.quiz!;
-    const key = `atlas-quiz-best:${q.kind}`;
+    const key = q.kind === 'region' ? `atlas-quiz-best:region-${q.region}${q.all ? '-all' : ''}` : `atlas-quiz-best:${q.kind}`;
     let best = 0;
     try { best = Number(localStorage.getItem(key) ?? 0); if (q.score > best) localStorage.setItem(key, String(q.score)); } catch { /* ignore */ }
     q.done = true; q.best = best; q.peek = false;
@@ -458,7 +649,7 @@ export class Learn {
     add(this.card, this.quizHead(`${L('Result', 'Resultado')} ${q.score}/${q.qs.length}`, ''));
     if (q.peek) return;
     const again = h('button', { type: 'button', class: 'pill primary sm' }, L('Play again', 'Jugar otra vez'));
-    again.addEventListener('click', () => void this.startQuiz(q.kind, q.region));
+    again.addEventListener('click', () => void (q.kind === 'region' ? this.startRegionQuiz(q.region, !!q.all) : this.startQuiz(q.kind, q.region)));
     const done = h('button', { type: 'button', class: 'pill sm' }, L('Done', 'Terminar'));
     done.addEventListener('click', () => this.stopQuiz());
     const list = h('div', { class: 'quiz-sum', role: 'list' });
@@ -470,6 +661,7 @@ export class Learn {
 
   /** One question in the result: picture, what it was, the right answer and, if wrong, yours. */
   private resultRow(kind: QuizKind, cur: Q): HTMLElement {
+    if (kind === 'region') return this.regionRow(cur);
     const it = cur.item;
     const name = it ? tx(it.name) : this.app.data.name(cur.id, lang());
     const right = it
@@ -513,6 +705,8 @@ export class Learn {
     this.app.renderer.settings.labels = { ...this.quiz.savedLabels };
     this.quiz = null;
     this.pin = null;
+    this.regions = null;
+    this.focusRegion = null;
     this.card.hidden = true;
     this.card.classList.remove('peek');
     this.app.select(null);

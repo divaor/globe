@@ -492,6 +492,8 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
 .card-img[hidden] { display: none; }
 .story-cat { font-weight: 400; font-size: 12px; line-height: 1; }
 .story-browse-all { margin: 2px 0 10px; align-self: flex-start; }
+/* States and provinces quiz: the flags in the country list. */
+.quiz-pick-flag { width: 30px; height: auto; border-radius: 3px; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18); display: block; }
 /* Life through time: the step's geologic period, and the map note with its link to Pangea to today. */
 .wb-age i { border: 1px solid rgba(0, 0, 0, 0.25); }
 .story-map-note { margin: 10px 0 6px; }

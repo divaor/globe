@@ -14,9 +14,10 @@
     "test:smoke": "node scripts/test/smoke.mjs",
     "test:wars": "node scripts/test/wars.mjs",
     "test:stories": "node scripts/test/stories.mjs",
-    "check:data": "node scripts/data/winding.mjs --check public/data/base/*.json public/data/layers/*.json public/data/history/world_*.json public/data/paleo/*.json public/data/conflicts/*-areas.json public/data/eras/*-areas.json public/data/food/*-areas.json public/data/structures/*-areas.json public/data/people/*-areas.json public/data/life/*-areas.json && node scripts/data/build-conflicts.mjs --check",
+    "check:data": "node scripts/data/winding.mjs --check public/data/base/*.json public/data/layers/*.json public/data/history/world_*.json public/data/paleo/*.json public/data/conflicts/*-areas.json public/data/eras/*-areas.json public/data/food/*-areas.json public/data/structures/*-areas.json public/data/people/*-areas.json public/data/life/*-areas.json public/data/regions/*.json && node scripts/data/build-conflicts.mjs --check",
     "data:conflicts": "node scripts/data/build-conflicts.mjs --kind wars",
-    "data:stories": "node scripts/data/build-conflicts.mjs"
+    "data:stories": "node scripts/data/build-conflicts.mjs",
+    "data:regions": "node scripts/data/build-regions.mjs"
   },
   "dependencies": {
     "d3-array": "^3.2.5",

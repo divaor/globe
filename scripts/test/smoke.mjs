@@ -573,6 +573,35 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(/Result \d+\/10/.test(res.head) && res.rows === 10 && /^[✓✗]{10}$/.test(res.marks) && res.thumbs === 10, `the result lists all ten questions with a picture each (${res.marks})`);
   await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
   await page.waitForTimeout(300);
+  // States and provinces: 48 countries; in Mexico, a tap on the state asked for scores, and the
+  // result lists every state asked with its shape.
+  await menu('Quiz');
+  await page.evaluate(() => document.querySelector('[data-quiz="region"]').click());
+  await page.waitForSelector('[data-region="MEX"]', { timeout: 15000 });
+  const nCountries = await page.evaluate(() => document.querySelectorAll('[data-region]').length);
+  await page.evaluate(() => document.querySelector('[data-region="MEX"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .quiz-q', { timeout: 15000 });
+  await page.waitForTimeout(2800);
+  const tgt = await page.evaluate(() => {
+    const L = window.atlas.learn, q = L.quiz, r = L.regions.list.find((x) => x.id === q.qs[q.i].id);
+    return { p: window.atlas.app.renderer.view.project(r.at[0], r.at[1]), n: r.n };
+  });
+  if (tgt.p) await page.touchscreen.tap(tgt.p[0], tgt.p[1]);
+  await page.waitForTimeout(800);
+  const got = await page.evaluate(() => ({ score: window.atlas.learn.quiz?.score, fb: document.querySelector('.learn-card .quiz-fb')?.textContent ?? '' }));
+  check(nCountries === 48 && got.score === 1 && /Correct/.test(got.fb), `States and provinces: a tap on ${tgt.n} scores in Mexico (${nCountries} countries; ${got.fb})`);
+  for (let i = 0; i < 30 && !(await page.evaluate(() => !!window.atlas.learn.quiz?.done)); i++) {
+    await page.evaluate(() => {
+      const b = [...document.querySelectorAll('.learn-card .tool-actions button')];
+      (b.find((x) => /Show me/.test(x.textContent)) ?? b.find((x) => /Next|See result/.test(x.textContent)))?.click();
+    });
+    await page.waitForTimeout(200);
+  }
+  await page.waitForTimeout(400);
+  const regRes = await page.evaluate(() => ({ head: document.querySelector('.learn-card .tool-head')?.textContent ?? '', rows: document.querySelectorAll('.quiz-sum-row').length, shapes: [...document.querySelectorAll('.quiz-sum-row .quiz-thumb img')].filter((i) => i.complete && i.naturalWidth > 0).length }));
+  check(/Result 1\/10/.test(regRes.head) && regRes.rows === 10 && regRes.shapes === 10, `its result lists the ten states with their shapes (${regRes.head.slice(0, 16)})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
   // Where in the world: a tap on the globe is the answer; then the story opens at the item.
   await menu('Quiz');
   await page.evaluate(() => document.querySelector('[data-quiz="where"]').click());
