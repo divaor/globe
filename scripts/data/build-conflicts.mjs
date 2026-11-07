@@ -670,16 +670,17 @@ function paleoPass(c, steps, items, opts) {
     const pl = plateFor([cam.lon, cam.lat], 0).pl;
     if (pl) cam.pl = pl;
   }
-  for (const it of items) {
-    // It is on the map from the step that shows it (in a time tour, the first step of its time) until
-    // it dies out: its plate is looked up at the first old map among those steps.
-    const from = it.first >= 0 ? it.first : steps.findIndex((st) => st.t >= it.t - 1e-6);
-    const j = from < 0 ? -1 : steps.findIndex((st, k) => k >= from && st.ma != null && !(it.tu != null && st.t > it.tu + 1e-6));
+  items.forEach((it, idx) => {
+    // The steps that draw it: those that show it, and the later ones that keep it as a dot until it
+    // dies out (in a time tour, from its date on). Its plate is looked up at the first old map among them.
+    const draws = (st, k) => st.show?.includes(idx)
+      || ((it.first >= 0 ? k > it.first : st.t >= it.t - 1e-6) && !(it.tu != null && st.t > it.tu + 1e-6));
+    const j = steps.findIndex((st, k) => st.ma != null && draws(st, k));
     const ma = j >= 0 ? steps[j].ma : paleoMa(it.t);
-    if (ma == null) continue;
+    if (ma == null) return;
     const pl = place(it.at, ma, `item "${it.name.en}"`);
     if (pl) it.pl = pl;
-  }
+  });
 }
 
 // ---------------------------------------------------------------------------------------------
