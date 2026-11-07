@@ -364,6 +364,14 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(900);
   const card = await page.evaluate(() => { const c = document.querySelector('.country-card'); return c && !c.hidden ? { text: c.innerText, img: !!c.querySelector('.card-img') } : null; });
   check(!!card && /Great Pyramid of Giza/.test(card.text) && /2600–2560/.test(card.text) && card.img, `a marker opens its card with a picture slot (${card?.text.split('\n')[0]})`);
+  // A tap that opens a card under the finger must not also select its words (phones then open a dictionary bar).
+  const picked = [];
+  for (const q of ['.country-card .card-title', '.wb-title']) {
+    const box = await page.locator(q).first().boundingBox();
+    await page.mouse.dblclick(box.x + 30, box.y + box.height / 2);
+    picked.push(await page.evaluate(() => { const s = window.getSelection().toString(); window.getSelection().removeAllRanges(); return s; }));
+  }
+  check(picked.every((s) => !s.trim()), `the card and the step bar are not text to select${picked.some((s) => s.trim()) ? ` (selected: ${picked.join(' | ')})` : ''}`);
   await page.tap('.country-card .card-close');
   await page.waitForTimeout(300);
   check(await page.evaluate(() => document.querySelector('.country-card').hidden), 'the X closes an item card in Time travel');
@@ -442,6 +450,72 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 12d. Life through time: a step millions of years back is drawn on the continents of its age, its
+// fossils move with them (a card gives the latitude then), the continents drift to the next step's
+// age, and a tap on the old land says what it is today.
+{
+  const idx = await (await fetch(`${url}data/life/index.json`)).json();
+  let pick = null;
+  for (const e of idx.stories) {
+    const st = (await (await fetch(`${url}data/life/${e.id}.json`)).json());
+    const i = st.steps.findIndex((s, k) => s.ma != null && s.show?.length && st.steps[k + 1]?.ma != null && st.steps[k + 1].ma !== s.ma);
+    if (i >= 0) { pick = { id: e.id, i, ma: st.steps[i].ma, next: st.steps[i + 1].ma, item: st.items[st.steps[i].show[0]] }; break; }
+  }
+  check(!!pick, `a life story with old steps is published (${pick ? `${pick.id}, step ${pick.i + 1}, ${pick.ma} Ma` : 'none'})`);
+  if (pick) {
+    const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, `#life=${pick.id}&step=${pick.i + 1}&p=globe&lang=en`);
+    await page.waitForSelector('.warbar', { timeout: 30000 });
+    await page.waitForTimeout(5000);
+    await page.evaluate(() => { const b = document.querySelector('.warbar .tb-play'); if (b && b.getAttribute('aria-label') === 'Pause') b.click(); });
+    await page.waitForTimeout(500);
+    const old = await page.evaluate(() => { const s = window.atlas.time.stories.life; return { age: s.ageNow(), chip: document.querySelector('.wb-age')?.textContent ?? '' }; });
+    check(old.age === pick.ma && /🌋/.test(old.chip), `a life step is drawn on the continents of ${pick.ma} million years ago (${old.chip})`);
+    // Its first marker is where its plate carried it, not where it is found today.
+    const moved = await page.evaluate((k) => {
+      const s = window.atlas.time.stories.life, it = s.c.items[s.c.steps[s.step].show[0]];
+      const now = s.itemAt(it, s.ageNow()), today = it.at;
+      return { km: Math.round(Math.acos(Math.min(1, Math.sin(now[1] * Math.PI / 180) * Math.sin(today[1] * Math.PI / 180) + Math.cos(now[1] * Math.PI / 180) * Math.cos(today[1] * Math.PI / 180) * Math.cos((now[0] - today[0]) * Math.PI / 180))) * 6371), pl: it.pl };
+    });
+    check(!!moved.pl && moved.km > 50, `its fossils move with their plate (${pick.item.name.en}: ${moved.km} km from today's place)`);
+    // Tap the marker: its card, with the latitude it lay at.
+    const sp = await page.evaluate(() => { const s = window.atlas.time.stories.life; const p = s.spots.at.get(s.c.steps[s.step].show[0]); return p ? [p.x, p.y] : null; });
+    if (sp) await page.touchscreen.tap(sp[0], sp[1]);
+    await page.waitForTimeout(800);
+    const card = await page.evaluate(() => { const c = document.querySelector('.country-card'); return { open: !c.hidden, rows: [...c.querySelectorAll('.row')].map((r) => r.textContent).join(' | ') }; });
+    check(card.open && /Latitude then/.test(card.rows), `the fossil's card says where it lay then (${card.rows.slice(0, 90)})`);
+    await page.evaluate(() => document.querySelector('.country-card .card-close')?.click());
+    // The next step: the continents drift to its age.
+    await page.evaluate(() => document.querySelectorAll('.wb-nav .icon-btn')[1].click());
+    const ages = [];
+    for (let i = 0; i < 8; i++) { await page.waitForTimeout(350); ages.push(await page.evaluate(() => window.atlas.time.stories.life.ageNow())); }
+    const between = ages.some((a) => a != null && Math.abs(a - pick.ma) > 0.01 && Math.abs(a - pick.next) > 0.01);
+    check(between && ages[ages.length - 1] === pick.next, `the continents drift from ${pick.ma} to ${pick.next} million years ago (${ages.map((a) => (a == null ? '-' : Math.round(a))).join(' → ')})`);
+    // A tap on old land away from the markers: what it is today.
+    const land = await page.evaluate(() => {
+      const s = window.atlas.time.stories.life, v = window.atlas.app.renderer.view, w = s.paleo;
+      for (let y = 120; y < v.h - v.insetBottom - 20; y += 23) for (let x = 20; x < v.w - 20; x += 23) {
+        const g = v.invert(x, y);
+        if (!g || [...s.spots.at.values()].some((p) => Math.hypot(p.x - x, p.y - y) < 40)) continue;
+        if (w.tapRows(g[0], g[1], s.ageNow(), window.atlas.app)) return [x, y];
+      }
+      return null;
+    });
+    if (land) await page.touchscreen.tap(land[0], land[1]);
+    await page.waitForTimeout(700);
+    const lc = await page.evaluate(() => [...document.querySelectorAll('.country-card:not([hidden]) .row')].map((r) => r.textContent).join(' | '));
+    check(!!land && /Today it is/.test(lc), `a tap on the old land says what it is today (${lc.slice(0, 80)})`);
+    // Details link to the plate model at this age.
+    await page.evaluate(() => document.querySelector('.country-card .card-close')?.click());
+    await page.tap('.wb-more');
+    await page.waitForTimeout(500);
+    await page.tap('.story-drift');
+    await page.waitForTimeout(3000);
+    check(await page.evaluate(() => window.atlas.app.mode === 'pangea'), '"See the continents move" opens Pangea to today');
+    check(!errors.length, `no page errors in Life through time${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await ctx.close();
+  }
+}
+
 // 13. Learn: the quizzes made from the stories ask ten questions with four answers (or a tap on the
 // globe), and "See it in the story" opens the story at the item; a city tour opens steps of stories
 // from different collections and flies to the city each time.
@@ -454,7 +528,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.waitForTimeout(400);
   };
   const storyButton = () => page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /See it in the story/.test(b.textContent)));
-  for (const kind of ['when', 'dish', 'era', 'civ']) {
+  for (const kind of ['when', 'dish', 'era', 'civ', 'period']) {
     await menu('Quiz');
     await page.evaluate((k) => document.querySelector(`[data-quiz="${k}"]`).click(), kind);
     await page.waitForSelector('.learn-card:not([hidden]) .quiz-opt', { timeout: 30000 });
@@ -499,6 +573,35 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(/Result \d+\/10/.test(res.head) && res.rows === 10 && /^[✓✗]{10}$/.test(res.marks) && res.thumbs === 10, `the result lists all ten questions with a picture each (${res.marks})`);
   await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
   await page.waitForTimeout(300);
+  // States and provinces: 48 countries; in Mexico, a tap on the state asked for scores, and the
+  // result lists every state asked with its shape.
+  await menu('Quiz');
+  await page.evaluate(() => document.querySelector('[data-quiz="region"]').click());
+  await page.waitForSelector('[data-region="MEX"]', { timeout: 15000 });
+  const nCountries = await page.evaluate(() => document.querySelectorAll('[data-region]').length);
+  await page.evaluate(() => document.querySelector('[data-region="MEX"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .quiz-q', { timeout: 15000 });
+  await page.waitForTimeout(2800);
+  const tgt = await page.evaluate(() => {
+    const L = window.atlas.learn, q = L.quiz, r = L.regions.list.find((x) => x.id === q.qs[q.i].id);
+    return { p: window.atlas.app.renderer.view.project(r.at[0], r.at[1]), n: r.n };
+  });
+  if (tgt.p) await page.touchscreen.tap(tgt.p[0], tgt.p[1]);
+  await page.waitForTimeout(800);
+  const got = await page.evaluate(() => ({ score: window.atlas.learn.quiz?.score, fb: document.querySelector('.learn-card .quiz-fb')?.textContent ?? '' }));
+  check(nCountries === 48 && got.score === 1 && /Correct/.test(got.fb), `States and provinces: a tap on ${tgt.n} scores in Mexico (${nCountries} countries; ${got.fb})`);
+  for (let i = 0; i < 30 && !(await page.evaluate(() => !!window.atlas.learn.quiz?.done)); i++) {
+    await page.evaluate(() => {
+      const b = [...document.querySelectorAll('.learn-card .tool-actions button')];
+      (b.find((x) => /Show me/.test(x.textContent)) ?? b.find((x) => /Next|See result/.test(x.textContent)))?.click();
+    });
+    await page.waitForTimeout(200);
+  }
+  await page.waitForTimeout(400);
+  const regRes = await page.evaluate(() => ({ head: document.querySelector('.learn-card .tool-head')?.textContent ?? '', rows: document.querySelectorAll('.quiz-sum-row').length, shapes: [...document.querySelectorAll('.quiz-sum-row .quiz-thumb img')].filter((i) => i.complete && i.naturalWidth > 0).length }));
+  check(/Result 1\/10/.test(regRes.head) && regRes.rows === 10 && regRes.shapes === 10, `its result lists the ten states with their shapes (${regRes.head.slice(0, 16)})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
   // Where in the world: a tap on the globe is the answer; then the story opens at the item.
   await menu('Quiz');
   await page.evaluate(() => document.querySelector('[data-quiz="where"]').click());
@@ -511,7 +614,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForSelector('.warbar', { timeout: 30000 }).catch(() => {});
   await page.waitForTimeout(1500);
   const opened = await page.evaluate(() => ({ mode: window.atlas.app.mode, card: !!document.querySelector('.country-card:not([hidden])') }));
-  check(['eras', 'food', 'structures', 'people'].includes(opened.mode) && opened.card, `"See it in the story" opens the story at the item (${opened.mode})`);
+  check(['eras', 'food', 'structures', 'people', 'life'].includes(opened.mode) && opened.card, `"See it in the story" opens the story at the item (${opened.mode})`);
   // A city tour: Hagia Sophia (Great structures), then the siege of 717 (Wars), both over Istanbul.
   await menu('Guided tours');
   await page.evaluate(() => document.querySelector('[data-tour="Istanbul through time"]').click());

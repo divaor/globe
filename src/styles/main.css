@@ -37,7 +37,11 @@
 
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; overflow: hidden; background: var(--bg); color: var(--text); font-family: var(--font); -webkit-font-smoothing: antialiased; }
-body { overscroll-behavior: none; -webkit-tap-highlight-color: transparent; }
+/* The app is not a page of text to select. A tap on the map opens a card under the finger, and phone
+   browsers took that same tap as one on the card's words: selecting a word, or opening their dictionary
+   bar. Fields, and the paragraphs of the side sheet (Details and the like), stay selectable. */
+body { overscroll-behavior: none; -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+input, textarea, [contenteditable], .sheet-body p, .sheet-body li { -webkit-user-select: text; user-select: text; -webkit-touch-callout: default; }
 button { font: inherit; color: inherit; }
 a { color: var(--accent); }
 [hidden] { display: none !important; }
@@ -488,6 +492,12 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
 .card-img[hidden] { display: none; }
 .story-cat { font-weight: 400; font-size: 12px; line-height: 1; }
 .story-browse-all { margin: 2px 0 10px; align-self: flex-start; }
+/* States and provinces quiz: the flags in the country list. */
+.quiz-pick-flag { width: 30px; height: auto; border-radius: 3px; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18); display: block; }
+/* Life through time: the step's geologic period, and the map note with its link to Pangea to today. */
+.wb-age i { border: 1px solid rgba(0, 0, 0, 0.25); }
+.story-map-note { margin: 10px 0 6px; }
+.story-drift { margin: 0 0 10px; }
 .story-browse-head { display: flex; flex-direction: column; gap: 8px; }
 .story-chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
 .story-chips::-webkit-scrollbar { display: none; }

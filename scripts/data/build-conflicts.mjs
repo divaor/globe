@@ -6,6 +6,9 @@
  *   eras        scripts/data/eras/<id>.json        (Eras and ideas; format: scripts/data/STORIES.md)
  *   food        scripts/data/food/<id>.json        (Food through time)
  *   structures  scripts/data/structures/<id>.json  (Great structures)
+ *   people      scripts/data/people/<id>.json      (Peoples and civilizations)
+ *   life        scripts/data/life/<id>.json        (Life through time: steps older than 5 million
+ *                                                   years are drawn on the continents of their age)
  *
  * Each collection is written to public/data/<dir>/:
  *
@@ -40,17 +43,22 @@ import { topology } from 'topojson-server';
 import { presimplify, simplify, sphericalTriangleArea } from 'topojson-simplify';
 import { geoArea, geoCircle, geoDistance, geoGraticule10, geoOrthographic, geoPath } from 'd3-geo';
 import { rewindTopology } from './winding.mjs';
+import { paleoMa, tooOld, plateFor, rotate, paleoLand, PALEO_YEARS } from './paleo-rot.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DATA = path.join(ROOT, 'public/data');
 
 /** The collections: where their sources and outputs live. */
-export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people' };
+export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life' };
+/** The collections whose deep-time steps are drawn on the continents of their age (the plate model). */
+const PALEO_KINDS = new Set(['life']);
 const srcDir = (kind) => path.join(ROOT, 'scripts/data', KINDS[kind]);
 const outDir = (kind) => path.join(DATA, KINDS[kind]);
-const ITEM_TYPES = ['person', 'work', 'place', 'invention', 'event', 'site', 'dish', 'crop', 'animal', 'structure', 'institution', 'fossil', 'culture'];
+const ITEM_TYPES = ['person', 'work', 'place', 'invention', 'event', 'site', 'dish', 'crop', 'animal', 'structure', 'institution', 'fossil', 'culture', 'species'];
 
-export const ERAS = ['prehistory', 'ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
+export const ERAS = ['precambrian', 'paleozoic', 'mesozoic', 'cenozoic', 'prehistory', 'ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
+/** The geologic eras: only the Life through time stories are grouped by them. */
+const GEO_ERAS = ['precambrian', 'paleozoic', 'mesozoic', 'cenozoic'];
 
 // ---------------------------------------------------------------------------------------------
 // Base map pieces, as polygon-clipping MultiPolygons ([polygon][ring][point][x, y]) with boxes.
@@ -437,6 +445,7 @@ function validate(c, file, kind = 'wars', coll = null) {
   text(c.name, `${where} name`); text(c.summary, `${where} summary`); text(c.region, `${where} region`); text(c.outcome, `${where} outcome`);
   text(c.casualtiesNote, `${where} casualtiesNote`, false);
   if (!ERAS.includes(c.era)) throw new Error(`${where}: "era" must be one of ${ERAS.join(', ')}`);
+  if (GEO_ERAS.includes(c.era) && !PALEO_KINDS.has(kind)) throw new Error(`${where}: "era" ${c.era} is for Life through time; use one of ${ERAS.filter((e) => !GEO_ERAS.includes(e)).join(', ')}`);
   if (typeof c.icon !== 'string' || !c.icon) throw new Error(`${where}: "icon" (an emoji) is missing`);
   const t0 = parseDate(c.start, `${where} start`), t1 = parseDate(c.end, `${where} end`);
   if (t1 < t0) throw new Error(`${where}: "end" is before "start"`);
@@ -583,6 +592,7 @@ async function build(file, opts) {
       if (inPeriod && t <= last + 1e-6) addItem(it, -1);
     }
   }
+  if (PALEO_KINDS.has(kind)) paleoPass(c, steps, items, opts);
   if (opts.lint) lint(c, steps, areas);
 
   // Territory TopoJSON: shared arcs, simplified for world-to-country zoom, quantised.
@@ -627,6 +637,53 @@ async function build(file, opts) {
 }
 
 // ---------------------------------------------------------------------------------------------
+// Life through time: steps older than 5 million years are drawn on the continents of their age.
+
+/**
+ * Each such step gets its age (`ma`, in millions of years; `deep` when it is older than the plate
+ * model, which then draws today's land), and every place drawn on it the plate that carries it
+ * (`pl`; `pls` for a route's points), so the app moves it with its continent. Cameras get the plate
+ * under the point they look at.
+ */
+function paleoPass(c, steps, items, opts) {
+  const warn = (m) => { if (opts.lint) console.warn(`  warn ${c.id}: ${m}`); };
+  const place = (pt, ma, what) => {
+    const r = plateFor(pt, ma);
+    if (r.note) warn(`${what} is drawn with its plate, but ${r.note}`);
+    return r.pl;
+  };
+  steps.forEach((st, i) => {
+    if (st.t < PALEO_YEARS) {
+      const held = Object.entries(st.control).filter(([, v]) => v != null).map(([k]) => k);
+      if (held.length) throw new Error(`${c.id} steps[${i}]: a step older than 5 million years is drawn on the continents of its age, so it can't have territory ("control": ${held.join(', ')}); show items and moves instead`);
+    }
+    const ma = paleoMa(st.t);
+    if (ma != null) st.ma = Math.round(ma * 1000) / 1000;
+    else if (tooOld(st.t)) st.deep = true;
+    if (ma == null) return;
+    for (const [j, mv] of (st.moves ?? []).entries()) mv.pls = mv.path.map((pt, k) => place(pt, ma, `steps[${i}].moves[${j}].path[${k}]`));
+    for (const [j, ev] of (st.events ?? []).entries()) if (ev.at) { const pl = place(ev.at, ma, `steps[${i}].events[${j}]`); if (pl) ev.pl = pl; }
+  });
+  if (!steps.some((st) => st.ma != null)) return;
+  for (const cam of [c.camera, ...steps.map((st) => st.camera)]) {
+    if (!cam) continue;
+    const pl = plateFor([cam.lon, cam.lat], 0).pl;
+    if (pl) cam.pl = pl;
+  }
+  items.forEach((it, idx) => {
+    // The steps that draw it: those that show it, and the later ones that keep it as a dot until it
+    // dies out (in a time tour, from its date on). Its plate is looked up at the first old map among them.
+    const draws = (st, k) => st.show?.includes(idx)
+      || ((it.first >= 0 ? k > it.first : st.t >= it.t - 1e-6) && !(it.tu != null && st.t > it.tu + 1e-6));
+    const j = steps.findIndex((st, k) => st.ma != null && draws(st, k));
+    const ma = j >= 0 ? steps[j].ma : paleoMa(it.t);
+    if (ma == null) return;
+    const pl = place(it.at, ma, `item "${it.name.en}"`);
+    if (pl) it.pl = pl;
+  });
+}
+
+// ---------------------------------------------------------------------------------------------
 // Lint: warnings worth a look (they don't stop the build).
 
 function lint(c, steps, areas) {
@@ -665,6 +722,10 @@ function lint(c, steps, areas) {
 
 function fmtDate(s) {
   const [y, mo, d] = (/^(-?\d+)(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(s) ?? []).slice(1);
+  const n = -Number(y);
+  if (n >= 1e9) return `${Math.round(n / 1e7) / 100} billion years ago`;
+  if (n >= 1e6) return `${Math.round(n / 1e4) / 100} million years ago`;
+  if (n > 10000) return `${n.toLocaleString('en')} years ago`;
   const year = Number(y) < 0 ? `${-Number(y)} BC` : y;
   return [d, mo && ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][Number(mo) - 1], year].filter(Boolean).join(' ');
 }
@@ -683,13 +744,21 @@ async function preview(c, topo, dir) {
   const jobs = [];
   c.steps.forEach((st, i) => {
     cam = st.camera ?? cam;
-    const proj0 = geoOrthographic().rotate([-cam.lon, -cam.lat]).scale(290 * cam.zoom).translate([W / 2, H / 2 + 20]).clipAngle(90).precision(0.3);
+    // A step older than 5 million years (Life through time) is drawn on the continents of its age:
+    // its places and the camera move with their plates.
+    const ma = st.ma ?? null;
+    const at = (pt, pl) => (ma != null ? rotate(pt, pl, ma) : pt);
+    const centre = at([cam.lon, cam.lat], cam.pl);
+    const proj0 = geoOrthographic().rotate([-centre[0], -centre[1]]).scale(290 * cam.zoom).translate([W / 2, H / 2 + 20]).clipAngle(90).precision(0.3);
     // Points on the far side of the globe are hidden (paths are clipped by clipAngle; points aren't).
-    const centre = [cam.lon, cam.lat];
     const proj = Object.assign((pt) => (geoDistance(centre, pt) < Math.PI / 2 - 0.005 ? proj0(pt) : null), proj0);
     const p = geoPath(proj0);
     const parts = [`<rect width="${W}" height="${H}" fill="#ffffff"/>`, `<path d="${p({ type: 'Sphere' })}" fill="#cfe3f3"/>`,
-      `<path d="${p(geoGraticule10())}" fill="none" stroke="#b5cde2" stroke-width="0.5"/>`, `<path d="${p(landF)}" fill="#ece6d6" stroke="#9aa5ad" stroke-width="0.4"/>`];
+      `<path d="${p(geoGraticule10())}" fill="none" stroke="#b5cde2" stroke-width="0.5"/>`];
+    if (ma != null) {
+      const old = paleoLand(ma);
+      parts.push(`<path d="${p(old.shelf)}" fill="#b4d2e8"/>`, `<path d="${p(old.land)}" fill="#ece6d6" stroke="#9aa5ad" stroke-width="0.4"/>`);
+    } else parts.push(`<path d="${p(landF)}" fill="${st.deep ? '#e2e2e2' : '#ece6d6'}" stroke="#9aa5ad" stroke-width="0.4"/>`);
     for (const s of c.sides) {
       const idx = st.control[s.id];
       if (idx == null) continue;
@@ -697,7 +766,7 @@ async function preview(c, topo, dir) {
     }
     for (const mv of st.moves ?? []) {
       const col = c.sides.find((s) => s.id === mv.side).color;
-      const d = p({ type: 'LineString', coordinates: mv.path });
+      const d = p({ type: 'LineString', coordinates: mv.path.map((pt, k) => at(pt, mv.pls?.[k])) });
       if (d) parts.push(`<path d="${d}" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/><path d="${d}" fill="none" stroke="${col}" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-${mv.side})"/>`);
     }
     for (const b of st.battles ?? []) {
@@ -707,7 +776,7 @@ async function preview(c, topo, dir) {
     }
     for (const e of st.events ?? []) {
       if (!e.at) continue;
-      const xy = proj(e.at);
+      const xy = proj(at(e.at, e.pl));
       if (xy) parts.push(`<rect x="${xy[0] - 4}" y="${xy[1] - 4}" width="8" height="8" fill="#f2c14e" stroke="#111"/>`);
     }
     if (c.items) {
@@ -717,11 +786,11 @@ async function preview(c, topo, dir) {
       const now = new Set(st.show);
       c.items.forEach((it, k) => {
         if (now.has(k) || !((it.first >= 0 && it.first < i) || (it.first === -1 && it.t <= st.t)) || (it.tu != null && it.tu < st.t)) return;
-        const xy = proj(it.at);
+        const xy = proj(at(it.at, it.pl));
         if (xy) parts.push(`<circle cx="${xy[0]}" cy="${xy[1]}" r="2.6" fill="${col.get(it.cat)}" fill-opacity="0.75" stroke="#fff" stroke-width="0.8"/>`);
       });
       for (const k of st.show) {
-        const it = c.items[k], xy = proj(it.at);
+        const it = c.items[k], xy = proj(at(it.at, it.pl));
         if (!xy) continue;
         parts.push(`<circle cx="${xy[0]}" cy="${xy[1]}" r="5.5" fill="${col.get(it.cat)}" stroke="#fff" stroke-width="1.5"/><text x="${xy[0] + 8}" y="${xy[1] + 4}" font-size="10.5" font-family="sans-serif" fill="#111" stroke="#fff" stroke-width="3" paint-order="stroke">${esc(it.name.en.slice(0, 40))}</text>`);
       }
@@ -731,7 +800,9 @@ async function preview(c, topo, dir) {
       ? [...c.sides.filter((s) => st.control[s.id] != null || (st.moves ?? []).some((m) => m.side === s.id)), ...c.cats.filter((k) => st.show.some((x) => c.items[x].cat === k.id))]
       : c.sides.filter((s) => st.control[s.id] != null || (st.moves ?? []).some((m) => m.side === s.id));
     const legend = shown.map((s, k) => `<rect x="${12 + (k % 3) * 205}" y="${H - 44 + Math.floor(k / 3) * 18}" width="12" height="12" fill="${s.color}"/><text x="${28 + (k % 3) * 205}" y="${H - 34 + Math.floor(k / 3) * 18}" font-size="12" font-family="sans-serif">${esc(s.name.en.slice(0, 30))}</text>`).join('');
-    const title = `<text x="12" y="22" font-size="15" font-weight="bold" font-family="sans-serif">${esc(`${i + 1}/${c.steps.length} · ${fmtDate(st.date)} · ${st.title.en}`)}</text>`;
+    const map = ma != null ? `<text x="12" y="40" font-size="11.5" font-family="sans-serif" fill="#555">${esc(`continents of ${ma} million years ago (Merdith et al. 2021)`)}</text>`
+      : st.deep ? `<text x="12" y="40" font-size="11.5" font-family="sans-serif" fill="#555">today's land: older than the plate model (1000 million years)</text>` : '';
+    const title = `<text x="12" y="22" font-size="15" font-weight="bold" font-family="sans-serif">${esc(`${i + 1}/${c.steps.length} · ${fmtDate(st.date)} · ${st.title.en}`)}</text>${map}`;
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}"><defs>${markers}</defs>${parts.join('')}${title}${legend}</svg>`;
     jobs.push(sharp(Buffer.from(svg)).png().toFile(path.join(dir, `${c.id}-${String(i + 1).padStart(2, '0')}.png`)));
   });

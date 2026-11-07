@@ -1,5 +1,6 @@
 // Time-travel modes behind the "Time travel" dock button: political history, plate tectonics, and the
-// story collections (wars and conquests, eras and ideas, food through time, great structures).
+// story collections (wars and conquests, eras and ideas, food through time, great structures, peoples
+// and civilizations, life through time).
 import { History } from 'lucide';
 import { h } from '../ui/dom';
 import { t } from '../app/i18n';
@@ -35,8 +36,15 @@ export class TimeTravel {
       id: 'pangea', icon: '🌋', title: () => t('pangeaTitle'), desc: () => t('pangeaDesc'),
       enter: () => pangea.enter(), exit: () => pangea.exit(), tap: (lon, lat) => pangea.tap(lon, lat),
     });
+    // A Life through time step opens the plate model at its age ("See the continents move").
+    app.on('pangea-at', (ma) => void (async () => {
+      if (app.mode && app.mode !== 'pangea') await this.modes.find((x) => x.id === app.mode)?.exit();
+      if (app.mode === 'pangea') await pangea.exit();
+      shell.sheet.close();
+      await pangea.enter(Number(ma));
+    })());
     // Each story collection opens its list of stories; the mode starts when one is picked.
-    const icons: Record<StoryKind, string> = { wars: '⚔️', eras: '🎨', food: '🌾', structures: '🏛️', people: '🏺' };
+    const icons: Record<StoryKind, string> = { wars: '⚔️', eras: '🎨', food: '🌾', structures: '🏛️', people: '🏺', life: '🦕' };
     for (const kind of STORY_KINDS) {
       const m = (this.stories[kind] = new StoryMode(app, shell, kind));
       this.add({
