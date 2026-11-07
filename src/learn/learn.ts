@@ -10,20 +10,21 @@ import type { Shell } from '../ui/shell';
 import type { TimeTravel } from '../modes';
 import type { RenderSettings } from '../engine/renderer';
 import { TOURS, type Tour, type TourStep } from './tours';
+import type { Unit } from '../modes/paleo';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
 const shuffle = <T,>(a: T[]) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 
-type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ';
+type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period';
 /** An item of a story collection, tagged with its collection. */
 interface QItem extends CollectionItem { kind: StoryKind }
 /** A question; once answered, whether it was right and what the player answered. */
 interface Q { id: string; options?: string[]; item?: QItem; ok?: boolean; given?: string; pick?: string }
-const ITEM_QUIZZES: QuizKind[] = ['where', 'when', 'dish', 'era', 'civ'];
+const ITEM_QUIZZES: QuizKind[] = ['where', 'when', 'dish', 'era', 'civ', 'period'];
 /** The civilization stories of Peoples and civilizations: the answers of "Which civilization?". */
 const CIV_STORIES = ['mesopotamia', 'ancient-egypt', 'indus-valley', 'persia', 'kush-aksum', 'ancient-china', 'khmer', 'west-african-empires', 'great-zimbabwe-swahili', 'olmecs-maya', 'andes'];
-const COLLECTION_DIR: Record<StoryKind, string> = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people' };
+const COLLECTION_DIR: Record<StoryKind, string> = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life' };
 const yearOf = (d: string) => Number(/^-?\d+/.exec(d)?.[0] ?? 0);
 
 /** Four years to choose from: the right one and three plausible others (no year 0, none in the future). */
@@ -50,6 +51,8 @@ export class Learn {
   private items: Partial<Record<StoryKind, CollectionItem[]>> = {};
   private eras = new Map<string, { name: { en: string; es: string }; icon: string }>();
   private civs = new Map<string, { name: { en: string; es: string }; icon: string }>();
+  /** The geologic periods of the last 1000 million years, oldest first (the answers of "Which period?"). */
+  private periods: Unit[] = [];
 
   constructor(private app: App, private shell: Shell, private time: TimeTravel) {
     this.card = h('section', { class: 'learn-card glass', hidden: true });
@@ -113,11 +116,12 @@ export class Learn {
       list.append(c);
     }
     const more: [QuizKind, string, string, string][] = [
-      ['where', '📍', L('Where in the world?', '¿Dónde está?'), L('Tap on the globe where a monument, a work or a dish comes from.', 'Toca en el globo de dónde es un monumento, una obra o un plato.')],
+      ['where', '📍', L('Where in the world?', '¿Dónde está?'), L('Tap on the globe where a monument, a work, a dish or a fossil comes from.', 'Toca en el globo de dónde es un monumento, una obra, un plato o un fósil.')],
       ['when', '⏳', L('When was it?', '¿Cuándo fue?'), L('Pick the year it was built, made or first recorded.', 'Elige el año en que se construyó, se hizo o aparece por primera vez.')],
       ['dish', '🍲', L('Dishes of the world', 'Platos del mundo'), L('Which country does this dish come from?', '¿De qué país es este plato?')],
       ['era', '🎨', L('Which era?', '¿Qué época?'), L('Match people, works and inventions to their era.', 'Relaciona personas, obras e inventos con su época.')],
       ['civ', '🏺', L('Which civilization?', '¿Qué civilización?'), L('Match finds, works and rulers to their civilization.', 'Relaciona hallazgos, obras y gobernantes con su civilización.')],
+      ['period', '🦕', L('Which period?', '¿Qué periodo?'), L('Match fossils and ancient animals to their geologic period.', 'Relaciona fósiles y animales antiguos con su periodo geológico.')],
     ];
     const list2 = h('div', { class: 'mode-list' });
     for (const [k, ic, title, desc] of more) {
@@ -128,7 +132,7 @@ export class Learn {
       list2.append(c);
     }
     this.shell.openPanel('quiz', L('Quiz', 'Concurso'), h('div', null, h('h3', { class: 'sec-title' }, L('Region', 'Región')), regionRow, h('h3', { class: 'sec-title' }, L('Game', 'Juego')), list,
-      h('h3', { class: 'sec-title' }, L('History, art and food', 'Historia, arte y comida')), list2));
+      h('h3', { class: 'sec-title' }, L('History, art, food and life', 'Historia, arte, comida y vida')), list2));
   }
 
   private async startQuiz(kind: QuizKind, region: string) {
@@ -151,11 +155,15 @@ export class Learn {
   }
 
   private async loadItems(kinds: StoryKind[]) {
+    // A collection that can't be loaded (offline, not cached) is left out of the questions.
     await Promise.all(kinds.map(async (k) => {
-      if (!this.items[k]) this.items[k] = (await loadJSON<{ items: CollectionItem[] }>(`${COLLECTION_DIR[k]}/items.json`)).items;
+      if (!this.items[k]) { try { this.items[k] = (await loadJSON<{ items: CollectionItem[] }>(`${COLLECTION_DIR[k]}/items.json`)).items; } catch { /* left out */ } }
     }));
     if (kinds.includes('eras') && !this.eras.size) {
       for (const st of (await loadJSON<{ stories: { id: string; name: { en: string; es: string }; icon: string }[] }>('eras/index.json')).stories) this.eras.set(st.id, st);
+    }
+    if (kinds.includes('life') && !this.periods.length) {
+      try { this.periods = (await loadJSON<{ units: Unit[] }>('paleo/timescale.json')).units.filter((u) => u.rank === 'period' && u.start <= 1000).sort((a, b) => b.start - a.start); } catch { /* "Which period?" says it needs the data */ }
     }
     if (kinds.includes('people') && !this.civs.size) {
       for (const st of (await loadJSON<{ stories: { id: string; name: { en: string; es: string }; icon: string }[] }>('people/index.json')).stories) if (CIV_STORIES.includes(st.id)) this.civs.set(st.id, st);
@@ -165,17 +173,18 @@ export class Learn {
   /** The quizzes about the story collections: their items make the questions. */
   private async startItemQuiz(kind: QuizKind) {
     if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
-    const needs: StoryKind[] = kind === 'dish' ? ['food'] : kind === 'era' ? ['eras'] : kind === 'civ' ? ['people'] : kind === 'where' ? ['structures', 'eras', 'food', 'people'] : ['structures', 'eras', 'food'];
+    const needs: StoryKind[] = kind === 'dish' ? ['food'] : kind === 'era' ? ['eras'] : kind === 'civ' ? ['people'] : kind === 'period' ? ['life'] : kind === 'where' ? ['structures', 'eras', 'food', 'people', 'life'] : ['structures', 'eras', 'food'];
     try { await this.loadItems(needs); } catch { /* offline: the pool stays small */ }
     const tag = (k: StoryKind): QItem[] => (this.items[k] ?? []).map((it) => ({ ...it, kind: k }));
     const is = (it: QItem, ...types: string[]) => !!it.type && types.includes(it.type);
     let pool: QItem[] = [];
-    if (kind === 'where') pool = [...tag('structures'), ...tag('eras').filter((it) => !is(it, 'person')), ...tag('food').filter((it) => is(it, 'dish', 'site')), ...tag('people').filter((it) => is(it, 'site', 'structure', 'fossil', 'work', 'culture'))];
+    if (kind === 'where') pool = [...tag('structures'), ...tag('eras').filter((it) => !is(it, 'person')), ...tag('food').filter((it) => is(it, 'dish', 'site')), ...tag('people').filter((it) => is(it, 'site', 'structure', 'fossil', 'work', 'culture')), ...tag('life').filter((it) => is(it, 'fossil', 'site', 'species', 'animal'))];
     if (kind === 'when') pool = [...tag('structures'), ...tag('eras').filter((it) => is(it, 'work', 'invention', 'structure', 'event', 'institution')), ...tag('food').filter((it) => is(it, 'dish'))];
     if (kind === 'dish') pool = tag('food').filter((it) => is(it, 'dish') && !!it.country && !!this.app.data.meta[it.country]);
     if (kind === 'era') pool = tag('eras').filter((it) => is(it, 'person', 'work', 'invention') && this.eras.has(it.story));
     if (kind === 'civ') pool = tag('people').filter((it) => is(it, 'person', 'work', 'structure', 'site', 'invention') && this.civs.has(it.story));
-    if (pool.length < 10 || (kind === 'era' && this.eras.size < 4) || (kind === 'civ' && this.civs.size < 4)) {
+    if (kind === 'period') pool = tag('life').filter((it) => is(it, 'species', 'fossil', 'site') && this.periodOf(it) != null);
+    if (pool.length < 10 || (kind === 'era' && this.eras.size < 4) || (kind === 'civ' && this.civs.size < 4) || (kind === 'period' && this.periods.length < 4)) {
       clear(this.card);
       const close = h('button', { type: 'button', class: 'pill sm' }, t('close'));
       close.addEventListener('click', () => { this.card.hidden = true; });
@@ -190,6 +199,7 @@ export class Learn {
       if (kind === 'dish') return { id: it.country!, item: it, options: shuffle([it.country!, ...shuffle(countries.filter((c) => c !== it.country)).slice(0, 3)]) };
       if (kind === 'era') return { id: it.story, item: it, options: shuffle([it.story, ...shuffle([...this.eras.keys()].filter((x) => x !== it.story)).slice(0, 3)]) };
       if (kind === 'civ') return { id: it.story, item: it, options: shuffle([it.story, ...shuffle([...this.civs.keys()].filter((x) => x !== it.story)).slice(0, 3)]) };
+      if (kind === 'period') return { id: this.periodOf(it)!, item: it, options: this.periodOptions(this.periodOf(it)!) };
       return { id: it.story, item: it };
     });
     const labels = { ...this.app.renderer.settings.labels };
@@ -198,6 +208,36 @@ export class Learn {
     this.app.select(null);
     if (kind === 'where' && this.app.renderer.view.current.kind !== 'globe') this.app.setProjection('globe');
     this.renderQuiz();
+  }
+
+  /**
+   * "Which period?": the geologic period an item belongs to, by its date. Left out: species that
+   * lived across several periods, and what lies near a boundary (the extinctions that end periods).
+   */
+  private periodOf(it: QItem): string | null {
+    // A species still alive belongs to no single period.
+    if (it.type === 'species' && it.tu == null) return null;
+    const ma = -it.t / 1e6, end = it.tu != null ? -it.tu / 1e6 : ma;
+    const u = this.periods.find((p) => ma <= p.start && ma > p.end);
+    if (!u || end < u.end || Math.min(u.start - ma, ma - u.end) < (u.start - u.end) * 0.02) return null;
+    return u.name_en;
+  }
+
+  /** The right period and three others near it in time, oldest first. */
+  private periodOptions(id: string): string[] {
+    const i = this.periods.findIndex((p) => p.name_en === id);
+    const near = this.periods.map((p, k) => [p.name_en, Math.abs(k - i)] as const).filter(([n, d]) => n !== id && d <= 3).map(([n]) => n);
+    const pick = new Set([id, ...shuffle(near).slice(0, 3)]);
+    return this.periods.map((p) => p.name_en).filter((n) => pick.has(n));
+  }
+
+  /** "Jurassic (201–143 million years ago)". */
+  private periodLabel(id: string): string {
+    const u = this.periods.find((p) => p.name_en === id);
+    if (!u) return id;
+    const f = (x: number) => (x >= 10 ? String(Math.round(x)) : String(Math.round(x * 10) / 10).replace('.', es() ? ',' : '.'));
+    const when = u.end <= 0 ? L(`since ${f(u.start)} million years ago`, `desde hace ${f(u.start)} millones de años`) : L(`${f(u.start)}–${f(u.end)} million years ago`, `hace ${f(u.start)}–${f(u.end)} millones de años`);
+    return `${es() ? u.name_es : u.name_en} (${when})`;
   }
 
   /** The question for an item. */
@@ -209,7 +249,9 @@ export class Learn {
     if (kind === 'where' && ty === 'dish' && spice) return L('Where does this spice or sauce come from?', '¿De dónde es esta especia o salsa?');
     if (kind === 'dish' && drink) return L('Which country does this drink come from?', '¿De qué país es esta bebida?');
     if (kind === 'dish' && spice) return L('Which country does this spice or sauce come from?', '¿De qué país es esta especia o salsa?');
-    if (kind === 'where') return ty === 'dish' ? L('Where does this dish come from?', '¿De dónde es este plato?') : ty === 'fossil' ? L('Where was this found?', '¿Dónde se encontró?') : ty === 'culture' ? L('Where was this civilization centred?', '¿Dónde tenía su centro esta civilización?') : ty === 'work' ? L('Where was this made?', '¿Dónde se hizo?') : ty === 'invention' ? L('Where was this invented?', '¿Dónde se inventó?') : ty === 'event' ? L('Where did this happen?', '¿Dónde ocurrió?') : L('Where in the world is this?', '¿Dónde está?');
+    if (kind === 'where' && ty === 'animal') return L('Where was this animal first tamed?', '¿Dónde se domesticó primero este animal?');
+    if (kind === 'period') return ty === 'site' ? L('From which period are its fossils?', '¿De qué periodo son sus fósiles?') : L('In which period did it live?', '¿En qué periodo vivió?');
+    if (kind === 'where') return ty === 'dish' ? L('Where does this dish come from?', '¿De dónde es este plato?') : ty === 'fossil' || ty === 'species' ? L('Where was this found?', '¿Dónde se encontró?') : ty === 'culture' ? L('Where was this civilization centred?', '¿Dónde tenía su centro esta civilización?') : ty === 'work' ? L('Where was this made?', '¿Dónde se hizo?') : ty === 'invention' ? L('Where was this invented?', '¿Dónde se inventó?') : ty === 'event' ? L('Where did this happen?', '¿Dónde ocurrió?') : L('Where in the world is this?', '¿Dónde está?');
     if (kind === 'when') return it.end ? L('When was it completed?', '¿Cuándo se terminó?') : ty === 'dish' ? L('When was it first recorded?', '¿Cuándo aparece por primera vez?') : ty === 'work' ? L('When was it made?', '¿Cuándo se hizo?') : ty === 'invention' ? L('When was it invented?', '¿Cuándo se inventó?') : ty === 'event' ? L('When did it happen?', '¿Cuándo ocurrió?') : L('When was it built?', '¿Cuándo se construyó?');
     if (kind === 'dish') return L('Which country does this dish come from?', '¿De qué país es este plato?');
     if (kind === 'civ') return L('Which civilization does this belong to?', '¿A qué civilización pertenece?');
@@ -221,6 +263,7 @@ export class Learn {
     if (kind === 'dish') return `${flagEmoji(this.app.data.meta[o]?.a2)} ${this.app.data.name(o, lang())}`;
     if (kind === 'era') { const e = this.eras.get(o); return e ? `${e.icon} ${tx(e.name)}` : o; }
     if (kind === 'civ') { const e = this.civs.get(o); return e ? `${e.icon} ${tx(e.name)}` : o; }
+    if (kind === 'period') return this.periodLabel(o);
     return kind === 'capital' ? this.capital(o) : `${this.app.data.name(o, lang())}`;
   }
 

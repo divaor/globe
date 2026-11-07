@@ -1,6 +1,6 @@
-# Eras and ideas, Food through time, Great structures, Peoples and civilizations: authoring guide
+# Eras and ideas, Food through time, Great structures, Peoples and civilizations, Life through time: authoring guide
 
-Four time-travel collections share the story format of Wars and conquests:
+Five time-travel collections share the story format of Wars and conquests:
 
 | Collection | Folder | What a story shows |
 |---|---|---|
@@ -8,6 +8,7 @@ Four time-travel collections share the story format of Wars and conquests:
 | Food through time | `scripts/data/food/` | where crops and animals were tamed, how foods travelled, where dishes were born |
 | Great structures | `scripts/data/structures/` | where and when great structures were built, by whom, why and how |
 | Peoples and civilizations | `scripts/data/people/` | human origins and migrations, and where civilizations rose and fell, with their capitals, works and what remains |
+| Life through time | `scripts/data/life/` | the story of life on the drifting continents: first life, fossils, extinctions, dinosaurs, mammals, the Ice Age, tamed animals, species then and now (see [Life through time](#life-through-time) below) |
 
 **Read `scripts/data/conflicts/README.md` first.** It covers dates, the camera, sides and their territory
 (`control` with area expressions), `moves` (routes), `events`, `aftermath` and sources, which work the
@@ -40,7 +41,7 @@ same here. `structures/seven-wonders.json` is a complete example that uses the c
 | `at` | `[lon, lat]`, precise (4 decimals) for buildings and sites; for a person, where the step's work happened |
 | `cat` | a category id from `_collection.json` (below) |
 | `icon` | optional emoji; defaults to the category's (✍️ for a writer, 🎭 for a theatre...) |
-| `type` | optional: `person`, `work`, `place`, `invention`, `event`, `site`, `dish`, `crop`, `animal`, `structure`, `institution`, `fossil` (a fossil find), `culture` (a civilization or people as a whole) (quizzes use it) |
+| `type` | optional: `person`, `work`, `place`, `invention`, `event`, `site`, `dish`, `crop`, `animal`, `structure`, `institution`, `fossil` (a fossil find), `culture` (a civilization or people as a whole), `species` (a living or extinct kind of organism) (quizzes use it) |
 | `date` | when it happened or was made: a work's creation, an invention, a dish's first record, the start of a building. Dates older than 10,000 BC are written as years ago (14,400 years ago is `-14400`, 3.2 million years ago is `-3200000`); the app shows them as "14,400 years ago" |
 | `end` | optional: when it was finished (a building, a long work) |
 | `until` | optional: when it stopped existing (a civilization's fall, a city abandoned, a building lost). The card shows `date`–`until`, and a time tour takes it off the map after `until` |
@@ -75,6 +76,9 @@ across all of them.
 - **Food:** crop, animal, site, bread, noodles, rice, stew, street, main, sweet, drink, ferment, spice, trade.
 - **Peoples:** fossil, tools, art, journey, farming, city, temple, ruler, tomb, writing, knowledge, trade, war,
   person, place, culture.
+- **Life:** microbe, invertebrate, fish, plant (plants and fungi), amphibian, reptile (sea reptiles too), dinosaur,
+  flyer (pterosaurs and birds), mammal (mammals and their ancestors), tamed (tamed animals), event (Earth events:
+  impacts, eruptions, ice ages), site (fossil sites and places), scientist (fossil hunters and scientists).
 - **Structures:** megalith, pyramid, temple, church, mosque, fort, palace, city, bridge, water, tunnel,
   tower, monument, arena, science.
 
@@ -106,3 +110,40 @@ are small dots. Fix anything in the wrong place (a museum in the sea, a city on 
   móvil, coche). Put a space as the thousands separator (`40 000`) and write BC as `a. C.`.
 - **Steps go in date order.** Each step's title is 2–6 words, and its text is 1–2 sentences (at most
   about 220 characters).
+
+## Life through time
+
+`scripts/data/life/` tells the story of life, from the first microbes to the animals we live with. Its stories
+are drawn on **the continents of their age**: a step older than 5 million years shows the continents where the
+plate model of "Pangea to today" puts them at the step's date (Merdith et al. 2021, back to 1000 million years
+ago), and every marker, route and camera on it moves with its plate.
+
+- **Dates** are years ago, as negative numbers (up to ten digits): 66 million years ago is `-66000000`, 3.7
+  billion years ago is `-3700000000`, 20,000 years ago is `-20000`. Steps go in date order; a story may end
+  with a step in our time (`2024`).
+- **Write every `at` as today's place**: the longitude and latitude where the fossil is found or the rock is
+  today (4 decimals for a site). Do the same for `moves` paths, `events` and cameras. The app moves each point
+  with the plate it is on, so a *Tyrannosaurus* from Montana appears where Montana was 66 million years ago,
+  and fossils of the same animal in Africa, India and Antarctica come together on Pangea.
+- **The map of a step**:
+  - younger than 5 million years: today's map, as in the other collections (areas with `control` allowed:
+    ice sheets, a species' range);
+  - from 5 to 1000 million years ago: the continents of the step's age. These steps can't have territory
+    (`control`): show items, `moves` and `events`. The coastlines are today's, moved with their plates (the
+    model doesn't redraw old seas and shorelines), so don't describe a step as if the map showed a shallow
+    sea or a vanished coast;
+  - older than 1000 million years: today's land, greyed, because the plate model doesn't go back so far. Say
+    in the text that the rocks are found today in Australia, Greenland..., not where they were.
+- **Cameras** in old steps: point at a place on land today; the view follows it to where it was. Zoom 1–1.3
+  shows a whole supercontinent. On a phone the view zooms out until the step's markers fit.
+- **Items**: `type` is `species` for an organism, `fossil` for a famous find (a specimen with a name, a
+  fossil bed), `site`, `event`, `person`, `place` or `animal` (a tamed animal). `date` is when it lived (the
+  age of the fossil or the species' first appearance) and `until` when it died out; a living species has no
+  `until`. Who found it and when goes in `details` or `facts`.
+- **Eras**: `precambrian`, `paleozoic`, `mesozoic` or `cenozoic`, by the story's main period; a story about
+  people (the fossil hunters) uses the human eras (`modern`...).
+- **Check the previews**: in an old step the preview shows that age's continents with the markers where they
+  were. `--lint` warns when a place is far from any land of the plate model or sits on land the model only
+  adds later; look at those markers.
+- **Be careful with science**: give ages as the sources do ("about 375 million years ago") and say when a find
+  or an idea is debated. Write scientific names as plain text, with no markup (Tiktaalik, Tyrannosaurus rex).

@@ -3,19 +3,19 @@
 // opens it from the picker, visits each step, checks that the details list the step's items (or
 // battles), checks that Browse lists every item, and reports page errors. Then it checks each
 // collection's "Browse everything" and a shared link. Usage (with a preview server running):
-//   node scripts/test/stories.mjs [http://localhost:4173/] [eras,food,structures,people | all] [id,id...]
+//   node scripts/test/stories.mjs [http://localhost:4173/] [eras,food,structures,people,life | all] [id,id...]
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 let chromium, devices;
 try { ({ chromium, devices } = require('playwright')); } catch { ({ chromium, devices } = require(require.resolve('playwright', { paths: [process.env.NODE_PATH || '', '/opt/node-tools/node_modules', '/usr/local/lib/node_modules', '/usr/lib/node_modules'] }))); }
 
 const url = process.argv[2] || 'http://localhost:4173/';
-const kindsArg = process.argv[3] || 'eras,food,structures,people';
-const kinds = kindsArg === 'all' ? ['wars', 'eras', 'food', 'structures', 'people'] : kindsArg.split(',');
+const kindsArg = process.argv[3] || 'eras,food,structures,people,life';
+const kinds = kindsArg === 'all' ? ['wars', 'eras', 'food', 'structures', 'people', 'life'] : kindsArg.split(',');
 const only = process.argv[4]?.split(',');
-const DIR = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people' };
-const HASH = { wars: 'war', eras: 'eras', food: 'food', structures: 'structures', people: 'people' };
-const CARD = { wars: /Wars and conquests/, eras: /Eras and ideas/, food: /Food through time/, structures: /Great structures/, people: /Peoples and civilizations/ };
+const DIR = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life' };
+const HASH = { wars: 'war', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life' };
+const CARD = { wars: /Wars and conquests/, eras: /Eras and ideas/, food: /Food through time/, structures: /Great structures/, people: /Peoples and civilizations/, life: /Life through time/ };
 
 const browser = await chromium.launch({ args: ['--disable-accelerated-2d-canvas'] });
 const ctx = await browser.newContext({ ...devices['Pixel 7'] });
@@ -62,6 +62,22 @@ for (const kind of kinds) {
       const st = data.steps[i];
       const shown = await page.evaluate(() => document.querySelector('.wb-title').textContent);
       if (!shown) problems.push(`step ${i + 1}: empty title`);
+      if (kind === 'life') {
+        // An old step is drawn on the continents of its age, and on a phone its own markers are in
+        // view once the camera and the continents have moved (between the top bar and the story bar).
+        if (st.ma != null) {
+          const drawn = await page.waitForFunction((ma) => Math.abs((window.atlas.time.stories.life.ageNow() ?? -1) - ma) < 1e-6, st.ma, { timeout: 6000 }).then(() => true, () => false);
+          if (!drawn) problems.push(`step ${i + 1}: the continents of ${st.ma} million years ago are not drawn`);
+        }
+        if (st.show?.length) {
+          await page.waitForTimeout(1400);
+          const out = await page.evaluate(() => {
+            const s = window.atlas.time.stories.life, v = window.atlas.app.renderer.view, cur = s.c.steps[s.step];
+            return cur.show.filter((k) => { const sp = s.spots.at.get(k); return !sp || sp.x < 0 || sp.x > v.w || sp.y < 56 || sp.y > v.h - v.insetBottom; }).map((k) => s.c.items[k].name.en);
+          });
+          if (out.length) problems.push(`step ${i + 1}: out of view: ${out.join(', ')}`);
+        }
+      }
       const want = { battles: st.battles?.length ?? 0, items: st.show?.length ?? 0 };
       if (want.battles || want.items) {
         await page.evaluate(() => document.querySelector('.wb-more').click());
