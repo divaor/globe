@@ -1,5 +1,5 @@
 {
- "about": "IOC and FIFA codes of every team in Games of the world, mapped to the countries of today that the map colours (ISO 3166-1 alpha-3; @ names an area drawn from the regions of the States and provinces quiz). Teams of the past have a name and where their arc starts; units may change with the year ([from, to, units]). Drafted from datahub.io country-codes (IOC, FIFA columns) and checked by hand.",
+ "about": "IOC and FIFA codes of every team in Games of the world, mapped to the countries of today that the map colours (ISO 3166-1 alpha-3; @ names an area drawn from the regions of the States and provinces quiz). Teams of the past have a name and where their arc starts; units and names may change with the year ([from, to, units]; \"names\": [[from, to, en, es]]). Drafted from datahub.io country-codes (IOC, FIFA columns) and checked by hand.",
  "ioc": {
   "AFG": {
    "units": [
@@ -597,13 +597,20 @@
    "es": "Atletas Olímpicos Independientes"
   },
   "IOP": {
-   "units": [
-    "SRB",
-    "MNE",
-    "XKX"
-   ],
    "en": "Independent Olympic Participants",
    "es": "Participantes Olímpicos Independientes",
+   "units": [
+    [
+     1992,
+     1992,
+     [
+      "SRB",
+      "MNE",
+      "XKX",
+      "MKD"
+     ]
+    ]
+   ],
    "o": [
     20.46,
     44.82
@@ -1084,8 +1091,20 @@
      ]
     ]
    ],
-   "en": "ROC",
-   "es": "COR"
+   "names": [
+    [
+     1956,
+     1975,
+     "Republic of China (Taiwan)",
+     "República de China (Taiwán)"
+    ],
+    [
+     2020,
+     2022,
+     "ROC (Russian Olympic Committee)",
+     "ROC (Comité Olímpico Ruso)"
+    ]
+   ]
   },
   "ROM": {
    "units": [

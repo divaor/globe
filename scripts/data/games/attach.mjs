@@ -79,6 +79,13 @@ function customArea(name) {
 /** A team's code → its row in codes.json (IOC for Olympics, FIFA for World Cups). */
 function codeRow(kind, code) { return load().codes[OLY.has(kind) ? 'ioc' : 'fifa'][code]; }
 
+/** A team's own name in a year, when it is not a country of today: { en, es } or null. */
+function nameIn(row, year) {
+  const hit = row?.names?.find(([from, to]) => year >= from && year <= to);
+  if (hit) return { en: hit[2], es: hit[3] };
+  return row?.en ? { en: row.en, es: row.es } : null;
+}
+
 /** The units of a row in a year: today's countries (ISO A3) and "@areas". */
 function unitsOf(row, year) {
   if (!row) return [];
@@ -143,7 +150,8 @@ export function attachGames(c, steps, { addItem, addArea, warn }) {
         taken.set(k, code); mine.push(k);
       }
       const tm = { c: code, u: mine, ...part };
-      if (row.en) tm.n = { en: row.en, es: row.es };
+      const own = nameIn(row, e.year);
+      if (own) tm.n = own;
       const o = part.s === 'g_boycott' || part.s === 'g_banned' ? undefined : origin(row, units);
       if (o) tm.o = o;
       teams.push(tm);
@@ -185,7 +193,8 @@ export function attachGames(c, steps, { addItem, addArea, warn }) {
     const champion = !oly ? e.teams.find((t) => t.place === 1) : null;
     const nameOf = (code, lang) => {
       const row = codeRow(e.kind, code);
-      if (row?.en) return lang === 'es' ? row.es : row.en;
+      const own = nameIn(row, e.year);
+      if (own) return own[lang];
       const iso = unitsOf(row, e.year)[0];
       return lang === 'es' ? d.meta[iso]?.es : d.meta[iso]?.sn ?? d.meta[iso]?.n;
     };
@@ -220,7 +229,7 @@ export function attachGames(c, steps, { addItem, addArea, warn }) {
     const top = oly ? [...e.medals].sort((a, b) => a.rank - b.rank).slice(0, 4).map((m) => m.code) : e.teams.filter((t) => t.place && t.place <= 4).sort((a, b) => a.place - b.place).map((t) => t.code);
     item.podium = top.map((code) => {
       const row = codeRow(e.kind, code), units = unitsOf(row, e.year);
-      const one = !row?.en && units.length === 1 && !units[0].startsWith('@') ? d.meta[units[0]] : null;
+      const one = !nameIn(row, e.year) && units.length === 1 && !units[0].startsWith('@') ? d.meta[units[0]] : null;
       return { c: code, n: { en: nameOf(code, 'en'), es: nameOf(code, 'es') }, ...(one?.a2 ? { a2: one.a2 } : {}) };
     });
     if (e.dates[1] && e.dates[1] !== e.dates[0]) item.end = e.dates[1];
