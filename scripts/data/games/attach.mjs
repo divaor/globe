@@ -23,7 +23,8 @@ function load() {
       events: readJSON(path.join(HERE, '_data/events.json')),
       codes: readJSON(path.join(HERE, '_codes.json')),
       hosts: readIf(path.join(HERE, '_hosts.json'), {}),
-      away: readIf(path.join(HERE, '_away.json'), {}),
+      // GAMES_NO_AWAY=1 builds without the boycotts (to publish stories while _away.json is still being checked).
+      away: process.env.GAMES_NO_AWAY ? {} : readIf(path.join(HERE, '_away.json'), {}),
       meta: readJSON(path.join(ROOT, 'public/data/base/countries-meta.json')),
     };
   }
