@@ -458,8 +458,10 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   let pick = null;
   for (const e of idx.stories) {
     const st = (await (await fetch(`${url}data/life/${e.id}.json`)).json());
-    const i = st.steps.findIndex((s, k) => s.ma != null && s.show?.length && st.steps[k + 1]?.ma != null && st.steps[k + 1].ma !== s.ma);
-    if (i >= 0) { pick = { id: e.id, i, ma: st.steps[i].ma, next: st.steps[i + 1].ma, item: st.items[st.steps[i].show[0]] }; break; }
+    // An old step followed by another old step, showing a fossil within the plate model's reach (5–1000 million years).
+    const fossil = (s) => (s.show ?? []).find((k) => st.items[k].pl && st.items[k].t <= -5e6 && st.items[k].t >= -1e9);
+    const i = st.steps.findIndex((s, k) => s.ma != null && fossil(s) != null && st.steps[k + 1]?.ma != null && st.steps[k + 1].ma !== s.ma);
+    if (i >= 0) { pick = { id: e.id, i, ma: st.steps[i].ma, next: st.steps[i + 1].ma, k: fossil(st.steps[i]), item: st.items[fossil(st.steps[i])] }; break; }
   }
   check(!!pick, `a life story with old steps is published (${pick ? `${pick.id}, step ${pick.i + 1}, ${pick.ma} Ma` : 'none'})`);
   if (pick) {
@@ -470,15 +472,15 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.waitForTimeout(500);
     const old = await page.evaluate(() => { const s = window.atlas.time.stories.life; return { age: s.ageNow(), chip: document.querySelector('.wb-age')?.textContent ?? '' }; });
     check(old.age === pick.ma && /🌋/.test(old.chip), `a life step is drawn on the continents of ${pick.ma} million years ago (${old.chip})`);
-    // Its first marker is where its plate carried it, not where it is found today.
+    // The fossil's marker is where its plate carried it, not where it is found today.
     const moved = await page.evaluate((k) => {
-      const s = window.atlas.time.stories.life, it = s.c.items[s.c.steps[s.step].show[0]];
+      const s = window.atlas.time.stories.life, it = s.c.items[k];
       const now = s.itemAt(it, s.ageNow()), today = it.at;
       return { km: Math.round(Math.acos(Math.min(1, Math.sin(now[1] * Math.PI / 180) * Math.sin(today[1] * Math.PI / 180) + Math.cos(now[1] * Math.PI / 180) * Math.cos(today[1] * Math.PI / 180) * Math.cos((now[0] - today[0]) * Math.PI / 180))) * 6371), pl: it.pl };
-    });
+    }, pick.k);
     check(!!moved.pl && moved.km > 50, `its fossils move with their plate (${pick.item.name.en}: ${moved.km} km from today's place)`);
     // Tap the marker: its card, with the latitude it lay at.
-    const sp = await page.evaluate(() => { const s = window.atlas.time.stories.life; const p = s.spots.at.get(s.c.steps[s.step].show[0]); return p ? [p.x, p.y] : null; });
+    const sp = await page.evaluate((k) => { const p = window.atlas.time.stories.life.spots.at.get(k); return p ? [p.x, p.y] : null; }, pick.k);
     if (sp) await page.touchscreen.tap(sp[0], sp[1]);
     await page.waitForTimeout(800);
     const card = await page.evaluate(() => { const c = document.querySelector('.country-card'); return { open: !c.hidden, rows: [...c.querySelectorAll('.row')].map((r) => r.textContent).join(' | ') }; });
@@ -492,10 +494,12 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     check(between && ages[ages.length - 1] === pick.next, `the continents drift from ${pick.ma} to ${pick.next} million years ago (${ages.map((a) => (a == null ? '-' : Math.round(a))).join(' → ')})`);
     // A tap on old land away from the markers: what it is today.
     const land = await page.evaluate(() => {
-      const s = window.atlas.time.stories.life, v = window.atlas.app.renderer.view, w = s.paleo;
+      const s = window.atlas.time.stories.life, v = window.atlas.app.renderer.view, w = s.paleo, cur = s.c.steps[s.step];
+      // Away from every marker on the map: this step's and the earlier ones' dots.
+      const marks = s.c.items.filter((it, k) => (cur.show ?? []).includes(k) || s.onMap(it, cur)).map((it) => v.project(...s.itemAt(it, s.ageNow()))).filter(Boolean);
       for (let y = 120; y < v.h - v.insetBottom - 20; y += 23) for (let x = 20; x < v.w - 20; x += 23) {
         const g = v.invert(x, y);
-        if (!g || [...s.spots.at.values()].some((p) => Math.hypot(p.x - x, p.y - y) < 40)) continue;
+        if (!g || marks.some((p) => Math.hypot(p[0] - x, p[1] - y) < 40) || [...s.spots.at.values()].some((p) => Math.hypot(p.x - x, p.y - y) < 40)) continue;
         if (w.tapRows(g[0], g[1], s.ageNow(), window.atlas.app)) return [x, y];
       }
       return null;
