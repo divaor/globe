@@ -1,0 +1,3177 @@
+{
+  "id": "fossil-hunters",
+  "name": {
+    "en": "The fossil hunters",
+    "es": "Los cazadores de fósiles"
+  },
+  "icon": "🦴",
+  "era": "modern",
+  "region": {
+    "en": "The whole world",
+    "es": "Todo el mundo"
+  },
+  "start": "-675",
+  "end": "2026",
+  "summary": {
+    "en": "From griffin legends and Chinese \"dragon bones\" to Mary Anning, the Bone Wars and the asteroid that ended the dinosaurs: the people who dug up the deep past, including many that history forgot.",
+    "es": "De las leyendas del grifo y los \"huesos de dragón\" chinos a Mary Anning, la Guerra de los Huesos y el asteroide que acabó con los dinosaurios: quienes desenterraron el pasado remoto, incluidos muchos que la historia olvidó."
+  },
+  "camera": {
+    "lon": 10.0,
+    "lat": 35.0,
+    "zoom": 1.0
+  },
+  "sides": [
+    {
+      "id": "taken",
+      "name": {
+        "en": "Fossils taken far away",
+        "es": "Fósiles llevados lejos"
+      },
+      "color": "#8e5a2b"
+    },
+    {
+      "id": "home",
+      "name": {
+        "en": "Fossils sent home",
+        "es": "Fósiles devueltos"
+      },
+      "color": "#16a085"
+    }
+  ],
+  "steps": [
+    {
+      "date": "-675",
+      "title": {
+        "en": "Griffins and dragon bones",
+        "es": "Grifos y huesos de dragón"
+      },
+      "camera": {
+        "lon": -175.0,
+        "lat": 72.0,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Long before science, people explained giant bones with stories. Greek writers told of griffins guarding gold in Central Asia, China ground \"dragon bones\" into medicine, and the Lakota spoke of thunder beasts.",
+        "es": "Antes de la ciencia, la gente explicaba los huesos gigantes con historias: los griegos hablaban de grifos que guardaban oro en Asia central, en China se molían \"huesos de dragón\" como medicina y los lakota hablaban de bestias del trueno."
+      },
+      "details": {
+        "en": "The first Greek accounts of griffins, from about 675 BC, place these beaked, four-legged monsters in the deserts of Central Asia, where nomads dug for gold. The historian Adrienne Mayor has suggested that beaked dinosaur skulls lying in the Gobi helped shape the legend; many paleontologists doubt it. In China, fossil bones and teeth have been sold for centuries as \"dragon bones\", and a history written by Chang Qu in the 4th century already mentions them. In the Americas, Native peoples found, kept and explained fossils long before Europeans arrived, and early scientists such as Cuvier and Marsh learned from them.",
+        "es": "Los primeros relatos griegos sobre grifos, de hacia 675 a. C., sitúan a estos monstruos de cuatro patas y pico en los desiertos de Asia central, donde los nómadas buscaban oro. La historiadora Adrienne Mayor ha propuesto que los cráneos con pico de dinosaurios que yacen en el Gobi ayudaron a dar forma a la leyenda; muchos paleontólogos lo dudan. En China, los huesos y dientes fósiles se venden desde hace siglos como \"huesos de dragón\", y una historia escrita por Chang Qu en el siglo IV ya los menciona. En América, los pueblos indígenas encontraban, guardaban y explicaban fósiles mucho antes de la llegada de los europeos, y los primeros científicos, como Cuvier y Marsh, aprendieron de ellos."
+      },
+      "places": [
+        {
+          "id": "protoceratops",
+          "name": {
+            "en": "Protoceratops",
+            "es": "Protoceratops"
+          },
+          "at": [
+            103.71,
+            44.13
+          ],
+          "cat": "dinosaur",
+          "type": "species",
+          "date": "-75000000",
+          "until": "-71000000",
+          "place": {
+            "en": "Gobi Desert, Mongolia",
+            "es": "Desierto de Gobi, Mongolia"
+          },
+          "text": {
+            "en": "A beaked plant-eater the size of a sheep, with a bony frill on its neck, common in the Gobi 75 to 71 million years ago. Some think its skulls inspired the griffin legend; many experts doubt it.",
+            "es": "Un herbívoro con pico, del tamaño de una oveja y con una gorguera ósea en el cuello, común en el Gobi hace 75 a 71 millones de años. Hay quien cree que sus cráneos inspiraron la leyenda del grifo; muchos expertos lo dudan."
+          },
+          "details": {
+            "en": "Protoceratops skeletons are so common in the red sandstones of the Gobi that some lie in the open, beak, frill and all. The historian of science Adrienne Mayor has proposed that Scythian nomads who dug for gold in Central Asia saw such skeletons and told of a beaked, four-legged beast that guarded gold: the griffin. In 2016 the paleontologist Mark Witton replied that griffins appear in art long before any Greek account, that a griffin's wings grow from its shoulders rather than behind its head like the frill, and that the gold deposits lie far from the fossil beds. Scientists first found Protoceratops in 1922, on Roy Chapman Andrews's expedition, and named it in 1923.",
+            "es": "Los esqueletos de Protoceratops son tan comunes en las areniscas rojas del Gobi que algunos asoman a la vista, con pico, gorguera y todo. La historiadora de la ciencia Adrienne Mayor ha propuesto que los nómadas escitas que buscaban oro en Asia central vieron esos esqueletos y hablaron de una bestia de cuatro patas y con pico que guardaba el oro: el grifo. En 2016 el paleontólogo Mark Witton respondió que los grifos aparecen en el arte mucho antes que cualquier relato griego, que las alas del grifo nacen de los hombros y no detrás de la cabeza como la gorguera, y que los yacimientos de oro están lejos de los fósiles. Los científicos hallaron el Protoceratops por primera vez en 1922, en la expedición de Roy Chapman Andrews, y le dieron nombre en 1923."
+          },
+          "wiki": {
+            "en": "Protoceratops",
+            "es": "Protoceratops"
+          }
+        },
+        {
+          "id": "dragon-bones",
+          "name": {
+            "en": "Dragon bones",
+            "es": "Huesos de dragón"
+          },
+          "at": [
+            104.07,
+            30.67
+          ],
+          "cat": "site",
+          "icon": "🐉",
+          "type": "place",
+          "date": "350",
+          "place": {
+            "en": "Sichuan, China",
+            "es": "Sichuan, China"
+          },
+          "text": {
+            "en": "For centuries Chinese healers have ground fossil bones and teeth, sold as dragon bones, into medicine. A history written by Chang Qu in the 4th century already reported dragon bones found in Sichuan.",
+            "es": "Desde hace siglos, los curanderos chinos muelen huesos y dientes fósiles, vendidos como huesos de dragón, para hacer medicinas. Una historia escrita por Chang Qu en el siglo IV ya hablaba de huesos de dragón hallados en Sichuan."
+          },
+          "details": {
+            "en": "These dragon bones are often said to be dinosaur bones, but all the historical ones studied come from mammals of the last 66 million years. The trade goes on: in 2007 a village in Henan was reported to have dug up real dinosaur bones for decades to sell as medicine. The hill at Zhoukoudian, near Beijing, where the fossils of Peking Man were found, was known as Dragon Bone Hill.",
+            "es": "Se dice a menudo que estos huesos de dragón son de dinosaurio, pero todos los históricos que se han estudiado son de mamíferos de los últimos 66 millones de años. El comercio sigue: en 2007 se supo que una aldea de Henan llevaba décadas desenterrando huesos de dinosaurio de verdad para venderlos como medicina. La colina de Zhoukoudian, cerca de Pekín, donde se hallaron los fósiles del Hombre de Pekín, se conocía como la Colina de los Huesos de Dragón."
+          },
+          "wiki": {
+            "en": "Chinese dragon",
+            "es": "Dragón chino"
+          }
+        },
+        {
+          "id": "thunder-beasts",
+          "name": {
+            "en": "Thunder beasts",
+            "es": "Bestias del trueno"
+          },
+          "at": [
+            -102.34,
+            43.86
+          ],
+          "cat": "mammal",
+          "icon": "🦏",
+          "type": "fossil",
+          "date": "-37000000",
+          "place": {
+            "en": "White River Badlands, South Dakota, USA",
+            "es": "Badlands del río White, Dakota del Sur, EE. UU."
+          },
+          "text": {
+            "en": "Storms in the Badlands wash out the bones of brontotheres, rhino-like giants of about 37 million years ago. The Lakota linked them to the wakíŋyaŋ, thunder beings; in 1873 Marsh named one \"thunder beast\".",
+            "es": "Las tormentas de los Badlands destapan huesos de brontoterios, gigantes con aspecto de rinoceronte de hace unos 37 millones de años. Los lakota los unían a los wakíŋyaŋ, seres del trueno; en 1873 Marsh llamó a uno \"bestia del trueno\"."
+          },
+          "details": {
+            "en": "Lakota and Pawnee people found brontothere bones exposed by heavy rains and linked them to their legends of thunder beings. In 1870 a group of Lakota showed one of these jaws to a fossil-hunting crew led by Othniel Marsh and told them the story; in their honour Marsh named the animal Brontotherium, \"thunder beast\", in 1873. It is now called Megacerops. Adrienne Mayor has gathered many Native American accounts of fossils, from before Columbus to today.",
+            "es": "Los lakota y los pawnee encontraban huesos de brontoterio que dejaban al aire las lluvias fuertes y los relacionaban con sus leyendas de seres del trueno. En 1870 un grupo de lakota mostró una de esas mandíbulas a un equipo de Othniel Marsh y le contó la historia; en su honor, Marsh llamó al animal Brontotherium, \"bestia del trueno\", en 1873. Hoy se llama Megacerops. Adrienne Mayor ha reunido muchos relatos indígenas sobre fósiles, de antes de Colón hasta hoy."
+          },
+          "wiki": {
+            "en": "Megacerops",
+            "es": "Megacerops"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1669",
+      "title": {
+        "en": "Tongue stones and a giant's bone",
+        "es": "Lenguas de piedra y el hueso de un gigante"
+      },
+      "camera": {
+        "lon": 7.5,
+        "lat": 44.5,
+        "zoom": 3.4
+      },
+      "text": {
+        "en": "Were fossils once alive? In 1667 Nicolas Steno showed that \"tongue stones\" were shark teeth, and in 1669 he explained how layers of rock pile up over time. In 1677 Robert Plot drew a giant's thighbone.",
+        "es": "¿Habían estado vivos los fósiles? En 1667 Nicolás Steno mostró que las \"lenguas de piedra\" eran dientes de tiburón, y en 1669, cómo se apilan las capas de roca con el tiempo. En 1677 Robert Plot dibujó el fémur de un gigante."
+      },
+      "details": {
+        "en": "Many scholars then thought fossils grew inside rocks by themselves. In 1666 fishermen caught a huge shark near Livorno, and the Grand Duke of Tuscany sent its head to Steno, a Danish doctor at his court. Its teeth matched the tongue stones, as the Italian Fabio Colonna had already argued in 1616. Steno went further: since lower layers of rock must have formed first, rocks are a record of time, with the oldest at the bottom. In England, Robert Plot described a huge fossil bone in 1677; he blamed a Roman war elephant, then a giant. It is now thought to have been a Megalosaurus, the first dinosaur bone ever drawn. The bone itself is lost.",
+        "es": "Muchos sabios creían entonces que los fósiles crecían solos dentro de las rocas. En 1666 unos pescadores atraparon un tiburón enorme cerca de Livorno, y el gran duque de Toscana envió su cabeza a Steno, un médico danés de su corte. Sus dientes coincidían con las lenguas de piedra, como ya había defendido el italiano Fabio Colonna en 1616. Steno fue más allá: como las capas de roca de abajo tuvieron que formarse primero, las rocas son un registro del tiempo, con lo más antiguo al fondo. En Inglaterra, Robert Plot describió en 1677 un enorme hueso fósil; lo atribuyó a un elefante de guerra romano y luego a un gigante. Hoy se cree que era de un Megalosaurus: el primer hueso de dinosaurio dibujado. El hueso se perdió."
+      },
+      "places": [
+        {
+          "id": "nicolas-steno",
+          "name": {
+            "en": "Nicolas Steno",
+            "es": "Nicolás Steno"
+          },
+          "at": [
+            11.2561,
+            43.7694
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1669",
+          "life": [
+            "1638",
+            "1686"
+          ],
+          "place": {
+            "en": "Florence, Italy",
+            "es": "Florencia, Italia"
+          },
+          "text": {
+            "en": "A Danish doctor at the Medici court in Florence. He saw that tongue stones were shark teeth and that lower layers of rock are older: the key to reading Earth's history. He later became a bishop.",
+            "es": "Un médico danés de la corte de los Médici en Florencia. Vio que las lenguas de piedra eran dientes de tiburón y que las capas de roca de abajo son más antiguas: la clave para leer la historia de la Tierra. Después fue obispo."
+          },
+          "wiki": {
+            "en": "Nicolas Steno",
+            "es": "Nicolás Steno"
+          }
+        },
+        {
+          "id": "megalodon",
+          "name": {
+            "en": "Megalodon (tongue stones)",
+            "es": "Megalodón (lenguas de piedra)"
+          },
+          "at": [
+            14.42,
+            35.9
+          ],
+          "cat": "fish",
+          "icon": "🦈",
+          "type": "species",
+          "date": "-23000000",
+          "until": "-3600000",
+          "place": {
+            "en": "Malta",
+            "es": "Malta"
+          },
+          "text": {
+            "en": "A giant shark of 23 to 3.6 million years ago, with teeth up to about 18 cm long. In Malta, where its teeth are common, people called them tongue stones and linked them to a legend of Saint Paul.",
+            "es": "Un tiburón gigante de hace entre 23 y 3,6 millones de años, con dientes de hasta unos 18 cm. En Malta, donde sus dientes abundan, la gente los llamaba lenguas de piedra y los relacionaba con una leyenda de san Pablo."
+          },
+          "wiki": {
+            "en": "Megalodon",
+            "es": "Otodus megalodon"
+          }
+        },
+        {
+          "id": "fabio-colonna",
+          "name": {
+            "en": "Fabio Colonna",
+            "es": "Fabio Colonna"
+          },
+          "at": [
+            14.2681,
+            40.8518
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1616",
+          "life": [
+            "1567",
+            "1640"
+          ],
+          "place": {
+            "en": "Naples, Italy",
+            "es": "Nápoles, Italia"
+          },
+          "text": {
+            "en": "An Italian naturalist and botanist. In 1616 he drew a Maltese tongue stone beside a shark's tooth and argued that they were the same thing, half a century before Steno.",
+            "es": "Un naturalista y botánico italiano. En 1616 dibujó una lengua de piedra de Malta junto a un diente de tiburón y defendió que eran lo mismo, medio siglo antes que Steno."
+          },
+          "wiki": {
+            "en": "Fabio Colonna",
+            "es": "Fabio Colonna"
+          }
+        },
+        {
+          "id": "robert-plot",
+          "name": {
+            "en": "Robert Plot",
+            "es": "Robert Plot"
+          },
+          "at": [
+            -1.2547,
+            51.7543
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1677",
+          "life": [
+            "1640",
+            "1696"
+          ],
+          "place": {
+            "en": "Oxford, England",
+            "es": "Oxford, Inglaterra"
+          },
+          "text": {
+            "en": "Oxford's first professor of chemistry and first keeper of the Ashmolean Museum. In 1677 he published the first drawing of a dinosaur bone, the end of a huge thighbone, which he took for a giant's.",
+            "es": "El primer profesor de química de Oxford y primer conservador del Museo Ashmolean. En 1677 publicó el primer dibujo de un hueso de dinosaurio, el extremo de un enorme fémur, que creyó de un gigante."
+          },
+          "wiki": {
+            "en": "Robert Plot",
+            "es": "Robert Plot"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1796",
+      "title": {
+        "en": "Cuvier proves extinction",
+        "es": "Cuvier demuestra la extinción"
+      },
+      "camera": {
+        "lon": -30.0,
+        "lat": 12.0,
+        "zoom": 1.15
+      },
+      "text": {
+        "en": "Could a kind of animal vanish forever? In 1796, in Paris, Georges Cuvier showed that mammoths and the giant sloth Megatherium were unlike any living animal: they had died out. Extinction was real.",
+        "es": "¿Podía desaparecer para siempre una clase de animal? En 1796, en París, Georges Cuvier mostró que los mamuts y el perezoso gigante Megatherium no se parecían a ningún animal vivo: se habían extinguido. La extinción era real."
+      },
+      "details": {
+        "en": "Most scholars believed that no species could ever be lost: mammoth bones in Siberia, they said, came from elephants that had wandered north or been carried there by the Flood. Cuvier compared the skulls of Indian and African elephants with mammoth fossils and with the \"Ohio animal\", the mastodon, and found that they were all different. His second paper of 1796 named Megatherium from drawings of a skeleton sent from Argentina to Madrid. Many of his American fossils had first been found by Native Americans, and he kept their accounts of giant bones, which often told of animals destroyed long ago. Cuvier thought life had been wiped out by a series of catastrophes, and he rejected evolution.",
+        "es": "La mayoría de los sabios creía que ninguna especie podía perderse: los huesos de mamut de Siberia, decían, eran de elefantes que se habían ido al norte o que había arrastrado el Diluvio. Cuvier comparó los cráneos de elefantes indios y africanos con fósiles de mamut y con el \"animal de Ohio\", el mastodonte, y vio que todos eran distintos. Su segundo trabajo de 1796 nombró al Megatherium a partir de dibujos de un esqueleto enviado de Argentina a Madrid. Muchos de sus fósiles americanos los habían encontrado antes pueblos indígenas, y él guardaba sus relatos sobre huesos gigantes, que a menudo hablaban de animales destruidos hacía mucho. Cuvier creía que la vida había sido arrasada por una serie de catástrofes, y rechazó la evolución."
+      },
+      "moves": [
+        {
+          "side": "taken",
+          "path": [
+            [
+              5.685,
+              50.8144
+            ],
+            [
+              4.35,
+              50.35
+            ],
+            [
+              3.0,
+              49.6
+            ],
+            [
+              2.3561,
+              48.8422
+            ]
+          ],
+          "label": {
+            "en": "Seized as war booty (1794)",
+            "es": "Tomado como botín de guerra (1794)"
+          }
+        },
+        {
+          "side": "taken",
+          "path": [
+            [
+              -59.105,
+              -34.57
+            ],
+            [
+              -58.38,
+              -34.6
+            ],
+            [
+              -48.0,
+              -28.0
+            ],
+            [
+              -34.0,
+              -10.0
+            ],
+            [
+              -27.0,
+              8.0
+            ],
+            [
+              -22.0,
+              22.0
+            ],
+            [
+              -14.0,
+              32.0
+            ],
+            [
+              -6.29,
+              36.53
+            ],
+            [
+              -3.69,
+              40.42
+            ]
+          ],
+          "label": {
+            "en": "Megatherium to Madrid (1788)",
+            "es": "El Megatherium, a Madrid (1788)"
+          }
+        },
+        {
+          "side": "taken",
+          "path": [
+            [
+              -84.748,
+              38.887
+            ],
+            [
+              -89.18,
+              37.0
+            ],
+            [
+              -90.05,
+              35.15
+            ],
+            [
+              -91.4,
+              31.56
+            ],
+            [
+              -90.07,
+              29.95
+            ],
+            [
+              -85.0,
+              25.0
+            ],
+            [
+              -79.8,
+              25.5
+            ],
+            [
+              -65.0,
+              34.0
+            ],
+            [
+              -40.0,
+              42.5
+            ],
+            [
+              -12.0,
+              46.5
+            ],
+            [
+              -1.15,
+              46.16
+            ],
+            [
+              2.3561,
+              48.8422
+            ]
+          ],
+          "label": {
+            "en": "Ohio bones to France (1739)",
+            "es": "Huesos de Ohio a Francia (1739)"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "georges-cuvier",
+          "name": {
+            "en": "Georges Cuvier",
+            "es": "Georges Cuvier"
+          },
+          "at": [
+            2.3561,
+            48.8422
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1796",
+          "life": [
+            "1769",
+            "1832"
+          ],
+          "place": {
+            "en": "Paris, France",
+            "es": "París, Francia"
+          },
+          "text": {
+            "en": "A French naturalist with an unmatched knowledge of anatomy. By comparing fossil bones with those of living animals, he proved in 1796 that species can die out, and founded the study of fossil vertebrates.",
+            "es": "Un naturalista francés con un conocimiento incomparable de la anatomía. Comparando huesos fósiles con los de animales vivos, demostró en 1796 que las especies pueden extinguirse y fundó el estudio de los vertebrados fósiles."
+          },
+          "wiki": {
+            "en": "Georges Cuvier",
+            "es": "Georges Cuvier"
+          }
+        },
+        {
+          "id": "woolly-mammoth",
+          "name": {
+            "en": "Woolly mammoth",
+            "es": "Mamut lanudo"
+          },
+          "at": [
+            10.2522,
+            51.7286
+          ],
+          "cat": "mammal",
+          "icon": "🦣",
+          "type": "species",
+          "date": "-800000",
+          "until": "-2000",
+          "place": {
+            "en": "Osterode am Harz, Germany",
+            "es": "Osterode am Harz, Alemania"
+          },
+          "text": {
+            "en": "A shaggy elephant of the Ice Age steppes, from Europe to Alaska, whose tusks were long known in Siberia. Cuvier showed it was a species of its own, now gone; the last ones died about 4,000 years ago.",
+            "es": "Un elefante peludo de las estepas de la Edad de Hielo, de Europa a Alaska, cuyos colmillos se conocían en Siberia desde antiguo. Cuvier mostró que era una especie propia y extinta; los últimos murieron hace unos 4000 años."
+          },
+          "details": {
+            "en": "The two teeth chosen to define the species officially came from Siberia and from Osterode, in Germany. Native Siberians and Native Americans knew mammoth remains long before scientists did; in Europe they were taken for elephants carried north by the Flood, or for giants. Woolly mammoths began to split from their ancestors about 800,000 years ago. The last ones lived on Wrangel Island, off Siberia, until about 4,000 years ago.",
+            "es": "Los dos dientes elegidos para definir oficialmente la especie procedían de Siberia y de Osterode, en Alemania. Los pueblos de Siberia y los indígenas de América conocían los restos de mamut mucho antes que los científicos; en Europa se tomaban por elefantes arrastrados al norte por el Diluvio, o por gigantes. Los mamuts lanudos empezaron a separarse de sus antepasados hace unos 800 000 años. Los últimos vivieron en la isla de Wrangel, frente a Siberia, hasta hace unos 4000 años."
+          },
+          "wiki": {
+            "en": "Woolly mammoth",
+            "es": "Mammuthus primigenius"
+          }
+        },
+        {
+          "id": "american-mastodon",
+          "name": {
+            "en": "American mastodon",
+            "es": "Mastodonte americano"
+          },
+          "at": [
+            -84.7478,
+            38.8869
+          ],
+          "cat": "mammal",
+          "icon": "🐘",
+          "type": "species",
+          "date": "-4000000",
+          "until": "-11000",
+          "place": {
+            "en": "Big Bone Lick, Kentucky, USA",
+            "es": "Big Bone Lick, Kentucky, EE. UU."
+          },
+          "text": {
+            "en": "An Ice Age cousin of elephants with cone-shaped teeth, common in North America until about 11,000 years ago. Its bones from Big Bone Lick, the \"Ohio animal\", helped Cuvier prove extinction.",
+            "es": "Un pariente de los elefantes de la Edad de Hielo, con dientes en forma de conos, común en Norteamérica hasta hace unos 11 000 años. Sus huesos de Big Bone Lick, el \"animal de Ohio\", ayudaron a Cuvier a demostrar la extinción."
+          },
+          "details": {
+            "en": "Big Bone Lick is a salt spring in Kentucky where Ice Age animals came to lick salt and got stuck in the mud. Native Americans, probably Abenaki warriors, found the bones that a French military expedition led by Charles Le Moyne de Longueuil carried to France in 1739. In 1762 Shawnee people told of great beasts that had roamed in herds, hunted by giants, until both died out: the oldest recorded explanation of these fossils. Thomas Jefferson hoped the animal still lived in the unexplored West. Cuvier called it the mastodon, \"nipple tooth\", for the bumps on its teeth.",
+            "es": "Big Bone Lick es un manantial salado de Kentucky adonde los animales de la Edad de Hielo iban a lamer sal y quedaban atrapados en el barro. Unos indígenas, probablemente guerreros abenaki, hallaron los huesos que una expedición militar francesa dirigida por Charles Le Moyne de Longueuil llevó a Francia en 1739. En 1762 unos shawnee contaron que grandes bestias habían andado en manadas, cazadas por gigantes, hasta que ambos desaparecieron: la explicación más antigua registrada de estos fósiles. Thomas Jefferson esperaba que el animal aún viviera en el Oeste inexplorado. Cuvier lo llamó mastodonte, \"diente con pezones\", por los bultos de sus dientes."
+          },
+          "wiki": {
+            "en": "Mastodon",
+            "es": "Mammut"
+          }
+        },
+        {
+          "id": "megatherium",
+          "name": {
+            "en": "Megatherium",
+            "es": "Megatherium"
+          },
+          "at": [
+            -59.105,
+            -34.57
+          ],
+          "cat": "mammal",
+          "icon": "🦥",
+          "type": "species",
+          "date": "-400000",
+          "until": "-12000",
+          "place": {
+            "en": "Luján, Argentina",
+            "es": "Luján, Argentina"
+          },
+          "text": {
+            "en": "A ground sloth as big as an elephant that lived in South America until about 12,000 years ago. Cuvier named it in 1796 from drawings of a skeleton dug up in 1787 by the friar Manuel de Torres.",
+            "es": "Un perezoso terrestre tan grande como un elefante que vivió en Sudamérica hasta hace unos 12 000 años. Cuvier le dio nombre en 1796 a partir de dibujos de un esqueleto desenterrado en 1787 por el fraile Manuel de Torres."
+          },
+          "details": {
+            "en": "Torres, a Dominican friar and naturalist, found the bones in a ravine on the banks of the Luján River, in what was then Spain's Viceroyalty of the Río de la Plata. They were shipped to Madrid in 1788, where the taxidermist Juan Bautista Bru mounted the skeleton; it still stands in Spain's National Museum of Natural Sciences. Cuvier never saw it. Working only from engravings, he saw that its skull matched those of the small tree sloths of South America, and that nothing so huge was alive anywhere.",
+            "es": "Torres, fraile dominico y naturalista, halló los huesos en una barranca a orillas del río Luján, en lo que entonces era el Virreinato del Río de la Plata, parte del imperio español. Se enviaron a Madrid en 1788, donde el taxidermista Juan Bautista Bru montó el esqueleto, que sigue en pie en el Museo Nacional de Ciencias Naturales. Cuvier nunca lo vio. Trabajando solo con grabados, vio que su cráneo se parecía al de los pequeños perezosos arborícolas de Sudamérica, y que nada tan enorme vivía en ningún lugar."
+          },
+          "wiki": {
+            "en": "Megatherium",
+            "es": "Megatherium"
+          }
+        },
+        {
+          "id": "mosasaurus",
+          "name": {
+            "en": "Mosasaurus",
+            "es": "Mosasaurus"
+          },
+          "at": [
+            5.685,
+            50.8144
+          ],
+          "cat": "reptile",
+          "icon": "🐊",
+          "type": "species",
+          "date": "-82000000",
+          "until": "-66000000",
+          "place": {
+            "en": "Maastricht, Netherlands",
+            "es": "Maastricht, Países Bajos"
+          },
+          "text": {
+            "en": "A sea-going lizard up to 12 m long, from the last seas of the dinosaur age. Its skull, dug from a chalk quarry near Maastricht in 1778, was seized by French troops in 1794 and taken to Paris.",
+            "es": "Un lagarto marino de hasta 12 m de largo, de los últimos mares de la era de los dinosaurios. Su cráneo, sacado de una cantera de creta cerca de Maastricht en 1778, fue tomado por tropas francesas en 1794 y llevado a París."
+          },
+          "details": {
+            "en": "The skull was first taken for a crocodile, then for a whale. After the French army took Maastricht in 1794, revolutionaries carried off the famous fossil as booty; a later tale claimed soldiers were offered 600 bottles of wine to find it, though historians think the story was exaggerated. Cuvier showed that it was a giant extinct relative of monitor lizards, more proof of a lost world. In 1822 it was named Mosasaurus, \"lizard of the Meuse\", after the river nearby.",
+            "es": "Primero se tomó el cráneo por el de un cocodrilo y luego por el de una ballena. Cuando el ejército francés tomó Maastricht en 1794, los revolucionarios se llevaron el famoso fósil como botín; un relato posterior decía que se ofrecieron 600 botellas de vino a los soldados que lo encontraran, aunque los historiadores creen que es una exageración. Cuvier mostró que era un pariente gigante y extinguido de los varanos, otra prueba de un mundo perdido. En 1822 se lo llamó Mosasaurus, \"lagarto del Mosa\", por el río cercano."
+          },
+          "wiki": {
+            "en": "Mosasaurus",
+            "es": "Mosasaurus"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1811",
+      "title": {
+        "en": "Mary Anning's sea dragons",
+        "es": "Los dragones marinos de Mary Anning"
+      },
+      "camera": {
+        "lon": -2.925,
+        "lat": 50.728,
+        "zoom": 22.0
+      },
+      "text": {
+        "en": "At Lyme Regis, England, 12-year-old Mary Anning and her brother Joseph found an ichthyosaur, a \"fish lizard\". Poor, and shut out of science as a woman, she became the great fossil hunter of her day.",
+        "es": "En Lyme Regis, Inglaterra, Mary Anning, de 12 años, y su hermano Joseph hallaron un ictiosaurio, un \"pez lagarto\". Pobre y excluida de la ciencia por ser mujer, se convirtió en la gran cazadora de fósiles de su época."
+      },
+      "details": {
+        "en": "The Annings sold fossils to tourists from a table outside their home, and after their father died the family was very poor. Mary searched the crumbling cliffs in winter, when landslides bring down new fossils that must be saved before the sea takes them. She found the first nearly complete plesiosaur in 1823 and Britain's first pterosaur in 1828, and taught herself anatomy to understand her finds. Gentlemen geologists bought them and described them in print, often without her name, and the Geological Society of London did not admit women until 1904. When she died in 1847, its president read a tribute to her, the first ever given for a woman.",
+        "es": "Los Anning vendían fósiles a los turistas en una mesa frente a su casa, y tras la muerte del padre la familia quedó muy pobre. Mary recorría los acantilados en invierno, cuando los derrumbes dejan caer fósiles nuevos que hay que salvar antes de que se los lleve el mar. Halló el primer plesiosaurio casi completo en 1823 y el primer pterosaurio de Gran Bretaña en 1828, y aprendió anatomía por su cuenta para entender sus hallazgos. Los caballeros geólogos los compraban y los describían en sus publicaciones, a menudo sin su nombre, y la Sociedad Geológica de Londres no admitió mujeres hasta 1904. Cuando murió en 1847, su presidente leyó un homenaje en su honor, el primero dedicado a una mujer."
+      },
+      "places": [
+        {
+          "id": "mary-anning",
+          "name": {
+            "en": "Mary Anning",
+            "es": "Mary Anning"
+          },
+          "at": [
+            -2.9353,
+            50.725
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1811",
+          "life": [
+            "1799",
+            "1847"
+          ],
+          "place": {
+            "en": "Lyme Regis, England",
+            "es": "Lyme Regis, Inglaterra"
+          },
+          "text": {
+            "en": "The daughter of a poor carpenter who searched the cliffs of Lyme Regis all her life. She found the first ichthyosaur known to science, the first plesiosaurs and Britain's first pterosaur.",
+            "es": "La hija de un carpintero pobre que recorrió toda su vida los acantilados de Lyme Regis. Halló el primer ictiosaurio conocido por la ciencia, los primeros plesiosaurios y el primer pterosaurio de Gran Bretaña."
+          },
+          "wiki": {
+            "en": "Mary Anning",
+            "es": "Mary Anning"
+          }
+        },
+        {
+          "id": "lyme-regis",
+          "name": {
+            "en": "Lyme Regis cliffs",
+            "es": "Acantilados de Lyme Regis"
+          },
+          "at": [
+            -2.9107,
+            50.7342
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-199000000",
+          "place": {
+            "en": "Black Ven, Dorset, England",
+            "es": "Black Ven, Dorset, Inglaterra"
+          },
+          "text": {
+            "en": "Cliffs of grey mud and limestone laid down on a sea floor about 200 to 190 million years ago. Landslides keep exposing ammonites, ichthyosaurs and plesiosaurs on what is now the Jurassic Coast.",
+            "es": "Acantilados de lodo gris y caliza depositados en un fondo marino hace entre 200 y 190 millones de años. Los derrumbes siguen dejando al descubierto amonites, ictiosaurios y plesiosaurios en la actual Costa Jurásica."
+          },
+          "wiki": {
+            "en": "Lyme Regis",
+            "es": "Lyme Regis"
+          }
+        },
+        {
+          "id": "ichthyosaurus",
+          "name": {
+            "en": "Ichthyosaurus",
+            "es": "Ichthyosaurus"
+          },
+          "at": [
+            -2.948,
+            50.72
+          ],
+          "cat": "reptile",
+          "icon": "🐬",
+          "type": "species",
+          "date": "-201000000",
+          "until": "-183000000",
+          "place": {
+            "en": "Lyme Regis, England",
+            "es": "Lyme Regis, Inglaterra"
+          },
+          "text": {
+            "en": "A dolphin-shaped sea reptile of the Early Jurassic. The Annings' 1811 skeleton, now called Temnodontosaurus, was the first ichthyosaur to reach scientists; they found Ichthyosaurus itself a few years later.",
+            "es": "Un reptil marino del Jurásico temprano con forma de delfín. El esqueleto que hallaron los Anning en 1811, hoy Temnodontosaurus, fue el primer ictiosaurio que estudiaron los científicos; luego hallaron el propio Ichthyosaurus."
+          },
+          "wiki": {
+            "en": "Ichthyosaurus",
+            "es": "Ichthyosaurus"
+          }
+        },
+        {
+          "id": "plesiosaurus",
+          "name": {
+            "en": "Plesiosaurus",
+            "es": "Plesiosaurus"
+          },
+          "at": [
+            -2.923,
+            50.731
+          ],
+          "cat": "reptile",
+          "icon": "🐢",
+          "type": "species",
+          "date": "-199000000",
+          "until": "-193000000",
+          "place": {
+            "en": "Lyme Regis, England",
+            "es": "Lyme Regis, Inglaterra"
+          },
+          "text": {
+            "en": "A sea reptile with a small head, a very long neck and four paddles. Mary Anning found the first nearly complete skeleton in 1823; the great Cuvier at first suspected a fake, then admitted he was wrong.",
+            "es": "Un reptil marino de cabeza pequeña, cuello larguísimo y cuatro aletas. Mary Anning halló el primer esqueleto casi completo en 1823; el gran Cuvier sospechó al principio que era falso y luego reconoció su error."
+          },
+          "wiki": {
+            "en": "Plesiosaurus",
+            "es": "Plesiosaurus"
+          }
+        },
+        {
+          "id": "elizabeth-philpot",
+          "name": {
+            "en": "Elizabeth Philpot",
+            "es": "Elizabeth Philpot"
+          },
+          "at": [
+            -2.938,
+            50.7262
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1811",
+          "life": [
+            "1779",
+            "1857"
+          ],
+          "place": {
+            "en": "Lyme Regis, England",
+            "es": "Lyme Regis, Inglaterra"
+          },
+          "text": {
+            "en": "A fossil collector and artist who settled in Lyme Regis with her sisters. Twenty years older than Mary Anning, she became her friend and supporter; Louis Agassiz praised her knowledge of fossil fish.",
+            "es": "Una coleccionista de fósiles y artista que se instaló en Lyme Regis con sus hermanas. Veinte años mayor que Mary Anning, fue su amiga y apoyo; Louis Agassiz elogió lo que sabía de peces fósiles."
+          },
+          "wiki": {
+            "en": "Elizabeth Philpot",
+            "es": "Elizabeth Philpot"
+          },
+          "img": "Philpot Sisters.jpg"
+        }
+      ]
+    },
+    {
+      "date": "1824",
+      "title": {
+        "en": "The first dinosaurs",
+        "es": "Los primeros dinosaurios"
+      },
+      "camera": {
+        "lon": -0.7,
+        "lat": 51.35,
+        "zoom": 16.0
+      },
+      "text": {
+        "en": "In 1824 William Buckland named Megalosaurus, the first dinosaur. In 1825 Gideon and Mary Ann Mantell's fossil teeth became Iguanodon, and in 1842 Richard Owen named the group: Dinosauria, \"terrible lizards\".",
+        "es": "En 1824 William Buckland nombró al Megalosaurus, el primer dinosaurio. En 1825, con los dientes fósiles de Gideon y Mary Ann Mantell, nació el Iguanodon, y en 1842 Richard Owen bautizó al grupo: Dinosauria, \"lagartos terribles\"."
+      },
+      "details": {
+        "en": "Buckland's bones came from the quarries of Stonesfield, near Oxford, probably the same rocks that had given Plot's thighbone. The Mantells' teeth, found in 1822, were dismissed by Cuvier as a rhinoceros's and by Buckland as a fish's, until Mantell noticed how much they looked like a giant iguana's. In 1842 Owen grouped Megalosaurus, Iguanodon and Mantell's armoured Hylaeosaurus as Dinosauria; he later belittled Mantell and took credit for his work. On New Year's Eve 1853 Owen hosted a dinner for 21 men of science inside a hollow model of Iguanodon, and in 1854 Benjamin Waterhouse Hawkins's life-size models opened in a London park. They look wrong today, but they still stand.",
+        "es": "Los huesos de Buckland salieron de las canteras de Stonesfield, cerca de Oxford, probablemente las mismas rocas que dieron el fémur de Plot. Los dientes de los Mantell, hallados en 1822, fueron descartados por Cuvier como de rinoceronte y por Buckland como de pez, hasta que Mantell vio lo mucho que se parecían a los de una iguana gigante. En 1842 Owen agrupó al Megalosaurus, el Iguanodon y el acorazado Hylaeosaurus de Mantell como Dinosauria; más tarde menospreció a Mantell y se atribuyó su trabajo. En la Nochevieja de 1853, Owen ofreció una cena para 21 hombres de ciencia dentro de un modelo hueco de Iguanodon, y en 1854 se inauguraron en un parque de Londres los modelos a tamaño real de Benjamin Waterhouse Hawkins. Hoy parecen equivocados, pero siguen en pie."
+      },
+      "places": [
+        {
+          "id": "william-buckland",
+          "name": {
+            "en": "William Buckland",
+            "es": "William Buckland"
+          },
+          "at": [
+            -1.2531,
+            51.7509
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1824",
+          "life": [
+            "1784",
+            "1856"
+          ],
+          "place": {
+            "en": "Oxford, England",
+            "es": "Oxford, Inglaterra"
+          },
+          "text": {
+            "en": "An Oxford geologist and clergyman famous for his lively lectures. In 1824 he described Megalosaurus, the first dinosaur ever named, and he showed that a Yorkshire cave had been a den of prehistoric hyenas.",
+            "es": "Un geólogo y clérigo de Oxford famoso por sus animadas clases. En 1824 describió al Megalosaurus, el primer dinosaurio que recibió nombre, y mostró que una cueva de Yorkshire había sido una guarida de hienas prehistóricas."
+          },
+          "details": {
+            "en": "Buckland also coined the word coprolite for fossil dung and used it to work out what ancient animals ate. His wife, Mary Buckland, born Morland, was a fossil collector and a skilled scientific artist who drew specimens for him, for William Conybeare and for Cuvier.",
+            "es": "Buckland acuñó además la palabra coprolito para el excremento fósil y lo usó para averiguar qué comían los animales antiguos. Su esposa, Mary Buckland, de soltera Morland, era coleccionista de fósiles y una hábil dibujante científica que ilustró ejemplares para él, para William Conybeare y para Cuvier."
+          },
+          "wiki": {
+            "en": "William Buckland",
+            "es": "William Buckland"
+          }
+        },
+        {
+          "id": "megalosaurus",
+          "name": {
+            "en": "Megalosaurus",
+            "es": "Megalosaurus"
+          },
+          "at": [
+            -1.429,
+            51.851
+          ],
+          "cat": "dinosaur",
+          "icon": "🦖",
+          "type": "species",
+          "date": "-168000000",
+          "until": "-166000000",
+          "place": {
+            "en": "Stonesfield, Oxfordshire, England",
+            "es": "Stonesfield, Oxfordshire, Inglaterra"
+          },
+          "text": {
+            "en": "A two-legged meat-eater about 6 m long that lived in England 168 to 166 million years ago. It was named in 1824 from a jaw, a thighbone and other bones from the Stonesfield quarries.",
+            "es": "Un carnívoro bípedo de unos 6 m de largo que vivió en Inglaterra hace entre 168 y 166 millones de años. Recibió su nombre en 1824 a partir de una mandíbula, un fémur y otros huesos de las canteras de Stonesfield."
+          },
+          "wiki": {
+            "en": "Megalosaurus",
+            "es": "Megalosaurus bucklandii"
+          }
+        },
+        {
+          "id": "gideon-mantell",
+          "name": {
+            "en": "Gideon Mantell",
+            "es": "Gideon Mantell"
+          },
+          "at": [
+            0.0117,
+            50.8747
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1825",
+          "life": [
+            "1790",
+            "1852"
+          ],
+          "place": {
+            "en": "Lewes, Sussex, England",
+            "es": "Lewes, Sussex, Inglaterra"
+          },
+          "text": {
+            "en": "A country doctor in Sussex who collected fossils in every spare moment. He saw that some large fossil teeth looked like an iguana's and named Iguanodon in 1825; Owen later took much of the credit.",
+            "es": "Un médico rural de Sussex que coleccionaba fósiles en cada rato libre. Vio que unos grandes dientes fósiles se parecían a los de una iguana y nombró al Iguanodon en 1825; más tarde Owen se llevó buena parte del mérito."
+          },
+          "wiki": {
+            "en": "Gideon Mantell",
+            "es": "Gideon Mantell"
+          }
+        },
+        {
+          "id": "mary-ann-mantell",
+          "name": {
+            "en": "Mary Ann Mantell",
+            "es": "Mary Ann Mantell"
+          },
+          "at": [
+            -0.149,
+            51.009
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1822",
+          "life": [
+            "1795",
+            "1869"
+          ],
+          "place": {
+            "en": "Cuckfield, Sussex, England",
+            "es": "Cuckfield, Sussex, Inglaterra"
+          },
+          "text": {
+            "en": "Gideon's wife, an artist who drew the plates for his first book. By the couple's own story she spotted the first Iguanodon teeth in 1822, near Cuckfield; historians still debate who found them.",
+            "es": "La esposa de Gideon, una artista que dibujó las láminas de su primer libro. Según el relato de la pareja, ella vio los primeros dientes de Iguanodon en 1822, cerca de Cuckfield; los historiadores aún discuten quién los halló."
+          },
+          "wiki": {
+            "en": "Mary Ann Mantell",
+            "es": "Mary Ann Mantell"
+          }
+        },
+        {
+          "id": "iguanodon",
+          "name": {
+            "en": "Iguanodon",
+            "es": "Iguanodon"
+          },
+          "at": [
+            -0.144,
+            51.006
+          ],
+          "cat": "dinosaur",
+          "type": "species",
+          "date": "-126000000",
+          "until": "-122000000",
+          "place": {
+            "en": "Cuckfield, Sussex, England",
+            "es": "Cuckfield, Sussex, Inglaterra"
+          },
+          "text": {
+            "en": "A big plant-eater with spiked thumbs, the second dinosaur to be named. Mantell's teeth are now thought to belong to related animals; the name now rests on Belgian skeletons 126 to 122 million years old.",
+            "es": "Un gran herbívoro con pulgares en forma de púa, el segundo dinosaurio con nombre. Hoy se cree que los dientes de Mantell eran de animales emparentados; el nombre se basa en esqueletos belgas de hace 126 a 122 millones de años."
+          },
+          "wiki": {
+            "en": "Iguanodon",
+            "es": "Iguanodon"
+          }
+        },
+        {
+          "id": "richard-owen",
+          "name": {
+            "en": "Richard Owen",
+            "es": "Richard Owen"
+          },
+          "at": [
+            -0.117,
+            51.5157
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1842",
+          "life": [
+            "1804",
+            "1892"
+          ],
+          "place": {
+            "en": "London, England",
+            "es": "Londres, Inglaterra"
+          },
+          "text": {
+            "en": "A brilliant and often ruthless anatomist in London. In 1842 he grouped the giant reptiles as Dinosauria; he later fought Darwin's ideas and campaigned for London's Natural History Museum.",
+            "es": "Un anatomista brillante y a menudo despiadado de Londres. En 1842 agrupó a los reptiles gigantes como Dinosauria; después combatió las ideas de Darwin e impulsó el Museo de Historia Natural de Londres."
+          },
+          "wiki": {
+            "en": "Richard Owen",
+            "es": "Richard Owen"
+          }
+        },
+        {
+          "id": "crystal-palace-dinosaurs",
+          "name": {
+            "en": "Crystal Palace dinosaurs",
+            "es": "Dinosaurios del Crystal Palace"
+          },
+          "at": [
+            -0.066,
+            51.418
+          ],
+          "cat": "site",
+          "icon": "🦕",
+          "type": "work",
+          "date": "1854",
+          "place": {
+            "en": "Crystal Palace Park, London",
+            "es": "Parque del Crystal Palace, Londres"
+          },
+          "text": {
+            "en": "The first life-size dinosaur models in the world, unveiled in a London park in 1854. Benjamin Waterhouse Hawkins built them with Owen's advice; wrong in many ways, they still stand, restored in 2026.",
+            "es": "Los primeros modelos de dinosaurios a tamaño real del mundo, inaugurados en un parque de Londres en 1854. Los hizo Benjamin Waterhouse Hawkins con el consejo de Owen; equivocados en mucho, siguen en pie, restaurados en 2026."
+          },
+          "wiki": {
+            "en": "Crystal Palace Dinosaurs",
+            "es": "Dinosaurios de Crystal Palace"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1859",
+      "title": {
+        "en": "Darwin, Wallace and evolution",
+        "es": "Darwin, Wallace y la evolución"
+      },
+      "camera": {
+        "lon": 86.0,
+        "lat": 24.0,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Giant fossils from Argentina set Charles Darwin wondering why extinct beasts resembled living ones. He and Alfred Russel Wallace, far away in the Malay Archipelago, both reached the idea of evolution by natural selection.",
+        "es": "Los fósiles gigantes de Argentina llevaron a Charles Darwin a preguntarse por qué las bestias extintas se parecían a las vivas. Él y Alfred Russel Wallace, en el lejano archipiélago malayo, llegaron a la idea de la selección natural."
+      },
+      "details": {
+        "en": "On the voyage of HMS Beagle, Darwin collected bones of Megatherium and Toxodon in Argentina and Uruguay in 1832 and 1833. Richard Owen described them: they were giant relatives of the sloths, armadillos and other animals still living there, as if new species had replaced the old ones in the same lands. In 1858 Wallace, ill with fever in the Moluccas, wrote out the same theory and sent it to Darwin; their papers were read together in London that July. On the Origin of Species came out on 24 November 1859. Two years later quarrymen in Bavaria found Archaeopteryx, which looked half bird, half reptile.",
+        "es": "En el viaje del HMS Beagle, Darwin reunió huesos de Megatherium y Toxodon en Argentina y Uruguay en 1832 y 1833. Richard Owen los describió: eran parientes gigantes de los perezosos, los armadillos y otros animales que aún vivían allí, como si especies nuevas hubieran reemplazado a las viejas en las mismas tierras. En 1858 Wallace, enfermo de fiebre en las Molucas, escribió la misma teoría y se la envió a Darwin; sus trabajos se leyeron juntos en Londres en julio. El origen de las especies se publicó el 24 de noviembre de 1859. Dos años después, unos canteros de Baviera hallaron el Archaeopteryx, que parecía mitad ave, mitad reptil."
+      },
+      "places": [
+        {
+          "id": "charles-darwin",
+          "name": {
+            "en": "Charles Darwin",
+            "es": "Charles Darwin"
+          },
+          "at": [
+            0.0533,
+            51.3314
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1859",
+          "life": [
+            "1809",
+            "1882"
+          ],
+          "place": {
+            "en": "Down House, Kent, England",
+            "es": "Down House, Kent, Inglaterra"
+          },
+          "text": {
+            "en": "An English naturalist who sailed around the world on HMS Beagle from 1831 to 1836. His 1859 book On the Origin of Species explained how living things change over generations by natural selection.",
+            "es": "Un naturalista inglés que dio la vuelta al mundo en el HMS Beagle entre 1831 y 1836. Su libro de 1859, El origen de las especies, explicó cómo los seres vivos cambian a lo largo de generaciones por selección natural."
+          },
+          "wiki": {
+            "en": "Charles Darwin",
+            "es": "Charles Darwin"
+          }
+        },
+        {
+          "id": "alfred-russel-wallace",
+          "name": {
+            "en": "Alfred Russel Wallace",
+            "es": "Alfred Russel Wallace"
+          },
+          "at": [
+            127.3819,
+            0.78
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1858",
+          "life": [
+            "1823",
+            "1913"
+          ],
+          "place": {
+            "en": "Ternate, Indonesia",
+            "es": "Ternate, Indonesia"
+          },
+          "text": {
+            "en": "A self-taught naturalist who collected animals in the Amazon and the Malay Archipelago to make a living. In 1858, sick with fever in the Moluccas, he came to the same idea as Darwin and wrote it to him.",
+            "es": "Un naturalista autodidacta que se ganaba la vida recolectando animales en la Amazonia y el archipiélago malayo. En 1858, enfermo de fiebre en las Molucas, llegó a la misma idea que Darwin y se la escribió."
+          },
+          "wiki": {
+            "en": "Alfred Russel Wallace",
+            "es": "Alfred Russel Wallace"
+          }
+        },
+        {
+          "id": "archaeopteryx",
+          "name": {
+            "en": "Archaeopteryx",
+            "es": "Archaeopteryx"
+          },
+          "at": [
+            10.9333,
+            48.9
+          ],
+          "cat": "flyer",
+          "icon": "🪶",
+          "type": "species",
+          "date": "-150000000",
+          "until": "-150000000",
+          "place": {
+            "en": "Solnhofen, Bavaria, Germany",
+            "es": "Solnhofen, Baviera, Alemania"
+          },
+          "text": {
+            "en": "A crow-sized animal with feathered wings, but also teeth, clawed fingers and a long bony tail. Found in Bavarian limestone in 1861, two years after Darwin's book, it looked like a link between reptiles and birds.",
+            "es": "Del tamaño de un cuervo, tenía alas de plumas, pero también dientes, dedos con garras y una larga cola ósea. Hallado en Baviera en 1861, dos años después del libro de Darwin, parecía un eslabón entre reptiles y aves."
+          },
+          "wiki": {
+            "en": "Archaeopteryx",
+            "es": "Archaeopteryx"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1877",
+      "title": {
+        "en": "The Bone Wars",
+        "es": "La Guerra de los Huesos"
+      },
+      "camera": {
+        "lon": -90.0,
+        "lat": 40.5,
+        "zoom": 2.6
+      },
+      "text": {
+        "en": "Two rich scientists, Edward Drinker Cope and Othniel Marsh, raced to dig up the American West, spying on and bribing each other's crews. Between them they named Stegosaurus, Diplodocus, Triceratops and many more.",
+        "es": "Dos científicos ricos, Edward Drinker Cope y Othniel Marsh, compitieron por excavar el Oeste de EE. UU., espiando y sobornando a los equipos del otro. Entre ambos nombraron al Stegosaurus, el Diplodocus, el Triceratops y muchos más."
+      },
+      "details": {
+        "en": "America's first dinosaur skeleton had come from a marl pit at Haddonfield, New Jersey, in 1858; Joseph Leidy described it as Hadrosaurus. In 1877 a schoolteacher, Arthur Lakes, found giant bones near Morrison, Colorado, and two railroad workers, William Reed and William Carlin, wrote to Marsh about Como Bluff, Wyoming. For fifteen years crews of hired diggers worked for the rivals, who used bribery, theft and even the smashing of bones. By 1892 the two men had ruined each other, but they had named 142 new species of dinosaurs. In the mid-1870s Marsh won the Lakota chief Red Cloud's leave to dig by promising to report how his people were being cheated, and he did lobby President Grant on their behalf.",
+        "es": "El primer esqueleto de dinosaurio de Estados Unidos había salido de una cantera de marga de Haddonfield, Nueva Jersey, en 1858; Joseph Leidy lo describió como Hadrosaurus. En 1877 un maestro, Arthur Lakes, halló huesos gigantes cerca de Morrison, Colorado, y dos trabajadores del ferrocarril, William Reed y William Carlin, escribieron a Marsh sobre Como Bluff, Wyoming. Durante quince años, cuadrillas de excavadores trabajaron para los rivales, que recurrieron al soborno, al robo y hasta a destrozar huesos. Hacia 1892 los dos se habían arruinado mutuamente, pero habían nombrado 142 especies nuevas de dinosaurios. A mediados de la década de 1870, Marsh obtuvo permiso del jefe lakota Nube Roja para excavar prometiéndole denunciar cómo se estafaba a su pueblo, y en efecto presionó al presidente Grant a su favor."
+      },
+      "places": [
+        {
+          "id": "edward-drinker-cope",
+          "name": {
+            "en": "Edward Drinker Cope",
+            "es": "Edward Drinker Cope"
+          },
+          "at": [
+            -75.1714,
+            39.957
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1877",
+          "life": [
+            "1840",
+            "1897"
+          ],
+          "place": {
+            "en": "Philadelphia, USA",
+            "es": "Filadelfia, EE. UU."
+          },
+          "text": {
+            "en": "A brilliant, hot-tempered naturalist from Philadelphia who named more than 1,000 species of fossil animals. Marsh mocked him for putting the head of a sea reptile, Elasmosaurus, on the end of its tail.",
+            "es": "Un naturalista brillante y de mal genio de Filadelfia que nombró más de 1000 especies de animales fósiles. Marsh se burló de él por poner la cabeza de un reptil marino, el Elasmosaurus, en la punta de la cola."
+          },
+          "wiki": {
+            "en": "Edward Drinker Cope",
+            "es": "Edward Drinker Cope"
+          }
+        },
+        {
+          "id": "othniel-marsh",
+          "name": {
+            "en": "Othniel Charles Marsh",
+            "es": "Othniel Charles Marsh"
+          },
+          "at": [
+            -72.921,
+            41.3158
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1877",
+          "life": [
+            "1831",
+            "1899"
+          ],
+          "place": {
+            "en": "New Haven, Connecticut, USA",
+            "es": "New Haven, Connecticut, EE. UU."
+          },
+          "text": {
+            "en": "A Yale paleontologist whose studies were paid for by his rich uncle, George Peabody. His crews found Stegosaurus, Brontosaurus and Triceratops, and his fossil horses gave strong support to Darwin.",
+            "es": "Un paleontólogo de Yale cuyos estudios pagó su rico tío, George Peabody. Sus equipos hallaron al Stegosaurus, el Brontosaurus y el Triceratops, y sus caballos fósiles dieron un fuerte apoyo a Darwin."
+          },
+          "wiki": {
+            "en": "Othniel Charles Marsh",
+            "es": "Othniel Charles Marsh"
+          }
+        },
+        {
+          "id": "hadrosaurus",
+          "name": {
+            "en": "Hadrosaurus",
+            "es": "Hadrosaurus"
+          },
+          "at": [
+            -75.036,
+            39.904
+          ],
+          "cat": "dinosaur",
+          "type": "species",
+          "date": "-83600000",
+          "until": "-77900000",
+          "place": {
+            "en": "Haddonfield, New Jersey, USA",
+            "es": "Haddonfield, Nueva Jersey, EE. UU."
+          },
+          "text": {
+            "en": "A duck-billed plant-eater dug from a New Jersey marl pit in 1858: the first dinosaur skeleton found in North America. In 1868 it became the first dinosaur skeleton ever mounted for display.",
+            "es": "Un herbívoro de pico de pato sacado de una cantera de marga de Nueva Jersey en 1858: el primer esqueleto de dinosaurio hallado en Norteamérica. En 1868 se convirtió en el primer esqueleto de dinosaurio montado para exhibirse."
+          },
+          "details": {
+            "en": "In 1838 a farmer, John Estaugh Hopkins, dug up large bones in a marl pit by a stream in Haddonfield and kept them at home. In 1858 a visitor, William Parker Foulke, dug out the rest and called in Joseph Leidy, who named Hadrosaurus foulkii. Seeing its long hind legs, Leidy drew it standing on two legs in 1865, the first time a dinosaur was shown upright, which changed how dinosaurs were drawn. In 1868 Benjamin Waterhouse Hawkins, the maker of the Crystal Palace models, mounted it in Philadelphia.",
+            "es": "En 1838 un granjero, John Estaugh Hopkins, desenterró grandes huesos en una cantera de marga junto a un arroyo de Haddonfield y los guardó en su casa. En 1858 un visitante, William Parker Foulke, sacó el resto y llamó a Joseph Leidy, que lo nombró Hadrosaurus foulkii. Al ver sus largas patas traseras, Leidy lo dibujó en 1865 de pie sobre dos patas, la primera vez que se mostró erguido a un dinosaurio, y eso cambió la forma de dibujarlos. En 1868 Benjamin Waterhouse Hawkins, el autor de los modelos del Crystal Palace, lo montó en Filadelfia."
+          },
+          "wiki": {
+            "en": "Hadrosaurus",
+            "es": "Hadrosaurus foulkii"
+          }
+        },
+        {
+          "id": "como-bluff",
+          "name": {
+            "en": "Como Bluff",
+            "es": "Como Bluff"
+          },
+          "at": [
+            -106.0642,
+            41.9161
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-150000000",
+          "place": {
+            "en": "Wyoming, USA",
+            "es": "Wyoming, EE. UU."
+          },
+          "text": {
+            "en": "A long ridge in Wyoming where two railroad workers found bones in 1877. Marsh's crews dug there for twelve years and found Brontosaurus, Stegosaurus, Allosaurus and early mammals.",
+            "es": "Una larga loma de Wyoming donde dos trabajadores del ferrocarril hallaron huesos en 1877. Los equipos de Marsh excavaron allí durante doce años y hallaron al Brontosaurus, el Stegosaurus, el Allosaurus y mamíferos primitivos."
+          },
+          "wiki": {
+            "en": "Como Bluff",
+            "es": "Guerra de los Huesos"
+          }
+        },
+        {
+          "id": "morrison-formation",
+          "name": {
+            "en": "Morrison Formation",
+            "es": "Formación Morrison"
+          },
+          "at": [
+            -105.1934,
+            39.6757
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-156000000",
+          "place": {
+            "en": "Morrison, Colorado, USA",
+            "es": "Morrison, Colorado, EE. UU."
+          },
+          "text": {
+            "en": "Rocks left by rivers and floodplains 156 to 147 million years ago, spread across the American West: one of the world's richest sources of Jurassic dinosaurs. The first bones came from Morrison, Colorado, in 1877.",
+            "es": "Rocas de ríos y llanuras de inundación de hace 156 a 147 millones de años, extendidas por el Oeste de EE. UU.: una de las mayores fuentes de dinosaurios jurásicos del mundo. Los primeros huesos salieron de Morrison, Colorado, en 1877."
+          },
+          "wiki": {
+            "en": "Morrison Formation",
+            "es": "Formación Morrison"
+          }
+        },
+        {
+          "id": "stegosaurus",
+          "name": {
+            "en": "Stegosaurus",
+            "es": "Stegosaurus"
+          },
+          "at": [
+            -105.205,
+            39.693
+          ],
+          "cat": "dinosaur",
+          "type": "species",
+          "date": "-155000000",
+          "until": "-145000000",
+          "place": {
+            "en": "Morrison, Colorado, USA",
+            "es": "Morrison, Colorado, EE. UU."
+          },
+          "text": {
+            "en": "A plant-eater with two rows of tall plates on its back and spikes on its tail, 155 to 145 million years ago. Marsh named it \"roof lizard\" in 1877, thinking its plates lay flat like roof tiles.",
+            "es": "Un herbívoro con dos filas de altas placas en el lomo y púas en la cola, de hace entre 155 y 145 millones de años. Marsh lo llamó \"lagarto con techo\" en 1877, pues creía que sus placas iban planas como tejas."
+          },
+          "wiki": {
+            "en": "Stegosaurus",
+            "es": "Stegosaurus"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1878",
+      "title": {
+        "en": "Iguanodons in a coal mine",
+        "es": "Iguanodontes en una mina de carbón"
+      },
+      "camera": {
+        "lon": 4.02,
+        "lat": 50.66,
+        "zoom": 16.0
+      },
+      "text": {
+        "en": "In 1878 coal miners at Bernissart, Belgium, 322 m underground, hit bones they took for petrified wood: at least 38 Iguanodons. Louis Dollo spent years standing them up in Brussels, where nine still stand.",
+        "es": "En 1878, unos mineros de Bernissart, Bélgica, a 322 m bajo tierra, toparon con huesos que creyeron madera petrificada: al menos 38 iguanodontes. Louis Dollo pasó años montándolos en Bruselas, donde nueve siguen en pie."
+      },
+      "details": {
+        "en": "The miners were Jules Créteur and Alphonse Blanchard. From May 1878 Louis de Pauw led the digging, cutting the skeletons out in blocks. Once in the air, many bones began to crack and crumble as the pyrite in them reacted, a \"pyrite disease\" that museums still fight. Working in a chapel, Dollo mounted the first skeleton in 1882, upright like a kangaroo, and moved Mantell's \"horn\" from the nose to the thumb, where it belonged. Finding so many together suggested that some dinosaurs lived in herds. Today Iguanodon is thought to have walked mostly on all fours, with a straight tail.",
+        "es": "Los mineros eran Jules Créteur y Alphonse Blanchard. Desde mayo de 1878, Louis de Pauw dirigió la excavación, cortando los esqueletos en bloques. Al contacto con el aire, muchos huesos empezaron a agrietarse y deshacerse por la pirita que contenían, una \"enfermedad de la pirita\" que los museos aún combaten. Trabajando en una capilla, Dollo montó el primer esqueleto en 1882, erguido como un canguro, y pasó el \"cuerno\" de Mantell de la nariz al pulgar, donde correspondía. Hallar tantos juntos hizo pensar que algunos dinosaurios vivían en manadas. Hoy se cree que el Iguanodon andaba casi siempre en cuatro patas, con la cola recta."
+      },
+      "places": [
+        {
+          "id": "bernissart-iguanodons",
+          "name": {
+            "en": "Bernissart iguanodons",
+            "es": "Iguanodontes de Bernissart"
+          },
+          "at": [
+            3.65,
+            50.4833
+          ],
+          "cat": "dinosaur",
+          "type": "fossil",
+          "date": "-125000000",
+          "place": {
+            "en": "Bernissart, Belgium",
+            "es": "Bernissart, Bélgica"
+          },
+          "text": {
+            "en": "At least 38 skeletons of Iguanodon bernissartensis, found together deep in a coal mine in 1878. Mounted from 1882, they showed for the first time what a whole dinosaur looked like.",
+            "es": "Al menos 38 esqueletos de Iguanodon bernissartensis, hallados juntos en lo hondo de una mina de carbón en 1878. Montados desde 1882, mostraron por primera vez cómo era un dinosaurio entero."
+          },
+          "wiki": {
+            "en": "Bernissart",
+            "es": "Bernissart"
+          },
+          "img": "Iguanodon de Bernissart IRSNB 01.JPG"
+        },
+        {
+          "id": "louis-dollo",
+          "name": {
+            "en": "Louis Dollo",
+            "es": "Louis Dollo"
+          },
+          "at": [
+            4.3761,
+            50.8369
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1882",
+          "life": [
+            "1857",
+            "1931"
+          ],
+          "place": {
+            "en": "Brussels, Belgium",
+            "es": "Bruselas, Bélgica"
+          },
+          "text": {
+            "en": "An engineer born in Lille, France, who became a paleontologist in Brussels and spent decades on the Bernissart skeletons. He also proposed Dollo's law: evolution does not bring back an organ once lost.",
+            "es": "Un ingeniero nacido en Lille, Francia, que se hizo paleontólogo en Bruselas y dedicó décadas a los esqueletos de Bernissart. También propuso la ley de Dollo: la evolución no recupera un órgano perdido."
+          },
+          "wiki": {
+            "en": "Louis Dollo",
+            "es": "Louis Dollo"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1902",
+      "title": {
+        "en": "The tyrant lizard king",
+        "es": "El rey de los lagartos tiranos"
+      },
+      "camera": {
+        "lon": -105.0,
+        "lat": 46.0,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "In the badlands of Hell Creek, Montana, Barnum Brown dug out the first good skeleton of a giant meat-eater. In 1905 it was named Tyrannosaurus rex, \"tyrant lizard king\".",
+        "es": "En los badlands de Hell Creek, Montana, Barnum Brown desenterró el primer buen esqueleto de un carnívoro gigante. En 1905 recibió el nombre de Tyrannosaurus rex, \"rey de los lagartos tiranos\"."
+      },
+      "details": {
+        "en": "Brown was the star collector of the American Museum of Natural History in New York, and had found part of the same animal in Wyoming in 1900. At Hell Creek his crews blasted away tons of rock with dynamite and hauled the bones out by horse and wagon, recording little about where each bone lay. Henry Fairfield Osborn named Tyrannosaurus rex in 1905. For decades Brown's finds were the only T. rex skeletons known. In 1941 the museum sold the original skeleton to the Carnegie Museum in Pittsburgh.",
+        "es": "Brown era el gran buscador del Museo Americano de Historia Natural de Nueva York y ya había hallado parte del mismo animal en Wyoming en 1900. En Hell Creek, sus equipos volaron toneladas de roca con dinamita y sacaron los huesos en carretas tiradas por caballos, anotando poco sobre dónde estaba cada hueso. Henry Fairfield Osborn nombró al Tyrannosaurus rex en 1905. Durante décadas, los hallazgos de Brown fueron los únicos esqueletos de T. rex conocidos. En 1941 el museo vendió el esqueleto original al Museo Carnegie de Pittsburgh."
+      },
+      "places": [
+        {
+          "id": "barnum-brown",
+          "name": {
+            "en": "Barnum Brown",
+            "es": "Barnum Brown"
+          },
+          "at": [
+            -106.85,
+            47.52
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1902",
+          "life": [
+            "1873",
+            "1963"
+          ],
+          "place": {
+            "en": "Hell Creek, Montana, USA",
+            "es": "Hell Creek, Montana, EE. UU."
+          },
+          "text": {
+            "en": "The American Museum of Natural History's star fossil hunter, nicknamed Mr. Bones. He found the first Tyrannosaurus skeletons and searched for fossils from Montana and Canada all the way to Burma.",
+            "es": "El gran cazador de fósiles del Museo Americano de Historia Natural, apodado Mr. Bones. Halló los primeros esqueletos de Tyrannosaurus y buscó fósiles desde Montana y Canadá hasta Birmania."
+          },
+          "wiki": {
+            "en": "Barnum Brown",
+            "es": "Barnum Brown"
+          }
+        },
+        {
+          "id": "tyrannosaurus",
+          "name": {
+            "en": "Tyrannosaurus rex",
+            "es": "Tyrannosaurus rex"
+          },
+          "at": [
+            -106.91,
+            47.56
+          ],
+          "cat": "dinosaur",
+          "icon": "🦖",
+          "type": "species",
+          "date": "-69000000",
+          "until": "-66000000",
+          "place": {
+            "en": "Hell Creek, Montana, USA",
+            "es": "Hell Creek, Montana, EE. UU."
+          },
+          "text": {
+            "en": "One of the largest meat-eating land animals ever, up to about 12 m long, with bone-crushing jaws. It lived in western North America in the last few million years before the asteroid struck.",
+            "es": "Uno de los mayores carnívoros terrestres que han existido, de hasta unos 12 m, con mandíbulas que trituraban huesos. Vivió en el oeste de Norteamérica en los últimos millones de años antes del impacto del asteroide."
+          },
+          "wiki": {
+            "en": "Tyrannosaurus",
+            "es": "Tyrannosaurus"
+          }
+        },
+        {
+          "id": "hell-creek",
+          "name": {
+            "en": "Hell Creek Formation",
+            "es": "Formación Hell Creek"
+          },
+          "at": [
+            -106.8,
+            47.62
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-67000000",
+          "place": {
+            "en": "Garfield County, Montana, USA",
+            "es": "Condado de Garfield, Montana, EE. UU."
+          },
+          "text": {
+            "en": "Badlands of mudstone and sandstone left by rivers at the very end of the age of dinosaurs. They hold T. rex, Triceratops and, near their top, the thin layer that marks the asteroid impact.",
+            "es": "Badlands de lutitas y areniscas dejadas por ríos al final de la era de los dinosaurios. Guardan al T. rex, al Triceratops y, cerca de lo alto, la fina capa que marca el impacto del asteroide."
+          },
+          "wiki": {
+            "en": "Hell Creek Formation",
+            "es": "Formación Hell Creek"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1909",
+      "title": {
+        "en": "Bones for Berlin and Munich",
+        "es": "Huesos para Berlín y Múnich"
+      },
+      "camera": {
+        "lon": 26.0,
+        "lat": 22.0,
+        "zoom": 1.45
+      },
+      "text": {
+        "en": "In German East Africa, now Tanzania, local workers dug up the giants of Tendaguru and carried about 250 tons of fossils to the coast for Berlin. In Egypt, Richard Markgraf found Spinosaurus for Munich.",
+        "es": "En el África Oriental Alemana, hoy Tanzania, obreros locales desenterraron a los gigantes de Tendaguru y llevaron unas 250 toneladas de fósiles a la costa para Berlín. En Egipto, Richard Markgraf halló el Spinosaurus para Múnich."
+      },
+      "details": {
+        "en": "In 1906 local workers showed the German engineer Bernhard Sattler huge bones weathering out near Tendaguru Hill. The Berlin museum's expeditions of 1909 to 1913, led at first by Werner Janensch and Edwin Hennig, hired Tanzanians, about 160 porters at first, to open about a hundred quarries and to carry the bones, wrapped in plaster, on foot to the port of Lindi: pack animals could not be used because of the tsetse fly. Their foreman, Boheti bin Amrani, became the expedition's best fossil preparer. This was a colony, under German rule, and the fossils went to Berlin; today Tanzanian and German voices question who should own them. In Egypt, then under British control, Markgraf found Spinosaurus for Ernst Stromer in 1912.",
+        "es": "En 1906, trabajadores del lugar mostraron al ingeniero alemán Bernhard Sattler unos huesos enormes que asomaban cerca de la colina de Tendaguru. Las expediciones del museo de Berlín de 1909 a 1913, dirigidas primero por Werner Janensch y Edwin Hennig, contrataron a tanzanos, al comienzo unos 160 cargadores, para abrir unas cien canteras y llevar a pie los huesos, envueltos en yeso, hasta el puerto de Lindi: no se podían usar animales de carga por la mosca tsetsé. Su capataz, Boheti bin Amrani, llegó a ser el mejor preparador de fósiles de la expedición. Era una colonia, bajo dominio alemán, y los fósiles se fueron a Berlín; hoy voces tanzanas y alemanas se preguntan a quién deberían pertenecer. En Egipto, entonces bajo control británico, Markgraf halló el Spinosaurus para Ernst Stromer en 1912."
+      },
+      "moves": [
+        {
+          "side": "taken",
+          "path": [
+            [
+              39.2,
+              -9.7
+            ],
+            [
+              39.7144,
+              -9.9969
+            ],
+            [
+              41.8,
+              -6.0
+            ],
+            [
+              46.5,
+              2.5
+            ],
+            [
+              51.3,
+              11.9
+            ],
+            [
+              43.4,
+              12.7
+            ],
+            [
+              38.6,
+              20.0
+            ],
+            [
+              33.8,
+              27.4
+            ],
+            [
+              32.55,
+              29.95
+            ],
+            [
+              32.3,
+              31.3
+            ],
+            [
+              20.0,
+              34.6
+            ],
+            [
+              11.0,
+              37.6
+            ],
+            [
+              -5.6,
+              36.0
+            ],
+            [
+              -10.0,
+              39.5
+            ],
+            [
+              -9.6,
+              43.6
+            ],
+            [
+              -5.0,
+              48.3
+            ],
+            [
+              1.6,
+              50.9
+            ],
+            [
+              7.8,
+              54.0
+            ],
+            [
+              9.99,
+              53.55
+            ],
+            [
+              13.38,
+              52.53
+            ]
+          ],
+          "label": {
+            "en": "Tendaguru's fossils to Berlin",
+            "es": "Los fósiles de Tendaguru, a Berlín"
+          }
+        },
+        {
+          "side": "taken",
+          "path": [
+            [
+              28.8624,
+              28.3515
+            ],
+            [
+              31.24,
+              30.04
+            ],
+            [
+              29.92,
+              31.2
+            ],
+            [
+              25.0,
+              34.4
+            ],
+            [
+              20.0,
+              37.6
+            ],
+            [
+              18.7,
+              40.1
+            ],
+            [
+              15.6,
+              42.4
+            ],
+            [
+              13.77,
+              45.65
+            ],
+            [
+              11.5714,
+              48.1389
+            ]
+          ],
+          "label": {
+            "en": "Spinosaurus to Munich",
+            "es": "El Spinosaurus, a Múnich"
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "💣",
+          "date": "1944-04-25",
+          "at": [
+            11.5714,
+            48.1389
+          ],
+          "text": {
+            "en": "A British air raid on Munich destroys Stromer's Spinosaurus",
+            "es": "Un bombardeo británico sobre Múnich destruye el Spinosaurus de Stromer"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "tendaguru",
+          "name": {
+            "en": "Tendaguru",
+            "es": "Tendaguru"
+          },
+          "at": [
+            39.2,
+            -9.7
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-150000000",
+          "place": {
+            "en": "Lindi Region, Tanzania",
+            "es": "Región de Lindi, Tanzania"
+          },
+          "text": {
+            "en": "A hill in southeastern Tanzania whose rocks, the richest Late Jurassic fossil beds in Africa, hold dinosaurs about 150 million years old. Local people showed its bones to a German engineer in 1906.",
+            "es": "Una colina del sureste de Tanzania cuyas rocas, los yacimientos del Jurásico tardío más ricos de África, guardan dinosaurios de unos 150 millones de años. En 1906 la gente del lugar mostró sus huesos a un ingeniero alemán."
+          },
+          "wiki": {
+            "en": "Tendaguru Formation",
+            "es": "Formación Tendaguru"
+          }
+        },
+        {
+          "id": "giraffatitan",
+          "name": {
+            "en": "Giraffatitan",
+            "es": "Giraffatitan"
+          },
+          "at": [
+            39.19,
+            -9.71
+          ],
+          "cat": "dinosaur",
+          "icon": "🦕",
+          "type": "species",
+          "date": "-150000000",
+          "until": "-145000000",
+          "place": {
+            "en": "Tendaguru, Tanzania",
+            "es": "Tendaguru, Tanzania"
+          },
+          "text": {
+            "en": "A giant long-necked plant-eater of 150 to 145 million years ago. Its skeleton in Berlin, built mostly from Tendaguru bones, is the tallest mounted dinosaur in the world: 13.27 m.",
+            "es": "Un herbívoro gigante de cuello largo de hace entre 150 y 145 millones de años. Su esqueleto de Berlín, armado sobre todo con huesos de Tendaguru, es el dinosaurio montado más alto del mundo: 13,27 m."
+          },
+          "wiki": {
+            "en": "Giraffatitan",
+            "es": "Giraffatitan brancai"
+          }
+        },
+        {
+          "id": "boheti-bin-amrani",
+          "name": {
+            "en": "Boheti bin Amrani",
+            "es": "Boheti bin Amrani"
+          },
+          "at": [
+            39.215,
+            -9.688
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1909",
+          "place": {
+            "en": "Tendaguru and Lindi, Tanzania",
+            "es": "Tendaguru y Lindi, Tanzania"
+          },
+          "text": {
+            "en": "A Tanzanian farmer from Lindi who joined the expedition in 1909 as a guide and became its chief overseer and best fossil preparer. A dinosaur, Australodocus bohetii, was named after him in 2007.",
+            "es": "Un agricultor tanzano de Lindi que se unió a la expedición en 1909 como guía y llegó a ser su capataz principal y su mejor preparador de fósiles. En 2007 se le dedicó un dinosaurio, Australodocus bohetii."
+          },
+          "details": {
+            "en": "Hired as a guide in April 1909, Boheti found and opened several quarries and was soon the most trusted of the overseers; he helped prepare \"Skeleton S\", the giant later named Giraffatitan. He went on working at Tendaguru for the British Museum's expeditions of the 1920s, for eleven seasons in all, and he and Edwin Hennig still wrote to each other in the 1930s. A Tanzanian children's book of 1998, Dinosaurs of Tendaguru, has a hero named after him.",
+            "es": "Contratado como guía en abril de 1909, Boheti halló y abrió varias canteras y pronto fue el capataz de más confianza; ayudó a preparar el \"Esqueleto S\", el gigante que después se llamó Giraffatitan. Siguió trabajando en Tendaguru para las expediciones del Museo Británico en la década de 1920, once temporadas en total, y él y Edwin Hennig aún se escribían en la década de 1930. Un libro infantil tanzano de 1998, Dinosaurios de Tendaguru, tiene un héroe que lleva su nombre."
+          },
+          "wiki": {
+            "en": "Boheti bin Amrani",
+            "es": "Australodocus bohetii"
+          }
+        },
+        {
+          "id": "spinosaurus",
+          "name": {
+            "en": "Spinosaurus",
+            "es": "Spinosaurus"
+          },
+          "at": [
+            28.8624,
+            28.3515
+          ],
+          "cat": "dinosaur",
+          "icon": "🦖",
+          "type": "species",
+          "date": "-100000000",
+          "until": "-94000000",
+          "place": {
+            "en": "Bahariya Oasis, Egypt",
+            "es": "Oasis de Bahariya, Egipto"
+          },
+          "text": {
+            "en": "A huge fish-eating dinosaur with a tall sail on its back and a crocodile-like snout, from 100 to 94 million years ago. The bones Markgraf found in 1912 were destroyed when Munich was bombed in 1944.",
+            "es": "Un enorme dinosaurio pescador con una alta vela en el lomo y hocico de cocodrilo, de hace entre 100 y 94 millones de años. Los huesos que halló Markgraf en 1912 se destruyeron en el bombardeo de Múnich de 1944."
+          },
+          "details": {
+            "en": "Stromer named Spinosaurus in 1915 from a jaw, teeth and back vertebrae with spines at least 1.65 m tall. The bones were kept in the Bavarian State Collection in Munich, whose director refused to move them to safety; a British air raid destroyed them on 25 April 1944. Only Stromer's drawings and photographs survived. For decades Spinosaurus was known from those and from scraps found in Morocco, Algeria and Tunisia, until a new skeleton came to light in Morocco in the 2010s.",
+            "es": "Stromer nombró al Spinosaurus en 1915 a partir de una mandíbula, dientes y vértebras del lomo con espinas de al menos 1,65 m. Los huesos se guardaban en la Colección Estatal de Baviera, en Múnich, cuyo director se negó a ponerlos a salvo; un bombardeo británico los destruyó el 25 de abril de 1944. Solo sobrevivieron los dibujos y las fotos de Stromer. Durante décadas se conoció al Spinosaurus por ellos y por restos sueltos de Marruecos, Argelia y Túnez, hasta que en la década de 2010 apareció en Marruecos un nuevo esqueleto."
+          },
+          "wiki": {
+            "en": "Spinosaurus",
+            "es": "Spinosaurus"
+          }
+        },
+        {
+          "id": "ernst-stromer",
+          "name": {
+            "en": "Ernst Stromer",
+            "es": "Ernst Stromer"
+          },
+          "at": [
+            11.5714,
+            48.1389
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1915",
+          "life": [
+            "1871",
+            "1952"
+          ],
+          "place": {
+            "en": "Munich, Germany",
+            "es": "Múnich, Alemania"
+          },
+          "text": {
+            "en": "A Bavarian nobleman and paleontologist who described Spinosaurus and other Egyptian dinosaurs. A critic of the Nazis, he lost his fossils in a 1944 air raid and two of his sons in the war.",
+            "es": "Un noble y paleontólogo bávaro que describió al Spinosaurus y a otros dinosaurios egipcios. Crítico de los nazis, perdió sus fósiles en un bombardeo de 1944 y a dos de sus hijos en la guerra."
+          },
+          "wiki": {
+            "en": "Ernst Stromer",
+            "es": "Ernst Stromer"
+          }
+        },
+        {
+          "id": "richard-markgraf",
+          "name": {
+            "en": "Richard Markgraf",
+            "es": "Richard Markgraf"
+          },
+          "at": [
+            28.88,
+            28.37
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1912",
+          "life": [
+            "1869",
+            "1916"
+          ],
+          "place": {
+            "en": "Bahariya Oasis, Egypt",
+            "es": "Oasis de Bahariya, Egipto"
+          },
+          "text": {
+            "en": "A Bohemian bricklayer and musician who ended up broke in Cairo and became a superb fossil collector. He found Spinosaurus in 1912 and died poor in Egypt during the First World War.",
+            "es": "Un albañil y músico bohemio que acabó arruinado en El Cairo y se convirtió en un excelente buscador de fósiles. Halló al Spinosaurus en 1912 y murió pobre en Egipto durante la Primera Guerra Mundial."
+          },
+          "wiki": {
+            "en": "Richard Markgraf",
+            "es": "Spinosaurus"
+          },
+          "img": "Richard Markgraf3.jpg"
+        }
+      ]
+    },
+    {
+      "date": "1912",
+      "title": {
+        "en": "Drifting continents",
+        "es": "Continentes a la deriva"
+      },
+      "camera": {
+        "lon": 3.0,
+        "lat": -17.0,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "In January 1912 Alfred Wegener proposed that the continents drift. One clue: the same fossils, such as the reptile Mesosaurus and the tree Glossopteris, lie on lands that oceans now keep far apart.",
+        "es": "En enero de 1912, Alfred Wegener propuso que los continentes se desplazan. Una pista: los mismos fósiles, como el reptil Mesosaurus y el árbol Glossopteris, aparecen en tierras que hoy separan los océanos."
+      },
+      "details": {
+        "en": "Wegener, a meteorologist and polar explorer, first presented his idea in Frankfurt on 6 January 1912, and in a book in 1915. Besides fossils, he pointed to coastlines that fit together like puzzle pieces, and he called the joined landmass Pangaea. Most geologists rejected the idea, because he could not explain what force moved the continents; he died on the Greenland ice sheet in 1930. Only in the 1960s did discoveries on the sea floor lead to plate tectonics. In 1912, too, Robert Scott's party died on its way back from the South Pole; beside their bodies lay 16 kg of Glossopteris fossils they had refused to abandon. The \"Pangea to today\" mode of this app shows how the continents moved.",
+        "es": "Wegener, meteorólogo y explorador polar, presentó su idea en Fráncfort el 6 de enero de 1912, y en un libro en 1915. Además de los fósiles, señaló costas que encajan como piezas de un rompecabezas, y llamó Pangea a la masa de tierra unida. La mayoría de los geólogos rechazó la idea, porque no podía explicar qué fuerza movía los continentes; murió sobre el hielo de Groenlandia en 1930. Solo en la década de 1960 los descubrimientos en el fondo del mar llevaron a la tectónica de placas. También en 1912 murió la expedición de Robert Scott al volver del Polo Sur; junto a sus cuerpos había 16 kg de fósiles de Glossopteris que no quisieron abandonar. El modo \"De Pangea a hoy\" de esta aplicación muestra cómo se movieron los continentes."
+      },
+      "places": [
+        {
+          "id": "alfred-wegener",
+          "name": {
+            "en": "Alfred Wegener",
+            "es": "Alfred Wegener"
+          },
+          "at": [
+            8.6517,
+            50.1175
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1912",
+          "life": [
+            "1880",
+            "1930"
+          ],
+          "place": {
+            "en": "Frankfurt, Germany",
+            "es": "Fráncfort, Alemania"
+          },
+          "text": {
+            "en": "A German meteorologist and polar explorer who argued that all the continents were once joined in a single landmass, Pangaea. He was mocked for decades; plate tectonics proved him right after his death.",
+            "es": "Un meteorólogo y explorador polar alemán que defendió que todos los continentes estuvieron unidos en una sola masa de tierra, Pangea. Se burlaron de él durante décadas; la tectónica de placas le dio la razón tras su muerte."
+          },
+          "wiki": {
+            "en": "Alfred Wegener",
+            "es": "Alfred Wegener"
+          }
+        },
+        {
+          "id": "mesosaurus",
+          "name": {
+            "en": "Mesosaurus",
+            "es": "Mesosaurus"
+          },
+          "at": [
+            -50.3833,
+            -25.8667
+          ],
+          "cat": "reptile",
+          "icon": "🐊",
+          "type": "species",
+          "date": "-275000000",
+          "until": "-275000000",
+          "place": {
+            "en": "Irati Formation, Paraná, Brazil",
+            "es": "Formación Irati, Paraná, Brasil"
+          },
+          "text": {
+            "en": "A slender, needle-toothed reptile that swam in a shallow inland sea about 275 million years ago. Its fossils lie in Brazil, Uruguay and southern Africa, on both sides of today's Atlantic.",
+            "es": "Un reptil esbelto, de dientes como agujas, que nadaba en un mar interior poco profundo hace unos 275 millones de años. Sus fósiles aparecen en Brasil, Uruguay y el sur de África, a ambos lados del Atlántico actual."
+          },
+          "details": {
+            "en": "A small swimmer of coastal lagoons could never have crossed an ocean, so how did it live on both sides? Wegener's answer: the ocean was not there yet. The first Mesosaurus to be named, in 1865, came from South Africa. Around 1830 it was being used as a pot lid in a home of the Griqua people; how it was taken from them and reached a museum in Paris is unknown.",
+            "es": "Un pequeño nadador de lagunas costeras jamás habría podido cruzar un océano: ¿cómo vivía entonces a ambos lados? La respuesta de Wegener: el océano aún no existía. El primer Mesosaurus que recibió nombre, en 1865, procedía de Sudáfrica. Hacia 1830 se usaba como tapa de olla en una casa del pueblo griqua; no se sabe cómo se lo quitaron ni cómo llegó a un museo de París."
+          },
+          "wiki": {
+            "en": "Mesosaurus",
+            "es": "Mesosaurus"
+          }
+        },
+        {
+          "id": "glossopteris",
+          "name": {
+            "en": "Glossopteris",
+            "es": "Glossopteris"
+          },
+          "at": [
+            163.9333,
+            -84.9667
+          ],
+          "cat": "plant",
+          "type": "species",
+          "date": "-299000000",
+          "until": "-252000000",
+          "place": {
+            "en": "Mount Buckley, Beardmore Glacier, Antarctica",
+            "es": "Monte Buckley, glaciar Beardmore, Antártida"
+          },
+          "text": {
+            "en": "A tree with tongue-shaped leaves that covered the cold southern lands of Pangaea until 252 million years ago. Its fossils lie in South America, Africa, India, Australia and, as Scott found, Antarctica.",
+            "es": "Un árbol de hojas en forma de lengua que cubrió las frías tierras del sur de Pangea hasta hace 252 millones de años. Sus fósiles aparecen en Sudamérica, África, la India, Australia y, como halló Scott, la Antártida."
+          },
+          "wiki": {
+            "en": "Glossopteris",
+            "es": "Glossopteris"
+          }
+        },
+        {
+          "id": "lystrosaurus",
+          "name": {
+            "en": "Lystrosaurus",
+            "es": "Lystrosaurus"
+          },
+          "at": [
+            25.9667,
+            -30.4667
+          ],
+          "cat": "mammal",
+          "icon": "🐗",
+          "type": "species",
+          "date": "-255000000",
+          "until": "-248000000",
+          "place": {
+            "en": "Karoo Basin, South Africa",
+            "es": "Cuenca del Karoo, Sudáfrica"
+          },
+          "text": {
+            "en": "A pig-sized, tusked plant-eater, a distant cousin of mammals, that survived the great extinction 252 million years ago. Known from Africa, India and China, it was found in Antarctica in 1969.",
+            "es": "Un herbívoro del tamaño de un cerdo y con colmillos, primo lejano de los mamíferos, que sobrevivió a la gran extinción de hace 252 millones de años. Conocido en África, la India y China, apareció en la Antártida en 1969."
+          },
+          "wiki": {
+            "en": "Lystrosaurus",
+            "es": "Lystrosaurus"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1923",
+      "title": {
+        "en": "Dinosaur eggs in the Gobi",
+        "es": "Huevos de dinosaurio en el Gobi"
+      },
+      "camera": {
+        "lon": 109.5,
+        "lat": 42.0,
+        "zoom": 4.2
+      },
+      "text": {
+        "en": "In 1923 Roy Chapman Andrews's expedition crossed the Gobi in a fleet of cars. At the Flaming Cliffs, George Olsen found the first nests of dinosaur eggs known to science.",
+        "es": "En 1923 la expedición de Roy Chapman Andrews cruzó el Gobi en una flota de autos. En los Acantilados Llameantes, George Olsen halló los primeros nidos de huevos de dinosaurio conocidos por la ciencia."
+      },
+      "details": {
+        "en": "Andrews led the American Museum of Natural History's Central Asiatic Expeditions from 1922, driving Dodge cars west from Peking. He hoped to find the first humans in Asia and found dinosaurs instead. The eggs, found on 13 July 1923, were thought to be Protoceratops eggs, and a skeleton lying on a nest was named Oviraptor, \"egg thief\". In the 1990s new finds showed that the eggs were Oviraptor's own, and that it had died keeping them warm, like a bird. The fossils went to New York. Today Mongolia and China ban the export of fossils from the Gobi.",
+        "es": "Andrews dirigió desde 1922 las Expediciones de Asia Central del Museo Americano de Historia Natural, en autos Dodge que partían de Pekín hacia el oeste. Esperaba hallar a los primeros humanos de Asia y encontró dinosaurios. Los huevos, hallados el 13 de julio de 1923, se tomaron por huevos de Protoceratops, y a un esqueleto que yacía sobre un nido se lo llamó Oviraptor, \"ladrón de huevos\". En la década de 1990, nuevos hallazgos mostraron que los huevos eran del propio Oviraptor y que había muerto empollándolos, como un ave. Los fósiles se fueron a Nueva York. Hoy Mongolia y China prohíben exportar fósiles del Gobi."
+      },
+      "moves": [
+        {
+          "side": "taken",
+          "path": [
+            [
+              103.7278,
+              44.1385
+            ],
+            [
+              107.5,
+              43.6
+            ],
+            [
+              111.97,
+              43.65
+            ],
+            [
+              114.886,
+              40.769
+            ],
+            [
+              116.4,
+              39.9
+            ],
+            [
+              117.7,
+              39.0
+            ]
+          ],
+          "label": {
+            "en": "To New York",
+            "es": "Hacia Nueva York"
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "🥚",
+          "date": "1923-07-13",
+          "at": [
+            103.7278,
+            44.1385
+          ],
+          "text": {
+            "en": "George Olsen finds the first nest of dinosaur eggs known to science",
+            "es": "George Olsen halla el primer nido de huevos de dinosaurio conocido por la ciencia"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "roy-chapman-andrews",
+          "name": {
+            "en": "Roy Chapman Andrews",
+            "es": "Roy Chapman Andrews"
+          },
+          "at": [
+            103.723,
+            44.145
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1923",
+          "life": [
+            "1884",
+            "1960"
+          ],
+          "place": {
+            "en": "Gobi Desert, Mongolia",
+            "es": "Desierto de Gobi, Mongolia"
+          },
+          "text": {
+            "en": "An American explorer and naturalist who led the American Museum of Natural History's expeditions into Mongolia from 1922. He was looking for the first humans in Asia, and found dinosaurs instead.",
+            "es": "Un explorador y naturalista estadounidense que dirigió desde 1922 las expediciones del Museo Americano de Historia Natural a Mongolia. Buscaba a los primeros humanos de Asia y encontró dinosaurios."
+          },
+          "wiki": {
+            "en": "Roy Chapman Andrews",
+            "es": "Roy Chapman Andrews"
+          }
+        },
+        {
+          "id": "flaming-cliffs",
+          "name": {
+            "en": "Flaming Cliffs",
+            "es": "Acantilados Llameantes"
+          },
+          "at": [
+            103.7278,
+            44.1385
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-75000000",
+          "place": {
+            "en": "Bayanzag, Gobi Desert, Mongolia",
+            "es": "Bayanzag, desierto de Gobi, Mongolia"
+          },
+          "text": {
+            "en": "Red sandstone cliffs in the Gobi, named by Andrews for their glow at sunset. Their rocks, 75 to 71 million years old, gave the first dinosaur nests, Velociraptor and many early mammals.",
+            "es": "Acantilados de arenisca roja del Gobi, bautizados por Andrews por su brillo al atardecer. Sus rocas, de hace entre 75 y 71 millones de años, dieron los primeros nidos de dinosaurio, el Velociraptor y muchos mamíferos primitivos."
+          },
+          "wiki": {
+            "en": "Flaming Cliffs",
+            "es": "Acantilados Llameantes"
+          }
+        },
+        {
+          "id": "oviraptor",
+          "name": {
+            "en": "Oviraptor",
+            "es": "Oviraptor"
+          },
+          "at": [
+            103.74,
+            44.133
+          ],
+          "cat": "dinosaur",
+          "icon": "🥚",
+          "type": "species",
+          "date": "-75000000",
+          "until": "-71000000",
+          "place": {
+            "en": "Bayanzag, Gobi Desert, Mongolia",
+            "es": "Bayanzag, desierto de Gobi, Mongolia"
+          },
+          "text": {
+            "en": "A beaked, feathered dinosaur found lying on a nest of eggs in 1923 and named \"egg thief\". Later finds showed that the eggs were its own: it was a parent keeping them warm, like a bird.",
+            "es": "Un dinosaurio con pico y plumas hallado en 1923 sobre un nido de huevos y llamado \"ladrón de huevos\". Hallazgos posteriores mostraron que los huevos eran suyos: era un progenitor que los empollaba, como un ave."
+          },
+          "wiki": {
+            "en": "Oviraptor",
+            "es": "Oviraptor philoceratops"
+          }
+        },
+        {
+          "id": "velociraptor",
+          "name": {
+            "en": "Velociraptor",
+            "es": "Velociraptor"
+          },
+          "at": [
+            103.715,
+            44.14
+          ],
+          "cat": "dinosaur",
+          "icon": "🦖",
+          "type": "species",
+          "date": "-75000000",
+          "until": "-71000000",
+          "place": {
+            "en": "Bayanzag, Gobi Desert, Mongolia",
+            "es": "Bayanzag, desierto de Gobi, Mongolia"
+          },
+          "text": {
+            "en": "A turkey-sized hunter with a big curved claw on each foot and, as later fossils showed, feathers. Peter Kaisen found its skull here on 11 August 1923; it was far smaller than in films.",
+            "es": "Un cazador del tamaño de un pavo, con una gran garra curva en cada pie y, como mostraron fósiles posteriores, plumas. Peter Kaisen halló aquí su cráneo el 11 de agosto de 1923; era mucho más pequeño que en las películas."
+          },
+          "wiki": {
+            "en": "Velociraptor",
+            "es": "Velociraptor"
+          }
+        },
+        {
+          "id": "protoceratops",
+          "name": {
+            "en": "Protoceratops",
+            "es": "Protoceratops"
+          },
+          "at": [
+            103.71,
+            44.13
+          ],
+          "cat": "dinosaur",
+          "type": "species",
+          "date": "-75000000",
+          "until": "-71000000",
+          "place": {
+            "en": "Gobi Desert, Mongolia",
+            "es": "Desierto de Gobi, Mongolia"
+          },
+          "text": {
+            "en": "A beaked plant-eater the size of a sheep, with a bony frill on its neck, common in the Gobi 75 to 71 million years ago. Some think its skulls inspired the griffin legend; many experts doubt it.",
+            "es": "Un herbívoro con pico, del tamaño de una oveja y con una gorguera ósea en el cuello, común en el Gobi hace 75 a 71 millones de años. Hay quien cree que sus cráneos inspiraron la leyenda del grifo; muchos expertos lo dudan."
+          },
+          "details": {
+            "en": "Protoceratops skeletons are so common in the red sandstones of the Gobi that some lie in the open, beak, frill and all. The historian of science Adrienne Mayor has proposed that Scythian nomads who dug for gold in Central Asia saw such skeletons and told of a beaked, four-legged beast that guarded gold: the griffin. In 2016 the paleontologist Mark Witton replied that griffins appear in art long before any Greek account, that a griffin's wings grow from its shoulders rather than behind its head like the frill, and that the gold deposits lie far from the fossil beds. Scientists first found Protoceratops in 1922, on Roy Chapman Andrews's expedition, and named it in 1923.",
+            "es": "Los esqueletos de Protoceratops son tan comunes en las areniscas rojas del Gobi que algunos asoman a la vista, con pico, gorguera y todo. La historiadora de la ciencia Adrienne Mayor ha propuesto que los nómadas escitas que buscaban oro en Asia central vieron esos esqueletos y hablaron de una bestia de cuatro patas y con pico que guardaba el oro: el grifo. En 2016 el paleontólogo Mark Witton respondió que los grifos aparecen en el arte mucho antes que cualquier relato griego, que las alas del grifo nacen de los hombros y no detrás de la cabeza como la gorguera, y que los yacimientos de oro están lejos de los fósiles. Los científicos hallaron el Protoceratops por primera vez en 1922, en la expedición de Roy Chapman Andrews, y le dieron nombre en 1923."
+          },
+          "wiki": {
+            "en": "Protoceratops",
+            "es": "Protoceratops"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1980",
+      "title": {
+        "en": "The asteroid that ended an age",
+        "es": "El asteroide que cerró una era"
+      },
+      "camera": {
+        "lon": -44.0,
+        "lat": 37.0,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "In 1980 Luis and Walter Alvarez found iridium, rare on Earth but common in asteroids, in a thin layer of clay at Gubbio, Italy, laid down 66 million years ago. An asteroid impact, they said, had killed the dinosaurs.",
+        "es": "En 1980, Luis y Walter Alvarez hallaron iridio, raro en la Tierra pero común en los asteroides, en una fina capa de arcilla de Gubbio, Italia, de hace 66 millones de años. Un asteroide, dijeron, había matado a los dinosaurios."
+      },
+      "details": {
+        "en": "The father and son worked with the chemists Frank Asaro and Helen Michel, and at the same time Jan Smit found the same iridium spike in Spain. The crater was already known, without anyone realizing it. In 1978 Glen Penfield and Antonio Camargo, geophysicists looking for oil for Mexico's state company Pemex, mapped a buried ring under Yucatán; they presented it in 1981, but few experts heard them. In 1990 Alan Hildebrand learned of it, tested old drill cores, and with his colleagues tied the ring at Chicxulub to the extinction. Most scientists now agree that the impact was the main cause; some argue that huge eruptions in India, the Deccan Traps, also played a part.",
+        "es": "Padre e hijo trabajaron con los químicos Frank Asaro y Helen Michel, y al mismo tiempo Jan Smit halló el mismo pico de iridio en España. El cráter ya se conocía sin que nadie lo supiera. En 1978 Glen Penfield y Antonio Camargo, geofísicos que buscaban petróleo para la empresa estatal mexicana Pemex, cartografiaron un anillo enterrado bajo Yucatán; lo presentaron en 1981, pero pocos expertos se enteraron. En 1990 Alan Hildebrand supo de él, analizó viejos núcleos de perforación y, con sus colegas, relacionó el anillo de Chicxulub con la extinción. Hoy la mayoría de los científicos cree que el impacto fue la causa principal; algunos sostienen que las enormes erupciones de la India, los Traps del Decán, también influyeron."
+      },
+      "places": [
+        {
+          "id": "luis-alvarez",
+          "name": {
+            "en": "Luis Alvarez",
+            "es": "Luis Alvarez"
+          },
+          "at": [
+            -122.2486,
+            37.8758
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1980",
+          "life": [
+            "1911",
+            "1988"
+          ],
+          "place": {
+            "en": "Berkeley, California, USA",
+            "es": "Berkeley, California, EE. UU."
+          },
+          "text": {
+            "en": "An American physicist who won the 1968 Nobel Prize for his work on subatomic particles. With his son Walter he proposed in 1980 that an asteroid impact had killed the dinosaurs.",
+            "es": "Un físico estadounidense que ganó el Premio Nobel en 1968 por su trabajo sobre partículas subatómicas. Con su hijo Walter propuso en 1980 que el impacto de un asteroide había acabado con los dinosaurios."
+          },
+          "wiki": {
+            "en": "Luis Walter Alvarez",
+            "es": "Luis Walter Álvarez"
+          }
+        },
+        {
+          "id": "walter-alvarez",
+          "name": {
+            "en": "Walter Alvarez",
+            "es": "Walter Alvarez"
+          },
+          "at": [
+            12.58,
+            43.353
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1980",
+          "life": [
+            "1940",
+            null
+          ],
+          "place": {
+            "en": "Gubbio, Italy",
+            "es": "Gubbio, Italia"
+          },
+          "text": {
+            "en": "An American geologist who studied the limestone of the gorge at Gubbio, in Italy. With his father, Luis, he found the iridium layer there and in 1980 proposed the impact theory.",
+            "es": "Un geólogo estadounidense que estudió la caliza de la garganta de Gubbio, en Italia. Con su padre, Luis, halló allí la capa de iridio y en 1980 propuso la teoría del impacto."
+          },
+          "wiki": {
+            "en": "Walter Alvarez",
+            "es": "Walter Alvarez"
+          }
+        },
+        {
+          "id": "gubbio-boundary",
+          "name": {
+            "en": "K–Pg boundary at Gubbio",
+            "es": "Límite K–Pg de Gubbio"
+          },
+          "at": [
+            12.589,
+            43.364
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-66000000",
+          "place": {
+            "en": "Bottaccione gorge, Gubbio, Italy",
+            "es": "Garganta del Bottaccione, Gubbio, Italia"
+          },
+          "text": {
+            "en": "A thin layer of clay between beds of limestone near Gubbio that marks the end of the Cretaceous, 66 million years ago. It holds far more iridium than the rocks above and below it.",
+            "es": "Una fina capa de arcilla entre bancos de caliza cerca de Gubbio que marca el final del Cretácico, hace 66 millones de años. Contiene mucho más iridio que las rocas de arriba y de abajo."
+          },
+          "wiki": {
+            "en": "Cretaceous–Paleogene boundary",
+            "es": "Límite Cretácico-Paleógeno"
+          }
+        },
+        {
+          "id": "chicxulub-impact",
+          "name": {
+            "en": "Chicxulub impact",
+            "es": "Impacto de Chicxulub"
+          },
+          "at": [
+            -89.516,
+            21.4
+          ],
+          "cat": "event",
+          "icon": "☄️",
+          "type": "event",
+          "date": "-66000000",
+          "place": {
+            "en": "Chicxulub, Yucatán, Mexico",
+            "es": "Chicxulub, Yucatán, México"
+          },
+          "text": {
+            "en": "An asteroid about 10 km wide struck what is now Yucatán, Mexico, 66 million years ago, leaving a crater about 200 km wide. Dust and gases darkened the sky, and 75% of species died out.",
+            "es": "Un asteroide de unos 10 km de ancho chocó contra lo que hoy es Yucatán, México, hace 66 millones de años, y dejó un cráter de unos 200 km. El polvo y los gases oscurecieron el cielo y se extinguió el 75 % de las especies."
+          },
+          "wiki": {
+            "en": "Chicxulub crater",
+            "es": "Cráter de Chicxulub"
+          }
+        },
+        {
+          "id": "glen-penfield",
+          "name": {
+            "en": "Glen Penfield",
+            "es": "Glen Penfield"
+          },
+          "at": [
+            -89.6058,
+            21.2936
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1978",
+          "place": {
+            "en": "Yucatán, Mexico",
+            "es": "Yucatán, México"
+          },
+          "text": {
+            "en": "A geophysicist working for Mexico's oil company Pemex. With Antonio Camargo he found a buried ring about 180 km wide under Yucatán in 1978; he guessed it was a crater, but the data stayed secret for years.",
+            "es": "Un geofísico que trabajaba para la petrolera mexicana Pemex. Con Antonio Camargo halló en 1978 un anillo enterrado de unos 180 km bajo Yucatán; sospechó que era un cráter, pero los datos fueron secretos durante años."
+          },
+          "wiki": {
+            "en": "Glen Penfield",
+            "es": "Cráter de Chicxulub"
+          },
+          "img": "Yucatan chix crater.jpg"
+        }
+      ]
+    },
+    {
+      "date": "1990",
+      "title": {
+        "en": "Giants found by amateurs",
+        "es": "Gigantes hallados por aficionados"
+      },
+      "camera": {
+        "lon": -84.0,
+        "lat": 0.0,
+        "zoom": 1.15
+      },
+      "text": {
+        "en": "In 1990 Sue Hendrickson found the most complete T. rex yet, and a fight over who owned it went to court. In Argentina, a rancher, an amateur fossil hunter and a farm worker led scientists to even bigger dinosaurs.",
+        "es": "En 1990, Sue Hendrickson halló el T. rex más completo conocido, y la pelea por su propiedad llegó a los tribunales. En Argentina, un granjero, un aficionado y un peón de campo llevaron a los científicos a dinosaurios aún mayores."
+      },
+      "details": {
+        "en": "Hendrickson found Sue on 12 August 1990, while the rest of her team took a flat tyre into town, on the ranch of Maurice Williams, a member of the Sioux tribe, on the Cheyenne River Reservation. Her team, from the Black Hills Institute, had paid Williams $5,000, but the land was held in trust by the US government; in 1992 the FBI seized the bones, and the courts ruled that they belonged to Williams. In 1997 the Field Museum in Chicago bought Sue at auction, with help from companies and donors. In Argentina, rancher Guillermo Heredia found Argentinosaurus in 1987, Rubén Carolini found Giganotosaurus in 1993, and farm worker Aurelio Hernández found Patagotitan in 2010; each time, local museums and scientists took over the dig.",
+        "es": "Hendrickson halló a Sue el 12 de agosto de 1990, mientras el resto de su equipo llevaba una llanta pinchada al pueblo, en el rancho de Maurice Williams, miembro de la tribu sioux, en la reserva del río Cheyenne. Su equipo, del Instituto Black Hills, había pagado 5000 dólares a Williams, pero las tierras estaban en fideicomiso del gobierno de Estados Unidos; en 1992 el FBI se incautó de los huesos, y los tribunales decidieron que eran de Williams. En 1997 el Museo Field de Chicago compró a Sue en una subasta, con ayuda de empresas y donantes. En Argentina, el granjero Guillermo Heredia halló el Argentinosaurus en 1987, Rubén Carolini el Giganotosaurus en 1993 y el peón de campo Aurelio Hernández el Patagotitan en 2010; cada vez, museos y científicos locales se hicieron cargo de la excavación."
+      },
+      "events": [
+        {
+          "icon": "🚔",
+          "date": "1992",
+          "at": [
+            -102.0364,
+            45.0258
+          ],
+          "text": {
+            "en": "The FBI seizes Sue from the Black Hills Institute",
+            "es": "El FBI se incauta de Sue en el Instituto Black Hills"
+          }
+        },
+        {
+          "icon": "🔨",
+          "date": "1997-10-04",
+          "text": {
+            "en": "Sue is auctioned for $8.36 million to the Field Museum",
+            "es": "Sue se subasta por 8,36 millones de dólares al Museo Field"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "sue-hendrickson",
+          "name": {
+            "en": "Sue Hendrickson",
+            "es": "Sue Hendrickson"
+          },
+          "at": [
+            -102.07,
+            45.06
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1990",
+          "life": [
+            "1949",
+            null
+          ],
+          "place": {
+            "en": "near Faith, South Dakota, USA",
+            "es": "cerca de Faith, Dakota del Sur, EE. UU."
+          },
+          "text": {
+            "en": "A self-taught American diver and fossil collector who left school at 17. On 12 August 1990, while her team's truck was being fixed, she found the T. rex now named Sue in her honour.",
+            "es": "Una buceadora y coleccionista de fósiles estadounidense, autodidacta, que dejó la escuela a los 17 años. El 12 de agosto de 1990, mientras arreglaban el camión de su equipo, halló el T. rex que hoy lleva su nombre, Sue."
+          },
+          "wiki": {
+            "en": "Sue Hendrickson",
+            "es": "Sue Hendrickson"
+          }
+        },
+        {
+          "id": "sue-tyrannosaurus",
+          "name": {
+            "en": "Sue the T. rex",
+            "es": "Sue, el T. rex"
+          },
+          "at": [
+            -102.1,
+            45.03
+          ],
+          "cat": "dinosaur",
+          "icon": "🦖",
+          "type": "fossil",
+          "date": "-67000000",
+          "place": {
+            "en": "Cheyenne River Reservation, South Dakota, USA",
+            "es": "Reserva del río Cheyenne, Dakota del Sur, EE. UU."
+          },
+          "text": {
+            "en": "One of the largest and best preserved T. rex skeletons ever found, over 90% complete. After a long fight over who owned it, it was auctioned in 1997 to the Field Museum in Chicago for $8.36 million.",
+            "es": "Uno de los esqueletos de T. rex más grandes y mejor conservados jamás hallados, completo en más de un 90 %. Tras una larga pelea por su propiedad, se subastó en 1997 al Museo Field de Chicago por 8,36 millones de dólares."
+          },
+          "wiki": {
+            "en": "Sue (dinosaur)",
+            "es": "Especímenes de Tyrannosaurus rex"
+          }
+        },
+        {
+          "id": "argentinosaurus",
+          "name": {
+            "en": "Argentinosaurus",
+            "es": "Argentinosaurus"
+          },
+          "at": [
+            -69.106,
+            -38.93
+          ],
+          "cat": "dinosaur",
+          "icon": "🦕",
+          "type": "species",
+          "date": "-106000000",
+          "until": "-106000000",
+          "place": {
+            "en": "Plaza Huincul, Neuquén, Argentina",
+            "es": "Plaza Huincul, Neuquén, Argentina"
+          },
+          "text": {
+            "en": "One of the largest land animals ever, perhaps 30 to 35 m long and 65 to 80 tonnes, known from a few huge bones. Rancher Guillermo Heredia found the first one in 1987, thinking it was petrified wood.",
+            "es": "Uno de los mayores animales terrestres de la historia, de quizá 30 a 35 m y 65 a 80 toneladas, conocido por unos pocos huesos enormes. El granjero Guillermo Heredia halló el primero en 1987, creyendo que era madera petrificada."
+          },
+          "wiki": {
+            "en": "Argentinosaurus",
+            "es": "Argentinosaurus huinculensis"
+          }
+        },
+        {
+          "id": "giganotosaurus",
+          "name": {
+            "en": "Giganotosaurus",
+            "es": "Giganotosaurus"
+          },
+          "at": [
+            -68.8,
+            -39.24
+          ],
+          "cat": "dinosaur",
+          "icon": "🦖",
+          "type": "species",
+          "date": "-111000000",
+          "until": "-106000000",
+          "place": {
+            "en": "Villa El Chocón, Neuquén, Argentina",
+            "es": "Villa El Chocón, Neuquén, Argentina"
+          },
+          "text": {
+            "en": "A meat-eater as big as T. rex or bigger, from 111 to 106 million years ago. The amateur fossil hunter Rubén Carolini found its leg bone in 1993 while driving a dune buggy near El Chocón.",
+            "es": "Un carnívoro tan grande como el T. rex o más, de hace entre 111 y 106 millones de años. El cazador de fósiles aficionado Rubén Carolini halló un hueso de su pata en 1993 mientras conducía un buggy cerca de El Chocón."
+          },
+          "wiki": {
+            "en": "Giganotosaurus",
+            "es": "Giganotosaurus carolinii"
+          }
+        },
+        {
+          "id": "patagotitan",
+          "name": {
+            "en": "Patagotitan",
+            "es": "Patagotitan"
+          },
+          "at": [
+            -68.45,
+            -43.4
+          ],
+          "cat": "dinosaur",
+          "icon": "🦕",
+          "type": "species",
+          "date": "-102000000",
+          "until": "-102000000",
+          "place": {
+            "en": "La Flecha, Chubut, Argentina",
+            "es": "La Flecha, Chubut, Argentina"
+          },
+          "text": {
+            "en": "A titanosaur about 37 m long, known from at least six young adults found together. Farm worker Aurelio Hernández spotted the first thighbone near La Flecha in 2010; it was named in 2017.",
+            "es": "Un titanosaurio de unos 37 m de largo, conocido por al menos seis adultos jóvenes hallados juntos. El peón de campo Aurelio Hernández vio el primer fémur cerca de La Flecha en 2010; recibió su nombre en 2017."
+          },
+          "wiki": {
+            "en": "Patagotitan",
+            "es": "Patagotitan mayorum"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1996",
+      "title": {
+        "en": "Feathered dinosaurs",
+        "es": "Dinosaurios con plumas"
+      },
+      "camera": {
+        "lon": 120.3,
+        "lat": 41.2,
+        "zoom": 7.0
+      },
+      "text": {
+        "en": "In 1996 Li Yumin, a farmer and part-time fossil hunter in Liaoning, China, found a small dinosaur covered in fuzzy feathers. Soon fossils showed that birds are living dinosaurs; in 2010 they even revealed colours.",
+        "es": "En 1996, Li Yumin, agricultor y cazador de fósiles en Liaoning, China, halló un pequeño dinosaurio cubierto de plumas como pelusa. Pronto los fósiles mostraron que las aves son dinosaurios; en 2010 revelaron hasta sus colores."
+      },
+      "details": {
+        "en": "Li Yumin sold the two halves of the slab to two Chinese museums. A photograph shown at a meeting in New York caused a sensation: dinosaurs other than birds had feathers. Liaoning's fossils come from lakes and forests buried by volcanic ash, so quickly that feathers, skin and stomach contents survive. In 2010 scientists found melanosomes, the tiny sacs of pigment that colour feathers, in these fossils: Sinosauropteryx had a tail ringed in ginger and white, and Anchiornis mostly grey and black feathers, white wings with black tips and a reddish crown. The fossil trade has a dark side: in 1999 a fake glued together from several fossils, \"Archaeoraptor\", fooled a famous magazine.",
+        "es": "Li Yumin vendió las dos mitades de la losa a dos museos chinos. Una fotografía mostrada en una reunión en Nueva York causó sensación: había dinosaurios que no eran aves y tenían plumas. Los fósiles de Liaoning vienen de lagos y bosques sepultados por ceniza volcánica, tan deprisa que se conservan plumas, piel y contenido del estómago. En 2010 los científicos hallaron en ellos melanosomas, los diminutos sacos de pigmento que dan color a las plumas: el Sinosauropteryx tenía la cola con anillos rojizos y blancos, y el Anchiornis plumas casi todas grises y negras, alas blancas con puntas negras y la coronilla rojiza. El comercio de fósiles tiene un lado oscuro: en 1999 una falsificación pegada con varios fósiles, el \"Archaeoraptor\", engañó a una famosa revista."
+      },
+      "places": [
+        {
+          "id": "sinosauropteryx",
+          "name": {
+            "en": "Sinosauropteryx",
+            "es": "Sinosauropteryx"
+          },
+          "at": [
+            120.78,
+            41.59
+          ],
+          "cat": "dinosaur",
+          "icon": "🦖",
+          "type": "species",
+          "date": "-124600000",
+          "until": "-122000000",
+          "place": {
+            "en": "Sihetun, Liaoning, China",
+            "es": "Sihetun, Liaoning, China"
+          },
+          "text": {
+            "en": "A small hunter about 1 m long covered in simple, fuzzy feathers: in 1996, the first dinosaur outside the birds found with them. In 2010 its fossil pigments showed a tail with ginger and white rings.",
+            "es": "Un pequeño cazador de cerca de 1 m cubierto de plumas simples, como pelusa: en 1996, el primer dinosaurio no aviano hallado con ellas. En 2010 sus pigmentos fósiles mostraron una cola con anillos rojizos y blancos."
+          },
+          "wiki": {
+            "en": "Sinosauropteryx",
+            "es": "Sinosauropteryx"
+          }
+        },
+        {
+          "id": "jehol-biota",
+          "name": {
+            "en": "Jehol Biota",
+            "es": "Biota de Jehol"
+          },
+          "at": [
+            120.55,
+            41.78
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-135000000",
+          "place": {
+            "en": "Western Liaoning, China",
+            "es": "Oeste de Liaoning, China"
+          },
+          "text": {
+            "en": "The fossils of a world of lakes and forests in northeast China, 135 to 121 million years ago, buried by volcanic ash so quickly that feathers, skin and even last meals were preserved.",
+            "es": "Los fósiles de un mundo de lagos y bosques del noreste de China, de hace entre 135 y 121 millones de años, sepultado por cenizas volcánicas tan deprisa que se conservaron plumas, piel y hasta últimas comidas."
+          },
+          "wiki": {
+            "en": "Jehol Biota",
+            "es": "Biota de Jehol"
+          },
+          "img": "Confuciusornis sanctus fossil bird (Yixian Formation, Lower Cretaceous; Sihetun Quarry, Liaoning Province, northeastern China) 2.jpg"
+        },
+        {
+          "id": "anchiornis",
+          "name": {
+            "en": "Anchiornis",
+            "es": "Anchiornis"
+          },
+          "at": [
+            119.85,
+            40.8
+          ],
+          "cat": "dinosaur",
+          "icon": "🪶",
+          "type": "species",
+          "date": "-160000000",
+          "until": "-160000000",
+          "place": {
+            "en": "Jianchang, Liaoning, China",
+            "es": "Jianchang, Liaoning, China"
+          },
+          "text": {
+            "en": "A crow-sized feathered dinosaur with feathers on its arms and legs, 160 million years old. In 2010 it became the first dinosaur whose colours were known almost all over: grey, black, white and a reddish crown.",
+            "es": "Un dinosaurio con plumas del tamaño de un cuervo, con plumas en brazos y patas, de 160 millones de años. En 2010 fue el primer dinosaurio cuyos colores se conocieron casi por completo: gris, negro, blanco y una coronilla rojiza."
+          },
+          "wiki": {
+            "en": "Anchiornis",
+            "es": "Anchiornis huxleyi"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2013",
+      "title": {
+        "en": "Fossils go home",
+        "es": "Los fósiles vuelven a casa"
+      },
+      "camera": {
+        "lon": 40.0,
+        "lat": 52.0,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Countries now fight the smuggling of fossils. In 2013 a stolen Tarbosaurus went back to Mongolia, and in Morocco a team traced Spinosaurus bones from a dealer back to their site and argued that it swam.",
+        "es": "Hoy los países combaten el contrabando de fósiles. En 2013 un Tarbosaurus robado volvió a Mongolia, y en Marruecos un equipo rastreó unos huesos de Spinosaurus desde un comerciante hasta su yacimiento y defendió que nadaba."
+      },
+      "details": {
+        "en": "In May 2012 a nearly complete Tarbosaurus skeleton came up for auction in New York. The Mongolian paleontologist Bolortsetseg Minjin saw that it had been smuggled out of the Gobi, where fossils belong by law to Mongolia; the president of Mongolia and many scientists protested, the skeleton was seized, and the smuggler pleaded guilty. It went home in 2013 and was shown on the main square of Ulaanbaatar, and dozens more Mongolian dinosaurs followed; in January 2026 France returned another Tarbosaurus. In Morocco, Nizar Ibrahim, Samir Zouhri and David Martill tracked down a fossil dealer in 2013 and found where his Spinosaurus bones came from. Their studies of 2014 and 2020, based on a paddle-like tail, argued that Spinosaurus hunted in water; others still debate how well it swam.",
+        "es": "En mayo de 2012, un esqueleto casi completo de Tarbosaurus salió a subasta en Nueva York. La paleontóloga mongola Bolortsetseg Minjin vio que lo habían sacado de contrabando del Gobi, donde los fósiles pertenecen por ley a Mongolia; el presidente de Mongolia y muchos científicos protestaron, el esqueleto fue incautado y el contrabandista se declaró culpable. Volvió a casa en 2013 y se exhibió en la plaza principal de Ulán Bator, y después regresaron decenas de dinosaurios mongoles más; en enero de 2026 Francia devolvió otro Tarbosaurus. En Marruecos, Nizar Ibrahim, Samir Zouhri y David Martill dieron en 2013 con un comerciante de fósiles y hallaron de dónde venían sus huesos de Spinosaurus. Sus estudios de 2014 y 2020, basados en una cola en forma de remo, defendieron que el Spinosaurus cazaba en el agua; otros aún discuten lo bien que nadaba."
+      },
+      "moves": [
+        {
+          "side": "home",
+          "path": [
+            [
+              -74.0,
+              40.71
+            ],
+            [
+              106.9175,
+              47.9189
+            ]
+          ],
+          "label": {
+            "en": "Tarbosaurus sent home (2013)",
+            "es": "El Tarbosaurus, de vuelta a casa (2013)"
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "🔨",
+          "date": "2012-05-20",
+          "at": [
+            -74.0,
+            40.71
+          ],
+          "text": {
+            "en": "A Tarbosaurus smuggled out of Mongolia is put up for auction in New York",
+            "es": "Un Tarbosaurus sacado de contrabando de Mongolia sale a subasta en Nueva York"
+          }
+        },
+        {
+          "icon": "🏠",
+          "date": "2013",
+          "at": [
+            106.9175,
+            47.9189
+          ],
+          "text": {
+            "en": "The Tarbosaurus is returned to Mongolia",
+            "es": "El Tarbosaurus es devuelto a Mongolia"
+          }
+        },
+        {
+          "icon": "🦴",
+          "date": "2020",
+          "text": {
+            "en": "A study of Spinosaurus's paddle-like tail argues that it swam",
+            "es": "Un estudio de la cola en forma de remo del Spinosaurus defiende que nadaba"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "tarbosaurus",
+          "name": {
+            "en": "Tarbosaurus",
+            "es": "Tarbosaurus"
+          },
+          "at": [
+            100.95,
+            43.5
+          ],
+          "cat": "dinosaur",
+          "icon": "🦖",
+          "type": "species",
+          "date": "-72000000",
+          "until": "-66000000",
+          "place": {
+            "en": "Nemegt Basin, Gobi Desert, Mongolia",
+            "es": "Cuenca de Nemegt, desierto de Gobi, Mongolia"
+          },
+          "text": {
+            "en": "A close Asian cousin of T. rex, 10 to 12 m long, from the Gobi Desert. In 2012 a skeleton smuggled out of Mongolia came up for auction in New York; it was seized and sent home in 2013.",
+            "es": "Un primo asiático cercano del T. rex, de 10 a 12 m de largo, del desierto de Gobi. En 2012, un esqueleto sacado de contrabando de Mongolia salió a subasta en Nueva York; fue incautado y devuelto en 2013."
+          },
+          "wiki": {
+            "en": "Tarbosaurus",
+            "es": "Tarbosaurus bataar"
+          }
+        },
+        {
+          "id": "bolortsetseg-minjin",
+          "name": {
+            "en": "Bolortsetseg Minjin",
+            "es": "Bolortsetseg Minjin"
+          },
+          "at": [
+            106.9175,
+            47.9189
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "2012",
+          "place": {
+            "en": "Ulaanbaatar, Mongolia",
+            "es": "Ulán Bator, Mongolia"
+          },
+          "text": {
+            "en": "A Mongolian paleontologist who recognized the stolen Tarbosaurus and raised the alarm. She has since helped return more than 30 smuggled dinosaurs and takes a mobile dinosaur museum to children in rural Mongolia.",
+            "es": "Una paleontóloga mongola que reconoció el Tarbosaurus robado y dio la alarma. Desde entonces ha ayudado a devolver más de 30 dinosaurios sacados de contrabando y lleva un museo móvil de dinosaurios a niños del campo mongol."
+          },
+          "wiki": {
+            "en": "Bolortsetseg Minjin",
+            "es": "Tarbosaurus bataar"
+          }
+        },
+        {
+          "id": "spinosaurus",
+          "name": {
+            "en": "Spinosaurus",
+            "es": "Spinosaurus"
+          },
+          "at": [
+            28.8624,
+            28.3515
+          ],
+          "cat": "dinosaur",
+          "icon": "🦖",
+          "type": "species",
+          "date": "-100000000",
+          "until": "-94000000",
+          "place": {
+            "en": "Bahariya Oasis, Egypt",
+            "es": "Oasis de Bahariya, Egipto"
+          },
+          "text": {
+            "en": "A huge fish-eating dinosaur with a tall sail on its back and a crocodile-like snout, from 100 to 94 million years ago. The bones Markgraf found in 1912 were destroyed when Munich was bombed in 1944.",
+            "es": "Un enorme dinosaurio pescador con una alta vela en el lomo y hocico de cocodrilo, de hace entre 100 y 94 millones de años. Los huesos que halló Markgraf en 1912 se destruyeron en el bombardeo de Múnich de 1944."
+          },
+          "details": {
+            "en": "Stromer named Spinosaurus in 1915 from a jaw, teeth and back vertebrae with spines at least 1.65 m tall. The bones were kept in the Bavarian State Collection in Munich, whose director refused to move them to safety; a British air raid destroyed them on 25 April 1944. Only Stromer's drawings and photographs survived. For decades Spinosaurus was known from those and from scraps found in Morocco, Algeria and Tunisia, until a new skeleton came to light in Morocco in the 2010s.",
+            "es": "Stromer nombró al Spinosaurus en 1915 a partir de una mandíbula, dientes y vértebras del lomo con espinas de al menos 1,65 m. Los huesos se guardaban en la Colección Estatal de Baviera, en Múnich, cuyo director se negó a ponerlos a salvo; un bombardeo británico los destruyó el 25 de abril de 1944. Solo sobrevivieron los dibujos y las fotos de Stromer. Durante décadas se conoció al Spinosaurus por ellos y por restos sueltos de Marruecos, Argelia y Túnez, hasta que en la década de 2010 apareció en Marruecos un nuevo esqueleto."
+          },
+          "wiki": {
+            "en": "Spinosaurus",
+            "es": "Spinosaurus"
+          }
+        },
+        {
+          "id": "kem-kem",
+          "name": {
+            "en": "Kem Kem beds",
+            "es": "Capas de Kem Kem"
+          },
+          "at": [
+            -4.05,
+            30.95
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-100000000",
+          "place": {
+            "en": "near Erfoud, Morocco",
+            "es": "cerca de Erfoud, Marruecos"
+          },
+          "text": {
+            "en": "Red cliffs along Morocco's border with Algeria, 100 to 95 million years old, rich in the bones of river giants. Many fossils from here reach the market through local diggers and dealers.",
+            "es": "Acantilados rojos junto a la frontera de Marruecos con Argelia, de hace entre 100 y 95 millones de años, ricos en huesos de gigantes de río. Muchos fósiles de aquí llegan al mercado a través de excavadores y comerciantes locales."
+          },
+          "wiki": {
+            "en": "Kem Kem Group",
+            "es": "Tafilete"
+          }
+        },
+        {
+          "id": "nizar-ibrahim",
+          "name": {
+            "en": "Nizar Ibrahim",
+            "es": "Nizar Ibrahim"
+          },
+          "at": [
+            -4.15,
+            31.05
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "2014",
+          "life": [
+            "1982",
+            null
+          ],
+          "place": {
+            "en": "Kem Kem beds, Morocco",
+            "es": "Capas de Kem Kem, Marruecos"
+          },
+          "text": {
+            "en": "A German-Moroccan paleontologist who has led many expeditions into the Sahara. His team's studies of a new Spinosaurus skeleton, in 2014 and 2020, changed ideas about how the giant lived.",
+            "es": "Un paleontólogo germano-marroquí que ha dirigido muchas expediciones al Sahara. Los estudios de su equipo sobre un nuevo esqueleto de Spinosaurus, en 2014 y 2020, cambiaron las ideas sobre cómo vivía el gigante."
+          },
+          "wiki": {
+            "en": "Nizar Ibrahim",
+            "es": "Spinosaurus"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Fossil hunting turned old bones into a history of life, with extinction, deep time, evolution and drifting continents. It was built by professors and by quarry workers, farmers, miners, women and self-taught collectors, many never credited, and often on fossils taken from colonies. Today countries reclaim their fossils, and the search goes on.",
+    "es": "La búsqueda de fósiles convirtió huesos viejos en una historia de la vida, con extinción, tiempo profundo, evolución y continentes a la deriva. La construyeron profesores y también canteros, granjeros, mineros, mujeres y coleccionistas autodidactas, muchos nunca reconocidos, y a menudo con fósiles sacados de colonias. Hoy los países reclaman sus fósiles, y la búsqueda continúa."
+  },
+  "sources": [
+    {
+      "title": "History of paleontology (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/History_of_paleontology"
+    },
+    {
+      "title": "Griffin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Griffin"
+    },
+    {
+      "title": "Protoceratops (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Protoceratops"
+    },
+    {
+      "title": "Adrienne Mayor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Adrienne_Mayor"
+    },
+    {
+      "title": "Dinosaur (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dinosaur"
+    },
+    {
+      "title": "Megacerops (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Megacerops"
+    },
+    {
+      "title": "Nicolas Steno (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nicolas_Steno"
+    },
+    {
+      "title": "Megalodon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Megalodon"
+    },
+    {
+      "title": "Shark tooth (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shark_tooth"
+    },
+    {
+      "title": "Fabio Colonna (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fabio_Colonna"
+    },
+    {
+      "title": "Robert Plot (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Robert_Plot"
+    },
+    {
+      "title": "Megalosaurus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Megalosaurus"
+    },
+    {
+      "title": "Georges Cuvier (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Georges_Cuvier"
+    },
+    {
+      "title": "Woolly mammoth (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Woolly_mammoth"
+    },
+    {
+      "title": "Mastodon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mastodon"
+    },
+    {
+      "title": "Megatherium (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Megatherium"
+    },
+    {
+      "title": "Mosasaurus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mosasaurus"
+    },
+    {
+      "title": "Mary Anning (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mary_Anning"
+    },
+    {
+      "title": "Temnodontosaurus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Temnodontosaurus"
+    },
+    {
+      "title": "Ichthyosaurus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ichthyosaurus"
+    },
+    {
+      "title": "Plesiosaurus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Plesiosaurus"
+    },
+    {
+      "title": "Elizabeth Philpot (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Philpot"
+    },
+    {
+      "title": "William Buckland (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/William_Buckland"
+    },
+    {
+      "title": "Mary Buckland (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mary_Buckland"
+    },
+    {
+      "title": "Gideon Mantell (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gideon_Mantell"
+    },
+    {
+      "title": "Mary Ann Mantell (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mary_Ann_Mantell"
+    },
+    {
+      "title": "Iguanodon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Iguanodon"
+    },
+    {
+      "title": "Richard Owen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Richard_Owen"
+    },
+    {
+      "title": "Crystal Palace Dinosaurs (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Crystal_Palace_Dinosaurs"
+    },
+    {
+      "title": "Charles Darwin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Charles_Darwin"
+    },
+    {
+      "title": "Alfred Russel Wallace (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Alfred_Russel_Wallace"
+    },
+    {
+      "title": "Toxodon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Toxodon"
+    },
+    {
+      "title": "Archaeopteryx (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Archaeopteryx"
+    },
+    {
+      "title": "Bone Wars (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bone_Wars"
+    },
+    {
+      "title": "Edward Drinker Cope (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Edward_Drinker_Cope"
+    },
+    {
+      "title": "Othniel Charles Marsh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Othniel_Charles_Marsh"
+    },
+    {
+      "title": "Hadrosaurus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hadrosaurus"
+    },
+    {
+      "title": "Como Bluff (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Como_Bluff"
+    },
+    {
+      "title": "Morrison Formation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Morrison_Formation"
+    },
+    {
+      "title": "Stegosaurus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Stegosaurus"
+    },
+    {
+      "title": "Bernissart (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bernissart"
+    },
+    {
+      "title": "Louis Dollo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Louis_Dollo"
+    },
+    {
+      "title": "Barnum Brown (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Barnum_Brown"
+    },
+    {
+      "title": "Tyrannosaurus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tyrannosaurus"
+    },
+    {
+      "title": "Hell Creek Formation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hell_Creek_Formation"
+    },
+    {
+      "title": "Tendaguru Formation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tendaguru_Formation"
+    },
+    {
+      "title": "Giraffatitan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Giraffatitan"
+    },
+    {
+      "title": "Boheti bin Amrani (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Boheti_bin_Amrani"
+    },
+    {
+      "title": "Spinosaurus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Spinosaurus"
+    },
+    {
+      "title": "Ernst Stromer (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ernst_Stromer"
+    },
+    {
+      "title": "Richard Markgraf (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Richard_Markgraf"
+    },
+    {
+      "title": "Alfred Wegener (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Alfred_Wegener"
+    },
+    {
+      "title": "Continental drift (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Continental_drift"
+    },
+    {
+      "title": "Mesosaurus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mesosaurus"
+    },
+    {
+      "title": "Glossopteris (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Glossopteris"
+    },
+    {
+      "title": "Lystrosaurus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lystrosaurus"
+    },
+    {
+      "title": "Roy Chapman Andrews (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Roy_Chapman_Andrews"
+    },
+    {
+      "title": "Flaming Cliffs (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Flaming_Cliffs"
+    },
+    {
+      "title": "Oviraptor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Oviraptor"
+    },
+    {
+      "title": "Velociraptor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Velociraptor"
+    },
+    {
+      "title": "Alvarez hypothesis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Alvarez_hypothesis"
+    },
+    {
+      "title": "Luis Walter Alvarez (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Luis_Walter_Alvarez"
+    },
+    {
+      "title": "Walter Alvarez (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Walter_Alvarez"
+    },
+    {
+      "title": "Chicxulub crater (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chicxulub_crater"
+    },
+    {
+      "title": "Glen Penfield (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Glen_Penfield"
+    },
+    {
+      "title": "Alan R. Hildebrand (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Alan_R._Hildebrand"
+    },
+    {
+      "title": "Sue (dinosaur) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sue_(dinosaur)"
+    },
+    {
+      "title": "Sue Hendrickson (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sue_Hendrickson"
+    },
+    {
+      "title": "Argentinosaurus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Argentinosaurus"
+    },
+    {
+      "title": "Giganotosaurus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Giganotosaurus"
+    },
+    {
+      "title": "Patagotitan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Patagotitan"
+    },
+    {
+      "title": "Sinosauropteryx (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sinosauropteryx"
+    },
+    {
+      "title": "Jehol Biota (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jehol_Biota"
+    },
+    {
+      "title": "Anchiornis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Anchiornis"
+    },
+    {
+      "title": "Tarbosaurus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tarbosaurus"
+    },
+    {
+      "title": "Bolortsetseg Minjin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bolortsetseg_Minjin"
+    },
+    {
+      "title": "Nizar Ibrahim (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nizar_Ibrahim"
+    },
+    {
+      "title": "Kem Kem Group (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kem_Kem_Group"
+    }
+  ]
+}
