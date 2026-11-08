@@ -716,7 +716,7 @@ export class Learn {
   // ---- Tours ----------------------------------------------------------------------------------
   private openTours() {
     const body = h('div');
-    const groups: [Tour['group'], string][] = [[undefined, L('Our planet', 'Nuestro planeta')], ['cities', L('Cities through time', 'Ciudades a través del tiempo')], ['history', L('History and culture', 'Historia y cultura')]];
+    const groups: [Tour['group'], string][] = [[undefined, L('Our planet', 'Nuestro planeta')], ['cities', L('Cities through time', 'Ciudades a través del tiempo')], ['history', L('History and culture', 'Historia y cultura')], ['life', L('Life through time', 'La vida en el tiempo')]];
     for (const [group, title] of groups) {
       const list = h('div', { class: 'mode-list' });
       for (const tour of TOURS.filter((x) => x.group === group)) {
