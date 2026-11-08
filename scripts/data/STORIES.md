@@ -1,6 +1,6 @@
-# Eras and ideas, Food through time, Great structures, Peoples and civilizations, Life through time: authoring guide
+# Eras and ideas, Food through time, Great structures, Peoples and civilizations, Life through time, Games of the world: authoring guide
 
-Five time-travel collections share the story format of Wars and conquests:
+Six time-travel collections share the story format of Wars and conquests:
 
 | Collection | Folder | What a story shows |
 |---|---|---|
@@ -9,6 +9,7 @@ Five time-travel collections share the story format of Wars and conquests:
 | Great structures | `scripts/data/structures/` | where and when great structures were built, by whom, why and how |
 | Peoples and civilizations | `scripts/data/people/` | human origins and migrations, and where civilizations rose and fell, with their capitals, works and what remains |
 | Life through time | `scripts/data/life/` | the story of life on the drifting continents: first life, fossils, extinctions, dinosaurs, mammals, the Ice Age, tamed animals, species then and now (see [Life through time](#life-through-time) below) |
+| Games of the world | `scripts/data/games/` | every Summer and Winter Olympics and every men's and women's World Cup, with the countries that took part, medals, champions and boycotts; the Tour de France and the great marathons (see [Games of the world](#games-of-the-world) below) |
 
 **Read `scripts/data/conflicts/README.md` first.** It covers dates, the camera, sides and their territory
 (`control` with area expressions), `moves` (routes), `events`, `aftermath` and sources, which work the
@@ -81,6 +82,9 @@ across all of them.
   impacts, eruptions, ice ages), site (fossil sites and places), scientist (fossil hunters and scientists).
 - **Structures:** megalith, pyramid, temple, church, mosque, fort, palace, city, bridge, water, tunnel,
   tower, monument, arena, science.
+- **Games:** summer, winter, football (the host markers of the Olympics and World Cups), athlete (athletes and
+  players), moment (a famous moment: a race, a goal, a ceremony), protest (protests, boycotts and bans), venue
+  (stadiums, courses), cycling, running, ancient (the games of Olympia and other ancient games).
 
 Don't add or rename categories without asking. Only one person edits a `_collection.json` at a time.
 
@@ -147,3 +151,38 @@ ago), and every marker, route and camera on it moves with its plate.
   adds later; look at those markers.
 - **Be careful with science**: give ages as the sources do ("about 375 million years ago") and say when a find
   or an idea is debated. Write scientific names as plain text, with no markup (Tiktaalik, Tyrannosaurus rex).
+
+## Games of the world
+
+`scripts/data/games/` tells the story of the world's great sporting events. A step that **is** a Games or a
+World Cup names it with `"games"`, and the build adds the rest from Wikipedia's data:
+
+```json
+{ "date": "1936-08-01", "games": "summer-1936", "title": {...}, "text": {...}, "details": {...}, "places": [...] }
+```
+
+- **Ids**: `summer-1896` … `summer-2024`, `winter-1924` … `winter-2026`, `wc-1930` … `wc-2026` (men's World
+  Cup), `wwc-1991` … `wwc-2023` (Women's World Cup). The list and every Games' facts are in
+  `scripts/data/games/_data/events.json`: host, dates, nations, athletes, events, the teams with their
+  athletes, the medal table, and, for a World Cup, the teams in FIFA's final ranking and the final.
+- **What the build adds to such a step** (don't write it):
+  - every country coloured by how its team took part: host, won medals or took part (Olympics); champions,
+    runners-up, host or took part (World Cups); boycotted, withdrew, banned or not invited (from
+    `games/_away.json`). Teams of the past colour the countries they are today (the Soviet Union, Yugoslavia;
+    England, Scotland, Wales and Northern Ireland, East and West Germany are drawn as their own areas);
+  - an arc from each team's country to the host city;
+  - the host city's marker (`games-summer-1936`, from `games/_hosts.json`) with the facts and the medal table
+    (or the last four of a World Cup), shown first;
+  - a camera on the host city, unless the step has one;
+  - the legend's sides (`g_host`, `g_medals`, `g_champion`, `g_runnerup`, `g_took`, `g_boycott`, `g_banned`).
+- **What you write**: the step's `title`, `text` and `details` (what made these Games: records, stars,
+  politics, firsts), and 2–5 items with `places`: athletes and players (`type: "person"`, `cat: "athlete"`,
+  `at` where they won or the venue; `country`: their country's ISO A3 code), moments (`type: "event"`, `cat:
+  "moment"` or `"protest"`) and venues (`type: "site"`, `cat: "venue"`). Give a person who appears in several
+  stories the same `id` everywhere (`jesse-owens`, `pele`, `simone-biles`).
+- **Steps without `games`** are ordinary steps: the ancient Olympics at Olympia, the founding of the IOC, a
+  boycott's story, a Tour de France route (`moves`), a marathon's course.
+- **Be fair**: name the boycotts and who paid for them (athletes kept home), apartheid South Africa's
+  exclusion, the 1968 protests and the Tlatelolco massacre, the Munich massacre, doping scandals as the
+  sources state them (bans, stripped medals), women's long fight to compete, and the workers who died building
+  some venues.

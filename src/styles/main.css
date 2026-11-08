@@ -539,3 +539,21 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
 .quiz-sum-mark { font-weight: 800; font-size: 18px; flex: none; }
 .quiz-sum-row.ok .quiz-sum-mark { color: #20c997; }
 .quiz-sum-row.bad .quiz-sum-mark { color: #ff8787; }
+
+/* Games of the world: a medal table (or a World Cup's last four) in a card and in Details. */
+.mt-wrap { margin: 6px 0 2px; }
+.medal-table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+.medal-table th { color: var(--muted); font-weight: 600; font-size: 12px; text-align: right; padding: 2px 4px 4px; border-bottom: 1px solid var(--line); }
+.medal-table th:nth-child(2) { text-align: left; }
+.medal-table td { padding: 3px 4px; border-bottom: 1px solid var(--line); }
+.medal-table tr:last-child td { border-bottom: 0; }
+.medal-table .mt-rank { color: var(--muted); width: 1.6em; text-align: right; }
+.medal-table .mt-name { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.medal-table .mt-n { text-align: right; width: 2.2em; }
+.medal-table .mt-total { font-weight: 700; }
+.medal-table .mt-place { text-align: right; color: var(--muted); white-space: nowrap; }
+.medal-table .mt-host td { background: rgba(242, 177, 52, 0.14); }
+.mt-flag { width: 21px; height: 15px; object-fit: cover; border-radius: 2px; box-shadow: 0 0 0 1px var(--line); flex: none; }
+.mt-flag-none { display: inline-flex; align-items: center; justify-content: center; box-shadow: none; font-size: 13px; }
+.mt-more { margin: 4px 0 0; }
+.games-names { font-size: 13px; line-height: 1.55; color: var(--muted); }

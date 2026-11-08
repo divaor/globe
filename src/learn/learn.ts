@@ -25,7 +25,7 @@ interface Q { id: string; options?: string[]; item?: QItem; ok?: boolean; given?
 const ITEM_QUIZZES: QuizKind[] = ['where', 'when', 'dish', 'era', 'civ', 'period'];
 /** The civilization stories of Peoples and civilizations: the answers of "Which civilization?". */
 const CIV_STORIES = ['mesopotamia', 'ancient-egypt', 'indus-valley', 'persia', 'kush-aksum', 'ancient-china', 'khmer', 'west-african-empires', 'great-zimbabwe-swahili', 'olmecs-maya', 'andes'];
-const COLLECTION_DIR: Record<StoryKind, string> = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life' };
+const COLLECTION_DIR: Record<StoryKind, string> = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games' };
 const yearOf = (d: string) => Number(/^-?\d+/.exec(d)?.[0] ?? 0);
 
 /** Four years to choose from: the right one and three plausible others (no year 0, none in the future). */
