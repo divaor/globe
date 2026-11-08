@@ -189,7 +189,7 @@ Compiled by hand from well-established facts (no invented precise numbers):
   Québec, New Brunswick and Wallonia-Brussels in the Francophonie) are not mapped.
 * `monarchy` (43 sovereign monarchies incl. the 15 Commonwealth realms), `federal` (Forum of
   Federations list), `nuclear_weapons` (9 states; Israel undeclared).
-* `world_cup_titles` (men's, 1930–2022; 2026 not included), `womens_world_cup_titles` (1991–2023).
+* `world_cup_titles` (men's, 1930–2026; Spain's second title in 2026), `womens_world_cup_titles` (1991–2023).
 * `religion`: Islamic branch defaults where the factbook gives none (Iran, Iraq, Azerbaijan, Bahrain:
   Shia; Oman: Ibadi; others Sunni), Christian denomination for Canada, Bulgaria, Cuba, Namibia;
   Panama (factbook entry duplicates Honduras), North Korea (none), St Kitts and Nevis (no entry).
