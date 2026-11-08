@@ -142,6 +142,39 @@ function worldCup(e) {
   };
 }
 
+/** Teams that are not one of today's countries: their medals are not given to anyone (as the filter always said). */
+const PAST = new Set(['URS', 'EUN', 'EUA', 'FRG', 'GDR', 'SAA', 'TCH', 'YUG', 'SCG', 'IOP', 'ANZ', 'BOH', 'RU1', 'BWI', 'ROC', 'OAR', 'AIN', 'IOA', 'EOR', 'ROT', 'ZZX', 'COR', 'AHO', 'NBO', 'MAL', 'RHO', 'YAR', 'YMD', 'RAU', 'UAR', 'IOP']);
+
+/**
+ * Every country's Olympic medals of all time, Summer and Winter, from Wikipedia's "All-time Olympic
+ * Games medal table" (it leaves out art competitions and counts stripped medals as the IOC does).
+ * → _data/medals-alltime.json: { source, through, iso: { USA: [gold, silver, bronze] }, past: [codes] }.
+ */
+function allTime() {
+  const p = page('All-time Olympic Games medal table');
+  if (!p) return null;
+  const codes = JSON.parse(fs.readFileSync(path.join(HERE, '_codes.json'), 'utf8')).ioc;
+  const w = p.wikitext;
+  const list = w.slice(w.indexOf('==List of NOCs with medals'), w.indexOf('==List of NOCs without medals'));
+  const iso = {}, past = [], unknown = [];
+  for (const row of list.split('\n|-')) {
+    const m = /\{\{flag ?IOC\|([A-Z0-9]{3})/.exec(row);
+    if (!m) continue;
+    const body = row.slice(m.index + m[0].length).replace(/\{\{[^{}]*\}\}/g, '').replace(/<ref[^>]*>[\s\S]*?<\/ref>|<ref[^>]*\/>/g, '').replace(/style="[^"]*"\s*\|/g, '');
+    const nums = [...body.matchAll(/(?<![\w#])(\d[\d,]*)(?!\w)/g)].map((x) => Number(x[1].replace(/,/g, '')));
+    if (nums.length < 15) continue;
+    const [, g, sv, b] = nums.slice(-5); // the combined total: games, gold, silver, bronze, total
+    const code = m[1];
+    if (PAST.has(code)) { past.push(code); continue; }
+    const u = codes[code]?.units;
+    if (!Array.isArray(u) || u.length !== 1 || typeof u[0] !== 'string' || u[0].startsWith('@')) { unknown.push(code); continue; }
+    const t = (iso[u[0]] ??= [0, 0, 0]);
+    t[0] += g; t[1] += sv; t[2] += b;
+  }
+  if (unknown.length) console.warn(`all-time medals: no country for ${unknown.join(', ')}`);
+  return { source: { title: p.title, url: permalink(p.title, p.revid) }, through: 'Milano Cortina 2026', iso, past };
+}
+
 function main() {
   const report = process.argv.includes('--report');
   const out = {};
@@ -162,6 +195,11 @@ function main() {
     fs.mkdirSync(path.dirname(OUT), { recursive: true });
     fs.writeFileSync(OUT, `${JSON.stringify(out, null, 1)}\n`);
     console.log(`wrote ${path.relative(process.cwd(), OUT)} (${Object.keys(out).length} events)`);
+    const at = allTime();
+    if (at) {
+      fs.writeFileSync(path.join(HERE, '_data/medals-alltime.json'), `${JSON.stringify(at, null, 1)}\n`);
+      console.log(`wrote _data/medals-alltime.json (${Object.keys(at.iso).length} countries)`);
+    }
   }
 }
 
