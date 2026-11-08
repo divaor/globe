@@ -46,7 +46,7 @@ export class CountryCard {
   }
 
   /** Shows arbitrary content (historical polities, battles, quiz feedback...) in the card; `notes` are paragraphs under the rows. */
-  showCustom(iconText: string, title: string, sub: string, rows: InfoRow[], links: { label: string; href?: string; onClick?: () => void }[] = [], notes: string[] = [], image?: Promise<string | null>) {
+  showCustom(iconText: string, title: string, sub: string, rows: InfoRow[], links: { label: string; href?: string; onClick?: () => void }[] = [], notes: string[] = [], image?: Promise<string | null>, extra?: HTMLElement | null) {
     clear(this.body);
     // A picture (from Wikipedia) appears on top once it has loaded, if the card is still open.
     const img = image ? (h('img', { class: 'card-img', alt: '', hidden: true }) as HTMLImageElement) : null;
@@ -65,6 +65,7 @@ export class CountryCard {
       img,
       h('div', { class: 'card-head' }, h('span', { class: 'flag-emoji' }, iconText), h('div', null, h('div', { class: 'card-title' }, title), h('div', { class: 'card-sub' }, sub))),
       h('div', { class: 'rows' }, rows.map(rowEl)),
+      extra ?? null,
       ...notes.map((n) => h('p', { class: 'card-note' }, n)),
       links.length ? actions : null);
     this.el.hidden = false;

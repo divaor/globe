@@ -40,7 +40,8 @@ source is `compiled` were assembled by hand from well-established facts (list be
 | IANA Time Zone Database | tzdata 2026e via Python `zoneinfo` (system tzdata) | Public domain | 2026 | capital's UTC offset, daylight saving |
 | countries Ruby gem data | github.com/countries/countries @ 1dd3015 (`lib/countries/cache/countries.json`) | MIT | current | GEC↔ISO and IOC↔ISO code mapping, VAT rates (Europe), vehicle codes |
 | samayo/country-json | github.com/samayo/country-json @ eeb9241 | MIT | n/a | national dish, average yearly temperature (original source not documented) |
-| Olympedia results via KeithGalli/Olympics-Dataset | github.com/KeithGalli/Olympics-Dataset @ 3ead732 (`clean-data/results.csv`) | MIT (repository); facts from olympedia.org | 1896–2022 | Olympic medals |
+| Wikipedia, "All-time Olympic Games medal table" | revision read by scripts/data/games/build-games-data.mjs (`scripts/data/games/_data/medals-alltime.json`, permanent link inside) | CC BY-SA 4.0 | 1896–2026 | Olympic medals |
+| Olympedia results via KeithGalli/Olympics-Dataset | github.com/KeithGalli/Olympics-Dataset @ 3ead732 (`clean-data/results.csv`) | MIT (repository); facts from olympedia.org | 1896–2022 | Olympic medals (used only without the table above) |
 | USGS Mineral Commodity Summaries 2025; World Nuclear Association; Kimberley Process | (not machine-readable here – compiled) | facts | production year 2024 | approximate producer shares in minerals.json |
 
 ### ODbL notice (mledoze/countries)
@@ -154,8 +155,8 @@ SOL Somaliland, CYN Northern Cyprus; Taiwan TWN, Western Sahara ESH and Palestin
 | `vehicle_code` | fun | text | 210 | countries Ruby gem data (github.com/countries/countries) | MIT |
 | `world_cup_titles` | fun | number | 8 | compiled | CC0-1.0 (compiled facts) |
 | `womens_world_cup_titles` | fun | number | 5 | compiled | CC0-1.0 (compiled facts) |
-| `olympic_medals` | fun | number | 138 | Olympedia results via github.com/KeithGalli/Olympics-Dataset | MIT (repository); facts from olympedia.org |
-| `olympic_golds` | fun | number | 138 | Olympedia results via github.com/KeithGalli/Olympics-Dataset | MIT (repository); facts from olympedia.org |
+| `olympic_medals` | fun | number | 141 | Wikipedia, "All-time Olympic Games medal table" | CC BY-SA 4.0 |
+| `olympic_golds` | fun | number | 141 | Wikipedia, "All-time Olympic Games medal table" | CC BY-SA 4.0 |
 | `plug_types` | fun | list | 227 | Wikipedia, "Mains electricity by country" (from IEC World Plugs and national standards) | CC BY-SA 4.0 |
 | `mains_voltage` | fun | category | 225 | Wikipedia, "Mains electricity by country" (from IEC World Plugs and national standards) | CC BY-SA 4.0 |
 | `mains_volts` | fun | text | 225 | Wikipedia, "Mains electricity by country" (from IEC World Plugs and national standards) | CC BY-SA 4.0 |
@@ -227,9 +228,10 @@ Compiled by hand from well-established facts (no invented precise numbers):
   than guessed.
 * HDI is the 2019 edition (newest available from a reachable open dataset); happiness is the
   World Happiness Report 2022; heights refer to people born in 1996.
-* Olympic medals stop at Beijing 2022 (Paris 2024 and Milano Cortina 2026 missing) and are not
-  attributed to successor states of the Soviet Union, East/West Germany, Yugoslavia, Czechoslovakia
-  or to Russia for ROC/OAR medals.
+* Olympic medals run through Milano Cortina 2026 (Wikipedia's all-time table: no art competitions,
+  no 1906 Intercalated Games, stripped medals as the IOC counts them) and are not attributed to
+  successor states of the Soviet Union, East/West Germany, Yugoslavia, Czechoslovakia, or to Russia
+  for ROC/OAR/AIN medals.
 * The World Factbook stopped being updated in early 2026; some entries (e.g. government types)
   lag recent events. Survey years differ between countries for literacy, Gini, religions.
 * `avg_temperature` (samayo/country-json) has no documented original source or reference period.

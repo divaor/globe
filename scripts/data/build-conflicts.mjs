@@ -9,6 +9,9 @@
  *   people      scripts/data/people/<id>.json      (Peoples and civilizations)
  *   life        scripts/data/life/<id>.json        (Life through time: steps older than 5 million
  *                                                   years are drawn on the continents of their age)
+ *   games       scripts/data/games/<id>.json       (Games of the world: a step that names a Games or
+ *                                                   a World Cup gets its teams and host city from
+ *                                                   scripts/data/games/, see attach.mjs)
  *
  * Each collection is written to public/data/<dir>/:
  *
@@ -44,17 +47,18 @@ import { presimplify, simplify, sphericalTriangleArea } from 'topojson-simplify'
 import { geoArea, geoCircle, geoDistance, geoGraticule10, geoOrthographic, geoPath } from 'd3-geo';
 import { rewindTopology } from './winding.mjs';
 import { paleoMa, tooOld, plateFor, rotate, paleoLand, PALEO_YEARS } from './paleo-rot.mjs';
+import { attachGames, gamesIds, gamesSides } from './games/attach.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DATA = path.join(ROOT, 'public/data');
 
 /** The collections: where their sources and outputs live. */
-export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life' };
+export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games' };
 /** The collections whose deep-time steps are drawn on the continents of their age (the plate model). */
 const PALEO_KINDS = new Set(['life']);
 const srcDir = (kind) => path.join(ROOT, 'scripts/data', KINDS[kind]);
 const outDir = (kind) => path.join(DATA, KINDS[kind]);
-const ITEM_TYPES = ['person', 'work', 'place', 'invention', 'event', 'site', 'dish', 'crop', 'animal', 'structure', 'institution', 'fossil', 'culture', 'species'];
+const ITEM_TYPES = ['person', 'work', 'place', 'invention', 'event', 'site', 'dish', 'crop', 'animal', 'structure', 'institution', 'fossil', 'culture', 'species', 'games'];
 
 export const ERAS = ['precambrian', 'paleozoic', 'mesozoic', 'cenozoic', 'prehistory', 'ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
 /** The geologic eras: only the Life through time stories are grouped by them. */
@@ -398,7 +402,7 @@ function checkItem(it, where, coll, catalog = false) {
 /** An item as the app gets it: fixed field order, with its time and icon filled in. */
 function normItem(it, coll) {
   const o = { id: it.id, name: it.name, at: it.at.map((v) => Math.round(v * 1e4) / 1e4), cat: it.cat, icon: it.icon ?? coll.cats.get(it.cat).icon, date: it.date, t: parseDate(it.date, '') };
-  for (const k of ['end', 'until', 'life', 'type', 'country', 'place', 'text', 'details', 'why', 'how', 'by', 'size', 'status', 'facts', 'wiki', 'img']) if (it[k] != null) o[k] = it[k];
+  for (const k of ['end', 'until', 'life', 'type', 'country', 'place', 'text', 'details', 'why', 'how', 'by', 'size', 'status', 'facts', 'wiki', 'img', 'podium']) if (it[k] != null) o[k] = it[k];
   if (it.until != null) o.tu = parseDate(it.until, '');
   if (o.id == null) delete o.id;
   return o;
@@ -478,6 +482,7 @@ function validate(c, file, kind = 'wars', coll = null) {
     text(st.title, `${w}.title`); text(st.text, `${w}.text`); text(st.details, `${w}.details`, false);
     if (wars && i === 0 && !st.control) throw new Error(`${w}: the first step needs "control"`);
     if (wars && (st.places || st.show)) throw new Error(`${w}: "places" and "show" are for eras, food and structures`);
+    if (st.games != null && (kind !== 'games' || !gamesIds().has(st.games))) throw new Error(`${w}.games: ${kind !== 'games' ? 'only in Games of the world' : `"${st.games}" is not a Games (summer-1936, winter-2026, wc-1930, wwc-1991...)`}`);
     if (st.places != null && !Array.isArray(st.places)) throw new Error(`${w}.places: a list of items`);
     for (const [j, it] of (st.places ?? []).entries()) checkItem(it, `${w}.places[${j}]`, coll);
     if (st.show != null && !Array.isArray(st.show)) throw new Error(`${w}.show: a list of catalogue ids`);
@@ -524,6 +529,11 @@ async function build(file, opts) {
   const kind = opts.kind ?? 'wars', coll = opts.coll ?? null, wars = kind === 'wars';
   validate(c, file, kind, coll);
   c.sides = c.sides ?? [];
+  if (kind === 'games') {
+    // The Games' own sides (host, medals, champions, took part, boycotts...), after the story's.
+    const kinds = new Set(c.steps.filter((st) => st.games).map((st) => st.games.split('-')[0]));
+    if (kinds.size) for (const s of gamesSides(kinds)) if (!c.sides.some((x) => x.id === s.id)) c.sides.push(s);
+  }
   const sides = c.sides.map((s) => s.id);
   // Items (not wars): the steps' own places and the catalogue items they show, each listed once.
   const items = [];
@@ -581,6 +591,21 @@ async function build(file, opts) {
     steps.push(out);
   }
   if (wars && !steps.some((s) => Object.values(s.control).some((v) => v !== null))) throw new Error(`${c.id}: no step has any territory`);
+  if (kind === 'games') {
+    // Games of the world: each Games step's teams, and its host city's marker.
+    const addArea = (mp) => {
+      const d3mp = toD3(mp);
+      const full = JSON.stringify(d3mp);
+      let idx = keyOf.get(full);
+      if (idx === undefined) { idx = areas.length; areas.push(d3mp); keyOf.set(full, idx); }
+      return idx;
+    };
+    attachGames(c, steps, { addItem, addArea, warn: opts.lint ? (m) => console.warn(`  ${m}`) : null });
+    // Only the Games' sides that some team has (no "Banned" in a story where nobody was).
+    const unused = c.sides.filter((s) => s.id.startsWith('g_') && !steps.some((st) => st.games?.teams.some((tm) => tm.s === s.id))).map((s) => s.id);
+    c.sides = c.sides.filter((s) => !unused.includes(s.id));
+    for (const st of steps) for (const id of unused) delete st.control[id];
+  }
   if (c.catalog === 'all') {
     // A time tour: every catalogue item of the story's period (from its start to its last step)
     // appears on the map from its date on (and goes after its "until"). Older items appear only
@@ -713,7 +738,7 @@ function lint(c, steps, areas) {
     }
   });
   for (const s of c.sides) {
-    const used = steps.some((st) => st.control[s.id] != null) || steps.some((st) => (st.moves ?? []).some((m) => m.side === s.id) || (st.battles ?? []).some((b) => b.winner === s.id));
+    const used = steps.some((st) => st.control[s.id] != null) || steps.some((st) => (st.moves ?? []).some((m) => m.side === s.id) || (st.battles ?? []).some((b) => b.winner === s.id) || st.games?.teams.some((tm) => tm.s === s.id));
     if (!used) warn(`side "${s.id}" never holds territory, moves or wins`);
   }
 }
@@ -740,6 +765,7 @@ async function preview(c, topo, dir) {
   // close-up views and paints the land as sea.
   const landTopo = readJSON(path.join(DATA, 'base/countries-50m.json'));
   const landF = feature(landTopo, landTopo.objects.countries);
+  const byIso = new Map(landF.features.map((f) => [f.id, f]));
   const W = 640, H = 640;
   let cam = c.camera;
   const jobs = [];
@@ -760,6 +786,21 @@ async function preview(c, topo, dir) {
       const old = paleoLand(ma);
       parts.push(`<path d="${p(old.shelf)}" fill="#b4d2e8"/>`, `<path d="${p(old.land)}" fill="#ece6d6" stroke="#9aa5ad" stroke-width="0.4"/>`);
     } else parts.push(`<path d="${p(landF)}" fill="${st.deep ? '#e2e2e2' : '#ece6d6'}" stroke="#9aa5ad" stroke-width="0.4"/>`);
+    if (st.games) {
+      // Games of the world: each team's countries in its colour, and an arc from each to the host city.
+      const sideCol = (id) => c.sides.find((s) => s.id === id)?.color ?? '#888888';
+      for (const tm of st.games.teams) {
+        for (const u of tm.u) {
+          const f = u.startsWith('#') ? areas[Number(u.slice(1))] : byIso.get(u);
+          if (f) parts.push(`<path d="${p(f)}" fill="${sideCol(tm.s)}" fill-opacity="0.82" stroke="#ffffff" stroke-width="0.35"/>`);
+        }
+      }
+      for (const tm of st.games.teams) {
+        if (!tm.o) continue;
+        const d = p({ type: 'LineString', coordinates: [tm.o, st.games.host] });
+        if (d) parts.push(`<path d="${d}" fill="none" stroke="#1d3557" stroke-width="0.8" stroke-opacity="0.75"/>`);
+      }
+    }
     for (const s of c.sides) {
       const idx = st.control[s.id];
       if (idx == null) continue;
@@ -798,7 +839,7 @@ async function preview(c, topo, dir) {
     }
     const markers = c.sides.map((s) => `<marker id="arrow-${s.id}" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="${s.color}"/></marker>`).join('');
     const shown = c.items
-      ? [...c.sides.filter((s) => st.control[s.id] != null || (st.moves ?? []).some((m) => m.side === s.id)), ...c.cats.filter((k) => st.show.some((x) => c.items[x].cat === k.id))]
+      ? [...c.sides.filter((s) => st.control[s.id] != null || st.games?.teams.some((tm) => tm.s === s.id) || (st.moves ?? []).some((m) => m.side === s.id)), ...c.cats.filter((k) => st.show.some((x) => c.items[x].cat === k.id))]
       : c.sides.filter((s) => st.control[s.id] != null || (st.moves ?? []).some((m) => m.side === s.id));
     const legend = shown.map((s, k) => `<rect x="${12 + (k % 3) * 205}" y="${H - 44 + Math.floor(k / 3) * 18}" width="12" height="12" fill="${s.color}"/><text x="${28 + (k % 3) * 205}" y="${H - 34 + Math.floor(k / 3) * 18}" font-size="12" font-family="sans-serif">${esc(s.name.en.slice(0, 30))}</text>`).join('');
     const map = ma != null ? `<text x="12" y="40" font-size="11.5" font-family="sans-serif" fill="#555">${esc(`continents of ${ma} million years ago (Merdith et al. 2021)`)}</text>`
@@ -812,7 +853,7 @@ async function preview(c, topo, dir) {
 
 /** What the picker needs before a story is opened (not wars): its most common categories too. */
 function storyEntry(m) {
-  const sides = m.sides.filter((s) => m.steps.some((st) => !st.aftermath && st.control[s.id] != null));
+  const sides = m.sides.filter((s) => m.steps.some((st) => !st.aftermath && (st.control[s.id] != null || st.games?.teams.some((tm) => tm.s === s.id))));
   const count = new Map();
   for (const it of m.items) count.set(it.cat, (count.get(it.cat) ?? 0) + 1);
   return {

@@ -1,6 +1,6 @@
 // Time-travel modes behind the "Time travel" dock button: political history, plate tectonics, and the
 // story collections (wars and conquests, eras and ideas, food through time, great structures, peoples
-// and civilizations, life through time).
+// and civilizations, life through time, games of the world).
 import { History } from 'lucide';
 import { h } from '../ui/dom';
 import { t } from '../app/i18n';
@@ -44,7 +44,7 @@ export class TimeTravel {
       await pangea.enter(Number(ma));
     })());
     // Each story collection opens its list of stories; the mode starts when one is picked.
-    const icons: Record<StoryKind, string> = { wars: '⚔️', eras: '🎨', food: '🌾', structures: '🏛️', people: '🏺', life: '🦕' };
+    const icons: Record<StoryKind, string> = { wars: '⚔️', eras: '🎨', food: '🌾', structures: '🏛️', people: '🏺', life: '🦕', games: '🏅' };
     for (const kind of STORY_KINDS) {
       const m = (this.stories[kind] = new StoryMode(app, shell, kind));
       this.add({

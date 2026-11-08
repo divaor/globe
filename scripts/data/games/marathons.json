@@ -1,0 +1,2427 @@
+{
+  "id": "marathons",
+  "name": {
+    "en": "The marathon: from Marathon to the Majors",
+    "es": "El maratón: de Maratón a los Majors"
+  },
+  "icon": "🏃",
+  "era": "modern",
+  "region": {
+    "en": "Greece, Europe, North America, Africa and Australia",
+    "es": "Grecia, Europa, América del Norte, África y Australia"
+  },
+  "start": "-490",
+  "end": "2026-04-26",
+  "summary": {
+    "en": "From a Greek legend to races run by tens of thousands: the courses, runners and records of the marathon, from Athens 1896 to the first race under two hours.",
+    "es": "De una leyenda griega a carreras de decenas de miles de corredores: los recorridos, los atletas y los récords del maratón, de Atenas 1896 a la primera carrera por debajo de dos horas."
+  },
+  "camera": {
+    "lon": -20,
+    "lat": 38,
+    "zoom": 1.3
+  },
+  "sides": [
+    {
+      "id": "legend",
+      "name": {
+        "en": "The legendary run",
+        "es": "La carrera legendaria"
+      },
+      "color": "#8e5a2b"
+    },
+    {
+      "id": "course",
+      "name": {
+        "en": "Marathon course",
+        "es": "Recorrido del maratón"
+      },
+      "color": "#16a085"
+    }
+  ],
+  "steps": [
+    {
+      "date": "-490",
+      "title": {
+        "en": "The legend of Pheidippides",
+        "es": "La leyenda de Filípides"
+      },
+      "text": {
+        "en": "In 490 BC Athens beat a Persian army at Marathon. Centuries later, writers told of a messenger who ran about 40 km to Athens, cried 'We have won!' and died. It is a legend.",
+        "es": "En 490 a. C., Atenas venció a un ejército persa en Maratón. Siglos después, algunos autores contaron que un mensajero corrió unos 40 km hasta Atenas, gritó «¡Hemos vencido!» y murió. Es una leyenda."
+      },
+      "details": {
+        "en": "Herodotus, who wrote a few decades after the battle, says that Pheidippides, a professional runner, ran from Athens to Sparta, about 240 km, in two days to ask for help, and then ran back. He says nothing of a run from Marathon to Athens; instead, the whole Athenian army marched back the same day to guard the city from the Persian fleet. The Marathon-to-Athens run first appears in Plutarch, more than 500 years later, and in Lucian, whose messenger cries 'Joy, we win!' before collapsing. Robert Browning's 1879 poem joined the two stories, and it inspired the French scholar Michel Bréal to propose a 'marathon' race for the first modern Olympics.",
+        "es": "Heródoto, que escribió pocas décadas después de la batalla, cuenta que Filípides, un corredor profesional, fue de Atenas a Esparta, unos 240 km, en dos días para pedir ayuda, y luego regresó. No dice nada de una carrera de Maratón a Atenas; en cambio, todo el ejército ateniense marchó de vuelta el mismo día para proteger la ciudad de la flota persa. La carrera de Maratón a Atenas aparece por primera vez en Plutarco, más de 500 años después, y en Luciano, cuyo mensajero grita «¡Alegraos, vencemos!» antes de desplomarse. El poema de Robert Browning de 1879 unió las dos historias e inspiró al erudito francés Michel Bréal a proponer una carrera de «maratón» para los primeros Juegos Olímpicos modernos."
+      },
+      "camera": {
+        "lon": 23.85,
+        "lat": 38.04,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "pheidippides",
+          "name": {
+            "en": "Pheidippides",
+            "es": "Filípides"
+          },
+          "at": [
+            23.7261,
+            37.9717
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "-490",
+          "country": "GRC",
+          "place": {
+            "en": "Athens, Greece",
+            "es": "Atenas (Grecia)"
+          },
+          "text": {
+            "en": "An Athenian professional courier, a \"day-runner\". Herodotus says he ran to Sparta and back before the battle; the run from Marathon and his death come from much later writers.",
+            "es": "Un mensajero profesional ateniense, un «corredor de un día». Heródoto cuenta que corrió a Esparta y volvió antes de la batalla; la carrera desde Maratón y su muerte vienen de autores muy posteriores."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Athens to Sparta (Herodotus)",
+                "es": "De Atenas a Esparta (Heródoto)"
+              },
+              "value": {
+                "en": "about 240 km in two days",
+                "es": "unos 240 km en dos días"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Pheidippides",
+            "es": "Filípides"
+          }
+        },
+        {
+          "id": "battle-of-marathon",
+          "name": {
+            "en": "Battle of Marathon",
+            "es": "Batalla de Maratón"
+          },
+          "at": [
+            23.9783,
+            38.1181
+          ],
+          "cat": "moment",
+          "icon": "⚔️",
+          "type": "event",
+          "date": "-490",
+          "place": {
+            "en": "Marathon, Greece",
+            "es": "Maratón (Grecia)"
+          },
+          "text": {
+            "en": "Here in 490 BC the Athenians, helped by Plataea, crushed a larger Persian army sent by King Darius I: a turning point in the Greco-Persian Wars.",
+            "es": "Aquí, en 490 a. C., los atenienses, con ayuda de Platea, aplastaron a un ejército persa más numeroso enviado por el rey Darío I: un punto de inflexión en las guerras médicas."
+          },
+          "wiki": {
+            "en": "Battle of Marathon",
+            "es": "Batalla de Maratón"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "legend",
+          "path": [
+            [
+              23.9783,
+              38.1181
+            ],
+            [
+              23.9833,
+              38.0833
+            ],
+            [
+              23.9333,
+              38
+            ],
+            [
+              23.82,
+              38.0117
+            ],
+            [
+              23.7261,
+              37.9717
+            ]
+          ],
+          "label": {
+            "en": "The legendary run, about 40 km",
+            "es": "La carrera legendaria, unos 40 km"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1896-04-10",
+      "title": {
+        "en": "Athens 1896: Spyridon Louis",
+        "es": "Atenas 1896: Spiridon Louis"
+      },
+      "text": {
+        "en": "The first Olympic marathon ran about 40 km from the bridge at Marathon to the Panathenaic Stadium. Spyridon Louis, a Greek water carrier, won in 2:58:50 to wild cheers.",
+        "es": "El primer maratón olímpico recorrió unos 40 km desde el puente de Maratón hasta el estadio Panathinaikó. Spiridon Louis, un aguador griego, ganó en 2:58:50 entre ovaciones."
+      },
+      "details": {
+        "en": "Bréal's idea, backed by Pierre de Coubertin, delighted the Greeks, who held two trial races; the first, on 22 March 1896, was the first marathon ever run. Seventeen men started the Olympic race, thirteen of them Greek. The Frenchman Albin Lermusiaux and then the Australian Edwin Flack led, but both dropped out, and Louis, who had stopped at Pikermi for a drink, took the lead. Greece had not yet won an athletics event, so the crowd went wild, and two princes ran the last lap beside him. The third man home, Spyridon Belokas, was disqualified for riding part of the way in a carriage. A woman, Stamata Revithi, was refused entry; she ran the course alone the next day in about five and a half hours.",
+        "es": "La idea de Bréal, apoyada por Pierre de Coubertin, entusiasmó a los griegos, que organizaron dos carreras de clasificación; la primera, el 22 de marzo de 1896, fue el primer maratón de la historia. En la carrera olímpica salieron diecisiete hombres, trece de ellos griegos. Primero el francés Albin Lermusiaux y luego el australiano Edwin Flack fueron en cabeza, pero ambos abandonaron, y Louis, que se había detenido en Pikermi a beber algo, pasó al frente. Grecia aún no había ganado ninguna prueba de atletismo, así que el público estalló de alegría, y dos príncipes corrieron a su lado la última vuelta. El tercero en llegar, Spyridon Belokas, fue descalificado por recorrer parte del camino en carruaje. A una mujer, Stamata Revithi, no la dejaron inscribirse; corrió el recorrido sola al día siguiente en unas cinco horas y media."
+      },
+      "camera": {
+        "lon": 23.86,
+        "lat": 38.06,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "spyridon-louis",
+          "name": {
+            "en": "Spyridon Louis",
+            "es": "Spiridon Louis"
+          },
+          "at": [
+            23.8,
+            38.05
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "1896-04-10",
+          "life": [
+            "1873-01-12",
+            "1940-03-26"
+          ],
+          "country": "GRC",
+          "place": {
+            "en": "Marousi, near Athens, Greece",
+            "es": "Marusi, cerca de Atenas (Grecia)"
+          },
+          "text": {
+            "en": "A water carrier from Marousi who helped his father sell water in Athens, then a city without running water. He became a national hero; Athens' Olympic Stadium is named after him.",
+            "es": "Aguador de Marusi que ayudaba a su padre a vender agua en Atenas, entonces una ciudad sin agua corriente. Se convirtió en héroe nacional; el Estadio Olímpico de Atenas lleva su nombre."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Time",
+                "es": "Tiempo"
+              },
+              "value": {
+                "en": "2:58:50 (about 40 km)",
+                "es": "2:58:50 (unos 40 km)"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Spyridon Louis",
+            "es": "Spiridon Louis"
+          }
+        },
+        {
+          "id": "panathenaic-stadium",
+          "name": {
+            "en": "Panathenaic Stadium",
+            "es": "Estadio Panathinaikó"
+          },
+          "at": [
+            23.7411,
+            37.9683
+          ],
+          "cat": "venue",
+          "icon": "🏁",
+          "type": "site",
+          "date": "1896-04-10",
+          "place": {
+            "en": "Athens, Greece",
+            "es": "Atenas (Grecia)"
+          },
+          "text": {
+            "en": "The only stadium in the world built entirely of marble, rebuilt by Herodes Atticus by AD 144 and restored for the 1896 Games. It is still the finish of the Athens Classic Marathon.",
+            "es": "El único estadio del mundo construido por completo en mármol, reconstruido por Herodes Ático hacia el año 144 y restaurado para los Juegos de 1896. Sigue siendo la meta del Maratón Clásico de Atenas."
+          },
+          "wiki": {
+            "en": "Panathenaic Stadium",
+            "es": "Estadio Panathinaikó"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "course",
+          "path": [
+            [
+              23.9619,
+              38.1533
+            ],
+            [
+              23.9833,
+              38.0833
+            ],
+            [
+              23.9333,
+              38
+            ],
+            [
+              23.82,
+              38.0117
+            ],
+            [
+              23.7411,
+              37.9683
+            ]
+          ],
+          "label": {
+            "en": "1896: Marathon to Athens, about 40 km",
+            "es": "1896: de Maratón a Atenas, unos 40 km"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1897-04-19",
+      "title": {
+        "en": "Boston, the oldest marathon",
+        "es": "Boston, el maratón más antiguo"
+      },
+      "text": {
+        "en": "Inspired by Athens, the Boston Athletic Association held a race from Ashland to Boston on Patriots' Day 1897. John J. McDermott won, and Boston has run its marathon every year since.",
+        "es": "Inspirada por Atenas, la Asociación Atlética de Boston organizó una carrera de Ashland a Boston el Día de los Patriotas de 1897. Ganó John J. McDermott, y Boston ha corrido su maratón cada año desde entonces."
+      },
+      "details": {
+        "en": "Fifteen men started the 24.5-mile course on 19 April 1897, a holiday that linked Athens' fight for freedom with the American Revolution. McDermott, a frail New York lithographer, took the lead at Newton Lower Falls, walked and ran through the Newton hills, and finished with a lap of the Irvington Oval in 2:55:10, his feet bloody and blistered. In 1924 the start moved to Hopkinton, and the course later grew to the full 42.195 km. Its late hills, which end with Heartbreak Hill near mile 20, make it one of the hardest big-city courses. The world's oldest annual marathon was held even in wartime, as a military relay in 1918, and only virtually in 2020.",
+        "es": "Quince hombres salieron el 19 de abril de 1897 a recorrer 24,5 millas, en un feriado que unía la lucha de Atenas por la libertad con la Revolución estadounidense. McDermott, un frágil litógrafo de Nueva York, tomó la delantera en Newton Lower Falls, alternó caminar y correr en las colinas de Newton y terminó con una vuelta al óvalo de Irvington en 2:55:10, con los pies ensangrentados y llenos de ampollas. En 1924 la salida pasó a Hopkinton, y el recorrido creció después hasta los 42,195 km completos. Sus colinas finales, que terminan con Heartbreak Hill cerca de la milla 20, lo hacen uno de los recorridos urbanos más duros. El maratón anual más antiguo del mundo se corrió incluso en tiempos de guerra, como un relevo militar en 1918, y solo de forma virtual en 2020."
+      },
+      "camera": {
+        "lon": -71.27,
+        "lat": 42.31,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "john-mcdermott",
+          "name": {
+            "en": "John J. McDermott",
+            "es": "John J. McDermott"
+          },
+          "at": [
+            -74.0059,
+            40.7127
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "1897-04-19",
+          "country": "USA",
+          "place": {
+            "en": "Manhattan, New York City, United States",
+            "es": "Manhattan, Nueva York (Estados Unidos)"
+          },
+          "text": {
+            "en": "Born in Manhattan in 1874, the slight 'Little Mac' won the first marathon held in the United States, in 1896, and then the first Boston Marathon. He died young, sometime before 1906.",
+            "es": "Nacido en Manhattan en 1874, el menudo «Little Mac» ganó el primer maratón disputado en Estados Unidos, en 1896, y luego el primer Maratón de Boston. Murió joven, en algún momento antes de 1906."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Time",
+                "es": "Tiempo"
+              },
+              "value": {
+                "en": "2:55:10 (24.5 miles)",
+                "es": "2:55:10 (24,5 millas)"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "John McDermott (runner)",
+            "es": "Maratón de Boston"
+          }
+        },
+        {
+          "id": "boston-marathon",
+          "name": {
+            "en": "Boston Marathon",
+            "es": "Maratón de Boston"
+          },
+          "at": [
+            -71.076,
+            42.35
+          ],
+          "cat": "running",
+          "icon": "🏁",
+          "type": "event",
+          "date": "1897-04-19",
+          "place": {
+            "en": "Copley Square, Boston, United States",
+            "es": "Copley Square, Boston (Estados Unidos)"
+          },
+          "text": {
+            "en": "The world's oldest annual marathon, run each April on Patriots' Day from Hopkinton to Boylston Street by Copley Square. Women were first allowed to enter officially in 1972.",
+            "es": "El maratón anual más antiguo del mundo, que se corre cada abril, el Día de los Patriotas, de Hopkinton a la calle Boylston, junto a Copley Square. Las mujeres pudieron inscribirse oficialmente por primera vez en 1972."
+          },
+          "details": {
+            "en": "Its course drops 459 feet and runs mostly east, often with a tailwind, so its fast times, like Geoffrey Mutai's 2:03:02 in 2011, cannot count as world records. On 15 April 2013 two homemade bombs exploded near the finish on Boylston Street, killing three spectators and injuring an estimated 264 people; the race returned the next year with tighter security.",
+            "es": "Su recorrido baja 459 pies y va casi siempre hacia el este, a menudo con viento a favor, así que sus tiempos rápidos, como el 2:03:02 de Geoffrey Mutai en 2011, no pueden contar como récords mundiales. El 15 de abril de 2013, dos bombas caseras estallaron cerca de la meta, en la calle Boylston: murieron tres espectadores y unas 264 personas resultaron heridas; la carrera volvió al año siguiente con más seguridad."
+          },
+          "wiki": {
+            "en": "Boston Marathon",
+            "es": "Maratón de Boston"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "course",
+          "path": [
+            [
+              -71.4639,
+              42.2611
+            ],
+            [
+              -71.4167,
+              42.2792
+            ],
+            [
+              -71.35,
+              42.2833
+            ],
+            [
+              -71.2931,
+              42.2964
+            ],
+            [
+              -71.25,
+              42.3333
+            ],
+            [
+              -71.1703,
+              42.335
+            ],
+            [
+              -71.1217,
+              42.3317
+            ],
+            [
+              -71.0956,
+              42.3487
+            ],
+            [
+              -71.076,
+              42.35
+            ]
+          ],
+          "label": {
+            "en": "1897: Ashland to the Irvington Oval, Boston, 24.5 miles",
+            "es": "1897: de Ashland al óvalo de Irvington, en Boston, 24,5 millas"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1908-07-24",
+      "title": {
+        "en": "London 1908: 42.195 km",
+        "es": "Londres 1908: 42,195 km"
+      },
+      "text": {
+        "en": "The London Olympic marathon ran from Windsor Castle to the White City Stadium: 26 miles and 385 yards, or 42.195 km, the distance used ever since. Dorando Pietri crossed the line first.",
+        "es": "El maratón olímpico de Londres fue del castillo de Windsor al estadio White City: 26 millas y 385 yardas, o 42,195 km, la distancia que se usa desde entonces. Dorando Pietri cruzó primero la meta."
+      },
+      "details": {
+        "en": "The race started below the windows of Windsor Castle, with the royal children watching, and passed Eton, Slough, Uxbridge, Harrow and Wembley before entering the stadium for 385 yards in front of the Royal Box. On a hot afternoon Pietri overtook South Africa's Charles Hefferon with about 3 km to go, but he entered the stadium exhausted and dehydrated, took a wrong turn and fell five times before 75,000 spectators. Officials helped him up, and he finished in 2:54:46, ten minutes for the last 350 m. After an American protest he was disqualified, and Johnny Hayes of the United States became champion in 2:55:18. Queen Alexandra gave Pietri a gilded silver cup the next day. In 1921 the 1908 distance became the official one.",
+        "es": "La carrera salió bajo las ventanas del castillo de Windsor, con los niños de la familia real mirando, y pasó por Eton, Slough, Uxbridge, Harrow y Wembley antes de entrar al estadio para recorrer 385 yardas frente al palco real. En una tarde calurosa, Pietri superó al sudafricano Charles Hefferon a unos 3 km del final, pero entró al estadio agotado y deshidratado, se equivocó de camino y cayó cinco veces ante 75 000 espectadores. Los jueces lo ayudaron a levantarse, y terminó en 2:54:46, diez minutos para los últimos 350 m. Tras una protesta estadounidense fue descalificado, y Johnny Hayes, de Estados Unidos, fue el campeón con 2:55:18. Al día siguiente, la reina Alejandra le regaló a Pietri una copa de plata dorada. En 1921 la distancia de 1908 se volvió la oficial."
+      },
+      "camera": {
+        "lon": -0.42,
+        "lat": 51.53,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "dorando-pietri",
+          "name": {
+            "en": "Dorando Pietri",
+            "es": "Dorando Pietri"
+          },
+          "at": [
+            10.8833,
+            44.7833
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "1908-07-24",
+          "life": [
+            "1885-10-16",
+            "1942-02-07"
+          ],
+          "country": "ITA",
+          "place": {
+            "en": "Carpi, Emilia-Romagna, Italy",
+            "es": "Carpi, Emilia-Romaña (Italia)"
+          },
+          "text": {
+            "en": "Born near Correggio, he grew up in Carpi, where he worked in a sweet shop and, it is said, first raced still in his work clothes. Only 1.59 m tall, he won the world's sympathy in 1908.",
+            "es": "Nacido cerca de Correggio, creció en Carpi, donde trabajaba en una confitería y, según se cuenta, corrió por primera vez con la ropa de trabajo puesta. Medía apenas 1,59 m y en 1908 se ganó la simpatía del mundo."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Time",
+                "es": "Tiempo"
+              },
+              "value": {
+                "en": "2:54:46 (disqualified)",
+                "es": "2:54:46 (descalificado)"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Dorando Pietri",
+            "es": "Dorando Pietri"
+          }
+        },
+        {
+          "id": "johnny-hayes",
+          "name": {
+            "en": "Johnny Hayes",
+            "es": "Johnny Hayes"
+          },
+          "at": [
+            -74.0059,
+            40.7127
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "1908-07-24",
+          "life": [
+            "1886-04-10",
+            "1965-08-25"
+          ],
+          "country": "USA",
+          "place": {
+            "en": "New York City, United States",
+            "es": "Nueva York (Estados Unidos)"
+          },
+          "text": {
+            "en": "A New Yorker of the Irish American Athletic Club, he became Olympic champion when Pietri was disqualified: the first man to win a marathon at today's distance.",
+            "es": "Neoyorquino del Irish American Athletic Club, fue campeón olímpico cuando descalificaron a Pietri: el primer hombre en ganar un maratón con la distancia actual."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Time",
+                "es": "Tiempo"
+              },
+              "value": {
+                "en": "2:55:18",
+                "es": "2:55:18"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Johnny Hayes",
+            "es": "John Joseph Hayes"
+          }
+        },
+        {
+          "id": "white-city-stadium",
+          "name": {
+            "en": "White City Stadium",
+            "es": "Estadio White City"
+          },
+          "at": [
+            -0.2274,
+            51.5136
+          ],
+          "cat": "venue",
+          "icon": "🏁",
+          "type": "site",
+          "date": "1908-07-24",
+          "place": {
+            "en": "White City, London, United Kingdom",
+            "es": "White City, Londres (Reino Unido)"
+          },
+          "text": {
+            "en": "Built for the 1908 Olympics and demolished in 1985, it saw the finish of the 1908 marathon, and later greyhound racing and a match of the 1966 World Cup.",
+            "es": "Construido para los Juegos de 1908 y demolido en 1985, vio la llegada del maratón de 1908 y después carreras de galgos y un partido del Mundial de 1966."
+          },
+          "wiki": {
+            "en": "White City Stadium",
+            "es": "Estadio de White City"
+          }
+        },
+        {
+          "id": "windsor-castle",
+          "name": {
+            "en": "Windsor Castle",
+            "es": "Castillo de Windsor"
+          },
+          "at": [
+            -0.6044,
+            51.4839
+          ],
+          "cat": "venue",
+          "type": "site",
+          "date": "1908-07-24",
+          "place": {
+            "en": "Windsor, England, United Kingdom",
+            "es": "Windsor, Inglaterra (Reino Unido)"
+          },
+          "text": {
+            "en": "The 1908 marathon started on the East Lawn, in the castle's private grounds, beneath the windows of the royal nursery, where the public could not get in the way.",
+            "es": "El maratón de 1908 salió del jardín este, dentro del recinto privado del castillo, bajo las ventanas del cuarto de los niños de la familia real, donde el público no podía estorbar."
+          },
+          "wiki": {
+            "en": "Windsor Castle",
+            "es": "Castillo de Windsor"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "course",
+          "path": [
+            [
+              -0.6044,
+              51.4839
+            ],
+            [
+              -0.6092,
+              51.4881
+            ],
+            [
+              -0.5881,
+              51.5084
+            ],
+            [
+              -0.4778,
+              51.5404
+            ],
+            [
+              -0.433,
+              51.576
+            ],
+            [
+              -0.3464,
+              51.5836
+            ],
+            [
+              -0.2979,
+              51.5528
+            ],
+            [
+              -0.2295,
+              51.5468
+            ],
+            [
+              -0.2389,
+              51.5214
+            ],
+            [
+              -0.2274,
+              51.5136
+            ]
+          ],
+          "label": {
+            "en": "1908: Windsor to White City, 42.195 km",
+            "es": "1908: de Windsor a White City, 42,195 km"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1960-09-10",
+      "title": {
+        "en": "Bikila, barefoot in Rome",
+        "es": "Bikila, descalzo en Roma"
+      },
+      "text": {
+        "en": "Ethiopia's Abebe Bikila ran the Rome marathon barefoot, finishing at night along the torch-lit Appian Way, and won in record time: Ethiopia's first Olympic champion.",
+        "es": "El etíope Abebe Bikila corrió descalzo el maratón de Roma, con el final de noche por la Vía Apia iluminada con antorchas, y ganó con un tiempo récord: el primer campeón olímpico de Etiopía."
+      },
+      "details": {
+        "en": "Bikila, a soldier of Emperor Haile Selassie's Imperial Guard, was trained by the Swedish coach Onni Niskanen. In Rome his new shoes gave him blisters, so he ran without them. Because of the heat the race started late in the afternoon at the foot of the Capitoline Hill, went out along the Via Cristoforo Colombo and came back by the Appian Way, lined with soldiers holding torches, to the Arch of Constantine. Twice it passed the Obelisk of Axum, taken from Ethiopia by Italy in 1937; near it, 500 m from the end, Bikila left Morocco's Rhadi Ben Abdesselam behind and won in 2:15:16.2. Four years later in Tokyo, five weeks after an appendix operation, he won again, the first runner to defend an Olympic marathon title. Paralysed in a car accident in 1969, he died in 1973, aged 41.",
+        "es": "Bikila, soldado de la Guardia Imperial del emperador Haile Selassie, entrenaba con el sueco Onni Niskanen. En Roma, sus zapatillas nuevas le sacaron ampollas, así que corrió sin ellas. Por el calor, la carrera salió al final de la tarde al pie del Capitolio, fue por la Via Cristoforo Colombo y volvió por la Vía Apia, bordeada de soldados con antorchas, hasta el Arco de Constantino. Dos veces pasó junto al obelisco de Axum, que Italia se había llevado de Etiopía en 1937; cerca de él, a 500 m del final, Bikila dejó atrás al marroquí Rhadi Ben Abdesselam y ganó en 2:15:16.2. Cuatro años después, en Tokio, cinco semanas después de una operación de apendicitis, volvió a ganar: el primer corredor en defender un título olímpico de maratón. Quedó paralizado tras un accidente de auto en 1969 y murió en 1973, a los 41 años."
+      },
+      "camera": {
+        "lon": 12.5,
+        "lat": 41.86,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "abebe-bikila",
+          "name": {
+            "en": "Abebe Bikila",
+            "es": "Abebe Bikila"
+          },
+          "at": [
+            38.7525,
+            9.0358
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "1960-09-10",
+          "life": [
+            "1932-08-07",
+            "1973-10-25"
+          ],
+          "country": "ETH",
+          "place": {
+            "en": "Addis Ababa, Ethiopia",
+            "es": "Adís Abeba (Etiopía)"
+          },
+          "text": {
+            "en": "Born in the village of Jato in Shewa, he joined the Imperial Guard in Addis Ababa and trained by running from the hills of Sululta to the city and back. He won Olympic gold in 1960 and 1964.",
+            "es": "Nacido en la aldea de Jato, en Shewa, entró en la Guardia Imperial en Adís Abeba y entrenaba corriendo desde las colinas de Sululta hasta la ciudad y de vuelta. Ganó el oro olímpico en 1960 y 1964."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Rome 1960",
+                "es": "Roma 1960"
+              },
+              "value": {
+                "en": "2:15:16.2, barefoot",
+                "es": "2:15:16.2, descalzo"
+              }
+            },
+            {
+              "label": {
+                "en": "Tokyo 1964",
+                "es": "Tokio 1964"
+              },
+              "value": {
+                "en": "gold again",
+                "es": "oro de nuevo"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Abebe Bikila",
+            "es": "Abebe Bikila"
+          }
+        },
+        {
+          "id": "arch-of-constantine",
+          "name": {
+            "en": "Arch of Constantine",
+            "es": "Arco de Constantino"
+          },
+          "at": [
+            12.4908,
+            41.8897
+          ],
+          "cat": "venue",
+          "icon": "🏁",
+          "type": "site",
+          "date": "1960-09-10",
+          "place": {
+            "en": "Rome, Italy",
+            "es": "Roma (Italia)"
+          },
+          "text": {
+            "en": "The 1960 race was the first Olympic marathon to neither start nor end in the stadium: it finished at night under this triumphal arch beside the Colosseum.",
+            "es": "La carrera de 1960 fue el primer maratón olímpico que no salió ni terminó en el estadio: llegó de noche bajo este arco de triunfo junto al Coliseo."
+          },
+          "wiki": {
+            "en": "Arch of Constantine",
+            "es": "Arco de Constantino"
+          }
+        },
+        {
+          "id": "axum-obelisk-rome",
+          "name": {
+            "en": "The Axum obelisk in Rome",
+            "es": "El obelisco de Axum en Roma"
+          },
+          "at": [
+            12.491,
+            41.884
+          ],
+          "cat": "moment",
+          "type": "event",
+          "date": "1960-09-10",
+          "place": {
+            "en": "Piazza di Porta Capena, Rome, Italy",
+            "es": "Piazza di Porta Capena, Roma (Italia)"
+          },
+          "text": {
+            "en": "This 1,700-year-old Ethiopian stele was taken from Axum as war spoil by Italy in 1937 and set up here. Bikila sprinted past it to win in 1960; Italy returned it to Ethiopia in 2005.",
+            "es": "Esta estela etíope de unos 1700 años fue llevada de Axum como botín de guerra por Italia en 1937 y levantada aquí. Bikila pasó junto a ella en su esprint final en 1960; Italia la devolvió a Etiopía en 2005."
+          },
+          "wiki": {
+            "en": "Obelisk of Axum",
+            "es": "Obelisco de Aksum"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "course",
+          "path": [
+            [
+              12.4828,
+              41.8933
+            ],
+            [
+              12.491,
+              41.884
+            ],
+            [
+              12.4931,
+              41.8794
+            ],
+            [
+              12.4708,
+              41.8336
+            ],
+            [
+              12.5209,
+              41.8522
+            ],
+            [
+              12.5019,
+              41.8736
+            ],
+            [
+              12.491,
+              41.884
+            ],
+            [
+              12.4908,
+              41.8897
+            ]
+          ],
+          "label": {
+            "en": "1960: Capitoline Hill to the Arch of Constantine (simplified)",
+            "es": "1960: del Capitolio al Arco de Constantino (simplificado)"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1967-04-19",
+      "title": {
+        "en": "Switzer runs Boston",
+        "es": "Switzer corre en Boston"
+      },
+      "text": {
+        "en": "Kathrine Switzer entered the Boston Marathon as 'K. V. Switzer' and ran with bib 261. An official tried to tear off her number; she finished, and the photos went around the world.",
+        "es": "Kathrine Switzer se inscribió en el Maratón de Boston como «K. V. Switzer» y corrió con el dorsal 261. Un organizador intentó arrancarle el número; ella terminó, y las fotos dieron la vuelta al mundo."
+      },
+      "details": {
+        "en": "Boston's rules said nothing about women, but in 1966 the race director had told Bobbi Gibb that women could not run 26 miles. Gibb ran anyway without a number and finished in 3:21:40, ahead of two-thirds of the field. In 1967 Switzer, a Syracuse University student, registered with her AAU number, paid the fee and signed her name as she always did. During the race the official Jock Semple jumped off the press truck and grabbed at her number; her boyfriend, Tom Miller, knocked him aside. She finished in about 4 hours 20 minutes, while Gibb, again unregistered, crossed the line almost an hour earlier. The AAU then barred women from races with men, but from 1972 women could officially enter Boston, and Nina Kuscsik won that year.",
+        "es": "El reglamento de Boston no decía nada sobre las mujeres, pero en 1966 el director de la carrera le había dicho a Bobbi Gibb que las mujeres no podían correr 26 millas. Gibb corrió de todos modos sin número y terminó en 3:21:40, por delante de dos tercios de los corredores. En 1967, Switzer, estudiante de la Universidad de Syracuse, se inscribió con su número de la AAU, pagó la cuota y firmó como siempre lo hacía. Durante la carrera, el organizador Jock Semple saltó del camión de prensa e intentó arrancarle el número; su novio, Tom Miller, lo apartó de un empujón. Ella terminó en unas 4 horas y 20 minutos, mientras que Gibb, otra vez sin inscripción, llegó casi una hora antes. La AAU prohibió entonces que las mujeres corrieran con los hombres, pero desde 1972 las mujeres pudieron inscribirse oficialmente en Boston, y ese año ganó Nina Kuscsik."
+      },
+      "camera": {
+        "lon": -71.3,
+        "lat": 42.29,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "kathrine-switzer",
+          "name": {
+            "en": "Kathrine Switzer",
+            "es": "Kathrine Switzer"
+          },
+          "at": [
+            -76.1444,
+            43.0469
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "1967-04-19",
+          "life": [
+            "1947-01-05",
+            null
+          ],
+          "country": "USA",
+          "place": {
+            "en": "Syracuse, New York, United States",
+            "es": "Syracuse, Nueva York (Estados Unidos)"
+          },
+          "text": {
+            "en": "Born in Germany to a US Army family and raised in Virginia, she trained for Boston with the coach Arnie Briggs at Syracuse University. She later won the 1974 New York City Marathon.",
+            "es": "Nacida en Alemania en una familia del ejército estadounidense y criada en Virginia, entrenó para Boston con el entrenador Arnie Briggs en la Universidad de Syracuse. Después ganó el Maratón de Nueva York de 1974."
+          },
+          "details": {
+            "en": "In 2017, 50 years after her first Boston, she ran it again wearing bib 261, alongside more than 13,700 women, almost half the field; the race then retired her number. Her foundation, 261 Fearless, uses running to help women overcome obstacles in their lives.",
+            "es": "En 2017, 50 años después de su primer Boston, lo volvió a correr con el dorsal 261, junto a más de 13 700 mujeres, casi la mitad de los participantes; la carrera retiró entonces su número. Su fundación, 261 Fearless, usa la carrera para ayudar a las mujeres a superar obstáculos en sus vidas."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Bib",
+                "es": "Dorsal"
+              },
+              "value": {
+                "en": "261",
+                "es": "261"
+              }
+            },
+            {
+              "label": {
+                "en": "Time",
+                "es": "Tiempo"
+              },
+              "value": {
+                "en": "about 4 h 20 min",
+                "es": "unas 4 h 20 min"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Kathrine Switzer",
+            "es": "Kathrine Switzer"
+          }
+        },
+        {
+          "id": "boston-marathon",
+          "name": {
+            "en": "Boston Marathon",
+            "es": "Maratón de Boston"
+          },
+          "at": [
+            -71.076,
+            42.35
+          ],
+          "cat": "running",
+          "icon": "🏁",
+          "type": "event",
+          "date": "1897-04-19",
+          "place": {
+            "en": "Copley Square, Boston, United States",
+            "es": "Copley Square, Boston (Estados Unidos)"
+          },
+          "text": {
+            "en": "The world's oldest annual marathon, run each April on Patriots' Day from Hopkinton to Boylston Street by Copley Square. Women were first allowed to enter officially in 1972.",
+            "es": "El maratón anual más antiguo del mundo, que se corre cada abril, el Día de los Patriotas, de Hopkinton a la calle Boylston, junto a Copley Square. Las mujeres pudieron inscribirse oficialmente por primera vez en 1972."
+          },
+          "details": {
+            "en": "Its course drops 459 feet and runs mostly east, often with a tailwind, so its fast times, like Geoffrey Mutai's 2:03:02 in 2011, cannot count as world records. On 15 April 2013 two homemade bombs exploded near the finish on Boylston Street, killing three spectators and injuring an estimated 264 people; the race returned the next year with tighter security.",
+            "es": "Su recorrido baja 459 pies y va casi siempre hacia el este, a menudo con viento a favor, así que sus tiempos rápidos, como el 2:03:02 de Geoffrey Mutai en 2011, no pueden contar como récords mundiales. El 15 de abril de 2013, dos bombas caseras estallaron cerca de la meta, en la calle Boylston: murieron tres espectadores y unas 264 personas resultaron heridas; la carrera volvió al año siguiente con más seguridad."
+          },
+          "wiki": {
+            "en": "Boston Marathon",
+            "es": "Maratón de Boston"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "course",
+          "path": [
+            [
+              -71.5231,
+              42.2286
+            ],
+            [
+              -71.4639,
+              42.2611
+            ],
+            [
+              -71.4167,
+              42.2792
+            ],
+            [
+              -71.35,
+              42.2833
+            ],
+            [
+              -71.2931,
+              42.2964
+            ],
+            [
+              -71.25,
+              42.3333
+            ],
+            [
+              -71.1703,
+              42.335
+            ],
+            [
+              -71.1217,
+              42.3317
+            ],
+            [
+              -71.0956,
+              42.3487
+            ],
+            [
+              -71.076,
+              42.35
+            ]
+          ],
+          "label": {
+            "en": "Hopkinton to Boston, 26.2 miles",
+            "es": "De Hopkinton a Boston, 26,2 millas"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1976-10",
+      "title": {
+        "en": "New York's five boroughs",
+        "es": "Los cinco distritos de Nueva York"
+      },
+      "text": {
+        "en": "New York's marathon began in 1970 as loops of Central Park, with 127 runners. In 1976 it crossed all five boroughs and made the big-city marathon popular; in 2025 more than 59,000 runners finished.",
+        "es": "El maratón de Nueva York nació en 1970 como vueltas a Central Park, con 127 corredores. En 1976 cruzó los cinco distritos y popularizó el maratón urbano; en 2025 llegaron a la meta más de 59 000 corredores."
+      },
+      "details": {
+        "en": "The first race, on 13 September 1970, was organised by Fred Lebow and Vincent Chiappetta of New York Road Runners: 55 of the 127 starters finished, watched by about 100 people, and Nina Kuscsik, the only woman, dropped out ill. For the US bicentennial in 1976, Ted Corbitt, the first African American to run an Olympic marathon, proposed a route through all five boroughs. It starts on Staten Island at the Verrazzano–Narrows Bridge, crosses Brooklyn and Queens, enters Manhattan over the Queensboro Bridge, dips into the Bronx and finishes in Central Park. Bill Rodgers won that year in a course record of 2:10:10, and the one-off celebration became the annual course. From 1978 Norway's Grete Waitz won nine times.",
+        "es": "La primera carrera, el 13 de septiembre de 1970, la organizaron Fred Lebow y Vincent Chiappetta, de New York Road Runners: 55 de los 127 que salieron terminaron, ante unas 100 personas, y Nina Kuscsik, la única mujer, abandonó enferma. Para el bicentenario de Estados Unidos, en 1976, Ted Corbitt, el primer afroestadounidense en correr un maratón olímpico, propuso un recorrido por los cinco distritos. Sale de Staten Island por el puente Verrazzano-Narrows, cruza Brooklyn y Queens, entra en Manhattan por el puente de Queensboro, pasa un momento por el Bronx y termina en Central Park. Ese año ganó Bill Rodgers con un récord del recorrido de 2:10:10, y la celebración, pensada para una sola vez, se volvió el recorrido de cada año. Desde 1978, la noruega Grete Waitz ganó nueve veces."
+      },
+      "camera": {
+        "lon": -73.99,
+        "lat": 40.71,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "verrazzano-narrows-bridge",
+          "name": {
+            "en": "Verrazzano–Narrows Bridge",
+            "es": "Puente Verrazzano-Narrows"
+          },
+          "at": [
+            -74.0456,
+            40.6064
+          ],
+          "cat": "venue",
+          "icon": "🏁",
+          "type": "site",
+          "date": "1976-10",
+          "place": {
+            "en": "Staten Island and Brooklyn, New York, United States",
+            "es": "Staten Island y Brooklyn, Nueva York (Estados Unidos)"
+          },
+          "text": {
+            "en": "Since 1976 the race has started at Fort Wadsworth on Staten Island and crossed this bridge, closed to traffic for the day, into Brooklyn. In the first minutes it fills with runners.",
+            "es": "Desde 1976 la carrera sale de Fort Wadsworth, en Staten Island, y cruza este puente, cerrado al tráfico ese día, hacia Brooklyn. En los primeros minutos se llena de corredores."
+          },
+          "wiki": {
+            "en": "Verrazzano–Narrows Bridge",
+            "es": "Puente de Verrazano-Narrows"
+          }
+        },
+        {
+          "id": "central-park",
+          "name": {
+            "en": "Central Park",
+            "es": "Central Park"
+          },
+          "at": [
+            -73.9778,
+            40.7723
+          ],
+          "cat": "venue",
+          "type": "site",
+          "date": "1970-09-13",
+          "place": {
+            "en": "Central Park, Manhattan, New York, United States",
+            "es": "Central Park, Manhattan, Nueva York (Estados Unidos)"
+          },
+          "text": {
+            "en": "The first New York City Marathon, in 1970, was run as loops of the park's drive. Today the runners enter the park at East 90th Street and finish beside Tavern on the Green.",
+            "es": "El primer Maratón de Nueva York, en 1970, se corrió dando vueltas por el camino del parque. Hoy los corredores entran al parque por la calle 90 Este y terminan junto a Tavern on the Green."
+          },
+          "wiki": {
+            "en": "Central Park",
+            "es": "Central Park"
+          }
+        },
+        {
+          "id": "grete-waitz",
+          "name": {
+            "en": "Grete Waitz",
+            "es": "Grete Waitz"
+          },
+          "at": [
+            10.7389,
+            59.9133
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "1979-10-21",
+          "life": [
+            "1953-10-01",
+            "2011-04-19"
+          ],
+          "country": "NOR",
+          "place": {
+            "en": "Oslo, Norway",
+            "es": "Oslo (Noruega)"
+          },
+          "text": {
+            "en": "The Norwegian won New York nine times between 1978 and 1988, and there in 1979 became the first woman to run a marathon in under two and a half hours. She also won silver in 1984.",
+            "es": "La noruega ganó en Nueva York nueve veces entre 1978 y 1988, y allí, en 1979, fue la primera mujer en correr un maratón en menos de dos horas y media. También ganó la plata en 1984."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "New York wins",
+                "es": "Victorias en Nueva York"
+              },
+              "value": {
+                "en": "9 (1978–1988)",
+                "es": "9 (1978-1988)"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Grete Waitz",
+            "es": "Grete Waitz"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "course",
+          "path": [
+            [
+              -74.0567,
+              40.605
+            ],
+            [
+              -74.0456,
+              40.6064
+            ],
+            [
+              -74.0278,
+              40.6314
+            ],
+            [
+              -73.977,
+              40.672
+            ],
+            [
+              -73.96,
+              40.71
+            ],
+            [
+              -73.9514,
+              40.7306
+            ],
+            [
+              -73.9525,
+              40.7392
+            ],
+            [
+              -73.9547,
+              40.7569
+            ],
+            [
+              -73.9292,
+              40.8036
+            ],
+            [
+              -73.9333,
+              40.8142
+            ],
+            [
+              -73.9653,
+              40.7822
+            ],
+            [
+              -73.982,
+              40.769
+            ],
+            [
+              -73.9778,
+              40.7723
+            ]
+          ],
+          "label": {
+            "en": "Since 1976: through the five boroughs",
+            "es": "Desde 1976: por los cinco distritos"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1984-08-05",
+      "title": {
+        "en": "Los Angeles: women's Olympic marathon",
+        "es": "Los Ángeles: el maratón olímpico femenino"
+      },
+      "text": {
+        "en": "Women ran an Olympic marathon for the first time. Joan Benoit of the United States broke away in the third mile, in the August heat, and won in 2:24:52.",
+        "es": "Las mujeres corrieron por primera vez un maratón olímpico. La estadounidense Joan Benoit se escapó en la tercera milla, bajo el calor de agosto, y ganó en 2:24:52."
+      },
+      "details": {
+        "en": "Women had long been kept out of the marathon: Stamata Revithi ran the 1896 course alone, and Boston only admitted women in 1972. On 5 August 1984, 50 runners from 28 countries started at Santa Monica College and finished in the Los Angeles Memorial Coliseum. Benoit, the world record holder, made a bold move in only the third mile; nobody followed, and she beat Norway's Grete Waitz, the 1983 world champion, by 1 minute 26 seconds, with Portugal's Rosa Mota third. Switzerland's Gabriela Andersen-Schiess entered the stadium almost totally exhausted, barely able to walk; she struggled round the last lap, finished 37th and collapsed at the line. The men's race was won by Portugal's Carlos Lopes, aged 37.",
+        "es": "Durante mucho tiempo las mujeres quedaron fuera del maratón: Stamata Revithi corrió sola el recorrido de 1896, y Boston no las admitió hasta 1972. El 5 de agosto de 1984, 50 corredoras de 28 países salieron del Santa Monica College y llegaron al Coliseo Memorial de Los Ángeles. Benoit, poseedora del récord mundial, atacó ya en la tercera milla; nadie la siguió, y superó a la noruega Grete Waitz, campeona mundial de 1983, por 1 minuto y 26 segundos, con la portuguesa Rosa Mota tercera. La suiza Gabriela Andersen-Schiess entró al estadio casi totalmente agotada, apenas capaz de caminar; dio la última vuelta con enorme esfuerzo, terminó en el puesto 37 y se desplomó en la meta. La carrera masculina la ganó el portugués Carlos Lopes, de 37 años."
+      },
+      "camera": {
+        "lon": -118.38,
+        "lat": 34.02,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "joan-benoit",
+          "name": {
+            "en": "Joan Benoit",
+            "es": "Joan Benoit"
+          },
+          "at": [
+            -70.2339,
+            43.5944
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "1984-08-05",
+          "life": [
+            "1957-05-16",
+            null
+          ],
+          "country": "USA",
+          "place": {
+            "en": "Cape Elizabeth, Maine, United States",
+            "es": "Cape Elizabeth, Maine (Estados Unidos)"
+          },
+          "text": {
+            "en": "From Cape Elizabeth, Maine, she took up running to recover from a broken leg suffered while skiing. She won Boston in 1979 wearing a Red Sox cap, then the first Olympic women's marathon.",
+            "es": "De Cape Elizabeth, Maine, empezó a correr para recuperarse de una pierna rota esquiando. Ganó Boston en 1979 con una gorra de los Red Sox y luego el primer maratón olímpico femenino."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Time",
+                "es": "Tiempo"
+              },
+              "value": {
+                "en": "2:24:52",
+                "es": "2:24:52"
+              }
+            },
+            {
+              "label": {
+                "en": "Margin over Grete Waitz",
+                "es": "Ventaja sobre Grete Waitz"
+              },
+              "value": {
+                "en": "1 min 26 s",
+                "es": "1 min y 26 s"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Joan Benoit",
+            "es": "Joan Benoit"
+          }
+        },
+        {
+          "id": "los-angeles-memorial-coliseum",
+          "name": {
+            "en": "Los Angeles Memorial Coliseum",
+            "es": "Coliseo Memorial de Los Ángeles"
+          },
+          "at": [
+            -118.2878,
+            34.0142
+          ],
+          "cat": "venue",
+          "icon": "🏁",
+          "type": "site",
+          "date": "1984-08-05",
+          "place": {
+            "en": "Los Angeles, United States",
+            "es": "Los Ángeles (Estados Unidos)"
+          },
+          "text": {
+            "en": "The 1984 Olympic stadium, home of the athletics and the ceremonies. The first women's Olympic marathon, which started at Santa Monica College, ended here with a lap of the track.",
+            "es": "El estadio olímpico de 1984, sede del atletismo y las ceremonias. El primer maratón olímpico femenino, que salió del Santa Monica College, terminó aquí con una vuelta a la pista."
+          },
+          "wiki": {
+            "en": "Los Angeles Memorial Coliseum",
+            "es": "Los Angeles Memorial Coliseum"
+          }
+        },
+        {
+          "id": "grete-waitz",
+          "name": {
+            "en": "Grete Waitz",
+            "es": "Grete Waitz"
+          },
+          "at": [
+            10.7389,
+            59.9133
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "1979-10-21",
+          "life": [
+            "1953-10-01",
+            "2011-04-19"
+          ],
+          "country": "NOR",
+          "place": {
+            "en": "Oslo, Norway",
+            "es": "Oslo (Noruega)"
+          },
+          "text": {
+            "en": "The Norwegian won New York nine times between 1978 and 1988, and there in 1979 became the first woman to run a marathon in under two and a half hours. She also won silver in 1984.",
+            "es": "La noruega ganó en Nueva York nueve veces entre 1978 y 1988, y allí, en 1979, fue la primera mujer en correr un maratón en menos de dos horas y media. También ganó la plata en 1984."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "New York wins",
+                "es": "Victorias en Nueva York"
+              },
+              "value": {
+                "en": "9 (1978–1988)",
+                "es": "9 (1978-1988)"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Grete Waitz",
+            "es": "Grete Waitz"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "course",
+          "path": [
+            [
+              -118.4707,
+              34.0168
+            ],
+            [
+              -118.2878,
+              34.0142
+            ]
+          ],
+          "label": {
+            "en": "1984: Santa Monica College to the Coliseum",
+            "es": "1984: del Santa Monica College al Memorial Coliseum"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2006",
+      "title": {
+        "en": "The Majors: fast city courses",
+        "es": "Los Majors: recorridos urbanos veloces"
+      },
+      "text": {
+        "en": "In 2006 Boston, New York, Berlin, Chicago and London formed the World Marathon Majors. On the flat roads of Berlin, Chicago and London, world records fall again and again.",
+        "es": "En 2006, Boston, Nueva York, Berlín, Chicago y Londres formaron los World Marathon Majors. En las calles llanas de Berlín, Chicago y Londres, los récords mundiales caen una y otra vez."
+      },
+      "details": {
+        "en": "Berlin's race, founded in 1974 by Horst Milde, a baker, was confined to West Berlin until 30 September 1990, when the runners passed through the Brandenburg Gate for the first time, four days before German reunification; many had tears in their eyes. The world record has fallen there 13 times. Chicago's modern race began in 1977; there in 1999 Khalid Khannouchi became the first man under 2:06. London's, founded in 1981 by Chris Brasher and John Disley after Brasher ran New York, is famous for its charity runners, who have raised more than £1.4 billion. Records have fallen seven times each in Chicago and London, among them Paula Radcliffe's 2:15:25 in 2003, a women's record that stood for 16 years. Tokyo joined the Majors in 2013.",
+        "es": "El maratón de Berlín, fundado en 1974 por Horst Milde, un panadero, se corrió solo en Berlín Occidental hasta el 30 de septiembre de 1990, cuando los corredores cruzaron por primera vez la Puerta de Brandeburgo, cuatro días antes de la reunificación alemana; muchos lloraban. El récord mundial ha caído allí 13 veces. El maratón moderno de Chicago empezó en 1977; allí, en 1999, Khalid Khannouchi fue el primer hombre en bajar de 2:06. El de Londres, fundado en 1981 por Chris Brasher y John Disley después de que Brasher corriera en Nueva York, es famoso por sus corredores solidarios, que han reunido más de 1400 millones de libras. En Chicago y en Londres los récords han caído siete veces en cada una, entre ellos el 2:15:25 de Paula Radcliffe en 2003, un récord femenino que duró 16 años. Tokio se unió a los Majors en 2013."
+      },
+      "camera": {
+        "lon": 6.5,
+        "lat": 52.0,
+        "zoom": 6
+      },
+      "places": [
+        {
+          "id": "paula-radcliffe",
+          "name": {
+            "en": "Paula Radcliffe",
+            "es": "Paula Radcliffe"
+          },
+          "at": [
+            -2.5111,
+            53.2358
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "2003-04-13",
+          "life": [
+            "1973-12-17",
+            null
+          ],
+          "country": "GBR",
+          "place": {
+            "en": "Davenham, Cheshire, England, United Kingdom",
+            "es": "Davenham, Cheshire, Inglaterra (Reino Unido)"
+          },
+          "text": {
+            "en": "Born in Davenham, Cheshire, she won London three times and New York three times. Her 2:15:25 in London in 2003 was the women's world record for 16 years.",
+            "es": "Nacida en Davenham, Cheshire, ganó tres veces en Londres y tres en Nueva York. Su 2:15:25 en Londres en 2003 fue el récord mundial femenino durante 16 años."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "London 2003",
+                "es": "Londres 2003"
+              },
+              "value": {
+                "en": "2:15:25 (world record until 2019)",
+                "es": "2:15:25 (récord mundial hasta 2019)"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Paula Radcliffe",
+            "es": "Paula Radcliffe"
+          }
+        },
+        {
+          "id": "brandenburg-gate",
+          "name": {
+            "en": "Brandenburg Gate",
+            "es": "Puerta de Brandeburgo"
+          },
+          "at": [
+            13.3777,
+            52.5163
+          ],
+          "cat": "venue",
+          "icon": "🏁",
+          "type": "site",
+          "date": "1990-09-30",
+          "place": {
+            "en": "Berlin, Germany",
+            "es": "Berlín (Alemania)"
+          },
+          "text": {
+            "en": "The Berlin Marathon starts and finishes near the gate. On 30 September 1990, four days before reunification, runners passed through it for the first time.",
+            "es": "El Maratón de Berlín sale y llega cerca de la puerta. El 30 de septiembre de 1990, cuatro días antes de la reunificación, los corredores la cruzaron por primera vez."
+          },
+          "wiki": {
+            "en": "Brandenburg Gate",
+            "es": "Puerta de Brandeburgo"
+          }
+        },
+        {
+          "id": "grant-park-chicago",
+          "name": {
+            "en": "Grant Park",
+            "es": "Grant Park"
+          },
+          "at": [
+            -87.6189,
+            41.8758
+          ],
+          "cat": "venue",
+          "icon": "🏁",
+          "type": "site",
+          "date": "1977-09-25",
+          "place": {
+            "en": "Chicago, United States",
+            "es": "Chicago (Estados Unidos)"
+          },
+          "text": {
+            "en": "Chicago's flat loop course starts and ends in this lakeside park and passes through 29 neighbourhoods. The world record has been broken in Chicago seven times.",
+            "es": "El recorrido circular y llano de Chicago sale de este parque junto al lago y vuelve a él tras pasar por 29 barrios. El récord mundial se ha batido siete veces en Chicago."
+          },
+          "wiki": {
+            "en": "Chicago Marathon",
+            "es": "Maratón de Chicago"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "course",
+          "path": [
+            [
+              13.3777,
+              52.5163
+            ],
+            [
+              13.3333,
+              52.5333
+            ],
+            [
+              13.4542,
+              52.5158
+            ],
+            [
+              13.3833,
+              52.4875
+            ],
+            [
+              13.3556,
+              52.4861
+            ],
+            [
+              13.3297,
+              52.4722
+            ],
+            [
+              13.3,
+              52.5167
+            ],
+            [
+              13.3777,
+              52.5163
+            ]
+          ],
+          "label": {
+            "en": "Berlin, since 1974",
+            "es": "Berlín, desde 1974"
+          }
+        },
+        {
+          "side": "course",
+          "path": [
+            [
+              -87.6189,
+              41.8758
+            ],
+            [
+              -87.635,
+              41.94
+            ],
+            [
+              -87.6556,
+              41.9481
+            ],
+            [
+              -87.6742,
+              41.8806
+            ],
+            [
+              -87.6578,
+              41.8539
+            ],
+            [
+              -87.6319,
+              41.8525
+            ],
+            [
+              -87.6339,
+              41.83
+            ],
+            [
+              -87.6189,
+              41.8758
+            ]
+          ],
+          "label": {
+            "en": "Chicago, since 1977",
+            "es": "Chicago, desde 1977"
+          }
+        },
+        {
+          "side": "course",
+          "path": [
+            [
+              0.01,
+              51.47
+            ],
+            [
+              0.0331,
+              51.4861
+            ],
+            [
+              0.0619,
+              51.4825
+            ],
+            [
+              -0.0097,
+              51.4828
+            ],
+            [
+              -0.0265,
+              51.478
+            ],
+            [
+              -0.0426,
+              51.4989
+            ],
+            [
+              -0.0753,
+              51.5056
+            ],
+            [
+              -0.061,
+              51.5073
+            ],
+            [
+              -0.0318,
+              51.5158
+            ],
+            [
+              -0.015,
+              51.491
+            ],
+            [
+              -0.0225,
+              51.505
+            ],
+            [
+              -0.0318,
+              51.5158
+            ],
+            [
+              -0.0761,
+              51.5081
+            ],
+            [
+              -0.1217,
+              51.5072
+            ],
+            [
+              -0.1419,
+              51.5008
+            ],
+            [
+              -0.1353,
+              51.5042
+            ]
+          ],
+          "label": {
+            "en": "London, since 1981",
+            "es": "Londres, desde 1981"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2019-10-12",
+      "title": {
+        "en": "Under two hours in Vienna",
+        "es": "Menos de dos horas en Viena"
+      },
+      "text": {
+        "en": "In Vienna's Prater park, Eliud Kipchoge ran the marathon distance in 1:59:40, the first time under two hours. With rotating pacers and drinks brought by bike, it could not count as a record.",
+        "es": "En el parque del Prater, en Viena, Eliud Kipchoge corrió la distancia del maratón en 1:59:40, la primera vez por debajo de dos horas. Con liebres que se turnaban y bebidas llevadas en bicicleta, no podía contar como récord."
+      },
+      "details": {
+        "en": "The Ineos 1:59 Challenge was staged for Kipchoge alone, after he had missed the mark by 25 seconds at Nike's Breaking2 attempt in Monza in 2017. On 12 October 2019 he ran laps of the Hauptallee, a flat avenue lined with tall trees between the Praterstern and the Lusthaus, behind 41 pacemakers who rotated in a V-formation, guided by lasers. 'No human is limited,' he said afterwards. Because of the pacing, the drinks handed over from bicycles and the lack of open competition, World Athletics did not ratify the time. The next day in Chicago Brigid Kosgei broke the women's world record with 2:14:04. Both wore new Nike shoes with carbon-fibre plates, which stirred debate among athletes.",
+        "es": "El Ineos 1:59 Challenge se organizó solo para Kipchoge, que en 2017 se había quedado a 25 segundos en el intento Breaking2 de Nike, en Monza. El 12 de octubre de 2019 dio vueltas por la Hauptallee, una avenida llana bordeada de árboles altos entre el Praterstern y el Lusthaus, detrás de 41 liebres que se turnaban en formación de V, guiadas por láseres. «Ningún ser humano tiene límites», dijo después. Por las liebres, las bebidas entregadas desde bicicletas y la falta de competencia abierta, World Athletics no homologó el tiempo. Al día siguiente, en Chicago, Brigid Kosgei batió el récord mundial femenino con 2:14:04. Ambos usaban nuevas zapatillas Nike con placas de fibra de carbono, que generaron debate entre los atletas."
+      },
+      "camera": {
+        "lon": 16.42,
+        "lat": 48.2,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "eliud-kipchoge",
+          "name": {
+            "en": "Eliud Kipchoge",
+            "es": "Eliud Kipchoge"
+          },
+          "at": [
+            35.4558,
+            0.4369
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "2019-10-12",
+          "life": [
+            "1984-11-05",
+            null
+          ],
+          "country": "KEN",
+          "place": {
+            "en": "Kaptagat, Kenya",
+            "es": "Kaptagat (Kenia)"
+          },
+          "text": {
+            "en": "Born in Kapsisiywa, in Kenya's Nandi County, he lives and trains in Kaptagat. Olympic marathon champion in 2016 and 2020, he set world records in Berlin in 2018 (2:01:39) and 2022 (2:01:09).",
+            "es": "Nacido en Kapsisiywa, en el condado de Nandi (Kenia), vive y entrena en Kaptagat. Campeón olímpico de maratón en 2016 y 2020, batió el récord mundial en Berlín en 2018 (2:01:39) y 2022 (2:01:09)."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Vienna 2019",
+                "es": "Viena 2019"
+              },
+              "value": {
+                "en": "1:59:40.2 (not a record)",
+                "es": "1:59:40.2 (no es récord)"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Eliud Kipchoge",
+            "es": "Eliud Kipchoge"
+          }
+        },
+        {
+          "id": "prater-hauptallee",
+          "name": {
+            "en": "Prater Hauptallee",
+            "es": "Hauptallee del Prater"
+          },
+          "at": [
+            16.3956,
+            48.2161
+          ],
+          "cat": "venue",
+          "type": "site",
+          "date": "2019-10-12",
+          "place": {
+            "en": "Prater, Vienna, Austria",
+            "es": "Prater, Viena (Austria)"
+          },
+          "text": {
+            "en": "The main avenue of Vienna's great park runs flat and straight for about 4.3 km between the Praterstern and the Lusthaus, lined with tall trees that kept the wind off Kipchoge's run.",
+            "es": "La avenida principal del gran parque de Viena corre llana y recta durante unos 4,3 km entre el Praterstern y el Lusthaus, bordeada de árboles altos que protegieron del viento la carrera de Kipchoge."
+          },
+          "wiki": {
+            "en": "Ineos 1:59 Challenge",
+            "es": "Prater"
+          }
+        },
+        {
+          "id": "brigid-kosgei",
+          "name": {
+            "en": "Brigid Kosgei",
+            "es": "Brigid Kosgei"
+          },
+          "at": [
+            35.5667,
+            0.9833
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "2019-10-13",
+          "life": [
+            "1994-02-20",
+            null
+          ],
+          "country": "KEN",
+          "place": {
+            "en": "Kapsowar, Elgeyo-Marakwet, Kenya",
+            "es": "Kapsowar, Elgeyo-Marakwet (Kenia)"
+          },
+          "text": {
+            "en": "Born near Kapsowar in Kenya's Rift Valley, she won Chicago and London twice each. Her 2:14:04 in Chicago, the day after Kipchoge's run, beat Paula Radcliffe's 16-year-old world record.",
+            "es": "Nacida cerca de Kapsowar, en el valle del Rift (Kenia), ganó dos veces en Chicago y dos en Londres. Su 2:14:04 en Chicago, el día después de la carrera de Kipchoge, superó el récord mundial de Paula Radcliffe, que duraba 16 años."
+          },
+          "wiki": {
+            "en": "Brigid Kosgei",
+            "es": "Brigid Kosgei"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "course",
+          "path": [
+            [
+              16.3956,
+              48.2161
+            ],
+            [
+              16.4389,
+              48.1925
+            ]
+          ],
+          "label": {
+            "en": "2019: laps of the Hauptallee",
+            "es": "2019: vueltas por la Hauptallee"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2023-10-08",
+      "title": {
+        "en": "Kiptum's record in Chicago",
+        "es": "El récord de Kiptum en Chicago"
+      },
+      "text": {
+        "en": "Kenya's Kelvin Kiptum, 23, ran a world record of 2:00:35 in Chicago, in only his third marathon. Four months later he died in a car crash. A year on, Ruth Chepng'etich ran 2:09:56 there.",
+        "es": "El keniano Kelvin Kiptum, de 23 años, batió el récord mundial con 2:00:35 en Chicago, en apenas su tercer maratón. Cuatro meses después murió en un accidente de auto. Un año más tarde, Ruth Chepng'etich corrió allí en 2:09:56."
+      },
+      "details": {
+        "en": "Kiptum grew up herding his family's cattle in the hills of Chepkorio and began training at 13, following barefoot runners along forest trails. He won all three marathons he ran, each in under 2:02, and in Chicago he cut 34 seconds off Kipchoge's record. World Athletics ratified it on 6 February 2024; five days later Kiptum and his coach, Gervais Hakizimana, were killed when his car left the road near Kaptagat. His record stood until 2026. On 13 October 2024 Chepng'etich, who dedicated her run to Kiptum, became the first woman under 2:10. The sources still list her time as the women's world record, though from April 2025 she was suspended for three years after testing positive for the banned substance hydrochlorothiazide, which she admitted using.",
+        "es": "Kiptum creció cuidando el ganado de su familia en las colinas de Chepkorio y empezó a entrenar a los 13 años, siguiendo a corredores descalzos por senderos del bosque. Ganó los tres maratones que corrió, todos en menos de 2:02, y en Chicago le quitó 34 segundos al récord de Kipchoge. World Athletics lo homologó el 6 de febrero de 2024; cinco días después, Kiptum y su entrenador, Gervais Hakizimana, murieron cuando su auto se salió del camino cerca de Kaptagat. Su récord duró hasta 2026. El 13 de octubre de 2024, Chepng'etich, que dedicó su carrera a Kiptum, fue la primera mujer en bajar de 2:10. Las fuentes aún registran su marca como récord mundial femenino, aunque desde abril de 2025 cumple una suspensión de tres años tras dar positivo por la sustancia prohibida hidroclorotiazida, cuyo uso admitió."
+      },
+      "camera": {
+        "lon": -87.65,
+        "lat": 41.89,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "kelvin-kiptum",
+          "name": {
+            "en": "Kelvin Kiptum",
+            "es": "Kelvin Kiptum"
+          },
+          "at": [
+            35.53,
+            0.38
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "2023-10-08",
+          "life": [
+            "1999-12-02",
+            "2024-02-11"
+          ],
+          "country": "KEN",
+          "place": {
+            "en": "Chepkorio, Elgeyo-Marakwet, Kenya",
+            "es": "Chepkorio, Elgeyo-Marakwet (Kenia)"
+          },
+          "text": {
+            "en": "He grew up in Chepsamo village, Chepkorio, high in Kenya's Rift Valley, and raced only three marathons, winning all three. His 2:00:35 was the world record from 2023 to 2026.",
+            "es": "Creció en la aldea de Chepsamo, en Chepkorio, en lo alto del valle del Rift (Kenia), y corrió solo tres maratones: ganó los tres. Su 2:00:35 fue el récord mundial de 2023 a 2026."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Chicago 2023",
+                "es": "Chicago 2023"
+              },
+              "value": {
+                "en": "2:00:35 (world record until 2026)",
+                "es": "2:00:35 (récord mundial hasta 2026)"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Kelvin Kiptum",
+            "es": "Kelvin Kiptum"
+          }
+        },
+        {
+          "id": "ruth-chepngetich",
+          "name": {
+            "en": "Ruth Chepng'etich",
+            "es": "Ruth Chepng'etich"
+          },
+          "at": [
+            35.2839,
+            -0.3692
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "2024-10-13",
+          "life": [
+            "1994-08-08",
+            null
+          ],
+          "country": "KEN",
+          "place": {
+            "en": "Kericho, Kenya",
+            "es": "Kericho (Kenia)"
+          },
+          "text": {
+            "en": "Born in Kericho, she was the 2019 world champion. Her 2:09:56 in Chicago in 2024 is the women's world record; from April 2025 she was suspended for three years for a positive doping test.",
+            "es": "Nacida en Kericho, fue campeona mundial en 2019. Su 2:09:56 en Chicago en 2024 es el récord mundial femenino; desde abril de 2025 cumple una suspensión de tres años por un control antidopaje positivo."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Chicago 2024",
+                "es": "Chicago 2024"
+              },
+              "value": {
+                "en": "2:09:56 (women's world record)",
+                "es": "2:09:56 (récord mundial femenino)"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Ruth Chepng'etich",
+            "es": "Ruth Chepngetich"
+          }
+        },
+        {
+          "id": "grant-park-chicago",
+          "name": {
+            "en": "Grant Park",
+            "es": "Grant Park"
+          },
+          "at": [
+            -87.6189,
+            41.8758
+          ],
+          "cat": "venue",
+          "icon": "🏁",
+          "type": "site",
+          "date": "1977-09-25",
+          "place": {
+            "en": "Chicago, United States",
+            "es": "Chicago (Estados Unidos)"
+          },
+          "text": {
+            "en": "Chicago's flat loop course starts and ends in this lakeside park and passes through 29 neighbourhoods. The world record has been broken in Chicago seven times.",
+            "es": "El recorrido circular y llano de Chicago sale de este parque junto al lago y vuelve a él tras pasar por 29 barrios. El récord mundial se ha batido siete veces en Chicago."
+          },
+          "wiki": {
+            "en": "Chicago Marathon",
+            "es": "Maratón de Chicago"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "course",
+          "path": [
+            [
+              -87.6189,
+              41.8758
+            ],
+            [
+              -87.635,
+              41.94
+            ],
+            [
+              -87.6556,
+              41.9481
+            ],
+            [
+              -87.6742,
+              41.8806
+            ],
+            [
+              -87.6578,
+              41.8539
+            ],
+            [
+              -87.6319,
+              41.8525
+            ],
+            [
+              -87.6339,
+              41.83
+            ],
+            [
+              -87.6189,
+              41.8758
+            ]
+          ],
+          "label": {
+            "en": "Chicago: a loop from Grant Park",
+            "es": "Chicago: un circuito desde Grant Park"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2025-08-31",
+      "title": {
+        "en": "Sydney joins the Majors",
+        "es": "Sídney se une a los Majors"
+      },
+      "text": {
+        "en": "Sydney, whose marathon began as a test event for the 2000 Olympics, ran its first race as one of the World Marathon Majors. In 2026 Cape Town was confirmed as the eighth.",
+        "es": "Sídney, cuyo maratón nació como prueba previa a los Juegos Olímpicos de 2000, corrió su primera carrera como uno de los World Marathon Majors. En 2026, Ciudad del Cabo fue confirmada como el octavo."
+      },
+      "details": {
+        "en": "The Sydney Marathon was first run on 30 April 2000 on the Olympic course and carried on as a legacy of the Games. After two successful assessments it was named the seventh Major on 4 November 2024 and moved from September to late August. The point-to-point course starts in North Sydney, crosses the Harbour Bridge, runs through Pyrmont and The Rocks, down Oxford Street and Anzac Parade towards Kingsford, then returns by Centennial Park and Moore Park to finish in front of the Opera House. On 31 August 2025 Hailemaryam Kiros and Sifan Hassan won in the fastest times ever run in Australia. The Majors now take in Tokyo, Boston, London, Berlin, Chicago, New York and Sydney, with Cape Town to join in May 2027.",
+        "es": "El Maratón de Sídney se corrió por primera vez el 30 de abril de 2000 por el recorrido olímpico y siguió como legado de los Juegos. Tras dos evaluaciones exitosas, fue nombrado séptimo Major el 4 de noviembre de 2024 y pasó de septiembre a finales de agosto. El recorrido, de punto a punto, sale de North Sydney, cruza el puente de la Bahía, pasa por Pyrmont y The Rocks, baja por Oxford Street y Anzac Parade hacia Kingsford y vuelve por Centennial Park y Moore Park para terminar frente a la Ópera. El 31 de agosto de 2025 ganaron Hailemaryam Kiros y Sifan Hassan, con los tiempos más rápidos jamás corridos en Australia. Los Majors abarcan ahora Tokio, Boston, Londres, Berlín, Chicago, Nueva York y Sídney, y Ciudad del Cabo se sumará en mayo de 2027."
+      },
+      "camera": {
+        "lon": 151.21,
+        "lat": -33.88,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "sydney-opera-house",
+          "name": {
+            "en": "Sydney Opera House",
+            "es": "Ópera de Sídney"
+          },
+          "at": [
+            151.2151,
+            -33.8568
+          ],
+          "cat": "venue",
+          "icon": "🏁",
+          "type": "site",
+          "date": "2025-08-31",
+          "place": {
+            "en": "Sydney, Australia",
+            "es": "Sídney (Australia)"
+          },
+          "text": {
+            "en": "The Sydney Marathon, a legacy of the 2000 Olympics, finishes in front of the Opera House. In 2025 it was run for the first time as one of the World Marathon Majors.",
+            "es": "El Maratón de Sídney, legado de los Juegos de 2000, termina frente a la Ópera. En 2025 se corrió por primera vez como uno de los World Marathon Majors."
+          },
+          "wiki": {
+            "en": "Sydney Marathon",
+            "es": "Maratón de Sídney"
+          }
+        },
+        {
+          "id": "sydney-harbour-bridge",
+          "name": {
+            "en": "Sydney Harbour Bridge",
+            "es": "Puente de la Bahía de Sídney"
+          },
+          "at": [
+            151.2106,
+            -33.8522
+          ],
+          "cat": "venue",
+          "type": "site",
+          "date": "2025-08-31",
+          "place": {
+            "en": "Sydney, Australia",
+            "es": "Sídney (Australia)"
+          },
+          "text": {
+            "en": "Early in the race the runners cross the harbour on this bridge, from North Sydney to the city centre.",
+            "es": "Al principio de la carrera, los corredores cruzan la bahía por este puente, de North Sydney al centro de la ciudad."
+          },
+          "wiki": {
+            "en": "Sydney Harbour Bridge",
+            "es": "Puente de la bahía de Sídney"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "course",
+          "path": [
+            [
+              151.2054,
+              -33.8396
+            ],
+            [
+              151.2106,
+              -33.8522
+            ],
+            [
+              151.1963,
+              -33.875
+            ],
+            [
+              151.209,
+              -33.8599
+            ],
+            [
+              151.2039,
+              -33.8709
+            ],
+            [
+              151.219,
+              -33.8866
+            ],
+            [
+              151.23,
+              -33.92
+            ],
+            [
+              151.2303,
+              -33.9011
+            ],
+            [
+              151.22,
+              -33.8967
+            ],
+            [
+              151.2151,
+              -33.8568
+            ]
+          ],
+          "label": {
+            "en": "Sydney: North Sydney to the Opera House",
+            "es": "Sídney: de North Sydney a la Ópera"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "title": {
+        "en": "Under two hours, for the record",
+        "es": "Menos de dos horas, con récord"
+      },
+      "text": {
+        "en": "In London, Kenya's Sabastian Sawe ran 1:59:30, the first marathon under two hours in a race that counts for records. Yomif Kejelcha also broke two hours, and Tigst Assefa set a women-only record.",
+        "es": "En Londres, el keniano Sabastian Sawe corrió en 1:59:30, el primer maratón por debajo de dos horas en una carrera válida para récords. Yomif Kejelcha también bajó de dos horas, y Tigst Assefa batió el récord en carrera solo de mujeres."
+      },
+      "details": {
+        "en": "Pacers led the men through halfway in 1:00:29, but after 25 km Sawe pushed on with the Ethiopian Kejelcha, running his first marathon; Sawe covered the 5 km from 30 to 35 km in 13:54 and dropped his rival after the 25th mile. Kejelcha finished in 1:59:41, and Uganda's Jacob Kiplimo, third, also beat Kiptum's old record. Assefa won the women's race in 2:15:41, improving her own record for a race without men by nine seconds. A record 59,830 runners finished, making it the largest marathon ever, after 1,133,813 people had applied. Sawe, who grew up in a house with mud walls and no electricity, had volunteered for extra drug tests, paid for by his sponsor, before the race. Seven years after Vienna, two hours had fallen in open competition.",
+        "es": "Las liebres llevaron a los hombres por la media maratón en 1:00:29, pero después del kilómetro 25 Sawe siguió con el etíope Kejelcha, que corría su primer maratón; Sawe hizo los 5 km entre el 30 y el 35 en 13:54 y dejó atrás a su rival después de la milla 25. Kejelcha terminó en 1:59:41, y el ugandés Jacob Kiplimo, tercero, también mejoró el antiguo récord de Kiptum. Assefa ganó la carrera femenina en 2:15:41 y mejoró en nueve segundos su propio récord en carrera sin hombres. Un récord de 59 830 corredores llegó a la meta, el maratón más grande de la historia, tras 1 133 813 solicitudes de inscripción. Sawe, que creció en una casa con paredes de barro y sin electricidad, se había sometido por voluntad propia a controles antidopaje adicionales, pagados por su patrocinador, antes de la carrera. Siete años después de Viena, las dos horas habían caído en competencia abierta."
+      },
+      "camera": {
+        "lon": -0.04,
+        "lat": 51.49,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "sabastian-sawe",
+          "name": {
+            "en": "Sabastian Sawe",
+            "es": "Sabastian Sawe"
+          },
+          "at": [
+            35.5083,
+            0.6731
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "2026-04-26",
+          "life": [
+            "1995-03-16",
+            null
+          ],
+          "country": "KEN",
+          "place": {
+            "en": "Iten, Kenya",
+            "es": "Iten (Kenia)"
+          },
+          "text": {
+            "en": "Raised by his grandmother in the village of Barsombe, he went to St Patrick's High School in Iten. He won London and Berlin in 2025 before his record in London in 2026.",
+            "es": "Criado por su abuela en la aldea de Barsombe, estudió en la escuela secundaria St Patrick de Iten. Ganó Londres y Berlín en 2025 antes de su récord en Londres en 2026."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "London 2026",
+                "es": "Londres 2026"
+              },
+              "value": {
+                "en": "1:59:30 (world record)",
+                "es": "1:59:30 (récord mundial)"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Sabastian Sawe",
+            "es": "Sabastian Sawe"
+          }
+        },
+        {
+          "id": "tigst-assefa",
+          "name": {
+            "en": "Tigst Assefa",
+            "es": "Tigst Assefa"
+          },
+          "at": [
+            38.5,
+            9.05
+          ],
+          "cat": "running",
+          "type": "person",
+          "date": "2026-04-26",
+          "life": [
+            "1996-12-03",
+            null
+          ],
+          "country": "ETH",
+          "place": {
+            "en": "Holeta, Oromia, Ethiopia",
+            "es": "Holeta, Oromía (Etiopía)"
+          },
+          "text": {
+            "en": "A former 800 m runner from Holeta, she ran a world record of 2:11:53 in Berlin in 2023 and holds the record for a women-only race, 2:15:41, set in London in 2026.",
+            "es": "Exespecialista en 800 m, de Holeta, batió el récord mundial con 2:11:53 en Berlín en 2023 y tiene el récord en carrera solo de mujeres, 2:15:41, logrado en Londres en 2026."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "London 2026",
+                "es": "Londres 2026"
+              },
+              "value": {
+                "en": "2:15:41 (women-only world record)",
+                "es": "2:15:41 (récord mundial en carrera femenina)"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Tigst Assefa",
+            "es": "Tigst Assefa"
+          }
+        },
+        {
+          "id": "the-mall-london",
+          "name": {
+            "en": "The Mall",
+            "es": "The Mall"
+          },
+          "at": [
+            -0.1353,
+            51.5042
+          ],
+          "cat": "venue",
+          "icon": "🏁",
+          "type": "site",
+          "date": "2026-04-26",
+          "place": {
+            "en": "London, United Kingdom",
+            "es": "Londres (Reino Unido)"
+          },
+          "text": {
+            "en": "The London Marathon finishes on this avenue beside St James's Palace, in sight of Buckingham Palace, after a mostly flat course along the Thames from Blackheath.",
+            "es": "El Maratón de Londres termina en esta avenida junto al palacio de St James, a la vista del palacio de Buckingham, tras un recorrido casi llano junto al Támesis desde Blackheath."
+          },
+          "wiki": {
+            "en": "London Marathon",
+            "es": "Maratón de Londres"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "course",
+          "path": [
+            [
+              0.01,
+              51.47
+            ],
+            [
+              0.0331,
+              51.4861
+            ],
+            [
+              0.0619,
+              51.4825
+            ],
+            [
+              -0.0097,
+              51.4828
+            ],
+            [
+              -0.0265,
+              51.478
+            ],
+            [
+              -0.0426,
+              51.4989
+            ],
+            [
+              -0.0753,
+              51.5056
+            ],
+            [
+              -0.061,
+              51.5073
+            ],
+            [
+              -0.0318,
+              51.5158
+            ],
+            [
+              -0.015,
+              51.491
+            ],
+            [
+              -0.0225,
+              51.505
+            ],
+            [
+              -0.0318,
+              51.5158
+            ],
+            [
+              -0.0761,
+              51.5081
+            ],
+            [
+              -0.1217,
+              51.5072
+            ],
+            [
+              -0.1419,
+              51.5008
+            ],
+            [
+              -0.1353,
+              51.5042
+            ]
+          ],
+          "label": {
+            "en": "2026: Blackheath to The Mall",
+            "es": "2026: de Blackheath a The Mall"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "A legend retold by a Victorian poet became the world's great endurance race. Women, long told they could not run 26 miles, fought their way to the start line, and East African runners, from Abebe Bikila on, have set most of its fastest times. Today the biggest marathons each draw tens of thousands of runners, and in 2026 the two-hour barrier fell in open competition.",
+    "es": "Una leyenda que contó un poeta victoriano se convirtió en la gran carrera de resistencia del mundo. Las mujeres, a quienes durante años se les dijo que no podían correr 26 millas, se abrieron paso hasta la línea de salida, y los corredores de África oriental, desde Abebe Bikila, han logrado la mayoría de sus mejores tiempos. Hoy los grandes maratones reúnen cada uno a decenas de miles de corredores, y en 2026 la barrera de las dos horas cayó en competencia abierta."
+  },
+  "sources": [
+    {
+      "title": "Marathon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Marathon"
+    },
+    {
+      "title": "Pheidippides (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pheidippides"
+    },
+    {
+      "title": "Battle of Marathon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Marathon"
+    },
+    {
+      "title": "Athletics at the 1896 Summer Olympics – Men's marathon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Athletics_at_the_1896_Summer_Olympics_%E2%80%93_Men's_marathon"
+    },
+    {
+      "title": "Spyridon Louis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Spyridon_Louis"
+    },
+    {
+      "title": "Panathenaic Stadium (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Panathenaic_Stadium"
+    },
+    {
+      "title": "1896 Summer Olympics (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1896_Summer_Olympics"
+    },
+    {
+      "title": "Boston Marathon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Boston_Marathon"
+    },
+    {
+      "title": "John McDermott (runner) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/John_McDermott_(runner)"
+    },
+    {
+      "title": "Athletics at the 1908 Summer Olympics – Men's marathon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Athletics_at_the_1908_Summer_Olympics_%E2%80%93_Men's_marathon"
+    },
+    {
+      "title": "1908 Summer Olympics (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1908_Summer_Olympics"
+    },
+    {
+      "title": "Dorando Pietri (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dorando_Pietri"
+    },
+    {
+      "title": "Johnny Hayes (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Johnny_Hayes"
+    },
+    {
+      "title": "White City Stadium (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/White_City_Stadium"
+    },
+    {
+      "title": "Athletics at the 1960 Summer Olympics – Men's marathon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Athletics_at_the_1960_Summer_Olympics_%E2%80%93_Men's_marathon"
+    },
+    {
+      "title": "1960 Summer Olympics (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1960_Summer_Olympics"
+    },
+    {
+      "title": "Abebe Bikila (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Abebe_Bikila"
+    },
+    {
+      "title": "Obelisk of Axum (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Obelisk_of_Axum"
+    },
+    {
+      "title": "Kathrine Switzer (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kathrine_Switzer"
+    },
+    {
+      "title": "Bobbi Gibb (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bobbi_Gibb"
+    },
+    {
+      "title": "New York City Marathon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/New_York_City_Marathon"
+    },
+    {
+      "title": "Ted Corbitt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ted_Corbitt"
+    },
+    {
+      "title": "Fred Lebow (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fred_Lebow"
+    },
+    {
+      "title": "Grete Waitz (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Grete_Waitz"
+    },
+    {
+      "title": "Athletics at the 1984 Summer Olympics – Women's marathon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Athletics_at_the_1984_Summer_Olympics_%E2%80%93_Women's_marathon"
+    },
+    {
+      "title": "1984 Summer Olympics (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1984_Summer_Olympics"
+    },
+    {
+      "title": "Joan Benoit (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Joan_Benoit"
+    },
+    {
+      "title": "Gabriela Andersen-Schiess (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gabriela_Andersen-Schiess"
+    },
+    {
+      "title": "World Marathon Majors (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/World_Marathon_Majors"
+    },
+    {
+      "title": "Berlin Marathon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Berlin_Marathon"
+    },
+    {
+      "title": "Chicago Marathon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chicago_Marathon"
+    },
+    {
+      "title": "London Marathon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/London_Marathon"
+    },
+    {
+      "title": "Paula Radcliffe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Paula_Radcliffe"
+    },
+    {
+      "title": "Ineos 1:59 Challenge (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ineos_1%3A59_Challenge"
+    },
+    {
+      "title": "Eliud Kipchoge (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Eliud_Kipchoge"
+    },
+    {
+      "title": "Brigid Kosgei (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Brigid_Kosgei"
+    },
+    {
+      "title": "Kelvin Kiptum (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kelvin_Kiptum"
+    },
+    {
+      "title": "Ruth Chepng'etich (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ruth_Chepng'etich"
+    },
+    {
+      "title": "Marathon world record progression (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Marathon_world_record_progression"
+    },
+    {
+      "title": "Sydney Marathon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sydney_Marathon"
+    },
+    {
+      "title": "Cape Town Marathon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cape_Town_Marathon"
+    },
+    {
+      "title": "2026 London Marathon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/2026_London_Marathon"
+    },
+    {
+      "title": "Sabastian Sawe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sabastian_Sawe"
+    },
+    {
+      "title": "Tigst Assefa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tigst_Assefa"
+    }
+  ]
+}

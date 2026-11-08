@@ -6,14 +6,17 @@
 // under the map tells the story; "Details" opens the longer notes, the step's items, the outcome and
 // the sources; "Browse" lists everything. In Life through time, a step older than 5 million years is
 // drawn on the continents of its age (the plate model of Pangea to today), its markers moving with
-// their plates. Data: public/data/<collection>/, built by scripts/data/build-conflicts.mjs.
+// their plates. In Games of the world, a step that is a Games or a World Cup colours every country by
+// how it took part (host, medals, took part, boycotted, banned; champions in a World Cup), draws an arc
+// from each team to the host city, and a tap on a country gives its result there.
+// Data: public/data/<collection>/, built by scripts/data/build-conflicts.mjs.
 import { geoArea, geoCentroid, geoContains, geoDistance, geoInterpolate } from 'd3-geo';
 import { mesh } from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry, MultiLineString, Polygon } from 'geojson';
 import { Play, Pause, X, ChevronLeft, ChevronRight, ListOrdered, BookOpen, Search } from 'lucide';
-import { loadJSON, shapesFrom, chunkLines, type Shape, type Line } from '../data/store';
-import { t, tx, lang, fmtNumber, fmtCompact } from '../app/i18n';
+import { loadJSON, shapesFrom, chunkLines, dataUrl, type Shape, type Line } from '../data/store';
+import { t, tx, lang, fmtNumber, fmtCompact, flagEmoji } from '../app/i18n';
 import { h, icon, clear } from '../ui/dom';
 import { continentSwatch, mix } from '../engine/colors';
 import { loadPaleo, fmtLat, unitName, type PaleoWorld, type Unit } from './paleo';
@@ -41,17 +44,44 @@ export interface Item {
   facts?: { label: Text; value: Text }[]; wiki?: Text;
   /** A Wikimedia Commons file for the card, when the article has no picture of its own. */
   img?: string;
+  /** Games of the world, a Games' host marker: the top four of its medal table or final ranking. */
+  podium?: { c: string; n: Text; a2?: string }[];
   /** Life through time: the plate that carries it, so it moves with its continent on an old map. */
   pl?: string;
   /** The first step that shows it (-1: a time tour's catalogue item, shown from its date). */
   first: number;
 }
 export interface Cat { id: string; name: Text; icon: string; color: string }
+/** Games of the world: a team at a Games (a country, or a team such as the Soviet Union or England). */
+export interface Team {
+  /** Its code (IOC or FIFA). */
+  c: string;
+  /** Where it is on the map: today's countries (ISO A3) and drawn areas ("#3": England, East Germany...). */
+  u: string[];
+  /** How it took part: one of the story's sides (g_host, g_medals, g_took, g_boycott, g_banned, g_champion, g_runnerup). */
+  s: string;
+  /** Gold, silver and bronze. */
+  m?: [number, number, number];
+  /** Its place in the medal table, or in the tournament (1–4). */
+  r?: number;
+  /** How many athletes it sent. */
+  a?: number;
+  /** Where its arc to the host starts. */
+  o?: Pt;
+  /** Its name when it is not one of today's countries (the Soviet Union, the Unified Team, England...). */
+  n?: Text;
+  /** Why it stayed away or was kept out. */
+  why?: Text;
+}
+/** A Games or a World Cup: its name ("Berlin 1936"), the main stadium (or the final's), its teams. */
+export interface Games { id: string; kind: 'summer' | 'winter' | 'wc' | 'wwc'; name: Text; host: Pt; teams: Team[]; nations?: number }
 interface Step {
   date: string; t: number; title: Text; text: Text; details?: Text; control: Record<string, number | null>;
   moves?: Move[]; battles?: Battle[]; events?: WarEvent[]; deaths?: Range; camera?: Cam; aftermath?: boolean; show?: number[];
   /** Life through time: drawn on the continents of `ma` million years ago, or (`deep`, older than the plate model) on today's land greyed. */
   ma?: number; deep?: boolean;
+  /** Games of the world: the Games or World Cup this step is. */
+  games?: Games;
 }
 interface Conflict {
   id: string; name: Text; icon: string; era: string; region: Text; summary: Text; start: string; end: string; t0: number; t1: number;
@@ -68,8 +98,8 @@ interface Spot { k: number; x: number; y: number; ax: number; ay: number; r: num
 export interface CollectionItem extends Omit<Item, 'first'> { story: string; step: number }
 
 /** The collections of stories. */
-export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life';
-export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life'];
+export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games';
+export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games'];
 /** `paleo`: its old steps are drawn on the continents of their age. */
 const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text; paleo?: boolean }> = {
   wars: { dir: 'conflicts', hash: 'war', icon: '⚔️', name: { en: 'Wars and conquests', es: 'Guerras y conquistas' } },
@@ -78,6 +108,7 @@ const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: 
   structures: { dir: 'structures', hash: 'structures', icon: '🏛️', name: { en: 'Great structures', es: 'Grandes construcciones' } },
   people: { dir: 'people', hash: 'people', icon: '🏺', name: { en: 'Peoples and civilizations', es: 'Pueblos y civilizaciones' } },
   life: { dir: 'life', hash: 'life', icon: '🦕', name: { en: 'Life through time', es: 'La vida en el tiempo' }, paleo: true },
+  games: { dir: 'games', hash: 'games', icon: '🏅', name: { en: 'Games of the world', es: 'Juegos del mundo' } },
 };
 export const storyHashKey = (k: StoryKind) => KINDS[k].hash;
 interface Area extends Shape { lp: Pt; area: number }
@@ -94,6 +125,8 @@ const MONTHS: Record<'en' | 'es', string[]> = {
 const FADE = 900, MOVE_FROM = 250, MOVE_MS = 2300, BATTLE_FROM = 700, BATTLE_GAP = 420, POP = 380, PULSE = 1500, ITEM_GAP = 300;
 /** Life through time: the continents drift from one step's age to the next. */
 const DRIFT = 1700;
+/** Games of the world: the arcs from every team to the host city grow for this long. */
+const ARC_MS = 1700;
 
 const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
 const ease = (x: number) => { const t = clamp01(x); return t * t * (3 - 2 * t); };
@@ -488,8 +521,11 @@ export class StoryMode {
 
   // ---- context borders from the historical map nearest in time
 
-  /** Life through time: no borders of peoples before 10,000 years ago (the oldest maps are of hominins). */
-  private noBorders(st: Step) { return this.paleoKind && st.t < -10000; }
+  /**
+   * No borders of the step's time: in Life through time before 10,000 years ago (the oldest maps are of
+   * hominins), and on a Games step, which draws today's (its countries are coloured by today's shapes).
+   */
+  private noBorders(st: Step) { return (this.paleoKind && st.t < -10000) || !!st.games; }
 
   private snapFor(st: Step) {
     let best = this.snaps[0];
@@ -547,23 +583,24 @@ export class StoryMode {
       });
       return;
     }
-    // Older than the plate model: today's land, greyed.
+    // Older than the plate model: today's land, greyed. (Drawn from the frame's cached outlines, which the
+    // Games' country colours then reuse.)
     const deep = !!c && this.mapOf(this.step) === 'deep';
-    ctx.beginPath();
-    for (const s of rc.visibleShapes(rc.level.countries)) path(s.feature as never);
-    ctx.fillStyle = deep ? (theme.dark ? '#3d4148' : '#e2e2de') : land; ctx.fill();
+    rc.fillCountries(rc.visibleShapes(rc.level.countries).map((s) => s.id), deep ? (theme.dark ? '#3d4148' : '#e2e2de') : land);
     if (!c) return;
     const st = c.steps[this.step];
+    const p = ease(this.elapsed() / FADE);
+    const old = this.prev >= 0 ? c.steps[this.prev] : null;
+    // Games of the world: every country in the colour of how it took part, under today's borders.
+    if (st.games || old?.games) this.fillTeams(rc, st, old, p);
     const snap = this.noBorders(st) ? null : this.snapFor(st);
-    const b = snap && this.borders.get(snap.file);
+    const b = st.games ? rc.level.borders : snap && this.borders.get(snap.file);
     if (Array.isArray(b)) {
-      ctx.save(); ctx.globalAlpha *= 0.55;
+      ctx.save(); ctx.globalAlpha *= st.games ? 0.8 : 0.55;
       ctx.beginPath(); for (const l of rc.visibleLines(b)) path(l.geometry);
       ctx.strokeStyle = theme.border; ctx.lineWidth = 0.6; ctx.stroke();
       ctx.restore();
     }
-    const p = ease(this.elapsed() / FADE);
-    const old = this.prev >= 0 ? c.steps[this.prev] : null;
     for (const side of c.sides) {
       const cur = st.control[side.id], was = old?.control[side.id];
       if (!old || p >= 1 || cur === was) this.fillArea(rc, cur, side.color, 1);
@@ -575,6 +612,203 @@ export class StoryMode {
   }
 
   private sideColor(id?: string) { return this.c?.sides.find((s) => s.id === id)?.color ?? '#59616b'; }
+
+  // ---- Games of the world: the countries' colours, the arcs to the host, the teams
+
+  /**
+   * Each team's countries in the colour of how it took part, fading from the step before. Countries of
+   * one colour and strength are filled together, in one go.
+   */
+  private fillTeams(rc: RenderCtx, st: Step, old: Step | null, p: number) {
+    const cur = this.tints(st), was = old ? this.tints(old) : null;
+    const groups = new Map<string, { color: string; alpha: number; units: string[] }>();
+    const add = (u: string, color: string, alpha: number) => {
+      if (alpha <= 0.01) return;
+      const key = `${color}|${alpha.toFixed(3)}`;
+      let g = groups.get(key);
+      if (!g) groups.set(key, (g = { color, alpha, units: [] }));
+      g.units.push(u);
+    };
+    for (const [u, col] of cur) {
+      const w = was?.get(u);
+      if (!was || p >= 1 || w === col) add(u, col, 1);
+      else { if (w) add(u, w, 1 - p); add(u, col, p); }
+    }
+    if (was && p < 1) for (const [u, w] of was) if (!cur.has(u)) add(u, w, 1 - p);
+    const { ctx } = rc;
+    for (const g of groups.values()) {
+      ctx.save(); ctx.globalAlpha *= g.alpha * 0.82;
+      rc.fillCountries(g.units.filter((u) => !u.startsWith('#')), g.color);
+      ctx.restore();
+      for (const u of g.units) if (u.startsWith('#')) this.fillArea(rc, Number(u.slice(1)), g.color, g.alpha);
+    }
+  }
+
+  private tintCache = new WeakMap<Step, Map<string, string>>();
+  /** A step's colours: country (or drawn area) → colour of its team's side. */
+  private tints(st: Step): Map<string, string> {
+    let m = this.tintCache.get(st);
+    if (!m) {
+      m = new Map();
+      for (const tm of st.games?.teams ?? []) for (const u of tm.u) m.set(u, this.sideColor(tm.s));
+      this.tintCache.set(st, m);
+    }
+    return m;
+  }
+
+  private arcCache = new Map<string, Pt[]>();
+  /** Points along the great circle from a team's country to the host city. */
+  private arcPts(o: Pt, to: Pt): Pt[] {
+    const key = `${o[0]},${o[1]}>${to[0]},${to[1]}`;
+    let pts = this.arcCache.get(key);
+    if (!pts) {
+      const n = Math.max(6, Math.ceil(geoDistance(o, to) / 0.025));
+      const f = geoInterpolate(o, to);
+      pts = Array.from({ length: n + 1 }, (_, k) => f(k / n) as Pt);
+      this.arcCache.set(key, pts);
+    }
+    return pts;
+  }
+
+  /** A thin arc from every team that took part to the host city, growing as the step starts. */
+  private drawArcs(rc: RenderCtx, g: Games, q: number) {
+    if (q <= 0) return;
+    const { ctx } = rc;
+    const bySide = new Map<string, Pt[][]>();
+    const starts: [Pt, string][] = [];
+    for (const tm of g.teams) {
+      if (!tm.o) continue;
+      const pts = this.arcPts(tm.o, g.host);
+      const last = q * (pts.length - 1), n = Math.floor(last);
+      const runs = bySide.get(tm.s) ?? [];
+      let run: Pt[] = [];
+      const put = (pt: Pt) => { const p = rc.project(pt[0], pt[1]); if (p) run.push(p as Pt); else if (run.length) { if (run.length > 1) runs.push(run); run = []; } };
+      for (let k = 0; k <= n; k++) put(pts[k]);
+      // The growing tip, between two points.
+      if (n < pts.length - 1 && last > n) { const f = last - n, a = pts[n], b = pts[n + 1]; put([a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f]); }
+      if (run.length > 1) runs.push(run);
+      bySide.set(tm.s, runs);
+      const s = rc.project(tm.o[0], tm.o[1]);
+      if (s) starts.push([s as Pt, tm.s]);
+    }
+    const halo = rc.theme.dark ? 'rgba(10,16,28,0.55)' : 'rgba(255,255,255,0.75)';
+    ctx.save();
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    for (const [side, runs] of bySide) {
+      const col = this.sideColor(side);
+      for (const [w, style] of [[2.8, halo], [1.25, darker(col, 0.8)]] as const) {
+        ctx.beginPath();
+        for (const r of runs) { ctx.moveTo(r[0][0], r[0][1]); for (const p of r.slice(1)) ctx.lineTo(p[0], p[1]); }
+        ctx.strokeStyle = style; ctx.lineWidth = w; ctx.stroke();
+      }
+    }
+    // Where each arc starts: a small dot in the team's colour.
+    ctx.globalAlpha *= Math.min(1, q * 3);
+    for (const [p, side] of starts) {
+      ctx.beginPath(); ctx.arc(p[0], p[1], 2.4, 0, Math.PI * 2);
+      ctx.fillStyle = darker(this.sideColor(side), 0.8); ctx.fill();
+      ctx.lineWidth = 1; ctx.strokeStyle = halo; ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  /** A country of today by its code: its name in the reader's language and its flag (an emoji). */
+  private country(iso: string): { name: string; flag: string; a2?: string } {
+    const m = this.app.data.meta[iso] as { a2?: string } | undefined;
+    return { name: this.app.data.name(iso, lang()) || iso, flag: flagEmoji(m?.a2) || '🏳️', a2: m?.a2 };
+  }
+
+  /** A team's name: its own (the Soviet Union, England...) or its country's. */
+  private teamName(tm: Team): string {
+    if (tm.n) return tx(tm.n);
+    const iso = tm.u.find((u) => !u.startsWith('#'));
+    return iso ? this.country(iso).name : tm.c;
+  }
+
+  /** A team's flag as a small picture (its country's), or a neutral one for teams of the past. */
+  private teamFlag(tm: Team, g: Games): HTMLElement {
+    const iso = !tm.n && tm.u.length === 1 && !tm.u[0].startsWith('#') ? tm.u[0] : null;
+    const a2 = iso ? this.country(iso).a2 : undefined;
+    if (!a2) return h('span', { class: 'mt-flag mt-flag-none' }, g.kind === 'wc' || g.kind === 'wwc' ? '⚽' : '🏳️');
+    return h('img', { class: 'mt-flag', src: dataUrl(`../flags/${a2.toLowerCase()}.svg`), alt: '', width: 21, height: 15, loading: 'lazy',
+      onerror: (e: Event) => { (e.target as HTMLElement).replaceWith(h('span', { class: 'mt-flag mt-flag-none' }, flagEmoji(a2))); } });
+  }
+
+  /** "Champions", "Runners-up", "Third place", "Fourth place", then "5th place" ("5.º lugar")... */
+  private placeName(r: number) { return r >= 1 && r <= 4 ? t(`gamesPlace${r}`) : t('gamesRankOf', { r: ordinal(r) }); }
+
+  /** A medal table (its first `max` rows), or a World Cup's last four. */
+  private standings(g: Games, max = 10): HTMLElement | null {
+    const wc = g.kind === 'wc' || g.kind === 'wwc';
+    const ranked = g.teams.filter((tm) => tm.r != null && (wc || tm.m)).sort((a, b) => a.r! - b.r!);
+    if (!ranked.length) return null;
+    const head = wc ? [h('th', null, '#'), h('th', null, t('gamesTeam')), h('th', null, '')]
+      : [h('th', null, '#'), h('th', null, t('gamesNation')), h('th', null, '🥇'), h('th', null, '🥈'), h('th', null, '🥉'), h('th', null, t('gamesTotal'))];
+    const rows = ranked.slice(0, max).map((tm) => h('tr', { class: tm.s === 'g_host' ? 'mt-host' : '' },
+      h('td', { class: 'mt-rank' }, String(tm.r)),
+      h('td', { class: 'mt-name' }, this.teamFlag(tm, g), this.teamName(tm)),
+      ...(wc ? [h('td', { class: 'mt-place' }, this.placeName(tm.r!))]
+        : [...tm.m!.map((v) => h('td', { class: 'mt-n' }, String(v))), h('td', { class: 'mt-n mt-total' }, String(tm.m![0] + tm.m![1] + tm.m![2]))])));
+    const table = h('table', { class: 'medal-table' }, h('thead', null, h('tr', null, ...head)), h('tbody', null, ...rows));
+    const more = ranked.length - max;
+    return h('div', { class: 'mt-wrap' }, table, more > 0 ? h('p', { class: 'muted small mt-more' }, t('gamesMoreRows', { n: more })) : null);
+  }
+
+  /** The team on the map under a tap, and the country of today tapped (null on a drawn area). */
+  private teamAt(g: Games, lon: number, lat: number): { team: Team | null; iso: string | null } | null {
+    for (const tm of g.teams) for (const u of tm.u) {
+      if (!u.startsWith('#')) continue;
+      const a = this.areas.get(Number(u.slice(1)));
+      if (a && geoContains(a.feature as never, [lon, lat])) return { team: tm, iso: null };
+    }
+    const iso = this.app.renderer.countryAt(lon, lat);
+    if (!iso) return null;
+    return { team: g.teams.find((tm) => tm.u.includes(iso)) ?? null, iso };
+  }
+
+  /** A country's card at a Games: how its team took part, its medals or place, and why it stayed away. */
+  private teamCard(g: Games, tm: Team | null, iso: string | null) {
+    const here = iso ? this.country(iso) : null;
+    const name = tm ? this.teamName(tm) : here!.name;
+    const rows: { label: string; value: string; icon: string }[] = [];
+    const notes: string[] = [];
+    const wc = g.kind === 'wc' || g.kind === 'wwc';
+    if (!tm) rows.push({ label: tx(g.name), value: t('gamesNoPart'), icon: '—' });
+    else {
+      const side = this.c?.sides.find((s) => s.id === tm.s);
+      if (side) rows.push({ label: tx(g.name), value: tx(side.name), icon: tm.s === 'g_host' ? '🏟️' : tm.s === 'g_boycott' ? '✊' : tm.s === 'g_banned' ? '⛔' : '🏁' });
+      if (tm.m) rows.push({ label: t('gamesMedals'), value: `🥇 ${tm.m[0]} · 🥈 ${tm.m[1]} · 🥉 ${tm.m[2]}`, icon: '🏅' });
+      if (tm.r != null && tm.m) rows.push({ label: t('gamesRank'), value: ordinal(tm.r), icon: '📊' });
+      if (tm.r != null && wc) rows.push({ label: t('gamesFinish'), value: this.placeName(tm.r), icon: '🏆' });
+      if (tm.a) rows.push({ label: t('gamesAthletes'), value: fmtNumber(tm.a), icon: '👟' });
+      // Kazakhstan in 1980: part of the Soviet Union's team.
+      if (here && (tm.n || tm.u.length > 1) && here.name !== name) rows.push({ label: t('gamesPartOf', { country: here.name }), value: name, icon: '🧩' });
+      if (tm.why) notes.push(tx(tm.why));
+    }
+    const icon = tm && !tm.n && tm.u.length === 1 && iso ? here!.flag : wc ? '⚽' : '🏅';
+    this.shell.card.showCustom(icon, name, tx(g.name), rows, [], notes);
+  }
+
+  /** Details of a Games step: the medal table (or the last four), who took part and who stayed away. */
+  private gamesDetails(g: Games): HTMLElement[] {
+    const out: HTMLElement[] = [];
+    const wc = g.kind === 'wc' || g.kind === 'wwc';
+    const table = this.standings(g, 1000);
+    if (table) out.push(h('h3', { class: 'sec-title' }, wc ? `🏆 ${t('gamesStandings')}` : `🏅 ${t('gamesMedalTable')}`), table);
+    const took = g.teams.filter((tm) => !['g_boycott', 'g_banned'].includes(tm.s));
+    // Every team that took part (a World Cup's ranking, when it has every team, already lists them).
+    if (!wc || took.some((tm) => tm.r == null)) {
+      const names = took.map((tm) => this.teamName(tm)).sort((a, b) => a.localeCompare(b, lang()));
+      out.push(h('h3', { class: 'sec-title' }, `🌍 ${t(wc ? 'gamesTeamsN' : 'gamesNationsN', { n: g.nations ?? took.length })}`), h('p', { class: 'games-names' }, names.join(' · ')));
+    } else out.push(h('p', { class: 'muted small' }, t('gamesTeamsN', { n: g.nations ?? took.length })));
+    const away = g.teams.filter((tm) => tm.s === 'g_boycott' || tm.s === 'g_banned');
+    if (away.length) {
+      out.push(h('h3', { class: 'sec-title' }, `✊ ${t('gamesAway')}`));
+      out.push(h('ul', { class: 'war-events' }, away.map((tm) => h('li', null, h('b', null, this.teamName(tm)), tm.why ? ` — ${tx(tm.why)}` : ''))));
+    }
+    out.push(h('p', { class: 'muted small story-map-note' }, t('gamesMapNote')));
+    return out;
+  }
 
   private drawRoute(rc: RenderCtx, mv: Move, q: number, alpha: number, ma: number | null) {
     if (q <= 0 || alpha <= 0.01) return;
@@ -650,6 +884,7 @@ export class StoryMode {
     // Battles of earlier steps stay as small dots: the war's history.
     for (let k = 0; k < this.step; k++) for (const b of c.steps[k].battles ?? []) this.drawBattle(rc, b, 1, 0, true);
     if (old && fadeOut > 0) for (const mv of old.moves ?? []) this.drawRoute(rc, mv, 1, fadeOut * 0.7, ma);
+    if (st.games) this.drawArcs(rc, st.games, ease((el - MOVE_FROM) / ARC_MS));
     (st.moves ?? []).forEach((mv, k) => this.drawRoute(rc, mv, ease((el - MOVE_FROM - k * 300) / MOVE_MS), 1, ma));
     (st.events ?? []).forEach((ev, k) => {
       if (!ev.at) return;
@@ -886,6 +1121,11 @@ export class StoryMode {
       }
       if (best) { this.battleCard(best, st); return true; }
     }
+    // A Games step: the country tapped, and how its team took part.
+    if (st.games) {
+      const hit = this.teamAt(st.games, lon, lat);
+      if (hit) { this.teamCard(st.games, hit.team, hit.iso); return true; }
+    }
     for (const side of [...c.sides].reverse()) {
       const a = this.areas.get(st.control[side.id] ?? -1);
       if (a && geoContains(a.feature as never, [lon, lat])) {
@@ -925,7 +1165,10 @@ export class StoryMode {
     if (it.details) notes.push(tx(it.details));
     const links = it.wiki ? [{ label: t('wikipedia'), href: wikiUrl(it.wiki) }] : [];
     const sub = [cat ? `${cat.icon} ${tx(cat.name)}` : '', c ? tx(c.name) : ''].filter(Boolean).join(' · ');
-    this.shell.card.showCustom(it.icon, tx(it.name), sub, rows, links, notes, this.wikiThumb(it));
+    // A Games' host city: its medal table (or a World Cup's last four) under the facts.
+    const g = it.type === 'games' ? c?.steps.find((st) => st.games && `games-${st.games.id}` === it.id)?.games : undefined;
+    const table = g ? this.standings(g, g.kind === 'wc' || g.kind === 'wwc' ? 4 : 10) : null;
+    this.shell.card.showCustom(it.icon, tx(it.name), sub, rows, links, notes, this.wikiThumb(it), table);
   }
 
   private wikiThumb(it: Omit<Item, 'first'>) { return itemThumb(it); }
@@ -1121,7 +1364,8 @@ export class StoryMode {
     clear(ui.meta);
     const age = this.ageChip(st);
     if (age) ui.meta.append(age);
-    const shown = c.sides.filter((s) => st.control[s.id] != null || (st.moves ?? []).some((m) => m.side === s.id));
+    const teams = new Set(st.games?.teams.map((tm) => tm.s));
+    const shown = c.sides.filter((s) => st.control[s.id] != null || teams.has(s.id) || (st.moves ?? []).some((m) => m.side === s.id));
     for (const s of shown) ui.meta.append(h('span', { class: 'wb-side' }, h('i', { style: { background: s.color } }), tx(s.name)));
     if (c.items && st.show?.length) {
       // The kinds of things this step shows (people, works, dishes...), most common first.
@@ -1229,6 +1473,7 @@ export class StoryMode {
           notes.map((n) => h('p', { class: 'card-note' }, n))));
       }
     }
+    if (st.games) body.append(...this.gamesDetails(st.games));
     if (c.items && st.show?.length) {
       body.append(h('h3', { class: 'sec-title' }, `📍 ${t('storyOnMap')}`));
       for (const k of st.show) {
@@ -1276,6 +1521,13 @@ export class StoryMode {
 }
 
 const yearOf = (d: string) => /^-?\d+/.exec(d)?.[0] ?? d;
+
+/** "1st", "2nd", "23rd" ("1.º" in Spanish). */
+function ordinal(n: number): string {
+  if (lang() === 'es') return `${n}.º`;
+  const teen = n % 100 >= 11 && n % 100 <= 13;
+  return `${n}${teen ? 'th' : (['th', 'st', 'nd', 'rd'][n % 10] ?? 'th')}`;
+}
 
 /** An item's picture: its own Commons file if it has one, else its article's. */
 export function itemThumb(it: { wiki?: Text; img?: string }): Promise<string | null> {

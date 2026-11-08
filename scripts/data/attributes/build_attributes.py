@@ -65,6 +65,7 @@ S = {
     'gem': ('countries Ruby gem data (github.com/countries/countries)', 'MIT'),
     'samayo': ('samayo/country-json (github.com/samayo/country-json)', 'MIT'),
     'olympedia': ('Olympedia results via github.com/KeithGalli/Olympics-Dataset', 'MIT (repository); facts from olympedia.org'),
+    'wiki_olympics': ('Wikipedia, "All-time Olympic Games medal table" (via scripts/data/games/_data/medals-alltime.json)', 'CC BY-SA 4.0'),
     'compiled': ('compiled', 'CC0-1.0 (compiled facts)'),
 }
 
@@ -1260,8 +1261,25 @@ field('avg_temperature', 'Average yearly temperature', 'Temperatura media anual'
       note='Country-average climatological mean; the repository does not document the original source or period.')
 
 # ------------------------------------------------------------------ Olympics
+# Every country's medals through Milano Cortina 2026, from Wikipedia's all-time table (read by
+# scripts/data/games/build-games-data.mjs); without it, the Olympedia results up to 2022.
+alltime_path = os.path.join(HERE, '..', 'games', '_data', 'medals-alltime.json')
 ol_path = P('repos', 'KeithGalli_Olympics-Dataset', 'clean-data', 'results.csv')
-if os.path.exists(ol_path):
+if os.path.exists(alltime_path):
+    with open(alltime_path, encoding='utf-8') as fh:
+        alltime = json.load(fh)
+    for iso, (g, s_, b) in alltime['iso'].items():
+        put(iso, 'olympic_medals', g + s_ + b)
+        put(iso, 'olympic_golds', g)
+    note = ('Summer and Winter Games 1896–2026 (through Milano Cortina 2026), from Wikipedia\'s all-time Olympic medal table: '
+            'art competitions and the 1906 Intercalated Games are not counted, stripped medals are; medals of teams of the past '
+            '(Soviet Union, East and West Germany, Yugoslavia, Czechoslovakia, Unified Team…) and of neutral teams (ROC, OAR, AIN…) '
+            'are not given to today\'s countries.')
+    field('olympic_medals', 'Olympic medals (all-time)', 'Medallas olímpicas (histórico)', 'fun', 'number', 'wiki_olympics', unit='medals', year=2026,
+          scale='log', higherIs='good', note=note)
+    field('olympic_golds', 'Olympic gold medals (all-time)', 'Medallas de oro olímpicas (histórico)', 'fun', 'number', 'wiki_olympics', unit='gold medals', year=2026,
+          scale='log', higherIs='good', note=note)
+elif os.path.exists(ol_path):
     noc_to_iso = {}
     for iso, g in gem3.items():
         if g.get('ioc'):

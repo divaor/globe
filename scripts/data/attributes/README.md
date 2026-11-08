@@ -27,6 +27,9 @@ python3 -I scripts/data/attributes/validate_attributes.py       # coverage table
 * Time zones come from the system IANA tz database through `zoneinfo` (2026e when built); a
   newer tzdata may change `utc_offset` / `daylight_saving` where rules changed.
 * Without `derived/wdi_country.csv` the build still runs and just skips `income_group`.
+* Olympic medals come from `scripts/data/games/_data/medals-alltime.json` (Wikipedia's all-time Olympic
+  medal table, through Milano Cortina 2026, written by `scripts/data/games/build-games-data.mjs`); without it,
+  from the Olympedia results (to 2022).
 * The output is deterministic: two runs on the same downloads give byte-identical files.
 * The field table in `SOURCES.md` can be regenerated with
   `python3 -I scripts/data/attributes/validate_attributes.py --markdown`.
