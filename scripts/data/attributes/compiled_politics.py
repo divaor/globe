@@ -110,8 +110,9 @@ MONARCHIES = set(('ATG AUS BHS BLZ CAN GRD JAM NZL PNG KNA LCA VCT SLB TUV GBR '
 NUCLEAR_WEAPONS = {'USA': 'declared', 'RUS': 'declared', 'GBR': 'declared', 'FRA': 'declared', 'CHN': 'declared',
                    'IND': 'declared', 'PAK': 'declared', 'PRK': 'declared', 'ISR': 'undeclared'}
 
-# FIFA World Cup titles (men's tournaments 1930-2022; women's 1991-2023).
-WORLD_CUP_MEN = {'BRA': 5, 'DEU': 4, 'ITA': 4, 'ARG': 3, 'FRA': 2, 'URY': 2, 'GBR': 1, 'ESP': 1}
+# FIFA World Cup titles (men's tournaments 1930-2026; women's 1991-2023). Spain won the 2026 final 1-0
+# after extra time against Argentina (19 July 2026).
+WORLD_CUP_MEN = {'BRA': 5, 'DEU': 4, 'ITA': 4, 'ARG': 3, 'FRA': 2, 'URY': 2, 'ESP': 2, 'GBR': 1}
 WORLD_CUP_WOMEN = {'USA': 4, 'DEU': 2, 'NOR': 1, 'JPN': 1, 'ESP': 1}
 
 # ---------------------------------------------------------------- government

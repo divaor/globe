@@ -1090,8 +1090,8 @@ for iso, n in CP.WORLD_CUP_MEN.items():
     put(iso, 'world_cup_titles', n)
 for iso, n in CP.WORLD_CUP_WOMEN.items():
     put(iso, 'womens_world_cup_titles', n)
-field('world_cup_titles', "FIFA World Cup titles (men's)", 'Mundiales de fútbol ganados (masculino)', 'fun', 'number', 'compiled', year=2022, unit='titles',
-      scale='linear', higherIs='good', note="Tournaments 1930–2022 (the 2026 tournament is not included). Germany includes West Germany; GBR = England (1966).")
+field('world_cup_titles', "FIFA World Cup titles (men's)", 'Mundiales de fútbol ganados (masculino)', 'fun', 'number', 'compiled', year=2026, unit='titles',
+      scale='linear', higherIs='good', note="Tournaments 1930–2026 (Spain won in 2010 and 2026). Germany includes West Germany; GBR = England (1966).")
 field('womens_world_cup_titles', "FIFA Women's World Cup titles", 'Mundiales de fútbol femenino ganados', 'fun', 'number', 'compiled', year=2023, unit='titles',
       scale='linear', higherIs='good', note='Tournaments 1991–2023. Germany includes West Germany.')
 
