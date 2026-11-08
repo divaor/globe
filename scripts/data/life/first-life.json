@@ -1,0 +1,2157 @@
+{
+  "id": "first-life",
+  "name": {
+    "en": "The first life",
+    "es": "La primera vida"
+  },
+  "icon": "🦠",
+  "era": "precambrian",
+  "region": {
+    "en": "Australia, Greenland, Canada, Africa, China and Russia",
+    "es": "Australia, Groenlandia, Canadá, África, China y Rusia"
+  },
+  "start": "-4400000000",
+  "end": "-538800000",
+  "summary": {
+    "en": "For most of Earth's history, life was too small to see. Travel from the oldest crystals and the first stromatolites to the oxygen that changed the air, the first cells with a nucleus and the strange Ediacaran creatures on the eve of the Cambrian.",
+    "es": "Durante casi toda la historia de la Tierra, la vida fue demasiado pequeña para verla a simple vista. Viaja desde los cristales más antiguos y los primeros estromatolitos hasta el oxígeno que cambió el aire, las primeras células con núcleo y las extrañas criaturas del Ediacárico, en vísperas del Cámbrico."
+  },
+  "camera": {
+    "lon": 117.15,
+    "lat": -26.1,
+    "zoom": 3.0
+  },
+  "steps": [
+    {
+      "date": "-4400000000",
+      "title": {
+        "en": "The oldest crystals",
+        "es": "Los cristales más antiguos"
+      },
+      "camera": {
+        "lon": 117.15,
+        "lat": -26.1,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "The oldest known pieces of Earth are tiny zircon crystals from the Jack Hills of Western Australia, about 4.4 billion years old. They hint that the young planet already had water, and maybe continents.",
+        "es": "Los trozos de la Tierra más antiguos que se conocen son diminutos cristales de circón de las colinas Jack, en Australia Occidental, de unos 4400 millones de años. Sugieren que el joven planeta ya tenía agua, y quizá continentes."
+      },
+      "details": {
+        "en": "Earth formed about 4.54 billion years ago, and a giant collision soon after probably made the Moon. Hardly any rock survives from this first eon, the Hadean. Zircons last because they are tough: they outlive the rocks they grew in and end up as grains of sand. Today the Jack Hills lie in the outback, about 800 km north of Perth. This map, and the maps of the steps older than a billion years, show today's land in grey, because geologists cannot yet rebuild the moving continents so far back.",
+        "es": "La Tierra se formó hace unos 4540 millones de años, y poco después un choque gigantesco probablemente formó la Luna. Casi no queda roca de este primer eón, el Hádico. Los circones perduran porque son muy duros: sobreviven a las rocas en las que crecieron y acaban como granos de arena. Hoy las colinas Jack están en el interior despoblado de Australia, a unos 800 km al norte de Perth. Este mapa, y los de los pasos de más de mil millones de años, muestran la tierra actual en gris, porque los geólogos aún no pueden reconstruir los continentes en movimiento tan atrás."
+      },
+      "events": [
+        {
+          "icon": "🌍",
+          "text": {
+            "en": "Earth formed about 4.54 billion years ago; soon after, a giant impact probably made the Moon",
+            "es": "La Tierra se formó hace unos 4540 millones de años; poco después, un choque gigantesco probablemente formó la Luna"
+          },
+          "date": "-4540000000"
+        }
+      ],
+      "places": [
+        {
+          "id": "jack-hills-zircons",
+          "name": {
+            "en": "Jack Hills zircons",
+            "es": "Circones de las colinas Jack"
+          },
+          "at": [
+            117.15,
+            -26.1167
+          ],
+          "cat": "site",
+          "icon": "💎",
+          "type": "site",
+          "date": "-4404000000",
+          "place": {
+            "en": "Erawondoo Hill, Jack Hills, Western Australia",
+            "es": "Cerro Erawondoo, colinas Jack, Australia Occidental"
+          },
+          "text": {
+            "en": "Grains of zircon, a very hard mineral, the oldest known bits of Earth. One is 4.404 billion years old. Their chemistry suggests that the young Earth already had liquid water, and perhaps continents.",
+            "es": "Granos de circón, un mineral muy duro: los trozos de la Tierra más antiguos que se conocen. Uno tiene 4404 millones de años. Su química sugiere que la joven Tierra ya tenía agua líquida, y quizá continentes."
+          },
+          "details": {
+            "en": "Zircon crystals grow in cooling magma and can survive being worn down, buried and heated again. The Jack Hills zircons were washed out of older rocks and ended up in a conglomerate, a rock made of old gravel, laid down about 3 billion years ago. The oldest grain, from Erawondoo Hill, was dated at 4,404 million years, give or take 8 million. Earlier ideas pictured the young Earth as a ball of molten rock; the oxygen in these crystals points instead to a cooler world with water at its surface. Part of the Jack Hills is on Australia's National Heritage List.",
+            "es": "Los cristales de circón crecen en el magma que se enfría y pueden sobrevivir al desgaste, al enterramiento y a nuevos calentamientos. Los circones de las colinas Jack salieron de rocas más antiguas y acabaron en un conglomerado, una roca hecha de grava antigua, que se depositó hace unos 3000 millones de años. El grano más antiguo, del cerro Erawondoo, se fechó en 4404 millones de años, con un margen de 8 millones. Antes se imaginaba la joven Tierra como una bola de roca fundida; el oxígeno de estos cristales apunta en cambio a un mundo más fresco, con agua en su superficie. Parte de las colinas Jack figura en la Lista del Patrimonio Nacional de Australia."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Age of the oldest grain",
+                "es": "Edad del grano más antiguo"
+              },
+              "value": {
+                "en": "4,404 ± 8 million years",
+                "es": "4404 ± 8 millones de años"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Jack Hills",
+            "es": "Zircón"
+          }
+        },
+        {
+          "id": "jack-hills-graphite",
+          "name": {
+            "en": "A speck of carbon in a zircon",
+            "es": "Una mota de carbono en un circón"
+          },
+          "at": [
+            117.18,
+            -26.1
+          ],
+          "cat": "microbe",
+          "icon": "✏️",
+          "type": "fossil",
+          "date": "-4100000000",
+          "place": {
+            "en": "Jack Hills, Western Australia",
+            "es": "Colinas Jack, Australia Occidental"
+          },
+          "text": {
+            "en": "Specks of graphite, the stuff of pencil lead, sealed inside a 4.1-billion-year-old zircon. Their carbon is \"light\", like carbon used by living things. It may be the oldest trace of life, but this is much debated.",
+            "es": "Motas de grafito, el material de la mina de los lápices, encerradas en un circón de 4100 millones de años. Su carbono es \"ligero\", como el que usan los seres vivos. Quizá sea el rastro de vida más antiguo, pero se discute mucho."
+          },
+          "details": {
+            "en": "Carbon comes in a lighter and a heavier form (isotope), and living things take up more of the light one, so the carbon they leave behind is light. In 2015 scientists reported light carbon in graphite trapped inside a Jack Hills zircon. If life made it, life began within a few hundred million years of Earth's birth. But processes with nothing to do with life can also make light carbon, so most scientists see this as a possible sign of life, not a proven one.",
+            "es": "El carbono existe en una forma más ligera y otra más pesada (isótopos), y los seres vivos toman más de la ligera, así que el carbono que dejan es ligero. En 2015 unos científicos describieron carbono ligero en grafito atrapado dentro de un circón de las colinas Jack. Si lo produjo la vida, esta empezó pocos cientos de millones de años después del nacimiento de la Tierra. Pero procesos que nada tienen que ver con la vida también pueden producir carbono ligero, así que casi todos los científicos lo ven como una posible señal de vida, no como una prueba."
+          },
+          "wiki": {
+            "en": "Earliest known life forms",
+            "es": "Primeras formas de vida conocidas"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-3700000000",
+      "title": {
+        "en": "Isua and other riddles",
+        "es": "Isua y otros enigmas"
+      },
+      "camera": {
+        "lon": -82.0,
+        "lat": 63.0,
+        "zoom": 2.0
+      },
+      "text": {
+        "en": "Some of the oldest rocks, in Greenland and Canada, are 3.7 to over 4 billion years old. Isua, in Greenland, may hold traces of life 3.7 billion years old, but every claim this old is fiercely debated.",
+        "es": "Algunas de las rocas más antiguas, en Groenlandia y Canadá, tienen de 3700 a más de 4000 millones de años. Isua, en Groenlandia, quizá guarde rastros de vida de 3700 millones de años, pero cada hallazgo tan antiguo se discute con pasión."
+      },
+      "details": {
+        "en": "Rocks this old have been squeezed and heated many times, which can both fake and erase the signs of life. Scientists look for three kinds of clue: carbon that is light, like the carbon used by living things; shapes like microbes or the mounds they build; and chemistry that only life makes. At Isua, graphite with light carbon is accepted by many as a trace of life, while the claims from Akilia and Nuvvuagittuq are more disputed. These rocks are found today in southwest Greenland and in Quebec and the Northwest Territories of Canada.",
+        "es": "Las rocas tan antiguas se han comprimido y calentado muchas veces, lo que puede tanto imitar como borrar las señales de vida. Los científicos buscan tres tipos de pista: carbono ligero, como el que usan los seres vivos; formas parecidas a microbios o a los montículos que construyen; y una química que solo produce la vida. En Isua, muchos aceptan como rastro de vida un grafito con carbono ligero, mientras que lo hallado en Akilia y Nuvvuagittuq se discute más. Estas rocas están hoy en el suroeste de Groenlandia y en Quebec y los Territorios del Noroeste de Canadá."
+      },
+      "places": [
+        {
+          "id": "acasta-gneiss",
+          "name": {
+            "en": "Acasta Gneiss",
+            "es": "Gneis de Acasta"
+          },
+          "at": [
+            -115.582,
+            65.1666
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-4030000000",
+          "place": {
+            "en": "Acasta River, Northwest Territories, Canada",
+            "es": "Río Acasta, Territorios del Noroeste, Canadá"
+          },
+          "text": {
+            "en": "Banded rock about 4.03 billion years old, the oldest known piece of continental crust. A gneiss is a rock squeezed and heated until its minerals line up in bands.",
+            "es": "Roca bandeada de unos 4030 millones de años, el trozo de corteza continental más antiguo que se conoce. Un gneis es una roca tan comprimida y calentada que sus minerales se ordenan en bandas."
+          },
+          "details": {
+            "en": "The Acasta Gneiss lies about 300 km north of Yellowknife, near the Acasta River, after which the geologist J. E. King named it in 1985. Zircons from its oldest layer, the Idiwhaa gneiss, crystallized about 4.02 billion years ago. It holds no fossils: it formed from melted rock deep underground. In 2003 the Smithsonian Institution set a four-ton boulder of it outside the National Museum of the American Indian in Washington, D.C.",
+            "es": "El gneis de Acasta está a unos 300 km al norte de Yellowknife, cerca del río Acasta, por el que el geólogo J. E. King le dio nombre en 1985. Los circones de su capa más antigua, el gneis Idiwhaa, cristalizaron hace unos 4020 millones de años. No tiene fósiles: se formó a partir de roca fundida en lo profundo de la corteza. En 2003 la Institución Smithsonian colocó un bloque de cuatro toneladas frente al Museo Nacional del Indígena Americano, en Washington D. C."
+          },
+          "wiki": {
+            "en": "Acasta Gneiss",
+            "es": "Gneis Acasta"
+          }
+        },
+        {
+          "id": "nuvvuagittuq",
+          "name": {
+            "en": "Nuvvuagittuq Greenstone Belt",
+            "es": "Cinturón de rocas verdes de Nuvvuagittuq"
+          },
+          "at": [
+            -77.73,
+            58.29
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-3770000000",
+          "place": {
+            "en": "Near Inukjuak, Nunavik, Quebec, Canada",
+            "es": "Cerca de Inukjuak, Nunavik, Quebec, Canadá"
+          },
+          "text": {
+            "en": "Rocks on Hudson Bay that may be 3.75 to over 4.1 billion years old. In 2017 tiny iron tubes in them were reported as microbes from sea-floor hot springs; chemistry alone can make similar tubes.",
+            "es": "Rocas junto a la bahía de Hudson que podrían tener de 3750 a más de 4100 millones de años. En 2017 se describieron en ellas tubitos de hierro como restos de microbios de fuentes termales submarinas; la química sola puede formarlos."
+          },
+          "details": {
+            "en": "Its age is still argued: estimates run from about 3.75 to 4.3 billion years, and in 2025 a rock that cuts through the belt was dated to 4.16 billion years. The tubes and threads reported in 2017 look like those made today by iron-eating bacteria at hydrothermal vents, hot springs on the sea floor. In 2019 researchers showed that \"chemical gardens\", mineral growths with no life at all, can make the same shapes. The land is home to the Inuit of Inukjuak, who in 2025 withdrew permission to take samples because so much rock had been removed.",
+            "es": "Su edad todavía se discute: las estimaciones van de unos 3750 a 4300 millones de años, y en 2025 una roca que atraviesa el cinturón se fechó en 4160 millones de años. Los tubos y filamentos descritos en 2017 se parecen a los que hoy forman bacterias que comen hierro en las fuentes hidrotermales, manantiales calientes del fondo del mar. En 2019 unos investigadores mostraron que los \"jardines químicos\", crecimientos minerales sin vida alguna, pueden formar las mismas figuras. Es tierra de los inuit de Inukjuak, que en 2025 retiraron los permisos para tomar muestras porque se había extraído demasiada roca."
+          },
+          "wiki": {
+            "en": "Nuvvuagittuq Greenstone Belt",
+            "es": "Cinturón de rocas verdes de Nuvvuagittuq"
+          }
+        },
+        {
+          "id": "isua-greenstone",
+          "name": {
+            "en": "Isua Greenstone Belt",
+            "es": "Cinturón de rocas verdes de Isua"
+          },
+          "at": [
+            -50.04,
+            65.09
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-3700000000",
+          "place": {
+            "en": "Southwest Greenland, northeast of Nuuk",
+            "es": "Suroeste de Groenlandia, al noreste de Nuuk"
+          },
+          "text": {
+            "en": "A belt of volcanic and sea-floor rocks 3.7 to 3.8 billion years old, the largest this old. Its graphite may be a trace of life; small domes reported in 2016 as stromatolites are disputed.",
+            "es": "Una franja de rocas volcánicas y del fondo marino de 3700 a 3800 millones de años, la mayor de esa edad. Su grafito quizá sea un rastro de vida; unas pequeñas cúpulas descritas en 2016 como estromatolitos están en discusión."
+          },
+          "details": {
+            "en": "Lavas shaped like pillows show that they erupted under water, so Earth had seas 3.8 billion years ago. Isua's graphite has light carbon, and after further study many scientists accept it as made by life. In 2016 an Australian team described domes 1 to 4 cm high, uncovered by melting snow, as stromatolites: layered mounds built by mats of microbes. If so, they are 220 million years older than those of the Dresser Formation in Australia. In 2018 Abigail Allwood and colleagues argued that the domes formed when the rock was squeezed and stretched. The question is still open.",
+            "es": "Unas lavas en forma de almohada muestran que hicieron erupción bajo el agua, así que la Tierra tenía mares hace 3800 millones de años. El grafito de Isua tiene carbono ligero y, tras nuevos estudios, muchos científicos aceptan que lo produjo la vida. En 2016 un equipo australiano describió como estromatolitos (montículos en capas que construyen alfombras de microbios) unas cúpulas de 1 a 4 cm que la nieve derretida había dejado al descubierto. De serlo, serían 220 millones de años más antiguas que las de la Formación Dresser, en Australia. En 2018 Abigail Allwood y sus colegas sostuvieron que las cúpulas se formaron al comprimirse y estirarse la roca. La cuestión sigue abierta."
+          },
+          "wiki": {
+            "en": "Isua Greenstone Belt",
+            "es": "Cinturón de rocas verdes de Isua"
+          }
+        },
+        {
+          "id": "akilia",
+          "name": {
+            "en": "Akilia island",
+            "es": "Isla Akilia"
+          },
+          "at": [
+            -51.6747,
+            63.9397
+          ],
+          "cat": "site",
+          "icon": "🏝️",
+          "type": "site",
+          "date": "-3700000000",
+          "place": {
+            "en": "South of Nuuk, southwest Greenland",
+            "es": "Al sur de Nuuk, suroeste de Groenlandia"
+          },
+          "text": {
+            "en": "A small island with rocks at least 3.7 billion years old. In 1996 scientists reported light carbon in them as a sign of life; later studies showed that heat and hot fluids in the rock could also explain it.",
+            "es": "Una pequeña isla con rocas de al menos 3700 millones de años. En 1996 unos científicos vieron en ellas carbono ligero, señal de vida; estudios posteriores mostraron que el calor y los fluidos calientes de la roca también podían explicarlo."
+          },
+          "details": {
+            "en": "The geologist Stephen Mojzsis and his colleagues studied graphite inside grains of the mineral apatite from Akilia and Isua, and in 1996 wrote that, unless some unknown process could make such light carbon, life had appeared at least 3.8 billion years ago. Akilia's graphite has since been studied again: heating, volcanic activity and hot-water reactions can all make carbon light, so it is no longer seen as strong evidence.",
+            "es": "El geólogo Stephen Mojzsis y sus colegas estudiaron grafito dentro de granos del mineral apatita de Akilia e Isua, y en 1996 escribieron que, salvo que algún proceso desconocido pudiera producir un carbono tan ligero, la vida había aparecido hace al menos 3800 millones de años. Desde entonces el grafito de Akilia se ha vuelto a estudiar: el calentamiento, el volcanismo y las reacciones con agua caliente pueden aligerar el carbono, así que ya no se considera una prueba sólida."
+          },
+          "wiki": {
+            "en": "Akilia",
+            "es": "Primeras formas de vida conocidas"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-3480000000",
+      "title": {
+        "en": "Stromatolites of the Pilbara",
+        "es": "Los estromatolitos de Pilbara"
+      },
+      "camera": {
+        "lon": 75.0,
+        "lat": -24.0,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "About 3.48 billion years ago, mats of microbes in a hot volcanic lagoon built layered mounds called stromatolites. Found in the Pilbara of Western Australia, they are the oldest widely accepted fossils.",
+        "es": "Hace unos 3480 millones de años, alfombras de microbios en una laguna volcánica caliente levantaron montículos en capas, los estromatolitos. Hallados en Pilbara, Australia Occidental, son los fósiles más antiguos que casi todos aceptan."
+      },
+      "details": {
+        "en": "A stromatolite grows when a sticky film of microbes traps grains of sediment and grows up through them toward the light, layer on layer. Those of the Dresser Formation, in the Pilbara, come with microbe-like threads and with carbon and sulfur sorted the way living things sort them. Most scientists accept them as made by life, though hot water alone might explain some features. Rocks of almost the same age in the Barberton mountains of South Africa hold more traces of microbes. These rocks are found today in Western Australia and South Africa, in two of the oldest pieces of continent.",
+        "es": "Un estromatolito crece cuando una película pegajosa de microbios atrapa granos de sedimento y crece a través de ellos hacia la luz, capa tras capa. Los de la Formación Dresser, en Pilbara, vienen acompañados de filamentos parecidos a microbios y de carbono y azufre separados como lo hacen los seres vivos. Casi todos los científicos aceptan que los hizo la vida, aunque el agua caliente sola podría explicar algunos rasgos. Rocas de casi la misma edad en las montañas de Barberton, en Sudáfrica, guardan más rastros de microbios. Estas rocas están hoy en Australia Occidental y Sudáfrica, en dos de los trozos de continente más antiguos."
+      },
+      "places": [
+        {
+          "id": "dresser-stromatolites",
+          "name": {
+            "en": "Dresser Formation stromatolites",
+            "es": "Estromatolitos de la Formación Dresser"
+          },
+          "at": [
+            119.4,
+            -21.15
+          ],
+          "cat": "microbe",
+          "type": "fossil",
+          "date": "-3480000000",
+          "place": {
+            "en": "North Pole Dome, Pilbara, Western Australia",
+            "es": "Domo de North Pole, Pilbara, Australia Occidental"
+          },
+          "text": {
+            "en": "Layered mounds built by mats of microbes about 3.48 billion years ago: the oldest direct fossils that most scientists accept. Some grew beside hot springs, perhaps on land.",
+            "es": "Montículos en capas que construyeron alfombras de microbios hace unos 3480 millones de años: los fósiles directos más antiguos que acepta la mayoría de los científicos. Algunos crecieron junto a fuentes termales, quizá en tierra firme."
+          },
+          "details": {
+            "en": "The Dresser Formation is a ring of hills in the North Pole Dome area of the Pilbara. It was laid down between about 3,483 and 3,479 million years ago in a shallow lagoon, perhaps in a flooded volcanic crater, where seawater mixed with hot fluids. Besides domes and cones of stromatolites, it holds wrinkly microbial mats, microbe-like threads, and carbon and sulfur sorted the way living things sort them. Some layers look like geyserite, the rock that forms around hot springs and geysers, so microbes may have lived on land too.",
+            "es": "La Formación Dresser es un anillo de colinas en la zona del domo de North Pole, en Pilbara. Se depositó hace entre 3483 y 3479 millones de años en una laguna poco profunda, quizá un cráter volcánico inundado, donde el agua de mar se mezclaba con fluidos calientes. Además de cúpulas y conos de estromatolitos, guarda alfombras microbianas arrugadas, filamentos parecidos a microbios, y carbono y azufre separados como lo hacen los seres vivos. Algunas capas parecen geiserita, la roca que se forma alrededor de las fuentes termales y los géiseres, así que quizá también había microbios en tierra firme."
+          },
+          "wiki": {
+            "en": "Dresser Formation",
+            "es": "Estromatolito"
+          },
+          "img": "Stromatolite (Dresser Formation, Paleoarchean, 3.48 Ga; Normay Mine, North Pole Dome, Pilbara Craton, Western Australia) 1 (32857204117).jpg"
+        },
+        {
+          "id": "apex-chert",
+          "name": {
+            "en": "Apex Chert",
+            "es": "Sílex de Apex"
+          },
+          "at": [
+            119.7,
+            -21.17
+          ],
+          "cat": "microbe",
+          "icon": "🔬",
+          "type": "fossil",
+          "date": "-3465000000",
+          "place": {
+            "en": "Near Marble Bar, Pilbara, Western Australia",
+            "es": "Cerca de Marble Bar, Pilbara, Australia Occidental"
+          },
+          "text": {
+            "en": "In 1993 tiny threads in this 3.465-billion-year-old rock were described as the oldest fossil microbes. Later studies argued that hot water and minerals made them. The debate changed how scientists test early life.",
+            "es": "En 1993 se describieron unos filamentos de esta roca de 3465 millones de años como los microbios fósiles más antiguos. Otros estudios sostuvieron que los formaron el agua caliente y los minerales. El debate cambió cómo se busca la vida antigua."
+          },
+          "details": {
+            "en": "J. William Schopf described eleven kinds of microfossils from the Apex Chert, a glassy rock made of silica, and for a decade they were textbook examples of the oldest life. In 2002 Martin Brasier and his colleagues mapped the site and found that the rock had formed in veins of hot water rather than in a quiet sea, and argued that the threads were mineral shapes. Since then, a fossil microbe must pass tests of shape, chemistry and setting before it is accepted.",
+            "es": "J. William Schopf describió once tipos de microfósiles del sílex de Apex, una roca vítrea hecha de sílice, y durante una década fueron el ejemplo de los libros de texto sobre la vida más antigua. En 2002 Martin Brasier y sus colegas cartografiaron el lugar, descubrieron que la roca se había formado en vetas de agua caliente y no en un mar tranquilo, y sostuvieron que los filamentos eran formas minerales. Desde entonces, un microbio fósil debe superar pruebas de forma, de química y de entorno para ser aceptado."
+          },
+          "wiki": {
+            "en": "Pilbara Craton",
+            "es": "Cratón de Pilbara"
+          }
+        },
+        {
+          "id": "barberton-greenstone",
+          "name": {
+            "en": "Barberton Greenstone Belt",
+            "es": "Cinturón de rocas verdes de Barberton"
+          },
+          "at": [
+            31.0139,
+            -25.9739
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-3420000000",
+          "place": {
+            "en": "Makhonjwa Mountains, Mpumalanga, South Africa",
+            "es": "Montañas Makhonjwa, Mpumalanga, Sudáfrica"
+          },
+          "text": {
+            "en": "Volcanic and sea-floor rocks 3.5 to 3.2 billion years old, with some of the oldest traces of life: thin stromatolites, and threads that may be microbes from 3.42-billion-year-old hot-water veins.",
+            "es": "Rocas volcánicas y del fondo marino de 3500 a 3200 millones de años, con algunos de los rastros de vida más antiguos: estromatolitos delgados y filamentos que podrían ser microbios de vetas de agua caliente de hace 3420 millones de años."
+          },
+          "details": {
+            "en": "The belt is named after the gold-mining town of Barberton, and its Makhonjwa Mountains are a UNESCO World Heritage Site. It is famous for komatiite, a very hot kind of lava named after the Komati River, which shows how hot Earth's interior was then. Flat stromatolites lie in layers from about 3.46 to 3.33 billion years old, and threads in old veins under the sea floor may be fossils of microbes that lived without sunlight, as some do in hot vents today.",
+            "es": "El cinturón lleva el nombre de Barberton, un pueblo minero de oro, y sus montañas Makhonjwa son Patrimonio de la Humanidad de la UNESCO. Es famoso por la komatiita, una lava muy caliente llamada así por el río Komati, que muestra lo caliente que estaba entonces el interior de la Tierra. Hay estromatolitos planos en capas de unos 3460 a 3330 millones de años, y unos filamentos en antiguas vetas bajo el fondo marino podrían ser fósiles de microbios que vivían sin luz solar, como algunos de las fuentes termales actuales."
+          },
+          "wiki": {
+            "en": "Barberton Greenstone Belt",
+            "es": "Cratón de Kaapvaal"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-2400000000",
+      "title": {
+        "en": "Oxygen fills the air",
+        "es": "El oxígeno llena el aire"
+      },
+      "camera": {
+        "lon": -84.0,
+        "lat": 47.0,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "Around 2.4 billion years ago, oxygen made by cyanobacteria began to build up in the air for the first time. Iron rusted out of the seas, and the world fell into one of its first great ice ages.",
+        "es": "Hace unos 2400 millones de años, el oxígeno que producían las cianobacterias empezó a acumularse en el aire por primera vez. El hierro se oxidó y se depositó en los mares, y el mundo cayó en una de sus primeras grandes glaciaciones."
+      },
+      "details": {
+        "en": "Cyanobacteria are microbes that, like plants, use sunlight to make food from water and carbon dioxide, giving off oxygen as waste. For hundreds of millions of years that oxygen was soaked up by iron dissolved in the sea, by volcanic gases and by methane. From about 2.46 to 2.43 billion years ago it began to stay in the air: the Great Oxidation Event. Oxygen was a poison to most microbes of the time, and many may have died out. It also destroyed methane, a strong greenhouse gas, and the planet cooled. The rocks of this step are found today around Lakes Huron and Superior, in Canada and the United States.",
+        "es": "Las cianobacterias son microbios que, como las plantas, usan la luz del sol para fabricar alimento con agua y dióxido de carbono, y sueltan oxígeno como desecho. Durante cientos de millones de años ese oxígeno lo absorbieron el hierro disuelto en el mar, los gases volcánicos y el metano. Desde hace unos 2460 a 2430 millones de años empezó a quedarse en el aire: la Gran Oxidación. El oxígeno era un veneno para casi todos los microbios de la época, y muchos quizá se extinguieron. También destruyó el metano, un potente gas de efecto invernadero, y el planeta se enfrió. Las rocas de este paso están hoy alrededor de los lagos Hurón y Superior, en Canadá y Estados Unidos."
+      },
+      "places": [
+        {
+          "id": "great-oxidation-event",
+          "name": {
+            "en": "Great Oxidation Event",
+            "es": "Gran Oxidación"
+          },
+          "at": [
+            -82.65,
+            46.3833
+          ],
+          "cat": "event",
+          "icon": "💨",
+          "type": "event",
+          "date": "-2460000000",
+          "until": "-2060000000",
+          "place": {
+            "en": "Worldwide; here the Huronian rocks of Ontario, Canada, laid down at the time",
+            "es": "En todo el mundo; aquí, las rocas hurónicas de Ontario, Canadá, depositadas en esa época"
+          },
+          "text": {
+            "en": "The first lasting rise of oxygen in the air, from about 2.46 to 2.06 billion years ago. Cyanobacteria caused it, and it changed the chemistry of the air, the seas and the rocks for good.",
+            "es": "La primera subida duradera del oxígeno en el aire, de hace unos 2460 a 2060 millones de años. La causaron las cianobacterias y cambió para siempre la química del aire, de los mares y de las rocas."
+          },
+          "details": {
+            "en": "Rocks older than about 2.4 billion years hold grains of pyrite and uraninite carried by rivers, minerals that oxygen quickly destroys; younger rocks include red beds, sandstones stained with rust. The American geologist Preston Cloud read this record in the 1970s. Oxygen did not rise smoothly: it may have soared around 2.3 billion years ago, then fallen back. Its exact start is debated, with estimates published between 2016 and 2022 spread over half a billion years.",
+            "es": "Las rocas de más de unos 2400 millones de años contienen granos de pirita y uraninita arrastrados por los ríos, minerales que el oxígeno destruye pronto; entre las más jóvenes hay capas rojas, areniscas teñidas de herrumbre. El geólogo estadounidense Preston Cloud interpretó este registro en la década de 1970. El oxígeno no subió de forma pareja: quizá se disparó hace unos 2300 millones de años y luego volvió a bajar. Su comienzo exacto se discute: las estimaciones publicadas entre 2016 y 2022 difieren en unos 500 millones de años."
+          },
+          "wiki": {
+            "en": "Great Oxidation Event",
+            "es": "Gran Oxidación"
+          }
+        },
+        {
+          "id": "huronian-glaciation",
+          "name": {
+            "en": "Huronian glaciation",
+            "es": "Glaciación huroniana"
+          },
+          "at": [
+            -80.7703,
+            47.6492
+          ],
+          "cat": "event",
+          "icon": "❄️",
+          "type": "event",
+          "date": "-2400000000",
+          "until": "-2100000000",
+          "place": {
+            "en": "Gowganda Formation, Ontario, Canada",
+            "es": "Formación Gowganda, Ontario, Canadá"
+          },
+          "text": {
+            "en": "Three ice ages between about 2.4 and 2.1 billion years ago, among the oldest known. As oxygen destroyed methane, a strong greenhouse gas, the planet cooled. Whether ice covered the whole Earth is debated.",
+            "es": "Tres glaciaciones de hace entre 2400 y 2100 millones de años, de las más antiguas que se conocen. Al destruir el oxígeno el metano, un potente gas de efecto invernadero, el planeta se enfrió. Se discute si el hielo cubrió toda la Tierra."
+          },
+          "details": {
+            "en": "In 1907 the Canadian geologist Arthur Coleman recognized a \"lower Huronian ice age\" in rocks near Lake Huron: diamictites, jumbles of boulders and mud dropped by glaciers. The Gowganda Formation, named after a lake in Ontario, holds the clearest of them. Rocks of similar age in South Africa, where it is called the Makganyene glaciation, India and Australia show ice too. Some scientists think it was the first \"snowball Earth\"; others point out that the glacial layers alternate with rocks from warm seas.",
+            "es": "En 1907 el geólogo canadiense Arthur Coleman reconoció una \"glaciación del Huroniano inferior\" en rocas cercanas al lago Hurón: diamictitas, mezclas de bloques y barro que soltaron los glaciares. La Formación Gowganda, llamada así por un lago de Ontario, guarda las más claras. Rocas de edad parecida en Sudáfrica, donde se la llama glaciación de Makganyene, la India y Australia también muestran hielo. Algunos científicos creen que fue la primera \"Tierra bola de nieve\"; otros señalan que las capas glaciares se alternan con rocas de mares cálidos."
+          },
+          "wiki": {
+            "en": "Huronian glaciation",
+            "es": "Glaciación huroniana"
+          }
+        },
+        {
+          "id": "marquette-banded-iron",
+          "name": {
+            "en": "Banded iron formations",
+            "es": "Formaciones de hierro bandeado"
+          },
+          "at": [
+            -87.6039,
+            46.5017
+          ],
+          "cat": "site",
+          "icon": "🧲",
+          "type": "site",
+          "date": "-2500000000",
+          "until": "-1850000000",
+          "place": {
+            "en": "Marquette Iron Range, Michigan, United States",
+            "es": "Distrito ferrífero de Marquette, Míchigan, Estados Unidos"
+          },
+          "text": {
+            "en": "Striped rocks of iron oxide and silica, laid down when iron dissolved in the sea met oxygen and settled out as rust. Most are about 2.5 billion years old; today they are mined for iron.",
+            "es": "Rocas a rayas de óxido de hierro y sílice, que se formaron cuando el hierro disuelto en el mar se encontró con el oxígeno y se depositó como herrumbre. La mayoría tiene unos 2500 millones de años; hoy se explotan por su hierro."
+          },
+          "details": {
+            "en": "The name \"banded iron formation\" was coined in the iron districts of Lake Superior. In 1844 a party of surveyors led by William A. Burt found the Marquette Range when their magnetic compasses went wild over the iron-rich ground; mining began in 1847. Banded iron formations are found around the world, and the thickest, in the Hamersley Range of Western Australia, were laid down between 2.47 and 2.45 billion years ago. They mostly stop forming after 1.85 billion years ago, when the deep ocean too began to hold oxygen.",
+            "es": "El nombre \"formación de hierro bandeado\" nació en los distritos ferríferos del lago Superior. En 1844 un grupo de agrimensores dirigido por William A. Burt descubrió el distrito de Marquette cuando sus brújulas magnéticas enloquecieron sobre el suelo rico en hierro; la minería empezó en 1847. Hay formaciones de hierro bandeado en todo el mundo, y las más gruesas, en la cordillera Hamersley de Australia Occidental, se depositaron hace entre 2470 y 2450 millones de años. Casi dejan de formarse hace 1850 millones de años, cuando también el océano profundo empezó a tener oxígeno."
+          },
+          "wiki": {
+            "en": "Banded iron formation",
+            "es": "Formación de hierro bandeado"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-2100000000",
+      "title": {
+        "en": "The Francevillian puzzle",
+        "es": "El enigma de Franceville"
+      },
+      "camera": {
+        "lon": 13.4,
+        "lat": -1.5,
+        "zoom": 5.0
+      },
+      "text": {
+        "en": "About 2.1 billion years ago, in a sea in what is now Gabon, something left flat, lobed shapes up to 17 cm across. Are they the first large living things, or just minerals? No one is sure.",
+        "es": "Hace unos 2100 millones de años, en un mar de lo que hoy es Gabón, algo dejó formas planas y lobuladas de hasta 17 cm. ¿Son los primeros seres vivos grandes o solo minerales? Nadie lo sabe con certeza."
+      },
+      "details": {
+        "en": "The black shales near Franceville have barely been heated since they formed, so they keep fine detail. A team led by the Moroccan geologist Abderrazak El Albani, of the University of Poitiers in France, described the shapes in 2010 as possible colonies of many-celled organisms. Others, like the German paleontologist Adolf Seilacher, saw crystals of pyrite. The rocks formed in water with oxygen, late in the oxygen rise. In the same basin, oxygen-rich groundwater gathered uranium into ores that later became natural nuclear reactors. These rocks are found today in southeastern Gabon.",
+        "es": "Las lutitas negras cerca de Franceville apenas se han calentado desde que se formaron, así que conservan detalles finos. Un equipo dirigido por el geólogo marroquí Abderrazak El Albani, de la Universidad de Poitiers, en Francia, describió las formas en 2010 como posibles colonias de organismos pluricelulares. Otros, como el paleontólogo alemán Adolf Seilacher, vieron cristales de pirita. Las rocas se formaron en agua con oxígeno, al final de la subida del oxígeno. En la misma cuenca, el agua subterránea con oxígeno concentró el uranio en yacimientos que más tarde se volvieron reactores nucleares naturales. Estas rocas están hoy en el sureste de Gabón."
+      },
+      "places": [
+        {
+          "id": "francevillian-biota",
+          "name": {
+            "en": "Francevillian biota",
+            "es": "Biota francevillense"
+          },
+          "at": [
+            13.5833,
+            -1.6333
+          ],
+          "cat": "microbe",
+          "icon": "🌀",
+          "type": "fossil",
+          "date": "-2100000000",
+          "place": {
+            "en": "Near Franceville, Haut-Ogooué, Gabon",
+            "es": "Cerca de Franceville, Alto Ogooué, Gabón"
+          },
+          "text": {
+            "en": "Flattened disks and tubes up to 17 cm across, 2.1 billion years old. Their finders see the oldest many-celled life; many scientists suspect shapes made by minerals. The debate is still open.",
+            "es": "Discos y tubos aplastados de hasta 17 cm, de 2100 millones de años. Sus descubridores ven en ellos la vida pluricelular más antigua; muchos científicos sospechan que son formas minerales. El debate sigue abierto."
+          },
+          "details": {
+            "en": "Up to 40 of the structures are found per square metre. Each has a round central body ringed by radial folds; later finds include strings of beads and chambered disks about 4.5 cm wide. In 2023 tests found them rich in zinc, a metal that cells with a nucleus use, which the team took as a sign of life. Critics reply that similar shapes in 1.1-billion-year-old rocks of Michigan turned out to be concretions, lumps of mineral that grow in mud. If they are alive, they are 400 million years older than the oldest widely accepted cells with a nucleus.",
+            "es": "Se hallan hasta 40 estructuras por metro cuadrado. Cada una tiene un cuerpo central redondo rodeado de pliegues radiales; hallazgos posteriores incluyen hileras como collares de cuentas y discos con cámaras de unos 4,5 cm. En 2023 unos análisis mostraron que son ricas en zinc, un metal que usan las células con núcleo, y el equipo lo tomó como señal de vida. Los críticos responden que formas parecidas en rocas de Míchigan de 1100 millones de años resultaron ser concreciones, bolas de mineral que crecen en el barro. Si son seres vivos, son 400 millones de años más antiguos que las células con núcleo más antiguas aceptadas por casi todos."
+          },
+          "wiki": {
+            "en": "Francevillian biota",
+            "es": "Biota francevillense"
+          }
+        },
+        {
+          "id": "oklo-reactors",
+          "name": {
+            "en": "Oklo natural reactors",
+            "es": "Reactores naturales de Oklo"
+          },
+          "at": [
+            13.1608,
+            -1.3944
+          ],
+          "cat": "event",
+          "icon": "☢️",
+          "type": "site",
+          "date": "-1700000000",
+          "place": {
+            "en": "Oklo, near Mounana, Gabon",
+            "es": "Oklo, cerca de Mounana, Gabón"
+          },
+          "text": {
+            "en": "Uranium ores where nuclear chain reactions ran by themselves about 1.7 billion years ago. Oxygen made it possible: uranium dissolves in water, and gathers into ores, only when oxygen is present.",
+            "es": "Yacimientos de uranio donde, hace unos 1700 millones de años, se produjeron por sí solas reacciones nucleares en cadena. El oxígeno lo hizo posible: el uranio solo se disuelve en el agua, y se concentra, cuando hay oxígeno."
+          },
+          "details": {
+            "en": "In May 1972, at a uranium plant in Pierrelatte, France, chemists of the French Atomic Energy Commission noticed that ore from the Oklo mine was missing some uranium-235, the kind that splits in reactors. It had already been \"burned\". Groundwater slowed the neutrons enough to keep the reactions going, in cycles of about half an hour on and two and a half hours off, for a few hundred thousand years. Sixteen reactor zones are known, the only ones on Earth. Then, uranium-235 made up about 3% of natural uranium; today it is only 0.72%.",
+            "es": "En mayo de 1972, en una planta de uranio de Pierrelatte, Francia, químicos de la Comisión de Energía Atómica francesa notaron que al mineral de la mina de Oklo le faltaba algo de uranio 235, el que se divide en los reactores. Ya había sido \"quemado\". El agua subterránea frenaba los neutrones lo bastante para mantener las reacciones, en ciclos de una media hora encendidos y dos horas y media apagados, durante unos cientos de miles de años. Se conocen dieciséis zonas de reacción, las únicas de la Tierra. Entonces el uranio 235 era un 3 % del uranio natural; hoy es solo el 0,72 %."
+          },
+          "wiki": {
+            "en": "Natural nuclear fission reactor",
+            "es": "Reactor nuclear natural de Oklo"
+          },
+          "img": "Gabon Geology Oklo.svg"
+        }
+      ]
+    },
+    {
+      "date": "-1880000000",
+      "title": {
+        "en": "Microbes in the Gunflint chert",
+        "es": "Microbios en el sílex de Gunflint"
+      },
+      "camera": {
+        "lon": -84.6,
+        "lat": 47.6,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "About 1.88 billion years ago, microbes were sealed in silica along the shore of what is now Lake Superior. Found in 1953, they proved that the long Precambrian, the time before the Cambrian, was full of life.",
+        "es": "Hace unos 1880 millones de años, unos microbios quedaron sellados en sílice en la costa de lo que hoy es el lago Superior. Hallados en 1953, demostraron que el largo Precámbrico, el tiempo anterior al Cámbrico, estaba lleno de vida."
+      },
+      "details": {
+        "en": "Until the 1950s, almost no fossils were known from rocks older than the Cambrian, and Charles Darwin had worried about this gap. The Gunflint microbes, and the stromatolites they built, showed that life had been busy for billions of years. Nearby, in Michigan, coiled Grypania may be among the first algae. Then, 1.849 billion years ago, an asteroid or comet struck at Sudbury, leaving one of the largest craters on Earth. These places are in Ontario, Canada, and Michigan, United States, today.",
+        "es": "Hasta la década de 1950 casi no se conocían fósiles de rocas anteriores al Cámbrico, y a Charles Darwin le había preocupado ese vacío. Los microbios de Gunflint, y los estromatolitos que construyeron, mostraron que la vida llevaba miles de millones de años en marcha. Cerca, en Míchigan, la enrollada Grypania quizá sea una de las primeras algas. Después, hace 1849 millones de años, un asteroide o un cometa chocó en Sudbury y dejó uno de los mayores cráteres de la Tierra. Estos lugares están hoy en Ontario, Canadá, y en Míchigan, Estados Unidos."
+      },
+      "places": [
+        {
+          "id": "gunflint-chert",
+          "name": {
+            "en": "Gunflint chert",
+            "es": "Sílex de Gunflint"
+          },
+          "at": [
+            -87.2667,
+            48.8167
+          ],
+          "cat": "microbe",
+          "icon": "🔬",
+          "type": "fossil",
+          "date": "-1878000000",
+          "place": {
+            "en": "Schreiber, on Lake Superior, Ontario, Canada",
+            "es": "Schreiber, a orillas del lago Superior, Ontario, Canadá"
+          },
+          "text": {
+            "en": "A 1.88-billion-year-old rock full of fossil microbes, many like today's cyanobacteria. Described by Stanley Tyler and Elso Barghoorn in 1965, it opened the search for life before the Cambrian.",
+            "es": "Una roca de 1880 millones de años llena de microbios fósiles, muchos parecidos a las cianobacterias actuales. Descrita por Stanley Tyler y Elso Barghoorn en 1965, abrió la búsqueda de vida anterior al Cámbrico."
+          },
+          "details": {
+            "en": "Chert is a hard, glassy rock made of silica; when it forms quickly it can wrap microbes the way amber wraps insects. In 1953 the geologist Stanley Tyler noticed red stromatolites and a jet-black chert at Schreiber, Ontario. Under the microscope the chert held spheres, rods and threads smaller than 10 micrometres. With Elso Barghoorn, a Harvard paleobotanist, he showed that they were preserved single-celled organisms, and Preston Cloud explained what they meant. Their 1965 papers set off a \"stampede\" to search old rocks for life.",
+            "es": "El sílex es una roca dura y vítrea hecha de sílice; cuando se forma deprisa puede envolver microbios como el ámbar envuelve insectos. En 1953 el geólogo Stanley Tyler vio estromatolitos rojos y un sílex negro azabache en Schreiber, Ontario. Al microscopio, el sílex tenía esferas, bastoncitos y filamentos de menos de 10 micrómetros. Con Elso Barghoorn, paleobotánico de Harvard, demostró que eran organismos unicelulares conservados, y Preston Cloud explicó lo que significaban. Sus artículos de 1965 desataron una \"estampida\" para buscar vida en las rocas antiguas."
+          },
+          "wiki": {
+            "en": "Gunflint chert",
+            "es": "Gunflint"
+          }
+        },
+        {
+          "id": "grypania",
+          "name": {
+            "en": "Grypania",
+            "es": "Grypania"
+          },
+          "at": [
+            -87.62,
+            46.49
+          ],
+          "cat": "microbe",
+          "icon": "➰",
+          "type": "species",
+          "date": "-1870000000",
+          "place": {
+            "en": "Negaunee Iron Formation, Michigan, United States",
+            "es": "Formación ferrífera de Negaunee, Míchigan, Estados Unidos"
+          },
+          "text": {
+            "en": "Coiled ribbons over a centimetre long, big enough to see without a microscope, about 1.87 billion years old. Grypania may be one of the first algae, or a giant bacterium or colony of bacteria.",
+            "es": "Cintas enrolladas de más de un centímetro, visibles sin microscopio, de unos 1870 millones de años. Grypania podría ser una de las primeras algas, o una bacteria gigante o una colonia de bacterias."
+          },
+          "details": {
+            "en": "Grypania spiralis was once thought to be 2.1 billion years old; new dating of the Negaunee Iron Formation, a banded iron rock, made it about 1.87 billion. Its fossils keep the same simple shape for about 1.2 billion years, into the Ediacaran. If it was an alga, it is one of the oldest known cells with a nucleus.",
+            "es": "Antes se creía que Grypania spiralis tenía 2100 millones de años; un nuevo fechado de la Formación ferrífera de Negaunee, una roca de hierro bandeado, la dejó en unos 1870 millones. Sus fósiles conservan la misma forma sencilla durante unos 1200 millones de años, hasta el Ediacárico. Si era un alga, es una de las células con núcleo más antiguas que se conocen."
+          },
+          "wiki": {
+            "en": "Grypania",
+            "es": "Grypania spiralis"
+          }
+        },
+        {
+          "id": "sudbury-impact",
+          "name": {
+            "en": "Sudbury impact",
+            "es": "Impacto de Sudbury"
+          },
+          "at": [
+            -81.1833,
+            46.6
+          ],
+          "cat": "event",
+          "icon": "☄️",
+          "type": "event",
+          "date": "-1849000000",
+          "place": {
+            "en": "Sudbury Basin, Ontario, Canada",
+            "es": "Cuenca de Sudbury, Ontario, Canadá"
+          },
+          "text": {
+            "en": "An asteroid or comet 10 to 15 km wide struck here 1.849 billion years ago, making a crater about 130 km across. Its remains are one of the oldest and largest impact structures on Earth.",
+            "es": "Un asteroide o cometa de 10 a 15 km de ancho chocó aquí hace 1849 millones de años y abrió un cráter de unos 130 km. Sus restos forman una de las estructuras de impacto más antiguas y grandes de la Tierra."
+          },
+          "details": {
+            "en": "It struck a sea about 1,000 m deep, and computer models suggest a tsunami at least 1,000 m high where it hit; debris flew more than 800 km, as far as Minnesota, where it lies on top of banded iron formations. The crater filled with molten rock rich in nickel, copper, platinum and gold, which made Sudbury one of the world's great mining districts.",
+            "es": "Cayó en un mar de unos 1000 m de profundidad, y los modelos informáticos sugieren un tsunami de al menos 1000 m de altura donde golpeó; los escombros volaron más de 800 km, hasta Minnesota, donde cubren formaciones de hierro bandeado. El cráter se llenó de roca fundida rica en níquel, cobre, platino y oro, que hizo de Sudbury uno de los grandes distritos mineros del mundo."
+          },
+          "wiki": {
+            "en": "Sudbury Basin",
+            "es": "Cuenca de Sudbury"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-1650000000",
+      "title": {
+        "en": "Cells with a nucleus",
+        "es": "Células con núcleo"
+      },
+      "camera": {
+        "lon": 115.5,
+        "lat": 37.5,
+        "zoom": 3.4
+      },
+      "text": {
+        "en": "By about 1.65 billion years ago the seas held eukaryotes: cells with a nucleus and other inner parts, the kind that make up all plants, fungi and animals. Some of the oldest come from northern China.",
+        "es": "Hace unos 1650 millones de años los mares ya tenían eucariotas: células con núcleo y otras partes internas, como las que forman todas las plantas, los hongos y los animales. Algunas de las más antiguas vienen del norte de China."
+      },
+      "details": {
+        "en": "A eukaryote keeps its DNA inside a nucleus and is usually hundreds of times bigger than a bacterium. The leading idea is that eukaryotes began when a microbe of the group called archaea took in a bacterium that used oxygen. Instead of being digested, the bacterium became the mitochondrion, the cell's power plant. The American biologist Lynn Margulis championed this idea, endosymbiosis, in a 1967 paper that about fifteen journals had rejected; DNA studies later proved her right. These fossils are found today in Henan and Hebei, China.",
+        "es": "Una eucariota guarda su ADN dentro de un núcleo y suele ser cientos de veces más grande que una bacteria. La idea principal es que las eucariotas nacieron cuando un microbio del grupo de las arqueas engulló una bacteria que usaba oxígeno. En vez de ser digerida, la bacteria se convirtió en la mitocondria, la central de energía de la célula. La bióloga estadounidense Lynn Margulis defendió esta idea, la endosimbiosis, en un artículo de 1967 que habían rechazado unas quince revistas; los estudios de ADN le dieron después la razón. Estos fósiles están hoy en Henan y Hebei, China."
+      },
+      "places": [
+        {
+          "id": "tappania",
+          "name": {
+            "en": "Tappania",
+            "es": "Tappania"
+          },
+          "at": [
+            112.4668,
+            34.154
+          ],
+          "cat": "microbe",
+          "icon": "🔬",
+          "type": "species",
+          "date": "-1630000000",
+          "place": {
+            "en": "Ruyang Group, northern China",
+            "es": "Grupo Ruyang, norte de China"
+          },
+          "text": {
+            "en": "A microscopic ball with branching tubes, about 1.63 billion years old, found in northern China and India. Its complex shape makes it one of the oldest known cells with a nucleus.",
+            "es": "Una esfera microscópica con tubos ramificados, de unos 1630 millones de años, hallada en el norte de China y en la India. Su forma compleja la convierte en una de las células con núcleo más antiguas que se conocen."
+          },
+          "details": {
+            "en": "Tappania plana is 30 to 60 micrometres wide, thinner than a hair, with one or two little necks and tubes that branch and have cross-walls. A bacterium could not build such a shape, so it is counted as a eukaryote, perhaps a fungus-like microbe or an alga. Later kinds of Tappania, up to 850 million years old, are known from Australia, the United States and Siberia.",
+            "es": "Tappania plana mide de 30 a 60 micrómetros, menos que el grosor de un cabello, y tiene uno o dos cuellitos y tubos ramificados con tabiques. Una bacteria no podría construir una forma así, de modo que se la cuenta como eucariota, quizá un microbio parecido a un hongo o un alga. Se conocen otras Tappania más jóvenes, de hasta 850 millones de años, en Australia, Estados Unidos y Siberia."
+          },
+          "wiki": {
+            "en": "Tappania",
+            "es": "Tappania"
+          },
+          "img": "Tappania plana (Greyson Formation, Belt Supergroup).jpg"
+        },
+        {
+          "id": "qingshania",
+          "name": {
+            "en": "Qingshania",
+            "es": "Qingshania"
+          },
+          "at": [
+            118.4802,
+            40.6058
+          ],
+          "cat": "microbe",
+          "icon": "🧵",
+          "type": "species",
+          "date": "-1635000000",
+          "place": {
+            "en": "Chuanlinggou Formation, Yanshan, Hebei, China",
+            "es": "Formación Chuanlinggou, Yanshan, Hebei, China"
+          },
+          "text": {
+            "en": "Threads of cells up to about 8 mm long, 1.635 billion years old. They may be the oldest known many-celled eukaryotes: cells with a nucleus living together as one body.",
+            "es": "Hilos de células de hasta unos 8 mm de largo, de 1635 millones de años. Podrían ser los eucariotas pluricelulares más antiguos que se conocen: células con núcleo que vivían juntas como un solo cuerpo."
+          },
+          "details": {
+            "en": "Each cell is up to about 0.2 mm wide, and some hold round bodies that are probably spores. The threads look like much younger filaments from Siberia, and similar ones occur in the Ruyang Group. If their age and nature hold up, cells with a nucleus were already living together in many-celled bodies more than 1.6 billion years ago, a billion years before the first animals.",
+            "es": "Cada célula mide hasta unos 0,2 mm, y algunas guardan cuerpos redondos que probablemente son esporas. Los hilos se parecen a filamentos mucho más jóvenes de Siberia, y hay otros parecidos en el Grupo Ruyang. Si su edad y su naturaleza se confirman, las células con núcleo ya vivían juntas en cuerpos pluricelulares hace más de 1600 millones de años, mil millones de años antes de los primeros animales."
+          },
+          "wiki": {
+            "en": "Qingshania",
+            "es": "Eukaryota"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-1000000000",
+      "title": {
+        "en": "Seaweeds on Rodinia",
+        "es": "Algas en Rodinia"
+      },
+      "camera": {
+        "lon": -98.0,
+        "lat": 60.0,
+        "zoom": 1.25
+      },
+      "text": {
+        "en": "About a billion years ago the continents had gathered into one supercontinent, Rodinia. Along its shores grew the first known seaweeds, among them Bangiomorpha, the oldest known living thing to reproduce by sex.",
+        "es": "Hace unos mil millones de años los continentes se habían reunido en un supercontinente, Rodinia. En sus costas crecían las primeras algas conocidas, entre ellas Bangiomorpha, el ser vivo más antiguo que se sabe que se reproducía sexualmente."
+      },
+      "details": {
+        "en": "From this step on, the map shows the continents of each age as geologists rebuild them; their outlines are today's coasts, carried back with their plates. Rodinia came together between about 1.26 and 0.9 billion years ago, with North America at its core. The red alga Bangiomorpha, about 1.05 billion years old, and the green alga Proterocladus were many-celled, with different cells doing different jobs, and fungi may already have lived alongside them. Bangiomorpha's rocks are found today on Somerset Island, in Arctic Canada.",
+        "es": "Desde este paso, el mapa muestra los continentes de cada época tal como los reconstruyen los geólogos; sus contornos son las costas actuales, llevadas atrás con sus placas. Rodinia se formó hace entre 1260 y 900 millones de años, con América del Norte en su centro. El alga roja Bangiomorpha, de unos 1050 millones de años, y el alga verde Proterocladus eran pluricelulares, con células distintas para tareas distintas, y quizá ya vivían hongos junto a ellas. Las rocas de Bangiomorpha están hoy en la isla Somerset, en el Ártico canadiense."
+      },
+      "places": [
+        {
+          "id": "bangiomorpha",
+          "name": {
+            "en": "Bangiomorpha",
+            "es": "Bangiomorpha"
+          },
+          "at": [
+            -93.5,
+            73.25
+          ],
+          "cat": "plant",
+          "icon": "🌿",
+          "type": "species",
+          "date": "-1047000000",
+          "place": {
+            "en": "Hunting Formation, Somerset Island, Nunavut, Canada",
+            "es": "Formación Hunting, isla Somerset, Nunavut, Canadá"
+          },
+          "text": {
+            "en": "A red seaweed about 1.05 billion years old, very like today's Bangia. Its special reproductive cells make it the oldest known organism to reproduce by sex, and the oldest of a group still alive.",
+            "es": "Un alga roja de unos 1050 millones de años, muy parecida a la actual Bangia. Por sus células reproductoras especiales, es el organismo más antiguo que se sabe que se reproducía sexualmente y el más antiguo de un grupo aún vivo."
+          },
+          "details": {
+            "en": "Bangiomorpha pubescens formed tiny threads of cells in shallow water, with some cells that held it to the rock and others that made spores of different kinds. The Canadian paleontologist Nicholas Butterfield found it in cherts of the Hunting Formation, in Arctic Canada, and named it in 2000; in 2018 the rocks were dated to 1,047 million years. Sex, mixing the genes of two parents, makes offspring more varied and may have sped up evolution.",
+            "es": "Bangiomorpha pubescens formaba hilos diminutos de células en aguas poco profundas, con unas células que la sujetaban a la roca y otras que producían esporas de distintos tipos. El paleontólogo canadiense Nicholas Butterfield la halló en sílex de la Formación Hunting, en el Ártico canadiense, y le dio nombre en 2000; en 2018 las rocas se fecharon en 1047 millones de años. El sexo, que mezcla los genes de dos progenitores, hace más variada a la descendencia y quizá aceleró la evolución."
+          },
+          "wiki": {
+            "en": "Bangiomorpha",
+            "es": "Bangiomorpha"
+          },
+          "img": "Bangiomorpha pubescens, Hunting Formation (Sumerset Island, Nunavut, Canada).jpg"
+        },
+        {
+          "id": "proterocladus",
+          "name": {
+            "en": "Proterocladus",
+            "es": "Proterocladus"
+          },
+          "at": [
+            121.6,
+            38.9
+          ],
+          "cat": "plant",
+          "icon": "🌱",
+          "type": "species",
+          "date": "-1000000000",
+          "place": {
+            "en": "Nanfen Formation, near Dalian, Liaoning, China",
+            "es": "Formación Nanfen, cerca de Dalian, Liaoning, China"
+          },
+          "text": {
+            "en": "A tiny branching green seaweed about a billion years old, with a holdfast like a little root. It belongs to the green algae, the group that much later gave rise to land plants.",
+            "es": "Un alga verde ramificada y diminuta de unos mil millones de años, con un disco de fijación como una raicita. Pertenece a las algas verdes, el grupo del que mucho después surgieron las plantas terrestres."
+          },
+          "details": {
+            "en": "More than a thousand fossils of Proterocladus antiquus come from rocks near Dalian, in northeastern China. It looks like the living seaweed Cladophora: threads of long cells, occasional branches, resting spores and a disc-like holdfast. Other species of Proterocladus are known from Svalbard, in the Arctic.",
+            "es": "Se conocen más de mil fósiles de Proterocladus antiquus de rocas cercanas a Dalian, en el noreste de China. Se parece al alga actual Cladophora: hilos de células largas, alguna rama, esporas de reposo y un disco de fijación. Otras especies de Proterocladus vienen de Svalbard, en el Ártico."
+          },
+          "wiki": {
+            "en": "Proterocladus",
+            "es": "Proterocladus"
+          }
+        },
+        {
+          "id": "ourasphaira",
+          "name": {
+            "en": "Ourasphaira",
+            "es": "Ourasphaira"
+          },
+          "at": [
+            -116.0,
+            71.2
+          ],
+          "cat": "plant",
+          "icon": "🍄",
+          "type": "species",
+          "date": "-1000000000",
+          "place": {
+            "en": "Grassy Bay Formation, Amundsen Basin, Arctic Canada",
+            "es": "Formación Grassy Bay, cuenca de Amundsen, Ártico canadiense"
+          },
+          "text": {
+            "en": "Microscopic fossils about a billion years old whose cell walls contain chitin, a hallmark of fungi. If they are fungi, as their finder Corentin Loron argues, the kingdom of fungi is very old.",
+            "es": "Fósiles microscópicos de unos mil millones de años cuyas paredes celulares contienen quitina, típica de los hongos. Si son hongos, como sostiene su descubridor, Corentin Loron, el reino de los hongos es muy antiguo."
+          },
+          "details": {
+            "en": "Ourasphaira giraldae was reported in 2019. Its tiny spheres sit on branching threads, like the spores of some fungi. Before it, the oldest widely accepted fossil fungi were hundreds of millions of years younger. Fungi are closer relatives of animals than of plants, so it also hints at an early start for the branch of life that leads to animals.",
+            "es": "Ourasphaira giraldae se dio a conocer en 2019. Sus esferas diminutas brotan de hilos ramificados, como las esporas de algunos hongos. Antes de este hallazgo, los hongos fósiles más antiguos aceptados por casi todos eran cientos de millones de años más jóvenes. Los hongos son parientes más cercanos de los animales que de las plantas, así que también sugiere un comienzo temprano para la rama de la vida que lleva a los animales."
+          },
+          "wiki": {
+            "en": "Ourasphaira giraldae",
+            "es": "Ourasphaira"
+          }
+        },
+        {
+          "id": "rodinia",
+          "name": {
+            "en": "Rodinia",
+            "es": "Rodinia"
+          },
+          "at": [
+            -74.6,
+            45.6333
+          ],
+          "cat": "event",
+          "icon": "🌍",
+          "type": "event",
+          "date": "-1230000000",
+          "until": "-633000000",
+          "place": {
+            "en": "Its core was North America; the Grenville mountains of Canada mark its seams",
+            "es": "Su núcleo era América del Norte; las montañas Grenville de Canadá marcan sus costuras"
+          },
+          "text": {
+            "en": "A supercontinent that gathered most of Earth's land from about 1.26 to 0.9 billion years ago and broke apart between 750 and 633 million years ago. Its name comes from the Russian word for \"motherland\".",
+            "es": "Un supercontinente que reunió casi toda la tierra firme hace entre 1260 y 900 millones de años y se partió hace entre 750 y 633 millones de años. Su nombre viene de la palabra rusa para \"patria\"."
+          },
+          "details": {
+            "en": "Rodinia's core was Laurentia, the old heart of North America, with Baltica, Amazonia, West Africa, Australia, India and East Antarctica around it; where Siberia and China sat is still argued. The Grenville mountains, named after Grenville, Quebec, rose where continents collided to build it; their worn-down roots run from Labrador to Mexico. Mark and Dianna McMenamin named the supercontinent in 1990. Its breakup may have helped trigger the Snowball Earth ice ages.",
+            "es": "El núcleo de Rodinia era Laurentia, el viejo corazón de América del Norte, con Báltica, Amazonia, África occidental, Australia, la India y la Antártida oriental alrededor; dónde estaban Siberia y China todavía se discute. Las montañas Grenville, llamadas así por Grenville (Quebec), se alzaron donde chocaron los continentes que lo formaron; sus raíces gastadas van de Labrador a México. Mark y Dianna McMenamin bautizaron el supercontinente en 1990. Su ruptura quizá ayudó a desatar las glaciaciones de la Tierra bola de nieve."
+          },
+          "wiki": {
+            "en": "Rodinia",
+            "es": "Rodinia"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-717000000",
+      "title": {
+        "en": "Snowball Earth",
+        "es": "La Tierra bola de nieve"
+      },
+      "camera": {
+        "lon": 10.0,
+        "lat": -72.0,
+        "zoom": 1.05
+      },
+      "text": {
+        "en": "Twice, between about 717 and 635 million years ago, ice may have covered nearly the whole Earth, even at the equator, as Rodinia broke apart. Life hung on under the ice and in pockets of open water.",
+        "es": "Dos veces, hace entre unos 717 y 635 millones de años, el hielo quizá cubrió casi toda la Tierra, incluso en el ecuador, mientras Rodinia se partía. La vida resistió bajo el hielo y en rincones de agua abierta."
+      },
+      "details": {
+        "en": "Glacial rocks of this age lie on every continent, some of them laid down near the equator. In the Snowball Earth idea, ice spread from the poles until it reflected so much sunlight that the whole planet froze. Volcanoes kept breathing out carbon dioxide, and after millions of years the greenhouse grew strong enough to melt the ice quickly; thick layers of limestone, called cap carbonates, sit right on top of the glacial rocks. Some scientists prefer a \"slushball\", with a band of open sea. Stromatolites show that life went on, at least in shallow water.",
+        "es": "Hay rocas glaciares de esta edad en todos los continentes, y algunas se depositaron cerca del ecuador. Según la idea de la Tierra bola de nieve, el hielo avanzó desde los polos hasta reflejar tanta luz solar que todo el planeta se congeló. Los volcanes siguieron soltando dióxido de carbono y, tras millones de años, el efecto invernadero fue tan fuerte que derritió el hielo deprisa; gruesas capas de caliza, llamadas carbonatos de cobertera, descansan justo encima de las rocas glaciares. Algunos científicos prefieren una \"bola de aguanieve\", con una franja de mar abierto. Los estromatolitos muestran que la vida siguió, al menos en aguas poco profundas."
+      },
+      "places": [
+        {
+          "id": "snowball-earth",
+          "name": {
+            "en": "Snowball Earth",
+            "es": "Tierra bola de nieve"
+          },
+          "at": [
+            138.585,
+            -35.0378
+          ],
+          "cat": "event",
+          "icon": "❄️",
+          "type": "event",
+          "date": "-717000000",
+          "until": "-635000000",
+          "place": {
+            "en": "Worldwide; the Sturtian glaciation is named after Sturt Gorge, Adelaide, South Australia",
+            "es": "En todo el mundo; la glaciación sturtiana lleva el nombre de la garganta de Sturt, en Adelaida, Australia Meridional"
+          },
+          "text": {
+            "en": "The idea that Earth froze over almost completely in the Sturtian (about 717–660 million years ago) and Marinoan (about 650–635 million years ago) ice ages. Joseph Kirschvink coined the name in 1992.",
+            "es": "La idea de que la Tierra se congeló casi por completo durante las glaciaciones sturtiana (hace unos 717 a 660 millones de años) y marinoana (hace unos 650 a 635 millones de años). Joseph Kirschvink le dio nombre en 1992."
+          },
+          "details": {
+            "en": "The Australian geologist and Antarctic explorer Douglas Mawson studied the thick glacial rocks of South Australia and, late in his career, imagined a worldwide ice age; in 1950 he and his student Reg Sprigg named the Sturtian and Marinoan after places near Adelaide. In 1964 W. Brian Harland showed that glacial rocks in Svalbard and Greenland had formed in the tropics. Kirschvink explained how Earth could escape: volcanoes kept breathing out carbon dioxide until the greenhouse melted the ice. The Sturtian lasted about 57 million years, the longest known glaciation.",
+            "es": "El geólogo y explorador antártico australiano Douglas Mawson estudió las gruesas rocas glaciares de Australia Meridional y, al final de su carrera, imaginó una glaciación mundial; en 1950, junto con su alumno Reg Sprigg, llamó sturtiana y marinoana a dos glaciaciones por lugares cercanos a Adelaida. En 1964 W. Brian Harland mostró que unas rocas glaciares de Svalbard y Groenlandia se habían formado en los trópicos. Kirschvink explicó cómo pudo escapar la Tierra: los volcanes siguieron soltando dióxido de carbono hasta que el efecto invernadero derritió el hielo. La sturtiana duró unos 57 millones de años, la glaciación más larga que se conoce."
+          },
+          "wiki": {
+            "en": "Snowball Earth",
+            "es": "Glaciación global"
+          }
+        },
+        {
+          "id": "marinoan-glaciation",
+          "name": {
+            "en": "Marinoan glaciation",
+            "es": "Glaciación marinoana"
+          },
+          "at": [
+            138.705,
+            -31.4222
+          ],
+          "cat": "event",
+          "icon": "🧊",
+          "type": "event",
+          "date": "-639000000",
+          "until": "-635000000",
+          "place": {
+            "en": "Elatina Formation, Ikara-Flinders Ranges, South Australia",
+            "es": "Formación Elatina, montes Flinders, Australia Meridional"
+          },
+          "text": {
+            "en": "The second great ice age of the Cryogenian, dated in 2025 to about 639 to 635 million years ago. Its glaciers may have reached the equator; when it ended, the Ediacaran began.",
+            "es": "La segunda gran glaciación del Criogénico, fechada en 2025 hace unos 639 a 635 millones de años. Sus glaciares quizá llegaron al ecuador; cuando terminó, empezó el Ediacárico."
+          },
+          "details": {
+            "en": "Mawson named the glaciation after the Adelaide suburb of Marino, and found its traces in the Elatina rocks of the Flinders Ranges. Just above those glacial rocks, at Enorama Creek in Brachina Gorge, the base of a layer of limestone marks the official start of the Ediacaran Period, 635 million years ago, chosen in 2004. Methane escaping from thawing ground near the equator may have sped up the melting.",
+            "es": "Mawson dio a la glaciación el nombre de Marino, un suburbio de Adelaida, y halló sus huellas en las rocas de Elatina de los montes Flinders. Justo encima de esas rocas glaciares, en el arroyo Enorama de la garganta de Brachina, la base de una capa de caliza marca el comienzo oficial del periodo Ediacárico, hace 635 millones de años, elegido en 2004. El metano que escapaba del suelo helado al deshelarse cerca del ecuador quizá aceleró el deshielo."
+          },
+          "wiki": {
+            "en": "Marinoan glaciation",
+            "es": "Glaciación Marinoana"
+          },
+          "img": "Elatina Fm diamictite.JPG"
+        },
+        {
+          "id": "paul-f-hoffman",
+          "name": {
+            "en": "Paul F. Hoffman",
+            "es": "Paul F. Hoffman"
+          },
+          "at": [
+            17.3403,
+            -19.6381
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1998",
+          "life": [
+            "1941",
+            null
+          ],
+          "place": {
+            "en": "Otavi Mountains, northern Namibia",
+            "es": "Montes Otavi, norte de Namibia"
+          },
+          "text": {
+            "en": "A Canadian geologist who studied the glacial rocks of Namibia and the limestones that cap them, and with his colleagues made the case for a Snowball Earth in the journal Science in 1998.",
+            "es": "Geólogo canadiense que estudió las rocas glaciares de Namibia y las calizas que las cubren, y con sus colegas defendió la Tierra bola de nieve en la revista Science en 1998."
+          },
+          "details": {
+            "en": "Born in Toronto in 1941, Hoffman worked for the Geological Survey of Canada and later taught at Harvard. In northern Namibia he followed layers of glacial rock topped by thick limestone, called cap carbonates, which seemed to record a frozen world suddenly thawed by a huge greenhouse. His fieldwork turned Joseph Kirschvink's short 1992 paper into one of the most debated ideas in the Earth sciences.",
+            "es": "Nacido en Toronto en 1941, Hoffman trabajó para el Servicio Geológico de Canadá y después enseñó en Harvard. En el norte de Namibia siguió capas de roca glaciar cubiertas por gruesas calizas, llamadas carbonatos de cobertera, que parecían registrar un mundo helado que se derritió de golpe por un enorme efecto invernadero. Su trabajo de campo convirtió el breve artículo de Joseph Kirschvink de 1992 en una de las ideas más discutidas de las ciencias de la Tierra."
+          },
+          "wiki": {
+            "en": "Paul F. Hoffman",
+            "es": "Glaciación global"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-580000000",
+      "title": {
+        "en": "Embryos at Doushantuo",
+        "es": "Embriones en Doushantuo"
+      },
+      "camera": {
+        "lon": 110.0,
+        "lat": 28.5,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "In shallow seas of South China about 580 million years ago, tiny balls of cells were turned to stone in phosphate. Many may be embryos of early animals, the oldest ever found, though some think they are giant bacteria.",
+        "es": "En mares poco profundos del sur de China, hace unos 580 millones de años, diminutas bolitas de células quedaron convertidas en fosfato. Podrían ser los embriones de animales más antiguos jamás hallados, o bacterias gigantes."
+      },
+      "details": {
+        "en": "The Doushantuo Formation was laid down after the last snowball ice age melted, from about 635 to 551 million years ago. In its phosphate rocks, minerals copied cells so quickly that their walls and even inner parts can be seen, so scientists can study creatures at the scale of single cells. Some 20 million years earlier, the Lantian sea in Anhui already held seaweeds and other living things big enough to see. South China was then a small continent of its own.",
+        "es": "La Formación de Doushantuo se depositó tras derretirse la última glaciación bola de nieve, hace entre unos 635 y 551 millones de años. En sus rocas de fosfato, los minerales copiaron las células tan deprisa que se ven sus paredes y hasta sus partes internas, así que se pueden estudiar criaturas a escala de una sola célula. Unos 20 millones de años antes, el mar de Lantian, en Anhui, ya tenía algas y otros seres visibles a simple vista. El sur de China era entonces un pequeño continente aparte."
+      },
+      "places": [
+        {
+          "id": "lantian-biota",
+          "name": {
+            "en": "Lantian biota",
+            "es": "Biota de Lantian"
+          },
+          "at": [
+            118.038,
+            29.952
+          ],
+          "cat": "site",
+          "icon": "🌿",
+          "type": "fossil",
+          "date": "-602000000",
+          "place": {
+            "en": "Lantian Formation, Xiuning County, Anhui, China",
+            "es": "Formación Lantian, distrito de Xiuning, Anhui, China"
+          },
+          "text": {
+            "en": "Seaweeds and other living things big enough to see, about 602 million years old, from a deep but sunlit sea. Some may be early animals related to jellyfish and corals, but this is unproven.",
+            "es": "Algas y otros seres visibles a simple vista, de unos 602 millones de años, de un mar profundo pero iluminado. Algunos podrían ser animales primitivos parientes de las medusas y los corales, pero no está probado."
+          },
+          "details": {
+            "en": "Xing Yusheng, Bi Zi-guo and Wang Xian-fang found the first large fossils in these dark rocks in 1985, and the formation was named after the nearby village of Lantian in 1989. The sea floor there switched between having oxygen and lacking it: the oxygen let life grow, and the lack of it kept the dead from rotting.",
+            "es": "Xing Yusheng, Bi Zi-guo y Wang Xian-fang hallaron los primeros fósiles grandes en estas rocas oscuras en 1985, y la formación recibió en 1989 el nombre de la aldea vecina de Lantian. Su fondo marino pasaba de tener oxígeno a no tenerlo: el oxígeno dejaba crecer la vida, y su falta evitaba que los muertos se pudrieran."
+          },
+          "wiki": {
+            "en": "Lantian Formation",
+            "es": "Biota del periodo Ediacárico"
+          }
+        },
+        {
+          "id": "doushantuo",
+          "name": {
+            "en": "Doushantuo Formation",
+            "es": "Formación de Doushantuo"
+          },
+          "at": [
+            107.4779,
+            27.0029
+          ],
+          "cat": "site",
+          "icon": "🥚",
+          "type": "site",
+          "date": "-580000000",
+          "place": {
+            "en": "Weng'an, Guizhou, China",
+            "es": "Weng'an, Guizhou, China"
+          },
+          "text": {
+            "en": "Phosphate rocks where cells were preserved in three dimensions, down to their inner parts. They hold algae, sponges and balls of cells that may be animal embryos, about 580 million years old; the age is debated.",
+            "es": "Rocas de fosfato donde las células se conservaron en tres dimensiones, hasta sus partes internas. Guardan algas, esponjas y bolitas de células que podrían ser embriones de animales, de unos 580 millones de años; su edad se discute."
+          },
+          "details": {
+            "en": "The fossils turned up as the phosphate beds near Weng'an were being mined, and were first reported in 1998 by Xiao Shuhai, Zhang Yun and Andrew Knoll. Most are smaller than a grain of sand. Some balls show one, two, four or eight cells, like an embryo in its first divisions, though they might instead be giant sulfur bacteria. Claims for Vernanimalcula, a speck described as the oldest animal with a left and a right side, are doubted by many. In 2017 Chinese paleontologists protested to halt the mining that threatens the beds.",
+            "es": "Los fósiles aparecieron mientras se explotaban las capas de fosfato cercanas a Weng'an, y los dieron a conocer en 1998 Xiao Shuhai, Zhang Yun y Andrew Knoll. Casi todos son más pequeños que un grano de arena. Algunas bolitas muestran una, dos, cuatro u ocho células, como un embrión en sus primeras divisiones, aunque también podrían ser bacterias gigantes del azufre. Muchos dudan de Vernanimalcula, una motita descrita como el animal más antiguo con lado izquierdo y derecho. En 2017 paleontólogos chinos protestaron para frenar la minería que amenaza las capas."
+          },
+          "wiki": {
+            "en": "Doushantuo Formation",
+            "es": "Formación de Doushantuo"
+          },
+          "img": "Ediacaran embryo-like fossil.jpg"
+        }
+      ]
+    },
+    {
+      "date": "-565000000",
+      "title": {
+        "en": "Fronds of Mistaken Point",
+        "es": "Las frondas de Mistaken Point"
+      },
+      "camera": {
+        "lon": -53.5,
+        "lat": 47.0,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "About 575 million years ago, a few million years after a short ice age, a deep sea floor near Gondwana filled with frond-shaped creatures. At Mistaken Point, Newfoundland, volcanic ash buried whole communities.",
+        "es": "Hace unos 575 millones de años, poco después de una breve glaciación, un fondo marino profundo cerca de Gondwana se llenó de criaturas con forma de fronda. En Mistaken Point, Terranova, la ceniza volcánica sepultó comunidades enteras."
+      },
+      "details": {
+        "en": "These are the oldest large, complex organisms known, from about 575 to 560 million years ago. Many were rangeomorphs, fronds from a few centimetres to more than half a metre long, built of branches that repeat like the leaves of a fern. They lived too deep for sunlight, so they were not plants; they probably soaked up food from the water. Ash from nearby volcanoes fell like snow and buried them where they stood, so scientists can map whole communities. On this map they lie on Avalonia, a strip of land along Gondwana that included Newfoundland's Avalon Peninsula and central England, where Charnia was found.",
+        "es": "Son los organismos grandes y complejos más antiguos que se conocen, de hace unos 575 a 560 millones de años. Muchos eran rangeomorfos, frondas de pocos centímetros a más de medio metro, hechas de ramas que se repiten como las hojas de un helecho. Vivían demasiado hondo para recibir luz solar, así que no eran plantas; probablemente absorbían alimento del agua. La ceniza de volcanes cercanos caía como nieve y los sepultaba donde estaban, así que se pueden cartografiar comunidades enteras. En este mapa están en Avalonia, una franja de tierra junto a Gondwana que incluía la península de Avalon, en Terranova, y el centro de Inglaterra, donde se halló Charnia."
+      },
+      "places": [
+        {
+          "id": "gaskiers-glaciation",
+          "name": {
+            "en": "Gaskiers glaciation",
+            "es": "Glaciación de Gaskiers"
+          },
+          "at": [
+            -53.6167,
+            46.8667
+          ],
+          "cat": "event",
+          "icon": "❄️",
+          "type": "event",
+          "date": "-579880000",
+          "until": "-579630000",
+          "place": {
+            "en": "Gaskiers, St. Mary's Bay, Newfoundland, Canada",
+            "es": "Gaskiers, bahía de St. Mary's, Terranova, Canadá"
+          },
+          "text": {
+            "en": "A short, sharp ice age about 580 million years ago that lasted only about 250,000 years. Its rocks at Gaskiers are packed with stones dropped by melting ice.",
+            "es": "Una glaciación breve e intensa de hace unos 580 millones de años, que duró apenas unos 250 000 años. Sus rocas de Gaskiers están llenas de piedras que soltó el hielo al derretirse."
+          },
+          "details": {
+            "en": "It was the last major ice age of the Precambrian but, unlike the Sturtian and Marinoan, it did not freeze the whole planet. Its glacial rocks, 300 m thick at Gaskiers, lie just below some of the oldest Ediacaran fossils, so scientists once thought the end of the ice opened the way for large life. Better dating shows a gap of about 9 million years between the ice and the oldest fronds.",
+            "es": "Fue la última gran glaciación del Precámbrico pero, a diferencia de la sturtiana y la marinoana, no congeló todo el planeta. Sus rocas glaciares, de 300 m de espesor en Gaskiers, están justo debajo de algunos de los fósiles más antiguos del Ediacárico, así que se pensó que el fin del hielo abrió el camino a la vida grande. Fechados mejores muestran unos 9 millones de años entre el hielo y las frondas más antiguas."
+          },
+          "wiki": {
+            "en": "Gaskiers glaciation",
+            "es": "Ediacárico"
+          }
+        },
+        {
+          "id": "mistaken-point",
+          "name": {
+            "en": "Mistaken Point",
+            "es": "Mistaken Point"
+          },
+          "at": [
+            -53.1614,
+            46.6256
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-570000000",
+          "place": {
+            "en": "Avalon Peninsula, Newfoundland, Canada",
+            "es": "Península de Avalon, Terranova, Canadá"
+          },
+          "text": {
+            "en": "Seaside rock surfaces covered with imprints of Ediacaran creatures about 575 to 560 million years old: the oldest large, complex living things known. A UNESCO World Heritage Site since 2016.",
+            "es": "Superficies rocosas junto al mar cubiertas de huellas de criaturas del Ediacárico de hace unos 575 a 560 millones de años: los seres vivos grandes y complejos más antiguos que se conocen. Patrimonio de la Humanidad de la UNESCO desde 2016."
+          },
+          "details": {
+            "en": "The headland got its name from sailors who, in the fog, mistook it for Cape Race and turned onto the rocks. The fossil coast became a provincial ecological reserve in 1987 and was enlarged in 2009 after new finds. The International Union of Geological Sciences calls it the best example in the world of an Ediacaran community \"where life first got big\".",
+            "es": "El cabo debe su nombre a los marinos que, entre la niebla, lo confundían con el cabo Race y giraban hacia las rocas. La costa fósil se convirtió en reserva ecológica provincial en 1987 y se amplió en 2009 tras nuevos hallazgos. La Unión Internacional de Ciencias Geológicas la considera el mejor ejemplo del mundo de una comunidad del Ediacárico \"donde la vida se hizo grande por primera vez\"."
+          },
+          "wiki": {
+            "en": "Mistaken Point Ecological Reserve",
+            "es": "Reserva ecológica de Mistaken Point"
+          }
+        },
+        {
+          "id": "fractofusus",
+          "name": {
+            "en": "Fractofusus",
+            "es": "Fractofusus"
+          },
+          "at": [
+            -53.165,
+            46.628
+          ],
+          "cat": "invertebrate",
+          "icon": "🍃",
+          "type": "species",
+          "date": "-575000000",
+          "until": "-560000000",
+          "place": {
+            "en": "Mistaken Point, Newfoundland, Canada",
+            "es": "Mistaken Point, Terranova, Canadá"
+          },
+          "text": {
+            "en": "A spindle-shaped frond that lay flat on the deep sea floor. Its fossils, mapped in patches, suggest it spread by sending its young far away, which then sprouted runners like strawberry plants.",
+            "es": "Una fronda con forma de huso que yacía plana sobre el fondo marino profundo. Sus fósiles, agrupados en parches, sugieren que enviaba sus crías lejos y que estas echaban estolones, como las plantas de fresa."
+          },
+          "details": {
+            "en": "Fractofusus was a rangeomorph, a creature built of branches that repeat the same pattern at smaller and smaller sizes, a design seen in no living thing. It lived far too deep for sunlight, so it was not a plant. Like other rangeomorphs it had no obvious mouth, and probably absorbed food from the water. Fractofusus misrai was named in 2007 after Shiva Balak Misra; a second species is Fractofusus andersoni.",
+            "es": "Fractofusus era un rangeomorfo, una criatura hecha de ramas que repiten el mismo dibujo en tamaños cada vez menores, un diseño que no tiene ningún ser vivo actual. Vivía demasiado hondo para recibir luz solar, así que no era una planta. Como otros rangeomorfos, no tenía una boca evidente y probablemente absorbía alimento del agua. Fractofusus misrai se nombró en 2007 en honor de Shiva Balak Misra; una segunda especie es Fractofusus andersoni."
+          },
+          "wiki": {
+            "en": "Fractofusus",
+            "es": "Rangeomorpha"
+          }
+        },
+        {
+          "id": "shiva-balak-misra",
+          "name": {
+            "en": "Shiva Balak Misra",
+            "es": "Shiva Balak Misra"
+          },
+          "at": [
+            -53.18,
+            46.64
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1967",
+          "life": [
+            "1940",
+            null
+          ],
+          "place": {
+            "en": "Mistaken Point, Newfoundland, Canada",
+            "es": "Mistaken Point, Terranova, Canadá"
+          },
+          "text": {
+            "en": "An Indian geology student at Memorial University of Newfoundland who, while mapping the Avalon Peninsula in June 1967, found the Mistaken Point fossils. He later founded a rural school in India.",
+            "es": "Estudiante de geología indio de la Universidad Memorial de Terranova que, mientras cartografiaba la península de Avalon en junio de 1967, halló los fósiles de Mistaken Point. Después fundó una escuela rural en la India."
+          },
+          "details": {
+            "en": "Born in 1940 in Karua, a village in Uttar Pradesh, Misra walked 12 km a day to the nearest school as a child. He reported the find in a letter to Nature in 1968 and described the fossils in 1969, sorting them into five groups by shape. In 2007 the spindle-shaped Fractofusus misrai was named in his honour. Back in India he founded Bharatiya Gramin Vidyalaya, a school for rural children near Lucknow.",
+            "es": "Nacido en 1940 en Karua, una aldea de Uttar Pradesh, de niño Misra caminaba 12 km al día hasta la escuela más cercana. Comunicó el hallazgo en una carta a Nature en 1968 y describió los fósiles en 1969, clasificándolos en cinco grupos según su forma. En 2007 se llamó Fractofusus misrai en su honor a un fósil con forma de huso. De vuelta en la India fundó Bharatiya Gramin Vidyalaya, una escuela para niños del campo cerca de Lucknow."
+          },
+          "wiki": {
+            "en": "Shiva Balak Misra",
+            "es": "Reserva ecológica de Mistaken Point"
+          }
+        },
+        {
+          "id": "charnia",
+          "name": {
+            "en": "Charnia",
+            "es": "Charnia"
+          },
+          "at": [
+            -1.25,
+            52.7
+          ],
+          "cat": "invertebrate",
+          "icon": "🍃",
+          "type": "species",
+          "date": "-570000000",
+          "until": "-550000000",
+          "place": {
+            "en": "Charnwood Forest, Leicestershire, England",
+            "es": "Bosque de Charnwood, Leicestershire, Inglaterra"
+          },
+          "text": {
+            "en": "A frond 1 to 66 cm long, the first fossil accepted as coming from Precambrian rocks. A schoolgirl, Tina Negus, saw it first in 1956, but no one believed her; a schoolboy, Roger Mason, reported it in 1957.",
+            "es": "Una fronda de 1 a 66 cm de largo, el primer fósil aceptado como procedente de rocas precámbricas. Una colegiala, Tina Negus, la vio primero en 1956, pero nadie le creyó; un colegial, Roger Mason, la dio a conocer en 1957."
+          },
+          "details": {
+            "en": "Mason took a rubbing of the fossil to his father, who knew the local geologist Trevor Ford; Ford described it in 1958 and named it Charnia masoni. Until then the Precambrian was thought to hold no fossils of large living things. Negus's geography teacher had told her that there could be no fossils in such old rocks; she was honoured at the 50th anniversary of the find, and the Leicester Museum now tells her story. Charnia was long thought to be a sea pen, a relative of corals; today it is seen as an early animal with no close living relatives.",
+            "es": "Mason llevó un calco del fósil a su padre, que conocía al geólogo local Trevor Ford; Ford lo describió en 1958 y lo llamó Charnia masoni. Hasta entonces se creía que el Precámbrico no tenía fósiles de seres grandes. El profesor de geografía de Negus le había dicho que no podía haber fósiles en rocas tan antiguas; fue homenajeada en el 50.º aniversario del hallazgo, y el Museo de Leicester cuenta hoy su historia. Durante mucho tiempo se pensó que Charnia era una pluma de mar, pariente de los corales; hoy se la ve como un animal primitivo sin parientes vivos cercanos."
+          },
+          "wiki": {
+            "en": "Charnia",
+            "es": "Charnia"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-558000000",
+      "title": {
+        "en": "Kimberella and the White Sea",
+        "es": "Kimberella y el mar Blanco"
+      },
+      "camera": {
+        "lon": 40.0,
+        "lat": 65.0,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "About 558 million years ago, on a shallow sea floor now on the White Sea coast of Russia, slug-like Kimberella crept over mats of microbes, scraping them for food. It may be one of the first animals that moved.",
+        "es": "Hace unos 558 millones de años, en un fondo marino somero que hoy es la costa rusa del mar Blanco, Kimberella, parecida a una babosa, raspaba alfombras de microbios para comer. Quizá fue uno de los primeros animales que se movían."
+      },
+      "details": {
+        "en": "The cliffs of the White Sea hold more than a thousand Kimberella fossils, with Dickinsonia and many other Ediacaran creatures, between about 558 and 555 million years old. Next to Kimberella, fan-shaped scratch marks show where it fed. These shallow seas lay on Baltica, the old core of northern Europe, then far south of the equator. The creatures of this time, called the White Sea assemblage, were the most varied of the whole Ediacaran.",
+        "es": "Los acantilados del mar Blanco guardan más de mil fósiles de Kimberella, junto con Dickinsonia y muchas otras criaturas del Ediacárico, de hace entre 558 y 555 millones de años. Junto a Kimberella, unas marcas en abanico muestran dónde comía. Estos mares poco profundos estaban sobre Báltica, el viejo núcleo del norte de Europa, entonces muy al sur del ecuador. Las criaturas de esta época, llamadas conjunto del mar Blanco, fueron las más variadas de todo el Ediacárico."
+      },
+      "places": [
+        {
+          "id": "white-sea-fossil-coast",
+          "name": {
+            "en": "White Sea fossil coast",
+            "es": "Costa fósil del mar Blanco"
+          },
+          "at": [
+            39.7,
+            65.47
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-558000000",
+          "place": {
+            "en": "Zimny Bereg (the Winter Coast), White Sea, Arkhangelsk Oblast, Russia",
+            "es": "Zimni Bereg (la Costa de Invierno), mar Blanco, óblast de Arcángel, Rusia"
+          },
+          "text": {
+            "en": "Sea cliffs where waves wash out Ediacaran fossils 558 to 555 million years old, among the best preserved and best dated in the world.",
+            "es": "Acantilados donde las olas sacan a la luz fósiles del Ediacárico de 558 a 555 millones de años, de los mejor conservados y fechados del mundo."
+          },
+          "details": {
+            "en": "Russian paleontologists, among them Mikhail Fedonkin of the Paleontological Institute in Moscow, have collected here since the 1970s, often digging out whole slabs of fossil sea floor. Layers of volcanic ash between the beds let scientists date them precisely. In 2018 traces of cholesterol, a molecule made mainly by animals, were found in Dickinsonia fossils from these cliffs, support for the idea that Dickinsonia was an animal.",
+            "es": "Paleontólogos rusos, entre ellos Mijaíl Fedonkin, del Instituto Paleontológico de Moscú, recolectan aquí desde la década de 1970, a menudo sacando losas enteras de fondo marino fósil. Las capas de ceniza volcánica entre los estratos permiten fecharlos con precisión. En 2018 se hallaron restos de colesterol, una molécula que fabrican sobre todo los animales, en fósiles de Dickinsonia de estos acantilados, un apoyo a la idea de que Dickinsonia era un animal."
+          },
+          "wiki": {
+            "en": "Ediacaran biota",
+            "es": "Biota del periodo Ediacárico"
+          }
+        },
+        {
+          "id": "kimberella",
+          "name": {
+            "en": "Kimberella",
+            "es": "Kimberella"
+          },
+          "at": [
+            39.74,
+            65.44
+          ],
+          "cat": "invertebrate",
+          "icon": "🐌",
+          "type": "species",
+          "date": "-558000000",
+          "until": "-555000000",
+          "place": {
+            "en": "White Sea coast, Russia, and the Ediacara Hills, South Australia",
+            "es": "Costa del mar Blanco, Rusia, y colinas de Ediacara, Australia Meridional"
+          },
+          "text": {
+            "en": "An oval, slug-like animal that crept over the sea floor and scraped food from microbial mats, leaving fan-shaped scratches. It may be an early relative of molluscs, such as snails.",
+            "es": "Un animal ovalado, parecido a una babosa, que se arrastraba por el fondo y raspaba alimento de las alfombras de microbios, dejando arañazos en abanico. Quizá sea pariente temprano de los moluscos, como los caracoles."
+          },
+          "details": {
+            "en": "The first Kimberella fossils were found in South Australia in 1959 and taken for jellyfish. Mary Wade named the genus in 1972 after John Kimber, a student, teacher and collector who died on an expedition to Central Australia in 1964. More than a thousand specimens from the White Sea, studied by Mikhail Fedonkin and Benjamin Waggoner from 1997, showed a front and a back, a soft shell, a muscular foot and the scratch marks of feeding. If Kimberella was a mollusc, the main branches of the animal family tree had split before 555 million years ago.",
+            "es": "Los primeros fósiles de Kimberella se hallaron en Australia Meridional en 1959 y se tomaron por medusas. Mary Wade nombró el género en 1972 en honor de John Kimber, estudiante, maestro y coleccionista que murió en una expedición al centro de Australia en 1964. Más de mil ejemplares del mar Blanco, estudiados por Mijaíl Fedonkin y Benjamin Waggoner desde 1997, mostraron una parte delantera y otra trasera, una concha blanda, un pie musculoso y las marcas de sus raspados. Si Kimberella era un molusco, las grandes ramas del árbol de los animales ya se habían separado hace más de 555 millones de años."
+          },
+          "wiki": {
+            "en": "Kimberella",
+            "es": "Kimberella"
+          }
+        },
+        {
+          "id": "tribrachidium",
+          "name": {
+            "en": "Tribrachidium",
+            "es": "Tribrachidium"
+          },
+          "at": [
+            39.68,
+            65.5
+          ],
+          "cat": "invertebrate",
+          "icon": "☘️",
+          "type": "species",
+          "date": "-558000000",
+          "place": {
+            "en": "White Sea coast, Russia, and South Australia",
+            "es": "Costa del mar Blanco, Rusia, y Australia Meridional"
+          },
+          "text": {
+            "en": "A small disc with three curved arms, a three-part body plan seen in no living animal. It is found on the White Sea coast and in South Australia.",
+            "es": "Un pequeño disco con tres brazos curvos, un cuerpo de tres partes que no tiene ningún animal actual. Se encuentra en la costa del mar Blanco y en Australia Meridional."
+          },
+          "details": {
+            "en": "Almost every animal alive today is built on a plan with a left and a right side, or in fives, like starfish. Tribrachidium, a few centimetres across, was built in threes. It shows how many experiments in body shape the Ediacaran seas held, most of which left no descendants.",
+            "es": "Casi todos los animales actuales tienen un cuerpo con lado izquierdo y derecho, o dividido en cinco partes, como las estrellas de mar. Tribrachidium, de pocos centímetros, estaba hecho de tres. Muestra cuántos experimentos de forma corporal hubo en los mares del Ediacárico, la mayoría sin descendientes."
+          },
+          "wiki": {
+            "en": "Tribrachidium",
+            "es": "Tribrachidium"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-555000000",
+      "title": {
+        "en": "The Ediacara Hills",
+        "es": "Las colinas de Ediacara"
+      },
+      "camera": {
+        "lon": 138.2,
+        "lat": -30.9,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "In 1946 the geologist Reg Sprigg found strange imprints, about 550 million years old, in the Ediacara Hills of South Australia. They gave their name to the Ediacaran, the last period before the Cambrian.",
+        "es": "En 1946 el geólogo Reg Sprigg halló unas extrañas huellas, de unos 550 millones de años, en las colinas de Ediacara, en Australia Meridional. Dieron su nombre al Ediacárico, el último periodo antes del Cámbrico."
+      },
+      "details": {
+        "en": "Sprigg had been sent to see whether old copper and silver mines could be worked again. The imprints were made by soft creatures buried by sand on a shallow sea floor covered by microbial mats. Some, like Dickinsonia and Spriggina, may be early animals; others, like the fronds, belong to groups with no living members. Martin Glaessner, of the University of Adelaide, showed in the 1950s and 1960s that they were older than the Cambrian, and they changed the idea that the Precambrian held no large life.",
+        "es": "Habían enviado a Sprigg a ver si las viejas minas de cobre y plata podían volver a explotarse. Las huellas las dejaron criaturas blandas sepultadas por la arena en un fondo marino poco profundo cubierto de alfombras de microbios. Algunas, como Dickinsonia y Spriggina, quizá sean animales primitivos; otras, como las frondas, pertenecen a grupos sin miembros vivos. Martin Glaessner, de la Universidad de Adelaida, mostró en las décadas de 1950 y 1960 que eran anteriores al Cámbrico, y cambiaron la idea de que el Precámbrico no tuvo vida grande."
+      },
+      "places": [
+        {
+          "id": "ediacara-hills",
+          "name": {
+            "en": "Ediacara Hills",
+            "es": "Colinas de Ediacara"
+          },
+          "at": [
+            138.1333,
+            -30.8167
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-550000000",
+          "place": {
+            "en": "Northern Flinders Ranges, South Australia",
+            "es": "Norte de los montes Flinders, Australia Meridional"
+          },
+          "text": {
+            "en": "Low hills where the Ediacaran fossils were first found, in 1946. They are now part of Nilpena Ediacara National Park, on the traditional lands of the Adnyamathanha people.",
+            "es": "Colinas bajas donde se hallaron por primera vez, en 1946, los fósiles del Ediacárico. Hoy forman parte del Parque Nacional Nilpena Ediacara, en las tierras tradicionales del pueblo adnyamathanha."
+          },
+          "details": {
+            "en": "The name probably comes from an Aboriginal language, but its meaning is debated: \"a place near water\", \"hard, stony ground\" or, as the Adnyamathanha woman Beverley Patterson said in 2023, the zebra finch, a bird of the area. On the nearby Nilpena cattle station, the American paleontologist Mary Droser and her team have uncovered whole fossil sea floors since about 2001. The government bought the station from the Fargher family to enlarge the park, which opened in 2023.",
+            "es": "El nombre probablemente viene de una lengua aborigen, pero su significado se discute: \"un lugar cerca del agua\", \"suelo duro y pedregoso\" o, como dijo en 2023 Beverley Patterson, mujer adnyamathanha, el diamante mandarín, un pájaro de la zona. En la cercana estancia ganadera de Nilpena, la paleontóloga estadounidense Mary Droser y su equipo han descubierto fondos marinos fósiles enteros desde 2001. El gobierno compró la estancia a la familia Fargher para ampliar el parque, que abrió en 2023."
+          },
+          "wiki": {
+            "en": "Ediacara Hills",
+            "es": "Yacimiento de Ediacara"
+          }
+        },
+        {
+          "id": "reg-sprigg",
+          "name": {
+            "en": "Reg Sprigg",
+            "es": "Reg Sprigg"
+          },
+          "at": [
+            138.16,
+            -30.84
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1946",
+          "life": [
+            "1919",
+            "1994"
+          ],
+          "place": {
+            "en": "Ediacara Hills, South Australia",
+            "es": "Colinas de Ediacara, Australia Meridional"
+          },
+          "text": {
+            "en": "An Australian geologist who found the Ediacaran fossils in 1946 while checking old mines for the South Australian government. He named Dickinsonia, and later turned Arkaroola, in the Flinders Ranges, into a wildlife refuge.",
+            "es": "Geólogo australiano que halló los fósiles del Ediacárico en 1946, mientras revisaba minas viejas para el gobierno de Australia Meridional. Nombró a Dickinsonia y después convirtió Arkaroola, en los montes Flinders, en un refugio de fauna."
+          },
+          "details": {
+            "en": "Sprigg spotted the fossils, the story goes, while eating his lunch. He thought they were Cambrian jellyfish, and the journal Nature rejected his paper. Martin Glaessner, of the University of Adelaide, later showed that they were older than the Cambrian, and in 2004 the Ediacaran Period was named after these hills: the first new geological period in more than a hundred years. Sprigg had been Douglas Mawson's \"best-ever student\"; Spriggina is named after him.",
+            "es": "Según se cuenta, Sprigg vio los fósiles mientras almorzaba. Creyó que eran medusas del Cámbrico, y la revista Nature rechazó su artículo. Martin Glaessner, de la Universidad de Adelaida, mostró después que eran anteriores al Cámbrico, y en 2004 el periodo Ediacárico recibió el nombre de estas colinas: el primer periodo geológico nuevo en más de cien años. Sprigg había sido \"el mejor alumno\" de Douglas Mawson; Spriggina lleva su nombre."
+          },
+          "wiki": {
+            "en": "Reg Sprigg",
+            "es": "Yacimiento de Ediacara"
+          }
+        },
+        {
+          "id": "dickinsonia",
+          "name": {
+            "en": "Dickinsonia",
+            "es": "Dickinsonia"
+          },
+          "at": [
+            138.12,
+            -30.8
+          ],
+          "cat": "invertebrate",
+          "icon": "🫓",
+          "type": "species",
+          "date": "-558000000",
+          "until": "-550000000",
+          "place": {
+            "en": "First found in the Ediacara Hills, South Australia; also in Russia, China, Ukraine and Canada",
+            "es": "Hallada primero en las colinas de Ediacara, Australia Meridional; también en Rusia, China, Ucrania y Canadá"
+          },
+          "text": {
+            "en": "An oval, ribbed creature from a few millimetres to over a metre long that lay on the sea floor and absorbed food from microbial mats. Traces of cholesterol in its fossils suggest it was an animal.",
+            "es": "Una criatura ovalada y con costillas, de pocos milímetros a más de un metro de largo, que yacía en el fondo marino y absorbía alimento de las alfombras de microbios. Los restos de colesterol en sus fósiles sugieren que era un animal."
+          },
+          "details": {
+            "en": "Reg Sprigg described Dickinsonia in 1947 and named it after Ben Dickinson, the director of mines who employed him. Over the years it has been called a jellyfish, a worm, a lichen and a giant single cell. In 2018 cholesterol, a molecule made mainly by animals, was found in fossils from the White Sea, though some scientists doubt that it came from Dickinsonia itself. It had no mouth or gut: it probably fed through its underside, and chains of its imprints show where it stopped to feed.",
+            "es": "Reg Sprigg describió Dickinsonia en 1947 y la llamó así por Ben Dickinson, el director de minas que lo empleaba. Con los años se la ha tomado por medusa, gusano, liquen y célula gigante. En 2018 se halló colesterol, una molécula que fabrican sobre todo los animales, en fósiles del mar Blanco, aunque algunos científicos dudan de que viniera de la propia Dickinsonia. No tenía boca ni intestino: probablemente se alimentaba por su cara inferior, y hay hileras de sus huellas que muestran dónde se detenía a comer."
+          },
+          "wiki": {
+            "en": "Dickinsonia",
+            "es": "Dickinsonia"
+          }
+        },
+        {
+          "id": "spriggina",
+          "name": {
+            "en": "Spriggina",
+            "es": "Spriggina"
+          },
+          "at": [
+            138.145,
+            -30.805
+          ],
+          "cat": "invertebrate",
+          "icon": "🐛",
+          "type": "species",
+          "date": "-555000000",
+          "place": {
+            "en": "Ediacara Hills, South Australia",
+            "es": "Colinas de Ediacara, Australia Meridional"
+          },
+          "text": {
+            "en": "A segmented animal 3 to 5 cm long with a head-like front end, perhaps a hunter. Named after Reg Sprigg, it is the fossil emblem of South Australia and has been found nowhere else.",
+            "es": "Un animal segmentado de 3 a 5 cm de largo con una parte delantera parecida a una cabeza, quizá un cazador. Lleva el nombre de Reg Sprigg, es el fósil emblema de Australia Meridional y no se ha hallado en ningún otro lugar."
+          },
+          "details": {
+            "en": "Its underside was covered by two rows of tough, interlocking plates and its back by one. It has been called a worm, a relative of trilobites and even a frond, but its segments are staggered from side to side instead of paired, unlike any living animal, so its place in the tree of life is unknown.",
+            "es": "Su cara inferior estaba cubierta por dos hileras de placas duras y encajadas, y su dorso por una. Se la ha tomado por gusano, pariente de los trilobites y hasta por fronda, pero sus segmentos están alternados de un lado a otro en vez de en pares, algo que no tiene ningún animal actual, así que se desconoce su lugar en el árbol de la vida."
+          },
+          "wiki": {
+            "en": "Spriggina",
+            "es": "Spriggina"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-550000000",
+      "title": {
+        "en": "Nama: the first shells",
+        "es": "Nama: las primeras conchas"
+      },
+      "camera": {
+        "lon": 16.7,
+        "lat": -24.2,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "About 550 million years ago, in shallow seas over what is now Namibia, small animals began to build hard tubes and cups of calcium carbonate. Holes drilled in some of them show that predators had arrived.",
+        "es": "Hace unos 550 millones de años, en mares poco profundos sobre lo que hoy es Namibia, pequeños animales empezaron a construir tubos y copas duros de carbonato de calcio. Los agujeros que tienen algunos muestran que ya había depredadores."
+      },
+      "details": {
+        "en": "A hard skeleton protects against attackers but costs energy to build, so its appearance hints at an arms race between predators and prey. These animals lived among mounds built by microbes, the first reefs with animals in them. Around them, the continents of Africa and South America were colliding to form Gondwana, and the Nama sea lay in a basin sinking in front of the growing mountains.",
+        "es": "Un esqueleto duro protege de los atacantes, pero cuesta energía construirlo, así que su aparición sugiere una carrera armamentista entre depredadores y presas. Estos animales vivían entre montículos construidos por microbios, los primeros arrecifes con animales. Alrededor, los continentes de África y América del Sur chocaban para formar Gondwana, y el mar de Nama ocupaba una cuenca que se hundía frente a las montañas que crecían."
+      },
+      "places": [
+        {
+          "id": "nama-group",
+          "name": {
+            "en": "Nama Group",
+            "es": "Grupo Nama"
+          },
+          "at": [
+            16.7,
+            -23.9
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-547000000",
+          "place": {
+            "en": "Central and southern Namibia",
+            "es": "Centro y sur de Namibia"
+          },
+          "text": {
+            "en": "Layers of sea-floor rock about 547 to 538 million years old, packed with the last Ediacaran creatures and some of the first animals with shells. Some fossils are preserved in 3D as sandstone casts.",
+            "es": "Capas de roca del fondo marino de unos 547 a 538 millones de años, llenas de las últimas criaturas del Ediacárico y de algunos de los primeros animales con concha. Algunos fósiles se conservan en 3D como moldes de arenisca."
+          },
+          "details": {
+            "en": "The Nama Group covers 125,000 square kilometres of Namibia. It was laid down in a basin that sank as continents collided nearby, when the Kalahari and Congo blocks of Africa closed the ocean between them on their way to forming Gondwana. Storms and mudflows buried creatures in fine sand, which filled their shapes like plaster in a mould. Similar fossils were found in Namibia in the 1930s, but they were thought to be Cambrian. The group also holds reefs built by microbes, among which the shelled animals lived.",
+            "es": "El Grupo Nama cubre 125 000 kilómetros cuadrados de Namibia. Se depositó en una cuenca que se hundía mientras chocaban continentes cercanos, cuando los bloques de Kalahari y del Congo cerraron el océano que los separaba camino de formar Gondwana. Tormentas y coladas de barro sepultaron a las criaturas en arena fina, que rellenó sus formas como el yeso en un molde. En Namibia se hallaron fósiles parecidos en la década de 1930, pero se creyó que eran del Cámbrico. El grupo también tiene arrecifes construidos por microbios, entre los que vivían los animales con concha."
+          },
+          "wiki": {
+            "en": "Nama Group",
+            "es": "Ediacárico"
+          }
+        },
+        {
+          "id": "cloudina",
+          "name": {
+            "en": "Cloudina",
+            "es": "Cloudina"
+          },
+          "at": [
+            16.62,
+            -24.05
+          ],
+          "cat": "invertebrate",
+          "icon": "🐚",
+          "type": "species",
+          "date": "-550000000",
+          "until": "-538800000",
+          "place": {
+            "en": "Nama Group, Namibia, and many places around the world",
+            "es": "Grupo Nama, Namibia, y muchos lugares del mundo"
+          },
+          "text": {
+            "en": "Tiny tubes made of cones stacked one inside another, about 550 million years old: one of the first animals with a mineral skeleton. It was named after the geologist Preston Cloud.",
+            "es": "Diminutos tubos formados por conos apilados uno dentro de otro, de unos 550 millones de años: uno de los primeros animales con esqueleto mineral. Su nombre honra al geólogo Preston Cloud."
+          },
+          "details": {
+            "en": "Each tube is a few millimetres wide, and the animal that built it is unknown, though pyrite-filled specimens from Nevada, studied in 2020, show a gut like that of worms. In some places in China up to one in five Cloudina tubes carry holes bored by attackers, sized to their prey: evidence that predators were already choosing their victims. Shells may have begun as armour in that arms race. Cloudina vanished at the start of the Cambrian.",
+            "es": "Cada tubo mide pocos milímetros, y se desconoce el animal que lo construía, aunque unos ejemplares rellenos de pirita de Nevada, estudiados en 2020, muestran un intestino como el de los gusanos. En algunos lugares de China hasta uno de cada cinco tubos de Cloudina tiene agujeros hechos por atacantes, de tamaño acorde con la presa: prueba de que los depredadores ya elegían a sus víctimas. Las conchas quizá nacieron como armadura en esa carrera armamentista. Cloudina desapareció al comienzo del Cámbrico."
+          },
+          "wiki": {
+            "en": "Cloudinidae",
+            "es": "Cloudina"
+          },
+          "img": "Cloudina fossil.png"
+        },
+        {
+          "id": "namacalathus",
+          "name": {
+            "en": "Namacalathus",
+            "es": "Namacalathus"
+          },
+          "at": [
+            16.8,
+            -23.75
+          ],
+          "cat": "invertebrate",
+          "icon": "🌷",
+          "type": "species",
+          "date": "-550000000",
+          "until": "-538800000",
+          "place": {
+            "en": "Nama Group, Namibia",
+            "es": "Grupo Nama, Namibia"
+          },
+          "text": {
+            "en": "A goblet on a stalk, a few centimetres tall, with a hard skeleton of calcium carbonate. It lived with Cloudina among reefs built by microbes; what kind of animal it was is unknown.",
+            "es": "Una copa sobre un tallo, de pocos centímetros de alto, con un esqueleto duro de carbonato de calcio. Vivía con Cloudina entre arrecifes construidos por microbios; no se sabe qué clase de animal era."
+          },
+          "details": {
+            "en": "Namacalathus hermanastes was described in 2000 from the Nama Group. A 2018 study showed that both it and Cloudina first built their skeletons of aragonite, a form of calcium carbonate that later turned into calcite. It disappears, like Cloudina, at the end of the Ediacaran.",
+            "es": "Namacalathus hermanastes se describió en 2000 a partir del Grupo Nama. Un estudio de 2018 mostró que tanto ella como Cloudina construían su esqueleto de aragonito, una forma de carbonato de calcio que después se transformó en calcita. Desaparece, como Cloudina, al final del Ediacárico."
+          },
+          "wiki": {
+            "en": "Namacalathus",
+            "es": "Namacalathus"
+          },
+          "img": "Namacalathus hermanastes.jpg"
+        }
+      ]
+    },
+    {
+      "date": "-538800000",
+      "title": {
+        "en": "The eve of the Cambrian",
+        "es": "En vísperas del Cámbrico"
+      },
+      "camera": {
+        "lon": 22.0,
+        "lat": -12.0,
+        "zoom": 1.5
+      },
+      "text": {
+        "en": "By 538.8 million years ago, Gondwana had almost come together and the Ediacaran creatures were vanishing. Burrows dug into the sea floor mark the start of the Cambrian, when animals took over.",
+        "es": "Hace 538,8 millones de años, Gondwana casi se había formado y las criaturas del Ediacárico desaparecían. Las galerías excavadas en el fondo marino marcan el comienzo del Cámbrico, cuando los animales tomaron el relevo."
+      },
+      "details": {
+        "en": "For three billion years, mats of microbes had covered the sea floor like a skin. Now animals began to burrow through the mud, graze and hunt, and the mats gave way. The official start of the Cambrian is set where one kind of zigzag burrow, Treptichnus pedum, first appears, at Fortune Head in Newfoundland. From there, the next story, the Cambrian explosion, begins.",
+        "es": "Durante tres mil millones de años, las alfombras de microbios habían cubierto el fondo marino como una piel. Ahora los animales empezaron a excavar el barro, pastar y cazar, y las alfombras cedieron. El comienzo oficial del Cámbrico se fija donde aparece por primera vez una galería en zigzag, Treptichnus pedum, en Fortune Head, Terranova. Desde allí empieza la siguiente historia, la explosión cámbrica."
+      },
+      "places": [
+        {
+          "id": "end-ediacaran-extinction",
+          "name": {
+            "en": "End-Ediacaran extinction",
+            "es": "Extinción del final del Ediacárico"
+          },
+          "at": [
+            16.2667,
+            -26.6667
+          ],
+          "cat": "event",
+          "icon": "💀",
+          "type": "event",
+          "date": "-550000000",
+          "until": "-538800000",
+          "place": {
+            "en": "Worldwide; the last Ediacaran creatures are found in southern Namibia",
+            "es": "En todo el mundo; las últimas criaturas del Ediacárico se encuentran en el sur de Namibia"
+          },
+          "text": {
+            "en": "A probable mass extinction at the end of the Ediacaran, perhaps in two pulses about 550 and 539 million years ago. The soft-bodied Ediacaran creatures and the first shelled animals vanished; the causes are debated.",
+            "es": "Una probable extinción masiva al final del Ediacárico, quizá en dos pulsos, hace unos 550 y 539 millones de años. Desaparecieron las criaturas blandas del Ediacárico y los primeros animales con concha; sus causas se discuten."
+          },
+          "details": {
+            "en": "Also called the Kotlin Crisis, it is shown by the sudden loss of the Ediacaran creatures, of shelled animals like Cloudina and of many kinds of plankton. Black shales point to oceans short of oxygen, and new animals that burrowed, grazed and hunted may also have played a part. Very few kinds of organism are known from both sides of the boundary; one is Swartpuntia, a frond from southern Namibia that lived on into the earliest Cambrian.",
+            "es": "También llamada crisis de Kotlin, la muestran la desaparición repentina de las criaturas del Ediacárico, de animales con concha como Cloudina y de muchos tipos de plancton. Las lutitas negras indican océanos con poco oxígeno, y quizá también influyeron los nuevos animales que excavaban, pastaban y cazaban. Se conocen muy pocos organismos a ambos lados del límite; uno es Swartpuntia, una fronda del sur de Namibia que sobrevivió hasta el comienzo del Cámbrico."
+          },
+          "wiki": {
+            "en": "End-Ediacaran extinction",
+            "es": "Ediacárico"
+          },
+          "img": "Life in the Ediacaran sea.jpg"
+        },
+        {
+          "id": "gondwana",
+          "name": {
+            "en": "Gondwana",
+            "es": "Gondwana"
+          },
+          "at": [
+            24.0,
+            -8.0
+          ],
+          "cat": "event",
+          "icon": "🌍",
+          "type": "event",
+          "date": "-600000000",
+          "until": "-180000000",
+          "place": {
+            "en": "Its pieces are now the southern continents; here central Africa",
+            "es": "Sus piezas son hoy los continentes del sur; aquí, el centro de África"
+          },
+          "text": {
+            "en": "The great southern supercontinent, assembled between about 800 and 530 million years ago from what are now South America, Africa, Arabia, India, Antarctica and Australia: two-thirds of today's land.",
+            "es": "El gran supercontinente austral, formado hace entre unos 800 y 530 millones de años por lo que hoy son América del Sur, África, Arabia, la India, la Antártida y Australia: dos tercios de la tierra firme actual."
+          },
+          "details": {
+            "en": "Its name means \"forest of the Gonds\" in Sanskrit, after a region of central India named for the Gond people; the Austrian geologist Eduard Suess gave it to the supercontinent. Its pieces were welded together in a series of collisions called the Pan-African orogeny, which raised great mountain ranges, and the last ones joined just as the Cambrian explosion began. Gondwana started to break apart about 180 million years ago.",
+            "es": "Su nombre significa \"bosque de los gond\" en sánscrito, por una región del centro de la India llamada así por el pueblo gond; el geólogo austriaco Eduard Suess se lo dio al supercontinente. Sus piezas se soldaron en una serie de choques llamados orogenia panafricana, que levantaron grandes cordilleras, y las últimas se unieron justo cuando empezaba la explosión cámbrica. Gondwana empezó a partirse hace unos 180 millones de años."
+          },
+          "wiki": {
+            "en": "Gondwana",
+            "es": "Gondwana"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2024",
+      "title": {
+        "en": "Living stromatolites",
+        "es": "Estromatolitos vivos"
+      },
+      "camera": {
+        "lon": 114.6,
+        "lat": -28.4,
+        "zoom": 4.0
+      },
+      "text": {
+        "en": "Stromatolites still grow today in Hamelin Pool, Shark Bay, Western Australia. In water twice as salty as the sea, where few animals can graze, cyanobacteria build them much as their ancestors did 3.5 billion years ago.",
+        "es": "Hoy aún crecen estromatolitos en Hamelin Pool, en la bahía Shark, Australia Occidental. En su agua, el doble de salada que el mar, pocos animales pueden pastar, y las cianobacterias los construyen como sus antepasadas hace 3500 millones de años."
+      },
+      "details": {
+        "en": "After the Cambrian explosion, grazing animals ate away most microbial mats, so stromatolites survive mainly where animals cannot live: very salty bays, alkaline lakes and desert springs. They grow so slowly that a column a metre tall is thousands of years old, and they are easily crushed or harmed by polluted water. Living stromatolites also grow in Mexico, in the desert pools of Cuatro Ciénegas and in Bacalar Lagoon.",
+        "es": "Tras la explosión cámbrica, los animales que pastaban se comieron casi todas las alfombras de microbios, así que los estromatolitos sobreviven sobre todo donde los animales no pueden vivir: bahías muy saladas, lagos alcalinos y manantiales del desierto. Crecen tan despacio que una columna de un metro tiene miles de años, y se dañan con facilidad si se pisan o si el agua se contamina. También crecen estromatolitos vivos en México, en las pozas del desierto de Cuatro Ciénegas y en la laguna de Bacalar."
+      },
+      "events": [
+        {
+          "icon": "🌵",
+          "text": {
+            "en": "Living stromatolites grow in the desert pools of Cuatro Ciénegas, Coahuila, Mexico; the ecologist Valeria Souza, of UNAM, has warned that pumping groundwater for farming threatens them",
+            "es": "Hay estromatolitos vivos en las pozas del desierto de Cuatro Ciénegas, Coahuila, México; la ecóloga Valeria Souza, de la UNAM, ha advertido que el bombeo de agua subterránea para la agricultura los amenaza"
+          }
+        },
+        {
+          "icon": "💧",
+          "text": {
+            "en": "Bacalar Lagoon, in Quintana Roo, Mexico, a freshwater lake 60 km long, holds a huge population of living stromatolites",
+            "es": "La laguna de Bacalar, en Quintana Roo, México, un lago de agua dulce de 60 km de largo, alberga una enorme población de estromatolitos vivos"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "shark-bay-stromatolites",
+          "name": {
+            "en": "Shark Bay stromatolites",
+            "es": "Estromatolitos de la bahía Shark"
+          },
+          "at": [
+            114.15,
+            -26.3833
+          ],
+          "cat": "microbe",
+          "type": "site",
+          "date": "2024",
+          "place": {
+            "en": "Hamelin Pool, Shark Bay, Western Australia",
+            "es": "Hamelin Pool, bahía Shark, Australia Occidental"
+          },
+          "text": {
+            "en": "The most varied living stromatolites in the world, in the very salty water of Hamelin Pool. Mats of cyanobacteria trap sand and lime and build domes and pillars up to 1.5 m tall, about half a millimetre a year.",
+            "es": "Los estromatolitos vivos más variados del mundo, en el agua muy salada de Hamelin Pool. Alfombras de cianobacterias atrapan arena y cal y levantan cúpulas y columnas de hasta 1,5 m, a razón de medio milímetro al año."
+          },
+          "details": {
+            "en": "Surveyors working for an oil company noticed them in 1956: they were the first living stromatolites ever recognized. Hamelin Pool is about twice as salty as the open sea, which keeps away most of the animals that would graze on the mats. Shark Bay, Gathaagudu (\"two waters\") in the Malgana language, has been home to Aboriginal people for at least 22,000 years and became a UNESCO World Heritage Site in 1991. Visitors see the stromatolites from a boardwalk, because they are easily crushed.",
+            "es": "Unos agrimensores que trabajaban para una petrolera los vieron en 1956: fueron los primeros estromatolitos vivos que se reconocieron. Hamelin Pool es el doble de salada que el mar abierto, lo que aleja a casi todos los animales que se comerían las alfombras. La bahía Shark, Gathaagudu (\"dos aguas\") en lengua malgana, es hogar de pueblos aborígenes desde hace al menos 22 000 años y Patrimonio de la Humanidad de la UNESCO desde 1991. Los visitantes ven los estromatolitos desde una pasarela, porque se aplastan con facilidad."
+          },
+          "wiki": {
+            "en": "Hamelin Pool Marine Nature Reserve",
+            "es": "Reserva marina de Hamelin Pool"
+          }
+        },
+        {
+          "id": "lake-thetis",
+          "name": {
+            "en": "Lake Thetis",
+            "es": "Lago Thetis"
+          },
+          "at": [
+            115.0806,
+            -30.5072
+          ],
+          "cat": "microbe",
+          "type": "site",
+          "date": "2024",
+          "place": {
+            "en": "Nambung National Park, near Cervantes, Western Australia",
+            "es": "Parque Nacional Nambung, cerca de Cervantes, Australia Occidental"
+          },
+          "text": {
+            "en": "A salty lake 2 km from the Indian Ocean where living stromatolites grow in narrow, branching columns, a shape very rare today. A walking trail circles the lake.",
+            "es": "Un lago salado a 2 km del océano Índico donde crecen estromatolitos vivos en columnas estrechas y ramificadas, una forma hoy muy rara. Un sendero rodea el lago."
+          },
+          "details": {
+            "en": "The lake's water is alkaline and poor in nutrients, which suits bottom-dwelling microbes. Besides the stromatolites, mats of microbes line its shores and floor. They are threatened by extra nutrients and by being trampled, and a recovery plan is being prepared to protect them.",
+            "es": "El agua del lago es alcalina y pobre en nutrientes, lo que favorece a los microbios del fondo. Además de los estromatolitos, alfombras de microbios cubren sus orillas y su fondo. Los amenazan el exceso de nutrientes y el pisoteo, y se prepara un plan de recuperación para protegerlos."
+          },
+          "wiki": {
+            "en": "Lake Thetis",
+            "es": "Estromatolito"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Life began early, perhaps within a few hundred million years of Earth's birth, but stayed microscopic for some three billion years. Microbes built stromatolites, filled the air with oxygen and gave rise to cells with a nucleus, then to seaweeds, fungi and the first animals. Every plant, fungus and animal alive today descends from these small beginnings, and stromatolites still grow at Shark Bay.",
+    "es": "La vida empezó pronto, quizá pocos cientos de millones de años después del nacimiento de la Tierra, pero fue microscópica durante unos tres mil millones de años. Los microbios construyeron estromatolitos, llenaron el aire de oxígeno y dieron origen a las células con núcleo, y después a las algas, los hongos y los primeros animales. Todas las plantas, los hongos y los animales de hoy descienden de esos pequeños comienzos, y en la bahía Shark todavía crecen estromatolitos."
+  },
+  "sources": [
+    {
+      "title": "Earliest known life forms (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Earliest_known_life_forms"
+    },
+    {
+      "title": "Hadean (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hadean"
+    },
+    {
+      "title": "Jack Hills (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jack_Hills"
+    },
+    {
+      "title": "Acasta Gneiss (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Acasta_Gneiss"
+    },
+    {
+      "title": "Isua Greenstone Belt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Isua_Greenstone_Belt"
+    },
+    {
+      "title": "Nuvvuagittuq Greenstone Belt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nuvvuagittuq_Greenstone_Belt"
+    },
+    {
+      "title": "Dresser Formation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dresser_Formation"
+    },
+    {
+      "title": "Pilbara Craton (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pilbara_Craton"
+    },
+    {
+      "title": "Barberton Greenstone Belt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Barberton_Greenstone_Belt"
+    },
+    {
+      "title": "Stromatolite (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Stromatolite"
+    },
+    {
+      "title": "Cyanobacteria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cyanobacteria"
+    },
+    {
+      "title": "Great Oxidation Event (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Oxidation_Event"
+    },
+    {
+      "title": "Banded iron formation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Banded_iron_formation"
+    },
+    {
+      "title": "Marquette Iron Range (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Marquette_Iron_Range"
+    },
+    {
+      "title": "Huronian glaciation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Huronian_glaciation"
+    },
+    {
+      "title": "Huronian Supergroup (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Huronian_Supergroup"
+    },
+    {
+      "title": "Francevillian biota (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Francevillian_biota"
+    },
+    {
+      "title": "Francevillian B Formation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Francevillian_B_Formation"
+    },
+    {
+      "title": "Natural nuclear fission reactor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Natural_nuclear_fission_reactor"
+    },
+    {
+      "title": "Gunflint chert (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gunflint_chert"
+    },
+    {
+      "title": "Grypania (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Grypania"
+    },
+    {
+      "title": "Sudbury Basin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sudbury_Basin"
+    },
+    {
+      "title": "Eukaryote (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Eukaryote"
+    },
+    {
+      "title": "Tappania (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tappania"
+    },
+    {
+      "title": "Qingshania (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Qingshania"
+    },
+    {
+      "title": "Symbiogenesis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Symbiogenesis"
+    },
+    {
+      "title": "Lynn Margulis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lynn_Margulis"
+    },
+    {
+      "title": "Bangiomorpha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bangiomorpha"
+    },
+    {
+      "title": "Proterocladus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Proterocladus"
+    },
+    {
+      "title": "Ourasphaira giraldae (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ourasphaira_giraldae"
+    },
+    {
+      "title": "Rodinia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rodinia"
+    },
+    {
+      "title": "Grenville orogeny (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Grenville_orogeny"
+    },
+    {
+      "title": "Snowball Earth (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Snowball_Earth"
+    },
+    {
+      "title": "Sturtian glaciation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sturtian_glaciation"
+    },
+    {
+      "title": "Marinoan glaciation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Marinoan_glaciation"
+    },
+    {
+      "title": "Paul F. Hoffman (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Paul_F._Hoffman"
+    },
+    {
+      "title": "Douglas Mawson (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Douglas_Mawson"
+    },
+    {
+      "title": "Doushantuo Formation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Doushantuo_Formation"
+    },
+    {
+      "title": "Lantian Formation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lantian_Formation"
+    },
+    {
+      "title": "Gaskiers glaciation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gaskiers_glaciation"
+    },
+    {
+      "title": "Ediacaran biota (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ediacaran_biota"
+    },
+    {
+      "title": "Ediacaran (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ediacaran"
+    },
+    {
+      "title": "Mistaken Point Ecological Reserve (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mistaken_Point_Ecological_Reserve"
+    },
+    {
+      "title": "Shiva Balak Misra (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shiva_Balak_Misra"
+    },
+    {
+      "title": "Fractofusus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fractofusus"
+    },
+    {
+      "title": "Charnia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Charnia"
+    },
+    {
+      "title": "Kimberella (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kimberella"
+    },
+    {
+      "title": "Tribrachidium (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tribrachidium"
+    },
+    {
+      "title": "Dickinsonia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dickinsonia"
+    },
+    {
+      "title": "Ediacara Hills (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ediacara_Hills"
+    },
+    {
+      "title": "Nilpena Ediacara National Park (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nilpena_Ediacara_National_Park"
+    },
+    {
+      "title": "Reg Sprigg (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Reg_Sprigg"
+    },
+    {
+      "title": "Spriggina (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Spriggina"
+    },
+    {
+      "title": "Nama Group (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nama_Group"
+    },
+    {
+      "title": "Cloudinidae (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cloudinidae"
+    },
+    {
+      "title": "Namacalathus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Namacalathus"
+    },
+    {
+      "title": "End-Ediacaran extinction (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/End-Ediacaran_extinction"
+    },
+    {
+      "title": "Gondwana (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gondwana"
+    },
+    {
+      "title": "Pan-African orogeny (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pan-African_orogeny"
+    },
+    {
+      "title": "Shark Bay (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shark_Bay"
+    },
+    {
+      "title": "Hamelin Pool Marine Nature Reserve (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hamelin_Pool_Marine_Nature_Reserve"
+    },
+    {
+      "title": "Lake Thetis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lake_Thetis"
+    },
+    {
+      "title": "Cuatro Ciénegas (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cuatro_Ciénegas"
+    },
+    {
+      "title": "Lake Bacalar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lake_Bacalar"
+    }
+  ]
+}

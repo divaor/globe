@@ -28,7 +28,22 @@
   {"rank":"epoch","name_en":"Miocene","name_es":"Mioceno","start":23.03,"end":5.333,"color":"#FFFF00"},
   {"rank":"epoch","name_en":"Pliocene","name_es":"Plioceno","start":5.333,"end":2.58,"color":"#FFFF99"},
   {"rank":"epoch","name_en":"Pleistocene","name_es":"Pleistoceno","start":2.58,"end":0.0117,"color":"#FFF2AE"},
-  {"rank":"epoch","name_en":"Holocene","name_es":"Holoceno","start":0.0117,"end":0,"color":"#FEF2E0"}
+  {"rank":"epoch","name_en":"Holocene","name_es":"Holoceno","start":0.0117,"end":0,"color":"#FEF2E0"},
+  {"rank":"eon","name_en":"Hadean","name_es":"Hádico","start":4567,"end":4031,"color":"#AE027E"},
+  {"rank":"eon","name_en":"Archean","name_es":"Arcaico","start":4031,"end":2500,"color":"#F0047F"},
+  {"rank":"era","name_en":"Eoarchean","name_es":"Eoarcaico","start":4031,"end":3600,"color":"#DA037F"},
+  {"rank":"era","name_en":"Paleoarchean","name_es":"Paleoarcaico","start":3600,"end":3200,"color":"#F444A9"},
+  {"rank":"era","name_en":"Mesoarchean","name_es":"Mesoarcaico","start":3200,"end":2800,"color":"#F768A9"},
+  {"rank":"era","name_en":"Neoarchean","name_es":"Neoarcaico","start":2800,"end":2500,"color":"#F99BC1"},
+  {"rank":"era","name_en":"Paleoproterozoic","name_es":"Paleoproterozoico","start":2500,"end":1600,"color":"#F74370"},
+  {"rank":"era","name_en":"Mesoproterozoic","name_es":"Mesoproterozoico","start":1600,"end":1000,"color":"#FDB462"},
+  {"rank":"period","name_en":"Siderian","name_es":"Sideriense","start":2500,"end":2300,"color":"#F74F7C"},
+  {"rank":"period","name_en":"Rhyacian","name_es":"Riácico","start":2300,"end":2050,"color":"#F75B89"},
+  {"rank":"period","name_en":"Orosirian","name_es":"Orosírico","start":2050,"end":1800,"color":"#F76898"},
+  {"rank":"period","name_en":"Statherian","name_es":"Estatérico","start":1800,"end":1600,"color":"#F875A7"},
+  {"rank":"period","name_en":"Calymmian","name_es":"Calímmico","start":1600,"end":1400,"color":"#FDC07A"},
+  {"rank":"period","name_en":"Ectasian","name_es":"Ectásico","start":1400,"end":1200,"color":"#F3CC8A"},
+  {"rank":"period","name_en":"Stenian","name_es":"Esténico","start":1200,"end":1000,"color":"#FED99A"}
  ],
  "events":[
   {"ma":1000,"en":"Supercontinent Rodinia unites most continents","es":"El supercontinente Rodinia reúne casi todos los continentes"},

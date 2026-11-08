@@ -52,12 +52,21 @@ spinning full-screen as an ambient display. English and Spanish.
     China, the Khmer, Ghana-Mali-Songhai, Great Zimbabwe and the Swahili coast, the Olmecs and Maya, the Andes);
     and 126 civilizations rising and falling in a time tour from 3300 BC to 1600. Dates before 10,000 BC read
     "N years ago".
+  - Life through time: 13 stories, 198 steps and 539 fossils, sites, species and finders. A step older than 5
+    million years is drawn on the continents of its age (the Merdith et al. 2021 plate model): every fossil moves
+    with its plate, the continents drift from one step's age to the next, a tap on old land says what it is
+    today, and a fossil's card gives the latitude it lay at. The stories run from the first life and the
+    Cambrian explosion, through life coming ashore, the five mass extinctions, the dinosaurs, sea reptiles and
+    pterosaurs, the age of mammals and the Ice Age giants, to the fossil hunters, where animals were tamed,
+    species lost and saved, and ranges then and now. A time tour in 23 chapters places a catalogue of 136
+    famous fossils on the drifting continents, from 3.7 billion years ago to today.
   - Browse and search every item of a story or a whole collection; shared links open a story at its step.
 - **Explore:** measure distances (great circles, flight time), compare two countries, "true size" of countries.
-- **Learn & play:** quizzes (find the country, flags, capitals, where in the world, when was it built or made,
-  dishes of the world, which era, which civilization), each ending with every answer and its picture; guided
-  tours (our planet, eight cities through time, history and culture, Out of Africa, capitals of the ancient
-  world); "On this day" (Wikipedia).
+- **Learn & play:** quizzes (find the country, flags, capitals, states and provinces of 48 countries, where in
+  the world, when was it built or made, dishes of the world, which era, which civilization, which geologic
+  period), each ending with every answer and its picture; guided tours (our planet, eight cities through time,
+  history and culture, Out of Africa, capitals of the ancient world, the dinosaur trail, the five mass
+  extinctions); "On this day" (Wikipedia).
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Ambient mode:** full-screen rotating globe with your filters, screen kept awake, clock, optional filter cycling.
 
@@ -98,7 +107,9 @@ Main sources: Natural Earth (public domain), NASA Blue Marble and GIBS, NOAA ETO
 GPCP, Köppen–Geiger (Kottek/Rubel), GeoNames (CC BY 4.0), aourednik/historical-basemaps (GPL-3.0),
 Merdith et al. 2021 plate model (CC BY 4.0), PB2002 plates (ODC-By), CIA World Factbook, World Bank,
 Our World in Data (CC BY 4.0), mledoze/countries (ODbL), Unicode CLDR, flag-icons (MIT).
-The Time travel stories are written from Wikipedia and the sources listed in each story
+The States and provinces quiz uses Natural Earth's admin-1 regions (`scripts/data/build-regions.mjs`; France,
+Spain, Italy and the United Kingdom grouped into their regions). The Time travel stories are written from
+Wikipedia and the sources listed in each story
 (`scripts/data/conflicts/README.md`, `scripts/data/STORIES.md`); item pictures are Wikipedia page images,
 loaded from Wikipedia when a card opens, or a Wikimedia Commons file named by the item.
 

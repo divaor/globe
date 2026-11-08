@@ -1,0 +1,4074 @@
+{
+  "id": "tamed-animals",
+  "name": {
+    "en": "Where animals were tamed",
+    "es": "Dónde se domesticaron los animales"
+  },
+  "icon": "🐕",
+  "era": "prehistory",
+  "region": {
+    "en": "The whole world",
+    "es": "Todo el mundo"
+  },
+  "start": "-15000",
+  "end": "2024",
+  "summary": {
+    "en": "From wolves that became dogs over 15,000 years ago to turkeys, goldfish and rabbits: where people tamed each animal, its wild ancestor, and what taming changed for both.",
+    "es": "De los lobos que se volvieron perros hace más de 15 000 años a los pavos, los peces dorados y los conejos: dónde se domesticó cada animal, cuál fue su antepasado salvaje y qué cambió para ambos."
+  },
+  "camera": {
+    "lon": 40.0,
+    "lat": 30.0,
+    "zoom": 1.0
+  },
+  "sides": [
+    {
+      "id": "cradle",
+      "name": {
+        "en": "Where animals were first tamed (approximate)",
+        "es": "Donde se domesticaron los animales (aproximado)"
+      },
+      "color": "#d4a017"
+    },
+    {
+      "id": "spread",
+      "name": {
+        "en": "How tamed animals spread",
+        "es": "Cómo se extendieron los animales domésticos"
+      },
+      "color": "#2e6f9e"
+    }
+  ],
+  "steps": [
+    {
+      "date": "-15000",
+      "title": {
+        "en": "Wolves become dogs",
+        "es": "Los lobos se vuelven perros"
+      },
+      "camera": {
+        "lon": 100.0,
+        "lat": 62.0,
+        "zoom": 1.05
+      },
+      "text": {
+        "en": "The first tamed animal was the dog, descended from Ice Age wolves at least 15,000 years ago, long before farming. Where and when it began is still debated: Siberia, Central and East Asia, and Europe are all candidates.",
+        "es": "El primer animal domesticado fue el perro, descendiente de lobos de la Edad de Hielo, hace al menos 15 000 años, mucho antes de la agricultura. Dónde y cuándo empezó aún se discute: Siberia, Asia central y oriental y Europa son candidatas."
+      },
+      "details": {
+        "en": "Dogs come from a population of Ice Age wolves that has since died out; today's grey wolves are their closest living cousins. Genes show that the two lines split 20,000 to 40,000 years ago, before taming began. Wolves probably started by scavenging around hunters' camps, and the least fearful did best. One review puts the start in Siberia about 23,000 years ago, with dogs then spreading with people east into the Americas and west across Eurasia; others favour Europe or East Asia. By 9,500 years ago, on an Arctic island off Siberia, people were breeding dogs to pull sleds. Taming changed dogs' bodies and minds: they can live on starchy food, which wolves cannot, and they understand people's gestures.",
+        "es": "Los perros vienen de una población de lobos de la Edad de Hielo que ya desapareció; los lobos grises de hoy son sus parientes vivos más cercanos. Los genes muestran que ambos linajes se separaron hace entre 20 000 y 40 000 años, antes de la domesticación. Probablemente los lobos empezaron buscando restos en los campamentos de cazadores, y los menos miedosos prosperaron. Una revisión sitúa el comienzo en Siberia hace unos 23 000 años, y desde allí los perros se habrían extendido con la gente hacia América y por Eurasia; otros prefieren Europa o Asia oriental. Hace 9500 años, en una isla ártica frente a Siberia, ya se criaban perros para tirar de trineos. La domesticación cambió su cuerpo y su mente: pueden vivir de alimentos con almidón, que los lobos no digieren bien, y entienden los gestos de las personas."
+      },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [
+            [
+              103.0,
+              52.9
+            ],
+            [
+              125.0,
+              60.0
+            ],
+            [
+              150.0,
+              64.5
+            ],
+            [
+              172.0,
+              65.5
+            ],
+            [
+              -170.0,
+              65.6
+            ],
+            [
+              -152.0,
+              64.0
+            ],
+            [
+              -138.0,
+              59.5
+            ],
+            [
+              -128.0,
+              53.0
+            ]
+          ],
+          "label": {
+            "en": "With people into the Americas",
+            "es": "Con la gente hacia América"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "dog",
+          "name": {
+            "en": "Dog",
+            "es": "Perro"
+          },
+          "at": [
+            103.0,
+            52.9
+          ],
+          "cat": "tamed",
+          "icon": "🐕",
+          "type": "animal",
+          "date": "-15000",
+          "place": {
+            "en": "Siberia? (debated)",
+            "es": "¿Siberia? (en debate)"
+          },
+          "text": {
+            "en": "The first animal people tamed, from wolves of the Ice Age, at least 15,000 years ago. Dogs hunted, guarded and hauled with people and learned to read our faces; today there are 700 million to a billion.",
+            "es": "El primer animal que domesticó la gente, a partir de lobos de la Edad de Hielo, hace al menos 15 000 años. Cazaron, vigilaron y cargaron junto a las personas y aprendieron a leer nuestras caras; hoy hay entre 700 y 1000 millones."
+          },
+          "wiki": {
+            "en": "Dog",
+            "es": "Canis familiaris"
+          }
+        },
+        {
+          "id": "bonn-oberkassel-dog",
+          "name": {
+            "en": "Bonn–Oberkassel dog",
+            "es": "Perro de Bonn-Oberkassel"
+          },
+          "at": [
+            7.1667,
+            50.7139
+          ],
+          "cat": "tamed",
+          "icon": "🦴",
+          "type": "fossil",
+          "date": "-14200",
+          "place": {
+            "en": "Oberkassel, Bonn, Germany",
+            "es": "Oberkassel, Bonn, Alemania"
+          },
+          "text": {
+            "en": "A puppy buried with a man and a woman 14,200 years ago: the oldest dog that experts generally accept. It had survived distemper, a deadly dog disease, probably only because people looked after it.",
+            "es": "Un cachorro enterrado con un hombre y una mujer hace 14 200 años: el perro más antiguo que los expertos aceptan en general. Había sobrevivido al moquillo, una enfermedad mortal, probablemente gracias a los cuidados de la gente."
+          },
+          "wiki": {
+            "en": "Bonn–Oberkassel dog",
+            "es": "Tumbas de Oberkassel"
+          }
+        },
+        {
+          "id": "ain-mallaha",
+          "name": {
+            "en": "ʿAin Mallaha",
+            "es": "Ain Mallaha"
+          },
+          "at": [
+            35.5792,
+            33.087
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-12000",
+          "place": {
+            "en": "Hula Valley, Israel",
+            "es": "Valle de Hula, Israel"
+          },
+          "text": {
+            "en": "A village of hunter-gatherers by an ancient lake in northern Israel. About 12,000 years ago a woman was buried here with her hand resting on a puppy, an early sign of dogs as companions.",
+            "es": "Una aldea de cazadores-recolectores junto a un antiguo lago del norte de Israel. Hace unos 12 000 años se enterró aquí a una mujer con la mano apoyada sobre un cachorro, un temprano signo de perros como compañeros."
+          },
+          "wiki": {
+            "en": "ʿAin Mallaha",
+            "es": "Ain Mallaha"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-8500",
+      "title": {
+        "en": "The first herds",
+        "es": "Los primeros rebaños"
+      },
+      "camera": {
+        "lon": 42.0,
+        "lat": 35.5,
+        "zoom": 4.5
+      },
+      "control": {
+        "cradle": {
+          "union": [
+            {
+              "prev": true
+            },
+            {
+              "land": [
+                [
+                  34.2,
+                  31.2
+                ],
+                [
+                  34.9,
+                  32.8
+                ],
+                [
+                  35.6,
+                  34.6
+                ],
+                [
+                  35.8,
+                  36.3
+                ],
+                [
+                  36.4,
+                  37.2
+                ],
+                [
+                  37.8,
+                  37.9
+                ],
+                [
+                  39.5,
+                  38.5
+                ],
+                [
+                  41.5,
+                  38.4
+                ],
+                [
+                  43.5,
+                  37.7
+                ],
+                [
+                  45.2,
+                  36.6
+                ],
+                [
+                  46.8,
+                  35.4
+                ],
+                [
+                  48.0,
+                  34.4
+                ],
+                [
+                  48.8,
+                  33.0
+                ],
+                [
+                  49.8,
+                  31.2
+                ],
+                [
+                  49.2,
+                  30.0
+                ],
+                [
+                  47.8,
+                  30.4
+                ],
+                [
+                  46.5,
+                  30.8
+                ],
+                [
+                  44.8,
+                  31.8
+                ],
+                [
+                  43.5,
+                  33.0
+                ],
+                [
+                  42.0,
+                  34.2
+                ],
+                [
+                  40.5,
+                  34.8
+                ],
+                [
+                  39.0,
+                  35.3
+                ],
+                [
+                  37.6,
+                  35.3
+                ],
+                [
+                  36.9,
+                  34.2
+                ],
+                [
+                  36.6,
+                  33.0
+                ],
+                [
+                  36.0,
+                  31.5
+                ],
+                [
+                  35.6,
+                  30.6
+                ],
+                [
+                  34.6,
+                  30.7
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "text": {
+        "en": "In the hills of the Fertile Crescent, hunters began to keep the wild animals they chased: mouflon, bezoar goats, aurochs and wild boars. Over generations these became sheep, goats, cattle and pigs.",
+        "es": "En las colinas del Creciente Fértil, los cazadores empezaron a criar a los animales salvajes que perseguían: muflones, cabras bezoar, uros y jabalíes. Con las generaciones, se convirtieron en ovejas, cabras, vacas y cerdos."
+      },
+      "details": {
+        "en": "No one set out to invent farm animals. Over a thousand years or more, from about 9000 to 8000 BC, people from Turkey to Iran moved from hunting wild herds to managing them. The animals slowly got smaller and tamer, and their bones show it: aurochs bones from Göbekli Tepe are much bigger than the cattle bones of later villages. Sheep came from the Asiatic mouflon, goats from the bezoar ibex, cattle from the aurochs and pigs from the wild boar. At first they gave meat, skins and dung for fuel; milk, wool and the strength to pull ploughs came later.",
+        "es": "Nadie se propuso inventar los animales de granja. Durante mil años o más, entre hacia 9000 y 8000 a. C., la gente de Turquía a Irán pasó de cazar rebaños salvajes a manejarlos. Los animales se volvieron poco a poco más pequeños y mansos, y sus huesos lo muestran: los huesos de uro de Göbekli Tepe son mucho mayores que los de las vacas de aldeas posteriores. Las ovejas vienen del muflón asiático, las cabras de la cabra bezoar, las vacas del uro y los cerdos del jabalí. Al principio dieron carne, pieles y estiércol para el fuego; la leche, la lana y la fuerza para tirar del arado llegaron después."
+      },
+      "places": [
+        {
+          "id": "sheep",
+          "name": {
+            "en": "Sheep",
+            "es": "Oveja"
+          },
+          "at": [
+            39.7264,
+            38.2164
+          ],
+          "cat": "tamed",
+          "icon": "🐑",
+          "type": "animal",
+          "date": "-8800",
+          "place": {
+            "en": "Southeast Turkey to the Zagros",
+            "es": "Del sureste de Turquía a los Zagros"
+          },
+          "text": {
+            "en": "Tamed from the Asiatic mouflon between about 9000 and 8500 BC. Early sheep were hairy: woolly sheep came later, and the oldest woven wool is from about 4000 BC. Today there are about 1.3 billion.",
+            "es": "Domesticada a partir del muflón asiático entre hacia 9000 y 8500 a. C. Las primeras ovejas tenían pelo: las de lana llegaron después, y el tejido de lana más antiguo es de hacia 4000 a. C. Hoy hay unos 1300 millones."
+          },
+          "wiki": {
+            "en": "Sheep",
+            "es": "Ovis orientalis aries"
+          }
+        },
+        {
+          "id": "goat",
+          "name": {
+            "en": "Goat",
+            "es": "Cabra"
+          },
+          "at": [
+            47.4758,
+            34.2721
+          ],
+          "cat": "tamed",
+          "icon": "🐐",
+          "type": "animal",
+          "date": "-8200",
+          "place": {
+            "en": "Ganj Dareh, Zagros Mountains, Iran",
+            "es": "Ganj Dareh, montes Zagros, Irán"
+          },
+          "text": {
+            "en": "Tamed from the bezoar ibex of the Zagros Mountains. The oldest domestic goats, about 10,000 years old, come from Ganj Dareh in Iran. Hardy goats give milk, meat, hair and leather.",
+            "es": "Domesticada a partir de la cabra bezoar de los montes Zagros. Las cabras domésticas más antiguas, de unos 10 000 años, proceden de Ganj Dareh, en Irán. Resistentes, dan leche, carne, pelo y cuero."
+          },
+          "wiki": {
+            "en": "Goat",
+            "es": "Capra aegagrus hircus"
+          }
+        },
+        {
+          "id": "cattle",
+          "name": {
+            "en": "Cattle",
+            "es": "Vaca (ganado vacuno)"
+          },
+          "at": [
+            38.1833,
+            36.3833
+          ],
+          "cat": "tamed",
+          "icon": "🐄",
+          "type": "animal",
+          "date": "-8500",
+          "place": {
+            "en": "Upper Euphrates, Syria",
+            "es": "Alto Éufrates, Siria"
+          },
+          "text": {
+            "en": "Tamed from the huge wild aurochs about 10,500 years ago, in Anatolia, the Levant and western Iran. Cattle later pulled ploughs and carts; today there are over 900 million.",
+            "es": "Domesticada a partir del enorme uro salvaje hace unos 10 500 años, en Anatolia, el Levante y el oeste de Irán. Más tarde tiró de arados y carretas; hoy hay más de 900 millones de cabezas."
+          },
+          "wiki": {
+            "en": "Cattle",
+            "es": "Bos taurus"
+          }
+        },
+        {
+          "id": "pig",
+          "name": {
+            "en": "Pig",
+            "es": "Cerdo"
+          },
+          "at": [
+            41.2417,
+            38.2242
+          ],
+          "cat": "tamed",
+          "icon": "🐖",
+          "type": "animal",
+          "date": "-8500",
+          "place": {
+            "en": "Upper Tigris basin, Turkey",
+            "es": "Cuenca alta del Tigris, Turquía"
+          },
+          "text": {
+            "en": "Tamed from wild boar around the upper Tigris; tame pigs reached Cyprus by boat over 11,400 years ago. Pigs were tamed again in China, and in Europe they mixed with local wild boars.",
+            "es": "Domesticado a partir del jabalí en torno al alto Tigris; los cerdos domésticos llegaron en barco a Chipre hace más de 11 400 años. Se domesticó de nuevo en China, y en Europa se mezcló con jabalíes locales."
+          },
+          "wiki": {
+            "en": "Pig",
+            "es": "Sus scrofa domestica"
+          }
+        },
+        {
+          "id": "aurochs",
+          "name": {
+            "en": "Aurochs",
+            "es": "Uro"
+          },
+          "at": [
+            38.9217,
+            37.2236
+          ],
+          "cat": "mammal",
+          "icon": "🐂",
+          "type": "species",
+          "date": "-780000",
+          "until": "1627",
+          "place": {
+            "en": "Göbekli Tepe, Turkey (once from Europe to China)",
+            "es": "Göbekli Tepe, Turquía (antes, de Europa a China)"
+          },
+          "text": {
+            "en": "The wild ancestor of cattle, a huge ox up to 1.8 m tall at the shoulder, with long horns. Hunting and farming wiped it out; the last one, a cow, died in Poland in 1627.",
+            "es": "El antepasado salvaje de las vacas, un buey enorme de hasta 1,8 m de alto en la cruz, con largos cuernos. La caza y la agricultura acabaron con él; el último, una vaca, murió en Polonia en 1627."
+          },
+          "details": {
+            "en": "Aurochs lived from western Europe and North Africa to India and East Asia; the oldest well-dated skull, from Tunisia, is about 780,000 years old. They were tamed twice: in the Fertile Crescent, giving humpless cattle, and in South Asia, giving the zebu. In Europe their numbers fell as forests were cleared for fields and pastures, and hunting them became a privilege of nobles and kings. The last herd lived in the Jaktorów Forest in Poland, where the last cow died in 1627. Breeders have since crossed old cattle breeds to make animals that look like aurochs, but the wild species is gone.",
+            "es": "Los uros vivían desde el oeste de Europa y el norte de África hasta la India y Asia oriental; el cráneo bien fechado más antiguo, de Túnez, tiene unos 780 000 años. Se domesticaron dos veces: en el Creciente Fértil, dando las vacas sin joroba, y en el sur de Asia, dando el cebú. En Europa su número cayó a medida que se talaban bosques para campos y pastos, y cazarlos se volvió un privilegio de nobles y reyes. La última manada vivía en el bosque de Jaktorów, en Polonia, donde murió la última vaca en 1627. Desde entonces se han cruzado razas antiguas para obtener animales parecidos al uro, pero la especie salvaje desapareció."
+          },
+          "wiki": {
+            "en": "Aurochs",
+            "es": "Bos primigenius"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-7500",
+      "title": {
+        "en": "A cat in a grave",
+        "es": "Un gato en una tumba"
+      },
+      "camera": {
+        "lon": 32.5,
+        "lat": 31.0,
+        "zoom": 4.0
+      },
+      "control": {
+        "cradle": {
+          "union": [
+            {
+              "prev": true
+            },
+            {
+              "land": [
+                [
+                  32.1,
+                  34.4
+                ],
+                [
+                  34.8,
+                  34.4
+                ],
+                [
+                  34.8,
+                  35.8
+                ],
+                [
+                  32.1,
+                  35.8
+                ]
+              ]
+            },
+            {
+              "land": [
+                [
+                  29.6,
+                  31.4
+                ],
+                [
+                  30.3,
+                  30.2
+                ],
+                [
+                  30.6,
+                  29.2
+                ],
+                [
+                  30.3,
+                  28.1
+                ],
+                [
+                  30.75,
+                  27.2
+                ],
+                [
+                  31.25,
+                  26.55
+                ],
+                [
+                  32.25,
+                  26.0
+                ],
+                [
+                  32.25,
+                  25.7
+                ],
+                [
+                  32.45,
+                  24.95
+                ],
+                [
+                  32.5,
+                  24.1
+                ],
+                [
+                  33.3,
+                  24.1
+                ],
+                [
+                  33.3,
+                  24.98
+                ],
+                [
+                  33.1,
+                  25.7
+                ],
+                [
+                  33.15,
+                  26.3
+                ],
+                [
+                  32.15,
+                  26.7
+                ],
+                [
+                  31.7,
+                  27.3
+                ],
+                [
+                  31.2,
+                  28.1
+                ],
+                [
+                  31.6,
+                  29.1
+                ],
+                [
+                  31.7,
+                  30.0
+                ],
+                [
+                  32.4,
+                  31.3
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "text": {
+        "en": "About 9,500 years ago, on Cyprus, a person was buried with a cat. Wildcats came to the first villages to hunt mice in the grain stores, and people let them stay: cats more or less tamed themselves.",
+        "es": "Hace unos 9500 años, en Chipre, se enterró a una persona con un gato. Los gatos monteses acudían a las primeras aldeas a cazar ratones en los graneros, y la gente los dejó quedarse: los gatos casi se domesticaron solos."
+      },
+      "details": {
+        "en": "Cyprus had no wildcats, so people must have brought them there by boat. In the grave at Shillourokambos, a person and an 8-month-old cat lay close together. All pet cats descend from the African wildcat of the Near East and Egypt. In Egypt, a wild jungle cat buried at Hierakonpolis around 3700 BC had healed broken bones, a sign that people looked after it; later cats became sacred to the goddess Bastet, and pilgrims bought cat mummies as offerings. Cats spread with farmers into Europe by 6,000 years ago, then along trade routes and on ships. Unlike most tamed animals they were never strongly bred, and they keep much of their wild behaviour.",
+        "es": "Chipre no tenía gatos monteses, así que la gente tuvo que llevarlos en barco. En la tumba de Shillourokambos, una persona y un gato de 8 meses yacían muy juntos. Todos los gatos domésticos descienden del gato montés africano del Cercano Oriente y Egipto. En Egipto, un gato de la jungla salvaje enterrado en Hieracómpolis hacia 3700 a. C. tenía huesos rotos ya soldados, señal de que alguien lo cuidó; después los gatos se consagraron a la diosa Bastet y los peregrinos compraban momias de gato como ofrendas. Los gatos llegaron a Europa con los agricultores hace 6000 años y luego viajaron por rutas comerciales y en barcos. A diferencia de casi todos los animales domésticos, nunca se criaron con mucha selección, y conservan buena parte de su conducta salvaje."
+      },
+      "places": [
+        {
+          "id": "shillourokambos",
+          "name": {
+            "en": "Shillourokambos",
+            "es": "Shillourokambos"
+          },
+          "at": [
+            33.145,
+            34.723
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-7500",
+          "place": {
+            "en": "near Limassol, Cyprus",
+            "es": "cerca de Limasol, Chipre"
+          },
+          "text": {
+            "en": "A farming village in southern Cyprus, settled about 8200 BC. In 2004 archaeologists found a grave, about 9,500 years old, with a person and a cat side by side: the oldest sign of cats living with people.",
+            "es": "Una aldea de agricultores del sur de Chipre, habitada desde hacia 8200 a. C. En 2004 se halló allí una tumba de unos 9500 años con una persona y un gato juntos: la señal más antigua de gatos viviendo con la gente."
+          },
+          "wiki": {
+            "en": "Shillourokambos",
+            "es": "Historia del gato"
+          },
+          "img": "Early interactions between humans and cats.jpg"
+        },
+        {
+          "id": "cat",
+          "name": {
+            "en": "Cat",
+            "es": "Gato"
+          },
+          "at": [
+            31.51,
+            30.5728
+          ],
+          "cat": "tamed",
+          "icon": "🐈",
+          "type": "animal",
+          "date": "-7500",
+          "place": {
+            "en": "Near East and Egypt",
+            "es": "Cercano Oriente y Egipto"
+          },
+          "text": {
+            "en": "Descended from the African wildcat, the cat moved in with the first farmers, who welcomed a mouse hunter. In Egypt cats became sacred to the goddess Bastet, whose temple stood here at Bubastis.",
+            "es": "Descendiente del gato montés africano, el gato se fue a vivir con los primeros agricultores, que agradecían un cazador de ratones. En Egipto se consagró a la diosa Bastet, cuyo templo estaba aquí, en Bubastis."
+          },
+          "wiki": {
+            "en": "Cat",
+            "es": "Felis catus"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-6600",
+      "title": {
+        "en": "China tames the pig",
+        "es": "China domestica el cerdo"
+      },
+      "camera": {
+        "lon": 113.5,
+        "lat": 33.5,
+        "zoom": 6.0
+      },
+      "control": {
+        "cradle": {
+          "union": [
+            {
+              "prev": true
+            },
+            {
+              "land": [
+                [
+                  116.19,
+                  34.51
+                ],
+                [
+                  115.77,
+                  34.97
+                ],
+                [
+                  115.17,
+                  35.27
+                ],
+                [
+                  114.55,
+                  35.5
+                ],
+                [
+                  113.8,
+                  35.55
+                ],
+                [
+                  113.05,
+                  35.43
+                ],
+                [
+                  112.25,
+                  35.35
+                ],
+                [
+                  111.33,
+                  35.15
+                ],
+                [
+                  110.79,
+                  34.63
+                ],
+                [
+                  110.89,
+                  34.05
+                ],
+                [
+                  111.07,
+                  33.61
+                ],
+                [
+                  111.08,
+                  33.13
+                ],
+                [
+                  111.35,
+                  32.68
+                ],
+                [
+                  111.99,
+                  32.42
+                ],
+                [
+                  112.74,
+                  32.27
+                ],
+                [
+                  113.6,
+                  32.28
+                ],
+                [
+                  114.36,
+                  32.63
+                ],
+                [
+                  114.79,
+                  33.13
+                ],
+                [
+                  115.26,
+                  33.51
+                ],
+                [
+                  115.94,
+                  33.94
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "text": {
+        "en": "Pigs were tamed a second time, from local wild boars, in China about 8,000 years ago. At Jiahu, villagers kept pigs and dogs, spread their dung on their fields and raised carp in ponds.",
+        "es": "Los cerdos se domesticaron por segunda vez, a partir de jabalíes locales, en China hace unos 8000 años. En Jiahu, los aldeanos criaban cerdos y perros, abonaban sus campos con estiércol y criaban carpas en estanques."
+      },
+      "details": {
+        "en": "Chinese pigs come from East Asian wild boars, tamed separately from those of the Near East. Jiahu, in Henan, was lived in from 7000 to 5700 BC. Its people grew rice and millet, kept pigs and dogs, and used the manure of their animals to make their fields richer. They also kept common carp in ponds, the oldest fish farming known. Later Chinese farmers raised carp in ponds beside their silkworms and fed them on the caterpillars' droppings. From southern China and Taiwan, about 4,000 years ago, Austronesian seafarers carried pigs, dogs and chickens across the Pacific.",
+        "es": "Los cerdos chinos vienen de jabalíes de Asia oriental, domesticados aparte de los del Cercano Oriente. Jiahu, en Henan, estuvo habitada de 7000 a 5700 a. C. Su gente cultivaba arroz y mijo, criaba cerdos y perros y usaba el estiércol de sus animales para enriquecer los campos. También tenía carpas en estanques, la piscicultura más antigua que se conoce. Más tarde, los campesinos chinos criaron carpas en estanques junto a sus gusanos de seda y las alimentaban con los excrementos de las orugas. Desde el sur de China y Taiwán, hace unos 4000 años, los navegantes austronesios llevaron cerdos, perros y gallinas a través del Pacífico."
+      },
+      "places": [
+        {
+          "id": "chinese-pig",
+          "name": {
+            "en": "Pigs of China",
+            "es": "Cerdos de China"
+          },
+          "at": [
+            113.2,
+            34.0
+          ],
+          "cat": "tamed",
+          "icon": "🐖",
+          "type": "animal",
+          "date": "-6000",
+          "place": {
+            "en": "Middle Yellow and Huai rivers, China",
+            "es": "Ríos Amarillo medio y Huai, China"
+          },
+          "text": {
+            "en": "Pigs tamed from East Asian wild boars about 8,000 years ago, separately from those of the Near East. Chinese breeds such as the wrinkled Meishan are famous for their large litters.",
+            "es": "Cerdos domesticados a partir de jabalíes de Asia oriental hace unos 8000 años, aparte de los del Cercano Oriente. Razas chinas como la arrugada Meishan son famosas por sus grandes camadas."
+          },
+          "wiki": {
+            "en": "Meishan pig",
+            "es": "Sus scrofa domestica"
+          }
+        },
+        {
+          "id": "jiahu",
+          "name": {
+            "en": "Jiahu",
+            "es": "Jiahu"
+          },
+          "at": [
+            113.667,
+            33.613
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-7000",
+          "place": {
+            "en": "Henan, China",
+            "es": "Henan, China"
+          },
+          "text": {
+            "en": "A Neolithic village in Henan, China, lived in from 7000 to 5700 BC. It has domestic pigs and dogs, early rice, the oldest carp ponds known, and flutes made of crane bones that can still be played.",
+            "es": "Una aldea neolítica de Henan, China, habitada de 7000 a 5700 a. C. Tiene cerdos y perros domésticos, arroz temprano, los estanques de carpas más antiguos conocidos y flautas de hueso de grulla que aún se pueden tocar."
+          },
+          "wiki": {
+            "en": "Jiahu",
+            "es": "Jiahu"
+          },
+          "img": "Jiahu Bone Flute.jpg"
+        },
+        {
+          "id": "common-carp",
+          "name": {
+            "en": "Common carp",
+            "es": "Carpa común"
+          },
+          "at": [
+            113.74,
+            33.56
+          ],
+          "cat": "tamed",
+          "icon": "🐟",
+          "type": "animal",
+          "date": "-6000",
+          "place": {
+            "en": "Jiahu, Henan, China",
+            "es": "Jiahu, Henan, China"
+          },
+          "text": {
+            "en": "The first fish people farmed: at Jiahu, villagers kept carp in ponds about 8,000 years ago. Carp are still among the most farmed fish in the world.",
+            "es": "El primer pez que se crió: en Jiahu, los aldeanos tenían carpas en estanques hace unos 8000 años. La carpa sigue siendo uno de los peces más criados del mundo."
+          },
+          "wiki": {
+            "en": "Common carp",
+            "es": "Cyprinus carpio"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-6000",
+      "title": {
+        "en": "Herds on the move",
+        "es": "Rebaños en marcha"
+      },
+      "camera": {
+        "lon": 34.0,
+        "lat": 38.0,
+        "zoom": 1.65
+      },
+      "control": {
+        "cradle": {
+          "union": [
+            {
+              "prev": true
+            },
+            {
+              "land": [
+                [
+                  69.45,
+                  29.0
+                ],
+                [
+                  69.34,
+                  29.44
+                ],
+                [
+                  69.08,
+                  29.82
+                ],
+                [
+                  68.65,
+                  30.03
+                ],
+                [
+                  68.24,
+                  30.19
+                ],
+                [
+                  67.8,
+                  30.45
+                ],
+                [
+                  67.23,
+                  30.54
+                ],
+                [
+                  66.78,
+                  30.22
+                ],
+                [
+                  66.6,
+                  29.76
+                ],
+                [
+                  66.42,
+                  29.39
+                ],
+                [
+                  66.25,
+                  29.0
+                ],
+                [
+                  66.3,
+                  28.57
+                ],
+                [
+                  66.5,
+                  28.17
+                ],
+                [
+                  66.77,
+                  27.76
+                ],
+                [
+                  67.25,
+                  27.52
+                ],
+                [
+                  67.8,
+                  27.65
+                ],
+                [
+                  68.22,
+                  27.88
+                ],
+                [
+                  68.66,
+                  27.96
+                ],
+                [
+                  69.19,
+                  28.12
+                ],
+                [
+                  69.46,
+                  28.53
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "text": {
+        "en": "Farmers took sheep, goats, cattle and pigs out of the Fertile Crescent: up the Danube into Europe, along the Mediterranean, into Egypt and east to Mehrgarh, where people tamed humped cattle, the zebu.",
+        "es": "Los agricultores llevaron ovejas, cabras, vacas y cerdos fuera del Creciente Fértil: Danubio arriba hacia Europa, por el Mediterráneo, hacia Egipto y al este hasta Mehrgarh, donde se domesticó al ganado con joroba, el cebú."
+      },
+      "details": {
+        "en": "Farmers from Anatolia brought sheep to Greece by about 7000 BC, and by 4000 BC sheep had reached Britain in the west and China in the east. On the way, pigs mixed with European wild boars and cattle with wild aurochs. At Mehrgarh, at the foot of the Bolan Pass in Pakistan, people who had come with sheep and goats from the west also tamed the local Indian aurochs; it gave the zebu, with its hump and loose skin. Herding changed people's bodies too. Most adults cannot digest milk well; among herders, the ability to do so spread, in Europe from about 7,500 years ago and, through other mutations, in East Africa and the Middle East.",
+        "es": "Los agricultores de Anatolia llevaron ovejas a Grecia hacia 7000 a. C., y hacia 4000 a. C. las ovejas habían llegado a Gran Bretaña por el oeste y a China por el este. Por el camino, los cerdos se mezclaron con jabalíes europeos y las vacas con uros salvajes. En Mehrgarh, al pie del paso de Bolán, en Pakistán, gente llegada del oeste con ovejas y cabras domesticó además al uro indio local, que dio el cebú, con su joroba y su piel suelta. El pastoreo cambió también el cuerpo de la gente. La mayoría de los adultos digiere mal la leche; entre los pastores se extendió la capacidad de hacerlo, en Europa desde hace unos 7500 años y, con otras mutaciones, en África oriental y Oriente Medio."
+      },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [
+            [
+              32.8,
+              37.8
+            ],
+            [
+              29.6,
+              40.6
+            ],
+            [
+              26.5,
+              42.0
+            ],
+            [
+              22.5,
+              44.6
+            ],
+            [
+              19.0,
+              46.4
+            ],
+            [
+              16.4,
+              48.2
+            ],
+            [
+              11.5,
+              49.6
+            ],
+            [
+              7.0,
+              50.8
+            ]
+          ],
+          "label": {
+            "en": "Up the Danube into Europe",
+            "es": "Danubio arriba hacia Europa"
+          }
+        },
+        {
+          "side": "spread",
+          "path": [
+            [
+              27.0,
+              38.5
+            ],
+            [
+              23.6,
+              37.8
+            ],
+            [
+              19.8,
+              39.6
+            ],
+            [
+              16.0,
+              40.2
+            ],
+            [
+              12.2,
+              41.6
+            ],
+            [
+              9.2,
+              43.6
+            ],
+            [
+              5.0,
+              43.2
+            ],
+            [
+              1.0,
+              41.0
+            ],
+            [
+              -2.2,
+              37.2
+            ]
+          ],
+          "label": {
+            "en": "Along the Mediterranean",
+            "es": "Por el Mediterráneo"
+          }
+        },
+        {
+          "side": "spread",
+          "path": [
+            [
+              35.2,
+              32.0
+            ],
+            [
+              34.2,
+              30.8
+            ],
+            [
+              32.6,
+              30.8
+            ],
+            [
+              31.2,
+              30.4
+            ],
+            [
+              30.7,
+              29.4
+            ],
+            [
+              31.2,
+              26.4
+            ]
+          ],
+          "label": {
+            "en": "Into Egypt",
+            "es": "Hacia Egipto"
+          }
+        },
+        {
+          "side": "spread",
+          "path": [
+            [
+              47.5,
+              34.3
+            ],
+            [
+              51.4,
+              32.8
+            ],
+            [
+              56.0,
+              30.6
+            ],
+            [
+              61.0,
+              30.2
+            ],
+            [
+              64.5,
+              30.0
+            ],
+            [
+              67.6167,
+              29.3833
+            ]
+          ],
+          "label": {
+            "en": "East to Mehrgarh",
+            "es": "Al este, hasta Mehrgarh"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "zebu",
+          "name": {
+            "en": "Zebu",
+            "es": "Cebú"
+          },
+          "at": [
+            67.7,
+            29.3
+          ],
+          "cat": "tamed",
+          "icon": "🐄",
+          "type": "animal",
+          "date": "-6000",
+          "place": {
+            "en": "Mehrgarh, Balochistan, Pakistan",
+            "es": "Mehrgarh, Baluchistán, Pakistán"
+          },
+          "text": {
+            "en": "Humped cattle tamed from the Indian aurochs at Mehrgarh, 8,000 to 6,000 years ago; the dates are debated. Their hump, loose skin and tolerance of heat suit the tropics, from India to Brazil.",
+            "es": "Ganado con joroba domesticado a partir del uro indio en Mehrgarh, hace entre 8000 y 6000 años; las fechas se discuten. Su joroba, su piel suelta y su tolerancia al calor le van bien al trópico, de la India a Brasil."
+          },
+          "wiki": {
+            "en": "Zebu",
+            "es": "Bos indicus"
+          }
+        },
+        {
+          "id": "mehrgarh",
+          "name": {
+            "en": "Mehrgarh",
+            "es": "Mehrgarh"
+          },
+          "at": [
+            67.6167,
+            29.3833
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-7000",
+          "place": {
+            "en": "Balochistan, Pakistan",
+            "es": "Baluchistán, Pakistán"
+          },
+          "text": {
+            "en": "One of the oldest farming villages of South Asia, at the foot of the Bolan Pass. Its people grew wheat and barley and herded sheep, goats and cattle; how early it began is debated.",
+            "es": "Una de las aldeas agrícolas más antiguas del sur de Asia, al pie del paso de Bolán. Su gente cultivaba trigo y cebada y criaba ovejas, cabras y vacas; cuándo empezó exactamente se discute."
+          },
+          "wiki": {
+            "en": "Mehrgarh",
+            "es": "Mejergar"
+          }
+        },
+        {
+          "id": "lactase-persistence",
+          "name": {
+            "en": "Milk for grown-ups",
+            "es": "Leche para adultos"
+          },
+          "at": [
+            20.5,
+            45.5
+          ],
+          "cat": "tamed",
+          "icon": "🥛",
+          "type": "event",
+          "date": "-5500",
+          "place": {
+            "en": "Central Balkans and Central Europe",
+            "es": "Balcanes centrales y Europa central"
+          },
+          "text": {
+            "en": "Most mammals, and most people, lose the ability to digest milk after childhood. Among herders keeping it became common: in Europe from about 7,500 years ago, and separately in Africa and the Middle East.",
+            "es": "La mayoría de los mamíferos, y de las personas, pierden la capacidad de digerir la leche tras la infancia. Entre los pastores se volvió común conservarla: en Europa desde hace unos 7500 años, y por separado en África y Oriente Medio."
+          },
+          "wiki": {
+            "en": "Lactase persistence",
+            "es": "Persistencia de la lactasa"
+          },
+          "img": "Hand milking a cow at Cobbes Farm Museum.jpg"
+        }
+      ]
+    },
+    {
+      "date": "-5000",
+      "title": {
+        "en": "Donkeys of northeast Africa",
+        "es": "Los burros del noreste de África"
+      },
+      "camera": {
+        "lon": 34.0,
+        "lat": 20.0,
+        "zoom": 3.4
+      },
+      "control": {
+        "cradle": {
+          "union": [
+            {
+              "prev": true
+            },
+            {
+              "land": [
+                [
+                  33.43,
+                  19.06
+                ],
+                [
+                  33.43,
+                  19.99
+                ],
+                [
+                  33.15,
+                  20.71
+                ],
+                [
+                  33.0,
+                  21.45
+                ],
+                [
+                  32.84,
+                  22.41
+                ],
+                [
+                  32.29,
+                  22.93
+                ],
+                [
+                  31.55,
+                  22.62
+                ],
+                [
+                  30.93,
+                  22.07
+                ],
+                [
+                  30.35,
+                  21.61
+                ],
+                [
+                  29.87,
+                  20.93
+                ],
+                [
+                  29.56,
+                  20.09
+                ],
+                [
+                  29.28,
+                  19.19
+                ],
+                [
+                  29.11,
+                  18.14
+                ],
+                [
+                  29.47,
+                  17.37
+                ],
+                [
+                  30.17,
+                  17.22
+                ],
+                [
+                  30.74,
+                  17.13
+                ],
+                [
+                  31.26,
+                  16.79
+                ],
+                [
+                  31.94,
+                  16.78
+                ],
+                [
+                  32.57,
+                  17.36
+                ],
+                [
+                  33.06,
+                  18.16
+                ]
+              ]
+            },
+            {
+              "land": [
+                [
+                  41.4,
+                  15.2
+                ],
+                [
+                  40.81,
+                  15.42
+                ],
+                [
+                  40.39,
+                  15.86
+                ],
+                [
+                  39.76,
+                  16.24
+                ],
+                [
+                  38.92,
+                  16.05
+                ],
+                [
+                  38.24,
+                  15.45
+                ],
+                [
+                  37.71,
+                  14.86
+                ],
+                [
+                  37.29,
+                  14.23
+                ],
+                [
+                  37.18,
+                  13.57
+                ],
+                [
+                  37.18,
+                  12.95
+                ],
+                [
+                  37.14,
+                  12.22
+                ],
+                [
+                  37.47,
+                  11.58
+                ],
+                [
+                  38.3,
+                  11.52
+                ],
+                [
+                  39.11,
+                  11.84
+                ],
+                [
+                  39.78,
+                  12.01
+                ],
+                [
+                  40.54,
+                  12.17
+                ],
+                [
+                  41.21,
+                  12.66
+                ],
+                [
+                  41.65,
+                  13.34
+                ],
+                [
+                  41.97,
+                  14.06
+                ],
+                [
+                  41.94,
+                  14.77
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "text": {
+        "en": "In northeast Africa, herders tamed the African wild ass between 7,000 and 5,000 years ago. Donkeys need little water and carry heavy loads: they made long desert journeys possible and helped build Egypt's trade.",
+        "es": "En el noreste de África, los pastores domesticaron al asno salvaje africano hace entre 7000 y 5000 años. El burro necesita poca agua y carga mucho: hizo posibles los largos viajes por el desierto y ayudó al comercio de Egipto."
+      },
+      "details": {
+        "en": "The donkey's wild ancestors are the Nubian and Somali wild asses. They were probably tamed first by herders in Nubia, and genes suggest that Cushitic-speaking peoples of the Horn of Africa tamed them separately. Donkeys do not need to stop and chew the cud like cattle, so they kept moving and made herders far more mobile. Around 3000 BC ten donkeys were buried with honour beside the tomb of one of Egypt's first kings at Abydos, and later some rich Egyptians owned over 1,000. Donkeys reached Southwest Asia by about 3000 BC and Europe in the second millennium BC. Their wild cousins are now critically endangered: only about 570 remain.",
+        "es": "Los antepasados salvajes del burro son los asnos salvajes de Nubia y de Somalia. Probablemente los domesticaron primero pastores de Nubia, y los genes sugieren que los pueblos de lengua cusita del Cuerno de África lo hicieron por separado. Los burros no tienen que pararse a rumiar como las vacas, así que seguían andando y dieron mucha más movilidad a los pastores. Hacia 3000 a. C. se enterró con honores a diez burros junto a la tumba de uno de los primeros reyes de Egipto en Abidos, y más tarde algunos egipcios ricos tenían más de 1000. Los burros llegaron al suroeste de Asia hacia 3000 a. C. y a Europa en el segundo milenio a. C. Sus parientes salvajes están hoy en peligro crítico: quedan unos 570."
+      },
+      "places": [
+        {
+          "id": "donkey",
+          "name": {
+            "en": "Donkey",
+            "es": "Burro"
+          },
+          "at": [
+            30.8,
+            19.9
+          ],
+          "cat": "tamed",
+          "icon": "🐴",
+          "type": "animal",
+          "date": "-5000",
+          "place": {
+            "en": "Nubia, Sudan, and the Horn of Africa",
+            "es": "Nubia, Sudán, y el Cuerno de África"
+          },
+          "text": {
+            "en": "Tamed from the African wild ass in northeast Africa, 7,000 to 5,000 years ago. Tough, sure-footed and able to live on little water, donkeys became the pack animals of the ancient world.",
+            "es": "Domesticado a partir del asno salvaje africano en el noreste de África, hace entre 7000 y 5000 años. Fuerte, de paso seguro y capaz de vivir con poca agua, el burro fue el animal de carga del mundo antiguo."
+          },
+          "wiki": {
+            "en": "Donkey",
+            "es": "Equus africanus asinus"
+          }
+        },
+        {
+          "id": "abydos-donkeys",
+          "name": {
+            "en": "Donkeys of Abydos",
+            "es": "Los burros de Abidos"
+          },
+          "at": [
+            31.9083,
+            26.175
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-3000",
+          "place": {
+            "en": "Umm El Qa'ab, Abydos, Egypt",
+            "es": "Umm el-Qaab, Abidos, Egipto"
+          },
+          "text": {
+            "en": "Around 3000 BC ten donkeys were buried with honour beside the tomb of an early king of Egypt, Narmer or Hor-Aha. The burial shows how much the new state depended on them.",
+            "es": "Hacia 3000 a. C. se enterró con honores a diez burros junto a la tumba de un rey de los primeros tiempos de Egipto, Narmer u Hor-Aha. El entierro muestra cuánto dependía de ellos el nuevo Estado."
+          },
+          "wiki": {
+            "en": "Umm El Qa'ab",
+            "es": "Umm el-Qaab"
+          },
+          "img": "Umm el-Qaab.jpg"
+        }
+      ]
+    },
+    {
+      "date": "-4000",
+      "title": {
+        "en": "Llamas, alpacas and guinea pigs",
+        "es": "Llamas, alpacas y cuyes"
+      },
+      "camera": {
+        "lon": -74.0,
+        "lat": -10.0,
+        "zoom": 3.2
+      },
+      "control": {
+        "cradle": {
+          "union": [
+            {
+              "prev": true
+            },
+            {
+              "land": [
+                [
+                  -79.0,
+                  0.5
+                ],
+                [
+                  -79.2,
+                  -2.0
+                ],
+                [
+                  -79.0,
+                  -4.5
+                ],
+                [
+                  -78.5,
+                  -6.5
+                ],
+                [
+                  -77.6,
+                  -8.5
+                ],
+                [
+                  -76.6,
+                  -10.5
+                ],
+                [
+                  -75.6,
+                  -12.0
+                ],
+                [
+                  -74.3,
+                  -13.6
+                ],
+                [
+                  -72.6,
+                  -15.0
+                ],
+                [
+                  -71.2,
+                  -16.3
+                ],
+                [
+                  -70.2,
+                  -17.8
+                ],
+                [
+                  -69.6,
+                  -19.5
+                ],
+                [
+                  -68.9,
+                  -21.5
+                ],
+                [
+                  -66.6,
+                  -21.5
+                ],
+                [
+                  -66.8,
+                  -19.0
+                ],
+                [
+                  -67.6,
+                  -16.8
+                ],
+                [
+                  -69.6,
+                  -14.4
+                ],
+                [
+                  -71.8,
+                  -13.0
+                ],
+                [
+                  -73.8,
+                  -11.6
+                ],
+                [
+                  -75.0,
+                  -9.6
+                ],
+                [
+                  -76.4,
+                  -7.2
+                ],
+                [
+                  -77.6,
+                  -5.0
+                ],
+                [
+                  -77.9,
+                  -2.6
+                ],
+                [
+                  -77.4,
+                  -0.2
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "text": {
+        "en": "High in the Andes, herders tamed two wild relatives of the camel: the guanaco became the llama, a pack animal, and the vicuña the alpaca, prized for its wool. They also tamed the guinea pig for its meat.",
+        "es": "En lo alto de los Andes, los pastores domesticaron a dos parientes salvajes del camello: el guanaco se convirtió en la llama, animal de carga, y la vicuña en la alpaca, apreciada por su lana. También domesticaron el cuy por su carne."
+      },
+      "details": {
+        "en": "Llamas and alpacas were tamed at least 5,000 to 6,000 years ago from wild camelids that people had hunted for thousands of years. The camel family began in North America and reached South America about 3 million years ago, then died out in its homeland at the end of the Ice Age. Llamas carried loads for the Inca, whose empire had no other beasts of burden, and their dung fertilized fields. Guinea pigs, tamed as early as 5000 BC in what is now Colombia, Ecuador, Peru and Bolivia, are still eaten at feasts and used in ceremonies. After the Spanish conquest of 1532, almost all the alpacas were killed and the herds were pushed higher into the mountains.",
+        "es": "Las llamas y las alpacas se domesticaron hace al menos 5000 a 6000 años a partir de camélidos salvajes que la gente cazaba desde hacía milenios. La familia de los camellos nació en Norteamérica y llegó a Sudamérica hace unos 3 millones de años; luego desapareció de su tierra de origen al final de la Edad de Hielo. Las llamas llevaban cargas para los incas, cuyo imperio no tenía otras bestias de carga, y su estiércol abonaba los campos. Los cuyes, domesticados ya hacia 5000 a. C. en lo que hoy es Colombia, Ecuador, Perú y Bolivia, aún se comen en fiestas y se usan en ceremonias. Tras la conquista española de 1532 se mató a casi todas las alpacas y los rebaños fueron empujados más arriba en las montañas."
+      },
+      "places": [
+        {
+          "id": "llama",
+          "name": {
+            "en": "Llama",
+            "es": "Llama"
+          },
+          "at": [
+            -69.9,
+            -15.8
+          ],
+          "cat": "tamed",
+          "icon": "🦙",
+          "type": "animal",
+          "date": "-4000",
+          "place": {
+            "en": "Andes of Peru and Bolivia",
+            "es": "Andes de Perú y Bolivia"
+          },
+          "text": {
+            "en": "Bred from the wild guanaco at least 5,000 years ago. Llamas carry loads over mountain trails, give wool, meat and dung for the fields, and were the only beasts of burden of the Inca.",
+            "es": "Criada a partir del guanaco salvaje hace al menos 5000 años. La llama carga por senderos de montaña, da lana, carne y estiércol para los campos, y fue la única bestia de carga de los incas."
+          },
+          "wiki": {
+            "en": "Llama",
+            "es": "Lama glama"
+          }
+        },
+        {
+          "id": "alpaca",
+          "name": {
+            "en": "Alpaca",
+            "es": "Alpaca"
+          },
+          "at": [
+            -75.8702,
+            -11.1772
+          ],
+          "cat": "tamed",
+          "icon": "🦙",
+          "type": "animal",
+          "date": "-4000",
+          "place": {
+            "en": "Puna of Junín, Peru",
+            "es": "Puna de Junín, Perú"
+          },
+          "text": {
+            "en": "A smaller cousin of the llama, bred from the wild vicuña for its soft, fine wool. After the Spanish conquest almost all alpacas were killed; today over half of them live in Peru.",
+            "es": "Una prima más pequeña de la llama, criada a partir de la vicuña salvaje por su lana fina y suave. Tras la conquista española se mató a casi todas las alpacas; hoy más de la mitad vive en Perú."
+          },
+          "wiki": {
+            "en": "Alpaca",
+            "es": "Vicugna pacos"
+          }
+        },
+        {
+          "id": "guinea-pig",
+          "name": {
+            "en": "Guinea pig",
+            "es": "Cuy (cobayo)"
+          },
+          "at": [
+            -78.5,
+            -1.8
+          ],
+          "cat": "tamed",
+          "icon": "🐹",
+          "type": "animal",
+          "date": "-5000",
+          "place": {
+            "en": "Andes of Ecuador and neighbouring lands",
+            "es": "Andes de Ecuador y tierras vecinas"
+          },
+          "text": {
+            "en": "A small rodent tamed for its meat in the Andes as early as 5000 BC. Called cuy, it is still eaten at feasts and used in folk healing; in the 1500s Europeans took it home as a pet.",
+            "es": "Un pequeño roedor domesticado por su carne en los Andes ya hacia 5000 a. C. Llamado cuy, aún se come en fiestas y se usa en la medicina tradicional; en el siglo XVI los europeos lo llevaron como mascota."
+          },
+          "wiki": {
+            "en": "Guinea pig",
+            "es": "Cavia porcellus"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-3000",
+      "title": {
+        "en": "Silk and water buffalo",
+        "es": "Seda y búfalos de agua"
+      },
+      "camera": {
+        "lon": 93.0,
+        "lat": 26.0,
+        "zoom": 2.0
+      },
+      "control": {
+        "cradle": {
+          "union": [
+            {
+              "prev": true
+            },
+            {
+              "land": [
+                [
+                  112.7,
+                  35.42
+                ],
+                [
+                  112.85,
+                  35.9
+                ],
+                [
+                  112.59,
+                  36.33
+                ],
+                [
+                  111.79,
+                  36.43
+                ],
+                [
+                  110.9,
+                  36.32
+                ],
+                [
+                  110.04,
+                  36.15
+                ],
+                [
+                  109.27,
+                  35.82
+                ],
+                [
+                  108.73,
+                  35.39
+                ],
+                [
+                  108.13,
+                  35.0
+                ],
+                [
+                  107.43,
+                  34.5
+                ],
+                [
+                  107.29,
+                  33.97
+                ],
+                [
+                  107.93,
+                  33.69
+                ],
+                [
+                  108.64,
+                  33.57
+                ],
+                [
+                  109.2,
+                  33.39
+                ],
+                [
+                  109.91,
+                  33.3
+                ],
+                [
+                  110.76,
+                  33.45
+                ],
+                [
+                  111.63,
+                  33.69
+                ],
+                [
+                  112.49,
+                  34.06
+                ],
+                [
+                  112.93,
+                  34.58
+                ],
+                [
+                  112.79,
+                  35.04
+                ]
+              ]
+            },
+            {
+              "land": [
+                [
+                  74.07,
+                  23.2
+                ],
+                [
+                  74.07,
+                  23.77
+                ],
+                [
+                  73.63,
+                  24.24
+                ],
+                [
+                  73.06,
+                  24.63
+                ],
+                [
+                  72.36,
+                  24.85
+                ],
+                [
+                  71.6,
+                  24.77
+                ],
+                [
+                  70.96,
+                  24.6
+                ],
+                [
+                  70.21,
+                  24.55
+                ],
+                [
+                  69.39,
+                  24.34
+                ],
+                [
+                  69.06,
+                  23.79
+                ],
+                [
+                  69.27,
+                  23.2
+                ],
+                [
+                  69.5,
+                  22.72
+                ],
+                [
+                  69.74,
+                  22.24
+                ],
+                [
+                  70.24,
+                  21.87
+                ],
+                [
+                  70.88,
+                  21.62
+                ],
+                [
+                  71.6,
+                  21.37
+                ],
+                [
+                  72.44,
+                  21.36
+                ],
+                [
+                  73.03,
+                  21.8
+                ],
+                [
+                  73.27,
+                  22.34
+                ],
+                [
+                  73.62,
+                  22.73
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "text": {
+        "en": "In northern China people tamed a wild moth: its caterpillar, the silkworm, spins a cocoon of silk. In South and Southeast Asia, farmers tamed the wild water buffalo to pull ploughs through wet fields.",
+        "es": "En el norte de China se domesticó una polilla salvaje: su oruga, el gusano de seda, teje un capullo de seda. En el sur y el sudeste de Asia, los campesinos domesticaron al búfalo de agua salvaje para arar campos inundados."
+      },
+      "details": {
+        "en": "The silk moth comes from the wild Bombyx mandarina, and the oldest evidence of silk farming belongs to the Yangshao culture of northern China, more than 5,000 years ago. Taming changed it more than almost any other animal: domestic silk moths are plump, put up with crowding and handling, and cannot fly, so the males need people's help to find a mate; they could not survive in the wild. Water buffalo were tamed twice: the river buffalo in western India about 6,300 years ago, and the swamp buffalo in mainland Southeast Asia, between 7,000 and 3,000 years ago. By 2500 BC traders from the Indus valley were shipping buffalo to Mesopotamia.",
+        "es": "La polilla de la seda viene de la salvaje Bombyx mandarina, y la prueba más antigua de cría de seda pertenece a la cultura Yangshao del norte de China, hace más de 5000 años. La domesticación la cambió más que a casi cualquier otro animal: las polillas domésticas son rollizas, toleran el hacinamiento y el manejo, y no pueden volar, así que los machos necesitan ayuda humana para encontrar pareja; no sobrevivirían en libertad. Los búfalos de agua se domesticaron dos veces: el búfalo de río en el oeste de la India hace unos 6300 años, y el búfalo de pantano en el sudeste asiático continental, hace entre 7000 y 3000 años. Hacia 2500 a. C., comerciantes del valle del Indo llevaban búfalos por mar a Mesopotamia."
+      },
+      "places": [
+        {
+          "id": "silkworm",
+          "name": {
+            "en": "Silkworm",
+            "es": "Gusano de seda"
+          },
+          "at": [
+            111.762,
+            34.767
+          ],
+          "cat": "tamed",
+          "icon": "🐛",
+          "type": "animal",
+          "date": "-3000",
+          "place": {
+            "en": "Yellow River valley, China",
+            "es": "Valle del río Amarillo, China"
+          },
+          "text": {
+            "en": "The caterpillar of a moth tamed in China over 5,000 years ago from the wild Bombyx mandarina. Each spins a cocoon of silk thread; the adult moths cannot fly or survive without people.",
+            "es": "La oruga de una polilla domesticada en China hace más de 5000 años a partir de la salvaje Bombyx mandarina. Cada una teje un capullo de hilo de seda; las polillas adultas no pueden volar ni sobrevivir sin la gente."
+          },
+          "wiki": {
+            "en": "Bombyx mori",
+            "es": "Bombyx mori"
+          }
+        },
+        {
+          "id": "water-buffalo",
+          "name": {
+            "en": "Water buffalo",
+            "es": "Búfalo de agua"
+          },
+          "at": [
+            72.655,
+            23.22
+          ],
+          "cat": "tamed",
+          "icon": "🐃",
+          "type": "animal",
+          "date": "-4300",
+          "place": {
+            "en": "Western India",
+            "es": "Oeste de la India"
+          },
+          "text": {
+            "en": "A big ox that loves to wallow, tamed from the wild water buffalo in western India about 6,300 years ago and again in Southeast Asia. It pulls ploughs through flooded rice fields and gives rich milk.",
+            "es": "Un gran buey al que le encanta revolcarse en el barro, domesticado a partir del búfalo salvaje en el oeste de la India hace unos 6300 años y de nuevo en el sudeste asiático. Ara arrozales inundados y da una leche rica."
+          },
+          "wiki": {
+            "en": "Water buffalo",
+            "es": "Bubalus bubalis"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-2500",
+      "title": {
+        "en": "Camels of the deserts",
+        "es": "Camellos de los desiertos"
+      },
+      "camera": {
+        "lon": 78.0,
+        "lat": 32.0,
+        "zoom": 1.8
+      },
+      "control": {
+        "cradle": {
+          "union": [
+            {
+              "prev": true
+            },
+            {
+              "land": [
+                [
+                  56.59,
+                  19.51
+                ],
+                [
+                  55.92,
+                  20.05
+                ],
+                [
+                  54.77,
+                  20.33
+                ],
+                [
+                  52.73,
+                  19.88
+                ],
+                [
+                  50.5,
+                  18.88
+                ],
+                [
+                  48.62,
+                  18.09
+                ],
+                [
+                  46.34,
+                  17.32
+                ],
+                [
+                  44.0,
+                  16.08
+                ],
+                [
+                  42.98,
+                  14.83
+                ],
+                [
+                  42.95,
+                  13.94
+                ],
+                [
+                  42.99,
+                  13.17
+                ],
+                [
+                  43.62,
+                  12.68
+                ],
+                [
+                  44.96,
+                  12.64
+                ],
+                [
+                  46.38,
+                  12.64
+                ],
+                [
+                  48.23,
+                  12.78
+                ],
+                [
+                  50.65,
+                  13.74
+                ],
+                [
+                  52.47,
+                  15.15
+                ],
+                [
+                  53.64,
+                  16.29
+                ],
+                [
+                  55.17,
+                  17.4
+                ],
+                [
+                  56.5,
+                  18.62
+                ]
+              ]
+            },
+            {
+              "land": [
+                [
+                  69.77,
+                  37.56
+                ],
+                [
+                  69.6,
+                  38.08
+                ],
+                [
+                  68.79,
+                  38.32
+                ],
+                [
+                  67.88,
+                  38.34
+                ],
+                [
+                  67.19,
+                  38.5
+                ],
+                [
+                  66.3,
+                  38.68
+                ],
+                [
+                  65.29,
+                  38.49
+                ],
+                [
+                  64.57,
+                  38.0
+                ],
+                [
+                  64.07,
+                  37.5
+                ],
+                [
+                  63.75,
+                  36.99
+                ],
+                [
+                  63.86,
+                  36.52
+                ],
+                [
+                  64.15,
+                  36.12
+                ],
+                [
+                  64.33,
+                  35.63
+                ],
+                [
+                  64.86,
+                  35.18
+                ],
+                [
+                  65.89,
+                  35.18
+                ],
+                [
+                  66.86,
+                  35.53
+                ],
+                [
+                  67.64,
+                  35.82
+                ],
+                [
+                  68.49,
+                  36.07
+                ],
+                [
+                  69.18,
+                  36.49
+                ],
+                [
+                  69.54,
+                  37.01
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "text": {
+        "en": "Camels made deserts crossable. The one-humped dromedary was tamed in southern Arabia, perhaps 5,000 to 4,000 years ago, and the two-humped Bactrian camel in Central Asia about 4,500 years ago.",
+        "es": "Los camellos permitieron cruzar los desiertos. El dromedario, de una joroba, se domesticó en el sur de Arabia, quizá hace entre 5000 y 4000 años, y el camello bactriano, de dos jorobas, en Asia central hace unos 4500 años."
+      },
+      "details": {
+        "en": "The wild dromedary has been gone for nearly 2,000 years; only tame and feral ones remain, including a large feral herd in Australia. Dromedaries reached North Africa by 1500 BC at the latest, and by the 3rd century AD they were in the Senegal valley, south of the Sahara. Bactrian camels, tough enough for frozen winters and high passes, carried the caravans of the Silk Road. Their wild cousin, the wild Bactrian camel, is a separate species and not their ancestor: about 950 survive in China and Mongolia. Camels give milk, meat, wool and leather as well as transport.",
+        "es": "El dromedario salvaje desapareció hace casi 2000 años; solo quedan domésticos y asilvestrados, entre ellos una gran manada asilvestrada en Australia. Los dromedarios llegaron al norte de África hacia 1500 a. C. como muy tarde, y en el siglo III d. C. ya estaban en el valle del Senegal, al sur del Sahara. Los camellos bactrianos, capaces de soportar inviernos helados y pasos altos, llevaron las caravanas de la Ruta de la Seda. Su pariente salvaje, el camello bactriano salvaje, es otra especie y no su antepasado: sobreviven unos 950 en China y Mongolia. Los camellos dan leche, carne, lana y cuero, además de transporte."
+      },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [
+            [
+              66.9,
+              36.76
+            ],
+            [
+              71.5,
+              39.4
+            ],
+            [
+              75.99,
+              39.47
+            ],
+            [
+              80.3,
+              41.2
+            ],
+            [
+              83.0,
+              41.7
+            ],
+            [
+              89.2,
+              42.95
+            ],
+            [
+              94.66,
+              40.14
+            ],
+            [
+              98.5,
+              39.7
+            ],
+            [
+              103.8,
+              36.06
+            ],
+            [
+              108.94,
+              34.34
+            ]
+          ],
+          "label": {
+            "en": "Bactrian camels on the Silk Road",
+            "es": "Camellos bactrianos en la Ruta de la Seda"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "dromedary",
+          "name": {
+            "en": "Dromedary",
+            "es": "Dromedario"
+          },
+          "at": [
+            54.0,
+            18.0
+          ],
+          "cat": "tamed",
+          "icon": "🐪",
+          "type": "animal",
+          "date": "-3000",
+          "place": {
+            "en": "Southern Arabia",
+            "es": "Sur de Arabia"
+          },
+          "text": {
+            "en": "The one-humped camel, tamed in southern Arabia perhaps 5,000 to 4,000 years ago. Able to go days without water, it carried people and goods across the deserts of Arabia and Africa; no wild ones remain.",
+            "es": "El camello de una joroba, domesticado en el sur de Arabia quizá hace entre 5000 y 4000 años. Capaz de pasar días sin agua, llevó gente y mercancías por los desiertos de Arabia y África; ya no quedan salvajes."
+          },
+          "wiki": {
+            "en": "Dromedary",
+            "es": "Camelus dromedarius"
+          }
+        },
+        {
+          "id": "bactrian-camel",
+          "name": {
+            "en": "Bactrian camel",
+            "es": "Camello bactriano"
+          },
+          "at": [
+            66.8981,
+            36.7581
+          ],
+          "cat": "tamed",
+          "icon": "🐫",
+          "type": "animal",
+          "date": "-2500",
+          "place": {
+            "en": "Central Asia (ancient Bactria)",
+            "es": "Asia central (la antigua Bactriana)"
+          },
+          "text": {
+            "en": "The two-humped camel of Central Asia, tamed about 4,500 years ago and named after ancient Bactria. Built for cold, drought and high passes, it carried the caravans of the Silk Road.",
+            "es": "El camello de dos jorobas de Asia central, domesticado hace unos 4500 años y llamado así por la antigua Bactriana. Hecho para el frío, la sequía y los pasos altos, llevó las caravanas de la Ruta de la Seda."
+          },
+          "wiki": {
+            "en": "Bactrian camel",
+            "es": "Camelus bactrianus"
+          }
+        },
+        {
+          "id": "wild-bactrian-camel",
+          "name": {
+            "en": "Wild Bactrian camel",
+            "es": "Camello bactriano salvaje"
+          },
+          "at": [
+            90.5833,
+            40.1667
+          ],
+          "cat": "mammal",
+          "icon": "🐫",
+          "type": "species",
+          "date": "-1100000",
+          "place": {
+            "en": "Lop Nur, Xinjiang, China",
+            "es": "Lop Nur, Sinkiang, China"
+          },
+          "text": {
+            "en": "A truly wild camel of the deserts of China and Mongolia, a separate species whose line split from the tame Bactrian's about a million years ago. Only about 950 survive; some drink water saltier than the sea.",
+            "es": "Un camello realmente salvaje de los desiertos de China y Mongolia, una especie aparte cuyo linaje se separó del bactriano doméstico hace alrededor de un millón de años. Solo quedan unos 950; algunos beben agua más salada que el mar."
+          },
+          "wiki": {
+            "en": "Wild Bactrian camel",
+            "es": "Camelus ferus"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-2200",
+      "title": {
+        "en": "The horse that changed history",
+        "es": "El caballo que cambió la historia"
+      },
+      "camera": {
+        "lon": 65.0,
+        "lat": 46.0,
+        "zoom": 1.6
+      },
+      "control": {
+        "cradle": {
+          "union": [
+            {
+              "prev": true
+            },
+            {
+              "land": [
+                [
+                  47.63,
+                  50.0
+                ],
+                [
+                  46.6,
+                  50.37
+                ],
+                [
+                  45.66,
+                  50.55
+                ],
+                [
+                  44.97,
+                  51.0
+                ],
+                [
+                  43.91,
+                  51.27
+                ],
+                [
+                  42.62,
+                  50.92
+                ],
+                [
+                  41.5,
+                  50.27
+                ],
+                [
+                  40.55,
+                  49.55
+                ],
+                [
+                  40.03,
+                  48.72
+                ],
+                [
+                  40.11,
+                  47.96
+                ],
+                [
+                  40.11,
+                  47.27
+                ],
+                [
+                  39.96,
+                  46.37
+                ],
+                [
+                  40.54,
+                  45.69
+                ],
+                [
+                  41.88,
+                  45.74
+                ],
+                [
+                  43.15,
+                  46.13
+                ],
+                [
+                  44.26,
+                  46.41
+                ],
+                [
+                  45.39,
+                  46.83
+                ],
+                [
+                  46.29,
+                  47.51
+                ],
+                [
+                  47.08,
+                  48.28
+                ],
+                [
+                  47.77,
+                  49.17
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "text": {
+        "en": "Horses were herded at Botai, in Kazakhstan, by 3500 BC, but DNA shows that today's horses come from a group tamed about 2200 BC near the Volga and Don rivers. With riders and chariots, they soon spread across Eurasia.",
+        "es": "En Botai, Kazajistán, ya se criaban caballos hacia 3500 a. C., pero el ADN muestra que los actuales vienen de un grupo domesticado hacia 2200 a. C. junto al Volga y el Don. Con jinetes y carros, pronto se extendieron por Eurasia."
+      },
+      "details": {
+        "en": "The Botai people of the Kazakh steppe lived largely on horses: their villages have corrals and great amounts of horse bones and dung, and some teeth show wear from bits. Whether those horses were truly tamed is debated. Their DNA held a surprise: they were the ancestors of Przewalski's horses, and gave almost nothing to modern horses. A 2021 study of 264 ancient horse genomes found that modern horses come from the lower Volga–Don steppe about 2200 BC, with genes for a stronger back and a calmer nature. From about 2000 BC they replaced every other horse population, buried in pairs with spoke-wheeled chariots at Sintashta. Horses changed travel, farming and war; the wild horses of Europe, the tarpans, died out.",
+        "es": "Los habitantes de Botai, en la estepa kazaja, vivían sobre todo de los caballos: sus aldeas tienen corrales y enormes cantidades de huesos y estiércol de caballo, y algunos dientes muestran el desgaste de un bocado. Si esos caballos estaban realmente domesticados se discute. Su ADN dio una sorpresa: eran los antepasados de los caballos de Przewalski y casi no aportaron nada a los caballos modernos. Un estudio de 2021 de 264 genomas antiguos de caballo halló que los caballos modernos vienen de la estepa del bajo Volga y el Don hacia 2200 a. C., con genes para una espalda más fuerte y un carácter más tranquilo. Desde hacia 2000 a. C. reemplazaron a todas las demás poblaciones de caballos, enterrados por parejas con carros de ruedas de radios en Sintashta. Los caballos cambiaron los viajes, el campo y la guerra; los caballos salvajes de Europa, los tarpanes, desaparecieron."
+      },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [
+            [
+              43.5,
+              48.5
+            ],
+            [
+              37.5,
+              47.2
+            ],
+            [
+              31.0,
+              46.8
+            ],
+            [
+              25.5,
+              46.2
+            ],
+            [
+              19.5,
+              47.2
+            ],
+            [
+              14.0,
+              48.8
+            ],
+            [
+              9.0,
+              50.0
+            ]
+          ],
+          "label": {
+            "en": "West into Europe",
+            "es": "Al oeste, hacia Europa"
+          }
+        },
+        {
+          "side": "spread",
+          "path": [
+            [
+              43.5,
+              48.5
+            ],
+            [
+              45.5,
+              44.5
+            ],
+            [
+              44.6,
+              41.5
+            ],
+            [
+              41.0,
+              39.6
+            ],
+            [
+              36.0,
+              39.0
+            ],
+            [
+              33.0,
+              39.2
+            ]
+          ],
+          "label": {
+            "en": "South to Anatolia",
+            "es": "Al sur, hacia Anatolia"
+          }
+        },
+        {
+          "side": "spread",
+          "path": [
+            [
+              43.5,
+              48.5
+            ],
+            [
+              51.0,
+              51.5
+            ],
+            [
+              60.19,
+              52.49
+            ],
+            [
+              69.0,
+              50.5
+            ],
+            [
+              78.0,
+              47.5
+            ],
+            [
+              86.0,
+              44.5
+            ],
+            [
+              95.0,
+              41.5
+            ],
+            [
+              104.0,
+              38.5
+            ]
+          ],
+          "label": {
+            "en": "East across the steppe",
+            "es": "Al este por la estepa"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "horse",
+          "name": {
+            "en": "Horse",
+            "es": "Caballo"
+          },
+          "at": [
+            43.5,
+            48.5
+          ],
+          "cat": "tamed",
+          "icon": "🐎",
+          "type": "animal",
+          "date": "-2200",
+          "place": {
+            "en": "Lower Volga–Don steppe, Russia",
+            "es": "Estepa del bajo Volga y el Don, Rusia"
+          },
+          "text": {
+            "en": "Today's horses descend from horses tamed on the steppe near the Volga and Don rivers about 2200 BC. Fast and strong, they carried riders and pulled chariots, changing travel, farming and war.",
+            "es": "Los caballos actuales descienden de los domesticados en la estepa cerca de los ríos Volga y Don hacia 2200 a. C. Rápidos y fuertes, llevaron jinetes y tiraron de carros, y cambiaron los viajes, el campo y la guerra."
+          },
+          "wiki": {
+            "en": "Horse",
+            "es": "Equus ferus caballus"
+          }
+        },
+        {
+          "id": "botai",
+          "name": {
+            "en": "Botai",
+            "es": "Botai"
+          },
+          "at": [
+            67.645,
+            53.303
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-3500",
+          "place": {
+            "en": "North Kazakhstan",
+            "es": "Norte de Kazajistán"
+          },
+          "text": {
+            "en": "Villages on the Kazakh steppe, from about 3700 to 3100 BC, whose people lived on horses. Corrals, dung and bit-worn teeth suggest they herded and perhaps rode them; whether they were tamed is debated.",
+            "es": "Aldeas de la estepa kazaja, de hacia 3700 a 3100 a. C., cuyos habitantes vivían de los caballos. Corrales, estiércol y dientes gastados por bocados sugieren que los criaban y quizá montaban; si estaban domesticados se discute."
+          },
+          "wiki": {
+            "en": "Botai culture",
+            "es": "Domesticación del caballo"
+          },
+          "img": "Историческое поселение Ботай.jpg"
+        },
+        {
+          "id": "przewalskis-horse",
+          "name": {
+            "en": "Przewalski's horse",
+            "es": "Caballo de Przewalski"
+          },
+          "at": [
+            105.8783,
+            47.765
+          ],
+          "cat": "mammal",
+          "icon": "🐎",
+          "type": "species",
+          "date": "-72000",
+          "place": {
+            "en": "Hustai National Park, Mongolia",
+            "es": "Parque nacional Hustai, Mongolia"
+          },
+          "text": {
+            "en": "The stocky horse of the Mongolian steppes, long called the last wild horse. DNA shows it descends from the horses of Botai, so it may be feral; it died out in the wild and was saved in zoos.",
+            "es": "El robusto caballo de las estepas mongolas, tenido por el último caballo salvaje. El ADN muestra que desciende de los caballos de Botai, así que quizá es asilvestrado; se extinguió en libertad y se salvó en zoológicos."
+          },
+          "details": {
+            "en": "Its line split from that of today's domestic horses tens of thousands of years ago, long before any taming. In 2018 a study found that the horses of Botai were its ancestors, which would make it the feral offspring of the first herded horses; other scientists argue that the Botai horses were never truly tamed. By the late 1960s none were left in the wild. Zoos kept the species alive, and from 1992 horses were released in Mongolia, here at Hustai and on the edge of the Gobi. It is now endangered rather than extinct in the wild.",
+            "es": "Su linaje se separó del de los caballos domésticos actuales hace decenas de miles de años, mucho antes de cualquier domesticación. En 2018 un estudio halló que los caballos de Botai eran sus antepasados, lo que lo convertiría en descendiente asilvestrado de los primeros caballos criados; otros científicos sostienen que los caballos de Botai nunca llegaron a estar domesticados. A fines de la década de 1960 ya no quedaba ninguno en libertad. Los zoológicos mantuvieron viva la especie y desde 1992 se soltaron caballos en Mongolia, aquí en Hustai y al borde del Gobi. Hoy está en peligro, pero ya no extinto en estado salvaje."
+          },
+          "wiki": {
+            "en": "Przewalski's horse",
+            "es": "Equus ferus przewalskii"
+          }
+        },
+        {
+          "id": "tarpan",
+          "name": {
+            "en": "Tarpan",
+            "es": "Tarpán"
+          },
+          "at": [
+            33.5,
+            46.6
+          ],
+          "cat": "mammal",
+          "icon": "🐎",
+          "type": "species",
+          "date": "1769",
+          "until": "1918",
+          "place": {
+            "en": "Steppes of Ukraine and southern Russia",
+            "es": "Estepas de Ucrania y el sur de Rusia"
+          },
+          "text": {
+            "en": "The free-roaming horses of the western Eurasian steppe, first described in 1769. Whether they were wild, feral or mixed is debated; the last free ones died in Ukraine in the late 1800s, the last captive one in 1918.",
+            "es": "Los caballos libres de la estepa euroasiática occidental, descritos en 1769. Se discute si eran salvajes, asilvestrados o mezclados; los últimos libres murieron en Ucrania a fines del siglo XIX y el último cautivo, en 1918."
+          },
+          "wiki": {
+            "en": "Tarpan",
+            "es": "Equus ferus ferus"
+          }
+        },
+        {
+          "id": "sintashta",
+          "name": {
+            "en": "Sintashta",
+            "es": "Sintashta"
+          },
+          "at": [
+            60.1883,
+            52.4862
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-2200",
+          "place": {
+            "en": "Chelyabinsk region, Russia",
+            "es": "Región de Cheliábinsk, Rusia"
+          },
+          "text": {
+            "en": "A fortified settlement on the steppes southeast of the Urals, about 2200 to 1900 BC. Its graves held pairs of horses with spoke-wheeled chariots: the clearest early proof of tamed horses.",
+            "es": "Un asentamiento fortificado de las estepas al sureste de los Urales, de hacia 2200 a 1900 a. C. Sus tumbas guardaban parejas de caballos con carros de ruedas de radios: la prueba temprana más clara de caballos domesticados."
+          },
+          "wiki": {
+            "en": "Sintashta culture",
+            "es": "Cultura de Sintashta"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-1500",
+      "title": {
+        "en": "Chickens from Southeast Asia",
+        "es": "Gallinas del sudeste de Asia"
+      },
+      "camera": {
+        "lon": 103.0,
+        "lat": 12.0,
+        "zoom": 1.05
+      },
+      "control": {
+        "cradle": {
+          "union": [
+            {
+              "prev": true
+            },
+            {
+              "land": [
+                [
+                  104.51,
+                  15.4
+                ],
+                [
+                  104.31,
+                  15.94
+                ],
+                [
+                  104.24,
+                  16.56
+                ],
+                [
+                  103.74,
+                  17.11
+                ],
+                [
+                  102.9,
+                  17.38
+                ],
+                [
+                  102.0,
+                  17.5
+                ],
+                [
+                  101.09,
+                  17.41
+                ],
+                [
+                  100.43,
+                  16.94
+                ],
+                [
+                  100.07,
+                  16.4
+                ],
+                [
+                  99.52,
+                  15.98
+                ],
+                [
+                  98.91,
+                  15.4
+                ],
+                [
+                  98.99,
+                  14.7
+                ],
+                [
+                  99.71,
+                  14.21
+                ],
+                [
+                  100.45,
+                  13.88
+                ],
+                [
+                  101.17,
+                  13.58
+                ],
+                [
+                  102.0,
+                  13.5
+                ],
+                [
+                  102.82,
+                  13.6
+                ],
+                [
+                  103.72,
+                  13.71
+                ],
+                [
+                  104.6,
+                  14.05
+                ],
+                [
+                  104.84,
+                  14.74
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "text": {
+        "en": "Chickens come from the red junglefowl of Southeast Asia's forests. A 2022 study found the oldest sure chicken bones at Ban Non Wat, Thailand, about 3,500 years old: the birds may have come to eat rice.",
+        "es": "Las gallinas vienen del gallo bankiva de los bosques del sudeste de Asia. Un estudio de 2022 halló los huesos de gallina seguros más antiguos en Ban Non Wat, Tailandia, de unos 3500 años: quizá llegaron atraídas por el arroz."
+      },
+      "details": {
+        "en": "When chickens were tamed is still argued over. Genetic studies suggest 8,000 years ago or more, but when researchers checked bones from over 600 sites, the oldest sure ones came from Ban Non Wat, from 1650 to 1250 BC. They think junglefowl came to eat grain in the new rice fields and nested nearby. Chickens may first have been kept for cockfighting rather than food. They reached Egypt about 1400 BC and appear on Greek pottery by the 7th century BC, and Austronesian seafarers carried them across the Pacific with pigs and dogs. Today there are more than 26 billion chickens, over three for every person.",
+        "es": "Cuándo se domesticó la gallina aún se discute. Los estudios genéticos sugieren hace 8000 años o más, pero cuando los investigadores revisaron huesos de más de 600 yacimientos, los más antiguos seguros resultaron ser los de Ban Non Wat, de 1650 a 1250 a. C. Creen que los gallos bankiva acudían a comer grano en los nuevos arrozales y anidaban cerca. Quizá se criaron primero para peleas de gallos y no como alimento. Llegaron a Egipto hacia 1400 a. C. y aparecen en la cerámica griega en el siglo VII a. C., y los navegantes austronesios las llevaron por el Pacífico con cerdos y perros. Hoy hay más de 26 000 millones de gallinas, más de tres por persona."
+      },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [
+            [
+              102.2689,
+              15.2744
+            ],
+            [
+              96.0,
+              17.5
+            ],
+            [
+              90.0,
+              23.0
+            ],
+            [
+              80.0,
+              26.5
+            ],
+            [
+              70.0,
+              27.0
+            ],
+            [
+              60.0,
+              27.5
+            ],
+            [
+              50.0,
+              30.0
+            ],
+            [
+              42.0,
+              33.0
+            ],
+            [
+              35.0,
+              31.5
+            ],
+            [
+              31.2,
+              30.0
+            ]
+          ],
+          "label": {
+            "en": "West to India and Egypt",
+            "es": "Al oeste, hacia la India y Egipto"
+          }
+        },
+        {
+          "side": "spread",
+          "path": [
+            [
+              121.0,
+              23.5
+            ],
+            [
+              121.2,
+              16.5
+            ],
+            [
+              124.5,
+              9.0
+            ],
+            [
+              131.0,
+              2.0
+            ],
+            [
+              140.0,
+              -2.5
+            ],
+            [
+              150.5,
+              -4.5
+            ],
+            [
+              158.0,
+              -8.5
+            ],
+            [
+              167.0,
+              -15.5
+            ],
+            [
+              178.0,
+              -17.8
+            ]
+          ],
+          "label": {
+            "en": "Across the Pacific",
+            "es": "A través del Pacífico"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "chicken",
+          "name": {
+            "en": "Chicken",
+            "es": "Gallina"
+          },
+          "at": [
+            102.2,
+            15.33
+          ],
+          "cat": "tamed",
+          "icon": "🐔",
+          "type": "animal",
+          "date": "-1500",
+          "place": {
+            "en": "Thailand and Southeast Asia",
+            "es": "Tailandia y el sudeste de Asia"
+          },
+          "text": {
+            "en": "Tamed from the red junglefowl of Southeast Asia; the oldest sure bones, from Thailand, are about 3,500 years old. First kept perhaps for cockfighting, chickens now number over 26 billion.",
+            "es": "Domesticada a partir del gallo bankiva del sudeste de Asia; los huesos seguros más antiguos, de Tailandia, tienen unos 3500 años. Criada quizá primero para peleas de gallos, hoy hay más de 26 000 millones."
+          },
+          "wiki": {
+            "en": "Chicken",
+            "es": "Gallus gallus domesticus"
+          }
+        },
+        {
+          "id": "ban-non-wat",
+          "name": {
+            "en": "Ban Non Wat",
+            "es": "Ban Non Wat"
+          },
+          "at": [
+            102.2689,
+            15.2744
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-1650",
+          "place": {
+            "en": "Nakhon Ratchasima, Thailand",
+            "es": "Nakhon Ratchasima, Tailandia"
+          },
+          "text": {
+            "en": "A village in Thailand, near Phimai, dug since 2002, with 640 prehistoric graves. Its chicken bones, from about 1650 to 1250 BC, some laid beside the dead, are the oldest sure ones known.",
+            "es": "Una aldea de Tailandia, cerca de Phimai, excavada desde 2002, con 640 tumbas prehistóricas. Sus huesos de gallina, de hacia 1650 a 1250 a. C., algunos colocados junto a los muertos, son los más antiguos seguros."
+          },
+          "wiki": {
+            "en": "Ban Non Wat",
+            "es": "Ban Non Wat"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-500",
+      "title": {
+        "en": "Yaks and reindeer",
+        "es": "Yaks y renos"
+      },
+      "camera": {
+        "lon": 84.0,
+        "lat": 50.0,
+        "zoom": 1.5
+      },
+      "control": {
+        "cradle": {
+          "union": [
+            {
+              "prev": true
+            },
+            {
+              "land": [
+                [
+                  98.16,
+                  33.91
+                ],
+                [
+                  98.44,
+                  35.06
+                ],
+                [
+                  97.22,
+                  36.0
+                ],
+                [
+                  95.2,
+                  36.68
+                ],
+                [
+                  92.7,
+                  37.18
+                ],
+                [
+                  89.67,
+                  37.0
+                ],
+                [
+                  87.21,
+                  36.08
+                ],
+                [
+                  85.33,
+                  35.26
+                ],
+                [
+                  82.71,
+                  34.64
+                ],
+                [
+                  80.36,
+                  33.61
+                ],
+                [
+                  80.23,
+                  32.34
+                ],
+                [
+                  81.58,
+                  31.35
+                ],
+                [
+                  83.08,
+                  30.52
+                ],
+                [
+                  85.16,
+                  29.96
+                ],
+                [
+                  87.75,
+                  29.88
+                ],
+                [
+                  90.3,
+                  29.82
+                ],
+                [
+                  93.35,
+                  29.74
+                ],
+                [
+                  96.38,
+                  30.38
+                ],
+                [
+                  97.59,
+                  31.7
+                ],
+                [
+                  97.6,
+                  32.88
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "text": {
+        "en": "In the coldest places, people tamed animals built for them. On the Tibetan Plateau the wild yak became the yak, and in the Arctic of Eurasia reindeer were tamed at least twice, between the Bronze and Iron Ages.",
+        "es": "En los lugares más fríos se domesticaron animales hechos para ellos: en la meseta tibetana, el yak salvaje dio el doméstico, y en el Ártico de Eurasia el reno se domesticó al menos dos veces, entre las edades del Bronce y del Hierro."
+      },
+      "details": {
+        "en": "The oldest physical evidence of tame yaks is about 2,500 years old, though words for yak-cattle crosses in Tibetan and related languages suggest that herding is older. Yaks give milk for butter tea and cheese, wool, meat and dung, often the only fuel on the treeless plateau, and they carry loads over high passes. Their bigger, darker wild ancestors still roam the high plateau but are vulnerable. Reindeer are the only deer tamed on a large scale, and many herds are only half tame. Peoples such as the Sámi, Nenets, Evenks and the Dukha of Mongolia live with them, for food, clothing, shelter and transport.",
+        "es": "Las pruebas físicas más antiguas de yaks domésticos tienen unos 2500 años, aunque las palabras para los cruces de yak y vaca en tibetano y lenguas emparentadas sugieren que el pastoreo es más antiguo. Los yaks dan leche para el té con mantequilla y el queso, lana, carne y estiércol, a menudo el único combustible en la meseta sin árboles, y cargan pesos por pasos altos. Sus antepasados salvajes, más grandes y oscuros, aún recorren la alta meseta, pero son vulnerables. El reno es el único ciervo domesticado a gran escala, y muchos rebaños están solo medio domesticados. Pueblos como los sami, los nenets, los evenkos y los dukha de Mongolia viven con ellos, que les dan alimento, vestido, refugio y transporte."
+      },
+      "places": [
+        {
+          "id": "yak",
+          "name": {
+            "en": "Yak",
+            "es": "Yak"
+          },
+          "at": [
+            95.0,
+            34.5
+          ],
+          "cat": "tamed",
+          "icon": "🐂",
+          "type": "animal",
+          "date": "-500",
+          "place": {
+            "en": "Tibetan Plateau",
+            "es": "Meseta tibetana"
+          },
+          "text": {
+            "en": "A shaggy ox of the Tibetan Plateau, tamed from the wild yak at least 2,500 years ago. It thrives in thin, freezing air and gives milk, wool, meat, dung for fuel and strength for carrying loads.",
+            "es": "Un buey peludo de la meseta tibetana, domesticado a partir del yak salvaje hace al menos 2500 años. Vive bien en el aire helado y escaso de oxígeno y da leche, lana, carne, estiércol para el fuego y fuerza para cargar."
+          },
+          "wiki": {
+            "en": "Yak",
+            "es": "Bos mutus"
+          }
+        },
+        {
+          "id": "reindeer",
+          "name": {
+            "en": "Reindeer",
+            "es": "Reno"
+          },
+          "at": [
+            69.0,
+            67.5
+          ],
+          "cat": "tamed",
+          "icon": "🦌",
+          "type": "animal",
+          "date": "-1000",
+          "place": {
+            "en": "Arctic Eurasia (here, the Yamal Peninsula)",
+            "es": "Ártico de Eurasia (aquí, la península de Yamal)"
+          },
+          "text": {
+            "en": "The only deer tamed on a large scale, many herds still half wild. Tamed at least twice in northern Eurasia, between the Bronze and Iron Ages, reindeer give Arctic peoples food, hides and sled power.",
+            "es": "El único ciervo domesticado a gran escala, con muchos rebaños aún medio salvajes. Domesticado al menos dos veces en el norte de Eurasia, entre las edades del Bronce y del Hierro, da a los pueblos árticos comida, pieles y tiro de trineos."
+          },
+          "wiki": {
+            "en": "Reindeer",
+            "es": "Rangifer tarandus"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-300",
+      "title": {
+        "en": "Turkeys and Muscovy ducks",
+        "es": "Pavos y patos criollos"
+      },
+      "camera": {
+        "lon": -84.0,
+        "lat": 11.0,
+        "zoom": 2.2
+      },
+      "control": {
+        "cradle": {
+          "union": [
+            {
+              "prev": true
+            },
+            {
+              "land": [
+                [
+                  -96.44,
+                  20.68
+                ],
+                [
+                  -96.76,
+                  21.15
+                ],
+                [
+                  -97.21,
+                  21.59
+                ],
+                [
+                  -97.97,
+                  21.86
+                ],
+                [
+                  -99.05,
+                  21.61
+                ],
+                [
+                  -99.93,
+                  21.07
+                ],
+                [
+                  -100.72,
+                  20.7
+                ],
+                [
+                  -101.72,
+                  20.34
+                ],
+                [
+                  -102.48,
+                  19.72
+                ],
+                [
+                  -102.61,
+                  19.05
+                ],
+                [
+                  -102.46,
+                  18.49
+                ],
+                [
+                  -102.1,
+                  18.02
+                ],
+                [
+                  -101.35,
+                  17.83
+                ],
+                [
+                  -100.51,
+                  17.84
+                ],
+                [
+                  -99.73,
+                  17.71
+                ],
+                [
+                  -98.7,
+                  17.69
+                ],
+                [
+                  -97.69,
+                  18.16
+                ],
+                [
+                  -97.18,
+                  18.89
+                ],
+                [
+                  -96.89,
+                  19.5
+                ],
+                [
+                  -96.51,
+                  20.09
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "text": {
+        "en": "The Americas had few animals that could be tamed, but people there made the most of them. In Mexico the wild turkey became the turkey, kept for meat, eggs and feathers; further south, people tamed the Muscovy duck.",
+        "es": "América tenía pocos animales que se pudieran domesticar, pero sus pueblos sacaron partido de ellos. En México, el guajolote salvaje dio el pavo doméstico, por su carne, sus huevos y sus plumas; más al sur se domesticó el pato criollo."
+      },
+      "details": {
+        "en": "Turkey bones appear at sites in central Mexico from 800 to 100 BC, but whether those birds were wild or tame is unclear. Turkeys had certainly been taken into the Maya world by 300 BC to AD 100, at El Mirador in Guatemala, and they were common by the Classic period. The Aztecs linked the turkey to the trickster god Tezcatlipoca. The Muscovy duck, a large duck of tropical America, had been tamed by several Native American peoples by the time Columbus arrived; its odd English name may come from the Muisca people of Colombia, or from a trading company. After 1492 both birds crossed to Europe, where the turkey became a Christmas feast.",
+        "es": "Aparecen huesos de pavo en yacimientos del centro de México de 800 a 100 a. C., pero no está claro si eran aves salvajes o domésticas. Sin duda se habían llevado pavos al mundo maya entre 300 a. C. y 100 d. C., en El Mirador, Guatemala, y eran comunes en el periodo clásico. Los aztecas asociaban el pavo con el dios burlón Tezcatlipoca. El pato criollo, un pato grande de la América tropical, ya lo habían domesticado varios pueblos indígenas cuando llegó Colón; su curioso nombre en inglés, Muscovy, quizá venga de los muiscas de Colombia o de una compañía comercial. Después de 1492 ambas aves cruzaron a Europa, donde el pavo se volvió plato de Navidad."
+      },
+      "places": [
+        {
+          "id": "turkey",
+          "name": {
+            "en": "Turkey",
+            "es": "Pavo (guajolote)"
+          },
+          "at": [
+            -98.2,
+            19.0
+          ],
+          "cat": "tamed",
+          "icon": "🦃",
+          "type": "animal",
+          "date": "-300",
+          "place": {
+            "en": "Central Mexico",
+            "es": "Centro de México"
+          },
+          "text": {
+            "en": "Tamed in Mexico from the south Mexican wild turkey at least 2,000 years ago, for meat, eggs and feathers. The Spanish took it to Europe in the 1500s, and today's farm turkeys descend from it.",
+            "es": "Domesticado en México a partir del guajolote salvaje del sur de México hace al menos 2000 años, por su carne, sus huevos y sus plumas. Los españoles lo llevaron a Europa en el siglo XVI, y los pavos de granja descienden de él."
+          },
+          "wiki": {
+            "en": "Domestic turkey",
+            "es": "Meleagris gallopavo domesticus"
+          }
+        },
+        {
+          "id": "el-mirador",
+          "name": {
+            "en": "El Mirador",
+            "es": "El Mirador"
+          },
+          "at": [
+            -89.9206,
+            17.755
+          ],
+          "cat": "site",
+          "type": "site",
+          "date": "-300",
+          "place": {
+            "en": "Petén, Guatemala",
+            "es": "Petén, Guatemala"
+          },
+          "text": {
+            "en": "A great Maya city in the forests of northern Guatemala. Turkey bones found here, from 300 BC to AD 100, are the earliest sign of turkeys brought from Mexico into the Maya world.",
+            "es": "Una gran ciudad maya de las selvas del norte de Guatemala. Los huesos de pavo hallados aquí, de 300 a. C. a 100 d. C., son la señal más antigua de pavos traídos de México al mundo maya."
+          },
+          "wiki": {
+            "en": "El Mirador",
+            "es": "El Mirador (ciudad maya)"
+          }
+        },
+        {
+          "id": "muscovy-duck",
+          "name": {
+            "en": "Muscovy duck",
+            "es": "Pato criollo"
+          },
+          "at": [
+            -74.8,
+            7.0
+          ],
+          "cat": "tamed",
+          "icon": "🦆",
+          "type": "animal",
+          "date": "1492",
+          "place": {
+            "en": "Northern South America",
+            "es": "Norte de Sudamérica"
+          },
+          "text": {
+            "en": "A large duck of tropical America, tamed by Native American peoples at an unknown date, long before Columbus arrived in 1492. Heavier and weaker in flight than the wild bird, it is now farmed worldwide.",
+            "es": "Un pato grande de la América tropical, domesticado por pueblos indígenas en fecha desconocida, mucho antes de la llegada de Colón en 1492. Más pesado y peor volador que el silvestre, hoy se cría en todo el mundo."
+          },
+          "wiki": {
+            "en": "Muscovy duck",
+            "es": "Cairina moschata"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1162",
+      "title": {
+        "en": "Goldfish and rabbits",
+        "es": "Peces dorados y conejos"
+      },
+      "camera": {
+        "lon": 62.0,
+        "lat": 45.0,
+        "zoom": 1.15
+      },
+      "control": {
+        "cradle": {
+          "union": [
+            {
+              "prev": true
+            },
+            {
+              "land": [
+                [
+                  122.16,
+                  30.6
+                ],
+                [
+                  122.3,
+                  31.08
+                ],
+                [
+                  122.02,
+                  31.53
+                ],
+                [
+                  121.27,
+                  31.72
+                ],
+                [
+                  120.58,
+                  31.74
+                ],
+                [
+                  120.0,
+                  31.88
+                ],
+                [
+                  119.29,
+                  31.99
+                ],
+                [
+                  118.62,
+                  31.81
+                ],
+                [
+                  118.15,
+                  31.46
+                ],
+                [
+                  117.8,
+                  31.06
+                ],
+                [
+                  117.76,
+                  30.6
+                ],
+                [
+                  118.12,
+                  30.21
+                ],
+                [
+                  118.46,
+                  29.89
+                ],
+                [
+                  118.69,
+                  29.45
+                ],
+                [
+                  119.22,
+                  29.07
+                ],
+                [
+                  120.0,
+                  29.08
+                ],
+                [
+                  120.65,
+                  29.32
+                ],
+                [
+                  121.21,
+                  29.54
+                ],
+                [
+                  121.71,
+                  29.81
+                ],
+                [
+                  121.98,
+                  30.19
+                ]
+              ]
+            },
+            {
+              "land": [
+                [
+                  6.45,
+                  43.8
+                ],
+                [
+                  6.18,
+                  44.25
+                ],
+                [
+                  5.23,
+                  44.52
+                ],
+                [
+                  4.43,
+                  44.71
+                ],
+                [
+                  3.74,
+                  44.98
+                ],
+                [
+                  2.8,
+                  45.14
+                ],
+                [
+                  1.78,
+                  45.07
+                ],
+                [
+                  0.81,
+                  44.91
+                ],
+                [
+                  -0.01,
+                  44.63
+                ],
+                [
+                  -0.23,
+                  44.2
+                ],
+                [
+                  0.05,
+                  43.8
+                ],
+                [
+                  0.1,
+                  43.44
+                ],
+                [
+                  0.06,
+                  42.99
+                ],
+                [
+                  0.67,
+                  42.61
+                ],
+                [
+                  1.77,
+                  42.51
+                ],
+                [
+                  2.8,
+                  42.54
+                ],
+                [
+                  3.76,
+                  42.6
+                ],
+                [
+                  4.58,
+                  42.81
+                ],
+                [
+                  5.17,
+                  43.1
+                ],
+                [
+                  5.86,
+                  43.4
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "text": {
+        "en": "Some animals were tamed late. In Song China, people bred golden carp into goldfish, and in 1162 an empress had a pond built for them. In southern France, monks were breeding rabbits in the same century.",
+        "es": "Algunos animales se domesticaron tarde. En la China de los Song, las carpas doradas se volvieron peces dorados, y en 1162 una emperatriz les mandó hacer un estanque. En el sur de Francia, los monjes ya criaban conejos en ese siglo."
+      },
+      "details": {
+        "en": "Wild carp sometimes hatch red, orange or yellow; such fish were first recorded in China under the Jin dynasty, about 1,700 years ago. Under the Tang people kept them in garden ponds, and under the Song their breeding was firmly established; yellow fish were reserved for the imperial family. Under the Ming goldfish were also kept indoors, which let odd fancy forms survive; they reached Japan in 1603 and Portugal in 1611. Rabbits come from Spain and Portugal. The Romans kept them in walled enclosures, and taming was a slow process that went on until the 1500s; it was once thought to have begun with monks about AD 600. Carried by sailors and settlers, rabbits later became a plague in places such as Australia.",
+        "es": "Las carpas salvajes a veces nacen rojas, naranjas o amarillas; esos peces se registraron por primera vez en China con la dinastía Jin, hace unos 1700 años. Con los Tang se tenían en estanques de jardín, y con los Song su cría quedó bien establecida; los peces amarillos se reservaban a la familia imperial. Con los Ming también se tuvieron en interiores, lo que permitió sobrevivir a formas raras y vistosas; llegaron a Japón en 1603 y a Portugal en 1611. Los conejos vienen de España y Portugal. Los romanos los tenían en recintos amurallados, y su domesticación fue un proceso lento que duró hasta el siglo XVI; antes se creía que la habían iniciado unos monjes hacia el año 600. Llevados por marinos y colonos, los conejos se volvieron después una plaga en lugares como Australia."
+      },
+      "places": [
+        {
+          "id": "goldfish",
+          "name": {
+            "en": "Goldfish",
+            "es": "Pez dorado"
+          },
+          "at": [
+            120.153,
+            30.267
+          ],
+          "cat": "tamed",
+          "icon": "🐠",
+          "type": "animal",
+          "date": "1000",
+          "place": {
+            "en": "Hangzhou, China",
+            "es": "Hangzhou, China"
+          },
+          "text": {
+            "en": "Bred in China from wild carp that hatched red or golden. Under the Song dynasty, more than 1,000 years ago, people raised them in ponds; later, kept in bowls, they took fancy shapes and colours.",
+            "es": "Criado en China a partir de carpas salvajes que nacían rojas o doradas. Con la dinastía Song, hace más de 1000 años, se criaban en estanques; después, en peceras, adquirieron formas y colores vistosos."
+          },
+          "wiki": {
+            "en": "Goldfish",
+            "es": "Carassius auratus"
+          }
+        },
+        {
+          "id": "rabbit",
+          "name": {
+            "en": "Rabbit",
+            "es": "Conejo"
+          },
+          "at": [
+            3.88,
+            43.61
+          ],
+          "cat": "tamed",
+          "icon": "🐇",
+          "type": "animal",
+          "date": "1100",
+          "place": {
+            "en": "Southern France",
+            "es": "Sur de Francia"
+          },
+          "text": {
+            "en": "Tamed from the wild rabbit of Spain and southern France in a slow process from Roman times to the 1500s; monks in southern France were breeding them by the 1100s. Hundreds of breeds now exist.",
+            "es": "Domesticado a partir del conejo silvestre de España y el sur de Francia en un proceso lento, de la época romana al siglo XVI; los monjes del sur de Francia ya los criaban en el siglo XII. Hoy hay cientos de razas."
+          },
+          "wiki": {
+            "en": "Domestic rabbit",
+            "es": "Oryctolagus cuniculus domesticus"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1493",
+      "title": {
+        "en": "Animals cross the oceans",
+        "es": "Los animales cruzan los océanos"
+      },
+      "camera": {
+        "lon": -50.0,
+        "lat": 30.0,
+        "zoom": 1.15
+      },
+      "text": {
+        "en": "From 1493 European ships carried horses, cattle, pigs, sheep, goats and chickens to the Americas, and turkeys and Muscovy ducks back to Europe. Horses, gone from the Americas since the Ice Age, came back.",
+        "es": "Desde 1493, los barcos europeos llevaron caballos, vacas, cerdos, ovejas, cabras y gallinas a América, y pavos y patos criollos de vuelta a Europa. Los caballos, desaparecidos de América desde la Edad de Hielo, regresaron."
+      },
+      "details": {
+        "en": "Native peoples quickly took up many of the newcomers. On the Great Plains, horses, many of them gained after the Pueblo Revolt of 1680, made peoples such as the Comanche into horse nations that hunted bison on horseback; in Chile the Mapuche used horses to resist the Spanish. Escaped horses became the mustangs of the American West. The animals also brought harm: an epidemic of swine influenza that began in 1493 killed many of the Taíno people of the Caribbean, and in southern Chile Spanish sheep took over the pastures of the Mapuche's llamas.",
+        "es": "Los pueblos indígenas adoptaron pronto a muchos de los recién llegados. En las Grandes Llanuras, los caballos, muchos obtenidos tras la Rebelión de los Pueblos de 1680, convirtieron a pueblos como los comanches en naciones a caballo que cazaban bisontes montados; en Chile, los mapuches usaron el caballo para resistir a los españoles. Los caballos escapados se volvieron los mustangos del Oeste de Estados Unidos. Los animales también trajeron daños: una epidemia de gripe porcina que empezó en 1493 mató a muchos taínos del Caribe, y en el sur de Chile las ovejas españolas ocuparon los pastos de las llamas de los mapuches."
+      },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [
+            [
+              -6.3,
+              36.5
+            ],
+            [
+              -16.0,
+              28.1
+            ],
+            [
+              -30.0,
+              24.0
+            ],
+            [
+              -45.0,
+              21.5
+            ],
+            [
+              -60.0,
+              19.6
+            ],
+            [
+              -71.0804,
+              19.8873
+            ]
+          ],
+          "label": {
+            "en": "Horses, cattle and pigs to the Americas",
+            "es": "Caballos, vacas y cerdos hacia América"
+          }
+        },
+        {
+          "side": "spread",
+          "path": [
+            [
+              -96.13,
+              19.2
+            ],
+            [
+              -87.0,
+              22.5
+            ],
+            [
+              -82.4,
+              23.4
+            ],
+            [
+              -70.0,
+              30.0
+            ],
+            [
+              -45.0,
+              36.5
+            ],
+            [
+              -25.0,
+              38.5
+            ],
+            [
+              -6.3,
+              36.6
+            ]
+          ],
+          "label": {
+            "en": "Turkeys to Europe",
+            "es": "Pavos hacia Europa"
+          }
+        },
+        {
+          "side": "spread",
+          "path": [
+            [
+              -105.94,
+              35.69
+            ],
+            [
+              -102.5,
+              36.5
+            ],
+            [
+              -100.5,
+              40.0
+            ],
+            [
+              -103.0,
+              44.0
+            ],
+            [
+              -107.0,
+              46.5
+            ],
+            [
+              -113.0,
+              48.0
+            ]
+          ],
+          "label": {
+            "en": "Horses across the Plains",
+            "es": "Caballos por las Llanuras"
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "🦠",
+          "date": "1493",
+          "at": [
+            -71.0804,
+            19.8873
+          ],
+          "text": {
+            "en": "An epidemic of swine influenza begins among the Taíno of Hispaniola",
+            "es": "Empieza una epidemia de gripe porcina entre los taínos de La Española"
+          }
+        },
+        {
+          "icon": "🐎",
+          "date": "1680",
+          "at": [
+            -105.94,
+            35.69
+          ],
+          "text": {
+            "en": "The Pueblo Revolt puts many Spanish horses into Native hands",
+            "es": "La Rebelión de los Pueblos pone muchos caballos españoles en manos indígenas"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "mustang",
+          "name": {
+            "en": "Mustang",
+            "es": "Mustango"
+          },
+          "at": [
+            -117.0,
+            39.5
+          ],
+          "cat": "tamed",
+          "icon": "🐎",
+          "type": "animal",
+          "date": "1598",
+          "place": {
+            "en": "Great Basin, Nevada, USA",
+            "es": "Gran Cuenca, Nevada, EE. UU."
+          },
+          "text": {
+            "en": "The free-roaming horses of the American West, descended from Spanish horses bred in New Mexico from 1598, later mixed with other breeds. Often called wild, they are feral: their ancestors were tame.",
+            "es": "Los caballos libres del Oeste de Estados Unidos, descendientes de caballos españoles criados en Nuevo México desde 1598 y mezclados luego con otras razas. Se les llama salvajes, pero son asilvestrados."
+          },
+          "wiki": {
+            "en": "Mustang",
+            "es": "Mustang (caballo)"
+          }
+        },
+        {
+          "id": "turkey",
+          "name": {
+            "en": "Turkey",
+            "es": "Pavo (guajolote)"
+          },
+          "at": [
+            -98.2,
+            19.0
+          ],
+          "cat": "tamed",
+          "icon": "🦃",
+          "type": "animal",
+          "date": "-300",
+          "place": {
+            "en": "Central Mexico",
+            "es": "Centro de México"
+          },
+          "text": {
+            "en": "Tamed in Mexico from the south Mexican wild turkey at least 2,000 years ago, for meat, eggs and feathers. The Spanish took it to Europe in the 1500s, and today's farm turkeys descend from it.",
+            "es": "Domesticado en México a partir del guajolote salvaje del sur de México hace al menos 2000 años, por su carne, sus huevos y sus plumas. Los españoles lo llevaron a Europa en el siglo XVI, y los pavos de granja descienden de él."
+          },
+          "wiki": {
+            "en": "Domestic turkey",
+            "es": "Meleagris gallopavo domesticus"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2024",
+      "title": {
+        "en": "Tamed animals today",
+        "es": "Los animales domésticos hoy"
+      },
+      "camera": {
+        "lon": 62.0,
+        "lat": 50.0,
+        "zoom": 1.35
+      },
+      "text": {
+        "en": "Today over 26 billion chickens, 1.3 billion sheep and over 900 million cattle live with us, far more than their wild relatives. The aurochs died out in 1627, but Przewalski's horses run free again in Mongolia.",
+        "es": "Hoy viven con nosotros más de 26 000 millones de gallinas, 1300 millones de ovejas y más de 900 millones de vacas, muchos más que sus parientes salvajes. El uro se extinguió en 1627, pero el caballo de Przewalski vuelve a correr en Mongolia."
+      },
+      "details": {
+        "en": "Taming changed animals in similar ways: many became smaller and calmer than their ancestors, with patched coats, floppy ears and smaller brains. Since 1959, scientists in Novosibirsk have bred silver foxes, keeping only the tamest; the foxes became dog-like and some grew spotted coats, though how much this explains taming is debated. Taming changed people too, giving food, clothing, transport and power, but also diseases and, today, questions of animal welfare and greenhouse gases: cattle farming makes about 7% of them. Many wild ancestors are gone or rare. Przewalski's horses, gone from the wild by the late 1960s, were bred in zoos and released in Mongolia from 1992.",
+        "es": "La domesticación cambió a los animales de formas parecidas: muchos se volvieron más pequeños y tranquilos que sus antepasados, con pelajes manchados, orejas caídas y cerebros más pequeños. Desde 1959, unos científicos de Novosibirsk crían zorros plateados quedándose solo con los más mansos; los zorros se volvieron parecidos a perros y algunos tienen manchas, aunque se discute cuánto explica esto la domesticación. También cambió a la gente: le dio alimento, vestido, transporte y fuerza, pero también enfermedades y, hoy, problemas de bienestar animal y de gases de efecto invernadero: la ganadería vacuna produce cerca del 7 % de ellos. Muchos antepasados salvajes han desaparecido o escasean. Los caballos de Przewalski, extintos en libertad a fines de la década de 1960, se criaron en zoológicos y se soltaron en Mongolia desde 1992."
+      },
+      "events": [
+        {
+          "icon": "🪦",
+          "date": "1627",
+          "at": [
+            20.5167,
+            52.0833
+          ],
+          "text": {
+            "en": "The last aurochs, a cow, dies in the Jaktorów Forest, Poland",
+            "es": "El último uro, una vaca, muere en el bosque de Jaktorów, Polonia"
+          }
+        },
+        {
+          "icon": "🪦",
+          "date": "1918",
+          "text": {
+            "en": "The last captive tarpan dies in Russia",
+            "es": "Muere en Rusia el último tarpán cautivo"
+          }
+        },
+        {
+          "icon": "🐎",
+          "date": "1992",
+          "at": [
+            105.8783,
+            47.765
+          ],
+          "text": {
+            "en": "Przewalski's horses are released in Mongolia",
+            "es": "Se sueltan caballos de Przewalski en Mongolia"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "domesticated-silver-fox",
+          "name": {
+            "en": "Tame foxes of Novosibirsk",
+            "es": "Los zorros mansos de Novosibirsk"
+          },
+          "at": [
+            83.1,
+            54.85
+          ],
+          "cat": "tamed",
+          "icon": "🦊",
+          "type": "animal",
+          "date": "1959",
+          "place": {
+            "en": "Novosibirsk, Russia",
+            "es": "Novosibirsk, Rusia"
+          },
+          "text": {
+            "en": "Silver foxes bred at Novosibirsk since 1959, keeping only the tamest each generation. They became friendly and dog-like, some with spotted coats: a living experiment on how taming changes animals.",
+            "es": "Zorros plateados criados en Novosibirsk desde 1959, eligiendo en cada generación a los más mansos. Se volvieron amistosos y parecidos a perros, algunos con manchas: un experimento vivo sobre la domesticación."
+          },
+          "wiki": {
+            "en": "Domesticated silver fox",
+            "es": "Zorro domesticado ruso"
+          }
+        },
+        {
+          "id": "jaktorow-forest",
+          "name": {
+            "en": "Jaktorów Forest",
+            "es": "Bosque de Jaktorów"
+          },
+          "at": [
+            20.5167,
+            52.0833
+          ],
+          "cat": "site",
+          "icon": "🪦",
+          "type": "place",
+          "date": "1627",
+          "place": {
+            "en": "Masovia, Poland",
+            "es": "Mazovia, Polonia"
+          },
+          "text": {
+            "en": "The marshy woodland where the last herd of wild aurochs lived, protected by Polish kings. It shrank from about 50 animals in the mid-1500s to four in 1601; the last cow died in 1627.",
+            "es": "El bosque pantanoso donde vivió la última manada de uros salvajes, protegida por los reyes de Polonia. Pasó de unos 50 animales a mediados del siglo XVI a cuatro en 1601; la última vaca murió en 1627."
+          },
+          "wiki": {
+            "en": "Jaktorów",
+            "es": "Jaktorów"
+          }
+        },
+        {
+          "id": "przewalskis-horse",
+          "name": {
+            "en": "Przewalski's horse",
+            "es": "Caballo de Przewalski"
+          },
+          "at": [
+            105.8783,
+            47.765
+          ],
+          "cat": "mammal",
+          "icon": "🐎",
+          "type": "species",
+          "date": "-72000",
+          "place": {
+            "en": "Hustai National Park, Mongolia",
+            "es": "Parque nacional Hustai, Mongolia"
+          },
+          "text": {
+            "en": "The stocky horse of the Mongolian steppes, long called the last wild horse. DNA shows it descends from the horses of Botai, so it may be feral; it died out in the wild and was saved in zoos.",
+            "es": "El robusto caballo de las estepas mongolas, tenido por el último caballo salvaje. El ADN muestra que desciende de los caballos de Botai, así que quizá es asilvestrado; se extinguió en libertad y se salvó en zoológicos."
+          },
+          "details": {
+            "en": "Its line split from that of today's domestic horses tens of thousands of years ago, long before any taming. In 2018 a study found that the horses of Botai were its ancestors, which would make it the feral offspring of the first herded horses; other scientists argue that the Botai horses were never truly tamed. By the late 1960s none were left in the wild. Zoos kept the species alive, and from 1992 horses were released in Mongolia, here at Hustai and on the edge of the Gobi. It is now endangered rather than extinct in the wild.",
+            "es": "Su linaje se separó del de los caballos domésticos actuales hace decenas de miles de años, mucho antes de cualquier domesticación. En 2018 un estudio halló que los caballos de Botai eran sus antepasados, lo que lo convertiría en descendiente asilvestrado de los primeros caballos criados; otros científicos sostienen que los caballos de Botai nunca llegaron a estar domesticados. A fines de la década de 1960 ya no quedaba ninguno en libertad. Los zoológicos mantuvieron viva la especie y desde 1992 se soltaron caballos en Mongolia, aquí en Hustai y al borde del Gobi. Hoy está en peligro, pero ya no extinto en estado salvaje."
+          },
+          "wiki": {
+            "en": "Przewalski's horse",
+            "es": "Equus ferus przewalskii"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Taming gave people milk, wool, meat, eggs and leather, animals to pull ploughs and carry loads, and new diseases; it helped farming spread and empires ride. The animals changed too: tamer, often smaller, with new coats and shapes. Today tens of billions of farm animals live with us, while many of their wild ancestors are gone or endangered.",
+    "es": "La domesticación dio a la gente leche, lana, carne, huevos y cuero, animales para tirar del arado y cargar, y nuevas enfermedades; ayudó a extender la agricultura y a cabalgar a los imperios. Los animales también cambiaron: más mansos, a menudo más pequeños, con nuevos pelajes y formas. Hoy viven con nosotros decenas de miles de millones de animales de granja, mientras muchos de sus antepasados salvajes han desaparecido o están en peligro."
+  },
+  "sources": [
+    {
+      "title": "Domestication (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Domestication"
+    },
+    {
+      "title": "Domestication of the dog (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Domestication_of_the_dog"
+    },
+    {
+      "title": "Dog (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dog"
+    },
+    {
+      "title": "Bonn–Oberkassel dog (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bonn–Oberkassel_dog"
+    },
+    {
+      "title": "ʿAin Mallaha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/ʿAin_Mallaha"
+    },
+    {
+      "title": "Sheep (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sheep"
+    },
+    {
+      "title": "Goat (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Goat"
+    },
+    {
+      "title": "Ganj Dareh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ganj_Dareh"
+    },
+    {
+      "title": "Cattle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cattle"
+    },
+    {
+      "title": "Aurochs (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aurochs"
+    },
+    {
+      "title": "Pig (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pig"
+    },
+    {
+      "title": "Çayönü (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Çayönü"
+    },
+    {
+      "title": "Domestication of the cat (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Domestication_of_the_cat"
+    },
+    {
+      "title": "Shillourokambos (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shillourokambos"
+    },
+    {
+      "title": "Cat (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cat"
+    },
+    {
+      "title": "African wildcat (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/African_wildcat"
+    },
+    {
+      "title": "Jiahu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jiahu"
+    },
+    {
+      "title": "Common carp (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Common_carp"
+    },
+    {
+      "title": "Zebu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zebu"
+    },
+    {
+      "title": "Mehrgarh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mehrgarh"
+    },
+    {
+      "title": "Lactase persistence (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lactase_persistence"
+    },
+    {
+      "title": "Donkey (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Donkey"
+    },
+    {
+      "title": "African wild ass (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/African_wild_ass"
+    },
+    {
+      "title": "Llama (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Llama"
+    },
+    {
+      "title": "Alpaca (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Alpaca"
+    },
+    {
+      "title": "Guinea pig (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Guinea_pig"
+    },
+    {
+      "title": "Bombyx mori (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bombyx_mori"
+    },
+    {
+      "title": "Bombyx mandarina (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bombyx_mandarina"
+    },
+    {
+      "title": "Water buffalo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Water_buffalo"
+    },
+    {
+      "title": "Dromedary (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dromedary"
+    },
+    {
+      "title": "Bactrian camel (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bactrian_camel"
+    },
+    {
+      "title": "Wild Bactrian camel (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wild_Bactrian_camel"
+    },
+    {
+      "title": "Domestication of the horse (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Domestication_of_the_horse"
+    },
+    {
+      "title": "Botai culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Botai_culture"
+    },
+    {
+      "title": "Przewalski's horse (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Przewalski's_horse"
+    },
+    {
+      "title": "Tarpan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tarpan"
+    },
+    {
+      "title": "Sintashta culture (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sintashta_culture"
+    },
+    {
+      "title": "Chicken (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chicken"
+    },
+    {
+      "title": "Red junglefowl (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Red_junglefowl"
+    },
+    {
+      "title": "Ban Non Wat (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ban_Non_Wat"
+    },
+    {
+      "title": "Yak (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yak"
+    },
+    {
+      "title": "Wild yak (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wild_yak"
+    },
+    {
+      "title": "Reindeer (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Reindeer"
+    },
+    {
+      "title": "Domestic turkey (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Domestic_turkey"
+    },
+    {
+      "title": "Wild turkey (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wild_turkey"
+    },
+    {
+      "title": "Muscovy duck (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Muscovy_duck"
+    },
+    {
+      "title": "Goldfish (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Goldfish"
+    },
+    {
+      "title": "Domestic rabbit (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Domestic_rabbit"
+    },
+    {
+      "title": "European rabbit (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/European_rabbit"
+    },
+    {
+      "title": "Columbian exchange (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Columbian_exchange"
+    },
+    {
+      "title": "Mustang (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mustang"
+    },
+    {
+      "title": "Domestication syndrome (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Domestication_syndrome"
+    },
+    {
+      "title": "Domesticated silver fox (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Domesticated_silver_fox"
+    }
+  ]
+}

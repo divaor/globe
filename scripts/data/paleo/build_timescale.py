@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Write public/data/paleo/timescale.json: the geologic time scale (1000 Ma -> today) and
+Write public/data/paleo/timescale.json: the geologic time scale (1000 Ma -> today, and the
+older eons, eras and periods after them) and
 a short list of well-established events, in English and Spanish, for the time slider.
 
 Boundary ages: ICS International Chronostratigraphic Chart v2023/09 (GTS2020-based).
@@ -45,6 +46,24 @@ UNITS = [
     ("epoch", "Pliocene", "Plioceno", 5.333, 2.58, "#FFFF99"),
     ("epoch", "Pleistocene", "Pleistoceno", 2.58, 0.0117, "#FFF2AE"),
     ("epoch", "Holocene", "Holoceno", 0.0117, 0, "#FEF2E0"),
+
+    # Older than the plate model (for the Life through time stories): listed last, so a search
+    # from the top finds the units above first at the 1000 Ma boundary.
+    ("eon", "Hadean", "Hádico", 4567, 4031, "#AE027E"),
+    ("eon", "Archean", "Arcaico", 4031, 2500, "#F0047F"),
+    ("era", "Eoarchean", "Eoarcaico", 4031, 3600, "#DA037F"),
+    ("era", "Paleoarchean", "Paleoarcaico", 3600, 3200, "#F444A9"),
+    ("era", "Mesoarchean", "Mesoarcaico", 3200, 2800, "#F768A9"),
+    ("era", "Neoarchean", "Neoarcaico", 2800, 2500, "#F99BC1"),
+    ("era", "Paleoproterozoic", "Paleoproterozoico", 2500, 1600, "#F74370"),
+    ("era", "Mesoproterozoic", "Mesoproterozoico", 1600, 1000, "#FDB462"),
+    ("period", "Siderian", "Sideriense", 2500, 2300, "#F74F7C"),
+    ("period", "Rhyacian", "Riácico", 2300, 2050, "#F75B89"),
+    ("period", "Orosirian", "Orosírico", 2050, 1800, "#F76898"),
+    ("period", "Statherian", "Estatérico", 1800, 1600, "#F875A7"),
+    ("period", "Calymmian", "Calímmico", 1600, 1400, "#FDC07A"),
+    ("period", "Ectasian", "Ectásico", 1400, 1200, "#F3CC8A"),
+    ("period", "Stenian", "Esténico", 1200, 1000, "#FED99A"),
 ]
 
 # (Ma, English, Spanish): short, widely accepted milestones (ages approximate).

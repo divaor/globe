@@ -51,7 +51,7 @@ async function boot() {
   registerSW(shell);
   // Home-screen shortcut: open straight into ambient mode.
   if (/ambient=1/.test(location.hash)) setTimeout(() => void shell.ambient.start(), 600);
-  // A shared story: #war=<id>&step=<n> (or #eras=, #food=, #structures=).
+  // A shared story: #war=<id>&step=<n> (or #eras=, #food=, #structures=, #people=, #life=).
   for (const kind of STORY_KINDS) {
     const id = shared.get(storyHashKey(kind));
     if (id) setTimeout(() => void time.stories[kind].open(id, Number(shared.get('step') ?? 1) - 1).catch(() => {}), 300);

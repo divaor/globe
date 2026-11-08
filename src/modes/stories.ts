@@ -1,10 +1,12 @@
-// Stories played step by step on the map: Wars and conquests, Eras and ideas, Food through time
-// and Great structures. Each step shows the territory of its sides (crossfading from the step
-// before), routes (drawn as they go), battles (wars: tap one for its casualties), items (people,
-// works, sites, dishes, structures: markers that pop up, then stay as dots; tap one for its card
-// with a picture from Wikipedia) and dated events. A bar under the map tells the story; "Details"
-// opens the longer notes, the step's items, the outcome and the sources; "Browse" lists everything.
-// Data: public/data/<collection>/, built by scripts/data/build-conflicts.mjs.
+// Stories played step by step on the map: Wars and conquests, Eras and ideas, Food through time,
+// Great structures, Peoples and civilizations, and Life through time. Each step shows the territory
+// of its sides (crossfading from the step before), routes (drawn as they go), battles (wars: tap one
+// for its casualties), items (people, works, sites, dishes, structures, fossils: markers that pop up,
+// then stay as dots; tap one for its card with a picture from Wikipedia) and dated events. A bar
+// under the map tells the story; "Details" opens the longer notes, the step's items, the outcome and
+// the sources; "Browse" lists everything. In Life through time, a step older than 5 million years is
+// drawn on the continents of its age (the plate model of Pangea to today), its markers moving with
+// their plates. Data: public/data/<collection>/, built by scripts/data/build-conflicts.mjs.
 import { geoArea, geoCentroid, geoContains, geoDistance, geoInterpolate } from 'd3-geo';
 import { mesh } from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
@@ -13,6 +15,8 @@ import { Play, Pause, X, ChevronLeft, ChevronRight, ListOrdered, BookOpen, Searc
 import { loadJSON, shapesFrom, chunkLines, type Shape, type Line } from '../data/store';
 import { t, tx, lang, fmtNumber, fmtCompact } from '../app/i18n';
 import { h, icon, clear } from '../ui/dom';
+import { continentSwatch, mix } from '../engine/colors';
+import { loadPaleo, fmtLat, unitName, type PaleoWorld, type Unit } from './paleo';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { LayerDef, RenderCtx } from '../layers/types';
@@ -20,12 +24,14 @@ import type { LayerDef, RenderCtx } from '../layers/types';
 type Text = { en: string; es: string };
 type Range = number | [number, number];
 type Pt = [number, number];
-interface Cam { lon: number; lat: number; zoom: number }
+/** A camera; `pl`, the plate under the point it looks at, moves it with its continent on an old map. */
+interface Cam { lon: number; lat: number; zoom: number; pl?: string }
 interface Side { id: string; name: Text; color: string; members?: Text }
 type Losses = { [side: string]: Range | Text | undefined; note?: Text };
 interface Battle { name: Text; at: Pt; date?: string; winner?: string; casualties?: Losses; result?: Text; details?: Text }
-interface Move { side: string; path: Pt[]; label?: Text }
-interface WarEvent { icon: string; text: Text; at?: Pt; date?: string }
+/** A route; on an old map each point moves with its plate (`pls`). */
+interface Move { side: string; path: Pt[]; label?: Text; pls?: (string | null)[] }
+interface WarEvent { icon: string; text: Text; at?: Pt; date?: string; pl?: string }
 /** A marker of the stories other than wars: a person, work, site, dish, structure... */
 export interface Item {
   id?: string; name: Text; at: Pt; cat: string; icon: string; date: string; t: number; end?: string; life?: [string, string | null];
@@ -35,6 +41,8 @@ export interface Item {
   facts?: { label: Text; value: Text }[]; wiki?: Text;
   /** A Wikimedia Commons file for the card, when the article has no picture of its own. */
   img?: string;
+  /** Life through time: the plate that carries it, so it moves with its continent on an old map. */
+  pl?: string;
   /** The first step that shows it (-1: a time tour's catalogue item, shown from its date). */
   first: number;
 }
@@ -42,6 +50,8 @@ export interface Cat { id: string; name: Text; icon: string; color: string }
 interface Step {
   date: string; t: number; title: Text; text: Text; details?: Text; control: Record<string, number | null>;
   moves?: Move[]; battles?: Battle[]; events?: WarEvent[]; deaths?: Range; camera?: Cam; aftermath?: boolean; show?: number[];
+  /** Life through time: drawn on the continents of `ma` million years ago, or (`deep`, older than the plate model) on today's land greyed. */
+  ma?: number; deep?: boolean;
 }
 interface Conflict {
   id: string; name: Text; icon: string; era: string; region: Text; summary: Text; start: string; end: string; t0: number; t1: number;
@@ -58,19 +68,22 @@ interface Spot { k: number; x: number; y: number; ax: number; ay: number; r: num
 export interface CollectionItem extends Omit<Item, 'first'> { story: string; step: number }
 
 /** The collections of stories. */
-export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people';
-export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people'];
-const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text }> = {
+export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life';
+export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life'];
+/** `paleo`: its old steps are drawn on the continents of their age. */
+const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text; paleo?: boolean }> = {
   wars: { dir: 'conflicts', hash: 'war', icon: '⚔️', name: { en: 'Wars and conquests', es: 'Guerras y conquistas' } },
   eras: { dir: 'eras', hash: 'eras', icon: '🎨', name: { en: 'Eras and ideas', es: 'Épocas e ideas' } },
   food: { dir: 'food', hash: 'food', icon: '🌾', name: { en: 'Food through time', es: 'La comida en el tiempo' } },
   structures: { dir: 'structures', hash: 'structures', icon: '🏛️', name: { en: 'Great structures', es: 'Grandes construcciones' } },
   people: { dir: 'people', hash: 'people', icon: '🏺', name: { en: 'Peoples and civilizations', es: 'Pueblos y civilizaciones' } },
+  life: { dir: 'life', hash: 'life', icon: '🦕', name: { en: 'Life through time', es: 'La vida en el tiempo' }, paleo: true },
 };
 export const storyHashKey = (k: StoryKind) => KINDS[k].hash;
 interface Area extends Shape { lp: Pt; area: number }
 
-export const ERAS = ['prehistory', 'ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
+/** The groups of the story lists: the geologic eras (Life through time), then the ages of history. */
+export const ERAS = ['precambrian', 'paleozoic', 'mesozoic', 'cenozoic', 'prehistory', 'ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
 const MONTHS: Record<'en' | 'es', string[]> = {
   en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
@@ -79,6 +92,8 @@ const MONTHS: Record<'en' | 'es', string[]> = {
 // Timing of a step, in ms at 1×: the territory fades in, arrows draw, battles and items pop up one
 // by one.
 const FADE = 900, MOVE_FROM = 250, MOVE_MS = 2300, BATTLE_FROM = 700, BATTLE_GAP = 420, POP = 380, PULSE = 1500, ITEM_GAP = 300;
+/** Life through time: the continents drift from one step's age to the next. */
+const DRIFT = 1700;
 
 const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
 const ease = (x: number) => { const t = clamp01(x); return t * t * (3 - 2 * t); };
@@ -87,25 +102,30 @@ const pop = (x: number) => { const t = clamp01(x); return t < 1 ? 1 - Math.pow(1
 /** Dates older than 10,000 BC are written as years ago: -3200000 is 3.2 million years ago. */
 const AGO = -10000;
 function group(n: number, sep: string): string { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, sep); }
-/** How long ago: ["3.2", million] or ["300,000", years]. */
-function agoNum(n: number, es: boolean): [string, boolean] {
+/**
+ * How long ago, and in what: ["3.7", billions], ["3.2", millions] or ["300,000", years]. Spanish
+ * counts thousands of millions in millions, with no separator ("3700 millones").
+ */
+function agoNum(n: number, es: boolean): [string, 'bn' | 'mn' | ''] {
+  if (n >= 1e9 && !es) return [String(Math.round(n / 1e7) / 100), 'bn'];
   // Millions to two decimals at most, as the stories give them: 7, 3.2, 3.66.
-  if (n >= 1e6) { const m = Math.round(n / 1e4) / 100; return [es ? String(m).replace('.', ',') : String(m), true]; }
+  if (n >= 1e6) { const m = Math.round(n / 1e4) / 100; return [es ? String(m).replace('.', ',') : String(m), 'mn']; }
   const r = n >= 1e5 ? Math.round(n / 1e3) * 1e3 : Math.round(n / 100) * 100;
-  return [group(r, es ? '\u00a0' : ','), false];
+  return [group(r, es ? '\u00a0' : ','), ''];
 }
-/** "3.2 million years ago", "300,000 years ago", "hace 14\u00a0400 años". */
+const UNIT_EN = { bn: 'billion', mn: 'million', '': '' };
+/** "3.7 billion years ago", "3.2 million years ago", "300,000 years ago", "hace 14\u00a0400 años". */
 function fmtAgo(y: number): string {
-  const es = lang() === 'es', [v, mill] = agoNum(-y, es);
-  if (mill) return es ? `hace ${v}\u00a0${v === '1' ? 'millón' : 'millones'} de años` : `${v}\u00a0million years ago`;
-  return es ? `hace ${v}\u00a0años` : `${v}\u00a0years ago`;
+  const es = lang() === 'es', [v, u] = agoNum(-y, es);
+  if (es) return u ? `hace ${v}\u00a0${v === '1' ? 'millón' : 'millones'} de años` : `hace ${v}\u00a0años`;
+  return `${v}\u00a0${u ? `${UNIT_EN[u]} ` : ''}years ago`;
 }
-/** "7–2 million years ago", "300,000–40,000 years ago", "3.3 million – 300,000 years ago". */
+/** "7–2 million years ago", "300,000–40,000 years ago", "3.7 billion – 541 million years ago". */
 function fmtAgoRange(y0: number, y1: number): string {
-  const es = lang() === 'es', [a, ma] = agoNum(-y0, es), [b, mb] = agoNum(-y1, es);
-  if (ma && mb) return es ? `hace ${a}–${b}\u00a0millones de años` : `${a}–${b}\u00a0million years ago`;
-  if (!ma && !mb) return es ? `hace ${a}–${b}\u00a0años` : `${a}–${b}\u00a0years ago`;
-  return es ? `hace ${a}\u00a0millones – ${b}\u00a0años` : `${a}\u00a0million – ${b}\u00a0years ago`;
+  const es = lang() === 'es', [a, ua] = agoNum(-y0, es), [b, ub] = agoNum(-y1, es);
+  if (ua === ub) return es ? `hace ${a}–${b}\u00a0${ua ? 'millones de ' : ''}años` : `${a}–${b}\u00a0${ua ? `${UNIT_EN[ua]} ` : ''}years ago`;
+  if (es) return `hace ${a}\u00a0millones – ${b}\u00a0años`;
+  return `${a}\u00a0${UNIT_EN[ua]} – ${b}\u00a0${ub ? `${UNIT_EN[ub]} ` : ''}years ago`;
 }
 
 /** "1 September 1939", "May 334 BC", "336 a. C.", "3.2 million years ago"... */
@@ -125,7 +145,8 @@ export function fmtWhen(d: string, eraHint = 1): string {
 /** "1939–1945", "334–323 BC", "509 BC – AD 117". */
 function fmtYears(start: string, end: string): string {
   const y0 = Number(/^-?\d+/.exec(start)?.[0]), y1 = Number(/^-?\d+/.exec(end)?.[0]);
-  if (y0 < AGO) return y1 < AGO ? fmtAgoRange(y0, y1) : `${fmtAgo(y0)} – ${fmtWhen(end, y0)}`;
+  // From deep time to our days: "245 million years ago – today".
+  if (y0 < AGO) return y1 < AGO ? fmtAgoRange(y0, y1) : `${fmtAgo(y0)} – ${y1 >= 2000 ? t('storyToday') : fmtWhen(end, y0)}`;
   const es = lang() === 'es';
   if (y0 < 0 && y1 < 0) return `${-y0}–${-y1}\u00a0${es ? 'a.\u00a0C.' : 'BC'}`;
   if (y0 < 0) return es ? `${-y0}\u00a0a.\u00a0C. – ${y1}\u00a0d.\u00a0C.` : `${-y0}\u00a0BC – AD\u00a0${y1}`;
@@ -185,6 +206,9 @@ export class StoryMode {
   private textOpen = false;
   /** The markers as drawn in the last frame (story and step, item index → spot): taps and labels use them. */
   private spots: { key: string; at: Map<number, Spot> } = { key: '', at: new Map() };
+  /** Life through time: the plate model (loaded with the first story that has an old step) and the time scale. */
+  private paleo: PaleoWorld | null = null;
+  private units: Unit[] = [];
   readonly layer: LayerDef;
 
   constructor(private app: App, private shell: Shell, readonly kind: StoryKind = 'wars') {
@@ -194,7 +218,7 @@ export class StoryMode {
       id: kind === 'wars' ? 'wars' : `story-${kind}`, category: 'political', icon: k.icon, kind: 'fill', hidden: true, animated: true,
       name: k.name,
       desc: { en: 'Stories step by step.', es: 'Historias paso a paso.' },
-      credit: `${k.name.en}: Atlas Globe (sources listed with each story); pictures: Wikipedia; historical borders: aourednik/historical-basemaps (GPL-3.0)`,
+      credit: `${k.name.en}: Atlas Globe (sources listed with each story); pictures: Wikipedia; historical borders: aourednik/historical-basemaps (GPL-3.0)${k.paleo ? '; continents of the past: Merdith et al. (2021) plate model (CC BY 4.0)' : ''}`,
       drawFill(rc) { self.drawFill(rc); },
       drawOverlay(rc) { self.drawOverlay(rc); },
       labels(rc) { self.labels(rc); },
@@ -205,6 +229,8 @@ export class StoryMode {
 
   get active() { return this.app.mode === this.kind; }
   get wars() { return this.kind === 'wars'; }
+  /** Life through time: old steps are drawn on the continents of their age. */
+  private get paleoKind() { return !!KINDS[this.kind].paleo; }
   private get dir() { return KINDS[this.kind].dir; }
   private tr(key: 'Title' | 'Intro') { return this.wars ? t(`wars${key}`) : t(`${this.kind}${key}`); }
 
@@ -217,6 +243,9 @@ export class StoryMode {
     if (!this.snaps.length) {
       const idx = await loadJSON<{ snapshots: { year: number; file: string }[] }>('history/index.json');
       this.snaps = idx.snapshots.map((s) => ({ ...s, astro: s.year < 0 ? s.year + 1 : s.year }));
+    }
+    if (this.paleoKind && !this.units.length) {
+      try { this.units = (await loadJSON<{ units: Unit[] }>('paleo/timescale.json')).units; } catch { /* the age chips are left out */ }
     }
   }
 
@@ -258,6 +287,11 @@ export class StoryMode {
     this.shell.sheet.close();
     await this.ensureIndex();
     const [c, topo] = await Promise.all([loadJSON<Conflict>(`${this.dir}/${id}.json`), loadJSON<Topology>(`${this.dir}/${id}-areas.json`)]);
+    if (this.paleoKind && !this.paleo && c.steps.some((st) => st.ma != null)) {
+      // The continents of the old steps (about 2 MB, once).
+      this.shell.toast(t('dataLoading'), 1500);
+      try { this.paleo = await loadPaleo(this.app); } catch { /* offline: old steps fall back to today's map */ }
+    }
     if (!this.active) await this.enterMode();
     this.stop();
     this.c = c;
@@ -273,7 +307,8 @@ export class StoryMode {
       // Opened for one item (from Browse or a quiz): fly to it and open its card.
       const k = c.items?.findIndex((it) => tx(it.name) === focus.name && Math.abs(it.at[0] - focus.at[0]) < 1e-3 && Math.abs(it.at[1] - focus.at[1]) < 1e-3) ?? -1;
       const v = this.app.renderer.view;
-      v.flyTo({ lon: focus.at[0], lat: focus.at[1], zoom: Math.max(v.zoom, 4.5) }, 1300);
+      const g = k >= 0 ? this.itemAt(c.items![k], this.stepAge(this.step)) : focus.at;
+      v.flyTo({ lon: g[0], lat: g[1], zoom: Math.max(v.zoom, 4.5) }, 1300);
       if (k >= 0) setTimeout(() => { if (this.c === c) this.itemCard(c.items![k]); }, 1350);
     }
   }
@@ -320,11 +355,50 @@ export class StoryMode {
     return c.camera;
   }
 
+  // ---- Life through time: the continents of each step's age
+
+  /** What a step is drawn on: the continents of its age (in Ma), today's map, or today's land greyed (older than the plate model). */
+  private mapOf(i: number): number | 'today' | 'deep' {
+    const st = this.c!.steps[i];
+    if (st.ma != null && this.paleo) return st.ma;
+    return st.deep ? 'deep' : 'today';
+  }
+
+  /** The age of a step's continents, or null for today's map. */
+  private stepAge(i: number): number | null { const m = this.mapOf(i); return typeof m === 'number' ? m : null; }
+
+  /** The age of the continents on screen now: they drift from one step's age to the next. Null: today's map. */
+  private ageNow(): number | null {
+    if (!this.c || !this.paleo) return null;
+    const to = this.mapOf(this.step), from = this.prev >= 0 ? this.mapOf(this.prev) : to;
+    const p = ease(this.elapsed() / DRIFT);
+    if (typeof to === 'number') {
+      if (typeof from === 'number') return from + (to - from) * p;
+      return from === 'today' ? to * p : to;
+    }
+    // Back to today's map: the continents drift to their places first.
+    if (to === 'today' && typeof from === 'number' && p < 1) return from * (1 - p);
+    return null;
+  }
+
+  /** Where a present-day place is drawn: on an old map, moved with the plate that carries it. */
+  private at(pt: Pt, pl: string | null | undefined, ma: number | null): Pt {
+    return ma != null && pl && this.paleo ? this.paleo.rotate(pt[0], pt[1], pl, ma) : pt;
+  }
+  private itemAt(it: { at: Pt; pl?: string }, ma: number | null): Pt { return this.at(it.at, it.pl, ma); }
+  private routeOf(mv: Move, ma: number | null): Pt[] { return ma == null ? mv.path : mv.path.map((pt, k) => this.at(pt, mv.pls?.[k], ma)); }
+
+  /** A camera looks at a place on land today; on an old map it follows that place to where it was. */
+  private placeCam(cam: Cam, ma: number | null): Cam {
+    const [lon, lat] = this.at([cam.lon, cam.lat], cam.pl, ma);
+    return { lon, lat, zoom: cam.zoom };
+  }
+
   /**
    * The step's camera, zoomed out (at most 4 times) when the step's own markers would not all be in
    * view on this screen: a phone's map between the panels is much smaller than the one it was set for.
    */
-  private fitCam(cam: Cam, st: Step): Cam {
+  private fitCam(cam: Cam, st: Step, ma: number | null): Cam {
     const c = this.c!;
     if (!c.items || !st.show?.length) return cam;
     const v = this.app.renderer.view;
@@ -333,7 +407,7 @@ export class StoryMode {
     const R = Math.PI / 180;
     let k = Infinity;
     for (const i of st.show) {
-      const [lon, lat] = c.items[i].at;
+      const [lon, lat] = this.itemAt(c.items[i], ma);
       const dx = Math.abs(((lon - cam.lon + 540) % 360) - 180) * R * Math.cos(lat * R), dy = Math.abs(lat - cam.lat) * R;
       if (dx > 1e-9) k = Math.min(k, halfW / dx);
       if (dy > 1e-9) k = Math.min(k, halfH / dy);
@@ -350,13 +424,14 @@ export class StoryMode {
     this.step = i;
     // The address names the war and the step, so the page can be shared or reloaded there.
     history.replaceState(null, '', `#${KINDS[this.kind].hash}=${c.id}&step=${i + 1}&p=${this.app.projection}&lang=${lang()}`);
-    void this.ensureBorders(c.steps[i]);
+    if (!this.noBorders(c.steps[i])) void this.ensureBorders(c.steps[i]);
     if (this.shell.sheet.isOpen('war-step')) this.openDetails(true);
     this.shell.card.hide();
     this.renderBar();
     // The bar is up with this step's text, so the camera knows how much map is left above it.
     this.measureBar();
-    const cam = this.fitCam(this.cameraAt(i), c.steps[i]);
+    const ma = this.stepAge(i);
+    const cam = this.fitCam(this.placeCam(this.cameraAt(i), ma), c.steps[i], ma);
     let delay = 0;
     if (!o.stay && (o.fly || o.user || c.steps[i].camera)) {
       const v = this.app.renderer.view;
@@ -413,6 +488,9 @@ export class StoryMode {
 
   // ---- context borders from the historical map nearest in time
 
+  /** Life through time: no borders of peoples before 10,000 years ago (the oldest maps are of hominins). */
+  private noBorders(st: Step) { return this.paleoKind && st.t < -10000; }
+
   private snapFor(st: Step) {
     let best = this.snaps[0];
     for (const s of this.snaps) if (s.astro <= st.t + 0.5) best = s;
@@ -458,12 +536,25 @@ export class StoryMode {
     const { ctx, path, theme } = rc;
     // Plain land and coasts (the base map is off in this mode). In the dark theme the land is a
     // neutral grey, so the sides' colours (blues especially) stand out against it.
+    const land = theme.dark ? '#4f545c' : theme.land;
+    const ma = this.ageNow();
+    if (ma != null && this.paleo) {
+      // Life through time: the continents of the age, each tinted a little by the continent it is today.
+      this.paleo.draw(rc, ma, {
+        shelf: theme.dark ? '#2d4d66' : '#bcd7ea',
+        land: (cont) => (cont === 'SS' ? land : mix(land, continentSwatch(cont), theme.dark ? 0.2 : 0.26)),
+        coast: theme.coast, coastWidth: 0.6,
+      });
+      return;
+    }
+    // Older than the plate model: today's land, greyed.
+    const deep = !!c && this.mapOf(this.step) === 'deep';
     ctx.beginPath();
     for (const s of rc.visibleShapes(rc.level.countries)) path(s.feature as never);
-    ctx.fillStyle = theme.dark ? '#4f545c' : theme.land; ctx.fill();
+    ctx.fillStyle = deep ? (theme.dark ? '#3d4148' : '#e2e2de') : land; ctx.fill();
     if (!c) return;
     const st = c.steps[this.step];
-    const snap = this.snapFor(st);
+    const snap = this.noBorders(st) ? null : this.snapFor(st);
     const b = snap && this.borders.get(snap.file);
     if (Array.isArray(b)) {
       ctx.save(); ctx.globalAlpha *= 0.55;
@@ -485,9 +576,9 @@ export class StoryMode {
 
   private sideColor(id?: string) { return this.c?.sides.find((s) => s.id === id)?.color ?? '#59616b'; }
 
-  private drawRoute(rc: RenderCtx, mv: Move, q: number, alpha: number) {
+  private drawRoute(rc: RenderCtx, mv: Move, q: number, alpha: number, ma: number | null) {
     if (q <= 0 || alpha <= 0.01) return;
-    const pts = routeTo(mv.path, q);
+    const pts = routeTo(this.routeOf(mv, ma), q);
     const { ctx } = rc;
     const runs: Pt[][] = [];
     let run: Pt[] = [];
@@ -555,13 +646,15 @@ export class StoryMode {
     const st = c.steps[this.step];
     const old = this.prev >= 0 ? c.steps[this.prev] : null;
     const fadeOut = 1 - ease(el / FADE);
+    const ma = this.ageNow();
     // Battles of earlier steps stay as small dots: the war's history.
     for (let k = 0; k < this.step; k++) for (const b of c.steps[k].battles ?? []) this.drawBattle(rc, b, 1, 0, true);
-    if (old && fadeOut > 0) for (const mv of old.moves ?? []) this.drawRoute(rc, mv, 1, fadeOut * 0.7);
-    (st.moves ?? []).forEach((mv, k) => this.drawRoute(rc, mv, ease((el - MOVE_FROM - k * 300) / MOVE_MS), 1));
+    if (old && fadeOut > 0) for (const mv of old.moves ?? []) this.drawRoute(rc, mv, 1, fadeOut * 0.7, ma);
+    (st.moves ?? []).forEach((mv, k) => this.drawRoute(rc, mv, ease((el - MOVE_FROM - k * 300) / MOVE_MS), 1, ma));
     (st.events ?? []).forEach((ev, k) => {
       if (!ev.at) return;
-      const p = rc.project(ev.at[0], ev.at[1]);
+      const g = this.at(ev.at, ev.pl, ma);
+      const p = rc.project(g[0], g[1]);
       const s = pop((el - 300 - k * 300) / POP);
       if (!p || s <= 0) return;
       const { ctx } = rc;
@@ -583,14 +676,14 @@ export class StoryMode {
       // Crowded markers move apart, each with a line to its true place, so every one can be tapped.
       const now = new Set(st.show ?? []);
       const zoomed = rc.view.pxPerRadian > 1600;
-      const spots = this.layout(rc, st, zoomed);
+      const spots = this.layout(rc, st, zoomed, ma);
       this.spots = { key: `${c.id}:${this.step}`, at: spots };
       const popAt = new Map((st.show ?? []).map((k, n) => [k, pop((el - BATTLE_FROM - n * ITEM_GAP) / POP)]));
       this.drawLeaders(rc, spots, (k) => popAt.get(k) ?? 1);
-      c.items.forEach((it, k) => { if (!now.has(k) && this.onMap(it, st)) this.drawItem(rc, it, 1, 0, true, zoomed, spots.get(k)); });
+      c.items.forEach((it, k) => { if (!now.has(k) && this.onMap(it, st)) this.drawItem(rc, it, 1, 0, true, zoomed, spots.get(k), ma); });
       (st.show ?? []).forEach((k, n) => {
         const at = BATTLE_FROM + n * ITEM_GAP;
-        this.drawItem(rc, c.items![k], pop((el - at) / POP), (el - at) / PULSE, false, zoomed, spots.get(k));
+        this.drawItem(rc, c.items![k], pop((el - at) / POP), (el - at) / PULSE, false, zoomed, spots.get(k), ma);
       });
     }
   }
@@ -607,13 +700,13 @@ export class StoryMode {
    * Where the markers go: the step's own (big) markers, and zoomed in every marker on the map, move
    * apart when they overlap, as little as they must; the step's own move least.
    */
-  private layout(rc: RenderCtx, st: Step, zoomed: boolean): Map<number, Spot> {
+  private layout(rc: RenderCtx, st: Step, zoomed: boolean, ma: number | null): Map<number, Spot> {
     const c = this.c!, out = new Map<number, Spot>();
     const { w, h } = rc.view, M = 90;
     const pts: Spot[] = [];
     const add = (k: number, r: number, wt: number) => {
-      const it = c.items![k];
-      const p = rc.project(it.at[0], it.at[1]);
+      const g = this.itemAt(c.items![k], ma);
+      const p = rc.project(g[0], g[1]);
       if (!p || p[0] < -M || p[0] > w + M || p[1] < -M || p[1] > h + M) return;
       pts.push({ k, x: p[0], y: p[1], ax: p[0], ay: p[1], r, wt });
     };
@@ -647,8 +740,9 @@ export class StoryMode {
     ctx.restore();
   }
 
-  private drawItem(rc: RenderCtx, it: Item, s: number, pulse: number, small: boolean, zoomed: boolean, spot?: Spot) {
-    const p = spot ? [spot.x, spot.y] : rc.project(it.at[0], it.at[1]);
+  private drawItem(rc: RenderCtx, it: Item, s: number, pulse: number, small: boolean, zoomed: boolean, spot: Spot | undefined, ma: number | null) {
+    const g = spot ? null : this.itemAt(it, ma);
+    const p = spot ? [spot.x, spot.y] : rc.project(g![0], g![1]);
     if (!p || s <= 0) return;
     const { ctx } = rc;
     const col = this.catOf(it.cat)?.color ?? '#59616b';
@@ -681,6 +775,9 @@ export class StoryMode {
     const st = c.steps[this.step];
     const el = this.elapsed();
     const pxr = rc.view.pxPerRadian;
+    const ma = this.ageNow();
+    // Pangea, Gondwana... and today's continents, under the story's own labels.
+    if (ma != null && this.paleo) this.paleo.labels(rc, ma, { big: 900, small: 480 });
     const seen = new Set<number>();
     for (const side of c.sides) {
       const idx = st.control[side.id];
@@ -715,7 +812,7 @@ export class StoryMode {
     // Named routes, once drawn: the name sits halfway along.
     (st.moves ?? []).forEach((mv, k) => {
       if (!mv.label || el < MOVE_FROM + k * 300 + MOVE_MS) return;
-      const mid = routeTo(mv.path, 0.5);
+      const mid = routeTo(this.routeOf(mv, ma), 0.5);
       const g = mid[mid.length - 1];
       const p = rc.project(g[0], g[1]);
       if (!p) return;
@@ -725,7 +822,9 @@ export class StoryMode {
       const now = st.show ?? [];
       const spot = (k: number): [number, number] | null => {
         const sp = this.spots.key === `${c.id}:${this.step}` ? this.spots.at.get(k) : undefined;
-        return sp ? [sp.x, sp.y] : rc.project(c.items![k].at[0], c.items![k].at[1]);
+        if (sp) return [sp.x, sp.y];
+        const g = this.itemAt(c.items![k], ma);
+        return rc.project(g[0], g[1]);
       };
       now.forEach((k, n) => {
         if (el < BATTLE_FROM + n * ITEM_GAP + POP * 0.6) return;
@@ -756,6 +855,7 @@ export class StoryMode {
     const v = this.app.renderer.view;
     const here = v.project(lon, lat);
     const st = c.steps[this.step];
+    const ma = this.ageNow();
     if (c.items && here) {
       // An item near the tap (where its marker is drawn): this step's first, then the others on the map.
       const now = st.show ?? [];
@@ -765,7 +865,8 @@ export class StoryMode {
         let best = -1, bestD = n === 0 ? 26 : 16;
         for (const k of pool) {
           const sp = drawn?.get(k);
-          const p = sp ? [sp.x, sp.y] : v.project(c.items[k].at[0], c.items[k].at[1]);
+          const g = sp ? null : this.itemAt(c.items[k], ma);
+          const p = sp ? [sp.x, sp.y] : v.project(g![0], g![1]);
           if (!p) continue;
           const d = Math.hypot(p[0] - here[0], p[1] - here[1]);
           if (d < bestD) { bestD = d; best = k; }
@@ -796,6 +897,11 @@ export class StoryMode {
         return true;
       }
     }
+    // On an old map, the land under the tap: what it is today and where it was then.
+    if (ma != null && this.paleo) {
+      const rows = this.paleo.tapRows(lon, lat, ma, this.app);
+      if (rows) { this.shell.card.showCustom('🌋', fmtWhen(st.date, c.t0), this.paleo.caption(ma) || tx(c.name), rows); return true; }
+    }
     this.shell.card.hide();
     return true;
   }
@@ -807,6 +913,8 @@ export class StoryMode {
     const rows: { label: string; value: string; icon: string }[] = [];
     rows.push({ label: it.life ? t('storyLived') : t('storyWhen'), value: itemWhen(it, c?.t0 ?? 1), icon: '📅' });
     if (it.place) rows.push({ label: t('storyWhere'), value: tx(it.place), icon: '📍' });
+    const then = this.latThen(it);
+    if (then) rows.push({ label: t('lifeLatThen'), value: then, icon: '🧭' });
     if (it.size) rows.push({ label: t('storySize'), value: tx(it.size), icon: '📏' });
     if (it.status) rows.push({ label: t('storyStatus'), value: tx(it.status), icon: '🏷️' });
     for (const f of it.facts ?? []) rows.push({ label: tx(f.label), value: tx(f.value), icon: '⭐' });
@@ -822,6 +930,14 @@ export class StoryMode {
 
   private wikiThumb(it: Omit<Item, 'first'>) { return itemThumb(it); }
 
+  /** Life through time: the latitude a fossil lay at when it lived, "12°S (today 47°N)". */
+  private latThen(it: Omit<Item, 'first'>): string | null {
+    const ma = -it.t / 1e6;
+    if (!this.paleo || !it.pl || !(ma >= 5 && ma <= 1000)) return null;
+    const lat = this.paleo.rotate(it.at[0], it.at[1], it.pl, ma)[1];
+    return `${fmtLat(lat)} (${t('storyToday')}: ${fmtLat(it.at[1])})`;
+  }
+
   /** Stops playing (a tour or a quiz opened the story). */
   pause() { if (this.playing) { this.playing = false; this.renderBar(); } }
 
@@ -835,7 +951,8 @@ export class StoryMode {
   /** Flies to an item and opens its card. */
   private focusItem(it: Omit<Item, 'first'>) {
     const v = this.app.renderer.view;
-    v.flyTo({ lon: it.at[0], lat: it.at[1], zoom: Math.max(v.zoom, 4.5) }, 1200);
+    const g = this.itemAt(it, this.c ? this.stepAge(this.step) : null);
+    v.flyTo({ lon: g[0], lat: g[1], zoom: Math.max(v.zoom, 4.5) }, 1200);
     setTimeout(() => this.itemCard(it), 1250);
   }
 
@@ -1002,6 +1119,8 @@ export class StoryMode {
     ui.play.setAttribute('aria-label', this.playing ? 'Pause' : 'Play');
     ui.track.querySelectorAll('.wb-tick').forEach((el, i) => { el.classList.toggle('done', i < this.step); el.classList.toggle('on', i === this.step); });
     clear(ui.meta);
+    const age = this.ageChip(st);
+    if (age) ui.meta.append(age);
     const shown = c.sides.filter((s) => st.control[s.id] != null || (st.moves ?? []).some((m) => m.side === s.id));
     for (const s of shown) ui.meta.append(h('span', { class: 'wb-side' }, h('i', { style: { background: s.color } }), tx(s.name)));
     if (c.items && st.show?.length) {
@@ -1022,6 +1141,22 @@ export class StoryMode {
     more.addEventListener('click', () => this.openDetails());
     ui.meta.append(more);
     requestAnimationFrame(() => this.measureBar());
+  }
+
+  /**
+   * Life through time: the step's geologic period (its epoch in the last 2.6 million years, its era
+   * before 1000 million years ago) with the time scale's colour, and what the map shows.
+   */
+  private ageChip(st: Step): HTMLElement | null {
+    if (!this.paleoKind || !this.units.length) return null;
+    const ma = -st.t / 1e6;
+    if (!(ma > 0.0117)) return null;
+    const rank = ma < 2.58 ? 'epoch' : ma <= 1000 ? 'period' : 'era';
+    const u = this.units.find((x) => x.rank === rank && ma <= x.start + 1e-9 && ma >= x.end - 1e-9);
+    if (!u) return null;
+    const map = this.mapOf(this.step);
+    const tip = typeof map === 'number' ? t('lifeOldMap', { when: fmtWhen(st.date) }) : map === 'deep' ? t('lifeDeepMap') : '';
+    return h('span', { class: 'wb-side wb-age', title: tip || unitName(u) }, h('i', { style: { background: u.color } }), `${typeof map === 'number' ? '🌋 ' : ''}${unitName(u)}`);
   }
 
   /** The map centres above the bar, and the card sits over it. */
@@ -1100,6 +1235,15 @@ export class StoryMode {
         const it = c.items[k];
         body.append(this.itemRow(it, () => { this.shell.sheet.close(); this.focusItem(it); }));
       }
+    }
+    if (this.paleoKind) {
+      // What the map shows, and the plate model on its own slider.
+      const map = this.mapOf(this.step);
+      if (typeof map === 'number') {
+        const drift = h('button', { type: 'button', class: 'pill story-drift' }, '🌋 ', t('lifeSeeDrift'));
+        drift.addEventListener('click', () => { this.shell.sheet.close(); this.app.emit('pangea-at', map); });
+        body.append(h('p', { class: 'muted small story-map-note' }, t('lifeOldMapNote', { when: fmtWhen(st.date, c.t0) })), drift);
+      } else if (map === 'deep') body.append(h('p', { class: 'muted small story-map-note' }, t('lifeDeepNote')));
     }
     if (st.events?.length) {
       body.append(h('h3', { class: 'sec-title' }, `📜 ${t('warEvents')}`));
