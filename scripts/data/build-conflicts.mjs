@@ -388,7 +388,8 @@ function checkItem(it, where, coll, catalog = false) {
   if (it.wiki != null && (typeof it.wiki !== 'object' || typeof it.wiki.en !== 'string' || typeof it.wiki.es !== 'string' || !it.wiki.en)) throw new Error(`${where}: "wiki" is { "en": "Article title", "es": "Título del artículo" }`);
   if (it.country != null && !loadCountries().has(it.country)) throw new Error(`${where}: "country" "${it.country}" is not a country code (see --list countries)`);
   // "img": a Wikimedia Commons file for the card, when the article has no picture of its own.
-  if (it.img != null && (typeof it.img !== 'string' || !/\.(jpe?g|png|gif|tiff?|webp)$/i.test(it.img) || /^(File:|https?:)/i.test(it.img))) throw new Error(`${where}: "img" is a Commons file name such as "Pompeii bread.jpg" (no "File:", no address)`);
+  // An SVG is fine too: Commons serves the card a PNG thumbnail of it.
+  if (it.img != null && (typeof it.img !== 'string' || !/\.(jpe?g|png|gif|tiff?|webp|svg)$/i.test(it.img) || /^(File:|https?:)/i.test(it.img))) throw new Error(`${where}: "img" is a Commons file name such as "Pompeii bread.jpg" (no "File:", no address)`);
   const known = new Set(['id', 'name', 'at', 'cat', 'icon', 'type', 'date', 'end', 'until', 'life', 'text', 'facts', 'wiki', 'img', 'country', ...ITEM_TEXTS]);
   for (const k of Object.keys(it)) if (!known.has(k)) throw new Error(`${where}: unknown field "${k}"`);
   return t;
