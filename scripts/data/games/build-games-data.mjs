@@ -166,7 +166,9 @@ function allTime() {
     const [, g, sv, b] = nums.slice(-5); // the combined total: games, gold, silver, bronze, total
     const code = m[1];
     if (PAST.has(code)) { past.push(code); continue; }
-    const u = codes[code]?.units;
+    // A code's countries today (codes whose meaning changed, like RUS for the Russian Empire before 1920, by their latest).
+    let u = codes[code]?.units;
+    if (Array.isArray(u) && Array.isArray(u[0])) u = u.find(([from, to]) => 2026 >= from && 2026 <= to)?.[2];
     if (!Array.isArray(u) || u.length !== 1 || typeof u[0] !== 'string' || u[0].startsWith('@')) { unknown.push(code); continue; }
     const t = (iso[u[0]] ??= [0, 0, 0]);
     t[0] += g; t[1] += sv; t[2] += b;
