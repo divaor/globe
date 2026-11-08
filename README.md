@@ -60,13 +60,20 @@ spinning full-screen as an ambient display. English and Spanish.
     pterosaurs, the age of mammals and the Ice Age giants, to the fossil hunters, where animals were tamed,
     species lost and saved, and ranges then and now. A time tour in 23 chapters places a catalogue of 136
     famous fossils on the drifting continents, from 3.7 billion years ago to today.
+  - Games of the world: 11 stories, 130 steps and 431 items. Every Summer and Winter Olympics (1896–2026) and
+    every men's and women's FIFA World Cup (1930–2026) is a step: each country is coloured by how it took part
+    (host, champion, medals, took part, boycotted, banned or not invited), arcs fly from every team to the host
+    city, and the host's card holds its medal table or last four. A tap on a country tells how its team did, or
+    why it stayed away (Kazakhstan in 1980: part of the Soviet Union's team). Also the Women's World Cup from the
+    1921 ban, a century of boycotts and bans, the Tour de France and the marathon, from Marathon to the first
+    race under two hours.
   - Browse and search every item of a story or a whole collection; shared links open a story at its step.
 - **Explore:** measure distances (great circles, flight time), compare two countries, "true size" of countries.
 - **Learn & play:** quizzes (find the country, flags, capitals, states and provinces of 48 countries, where in
   the world, when was it built or made, dishes of the world, which era, which civilization, which geologic
-  period), each ending with every answer and its picture; guided tours (our planet, eight cities through time,
-  history and culture, Out of Africa, capitals of the ancient world, the dinosaur trail, the five mass
-  extinctions); "On this day" (Wikipedia).
+  period, who won), each ending with every answer and its picture; guided tours (our planet, eight cities
+  through time, history and culture, Out of Africa, capitals of the ancient world, the dinosaur trail, the five
+  mass extinctions, Olympic cities, World Cup finals, the Winter Games, great races); "On this day" (Wikipedia).
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Ambient mode:** full-screen rotating globe with your filters, screen kept awake, clock, optional filter cycling.
 
@@ -111,7 +118,9 @@ The States and provinces quiz uses Natural Earth's admin-1 regions (`scripts/dat
 Spain, Italy and the United Kingdom grouped into their regions). The Time travel stories are written from
 Wikipedia and the sources listed in each story
 (`scripts/data/conflicts/README.md`, `scripts/data/STORIES.md`); item pictures are Wikipedia page images,
-loaded from Wikipedia when a card opens, or a Wikimedia Commons file named by the item.
+loaded from Wikipedia when a card opens, or a Wikimedia Commons file named by the item. Each Games' host,
+dates, nations, athletes, medal table or World Cup ranking, and who boycotted or was kept out, are read from
+Wikipedia's articles on that Games (`scripts/data/games/README.md`, with the revisions read).
 
 ## Licence
 

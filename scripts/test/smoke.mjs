@@ -520,6 +520,60 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   }
 }
 
+// 12e. Games of the world: a Games step colours each country by how it took part (Moscow 1980: the
+// hosts, and the boycott), the host's card holds its medal table, a tap on a country tells its team
+// (Kazakhstan was part of the Soviet Union; Turkey boycotted), and Details lists the medal table and
+// who stayed away. A World Cup step in Spanish ranks the champions first.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#games=olympics-1948-1988&step=9&p=globe&lang=en');
+  await page.waitForSelector('.warbar', { timeout: 30000 });
+  // A story opens playing; a tap on its step's tick stops it there.
+  await page.evaluate(() => document.querySelectorAll('.wb-tick')[8].click());
+  await page.waitForTimeout(5000);
+  const g = await page.evaluate(() => {
+    const s = window.atlas.time.stories.games, gm = s.c.steps[s.step].games, ren = window.atlas.app.renderer;
+    const by = (iso) => gm.teams.find((tm) => tm.u.includes(iso))?.s ?? null;
+    const px = (lon, lat) => { const p = ren.view.project(lon, lat); return p ? [...document.getElementById('fg').getContext('2d').getImageData(Math.round(p[0] * ren.view.dpr), Math.round(p[1] * ren.view.dpr), 1, 1).data] : [0, 0, 0, 0]; };
+    const k = s.c.items.findIndex((it) => it.id === 'games-summer-1980'), sp = s.spots.at.get(k);
+    return { id: gm.id, usa: by('USA'), kaz: by('KAZ'), away: gm.teams.filter((tm) => tm.s === 'g_boycott').length, host: px(58, 55), turkey: px(30.5, 39), marker: sp ? [sp.x, sp.y] : null };
+  });
+  const yellow = g.host[0] > g.host[2] + 80 && g.host[1] > g.host[2] + 50, red = g.turkey[0] > g.turkey[2] + 40 && g.turkey[0] > g.turkey[1] + 40;
+  check(g.id === 'summer-1980' && g.usa === 'g_boycott' && g.kaz === 'g_host' && g.away >= 60 && yellow && red, `Moscow 1980: the hosts in gold, ${g.away} boycotting teams in red (Soviet Union ${g.host.slice(0, 3)}, Turkey ${g.turkey.slice(0, 3)})`);
+  if (g.marker) await page.touchscreen.tap(g.marker[0], g.marker[1]);
+  await page.waitForTimeout(700);
+  const host = await page.evaluate(() => { const c = document.querySelector('.country-card:not([hidden])'); return { title: c?.querySelector('h2, .cc-name, .card-title')?.textContent ?? c?.innerText.split('\n')[0] ?? '', rows: c?.querySelectorAll('.medal-table tbody tr').length ?? 0, first: c?.querySelector('.medal-table tbody tr')?.textContent ?? '' }; });
+  check(host.rows === 10 && /Soviet Union/.test(host.first), `the host's card shows the top of the medal table (${host.rows} rows, first: ${host.first.slice(0, 30)})`);
+  const tapAt = async (lon, lat) => {
+    // The open card (a tall medal table) would cover the land; close it first.
+    await page.evaluate(() => document.querySelector('.country-card .card-close')?.click());
+    await page.waitForTimeout(500);
+    const p = await page.evaluate(([lon, lat]) => window.atlas.app.renderer.view.project(lon, lat), [lon, lat]);
+    await page.touchscreen.tap(p[0], p[1]);
+    await page.waitForTimeout(700);
+    return page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
+  };
+  const kaz = await tapAt(58, 49);
+  check(/Kazakhstan was part of/.test(kaz) && /Soviet Union/.test(kaz) && /Host/.test(kaz), `a tap on Kazakhstan: part of the Soviet Union's team (${kaz.replace(/\n+/g, ' · ').slice(0, 90)})`);
+  const tur = await tapAt(32.5, 39);
+  check(/Turkey/.test(tur) && /Boycotted/.test(tur) && /Afghanistan/.test(tur), `a tap on Turkey: boycotted, and why (${tur.replace(/\n+/g, ' · ').slice(0, 90)})`);
+  await page.tap('.wb-more');
+  await page.waitForTimeout(600);
+  const det = await page.evaluate(() => { const d = document.querySelector('.war-details'); return { rows: d?.querySelectorAll('.medal-table tbody tr').length ?? 0, away: d?.querySelectorAll('.war-events li').length ?? 0, text: d?.textContent ?? '' }; });
+  check(det.rows >= 30 && det.away >= 60 && /Medal table/.test(det.text) && /Stayed away/.test(det.text), `Details: the whole medal table (${det.rows} nations) and the ${det.away} teams that stayed away`);
+  await page.tap('.sheet .sheet-head .icon-btn');
+  await page.waitForTimeout(300);
+  await page.goto(`${url}?r=4#games=world-cup-1974-2026&step=14&p=globe&lang=es`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('.warbar', { timeout: 30000 });
+  await page.evaluate(() => document.querySelectorAll('.wb-tick')[13].click());
+  await page.waitForTimeout(3000);
+  await page.tap('.wb-more');
+  await page.waitForTimeout(600);
+  const es = await page.evaluate(() => { const d = document.querySelector('.war-details'); return { text: d?.textContent ?? '', first: d?.querySelector('.medal-table tbody tr')?.textContent ?? '' }; });
+  check(/Clasificación final/.test(es.text) && /España/.test(es.first) && /Campeón/.test(es.first), `World Cup 2026 in Spanish: the final ranking starts with the champions (${es.first})`);
+  check(!errors.length, `no page errors in Games of the world${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 // 13. Learn: the quizzes made from the stories ask ten questions with four answers (or a tap on the
 // globe), and "See it in the story" opens the story at the item; a city tour opens steps of stories
 // from different collections and flies to the city each time.
@@ -532,7 +586,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.waitForTimeout(400);
   };
   const storyButton = () => page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /See it in the story/.test(b.textContent)));
-  for (const kind of ['when', 'dish', 'era', 'civ', 'period']) {
+  for (const kind of ['when', 'dish', 'era', 'civ', 'period', 'champion']) {
     await menu('Quiz');
     await page.evaluate((k) => document.querySelector(`[data-quiz="${k}"]`).click(), kind);
     await page.waitForSelector('.learn-card:not([hidden]) .quiz-opt', { timeout: 30000 });
@@ -618,7 +672,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForSelector('.warbar', { timeout: 30000 }).catch(() => {});
   await page.waitForTimeout(1500);
   const opened = await page.evaluate(() => ({ mode: window.atlas.app.mode, card: !!document.querySelector('.country-card:not([hidden])') }));
-  check(['eras', 'food', 'structures', 'people', 'life'].includes(opened.mode) && opened.card, `"See it in the story" opens the story at the item (${opened.mode})`);
+  check(['eras', 'food', 'structures', 'people', 'life', 'games'].includes(opened.mode) && opened.card, `"See it in the story" opens the story at the item (${opened.mode})`);
   // A city tour: Hagia Sophia (Great structures), then the siege of 717 (Wars), both over Istanbul.
   await menu('Guided tours');
   await page.evaluate(() => document.querySelector('[data-tour="Istanbul through time"]').click());
@@ -644,6 +698,14 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
   const uruk = await stop();
   check(uruk.mode === 'people' && Math.abs(uruk.lon - 45.64) < 0.3 && Math.abs(uruk.lat - 31.32) < 0.3 && /1\/11/.test(uruk.n), `a tour of ancient capitals starts at Uruk (${uruk.bar})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
+  // Winter Games: its first stop opens the Chamonix 1924 step of Games of the world.
+  await menu('Guided tours');
+  await page.evaluate(() => document.querySelector('[data-tour="Winter Games"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
+  const cham = await stop();
+  check(cham.mode === 'games' && /first Winter Games/.test(cham.bar) && /1\/12/.test(cham.n), `the Winter Games tour starts at Chamonix (${cham.bar})`);
   await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
   await page.waitForTimeout(300);
   check(!errors.length, `no page errors in quizzes and tours${errors.length ? ': ' + errors.join(' | ') : ''}`);
