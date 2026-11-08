@@ -402,7 +402,7 @@ function checkItem(it, where, coll, catalog = false) {
 /** An item as the app gets it: fixed field order, with its time and icon filled in. */
 function normItem(it, coll) {
   const o = { id: it.id, name: it.name, at: it.at.map((v) => Math.round(v * 1e4) / 1e4), cat: it.cat, icon: it.icon ?? coll.cats.get(it.cat).icon, date: it.date, t: parseDate(it.date, '') };
-  for (const k of ['end', 'until', 'life', 'type', 'country', 'place', 'text', 'details', 'why', 'how', 'by', 'size', 'status', 'facts', 'wiki', 'img']) if (it[k] != null) o[k] = it[k];
+  for (const k of ['end', 'until', 'life', 'type', 'country', 'place', 'text', 'details', 'why', 'how', 'by', 'size', 'status', 'facts', 'wiki', 'img', 'podium']) if (it[k] != null) o[k] = it[k];
   if (it.until != null) o.tu = parseDate(it.until, '');
   if (o.id == null) delete o.id;
   return o;

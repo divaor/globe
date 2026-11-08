@@ -187,7 +187,7 @@ export function attachGames(c, steps, { addItem, addArea, warn }) {
       const row = codeRow(e.kind, code);
       if (row?.en) return lang === 'es' ? row.es : row.en;
       const iso = unitsOf(row, e.year)[0];
-      return lang === 'es' ? d.meta[iso]?.es : d.meta[iso]?.n;
+      return lang === 'es' ? d.meta[iso]?.es : d.meta[iso]?.sn ?? d.meta[iso]?.n;
     };
     const facts = [];
     const fact = (en, es, ven, ves) => facts.push({ label: { en, es }, value: { en: ven, es: ves ?? ven } });
@@ -216,6 +216,13 @@ export function attachGames(c, steps, { addItem, addArea, warn }) {
       id: `games-${id}`, name: host.name, at: host.at, cat: e.kind === 'summer' ? 'summer' : e.kind === 'winter' ? 'winter' : 'football',
       type: 'games', date: e.dates[0] ?? String(e.year), place: host.place, text: host.text ?? text, facts,
     };
+    // The top four (medal table or final ranking): the "Who won?" quiz asks for the first.
+    const top = oly ? [...e.medals].sort((a, b) => a.rank - b.rank).slice(0, 4).map((m) => m.code) : e.teams.filter((t) => t.place && t.place <= 4).sort((a, b) => a.place - b.place).map((t) => t.code);
+    item.podium = top.map((code) => {
+      const row = codeRow(e.kind, code), units = unitsOf(row, e.year);
+      const one = !row?.en && units.length === 1 && !units[0].startsWith('@') ? d.meta[units[0]] : null;
+      return { c: code, n: { en: nameOf(code, 'en'), es: nameOf(code, 'es') }, ...(one?.a2 ? { a2: one.a2 } : {}) };
+    });
     if (e.dates[1] && e.dates[1] !== e.dates[0]) item.end = e.dates[1];
     if (host.icon) item.icon = host.icon;
     if (host.wiki) item.wiki = host.wiki;

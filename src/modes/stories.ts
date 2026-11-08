@@ -44,6 +44,8 @@ export interface Item {
   facts?: { label: Text; value: Text }[]; wiki?: Text;
   /** A Wikimedia Commons file for the card, when the article has no picture of its own. */
   img?: string;
+  /** Games of the world, a Games' host marker: the top four of its medal table or final ranking. */
+  podium?: { c: string; n: Text; a2?: string }[];
   /** Life through time: the plate that carries it, so it moves with its continent on an old map. */
   pl?: string;
   /** The first step that shows it (-1: a time tour's catalogue item, shown from its date). */
@@ -703,8 +705,8 @@ export class StoryMode {
 
   /** A country of today by its code: its name in the reader's language and its flag (an emoji). */
   private country(iso: string): { name: string; flag: string; a2?: string } {
-    const m = this.app.data.meta[iso] as { n?: string; es?: string; a2?: string } | undefined;
-    return { name: (lang() === 'es' ? m?.es : m?.n) ?? iso, flag: flagEmoji(m?.a2) || '🏳️', a2: m?.a2 };
+    const m = this.app.data.meta[iso] as { a2?: string } | undefined;
+    return { name: this.app.data.name(iso, lang()) || iso, flag: flagEmoji(m?.a2) || '🏳️', a2: m?.a2 };
   }
 
   /** A team's name: its own (the Soviet Union, England...) or its country's. */
