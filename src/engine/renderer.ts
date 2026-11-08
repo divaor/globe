@@ -350,6 +350,11 @@ export class Renderer {
         if (!s) return;
         ctx.fillStyle = color; ctx.fill(this.countryPath(s));
       },
+      fillCountries: (ids, color) => {
+        const shapes: Shape[] = [];
+        for (const id of ids) { const s = level.byId.get(id); if (s && bboxNear(s.bbox, center, radius)) shapes.push(s); }
+        if (shapes.length) this.fillShapes(ctx, shapes, color);
+      },
     };
   }
 

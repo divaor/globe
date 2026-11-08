@@ -583,11 +583,10 @@ export class StoryMode {
       });
       return;
     }
-    // Older than the plate model: today's land, greyed.
+    // Older than the plate model: today's land, greyed. (Drawn from the frame's cached outlines, which the
+    // Games' country colours then reuse.)
     const deep = !!c && this.mapOf(this.step) === 'deep';
-    ctx.beginPath();
-    for (const s of rc.visibleShapes(rc.level.countries)) path(s.feature as never);
-    ctx.fillStyle = deep ? (theme.dark ? '#3d4148' : '#e2e2de') : land; ctx.fill();
+    rc.fillCountries(rc.visibleShapes(rc.level.countries).map((s) => s.id), deep ? (theme.dark ? '#3d4148' : '#e2e2de') : land);
     if (!c) return;
     const st = c.steps[this.step];
     const p = ease(this.elapsed() / FADE);
@@ -616,15 +615,33 @@ export class StoryMode {
 
   // ---- Games of the world: the countries' colours, the arcs to the host, the teams
 
-  /** Each team's countries in the colour of how it took part, fading from the step before. */
+  /**
+   * Each team's countries in the colour of how it took part, fading from the step before. Countries of
+   * one colour and strength are filled together, in one go.
+   */
   private fillTeams(rc: RenderCtx, st: Step, old: Step | null, p: number) {
     const cur = this.tints(st), was = old ? this.tints(old) : null;
+    const groups = new Map<string, { color: string; alpha: number; units: string[] }>();
+    const add = (u: string, color: string, alpha: number) => {
+      if (alpha <= 0.01) return;
+      const key = `${color}|${alpha.toFixed(3)}`;
+      let g = groups.get(key);
+      if (!g) groups.set(key, (g = { color, alpha, units: [] }));
+      g.units.push(u);
+    };
     for (const [u, col] of cur) {
       const w = was?.get(u);
-      if (!was || p >= 1 || w === col) this.fillUnit(rc, u, col, 1);
-      else { if (w) this.fillUnit(rc, u, w, 1 - p); this.fillUnit(rc, u, col, p); }
+      if (!was || p >= 1 || w === col) add(u, col, 1);
+      else { if (w) add(u, w, 1 - p); add(u, col, p); }
     }
-    if (was && p < 1) for (const [u, w] of was) if (!cur.has(u)) this.fillUnit(rc, u, w, 1 - p);
+    if (was && p < 1) for (const [u, w] of was) if (!cur.has(u)) add(u, w, 1 - p);
+    const { ctx } = rc;
+    for (const g of groups.values()) {
+      ctx.save(); ctx.globalAlpha *= g.alpha * 0.82;
+      rc.fillCountries(g.units.filter((u) => !u.startsWith('#')), g.color);
+      ctx.restore();
+      for (const u of g.units) if (u.startsWith('#')) this.fillArea(rc, Number(u.slice(1)), g.color, g.alpha);
+    }
   }
 
   private tintCache = new WeakMap<Step, Map<string, string>>();
@@ -637,14 +654,6 @@ export class StoryMode {
       this.tintCache.set(st, m);
     }
     return m;
-  }
-
-  /** Fills one of today's countries (ISO A3), or a drawn area ("#3"). */
-  private fillUnit(rc: RenderCtx, u: string, color: string, alpha: number) {
-    if (alpha <= 0.01) return;
-    if (u.startsWith('#')) { this.fillArea(rc, Number(u.slice(1)), color, alpha); return; }
-    const { ctx } = rc;
-    ctx.save(); ctx.globalAlpha *= alpha * 0.82; rc.fillCountry(u, color); ctx.restore();
   }
 
   private arcCache = new Map<string, Pt[]>();

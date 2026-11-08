@@ -67,6 +67,8 @@ export interface RenderCtx {
   project(lon: number, lat: number): [number, number] | null;
   /** Fills a country (current LOD) with a colour. */
   fillCountry(id: string, color: string): void;
+  /** Fills several countries (current LOD) with one colour in one go; their outlines are projected once per frame. */
+  fillCountries(ids: Iterable<string>, color: string): void;
 }
 
 export interface LayerInstance {
