@@ -1,0 +1,4273 @@
+{
+  "id": "marco-polo",
+  "name": {
+    "en": "Marco Polo's travels",
+    "es": "Los viajes de Marco Polo"
+  },
+  "icon": "🐫",
+  "era": "medieval",
+  "region": {
+    "en": "Venice to China and back, by the Silk Road and the Indian Ocean",
+    "es": "De Venecia a China y de vuelta, por la Ruta de la Seda y el océano Índico"
+  },
+  "start": "1260",
+  "end": "1324-01-08",
+  "summary": {
+    "en": "A Venetian merchant's son rides to Kublai Khan's court, serves him for 17 years and sails home with a Mongol princess. His book showed Europe the East.",
+    "es": "El hijo de un mercader veneciano viaja a caballo hasta la corte de Kublai Kan, lo sirve durante 17 años y vuelve por mar con una princesa mongola. Su libro mostró Oriente a Europa."
+  },
+  "camera": {
+    "lon": 70,
+    "lat": 38,
+    "zoom": 1.6
+  },
+  "sides": [
+    {
+      "id": "brothers",
+      "name": {
+        "en": "Niccolò and Maffeo Polo",
+        "es": "Niccolò y Maffeo Polo"
+      },
+      "color": "#7d3c98",
+      "members": {
+        "en": "Marco's father and uncle, on their first journey (1260–1269)",
+        "es": "El padre y el tío de Marco, en su primer viaje (1260-1269)"
+      }
+    },
+    {
+      "id": "marco",
+      "name": {
+        "en": "Marco Polo",
+        "es": "Marco Polo"
+      },
+      "color": "#c0392b",
+      "members": {
+        "en": "Marco with his father and uncle, and his journeys for Kublai Khan",
+        "es": "Marco con su padre y su tío, y sus viajes para Kublai Kan"
+      }
+    },
+    {
+      "id": "home",
+      "name": {
+        "en": "The voyage home",
+        "es": "El viaje de regreso"
+      },
+      "color": "#d4a017",
+      "members": {
+        "en": "Escorting the princess Kököchin from China to Persia, then home to Venice (1291–1295)",
+        "es": "Escoltando a la princesa Kököchin de China a Persia y luego a casa, a Venecia (1291-1295)"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "date": "1266",
+      "title": {
+        "en": "The brothers ride east",
+        "es": "Los hermanos van al este"
+      },
+      "text": {
+        "en": "In 1260 the Venetian merchants Niccolò and Maffeo Polo left Constantinople to trade on the Black Sea and the Volga. War closed the road home, so they kept going east, all the way to Kublai Khan.",
+        "es": "En 1260 los mercaderes venecianos Niccolò y Maffeo Polo dejaron Constantinopla para comerciar en el mar Negro y el Volga. La guerra les cerró el camino de vuelta, así que siguieron hacia el este, hasta Kublai Kan."
+      },
+      "details": {
+        "en": "The brothers had a trading house in Constantinople, then ruled by Latin crusaders and Venice. Sensing trouble, they turned their goods into jewels and sailed to Soldaia in Crimea; a year later the Byzantines retook Constantinople and burned the Venetian quarter. From Crimea they rode to the court of Berke, khan of the Golden Horde, on the Volga, and traded with him for about a year. When Berke went to war with his cousin Hulagu, the road back was cut. They crossed the Volga and some seventeen days of empty steppe to Bukhara, where they waited three years, until an envoy of Hulagu on his way to the Great Khan invited them along. The book does not describe their road east, so the line on the map is a likely one. Kublai, who had never met Latin Europeans, received them, in 1266 by the usual account, and asked them about the pope, the Church and the kings of Europe.",
+        "es": "Los hermanos tenían una casa de comercio en Constantinopla, entonces en manos de los cruzados latinos y de Venecia. Previendo problemas, convirtieron sus bienes en joyas y navegaron a Soldaia, en Crimea; un año después los bizantinos recuperaron Constantinopla y quemaron el barrio veneciano. Desde Crimea cabalgaron hasta la corte de Berke, kan de la Horda de Oro, junto al Volga, y comerciaron con él cerca de un año. Cuando Berke entró en guerra con su primo Hulagu, el camino de regreso quedó cortado. Cruzaron el Volga y unos diecisiete días de estepa vacía hasta Bujará, donde esperaron tres años, hasta que un enviado de Hulagu que iba a ver al gran kan los invitó a acompañarlo. El libro no describe su camino hacia el este, así que la línea del mapa muestra un camino probable. Kublai, que nunca había visto europeos latinos, los recibió, en 1266 según el relato habitual, y les preguntó por el papa, la Iglesia y los reyes de Europa."
+      },
+      "camera": {
+        "lon": 74,
+        "lat": 43,
+        "zoom": 1.7
+      },
+      "moves": [
+        {
+          "side": "brothers",
+          "path": [
+            [
+              28.98,
+              41.01
+            ],
+            [
+              29.07,
+              41.18
+            ],
+            [
+              29.15,
+              41.25
+            ],
+            [
+              30.3,
+              42.1
+            ],
+            [
+              32.5,
+              43.5
+            ],
+            [
+              33.6,
+              44.25
+            ],
+            [
+              34.3,
+              44.4
+            ],
+            [
+              34.9,
+              44.78
+            ],
+            [
+              34.97,
+              44.85
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "brothers",
+          "path": [
+            [
+              34.97,
+              44.85
+            ],
+            [
+              35.1,
+              45.2
+            ],
+            [
+              34.85,
+              46.05
+            ],
+            [
+              36.6,
+              46.75
+            ],
+            [
+              39.42,
+              47.11
+            ],
+            [
+              43.0,
+              47.6
+            ],
+            [
+              47.43,
+              47.18
+            ],
+            [
+              46.6,
+              47.9
+            ],
+            [
+              45.7,
+              48.8
+            ],
+            [
+              45.4,
+              50.1
+            ],
+            [
+              46.03,
+              51.47
+            ],
+            [
+              48.5,
+              50.2
+            ],
+            [
+              51.53,
+              47.47
+            ],
+            [
+              55.0,
+              44.6
+            ],
+            [
+              58.8,
+              42.2
+            ],
+            [
+              61.8,
+              40.8
+            ],
+            [
+              64.42,
+              39.77
+            ],
+            [
+              66.96,
+              39.65
+            ],
+            [
+              67.84,
+              40.12
+            ],
+            [
+              69.24,
+              41.3
+            ],
+            [
+              71.37,
+              42.9
+            ],
+            [
+              74.6,
+              42.87
+            ],
+            [
+              76.9,
+              43.25
+            ],
+            [
+              80.85,
+              44.05
+            ],
+            [
+              83.0,
+              44.4
+            ],
+            [
+              86.0,
+              44.3
+            ],
+            [
+              89.2,
+              44.07
+            ],
+            [
+              89.19,
+              42.95
+            ],
+            [
+              93.51,
+              42.83
+            ],
+            [
+              95.78,
+              40.52
+            ],
+            [
+              98.49,
+              39.73
+            ],
+            [
+              100.45,
+              38.93
+            ],
+            [
+              102.64,
+              37.93
+            ],
+            [
+              106.27,
+              38.47
+            ],
+            [
+              109.84,
+              40.66
+            ],
+            [
+              111.67,
+              40.82
+            ],
+            [
+              113.3,
+              40.08
+            ],
+            [
+              114.88,
+              40.82
+            ],
+            [
+              116.07,
+              40.29
+            ],
+            [
+              116.4,
+              39.93
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ],
+      "places": [
+        {
+          "id": "niccolo-and-maffeo-polo",
+          "name": {
+            "en": "Niccolò and Maffeo Polo",
+            "es": "Niccolò y Maffeo Polo"
+          },
+          "at": [
+            28.965,
+            41.025
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1260",
+          "place": {
+            "en": "Set out from Constantinople (Istanbul, Turkey)",
+            "es": "Partieron de Constantinopla (Estambul, Turquía)"
+          },
+          "text": {
+            "en": "Marco's father and uncle, Venetian merchants. Between 1260 and 1269 they travelled from the Black Sea to Kublai Khan's court and back, among the first Latin Europeans to reach China.",
+            "es": "El padre y el tío de Marco, mercaderes venecianos. Entre 1260 y 1269 viajaron del mar Negro a la corte de Kublai Kan y de vuelta, entre los primeros europeos latinos que llegaron a China."
+          },
+          "details": {
+            "en": "Niccolò (about 1230 to about 1294) and Maffeo (about 1230 to about 1309) traded from the Venetian quarter of Constantinople and had a house at Soldaia in Crimea. At the court of Berke Khan they became ortoq, merchant partners who sold goods that a Mongol lord entrusted to them. In 1271 they went back to China with young Marco and stayed 17 years. Neither of them wrote anything: what we know of their travels comes from Marco's book.",
+            "es": "Niccolò (de hacia 1230 a hacia 1294) y Maffeo (de hacia 1230 a hacia 1309) comerciaban desde el barrio veneciano de Constantinopla y tenían una casa en Soldaia, en Crimea. En la corte de Berke Kan se hicieron ortoq, socios mercantiles que vendían bienes que un señor mongol les confiaba. En 1271 volvieron a China con el joven Marco y se quedaron 17 años. Ninguno de los dos escribió nada: lo que sabemos de sus viajes viene del libro de Marco."
+          },
+          "wiki": {
+            "en": "Niccolò and Maffeo Polo",
+            "es": ""
+          }
+        },
+        {
+          "id": "sudak",
+          "name": {
+            "en": "Soldaia (Sudak)",
+            "es": "Soldaia (Sudak)"
+          },
+          "at": [
+            34.9725,
+            44.8514
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1260",
+          "place": {
+            "en": "Sudak, Crimea",
+            "es": "Sudak, Crimea"
+          },
+          "text": {
+            "en": "A Black Sea port in Crimea where Venetian merchants traded with the peoples of the steppe. The Polo brothers moved their business here in 1259 or 1260, a year before Constantinople fell to the Byzantines.",
+            "es": "Un puerto de Crimea, en el mar Negro, donde los venecianos comerciaban con los pueblos de la estepa. Los hermanos Polo llevaron aquí su negocio en 1259 o 1260, un año antes de que los bizantinos recuperaran Constantinopla."
+          },
+          "wiki": {
+            "en": "Sudak",
+            "es": "Sudak"
+          }
+        },
+        {
+          "id": "sarai",
+          "name": {
+            "en": "Sarai",
+            "es": "Sarai"
+          },
+          "at": [
+            47.4345,
+            47.1814
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1261",
+          "place": {
+            "en": "Lower Volga, Astrakhan Oblast, Russia",
+            "es": "Bajo Volga, óblast de Astracán, Rusia"
+          },
+          "text": {
+            "en": "The capital of the Golden Horde on the lower Volga, at first little more than a vast camp. Here the Polo brothers traded with Berke Khan for about a year. The exact site of his Sarai is still debated.",
+            "es": "La capital de la Horda de Oro en el bajo Volga, al principio poco más que un campamento enorme. Aquí los hermanos Polo comerciaron con Berke Kan durante cerca de un año. Todavía se discute dónde estaba exactamente su Sarai."
+          },
+          "wiki": {
+            "en": "Sarai (city)",
+            "es": "Sarai"
+          }
+        },
+        {
+          "id": "bukhara",
+          "name": {
+            "en": "Bukhara",
+            "es": "Bujará"
+          },
+          "at": [
+            64.4231,
+            39.7667
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1262",
+          "place": {
+            "en": "Bukhara, Uzbekistan",
+            "es": "Bujará, Uzbekistán"
+          },
+          "text": {
+            "en": "An old Silk Road city of Central Asia, burned by Genghis Khan in 1220 and rebuilt. Unable to go home or on, the Polo brothers waited here three years, until an envoy of Hulagu took them to Kublai.",
+            "es": "Antigua ciudad de la Ruta de la Seda, incendiada por Gengis Kan en 1220 y reconstruida. Sin poder volver ni seguir, los hermanos Polo esperaron aquí tres años, hasta que un enviado de Hulagu los llevó ante Kublai."
+          },
+          "wiki": {
+            "en": "Bukhara",
+            "es": "Bujará"
+          }
+        },
+        {
+          "id": "kublai-khan",
+          "name": {
+            "en": "Kublai Khan",
+            "es": "Kublai Kan"
+          },
+          "at": [
+            116.39,
+            39.92
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1266",
+          "life": [
+            "1215-09-23",
+            "1294-02-18"
+          ],
+          "place": {
+            "en": "Khanbaliq (Beijing) and Shangdu, China",
+            "es": "Janbalic (Pekín) y Shangdu, China"
+          },
+          "text": {
+            "en": "Genghis Khan's grandson, Great Khan from 1260 and from 1271 emperor of China's Yuan dynasty. Curious about the Latin West, he welcomed the Polos and kept them in his service for 17 years.",
+            "es": "Nieto de Gengis Kan, gran kan desde 1260 y desde 1271 emperador de la dinastía Yuan de China. Curioso por el Occidente latino, recibió a los Polo y los tuvo a su servicio durante 17 años."
+          },
+          "details": {
+            "en": "Kublai won the throne in a civil war with his brother Ariq Böke and ruled from two capitals: Khanbaliq, today's Beijing, in winter and Shangdu in summer. By 1279 he had conquered the Song dynasty and all of China, but his invasions of Japan, Vietnam and Java failed, and Burma only paid tribute. He issued paper money across his empire, rebuilt the Grand Canal and employed many foreigners, Central Asian Muslims, Uyghurs, Tibetans and a few Europeans, whom he trusted more than his Chinese subjects. He died in 1294, aged 78.",
+            "es": "Kublai ganó el trono en una guerra civil contra su hermano Ariq Böke y gobernó desde dos capitales: Janbalic, la actual Pekín, en invierno y Shangdu en verano. Hacia 1279 había conquistado la dinastía Song y toda China, pero sus invasiones de Japón, Vietnam y Java fracasaron, y Birmania solo pagó tributo. Emitió dinero de papel en todo su imperio, reconstruyó el Gran Canal y empleó a muchos extranjeros, musulmanes de Asia central, uigures, tibetanos y algunos europeos, en quienes confiaba más que en sus súbditos chinos. Murió en 1294, a los 78 años."
+          },
+          "wiki": {
+            "en": "Kublai Khan",
+            "es": "Kublai Kan"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1269",
+      "title": {
+        "en": "The Khan's letter to the pope",
+        "es": "La carta del kan al papa"
+      },
+      "text": {
+        "en": "Kublai sent the brothers back with a golden tablet that opened every road, and a letter asking the pope for a hundred learned Christians and oil from the lamp at the tomb of Christ in Jerusalem.",
+        "es": "Kublai envió a los hermanos de vuelta con una tablilla de oro que les abría todos los caminos y una carta en la que pedía al papa cien cristianos sabios y aceite de la lámpara del sepulcro de Cristo en Jerusalén."
+      },
+      "details": {
+        "en": "A Mongol envoy set out with them but left them on the way, and the brothers rode on alone across Asia to Layas, in the Armenian kingdom of Cilicia, then sailed to Acre in 1269. The book does not say which road they took back; the line passes through Persia, the most direct road to Layas. At Acre they learned that Pope Clement IV had died in 1268. The papal legate there, Teobaldo Visconti, told them to wait for a new pope, so they sailed home to Venice. Niccolò found that his wife had died while he was away and that the son he had never seen, Marco, was fifteen. The cardinals took almost three years to choose a pope, the longest papal election in history, and the Polos grew tired of waiting.",
+        "es": "Un enviado mongol partió con ellos, pero los dejó en el camino, y los hermanos siguieron solos a caballo a través de Asia hasta Layas, en el reino armenio de Cilicia, y de allí navegaron a Acre en 1269. El libro no dice por qué camino volvieron; la línea pasa por Persia, el camino más directo a Layas. En Acre supieron que el papa Clemente IV había muerto en 1268. El legado papal, Teobaldo Visconti, les aconsejó esperar a un nuevo papa, así que volvieron por mar a Venecia. Niccolò descubrió que su esposa había muerto en su ausencia y que el hijo al que nunca había visto, Marco, tenía quince años. Los cardenales tardaron casi tres años en elegir papa, la elección papal más larga de la historia, y los Polo se cansaron de esperar."
+      },
+      "camera": {
+        "lon": 64,
+        "lat": 40,
+        "zoom": 1.5
+      },
+      "moves": [
+        {
+          "side": "brothers",
+          "path": [
+            [
+              116.4,
+              39.93
+            ],
+            [
+              116.07,
+              40.29
+            ],
+            [
+              114.88,
+              40.82
+            ],
+            [
+              113.3,
+              40.08
+            ],
+            [
+              111.67,
+              40.82
+            ],
+            [
+              109.84,
+              40.66
+            ],
+            [
+              106.27,
+              38.47
+            ],
+            [
+              102.64,
+              37.93
+            ],
+            [
+              100.45,
+              38.93
+            ],
+            [
+              98.49,
+              39.73
+            ],
+            [
+              95.78,
+              40.52
+            ],
+            [
+              93.51,
+              42.83
+            ],
+            [
+              89.19,
+              42.95
+            ],
+            [
+              89.2,
+              44.07
+            ],
+            [
+              86.0,
+              44.3
+            ],
+            [
+              83.0,
+              44.4
+            ],
+            [
+              80.85,
+              44.05
+            ],
+            [
+              76.9,
+              43.25
+            ],
+            [
+              74.6,
+              42.87
+            ],
+            [
+              71.37,
+              42.9
+            ],
+            [
+              69.24,
+              41.3
+            ],
+            [
+              67.84,
+              40.12
+            ],
+            [
+              66.96,
+              39.65
+            ],
+            [
+              64.42,
+              39.77
+            ],
+            [
+              62.19,
+              37.66
+            ],
+            [
+              61.16,
+              36.54
+            ],
+            [
+              58.8,
+              36.21
+            ],
+            [
+              54.4,
+              36.2
+            ],
+            [
+              51.43,
+              35.59
+            ],
+            [
+              50.0,
+              36.27
+            ],
+            [
+              48.48,
+              36.67
+            ],
+            [
+              46.29,
+              38.08
+            ],
+            [
+              44.95,
+              38.55
+            ],
+            [
+              41.27,
+              39.9
+            ],
+            [
+              39.49,
+              39.75
+            ],
+            [
+              37.02,
+              39.75
+            ],
+            [
+              35.48,
+              38.73
+            ],
+            [
+              35.82,
+              37.45
+            ],
+            [
+              35.79,
+              36.77
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        },
+        {
+          "side": "brothers",
+          "path": [
+            [
+              35.79,
+              36.77
+            ],
+            [
+              35.75,
+              36.7
+            ],
+            [
+              35.62,
+              36.4
+            ],
+            [
+              35.55,
+              35.95
+            ],
+            [
+              35.62,
+              35.4
+            ],
+            [
+              35.65,
+              34.6
+            ],
+            [
+              35.3,
+              33.9
+            ],
+            [
+              35.0,
+              33.2
+            ],
+            [
+              35.07,
+              32.92
+            ],
+            [
+              34.6,
+              33.4
+            ],
+            [
+              33.5,
+              34.4
+            ],
+            [
+              32.3,
+              34.45
+            ],
+            [
+              30.5,
+              35.4
+            ],
+            [
+              28.0,
+              35.7
+            ],
+            [
+              26.6,
+              35.45
+            ],
+            [
+              25.0,
+              35.75
+            ],
+            [
+              23.4,
+              36.05
+            ],
+            [
+              22.9,
+              36.05
+            ],
+            [
+              22.45,
+              36.2
+            ],
+            [
+              21.4,
+              36.65
+            ],
+            [
+              20.55,
+              37.55
+            ],
+            [
+              20.3,
+              38.5
+            ],
+            [
+              19.7,
+              39.3
+            ],
+            [
+              19.1,
+              39.9
+            ],
+            [
+              18.8,
+              40.6
+            ],
+            [
+              17.5,
+              41.7
+            ],
+            [
+              15.5,
+              42.8
+            ],
+            [
+              14.0,
+              43.9
+            ],
+            [
+              13.1,
+              44.8
+            ],
+            [
+              12.55,
+              45.3
+            ],
+            [
+              12.42,
+              45.41
+            ],
+            [
+              12.34,
+              45.43
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "paiza",
+          "name": {
+            "en": "The Khan's golden tablet",
+            "es": "La tablilla de oro del kan"
+          },
+          "at": [
+            116.2,
+            40.08
+          ],
+          "cat": "book",
+          "icon": "📜",
+          "type": "work",
+          "date": "1266",
+          "place": {
+            "en": "Given at Kublai's court, China",
+            "es": "Entregada en la corte de Kublai, China"
+          },
+          "text": {
+            "en": "A paiza, a gold tablet about 30 cm long, ordered everyone in the empire to give the brothers horses, food and lodging. They carried it home with Kublai's letter to the pope.",
+            "es": "Una paiza, una tablilla de oro de unos 30 cm de largo, ordenaba a todos en el imperio dar a los hermanos caballos, comida y alojamiento. La llevaron de regreso con la carta de Kublai al papa."
+          },
+          "details": {
+            "en": "Paizas were the passports of the Mongol Empire: tablets carried by officials and envoys that let them demand horses, food and lodging at the post stations. They were not a Mongol invention; the Liao, Jin and Tangut states of northern China had used similar ones. Kublai's letter asked the pope for a hundred learned Christians who knew the seven liberal arts, to teach his people, and for oil from the lamp that burned at the tomb of Christ in Jerusalem.",
+            "es": "Las paizas eran los pasaportes del Imperio mongol: tablillas que llevaban funcionarios y enviados y que les permitían exigir caballos, comida y alojamiento en las postas. No fueron un invento mongol; los estados liao, jin y tangut del norte de China habían usado otras parecidas. La carta de Kublai pedía al papa cien cristianos sabios que conocieran las siete artes liberales, para enseñar a su pueblo, y aceite de la lámpara que ardía en el sepulcro de Cristo en Jerusalén."
+          },
+          "wiki": {
+            "en": "Paiza",
+            "es": "Paiza"
+          }
+        },
+        {
+          "id": "layas",
+          "name": {
+            "en": "Layas (Ayas)",
+            "es": "Layas (Ayas)"
+          },
+          "at": [
+            35.7922,
+            36.7678
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1269",
+          "place": {
+            "en": "Yumurtalık, Adana, Turkey",
+            "es": "Yumurtalık, Adana, Turquía"
+          },
+          "text": {
+            "en": "The port of the Armenian kingdom of Cilicia, where roads from Persia reached the Mediterranean. The brothers came back to the sea here in 1269, and set out from it again with Marco in 1271.",
+            "es": "El puerto del reino armenio de Cilicia, donde los caminos de Persia llegaban al Mediterráneo. Los hermanos volvieron al mar aquí en 1269 y partieron de nuevo desde aquí con Marco en 1271."
+          },
+          "details": {
+            "en": "Ayas, the Laiazzo of the Italians, was the main port of the Armenian kings of Cilicia, who gave trading privileges to Venice, Genoa and other Italian cities. Marco called it a city good for trade, where spices, silk, gold and wool were carried from inland. After the fall of Acre in 1291 it became for a while the main meeting point of trade between West and East. The Mamluks of Egypt raided it many times and took it in 1347.",
+            "es": "Ayas, el Laiazzo de los italianos, era el principal puerto de los reyes armenios de Cilicia, que dieron privilegios comerciales a Venecia, Génova y otras ciudades italianas. Marco la llamó una ciudad buena para el comercio, adonde llegaban del interior especias, seda, oro y lana. Tras la caída de Acre en 1291 fue por un tiempo el principal punto de encuentro del comercio entre Oriente y Occidente. Los mamelucos de Egipto la atacaron muchas veces y la tomaron en 1347."
+          },
+          "wiki": {
+            "en": "Yumurtalık",
+            "es": "Yumurtalık"
+          }
+        },
+        {
+          "id": "acre",
+          "name": {
+            "en": "Acre",
+            "es": "Acre"
+          },
+          "at": [
+            35.07,
+            32.923
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1269",
+          "place": {
+            "en": "Acre (Akko), Israel",
+            "es": "Acre (Akko), Israel"
+          },
+          "text": {
+            "en": "The last great crusader stronghold in the Holy Land and a port of Italian merchants. Here the papal legate Teobaldo Visconti met the Polos in 1269, and again in 1271, when he was elected pope.",
+            "es": "El último gran bastión cruzado en Tierra Santa y un puerto de mercaderes italianos. Aquí el legado papal Teobaldo Visconti recibió a los Polo en 1269 y otra vez en 1271, cuando fue elegido papa."
+          },
+          "details": {
+            "en": "Visconti, a churchman from Piacenza, was in Acre on crusade with Prince Edward of England. The cardinals, meeting at Viterbo, chose him on 1 September 1271, ending a vacancy of almost three years, the longest papal election in history. As Gregory X he answered Kublai with letters, gifts and two Dominican friars instead of a hundred scholars. The Mamluks of Egypt took Acre in 1291, ending the crusader states.",
+            "es": "Visconti, un clérigo de Piacenza, estaba en Acre en cruzada con el príncipe Eduardo de Inglaterra. Los cardenales, reunidos en Viterbo, lo eligieron el 1 de septiembre de 1271 y pusieron fin a una vacante de casi tres años, la elección papal más larga de la historia. Como Gregorio X respondió a Kublai con cartas, regalos y dos frailes dominicos en lugar de cien sabios. Los mamelucos de Egipto tomaron Acre en 1291 y acabaron con los estados cruzados."
+          },
+          "wiki": {
+            "en": "Acre, Israel",
+            "es": "Acre (Israel)"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1271",
+      "title": {
+        "en": "Marco sets out",
+        "es": "Marco se pone en camino"
+      },
+      "text": {
+        "en": "In 1271 the brothers set out again, now with Niccolò's son Marco, aged 17. They fetched the holy oil in Jerusalem and sailed to Layas, where news came that their friend in Acre had been elected pope.",
+        "es": "En 1271 los hermanos partieron de nuevo, ahora con Marco, el hijo de Niccolò, de 17 años. Recogieron el aceite santo en Jerusalén y navegaron a Layas, donde supieron que su amigo de Acre había sido elegido papa."
+      },
+      "details": {
+        "en": "Tired of waiting, the Polos left Venice and sailed to Acre, the last great crusader stronghold in the Holy Land. Teobaldo Visconti let them ride to Jerusalem for oil from the lamp of the Holy Sepulchre, the church over Christ's tomb, and gave them letters for the Khan. They had just reached Layas when a messenger brought the news: the cardinals had chosen Visconti himself, who became Pope Gregory X on 1 September 1271. The Polos went back to Acre for proper papal letters and gifts. Instead of a hundred scholars, the new pope could spare two Dominican friars, who lost heart and turned back soon after the party set out from Layas. The three Venetians went on alone.",
+        "es": "Cansados de esperar, los Polo salieron de Venecia y navegaron a Acre, el último gran bastión cruzado en Tierra Santa. Teobaldo Visconti les permitió ir a Jerusalén a buscar aceite de la lámpara del Santo Sepulcro, la iglesia sobre la tumba de Cristo, y les dio cartas para el kan. Acababan de llegar a Layas cuando un mensajero trajo la noticia: los cardenales habían elegido al propio Visconti, que fue el papa Gregorio X desde el 1 de septiembre de 1271. Los Polo volvieron a Acre por cartas papales en regla y regalos. En lugar de cien sabios, el nuevo papa solo pudo enviar a dos frailes dominicos, que se desanimaron y se volvieron poco después de salir de Layas. Los tres venecianos siguieron solos."
+      },
+      "camera": {
+        "lon": 24,
+        "lat": 38.5,
+        "zoom": 3.4
+      },
+      "moves": [
+        {
+          "side": "marco",
+          "path": [
+            [
+              35.07,
+              32.92
+            ],
+            [
+              35.18,
+              32.55
+            ],
+            [
+              35.1,
+              32.1
+            ],
+            [
+              35.23,
+              31.78
+            ],
+            [
+              35.1,
+              32.1
+            ],
+            [
+              35.18,
+              32.55
+            ],
+            [
+              35.07,
+              32.92
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        },
+        {
+          "side": "marco",
+          "path": [
+            [
+              12.34,
+              45.43
+            ],
+            [
+              12.42,
+              45.41
+            ],
+            [
+              12.55,
+              45.3
+            ],
+            [
+              13.1,
+              44.8
+            ],
+            [
+              14.0,
+              43.9
+            ],
+            [
+              15.5,
+              42.8
+            ],
+            [
+              17.5,
+              41.7
+            ],
+            [
+              18.8,
+              40.6
+            ],
+            [
+              19.1,
+              39.9
+            ],
+            [
+              19.7,
+              39.3
+            ],
+            [
+              20.3,
+              38.5
+            ],
+            [
+              20.55,
+              37.55
+            ],
+            [
+              21.4,
+              36.65
+            ],
+            [
+              22.45,
+              36.2
+            ],
+            [
+              22.9,
+              36.05
+            ],
+            [
+              23.4,
+              36.05
+            ],
+            [
+              25.0,
+              35.75
+            ],
+            [
+              26.6,
+              35.45
+            ],
+            [
+              28.0,
+              35.7
+            ],
+            [
+              30.5,
+              35.4
+            ],
+            [
+              32.3,
+              34.45
+            ],
+            [
+              33.5,
+              34.4
+            ],
+            [
+              34.6,
+              33.4
+            ],
+            [
+              35.07,
+              32.92
+            ],
+            [
+              35.0,
+              33.2
+            ],
+            [
+              35.3,
+              33.9
+            ],
+            [
+              35.65,
+              34.6
+            ],
+            [
+              35.62,
+              35.4
+            ],
+            [
+              35.55,
+              35.95
+            ],
+            [
+              35.62,
+              36.4
+            ],
+            [
+              35.75,
+              36.7
+            ],
+            [
+              35.79,
+              36.77
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "marco-polo",
+          "name": {
+            "en": "Marco Polo",
+            "es": "Marco Polo"
+          },
+          "at": [
+            12.3375,
+            45.4389
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1271",
+          "life": [
+            "1254",
+            "1324-01-08"
+          ],
+          "place": {
+            "en": "Set out from Venice, Italy",
+            "es": "Partió de Venecia, Italia"
+          },
+          "text": {
+            "en": "A Venetian merchant's son who travelled across Asia from 1271 to 1295 and served Kublai Khan. The book he made with Rustichello of Pisa gave Europe its first detailed picture of China.",
+            "es": "Hijo de un mercader veneciano, viajó por Asia de 1271 a 1295 y sirvió a Kublai Kan. El libro que hizo con Rustichello de Pisa dio a Europa su primera imagen detallada de China."
+          },
+          "details": {
+            "en": "Born in Venice around 1254, Marco grew up with an aunt and uncle while his father was in Asia, and his mother died when he was young. He learned the merchant's trade, foreign coins, weights and the loading of ships, but little Latin. He left Venice at 17 and came back at about 41, and the book says he spoke four languages. His nickname, Il Milione, may come from the millions he kept talking about, or from a family name, Emilione.",
+            "es": "Nacido en Venecia hacia 1254, Marco creció con una tía y un tío mientras su padre estaba en Asia, y su madre murió cuando él era niño. Aprendió el oficio de mercader, las monedas extranjeras, los pesos y la carga de los barcos, pero poco latín. Salió de Venecia a los 17 años y volvió a los 41, más o menos, y el libro dice que hablaba cuatro lenguas. Su apodo, Il Milione, quizá venga de los millones de los que no dejaba de hablar, o de un nombre de familia, Emilione."
+          },
+          "wiki": {
+            "en": "Marco Polo",
+            "es": "Marco Polo"
+          }
+        },
+        {
+          "id": "acre",
+          "name": {
+            "en": "Acre",
+            "es": "Acre"
+          },
+          "at": [
+            35.07,
+            32.923
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1269",
+          "place": {
+            "en": "Acre (Akko), Israel",
+            "es": "Acre (Akko), Israel"
+          },
+          "text": {
+            "en": "The last great crusader stronghold in the Holy Land and a port of Italian merchants. Here the papal legate Teobaldo Visconti met the Polos in 1269, and again in 1271, when he was elected pope.",
+            "es": "El último gran bastión cruzado en Tierra Santa y un puerto de mercaderes italianos. Aquí el legado papal Teobaldo Visconti recibió a los Polo en 1269 y otra vez en 1271, cuando fue elegido papa."
+          },
+          "details": {
+            "en": "Visconti, a churchman from Piacenza, was in Acre on crusade with Prince Edward of England. The cardinals, meeting at Viterbo, chose him on 1 September 1271, ending a vacancy of almost three years, the longest papal election in history. As Gregory X he answered Kublai with letters, gifts and two Dominican friars instead of a hundred scholars. The Mamluks of Egypt took Acre in 1291, ending the crusader states.",
+            "es": "Visconti, un clérigo de Piacenza, estaba en Acre en cruzada con el príncipe Eduardo de Inglaterra. Los cardenales, reunidos en Viterbo, lo eligieron el 1 de septiembre de 1271 y pusieron fin a una vacante de casi tres años, la elección papal más larga de la historia. Como Gregorio X respondió a Kublai con cartas, regalos y dos frailes dominicos en lugar de cien sabios. Los mamelucos de Egipto tomaron Acre en 1291 y acabaron con los estados cruzados."
+          },
+          "wiki": {
+            "en": "Acre, Israel",
+            "es": "Acre (Israel)"
+          }
+        },
+        {
+          "id": "holy-sepulchre",
+          "name": {
+            "en": "Church of the Holy Sepulchre",
+            "es": "Iglesia del Santo Sepulcro"
+          },
+          "at": [
+            35.2297,
+            31.7784
+          ],
+          "cat": "event",
+          "icon": "🕯️",
+          "type": "structure",
+          "date": "1271",
+          "place": {
+            "en": "Jerusalem",
+            "es": "Jerusalén"
+          },
+          "text": {
+            "en": "The church built over the tomb of Christ in Jerusalem. Kublai had asked for oil from the lamp that burned there, and the Polos rode from Acre to fetch it before setting out.",
+            "es": "La iglesia construida sobre el sepulcro de Cristo en Jerusalén. Kublai había pedido aceite de la lámpara que ardía allí, y los Polo fueron a caballo desde Acre a buscarlo antes de partir."
+          },
+          "wiki": {
+            "en": "Church of the Holy Sepulchre",
+            "es": "Santo Sepulcro"
+          }
+        },
+        {
+          "id": "layas",
+          "name": {
+            "en": "Layas (Ayas)",
+            "es": "Layas (Ayas)"
+          },
+          "at": [
+            35.7922,
+            36.7678
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1269",
+          "place": {
+            "en": "Yumurtalık, Adana, Turkey",
+            "es": "Yumurtalık, Adana, Turquía"
+          },
+          "text": {
+            "en": "The port of the Armenian kingdom of Cilicia, where roads from Persia reached the Mediterranean. The brothers came back to the sea here in 1269, and set out from it again with Marco in 1271.",
+            "es": "El puerto del reino armenio de Cilicia, donde los caminos de Persia llegaban al Mediterráneo. Los hermanos volvieron al mar aquí en 1269 y partieron de nuevo desde aquí con Marco en 1271."
+          },
+          "details": {
+            "en": "Ayas, the Laiazzo of the Italians, was the main port of the Armenian kings of Cilicia, who gave trading privileges to Venice, Genoa and other Italian cities. Marco called it a city good for trade, where spices, silk, gold and wool were carried from inland. After the fall of Acre in 1291 it became for a while the main meeting point of trade between West and East. The Mamluks of Egypt raided it many times and took it in 1347.",
+            "es": "Ayas, el Laiazzo de los italianos, era el principal puerto de los reyes armenios de Cilicia, que dieron privilegios comerciales a Venecia, Génova y otras ciudades italianas. Marco la llamó una ciudad buena para el comercio, adonde llegaban del interior especias, seda, oro y lana. Tras la caída de Acre en 1291 fue por un tiempo el principal punto de encuentro del comercio entre Oriente y Occidente. Los mamelucos de Egipto la atacaron muchas veces y la tomaron en 1347."
+          },
+          "wiki": {
+            "en": "Yumurtalık",
+            "es": "Yumurtalık"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1272",
+      "title": {
+        "en": "Across Persia to Hormuz",
+        "es": "Por Persia hasta Ormuz"
+      },
+      "text": {
+        "en": "From Layas the Polos rode across Anatolia and Armenia to Tabriz, then south through Persia to Hormuz, hoping to sail to China. The ships, sewn together with cord, looked too frail, so they turned back inland.",
+        "es": "Desde Layas, los Polo cruzaron Anatolia y Armenia hasta Tabriz, y luego Persia hasta Ormuz, para navegar a China. Pero los barcos, cosidos con cuerdas, parecían demasiado frágiles, y volvieron tierra adentro."
+      },
+      "details": {
+        "en": "The book describes the lands on this road, but not always the road itself, so the route is reconstructed and uncertain. It tells of the Turkish lords of Anatolia, of Greater Armenia, with the mountain where Noah's Ark was said to rest, and of a spring of oil that was good for burning. Tabriz, the capital of the Mongol Ilkhans, was a great market. At Saveh, Marco was shown the tombs of the three Magi. Kerman linked the Persian Gulf with Central Asia. On the way down to Hormuz, raiders the book calls Caraonas attacked the caravan under cover of a dust storm; Marco escaped to a nearby town, but many companions were killed or sold as slaves. Hormuz, then on the mainland near today's Minab, was a busy port for spices, pearls and cloth from India. But its ships were sewn together with coconut-fibre cord instead of nails, and the Polos chose the long road overland.",
+        "es": "El libro describe las tierras de este camino, pero no siempre el camino mismo, así que la ruta está reconstruida y es incierta. Habla de los señores turcos de Anatolia, de la Gran Armenia, con la montaña donde se decía que descansaba el arca de Noé, y de un manantial de aceite que servía para quemar. Tabriz, la capital de los iljanes mongoles, era un gran mercado. En Saveh le mostraron a Marco las tumbas de los tres Reyes Magos. Kermán unía el golfo Pérsico con Asia central. En la bajada a Ormuz, unos asaltantes a los que el libro llama caraonas atacaron la caravana al amparo de una tormenta de polvo; Marco escapó a un pueblo cercano, pero muchos compañeros murieron o fueron vendidos como esclavos. Ormuz, entonces en tierra firme cerca de la actual Minab, era un puerto activo de especias, perlas y telas de la India. Pero sus barcos iban cosidos con cuerda de fibra de coco en lugar de clavos, y los Polo eligieron el largo camino por tierra."
+      },
+      "camera": {
+        "lon": 47,
+        "lat": 33,
+        "zoom": 3.3
+      },
+      "moves": [
+        {
+          "side": "marco",
+          "path": [
+            [
+              35.79,
+              36.77
+            ],
+            [
+              35.82,
+              37.45
+            ],
+            [
+              35.48,
+              38.73
+            ],
+            [
+              37.02,
+              39.75
+            ],
+            [
+              39.49,
+              39.75
+            ],
+            [
+              41.27,
+              39.9
+            ],
+            [
+              44.08,
+              39.55
+            ],
+            [
+              44.95,
+              38.55
+            ],
+            [
+              46.29,
+              38.08
+            ],
+            [
+              48.48,
+              36.67
+            ],
+            [
+              50.0,
+              36.27
+            ],
+            [
+              50.36,
+              35.03
+            ],
+            [
+              51.44,
+              33.98
+            ],
+            [
+              54.37,
+              31.9
+            ],
+            [
+              57.08,
+              30.28
+            ],
+            [
+              57.74,
+              28.68
+            ],
+            [
+              57.85,
+              28.05
+            ],
+            [
+              57.05,
+              27.1
+            ]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        }
+      ],
+      "places": [
+        {
+          "id": "tabriz",
+          "name": {
+            "en": "Tabriz",
+            "es": "Tabriz"
+          },
+          "at": [
+            46.2919,
+            38.08
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1272",
+          "place": {
+            "en": "Tabriz, Iran",
+            "es": "Tabriz, Irán"
+          },
+          "text": {
+            "en": "The capital of the Mongol Ilkhanate of Persia from 1265 and a great market where the roads from Central Asia, India, Baghdad and the Black Sea met.",
+            "es": "La capital del Iljanato mongol de Persia desde 1265 y un gran mercado donde se cruzaban los caminos de Asia central, la India, Bagdad y el mar Negro."
+          },
+          "wiki": {
+            "en": "Tabriz",
+            "es": "Tabriz"
+          }
+        },
+        {
+          "id": "saveh",
+          "name": {
+            "en": "Saveh",
+            "es": "Saveh"
+          },
+          "at": [
+            50.3611,
+            35.0278
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1272",
+          "place": {
+            "en": "Saveh, Iran",
+            "es": "Saveh, Irán"
+          },
+          "text": {
+            "en": "A Persian town whose people said the three Magi set out from here to find the infant Jesus. Marco was shown what were said to be their tombs, three large monuments with the bodies still entire.",
+            "es": "Un pueblo persa cuyos habitantes decían que los tres Reyes Magos partieron de allí para buscar al niño Jesús. A Marco le mostraron lo que decían que eran sus tumbas: tres grandes monumentos con los cuerpos aún enteros."
+          },
+          "wiki": {
+            "en": "Saveh",
+            "es": "Saveh"
+          }
+        },
+        {
+          "id": "kerman",
+          "name": {
+            "en": "Kerman",
+            "es": "Kermán"
+          },
+          "at": [
+            57.0575,
+            30.2625
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1272",
+          "place": {
+            "en": "Kerman, Iran",
+            "es": "Kermán, Irán"
+          },
+          "text": {
+            "en": "A trading city linking the Persian Gulf with Khorasan and Central Asia. The Polos passed through it on the way down to Hormuz, and again when they turned back north.",
+            "es": "Una ciudad comercial que unía el golfo Pérsico con el Jorasán y Asia central. Los Polo pasaron por ella al bajar hacia Ormuz y otra vez cuando volvieron hacia el norte."
+          },
+          "wiki": {
+            "en": "Kerman",
+            "es": "Kermán"
+          }
+        },
+        {
+          "id": "qaraunas",
+          "name": {
+            "en": "Ambush by the Qara'unas",
+            "es": "La emboscada de los qaraunas"
+          },
+          "at": [
+            57.85,
+            28.05
+          ],
+          "cat": "event",
+          "icon": "⚔️",
+          "type": "event",
+          "date": "1272",
+          "place": {
+            "en": "On the road from Kerman to Hormuz, Iran",
+            "es": "En el camino de Kermán a Ormuz, Irán"
+          },
+          "text": {
+            "en": "Raiders attacked the caravan the Polos had joined, under cover of a dust storm. Marco escaped to a nearby town, but many travellers were killed or carried off and sold.",
+            "es": "Unos asaltantes atacaron la caravana a la que se habían unido los Polo, al amparo de una tormenta de polvo. Marco escapó a un pueblo cercano, pero muchos viajeros murieron o fueron capturados y vendidos."
+          },
+          "details": {
+            "en": "The book calls the raiders Caraonas: the Qara'unas, bands of soldiers of mixed origin who served the Mongol khans on the borders of Persia and India, wintering around Ghazni, and who also raided caravans. Marco says they were of mixed Mongol and Indian birth, and believed they could darken the sky by magic to hide their attacks. The book places the ambush on the road down to Hormuz.",
+            "es": "El libro llama a los asaltantes caraonas: los qaraunas, bandas de soldados de origen mezclado que servían a los kanes mongoles en las fronteras de Persia y la India, pasaban el invierno cerca de Gazni y también asaltaban caravanas. Marco dice que eran de sangre mongola e india, y creía que podían oscurecer el cielo con magia para ocultar sus ataques. El libro sitúa la emboscada en el camino de bajada a Ormuz."
+          },
+          "wiki": {
+            "en": "Qara'unas",
+            "es": ""
+          }
+        },
+        {
+          "id": "hormuz",
+          "name": {
+            "en": "Hormuz",
+            "es": "Ormuz"
+          },
+          "at": [
+            57.05,
+            27.1
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1272",
+          "place": {
+            "en": "Old Hormuz, near Minab, Iran",
+            "es": "Antigua Ormuz, cerca de Minab, Irán"
+          },
+          "text": {
+            "en": "A rich port at the mouth of the Persian Gulf, where ships from India unloaded spices, pearls and cloth. The Polos meant to sail from here to China, but its ships looked too frail.",
+            "es": "Un puerto rico en la boca del golfo Pérsico, donde los barcos de la India descargaban especias, perlas y telas. Los Polo pensaban navegar desde aquí a China, pero sus barcos parecían demasiado frágiles."
+          },
+          "details": {
+            "en": "When the Polos came, Hormuz stood on the mainland near today's Minab; in 1301, after repeated raids, its people moved to the island of Jarun, today's Hormuz Island. Marco complained of its scorching heat and of its ships: built without iron nails, their planks were sewn together with cord of coconut fibre, and many were lost at sea. So the Polos turned back north to go overland. Twenty years later they landed here on their way home.",
+            "es": "Cuando llegaron los Polo, Ormuz estaba en tierra firme, cerca de la actual Minab; en 1301, tras repetidos ataques, sus habitantes se mudaron a la isla de Jarun, la actual isla de Ormuz. Marco se quejó de su calor abrasador y de sus barcos: construidos sin clavos de hierro, sus tablas iban cosidas con cuerda de fibra de coco, y muchos se perdían en el mar. Así que los Polo volvieron al norte para ir por tierra. Veinte años después desembarcaron aquí de regreso a casa."
+          },
+          "wiki": {
+            "en": "Kingdom of Hormuz",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1273",
+      "title": {
+        "en": "Deserts and Badakhshan",
+        "es": "Desiertos y Badajshán"
+      },
+      "text": {
+        "en": "Heading north again, the Polos crossed Persia's deserts to Balkh, still half in ruins from Genghis Khan's attack. In the mountains of Badakhshan Marco fell ill and, the book says, took a year to recover.",
+        "es": "De nuevo hacia el norte, los Polo cruzaron los desiertos de Persia hasta Balj, todavía medio en ruinas por el ataque de Gengis Kan. En las montañas de Badajshán, Marco enfermó y, según el libro, tardó un año en recuperarse."
+      },
+      "details": {
+        "en": "From Kerman the road ran north across a desert where, for days, the only water was green and bitter, into Khorasan. There Marco heard the tale of the Old Man of the Mountain, whose followers, the Assassins, had been crushed by the Mongols in 1256. Balkh, an ancient city of Bactria, had been sacked by Genghis Khan in 1220; Marco still called it noble and learned. Badakhshan was famous for its red spinels, which Europeans called balas rubies, for its lapis lazuli and for its horses, said to descend from Alexander the Great's Bucephalus. Marco fell ill there, and the book says he was cured after nearly a year by going up into the cool mountain air.",
+        "es": "Desde Kermán el camino iba al norte por un desierto donde durante días la única agua era verde y amarga, hasta el Jorasán. Allí Marco oyó la historia del Viejo de la Montaña, cuyos seguidores, los asesinos, habían sido aplastados por los mongoles en 1256. Balj, una antigua ciudad de Bactriana, había sido saqueada por Gengis Kan en 1220; Marco aún la llamaba noble y sabia. Badajshán era famosa por sus espinelas rojas, que los europeos llamaban rubíes balajes, por su lapislázuli y por sus caballos, que se decía que descendían de Bucéfalo, el caballo de Alejandro Magno. Marco enfermó allí, y el libro dice que se curó al cabo de casi un año subiendo al aire fresco de las montañas."
+      },
+      "camera": {
+        "lon": 63,
+        "lat": 33,
+        "zoom": 3.5
+      },
+      "moves": [
+        {
+          "side": "marco",
+          "path": [
+            [
+              57.05,
+              27.1
+            ],
+            [
+              57.74,
+              28.68
+            ],
+            [
+              57.08,
+              30.28
+            ],
+            [
+              56.8,
+              31.27
+            ],
+            [
+              56.28,
+              31.41
+            ],
+            [
+              56.92,
+              33.6
+            ],
+            [
+              58.17,
+              34.02
+            ],
+            [
+              59.17,
+              33.73
+            ],
+            [
+              62.2,
+              34.8
+            ],
+            [
+              64.75,
+              35.92
+            ],
+            [
+              65.75,
+              36.67
+            ],
+            [
+              66.9,
+              36.76
+            ],
+            [
+              68.86,
+              36.73
+            ],
+            [
+              69.53,
+              36.73
+            ],
+            [
+              70.15,
+              36.8
+            ],
+            [
+              70.58,
+              37.12
+            ]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        }
+      ],
+      "places": [
+        {
+          "id": "lut-desert",
+          "name": {
+            "en": "Lut Desert",
+            "es": "Desierto de Lut"
+          },
+          "at": [
+            57.4,
+            32.4
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1273",
+          "place": {
+            "en": "Eastern Iran",
+            "es": "Este de Irán"
+          },
+          "text": {
+            "en": "Iran's great desert, where satellites have measured the hottest ground on Earth. On the road north from Kerman, Marco crossed days of bare land where the little water was green and bitter.",
+            "es": "El gran desierto de Irán, donde los satélites han medido el suelo más caliente de la Tierra. En el camino al norte desde Kermán, Marco cruzó días de tierra pelada donde la poca agua era verde y amarga."
+          },
+          "wiki": {
+            "en": "Lut Desert",
+            "es": "Desierto de Lut"
+          }
+        },
+        {
+          "id": "balkh",
+          "name": {
+            "en": "Balkh (Bactra)",
+            "es": "Balj (Bactra)"
+          },
+          "at": [
+            66.8981,
+            36.7581
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1273",
+          "place": {
+            "en": "Balkh, Afghanistan",
+            "es": "Balj, Afganistán"
+          },
+          "text": {
+            "en": "An ancient city of Bactria, 'a noble city and a great seat of learning' in Marco's words, though Genghis Khan had sacked it in 1220 and much of it still lay in ruins.",
+            "es": "Una antigua ciudad de Bactriana, «una ciudad noble y gran centro de saber», según Marco, aunque Gengis Kan la había saqueado en 1220 y buena parte seguía en ruinas."
+          },
+          "wiki": {
+            "en": "Balkh",
+            "es": "Balj"
+          }
+        },
+        {
+          "id": "badakhshan",
+          "name": {
+            "en": "Badakhshan",
+            "es": "Badajshán"
+          },
+          "at": [
+            70.58,
+            37.12
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1273",
+          "place": {
+            "en": "Badakhshan, Afghanistan",
+            "es": "Badajshán, Afganistán"
+          },
+          "text": {
+            "en": "A mountain land famous for its red gems and lapis lazuli. Marco fell ill here and, the book says, was cured after a year by going up into the cool mountain air.",
+            "es": "Una tierra de montañas famosa por sus gemas rojas y su lapislázuli. Marco enfermó aquí y, según el libro, se curó al cabo de un año subiendo al aire fresco de las montañas."
+          },
+          "details": {
+            "en": "The 'balas rubies' of Badakhshan, which are really red spinels, came, Marco wrote, from mines under the mountain of Syghinan, today's Shighnan, that only the king could open. Its lapis lazuli had been traded as far as ancient Egypt. Marco also says its horses were said to descend from Bucephalus, the horse of Alexander the Great, and that its kings claimed Alexander as their ancestor.",
+            "es": "Los «rubíes balajes» de Badajshán, que en realidad son espinelas rojas, salían, escribió Marco, de minas bajo la montaña de Syghinan, la actual Shighnan, que solo el rey podía abrir. Su lapislázuli se había comerciado hasta el antiguo Egipto. Marco cuenta también que se decía que sus caballos descendían de Bucéfalo, el caballo de Alejandro Magno, y que sus reyes afirmaban descender de Alejandro."
+          },
+          "wiki": {
+            "en": "Badakhshan",
+            "es": "Badajsán"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1274",
+      "title": {
+        "en": "Over the Pamirs to Lop",
+        "es": "Por el Pamir hasta Lop"
+      },
+      "text": {
+        "en": "Up the Wakhan valley the Polos reached the Pamirs, 'the highest place in the world', the book says. Then they followed the oases round the Taklamakan, Kashgar, Khotan and Lop, and crossed the desert to Dunhuang.",
+        "es": "Por el valle de Wakhan, los Polo llegaron al Pamir, «el lugar más alto del mundo», dice el libro. Luego siguieron los oasis alrededor del Taklamakán, Kasgar, Jotán y Lop, y cruzaron el desierto hasta Dunhuang."
+      },
+      "details": {
+        "en": "On the high plain of the Pamirs, twelve days across, Marco noticed that fire burned weakly and cooked badly, and saw wild sheep with huge curling horns, now named after him. Kashgar, ruled by the Chagatai khans, had Muslims and Nestorian Christians. Khotan, he wrote, was rich in cotton, vineyards and orchards. The chain of oases in the book, Kashgar, Yarkand, Khotan, Pem, Charchan and Lop, follows the southern edge of the Taklamakan, though some scholars have argued for other roads. In the town of Lop, caravans rested for a week and loaded a month's food for the crossing of the desert. Marco tells of spirits that called travellers by name and led them astray, so caravans hung bells on their animals and slept close together.",
+        "es": "En la alta llanura del Pamir, de doce días de travesía, Marco notó que el fuego ardía débil y cocinaba mal, y vio ovejas salvajes de enormes cuernos en espiral, que hoy llevan su nombre. Kasgar, gobernada por los kanes de Chagatai, tenía musulmanes y cristianos nestorianos. Jotán, escribió, era rica en algodón, viñedos y huertos. La cadena de oasis del libro, Kasgar, Yarkand, Jotán, Pem, Charchan y Lop, sigue el borde sur del Taklamakán, aunque algunos estudiosos han propuesto otros caminos. En el pueblo de Lop, las caravanas descansaban una semana y cargaban comida para un mes antes de cruzar el desierto. Marco cuenta que unos espíritus llamaban a los viajeros por su nombre y los extraviaban, así que las caravanas colgaban campanas a sus animales y dormían juntas."
+      },
+      "camera": {
+        "lon": 83,
+        "lat": 38.5,
+        "zoom": 4.0
+      },
+      "moves": [
+        {
+          "side": "marco",
+          "path": [
+            [
+              70.58,
+              37.12
+            ],
+            [
+              70.9,
+              36.93
+            ],
+            [
+              71.61,
+              36.71
+            ],
+            [
+              72.32,
+              36.95
+            ],
+            [
+              72.58,
+              37.0
+            ],
+            [
+              73.7,
+              37.45
+            ],
+            [
+              74.6,
+              37.55
+            ],
+            [
+              75.23,
+              37.77
+            ],
+            [
+              75.03,
+              38.43
+            ],
+            [
+              75.6,
+              39.05
+            ],
+            [
+              75.99,
+              39.47
+            ],
+            [
+              76.17,
+              38.93
+            ],
+            [
+              77.27,
+              38.42
+            ],
+            [
+              77.41,
+              37.89
+            ],
+            [
+              78.28,
+              37.62
+            ],
+            [
+              79.93,
+              37.11
+            ],
+            [
+              80.8,
+              37.0
+            ],
+            [
+              81.67,
+              36.86
+            ],
+            [
+              82.7,
+              37.07
+            ],
+            [
+              83.6,
+              37.55
+            ],
+            [
+              85.53,
+              38.13
+            ],
+            [
+              87.3,
+              38.7
+            ],
+            [
+              88.17,
+              39.03
+            ],
+            [
+              88.97,
+              39.23
+            ],
+            [
+              90.8,
+              39.6
+            ],
+            [
+              92.5,
+              39.95
+            ],
+            [
+              94.66,
+              40.14
+            ]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        }
+      ],
+      "places": [
+        {
+          "id": "pamir-mountains",
+          "name": {
+            "en": "The Pamirs",
+            "es": "El Pamir"
+          },
+          "at": [
+            73.7,
+            37.45
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1273",
+          "place": {
+            "en": "Pamir Mountains, Tajikistan and Afghanistan",
+            "es": "Cordillera del Pamir, Tayikistán y Afganistán"
+          },
+          "text": {
+            "en": "High plateaus where the great ranges of Asia meet. Marco's party rode for twelve days across a plain said to be 'the highest place in the world', with no birds, and fires that cooked badly.",
+            "es": "Altas mesetas donde se juntan las grandes cordilleras de Asia. El grupo de Marco cabalgó doce días por una llanura que, se decía, era «el lugar más alto del mundo», sin pájaros y donde el fuego cocinaba mal."
+          },
+          "wiki": {
+            "en": "Pamir Mountains",
+            "es": "Cordillera del Pamir"
+          }
+        },
+        {
+          "id": "marco-polo-sheep",
+          "name": {
+            "en": "Marco Polo sheep",
+            "es": "Argalí de Marco Polo"
+          },
+          "at": [
+            73.97,
+            38.17
+          ],
+          "cat": "discovery",
+          "icon": "🐏",
+          "type": "animal",
+          "date": "1273",
+          "place": {
+            "en": "Pamir Mountains",
+            "es": "Cordillera del Pamir"
+          },
+          "text": {
+            "en": "A wild sheep of the high Pamirs, with the longest horns of any sheep. Marco described them, and the bowls and pens shepherds made from their horns; science named them after him in 1841.",
+            "es": "Una oveja salvaje de las alturas del Pamir, con los cuernos más largos de todas las ovejas. Marco las describió, y también los cuencos y corrales que los pastores hacían con sus cuernos; la ciencia les puso su nombre en 1841."
+          },
+          "wiki": {
+            "en": "Marco Polo sheep",
+            "es": "Ovis ammon polii"
+          }
+        },
+        {
+          "id": "kashgar",
+          "name": {
+            "en": "Kashgar",
+            "es": "Kasgar"
+          },
+          "at": [
+            75.9938,
+            39.4681
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1273",
+          "place": {
+            "en": "Kashgar, Xinjiang, China",
+            "es": "Kasgar, Xinjiang, China"
+          },
+          "text": {
+            "en": "The great oasis at the western end of the Taklamakan, where the roads over the mountains meet. Marco found its people living by trade and crafts, with Nestorian Christians and their churches among them.",
+            "es": "El gran oasis del extremo occidental del Taklamakán, donde se juntan los caminos de las montañas. Marco vio que su gente vivía del comercio y los oficios, y que había cristianos nestorianos con sus iglesias."
+          },
+          "wiki": {
+            "en": "Kashgar",
+            "es": "Kasgar"
+          }
+        },
+        {
+          "id": "khotan",
+          "name": {
+            "en": "Khotan",
+            "es": "Jotán"
+          },
+          "at": [
+            79.9327,
+            37.1012
+          ],
+          "cat": "caravan",
+          "type": "place",
+          "date": "1274",
+          "place": {
+            "en": "Hotan, Xinjiang, China",
+            "es": "Hotan, Xinjiang, China"
+          },
+          "text": {
+            "en": "An oasis city on the southern edge of the Taklamakan, China's old source of jade. Marco found its people Muslim, living 'by trade and industry', with cotton, vineyards and orchards in plenty.",
+            "es": "Una ciudad oasis en el borde sur del Taklamakán, la antigua fuente del jade de China. Marco vio que su gente era musulmana y vivía «del comercio y la industria», con algodón, viñedos y huertos en abundancia."
+          },
+          "wiki": {
+            "en": "Hotan",
+            "es": "Jotán (ciudad)"
+          }
+        },
+        {
+          "id": "lop-desert",
+          "name": {
+            "en": "Lop Desert",
+            "es": "Desierto de Lop"
+          },
+          "at": [
+            90.5833,
+            40.1667
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1274",
+          "place": {
+            "en": "Xinjiang, China",
+            "es": "Xinjiang, China"
+          },
+          "text": {
+            "en": "A desert of salt and clay east of the Taklamakan. Travellers took a month to cross it at its narrowest, and Marco tells of spirits that called stragglers by name and led them astray.",
+            "es": "Un desierto de sal y arcilla al este del Taklamakán. Los viajeros tardaban un mes en cruzarlo por su parte más estrecha, y Marco cuenta que unos espíritus llamaban por su nombre a los rezagados y los extraviaban."
+          },
+          "details": {
+            "en": "Before setting out, caravans rested for a week in the town of Lop and loaded food for a month for people and animals. Water was found every day, but often bitter, and only enough for a small party. Marco says travellers who fell behind heard voices like those of their companions, or the sound of drums and arms, and were lost; so caravans hung bells on their animals and slept close together. Sandstorms and dunes still make it one of the hardest crossings in Asia.",
+            "es": "Antes de partir, las caravanas descansaban una semana en el pueblo de Lop y cargaban comida para un mes para personas y animales. Cada día se encontraba agua, pero a menudo amarga y apenas suficiente para un grupo pequeño. Marco cuenta que los viajeros que se quedaban atrás oían voces como las de sus compañeros, o ruido de tambores y armas, y se perdían; por eso las caravanas colgaban campanas a sus animales y dormían juntos. Las tormentas de arena y las dunas lo siguen haciendo uno de los cruces más duros de Asia."
+          },
+          "wiki": {
+            "en": "Lop Desert",
+            "es": "Desierto de Lop Nor"
+          }
+        },
+        {
+          "id": "dunhuang",
+          "name": {
+            "en": "Dunhuang",
+            "es": "Dunhuang"
+          },
+          "at": [
+            94.6639,
+            40.1411
+          ],
+          "cat": "caravan",
+          "type": "place",
+          "date": "1274",
+          "place": {
+            "en": "Dunhuang, Gansu, China",
+            "es": "Dunhuang, Gansu, China"
+          },
+          "text": {
+            "en": "The oasis at China's western gate, which Marco called Sachiu. He described its many Buddhist monasteries and statues; nearby are the painted caves of Mogao.",
+            "es": "El oasis de la puerta occidental de China, al que Marco llamó Sachiu. Describió sus muchos monasterios y estatuas budistas; cerca están las cuevas pintadas de Mogao."
+          },
+          "wiki": {
+            "en": "Dunhuang",
+            "es": "Dunhuang"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1275",
+      "title": {
+        "en": "Kublai's summer palace",
+        "es": "El palacio de verano de Kublai"
+      },
+      "text": {
+        "en": "Along the Gansu corridor the Polos reached Shangdu, Kublai's summer capital, in 1275, three and a half years after leaving Venice. They gave the Khan the pope's letters and the holy oil.",
+        "es": "Por el corredor de Gansu, los Polo llegaron en 1275 a Shangdu, la capital de verano de Kublai, tres años y medio después de salir de Venecia. Entregaron al kan las cartas del papa y el aceite santo."
+      },
+      "details": {
+        "en": "In the oases of the Gansu corridor Marco saw great Buddhist monasteries, and at Zhangye a huge reclining Buddha; the book says the Polos once lived there a year. Kublai, warned of their coming, sent riders to meet them. At Shangdu, the city the West would call Xanadu, Marco described a palace of marble with gilded halls, a walled park with deer and fountains, and a palace of bamboo canes that could be taken apart and carried away. The brothers knelt before the Khan, who asked who the young man was. 'Sire, he is my son and your man,' Niccolò answered, in a scene that Rustichello may have modelled on one of his Arthurian romances. Kublai took Marco into his household. He was about 21.",
+        "es": "En los oasis del corredor de Gansu, Marco vio grandes monasterios budistas y, en Zhangye, un enorme Buda reclinado; el libro dice que los Polo vivieron allí un año. Kublai, avisado de su llegada, envió jinetes a recibirlos. En Shangdu, la ciudad que Occidente llamaría Xanadú, Marco describió un palacio de mármol con salas doradas, un parque amurallado con ciervos y fuentes, y un palacio de cañas de bambú que se podía desarmar y llevar a otro lugar. Los hermanos se arrodillaron ante el kan, que preguntó quién era el joven. «Señor, es mi hijo y vuestro hombre», respondió Niccolò, en una escena que Rustichello quizá copió de una de sus novelas artúricas. Kublai acogió a Marco en su casa. Tenía unos 21 años."
+      },
+      "camera": {
+        "lon": 106,
+        "lat": 40.5,
+        "zoom": 3.5
+      },
+      "moves": [
+        {
+          "side": "marco",
+          "path": [
+            [
+              94.66,
+              40.14
+            ],
+            [
+              95.78,
+              40.52
+            ],
+            [
+              97.04,
+              40.29
+            ],
+            [
+              98.49,
+              39.73
+            ],
+            [
+              100.45,
+              38.93
+            ],
+            [
+              101.08,
+              38.78
+            ],
+            [
+              102.64,
+              37.93
+            ],
+            [
+              105.19,
+              37.51
+            ],
+            [
+              106.27,
+              38.47
+            ],
+            [
+              106.82,
+              39.66
+            ],
+            [
+              107.39,
+              40.75
+            ],
+            [
+              109.84,
+              40.66
+            ],
+            [
+              111.67,
+              40.82
+            ],
+            [
+              113.13,
+              41.03
+            ],
+            [
+              114.7,
+              41.15
+            ],
+            [
+              116.19,
+              42.36
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ],
+      "places": [
+        {
+          "id": "zhangye",
+          "name": {
+            "en": "Zhangye (Ganzhou)",
+            "es": "Zhangye (Ganzhou)"
+          },
+          "at": [
+            100.4499,
+            38.9248
+          ],
+          "cat": "caravan",
+          "type": "place",
+          "date": "1275",
+          "place": {
+            "en": "Zhangye, Gansu, China",
+            "es": "Zhangye, Gansu, China"
+          },
+          "text": {
+            "en": "A walled oasis city of the Gansu corridor, Marco's Campichu, with a huge reclining Buddha. The book says the Polos once lived here for a year.",
+            "es": "Una ciudad oasis amurallada del corredor de Gansu, la Campichu de Marco, con un enorme Buda reclinado. El libro dice que los Polo vivieron aquí un año."
+          },
+          "wiki": {
+            "en": "Zhangye",
+            "es": "Zhangye"
+          }
+        },
+        {
+          "id": "shangdu",
+          "name": {
+            "en": "Shangdu (Xanadu)",
+            "es": "Shangdu (Xanadú)"
+          },
+          "at": [
+            116.1852,
+            42.358
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1275",
+          "until": "1369",
+          "place": {
+            "en": "Zhenglan Banner, Inner Mongolia, China",
+            "es": "Bandera de Zhenglan, Mongolia Interior, China"
+          },
+          "text": {
+            "en": "Kublai's summer capital on the grasslands north of Beijing, where the Polos reached his court in 1275. Marco's description of its palaces, retold by others, inspired Coleridge's poem 'Kubla Khan'.",
+            "es": "La capital de verano de Kublai, en las praderas al norte de Pekín, donde los Polo llegaron a su corte en 1275. La descripción que hizo Marco de sus palacios, contada por otros, inspiró el poema «Kubla Khan» de Coleridge."
+          },
+          "details": {
+            "en": "Founded in the 1250s as Kaiping by the architect Liu Bingzhong, it had an outer city, an inner city and a palace enclosure about 550 m on each side, with gardens and hunting parks; perhaps 100,000 people lived there at its height. Marco described a marble palace with gilded and painted rooms and a palace of bamboo canes that could be taken apart and moved. Ming armies sacked it in 1369, and its ruins became a UNESCO World Heritage Site in 2012.",
+            "es": "Fundada en la década de 1250 como Kaiping por el arquitecto Liu Bingzhong, tenía una ciudad exterior, una interior y un recinto palaciego de unos 550 m por lado, con jardines y cotos de caza; en su apogeo vivían allí quizá 100 000 personas. Marco describió un palacio de mármol con salas doradas y pintadas, y un palacio de cañas de bambú que se podía desarmar y trasladar. Los ejércitos Ming la saquearon en 1369, y sus ruinas son Patrimonio de la Humanidad desde 2012."
+          },
+          "wiki": {
+            "en": "Shangdu",
+            "es": "Xanadú"
+          }
+        },
+        {
+          "id": "kublai-khan",
+          "name": {
+            "en": "Kublai Khan",
+            "es": "Kublai Kan"
+          },
+          "at": [
+            116.39,
+            39.92
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1266",
+          "life": [
+            "1215-09-23",
+            "1294-02-18"
+          ],
+          "place": {
+            "en": "Khanbaliq (Beijing) and Shangdu, China",
+            "es": "Janbalic (Pekín) y Shangdu, China"
+          },
+          "text": {
+            "en": "Genghis Khan's grandson, Great Khan from 1260 and from 1271 emperor of China's Yuan dynasty. Curious about the Latin West, he welcomed the Polos and kept them in his service for 17 years.",
+            "es": "Nieto de Gengis Kan, gran kan desde 1260 y desde 1271 emperador de la dinastía Yuan de China. Curioso por el Occidente latino, recibió a los Polo y los tuvo a su servicio durante 17 años."
+          },
+          "details": {
+            "en": "Kublai won the throne in a civil war with his brother Ariq Böke and ruled from two capitals: Khanbaliq, today's Beijing, in winter and Shangdu in summer. By 1279 he had conquered the Song dynasty and all of China, but his invasions of Japan, Vietnam and Java failed, and Burma only paid tribute. He issued paper money across his empire, rebuilt the Grand Canal and employed many foreigners, Central Asian Muslims, Uyghurs, Tibetans and a few Europeans, whom he trusted more than his Chinese subjects. He died in 1294, aged 78.",
+            "es": "Kublai ganó el trono en una guerra civil contra su hermano Ariq Böke y gobernó desde dos capitales: Janbalic, la actual Pekín, en invierno y Shangdu en verano. Hacia 1279 había conquistado la dinastía Song y toda China, pero sus invasiones de Japón, Vietnam y Java fracasaron, y Birmania solo pagó tributo. Emitió dinero de papel en todo su imperio, reconstruyó el Gran Canal y empleó a muchos extranjeros, musulmanes de Asia central, uigures, tibetanos y algunos europeos, en quienes confiaba más que en sus súbditos chinos. Murió en 1294, a los 78 años."
+          },
+          "wiki": {
+            "en": "Kublai Khan",
+            "es": "Kublai Kan"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1276",
+      "title": {
+        "en": "The Great Khan's city",
+        "es": "La ciudad del gran kan"
+      },
+      "text": {
+        "en": "In Khanbaliq, Kublai's new capital, Marco marvelled at things unknown in Europe: money made of paper, and relays of horses that carried the Khan's messages across his empire in days.",
+        "es": "En Janbalic, la nueva capital de Kublai, Marco se maravilló con cosas desconocidas en Europa: dinero hecho de papel y relevos de caballos que llevaban en pocos días los mensajes del kan por todo su imperio."
+      },
+      "details": {
+        "en": "Every autumn the court moved from Shangdu to Khanbaliq, 'the city of the Khan', which the Chinese called Dadu and which is today's Beijing. Kublai had begun it in the 1260s beside the ruins of the old Jin capital. Marco described its square walls and straight streets, its palace and parks, and the crowds of merchants who came from everywhere, though he gives the city twelve gates instead of eleven. He explained how notes of paper made from mulberry bark, sealed by the Khan's officials, were used for all payments, and how foreign merchants had to exchange their gold and silver for them. He also described the yam, the imperial post: stations with fresh horses every 30 to 60 km, where riders handed on the Khan's messages so that news crossed the empire in days, and where envoys carrying his golden tablets found food and lodging.",
+        "es": "Cada otoño la corte se trasladaba de Shangdu a Janbalic, «la ciudad del kan», que los chinos llamaban Dadu y que es la actual Pekín. Kublai la había empezado en la década de 1260 junto a las ruinas de la antigua capital jin. Marco describió sus murallas cuadradas y sus calles rectas, su palacio y sus parques, y las multitudes de mercaderes llegados de todas partes, aunque le da doce puertas en lugar de once. Explicó cómo los billetes de papel hecho con corteza de morera, sellados por los funcionarios del kan, servían para todos los pagos, y cómo los mercaderes extranjeros debían cambiar por ellos su oro y su plata. También describió el yam, el correo imperial: postas con caballos frescos cada 30 a 60 km, donde los jinetes se pasaban los mensajes del kan para que las noticias cruzaran el imperio en días, y donde los enviados con sus tablillas de oro hallaban comida y alojamiento."
+      },
+      "camera": {
+        "lon": 116.2,
+        "lat": 40.7,
+        "zoom": 6.0
+      },
+      "moves": [
+        {
+          "side": "marco",
+          "path": [
+            [
+              116.19,
+              42.36
+            ],
+            [
+              116.08,
+              41.8
+            ],
+            [
+              115.86,
+              41.36
+            ],
+            [
+              115.97,
+              40.46
+            ],
+            [
+              116.07,
+              40.29
+            ],
+            [
+              116.4,
+              39.93
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ],
+      "places": [
+        {
+          "id": "khanbaliq",
+          "name": {
+            "en": "Khanbaliq (Beijing)",
+            "es": "Janbalic (Pekín)"
+          },
+          "at": [
+            116.4,
+            39.9333
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1272",
+          "place": {
+            "en": "Beijing, China",
+            "es": "Pekín, China"
+          },
+          "text": {
+            "en": "Kublai's new capital, 'the city of the Khan', built from 1264 beside the ruins of the old Jin capital and made the capital of the empire in 1272. It is today's Beijing.",
+            "es": "La nueva capital de Kublai, «la ciudad del kan», construida desde 1264 junto a las ruinas de la antigua capital jin y convertida en capital del imperio en 1272. Es la actual Pekín."
+          },
+          "details": {
+            "en": "The Chinese called it Dadu, 'great capital'. Its planner, Liu Bingzhong, followed rules from a Confucian classic: square walls with gates on every side, straight avenues crossing at right angles, the palace in front and markets behind. Buddhists, Muslims, Taoists, Christians and Jews had their places of worship there. Marco describes the walls, the palace and its parks, and the crowds of foreign merchants in the suburbs, though he gives the city twelve gates instead of eleven.",
+            "es": "Los chinos la llamaban Dadu, «gran capital». Su urbanista, Liu Bingzhong, siguió las reglas de un clásico confuciano: murallas cuadradas con puertas en cada lado, avenidas rectas que se cruzaban en ángulo recto, el palacio delante y los mercados detrás. Budistas, musulmanes, taoístas, cristianos y judíos tenían allí sus templos. Marco describe las murallas, el palacio y sus parques, y las multitudes de mercaderes extranjeros de los arrabales, aunque le da doce puertas en lugar de once."
+          },
+          "wiki": {
+            "en": "Dadu (Beijing)",
+            "es": "Janbalic"
+          }
+        },
+        {
+          "id": "paper-money",
+          "name": {
+            "en": "Paper money",
+            "es": "Dinero de papel"
+          },
+          "at": [
+            116.33,
+            39.88
+          ],
+          "cat": "discovery",
+          "icon": "💴",
+          "type": "invention",
+          "date": "1260",
+          "place": {
+            "en": "Printed at Khanbaliq (Beijing)",
+            "es": "Impreso en Janbalic (Pekín)"
+          },
+          "text": {
+            "en": "Kublai issued paper notes valid across his empire from 1260. Marco explained how they were made from mulberry bark and sealed by the Khan's officials, a marvel for Europeans, who knew only coins.",
+            "es": "Desde 1260 Kublai emitió billetes válidos en todo su imperio. Marco explicó cómo se hacían con corteza de morera y los sellaban los funcionarios del kan, una maravilla para los europeos, que solo conocían monedas."
+          },
+          "details": {
+            "en": "Chinese dynasties had printed paper money before; Kublai's notes, called jiaochao, were the first to be used everywhere in his empire. At first they could be changed for silver, and taxes were paid with them; foreign merchants had to hand over their gold and silver for notes. Printing too many later caused inflation. Historians have found that Marco's account of the notes, their sizes, seals and uses in each province, is accurate, details he is unlikely to have learned second-hand.",
+            "es": "Otras dinastías chinas ya habían impreso dinero de papel; los billetes de Kublai, llamados jiaochao, fueron los primeros que se usaron en todo su imperio. Al principio podían cambiarse por plata, y con ellos se pagaban los impuestos; los mercaderes extranjeros debían entregar su oro y su plata a cambio de billetes. Imprimir demasiados causó después inflación. Los historiadores han comprobado que lo que cuenta Marco de los billetes, sus tamaños, sellos y usos en cada provincia, es exacto, y es poco probable que lo supiera de oídas."
+          },
+          "wiki": {
+            "en": "Jiaochao",
+            "es": "Chao (moneda)"
+          }
+        },
+        {
+          "id": "yam",
+          "name": {
+            "en": "The yam relay posts",
+            "es": "Las postas del yam"
+          },
+          "at": [
+            115.86,
+            41.36
+          ],
+          "cat": "caravan",
+          "icon": "🐎",
+          "type": "institution",
+          "date": "1276",
+          "place": {
+            "en": "Across the Mongol Empire; here the road to Shangdu",
+            "es": "En todo el Imperio mongol; aquí, el camino a Shangdu"
+          },
+          "text": {
+            "en": "The Mongol relay system: post stations every 30 to 60 km with fresh horses, food and shelter, so that messengers could ride 200 to 300 km a day. Marco described it in detail.",
+            "es": "El sistema mongol de relevos: postas cada 30 a 60 km con caballos frescos, comida y refugio, para que los mensajeros pudieran recorrer de 200 a 300 km al día. Marco lo describió con detalle."
+          },
+          "wiki": {
+            "en": "Yam (route)",
+            "es": "Yam (sistema postal)"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1280",
+      "title": {
+        "en": "Missions for the Khan",
+        "es": "Misiones para el kan"
+      },
+      "text": {
+        "en": "Kublai sent Marco on missions and enjoyed his reports on distant lands. The longest in the book took him from the capital, over the Marco Polo Bridge and through Xi'an and Chengdu, to Yunnan, on the border of Burma.",
+        "es": "Kublai envió a Marco en misiones y disfrutaba de sus informes sobre tierras lejanas. La más larga del libro lo llevó desde la capital, por el puente de Marco Polo, Xi'an y Chengdu, hasta Yunnan, en la frontera de Birmania."
+      },
+      "details": {
+        "en": "The book gives no dates for these journeys, which probably fell between the late 1270s and the 1280s, so the date here is only a guide. Marco says other envoys bored the Khan by speaking only of their business, so he took note of everything he saw. Leaving the capital he crossed a stone bridge 'with very few equals in the world', now named after him, and in northern China he saw 'black stones' that burned like logs: coal. His road went on through Shanxi and Shaanxi, over the mountains to Chengdu and on to Yunnan, conquered by Kublai in 1253, where people paid with cowrie shells. There he heard how in 1277 a small Mongol army had beaten the war elephants of the king of Burma. Whether he went on into Burma is uncertain. Like every envoy, he came back to report to the Khan.",
+        "es": "El libro no da fechas para estos viajes, que seguramente fueron entre finales de la década de 1270 y la de 1280, así que la fecha de aquí es solo orientativa. Marco cuenta que otros enviados aburrían al kan hablando solo de sus asuntos, así que él tomaba nota de todo lo que veía. Al salir de la capital cruzó un puente de piedra «con muy pocos iguales en el mundo», que hoy lleva su nombre, y en el norte de China vio «piedras negras» que ardían como leña: carbón. Su camino siguió por Shanxi y Shaanxi, cruzó las montañas hasta Chengdu y siguió hasta Yunnan, conquistado por Kublai en 1253, donde la gente pagaba con conchas de cauri. Allí oyó cómo en 1277 un pequeño ejército mongol había vencido a los elefantes de guerra del rey de Birmania. No se sabe si él entró en Birmania. Como todo enviado, volvió a rendir cuentas al kan."
+      },
+      "camera": {
+        "lon": 107,
+        "lat": 32,
+        "zoom": 3.3
+      },
+      "moves": [
+        {
+          "side": "marco",
+          "path": [
+            [
+              116.4,
+              39.93
+            ],
+            [
+              115.97,
+              39.49
+            ],
+            [
+              115.46,
+              38.87
+            ],
+            [
+              114.57,
+              38.15
+            ],
+            [
+              112.55,
+              37.87
+            ],
+            [
+              111.52,
+              36.08
+            ],
+            [
+              110.45,
+              34.87
+            ],
+            [
+              108.94,
+              34.26
+            ],
+            [
+              107.02,
+              33.07
+            ],
+            [
+              105.84,
+              32.44
+            ],
+            [
+              104.07,
+              30.67
+            ],
+            [
+              103.0,
+              29.98
+            ],
+            [
+              102.26,
+              27.89
+            ],
+            [
+              102.24,
+              26.65
+            ],
+            [
+              102.71,
+              25.05
+            ],
+            [
+              101.54,
+              25.03
+            ],
+            [
+              100.23,
+              25.6
+            ],
+            [
+              99.17,
+              25.12
+            ],
+            [
+              100.23,
+              25.6
+            ],
+            [
+              101.54,
+              25.03
+            ],
+            [
+              102.71,
+              25.05
+            ],
+            [
+              102.24,
+              26.65
+            ],
+            [
+              102.26,
+              27.89
+            ],
+            [
+              103.0,
+              29.98
+            ],
+            [
+              104.07,
+              30.67
+            ],
+            [
+              105.84,
+              32.44
+            ],
+            [
+              107.02,
+              33.07
+            ],
+            [
+              108.94,
+              34.26
+            ],
+            [
+              110.45,
+              34.87
+            ],
+            [
+              111.52,
+              36.08
+            ],
+            [
+              112.55,
+              37.87
+            ],
+            [
+              114.57,
+              38.15
+            ],
+            [
+              115.46,
+              38.87
+            ],
+            [
+              115.97,
+              39.49
+            ],
+            [
+              116.4,
+              39.93
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ],
+      "places": [
+        {
+          "id": "marco-polo-bridge",
+          "name": {
+            "en": "Marco Polo Bridge",
+            "es": "Puente de Marco Polo"
+          },
+          "at": [
+            116.2131,
+            39.8492
+          ],
+          "cat": "city",
+          "icon": "🌉",
+          "type": "structure",
+          "date": "1189",
+          "end": "1192",
+          "place": {
+            "en": "Fengtai, Beijing, China",
+            "es": "Fengtai, Pekín, China"
+          },
+          "text": {
+            "en": "A stone bridge built in 1189–1192 over the Yongding River, west of Beijing. Marco said it had 'very few equals in the world', and Europeans named it after him, though he gave it 24 arches, not 11.",
+            "es": "Un puente de piedra construido en 1189-1192 sobre el río Yongding, al oeste de Pekín. Marco dijo que tenía «muy pocos iguales en el mundo», y los europeos le pusieron su nombre, aunque él le dio 24 arcos en lugar de 11."
+          },
+          "wiki": {
+            "en": "Marco Polo Bridge",
+            "es": "Puente de Marco Polo"
+          }
+        },
+        {
+          "id": "coal",
+          "name": {
+            "en": "Coal",
+            "es": "Carbón"
+          },
+          "at": [
+            112.55,
+            37.87
+          ],
+          "cat": "discovery",
+          "icon": "⛏️",
+          "type": "goods",
+          "date": "1280",
+          "place": {
+            "en": "Shanxi, northern China",
+            "es": "Shanxi, norte de China"
+          },
+          "text": {
+            "en": "'Black stones' dug from the mountains, which 'burn like logs'. Marco was amazed that coal was so plentiful in Cathay that people could take a hot bath three times a week.",
+            "es": "«Piedras negras» sacadas de las montañas, que «arden como leña». A Marco le asombró que en Catay el carbón fuera tan abundante que la gente pudiera darse un baño caliente tres veces por semana."
+          },
+          "wiki": {
+            "en": "Coal",
+            "es": "Carbón"
+          }
+        },
+        {
+          "id": "kunming",
+          "name": {
+            "en": "Kunming (Yachi)",
+            "es": "Kunming (Yachi)"
+          },
+          "at": [
+            102.7094,
+            25.0464
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1280",
+          "place": {
+            "en": "Kunming, Yunnan, China",
+            "es": "Kunming, Yunnan, China"
+          },
+          "text": {
+            "en": "The capital of Yunnan, conquered by Kublai in 1253, where the Muslim governor Sayyid Ajall Shams al-Din built a new city with temples and mosques. Marco called it Yachi, a great and noble city.",
+            "es": "La capital de Yunnan, conquistada por Kublai en 1253, donde el gobernador musulmán Sayyid Ajall Shams al-Din levantó una nueva ciudad con templos y mezquitas. Marco la llamó Yachi, una ciudad grande y noble."
+          },
+          "wiki": {
+            "en": "Kunming",
+            "es": "Kunming"
+          }
+        },
+        {
+          "id": "cowries",
+          "name": {
+            "en": "Cowrie shells",
+            "es": "Conchas de cauri"
+          },
+          "at": [
+            100.23,
+            25.6
+          ],
+          "cat": "goods",
+          "icon": "🐚",
+          "type": "goods",
+          "date": "1280",
+          "place": {
+            "en": "Dali, Yunnan, China",
+            "es": "Dali, Yunnan, China"
+          },
+          "text": {
+            "en": "Small white sea shells used as money from Africa to China. In Yunnan, Marco noted, people paid with cowries brought from India, and historians have confirmed his account.",
+            "es": "Pequeñas conchas marinas blancas que se usaban como dinero desde África hasta China. En Yunnan, anotó Marco, la gente pagaba con cauris traídos de la India, y los historiadores han confirmado su relato."
+          },
+          "wiki": {
+            "en": "Cowrie",
+            "es": "Cauri"
+          }
+        },
+        {
+          "id": "battle-of-ngasaunggyan",
+          "name": {
+            "en": "Battle of Ngasaunggyan",
+            "es": "Batalla de Ngasaunggyan"
+          },
+          "at": [
+            97.93,
+            24.71
+          ],
+          "cat": "event",
+          "icon": "🐘",
+          "type": "event",
+          "date": "1277",
+          "place": {
+            "en": "Yunnan–Burma frontier",
+            "es": "Frontera entre Yunnan y Birmania"
+          },
+          "text": {
+            "en": "In 1277 a small Mongol army beat the king of Burma's war elephants by dismounting and shooting volleys of arrows. Marco tells the battle vividly, probably from accounts he heard in Yunnan.",
+            "es": "En 1277 un pequeño ejército mongol venció a los elefantes de guerra del rey de Birmania desmontando y disparando lluvias de flechas. Marco narra la batalla con viveza, seguramente a partir de relatos que oyó en Yunnan."
+          },
+          "wiki": {
+            "en": "Battle of Ngasaunggyan",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1285",
+      "title": {
+        "en": "Kinsay and Zaitun",
+        "es": "Quinsay y Zaitun"
+      },
+      "text": {
+        "en": "Down the Grand Canal lay the rich south, taken from the Song in 1276–1279. Marco called Hangzhou, 'Kinsay', the finest city in the world, and Quanzhou, 'Zaitun', one of its two greatest ports.",
+        "es": "Bajando por el Gran Canal estaba el rico sur, conquistado a los Song entre 1276 y 1279. Marco llamó a Hangzhou, «Quinsay», la ciudad más espléndida del mundo, y a Quanzhou, «Zaitun», uno de sus dos mayores puertos."
+      },
+      "details": {
+        "en": "The Grand Canal carried grain, salt and silk to the north, and Marco admired its arched bridges and busy warehouses. At Yangzhou, the book says, 'Messer Marco Polo ruled this city for three years', probably between 1282 and 1287. Scholars think he more likely served in the salt administration, if at all, and no Chinese record clearly names him. Hangzhou, the old Song capital, had perhaps a million people; Marco describes its lake with pleasure boats, its canals and its markets, with numbers that are often exaggerated. The road south through Fujian led to Quanzhou, where ships from India unloaded pepper and spices and the Khan took a tenth of all goods. For every ship of pepper that went to Alexandria for Christian lands, Marco wrote, a hundred came to Zaitun.",
+        "es": "El Gran Canal llevaba grano, sal y seda hacia el norte, y Marco admiró sus puentes en arco y sus almacenes llenos de actividad. En Yangzhou, dice el libro, «micer Marco Polo gobernó esta ciudad tres años», seguramente entre 1282 y 1287. Los estudiosos creen más probable que sirviera en la administración de la sal, si es que sirvió, y ningún registro chino lo nombra con claridad. Hangzhou, la antigua capital de los Song, tenía quizá un millón de habitantes; Marco describe su lago con barcas de recreo, sus canales y sus mercados, con cifras a menudo exageradas. El camino al sur por Fujian llevaba a Quanzhou, donde los barcos de la India descargaban pimienta y especias y el kan cobraba la décima parte de todo. Por cada barco de pimienta que iba a Alejandría para las tierras cristianas, escribió Marco, llegaban cien a Zaitun."
+      },
+      "camera": {
+        "lon": 118.5,
+        "lat": 31,
+        "zoom": 4.0
+      },
+      "moves": [
+        {
+          "side": "marco",
+          "path": [
+            [
+              116.4,
+              39.93
+            ],
+            [
+              116.66,
+              39.91
+            ],
+            [
+              117.2,
+              39.13
+            ],
+            [
+              116.84,
+              38.3
+            ],
+            [
+              116.36,
+              37.44
+            ],
+            [
+              115.7,
+              36.84
+            ],
+            [
+              116.59,
+              35.41
+            ],
+            [
+              117.18,
+              34.26
+            ],
+            [
+              119.02,
+              33.61
+            ],
+            [
+              119.41,
+              32.39
+            ],
+            [
+              119.45,
+              32.2
+            ],
+            [
+              119.97,
+              31.81
+            ],
+            [
+              120.62,
+              31.3
+            ],
+            [
+              120.75,
+              30.75
+            ],
+            [
+              120.17,
+              30.27
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        },
+        {
+          "side": "marco",
+          "path": [
+            [
+              120.17,
+              30.27
+            ],
+            [
+              119.65,
+              29.8
+            ],
+            [
+              118.87,
+              28.97
+            ],
+            [
+              118.53,
+              27.92
+            ],
+            [
+              118.32,
+              27.05
+            ],
+            [
+              118.18,
+              26.64
+            ],
+            [
+              119.3,
+              26.08
+            ],
+            [
+              119.01,
+              25.43
+            ],
+            [
+              118.59,
+              24.91
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ],
+      "places": [
+        {
+          "id": "yangzhou",
+          "name": {
+            "en": "Yangzhou",
+            "es": "Yangzhou"
+          },
+          "at": [
+            119.4128,
+            32.3944
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1282",
+          "place": {
+            "en": "Yangzhou, Jiangsu, China",
+            "es": "Yangzhou, Jiangsu, China"
+          },
+          "text": {
+            "en": "A rich city on the Grand Canal and a centre of the salt trade. The book says Marco 'ruled' it for three years; he was more likely an official of the salt administration, if he served there at all.",
+            "es": "Una ciudad rica junto al Gran Canal y un centro del comercio de la sal. El libro dice que Marco la «gobernó» tres años; es más probable que fuera un funcionario de la administración de la sal, si es que sirvió allí."
+          },
+          "wiki": {
+            "en": "Yangzhou",
+            "es": "Yangzhou"
+          }
+        },
+        {
+          "id": "hangzhou",
+          "name": {
+            "en": "Hangzhou",
+            "es": "Hangzhou"
+          },
+          "at": [
+            120.165,
+            30.259
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1276",
+          "place": {
+            "en": "Hangzhou, Zhejiang, China",
+            "es": "Hangzhou, Zhejiang, China"
+          },
+          "text": {
+            "en": "The former capital of the Song, home to more than a million people. Marco called it Kinsay, 'the city of heaven', 'greater than any in the world', with its lake, canals and endless bridges.",
+            "es": "La antigua capital de los Song, con más de un millón de habitantes. Marco la llamó Quinsay, «la ciudad del cielo», «más grande que cualquier otra del mundo», con su lago, sus canales y sus puentes sin fin."
+          },
+          "details": {
+            "en": "Hangzhou surrendered to the Mongols in 1276 without a fight. Marco describes its West Lake with pleasure boats and island pavilions, its paved streets, its markets, and the watchmen who guarded against fire in a city of wooden houses that burned again and again. He claims 12,000 bridges and walls a hundred miles round, numbers no one believes, though the walls may have been measured in Chinese miles. Sixty years later Ibn Battuta also called it the biggest city he had ever seen.",
+            "es": "Hangzhou se rindió a los mongoles en 1276 sin luchar. Marco describe su lago del Oeste con barcas de recreo y pabellones en islas, sus calles empedradas, sus mercados y los vigilantes que protegían del fuego una ciudad de casas de madera que ardía una y otra vez. Habla de 12 000 puentes y de murallas de cien millas de perímetro, cifras que nadie cree, aunque quizá las midiera en millas chinas. Sesenta años después, Ibn Battuta también la llamó la ciudad más grande que había visto."
+          },
+          "wiki": {
+            "en": "Hangzhou",
+            "es": "Hangzhou"
+          }
+        },
+        {
+          "id": "quanzhou",
+          "name": {
+            "en": "Quanzhou",
+            "es": "Quanzhou"
+          },
+          "at": [
+            118.588,
+            24.91
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1285",
+          "place": {
+            "en": "Quanzhou, Fujian, China",
+            "es": "Quanzhou, Fujian, China"
+          },
+          "text": {
+            "en": "China's great port for foreign trade, called Zaitun by Arab and Persian merchants. Marco called it one of the two greatest ports in the world: for every ship of pepper bound for Europe, a hundred came here.",
+            "es": "El gran puerto de China para el comercio exterior, llamado Zaitun por los mercaderes árabes y persas. Marco lo llamó uno de los dos mayores puertos del mundo: por cada barco de pimienta que iba a Europa, llegaban cien aquí."
+          },
+          "details": {
+            "en": "Ships from India and Southeast Asia brought pepper, spices and precious stones, and the Khan took a tenth of everything as duty. Quanzhou had Hindu and Buddhist temples, mosques and churches, and Marco says its tattoo artists were famous. The fleets that attacked Japan and Java sailed from here, and so did the Polos in 1291 or 1292. Ibn Battuta landed here about fifty years later and called it the greatest port in the world.",
+            "es": "Los barcos de la India y el sudeste asiático traían pimienta, especias y piedras preciosas, y el kan cobraba como impuesto la décima parte de todo. Quanzhou tenía templos hindúes y budistas, mezquitas e iglesias, y Marco dice que sus tatuadores eran famosos. De aquí zarparon las flotas que atacaron Japón y Java, y también los Polo en 1291 o 1292. Ibn Battuta desembarcó aquí unos cincuenta años después y lo llamó el mayor puerto del mundo."
+          },
+          "wiki": {
+            "en": "Quanzhou",
+            "es": "Quanzhou"
+          }
+        },
+        {
+          "id": "porcelain",
+          "name": {
+            "en": "Porcelain",
+            "es": "Porcelana"
+          },
+          "at": [
+            118.2417,
+            25.4917
+          ],
+          "cat": "goods",
+          "icon": "🏺",
+          "type": "goods",
+          "date": "1285",
+          "place": {
+            "en": "Fujian, China",
+            "es": "Fujian, China"
+          },
+          "text": {
+            "en": "Marco's book is the first in Europe to mention porcelain: bowls and dishes made, he says, in a town of this province and sold all over the world. Europeans would try for centuries to copy it.",
+            "es": "El libro de Marco es el primero en Europa que menciona la porcelana: cuencos y platos hechos, dice, en una ciudad de esta provincia y vendidos en todo el mundo. Los europeos intentaron imitarla durante siglos."
+          },
+          "wiki": {
+            "en": "Porcelain",
+            "es": "Porcelana"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1292",
+      "title": {
+        "en": "A princess for Persia",
+        "es": "Una princesa para Persia"
+      },
+      "text": {
+        "en": "In 1291 or 1292 Kublai let the Polos go at last, to escort Kököchin, a 17-year-old Mongol princess promised to the khan of Persia. Fourteen great junks sailed from Quanzhou.",
+        "es": "En 1291 o 1292 Kublai por fin dejó partir a los Polo, para escoltar a Kököchin, una princesa mongola de 17 años prometida al kan de Persia. Catorce grandes juncos zarparon de Quanzhou."
+      },
+      "details": {
+        "en": "The Polos had asked to go home several times, fearing for their safety once the old Khan died. Arghun, the Ilkhan of Persia and Kublai's great-nephew, had lost his favourite wife and asked for a bride from her Bayaut clan. The road overland was blocked by war, so his three envoys chose the sea, and asked for the Venetians, who knew it. Sources disagree on the year they sailed, 1291 or 1292. The ships had four masts and twelve sails, many cabins and watertight compartments, which Marco described for his Venetian readers. They sailed along the coast of Champa and through the straits to northern Sumatra, where they waited five months for the monsoon to change, in a camp fenced against the people of the interior.",
+        "es": "Los Polo habían pedido varias veces volver a casa, temiendo por su seguridad cuando muriera el viejo kan. Arghun, el iljan de Persia y sobrino nieto de Kublai, había perdido a su esposa favorita y pidió una novia de su clan bayaut. El camino por tierra estaba cortado por la guerra, así que sus tres enviados eligieron el mar y pidieron a los venecianos, que lo conocían. Las fuentes no coinciden en el año en que zarparon, 1291 o 1292. Los barcos tenían cuatro mástiles y doce velas, muchos camarotes y compartimentos estancos, que Marco describió para sus lectores venecianos. Navegaron junto a la costa de Champa y por los estrechos hasta el norte de Sumatra, donde esperaron cinco meses a que cambiara el monzón, en un campamento cercado contra la gente del interior."
+      },
+      "camera": {
+        "lon": 108,
+        "lat": 14,
+        "zoom": 3.0
+      },
+      "moves": [
+        {
+          "side": "home",
+          "path": [
+            [
+              118.59,
+              24.91
+            ],
+            [
+              118.75,
+              24.75
+            ],
+            [
+              118.4,
+              24.25
+            ],
+            [
+              117.2,
+              23.4
+            ],
+            [
+              115.6,
+              22.5
+            ],
+            [
+              114.2,
+              22.0
+            ],
+            [
+              112.5,
+              21.4
+            ],
+            [
+              111.2,
+              20.3
+            ],
+            [
+              111.3,
+              19.0
+            ],
+            [
+              110.2,
+              17.8
+            ],
+            [
+              109.3,
+              15.5
+            ],
+            [
+              109.5,
+              13.8
+            ],
+            [
+              109.4,
+              12.0
+            ],
+            [
+              109.2,
+              11.2
+            ],
+            [
+              107.5,
+              9.8
+            ],
+            [
+              106.6,
+              8.4
+            ],
+            [
+              105.0,
+              5.5
+            ],
+            [
+              104.4,
+              2.0
+            ],
+            [
+              104.3,
+              1.3
+            ],
+            [
+              103.75,
+              1.2
+            ],
+            [
+              103.4,
+              1.2
+            ],
+            [
+              102.7,
+              1.8
+            ],
+            [
+              101.4,
+              2.7
+            ],
+            [
+              100.2,
+              3.8
+            ],
+            [
+              98.9,
+              4.5
+            ],
+            [
+              97.6,
+              5.4
+            ],
+            [
+              97.2,
+              5.14
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "kokochin",
+          "name": {
+            "en": "Kököchin",
+            "es": "Kököchin"
+          },
+          "at": [
+            118.68,
+            24.8
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1291",
+          "place": {
+            "en": "Sailed from Quanzhou, China",
+            "es": "Zarpó de Quanzhou, China"
+          },
+          "text": {
+            "en": "A 17-year-old Mongol princess of the Bayaut clan, chosen by Kublai as a bride for Arghun, the Ilkhan of Persia. She arrived to find Arghun dead, and married his son Ghazan.",
+            "es": "Una princesa mongola de 17 años, del clan bayaut, elegida por Kublai como esposa para Arghun, el iljan de Persia. Al llegar encontró que Arghun había muerto, y se casó con su hijo Ghazan."
+          },
+          "details": {
+            "en": "Chinese and Persian records confirm the embassy. A Chinese document names the three envoys who came for her, Oulatai, Apusqa and Khoja, and the Persian historian Rashid al-Din tells of her marriage, but only Marco's book mentions the Polos. It also explains why the Persian source names a single envoy: the other two died at sea. Kököchin became Ghazan's chief wife and died in June 1296.",
+            "es": "Fuentes chinas y persas confirman la embajada. Un documento chino nombra a los tres enviados que vinieron a buscarla, Oulatai, Apusqa y Joya, y el historiador persa Rashid al-Din cuenta su boda, pero solo el libro de Marco menciona a los Polo. También explica por qué la fuente persa nombra a un solo enviado: los otros dos murieron en el mar. Kököchin fue la esposa principal de Ghazan y murió en junio de 1296."
+          },
+          "wiki": {
+            "en": "Kököchin",
+            "es": "Kököchin"
+          }
+        },
+        {
+          "id": "chinese-junks",
+          "name": {
+            "en": "Chinese junks",
+            "es": "Juncos chinos"
+          },
+          "at": [
+            114.6,
+            21.6
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1291",
+          "place": {
+            "en": "South China Sea",
+            "es": "Mar de la China Meridional"
+          },
+          "text": {
+            "en": "Kublai fitted out 14 great ships with four masts and twelve sails for the princess. Marco described the junks' many cabins and their watertight compartments, unknown in Europe.",
+            "es": "Kublai preparó para la princesa 14 grandes barcos de cuatro mástiles y doce velas. Marco describió los muchos camarotes de los juncos y sus compartimentos estancos, desconocidos en Europa."
+          },
+          "details": {
+            "en": "Marco wrote that the big junks were built of pine, with a single deck carrying up to 60 cabins for merchants, a rudder, four masts and two more that could be raised, and up to 13 holds divided by strong planks, so that a ship holed by a rock or a whale could still be saved. Their seams were sealed with a putty of lime, hemp and tung oil. Archaeologists have found Chinese ships of this age with three masts, not the five he sometimes mentions.",
+            "es": "Marco escribió que los grandes juncos eran de pino, con una sola cubierta de hasta 60 camarotes para mercaderes, un timón, cuatro mástiles y otros dos que se podían alzar, y hasta 13 bodegas separadas por tablas fuertes, de modo que un barco agujereado por una roca o una ballena aún podía salvarse. Sus juntas se sellaban con una masilla de cal, cáñamo y aceite de tung. Los arqueólogos han hallado barcos chinos de esa época con tres mástiles, no los cinco que él a veces menciona."
+          },
+          "wiki": {
+            "en": "Junk (ship)",
+            "es": "Junco (embarcación)"
+          }
+        },
+        {
+          "id": "champa",
+          "name": {
+            "en": "Champa",
+            "es": "Champa"
+          },
+          "at": [
+            109.07,
+            13.92
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1291",
+          "place": {
+            "en": "Central and southern Vietnam",
+            "es": "Centro y sur de Vietnam"
+          },
+          "text": {
+            "en": "The kingdoms of the Cham people on the coast of today's central and southern Vietnam, which Kublai's armies had invaded in the 1280s. The book says their king sent the Khan a tribute of elephants.",
+            "es": "Los reinos del pueblo cham en la costa del actual centro y sur de Vietnam, que los ejércitos de Kublai habían invadido en la década de 1280. El libro dice que su rey enviaba al kan un tributo de elefantes."
+          },
+          "wiki": {
+            "en": "Champa",
+            "es": "Champa"
+          }
+        },
+        {
+          "id": "samudra-pasai",
+          "name": {
+            "en": "Samudra Pasai",
+            "es": "Samudra Pasai"
+          },
+          "at": [
+            97.2006,
+            5.1341
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1292",
+          "place": {
+            "en": "Aceh, Sumatra, Indonesia",
+            "es": "Aceh, Sumatra, Indonesia"
+          },
+          "text": {
+            "en": "A port kingdom of northern Sumatra, among the first in Southeast Asia to become Muslim. The fleet waited here five months for the monsoon to change, its crews camped behind a stockade.",
+            "es": "Un reino portuario del norte de Sumatra, de los primeros del sudeste asiático en hacerse musulmanes. La flota esperó aquí cinco meses a que cambiara el monzón, con sus tripulaciones acampadas tras una empalizada."
+          },
+          "details": {
+            "en": "Marco names several small kingdoms of the island, which he calls Java the Less: Ferlec (Perlak), whose townspeople had become Muslim through Muslim merchants, Basma, Samara (Samudra) and others. He describes rhinoceroses, which he took for ugly unicorns, sago bread and palm wine, and he noted that the Pole Star could no longer be seen. A royal tomb of 1297 at Samudra is inscribed entirely in Arabic.",
+            "es": "Marco nombra varios reinos pequeños de la isla, a la que llama Java la Menor: Ferlec (Perlak), cuya gente se había hecho musulmana gracias a los mercaderes musulmanes, Basma, Samara (Samudra) y otros. Describe rinocerontes, que tomó por unicornios feos, pan de sagú y vino de palma, y anotó que ya no se veía la estrella Polar. Una tumba real de 1297 en Samudra tiene inscripciones solo en árabe."
+          },
+          "wiki": {
+            "en": "Samudera Pasai Sultanate",
+            "es": "Reino de Samudra Pasai"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1293",
+      "title": {
+        "en": "Sri Lanka, India and Hormuz",
+        "es": "Sri Lanka, la India y Ormuz"
+      },
+      "text": {
+        "en": "From Sumatra the fleet crossed to Sri Lanka and sailed around southern India to Hormuz. The whole voyage took about two years, and most of the people on board died on the way.",
+        "es": "Desde Sumatra, la flota cruzó a Sri Lanka y rodeó el sur de la India hasta Ormuz. Todo el viaje duró unos dos años, y la mayoría de quienes iban a bordo murieron en el camino."
+      },
+      "details": {
+        "en": "Marco described Sri Lanka's rubies and its holy mountain, Adam's Peak, where Muslims honoured the grave of Adam and Buddhists the Buddha, whose life he told with respect: had the Buddha been a Christian, he wrote, he would have been a great saint. On the coast of southern India he wrote of pearl divers and of the tomb of the apostle Thomas; at Kollam and along the Malabar coast, of pepper and ginger; at Cambay, of indigo and cotton. The book says that of some 600 passengers, not counting the crews, only eighteen reached Hormuz alive, the three Polos and the princess among them. Two of the three Persian envoys had died. Arghun himself had died before they left China.",
+        "es": "Marco describió los rubíes de Sri Lanka y su montaña sagrada, el pico de Adán, donde los musulmanes honraban la tumba de Adán y los budistas al Buda, cuya vida contó con respeto: si el Buda hubiera sido cristiano, escribió, habría sido un gran santo. En la costa del sur de la India escribió sobre los pescadores de perlas y la tumba del apóstol Tomás; en Kollam y la costa de Malabar, sobre la pimienta y el jengibre, y en Cambay, sobre el índigo y el algodón. El libro dice que de unos 600 pasajeros, sin contar las tripulaciones, solo dieciocho llegaron vivos a Ormuz, entre ellos los tres Polo y la princesa. Dos de los tres enviados persas habían muerto. El propio Arghun había muerto antes de que salieran de China."
+      },
+      "camera": {
+        "lon": 78,
+        "lat": 15,
+        "zoom": 2.6
+      },
+      "moves": [
+        {
+          "side": "home",
+          "path": [
+            [
+              97.2,
+              5.14
+            ],
+            [
+              96.0,
+              5.9
+            ],
+            [
+              93.5,
+              6.5
+            ],
+            [
+              86.0,
+              6.2
+            ],
+            [
+              81.9,
+              5.8
+            ],
+            [
+              80.6,
+              5.75
+            ],
+            [
+              80.0,
+              6.2
+            ],
+            [
+              79.7,
+              7.2
+            ],
+            [
+              79.55,
+              8.3
+            ],
+            [
+              78.6,
+              8.6
+            ],
+            [
+              77.6,
+              7.9
+            ],
+            [
+              77.1,
+              8.05
+            ],
+            [
+              76.8,
+              8.35
+            ],
+            [
+              76.5,
+              8.8
+            ],
+            [
+              75.7,
+              11.2
+            ],
+            [
+              75.05,
+              12.0
+            ],
+            [
+              74.6,
+              12.9
+            ],
+            [
+              73.6,
+              15.4
+            ],
+            [
+              72.7,
+              18.9
+            ],
+            [
+              72.4,
+              20.5
+            ],
+            [
+              71.3,
+              20.6
+            ],
+            [
+              70.0,
+              20.8
+            ],
+            [
+              68.8,
+              22.2
+            ],
+            [
+              66.5,
+              24.3
+            ],
+            [
+              64.0,
+              24.9
+            ],
+            [
+              61.5,
+              24.95
+            ],
+            [
+              58.8,
+              25.3
+            ],
+            [
+              57.1,
+              25.7
+            ],
+            [
+              56.8,
+              26.4
+            ],
+            [
+              56.9,
+              26.9
+            ],
+            [
+              57.05,
+              27.1
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "adams-peak",
+          "name": {
+            "en": "Adam's Peak",
+            "es": "Pico de Adán"
+          },
+          "at": [
+            80.4997,
+            6.8094
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1293",
+          "place": {
+            "en": "Sri Lanka",
+            "es": "Sri Lanka"
+          },
+          "text": {
+            "en": "A holy mountain of Sri Lanka, 2,243 m high, sacred to Buddhists, Hindus, Muslims and Christians. Marco noted it as a great place of pilgrimage and told the life of the Buddha with admiration.",
+            "es": "Una montaña sagrada de Sri Lanka, de 2243 m, venerada por budistas, hindúes, musulmanes y cristianos. Marco la señaló como gran lugar de peregrinación y contó con admiración la vida del Buda."
+          },
+          "wiki": {
+            "en": "Adam's Peak",
+            "es": "Pico de Adán"
+          }
+        },
+        {
+          "id": "pepper",
+          "name": {
+            "en": "Black pepper",
+            "es": "Pimienta negra"
+          },
+          "at": [
+            76.6141,
+            8.8932
+          ],
+          "cat": "goods",
+          "type": "goods",
+          "date": "1293",
+          "place": {
+            "en": "Kollam, Kerala, India",
+            "es": "Kollam, Kerala, India"
+          },
+          "text": {
+            "en": "Black pepper grows wild in the forests of the Malabar coast, the spice's first home. Marco described the pepper of Coilum, today's Kollam, and the ships that came for it from China and Arabia.",
+            "es": "La pimienta negra crece silvestre en los bosques de la costa de Malabar, su tierra de origen. Marco describió la pimienta de Coilum, la actual Kollam, y los barcos que venían a buscarla desde China y Arabia."
+          },
+          "wiki": {
+            "en": "Black pepper",
+            "es": "Piper nigrum"
+          }
+        },
+        {
+          "id": "khambhat",
+          "name": {
+            "en": "Cambay (Khambhat)",
+            "es": "Cambay (Khambhat)"
+          },
+          "at": [
+            72.6194,
+            22.3131
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1293",
+          "place": {
+            "en": "Khambhat, Gujarat, India",
+            "es": "Khambhat, Guyarat, India"
+          },
+          "text": {
+            "en": "A busy port of Gujarat, Marco's Cambaet, with a king of its own, which exported indigo, fine cloth, cotton and leather. Fifty years later Ibn Battuta admired its fine buildings.",
+            "es": "Un puerto activo de Guyarat, el Cambaet de Marco, con rey propio, que exportaba índigo, telas finas, algodón y cuero. Cincuenta años después, Ibn Battuta admiró sus bellos edificios."
+          },
+          "wiki": {
+            "en": "Khambhāt",
+            "es": "Khambhat"
+          }
+        },
+        {
+          "id": "hormuz",
+          "name": {
+            "en": "Hormuz",
+            "es": "Ormuz"
+          },
+          "at": [
+            57.05,
+            27.1
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1272",
+          "place": {
+            "en": "Old Hormuz, near Minab, Iran",
+            "es": "Antigua Ormuz, cerca de Minab, Irán"
+          },
+          "text": {
+            "en": "A rich port at the mouth of the Persian Gulf, where ships from India unloaded spices, pearls and cloth. The Polos meant to sail from here to China, but its ships looked too frail.",
+            "es": "Un puerto rico en la boca del golfo Pérsico, donde los barcos de la India descargaban especias, perlas y telas. Los Polo pensaban navegar desde aquí a China, pero sus barcos parecían demasiado frágiles."
+          },
+          "details": {
+            "en": "When the Polos came, Hormuz stood on the mainland near today's Minab; in 1301, after repeated raids, its people moved to the island of Jarun, today's Hormuz Island. Marco complained of its scorching heat and of its ships: built without iron nails, their planks were sewn together with cord of coconut fibre, and many were lost at sea. So the Polos turned back north to go overland. Twenty years later they landed here on their way home.",
+            "es": "Cuando llegaron los Polo, Ormuz estaba en tierra firme, cerca de la actual Minab; en 1301, tras repetidos ataques, sus habitantes se mudaron a la isla de Jarun, la actual isla de Ormuz. Marco se quejó de su calor abrasador y de sus barcos: construidos sin clavos de hierro, sus tablas iban cosidas con cuerda de fibra de coco, y muchos se perdían en el mar. Así que los Polo volvieron al norte para ir por tierra. Veinte años después desembarcaron aquí de regreso a casa."
+          },
+          "wiki": {
+            "en": "Kingdom of Hormuz",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1295",
+      "title": {
+        "en": "Home to Venice",
+        "es": "De vuelta a Venecia"
+      },
+      "text": {
+        "en": "The Polos left Kököchin in Persia, where she married Arghun's son Ghazan, and rode to Trebizond on the Black Sea. In 1295, after 24 years away, they were back in Venice.",
+        "es": "Los Polo dejaron a Kököchin en Persia, donde se casó con Ghazan, el hijo de Arghun, y cabalgaron hasta Trebisonda, en el mar Negro. En 1295, después de 24 años fuera, estaban de vuelta en Venecia."
+      },
+      "details": {
+        "en": "The book says the new Ilkhan, Arghun's brother Gaykhatu, gave the Polos golden tablets so that they would have escorts and horses across Persia. On the way they learned that Kublai Khan had died, in February 1294. Kököchin, who had come to look on the Venetians as fathers, became Ghazan's chief wife and died in 1296. At Trebizond, where the caravan roads from Tabriz reached the Black Sea, the Polos took ship for Constantinople and Venice. They came home rich, with their fortune in precious stones. A story told two centuries later says their relatives did not recognise them in their worn Tartar clothes until they slit the seams and jewels poured out; it is probably a legend. In all they had travelled some 24,000 km.",
+        "es": "El libro dice que el nuevo iljan, Gaykhatu, hermano de Arghun, dio a los Polo tablillas de oro para que tuvieran escolta y caballos por toda Persia. En el camino supieron que Kublai Kan había muerto, en febrero de 1294. Kököchin, que había llegado a ver a los venecianos como a padres, fue la esposa principal de Ghazan y murió en 1296. En Trebisonda, donde los caminos de caravanas de Tabriz llegaban al mar Negro, los Polo se embarcaron hacia Constantinopla y Venecia. Volvieron ricos, con su fortuna en piedras preciosas. Una historia contada dos siglos después dice que sus parientes no los reconocieron con su gastada ropa tártara hasta que abrieron las costuras y cayeron las joyas; seguramente es una leyenda. En total habían recorrido unos 24 000 km."
+      },
+      "camera": {
+        "lon": 36,
+        "lat": 38.5,
+        "zoom": 2.6
+      },
+      "moves": [
+        {
+          "side": "home",
+          "path": [
+            [
+              57.05,
+              27.1
+            ],
+            [
+              57.74,
+              28.68
+            ],
+            [
+              57.08,
+              30.28
+            ],
+            [
+              54.37,
+              31.9
+            ],
+            [
+              51.67,
+              32.65
+            ],
+            [
+              51.44,
+              33.98
+            ],
+            [
+              50.0,
+              36.27
+            ],
+            [
+              48.48,
+              36.67
+            ],
+            [
+              46.29,
+              38.08
+            ],
+            [
+              44.95,
+              38.55
+            ],
+            [
+              41.27,
+              39.9
+            ],
+            [
+              40.23,
+              40.26
+            ],
+            [
+              39.6,
+              40.6
+            ],
+            [
+              39.73,
+              41.01
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        },
+        {
+          "side": "home",
+          "path": [
+            [
+              39.73,
+              41.01
+            ],
+            [
+              39.0,
+              41.15
+            ],
+            [
+              37.5,
+              41.3
+            ],
+            [
+              36.4,
+              41.5
+            ],
+            [
+              35.2,
+              42.2
+            ],
+            [
+              33.5,
+              42.15
+            ],
+            [
+              32.5,
+              42.05
+            ],
+            [
+              31.6,
+              41.6
+            ],
+            [
+              30.4,
+              41.35
+            ],
+            [
+              29.3,
+              41.3
+            ],
+            [
+              29.12,
+              41.22
+            ],
+            [
+              29.05,
+              41.1
+            ],
+            [
+              28.98,
+              41.01
+            ],
+            [
+              28.7,
+              40.9
+            ],
+            [
+              27.7,
+              40.7
+            ],
+            [
+              26.7,
+              40.4
+            ],
+            [
+              26.4,
+              40.15
+            ],
+            [
+              26.18,
+              40.02
+            ],
+            [
+              25.7,
+              39.6
+            ],
+            [
+              25.6,
+              38.4
+            ],
+            [
+              25.4,
+              37.28
+            ],
+            [
+              24.9,
+              36.7
+            ],
+            [
+              23.6,
+              36.3
+            ],
+            [
+              23.4,
+              36.05
+            ],
+            [
+              22.9,
+              36.05
+            ],
+            [
+              22.45,
+              36.2
+            ],
+            [
+              21.4,
+              36.65
+            ],
+            [
+              20.55,
+              37.55
+            ],
+            [
+              20.3,
+              38.5
+            ],
+            [
+              19.7,
+              39.3
+            ],
+            [
+              19.1,
+              39.9
+            ],
+            [
+              18.8,
+              40.6
+            ],
+            [
+              17.5,
+              41.7
+            ],
+            [
+              15.5,
+              42.8
+            ],
+            [
+              14.0,
+              43.9
+            ],
+            [
+              13.1,
+              44.8
+            ],
+            [
+              12.55,
+              45.3
+            ],
+            [
+              12.42,
+              45.41
+            ],
+            [
+              12.34,
+              45.43
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "trebizond",
+          "name": {
+            "en": "Trebizond",
+            "es": "Trebisonda"
+          },
+          "at": [
+            39.7303,
+            41.0064
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1295",
+          "place": {
+            "en": "Trabzon, Turkey",
+            "es": "Trabzon, Turquía"
+          },
+          "text": {
+            "en": "Capital of a small Greek empire on the Black Sea, where caravan roads from Tabriz met the sea once the Mongols had sacked Baghdad. The Polos took ship here for Constantinople and Venice.",
+            "es": "Capital de un pequeño imperio griego en el mar Negro, donde los caminos de caravanas de Tabriz llegaban al mar desde que los mongoles saquearon Bagdad. Los Polo se embarcaron aquí hacia Constantinopla y Venecia."
+          },
+          "wiki": {
+            "en": "Empire of Trebizond",
+            "es": "Imperio de Trebisonda"
+          }
+        },
+        {
+          "id": "constantinople",
+          "name": {
+            "en": "Constantinople",
+            "es": "Constantinopla"
+          },
+          "at": [
+            28.98,
+            41.0125
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1295",
+          "place": {
+            "en": "Istanbul, Turkey",
+            "es": "Estambul, Turquía"
+          },
+          "text": {
+            "en": "The Byzantine capital on the Bosporus. The Polo brothers had left it in 1260, a year before the Byzantines took it back from the Latins; in 1295 the three Polos sailed through it on their way home.",
+            "es": "La capital bizantina, junto al Bósforo. Los hermanos Polo la habían dejado en 1260, un año antes de que los bizantinos la recuperaran de los latinos; en 1295 los tres Polo pasaron por ella camino de casa."
+          },
+          "wiki": {
+            "en": "Constantinople",
+            "es": "Constantinopla"
+          }
+        },
+        {
+          "id": "venice",
+          "name": {
+            "en": "Venice",
+            "es": "Venecia"
+          },
+          "at": [
+            12.3319,
+            45.4397
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1271",
+          "place": {
+            "en": "Venice, Italy",
+            "es": "Venecia, Italia"
+          },
+          "text": {
+            "en": "A republic of merchants built on a lagoon, with trading posts from Crimea to Acre. Its ships and its rivalry with Genoa shaped Marco's life from beginning to end.",
+            "es": "Una república de mercaderes construida sobre una laguna, con factorías desde Crimea hasta Acre. Sus barcos y su rivalidad con Génova marcaron la vida de Marco de principio a fin."
+          },
+          "details": {
+            "en": "In the 13th century Venice was one of the richest cities in Europe. Its fleet had carried the crusaders who took Constantinople in 1204, and Venice won a quarter of that city and bases across the eastern Mediterranean, where its merchants bought the silk, spices and pepper that came from Asia. Genoa, its great rival, fought it for these trade routes in a long series of wars.",
+            "es": "En el siglo XIII Venecia era una de las ciudades más ricas de Europa. Su flota había llevado a los cruzados que tomaron Constantinopla en 1204, y Venecia ganó un barrio de esa ciudad y bases en todo el Mediterráneo oriental, donde sus mercaderes compraban la seda, las especias y la pimienta que llegaban de Asia. Génova, su gran rival, le disputó esas rutas comerciales en una larga serie de guerras."
+          },
+          "wiki": {
+            "en": "Venice",
+            "es": "Venecia"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1298-09",
+      "title": {
+        "en": "Prisoner of Genoa",
+        "es": "Prisionero de Génova"
+      },
+      "text": {
+        "en": "Venice and Genoa were at war, and Marco, commanding a galley, was taken prisoner: at the Battle of Curzola in 1298, by tradition. In a Genoese prison he told his story to Rustichello of Pisa, a writer of romances.",
+        "es": "Venecia y Génova estaban en guerra, y Marco, al mando de una galera, cayó preso, según la tradición en la batalla de Curzola (1298). En la cárcel de Génova contó su historia a Rustichello de Pisa, autor de novelas."
+      },
+      "details": {
+        "en": "At Curzola, today's Korčula in Croatia, the Genoese admiral Lamba Doria destroyed most of a Venetian fleet of 95 galleys in September 1298 and took many prisoners to Genoa. That Marco was among them is a tradition first written down by Ramusio in the 16th century; he may instead have been captured in a smaller fight off the coast of Anatolia, near Layas, around 1296. In prison he met Rustichello, a Pisan probably held since an earlier war, who had written an Arthurian romance. Over some months in 1298 and 1299 they made a book together in Franco-Venetian, a literary mix of French and Italian: Le Devisement du monde, 'The Description of the World'. It was meant partly as a handbook for merchants, and Rustichello added the flourishes of romance. Marco was freed in August 1299.",
+        "es": "En Curzola, la actual Korčula, en Croacia, el almirante genovés Lamba Doria destruyó en septiembre de 1298 la mayor parte de una flota veneciana de 95 galeras y llevó muchos prisioneros a Génova. Que Marco estuviera entre ellos es una tradición que Ramusio puso por escrito en el siglo XVI; quizá lo capturaron en un combate menor frente a la costa de Anatolia, cerca de Layas, hacia 1296. En la cárcel conoció a Rustichello, un pisano probablemente preso desde una guerra anterior, que había escrito una novela artúrica. Durante unos meses de 1298 y 1299 hicieron juntos un libro en francoveneciano, una mezcla literaria de francés e italiano: Le Devisement du monde, «La descripción del mundo». Debía servir en parte como manual para mercaderes, y Rustichello le añadió adornos de novela. Marco quedó libre en agosto de 1299."
+      },
+      "camera": {
+        "lon": 13.5,
+        "lat": 42,
+        "zoom": 4.8
+      },
+      "moves": [
+        {
+          "side": "marco",
+          "path": [
+            [
+              12.34,
+              45.43
+            ],
+            [
+              12.42,
+              45.41
+            ],
+            [
+              12.55,
+              45.3
+            ],
+            [
+              13.1,
+              44.8
+            ],
+            [
+              14.0,
+              43.9
+            ],
+            [
+              15.5,
+              42.8
+            ],
+            [
+              16.2,
+              42.75
+            ],
+            [
+              16.8,
+              42.85
+            ],
+            [
+              16.97,
+              42.87
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "marco",
+          "path": [
+            [
+              16.97,
+              42.87
+            ],
+            [
+              17.4,
+              42.4
+            ],
+            [
+              18.3,
+              41.4
+            ],
+            [
+              18.8,
+              40.6
+            ],
+            [
+              19.1,
+              39.9
+            ],
+            [
+              18.6,
+              39.4
+            ],
+            [
+              17.4,
+              39.0
+            ],
+            [
+              16.7,
+              38.3
+            ],
+            [
+              16.1,
+              37.85
+            ],
+            [
+              15.55,
+              38.05
+            ],
+            [
+              15.62,
+              38.24
+            ],
+            [
+              15.7,
+              38.4
+            ],
+            [
+              15.3,
+              38.95
+            ],
+            [
+              14.5,
+              39.8
+            ],
+            [
+              13.0,
+              40.6
+            ],
+            [
+              11.5,
+              41.7
+            ],
+            [
+              10.4,
+              42.6
+            ],
+            [
+              9.8,
+              43.3
+            ],
+            [
+              9.3,
+              43.9
+            ],
+            [
+              8.93,
+              44.4
+            ]
+          ],
+          "by": "sea"
+        }
+      ],
+      "places": [
+        {
+          "id": "battle-of-curzola",
+          "name": {
+            "en": "Battle of Curzola",
+            "es": "Batalla de Curzola"
+          },
+          "at": [
+            16.9733,
+            42.8675
+          ],
+          "cat": "event",
+          "icon": "⚔️",
+          "type": "event",
+          "date": "1298-09",
+          "place": {
+            "en": "Korčula, Croatia",
+            "es": "Korčula, Croacia"
+          },
+          "text": {
+            "en": "In September 1298 the Genoese fleet of Lamba Doria crushed the Venetians off the island of Curzola: 83 of 95 galleys were lost and about 7,000 men killed. Tradition says Marco was taken prisoner here.",
+            "es": "En septiembre de 1298 la flota genovesa de Lamba Doria aplastó a los venecianos frente a la isla de Curzola: se perdieron 83 de 95 galeras y murieron unos 7000 hombres. La tradición dice que Marco cayó prisionero aquí."
+          },
+          "wiki": {
+            "en": "Battle of Curzola",
+            "es": "Batalla de Curzola"
+          }
+        },
+        {
+          "id": "rustichello-da-pisa",
+          "name": {
+            "en": "Rustichello da Pisa",
+            "es": "Rustichello de Pisa"
+          },
+          "at": [
+            10.4017,
+            43.7228
+          ],
+          "cat": "book",
+          "icon": "✍️",
+          "type": "person",
+          "date": "1298",
+          "place": {
+            "en": "From Pisa; a prisoner in Genoa",
+            "es": "De Pisa; prisionero en Génova"
+          },
+          "text": {
+            "en": "A writer of romances from Pisa, perhaps captured by the Genoese in 1284. In prison he wrote down Marco's stories, adding touches from the Arthurian tales he had written before.",
+            "es": "Un escritor de novelas de caballería de Pisa, quizá capturado por los genoveses en 1284. En la cárcel puso por escrito los relatos de Marco y les añadió toques de las historias artúricas que había escrito antes."
+          },
+          "details": {
+            "en": "Rustichello had written the first Arthurian romance by an Italian author, based on books lent by Prince Edward of England. Scholars have found passages of the Polo book taken almost word for word from it: the opening call to 'emperors and kings, dukes and marquises', and the Polos' arrival at Kublai's court, which follows Tristan's arrival at King Arthur's. He may also have added the marvels that readers of his time expected from a book of travels.",
+            "es": "Rustichello había escrito la primera novela artúrica de un autor italiano, basada en libros que le prestó el príncipe Eduardo de Inglaterra. Los estudiosos han hallado pasajes del libro de Polo tomados casi palabra por palabra de ella: la llamada inicial a «emperadores y reyes, duques y marqueses», y la llegada de los Polo a la corte de Kublai, que sigue la de Tristán a la corte del rey Arturo. Quizá también añadió las maravillas que los lectores de su tiempo esperaban de un libro de viajes."
+          },
+          "wiki": {
+            "en": "Rustichello da Pisa",
+            "es": "Rustichello de Pisa"
+          }
+        },
+        {
+          "id": "the-travels-of-marco-polo",
+          "name": {
+            "en": "The Travels of Marco Polo",
+            "es": "Los viajes de Marco Polo"
+          },
+          "at": [
+            8.9289,
+            44.4092
+          ],
+          "cat": "book",
+          "type": "work",
+          "date": "1298",
+          "end": "1299",
+          "place": {
+            "en": "Written in prison in Genoa, Italy",
+            "es": "Escrito en una cárcel de Génova, Italia"
+          },
+          "text": {
+            "en": "Le Devisement du monde, 'The Description of the World', also called Il Milione: Marco's story as written by Rustichello in 1298–1299. It was copied all over Europe; about 150 manuscripts survive, no two alike.",
+            "es": "Le Devisement du monde, «La descripción del mundo», también llamado Il Milione: el relato de Marco escrito por Rustichello en 1298-1299. Se copió por toda Europa; se conservan unos 150 manuscritos, ninguno igual a otro."
+          },
+          "details": {
+            "en": "By tradition the two prisoners worked in the Palazzo San Giorgio in Genoa. The book has four parts: the lands on the way to China; China and Kublai's court; the coasts and islands of the Indian Ocean, from Japan to the coast of East Africa; and the wars of the Mongols and the far north. A Dominican friar, Francesco Pipino, put it into Latin in 1302, and the Dominicans, who sent missionaries east, vouched for it. Many readers still took it for a romance full of 'a million' lies.",
+            "es": "Según la tradición, los dos prisioneros trabajaron en el Palazzo San Giorgio de Génova. El libro tiene cuatro partes: las tierras del camino a China; China y la corte de Kublai; las costas e islas del océano Índico, desde Japón hasta la costa de África oriental; y las guerras de los mongoles y el lejano norte. Un fraile dominico, Francesco Pipino, lo tradujo al latín en 1302, y los dominicos, que enviaban misioneros a Oriente, respondieron por él. Muchos lectores lo siguieron tomando por una novela llena de «un millón» de mentiras."
+          },
+          "wiki": {
+            "en": "The Travels of Marco Polo",
+            "es": "Los viajes de Marco Polo"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1324-01-08",
+      "title": {
+        "en": "'Half of what I saw'",
+        "es": "«La mitad de lo que vi»"
+      },
+      "text": {
+        "en": "Freed in 1299, Marco lived on in Venice as a merchant and died on 8 January 1324. He is said to have insisted before dying that he had told only half of what he saw. His book was copied all over Europe.",
+        "es": "Liberado en 1299, Marco siguió viviendo en Venecia como mercader y murió el 8 de enero de 1324. Se cuenta que antes de morir insistió en que solo había contado la mitad de lo que vio. Su libro se copió por toda Europa."
+      },
+      "details": {
+        "en": "Marco married Donata Badoer and had three daughters. In his will he freed Peter, a 'Tartar' servant who may have come with him from Asia. He was buried in the church of San Lorenzo, but his remains were lost when it was rebuilt. About 150 manuscripts of his book survive, in French, Italian, Latin and other languages, all different. The Catalan Atlas of 1375 drew Asia with his place names, Fra Mauro's map of about 1450 used them all, and Christopher Columbus filled the margins of a printed Latin copy with notes. Doubts are old: the book says nothing of the Great Wall, tea, chopsticks, Chinese writing or foot-binding, and in 1995 Frances Wood argued that he never went to China. Most historians disagree: the Wall we know is later, and his details on paper money, salt and Kököchin's voyage match Chinese and Persian records.",
+        "es": "Marco se casó con Donata Badoer y tuvo tres hijas. En su testamento liberó a Pedro, un sirviente «tártaro» que quizá llegó con él de Asia. Fue enterrado en la iglesia de San Lorenzo, pero sus restos se perdieron cuando la reconstruyeron. Se conservan unos 150 manuscritos de su libro, en francés, italiano, latín y otras lenguas, todos distintos. El Atlas catalán de 1375 dibujó Asia con sus nombres de lugares, el mapa de Fra Mauro de hacia 1450 los usó todos y Cristóbal Colón llenó de notas los márgenes de un ejemplar impreso en latín. Las dudas son antiguas: el libro no dice nada de la Gran Muralla, el té, los palillos, la escritura china ni el vendado de los pies, y en 1995 Frances Wood sostuvo que nunca fue a China. La mayoría de los historiadores no está de acuerdo: la Muralla que conocemos es posterior, y sus detalles sobre el dinero de papel, la sal y el viaje de Kököchin coinciden con los registros chinos y persas."
+      },
+      "camera": {
+        "lon": 55,
+        "lat": 38,
+        "zoom": 1.15
+      },
+      "moves": [
+        {
+          "side": "marco",
+          "path": [
+            [
+              8.93,
+              44.4
+            ],
+            [
+              9.2,
+              44.9
+            ],
+            [
+              9.7,
+              45.05
+            ],
+            [
+              10.2,
+              45.13
+            ],
+            [
+              11.0,
+              45.15
+            ],
+            [
+              11.88,
+              45.41
+            ],
+            [
+              12.34,
+              45.43
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ],
+      "places": [
+        {
+          "id": "san-lorenzo-venice",
+          "name": {
+            "en": "San Lorenzo church",
+            "es": "Iglesia de San Lorenzo"
+          },
+          "at": [
+            12.3456,
+            45.4372
+          ],
+          "cat": "event",
+          "icon": "⚱️",
+          "type": "structure",
+          "date": "1324-01-08",
+          "place": {
+            "en": "Castello, Venice, Italy",
+            "es": "Castello, Venecia, Italia"
+          },
+          "text": {
+            "en": "Marco died in Venice on 8 January 1324 and was buried here, as he asked. His tomb was lost when the church was rebuilt from 1580, and his remains have never been found.",
+            "es": "Marco murió en Venecia el 8 de enero de 1324 y fue enterrado aquí, como pidió. Su tumba se perdió cuando la iglesia se reconstruyó a partir de 1580, y sus restos nunca se han encontrado."
+          },
+          "wiki": {
+            "en": "San Lorenzo, Venice",
+            "es": "Iglesia de San Lorenzo (Venecia)"
+          }
+        },
+        {
+          "id": "catalan-atlas",
+          "name": {
+            "en": "Catalan Atlas",
+            "es": "Atlas catalán"
+          },
+          "at": [
+            2.6502,
+            39.5696
+          ],
+          "cat": "book",
+          "icon": "🗺️",
+          "type": "work",
+          "date": "1375",
+          "place": {
+            "en": "Made in Palma, Majorca, Spain",
+            "es": "Hecho en Palma de Mallorca, España"
+          },
+          "text": {
+            "en": "A world map of 1375 by Cresques Abraham of Majorca, the first to put Marco's names on the map of Asia: some thirty places in China, and a caravan of the Polos riding east.",
+            "es": "Un mapamundi de 1375 de Cresques Abraham de Mallorca, el primero que puso los nombres de Marco en el mapa de Asia: unos treinta lugares de China y una caravana de los Polo cabalgando hacia el este."
+          },
+          "wiki": {
+            "en": "Catalan Atlas",
+            "es": "Atlas Catalán"
+          }
+        },
+        {
+          "id": "fra-mauro-map",
+          "name": {
+            "en": "Fra Mauro map",
+            "es": "Mapamundi de Fra Mauro"
+          },
+          "at": [
+            12.3461,
+            45.4483
+          ],
+          "cat": "book",
+          "icon": "🗺️",
+          "type": "work",
+          "date": "1450",
+          "place": {
+            "en": "San Michele di Murano, Venice, Italy",
+            "es": "San Michele di Murano, Venecia, Italia"
+          },
+          "text": {
+            "en": "A great round map of the world made about 1450 by Fra Mauro, a monk of Murano, near Venice, who carefully included all of Marco's place names.",
+            "es": "Un gran mapamundi redondo hecho hacia 1450 por Fra Mauro, un monje de Murano, junto a Venecia, que incluyó con cuidado todos los nombres de lugares de Marco."
+          },
+          "wiki": {
+            "en": "Fra Mauro map",
+            "es": "Mapamundi de Fra Mauro"
+          }
+        },
+        {
+          "id": "columbus-copy",
+          "name": {
+            "en": "Columbus's copy",
+            "es": "El ejemplar de Colón"
+          },
+          "at": [
+            -5.9939,
+            37.3865
+          ],
+          "cat": "book",
+          "icon": "📖",
+          "type": "work",
+          "date": "1492",
+          "place": {
+            "en": "Biblioteca Colombina, Seville, Spain",
+            "es": "Biblioteca Colombina, Sevilla, España"
+          },
+          "text": {
+            "en": "Christopher Columbus, who sailed west to reach the lands of the Great Khan, owned a printed Latin copy of Marco's book and filled its margins with notes. It is kept in Seville.",
+            "es": "Cristóbal Colón, que navegó hacia el oeste para llegar a las tierras del gran kan, tenía un ejemplar impreso en latín del libro de Marco y llenó sus márgenes de notas. Se conserva en Sevilla."
+          },
+          "wiki": {
+            "en": "Institución Colombina",
+            "es": "Institución Colombina"
+          }
+        },
+        {
+          "id": "what-the-book-leaves-out",
+          "name": {
+            "en": "What the book leaves out",
+            "es": "Lo que el libro no cuenta"
+          },
+          "at": [
+            116.5644,
+            40.4314
+          ],
+          "cat": "book",
+          "icon": "🧱",
+          "type": "structure",
+          "date": "1995",
+          "place": {
+            "en": "The Great Wall of China, near Beijing",
+            "es": "La Gran Muralla china, cerca de Pekín"
+          },
+          "text": {
+            "en": "The book never mentions the Great Wall, tea, chopsticks, Chinese writing or foot-binding, and some have doubted that Marco reached China. Most historians answer that his exact details show he did.",
+            "es": "El libro no menciona la Gran Muralla, el té, los palillos, la escritura china ni el vendado de los pies, y hay quien duda de que Marco llegara a China. Para la mayoría de los historiadores, sus datos precisos prueban que sí."
+          },
+          "details": {
+            "en": "The silence about the Wall was first noticed in the 17th century. In 1995 the historian Frances Wood argued that Marco may never have gone further than the Black Sea and Persia. Scholars such as Stephen Haw, Peter Jackson and Hans Ulrich Vogel answered that the wall we see today was built by the Ming two centuries later, that other visitors of his time did not mention it or tea either, and that his figures on money, salt and taxes match Chinese records too closely to be hearsay. Most now agree he went, though he may have made himself more important than he was.",
+            "es": "El silencio sobre la Muralla se notó por primera vez en el siglo XVII. En 1995 la historiadora Frances Wood sostuvo que quizá Marco nunca pasó del mar Negro y Persia. Estudiosos como Stephen Haw, Peter Jackson y Hans Ulrich Vogel respondieron que la muralla que vemos hoy la construyeron los Ming dos siglos después, que otros visitantes de su época tampoco la mencionaron, ni el té, y que sus cifras sobre dinero, sal e impuestos coinciden demasiado con los registros chinos para ser de oídas. Hoy la mayoría cree que fue, aunque quizá se hizo más importante de lo que era."
+          },
+          "wiki": {
+            "en": "Great Wall of China",
+            "es": "Gran Muralla china"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Marco Polo's book gave Europe its first detailed picture of China, India and the lands between, and the names it carried, Cathay, Cipangu and Zaitun among them, filled the maps that sent Columbus west in search of the Great Khan. Read with care, it remains a precious witness to the Mongol world at its height, when goods, ideas and travellers crossed Eurasia as never before.",
+    "es": "El libro de Marco Polo dio a Europa su primera imagen detallada de China, la India y las tierras intermedias, y los nombres que trajo, entre ellos Catay, Cipango y Zaitun, llenaron los mapas que llevaron a Colón hacia el oeste en busca del gran kan. Leído con cuidado, sigue siendo un testigo valioso del mundo mongol en su apogeo, cuando mercancías, ideas y viajeros cruzaban Eurasia como nunca antes."
+  },
+  "sources": [
+    {
+      "title": "Marco Polo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Marco_Polo"
+    },
+    {
+      "title": "The Travels of Marco Polo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/The_Travels_of_Marco_Polo"
+    },
+    {
+      "title": "Niccolò and Maffeo Polo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Niccolò_and_Maffeo_Polo"
+    },
+    {
+      "title": "Kublai Khan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kublai_Khan"
+    },
+    {
+      "title": "Rustichello da Pisa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rustichello_da_Pisa"
+    },
+    {
+      "title": "Kököchin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kököchin"
+    },
+    {
+      "title": "Shangdu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shangdu"
+    },
+    {
+      "title": "Dadu (Beijing) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dadu_(Beijing)"
+    },
+    {
+      "title": "Hangzhou (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hangzhou"
+    },
+    {
+      "title": "Quanzhou (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Quanzhou"
+    },
+    {
+      "title": "Yangzhou (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yangzhou"
+    },
+    {
+      "title": "Kingdom of Hormuz (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hormuz"
+    },
+    {
+      "title": "Pope Gregory X (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pope_Gregory_X"
+    },
+    {
+      "title": "Yumurtalık (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yumurtalık"
+    },
+    {
+      "title": "Acre, Israel (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Acre,_Israel"
+    },
+    {
+      "title": "Saveh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Saveh"
+    },
+    {
+      "title": "Kerman (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kerman"
+    },
+    {
+      "title": "Qara'unas (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Qara'unas"
+    },
+    {
+      "title": "Balkh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Balkh"
+    },
+    {
+      "title": "Badakhshan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Badakhshan"
+    },
+    {
+      "title": "Pamir Mountains (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pamir_Mountains"
+    },
+    {
+      "title": "Marco Polo sheep (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Marco_Polo_sheep"
+    },
+    {
+      "title": "Kashgar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kashgar"
+    },
+    {
+      "title": "Hotan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hotan"
+    },
+    {
+      "title": "Lop Desert (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lop_Desert"
+    },
+    {
+      "title": "Hexi Corridor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hexi_Corridor"
+    },
+    {
+      "title": "Zhangye (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zhangye"
+    },
+    {
+      "title": "Jiaochao (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jiaochao"
+    },
+    {
+      "title": "Yam (route) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yam_(route)"
+    },
+    {
+      "title": "Coal (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Coal"
+    },
+    {
+      "title": "Marco Polo Bridge (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Marco_Polo_Bridge"
+    },
+    {
+      "title": "Kunming (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kunming"
+    },
+    {
+      "title": "Battle of Ngasaunggyan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Ngasaunggyan"
+    },
+    {
+      "title": "Grand Canal (China) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Grand_Canal_(China)"
+    },
+    {
+      "title": "Porcelain (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Porcelain"
+    },
+    {
+      "title": "Junk (ship) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Junk_(ship)"
+    },
+    {
+      "title": "Chinese treasure ship (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chinese_treasure_ship"
+    },
+    {
+      "title": "Samudera Pasai Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Samudera_Pasai_Sultanate"
+    },
+    {
+      "title": "Adam's Peak (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Adam's_Peak"
+    },
+    {
+      "title": "Kollam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kollam"
+    },
+    {
+      "title": "Khambhāt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khambhāt"
+    },
+    {
+      "title": "Ghazan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ghazan"
+    },
+    {
+      "title": "Empire of Trebizond (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Empire_of_Trebizond"
+    },
+    {
+      "title": "Battle of Curzola (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Curzola"
+    },
+    {
+      "title": "Palazzo San Giorgio (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Palazzo_San_Giorgio"
+    },
+    {
+      "title": "San Lorenzo, Venice (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/San_Lorenzo,_Venice"
+    },
+    {
+      "title": "Catalan Atlas (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Catalan_Atlas"
+    },
+    {
+      "title": "Fra Mauro map (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fra_Mauro_map"
+    },
+    {
+      "title": "Institución Colombina (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Institución_Colombina"
+    },
+    {
+      "title": "Great Wall of China (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Wall_of_China"
+    },
+    {
+      "title": "Sarai (city) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sarai_(city)"
+    },
+    {
+      "title": "Paiza (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Paiza"
+    }
+  ]
+}

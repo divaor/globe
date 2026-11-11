@@ -1,0 +1,2222 @@
+{
+  "id": "incense-and-spices",
+  "name": {
+    "en": "The incense and spice routes",
+    "es": "Las rutas del incienso y las especias"
+  },
+  "icon": "🛶",
+  "era": "ancient",
+  "region": {
+    "en": "Arabia, the Red Sea and the Indian Ocean",
+    "es": "Arabia, el mar Rojo y el océano Índico"
+  },
+  "start": "-1500",
+  "end": "1621",
+  "summary": {
+    "en": "For three thousand years frankincense, myrrh, pepper, cloves and nutmeg crossed Arabia by camel and the Indian Ocean on the monsoon, from Punt and Petra to Calicut and Malacca, until European guns broke in.",
+    "es": "Durante tres mil años, el incienso, la mirra, la pimienta, el clavo y la nuez moscada cruzaron Arabia en camello y el océano Índico con el monzón, de Punt y Petra a Calicut y Malaca, hasta que irrumpieron los cañones europeos."
+  },
+  "camera": {
+    "lon": 75.0,
+    "lat": 10.0,
+    "zoom": 1.4
+  },
+  "sides": [
+    {
+      "id": "egypt",
+      "name": {
+        "en": "Egypt's ships to Punt",
+        "es": "Los barcos de Egipto a Punt"
+      },
+      "color": "#5d6d7e"
+    },
+    {
+      "id": "incense",
+      "name": {
+        "en": "The Incense Road",
+        "es": "La Ruta del Incienso"
+      },
+      "color": "#8e5a2b"
+    },
+    {
+      "id": "rome",
+      "name": {
+        "en": "Roman ships to India",
+        "es": "Los barcos romanos a la India"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "monsoon",
+      "name": {
+        "en": "The monsoon sea routes",
+        "es": "Las rutas marítimas del monzón"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "portugal",
+      "name": {
+        "en": "The Portuguese",
+        "es": "Los portugueses"
+      },
+      "color": "#1e8449"
+    },
+    {
+      "id": "dutch",
+      "name": {
+        "en": "The Dutch",
+        "es": "Los neerlandeses"
+      },
+      "color": "#e67e22"
+    }
+  ],
+  "steps": [
+    {
+      "date": "-1470",
+      "title": {
+        "en": "Ships for the land of Punt",
+        "es": "Barcos hacia la tierra de Punt"
+      },
+      "camera": {
+        "lon": 37.0,
+        "lat": 21.0,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "About 1470 BC Pharaoh Hatshepsut sent five ships down the Red Sea to Punt, a land of incense. They came back with frankincense and 31 living myrrh trees.",
+        "es": "Hacia 1470 a. C., la faraona Hatshepsut envió cinco barcos por el mar Rojo hasta Punt, una tierra de incienso. Volvieron con incienso y 31 árboles de mirra vivos."
+      },
+      "details": {
+        "en": "Egypt had traded with Punt since about 2500 BC, for incense to burn in its temples, ebony, ivory, gold and wild animals. Ships were built by the Nile, taken apart, carried across the desert and put together again at Mersa Gawasis on the Red Sea; cedar planks from Hatshepsut's fleet were found there in 2005. The reliefs of her temple at Deir el-Bahari show the voyage, led by the official Nehsi, and Punt's king Parahu and queen Ati welcoming the Egyptians. Hatshepsut is said to have ground burnt frankincense into black eye paint, the first recorded use of the resin. Where was Punt? Most scholars place it in the Horn of Africa; studies of baboons mummified in Egypt point to Eritrea and nearby lands, though some argue for southwest Arabia.",
+        "es": "Egipto comerciaba con Punt desde alrededor de 2500 a. C.: incienso para quemar en sus templos, ébano, marfil, oro y animales salvajes. Los barcos se construían junto al Nilo, se desarmaban, se llevaban por el desierto y se volvían a armar en Mersa Gawasis, a orillas del mar Rojo; allí se hallaron en 2005 tablas de cedro de la flota de Hatshepsut. Los relieves de su templo de Deir el-Bahari muestran el viaje, dirigido por el funcionario Nehsi, y a Parahu y Ati, el rey y la reina de Punt, recibiendo a los egipcios. Se dice que Hatshepsut molía incienso quemado para hacer pintura negra para los ojos, el primer uso registrado de la resina. ¿Dónde estaba Punt? La mayoría de los estudiosos lo sitúa en el Cuerno de África; los estudios de babuinos momificados en Egipto apuntan a Eritrea y sus alrededores, aunque hay quien defiende el suroeste de Arabia."
+      },
+      "moves": [
+        {
+          "side": "egypt",
+          "path": [
+            [32.82, 26.0],
+            [33.25, 25.98],
+            [33.65, 26.05],
+            [33.95, 26.3],
+            [34.03, 26.55]
+          ],
+          "by": "land",
+          "icon": "🚶",
+          "label": {
+            "en": "Ships carried across the desert",
+            "es": "Barcos llevados por el desierto"
+          }
+        },
+        {
+          "side": "egypt",
+          "path": [
+            [34.03, 26.55],
+            [34.6, 25.95],
+            [35.3, 24.8],
+            [36.0, 23.55],
+            [36.9, 22.3],
+            [37.45, 21.2],
+            [37.85, 19.9],
+            [38.55, 18.4],
+            [39.25, 17.0],
+            [39.75, 15.95],
+            [39.7, 15.35]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Hatshepsut's fleet, about 1470 BC",
+            "es": "La flota de Hatshepsut, hacia 1470 a. C."
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "hatshepsut-punt",
+          "name": {
+            "en": "Hatshepsut's expedition",
+            "es": "La expedición de Hatshepsut"
+          },
+          "at": [32.6067, 25.738],
+          "cat": "event",
+          "type": "event",
+          "date": "-1470",
+          "place": {
+            "en": "Reliefs at Deir el-Bahari, Luxor, Egypt",
+            "es": "Relieves de Deir el-Bahari, Luxor (Egipto)"
+          },
+          "text": {
+            "en": "About 1470 BC, in year 9 of her reign, Pharaoh Hatshepsut sent five ships to Punt. Reliefs in her temple at Deir el-Bahari show the voyage and incense trees carried home in pots.",
+            "es": "Hacia 1470 a. C., en el noveno año de su reinado, la faraona Hatshepsut envió cinco barcos a Punt. Los relieves de su templo de Deir el-Bahari muestran el viaje y los árboles de incienso traídos en macetas."
+          },
+          "wiki": {
+            "en": "Hatshepsut",
+            "es": "Hatshepsut"
+          }
+        },
+        {
+          "id": "punt",
+          "name": {
+            "en": "The land of Punt",
+            "es": "La tierra de Punt"
+          },
+          "at": [39.2, 15.6],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "-2500",
+          "until": "-980",
+          "place": {
+            "en": "Probably the coast of Eritrea and the Horn of Africa",
+            "es": "Probablemente la costa de Eritrea y el Cuerno de África"
+          },
+          "text": {
+            "en": "A land of incense, ebony, gold and ivory, ruled in Hatshepsut's day by King Parahu and Queen Ati. Its place is debated; most scholars put it in the Horn of Africa, around Eritrea.",
+            "es": "Una tierra de incienso, ébano, oro y marfil, gobernada en tiempos de Hatshepsut por el rey Parahu y la reina Ati. Su ubicación se discute; la mayoría la sitúa en el Cuerno de África, en torno a Eritrea."
+          },
+          "wiki": {
+            "en": "Land of Punt",
+            "es": "Punt"
+          }
+        },
+        {
+          "id": "mersa-gawasis",
+          "name": {
+            "en": "Mersa Gawasis",
+            "es": "Mersa Gawasis"
+          },
+          "at": [34.0364, 26.5572],
+          "cat": "port",
+          "type": "site",
+          "date": "-1950",
+          "place": {
+            "en": "Red Sea coast, Egypt",
+            "es": "Costa del mar Rojo (Egipto)"
+          },
+          "text": {
+            "en": "Egypt's harbour for Punt, called Saww. Ships were carried across the desert in pieces and put together here; cedar planks from Hatshepsut's fleet were found in 2005.",
+            "es": "El puerto egipcio para Punt, llamado Saww. Los barcos se llevaban por el desierto en piezas y se armaban aquí; en 2005 se hallaron tablas de cedro de la flota de Hatshepsut."
+          },
+          "wiki": {
+            "en": "Mersa Gawasis",
+            "es": ""
+          }
+        },
+        {
+          "id": "myrrh",
+          "name": {
+            "en": "Myrrh",
+            "es": "Mirra"
+          },
+          "at": [45.5, 10.3],
+          "cat": "goods",
+          "type": "goods",
+          "date": "-2450",
+          "place": {
+            "en": "Horn of Africa and southern Arabia",
+            "es": "Cuerno de África y sur de Arabia"
+          },
+          "text": {
+            "en": "A bitter, fragrant resin from thorny Commiphora trees of Somalia, Ethiopia, Eritrea, Yemen and Oman. Egyptians burned it in temples and, with natron, used it to embalm the dead.",
+            "es": "Una resina amarga y fragante de los espinosos árboles Commiphora de Somalia, Etiopía, Eritrea, Yemen y Omán. Los egipcios la quemaban en los templos y, con natrón, la usaban para embalsamar a los muertos."
+          },
+          "wiki": {
+            "en": "Myrrh",
+            "es": "Mirra"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-300",
+      "title": {
+        "en": "The frankincense coast",
+        "es": "La costa del incienso"
+      },
+      "camera": {
+        "lon": 50.5,
+        "lat": 15.8,
+        "zoom": 4.5
+      },
+      "text": {
+        "en": "Frankincense grew in Dhofar, Hadramawt and Somalia. From ports like Sumhuram, founded in the 3rd century BC, boats carried it to Qana, and camels took it on to Shabwa.",
+        "es": "El incienso crecía en Dhofar, Hadramaut y Somalia. Desde puertos como Sumhuram, fundado en el siglo III a. C., los barcos lo llevaban a Qana, y los camellos, de allí a Shabwa."
+      },
+      "details": {
+        "en": "Frankincense is the dried resin, or \"tears\", of Boswellia trees, tapped two or three times a year; myrrh comes from the thorny Commiphora trees of the same lands. Burned in temples from Egypt to Babylon and Rome, frankincense was at times worth more than gold. The kingdom of Hadramawt, whose capital was Shabwa, guarded the trade, and its fortified port of Sumhuram, at Khor Rori in Dhofar, shipped the incense west along the coast. A Greek guide of the 1st century AD says that all the frankincense of the country was brought by camels to Shabwa to be stored, and to the port of Qana on rafts held up by inflated skins, and in boats. Kings taxed it and the owners of wells along the roads charged tolls, so the price rose at every stage. Dhofar's frankincense trees and old ports are now a World Heritage Site.",
+        "es": "El incienso es la resina seca, o «lágrimas», de los árboles Boswellia, que se sangran dos o tres veces al año; la mirra viene de los espinosos árboles Commiphora de las mismas tierras. Quemado en templos de Egipto a Babilonia y Roma, el incienso llegó a valer más que el oro. El reino de Hadramaut, con capital en Shabwa, vigilaba el comercio, y su puerto fortificado de Sumhuram, en Khor Rori (Dhofar), enviaba el incienso hacia el oeste por la costa. Una guía griega del siglo I cuenta que todo el incienso del país se llevaba en camellos a Shabwa para guardarlo, y al puerto de Qana en balsas sostenidas por odres inflados y en barcas. Los reyes le cobraban impuestos y los dueños de los pozos de los caminos cobraban peajes, así que el precio subía en cada etapa. Hoy los árboles del incienso y los antiguos puertos de Dhofar son Patrimonio de la Humanidad."
+      },
+      "moves": [
+        {
+          "side": "incense",
+          "path": [
+            [54.43, 16.98],
+            [53.4, 16.35],
+            [52.35, 15.4],
+            [51.0, 14.9],
+            [49.8, 14.5],
+            [49.2, 14.25],
+            [48.7, 13.95],
+            [48.38, 13.98]
+          ],
+          "by": "sea",
+          "icon": "🛶",
+          "label": {
+            "en": "Along the coast to Qana",
+            "es": "Por la costa hasta Qana"
+          }
+        },
+        {
+          "side": "incense",
+          "path": [
+            [48.34, 14.02],
+            [47.95, 14.45],
+            [47.45, 14.95],
+            [47.02, 15.37]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        }
+      ],
+      "places": [
+        {
+          "id": "frankincense",
+          "name": {
+            "en": "Frankincense",
+            "es": "Incienso (olíbano)"
+          },
+          "at": [54.03, 17.25],
+          "cat": "goods",
+          "type": "goods",
+          "date": "-2500",
+          "place": {
+            "en": "Dhofar, Oman",
+            "es": "Dhofar (Omán)"
+          },
+          "text": {
+            "en": "The dried resin, or \"tears\", of Boswellia trees of Dhofar, Hadramawt, Somalia and Ethiopia. Burned in temples from Egypt to Rome, it was at times worth more than gold.",
+            "es": "La resina seca, o «lágrimas», de los árboles Boswellia de Dhofar, Hadramaut, Somalia y Etiopía. Se quemaba en templos de Egipto a Roma y a veces valía más que el oro."
+          },
+          "details": {
+            "en": "Tappers cut the bark two or three times a year; the resin oozes out and hardens into milky lumps that are sorted by hand. The trees begin to give resin at eight to ten years old. The English name comes from Old French franc encens, \"true incense\". The Bible names it among the gifts of the Magi, and many churches still burn it. Today most frankincense comes from the Horn of Africa, and overtapping and the clearing of woodlands threaten the trees.",
+            "es": "Los recolectores hacen cortes en la corteza dos o tres veces al año; la resina brota y se endurece en grumos lechosos que se clasifican a mano. Los árboles empiezan a dar resina a los ocho o diez años. Su nombre inglés viene del francés antiguo franc encens, «incienso verdadero». La Biblia lo cuenta entre los regalos de los Reyes Magos, y muchas iglesias aún lo queman. Hoy la mayor parte del incienso viene del Cuerno de África, y el exceso de cortes y la tala de los bosques amenazan a los árboles."
+          },
+          "wiki": {
+            "en": "Frankincense",
+            "es": "Olíbano"
+          }
+        },
+        {
+          "id": "sumhuram",
+          "name": {
+            "en": "Sumhuram (Khor Rori)",
+            "es": "Sumhuram (Khor Rori)"
+          },
+          "at": [54.4344, 17.039],
+          "cat": "port",
+          "type": "site",
+          "date": "-250",
+          "place": {
+            "en": "Khor Rori, Dhofar, Oman",
+            "es": "Khor Rori, Dhofar (Omán)"
+          },
+          "text": {
+            "en": "A walled port built by the kingdom of Hadramawt in the 3rd century BC on a lagoon in Dhofar, to ship the region's frankincense west. It is part of the Land of Frankincense World Heritage Site.",
+            "es": "Un puerto amurallado que el reino de Hadramaut construyó en el siglo III a. C. junto a una laguna de Dhofar para enviar el incienso de la región hacia el oeste. Forma parte del sitio de Patrimonio Mundial Tierra del Incienso."
+          },
+          "wiki": {
+            "en": "Khor Rori",
+            "es": ""
+          }
+        },
+        {
+          "id": "qana",
+          "name": {
+            "en": "Qana",
+            "es": "Qana"
+          },
+          "at": [48.3419, 14.025],
+          "cat": "port",
+          "type": "site",
+          "date": "50",
+          "place": {
+            "en": "Bir Ali, Shabwah, Yemen",
+            "es": "Bir Ali, Shabwa (Yemen)"
+          },
+          "text": {
+            "en": "The frankincense port of Hadramawt. A Greek guide of the 1st century AD says incense reached it on rafts buoyed by inflated skins, and that ships sailed from here to India and Persia.",
+            "es": "El puerto del incienso de Hadramaut. Una guía griega del siglo I dice que el incienso llegaba en balsas sostenidas por odres inflados, y que desde aquí zarpaban barcos a la India y Persia."
+          },
+          "wiki": {
+            "en": "Bir Ali",
+            "es": ""
+          }
+        },
+        {
+          "id": "shabwa",
+          "name": {
+            "en": "Shabwa",
+            "es": "Shabwa"
+          },
+          "at": [47.0236, 15.3689],
+          "cat": "city",
+          "type": "place",
+          "date": "-1250",
+          "until": "300",
+          "place": {
+            "en": "Shabwah, Yemen",
+            "es": "Shabwa (Yemen)"
+          },
+          "text": {
+            "en": "The capital of the kingdom of Hadramawt, where all the frankincense of the country had to be brought by camel to be stored and taxed. The Himyarites destroyed it in the late 3rd century AD.",
+            "es": "La capital del reino de Hadramaut, adonde había que llevar en camello todo el incienso del país para guardarlo y cobrarle impuestos. Los himyaritas la destruyeron a fines del siglo III."
+          },
+          "wiki": {
+            "en": "Shabwa",
+            "es": "Shabwa"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-200",
+      "title": {
+        "en": "The Incense Road",
+        "es": "La Ruta del Incienso"
+      },
+      "camera": {
+        "lon": 42.5,
+        "lat": 21.0,
+        "zoom": 3.4
+      },
+      "text": {
+        "en": "Camel caravans carried incense and myrrh north from Shabwa through Marib and Najran, along the edge of the mountains, to the oasis of Hegra. This road flourished from about 300 BC.",
+        "es": "Las caravanas de camellos llevaban el incienso y la mirra hacia el norte, de Shabwa a Marib y Najrán, y por el borde de las montañas hasta el oasis de Hegra. Esta ruta floreció desde alrededor del 300 a. C."
+      },
+      "details": {
+        "en": "The one-humped camel, tamed in Arabia long before, could cross deserts that no donkey could. The incense kingdoms of southern Arabia, Saba with its capital at Marib, Qataban, Ma'in and Hadramawt, grew rich on the trade; at Marib the Sabaeans built a great dam that watered their fields for more than a thousand years. Najran, a fertile oasis, stood where the caravan roads met, and the Bible names the merchants of Sheba and Raamah, often taken to be Saba and Najran, trading spices, precious stones and gold. Caravans watered at wells and paid tolls at each oasis on the way north, past Mecca and Yathrib (Medina) to the Nabataean town of Hegra. Empires fought for the road: the Assyrian king Tiglath-Pileser III attacked Gaza, at its northern end, to control the trade, and around 25 BC a Roman army took Najran and besieged Marib before retreating with heavy losses.",
+        "es": "El camello de una joroba, domesticado en Arabia mucho antes, podía cruzar desiertos que ningún burro cruzaba. Los reinos del incienso del sur de Arabia, Saba con su capital en Marib, Qatabán, Main y Hadramaut, se enriquecieron con el comercio; en Marib los sabeos construyeron una gran presa que regó sus campos durante más de mil años. Najrán, un oasis fértil, estaba donde se unían los caminos de caravanas, y la Biblia nombra a los mercaderes de Sabá y Raama, que a menudo se identifican con Saba y Najrán, comerciando especias, piedras preciosas y oro. Las caravanas bebían en los pozos y pagaban peajes en cada oasis rumbo al norte, pasando por La Meca y Yatrib (Medina) hasta la ciudad nabatea de Hegra. Los imperios lucharon por la ruta: el rey asirio Tiglatpileser III atacó Gaza, en su extremo norte, para controlar el comercio, y hacia el 25 a. C. un ejército romano tomó Najrán y sitió Marib antes de retirarse con grandes pérdidas."
+      },
+      "moves": [
+        {
+          "side": "incense",
+          "path": [
+            [47.02, 15.37],
+            [46.3, 15.1],
+            [45.75, 14.95],
+            [45.33, 15.43],
+            [44.95, 16.0],
+            [44.13, 17.49],
+            [43.4, 18.7],
+            [42.5, 20.0],
+            [41.1, 21.0],
+            [39.83, 21.42],
+            [39.65, 22.9],
+            [39.61, 24.47],
+            [38.85, 25.6],
+            [37.92, 26.62],
+            [37.95, 26.79]
+          ],
+          "by": "land",
+          "icon": "🐪",
+          "label": {
+            "en": "The Incense Road",
+            "es": "La Ruta del Incienso"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "marib",
+          "name": {
+            "en": "Marib",
+            "es": "Marib"
+          },
+          "at": [45.3258, 15.4625],
+          "cat": "city",
+          "type": "place",
+          "date": "-700",
+          "place": {
+            "en": "Marib, Yemen",
+            "es": "Marib (Yemen)"
+          },
+          "text": {
+            "en": "The capital of Saba, which many identify with the Bible's Sheba. Its kings grew rich on frankincense and myrrh, and their great dam watered the fields for more than a thousand years.",
+            "es": "La capital de Saba, que muchos identifican con la Sabá de la Biblia. Sus reyes se enriquecieron con el incienso y la mirra, y su gran presa regó los campos durante más de mil años."
+          },
+          "wiki": {
+            "en": "Marib",
+            "es": "Marib"
+          }
+        },
+        {
+          "id": "najran",
+          "name": {
+            "en": "Najran",
+            "es": "Najrán"
+          },
+          "at": [44.1322, 17.4917],
+          "cat": "caravan",
+          "type": "place",
+          "date": "-700",
+          "place": {
+            "en": "Najran, Saudi Arabia",
+            "es": "Najrán (Arabia Saudita)"
+          },
+          "text": {
+            "en": "A fertile oasis where caravan roads from Hadramawt and Saba met before heading north. Its merchants may be the \"merchants of Raamah\" who, in the Bible, trade spices, gems and gold.",
+            "es": "Un oasis fértil donde se unían los caminos de caravanas de Hadramaut y Saba antes de seguir al norte. Sus mercaderes quizá sean los «mercaderes de Raama» que, en la Biblia, comercian especias, piedras preciosas y oro."
+          },
+          "wiki": {
+            "en": "Najran",
+            "es": "Najrán"
+          }
+        },
+        {
+          "id": "dromedary",
+          "name": {
+            "en": "The dromedary",
+            "es": "El dromedario"
+          },
+          "at": [46.2, 15.75],
+          "cat": "caravan",
+          "icon": "🐪",
+          "type": "animal",
+          "date": "-3000",
+          "place": {
+            "en": "Southern Arabia",
+            "es": "Sur de Arabia"
+          },
+          "text": {
+            "en": "The one-humped camel, first tamed in southern Arabia thousands of years ago. Strong, docile and at home in the driest lands, it made the long desert caravans possible.",
+            "es": "El camello de una joroba, domesticado por primera vez en el sur de Arabia hace miles de años. Fuerte, dócil y hecho para las tierras más secas, hizo posibles las largas caravanas del desierto."
+          },
+          "wiki": {
+            "en": "Dromedary",
+            "es": "Camelus dromedarius"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-50",
+      "title": {
+        "en": "The Nabataeans of Petra",
+        "es": "Los nabateos de Petra"
+      },
+      "camera": {
+        "lon": 36.0,
+        "lat": 29.0,
+        "zoom": 4.6
+      },
+      "text": {
+        "en": "The Nabataeans, Arab caravan traders, ran the northern end of the road. From their rock-cut capital, Petra, the incense went on to Gaza and the Mediterranean.",
+        "es": "Los nabateos, mercaderes árabes de caravanas, controlaban el extremo norte de la ruta. Desde su capital tallada en la roca, Petra, el incienso seguía hasta Gaza y el Mediterráneo."
+      },
+      "details": {
+        "en": "The Nabataeans first appear in history in 312 BC, when a Greek army attacked them and failed. They knew the desert: they hid their rainwater in bottle-shaped cisterns that invaders could not find, and they grew rich on frankincense, myrrh and spices from southern Arabia. Petra, their capital from the 2nd century BC, stood where the incense road crossed the roads to Gaza and to Damascus. Hegra, their second city, still has more than 110 tombs carved into its sandstone, and towns such as Avdat watched over the road across the Negev desert. At Gaza the incense was loaded onto ships for the whole Mediterranean. Rome annexed the kingdom in AD 106, and as more goods came by sea, Petra slowly declined.",
+        "es": "Los nabateos aparecen por primera vez en la historia en 312 a. C., cuando un ejército griego los atacó sin éxito. Conocían el desierto: escondían el agua de lluvia en cisternas con forma de botella que los invasores no podían encontrar, y se enriquecieron con el incienso, la mirra y las especias del sur de Arabia. Petra, su capital desde el siglo II a. C., estaba donde la ruta del incienso se cruzaba con los caminos a Gaza y a Damasco. Hegra, su segunda ciudad, conserva más de 110 tumbas talladas en la arenisca, y ciudades como Avdat vigilaban el camino por el desierto del Néguev. En Gaza el incienso se cargaba en barcos para todo el Mediterráneo. Roma anexó el reino en el año 106, y a medida que más mercancías llegaban por mar, Petra fue decayendo."
+      },
+      "moves": [
+        {
+          "side": "incense",
+          "path": [
+            [37.95, 26.79],
+            [37.2, 27.65],
+            [36.57, 28.38],
+            [35.95, 29.45],
+            [35.44, 30.33],
+            [35.05, 30.62],
+            [34.77, 30.79],
+            [34.6, 31.15],
+            [34.46, 31.51]
+          ],
+          "by": "land",
+          "icon": "🐪",
+          "label": {
+            "en": "To Petra and Gaza",
+            "es": "A Petra y Gaza"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "hegra",
+          "name": {
+            "en": "Hegra (Mada'in Salih)",
+            "es": "Hegra (Mada'in Salih)"
+          },
+          "at": [37.9528, 26.7917],
+          "cat": "caravan",
+          "type": "site",
+          "date": "-50",
+          "place": {
+            "en": "Al-'Ula, Saudi Arabia",
+            "es": "Al-Ula (Arabia Saudita)"
+          },
+          "text": {
+            "en": "The southern city of the Nabataeans, an oasis of deep wells on the incense road. More than 110 tombs carved into its sandstone made it Saudi Arabia's first World Heritage Site.",
+            "es": "La ciudad del sur de los nabateos, un oasis de pozos profundos en la ruta del incienso. Sus más de 110 tumbas talladas en la arenisca la convirtieron en el primer sitio de Patrimonio Mundial de Arabia Saudita."
+          },
+          "wiki": {
+            "en": "Hegra",
+            "es": "Mada'in Saleh"
+          }
+        },
+        {
+          "id": "petra",
+          "name": {
+            "en": "Petra",
+            "es": "Petra"
+          },
+          "at": [35.4403, 30.3289],
+          "cat": "city",
+          "type": "place",
+          "date": "-150",
+          "place": {
+            "en": "Petra, Jordan",
+            "es": "Petra (Jordania)"
+          },
+          "text": {
+            "en": "The rock-cut capital of the Nabataeans, where the incense road met the roads to Gaza and Damascus. About 20,000 people lived here in the 1st century AD.",
+            "es": "La capital de los nabateos, tallada en la roca, donde la ruta del incienso se cruzaba con los caminos a Gaza y Damasco. En el siglo I vivían aquí unas 20 000 personas."
+          },
+          "details": {
+            "en": "Petra lies in a valley closed by cliffs; the Nabataeans caught every drop of rain in channels and cisterns and farmed the desert around it. Its most famous monument, the Treasury, may be the tomb of King Aretas IV, of the 1st century AD. Under Roman rule, from AD 106, the city still prospered, but as more goods went by sea it declined, and an earthquake in 363 destroyed much of it.",
+            "es": "Petra está en un valle cerrado por acantilados; los nabateos recogían cada gota de lluvia en canales y cisternas y cultivaban el desierto que la rodea. Su monumento más famoso, el Tesoro, quizá sea la tumba del rey Aretas IV, del siglo I. Bajo el dominio romano, desde el año 106, la ciudad siguió prosperando, pero a medida que más mercancías viajaban por mar decayó, y un terremoto en 363 destruyó gran parte de ella."
+          },
+          "wiki": {
+            "en": "Petra",
+            "es": "Petra"
+          }
+        },
+        {
+          "id": "avdat",
+          "name": {
+            "en": "Avdat and the Negev road",
+            "es": "Avdat y el camino del Néguev"
+          },
+          "at": [34.7731, 30.7944],
+          "cat": "caravan",
+          "type": "site",
+          "date": "-300",
+          "place": {
+            "en": "Negev desert, Israel",
+            "es": "Desierto del Néguev (Israel)"
+          },
+          "text": {
+            "en": "One of the Nabataean towns, with forts and caravanserais, that guarded the last stretch of the road across the Negev desert from Petra to Gaza. They are a World Heritage Site.",
+            "es": "Una de las ciudades nabateas, con fuertes y caravasares, que vigilaban el último tramo del camino por el desierto del Néguev, de Petra a Gaza. Son Patrimonio de la Humanidad."
+          },
+          "wiki": {
+            "en": "Incense trade route",
+            "es": "Ruta del incienso"
+          }
+        },
+        {
+          "id": "gaza",
+          "name": {
+            "en": "Gaza",
+            "es": "Gaza"
+          },
+          "at": [34.4597, 31.5075],
+          "cat": "port",
+          "type": "place",
+          "date": "-1450",
+          "place": {
+            "en": "Gaza City",
+            "es": "Ciudad de Gaza"
+          },
+          "text": {
+            "en": "The Mediterranean port at the end of the Incense Road, one of the oldest cities in the world. From here frankincense and myrrh were shipped to Greece, Rome and beyond.",
+            "es": "El puerto mediterráneo al final de la Ruta del Incienso, una de las ciudades más antiguas del mundo. Desde aquí el incienso y la mirra se embarcaban hacia Grecia, Roma y más allá."
+          },
+          "wiki": {
+            "en": "Gaza City",
+            "es": "Gaza"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-25",
+      "title": {
+        "en": "Rome turns to the sea",
+        "es": "Roma se vuelve hacia el mar"
+      },
+      "camera": {
+        "lon": 37.5,
+        "lat": 20.0,
+        "zoom": 3.4
+      },
+      "text": {
+        "en": "After Rome took Egypt in 30 BC, up to 120 ships a year sailed for India from Myos Hormos and Berenice, Red Sea ports linked to the Nile by desert roads.",
+        "es": "Después de que Roma tomara Egipto en el 30 a. C., hasta 120 barcos al año zarpaban hacia la India desde Myos Hormos y Berenice, puertos del mar Rojo unidos al Nilo por caminos del desierto."
+      },
+      "details": {
+        "en": "The geographer Strabo travelled up the Nile with the Roman governor Aelius Gallus around 25 BC and learned that as many as 120 ships were sailing from Myos Hormos to India, where under the Ptolemies only a few had dared. The Ptolemies had founded these ports in the 3rd century BC, Berenice in 275 BC. From Coptos on the Nile, caravans crossed the desert to the coast, about 11 days to Berenice along a road with watering stations; the goods went on down the Nile to Alexandria and the Mediterranean. At Berenice archaeologists have found 7.5 kg of Indian black pepper in a temple, teak reused from Indian-built ships, Indian cooking pots and a Tamil inscription, signs that South Indian merchants lived there. Rome's attempt to seize the incense lands by land, Gallus's march on Marib, had failed.",
+        "es": "El geógrafo Estrabón remontó el Nilo con el gobernador romano Elio Galo hacia el 25 a. C. y supo que hasta 120 barcos zarpaban de Myos Hormos hacia la India, cuando bajo los Ptolomeos solo unos pocos se habían atrevido. Los Ptolomeos habían fundado estos puertos en el siglo III a. C., Berenice en 275 a. C. Desde Coptos, a orillas del Nilo, las caravanas cruzaban el desierto hasta la costa, unos 11 días hasta Berenice por un camino con aguadas; las mercancías seguían Nilo abajo hasta Alejandría y el Mediterráneo. En Berenice los arqueólogos hallaron 7,5 kg de pimienta negra india en un templo, teca de barcos construidos en la India, ollas indias y una inscripción en tamil, señales de que allí vivían mercaderes del sur de la India. El intento de Roma de apoderarse por tierra de las tierras del incienso, la marcha de Galo sobre Marib, había fracasado."
+      },
+      "moves": [
+        {
+          "side": "rome",
+          "path": [
+            [32.82, 26.0],
+            [33.25, 25.98],
+            [33.7, 26.05],
+            [34.24, 26.15]
+          ],
+          "by": "land",
+          "icon": "🐪",
+          "label": {
+            "en": "The desert road from the Nile",
+            "es": "El camino del desierto desde el Nilo"
+          }
+        },
+        {
+          "side": "rome",
+          "path": [
+            [34.27, 26.12],
+            [34.65, 25.85],
+            [35.3, 24.8],
+            [36.0, 23.55],
+            [36.9, 22.3],
+            [37.45, 21.2],
+            [38.6, 19.7],
+            [40.0, 17.7],
+            [41.5, 15.4],
+            [42.45, 13.85],
+            [43.0, 13.1],
+            [43.45, 12.62]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Down the Red Sea",
+            "es": "Por el mar Rojo"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "coptos",
+          "name": {
+            "en": "Coptos",
+            "es": "Coptos"
+          },
+          "at": [32.8158, 25.9956],
+          "cat": "city",
+          "type": "place",
+          "date": "-275",
+          "place": {
+            "en": "Qift, Egypt",
+            "es": "Qift (Egipto)"
+          },
+          "text": {
+            "en": "A Nile city where the desert roads to the Red Sea began. Caravans carried goods between its river harbour and the ports of Myos Hormos and Berenice.",
+            "es": "Una ciudad del Nilo donde empezaban los caminos del desierto hacia el mar Rojo. Las caravanas llevaban mercancías entre su puerto fluvial y los puertos de Myos Hormos y Berenice."
+          },
+          "wiki": {
+            "en": "Qift",
+            "es": "Coptos"
+          }
+        },
+        {
+          "id": "myos-hormos",
+          "name": {
+            "en": "Myos Hormos",
+            "es": "Myos Hormos"
+          },
+          "at": [34.2417, 26.1567],
+          "cat": "port",
+          "type": "site",
+          "date": "-270",
+          "place": {
+            "en": "Quseir al-Qadim, Egypt",
+            "es": "Quseir al-Qadim (Egipto)"
+          },
+          "text": {
+            "en": "A Red Sea port founded by the Ptolemies. Strabo heard that up to 120 ships a year sailed from here to India; Tamil inscriptions show that South Indian merchants came here too.",
+            "es": "Un puerto del mar Rojo fundado por los Ptolomeos. Estrabón supo que hasta 120 barcos al año zarpaban de aquí hacia la India; inscripciones en tamil muestran que también llegaban mercaderes del sur de la India."
+          },
+          "wiki": {
+            "en": "Myos Hormos",
+            "es": "Mios Hormos"
+          }
+        },
+        {
+          "id": "berenice",
+          "name": {
+            "en": "Berenice",
+            "es": "Berenice"
+          },
+          "at": [35.4725, 23.9086],
+          "cat": "port",
+          "type": "site",
+          "date": "-275",
+          "until": "600",
+          "place": {
+            "en": "Red Sea coast, Egypt",
+            "es": "Costa del mar Rojo (Egipto)"
+          },
+          "text": {
+            "en": "A port founded in 275 BC by Ptolemy II. Archaeologists found 7.5 kg of Indian pepper in a temple here, Indian teak from old ships and signs that Tamil merchants lived in the town.",
+            "es": "Un puerto fundado en 275 a. C. por Ptolomeo II. Los arqueólogos hallaron aquí 7,5 kg de pimienta india en un templo, teca india de barcos viejos y señales de que en la ciudad vivían mercaderes tamiles."
+          },
+          "wiki": {
+            "en": "Berenice Troglodytica",
+            "es": "Berenice Troglodítica"
+          }
+        }
+      ]
+    },
+    {
+      "date": "60",
+      "title": {
+        "en": "With the monsoon to Muziris",
+        "es": "Con el monzón a Muziris"
+      },
+      "camera": {
+        "lon": 60.0,
+        "lat": 14.0,
+        "zoom": 2.4
+      },
+      "text": {
+        "en": "Greek and Egyptian sailors learned to cross the open Arabian Sea on the monsoon winds. A merchants' guide of about AD 60, the Periplus, sent them to Muziris for pepper.",
+        "es": "Marinos griegos y egipcios aprendieron a cruzar el mar Arábigo abierto con los vientos del monzón. Una guía para mercaderes escrita hacia el año 60, el Periplo, los enviaba a Muziris por pimienta."
+      },
+      "details": {
+        "en": "Arab and Indian sailors had long used the monsoon, which blows from the southwest in summer and from the northeast in winter. The Greeks credited a navigator called Hippalus with finding the direct route, and the wind took his name. Ships left Egypt about July; with the wind behind them, Pliny wrote, they could reach Muziris in 40 days from the mouth of the Red Sea, and they sailed home in the winter. The Periplus of the Erythraean Sea lists the ports, goods and kings from Egypt to India: frankincense from Qana, cotton cloth from Barygaza, and from the Horn of Africa ivory, myrrh and enslaved people. At Muziris, on the Periyar River in the Chera kingdom, a Tamil poem tells of the Yavanas' ships \"arriving with gold and departing with pepper\". A papyrus of the 2nd century AD values one cargo from Muziris, on the ship Hermapollon, at about 9 million sesterces.",
+        "es": "Los marinos árabes e indios usaban desde hacía mucho el monzón, que sopla desde el suroeste en verano y desde el noreste en invierno. Los griegos atribuyeron a un navegante llamado Hípalo el hallazgo de la ruta directa, y el viento tomó su nombre. Los barcos salían de Egipto hacia julio; con el viento a favor, escribió Plinio, llegaban a Muziris en 40 días desde la boca del mar Rojo, y volvían en invierno. El Periplo del mar Eritreo enumera los puertos, las mercancías y los reyes de Egipto a la India: incienso de Qana, telas de algodón de Barigaza y, del Cuerno de África, marfil, mirra y personas esclavizadas. Sobre Muziris, en el río Periyar, en el reino chera, un poema tamil habla de los barcos de los yavanas que «llegan con oro y se van con pimienta». Un papiro del siglo II valora un solo cargamento de Muziris, en el barco Hermapolón, en unos 9 millones de sestercios."
+      },
+      "moves": [
+        {
+          "side": "rome",
+          "path": [
+            [43.45, 12.62],
+            [44.5, 12.35],
+            [46.5, 12.3],
+            [49.5, 12.15],
+            [52.0, 11.9],
+            [54.0, 11.7],
+            [60.0, 11.3],
+            [68.0, 10.8],
+            [74.0, 10.35],
+            [76.15, 10.18]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "With the monsoon, about AD 60",
+            "es": "Con el monzón, hacia el año 60"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "periplus",
+          "name": {
+            "en": "The Periplus of the Erythraean Sea",
+            "es": "El Periplo del mar Eritreo"
+          },
+          "at": [35.52, 23.96],
+          "cat": "book",
+          "type": "work",
+          "date": "60",
+          "place": {
+            "en": "Written in Roman Egypt, perhaps at Berenice",
+            "es": "Escrito en el Egipto romano, quizá en Berenice"
+          },
+          "text": {
+            "en": "A Greek guide for merchants, written around AD 40–70, that lists the ports, goods, winds and kings from Egypt to India and down the coast of East Africa.",
+            "es": "Una guía griega para mercaderes, escrita hacia los años 40–70, que enumera los puertos, las mercancías, los vientos y los reyes de Egipto a la India y a lo largo de la costa de África oriental."
+          },
+          "wiki": {
+            "en": "Periplus of the Erythraean Sea",
+            "es": "Periplo del mar Eritreo"
+          }
+        },
+        {
+          "id": "monsoon-winds",
+          "name": {
+            "en": "The monsoon winds",
+            "es": "Los vientos del monzón"
+          },
+          "at": [62.0, 11.0],
+          "cat": "nature",
+          "date": "-100",
+          "place": {
+            "en": "The Arabian Sea",
+            "es": "El mar Arábigo"
+          },
+          "text": {
+            "en": "Winds that blow across the Indian Ocean from the southwest in summer and from the northeast in winter. Romans named the summer wind Hippalus, after a Greek sailor said to have found the direct route.",
+            "es": "Vientos que soplan sobre el océano Índico desde el suroeste en verano y desde el noreste en invierno. Los romanos llamaron Hípalo al viento de verano, por un marino griego que, según se decía, halló la ruta directa."
+          },
+          "wiki": {
+            "en": "Hippalus",
+            "es": "Hípalo"
+          }
+        },
+        {
+          "id": "muziris",
+          "name": {
+            "en": "Muziris",
+            "es": "Muziris"
+          },
+          "at": [76.2134, 10.1554],
+          "cat": "port",
+          "type": "site",
+          "date": "-100",
+          "place": {
+            "en": "Pattanam, near Kodungallur, Kerala, India",
+            "es": "Pattanam, cerca de Kodungallur, Kerala (India)"
+          },
+          "text": {
+            "en": "The pepper port of the Chera kings, near the mouth of the Periyar River. Pliny called it India's first market; digs at Pattanam since 2007 may have found it.",
+            "es": "El puerto de la pimienta de los reyes chera, cerca de la desembocadura del río Periyar. Plinio lo llamó el primer mercado de la India; las excavaciones en Pattanam desde 2007 quizá lo hayan encontrado."
+          },
+          "details": {
+            "en": "Big Roman freighters anchored off the coast while local boats carried their cargoes up the river. Tamil poems describe sacks of pepper heaped by the river and the gold that the Yavanas, the westerners, brought to pay for it, and a Roman road map marks a temple of Augustus nearby. Muziris later vanished from the maps, perhaps after a great flood of the Periyar in 1341.",
+            "es": "Los grandes cargueros romanos fondeaban frente a la costa mientras barcas locales llevaban la carga río arriba. Los poemas tamiles describen sacos de pimienta amontonados junto al río y el oro que traían los yavanas, los occidentales, para pagarla, y un mapa romano de caminos marca cerca un templo de Augusto. Más tarde Muziris desapareció de los mapas, quizá tras una gran crecida del Periyar en 1341."
+          },
+          "wiki": {
+            "en": "Muziris",
+            "es": ""
+          }
+        },
+        {
+          "id": "pepper",
+          "name": {
+            "en": "Black pepper",
+            "es": "Pimienta negra"
+          },
+          "at": [76.75, 10.45],
+          "cat": "goods",
+          "type": "goods",
+          "date": "-1213",
+          "place": {
+            "en": "Malabar Coast, Kerala, India",
+            "es": "Costa de Malabar, Kerala (India)"
+          },
+          "text": {
+            "en": "The dried berries of a vine of the rainy Malabar hills, in Roman times its only source. Rome bought so much that Pliny complained of the gold that drained away to India.",
+            "es": "Las bayas secas de una enredadera de las lluviosas colinas de Malabar, en tiempos romanos su única fuente. Roma compraba tanta que Plinio se quejó del oro que se iba a la India."
+          },
+          "wiki": {
+            "en": "Black pepper",
+            "es": "Piper nigrum"
+          }
+        }
+      ]
+    },
+    {
+      "date": "673",
+      "title": {
+        "en": "Srivijaya and the Strait",
+        "es": "Srivijaya y el estrecho"
+      },
+      "camera": {
+        "lon": 103.0,
+        "lat": 9.0,
+        "zoom": 2.4
+      },
+      "text": {
+        "en": "From about 670, Srivijaya, a Malay kingdom based at Palembang, controlled the Strait of Malacca, the gate between China and India. The monk Yijing studied there on his way to India.",
+        "es": "Desde alrededor de 670, Srivijaya, un reino malayo con centro en Palembang, controló el estrecho de Malaca, la puerta entre China y la India. El monje Yijing estudió allí camino de la India."
+      },
+      "details": {
+        "en": "Long before, Austronesian sailors of Southeast Asia had opened the first sea trade of the eastern Indian Ocean, in outrigger and sewn-plank boats, and Chinese pilgrims booked passage on their ships, which they called k'un-lun po. Yijing left China in 671 and stayed six months in Srivijaya; he praised its Buddhist scholars and advised monks bound for India to study there first. He reached India in 673 and studied at Nalanda for ten years. Srivijaya's port gathered goods from half of Asia: camphor, aloes, tin and gold from Sumatra and Malaya, cloves and nutmeg from the eastern islands, pepper from India, and silk and porcelain from China. Later Chinese writers told that it once stretched an iron chain across its river against raiders, and attacked ships that sailed by without calling. Raids by the Chola kings of South India in 1025 broke its power.",
+        "es": "Mucho antes, los marinos austronesios del Sudeste Asiático habían abierto el primer comercio marítimo del este del océano Índico, en barcos con balancín y de tablas cosidas, y los peregrinos chinos viajaban en sus naves, a las que llamaban k'un-lun po. Yijing salió de China en 671 y pasó seis meses en Srivijaya; elogió a sus sabios budistas y aconsejó a los monjes que iban a la India estudiar allí primero. Llegó a la India en 673 y estudió diez años en Nalanda. El puerto de Srivijaya reunía mercancías de media Asia: alcanfor, áloe, estaño y oro de Sumatra y Malasia, clavo y nuez moscada de las islas del este, pimienta de la India, y seda y porcelana de China. Escritores chinos posteriores contaron que tendía una cadena de hierro sobre su río contra los saqueadores y que atacaba a los barcos que pasaban sin hacer escala. Las incursiones de los reyes cholas del sur de la India en 1025 quebraron su poder."
+      },
+      "moves": [
+        {
+          "side": "monsoon",
+          "path": [
+            [113.6, 22.6],
+            [113.75, 22.1],
+            [113.0, 21.4],
+            [111.3, 19.9],
+            [110.85, 18.6],
+            [110.1, 16.8],
+            [109.55, 14.8],
+            [109.6, 12.85],
+            [109.4, 12.0],
+            [109.15, 11.25],
+            [108.3, 10.55],
+            [107.3, 9.75],
+            [106.6, 8.45],
+            [106.3, 5.5],
+            [105.6, 3.2],
+            [105.4, 0.3],
+            [105.3, -1.2],
+            [105.0, -2.1],
+            [104.6, -1.4],
+            [104.3, -0.65],
+            [104.2, 0.3],
+            [103.75, 0.95],
+            [103.45, 1.2],
+            [103.2, 1.35],
+            [102.75, 1.75],
+            [102.3, 2.1],
+            [101.35, 2.8],
+            [100.55, 3.55],
+            [99.9, 4.7],
+            [100.15, 5.65],
+            [98.0, 6.5],
+            [95.0, 7.6],
+            [93.5, 8.5],
+            [90.0, 15.0],
+            [88.4, 20.5],
+            [88.05, 21.65]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Yijing's voyage, 671–673",
+            "es": "El viaje de Yijing, 671–673"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "srivijaya",
+          "name": {
+            "en": "Srivijaya",
+            "es": "Srivijaya"
+          },
+          "at": [104.7564, -2.9861],
+          "cat": "city",
+          "type": "culture",
+          "date": "671",
+          "until": "1025",
+          "place": {
+            "en": "Palembang, Sumatra, Indonesia",
+            "es": "Palembang, Sumatra (Indonesia)"
+          },
+          "text": {
+            "en": "A Malay Buddhist kingdom on the Musi River that, from the late 600s to 1025, controlled the Strait of Malacca and grew rich as the meeting place of Chinese, Indian and Arab ships.",
+            "es": "Un reino malayo y budista junto al río Musi que, desde fines del siglo VII hasta 1025, controló el estrecho de Malaca y se enriqueció como punto de encuentro de barcos chinos, indios y árabes."
+          },
+          "wiki": {
+            "en": "Srivijaya",
+            "es": "Srivijaya"
+          }
+        },
+        {
+          "id": "yijing",
+          "name": {
+            "en": "Yijing",
+            "es": "Yijing"
+          },
+          "at": [113.27, 23.14],
+          "cat": "traveller",
+          "type": "person",
+          "date": "671",
+          "life": [
+            "635",
+            "713"
+          ],
+          "place": {
+            "en": "Set out from Guangzhou, China",
+            "es": "Partió de Cantón (China)"
+          },
+          "text": {
+            "en": "A Chinese Buddhist monk who sailed to India in 671, studied in Srivijaya and at Nalanda, and wrote a record of the \"Southern Sea\" that is a main source on Srivijaya.",
+            "es": "Un monje budista chino que navegó a la India en 671, estudió en Srivijaya y en Nalanda y escribió un relato del «Mar del Sur» que es una fuente principal sobre Srivijaya."
+          },
+          "wiki": {
+            "en": "Yijing (monk)",
+            "es": "Yi Ching (monje)"
+          }
+        },
+        {
+          "id": "strait-of-malacca",
+          "name": {
+            "en": "The Strait of Malacca",
+            "es": "El estrecho de Malaca"
+          },
+          "at": [101.037, 2.833],
+          "cat": "nature",
+          "type": "place",
+          "date": "671",
+          "place": {
+            "en": "Between Sumatra and the Malay Peninsula",
+            "es": "Entre Sumatra y la península malaya"
+          },
+          "text": {
+            "en": "The narrow sea between Sumatra and Malaya, the shortest way between the Indian Ocean and the South China Sea. Whoever held its ports could tax the trade of half of Asia.",
+            "es": "El estrecho mar entre Sumatra y Malasia, el camino más corto entre el océano Índico y el mar de la China Meridional. Quien dominaba sus puertos podía cobrar impuestos al comercio de media Asia."
+          },
+          "wiki": {
+            "en": "Strait of Malacca",
+            "es": "Estrecho de Malaca"
+          }
+        }
+      ]
+    },
+    {
+      "date": "830",
+      "title": {
+        "en": "Dhows to China",
+        "es": "Dhows hasta China"
+      },
+      "camera": {
+        "lon": 85.0,
+        "lat": 14.0,
+        "zoom": 1.7
+      },
+      "text": {
+        "en": "Arab and Persian dhows, their planks sewn with coconut rope, sailed from the Persian Gulf to Guangzhou. One sank off Belitung around 830 with some 60,000 Chinese bowls aboard.",
+        "es": "Los dhows árabes y persas, con las tablas cosidas con cuerda de coco, navegaban del golfo Pérsico a Cantón. Uno se hundió frente a Belitung hacia 830 con unos 60 000 cuencos chinos a bordo."
+      },
+      "details": {
+        "en": "From the 7th century, Arab merchants from the Gulf and Oman followed earlier Persian traders to Sri Lanka, Srivijaya and Guangzhou, and Islam spread with them into Southeast Asia. The Abbasid caliphs traded with India and China through ports such as Siraf, on the Persian shore of the Gulf, and Basra and Baghdad, where the tales of Sinbad the Sailor grew up, bought the cargoes. The Belitung wreck, the first ancient Arab ship ever excavated, was about 18 metres long; its planks were stitched together with coconut fibre, not nailed. It had reached China and was heading home when it sank, loaded with Changsha bowls, the earliest whole blue-and-white dishes known, silver and gold. Dhow sailors found their latitude with the kamal, a simple board sighted on the Pole Star, and rope of Maldivian coir held many of their ships together.",
+        "es": "Desde el siglo VII, mercaderes árabes del golfo y de Omán siguieron a los comerciantes persas hasta Sri Lanka, Srivijaya y Cantón, y el islam se extendió con ellos por el Sudeste Asiático. Los califas abasíes comerciaban con la India y China por puertos como Siraf, en la orilla persa del golfo, y Basora y Bagdad, donde nacieron los cuentos de Simbad el Marino, compraban los cargamentos. El naufragio de Belitung, el primer barco árabe antiguo jamás excavado, medía unos 18 metros; sus tablas estaban cosidas con fibra de coco, no clavadas. Ya había llegado a China y volvía a casa cuando se hundió, cargado de cuencos de Changsha, los platos azul y blanco enteros más antiguos que se conocen, plata y oro. Los marinos de los dhows calculaban la latitud con el kamal, una simple tablilla con la que se apuntaba a la estrella Polar, y la cuerda de bonote de las Maldivas mantenía unidos muchos de sus barcos."
+      },
+      "moves": [
+        {
+          "side": "monsoon",
+          "path": [
+            [52.35, 27.6],
+            [52.4, 27.3],
+            [53.0, 26.9],
+            [54.0, 26.6],
+            [54.9, 26.4],
+            [55.9, 26.4],
+            [56.45, 26.55],
+            [56.75, 26.2],
+            [57.3, 25.3],
+            [58.4, 24.05],
+            [59.35, 23.25],
+            [59.95, 22.45],
+            [66.0, 15.5],
+            [72.5, 10.3],
+            [76.45, 8.85],
+            [77.0, 8.25],
+            [77.6, 7.85],
+            [78.7, 7.0],
+            [80.6, 5.75],
+            [88.0, 5.9],
+            [94.5, 6.2],
+            [95.5, 5.95],
+            [97.5, 6.4],
+            [100.15, 5.65],
+            [99.9, 4.7],
+            [100.55, 3.55],
+            [101.35, 2.8],
+            [102.3, 2.1],
+            [102.75, 1.75],
+            [103.2, 1.35],
+            [103.6, 1.17],
+            [104.0, 1.21],
+            [104.45, 1.3],
+            [104.85, 1.6],
+            [105.6, 3.2],
+            [106.3, 5.5],
+            [106.6, 8.45],
+            [107.3, 9.75],
+            [108.3, 10.55],
+            [109.15, 11.25],
+            [109.4, 12.0],
+            [109.6, 12.85],
+            [109.55, 14.8],
+            [110.1, 16.8],
+            [110.85, 18.6],
+            [111.3, 19.9],
+            [113.0, 21.4],
+            [113.75, 22.1],
+            [113.6, 22.6]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "The sea road to China, 9th century",
+            "es": "La ruta marítima a China, siglo IX"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "siraf",
+          "name": {
+            "en": "Siraf",
+            "es": "Siraf"
+          },
+          "at": [52.3467, 27.665],
+          "cat": "port",
+          "type": "site",
+          "date": "850",
+          "place": {
+            "en": "Bandar Siraf, Bushehr, Iran",
+            "es": "Bandar Siraf, Bushehr (Irán)"
+          },
+          "text": {
+            "en": "A Persian port on the Gulf, one of those through which the Abbasid caliphs traded with India and China. Long voyages to the East set out from here in the 9th and 10th centuries.",
+            "es": "Un puerto persa del golfo, uno de los puertos por los que los califas abasíes comerciaban con la India y China. En los siglos IX y X partían de aquí largos viajes hacia Oriente."
+          },
+          "wiki": {
+            "en": "Bandar Siraf",
+            "es": ""
+          }
+        },
+        {
+          "id": "dhow",
+          "name": {
+            "en": "The dhow",
+            "es": "El dhow"
+          },
+          "at": [56.7469, 24.3643],
+          "cat": "ship",
+          "type": "ship",
+          "date": "830",
+          "place": {
+            "en": "Oman and the Indian Ocean",
+            "es": "Omán y el océano Índico"
+          },
+          "text": {
+            "en": "The sailing ship of the Arabian Sea, with slanting settee or lateen sails. Old dhows had planks sewn with coconut rope instead of nails, and dhows still carry cargo on the monsoon today.",
+            "es": "El velero del mar Arábigo, con velas inclinadas, latinas o de tipo settee. Los dhows antiguos tenían las tablas cosidas con cuerda de coco en lugar de clavos, y todavía hoy llevan carga con el monzón."
+          },
+          "wiki": {
+            "en": "Dhow",
+            "es": "Dhow (náutica)"
+          }
+        },
+        {
+          "id": "belitung-wreck",
+          "name": {
+            "en": "The Belitung shipwreck",
+            "es": "El naufragio de Belitung"
+          },
+          "at": [107.61, -2.75],
+          "cat": "ship",
+          "type": "ship",
+          "date": "830",
+          "place": {
+            "en": "Off Belitung Island, Indonesia",
+            "es": "Frente a la isla de Belitung (Indonesia)"
+          },
+          "text": {
+            "en": "An Arab dhow that sank around 830 on its way home from China. Found by fishermen in 1998, it carried some 60,000 Tang ceramics, with gold and silver: the largest Tang cargo found outside China.",
+            "es": "Un dhow árabe que se hundió hacia 830 cuando volvía de China. Lo hallaron unos pescadores en 1998; llevaba unas 60 000 piezas de cerámica Tang, con oro y plata: el mayor cargamento Tang hallado fuera de China."
+          },
+          "wiki": {
+            "en": "Belitung shipwreck",
+            "es": ""
+          }
+        },
+        {
+          "id": "guangzhou",
+          "name": {
+            "en": "Guangzhou (Canton)",
+            "es": "Cantón (Guangzhou)"
+          },
+          "at": [113.2644, 23.1291],
+          "cat": "port",
+          "type": "place",
+          "date": "700",
+          "place": {
+            "en": "Guangzhou, China",
+            "es": "Cantón (China)"
+          },
+          "text": {
+            "en": "The great port of southern China, at the end of the sea road from the Indian Ocean. Southeast Asian, Persian and Arab ships came here for silk and ceramics.",
+            "es": "El gran puerto del sur de China, al final de la ruta marítima del océano Índico. Barcos del Sudeste Asiático, persas y árabes llegaban aquí en busca de seda y cerámica."
+          },
+          "wiki": {
+            "en": "Guangzhou",
+            "es": "Cantón (China)"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1450",
+      "title": {
+        "en": "The great ports",
+        "es": "Los grandes puertos"
+      },
+      "camera": {
+        "lon": 74.0,
+        "lat": 12.0,
+        "zoom": 1.8
+      },
+      "text": {
+        "en": "By the 1400s goods moved from port to port with the monsoons: Aden and Hormuz in the west, Calicut in India, Malacca on the strait, each a city of many peoples.",
+        "es": "En el siglo XV las mercancías iban de puerto en puerto con los monzones: Adén y Ormuz al oeste, Calicut en la India, Malaca en el estrecho, cada una ciudad de muchos pueblos."
+      },
+      "details": {
+        "en": "Few cargoes made the whole journey in one ship. Merchants carried goods from one great market to the next, waited there for the wind to turn and sold them on. Aden, at the mouth of the Red Sea, drew merchants from Egypt, Sindh, Gujarat, East Africa and even China. Hormuz, on its island, ruled both shores of the Gulf. Calicut, under its Hindu kings, the Zamorins, was the great pepper market of Malabar, home to many Muslim merchants. Malacca, founded around 1400, lived on trade alone and became the hub where the spices of the eastern islands met the cloth of India and the silk and porcelain of China. Gujarati, Tamil, Malay, Javanese, Chinese, Arab and Persian sailors, porters and boatmen did the work; between 1405 and 1433 the great Ming fleets of Zheng He also called at these ports.",
+        "es": "Pocas cargas hacían todo el viaje en un mismo barco. Los mercaderes llevaban las mercancías de un gran mercado al siguiente, esperaban allí a que cambiara el viento y las vendían a otros. Adén, a la entrada del mar Rojo, atraía a mercaderes de Egipto, Sind, Guyarat, África oriental y hasta China. Ormuz, en su isla, dominaba ambas orillas del golfo. Calicut, bajo sus reyes hindúes, los samorines, era el gran mercado de la pimienta de Malabar y hogar de muchos mercaderes musulmanes. Malaca, fundada hacia 1400, vivía solo del comercio y se convirtió en el centro donde las especias de las islas del este se cruzaban con las telas de la India y la seda y la porcelana de China. Marinos, cargadores y barqueros guyaratíes, tamiles, malayos, javaneses, chinos, árabes y persas hacían el trabajo; entre 1405 y 1433 también hicieron escala en estos puertos las grandes flotas Ming de Zheng He."
+      },
+      "moves": [
+        {
+          "side": "monsoon",
+          "path": [
+            [45.08, 12.75],
+            [46.5, 12.35],
+            [49.0, 12.6],
+            [51.5, 12.75],
+            [54.0, 13.1],
+            [60.0, 13.3],
+            [68.0, 12.3],
+            [73.5, 11.6],
+            [75.72, 11.25],
+            [75.85, 10.6],
+            [76.12, 10.0],
+            [76.2, 9.5],
+            [76.45, 8.85],
+            [77.0, 8.25],
+            [77.6, 7.85],
+            [78.7, 7.0],
+            [80.6, 5.75],
+            [88.0, 5.9],
+            [94.5, 6.2],
+            [95.45, 5.72],
+            [96.4, 5.45],
+            [97.25, 5.35],
+            [97.9, 5.25],
+            [98.85, 4.8],
+            [99.7, 4.25],
+            [100.55, 3.55],
+            [101.35, 2.8],
+            [102.3, 2.1]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "The monsoon relay",
+            "es": "El relevo del monzón"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "aden",
+          "name": {
+            "en": "Aden",
+            "es": "Adén"
+          },
+          "at": [45.0367, 12.7797],
+          "cat": "port",
+          "type": "place",
+          "date": "1175",
+          "place": {
+            "en": "Aden, Yemen",
+            "es": "Adén (Yemen)"
+          },
+          "text": {
+            "en": "The port at the mouth of the Red Sea, where merchants from Egypt, Sindh, Gujarat, East Africa and even China met. Its great cisterns stored rainwater for the city to drink.",
+            "es": "El puerto a la entrada del mar Rojo, donde se encontraban mercaderes de Egipto, Sind, Guyarat, África oriental y hasta China. Sus grandes cisternas guardaban el agua de lluvia que bebía la ciudad."
+          },
+          "wiki": {
+            "en": "Aden",
+            "es": "Adén"
+          }
+        },
+        {
+          "id": "hormuz",
+          "name": {
+            "en": "Hormuz",
+            "es": "Ormuz"
+          },
+          "at": [56.46, 27.0675],
+          "cat": "port",
+          "type": "place",
+          "date": "1301",
+          "place": {
+            "en": "Hormuz Island, Iran",
+            "es": "Isla de Ormuz (Irán)"
+          },
+          "text": {
+            "en": "An island kingdom at the mouth of the Persian Gulf, the great market between Persia, Arabia and India. Its rulers moved from the mainland to the island of Jarun in 1301.",
+            "es": "Un reino insular a la entrada del golfo Pérsico, el gran mercado entre Persia, Arabia y la India. Sus gobernantes se mudaron del continente a la isla de Jarun en 1301."
+          },
+          "wiki": {
+            "en": "Kingdom of Hormuz",
+            "es": ""
+          }
+        },
+        {
+          "id": "calicut",
+          "name": {
+            "en": "Calicut",
+            "es": "Calicut"
+          },
+          "at": [75.7804, 11.25],
+          "cat": "port",
+          "type": "place",
+          "date": "1340",
+          "place": {
+            "en": "Kozhikode, Kerala, India",
+            "es": "Kozhikode, Kerala (India)"
+          },
+          "text": {
+            "en": "The pepper port of the Malabar Coast, ruled by Hindu kings, the Zamorins. Its Muslim merchants were so rich, Ibn Battuta wrote, that one of them could buy a ship's whole cargo.",
+            "es": "El puerto de la pimienta de la costa de Malabar, gobernado por reyes hindúes, los samorines. Sus mercaderes musulmanes eran tan ricos, escribió Ibn Battuta, que uno solo podía comprar la carga entera de un barco."
+          },
+          "wiki": {
+            "en": "Kozhikode",
+            "es": "Kozhikode"
+          }
+        },
+        {
+          "id": "malacca",
+          "name": {
+            "en": "Malacca",
+            "es": "Malaca"
+          },
+          "at": [102.2501, 2.1896],
+          "cat": "port",
+          "type": "place",
+          "date": "1400",
+          "place": {
+            "en": "Malacca, Malaysia",
+            "es": "Malaca (Malasia)"
+          },
+          "text": {
+            "en": "A port founded about 1400 that lived on trade alone. It bought rice by the junkload, had four harbour masters for its foreign merchants, and 84 tongues were heard in its streets.",
+            "es": "Un puerto fundado hacia 1400 que vivía solo del comercio. Compraba arroz por juncos enteros, tenía cuatro capitanes de puerto para sus mercaderes extranjeros, y en sus calles se oían 84 lenguas."
+          },
+          "details": {
+            "en": "Malacca stood on swampy ground with no farmland, so about 100 junks a year brought its rice: 50 or 60 from Java, 30 from Siam and 20 from Pegu. Its largest merchant communities were the Muslim Gujaratis and Javanese, Hindus from the Coromandel Coast, and Chinese, beside Arabs, Persians, Bengalis, Siamese and many more. The Portuguese apothecary Tomé Pires counted 84 dialects; modern estimates put its people at about 40,000.",
+            "es": "Malaca estaba sobre un terreno pantanoso sin tierras de cultivo, así que unos 100 juncos al año le traían el arroz: 50 o 60 de Java, 30 de Siam y 20 de Pegu. Sus mayores comunidades de mercaderes eran los guyaratíes y javaneses musulmanes, los hindúes de la costa de Coromandel y los chinos, junto a árabes, persas, bengalíes, siameses y muchos más. El boticario portugués Tomé Pires contó 84 dialectos; los cálculos actuales le dan unos 40 000 habitantes."
+          },
+          "wiki": {
+            "en": "Malacca Sultanate",
+            "es": "Sultanato de Malaca"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1490",
+      "title": {
+        "en": "Islands of cloves and nutmeg",
+        "es": "Las islas de las especias"
+      },
+      "camera": {
+        "lon": 116.0,
+        "lat": -3.0,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "Cloves grew only on a few islands of the northern Maluku, and nutmeg only on the tiny Banda Islands. Bandanese and Javanese ships carried them west to Malacca.",
+        "es": "El clavo de olor crecía solo en unas pocas islas del norte de las Molucas, y la nuez moscada, solo en las diminutas islas de Banda. Barcos bandaneses y javaneses los llevaban al oeste, hasta Malaca."
+      },
+      "details": {
+        "en": "People had carried these spices west for thousands of years: cloves reached Syria by about 1720 BC. But traders kept their source secret, and no European knew where they grew. The Banda Islands were led by councils of rich men, the orang kaya, and their people were active traders. Nutmeg and mace from Banda, and cloves brought from Ternate and Tidore, went out in exchange for rice, Javanese batik, Indian calico and ikat cloth; in 1603 one good sarong-sized cloth bought 18 kg of nutmeg. Bandanese and Javanese traders took the spices to Malacca, where Gujarati and Chinese merchants bought them for India, the Red Sea and China. An Arab sailing guide of this period explains: \"the islands of Bandam are the islands where nutmeg and mace are found. The islands of cloves are called Maluku.\"",
+        "es": "Hacía miles de años que estas especias viajaban al oeste: el clavo llegó a Siria hacia 1720 a. C. Pero los mercaderes guardaban en secreto su origen, y ningún europeo sabía dónde crecían. Las islas de Banda estaban dirigidas por consejos de hombres ricos, los orang kaya, y su gente era muy comerciante. La nuez moscada y el macis de Banda, y el clavo traído de Ternate y Tidore, se cambiaban por arroz, batik javanés, calicó indio y telas ikat; en 1603, una buena tela del tamaño de un sarong valía 18 kg de nuez moscada. Mercaderes bandaneses y javaneses llevaban las especias a Malaca, donde mercaderes guyaratíes y chinos las compraban para la India, el mar Rojo y China. Una guía náutica árabe de este período lo explica: «las islas de Bandam son las islas donde se hallan la nuez moscada y el macis. Las islas del clavo se llaman Maluku»."
+      },
+      "moves": [
+        {
+          "side": "monsoon",
+          "path": [
+            [127.38, 0.75],
+            [127.2, 0.2],
+            [126.95, -0.75],
+            [127.0, -2.0],
+            [127.45, -3.1],
+            [127.8, -3.75],
+            [128.15, -3.95],
+            [129.2, -4.3],
+            [129.85, -4.55],
+            [129.0, -4.95],
+            [126.5, -5.6],
+            [123.0, -6.6],
+            [120.8, -6.9],
+            [117.5, -6.8],
+            [114.2, -6.5],
+            [112.3, -6.6],
+            [111.2, -6.25],
+            [110.9, -6.1],
+            [109.8, -6.55],
+            [108.5, -6.0],
+            [107.4, -5.75],
+            [106.6, -5.55],
+            [106.3, -4.3],
+            [106.25, -3.3],
+            [106.05, -3.0],
+            [105.9, -2.8],
+            [105.8, -2.55],
+            [105.6, -2.33],
+            [105.2, -2.15],
+            [105.0, -2.1],
+            [105.3, -1.2],
+            [105.05, -0.3],
+            [104.75, 0.55],
+            [104.85, 1.05],
+            [104.45, 1.3],
+            [104.0, 1.21],
+            [103.6, 1.17],
+            [103.2, 1.35],
+            [102.75, 1.75],
+            [102.3, 2.1]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Cloves and nutmeg to Malacca",
+            "es": "Clavo y nuez moscada hacia Malaca"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "cloves",
+          "name": {
+            "en": "Cloves",
+            "es": "Clavo de olor"
+          },
+          "at": [127.3667, 0.7833],
+          "cat": "goods",
+          "type": "goods",
+          "date": "-1720",
+          "place": {
+            "en": "Ternate and Tidore, North Maluku, Indonesia",
+            "es": "Ternate y Tidore, Molucas del Norte (Indonesia)"
+          },
+          "text": {
+            "en": "The dried flower buds of a tree that grew only on Ternate, Tidore and three other small islands of the northern Maluku. Their sultans grew rich on the trade.",
+            "es": "Los capullos secos de un árbol que solo crecía en Ternate, Tidore y otras tres islitas del norte de las Molucas. Sus sultanes se enriquecieron con el comercio."
+          },
+          "wiki": {
+            "en": "Clove",
+            "es": "Syzygium aromaticum"
+          }
+        },
+        {
+          "id": "nutmeg",
+          "name": {
+            "en": "Nutmeg and mace",
+            "es": "Nuez moscada y macis"
+          },
+          "at": [129.95, -4.545],
+          "cat": "goods",
+          "type": "goods",
+          "date": "-1500",
+          "place": {
+            "en": "Banda Islands, Maluku, Indonesia",
+            "es": "Islas de Banda, Molucas (Indonesia)"
+          },
+          "text": {
+            "en": "Nutmeg is the seed and mace its lacy red cover, from a tree that until the mid-1800s grew only on the ten small Banda Islands.",
+            "es": "La nuez moscada es la semilla, y el macis, su envoltura roja como un encaje, de un árbol que hasta mediados del siglo XIX solo crecía en las diez pequeñas islas de Banda."
+          },
+          "wiki": {
+            "en": "Nutmeg",
+            "es": "Nuez moscada"
+          }
+        },
+        {
+          "id": "bandanese",
+          "name": {
+            "en": "The Bandanese",
+            "es": "Los bandaneses"
+          },
+          "at": [129.8964, -4.5248],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1490",
+          "place": {
+            "en": "Banda Islands, Maluku, Indonesia",
+            "es": "Islas de Banda, Molucas (Indonesia)"
+          },
+          "text": {
+            "en": "The people of Banda, led by councils of rich men, the orang kaya, were the only Maluku islanders who sailed their own cargoes as far as Malacca. They sold to all comers.",
+            "es": "El pueblo de Banda, dirigido por consejos de hombres ricos, los orang kaya, era el único de las Molucas que llevaba sus propias cargas hasta Malaca. Vendían a quien llegara."
+          },
+          "wiki": {
+            "en": "Banda Islands",
+            "es": "Islas de Banda"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1498-05-20",
+      "title": {
+        "en": "The Portuguese reach Calicut",
+        "es": "Los portugueses llegan a Calicut"
+      },
+      "camera": {
+        "lon": 58.0,
+        "lat": 5.0,
+        "zoom": 2.5
+      },
+      "text": {
+        "en": "On 20 May 1498 Vasco da Gama, guided from Malindi by a Gujarati pilot, reached Calicut. The Portuguese, who had sailed around Africa, soon used cannon to force their way into the trade.",
+        "es": "El 20 de mayo de 1498, Vasco da Gama, guiado desde Malindi por un piloto guyaratí, llegó a Calicut. Los portugueses, que habían rodeado África, pronto usaron cañones para abrirse paso en el comercio."
+      },
+      "details": {
+        "en": "On the African coast the Portuguese had fired on Mozambique and robbed merchant ships; at Malindi, a rival of Mombasa, the ruler gave them a pilot who knew the monsoon route. Later legend named him the Arab navigator Ibn Majid, but other accounts place Ibn Majid elsewhere. At Calicut the Zamorin returned from his second capital and received da Gama with a procession of some 3,000 armed Nair soldiers, but da Gama had poor gifts to offer and the talks failed. When the Portuguese trading post at Calicut was overrun in 1500, the Portuguese bombarded the city. In 1502 da Gama came back with warships; off the Malabar Coast he seized the Mirim, a pilgrim ship, and burned its passengers alive. The Portuguese claimed the ocean as their own and made Asian ships buy their passes.",
+        "es": "En la costa africana los portugueses habían disparado contra Mozambique y robado barcos mercantes; en Malindi, rival de Mombasa, el soberano les dio un piloto que conocía la ruta del monzón. Una leyenda posterior dijo que era el navegante árabe Ibn Mayid, pero otros relatos sitúan a Ibn Mayid en otra parte. En Calicut el samorín volvió de su segunda capital y recibió a Da Gama con un desfile de unos 3000 soldados nair armados, pero Da Gama tenía pobres regalos que ofrecer y las conversaciones fracasaron. Cuando el puesto comercial portugués de Calicut fue arrasado en 1500, los portugueses bombardearon la ciudad. En 1502 Da Gama volvió con barcos de guerra; frente a la costa de Malabar capturó el Mirim, un barco de peregrinos, y quemó vivos a sus pasajeros. Los portugueses reclamaron el océano como propio y obligaron a los barcos asiáticos a comprarles salvoconductos."
+      },
+      "moves": [
+        {
+          "side": "portugal",
+          "path": [
+            [40.2, -3.15],
+            [41.5, -2.5],
+            [48.0, 1.5],
+            [58.0, 6.0],
+            [67.0, 9.5],
+            [73.5, 11.0],
+            [75.68, 11.38]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Vasco da Gama, 1498",
+            "es": "El viaje de Vasco da Gama, 1498"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "vasco-da-gama",
+          "name": {
+            "en": "Vasco da Gama",
+            "es": "Vasco da Gama"
+          },
+          "at": [75.7167, 11.3833],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1498-05-20",
+          "life": [
+            "1460",
+            "1524"
+          ],
+          "place": {
+            "en": "Landed at Kappad, near Calicut, India",
+            "es": "Desembarcó en Kappad, cerca de Calicut (India)"
+          },
+          "text": {
+            "en": "The Portuguese captain whose four ships rounded Africa and reached Calicut in 1498, opening a sea route from Europe to India. He came back in 1502 with warships.",
+            "es": "El capitán portugués cuyos cuatro barcos rodearon África y llegaron a Calicut en 1498, abriendo una ruta marítima de Europa a la India. En 1502 volvió con barcos de guerra."
+          },
+          "wiki": {
+            "en": "Vasco da Gama",
+            "es": "Vasco da Gama"
+          }
+        },
+        {
+          "id": "malindi",
+          "name": {
+            "en": "Malindi",
+            "es": "Malindi"
+          },
+          "at": [40.1167, -3.2175],
+          "cat": "city",
+          "type": "place",
+          "date": "1498-04-14",
+          "place": {
+            "en": "Malindi, Kenya",
+            "es": "Malindi (Kenia)"
+          },
+          "text": {
+            "en": "A Swahili port on the Kenyan coast, rival of Mombasa. Its ruler welcomed da Gama in April 1498 and gave him a Gujarati pilot who knew the monsoon route to India.",
+            "es": "Un puerto suajili de la costa de Kenia, rival de Mombasa. Su soberano recibió a Da Gama en abril de 1498 y le dio un piloto guyaratí que conocía la ruta del monzón hacia la India."
+          },
+          "wiki": {
+            "en": "Malindi",
+            "es": "Malindi"
+          }
+        },
+        {
+          "id": "calicut",
+          "name": {
+            "en": "Calicut",
+            "es": "Calicut"
+          },
+          "at": [75.7804, 11.25],
+          "cat": "port",
+          "type": "place",
+          "date": "1340",
+          "place": {
+            "en": "Kozhikode, Kerala, India",
+            "es": "Kozhikode, Kerala (India)"
+          },
+          "text": {
+            "en": "The pepper port of the Malabar Coast, ruled by Hindu kings, the Zamorins. Its Muslim merchants were so rich, Ibn Battuta wrote, that one of them could buy a ship's whole cargo.",
+            "es": "El puerto de la pimienta de la costa de Malabar, gobernado por reyes hindúes, los samorines. Sus mercaderes musulmanes eran tan ricos, escribió Ibn Battuta, que uno solo podía comprar la carga entera de un barco."
+          },
+          "wiki": {
+            "en": "Kozhikode",
+            "es": "Kozhikode"
+          }
+        },
+        {
+          "id": "mirim",
+          "name": {
+            "en": "The burning of the Mirim",
+            "es": "El incendio del Mirim"
+          },
+          "at": [75.15, 12.05],
+          "cat": "event",
+          "type": "event",
+          "date": "1502-10",
+          "place": {
+            "en": "Off Madayi, Kerala, India",
+            "es": "Frente a Madayi, Kerala (India)"
+          },
+          "text": {
+            "en": "In 1502 da Gama's fleet seized the Mirim, a ship of Muslim pilgrims on the Mecca run, and burned its more than 400 passengers, 50 of them women, alive.",
+            "es": "En 1502 la flota de Da Gama capturó el Mirim, un barco de peregrinos musulmanes de la ruta de La Meca, y quemó vivos a sus más de 400 pasajeros, 50 de ellos mujeres."
+          },
+          "wiki": {
+            "en": "Vasco da Gama",
+            "es": "Vasco da Gama"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1511-08-15",
+      "title": {
+        "en": "The fall of Malacca",
+        "es": "La caída de Malaca"
+      },
+      "camera": {
+        "lon": 110.0,
+        "lat": 0.0,
+        "zoom": 2.3
+      },
+      "text": {
+        "en": "On 15 August 1511 Afonso de Albuquerque took Malacca for Portugal. Months later, Malay pilots guided the first Portuguese ships to the Banda Islands.",
+        "es": "El 15 de agosto de 1511, Afonso de Albuquerque tomó Malaca para Portugal. Meses después, pilotos malayos guiaron a los primeros barcos portugueses hasta las islas de Banda."
+      },
+      "details": {
+        "en": "Albuquerque sailed from Cochin in April 1511 with some 1,500 Portuguese soldiers and 800 Indian and Chinese auxiliaries. \"If they were only to take Malacca out of the hands of the Moors,\" it was reported, \"Cairo and Mecca would be entirely ruined.\" After a failed first attack on 25 July, the city fell on 15 August; its sultan, Mahmud Shah, fled south. In November Albuquerque sent António de Abreu east with three ships. Malay pilots, recruited or forced, took them by Java, the Lesser Sunda Islands and Ambon to Banda early in 1512, where they filled their holds with nutmeg, mace and cloves. Yet the Portuguese never controlled the Asian trade: merchants moved to rival ports such as Johor, founded by the exiled sultan's family, and most spices still travelled in Asian ships.",
+        "es": "Albuquerque zarpó de Cochín en abril de 1511 con unos 1500 soldados portugueses y 800 auxiliares indios y chinos. «Si se quitara Malaca de manos de los moros», se cuenta que dijo, «El Cairo y La Meca quedarían arruinados por completo». Tras un primer ataque fallido el 25 de julio, la ciudad cayó el 15 de agosto; su sultán, Mahmud Shah, huyó hacia el sur. En noviembre Albuquerque envió al este a António de Abreu con tres barcos. Pilotos malayos, contratados u obligados, los llevaron por Java, las islas menores de la Sonda y Ambón hasta Banda a comienzos de 1512, donde llenaron sus bodegas de nuez moscada, macis y clavo. Pero los portugueses nunca dominaron el comercio asiático: los mercaderes se fueron a puertos rivales como Johor, fundado por la familia del sultán exiliado, y la mayoría de las especias siguió viajando en barcos asiáticos."
+      },
+      "moves": [
+        {
+          "side": "portugal",
+          "path": [
+            [76.12, 10.0],
+            [76.2, 9.5],
+            [76.45, 8.85],
+            [77.0, 8.25],
+            [77.6, 7.85],
+            [78.7, 7.0],
+            [80.6, 5.75],
+            [88.0, 5.9],
+            [94.5, 6.2],
+            [95.45, 5.72],
+            [96.4, 5.45],
+            [97.25, 5.35],
+            [97.9, 5.25],
+            [98.85, 4.8],
+            [99.7, 4.25],
+            [100.55, 3.55],
+            [101.35, 2.8],
+            [102.3, 2.1]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Albuquerque's fleet, 1511",
+            "es": "La flota de Albuquerque, 1511"
+          }
+        },
+        {
+          "side": "portugal",
+          "path": [
+            [102.3, 2.1],
+            [102.75, 1.75],
+            [103.2, 1.35],
+            [103.6, 1.17],
+            [104.0, 1.21],
+            [104.45, 1.3],
+            [104.85, 1.05],
+            [104.75, 0.55],
+            [105.05, -0.3],
+            [105.3, -1.2],
+            [105.0, -2.1],
+            [105.2, -2.15],
+            [105.6, -2.33],
+            [105.8, -2.55],
+            [105.9, -2.8],
+            [106.05, -3.0],
+            [106.25, -3.3],
+            [106.3, -4.3],
+            [106.6, -5.55],
+            [107.4, -5.75],
+            [108.5, -6.0],
+            [109.8, -6.55],
+            [110.9, -6.1],
+            [112.3, -6.6],
+            [114.2, -6.5],
+            [116.0, -7.75],
+            [118.5, -7.75],
+            [121.5, -7.95],
+            [124.5, -7.6],
+            [126.5, -5.6],
+            [127.8, -4.2],
+            [128.15, -3.95],
+            [129.2, -4.3],
+            [129.85, -4.55]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Abreu to the Banda Islands, 1512",
+            "es": "Abreu a las islas de Banda, 1512"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "afonso-de-albuquerque",
+          "name": {
+            "en": "Afonso de Albuquerque",
+            "es": "Afonso de Albuquerque"
+          },
+          "at": [76.24, 9.965],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1511",
+          "life": [
+            "1453",
+            "1515"
+          ],
+          "place": {
+            "en": "Sailed from Cochin, India",
+            "es": "Zarpó de Cochín (India)"
+          },
+          "text": {
+            "en": "Governor of Portuguese India, who seized Goa, Malacca and Hormuz to make Portugal master of the ocean's trade. He took Malacca in August 1511.",
+            "es": "Gobernador de la India portuguesa, que tomó Goa, Malaca y Ormuz para que Portugal dominara el comercio del océano. Conquistó Malaca en agosto de 1511."
+          },
+          "wiki": {
+            "en": "Afonso de Albuquerque",
+            "es": "Afonso de Albuquerque"
+          }
+        },
+        {
+          "id": "capture-of-malacca",
+          "name": {
+            "en": "The capture of Malacca",
+            "es": "La toma de Malaca"
+          },
+          "at": [102.2502, 2.1916],
+          "cat": "event",
+          "type": "event",
+          "date": "1511-08-15",
+          "place": {
+            "en": "Malacca, Malaysia",
+            "es": "Malaca (Malasia)"
+          },
+          "text": {
+            "en": "On 15 August 1511 the Portuguese took Malacca after weeks of fighting. They built their fort, A Famosa, with stones from the city's mosques and Muslim graves.",
+            "es": "El 15 de agosto de 1511 los portugueses tomaron Malaca tras semanas de combates. Construyeron su fuerte, A Famosa, con piedras de las mezquitas y de las tumbas musulmanas de la ciudad."
+          },
+          "wiki": {
+            "en": "Capture of Malacca (1511)",
+            "es": "Toma de Malaca (1511)"
+          }
+        },
+        {
+          "id": "suma-oriental",
+          "name": {
+            "en": "Suma Oriental",
+            "es": "Suma Oriental"
+          },
+          "at": [102.256, 2.198],
+          "cat": "book",
+          "type": "work",
+          "date": "1515",
+          "place": {
+            "en": "Written in Malacca and India",
+            "es": "Escrito en Malaca y la India"
+          },
+          "text": {
+            "en": "Written in 1512–15 by the Portuguese apothecary Tomé Pires: the first European account of the Spice Islands and of the trade of Asia east of India.",
+            "es": "Escrita en 1512–1515 por el boticario portugués Tomé Pires: el primer relato europeo de las islas de las Especias y del comercio de Asia al este de la India."
+          },
+          "wiki": {
+            "en": "Tomé Pires",
+            "es": "Tomé Pires"
+          }
+        },
+        {
+          "id": "bandanese",
+          "name": {
+            "en": "The Bandanese",
+            "es": "Los bandaneses"
+          },
+          "at": [129.8964, -4.5248],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1490",
+          "place": {
+            "en": "Banda Islands, Maluku, Indonesia",
+            "es": "Islas de Banda, Molucas (Indonesia)"
+          },
+          "text": {
+            "en": "The people of Banda, led by councils of rich men, the orang kaya, were the only Maluku islanders who sailed their own cargoes as far as Malacca. They sold to all comers.",
+            "es": "El pueblo de Banda, dirigido por consejos de hombres ricos, los orang kaya, era el único de las Molucas que llevaba sus propias cargas hasta Malaca. Vendían a quien llegara."
+          },
+          "wiki": {
+            "en": "Banda Islands",
+            "es": "Islas de Banda"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1621-05-08",
+      "title": {
+        "en": "The Banda massacre",
+        "es": "La masacre de Banda"
+      },
+      "camera": {
+        "lon": 118.0,
+        "lat": -5.0,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "To own the nutmeg trade, the Dutch East India Company conquered the Banda Islands in 1621. Most of the Bandanese were killed, enslaved, deported or driven away.",
+        "es": "Para quedarse con el comercio de la nuez moscada, la Compañía Neerlandesa de las Indias Orientales conquistó las islas de Banda en 1621. La mayoría de los bandaneses fueron asesinados, esclavizados, deportados o expulsados."
+      },
+      "details": {
+        "en": "The VOC, founded in 1602, wanted the Bandanese to sell nutmeg to it alone; they preferred to sell to whoever paid best, including the English on the island of Run. In 1609 Bandanese leaders ambushed and killed the Dutch admiral Verhoeff and 46 of his men, and years of fighting followed. At the end of 1620 Governor-General Jan Pieterszoon Coen sailed from Batavia by way of Ambon with some 1,655 Dutch soldiers and 286 Japanese mercenaries. The Dutch took the main island, Lontor, in March; then, accusing the orang kaya of plotting, they tortured them, deported hundreds with their families to Batavia and, on 8 May, had dozens beheaded by the mercenaries. Villages were burned, and many islanders starved or leapt from cliffs rather than surrender. Of perhaps 15,000 Bandanese, about 1,000 remained on the islands; others fled to Seram and the Kei Islands. Many historians call it a genocide.",
+        "es": "La VOC, fundada en 1602, quería que los bandaneses le vendieran la nuez moscada solo a ella; ellos preferían vender a quien pagara mejor, incluidos los ingleses de la isla de Run. En 1609 jefes bandaneses tendieron una emboscada y mataron al almirante neerlandés Verhoeff y a 46 de sus hombres, y siguieron años de combates. A fines de 1620, el gobernador general Jan Pieterszoon Coen zarpó de Batavia, pasando por Ambón, con unos 1655 soldados neerlandeses y 286 mercenarios japoneses. Los neerlandeses tomaron la isla principal, Lontor, en marzo; luego acusaron de conspirar a los orang kaya, los torturaron, deportaron a cientos de ellos con sus familias a Batavia y, el 8 de mayo, hicieron que los mercenarios decapitaran a decenas. Se quemaron aldeas, y muchos isleños murieron de hambre o se arrojaron desde los acantilados antes que rendirse. De unos 15 000 bandaneses, quedaron en las islas cerca de 1000; otros huyeron a Seram y a las islas Kei. Muchos historiadores lo llaman un genocidio."
+      },
+      "moves": [
+        {
+          "side": "dutch",
+          "path": [
+            [106.83, -6.08],
+            [107.4, -5.75],
+            [108.5, -6.0],
+            [109.8, -6.55],
+            [110.9, -6.1],
+            [112.3, -6.6],
+            [114.2, -6.5],
+            [117.5, -6.8],
+            [120.8, -6.9],
+            [123.0, -6.6],
+            [126.0, -4.8],
+            [127.8, -4.05],
+            [128.15, -3.95],
+            [129.2, -4.3],
+            [129.85, -4.55]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Coen's fleet, 1621",
+            "es": "La flota de Coen, 1621"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "banda-massacre",
+          "name": {
+            "en": "The Banda massacre",
+            "es": "La masacre de Banda"
+          },
+          "at": [129.91, -4.565],
+          "cat": "event",
+          "type": "event",
+          "date": "1621-05-08",
+          "place": {
+            "en": "Lontor (Banda Besar), Banda Islands, Indonesia",
+            "es": "Lontor (Banda Besar), islas de Banda (Indonesia)"
+          },
+          "text": {
+            "en": "In 1621 the Dutch East India Company conquered the Banda Islands to control nutmeg. About 2,500 islanders died by the sword, hunger and disease, 1,700 were enslaved and hundreds were deported.",
+            "es": "En 1621 la Compañía Neerlandesa de las Indias Orientales conquistó Banda para controlar la nuez moscada. Unos 2500 isleños murieron por la espada, el hambre o las enfermedades; 1700 fueron esclavizados y cientos, deportados."
+          },
+          "details": {
+            "en": "Coen himself wrote that about 2,500 died \"of hunger and misery or by the sword\". The Dutch divided the nutmeg groves into 68 plots, the perken, run by Dutch planters and worked by enslaved people brought from across the Indies, India and China; surviving Bandanese were enslaved too and made to teach the newcomers. Some 530 deportees were later brought back from Batavia for their skill with nutmeg. Descendants of the refugees, the Wandan people, still live in the Kei Islands.",
+            "es": "El propio Coen escribió que unos 2500 murieron «de hambre y miseria o por la espada». Los neerlandeses dividieron los huertos de nuez moscada en 68 parcelas, los perken, a cargo de plantadores neerlandeses y trabajadas por personas esclavizadas traídas de todas las Indias, de la India y de China; los bandaneses que sobrevivieron también fueron esclavizados y obligados a enseñar a los recién llegados. Unos 530 deportados fueron traídos después de vuelta desde Batavia por su saber sobre la nuez moscada. Los descendientes de los refugiados, el pueblo wandan, viven todavía en las islas Kei."
+          },
+          "wiki": {
+            "en": "Dutch conquest of the Banda Islands",
+            "es": ""
+          }
+        },
+        {
+          "id": "jan-pieterszoon-coen",
+          "name": {
+            "en": "Jan Pieterszoon Coen",
+            "es": "Jan Pieterszoon Coen"
+          },
+          "at": [106.8135, -6.1352],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1621",
+          "life": [
+            "1587",
+            "1629"
+          ],
+          "place": {
+            "en": "Batavia (Jakarta), Indonesia",
+            "es": "Batavia (Yakarta), Indonesia"
+          },
+          "text": {
+            "en": "Governor-general of the Dutch East India Company, who founded Batavia in 1619 and led the conquest of Banda. He wrote that it was necessary to \"subjugate Banda, and populate it with other people\".",
+            "es": "Gobernador general de la Compañía Neerlandesa de las Indias Orientales, fundó Batavia en 1619 y dirigió la conquista de Banda. Escribió que era necesario «someter Banda y poblarla con otra gente»."
+          },
+          "wiki": {
+            "en": "Jan Pieterszoon Coen",
+            "es": "Jan Pieterszoon Coen"
+          }
+        },
+        {
+          "id": "run-island",
+          "name": {
+            "en": "Run",
+            "es": "Run"
+          },
+          "at": [129.6838, -4.5572],
+          "cat": "nature",
+          "type": "place",
+          "date": "1616-12-25",
+          "place": {
+            "en": "Banda Islands, Indonesia",
+            "es": "Islas de Banda (Indonesia)"
+          },
+          "text": {
+            "en": "A tiny nutmeg island held by the English from 1616. When it fell, the Dutch cut down every nutmeg tree. In 1667 England gave up its claim, and the Dutch gave up New Amsterdam, today's Manhattan.",
+            "es": "Una islita de nuez moscada en manos inglesas desde 1616. Al caer, los neerlandeses talaron todos sus árboles. En 1667 Inglaterra renunció a ella, y los neerlandeses, a Nueva Ámsterdam, la actual Manhattan."
+          },
+          "wiki": {
+            "en": "Run (island)",
+            "es": "Isla de Rhun"
+          }
+        },
+        {
+          "id": "nutmeg",
+          "name": {
+            "en": "Nutmeg and mace",
+            "es": "Nuez moscada y macis"
+          },
+          "at": [129.95, -4.545],
+          "cat": "goods",
+          "type": "goods",
+          "date": "-1500",
+          "place": {
+            "en": "Banda Islands, Maluku, Indonesia",
+            "es": "Islas de Banda, Molucas (Indonesia)"
+          },
+          "text": {
+            "en": "Nutmeg is the seed and mace its lacy red cover, from a tree that until the mid-1800s grew only on the ten small Banda Islands.",
+            "es": "La nuez moscada es la semilla, y el macis, su envoltura roja como un encaje, de un árbol que hasta mediados del siglo XIX solo crecía en las diez pequeñas islas de Banda."
+          },
+          "wiki": {
+            "en": "Nutmeg",
+            "es": "Nuez moscada"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "For more than three thousand years frankincense, myrrh, pepper, cloves and nutmeg passed from hand to hand along camel tracks and monsoon sea lanes, carried by Arab, Somali, Indian, Malay, Javanese, Persian, Greek and Chinese sailors and caravaneers, and their ports mixed peoples, languages and faiths. After 1498 European guns broke into this world, and the Banda massacre showed what a monopoly could cost. Frankincense is still tapped in Dhofar and Somalia, and dhows still sail with the monsoon.",
+    "es": "Durante más de tres mil años, el incienso, la mirra, la pimienta, el clavo y la nuez moscada pasaron de mano en mano por caminos de caravanas y rutas marítimas del monzón, llevados por marinos y caravaneros árabes, somalíes, indios, malayos, javaneses, persas, griegos y chinos, y sus puertos mezclaron pueblos, lenguas y religiones. Después de 1498 los cañones europeos irrumpieron en este mundo, y la masacre de Banda mostró lo que podía costar un monopolio. El incienso todavía se recoge en Dhofar y Somalia, y los dhows aún navegan con el monzón."
+  },
+  "sources": [
+    {
+      "title": "Incense trade route (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Incense_trade_route"
+    },
+    {
+      "title": "Frankincense (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Frankincense"
+    },
+    {
+      "title": "Myrrh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Myrrh"
+    },
+    {
+      "title": "Land of Punt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Land_of_Punt"
+    },
+    {
+      "title": "Hatshepsut (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hatshepsut"
+    },
+    {
+      "title": "Mersa Gawasis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mersa_Gawasis"
+    },
+    {
+      "title": "Khor Rori (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khor_Rori"
+    },
+    {
+      "title": "Bir Ali (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bir_Ali"
+    },
+    {
+      "title": "Shabwa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shabwa"
+    },
+    {
+      "title": "Marib (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Marib"
+    },
+    {
+      "title": "Najran (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Najran"
+    },
+    {
+      "title": "Dromedary (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dromedary"
+    },
+    {
+      "title": "Nabataeans (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nabataeans"
+    },
+    {
+      "title": "Petra (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Petra"
+    },
+    {
+      "title": "Hegra (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hegra"
+    },
+    {
+      "title": "Gaza City (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gaza_City"
+    },
+    {
+      "title": "Myos Hormos (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Myos_Hormos"
+    },
+    {
+      "title": "Berenice Troglodytica (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Berenice_Troglodytica"
+    },
+    {
+      "title": "Qift (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Qift"
+    },
+    {
+      "title": "Periplus of the Erythraean Sea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Periplus_of_the_Erythraean_Sea"
+    },
+    {
+      "title": "Hippalus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hippalus"
+    },
+    {
+      "title": "Muziris (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Muziris"
+    },
+    {
+      "title": "Black pepper (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Black_pepper"
+    },
+    {
+      "title": "Spice trade (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Spice_trade"
+    },
+    {
+      "title": "Indian Ocean trade (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Indian_Ocean_trade"
+    },
+    {
+      "title": "Maritime Silk Road (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maritime_Silk_Road"
+    },
+    {
+      "title": "Srivijaya (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Srivijaya"
+    },
+    {
+      "title": "Yijing (monk) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yijing_(monk)"
+    },
+    {
+      "title": "Nalanda mahavihara (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nalanda_mahavihara"
+    },
+    {
+      "title": "Strait of Malacca (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Strait_of_Malacca"
+    },
+    {
+      "title": "Dhow (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dhow"
+    },
+    {
+      "title": "Belitung shipwreck (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Belitung_shipwreck"
+    },
+    {
+      "title": "Bandar Siraf (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bandar_Siraf"
+    },
+    {
+      "title": "Aden (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aden"
+    },
+    {
+      "title": "Kingdom of Hormuz (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hormuz"
+    },
+    {
+      "title": "Kozhikode (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kozhikode"
+    },
+    {
+      "title": "Malacca Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Malacca_Sultanate"
+    },
+    {
+      "title": "Banda Islands (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Banda_Islands"
+    },
+    {
+      "title": "Clove (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Clove"
+    },
+    {
+      "title": "Nutmeg (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nutmeg"
+    },
+    {
+      "title": "Vasco da Gama (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vasco_da_Gama"
+    },
+    {
+      "title": "Malindi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Malindi"
+    },
+    {
+      "title": "Capture of Malacca (1511) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Capture_of_Malacca_(1511)"
+    },
+    {
+      "title": "Afonso de Albuquerque (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Afonso_de_Albuquerque"
+    },
+    {
+      "title": "Tomé Pires (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tomé_Pires"
+    },
+    {
+      "title": "Dutch East India Company (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dutch_East_India_Company"
+    },
+    {
+      "title": "Dutch conquest of the Banda Islands (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dutch_conquest_of_the_Banda_Islands"
+    },
+    {
+      "title": "Jan Pieterszoon Coen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jan_Pieterszoon_Coen"
+    },
+    {
+      "title": "Run (island) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Run_(island)"
+    }
+  ]
+}

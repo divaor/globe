@@ -1,0 +1,4806 @@
+{
+  "id": "cook",
+  "name": {
+    "en": "Captain Cook's three voyages",
+    "es": "Los tres viajes del capitán Cook"
+  },
+  "icon": "🧭",
+  "era": "early-modern",
+  "region": {
+    "en": "The Pacific, from the Antarctic to the Arctic",
+    "es": "El Pacífico, de la Antártida al Ártico"
+  },
+  "start": "1768-08-26",
+  "end": "1780-10-04",
+  "summary": {
+    "en": "Between 1768 and 1779 James Cook sailed three times into the Pacific, charting New Zealand and eastern Australia and probing the ice of both polar seas. His voyages paved the way for British colonies.",
+    "es": "Entre 1768 y 1779, James Cook viajó tres veces al Pacífico: cartografió Nueva Zelanda y el este de Australia y se acercó al hielo de los dos mares polares. Sus viajes abrieron el camino a las colonias británicas."
+  },
+  "camera": {
+    "lon": -170.0,
+    "lat": -15.0,
+    "zoom": 1.0
+  },
+  "sides": [
+    {
+      "id": "first",
+      "name": {
+        "en": "First voyage: Endeavour (1768–1771)",
+        "es": "Primer viaje: Endeavour (1768–1771)"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "second",
+      "name": {
+        "en": "Second voyage: Resolution and Adventure (1772–1775)",
+        "es": "Segundo viaje: Resolution y Adventure (1772–1775)"
+      },
+      "color": "#2e6f9e"
+    },
+    {
+      "id": "third",
+      "name": {
+        "en": "Third voyage: Resolution and Discovery (1776–1779)",
+        "es": "Tercer viaje: Resolution y Discovery (1776–1779)"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "after",
+      "name": {
+        "en": "After Cook's death (1779–1780)",
+        "es": "Tras la muerte de Cook (1779–1780)"
+      },
+      "color": "#d4a017"
+    }
+  ],
+  "steps": [
+    {
+      "date": "1768-11-13",
+      "title": {
+        "en": "From Plymouth to Rio",
+        "es": "De Plymouth a Río"
+      },
+      "camera": {
+        "lon": -24.0,
+        "lat": 14.0,
+        "zoom": 1.6
+      },
+      "text": {
+        "en": "On 26 August 1768 HMS Endeavour left Plymouth with 94 people, bound for Tahiti to watch Venus cross the Sun. In November she reached Rio de Janeiro, where the Portuguese viceroy suspected spies.",
+        "es": "El 26 de agosto de 1768, el HMS Endeavour salió de Plymouth con 94 personas rumbo a Tahití, para observar el paso de Venus por delante del Sol. En noviembre llegó a Río, donde el virrey portugués sospechó que eran espías."
+      },
+      "details": {
+        "en": "The Royal Society wanted the 1769 transit of Venus observed from the Pacific, to help measure the distance from the Earth to the Sun. The Admiralty added secret orders: to search for Terra Australis, the great southern continent that geographers such as Alexander Dalrymple believed in. It chose James Cook, a 39-year-old officer known for his charts of Newfoundland, and a sturdy Whitby coal ship renamed Endeavour. With him sailed the astronomer Charles Green and the wealthy young naturalist Joseph Banks, who paid for his own team, among them the botanist Daniel Solander and the artist Sydney Parkinson. After a stop at Madeira they crossed to Brazil. At Rio the viceroy, warned that Britain was trying to extend its power, did not believe the story of a scientific voyage; Cook, offended, noted the city's defences.",
+        "es": "La Royal Society quería observar desde el Pacífico el tránsito de Venus de 1769, que ayudaría a medir la distancia entre la Tierra y el Sol. El Almirantazgo añadió órdenes secretas: buscar la Terra Australis, el gran continente austral en el que creían geógrafos como Alexander Dalrymple. Eligió a James Cook, un oficial de 39 años conocido por sus mapas de Terranova, y un sólido barco carbonero de Whitby rebautizado Endeavour. Con él viajaron el astrónomo Charles Green y el joven y rico naturalista Joseph Banks, que pagó su propio equipo, con el botánico Daniel Solander y el dibujante Sydney Parkinson. Tras una escala en Madeira, cruzaron a Brasil. En Río, el virrey, advertido de que Gran Bretaña quería extender su poder, no creyó la historia de un viaje científico; Cook, ofendido, anotó las defensas de la ciudad."
+      },
+      "moves": [
+        {
+          "side": "first",
+          "path": [
+            [
+              -4.14,
+              50.33
+            ],
+            [
+              -5.0,
+              49.6
+            ],
+            [
+              -9.8,
+              45.0
+            ],
+            [
+              -14.5,
+              35.5
+            ],
+            [
+              -16.75,
+              32.55
+            ],
+            [
+              -18.4,
+              27.3
+            ],
+            [
+              -22.5,
+              17.2
+            ],
+            [
+              -24.0,
+              10.0
+            ],
+            [
+              -28.0,
+              0.0
+            ],
+            [
+              -33.0,
+              -10.0
+            ],
+            [
+              -38.0,
+              -19.0
+            ],
+            [
+              -40.6,
+              -21.9
+            ],
+            [
+              -41.6,
+              -22.7
+            ],
+            [
+              -42.2,
+              -23.1
+            ],
+            [
+              -43.1,
+              -23.05
+            ],
+            [
+              -43.16,
+              -22.93
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "james-cook",
+          "name": {
+            "en": "James Cook",
+            "es": "James Cook"
+          },
+          "at": [
+            -4.1427,
+            50.3755
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1768-08-26",
+          "life": [
+            "1728-11-07",
+            "1779-02-14"
+          ],
+          "place": {
+            "en": "Plymouth, England",
+            "es": "Plymouth (Inglaterra)"
+          },
+          "text": {
+            "en": "A farm labourer's son from Yorkshire who learned the sea on coal ships and rose in the Royal Navy as a surveyor. His three voyages mapped vast stretches of the Pacific in greater detail than ever before.",
+            "es": "Hijo de un jornalero de Yorkshire, aprendió a navegar en barcos carboneros y ascendió en la Marina Real como cartógrafo. Sus tres viajes cartografiaron enormes partes del Pacífico con un detalle nunca visto."
+          },
+          "details": {
+            "en": "Born in 1728 at Marton, Cook fought in the Seven Years' War and charted the St Lawrence River and Newfoundland, which brought him to the notice of the Admiralty and the Royal Society. He was patient, persistent and a superb navigator, and he fought scurvy with fresh food, sauerkraut and cleanliness, which won him the Royal Society's Copley Medal. With Pacific peoples he usually sought friendship and trade, but he answered threats and thefts with force: over the three voyages his crews killed at least 45 Indigenous people. Today he is honoured as a great explorer and, by many Indigenous people, remembered as a symbol of the colonisation that followed.",
+            "es": "Nacido en 1728 en Marton, Cook combatió en la guerra de los Siete Años y cartografió el río San Lorenzo y Terranova, lo que atrajo la atención del Almirantazgo y de la Royal Society. Era paciente, tenaz y un navegante excelente, y combatió el escorbuto con comida fresca, chucrut y limpieza, lo que le valió la Medalla Copley de la Royal Society. Con los pueblos del Pacífico solía buscar amistad y comercio, pero respondía a las amenazas y los robos con la fuerza: en los tres viajes, sus tripulaciones mataron al menos a 45 indígenas. Hoy se lo honra como un gran explorador y muchos pueblos indígenas lo recuerdan como símbolo de la colonización que vino después."
+          },
+          "wiki": {
+            "en": "James Cook",
+            "es": "James Cook"
+          }
+        },
+        {
+          "id": "joseph-banks",
+          "name": {
+            "en": "Joseph Banks",
+            "es": "Joseph Banks"
+          },
+          "at": [
+            -0.1405,
+            51.5143
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1768-08-26",
+          "life": [
+            "1743-02-24",
+            "1820-06-19"
+          ],
+          "place": {
+            "en": "London, England",
+            "es": "Londres (Inglaterra)"
+          },
+          "text": {
+            "en": "A wealthy young naturalist who sailed with his own team of scientists and artists, collecting plants, animals and objects at every stop. He later pushed Britain to found a colony at Botany Bay.",
+            "es": "Un naturalista joven y rico que viajó con su propio equipo de científicos y dibujantes y reunió plantas, animales y objetos en cada escala. Después impulsó la fundación de una colonia británica en Botany Bay."
+          },
+          "details": {
+            "en": "In Brazil Banks made the first scientific description of the bougainvillea. In Tahiti he studied the island’s people and plants and took Tupaia aboard as his guest, and at Botany Bay he and Daniel Solander gathered so many new plants that Cook named the bay after them. Back home he was president of the Royal Society for 41 years, made Kew Gardens a world centre of botany and advised the government on Australia for twenty years, promoting the convict colony that the First Fleet founded in 1788. Some 80 plants bear his name, among them the genus Banksia.",
+            "es": "En Brasil, Banks hizo la primera descripción científica de la buganvilla. En Tahití estudió a la gente y las plantas de la isla y llevó a bordo a Tupaia como invitado suyo, y en Botany Bay él y Daniel Solander reunieron tantas plantas nuevas que Cook bautizó la bahía por ellas. De vuelta en Inglaterra fue presidente de la Royal Society durante 41 años, convirtió los jardines de Kew en un centro mundial de la botánica y aconsejó al gobierno sobre Australia durante veinte años, impulsando la colonia penal que fundó la Primera Flota en 1788. Unas 80 plantas llevan su nombre, entre ellas el género Banksia."
+          },
+          "wiki": {
+            "en": "Joseph Banks",
+            "es": "Joseph Banks"
+          }
+        },
+        {
+          "id": "hms-endeavour",
+          "name": {
+            "en": "HMS Endeavour",
+            "es": "HMS Endeavour"
+          },
+          "at": [
+            -0.6148,
+            54.4858
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1764",
+          "place": {
+            "en": "Whitby, England",
+            "es": "Whitby (Inglaterra)"
+          },
+          "text": {
+            "en": "A flat-bottomed coal ship built at Whitby in 1764 as the Earl of Pembroke. Sturdy and roomy, she could be run onto a beach for repairs, which saved her after the Great Barrier Reef.",
+            "es": "Un barco carbonero de fondo plano construido en Whitby en 1764 con el nombre de Earl of Pembroke. Robusto y espacioso, podía vararse en una playa para repararlo, y eso lo salvó tras la Gran Barrera de Coral."
+          },
+          "details": {
+            "en": "The navy bought her in 1768 and fitted her out with ten small cannon for the voyage. She was 32 m long and carried 94 people in a hull built to haul coal. After the voyage she carried stores to the Falkland Islands and was sold, and during the American War of Independence she became a troop transport. In 1778 she was sunk on purpose at Newport, Rhode Island, with other ships, to block the harbour against a French fleet.",
+            "es": "La Marina lo compró en 1768 y lo armó con diez cañones pequeños para el viaje. Medía 32 m y llevó a 94 personas en un casco hecho para transportar carbón. Después del viaje llevó provisiones a las islas Malvinas y fue vendido, y en la guerra de Independencia de Estados Unidos se convirtió en transporte de tropas. En 1778 lo hundieron a propósito en Newport, Rhode Island, junto con otros barcos, para cerrar el puerto a una flota francesa."
+          },
+          "wiki": {
+            "en": "HMS Endeavour",
+            "es": "HMB Endeavour"
+          }
+        },
+        {
+          "id": "rio-de-janeiro",
+          "name": {
+            "en": "Rio de Janeiro",
+            "es": "Río de Janeiro"
+          },
+          "at": [
+            -43.1729,
+            -22.9068
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1768-11-13",
+          "place": {
+            "en": "Brazil",
+            "es": "Brasil"
+          },
+          "text": {
+            "en": "A Portuguese colonial city on Guanabara Bay. The viceroy let the Endeavour take on food and water, but he did not believe Cook’s tale of a purely scientific voyage.",
+            "es": "Una ciudad colonial portuguesa en la bahía de Guanabara. El virrey dejó que el Endeavour cargara comida y agua, pero no creyó el relato de Cook sobre un viaje solo científico."
+          },
+          "wiki": {
+            "en": "Guanabara Bay",
+            "es": "Bahía de Guanabara"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1769-04-13",
+      "title": {
+        "en": "Round Cape Horn to Tahiti",
+        "es": "Del cabo de Hornos a Tahití"
+      },
+      "camera": {
+        "lon": -100.0,
+        "lat": -35.0,
+        "zoom": 1.3
+      },
+      "text": {
+        "en": "In January 1769 the Endeavour stopped in Tierra del Fuego and rounded Cape Horn. On 13 April she anchored at Matavai Bay, Tahiti, where Cook built a fort to watch the transit of Venus.",
+        "es": "En enero de 1769, el Endeavour hizo escala en Tierra del Fuego y dobló el cabo de Hornos. El 13 de abril fondeó en la bahía de Matavai, en Tahití, donde Cook construyó un fuerte para observar el tránsito de Venus."
+      },
+      "details": {
+        "en": "At the Bay of Good Success, in Tierra del Fuego, Cook met the Haush people and wrote his first description of a people in his journal. On a plant-hunting trip inland two of Banks’s servants, Thomas Richmond and George Dorlton, two Black men from his estate, froze to death during a night ashore. On 3 June, under a cloudless sky, Cook, Green and Solander timed Venus crossing the face of the Sun from Point Venus, though a blur around the planet made their times differ. In Tahiti, first visited by Samuel Wallis two years before, the crew traded nails and cloth for food and became the first Europeans to see surfing. There were also clashes over thefts: Cook seized canoes until stolen goods were returned.",
+        "es": "En la bahía del Buen Suceso, en Tierra del Fuego, Cook conoció al pueblo haush y escribió en su diario su primera descripción de un pueblo. En una salida tierra adentro en busca de plantas, dos sirvientes de Banks, Thomas Richmond y George Dorlton, dos hombres negros de su finca, murieron congelados durante una noche en tierra. El 3 de junio, con el cielo despejado, Cook, Green y Solander cronometraron el paso de Venus por delante del Sol desde Point Venus, aunque una mancha borrosa alrededor del planeta hizo que sus tiempos no coincidieran. En Tahití, que Samuel Wallis había visitado por primera vez dos años antes, la tripulación cambió clavos y tela por comida, y sus hombres fueron los primeros europeos en ver a alguien surfear. También hubo choques por robos: Cook se apoderó de canoas hasta que devolvieron lo robado."
+      },
+      "moves": [
+        {
+          "side": "first",
+          "path": [
+            [
+              -43.16,
+              -22.93
+            ],
+            [
+              -43.1,
+              -23.1
+            ],
+            [
+              -47.0,
+              -30.0
+            ],
+            [
+              -55.0,
+              -40.0
+            ],
+            [
+              -62.0,
+              -50.0
+            ],
+            [
+              -64.2,
+              -54.0
+            ],
+            [
+              -65.0,
+              -54.72
+            ],
+            [
+              -65.22,
+              -54.82
+            ],
+            [
+              -66.5,
+              -55.45
+            ],
+            [
+              -67.3,
+              -56.2
+            ],
+            [
+              -75.0,
+              -59.0
+            ],
+            [
+              -95.0,
+              -45.0
+            ],
+            [
+              -120.0,
+              -28.0
+            ],
+            [
+              -138.0,
+              -19.0
+            ],
+            [
+              -145.0,
+              -17.6
+            ],
+            [
+              -149.2,
+              -17.45
+            ],
+            [
+              -149.48,
+              -17.47
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "haush",
+          "name": {
+            "en": "The Haush",
+            "es": "Los haush"
+          },
+          "at": [
+            -65.29,
+            -54.82
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1769-01",
+          "place": {
+            "en": "Tierra del Fuego, Argentina",
+            "es": "Tierra del Fuego (Argentina)"
+          },
+          "text": {
+            "en": "Hunters and gatherers of the south-eastern tip of Tierra del Fuego, related to the Selk’nam. They had helped Spanish sailors here in 1619 and met Cook’s crew at the Bay of Good Success in 1769.",
+            "es": "Cazadores y recolectores del extremo sureste de Tierra del Fuego, emparentados con los selk’nam. Habían ayudado aquí a marinos españoles en 1619 y conocieron a la tripulación de Cook en la bahía del Buen Suceso en 1769."
+          },
+          "wiki": {
+            "en": "Haush",
+            "es": "Pueblo haush"
+          }
+        },
+        {
+          "id": "cape-horn",
+          "name": {
+            "en": "Cape Horn",
+            "es": "Cabo de Hornos"
+          },
+          "at": [
+            -67.2892,
+            -55.98
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1769-01",
+          "place": {
+            "en": "Hornos Island, Chile",
+            "es": "Isla Hornos (Chile)"
+          },
+          "text": {
+            "en": "The southernmost headland of the Americas, on a small island south of Tierra del Fuego, feared for its storms. Dutch sailors found it in 1616; the Endeavour rounded it in January 1769.",
+            "es": "El cabo más austral de América, en una pequeña isla al sur de Tierra del Fuego, temido por sus tormentas. Unos marinos neerlandeses lo encontraron en 1616; el Endeavour lo dobló en enero de 1769."
+          },
+          "wiki": {
+            "en": "Cape Horn",
+            "es": "Cabo de Hornos"
+          }
+        },
+        {
+          "id": "tahiti",
+          "name": {
+            "en": "Tahiti",
+            "es": "Tahití"
+          },
+          "at": [
+            -149.4167,
+            -17.6667
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1769-04-13",
+          "place": {
+            "en": "Society Islands, French Polynesia",
+            "es": "Islas de la Sociedad (Polinesia Francesa)"
+          },
+          "text": {
+            "en": "A high volcanic island of the Society Islands, home to a Polynesian people with powerful chiefs, priests and voyagers. Europeans first came in 1767; Cook stopped here on all three voyages.",
+            "es": "Una alta isla volcánica de las islas de la Sociedad, hogar de un pueblo polinesio con poderosos jefes, sacerdotes y navegantes. Los europeos llegaron por primera vez en 1767; Cook se detuvo aquí en sus tres viajes."
+          },
+          "wiki": {
+            "en": "Tahiti",
+            "es": "Tahití"
+          }
+        },
+        {
+          "id": "transit-of-venus",
+          "name": {
+            "en": "The transit of Venus",
+            "es": "El tránsito de Venus"
+          },
+          "at": [
+            -149.4944,
+            -17.4956
+          ],
+          "cat": "discovery",
+          "type": "event",
+          "date": "1769-06-03",
+          "place": {
+            "en": "Point Venus, Tahiti",
+            "es": "Point Venus, Tahití"
+          },
+          "text": {
+            "en": "On 3 June 1769 Venus crossed the face of the Sun. Timing it from places far apart was meant to reveal the distance from the Earth to the Sun, but a blurring made the results less exact than hoped.",
+            "es": "El 3 de junio de 1769, Venus pasó por delante del disco del Sol. Cronometrarlo desde lugares muy alejados debía revelar la distancia de la Tierra al Sol, pero un efecto borroso hizo los resultados menos exactos de lo esperado."
+          },
+          "wiki": {
+            "en": "1769 transit of Venus observed from Tahiti",
+            "es": "Observación del tránsito de Venus de 1769 desde Tahití"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1769-10-07",
+      "title": {
+        "en": "Tupaia joins the voyage",
+        "es": "Tupaia se une al viaje"
+      },
+      "camera": {
+        "lon": -168.0,
+        "lat": -28.0,
+        "zoom": 1.6
+      },
+      "text": {
+        "en": "Tupaia, a priest and navigator from Raʻiātea, joined the Endeavour and guided it through the Society Islands. After a long search south and west, the ship reached Aotearoa New Zealand in October 1769.",
+        "es": "Tupaia, sacerdote y navegante de Raʻiātea, se unió al Endeavour y lo guió por las islas de la Sociedad. Tras una larga búsqueda hacia el sur y el oeste, el barco llegó a Aotearoa, Nueva Zelanda, en octubre de 1769."
+      },
+      "details": {
+        "en": "Leaving Tahiti on 13 July, Tupaia piloted the Endeavour to Huahine and Raʻiātea, where Cook claimed the islands for Britain and named them the Society Islands. Then, following his secret orders, Cook sailed south to 40°S without finding any continent and turned west. On the way Tupaia drew his chart of the islands he knew. On 7 October the crew landed at Tūranganui-a-Kiwa, which Cook named Poverty Bay. The first meetings went badly: in two days the British shot dead four or five Māori, among them Te Maro, and a week later three more men were killed off Cape Kidnappers. Cook regretted the killings in his journal. Because Tupaia could speak with Māori, later meetings at Anaura and Tolaga Bay were peaceful.",
+        "es": "Tras salir de Tahití el 13 de julio, Tupaia guió al Endeavour hasta Huahine y Raʻiātea, donde Cook reclamó las islas para Gran Bretaña y las llamó islas de la Sociedad. Luego, según sus órdenes secretas, Cook navegó hacia el sur hasta los 40° S sin encontrar ningún continente y giró al oeste. En el camino, Tupaia dibujó su mapa de las islas que conocía. El 7 de octubre, la tripulación desembarcó en Tūranganui-a-Kiwa, que Cook llamó bahía Poverty. Los primeros encuentros salieron mal: en dos días, los británicos mataron a tiros a cuatro o cinco maoríes, entre ellos Te Maro, y una semana después murieron otros tres hombres frente al cabo Kidnappers. Cook lamentó las muertes en su diario. Como Tupaia podía hablar con los maoríes, los encuentros siguientes en Anaura y en la bahía de Tolaga fueron pacíficos."
+      },
+      "moves": [
+        {
+          "side": "first",
+          "path": [
+            [
+              -149.48,
+              -17.47
+            ],
+            [
+              -150.3,
+              -17.1
+            ],
+            [
+              -151.06,
+              -16.7
+            ],
+            [
+              -151.3,
+              -16.85
+            ],
+            [
+              -151.48,
+              -16.72
+            ],
+            [
+              -151.75,
+              -17.1
+            ],
+            [
+              -151.5,
+              -22.0
+            ],
+            [
+              -149.0,
+              -32.0
+            ],
+            [
+              -147.5,
+              -40.0
+            ],
+            [
+              -160.0,
+              -36.5
+            ],
+            [
+              -175.0,
+              -37.5
+            ],
+            [
+              179.0,
+              -38.6
+            ],
+            [
+              178.0,
+              -38.74
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "tupaia",
+          "name": {
+            "en": "Tupaia",
+            "es": "Tupaia"
+          },
+          "at": [
+            -151.48,
+            -16.76
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1769-07-13",
+          "life": [
+            "1725",
+            "1770-12-20"
+          ],
+          "place": {
+            "en": "Raʻiātea, Society Islands",
+            "es": "Raʻiātea, islas de la Sociedad"
+          },
+          "text": {
+            "en": "A navigator and arioi priest of the great marae of Taputapuatea on Raʻiātea. He guided the Endeavour through the islands, interpreted for Cook in New Zealand and drew a famous chart of the Pacific.",
+            "es": "Navegante y sacerdote arioi del gran marae de Taputapuatea, en Raʻiātea. Guió al Endeavour entre las islas, fue intérprete de Cook en Nueva Zelanda y dibujó un famoso mapa del Pacífico."
+          },
+          "details": {
+            "en": "Tupaia was trained in Raʻiātea’s schools of learning, in genealogies, history and star navigation. Driven from his island by warriors from Bora Bora, he became adviser and high priest to the chiefs of Papara in Tahiti. Banks took him on as his guest, although Cook at first refused. In New Zealand Māori welcomed him as a tohunga, an expert, and when Cook returned in 1773 people called out his name. Some of the crew found him proud. He was also an artist: his drawing of a Māori man trading a crayfish with Banks survives. He died of disease at Batavia on 20 December 1770.",
+            "es": "Tupaia se formó en las escuelas del saber de Raʻiātea, en genealogías, historia y navegación por las estrellas. Expulsado de su isla por guerreros de Bora Bora, fue consejero y sumo sacerdote de los jefes de Papara, en Tahití. Banks lo llevó a bordo como invitado suyo, aunque Cook al principio se negó. En Nueva Zelanda, los maoríes lo recibieron como tohunga, un experto, y cuando Cook volvió en 1773 la gente gritaba su nombre. Algunos tripulantes lo encontraban orgulloso. También era artista: se conserva su dibujo de un maorí que intercambia una langosta con Banks. Murió de una enfermedad en Batavia el 20 de diciembre de 1770."
+          },
+          "wiki": {
+            "en": "Tupaia (navigator)",
+            "es": "Tupaia (navegante)"
+          }
+        },
+        {
+          "id": "tupaias-map",
+          "name": {
+            "en": "Tupaia's map",
+            "es": "El mapa de Tupaia"
+          },
+          "at": [
+            -151.2,
+            -23.0
+          ],
+          "cat": "book",
+          "type": "work",
+          "date": "1769-08-15",
+          "place": {
+            "en": "Aboard the Endeavour, south of the Society Islands",
+            "es": "A bordo del Endeavour, al sur de las islas de la Sociedad"
+          },
+          "text": {
+            "en": "A chart of the islands within some 3,200 km of Raʻiātea, begun on 15 August 1769 with Cook and Banks; Tupaia named 74 of them. It turned Polynesian wayfinding into a map Europeans could read.",
+            "es": "Un mapa de las islas en un radio de unos 3200 km de Raʻiātea, que Tupaia empezó el 15 de agosto de 1769 con Cook y Banks; nombró 74 de ellas. Convirtió la navegación polinesia en un mapa que los europeos podían leer."
+          },
+          "details": {
+            "en": "Tupaia invented a way of drawing the islands so that their directions worked with Cook’s compass, marking north with the word avatea, the noon sun. Older studies thought his own voyages had been short, but recent research reads the chart as a web of voyaging routes across most of Polynesia, from Rotuma and Samoa to the Marquesas and Rapa Nui, and suggests that Europeans long undervalued what he knew.",
+            "es": "Tupaia inventó una forma de dibujar las islas para que sus direcciones funcionaran con la brújula de Cook, y marcó el norte con la palabra avatea, el sol del mediodía. Estudios antiguos creían que sus propios viajes habían sido cortos, pero investigaciones recientes leen el mapa como una red de rutas de navegación por casi toda la Polinesia, de Rotuma y Samoa a las Marquesas y Rapa Nui, y sugieren que los europeos subestimaron durante mucho tiempo lo que sabía."
+          },
+          "wiki": {
+            "en": "Tupaia (navigator)",
+            "es": "Tupaia (navegante)"
+          }
+        },
+        {
+          "id": "turanganui-a-kiwa",
+          "name": {
+            "en": "Tūranganui-a-Kiwa (Poverty Bay)",
+            "es": "Tūranganui-a-Kiwa (bahía Poverty)"
+          },
+          "at": [
+            178.03,
+            -38.68
+          ],
+          "cat": "encounter",
+          "type": "place",
+          "date": "1769-10-07",
+          "place": {
+            "en": "Gisborne, New Zealand",
+            "es": "Gisborne (Nueva Zelanda)"
+          },
+          "text": {
+            "en": "Home of the Māori iwi Te Aitanga-a-Māhaki, Rongowhakaata and Ngāi Tāmanuhiri. Cook's first landing in New Zealand, here, ended in killings, among them that of Te Maro.",
+            "es": "Hogar de los iwi maoríes Te Aitanga-a-Māhaki, Rongowhakaata y Ngāi Tāmanuhiri. El primer desembarco de Cook en Nueva Zelanda, aquí, terminó en muertes, entre ellas la de Te Maro."
+          },
+          "details": {
+            "en": "The Dutch navigator Abel Tasman had seen New Zealand in 1642 but never landed, so Cook’s party were the first Europeans known to set foot there. Unable to get the food and water he needed after the killings, Cook named the place Poverty Bay. In 2019 its name officially became Tūranganui-a-Kiwa / Poverty Bay, restoring its Māori name.",
+            "es": "El navegante neerlandés Abel Tasman había visto Nueva Zelanda en 1642, pero nunca desembarcó, así que el grupo de Cook fue el primero de Europa que pisó esa tierra. Como tras las muertes no pudo conseguir la comida y el agua que necesitaba, Cook llamó al lugar Poverty Bay, «bahía Pobreza». En 2019, su nombre oficial pasó a ser Tūranganui-a-Kiwa / Poverty Bay, con su nombre maorí."
+          },
+          "wiki": {
+            "en": "Poverty Bay",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1770-03-31",
+      "title": {
+        "en": "Charting New Zealand",
+        "es": "El mapa de Nueva Zelanda"
+      },
+      "camera": {
+        "lon": 173.5,
+        "lat": -41.0,
+        "zoom": 4.2
+      },
+      "text": {
+        "en": "For six months Cook sailed right round New Zealand, charting a land almost as large as Italy with only two big mistakes. He showed it was no southern continent and claimed parts of it for Britain.",
+        "es": "Durante seis meses, Cook rodeó Nueva Zelanda y cartografió una tierra casi tan grande como Italia con solo dos grandes errores. Demostró que no era un continente austral y reclamó partes de ella para Gran Bretaña."
+      },
+      "details": {
+        "en": "At Te Whanganui-a-Hei, which Cook named Mercury Bay, he watched Mercury cross the Sun on 9 November and claimed the bay; one Māori man was shot in a quarrel over trade. Rounding North Cape in gales, he went down the west coast to Queen Charlotte Sound, Tōtaranui, which became his favourite anchorage. From a hill there he saw the strait that now bears his name, proof that the North Island was not part of a continent. The ship then sailed down the east coast of the South Island, round its southern tip and back up the west. Cook’s only big errors were to draw Banks Peninsula as an island and Stewart Island as part of the mainland.",
+        "es": "En Te Whanganui-a-Hei, que Cook llamó bahía de Mercury, observó el paso de Mercurio por delante del Sol el 9 de noviembre y reclamó la bahía; un hombre maorí murió de un disparo en una disputa comercial. Tras doblar el cabo Norte entre vendavales, bajó por la costa oeste hasta el canal de Queen Charlotte, Tōtaranui, que se convirtió en su fondeadero favorito. Desde una colina vio el estrecho que hoy lleva su nombre, prueba de que la isla Norte no formaba parte de un continente. Luego el barco bajó por la costa este de la isla Sur, rodeó su extremo sur y subió por el oeste. Sus únicos grandes errores fueron dibujar la península de Banks como una isla y la isla Stewart como parte de tierra firme."
+      },
+      "moves": [
+        {
+          "side": "first",
+          "path": [
+            [
+              178.0,
+              -38.74
+            ],
+            [
+              178.1,
+              -38.95
+            ],
+            [
+              177.6,
+              -39.45
+            ],
+            [
+              177.1,
+              -39.85
+            ],
+            [
+              176.85,
+              -40.4
+            ],
+            [
+              177.3,
+              -39.8
+            ],
+            [
+              178.25,
+              -39.15
+            ],
+            [
+              178.45,
+              -38.6
+            ],
+            [
+              178.4,
+              -38.35
+            ],
+            [
+              178.7,
+              -37.85
+            ],
+            [
+              178.75,
+              -37.55
+            ],
+            [
+              178.0,
+              -37.45
+            ],
+            [
+              177.0,
+              -37.55
+            ],
+            [
+              176.2,
+              -37.3
+            ],
+            [
+              175.95,
+              -36.8
+            ],
+            [
+              175.85,
+              -36.35
+            ],
+            [
+              175.2,
+              -35.95
+            ],
+            [
+              174.7,
+              -35.55
+            ],
+            [
+              174.4,
+              -35.1
+            ],
+            [
+              173.7,
+              -34.75
+            ],
+            [
+              173.0,
+              -34.3
+            ],
+            [
+              172.5,
+              -34.4
+            ],
+            [
+              172.7,
+              -35.0
+            ],
+            [
+              173.2,
+              -35.65
+            ],
+            [
+              173.8,
+              -36.55
+            ],
+            [
+              174.35,
+              -37.2
+            ],
+            [
+              174.5,
+              -38.0
+            ],
+            [
+              174.3,
+              -38.8
+            ],
+            [
+              173.5,
+              -39.35
+            ],
+            [
+              174.0,
+              -40.1
+            ],
+            [
+              174.35,
+              -40.75
+            ],
+            [
+              174.38,
+              -41.03
+            ],
+            [
+              174.24,
+              -41.1
+            ],
+            [
+              174.38,
+              -41.03
+            ],
+            [
+              174.6,
+              -41.35
+            ],
+            [
+              175.3,
+              -41.75
+            ],
+            [
+              175.9,
+              -41.4
+            ],
+            [
+              176.45,
+              -40.95
+            ],
+            [
+              176.85,
+              -40.45
+            ],
+            [
+              176.4,
+              -41.1
+            ],
+            [
+              175.4,
+              -41.8
+            ],
+            [
+              174.5,
+              -41.75
+            ],
+            [
+              173.95,
+              -42.4
+            ],
+            [
+              173.4,
+              -43.1
+            ],
+            [
+              173.3,
+              -43.85
+            ],
+            [
+              172.1,
+              -44.6
+            ],
+            [
+              171.25,
+              -45.2
+            ],
+            [
+              170.9,
+              -45.95
+            ],
+            [
+              170.2,
+              -46.55
+            ],
+            [
+              168.9,
+              -47.1
+            ],
+            [
+              167.6,
+              -47.45
+            ],
+            [
+              166.9,
+              -46.95
+            ],
+            [
+              166.3,
+              -46.1
+            ],
+            [
+              166.2,
+              -45.55
+            ],
+            [
+              166.7,
+              -45.0
+            ],
+            [
+              167.6,
+              -44.4
+            ],
+            [
+              168.8,
+              -43.5
+            ],
+            [
+              170.4,
+              -42.6
+            ],
+            [
+              171.1,
+              -41.9
+            ],
+            [
+              171.9,
+              -40.9
+            ],
+            [
+              172.55,
+              -40.35
+            ],
+            [
+              173.3,
+              -40.55
+            ],
+            [
+              173.88,
+              -40.95
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Round New Zealand",
+            "es": "Alrededor de Nueva Zelanda"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "maori",
+          "name": {
+            "en": "The Māori",
+            "es": "Los maoríes"
+          },
+          "at": [
+            178.29,
+            -38.37
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1769-10",
+          "place": {
+            "en": "Aotearoa New Zealand",
+            "es": "Aotearoa (Nueva Zelanda)"
+          },
+          "text": {
+            "en": "The Polynesian people of Aotearoa, whose ancestors arrived by canoe around 1300. With Tupaia as interpreter, Māori at Anaura and Tolaga Bay traded with the crew and let them gather water and wild celery.",
+            "es": "El pueblo polinesio de Aotearoa, cuyos antepasados llegaron en canoa hacia 1300. Con Tupaia como intérprete, los maoríes de Anaura y Tolaga comerciaron con la tripulación y la dejaron recoger agua y apio silvestre."
+          },
+          "details": {
+            "en": "Early contact between Māori and Europeans ranged from useful trade to deadly violence, and Māori eagerly took up many of the newcomers’ tools. After the Treaty of Waitangi with Britain in 1840, settlers arrived in growing numbers; disputes over land sales led to wars in the 1860s and to land confiscations, which Māori fiercely resisted. War and new diseases made the Māori population fall dramatically before it began to recover. Today Māori culture is thriving again.",
+            "es": "Los primeros contactos entre maoríes y europeos fueron desde un comercio útil hasta la violencia mortal, y los maoríes adoptaron con entusiasmo muchas herramientas de los recién llegados. Tras el Tratado de Waitangi con Gran Bretaña en 1840, llegaron cada vez más colonos; las disputas por ventas de tierras llevaron a guerras en la década de 1860 y a confiscaciones de tierras, que los maoríes resistieron con fuerza. La guerra y las enfermedades nuevas hicieron caer mucho la población maorí antes de que empezara a recuperarse. Hoy la cultura maorí vuelve a florecer."
+          },
+          "wiki": {
+            "en": "Māori people",
+            "es": "Pueblo maorí"
+          }
+        },
+        {
+          "id": "mercury-bay",
+          "name": {
+            "en": "Mercury Bay",
+            "es": "Bahía de Mercury"
+          },
+          "at": [
+            175.73,
+            -36.83
+          ],
+          "cat": "discovery",
+          "type": "place",
+          "date": "1769-11-09",
+          "place": {
+            "en": "Coromandel Peninsula, New Zealand",
+            "es": "Península de Coromandel (Nueva Zelanda)"
+          },
+          "text": {
+            "en": "Te Whanganui-a-Hei, “the great bay of Hei”. Cook landed here to watch Mercury cross the face of the Sun on 9 November 1769, and named the bay after the planet.",
+            "es": "Te Whanganui-a-Hei, «la gran bahía de Hei». Cook desembarcó aquí para observar el paso de Mercurio por delante del Sol el 9 de noviembre de 1769, y le puso a la bahía el nombre del planeta."
+          },
+          "wiki": {
+            "en": "Mercury Bay",
+            "es": ""
+          }
+        },
+        {
+          "id": "queen-charlotte-sound",
+          "name": {
+            "en": "Queen Charlotte Sound / Tōtaranui",
+            "es": "Tōtaranui (Queen Charlotte Sound)"
+          },
+          "at": [
+            174.24,
+            -41.1
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1770-01",
+          "place": {
+            "en": "Marlborough Sounds, New Zealand",
+            "es": "Marlborough Sounds (Nueva Zelanda)"
+          },
+          "text": {
+            "en": "A long, sheltered sound at the top of the South Island. Its Ship Cove was Cook’s favourite anchorage on all three voyages, and from a hill on Arapaoa Island he first saw Cook Strait.",
+            "es": "Un largo brazo de mar resguardado en el norte de la isla Sur. Ship Cove fue el fondeadero favorito de Cook en sus tres viajes, y desde una colina de la isla Arapaoa vio por primera vez el estrecho de Cook."
+          },
+          "wiki": {
+            "en": "Queen Charlotte Sound / Tōtaranui",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1770-04-29",
+      "title": {
+        "en": "Landing at Kamay, Botany Bay",
+        "es": "Desembarco en Kamay, Botany Bay"
+      },
+      "camera": {
+        "lon": 160.0,
+        "lat": -37.0,
+        "zoom": 2.6
+      },
+      "text": {
+        "en": "Sailing west, Cook sighted the east coast of Australia on 19 April 1770. On 29 April he landed at Kamay, Botany Bay, where two Gweagal men stood on the shore to stop the strangers.",
+        "es": "Navegando hacia el oeste, Cook avistó la costa este de Australia el 19 de abril de 1770. El 29 de abril desembarcó en Kamay, Botany Bay, donde dos hombres gweagal se plantaron en la orilla para detener a los extraños."
+      },
+      "details": {
+        "en": "Aboriginal people had lived in Australia for tens of thousands of years, and Dutch sailors had charted its north, west and much of its south coast, but no European had seen the east. As Cook’s boat came in, the two Gweagal men shouted and raised their spears. Cook fired a warning shot, then small shot that wounded one man in the leg; the men threw spears and drew back. The landing party found children in the huts, left beads, and took away 40 to 50 spears. For a week the crew collected water, wood and plants while the Gweagal watched and kept their distance. Banks and Solander gathered so many new plants that Cook named the place Botany Bay.",
+        "es": "Los aborígenes vivían en Australia desde hacía decenas de miles de años, y marinos neerlandeses habían cartografiado sus costas norte y oeste y gran parte de la sur, pero ningún europeo había visto la costa este. Cuando el bote de Cook se acercó, los dos hombres gweagal gritaron y levantaron sus lanzas. Cook disparó un tiro de advertencia y luego perdigones que hirieron a uno en la pierna; los hombres lanzaron lanzas y retrocedieron. Los expedicionarios encontraron niños en las chozas, dejaron cuentas y se llevaron entre 40 y 50 lanzas. Durante una semana, la tripulación recogió agua, leña y plantas mientras los gweagal observaban y se mantenían lejos. Banks y Solander juntaron tantas plantas nuevas que Cook llamó al lugar Botany Bay, «bahía de la botánica»."
+      },
+      "moves": [
+        {
+          "side": "first",
+          "path": [
+            [
+              173.88,
+              -40.95
+            ],
+            [
+              173.4,
+              -40.45
+            ],
+            [
+              172.6,
+              -40.3
+            ],
+            [
+              165.0,
+              -39.0
+            ],
+            [
+              155.0,
+              -38.2
+            ],
+            [
+              150.0,
+              -37.95
+            ],
+            [
+              150.2,
+              -37.0
+            ],
+            [
+              150.35,
+              -36.0
+            ],
+            [
+              150.7,
+              -35.3
+            ],
+            [
+              151.1,
+              -34.5
+            ],
+            [
+              151.35,
+              -34.05
+            ],
+            [
+              151.22,
+              -34.0
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "point-hicks",
+          "name": {
+            "en": "Point Hicks",
+            "es": "Punta Hicks"
+          },
+          "at": [
+            149.2756,
+            -37.8031
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1770-04-19",
+          "place": {
+            "en": "Victoria, Australia",
+            "es": "Victoria (Australia)"
+          },
+          "text": {
+            "en": "The first land of eastern Australia seen from the Endeavour, at 6 a.m. on 19 April 1770, named after Lieutenant Zachary Hicks, who sighted it. Cook’s point was probably a little to the south-west.",
+            "es": "La primera tierra del este de Australia vista desde el Endeavour, el 19 de abril de 1770 a las 6 de la mañana. Lleva el nombre del teniente Zachary Hicks, que la avistó; el punto de Cook quizá estaba algo más al suroeste."
+          },
+          "wiki": {
+            "en": "Point Hicks",
+            "es": ""
+          }
+        },
+        {
+          "id": "botany-bay",
+          "name": {
+            "en": "Botany Bay (Kamay)",
+            "es": "Bahía de Botany (Kamay)"
+          },
+          "at": [
+            151.19,
+            -33.98
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1770-04-29",
+          "place": {
+            "en": "Sydney, Australia",
+            "es": "Sídney (Australia)"
+          },
+          "text": {
+            "en": "Kamay in the Dharawal language, and Cook’s first landfall in Australia. Banks later urged that convicts be sent here; the First Fleet arrived in January 1788 and founded the colony nearby, at Sydney Cove.",
+            "es": "Kamay en lengua dharawal, y el primer desembarco de Cook en Australia. Banks propuso después enviar aquí a convictos; la Primera Flota llegó en enero de 1788 y fundó la colonia muy cerca, en Sydney Cove."
+          },
+          "details": {
+            "en": "The First Fleet’s eleven ships carried more than 1,400 people, most of them convicts. Finding too little fresh water at Botany Bay, Governor Arthur Phillip moved the colony to Sydney Cove on 26 January 1788. The colonists signed no treaties with Aboriginal people and conflict soon began; a smallpox epidemic, whose origin historians still debate, struck the peoples around Sydney in 1789, and from 1790 Pemulwuy of the Bidjigal led attacks on the colony.",
+            "es": "Los once barcos de la Primera Flota llevaban a más de 1400 personas, en su mayoría convictos. Como en Botany Bay había poca agua dulce, el gobernador Arthur Phillip trasladó la colonia a Sydney Cove el 26 de enero de 1788. Los colonos no firmaron tratados con los aborígenes y pronto empezaron los conflictos; una epidemia de viruela, cuyo origen aún discuten los historiadores, golpeó en 1789 a los pueblos de la zona de Sídney, y desde 1790 Pemulwuy, del clan bidjigal, dirigió ataques contra la colonia."
+          },
+          "wiki": {
+            "en": "Botany Bay",
+            "es": "Bahía de Botany"
+          }
+        },
+        {
+          "id": "gweagal",
+          "name": {
+            "en": "The Gweagal",
+            "es": "Los gweagal"
+          },
+          "at": [
+            151.2193,
+            -34.0047
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1770-04-29",
+          "place": {
+            "en": "Kurnell, Sydney, Australia",
+            "es": "Kurnell, Sídney (Australia)"
+          },
+          "text": {
+            "en": "A clan of the Dharawal people of the south shore of Kamay, who fished from canoes and gathered in the bush. Two Gweagal men opposed Cook’s landing, shouting “warra warra wai”; one was hit by small shot.",
+            "es": "Un clan del pueblo dharawal de la orilla sur de Kamay, que pescaba en canoas y recolectaba en el monte. Dos hombres gweagal se opusieron al desembarco de Cook gritando «warra warra wai»; a uno lo hirieron los perdigones."
+          },
+          "wiki": {
+            "en": "Gweagal",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1770-08-22",
+      "title": {
+        "en": "The reef and the Endeavour River",
+        "es": "El arrecife y el río Endeavour"
+      },
+      "camera": {
+        "lon": 148.0,
+        "lat": -22.5,
+        "zoom": 2.8
+      },
+      "text": {
+        "en": "Inside the Great Barrier Reef the Endeavour struck coral on 11 June 1770. Saved, she was beached for seven weeks at the Endeavour River, among the Guugu Yimithirr. On 22 August Cook claimed the coast for Britain.",
+        "es": "En la Gran Barrera de Coral, el Endeavour encalló el 11 de junio de 1770. Se salvó y pasó siete semanas varado en el río Endeavour, entre los guugu yimithirr. El 22 de agosto, Cook reclamó la costa para Gran Bretaña."
+      },
+      "details": {
+        "en": "Cook sailed north past an inlet he named Port Jackson, today Sydney Harbour, and on through ever shallower waters. When the ship stuck fast on a reef at high tide, the crew threw six cannon and other heavy things overboard, pumped for nearly a day and hauled her off, then drew a sail under the hull to slow the leak. At the river the Guugu Yimithirr called Wahalumbaal, the crew mended the ship while Banks and Solander studied plants and animals. The local people mostly kept their distance, until the crew refused to share green turtles they had caught. There was a quarrel and a man was wounded; then an elder came forward with a broken spear to make peace. From the top of Possession Island Cook claimed the whole east coast as New South Wales.",
+        "es": "Cook navegó hacia el norte, pasó frente a una entrada que llamó Port Jackson, hoy la bahía de Sídney, y siguió por aguas cada vez menos profundas. Cuando el barco quedó atascado en un arrecife con la marea alta, la tripulación tiró por la borda seis cañones y otras cosas pesadas, bombeó agua durante casi un día y logró sacarlo; luego pasó una vela bajo el casco para frenar la vía de agua. En el río que los guugu yimithirr llamaban Wahalumbaal, repararon el barco mientras Banks y Solander estudiaban plantas y animales. La gente del lugar se mantuvo casi siempre a distancia, hasta que la tripulación se negó a compartir unas tortugas verdes que había cazado. Hubo una pelea y un hombre resultó herido; entonces un anciano se adelantó con una lanza rota para hacer las paces. Desde lo alto de la isla Possession, Cook reclamó toda la costa este con el nombre de Nueva Gales del Sur."
+      },
+      "moves": [
+        {
+          "side": "first",
+          "path": [
+            [
+              151.22,
+              -34.0
+            ],
+            [
+              151.45,
+              -33.8
+            ],
+            [
+              152.0,
+              -33.25
+            ],
+            [
+              152.65,
+              -32.6
+            ],
+            [
+              153.05,
+              -31.7
+            ],
+            [
+              153.3,
+              -31.0
+            ],
+            [
+              153.45,
+              -30.2
+            ],
+            [
+              153.75,
+              -28.65
+            ],
+            [
+              153.65,
+              -27.55
+            ],
+            [
+              153.55,
+              -26.9
+            ],
+            [
+              153.4,
+              -26.1
+            ],
+            [
+              153.45,
+              -25.2
+            ],
+            [
+              153.4,
+              -24.55
+            ],
+            [
+              152.6,
+              -24.15
+            ],
+            [
+              151.85,
+              -24.05
+            ],
+            [
+              151.5,
+              -23.5
+            ],
+            [
+              151.05,
+              -22.6
+            ],
+            [
+              150.5,
+              -21.9
+            ],
+            [
+              149.9,
+              -21.2
+            ],
+            [
+              149.35,
+              -20.6
+            ],
+            [
+              148.95,
+              -20.2
+            ],
+            [
+              148.4,
+              -19.8
+            ],
+            [
+              147.6,
+              -19.2
+            ],
+            [
+              146.9,
+              -18.95
+            ],
+            [
+              146.4,
+              -18.4
+            ],
+            [
+              146.2,
+              -17.8
+            ],
+            [
+              146.05,
+              -17.2
+            ],
+            [
+              145.85,
+              -16.75
+            ],
+            [
+              145.6,
+              -16.2
+            ],
+            [
+              145.57,
+              -15.78
+            ],
+            [
+              145.26,
+              -15.46
+            ],
+            [
+              145.5,
+              -14.85
+            ],
+            [
+              145.4,
+              -14.6
+            ],
+            [
+              144.45,
+              -13.95
+            ],
+            [
+              143.75,
+              -13.2
+            ],
+            [
+              143.55,
+              -12.4
+            ],
+            [
+              143.2,
+              -11.6
+            ],
+            [
+              142.85,
+              -10.95
+            ],
+            [
+              142.62,
+              -10.62
+            ],
+            [
+              142.4,
+              -10.73
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "great-barrier-reef",
+          "name": {
+            "en": "Great Barrier Reef",
+            "es": "Gran Barrera de Coral"
+          },
+          "at": [
+            145.5667,
+            -15.7833
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1770-06-11",
+          "place": {
+            "en": "Queensland, Australia",
+            "es": "Queensland (Australia)"
+          },
+          "text": {
+            "en": "The world’s largest coral reef system, some 2,900 reefs stretching for more than 2,300 km along the coast. The Endeavour ran aground on what is now Endeavour Reef and nearly sank.",
+            "es": "El mayor sistema de arrecifes de coral del mundo: unos 2900 arrecifes a lo largo de más de 2300 km de costa. El Endeavour encalló en el actual arrecife Endeavour y estuvo a punto de hundirse."
+          },
+          "wiki": {
+            "en": "Great Barrier Reef",
+            "es": "Gran Barrera de Coral"
+          }
+        },
+        {
+          "id": "guugu-yimithirr",
+          "name": {
+            "en": "The Guugu Yimithirr",
+            "es": "Los guugu yimithirr"
+          },
+          "at": [
+            145.2522,
+            -15.4722
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1770-06",
+          "place": {
+            "en": "Cooktown, Queensland, Australia",
+            "es": "Cooktown, Queensland (Australia)"
+          },
+          "text": {
+            "en": "The Aboriginal people of the Endeavour River. The crew wrote down many of their words, among them gangurru, a grey kangaroo, which gave English and other languages the word kangaroo.",
+            "es": "El pueblo aborigen del río Endeavour. La tripulación anotó muchas de sus palabras, entre ellas gangurru, un canguro gris, que dio la palabra canguro al inglés y a otras lenguas."
+          },
+          "details": {
+            "en": "Their name for the area is Gangaar, “place of the rock crystals”, and their language is still spoken at Hope Vale and around Cooktown. The quarrel over the turtles ended at a place now called Reconciliation Rocks. Since 1959 the people of Cooktown, with many Guugu Yimithirr taking part, have re-enacted Cook’s landing each year and celebrated that first act of reconciliation. In the 1870s a gold rush on the nearby Palmer River brought prospectors from around the world onto Guugu Yimithirr land.",
+            "es": "Su nombre para la zona es Gangaar, «lugar de los cristales de roca», y su lengua aún se habla en Hope Vale y en los alrededores de Cooktown. La pelea por las tortugas terminó en un lugar que hoy se llama Reconciliation Rocks. Desde 1959, la gente de Cooktown, con la participación de muchos guugu yimithirr, representa cada año el desembarco de Cook y celebra aquel primer acto de reconciliación. En la década de 1870, una fiebre del oro en el cercano río Palmer llevó a buscadores de todo el mundo a la tierra de los guugu yimithirr."
+          },
+          "wiki": {
+            "en": "Guugu Yimithirr people",
+            "es": "Guugu Yimithirr"
+          }
+        },
+        {
+          "id": "possession-island",
+          "name": {
+            "en": "Possession Island",
+            "es": "Isla Possession"
+          },
+          "at": [
+            142.393,
+            -10.715
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1770-08-22",
+          "place": {
+            "en": "Torres Strait, Queensland, Australia",
+            "es": "Estrecho de Torres, Queensland (Australia)"
+          },
+          "text": {
+            "en": "From this island off Cape York, Cook claimed the whole east coast for King George III as New South Wales, without asking the peoples who lived there.",
+            "es": "Desde esta isla frente al cabo York, Cook reclamó toda la costa este para el rey Jorge III con el nombre de Nueva Gales del Sur, sin preguntar a los pueblos que vivían allí."
+          },
+          "wiki": {
+            "en": "Possession Island (Queensland)",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1771-07-12",
+      "title": {
+        "en": "Fever at Batavia, and home",
+        "es": "Fiebre en Batavia y regreso"
+      },
+      "camera": {
+        "lon": 55.0,
+        "lat": -5.0,
+        "zoom": 1.15
+      },
+      "text": {
+        "en": "At Batavia, the Dutch port on Java, the Endeavour was repaired, but malaria and dysentery swept the ship: Tupaia and about 30 of the crew died before she reached England on 12 July 1771.",
+        "es": "En Batavia, el puerto neerlandés de Java, repararon el Endeavour, pero la malaria y la disentería se extendieron por el barco: Tupaia y unos 30 tripulantes murieron antes de llegar a Inglaterra el 12 de julio de 1771."
+      },
+      "details": {
+        "en": "Threading the Torres Strait, Cook confirmed that New Guinea and Australia were separate. After three days at Savu the ship reached Batavia, the capital of the Dutch East Indies, on 10 October 1770. In the dockyard the Dutch were amazed she was still afloat: in one place the coral had worn the hull to a few millimetres. Cook had not lost a single man to scurvy, but Batavia was full of disease. Nearly everyone fell ill; Tupaia died on 20 December, and the astronomer Green, the artist Parkinson and Banks’s secretary Spöring died at sea soon after. The Endeavour rounded the Cape of Good Hope in March 1771 and anchored in the Downs, off Deal, on 12 July, almost three years after leaving.",
+        "es": "Al cruzar el estrecho de Torres, Cook confirmó que Nueva Guinea y Australia estaban separadas. Tras tres días en Savu, el barco llegó el 10 de octubre de 1770 a Batavia, la capital de las Indias Orientales Neerlandesas. En el astillero, los neerlandeses se asombraron de que siguiera a flote: en un punto, el coral había dejado el casco con unos pocos milímetros de madera. Cook no había perdido ni un solo hombre por el escorbuto, pero Batavia estaba llena de enfermedades. Casi todos enfermaron; Tupaia murió el 20 de diciembre, y el astrónomo Green, el dibujante Parkinson y el secretario de Banks, Spöring, murieron en el mar poco después. El Endeavour dobló el cabo de Buena Esperanza en marzo de 1771 y fondeó frente a Deal, en Inglaterra, el 12 de julio, casi tres años después de partir."
+      },
+      "moves": [
+        {
+          "side": "first",
+          "path": [
+            [
+              142.4,
+              -10.73
+            ],
+            [
+              141.95,
+              -10.55
+            ],
+            [
+              139.0,
+              -10.0
+            ],
+            [
+              133.0,
+              -9.6
+            ],
+            [
+              128.0,
+              -9.7
+            ],
+            [
+              125.2,
+              -10.25
+            ],
+            [
+              123.2,
+              -10.95
+            ],
+            [
+              122.2,
+              -10.75
+            ],
+            [
+              121.85,
+              -10.4
+            ],
+            [
+              120.0,
+              -10.6
+            ],
+            [
+              117.0,
+              -9.6
+            ],
+            [
+              114.0,
+              -9.1
+            ],
+            [
+              110.0,
+              -8.6
+            ],
+            [
+              106.5,
+              -7.5
+            ],
+            [
+              105.0,
+              -6.9
+            ],
+            [
+              105.55,
+              -6.15
+            ],
+            [
+              105.85,
+              -5.95
+            ],
+            [
+              106.4,
+              -5.95
+            ],
+            [
+              106.81,
+              -6.08
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "first",
+          "path": [
+            [
+              106.81,
+              -6.08
+            ],
+            [
+              106.4,
+              -5.95
+            ],
+            [
+              105.85,
+              -5.95
+            ],
+            [
+              105.55,
+              -6.15
+            ],
+            [
+              104.5,
+              -7.0
+            ],
+            [
+              80.0,
+              -22.0
+            ],
+            [
+              40.0,
+              -36.0
+            ],
+            [
+              25.0,
+              -36.0
+            ],
+            [
+              18.45,
+              -34.5
+            ],
+            [
+              17.9,
+              -33.9
+            ],
+            [
+              -5.65,
+              -15.85
+            ],
+            [
+              -14.0,
+              -2.0
+            ],
+            [
+              -26.0,
+              15.0
+            ],
+            [
+              -28.0,
+              30.0
+            ],
+            [
+              -20.0,
+              44.0
+            ],
+            [
+              -9.0,
+              48.5
+            ],
+            [
+              -5.2,
+              49.85
+            ],
+            [
+              -2.5,
+              50.3
+            ],
+            [
+              -0.5,
+              50.55
+            ],
+            [
+              0.6,
+              50.65
+            ],
+            [
+              1.15,
+              50.92
+            ],
+            [
+              1.45,
+              51.05
+            ],
+            [
+              1.45,
+              51.22
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Home by the Cape",
+            "es": "Regreso por el Cabo"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "batavia",
+          "name": {
+            "en": "Batavia",
+            "es": "Batavia"
+          },
+          "at": [
+            106.8132,
+            -6.1348
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1770-10-10",
+          "place": {
+            "en": "Jakarta, Indonesia",
+            "es": "Yakarta (Indonesia)"
+          },
+          "text": {
+            "en": "The Asian capital of the Dutch East India Company, with a large dockyard but rife with malaria and dysentery. Repairing the Endeavour here cost the lives of Tupaia and many of the crew.",
+            "es": "La capital asiática de la Compañía Neerlandesa de las Indias Orientales, con un gran astillero, pero plagada de malaria y disentería. Reparar aquí el Endeavour costó la vida a Tupaia y a muchos tripulantes."
+          },
+          "wiki": {
+            "en": "Batavia, Dutch East Indies",
+            "es": "Batavia (Indias Orientales Neerlandesas)"
+          }
+        },
+        {
+          "id": "cape-of-good-hope",
+          "name": {
+            "en": "Cape of Good Hope",
+            "es": "Cabo de Buena Esperanza"
+          },
+          "at": [
+            18.4756,
+            -34.3581
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1771-03-13",
+          "place": {
+            "en": "Western Cape, South Africa",
+            "es": "Cabo Occidental (Sudáfrica)"
+          },
+          "text": {
+            "en": "A rocky cape near the south-western tip of Africa. Cook’s ships rounded it, or called at nearby Cape Town in the Dutch colony, on all three voyages.",
+            "es": "Un cabo rocoso cerca del extremo suroeste de África. Los barcos de Cook lo doblaron, o se detuvieron en la cercana Ciudad del Cabo, en la colonia neerlandesa, en sus tres viajes."
+          },
+          "wiki": {
+            "en": "Cape of Good Hope",
+            "es": "Cabo de Buena Esperanza"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1773-01-17",
+      "title": {
+        "en": "Into the Antarctic",
+        "es": "Hacia la Antártida"
+      },
+      "camera": {
+        "lon": 5.0,
+        "lat": -22.0,
+        "zoom": 1.25
+      },
+      "text": {
+        "en": "On his second voyage Cook took two ships to search for the southern continent. On 17 January 1773 the Resolution and the Adventure became the first ships known to cross the Antarctic Circle.",
+        "es": "En su segundo viaje, Cook llevó dos barcos a buscar el continente austral. El 17 de enero de 1773, el Resolution y el Adventure fueron los primeros barcos conocidos en cruzar el círculo polar antártico."
+      },
+      "details": {
+        "en": "Many geographers, like Alexander Dalrymple, still believed in a great southern land. Cook chose two more Whitby colliers, the Resolution and the Adventure, the second under Tobias Furneaux, and left Plymouth on 13 July 1772. With him went the naturalists Johann and Georg Forster, the astronomer William Wales and the painter William Hodges. From Cape Town the ships sailed south into fog, snow and growing fields of ice. They learned that ice could be melted into good drinking water, and searched in vain for a cape that a French sailor had reported. On 18 January, without knowing it, they came within about 120 km of Antarctica.",
+        "es": "Muchos geógrafos, como Alexander Dalrymple, aún creían en una gran tierra austral. Cook eligió otros dos carboneros de Whitby, el Resolution y el Adventure, este al mando de Tobias Furneaux, y salió de Plymouth el 13 de julio de 1772. Con él viajaron los naturalistas Johann y Georg Forster, el astrónomo William Wales y el pintor William Hodges. Desde Ciudad del Cabo, los barcos navegaron hacia el sur entre niebla, nieve y campos de hielo cada vez mayores. Aprendieron que el hielo podía derretirse para obtener buena agua potable y buscaron en vano un cabo del que había informado un marino francés. El 18 de enero, sin saberlo, llegaron a unos 120 km de la Antártida."
+      },
+      "moves": [
+        {
+          "side": "second",
+          "path": [
+            [
+              -4.14,
+              50.33
+            ],
+            [
+              -5.0,
+              49.6
+            ],
+            [
+              -9.8,
+              45.0
+            ],
+            [
+              -14.5,
+              35.5
+            ],
+            [
+              -16.75,
+              32.55
+            ],
+            [
+              -18.4,
+              27.3
+            ],
+            [
+              -22.2,
+              18.0
+            ],
+            [
+              -23.3,
+              14.85
+            ],
+            [
+              -20.0,
+              5.0
+            ],
+            [
+              -18.0,
+              -5.0
+            ],
+            [
+              -10.0,
+              -20.0
+            ],
+            [
+              5.0,
+              -30.5
+            ],
+            [
+              18.4,
+              -33.88
+            ],
+            [
+              18.0,
+              -35.0
+            ],
+            [
+              20.0,
+              -42.0
+            ],
+            [
+              21.0,
+              -51.0
+            ],
+            [
+              14.0,
+              -54.0
+            ],
+            [
+              16.0,
+              -55.0
+            ],
+            [
+              11.15,
+              -59.3
+            ],
+            [
+              22.0,
+              -61.0
+            ],
+            [
+              32.0,
+              -64.0
+            ],
+            [
+              39.58,
+              -66.6
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "hms-resolution",
+          "name": {
+            "en": "HMS Resolution",
+            "es": "HMS Resolution"
+          },
+          "at": [
+            -0.61,
+            54.49
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1770",
+          "place": {
+            "en": "Whitby, England",
+            "es": "Whitby (Inglaterra)"
+          },
+          "text": {
+            "en": "A Whitby collier launched in 1770 as the Marquis of Granby and fitted with the latest instruments. She carried Cook on his second and third voyages, from the Antarctic ice to the Arctic.",
+            "es": "Un carbonero de Whitby botado en 1770 con el nombre de Marquis of Granby y equipado con los instrumentos más modernos. Llevó a Cook en su segundo y tercer viaje, del hielo antártico al Ártico."
+          },
+          "details": {
+            "en": "The Resolution measured about 450 tons and carried 112 men on the second voyage. On the third she took Cook to Hawaiʻi, Alaska and the Arctic, and came home under John Gore after his death. Back in England in 1780, she was turned into an armed transport and sent to the East Indies, where a French squadron captured her in 1782. What became of her after that is still disputed.",
+            "es": "El Resolution medía unas 450 toneladas y llevó a 112 hombres en el segundo viaje. En el tercero llevó a Cook a Hawái, Alaska y el Ártico, y volvió a casa al mando de John Gore tras su muerte. De vuelta en Inglaterra en 1780, se convirtió en transporte armado y fue enviado a las Indias Orientales, donde una escuadra francesa lo capturó en 1782. Aún se discute qué fue de él después."
+          },
+          "wiki": {
+            "en": "HMS Resolution (1771)",
+            "es": "HMS Resolution (1771)"
+          }
+        },
+        {
+          "id": "k1-chronometer",
+          "name": {
+            "en": "K1, Kendall’s watch",
+            "es": "K1, el reloj de Kendall"
+          },
+          "at": [
+            -0.0015,
+            51.4778
+          ],
+          "cat": "discovery",
+          "type": "invention",
+          "date": "1769",
+          "place": {
+            "en": "Royal Observatory, Greenwich, London",
+            "es": "Observatorio Real de Greenwich (Londres)"
+          },
+          "text": {
+            "en": "Larcum Kendall’s copy of John Harrison’s sea clock H4. Keeping Greenwich time at sea, it let Cook work out his longitude; he called it “our trusty friend the Watch”.",
+            "es": "La copia que hizo Larcum Kendall del reloj marino H4 de John Harrison. Al conservar la hora de Greenwich en el mar, permitió a Cook calcular su longitud; él lo llamó «nuestro fiel amigo el reloj»."
+          },
+          "details": {
+            "en": "Finding longitude at sea had long been one of the hardest problems in navigation. K1 cost £450 and was 13 cm across. After some doubts, Cook and the astronomer William Wales praised it, and the charts Cook made with its help were so accurate that copies were still in use in the mid-20th century. In 1787 it sailed again, with the First Fleet to Botany Bay. It is kept today at the Royal Observatory, Greenwich.",
+            "es": "Calcular la longitud en el mar había sido durante mucho tiempo uno de los problemas más difíciles de la navegación. El K1 costó 450 libras y medía 13 cm de diámetro. Tras algunas dudas, Cook y el astrónomo William Wales lo elogiaron, y los mapas que Cook hizo con su ayuda fueron tan precisos que se usaban aún a mediados del siglo XX. En 1787 volvió a navegar, con la Primera Flota hacia Botany Bay. Hoy se guarda en el Observatorio Real de Greenwich."
+          },
+          "wiki": {
+            "en": "Larcum Kendall",
+            "es": "Larcum Kendall"
+          }
+        },
+        {
+          "id": "antarctic-circle",
+          "name": {
+            "en": "Crossing the Antarctic Circle",
+            "es": "El cruce del círculo polar antártico"
+          },
+          "at": [
+            39.5833,
+            -66.6067
+          ],
+          "cat": "ice",
+          "type": "event",
+          "date": "1773-01-17",
+          "place": {
+            "en": "Southern Ocean",
+            "es": "Océano Austral"
+          },
+          "text": {
+            "en": "At 66°36′ S, 39°35′ E, just before noon on 17 January 1773, Cook’s ships became the first known to cross the Antarctic Circle. From the masthead he could see nothing to the south but ice.",
+            "es": "A 66°36′ S y 39°35′ E, poco antes del mediodía del 17 de enero de 1773, los barcos de Cook fueron los primeros conocidos en cruzar el círculo polar antártico. Desde el mástil no se veía nada al sur más que hielo."
+          },
+          "wiki": {
+            "en": "Antarctic Circle",
+            "es": "Círculo polar antártico"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1773-11-03",
+      "title": {
+        "en": "New Zealand, Tahiti and Tonga",
+        "es": "Nueva Zelanda, Tahití y Tonga"
+      },
+      "camera": {
+        "lon": -172.0,
+        "lat": -35.0,
+        "zoom": 1.3
+      },
+      "text": {
+        "en": "Separated in fog, the two ships met again in New Zealand. In the southern winter they swept east to Tahiti and the Society Islands, where Mai of Raʻiātea joined the Adventure, and on to Tonga.",
+        "es": "Separados por la niebla, los dos barcos se reencontraron en Nueva Zelanda. En el invierno austral navegaron al este hasta Tahití y las islas de la Sociedad, donde Mai, de Raʻiātea, se unió al Adventure, y luego a Tonga."
+      },
+      "details": {
+        "en": "After four months at sea, much of it among the ice, the Resolution rested at Dusky Sound, where the crew brewed beer and slowly made friends with a few Māori. The Adventure, which lost touch on 8 February, had sailed by Van Diemen’s Land, today Tasmania, and charted part of its coast. The ships met at Ship Cove in May. Cook planted gardens, let goats loose and worried in his journal that his men were bringing disease and prostitution to Māori. In Tahiti a war had killed old friends of Cook’s. At Eua and Tongatapu, Tongans greeted the visitors by touching noses and traded so generously that Cook called the islands the Friendly Islands. Back off New Zealand, a storm parted the two ships for good in late October.",
+        "es": "Tras cuatro meses en el mar, gran parte entre el hielo, el Resolution descansó en Dusky Sound, donde la tripulación hizo cerveza y poco a poco trabó amistad con unos maoríes. El Adventure, que perdió contacto el 8 de febrero, había pasado por la Tierra de Van Diemen, hoy Tasmania, y cartografió parte de su costa. Los barcos se reunieron en Ship Cove en mayo. Cook plantó huertos, soltó cabras y escribió con preocupación que sus hombres llevaban enfermedades y prostitución a los maoríes. En Tahití, una guerra había matado a viejos amigos de Cook. En Eua y Tongatapu, los tonganos recibieron a los visitantes juntando las narices y comerciaron con tanta generosidad que Cook bautizó el archipiélago como islas de los Amigos. De vuelta en Nueva Zelanda, una tormenta separó los dos barcos para siempre a fines de octubre."
+      },
+      "moves": [
+        {
+          "side": "second",
+          "path": [
+            [
+              39.58,
+              -66.6
+            ],
+            [
+              45.0,
+              -64.0
+            ],
+            [
+              55.0,
+              -52.0
+            ],
+            [
+              60.0,
+              -50.0
+            ],
+            [
+              80.0,
+              -58.0
+            ],
+            [
+              110.0,
+              -61.0
+            ],
+            [
+              140.0,
+              -58.0
+            ],
+            [
+              158.0,
+              -50.0
+            ],
+            [
+              166.3,
+              -45.7
+            ],
+            [
+              166.62,
+              -45.72
+            ],
+            [
+              166.7,
+              -45.0
+            ],
+            [
+              167.6,
+              -44.4
+            ],
+            [
+              168.8,
+              -43.5
+            ],
+            [
+              170.4,
+              -42.6
+            ],
+            [
+              171.1,
+              -41.9
+            ],
+            [
+              171.9,
+              -40.9
+            ],
+            [
+              172.55,
+              -40.35
+            ],
+            [
+              173.4,
+              -40.45
+            ],
+            [
+              174.2,
+              -40.85
+            ],
+            [
+              174.38,
+              -41.03
+            ],
+            [
+              174.24,
+              -41.1
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "The Resolution",
+            "es": "El Resolution"
+          }
+        },
+        {
+          "side": "second",
+          "path": [
+            [
+              60.0,
+              -50.0
+            ],
+            [
+              90.0,
+              -52.0
+            ],
+            [
+              120.0,
+              -51.0
+            ],
+            [
+              140.0,
+              -47.0
+            ],
+            [
+              146.6,
+              -44.0
+            ],
+            [
+              147.5,
+              -43.55
+            ],
+            [
+              147.36,
+              -43.37
+            ],
+            [
+              147.75,
+              -43.1
+            ],
+            [
+              148.3,
+              -42.5
+            ],
+            [
+              148.5,
+              -41.6
+            ],
+            [
+              149.5,
+              -41.0
+            ],
+            [
+              160.0,
+              -41.0
+            ],
+            [
+              172.0,
+              -40.2
+            ],
+            [
+              174.2,
+              -40.85
+            ],
+            [
+              174.38,
+              -41.03
+            ],
+            [
+              174.24,
+              -41.1
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "The Adventure",
+            "es": "El Adventure"
+          }
+        },
+        {
+          "side": "second",
+          "path": [
+            [
+              174.24,
+              -41.1
+            ],
+            [
+              174.38,
+              -41.03
+            ],
+            [
+              174.7,
+              -41.4
+            ],
+            [
+              175.6,
+              -41.95
+            ],
+            [
+              -170.0,
+              -46.9
+            ],
+            [
+              -150.0,
+              -44.0
+            ],
+            [
+              -133.5,
+              -40.0
+            ],
+            [
+              -138.0,
+              -27.0
+            ],
+            [
+              -141.5,
+              -17.7
+            ],
+            [
+              -146.5,
+              -17.85
+            ],
+            [
+              -149.1,
+              -17.7
+            ],
+            [
+              -149.2,
+              -17.55
+            ],
+            [
+              -149.35,
+              -17.45
+            ],
+            [
+              -149.48,
+              -17.47
+            ],
+            [
+              -150.3,
+              -17.1
+            ],
+            [
+              -151.06,
+              -16.7
+            ],
+            [
+              -151.3,
+              -16.85
+            ],
+            [
+              -151.48,
+              -16.72
+            ],
+            [
+              -160.0,
+              -20.0
+            ],
+            [
+              -170.0,
+              -21.5
+            ],
+            [
+              -174.7,
+              -21.4
+            ],
+            [
+              -175.2,
+              -21.08
+            ],
+            [
+              -178.5,
+              -28.0
+            ],
+            [
+              179.5,
+              -36.0
+            ],
+            [
+              178.95,
+              -38.0
+            ],
+            [
+              178.3,
+              -39.1
+            ],
+            [
+              177.95,
+              -39.8
+            ],
+            [
+              177.2,
+              -40.6
+            ],
+            [
+              176.3,
+              -41.3
+            ],
+            [
+              175.4,
+              -41.8
+            ],
+            [
+              174.6,
+              -41.4
+            ],
+            [
+              174.38,
+              -41.03
+            ],
+            [
+              174.24,
+              -41.1
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Winter in the tropics",
+            "es": "Invierno en los trópicos"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "dusky-sound",
+          "name": {
+            "en": "Dusky Sound",
+            "es": "Dusky Sound"
+          },
+          "at": [
+            166.7866,
+            -45.7492
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1773-03-26",
+          "place": {
+            "en": "Fiordland, New Zealand",
+            "es": "Fiordland (Nueva Zelanda)"
+          },
+          "text": {
+            "en": "A wild fiord in the far south-west of New Zealand, where the Resolution rested for two months in 1773. Cook set up an observatory and workshops, and the crew brewed what may have been New Zealand’s first beer.",
+            "es": "Un fiordo salvaje en el extremo suroeste de Nueva Zelanda, donde el Resolution descansó dos meses en 1773. Cook instaló un observatorio y talleres, y la tripulación hizo la que quizá fue la primera cerveza de Nueva Zelanda."
+          },
+          "wiki": {
+            "en": "Dusky Sound",
+            "es": ""
+          }
+        },
+        {
+          "id": "hms-adventure",
+          "name": {
+            "en": "HMS Adventure",
+            "es": "HMS Adventure"
+          },
+          "at": [
+            147.34,
+            -43.36
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1773-03-09",
+          "place": {
+            "en": "Adventure Bay, Bruny Island, Tasmania",
+            "es": "Adventure Bay, isla Bruny (Tasmania)"
+          },
+          "text": {
+            "en": "The Resolution’s smaller companion, under Tobias Furneaux. Sailing home alone by Cape Horn in 1774, she became the first ship to sail around the world from west to east.",
+            "es": "El compañero más pequeño del Resolution, al mando de Tobias Furneaux. Al volver solo a casa por el cabo de Hornos en 1774, fue el primer barco que dio la vuelta al mundo de oeste a este."
+          },
+          "wiki": {
+            "en": "HMS Adventure (1771)",
+            "es": ""
+          }
+        },
+        {
+          "id": "omai",
+          "name": {
+            "en": "Mai (Omai)",
+            "es": "Mai (Omai)"
+          },
+          "at": [
+            -151.0,
+            -16.73
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1773-09",
+          "life": [
+            "1751",
+            "1780"
+          ],
+          "place": {
+            "en": "Huahine, Society Islands",
+            "es": "Huahine, islas de la Sociedad"
+          },
+          "text": {
+            "en": "A young man from Raʻiātea who sailed to England on the Adventure, the first Pacific Islander to visit Britain. Painted by Joshua Reynolds and admired in London, he came home with Cook in 1777.",
+            "es": "Un joven de Raʻiātea que viajó a Inglaterra en el Adventure, el primer isleño del Pacífico que visitó Gran Bretaña. Retratado por Joshua Reynolds y admirado en Londres, volvió con Cook en 1777."
+          },
+          "details": {
+            "en": "Mai’s father had been killed by warriors from Bora Bora, and he hoped British help would win back his family’s land on Raʻiātea. In London Joseph Banks took him to dine with the Royal Society and to meet Lord Sandwich, Samuel Johnson and many others, and he was admired for his charm and wit. Cook took him home with horses, guns and a suit of armour, and had a European-style house built for him on Huahine, where he died only a few years later, around 1780.",
+            "es": "El padre de Mai había muerto a manos de guerreros de Bora Bora, y él esperaba recuperar con ayuda británica las tierras de su familia en Raʻiātea. En Londres, Joseph Banks lo llevó a cenar con la Royal Society y a conocer a lord Sandwich, a Samuel Johnson y a muchos otros, y fue admirado por su encanto y su ingenio. Cook lo llevó a casa con caballos, armas y una armadura, e hizo construirle una casa de estilo europeo en Huahine, donde murió pocos años después, hacia 1780."
+          },
+          "wiki": {
+            "en": "Mai (Ra'iatean man)",
+            "es": "Omai"
+          }
+        },
+        {
+          "id": "tonga",
+          "name": {
+            "en": "Tonga, the Friendly Islands",
+            "es": "Tonga, las islas de los Amigos"
+          },
+          "at": [
+            -175.2,
+            -21.15
+          ],
+          "cat": "encounter",
+          "type": "place",
+          "date": "1773-10",
+          "place": {
+            "en": "Tongatapu, Tonga",
+            "es": "Tongatapu (Tonga)"
+          },
+          "text": {
+            "en": "A Polynesian kingdom of carefully farmed islands under the Tuʻi Tonga. Cook was welcomed so warmly in 1773 that he called it the Friendly Islands; a later account says some chiefs wanted to kill him.",
+            "es": "Un reino polinesio de islas muy bien cultivadas, bajo el Tuʻi Tonga. En 1773, Cook fue recibido con tanto cariño que lo llamó islas de los Amigos; un relato posterior dice que algunos jefes querían matarlo."
+          },
+          "wiki": {
+            "en": "Tonga",
+            "es": "Tonga"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1774-01-30",
+      "title": {
+        "en": "Farthest south",
+        "es": "El punto más austral"
+      },
+      "camera": {
+        "lon": -140.0,
+        "lat": -58.0,
+        "zoom": 1.4
+      },
+      "text": {
+        "en": "Alone, the Resolution plunged south again and again. On 30 January 1774, at 71°10′ S, a wall of ice stopped her: no one had been so far south. Cook judged that any southern land lay beyond the ice.",
+        "es": "Solo, el Resolution bajó una y otra vez hacia el sur. El 30 de enero de 1774, a 71°10′ S, un muro de hielo lo detuvo: nadie había llegado tan al sur. Cook concluyó que, si había una tierra austral, estaba más allá del hielo."
+      },
+      "details": {
+        "en": "The Resolution left New Zealand on 26 November 1773 and crossed the Antarctic Circle again in December, through freezing fog, with ice on her ropes and sails. On 30 January the crew saw a field of ice across the horizon with 97 ice mountains, and Cook wrote that his ambition was to go as far as it was possible for man to go. Meanwhile, on 17 December, ten men of the Adventure gathering greens at Grass Cove were killed by Māori, perhaps after a quarrel over trade; two Māori died too. Furneaux sailed home by Cape Horn and the Cape of Good Hope and reached England in July 1774.",
+        "es": "El Resolution dejó Nueva Zelanda el 26 de noviembre de 1773 y volvió a cruzar el círculo polar en diciembre, entre niebla helada y con hielo en los cabos y las velas. El 30 de enero, la tripulación vio un campo de hielo que cruzaba el horizonte, con 97 montañas de hielo, y Cook escribió que su ambición era llegar tan lejos como fuera posible para un ser humano. Mientras tanto, el 17 de diciembre, diez hombres del Adventure que recogían verduras en Grass Cove murieron a manos de maoríes, quizá tras una disputa comercial; también murieron dos maoríes. Furneaux volvió a casa por el cabo de Hornos y el cabo de Buena Esperanza, y llegó a Inglaterra en julio de 1774."
+      },
+      "moves": [
+        {
+          "side": "second",
+          "path": [
+            [
+              174.24,
+              -41.1
+            ],
+            [
+              174.38,
+              -41.03
+            ],
+            [
+              174.7,
+              -41.4
+            ],
+            [
+              175.6,
+              -41.95
+            ],
+            [
+              180.0,
+              -51.5
+            ],
+            [
+              -170.0,
+              -60.0
+            ],
+            [
+              -160.0,
+              -66.6
+            ],
+            [
+              -145.0,
+              -65.0
+            ],
+            [
+              -136.0,
+              -57.0
+            ],
+            [
+              -120.0,
+              -63.0
+            ],
+            [
+              -110.0,
+              -67.0
+            ],
+            [
+              -106.9,
+              -71.1
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "The Resolution",
+            "es": "El Resolution"
+          }
+        },
+        {
+          "side": "second",
+          "path": [
+            [
+              174.24,
+              -41.1
+            ],
+            [
+              174.38,
+              -41.03
+            ],
+            [
+              174.7,
+              -41.4
+            ],
+            [
+              175.6,
+              -41.95
+            ],
+            [
+              -175.0,
+              -52.0
+            ],
+            [
+              -130.0,
+              -58.0
+            ],
+            [
+              -90.0,
+              -58.0
+            ],
+            [
+              -67.3,
+              -56.3
+            ],
+            [
+              -50.0,
+              -48.0
+            ],
+            [
+              -20.0,
+              -42.0
+            ],
+            [
+              5.0,
+              -37.0
+            ],
+            [
+              18.4,
+              -33.88
+            ],
+            [
+              5.0,
+              -25.0
+            ],
+            [
+              -10.0,
+              -5.0
+            ],
+            [
+              -24.0,
+              15.0
+            ],
+            [
+              -30.0,
+              30.0
+            ],
+            [
+              -20.0,
+              44.0
+            ],
+            [
+              -9.0,
+              48.5
+            ],
+            [
+              -5.2,
+              49.85
+            ],
+            [
+              -2.5,
+              50.3
+            ],
+            [
+              -1.6,
+              50.45
+            ],
+            [
+              -1.0,
+              50.55
+            ],
+            [
+              -1.05,
+              50.72
+            ],
+            [
+              -1.1,
+              50.75
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "The Adventure goes home",
+            "es": "El Adventure vuelve a casa"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "farthest-south",
+          "name": {
+            "en": "71°10′ South",
+            "es": "71°10′ sur"
+          },
+          "at": [
+            -106.9,
+            -71.1667
+          ],
+          "cat": "ice",
+          "type": "event",
+          "date": "1774-01-30",
+          "place": {
+            "en": "Southern Ocean, off West Antarctica",
+            "es": "Océano Austral, frente a la Antártida Occidental"
+          },
+          "text": {
+            "en": "Cook’s farthest south, at longitude 106°54′ W: a record for its time. Seeing no way through the ice, he wrote that he was not sorry to be stopped, and turned north.",
+            "es": "El punto más austral de Cook, a 106°54′ de longitud oeste: un récord para su época. Al no ver paso entre el hielo, escribió que no lamentaba esa interrupción y puso rumbo al norte."
+          },
+          "wiki": {
+            "en": "Second voyage of James Cook",
+            "es": "Segundo viaje de James Cook"
+          }
+        },
+        {
+          "id": "grass-cove",
+          "name": {
+            "en": "Killings at Grass Cove",
+            "es": "Las muertes de Grass Cove"
+          },
+          "at": [
+            174.17,
+            -41.16
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1773-12-17",
+          "place": {
+            "en": "Queen Charlotte Sound, New Zealand",
+            "es": "Queen Charlotte Sound (Nueva Zelanda)"
+          },
+          "text": {
+            "en": "Ten sailors of the Adventure and two Māori died in a fight here. The cause is unclear: a breach of tapu, a trade gone wrong or revenge, utu. When Cook returned in 1777 he refused to take revenge.",
+            "es": "Diez marineros del Adventure y dos maoríes murieron aquí en una pelea. La causa no está clara: una violación del tapu, un trueque que salió mal o una venganza, utu. Cuando Cook volvió en 1777, se negó a vengarse."
+          },
+          "wiki": {
+            "en": "HMS Adventure (1771)",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1774-10",
+      "title": {
+        "en": "From Rapa Nui to New Caledonia",
+        "es": "De Rapa Nui a Nueva Caledonia"
+      },
+      "camera": {
+        "lon": -165.0,
+        "lat": -22.0,
+        "zoom": 1.3
+      },
+      "text": {
+        "en": "Sweeping across the Pacific, Cook visited Rapa Nui, the Marquesas, Tahiti and Tonga, then Vanuatu and New Caledonia, where he was the first European to land, in September 1774.",
+        "es": "En un gran recorrido por el Pacífico, Cook visitó Rapa Nui, las Marquesas, Tahití y Tonga, y luego Vanuatu y Nueva Caledonia, donde fue el primer europeo en desembarcar, en septiembre de 1774."
+      },
+      "details": {
+        "en": "Cook fell dangerously ill on the way north, and the Forsters’ dog was made into soup for him. At Rapa Nui, in March, the Polynesian sailor Hitihiti could talk with the islanders, who said the great moai statues honoured their former high chiefs; some had been toppled. In the Marquesas the crew shot dead a man over a theft. In the islands Cook called the New Hebrides, now Vanuatu, the crew met the peoples of Malakula, Erromango and Tanna, where the glow of the volcano Yasur drew Cook ashore; at Erromango a landing turned into a fight with wounded on both sides. In New Caledonia the people welcomed the visitors openly. Cook then found Norfolk Island and returned to New Zealand.",
+        "es": "Cook enfermó gravemente camino del norte, y con el perro de los Forster hicieron una sopa para él. En Rapa Nui, en marzo, el marinero polinesio Hitihiti pudo hablar con los isleños, que contaron que las grandes estatuas moái honraban a sus antiguos jefes; algunas estaban derribadas. En las Marquesas, la tripulación mató a tiros a un hombre por un robo. En las islas que Cook llamó Nuevas Hébridas, hoy Vanuatu, conocieron a los pueblos de Malakula, Erromango y Tanna, donde el resplandor del volcán Yasur atrajo a Cook a tierra; en Erromango, un desembarco acabó en pelea, con heridos en ambos bandos. En Nueva Caledonia, la gente recibió a los visitantes con franqueza. Luego Cook encontró la isla Norfolk y volvió a Nueva Zelanda."
+      },
+      "moves": [
+        {
+          "side": "second",
+          "path": [
+            [
+              -106.9,
+              -71.1
+            ],
+            [
+              -107.0,
+              -60.0
+            ],
+            [
+              -105.0,
+              -45.0
+            ],
+            [
+              -108.0,
+              -32.0
+            ],
+            [
+              -109.2,
+              -27.2
+            ],
+            [
+              -120.0,
+              -18.0
+            ],
+            [
+              -138.8,
+              -10.0
+            ],
+            [
+              -142.0,
+              -13.0
+            ],
+            [
+              -145.5,
+              -14.8
+            ],
+            [
+              -148.5,
+              -17.0
+            ],
+            [
+              -149.48,
+              -17.47
+            ],
+            [
+              -150.3,
+              -17.1
+            ],
+            [
+              -151.06,
+              -16.7
+            ],
+            [
+              -151.3,
+              -16.85
+            ],
+            [
+              -151.48,
+              -16.72
+            ],
+            [
+              -160.0,
+              -19.0
+            ],
+            [
+              -174.6,
+              -20.25
+            ],
+            [
+              -178.5,
+              -19.6
+            ],
+            [
+              178.0,
+              -19.9
+            ],
+            [
+              172.0,
+              -17.5
+            ],
+            [
+              168.0,
+              -17.3
+            ],
+            [
+              167.6,
+              -16.8
+            ],
+            [
+              167.85,
+              -16.45
+            ],
+            [
+              167.95,
+              -17.0
+            ],
+            [
+              168.6,
+              -17.9
+            ],
+            [
+              169.4,
+              -18.55
+            ],
+            [
+              169.6,
+              -19.4
+            ],
+            [
+              169.5,
+              -19.6
+            ],
+            [
+              167.0,
+              -19.8
+            ],
+            [
+              164.6,
+              -20.1
+            ],
+            [
+              165.4,
+              -20.6
+            ],
+            [
+              166.4,
+              -21.3
+            ],
+            [
+              167.2,
+              -22.1
+            ],
+            [
+              167.6,
+              -22.7
+            ],
+            [
+              167.95,
+              -28.9
+            ],
+            [
+              172.0,
+              -36.0
+            ],
+            [
+              174.0,
+              -40.2
+            ],
+            [
+              174.2,
+              -40.85
+            ],
+            [
+              174.38,
+              -41.03
+            ],
+            [
+              174.24,
+              -41.1
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "rapa-nui",
+          "name": {
+            "en": "Rapa Nui (Easter Island)",
+            "es": "Rapa Nui (isla de Pascua)"
+          },
+          "at": [
+            -109.35,
+            -27.12
+          ],
+          "cat": "encounter",
+          "type": "place",
+          "date": "1774-03-11",
+          "place": {
+            "en": "Easter Island, Chile",
+            "es": "Isla de Pascua (Chile)"
+          },
+          "text": {
+            "en": "A remote island settled by Polynesian voyagers, famous for its moai. With Hitihiti as interpreter, Cook learned that the statues honoured past high chiefs, and he saw that some had fallen.",
+            "es": "Una isla remota poblada por navegantes polinesios, famosa por sus moái. Con Hitihiti como intérprete, Cook supo que las estatuas honraban a antiguos jefes, y vio que algunas habían caído."
+          },
+          "wiki": {
+            "en": "Easter Island",
+            "es": "Isla de Pascua"
+          }
+        },
+        {
+          "id": "tanna",
+          "name": {
+            "en": "Tanna and Mount Yasur",
+            "es": "Tanna y el monte Yasur"
+          },
+          "at": [
+            169.45,
+            -19.53
+          ],
+          "cat": "encounter",
+          "type": "place",
+          "date": "1774-08",
+          "place": {
+            "en": "Tafea, Vanuatu",
+            "es": "Tafea (Vanuatu)"
+          },
+          "text": {
+            "en": "The glow of the volcano Yasur drew Cook to this island in August 1774. Its several thousand people grew sugar cane, yams and fruit trees; Cook landed only after firing his guns to show his strength.",
+            "es": "El resplandor del volcán Yasur atrajo a Cook a esta isla en agosto de 1774. Sus varios miles de habitantes cultivaban caña de azúcar, ñames y frutales; Cook desembarcó solo después de disparar sus armas para mostrar su fuerza."
+          },
+          "wiki": {
+            "en": "Tanna (island)",
+            "es": "Tanna"
+          }
+        },
+        {
+          "id": "new-caledonia",
+          "name": {
+            "en": "New Caledonia",
+            "es": "Nueva Caledonia"
+          },
+          "at": [
+            165.3,
+            -21.25
+          ],
+          "cat": "encounter",
+          "type": "place",
+          "date": "1774-09-04",
+          "place": {
+            "en": "Grande Terre, New Caledonia",
+            "es": "Grande Terre (Nueva Caledonia)"
+          },
+          "text": {
+            "en": "Cook sighted this long island on 4 September 1774 and named it after Scotland, which its north-east coast recalled. Its Kanak people received the visitors openly; France annexed the island in 1853.",
+            "es": "Cook avistó esta larga isla el 4 de septiembre de 1774 y la bautizó por Escocia, que le recordaba su costa noreste. El pueblo canaco recibió a los visitantes con franqueza; Francia se anexionó la isla en 1853."
+          },
+          "wiki": {
+            "en": "New Caledonia",
+            "es": "Nueva Caledonia"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1775-07-30",
+      "title": {
+        "en": "South Georgia and home",
+        "es": "Georgia del Sur y regreso"
+      },
+      "camera": {
+        "lon": -40.0,
+        "lat": -30.0,
+        "zoom": 1.2
+      },
+      "text": {
+        "en": "Cook crossed the South Pacific to Cape Horn and found South Georgia, an icy island he claimed for Britain. He reached home on 30 July 1775, having shown that no great southern continent lay in temperate seas.",
+        "es": "Cook cruzó el Pacífico sur hasta el cabo de Hornos y encontró Georgia del Sur, una isla helada que reclamó para Gran Bretaña. Volvió a casa el 30 de julio de 1775: no había un gran continente austral en mares templados."
+      },
+      "details": {
+        "en": "Leaving New Zealand on 10 November 1774, the Resolution ran east across the empty ocean near 55°S and rounded Cape Horn by the end of December. On 17 January 1775 Cook landed on a mountainous island of glaciers, seals and penguins and claimed it as the Isle of Georgia, for King George III; then he found the South Sandwich Islands. At Cape Town he learned what had happened at Grass Cove. Kendall’s watch had kept such good time that copies of his charts were still in use in the 20th century. Cook was promoted, made a Fellow of the Royal Society and awarded its Copley Medal.",
+        "es": "Tras dejar Nueva Zelanda el 10 de noviembre de 1774, el Resolution cruzó hacia el este el océano vacío cerca de los 55° S y dobló el cabo de Hornos a fines de diciembre. El 17 de enero de 1775, Cook desembarcó en una isla montañosa de glaciares, focas y pingüinos y la reclamó como isla de Georgia, por el rey Jorge III; después encontró las islas Sandwich del Sur. En Ciudad del Cabo supo lo ocurrido en Grass Cove. El reloj de Kendall había marcado la hora tan bien que copias de sus mapas se usaban todavía en el siglo XX. Cook fue ascendido, nombrado miembro de la Royal Society y premiado con su Medalla Copley."
+      },
+      "moves": [
+        {
+          "side": "second",
+          "path": [
+            [
+              174.24,
+              -41.1
+            ],
+            [
+              174.38,
+              -41.03
+            ],
+            [
+              174.7,
+              -41.4
+            ],
+            [
+              175.6,
+              -41.95
+            ],
+            [
+              -175.0,
+              -54.0
+            ],
+            [
+              -130.0,
+              -55.5
+            ],
+            [
+              -90.0,
+              -55.5
+            ],
+            [
+              -72.0,
+              -55.7
+            ],
+            [
+              -67.3,
+              -56.2
+            ],
+            [
+              -64.0,
+              -55.3
+            ],
+            [
+              -50.0,
+              -54.5
+            ],
+            [
+              -38.6,
+              -54.0
+            ],
+            [
+              -37.0,
+              -53.85
+            ],
+            [
+              -35.5,
+              -54.4
+            ],
+            [
+              -27.0,
+              -58.2
+            ],
+            [
+              -10.0,
+              -58.0
+            ],
+            [
+              0.0,
+              -55.0
+            ],
+            [
+              10.0,
+              -45.0
+            ],
+            [
+              18.4,
+              -33.88
+            ],
+            [
+              -5.65,
+              -15.85
+            ],
+            [
+              -14.3,
+              -7.85
+            ],
+            [
+              -32.0,
+              -3.5
+            ],
+            [
+              -30.0,
+              20.0
+            ],
+            [
+              -28.7,
+              38.4
+            ],
+            [
+              -15.0,
+              46.0
+            ],
+            [
+              -9.0,
+              48.5
+            ],
+            [
+              -5.2,
+              49.85
+            ],
+            [
+              -2.5,
+              50.3
+            ],
+            [
+              -1.6,
+              50.45
+            ],
+            [
+              -1.0,
+              50.55
+            ],
+            [
+              -1.05,
+              50.72
+            ],
+            [
+              -1.1,
+              50.75
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Home by Cape Horn",
+            "es": "Regreso por el cabo de Hornos"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "cape-horn",
+          "name": {
+            "en": "Cape Horn",
+            "es": "Cabo de Hornos"
+          },
+          "at": [
+            -67.2892,
+            -55.98
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1769-01",
+          "place": {
+            "en": "Hornos Island, Chile",
+            "es": "Isla Hornos (Chile)"
+          },
+          "text": {
+            "en": "The southernmost headland of the Americas, on a small island south of Tierra del Fuego, feared for its storms. Dutch sailors found it in 1616; the Endeavour rounded it in January 1769.",
+            "es": "El cabo más austral de América, en una pequeña isla al sur de Tierra del Fuego, temido por sus tormentas. Unos marinos neerlandeses lo encontraron en 1616; el Endeavour lo dobló en enero de 1769."
+          },
+          "wiki": {
+            "en": "Cape Horn",
+            "es": "Cabo de Hornos"
+          }
+        },
+        {
+          "id": "south-georgia",
+          "name": {
+            "en": "South Georgia",
+            "es": "Georgia del Sur"
+          },
+          "at": [
+            -36.7,
+            -54.4
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1775-01-17",
+          "place": {
+            "en": "South Atlantic Ocean",
+            "es": "Océano Atlántico Sur"
+          },
+          "text": {
+            "en": "A mountainous island of glaciers, seals and penguins, with no native people. Cook made the first landing and map in January 1775; from 1786 sealers came, drawn by its seals.",
+            "es": "Una isla montañosa de glaciares, focas y pingüinos, sin población nativa. Cook hizo el primer desembarco y el primer mapa en enero de 1775; desde 1786 llegaron cazadores de focas, atraídos por ellas."
+          },
+          "wiki": {
+            "en": "South Georgia",
+            "es": "Isla San Pedro (Georgia del Sur)"
+          }
+        },
+        {
+          "id": "k1-chronometer",
+          "name": {
+            "en": "K1, Kendall’s watch",
+            "es": "K1, el reloj de Kendall"
+          },
+          "at": [
+            -0.0015,
+            51.4778
+          ],
+          "cat": "discovery",
+          "type": "invention",
+          "date": "1769",
+          "place": {
+            "en": "Royal Observatory, Greenwich, London",
+            "es": "Observatorio Real de Greenwich (Londres)"
+          },
+          "text": {
+            "en": "Larcum Kendall’s copy of John Harrison’s sea clock H4. Keeping Greenwich time at sea, it let Cook work out his longitude; he called it “our trusty friend the Watch”.",
+            "es": "La copia que hizo Larcum Kendall del reloj marino H4 de John Harrison. Al conservar la hora de Greenwich en el mar, permitió a Cook calcular su longitud; él lo llamó «nuestro fiel amigo el reloj»."
+          },
+          "details": {
+            "en": "Finding longitude at sea had long been one of the hardest problems in navigation. K1 cost £450 and was 13 cm across. After some doubts, Cook and the astronomer William Wales praised it, and the charts Cook made with its help were so accurate that copies were still in use in the mid-20th century. In 1787 it sailed again, with the First Fleet to Botany Bay. It is kept today at the Royal Observatory, Greenwich.",
+            "es": "Calcular la longitud en el mar había sido durante mucho tiempo uno de los problemas más difíciles de la navegación. El K1 costó 450 libras y medía 13 cm de diámetro. Tras algunas dudas, Cook y el astrónomo William Wales lo elogiaron, y los mapas que Cook hizo con su ayuda fueron tan precisos que se usaban aún a mediados del siglo XX. En 1787 volvió a navegar, con la Primera Flota hacia Botany Bay. Hoy se guarda en el Observatorio Real de Greenwich."
+          },
+          "wiki": {
+            "en": "Larcum Kendall",
+            "es": "Larcum Kendall"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1777-02-12",
+      "title": {
+        "en": "Back to the Pacific",
+        "es": "De vuelta al Pacífico"
+      },
+      "camera": {
+        "lon": 95.0,
+        "lat": -35.0,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "In July 1776 Cook sailed again, to take Mai home and to seek a passage round North America. By the Cape, Kerguelen and Tasmania he reached his old anchorage in New Zealand on 12 February 1777.",
+        "es": "En julio de 1776, Cook volvió a zarpar para llevar a Mai a casa y buscar un paso por el norte de América. Por el Cabo, Kerguelen y Tasmania llegó el 12 de febrero de 1777 a su viejo fondeadero de Nueva Zelanda."
+      },
+      "details": {
+        "en": "The real aim of the voyage, kept quiet, was the Northwest Passage between the Pacific and the Atlantic, with a prize of £20,000 for its discovery. Cook commanded the Resolution and Charles Clerke the Discovery; William Bligh was master, and the ships carried cattle, sheep and other animals as gifts for the islands. At Kerguelen, on Christmas Day 1776, Cook found a bottle left by the French and named the islands Desolation. In Tasmania he met Aboriginal people at Adventure Bay. At Queen Charlotte Sound the Māori feared revenge for Grass Cove, but Cook refused to punish anyone, which angered some of his men and puzzled the Māori, who expected utu.",
+        "es": "El verdadero objetivo del viaje, que se mantuvo discreto, era el paso del Noroeste entre el Pacífico y el Atlántico, con un premio de 20 000 libras para quien lo encontrara. Cook mandaba el Resolution, y Charles Clerke, el Discovery; William Bligh era el piloto mayor, y los barcos llevaban vacas, ovejas y otros animales como regalo para las islas. En Kerguelen, el día de Navidad de 1776, Cook encontró una botella dejada por los franceses y llamó a las islas Desolación. En Tasmania conoció a aborígenes en Adventure Bay. En Queen Charlotte Sound, los maoríes temían una venganza por Grass Cove, pero Cook se negó a castigar a nadie, lo que enojó a algunos de sus hombres y desconcertó a los maoríes, que esperaban utu."
+      },
+      "moves": [
+        {
+          "side": "third",
+          "path": [
+            [
+              -4.14,
+              50.33
+            ],
+            [
+              -5.0,
+              49.6
+            ],
+            [
+              -9.8,
+              45.0
+            ],
+            [
+              -14.5,
+              33.0
+            ],
+            [
+              -16.0,
+              28.42
+            ],
+            [
+              -16.24,
+              28.47
+            ],
+            [
+              -16.2,
+              27.8
+            ],
+            [
+              -22.3,
+              16.2
+            ],
+            [
+              -20.0,
+              5.0
+            ],
+            [
+              -25.0,
+              -10.0
+            ],
+            [
+              -20.0,
+              -25.0
+            ],
+            [
+              0.0,
+              -35.0
+            ],
+            [
+              18.4,
+              -33.88
+            ],
+            [
+              18.0,
+              -35.0
+            ],
+            [
+              30.0,
+              -43.0
+            ],
+            [
+              37.75,
+              -46.65
+            ],
+            [
+              55.0,
+              -48.0
+            ],
+            [
+              68.9,
+              -48.6
+            ],
+            [
+              69.05,
+              -48.68
+            ],
+            [
+              69.3,
+              -48.95
+            ],
+            [
+              100.0,
+              -47.0
+            ],
+            [
+              140.0,
+              -45.0
+            ],
+            [
+              147.5,
+              -43.55
+            ],
+            [
+              147.36,
+              -43.37
+            ],
+            [
+              147.75,
+              -43.1
+            ],
+            [
+              148.1,
+              -43.6
+            ],
+            [
+              160.0,
+              -42.5
+            ],
+            [
+              172.0,
+              -40.3
+            ],
+            [
+              174.2,
+              -40.85
+            ],
+            [
+              174.38,
+              -41.03
+            ],
+            [
+              174.24,
+              -41.1
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "The third voyage",
+            "es": "El tercer viaje"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "hms-discovery",
+          "name": {
+            "en": "HMS Discovery",
+            "es": "HMS Discovery"
+          },
+          "at": [
+            -4.13,
+            50.36
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1776-08-01",
+          "place": {
+            "en": "Plymouth, England",
+            "es": "Plymouth (Inglaterra)"
+          },
+          "text": {
+            "en": "A Whitby collier of about 300 tons, launched in 1774 as the Diligence, commanded by Charles Clerke, the only officer who sailed on all three of Cook’s voyages. Clerke led the expedition after Cook’s death.",
+            "es": "Un carbonero de Whitby de unas 300 toneladas, botado en 1774 como Diligence, al mando de Charles Clerke, el único oficial que hizo los tres viajes de Cook. Clerke dirigió la expedición tras la muerte de Cook."
+          },
+          "wiki": {
+            "en": "HMS Discovery (1774)",
+            "es": ""
+          }
+        },
+        {
+          "id": "kerguelen-islands",
+          "name": {
+            "en": "Kerguelen Islands",
+            "es": "Islas Kerguelen"
+          },
+          "at": [
+            69.15,
+            -49.25
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1776-12-25",
+          "place": {
+            "en": "French Southern Lands, Indian Ocean",
+            "es": "Tierras Australes Francesas, océano Índico"
+          },
+          "text": {
+            "en": "Bleak islands found by the French navigator Kerguelen in 1772. Cook anchored at Christmas Harbour on Christmas Day 1776, found the French message in a bottle and called them the Islands of Desolation.",
+            "es": "Islas inhóspitas descubiertas por el navegante francés Kerguelen en 1772. Cook fondeó en Christmas Harbour el día de Navidad de 1776, encontró el mensaje francés en una botella y las llamó islas de la Desolación."
+          },
+          "wiki": {
+            "en": "Kerguelen Islands",
+            "es": "Kerguelen"
+          }
+        },
+        {
+          "id": "aboriginal-tasmanians",
+          "name": {
+            "en": "Aboriginal Tasmanians (Palawa)",
+            "es": "Aborígenes de Tasmania (palawa)"
+          },
+          "at": [
+            147.33,
+            -43.35
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1777-01-26",
+          "place": {
+            "en": "Bruny Island, Tasmania, Australia",
+            "es": "Isla Bruny, Tasmania (Australia)"
+          },
+          "text": {
+            "en": "People who had lived on Tasmania for tens of thousands of years, cut off from the mainland when the sea rose about 8,000 years ago. Cook met some of them at Adventure Bay in January 1777.",
+            "es": "Un pueblo que vivía en Tasmania desde hacía decenas de miles de años, aislado del continente cuando el mar subió hace unos 8000 años. Cook conoció a algunos en Adventure Bay en enero de 1777."
+          },
+          "details": {
+            "en": "In the first decades of British settlement in the 1800s the Palawa were devastated by new diseases, frontier violence and the loss of their land, in what became known as the Black War. In the 1830s most survivors were moved to Wybalenna on Flinders Island. For a century and more, colonial writers wrongly called them an extinct people; their descendants live in Tasmania today.",
+            "es": "En las primeras décadas de la colonización británica, en el siglo XIX, los palawa fueron devastados por enfermedades nuevas, la violencia de la frontera y la pérdida de sus tierras, en lo que se llamó la Guerra Negra. En la década de 1830, la mayoría de los supervivientes fueron trasladados a Wybalenna, en la isla Flinders. Durante más de un siglo, los escritores coloniales los llamaron, sin razón, un pueblo extinguido; sus descendientes viven hoy en Tasmania."
+          },
+          "wiki": {
+            "en": "Aboriginal Tasmanians",
+            "es": "Aborígenes de Tasmania"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1777-11-02",
+      "title": {
+        "en": "Mai goes home",
+        "es": "Mai vuelve a casa"
+      },
+      "camera": {
+        "lon": -163.0,
+        "lat": -26.0,
+        "zoom": 1.6
+      },
+      "text": {
+        "en": "Winds carried the ships to the Cook Islands and Tonga, where they stayed eleven weeks, then to Tahiti. On Huahine Cook had a house built for Mai and left him there with horses and guns in November 1777.",
+        "es": "Los vientos llevaron los barcos a las islas Cook y a Tonga, donde se quedaron once semanas, y luego a Tahití. En Huahine, Cook hizo construir una casa para Mai y lo dejó allí con caballos y armas en noviembre de 1777."
+      },
+      "details": {
+        "en": "Short of water and fodder, Cook could not land at Mangaia or get supplies at Atiu, so he sailed to Tonga, where his officers saw him punish thefts ever more harshly, with heavy floggings and even by cutting off ears. In Tahiti he watched a ceremony that included a human sacrifice, and he set ashore many of the animals he had brought. On Moʻorea, when a goat was stolen, Cook spent two days burning houses and canoes until it was returned; some of his officers were shocked. On Huahine he obtained land from the chiefs for Mai’s house. Mai wept as he said goodbye; he died there a few years later.",
+        "es": "Sin agua ni forraje, Cook no pudo desembarcar en Mangaia ni abastecerse en Atiu, así que navegó a Tonga, donde sus oficiales vieron que castigaba los robos con dureza creciente, con fuertes azotes y hasta cortando orejas. En Tahití presenció una ceremonia que incluyó un sacrificio humano y desembarcó muchos de los animales que había traído. En Moʻorea, cuando les robaron una cabra, Cook pasó dos días quemando casas y canoas hasta que la devolvieron; algunos de sus oficiales quedaron horrorizados. En Huahine consiguió de los jefes un terreno para la casa de Mai. Mai lloró al despedirse; murió allí pocos años después."
+      },
+      "moves": [
+        {
+          "side": "third",
+          "path": [
+            [
+              174.24,
+              -41.1
+            ],
+            [
+              174.38,
+              -41.03
+            ],
+            [
+              174.7,
+              -41.4
+            ],
+            [
+              175.6,
+              -41.95
+            ],
+            [
+              -175.0,
+              -38.0
+            ],
+            [
+              -160.0,
+              -27.0
+            ],
+            [
+              -157.95,
+              -22.1
+            ],
+            [
+              -158.15,
+              -20.15
+            ],
+            [
+              -163.0,
+              -19.5
+            ],
+            [
+              -174.6,
+              -20.25
+            ],
+            [
+              -174.45,
+              -19.85
+            ],
+            [
+              -175.15,
+              -20.7
+            ],
+            [
+              -175.2,
+              -21.08
+            ],
+            [
+              -165.0,
+              -23.0
+            ],
+            [
+              -149.5,
+              -23.5
+            ],
+            [
+              -149.1,
+              -17.7
+            ],
+            [
+              -149.2,
+              -17.55
+            ],
+            [
+              -149.35,
+              -17.45
+            ],
+            [
+              -149.48,
+              -17.47
+            ],
+            [
+              -149.7,
+              -17.45
+            ],
+            [
+              -149.85,
+              -17.47
+            ],
+            [
+              -150.3,
+              -17.1
+            ],
+            [
+              -151.06,
+              -16.7
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "omai",
+          "name": {
+            "en": "Mai (Omai)",
+            "es": "Mai (Omai)"
+          },
+          "at": [
+            -151.0,
+            -16.73
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1773-09",
+          "life": [
+            "1751",
+            "1780"
+          ],
+          "place": {
+            "en": "Huahine, Society Islands",
+            "es": "Huahine, islas de la Sociedad"
+          },
+          "text": {
+            "en": "A young man from Raʻiātea who sailed to England on the Adventure, the first Pacific Islander to visit Britain. Painted by Joshua Reynolds and admired in London, he came home with Cook in 1777.",
+            "es": "Un joven de Raʻiātea que viajó a Inglaterra en el Adventure, el primer isleño del Pacífico que visitó Gran Bretaña. Retratado por Joshua Reynolds y admirado en Londres, volvió con Cook en 1777."
+          },
+          "details": {
+            "en": "Mai’s father had been killed by warriors from Bora Bora, and he hoped British help would win back his family’s land on Raʻiātea. In London Joseph Banks took him to dine with the Royal Society and to meet Lord Sandwich, Samuel Johnson and many others, and he was admired for his charm and wit. Cook took him home with horses, guns and a suit of armour, and had a European-style house built for him on Huahine, where he died only a few years later, around 1780.",
+            "es": "El padre de Mai había muerto a manos de guerreros de Bora Bora, y él esperaba recuperar con ayuda británica las tierras de su familia en Raʻiātea. En Londres, Joseph Banks lo llevó a cenar con la Royal Society y a conocer a lord Sandwich, a Samuel Johnson y a muchos otros, y fue admirado por su encanto y su ingenio. Cook lo llevó a casa con caballos, armas y una armadura, e hizo construirle una casa de estilo europeo en Huahine, donde murió pocos años después, hacia 1780."
+          },
+          "wiki": {
+            "en": "Mai (Ra'iatean man)",
+            "es": "Omai"
+          }
+        },
+        {
+          "id": "tonga",
+          "name": {
+            "en": "Tonga, the Friendly Islands",
+            "es": "Tonga, las islas de los Amigos"
+          },
+          "at": [
+            -175.2,
+            -21.15
+          ],
+          "cat": "encounter",
+          "type": "place",
+          "date": "1773-10",
+          "place": {
+            "en": "Tongatapu, Tonga",
+            "es": "Tongatapu (Tonga)"
+          },
+          "text": {
+            "en": "A Polynesian kingdom of carefully farmed islands under the Tuʻi Tonga. Cook was welcomed so warmly in 1773 that he called it the Friendly Islands; a later account says some chiefs wanted to kill him.",
+            "es": "Un reino polinesio de islas muy bien cultivadas, bajo el Tuʻi Tonga. En 1773, Cook fue recibido con tanto cariño que lo llamó islas de los Amigos; un relato posterior dice que algunos jefes querían matarlo."
+          },
+          "wiki": {
+            "en": "Tonga",
+            "es": "Tonga"
+          }
+        },
+        {
+          "id": "moorea-raid",
+          "name": {
+            "en": "Destruction on Moʻorea",
+            "es": "Destrucción en Moʻorea"
+          },
+          "at": [
+            -149.835,
+            -17.535
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1777-10",
+          "place": {
+            "en": "Moʻorea, Society Islands",
+            "es": "Moʻorea, islas de la Sociedad"
+          },
+          "text": {
+            "en": "Over a stolen goat, Cook’s men spent two days burning houses and canoes across the island. Officers saw a new, ruthless side of their captain, who wrote that he regretted the affair.",
+            "es": "Por una cabra robada, los hombres de Cook pasaron dos días quemando casas y canoas por toda la isla. Los oficiales vieron un lado nuevo y despiadado de su capitán, que escribió que lamentaba el asunto."
+          },
+          "wiki": {
+            "en": "Moʼorea",
+            "es": "Moorea"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1778-01-20",
+      "title": {
+        "en": "The islands of Hawaiʻi",
+        "es": "Las islas de Hawái"
+      },
+      "camera": {
+        "lon": -155.0,
+        "lat": 3.0,
+        "zoom": 1.8
+      },
+      "text": {
+        "en": "Sailing north, Cook came upon islands no European had recorded. At Waimea, on Kauaʻi, on 20 January 1778, Hawaiians bowed to the ground before him; he named the islands after Lord Sandwich.",
+        "es": "Navegando hacia el norte, Cook encontró islas que ningún europeo había registrado. En Waimea, en Kauaʻi, el 20 de enero de 1778, los hawaianos se postraron ante él; Cook llamó a las islas Sandwich, por lord Sandwich."
+      },
+      "details": {
+        "en": "On the way the ships spent Christmas at an empty atoll, Kiritimati, catching some 300 turtles. When Kauaʻi rose from the sea on 18 January, the people who paddled out spoke a language close to Tahitian, and Cook saw how far the Polynesians had spread. The islanders were amazed by the ships and prized iron, even a single nail. Cook tried to keep his sailors from women so as not to spread venereal disease, but he failed. Before he knew of it, one of his officers, John Williamson, shot dead a man in a confused scuffle. After a stop at Niʻihau, the ships left on 2 February to look for the Northwest Passage.",
+        "es": "En el camino, los barcos pasaron la Navidad en un atolón deshabitado, Kiritimati, donde capturaron unas 300 tortugas. Cuando Kauaʻi surgió del mar el 18 de enero, la gente que se acercó en canoas hablaba una lengua parecida a la de Tahití, y Cook vio hasta dónde se habían extendido los polinesios. Los isleños quedaron asombrados por los barcos y valoraban mucho el hierro, aunque fuera un solo clavo. Cook intentó mantener a sus marineros lejos de las mujeres para no propagar enfermedades venéreas, pero no lo logró. Sin que él lo supiera, uno de sus oficiales, John Williamson, mató a tiros a un hombre en una confusa refriega. Tras una escala en Niʻihau, los barcos partieron el 2 de febrero en busca del paso del Noroeste."
+      },
+      "moves": [
+        {
+          "side": "third",
+          "path": [
+            [
+              -151.06,
+              -16.7
+            ],
+            [
+              -151.3,
+              -16.85
+            ],
+            [
+              -151.48,
+              -16.72
+            ],
+            [
+              -151.85,
+              -16.45
+            ],
+            [
+              -154.0,
+              -8.0
+            ],
+            [
+              -156.75,
+              0.0
+            ],
+            [
+              -157.3,
+              1.95
+            ],
+            [
+              -158.5,
+              12.0
+            ],
+            [
+              -159.1,
+              21.7
+            ],
+            [
+              -159.45,
+              21.82
+            ],
+            [
+              -159.67,
+              21.94
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "kiritimati",
+          "name": {
+            "en": "Kiritimati (Christmas Island)",
+            "es": "Kiritimati (isla de Navidad)"
+          },
+          "at": [
+            -157.4,
+            1.85
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1777-12-24",
+          "place": {
+            "en": "Line Islands, Kiribati",
+            "es": "Islas de la Línea (Kiribati)"
+          },
+          "text": {
+            "en": "A huge coral atoll, then uninhabited, where Cook’s crews spent Christmas 1777, watched an eclipse of the Sun and caught some 300 turtles. Cook named it Christmas Island.",
+            "es": "Un enorme atolón de coral, entonces deshabitado, donde las tripulaciones de Cook pasaron la Navidad de 1777, observaron un eclipse de sol y capturaron unas 300 tortugas. Cook lo llamó isla de Navidad."
+          },
+          "wiki": {
+            "en": "Kiritimati",
+            "es": "Kiritimati"
+          }
+        },
+        {
+          "id": "hawaiians-of-kauai",
+          "name": {
+            "en": "Hawaiians of Kauaʻi",
+            "es": "Los hawaianos de Kauaʻi"
+          },
+          "at": [
+            -159.67,
+            21.96
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1778-01-20",
+          "place": {
+            "en": "Waimea, Kauaʻi, Hawaiʻi",
+            "es": "Waimea, Kauaʻi (Hawái)"
+          },
+          "text": {
+            "en": "Polynesians whose ancestors had sailed to these islands many centuries before. They greeted Cook as they would their highest chiefs and traded food for iron; his crews left behind diseases new to the islands.",
+            "es": "Polinesios cuyos antepasados habían llegado navegando a estas islas muchos siglos antes. Recibieron a Cook como a sus jefes más altos y cambiaron comida por hierro; sus tripulaciones dejaron enfermedades nuevas en las islas."
+          },
+          "wiki": {
+            "en": "Kauaʻi",
+            "es": "Kauai"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1778-08-17",
+      "title": {
+        "en": "Nootka Sound and the Bering Strait",
+        "es": "Nutca y el estrecho de Bering"
+      },
+      "camera": {
+        "lon": -152.0,
+        "lat": 50.0,
+        "zoom": 1.7
+      },
+      "text": {
+        "en": "Cook reached North America in March 1778 and spent a month at Nootka Sound. He then charted the coast north to Alaska, passed through the Bering Strait and was stopped by a wall of ice on 17 August.",
+        "es": "Cook llegó a América del Norte en marzo de 1778 y pasó un mes en Nutca. Luego cartografió la costa hacia el norte, hasta Alaska, cruzó el estrecho de Bering y un muro de hielo lo detuvo el 17 de agosto."
+      },
+      "details": {
+        "en": "Storms off Oregon drove the ships south, and at night they passed the Strait of Juan de Fuca without seeing it. At Nootka Sound, on Vancouver Island, the Mowachaht of Yuquot traded sea otter furs for metal while the ships were repaired. Cook then followed the coast of Alaska, searching Prince William Sound and Cook Inlet in vain for a passage, and met Alutiiq and Unangan (Aleut) people and Russian fur traders. In August he crossed to Asia to trade with the Chukchi, then sailed into the Arctic Ocean. Near Icy Cape, at about 70° N, pack ice stretched across the sea. The crew ate walrus meat as Cook searched for a way through, first to the north and then to the west.",
+        "es": "Las tormentas frente a Oregón empujaron los barcos al sur, y de noche pasaron el estrecho de Juan de Fuca sin verlo. En Nutca, en la isla de Vancouver, los mowachaht de Yuquot cambiaron pieles de nutria marina por metal mientras se reparaban los barcos. Luego Cook siguió la costa de Alaska, buscó en vano un paso en el Prince William Sound y la ensenada de Cook, y conoció a pueblos alutiiq y unangan (aleutianos) y a comerciantes rusos de pieles. En agosto cruzó a Asia para comerciar con los chukchis y después entró en el océano Ártico. Cerca del cabo Icy, a unos 70° N, la banquisa cubría el mar. La tripulación comió carne de morsa mientras Cook buscaba un paso, primero al norte y luego al oeste."
+      },
+      "moves": [
+        {
+          "side": "third",
+          "path": [
+            [
+              -159.67,
+              21.94
+            ],
+            [
+              -159.3,
+              22.4
+            ],
+            [
+              -150.0,
+              35.0
+            ],
+            [
+              -128.0,
+              43.0
+            ],
+            [
+              -124.4,
+              44.8
+            ],
+            [
+              -124.9,
+              46.5
+            ],
+            [
+              -126.1,
+              48.6
+            ],
+            [
+              -126.6,
+              49.5
+            ],
+            [
+              -126.95,
+              49.8
+            ],
+            [
+              -131.0,
+              51.6
+            ],
+            [
+              -133.8,
+              53.5
+            ],
+            [
+              -136.5,
+              57.4
+            ],
+            [
+              -141.5,
+              59.7
+            ],
+            [
+              -146.5,
+              60.0
+            ],
+            [
+              -147.1,
+              60.55
+            ],
+            [
+              -147.2,
+              59.75
+            ],
+            [
+              -151.8,
+              59.2
+            ],
+            [
+              -151.7,
+              60.4
+            ],
+            [
+              -152.3,
+              59.0
+            ],
+            [
+              -152.5,
+              57.2
+            ],
+            [
+              -155.5,
+              56.0
+            ],
+            [
+              -159.5,
+              54.8
+            ],
+            [
+              -163.5,
+              54.3
+            ],
+            [
+              -166.4,
+              53.95
+            ],
+            [
+              -166.1,
+              54.3
+            ],
+            [
+              -165.0,
+              55.5
+            ],
+            [
+              -162.3,
+              58.4
+            ],
+            [
+              -164.8,
+              59.7
+            ],
+            [
+              -166.5,
+              60.8
+            ],
+            [
+              -168.0,
+              63.3
+            ],
+            [
+              -167.3,
+              64.7
+            ],
+            [
+              -168.4,
+              65.6
+            ],
+            [
+              -170.8,
+              65.55
+            ],
+            [
+              -169.2,
+              66.2
+            ],
+            [
+              -167.5,
+              68.4
+            ],
+            [
+              -166.8,
+              69.2
+            ],
+            [
+              -164.5,
+              69.9
+            ],
+            [
+              -161.95,
+              70.4
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Searching for the Northwest Passage",
+            "es": "En busca del paso del Noroeste"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "mowachaht-of-yuquot",
+          "name": {
+            "en": "The Mowachaht of Yuquot",
+            "es": "Los mowachaht de Yuquot"
+          },
+          "at": [
+            -126.6167,
+            49.6
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1778-03-29",
+          "place": {
+            "en": "Nootka Sound, British Columbia, Canada",
+            "es": "Nutca, Columbia Británica (Canadá)"
+          },
+          "text": {
+            "en": "A Nuu-chah-nulth people, among the few on the Pacific coast who hunted whales. Cook misunderstood their words and called the place Nootka; the furs his crew bought here started the British fur trade.",
+            "es": "Un pueblo nuu-chah-nulth, uno de los pocos de la costa del Pacífico que cazaban ballenas. Cook entendió mal sus palabras y llamó al lugar Nutca; las pieles que su tripulación compró aquí iniciaron el comercio británico de pieles."
+          },
+          "wiki": {
+            "en": "Nuu-chah-nulth",
+            "es": "Nuu-chah-nulth"
+          }
+        },
+        {
+          "id": "bering-strait",
+          "name": {
+            "en": "Bering Strait",
+            "es": "Estrecho de Bering"
+          },
+          "at": [
+            -168.9769,
+            65.75
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1778-08-11",
+          "place": {
+            "en": "Between Alaska and Chukotka",
+            "es": "Entre Alaska y Chukotka"
+          },
+          "text": {
+            "en": "The narrow sea, 82 km wide at its narrowest, between Asia and North America. Cook sailed through it in August 1778, after trading with the Chukchi on the Asian shore.",
+            "es": "El mar angosto, de 82 km en su parte más estrecha, entre Asia y América del Norte. Cook lo cruzó en agosto de 1778, después de comerciar con los chukchis en la orilla asiática."
+          },
+          "wiki": {
+            "en": "Bering Strait",
+            "es": "Estrecho de Bering"
+          }
+        },
+        {
+          "id": "icy-cape",
+          "name": {
+            "en": "Icy Cape",
+            "es": "Cabo Icy"
+          },
+          "at": [
+            -161.8742,
+            70.3297
+          ],
+          "cat": "ice",
+          "type": "place",
+          "date": "1778-08-17",
+          "place": {
+            "en": "North Slope, Alaska, USA",
+            "es": "North Slope, Alaska (EE. UU.)"
+          },
+          "text": {
+            "en": "Named by Cook on 17 August 1778 for the ice along the coast. Nearby, at about 70°41′ N, the pack ice stopped him: there was no open passage to the Atlantic.",
+            "es": "Cook lo llamó así el 17 de agosto de 1778 por el hielo que bordeaba la costa. Cerca de allí, a unos 70°41′ N, la banquisa lo detuvo: no había un paso abierto hacia el Atlántico."
+          },
+          "wiki": {
+            "en": "Icy Cape",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1779-02-14",
+      "title": {
+        "en": "Death at Kealakekua Bay",
+        "es": "Muerte en la bahía de Kealakekua"
+      },
+      "camera": {
+        "lon": -165.0,
+        "lat": 44.0,
+        "zoom": 1.4
+      },
+      "text": {
+        "en": "Cook wintered in Hawaiʻi and on 17 January 1779 anchored at Kealakekua Bay, during the Makahiki festival of the god Lono. A month later a stolen boat led to a fight, and on 14 February he was killed there.",
+        "es": "Cook pasó el invierno en Hawái y el 17 de enero de 1779 fondeó en la bahía de Kealakekua, durante el festival Makahiki del dios Lono. Un mes después, el robo de un bote llevó a una pelea, y el 14 de febrero murió allí."
+      },
+      "details": {
+        "en": "Coming south, Cook found Maui on 26 November 1778 and then Hawaiʻi Island, sailing round it for seven weeks. At Kealakekua some 10,000 people welcomed the ships, and priests led Cook to the temple of Lono; scholars still debate whether Hawaiians took him for the god himself. After a month he sailed away, but a broken mast brought him back on 11 February, when the festival was over and the mood had changed. When the Discovery’s cutter was stolen, Cook went ashore to take the high chief Kalaniʻōpuʻu hostage. News that a chief had been shot across the bay enraged the crowd; Cook fired and killed a man, and was struck down and stabbed in the shallows with four marines. About 17 Hawaiians died.",
+        "es": "De vuelta al sur, Cook encontró Maui el 26 de noviembre de 1778 y luego la isla de Hawái, a la que rodeó durante siete semanas. En Kealakekua, unas 10 000 personas recibieron a los barcos, y los sacerdotes llevaron a Cook al templo de Lono; los estudiosos aún discuten si los hawaianos lo tomaron por el propio dios. Al cabo de un mes partió, pero un mástil roto lo hizo volver el 11 de febrero, cuando el festival había terminado y el ambiente había cambiado. Cuando robaron el cúter del Discovery, Cook bajó a tierra para tomar como rehén al gran jefe Kalaniʻōpuʻu. La noticia de que habían matado a un jefe al otro lado de la bahía enfureció a la multitud; Cook disparó y mató a un hombre, y fue derribado y apuñalado en la orilla junto con cuatro infantes de marina. Murieron unos 17 hawaianos."
+      },
+      "moves": [
+        {
+          "side": "third",
+          "path": [
+            [
+              -161.95,
+              70.4
+            ],
+            [
+              -168.0,
+              70.4
+            ],
+            [
+              -175.0,
+              69.3
+            ],
+            [
+              -175.0,
+              68.8
+            ],
+            [
+              -173.0,
+              67.8
+            ],
+            [
+              -171.0,
+              67.2
+            ],
+            [
+              -169.8,
+              66.5
+            ],
+            [
+              -169.2,
+              66.2
+            ],
+            [
+              -168.4,
+              65.6
+            ],
+            [
+              -167.3,
+              64.7
+            ],
+            [
+              -168.0,
+              63.6
+            ],
+            [
+              -168.7,
+              61.5
+            ],
+            [
+              -166.1,
+              54.3
+            ],
+            [
+              -166.4,
+              53.95
+            ],
+            [
+              -163.0,
+              45.0
+            ],
+            [
+              -157.5,
+              25.0
+            ],
+            [
+              -156.4,
+              21.2
+            ],
+            [
+              -155.7,
+              20.55
+            ],
+            [
+              -155.0,
+              20.2
+            ],
+            [
+              -154.65,
+              19.55
+            ],
+            [
+              -154.95,
+              19.2
+            ],
+            [
+              -155.7,
+              18.8
+            ],
+            [
+              -156.1,
+              19.2
+            ],
+            [
+              -156.05,
+              19.45
+            ],
+            [
+              -155.93,
+              19.47
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "kalaniopuu",
+          "name": {
+            "en": "Kalaniʻōpuʻu",
+            "es": "Kalaniʻōpuʻu"
+          },
+          "at": [
+            -155.93,
+            19.481
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1779-01-26",
+          "life": [
+            "1729",
+            "1782-04"
+          ],
+          "place": {
+            "en": "Kealakekua Bay, Hawaiʻi",
+            "es": "Bahía de Kealakekua (Hawái)"
+          },
+          "text": {
+            "en": "The aliʻi nui, or supreme chief, of Hawaiʻi Island. He exchanged names and gifts with Cook, giving him a feathered cloak and helmet that are now in the Bishop Museum in Honolulu.",
+            "es": "El aliʻi nui, o jefe supremo, de la isla de Hawái. Intercambió nombres y regalos con Cook y le dio una capa y un casco de plumas que hoy están en el Museo Bishop de Honolulu."
+          },
+          "wiki": {
+            "en": "Kalaniʻōpuʻu",
+            "es": ""
+          }
+        },
+        {
+          "id": "makahiki",
+          "name": {
+            "en": "Makahiki, the season of Lono",
+            "es": "Makahiki, la estación de Lono"
+          },
+          "at": [
+            -155.9192,
+            19.4753
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1779-01-17",
+          "place": {
+            "en": "Hikiau Heiau, Kealakekua Bay, Hawaiʻi",
+            "es": "Hikiau Heiau, bahía de Kealakekua (Hawái)"
+          },
+          "text": {
+            "en": "The Hawaiian new year festival in honour of Lono, god of fertility and plenty, when war was forbidden and an image of Lono was carried clockwise round the island. Cook arrived in the middle of it.",
+            "es": "La fiesta hawaiana de año nuevo en honor de Lono, dios de la fertilidad y la abundancia, cuando se prohibía la guerra y una imagen de Lono recorría la isla en el sentido del reloj. Cook llegó en plena fiesta."
+          },
+          "wiki": {
+            "en": "Makahiki",
+            "es": "Makahiki"
+          }
+        },
+        {
+          "id": "death-of-james-cook",
+          "name": {
+            "en": "The death of Captain Cook",
+            "es": "La muerte del capitán Cook"
+          },
+          "at": [
+            -155.9336,
+            19.4811
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1779-02-14",
+          "place": {
+            "en": "Kaʻawaloa, Kealakekua Bay, Hawaiʻi",
+            "es": "Kaʻawaloa, bahía de Kealakekua (Hawái)"
+          },
+          "text": {
+            "en": "Cook was killed on the shore at Kaʻawaloa while trying to take Kalaniʻōpuʻu hostage. Hawaiians gave his body the rites of a high chief, and some of his remains were returned and buried at sea.",
+            "es": "Cook murió en la orilla de Kaʻawaloa cuando intentaba tomar como rehén a Kalaniʻōpuʻu. Los hawaianos dieron a su cuerpo los ritos de un gran jefe, y parte de sus restos fueron devueltos y sepultados en el mar."
+          },
+          "wiki": {
+            "en": "Death of James Cook",
+            "es": "Secuestro de Kalaniʻōpuʻu por el Capitán James Cook"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1780-10-04",
+      "title": {
+        "en": "The ships come home",
+        "es": "Los barcos vuelven a casa"
+      },
+      "camera": {
+        "lon": 125.0,
+        "lat": 20.0,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "Under Charles Clerke the ships tried the Arctic once more, but ice blocked them again and Clerke died. Sailing home by Macau and the Cape, they reached the Thames on 4 October 1780.",
+        "es": "Al mando de Charles Clerke, los barcos volvieron a intentar el Ártico, pero el hielo los detuvo otra vez y Clerke murió. Regresaron por Macao y el Cabo y llegaron al Támesis el 4 de octubre de 1780."
+      },
+      "details": {
+        "en": "At Petropavlovsk, in Kamchatka, the Russian governor Magnus von Behm welcomed the ships and sent Cook’s journal overland across Siberia; London learned of Cook’s death from it, eleven months after he died. In July 1779 ice stopped the ships near the Bering Strait again. Clerke died of tuberculosis on 22 August and was buried at Petropavlovsk; John Gore took command. In China the sailors sold sea otter furs from America for about £2,000, news that soon sent British and American traders to the north-west coast. Learning of war with France, they armed their ships, but both sides had ordered that Cook’s ships be left in peace. They anchored at the Nore on 4 October 1780, after more than four years away.",
+        "es": "En Petropávlovsk, en Kamchatka, el gobernador ruso Magnus von Behm recibió a los barcos y envió por tierra, a través de Siberia, el diario de Cook; por él supo Londres de su muerte, once meses después. En julio de 1779, el hielo volvió a detener a los barcos cerca del estrecho de Bering. Clerke murió de tuberculosis el 22 de agosto y fue enterrado en Petropávlovsk; John Gore tomó el mando. En China, los marineros vendieron pieles de nutria marina de América por unas 2000 libras, una noticia que pronto llevó a comerciantes británicos y estadounidenses a la costa noroeste. Al saber que había guerra con Francia, armaron sus barcos, pero ambos bandos habían ordenado no atacar los barcos de Cook. Fondearon en el Nore el 4 de octubre de 1780, tras más de cuatro años de viaje."
+      },
+      "moves": [
+        {
+          "side": "after",
+          "path": [
+            [
+              -155.93,
+              19.47
+            ],
+            [
+              -156.2,
+              19.8
+            ],
+            [
+              -157.3,
+              21.0
+            ],
+            [
+              -159.3,
+              21.8
+            ],
+            [
+              -160.0,
+              22.6
+            ],
+            [
+              -175.0,
+              35.0
+            ],
+            [
+              170.0,
+              45.0
+            ],
+            [
+              160.5,
+              52.0
+            ],
+            [
+              158.68,
+              52.95
+            ],
+            [
+              160.0,
+              53.0
+            ],
+            [
+              162.5,
+              54.5
+            ],
+            [
+              166.0,
+              57.5
+            ],
+            [
+              172.0,
+              60.0
+            ],
+            [
+              179.5,
+              61.8
+            ],
+            [
+              -175.0,
+              63.3
+            ],
+            [
+              -171.5,
+              64.2
+            ],
+            [
+              -169.6,
+              65.6
+            ],
+            [
+              -169.2,
+              65.9
+            ],
+            [
+              -168.5,
+              68.5
+            ],
+            [
+              -169.2,
+              65.9
+            ],
+            [
+              -169.6,
+              65.6
+            ],
+            [
+              -171.5,
+              64.2
+            ],
+            [
+              -175.0,
+              63.3
+            ],
+            [
+              179.5,
+              61.8
+            ],
+            [
+              172.0,
+              60.0
+            ],
+            [
+              166.0,
+              57.5
+            ],
+            [
+              162.5,
+              54.5
+            ],
+            [
+              160.0,
+              53.0
+            ],
+            [
+              158.68,
+              52.95
+            ],
+            [
+              159.5,
+              52.0
+            ],
+            [
+              152.5,
+              45.0
+            ],
+            [
+              145.0,
+              40.0
+            ],
+            [
+              140.5,
+              34.2
+            ],
+            [
+              130.0,
+              24.0
+            ],
+            [
+              122.5,
+              21.5
+            ],
+            [
+              117.0,
+              21.7
+            ],
+            [
+              114.0,
+              22.0
+            ],
+            [
+              113.55,
+              22.15
+            ],
+            [
+              112.0,
+              18.0
+            ],
+            [
+              109.8,
+              12.0
+            ],
+            [
+              108.5,
+              8.0
+            ],
+            [
+              106.5,
+              3.0
+            ],
+            [
+              107.1,
+              -2.4
+            ],
+            [
+              106.5,
+              -4.5
+            ],
+            [
+              105.85,
+              -5.95
+            ],
+            [
+              105.55,
+              -6.15
+            ],
+            [
+              104.5,
+              -7.0
+            ],
+            [
+              80.0,
+              -25.0
+            ],
+            [
+              40.0,
+              -36.0
+            ],
+            [
+              25.0,
+              -36.0
+            ],
+            [
+              18.45,
+              -34.5
+            ],
+            [
+              18.5,
+              -34.2
+            ],
+            [
+              17.9,
+              -33.9
+            ],
+            [
+              5.0,
+              -25.0
+            ],
+            [
+              -10.0,
+              -5.0
+            ],
+            [
+              -24.0,
+              15.0
+            ],
+            [
+              -30.0,
+              35.0
+            ],
+            [
+              -20.0,
+              50.0
+            ],
+            [
+              -11.0,
+              52.5
+            ],
+            [
+              -10.5,
+              56.0
+            ],
+            [
+              -7.5,
+              59.0
+            ],
+            [
+              -4.5,
+              59.2
+            ],
+            [
+              -3.3,
+              58.96
+            ],
+            [
+              -3.45,
+              58.9
+            ],
+            [
+              -3.4,
+              58.72
+            ],
+            [
+              -2.8,
+              58.7
+            ],
+            [
+              -2.2,
+              58.4
+            ],
+            [
+              -1.0,
+              57.0
+            ],
+            [
+              1.0,
+              54.0
+            ],
+            [
+              2.0,
+              52.5
+            ],
+            [
+              1.4,
+              51.6
+            ],
+            [
+              0.8,
+              51.48
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Home without Cook",
+            "es": "De regreso sin Cook"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "petropavlovsk",
+          "name": {
+            "en": "Petropavlovsk",
+            "es": "Petropávlovsk"
+          },
+          "at": [
+            158.65,
+            53.0167
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1779-04-29",
+          "place": {
+            "en": "Kamchatka, Russia",
+            "es": "Kamchatka (Rusia)"
+          },
+          "text": {
+            "en": "A small Russian harbour on Avacha Bay. Its governor helped with supplies, the ships’ doctors treated local people for scurvy, and Charles Clerke was buried here in August 1779 with full honours.",
+            "es": "Un pequeño puerto ruso en la bahía de Avacha. Su gobernador ayudó con provisiones, los médicos de los barcos trataron a vecinos enfermos de escorbuto, y aquí fue enterrado Charles Clerke en agosto de 1779, con honores."
+          },
+          "wiki": {
+            "en": "Petropavlovsk-Kamchatsky",
+            "es": "Petropávlovsk-Kamchatski"
+          }
+        },
+        {
+          "id": "sea-otter-furs",
+          "name": {
+            "en": "Sea otter furs",
+            "es": "Pieles de nutria marina"
+          },
+          "at": [
+            113.2644,
+            23.1291
+          ],
+          "cat": "goods",
+          "type": "goods",
+          "date": "1779-12",
+          "place": {
+            "en": "Canton (Guangzhou), China",
+            "es": "Cantón (Guangzhou), China"
+          },
+          "text": {
+            "en": "Pelts bought for trinkets on the American coast fetched high prices in China. The news set off a rush of fur traders to the north-west coast, and within decades sea otters were hunted almost to extinction.",
+            "es": "Las pieles compradas por baratijas en la costa americana valían mucho en China. La noticia desató una carrera de comerciantes hacia la costa noroeste, y en pocas décadas la caza casi extinguió a las nutrias marinas."
+          },
+          "wiki": {
+            "en": "Maritime fur trade",
+            "es": "Comercio marítimo de pieles"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Cook’s voyages charted New Zealand, eastern Australia, the Pacific islands and the north-west coast of America with new accuracy, ended the dream of a great southern continent and showed how to keep sailors free of scurvy. They opened the Pacific to British power: the First Fleet reached Botany Bay in 1788, and Britain later colonised New Zealand as well. For the peoples Cook met, contact brought trade and exchange but also killings, new diseases and, in time, the loss of their lands, which is why he is celebrated by some and seen by others as a symbol of colonisation.",
+    "es": "Los viajes de Cook cartografiaron con una precisión nueva Nueva Zelanda, el este de Australia, las islas del Pacífico y la costa noroeste de América, acabaron con el sueño de un gran continente austral y enseñaron a proteger a los marinos del escorbuto. Abrieron el Pacífico al poder británico: la Primera Flota llegó a Botany Bay en 1788, y más tarde Gran Bretaña colonizó también Nueva Zelanda. Para los pueblos que Cook conoció, el contacto trajo comercio e intercambios, pero también muertes, enfermedades nuevas y, con el tiempo, la pérdida de sus tierras; por eso unos lo celebran y otros lo ven como un símbolo de la colonización."
+  },
+  "sources": [
+    {
+      "title": "James Cook (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/James_Cook"
+    },
+    {
+      "title": "First voyage of James Cook (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/First_voyage_of_James_Cook"
+    },
+    {
+      "title": "Second voyage of James Cook (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Second_voyage_of_James_Cook"
+    },
+    {
+      "title": "Third voyage of James Cook (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Third_voyage_of_James_Cook"
+    },
+    {
+      "title": "Death of James Cook (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Death_of_James_Cook"
+    },
+    {
+      "title": "HMS Endeavour (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/HMS_Endeavour"
+    },
+    {
+      "title": "HMS Resolution (1771) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/HMS_Resolution_(1771)"
+    },
+    {
+      "title": "HMS Adventure (1771) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/HMS_Adventure_(1771)"
+    },
+    {
+      "title": "HMS Discovery (1774) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/HMS_Discovery_(1774)"
+    },
+    {
+      "title": "Joseph Banks (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Joseph_Banks"
+    },
+    {
+      "title": "Tupaia (navigator) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tupaia_(navigator)"
+    },
+    {
+      "title": "Mai (Ra'iatean man) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Omai"
+    },
+    {
+      "title": "1769 transit of Venus observed from Tahiti (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1769_transit_of_Venus_observed_from_Tahiti"
+    },
+    {
+      "title": "Point Venus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Point_Venus"
+    },
+    {
+      "title": "Haush (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Haush"
+    },
+    {
+      "title": "Cape Horn (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cape_Horn"
+    },
+    {
+      "title": "Tahiti (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tahiti"
+    },
+    {
+      "title": "Raiatea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Raiatea"
+    },
+    {
+      "title": "Huahine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Huahine"
+    },
+    {
+      "title": "Poverty Bay (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Poverty_Bay"
+    },
+    {
+      "title": "Māori people (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/M%C4%81ori_people"
+    },
+    {
+      "title": "Mercury Bay (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mercury_Bay"
+    },
+    {
+      "title": "Queen Charlotte Sound / Tōtaranui (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Queen_Charlotte_Sound_/_T%C5%8Dtaranui"
+    },
+    {
+      "title": "Cook Strait (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cook_Strait"
+    },
+    {
+      "title": "Point Hicks (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Point_Hicks"
+    },
+    {
+      "title": "Botany Bay (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Botany_Bay"
+    },
+    {
+      "title": "Gweagal (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gweagal"
+    },
+    {
+      "title": "Great Barrier Reef (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Barrier_Reef"
+    },
+    {
+      "title": "Cooktown, Queensland (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cooktown,_Queensland"
+    },
+    {
+      "title": "Guugu Yimithirr people (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Guugu_Yimithirr_people"
+    },
+    {
+      "title": "Kangaroo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kangaroo"
+    },
+    {
+      "title": "Possession Island (Queensland) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Possession_Island_(Queensland)"
+    },
+    {
+      "title": "Batavia, Dutch East Indies (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Batavia,_Dutch_East_Indies"
+    },
+    {
+      "title": "First Fleet (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/First_Fleet"
+    },
+    {
+      "title": "Larcum Kendall (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Larcum_Kendall"
+    },
+    {
+      "title": "Antarctic Circle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Antarctic_Circle"
+    },
+    {
+      "title": "Dusky Sound (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dusky_Sound"
+    },
+    {
+      "title": "Tonga (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tonga"
+    },
+    {
+      "title": "Easter Island (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Easter_Island"
+    },
+    {
+      "title": "Tanna (island) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tanna_(island)"
+    },
+    {
+      "title": "New Caledonia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/New_Caledonia"
+    },
+    {
+      "title": "South Georgia Island (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/South_Georgia_Island"
+    },
+    {
+      "title": "Kerguelen Islands (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kerguelen_Islands"
+    },
+    {
+      "title": "Aboriginal Tasmanians (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aboriginal_Tasmanians"
+    },
+    {
+      "title": "Moʼorea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mo%CA%BCorea"
+    },
+    {
+      "title": "Kiritimati (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kiritimati"
+    },
+    {
+      "title": "Kauaʻi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kaua%CA%BBi"
+    },
+    {
+      "title": "Nootka Sound (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nootka_Sound"
+    },
+    {
+      "title": "Yuquot (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yuquot"
+    },
+    {
+      "title": "Nuu-chah-nulth (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nuu-chah-nulth"
+    },
+    {
+      "title": "Bering Strait (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bering_Strait"
+    },
+    {
+      "title": "Icy Cape (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Icy_Cape"
+    },
+    {
+      "title": "Kealakekua Bay (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kealakekua_Bay"
+    },
+    {
+      "title": "Kalaniʻōpuʻu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kalani%CA%BB%C5%8Dpu%CA%BBu"
+    },
+    {
+      "title": "Makahiki (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Makahiki"
+    },
+    {
+      "title": "Petropavlovsk-Kamchatsky (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Petropavlovsk-Kamchatsky"
+    },
+    {
+      "title": "Maritime fur trade (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maritime_fur_trade"
+    },
+    {
+      "title": "Cape of Good Hope (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cape_of_Good_Hope"
+    },
+    {
+      "title": "Guanabara Bay (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Guanabara_Bay"
+    }
+  ]
+}

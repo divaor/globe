@@ -1,0 +1,4053 @@
+{
+  "id": "arctic",
+  "name": {
+    "en": "To the top of the world",
+    "es": "Hacia la cima del mundo"
+  },
+  "icon": "❄️",
+  "era": "modern",
+  "region": {
+    "en": "The Arctic: the Northwest and Northeast Passages and the North Pole",
+    "es": "El Ártico: los pasos del Noroeste y del Noreste y el polo norte"
+  },
+  "start": "1845-05-19",
+  "end": "1969-05",
+  "summary": {
+    "en": "From Franklin's lost ships to the first undisputed journeys to the North Pole, 1845–1969: the search for the Arctic passages and the Pole, and the Inuit whose land and knowledge the explorers depended on.",
+    "es": "De los barcos perdidos de Franklin a los primeros viajes indiscutidos al polo norte, 1845-1969: la búsqueda de los pasos árticos y del polo, y los inuit de cuya tierra y saber dependieron los exploradores."
+  },
+  "camera": {
+    "lon": -40.0,
+    "lat": 78.0,
+    "zoom": 1.5
+  },
+  "sides": [
+    {
+      "id": "franklin",
+      "name": {
+        "en": "Franklin's expedition and the search",
+        "es": "La expedición de Franklin y su búsqueda"
+      },
+      "color": "#8e5a2b"
+    },
+    {
+      "id": "vega",
+      "name": {
+        "en": "Nordenskiöld's Vega",
+        "es": "El Vega de Nordenskiöld"
+      },
+      "color": "#d4a017"
+    },
+    {
+      "id": "fram",
+      "name": {
+        "en": "Nansen's Fram",
+        "es": "El Fram de Nansen"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "amundsen",
+      "name": {
+        "en": "Roald Amundsen",
+        "es": "Roald Amundsen"
+      },
+      "color": "#16a085"
+    },
+    {
+      "id": "cook",
+      "name": {
+        "en": "Frederick Cook's claim",
+        "es": "El reclamo de Frederick Cook"
+      },
+      "color": "#e67e22"
+    },
+    {
+      "id": "peary",
+      "name": {
+        "en": "Peary and Henson's claim",
+        "es": "El reclamo de Peary y Henson"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "airships",
+      "name": {
+        "en": "The airships Norge and Italia",
+        "es": "Los dirigibles Norge e Italia"
+      },
+      "color": "#5d6d7e"
+    },
+    {
+      "id": "pole",
+      "name": {
+        "en": "Nautilus, Plaisted and Herbert",
+        "es": "Nautilus, Plaisted y Herbert"
+      },
+      "color": "#2e6f9e"
+    }
+  ],
+  "steps": [
+    {
+      "date": "1845-07",
+      "title": {
+        "en": "Franklin sails for the Passage",
+        "es": "Franklin zarpa hacia el paso"
+      },
+      "camera": {
+        "lon": -28.0,
+        "lat": 64.0,
+        "zoom": 2.3
+      },
+      "text": {
+        "en": "On 19 May 1845 Sir John Franklin left England with HMS Erebus and HMS Terror and 134 men to find the Northwest Passage. In late July whalers saw them in Baffin Bay. No European saw them again.",
+        "es": "El 19 de mayo de 1845, sir John Franklin salió de Inglaterra con los HMS Erebus y HMS Terror y 134 hombres para encontrar el paso del Noroeste. A fines de julio, unos balleneros los vieron en la bahía de Baffin. Ningún europeo volvió a verlos."
+      },
+      "details": {
+        "en": "For three centuries Europeans had looked for a sea route north of America to Asia; by 1845 only about 1,670 km of it remained unexplored. The Royal Navy's two ships had steam engines taken from railway locomotives, steam heating, libraries of over 1,000 books and three years of food, much of it in 8,000 tins made in a hurry. Few of the officers had been to the Arctic. After taking on water at Stromness in Orkney, the ships crossed to Greenland. At the Whalefish Islands in Disko Bay ten oxen were slaughtered for fresh meat, five sick men were sent home, leaving 129, and the crews wrote their last letters. In late July two whaling ships met them in Baffin Bay, waiting for the ice to open toward Lancaster Sound. Then they sailed west and vanished.",
+        "es": "Durante tres siglos, los europeos habían buscado una ruta marítima al norte de América hacia Asia; en 1845 solo quedaban sin explorar unos 1670 km. Los dos barcos de la Marina Real tenían motores de vapor sacados de locomotoras, calefacción a vapor, bibliotecas de más de 1000 libros y comida para tres años, gran parte en 8000 latas fabricadas a toda prisa. Pocos oficiales habían estado en el Ártico. Tras cargar agua en Stromness, en las Orcadas, los barcos cruzaron a Groenlandia. En las islas Whalefish, en la bahía de Disko, sacrificaron diez bueyes para tener carne fresca, enviaron a casa a cinco enfermos, con lo que quedaron 129 hombres, y las tripulaciones escribieron sus últimas cartas. A fines de julio, dos balleneros los encontraron en la bahía de Baffin, esperando que el hielo se abriera hacia el estrecho de Lancaster. Luego navegaron al oeste y desaparecieron."
+      },
+      "places": [
+        {
+          "id": "john-franklin",
+          "name": {
+            "en": "John Franklin",
+            "es": "John Franklin"
+          },
+          "at": [
+            0.2833,
+            51.45
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1845-05-19",
+          "life": [
+            "1786-04-16",
+            "1847-06-11"
+          ],
+          "place": {
+            "en": "Greenhithe, Kent, England",
+            "es": "Greenhithe, Kent (Inglaterra)"
+          },
+          "text": {
+            "en": "A Royal Navy officer who had mapped Canada's Arctic coast on two overland journeys. At 59 he was the Admiralty's reluctant choice to lead the 1845 expedition. He died aboard his ship on 11 June 1847.",
+            "es": "Un oficial de la Marina Real que había cartografiado la costa ártica de Canadá en dos viajes por tierra. A los 59 años fue la elección reticente del Almirantazgo para dirigir la expedición de 1845. Murió a bordo de su barco el 11 de junio de 1847."
+          },
+          "wiki": {
+            "en": "John Franklin",
+            "es": "John Franklin"
+          }
+        },
+        {
+          "id": "stromness-orkney",
+          "name": {
+            "en": "Stromness, Orkney",
+            "es": "Stromness (Orcadas)"
+          },
+          "at": [
+            -3.296,
+            58.964
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1845-06",
+          "place": {
+            "en": "Orkney, Scotland",
+            "es": "Orcadas (Escocia)"
+          },
+          "text": {
+            "en": "The Orkney harbour where Franklin's ships took on fresh water in 1845. A statue of John Rae, the Orkneyman who learned their fate from the Inuit, now stands on its pier.",
+            "es": "El puerto de las Orcadas donde los barcos de Franklin cargaron agua dulce en 1845. En su muelle se alza hoy una estatua de John Rae, el orcadiano que supo por los inuit cuál había sido su destino."
+          },
+          "wiki": {
+            "en": "Stromness",
+            "es": "Stromness (Escocia)"
+          }
+        },
+        {
+          "id": "disko-bay",
+          "name": {
+            "en": "Disko Bay",
+            "es": "Bahía de Disko"
+          },
+          "at": [
+            -53.45,
+            68.97
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1845-07",
+          "place": {
+            "en": "West Greenland",
+            "es": "Groenlandia occidental"
+          },
+          "text": {
+            "en": "A great bay on Greenland's west coast, home to Greenlandic Inuit towns. At its Whalefish Islands Franklin's crews took on fresh meat and wrote their last letters home in July 1845.",
+            "es": "Una gran bahía de la costa oeste de Groenlandia, hogar de pueblos inuit groenlandeses. En sus islas Whalefish, las tripulaciones de Franklin cargaron carne fresca y escribieron sus últimas cartas, en julio de 1845."
+          },
+          "wiki": {
+            "en": "Disko Bay",
+            "es": "Bahía de Disko"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "franklin",
+          "path": [
+            [
+              0.28,
+              51.45
+            ],
+            [
+              0.9,
+              51.49
+            ],
+            [
+              1.7,
+              51.65
+            ],
+            [
+              2.2,
+              52.8
+            ],
+            [
+              1.2,
+              54.0
+            ],
+            [
+              0.2,
+              54.6
+            ],
+            [
+              -1.1,
+              55.9
+            ],
+            [
+              -1.6,
+              57.0
+            ],
+            [
+              -1.7,
+              57.7
+            ],
+            [
+              -2.6,
+              58.62
+            ],
+            [
+              -3.05,
+              58.71
+            ],
+            [
+              -3.3,
+              58.93
+            ],
+            [
+              -3.6,
+              58.95
+            ],
+            [
+              -6.0,
+              59.3
+            ],
+            [
+              -20.0,
+              60.5
+            ],
+            [
+              -35.0,
+              60.2
+            ],
+            [
+              -43.9,
+              59.45
+            ],
+            [
+              -47.6,
+              60.1
+            ],
+            [
+              -50.2,
+              61.6
+            ],
+            [
+              -52.0,
+              63.4
+            ],
+            [
+              -53.2,
+              65.0
+            ],
+            [
+              -54.3,
+              66.5
+            ],
+            [
+              -54.6,
+              67.6
+            ],
+            [
+              -53.6,
+              68.6
+            ],
+            [
+              -53.45,
+              68.95
+            ],
+            [
+              -54.6,
+              69.2
+            ],
+            [
+              -56.5,
+              70.2
+            ],
+            [
+              -58.8,
+              71.6
+            ],
+            [
+              -61.0,
+              73.0
+            ],
+            [
+              -63.8,
+              74.2
+            ],
+            [
+              -66.2,
+              74.7
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ]
+    },
+    {
+      "date": "1848-04-25",
+      "title": {
+        "en": "Lost in the ice",
+        "es": "Perdidos en el hielo"
+      },
+      "camera": {
+        "lon": -94.0,
+        "lat": 72.8,
+        "zoom": 4.6
+      },
+      "text": {
+        "en": "They wintered at Beechey Island, then sailed south until ice trapped them off King William Island in September 1846. Franklin died in 1847. In April 1848 the 105 survivors left the ships and walked south. None survived.",
+        "es": "Invernaron en la isla Beechey y navegaron al sur hasta que el hielo los atrapó frente a la isla del Rey Guillermo, en septiembre de 1846. Franklin murió en 1847. En abril de 1848, los 105 sobrevivientes dejaron los barcos y caminaron al sur. Ninguno se salvó."
+      },
+      "details": {
+        "en": "In 1845 the ships sailed up Wellington Channel to 77° N and came back around Cornwallis Island, then wintered at Beechey Island, where three men died and were buried. In 1846 they went south down Peel Sound but took the west side of King William Island, where the pack ice does not always clear in the short summer; the route along the east side usually clears. A note found in a cairn in 1859 tells the rest: the ships had been beset since 12 September 1846, Franklin died on 11 June 1847, and on 22 April 1848 Captains Crozier and Fitzjames abandoned the ships with 105 men to walk to the Back River on the mainland. Hauling heavy boats, most died on the island; some 30 or 40 reached the mainland. Cold, scurvy, hunger and disease killed them all, perhaps with lead poisoning or a lack of zinc.",
+        "es": "En 1845, los barcos subieron por el canal Wellington hasta los 77° N y volvieron rodeando la isla Cornwallis; luego invernaron en la isla Beechey, donde murieron y fueron enterrados tres hombres. En 1846 bajaron hacia el sur por el estrecho de Peel, pero tomaron el lado oeste de la isla del Rey Guillermo, donde la banquisa no siempre se abre en el corto verano; la ruta por el lado este suele despejarse. Una nota hallada en un montículo de piedras en 1859 cuenta el resto: los barcos estaban atrapados desde el 12 de septiembre de 1846, Franklin murió el 11 de junio de 1847 y el 22 de abril de 1848 los capitanes Crozier y Fitzjames abandonaron los barcos con 105 hombres para caminar hasta el río Back, en el continente. Arrastrando pesados botes, la mayoría murió en la isla; unos 30 o 40 llegaron al continente. El frío, el escorbuto, el hambre y las enfermedades los mataron a todos, quizás junto con el envenenamiento por plomo o la falta de zinc."
+      },
+      "places": [
+        {
+          "id": "beechey-island",
+          "name": {
+            "en": "Beechey Island",
+            "es": "Isla Beechey"
+          },
+          "at": [
+            -91.85,
+            74.7167
+          ],
+          "cat": "ice",
+          "type": "site",
+          "date": "1845-09",
+          "place": {
+            "en": "Nunavut, Canada",
+            "es": "Nunavut (Canadá)"
+          },
+          "text": {
+            "en": "The small island where Franklin's ships spent their first winter, 1845–46. Searchers found the graves of three sailors here in 1850; the bodies were exhumed and studied in the 1980s.",
+            "es": "La pequeña isla donde los barcos de Franklin pasaron su primer invierno, 1845-1846. En 1850, los buscadores hallaron aquí las tumbas de tres marineros; los cuerpos fueron exhumados y estudiados en la década de 1980."
+          },
+          "wiki": {
+            "en": "Beechey Island",
+            "es": "Isla Beechey"
+          }
+        },
+        {
+          "id": "victory-point-note",
+          "name": {
+            "en": "The Victory Point note",
+            "es": "La nota de Victory Point"
+          },
+          "at": [
+            -98.6833,
+            69.6283
+          ],
+          "cat": "book",
+          "type": "work",
+          "date": "1848-04-25",
+          "place": {
+            "en": "Victory Point, King William Island, Nunavut, Canada",
+            "es": "Victory Point, isla del Rey Guillermo, Nunavut (Canadá)"
+          },
+          "text": {
+            "en": "The only written word from the lost expedition: a navy form left in a cairn in 1847, with a message added in April 1848 telling of Franklin's death and the abandonment of the ships. It was found in 1859.",
+            "es": "La única palabra escrita de la expedición perdida: un formulario naval dejado en un montículo de piedras en 1847, con un mensaje añadido en abril de 1848 que contaba la muerte de Franklin y el abandono de los barcos. Se encontró en 1859."
+          },
+          "wiki": {
+            "en": "Franklin's lost expedition",
+            "es": "Expedición perdida de Franklin"
+          }
+        },
+        {
+          "id": "king-william-island",
+          "name": {
+            "en": "King William Island (Qikiqtaq)",
+            "es": "Isla del Rey Guillermo (Qikiqtaq)"
+          },
+          "at": [
+            -97.4167,
+            69.1667
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1846-09-12",
+          "place": {
+            "en": "Nunavut, Canada",
+            "es": "Nunavut (Canadá)"
+          },
+          "text": {
+            "en": "Qikiqtaq to the Inuit, who have long lived here. Franklin's ships were trapped in the ice off its west coast, and his men died along its shores. Its only town is Gjoa Haven.",
+            "es": "Qikiqtaq para los inuit, que viven aquí desde hace mucho. Los barcos de Franklin quedaron atrapados en el hielo frente a su costa oeste, y sus hombres murieron en sus orillas. Su único pueblo es Gjoa Haven."
+          },
+          "wiki": {
+            "en": "King William Island",
+            "es": "Isla del Rey Guillermo"
+          }
+        },
+        {
+          "id": "hms-erebus",
+          "name": {
+            "en": "HMS Erebus",
+            "es": "HMS Erebus"
+          },
+          "at": [
+            -98.87,
+            68.245
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1845-05-19",
+          "place": {
+            "en": "Wreck in Wilmot and Crampton Bay, Nunavut, Canada",
+            "es": "Pecio en la bahía Wilmot and Crampton, Nunavut (Canadá)"
+          },
+          "text": {
+            "en": "Franklin's flagship, which had already sailed to Antarctica with James Clark Ross. Her wreck was found by a Canadian search on 7 September 2014, in about 11 m of water south of King William Island.",
+            "es": "El buque insignia de Franklin, que ya había navegado a la Antártida con James Clark Ross. Una búsqueda canadiense halló su pecio el 7 de septiembre de 2014, a unos 11 m de profundidad al sur de la isla del Rey Guillermo."
+          },
+          "wiki": {
+            "en": "HMS Erebus (1826)",
+            "es": "HMS Erebus (1826)"
+          }
+        },
+        {
+          "id": "hms-terror",
+          "name": {
+            "en": "HMS Terror",
+            "es": "HMS Terror"
+          },
+          "at": [
+            -98.9383,
+            68.9036
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1845-05-19",
+          "place": {
+            "en": "Wreck in Terror Bay, Nunavut, Canada",
+            "es": "Pecio en la bahía Terror, Nunavut (Canadá)"
+          },
+          "text": {
+            "en": "Captain Crozier's ship. In 2016, guided by the memory of the Inuk hunter Sammy Kogvik, searchers found her in Terror Bay in 'pristine' condition, 24 m down. The wrecks now belong to Canada and the Inuit.",
+            "es": "El barco del capitán Crozier. En 2016, guiados por el recuerdo del cazador inuk Sammy Kogvik, los buscadores lo hallaron en la bahía Terror en estado «impecable», a 24 m de profundidad. Los pecios pertenecen hoy a Canadá y a los inuit."
+          },
+          "wiki": {
+            "en": "HMS Terror (1813)",
+            "es": "HMS Terror (1813)"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "franklin",
+          "path": [
+            [
+              -66.2,
+              74.7
+            ],
+            [
+              -72.0,
+              74.3
+            ],
+            [
+              -77.5,
+              74.25
+            ],
+            [
+              -81.5,
+              74.3
+            ],
+            [
+              -85.5,
+              74.35
+            ],
+            [
+              -89.0,
+              74.45
+            ],
+            [
+              -91.3,
+              74.55
+            ],
+            [
+              -92.6,
+              74.8
+            ],
+            [
+              -92.9,
+              75.3
+            ],
+            [
+              -93.3,
+              75.65
+            ],
+            [
+              -93.7,
+              75.98
+            ],
+            [
+              -95.2,
+              76.12
+            ],
+            [
+              -96.3,
+              76.2
+            ],
+            [
+              -97.0,
+              76.4
+            ],
+            [
+              -97.6,
+              76.7
+            ],
+            [
+              -97.4,
+              77.0
+            ],
+            [
+              -97.9,
+              76.7
+            ],
+            [
+              -97.2,
+              76.25
+            ],
+            [
+              -97.1,
+              75.75
+            ],
+            [
+              -97.15,
+              75.5
+            ],
+            [
+              -97.3,
+              75.0
+            ],
+            [
+              -96.6,
+              74.55
+            ],
+            [
+              -95.5,
+              74.4
+            ],
+            [
+              -94.0,
+              74.42
+            ],
+            [
+              -91.9,
+              74.66
+            ],
+            [
+              -94.0,
+              74.3
+            ],
+            [
+              -96.0,
+              74.15
+            ],
+            [
+              -96.05,
+              73.6
+            ],
+            [
+              -96.1,
+              73.0
+            ],
+            [
+              -95.9,
+              72.4
+            ],
+            [
+              -96.0,
+              71.9
+            ],
+            [
+              -96.6,
+              71.5
+            ],
+            [
+              -97.4,
+              71.0
+            ],
+            [
+              -98.0,
+              70.5
+            ],
+            [
+              -98.38,
+              70.08
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "franklin",
+          "path": [
+            [
+              -98.38,
+              70.08
+            ],
+            [
+              -98.75,
+              69.95
+            ],
+            [
+              -98.68,
+              69.63
+            ],
+            [
+              -98.55,
+              69.35
+            ],
+            [
+              -98.75,
+              69.05
+            ],
+            [
+              -98.9,
+              68.92
+            ],
+            [
+              -98.2,
+              68.72
+            ],
+            [
+              -97.6,
+              68.55
+            ],
+            [
+              -97.1,
+              68.3
+            ],
+            [
+              -96.8,
+              68.1
+            ]
+          ],
+          "by": "ice",
+          "icon": "🚶",
+          "label": {
+            "en": "The march south, April 1848",
+            "es": "La marcha al sur, abril de 1848"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1854-05-26",
+      "title": {
+        "en": "What the Inuit saw",
+        "es": "Lo que vieron los inuit"
+      },
+      "camera": {
+        "lon": -91.5,
+        "lat": 68.2,
+        "zoom": 6.0
+      },
+      "text": {
+        "en": "In 1854 Inuit near Pelly Bay told John Rae, an explorer who travelled the Inuit way, that some 40 starving white men had died near the Back River. Victorian Britain refused to believe them.",
+        "es": "En 1854, unos inuit cerca de la bahía Pelly contaron a John Rae, un explorador que viajaba a la manera inuit, que unos 40 hombres blancos hambrientos habían muerto cerca del río Back. La Gran Bretaña victoriana no quiso creerles."
+      },
+      "details": {
+        "en": "Inuit families had met parties of dying sailors hauling a boat south, seen their camps and found their bodies; they told Rae that the last survivors had eaten their dead. They sold him silver forks and spoons marked with the crests of Franklin and his officers. When Rae reported it, Franklin's widow Jane and the novelist Charles Dickens attacked him, and Dickens dismissed the testimony as 'the wild tales of a herd of savages'. Cut marks later found on the sailors' bones showed that the Inuit had told the truth. In the 1860s, guided by Ipirvik and Taqulittuq, Charles Francis Hall collected hundreds of pages of Inuit testimony. In Gjoa Haven the historian Louie Kamookak spent his life gathering these stories and said searchers had long ignored them. In 2016 the Inuk hunter Sammy Kogvik remembered a mast sticking out of the ice, and HMS Terror was found within hours.",
+        "es": "Familias inuit se habían encontrado con grupos de marineros moribundos que arrastraban un bote hacia el sur, habían visto sus campamentos y hallado sus cuerpos; contaron a Rae que los últimos sobrevivientes habían comido a sus muertos. Le vendieron tenedores y cucharas de plata con los escudos de Franklin y de sus oficiales. Cuando Rae lo informó, la viuda de Franklin, Jane, y el novelista Charles Dickens lo atacaron, y Dickens despreció los testimonios como «los cuentos disparatados de una manada de salvajes». Las marcas de cortes halladas después en los huesos de los marineros mostraron que los inuit habían dicho la verdad. En la década de 1860, guiado por Ipirvik y Taqulittuq, Charles Francis Hall reunió cientos de páginas de testimonios inuit. En Gjoa Haven, el historiador Louie Kamookak dedicó su vida a reunir estos relatos y dijo que los buscadores los habían ignorado durante mucho tiempo. En 2016, el cazador inuk Sammy Kogvik recordó un mástil que asomaba del hielo, y el HMS Terror apareció en pocas horas."
+      },
+      "places": [
+        {
+          "id": "john-rae",
+          "name": {
+            "en": "John Rae",
+            "es": "John Rae"
+          },
+          "at": [
+            -86.2333,
+            66.5167
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1854-04-21",
+          "life": [
+            "1813-09-30",
+            "1893-07-22"
+          ],
+          "place": {
+            "en": "Naujaat (Repulse Bay), Nunavut, Canada",
+            "es": "Naujaat (bahía Repulse), Nunavut (Canadá)"
+          },
+          "text": {
+            "en": "An Orkney-born doctor of the Hudson's Bay Company who learned to travel and hunt like the Inuit. In 1854 he brought back the first news of Franklin's fate, from Inuit witnesses, and was shunned for it.",
+            "es": "Un médico de la Compañía de la Bahía de Hudson, nacido en las Orcadas, que aprendió a viajar y cazar como los inuit. En 1854 trajo las primeras noticias del destino de Franklin, de boca de testigos inuit, y fue rechazado por ello."
+          },
+          "wiki": {
+            "en": "John Rae (explorer)",
+            "es": "John Rae"
+          }
+        },
+        {
+          "id": "inuit",
+          "name": {
+            "en": "Inuit",
+            "es": "Inuit"
+          },
+          "at": [
+            -89.8167,
+            68.5333
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1854-04-21",
+          "place": {
+            "en": "Kugaaruk (Pelly Bay), Nunavut, Canada",
+            "es": "Kugaaruk (bahía Pelly), Nunavut (Canadá)"
+          },
+          "text": {
+            "en": "The peoples of the Arctic from Alaska to Greenland, descended from the Thule people who spread east from Alaska about 1,000 years ago. Their dogs, sledges, skin clothing and snow houses made Arctic travel possible.",
+            "es": "Los pueblos del Ártico, de Alaska a Groenlandia, descendientes del pueblo thule que se extendió desde Alaska hacia el este hace unos 1000 años. Sus perros, trineos, ropa de pieles y casas de nieve hicieron posible viajar por el Ártico."
+          },
+          "details": {
+            "en": "The Arctic of the explorers was the homeland of the Inuit, who had lived there for centuries. Explorers who listened to them and learned their ways, such as John Rae, Roald Amundsen and Matthew Henson, travelled light and survived; Franklin's men, who relied on stored naval food and heavy gear, died. Inuit hunters, guides, dog drivers and their families worked for many expeditions, and Inuit memory solved the mystery of Franklin's ships. In Canada, the Inuit homeland is now known as Inuit Nunangat, and in Greenland as Kalaallit Nunaat.",
+            "es": "El Ártico de los exploradores era la tierra de los inuit, que vivían allí desde hacía siglos. Los exploradores que los escucharon y aprendieron sus costumbres, como John Rae, Roald Amundsen y Matthew Henson, viajaron ligeros y sobrevivieron; los hombres de Franklin, que dependían de comida naval almacenada y de equipo pesado, murieron. Cazadores, guías y conductores de perros inuit y sus familias trabajaron para muchas expediciones, y la memoria inuit resolvió el misterio de los barcos de Franklin. En Canadá, la tierra inuit se llama hoy Inuit Nunangat, y en Groenlandia, Kalaallit Nunaat."
+          },
+          "wiki": {
+            "en": "Inuit",
+            "es": "Inuit"
+          }
+        },
+        {
+          "id": "hms-erebus",
+          "name": {
+            "en": "HMS Erebus",
+            "es": "HMS Erebus"
+          },
+          "at": [
+            -98.87,
+            68.245
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1845-05-19",
+          "place": {
+            "en": "Wreck in Wilmot and Crampton Bay, Nunavut, Canada",
+            "es": "Pecio en la bahía Wilmot and Crampton, Nunavut (Canadá)"
+          },
+          "text": {
+            "en": "Franklin's flagship, which had already sailed to Antarctica with James Clark Ross. Her wreck was found by a Canadian search on 7 September 2014, in about 11 m of water south of King William Island.",
+            "es": "El buque insignia de Franklin, que ya había navegado a la Antártida con James Clark Ross. Una búsqueda canadiense halló su pecio el 7 de septiembre de 2014, a unos 11 m de profundidad al sur de la isla del Rey Guillermo."
+          },
+          "wiki": {
+            "en": "HMS Erebus (1826)",
+            "es": "HMS Erebus (1826)"
+          }
+        },
+        {
+          "id": "hms-terror",
+          "name": {
+            "en": "HMS Terror",
+            "es": "HMS Terror"
+          },
+          "at": [
+            -98.9383,
+            68.9036
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1845-05-19",
+          "place": {
+            "en": "Wreck in Terror Bay, Nunavut, Canada",
+            "es": "Pecio en la bahía Terror, Nunavut (Canadá)"
+          },
+          "text": {
+            "en": "Captain Crozier's ship. In 2016, guided by the memory of the Inuk hunter Sammy Kogvik, searchers found her in Terror Bay in 'pristine' condition, 24 m down. The wrecks now belong to Canada and the Inuit.",
+            "es": "El barco del capitán Crozier. En 2016, guiados por el recuerdo del cazador inuk Sammy Kogvik, los buscadores lo hallaron en la bahía Terror en estado «impecable», a 24 m de profundidad. Los pecios pertenecen hoy a Canadá y a los inuit."
+          },
+          "wiki": {
+            "en": "HMS Terror (1813)",
+            "es": "HMS Terror (1813)"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "franklin",
+          "path": [
+            [
+              -86.23,
+              66.52
+            ],
+            [
+              -87.2,
+              67.4
+            ],
+            [
+              -88.3,
+              68.0
+            ],
+            [
+              -89.82,
+              68.53
+            ],
+            [
+              -91.5,
+              68.6
+            ],
+            [
+              -93.0,
+              68.7
+            ],
+            [
+              -94.4,
+              68.55
+            ],
+            [
+              -95.0,
+              69.3
+            ],
+            [
+              -95.6,
+              69.8
+            ],
+            [
+              -95.0,
+              69.3
+            ],
+            [
+              -93.0,
+              68.7
+            ],
+            [
+              -89.82,
+              68.53
+            ],
+            [
+              -88.3,
+              68.0
+            ],
+            [
+              -87.2,
+              67.4
+            ],
+            [
+              -86.23,
+              66.52
+            ]
+          ],
+          "by": "ice",
+          "icon": "🛷",
+          "label": {
+            "en": "John Rae, 1854",
+            "es": "John Rae, 1854"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1879-07-20",
+      "title": {
+        "en": "Vega and the Northeast Passage",
+        "es": "El Vega y el paso del Noreste"
+      },
+      "camera": {
+        "lon": 105.0,
+        "lat": 80.0,
+        "zoom": 1.9
+      },
+      "text": {
+        "en": "In 1878–79 Adolf Erik Nordenskiöld's steamship Vega sailed along the whole Arctic coast of Siberia. Trapped by ice near the Bering Strait, the crew wintered beside the Chukchi, then sailed into the Pacific.",
+        "es": "En 1878-1879, el vapor Vega de Adolf Erik Nordenskiöld recorrió toda la costa ártica de Siberia. Atrapada por el hielo cerca del estrecho de Bering, la tripulación pasó el invierno junto a los chukchis y luego entró en el Pacífico."
+      },
+      "details": {
+        "en": "The Vega left Karlskrona in Sweden on 22 June 1878 and Tromsø on 21 July, with a crew of 21 and scientists from several countries under Captain Louis Palander. On 19 August she rounded Cape Chelyuskin, the northernmost point of Asia. On 28 September the ice stopped her about 1.5 km off the coast near the Chukchi village of Pitlekaj, only days from the Bering Strait. At first the Swedes fired their rifles when boats full of Chukchi came alongside, but the visitors meant no harm. Through the long winter the two peoples traded, visited and celebrated birthdays and holidays together, and one sailor wrote a Swedish–Chukchi dictionary. Freed in July 1879, the Vega passed the Bering Strait, stopped in Japan for repairs and came home by the Suez Canal on 24 April 1880: the first voyage around Eurasia.",
+        "es": "El Vega salió de Karlskrona, en Suecia, el 22 de junio de 1878 y de Tromsø el 21 de julio, con 21 tripulantes y científicos de varios países al mando del capitán Louis Palander. El 19 de agosto dobló el cabo Cheliuskin, el punto más al norte de Asia. El 28 de septiembre, el hielo lo detuvo a 1,5 km de la costa, cerca de la aldea chukchi de Pitlekaj, a solo días del estrecho de Bering. Al principio, los suecos dispararon sus rifles cuando se acercaron botes llenos de chukchis, pero los visitantes no tenían malas intenciones. Durante el largo invierno, los dos pueblos comerciaron, se visitaron y celebraron juntos cumpleaños y fiestas, y un marinero escribió un diccionario sueco-chukchi. Liberado en julio de 1879, el Vega cruzó el estrecho de Bering, se detuvo en Japón para reparaciones y volvió a casa por el canal de Suez el 24 de abril de 1880: el primer viaje alrededor de Eurasia."
+      },
+      "places": [
+        {
+          "id": "adolf-erik-nordenskiold",
+          "name": {
+            "en": "Adolf Erik Nordenskiöld",
+            "es": "Adolf Erik Nordenskiöld"
+          },
+          "at": [
+            18.9553,
+            69.6496
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1878-07-21",
+          "life": [
+            "1832-11-18",
+            "1901-08-12"
+          ],
+          "place": {
+            "en": "Tromsø, Norway",
+            "es": "Tromsø (Noruega)"
+          },
+          "text": {
+            "en": "A Finland-born geologist who was exiled to Sweden for his politics in 1857. He led the first ship through the Northeast Passage, and later became a great historian and collector of old maps.",
+            "es": "Un geólogo nacido en Finlandia, exiliado en Suecia por sus ideas políticas en 1857. Dirigió el primer barco que atravesó el paso del Noreste y luego fue un gran historiador y coleccionista de mapas antiguos."
+          },
+          "wiki": {
+            "en": "Adolf Erik Nordenskiöld",
+            "es": "Adolf Erik Nordenskiöld"
+          }
+        },
+        {
+          "id": "vega",
+          "name": {
+            "en": "Vega",
+            "es": "Vega"
+          },
+          "at": [
+            -173.3,
+            67.16
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1878-06-22",
+          "place": {
+            "en": "Wintered off Pitlekaj, Chukotka, Russia",
+            "es": "Invernó frente a Pitlekaj, Chukotka (Rusia)"
+          },
+          "text": {
+            "en": "A Swedish steamship built in 1872 as a sealer and whaler. Under Captain Louis Palander she became the first ship to sail through the Northeast Passage (1878–79) and the first to sail around Eurasia.",
+            "es": "Un vapor sueco construido en 1872 para cazar focas y ballenas. Al mando del capitán Louis Palander fue el primer barco que atravesó el paso del Noreste (1878-1879) y el primero que dio la vuelta a Eurasia."
+          },
+          "wiki": {
+            "en": "Vega Expedition",
+            "es": ""
+          }
+        },
+        {
+          "id": "cape-chelyuskin",
+          "name": {
+            "en": "Cape Chelyuskin",
+            "es": "Cabo Cheliuskin"
+          },
+          "at": [
+            104.25,
+            77.7333
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1878-08-19",
+          "place": {
+            "en": "Taymyr Peninsula, Russia",
+            "es": "Península de Taimir (Rusia)"
+          },
+          "text": {
+            "en": "The northernmost point of the Eurasian mainland, and of any continent, 1,371 km from the North Pole. The Vega rounded it on 19 August 1878; the Fram followed in 1893.",
+            "es": "El punto más al norte de la Eurasia continental, y de cualquier continente, a 1371 km del polo norte. El Vega lo dobló el 19 de agosto de 1878; el Fram lo siguió en 1893."
+          },
+          "wiki": {
+            "en": "Cape Chelyuskin",
+            "es": "Cabo Cheliuskin"
+          }
+        },
+        {
+          "id": "chukchi",
+          "name": {
+            "en": "Chukchi",
+            "es": "Chukchis"
+          },
+          "at": [
+            -172.95,
+            67.03
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1878-09-28",
+          "place": {
+            "en": "Neshkan and Pitlekaj, Chukotka, Russia",
+            "es": "Neshkan y Pitlekaj, Chukotka (Rusia)"
+          },
+          "text": {
+            "en": "The people of Chukotka: coastal hunters of seals, walruses and whales, and inland reindeer herders. The Vega's crew wintered in 1878–79 beside the Chukchi of Pitlekaj, who visited, traded and celebrated with them.",
+            "es": "El pueblo de Chukotka: cazadores costeros de focas, morsas y ballenas, y pastores de renos del interior. La tripulación del Vega pasó el invierno de 1878-1879 junto a los chukchis de Pitlekaj, que los visitaban, comerciaban y celebraban con ellos."
+          },
+          "wiki": {
+            "en": "Chukchi people",
+            "es": "Chukchi"
+          }
+        },
+        {
+          "id": "northeast-passage",
+          "name": {
+            "en": "Northeast Passage",
+            "es": "Paso del Noreste"
+          },
+          "at": [
+            58.0,
+            70.5
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1879-07-20",
+          "place": {
+            "en": "Arctic coast of Russia, from the Barents Sea to the Bering Strait",
+            "es": "Costa ártica de Rusia, del mar de Barents al estrecho de Bering"
+          },
+          "text": {
+            "en": "The sea route along the Arctic coast of Europe and Asia to the Pacific. The Vega made the first complete voyage through it; today part of it is a shipping lane, the Northern Sea Route.",
+            "es": "La ruta marítima por la costa ártica de Europa y Asia hasta el Pacífico. El Vega hizo el primer viaje completo por ella; hoy parte de ella es una ruta comercial, la Ruta Marítima del Norte."
+          },
+          "wiki": {
+            "en": "Northeast Passage",
+            "es": "Ruta marítima del Norte"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "vega",
+          "path": [
+            [
+              18.96,
+              69.65
+            ],
+            [
+              19.05,
+              69.75
+            ],
+            [
+              19.3,
+              69.86
+            ],
+            [
+              19.75,
+              69.98
+            ],
+            [
+              20.2,
+              70.15
+            ],
+            [
+              20.5,
+              70.4
+            ],
+            [
+              21.5,
+              70.75
+            ],
+            [
+              25.8,
+              71.45
+            ],
+            [
+              28.5,
+              71.2
+            ],
+            [
+              31.3,
+              70.55
+            ],
+            [
+              38.0,
+              70.3
+            ],
+            [
+              46.0,
+              70.0
+            ],
+            [
+              54.0,
+              69.9
+            ],
+            [
+              58.5,
+              69.8
+            ],
+            [
+              60.0,
+              69.7
+            ],
+            [
+              60.55,
+              69.76
+            ],
+            [
+              60.7,
+              69.88
+            ],
+            [
+              61.5,
+              70.0
+            ],
+            [
+              63.5,
+              70.4
+            ],
+            [
+              66.5,
+              72.3
+            ],
+            [
+              69.5,
+              73.7
+            ],
+            [
+              72.5,
+              74.1
+            ],
+            [
+              77.0,
+              73.9
+            ],
+            [
+              80.4,
+              73.65
+            ],
+            [
+              84.0,
+              74.8
+            ],
+            [
+              88.0,
+              75.9
+            ],
+            [
+              94.0,
+              76.9
+            ],
+            [
+              100.0,
+              77.6
+            ],
+            [
+              104.3,
+              77.95
+            ],
+            [
+              108.0,
+              77.6
+            ],
+            [
+              113.0,
+              77.0
+            ],
+            [
+              117.0,
+              75.6
+            ],
+            [
+              121.0,
+              74.4
+            ],
+            [
+              127.0,
+              74.1
+            ],
+            [
+              133.0,
+              73.6
+            ],
+            [
+              138.0,
+              73.0
+            ],
+            [
+              141.0,
+              72.95
+            ],
+            [
+              146.0,
+              72.8
+            ],
+            [
+              150.0,
+              72.5
+            ],
+            [
+              153.0,
+              71.9
+            ],
+            [
+              157.5,
+              71.45
+            ],
+            [
+              161.8,
+              70.75
+            ],
+            [
+              165.0,
+              70.4
+            ],
+            [
+              170.7,
+              70.4
+            ],
+            [
+              175.0,
+              70.25
+            ],
+            [
+              179.5,
+              69.5
+            ],
+            [
+              -178.5,
+              68.9
+            ],
+            [
+              -176.5,
+              68.3
+            ],
+            [
+              -174.8,
+              67.6
+            ],
+            [
+              -173.3,
+              67.16
+            ],
+            [
+              -171.5,
+              67.0
+            ],
+            [
+              -170.5,
+              66.6
+            ],
+            [
+              -169.6,
+              66.2
+            ],
+            [
+              -169.0,
+              65.85
+            ]
+          ],
+          "by": "sea",
+          "icon": "🚢"
+        }
+      ]
+    },
+    {
+      "date": "1895-03-14",
+      "title": {
+        "en": "Fram drifts with the ice",
+        "es": "El Fram a la deriva en el hielo"
+      },
+      "camera": {
+        "lon": 75.0,
+        "lat": 78.0,
+        "zoom": 2.2
+      },
+      "text": {
+        "en": "Fridtjof Nansen had the Fram built to be frozen into the ice and carried across the Arctic Ocean by its drift. She froze in north of Siberia in autumn 1893, and by March 1895 she had drifted to 84° N.",
+        "es": "Fridtjof Nansen mandó construir el Fram para dejarlo congelarse en el hielo y que la deriva lo llevara a través del océano Ártico. Quedó atrapado al norte de Siberia en el otoño de 1893, y en marzo de 1895 había derivado hasta los 84° N."
+      },
+      "details": {
+        "en": "The idea came from the American ship Jeannette, crushed north of Siberia in 1881: three years later, things from her washed up in south-west Greenland, so a current must cross the polar sea. The shipwright Colin Archer gave the Fram a rounded hull with nothing for the ice to grip, so that pressure would lift her instead of crushing her. She left Christiania on 24 June 1893 with a hand-picked crew of twelve, followed Nordenskiöld's route along Siberia and froze in at 78°49′ N. The drift was slow and wandering, and the men fought boredom in the polar night, lit by electric lamps powered by a windmill. Nansen worked out that reaching the Pole this way might take five years. He practised driving dogs, and the crew built fast sledges and kayaks on Inuit models. On 14 March 1895, at 84°4′ N, Nansen and Hjalmar Johansen left the ship.",
+        "es": "La idea vino del barco estadounidense Jeannette, aplastado al norte de Siberia en 1881: tres años después, objetos suyos aparecieron en el suroeste de Groenlandia, así que una corriente debía cruzar el mar polar. El constructor naval Colin Archer dio al Fram un casco redondeado sin nada que el hielo pudiera agarrar, para que la presión lo levantara en lugar de aplastarlo. Salió de Christiania el 24 de junio de 1893 con doce tripulantes escogidos, siguió la ruta de Nordenskiöld por Siberia y quedó atrapado a 78°49′ N. La deriva era lenta y errática, y los hombres combatían el aburrimiento en la noche polar, iluminados con lámparas eléctricas que movía un molino de viento. Nansen calculó que llegar así al polo podía llevar cinco años. Practicó la conducción de perros, y la tripulación construyó trineos rápidos y kayaks según modelos inuit. El 14 de marzo de 1895, a 84°4′ N, Nansen y Hjalmar Johansen dejaron el barco."
+      },
+      "places": [
+        {
+          "id": "fridtjof-nansen",
+          "name": {
+            "en": "Fridtjof Nansen",
+            "es": "Fridtjof Nansen"
+          },
+          "at": [
+            10.7522,
+            59.9139
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1893-06-24",
+          "life": [
+            "1861-10-10",
+            "1930-05-13"
+          ],
+          "place": {
+            "en": "Christiania (Oslo), Norway",
+            "es": "Christiania (Oslo), Noruega"
+          },
+          "text": {
+            "en": "A Norwegian scientist, skier and explorer who crossed Greenland in 1888. After the Fram expedition he turned to science and diplomacy, and won the 1922 Nobel Peace Prize for his work for refugees.",
+            "es": "Un científico, esquiador y explorador noruego que cruzó Groenlandia en 1888. Tras la expedición del Fram se dedicó a la ciencia y la diplomacia, y ganó el Premio Nobel de la Paz de 1922 por su trabajo con los refugiados."
+          },
+          "wiki": {
+            "en": "Fridtjof Nansen",
+            "es": "Fridtjof Nansen"
+          }
+        },
+        {
+          "id": "fram",
+          "name": {
+            "en": "Fram",
+            "es": "Fram"
+          },
+          "at": [
+            132.88,
+            78.82
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1893-06-24",
+          "place": {
+            "en": "Froze in at 78°49′ N, 132°53′ E; now in the Fram Museum, Oslo",
+            "es": "Atrapado en el hielo a 78°49′ N, 132°53′ E; hoy en el Museo Fram, Oslo"
+          },
+          "text": {
+            "en": "'Forward': a ship whose rounded hull, designed by Colin Archer, let the ice squeeze her upwards instead of crushing her. She carried Nansen to the far north and Amundsen to Antarctica.",
+            "es": "«Adelante»: un barco cuyo casco redondeado, diseñado por Colin Archer, hacía que el hielo lo empujara hacia arriba en lugar de aplastarlo. Llevó a Nansen al extremo norte y a Amundsen a la Antártida."
+          },
+          "wiki": {
+            "en": "Fram (ship)",
+            "es": "Fram (buque)"
+          }
+        },
+        {
+          "id": "jeannette",
+          "name": {
+            "en": "The wreck of the Jeannette",
+            "es": "El naufragio del Jeannette"
+          },
+          "at": [
+            155.0,
+            77.25
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1881-06-13",
+          "place": {
+            "en": "North of the New Siberian Islands, Arctic Ocean",
+            "es": "Al norte de las islas de Nueva Siberia, océano Ártico"
+          },
+          "text": {
+            "en": "The American ship Jeannette was crushed by ice north of Siberia on 13 June 1881, and most of her crew died. Wreckage that drifted to Greenland three years later gave Nansen the idea of riding the ice.",
+            "es": "El barco estadounidense Jeannette fue aplastado por el hielo al norte de Siberia el 13 de junio de 1881, y la mayoría de su tripulación murió. Restos que llegaron a la deriva a Groenlandia tres años después dieron a Nansen la idea de viajar con el hielo."
+          },
+          "wiki": {
+            "en": "Jeannette expedition",
+            "es": "Expedición Jeannette"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "fram",
+          "path": [
+            [
+              10.73,
+              59.9
+            ],
+            [
+              10.58,
+              59.5
+            ],
+            [
+              10.5,
+              59.05
+            ],
+            [
+              9.6,
+              58.75
+            ],
+            [
+              8.5,
+              58.15
+            ],
+            [
+              7.05,
+              57.9
+            ],
+            [
+              5.6,
+              58.55
+            ],
+            [
+              4.9,
+              59.4
+            ],
+            [
+              4.85,
+              60.3
+            ],
+            [
+              4.7,
+              61.2
+            ],
+            [
+              4.9,
+              62.0
+            ],
+            [
+              5.8,
+              62.8
+            ],
+            [
+              7.3,
+              63.4
+            ],
+            [
+              8.7,
+              63.9
+            ],
+            [
+              9.3,
+              64.3
+            ],
+            [
+              10.6,
+              65.3
+            ],
+            [
+              11.6,
+              66.3
+            ],
+            [
+              12.2,
+              67.3
+            ],
+            [
+              13.0,
+              68.1
+            ],
+            [
+              14.5,
+              68.9
+            ],
+            [
+              16.4,
+              69.5
+            ],
+            [
+              17.6,
+              70.0
+            ],
+            [
+              18.7,
+              70.3
+            ],
+            [
+              20.5,
+              70.4
+            ],
+            [
+              21.5,
+              70.75
+            ],
+            [
+              25.8,
+              71.45
+            ],
+            [
+              28.5,
+              71.2
+            ],
+            [
+              31.1,
+              70.37
+            ],
+            [
+              38.0,
+              70.3
+            ],
+            [
+              46.0,
+              70.0
+            ],
+            [
+              54.0,
+              69.9
+            ],
+            [
+              58.5,
+              69.8
+            ],
+            [
+              60.0,
+              69.7
+            ],
+            [
+              60.55,
+              69.76
+            ],
+            [
+              60.7,
+              69.88
+            ],
+            [
+              61.5,
+              70.0
+            ],
+            [
+              63.5,
+              70.4
+            ],
+            [
+              66.5,
+              72.3
+            ],
+            [
+              69.5,
+              73.7
+            ],
+            [
+              72.5,
+              74.1
+            ],
+            [
+              77.0,
+              73.9
+            ],
+            [
+              79.5,
+              74.5
+            ],
+            [
+              84.0,
+              74.8
+            ],
+            [
+              88.0,
+              75.9
+            ],
+            [
+              94.0,
+              76.9
+            ],
+            [
+              100.0,
+              77.6
+            ],
+            [
+              104.3,
+              77.95
+            ],
+            [
+              110.0,
+              77.3
+            ],
+            [
+              118.0,
+              76.8
+            ],
+            [
+              125.0,
+              77.3
+            ],
+            [
+              130.0,
+              78.0
+            ],
+            [
+              132.88,
+              78.82
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "fram",
+          "path": [
+            [
+              132.88,
+              78.82
+            ],
+            [
+              134.5,
+              78.5
+            ],
+            [
+              131.0,
+              79.2
+            ],
+            [
+              127.0,
+              80.0
+            ],
+            [
+              122.0,
+              81.0
+            ],
+            [
+              116.0,
+              82.0
+            ],
+            [
+              110.0,
+              83.0
+            ],
+            [
+              105.0,
+              83.6
+            ],
+            [
+              102.0,
+              84.07
+            ]
+          ],
+          "by": "ice",
+          "icon": "⛵",
+          "label": {
+            "en": "The drift, 1893–95",
+            "es": "La deriva, 1893-1895"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1896-08-20",
+      "title": {
+        "en": "Farthest north",
+        "es": "Más al norte que nadie"
+      },
+      "camera": {
+        "lon": 55.0,
+        "lat": 81.5,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "On skis with dog sledges, Nansen and Johansen reached a record 86°14′ N, then retreated to Franz Josef Land and wintered in a stone hut. In 1896 they met a British expedition, and the Fram came out of the ice.",
+        "es": "Con esquís y trineos de perros, Nansen y Johansen llegaron al récord de 86°14′ N; luego se retiraron a la Tierra de Francisco José y pasaron el invierno en una choza de piedra. En 1896 encontraron una expedición británica, y el Fram salió del hielo."
+      },
+      "details": {
+        "en": "The ice grew rougher and drifted south under them, so on 7 April 1895 Nansen turned back, almost 3° closer to the Pole than anyone before. Their watches stopped, and without the time they could not be sure of their longitude. As food ran low they killed the dogs one by one to feed the others. On 6 August they reached open water, lashed their kayaks together and sailed to unknown islands. There they built 'The Hole', a hut of stones, moss and walrus hides, and lived on bear and walrus for eight months. On 17 June 1896, on Northbrook Island, Nansen heard a dog bark and met the British explorer Frederick Jackson. They reached Vardø in Norway on 13 August; that same day the Fram broke free north-west of Spitsbergen, close to where Nansen had predicted, and on 20 August she reached Skjervøy. Their record was beaten in 1900 by the Italian Umberto Cagni.",
+        "es": "El hielo se volvió más áspero y derivaba hacia el sur bajo sus pies, así que el 7 de abril de 1895 Nansen dio la vuelta, casi 3° más cerca del polo que nadie antes. Sus relojes se pararon y, sin la hora, no podían saber bien su longitud. Cuando escaseó la comida, mataron a los perros uno a uno para alimentar a los demás. El 6 de agosto llegaron a aguas abiertas, ataron sus kayaks y navegaron hacia islas desconocidas. Allí construyeron «El Agujero», una choza de piedras, musgo y pieles de morsa, y vivieron de osos y morsas durante ocho meses. El 17 de junio de 1896, en la isla Northbrook, Nansen oyó ladrar a un perro y se encontró con el explorador británico Frederick Jackson. Llegaron a Vardø, en Noruega, el 13 de agosto; ese mismo día el Fram se liberó al noroeste de Spitsbergen, cerca de donde Nansen había previsto, y el 20 de agosto llegó a Skjervøy. Su récord lo superó en 1900 el italiano Umberto Cagni."
+      },
+      "places": [
+        {
+          "id": "hjalmar-johansen",
+          "name": {
+            "en": "Hjalmar Johansen",
+            "es": "Hjalmar Johansen"
+          },
+          "at": [
+            102.0,
+            84.07
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1895-03-14",
+          "life": [
+            "1867-05-15",
+            "1913-01-03"
+          ],
+          "place": {
+            "en": "Left the Fram at 84°4′ N, Arctic Ocean",
+            "es": "Dejó el Fram a 84°4′ N, océano Ártico"
+          },
+          "text": {
+            "en": "An army reserve lieutenant and expert dog driver, so keen to go that he signed on as the Fram's stoker. He was Nansen's only companion on the march north, and later went to Antarctica with Amundsen.",
+            "es": "Un teniente de reserva del ejército y experto conductor de perros, tan deseoso de ir que se enroló como fogonero del Fram. Fue el único compañero de Nansen en la marcha al norte, y más tarde fue a la Antártida con Amundsen."
+          },
+          "wiki": {
+            "en": "Hjalmar Johansen",
+            "es": "Fredrik Hjalmar Johansen"
+          }
+        },
+        {
+          "id": "farthest-north",
+          "name": {
+            "en": "Farthest North, 86°14′ N",
+            "es": "Récord más al norte, 86°14′ N"
+          },
+          "at": [
+            95.0,
+            86.2267
+          ],
+          "cat": "ice",
+          "type": "site",
+          "date": "1895-04-07",
+          "place": {
+            "en": "Arctic Ocean",
+            "es": "Océano Ártico"
+          },
+          "text": {
+            "en": "Nansen and Johansen's northernmost camp, about 86°14′ N, reached on 7 April 1895: almost 3° beyond any earlier record. A chaos of ice blocks ahead made them turn back. Their record lasted until 1900.",
+            "es": "El campamento más al norte de Nansen y Johansen, hacia los 86°14′ N, alcanzado el 7 de abril de 1895: casi 3° más allá de cualquier récord anterior. Un caos de bloques de hielo los obligó a volver. Su récord duró hasta 1900."
+          },
+          "wiki": {
+            "en": "Farthest North",
+            "es": "Farthest North"
+          }
+        },
+        {
+          "id": "franz-josef-land",
+          "name": {
+            "en": "Franz Josef Land",
+            "es": "Tierra de Francisco José"
+          },
+          "at": [
+            55.6,
+            81.2
+          ],
+          "cat": "ice",
+          "type": "place",
+          "date": "1895-08",
+          "place": {
+            "en": "Jackson Island, Franz Josef Land, Russia",
+            "es": "Isla Jackson, Tierra de Francisco José (Rusia)"
+          },
+          "text": {
+            "en": "An archipelago in the Arctic Ocean, first reached by Europeans in 1873. Nansen and Johansen spent the winter of 1895–96 here in a hut of stones, moss and walrus hides, living on bears and walruses.",
+            "es": "Un archipiélago del océano Ártico al que llegaron los europeos por primera vez en 1873. Nansen y Johansen pasaron aquí el invierno de 1895-1896 en una choza de piedras, musgo y pieles de morsa, viviendo de osos y morsas."
+          },
+          "wiki": {
+            "en": "Franz Josef Land",
+            "es": "Tierra de Francisco José"
+          }
+        },
+        {
+          "id": "frederick-jackson",
+          "name": {
+            "en": "Frederick Jackson",
+            "es": "Frederick Jackson"
+          },
+          "at": [
+            50.0,
+            79.95
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1896-06-17",
+          "life": [
+            "1860-03-06",
+            "1938-03-13"
+          ],
+          "place": {
+            "en": "Cape Flora, Northbrook Island, Franz Josef Land",
+            "es": "Cabo Flora, isla Northbrook, Tierra de Francisco José"
+          },
+          "text": {
+            "en": "An English explorer mapping Franz Josef Land. On 17 June 1896 a ragged, greasy stranger walked up to him at Cape Flora: 'You are Nansen, aren't you?' 'Yes, I am Nansen.'",
+            "es": "Un explorador inglés que cartografiaba la Tierra de Francisco José. El 17 de junio de 1896, un extraño harapiento y sucio de grasa se le acercó en el cabo Flora: «Usted es Nansen, ¿verdad?». «Sí, soy Nansen»."
+          },
+          "wiki": {
+            "en": "Frederick George Jackson",
+            "es": ""
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "fram",
+          "path": [
+            [
+              102.0,
+              84.07
+            ],
+            [
+              99.0,
+              85.0
+            ],
+            [
+              95.0,
+              86.23
+            ],
+            [
+              86.0,
+              85.4
+            ],
+            [
+              75.0,
+              84.05
+            ],
+            [
+              66.0,
+              82.35
+            ],
+            [
+              62.0,
+              81.6
+            ],
+            [
+              58.5,
+              81.4
+            ],
+            [
+              55.6,
+              81.2
+            ],
+            [
+              53.0,
+              80.6
+            ],
+            [
+              50.0,
+              79.95
+            ]
+          ],
+          "by": "ice",
+          "icon": "🛷",
+          "label": {
+            "en": "Nansen and Johansen",
+            "es": "Nansen y Johansen"
+          }
+        },
+        {
+          "side": "fram",
+          "path": [
+            [
+              50.0,
+              79.95
+            ],
+            [
+              45.0,
+              76.0
+            ],
+            [
+              36.0,
+              72.5
+            ],
+            [
+              32.0,
+              70.8
+            ],
+            [
+              31.1,
+              70.37
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "fram",
+          "path": [
+            [
+              102.0,
+              84.07
+            ],
+            [
+              92.0,
+              84.8
+            ],
+            [
+              70.0,
+              85.9
+            ],
+            [
+              45.0,
+              85.2
+            ],
+            [
+              25.0,
+              84.6
+            ],
+            [
+              12.8,
+              84.4
+            ],
+            [
+              10.0,
+              82.5
+            ],
+            [
+              10.5,
+              80.6
+            ]
+          ],
+          "by": "ice",
+          "icon": "⛵",
+          "label": {
+            "en": "The Fram's drift",
+            "es": "La deriva del Fram"
+          }
+        },
+        {
+          "side": "fram",
+          "path": [
+            [
+              10.5,
+              80.6
+            ],
+            [
+              10.9,
+              79.8
+            ],
+            [
+              10.0,
+              78.6
+            ],
+            [
+              13.0,
+              76.5
+            ],
+            [
+              16.5,
+              74.0
+            ],
+            [
+              19.5,
+              71.3
+            ],
+            [
+              20.8,
+              70.3
+            ],
+            [
+              20.98,
+              70.03
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ]
+    },
+    {
+      "date": "1905-08-13",
+      "title": {
+        "en": "Learning from the Netsilik",
+        "es": "Aprendiendo de los netsilik"
+      },
+      "camera": {
+        "lon": -52.0,
+        "lat": 70.0,
+        "zoom": 2.0
+      },
+      "text": {
+        "en": "In 1903 Roald Amundsen sailed the small sloop Gjøa into the Arctic with a crew of six. For two winters at Gjoa Haven, on King William Island, the Netsilik Inuit taught them to drive dogs and dress in furs.",
+        "es": "En 1903, Roald Amundsen llevó al Ártico el pequeño balandro Gjøa con seis tripulantes. Durante dos inviernos en Gjoa Haven, en la isla del Rey Guillermo, los inuit netsilik les enseñaron a conducir perros y a vestirse con pieles."
+      },
+      "details": {
+        "en": "Amundsen had read Franklin's narratives as a boy. He chose a 21-metre herring boat with a shallow draught and a small paraffin engine, and a crew small enough to live off the land. The Gjøa left the Oslofjord on 16 June 1903, crossed Baffin Bay and went down Peel Sound, then took the eastern route around King William Island that Franklin had missed. In late September she reached a sheltered harbour the Inuit called Uqsuqtuuq, 'lots of fat', and was frozen in by 3 October. The Netsilik showed the Norwegians how to use sled dogs and to wear animal skins instead of heavy woollen parkas, which stayed cold when wet. Amundsen bought snow goggles, harpoons and snow knives; some are now back in Gjoa Haven's heritage centre. His men made long sledge trips to measure the north magnetic pole. On 13 August 1905 the Gjøa sailed on.",
+        "es": "Amundsen había leído de niño los relatos de Franklin. Eligió un barco arenquero de 21 metros, de poco calado y con un pequeño motor de parafina, y una tripulación lo bastante pequeña para vivir de lo que diera la tierra. El Gjøa salió del fiordo de Oslo el 16 de junio de 1903, cruzó la bahía de Baffin y bajó por el estrecho de Peel; luego tomó la ruta este alrededor de la isla del Rey Guillermo, la que Franklin no tomó. A fines de septiembre llegó a un puerto resguardado que los inuit llamaban Uqsuqtuuq, «mucha grasa», y el 3 de octubre ya estaba atrapado en el hielo. Los netsilik enseñaron a los noruegos a usar perros de trineo y a vestirse con pieles en lugar de pesadas parkas de lana, que se enfriaban al mojarse. Amundsen compró gafas para la nieve, arpones y cuchillos para la nieve; algunos han vuelto hoy al centro del patrimonio de Gjoa Haven. Sus hombres hicieron largos viajes en trineo para medir el polo norte magnético. El 13 de agosto de 1905, el Gjøa siguió su viaje."
+      },
+      "places": [
+        {
+          "id": "roald-amundsen",
+          "name": {
+            "en": "Roald Amundsen",
+            "es": "Roald Amundsen"
+          },
+          "at": [
+            11.05,
+            59.24
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1903-06-16",
+          "life": [
+            "1872-07-16",
+            "1928-06-18"
+          ],
+          "place": {
+            "en": "Borge, Østfold, Norway",
+            "es": "Borge, Østfold (Noruega)"
+          },
+          "text": {
+            "en": "A Norwegian who sailed the first ship through the Northwest Passage, led the first party to the South Pole in 1911 and flew over the North Pole in 1926. He vanished in 1928 searching for the crew of the Italia.",
+            "es": "Un noruego que llevó el primer barco a través del paso del Noroeste, dirigió el primer grupo que llegó al polo sur en 1911 y sobrevoló el polo norte en 1926. Desapareció en 1928 buscando a la tripulación del Italia."
+          },
+          "wiki": {
+            "en": "Roald Amundsen",
+            "es": "Roald Amundsen"
+          }
+        },
+        {
+          "id": "gjoa",
+          "name": {
+            "en": "Gjøa",
+            "es": "Gjøa"
+          },
+          "at": [
+            10.699,
+            59.9037
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1903-06-16",
+          "place": {
+            "en": "Now at the Fram Museum, Oslo, Norway",
+            "es": "Hoy en el Museo Fram, Oslo (Noruega)"
+          },
+          "text": {
+            "en": "A 21-metre herring boat built in 1872, the year Amundsen was born. With a crew of six and a small paraffin engine, she became the first vessel to sail through the Northwest Passage (1903–06).",
+            "es": "Un barco arenquero de 21 metros construido en 1872, el año en que nació Amundsen. Con seis tripulantes y un pequeño motor de parafina, fue la primera embarcación que atravesó el paso del Noroeste (1903-1906)."
+          },
+          "wiki": {
+            "en": "Gjøa",
+            "es": "Gjøa"
+          }
+        },
+        {
+          "id": "gjoa-haven",
+          "name": {
+            "en": "Gjoa Haven (Uqsuqtuuq)",
+            "es": "Gjoa Haven (Uqsuqtuuq)"
+          },
+          "at": [
+            -95.8667,
+            68.6333
+          ],
+          "cat": "ice",
+          "type": "place",
+          "date": "1903-10-03",
+          "place": {
+            "en": "King William Island, Nunavut, Canada",
+            "es": "Isla del Rey Guillermo, Nunavut (Canadá)"
+          },
+          "text": {
+            "en": "Uqsuqtuuq, 'lots of fat', the sheltered harbour where the Gjøa spent two winters, 1903–05. Named Gjøahavn by Amundsen, it is now an Inuit hamlet of about 1,350 people.",
+            "es": "Uqsuqtuuq, «mucha grasa», el puerto resguardado donde el Gjøa pasó dos inviernos, 1903-1905. Amundsen lo llamó Gjøahavn; hoy es un pueblo inuit de unos 1350 habitantes."
+          },
+          "wiki": {
+            "en": "Gjoa Haven",
+            "es": "Gjoa Haven"
+          }
+        },
+        {
+          "id": "netsilik",
+          "name": {
+            "en": "Netsilik Inuit",
+            "es": "Inuit netsilik"
+          },
+          "at": [
+            -95.4,
+            68.78
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1903-10",
+          "place": {
+            "en": "Gjoa Haven and Kugaaruk, Nunavut, Canada",
+            "es": "Gjoa Haven y Kugaaruk, Nunavut (Canadá)"
+          },
+          "text": {
+            "en": "The Netsilingmiut hunted seals on the sea ice in winter and caribou on the tundra in summer. They taught Amundsen's men to use sled dogs and to dress in skins instead of wool, skills he later took to the South Pole.",
+            "es": "Los netsilingmiut cazaban focas sobre el hielo marino en invierno y caribúes en la tundra en verano. Enseñaron a los hombres de Amundsen a usar perros de trineo y a vestirse con pieles en lugar de lana, habilidades que él llevó luego al polo sur."
+          },
+          "details": {
+            "en": "For the Netsilik, life depended on the seal and the caribou: caribou gave meat and the hides for clothing, and caribou antler made the probe used to find seals' breathing holes in the ice. Amundsen's crew lived beside them for nearly two years, traded with them and bought tools, snow goggles and snow knives; in 2013 some of these were returned from a museum in Oslo to Gjoa Haven's Nattilik Heritage Centre. Some families in Gjoa Haven say they descend from members of the expedition. Missionaries reached the Netsilik only in the 1920s; they were among the last peoples of the north to meet them.",
+            "es": "Para los netsilik, la vida dependía de la foca y del caribú: el caribú daba carne y las pieles para la ropa, y con su asta se hacía la sonda para encontrar los agujeros por donde respiran las focas bajo el hielo. La tripulación de Amundsen vivió junto a ellos casi dos años, comerció con ellos y compró herramientas, gafas y cuchillos para la nieve; en 2013, algunas de estas piezas volvieron de un museo de Oslo al Centro del Patrimonio Nattilik de Gjoa Haven. Algunas familias de Gjoa Haven dicen descender de miembros de la expedición. Los misioneros llegaron a los netsilik recién en la década de 1920; fueron de los últimos pueblos del norte en conocerlos."
+          },
+          "wiki": {
+            "en": "Netsilik",
+            "es": ""
+          }
+        },
+        {
+          "id": "north-magnetic-pole",
+          "name": {
+            "en": "North magnetic pole",
+            "es": "Polo norte magnético"
+          },
+          "at": [
+            -96.3,
+            70.1
+          ],
+          "cat": "discovery",
+          "type": "place",
+          "date": "1903",
+          "place": {
+            "en": "Boothia Peninsula, Nunavut, Canada (its place in the 1830s–1900s)",
+            "es": "Península de Boothia, Nunavut (Canadá) (su lugar entre 1830 y 1900)"
+          },
+          "text": {
+            "en": "The point where compass needles point straight down. James Clark Ross reached it on the Boothia Peninsula in 1831; Amundsen's team found it had moved. It now drifts toward Siberia at about 55 km a year.",
+            "es": "El punto donde la aguja de la brújula apunta directo hacia abajo. James Clark Ross llegó a él en la península de Boothia en 1831; el equipo de Amundsen comprobó que se había movido. Hoy se desplaza hacia Siberia unos 55 km al año."
+          },
+          "wiki": {
+            "en": "North magnetic pole",
+            "es": "Polo norte magnético"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "amundsen",
+          "path": [
+            [
+              10.73,
+              59.9
+            ],
+            [
+              10.58,
+              59.5
+            ],
+            [
+              10.5,
+              59.05
+            ],
+            [
+              9.6,
+              58.75
+            ],
+            [
+              8.5,
+              58.15
+            ],
+            [
+              7.05,
+              57.9
+            ],
+            [
+              5.0,
+              58.4
+            ],
+            [
+              1.0,
+              59.0
+            ],
+            [
+              -1.6,
+              59.5
+            ],
+            [
+              -6.0,
+              60.2
+            ],
+            [
+              -20.0,
+              60.5
+            ],
+            [
+              -35.0,
+              60.2
+            ],
+            [
+              -43.9,
+              59.45
+            ],
+            [
+              -47.6,
+              60.1
+            ],
+            [
+              -50.2,
+              61.6
+            ],
+            [
+              -52.0,
+              63.4
+            ],
+            [
+              -53.2,
+              65.0
+            ],
+            [
+              -54.3,
+              66.5
+            ],
+            [
+              -54.6,
+              67.6
+            ],
+            [
+              -54.0,
+              68.6
+            ],
+            [
+              -53.6,
+              69.15
+            ],
+            [
+              -55.0,
+              69.5
+            ],
+            [
+              -56.5,
+              70.2
+            ],
+            [
+              -58.8,
+              71.6
+            ],
+            [
+              -61.0,
+              73.0
+            ],
+            [
+              -63.8,
+              74.2
+            ],
+            [
+              -68.5,
+              74.5
+            ],
+            [
+              -72.0,
+              74.3
+            ],
+            [
+              -77.5,
+              74.25
+            ],
+            [
+              -81.5,
+              74.3
+            ],
+            [
+              -85.5,
+              74.35
+            ],
+            [
+              -89.0,
+              74.45
+            ],
+            [
+              -91.3,
+              74.55
+            ],
+            [
+              -91.9,
+              74.66
+            ],
+            [
+              -94.0,
+              74.3
+            ],
+            [
+              -96.0,
+              74.15
+            ],
+            [
+              -96.05,
+              73.6
+            ],
+            [
+              -96.1,
+              73.0
+            ],
+            [
+              -95.9,
+              72.4
+            ],
+            [
+              -96.0,
+              71.9
+            ],
+            [
+              -96.6,
+              71.5
+            ],
+            [
+              -96.6,
+              70.6
+            ],
+            [
+              -96.5,
+              69.9
+            ],
+            [
+              -96.4,
+              69.6
+            ],
+            [
+              -96.1,
+              69.4
+            ],
+            [
+              -95.6,
+              69.2
+            ],
+            [
+              -95.1,
+              68.95
+            ],
+            [
+              -95.0,
+              68.8
+            ],
+            [
+              -95.3,
+              68.68
+            ],
+            [
+              -95.87,
+              68.63
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ]
+    },
+    {
+      "date": "1906-08-31",
+      "title": {
+        "en": "Through the Northwest Passage",
+        "es": "A través del paso del Noroeste"
+      },
+      "camera": {
+        "lon": -128.0,
+        "lat": 68.5,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "The Gjøa sailed west along Canada's Arctic coast in 1905 and froze in again near Herschel Island. Amundsen skied some 800 km to a telegraph. On 31 August 1906 the Gjøa reached Nome, Alaska: the Passage was done.",
+        "es": "El Gjøa navegó al oeste por la costa ártica de Canadá en 1905 y volvió a quedar atrapado en el hielo cerca de la isla Herschel. Amundsen esquió unos 800 km hasta un telégrafo. El 31 de agosto de 1906, el Gjøa llegó a Nome, Alaska: el paso estaba hecho."
+      },
+      "details": {
+        "en": "From Gjoa Haven the little ship felt her way through the shallow, badly charted straits south of Victoria Island and out into the Beaufort Sea, where whaling ships spent the winter. By October 1905 she was iced in near Herschel Island, Qikiqtaruk to the Inuvialuit. That winter Amundsen travelled south over the mountains to the army telegraph at Eagle, Alaska, and wired the news to the world. The second engineer, Gustav Juel Wiik, fell ill and died during the expedition's third Arctic winter. The ice let the Gjøa go on 11 July 1906. After Nome she sailed on to San Francisco, where the crew was welcomed as heroes on 19 October; the city's Norwegians kept the ship, which stood in Golden Gate Park until 1972. Amundsen had sailed the passage that Franklin and so many others had died seeking.",
+        "es": "Desde Gjoa Haven, el pequeño barco avanzó a tientas por los estrechos poco profundos y mal cartografiados al sur de la isla Victoria hasta salir al mar de Beaufort, donde invernaban los balleneros. En octubre de 1905 quedó atrapado en el hielo cerca de la isla Herschel, Qikiqtaruk para los inuvialuit. Ese invierno, Amundsen viajó al sur cruzando las montañas hasta el telégrafo militar de Eagle, Alaska, y envió la noticia al mundo. El segundo maquinista, Gustav Juel Wiik, enfermó y murió durante el tercer invierno ártico de la expedición. El hielo soltó al Gjøa el 11 de julio de 1906. Después de Nome siguió hasta San Francisco, donde la tripulación fue recibida como heroína el 19 de octubre; los noruegos de la ciudad se quedaron con el barco, que estuvo en el parque Golden Gate hasta 1972. Amundsen había recorrido el paso que Franklin y tantos otros murieron buscando."
+      },
+      "places": [
+        {
+          "id": "herschel-island",
+          "name": {
+            "en": "Herschel Island (Qikiqtaruk)",
+            "es": "Isla Herschel (Qikiqtaruk)"
+          },
+          "at": [
+            -139.0992,
+            69.5897
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1905-10",
+          "place": {
+            "en": "Beaufort Sea, Yukon, Canada",
+            "es": "Mar de Beaufort, Yukón (Canadá)"
+          },
+          "text": {
+            "en": "Qikiqtaruk, 'island', to the Inuvialuit, whose Thule ancestors lived here 1,000 years ago. Its harbour was a winter base for American whalers, and the Gjøa froze in nearby in 1905–06.",
+            "es": "Qikiqtaruk, «isla», para los inuvialuit, cuyos antepasados thule vivieron aquí hace 1000 años. Su puerto era base de invierno de balleneros estadounidenses, y el Gjøa quedó atrapado cerca en 1905-1906."
+          },
+          "wiki": {
+            "en": "Herschel Island",
+            "es": "Isla Herschel (Canadá)"
+          }
+        },
+        {
+          "id": "eagle-alaska",
+          "name": {
+            "en": "Eagle, Alaska",
+            "es": "Eagle (Alaska)"
+          },
+          "at": [
+            -141.201,
+            64.7875
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1905",
+          "place": {
+            "en": "Yukon River, Alaska, USA",
+            "es": "Río Yukón, Alaska (EE. UU.)"
+          },
+          "text": {
+            "en": "A village on the Yukon River, in the land of the Hän people, with an army post and a telegraph line. In 1905 Amundsen arrived here on skis and telegraphed the news of the Northwest Passage to the world.",
+            "es": "Una aldea a orillas del río Yukón, en tierra del pueblo hän, con un puesto militar y una línea de telégrafo. En 1905, Amundsen llegó aquí en esquís y telegrafió al mundo la noticia del paso del Noroeste."
+          },
+          "wiki": {
+            "en": "Eagle, Alaska",
+            "es": "Eagle (Alaska)"
+          }
+        },
+        {
+          "id": "nome",
+          "name": {
+            "en": "Nome, Alaska",
+            "es": "Nome (Alaska)"
+          },
+          "at": [
+            -165.4064,
+            64.5011
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1906-08-31",
+          "place": {
+            "en": "Seward Peninsula, Alaska, USA",
+            "es": "Península de Seward, Alaska (EE. UU.)"
+          },
+          "text": {
+            "en": "A gold-rush town that grew after 1898 on Iñupiat land, where an Iñupiat settlement called Sitnasuak is thought to have stood. The Gjøa arrived on 31 August 1906, ending the first voyage through the Northwest Passage.",
+            "es": "Un pueblo de la fiebre del oro que creció desde 1898 en tierra iñupiat, donde se cree que hubo un asentamiento iñupiat llamado Sitnasuak. El Gjøa llegó el 31 de agosto de 1906 y cerró el primer viaje a través del paso del Noroeste."
+          },
+          "wiki": {
+            "en": "Nome, Alaska",
+            "es": "Nome"
+          }
+        },
+        {
+          "id": "northwest-passage",
+          "name": {
+            "en": "Northwest Passage",
+            "es": "Paso del Noroeste"
+          },
+          "at": [
+            -127.5333,
+            70.6
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1906-08-31",
+          "place": {
+            "en": "Arctic Archipelago, Canada",
+            "es": "Archipiélago Ártico (Canadá)"
+          },
+          "text": {
+            "en": "The sea route through the islands of Arctic Canada between the Atlantic and the Pacific, sought by Europeans since 1492. Amundsen first sailed it in 1903–06; in 2007 melting ice opened it without icebreakers.",
+            "es": "La ruta marítima entre las islas del Ártico canadiense que une el Atlántico y el Pacífico, buscada por los europeos desde 1492. Amundsen la recorrió por primera vez en 1903-1906; en 2007, el deshielo la abrió sin necesidad de rompehielos."
+          },
+          "wiki": {
+            "en": "Northwest Passage",
+            "es": "Paso del Noroeste"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "amundsen",
+          "path": [
+            [
+              -95.87,
+              68.63
+            ],
+            [
+              -96.2,
+              68.52
+            ],
+            [
+              -96.6,
+              68.42
+            ],
+            [
+              -97.1,
+              68.47
+            ],
+            [
+              -97.6,
+              68.53
+            ],
+            [
+              -98.3,
+              68.5
+            ],
+            [
+              -100.0,
+              68.35
+            ],
+            [
+              -102.0,
+              68.4
+            ],
+            [
+              -104.0,
+              68.65
+            ],
+            [
+              -105.3,
+              68.85
+            ],
+            [
+              -106.3,
+              68.95
+            ],
+            [
+              -107.5,
+              68.85
+            ],
+            [
+              -108.8,
+              68.75
+            ],
+            [
+              -110.0,
+              68.45
+            ],
+            [
+              -112.5,
+              68.3
+            ],
+            [
+              -114.0,
+              68.55
+            ],
+            [
+              -114.5,
+              68.85
+            ],
+            [
+              -115.5,
+              69.1
+            ],
+            [
+              -117.0,
+              69.3
+            ],
+            [
+              -118.5,
+              69.6
+            ],
+            [
+              -121.0,
+              70.0
+            ],
+            [
+              -124.5,
+              70.4
+            ],
+            [
+              -127.5,
+              70.75
+            ],
+            [
+              -131.5,
+              70.0
+            ],
+            [
+              -135.0,
+              69.75
+            ],
+            [
+              -137.6,
+              69.25
+            ],
+            [
+              -138.0,
+              69.1
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "amundsen",
+          "path": [
+            [
+              -138.0,
+              69.1
+            ],
+            [
+              -139.2,
+              68.2
+            ],
+            [
+              -140.0,
+              67.0
+            ],
+            [
+              -140.6,
+              65.9
+            ],
+            [
+              -141.2,
+              64.79
+            ]
+          ],
+          "by": "land",
+          "icon": "🛷",
+          "label": {
+            "en": "Amundsen's trip to the telegraph",
+            "es": "El viaje de Amundsen al telégrafo"
+          }
+        },
+        {
+          "side": "amundsen",
+          "path": [
+            [
+              -138.0,
+              69.1
+            ],
+            [
+              -137.7,
+              69.4
+            ],
+            [
+              -139.0,
+              69.85
+            ],
+            [
+              -141.0,
+              70.05
+            ],
+            [
+              -146.0,
+              70.6
+            ],
+            [
+              -151.5,
+              71.2
+            ],
+            [
+              -156.5,
+              71.6
+            ],
+            [
+              -159.5,
+              71.15
+            ],
+            [
+              -162.5,
+              70.5
+            ],
+            [
+              -165.5,
+              69.3
+            ],
+            [
+              -167.5,
+              68.5
+            ],
+            [
+              -168.5,
+              67.5
+            ],
+            [
+              -168.8,
+              65.9
+            ],
+            [
+              -168.4,
+              65.2
+            ],
+            [
+              -167.2,
+              64.55
+            ],
+            [
+              -165.4,
+              64.45
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ]
+    },
+    {
+      "date": "1908-04-21",
+      "title": {
+        "en": "Cook's claim",
+        "es": "El reclamo de Cook"
+      },
+      "camera": {
+        "lon": -75.0,
+        "lat": 84.0,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "Frederick Cook claimed he reached the North Pole on 21 April 1908 with two young Inughuit, Ahwelah and Etukishook. A Danish university found no proof, and his claim is generally rejected.",
+        "es": "Frederick Cook afirmó que llegó al polo norte el 21 de abril de 1908 con dos jóvenes inughuit, Ahwelah y Etukishook. Una universidad danesa no encontró pruebas, y su reclamo suele rechazarse."
+      },
+      "details": {
+        "en": "Cook, a doctor who had been on Peary's 1891–92 Greenland expedition, left Annoatok in north-west Greenland in February 1908 with Inughuit helpers and dog teams, crossed Ellesmere Island and headed north from Axel Heiberg Island. He said he reached the Pole on 21 April. On the way back, open water and drifting ice pushed them west; living on what they could hunt, the three men spent the summer and part of the winter on Devon Island, and reached Annoatok again only in the spring of 1909, close to starving. Cook never produced his original navigation records, and in December 1909 the University of Copenhagen ruled that his papers held no proof. Ahwelah and Etukishook told Peary's men that they had gone only a few days from land, though their map correctly showed the then-unknown Meighen Island.",
+        "es": "Cook, un médico que había estado en la expedición de Peary a Groenlandia de 1891-1892, salió de Annoatok, en el noroeste de Groenlandia, en febrero de 1908 con ayudantes inughuit y trineos de perros, cruzó la isla de Ellesmere y partió hacia el norte desde la isla Axel Heiberg. Dijo que llegó al polo el 21 de abril. De regreso, el agua abierta y el hielo a la deriva los empujaron al oeste; viviendo de lo que cazaban, los tres hombres pasaron el verano y parte del invierno en la isla Devon, y volvieron a Annoatok recién en la primavera de 1909, casi muertos de hambre. Cook nunca presentó sus registros de navegación originales, y en diciembre de 1909 la Universidad de Copenhague dictaminó que sus papeles no contenían pruebas. Ahwelah y Etukishook dijeron a los hombres de Peary que solo se habían alejado unos días de la tierra, aunque su mapa mostraba correctamente la isla Meighen, entonces desconocida."
+      },
+      "places": [
+        {
+          "id": "frederick-cook",
+          "name": {
+            "en": "Frederick Cook",
+            "es": "Frederick Cook"
+          },
+          "at": [
+            -72.6,
+            78.55
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1908-02",
+          "life": [
+            "1865-06-10",
+            "1940-08-05"
+          ],
+          "place": {
+            "en": "Annoatok, north-west Greenland",
+            "es": "Annoatok, noroeste de Groenlandia"
+          },
+          "text": {
+            "en": "An American doctor and explorer who claimed the first ascent of Denali (1906) and the North Pole (1908). Both claims are now widely rejected. He was later jailed for oil-share fraud.",
+            "es": "Un médico y explorador estadounidense que afirmó haber subido primero al Denali (1906) y llegado al polo norte (1908). Hoy ambos reclamos se rechazan ampliamente. Más tarde fue encarcelado por un fraude con acciones petroleras."
+          },
+          "wiki": {
+            "en": "Frederick Cook",
+            "es": "Frederick Cook"
+          }
+        },
+        {
+          "id": "inughuit",
+          "name": {
+            "en": "Inughuit (Polar Inuit)",
+            "es": "Inughuit (inuit polares)"
+          },
+          "at": [
+            -69.2306,
+            77.4667
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1908",
+          "place": {
+            "en": "Avannaa, north-west Greenland",
+            "es": "Avannaa, noroeste de Groenlandia"
+          },
+          "text": {
+            "en": "The Inuit of north-west Greenland, the northernmost people in North America. Their hunters, dog drivers and families made the expeditions of Cook and Peary possible: 49 of them travelled with Peary in 1908.",
+            "es": "Los inuit del noroeste de Groenlandia, el pueblo más septentrional de América del Norte. Sus cazadores, conductores de perros y familias hicieron posibles las expediciones de Cook y de Peary: 49 de ellos viajaron con Peary en 1908."
+          },
+          "details": {
+            "en": "The Inughuit descend from the Thule people and once worked iron from the Cape York meteorite. From the 1890s explorers hired them as guides, hunters and dog drivers, paying in guns, ammunition and other goods they came to depend on. Peary's last expedition took 22 men, 17 women and 10 children. When the expeditions ended in 1909 they were left in a hard situation, and the caribou of north Greenland had been hunted almost to extinction. In 1953 the people of Uummannaq were moved to the new town of Qaanaaq to make way for a US air base. About 700 Inughuit live in Greenland today.",
+            "es": "Los inughuit descienden del pueblo thule y antiguamente trabajaban el hierro del meteorito del cabo York. Desde la década de 1890, los exploradores los contrataron como guías, cazadores y conductores de perros, y les pagaban con armas, municiones y otros bienes de los que llegaron a depender. La última expedición de Peary llevó a 22 hombres, 17 mujeres y 10 niños. Cuando las expediciones terminaron, en 1909, quedaron en una situación difícil, y los caribúes del norte de Groenlandia habían sido cazados casi hasta extinguirse. En 1953, la gente de Uummannaq fue trasladada al nuevo pueblo de Qaanaaq para dejar sitio a una base aérea de Estados Unidos. Hoy viven en Groenlandia unos 700 inughuit."
+          },
+          "wiki": {
+            "en": "Inughuit",
+            "es": "Inughuit"
+          }
+        },
+        {
+          "id": "meighen-island",
+          "name": {
+            "en": "Meighen Island",
+            "es": "Isla Meighen"
+          },
+          "at": [
+            -99.5,
+            79.9167
+          ],
+          "cat": "discovery",
+          "type": "place",
+          "date": "1908",
+          "place": {
+            "en": "Queen Elizabeth Islands, Nunavut, Canada",
+            "es": "Islas de la Reina Isabel, Nunavut (Canadá)"
+          },
+          "text": {
+            "en": "A remote island of the Canadian Arctic. A sketch map by Cook's companions Ahwelah and Etukishook showed it correctly before anyone else had mapped it, a sign that they really passed this way.",
+            "es": "Una isla remota del Ártico canadiense. Un mapa dibujado por los compañeros de Cook, Ahwelah y Etukishook, la mostraba correctamente antes de que nadie la cartografiara, señal de que de verdad pasaron por allí."
+          },
+          "wiki": {
+            "en": "Meighen Island",
+            "es": "Isla Meighen"
+          }
+        },
+        {
+          "id": "north-pole",
+          "name": {
+            "en": "North Pole",
+            "es": "Polo norte"
+          },
+          "at": [
+            0.0,
+            90.0
+          ],
+          "cat": "ice",
+          "type": "place",
+          "date": "1926-05-12",
+          "place": {
+            "en": "Arctic Ocean",
+            "es": "Océano Ártico"
+          },
+          "text": {
+            "en": "The northern end of Earth's axis, on drifting sea ice above some 4,000 m of ocean. The claims of 1908 and 1909 are doubted; the first undisputed visit was the airship Norge's flight over it on 12 May 1926.",
+            "es": "El extremo norte del eje de la Tierra, sobre hielo marino a la deriva y unos 4000 m de océano. Los reclamos de 1908 y 1909 están en duda; la primera visita indiscutida fue el vuelo del dirigible Norge sobre él, el 12 de mayo de 1926."
+          },
+          "wiki": {
+            "en": "North Pole",
+            "es": "Polo norte"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "cook",
+          "path": [
+            [
+              -72.6,
+              78.55
+            ],
+            [
+              -75.0,
+              78.65
+            ],
+            [
+              -78.0,
+              79.1
+            ],
+            [
+              -82.0,
+              79.6
+            ],
+            [
+              -86.0,
+              79.85
+            ],
+            [
+              -90.5,
+              80.9
+            ],
+            [
+              -93.6,
+              81.4
+            ],
+            [
+              -93.6,
+              84.0
+            ],
+            [
+              -93.6,
+              87.0
+            ],
+            [
+              0.0,
+              90.0
+            ]
+          ],
+          "by": "ice",
+          "icon": "🛷",
+          "label": {
+            "en": "Cook's claimed route",
+            "es": "La ruta que Cook dijo seguir"
+          }
+        },
+        {
+          "side": "cook",
+          "path": [
+            [
+              -99.5,
+              79.92
+            ],
+            [
+              -97.0,
+              78.4
+            ],
+            [
+              -93.0,
+              77.2
+            ],
+            [
+              -88.5,
+              76.5
+            ],
+            [
+              -84.4,
+              75.95
+            ],
+            [
+              -81.0,
+              76.6
+            ],
+            [
+              -77.5,
+              77.6
+            ],
+            [
+              -74.5,
+              78.3
+            ],
+            [
+              -72.6,
+              78.55
+            ]
+          ],
+          "by": "ice",
+          "icon": "🛷",
+          "label": {
+            "en": "The way back, 1908–09",
+            "es": "El regreso, 1908-1909"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1909-04-06",
+      "title": {
+        "en": "Peary, Henson and the Inughuit",
+        "es": "Peary, Henson y los inughuit"
+      },
+      "camera": {
+        "lon": -66.0,
+        "lat": 85.0,
+        "zoom": 3.4
+      },
+      "text": {
+        "en": "On 6 April 1909 Robert Peary said he had reached the Pole with Matthew Henson and four Inughuit: Ootah, Egingwah, Seegloo and Ooqueah. Doubts about his speeds and records have never gone away.",
+        "es": "El 6 de abril de 1909, Robert Peary afirmó haber llegado al polo con Matthew Henson y cuatro inughuit: Ootah, Egingwah, Seegloo y Ooqueah. Las dudas sobre sus velocidades y sus registros nunca se han disipado."
+      },
+      "details": {
+        "en": "Peary's eighth Arctic expedition sailed from New York on the Roosevelt in July 1908, took on Inughuit families and hundreds of dogs in Greenland and wintered at Cape Sheridan on Ellesmere Island. From late February 1909 relay teams broke trail north from Cape Columbia and turned back one by one. From the last support camp, at nearly 88° N, Peary claimed to have covered 133 nautical miles to the Pole in five marches, about twice his earlier speed, and to have come back even faster, with no one in his party able to check his navigation. Henson went ahead and said: 'I think I'm the first man to sit on top of the world.' The National Geographic Society, Peary's sponsor, accepted his claim. Studies since have disagreed: one in 1989 supported him, while the explorer Wally Herbert concluded from Peary's records that he had fallen short.",
+        "es": "La octava expedición ártica de Peary zarpó de Nueva York en el Roosevelt en julio de 1908, embarcó en Groenlandia a familias inughuit y cientos de perros e invernó en el cabo Sheridan, en la isla de Ellesmere. Desde fines de febrero de 1909, equipos de relevo abrieron camino hacia el norte desde el cabo Columbia y fueron volviendo uno a uno. Desde el último campamento de apoyo, a casi 88° N, Peary afirmó haber recorrido 133 millas náuticas hasta el polo en cinco jornadas, el doble de su velocidad anterior, y haber vuelto aún más rápido, sin nadie en su grupo capaz de comprobar su navegación. Henson se adelantó y dijo: «Creo que soy el primer hombre en sentarse en la cima del mundo». La National Geographic Society, que patrocinaba a Peary, aceptó su reclamo. Los estudios posteriores no coinciden: uno de 1989 lo respaldó, mientras que el explorador Wally Herbert concluyó, a partir de sus registros, que no llegó."
+      },
+      "places": [
+        {
+          "id": "robert-peary",
+          "name": {
+            "en": "Robert Peary",
+            "es": "Robert Peary"
+          },
+          "at": [
+            -61.35,
+            82.47
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1909-02",
+          "life": [
+            "1856-05-06",
+            "1920-02-20"
+          ],
+          "place": {
+            "en": "Cape Sheridan, Ellesmere Island, Nunavut, Canada",
+            "es": "Cabo Sheridan, isla de Ellesmere, Nunavut (Canadá)"
+          },
+          "text": {
+            "en": "A US Navy officer who led eight Arctic expeditions and claimed the Pole in 1909. He took the Inughuit's iron meteorite and brought six Inughuit to New York in 1897, where four soon died.",
+            "es": "Un oficial de la Marina de Estados Unidos que dirigió ocho expediciones árticas y afirmó haber llegado al polo en 1909. Se llevó el meteorito de hierro de los inughuit y trajo a seis inughuit a Nueva York en 1897, donde cuatro murieron pronto."
+          },
+          "details": {
+            "en": "The six Inughuit, among them a hunter named Qisuk and his son Minik, had been promised they could go home within a year with tools and gifts. Four died of tuberculosis within months at the American Museum of Natural History; Qisuk's bones were put on display after Minik was shown a fake burial. Minik went home only in 1909, and the remains were returned to Greenland for burial in 1993. Peary also fathered children with an Inughuit woman, Aleqasina, and the record of how his men treated Inughuit women has been criticized. His claim to the Pole was backed by the National Geographic Society, his sponsor, but he never let neutral experts examine his records.",
+            "es": "A los seis inughuit, entre ellos un cazador llamado Qisuk y su hijo Minik, les habían prometido volver a casa en un año con herramientas y regalos. Cuatro murieron de tuberculosis en pocos meses en el Museo Americano de Historia Natural; los huesos de Qisuk fueron exhibidos después de que a Minik le mostraran un entierro falso. Minik volvió a casa recién en 1909, y los restos fueron devueltos a Groenlandia para ser enterrados en 1993. Peary también tuvo hijos con una mujer inughuit, Aleqasina, y se ha criticado cómo trataron sus hombres a las mujeres inughuit. Su reclamo del polo fue respaldado por la National Geographic Society, que lo patrocinaba, pero nunca dejó que expertos neutrales examinaran sus registros."
+          },
+          "wiki": {
+            "en": "Robert Peary",
+            "es": "Robert Peary"
+          }
+        },
+        {
+          "id": "matthew-henson",
+          "name": {
+            "en": "Matthew Henson",
+            "es": "Matthew Henson"
+          },
+          "at": [
+            -69.9536,
+            83.1114
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1909-03-01",
+          "life": [
+            "1866-08-08",
+            "1955-03-09"
+          ],
+          "place": {
+            "en": "Cape Columbia, Ellesmere Island, Nunavut, Canada",
+            "es": "Cabo Columbia, isla de Ellesmere, Nunavut (Canadá)"
+          },
+          "text": {
+            "en": "An African American explorer who went on seven Arctic expeditions with Peary. The Inughuit called him Mahri-Pahluk; he spoke their language and drove dogs like one of them. He was honoured only late in life.",
+            "es": "Un explorador afroamericano que hizo siete expediciones árticas con Peary. Los inughuit lo llamaban Mahri-Pahluk; hablaba su lengua y conducía perros como uno de ellos. Recibió honores recién al final de su vida."
+          },
+          "details": {
+            "en": "Henson was born in Maryland to free Black sharecroppers whose family was terrorized by white supremacists after the Civil War. At 12 he went to sea as a cabin boy, and in 1887 Peary, a customer at the clothing store where he worked, hired him. He became Peary's 'first man', a navigator and craftsman, and the only one of the Americans to drive dogs as well as the Inughuit. After 1909 Peary received the honours while Henson's part was largely ignored; he spent most of the next 30 years working at the US Customs House in New York. He published his memoir, A Negro Explorer at the North Pole, in 1912. In 1988 he was reburied at Arlington National Cemetery, with his Inughuit descendants present.",
+            "es": "Henson nació en Maryland, hijo de aparceros negros libres cuya familia sufrió el terror de los supremacistas blancos tras la Guerra Civil. A los 12 años se hizo grumete, y en 1887 Peary, cliente de la tienda de ropa donde trabajaba, lo contrató. Llegó a ser el «primer hombre» de Peary, navegante y artesano, y el único de los estadounidenses que conducía perros tan bien como los inughuit. Después de 1909, Peary recibió los honores mientras el papel de Henson quedó casi ignorado; pasó la mayor parte de los 30 años siguientes trabajando en la aduana de Nueva York. Publicó sus memorias, Un explorador negro en el polo norte, en 1912. En 1988 fue enterrado de nuevo en el Cementerio Nacional de Arlington, con la presencia de sus descendientes inughuit."
+          },
+          "wiki": {
+            "en": "Matthew Henson",
+            "es": "Matthew Henson"
+          }
+        },
+        {
+          "id": "cape-york-meteorite",
+          "name": {
+            "en": "Cape York meteorite",
+            "es": "Meteorito del cabo York"
+          },
+          "at": [
+            -64.9333,
+            76.1333
+          ],
+          "cat": "goods",
+          "type": "goods",
+          "date": "1897",
+          "place": {
+            "en": "Cape York, north-west Greenland",
+            "es": "Cabo York, noroeste de Groenlandia"
+          },
+          "text": {
+            "en": "Huge iron rocks from space, the Saviksue ('great irons') of the Inughuit, who made tools from them. In 1897 Peary shipped the largest pieces to New York and sold them for $40,000.",
+            "es": "Enormes rocas de hierro venidas del espacio, las Saviksue («grandes hierros») de los inughuit, que hacían herramientas con ellas. En 1897, Peary embarcó los trozos más grandes a Nueva York y los vendió por 40 000 dólares."
+          },
+          "wiki": {
+            "en": "Cape York meteorite",
+            "es": "Cape York"
+          }
+        },
+        {
+          "id": "inughuit",
+          "name": {
+            "en": "Inughuit (Polar Inuit)",
+            "es": "Inughuit (inuit polares)"
+          },
+          "at": [
+            -69.2306,
+            77.4667
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1908",
+          "place": {
+            "en": "Avannaa, north-west Greenland",
+            "es": "Avannaa, noroeste de Groenlandia"
+          },
+          "text": {
+            "en": "The Inuit of north-west Greenland, the northernmost people in North America. Their hunters, dog drivers and families made the expeditions of Cook and Peary possible: 49 of them travelled with Peary in 1908.",
+            "es": "Los inuit del noroeste de Groenlandia, el pueblo más septentrional de América del Norte. Sus cazadores, conductores de perros y familias hicieron posibles las expediciones de Cook y de Peary: 49 de ellos viajaron con Peary en 1908."
+          },
+          "details": {
+            "en": "The Inughuit descend from the Thule people and once worked iron from the Cape York meteorite. From the 1890s explorers hired them as guides, hunters and dog drivers, paying in guns, ammunition and other goods they came to depend on. Peary's last expedition took 22 men, 17 women and 10 children. When the expeditions ended in 1909 they were left in a hard situation, and the caribou of north Greenland had been hunted almost to extinction. In 1953 the people of Uummannaq were moved to the new town of Qaanaaq to make way for a US air base. About 700 Inughuit live in Greenland today.",
+            "es": "Los inughuit descienden del pueblo thule y antiguamente trabajaban el hierro del meteorito del cabo York. Desde la década de 1890, los exploradores los contrataron como guías, cazadores y conductores de perros, y les pagaban con armas, municiones y otros bienes de los que llegaron a depender. La última expedición de Peary llevó a 22 hombres, 17 mujeres y 10 niños. Cuando las expediciones terminaron, en 1909, quedaron en una situación difícil, y los caribúes del norte de Groenlandia habían sido cazados casi hasta extinguirse. En 1953, la gente de Uummannaq fue trasladada al nuevo pueblo de Qaanaaq para dejar sitio a una base aérea de Estados Unidos. Hoy viven en Groenlandia unos 700 inughuit."
+          },
+          "wiki": {
+            "en": "Inughuit",
+            "es": "Inughuit"
+          }
+        },
+        {
+          "id": "north-pole",
+          "name": {
+            "en": "North Pole",
+            "es": "Polo norte"
+          },
+          "at": [
+            0.0,
+            90.0
+          ],
+          "cat": "ice",
+          "type": "place",
+          "date": "1926-05-12",
+          "place": {
+            "en": "Arctic Ocean",
+            "es": "Océano Ártico"
+          },
+          "text": {
+            "en": "The northern end of Earth's axis, on drifting sea ice above some 4,000 m of ocean. The claims of 1908 and 1909 are doubted; the first undisputed visit was the airship Norge's flight over it on 12 May 1926.",
+            "es": "El extremo norte del eje de la Tierra, sobre hielo marino a la deriva y unos 4000 m de océano. Los reclamos de 1908 y 1909 están en duda; la primera visita indiscutida fue el vuelo del dirigible Norge sobre él, el 12 de mayo de 1926."
+          },
+          "wiki": {
+            "en": "North Pole",
+            "es": "Polo norte"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "peary",
+          "path": [
+            [
+              -61.35,
+              82.47
+            ],
+            [
+              -64.0,
+              82.75
+            ],
+            [
+              -67.5,
+              83.0
+            ],
+            [
+              -69.95,
+              83.11
+            ],
+            [
+              -70.0,
+              84.5
+            ],
+            [
+              -70.0,
+              86.0
+            ],
+            [
+              -70.0,
+              87.78
+            ],
+            [
+              0.0,
+              90.0
+            ]
+          ],
+          "by": "ice",
+          "icon": "🛷",
+          "label": {
+            "en": "Peary's claimed route",
+            "es": "La ruta que Peary dijo seguir"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1926-05-14",
+      "title": {
+        "en": "The airship Norge",
+        "es": "El dirigible Norge"
+      },
+      "camera": {
+        "lon": -20.0,
+        "lat": 72.0,
+        "zoom": 1.4
+      },
+      "text": {
+        "en": "On 12 May 1926 the Italian-built airship Norge, carrying Roald Amundsen, Lincoln Ellsworth and its designer Umberto Nobile, flew over the North Pole: the first undisputed visit. It landed in Alaska two days later.",
+        "es": "El 12 de mayo de 1926, el dirigible Norge, construido en Italia, sobrevoló el polo norte con Roald Amundsen, Lincoln Ellsworth y su diseñador, Umberto Nobile: la primera visita indiscutida. Aterrizó en Alaska dos días después."
+      },
+      "details": {
+        "en": "The Norge left Rome on 10 April and flew by way of England, Oslo, Leningrad and Vadsø to Kings Bay (Ny-Ålesund) in Svalbard. There Nobile met the American Richard Byrd, who on 9 May flew a three-engined plane north from the same bay and back in under 16 hours and said he had reached the Pole. His claim was celebrated, but doubts grew; in 1996 his diary showed erased sextant readings, and one researcher concluded that he turned back about 80 percent of the way. The Norge, with 16 men aboard, left Kings Bay on 11 May and reached the Pole at 01:25 GMT on 12 May, where the crew dropped Norwegian, American and Italian flags. It crossed unknown ice to Alaska and landed on 14 May at Teller, an Iñupiat village. Amundsen and Nobile then quarrelled bitterly over the credit.",
+        "es": "El Norge salió de Roma el 10 de abril y voló, pasando por Inglaterra, Oslo, Leningrado y Vadsø, hasta Kings Bay (Ny-Ålesund), en Svalbard. Allí Nobile conoció al estadounidense Richard Byrd, que el 9 de mayo voló hacia el norte en un trimotor desde la misma bahía y volvió en menos de 16 horas, y dijo que había llegado al polo. Su reclamo fue celebrado, pero las dudas crecieron; en 1996, su diario mostró lecturas de sextante borradas, y un investigador concluyó que dio la vuelta tras recorrer cerca del 80 % del camino. El Norge, con 16 hombres a bordo, salió de Kings Bay el 11 de mayo y llegó al polo a la 01:25 GMT del 12 de mayo, donde la tripulación lanzó banderas de Noruega, Estados Unidos e Italia. Cruzó hielo desconocido hasta Alaska y aterrizó el 14 de mayo en Teller, una aldea iñupiat. Después, Amundsen y Nobile discutieron amargamente por el mérito."
+      },
+      "places": [
+        {
+          "id": "norge",
+          "name": {
+            "en": "Norge (airship)",
+            "es": "Norge (dirigible)"
+          },
+          "at": [
+            11.9222,
+            78.925
+          ],
+          "cat": "ship",
+          "icon": "🎈",
+          "type": "ship",
+          "date": "1926-05-11",
+          "place": {
+            "en": "Mooring mast at Ny-Ålesund, Svalbard, Norway",
+            "es": "Mástil de amarre en Ny-Ålesund, Svalbard (Noruega)"
+          },
+          "text": {
+            "en": "A 106-metre semi-rigid airship designed by Umberto Nobile. In May 1926 it made the first undisputed journey to the North Pole and the first flight across the Arctic from Europe to America.",
+            "es": "Un dirigible semirrígido de 106 metros diseñado por Umberto Nobile. En mayo de 1926 hizo el primer viaje indiscutido al polo norte y el primer vuelo a través del Ártico de Europa a América."
+          },
+          "wiki": {
+            "en": "Norge (airship)",
+            "es": "Norge (dirigible)"
+          }
+        },
+        {
+          "id": "umberto-nobile",
+          "name": {
+            "en": "Umberto Nobile",
+            "es": "Umberto Nobile"
+          },
+          "at": [
+            12.5947,
+            41.7994
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1926-04-10",
+          "life": [
+            "1885-01-21",
+            "1978-07-30"
+          ],
+          "place": {
+            "en": "Ciampino, Rome, Italy",
+            "es": "Ciampino, Roma (Italia)"
+          },
+          "text": {
+            "en": "An Italian engineer who designed and piloted the airships Norge and Italia. Blamed by Mussolini's government for the Italia disaster, he resigned from the air force and later built airships in the Soviet Union.",
+            "es": "Un ingeniero italiano que diseñó y pilotó los dirigibles Norge e Italia. Culpado por el gobierno de Mussolini del desastre del Italia, renunció a la fuerza aérea y después construyó dirigibles en la Unión Soviética."
+          },
+          "wiki": {
+            "en": "Umberto Nobile",
+            "es": "Umberto Nobile"
+          }
+        },
+        {
+          "id": "richard-e-byrd",
+          "name": {
+            "en": "Richard E. Byrd",
+            "es": "Richard E. Byrd"
+          },
+          "at": [
+            11.95,
+            78.905
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1926-05-09",
+          "life": [
+            "1888-10-25",
+            "1957-03-11"
+          ],
+          "place": {
+            "en": "Ny-Ålesund (Kings Bay), Svalbard, Norway",
+            "es": "Ny-Ålesund (Kings Bay), Svalbard (Noruega)"
+          },
+          "text": {
+            "en": "A US Navy aviator who said he flew over the North Pole with Floyd Bennett on 9 May 1926, three days before the Norge. His claim is now widely doubted. In 1929 he did fly over the South Pole.",
+            "es": "Un aviador de la Marina de Estados Unidos que dijo haber sobrevolado el polo norte con Floyd Bennett el 9 de mayo de 1926, tres días antes que el Norge. Hoy su reclamo se pone muy en duda. En 1929 sí sobrevoló el polo sur."
+          },
+          "wiki": {
+            "en": "Richard E. Byrd",
+            "es": "Richard Evelyn Byrd"
+          }
+        },
+        {
+          "id": "teller",
+          "name": {
+            "en": "Teller, Alaska",
+            "es": "Teller (Alaska)"
+          },
+          "at": [
+            -166.3539,
+            65.2572
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1926-05-14",
+          "place": {
+            "en": "Seward Peninsula, Alaska, USA",
+            "es": "Península de Seward, Alaska (EE. UU.)"
+          },
+          "text": {
+            "en": "A small Iñupiat town on the Seward Peninsula. Bad weather made the Norge come down here on 14 May 1926 instead of at Nome; the airship was taken apart and shipped back to Italy, never to fly again.",
+            "es": "Un pequeño pueblo iñupiat de la península de Seward. El mal tiempo obligó al Norge a aterrizar aquí el 14 de mayo de 1926, en lugar de en Nome; el dirigible fue desarmado y enviado de vuelta a Italia, y nunca volvió a volar."
+          },
+          "wiki": {
+            "en": "Teller, Alaska",
+            "es": "Teller (Alaska)"
+          }
+        },
+        {
+          "id": "north-pole",
+          "name": {
+            "en": "North Pole",
+            "es": "Polo norte"
+          },
+          "at": [
+            0.0,
+            90.0
+          ],
+          "cat": "ice",
+          "type": "place",
+          "date": "1926-05-12",
+          "place": {
+            "en": "Arctic Ocean",
+            "es": "Océano Ártico"
+          },
+          "text": {
+            "en": "The northern end of Earth's axis, on drifting sea ice above some 4,000 m of ocean. The claims of 1908 and 1909 are doubted; the first undisputed visit was the airship Norge's flight over it on 12 May 1926.",
+            "es": "El extremo norte del eje de la Tierra, sobre hielo marino a la deriva y unos 4000 m de océano. Los reclamos de 1908 y 1909 están en duda; la primera visita indiscutida fue el vuelo del dirigible Norge sobre él, el 12 de mayo de 1926."
+          },
+          "wiki": {
+            "en": "North Pole",
+            "es": "Polo norte"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "airships",
+          "path": [
+            [
+              12.59,
+              41.8
+            ],
+            [
+              1.23,
+              52.43
+            ],
+            [
+              10.76,
+              59.9
+            ],
+            [
+              30.13,
+              59.57
+            ],
+            [
+              29.75,
+              70.07
+            ],
+            [
+              11.92,
+              78.93
+            ]
+          ],
+          "by": "air",
+          "icon": "🎈",
+          "label": {
+            "en": "Rome to Svalbard",
+            "es": "De Roma a Svalbard"
+          }
+        },
+        {
+          "side": "airships",
+          "path": [
+            [
+              11.92,
+              78.93
+            ],
+            [
+              11.92,
+              84.0
+            ],
+            [
+              0.0,
+              90.0
+            ],
+            [
+              -156.48,
+              84.0
+            ],
+            [
+              -156.48,
+              71.39
+            ],
+            [
+              -161.5,
+              68.3
+            ],
+            [
+              -166.35,
+              65.26
+            ]
+          ],
+          "by": "air",
+          "icon": "🎈",
+          "label": {
+            "en": "Over the Pole",
+            "es": "Sobre el polo"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1928-06-18",
+      "title": {
+        "en": "The Italia disaster",
+        "es": "El desastre del Italia"
+      },
+      "camera": {
+        "lon": 18.0,
+        "lat": 79.0,
+        "zoom": 2.6
+      },
+      "text": {
+        "en": "In May 1928 Nobile flew a new airship, the Italia, to the Pole, but on the way back it crashed on the ice. Amundsen flew out to help search and vanished. A Soviet icebreaker rescued the last survivors.",
+        "es": "En mayo de 1928, Nobile llevó al polo un nuevo dirigible, el Italia, pero al regreso se estrelló contra el hielo. Amundsen salió en avión a ayudar en la búsqueda y desapareció. Un rompehielos soviético rescató a los últimos sobrevivientes."
+      },
+      "details": {
+        "en": "The Italia reached the Pole at 00:24 on 24 May. Headwinds and ice slowed the return, and on 25 May the airship hit the pack ice north-east of Svalbard. Ten men were thrown onto the ice with the cabin, and one died; six others were carried away with the envelope and never found. The survivors lived in a tent they dyed red to be seen from the air and sent SOS calls with a small radio. The meteorologist Finn Malmgren and two officers set off on foot; Malmgren died on the ice. On 18 June Amundsen, who had quarrelled with Nobile, took off from Tromsø in a French flying boat to join the search and was never seen again. On 23 June a Swedish pilot flew Nobile out, and on 12 July the icebreaker Krasin picked up the last men. Seventeen men died in the crash and the rescue; eight survived.",
+        "es": "El Italia llegó al polo a las 00:24 del 24 de mayo. El viento en contra y el hielo frenaron el regreso, y el 25 de mayo el dirigible chocó contra la banquisa al noreste de Svalbard. Diez hombres cayeron al hielo con la cabina, y uno murió; otros seis fueron arrastrados con la envoltura y nunca aparecieron. Los sobrevivientes vivieron en una tienda que tiñeron de rojo para que la vieran desde el aire y enviaron llamadas de auxilio con una pequeña radio. El meteorólogo Finn Malmgren y dos oficiales partieron a pie; Malmgren murió en el hielo. El 18 de junio, Amundsen, que se había peleado con Nobile, despegó de Tromsø en un hidroavión francés para unirse a la búsqueda y nunca más se le volvió a ver. El 23 de junio, un piloto sueco sacó en avión a Nobile, y el 12 de julio el rompehielos Krasin recogió a los últimos hombres. Diecisiete hombres murieron en el accidente y en el rescate; ocho sobrevivieron."
+      },
+      "places": [
+        {
+          "id": "italia",
+          "name": {
+            "en": "Italia (airship)",
+            "es": "Italia (dirigible)"
+          },
+          "at": [
+            28.2333,
+            81.2333
+          ],
+          "cat": "ship",
+          "icon": "🎈",
+          "type": "ship",
+          "date": "1928-05-25",
+          "place": {
+            "en": "Crash site north-east of Nordaustlandet, Svalbard",
+            "es": "Lugar del accidente al noreste de Nordaustlandet, Svalbard"
+          },
+          "text": {
+            "en": "Nobile's second polar airship. After reaching the Pole it crashed on the ice on 25 May 1928. The survivors lived for weeks in a tent dyed red; six men were carried off with the wreck and never found.",
+            "es": "El segundo dirigible polar de Nobile. Tras llegar al polo se estrelló contra el hielo el 25 de mayo de 1928. Los sobrevivientes vivieron semanas en una tienda teñida de rojo; seis hombres fueron arrastrados con los restos y nunca aparecieron."
+          },
+          "wiki": {
+            "en": "Italia (airship)",
+            "es": "Italia (dirigible)"
+          }
+        },
+        {
+          "id": "krasin",
+          "name": {
+            "en": "Krasin (icebreaker)",
+            "es": "Krasin (rompehielos)"
+          },
+          "at": [
+            27.0,
+            80.6
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1928-07-12",
+          "place": {
+            "en": "Off Foyn and Broch islands, Svalbard",
+            "es": "Frente a las islas Foyn y Broch, Svalbard"
+          },
+          "text": {
+            "en": "A Soviet icebreaker that pushed through the pack ice to rescue the last Italia survivors on 12 July 1928, 48 days after the crash. Restored, she is now a museum ship in St. Petersburg.",
+            "es": "Un rompehielos soviético que se abrió paso por la banquisa para rescatar a los últimos sobrevivientes del Italia el 12 de julio de 1928, 48 días después del accidente. Restaurado, hoy es un barco museo en San Petersburgo."
+          },
+          "wiki": {
+            "en": "Krassin (1916 icebreaker)",
+            "es": ""
+          }
+        },
+        {
+          "id": "amundsens-last-flight",
+          "name": {
+            "en": "Amundsen's last flight",
+            "es": "El último vuelo de Amundsen"
+          },
+          "at": [
+            18.9553,
+            69.6496
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1928-06-18",
+          "place": {
+            "en": "Tromsø, Norway",
+            "es": "Tromsø (Noruega)"
+          },
+          "text": {
+            "en": "On 18 June 1928 Amundsen and five others left Tromsø in a French Latham 47 flying boat to join the search for the Italia. They vanished over the Barents Sea; only a float and a fuel tank were ever found.",
+            "es": "El 18 de junio de 1928, Amundsen y otros cinco salieron de Tromsø en un hidroavión francés Latham 47 para unirse a la búsqueda del Italia. Desaparecieron sobre el mar de Barents; solo se encontraron un flotador y un tanque de combustible."
+          },
+          "wiki": {
+            "en": "Latham 47",
+            "es": "Latham 47"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "airships",
+          "path": [
+            [
+              11.92,
+              78.93
+            ],
+            [
+              -8.0,
+              81.0
+            ],
+            [
+              -20.0,
+              83.5
+            ],
+            [
+              0.0,
+              90.0
+            ],
+            [
+              22.0,
+              84.0
+            ],
+            [
+              28.23,
+              81.23
+            ]
+          ],
+          "by": "air",
+          "icon": "🎈",
+          "label": {
+            "en": "The Italia, 23–25 May 1928",
+            "es": "El Italia, 23-25 de mayo de 1928"
+          }
+        },
+        {
+          "side": "amundsen",
+          "path": [
+            [
+              18.96,
+              69.65
+            ],
+            [
+              18.6,
+              71.0
+            ],
+            [
+              18.4,
+              72.4
+            ]
+          ],
+          "by": "air",
+          "icon": "✈️",
+          "label": {
+            "en": "Amundsen's last flight",
+            "es": "El último vuelo de Amundsen"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1958-08-05",
+      "title": {
+        "en": "Nautilus under the Pole",
+        "es": "El Nautilus bajo el polo"
+      },
+      "camera": {
+        "lon": -100.0,
+        "lat": 82.0,
+        "zoom": 1.9
+      },
+      "text": {
+        "en": "On 3 August 1958 the USS Nautilus, the first nuclear-powered submarine, passed beneath the North Pole. After 96 hours and 2,940 km under the ice, she surfaced in the Greenland Sea.",
+        "es": "El 3 de agosto de 1958, el USS Nautilus, el primer submarino nuclear, pasó bajo el polo norte. Tras 96 horas y 2940 km bajo el hielo, salió a la superficie en el mar de Groenlandia."
+      },
+      "details": {
+        "en": "After the Soviet Union launched the satellite Sputnik, President Eisenhower ordered a voyage under the Pole to show what the United States could do. A first try in June 1958 was turned back by deep ice in the shallow Chukchi Sea. Under Commander William Anderson the Nautilus tried again in late July, dived near Point Barrow on 1 August and reached the Pole at 23:15 on 3 August. She steered with a new inertial navigation system, since magnetic compasses are useless so far north, and measured the ocean at the Pole as 4,087 m deep. Ten years earlier, on 23 April 1948, a Soviet party had flown to the Pole, becoming the first people known for certain to stand there. In March 1959 the submarine USS Skate broke through the ice and surfaced at the Pole.",
+        "es": "Después de que la Unión Soviética lanzara el satélite Sputnik, el presidente Eisenhower ordenó un viaje bajo el polo para mostrar de qué era capaz Estados Unidos. Un primer intento, en junio de 1958, fracasó por el hielo profundo en el poco profundo mar de Chukotka. Al mando del comandante William Anderson, el Nautilus volvió a intentarlo a fines de julio, se sumergió cerca de Punta Barrow el 1 de agosto y llegó al polo a las 23:15 del 3 de agosto. Se guiaba con un nuevo sistema de navegación inercial, porque las brújulas magnéticas no sirven tan al norte, y midió la profundidad del océano en el polo: 4087 m. Diez años antes, el 23 de abril de 1948, un grupo soviético había volado al polo y fue el primero del que se sabe con certeza que pisó ese punto. En marzo de 1959, el submarino USS Skate rompió el hielo y emergió en el polo."
+      },
+      "places": [
+        {
+          "id": "uss-nautilus",
+          "name": {
+            "en": "USS Nautilus",
+            "es": "USS Nautilus"
+          },
+          "at": [
+            -155.6,
+            72.2
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1958-08-03",
+          "place": {
+            "en": "Dived in the Barrow Sea Valley; now a museum at Groton, Connecticut",
+            "es": "Se sumergió en el valle submarino de Barrow; hoy es un museo en Groton, Connecticut"
+          },
+          "text": {
+            "en": "The world's first nuclear-powered submarine, launched in 1954. In August 1958 she made the first voyage beneath the North Pole, from the Pacific to the Atlantic. She is now a museum at Groton, Connecticut.",
+            "es": "El primer submarino nuclear del mundo, botado en 1954. En agosto de 1958 hizo el primer viaje bajo el polo norte, del Pacífico al Atlántico. Hoy es un museo en Groton, Connecticut."
+          },
+          "wiki": {
+            "en": "USS Nautilus (SSN-571)",
+            "es": "USS Nautilus (SSN-571)"
+          }
+        },
+        {
+          "id": "north-pole",
+          "name": {
+            "en": "North Pole",
+            "es": "Polo norte"
+          },
+          "at": [
+            0.0,
+            90.0
+          ],
+          "cat": "ice",
+          "type": "place",
+          "date": "1926-05-12",
+          "place": {
+            "en": "Arctic Ocean",
+            "es": "Océano Ártico"
+          },
+          "text": {
+            "en": "The northern end of Earth's axis, on drifting sea ice above some 4,000 m of ocean. The claims of 1908 and 1909 are doubted; the first undisputed visit was the airship Norge's flight over it on 12 May 1926.",
+            "es": "El extremo norte del eje de la Tierra, sobre hielo marino a la deriva y unos 4000 m de océano. Los reclamos de 1908 y 1909 están en duda; la primera visita indiscutida fue el vuelo del dirigible Norge sobre él, el 12 de mayo de 1926."
+          },
+          "wiki": {
+            "en": "North Pole",
+            "es": "Polo norte"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "pole",
+          "path": [
+            [
+              -167.8,
+              62.6
+            ],
+            [
+              -167.8,
+              63.5
+            ],
+            [
+              -168.6,
+              64.8
+            ],
+            [
+              -168.8,
+              65.9
+            ],
+            [
+              -168.5,
+              67.5
+            ],
+            [
+              -166.5,
+              69.3
+            ],
+            [
+              -163.3,
+              70.8
+            ],
+            [
+              -157.5,
+              71.95
+            ],
+            [
+              -155.6,
+              72.2
+            ],
+            [
+              -155.0,
+              76.0
+            ],
+            [
+              -150.0,
+              82.0
+            ],
+            [
+              0.0,
+              90.0
+            ],
+            [
+              -5.0,
+              84.0
+            ],
+            [
+              -3.0,
+              81.0
+            ],
+            [
+              -2.0,
+              79.5
+            ]
+          ],
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "Under the ice",
+            "es": "Bajo el hielo"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1969-05",
+      "title": {
+        "en": "To the Pole over the ice",
+        "es": "Al polo sobre el hielo"
+      },
+      "camera": {
+        "lon": -100.0,
+        "lat": 84.0,
+        "zoom": 2.0
+      },
+      "text": {
+        "en": "In April 1968 Ralph Plaisted's team reached the Pole by snowmobile, the first surface journey to be confirmed. On 6 April 1969 Wally Herbert's dog teams arrived, on their way across the whole Arctic Ocean.",
+        "es": "En abril de 1968, el equipo de Ralph Plaisted llegó al polo en motonieve, el primer viaje por la superficie que se confirmó. El 6 de abril de 1969 llegaron los trineos de perros de Wally Herbert, que cruzaban todo el océano Ártico."
+      },
+      "details": {
+        "en": "Plaisted, an insurance salesman from Minnesota, set out from Ward Hunt Island, off Ellesmere Island, on 9 March 1968 with Walt Pederson, Gerry Pitzl and Jean-Luc Bombardier, riding Ski-Doo snowmobiles and resupplied by air drops. After 43 days on the ice they reached the Pole, and on 20 April a US Air Force weather plane flying overhead confirmed their position. Herbert's British Trans-Arctic Expedition, with Allan Gill, Roy Koerner and Kenneth Hedges, left Point Barrow in 1968 with dog teams; Herbert had learned to drive dogs from Inuit in Greenland. They drifted with the ice through the winter, reached the Pole by way of the Pole of Inaccessibility, and went on to Svalbard in May 1969: the first surface crossing of the Arctic Ocean. Some sources call Herbert's the first undisputed surface journey to the Pole, because of false rumours that Plaisted had been helped by plane.",
+        "es": "Plaisted, un vendedor de seguros de Minnesota, partió de la isla Ward Hunt, frente a la isla de Ellesmere, el 9 de marzo de 1968 con Walt Pederson, Gerry Pitzl y Jean-Luc Bombardier, en motonieves Ski-Doo y con provisiones lanzadas desde aviones. Tras 43 días sobre el hielo llegaron al polo, y el 20 de abril un avión meteorológico de la Fuerza Aérea de Estados Unidos que voló sobre ellos confirmó su posición. La Expedición Transártica Británica de Herbert, con Allan Gill, Roy Koerner y Kenneth Hedges, salió de Punta Barrow en 1968 con trineos de perros; Herbert había aprendido a conducir perros con los inuit de Groenlandia. Derivaron con el hielo durante el invierno, llegaron al polo pasando por el polo de inaccesibilidad y siguieron hasta Svalbard en mayo de 1969: el primer cruce del océano Ártico por la superficie. Algunas fuentes consideran el de Herbert el primer viaje indiscutido al polo por la superficie, por rumores falsos de que Plaisted había recibido ayuda aérea."
+      },
+      "places": [
+        {
+          "id": "ralph-plaisted",
+          "name": {
+            "en": "Ralph Plaisted",
+            "es": "Ralph Plaisted"
+          },
+          "at": [
+            -74.1667,
+            83.1
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1968-04-19",
+          "life": [
+            "1927",
+            "2008-09-08"
+          ],
+          "place": {
+            "en": "Ward Hunt Island, Nunavut, Canada",
+            "es": "Isla Ward Hunt, Nunavut (Canadá)"
+          },
+          "text": {
+            "en": "A Minnesota insurance salesman and snowmobile fan. On 19 April 1968 he and three companions reached the North Pole on snowmobiles: the first confirmed journey to the Pole over the surface of the ice.",
+            "es": "Un vendedor de seguros de Minnesota, aficionado a las motonieves. El 19 de abril de 1968, él y tres compañeros llegaron al polo norte en motonieve: el primer viaje confirmado al polo por la superficie del hielo."
+          },
+          "wiki": {
+            "en": "Ralph Plaisted",
+            "es": ""
+          }
+        },
+        {
+          "id": "wally-herbert",
+          "name": {
+            "en": "Wally Herbert",
+            "es": "Wally Herbert"
+          },
+          "at": [
+            -156.4792,
+            71.3889
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1969-04-06",
+          "life": [
+            "1934-10-24",
+            "2007-06-12"
+          ],
+          "place": {
+            "en": "Point Barrow (Nuvuk), Alaska, USA",
+            "es": "Punta Barrow (Nuvuk), Alaska (EE. UU.)"
+          },
+          "text": {
+            "en": "A British polar explorer who learned to drive dogs from the Inuit of Greenland. In 1969 he became the first man fully recognized for walking to the North Pole, on the first crossing of the Arctic Ocean over its ice.",
+            "es": "Un explorador polar británico que aprendió a conducir perros con los inuit de Groenlandia. En 1969 fue el primer hombre plenamente reconocido por llegar caminando al polo norte, en el primer cruce del océano Ártico sobre su hielo."
+          },
+          "wiki": {
+            "en": "Wally Herbert",
+            "es": "Wally Herbert"
+          }
+        },
+        {
+          "id": "north-pole",
+          "name": {
+            "en": "North Pole",
+            "es": "Polo norte"
+          },
+          "at": [
+            0.0,
+            90.0
+          ],
+          "cat": "ice",
+          "type": "place",
+          "date": "1926-05-12",
+          "place": {
+            "en": "Arctic Ocean",
+            "es": "Océano Ártico"
+          },
+          "text": {
+            "en": "The northern end of Earth's axis, on drifting sea ice above some 4,000 m of ocean. The claims of 1908 and 1909 are doubted; the first undisputed visit was the airship Norge's flight over it on 12 May 1926.",
+            "es": "El extremo norte del eje de la Tierra, sobre hielo marino a la deriva y unos 4000 m de océano. Los reclamos de 1908 y 1909 están en duda; la primera visita indiscutida fue el vuelo del dirigible Norge sobre él, el 12 de mayo de 1926."
+          },
+          "wiki": {
+            "en": "North Pole",
+            "es": "Polo norte"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "pole",
+          "path": [
+            [
+              -74.17,
+              83.1
+            ],
+            [
+              -74.0,
+              85.0
+            ],
+            [
+              -74.0,
+              87.0
+            ],
+            [
+              -74.0,
+              89.0
+            ],
+            [
+              0.0,
+              90.0
+            ]
+          ],
+          "by": "ice",
+          "icon": "🛷",
+          "label": {
+            "en": "Plaisted, 1968",
+            "es": "Plaisted, 1968"
+          }
+        },
+        {
+          "side": "pole",
+          "path": [
+            [
+              -156.48,
+              71.39
+            ],
+            [
+              -157.5,
+              74.0
+            ],
+            [
+              -160.0,
+              77.5
+            ],
+            [
+              -165.0,
+              80.5
+            ],
+            [
+              -170.0,
+              83.0
+            ],
+            [
+              -176.0,
+              85.8
+            ],
+            [
+              0.0,
+              90.0
+            ],
+            [
+              20.0,
+              86.0
+            ],
+            [
+              21.0,
+              83.0
+            ],
+            [
+              20.3,
+              80.8
+            ]
+          ],
+          "by": "ice",
+          "icon": "🛷",
+          "label": {
+            "en": "Herbert, 1968–69",
+            "es": "Herbert, 1968-1969"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "The race for the Arctic passages and the Pole cost many lives, from Franklin's 129 men to the crews lost with the Italia, and in the end ships, aircraft and submarines did what sails and sledges could not. Its lasting lesson came from the Inuit: the explorers who learned from them survived, and Inuit memory solved the Franklin mystery that Victorian Britain refused to hear. Today melting sea ice is opening both passages to shipping, through a homeland the Inuit never left.",
+    "es": "La carrera por los pasos árticos y el polo costó muchas vidas, de los 129 hombres de Franklin a las tripulaciones perdidas con el Italia, y al final los barcos, aviones y submarinos lograron lo que las velas y los trineos no pudieron. Su lección más duradera vino de los inuit: los exploradores que aprendieron de ellos sobrevivieron, y la memoria inuit resolvió el misterio de Franklin que la Gran Bretaña victoriana se negó a escuchar. Hoy el deshielo está abriendo ambos pasos a la navegación, a través de una tierra que los inuit nunca abandonaron."
+  },
+  "sources": [
+    {
+      "title": "Franklin's lost expedition (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Franklin's_lost_expedition"
+    },
+    {
+      "title": "John Franklin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/John_Franklin"
+    },
+    {
+      "title": "HMS Erebus (1826) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/HMS_Erebus_(1826)"
+    },
+    {
+      "title": "HMS Terror (1813) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/HMS_Terror_(1813)"
+    },
+    {
+      "title": "Beechey Island (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Beechey_Island"
+    },
+    {
+      "title": "King William Island (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/King_William_Island"
+    },
+    {
+      "title": "John Rae (explorer) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/John_Rae_(explorer)"
+    },
+    {
+      "title": "Francis Crozier (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Francis_Crozier"
+    },
+    {
+      "title": "Stromness (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Stromness"
+    },
+    {
+      "title": "Disko Bay (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Disko_Bay"
+    },
+    {
+      "title": "Inuit (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Inuit"
+    },
+    {
+      "title": "Vega Expedition (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vega_Expedition"
+    },
+    {
+      "title": "Adolf Erik Nordenskiöld (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Adolf_Erik_Nordenskiöld"
+    },
+    {
+      "title": "Northeast Passage (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Northeast_Passage"
+    },
+    {
+      "title": "Cape Chelyuskin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cape_Chelyuskin"
+    },
+    {
+      "title": "Chukchi people (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chukchi_people"
+    },
+    {
+      "title": "Nansen's Fram expedition (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nansen's_Fram_expedition"
+    },
+    {
+      "title": "Fridtjof Nansen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fridtjof_Nansen"
+    },
+    {
+      "title": "Fram (ship) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fram_(ship)"
+    },
+    {
+      "title": "Jeannette expedition (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jeannette_expedition"
+    },
+    {
+      "title": "Hjalmar Johansen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hjalmar_Johansen"
+    },
+    {
+      "title": "Farthest North (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Farthest_North"
+    },
+    {
+      "title": "Franz Josef Land (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Franz_Josef_Land"
+    },
+    {
+      "title": "Frederick George Jackson (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Frederick_George_Jackson"
+    },
+    {
+      "title": "Roald Amundsen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Roald_Amundsen"
+    },
+    {
+      "title": "Gjøa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gjøa"
+    },
+    {
+      "title": "Gjoa Haven (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gjoa_Haven"
+    },
+    {
+      "title": "Netsilik (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Netsilik"
+    },
+    {
+      "title": "North magnetic pole (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/North_magnetic_pole"
+    },
+    {
+      "title": "Herschel Island (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Herschel_Island"
+    },
+    {
+      "title": "Eagle, Alaska (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Eagle,_Alaska"
+    },
+    {
+      "title": "Nome, Alaska (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nome,_Alaska"
+    },
+    {
+      "title": "Northwest Passage (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Northwest_Passage"
+    },
+    {
+      "title": "Frederick Cook (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Frederick_Cook"
+    },
+    {
+      "title": "Inughuit (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Inughuit"
+    },
+    {
+      "title": "Meighen Island (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Meighen_Island"
+    },
+    {
+      "title": "Robert Peary (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Robert_Peary"
+    },
+    {
+      "title": "Matthew Henson (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Matthew_Henson"
+    },
+    {
+      "title": "Cape York meteorite (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cape_York_meteorite"
+    },
+    {
+      "title": "North Pole (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/North_Pole"
+    },
+    {
+      "title": "Norge (airship) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Norge_(airship)"
+    },
+    {
+      "title": "Umberto Nobile (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Umberto_Nobile"
+    },
+    {
+      "title": "Richard E. Byrd (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Richard_E._Byrd"
+    },
+    {
+      "title": "Teller, Alaska (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Teller,_Alaska"
+    },
+    {
+      "title": "Italia (airship) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Italia_(airship)"
+    },
+    {
+      "title": "Krassin (1916 icebreaker) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Krassin_(1916_icebreaker)"
+    },
+    {
+      "title": "Latham 47 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Latham_47"
+    },
+    {
+      "title": "USS Nautilus (SSN-571) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/USS_Nautilus_(SSN-571)"
+    },
+    {
+      "title": "Ralph Plaisted (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ralph_Plaisted"
+    },
+    {
+      "title": "Wally Herbert (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wally_Herbert"
+    },
+    {
+      "title": "Point Barrow (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Point_Barrow"
+    },
+    {
+      "title": "Ny-Ålesund (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ny-Ålesund"
+    }
+  ]
+}

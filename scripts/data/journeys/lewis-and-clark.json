@@ -1,0 +1,3473 @@
+{
+  "id": "lewis-and-clark",
+  "name": {
+    "en": "Lewis and Clark",
+    "es": "Lewis y Clark"
+  },
+  "icon": "🛶",
+  "era": "modern",
+  "region": {
+    "en": "The Missouri and Columbia rivers, North America",
+    "es": "Los ríos Misuri y Columbia, América del Norte"
+  },
+  "start": "1803",
+  "end": "1806-09-23",
+  "summary": {
+    "en": "Up the Missouri, over the Rockies and down the Columbia to the Pacific and back, 1803–1806: the Corps of Discovery, Sacagawea and York, and the Native nations whose help and land the journey depended on.",
+    "es": "Río arriba por el Misuri, sobre las Rocosas y río abajo por el Columbia hasta el Pacífico y de vuelta, 1803-1806: el Cuerpo de Descubrimiento, Sacagawea y York, y las naciones indígenas de cuya ayuda y tierra dependió el viaje."
+  },
+  "camera": {
+    "lon": -103.0,
+    "lat": 44.0,
+    "zoom": 2.6
+  },
+  "sides": [
+    {
+      "id": "corps",
+      "name": {
+        "en": "The Corps of Discovery",
+        "es": "El Cuerpo de Descubrimiento"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "lewis",
+      "name": {
+        "en": "Lewis's party",
+        "es": "El grupo de Lewis"
+      },
+      "color": "#2e6f9e"
+    },
+    {
+      "id": "clark",
+      "name": {
+        "en": "Clark's party",
+        "es": "El grupo de Clark"
+      },
+      "color": "#7d3c98"
+    }
+  ],
+  "steps": [
+    {
+      "date": "1803-12-12",
+      "title": {
+        "en": "A purchase and a mission",
+        "es": "Una compra y una misión"
+      },
+      "camera": {
+        "lon": -85.09,
+        "lat": 35.29,
+        "zoom": 7.3
+      },
+      "text": {
+        "en": "In 1803 the United States bought France's claim to Louisiana, and President Jefferson sent Meriwether Lewis west. Lewis took a keelboat down the Ohio, met William Clark and York, and set up camp near St. Louis.",
+        "es": "En 1803, Estados Unidos compró a Francia su reclamo sobre Luisiana, y el presidente Jefferson envió a Meriwether Lewis al oeste. Lewis bajó el Ohio en una barcaza, se unió a William Clark y a York, y acampó cerca de San Luis."
+      },
+      "details": {
+        "en": "On 20 June 1803 Jefferson gave Lewis, his secretary, his instructions: find 'the most direct & practicable water communication across this continent, for the purposes of commerce', record the land, plants and animals, and tell the nations along the Missouri that their lands now belonged to the United States and that they had a new 'great father' in Washington. Lewis had a 55-foot keelboat built at Pittsburgh and set off down the Ohio River on 31 August with his Newfoundland dog, Seaman. On 15 October, at Clarksville by the Falls of the Ohio, he met his old army friend William Clark, who brought York, a Black man he held in slavery. Over the next two weeks they chose nine young recruits from among the volunteers. On 12 December Clark chose the site of Camp Dubois, on the Illinois bank opposite the mouth of the Missouri, to train the men through the winter.",
+        "es": "El 20 de junio de 1803, Jefferson dio a Lewis, su secretario, sus instrucciones: encontrar «la comunicación por agua más directa y practicable a través de este continente, con fines comerciales», registrar la tierra, las plantas y los animales, y decir a las naciones del Misuri que sus tierras ahora pertenecían a Estados Unidos y que tenían un nuevo «gran padre» en Washington. Lewis mandó construir en Pittsburgh una barcaza de 17 metros y bajó por el río Ohio desde el 31 de agosto con su perro terranova, Seaman. El 15 de octubre, en Clarksville, junto a las cataratas del Ohio, se reunió con su viejo amigo del ejército William Clark, que llevaba a York, un hombre negro al que tenía esclavizado. En las dos semanas siguientes eligieron a nueve jóvenes reclutas entre los voluntarios. El 12 de diciembre, Clark escogió el sitio del campamento Dubois, en la orilla de Illinois frente a la desembocadura del Misuri, para entrenar a los hombres durante el invierno."
+      },
+      "places": [
+        {
+          "id": "louisiana-purchase",
+          "name": {
+            "en": "Louisiana Purchase",
+            "es": "Compra de Luisiana"
+          },
+          "at": [
+            -90.064,
+            29.9575
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1803-04-30",
+          "place": {
+            "en": "Signed in Paris; handed over at New Orleans and St. Louis",
+            "es": "Firmada en París; entregada en Nueva Orleans y San Luis"
+          },
+          "text": {
+            "en": "In 1803 France sold the United States its claim to about 2.1 million km² west of the Mississippi for $15 million. The Native nations who lived there were never asked.",
+            "es": "En 1803, Francia vendió a Estados Unidos su reclamo sobre unos 2,1 millones de km² al oeste del Misisipi por 15 millones de dólares. Nadie consultó a las naciones indígenas que vivían allí."
+          },
+          "details": {
+            "en": "The treaty was signed in Paris on 30 April 1803 and announced in Washington on 4 July. France handed over New Orleans on 20 December 1803, and on 9 and 10 March 1804, on 'Three Flags Day', the flags of Spain, France and the United States were raised in turn at St. Louis. The deal nearly doubled the size of the country, but France had only sold its claim: the land was home to dozens of nations who had ceded it to no one. Over the next two centuries the United States paid about $2.6 billion in treaties and settlements to Native nations for the same land, often signed under pressure, so the $15 million paid to France was only about 3.5 percent of the total.",
+            "es": "El tratado se firmó en París el 30 de abril de 1803 y se anunció en Washington el 4 de julio. Francia entregó Nueva Orleans el 20 de diciembre de 1803, y el 9 y 10 de marzo de 1804, el «Día de las Tres Banderas», se izaron una tras otra las banderas de España, Francia y Estados Unidos en San Luis. El trato casi duplicó el tamaño del país, pero Francia solo vendió su reclamo: la tierra era el hogar de decenas de naciones que no la habían cedido a nadie. En los dos siglos siguientes, Estados Unidos pagó unos 2600 millones de dólares en tratados y compensaciones a las naciones indígenas por esa misma tierra, a menudo firmados bajo presión; los 15 millones pagados a Francia fueron apenas un 3,5 % del total."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Price",
+                "es": "Precio"
+              },
+              "value": {
+                "en": "$15 million (80 million francs)",
+                "es": "15 millones de dólares (80 millones de francos)"
+              }
+            },
+            {
+              "label": {
+                "en": "Area",
+                "es": "Superficie"
+              },
+              "value": {
+                "en": "about 2,140,000 km²",
+                "es": "unos 2 140 000 km²"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Louisiana Purchase",
+            "es": "Compra de Luisiana"
+          }
+        },
+        {
+          "id": "meriwether-lewis",
+          "name": {
+            "en": "Meriwether Lewis",
+            "es": "Meriwether Lewis"
+          },
+          "at": [
+            -80.01,
+            40.441
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1803-08-31",
+          "life": [
+            "1774-08-18",
+            "1809-10-11"
+          ],
+          "place": {
+            "en": "Pittsburgh, Pennsylvania, USA",
+            "es": "Pittsburgh, Pensilvania (EE. UU.)"
+          },
+          "text": {
+            "en": "Jefferson's secretary and an army captain, chosen to lead the expedition. He trained in botany, medicine and navigation, and his journals described plants and animals unknown to science, though not to Native peoples.",
+            "es": "Secretario de Jefferson y capitán del ejército, elegido para dirigir la expedición. Estudió botánica, medicina y navegación, y sus diarios describieron plantas y animales desconocidos para la ciencia, aunque no para los pueblos indígenas."
+          },
+          "details": {
+            "en": "Lewis grew up in Virginia and Georgia, joined the army in 1795 and became President Thomas Jefferson's private secretary in 1801. Before the journey he studied with scientists in Philadelphia and Lancaster. He set out from Pittsburgh on 31 August 1803 with the new keelboat and his dog, Seaman. After the expedition Jefferson made him governor of Upper Louisiana, but he fell into debt and struggled to prepare the journals for publication. On 11 October 1809 he died of gunshot wounds at an inn on the Natchez Trace in Tennessee. Jefferson and Clark believed it was suicide; some of his family and some historians have argued it was murder.",
+            "es": "Lewis creció en Virginia y Georgia, entró en el ejército en 1795 y en 1801 se convirtió en secretario privado del presidente Thomas Jefferson. Antes del viaje estudió con científicos en Filadelfia y Lancaster. Partió de Pittsburgh el 31 de agosto de 1803 con la nueva barcaza y su perro, Seaman. Después de la expedición, Jefferson lo nombró gobernador de la Alta Luisiana, pero se endeudó y le costó preparar los diarios para su publicación. El 11 de octubre de 1809 murió por heridas de bala en una posada del camino de Natchez, en Tennessee. Jefferson y Clark creyeron que fue un suicidio; parte de su familia y algunos historiadores sostienen que fue un asesinato."
+          },
+          "wiki": {
+            "en": "Meriwether Lewis",
+            "es": "Meriwether Lewis"
+          }
+        },
+        {
+          "id": "william-clark",
+          "name": {
+            "en": "William Clark",
+            "es": "William Clark"
+          },
+          "at": [
+            -85.765,
+            38.277
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1803-10-15",
+          "life": [
+            "1770-08-01",
+            "1838-09-01"
+          ],
+          "place": {
+            "en": "Clarksville, by the Falls of the Ohio, Indiana, USA",
+            "es": "Clarksville, junto a las cataratas del Ohio, Indiana (EE. UU.)"
+          },
+          "text": {
+            "en": "Lewis's co-captain and the expedition's mapmaker. Later, as the US official for Indian affairs in the West, he negotiated 37 treaties that moved millions of acres from Native nations to the United States.",
+            "es": "Cocapitán de Lewis y cartógrafo de la expedición. Más tarde, como funcionario a cargo de los asuntos indígenas en el Oeste, negoció 37 tratados que pasaron millones de acres de las naciones indígenas a Estados Unidos."
+          },
+          "details": {
+            "en": "Clark was born in Virginia to a planter family that held enslaved people, and grew up near Louisville, Kentucky. He had been Lewis's commanding officer in the army. On the journey he drew many of the expedition's maps and kept a journal. Afterwards he became governor of the Missouri Territory and, from 1822 to his death, Superintendent of Indian Affairs at St. Louis. He saw himself as a protector of Native peoples, yet he carried out the policy of Indian removal. He was also a harsh enslaver all his life: he whipped York and other people he held, and left enslaved people to his children in his will.",
+            "es": "Clark nació en Virginia en una familia de hacendados que tenía personas esclavizadas, y creció cerca de Louisville, Kentucky. Había sido el superior de Lewis en el ejército. En el viaje dibujó muchos de los mapas de la expedición y llevó un diario. Después fue gobernador del Territorio de Misuri y, desde 1822 hasta su muerte, superintendente de Asuntos Indígenas en San Luis. Se veía como protector de los pueblos indígenas, pero ejecutó la política de expulsión de los indígenas. Además, fue un esclavista duro toda su vida: azotó a York y a otras personas que tenía esclavizadas, y en su testamento dejó personas esclavizadas a sus hijos."
+          },
+          "wiki": {
+            "en": "William Clark",
+            "es": "William Clark"
+          }
+        },
+        {
+          "id": "york",
+          "name": {
+            "en": "York",
+            "es": "York"
+          },
+          "at": [
+            -85.7585,
+            38.2527
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1803-10-15",
+          "place": {
+            "en": "Louisville, Kentucky, USA",
+            "es": "Louisville, Kentucky (EE. UU.)"
+          },
+          "text": {
+            "en": "A Black man enslaved by William Clark, and the only African American on the expedition. He hunted, paddled and helped win the trust of Native nations, yet he was given nothing and kept in slavery for years after.",
+            "es": "Un hombre negro esclavizado por William Clark, y el único afroamericano de la expedición. Cazó, remó y ayudó a ganar la confianza de las naciones indígenas, pero no recibió nada y siguió esclavizado durante años."
+          },
+          "details": {
+            "en": "York was born in Virginia between 1770 and 1775 and was inherited by Clark in 1799. On the journey he carried a rifle, which enslaved people were rarely allowed, nursed the dying Sergeant Floyd and was a sensation among the Arikara, Mandan and other nations, who had never seen a Black man. In November 1805 his view was recorded with everyone else's on where to spend the winter. Back home, he asked for his freedom because of his 'immense services'. Clark refused, whipped him, jailed him and kept him away from his wife in Louisville. He was still enslaved, working as a wagoner, about ten years later; no record shows he was ever freed. In 2001 he was made an honorary sergeant of the US Army.",
+            "es": "York nació en Virginia entre 1770 y 1775 y Clark lo heredó en 1799. En el viaje llevó un rifle, algo que casi nunca se permitía a una persona esclavizada, cuidó al moribundo sargento Floyd y causó sensación entre los arikara, los mandan y otras naciones, que nunca habían visto a un hombre negro. En noviembre de 1805 se anotó su opinión, como la de todos, sobre dónde pasar el invierno. De vuelta, pidió su libertad por sus «inmensos servicios». Clark se negó, lo azotó, lo encarceló y lo mantuvo lejos de su esposa en Louisville. Unos diez años después seguía esclavizado, trabajando como carretero; ningún documento muestra que fuera liberado. En 2001 fue nombrado sargento honorario del Ejército de Estados Unidos."
+          },
+          "wiki": {
+            "en": "York (explorer)",
+            "es": ""
+          }
+        },
+        {
+          "id": "camp-dubois",
+          "name": {
+            "en": "Camp Dubois",
+            "es": "Campamento Dubois"
+          },
+          "at": [
+            -90.1013,
+            38.8027
+          ],
+          "cat": "camp",
+          "icon": "🏕️",
+          "type": "site",
+          "date": "1803-12-12",
+          "place": {
+            "en": "Near Wood River and Hartford, Illinois, USA",
+            "es": "Cerca de Wood River y Hartford, Illinois (EE. UU.)"
+          },
+          "text": {
+            "en": "The winter camp, on the Illinois bank opposite the mouth of the Missouri, where the Corps trained in 1803–04. It was still US territory, while the land across the river was not yet handed over.",
+            "es": "El campamento de invierno, en la orilla de Illinois frente a la desembocadura del Misuri, donde el Cuerpo se entrenó en 1803-1804. Era territorio de Estados Unidos, mientras que la tierra al otro lado del río aún no se había entregado."
+          },
+          "wiki": {
+            "en": "Camp Dubois",
+            "es": "Campamento Dubois"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "corps",
+          "path": [
+            [
+              -80.01,
+              40.44
+            ],
+            [
+              -80.25,
+              40.62
+            ],
+            [
+              -80.52,
+              40.63
+            ],
+            [
+              -80.62,
+              40.4
+            ],
+            [
+              -80.73,
+              40.07
+            ],
+            [
+              -80.88,
+              39.63
+            ],
+            [
+              -81.75,
+              39.19
+            ],
+            [
+              -82.16,
+              38.83
+            ],
+            [
+              -82.78,
+              38.57
+            ],
+            [
+              -83.62,
+              38.66
+            ],
+            [
+              -84.51,
+              39.09
+            ],
+            [
+              -85.0,
+              38.77
+            ],
+            [
+              -85.76,
+              38.28
+            ],
+            [
+              -86.34,
+              38.15
+            ],
+            [
+              -86.99,
+              37.93
+            ],
+            [
+              -87.67,
+              37.88
+            ],
+            [
+              -88.31,
+              37.45
+            ],
+            [
+              -88.7,
+              37.14
+            ],
+            [
+              -89.13,
+              36.99
+            ],
+            [
+              -89.45,
+              37.44
+            ],
+            [
+              -89.91,
+              37.9
+            ],
+            [
+              -90.08,
+              38.01
+            ],
+            [
+              -90.18,
+              38.63
+            ],
+            [
+              -90.1,
+              38.8
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶",
+          "label": {
+            "en": "Down the Ohio",
+            "es": "Por el Ohio abajo"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1804-08-03",
+      "title": {
+        "en": "Up the Missouri",
+        "es": "Río arriba por el Misuri"
+      },
+      "camera": {
+        "lon": -93.06,
+        "lat": 40.01,
+        "zoom": 17.3
+      },
+      "text": {
+        "en": "On 14 May 1804 more than 40 men set out up the Missouri in a keelboat and two pirogues, rowing, poling and towing against the current. On 3 August they held their first council, with Otoe and Missouria chiefs.",
+        "es": "El 14 de mayo de 1804, más de 40 hombres partieron río arriba por el Misuri en una barcaza y dos piraguas, remando, empujando con pértigas y tirando de cuerdas contra la corriente. El 3 de agosto celebraron su primer consejo, con jefes otoe y missouria."
+      },
+      "details": {
+        "en": "Clark led the boats out of Camp Dubois on 14 May; Lewis joined them at St. Charles, and on 21 May they pushed off. The Missouri was fast and full of snags and sandbars, and most days the men rowed, poled or hauled the heavy keelboat with ropes from the bank. Discipline was harsh: men were flogged for going absent without leave, stealing whiskey and sleeping on guard. They passed La Charette, the last village of European Americans, rested at Kaw Point where the Kansas River joins the Missouri, and reached the Platte on 21 July. On a bluff near today's Fort Calhoun, Nebraska, they met Otoe and Missouria leaders on 3 August. The captains gave out peace medals and gifts and told the chiefs that they now had a new 'great father' in Washington. The chiefs wanted guns more than token gifts. The captains named the place Council Bluff.",
+        "es": "Clark sacó los botes del campamento Dubois el 14 de mayo; Lewis se les unió en St. Charles, y el 21 de mayo zarparon. El Misuri era rápido y estaba lleno de troncos y bancos de arena, y casi todos los días los hombres remaban, empujaban con pértigas o tiraban de la pesada barcaza con cuerdas desde la orilla. La disciplina era dura: azotaban a quienes se ausentaban sin permiso, robaban whisky o se dormían de guardia. Pasaron La Charette, la última aldea de colonos de origen europeo, descansaron en Kaw Point, donde el río Kansas se une al Misuri, y llegaron al Platte el 21 de julio. En un risco cerca de la actual Fort Calhoun, Nebraska, se reunieron con líderes otoe y missouria el 3 de agosto. Los capitanes repartieron medallas de la paz y regalos y dijeron a los jefes que ahora tenían un nuevo «gran padre» en Washington. Los jefes querían armas más que regalos simbólicos. Los capitanes llamaron al lugar Council Bluff."
+      },
+      "places": [
+        {
+          "id": "seaman",
+          "name": {
+            "en": "Seaman",
+            "es": "Seaman"
+          },
+          "at": [
+            -90.481,
+            38.782
+          ],
+          "cat": "traveller",
+          "type": "animal",
+          "date": "1803",
+          "place": {
+            "en": "St. Charles, Missouri, USA (his statue)",
+            "es": "St. Charles, Misuri (EE. UU.) (su estatua)"
+          },
+          "text": {
+            "en": "Lewis's Newfoundland dog, bought in Pittsburgh for $20. He caught squirrels and geese, guarded camp against bears and bison, and was the only animal to make the whole journey.",
+            "es": "El perro terranova de Lewis, comprado en Pittsburgh por 20 dólares. Atrapaba ardillas y gansos, protegía el campamento de osos y bisontes, y fue el único animal que hizo todo el viaje."
+          },
+          "wiki": {
+            "en": "Seaman (dog)",
+            "es": "Seaman (perro Terranova)"
+          }
+        },
+        {
+          "id": "missouri-river",
+          "name": {
+            "en": "Missouri River",
+            "es": "Río Misuri"
+          },
+          "at": [
+            -94.6075,
+            39.1144
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1804-06-26",
+          "place": {
+            "en": "Kaw Point, Kansas City, Kansas, USA",
+            "es": "Kaw Point, Kansas City, Kansas (EE. UU.)"
+          },
+          "text": {
+            "en": "One of North America's two longest rivers, flowing some 3,770 km from the Rockies to the Mississippi. The Corps fought its current for a year and a half, rowing, poling and hauling their boats from the bank.",
+            "es": "Uno de los dos ríos más largos de América del Norte, que corre unos 3770 km desde las Rocosas hasta el Misisipi. El Cuerpo luchó contra su corriente durante año y medio, remando, empujando con pértigas y tirando de los botes desde la orilla."
+          },
+          "wiki": {
+            "en": "Missouri River",
+            "es": "Río Misuri"
+          }
+        },
+        {
+          "id": "otoe",
+          "name": {
+            "en": "Otoe and Missouria",
+            "es": "Otoe y missouria"
+          },
+          "at": [
+            -96.015,
+            41.454
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1804-08-03",
+          "place": {
+            "en": "Council Bluff, near Fort Calhoun, Nebraska, USA",
+            "es": "Council Bluff, cerca de Fort Calhoun, Nebraska (EE. UU.)"
+          },
+          "text": {
+            "en": "Siouan-speaking farmers and bison hunters of the lower Platte, the first nation the Corps met in council, on 3 August 1804. In 1854 they had to give up most of their land; today their nation is based in Oklahoma.",
+            "es": "Agricultores y cazadores de bisontes del bajo Platte, de lengua siux, la primera nación con la que el Cuerpo celebró un consejo, el 3 de agosto de 1804. En 1854 tuvieron que ceder casi toda su tierra; hoy su nación tiene sede en Oklahoma."
+          },
+          "wiki": {
+            "en": "Otoe",
+            "es": "Otoe"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "corps",
+          "path": [
+            [
+              -90.1,
+              38.8
+            ],
+            [
+              -90.13,
+              38.82
+            ],
+            [
+              -90.48,
+              38.78
+            ],
+            [
+              -91.04,
+              38.58
+            ],
+            [
+              -92.07,
+              38.56
+            ],
+            [
+              -92.92,
+              39.03
+            ],
+            [
+              -93.39,
+              39.22
+            ],
+            [
+              -94.33,
+              39.21
+            ],
+            [
+              -94.61,
+              39.11
+            ],
+            [
+              -94.86,
+              39.77
+            ],
+            [
+              -95.34,
+              40.02
+            ],
+            [
+              -95.84,
+              40.69
+            ],
+            [
+              -95.87,
+              41.05
+            ],
+            [
+              -96.02,
+              41.45
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        }
+      ]
+    },
+    {
+      "date": "1804-09-25",
+      "title": {
+        "en": "Standoff with the Lakota",
+        "es": "Tensión con los lakota"
+      },
+      "camera": {
+        "lon": -98.2,
+        "lat": 42.9,
+        "zoom": 24.6
+      },
+      "text": {
+        "en": "Sergeant Charles Floyd died in August, the only member lost on the journey. On 25 September, at the Bad River, Lakota warriors and the soldiers drew their weapons, until the chief Black Buffalo stepped in.",
+        "es": "En agosto murió el sargento Charles Floyd, el único miembro que perdió la expedición. El 25 de septiembre, en el río Bad, guerreros lakota y soldados se apuntaron con sus armas, hasta que intervino el jefe Black Buffalo."
+      },
+      "details": {
+        "en": "Floyd died on 20 August, probably of a burst appendix, after York had nursed him; he was buried on a bluff above the river at today's Sioux City. On 30 August the captains met Yankton leaders, who asked for guns and whiskey. On the plains the men saw herds of bison, elk and pronghorn. The Lakota, or Teton Sioux, controlled trade on this stretch of the river and expected gifts from anyone who passed. Near the mouth of the Bad River the council went wrong: warriors seized a boat's cable and a war leader demanded more gifts. Clark drew his sword, Lewis had the swivel gun loaded and warriors strung their bows. Black Buffalo had the cable let go and allowed the boats to go on upriver. Clark's journal called the Lakota 'the vilest miscreants of the savage race'; in Lakota eyes, the strangers had simply passed on Lakota terms.",
+        "es": "Floyd murió el 20 de agosto, probablemente de una apendicitis, después de que York lo cuidara; lo enterraron en un risco sobre el río, en la actual Sioux City. El 30 de agosto, los capitanes se reunieron con líderes yankton, que pidieron armas y whisky. En las llanuras, los hombres vieron manadas de bisontes, uapitíes y berrendos. Los lakota, o sioux teton, controlaban el comercio en este tramo del río y esperaban regalos de quien pasara. Cerca de la desembocadura del río Bad, el consejo salió mal: unos guerreros agarraron la cuerda de un bote y un jefe de guerra exigió más regalos. Clark desenvainó la espada, Lewis mandó cargar el cañón giratorio y los guerreros tensaron sus arcos. Black Buffalo hizo soltar la cuerda y dejó que los botes siguieran río arriba. El diario de Clark llamó a los lakota «los más viles bribones de la raza salvaje»; a ojos de los lakota, los extraños simplemente habían pasado en los términos que ellos fijaron."
+      },
+      "places": [
+        {
+          "id": "charles-floyd",
+          "name": {
+            "en": "Charles Floyd",
+            "es": "Charles Floyd"
+          },
+          "at": [
+            -96.3794,
+            42.4631
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1804-08-20",
+          "life": [
+            "1782-06-20",
+            "1804-08-20"
+          ],
+          "place": {
+            "en": "Floyd’s Bluff, Sioux City, Iowa, USA",
+            "es": "Floyd’s Bluff, Sioux City, Iowa (EE. UU.)"
+          },
+          "text": {
+            "en": "A sergeant from Kentucky and the only member of the Corps to die on the expedition, probably of a burst appendix, on 20 August 1804. A tall obelisk marks his grave above the Missouri.",
+            "es": "Un sargento de Kentucky y el único miembro del Cuerpo que murió en la expedición, probablemente de una apendicitis, el 20 de agosto de 1804. Un alto obelisco marca su tumba sobre el Misuri."
+          },
+          "wiki": {
+            "en": "Charles Floyd (explorer)",
+            "es": ""
+          }
+        },
+        {
+          "id": "lakota",
+          "name": {
+            "en": "Lakota (Teton Sioux)",
+            "es": "Lakota (sioux teton)"
+          },
+          "at": [
+            -100.374,
+            44.353
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1804-09-25",
+          "place": {
+            "en": "Mouth of the Bad River, Fort Pierre, South Dakota, USA",
+            "es": "Desembocadura del río Bad, Fort Pierre, Dakota del Sur (EE. UU.)"
+          },
+          "text": {
+            "en": "The strongest power on this stretch of the Missouri, who expected gifts from anyone passing through their lands. Their 1804 standoff with the Corps ended without bloodshed when chief Black Buffalo stepped in.",
+            "es": "La potencia más fuerte en este tramo del Misuri, que esperaba regalos de quien pasara por sus tierras. Su enfrentamiento con el Cuerpo en 1804 terminó sin sangre cuando intervino el jefe Black Buffalo."
+          },
+          "details": {
+            "en": "For the Lakota, the meeting at the Bad River set the terms on which they would deal with the United States: as the masters of the region, letting strangers pass on their own terms. In 1868 a treaty promised them the Black Hills, sacred to them, 'for as long as the river flows'. Gold was found there in 1874 and miners poured in. The Lakota and their Cheyenne and Arapaho allies defeated the army at the Little Bighorn in 1876, but lost their lands, the bison were wiped out, and in 1890 soldiers massacred Lakota men, women and children at Wounded Knee. Today the Lakota live mainly on five reservations in South Dakota.",
+            "es": "Para los lakota, el encuentro en el río Bad fijó cómo tratarían con Estados Unidos: como dueños de la región, que dejaban pasar a los extraños en sus propios términos. En 1868, un tratado les prometió las Colinas Negras, sagradas para ellos, «mientras el río corra». En 1874 se encontró oro allí y llegaron mineros en masa. Los lakota y sus aliados cheyenes y arapajós derrotaron al ejército en Little Bighorn en 1876, pero perdieron sus tierras, los bisontes fueron exterminados y en 1890 los soldados masacraron a hombres, mujeres y niños lakota en Wounded Knee. Hoy los lakota viven sobre todo en cinco reservas de Dakota del Sur."
+          },
+          "wiki": {
+            "en": "Lakota people",
+            "es": "Lakota"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "corps",
+          "path": [
+            [
+              -96.02,
+              41.45
+            ],
+            [
+              -96.35,
+              42.22
+            ],
+            [
+              -96.38,
+              42.46
+            ],
+            [
+              -97.02,
+              42.77
+            ],
+            [
+              -97.48,
+              42.86
+            ],
+            [
+              -98.09,
+              42.82
+            ],
+            [
+              -99.08,
+              43.34
+            ],
+            [
+              -99.45,
+              44.04
+            ],
+            [
+              -100.37,
+              44.35
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        }
+      ]
+    },
+    {
+      "date": "1804-10-24",
+      "title": {
+        "en": "Winter with the Mandan",
+        "es": "Invierno con los mandan"
+      },
+      "camera": {
+        "lon": -100.89,
+        "lat": 45.85,
+        "zoom": 26.1
+      },
+      "text": {
+        "en": "In late October they reached the earth-lodge towns of the Mandan and Hidatsa and built Fort Mandan. They hired Toussaint Charbonneau and his teenage wife Sacagawea, who gave birth to a son in February.",
+        "es": "A fines de octubre llegaron a los pueblos de casas de tierra de los mandan y los hidatsa, y construyeron el fuerte Mandan. Contrataron a Toussaint Charbonneau y a su joven esposa, Sacagawea, que en febrero dio a luz a un hijo."
+      },
+      "details": {
+        "en": "The Mandan and Hidatsa lived in towns of big earth lodges along the Missouri and the Knife River, where they farmed and traded with peoples from all over the plains. Smallpox had already cut their numbers in the 1780s. They welcomed the strangers, and the Corps spent a winter that reached −43 °C in a log fort across the river from the main Mandan town. The captains met chiefs in council, among them the Mandan leader Sheheke, and asked about the route west. On 4 November they hired the French-Canadian trader Toussaint Charbonneau as an interpreter, with one of his wives, Sacagawea, who spoke Shoshone: they knew they would need horses from the Shoshone to cross the mountains. On 11 February 1805 she gave birth to Jean Baptiste. On 7 April the keelboat went back down to St. Louis with reports and specimens for Jefferson, and the rest of the party headed west in two pirogues and six canoes.",
+        "es": "Los mandan y los hidatsa vivían en pueblos de grandes casas de tierra a lo largo del Misuri y del río Knife, donde cultivaban la tierra y comerciaban con pueblos de todas las llanuras. La viruela ya había reducido su número en la década de 1780. Recibieron a los extraños, y el Cuerpo pasó un invierno que llegó a −43 °C en un fuerte de troncos frente al principal pueblo mandan, al otro lado del río. Los capitanes se reunieron en consejo con los jefes, entre ellos el líder mandan Sheheke, y preguntaron por la ruta al oeste. El 4 de noviembre contrataron como intérprete al comerciante franco-canadiense Toussaint Charbonneau, con una de sus esposas, Sacagawea, que hablaba shoshón: sabían que necesitarían caballos de los shoshones para cruzar las montañas. El 11 de febrero de 1805, ella dio a luz a Jean Baptiste. El 7 de abril, la barcaza volvió a San Luis con informes y especímenes para Jefferson, y el resto del grupo partió hacia el oeste en dos piraguas y seis canoas."
+      },
+      "places": [
+        {
+          "id": "fort-mandan",
+          "name": {
+            "en": "Fort Mandan",
+            "es": "Fuerte Mandan"
+          },
+          "at": [
+            -101.0872,
+            47.2981
+          ],
+          "cat": "camp",
+          "icon": "🏕️",
+          "type": "site",
+          "date": "1804-11-02",
+          "place": {
+            "en": "Near Washburn, North Dakota, USA",
+            "es": "Cerca de Washburn, Dakota del Norte (EE. UU.)"
+          },
+          "text": {
+            "en": "The triangular log fort where the Corps spent the winter of 1804–05, across the river from the main Mandan town. The Missouri has washed the original site away; a replica stands nearby.",
+            "es": "El fuerte triangular de troncos donde el Cuerpo pasó el invierno de 1804-1805, frente al principal pueblo mandan, al otro lado del río. El Misuri se llevó el sitio original; cerca hay una réplica."
+          },
+          "wiki": {
+            "en": "Fort Mandan",
+            "es": "Fuerte Mandan"
+          }
+        },
+        {
+          "id": "mandan",
+          "name": {
+            "en": "Mandan",
+            "es": "Mandan"
+          },
+          "at": [
+            -101.22,
+            47.275
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1804-10-24",
+          "place": {
+            "en": "Upper Missouri, North Dakota, USA",
+            "es": "Alto Misuri, Dakota del Norte (EE. UU.)"
+          },
+          "text": {
+            "en": "Farmers and great traders who lived in towns of large earth lodges on the upper Missouri. They hosted the Corps through the winter. In 1837 smallpox from a steamboat killed about nine in ten of them.",
+            "es": "Agricultores y grandes comerciantes que vivían en pueblos de grandes casas de tierra en el alto Misuri. Hospedaron al Cuerpo durante el invierno. En 1837, la viruela llegada en un barco de vapor mató a casi nueve de cada diez."
+          },
+          "details": {
+            "en": "The Mandan built round earth lodges about 12 m across, owned and built by the women and shared by related families, around a central plaza. They grew maize, beans and squash and traded with peoples from all over the plains. Smallpox had already struck in 1781, and by 1804 their nine villages had shrunk to two, one on each side of the Missouri. They still welcomed the strangers, and the captains named their fort after them. In 1837 the steamboat St. Peter's brought smallpox up the river; of about 1,600 Mandan, perhaps 125 survived. Their descendants belong to the Three Affiliated Tribes (Mandan, Hidatsa and Arikara) of the Fort Berthold Reservation.",
+            "es": "Los mandan construían casas redondas de tierra de unos 12 m de diámetro, que levantaban y poseían las mujeres y que compartían familias emparentadas, alrededor de una plaza central. Cultivaban maíz, frijol y calabaza y comerciaban con pueblos de todas las llanuras. La viruela ya los había golpeado en 1781, y en 1804 sus nueve aldeas se habían reducido a dos, una a cada lado del Misuri. Aun así recibieron a los extraños, y los capitanes pusieron su nombre al fuerte. En 1837, el barco de vapor St. Peter's trajo la viruela río arriba; de unos 1600 mandan, sobrevivieron quizás 125. Sus descendientes forman parte de las Tres Tribus Afiliadas (mandan, hidatsa y arikara) de la reserva de Fort Berthold."
+          },
+          "wiki": {
+            "en": "Mandan",
+            "es": "Mandan"
+          }
+        },
+        {
+          "id": "hidatsa",
+          "name": {
+            "en": "Hidatsa",
+            "es": "Hidatsa"
+          },
+          "at": [
+            -101.41,
+            47.352
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1804-10-24",
+          "place": {
+            "en": "Knife River villages, North Dakota, USA",
+            "es": "Aldeas del río Knife, Dakota del Norte (EE. UU.)"
+          },
+          "text": {
+            "en": "Farmers and traders who lived in three towns at the mouth of the Knife River, allies of the Mandan. Their raiders had captured Sacagawea around 1800; Hidatsa tradition says she was Hidatsa herself.",
+            "es": "Agricultores y comerciantes que vivían en tres pueblos en la desembocadura del río Knife, aliados de los mandan. Sus guerreros habían capturado a Sacagawea hacia 1800; la tradición hidatsa dice que ella misma era hidatsa."
+          },
+          "wiki": {
+            "en": "Hidatsa",
+            "es": "Hidatsa"
+          }
+        },
+        {
+          "id": "sacagawea",
+          "name": {
+            "en": "Sacagawea",
+            "es": "Sacagawea"
+          },
+          "at": [
+            -101.387,
+            47.33
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1804-11-04",
+          "life": [
+            "1788",
+            "1812-12-20"
+          ],
+          "place": {
+            "en": "Knife River villages, North Dakota, USA",
+            "es": "Aldeas del río Knife, Dakota del Norte (EE. UU.)"
+          },
+          "text": {
+            "en": "A teenage Shoshone woman, captured by Hidatsa raiders, who crossed the continent and back with her baby. As interpreter and as a sign of peace she was vital to the expedition, though not its guide.",
+            "es": "Una joven shoshón, capturada por guerreros hidatsa, que cruzó el continente de ida y vuelta con su bebé. Como intérprete y como señal de paz fue vital para la expedición, aunque no fue su guía."
+          },
+          "details": {
+            "en": "According to her husband, Sacagawea was born about 1788 among the Lemhi Shoshone, the 'Salmon Eaters', near today's Salmon, Idaho. Around 1800 Hidatsa raiders captured her at the Three Forks of the Missouri. At about 13 she was made the wife of the trader Toussaint Charbonneau, who had bought or won her. She interpreted Shoshone, found and cooked roots, saved the journals when a boat tipped over, and in 1806 showed Clark the way over two passes. The journals mostly called her 'the Indian woman' or 'the squaw'. A trader recorded that 'the wife of Charbonneau' died at Fort Manuel Lisa in 1812, but Hidatsa and Shoshone traditions say she lived for many more years.",
+            "es": "Según su esposo, Sacagawea nació hacia 1788 entre los shoshones lemhi, los «comedores de salmón», cerca de la actual Salmon, Idaho. Hacia 1800, guerreros hidatsa la capturaron en Three Forks, en las fuentes del Misuri. Con unos 13 años la hicieron esposa del comerciante Toussaint Charbonneau, que la había comprado o ganado en una apuesta. Interpretó el shoshón, buscó y cocinó raíces, salvó los diarios cuando volcó un bote y en 1806 indicó a Clark el camino por dos pasos de montaña. Los diarios casi siempre la llamaban «la india» o «la squaw». Un comerciante anotó que «la esposa de Charbonneau» murió en el fuerte Manuel Lisa en 1812, pero las tradiciones hidatsa y shoshón dicen que vivió muchos años más."
+          },
+          "wiki": {
+            "en": "Sacagawea",
+            "es": "Sacajawea"
+          }
+        },
+        {
+          "id": "jean-baptiste-charbonneau",
+          "name": {
+            "en": "Jean Baptiste Charbonneau",
+            "es": "Jean Baptiste Charbonneau"
+          },
+          "at": [
+            -101.1,
+            47.287
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1805-02-11",
+          "life": [
+            "1805-02-11",
+            "1866-05-16"
+          ],
+          "place": {
+            "en": "Fort Mandan, North Dakota, USA",
+            "es": "Fuerte Mandan, Dakota del Norte (EE. UU.)"
+          },
+          "text": {
+            "en": "Sacagawea's son, born at Fort Mandan on 11 February 1805, who went to the Pacific and back on his mother's back. Clark nicknamed him 'Pomp' and later paid for his schooling in St. Louis.",
+            "es": "El hijo de Sacagawea, nacido en el fuerte Mandan el 11 de febrero de 1805, que fue al Pacífico y volvió a la espalda de su madre. Clark lo apodó «Pomp» y más tarde pagó su educación en San Luis."
+          },
+          "details": {
+            "en": "The birth was long and painful; an interpreter gave Sacagawea crushed rattlesnake rattle in water, and the boy was born soon after. Carried in a cradleboard, he made the whole journey; his presence, like his mother's, told Native nations that the party was not a war party. As a young man he spent six years in Europe with a German prince, then worked as a fur trapper and guide in the West, guided the Mormon Battalion to California in 1846, and was mayor of Mission San Luis Rey. He died in Oregon in 1866. He appears with his mother on the US Sacagawea dollar coin.",
+            "es": "El parto fue largo y doloroso; un intérprete dio a Sacagawea cascabel de serpiente molido en agua, y el niño nació poco después. Llevado en una cuna portabebés, hizo todo el viaje; su presencia, como la de su madre, decía a las naciones indígenas que el grupo no era una partida de guerra. De joven pasó seis años en Europa con un príncipe alemán; luego fue trampero y guía en el Oeste, guio al Batallón Mormón a California en 1846 y fue alcalde de la misión de San Luis Rey. Murió en Oregón en 1866. Aparece con su madre en la moneda de un dólar de Sacagawea."
+          },
+          "wiki": {
+            "en": "Jean Baptiste Charbonneau",
+            "es": ""
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "corps",
+          "path": [
+            [
+              -100.37,
+              44.35
+            ],
+            [
+              -100.41,
+              44.88
+            ],
+            [
+              -100.45,
+              45.55
+            ],
+            [
+              -100.58,
+              46.43
+            ],
+            [
+              -100.83,
+              46.8
+            ],
+            [
+              -101.09,
+              47.3
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        }
+      ]
+    },
+    {
+      "date": "1805-06-13",
+      "title": {
+        "en": "The Great Falls",
+        "es": "Las Grandes Cataratas"
+      },
+      "camera": {
+        "lon": -106.2,
+        "lat": 47.73,
+        "zoom": 11.4
+      },
+      "text": {
+        "en": "In spring they pushed into today's Montana, past great herds of bison and their first grizzly bears. On 13 June Lewis reached the Great Falls of the Missouri: five waterfalls that took nearly a month to get around.",
+        "es": "En primavera avanzaron hacia la actual Montana, entre grandes manadas de bisontes y sus primeros osos grizzly. El 13 de junio, Lewis llegó a las Grandes Cataratas del Misuri: cinco caídas de agua que les costó casi un mes rodear."
+      },
+      "details": {
+        "en": "The canoes passed the mouth of the Yellowstone on 25 April. On 14 May a squall nearly overturned the boat steered by Charbonneau; while he panicked, Sacagawea calmly saved the journals and instruments that fell out, and the captains named a river after her. On 26 May Lewis first saw the Rocky Mountains. In early June, at the mouth of the Marias, nobody could tell which fork was the Missouri; the men voted for the northern branch, the captains for the southern one, and the men followed them. The roar of the falls proved the captains right. Lewis called them the grandest sight he had seen on the journey; the next day he was chased into the river by a grizzly. The men then hauled the canoes and baggage some 29 km overland around the five falls, a hard labour that took nearly a month.",
+        "es": "Las canoas pasaron la desembocadura del Yellowstone el 25 de abril. El 14 de mayo, una ráfaga casi volcó el bote que guiaba Charbonneau; mientras él entraba en pánico, Sacagawea salvó con calma los diarios y los instrumentos que cayeron al agua, y los capitanes pusieron su nombre a un río. El 26 de mayo, Lewis vio por primera vez las montañas Rocosas. A principios de junio, en la desembocadura del Marías, nadie sabía cuál brazo era el Misuri; los hombres votaron por el del norte y los capitanes por el del sur, y los hombres los siguieron. El estruendo de las cataratas dio la razón a los capitanes. Lewis dijo que eran lo más grandioso que había visto en el viaje; al día siguiente, un grizzly lo persiguió hasta el río. Luego los hombres arrastraron las canoas y el equipaje unos 29 km por tierra para rodear las cinco cataratas, un trabajo durísimo que duró casi un mes."
+      },
+      "places": [
+        {
+          "id": "grizzly-bear",
+          "name": {
+            "en": "Grizzly bear",
+            "es": "Oso grizzly"
+          },
+          "at": [
+            -111.31,
+            47.505
+          ],
+          "cat": "discovery",
+          "type": "animal",
+          "date": "1805-06-14",
+          "place": {
+            "en": "Near the Great Falls, Montana, USA",
+            "es": "Cerca de las Grandes Cataratas, Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "The great bear of the plains and the Rockies, first described by Lewis and Clark as 'grisley'. Near the falls on 14 June 1805 one charged Lewis, who escaped by jumping into the river.",
+            "es": "El gran oso de las llanuras y las Rocosas, descrito primero por Lewis y Clark como «grisley». Cerca de las cataratas, el 14 de junio de 1805, uno embistió a Lewis, que escapó lanzándose al río."
+          },
+          "wiki": {
+            "en": "Grizzly bear",
+            "es": "Ursus arctos horribilis"
+          }
+        },
+        {
+          "id": "marias-river",
+          "name": {
+            "en": "Marias River",
+            "es": "Río Marías"
+          },
+          "at": [
+            -110.4725,
+            47.9294
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1805-06-03",
+          "place": {
+            "en": "Near Loma, Montana, USA",
+            "es": "Cerca de Loma, Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "At this fork in June 1805 nobody could tell which branch was the Missouri. The men chose the north; the captains chose the south, and the Great Falls proved them right.",
+            "es": "En esta bifurcación, en junio de 1805, nadie sabía cuál brazo era el Misuri. Los hombres eligieron el del norte; los capitanes, el del sur, y las Grandes Cataratas les dieron la razón."
+          },
+          "wiki": {
+            "en": "Marias River",
+            "es": "Río Marías"
+          }
+        },
+        {
+          "id": "great-falls",
+          "name": {
+            "en": "Great Falls of the Missouri",
+            "es": "Grandes Cataratas del Misuri"
+          },
+          "at": [
+            -111.1231,
+            47.57
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1805-06-13",
+          "place": {
+            "en": "Great Falls, Montana, USA",
+            "es": "Great Falls, Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "Five waterfalls along 16 km of the Missouri, which Lewis called the grandest sight he had seen. Carrying the boats around them took nearly a month. Dams have changed all of them except Crooked Falls.",
+            "es": "Cinco cascadas a lo largo de 16 km del Misuri, que Lewis llamó lo más grandioso que había visto. Rodearlas cargando los botes llevó casi un mes. Las represas han cambiado todas menos la Crooked Falls."
+          },
+          "wiki": {
+            "en": "Great Falls (Missouri River)",
+            "es": ""
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "corps",
+          "path": [
+            [
+              -101.09,
+              47.3
+            ],
+            [
+              -102.15,
+              47.6
+            ],
+            [
+              -103.06,
+              48.16
+            ],
+            [
+              -104.04,
+              47.98
+            ],
+            [
+              -105.69,
+              48.05
+            ],
+            [
+              -106.87,
+              47.75
+            ],
+            [
+              -108.1,
+              47.61
+            ],
+            [
+              -109.44,
+              47.75
+            ],
+            [
+              -110.47,
+              47.93
+            ],
+            [
+              -110.67,
+              47.82
+            ],
+            [
+              -110.93,
+              47.6
+            ],
+            [
+              -111.05,
+              47.53
+            ],
+            [
+              -111.17,
+              47.47
+            ],
+            [
+              -111.26,
+              47.45
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        }
+      ]
+    },
+    {
+      "date": "1805-07-26",
+      "title": {
+        "en": "The Three Forks",
+        "es": "Las fuentes del Misuri"
+      },
+      "camera": {
+        "lon": -111.56,
+        "lat": 46.69,
+        "zoom": 30
+      },
+      "text": {
+        "en": "Above the falls the canoes passed the Gates of the Mountains to the Three Forks, where three rivers join to form the Missouri. Sacagawea knew the place: Hidatsa raiders had captured her here as a girl.",
+        "es": "Pasadas las cataratas, las canoas cruzaron las Puertas de las Montañas hasta Three Forks, donde tres ríos se unen para formar el Misuri. Sacagawea conocía el lugar: allí la habían capturado de niña unos guerreros hidatsa."
+      },
+      "details": {
+        "en": "On 19 July the canoes entered a gorge where cliffs rose straight from the water to about 365 m; Lewis named it 'the gates of the rocky mountains'. The captains were worried: they had not yet met any Shoshone, and without horses they could not cross the mountains ahead. On 26 July the Corps camped where three rivers meet. The captains decided that none of them should be called the Missouri and named them after President Jefferson, his Secretary of State James Madison and his Treasury Secretary Albert Gallatin. They chose the Jefferson, which led toward the mountains. Here, around 1800, Hidatsa raiders had attacked a Shoshone camp, killing four men, four women and several boys, and had carried Sacagawea away.",
+        "es": "El 19 de julio, las canoas entraron en un desfiladero donde los acantilados subían directo del agua hasta unos 365 m; Lewis lo llamó «las puertas de las montañas rocosas». Los capitanes estaban preocupados: aún no habían encontrado a ningún shoshón, y sin caballos no podrían cruzar las montañas que tenían delante. El 26 de julio, el Cuerpo acampó donde se juntan tres ríos. Los capitanes decidieron que ninguno debía llamarse Misuri y les pusieron los nombres del presidente Jefferson, de su secretario de Estado, James Madison, y de su secretario del Tesoro, Albert Gallatin. Eligieron el Jefferson, que llevaba hacia las montañas. Aquí, hacia 1800, guerreros hidatsa habían atacado un campamento shoshón, matando a cuatro hombres, cuatro mujeres y varios niños, y se habían llevado a Sacagawea."
+      },
+      "places": [
+        {
+          "id": "gates-of-the-mountains",
+          "name": {
+            "en": "Gates of the Mountains",
+            "es": "Puertas de las Montañas"
+          },
+          "at": [
+            -111.86,
+            46.83
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1805-07-19",
+          "place": {
+            "en": "North of Helena, Montana, USA",
+            "es": "Al norte de Helena, Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "A gorge where the Missouri runs for about 9 km between cliffs some 365 m high. Lewis named it on 19 July 1805: 'the gates of the rocky mountains'.",
+            "es": "Un desfiladero donde el Misuri corre unos 9 km entre acantilados de unos 365 m de altura. Lewis le puso nombre el 19 de julio de 1805: «las puertas de las montañas rocosas»."
+          },
+          "wiki": {
+            "en": "Gates of the Mountains Wilderness",
+            "es": ""
+          }
+        },
+        {
+          "id": "three-forks",
+          "name": {
+            "en": "Three Forks of the Missouri",
+            "es": "Three Forks, las fuentes del Misuri"
+          },
+          "at": [
+            -111.498,
+            45.9207
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1805-07-26",
+          "place": {
+            "en": "Missouri Headwaters State Park, Montana, USA",
+            "es": "Parque estatal Missouri Headwaters, Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "Where three rivers meet to form the Missouri; the captains named them the Jefferson, Madison and Gallatin. Around 1800 Hidatsa raiders had attacked a Shoshone camp here and carried off Sacagawea.",
+            "es": "Donde tres ríos se unen para formar el Misuri; los capitanes los llamaron Jefferson, Madison y Gallatin. Hacia 1800, guerreros hidatsa atacaron aquí un campamento shoshón y se llevaron a Sacagawea."
+          },
+          "wiki": {
+            "en": "Missouri Headwaters State Park",
+            "es": ""
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "corps",
+          "path": [
+            [
+              -111.26,
+              47.45
+            ],
+            [
+              -111.8,
+              47.19
+            ],
+            [
+              -111.86,
+              46.83
+            ],
+            [
+              -111.86,
+              46.76
+            ],
+            [
+              -111.6,
+              46.55
+            ],
+            [
+              -111.5,
+              46.32
+            ],
+            [
+              -111.5,
+              45.93
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        }
+      ]
+    },
+    {
+      "date": "1805-08-17",
+      "title": {
+        "en": "Sacagawea's brother",
+        "es": "El hermano de Sacagawea"
+      },
+      "camera": {
+        "lon": -112.7,
+        "lat": 45.47,
+        "zoom": 30
+      },
+      "text": {
+        "en": "Up the Jefferson, Sacagawea recognized Beaverhead Rock. Lewis crossed the Divide, found the Shoshone and brought them back. On 17 August Sacagawea saw that their chief, Cameahwait, was her brother.",
+        "es": "Río arriba por el Jefferson, Sacagawea reconoció la roca Beaverhead. Lewis cruzó la divisoria, encontró a los shoshones y los trajo consigo. El 17 de agosto, Sacagawea vio que su jefe, Cameahwait, era su hermano."
+      },
+      "details": {
+        "en": "The men now had to drag the canoes up shallow, rocky streams. On 8 August Sacagawea recognized Beaverhead Rock and said her people's summer camps were near. Lewis went ahead with three men; on 12 August he crossed the Continental Divide at Lemhi Pass, and the next day he met Cameahwait's band of Lemhi Shoshone. They feared a trap, so Lewis handed his rifle to the chief. When the Shoshone came back over the pass with him and Clark arrived with the canoes, Sacagawea began to dance with joy: the chief was her brother, and a woman captured with her years before had escaped home. Translating from Shoshone into Hidatsa for her husband, who passed it on in French, she helped the captains bargain for horses. They called the spot Camp Fortunate; it now lies under a reservoir.",
+        "es": "Ahora los hombres tenían que arrastrar las canoas por arroyos bajos y pedregosos. El 8 de agosto, Sacagawea reconoció la roca Beaverhead y dijo que los campamentos de verano de su pueblo estaban cerca. Lewis se adelantó con tres hombres; el 12 de agosto cruzó la divisoria continental por el paso Lemhi, y al día siguiente encontró a la banda de shoshones lemhi de Cameahwait. Temían una trampa, así que Lewis entregó su rifle al jefe. Cuando los shoshones volvieron con él por el paso y Clark llegó con las canoas, Sacagawea se puso a bailar de alegría: el jefe era su hermano, y una mujer capturada con ella años atrás había escapado a casa. Traduciendo del shoshón al hidatsa para su esposo, que lo pasaba al francés, ayudó a los capitanes a negociar los caballos. Llamaron al lugar campamento Fortunate; hoy está bajo un embalse."
+      },
+      "places": [
+        {
+          "id": "beaverhead-rock",
+          "name": {
+            "en": "Beaverhead Rock",
+            "es": "Roca Beaverhead"
+          },
+          "at": [
+            -112.4597,
+            45.3864
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1805-08-08",
+          "place": {
+            "en": "Near Dillon, Montana, USA",
+            "es": "Cerca de Dillon, Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "A rocky hill shaped like the head of a swimming beaver. Sacagawea recognized it on 8 August 1805 and told the captains that her people's summer camps were near.",
+            "es": "Una colina rocosa con forma de cabeza de castor nadando. Sacagawea la reconoció el 8 de agosto de 1805 y dijo a los capitanes que los campamentos de verano de su pueblo estaban cerca."
+          },
+          "wiki": {
+            "en": "Beaverhead Rock",
+            "es": ""
+          }
+        },
+        {
+          "id": "cameahwait",
+          "name": {
+            "en": "Cameahwait",
+            "es": "Cameahwait"
+          },
+          "at": [
+            -113.65,
+            45.0
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1805-08-13",
+          "place": {
+            "en": "Lemhi River, near Tendoy, Idaho, USA",
+            "es": "Río Lemhi, cerca de Tendoy, Idaho (EE. UU.)"
+          },
+          "text": {
+            "en": "Chief of a band of Lemhi Shoshone and Sacagawea's brother (in Shoshone, 'brother' and 'cousin' are the same word). His people sold the Corps horses and helped them over the mountains.",
+            "es": "Jefe de una banda de shoshones lemhi y hermano de Sacagawea (en shoshón, «hermano» y «primo» son la misma palabra). Su gente vendió caballos al Cuerpo y lo ayudó a cruzar las montañas."
+          },
+          "details": {
+            "en": "Lewis met Cameahwait's small band on 13 August 1805, just after crossing Lemhi Pass. The Shoshone were short of food and guns, raided by enemies who had firearms, and Cameahwait hoped the Americans would bring them guns. He led Lewis back over the pass to meet Clark, and there his sister recognized him. His band traded several dozen horses and helped carry the baggage over the Divide. Cameahwait was killed fighting the Blackfeet at Bloody Creek in Montana in April 1812, and is believed to be buried on a butte between Lemhi and Tendoy.",
+            "es": "Lewis conoció a la pequeña banda de Cameahwait el 13 de agosto de 1805, justo después de cruzar el paso Lemhi. Los shoshones tenían poca comida y pocas armas, sufrían ataques de enemigos armados con fusiles, y Cameahwait esperaba que los estadounidenses les trajeran armas. Llevó a Lewis de vuelta por el paso para encontrarse con Clark, y allí su hermana lo reconoció. Su banda cambió varias decenas de caballos y ayudó a llevar el equipaje sobre la divisoria. Cameahwait murió luchando contra los pies negros en Bloody Creek, Montana, en abril de 1812, y se cree que está enterrado en una colina entre Lemhi y Tendoy."
+          },
+          "wiki": {
+            "en": "Cameahwait",
+            "es": "Cameahwait"
+          }
+        },
+        {
+          "id": "shoshone",
+          "name": {
+            "en": "Lemhi Shoshone",
+            "es": "Shoshones lemhi"
+          },
+          "at": [
+            -113.895,
+            45.176
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1805-08-13",
+          "place": {
+            "en": "Lemhi and upper Salmon valleys, Idaho, USA",
+            "es": "Valles del Lemhi y del alto Salmon, Idaho (EE. UU.)"
+          },
+          "text": {
+            "en": "The Agaidika or 'Salmon Eaters', Sacagawea's people, who fished, gathered camas and crossed the mountains to hunt bison. Their reservation was closed in 1907 and most were moved to Fort Hall.",
+            "es": "Los agaidika o «comedores de salmón», el pueblo de Sacagawea, que pescaban, recolectaban raíces de camasia y cruzaban las montañas para cazar bisontes. Su reserva se cerró en 1907 y la mayoría fue trasladada a Fort Hall."
+          },
+          "wiki": {
+            "en": "Shoshone",
+            "es": "Shoshón"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "corps",
+          "path": [
+            [
+              -111.5,
+              45.93
+            ],
+            [
+              -111.77,
+              45.81
+            ],
+            [
+              -111.95,
+              45.86
+            ],
+            [
+              -112.1,
+              45.87
+            ],
+            [
+              -112.19,
+              45.72
+            ],
+            [
+              -112.33,
+              45.55
+            ],
+            [
+              -112.46,
+              45.39
+            ],
+            [
+              -112.64,
+              45.22
+            ],
+            [
+              -112.75,
+              45.12
+            ],
+            [
+              -112.86,
+              45.0
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        }
+      ]
+    },
+    {
+      "date": "1805-09-09",
+      "title": {
+        "en": "Over the Continental Divide",
+        "es": "Sobre la divisoria continental"
+      },
+      "camera": {
+        "lon": -113.51,
+        "lat": 45.85,
+        "zoom": 30
+      },
+      "text": {
+        "en": "With Shoshone horses and a Shoshone guide, Old Toby, the Corps crossed Lemhi Pass on 26 August and went north over rough mountains to the Bitterroot valley, where the Salish sold them more horses.",
+        "es": "Con caballos shoshones y un guía shoshón, Old Toby, el Cuerpo cruzó el paso Lemhi el 26 de agosto y siguió al norte por montañas escarpadas hasta el valle del Bitterroot, donde los salish les vendieron más caballos."
+      },
+      "details": {
+        "en": "Lemhi Pass, at 2,247 m, lies on the Continental Divide: on one side the water flows to the Missouri and the Atlantic, on the other to the Columbia and the Pacific. From its top on 12 August Lewis had hoped to see an easy slope down to a navigable river; instead he saw 'immense ranges of high mountains still to the West of us'. There was no easy water route across the continent. Cameahwait's people traded several dozen horses and helped carry the baggage over the pass. From the Lemhi valley the Corps followed Native trails north through steep, wooded mountains. On 4 September, at Ross's Hole near today's Sula, Montana, they met a camp of about 400 Bitterroot Salish, who traded horses with them. On 9 September they camped at a creek they called Travelers' Rest, near today's Lolo, Montana, to get ready for the mountains.",
+        "es": "El paso Lemhi, a 2247 m, está sobre la divisoria continental: de un lado el agua corre hacia el Misuri y el Atlántico, del otro hacia el Columbia y el Pacífico. Desde su cima, el 12 de agosto, Lewis esperaba ver una pendiente suave hasta un río navegable; en cambio vio «inmensas cadenas de altas montañas todavía al oeste». No había una ruta fácil por agua a través del continente. La gente de Cameahwait cambió varias decenas de caballos y ayudó a llevar el equipaje por el paso. Desde el valle del Lemhi, el Cuerpo siguió senderos indígenas hacia el norte por montañas empinadas y boscosas. El 4 de septiembre, en Ross's Hole, cerca de la actual Sula, Montana, encontraron un campamento de unos 400 salish del Bitterroot, que les cambiaron caballos. El 9 de septiembre acamparon junto a un arroyo al que llamaron Travelers' Rest, cerca de la actual Lolo, Montana, para prepararse para las montañas."
+      },
+      "places": [
+        {
+          "id": "lemhi-pass",
+          "name": {
+            "en": "Lemhi Pass",
+            "es": "Paso Lemhi"
+          },
+          "at": [
+            -113.445,
+            44.9742
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1805-08-12",
+          "place": {
+            "en": "Idaho–Montana border, USA",
+            "es": "Frontera entre Idaho y Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "A pass at 2,247 m on the Continental Divide, long used by the Lemhi Shoshone. Lewis crossed it on 12 August 1805 and the whole Corps on 26 August. Until 1846 it marked the western edge of the United States.",
+            "es": "Un paso a 2247 m sobre la divisoria continental, usado desde hacía mucho por los shoshones lemhi. Lewis lo cruzó el 12 de agosto de 1805 y todo el Cuerpo, el 26 de agosto. Hasta 1846 marcó el límite oeste de Estados Unidos."
+          },
+          "wiki": {
+            "en": "Lemhi Pass",
+            "es": ""
+          }
+        },
+        {
+          "id": "bitterroot-salish",
+          "name": {
+            "en": "Bitterroot Salish",
+            "es": "Salish del Bitterroot"
+          },
+          "at": [
+            -113.98,
+            45.83
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1805-09-04",
+          "place": {
+            "en": "Ross's Hole, near Sula, Montana, USA",
+            "es": "Ross's Hole, cerca de Sula, Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "Salish people of the Bitterroot valley, also called Flathead. A camp of about 400 met the Corps on 4 September 1805 and traded horses with them. Today they belong to the Confederated Salish and Kootenai Tribes.",
+            "es": "Pueblo salish del valle del Bitterroot, también llamado flathead. Un campamento de unas 400 personas recibió al Cuerpo el 4 de septiembre de 1805 y les cambió caballos. Hoy forman parte de las Tribus Confederadas Salish y Kootenai."
+          },
+          "wiki": {
+            "en": "Bitterroot Salish",
+            "es": "Bitterroot salish (tribu)"
+          }
+        },
+        {
+          "id": "travelers-rest",
+          "name": {
+            "en": "Travelers' Rest",
+            "es": "Travelers' Rest"
+          },
+          "at": [
+            -114.0806,
+            46.7389
+          ],
+          "cat": "camp",
+          "icon": "🏕️",
+          "type": "site",
+          "date": "1805-09-09",
+          "place": {
+            "en": "Lolo, Montana, USA",
+            "es": "Lolo, Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "A campsite on Lolo Creek where the Corps rested before crossing the Bitterroot Mountains in 1805 and again in 1806. Digs here found traces of the camp, such as a fire hearth and a blue trade bead.",
+            "es": "Un campamento junto al arroyo Lolo donde el Cuerpo descansó antes de cruzar los montes Bitterroot en 1805 y de nuevo en 1806. Las excavaciones hallaron rastros del campamento, como un fogón y una cuenta azul de comercio."
+          },
+          "wiki": {
+            "en": "Travelers' Rest (Lolo, Montana)",
+            "es": ""
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "corps",
+          "path": [
+            [
+              -112.86,
+              45.0
+            ],
+            [
+              -113.05,
+              44.98
+            ],
+            [
+              -113.25,
+              44.96
+            ],
+            [
+              -113.45,
+              44.97
+            ],
+            [
+              -113.56,
+              44.99
+            ],
+            [
+              -113.65,
+              45.0
+            ],
+            [
+              -113.8,
+              45.1
+            ],
+            [
+              -113.9,
+              45.18
+            ],
+            [
+              -113.99,
+              45.4
+            ],
+            [
+              -113.96,
+              45.58
+            ],
+            [
+              -113.95,
+              45.69
+            ],
+            [
+              -113.98,
+              45.83
+            ],
+            [
+              -114.13,
+              46.0
+            ],
+            [
+              -114.16,
+              46.25
+            ],
+            [
+              -114.09,
+              46.51
+            ],
+            [
+              -114.08,
+              46.74
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ]
+    },
+    {
+      "date": "1805-09-22",
+      "title": {
+        "en": "Starving on the Lolo Trail",
+        "es": "Hambre en el sendero Lolo"
+      },
+      "camera": {
+        "lon": -115.24,
+        "lat": 46.53,
+        "zoom": 30
+      },
+      "text": {
+        "en": "Old Toby led them along the Lolo Trail, an old Nez Perce road over the Bitterroot Mountains. Snow, cold and hunger nearly killed them. On the Weippe Prairie the Nez Perce fed them and saved the expedition.",
+        "es": "Old Toby los guio por el sendero Lolo, un antiguo camino nez percé que cruza los montes Bitterroot. La nieve, el frío y el hambre casi acabaron con ellos. En la pradera Weippe, los nez percés les dieron de comer y salvaron la expedición."
+      },
+      "details": {
+        "en": "The crossing began on 11 September and took eleven days. The trail climbed to Lolo Pass and ran along steep, forested ridges through deep snow. Game was scarce, and the starving men killed and ate some of their colts. On 20 September Clark, ahead with six hunters, came out onto the camas meadows of the Weippe Prairie and met a Nez Perce (Nimíipuu) camp; many of them had never seen white men. Lewis and the rest arrived on 22 September so weak that almost everyone fell ill after eating the dried fish and camas roots their hosts gave them. Nez Perce tradition tells that a woman named Watkuweis, who had once been captured and had lived among white traders, urged her people not to harm the strangers. The chief Twisted Hair and his family agreed to keep the Corps' horses until their return.",
+        "es": "La travesía empezó el 11 de septiembre y duró once días. El sendero subía hasta el paso Lolo y seguía por crestas empinadas y boscosas, entre nieve profunda. La caza escaseaba, y los hombres, hambrientos, mataron y comieron algunos de sus potros. El 20 de septiembre, Clark, que iba adelante con seis cazadores, salió a las praderas de camasias de Weippe y encontró un campamento nez percé (nimíipuu); muchos nunca habían visto hombres blancos. Lewis y los demás llegaron el 22 de septiembre tan débiles que casi todos enfermaron al comer el pescado seco y las raíces de camasia que les dieron sus anfitriones. La tradición nez percé cuenta que una mujer llamada Watkuweis, que había sido capturada y había vivido entre comerciantes blancos, pidió a su pueblo que no hiciera daño a los extraños. El jefe Twisted Hair y su familia aceptaron cuidar los caballos del Cuerpo hasta su regreso."
+      },
+      "places": [
+        {
+          "id": "lolo-trail",
+          "name": {
+            "en": "Lolo Trail and Lolo Pass",
+            "es": "Sendero y paso Lolo"
+          },
+          "at": [
+            -114.58,
+            46.635
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1805-09-13",
+          "place": {
+            "en": "Idaho–Montana border, USA",
+            "es": "Frontera entre Idaho y Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "An old Nez Perce road over the Bitterroot Mountains, the 'Nez Perce Trail' in Salish. The Corps crossed it starving in September 1805 and again in June 1806; in 1877 Nez Perce families fled the US Army along it.",
+            "es": "Un antiguo camino nez percé que cruza los montes Bitterroot, el «sendero nez percé» en salish. El Cuerpo lo cruzó hambriento en septiembre de 1805 y otra vez en junio de 1806; en 1877, familias nez percés huyeron por él del ejército de Estados Unidos."
+          },
+          "wiki": {
+            "en": "Lolo Pass (Idaho–Montana)",
+            "es": ""
+          }
+        },
+        {
+          "id": "weippe-prairie",
+          "name": {
+            "en": "Weippe Prairie",
+            "es": "Pradera Weippe"
+          },
+          "at": [
+            -115.9333,
+            46.3667
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1805-09-20",
+          "place": {
+            "en": "Near Weippe, Idaho, USA",
+            "es": "Cerca de Weippe, Idaho (EE. UU.)"
+          },
+          "text": {
+            "en": "A camas meadow where Nez Perce families dug roots. Here on 20 September 1805 the starving Corps came out of the mountains and met them. It is now part of the Nez Perce National Historical Park.",
+            "es": "Una pradera de camasias donde las familias nez percés recolectaban raíces. Aquí, el 20 de septiembre de 1805, el Cuerpo hambriento salió de las montañas y las encontró. Hoy forma parte del Parque Histórico Nacional Nez Percé."
+          },
+          "wiki": {
+            "en": "Weippe Prairie",
+            "es": ""
+          }
+        },
+        {
+          "id": "nez-perce",
+          "name": {
+            "en": "Nez Perce (Nimíipuu)",
+            "es": "Nez percés (nimíipuu)"
+          },
+          "at": [
+            -116.4,
+            46.3
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1805-09-20",
+          "place": {
+            "en": "Clearwater country, Idaho, USA",
+            "es": "Región del Clearwater, Idaho (EE. UU.)"
+          },
+          "text": {
+            "en": "The Nimíipuu fed the starving Corps, kept their horses for the winter and guided them home in 1806. An 1863 treaty they call the 'Thief Treaty' took most of their land; in 1877 the army drove out those who refused it.",
+            "es": "Los nimíipuu alimentaron al Cuerpo hambriento, cuidaron sus caballos en invierno y lo guiaron de regreso en 1806. Un tratado de 1863, el «tratado ladrón», les quitó casi toda su tierra; en 1877 el ejército expulsó a quienes lo rechazaban."
+          },
+          "details": {
+            "en": "The Nimíipuu were the leading people of the Columbia Plateau, with a homeland of about 69,000 km² around the Snake, Salmon and Clearwater rivers, famous for their horse herds. The name Nez Perce, 'pierced nose', came from a mistake by the expedition's interpreters. In 1877 about 750 men, women and children who refused to move to a reservation fled with Chief Joseph and other leaders. They travelled more than 1,800 km, crossing the Lolo Trail, and were caught 64 km from Canada. Joseph's words at the surrender are famous: 'From where the sun now stands, I will fight no more forever.'",
+            "es": "Los nimíipuu eran el pueblo principal de la meseta del Columbia, con una tierra de unos 69 000 km² alrededor de los ríos Snake, Salmon y Clearwater, famosa por sus manadas de caballos. El nombre nez percé, «nariz perforada», vino de un error de los intérpretes de la expedición. En 1877, unos 750 hombres, mujeres y niños que se negaban a ir a una reserva huyeron con el jefe Joseph y otros líderes. Recorrieron más de 1800 km, cruzando el sendero Lolo, y fueron alcanzados a 64 km de Canadá. Las palabras de Joseph al rendirse son famosas: «Desde donde ahora está el sol, no lucharé nunca más»."
+          },
+          "wiki": {
+            "en": "Nez Perce",
+            "es": "Nez percé"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "corps",
+          "path": [
+            [
+              -114.08,
+              46.74
+            ],
+            [
+              -114.3,
+              46.76
+            ],
+            [
+              -114.53,
+              46.72
+            ],
+            [
+              -114.58,
+              46.64
+            ],
+            [
+              -114.71,
+              46.51
+            ],
+            [
+              -114.85,
+              46.56
+            ],
+            [
+              -115.05,
+              46.56
+            ],
+            [
+              -115.27,
+              46.52
+            ],
+            [
+              -115.5,
+              46.47
+            ],
+            [
+              -115.72,
+              46.42
+            ],
+            [
+              -115.93,
+              46.37
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ]
+    },
+    {
+      "date": "1805-10-16",
+      "title": {
+        "en": "Down to the Columbia",
+        "es": "Hacia el Columbia"
+      },
+      "camera": {
+        "lon": -117.49,
+        "lat": 46.45,
+        "zoom": 30
+      },
+      "text": {
+        "en": "Beside the Clearwater, near today's Orofino, they built canoes, and on 7 October they set off down the Clearwater and the Snake. On 16 October they reached the Columbia, the great river of the West.",
+        "es": "Junto al Clearwater, cerca de la actual Orofino, construyeron canoas, y el 7 de octubre bajaron por el Clearwater y el Snake. El 16 de octubre llegaron al Columbia, el gran río del Oeste."
+      },
+      "details": {
+        "en": "The men were still weak, and building the canoes went slowly. They left their horses with Twisted Hair's family. Going downstream at last, the canoes ran rapid after rapid, and on 10 October they reached the Snake at today's Lewiston, Idaho, and Clarkston, Washington. In what is now Franklin County, Washington, Clark wrote that Sacagawea 'reconciles all the Indians, as to our friendly intentions': a woman travelling with a party of men was a token of peace, since no woman went with a war party. On 16 October the Corps reached the Columbia near today's Tri-Cities. Two days later Clark sighted the snowy cone of Mount Hood far to the west, a sign that the ocean was getting closer.",
+        "es": "Los hombres seguían débiles y la construcción de las canoas avanzó despacio. Dejaron sus caballos con la familia de Twisted Hair. Por fin río abajo, las canoas cruzaron un rápido tras otro, y el 10 de octubre llegaron al Snake, donde hoy están Lewiston, Idaho, y Clarkston, Washington. En lo que hoy es el condado de Franklin, Washington, Clark escribió que Sacagawea «tranquiliza a todos los indios sobre nuestras intenciones amistosas»: una mujer que viajaba con un grupo de hombres era una señal de paz, porque ninguna mujer iba con una partida de guerra. El 16 de octubre, el Cuerpo llegó al Columbia cerca de las actuales Tri-Cities. Dos días después, Clark divisó el cono nevado del monte Hood muy al oeste, una señal de que el océano estaba cerca."
+      },
+      "places": [
+        {
+          "id": "clearwater-river",
+          "name": {
+            "en": "Clearwater River",
+            "es": "Río Clearwater"
+          },
+          "at": [
+            -116.32,
+            46.495
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1805-10-07",
+          "place": {
+            "en": "Canoe Camp, near Orofino, Idaho, USA",
+            "es": "Campamento de las canoas, cerca de Orofino, Idaho (EE. UU.)"
+          },
+          "text": {
+            "en": "Koos-Kai-Kai, 'clear water', to the Nez Perce. Beside it, west of today's Orofino, the Corps built canoes, and on 7 October 1805 they paddled down it toward the Snake.",
+            "es": "Koos-Kai-Kai, «agua clara», para los nez percés. A su orilla, al oeste de la actual Orofino, el Cuerpo construyó canoas, y el 7 de octubre de 1805 bajó por él hacia el Snake."
+          },
+          "wiki": {
+            "en": "Clearwater River (Idaho)",
+            "es": "Río Clearwater (Idaho)"
+          }
+        },
+        {
+          "id": "snake-river",
+          "name": {
+            "en": "Snake River",
+            "es": "Río Snake"
+          },
+          "at": [
+            -118.21,
+            46.6
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1805-10-10",
+          "place": {
+            "en": "Southeastern Washington, USA",
+            "es": "Sureste de Washington (EE. UU.)"
+          },
+          "text": {
+            "en": "The largest tributary of the Columbia. The Corps ran its rapids from today's Lewiston, Idaho, to its mouth near the Tri-Cities of Washington in October 1805.",
+            "es": "El mayor afluente del Columbia. El Cuerpo bajó por sus rápidos desde la actual Lewiston, Idaho, hasta su desembocadura cerca de las Tri-Cities de Washington, en octubre de 1805."
+          },
+          "wiki": {
+            "en": "Snake River",
+            "es": "Río Snake"
+          }
+        },
+        {
+          "id": "columbia-river",
+          "name": {
+            "en": "Columbia River",
+            "es": "Río Columbia"
+          },
+          "at": [
+            -119.04,
+            46.21
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1805-10-16",
+          "place": {
+            "en": "Mouth of the Snake, Pasco, Washington, USA",
+            "es": "Desembocadura del Snake, Pasco, Washington (EE. UU.)"
+          },
+          "text": {
+            "en": "Wimahl, the 'Great River' of the Chinookan peoples, and the river of the salmon. The Corps reached it on 16 October 1805 and followed it more than 500 km to the Pacific.",
+            "es": "Wimahl, el «gran río» de los pueblos chinook, y el río del salmón. El Cuerpo llegó a él el 16 de octubre de 1805 y lo siguió más de 500 km hasta el Pacífico."
+          },
+          "wiki": {
+            "en": "Columbia River",
+            "es": "Río Columbia"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "corps",
+          "path": [
+            [
+              -115.93,
+              46.37
+            ],
+            [
+              -116.12,
+              46.45
+            ],
+            [
+              -116.32,
+              46.5
+            ],
+            [
+              -116.43,
+              46.47
+            ],
+            [
+              -116.55,
+              46.51
+            ],
+            [
+              -116.71,
+              46.48
+            ],
+            [
+              -116.81,
+              46.45
+            ],
+            [
+              -117.02,
+              46.42
+            ],
+            [
+              -117.54,
+              46.69
+            ],
+            [
+              -118.21,
+              46.6
+            ],
+            [
+              -118.76,
+              46.34
+            ],
+            [
+              -119.03,
+              46.22
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        }
+      ]
+    },
+    {
+      "date": "1805-11-15",
+      "title": {
+        "en": "\"Ocian in view!\"",
+        "es": "«¡Océano a la vista!»"
+      },
+      "camera": {
+        "lon": -121.5,
+        "lat": 45.92,
+        "zoom": 22.0
+      },
+      "text": {
+        "en": "Past Celilo Falls, the great fishing place of the Columbia, the canoes ran wild rapids. On 7 November Clark wrote 'Ocian in view! O! the joy'. After days pinned down by storms, they reached the Pacific on 15 November.",
+        "es": "Pasadas las cataratas Celilo, el gran lugar de pesca del Columbia, las canoas cruzaron rápidos furiosos. El 7 de noviembre Clark escribió: «¡Océano a la vista! ¡Oh, qué alegría!». Tras días atrapados por tormentas, llegaron al Pacífico el 15 de noviembre."
+      },
+      "details": {
+        "en": "At Celilo Falls, which the river peoples called Wyam, salmon had been fished and traded for thousands of years. The Corps got past the falls on 22 October and then faced some 90 km of dangerous water. Below lived Chinookan peoples in towns of cedar plank houses, who traded furs with British and American ships. Clark's joyful note of 7 November (in his journal: 'Great joy in camp we are in View of the Ocian') was too early: they were looking at the wide estuary of the Columbia, still about 30 km from the ocean. A storm then trapped them for six days in a cove Clark called 'that dismal little nitch', soaked and with no fresh food. On 15 November they reached a sandy beach they named Station Camp. On 18 November Clark and York walked out to Cape Disappointment and looked at the Pacific; York was the first African American known to have crossed the continent.",
+        "es": "En las cataratas Celilo, que los pueblos del río llamaban Wyam, se pescaba y se comerciaba salmón desde hacía miles de años. El Cuerpo pasó las cataratas el 22 de octubre y luego enfrentó unos 90 km de aguas peligrosas. Más abajo vivían pueblos chinook en aldeas de casas de tablones de cedro, que cambiaban pieles con barcos británicos y estadounidenses. La nota alegre de Clark del 7 de noviembre (en su diario: «Gran alegría en el campamento, estamos a la vista del océano») se adelantó: estaban viendo el ancho estuario del Columbia, todavía a unos 30 km del océano. Luego una tormenta los atrapó seis días en una ensenada que Clark llamó «ese pequeño rincón lúgubre», empapados y sin comida fresca. El 15 de noviembre llegaron a una playa de arena a la que llamaron Station Camp. El 18 de noviembre, Clark y York caminaron hasta el cabo Disappointment y contemplaron el Pacífico; York fue el primer afroamericano del que se sabe que cruzó el continente."
+      },
+      "places": [
+        {
+          "id": "celilo-falls",
+          "name": {
+            "en": "Celilo Falls",
+            "es": "Cataratas Celilo"
+          },
+          "at": [
+            -120.9779,
+            45.6495
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1805-10-22",
+          "place": {
+            "en": "Columbia River, Oregon–Washington border, USA",
+            "es": "Río Columbia, frontera entre Oregón y Washington (EE. UU.)"
+          },
+          "text": {
+            "en": "Wyam, 'echo of falling water': for some 15,000 years the great fishing and trading place of the Columbia's peoples. The Corps passed it in October 1805. A dam drowned the falls in 1957.",
+            "es": "Wyam, «eco del agua que cae»: durante unos 15 000 años, el gran lugar de pesca y comercio de los pueblos del Columbia. El Cuerpo pasó por allí en octubre de 1805. Una represa inundó las cataratas en 1957."
+          },
+          "details": {
+            "en": "Celilo Falls and The Dalles lay on the border between Chinookan and Sahaptian peoples and were the hub of a trading network that reached the Great Plains, the Southwest and Alaska. Fishers stood on wooden platforms over the water and caught salmon with dipnets and spears; up to 15 to 20 million salmon passed every year. In autumn, at low water, the falls were a barrier, and the Corps carried canoes and baggage around them on 22 and 23 October 1805. The 1855 treaties guaranteed the tribes' right to fish here, but on 10 March 1957 the lake behind The Dalles Dam silenced the falls and drowned the fishing village.",
+            "es": "Las cataratas Celilo y The Dalles estaban en la frontera entre pueblos chinook y sahaptin, y eran el centro de una red de comercio que llegaba a las Grandes Llanuras, el Suroeste y Alaska. Los pescadores se paraban en plataformas de madera sobre el agua y atrapaban salmones con redes y lanzas; cada año pasaban entre 15 y 20 millones de salmones. En otoño, con el río bajo, las cataratas eran una barrera, y el Cuerpo rodeó las caídas cargando canoas y equipaje el 22 y 23 de octubre de 1805. Los tratados de 1855 garantizaron a las tribus su derecho a pescar aquí, pero el 10 de marzo de 1957 el lago de la represa de The Dalles silenció las cataratas e inundó la aldea de pescadores."
+          },
+          "wiki": {
+            "en": "Celilo Falls",
+            "es": ""
+          }
+        },
+        {
+          "id": "chinookan-peoples",
+          "name": {
+            "en": "Chinookan peoples",
+            "es": "Pueblos chinook"
+          },
+          "at": [
+            -123.383,
+            46.203
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1805-11",
+          "place": {
+            "en": "Lower Columbia River, Washington and Oregon, USA",
+            "es": "Bajo río Columbia, Washington y Oregón (EE. UU.)"
+          },
+          "text": {
+            "en": "Fishers and traders of the lower Columbia who lived in cedar plank houses and dealt with British and American ships. They traded food and furs with the Corps. The Chinook Indian Nation still seeks federal recognition.",
+            "es": "Pescadores y comerciantes del bajo Columbia que vivían en casas de tablones de cedro y trataban con barcos británicos y estadounidenses. Cambiaron comida y pieles con el Cuerpo. La Nación Indígena Chinook aún busca el reconocimiento federal."
+          },
+          "wiki": {
+            "en": "Chinookan peoples",
+            "es": "Chinook (tribus)"
+          }
+        },
+        {
+          "id": "dismal-nitch",
+          "name": {
+            "en": "Dismal Nitch",
+            "es": "Dismal Nitch"
+          },
+          "at": [
+            -123.863,
+            46.25
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1805-11-10",
+          "place": {
+            "en": "North bank of the Columbia, Washington, USA",
+            "es": "Orilla norte del Columbia, Washington (EE. UU.)"
+          },
+          "text": {
+            "en": "The cove where a winter storm pinned the Corps down for six days in November 1805, soaked and out of fresh food. Clark called it 'that dismal little nitch'.",
+            "es": "La ensenada donde una tormenta de invierno retuvo al Cuerpo seis días en noviembre de 1805, empapado y sin comida fresca. Clark la llamó «ese pequeño rincón lúgubre»."
+          },
+          "wiki": {
+            "en": "Dismal Nitch",
+            "es": ""
+          }
+        },
+        {
+          "id": "cape-disappointment",
+          "name": {
+            "en": "Cape Disappointment",
+            "es": "Cabo Disappointment"
+          },
+          "at": [
+            -124.0606,
+            46.2897
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1805-11-18",
+          "place": {
+            "en": "Mouth of the Columbia, Washington, USA",
+            "es": "Desembocadura del Columbia, Washington (EE. UU.)"
+          },
+          "text": {
+            "en": "The headland at the mouth of the Columbia. On 18 November 1805 Clark and York walked here, and Clark carved on a tree: 'By Land from the U. States in 1804 & 1805'.",
+            "es": "El cabo de la desembocadura del Columbia. El 18 de noviembre de 1805, Clark y York caminaron hasta aquí, y Clark grabó en un árbol: «Por tierra desde los Estados Unidos en 1804 y 1805»."
+          },
+          "wiki": {
+            "en": "Cape Disappointment (Washington)",
+            "es": ""
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "corps",
+          "path": [
+            [
+              -119.03,
+              46.22
+            ],
+            [
+              -118.93,
+              46.06
+            ],
+            [
+              -118.95,
+              45.98
+            ],
+            [
+              -119.34,
+              45.92
+            ],
+            [
+              -119.75,
+              45.85
+            ],
+            [
+              -120.37,
+              45.71
+            ],
+            [
+              -120.98,
+              45.65
+            ],
+            [
+              -121.18,
+              45.61
+            ],
+            [
+              -121.52,
+              45.71
+            ],
+            [
+              -121.89,
+              45.67
+            ],
+            [
+              -122.25,
+              45.56
+            ],
+            [
+              -122.67,
+              45.62
+            ],
+            [
+              -122.77,
+              45.65
+            ],
+            [
+              -122.8,
+              45.86
+            ],
+            [
+              -122.92,
+              46.1
+            ],
+            [
+              -123.21,
+              46.17
+            ],
+            [
+              -123.38,
+              46.2
+            ],
+            [
+              -123.59,
+              46.27
+            ],
+            [
+              -123.86,
+              46.25
+            ],
+            [
+              -123.93,
+              46.26
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        }
+      ]
+    },
+    {
+      "date": "1805-12-08",
+      "title": {
+        "en": "The vote and Fort Clatsop",
+        "es": "La votación y el fuerte Clatsop"
+      },
+      "camera": {
+        "lon": -123.8,
+        "lat": 46.09,
+        "zoom": 30
+      },
+      "text": {
+        "en": "On 24 November everyone, York and Sacagawea included, gave their view on where to spend the winter. They crossed to the south shore and built Fort Clatsop, where it rained on all but twelve days.",
+        "es": "El 24 de noviembre todos, incluidos York y Sacagawea, dieron su opinión sobre dónde pasar el invierno. Cruzaron a la orilla sur y construyeron el fuerte Clatsop, donde llovió todos los días menos doce."
+      },
+      "details": {
+        "en": "Clark wrote down each person's choice: stay on the north shore, go back upriver, or follow the advice of the Clatsop and look for elk on the south side. Asking an enslaved man and a Native woman was very unusual for the time, although historians still argue whether it was a true vote. The log fort, named after the Clatsop people, was finished by the end of December. Lewis filled his journals with plants and animals, Clark drew maps, and a party camped on the coast to make salt. In January Sacagawea insisted on going to see a whale washed up on the beach. The Clatsop, whose leader was Coboway, traded with the Corps but asked high prices, and the captains came to distrust them. Short of canoes for the trip home, they bought one from the Clatsop and stole another before leaving on 23 March 1806.",
+        "es": "Clark anotó la elección de cada persona: quedarse en la orilla norte, volver río arriba o seguir el consejo de los clatsop y buscar uapitíes en la orilla sur. Consultar a un hombre esclavizado y a una mujer indígena era muy poco común en la época, aunque los historiadores aún discuten si fue una votación de verdad. El fuerte de troncos, llamado como el pueblo clatsop, se terminó a fines de diciembre. Lewis llenó sus diarios de plantas y animales, Clark dibujó mapas y un grupo acampó en la costa para hacer sal. En enero, Sacagawea insistió en ir a ver una ballena varada en la playa. Los clatsop, cuyo líder era Coboway, comerciaban con el Cuerpo pero pedían precios altos, y los capitanes acabaron desconfiando de ellos. Sin suficientes canoas para el regreso, compraron una a los clatsop y robaron otra antes de partir, el 23 de marzo de 1806."
+      },
+      "places": [
+        {
+          "id": "station-camp-vote",
+          "name": {
+            "en": "The vote at Station Camp",
+            "es": "La votación de Station Camp"
+          },
+          "at": [
+            -123.933,
+            46.264
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1805-11-24",
+          "place": {
+            "en": "Station Camp, near Chinook, Washington, USA",
+            "es": "Station Camp, cerca de Chinook, Washington (EE. UU.)"
+          },
+          "text": {
+            "en": "On 24 November 1805 Clark wrote down the view of every member of the Corps on where to spend the winter, including York, an enslaved man, and Sacagawea, a Native woman: very unusual for the time.",
+            "es": "El 24 de noviembre de 1805, Clark anotó la opinión de cada miembro del Cuerpo sobre dónde pasar el invierno, incluidos York, un hombre esclavizado, y Sacagawea, una mujer indígena: algo muy poco común en la época."
+          },
+          "wiki": {
+            "en": "Lewis and Clark National Historical Park",
+            "es": ""
+          }
+        },
+        {
+          "id": "fort-clatsop",
+          "name": {
+            "en": "Fort Clatsop",
+            "es": "Fuerte Clatsop"
+          },
+          "at": [
+            -123.8803,
+            46.1336
+          ],
+          "cat": "camp",
+          "icon": "🏕️",
+          "type": "site",
+          "date": "1805-12-08",
+          "end": "1806-03-23",
+          "place": {
+            "en": "Near Astoria, Oregon, USA",
+            "es": "Cerca de Astoria, Oregón (EE. UU.)"
+          },
+          "text": {
+            "en": "The Corps' log fort for the wet winter of 1805–06, named after the Clatsop people. When they left, Lewis gave it to the Clatsop chief Coboway. A replica stands on the site.",
+            "es": "El fuerte de troncos del Cuerpo para el lluvioso invierno de 1805-1806, llamado así por el pueblo clatsop. Al irse, Lewis se lo regaló al jefe clatsop Coboway. En el lugar hay una réplica."
+          },
+          "wiki": {
+            "en": "Fort Clatsop",
+            "es": ""
+          }
+        },
+        {
+          "id": "clatsop",
+          "name": {
+            "en": "Clatsop",
+            "es": "Clatsop"
+          },
+          "at": [
+            -123.92,
+            46.03
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1805-12",
+          "place": {
+            "en": "Clatsop Plains, Oregon, USA",
+            "es": "Llanuras de Clatsop, Oregón (EE. UU.)"
+          },
+          "text": {
+            "en": "A Chinookan people of about 200 in three villages of cedar plank houses near the mouth of the Columbia. They advised the Corps where to winter and traded with them. They belong today to the Chinook Indian Nation.",
+            "es": "Un pueblo chinook de unas 200 personas en tres aldeas de casas de tablones de cedro cerca de la desembocadura del Columbia. Aconsejaron al Cuerpo dónde pasar el invierno y comerciaron con él. Hoy forman parte de la Nación Indígena Chinook."
+          },
+          "wiki": {
+            "en": "Clatsop",
+            "es": "Clatsop"
+          }
+        },
+        {
+          "id": "ecola",
+          "name": {
+            "en": "Ecola: the whale",
+            "es": "Ecola: la ballena"
+          },
+          "at": [
+            -123.98,
+            45.9183
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1806-01",
+          "place": {
+            "en": "Ecola State Park, near Cannon Beach, Oregon, USA",
+            "es": "Parque estatal Ecola, cerca de Cannon Beach, Oregón (EE. UU.)"
+          },
+          "text": {
+            "en": "In January 1806 Clark, Sacagawea and others crossed Tillamook Head to see a beached whale and bought blubber from the Tillamook. Clark named a creek Ecola, 'whale' in Chinook Jargon.",
+            "es": "En enero de 1806, Clark, Sacagawea y otros cruzaron el cabo Tillamook para ver una ballena varada y compraron grasa a los tillamook. Clark llamó Ecola a un arroyo, «ballena» en la jerga chinook."
+          },
+          "details": {
+            "en": "Sacagawea insisted on her right to see the 'monstrous fish', as the journals called it. On the way the party passed Indian Beach, where a Nehalem-Tillamook village emptied by smallpox had become a burial ground with canoe graves. At the village of Necost, the southernmost point the Corps reached, Clark bartered for whale blubber. From the top of Tillamook Head he wrote that he 'beheld the grandest and most pleasing prospects which my eyes ever surveyed'. The coast here had been home to the Tillamook and Clatsop for centuries; archaeological sites in the park go back to about 1100 CE.",
+            "es": "Sacagawea defendió su derecho a ver el «pez monstruoso», como lo llamaban los diarios. En el camino, el grupo pasó por Indian Beach, donde una aldea nehalem-tillamook vaciada por la viruela se había convertido en un cementerio con tumbas en canoas. En la aldea de Necost, el punto más al sur que alcanzó el Cuerpo, Clark cambió cosas por grasa de ballena. Desde lo alto del cabo Tillamook escribió que contemplaba «las vistas más grandiosas y agradables que mis ojos jamás vieron». Esta costa fue hogar de los tillamook y los clatsop durante siglos; los sitios arqueológicos del parque se remontan a hacia el año 1100."
+          },
+          "wiki": {
+            "en": "Ecola State Park",
+            "es": ""
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "corps",
+          "path": [
+            [
+              -123.93,
+              46.26
+            ],
+            [
+              -123.75,
+              46.27
+            ],
+            [
+              -123.62,
+              46.23
+            ],
+            [
+              -123.72,
+              46.2
+            ],
+            [
+              -123.77,
+              46.21
+            ],
+            [
+              -123.83,
+              46.19
+            ],
+            [
+              -123.88,
+              46.13
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        },
+        {
+          "side": "corps",
+          "path": [
+            [
+              -123.88,
+              46.13
+            ],
+            [
+              -123.92,
+              46.03
+            ],
+            [
+              -123.94,
+              45.99
+            ],
+            [
+              -123.97,
+              45.94
+            ],
+            [
+              -123.96,
+              45.9
+            ]
+          ],
+          "by": "land",
+          "icon": "🚶",
+          "label": {
+            "en": "To see the whale, January 1806",
+            "es": "A ver la ballena, enero de 1806"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1806-06-30",
+      "title": {
+        "en": "Homeward with the Nez Perce",
+        "es": "De regreso con los nez percés"
+      },
+      "camera": {
+        "lon": -118.98,
+        "lat": 46.16,
+        "zoom": 11.5
+      },
+      "text": {
+        "en": "On 23 March 1806 the Corps started home, up the Columbia and then overland on horses. They waited a month with the Nez Perce for the snow to melt, then crossed the Lolo Trail with Nez Perce guides.",
+        "es": "El 23 de marzo de 1806, el Cuerpo emprendió el regreso, río arriba por el Columbia y luego a caballo. Esperaron un mes con los nez percés a que se derritiera la nieve y cruzaron el sendero Lolo con guías nez percés."
+      },
+      "details": {
+        "en": "Paddling against the current was slow, and near the falls of the Columbia they traded for horses, though the prices were steep. At one village men stole Seaman; Lewis got him back and threatened to kill anyone who stole again. In May they were back among the Nez Perce, who had kept their horses safe through the winter, and collected 65 horses at Camp Chopunnish, near today's Kamiah, Idaho. When the hungry men offered to buy a horse to eat, the chief was offended: his people had plenty of young horses, and the strangers could have as many as they needed. The Corps stayed about a month while the snow on the mountains melted. In late June three Nez Perce guides led them over the Bitterroots, and on 30 June they were back at Travelers' Rest.",
+        "es": "Remar contra la corriente era lento, y cerca de las cataratas del Columbia cambiaron cosas por caballos, aunque a precios altos. En una aldea, unos hombres robaron a Seaman; Lewis lo recuperó y amenazó con matar a quien volviera a robar. En mayo regresaron con los nez percés, que habían cuidado sus caballos todo el invierno, y reunieron 65 caballos en el campamento Chopunnish, cerca de la actual Kamiah, Idaho. Cuando los hombres hambrientos ofrecieron comprar un caballo para comérselo, el jefe se ofendió: su pueblo tenía muchos caballos jóvenes, y los extraños podían tener todos los que necesitaran. El Cuerpo se quedó cerca de un mes mientras se derretía la nieve en las montañas. A fines de junio, tres guías nez percés los llevaron a través de los Bitterroot, y el 30 de junio estaban de vuelta en Travelers' Rest."
+      },
+      "places": [
+        {
+          "id": "camp-chopunnish",
+          "name": {
+            "en": "Camp Chopunnish",
+            "es": "Campamento Chopunnish"
+          },
+          "at": [
+            -116.015,
+            46.24
+          ],
+          "cat": "camp",
+          "icon": "🏕️",
+          "type": "site",
+          "date": "1806-05-14",
+          "place": {
+            "en": "Near Kamiah, Idaho, USA",
+            "es": "Cerca de Kamiah, Idaho (EE. UU.)"
+          },
+          "text": {
+            "en": "The Corps' camp on the Clearwater from mid-May to June 1806, waiting for snow to melt in the mountains. The Nez Perce fed them and returned the horses they had kept all winter.",
+            "es": "El campamento del Cuerpo junto al Clearwater de mediados de mayo a junio de 1806, esperando que se derritiera la nieve en las montañas. Los nez percés los alimentaron y les devolvieron los caballos que habían cuidado todo el invierno."
+          },
+          "wiki": {
+            "en": "Nez Perce National Historical Park",
+            "es": ""
+          }
+        },
+        {
+          "id": "nez-perce",
+          "name": {
+            "en": "Nez Perce (Nimíipuu)",
+            "es": "Nez percés (nimíipuu)"
+          },
+          "at": [
+            -116.4,
+            46.3
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1805-09-20",
+          "place": {
+            "en": "Clearwater country, Idaho, USA",
+            "es": "Región del Clearwater, Idaho (EE. UU.)"
+          },
+          "text": {
+            "en": "The Nimíipuu fed the starving Corps, kept their horses for the winter and guided them home in 1806. An 1863 treaty they call the 'Thief Treaty' took most of their land; in 1877 the army drove out those who refused it.",
+            "es": "Los nimíipuu alimentaron al Cuerpo hambriento, cuidaron sus caballos en invierno y lo guiaron de regreso en 1806. Un tratado de 1863, el «tratado ladrón», les quitó casi toda su tierra; en 1877 el ejército expulsó a quienes lo rechazaban."
+          },
+          "details": {
+            "en": "The Nimíipuu were the leading people of the Columbia Plateau, with a homeland of about 69,000 km² around the Snake, Salmon and Clearwater rivers, famous for their horse herds. The name Nez Perce, 'pierced nose', came from a mistake by the expedition's interpreters. In 1877 about 750 men, women and children who refused to move to a reservation fled with Chief Joseph and other leaders. They travelled more than 1,800 km, crossing the Lolo Trail, and were caught 64 km from Canada. Joseph's words at the surrender are famous: 'From where the sun now stands, I will fight no more forever.'",
+            "es": "Los nimíipuu eran el pueblo principal de la meseta del Columbia, con una tierra de unos 69 000 km² alrededor de los ríos Snake, Salmon y Clearwater, famosa por sus manadas de caballos. El nombre nez percé, «nariz perforada», vino de un error de los intérpretes de la expedición. En 1877, unos 750 hombres, mujeres y niños que se negaban a ir a una reserva huyeron con el jefe Joseph y otros líderes. Recorrieron más de 1800 km, cruzando el sendero Lolo, y fueron alcanzados a 64 km de Canadá. Las palabras de Joseph al rendirse son famosas: «Desde donde ahora está el sol, no lucharé nunca más»."
+          },
+          "wiki": {
+            "en": "Nez Perce",
+            "es": "Nez percé"
+          }
+        },
+        {
+          "id": "lolo-trail",
+          "name": {
+            "en": "Lolo Trail and Lolo Pass",
+            "es": "Sendero y paso Lolo"
+          },
+          "at": [
+            -114.58,
+            46.635
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1805-09-13",
+          "place": {
+            "en": "Idaho–Montana border, USA",
+            "es": "Frontera entre Idaho y Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "An old Nez Perce road over the Bitterroot Mountains, the 'Nez Perce Trail' in Salish. The Corps crossed it starving in September 1805 and again in June 1806; in 1877 Nez Perce families fled the US Army along it.",
+            "es": "Un antiguo camino nez percé que cruza los montes Bitterroot, el «sendero nez percé» en salish. El Cuerpo lo cruzó hambriento en septiembre de 1805 y otra vez en junio de 1806; en 1877, familias nez percés huyeron por él del ejército de Estados Unidos."
+          },
+          "wiki": {
+            "en": "Lolo Pass (Idaho–Montana)",
+            "es": ""
+          }
+        },
+        {
+          "id": "travelers-rest",
+          "name": {
+            "en": "Travelers' Rest",
+            "es": "Travelers' Rest"
+          },
+          "at": [
+            -114.0806,
+            46.7389
+          ],
+          "cat": "camp",
+          "icon": "🏕️",
+          "type": "site",
+          "date": "1805-09-09",
+          "place": {
+            "en": "Lolo, Montana, USA",
+            "es": "Lolo, Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "A campsite on Lolo Creek where the Corps rested before crossing the Bitterroot Mountains in 1805 and again in 1806. Digs here found traces of the camp, such as a fire hearth and a blue trade bead.",
+            "es": "Un campamento junto al arroyo Lolo donde el Cuerpo descansó antes de cruzar los montes Bitterroot en 1805 y de nuevo en 1806. Las excavaciones hallaron rastros del campamento, como un fogón y una cuenta azul de comercio."
+          },
+          "wiki": {
+            "en": "Travelers' Rest (Lolo, Montana)",
+            "es": ""
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "corps",
+          "path": [
+            [
+              -123.88,
+              46.13
+            ],
+            [
+              -123.83,
+              46.19
+            ],
+            [
+              -123.77,
+              46.21
+            ],
+            [
+              -123.38,
+              46.2
+            ],
+            [
+              -123.21,
+              46.17
+            ],
+            [
+              -122.92,
+              46.1
+            ],
+            [
+              -122.8,
+              45.86
+            ],
+            [
+              -122.77,
+              45.65
+            ],
+            [
+              -122.67,
+              45.62
+            ],
+            [
+              -122.25,
+              45.56
+            ],
+            [
+              -121.89,
+              45.67
+            ],
+            [
+              -121.52,
+              45.71
+            ],
+            [
+              -121.18,
+              45.61
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        },
+        {
+          "side": "corps",
+          "path": [
+            [
+              -121.18,
+              45.61
+            ],
+            [
+              -120.6,
+              45.7
+            ],
+            [
+              -120.0,
+              45.83
+            ],
+            [
+              -119.34,
+              45.94
+            ],
+            [
+              -118.92,
+              46.07
+            ],
+            [
+              -118.4,
+              46.28
+            ],
+            [
+              -117.95,
+              46.35
+            ],
+            [
+              -117.55,
+              46.44
+            ],
+            [
+              -117.25,
+              46.42
+            ],
+            [
+              -117.02,
+              46.42
+            ],
+            [
+              -116.81,
+              46.45
+            ],
+            [
+              -116.55,
+              46.4
+            ],
+            [
+              -116.25,
+              46.33
+            ],
+            [
+              -116.02,
+              46.24
+            ],
+            [
+              -115.93,
+              46.37
+            ],
+            [
+              -115.72,
+              46.42
+            ],
+            [
+              -115.5,
+              46.47
+            ],
+            [
+              -115.27,
+              46.52
+            ],
+            [
+              -115.05,
+              46.56
+            ],
+            [
+              -114.85,
+              46.56
+            ],
+            [
+              -114.58,
+              46.64
+            ],
+            [
+              -114.53,
+              46.72
+            ],
+            [
+              -114.3,
+              46.76
+            ],
+            [
+              -114.08,
+              46.74
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ]
+    },
+    {
+      "date": "1806-07-27",
+      "title": {
+        "en": "Two parties, two rivers",
+        "es": "Dos grupos, dos ríos"
+      },
+      "camera": {
+        "lon": -111.08,
+        "lat": 46.81,
+        "zoom": 18.6
+      },
+      "text": {
+        "en": "On 3 July the captains split up. Lewis rode north to explore the Marias, where his men killed two Blackfeet; Clark, guided by Sacagawea, crossed to the Yellowstone and carved his name on Pompeys Pillar.",
+        "es": "El 3 de julio los capitanes se separaron. Lewis cabalgó al norte a explorar el Marías, donde sus hombres mataron a dos pies negros; Clark, guiado por Sacagawea, cruzó al Yellowstone y grabó su nombre en la roca Pompeys Pillar."
+      },
+      "details": {
+        "en": "Lewis and nine men, with Seaman, took the Native 'Buffalo Road' over today's Lewis and Clark Pass to the Great Falls, then went north with three men to find the source of the Marias. On 26 July they met a group of young Piegan Blackfeet and camped with them. At dawn the Blackfeet tried to take their guns and horses; Reubin Field stabbed one and Lewis shot another, in the only deadly fight of the expedition. Fearing revenge, Lewis's men rode about 160 km in a day. Clark's party rode south through the Bitterroot valley. Sacagawea knew this country from childhood: she pointed out the gap now called Gibbons Pass and, on 13 July, advised the route over Bozeman Pass to the Yellowstone. Clark called her 'a pilot through this country'. On 25 July he carved his name and the date on a sandstone tower by the river and named it after her son.",
+        "es": "Lewis y nueve hombres, con Seaman, tomaron el «camino del búfalo» indígena por el actual paso de Lewis y Clark hasta las Grandes Cataratas, y luego fue al norte con tres hombres a buscar el nacimiento del Marías. El 26 de julio encontraron a un grupo de jóvenes pies negros piegan y acamparon con ellos. Al amanecer, los pies negros intentaron llevarse sus armas y caballos; Reubin Field apuñaló a uno y Lewis disparó a otro, en la única pelea mortal de la expedición. Por miedo a una venganza, los hombres de Lewis cabalgaron unos 160 km en un día. El grupo de Clark cabalgó al sur por el valle del Bitterroot. Sacagawea conocía esa tierra desde niña: señaló el paso hoy llamado Gibbons y, el 13 de julio, recomendó la ruta por el paso Bozeman hacia el Yellowstone. Clark la llamó «una piloto por este país». El 25 de julio grabó su nombre y la fecha en una torre de arenisca junto al río y la llamó como el hijo de ella."
+      },
+      "places": [
+        {
+          "id": "lewis-and-clark-pass",
+          "name": {
+            "en": "Lewis and Clark Pass",
+            "es": "Paso de Lewis y Clark"
+          },
+          "at": [
+            -112.4289,
+            47.1428
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1806-07-07",
+          "place": {
+            "en": "Continental Divide, Montana, USA",
+            "es": "Divisoria continental, Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "A pass on the 'Buffalo Road', the Native trail from the Columbia valleys to the bison plains. Lewis crossed it on 7 July 1806. It is the only pass on their route that no road crosses today.",
+            "es": "Un paso del «camino del búfalo», el sendero indígena de los valles del Columbia a las llanuras de los bisontes. Lewis lo cruzó el 7 de julio de 1806. Es el único paso de su ruta que hoy no cruza ningún camino."
+          },
+          "wiki": {
+            "en": "Lewis and Clark Pass",
+            "es": "Paso de Lewis y Clark"
+          }
+        },
+        {
+          "id": "two-medicine-fight",
+          "name": {
+            "en": "Two Medicine fight",
+            "es": "Pelea del Two Medicine"
+          },
+          "at": [
+            -112.4667,
+            48.4667
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1806-07-27",
+          "place": {
+            "en": "Southeast of Browning, Blackfeet Reservation, Montana, USA",
+            "es": "Al sureste de Browning, reserva de los pies negros, Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "The only deadly clash of the expedition. At dawn on 27 July 1806 Lewis's men killed two young Piegan Blackfeet who tried to take their guns and horses, then fled.",
+            "es": "El único choque mortal de la expedición. Al amanecer del 27 de julio de 1806, los hombres de Lewis mataron a dos jóvenes pies negros piegan que intentaban llevarse sus armas y caballos, y luego huyeron."
+          },
+          "wiki": {
+            "en": "Two Medicine Fight Site",
+            "es": ""
+          }
+        },
+        {
+          "id": "blackfeet",
+          "name": {
+            "en": "Blackfoot Confederacy (Niitsitapi)",
+            "es": "Pies negros (niitsitapi)"
+          },
+          "at": [
+            -113.013,
+            48.557
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1806-07-26",
+          "place": {
+            "en": "Northern plains of Montana and Alberta",
+            "es": "Llanuras del norte de Montana y Alberta"
+          },
+          "text": {
+            "en": "Bison hunters of the northern plains: the Piikani (Piegan), Kainai and Siksika. After 1806 they kept American trappers out of their land; smallpox killed some 6,000 of them in 1837.",
+            "es": "Cazadores de bisontes de las llanuras del norte: los piikani (piegan), kainai y siksika. Después de 1806 mantuvieron a los tramperos estadounidenses fuera de su tierra; en 1837 la viruela mató a unos 6000 de ellos."
+          },
+          "details": {
+            "en": "The Niitsitapi ('the real people') followed the bison herds across what is now Montana and Alberta, and by the 1780s, with horses and guns, they had pushed the Shoshone off much of the plains. Lewis told the young men he met in 1806 that the United States would trade guns to their enemies, the Nez Perce and Shoshone, news that alarmed them. In 1870 the US Army attacked a friendly Piegan camp by mistake on the Marias River and killed many of them, most of them women, children and old people: the Marias Massacre. When the bison were nearly wiped out around 1881, the Blackfeet faced starvation.",
+            "es": "Los niitsitapi («la gente verdadera») seguían a las manadas de bisontes por lo que hoy son Montana y Alberta, y hacia 1780, con caballos y armas de fuego, habían expulsado a los shoshones de gran parte de las llanuras. Lewis dijo a los jóvenes que encontró en 1806 que Estados Unidos vendería armas a sus enemigos, los nez percés y los shoshones, una noticia que los alarmó. En 1870, el ejército de Estados Unidos atacó por error un campamento piegan amistoso junto al río Marías y mató a muchos, sobre todo mujeres, niños y ancianos: la masacre del Marías. Cuando los bisontes casi desaparecieron, hacia 1881, los pies negros sufrieron hambre."
+          },
+          "wiki": {
+            "en": "Blackfoot Confederacy",
+            "es": "Pies negros"
+          }
+        },
+        {
+          "id": "bozeman-pass",
+          "name": {
+            "en": "Bozeman Pass",
+            "es": "Paso Bozeman"
+          },
+          "at": [
+            -110.8078,
+            45.6672
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1806-07-13",
+          "place": {
+            "en": "Between Bozeman and Livingston, Montana, USA",
+            "es": "Entre Bozeman y Livingston, Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "The gap Sacagawea advised Clark to take into the Yellowstone valley on 13 July 1806. Clark called her 'a pilot through this country'. The Northern Pacific Railway later chose the same route.",
+            "es": "El paso que Sacagawea recomendó a Clark para llegar al valle del Yellowstone el 13 de julio de 1806. Clark la llamó «una piloto por este país». El ferrocarril Northern Pacific eligió después la misma ruta."
+          },
+          "wiki": {
+            "en": "Bozeman Pass",
+            "es": ""
+          }
+        },
+        {
+          "id": "pompeys-pillar",
+          "name": {
+            "en": "Pompeys Pillar",
+            "es": "Pompeys Pillar"
+          },
+          "at": [
+            -108.0058,
+            45.9953
+          ],
+          "cat": "nature",
+          "type": "site",
+          "date": "1806-07-25",
+          "place": {
+            "en": "Yellowstone River, near Billings, Montana, USA",
+            "es": "Río Yellowstone, cerca de Billings, Montana (EE. UU.)"
+          },
+          "text": {
+            "en": "A 45 m sandstone tower on the Yellowstone with Native petroglyphs and Clark's signature, dated 25 July 1806: the only mark of the expedition still visible on its route. He named it after Sacagawea's son, 'Pomp'.",
+            "es": "Una torre de arenisca de 45 m junto al Yellowstone, con petroglifos indígenas y la firma de Clark, fechada el 25 de julio de 1806: la única huella de la expedición que aún se ve en su ruta. La llamó como el hijo de Sacagawea, «Pomp»."
+          },
+          "wiki": {
+            "en": "Pompeys Pillar National Monument",
+            "es": ""
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "lewis",
+          "path": [
+            [
+              -114.08,
+              46.74
+            ],
+            [
+              -113.99,
+              46.87
+            ],
+            [
+              -113.75,
+              46.9
+            ],
+            [
+              -113.4,
+              46.97
+            ],
+            [
+              -113.0,
+              47.02
+            ],
+            [
+              -112.68,
+              46.95
+            ],
+            [
+              -112.43,
+              47.14
+            ],
+            [
+              -112.05,
+              47.33
+            ],
+            [
+              -111.6,
+              47.45
+            ],
+            [
+              -111.26,
+              47.45
+            ],
+            [
+              -111.4,
+              47.75
+            ],
+            [
+              -111.6,
+              48.05
+            ],
+            [
+              -111.95,
+              48.3
+            ],
+            [
+              -112.25,
+              48.42
+            ],
+            [
+              -112.55,
+              48.55
+            ],
+            [
+              -112.82,
+              48.63
+            ],
+            [
+              -112.47,
+              48.47
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎",
+          "label": {
+            "en": "Lewis's party",
+            "es": "El grupo de Lewis"
+          }
+        },
+        {
+          "side": "clark",
+          "path": [
+            [
+              -114.08,
+              46.74
+            ],
+            [
+              -114.09,
+              46.51
+            ],
+            [
+              -114.16,
+              46.25
+            ],
+            [
+              -114.13,
+              46.0
+            ],
+            [
+              -113.98,
+              45.83
+            ],
+            [
+              -113.93,
+              45.71
+            ],
+            [
+              -113.6,
+              45.63
+            ],
+            [
+              -113.3,
+              45.45
+            ],
+            [
+              -113.05,
+              45.2
+            ],
+            [
+              -112.86,
+              45.0
+            ],
+            [
+              -112.75,
+              45.12
+            ],
+            [
+              -112.64,
+              45.22
+            ],
+            [
+              -112.46,
+              45.39
+            ],
+            [
+              -112.33,
+              45.55
+            ],
+            [
+              -112.19,
+              45.72
+            ],
+            [
+              -112.1,
+              45.87
+            ],
+            [
+              -111.95,
+              45.86
+            ],
+            [
+              -111.77,
+              45.81
+            ],
+            [
+              -111.5,
+              45.93
+            ],
+            [
+              -111.04,
+              45.68
+            ],
+            [
+              -110.81,
+              45.67
+            ],
+            [
+              -110.56,
+              45.66
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎",
+          "label": {
+            "en": "Clark's party",
+            "es": "El grupo de Clark"
+          }
+        },
+        {
+          "side": "clark",
+          "path": [
+            [
+              -110.56,
+              45.66
+            ],
+            [
+              -109.95,
+              45.83
+            ],
+            [
+              -109.45,
+              45.72
+            ],
+            [
+              -109.07,
+              45.64
+            ],
+            [
+              -108.5,
+              45.78
+            ],
+            [
+              -108.0,
+              46.0
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        }
+      ]
+    },
+    {
+      "date": "1806-09-23",
+      "title": {
+        "en": "Back to St. Louis",
+        "es": "De vuelta a San Luis"
+      },
+      "camera": {
+        "lon": -99.11,
+        "lat": 43.36,
+        "zoom": 4.0
+      },
+      "text": {
+        "en": "Lewis, shot in the thigh by one of his own hunters, rejoined Clark on 12 August. Sacagawea and her family stayed at the Mandan towns, and the Corps raced down the Missouri to St. Louis on 23 September 1806.",
+        "es": "Lewis, herido en el muslo por uno de sus propios cazadores, se reunió con Clark el 12 de agosto. Sacagawea y su familia se quedaron en los pueblos mandan, y el Cuerpo bajó a toda prisa por el Misuri hasta San Luis, adonde llegó el 23 de septiembre de 1806."
+      },
+      "details": {
+        "en": "On 11 August Pierre Cruzatte, one of the hunters, mistook Lewis for an elk and shot him; he recovered on the way home. At the Mandan and Hidatsa towns Charbonneau was paid $500.33 plus a horse and a lodge; Clark later wrote that Sacagawea 'diserved a greater reward' than they had been able to give her, and offered to raise their son. The Mandan chief Sheheke agreed to travel east to meet Jefferson. With the current behind them, the boats covered more than 110 km a day. On 23 September 1806 they reached St. Louis, where many people had given them up for dead, after about 13,000 km and two years, four months and ten days. The other men received double pay and land. York received nothing and went back to slavery.",
+        "es": "El 11 de agosto, Pierre Cruzatte, uno de los cazadores, confundió a Lewis con un uapití y le disparó; se recuperó en el camino de vuelta. En los pueblos mandan e hidatsa, a Charbonneau le pagaron 500,33 dólares, un caballo y una tienda; Clark escribió después que Sacagawea «merecía una recompensa mayor» que la que pudieron darle, y se ofreció a criar a su hijo. El jefe mandan Sheheke aceptó viajar al este para conocer a Jefferson. Con la corriente a favor, los botes avanzaban más de 110 km al día. El 23 de septiembre de 1806 llegaron a San Luis, donde muchos los daban por muertos, tras unos 13 000 km y dos años, cuatro meses y diez días. Los demás hombres recibieron doble paga y tierras. York no recibió nada y volvió a la esclavitud."
+      },
+      "places": [
+        {
+          "id": "toussaint-charbonneau",
+          "name": {
+            "en": "Toussaint Charbonneau",
+            "es": "Toussaint Charbonneau"
+          },
+          "at": [
+            -101.395,
+            47.342
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1804-11-04",
+          "life": [
+            "1767-03-21",
+            "1843"
+          ],
+          "place": {
+            "en": "Knife River villages, North Dakota, USA",
+            "es": "Aldeas del río Knife, Dakota del Norte (EE. UU.)"
+          },
+          "text": {
+            "en": "A French-Canadian fur trader living among the Hidatsa, hired as an interpreter with his wife Sacagawea. Lewis called him 'a man of no peculiar merit'. He was paid $500.33, a horse and a lodge.",
+            "es": "Un comerciante de pieles franco-canadiense que vivía entre los hidatsa, contratado como intérprete junto con su esposa Sacagawea. Lewis lo llamó «un hombre sin ningún mérito especial». Le pagaron 500,33 dólares, un caballo y una tienda."
+          },
+          "details": {
+            "en": "Charbonneau spoke French and some Hidatsa, cooked for the party, and helped bargain for horses with the Shoshone. When a squall hit his boat in May 1805 he panicked, while Sacagawea calmly saved the papers that floated out. A fur company record of 1795 says he was stabbed while trying to rape a girl. He married at least five Native girls aged 16 or younger, the last one when he was over 70. After the journey he worked for decades as an interpreter on the upper Missouri, with Clark's help, and died there around 1843.",
+            "es": "Charbonneau hablaba francés y algo de hidatsa, cocinaba para el grupo y ayudó a negociar los caballos con los shoshones. Cuando una ráfaga golpeó su bote en mayo de 1805 entró en pánico, mientras Sacagawea salvaba con calma los papeles que flotaban. Un registro de una compañía peletera de 1795 dice que fue apuñalado cuando intentaba violar a una muchacha. Se casó con al menos cinco muchachas indígenas de 16 años o menos, la última cuando él tenía más de 70. Después del viaje trabajó durante décadas como intérprete en el alto Misuri, con ayuda de Clark, y murió allí hacia 1843."
+          },
+          "wiki": {
+            "en": "Toussaint Charbonneau",
+            "es": "Toussaint Charbonneau"
+          }
+        },
+        {
+          "id": "sheheke",
+          "name": {
+            "en": "Sheheke (Big White)",
+            "es": "Sheheke (Big White)"
+          },
+          "at": [
+            -101.275,
+            47.248
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1806-08-17",
+          "life": [
+            "1766",
+            "1812"
+          ],
+          "place": {
+            "en": "Mitutanka, North Dakota, USA",
+            "es": "Mitutanka, Dakota del Norte (EE. UU.)"
+          },
+          "text": {
+            "en": "The main chief of the Mandan town of Mitutanka. He went east with the Corps in 1806 to meet Jefferson; getting him home took two tries, hundreds of soldiers and several lives. He was killed fighting the Hidatsa in 1812.",
+            "es": "El jefe principal del pueblo mandan de Mitutanka. Fue al este con el Cuerpo en 1806 para reunirse con Jefferson; llevarlo de vuelta costó dos intentos, cientos de soldados y varias vidas. Murió luchando contra los hidatsa en 1812."
+          },
+          "wiki": {
+            "en": "Sheheke",
+            "es": ""
+          }
+        },
+        {
+          "id": "smallpox-1837",
+          "name": {
+            "en": "Smallpox epidemic of 1837",
+            "es": "Epidemia de viruela de 1837"
+          },
+          "at": [
+            -104.04,
+            47.999
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1837",
+          "place": {
+            "en": "Upper Missouri River, USA",
+            "es": "Alto río Misuri (EE. UU.)"
+          },
+          "text": {
+            "en": "A fur company steamboat carried smallpox up the Missouri in 1837. More than 17,000 Native people died along the river alone, and the Mandan who had sheltered the Corps were nearly wiped out.",
+            "es": "Un barco de vapor de una compañía peletera llevó la viruela Misuri arriba en 1837. Más de 17 000 indígenas murieron solo a lo largo del río, y los mandan que habían acogido al Cuerpo casi desaparecieron."
+          },
+          "wiki": {
+            "en": "1837 Great Plains smallpox epidemic",
+            "es": "Epidemia de viruela en las Grandes Llanuras de 1837"
+          }
+        },
+        {
+          "id": "st-louis",
+          "name": {
+            "en": "St. Louis",
+            "es": "San Luis"
+          },
+          "at": [
+            -90.1978,
+            38.6272
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1806-09-23",
+          "place": {
+            "en": "St. Louis, Missouri, USA",
+            "es": "San Luis, Misuri (EE. UU.)"
+          },
+          "text": {
+            "en": "A fur-trading town founded by the French in 1764 near where the Missouri meets the Mississippi. The Corps arrived here on 23 September 1806, long given up for dead.",
+            "es": "Un pueblo de comercio de pieles fundado por los franceses en 1764, cerca de donde el Misuri se une al Misisipi. El Cuerpo llegó aquí el 23 de septiembre de 1806, cuando muchos ya lo daban por muerto."
+          },
+          "wiki": {
+            "en": "St. Louis",
+            "es": "San Luis (Misuri)"
+          }
+        },
+        {
+          "id": "york",
+          "name": {
+            "en": "York",
+            "es": "York"
+          },
+          "at": [
+            -85.7585,
+            38.2527
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1803-10-15",
+          "place": {
+            "en": "Louisville, Kentucky, USA",
+            "es": "Louisville, Kentucky (EE. UU.)"
+          },
+          "text": {
+            "en": "A Black man enslaved by William Clark, and the only African American on the expedition. He hunted, paddled and helped win the trust of Native nations, yet he was given nothing and kept in slavery for years after.",
+            "es": "Un hombre negro esclavizado por William Clark, y el único afroamericano de la expedición. Cazó, remó y ayudó a ganar la confianza de las naciones indígenas, pero no recibió nada y siguió esclavizado durante años."
+          },
+          "details": {
+            "en": "York was born in Virginia between 1770 and 1775 and was inherited by Clark in 1799. On the journey he carried a rifle, which enslaved people were rarely allowed, nursed the dying Sergeant Floyd and was a sensation among the Arikara, Mandan and other nations, who had never seen a Black man. In November 1805 his view was recorded with everyone else's on where to spend the winter. Back home, he asked for his freedom because of his 'immense services'. Clark refused, whipped him, jailed him and kept him away from his wife in Louisville. He was still enslaved, working as a wagoner, about ten years later; no record shows he was ever freed. In 2001 he was made an honorary sergeant of the US Army.",
+            "es": "York nació en Virginia entre 1770 y 1775 y Clark lo heredó en 1799. En el viaje llevó un rifle, algo que casi nunca se permitía a una persona esclavizada, cuidó al moribundo sargento Floyd y causó sensación entre los arikara, los mandan y otras naciones, que nunca habían visto a un hombre negro. En noviembre de 1805 se anotó su opinión, como la de todos, sobre dónde pasar el invierno. De vuelta, pidió su libertad por sus «inmensos servicios». Clark se negó, lo azotó, lo encarceló y lo mantuvo lejos de su esposa en Louisville. Unos diez años después seguía esclavizado, trabajando como carretero; ningún documento muestra que fuera liberado. En 2001 fue nombrado sargento honorario del Ejército de Estados Unidos."
+          },
+          "wiki": {
+            "en": "York (explorer)",
+            "es": ""
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "lewis",
+          "path": [
+            [
+              -112.47,
+              48.47
+            ],
+            [
+              -111.95,
+              48.25
+            ],
+            [
+              -111.3,
+              48.05
+            ],
+            [
+              -110.47,
+              47.93
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        },
+        {
+          "side": "lewis",
+          "path": [
+            [
+              -110.47,
+              47.93
+            ],
+            [
+              -109.26,
+              47.81
+            ],
+            [
+              -107.93,
+              47.58
+            ],
+            [
+              -106.73,
+              47.76
+            ],
+            [
+              -105.51,
+              48.09
+            ],
+            [
+              -104.15,
+              48.05
+            ],
+            [
+              -104.04,
+              47.98
+            ],
+            [
+              -103.06,
+              48.16
+            ],
+            [
+              -102.6,
+              47.97
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        },
+        {
+          "side": "clark",
+          "path": [
+            [
+              -108.0,
+              46.0
+            ],
+            [
+              -107.47,
+              46.15
+            ],
+            [
+              -106.76,
+              46.28
+            ],
+            [
+              -105.84,
+              46.41
+            ],
+            [
+              -105.0,
+              46.86
+            ],
+            [
+              -104.69,
+              47.14
+            ],
+            [
+              -104.15,
+              47.7
+            ],
+            [
+              -104.04,
+              47.98
+            ],
+            [
+              -103.06,
+              48.16
+            ],
+            [
+              -102.6,
+              47.97
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        },
+        {
+          "side": "corps",
+          "path": [
+            [
+              -102.6,
+              47.97
+            ],
+            [
+              -101.42,
+              47.56
+            ],
+            [
+              -101.09,
+              47.3
+            ],
+            [
+              -100.83,
+              46.76
+            ],
+            [
+              -100.33,
+              45.74
+            ],
+            [
+              -100.53,
+              44.77
+            ],
+            [
+              -100.37,
+              44.35
+            ],
+            [
+              -99.91,
+              44.23
+            ],
+            [
+              -99.43,
+              43.71
+            ],
+            [
+              -98.35,
+              42.92
+            ],
+            [
+              -96.95,
+              42.75
+            ],
+            [
+              -96.38,
+              42.46
+            ],
+            [
+              -96.14,
+              41.95
+            ],
+            [
+              -95.86,
+              41.04
+            ],
+            [
+              -95.41,
+              40.12
+            ],
+            [
+              -95.02,
+              39.45
+            ],
+            [
+              -94.61,
+              39.11
+            ],
+            [
+              -93.92,
+              39.17
+            ],
+            [
+              -92.89,
+              39.23
+            ],
+            [
+              -92.11,
+              38.56
+            ],
+            [
+              -90.76,
+              38.64
+            ],
+            [
+              -90.48,
+              38.78
+            ],
+            [
+              -90.13,
+              38.82
+            ],
+            [
+              -90.19,
+              38.63
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "The expedition mapped a way across the continent and described more than 200 plants and animals new to European-American science, but found no easy water route to the Pacific. Its maps and claims of sovereignty opened the West to fur traders, settlers and the US Army: within a lifetime most of the nations that had fed, guided and sheltered the Corps had lost their land through treaties, removal and war, and the Mandan were nearly wiped out by smallpox. Sacagawea and York, long left at the edges of the story, are now honoured at its centre.",
+    "es": "La expedición trazó un camino a través del continente y describió más de 200 plantas y animales nuevos para la ciencia de origen europeo, pero no encontró una ruta fácil por agua hasta el Pacífico. Sus mapas y sus reclamos de soberanía abrieron el Oeste a comerciantes de pieles, colonos y al ejército de Estados Unidos: en una vida, la mayoría de las naciones que habían alimentado, guiado y acogido al Cuerpo perdieron su tierra por tratados, expulsiones y guerras, y los mandan casi desaparecieron por la viruela. Sacagawea y York, durante mucho tiempo al margen de la historia, hoy son honrados en su centro."
+  },
+  "sources": [
+    {
+      "title": "Lewis and Clark Expedition (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lewis_and_Clark_Expedition"
+    },
+    {
+      "title": "Timeline of the Lewis and Clark Expedition (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Timeline_of_the_Lewis_and_Clark_Expedition"
+    },
+    {
+      "title": "Louisiana Purchase (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Louisiana_Purchase"
+    },
+    {
+      "title": "Meriwether Lewis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Meriwether_Lewis"
+    },
+    {
+      "title": "William Clark (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/William_Clark"
+    },
+    {
+      "title": "York (explorer) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/York_(explorer)"
+    },
+    {
+      "title": "Sacagawea (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sacagawea"
+    },
+    {
+      "title": "Toussaint Charbonneau (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Toussaint_Charbonneau"
+    },
+    {
+      "title": "Jean Baptiste Charbonneau (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jean_Baptiste_Charbonneau"
+    },
+    {
+      "title": "Seaman (dog) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Seaman_(dog)"
+    },
+    {
+      "title": "Camp Dubois (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Camp_Dubois"
+    },
+    {
+      "title": "Charles Floyd (explorer) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Charles_Floyd_(explorer)"
+    },
+    {
+      "title": "Otoe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Otoe"
+    },
+    {
+      "title": "Lakota people (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lakota_people"
+    },
+    {
+      "title": "Fort Mandan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fort_Mandan"
+    },
+    {
+      "title": "Mandan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mandan"
+    },
+    {
+      "title": "Hidatsa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hidatsa"
+    },
+    {
+      "title": "Sheheke (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sheheke"
+    },
+    {
+      "title": "Great Falls (Missouri River) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Falls_(Missouri_River)"
+    },
+    {
+      "title": "Grizzly bear (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Grizzly_bear"
+    },
+    {
+      "title": "Marias River (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Marias_River"
+    },
+    {
+      "title": "Gates of the Mountains Wilderness (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gates_of_the_Mountains_Wilderness"
+    },
+    {
+      "title": "Missouri Headwaters State Park (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Missouri_Headwaters_State_Park"
+    },
+    {
+      "title": "Three Forks, Montana (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Three_Forks,_Montana"
+    },
+    {
+      "title": "Beaverhead Rock (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Beaverhead_Rock"
+    },
+    {
+      "title": "Cameahwait (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cameahwait"
+    },
+    {
+      "title": "Shoshone (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shoshone"
+    },
+    {
+      "title": "Lemhi Shoshone (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lemhi_Shoshone"
+    },
+    {
+      "title": "Lemhi Pass (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lemhi_Pass"
+    },
+    {
+      "title": "Bitterroot Salish (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bitterroot_Salish"
+    },
+    {
+      "title": "Travelers' Rest (Lolo, Montana) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Travelers'_Rest_(Lolo,_Montana)"
+    },
+    {
+      "title": "Lolo Pass (Idaho–Montana) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lolo_Pass_(Idaho–Montana)"
+    },
+    {
+      "title": "Weippe Prairie (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Weippe_Prairie"
+    },
+    {
+      "title": "Nez Perce (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nez_Perce"
+    },
+    {
+      "title": "Clearwater River (Idaho) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Clearwater_River_(Idaho)"
+    },
+    {
+      "title": "Snake River (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Snake_River"
+    },
+    {
+      "title": "Columbia River (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Columbia_River"
+    },
+    {
+      "title": "Celilo Falls (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Celilo_Falls"
+    },
+    {
+      "title": "Chinookan peoples (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chinookan_peoples"
+    },
+    {
+      "title": "Dismal Nitch (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dismal_Nitch"
+    },
+    {
+      "title": "Cape Disappointment (Washington) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cape_Disappointment_(Washington)"
+    },
+    {
+      "title": "Fort Clatsop (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fort_Clatsop"
+    },
+    {
+      "title": "Clatsop (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Clatsop"
+    },
+    {
+      "title": "Lewis and Clark Pass (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lewis_and_Clark_Pass"
+    },
+    {
+      "title": "Two Medicine Fight Site (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Two_Medicine_Fight_Site"
+    },
+    {
+      "title": "Blackfoot Confederacy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Blackfoot_Confederacy"
+    },
+    {
+      "title": "Bozeman Pass (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bozeman_Pass"
+    },
+    {
+      "title": "Pompeys Pillar National Monument (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pompeys_Pillar_National_Monument"
+    },
+    {
+      "title": "1837 Great Plains smallpox epidemic (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1837_Great_Plains_smallpox_epidemic"
+    },
+    {
+      "title": "St. Louis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/St._Louis"
+    },
+    {
+      "title": "Missouri River (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Missouri_River"
+    },
+    {
+      "title": "Indian peace medal (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Indian_peace_medal"
+    },
+    {
+      "title": "Ecola State Park (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ecola_State_Park"
+    },
+    {
+      "title": "Lewis and Clark National Historical Park (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lewis_and_Clark_National_Historical_Park"
+    },
+    {
+      "title": "Nez Perce National Historical Park (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nez_Perce_National_Historical_Park"
+    },
+    {
+      "title": "Clark Canyon Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Clark_Canyon_Dam"
+    }
+  ]
+}

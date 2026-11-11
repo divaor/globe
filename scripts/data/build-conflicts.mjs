@@ -44,7 +44,7 @@ import pc from 'polygon-clipping';
 import { feature, quantize } from 'topojson-client';
 import { topology } from 'topojson-server';
 import { presimplify, simplify, sphericalTriangleArea } from 'topojson-simplify';
-import { geoArea, geoCircle, geoDistance, geoGraticule10, geoOrthographic, geoPath } from 'd3-geo';
+import { geoArea, geoCircle, geoDistance, geoGraticule10, geoInterpolate, geoOrthographic, geoPath } from 'd3-geo';
 import { rewindTopology } from './winding.mjs';
 import { paleoMa, tooOld, plateFor, rotate, paleoLand, PALEO_YEARS } from './paleo-rot.mjs';
 import { attachGames, gamesIds, gamesSides } from './games/attach.mjs';
@@ -53,12 +53,14 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const DATA = path.join(ROOT, 'public/data');
 
 /** The collections: where their sources and outputs live. */
-export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games' };
+export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys' };
 /** The collections whose deep-time steps are drawn on the continents of their age (the plate model). */
 const PALEO_KINDS = new Set(['life']);
 const srcDir = (kind) => path.join(ROOT, 'scripts/data', KINDS[kind]);
 const outDir = (kind) => path.join(DATA, KINDS[kind]);
-const ITEM_TYPES = ['person', 'work', 'place', 'invention', 'event', 'site', 'dish', 'crop', 'animal', 'structure', 'institution', 'fossil', 'culture', 'species', 'games'];
+/** How a route goes: by sea (the lint checks it stays at sea), over land, up a river, over the ice, by air. */
+const MOVE_BY = ['sea', 'land', 'river', 'ice', 'air'];
+const ITEM_TYPES = ['person', 'work', 'place', 'invention', 'event', 'site', 'dish', 'crop', 'animal', 'structure', 'institution', 'fossil', 'culture', 'species', 'games', 'goods', 'ship'];
 
 export const ERAS = ['precambrian', 'paleozoic', 'mesozoic', 'cenozoic', 'prehistory', 'ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
 /** The geologic eras: only the Life through time stories are grouped by them. */
@@ -461,6 +463,7 @@ function validate(c, file, kind = 'wars', coll = null) {
   if (!wars && c.catalog != null && !['all', 'shown'].includes(c.catalog)) throw new Error(`${where}: "catalog" is "all" (every catalogue item appears from its date on) or "shown" (only the items the steps show)`);
   if (c.catalog === 'all' && !coll.catalog.size) throw new Error(`${where}: "catalog": "all" but the collection has no catalogue`);
   if (!wars && c.casualties != null) throw new Error(`${where}: "casualties" is for wars`);
+  if (c.trail != null && typeof c.trail !== 'boolean') throw new Error(`${where}: "trail" is true (earlier steps' routes stay on the map) or false`);
   const sides = new Set();
   for (const [i, s] of (c.sides ?? []).entries()) {
     if (!/^[a-z][a-z0-9_]*$/.test(s.id ?? '')) throw new Error(`${where} sides[${i}]: "id" must be lowercase letters, digits or _`);
@@ -493,6 +496,10 @@ function validate(c, file, kind = 'wars', coll = null) {
       if (!sides.has(mv.side)) throw new Error(`${w}.moves[${j}]: "side" "${mv.side}" is not a side`);
       if (!Array.isArray(mv.path) || mv.path.length < 2 || !mv.path.every((p) => isPair(p) && inRange(p))) throw new Error(`${w}.moves[${j}]: "path" needs 2+ [lon, lat] points`);
       text(mv.label, `${w}.moves[${j}].label`, false);
+      if (mv.by != null && !MOVE_BY.includes(mv.by)) throw new Error(`${w}.moves[${j}].by: one of ${MOVE_BY.join(', ')}`);
+      if (mv.icon != null && (typeof mv.icon !== 'string' || !mv.icon || mv.icon.length > 8)) throw new Error(`${w}.moves[${j}].icon: one emoji (the traveller, a ship, a caravan...)`);
+      const extra = Object.keys(mv).filter((k) => !['side', 'path', 'label', 'by', 'icon'].includes(k));
+      if (extra.length) throw new Error(`${w}.moves[${j}]: unknown field(s) ${extra.join(', ')} (side, path, label, by, icon)`);
     }
     for (const [j, b] of (st.battles ?? []).entries()) {
       const bw = `${w}.battles[${j}]`;
@@ -712,6 +719,43 @@ function paleoPass(c, steps, items, opts) {
 // ---------------------------------------------------------------------------------------------
 // Lint: warnings worth a look (they don't stop the build).
 
+/** Is a point on land (Natural Earth 50m land, holes counted)? */
+function onLand([x, y]) {
+  const inRing = (r) => {
+    let inside = false;
+    for (let i = 0, j = r.length - 1; i < r.length; j = i++) {
+      if ((r[i][1] > y) !== (r[j][1] > y) && x < ((r[j][0] - r[i][0]) * (y - r[i][1])) / (r[j][1] - r[i][1]) + r[i][0]) inside = !inside;
+    }
+    return inside;
+  };
+  return loadLand().some(({ poly, box }) => x >= box[0] && x <= box[2] && y >= box[1] && y <= box[3] && inRing(poly[0]) && !poly.slice(1).some(inRing));
+}
+
+/**
+ * A route `"by": "sea"` should stay at sea: warns where it crosses more than 40 km of land (away from
+ * its first and last 30 km, the ports). Canals (Suez, Panama) are crossings to keep.
+ */
+function seaRoutes(c, steps, warn) {
+  const KM = 6371;
+  steps.forEach((st, i) => (st.moves ?? []).forEach((mv, j) => {
+    if (mv.by !== 'sea') return;
+    const pts = [];
+    for (let k = 1; k < mv.path.length; k++) {
+      const a = mv.path[k - 1], b = mv.path[k], d = geoDistance(a, b) * KM, n = Math.max(1, Math.ceil(d / 8)), f = geoInterpolate(a, b);
+      for (let m = k === 1 ? 0 : 1; m <= n; m++) pts.push(f(m / n));
+    }
+    let along = 0, run = 0, from = null;
+    const total = pts.reduce((sum, p, k) => sum + (k ? geoDistance(pts[k - 1], p) * KM : 0), 0);
+    const report = () => { if (run > 40) warn(`steps[${i}].moves[${j}] goes by sea but crosses ~${Math.round(run)} km of land from [${from.map((v) => v.toFixed(2)).join(', ')}]; add points around the coast`); run = 0; from = null; };
+    pts.forEach((p, k) => {
+      const step = k ? geoDistance(pts[k - 1], p) * KM : 0;
+      along += step;
+      if (along > 30 && along < total - 30 && onLand(p)) { if (!from) from = p; run += step; } else report();
+    });
+    report();
+  }));
+}
+
 function lint(c, steps, areas) {
   const warn = (m) => console.warn(`  warn ${c.id}: ${m}`);
   const sq = (mp) => mp.reduce((a, poly) => a + Math.abs(signedArea(poly[0])) - poly.slice(1).reduce((h, r) => h + Math.abs(signedArea(r)), 0), 0);
@@ -737,6 +781,7 @@ function lint(c, steps, areas) {
       if (area > 0.05) warn(`steps[${i}] ${st.date}: ${held[a][0]} and ${held[b][0]} overlap (~${Math.round(area * 12000)} km²)`);
     }
   });
+  seaRoutes(c, steps, warn);
   for (const s of c.sides) {
     const used = steps.some((st) => st.control[s.id] != null) || steps.some((st) => (st.moves ?? []).some((m) => m.side === s.id) || (st.battles ?? []).some((b) => b.winner === s.id) || st.games?.teams.some((tm) => tm.s === s.id));
     if (!used) warn(`side "${s.id}" never holds territory, moves or wins`);
@@ -806,6 +851,13 @@ async function preview(c, topo, dir) {
       if (idx == null) continue;
       parts.push(`<path d="${p(areas[idx])}" fill="${s.color}" fill-opacity="0.72" stroke="${s.color}" stroke-width="1"/>`);
     }
+    // A journey's earlier routes stay on the map as a thin trail (the journey so far).
+    if (c.trail ?? c.kind === 'journeys') {
+      for (const old of c.steps.slice(0, i)) for (const mv of old.moves ?? []) {
+        const d = p({ type: 'LineString', coordinates: mv.path.map((pt, k) => at(pt, mv.pls?.[k])) });
+        if (d) parts.push(`<path d="${d}" fill="none" stroke="${c.sides.find((s) => s.id === mv.side).color}" stroke-width="1.8" stroke-opacity="0.55" stroke-linecap="round" stroke-dasharray="${mv.by === 'sea' ? '5 3' : 'none'}"/>`);
+      }
+    }
     for (const mv of st.moves ?? []) {
       const col = c.sides.find((s) => s.id === mv.side).color;
       const d = p({ type: 'LineString', coordinates: mv.path.map((pt, k) => at(pt, mv.pls?.[k])) });
@@ -853,7 +905,9 @@ async function preview(c, topo, dir) {
 
 /** What the picker needs before a story is opened (not wars): its most common categories too. */
 function storyEntry(m) {
-  const sides = m.sides.filter((s) => m.steps.some((st) => !st.aftermath && (st.control[s.id] != null || st.games?.teams.some((tm) => tm.s === s.id))));
+  // Journeys: a traveller with routes only is a side too.
+  const routes = (s, st) => m.kind === 'journeys' && (st.moves ?? []).some((mv) => mv.side === s.id);
+  const sides = m.sides.filter((s) => m.steps.some((st) => !st.aftermath && (st.control[s.id] != null || st.games?.teams.some((tm) => tm.s === s.id) || routes(s, st))));
   const count = new Map();
   for (const it of m.items) count.set(it.cat, (count.get(it.cat) ?? 0) + 1);
   return {
@@ -872,7 +926,13 @@ function collectionItems(results) {
     m.items.forEach((it) => {
       let step = it.first;
       if (step < 0) { step = m.steps.findIndex((st) => st.t >= it.t); if (step < 0) step = m.steps.length - 1; }
-      if (it.id != null && seen.has(it.id)) return;
+      if (it.id != null && seen.has(it.id)) {
+        // Told again by another story: listed once, with that story in `also` (quizzes keep it out of
+        // the wrong answers).
+        const row = out[seen.get(it.id)];
+        if (row.story !== m.id && !(row.also ?? []).includes(m.id)) row.also = [...(row.also ?? []), m.id];
+        return;
+      }
       const { first: _f, details: _d, facts: _x, ...rest } = it;
       const k = out.push({ ...rest, story: m.id, step }) - 1;
       if (it.id != null) seen.set(it.id, k);

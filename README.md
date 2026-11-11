@@ -74,14 +74,22 @@ spinning full-screen as an ambient display. English and Spanish.
     why it stayed away (Kazakhstan in 1980: part of the Soviet Union's team). Also the Women's World Cup from the
     1921 ban, a century of boycotts and bans, the Tour de France and the marathon, from Marathon to the first
     race under two hours.
+  - Journeys and trade routes: 14 stories, 216 steps and 627 items. Each step draws the next stretch of the
+    journey, with the traveller (a ship, a caravan, a sledge) moving along it, and the way already travelled
+    stays on the map as a faded trail; sea routes are dashed and kept at sea. The journeys of Xuanzang, Marco
+    Polo, Ibn Battuta, Zheng He, Magellan and Elcano, Cook, Lewis and Clark, the Arctic explorers and the race to
+    the South Pole; the Silk Road, the incense and spice routes, gold and salt across the Sahara, silver and the
+    Manila galleons, and the Atlantic slave trade, told plainly with the Slave Voyages numbers and the
+    resistance. The peoples met are named, with the guides and interpreters the journeys depended on.
   - Browse and search every item of a story or a whole collection; shared links open a story at its step.
 - **Explore:** measure distances (great circles, flight time), compare two countries, "true size" of countries.
 - **Learn & play:** quizzes (find the country, flags, capitals, states and provinces of 48 countries, where in
   the world, when was it built or made, dishes of the world, which era, which civilization, which geologic
-  period, who won, guess the link between two country facts), each ending with every answer and its picture;
-  guided tours (our planet, eight cities
-  through time, history and culture, Out of Africa, capitals of the ancient world, the dinosaur trail, the five
-  mass extinctions, Olympic cities, World Cup finals, the Winter Games, great races); "On this day" (Wikipedia).
+  period, who won, guess the link between two country facts, which journey), each ending with every answer and
+  its picture; guided tours (our planet, eight cities through time, history and culture, Out of Africa, capitals
+  of the ancient world, the dinosaur trail, the five mass extinctions, Olympic cities, World Cup finals, the
+  Winter Games, great races, along the Silk Road, around the world under sail, to the ends of the Earth, gold,
+  silver and spices); "On this day" (Wikipedia).
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Ambient mode:** full-screen rotating globe with your filters, screen kept awake, clock, optional filter cycling.
 
@@ -129,7 +137,9 @@ Wikipedia and the sources listed in each story
 (`scripts/data/conflicts/README.md`, `scripts/data/STORIES.md`); item pictures are Wikipedia page images,
 loaded from Wikipedia when a card opens, or a Wikimedia Commons file named by the item. Each Games' host,
 dates, nations, athletes, medal table or World Cup ranking, and who boycotted or was kept out, are read from
-Wikipedia's articles on that Games (`scripts/data/games/README.md`, with the revisions read).
+Wikipedia's articles on that Games (`scripts/data/games/README.md`, with the revisions read). The Journeys and
+trade routes stories are written from the Wikipedia articles listed in each story; the numbers of the Atlantic
+slave trade are those of the Trans-Atlantic Slave Trade Database (SlaveVoyages), as Wikipedia reports them.
 
 ## Licence
 

@@ -1,6 +1,6 @@
-# Eras and ideas, Food through time, Great structures, Peoples and civilizations, Life through time, Games of the world: authoring guide
+# Eras and ideas, Food through time, Great structures, Peoples and civilizations, Life through time, Games of the world, Journeys and trade routes: authoring guide
 
-Six time-travel collections share the story format of Wars and conquests:
+Seven time-travel collections share the story format of Wars and conquests:
 
 | Collection | Folder | What a story shows |
 |---|---|---|
@@ -10,6 +10,7 @@ Six time-travel collections share the story format of Wars and conquests:
 | Peoples and civilizations | `scripts/data/people/` | human origins and migrations, and where civilizations rose and fell, with their capitals, works and what remains |
 | Life through time | `scripts/data/life/` | the story of life on the drifting continents: first life, fossils, extinctions, dinosaurs, mammals, the Ice Age, tamed animals, species then and now (see [Life through time](#life-through-time) below) |
 | Games of the world | `scripts/data/games/` | every Summer and Winter Olympics and every men's and women's World Cup, with the countries that took part, medals, champions and boycotts; the Tour de France and the great marathons (see [Games of the world](#games-of-the-world) below) |
+| Journeys and trade routes | `scripts/data/journeys/` | great journeys followed leg by leg (Marco Polo, Ibn Battuta, Zheng He, Cook, the race to the Poles...) and the trade routes that carried silk, spices, gold, salt and silver, and enslaved people across the Atlantic (see [Journeys and trade routes](#journeys-and-trade-routes) below) |
 
 **Read `scripts/data/conflicts/README.md` first.** It covers dates, the camera, sides and their territory
 (`control` with area expressions), `moves` (routes), `events`, `aftermath` and sources, which work the
@@ -42,7 +43,7 @@ same here. `structures/seven-wonders.json` is a complete example that uses the c
 | `at` | `[lon, lat]`, precise (4 decimals) for buildings and sites; for a person, where the step's work happened |
 | `cat` | a category id from `_collection.json` (below) |
 | `icon` | optional emoji; defaults to the category's (✍️ for a writer, 🎭 for a theatre...) |
-| `type` | optional: `person`, `work`, `place`, `invention`, `event`, `site`, `dish`, `crop`, `animal`, `structure`, `institution`, `fossil` (a fossil find), `culture` (a civilization or people as a whole), `species` (a living or extinct kind of organism) (quizzes use it) |
+| `type` | optional: `person`, `work`, `place`, `invention`, `event`, `site`, `dish`, `crop`, `animal`, `structure`, `institution`, `fossil` (a fossil find), `culture` (a civilization or people as a whole), `species` (a living or extinct kind of organism), `ship`, `goods` (a traded good) (quizzes use it) |
 | `date` | when it happened or was made: a work's creation, an invention, a dish's first record, the start of a building. Dates older than 10,000 BC are written as years ago (14,400 years ago is `-14400`, 3.2 million years ago is `-3200000`); the app shows them as "14,400 years ago" |
 | `end` | optional: when it was finished (a building, a long work) |
 | `until` | optional: when it stopped existing (a civilization's fall, a city abandoned, a building lost). The card shows `date`–`until`, and a time tour takes it off the map after `until` |
@@ -85,6 +86,13 @@ across all of them.
 - **Games:** summer, winter, football (the host markers of the Olympics and World Cups), athlete (athletes and
   players), moment (a famous moment: a race, a goal, a ceremony), protest (protests, boycotts and bans), venue
   (stadiums, courses), cycling, running, ancient (the games of Olympia and other ancient games).
+- **Journeys:** traveller (explorers, merchants, pilgrims, sailors, guides), city (cities and courts), port, caravan
+  (oases, caravanserais, desert and mountain stations), ship (ships and fleets), goods (silk, spices, gold, salt,
+  silver, porcelain...), encounter (peoples and rulers met), discovery (discoveries and science), book (the books
+  and maps journeys left), nature (passes, capes, straits, rivers, glaciers), camp (camps, forts and winter quarters),
+  ice (polar camps, depots, the Poles),
+  slavery (forts, ports, markets and ships of the slave trade), resistance (revolts, maroons, abolition), event
+  (turning points: a landing, a death, a shipwreck).
 
 Don't add or rename categories without asking. Only one person edits a `_collection.json` at a time.
 
@@ -186,3 +194,41 @@ World Cup names it with `"games"`, and the build adds the rest from Wikipedia's 
   exclusion, the 1968 protests and the Tlatelolco massacre, the Munich massacre, doping scandals as the
   sources state them (bans, stripped medals), women's long fight to compete, and the workers who died building
   some venues.
+
+## Journeys and trade routes
+
+`scripts/data/journeys/` follows great journeys leg by leg, and the trade routes that tied the world together.
+
+- **The route is the story.** Give each traveller or expedition a side (`sides`: `{ "id", "name", "color" }`, the
+  name is its legend label: "Marco Polo", "Amundsen's party", "Scott's party", "The caravans") and draw each
+  step's stretch as a `moves` entry. The routes of earlier steps **stay on the map** as a thin, faded trail, so the
+  whole journey so far is always in view (a story can turn this off with `"trail": false`).
+- **A route** (`moves`) is `{ "side", "path": [[lon, lat], ...], "by"?, "icon"?, "label"? }`, in travelling order:
+  - `path`: enough points to follow the real way: along coasts and around capes at sea, through the passes and oases
+    on land, along a river's course. The app joins the points with great circles, so a long open-ocean crossing
+    needs only a few points, but a coastal voyage needs one every few hundred kilometres. Start each step's route
+    where the last one ended.
+  - `by`: `"sea"`, `"land"`, `"river"`, `"ice"` or `"air"`. A sea route is drawn dashed, and `--lint` warns
+    where it crosses more than 40 km of land (add points around the coast; canals such as Suez are fine).
+  - `icon`: one emoji drawn at the head of the route as it is drawn, the traveller on the move: ⛵ 🚢 for ships, 🐪
+    for a caravan, 🐎 for a rider, 🚶 on foot, 🛶 for a canoe, 🛷 for a sledge, ✈️ 🎈 for aircraft. Leave it out on the
+    routes of the slave trade: there, draw the routes and tell the people's story, without a moving ship.
+  - `label`: optional; the name of a road or a sea route ("The Incense Road", "The Middle Passage"), shown halfway
+    along once it is drawn.
+- **Cameras**: the view widens on its own to fit the step's route and items on a phone, so set the camera on the
+  step's region at the zoom you'd like on a computer (2–3 for an ocean crossing, 4–6 for a country).
+- **Items**: the places on the way (`city`, `port`, `caravan`, `nature`), the people met (`encounter`), the goods
+  (`goods`, `at` where they came from or were traded), discoveries, books and maps, events. `type`: `person`,
+  `place`, `site`, `event`, `work` (a book or map), `structure`, `culture`, `animal` (a giraffe, a horse), `ship`
+  (a ship or fleet) or `goods` (a traded good). A traveller is an item too (`type: "person"`, `cat: "traveller"`, `at` where they were
+  born or set out).
+- **Dates**: a step's `date` is when that stretch ended (the arrival), with day and month when they are known.
+  Say "about" in the text when the sources only give a year or disagree.
+- **Be fair and humane.** The people met were not "discovered": name them and their lands (the Tupinambá, the
+  Lakota, the Mandan, the Māori, the Inuit) and say how the encounter went for them: guides and interpreters
+  (Sacagawea, Tupaia, Enrique of Malacca), violence and disease, land taken. On trade routes, say who did the work:
+  porters, sailors, miners at Potosí, the enslaved. **The Atlantic slave trade** is told plainly, with the numbers
+  of the Trans-Atlantic Slave Trade Database (about 12.5 million people embarked, about 10.7 million landed),
+  the conditions of the Middle Passage, the resistance (revolts on ships, maroons, the Haitian Revolution), the
+  long road to abolition, and its legacy; no euphemisms ("enslaved people", not "slaves" as a label for a people;
+  "slave traders", "enslavers").

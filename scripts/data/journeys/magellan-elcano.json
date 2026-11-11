@@ -1,0 +1,3171 @@
+{
+  "id": "magellan-elcano",
+  "name": {
+    "en": "The first voyage around the world",
+    "es": "La primera vuelta al mundo"
+  },
+  "icon": "⛵",
+  "era": "early-modern",
+  "region": {
+    "en": "Around the world, from Seville to the Moluccas",
+    "es": "Alrededor del mundo, de Sevilla a las Molucas"
+  },
+  "start": "1519-08-10",
+  "end": "1522-11",
+  "summary": {
+    "en": "In 1519 five ships sailed from Spain to reach the Spice Islands by the west. Three years later one ship and 18 men came home: the first voyage around the world.",
+    "es": "En 1519, cinco barcos zarparon de España para llegar a las islas de las Especias por el oeste. Tres años después volvieron un barco y 18 hombres: la primera vuelta al mundo."
+  },
+  "camera": {
+    "lon": -30.0,
+    "lat": 0.0,
+    "zoom": 1.0
+  },
+  "sides": [
+    {
+      "id": "fleet",
+      "name": {
+        "en": "Magellan's fleet",
+        "es": "La flota de Magallanes"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "santiago",
+      "name": {
+        "en": "The Santiago",
+        "es": "La Santiago"
+      },
+      "color": "#e67e22"
+    },
+    {
+      "id": "san_antonio",
+      "name": {
+        "en": "The San Antonio",
+        "es": "La San Antonio"
+      },
+      "color": "#5d6d7e"
+    },
+    {
+      "id": "victoria",
+      "name": {
+        "en": "The Victoria",
+        "es": "La Victoria"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "trinidad",
+      "name": {
+        "en": "The Trinidad",
+        "es": "La Trinidad"
+      },
+      "color": "#16a085"
+    }
+  ],
+  "steps": [
+    {
+      "date": "1519-09-20",
+      "title": {
+        "en": "Down the river to the sea",
+        "es": "Río abajo, hacia el mar"
+      },
+      "camera": {
+        "lon": -6.2,
+        "lat": 37.08,
+        "zoom": 30
+      },
+      "text": {
+        "en": "On 10 August 1519 five ships left Seville and sailed down the Guadalquivir. After five weeks at Sanlúcar, on 20 September, Ferdinand Magellan led about 270 men out to sea.",
+        "es": "El 10 de agosto de 1519, cinco barcos salieron de Sevilla y bajaron por el Guadalquivir. Tras cinco semanas en Sanlúcar, el 20 de septiembre, Fernando de Magallanes salió al mar con unos 270 hombres."
+      },
+      "details": {
+        "en": "Magellan, a Portuguese captain who had fought in India and Malacca, believed he could reach the Moluccas, the only source of cloves, by sailing west. His own king turned him down, so in 1518 the young Charles I of Spain, the future Emperor Charles V, backed the plan, hoping the islands lay in Spain's half of the world under the Treaty of Tordesillas. The fleet had five ships: the Trinidad, Magellan's flagship, the San Antonio, the Concepción, the Victoria and the Santiago. Its men came from Spain, Portugal, Italy, Greece, Flanders, Germany and beyond. Among them were Enrique, a Malay man whom Magellan had enslaved in Malacca and who served as his interpreter, and a young Venetian, Antonio Pigafetta, who kept a diary. Most of the food was wine and hard biscuit.",
+        "es": "Magallanes, un capitán portugués que había combatido en la India y en Malaca, creía que podía llegar a las Molucas, la única fuente del clavo, navegando hacia el oeste. Su propio rey lo rechazó, y en 1518 el joven Carlos I de España, el futuro emperador Carlos V, apoyó el plan con la esperanza de que las islas quedaran en la mitad española del mundo según el Tratado de Tordesillas. La flota tenía cinco barcos: la Trinidad, nave capitana de Magallanes, la San Antonio, la Concepción, la Victoria y la Santiago. Sus hombres venían de España, Portugal, Italia, Grecia, Flandes, Alemania y otros lugares. Entre ellos iban Enrique, un malayo al que Magallanes había esclavizado en Malaca y que le servía de intérprete, y un joven veneciano, Antonio Pigafetta, que escribió un diario. Casi toda la comida era vino y galleta dura."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [
+              -5.99,
+              37.38
+            ],
+            [
+              -6.02,
+              37.34
+            ],
+            [
+              -6.05,
+              37.29
+            ],
+            [
+              -6.07,
+              37.24
+            ],
+            [
+              -6.1,
+              37.19
+            ],
+            [
+              -6.14,
+              37.13
+            ],
+            [
+              -6.18,
+              37.07
+            ],
+            [
+              -6.22,
+              37.0
+            ],
+            [
+              -6.27,
+              36.94
+            ],
+            [
+              -6.31,
+              36.88
+            ],
+            [
+              -6.34,
+              36.83
+            ],
+            [
+              -6.37,
+              36.8
+            ],
+            [
+              -6.4,
+              36.79
+            ]
+          ],
+          "by": "river",
+          "icon": "⛵",
+          "label": {
+            "en": "Down the Guadalquivir",
+            "es": "Por el Guadalquivir"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "ferdinand-magellan",
+          "name": {
+            "en": "Ferdinand Magellan",
+            "es": "Fernando de Magallanes"
+          },
+          "at": [
+            -5.9845,
+            37.3891
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1519-08-10",
+          "life": [
+            "1480",
+            "1521-04-27"
+          ],
+          "place": {
+            "en": "Seville, Spain",
+            "es": "Sevilla (España)"
+          },
+          "text": {
+            "en": "A Portuguese navigator who served Spain after his own king turned him down. He planned the voyage, found the strait that bears his name and crossed the Pacific, but was killed in the Philippines in 1521.",
+            "es": "Navegante portugués que sirvió a España después de que su propio rey lo rechazara. Planeó el viaje, encontró el estrecho que lleva su nombre y cruzó el Pacífico, pero murió en Filipinas en 1521."
+          },
+          "details": {
+            "en": "Born around 1480 into a family of minor Portuguese nobles, Magellan sailed east in 1505 and spent years in India and Malacca, where he took part in the Portuguese conquest of 1511. Wounded in Morocco and out of favour with King Manuel I, he moved to Seville in 1517, married there and, with the cosmographer Rui Faleiro, offered Spain a western route to the Spice Islands. He was a stern commander who faced down two revolts by his captains. Because he had already sailed east as far as Malacca, by reaching the Philippines from the west he had almost circled the globe himself.",
+            "es": "Nacido hacia 1480 en una familia de la pequeña nobleza portuguesa, Magallanes navegó hacia el este en 1505 y pasó años en la India y en Malaca, donde participó en la conquista portuguesa de 1511. Herido en Marruecos y caído en desgracia ante el rey Manuel I, se mudó a Sevilla en 1517, se casó allí y, con el cosmógrafo Rui Faleiro, ofreció a España una ruta por el oeste hacia las islas de las Especias. Fue un jefe severo que sofocó dos rebeliones de sus capitanes. Como ya había navegado hacia el este hasta Malaca, al llegar a Filipinas por el oeste casi había dado él mismo la vuelta al globo."
+          },
+          "wiki": {
+            "en": "Ferdinand Magellan",
+            "es": "Fernando de Magallanes"
+          }
+        },
+        {
+          "id": "armada-de-molucca",
+          "name": {
+            "en": "The Armada de Molucca",
+            "es": "La Armada de Molucca"
+          },
+          "at": [
+            -6.37,
+            36.795
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1519-09-20",
+          "place": {
+            "en": "Sanlúcar de Barrameda, Spain",
+            "es": "Sanlúcar de Barrameda (España)"
+          },
+          "text": {
+            "en": "Five ships, black with tar and stocked for two years: the Trinidad, San Antonio, Concepción, Victoria and Santiago. Only the Victoria sailed all the way round.",
+            "es": "Cinco barcos, negros de brea y con provisiones para dos años: la Trinidad, la San Antonio, la Concepción, la Victoria y la Santiago. Solo la Victoria dio la vuelta completa."
+          },
+          "details": {
+            "en": "The Spanish Crown paid for most of the fleet, and the Burgos merchant Cristóbal de Haro, backed by German banking houses, put in about a fifth to a quarter. Besides wine, biscuit, flour and salted meat, the ships carried seven cows and three pigs, cheese, figs and quince paste, and trinkets to trade: mirrors, combs, knives and bells. The crews came from Spain, Portugal, Italy, Greece, Flanders, Germany, Ireland and England, and four of the men aboard were enslaved, among them Enrique of Malacca.",
+            "es": "La Corona española pagó casi toda la flota, y el mercader burgalés Cristóbal de Haro, respaldado por bancos alemanes, puso entre una quinta y una cuarta parte. Además de vino, galleta, harina y carne salada, los barcos llevaban siete vacas y tres cerdos, queso, higos y dulce de membrillo, y baratijas para comerciar: espejos, peines, cuchillos y cascabeles. Los tripulantes venían de España, Portugal, Italia, Grecia, Flandes, Alemania, Irlanda e Inglaterra, y cuatro de los hombres a bordo eran esclavos, entre ellos Enrique de Malaca."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Crew",
+                "es": "Tripulación"
+              },
+              "value": {
+                "en": "About 270 men; counts range from about 240 to 277",
+                "es": "Unos 270 hombres; según las cuentas, de unos 240 a 277"
+              }
+            },
+            {
+              "label": {
+                "en": "Ships",
+                "es": "Barcos"
+              },
+              "value": {
+                "en": "Trinidad, San Antonio, Concepción, Victoria, Santiago",
+                "es": "la Trinidad, la San Antonio, la Concepción, la Victoria y la Santiago"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Magellan expedition",
+            "es": "Expedición de Magallanes y Elcano"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1519-09-26",
+      "title": {
+        "en": "A warning in the Canaries",
+        "es": "Un aviso en las Canarias"
+      },
+      "camera": {
+        "lon": -11.0,
+        "lat": 32.6,
+        "zoom": 4.5
+      },
+      "text": {
+        "en": "At Tenerife the fleet loaded water, pitch and vegetables. There Magellan got a secret warning: his Castilian captains planned a mutiny, and Portuguese ships were hunting him.",
+        "es": "En Tenerife, la flota cargó agua, brea y verduras. Allí Magallanes recibió un aviso secreto: sus capitanes castellanos tramaban un motín, y barcos portugueses lo perseguían."
+      },
+      "details": {
+        "en": "The message came from Diogo Barbosa, a Portuguese friend in Seville and a relative of Magellan's wife. The leader of the plot was said to be Juan de Cartagena, captain of the San Antonio and the king's inspector of the fleet, who distrusted his Portuguese commander. King Manuel of Portugal had also sent caravels to arrest Magellan. On 3 October the fleet left the Canaries, and Magellan chose an unusual course: south along the coast of Africa, to slip past the Portuguese. Cartagena wanted a more westerly course and argued openly with him.",
+        "es": "El mensaje venía de Diogo Barbosa, un amigo portugués de Sevilla y pariente de la esposa de Magallanes. Se decía que el cabecilla era Juan de Cartagena, capitán de la San Antonio e inspector del rey en la flota, que desconfiaba de su jefe portugués. Además, el rey Manuel de Portugal había enviado carabelas para detener a Magallanes. El 3 de octubre la flota dejó las Canarias, y Magallanes eligió un rumbo poco común: hacia el sur, pegado a la costa de África, para esquivar a los portugueses. Cartagena quería un rumbo más al oeste y discutió abiertamente con él."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [
+              -6.4,
+              36.79
+            ],
+            [
+              -7.5,
+              36.2
+            ],
+            [
+              -10.5,
+              33.0
+            ],
+            [
+              -13.5,
+              30.2
+            ],
+            [
+              -15.3,
+              28.8
+            ],
+            [
+              -16.0,
+              28.42
+            ],
+            [
+              -16.24,
+              28.47
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "tenerife",
+          "name": {
+            "en": "Tenerife",
+            "es": "Tenerife"
+          },
+          "at": [
+            -16.2546,
+            28.4636
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1519-09-26",
+          "place": {
+            "en": "Santa Cruz de Tenerife, Canary Islands, Spain",
+            "es": "Santa Cruz de Tenerife, islas Canarias (España)"
+          },
+          "text": {
+            "en": "The last Spanish port of the voyage. The fleet stayed a week, from 26 September to 3 October 1519, buying vegetables and pitch, which were cheaper here than in mainland Spain.",
+            "es": "El último puerto español del viaje. La flota se quedó una semana, del 26 de septiembre al 3 de octubre de 1519, y compró verduras y brea, que aquí costaban menos que en la Península."
+          },
+          "wiki": {
+            "en": "Santa Cruz de Tenerife",
+            "es": "Santa Cruz de Tenerife"
+          }
+        },
+        {
+          "id": "antonio-pigafetta",
+          "name": {
+            "en": "Antonio Pigafetta",
+            "es": "Antonio Pigafetta"
+          },
+          "at": [
+            -5.993,
+            37.3826
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1519-08-10",
+          "life": [
+            "1492",
+            "1534"
+          ],
+          "place": {
+            "en": "Seville, Spain",
+            "es": "Sevilla (España)"
+          },
+          "text": {
+            "en": "A young scholar from Vicenza, in the Republic of Venice, who signed on to see the world. His diary is the main account of the voyage and the first record of the Cebuano language.",
+            "es": "Un joven erudito de Vicenza, en la República de Venecia, que se embarcó para conocer el mundo. Su diario es el principal relato del viaje y el primer registro de la lengua cebuana."
+          },
+          "details": {
+            "en": "Pigafetta came to Spain with the pope's ambassador and joined the fleet in Seville in 1519, for a modest salary of 1,000 maravedís a month. He served Magellan on the Trinidad and wrote down everything: winds and stars, plants and animals, and above all the peoples met, their customs and their words, although he also believed some tall tales. He was wounded at Mactan, came home on the Victoria in 1522 and wrote his Report on the First Voyage Around the World in Vicenza in 1523–1524.",
+            "es": "Pigafetta llegó a España con el embajador del papa y se unió a la flota en Sevilla en 1519, por un modesto sueldo de 1000 maravedís al mes. Sirvió a Magallanes en la Trinidad y lo anotó todo: vientos y estrellas, plantas y animales y, sobre todo, los pueblos que conocieron, sus costumbres y sus palabras, aunque también se creyó algunos cuentos fantásticos. Fue herido en Mactán, volvió en la Victoria en 1522 y escribió su Relación del primer viaje alrededor del mundo en Vicenza en 1523–1524."
+          },
+          "wiki": {
+            "en": "Antonio Pigafetta",
+            "es": "Antonio Pigafetta"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1519-12-13",
+      "title": {
+        "en": "Storms, calms and Rio",
+        "es": "Tormentas, calmas y Río"
+      },
+      "camera": {
+        "lon": -28.0,
+        "lat": -3.0,
+        "zoom": 1.9
+      },
+      "text": {
+        "en": "Sailing down Africa, the fleet met storms and weeks of calm before crossing to Brazil. On 13 December 1519 it reached the bay of Rio de Janeiro, where Tupi people traded food for trinkets.",
+        "es": "Bajando por África, la flota sufrió tormentas y semanas de calma antes de cruzar a Brasil. El 13 de diciembre de 1519 llegó a la bahía de Río de Janeiro, donde pueblos tupíes cambiaron comida por baratijas."
+      },
+      "details": {
+        "en": "Near the equator the ships were battered for two weeks, and St Elmo’s fire glowed on the masts, which the sailors took as a sign of heaven’s protection. Then they lay becalmed until currents carried them west. When Cartagena openly defied Magellan, the captain-general had him seized and put in the stocks, and gave his ship to another officer. On 29 November they reached Brazil, claimed by Portugal but with no settlement at Rio. The people there said the strangers had brought the rain, after two dry months. For 13 days the crews mended the ships and traded mirrors, combs, knives and bells for cassava, yams, pineapples and parrot feathers. On 27 December the fleet sailed south.",
+        "es": "Cerca del ecuador, las tormentas azotaron los barcos durante dos semanas y el fuego de San Telmo brilló en los mástiles; los marineros lo tomaron como una señal de que el cielo los protegía. Luego quedaron detenidos por la calma hasta que las corrientes los llevaron hacia el oeste. Cuando Cartagena desafió abiertamente a Magallanes, el capitán general lo hizo apresar, lo puso en el cepo y entregó su barco a otro oficial. El 29 de noviembre llegaron a Brasil, que reclamaba Portugal pero donde no había ningún asentamiento en Río. La gente del lugar dijo que los extranjeros habían traído la lluvia, después de dos meses de sequía. Durante 13 días repararon los barcos y cambiaron espejos, peines, cuchillos y cascabeles por yuca, ñames, piñas y plumas de loro. El 27 de diciembre la flota siguió hacia el sur."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [
+              -16.24,
+              28.47
+            ],
+            [
+              -16.2,
+              27.8
+            ],
+            [
+              -17.5,
+              24.0
+            ],
+            [
+              -18.0,
+              20.0
+            ],
+            [
+              -17.9,
+              15.5
+            ],
+            [
+              -17.6,
+              13.0
+            ],
+            [
+              -16.5,
+              10.0
+            ],
+            [
+              -14.0,
+              7.5
+            ],
+            [
+              -18.0,
+              3.0
+            ],
+            [
+              -26.0,
+              -2.5
+            ],
+            [
+              -32.0,
+              -6.5
+            ],
+            [
+              -34.7,
+              -8.4
+            ],
+            [
+              -35.4,
+              -10.0
+            ],
+            [
+              -37.0,
+              -12.2
+            ],
+            [
+              -38.6,
+              -14.5
+            ],
+            [
+              -38.5,
+              -17.0
+            ],
+            [
+              -39.5,
+              -19.5
+            ],
+            [
+              -40.6,
+              -21.9
+            ],
+            [
+              -41.6,
+              -22.7
+            ],
+            [
+              -42.2,
+              -23.1
+            ],
+            [
+              -43.1,
+              -23.05
+            ],
+            [
+              -43.16,
+              -22.93
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "st-elmos-fire",
+          "name": {
+            "en": "St Elmo's fire",
+            "es": "El fuego de San Telmo"
+          },
+          "at": [
+            -16.0,
+            5.3
+          ],
+          "cat": "nature",
+          "type": "event",
+          "date": "1519-10",
+          "place": {
+            "en": "Atlantic Ocean, off Guinea",
+            "es": "Océano Atlántico, frente a Guinea"
+          },
+          "text": {
+            "en": "A glow of electricity that can shine on masts in stormy weather. Pigafetta wrote that it lit the top of the mainmast for two and a half hours and comforted the terrified crew.",
+            "es": "Un resplandor eléctrico que puede brillar en los mástiles cuando hay tormenta. Pigafetta escribió que iluminó lo alto del palo mayor durante dos horas y media y consoló a la tripulación aterrada."
+          },
+          "wiki": {
+            "en": "St. Elmo's fire",
+            "es": "Fuego de San Telmo"
+          }
+        },
+        {
+          "id": "tupi-of-guanabara",
+          "name": {
+            "en": "The Tupi of Guanabara Bay",
+            "es": "Los tupíes de la bahía de Guanabara"
+          },
+          "at": [
+            -43.1556,
+            -22.7903
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1519-12-13",
+          "place": {
+            "en": "Rio de Janeiro, Brazil",
+            "es": "Río de Janeiro (Brasil)"
+          },
+          "text": {
+            "en": "Tupi-speaking peoples, the Tamoio and the Tupiniquim, lived around the bay that the Portuguese had named Rio de Janeiro in 1502. They welcomed the fleet and traded food for its goods.",
+            "es": "Pueblos de lengua tupí, los tamoios y los tupiniquines, vivían alrededor de la bahía que los portugueses habían llamado Río de Janeiro en 1502. Recibieron a la flota y le cambiaron comida por sus mercancías."
+          },
+          "details": {
+            "en": "Tupinambá and other Tupi peoples lived along most of the coast of Brazil long before the Portuguese came. The fleet’s pilot, João Lopes Carvalho, had been to Rio before and spoke some of their language. Pigafetta, who called the land Verzin after its valuable brazilwood, described the visit with wonder. A few decades later the bay became a battleground: French settlers arrived in 1555, allied with the Tupinambá, and Portuguese forces drove them out in the 1560s.",
+            "es": "Los tupinambás y otros pueblos tupíes vivían en casi toda la costa de Brasil mucho antes de que llegaran los portugueses. El piloto de la flota, João Lopes Carvalho, ya había estado en Río y hablaba algo de su lengua. Pigafetta, que llamó a la tierra Verzin por su valioso palo brasil, describió la visita con asombro. Unas décadas después, la bahía fue un campo de batalla: colonos franceses llegaron en 1555, aliados con los tupinambás, y las fuerzas portuguesas los expulsaron en la década de 1560."
+          },
+          "wiki": {
+            "en": "Tupinambá people",
+            "es": "Tupinambá"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1520-01-11",
+      "title": {
+        "en": "A sea of fresh water",
+        "es": "Un mar de agua dulce"
+      },
+      "camera": {
+        "lon": -51.0,
+        "lat": -29.5,
+        "zoom": 3.8
+      },
+      "text": {
+        "en": "On 11 January 1520 the fleet found a wide opening running west. Magellan hoped it was the strait, but as the ships sailed in, the water turned fresh: it was the Río de la Plata.",
+        "es": "El 11 de enero de 1520, la flota encontró una ancha abertura hacia el oeste. Magallanes creyó que era el estrecho, pero al entrar los barcos el agua se volvió dulce: era el Río de la Plata."
+      },
+      "details": {
+        "en": "Past a headland with three hills, which the crew took for Cape Santa María, the water stretched as far as the eye could see. Magellan sent Juan Serrano and the Santiago to probe it while he led the other ships south in search of a southern continent. Serrano came back saying it was only the mouth of a river. Magellan could not believe it and took the fleet in himself, sounding all the way, until the men found themselves in fresh water. A Spanish captain, Juan Díaz de Solís, had died here in 1516; he had called it the Freshwater Sea. On 3 February the fleet went on south.",
+        "es": "Pasado un cabo con tres colinas, que la tripulación tomó por el cabo de Santa María, el agua se extendía hasta donde alcanzaba la vista. Magallanes mandó a Juan Serrano con la Santiago a explorarla mientras él llevaba los demás barcos al sur en busca de un continente austral. Serrano volvió diciendo que era solo la desembocadura de un río. Magallanes no lo creyó y entró él mismo con la flota, sondeando sin parar, hasta que los hombres se vieron en agua dulce. Un capitán español, Juan Díaz de Solís, había muerto aquí en 1516; lo había llamado Mar Dulce. El 3 de febrero la flota siguió hacia el sur."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [
+              -43.16,
+              -22.93
+            ],
+            [
+              -43.1,
+              -23.1
+            ],
+            [
+              -44.5,
+              -23.6
+            ],
+            [
+              -46.8,
+              -24.6
+            ],
+            [
+              -48.0,
+              -26.0
+            ],
+            [
+              -48.1,
+              -27.8
+            ],
+            [
+              -49.3,
+              -29.5
+            ],
+            [
+              -50.3,
+              -31.0
+            ],
+            [
+              -51.8,
+              -33.0
+            ],
+            [
+              -53.5,
+              -34.6
+            ],
+            [
+              -54.9,
+              -35.15
+            ],
+            [
+              -56.2,
+              -35.0
+            ],
+            [
+              -57.0,
+              -34.75
+            ],
+            [
+              -57.6,
+              -34.6
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "rio-de-la-plata",
+          "name": {
+            "en": "Río de la Plata (River Plate)",
+            "es": "Río de la Plata"
+          },
+          "at": [
+            -57.3,
+            -34.9
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1520-01-11",
+          "place": {
+            "en": "Between Argentina and Uruguay",
+            "es": "Entre Argentina y Uruguay"
+          },
+          "text": {
+            "en": "The wide estuary where the Paraná and Uruguay rivers meet the sea. Juan Díaz de Solís called it the Freshwater Sea in 1516; Magellan explored it for three weeks, hoping it led west.",
+            "es": "El ancho estuario donde los ríos Paraná y Uruguay llegan al mar. Juan Díaz de Solís lo llamó Mar Dulce en 1516; Magallanes lo exploró durante tres semanas con la esperanza de que llevara al oeste."
+          },
+          "wiki": {
+            "en": "Río de la Plata",
+            "es": "Río de la Plata"
+          }
+        },
+        {
+          "id": "cerro-de-montevideo",
+          "name": {
+            "en": "Montevideo Hill",
+            "es": "Cerro de Montevideo"
+          },
+          "at": [
+            -56.26,
+            -34.8883
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1520-01",
+          "place": {
+            "en": "Montevideo, Uruguay",
+            "es": "Montevideo (Uruguay)"
+          },
+          "text": {
+            "en": "A lone hill on the north shore of the estuary, first seen by Europeans from Magellan's fleet. The city of Montevideo takes its name from it, though how the name arose is still debated.",
+            "es": "Un cerro solitario en la orilla norte del estuario, que los europeos vieron por primera vez desde la flota de Magallanes. La ciudad de Montevideo toma su nombre de él, aunque el origen del nombre aún se discute."
+          },
+          "wiki": {
+            "en": "Cerro de Montevideo",
+            "es": "Cerro de Montevideo"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1520-04-02",
+      "title": {
+        "en": "Mutiny at San Julián",
+        "es": "Motín en San Julián"
+      },
+      "camera": {
+        "lon": -62.5,
+        "lat": -42.0,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "On 31 March 1520, with winter coming, the fleet stopped in a sheltered bay in Patagonia. The next night three captains rose against Magellan; he crushed the mutiny and executed its leaders.",
+        "es": "El 31 de marzo de 1520, con el invierno encima, la flota se refugió en una bahía de la Patagonia. La noche siguiente, tres capitanes se alzaron contra Magallanes; él aplastó el motín y ejecutó a los cabecillas."
+      },
+      "details": {
+        "en": "For eight weeks the ships had crept south close to the coast, through squalls and growing cold. At Port San Julián, on the night of 1 April, Cartagena and Gaspar de Quesada led 30 armed men with blackened faces onto the San Antonio; the rebels now held three of the five ships. The next morning Magellan struck back. His officer Gonzalo de Espinosa boarded the Victoria with a \"letter\" and stabbed its captain, Luis de Mendoza, while disguised sailors took the ship. Quesada was beheaded on 7 April, and the bodies of the two captains were cut up and displayed for three months. More than forty mutineers, among them Juan Sebastián Elcano, spent the winter in chains doing the hardest work.",
+        "es": "Durante ocho semanas, los barcos habían avanzado despacio hacia el sur, pegados a la costa, entre chubascos y un frío cada vez mayor. En Puerto San Julián, la noche del 1 de abril, Cartagena y Gaspar de Quesada subieron a la San Antonio con 30 hombres armados y la cara tiznada; los rebeldes ya dominaban tres de los cinco barcos. A la mañana siguiente, Magallanes contraatacó. Su alguacil, Gonzalo de Espinosa, subió a la Victoria con una supuesta carta y apuñaló a su capitán, Luis de Mendoza, mientras marineros disfrazados tomaban el barco. Quesada fue decapitado el 7 de abril, y los cuerpos de los dos capitanes fueron descuartizados y expuestos durante tres meses. Más de cuarenta amotinados, entre ellos Juan Sebastián Elcano, pasaron el invierno encadenados haciendo los trabajos más duros."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [
+              -57.6,
+              -34.6
+            ],
+            [
+              -57.0,
+              -35.2
+            ],
+            [
+              -56.4,
+              -36.4
+            ],
+            [
+              -57.3,
+              -38.3
+            ],
+            [
+              -59.0,
+              -38.9
+            ],
+            [
+              -60.5,
+              -39.3
+            ],
+            [
+              -61.6,
+              -40.1
+            ],
+            [
+              -62.6,
+              -41.2
+            ],
+            [
+              -63.5,
+              -41.9
+            ],
+            [
+              -63.3,
+              -42.6
+            ],
+            [
+              -64.3,
+              -43.5
+            ],
+            [
+              -65.0,
+              -44.4
+            ],
+            [
+              -65.3,
+              -45.3
+            ],
+            [
+              -65.8,
+              -46.3
+            ],
+            [
+              -65.4,
+              -47.2
+            ],
+            [
+              -65.6,
+              -48.0
+            ],
+            [
+              -66.8,
+              -48.9
+            ],
+            [
+              -67.55,
+              -49.25
+            ],
+            [
+              -67.68,
+              -49.29
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "puerto-san-julian",
+          "name": {
+            "en": "Puerto San Julián",
+            "es": "Puerto San Julián"
+          },
+          "at": [
+            -67.7298,
+            -49.307
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1520-03-31",
+          "place": {
+            "en": "Santa Cruz, Argentina",
+            "es": "Santa Cruz (Argentina)"
+          },
+          "text": {
+            "en": "A natural harbour on the coast of Patagonia where the fleet spent five winter months. Francis Drake wintered here too in 1578 and found the remains of Magellan's gallows.",
+            "es": "Un puerto natural en la costa de la Patagonia donde la flota pasó cinco meses de invierno. Francis Drake también invernó aquí en 1578 y encontró los restos de la horca de Magallanes."
+          },
+          "wiki": {
+            "en": "Puerto San Julián",
+            "es": "Puerto San Julián"
+          }
+        },
+        {
+          "id": "san-julian-mutiny",
+          "name": {
+            "en": "The captains’ mutiny",
+            "es": "El motín de los capitanes"
+          },
+          "at": [
+            -67.66,
+            -49.26
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1520-04-02",
+          "place": {
+            "en": "Puerto San Julián, Argentina",
+            "es": "Puerto San Julián (Argentina)"
+          },
+          "text": {
+            "en": "Spanish captains who distrusted their Portuguese commander tried to seize the fleet. Two of them died, and Juan de Cartagena and a priest were later left on an island to die.",
+            "es": "Capitanes españoles que desconfiaban de su jefe portugués intentaron hacerse con la flota. Dos de ellos murieron, y más tarde Juan de Cartagena y un sacerdote fueron abandonados en una isla para que murieran."
+          },
+          "wiki": {
+            "en": "Magellan expedition",
+            "es": "Expedición de Magallanes y Elcano"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1520-08-24",
+      "title": {
+        "en": "Winter in Patagonia",
+        "es": "Invierno en la Patagonia"
+      },
+      "camera": {
+        "lon": -67.95,
+        "lat": -49.7,
+        "zoom": 30
+      },
+      "text": {
+        "en": "In May the Santiago, scouting south, was wrecked at the Santa Cruz River, and two men walked 11 days to get help. Over the winter the crews met the Tehuelche, whom Magellan called Patagones.",
+        "es": "En mayo, la Santiago, que exploraba hacia el sur, naufragó en el río Santa Cruz, y dos hombres caminaron 11 días para pedir ayuda. Durante el invierno, los marinos conocieron a los tehuelches, a quienes Magallanes llamó patagones."
+      },
+      "details": {
+        "en": "Magellan sent the Santiago south in late April to look for the strait. On 3 May Juan Serrano found the estuary of a river, which he named Santa Cruz, full of fish, penguins and wood. On 22 May a sudden storm drove the ship onto a sandbar as it left. Nearly all the crew got ashore, and two volunteers walked back to San Julián, arriving exhausted; a rescue party crossed the land to bring the rest back. One day a very tall man appeared on the shore, dancing and singing; Pigafetta wrote that the Europeans reached only to his waist. On 11 August Cartagena and the priest Pedro Sánchez de Reina were left on an island to die, and around 24 August the fleet moved to Santa Cruz.",
+        "es": "A fines de abril, Magallanes envió la Santiago hacia el sur a buscar el estrecho. El 3 de mayo, Juan Serrano encontró el estuario de un río, al que llamó Santa Cruz, lleno de peces, pingüinos y leña. El 22 de mayo, una tormenta repentina arrojó el barco contra un banco de arena cuando salía. Casi todos los tripulantes llegaron a tierra, y dos voluntarios caminaron de vuelta a San Julián, adonde llegaron agotados; un grupo de rescate cruzó por tierra para traer al resto. Un día apareció en la playa un hombre muy alto que bailaba y cantaba; Pigafetta escribió que los europeos le llegaban solo a la cintura. El 11 de agosto, Cartagena y el sacerdote Pedro Sánchez de Reina fueron abandonados en una isla para que murieran, y hacia el 24 de agosto la flota se trasladó a Santa Cruz."
+      },
+      "moves": [
+        {
+          "side": "santiago",
+          "path": [
+            [
+              -67.68,
+              -49.29
+            ],
+            [
+              -67.5,
+              -49.45
+            ],
+            [
+              -67.75,
+              -49.8
+            ],
+            [
+              -68.1,
+              -50.08
+            ],
+            [
+              -68.33,
+              -50.13
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "The Santiago scouts south",
+            "es": "La Santiago explora el sur"
+          }
+        },
+        {
+          "side": "santiago",
+          "path": [
+            [
+              -68.33,
+              -50.13
+            ],
+            [
+              -68.2,
+              -49.85
+            ],
+            [
+              -67.95,
+              -49.55
+            ],
+            [
+              -67.73,
+              -49.31
+            ]
+          ],
+          "by": "land",
+          "icon": "🚶",
+          "label": {
+            "en": "Two men walk for help",
+            "es": "Dos hombres van a pie por ayuda"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "santiago-wreck",
+          "name": {
+            "en": "Wreck of the Santiago",
+            "es": "Naufragio de la Santiago"
+          },
+          "at": [
+            -68.32,
+            -50.15
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1520-05-22",
+          "place": {
+            "en": "Mouth of the Santa Cruz River, Argentina",
+            "es": "Desembocadura del río Santa Cruz (Argentina)"
+          },
+          "text": {
+            "en": "The smallest ship, sent to scout, ran onto a sandbar in a storm. The crew built huts and lived on shellfish until rescuers came. Its captain, Juan Serrano, later took over the Concepción.",
+            "es": "El barco más pequeño, enviado a explorar, encalló en un banco de arena en una tormenta. Sus hombres hicieron chozas y comieron mariscos hasta el rescate. Su capitán, Juan Serrano, mandó después la Concepción."
+          },
+          "wiki": {
+            "en": "Santa Cruz River (Argentina)",
+            "es": "Río Santa Cruz"
+          }
+        },
+        {
+          "id": "tehuelche",
+          "name": {
+            "en": "The Tehuelche (Aónikenk)",
+            "es": "Los tehuelches (aónikenk)"
+          },
+          "at": [
+            -67.9,
+            -49.26
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1520",
+          "place": {
+            "en": "Patagonia, Argentina",
+            "es": "Patagonia (Argentina)"
+          },
+          "text": {
+            "en": "Nomadic hunters of guanacos and rheas in eastern Patagonia. Magellan called them Patagones, probably after a giant in a chivalry novel, and the land became Patagonia. His men seized two of them, who died at sea.",
+            "es": "Cazadores nómadas de guanacos y ñandúes. Magallanes los llamó patagones, quizá por un gigante de una novela de caballerías, y la tierra se llamó Patagonia. Sus hombres capturaron a dos, que murieron en el mar."
+          },
+          "details": {
+            "en": "The Tehuelche were taller than most Europeans of the time, and Pigafetta’s giants became a legend: maps labelled the region “land of giants”, and travellers kept reporting giants until the 1770s. They dressed in skins and hunted on foot with bolas. In the 1800s Argentina and Chile took their lands for sheep farms, and epidemics brought by outsiders killed many. Today most Tehuelche live in the towns of Argentine Patagonia, and some are working to bring their language back.",
+            "es": "Los tehuelches eran más altos que la mayoría de los europeos de la época, y los gigantes de Pigafetta se volvieron leyenda: los mapas llamaban a la región «tierra de gigantes», y los viajeros siguieron hablando de gigantes hasta la década de 1770. Vestían pieles y cazaban a pie con boleadoras. En el siglo XIX, Argentina y Chile les quitaron sus tierras para criar ovejas, y las epidemias traídas de fuera mataron a muchos. Hoy la mayoría de los tehuelches vive en ciudades de la Patagonia argentina, y algunos trabajan para recuperar su lengua."
+          },
+          "wiki": {
+            "en": "Tehuelche people",
+            "es": "Tehuelches"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1520-11-28",
+      "title": {
+        "en": "Through the strait",
+        "es": "Por el estrecho"
+      },
+      "camera": {
+        "lon": -70.8,
+        "lat": -52.3,
+        "zoom": 8
+      },
+      "text": {
+        "en": "On 21 October 1520 the fleet found Cape Vírgenes and a maze of channels. The San Antonio slipped away home, but after 38 days the other three ships came out into a calm ocean: the Pacific.",
+        "es": "El 21 de octubre de 1520, la flota encontró el cabo Vírgenes y un laberinto de canales. La San Antonio desertó y volvió a España, pero tras 38 días los otros tres barcos salieron a un océano en calma: el Pacífico."
+      },
+      "details": {
+        "en": "After six weeks at Santa Cruz the fleet sailed south on 18 October. Past Cape Vírgenes a storm drove two ships into a narrow passage, and the water stayed salty and deep. Magellan named it the Channel of All Saints, for 1 November. On the southern shore the sailors saw the fires of the peoples who lived there and called the land Tierra del Fuego. At an island the ships split up to explore. Gonzalo de Espinosa found the way out, and Pigafetta says Magellan wept for joy. The San Antonio never came back: her pilot, Estêvão Gomes, stabbed and chained the captain and sailed for Spain. On 28 November the Trinidad, Concepción and Victoria entered the ocean, which Magellan named the Mar Pacífico, the peaceful sea.",
+        "es": "Tras seis semanas en Santa Cruz, la flota zarpó hacia el sur el 18 de octubre. Pasado el cabo Vírgenes, una tormenta empujó a dos barcos por un paso estrecho, y el agua seguía salada y profunda. Magallanes lo llamó canal de Todos los Santos, por el 1 de noviembre. En la orilla sur, los marinos vieron las hogueras de los pueblos que vivían allí y llamaron a esa tierra Tierra del Fuego. Junto a una isla, los barcos se separaron para explorar. Gonzalo de Espinosa encontró la salida, y Pigafetta cuenta que Magallanes lloró de alegría. La San Antonio nunca volvió: su piloto, Esteban Gómez, apuñaló y encadenó al capitán y puso rumbo a España. El 28 de noviembre, la Trinidad, la Concepción y la Victoria entraron en el océano, que Magallanes llamó mar Pacífico."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [
+              -67.68,
+              -49.29
+            ],
+            [
+              -67.5,
+              -49.45
+            ],
+            [
+              -67.75,
+              -49.8
+            ],
+            [
+              -68.1,
+              -50.08
+            ],
+            [
+              -68.33,
+              -50.13
+            ],
+            [
+              -68.15,
+              -50.6
+            ],
+            [
+              -68.1,
+              -51.0
+            ],
+            [
+              -68.3,
+              -52.0
+            ],
+            [
+              -68.35,
+              -52.33
+            ],
+            [
+              -68.6,
+              -52.4
+            ],
+            [
+              -69.0,
+              -52.35
+            ],
+            [
+              -69.56,
+              -52.5
+            ],
+            [
+              -70.0,
+              -52.6
+            ],
+            [
+              -70.25,
+              -52.7
+            ],
+            [
+              -70.58,
+              -52.92
+            ],
+            [
+              -70.85,
+              -53.15
+            ],
+            [
+              -70.95,
+              -53.6
+            ],
+            [
+              -71.25,
+              -53.95
+            ],
+            [
+              -71.6,
+              -53.85
+            ],
+            [
+              -71.95,
+              -53.75
+            ],
+            [
+              -72.3,
+              -53.62
+            ],
+            [
+              -72.6,
+              -53.52
+            ],
+            [
+              -72.85,
+              -53.45
+            ],
+            [
+              -73.0,
+              -53.36
+            ],
+            [
+              -73.15,
+              -53.25
+            ],
+            [
+              -73.3,
+              -53.12
+            ],
+            [
+              -73.6,
+              -52.95
+            ],
+            [
+              -74.1,
+              -52.8
+            ],
+            [
+              -74.6,
+              -52.65
+            ],
+            [
+              -75.5,
+              -52.4
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Strait of All Saints",
+            "es": "Estrecho de Todos los Santos"
+          }
+        },
+        {
+          "side": "san_antonio",
+          "path": [
+            [
+              -70.62,
+              -53.45
+            ],
+            [
+              -70.85,
+              -53.15
+            ],
+            [
+              -70.58,
+              -52.92
+            ],
+            [
+              -70.25,
+              -52.7
+            ],
+            [
+              -70.0,
+              -52.6
+            ],
+            [
+              -69.56,
+              -52.5
+            ],
+            [
+              -69.0,
+              -52.35
+            ],
+            [
+              -68.35,
+              -52.3
+            ],
+            [
+              -66.5,
+              -50.5
+            ],
+            [
+              -62.0,
+              -45.0
+            ],
+            [
+              -52.0,
+              -35.5
+            ],
+            [
+              -38.0,
+              -18.0
+            ],
+            [
+              -31.0,
+              -5.0
+            ],
+            [
+              -26.0,
+              8.0
+            ],
+            [
+              -24.0,
+              20.0
+            ],
+            [
+              -18.0,
+              31.0
+            ],
+            [
+              -10.0,
+              36.0
+            ],
+            [
+              -6.4,
+              36.79
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "The San Antonio deserts",
+            "es": "La San Antonio deserta"
+          }
+        },
+        {
+          "side": "san_antonio",
+          "path": [
+            [
+              -6.4,
+              36.79
+            ],
+            [
+              -6.37,
+              36.8
+            ],
+            [
+              -6.34,
+              36.83
+            ],
+            [
+              -6.31,
+              36.88
+            ],
+            [
+              -6.27,
+              36.94
+            ],
+            [
+              -6.22,
+              37.0
+            ],
+            [
+              -6.18,
+              37.07
+            ],
+            [
+              -6.14,
+              37.13
+            ],
+            [
+              -6.1,
+              37.19
+            ],
+            [
+              -6.07,
+              37.24
+            ],
+            [
+              -6.05,
+              37.29
+            ],
+            [
+              -6.02,
+              37.34
+            ],
+            [
+              -5.99,
+              37.38
+            ]
+          ],
+          "by": "river",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "strait-of-magellan",
+          "name": {
+            "en": "Strait of Magellan",
+            "es": "Estrecho de Magallanes"
+          },
+          "at": [
+            -70.9,
+            -53.5
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1520-10-21",
+          "end": "1520-11-28",
+          "place": {
+            "en": "Magallanes, Chile",
+            "es": "Magallanes (Chile)"
+          },
+          "text": {
+            "en": "About 570 km of channels between the mainland and Tierra del Fuego, only 2 km wide at the narrowest. Magellan named it for All Saints; within a few years Spaniards were calling it after him.",
+            "es": "Unos 570 km de canales entre el continente y Tierra del Fuego, de solo 2 km de ancho en la parte más estrecha. Magallanes lo llamó de Todos los Santos; pocos años después, los españoles ya le daban su nombre."
+          },
+          "details": {
+            "en": "People had lived around the strait for at least 13,000 years: the Kawésqar in canoes along the western channels, the Tehuelche on the plains to the north, the Selk’nam and the Haush on Tierra del Fuego, and the Yaghan farther south. They saw few Europeans until the late 1800s, when sheep farms, a gold rush and new diseases devastated them. For sailors the strait remained a hard passage, with fierce winds and narrow channels; by 1620, a century later, at least 55 ships had passed through it.",
+            "es": "Hacía al menos 13 000 años que había gente alrededor del estrecho: los kawésqar, en canoas por los canales del oeste; los tehuelches, en las llanuras del norte; los selk’nam y los haush, en Tierra del Fuego, y los yaganes, más al sur. Vieron pocos europeos hasta fines del siglo XIX, cuando la cría de ovejas, una fiebre del oro y nuevas enfermedades los devastaron. Para los marinos, el estrecho siguió siendo un paso difícil, con vientos feroces y canales angostos; hacia 1620, un siglo después, al menos 55 barcos lo habían cruzado."
+          },
+          "wiki": {
+            "en": "Strait of Magellan",
+            "es": "Estrecho de Magallanes"
+          }
+        },
+        {
+          "id": "tierra-del-fuego",
+          "name": {
+            "en": "Tierra del Fuego",
+            "es": "Tierra del Fuego"
+          },
+          "at": [
+            -69.5,
+            -53.6
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1520-11",
+          "place": {
+            "en": "Chile and Argentina",
+            "es": "Chile y Argentina"
+          },
+          "text": {
+            "en": "“Land of Fire”: Magellan named the islands south of the strait for the many fires that their people lit along the shore, and perhaps in their canoes, for warmth and to send signals.",
+            "es": "«Tierra del Fuego»: Magallanes llamó así a las islas al sur del estrecho por las muchas hogueras que su gente encendía en la costa, y quizá en sus canoas, para calentarse y hacer señales."
+          },
+          "wiki": {
+            "en": "Tierra del Fuego",
+            "es": "Archipiélago de Tierra del Fuego"
+          }
+        },
+        {
+          "id": "san-antonio-ship",
+          "name": {
+            "en": "The San Antonio",
+            "es": "La San Antonio"
+          },
+          "at": [
+            -70.62,
+            -53.45
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1520-11",
+          "place": {
+            "en": "Strait of Magellan, Chile",
+            "es": "Estrecho de Magallanes (Chile)"
+          },
+          "text": {
+            "en": "The largest ship of the fleet. In the strait her pilot, Estêvão Gomes, overpowered the captain and sailed home. She reached Seville on 6 May 1521 with 55 men, who blamed everything on Magellan.",
+            "es": "El barco más grande de la flota. En el estrecho, su piloto, Esteban Gómez, sometió al capitán y volvió a casa. Llegó a Sevilla el 6 de mayo de 1521 con 55 hombres, que culparon de todo a Magallanes."
+          },
+          "details": {
+            "en": "Gomes had hoped to lead his own voyage to the Moluccas and had argued that the fleet should go back to Spain for more supplies. In Seville the deserters painted Magellan as a cruel and disloyal commander, and none of them was punished. The loyal captain, Magellan’s cousin Álvaro de Mezquita, was jailed for a year, and Magellan’s wife, Beatriz, lost her income and was placed under house arrest with their young son.",
+            "es": "Gómez había querido dirigir su propio viaje a las Molucas y había defendido que la flota volviera a España por más provisiones. En Sevilla, los desertores pintaron a Magallanes como un jefe cruel y desleal, y ninguno fue castigado. El capitán leal, Álvaro de Mezquita, primo de Magallanes, pasó un año en la cárcel, y Beatriz, la esposa de Magallanes, se quedó sin ingresos y bajo arresto domiciliario con su hijo pequeño."
+          },
+          "wiki": {
+            "en": "Magellan expedition",
+            "es": "Expedición de Magallanes y Elcano"
+          }
+        },
+        {
+          "id": "mar-pacifico",
+          "name": {
+            "en": "The “Peaceful Sea”",
+            "es": "El «mar Pacífico»"
+          },
+          "at": [
+            -75.6,
+            -52.2
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1520-11-28",
+          "place": {
+            "en": "Pacific Ocean, off Chile",
+            "es": "Océano Pacífico, frente a Chile"
+          },
+          "text": {
+            "en": "The fleet came out of the strait on 28 November 1520. After its storms the ocean seemed so calm that Magellan called it the Mar Pacífico. He thought the Spice Islands were only a few days away.",
+            "es": "La flota salió del estrecho el 28 de noviembre de 1520. Después de sus tormentas, el océano parecía tan tranquilo que Magallanes lo llamó mar Pacífico. Creía que las islas de las Especias estaban a pocos días."
+          },
+          "wiki": {
+            "en": "Pacific Ocean",
+            "es": "Océano Pacífico"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1521-03-06",
+      "title": {
+        "en": "Ninety-eight days at sea",
+        "es": "Noventa y ocho días de mar"
+      },
+      "camera": {
+        "lon": -165.0,
+        "lat": -3.0,
+        "zoom": 1.3
+      },
+      "text": {
+        "en": "The Pacific was far bigger than anyone thought. For 98 days the men saw almost no land; they ate ox hides, sawdust and rats, and scurvy struck. On 6 March 1521 they reached the Mariana Islands.",
+        "es": "El Pacífico era mucho más grande de lo que nadie pensaba. Durante 98 días casi no vieron tierra; comieron cueros, aserrín y ratas, y llegó el escorbuto. El 6 de marzo de 1521 alcanzaron las islas Marianas."
+      },
+      "details": {
+        "en": "The ships first followed the coast of Chile north, then turned west-northwest in mid-December. By bad luck their course missed nearly every inhabited island; they saw only two small, empty atolls, which they called the Unfortunate Islands. They crossed the equator on 13 February. The biscuit had turned to powder full of grubs and the water was yellow and foul, Pigafetta wrote, and rats sold for a high price. Of the 166 men who began the crossing, 19 died and many more fell sick; the officers, who ate quince paste, may have been saved by it. At Guam, Chamorro people in fast outrigger canoes came aboard and took iron and a ship’s boat. Magellan sent men ashore who burned 40 or 50 houses and killed seven men, and he called the islands the Islands of Thieves.",
+        "es": "Primero siguieron la costa de Chile hacia el norte, y a mediados de diciembre giraron al oeste-noroeste. Por mala suerte, su rumbo esquivó casi todas las islas habitadas; solo vieron dos pequeños atolones vacíos, a los que llamaron islas Infortunadas. Cruzaron el ecuador el 13 de febrero. La galleta se había vuelto polvo lleno de gusanos y el agua estaba amarilla y podrida, escribió Pigafetta, y las ratas se vendían caras. De los 166 hombres que empezaron la travesía, 19 murieron y muchos más enfermaron; a los oficiales, que comían dulce de membrillo, quizá los salvó eso. En Guam, los chamorros llegaron en rápidas canoas con balancín, subieron a bordo y se llevaron hierro y un bote. Magallanes mandó a tierra a hombres que quemaron 40 o 50 casas y mataron a siete personas, y llamó a las islas islas de los Ladrones."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [
+              -75.5,
+              -52.4
+            ],
+            [
+              -76.5,
+              -47.0
+            ],
+            [
+              -75.5,
+              -40.0
+            ],
+            [
+              -78.0,
+              -33.0
+            ],
+            [
+              -90.0,
+              -27.0
+            ],
+            [
+              -110.0,
+              -20.0
+            ],
+            [
+              -125.0,
+              -16.5
+            ],
+            [
+              -138.82,
+              -14.82
+            ],
+            [
+              -151.82,
+              -11.43
+            ],
+            [
+              -160.0,
+              -4.0
+            ],
+            [
+              -166.0,
+              2.0
+            ],
+            [
+              -175.0,
+              9.0
+            ],
+            [
+              165.0,
+              14.5
+            ],
+            [
+              146.0,
+              14.3
+            ],
+            [
+              145.0,
+              13.2
+            ],
+            [
+              144.66,
+              13.29
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Across the Pacific",
+            "es": "A través del Pacífico"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "puka-puka",
+          "name": {
+            "en": "San Pablo (Puka-Puka)",
+            "es": "San Pablo (Puka Puka)"
+          },
+          "at": [
+            -138.82,
+            -14.82
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1521-01",
+          "place": {
+            "en": "Tuamotu Islands, French Polynesia",
+            "es": "Islas Tuamotu (Polinesia Francesa)"
+          },
+          "text": {
+            "en": "Probably the first land seen in the Pacific, in late January 1521. With no place to land, the fleet named it and a second atoll the Unfortunate Islands.",
+            "es": "Probablemente la primera tierra vista en el Pacífico, a fines de enero de 1521. Como no había dónde desembarcar, la flota lo llamó, junto con otro atolón, islas Infortunadas."
+          },
+          "wiki": {
+            "en": "Puka-Puka",
+            "es": "Puka Puka (atolón)"
+          }
+        },
+        {
+          "id": "scurvy-pacific",
+          "name": {
+            "en": "Hunger and scurvy",
+            "es": "Hambre y escorbuto"
+          },
+          "at": [
+            -163.0,
+            -1.0
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1521-02",
+          "place": {
+            "en": "Pacific Ocean",
+            "es": "Océano Pacífico"
+          },
+          "text": {
+            "en": "A disease caused by a lack of vitamin C, found in fresh fruit and vegetables. Gums swelled until men could not eat. Nobody then knew its cause.",
+            "es": "Una enfermedad causada por la falta de vitamina C, que está en las frutas y verduras frescas. Las encías se hinchaban hasta que los hombres no podían comer. Nadie conocía entonces su causa."
+          },
+          "wiki": {
+            "en": "Scurvy",
+            "es": "Escorbuto"
+          }
+        },
+        {
+          "id": "chamorro",
+          "name": {
+            "en": "The Chamorro of Guam",
+            "es": "Los chamorros de Guam"
+          },
+          "at": [
+            144.6619,
+            13.2992
+          ],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1521-03-06",
+          "place": {
+            "en": "Guam (Guåhan), Mariana Islands",
+            "es": "Guam (Guåhan), islas Marianas"
+          },
+          "text": {
+            "en": "Austronesian islanders whose ancestors had sailed to the Marianas about 3,000 years earlier. They met the starving fleet in swift sailing canoes, and Magellan’s men burned their houses over a stolen boat.",
+            "es": "Isleños austronesios cuyos antepasados habían llegado navegando a las Marianas unos 3000 años antes. Recibieron a la flota hambrienta en veloces canoas de vela, y los hombres de Magallanes quemaron sus casas por un bote robado."
+          },
+          "details": {
+            "en": "In a Chamorro legend, the world was made by a brother and sister, Puntan and Fu’uña; Fu’uña became a great rock on Guåhan, and from it all people came. The Chamorro sailed proas, outrigger canoes then unknown to Europeans, and their islands had no metal, so iron was precious to them. The fleet’s visit was the first of many: Spain later ruled the Marianas for more than three centuries, followed by Germany, Japan and the United States.",
+            "es": "Según una leyenda chamorra, el mundo lo hicieron dos hermanos, Puntan y Fu’uña; Fu’uña se convirtió en una gran roca en Guåhan, y de ella salieron todas las personas. Los chamorros navegaban en proas, canoas con balancín que los europeos no conocían, y en sus islas no había metal, así que el hierro era muy valioso para ellos. La visita de la flota fue la primera de muchas: después, España gobernó las Marianas durante más de tres siglos, y luego Alemania, Japón y Estados Unidos."
+          },
+          "wiki": {
+            "en": "Chamorro people",
+            "es": "Pueblo chamorro"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1521-04-07",
+      "title": {
+        "en": "The islands of the Philippines",
+        "es": "Las islas de Filipinas"
+      },
+      "camera": {
+        "lon": 123.0,
+        "lat": 9.0,
+        "zoom": 2.6
+      },
+      "text": {
+        "en": "In mid-March the fleet reached the islands now called the Philippines. At Limasawa, Enrique found that people understood his Malay, and on 7 April the ships sailed into Cebu, a busy trading port.",
+        "es": "A mediados de marzo, la flota llegó a las islas que hoy se llaman Filipinas. En Limasawa, Enrique descubrió que la gente entendía su malayo, y el 7 de abril los barcos entraron en Cebú, un activo puerto comercial."
+      },
+      "details": {
+        "en": "The crews rested for nearly two weeks on Homonhon, an uninhabited island where people from nearby Suluan brought food. At Limasawa they met two rulers from Mindanao, Rajah Kolambu and Rajah Siawi, who wore gold ornaments and ate from golden plates; Magellan and Kolambu became blood brothers. On Easter Sunday, 31 March, the fleet’s chaplain said the first Catholic Mass in the islands, and Magellan claimed the archipelago for Spain. Guided by Kolambu’s men, the ships reached Cebu, a port visited by Chinese and Arab traders. Its ruler, Rajah Humabon, asked for the usual tribute, but Magellan refused and showed off his guns. On 14 April Humabon, his wife and many of his people were baptised, and Magellan gave the queen an image of the Child Jesus, the Santo Niño de Cebú.",
+        "es": "Las tripulaciones descansaron casi dos semanas en Homonhon, una isla deshabitada adonde gente de la cercana Suluan les llevó comida. En Limasawa conocieron a dos gobernantes de Mindanao, el rajá Kolambu y el rajá Siawi, que llevaban adornos de oro y comían en platos de oro; Magallanes y Kolambu se hicieron hermanos de sangre. El domingo de Pascua, 31 de marzo, el capellán de la flota dijo la primera misa católica en las islas, y Magallanes reclamó el archipiélago para España. Guiados por hombres de Kolambu, los barcos llegaron a Cebú, un puerto que visitaban mercaderes chinos y árabes. Su gobernante, el rajá Humabon, pidió el tributo de costumbre, pero Magallanes se negó y exhibió sus cañones. El 14 de abril se bautizaron Humabon, su esposa y muchos de los suyos, y Magallanes regaló a la reina una imagen del Niño Jesús, el Santo Niño de Cebú."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [
+              144.66,
+              13.29
+            ],
+            [
+              140.0,
+              12.5
+            ],
+            [
+              135.0,
+              11.5
+            ],
+            [
+              126.2,
+              10.8
+            ],
+            [
+              125.8,
+              10.74
+            ],
+            [
+              125.6,
+              10.6
+            ],
+            [
+              125.45,
+              10.35
+            ],
+            [
+              125.35,
+              10.1
+            ],
+            [
+              125.2,
+              9.95
+            ],
+            [
+              125.08,
+              9.93
+            ],
+            [
+              124.7,
+              9.97
+            ],
+            [
+              124.6,
+              10.15
+            ],
+            [
+              124.25,
+              10.25
+            ],
+            [
+              123.97,
+              10.24
+            ],
+            [
+              123.92,
+              10.29
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "homonhon",
+          "name": {
+            "en": "Homonhon",
+            "es": "Homonhon"
+          },
+          "at": [
+            125.7392,
+            10.7556
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1521-03-16",
+          "place": {
+            "en": "Eastern Samar, Philippines",
+            "es": "Samar Oriental (Filipinas)"
+          },
+          "text": {
+            "en": "An uninhabited island where the starving crews rested and recovered for nearly two weeks. People from nearby Suluan came in boats, welcomed them and traded food.",
+            "es": "Una isla deshabitada donde las tripulaciones hambrientas descansaron y se recuperaron casi dos semanas. Gente de la cercana Suluan llegó en botes, los recibió y les cambió comida."
+          },
+          "wiki": {
+            "en": "Homonhon",
+            "es": "Homonhon"
+          }
+        },
+        {
+          "id": "limasawa",
+          "name": {
+            "en": "Limasawa: Kolambu and Siawi",
+            "es": "Limasawa: Kolambu y Siawi"
+          },
+          "at": [
+            125.075,
+            9.9078
+          ],
+          "cat": "encounter",
+          "type": "place",
+          "date": "1521-03-28",
+          "place": {
+            "en": "Southern Leyte, Philippines",
+            "es": "Leyte del Sur (Filipinas)"
+          },
+          "text": {
+            "en": "Two rulers from Mindanao, Rajah Kolambu of Butuan and Rajah Siawi of Calagan, were hunting on this island. Thanks to Enrique they could talk; they feasted the strangers and guided them to Cebu.",
+            "es": "Dos gobernantes de Mindanao, el rajá Kolambu de Butuan y el rajá Siawi de Calagan, cazaban en esta isla. Gracias a Enrique pudieron hablar; agasajaron a los extranjeros y los guiaron hasta Cebú."
+          },
+          "wiki": {
+            "en": "Limasawa",
+            "es": "Limasawa"
+          }
+        },
+        {
+          "id": "enrique-of-malacca",
+          "name": {
+            "en": "Enrique of Malacca",
+            "es": "Enrique de Malaca"
+          },
+          "at": [
+            102.2501,
+            2.1896
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1521-03-28",
+          "life": [
+            "1493",
+            null
+          ],
+          "place": {
+            "en": "Malacca, Malaysia",
+            "es": "Malaca (Malasia)"
+          },
+          "text": {
+            "en": "A Malay man, enslaved by Magellan in Malacca around 1511, who served as his interpreter. Some historians think he may have been the first person to go all the way around the world.",
+            "es": "Un malayo, esclavizado por Magallanes en Malaca hacia 1511, que le servía de intérprete. Algunos historiadores creen que quizá fue la primera persona en dar la vuelta completa al mundo."
+          },
+          "details": {
+            "en": "Magellan’s will says Enrique came from Malacca; Pigafetta says from Sumatra. He sailed with Magellan to Portugal around 1512 and westward from Spain in 1519. When the people of Limasawa understood his Malay, the language of trade across Southeast Asia, the fleet knew it had almost come full circle. Magellan’s will set him free, but after Magellan’s death the new commanders refused. Enrique stayed in Cebu after the feast of 1 May 1521, perhaps having warned Humabon of the Spaniards’ plans, and no record mentions him again. If he got back to his homeland, some 2,500 km away, before the Victoria’s men closed the circle in 1522, he went round the world first; nobody knows if he did, and the claim is debated.",
+            "es": "El testamento de Magallanes dice que Enrique era de Malaca; Pigafetta, que de Sumatra. Viajó con Magallanes a Portugal hacia 1512 y hacia el oeste desde España en 1519. Cuando la gente de Limasawa entendió su malayo, la lengua del comercio en el sudeste de Asia, la flota supo que casi había cerrado el círculo. El testamento de Magallanes lo liberaba, pero tras su muerte los nuevos jefes se negaron. Enrique se quedó en Cebú después del banquete del 1 de mayo de 1521, quizá tras avisar a Humabon de los planes de los españoles, y ningún documento vuelve a mencionarlo. Si volvió a su tierra, a unos 2500 km, antes de que los hombres de la Victoria cerraran el círculo en 1522, fue el primero en dar la vuelta al mundo; nadie sabe si lo hizo, y la idea se discute."
+          },
+          "wiki": {
+            "en": "Enrique of Malacca",
+            "es": "Enrique de Malaca"
+          }
+        },
+        {
+          "id": "rajah-humabon",
+          "name": {
+            "en": "Rajah Humabon of Cebu",
+            "es": "El rajá Humabon de Cebú"
+          },
+          "at": [
+            123.9017,
+            10.2935
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1521-04-07",
+          "place": {
+            "en": "Cebu, Philippines",
+            "es": "Cebú (Filipinas)"
+          },
+          "text": {
+            "en": "The ruler of Cebu, a port visited by Chinese and Arab traders. He was baptised as Carlos on 14 April 1521 and made a blood compact with Magellan, but turned against the Spaniards after Mactan.",
+            "es": "El gobernante de Cebú, un puerto que visitaban mercaderes chinos y árabes. Se bautizó como Carlos el 14 de abril de 1521 e hizo un pacto de sangre con Magallanes, pero se volvió contra los españoles después de Mactán."
+          },
+          "wiki": {
+            "en": "Rajah Humabon",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1521-04-27",
+      "title": {
+        "en": "Lapulapu defends Mactan",
+        "es": "Lapulapu defiende Mactán"
+      },
+      "camera": {
+        "lon": 123.97,
+        "lat": 10.3,
+        "zoom": 30
+      },
+      "text": {
+        "en": "Magellan took Humabon’s side and tried to force Lapulapu, a chief of Mactan, to submit. On 27 April 1521 Lapulapu’s warriors drove the invaders back through the surf and killed Magellan.",
+        "es": "Magallanes se puso del lado de Humabon e intentó obligar a Lapulapu, un jefe de Mactán, a someterse. El 27 de abril de 1521, los guerreros de Lapulapu hicieron retroceder a los invasores entre las olas y mataron a Magallanes."
+      },
+      "details": {
+        "en": "Mactan, a small island facing Cebu’s harbour, had two chiefs. Zula sent gifts, but Lapulapu refused to bow to Humabon or to the king of Spain. Magellan had houses on Mactan burned, then came before dawn with about 60 armed men in boats, telling Humabon’s warriors only to watch. Reefs kept the boats far out, so 49 men waded ashore up to their thighs while 11 guarded the boats. Pigafetta counted some 1,500 warriors with arrows, iron-tipped bamboo spears and long swords, and the muskets fired uselessly from too far away. Hit in the leg by a poisoned arrow and wounded again and again, Magellan was killed with several of his men; Pigafetta was wounded. Lapulapu refused to hand over the body.",
+        "es": "Mactán, una pequeña isla frente al puerto de Cebú, tenía dos jefes. Zula envió regalos, pero Lapulapu se negó a someterse a Humabon o al rey de España. Magallanes hizo quemar casas en Mactán y luego llegó antes del amanecer con unos 60 hombres armados en botes, y pidió a los guerreros de Humabon que solo miraran. Los arrecifes dejaron los botes lejos, así que 49 hombres avanzaron con el agua hasta los muslos mientras 11 cuidaban los botes. Pigafetta contó unos 1500 guerreros con flechas, lanzas de bambú con punta de hierro y largas espadas, y los mosquetes disparaban sin efecto desde demasiado lejos. Una flecha envenenada lo hirió en la pierna y después recibió muchas heridas más: Magallanes murió junto a varios de sus hombres, y Pigafetta resultó herido. Lapulapu se negó a entregar el cuerpo."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [
+              123.92,
+              10.29
+            ],
+            [
+              123.95,
+              10.33
+            ],
+            [
+              123.98,
+              10.36
+            ],
+            [
+              124.03,
+              10.33
+            ],
+            [
+              124.02,
+              10.31
+            ]
+          ],
+          "by": "sea",
+          "icon": "🛶",
+          "label": {
+            "en": "Magellan's boats",
+            "es": "Los botes de Magallanes"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "lapulapu",
+          "name": {
+            "en": "Lapulapu",
+            "es": "Lapulapu"
+          },
+          "at": [
+            123.97,
+            10.29
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1521-04-27",
+          "place": {
+            "en": "Mactan, Cebu, Philippines",
+            "es": "Mactán, Cebú (Filipinas)"
+          },
+          "text": {
+            "en": "A datu (chief) of Mactan who refused to submit to Humabon or to Spain, and whose warriors killed Magellan. Pigafetta is the only source that names him, and little else is known of his life.",
+            "es": "Un datu (jefe) de Mactán que se negó a someterse a Humabon o a España, y cuyos guerreros mataron a Magallanes. Pigafetta es la única fuente que lo nombra, y poco más se sabe de su vida."
+          },
+          "details": {
+            "en": "Pigafetta wrote his name as Çilapulapu; the Si may be an honorific from the Sanskrit title Sri. From Mactan its chiefs could watch every ship entering Cebu’s harbour, and Lapulapu may have been as powerful as Humabon, whose wife was his niece. He is said to have answered that he would not come to pay respect to someone he had commanded for so long. His victory delayed Spanish rule in the islands until 1565. Today a city, many statues and Lapulapu Day, every 27 April, honour him as the Philippines’ first hero.",
+            "es": "Pigafetta escribió su nombre como Çilapulapu; el Si quizá sea un título de respeto que viene del sánscrito Sri. Desde Mactán, sus jefes podían vigilar cada barco que entraba en el puerto de Cebú, y Lapulapu quizá era tan poderoso como Humabon, cuya esposa era su sobrina. Se dice que respondió que no iría a rendir homenaje a alguien a quien él había mandado durante tanto tiempo. Su victoria retrasó el dominio español en las islas hasta 1565. Hoy una ciudad, muchas estatuas y el Día de Lapulapu, cada 27 de abril, lo honran como el primer héroe de Filipinas."
+          },
+          "wiki": {
+            "en": "Lapulapu",
+            "es": "Lapulapu"
+          }
+        },
+        {
+          "id": "battle-of-mactan",
+          "name": {
+            "en": "Battle of Mactan",
+            "es": "Batalla de Mactán"
+          },
+          "at": [
+            124.0151,
+            10.3106
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1521-04-27",
+          "place": {
+            "en": "Mactan, Cebu, Philippines",
+            "es": "Mactán, Cebú (Filipinas)"
+          },
+          "text": {
+            "en": "The first recorded battle won by people of the islands against Spanish forces. It is reenacted every year on the shore of Mactan, near a shrine marking where Magellan fell.",
+            "es": "La primera batalla documentada que ganó la gente de las islas contra fuerzas españolas. Cada año se representa en la costa de Mactán, cerca de un santuario que marca el lugar donde cayó Magallanes."
+          },
+          "wiki": {
+            "en": "Battle of Mactan",
+            "es": "Batalla de Mactán"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1521-07",
+      "title": {
+        "en": "A massacre, a fire and Brunei",
+        "es": "Una matanza, un incendio y Brunéi"
+      },
+      "camera": {
+        "lon": 119.5,
+        "lat": 7.8,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "Days after Mactan, about 27 men were killed at a feast in Cebu. Too few were left for three ships, so they burned the Concepción and wandered on, by Palawan, to the rich city of Brunei.",
+        "es": "Días después de Mactán, unos 27 hombres murieron en un banquete en Cebú. Quedaban muy pocos para tres barcos, así que quemaron la Concepción y siguieron sin rumbo fijo, por Palawan, hasta la rica ciudad de Brunéi."
+      },
+      "details": {
+        "en": "The men chose Duarte Barbosa and Juan Serrano as leaders. Magellan’s will freed Enrique, but they ordered him to go on serving. On 1 May Humabon invited about thirty men ashore to a feast, and armed Cebuanos killed them; Serrano was left on the beach, begging for a ransom, as the ships sailed off. With 115 men left of the 277 who had sailed from Seville, they set the Concepción on fire on 2 May. Under João Carvalho, the Trinidad and the Victoria spent six months searching for the Moluccas, stopping at Palawan for food and even robbing a junk. In July they reached Brunei, ruled by Sultan Bolkiah. Pigafetta described its forts with guns, its trained elephants, and the silver candlesticks and gold spoons on the sultan’s table.",
+        "es": "Los hombres eligieron como jefes a Duarte Barbosa y a Juan Serrano. El testamento de Magallanes liberaba a Enrique, pero ellos le ordenaron seguir sirviéndoles. El 1 de mayo, Humabon invitó a tierra a unos treinta hombres a un banquete, y cebuanos armados los mataron; Serrano quedó en la playa, suplicando un rescate, mientras los barcos se alejaban. Con 115 hombres de los 277 que habían salido de Sevilla, el 2 de mayo prendieron fuego a la Concepción. Al mando de João Carvalho, la Trinidad y la Victoria pasaron seis meses buscando las Molucas: se detuvieron en Palawan para conseguir comida y hasta asaltaron un junco. En julio llegaron a Brunéi, gobernado por el sultán Bolkiah. Pigafetta describió sus fuertes con cañones, sus elefantes amaestrados y los candelabros de plata y las cucharas de oro de la mesa del sultán."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [
+              124.02,
+              10.31
+            ],
+            [
+              124.03,
+              10.33
+            ],
+            [
+              123.98,
+              10.36
+            ],
+            [
+              123.95,
+              10.33
+            ],
+            [
+              123.92,
+              10.29
+            ],
+            [
+              123.95,
+              10.15
+            ],
+            [
+              123.8,
+              9.8
+            ],
+            [
+              123.6,
+              9.3
+            ],
+            [
+              123.45,
+              8.8
+            ],
+            [
+              122.5,
+              8.85
+            ],
+            [
+              121.2,
+              9.55
+            ],
+            [
+              119.8,
+              9.3
+            ],
+            [
+              118.8,
+              9.3
+            ],
+            [
+              118.4,
+              8.5
+            ],
+            [
+              117.6,
+              7.9
+            ],
+            [
+              117.0,
+              7.45
+            ],
+            [
+              116.4,
+              7.1
+            ],
+            [
+              115.9,
+              6.4
+            ],
+            [
+              115.4,
+              5.7
+            ],
+            [
+              115.15,
+              5.2
+            ],
+            [
+              114.95,
+              4.93
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "cebu-feast",
+          "name": {
+            "en": "The feast at Cebu",
+            "es": "El banquete de Cebú"
+          },
+          "at": [
+            123.895,
+            10.3
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1521-05-01",
+          "place": {
+            "en": "Cebu, Philippines",
+            "es": "Cebú (Filipinas)"
+          },
+          "text": {
+            "en": "Humabon’s warriors killed about 27 Europeans at a banquet. Why he turned on them is not clear: the defeat at Mactan, the strangers’ demands, or a warning from Enrique, as one account says.",
+            "es": "Los guerreros de Humabon mataron a unos 27 europeos en un banquete. No está claro por qué se volvió contra ellos: la derrota de Mactán, las exigencias de los extranjeros o un aviso de Enrique, como dice un relato."
+          },
+          "wiki": {
+            "en": "Rajah Humabon",
+            "es": ""
+          }
+        },
+        {
+          "id": "concepcion-burned",
+          "name": {
+            "en": "Burning of the Concepción",
+            "es": "La quema de la Concepción"
+          },
+          "at": [
+            123.8,
+            9.8
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1521-05-02",
+          "place": {
+            "en": "Off Bohol, Philippines",
+            "es": "Frente a Bohol (Filipinas)"
+          },
+          "text": {
+            "en": "With 115 men left of 277, there were too few to sail three ships. The crews emptied the Concepción and set her on fire, and went on in the Trinidad and the Victoria.",
+            "es": "Con 115 hombres de 277, eran demasiado pocos para tres barcos. Las tripulaciones vaciaron la Concepción, le prendieron fuego y siguieron en la Trinidad y la Victoria."
+          },
+          "wiki": {
+            "en": "Magellan expedition",
+            "es": "Expedición de Magallanes y Elcano"
+          }
+        },
+        {
+          "id": "brunei",
+          "name": {
+            "en": "Brunei",
+            "es": "Brunéi"
+          },
+          "at": [
+            114.94,
+            4.89
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1521-07",
+          "place": {
+            "en": "Bandar Seri Begawan, Brunei",
+            "es": "Bandar Seri Begawan (Brunéi)"
+          },
+          "text": {
+            "en": "The capital of a powerful Malay sultanate on the coast of Borneo. Pigafetta was amazed by its trained elephants, its guns and the riches of Sultan Bolkiah’s court.",
+            "es": "La capital de un poderoso sultanato malayo en la costa de Borneo. A Pigafetta lo asombraron sus elefantes amaestrados, sus cañones y las riquezas de la corte del sultán Bolkiah."
+          },
+          "wiki": {
+            "en": "Sultanate of Brunei (1368–1888)",
+            "es": "Imperio de Brunéi"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1521-11-08",
+      "title": {
+        "en": "The clove islands",
+        "es": "Las islas del clavo"
+      },
+      "camera": {
+        "lon": 121.5,
+        "lat": 4.0,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "On 8 November 1521 the Trinidad and the Victoria reached Tidore, in the Moluccas. Its sultan, al-Mansur, welcomed them, and they traded cloth, knives and glass for tons of cloves.",
+        "es": "El 8 de noviembre de 1521, la Trinidad y la Victoria llegaron a Tidore, en las Molucas. Su sultán, al-Mansur, los recibió bien, y cambiaron telas, cuchillos y vidrio por toneladas de clavo."
+      },
+      "details": {
+        "en": "In September the crews had replaced Carvalho; Gonzalo Gómez de Espinosa and Juan Sebastián Elcano became captains of the Trinidad and the Victoria. Cloves grew on only a few small islands, Ternate, Tidore, Moti, Makian and Bacan, and for centuries Malay, Indian, Arab and Chinese traders had carried them across Asia towards Europe. The rival sultans of Ternate and Tidore grew rich on them. The Portuguese had reached the islands in 1512 and were allied with Ternate; Magellan’s friend Francisco Serrão had died there at about the time Magellan was killed. Tidore’s sultan declared his loyalty to the king of Spain, and the Spaniards set up a trading post. In mid-December the Trinidad began to leak badly, so it was agreed that the Victoria would sail west for Spain at once while the Trinidad stayed to be repaired.",
+        "es": "En septiembre, las tripulaciones habían destituido a Carvalho; Gonzalo Gómez de Espinosa y Juan Sebastián Elcano pasaron a ser capitanes de la Trinidad y de la Victoria. El clavo crecía solo en unas pocas islas pequeñas, Ternate, Tidore, Moti, Makian y Bacan, y durante siglos mercaderes malayos, indios, árabes y chinos lo habían llevado a través de Asia hacia Europa. Los sultanes rivales de Ternate y Tidore se enriquecieron con él. Los portugueses habían llegado a las islas en 1512 y eran aliados de Ternate; allí había muerto Francisco Serrão, amigo de Magallanes, más o menos cuando murió Magallanes. El sultán de Tidore declaró su lealtad al rey de España, y los españoles abrieron un puesto comercial. A mediados de diciembre, la Trinidad empezó a hacer agua, así que se acordó que la Victoria zarparía enseguida hacia España por el oeste y que la Trinidad se quedaría para repararse."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [
+              114.95,
+              4.93
+            ],
+            [
+              115.15,
+              5.2
+            ],
+            [
+              115.4,
+              5.7
+            ],
+            [
+              115.9,
+              6.4
+            ],
+            [
+              116.4,
+              7.1
+            ],
+            [
+              117.0,
+              7.45
+            ],
+            [
+              117.6,
+              7.9
+            ],
+            [
+              118.8,
+              7.4
+            ],
+            [
+              120.3,
+              6.6
+            ],
+            [
+              121.5,
+              6.4
+            ],
+            [
+              122.6,
+              6.35
+            ],
+            [
+              123.5,
+              6.3
+            ],
+            [
+              124.0,
+              5.8
+            ],
+            [
+              125.0,
+              5.4
+            ],
+            [
+              125.45,
+              4.9
+            ],
+            [
+              125.35,
+              3.6
+            ],
+            [
+              125.45,
+              2.6
+            ],
+            [
+              126.0,
+              1.7
+            ],
+            [
+              126.9,
+              1.0
+            ],
+            [
+              127.3,
+              0.8
+            ],
+            [
+              127.4,
+              0.68
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "tidore",
+          "name": {
+            "en": "Tidore",
+            "es": "Tidore"
+          },
+          "at": [
+            127.4,
+            0.6833
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1521-11-08",
+          "place": {
+            "en": "North Maluku, Indonesia",
+            "es": "Molucas del Norte (Indonesia)"
+          },
+          "text": {
+            "en": "A volcanic island whose sultan, rival of neighbouring Ternate, grew rich on cloves. Sultan al-Mansur welcomed the Spaniards in November 1521 and let them set up a trading post.",
+            "es": "Una isla volcánica cuyo sultán, rival de la vecina Ternate, se enriqueció con el clavo. El sultán al-Mansur recibió a los españoles en noviembre de 1521 y les dejó abrir un puesto comercial."
+          },
+          "wiki": {
+            "en": "Tidore",
+            "es": "Tidore"
+          }
+        },
+        {
+          "id": "cloves",
+          "name": {
+            "en": "Cloves",
+            "es": "Clavo de olor"
+          },
+          "at": [
+            127.4,
+            0.33
+          ],
+          "cat": "goods",
+          "type": "goods",
+          "date": "1521-11",
+          "place": {
+            "en": "Moluccas, Indonesia",
+            "es": "Molucas (Indonesia)"
+          },
+          "text": {
+            "en": "The dried flower buds of a tree that grew only in the northern Moluccas. In Europe they were worth a fortune: the cloves the Victoria brought home were worth more than the whole fleet had cost.",
+            "es": "Los botones florales secos de un árbol que solo crecía en el norte de las Molucas. En Europa valían una fortuna: el clavo que trajo la Victoria valía más de lo que había costado toda la flota."
+          },
+          "wiki": {
+            "en": "Clove",
+            "es": "Syzygium aromaticum"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1522-05-06",
+      "title": {
+        "en": "The Victoria sails alone",
+        "es": "La Victoria navega sola"
+      },
+      "camera": {
+        "lon": 72.0,
+        "lat": -15.0,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "On 21 December 1521 Juan Sebastián Elcano sailed the Victoria west for Spain. From Timor he crossed the Indian Ocean far from any port, and his hungry crew rounded the Cape of Good Hope in May 1522.",
+        "es": "El 21 de diciembre de 1521, Elcano zarpó con la Victoria hacia España por el oeste. Desde Timor cruzó el océano Índico lejos de todo puerto, y su hambrienta tripulación dobló el cabo de Buena Esperanza en mayo de 1522."
+      },
+      "details": {
+        "en": "The crown had ordered the fleet to come back the way it came, but Elcano chose to go on west, through seas the Portuguese claimed. After a storm the Victoria was repaired at an island the sailors called Mallua and stopped at Timor. From there, in February, Elcano set out to sail without landing all the way to Seville, some 27,000 km. He kept far to the south of Portuguese India, sighting only a lonely island he named Despair. Soon there was nothing left to eat but rice cooked in seawater, and scurvy spread. The crew voted not to stop in Portuguese Mozambique. Near the Cape they waited for weeks in freezing gales before slipping round it close to the coast, by 6 May.",
+        "es": "La Corona había ordenado volver por el mismo camino, pero Elcano decidió seguir hacia el oeste, por mares que reclamaba Portugal. Tras una tormenta, la Victoria se reparó en una isla que los marinos llamaron Mallua y se detuvo en Timor. De allí, en febrero, Elcano partió con la idea de no tocar tierra hasta Sevilla, a unos 27 000 km. Navegó muy al sur de la India portuguesa y solo avistó una isla solitaria a la que llamó Desesperanza. Pronto no quedó más comida que arroz cocido en agua de mar, y el escorbuto se extendió. La tripulación votó no detenerse en el Mozambique portugués. Cerca del cabo esperaron semanas entre vendavales helados, hasta que lograron doblarlo pegados a la costa, hacia el 6 de mayo."
+      },
+      "moves": [
+        {
+          "side": "victoria",
+          "path": [
+            [
+              127.4,
+              0.68
+            ],
+            [
+              127.2,
+              0.3
+            ],
+            [
+              126.9,
+              -0.8
+            ],
+            [
+              126.6,
+              -1.6
+            ],
+            [
+              125.9,
+              -2.4
+            ],
+            [
+              125.6,
+              -3.3
+            ],
+            [
+              125.6,
+              -5.0
+            ],
+            [
+              125.4,
+              -7.0
+            ],
+            [
+              125.2,
+              -8.0
+            ],
+            [
+              125.1,
+              -8.6
+            ],
+            [
+              124.5,
+              -9.0
+            ],
+            [
+              123.6,
+              -9.5
+            ],
+            [
+              122.8,
+              -10.2
+            ],
+            [
+              122.3,
+              -10.9
+            ],
+            [
+              118.0,
+              -11.3
+            ],
+            [
+              105.0,
+              -10.9
+            ],
+            [
+              96.5,
+              -13.0
+            ],
+            [
+              85.0,
+              -25.0
+            ],
+            [
+              77.6,
+              -37.6
+            ],
+            [
+              60.0,
+              -38.5
+            ],
+            [
+              40.0,
+              -38.0
+            ],
+            [
+              25.0,
+              -36.0
+            ],
+            [
+              20.0,
+              -35.05
+            ],
+            [
+              18.45,
+              -34.45
+            ],
+            [
+              17.85,
+              -33.9
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Elcano and the Victoria",
+            "es": "Elcano y la Victoria"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "juan-sebastian-elcano",
+          "name": {
+            "en": "Juan Sebastián Elcano",
+            "es": "Juan Sebastián Elcano"
+          },
+          "at": [
+            127.42,
+            0.7
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1521-12-21",
+          "life": [
+            "1486",
+            "1526-08-04"
+          ],
+          "place": {
+            "en": "Tidore, Moluccas, Indonesia",
+            "es": "Tidore, Molucas (Indonesia)"
+          },
+          "text": {
+            "en": "A Basque seaman from Getaria who had joined the mutiny at San Julián. Made captain of the Victoria in 1521, he brought her home round Africa, completing the first voyage around the world.",
+            "es": "Un marino vasco de Getaria que había participado en el motín de San Julián. Nombrado capitán de la Victoria en 1521, la llevó a casa rodeando África y completó la primera vuelta al mundo."
+          },
+          "details": {
+            "en": "Elcano had once owned a ship and had sold it to foreign bankers to pay his debts, which was against the law, and he joined the fleet hoping for a royal pardon. After the voyage Charles V pardoned him and granted him a coat of arms with a globe and the motto Primus circumdedisti me, “You were the first to go around me”, and a pension of 500 ducats that was never paid. He died of scurvy in the Pacific in 1526, on a second voyage to the Moluccas; one of the witnesses to his will was a young Andrés de Urdaneta.",
+            "es": "Elcano había tenido un barco y lo había vendido a banqueros extranjeros para pagar sus deudas, algo prohibido por la ley, y se unió a la flota con la esperanza de obtener el perdón real. Tras el viaje, Carlos V lo perdonó y le concedió un escudo con un globo y el lema Primus circumdedisti me, «Fuiste el primero que me rodeaste», y una pensión de 500 ducados que nunca le pagaron. Murió de escorbuto en el Pacífico en 1526, en un segundo viaje a las Molucas; uno de los testigos de su testamento fue el joven Andrés de Urdaneta."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Motto",
+                "es": "Lema"
+              },
+              "value": {
+                "en": "Primus circumdedisti me: “You were the first to go around me”",
+                "es": "Primus circumdedisti me: «Fuiste el primero que me rodeaste»"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Juan Sebastián Elcano",
+            "es": "Juan Sebastián Elcano"
+          }
+        },
+        {
+          "id": "victoria-ship",
+          "name": {
+            "en": "The Victoria",
+            "es": "La Victoria"
+          },
+          "at": [
+            124.9333,
+            -9.2333
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1522-02",
+          "place": {
+            "en": "Timor",
+            "es": "Timor"
+          },
+          "text": {
+            "en": "A Basque-built carrack of 85 tonels, named after a convent in Seville where Magellan swore loyalty to the king. Leaking and kept afloat by constant pumping, she was the first ship to sail around the world.",
+            "es": "Una nao de 85 toneles construida en el País Vasco y bautizada por un convento de Sevilla donde Magallanes juró lealtad al rey. Con vías de agua y a flote gracias a las bombas, fue el primer barco que dio la vuelta al mundo."
+          },
+          "details": {
+            "en": "The Victoria was built at Ondarroa, in Biscay, and had carried goods between Castile and England before the crown bought her. After the voyage she was repaired and sold, and sailed for almost fifty more years as a merchant ship, until she was lost with all hands on her way from the Antilles to Seville around 1570. Replicas of her have sailed again since 1992.",
+            "es": "La Victoria se construyó en Ondarroa, en Vizcaya, y había llevado mercancías entre Castilla e Inglaterra antes de que la Corona la comprara. Tras el viaje la repararon y la vendieron, y navegó casi cincuenta años más como barco mercante, hasta que se perdió con toda su tripulación cuando iba de las Antillas a Sevilla, hacia 1570. Desde 1992 han vuelto a navegar réplicas suyas."
+          },
+          "wiki": {
+            "en": "Victoria (ship)",
+            "es": "Victoria (nao)"
+          }
+        },
+        {
+          "id": "ile-amsterdam",
+          "name": {
+            "en": "Île Amsterdam (Despair)",
+            "es": "Isla de Ámsterdam (Desesperanza)"
+          },
+          "at": [
+            77.55,
+            -37.8333
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1522-03-18",
+          "place": {
+            "en": "French Southern Lands, Indian Ocean",
+            "es": "Tierras Australes Francesas, océano Índico"
+          },
+          "text": {
+            "en": "A remote volcanic island first sighted by Elcano on 18 March 1522. Unable to find a safe place to land for water, he named it Desesperanza, “Despair”.",
+            "es": "Una remota isla volcánica que Elcano avistó por primera vez el 18 de marzo de 1522. Como no encontró un lugar seguro para desembarcar y buscar agua, la llamó Desesperanza."
+          },
+          "wiki": {
+            "en": "Île Amsterdam",
+            "es": "Isla de Ámsterdam"
+          }
+        },
+        {
+          "id": "cape-of-good-hope",
+          "name": {
+            "en": "Cape of Good Hope",
+            "es": "Cabo de Buena Esperanza"
+          },
+          "at": [
+            18.4756,
+            -34.3581
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1522-05-06",
+          "place": {
+            "en": "Western Cape, South Africa",
+            "es": "Cabo Occidental (Sudáfrica)"
+          },
+          "text": {
+            "en": "A rocky cape near the south-western tip of Africa, on the sea route from Europe to Asia that Portugal claimed. The starving crew of the Victoria rounded it in May 1522.",
+            "es": "Un cabo rocoso cerca del extremo suroeste de África, en la ruta marítima de Europa a Asia que reclamaba Portugal. La hambrienta tripulación de la Victoria lo dobló en mayo de 1522."
+          },
+          "wiki": {
+            "en": "Cape of Good Hope",
+            "es": "Cabo de Buena Esperanza"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1522-07-09",
+      "title": {
+        "en": "The lost day",
+        "es": "El día perdido"
+      },
+      "camera": {
+        "lon": -1.0,
+        "lat": -9.0,
+        "zoom": 1.9
+      },
+      "text": {
+        "en": "Starving, the crew stopped at Portuguese Cape Verde on 9 July 1522, by their count. People ashore said it was 10 July: sailing west around the world, they had lost a day. The Portuguese seized 13 men.",
+        "es": "Hambrientos, hicieron escala en el Cabo Verde portugués el 9 de julio de 1522, según su cuenta. En tierra era 10 de julio: al dar la vuelta al mundo hacia el oeste, habían perdido un día. Los portugueses apresaron a 13 hombres."
+      },
+      "details": {
+        "en": "The Victoria sailed north along Africa with two or three men dying each week; twenty died of hunger before Cape Verde. Shipworms had eaten into the hull, and the weak crew could hardly work the pumps. At Santiago island the men said they were coming from the Americas and bought food twice, but when they had to pay with cloves the Portuguese seem to have guessed where they had been, and arrested the 13 ashore. The barber-surgeon later said they had also tried to buy enslaved Africans to work the pumps; Ribeira Grande was a hub of the Portuguese slave trade. The lost day was no mistake: the geographer Abu’l-Fida had predicted it two centuries earlier.",
+        "es": "La Victoria subió por la costa de África mientras morían dos o tres hombres por semana; veinte murieron de hambre antes de Cabo Verde. La broma, un molusco que perfora la madera, había agujereado el casco, y la tripulación, débil, apenas podía manejar las bombas. En la isla de Santiago, los hombres dijeron que venían de América y compraron comida dos veces, pero cuando tuvieron que pagar con clavo los portugueses parecen haber adivinado de dónde venían y detuvieron a los 13 que estaban en tierra. El barbero cirujano contó después que también intentaron comprar africanos esclavizados para manejar las bombas; Ribeira Grande era un centro de la trata portuguesa de esclavos. El día perdido no fue un error: el geógrafo Abulfeda lo había predicho dos siglos antes."
+      },
+      "moves": [
+        {
+          "side": "victoria",
+          "path": [
+            [
+              17.85,
+              -33.9
+            ],
+            [
+              16.6,
+              -31.0
+            ],
+            [
+              14.2,
+              -26.0
+            ],
+            [
+              12.8,
+              -21.0
+            ],
+            [
+              10.5,
+              -16.0
+            ],
+            [
+              8.0,
+              -9.0
+            ],
+            [
+              4.0,
+              -2.0
+            ],
+            [
+              -1.0,
+              2.5
+            ],
+            [
+              -7.5,
+              3.6
+            ],
+            [
+              -12.5,
+              6.8
+            ],
+            [
+              -17.0,
+              10.5
+            ],
+            [
+              -18.5,
+              13.0
+            ],
+            [
+              -21.5,
+              14.4
+            ],
+            [
+              -23.6,
+              14.88
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "ribeira-grande",
+          "name": {
+            "en": "Ribeira Grande, Cape Verde",
+            "es": "Ribeira Grande (Cabo Verde)"
+          },
+          "at": [
+            -23.605,
+            14.915
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1522-07-09",
+          "place": {
+            "en": "Santiago, Cape Verde",
+            "es": "Santiago (Cabo Verde)"
+          },
+          "text": {
+            "en": "The oldest town of Cape Verde, founded by Portuguese settlers in 1462. Ships bound for India and Brazil stopped here, and it was a hub of the trade in enslaved Africans.",
+            "es": "La ciudad más antigua de Cabo Verde, fundada por colonos portugueses en 1462. Aquí hacían escala los barcos que iban a la India y a Brasil, y era un centro de la trata de africanos esclavizados."
+          },
+          "wiki": {
+            "en": "Cidade Velha",
+            "es": "Santiago de Cabo Verde"
+          }
+        },
+        {
+          "id": "lost-day",
+          "name": {
+            "en": "The lost day",
+            "es": "El día perdido"
+          },
+          "at": [
+            -23.61,
+            14.88
+          ],
+          "cat": "discovery",
+          "type": "event",
+          "date": "1522-07-10",
+          "place": {
+            "en": "Cape Verde",
+            "es": "Cabo Verde"
+          },
+          "text": {
+            "en": "Wednesday 9 July on the ship was Thursday 10 July ashore. Sailing west, the same way as the Sun, the crew had seen one sunrise fewer than people at home. Today the International Date Line sorts this out.",
+            "es": "El miércoles 9 de julio del barco era jueves 10 en tierra. Al navegar hacia el oeste, como el sol, la tripulación vio un amanecer menos que la gente en casa. Hoy lo resuelve la línea internacional de cambio de fecha."
+          },
+          "details": {
+            "en": "The crew had written down every day of the three-year voyage without missing one, so the news astonished them. The Venetian ambassador in Spain, Cardinal Gasparo Contarini, was the first European to explain it correctly: by going all the way round to the west, in the same direction as the Sun’s daily path across the sky, each of their days had been a little longer, and they had lived one day fewer than those who stayed at home.",
+            "es": "La tripulación había anotado cada día de los tres años de viaje sin saltarse ninguno, así que la noticia la dejó atónita. El embajador de Venecia en España, el cardenal Gasparo Contarini, fue el primer europeo que lo explicó bien: al dar toda la vuelta hacia el oeste, en el mismo sentido que el recorrido diario del sol por el cielo, cada uno de sus días había sido un poco más largo, y habían vivido un día menos que quienes se quedaron en casa."
+          },
+          "wiki": {
+            "en": "International Date Line",
+            "es": "Línea internacional de cambio de fecha"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1522-09-06",
+      "title": {
+        "en": "Home with 18 men",
+        "es": "De vuelta con 18 hombres"
+      },
+      "camera": {
+        "lon": -12.0,
+        "lat": 31.0,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "On 6 September 1522 the Victoria reached Sanlúcar with 18 of the about 270 men who had set out three years before, and a hold of cloves worth more than the whole fleet had cost.",
+        "es": "El 6 de septiembre de 1522, la Victoria llegó a Sanlúcar con 18 de los cerca de 270 hombres que habían partido tres años antes y una bodega de clavo que valía más de lo que había costado toda la flota."
+      },
+      "details": {
+        "en": "To keep away from the Portuguese, the ship swung far out to the west and north before turning for Spain. Three men from the Moluccas also came home on board. Two days later the Victoria sailed up the river to Seville. On the day he landed, Elcano wrote to the king asking him to free the men held at Cape Verde; twelve of them came home within a year. The voyage had covered some 60,000 km and shown how vast the Earth and its oceans really are. Pigafetta took his diary to the emperor and later wrote his famous account, but the first printed report, by Maximilianus Transylvanus, came out in 1523.",
+        "es": "Para mantenerse lejos de los portugueses, el barco se alejó mucho hacia el oeste y el norte antes de poner rumbo a España. A bordo volvieron también tres hombres de las Molucas. Dos días después, la Victoria subió por el río hasta Sevilla. El mismo día de su llegada, Elcano escribió al rey para pedirle que liberara a los hombres presos en Cabo Verde; doce de ellos volvieron en menos de un año. El viaje había recorrido unos 60 000 km y mostrado lo grandes que son en realidad la Tierra y sus océanos. Pigafetta llevó su diario al emperador y más tarde escribió su famoso relato, pero el primer informe impreso, de Maximiliano Transilvano, salió en 1523."
+      },
+      "moves": [
+        {
+          "side": "victoria",
+          "path": [
+            [
+              -23.6,
+              14.88
+            ],
+            [
+              -24.0,
+              15.2
+            ],
+            [
+              -24.6,
+              16.2
+            ],
+            [
+              -26.0,
+              18.0
+            ],
+            [
+              -29.0,
+              26.0
+            ],
+            [
+              -28.0,
+              35.0
+            ],
+            [
+              -25.0,
+              40.5
+            ],
+            [
+              -18.0,
+              41.8
+            ],
+            [
+              -11.5,
+              40.0
+            ],
+            [
+              -9.8,
+              37.2
+            ],
+            [
+              -8.3,
+              36.6
+            ],
+            [
+              -6.4,
+              36.79
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "victoria",
+          "path": [
+            [
+              -6.4,
+              36.79
+            ],
+            [
+              -6.37,
+              36.8
+            ],
+            [
+              -6.34,
+              36.83
+            ],
+            [
+              -6.31,
+              36.88
+            ],
+            [
+              -6.27,
+              36.94
+            ],
+            [
+              -6.22,
+              37.0
+            ],
+            [
+              -6.18,
+              37.07
+            ],
+            [
+              -6.14,
+              37.13
+            ],
+            [
+              -6.1,
+              37.19
+            ],
+            [
+              -6.07,
+              37.24
+            ],
+            [
+              -6.05,
+              37.29
+            ],
+            [
+              -6.02,
+              37.34
+            ],
+            [
+              -5.99,
+              37.38
+            ]
+          ],
+          "by": "river",
+          "icon": "⛵",
+          "label": {
+            "en": "Up the river to Seville",
+            "es": "Río arriba, hasta Sevilla"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "sanlucar-de-barrameda",
+          "name": {
+            "en": "Sanlúcar de Barrameda",
+            "es": "Sanlúcar de Barrameda"
+          },
+          "at": [
+            -6.3519,
+            36.7781
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1522-09-06",
+          "place": {
+            "en": "Cádiz, Spain",
+            "es": "Cádiz (España)"
+          },
+          "text": {
+            "en": "The port at the mouth of the Guadalquivir where the voyage began on 20 September 1519 and ended on 6 September 1522, almost exactly three years later.",
+            "es": "El puerto en la desembocadura del Guadalquivir donde el viaje empezó el 20 de septiembre de 1519 y terminó el 6 de septiembre de 1522, casi exactamente tres años después."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Who came home",
+                "es": "Quiénes volvieron"
+              },
+              "value": {
+                "en": "18 men on the Victoria (1522); 55 on the San Antonio (1521); 12 freed from Cape Verde (1522–1523); 4 or 5 from the Trinidad (1525–1526)",
+                "es": "18 hombres en la Victoria (1522); 55 en la San Antonio (1521); 12 liberados de Cabo Verde (1522–1523); 4 o 5 de la Trinidad (1525–1526)"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Sanlúcar de Barrameda",
+            "es": "Sanlúcar de Barrameda"
+          }
+        },
+        {
+          "id": "seville",
+          "name": {
+            "en": "Seville",
+            "es": "Sevilla"
+          },
+          "at": [
+            -5.9945,
+            37.3886
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1522-09-08",
+          "place": {
+            "en": "Andalusia, Spain",
+            "es": "Andalucía (España)"
+          },
+          "text": {
+            "en": "Spain's gateway to the Indies, home since 1503 of the Casa de Contratación, which ran the trade with the Americas and fitted out Magellan's fleet. The Victoria reached its port on 8 September 1522.",
+            "es": "La puerta de España hacia las Indias, sede desde 1503 de la Casa de Contratación, que dirigía el comercio con América y equipó la flota de Magallanes. La Victoria llegó a su puerto el 8 de septiembre de 1522."
+          },
+          "wiki": {
+            "en": "Seville",
+            "es": "Sevilla"
+          }
+        },
+        {
+          "id": "pigafetta-relazione",
+          "name": {
+            "en": "Pigafetta’s Report on the First Voyage",
+            "es": "La Relación del primer viaje de Pigafetta"
+          },
+          "at": [
+            11.5475,
+            45.5455
+          ],
+          "cat": "book",
+          "type": "work",
+          "date": "1524",
+          "place": {
+            "en": "Vicenza, Italy",
+            "es": "Vicenza (Italia)"
+          },
+          "text": {
+            "en": "Pigafetta’s Relazione del primo viaggio intorno al mondo, written in Vicenza in 1523–1524, is the main eyewitness account of the voyage. Only four copies survive, none of them the original.",
+            "es": "La Relazione del primo viaggio intorno al mondo de Pigafetta, escrita en Vicenza en 1523–1524, es el principal relato de un testigo del viaje. Solo se conservan cuatro copias, ninguna de ellas la original."
+          },
+          "details": {
+            "en": "Pigafetta gave handwritten copies, decorated with his own maps, to Charles V, the kings of Portugal and France and other great lords; one of his maps is the first known to use the name Pacific Ocean. He could not afford to have it printed, and it was published only in 1550–1559 by Giovanni Battista Ramusio. It records the customs and words of the peoples the fleet met, including the first written list of Cebuano words.",
+            "es": "Pigafetta regaló copias manuscritas, adornadas con sus propios mapas, a Carlos V, a los reyes de Portugal y Francia y a otros grandes señores; uno de sus mapas es el primero que se conoce con el nombre de océano Pacífico. No pudo pagar la impresión, y la obra solo se publicó en 1550–1559, gracias a Giovanni Battista Ramusio. Recoge las costumbres y las palabras de los pueblos que encontró la flota, entre ellas la primera lista escrita de palabras en cebuano."
+          },
+          "wiki": {
+            "en": "Antonio Pigafetta",
+            "es": "Antonio Pigafetta"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1522-11",
+      "title": {
+        "en": "The Trinidad's last voyage",
+        "es": "El último viaje de la Trinidad"
+      },
+      "camera": {
+        "lon": 141.0,
+        "lat": 21.0,
+        "zoom": 2.0
+      },
+      "text": {
+        "en": "The Trinidad tried to sail east across the Pacific to Panama, but storms and scurvy defeated her. She turned back to the Moluccas, where the Portuguese seized her. Only four or five of her men saw Spain again.",
+        "es": "La Trinidad intentó cruzar el Pacífico hacia el este, rumbo a Panamá, pero las tormentas y el escorbuto la vencieron. Volvió a las Molucas y los portugueses la capturaron. Solo cuatro o cinco de sus hombres volvieron a España."
+      },
+      "details": {
+        "en": "Repaired, the Trinidad left Tidore on 6 April 1522 with about 50 tonels of cloves, under Gonzalo Gómez de Espinosa, a good soldier but no sailor. At one of the Mariana Islands three men deserted. Espinosa sailed north-east looking for winds that would carry him to America, but did not find them and reached 42 or 43 degrees north in ever colder storms. Scurvy killed 30 men, leaving only 20 to sail the ship. Five months after leaving he turned back, and two months later reached the Moluccas, where seven Portuguese ships under António de Brito had come to arrest Magellan. The Trinidad was taken to Ternate and wrecked there in a storm. Her survivors spent years at hard labour and in prison. In 1565 Andrés de Urdaneta found the way back across the North Pacific that the Trinidad had sought.",
+        "es": "Ya reparada, la Trinidad salió de Tidore el 6 de abril de 1522 con unos 50 toneles de clavo, al mando de Gonzalo Gómez de Espinosa, buen soldado pero no marino. En una de las islas Marianas desertaron tres hombres. Espinosa navegó hacia el noreste buscando vientos que lo llevaran a América, pero no los encontró y llegó a 42 o 43 grados norte entre tormentas cada vez más frías. El escorbuto mató a 30 hombres y dejó solo 20 para manejar el barco. Cinco meses después de partir dio la vuelta, y dos meses más tarde llegó a las Molucas, adonde siete barcos portugueses al mando de António de Brito habían ido a detener a Magallanes. La Trinidad fue llevada a Ternate, donde la destrozó una tormenta. Sus supervivientes pasaron años de trabajos forzados y de cárcel. En 1565, Andrés de Urdaneta encontró la ruta de regreso por el Pacífico norte que había buscado la Trinidad."
+      },
+      "moves": [
+        {
+          "side": "trinidad",
+          "path": [
+            [
+              127.4,
+              0.68
+            ],
+            [
+              127.25,
+              0.95
+            ],
+            [
+              127.6,
+              2.2
+            ],
+            [
+              130.0,
+              6.0
+            ],
+            [
+              136.0,
+              11.0
+            ],
+            [
+              145.9,
+              17.5
+            ],
+            [
+              150.0,
+              28.0
+            ],
+            [
+              156.0,
+              42.5
+            ],
+            [
+              152.0,
+              34.0
+            ],
+            [
+              140.0,
+              18.0
+            ],
+            [
+              131.0,
+              6.0
+            ],
+            [
+              127.6,
+              2.2
+            ],
+            [
+              127.25,
+              0.95
+            ],
+            [
+              127.37,
+              0.8
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "The Trinidad tries for Panama",
+            "es": "La Trinidad intenta llegar a Panamá"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "trinidad-ship",
+          "name": {
+            "en": "The Trinidad",
+            "es": "La Trinidad"
+          },
+          "at": [
+            127.38,
+            0.66
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1522-04-06",
+          "place": {
+            "en": "Tidore, Moluccas, Indonesia",
+            "es": "Tidore, Molucas (Indonesia)"
+          },
+          "text": {
+            "en": "Magellan's flagship, a carrack of about 110 tonels. After Tidore she tried to sail east across the Pacific to New Spain, failed, and was captured by the Portuguese.",
+            "es": "La nave capitana de Magallanes, una nao de unos 110 toneles. Después de Tidore intentó cruzar el Pacífico hacia el este, rumbo a Nueva España, fracasó y fue capturada por los portugueses."
+          },
+          "wiki": {
+            "en": "Trinidad (ship)",
+            "es": "Trinidad (nao)"
+          }
+        },
+        {
+          "id": "ternate",
+          "name": {
+            "en": "Ternate",
+            "es": "Ternate"
+          },
+          "at": [
+            127.3667,
+            0.7833
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1522-11",
+          "place": {
+            "en": "North Maluku, Indonesia",
+            "es": "Molucas del Norte (Indonesia)"
+          },
+          "text": {
+            "en": "Tidore's rival clove island, where the Portuguese had built a fort. The captured Trinidad was brought here, stripped of her sails and rigging, and smashed to pieces by a storm.",
+            "es": "La isla del clavo rival de Tidore, donde los portugueses habían construido un fuerte. La Trinidad capturada fue llevada aquí, le quitaron las velas y los aparejos, y una tormenta la hizo pedazos."
+          },
+          "wiki": {
+            "en": "Ternate",
+            "es": "Ternate"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "The voyage proved that a ship could sail around the world and that the oceans are all connected, and it showed Europeans how vast the Pacific is. It cost most of its men their lives, and the Tehuelche, the Chamorro and the people of Mactan paid for it too. Spain and Portugal quarrelled over the Moluccas until the Treaty of Zaragoza of 1529, when Portugal paid Spain 350,000 ducats for its claim; from 1565 Spain colonised the Philippines instead. The lost day showed the need for a date line, and Pigafetta’s diary is still the main account of the voyage.",
+    "es": "El viaje demostró que un barco podía dar la vuelta al mundo y que todos los océanos están unidos, y mostró a los europeos la inmensidad del Pacífico. Costó la vida a la mayoría de sus hombres, y también lo pagaron los tehuelches, los chamorros y la gente de Mactán. España y Portugal se disputaron las Molucas hasta el Tratado de Zaragoza de 1529, cuando Portugal pagó a España 350 000 ducados por sus derechos; desde 1565, España colonizó en cambio Filipinas. El día perdido mostró que hacía falta una línea de cambio de fecha, y el diario de Pigafetta sigue siendo el principal relato del viaje."
+  },
+  "sources": [
+    {
+      "title": "Magellan expedition (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Magellan_expedition"
+    },
+    {
+      "title": "Ferdinand Magellan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ferdinand_Magellan"
+    },
+    {
+      "title": "Juan Sebastián Elcano (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Juan_Sebasti%C3%A1n_Elcano"
+    },
+    {
+      "title": "Antonio Pigafetta (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Antonio_Pigafetta"
+    },
+    {
+      "title": "Enrique of Malacca (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Enrique_of_Malacca"
+    },
+    {
+      "title": "Victoria (ship) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Victoria_(ship)"
+    },
+    {
+      "title": "Trinidad (ship) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Trinidad_(ship)"
+    },
+    {
+      "title": "Strait of Magellan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Strait_of_Magellan"
+    },
+    {
+      "title": "Puerto San Julián (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Puerto_San_Juli%C3%A1n"
+    },
+    {
+      "title": "Santa Cruz River (Argentina) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Santa_Cruz_River_(Argentina)"
+    },
+    {
+      "title": "Tehuelche people (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tehuelche_people"
+    },
+    {
+      "title": "Patagons (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Patagons"
+    },
+    {
+      "title": "Patagonia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Patagonia"
+    },
+    {
+      "title": "Tierra del Fuego (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tierra_del_Fuego"
+    },
+    {
+      "title": "Guanabara Bay (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Guanabara_Bay"
+    },
+    {
+      "title": "Tupinambá people (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tupinamb%C3%A1_people"
+    },
+    {
+      "title": "Río de la Plata (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/R%C3%ADo_de_la_Plata"
+    },
+    {
+      "title": "Cerro de Montevideo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cerro_de_Montevideo"
+    },
+    {
+      "title": "St. Elmo's fire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/St._Elmo%27s_fire"
+    },
+    {
+      "title": "Puka-Puka (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Puka-Puka"
+    },
+    {
+      "title": "Scurvy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Scurvy"
+    },
+    {
+      "title": "Chamorro people (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chamorro_people"
+    },
+    {
+      "title": "Homonhon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Homonhon"
+    },
+    {
+      "title": "Limasawa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Limasawa"
+    },
+    {
+      "title": "Rajah Humabon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rajah_Humabon"
+    },
+    {
+      "title": "Battle of Mactan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Mactan"
+    },
+    {
+      "title": "Lapulapu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lapulapu"
+    },
+    {
+      "title": "Sultanate of Brunei (1368–1888) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bruneian_Empire"
+    },
+    {
+      "title": "Maluku Islands (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maluku_Islands"
+    },
+    {
+      "title": "Clove (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Clove"
+    },
+    {
+      "title": "Île Amsterdam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/%C3%8Ele_Amsterdam"
+    },
+    {
+      "title": "Cidade Velha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cidade_Velha"
+    },
+    {
+      "title": "International Date Line (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/International_Date_Line"
+    },
+    {
+      "title": "Sanlúcar de Barrameda (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sanl%C3%BAcar_de_Barrameda"
+    },
+    {
+      "title": "Seville (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Seville"
+    },
+    {
+      "title": "Treaty of Zaragoza (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Treaty_of_Zaragoza"
+    }
+  ]
+}
