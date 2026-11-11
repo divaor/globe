@@ -32,8 +32,11 @@ interface Cam { lon: number; lat: number; zoom: number; pl?: string }
 interface Side { id: string; name: Text; color: string; members?: Text }
 type Losses = { [side: string]: Range | Text | undefined; note?: Text };
 interface Battle { name: Text; at: Pt; date?: string; winner?: string; casualties?: Losses; result?: Text; details?: Text }
-/** A route; on an old map each point moves with its plate (`pls`). */
-interface Move { side: string; path: Pt[]; label?: Text; pls?: (string | null)[] }
+/**
+ * A route; on an old map each point moves with its plate (`pls`). Journeys: `by` how it went (a sea
+ * route is dashed) and `icon`, the traveller, a ship or a caravan, drawn at its head as it goes.
+ */
+interface Move { side: string; path: Pt[]; label?: Text; pls?: (string | null)[]; by?: 'sea' | 'land' | 'river' | 'ice' | 'air'; icon?: string }
 interface WarEvent { icon: string; text: Text; at?: Pt; date?: string; pl?: string }
 /** A marker of the stories other than wars: a person, work, site, dish, structure... */
 export interface Item {
@@ -87,6 +90,8 @@ interface Conflict {
   id: string; name: Text; icon: string; era: string; region: Text; summary: Text; start: string; end: string; t0: number; t1: number;
   camera: Cam; sides: Side[]; casualties?: Losses; casualtiesNote?: Text; outcome: Text; sources: { title: string; url: string }[]; steps: Step[];
   kind?: string; items?: Item[]; cats?: Cat[]; catalog?: 'all' | 'shown';
+  /** The routes of earlier steps stay on the map, faded: the journey so far (Journeys: on unless false). */
+  trail?: boolean;
 }
 interface Entry {
   id: string; name: Text; icon: string; era: string; region: Text; summary: Text; start: string; end: string; t0: number; t1: number; steps: number;
@@ -95,11 +100,15 @@ interface Entry {
 /** Where an item's marker is drawn this frame: (x, y), moved apart from crowded neighbours, and (ax, ay), its true place. */
 interface Spot { k: number; x: number; y: number; ax: number; ay: number; r: number; wt: number }
 /** A collection's items.json row: an item and where it first appears. */
-export interface CollectionItem extends Omit<Item, 'first'> { story: string; step: number }
+export interface CollectionItem extends Omit<Item, 'first'> {
+  story: string; step: number;
+  /** The other stories that tell it too. */
+  also?: string[];
+}
 
 /** The collections of stories. */
-export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games';
-export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games'];
+export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys';
+export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys'];
 /** `paleo`: its old steps are drawn on the continents of their age. */
 const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text; paleo?: boolean }> = {
   wars: { dir: 'conflicts', hash: 'war', icon: '⚔️', name: { en: 'Wars and conquests', es: 'Guerras y conquistas' } },
@@ -109,6 +118,7 @@ const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: 
   people: { dir: 'people', hash: 'people', icon: '🏺', name: { en: 'Peoples and civilizations', es: 'Pueblos y civilizaciones' } },
   life: { dir: 'life', hash: 'life', icon: '🦕', name: { en: 'Life through time', es: 'La vida en el tiempo' }, paleo: true },
   games: { dir: 'games', hash: 'games', icon: '🏅', name: { en: 'Games of the world', es: 'Juegos del mundo' } },
+  journeys: { dir: 'journeys', hash: 'journeys', icon: '🧭', name: { en: 'Journeys and trade routes', es: 'Viajes y rutas comerciales' } },
 };
 export const storyHashKey = (k: StoryKind) => KINDS[k].hash;
 interface Area extends Shape { lp: Pt; area: number }
@@ -433,14 +443,15 @@ export class StoryMode {
    */
   private fitCam(cam: Cam, st: Step, ma: number | null): Cam {
     const c = this.c!;
-    if (!c.items || !st.show?.length) return cam;
+    // A journey's leg should be in view too, from where it starts to where it ends.
+    const pts: Pt[] = [...(c.items ? (st.show ?? []).map((i) => this.itemAt(c.items![i], ma)) : []), ...(this.trail ? (st.moves ?? []).flatMap((mv) => this.routeOf(mv, ma)) : [])];
+    if (!pts.length) return cam;
     const v = this.app.renderer.view;
     const perZoom = v.pxPerRadian / v.zoom;
     const halfW = v.w / 2 - 30, halfH = v.mapH / 2 - 30;
     const R = Math.PI / 180;
     let k = Infinity;
-    for (const i of st.show) {
-      const [lon, lat] = this.itemAt(c.items[i], ma);
+    for (const [lon, lat] of pts) {
       const dx = Math.abs(((lon - cam.lon + 540) % 360) - 180) * R * Math.cos(lat * R), dy = Math.abs(lat - cam.lat) * R;
       if (dx > 1e-9) k = Math.min(k, halfW / dx);
       if (dy > 1e-9) k = Math.min(k, halfH / dy);
@@ -525,6 +536,9 @@ export class StoryMode {
    * No borders of the step's time: in Life through time before 10,000 years ago (the oldest maps are of
    * hominins), and on a Games step, which draws today's (its countries are coloured by today's shapes).
    */
+  /** Does this story keep the routes of earlier steps on the map (a journey's trail)? */
+  private get trail(): boolean { return this.c?.trail ?? this.c?.kind === 'journeys'; }
+
   private noBorders(st: Step) { return (this.paleoKind && st.t < -10000) || !!st.games; }
 
   private snapFor(st: Step) {
@@ -825,11 +839,24 @@ export class StoryMode {
     for (const [w, s] of [[6, 'rgba(255,255,255,0.9)'], [3, col]] as const) {
       ctx.beginPath();
       for (const r of runs) { ctx.moveTo(r[0][0], r[0][1]); for (const p of r.slice(1)) ctx.lineTo(p[0], p[1]); }
+      // By sea, the coloured line is dashed (the white edge stays whole).
+      ctx.setLineDash(mv.by === 'sea' && w === 3 ? [9, 6] : []);
       ctx.strokeStyle = s; ctx.lineWidth = w; ctx.stroke();
     }
-    // Arrowhead at the tip.
+    ctx.setLineDash([]);
     const last = runs[runs.length - 1];
-    if (last && last.length >= 2) {
+    if (mv.icon && last?.length) {
+      // The traveller (a ship, a caravan...) at the head of the route, moving as it is drawn.
+      const [x1, y1] = last[last.length - 1];
+      ctx.beginPath(); ctx.arc(x1, y1, 12, 0, Math.PI * 2);
+      ctx.fillStyle = rc.theme.dark ? 'rgba(20,28,44,0.92)' : 'rgba(255,255,255,0.95)'; ctx.fill();
+      ctx.lineWidth = 2.4; ctx.strokeStyle = col; ctx.stroke();
+      ctx.font = '14px system-ui, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#000';
+      ctx.fillText(mv.icon, x1, y1 + 0.5);
+    } else if (last && last.length >= 2) {
+      // Arrowhead at the tip.
       const [x1, y1] = last[last.length - 1];
       let k = last.length - 2;
       while (k > 0 && Math.hypot(x1 - last[k][0], y1 - last[k][1]) < 6) k--;
@@ -841,6 +868,25 @@ export class StoryMode {
       ctx.closePath();
       ctx.fillStyle = col; ctx.strokeStyle = 'rgba(255,255,255,0.9)'; ctx.lineWidth = 1.5;
       ctx.stroke(); ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  /** A route of an earlier step of a journey: thin, faded, dashed by sea, with no arrowhead. */
+  private drawTrail(rc: RenderCtx, mv: Move, ma: number | null) {
+    const runs: Pt[][] = [];
+    let run: Pt[] = [];
+    for (const g of routeTo(this.routeOf(mv, ma), 1)) { const p = rc.project(g[0], g[1]); if (p) run.push(p); else if (run.length) { runs.push(run); run = []; } }
+    if (run.length) runs.push(run);
+    if (!runs.length) return;
+    const { ctx } = rc;
+    ctx.save();
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    for (const [w, s, a] of [[4, rc.theme.dark ? 'rgba(10,16,28,0.55)' : 'rgba(255,255,255,0.7)', 1], [2, this.sideColor(mv.side), 0.75]] as const) {
+      ctx.beginPath();
+      for (const r of runs) { ctx.moveTo(r[0][0], r[0][1]); for (const p of r.slice(1)) ctx.lineTo(p[0], p[1]); }
+      ctx.setLineDash(mv.by === 'sea' && w === 2 ? [6, 5] : []);
+      ctx.globalAlpha = a; ctx.strokeStyle = s; ctx.lineWidth = w; ctx.stroke();
     }
     ctx.restore();
   }
@@ -883,7 +929,12 @@ export class StoryMode {
     const ma = this.ageNow();
     // Battles of earlier steps stay as small dots: the war's history.
     for (let k = 0; k < this.step; k++) for (const b of c.steps[k].battles ?? []) this.drawBattle(rc, b, 1, 0, true);
-    if (old && fadeOut > 0) for (const mv of old.moves ?? []) this.drawRoute(rc, mv, 1, fadeOut * 0.7, ma);
+    if (this.trail) {
+      // The journey so far: every earlier step's routes stay, thin and faded, under this step's.
+      for (let k = 0; k < this.step; k++) for (const mv of c.steps[k].moves ?? []) this.drawTrail(rc, mv, ma);
+      // Going back, the later step's routes fade away.
+      if (old && this.prev > this.step && fadeOut > 0) for (const mv of old.moves ?? []) this.drawRoute(rc, mv, 1, fadeOut * 0.7, ma);
+    } else if (old && fadeOut > 0) for (const mv of old.moves ?? []) this.drawRoute(rc, mv, 1, fadeOut * 0.7, ma);
     if (st.games) this.drawArcs(rc, st.games, ease((el - MOVE_FROM) / ARC_MS));
     (st.moves ?? []).forEach((mv, k) => this.drawRoute(rc, mv, ease((el - MOVE_FROM - k * 300) / MOVE_MS), 1, ma));
     (st.events ?? []).forEach((ev, k) => {
