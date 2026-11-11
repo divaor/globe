@@ -22,7 +22,7 @@ import { allTitles } from './games.mjs';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
 export const CACHE = path.join(ROOT, '.cache/games/wiki');
 const API = 'https://en.wikipedia.org/w/api.php';
-const UA = 'AtlasGlobe/0.11 (https://github.com/divaor/globe; data build for an educational map)';
+const UA = 'data-build-script/1.0';
 const BATCH = 20, PAUSE = 4000;
 
 /** The cache file of an article. */

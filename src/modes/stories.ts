@@ -64,10 +64,14 @@ export interface Sample { text: string; latin?: string; means?: Text }
 /** A sample as the card shows it: large, in the script fonts, with its reading and meaning. */
 export function sampleEl(sm: Sample): HTMLElement {
   void registerScriptFonts();
+  // The meaning is shown as written (a translation in quotes, or a note such as "the first four letters"), and
+  // left out when it only repeats the sample, like "Hello" for an English reader.
+  const bare = (t: string) => t.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, '');
+  const means = sm.means ? tx(sm.means) : '';
   return h('div', { class: 'item-sample' },
     h('div', { class: `sample-text${isVertical(sm.text) ? ' vertical' : ''}`, dir: 'auto' }, sm.text),
     sm.latin ? h('div', { class: 'sample-latin' }, sm.latin) : null,
-    sm.means ? h('div', { class: 'sample-means' }, `“${tx(sm.means)}”`) : null);
+    means && bare(means) !== bare(sm.text) ? h('div', { class: 'sample-means' }, means) : null);
 }
 /** Games of the world: a team at a Games (a country, or a team such as the Soviet Union or England). */
 export interface Team {

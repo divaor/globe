@@ -1,0 +1,3126 @@
+{
+  "id": "bantu-expansion",
+  "name": {
+    "en": "The Bantu expansion",
+    "es": "La expansión bantú"
+  },
+  "icon": "🌍",
+  "era": "ancient",
+  "region": {
+    "en": "Central, East and Southern Africa",
+    "es": "África central, oriental y meridional"
+  },
+  "start": "-3000",
+  "end": "2026",
+  "summary": {
+    "en": "From Cameroon, near the Nigerian border, some 4,000 to 5,000 years ago, Bantu-speaking farmers spread through the rainforest and around it, to the Great Lakes and down to South Africa, with iron and cattle. Today some 350 million people speak Bantu languages, from Swahili and Lingala to Zulu.",
+    "es": "Desde Camerún, cerca de la frontera con Nigeria, hace unos 4000 a 5000 años, agricultores de habla bantú se expandieron por la selva y alrededor de ella, hasta los Grandes Lagos y Sudáfrica, con hierro y ganado. Hoy unos 350 millones de personas hablan lenguas bantúes, del suajili y el lingala al zulú."
+  },
+  "camera": {
+    "lon": 22,
+    "lat": -8,
+    "zoom": 2.0
+  },
+  "sides": [
+    {
+      "id": "bantu",
+      "name": {
+        "en": "Bantu-speaking peoples",
+        "es": "Pueblos de habla bantú"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "khoesan",
+      "name": {
+        "en": "Khoe and San peoples",
+        "es": "Pueblos khoe y san"
+      },
+      "color": "#d4a017",
+      "derive": {
+        "minus": [
+          {
+            "ref": "khoesan_max"
+          },
+          {
+            "cur": "bantu"
+          }
+        ]
+      }
+    },
+    {
+      "id": "west",
+      "name": {
+        "en": "Western stream",
+        "es": "Corriente occidental"
+      },
+      "color": "#2e6f9e"
+    },
+    {
+      "id": "east",
+      "name": {
+        "en": "Eastern stream",
+        "es": "Corriente oriental"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "later",
+      "name": {
+        "en": "Migrations of the 1800s",
+        "es": "Migraciones del siglo XIX"
+      },
+      "color": "#16a085"
+    }
+  ],
+  "defs": {
+    "khoesan_max": {
+      "land": [
+        [
+          12.0,
+          -12.0
+        ],
+        [
+          22.0,
+          -11.0
+        ],
+        [
+          30.0,
+          -9.0
+        ],
+        [
+          36.0,
+          -9.5
+        ],
+        [
+          40.5,
+          -10.5
+        ],
+        [
+          40.5,
+          -16.0
+        ],
+        [
+          36.0,
+          -25.0
+        ],
+        [
+          33.0,
+          -30.0
+        ],
+        [
+          28.0,
+          -34.5
+        ],
+        [
+          18.0,
+          -35.5
+        ],
+        [
+          17.0,
+          -29.0
+        ],
+        [
+          14.5,
+          -23.0
+        ],
+        [
+          11.6,
+          -17.0
+        ]
+      ]
+    },
+    "khoesan_1800": {
+      "land": [
+        [
+          13.0,
+          -20.0
+        ],
+        [
+          17.5,
+          -21.5
+        ],
+        [
+          19.5,
+          -18.4
+        ],
+        [
+          23.6,
+          -17.9
+        ],
+        [
+          25.4,
+          -20.0
+        ],
+        [
+          24.8,
+          -23.5
+        ],
+        [
+          23.0,
+          -26.3
+        ],
+        [
+          24.3,
+          -28.6
+        ],
+        [
+          24.0,
+          -31.0
+        ],
+        [
+          22.0,
+          -32.2
+        ],
+        [
+          19.5,
+          -31.6
+        ],
+        [
+          18.0,
+          -30.5
+        ],
+        [
+          16.5,
+          -28.6
+        ],
+        [
+          15.0,
+          -26.6
+        ],
+        [
+          14.3,
+          -23.0
+        ]
+      ]
+    },
+    "kalahari": {
+      "land": [
+        [
+          14.5,
+          -21.5
+        ],
+        [
+          19.5,
+          -18.4
+        ],
+        [
+          23.6,
+          -17.9
+        ],
+        [
+          25.4,
+          -20.0
+        ],
+        [
+          24.8,
+          -23.5
+        ],
+        [
+          22.0,
+          -26.5
+        ],
+        [
+          19.6,
+          -28.6
+        ],
+        [
+          16.8,
+          -28.6
+        ],
+        [
+          15.4,
+          -26.6
+        ],
+        [
+          14.3,
+          -23.0
+        ]
+      ]
+    },
+    "today": {
+      "minus": [
+        {
+          "union": [
+            "GNQ",
+            "GAB",
+            "COG",
+            "AGO",
+            "ZMB",
+            "MWI",
+            "MOZ",
+            "ZWE",
+            "LSO",
+            "SWZ",
+            "TZA",
+            "RWA",
+            "BDI",
+            "COM",
+            "BWA",
+            {
+              "minus": [
+                "COD",
+                {
+                  "poly": [
+                    [
+                      18.0,
+                      5.6
+                    ],
+                    [
+                      31.5,
+                      5.6
+                    ],
+                    [
+                      31.5,
+                      2.6
+                    ],
+                    [
+                      27.0,
+                      2.9
+                    ],
+                    [
+                      24.0,
+                      3.6
+                    ],
+                    [
+                      21.0,
+                      3.4
+                    ],
+                    [
+                      18.0,
+                      3.6
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "and": [
+                "CMR",
+                {
+                  "poly": [
+                    [
+                      8.5,
+                      1.5
+                    ],
+                    [
+                      16.5,
+                      1.5
+                    ],
+                    [
+                      16.5,
+                      4.0
+                    ],
+                    [
+                      14.5,
+                      5.0
+                    ],
+                    [
+                      12.5,
+                      5.5
+                    ],
+                    [
+                      11.5,
+                      7.0
+                    ],
+                    [
+                      8.5,
+                      7.0
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "and": [
+                "UGA",
+                {
+                  "poly": [
+                    [
+                      29.0,
+                      2.0
+                    ],
+                    [
+                      32.0,
+                      2.0
+                    ],
+                    [
+                      34.0,
+                      1.6
+                    ],
+                    [
+                      35.2,
+                      1.2
+                    ],
+                    [
+                      35.2,
+                      -1.6
+                    ],
+                    [
+                      29.0,
+                      -1.6
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "and": [
+                "KEN",
+                {
+                  "poly": [
+                    [
+                      33.9,
+                      1.3
+                    ],
+                    [
+                      35.2,
+                      1.0
+                    ],
+                    [
+                      35.5,
+                      0.1
+                    ],
+                    [
+                      37.0,
+                      0.4
+                    ],
+                    [
+                      38.3,
+                      0.2
+                    ],
+                    [
+                      38.8,
+                      -1.0
+                    ],
+                    [
+                      39.6,
+                      -1.5
+                    ],
+                    [
+                      40.3,
+                      -2.2
+                    ],
+                    [
+                      41.0,
+                      -1.8
+                    ],
+                    [
+                      41.7,
+                      -1.6
+                    ],
+                    [
+                      40.0,
+                      -3.6
+                    ],
+                    [
+                      39.2,
+                      -4.8
+                    ],
+                    [
+                      37.7,
+                      -3.6
+                    ],
+                    [
+                      37.0,
+                      -2.6
+                    ],
+                    [
+                      36.0,
+                      -2.0
+                    ],
+                    [
+                      35.4,
+                      -1.3
+                    ],
+                    [
+                      34.8,
+                      -1.1
+                    ],
+                    [
+                      34.0,
+                      -0.3
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "and": [
+                "NAM",
+                {
+                  "poly": [
+                    [
+                      11.5,
+                      -16.9
+                    ],
+                    [
+                      25.5,
+                      -16.9
+                    ],
+                    [
+                      25.5,
+                      -18.5
+                    ],
+                    [
+                      21.0,
+                      -19.5
+                    ],
+                    [
+                      17.5,
+                      -21.5
+                    ],
+                    [
+                      13.5,
+                      -21.5
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "a1": "ZAF",
+              "names": [
+                "Eastern Cape",
+                "Free State",
+                "Gauteng",
+                "KwaZulu-Natal",
+                "Limpopo",
+                "Mpumalanga",
+                "North West"
+              ]
+            }
+          ]
+        },
+        {
+          "land": [
+            [
+              14.5,
+              -21.5
+            ],
+            [
+              19.5,
+              -18.4
+            ],
+            [
+              23.6,
+              -17.9
+            ],
+            [
+              25.4,
+              -20.0
+            ],
+            [
+              24.8,
+              -23.5
+            ],
+            [
+              22.0,
+              -26.5
+            ],
+            [
+              19.6,
+              -28.6
+            ],
+            [
+              16.8,
+              -28.6
+            ],
+            [
+              15.4,
+              -26.6
+            ],
+            [
+              14.3,
+              -23.0
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "steps": [
+    {
+      "date": "-3000",
+      "title": {
+        "en": "A homeland in Cameroon",
+        "es": "Una cuna en Camerún"
+      },
+      "text": {
+        "en": "Some 4,000 to 5,000 years ago, farmers in Cameroon, near the highlands of the Nigerian border, spoke Proto-Bantu, the ancestor of hundreds of languages now spoken across central, eastern and southern Africa.",
+        "es": "Hace unos 4000 a 5000 años, agricultores de Camerún, cerca de las tierras altas de la frontera con Nigeria, hablaban protobantú, antepasado de cientos de lenguas del centro, el este y el sur de África."
+      },
+      "details": {
+        "en": "The closest relatives of the Bantu languages are spoken in Cameroon and eastern Nigeria, so the expansion most likely began there. The older view puts the homeland in the Grassfields and the Mambilla highlands, where “the Bantu who stayed home” still live; newer work places Proto-Bantu a little farther south, on the forest edge along the Sanaga and Nyong rivers. Its rebuilt words describe villagers who used oil palms, grew grains and possibly yams, kept goats and guinea fowl, fished from boats and made pottery, but did not yet work iron. Why they spread is still debated, and so is when: estimates run from 6,000 to 4,000 years ago, and studies of dated word lists point to between 5,000 and 4,000. DNA from people buried at the rock shelter of Shum Laka showed that they were not the ancestors of most Bantu speakers.",
+        "es": "Los parientes más cercanos de las lenguas bantúes se hablan en Camerún y el este de Nigeria, así que la expansión probablemente empezó allí. La visión clásica sitúa la cuna en los Grassfields y las tierras altas de Mambilla, donde aún viven “los bantúes que se quedaron en casa”; estudios más nuevos ponen el protobantú algo más al sur, en el borde de la selva junto a los ríos Sanaga y Nyong. Sus palabras reconstruidas describen aldeanos que aprovechaban la palma aceitera, cultivaban cereales y quizá ñames, criaban cabras y gallinas de Guinea, pescaban en barcas y hacían cerámica, pero aún no trabajaban el hierro. Por qué se expandieron sigue en debate, y también cuándo: las estimaciones van de hace 6000 a 4000 años, y los estudios de listas de palabras fechadas apuntan a entre 5000 y 4000. El ADN de personas enterradas en el abrigo rocoso de Shum Laka mostró que no eran antepasados de la mayoría de los bantúes."
+      },
+      "camera": {
+        "lon": 11.5,
+        "lat": 4.5,
+        "zoom": 4.5
+      },
+      "control": {
+        "bantu": {
+          "land": [
+            [
+              9.2,
+              6.9
+            ],
+            [
+              11.3,
+              7.3
+            ],
+            [
+              12.2,
+              6.2
+            ],
+            [
+              12.6,
+              4.6
+            ],
+            [
+              12.4,
+              3.3
+            ],
+            [
+              10.0,
+              3.3
+            ],
+            [
+              9.6,
+              4.2
+            ],
+            [
+              9.0,
+              5.2
+            ]
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "proto-bantu",
+          "name": {
+            "en": "Proto-Bantu",
+            "es": "Protobantú"
+          },
+          "at": [
+            10.8,
+            5.4
+          ],
+          "cat": "homeland",
+          "type": "language",
+          "date": "-3000",
+          "place": {
+            "en": "Nigeria–Cameroon borderlands",
+            "es": "Frontera entre Nigeria y Camerún"
+          },
+          "text": {
+            "en": "The ancestor of the Bantu languages, rebuilt by linguists from its descendants. Its word for “people”, *bantʊ̀, gave the whole family its name.",
+            "es": "El antepasado de las lenguas bantúes, reconstruido por los lingüistas a partir de sus descendientes. Su palabra para “personas”, *bantʊ̀, dio nombre a toda la familia."
+          },
+          "sample": {
+            "text": "*bantʊ̀",
+            "means": {
+              "en": "people",
+              "es": "personas, gente"
+            }
+          },
+          "wiki": {
+            "en": "Proto-Bantu language",
+            "es": "Idioma protobantú"
+          },
+          "img": "Bantu Phillipson.png"
+        },
+        {
+          "id": "grassfields",
+          "name": {
+            "en": "The Grassfields",
+            "es": "Los Grassfields"
+          },
+          "at": [
+            10.6667,
+            6.6333
+          ],
+          "cat": "homeland",
+          "type": "place",
+          "date": "-3000",
+          "place": {
+            "en": "Western High Plateau, Cameroon",
+            "es": "Meseta occidental, Camerún"
+          },
+          "text": {
+            "en": "Cool uplands of grass and forest in western Cameroon. Their many languages, close cousins of Bantu, suggest that the Bantu story began here or nearby.",
+            "es": "Frescas tierras altas de pastizal y bosque en el oeste de Camerún. Sus muchas lenguas, primas cercanas del bantú, sugieren que la historia bantú empezó aquí o muy cerca."
+          },
+          "wiki": {
+            "en": "Grassfields languages",
+            "es": "Lenguas de los pastizales"
+          }
+        },
+        {
+          "id": "shum-laka",
+          "name": {
+            "en": "Shum Laka",
+            "es": "Shum Laka"
+          },
+          "at": [
+            10.0778,
+            5.8586
+          ],
+          "cat": "homeland",
+          "type": "site",
+          "date": "-30000",
+          "place": {
+            "en": "Near Bamenda, Cameroon",
+            "es": "Cerca de Bamenda, Camerún"
+          },
+          "text": {
+            "en": "A rock shelter used on and off for some 30,000 years. DNA from four people buried here 8,000 to 3,000 years ago is closest to forest hunter-gatherers, not to most Bantu speakers.",
+            "es": "Un abrigo rocoso usado de forma intermitente durante unos 30 000 años. El ADN de cuatro personas enterradas aquí hace 8000 a 3000 años se parece más al de los cazadores-recolectores de la selva que al de los bantúes."
+          },
+          "wiki": {
+            "en": "Shum Laka",
+            "es": "Shum Laka"
+          },
+          "img": "Cameroon physical map.svg"
+        }
+      ]
+    },
+    {
+      "date": "-1500",
+      "title": {
+        "en": "Into the rainforest",
+        "es": "Hacia la selva"
+      },
+      "text": {
+        "en": "Moving slowly south through the forests of Cameroon and along the coast, Bantu-speaking farmers reached central Cameroon by about 1500 BC. The forest was already home to hunter-gatherers.",
+        "es": "Avanzando despacio hacia el sur por las selvas de Camerún y por la costa, los agricultores de habla bantú llegaron al centro de Camerún hacia el 1500 a. C. La selva ya era hogar de cazadores-recolectores."
+      },
+      "details": {
+        "en": "This was the start of the “western stream”. At first it moved slowly: without iron tools, clearing the forest was hard, so the farmers probably followed the coast and the great rivers, and may have travelled by sea. Between about 2000 and 500 BC a drier climate thinned the rainforest, which helped them on. In the Ogooué valley of Gabon, now Lopé National Park, hilltop villages with polished stone axes and pottery appear between 3,500 and 2,000 years ago. The forest had its own people: hunter-gatherers whose ancestors had parted from those of the farmers tens of thousands of years earlier. The two traded and intermarried. Many forest peoples now speak Bantu languages, yet about 30% of the Aka language is not Bantu, much of it words for plants, honey and the forest.",
+        "es": "Fue el inicio de la “corriente occidental”. Al principio avanzó despacio: sin herramientas de hierro, desmontar la selva era difícil, así que los agricultores probablemente siguieron la costa y los grandes ríos, y quizá viajaron por mar. Entre aproximadamente el 2000 y el 500 a. C., un clima más seco aclaró la selva, lo que los ayudó a avanzar. En el valle del Ogooué, en Gabón, hoy parque nacional de Lopé, aparecen entre hace 3500 y 2000 años aldeas en las colinas con hachas de piedra pulida y cerámica. La selva tenía su propia gente: cazadores-recolectores cuyos antepasados se habían separado de los de los agricultores decenas de miles de años antes. Ambos comerciaron y se casaron entre sí. Muchos pueblos de la selva hablan hoy lenguas bantúes, pero cerca del 30 % de la lengua aka no es bantú, sobre todo palabras de plantas, miel y bosque."
+      },
+      "camera": {
+        "lon": 12.5,
+        "lat": 1.5,
+        "zoom": 3.6
+      },
+      "control": {
+        "bantu": [
+          {
+            "prev": true
+          },
+          {
+            "land": [
+              [
+                9.3,
+                4.4
+              ],
+              [
+                12.5,
+                4.8
+              ],
+              [
+                14.2,
+                3.4
+              ],
+              [
+                13.5,
+                1.8
+              ],
+              [
+                11.5,
+                0.8
+              ],
+              [
+                9.2,
+                0.6
+              ],
+              [
+                9.5,
+                2.5
+              ]
+            ]
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "west",
+          "path": [
+            [
+              10.5,
+              4.5
+            ],
+            [
+              9.9,
+              2.8
+            ],
+            [
+              9.6,
+              1.0
+            ],
+            [
+              10.2,
+              -1.0
+            ]
+          ],
+          "label": {
+            "en": "Along the coast",
+            "es": "Por la costa"
+          }
+        },
+        {
+          "side": "west",
+          "path": [
+            [
+              11.6,
+              4.4
+            ],
+            [
+              12.4,
+              3.2
+            ],
+            [
+              13.2,
+              2.0
+            ]
+          ]
+        }
+      ],
+      "places": [
+        {
+          "id": "oil-palm",
+          "name": {
+            "en": "Oil palm",
+            "es": "Palma aceitera"
+          },
+          "at": [
+            11.5167,
+            3.8667
+          ],
+          "cat": "event",
+          "icon": "🌴",
+          "type": "crop",
+          "date": "-3000",
+          "place": {
+            "en": "West and Central Africa",
+            "es": "África occidental y central"
+          },
+          "text": {
+            "en": "A palm of West and Central Africa whose fruit gives red palm oil. The first Bantu speakers already used it, grew grains and possibly yams, and kept goats and guinea fowl.",
+            "es": "Palmera de África occidental y central cuyo fruto da el aceite de palma rojo. Los primeros bantúes ya la aprovechaban, cultivaban cereales y quizá ñames, y criaban cabras y gallinas de Guinea."
+          },
+          "wiki": {
+            "en": "Elaeis guineensis",
+            "es": "Elaeis guineensis"
+          }
+        },
+        {
+          "id": "lope",
+          "name": {
+            "en": "Lopé and the Ogooué valley",
+            "es": "Lopé y el valle del Ogooué"
+          },
+          "at": [
+            11.5,
+            -0.5
+          ],
+          "cat": "homeland",
+          "type": "site",
+          "date": "-1500",
+          "place": {
+            "en": "Gabon",
+            "es": "Gabón"
+          },
+          "text": {
+            "en": "An open valley through the forest of Gabon, perhaps a route for migrants. Hilltop villages with polished stone axes and pottery appear here between 3,500 and 2,000 years ago.",
+            "es": "Un valle abierto en la selva de Gabón, quizá una ruta de migrantes. Entre hace 3500 y 2000 años aparecen aquí aldeas en las colinas con hachas de piedra pulida y cerámica."
+          },
+          "wiki": {
+            "en": "Lopé National Park",
+            "es": "Parque nacional de Lopé"
+          }
+        },
+        {
+          "id": "baka",
+          "name": {
+            "en": "Baka people",
+            "es": "Pueblo baka"
+          },
+          "at": [
+            13.6333,
+            3.15
+          ],
+          "cat": "language",
+          "type": "culture",
+          "date": "-1500",
+          "place": {
+            "en": "Southeast Cameroon, Gabon and Congo",
+            "es": "Sureste de Camerún, Gabón y Congo"
+          },
+          "text": {
+            "en": "Forest hunter-gatherers, about 30,000 of them in Cameroon, who have kept their own language, Baka, beside Bantu-speaking farmers. Parks on their ancestral lands and deforestation threaten their way of life.",
+            "es": "Cazadores-recolectores de la selva, unos 30 000 en Camerún, que conservan su propia lengua, el baka, junto a agricultores bantúes. Los parques en sus tierras y la deforestación amenazan su modo de vida."
+          },
+          "wiki": {
+            "en": "Baka people (Cameroon and Gabon)",
+            "es": "Pigmeos baka"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-1000",
+      "title": {
+        "en": "Through the forest, or around it?",
+        "es": "¿A través de la selva o rodeándola?"
+      },
+      "text": {
+        "en": "How did Bantu speakers reach East Africa? In the “early split” model, one group went east along the northern edge of the forest; in the “late split”, they first crossed the forest and turned east from its south.",
+        "es": "¿Cómo llegaron los bantúes a África oriental? Según la “separación temprana”, un grupo fue al este por el borde norte de la selva; según la “separación tardía”, primero la cruzaron y giraron al este desde el sur."
+      },
+      "details": {
+        "en": "Bantu languages fall into western ones, in Gabon, Congo and Angola, and eastern ones, from Uganda to South Africa. In the early-split model of the 1990s, the eastern stream left early and travelled along the northern fringe of the rainforest, or up the Ubangi River, to the Great Lakes. In the late-split model, the eastern languages branched off later, from Bantu speakers who had already crossed the forest. A 2017 genetic study found that early Bantu speakers first moved south through the forest before spreading east, and studies of dated word lists since 2015 also favour a late split; they disagree on whether migrants crossed the forest itself or used savanna corridors, such as the one along the Sangha River. Archaeologists add a warning: the forest’s record is thin, and pottery cannot simply be matched with languages.",
+        "es": "Las lenguas bantúes se dividen en occidentales, en Gabón, Congo y Angola, y orientales, de Uganda a Sudáfrica. En el modelo de separación temprana de los años noventa, la corriente oriental partió pronto y avanzó por el borde norte de la selva, o remontando el río Ubangui, hasta los Grandes Lagos. En el de separación tardía, las lenguas orientales se separaron después, de bantúes que ya habían cruzado la selva. Un estudio genético de 2017 halló que los primeros bantúes avanzaron primero hacia el sur a través de la selva y luego hacia el este, y los estudios de listas de palabras fechadas desde 2015 también favorecen la separación tardía; discrepan en si los migrantes cruzaron la propia selva o usaron corredores de sabana, como el del río Sangha. Los arqueólogos advierten que el registro de la selva es escaso y que no se puede emparejar sin más una cerámica con una lengua."
+      },
+      "camera": {
+        "lon": 21,
+        "lat": -1,
+        "zoom": 2.8
+      },
+      "control": {
+        "bantu": [
+          {
+            "prev": true
+          },
+          {
+            "land": [
+              [
+                9.0,
+                1.0
+              ],
+              [
+                13.0,
+                2.0
+              ],
+              [
+                16.5,
+                2.5
+              ],
+              [
+                17.5,
+                0.5
+              ],
+              [
+                16.0,
+                -3.0
+              ],
+              [
+                13.5,
+                -4.5
+              ],
+              [
+                11.5,
+                -4.0
+              ],
+              [
+                9.0,
+                -1.0
+              ]
+            ]
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "east",
+          "path": [
+            [
+              11.8,
+              6.0
+            ],
+            [
+              15.0,
+              5.5
+            ],
+            [
+              19.0,
+              4.6
+            ],
+            [
+              23.5,
+              3.8
+            ],
+            [
+              27.5,
+              2.5
+            ],
+            [
+              30.2,
+              0.3
+            ]
+          ],
+          "label": {
+            "en": "Early split?",
+            "es": "¿Separación temprana?"
+          }
+        },
+        {
+          "side": "east",
+          "path": [
+            [
+              14.8,
+              1.6
+            ],
+            [
+              16.4,
+              1.4
+            ],
+            [
+              17.0,
+              -1.5
+            ],
+            [
+              17.6,
+              -5.0
+            ],
+            [
+              21.0,
+              -7.0
+            ],
+            [
+              25.5,
+              -7.5
+            ],
+            [
+              29.0,
+              -4.8
+            ],
+            [
+              30.6,
+              -2.6
+            ]
+          ],
+          "label": {
+            "en": "Late split?",
+            "es": "¿Separación tardía?"
+          }
+        },
+        {
+          "side": "west",
+          "path": [
+            [
+              13.2,
+              2.4
+            ],
+            [
+              15.8,
+              2.6
+            ],
+            [
+              16.6,
+              -0.2
+            ],
+            [
+              15.8,
+              -3.6
+            ]
+          ],
+          "label": {
+            "en": "Western stream",
+            "es": "Corriente occidental"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "sangha-river",
+          "name": {
+            "en": "Sangha River",
+            "es": "Río Sangha"
+          },
+          "at": [
+            16.05,
+            1.6
+          ],
+          "cat": "event",
+          "icon": "🏞️",
+          "type": "place",
+          "date": "-1000",
+          "place": {
+            "en": "Republic of the Congo",
+            "es": "República del Congo"
+          },
+          "text": {
+            "en": "A tributary of the Congo flowing south through the rainforest. A savanna corridor along it, opened by a drier climate about 2,500 years ago, may have been a route for Bantu speakers.",
+            "es": "Afluente del Congo que corre hacia el sur por la selva. Un corredor de sabana a su lado, abierto por un clima más seco hace unos 2500 años, quizá fue una ruta para los bantúes."
+          },
+          "wiki": {
+            "en": "Sangha River",
+            "es": "Río Sangha"
+          }
+        },
+        {
+          "id": "ubangi-river",
+          "name": {
+            "en": "Ubangi River",
+            "es": "Río Ubangui"
+          },
+          "at": [
+            18.58,
+            4.36
+          ],
+          "cat": "event",
+          "icon": "🏞️",
+          "type": "place",
+          "date": "-1000",
+          "place": {
+            "en": "Central African Republic and DR Congo",
+            "es": "República Centroafricana y RD del Congo"
+          },
+          "text": {
+            "en": "The great northern tributary of the Congo. In the early-split model, the eastern Bantu stream followed it, or the northern edge of the forest, toward the Great Lakes.",
+            "es": "El gran afluente norte del Congo. Según el modelo de separación temprana, la corriente bantú oriental lo siguió, o siguió el borde norte de la selva, hacia los Grandes Lagos."
+          },
+          "wiki": {
+            "en": "Ubangi River",
+            "es": "Río Ubangui"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-500",
+      "title": {
+        "en": "Iron at the Great Lakes",
+        "es": "Hierro en los Grandes Lagos"
+      },
+      "text": {
+        "en": "By about 500 BC Bantu-speaking farmers lived west of Lake Victoria. Their Urewe culture made fine pottery and smelted iron, while in the west other Bantu speakers had reached central Angola.",
+        "es": "Hacia el 500 a. C., agricultores de habla bantú vivían al oeste del lago Victoria. Su cultura urewe hacía fina cerámica y fundía hierro, mientras al oeste otros bantúes habían llegado al centro de Angola."
+      },
+      "details": {
+        "en": "Urewe pottery, with dimpled bases and bands of decoration, is found from Kivu in Congo to Rwanda, Burundi, Uganda and western Kenya; its oldest dates come from the Kagera region of Tanzania. Its makers probably grew millet and sorghum, herded cattle and built clay furnaces to smelt iron, and some 2,300 to 2,000 years ago ancestors of the Haya, west of the lake, made carbon steel. Iron was not part of Proto-Bantu life: clear evidence that Bantu speakers used it appears only around 400 BC, and at Nok, in Nigeria, iron may have been worked by about 550 BC. Their words for cattle suggest that eastern Bantu speakers got their herds from Central Sudanic, Kuliak and Cushitic-speaking neighbours. The Batwa, forest hunters thought to be the oldest people of the Great Lakes, lived on beside the farmers’ villages.",
+        "es": "La cerámica urewe, de base hundida y bandas decoradas, aparece desde Kivu, en el Congo, hasta Ruanda, Burundi, Uganda y el oeste de Kenia; sus fechas más antiguas vienen de Kagera, en Tanzania. Sus autores probablemente cultivaban mijo y sorgo, criaban ganado y construían hornos de arcilla para fundir hierro, y hace unos 2300 a 2000 años antepasados de los haya, al oeste del lago, fabricaban acero al carbono. El hierro no formaba parte de la vida protobantú: las pruebas claras de que los bantúes lo usaban aparecen hacia el 400 a. C., y en Nok, en Nigeria, quizá ya se trabajaba hacia el 550 a. C. Sus palabras para el ganado sugieren que los bantúes orientales lo obtuvieron de vecinos de lenguas sudanesas centrales, kuliak y cusitas. Los batwa, cazadores de la selva considerados el pueblo más antiguo de los Grandes Lagos, siguieron viviendo junto a las aldeas de los agricultores."
+      },
+      "camera": {
+        "lon": 24,
+        "lat": -4,
+        "zoom": 2.6
+      },
+      "control": {
+        "bantu": [
+          {
+            "prev": true
+          },
+          {
+            "union": [
+              {
+                "land": [
+                  [
+                    11.5,
+                    -4.0
+                  ],
+                  [
+                    16.0,
+                    -3.0
+                  ],
+                  [
+                    18.0,
+                    -3.5
+                  ],
+                  [
+                    21.0,
+                    -5.5
+                  ],
+                  [
+                    20.0,
+                    -9.0
+                  ],
+                  [
+                    17.0,
+                    -12.5
+                  ],
+                  [
+                    14.0,
+                    -12.5
+                  ],
+                  [
+                    13.0,
+                    -9.0
+                  ]
+                ]
+              },
+              {
+                "land": [
+                  [
+                    17.5,
+                    0.5
+                  ],
+                  [
+                    22.0,
+                    1.5
+                  ],
+                  [
+                    24.0,
+                    -1.0
+                  ],
+                  [
+                    22.0,
+                    -4.0
+                  ],
+                  [
+                    18.0,
+                    -3.5
+                  ],
+                  [
+                    16.0,
+                    -3.0
+                  ]
+                ]
+              },
+              {
+                "land": [
+                  [
+                    28.6,
+                    0.8
+                  ],
+                  [
+                    31.0,
+                    1.5
+                  ],
+                  [
+                    34.3,
+                    0.6
+                  ],
+                  [
+                    35.0,
+                    -1.0
+                  ],
+                  [
+                    33.5,
+                    -3.0
+                  ],
+                  [
+                    31.5,
+                    -4.0
+                  ],
+                  [
+                    29.0,
+                    -4.0
+                  ],
+                  [
+                    28.6,
+                    -2.0
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "west",
+          "path": [
+            [
+              15.8,
+              -4.3
+            ],
+            [
+              14.6,
+              -8.5
+            ],
+            [
+              15.2,
+              -12.0
+            ]
+          ],
+          "label": {
+            "en": "Western stream",
+            "es": "Corriente occidental"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "urewe",
+          "name": {
+            "en": "Urewe culture",
+            "es": "Cultura urewe"
+          },
+          "at": [
+            34.3375,
+            -0.0475
+          ],
+          "cat": "event",
+          "icon": "🏺",
+          "type": "culture",
+          "date": "-500",
+          "until": "550",
+          "place": {
+            "en": "Lake Victoria region",
+            "es": "Región del lago Victoria"
+          },
+          "text": {
+            "en": "An Early Iron Age culture of the Great Lakes, from about 500 BC to AD 550, with fine dimple-based pottery and iron furnaces. Its people probably spoke an ancestor of eastern Bantu.",
+            "es": "Cultura de la primera Edad del Hierro de los Grandes Lagos, de hacia 500 a. C. a 550 d. C., con fina cerámica de base hundida y hornos de hierro. Probablemente hablaba un antepasado del bantú oriental."
+          },
+          "wiki": {
+            "en": "Urewe",
+            "es": ""
+          }
+        },
+        {
+          "id": "haya-steel",
+          "name": {
+            "en": "Haya iron and steel",
+            "es": "Hierro y acero de los haya"
+          },
+          "at": [
+            31.812,
+            -1.3317
+          ],
+          "cat": "event",
+          "icon": "⚒️",
+          "type": "invention",
+          "date": "-300",
+          "place": {
+            "en": "Kagera, Tanzania",
+            "es": "Kagera, Tanzania"
+          },
+          "text": {
+            "en": "West of Lake Victoria, ancestors of the Haya made carbon steel some 2,300 to 2,000 years ago, preheating the air blown into their furnaces to reach very high temperatures.",
+            "es": "Al oeste del lago Victoria, antepasados de los haya fabricaban acero al carbono hace unos 2300 a 2000 años, precalentando el aire de sus hornos para alcanzar temperaturas muy altas."
+          },
+          "wiki": {
+            "en": "Iron metallurgy in Africa",
+            "es": "Metalurgia del hierro en África"
+          }
+        },
+        {
+          "id": "great-lakes-twa",
+          "name": {
+            "en": "Batwa of the Great Lakes",
+            "es": "Batwa de los Grandes Lagos"
+          },
+          "at": [
+            28.75,
+            -2.3
+          ],
+          "cat": "language",
+          "type": "culture",
+          "date": "-500",
+          "place": {
+            "en": "Rwanda, Burundi, Uganda and DR Congo",
+            "es": "Ruanda, Burundi, Uganda y RD del Congo"
+          },
+          "text": {
+            "en": "Forest hunters thought to be the oldest people of the region, who now speak Bantu languages such as Rundi. Driven from forests made into parks, they numbered about 80,000 in 2000 and face prejudice.",
+            "es": "Cazadores de la selva, considerados el pueblo más antiguo de la región, que hoy hablan lenguas bantúes como el kirundi. Expulsados de bosques hechos parques, eran unos 80 000 en 2000 y sufren prejuicios."
+          },
+          "wiki": {
+            "en": "Great Lakes Twa",
+            "es": "Twa"
+          }
+        }
+      ]
+    },
+    {
+      "date": "500",
+      "title": {
+        "en": "To the Indian Ocean and the far south",
+        "es": "Hasta el Índico y el extremo sur"
+      },
+      "text": {
+        "en": "From the Great Lakes, farmers spread fast: Bantu speakers lived on the Kenyan coast between 100 BC and AD 300, reached KwaZulu-Natal by about 300 and the Limpopo by 400–500, with iron, grain and cattle.",
+        "es": "Desde los Grandes Lagos, los agricultores avanzaron rápido: había bantúes en la costa de Kenia entre el 100 a. C. y el 300 d. C., en KwaZulu-Natal hacia el 300 y en el Limpopo hacia el 400-500, con hierro, cereales y ganado."
+      },
+      "details": {
+        "en": "Archaeologists follow two branches of this eastern stream, both grown out of Urewe: the Kwale branch, along the coast from Kenya to KwaZulu-Natal, and the Nkope branch, from southern Tanzania through Malawi and eastern Zambia into Zimbabwe. These pioneers covered thousands of kilometres in a few centuries: the Kwale branch reached KwaZulu-Natal between 200 and 300, and the Nkope branch the Limpopo valley by about 400. At Lydenburg, in Mpumalanga, villagers of about AD 500 made seven terracotta heads, among the oldest Iron Age artworks south of the equator. In the west, other Bantu speakers moved down through Angola. Everywhere they met people already living there: Cushitic- and Nilotic-speaking herders in East Africa and San hunter-gatherers farther south, with whom they traded, married and sometimes fought.",
+        "es": "Los arqueólogos siguen dos ramas de esta corriente oriental, ambas nacidas de la urewe: la rama kwale, por la costa de Kenia a KwaZulu-Natal, y la rama nkope, del sur de Tanzania por Malaui y el este de Zambia hasta Zimbabue. Estos pioneros recorrieron miles de kilómetros en pocos siglos: la rama kwale llegó a KwaZulu-Natal entre 200 y 300, y la nkope al valle del Limpopo hacia el 400. En Lydenburg, en Mpumalanga, aldeanos de hacia el 500 d. C. hicieron siete cabezas de terracota, de las obras de arte de la Edad del Hierro más antiguas al sur del ecuador. Al oeste, otros bantúes bajaron por Angola. En todas partes encontraron gente que ya vivía allí: pastores de lenguas cusitas y nilóticas en África oriental y cazadores-recolectores san más al sur, con quienes comerciaron, se casaron y a veces lucharon."
+      },
+      "camera": {
+        "lon": 30,
+        "lat": -14,
+        "zoom": 2.2
+      },
+      "control": {
+        "bantu": [
+          {
+            "prev": true
+          },
+          {
+            "union": [
+              {
+                "land": [
+                  [
+                    24.0,
+                    -1.0
+                  ],
+                  [
+                    28.6,
+                    0.8
+                  ],
+                  [
+                    29.0,
+                    -4.0
+                  ],
+                  [
+                    31.5,
+                    -4.0
+                  ],
+                  [
+                    33.5,
+                    -3.0
+                  ],
+                  [
+                    35.0,
+                    -1.0
+                  ],
+                  [
+                    37.0,
+                    -1.5
+                  ],
+                  [
+                    39.5,
+                    -3.0
+                  ],
+                  [
+                    39.8,
+                    -5.0
+                  ],
+                  [
+                    40.0,
+                    -8.0
+                  ],
+                  [
+                    40.7,
+                    -10.3
+                  ],
+                  [
+                    41.0,
+                    -11.0
+                  ],
+                  [
+                    41.2,
+                    -15.0
+                  ],
+                  [
+                    40.4,
+                    -16.6
+                  ],
+                  [
+                    35.6,
+                    -22.3
+                  ],
+                  [
+                    36.0,
+                    -24.0
+                  ],
+                  [
+                    34.5,
+                    -25.3
+                  ],
+                  [
+                    33.4,
+                    -25.8
+                  ],
+                  [
+                    33.0,
+                    -27.4
+                  ],
+                  [
+                    32.2,
+                    -29.0
+                  ],
+                  [
+                    31.5,
+                    -29.5
+                  ],
+                  [
+                    30.5,
+                    -30.0
+                  ],
+                  [
+                    29.5,
+                    -28.5
+                  ],
+                  [
+                    29.5,
+                    -25.0
+                  ],
+                  [
+                    30.0,
+                    -24.0
+                  ],
+                  [
+                    29.0,
+                    -21.5
+                  ],
+                  [
+                    26.0,
+                    -19.5
+                  ],
+                  [
+                    23.0,
+                    -17.5
+                  ],
+                  [
+                    20.0,
+                    -16.5
+                  ],
+                  [
+                    17.0,
+                    -15.0
+                  ],
+                  [
+                    17.0,
+                    -12.5
+                  ],
+                  [
+                    20.0,
+                    -9.0
+                  ],
+                  [
+                    21.0,
+                    -5.5
+                  ],
+                  [
+                    22.0,
+                    -4.0
+                  ]
+                ]
+              },
+              {
+                "land": [
+                  [
+                    17.0,
+                    -2.5
+                  ],
+                  [
+                    19.5,
+                    -6.5
+                  ],
+                  [
+                    22.0,
+                    -6.5
+                  ],
+                  [
+                    23.0,
+                    -3.0
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "east",
+          "path": [
+            [
+              33.0,
+              -1.5
+            ],
+            [
+              37.0,
+              -3.5
+            ],
+            [
+              39.3,
+              -4.4
+            ],
+            [
+              39.5,
+              -8.0
+            ],
+            [
+              40.2,
+              -12.5
+            ],
+            [
+              39.0,
+              -17.0
+            ],
+            [
+              35.5,
+              -21.5
+            ],
+            [
+              33.0,
+              -26.0
+            ],
+            [
+              31.0,
+              -29.5
+            ]
+          ],
+          "label": {
+            "en": "Kwale branch",
+            "es": "Rama kwale"
+          }
+        },
+        {
+          "side": "east",
+          "path": [
+            [
+              31.0,
+              -3.5
+            ],
+            [
+              33.5,
+              -8.5
+            ],
+            [
+              34.3,
+              -13.0
+            ],
+            [
+              32.5,
+              -17.0
+            ],
+            [
+              30.5,
+              -20.5
+            ],
+            [
+              29.6,
+              -23.5
+            ]
+          ],
+          "label": {
+            "en": "Nkope branch",
+            "es": "Rama nkope"
+          }
+        },
+        {
+          "side": "west",
+          "path": [
+            [
+              15.2,
+              -12.0
+            ],
+            [
+              16.0,
+              -15.0
+            ],
+            [
+              17.2,
+              -17.0
+            ]
+          ]
+        }
+      ],
+      "places": [
+        {
+          "id": "kwale",
+          "name": {
+            "en": "Kwale",
+            "es": "Kwale"
+          },
+          "at": [
+            39.45,
+            -4.1736
+          ],
+          "cat": "homeland",
+          "type": "site",
+          "date": "-100",
+          "place": {
+            "en": "Coast of Kenya",
+            "es": "Costa de Kenia"
+          },
+          "text": {
+            "en": "Near the Kenyan coast, Bantu-speaking farmers lived at Kwale between about 100 BC and AD 300. Their pottery names the Kwale branch, which spread down the coast as far as KwaZulu-Natal.",
+            "es": "Cerca de la costa de Kenia, agricultores de habla bantú vivían en Kwale aproximadamente entre el 100 a. C. y el 300 d. C. Su cerámica da nombre a la rama kwale, que bajó por la costa hasta KwaZulu-Natal."
+          },
+          "wiki": {
+            "en": "Bantu expansion",
+            "es": "Expansión bantú"
+          }
+        },
+        {
+          "id": "lydenburg-heads",
+          "name": {
+            "en": "Lydenburg Heads",
+            "es": "Cabezas de Lydenburg"
+          },
+          "at": [
+            30.4567,
+            -25.0952
+          ],
+          "cat": "event",
+          "icon": "🗿",
+          "type": "work",
+          "date": "500",
+          "place": {
+            "en": "Mpumalanga, South Africa",
+            "es": "Mpumalanga, Sudáfrica"
+          },
+          "text": {
+            "en": "Seven hollow terracotta heads made about AD 500 by early farmers at Lydenburg, among the oldest Iron Age artworks south of the equator. Two are large enough to have been worn.",
+            "es": "Siete cabezas huecas de terracota hechas hacia el 500 d. C. por los primeros agricultores de Lydenburg, de las obras más antiguas de la Edad del Hierro al sur del ecuador. Dos podían llevarse puestas."
+          },
+          "wiki": {
+            "en": "Lydenburg heads",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "700",
+      "title": {
+        "en": "Clicks from the Khoe and San",
+        "es": "Chasquidos de los khoe y los san"
+      },
+      "text": {
+        "en": "In southern Africa, Bantu-speaking farmers met San foragers and Khoe herders. They traded, married and sometimes fought, and Nguni languages such as Zulu and Xhosa took in their click sounds.",
+        "es": "En el sur de África, los agricultores de habla bantú encontraron a recolectores san y pastores khoe. Comerciaron, se casaron y a veces lucharon, y lenguas nguni como el zulú y el xhosa tomaron sus chasquidos."
+      },
+      "details": {
+        "en": "Herding had reached the far south several centuries before the farmers, and the first Bantu-speaking arrivals may have got their first cattle from Khoe-speaking herders. DNA shows that Khoe people married into several southeastern Bantu communities about 1,500 to 1,000 years ago. Language shows it too: the Nguni languages took clicks from a language of the Tuu family, spoken by San, and spread them to native words through hlonipha, a custom of respect in which women avoided certain words and sounds. In Xhosa, one count found clicks in 10% of basic words. Inland, ancestors of the Tswana reached the lands between the Vaal River and Botswana, by a common estimate around 600. After about 650, as Khoe herders and the ancestors of the Xhosa moved into the Eastern Cape, most San left the coast for the interior; elsewhere they were driven off their lands or absorbed by Bantu-speaking groups.",
+        "es": "El pastoreo había llegado al extremo sur varios siglos antes que los agricultores, y quizá los primeros bantúes obtuvieron su primer ganado de pastores de habla khoe. El ADN muestra que personas khoe se integraron en varias comunidades bantúes del sureste hace unos 1500 a 1000 años. La lengua también lo muestra: las lenguas nguni tomaron chasquidos de una lengua de la familia tuu, hablada por san, y los extendieron a palabras propias mediante el hlonipha, una costumbre de respeto en la que las mujeres evitaban ciertas palabras y sonidos. En xhosa, un recuento halló chasquidos en el 10 % de las palabras básicas. Tierra adentro, los antepasados de los tswana llegaron a las tierras entre el río Vaal y Botsuana hacia el 600, según una estimación común. Desde hacia el 650, cuando pastores khoe y antepasados de los xhosa entraron en el Cabo Oriental, la mayoría de los san dejó la costa por el interior; en otras partes fueron expulsados de sus tierras o absorbidos por grupos bantúes."
+      },
+      "camera": {
+        "lon": 25,
+        "lat": -26,
+        "zoom": 3.0
+      },
+      "control": {
+        "bantu": [
+          {
+            "prev": true
+          },
+          {
+            "land": [
+              [
+                25.5,
+                -22.0
+              ],
+              [
+                27.5,
+                -20.8
+              ],
+              [
+                29.6,
+                -21.4
+              ],
+              [
+                30.4,
+                -24.0
+              ],
+              [
+                30.0,
+                -25.6
+              ],
+              [
+                28.0,
+                -26.8
+              ],
+              [
+                26.0,
+                -27.3
+              ],
+              [
+                24.0,
+                -26.8
+              ],
+              [
+                23.3,
+                -25.3
+              ],
+              [
+                25.0,
+                -24.0
+              ]
+            ]
+          },
+          {
+            "land": [
+              [
+                31.3,
+                -29.6
+              ],
+              [
+                30.8,
+                -30.4
+              ],
+              [
+                30.3,
+                -31.1
+              ],
+              [
+                29.4,
+                -31.8
+              ],
+              [
+                28.5,
+                -32.6
+              ],
+              [
+                27.1,
+                -33.6
+              ],
+              [
+                26.8,
+                -32.9
+              ],
+              [
+                27.5,
+                -31.7
+              ],
+              [
+                28.6,
+                -31.0
+              ],
+              [
+                29.4,
+                -30.6
+              ],
+              [
+                29.6,
+                -30.1
+              ],
+              [
+                30.4,
+                -29.7
+              ]
+            ]
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "san-peoples",
+          "name": {
+            "en": "San peoples",
+            "es": "Pueblos san"
+          },
+          "at": [
+            21.7333,
+            -18.75
+          ],
+          "cat": "homeland",
+          "type": "culture",
+          "date": "-12000",
+          "place": {
+            "en": "Kalahari, Botswana and Namibia",
+            "es": "Kalahari, Botsuana y Namibia"
+          },
+          "text": {
+            "en": "Foragers whose ancestors have lived in southern Africa for tens of thousands of years. About 160,000 San live today, mostly in Namibia and Botswana; their languages belong to all three click families.",
+            "es": "Recolectores cuyos antepasados viven en el sur de África desde hace decenas de miles de años. Hoy hay unos 160 000 san, sobre todo en Namibia y Botsuana; sus lenguas pertenecen a las tres familias de chasquidos."
+          },
+          "wiki": {
+            "en": "San peoples",
+            "es": "San"
+          }
+        },
+        {
+          "id": "khoekhoe",
+          "name": {
+            "en": "Khoekhoe",
+            "es": "Khoekhoe"
+          },
+          "at": [
+            17.0832,
+            -22.5609
+          ],
+          "cat": "language",
+          "type": "language",
+          "date": "1659",
+          "place": {
+            "en": "Namibia",
+            "es": "Namibia"
+          },
+          "text": {
+            "en": "The largest click language, with some 200,000 speakers (2011) among the Nama and Damara. Its Khoe family came with herders about 2,000 years ago; a Dutchman first wrote it down at the Cape in 1659.",
+            "es": "La mayor lengua de chasquidos, con unos 200 000 hablantes (2011) entre los nama y los damara. Su familia khoe llegó con pastores hace unos 2000 años; un neerlandés la escribió por primera vez en el Cabo en 1659."
+          },
+          "sample": {
+            "text": "Khoekhoegowab",
+            "means": {
+              "en": "the Khoekhoe language (khoe means “person”)",
+              "es": "la lengua khoekhoe (khoe significa “persona”)"
+            }
+          },
+          "wiki": {
+            "en": "Khoekhoe language",
+            "es": "Idioma khoekhoe"
+          }
+        },
+        {
+          "id": "xhosa",
+          "name": {
+            "en": "Xhosa",
+            "es": "Xhosa"
+          },
+          "at": [
+            28.7833,
+            -31.5889
+          ],
+          "cat": "language",
+          "type": "language",
+          "date": "1823",
+          "place": {
+            "en": "Eastern Cape, South Africa",
+            "es": "Cabo Oriental, Sudáfrica"
+          },
+          "text": {
+            "en": "A Bantu language that borrowed clicks from its San neighbours: about one basic word in ten has one. It is written c, q and x. Some 8 million people speak it natively (2013); it was first printed in 1823.",
+            "es": "Lengua bantú que tomó los chasquidos de sus vecinos san: una de cada diez palabras básicas tiene uno. Se escriben c, q y x. La hablan unos 8 millones de nativos (2013); se imprimió por primera vez en 1823."
+          },
+          "sample": {
+            "text": "Molo",
+            "latin": "MO-lo",
+            "means": {
+              "en": "hello",
+              "es": "hola"
+            }
+          },
+          "wiki": {
+            "en": "Xhosa language",
+            "es": "Idioma xhosa"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1000",
+      "title": {
+        "en": "Swahili on the coast",
+        "es": "El suajili en la costa"
+      },
+      "text": {
+        "en": "On the East African coast, Bantu-speaking fishers, farmers and traders built towns linked by the monsoon to Arabia, Persia and India. Their language, Swahili, took in many Arabic words.",
+        "es": "En la costa de África oriental, pescadores, agricultores y comerciantes de habla bantú construyeron ciudades unidas por el monzón a Arabia, Persia y la India. Su lengua, el suajili, tomó muchas palabras árabes."
+      },
+      "details": {
+        "en": "Swahili grew from the Sabaki languages of the Kenyan coast, and most of its everyday words are Bantu; by some counts up to 40% of its vocabulary comes from Arabic, including its name, from sawāḥil, “coasts”. From the 11th century the towns built mosques and houses of coral stone, and Kilwa minted its own coins for some 500 years. Swahili was long written in Arabic letters: the oldest known documents in it are letters from Kilwa of 1711, and the epic Utendi wa Tambuka was written at Pate in 1728. Traders carried the language far inland and colonial rulers used it; after Tanganyika’s independence in 1961 it became the language that united the new nation. In 2022 Uganda made it an official language, and 7 July became Swahili Language Day.",
+        "es": "El suajili nació de las lenguas sabaki de la costa de Kenia, y la mayoría de sus palabras cotidianas son bantúes; según algunos recuentos, hasta el 40 % de su vocabulario viene del árabe, incluido su nombre, de sawāḥil, “costas”. Desde el siglo XI las ciudades levantaron mezquitas y casas de piedra coralina, y Kilwa acuñó su propia moneda durante unos 500 años. El suajili se escribió mucho tiempo en letras árabes: los documentos más antiguos conocidos en él son cartas de Kilwa de 1711, y la epopeya Utendi wa Tambuka se escribió en Pate en 1728. Los comerciantes lo llevaron tierra adentro y los gobiernos coloniales lo usaron; tras la independencia de Tanganica, en 1961, fue la lengua que unió a la nueva nación. En 2022 Uganda lo hizo lengua oficial, y el 7 de julio pasó a ser el Día de la Lengua Suajili."
+      },
+      "camera": {
+        "lon": 39.5,
+        "lat": -5,
+        "zoom": 3.6
+      },
+      "control": {
+        "bantu": [
+          {
+            "prev": true
+          },
+          {
+            "union": [
+              {
+                "land": [
+                  [
+                    36.0,
+                    0.6
+                  ],
+                  [
+                    38.5,
+                    0.6
+                  ],
+                  [
+                    38.6,
+                    -1.8
+                  ],
+                  [
+                    36.5,
+                    -1.8
+                  ]
+                ]
+              },
+              {
+                "land": [
+                  [
+                    39.5,
+                    -3.0
+                  ],
+                  [
+                    40.6,
+                    -2.2
+                  ],
+                  [
+                    41.6,
+                    -1.2
+                  ],
+                  [
+                    42.8,
+                    0.2
+                  ],
+                  [
+                    44.0,
+                    1.2
+                  ],
+                  [
+                    43.0,
+                    1.4
+                  ],
+                  [
+                    41.4,
+                    -0.6
+                  ],
+                  [
+                    40.2,
+                    -2.0
+                  ],
+                  [
+                    39.8,
+                    -2.8
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "swahili",
+          "name": {
+            "en": "Swahili",
+            "es": "Suajili"
+          },
+          "at": [
+            39.1921,
+            -6.1622
+          ],
+          "cat": "language",
+          "type": "language",
+          "date": "1000",
+          "place": {
+            "en": "Zanzibar and the East African coast",
+            "es": "Zanzíbar y la costa de África oriental"
+          },
+          "text": {
+            "en": "A Bantu language of the coast, grown from the Sabaki languages of Kenya, with many words from Arabic. Some 5 million speak it natively and over 90 million as a second language (2019–2023).",
+            "es": "Lengua bantú de la costa, nacida de las lenguas sabaki de Kenia, con muchas palabras del árabe. Unos 5 millones la hablan como lengua materna y más de 90 millones como segunda (2019-2023)."
+          },
+          "sample": {
+            "text": "Habari gani?",
+            "latin": "ha-BA-ri GA-ni",
+            "means": {
+              "en": "How are you? (literally, “what news?”)",
+              "es": "¿Cómo estás? (literalmente, “¿qué noticias?”)"
+            }
+          },
+          "wiki": {
+            "en": "Swahili",
+            "es": "Idioma suajili"
+          }
+        },
+        {
+          "id": "kilwa-kisiwani",
+          "name": {
+            "en": "Kilwa Kisiwani",
+            "es": "Kilwa Kisiwani"
+          },
+          "at": [
+            39.5125,
+            -8.9575
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1000",
+          "place": {
+            "en": "Tanzania",
+            "es": "Tanzania"
+          },
+          "text": {
+            "en": "An island city-state that took control of the gold trade of Sofala and minted its own coins for some 500 years. The oldest known documents in Swahili are letters written here in 1711.",
+            "es": "Ciudad-Estado isleña que controló el comercio del oro de Sofala y acuñó su propia moneda durante unos 500 años. Los documentos más antiguos conocidos en suajili son cartas escritas aquí en 1711."
+          },
+          "wiki": {
+            "en": "Kilwa Kisiwani",
+            "es": "Kilwa Kisiwani"
+          }
+        },
+        {
+          "id": "utendi-wa-tambuka",
+          "name": {
+            "en": "Utendi wa Tambuka",
+            "es": "Utendi wa Tambuka"
+          },
+          "at": [
+            41.0053,
+            -2.0905
+          ],
+          "cat": "book",
+          "type": "work",
+          "date": "1728",
+          "place": {
+            "en": "Pate, Kenya",
+            "es": "Pate, Kenia"
+          },
+          "text": {
+            "en": "An epic poem in Swahili by Bwana Mwengo wa Athman, written in 1728 at the royal palace of Pate. One of the earliest known works in Swahili, it tells of wars between Muslims and Byzantines.",
+            "es": "Poema épico en suajili de Bwana Mwengo wa Athman, escrito en 1728 en el palacio real de Pate. Una de las obras más antiguas conocidas en suajili, narra guerras entre musulmanes y bizantinos."
+          },
+          "wiki": {
+            "en": "Utendi wa Tambuka",
+            "es": "Utenzi wa Tambuka"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1220",
+      "title": {
+        "en": "Cattle, gold and kings",
+        "es": "Ganado, oro y reyes"
+      },
+      "text": {
+        "en": "From about 1220 the kingdom of Mapungubwe grew rich in the Limpopo valley on cattle, gold and ivory. Then Great Zimbabwe, built by ancestors of the Shona, ruled the plateau.",
+        "es": "Desde hacia 1220, el reino de Mapungubwe se enriqueció en el valle del Limpopo con ganado, oro y marfil. Luego el Gran Zimbabue, construido por antepasados de los shona, dominó la meseta."
+      },
+      "details": {
+        "en": "Cattle meant wealth and ties between communities. Around 1000, herders of the Leopard’s Kopje culture settled at Bambandyanalo, beside a hill later called Mapungubwe, and traded ivory and gold to the coast for glass beads and cloth. Around 1220, in a dry spell, the rulers moved onto the hill, a place for rainmaking, set apart from the people below. Its people are linked with today’s Kalanga (Shona) and Venda. To the north, Great Zimbabwe was built from the 11th century and from the 13th was the capital of a kingdom; coins from Kilwa have been found there. Rhodesia’s white rulers later pushed archaeologists to deny that Africans had built it, as the story “Great Zimbabwe and the Swahili coast” tells. Shona, its builders’ language, is spoken today by most Zimbabweans, and in 1980 the country took the city’s name.",
+        "es": "El ganado significaba riqueza y lazos entre comunidades. Hacia el año 1000, ganaderos de la cultura de Leopard’s Kopje se asentaron en Bambandyanalo, junto a una colina luego llamada Mapungubwe, y enviaban marfil y oro a la costa a cambio de cuentas de vidrio y telas. Hacia 1220, en una época seca, los gobernantes se instalaron en la colina, un lugar para pedir la lluvia, apartados del pueblo de abajo. Su gente se relaciona con los kalanga (shona) y los venda de hoy. Al norte, el Gran Zimbabue se construyó desde el siglo XI y desde el XIII fue la capital de un reino; allí se han hallado monedas de Kilwa. Los gobernantes blancos de Rodesia presionaron luego a los arqueólogos para negar que lo hubieran construido africanos, como cuenta la historia «El Gran Zimbabue y la costa suajili». El shona, la lengua de sus constructores, lo habla hoy la mayoría de los zimbabuenses, y en 1980 el país tomó el nombre de la ciudad."
+      },
+      "camera": {
+        "lon": 30,
+        "lat": -21,
+        "zoom": 3.6
+      },
+      "places": [
+        {
+          "id": "mapungubwe",
+          "name": {
+            "en": "Mapungubwe",
+            "es": "Mapungubwe"
+          },
+          "at": [
+            29.387,
+            -22.195
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1220",
+          "until": "1300",
+          "place": {
+            "en": "Limpopo valley, South Africa",
+            "es": "Valle del Limpopo, Sudáfrica"
+          },
+          "text": {
+            "en": "Around 1220 its rulers moved onto a sacred hill above a town grown rich on cattle, ivory and gold. Its name means “place of jackals” in local Bantu languages.",
+            "es": "Hacia 1220 sus gobernantes se instalaron en una colina sagrada sobre una ciudad enriquecida con ganado, marfil y oro. Su nombre significa “lugar de chacales” en lenguas bantúes de la zona."
+          },
+          "wiki": {
+            "en": "Kingdom of Mapungubwe",
+            "es": ""
+          }
+        },
+        {
+          "id": "great-zimbabwe",
+          "name": {
+            "en": "Great Zimbabwe",
+            "es": "Gran Zimbabue"
+          },
+          "at": [
+            30.9339,
+            -20.2675
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1100",
+          "until": "1550",
+          "place": {
+            "en": "Near Masvingo, Zimbabwe",
+            "es": "Cerca de Masvingo, Zimbabue"
+          },
+          "text": {
+            "en": "A city of dry-stone walls built from the 11th to the 15th century by ancestors of the Shona. Its name holds the Shona word dzimba, “houses”: zimbabwe means “houses of stone”.",
+            "es": "Una ciudad de muros de piedra seca construida entre los siglos XI y XV por antepasados de los shona. Su nombre contiene la palabra shona dzimba, “casas”: zimbabwe significa “casas de piedra”."
+          },
+          "wiki": {
+            "en": "Great Zimbabwe",
+            "es": "Gran Zimbabue"
+          }
+        },
+        {
+          "id": "shona",
+          "name": {
+            "en": "Shona",
+            "es": "Shona"
+          },
+          "at": [
+            31.0335,
+            -17.8252
+          ],
+          "cat": "language",
+          "type": "language",
+          "date": "1100",
+          "place": {
+            "en": "Zimbabwe",
+            "es": "Zimbabue"
+          },
+          "text": {
+            "en": "The Bantu language of most Zimbabweans, with some 14 million speakers (2010–2023). Its speakers’ ancestors built Great Zimbabwe, and in 1980 the country took its name from the stone city.",
+            "es": "La lengua bantú de la mayoría de los zimbabuenses, con unos 14 millones de hablantes (2010-2023). Los antepasados de sus hablantes construyeron el Gran Zimbabue, y en 1980 el país tomó su nombre."
+          },
+          "sample": {
+            "text": "Mangwanani",
+            "latin": "man-gwa-NA-ni",
+            "means": {
+              "en": "good morning",
+              "es": "buenos días"
+            }
+          },
+          "wiki": {
+            "en": "Shona language",
+            "es": "Idioma shona"
+          },
+          "img": "Iggy teaching Shona.jpg"
+        }
+      ]
+    },
+    {
+      "date": "1390",
+      "title": {
+        "en": "The Kingdom of Kongo",
+        "es": "El reino del Congo"
+      },
+      "text": {
+        "en": "Around 1390 a kingdom formed near the mouth of the Congo River. After the Portuguese arrived in 1483, its language, Kikongo, became the first Bantu language written in Latin letters.",
+        "es": "Hacia 1390 se formó un reino cerca de la desembocadura del río Congo. Tras la llegada de los portugueses en 1483, su lengua, el kikongo, fue la primera lengua bantú escrita en letras latinas."
+      },
+      "details": {
+        "en": "Kongo was born from a marriage alliance between two Kikongo-speaking states, with its capital at Mbanza Kongo. The Portuguese captain Diogo Cão reached its coast in 1483, and in 1491 King Nzinga a Nkuwu was baptised. Kongo teachers and Portuguese priests wrote the language down: a catechism translated by Kongo teachers was printed in 1624, and around 1648 came a dictionary of some 10,000 words, the first of any Bantu language. Kongo’s rulers sold war captives to Portuguese traders, but as the Atlantic slave trade grew it wore away royal power. Many Kikongo speakers were carried to the Americas in chains; their words live on in Palenquero in Colombia, in Gullah in the United States and in the ritual speech of Afro-American religions in Brazil and Cuba. Far to the south, Sotho speakers had parted from the Tswana by the 1300s; by the 1600s their kingdoms covered much of the Highveld.",
+        "es": "El Congo nació de una alianza matrimonial entre dos Estados de habla kikongo, con capital en Mbanza Kongo. El capitán portugués Diogo Cão llegó a su costa en 1483, y en 1491 se bautizó el rey Nzinga a Nkuwu. Maestros del Congo y sacerdotes portugueses pusieron la lengua por escrito: en 1624 se imprimió un catecismo traducido por maestros del Congo, y hacia 1648 llegó un diccionario de unas 10 000 palabras, el primero de una lengua bantú. Los reyes del Congo vendían cautivos de guerra a comerciantes portugueses, pero al crecer la trata atlántica de esclavos esta minó el poder real. Muchos hablantes de kikongo fueron llevados encadenados a América; sus palabras perviven en el palenquero de Colombia, en el gullah de Estados Unidos y en el habla ritual de religiones afroamericanas de Brasil y Cuba. Mucho más al sur, los sotho se habían separado de los tswana hacia el siglo XIV; en el XVII sus reinos cubrían gran parte del Highveld."
+      },
+      "camera": {
+        "lon": 14,
+        "lat": -6,
+        "zoom": 3.4
+      },
+      "control": {
+        "bantu": [
+          {
+            "prev": true
+          },
+          {
+            "land": [
+              [
+                23.6,
+                -26.3
+              ],
+              [
+                26.0,
+                -26.9
+              ],
+              [
+                28.0,
+                -26.2
+              ],
+              [
+                29.5,
+                -25.0
+              ],
+              [
+                29.6,
+                -28.4
+              ],
+              [
+                28.6,
+                -28.6
+              ],
+              [
+                27.0,
+                -29.4
+              ],
+              [
+                25.8,
+                -29.6
+              ],
+              [
+                24.6,
+                -28.6
+              ],
+              [
+                23.4,
+                -28.0
+              ]
+            ]
+          },
+          {
+            "land": [
+              [
+                11.8,
+                -11.8
+              ],
+              [
+                17.0,
+                -11.8
+              ],
+              [
+                20.0,
+                -16.5
+              ],
+              [
+                23.0,
+                -17.5
+              ],
+              [
+                21.0,
+                -18.3
+              ],
+              [
+                19.0,
+                -19.5
+              ],
+              [
+                18.0,
+                -21.6
+              ],
+              [
+                15.5,
+                -21.6
+              ],
+              [
+                13.5,
+                -21.0
+              ],
+              [
+                11.8,
+                -17.2
+              ]
+            ]
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "mbanza-kongo",
+          "name": {
+            "en": "Mbanza Kongo",
+            "es": "Mbanza Kongo"
+          },
+          "at": [
+            14.25,
+            -6.2667
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1390",
+          "place": {
+            "en": "Zaire Province, Angola",
+            "es": "Provincia de Zaire, Angola"
+          },
+          "text": {
+            "en": "The capital of the Kingdom of Kongo, called São Salvador by the Portuguese, in today’s northern Angola. Its remains have been a UNESCO World Heritage Site since 2017.",
+            "es": "La capital del reino del Congo, que los portugueses llamaron São Salvador, en el norte de la actual Angola. Sus restos son Patrimonio de la Humanidad desde 2017."
+          },
+          "wiki": {
+            "en": "M'banza-Kongo",
+            "es": "Mbanza Kongo"
+          }
+        },
+        {
+          "id": "kongo",
+          "name": {
+            "en": "Kikongo",
+            "es": "Kikongo"
+          },
+          "at": [
+            14.6,
+            -5.4
+          ],
+          "cat": "language",
+          "type": "language",
+          "date": "1624",
+          "place": {
+            "en": "DR Congo, Congo and Angola",
+            "es": "RD del Congo, Congo y Angola"
+          },
+          "text": {
+            "en": "The first Bantu language written in Latin letters: a catechism translated by Kongo teachers was printed in 1624. About 6 million speak it natively and 5 million as a second language (2021).",
+            "es": "La primera lengua bantú escrita en letras latinas: en 1624 se imprimió un catecismo traducido por maestros del Congo. Unos 6 millones la hablan como lengua materna y 5 millones como segunda (2021)."
+          },
+          "sample": {
+            "text": "Mbote",
+            "latin": "m-BO-te",
+            "means": {
+              "en": "hello",
+              "es": "hola"
+            }
+          },
+          "wiki": {
+            "en": "Kongo language",
+            "es": "Kikongo"
+          }
+        },
+        {
+          "id": "san-basilio-de-palenque",
+          "name": {
+            "en": "San Basilio de Palenque",
+            "es": "Palenque de San Basilio"
+          },
+          "at": [
+            -75.2097,
+            10.1033
+          ],
+          "cat": "revival",
+          "type": "site",
+          "date": "1600",
+          "place": {
+            "en": "Bolívar, Colombia",
+            "es": "Bolívar, Colombia"
+          },
+          "text": {
+            "en": "A village founded in the early 1600s by people who escaped slavery, led by Benkos Biohó. Its Palenquero language mixes Spanish and Kikongo; once mocked, it is now taught to its children.",
+            "es": "Una aldea fundada a comienzos del siglo XVII por personas que huyeron de la esclavitud, guiadas por Benkos Biohó. Su lengua, el palenquero, mezcla español y kikongo; antes objeto de burla, hoy se enseña a sus niños."
+          },
+          "wiki": {
+            "en": "Palenquero",
+            "es": "Criollo palenquero"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1823",
+      "title": {
+        "en": "The Mfecane carries languages north",
+        "es": "El mfecane lleva lenguas al norte"
+      },
+      "text": {
+        "en": "From the 1810s to the 1840s, drought, the ivory and slave trades and wars between new kingdoms drove peoples across southern Africa. Ndebele, Ngoni and Kololo groups carried their languages far north.",
+        "es": "De la década de 1810 a la de 1840, la sequía, el comercio de marfil y de esclavos y las guerras entre nuevos reinos desplazaron pueblos por el sur de África. Grupos ndebele, ngoni y kololo llevaron sus lenguas al norte."
+      },
+      "details": {
+        "en": "The upheaval began in the late 1700s, as raiders from the expanding Dutch Cape Colony drove Khoekhoe and San peoples from their lands. Older accounts blamed Shaka’s Zulu kingdom alone and spoke of one to two million dead; historians now also point to drought, the ivory trade, slaving from Delagoa Bay and raids by mounted Griqua and other groups armed by settlers, and they question those death tolls. Mzilikazi’s Ndebele crossed the Highveld and, driven out by Boer Voortrekkers in 1838, settled north of the Limpopo, in today’s Matabeleland. Zwangendaba’s Ngoni crossed the Zambezi in 1835 and founded kingdoms in today’s Malawi and Zambia. Sebetwane’s Kololo, a Sotho people, conquered Barotseland, in Zambia, where their language remained after their rule ended. From 1824, in the mountains, Moshoeshoe I gathered Sotho clans and Nguni refugees into the nation that became Lesotho.",
+        "es": "La convulsión empezó a fines del siglo XVIII, cuando bandas de la colonia holandesa del Cabo, en expansión, expulsaron a pueblos khoekhoe y san de sus tierras. Los relatos antiguos culpaban solo al reino zulú de Shaka y hablaban de uno a dos millones de muertos; hoy los historiadores señalan también la sequía, el comercio de marfil, la caza de esclavos desde la bahía de Delagoa y las incursiones de griquas y otros grupos montados y armados por colonos, y ponen en duda aquellas cifras. Los ndebele de Mzilikazi cruzaron el Highveld y, expulsados por los voortrekkers bóeres en 1838, se asentaron al norte del Limpopo, en la actual Matabelelandia. Los ngoni de Zwangendaba cruzaron el Zambeze en 1835 y fundaron reinos en las actuales Malaui y Zambia. Los kololo de Sebetwane, un pueblo sotho, conquistaron Barotselandia, en Zambia, donde su lengua siguió tras el fin de su dominio. Desde 1824, en las montañas, Moshoeshoe I reunió a clanes sotho y refugiados nguni en la nación que se convirtió en Lesoto."
+      },
+      "camera": {
+        "lon": 28,
+        "lat": -21,
+        "zoom": 2.6
+      },
+      "control": {
+        "bantu": [
+          {
+            "prev": true
+          },
+          {
+            "land": [
+              [
+                27.0,
+                -29.4
+              ],
+              [
+                28.6,
+                -28.5
+              ],
+              [
+                29.7,
+                -28.3
+              ],
+              [
+                30.4,
+                -28.9
+              ],
+              [
+                30.3,
+                -30.1
+              ],
+              [
+                29.4,
+                -30.7
+              ],
+              [
+                28.2,
+                -30.7
+              ],
+              [
+                27.0,
+                -30.6
+              ],
+              [
+                26.9,
+                -29.9
+              ]
+            ]
+          }
+        ],
+        "khoesan": {
+          "minus": [
+            {
+              "ref": "khoesan_1800"
+            },
+            {
+              "cur": "bantu"
+            }
+          ]
+        }
+      },
+      "moves": [
+        {
+          "side": "later",
+          "path": [
+            [
+              31.4,
+              -27.6
+            ],
+            [
+              29.8,
+              -26.3
+            ],
+            [
+              27.6,
+              -25.6
+            ],
+            [
+              27.0,
+              -23.2
+            ],
+            [
+              28.6,
+              -20.3
+            ]
+          ],
+          "label": {
+            "en": "Ndebele",
+            "es": "Ndebele"
+          }
+        },
+        {
+          "side": "later",
+          "path": [
+            [
+              31.2,
+              -27.0
+            ],
+            [
+              32.6,
+              -22.5
+            ],
+            [
+              33.4,
+              -16.0
+            ],
+            [
+              33.5,
+              -12.0
+            ],
+            [
+              33.0,
+              -9.0
+            ]
+          ],
+          "label": {
+            "en": "Ngoni",
+            "es": "Ngoni"
+          }
+        },
+        {
+          "side": "later",
+          "path": [
+            [
+              27.6,
+              -28.5
+            ],
+            [
+              25.6,
+              -24.5
+            ],
+            [
+              24.2,
+              -19.5
+            ],
+            [
+              23.3,
+              -15.6
+            ]
+          ],
+          "label": {
+            "en": "Kololo",
+            "es": "Kololo"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "mzilikazi",
+          "name": {
+            "en": "Mzilikazi",
+            "es": "Mzilikazi"
+          },
+          "at": [
+            28.5833,
+            -20.15
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1838",
+          "life": [
+            "1790",
+            "1868-09-09"
+          ],
+          "place": {
+            "en": "Matabeleland, Zimbabwe",
+            "es": "Matabelelandia, Zimbabue"
+          },
+          "text": {
+            "en": "A Zulu commander who broke with Shaka in 1823 and led the Ndebele onto the Highveld. Driven out by Boer Voortrekkers in 1838, he crossed the Limpopo and founded the kingdom of Matabeleland.",
+            "es": "Un comandante zulú que rompió con Shaka en 1823 y llevó a los ndebele al Highveld. Expulsado por los voortrekkers bóeres en 1838, cruzó el Limpopo y fundó el reino de Matabelelandia."
+          },
+          "wiki": {
+            "en": "Mzilikazi",
+            "es": "Mzilikazi"
+          }
+        },
+        {
+          "id": "ngoni",
+          "name": {
+            "en": "Ngoni people",
+            "es": "Pueblo ngoni"
+          },
+          "at": [
+            33.8,
+            -11.4
+          ],
+          "cat": "language",
+          "type": "culture",
+          "date": "1835",
+          "place": {
+            "en": "Malawi and Zambia",
+            "es": "Malaui y Zambia"
+          },
+          "text": {
+            "en": "Followers of Zwangendaba, whose Ndwandwe alliance was beaten by the Zulu in 1819. They crossed the Zambezi in 1835 and founded kingdoms in today’s Malawi and Zambia, far from their Nguni home.",
+            "es": "Seguidores de Zwangendaba, cuya alianza ndwandwe fue vencida por los zulúes en 1819. Cruzaron el Zambeze en 1835 y fundaron reinos en las actuales Malaui y Zambia, lejos de su tierra nguni."
+          },
+          "wiki": {
+            "en": "Ngoni people",
+            "es": "Ngoni (pueblo)"
+          }
+        },
+        {
+          "id": "kololo",
+          "name": {
+            "en": "Kololo",
+            "es": "Kololo"
+          },
+          "at": [
+            23.15,
+            -15.25
+          ],
+          "cat": "language",
+          "type": "culture",
+          "date": "1823",
+          "place": {
+            "en": "Barotseland, Zambia",
+            "es": "Barotselandia, Zambia"
+          },
+          "text": {
+            "en": "A Sotho–Tswana people who began a long march north in 1823. Led by Sebetwane, they crossed the Zambezi and by 1845 ruled Barotseland; their rule ended in 1864, but their language remains.",
+            "es": "Un pueblo sotho-tswana que en 1823 inició una larga marcha al norte. Guiados por Sebetwane, cruzaron el Zambeze y hacia 1845 gobernaban Barotselandia; su dominio acabó en 1864, pero su lengua sigue allí."
+          },
+          "wiki": {
+            "en": "Kololo people",
+            "es": "Macololo"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1862",
+      "title": {
+        "en": "Naming the Bantu family",
+        "es": "El nombre de la familia bantú"
+      },
+      "text": {
+        "en": "Wilhelm Bleek, a linguist in Cape Town, named the family “Bantu”, from the word for “people”, and spread the name in 1862. A century later, apartheid used the word as a label for its policies.",
+        "es": "Wilhelm Bleek, lingüista en Ciudad del Cabo, llamó “bantú” a la familia, por la palabra para “personas”, y difundió el nombre en 1862. Un siglo después, el apartheid lo usó como etiqueta de sus políticas."
+      },
+      "details": {
+        "en": "Bleek noticed the name in 1857 or 1858: many languages of the south and centre of Africa share words like umuntu, “person”, and abantu, “people”. He popularised it in his Comparative Grammar of South African Languages of 1862. With his sister-in-law Lucy Lloyd he also recorded, from 1870, the language and stories of ǀXam prisoners who came to live in their house; ǀXam died out in the 1910s, but their notebooks survive. Malcolm Guthrie’s 1948 list sorted the Bantu languages into lettered zones that are still used. Apartheid used “Bantu” in the Bantu Education Act of 1953, which limited the schooling of Black children, and for the “Bantustans”, homelands set aside for Black South Africans. In 1976 schoolchildren in Soweto rose against being taught in Afrikaans; the dead of the first day are usually counted as 176. Since 1994 nine Bantu languages have been official in South Africa.",
+        "es": "Bleek reparó en el nombre en 1857 o 1858: muchas lenguas del sur y el centro de África comparten palabras como umuntu, “persona”, y abantu, “personas”. Lo popularizó en su Gramática comparada de las lenguas sudafricanas de 1862. Con su cuñada Lucy Lloyd registró además, desde 1870, la lengua y los relatos de presos ǀxam que fueron a vivir a su casa; el ǀxam se extinguió hacia la década de 1910, pero sus cuadernos se conservan. La lista de Malcolm Guthrie de 1948 ordenó las lenguas bantúes en zonas con letras que aún se usan. El apartheid usó “bantú” en la Ley de Educación Bantú de 1953, que limitaba la escolarización de los niños negros, y para los “bantustanes”, territorios reservados para los sudafricanos negros. En 1976, escolares de Soweto se alzaron contra la enseñanza en afrikáans; los muertos del primer día suelen cifrarse en 176. Desde 1994, nueve lenguas bantúes son oficiales en Sudáfrica."
+      },
+      "camera": {
+        "lon": 24,
+        "lat": -29,
+        "zoom": 3.4
+      },
+      "control": {
+        "khoesan": {
+          "minus": [
+            {
+              "ref": "khoesan_1800"
+            },
+            {
+              "cur": "bantu"
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "wilhelm-bleek",
+          "name": {
+            "en": "Wilhelm Bleek",
+            "es": "Wilhelm Bleek"
+          },
+          "at": [
+            18.4241,
+            -33.9249
+          ],
+          "cat": "grammar",
+          "type": "person",
+          "date": "1862",
+          "life": [
+            "1827-03-08",
+            "1875-08-17"
+          ],
+          "place": {
+            "en": "Cape Town, South Africa",
+            "es": "Ciudad del Cabo, Sudáfrica"
+          },
+          "text": {
+            "en": "A German linguist in Cape Town who first used “Bantu”, the word for “people”, as the family’s name in 1857 or 1858, and spread it with his Comparative Grammar of 1862.",
+            "es": "Lingüista alemán en Ciudad del Cabo que usó por primera vez “bantú”, la palabra para “personas”, como nombre de la familia en 1857 o 1858, y lo difundió con su Gramática comparada de 1862."
+          },
+          "wiki": {
+            "en": "Wilhelm Bleek",
+            "es": "Wilhelm Bleek"
+          }
+        },
+        {
+          "id": "xam",
+          "name": {
+            "en": "ǀXam",
+            "es": "ǀXam"
+          },
+          "at": [
+            21.0,
+            -30.4
+          ],
+          "cat": "revival",
+          "type": "language",
+          "date": "1870",
+          "until": "1915",
+          "place": {
+            "en": "Northern Cape, South Africa",
+            "es": "Cabo Septentrional, Sudáfrica"
+          },
+          "text": {
+            "en": "A San language recorded from 1870 by Bleek and Lucy Lloyd with ǀXam prisoners who came to live in their Cape Town home. It died out in the 1910s; a ǀXam phrase is South Africa’s motto.",
+            "es": "Lengua san que Bleek y Lucy Lloyd registraron desde 1870 con presos ǀxam que fueron a vivir a su casa de Ciudad del Cabo. Se extinguió hacia 1910-1920; una frase en ǀxam es el lema de Sudáfrica."
+          },
+          "sample": {
+            "text": "ǃke e꞉ ǀxarra ǁke",
+            "means": {
+              "en": "diverse people unite (South Africa’s motto)",
+              "es": "personas diversas se unen (lema de Sudáfrica)"
+            }
+          },
+          "wiki": {
+            "en": "ǀXam language",
+            "es": "Idioma ǀxam"
+          }
+        },
+        {
+          "id": "bantu-education-act",
+          "name": {
+            "en": "Bantu Education Act",
+            "es": "Ley de Educación Bantú"
+          },
+          "at": [
+            28.1881,
+            -25.7461
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1953",
+          "place": {
+            "en": "Pretoria, South Africa",
+            "es": "Pretoria, Sudáfrica"
+          },
+          "text": {
+            "en": "An apartheid law of 1953 meant to limit the schooling of Black children. Apartheid used “Bantu” for its policies, from this act to the “Bantustan” homelands.",
+            "es": "Ley del apartheid de 1953 hecha para limitar la educación de los niños negros. El apartheid usó “bantú” en sus políticas, de esta ley a los territorios llamados “bantustanes”."
+          },
+          "wiki": {
+            "en": "Bantu Education Act, 1953",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026",
+      "title": {
+        "en": "Bantu languages today",
+        "es": "Las lenguas bantúes hoy"
+      },
+      "text": {
+        "en": "About 350 million people speak some 440 to 680 Bantu languages, a third of them in DR Congo. Swahili links East Africa, Lingala rings through Congolese music and Zulu is South Africa’s most spoken home language.",
+        "es": "Unos 350 millones de personas hablan de 440 a 680 lenguas bantúes, un tercio en la RD del Congo. El suajili une África oriental, el lingala suena en la música congoleña y el zulú es la lengua materna más común de Sudáfrica."
+      },
+      "details": {
+        "en": "The figure of 350 million is a 2015 estimate, about 30% of Africa’s people then; the count of languages depends on where one draws the line between a language and a dialect. Besides Swahili, the largest include Lingala, with about 21 million native and 20 million second-language speakers (2021); Zulu and Xhosa; Shona; the Sotho–Tswana languages, with more than 15 million; and Kinyarwanda, with about 15 million. Swahili was among the first African languages to get spell-checkers and machine translation. Forest peoples such as the Baka and Batwa, and the Khoe and San, still struggle for their lands and languages. The map shows only roughly where Bantu languages are spoken today: cities mix many languages, and the borders between them are rarely sharp.",
+        "es": "La cifra de 350 millones es una estimación de 2015, cerca del 30 % de la población de África entonces; el número de lenguas depende de dónde se ponga la línea entre lengua y dialecto. Además del suajili, entre las mayores están el lingala, con unos 21 millones de hablantes nativos y 20 millones como segunda lengua (2021); el zulú y el xhosa; el shona; las lenguas sotho-tswana, con más de 15 millones; y el kiñaruanda, con unos 15 millones. El suajili fue de las primeras lenguas africanas con correctores ortográficos y traducción automática. Los pueblos de la selva, como los baka y los batwa, y los khoe y san aún luchan por sus tierras y sus lenguas. El mapa muestra solo a grandes rasgos dónde se hablan hoy las lenguas bantúes: en las ciudades se mezclan muchas lenguas, y las fronteras entre ellas rara vez son nítidas."
+      },
+      "camera": {
+        "lon": 25,
+        "lat": -9,
+        "zoom": 2.0
+      },
+      "control": {
+        "bantu": {
+          "ref": "today"
+        },
+        "khoesan": {
+          "ref": "kalahari"
+        }
+      },
+      "places": [
+        {
+          "id": "lingala",
+          "name": {
+            "en": "Lingala",
+            "es": "Lingala"
+          },
+          "at": [
+            15.3222,
+            -4.325
+          ],
+          "cat": "language",
+          "type": "language",
+          "date": "1884",
+          "place": {
+            "en": "Kinshasa, DR Congo",
+            "es": "Kinsasa, RD del Congo"
+          },
+          "text": {
+            "en": "Grown in the early 1880s from Bobangi, a trade language of the Congo River. Some 21 million speak it natively and 20 million as a second language (2021), from the army to soukous music.",
+            "es": "Nació a comienzos de la década de 1880 del bobangi, lengua de comercio del río Congo. Unos 21 millones lo hablan como lengua materna y 20 millones como segunda (2021), del ejército a la música soukous."
+          },
+          "sample": {
+            "text": "Mbote",
+            "latin": "m-BO-te",
+            "means": {
+              "en": "hello",
+              "es": "hola"
+            }
+          },
+          "wiki": {
+            "en": "Lingala",
+            "es": "Idioma lingala"
+          }
+        },
+        {
+          "id": "zulu",
+          "name": {
+            "en": "Zulu",
+            "es": "Zulú"
+          },
+          "at": [
+            31.0218,
+            -29.8587
+          ],
+          "cat": "language",
+          "type": "language",
+          "date": "1850",
+          "place": {
+            "en": "KwaZulu-Natal, South Africa",
+            "es": "KwaZulu-Natal, Sudáfrica"
+          },
+          "text": {
+            "en": "South Africa’s most widely spoken home language, with about 12 million native speakers (2013–2017), official since 1994. Its first grammar was printed in 1850; its clicks came from Khoisan languages.",
+            "es": "La lengua materna más hablada de Sudáfrica, con unos 12 millones de hablantes nativos (2013-2017), oficial desde 1994. Su primera gramática se imprimió en 1850; sus chasquidos vienen de lenguas joisanas."
+          },
+          "sample": {
+            "text": "Sawubona",
+            "latin": "sa-wu-BO-na",
+            "means": {
+              "en": "hello (literally, “we see you”)",
+              "es": "hola (literalmente, “te vemos”)"
+            }
+          },
+          "wiki": {
+            "en": "Zulu language",
+            "es": "Idioma zulú"
+          }
+        },
+        {
+          "id": "swahili",
+          "name": {
+            "en": "Swahili",
+            "es": "Suajili"
+          },
+          "at": [
+            39.1921,
+            -6.1622
+          ],
+          "cat": "language",
+          "type": "language",
+          "date": "1000",
+          "place": {
+            "en": "Zanzibar and the East African coast",
+            "es": "Zanzíbar y la costa de África oriental"
+          },
+          "text": {
+            "en": "A Bantu language of the coast, grown from the Sabaki languages of Kenya, with many words from Arabic. Some 5 million speak it natively and over 90 million as a second language (2019–2023).",
+            "es": "Lengua bantú de la costa, nacida de las lenguas sabaki de Kenia, con muchas palabras del árabe. Unos 5 millones la hablan como lengua materna y más de 90 millones como segunda (2019-2023)."
+          },
+          "sample": {
+            "text": "Habari gani?",
+            "latin": "ha-BA-ri GA-ni",
+            "means": {
+              "en": "How are you? (literally, “what news?”)",
+              "es": "¿Cómo estás? (literalmente, “¿qué noticias?”)"
+            }
+          },
+          "wiki": {
+            "en": "Swahili",
+            "es": "Idioma suajili"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "In some 4,000 years, Bantu-speaking farmers, herders and traders spread their languages across central, eastern and southern Africa, mixing with forest peoples, the Khoe and San and many others, and building kingdoms from Kongo to Great Zimbabwe and towns along the Swahili coast. Their hundreds of languages, spoken by some 350 million people, are among the world’s great living traditions. How and when they spread is still being worked out by linguists, archaeologists and geneticists together.",
+    "es": "En unos 4000 años, agricultores, pastores y comerciantes de habla bantú extendieron sus lenguas por el centro, el este y el sur de África, mezclándose con los pueblos de la selva, los khoe y san y muchos otros, y levantaron reinos del Congo al Gran Zimbabue y ciudades en la costa suajili. Sus cientos de lenguas, que hablan unos 350 millones de personas, están entre las grandes tradiciones vivas del mundo. Cómo y cuándo se expandieron sigue en estudio por lingüistas, arqueólogos y genetistas."
+  },
+  "sources": [
+    {
+      "title": "Wikipedia: Bantu expansion",
+      "url": "https://en.wikipedia.org/wiki/Bantu_expansion"
+    },
+    {
+      "title": "Wikipedia: Bantu languages",
+      "url": "https://en.wikipedia.org/wiki/Bantu_languages"
+    },
+    {
+      "title": "Wikipedia: Bantu peoples",
+      "url": "https://en.wikipedia.org/wiki/Bantu_peoples"
+    },
+    {
+      "title": "Wikipedia: Proto-Bantu language",
+      "url": "https://en.wikipedia.org/wiki/Proto-Bantu_language"
+    },
+    {
+      "title": "Wikipedia: Grassfields languages",
+      "url": "https://en.wikipedia.org/wiki/Grassfields_languages"
+    },
+    {
+      "title": "Wikipedia: Shum Laka",
+      "url": "https://en.wikipedia.org/wiki/Shum_Laka"
+    },
+    {
+      "title": "Wikipedia: Elaeis guineensis",
+      "url": "https://en.wikipedia.org/wiki/Elaeis_guineensis"
+    },
+    {
+      "title": "Wikipedia: Lopé National Park",
+      "url": "https://en.wikipedia.org/wiki/Lopé_National_Park"
+    },
+    {
+      "title": "Wikipedia: Pygmy peoples",
+      "url": "https://en.wikipedia.org/wiki/Pygmy_peoples"
+    },
+    {
+      "title": "Wikipedia: Baka people (Cameroon and Gabon)",
+      "url": "https://en.wikipedia.org/wiki/Baka_people_(Cameroon_and_Gabon)"
+    },
+    {
+      "title": "Wikipedia: Great Lakes Twa",
+      "url": "https://en.wikipedia.org/wiki/Great_Lakes_Twa"
+    },
+    {
+      "title": "Wikipedia: Sangha River",
+      "url": "https://en.wikipedia.org/wiki/Sangha_River"
+    },
+    {
+      "title": "Wikipedia: Ubangi River",
+      "url": "https://en.wikipedia.org/wiki/Ubangi_River"
+    },
+    {
+      "title": "Wikipedia: Urewe",
+      "url": "https://en.wikipedia.org/wiki/Urewe"
+    },
+    {
+      "title": "Wikipedia: Iron metallurgy in Africa",
+      "url": "https://en.wikipedia.org/wiki/Iron_metallurgy_in_Africa"
+    },
+    {
+      "title": "Wikipedia: Haya people",
+      "url": "https://en.wikipedia.org/wiki/Haya_people"
+    },
+    {
+      "title": "Wikipedia: Nok culture",
+      "url": "https://en.wikipedia.org/wiki/Nok_culture"
+    },
+    {
+      "title": "Wikipedia: Lydenburg heads",
+      "url": "https://en.wikipedia.org/wiki/Lydenburg_heads"
+    },
+    {
+      "title": "Wikipedia: Khoisan",
+      "url": "https://en.wikipedia.org/wiki/Khoisan"
+    },
+    {
+      "title": "Wikipedia: San peoples",
+      "url": "https://en.wikipedia.org/wiki/San_peoples"
+    },
+    {
+      "title": "Wikipedia: Khoekhoe language",
+      "url": "https://en.wikipedia.org/wiki/Khoekhoe_language"
+    },
+    {
+      "title": "Wikipedia: Click consonant",
+      "url": "https://en.wikipedia.org/wiki/Click_consonant"
+    },
+    {
+      "title": "Wikipedia: Xhosa language",
+      "url": "https://en.wikipedia.org/wiki/Xhosa_language"
+    },
+    {
+      "title": "Wikipedia: Xhosa people",
+      "url": "https://en.wikipedia.org/wiki/Xhosa_people"
+    },
+    {
+      "title": "Wikipedia: Tswana people",
+      "url": "https://en.wikipedia.org/wiki/Tswana_people"
+    },
+    {
+      "title": "Wikipedia: Sotho people",
+      "url": "https://en.wikipedia.org/wiki/Sotho_people"
+    },
+    {
+      "title": "Wikipedia: Swahili",
+      "url": "https://en.wikipedia.org/wiki/Swahili"
+    },
+    {
+      "title": "Wikipedia: Swahili coast",
+      "url": "https://en.wikipedia.org/wiki/Swahili_coast"
+    },
+    {
+      "title": "Wikipedia: Kilwa Kisiwani",
+      "url": "https://en.wikipedia.org/wiki/Kilwa_Kisiwani"
+    },
+    {
+      "title": "Wikipedia: Utendi wa Tambuka",
+      "url": "https://en.wikipedia.org/wiki/Utendi_wa_Tambuka"
+    },
+    {
+      "title": "Wikipedia: Kingdom of Mapungubwe",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Mapungubwe"
+    },
+    {
+      "title": "Wikipedia: Great Zimbabwe",
+      "url": "https://en.wikipedia.org/wiki/Great_Zimbabwe"
+    },
+    {
+      "title": "Wikipedia: Shona language",
+      "url": "https://en.wikipedia.org/wiki/Shona_language"
+    },
+    {
+      "title": "Wikipedia: Kingdom of Kongo",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Kongo"
+    },
+    {
+      "title": "Wikipedia: M'banza-Kongo",
+      "url": "https://en.wikipedia.org/wiki/M'banza-Kongo"
+    },
+    {
+      "title": "Wikipedia: Kongo language",
+      "url": "https://en.wikipedia.org/wiki/Kongo_language"
+    },
+    {
+      "title": "Wikipedia: Palenquero",
+      "url": "https://en.wikipedia.org/wiki/Palenquero"
+    },
+    {
+      "title": "Wikipedia: Mfecane",
+      "url": "https://en.wikipedia.org/wiki/Mfecane"
+    },
+    {
+      "title": "Wikipedia: Mzilikazi",
+      "url": "https://en.wikipedia.org/wiki/Mzilikazi"
+    },
+    {
+      "title": "Wikipedia: Ngoni people",
+      "url": "https://en.wikipedia.org/wiki/Ngoni_people"
+    },
+    {
+      "title": "Wikipedia: Kololo people",
+      "url": "https://en.wikipedia.org/wiki/Kololo_people"
+    },
+    {
+      "title": "Wikipedia: Moshoeshoe I",
+      "url": "https://en.wikipedia.org/wiki/Moshoeshoe_I"
+    },
+    {
+      "title": "Wikipedia: Wilhelm Bleek",
+      "url": "https://en.wikipedia.org/wiki/Wilhelm_Bleek"
+    },
+    {
+      "title": "Wikipedia: Lucy Lloyd",
+      "url": "https://en.wikipedia.org/wiki/Lucy_Lloyd"
+    },
+    {
+      "title": "Wikipedia: ǀXam language",
+      "url": "https://en.wikipedia.org/wiki/ǀXam_language"
+    },
+    {
+      "title": "Wikipedia: Guthrie classification of Bantu languages",
+      "url": "https://en.wikipedia.org/wiki/Guthrie_classification_of_Bantu_languages"
+    },
+    {
+      "title": "Wikipedia: Bantu Education Act, 1953",
+      "url": "https://en.wikipedia.org/wiki/Bantu_Education_Act,_1953"
+    },
+    {
+      "title": "Wikipedia: Bantustan",
+      "url": "https://en.wikipedia.org/wiki/Bantustan"
+    },
+    {
+      "title": "Wikipedia: Soweto uprising",
+      "url": "https://en.wikipedia.org/wiki/Soweto_uprising"
+    },
+    {
+      "title": "Wikipedia: Lingala",
+      "url": "https://en.wikipedia.org/wiki/Lingala"
+    },
+    {
+      "title": "Wikipedia: Zulu language",
+      "url": "https://en.wikipedia.org/wiki/Zulu_language"
+    },
+    {
+      "title": "Wikipedia: Kinyarwanda",
+      "url": "https://en.wikipedia.org/wiki/Kinyarwanda"
+    },
+    {
+      "title": "Wikipedia: Sotho–Tswana languages",
+      "url": "https://en.wikipedia.org/wiki/Sotho–Tswana_languages"
+    },
+    {
+      "title": "Grollemund et al. (2015), Bantu expansion shows that habitat alters the route and pace of human dispersals, PNAS",
+      "url": "https://doi.org/10.1073/pnas.1503793112"
+    },
+    {
+      "title": "Patin et al. (2017), Dispersals and genetic adaptation of Bantu-speaking populations in Africa and North America, Science",
+      "url": "https://doi.org/10.1126/science.aal1988"
+    },
+    {
+      "title": "Koile et al. (2022), Phylogeographic analysis of the Bantu language expansion supports a rainforest route, PNAS",
+      "url": "https://doi.org/10.1073/pnas.2112853119"
+    },
+    {
+      "title": "Fortes-Lima et al. (2024), The genetic legacy of the expansion of Bantu-speaking peoples in Africa, Nature",
+      "url": "https://doi.org/10.1038/s41586-023-06770-6"
+    },
+    {
+      "title": "Wiktionary (greetings: habari gani, sawubona, molo, mbote)",
+      "url": "https://en.wiktionary.org/"
+    }
+  ]
+}

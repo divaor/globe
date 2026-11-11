@@ -129,12 +129,16 @@
               19.5
             ],
             [
-              -1.0,
-              21.0
+              1.0,
+              21.5
+            ],
+            [
+              -4.8,
+              25.6
             ],
             [
               -12.0,
-              25.0
+              25.6
             ]
           ]
         }
@@ -639,26 +643,307 @@
         "BFA",
         "CMR",
         "CAF",
-        "GNQ",
-        "GAB",
-        "COG",
         "COD",
-        "AGO",
-        "ZMB",
-        "MWI",
-        "MOZ",
-        "ZWE",
-        "BWA",
-        "NAM",
-        "ZAF",
-        "LSO",
-        "SWZ",
-        "TZA",
-        "RWA",
-        "BDI",
-        "UGA",
-        "KEN",
-        "COM",
+        {
+          "minus": [
+            {
+              "union": [
+                "GNQ",
+                "GAB",
+                "COG",
+                "AGO",
+                "ZMB",
+                "MWI",
+                "MOZ",
+                "ZWE",
+                "LSO",
+                "SWZ",
+                "TZA",
+                "RWA",
+                "BDI",
+                "COM",
+                "BWA",
+                {
+                  "minus": [
+                    "COD",
+                    {
+                      "poly": [
+                        [
+                          18.0,
+                          5.6
+                        ],
+                        [
+                          31.5,
+                          5.6
+                        ],
+                        [
+                          31.5,
+                          2.6
+                        ],
+                        [
+                          27.0,
+                          2.9
+                        ],
+                        [
+                          24.0,
+                          3.6
+                        ],
+                        [
+                          21.0,
+                          3.4
+                        ],
+                        [
+                          18.0,
+                          3.6
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "and": [
+                    "CMR",
+                    {
+                      "poly": [
+                        [
+                          8.5,
+                          1.5
+                        ],
+                        [
+                          16.5,
+                          1.5
+                        ],
+                        [
+                          16.5,
+                          4.0
+                        ],
+                        [
+                          14.5,
+                          5.0
+                        ],
+                        [
+                          12.5,
+                          5.5
+                        ],
+                        [
+                          11.5,
+                          7.0
+                        ],
+                        [
+                          8.5,
+                          7.0
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "and": [
+                    "UGA",
+                    {
+                      "poly": [
+                        [
+                          29.0,
+                          2.0
+                        ],
+                        [
+                          32.0,
+                          2.0
+                        ],
+                        [
+                          34.0,
+                          1.6
+                        ],
+                        [
+                          35.2,
+                          1.2
+                        ],
+                        [
+                          35.2,
+                          -1.6
+                        ],
+                        [
+                          29.0,
+                          -1.6
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "and": [
+                    "KEN",
+                    {
+                      "poly": [
+                        [
+                          33.9,
+                          1.3
+                        ],
+                        [
+                          35.2,
+                          1.0
+                        ],
+                        [
+                          35.5,
+                          0.1
+                        ],
+                        [
+                          37.0,
+                          0.4
+                        ],
+                        [
+                          38.3,
+                          0.2
+                        ],
+                        [
+                          38.8,
+                          -1.0
+                        ],
+                        [
+                          39.6,
+                          -1.5
+                        ],
+                        [
+                          40.3,
+                          -2.2
+                        ],
+                        [
+                          41.0,
+                          -1.8
+                        ],
+                        [
+                          41.7,
+                          -1.6
+                        ],
+                        [
+                          40.0,
+                          -3.6
+                        ],
+                        [
+                          39.2,
+                          -4.8
+                        ],
+                        [
+                          37.7,
+                          -3.6
+                        ],
+                        [
+                          37.0,
+                          -2.6
+                        ],
+                        [
+                          36.0,
+                          -2.0
+                        ],
+                        [
+                          35.4,
+                          -1.3
+                        ],
+                        [
+                          34.8,
+                          -1.1
+                        ],
+                        [
+                          34.0,
+                          -0.3
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "and": [
+                    "NAM",
+                    {
+                      "poly": [
+                        [
+                          11.5,
+                          -16.9
+                        ],
+                        [
+                          25.5,
+                          -16.9
+                        ],
+                        [
+                          25.5,
+                          -18.5
+                        ],
+                        [
+                          21.0,
+                          -19.5
+                        ],
+                        [
+                          17.5,
+                          -21.5
+                        ],
+                        [
+                          13.5,
+                          -21.5
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "a1": "ZAF",
+                  "names": [
+                    "Eastern Cape",
+                    "Free State",
+                    "Gauteng",
+                    "KwaZulu-Natal",
+                    "Limpopo",
+                    "Mpumalanga",
+                    "North West"
+                  ]
+                }
+              ]
+            },
+            {
+              "land": [
+                [
+                  14.5,
+                  -21.5
+                ],
+                [
+                  19.5,
+                  -18.4
+                ],
+                [
+                  23.6,
+                  -17.9
+                ],
+                [
+                  25.4,
+                  -20.0
+                ],
+                [
+                  24.8,
+                  -23.5
+                ],
+                [
+                  22.0,
+                  -26.5
+                ],
+                [
+                  19.6,
+                  -28.6
+                ],
+                [
+                  16.8,
+                  -28.6
+                ],
+                [
+                  15.4,
+                  -26.6
+                ],
+                [
+                  14.3,
+                  -23.0
+                ]
+              ]
+            }
+          ]
+        },
         {
           "land": [
             [
@@ -2113,8 +2398,8 @@
         "es": "Hace entre 20 000 y 10 000 años, en el noreste de África o quizá en el Levante, se hablaba el antepasado del árabe, el hebreo, el amhárico, el somalí, el hausa y las lenguas bereberes."
       },
       "details": {
-        "en": "Afroasiatic is the oldest language family that linguists accept: even the youngest dates for its ancestor, Proto-Afroasiatic, are around 10,000 years ago. Most scholars place its homeland in the southeastern Sahara or the Horn of Africa; a minority prefer the Levant. Its six branches drifted far apart: Semitic (Arabic, Hebrew, Amharic, Tigrinya), Egyptian, Berber across North Africa, Chadic around Lake Chad, Cushitic (Oromo, Somali) and Omotic in Ethiopia. Egyptian and the Semitic languages were among the first languages ever written, about 5,000 years ago, and Egyptian has the longest written record of all. Today more than 500 million people speak about 400 Afroasiatic languages; Arabic alone has 300 to 400 million native speakers.",
-        "es": "El afroasiático es la familia de lenguas más antigua que aceptan los lingüistas: incluso las fechas más recientes para su antepasado, el protoafroasiático, rondan los 10 000 años. La mayoría sitúa su cuna en el sureste del Sahara o en el Cuerno de África; una minoría prefiere el Levante. Sus seis ramas se alejaron mucho: el semítico (árabe, hebreo, amhárico, tigriña), el egipcio, el bereber en el norte de África, el chádico en torno al lago Chad, el cusita (oromo, somalí) y el omótico en Etiopía. El egipcio y las lenguas semíticas estuvieron entre las primeras lenguas escritas, hace unos 5000 años, y el egipcio tiene el registro escrito más largo de todos. Hoy más de 500 millones de personas hablan unas 400 lenguas afroasiáticas; solo el árabe tiene entre 300 y 400 millones de hablantes nativos."
+        "en": "Afroasiatic is the oldest language family that linguists accept: even the youngest dates for its ancestor, Proto-Afroasiatic, are around 10,000 years ago. Most scholars place its homeland in the southeastern Sahara or the Horn of Africa; a minority prefer the Levant. Its six branches drifted far apart: Semitic (Arabic, Hebrew, Amharic, Tigrinya), Egyptian, Berber across North Africa, Chadic around Lake Chad, Cushitic (Oromo, Somali) and Omotic in Ethiopia. Egyptian and the Semitic languages were among the first languages ever written, about 5,000 years ago, and Egyptian has the longest written record of all. Today more than 500 million people speak about 400 Afroasiatic languages; Arabic alone has some 410 million native speakers (2020–2024).",
+        "es": "El afroasiático es la familia de lenguas más antigua que aceptan los lingüistas: incluso las fechas más recientes para su antepasado, el protoafroasiático, rondan los 10 000 años. La mayoría sitúa su cuna en el sureste del Sahara o en el Cuerno de África; una minoría prefiere el Levante. Sus seis ramas se alejaron mucho: el semítico (árabe, hebreo, amhárico, tigriña), el egipcio, el bereber en el norte de África, el chádico en torno al lago Chad, el cusita (oromo, somalí) y el omótico en Etiopía. El egipcio y las lenguas semíticas estuvieron entre las primeras lenguas escritas, hace unos 5000 años, y el egipcio tiene el registro escrito más largo de todos. Hoy más de 500 millones de personas hablan unas 400 lenguas afroasiáticas; solo el árabe tiene unos 410 millones de hablantes nativos (2020-2024)."
       },
       "camera": {
         "lon": 22,
@@ -2324,8 +2609,8 @@
             "es": "Península arábiga"
           },
           "text": {
-            "en": "Its oldest continuous text dates from about AD 125. Carried far beyond Arabia by the conquests of the 7th century, Arabic is now the native language of 300 to 400 million people.",
-            "es": "Su texto continuo más antiguo es de hacia el 125 d. C. Llevado lejos de Arabia por las conquistas del siglo VII, el árabe es hoy la lengua materna de 300 a 400 millones de personas."
+            "en": "Its oldest continuous text dates from about AD 125. Carried far beyond Arabia by the conquests of the 7th century, Arabic is now the native language of some 410 million people (2020–2024).",
+            "es": "Su texto continuo más antiguo es de hacia el 125 d. C. Llevado lejos de Arabia por las conquistas del siglo VII, el árabe es hoy la lengua materna de unos 410 millones de personas (2020-2024)."
           },
           "sample": {
             "text": "مرحبا",
@@ -2358,8 +2643,8 @@
             "es": "Kano, Nigeria"
           },
           "text": {
-            "en": "The largest Chadic language: about 58 million native speakers, and tens of millions more use it to trade across West Africa. It has been written in Arabic letters (ajami) since the early 1600s.",
-            "es": "La mayor lengua chádica: unos 58 millones de hablantes nativos, y decenas de millones más la usan para comerciar en África occidental. Se escribe en letras árabes (ajami) desde comienzos del siglo XVII."
+            "en": "The largest Chadic language: about 58 million native speakers (2023–2024), and tens of millions more use it to trade across West Africa. It has been written in Arabic letters (ajami) since the early 1600s.",
+            "es": "La mayor lengua chádica: unos 58 millones de hablantes nativos (2023-2024), y decenas de millones más la usan para comerciar en África occidental. Se escribe en letras árabes (ajami) desde comienzos del siglo XVII."
           },
           "sample": {
             "text": "Sannu",
@@ -2567,8 +2852,8 @@
             "es": "Kenia y Tanzania"
           },
           "text": {
-            "en": "A Nilotic language of about 1.5 million herders. Nilotic peoples moved into the Rift Valley of Kenya and Tanzania especially from the 13th century.",
-            "es": "Lengua nilótica de cerca de 1,5 millones de pastores. Los pueblos nilóticos se instalaron en el valle del Rift, en Kenia y Tanzania, sobre todo desde el siglo XIII."
+            "en": "A Nilotic language of about 1.5 million people (2009–2016), mostly herders. Nilotic peoples moved into the Rift Valley of Kenya and Tanzania especially from the 13th century.",
+            "es": "Lengua nilótica de cerca de 1,5 millones de personas (2009-2016), sobre todo pastores. Los pueblos nilóticos se instalaron en el valle del Rift, en Kenia y Tanzania, sobre todo desde el siglo XIII."
           },
           "sample": {
             "text": "Eata en-gewarie 'n-giyaa.",
@@ -2715,8 +3000,8 @@
             "es": "Tierras altas de Nueva Guinea"
           },
           "text": {
-            "en": "Perhaps the third-largest family by number of languages, with some 300 to 480, spoken by about 3 million people. Enga, the largest, has some 230,000 speakers.",
-            "es": "Quizá la tercera familia del mundo por número de lenguas, entre 300 y 480, que hablan unos 3 millones de personas. El enga, la mayor, tiene unos 230 000 hablantes."
+            "en": "Perhaps the third-largest family by number of languages, with some 300 to 480, spoken by about 3 million people. Enga, the largest, had some 230,000 speakers in 2000.",
+            "es": "Quizá la tercera familia del mundo por número de lenguas, entre 300 y 480, que hablan unos 3 millones de personas. El enga, la mayor, tenía unos 230 000 hablantes en 2000."
           },
           "sample": {
             "text": "takánge · endángi",
@@ -2871,8 +3156,8 @@
             "es": "Anyang, China"
           },
           "text": {
-            "en": "First written on the oracle bones of Anyang about 1250 BC, Chinese has been written ever since. Its varieties, from Mandarin to Cantonese, have some 1.3 billion speakers.",
-            "es": "Escrito por primera vez en los huesos oraculares de Anyang hacia el 1250 a. C., el chino se ha escrito desde entonces. Sus variedades, del mandarín al cantonés, suman unos 1300 millones de hablantes."
+            "en": "First written on the oracle bones of Anyang about 1250 BC, Chinese has been written ever since. Its varieties, from Mandarin to Cantonese, have some 1.4 billion native speakers (2017–2024).",
+            "es": "Escrito por primera vez en los huesos oraculares de Anyang hacia el 1250 a. C., el chino se ha escrito desde entonces. Sus variedades, del mandarín al cantonés, suman unos 1400 millones de hablantes nativos (2017-2024)."
           },
           "sample": {
             "text": "你好",
@@ -2939,8 +3224,8 @@
             "es": "Bagan, Birmania (Myanmar)"
           },
           "text": {
-            "en": "Its oldest surviving stone inscription, the Myazedi at Bagan, dates from 1113. Today about 33 million people speak Burmese as their first language.",
-            "es": "Su inscripción en piedra más antigua, la de Myazedi en Bagan, es de 1113. Hoy unos 33 millones de personas tienen el birmano como lengua materna."
+            "en": "Its oldest surviving stone inscription, the Myazedi at Bagan, dates from 1113. Today about 33 million people speak Burmese as their first language (2019).",
+            "es": "Su inscripción en piedra más antigua, la de Myazedi en Bagan, es de 1113. Hoy unos 33 millones de personas tienen el birmano como lengua materna (2019)."
           },
           "sample": {
             "text": "မင်္ဂလာပါ",
@@ -2964,8 +3249,8 @@
         "es": "El indoeuropeo desde la estepa"
       },
       "text": {
-        "en": "About 6,000 years ago, herders on the steppes north of the Black Sea probably spoke Proto-Indo-European, ancestor of Hindi, Persian, Russian, English and Spanish. Another story in this collection tells its tale.",
-        "es": "Hace unos 6000 años, pastores de las estepas al norte del mar Negro probablemente hablaban el protoindoeuropeo, antepasado del hindi, el persa, el ruso, el inglés y el español. Otra historia de esta colección lo cuenta."
+        "en": "About 6,000 years ago, herders on the steppes north of the Black Sea probably spoke Proto-Indo-European, ancestor of Hindi, Persian, Russian, English and Spanish. The story “The Indo-European languages” tells its tale.",
+        "es": "Hace unos 6000 años, pastores de las estepas al norte del mar Negro probablemente hablaban protoindoeuropeo, antepasado del hindi, el persa, el ruso, el inglés y el español. Lo cuenta la historia «Las lenguas indoeuropeas»."
       },
       "details": {
         "en": "Most linguists, now helped by ancient DNA, favour the steppe hypothesis: Proto-Indo-European was spoken on the Pontic–Caspian steppe around 4500–2500 BC by herders linked to the Yamnaya culture, whose descendants spread west into Europe and east into Central Asia, Iran and India. The rival Anatolian hypothesis, which still has supporters, ties it to the first farmers of Anatolia, about 9,500 to 8,000 years ago. Hittite, written in Anatolia from about 1700 BC, is the oldest recorded Indo-European language. In 1786 William Jones argued that Sanskrit, Greek and Latin came from a common source. Carried by empires and, after 1500, by colonisation to the Americas, Australia and beyond (the map shows only Eurasia), Indo-European languages are now the first language of about 3.4 billion people, 42% of humanity, in some 450 languages.",
@@ -3149,8 +3434,8 @@
         "es": "El nígero-congoleño y los bantúes"
       },
       "text": {
-        "en": "Niger–Congo may be the largest family of all, with some 1,500 languages, from Wolof and Yoruba to Swahili and Zulu. About 4,000 to 5,000 years ago its Bantu branch began a vast spread; another story tells it.",
-        "es": "El nígero-congoleño quizá sea la mayor familia de todas, con unas 1500 lenguas, del wolof y el yoruba al suajili y el zulú. Hace unos 4000 a 5000 años, su rama bantú inició una gran expansión; otra historia la cuenta."
+        "en": "Niger–Congo may be the largest family of all, with some 1,500 languages, from Wolof and Yoruba to Swahili and Zulu. About 4,000 to 5,000 years ago its Bantu branch began the spread told in “The Bantu expansion”.",
+        "es": "El nígero-congoleño quizá sea la mayor familia de todas, con unas 1500 lenguas, del wolof y el yoruba al suajili y el zulú. Hace unos 4000 a 5000 años, su rama bantú inició la expansión que cuenta «La expansión bantú»."
       },
       "details": {
         "en": "Most Niger–Congo languages share a system of noun classes marked by prefixes, as in Swahili mtu, “person”, and watu, “people”. Its core, Atlantic–Congo, is widely accepted; whether Mande and a few smaller groups belong is debated, so Glottolog counts only Atlantic–Congo, with about 1,400 languages. The family probably began in West Africa, and its spread may be tied to farming in the Sahel after the Sahara dried out, around 3500 BC. Its best-known branch, Bantu, set out from the highlands on the border of Nigeria and Cameroon and now covers most of Africa south of the equator. About 600 million people speak Niger–Congo languages, among them Yoruba, Igbo, Fula, Akan, Zulu and Swahili, the most widely used of all.",
@@ -3250,8 +3535,8 @@
             "es": "Ile-Ife, Nigeria"
           },
           "text": {
-            "en": "Spoken by about 48 million people in Nigeria and Benin. It was first written in Arabic letters (ajami) in the 17th century; its tones are marked with accents.",
-            "es": "La hablan unos 48 millones de personas en Nigeria y Benín. Se escribió primero en letras árabes (ajami) en el siglo XVII; sus tonos se marcan con acentos."
+            "en": "Spoken by about 48 million people in Nigeria and Benin (2023). It was first written in Arabic letters (ajami) in the 17th century; its tones are marked with accents.",
+            "es": "La hablan unos 48 millones de personas en Nigeria y Benín (2023). Se escribió primero en letras árabes (ajami) en el siglo XVII; sus tonos se marcan con acentos."
           },
           "sample": {
             "text": "Ẹ kú iṣẹ́ o",
@@ -3284,8 +3569,8 @@
             "es": "Zanzíbar y la costa de África oriental"
           },
           "text": {
-            "en": "A Bantu language of the East African coast with many Arabic loanwords. Some 5 million people speak it natively and over 90 million as a second language; it is a working language of the African Union.",
-            "es": "Lengua bantú de la costa de África oriental, con muchos préstamos del árabe. Unos 5 millones la hablan como lengua materna y más de 90 millones como segunda; es lengua de trabajo de la Unión Africana."
+            "en": "A Bantu language of the East African coast with many Arabic loanwords. Some 5 million people speak it natively and over 90 million as a second language (2019–2023); it is a working language of the African Union.",
+            "es": "Lengua bantú de la costa de África oriental, con muchos préstamos del árabe. Unos 5 millones la hablan como lengua materna y más de 90 millones como segunda (2019-2023); es lengua de trabajo de la Unión Africana."
           },
           "sample": {
             "text": "Habari gani?",
@@ -3627,8 +3912,8 @@
             "es": "Palembang, Sumatra, Indonesia"
           },
           "text": {
-            "en": "The oldest known Old Malay inscription, at Kedukan Bukit near Palembang, is dated 683. Malay, with its standard form Indonesian, is now spoken by nearly 300 million people, most as a second language.",
-            "es": "La inscripción más antigua conocida en malayo antiguo, en Kedukan Bukit, cerca de Palembang, es del 683. El malayo, con su forma estándar, el indonesio, lo hablan hoy casi 300 millones de personas, la mayoría como segunda lengua."
+            "en": "The oldest known Old Malay inscription, at Kedukan Bukit near Palembang, is dated 683. Malay, with its standard form Indonesian, is now spoken by nearly 300 million people, most as a second language (2020).",
+            "es": "La inscripción más antigua en malayo antiguo, en Kedukan Bukit, cerca de Palembang, es del 683. El malayo, con su forma estándar, el indonesio, lo hablan casi 300 millones de personas, la mayoría como segunda lengua (2020)."
           },
           "sample": {
             "text": "Selamat pagi",
@@ -3717,7 +4002,7 @@
           ],
           "cat": "city",
           "type": "site",
-          "date": "-2600",
+          "date": "-3700",
           "until": "-1300",
           "place": {
             "en": "Punjab, Pakistan",
@@ -3750,8 +4035,8 @@
             "es": "Madurai, India"
           },
           "text": {
-            "en": "First written in Tamil-Brahmi on cave walls near Madurai in the 2nd century BC, Tamil has one of the world’s longest literary traditions. About 79 million people speak it natively.",
-            "es": "Escrito por primera vez en tamil-brahmi en cuevas cerca de Madurai en el siglo II a. C., el tamil tiene una de las tradiciones literarias más largas del mundo. Lo hablan unos 79 millones de personas."
+            "en": "First written in Tamil-Brahmi on cave walls near Madurai in the 2nd century BC, Tamil has one of the world’s longest literary traditions. About 79 million people speak it natively (2011–2019).",
+            "es": "Escrito por primera vez en tamil-brahmi en cuevas cerca de Madurai en el siglo II a. C., el tamil tiene una de las tradiciones literarias más largas del mundo. Lo hablan unos 79 millones de nativos (2011-2019)."
           },
           "sample": {
             "text": "வணக்கம்",
@@ -3784,8 +4069,8 @@
             "es": "Kalat, Baluchistán, Pakistán"
           },
           "text": {
-            "en": "A Dravidian language spoken by some 2.7 million people far to the northwest, in Balochistan. In 1844 Christian Lassen showed that it belongs to the same family as Tamil.",
-            "es": "Lengua drávida de unos 2,7 millones de personas, muy al noroeste, en Baluchistán. En 1844 Christian Lassen mostró que pertenece a la misma familia que el tamil."
+            "en": "A Dravidian language spoken by some 2.7 million people (2023) far to the northwest, in Balochistan. In 1844 Christian Lassen showed that it belongs to the same family as Tamil.",
+            "es": "Lengua drávida de unos 2,7 millones de personas (2023), muy al noroeste, en Baluchistán. En 1844 Christian Lassen mostró que pertenece a la misma familia que el tamil."
           },
           "sample": {
             "text": "براہوئی",
@@ -3889,8 +4174,8 @@
             "es": "Hanói, Vietnam"
           },
           "text": {
-            "en": "The largest Austroasiatic language, with about 86 million native speakers. Long written in chữ Nôm, characters adapted from Chinese, it now uses a Latin alphabet based on 17th-century Portuguese spelling.",
-            "es": "La mayor lengua austroasiática, con unos 86 millones de hablantes nativos. Durante siglos se escribió en chữ Nôm, caracteres adaptados del chino; hoy usa un alfabeto latino basado en la ortografía portuguesa del siglo XVII."
+            "en": "The largest Austroasiatic language, with about 86 million native speakers (2019–2023). Long written in chữ Nôm, characters adapted from Chinese, it now uses a Latin alphabet based on 17th-century Portuguese spelling.",
+            "es": "La mayor lengua austroasiática, con unos 86 millones de hablantes nativos (2019-2023). Durante siglos se escribió en chữ Nôm, caracteres adaptados del chino; hoy usa un alfabeto latino de base portuguesa del siglo XVII."
           },
           "sample": {
             "text": "Xin chào",
@@ -3923,8 +4208,8 @@
             "es": "Angkor, Camboya"
           },
           "text": {
-            "en": "The language of Cambodia and of the builders of Angkor. Its inscriptions go back to the 7th century, in a script that came from southern India. About 19 million people speak it natively.",
-            "es": "La lengua de Camboya y de los constructores de Angkor. Sus inscripciones se remontan al siglo VII, con una escritura llegada del sur de la India. Unos 19 millones de personas la hablan como lengua materna."
+            "en": "The language of Cambodia and of the builders of Angkor. Its inscriptions go back to the 7th century, in a script that came from southern India. About 19 million people speak it natively (2019).",
+            "es": "La lengua de Camboya y de los constructores de Angkor. Sus inscripciones se remontan al siglo VII, con una escritura llegada del sur de la India. Unos 19 millones de personas la hablan como lengua materna (2019)."
           },
           "sample": {
             "text": "ជម្រាបសួរ",
@@ -3957,8 +4242,8 @@
             "es": "Jharkhand, India"
           },
           "text": {
-            "en": "A Munda language of eastern India, spoken by 7.6 million people. In 1925 Raghunath Murmu created a new alphabet for it, Ol Chiki, which writes vowels and consonants as equals.",
-            "es": "Lengua munda del este de la India, que hablan 7,6 millones de personas. En 1925 Raghunath Murmu creó para ella un alfabeto nuevo, el ol chiki, que escribe vocales y consonantes en pie de igualdad."
+            "en": "A Munda language of eastern India, spoken by 7.6 million people (2011 census). In 1925 Raghunath Murmu created a new alphabet for it, Ol Chiki, which writes vowels and consonants as equals.",
+            "es": "Lengua munda del este de la India, que hablan 7,6 millones de personas (censo de 2011). En 1925 Raghunath Murmu creó para ella un alfabeto nuevo, el ol chiki, que escribe vocales y consonantes en pie de igualdad."
           },
           "sample": {
             "text": "ᱡᱚᱦᱟᱨ",
@@ -4202,19 +4487,19 @@
             "es": "Náhuatl"
           },
           "at": [
-            -99.1332,
-            19.4326
+            -98.4197,
+            21.1411
           ],
           "cat": "language",
           "type": "language",
           "date": "500",
           "place": {
-            "en": "Central Mexico",
-            "es": "Centro de México"
+            "en": "Central and eastern Mexico; here, the Huasteca",
+            "es": "Centro y este de México; aquí, la Huasteca"
           },
           "text": {
-            "en": "The language of the Aztecs, brought to central Mexico around AD 500 by Uto-Aztecan speakers from the north. Written in Latin letters after the Spanish conquest, it is still spoken by 1.7 million people.",
-            "es": "La lengua de los aztecas, llevada al centro de México hacia el 500 d. C. por hablantes yutoaztecas del norte. Escrita en letras latinas tras la conquista española, aún la hablan 1,7 millones de personas."
+            "en": "The language of the Aztecs, brought to central Mexico around AD 500 by Uto-Aztecan speakers from the north. Written in Latin letters after the Spanish conquest, it is still spoken by 1.7 million people (2020 census).",
+            "es": "La lengua de los aztecas, llevada al centro de México hacia el 500 d. C. por hablantes yutoaztecas del norte. Escrita en letras latinas tras la conquista española, aún la hablan 1,7 millones de personas (censo de 2020)."
           },
           "sample": {
             "text": "Niltze",
@@ -4315,8 +4600,8 @@
             "es": "Iqaluit, Nunavut, Canadá"
           },
           "text": {
-            "en": "An Eskimo–Aleut language carried east from Alaska by the Thule, ancestors of the Inuit, after about AD 1000. Some 42,000 people speak it in Canada, and it is written in syllabics.",
-            "es": "Lengua esquimo-aleutiana que los thule, antepasados de los inuit, llevaron al este desde Alaska después del año 1000. La hablan unas 42 000 personas en Canadá y se escribe en silabario."
+            "en": "An Eskimo–Aleut language carried east from Alaska by the Thule, ancestors of the Inuit, after about AD 1000. Some 42,000 people speak it in Canada (2021 census); it is written in syllabics.",
+            "es": "Lengua esquimo-aleutiana que los thule, antepasados de los inuit, llevaron al este desde Alaska después del año 1000. La hablan unas 42 000 personas en Canadá (censo de 2021) y se escribe en silabario."
           },
           "sample": {
             "text": "ᐃᓄᒃᑎᑐᑦ",
@@ -4547,8 +4832,8 @@
             "es": "Budapest, Hungría"
           },
           "text": {
-            "en": "Brought to the Carpathian Basin by Magyar horsemen who settled there by 895, far from their Uralic kin. Its oldest surviving written words are in a charter of 1055; 12 million speak it.",
-            "es": "Lo llevaron a la cuenca de los Cárpatos los jinetes magiares que se asentaron allí hacia el 895, lejos de sus parientes urálicos. Sus palabras escritas más antiguas están en una carta de 1055; lo hablan 12 millones."
+            "en": "Brought to the Carpathian Basin by Magyar horsemen who settled there by 895, far from their Uralic kin. Its oldest surviving written words are in a charter of 1055; 12 million speak it (2021–2023).",
+            "es": "Lo llevaron a la cuenca de los Cárpatos los jinetes magiares que se asentaron allí hacia el 895, lejos de sus parientes urálicos. Sus palabras escritas más antiguas están en una carta de 1055; lo hablan 12 millones (2021-2023)."
           },
           "sample": {
             "text": "Jó napot",
@@ -4700,8 +4985,8 @@
             "es": "Nara, Japón"
           },
           "text": {
-            "en": "Old Japanese was written in the 8th century with Chinese characters, as in the Man’yōshū poems. Today about 123 million people speak Japanese.",
-            "es": "El japonés antiguo se escribió en el siglo VIII con caracteres chinos, como en los poemas del Man’yōshū. Hoy unos 123 millones de personas hablan japonés."
+            "en": "Old Japanese was written in the 8th century with Chinese characters, as in the Man’yōshū poems. Today about 123 million people speak Japanese (2020).",
+            "es": "El japonés antiguo se escribió en el siglo VIII con caracteres chinos, como en los poemas del Man’yōshū. Hoy unos 123 millones de personas hablan japonés (2020)."
           },
           "sample": {
             "text": "こんにちは",
@@ -4734,8 +5019,8 @@
             "es": "Seúl, Corea del Sur"
           },
           "text": {
-            "en": "Korean descends from the Old Korean of Silla. Since 1446 it has had its own alphabet, hangul, created under King Sejong. About 81 million people speak it.",
-            "es": "El coreano desciende del coreano antiguo de Silla. Desde 1446 tiene su propio alfabeto, el hangul, creado bajo el rey Sejong. Lo hablan unos 81 millones de personas."
+            "en": "Korean descends from the Old Korean of Silla. Since 1446 it has had its own alphabet, hangul, created under King Sejong. About 81 million people speak it (2019–2022).",
+            "es": "El coreano desciende del coreano antiguo de Silla. Desde 1446 tiene su propio alfabeto, el hangul, creado bajo el rey Sejong. Lo hablan unos 81 millones de personas (2019-2022)."
           },
           "sample": {
             "text": "안녕하세요",
@@ -4886,8 +5171,8 @@
             "es": "Namibia"
           },
           "text": {
-            "en": "The largest click language, with some 200,000 speakers among the Nama and Damara. Its Khoe family came with herders about 2,000 years ago; a Dutchman first wrote it down at the Cape in 1659.",
-            "es": "La mayor lengua de chasquidos, con unos 200 000 hablantes entre los nama y los damara. Su familia khoe llegó con pastores hace unos 2000 años; un neerlandés la escribió por primera vez en el Cabo en 1659."
+            "en": "The largest click language, with some 200,000 speakers (2011) among the Nama and Damara. Its Khoe family came with herders about 2,000 years ago; a Dutchman first wrote it down at the Cape in 1659.",
+            "es": "La mayor lengua de chasquidos, con unos 200 000 hablantes (2011) entre los nama y los damara. Su familia khoe llegó con pastores hace unos 2000 años; un neerlandés la escribió por primera vez en el Cabo en 1659."
           },
           "sample": {
             "text": "Khoekhoegowab",
@@ -4919,8 +5204,8 @@
             "es": "Cabo Oriental, Sudáfrica"
           },
           "text": {
-            "en": "A Bantu language that borrowed clicks from its San neighbours: about one basic word in ten has one. It is written c, q and x. Some 8 million people speak it; it was first printed in 1823.",
-            "es": "Lengua bantú que tomó los chasquidos de sus vecinos san: una de cada diez palabras básicas tiene uno. Se escriben c, q y x. La hablan unos 8 millones de personas; se imprimió por primera vez en 1823."
+            "en": "A Bantu language that borrowed clicks from its San neighbours: about one basic word in ten has one. It is written c, q and x. Some 8 million people speak it natively (2013); it was first printed in 1823.",
+            "es": "Lengua bantú que tomó los chasquidos de sus vecinos san: una de cada diez palabras básicas tiene uno. Se escriben c, q y x. La hablan unos 8 millones de nativos (2013); se imprimió por primera vez en 1823."
           },
           "sample": {
             "text": "Molo",
@@ -5099,8 +5384,8 @@
             "es": "Ankara, Turquía"
           },
           "text": {
-            "en": "Brought to Anatolia by the Seljuk Turks in the 11th century, Turkish is now the largest Turkic language, with about 85 million native speakers.",
-            "es": "Lo llevaron a Anatolia los turcos selyúcidas en el siglo XI; hoy el turco es la mayor lengua túrquica, con unos 85 millones de hablantes nativos."
+            "en": "Brought to Anatolia by the Seljuk Turks in the 11th century, Turkish is now the largest Turkic language, with about 85 million native speakers (2006–2021).",
+            "es": "Lo llevaron a Anatolia los turcos selyúcidas en el siglo XI; hoy el turco es la mayor lengua túrquica, con unos 85 millones de hablantes nativos (2006-2021)."
           },
           "sample": {
             "text": "Günaydın",
@@ -5242,8 +5527,8 @@
             "es": "Guangxi, China"
           },
           "text": {
-            "en": "The great variety of Tai languages in Guangxi and northern Vietnam suggests that their homeland lay here. Zhuang, a Tai language, is still spoken in Guangxi by some 16 million people.",
-            "es": "La gran variedad de lenguas tai en Guangxi y el norte de Vietnam sugiere que su cuna estuvo aquí. El zhuang, una lengua tai, todavía lo hablan en Guangxi unos 16 millones de personas."
+            "en": "The great variety of Tai languages in Guangxi and northern Vietnam suggests that their homeland lay here. Zhuang, a Tai language, is still spoken in Guangxi by some 16 million people (2007).",
+            "es": "La gran variedad de lenguas tai en Guangxi y el norte de Vietnam sugiere que su cuna estuvo aquí. El zhuang, una lengua tai, todavía lo hablan en Guangxi unos 16 millones de personas (2007)."
           },
           "wiki": {
             "en": "Tai peoples",
@@ -5363,8 +5648,8 @@
             "es": "País Vasco, España y Francia"
           },
           "text": {
-            "en": "A language isolate spoken before Latin reached the Pyrenees: Roman-era inscriptions from Aquitaine record names like Nescato, “girl”. Suppressed under Franco, it has some 800,000 speakers today.",
-            "es": "Lengua aislada que ya se hablaba antes de que el latín llegara a los Pirineos: inscripciones romanas de Aquitania registran nombres como Nescato, “muchacha”. Reprimido bajo Franco, hoy tiene unos 800 000 hablantes."
+            "en": "A language isolate spoken before Latin reached the Pyrenees: Roman-era inscriptions from Aquitaine record names like Nescato, “girl”. Suppressed under Franco, it had some 806,000 speakers in 2021.",
+            "es": "Lengua aislada que ya se hablaba antes de que el latín llegara a los Pirineos: inscripciones romanas de Aquitania registran nombres como Nescato, “muchacha”. Reprimido bajo Franco, en 2021 tenía unos 806 000 hablantes."
           },
           "sample": {
             "text": "Kaixo",
@@ -5523,8 +5808,8 @@
             "es": "Jerusalén"
           },
           "text": {
-            "en": "Kept for centuries in prayer and study but no one’s mother tongue, Hebrew became an everyday language again from the late 1800s. About 9 million people speak it, 5 million as natives.",
-            "es": "Conservado durante siglos en la oración y el estudio pero sin hablantes nativos, el hebreo volvió a ser lengua cotidiana desde fines del siglo XIX. Lo hablan unos 9 millones de personas, 5 millones como nativos."
+            "en": "Kept for centuries in prayer and study but no one’s mother tongue, Hebrew became an everyday language again from the late 1800s. About 9 million people speak it, 5 million as natives (2018).",
+            "es": "Conservado durante siglos en la oración y el estudio pero sin hablantes nativos, el hebreo volvió a ser lengua cotidiana desde fines del siglo XIX. Lo hablan unos 9 millones de personas, 5 millones como nativos (2018)."
           },
           "details": {
             "en": "In Jerusalem’s markets, Jews who spoke Yiddish, Judaeo-Spanish or Arabic already used Hebrew to understand one another. Eliezer Ben-Yehuda, who moved to Jerusalem in 1881, is often called the reviver of Hebrew: he spoke only Hebrew at home and began a great dictionary. Schools and settlers then made it the language of daily life. It is the only known case of a language with no native speakers coming to have millions of them again.",
@@ -5806,8 +6091,8 @@
       "url": "https://en.wikipedia.org/wiki/Yoruba_language"
     },
     {
-      "title": "Wikipedia: Swahili language",
-      "url": "https://en.wikipedia.org/wiki/Swahili_language"
+      "title": "Wikipedia: Swahili",
+      "url": "https://en.wikipedia.org/wiki/Swahili"
     },
     {
       "title": "Wikipedia: Pama–Nyungan languages",
@@ -5846,8 +6131,8 @@
       "url": "https://en.wikipedia.org/wiki/Tamil_language"
     },
     {
-      "title": "Wikipedia: Brahui language",
-      "url": "https://en.wikipedia.org/wiki/Brahui_language"
+      "title": "Wikipedia: Brahvi language",
+      "url": "https://en.wikipedia.org/wiki/Brahvi_language"
     },
     {
       "title": "Wikipedia: Austroasiatic languages",
@@ -5898,8 +6183,8 @@
       "url": "https://en.wikipedia.org/wiki/Guarani_language"
     },
     {
-      "title": "Wikipedia: Eskimo–Aleut languages",
-      "url": "https://en.wikipedia.org/wiki/Eskimo–Aleut_languages"
+      "title": "Wikipedia: Eskaleut languages",
+      "url": "https://en.wikipedia.org/wiki/Eskaleut_languages"
     },
     {
       "title": "Wikipedia: Inuktitut",
