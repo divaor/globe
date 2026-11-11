@@ -255,9 +255,10 @@ a { color: var(--accent); }
 .cc-flag .flag-emoji { font-size: 30px; line-height: 1; }
 .cc-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
 .cc-title { align-self: flex-start; max-width: 100%; border: 0; background: none; padding: 0; text-align: left; font: inherit; font-size: 15px; font-weight: 800; color: var(--text); cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.cc-row { display: flex; gap: 6px; align-items: baseline; font-size: 12.5px; min-width: 0; }
-.cc-label { color: var(--muted); white-space: nowrap; flex: none; max-width: 55%; overflow: hidden; text-overflow: ellipsis; }
-.cc-value { font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+/* A long value (a number with its rank) goes under its label rather than being cut off. */
+.cc-row { display: flex; flex-wrap: wrap; column-gap: 6px; align-items: baseline; font-size: 12.5px; min-width: 0; }
+.cc-label { color: var(--muted); white-space: nowrap; flex: none; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+.cc-value { font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; max-width: 100%; }
 .cc-more { flex: none; }
 .card-head { display: flex; gap: 12px; align-items: center; margin-right: 32px; }
 .flag { width: 52px; height: 39px; object-fit: cover; border-radius: 6px; box-shadow: 0 0 0 1px var(--line-strong); background: var(--chip); }
@@ -557,3 +558,74 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
 .mt-flag-none { display: inline-flex; align-items: center; justify-content: center; box-shadow: none; font-size: 13px; }
 .mt-more { margin: 4px 0 0; }
 .games-names { font-size: 13px; line-height: 1.55; color: var(--muted); }
+
+/* ---------- compare two filters: the 3 × 3 legend, legend buttons and the chart card */
+.lg-bi { display: grid; gap: 4px; }
+.lg-bi-y, .lg-bi-x { font-size: 11.5px; font-weight: 650; color: var(--muted); line-height: 1.25; }
+.lg-bi-grid { display: grid; grid-template-columns: repeat(3, 44px); grid-auto-rows: 30px; gap: 3px; }
+.lg-bi-cell { display: grid; place-items: center; padding: 0; border: 2px solid transparent; border-radius: 6px; cursor: pointer; }
+.lg-bi-cell:disabled { cursor: default; opacity: .45; }
+.lg-bi-cell.on { border-color: var(--text); box-shadow: 0 0 0 2px var(--accent); }
+.lg-bi-n { font-size: 11px; font-weight: 800; color: #1b2433; }
+.lg-bi-cell.dark .lg-bi-n { color: #fff; }
+.lg-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.lg-act { height: 30px; padding: 0 10px; gap: 5px; font-size: 12px; }
+.lg-act-icon { font-weight: 800; }
+/* A highlighted square's banner goes under a card at the top. */
+html.has-topcard .lg-banner { top: calc(var(--topcard-b, 66px) + 2px); }
+.compare-card { position: absolute; top: calc(66px + var(--safe-t)); left: 50%; transform: translateX(-50%); width: min(520px, calc(100vw - 24px)); max-height: calc(100vh - 150px - var(--safe-t)); overflow-y: auto; overscroll-behavior: contain; border-radius: 16px; padding: 12px 14px; z-index: 4; }
+.compare-card.peek { padding-bottom: 10px; }
+/* Wide screens: the card sits beside the map, in the Filters panel's place, and the legend moves to the right. */
+@media (min-width: 1200px) and (min-height: 600px) {
+  .compare-card { left: calc(12px + var(--safe-l)); top: calc(70px + var(--safe-t)); transform: none; width: 410px; max-height: calc(100vh - 200px - var(--safe-t) - var(--safe-b)); }
+  html.has-sidecard .legend { left: auto; right: calc(64px + var(--safe-r)); }
+  html.has-sidecard .country-card { max-height: calc(100vh - 110px - var(--legend-h, 0px) - var(--safe-t) - var(--safe-b)); }
+  html.has-sidecard .country-card.compact { width: 380px; }
+}
+.cmp-title { flex: 1; min-width: 0; margin-right: 6px; font-size: 13.5px; line-height: 1.25; }
+.cmp-fold { flex: none; height: 30px; padding: 0 10px; gap: 5px; margin-right: 4px; font-size: 12.5px; }
+.cmp-fold.on { border-color: var(--accent); color: var(--accent); }
+.cmp-sum { margin-top: 6px; font-size: 13.5px; line-height: 1.35; }
+/* Not one of the map's full-screen canvases (#app canvas). */
+#app .cmp-canvas { position: static; inset: auto; display: block; margin-top: 2px; cursor: pointer; touch-action: manipulation; }
+.cmp-ycap, .cmp-xcap { font-size: 11.5px; font-weight: 650; color: var(--muted); line-height: 1.3; }
+.cmp-ycap { margin-top: 8px; }
+.cmp-xcap { margin-top: 2px; text-align: right; }
+.cmp-keys { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin-top: 8px; font-size: 11.5px; color: var(--muted); }
+.cmp-key { display: inline-flex; align-items: center; gap: 4px; }
+.cmp-dot { width: 9px; height: 9px; border-radius: 50%; }
+.cmp-keys .chip { height: 26px; margin-left: auto; padding: 0 9px; font-size: 11.5px; }
+.cmp-stats { margin-top: 8px; font-size: 11.5px; color: var(--muted); line-height: 1.4; }
+.cmp-exc { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 8px; }
+.cmp-exc-t { font-size: 12px; font-weight: 700; }
+.cmp-country { height: 28px; padding: 0 10px; font-size: 12px; }
+.cmp-note { margin: 8px 0 0; font-size: 11.5px; color: var(--muted); line-height: 1.4; }
+.cmp-table-wrap { margin-top: 8px; overflow-x: auto; }
+.cmp-table { border-collapse: collapse; font-size: 12px; }
+.cmp-table caption { padding-bottom: 4px; font-size: 11.5px; color: var(--muted); text-align: left; }
+.cmp-table th { padding: 3px 6px; font-weight: 650; text-align: left; white-space: nowrap; }
+.cmp-table thead th { font-size: 11px; color: var(--muted); }
+.cmp-table td { padding: 2px; color: var(--muted); text-align: center; }
+.cmp-cell { min-width: 36px; height: 28px; border: 1px solid var(--line); border-radius: 8px; color: var(--text); font: inherit; font-weight: 750; cursor: pointer; }
+.cmp-rank-t { margin-top: 8px; font-size: 12px; font-weight: 750; }
+.cmp-rank { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 4px 6px; margin-top: 4px; }
+.cmp-rank .cmp-country { width: 100%; justify-content: flex-start; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.cmp-rk { min-width: 1.6em; color: var(--muted); font-weight: 700; }
+.cmp-picks { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; align-items: end; gap: 6px; margin-top: 8px; }
+.cmp-pick { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.cmp-pick-l { font-size: 11px; font-weight: 700; color: var(--muted); }
+.cmp-swap { height: 32px; width: 34px; font-size: 16px; font-weight: 800; }
+@media (max-width: 720px) {
+  .compare-card { max-height: 62vh; }
+  .compare-card.peek { max-height: none; }
+  /* The open chart has the pickers: the legend and chips come back with the map ("Map"). */
+  html.topcard-full .legend, html.topcard-full .chips { display: none; }
+}
+
+/* Guess the link: the pair, the answer's scatter plot, and small plots in the result. */
+.quiz-link { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 8px; font-size: 15px; font-weight: 750; }
+.quiz-link-x { color: var(--muted); }
+.quiz-link-dir { margin-top: 6px; font-size: 13px; line-height: 1.35; }
+#app .quiz-plot { position: static; inset: auto; display: block; margin-top: 8px; }
+.quiz-link-axes { margin-top: 4px; font-size: 11.5px; color: var(--muted); }
+#app .quiz-thumb .quiz-plot { margin: 0; width: 48px; height: 48px; }

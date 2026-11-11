@@ -62,8 +62,15 @@ export function filtersPanel(app: App): FiltersPanel {
 
   const renderList = () => {
     clear(list);
+    // Tools that work with the other filters (Compare two filters) come first.
+    const featured = [...app.registry.values()].filter((d) => d.featured && !d.hidden && matches(d));
+    if (featured.length) {
+      const grid = h('div', { class: 'card-grid' });
+      for (const d of featured) grid.append(filterCard(app, d, tap));
+      list.append(h('section', { class: 'cat cat-featured' }, h('h3', { class: 'cat-title' }, h('span', { class: 'cat-icon' }, '✨'), t('featured')), grid));
+    }
     for (const cat of CATEGORY_ORDER) {
-      const defs = [...app.registry.values()].filter((d) => !d.hidden && d.category === cat.id && matches(d));
+      const defs = [...app.registry.values()].filter((d) => !d.hidden && !d.featured && d.category === cat.id && matches(d));
       if (!defs.length) continue;
       const grid = h('div', { class: 'card-grid' });
       for (const d of defs) grid.append(filterCard(app, d, tap));
@@ -91,6 +98,8 @@ export function filtersPanel(app: App): FiltersPanel {
   };
   let tapping = false;
   function tap(id: string) {
+    // Compare two filters starts with its chart open (and the sheet out of the way on a phone).
+    if (id === 'compare' && !app.isActive(id)) { app.emit('compare'); return; }
     tapping = true;
     try { steady(() => { app.toggle(id); renderActive(); renderList(); }, id); } finally { tapping = false; }
   }

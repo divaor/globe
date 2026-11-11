@@ -24,12 +24,24 @@ export interface LegendItem {
   shape?: 'square' | 'line' | 'dot' | 'dash' | 'emoji' | 'hatch';
   /** Country ids this item covers (for highlight on hover). */
   ids?: string[];
+  /** How many countries it counts, when `ids` also holds territories drawn as their own shapes. */
+  count?: number;
 }
 
-export type Legend =
-  | { kind: 'categories'; title?: string; items: LegendItem[]; note?: string }
-  | { kind: 'gradient'; title?: string; stops: string[]; min: string; max: string; mid?: string; note?: string }
-  | { kind: 'html'; title?: string; html: string; note?: string };
+/** A button under a legend (open a chart, swap two filters...). */
+export interface LegendAction { label: string; icon?: string; onClick: () => void; primary?: boolean }
+
+interface LegendBase { title?: string; note?: string; actions?: LegendAction[] }
+
+export type Legend = LegendBase & (
+  | { kind: 'categories'; items: LegendItem[] }
+  | { kind: 'gradient'; stops: string[]; min: string; max: string; mid?: string }
+  | { kind: 'html'; html: string }
+  /**
+   * Two filters at once: a 3 × 3 grid, filter A across (low to high) and filter B up. `cells[a + 3 * b]`
+   * is the square for A's third `a` and B's third `b` (0 low, 1 middle, 2 high); `count` shows inside it.
+   */
+  | { kind: 'bivariate'; cells: LegendItem[]; x: string; y: string });
 
 export interface InfoRow { label: string; value: string; icon?: string }
 
@@ -106,6 +118,10 @@ export interface LayerDef {
   bakeable?: boolean;
   /** Keywords for search in the Filters panel. */
   keywords?: string;
+  /** The country-facts field this filter shows: its legend offers "Compare with…". */
+  compareKey?: string;
+  /** Listed first in the Filters panel, in a section of its own. */
+  featured?: boolean;
   load?(ctx: LayerContext, inst: LayerInstance): Promise<void>;
   raster?(rc: RenderCtx, inst: LayerInstance): RasterDraw[] | null;
   countryColor?(id: string, inst: LayerInstance, rc: RenderCtx): string | null | undefined;

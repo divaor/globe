@@ -72,12 +72,21 @@ S = {
 FIELDS = collections.OrderedDict()
 DATA = collections.defaultdict(dict)
 
+# Amounts that add up over a country (people, area, money, tonnes, things counted), as opposed to
+# rates, shares, averages and ranks. Only a total divided by a total makes a meaningful ratio
+# ("Olympic medals per million people"), so the app offers ratios for these alone.
+TOTALS = {'population', 'area_km2', 'gdp_usd', 'coastline_km', 'oil_production', 'gas_production', 'coal_production',
+          'nuclear_reactors', 'airports', 'railways_km', 'unesco_sites', 'co2_mt', 'olympic_medals', 'olympic_golds',
+          'world_cup_titles', 'womens_world_cup_titles'}
+
 
 def field(fid, label_en, label_es, group, ftype, src, **kw):
     meta = {'label_en': label_en, 'label_es': label_es, 'group': group, 'type': ftype}
     for k in ('unit', 'year', 'scale', 'higherIs'):
         if k in kw:
             meta[k] = kw.pop(k)
+    if fid in TOTALS:
+        meta['measure'] = 'total'
     if 'unit' in meta:
         meta['unit_es'] = CX.UNIT_ES.get(meta['unit'])
         if meta['unit_es'] is None:

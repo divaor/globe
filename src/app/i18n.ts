@@ -99,6 +99,7 @@ const STRINGS: Record<string, [string, string]> = {
   'cat.imagery': ['Imagery', 'Imágenes'],
   'cat.live': ['Live', 'En vivo'],
   'cat.fun': ['Fun facts', 'Curiosidades'],
+  featured: ['Compare', 'Comparar'],
   // projections
   'proj.globe': ['Globe', 'Globo'],
   'proj.equirectangular': ['Plate Carrée', 'Equirrectangular'],
@@ -281,6 +282,12 @@ export function t(key: string, vars?: Record<string, string | number>): string {
   let s = row ? row[current === 'es' ? 1 : 0] : key;
   if (vars) for (const [k, v] of Object.entries(vars)) s = s.replace(`{${k}}`, String(v));
   return s;
+}
+
+/** A string of the table in both languages (for labels that switch with the language). */
+export function both(key: string): { en: string; es: string } {
+  const row = STRINGS[key];
+  return row ? { en: row[0], es: row[1] } : { en: key, es: key };
 }
 
 export function tx(text: { en: string; es: string } | undefined): string {

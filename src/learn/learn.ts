@@ -12,16 +12,22 @@ import type { RenderSettings } from '../engine/renderer';
 import { TOURS, type Tour, type TourStep } from './tours';
 import type { Unit } from '../modes/paleo';
 import { regionCountries, loadRegions, frameRegions, regionAt, regionThumb, drawRegions, type Region, type RegionMark } from './regions';
+import * as CM from '../compare/model';
+import { drawScatter } from '../compare/chart';
+import { direction, strengthWords, fmtR } from '../compare/compare';
+import { strength } from '../compare/stats';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
 const shuffle = <T,>(a: T[]) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 
-type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion';
+type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link';
 /** An item of a story collection, tagged with its collection. */
 interface QItem extends CollectionItem { kind: StoryKind }
 /** A question; once answered, whether it was right and what the player answered. */
-interface Q { id: string; options?: string[]; item?: QItem; ok?: boolean; given?: string; pick?: string }
+interface Q { id: string; options?: string[]; item?: QItem; ok?: boolean; given?: string; pick?: string; link?: Link }
+/** "Guess the link": two country facts, their correlation and how many countries have both. */
+interface Link { a: string; b: string; rho: number; n: number }
 const ITEM_QUIZZES: QuizKind[] = ['where', 'when', 'dish', 'era', 'civ', 'period', 'champion'];
 /** The civilization stories of Peoples and civilizations: the answers of "Which civilization?". */
 const CIV_STORIES = ['mesopotamia', 'ancient-egypt', 'indus-valley', 'persia', 'kush-aksum', 'ancient-china', 'khmer', 'west-african-empires', 'great-zimbabwe-swahili', 'olmecs-maya', 'andes'];
@@ -42,6 +48,39 @@ function yearOptions(y: number): number[] {
   }
   return [...opts].sort((a, b) => a - b);
 }
+
+/**
+ * "Guess the link": pairs of country facts whose correlation teaches something: strong links (wealth
+ * and life expectancy), opposite ones (median age and children per woman), weak ones and none at all.
+ */
+const LINK_PAIRS: [string, string][] = [
+  ['gdp_per_capita', 'life_expectancy'], ['gdp_per_capita', 'happiness'], ['gdp_per_capita', 'co2_per_capita'], ['gdp_per_capita', 'height_male_cm'],
+  ['median_age', 'happiness'], ['alcohol_litres', 'median_age'], ['urban_pct', 'gdp_per_capita'], ['electricity_access_pct', 'life_expectancy'],
+  ['urban_pct', 'happiness'], ['alcohol_litres', 'happiness'], ['internet_users_pct', 'mobile_per_100'], ['gdp_per_capita', 'obesity_pct'],
+  ['median_age', 'fertility_rate'], ['internet_users_pct', 'fertility_rate'], ['literacy_pct', 'fertility_rate'], ['gdp_per_capita', 'fertility_rate'],
+  ['happiness', 'fertility_rate'], ['avg_temperature', 'olympic_medals'], ['alcohol_litres', 'fertility_rate'], ['avg_temperature', 'height_male_cm'],
+  ['avg_temperature', 'hdi'], ['life_expectancy', 'fertility_rate'],
+  ['avg_temperature', 'gdp_per_capita'], ['tobacco_pct', 'life_expectancy'], ['gini', 'happiness'], ['area_km2', 'gdp_per_capita'],
+  ['pop_density', 'life_expectancy'], ['gini', 'life_expectancy'], ['agricultural_land_pct', 'forest_pct'], ['nuclear_share_elec', 'co2_per_capita'],
+  ['renewables_share_elec', 'co2_per_capita'], ['tobacco_pct', 'gdp_per_capita'], ['gini', 'avg_temperature'], ['highest_point_m', 'avg_temperature'],
+  ['population', 'gdp_per_capita'], ['independence_year', 'gdp_per_capita'],
+  ['forest_pct', 'life_expectancy'], ['renewables_share_elec', 'hdi'], ['forest_pct', 'gdp_per_capita'], ['pop_density', 'happiness'],
+  ['alcohol_litres', 'pop_density'], ['unemployment_pct', 'median_age'], ['unemployment_pct', 'gdp_per_capita'], ['pop_density', 'co2_per_capita'],
+  ['area_km2', 'forest_pct'], ['voting_age', 'happiness'], ['population', 'gini'],
+];
+/** The four answers: a strong link either way, a weak one, or none. */
+const LINK_ANSWERS = ['up', 'weak', 'none', 'down'] as const;
+/** Which answer a correlation is: strong from |rho| = 0.45, none below 0.15. */
+const linkBucket = (rho: number) => (rho >= 0.45 ? 'up' : rho <= -0.45 ? 'down' : Math.abs(rho) < 0.15 ? 'none' : 'weak');
+/** A pair too close to a boundary would be unfair to guess. */
+const linkClear = (rho: number) => Math.abs(Math.abs(rho) - 0.15) >= 0.04 && Math.abs(Math.abs(rho) - 0.45) >= 0.04;
+/** A word on the pairs where a third factor is the whole story. */
+const LINK_WHY: Record<string, { en: string; es: string }> = {
+  'tobacco_pct|life_expectancy': {
+    en: 'Smoking does not lengthen life: in richer countries, where people live longer, more adults also smoke. A third factor, wealth, links the two.',
+    es: 'Fumar no alarga la vida: en los países más ricos, donde se vive más, también fuman más adultos. Un tercer factor, la riqueza, une a ambos.',
+  },
+};
 
 export class Learn {
   private card: HTMLElement;
@@ -139,6 +178,7 @@ export class Learn {
       ['civ', '🏺', L('Which civilization?', '¿Qué civilización?'), L('Match finds, works and rulers to their civilization.', 'Relaciona hallazgos, obras y gobernantes con su civilización.')],
       ['period', '🦕', L('Which period?', '¿Qué periodo?'), L('Match fossils and ancient animals to their geologic period.', 'Relaciona fósiles y animales antiguos con su periodo geológico.')],
       ['champion', '🏆', L('Who won?', '¿Quién ganó?'), L('World Cup champions, and the countries that topped each Olympics\u2019 medal table.', 'Los campeones del Mundial y los países que encabezaron el medallero de cada Olimpiada.')],
+      ['link', '📈', L('Guess the link', 'Adivina la relación'), L('Do two facts about countries go together? Guess, then see the scatter plot.', '¿Van juntos dos datos de los países? Adivina y luego mira el diagrama de dispersión.')],
     ];
     const list2 = h('div', { class: 'mode-list' });
     for (const [k, ic, title, desc] of more) {
@@ -156,6 +196,7 @@ export class Learn {
     this.stopTour();
     this.shell.sheet.close();
     if (kind === 'region') { await this.startRegionQuiz(region, false); return; }
+    if (kind === 'link') { await this.startLinkQuiz(); return; }
     if (ITEM_QUIZZES.includes(kind)) { await this.startItemQuiz(kind); return; }
     const pool = this.pool(region);
     const ids = shuffle(pool.slice()).slice(0, 10);
@@ -534,6 +575,7 @@ export class Learn {
     }
     if (cur.item) { this.renderItemQuestion(q.kind, cur, feedback); return; }
     if (q.kind === 'region') { this.renderRegionQuestion(cur, feedback); return; }
+    if (q.kind === 'link') { this.renderLinkQuestion(cur, feedback); return; }
     const name = this.app.data.name(cur.id, lang());
     if (q.kind === 'find') add(this.card, h('div', { class: 'quiz-q' }, L(`Where is ${name}?`, `¿Dónde está ${name}?`)));
     if (q.kind === 'flag') add(this.card, h('div', { class: 'quiz-q' }, L('Which country has this flag?', '¿De qué país es esta bandera?')),
@@ -599,6 +641,12 @@ export class Learn {
     cur.ok = ok; cur.pick = o;
     cur.given = cur.item ? this.optionLabel(q.kind, o, cur) : q.kind === 'capital' ? this.capital(o) : this.app.data.name(o, lang());
     b.classList.add(ok ? 'ok' : 'bad');
+    if (cur.link) {
+      cur.given = this.linkLabel(o);
+      const k = cur.link;
+      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L(`It was: ${this.linkLabel(cur.id)}. `, `Era: ${this.linkLabel(cur.id)}. `)}ρ = ${fmtR(k.rho)}, ${strengthWords(strength(k.rho))}.` });
+      return;
+    }
     if (cur.item) {
       const it = cur.item;
       this.showItem(it);
@@ -652,7 +700,7 @@ export class Learn {
   /** The result: the score, then every question, right or wrong, with a small picture; a tap shows it on the map. */
   private renderResult() {
     const q = this.quiz!;
-    const top = q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
+    const top = q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : q.kind === 'link' ? L('Data master! 📊', '¡Maestro de los datos! 📊') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
     const msg = q.score >= 9 ? top : q.score >= 6 ? L('Great job! 🌍', '¡Muy bien! 🌍') : L('Keep exploring! 🧭', '¡Sigue explorando! 🧭');
     add(this.card, this.quizHead(`${L('Result', 'Resultado')} ${q.score}/${q.qs.length}`, ''));
     if (q.peek) return;
@@ -670,6 +718,7 @@ export class Learn {
   /** One question in the result: picture, what it was, the right answer and, if wrong, yours. */
   private resultRow(kind: QuizKind, cur: Q): HTMLElement {
     if (kind === 'region') return this.regionRow(cur);
+    if (kind === 'link') return this.linkRow(cur);
     const it = cur.item;
     const name = it ? tx(it.name) : this.app.data.name(cur.id, lang());
     const right = it
@@ -705,6 +754,99 @@ export class Learn {
       q.peek = true;
       this.renderQuiz();
     });
+    return row;
+  }
+
+  // ---- Guess the link
+
+  /** Ten pairs of country facts, a few of each kind of link, each clearly one of the four answers. */
+  private async startLinkQuiz() {
+    try { await CM.loadFacts(); } catch {
+      this.shell.toast(L('This quiz needs the country data; check your connection.', 'Este concurso necesita los datos de los países; revisa tu conexión.'));
+      return;
+    }
+    const pairs: Link[] = [];
+    for (const [a, b] of LINK_PAIRS) {
+      const an = CM.analyse(a, b, 'both');
+      if (an?.kind === 'nn' && linkClear(an.rho)) pairs.push({ a, b, rho: an.rho, n: an.n });
+    }
+    // Three strong links, three opposite, two weak and two with none, when there are enough.
+    const want: Record<string, number> = { up: 3, down: 3, weak: 2, none: 2 };
+    const picks: Link[] = [];
+    for (const [k, n] of Object.entries(want)) picks.push(...shuffle(pairs.filter((p) => linkBucket(p.rho) === k)).slice(0, n));
+    for (const p of shuffle(pairs.filter((x) => !picks.includes(x)))) if (picks.length < 10) picks.push(p);
+    // Either way round: sometimes A across, sometimes B.
+    const qs: Q[] = shuffle(picks).slice(0, 10).map((p) => {
+      const l = Math.random() < 0.5 ? p : { ...p, a: p.b, b: p.a };
+      return { id: linkBucket(l.rho), options: [...LINK_ANSWERS], link: l };
+    });
+    this.quiz = { kind: 'link', region: 'world', qs, i: 0, score: 0, answered: false, savedLabels: { ...this.app.renderer.settings.labels }, peek: false };
+    this.app.select(null);
+    this.renderQuiz();
+  }
+
+  private linkLabel(k: string): string {
+    return ({
+      up: L('Strong: they rise together', 'Fuerte: suben juntos'),
+      weak: L('A weak link', 'Una relación débil'),
+      none: L('Little or no link', 'Casi ninguna relación'),
+      down: L('Strong: one rises, the other falls', 'Fuerte: uno sube y el otro baja'),
+    } as Record<string, string>)[k] ?? k;
+  }
+
+  private linkName(key: string) { return `${CM.fieldIcon(key)} ${tx(CM.fieldName(key))}`; }
+
+  /** A small scatter plot of a pair, for the answer and the result. */
+  private linkPlot(k: Link, w: number, hgt: number): HTMLCanvasElement {
+    const c = h('canvas', { class: 'quiz-plot', role: 'img', 'aria-label': `${tx(CM.fieldName(k.a))} × ${tx(CM.fieldName(k.b))}: ρ = ${fmtR(k.rho)}` }) as HTMLCanvasElement;
+    const an = CM.analyse(k.a, k.b, 'both');
+    if (an?.kind === 'nn') {
+      drawScatter(c, {
+        w, h: hgt, dark: this.app.themeId === 'dark', mini: true, line: an.line,
+        dots: an.pts.map((p) => ({ iso: p.iso, x: p.x, y: p.y, r: w < 80 ? 1.6 : 2.6, color: '#4dabf7' })),
+        ax: { t: an.tx, fmt: String }, ay: { t: an.ty, fmt: String },
+      });
+    }
+    return c;
+  }
+
+  /** "How are these two linked?": A, B and the four answers; then the scatter plot. */
+  private renderLinkQuestion(cur: Q, feedback?: { ok: boolean; text: string }) {
+    const q = this.quiz!;
+    const k = cur.link!;
+    add(this.card, h('div', { class: 'quiz-q' }, L('Across the countries of the world, how are these two linked?', 'En los países del mundo, ¿cómo se relacionan estos dos?')),
+      h('div', { class: 'quiz-link' }, h('span', null, this.linkName(k.a)), h('span', { class: 'quiz-link-x' }, '×'), h('span', null, this.linkName(k.b))));
+    const opts = h('div', { class: 'quiz-opts' });
+    for (const o of cur.options ?? []) {
+      const b = h('button', { type: 'button', class: 'pill quiz-opt' }, this.linkLabel(o)) as HTMLButtonElement;
+      if (q.answered) { b.disabled = true; if (o === cur.id) b.classList.add('ok'); else if (o === cur.pick) b.classList.add('bad'); }
+      b.addEventListener('click', () => this.answerOption(o, b));
+      opts.append(b);
+    }
+    add(this.card, opts);
+    if (feedback) {
+      const w = Math.min(520, window.innerWidth - 24) - 28;
+      const why = LINK_WHY[`${k.a}|${k.b}`] ?? LINK_WHY[`${k.b}|${k.a}`];
+      const see = h('button', { type: 'button', class: 'pill sm' }, L('See it on the map', 'Verlo en el mapa'));
+      see.addEventListener('click', () => { this.stopQuiz(); this.app.emit('compare', k.a, k.b); });
+      add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text),
+        h('div', { class: 'quiz-link-dir' }, direction(k.a, k.b, k.rho)),
+        this.linkPlot(k, w, 120),
+        h('div', { class: 'quiz-link-axes' }, `→ ${tx(CM.fieldName(k.a))} · ↑ ${tx(CM.fieldName(k.b))} · ${k.n} ${L('countries', 'países')}`),
+        why ? h('div', { class: 'tool-hint' }, tx(why)) : null,
+        h('div', { class: 'tool-actions' }, see, this.nextButton()));
+    }
+  }
+
+  /** A pair in the result: its small plot, the right answer and, if missed, yours; a tap opens it on the map. */
+  private linkRow(cur: Q): HTMLElement {
+    const k = cur.link!;
+    const pic = h('span', { class: 'quiz-thumb' }, this.linkPlot(k, 48, 48));
+    const row = h('button', { type: 'button', class: `quiz-sum-row ${cur.ok ? 'ok' : 'bad'}`, role: 'listitem' }, pic,
+      h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, `${tx(CM.fieldName(k.a))} × ${tx(CM.fieldName(k.b))}`),
+        h('span', { class: 'quiz-sum-ans' }, [`${this.linkLabel(cur.id)} (ρ = ${fmtR(k.rho)})`, cur.ok ? '' : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : ''].filter(Boolean).join(' · '))),
+      h('span', { class: 'quiz-sum-mark', 'aria-label': cur.ok ? L('right', 'correcto') : L('wrong', 'incorrecto') }, cur.ok ? '✓' : '✗'));
+    row.addEventListener('click', () => { this.stopQuiz(); this.app.emit('compare', k.a, k.b); });
     return row;
   }
 

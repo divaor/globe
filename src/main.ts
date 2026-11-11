@@ -8,8 +8,9 @@ import { STORY_KINDS, storyHashKey } from './modes/stories';
 import { Tools } from './tools/tools';
 import { Learn } from './learn/learn';
 import { PersonalMaps } from './personal/personal';
+import { Compare } from './compare/compare';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare } } }
 
 async function boot() {
   // Read before the app rewrites the address with its own state.
@@ -33,7 +34,8 @@ async function boot() {
   const tools = new Tools(app, shell);
   const learn = new Learn(app, shell, time);
   const personal = new PersonalMaps(app, shell);
-  window.atlas = { app, shell, time, tools, learn, personal };
+  const compare = new Compare(app, shell, time);
+  window.atlas = { app, shell, time, tools, learn, personal, compare };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };

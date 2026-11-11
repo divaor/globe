@@ -56,11 +56,15 @@ python3 -I scripts/data/attributes/validate_attributes.py       # coverage table
 {
   "meta":   { "keys": "...", "attribution": "..." },
   "fields": { "<fieldId>": { "label_en", "label_es", "group", "type", "unit", "unit_es", "year",
-                             "scale", "higherIs", "categories": { "<id>": { "en", "es", ["emoji"], ["color"] } },
+                             "scale", "higherIs", ["measure"], "categories": { "<id>": { "en", "es", ["emoji"], ["color"] } },
                              "source", "license", "note" } },
   "data":   { "<ISO3>": { "<fieldId>": value } }
 }
 ```
+
+`"measure": "total"` marks a number that adds up over a country (population, area, GDP, a production, a
+count of medals or sites; the `TOTALS` set in `build_attributes.py`). Compare two filters offers to divide
+one total by another (per person, per km², per US$ of GDP); rates and shares are never divided.
 
 Types: `number`, `category` (string id), `list` (array of ids), `boolean`, `text`. Every id used in a
 `category`/`list` field has an entry in that field's `categories`. Keys are ISO alpha-3, plus `XKX`

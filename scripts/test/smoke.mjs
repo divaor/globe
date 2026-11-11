@@ -9,7 +9,9 @@
 // data grids keep their colours over land while the map moves; northern countries stay drawn on
 // zoomed-in flat maps; yesterday's satellite picture is not empty (needs NASA GIBS online); the
 // wars and conquests mode plays a conflict, with battle cards and step details; a story opens from a
-// shared link; the quizzes made from the stories, and a city tour that hops between collections.
+// shared link; Compare two filters (the two-colour map, its chart linked to the globe, a total divided
+// by another, categories, Spanish); the quizzes made from the stories and Guess the link, and a city
+// tour that hops between collections.
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 let chromium, devices;
@@ -192,9 +194,10 @@ async function open(opts, hash) {
     const c = body.querySelector(`.fcard[data-id="${id}"]`);
     return { top: Math.round(c.getBoundingClientRect().top), scroll: Math.round(body.scrollTop) };
   }, id);
+  // A filter that turns on in the list (Compare two filters opens its own card and closes the panel).
   const pickCard = () => page.evaluate(() => {
     const b = document.querySelector('.sheet-body').getBoundingClientRect();
-    return [...document.querySelectorAll('.sheet-body .fcard')].find((c) => c.getBoundingClientRect().top > b.top + 150 && c.getBoundingClientRect().bottom < b.bottom && !c.classList.contains('on')).dataset.id;
+    return [...document.querySelectorAll('.sheet-body .fcard')].find((c) => c.getBoundingClientRect().top > b.top + 150 && c.getBoundingClientRect().bottom < b.bottom && !c.classList.contains('on') && c.dataset.id !== 'compare').dataset.id;
   });
   const tapAndWait = async (id) => {
     await page.tap(`.sheet-body .fcard[data-id="${id}"]`);
@@ -574,6 +577,118 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 12f. Compare two filters: from the Filters panel, GDP per capita against life expectancy on a
+// two-colour map, with its chart (a strong link); the legend's nine squares count the countries and a
+// tap lights theirs; a dot on the chart picks its country, whose strip shows both values with their
+// ranks; a total divided by another (Olympic medals per person) ranks who leads; a category against
+// a number and two categories; Spanish, with the decimal comma; and "Compare with…" in a filter's
+// legend starts from that filter, which the card's X gives back.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en');
+  await page.waitForFunction(() => window.atlas.app.registry.has('compare'), null, { timeout: 30000 });
+  await page.tap('[data-dock="filters"]');
+  await page.waitForTimeout(600);
+  await page.evaluate(() => document.querySelector('.fcard[data-id="compare"]').click());
+  await page.waitForSelector('.compare-card:not([hidden]) .cmp-canvas', { timeout: 30000 });
+  await page.waitForTimeout(800);
+  const c1 = await page.evaluate(() => ({
+    hash: decodeURIComponent(location.hash), sheet: document.querySelector('.sheet').hidden, sum: document.querySelector('.cmp-sum')?.textContent ?? '',
+    stats: document.querySelector('.cmp-stats')?.textContent ?? '', exc: document.querySelectorAll('.cmp-exc .cmp-country').length, w: document.querySelector('.cmp-canvas')?.width ?? 0,
+  }));
+  check(/o=compare:a=gdp_per_capita;b=life_expectancy/.test(c1.hash) && c1.sheet && /strong link/.test(c1.sum) && /ρ = 0\.\d\d/.test(c1.stats) && c1.exc === 3 && c1.w > 0, `Compare two filters opens from the Filters panel with its chart (${c1.stats.slice(0, 60)})`);
+  // "Map" folds the chart away; the legend's nine squares count the countries, and a tap lights them.
+  await page.evaluate(() => document.querySelector('.cmp-fold').click());
+  await page.waitForTimeout(500);
+  if (await page.evaluate(() => !document.querySelector('.lg-bi-grid'))) await page.tap('.legend-toggle');
+  await page.waitForTimeout(400);
+  const grid = await page.evaluate(() => [...document.querySelectorAll('.lg-bi-cell')].map((c) => Number(c.textContent || 0)));
+  const big = grid.indexOf(Math.max(...grid)), total = grid.reduce((n, k) => n + k, 0);
+  await page.evaluate((i) => document.querySelectorAll('.lg-bi-cell')[i].click(), big);
+  await page.waitForTimeout(500);
+  const lit = await page.evaluate(() => ({ n: window.atlas.app.renderer.highlight?.size ?? 0, banner: document.querySelector('.lg-banner:not([hidden])')?.textContent ?? '' }));
+  // The banner counts countries as the square does (territories drawn apart are lit, not counted).
+  check(grid.length === 9 && total >= 200 && lit.n >= grid[big] && lit.banner.includes(`· ${grid[big]} countries`), `the legend's nine squares hold ${total} countries; a tap lights ${grid[big]} of them (${lit.banner.slice(0, 60)}…${lit.banner.slice(-14)})`);
+  await page.evaluate(() => document.querySelector('.lg-banner-x')?.click());
+  await page.evaluate(() => document.querySelector('.cmp-fold').click());
+  await page.waitForSelector('.compare-card .cmp-canvas', { timeout: 10000 });
+  await page.waitForTimeout(500);
+  // A dot on the chart: the first spot where the chart's own hit test finds a country.
+  const dot = await page.evaluate(() => {
+    const cv = document.querySelector('.cmp-canvas'), r = cv.getBoundingClientRect(), hit = window.atlas.compare.hit;
+    for (let y = 20; y < r.height - 20; y += 6) for (let x = 50; x < r.width - 10; x += 6) { const iso = hit(x, y); if (iso) return { x: r.left + x, y: r.top + y, iso }; }
+    return null;
+  });
+  if (dot) await page.touchscreen.tap(dot.x, dot.y);
+  await page.waitForTimeout(1800);
+  const picked = await page.evaluate(() => {
+    const sel = window.atlas.app.selection;
+    return { iso: sel ? window.atlas.app.data.meta[sel]?.iso ?? sel : null, rows: [...document.querySelectorAll('.country-card:not([hidden]) .cc-row')].map((r) => r.textContent) };
+  });
+  check(!!dot && picked.iso === dot.iso && picked.rows.length === 2 && picked.rows.every((r) => /\d+(st|nd|rd|th) of \d+/.test(r)), `a dot on the chart picks its country, whose strip shows both values with their ranks (${picked.rows.join(' | ')})`);
+  await page.evaluate(() => document.querySelector('.country-card .card-close')?.click());
+  // Olympic medals and population: the legend offers the medals per person, ranked in the card.
+  await page.selectOption('.compare-card select[data-pick="a"]', 'olympic_medals');
+  await page.waitForTimeout(400);
+  await page.selectOption('.compare-card select[data-pick="b"]', 'population');
+  await page.waitForTimeout(600);
+  await page.evaluate(() => document.querySelector('.cmp-fold').click());
+  await page.waitForTimeout(400);
+  await page.evaluate(() => [...document.querySelectorAll('.legend .lg-act')].find((b) => /^÷/.test(b.textContent))?.click());
+  await page.waitForTimeout(600);
+  await page.evaluate(() => document.querySelector('.cmp-fold').click());
+  await page.waitForTimeout(600);
+  const ratio = await page.evaluate(() => ({
+    hash: decodeURIComponent(location.hash), title: document.querySelector('.cmp-title')?.textContent ?? '',
+    lists: [...document.querySelectorAll('.cmp-rank')].map((l) => l.querySelectorAll('.cmp-country').length), first: document.querySelector('.cmp-rank .cmp-country')?.textContent ?? '',
+  }));
+  check(/view=ratio/.test(ratio.hash) && /^÷ Olympic medals/.test(ratio.title) && ratio.lists.join() === '10,4', `a total divided by another: ${ratio.title} (first: ${ratio.first})`);
+  // A category against a number: life expectancy by continent, a dot plot with medians.
+  await page.selectOption('.compare-card select[data-pick="a"]', 'continent');
+  await page.waitForTimeout(400);
+  await page.selectOption('.compare-card select[data-pick="b"]', 'life_expectancy');
+  await page.waitForTimeout(800);
+  const cn = await page.evaluate(() => ({ canvas: !!document.querySelector('.compare-card .cmp-canvas'), stats: document.querySelector('.cmp-stats')?.textContent ?? '' }));
+  check(cn.canvas && /Medians/.test(cn.stats) && /η² = 0\.\d\d/.test(cn.stats), `a category against a number: a dot plot by continent (${cn.stats.slice(0, 70)})`);
+  // Two categories: driving side by continent, a cross table whose squares light their countries.
+  await page.selectOption('.compare-card select[data-pick="a"]', 'driving_side');
+  await page.waitForTimeout(400);
+  await page.selectOption('.compare-card select[data-pick="b"]', 'continent');
+  await page.waitForTimeout(800);
+  const cc = await page.evaluate(() => ({ cells: document.querySelectorAll('.cmp-table .cmp-cell').length, stats: document.querySelector('.cmp-stats')?.textContent ?? '' }));
+  await page.evaluate(() => document.querySelector('.cmp-table .cmp-cell').click());
+  await page.waitForTimeout(500);
+  const ccLit = await page.evaluate(() => window.atlas.app.renderer.highlight?.size ?? 0);
+  check(cc.cells >= 6 && /Cramér's V = 0\.\d\d/.test(cc.stats) && ccLit > 0, `two categories: a cross table whose squares light their countries (${cc.cells} squares; ${ccLit} lit; ${cc.stats})`);
+  // In Spanish, with the decimal comma.
+  await page.selectOption('.compare-card select[data-pick="a"]', 'gdp_per_capita');
+  await page.waitForTimeout(400);
+  await page.selectOption('.compare-card select[data-pick="b"]', 'life_expectancy');
+  await page.waitForTimeout(400);
+  await page.evaluate(() => window.atlas.app.setLang('es'));
+  await page.waitForTimeout(800);
+  const es = await page.evaluate(() => ({ sum: document.querySelector('.cmp-sum')?.textContent ?? '', stats: document.querySelector('.cmp-stats')?.textContent ?? '' }));
+  check(/relación muy fuerte/.test(es.sum) && /ρ de Spearman = 0,\d\d/.test(es.stats) && /países/.test(es.stats), `in Spanish: ${es.sum.slice(0, 40)}… (${es.stats.slice(0, 40)})`);
+  await page.evaluate(() => window.atlas.app.setLang('en'));
+  await page.waitForTimeout(300);
+  // "Compare with…" in GDP per capita's legend: Compare starts from it, and the X gives it back.
+  await page.evaluate(() => document.querySelector('.compare-card [aria-label="Close"]').click());
+  await page.waitForTimeout(400);
+  await page.evaluate(() => window.atlas.app.activate('fact-gdp_per_capita'));
+  await page.waitForTimeout(1200);
+  if (await page.evaluate(() => !document.querySelector('.legend .lg-act'))) await page.tap('.legend-toggle');
+  await page.waitForTimeout(300);
+  await page.evaluate(() => [...document.querySelectorAll('.legend .lg-act')].find((b) => /Compare with/.test(b.textContent))?.click());
+  await page.waitForTimeout(1500);
+  const from = await page.evaluate(() => ({ ids: window.atlas.app.layers.map((l) => l.def.id), o: window.atlas.app.instance('compare')?.options, card: !document.querySelector('.compare-card').hidden }));
+  await page.evaluate(() => document.querySelector('.compare-card [aria-label="Close"]').click());
+  await page.waitForTimeout(800);
+  const after = await page.evaluate(() => window.atlas.app.layers.map((l) => l.def.id));
+  check(from.card && from.o?.a === 'gdp_per_capita' && from.o?.b === 'life_expectancy' && !from.ids.includes('fact-gdp_per_capita') && after.includes('fact-gdp_per_capita') && !after.includes('compare'),
+    `"Compare with…" starts from GDP per capita and the card's X gives it back (${from.ids.join(',')} → ${after.join(',')})`);
+  check(!errors.length, `no page errors in Compare two filters${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 // 13. Learn: the quizzes made from the stories ask ten questions with four answers (or a tap on the
 // globe), and "See it in the story" opens the story at the item; a city tour opens steps of stories
 // from different collections and flies to the city each time.
@@ -600,6 +715,22 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
     await page.waitForTimeout(300);
   }
+  // Guess the link: two country facts and four answers; the answer comes with its chart, and "See it
+  // on the map" opens Compare two filters on that pair.
+  await menu('Quiz');
+  await page.evaluate(() => document.querySelector('[data-quiz="link"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .quiz-opt', { timeout: 30000 });
+  const lq = await page.evaluate(() => ({ head: document.querySelector('.learn-card .tool-head')?.textContent ?? '', pair: document.querySelector('.learn-card .quiz-link')?.textContent ?? '', opts: [...document.querySelectorAll('.learn-card .quiz-opt')].map((b) => b.textContent) }));
+  await page.evaluate(() => document.querySelector('.learn-card .quiz-opt').click());
+  await page.waitForTimeout(500);
+  const la = await page.evaluate(() => ({ fb: document.querySelector('.learn-card .quiz-fb')?.textContent ?? '', plot: !!document.querySelector('.learn-card .quiz-plot'), k: window.atlas.learn.quiz.qs[0].link }));
+  check(/1\/10/.test(lq.head) && lq.opts.length === 4 && new Set(lq.opts).size === 4 && /×/.test(lq.pair) && /ρ = −?0\.\d\d/.test(la.fb) && la.plot, `quiz "link": ${lq.pair} (${lq.opts.join(' / ')}): ${la.fb.slice(0, 60)}`);
+  await page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /See it on the map/.test(b.textContent))?.click());
+  await page.waitForTimeout(1500);
+  const seen = await page.evaluate(() => ({ learn: document.querySelector('.learn-card').hidden, card: !document.querySelector('.compare-card').hidden, o: window.atlas.app.instance('compare')?.options }));
+  check(seen.learn && seen.card && seen.o?.a === la.k?.a && seen.o?.b === la.k?.b, `"See it on the map" opens Compare two filters on that pair (${seen.o?.a} × ${seen.o?.b})`);
+  await page.evaluate(() => document.querySelector('.compare-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
   // The quiz card folds to show the map ("Map") and comes back ("Quiz"); the answer's pin is named
   // and sits below the card; after ten questions the result lists each with right or wrong.
   await menu('Quiz');
