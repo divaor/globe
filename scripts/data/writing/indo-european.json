@@ -159,6 +159,7 @@
           "cat": "language",
           "type": "language",
           "date": "-4500",
+          "until": "-2500",
           "place": {
             "en": "Pontic–Caspian steppe (reconstructed)",
             "es": "Estepa póntico-caspia (reconstruido)"
@@ -681,13 +682,13 @@
         "es": "Hacia el 2000 a. C., en el sur de los Urales, el pueblo de Sintashta construye pueblos fortificados y los primeros carros de guerra conocidos. Probablemente hablaban protoindoiranio, el antepasado del sánscrito y del persa."
       },
       "details": {
-        "en": "The Sintashta culture grew out of Corded Ware groups that had moved east and of steppe herders on the Ural and Tobol rivers. Its warriors were buried with horses and two-wheeled chariots, in funerals that match rites later described in the Rigveda. From it grew the Andronovo culture, which spread across Kazakhstan towards the oases of Central Asia and took ideas from the farming towns of the Bactria–Margiana culture. Its language was splitting into Indo-Aryan and Iranian. In Europe, meanwhile, the descendants of the Corded Ware and Bell Beaker peoples spoke Indo-European dialects whose branch we can no longer tell, and in Anatolia the ancestors of the Hittites and Luwians had already settled.",
-        "es": "La cultura de Sintashta nació de grupos de la cerámica cordada que se habían desplazado al este y de pastores de la estepa de los ríos Ural y Tobol. Sus guerreros se enterraban con caballos y carros de dos ruedas, en funerales que coinciden con ritos descritos después en el Rig-veda. De ella surgió la cultura andrónovo, que se extendió por Kazajistán hacia los oasis de Asia central y tomó ideas de los pueblos agrícolas de la cultura de Bactriana-Margiana. Su lengua se estaba dividiendo en indoario e iranio. En Europa, mientras tanto, los descendientes de los pueblos de la cerámica cordada y del vaso campaniforme hablaban dialectos indoeuropeos cuya rama ya no podemos distinguir, y en Anatolia ya se habían asentado los antepasados de hititas y luvitas."
+        "en": "The Sintashta culture grew out of Corded Ware groups that had moved east and of steppe herders on the Ural and Tobol rivers. Its warriors were buried with horses and two-wheeled chariots, in funerals that match rites later described in the Rigveda. From it grew the Andronovo culture, which spread across Kazakhstan towards the oases of Central Asia and took ideas from the farming towns of the Bactria–Margiana culture. Its language was splitting into Indo-Aryan and Iranian. Far to the east, in the Tarim Basin, farmers and herders buried their dead in the desert from about 2100 BC, and the dry sand turned them into mummies. In Europe, meanwhile, the descendants of the Corded Ware and Bell Beaker peoples spoke Indo-European dialects whose branch we can no longer tell, and in Anatolia the ancestors of the Hittites and Luwians had already settled.",
+        "es": "La cultura de Sintashta nació de grupos de la cerámica cordada que se habían desplazado al este y de pastores de la estepa de los ríos Ural y Tobol. Sus guerreros se enterraban con caballos y carros de dos ruedas, en funerales que coinciden con ritos descritos después en el Rig-veda. De ella surgió la cultura andrónovo, que se extendió por Kazajistán hacia los oasis de Asia central y tomó ideas de los pueblos agrícolas de la cultura de Bactriana-Margiana. Su lengua se estaba dividiendo en indoario e iranio. Mucho más al este, en la cuenca del Tarim, agricultores y pastores enterraban a sus muertos en el desierto desde hacia el 2100 a. C., y la arena seca los convirtió en momias. En Europa, mientras tanto, los descendientes de los pueblos de la cerámica cordada y del vaso campaniforme hablaban dialectos indoeuropeos cuya rama ya no podemos distinguir, y en Anatolia ya se habían asentado los antepasados de hititas y luvitas."
       },
       "camera": {
-        "lon": 55,
+        "lon": 66,
         "lat": 47,
-        "zoom": 2.3
+        "zoom": 2.0
       },
       "control": {
         "indoiranian": [
@@ -1031,6 +1032,34 @@
             "en": "Andronovo culture",
             "es": "Cultura andrónovo"
           }
+        },
+        {
+          "id": "tarim-mummies",
+          "name": {
+            "en": "Tarim mummies",
+            "es": "Momias del Tarim"
+          },
+          "at": [
+            88.6724,
+            40.3365
+          ],
+          "cat": "homeland",
+          "type": "culture",
+          "date": "-2100",
+          "until": "-1",
+          "place": {
+            "en": "Xiaohe cemetery, Lop Nur, Xinjiang, China",
+            "es": "Cementerio de Xiaohe, Lop Nur, Sinkiang, China"
+          },
+          "text": {
+            "en": "Bodies preserved by the desert, from about 2100 BC on, long thought to be the first Tocharians. In 2021 their DNA showed a local population with no steppe ancestry, so how Tocharian arrived is still debated.",
+            "es": "Cuerpos conservados por el desierto desde hacia el 2100 a. C., que se creyeron los primeros tocarios. En 2021 su ADN mostró una población local sin ascendencia de la estepa: cómo llegó el tocario sigue en debate."
+          },
+          "wiki": {
+            "en": "Tarim mummies",
+            "es": "Momias del Tarim"
+          },
+          "img": "Burial goods excavated from the Xiaohe cemetery (Burial XHM66 from layer 4).jpg"
         }
       ]
     },
@@ -1191,7 +1220,7 @@
             "es": "Lineal B"
           },
           "at": [
-            21.695,
+            21.6977,
             37.0272
           ],
           "cat": "script",
@@ -1236,7 +1265,7 @@
           ],
           "cat": "city",
           "type": "site",
-          "date": "-1450",
+          "date": "-1900",
           "place": {
             "en": "Heraklion, Crete, Greece",
             "es": "Heraclión, Creta, Grecia"
@@ -5144,8 +5173,8 @@
         {
           "id": "gothic-alphabet",
           "name": {
-            "en": "Gothic alphabet and Bible",
-            "es": "Alfabeto y Biblia góticos"
+            "en": "Gothic alphabet",
+            "es": "Alfabeto gótico"
           },
           "at": [
             25.6111,
@@ -5155,7 +5184,6 @@
           "icon": "𐌰",
           "type": "script",
           "date": "360",
-          "until": "600",
           "place": {
             "en": "Nicopolis ad Istrum, near Veliko Tarnovo, Bulgaria",
             "es": "Nicópolis del Istro, cerca de Veliko Tarnovo, Bulgaria"
@@ -5188,13 +5216,13 @@
             "es": "Ogam"
           },
           "at": [
-            -9.69,
+            -9.7,
             52.27
           ],
           "cat": "script",
           "icon": "ᚋ",
           "type": "script",
-          "date": "400",
+          "date": "350",
           "place": {
             "en": "Ratass Church, Tralee, County Kerry, Ireland",
             "es": "Iglesia de Ratass, Tralee, condado de Kerry, Irlanda"
@@ -5465,7 +5493,13 @@
             "minus": [
               {
                 "and": [
-                  "FRA",
+                  {
+                    "a1": "FRA",
+                    "except": [
+                      "Bas-Rhin",
+                      "Haut-Rhin"
+                    ]
+                  },
                   {
                     "poly": [
                       [
@@ -5508,6 +5542,29 @@
                   ]
                 ]
               }
+            ]
+          },
+          {
+            "a1": "BEL",
+            "names": [
+              "Hainaut",
+              "Liège",
+              "Luxembourg",
+              "Namur",
+              "Walloon Brabant"
+            ]
+          },
+          {
+            "a1": "CHE",
+            "names": [
+              "Geneva",
+              "Vaud",
+              "Neuchâtel",
+              "Jura",
+              "Fribourg",
+              "Valais",
+              "Ticino",
+              "Grisons"
             ]
           }
         ],
@@ -5811,7 +5868,146 @@
               ]
             ]
           },
-          "DNK"
+          "DNK",
+          {
+            "and": [
+              "NLD",
+              {
+                "poly": [
+                  [
+                    -11,
+                    34
+                  ],
+                  [
+                    45,
+                    34
+                  ],
+                  [
+                    45,
+                    72
+                  ],
+                  [
+                    -11,
+                    72
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "a1": "BEL",
+            "names": [
+              "Antwerp",
+              "East Flanders",
+              "Flemish Brabant",
+              "Limburg",
+              "West Flanders",
+              "Brussels Capital"
+            ]
+          },
+          "LUX",
+          {
+            "a1": "FRA",
+            "names": [
+              "Bas-Rhin",
+              "Haut-Rhin"
+            ]
+          },
+          {
+            "a1": "CHE",
+            "except": [
+              "Geneva",
+              "Vaud",
+              "Neuchâtel",
+              "Jura",
+              "Fribourg",
+              "Valais",
+              "Ticino",
+              "Grisons"
+            ]
+          },
+          {
+            "and": [
+              "DEU",
+              {
+                "poly": [
+                  [
+                    5.0,
+                    56.0
+                  ],
+                  [
+                    10.8,
+                    56.0
+                  ],
+                  [
+                    10.8,
+                    54.0
+                  ],
+                  [
+                    11.5,
+                    52.5
+                  ],
+                  [
+                    12.0,
+                    50.5
+                  ],
+                  [
+                    13.5,
+                    48.8
+                  ],
+                  [
+                    14.0,
+                    48.7
+                  ],
+                  [
+                    14.0,
+                    47.0
+                  ],
+                  [
+                    5.0,
+                    47.0
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "and": [
+              "AUT",
+              {
+                "poly": [
+                  [
+                    9.0,
+                    49.5
+                  ],
+                  [
+                    14.0,
+                    48.7
+                  ],
+                  [
+                    14.6,
+                    47.9
+                  ],
+                  [
+                    13.7,
+                    47.3
+                  ],
+                  [
+                    12.3,
+                    47.0
+                  ],
+                  [
+                    11.0,
+                    46.7
+                  ],
+                  [
+                    9.0,
+                    46.7
+                  ]
+                ]
+              }
+            ]
+          }
         ],
         "baltoslavic": {
           "minus": [
@@ -6031,7 +6227,9 @@
                     52.5
                   ]
                 ]
-              }
+              },
+              "AUT",
+              "SVN"
             ],
             {
               "land": [
@@ -6306,32 +6504,39 @@
           "img": "Tocharian.JPG"
         },
         {
-          "id": "tarim-mummies",
+          "id": "sogdian-alphabet",
           "name": {
-            "en": "Tarim mummies",
-            "es": "Momias del Tarim"
+            "en": "Sogdian alphabet",
+            "es": "Alfabeto sogdiano"
           },
           "at": [
-            88.6724,
-            40.3365
+            66.9758,
+            39.6547
           ],
-          "cat": "homeland",
-          "type": "culture",
-          "date": "-2100",
-          "until": "-1",
+          "cat": "script",
+          "type": "script",
+          "date": "100",
+          "until": "1200",
           "place": {
-            "en": "Xiaohe cemetery, Lop Nur, Xinjiang, China",
-            "es": "Cementerio de Xiaohe, Lop Nur, Sinkiang, China"
+            "en": "Sogdia (here Samarkand, Uzbekistan)",
+            "es": "Sogdiana (aquí Samarcanda, Uzbekistán)"
           },
           "text": {
-            "en": "Bodies preserved by the desert, from about 2100 BC on, long thought to be the first Tocharians. In 2021 their DNA showed a local population with no steppe ancestry, so how Tocharian arrived is still debated.",
-            "es": "Cuerpos conservados por el desierto desde hacia el 2100 a. C., que se creyeron los primeros tocarios. En 2021 su ADN mostró una población local sin ascendencia de la estepa: cómo llegó el tocario sigue en debate."
+            "en": "The script of the Sogdians, Iranian-speaking merchants of Samarkand and Bukhara, used across Central Asia from about AD 100 to 1200. Descended from Aramaic, it is the ancestor of the Uyghur and Mongolian scripts.",
+            "es": "La escritura de los sogdianos, mercaderes de lengua irania de Samarcanda y Bujará, usada en toda Asia central de hacia el año 100 al 1200. Descendiente del arameo, es antepasada de las escrituras uigur y mongola."
+          },
+          "sample": {
+            "text": "𐼰𐼱𐼲𐼳",
+            "latin": "ʾ b g h",
+            "means": {
+              "en": "the first letters (Sogdian had no d)",
+              "es": "las primeras letras (el sogdiano no tenía d)"
+            }
           },
           "wiki": {
-            "en": "Tarim mummies",
-            "es": "Momias del Tarim"
-          },
-          "img": "Burial goods excavated from the Xiaohe cemetery (Burial XHM66 from layer 4).jpg"
+            "en": "Sogdian alphabet",
+            "es": "Alfabeto sogdiano"
+          }
         }
       ]
     },
@@ -6546,7 +6751,146 @@
           },
           "DNK",
           "ISL",
-          "FRO"
+          "FRO",
+          {
+            "and": [
+              "NLD",
+              {
+                "poly": [
+                  [
+                    -11,
+                    34
+                  ],
+                  [
+                    45,
+                    34
+                  ],
+                  [
+                    45,
+                    72
+                  ],
+                  [
+                    -11,
+                    72
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "a1": "BEL",
+            "names": [
+              "Antwerp",
+              "East Flanders",
+              "Flemish Brabant",
+              "Limburg",
+              "West Flanders",
+              "Brussels Capital"
+            ]
+          },
+          "LUX",
+          {
+            "a1": "FRA",
+            "names": [
+              "Bas-Rhin",
+              "Haut-Rhin"
+            ]
+          },
+          {
+            "a1": "CHE",
+            "except": [
+              "Geneva",
+              "Vaud",
+              "Neuchâtel",
+              "Jura",
+              "Fribourg",
+              "Valais",
+              "Ticino",
+              "Grisons"
+            ]
+          },
+          {
+            "and": [
+              "DEU",
+              {
+                "poly": [
+                  [
+                    5.0,
+                    56.0
+                  ],
+                  [
+                    10.8,
+                    56.0
+                  ],
+                  [
+                    10.8,
+                    54.0
+                  ],
+                  [
+                    11.5,
+                    52.5
+                  ],
+                  [
+                    12.0,
+                    50.5
+                  ],
+                  [
+                    13.5,
+                    48.8
+                  ],
+                  [
+                    14.0,
+                    48.7
+                  ],
+                  [
+                    14.0,
+                    47.0
+                  ],
+                  [
+                    5.0,
+                    47.0
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "and": [
+              "AUT",
+              {
+                "poly": [
+                  [
+                    9.0,
+                    49.5
+                  ],
+                  [
+                    14.0,
+                    48.7
+                  ],
+                  [
+                    14.6,
+                    47.9
+                  ],
+                  [
+                    13.7,
+                    47.3
+                  ],
+                  [
+                    12.3,
+                    47.0
+                  ],
+                  [
+                    11.0,
+                    46.7
+                  ],
+                  [
+                    9.0,
+                    46.7
+                  ]
+                ]
+              }
+            ]
+          }
         ],
         "baltoslavic": {
           "minus": [
@@ -6766,7 +7110,9 @@
                     52.5
                   ]
                 ]
-              }
+              },
+              "AUT",
+              "SVN"
             ],
             {
               "land": [
@@ -7060,7 +7406,13 @@
             "minus": [
               {
                 "and": [
-                  "FRA",
+                  {
+                    "a1": "FRA",
+                    "except": [
+                      "Bas-Rhin",
+                      "Haut-Rhin"
+                    ]
+                  },
                   {
                     "poly": [
                       [
@@ -7351,6 +7703,13 @@
           "SWE",
           "ISL",
           "LUX",
+          {
+            "a1": "FRA",
+            "names": [
+              "Bas-Rhin",
+              "Haut-Rhin"
+            ]
+          },
           {
             "a1": "CHE",
             "except": [
@@ -7776,8 +8135,8 @@
         {
           "id": "gothic-alphabet",
           "name": {
-            "en": "Gothic alphabet and Bible",
-            "es": "Alfabeto y Biblia góticos"
+            "en": "Gothic alphabet",
+            "es": "Alfabeto gótico"
           },
           "at": [
             25.6111,
@@ -7787,7 +8146,6 @@
           "icon": "𐌰",
           "type": "script",
           "date": "360",
-          "until": "600",
           "place": {
             "en": "Nicopolis ad Istrum, near Veliko Tarnovo, Bulgaria",
             "es": "Nicópolis del Istro, cerca de Veliko Tarnovo, Bulgaria"
@@ -8016,7 +8374,13 @@
             "minus": [
               {
                 "and": [
-                  "FRA",
+                  {
+                    "a1": "FRA",
+                    "except": [
+                      "Bas-Rhin",
+                      "Haut-Rhin"
+                    ]
+                  },
                   {
                     "poly": [
                       [
@@ -8293,6 +8657,13 @@
               "SWE",
               "ISL",
               "LUX",
+              {
+                "a1": "FRA",
+                "names": [
+                  "Bas-Rhin",
+                  "Haut-Rhin"
+                ]
+              },
               {
                 "a1": "CHE",
                 "except": [
@@ -8861,9 +9232,9 @@
         "es": "El español, el hindi-urdu, el inglés, el portugués, el bengalí, el panyabí y el ruso tienen cada uno más de 100 millones de hablantes nativos, y Ethnologue cuenta unas 446 lenguas indoeuropeas vivas, 313 de ellas en la rama indoirania. La cuestión de la cuna sigue abierta. Los estudios de ADN antiguo desde 2015 han apoyado con fuerza la estepa, y el estudio de 2025 de Lazaridis, Anthony y sus colegas situó la etapa más antigua en gentes que vivían entre el Cáucaso y el bajo Volga; otros, como Paul Heggarty, defienden un comienzo más antiguo al sur del Cáucaso. Mientras tanto, muchos miembros pequeños de la familia corren peligro de desaparecer, y sus hablantes, como los del galés, trabajan para mantenerlos vivos."
       },
       "camera": {
-        "lon": 48,
-        "lat": 34,
-        "zoom": 1.25
+        "lon": 52,
+        "lat": 36,
+        "zoom": 1.5
       },
       "control": {
         "italic": [
@@ -9071,8 +9442,8 @@
         {
           "id": "hindustani",
           "name": {
-            "en": "Hindi-Urdu (Hindustani)",
-            "es": "Hindi-urdu (indostánico)"
+            "en": "Hindi-Urdu",
+            "es": "Hindi-urdu"
           },
           "at": [
             77.209,
@@ -9086,8 +9457,8 @@
             "es": "Delhi, India"
           },
           "text": {
-            "en": "One spoken language with two written standards, Hindi in Devanagari and Urdu in Arabic script. With about 250 million native speakers, and many more who speak it as a second language, it is the largest Indo-Aryan language.",
-            "es": "Una sola lengua hablada con dos normas escritas, el hindi en devanagari y el urdu en escritura árabe. Con unos 250 millones de hablantes nativos, y muchos más que la hablan como segunda lengua, es la mayor lengua indoaria."
+            "en": "Hindustani: one spoken language with two written standards, Hindi in Devanagari and Urdu in Arabic script. With about 250 million native speakers, and many more who speak it as a second language, it is the largest Indo-Aryan language.",
+            "es": "El indostánico: una lengua hablada con dos normas escritas, el hindi en devanagari y el urdu en escritura árabe. Con unos 250 millones de hablantes nativos, y muchos más de segunda lengua, es la mayor lengua indoaria."
           },
           "sample": {
             "text": "नमस्ते",
@@ -9450,6 +9821,18 @@
     {
       "title": "Wikipedia: Indo-European vocabulary",
       "url": "https://en.wikipedia.org/wiki/Indo-European_vocabulary"
+    },
+    {
+      "title": "Wikipedia: Gaulish language",
+      "url": "https://en.wikipedia.org/wiki/Gaulish_language"
+    },
+    {
+      "title": "Wikipedia: Iberian language",
+      "url": "https://en.wikipedia.org/wiki/Iberian_language"
+    },
+    {
+      "title": "Wikipedia: Sogdian alphabet",
+      "url": "https://en.wikipedia.org/wiki/Sogdian_alphabet"
     }
   ]
 }

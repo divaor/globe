@@ -367,7 +367,53 @@
           "Lleida",
           "Tarragona"
         ]
-      }
+      },
+      {
+        "and": [
+          "SRB",
+          {
+            "poly": [
+              [
+                18.8,
+                44.75
+              ],
+              [
+                19.4,
+                44.85
+              ],
+              [
+                20.3,
+                44.75
+              ],
+              [
+                21.4,
+                44.6
+              ],
+              [
+                22.7,
+                44.6
+              ],
+              [
+                22.7,
+                46.3
+              ],
+              [
+                18.8,
+                46.3
+              ]
+            ]
+          }
+        ]
+      },
+      "AND",
+      "MCO",
+      "SMR",
+      "VAT",
+      "LIE",
+      "IMN",
+      "JEY",
+      "GGY",
+      "FRO"
     ],
     "orth_1000": [
       {
@@ -507,8 +553,58 @@
         "hist": "Teutonic Knights",
         "year": 1279
       },
+      {
+        "hist": "Hungary",
+        "year": 1279
+      },
       "PRT",
-      "ESP"
+      "ESP",
+      {
+        "and": [
+          "SRB",
+          {
+            "poly": [
+              [
+                18.8,
+                44.75
+              ],
+              [
+                19.4,
+                44.85
+              ],
+              [
+                20.3,
+                44.75
+              ],
+              [
+                21.4,
+                44.6
+              ],
+              [
+                22.7,
+                44.6
+              ],
+              [
+                22.7,
+                46.3
+              ],
+              [
+                18.8,
+                46.3
+              ]
+            ]
+          }
+        ]
+      },
+      "AND",
+      "MCO",
+      "SMR",
+      "VAT",
+      "LIE",
+      "IMN",
+      "JEY",
+      "GGY",
+      "FRO"
     ],
     "granada": {
       "hist": "Granada",
@@ -525,6 +621,10 @@
       },
       {
         "hist": "Serbia",
+        "year": 1279
+      },
+      {
+        "hist": "Bulgar Khanate",
         "year": 1279
       },
       "BGR",
@@ -792,6 +892,8 @@
         "a1": "UKR"
       },
       "SRB",
+      "XKX",
+      "ALB",
       "MNE",
       "MKD",
       "BGR",
@@ -838,6 +940,7 @@
       "DNK",
       "NOR",
       "ISL",
+      "FRO",
       "SWE",
       "FIN",
       "EST",
@@ -875,6 +978,9 @@
           }
         ]
       },
+      "IMN",
+      "JEY",
+      "GGY",
       {
         "hist": "Prussia",
         "year": 1530
@@ -3893,9 +3999,63 @@
           "URY",
           "PRY",
           "BRA",
+          "AND",
+          "MCO",
+          "SMR",
+          "VAT",
+          "LIE",
+          "TTO",
+          "LCA",
+          "DMA",
+          "GRD",
+          "ABW",
+          "CUW",
+          {
+            "and": [
+              "NLD",
+              {
+                "poly": [
+                  [
+                    -68.6,
+                    11.9
+                  ],
+                  [
+                    -68.0,
+                    11.9
+                  ],
+                  [
+                    -68.0,
+                    12.4
+                  ],
+                  [
+                    -68.6,
+                    12.4
+                  ]
+                ]
+              }
+            ]
+          },
+          "CPV",
+          "STP",
+          "SYC",
+          "GUM",
+          "MNP",
+          "WLF",
+          "SPM",
           "PRT",
           "ESP",
-          "FRA",
+          {
+            "minus": [
+              "FRA",
+              {
+                "circle": [
+                  45.15,
+                  -12.82
+                ],
+                "km": 60
+              }
+            ]
+          },
           "BEL",
           "LUX",
           "ITA",
@@ -3963,6 +4123,31 @@
           }
         ],
         "protestant": [
+          "IMN",
+          "JEY",
+          "GGY",
+          "FRO",
+          "GRL",
+          "JAM",
+          "BHS",
+          "BRB",
+          "ATG",
+          "KNA",
+          "VCT",
+          "BMU",
+          "VGB",
+          "VIR",
+          "CYM",
+          "TCA",
+          "AIA",
+          "MSR",
+          "ASM",
+          "COK",
+          "TUV",
+          "NIU",
+          "PYF",
+          "SHN",
+          "FLK",
           "USA",
           {
             "a1": "CAN",
@@ -3976,7 +4161,31 @@
           "TON",
           "WSM",
           "GBR",
-          "NLD",
+          {
+            "and": [
+              "NLD",
+              {
+                "poly": [
+                  [
+                    -25.0,
+                    34.0
+                  ],
+                  [
+                    45.0,
+                    34.0
+                  ],
+                  [
+                    45.0,
+                    72.0
+                  ],
+                  [
+                    -25.0,
+                    72.0
+                  ]
+                ]
+              }
+            ]
+          },
           "DNK",
           "NOR",
           "ISL",
@@ -4513,7 +4722,6 @@
           "CHE",
           "CHL",
           "CMR",
-          "COG",
           "COL",
           "CPV",
           "CRI",
@@ -4532,7 +4740,6 @@
           "ITA",
           "LTU",
           "LUX",
-          "LSO",
           "MEX",
           "MLT",
           "NIC",
@@ -4557,7 +4764,105 @@
           "ABW",
           "CUW",
           "GUM",
-          "LCA"
+          "LCA",
+          {
+            "and": [
+              "FRA",
+              {
+                "poly": [
+                  [
+                    -55.0,
+                    1.8
+                  ],
+                  [
+                    -51.0,
+                    1.8
+                  ],
+                  [
+                    -51.0,
+                    6.2
+                  ],
+                  [
+                    -55.0,
+                    6.2
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "and": [
+              "FRA",
+              {
+                "poly": [
+                  [
+                    -62.0,
+                    14.2
+                  ],
+                  [
+                    -60.6,
+                    14.2
+                  ],
+                  [
+                    -60.6,
+                    16.7
+                  ],
+                  [
+                    -62.0,
+                    16.7
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "and": [
+              "FRA",
+              {
+                "circle": [
+                  55.53,
+                  -21.13
+                ],
+                "km": 80
+              }
+            ]
+          },
+          "AND",
+          "MCO",
+          "SMR",
+          "VAT",
+          "LIE",
+          {
+            "and": [
+              "NLD",
+              {
+                "poly": [
+                  [
+                    -68.6,
+                    11.9
+                  ],
+                  [
+                    -68.0,
+                    11.9
+                  ],
+                  [
+                    -68.0,
+                    12.4
+                  ],
+                  [
+                    -68.6,
+                    12.4
+                  ]
+                ]
+              }
+            ]
+          },
+          "TGO",
+          "DMA",
+          "MNP",
+          "PLW",
+          "WLF",
+          "SPM"
         ],
         "protestant": [
           "USA",
@@ -4597,11 +4902,33 @@
           "ZMB",
           "ZWE",
           "TZA",
-          "TGO",
           "SUR",
           "PYF",
           "VCT",
-          "VIR"
+          "VIR",
+          "JEY",
+          "GGY",
+          "GRL",
+          "FRO",
+          "IMN",
+          "ATG",
+          "KNA",
+          "BMU",
+          "VGB",
+          "CYM",
+          "TCA",
+          "AIA",
+          "MSR",
+          "ASM",
+          "COK",
+          "TUV",
+          "NIU",
+          "SHN",
+          "FLK",
+          "MHL",
+          "NRU",
+          "COG",
+          "LSO"
         ],
         "orthodox": [
           "RUS",
@@ -5094,6 +5421,110 @@
       "url": "https://en.wikipedia.org/wiki/Christianity_by_country"
     },
     {
+      "title": "Wikipedia: Religion in Greenland",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Greenland"
+    },
+    {
+      "title": "Wikipedia: Church of Greenland",
+      "url": "https://en.wikipedia.org/wiki/Church_of_Greenland"
+    },
+    {
+      "title": "Wikipedia: Religion in the Faroe Islands",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_the_Faroe_Islands"
+    },
+    {
+      "title": "Wikipedia: Religion in Andorra",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Andorra"
+    },
+    {
+      "title": "Wikipedia: Religion in Liechtenstein",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Liechtenstein"
+    },
+    {
+      "title": "Wikipedia: Religion in San Marino",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_San_Marino"
+    },
+    {
+      "title": "Wikipedia: Monaco",
+      "url": "https://en.wikipedia.org/wiki/Monaco"
+    },
+    {
+      "title": "Wikipedia: Isle of Man",
+      "url": "https://en.wikipedia.org/wiki/Isle_of_Man"
+    },
+    {
+      "title": "Wikipedia: Religion in Jersey",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Jersey"
+    },
+    {
+      "title": "Wikipedia: Bermuda",
+      "url": "https://en.wikipedia.org/wiki/Bermuda"
+    },
+    {
+      "title": "Wikipedia: Religion in Dominica",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Dominica"
+    },
+    {
+      "title": "Wikipedia: Religion in Palau",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Palau"
+    },
+    {
+      "title": "Wikipedia: Religion in Nauru",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Nauru"
+    },
+    {
+      "title": "Wikipedia: Religion in the Marshall Islands",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_the_Marshall_Islands"
+    },
+    {
+      "title": "Wikipedia: Religion in the Falkland Islands",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_the_Falkland_Islands"
+    },
+    {
+      "title": "Wikipedia: Religion in Jamaica",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Jamaica"
+    },
+    {
+      "title": "Wikipedia: Religion in Lesotho",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Lesotho"
+    },
+    {
+      "title": "Wikipedia: Religion in the Republic of the Congo",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_the_Republic_of_the_Congo"
+    },
+    {
+      "title": "Wikipedia: Religion in Togo",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Togo"
+    },
+    {
+      "title": "Wikipedia: Religion in Gabon",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Gabon"
+    },
+    {
+      "title": "Wikipedia: Religion in Tanzania",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Tanzania"
+    },
+    {
+      "title": "Wikipedia: Religion in Rwanda",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Rwanda"
+    },
+    {
+      "title": "Wikipedia: Religion in Mozambique",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Mozambique"
+    },
+    {
+      "title": "Wikipedia: Religion in Suriname",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Suriname"
+    },
+    {
+      "title": "Wikipedia: Grenada",
+      "url": "https://en.wikipedia.org/wiki/Grenada"
+    },
+    {
+      "title": "Wikipedia: Religion in Trinidad and Tobago",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Trinidad_and_Tobago"
+    },
+    {
       "title": "Pew Research Center (2025): How the Global Religious Landscape Changed From 2010 to 2020",
       "url": "https://www.pewresearch.org/religion/2025/06/09/how-the-global-religious-landscape-changed-from-2010-to-2020/"
     },
@@ -5104,6 +5535,10 @@
     {
       "title": "Pew Research Center: Global religious composition estimates for 2010 and 2020 (dataset)",
       "url": "https://www.pewresearch.org/dataset/dataset-of-global-religious-composition-estimates-for-2010-and-2020/"
+    },
+    {
+      "title": "Pew Research Center (2011): Christian population as percentages of total population by country (2010)",
+      "url": "https://www.pewresearch.org/religion/2011/12/19/table-christian-population-as-percentages-of-total-population-by-country/"
     }
   ]
 }
