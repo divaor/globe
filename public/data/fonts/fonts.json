@@ -5,22 +5,67 @@
   {
    "file": "NotoNaskhArabic.woff2",
    "name": "Noto Naskh Arabic",
-   "range": "U+639"
+   "range": "U+621,U+626-628,U+62D,U+631,U+633-634,U+639,U+641,U+644-648,U+64A,U+64E-650,U+652,U+6A9,U+6C1,U+6CC,U+775,U+778"
+  },
+  {
+   "file": "NotoSansAdlam.woff2",
+   "name": "Noto Sans Adlam",
+   "range": "U+1E900,U+1E922-1E925"
   },
   {
    "file": "NotoSansArmenian.woff2",
    "name": "Noto Sans Armenian",
-   "range": "U+531"
+   "range": "U+531-535"
+  },
+  {
+   "file": "NotoSansAvestan.woff2",
+   "name": "Noto Sans Avestan",
+   "range": "U+10B00-10B01,U+10B0E,U+10B1B,U+10B28,U+10B2D,U+10B30,U+10B35"
+  },
+  {
+   "file": "NotoSansBamum.woff2",
+   "name": "Noto Sans Bamum",
+   "range": "U+A6A0-A6A3"
   },
   {
    "file": "NotoSansBengali.woff2",
    "name": "Noto Sans Bengali",
-   "range": "U+985"
+   "range": "U+982,U+985,U+9AC,U+9B2,U+9BE"
+  },
+  {
+   "file": "NotoSansBrahmi.woff2",
+   "name": "Noto Sans Brahmi",
+   "range": "U+11001,U+11013,U+11025-11027,U+11029,U+1102B-1102C,U+1102E,U+11032,U+1103A-1103C,U+11046"
+  },
+  {
+   "file": "NotoSansCanadianAboriginal.woff2",
+   "name": "Noto Sans Canadian Aboriginal",
+   "range": "U+1401,U+1403,U+1405,U+140A,U+144E,U+1450,U+1466,U+1483,U+14C4"
+  },
+  {
+   "file": "NotoSansCherokee.woff2",
+   "name": "Noto Sans Cherokee",
+   "range": "U+13A0,U+13A9,U+13AF,U+13B3-13B4,U+13C5,U+13CC,U+13E3,U+13E7"
+  },
+  {
+   "file": "NotoSansCoptic.woff2",
+   "name": "Noto Sans Coptic",
+   "range": "U+2C80,U+2C82,U+2C84,U+2C86,U+2C88,U+2C9F,U+2CA7,U+2CA9,U+2CE1"
+  },
+  {
+   "file": "NotoSansCuneiform.woff2",
+   "name": "Noto Sans Cuneiform",
+   "range": "U+12000,U+1201C-1201D,U+1202D,U+1207A,U+1208D,U+120A0,U+12129,U+12157,U+12174,U+121B3,U+12217,U+1227F,U+122FB,U+122FE,U+12311,U+12337"
   },
   {
    "file": "NotoSansDevanagari.woff2",
    "name": "Noto Sans Devanagari",
-   "range": "U+905"
+   "range": "U+902,U+905,U+915,U+917,U+91A,U+924,U+927-928,U+92A,U+92E,U+930,U+933,U+935,U+937-939,U+93E-941,U+943,U+947,U+94B,U+94D"
+  },
+  {
+   "file": "NotoSansEgyptianHieroglyphs.woff2",
+   "name": "Noto Sans Egyptian Hieroglyphs",
+   "range": "U+13080,U+1308B,U+1309D,U+130C0,U+130ED,U+1311F,U+1313F,U+13153,U+13171,U+1318E,U+13191,U+131CB-131CC,U+131F3,U+13216,U+13296,U+132AA,U+132F4,U+132F9,U+13351,U+1336F,U+13379-1337A,U+133CF,U+1341D"
   },
   {
    "file": "NotoSansEthiopic.woff2",
@@ -30,32 +75,127 @@
   {
    "file": "NotoSansGeorgian.woff2",
    "name": "Noto Sans Georgian",
-   "range": "U+10D0"
+   "range": "U+10D0-10D4"
+  },
+  {
+   "file": "NotoSansGlagolitic.woff2",
+   "name": "Noto Sans Glagolitic",
+   "range": "U+2C00-2C04"
+  },
+  {
+   "file": "NotoSansGothic.woff2",
+   "name": "Noto Sans Gothic",
+   "range": "U+10330,U+10337-10339,U+1033C-1033D,U+1033F,U+10342-10344"
+  },
+  {
+   "file": "NotoSansGurmukhi.woff2",
+   "name": "Noto Sans Gurmukhi",
+   "range": "U+A15-A17,U+A24,U+A28,U+A2A,U+A2E,U+A30,U+A38,U+A3E-A41,U+A74"
   },
   {
    "file": "NotoSansHebrew.woff2",
    "name": "Noto Sans Hebrew",
-   "range": "U+5D0"
+   "range": "U+5B0,U+5B4-5B5,U+5B7,U+5BC,U+5BE-5BF,U+5C1,U+5D0-5D3,U+5D5,U+5D9,U+5DC-5DE,U+5E0-5E1,U+5E4,U+5E8-5EA"
   },
   {
    "file": "NotoSansKhmer.woff2",
    "name": "Noto Sans Khmer",
-   "range": "U+1780"
+   "range": "U+1780,U+1787,U+1794,U+1798,U+179A,U+179F,U+17B6,U+17BD,U+17D2"
   },
   {
    "file": "NotoSansLao.woff2",
    "name": "Noto Sans Lao",
-   "range": "U+E81"
+   "range": "U+E81,U+E8D,U+E94,U+E9A,U+EAA,U+EB0,U+EB2,U+EB5"
+  },
+  {
+   "file": "NotoSansLinearA.woff2",
+   "name": "Noto Sans Linear A",
+   "range": "U+10600-10601,U+10642"
+  },
+  {
+   "file": "NotoSansLinearB.woff2",
+   "name": "Noto Sans Linear B",
+   "range": "U+10000,U+10012,U+1001C,U+10030"
+  },
+  {
+   "file": "NotoSansMeroitic.woff2",
+   "name": "Noto Sans Meroitic",
+   "range": "U+10980-10981,U+10996,U+1099D,U+109A1,U+109B2,U+109B7"
   },
   {
    "file": "NotoSansMyanmar.woff2",
    "name": "Noto Sans Myanmar",
-   "range": "U+1000"
+   "range": "U+1000,U+1002,U+1004,U+1015,U+1019,U+101C,U+102B-102C,U+1039-103A"
+  },
+  {
+   "file": "NotoSansNKo.woff2",
+   "name": "Noto Sans NKo",
+   "range": "U+7CF,U+7D2,U+7DE"
+  },
+  {
+   "file": "NotoSansNushu.woff2",
+   "name": "Noto Sans Nushu",
+   "range": "U+1B181,U+1B22C"
+  },
+  {
+   "file": "NotoSansOgham.woff2",
+   "name": "Noto Sans Ogham",
+   "range": "U+168A-168B,U+1690,U+1694,U+169B-169C"
+  },
+  {
+   "file": "NotoSansOlChiki.woff2",
+   "name": "Noto Sans Ol Chiki",
+   "range": "U+1C5A,U+1C5E-1C61,U+1C64,U+1C66,U+1C68,U+1C6A"
+  },
+  {
+   "file": "NotoSansOldPersian.woff2",
+   "name": "Noto Sans Old Persian",
+   "range": "U+103A0-103A3,U+103A7,U+103AD,U+103B0,U+103B6,U+103B9-103BA,U+103BC,U+103C0-103C1,U+103D0"
+  },
+  {
+   "file": "NotoSansOldTurkic.woff2",
+   "name": "Noto Sans Old Turkic",
+   "range": "U+10C06-10C07,U+10C09,U+10C11,U+10C1C,U+10C23,U+10C3C,U+10C45"
+  },
+  {
+   "file": "NotoSansOsmanya.woff2",
+   "name": "Noto Sans Osmanya",
+   "range": "U+10480,U+10487-10488,U+1048D,U+10490-10491,U+10496,U+10498,U+1049B,U+1049D"
+  },
+  {
+   "file": "NotoSansPahawhHmong.woff2",
+   "name": "Noto Sans Pahawh Hmong",
+   "range": "U+16B04,U+16B0C,U+16B16,U+16B1D,U+16B1F,U+16B23,U+16B32,U+16B35"
+  },
+  {
+   "file": "NotoSansPhagsPa.woff2",
+   "name": "Noto Sans Phags Pa",
+   "range": "U+A840-A843"
+  },
+  {
+   "file": "NotoSansPhoenician.woff2",
+   "name": "Noto Sans Phoenician",
+   "range": "U+10901,U+10903,U+10905,U+10909,U+10915"
+  },
+  {
+   "file": "NotoSansRunic.woff2",
+   "name": "Noto Sans Runic",
+   "range": "U+16A0,U+16A2,U+16A6,U+16AC,U+16B1,U+16B4"
   },
   {
    "file": "NotoSansSinhala.woff2",
    "name": "Noto Sans Sinhala",
-   "range": "U+D85"
+   "range": "U+D82,U+D85,U+D9C,U+DA0-DA1,U+DAB,U+DAF-DB0,U+DB6,U+DB8,U+DBB,U+DC3,U+DCA,U+DCF,U+DD2,U+DD4"
+  },
+  {
+   "file": "NotoSansSymbols2.woff2",
+   "name": "Noto Sans Symbols2",
+   "range": "U+2801,U+2803,U+2807,U+280A,U+2811,U+2817"
+  },
+  {
+   "file": "NotoSansTamil.woff2",
+   "name": "Noto Sans Tamil",
+   "range": "U+B95,U+BA3-BA4,U+BAE,U+BB0,U+BB5,U+BBE,U+BC7,U+BCD"
   },
   {
    "file": "NotoSansThaana.woff2",
@@ -65,27 +205,52 @@
   {
    "file": "NotoSansThai.woff2",
    "name": "Noto Sans Thai",
-   "range": "U+E01"
+   "range": "U+E01,U+E14,U+E27,U+E2A,U+E31,U+E35"
+  },
+  {
+   "file": "NotoSansTifinagh.woff2",
+   "name": "Noto Sans Tifinagh",
+   "range": "U+2D30,U+2D4D,U+2D53,U+2D63"
+  },
+  {
+   "file": "NotoSansUgaritic.woff2",
+   "name": "Noto Sans Ugaritic",
+   "range": "U+10380-10386"
+  },
+  {
+   "file": "NotoSansVai.woff2",
+   "name": "Noto Sans Vai",
+   "range": "U+A524,U+A559"
+  },
+  {
+   "file": "NotoSerifTangut.woff2",
+   "name": "Noto Serif Tangut",
+   "range": "U+170A7,U+17D02,U+17D32,U+17E6D,U+18736"
   },
   {
    "file": "NotoSerifTibetan.woff2",
    "name": "Noto Serif Tibetan",
-   "range": "U+F40"
+   "range": "U+F0B,U+F40,U+F42,U+F51,U+F56,U+F63-F64,U+F66,U+F72,U+F7A,U+FB2"
   },
   {
    "file": "NotoSansCJKJP.woff2",
    "name": "Noto Sans CJK JP",
-   "range": "U+3042"
+   "range": "U+3042,U+3044,U+3046,U+3048,U+304A-304B,U+3053,U+3055,U+3061,U+3065,U+306B,U+306E-306F,U+308C,U+3093,U+309A,U+30A2,U+30A4,U+30A6,U+30A8,U+30AA-30AB,U+30C6,U+30E9,U+30F3,U+31F7"
   },
   {
    "file": "NotoSansCJKKR.woff2",
    "name": "Noto Sans CJK KR",
-   "range": "U+D55C"
+   "range": "U+3131,U+3141,U+3145,U+314B,U+AE00,U+B155,U+B3C5,U+B9BD,U+BB38,U+C138,U+C2E0,U+C548,U+C694,U+D558,U+D55C"
   },
   {
    "file": "NotoSansCJKSC.woff2",
    "name": "Noto Sans CJK SC",
-   "range": "U+3030,U+5B57"
+   "range": "U+3030,U+4E2D,U+4E9B,U+4EBA,U+4F50,U+4F60,U+5168,U+5178,U+525B,U+52A0,U+535C,U+5370,U+540C,U+56FD,U+570B,U+591A,U+5927,U+5948,U+5973,U+597D,U+5ABD,U+5B50,U+5B57,U+5B6B,U+5B89,U+5BF6,U+5BFA,U+5EB7,U+5FA1,U+5FC3,U+601D,U+6307,U+6559,U+6587,U+65E5,U+65E9,U+6642,U+666F,U+66F8,U+6700,U+6708,U+671F,U+672C,U+68B5,U+6B63,U+6C11,U+6C38,U+6C49,U+6CE2,U+6D41,U+6F22,U+7199,U+738B,U+7406,U+7528,U+7532,U+767D,U+76F4,U+7891,U+79E6,U+7BC0,U+7D93,U+7F85,U+822C,U+82E5,U+85DD,U+871C,U+884C,U+8981,U+8A13,U+8D8A,U+91D1,U+96B8,U+97D3,U+97F3,U+99AC,U+9A6C,U+9AA8,U+9AD4"
+  },
+  {
+   "file": "Jigmo2.woff2",
+   "name": "Jigmo2 (CC0)",
+   "range": "U+2029B,U+2139D,U+221A5,U+24F93,U+25A9E"
   }
  ]
 }

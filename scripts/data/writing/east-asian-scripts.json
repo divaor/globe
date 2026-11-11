@@ -1,0 +1,3053 @@
+{
+  "id": "east-asian-scripts",
+  "name": {
+    "en": "Characters of East Asia",
+    "es": "Los caracteres de Asia oriental"
+  },
+  "icon": "🖌️",
+  "era": "ancient",
+  "region": {
+    "en": "China, Korea, Japan and Vietnam",
+    "es": "China, Corea, Japón y Vietnam"
+  },
+  "start": "-1250",
+  "end": "2025",
+  "summary": {
+    "en": "From the oracle bones of Anyang to today's phones: how Chinese characters were born about 1250 BC, changed with brush, paper and printing, and were borrowed by Korea, Japan and Vietnam, who also made kana, Hangul and a Latin alphabet of their own.",
+    "es": "De los huesos oraculares de Anyang a los celulares de hoy: cómo nacieron los caracteres chinos hacia el 1250 a. C., cómo cambiaron con el pincel, el papel y la imprenta, y cómo los adoptaron Corea, Japón y Vietnam, que crearon además los kana, el hangul y un alfabeto latino propio."
+  },
+  "camera": {
+    "lon": 117.0,
+    "lat": 32.0,
+    "zoom": 2.4
+  },
+  "sides": [
+    {
+      "id": "chinese",
+      "name": {
+        "en": "Chinese characters",
+        "es": "Caracteres chinos"
+      },
+      "color": "#8c2f39"
+    },
+    {
+      "id": "japanese",
+      "name": {
+        "en": "Japanese kana and kanji",
+        "es": "Kana y kanji japoneses"
+      },
+      "color": "#2e6f9e"
+    },
+    {
+      "id": "korean",
+      "name": {
+        "en": "Korean (Hanja, then Hangul)",
+        "es": "Coreano (hanja y luego hangul)"
+      },
+      "color": "#5b8c2a"
+    },
+    {
+      "id": "vietnamese",
+      "name": {
+        "en": "Vietnamese (chữ Nôm, then Quốc ngữ)",
+        "es": "Vietnamita (chữ Nôm y luego quốc ngữ)"
+      },
+      "color": "#8e5a2b"
+    }
+  ],
+  "steps": [
+    {
+      "date": "-1250",
+      "title": {
+        "en": "Questions on bones",
+        "es": "Preguntas en huesos"
+      },
+      "text": {
+        "en": "At Yin, near today's Anyang, the Shang kings ask their ancestors about rain, harvests and wars. Diviners carve the questions on bones and shells: the oldest Chinese writing, from about 1250 BC.",
+        "es": "En Yin, cerca de la actual Anyang, los reyes Shang consultan a sus antepasados sobre lluvias, cosechas y guerras. Los adivinos graban las preguntas en huesos y caparazones: la escritura china más antigua, de hacia el 1250 a. C."
+      },
+      "details": {
+        "en": "A diviner heated an ox shoulder blade or a turtle shell until it cracked, read the cracks as the ancestors' answer, and carved the question, and often the outcome, beside them. The oldest inscriptions date from the reign of King Wu Ding, about 1250 to 1200 BC, and they already show a full writing system, so writing probably began earlier, perhaps on bamboo that has rotted away. Chinese tradition says that Cangjie, a scribe of the legendary Yellow Emperor, invented characters after studying the tracks of animals. Many oracle-bone signs are pictures, like 人 'person' or 馬 'horse', and others were borrowed for words that sounded alike. Of the four scripts that scholars think were invented on their own, in Mesopotamia, Egypt, China and Mesoamerica, only this one has never stopped being written.",
+        "es": "Un adivino calentaba un omóplato de buey o un caparazón de tortuga hasta que se agrietaba, leía las grietas como la respuesta de los antepasados y grababa la pregunta, y a menudo el resultado, junto a ellas. Las inscripciones más antiguas son del reinado del rey Wu Ding, hacia el 1250-1200 a. C., y ya muestran un sistema de escritura completo, así que la escritura probablemente empezó antes, quizá sobre bambú que se pudrió. La tradición china cuenta que Cangjie, escriba del legendario Emperador Amarillo, inventó los caracteres tras estudiar las huellas de los animales. Muchos signos de los huesos son dibujos, como 人 «persona» o 馬 «caballo», y otros se tomaban prestados para palabras que sonaban igual. De las cuatro escrituras que los expertos creen inventadas por separado, en Mesopotamia, Egipto, China y Mesoamérica, solo esta nunca ha dejado de escribirse."
+      },
+      "camera": {
+        "lon": 114.3,
+        "lat": 36.0,
+        "zoom": 7.5
+      },
+      "control": {
+        "chinese": {
+          "land": [
+            [
+              111.8,
+              35.0
+            ],
+            [
+              112.5,
+              36.3
+            ],
+            [
+              113.4,
+              37.3
+            ],
+            [
+              114.2,
+              38.1
+            ],
+            [
+              115.5,
+              37.9
+            ],
+            [
+              116.7,
+              37.4
+            ],
+            [
+              117.7,
+              36.5
+            ],
+            [
+              118.3,
+              35.4
+            ],
+            [
+              117.4,
+              34.5
+            ],
+            [
+              116.2,
+              33.9
+            ],
+            [
+              115.0,
+              33.5
+            ],
+            [
+              113.8,
+              33.9
+            ],
+            [
+              112.7,
+              34.3
+            ]
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "oracle-bone-script",
+          "name": {
+            "en": "Oracle bone script",
+            "es": "Escritura de los huesos oraculares"
+          },
+          "at": [
+            114.312,
+            36.13
+          ],
+          "cat": "script",
+          "icon": "卜",
+          "type": "script",
+          "date": "-1250",
+          "place": {
+            "en": "Xiaotun, Yinxu, Anyang, Henan, China",
+            "es": "Xiaotun, en Yinxu (Anyang), Henan, China"
+          },
+          "text": {
+            "en": "The writing carved on ox bones and turtle shells by the diviners of the late Shang kings from about 1250 BC: the oldest Chinese writing known, and the direct ancestor of today's characters.",
+            "es": "La escritura que los adivinos de los últimos reyes Shang grababan en huesos de buey y caparazones de tortuga desde hacia el 1250 a. C.: la escritura china más antigua conocida y la antepasada directa de los caracteres de hoy."
+          },
+          "details": {
+            "en": "In 1899 the scholar Wang Yirong noticed ancient signs on 'dragon bones' sold as medicine. They were traced to the village of Xiaotun, near Anyang, and from 1928 to 1937 archaeologists led by Li Ji dug up the last Shang capital there. More than 150,000 fragments are now known. The inscriptions run from a few characters to several dozen and ask about weather, war, hunting, illness and childbirth. Some strokes were first brushed in ink and then carved, and the stroke order later calligraphers followed was often already fixed.",
+            "es": "En 1899, el sabio Wang Yirong vio signos antiguos en unos «huesos de dragón» que se vendían como medicina. Se supo que venían de la aldea de Xiaotun, cerca de Anyang, y de 1928 a 1937 unos arqueólogos dirigidos por Li Ji excavaron allí la última capital Shang. Hoy se conocen más de 150 000 fragmentos. Las inscripciones van de unos pocos caracteres a varias decenas y preguntan por el clima, la guerra, la caza, las enfermedades y los partos. Algunos trazos se pintaban primero con tinta y luego se grababan, y el orden de los trazos que seguirían los calígrafos posteriores ya estaba a menudo fijado."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Fragments found",
+                "es": "Fragmentos hallados"
+              },
+              "value": {
+                "en": "More than 150,000",
+                "es": "Más de 150 000"
+              }
+            },
+            {
+              "label": {
+                "en": "Recognized as writing",
+                "es": "Reconocidos como escritura"
+              },
+              "value": {
+                "en": "1899, by Wang Yirong",
+                "es": "1899, por Wang Yirong"
+              }
+            }
+          ],
+          "sample": {
+            "text": "甲骨文",
+            "latin": "jiǎgǔwén",
+            "means": {
+              "en": "'shell-and-bone writing', its Chinese name (in today's characters)",
+              "es": "«escritura de caparazones y huesos», su nombre en chino (con caracteres actuales)"
+            }
+          },
+          "wiki": {
+            "en": "Oracle bone script",
+            "es": "Escritura en huesos oraculares"
+          }
+        },
+        {
+          "id": "anyang",
+          "name": {
+            "en": "Anyang (Yinxu)",
+            "es": "Anyang (Yinxu)"
+          },
+          "at": [
+            114.3186,
+            36.1225
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "-1250",
+          "place": {
+            "en": "Anyang, Henan, China",
+            "es": "Anyang, provincia de Henan, China"
+          },
+          "text": {
+            "en": "Yinxu, 'the ruins of Yin', on the edge of today's Anyang: the last capital of the Shang kings, where the oracle bones were found. It has been a World Heritage Site since 2006.",
+            "es": "Yinxu, «las ruinas de Yin», en las afueras de la actual Anyang: la última capital de los reyes Shang, donde se hallaron los huesos oraculares. Es patrimonio mundial desde 2006."
+          },
+          "details": {
+            "en": "The late Shang kings ruled from Yin, on the Huan River, from about 1250 BC until the Zhou conquest about 1046 BC. Diggers selling 'dragon bones' plundered the site for decades until archaeologists began excavating there in 1928; they found palaces, temples, royal tombs, bronze foundries and pits full of inscribed bones, among them the untouched tomb of Fu Hao, a queen and general of King Wu Ding. Since 2009 Anyang has also been home to the National Museum of Chinese Writing.",
+            "es": "Los últimos reyes Shang gobernaron desde Yin, junto al río Huan, desde hacia el 1250 a. C. hasta la conquista Zhou, hacia el 1046 a. C. Los buscadores de «huesos de dragón» saquearon el lugar durante décadas, hasta que los arqueólogos empezaron a excavar en 1928; hallaron palacios, templos, tumbas reales, fundiciones de bronce y fosas llenas de huesos inscritos, entre ellas la tumba intacta de Fu Hao, reina y generala del rey Wu Ding. Desde 2009, Anyang también alberga el Museo Nacional de la Escritura China."
+          },
+          "wiki": {
+            "en": "Yinxu",
+            "es": "Yin Xu"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-800",
+      "title": {
+        "en": "Words cast in bronze",
+        "es": "Palabras fundidas en bronce"
+      },
+      "text": {
+        "en": "Zhou nobles cast long texts inside their ritual bronzes to honour their ancestors and their own deeds. The Mao Gong ding, cast under King Xuan (827–782 BC), holds 500 characters: the longest such inscription known.",
+        "es": "Los nobles Zhou funden textos largos en sus bronces rituales para honrar a sus antepasados y sus hazañas. El Mao Gong ding, fundido bajo el rey Xuan (827-782 a. C.), tiene 500 caracteres: la inscripción de este tipo más larga que se conoce."
+      },
+      "details": {
+        "en": "The Zhou, who overthrew the Shang about 1046 BC, kept their writing. Scribes drew the characters with a stylus in the clay mould before the bronze was poured, so the strokes came out rounder than the carvings on bone. About 12,000 inscribed bronzes are known. Shang vessels bear a few characters, often just a clan name; Zhou ones often have a hundred or more, telling of royal orders, campaigns and family histories, and many end by wishing that sons and grandsons treasure the vessel forever. Everyday writing was probably done with brush and ink on strips of bamboo and wood, which have mostly rotted away. Over the centuries the characters became more regular, and in the western state of Qin they grew into the seal script.",
+        "es": "Los Zhou, que derrocaron a los Shang hacia el 1046 a. C., conservaron su escritura. Los escribas trazaban los caracteres con un punzón en el molde de arcilla antes de verter el bronce, así que los trazos salían más redondeados que los grabados en hueso. Se conocen unos 12 000 bronces con inscripciones. Las vasijas Shang llevan pocos caracteres, a menudo solo el nombre de un clan; las Zhou suelen tener cien o más, que cuentan órdenes reales, campañas e historias familiares, y muchas terminan deseando que hijos y nietos atesoren la vasija para siempre. La escritura cotidiana probablemente se hacía con pincel y tinta en tiras de bambú y madera, que casi siempre se han podrido. Con los siglos, los caracteres se hicieron más regulares, y en el estado occidental de Qin dieron lugar a la escritura de sello."
+      },
+      "camera": {
+        "lon": 108.6,
+        "lat": 34.5,
+        "zoom": 6.0
+      },
+      "control": {
+        "chinese": {
+          "minus": [
+            {
+              "and": [
+                {
+                  "hist": "Zhoa",
+                  "year": -1000
+                },
+                {
+                  "poly": [
+                    [
+                      100.0,
+                      31.2
+                    ],
+                    [
+                      125.0,
+                      31.2
+                    ],
+                    [
+                      125.0,
+                      42.0
+                    ],
+                    [
+                      100.0,
+                      42.0
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "land": [
+                [
+                  103.3,
+                  31.3
+                ],
+                [
+                  104.1,
+                  31.75
+                ],
+                [
+                  105.0,
+                  31.5
+                ],
+                [
+                  105.35,
+                  30.8
+                ],
+                [
+                  104.9,
+                  30.0
+                ],
+                [
+                  104.2,
+                  29.8
+                ],
+                [
+                  103.5,
+                  30.1
+                ],
+                [
+                  103.2,
+                  30.6
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "bronze-script",
+          "name": {
+            "en": "Bronze script",
+            "es": "Escritura en bronce"
+          },
+          "at": [
+            108.78,
+            34.24
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "-1046",
+          "place": {
+            "en": "Feng and Hao, the Western Zhou capital, near Xi'an, China",
+            "es": "Feng y Hao, la capital de los Zhou occidentales, cerca de Xi'an, China"
+          },
+          "text": {
+            "en": "The Chinese writing cast in ritual bronzes of the Shang and above all the Zhou: rounder than on the oracle bones, and slowly more regular, until it became the seal script of Qin.",
+            "es": "La escritura china fundida en los bronces rituales de los Shang y sobre todo de los Zhou: más redondeada que en los huesos oraculares y cada vez más regular, hasta convertirse en la escritura de sello de Qin."
+          },
+          "sample": {
+            "text": "子子孫孫永寶用",
+            "latin": "zǐzǐ sūnsūn yǒng bǎo yòng",
+            "means": {
+              "en": "'May sons and grandsons forever treasure and use it', a usual closing line",
+              "es": "«Que hijos y nietos lo atesoren y usen para siempre», un cierre habitual"
+            }
+          },
+          "wiki": {
+            "en": "Chinese bronze inscriptions",
+            "es": "Escritura en bronce"
+          }
+        },
+        {
+          "id": "shi-qiang-pan",
+          "name": {
+            "en": "Shi Qiang pan",
+            "es": "Shi Qiang pan"
+          },
+          "at": [
+            107.89,
+            34.48
+          ],
+          "cat": "inscription",
+          "type": "work",
+          "date": "-900",
+          "place": {
+            "en": "Found at Fufeng, Baoji, Shaanxi; Baoji Bronzeware Museum, China",
+            "es": "Hallada en Fufeng, Baoji, Shaanxi; Museo de Bronces de Baoji, China"
+          },
+          "text": {
+            "en": "A bronze basin cast about 900 BC for the scribe Qiang. Its 284 characters praise the first seven Zhou kings and then his own family: it has been called the first conscious attempt in China to write history.",
+            "es": "Una jofaina de bronce fundida hacia el 900 a. C. para el escriba Qiang. Sus 284 caracteres alaban a los siete primeros reyes Zhou y a su familia: se la llama el primer intento consciente de escribir historia en China."
+          },
+          "details": {
+            "en": "The basin was buried with more than a hundred other bronzes of the same family and dug up in 1976. Its text flatters the kings: it says King Zhao 'tamed Chu and Jing', when in fact his campaign there had failed and he had died, within living memory of the casting. China lists it among the relics that may never leave the country for exhibitions.",
+            "es": "La jofaina se enterró con más de cien bronces de la misma familia y se desenterró en 1976. Su texto halaga a los reyes: dice que el rey Zhao «domó a Chu y a Jing», cuando en realidad su campaña allí había fracasado y él había muerto, en tiempos que aún se recordaban. China la cuenta entre las reliquias que nunca pueden salir del país para exposiciones."
+          },
+          "wiki": {
+            "en": "Shi Qiang pan",
+            "es": ""
+          }
+        },
+        {
+          "id": "mao-gong-ding",
+          "name": {
+            "en": "Mao Gong ding",
+            "es": "Mao Gong ding"
+          },
+          "at": [
+            107.62,
+            34.44
+          ],
+          "cat": "inscription",
+          "type": "work",
+          "date": "-800",
+          "place": {
+            "en": "Found in Qishan County, Shaanxi, in 1843; National Palace Museum, Taipei",
+            "es": "Hallado en el condado de Qishan, Shaanxi, en 1843; Museo Nacional del Palacio, Taipéi"
+          },
+          "text": {
+            "en": "A bronze cauldron of King Xuan's reign (827–782 BC) whose 500 characters, in 32 lines, record King Xuan's charge to the Duke of Mao: the longest bronze inscription known, and a treasure of Taipei's National Palace Museum.",
+            "es": "Un caldero de bronce del reinado de Xuan (827-782 a. C.) cuyos 500 caracteres, en 32 líneas, recogen el encargo del rey Xuan al duque de Mao: la inscripción en bronce más larga que se conoce y un tesoro del Museo Nacional del Palacio de Taipéi."
+          },
+          "wiki": {
+            "en": "Mao Gong ding",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "-221",
+      "title": {
+        "en": "One empire, one script",
+        "es": "Un imperio, una escritura"
+      },
+      "text": {
+        "en": "In 221 BC the king of Qin conquers the last rival state and becomes the First Emperor. His minister Li Si makes Qin's small seal script the standard and sweeps away the other states' ways of writing.",
+        "es": "En el 221 a. C., el rey de Qin conquista el último estado rival y se convierte en el Primer Emperador. Su ministro Li Si impone la escritura de sello pequeño de Qin y barre las formas de escribir de los demás estados."
+      },
+      "details": {
+        "en": "During the Warring States the same word could be written differently in Chu, Qi or Yan. After unification, Qin Shi Huang and Li Si standardized weights, measures, coins and cart axles, and the forms of characters too: Qin's seal script, cleaned of variants, became the official script, and Li Si compiled a primer of some 3,300 characters. The empire's many spoken languages could now share one written language, a unity that lasts to this day. Clerks, meanwhile, already used a quicker, squarer hand for daily work. In 213 BC, the histories say, Li Si had books of history and philosophy burned, except those on medicine, divination, farming and Qin's own past; modern historians doubt parts of the story, written down a century later under the Han.",
+        "es": "Durante los Reinos Combatientes, una misma palabra podía escribirse distinto en Chu, Qi o Yan. Tras la unificación, Qin Shi Huang y Li Si unificaron las pesas, las medidas, las monedas y los ejes de los carros, y también la forma de los caracteres: la escritura de sello de Qin, limpia de variantes, se volvió la oficial, y Li Si compuso un manual de unos 3300 caracteres. Las muchas lenguas habladas del imperio pudieron compartir una sola lengua escrita, una unidad que dura hasta hoy. Mientras tanto, los funcionarios ya usaban una letra más rápida y cuadrada para el trabajo diario. En el 213 a. C., según las crónicas, Li Si mandó quemar los libros de historia y filosofía, salvo los de medicina, adivinación, agricultura y el pasado de Qin; los historiadores modernos dudan de parte del relato, escrito un siglo después, con los Han."
+      },
+      "camera": {
+        "lon": 111.5,
+        "lat": 33.0,
+        "zoom": 3.6
+      },
+      "control": {
+        "chinese": [
+          {
+            "hist": "Qin",
+            "year": -300
+          },
+          {
+            "poly": [
+              [
+                105.8,
+                32.9
+              ],
+              [
+                107.4,
+                32.9
+              ],
+              [
+                107.4,
+                34.2
+              ],
+              [
+                105.8,
+                34.2
+              ]
+            ]
+          },
+          {
+            "land": [
+              [
+                105.6,
+                35.6
+              ],
+              [
+                107.5,
+                35.8
+              ],
+              [
+                109.4,
+                35.9
+              ],
+              [
+                110.6,
+                35.4
+              ],
+              [
+                110.9,
+                34.4
+              ],
+              [
+                110.2,
+                33.5
+              ],
+              [
+                109.0,
+                32.6
+              ],
+              [
+                107.0,
+                32.4
+              ],
+              [
+                105.6,
+                32.8
+              ],
+              [
+                105.2,
+                34.2
+              ]
+            ]
+          },
+          {
+            "land": [
+              [
+                102.8,
+                31.6
+              ],
+              [
+                104.2,
+                32.2
+              ],
+              [
+                105.8,
+                32.0
+              ],
+              [
+                107.6,
+                31.3
+              ],
+              [
+                108.4,
+                30.2
+              ],
+              [
+                107.4,
+                29.0
+              ],
+              [
+                105.8,
+                28.6
+              ],
+              [
+                104.2,
+                28.8
+              ],
+              [
+                103.0,
+                29.6
+              ],
+              [
+                102.6,
+                30.6
+              ]
+            ]
+          },
+          {
+            "hist": "Zhou states",
+            "year": -300
+          },
+          {
+            "hist": "Yue",
+            "year": -300
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "qin-shi-huang",
+          "name": {
+            "en": "Qin Shi Huang, the First Emperor",
+            "es": "Qin Shi Huang, el Primer Emperador"
+          },
+          "at": [
+            108.71,
+            34.36
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-221",
+          "life": [
+            "-259",
+            "-210"
+          ],
+          "place": {
+            "en": "Xianyang, Shaanxi, China",
+            "es": "Xianyang, Shaanxi, China"
+          },
+          "text": {
+            "en": "Ying Zheng, king of Qin, who united China in 221 BC and called himself the First Emperor. He gave the empire one script, one coinage and one set of weights and measures; his dynasty fell in 206 BC.",
+            "es": "Ying Zheng, rey de Qin, que unificó China en el 221 a. C. y se llamó Primer Emperador. Dio al imperio una sola escritura, una sola moneda y unas mismas pesas y medidas; su dinastía cayó en el 206 a. C."
+          },
+          "wiki": {
+            "en": "Qin Shi Huang",
+            "es": "Qin Shi Huang"
+          }
+        },
+        {
+          "id": "seal-script",
+          "name": {
+            "en": "Small seal script",
+            "es": "Escritura de sello pequeño"
+          },
+          "at": [
+            108.73,
+            34.325
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "-221",
+          "place": {
+            "en": "Xianyang, Shaanxi, China",
+            "es": "Xianyang, Shaanxi, China"
+          },
+          "text": {
+            "en": "The script of the state of Qin, with tall, rounded, even strokes, made the official script of the whole empire in 221 BC. It is still carved on seals, which gave it its name in English.",
+            "es": "La escritura del estado de Qin, de trazos altos, redondeados y parejos, que en el 221 a. C. se volvió la escritura oficial de todo el imperio. Todavía se graba en sellos, de ahí su nombre."
+          },
+          "details": {
+            "en": "Qin's script had grown out of Zhou bronze writing and was more conservative than that of the eastern states, whose regional forms, and fancy styles such as the 'bird-worm' script of Wu, Yue and Chu, disappeared after unification. Around AD 100 Xu Shen's dictionary, the Shuowen Jiezi, explained 9,353 characters in small seal forms under 540 radicals, which is why scholars can still read them. The seal script has also been accepted for Unicode version 18.0.",
+            "es": "La escritura de Qin venía de la escritura de los bronces Zhou y era más conservadora que la de los estados del este, cuyas formas regionales, y estilos adornados como la escritura de «pájaros y gusanos» de Wu, Yue y Chu, desaparecieron tras la unificación. Hacia el 100 d. C., el diccionario de Xu Shen, el Shuowen Jiezi, explicó 9353 caracteres en forma de sello pequeño bajo 540 radicales, y por eso los expertos aún pueden leerlos. La escritura de sello también fue aceptada para la versión 18.0 de Unicode."
+          },
+          "sample": {
+            "text": "書同文字",
+            "latin": "shū tóng wénzì",
+            "means": {
+              "en": "'All writing with the same characters', the Qin rule in the Shiji (in today's characters)",
+              "es": "«Toda escritura con los mismos caracteres», la norma Qin según el Shiji (con caracteres actuales)"
+            }
+          },
+          "wiki": {
+            "en": "Seal script",
+            "es": "Escritura de sello"
+          }
+        }
+      ]
+    },
+    {
+      "date": "105",
+      "title": {
+        "en": "Paper and the brush",
+        "es": "El papel y el pincel"
+      },
+      "text": {
+        "en": "In AD 105 the court official Cai Lun presents the Han emperor with a better, cheaper paper. With brush and paper, scribes turn seal script into the quicker clerical script, and later into regular script.",
+        "es": "En el 105 d. C., el funcionario Cai Lun presenta al emperador Han un papel mejor y más barato. Con pincel y papel, los escribas convierten la escritura de sello en la clerical, más rápida, y luego en la regular."
+      },
+      "details": {
+        "en": "Paper-like sheets of hemp had existed since the 2nd century BC, but Cai Lun's recipe of tree bark, hemp waste, old rags and fishing nets made paper cheap and good enough to replace heavy bamboo strips and costly silk. Clerical script, the quick hand of Qin clerks, matured under the Han: its squarer, simpler strokes left most of the old pictures behind. Around AD 100 Xu Shen's dictionary, the Shuowen Jiezi, explained 9,353 characters and grouped them under 540 radicals. After the Han, regular script grew out of clerical and cursive writing: the calligrapher Zhong Yao is called its father, and Wang Xizhi refined it in the 4th century. From the 5th and 6th centuries it was the main way of writing, and it is the style printed in books and on screens today.",
+        "es": "Desde el siglo II a. C. existían hojas de cáñamo parecidas al papel, pero la receta de Cai Lun, con corteza de árbol, restos de cáñamo, trapos viejos y redes de pesca, hizo el papel lo bastante barato y bueno para reemplazar las pesadas tiras de bambú y la cara seda. La escritura clerical, la letra rápida de los funcionarios de Qin, maduró con los Han: sus trazos más cuadrados y simples dejaron atrás casi todos los antiguos dibujos. Hacia el 100 d. C., el diccionario de Xu Shen, el Shuowen Jiezi, explicó 9353 caracteres y los agrupó bajo 540 radicales. Después de los Han, la escritura regular nació de la clerical y de la cursiva: al calígrafo Zhong Yao se le llama su padre, y Wang Xizhi la refinó en el siglo IV. Desde los siglos V y VI fue la forma principal de escribir, y es el estilo que hoy se imprime en los libros y aparece en las pantallas."
+      },
+      "camera": {
+        "lon": 114.0,
+        "lat": 32.5,
+        "zoom": 3.8
+      },
+      "control": {
+        "chinese": {
+          "hist": "Han",
+          "year": 100
+        }
+      },
+      "places": [
+        {
+          "id": "cai-lun",
+          "name": {
+            "en": "Cai Lun",
+            "es": "Cai Lun"
+          },
+          "at": [
+            112.624,
+            34.727
+          ],
+          "cat": "person",
+          "type": "person",
+          "date": "105",
+          "life": [
+            "50",
+            "121"
+          ],
+          "place": {
+            "en": "Luoyang, Henan, China (the Han capital)",
+            "es": "Luoyang, Henan, China (la capital Han)"
+          },
+          "text": {
+            "en": "A eunuch official of the Han court who in 105 presented the emperor with paper made from bark, hemp, rags and old fishing nets. China honours him as the god of papermaking.",
+            "es": "Un funcionario eunuco de la corte Han que en el 105 presentó al emperador papel hecho de corteza, cáñamo, trapos y redes de pesca viejas. En China se le venera como dios de la fabricación del papel."
+          },
+          "details": {
+            "en": "Born, it is thought, between about 50 and 62 in what is now Leiyang, Hunan, Cai Lun served at the court in Luoyang and ran the palace workshop that made weapons and instruments. He did not invent paper, which had been made for two centuries, but his method made it cheap and fit for writing, and it soon replaced bamboo strips. He was made a marquis in 114. After the death of his patron, the empress dowager Deng, he was called to answer for an old palace intrigue, and in 121 he took his own life. Paper later travelled along the Silk Road to Samarkand, Baghdad and Europe.",
+            "es": "Nacido, según se cree, entre los años 50 y 62 en la actual Leiyang, en Hunan, Cai Lun sirvió en la corte de Luoyang y dirigió el taller del palacio que fabricaba armas e instrumentos. No inventó el papel, que se hacía desde dos siglos antes, pero su método lo volvió barato y apto para escribir, y pronto reemplazó a las tiras de bambú. Fue nombrado marqués en el 114. Tras la muerte de su protectora, la emperatriz viuda Deng, lo llamaron a rendir cuentas por una vieja intriga de palacio, y en el 121 se quitó la vida. El papel viajó después por la Ruta de la Seda hasta Samarcanda, Bagdad y Europa."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Paper presented",
+                "es": "Papel presentado"
+              },
+              "value": {
+                "en": "AD 105",
+                "es": "105 d. C."
+              }
+            },
+            {
+              "label": {
+                "en": "Made from",
+                "es": "Hecho de"
+              },
+              "value": {
+                "en": "Tree bark, hemp, rags and fishing nets",
+                "es": "Corteza, cáñamo, trapos y redes de pesca"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Cai Lun",
+            "es": "Cai Lun"
+          }
+        },
+        {
+          "id": "clerical-script",
+          "name": {
+            "en": "Clerical script",
+            "es": "Escritura clerical"
+          },
+          "at": [
+            108.8583,
+            34.3083
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "-200",
+          "place": {
+            "en": "Chang'an (Xi'an), China",
+            "es": "Chang'an (Xi'an), China"
+          },
+          "text": {
+            "en": "The 'clerks' script', grown from the quick hand of Qin scribes and mature under the Han dynasty. Its squarer, simpler strokes left most of the old pictures behind.",
+            "es": "La «escritura de los funcionarios», nacida de la letra rápida de los escribas de Qin y madura con la dinastía Han. Sus trazos, más cuadrados y simples, dejaron atrás casi todos los antiguos dibujos."
+          },
+          "sample": {
+            "text": "隸書",
+            "latin": "lìshū",
+            "means": {
+              "en": "'clerical script'",
+              "es": "«escritura clerical»"
+            }
+          },
+          "wiki": {
+            "en": "Clerical script",
+            "es": "Escritura clerical china"
+          }
+        },
+        {
+          "id": "regular-script",
+          "name": {
+            "en": "Regular script",
+            "es": "Escritura regular"
+          },
+          "at": [
+            118.7781,
+            32.0572
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "220",
+          "place": {
+            "en": "Jiankang (Nanjing), China",
+            "es": "Jiankang (Nankín), China"
+          },
+          "text": {
+            "en": "The style of characters written and printed today, with clean, separate strokes. Credited to Zhong Yao in the 3rd century and refined by Wang Xizhi, it became the main script by the 5th and 6th centuries.",
+            "es": "El estilo de los caracteres que hoy se escriben e imprimen, con trazos limpios y separados. Se atribuye a Zhong Yao, en el siglo III, y lo refinó Wang Xizhi; fue la escritura principal desde los siglos V y VI."
+          },
+          "sample": {
+            "text": "永",
+            "latin": "yǒng",
+            "means": {
+              "en": "'eternity': its strokes contain most of the basic strokes of the script, the 'Eight Principles of Yong'",
+              "es": "«eternidad»: sus trazos reúnen casi todos los trazos básicos de esta escritura, los «ocho principios de Yong»"
+            }
+          },
+          "wiki": {
+            "en": "Regular script",
+            "es": "Escritura regular"
+          }
+        },
+        {
+          "id": "wang-xizhi",
+          "name": {
+            "en": "Wang Xizhi",
+            "es": "Wang Xizhi"
+          },
+          "at": [
+            120.5833,
+            30.0511
+          ],
+          "cat": "person",
+          "type": "person",
+          "date": "353",
+          "life": [
+            "303",
+            "361"
+          ],
+          "place": {
+            "en": "Kuaiji (now Shaoxing), Zhejiang, China",
+            "es": "Kuaiji (hoy Shaoxing), Zhejiang, China"
+          },
+          "text": {
+            "en": "Often called the greatest calligrapher in Chinese history, a master of regular, running and cursive script. His 'Orchid Pavilion Preface' of 353 is celebrated as the high point of running script.",
+            "es": "Considerado a menudo el mayor calígrafo de la historia china, maestro de la escritura regular, semicursiva y cursiva. Su «Prefacio del Pabellón de las Orquídeas», del 353, se celebra como la cumbre de la escritura semicursiva."
+          },
+          "details": {
+            "en": "On a spring day in 353 Wang, then governor of Kuaiji, gathered 42 friends at the Orchid Pavilion near today's Shaoxing. They floated cups of wine down a winding stream and wrote poems, and Wang dashed off a preface of 324 characters. Emperor Taizong of Tang collected some two thousand of his works, had the preface copied, and, it is said, took the original with him to his tomb; only copies survive. Taizong made Wang's hand the model for all, and the Heian court in Japan copied his style too.",
+            "es": "Un día de primavera del 353, Wang, entonces gobernador de Kuaiji, reunió a 42 amigos en el Pabellón de las Orquídeas, cerca de la actual Shaoxing. Hicieron flotar copas de vino por un arroyo sinuoso y escribieron poemas, y Wang escribió de un tirón un prefacio de 324 caracteres. El emperador Taizong de los Tang reunió unas dos mil de sus obras, mandó copiar el prefacio y, según se cuenta, se llevó el original a su tumba; solo quedan copias. Taizong hizo de la letra de Wang el modelo de todos, y la corte de Heian, en Japón, también copió su estilo."
+          },
+          "wiki": {
+            "en": "Wang Xizhi",
+            "es": "Wang Xizhi"
+          }
+        }
+      ]
+    },
+    {
+      "date": "712",
+      "title": {
+        "en": "Korea and Japan borrow characters",
+        "es": "Corea y Japón adoptan los caracteres"
+      },
+      "text": {
+        "en": "Characters reach Korea and Japan with Chinese books, Buddhist monks and scribes from Baekje. At first people write in classical Chinese; then they bend the characters to their own languages, using some just for their sounds.",
+        "es": "Los caracteres llegan a Corea y Japón con libros chinos, monjes budistas y escribas de Baekje. Al principio se escribe en chino clásico; luego los caracteres se adaptan a las lenguas propias, y algunos se usan solo por su sonido."
+      },
+      "details": {
+        "en": "From 108 BC the Han ran commanderies in northern Korea, and the Korean kingdoms took up classical Chinese for records and diplomacy; the stele of King Gwanggaeto, put up in 414, is its oldest securely dated monument there. Korean and Japanese are not related to Chinese, so scribes found ways to write them: in Korea, idu, 'officials' reading', used characters for Korean words and endings; in Japan, characters were used for their sounds. In 712 the Kojiki, Japan's oldest chronicle, was presented to Empress Genmei in Nara: its prose is in Chinese, but its songs are spelled in Japanese with characters chosen for sound. Japanese chronicles say that a scholar from the Korean kingdom of Baekje, Wani, had brought Chinese books in the early 5th century; he is half legendary, but Baekje did send teachers.",
+        "es": "Desde el 108 a. C., los Han gobernaron comandancias en el norte de Corea, y los reinos coreanos adoptaron el chino clásico para sus registros y su diplomacia; la estela del rey Gwanggaeto, levantada en el 414, es allí su monumento más antiguo de fecha segura. El coreano y el japonés no son parientes del chino, así que los escribas buscaron cómo escribirlos: en Corea, el idu, «lectura de los funcionarios», usaba caracteres para palabras y terminaciones coreanas; en Japón, se usaban caracteres por su sonido. En el 712 se presentó a la emperatriz Genmei, en Nara, el Kojiki, la crónica japonesa más antigua: su prosa está en chino, pero sus canciones están escritas en japonés con caracteres elegidos por su sonido. Las crónicas japonesas cuentan que un sabio del reino coreano de Baekje, Wani, llevó libros chinos a comienzos del siglo V; es medio legendario, pero Baekje sí envió maestros."
+      },
+      "camera": {
+        "lon": 124.5,
+        "lat": 36.5,
+        "zoom": 3.3
+      },
+      "control": {
+        "chinese": {
+          "minus": [
+            {
+              "hist": "Tang Empire",
+              "year": 800
+            },
+            {
+              "hist": "Silla",
+              "year": 900
+            },
+            {
+              "hist": "Japan",
+              "year": 800
+            }
+          ]
+        },
+        "korean": {
+          "hist": "Silla",
+          "year": 900
+        },
+        "japanese": {
+          "hist": "Japan",
+          "year": 800
+        }
+      },
+      "moves": [
+        {
+          "side": "chinese",
+          "path": [
+            [
+              108.94,
+              34.27
+            ],
+            [
+              112.45,
+              34.62
+            ],
+            [
+              116.4,
+              39.9
+            ],
+            [
+              121.6,
+              41.1
+            ],
+            [
+              125.75,
+              39.02
+            ],
+            [
+              126.91,
+              36.28
+            ],
+            [
+              129.04,
+              35.1
+            ],
+            [
+              130.4,
+              33.59
+            ],
+            [
+              133.0,
+              34.2
+            ],
+            [
+              135.5,
+              34.69
+            ],
+            [
+              135.8,
+              34.5
+            ]
+          ],
+          "label": {
+            "en": "Characters travel east",
+            "es": "Los caracteres viajan al este"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "gwanggaeto-stele",
+          "name": {
+            "en": "Gwanggaeto Stele",
+            "es": "Estela de Gwanggaeto"
+          },
+          "at": [
+            126.2142,
+            41.1449
+          ],
+          "cat": "inscription",
+          "type": "work",
+          "date": "414",
+          "place": {
+            "en": "Ji'an, Jilin, China (once a capital of Goguryeo)",
+            "es": "Ji'an, Jilin, China (antigua capital de Goguryeo)"
+          },
+          "text": {
+            "en": "A granite pillar 6.39 m tall raised in 414 for King Gwanggaeto of Goguryeo and carved with about 1,800 characters of classical Chinese: the oldest securely dated inscription of the Korean kingdoms.",
+            "es": "Un pilar de granito de 6,39 m levantado en el 414 para el rey Gwanggaeto de Goguryeo y grabado con unos 1800 caracteres en chino clásico: la inscripción de fecha segura más antigua de los reinos coreanos."
+          },
+          "details": {
+            "en": "King Jangsu raised it by his father's tomb at Ji'an, on the Yalu River, then the capital of Goguryeo and now in China. Forgotten for centuries, it was found under mud and creepers around 1876; in 1882 the local magistrate had the plants burned off, which damaged the stone. Its text tells Goguryeo's founding legend and the king's wars, and historians in Korea, Japan and China still read some of its lines in different ways.",
+            "es": "El rey Jangsu la levantó junto a la tumba de su padre en Ji'an, a orillas del río Yalu, entonces capital de Goguryeo y hoy en China. Olvidada durante siglos, se encontró bajo barro y enredaderas hacia 1876; en 1882 el magistrado local mandó quemar las plantas, lo que dañó la piedra. Su texto cuenta la leyenda de la fundación de Goguryeo y las guerras del rey, y los historiadores de Corea, Japón y China todavía leen algunas de sus líneas de distinta manera."
+          },
+          "wiki": {
+            "en": "Gwanggaeto Stele",
+            "es": "Estela de Gwanggaeto"
+          }
+        },
+        {
+          "id": "hanja",
+          "name": {
+            "en": "Hanja",
+            "es": "Hanja"
+          },
+          "at": [
+            129.2247,
+            35.8562
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "-108",
+          "place": {
+            "en": "Korea; Gyeongju was the capital of Silla",
+            "es": "Corea; Gyeongju era la capital de Silla"
+          },
+          "text": {
+            "en": "Chinese characters as used in Korea, where most writing was done in classical Chinese until the 19th century. Up to half of Korean words come from Chinese, and hanja are still taught in both Koreas.",
+            "es": "Los caracteres chinos tal como se usan en Corea, donde casi todo se escribía en chino clásico hasta el siglo XIX. Hasta la mitad de las palabras coreanas vienen del chino, y los hanja se siguen enseñando en las dos Coreas."
+          },
+          "sample": {
+            "text": "大韓民國",
+            "latin": "Daehan Minguk",
+            "means": {
+              "en": "'Republic of Korea', written in hanja",
+              "es": "«República de Corea», escrito en hanja"
+            }
+          },
+          "wiki": {
+            "en": "Hanja",
+            "es": "Hanja"
+          }
+        },
+        {
+          "id": "kanji",
+          "name": {
+            "en": "Kanji",
+            "es": "Kanji"
+          },
+          "at": [
+            139.4794,
+            36.1283
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "471",
+          "place": {
+            "en": "Inariyama Kofun, Gyōda, Saitama, Japan",
+            "es": "Inariyama Kofun, Gyōda, Saitama, Japón"
+          },
+          "text": {
+            "en": "Chinese characters as used for Japanese. A sword from the Inariyama tomb, dated probably to 471, already spells Japanese names with gold-inlaid characters. Japanese schools teach 2,136 everyday kanji.",
+            "es": "Los caracteres chinos usados para el japonés. Una espada de la tumba de Inariyama, probablemente del 471, ya escribe nombres japoneses con caracteres de oro incrustado. Las escuelas japonesas enseñan 2136 kanji de uso común."
+          },
+          "details": {
+            "en": "The sword was dug up in 1968, and in 1978 X-rays revealed 115 characters inlaid in gold. Its date is given as a 'year of the metal pig', usually read as 471, though 531 has been proposed. Chinese characters had reached Japan earlier on seals, coins and mirrors, such as the gold seal the Han emperor gave an envoy in 57, but people learned to write them only from the 5th century. Most kanji now have two kinds of reading: one taken from Chinese and one a native Japanese word.",
+            "es": "La espada se desenterró en 1968, y en 1978 los rayos X revelaron 115 caracteres incrustados en oro. Su fecha se da como un «año del cerdo de metal», que suele leerse como el 471, aunque se ha propuesto el 531. Los caracteres chinos habían llegado antes a Japón en sellos, monedas y espejos, como el sello de oro que el emperador Han dio a un enviado en el 57, pero solo desde el siglo V se aprendió a escribirlos. Hoy la mayoría de los kanji tienen dos tipos de lectura: una tomada del chino y otra que es una palabra japonesa."
+          },
+          "sample": {
+            "text": "日本",
+            "latin": "Nihon",
+            "means": {
+              "en": "'origin of the sun': Japan",
+              "es": "«origen del sol»: Japón"
+            }
+          },
+          "wiki": {
+            "en": "Kanji",
+            "es": "Kanji"
+          },
+          "img": "Inariyama sword.JPG"
+        },
+        {
+          "id": "manyogana",
+          "name": {
+            "en": "Man'yōgana",
+            "es": "Man'yōgana"
+          },
+          "at": [
+            135.7947,
+            34.6911
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "650",
+          "place": {
+            "en": "Heijō-kyō (Nara), Japan",
+            "es": "Heijō-kyō (Nara), Japón"
+          },
+          "text": {
+            "en": "Chinese characters used only for their sounds to spell Japanese, as in the songs of the Kojiki (712) and the poems of the Man'yōshū (after 759). Some 970 characters served for about 90 syllables.",
+            "es": "Caracteres chinos usados solo por su sonido para escribir japonés, como en las canciones del Kojiki (712) y los poemas del Man'yōshū (después del 759). Unos 970 caracteres servían para unas 90 sílabas."
+          },
+          "details": {
+            "en": "Man'yōgana was in use by the mid-7th century and is named after the Man'yōshū, 'Collection of Ten Thousand Leaves', more than 4,500 poems in 20 volumes by emperors, courtiers, soldiers and ordinary people. Any character with the right sound could be used, so the same syllable might be written many ways, and readers could not always tell whether a character stood for its sound or its meaning. Simplified, these characters became hiragana and katakana.",
+            "es": "El man'yōgana se usaba a mediados del siglo VII y debe su nombre al Man'yōshū, «Colección de las diez mil hojas», con más de 4500 poemas en 20 volúmenes de emperadores, cortesanos, soldados y gente común. Servía cualquier carácter con el sonido adecuado, así que una misma sílaba podía escribirse de muchas maneras, y el lector no siempre sabía si un carácter valía por su sonido o por su significado. Simplificados, estos caracteres dieron el hiragana y el katakana."
+          },
+          "sample": {
+            "text": "安佐奈藝思多理",
+            "latin": "asanagi shitari",
+            "means": {
+              "en": "'the morning sea lies calm', from a Man'yōshū poem",
+              "es": "«el mar está en calma esta mañana», de un poema del Man'yōshū"
+            }
+          },
+          "wiki": {
+            "en": "Man'yōgana",
+            "es": "Man'yōgana"
+          }
+        }
+      ]
+    },
+    {
+      "date": "868-05-11",
+      "title": {
+        "en": "The Diamond Sutra",
+        "es": "El sutra del diamante"
+      },
+      "text": {
+        "en": "Buddhists print prayers to gain merit, carving each page into a wooden block. On 11 May 868 a man named Wang Jie pays for a printed Diamond Sutra: the oldest dated printed book, found in a cave at Dunhuang.",
+        "es": "Los budistas imprimen oraciones para ganar méritos, con cada página tallada en un bloque de madera. El 11 de mayo del 868, Wang Jie paga un sutra del diamante impreso: el libro impreso con fecha más antiguo, hallado en Dunhuang."
+      },
+      "details": {
+        "en": "Woodblock printing was used in Tang China by the 7th century, first for Buddhist charms and prayers, since copying sacred words earned merit. A charm text translated in 704 at the court of Empress Wu Zetian spread fast: a printed copy found in 1966 in a stone pagoda at Bulguksa, in Korea, was made between 704 and 751 (whether in Korea or in China is debated), and in Japan Empress Shōtoku had a million little pagodas made, each holding a printed charm. The Diamond Sutra of 868 is a scroll about 5 m long that opens with a picture of the Buddha preaching. It was printed 'for universal free distribution' on behalf of Wang Jie's parents, walled up in the Library Cave at Mogao in the 11th century, found in 1900 and taken to London by Aurel Stein in 1907.",
+        "es": "La impresión con bloques de madera se usaba en la China de los Tang desde el siglo VII, primero para amuletos y oraciones budistas, porque copiar palabras sagradas daba méritos. Un texto de amuletos traducido en el 704 en la corte de la emperatriz Wu Zetian se difundió rápido: una copia impresa hallada en 1966 en una pagoda de piedra de Bulguksa, en Corea, se hizo entre el 704 y el 751 (se discute si en Corea o en China), y en Japón la emperatriz Shōtoku mandó hacer un millón de pequeñas pagodas con un amuleto impreso dentro. El sutra del diamante del 868 es un rollo de unos 5 m que empieza con un dibujo del Buda predicando. Se imprimió «para su libre distribución universal» en nombre de los padres de Wang Jie, se tapió en la Cueva de la Biblioteca de Mogao en el siglo XI, se halló en 1900 y Aurel Stein se lo llevó a Londres en 1907."
+      },
+      "camera": {
+        "lon": 115.5,
+        "lat": 37.0,
+        "zoom": 2.6
+      },
+      "control": {
+        "chinese": {
+          "minus": [
+            {
+              "hist": "Tang Empire",
+              "year": 900
+            },
+            {
+              "hist": "Silla",
+              "year": 900
+            },
+            {
+              "hist": "Yamato",
+              "year": 900
+            }
+          ]
+        },
+        "korean": {
+          "hist": "Silla",
+          "year": 900
+        },
+        "japanese": {
+          "hist": "Yamato",
+          "year": 900
+        }
+      },
+      "places": [
+        {
+          "id": "diamond-sutra",
+          "name": {
+            "en": "The Diamond Sutra of 868",
+            "es": "El sutra del diamante del 868"
+          },
+          "at": [
+            94.806,
+            40.0355
+          ],
+          "cat": "book",
+          "type": "work",
+          "date": "868-05-11",
+          "place": {
+            "en": "Found at Mogao, Dunhuang; now in the British Library, London",
+            "es": "Hallado en Mogao, Dunhuang; hoy en la Biblioteca Británica, Londres"
+          },
+          "text": {
+            "en": "A Buddhist scripture printed from wooden blocks on 11 May 868 'for universal free distribution'. Found in the Library Cave at Mogao, it is the oldest printed book that bears a date.",
+            "es": "Una escritura budista impresa con bloques de madera el 11 de mayo del 868 «para su libre distribución universal». Hallada en la Cueva de la Biblioteca de Mogao, es el libro impreso con fecha más antiguo."
+          },
+          "sample": {
+            "text": "金剛般若波羅蜜經",
+            "latin": "Jīngāng bōrě bōluómì jīng",
+            "means": {
+              "en": "'Diamond Perfection of Wisdom Sutra', its title",
+              "es": "«Sutra diamantino de la perfección de la sabiduría», su título"
+            }
+          },
+          "wiki": {
+            "en": "Diamond Sutra",
+            "es": "Sutra del diamante"
+          }
+        },
+        {
+          "id": "woodblock-printing",
+          "name": {
+            "en": "Woodblock printing",
+            "es": "Impresión xilográfica"
+          },
+          "at": [
+            108.94,
+            34.26
+          ],
+          "cat": "printing",
+          "type": "invention",
+          "date": "650",
+          "place": {
+            "en": "Tang China; Chang'an (Xi'an) was its capital",
+            "es": "China de los Tang; Chang'an (Xi'an) era su capital"
+          },
+          "text": {
+            "en": "Printing from a whole page carved in reverse on a wooden block, used in Tang China by the 7th century. It remained East Asia's main way to print books and pictures until the 19th century.",
+            "es": "Imprimir con una página entera tallada al revés en un bloque de madera, algo que ya se hacía en la China de los Tang en el siglo VII. Fue el principal modo de imprimir libros e imágenes en Asia oriental hasta el siglo XIX."
+          },
+          "wiki": {
+            "en": "Woodblock printing",
+            "es": "Impresión xilográfica"
+          },
+          "img": "中文梵文最早期印本650-670.jpg"
+        },
+        {
+          "id": "hyakumanto-darani",
+          "name": {
+            "en": "The million pagodas",
+            "es": "El millón de pagodas"
+          },
+          "at": [
+            135.7342,
+            34.6144
+          ],
+          "cat": "printing",
+          "type": "work",
+          "date": "764",
+          "end": "770",
+          "place": {
+            "en": "Nara, Japan; thousands are kept at Hōryū-ji",
+            "es": "Nara, Japón; miles se guardan en Hōryū-ji"
+          },
+          "text": {
+            "en": "One million small wooden pagodas, each holding a printed Buddhist charm, made for Empress Shōtoku between 764 and 770: one of the biggest printing jobs of the age, before the Diamond Sutra.",
+            "es": "Un millón de pequeñas pagodas de madera, cada una con un amuleto budista impreso, hechas para la emperatriz Shōtoku entre el 764 y el 770: uno de los mayores trabajos de impresión de la época, anterior al sutra del diamante."
+          },
+          "wiki": {
+            "en": "Viśuddhaprabhā Dhāraṇī",
+            "es": ""
+          },
+          "img": "Hyakumantō Darani Scrolls.jpg"
+        }
+      ]
+    },
+    {
+      "date": "1008-11-01",
+      "title": {
+        "en": "Kana and The Tale of Genji",
+        "es": "Los kana y La historia de Genji"
+      },
+      "text": {
+        "en": "Japanese scribes simplify man'yōgana into two sets of syllable signs: flowing hiragana and angular katakana. In hiragana, the court lady Murasaki Shikibu writes The Tale of Genji, first mentioned in 1008.",
+        "es": "Los escribas japoneses simplifican el man'yōgana en dos juegos de signos silábicos: el hiragana, fluido, y el katakana, anguloso. En hiragana, la dama Murasaki Shikibu escribe La historia de Genji, citada por primera vez en 1008."
+      },
+      "details": {
+        "en": "From the 9th century Buddhist monks in Nara wrote small parts of characters beside Chinese scriptures as reading aids: katakana, 'partial kana', so カ ka comes from the left side of 加. Others wrote whole characters in fast cursive until they became hiragana, 'plain kana', such as あ a from 安. Men at court still wrote official texts in Chinese, so hiragana was called onnade, 'women's hand', and in it court women wrote some of the first great works of Japanese prose. Murasaki Shikibu, a lady-in-waiting to Empress Shōshi, had learned classical Chinese by listening to her brother's lessons. Her diary mentions The Tale of Genji on 1 November 1008, now Japan's Classics Day. Today Japanese mixes kanji for word stems with hiragana for endings and katakana for foreign words.",
+        "es": "Desde el siglo IX, los monjes budistas de Nara escribían pequeñas partes de caracteres junto a las escrituras chinas como ayuda para leerlas: el katakana, «kana parcial», de modo que カ ka viene del lado izquierdo de 加. Otros escribían caracteres enteros en cursiva rápida hasta que se volvieron hiragana, «kana sencillo», como あ a, que viene de 安. Los hombres de la corte seguían escribiendo los textos oficiales en chino, así que al hiragana se le llamó onnade, «mano de mujer», y en él las damas de la corte escribieron algunas de las primeras grandes obras de la prosa japonesa. Murasaki Shikibu, dama de compañía de la emperatriz Shōshi, había aprendido chino clásico escuchando las lecciones de su hermano. Su diario menciona La historia de Genji el 1 de noviembre de 1008, hoy Día de los Clásicos en Japón. Hoy el japonés mezcla kanji para las raíces de las palabras, hiragana para las terminaciones y katakana para las palabras extranjeras."
+      },
+      "camera": {
+        "lon": 135.78,
+        "lat": 34.86,
+        "zoom": 8.5
+      },
+      "control": {
+        "chinese": {
+          "minus": [
+            [
+              {
+                "hist": "Song Empire",
+                "year": 1000
+              },
+              {
+                "hist": "Liao",
+                "year": 1000
+              },
+              {
+                "hist": "Annam",
+                "year": 1000
+              }
+            ],
+            {
+              "hist": "Korea",
+              "year": 1000
+            },
+            {
+              "hist": "Imperial Japan (Fujiwara)",
+              "year": 1000
+            }
+          ]
+        },
+        "korean": {
+          "hist": "Korea",
+          "year": 1000
+        },
+        "japanese": {
+          "hist": "Imperial Japan (Fujiwara)",
+          "year": 1000
+        }
+      },
+      "places": [
+        {
+          "id": "hiragana",
+          "name": {
+            "en": "Hiragana",
+            "es": "Hiragana"
+          },
+          "at": [
+            135.7422,
+            35.0136
+          ],
+          "cat": "script",
+          "icon": "あ",
+          "type": "script",
+          "date": "900",
+          "place": {
+            "en": "Heian-kyō (Kyoto), Japan",
+            "es": "Heian-kyō (Kioto), Japón"
+          },
+          "text": {
+            "en": "Japanese syllable signs born from man'yōgana written in fast cursive: あ comes from 安. Called 'women's hand' at the Heian court, today they write grammar endings and words without kanji.",
+            "es": "Signos silábicos japoneses nacidos del man'yōgana escrito en cursiva rápida: あ viene de 安. Llamados «mano de mujer» en la corte de Heian, hoy escriben terminaciones gramaticales y palabras sin kanji."
+          },
+          "details": {
+            "en": "Hiragana grew in the 9th and 10th centuries as scribes wrote man'yōgana faster and faster, until each character became a single flowing sign for a syllable. Men at court wrote formal texts in classical Chinese, so the new signs were first the writing of letters, diaries, poems and tales, much of it by court women, and they were called onnade, 'women's hand'. Male writers soon used them too. Today hiragana write grammar endings, particles and native words that have no kanji.",
+            "es": "El hiragana surgió en los siglos IX y X, cuando los escribas escribían el man'yōgana cada vez más rápido, hasta que cada carácter se volvió un solo signo fluido para una sílaba. Los hombres de la corte escribían los textos formales en chino clásico, así que los nuevos signos fueron primero la escritura de cartas, diarios, poemas y relatos, muchos de damas de la corte, y se los llamó onnade, «mano de mujer». Pronto los usaron también los hombres. Hoy el hiragana escribe las terminaciones gramaticales, las partículas y las palabras japonesas que no tienen kanji."
+          },
+          "sample": {
+            "text": "あいうえお",
+            "latin": "a i u e o",
+            "means": {
+              "en": "the five vowels, the first row of the table",
+              "es": "las cinco vocales, la primera fila de la tabla"
+            }
+          },
+          "wiki": {
+            "en": "Hiragana",
+            "es": "Hiragana"
+          },
+          "img": "Origin of Hiragana from Cursive Kanji Chart.png"
+        },
+        {
+          "id": "katakana",
+          "name": {
+            "en": "Katakana",
+            "es": "Katakana"
+          },
+          "at": [
+            135.8398,
+            34.689
+          ],
+          "cat": "script",
+          "icon": "ア",
+          "type": "script",
+          "date": "850",
+          "place": {
+            "en": "Nara, Japan",
+            "es": "Nara, Japón"
+          },
+          "text": {
+            "en": "Angular syllable signs made from parts of characters by Buddhist monks in Nara in the 9th century, as notes for reading Chinese scriptures: カ comes from 加. Today they write foreign words and names.",
+            "es": "Signos silábicos angulosos hechos con partes de caracteres por monjes budistas de Nara en el siglo IX, como notas para leer escrituras chinas: カ viene de 加. Hoy escriben palabras y nombres extranjeros."
+          },
+          "sample": {
+            "text": "アイウエオ",
+            "latin": "a i u e o",
+            "means": {
+              "en": "the five vowels in katakana",
+              "es": "las cinco vocales en katakana"
+            }
+          },
+          "wiki": {
+            "en": "Katakana",
+            "es": "Katakana"
+          },
+          "img": "Origin of Katakana from Kanji Chart.png"
+        },
+        {
+          "id": "the-tale-of-genji",
+          "name": {
+            "en": "The Tale of Genji",
+            "es": "La historia de Genji"
+          },
+          "at": [
+            135.764,
+            35.0232
+          ],
+          "cat": "book",
+          "type": "work",
+          "date": "1008",
+          "end": "1021",
+          "place": {
+            "en": "Heian-kyō (Kyoto), Japan; Rozan-ji stands where Murasaki's family lived",
+            "es": "Heian-kyō (Kioto), Japón; el templo Rozan-ji está donde vivía la familia de Murasaki"
+          },
+          "text": {
+            "en": "A tale in 54 chapters of the loves and sorrows of Prince Genji and his heirs, written mostly in hiragana by the court lady Murasaki Shikibu in the early 11th century. It is often called one of the world's first novels.",
+            "es": "Un relato en 54 capítulos sobre los amores y penas del príncipe Genji y sus herederos, escrito sobre todo en hiragana por la dama Murasaki Shikibu a comienzos del siglo XI. Suele llamarse una de las primeras novelas del mundo."
+          },
+          "details": {
+            "en": "Murasaki Shikibu (about 973 to about 1014 or 1025) was born, raised and married in her family's house in Heian-kyō, on the site of today's Rozan-ji temple. Widowed young, she probably began the tale before she joined Empress Shōshi's court about 1005. A reader who got a complete copy in about 1021 wrote of her joy in her own diary. The original is lost, but more than 300 manuscript copies survive, and picture scrolls of the tale have come down from the 12th century.",
+            "es": "Murasaki Shikibu (hacia 973-hacia 1014 o 1025) nació, creció y se casó en la casa de su familia en Heian-kyō, donde hoy está el templo Rozan-ji. Viuda joven, probablemente empezó el relato antes de entrar en la corte de la emperatriz Shōshi, hacia 1005. Una lectora que consiguió una copia completa hacia 1021 contó su alegría en su propio diario. El original se perdió, pero quedan más de 300 copias manuscritas, y se conservan rollos ilustrados del relato del siglo XII."
+          },
+          "sample": {
+            "text": "いづれの御時にか",
+            "latin": "izure no ontoki ni ka",
+            "means": {
+              "en": "'In whose reign was it…', its first words",
+              "es": "«¿En qué reinado fue…?», sus primeras palabras"
+            }
+          },
+          "wiki": {
+            "en": "The Tale of Genji",
+            "es": "Genji Monogatari"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1045",
+      "title": {
+        "en": "Clay type and Tangut letters",
+        "es": "Tipos de arcilla y letras tangut"
+      },
+      "text": {
+        "en": "In the 1040s a commoner, Bi Sheng, prints with movable type of baked clay, one piece per character. To the northwest, the Tangut state of Western Xia writes with nearly 6,000 characters of its own, made in 1036.",
+        "es": "En la década de 1040, un hombre del pueblo, Bi Sheng, imprime con tipos móviles de arcilla cocida, una pieza por carácter. Al noroeste, el estado tangut de Xia Occidental escribe con casi 6000 caracteres propios, creados en 1036."
+      },
+      "details": {
+        "en": "The scholar Shen Kuo described Bi Sheng's method in his Dream Pool Essays: each character was cut in sticky clay as thin as the edge of a coin and baked hard; the types were set in an iron frame on a bed of resin, wax and paper ash, warmed and pressed flat. With two frames, one was set while the other printed, and common characters had twenty or more copies. For a few copies this was slow, but for hundreds it was 'marvelously quick'. Since a set needed thousands of pieces, Chinese printers kept mostly to woodblocks. The Tanguts, meanwhile, had the official Yeli Renrong design a script of their own: it looks Chinese, but builds its characters differently. The oldest surviving books printed with movable type are Tangut Buddhist texts of the 12th century.",
+        "es": "El sabio Shen Kuo describió el método de Bi Sheng en sus Ensayos del Estanque de los Sueños: cada carácter se cortaba en arcilla pegajosa, delgado como el canto de una moneda, y se cocía; los tipos se colocaban en un marco de hierro sobre una capa de resina, cera y ceniza de papel, se calentaban y se aplanaban. Con dos marcos, uno se componía mientras el otro imprimía, y los caracteres comunes tenían veinte copias o más. Para pocas copias era lento, pero para cientos era «maravillosamente rápido». Como un juego necesitaba miles de piezas, los impresores chinos siguieron sobre todo con los bloques de madera. Mientras tanto, los tanguts encargaron al funcionario Yeli Renrong una escritura propia: parece china, pero forma sus caracteres de otra manera. Los libros más antiguos que se conservan impresos con tipos móviles son textos budistas tangut del siglo XII."
+      },
+      "camera": {
+        "lon": 110.0,
+        "lat": 35.5,
+        "zoom": 3.1
+      },
+      "control": {
+        "chinese": {
+          "minus": [
+            [
+              {
+                "hist": "Song Empire",
+                "year": 1000
+              },
+              {
+                "hist": "Liao",
+                "year": 1000
+              },
+              {
+                "hist": "Annam",
+                "year": 1000
+              }
+            ],
+            {
+              "hist": "Korea",
+              "year": 1000
+            },
+            {
+              "hist": "Imperial Japan (Fujiwara)",
+              "year": 1000
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "bi-sheng",
+          "name": {
+            "en": "Bi Sheng",
+            "es": "Bi Sheng"
+          },
+          "at": [
+            115.681,
+            30.735
+          ],
+          "cat": "person",
+          "type": "person",
+          "date": "1041",
+          "life": [
+            "972",
+            "1051"
+          ],
+          "place": {
+            "en": "China; his gravestone was found in Yingshan, Hubei, in 1990",
+            "es": "China; su lápida se halló en Yingshan (Hubei) en 1990"
+          },
+          "text": {
+            "en": "A craftsman of the Song dynasty who, between 1039 and 1048, invented movable type: one baked-clay piece for each character, set in an iron frame. Almost nothing else is known of his life.",
+            "es": "Un artesano de la dinastía Song que entre 1039 y 1048 inventó los tipos móviles: una pieza de arcilla cocida por carácter, colocada en un marco de hierro. Casi nada más se sabe de su vida."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Recorded by",
+                "es": "Lo registró"
+              },
+              "value": {
+                "en": "Shen Kuo, Dream Pool Essays (1088)",
+                "es": "Shen Kuo, Ensayos del Estanque de los Sueños (1088)"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Bi Sheng",
+            "es": "Bi Sheng"
+          }
+        },
+        {
+          "id": "dream-pool-essays",
+          "name": {
+            "en": "Dream Pool Essays",
+            "es": "Ensayos del Estanque de los Sueños"
+          },
+          "at": [
+            119.4255,
+            32.1878
+          ],
+          "cat": "book",
+          "type": "work",
+          "date": "1088",
+          "place": {
+            "en": "Written at Shen Kuo's estate near Zhenjiang, Jiangsu, China",
+            "es": "Escritos en la finca de Shen Kuo cerca de Zhenjiang, Jiangsu, China"
+          },
+          "text": {
+            "en": "A book of notes on science, crafts and art published in 1088 by the scholar Shen Kuo. It holds the only account of Bi Sheng's movable type, and the first record of a compass used for navigation.",
+            "es": "Un libro de apuntes sobre ciencia, oficios y arte publicado en 1088 por el sabio Shen Kuo. Contiene el único relato de los tipos móviles de Bi Sheng y el primer registro de una brújula usada para navegar."
+          },
+          "wiki": {
+            "en": "Dream Pool Essays",
+            "es": "Ensayos del Estanque de los Sueños"
+          }
+        },
+        {
+          "id": "tangut-script",
+          "name": {
+            "en": "Tangut script",
+            "es": "Escritura tangut"
+          },
+          "at": [
+            106.2241,
+            38.4181
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "1036",
+          "until": "1502",
+          "place": {
+            "en": "Xingqing (Yinchuan), capital of Western Xia, China",
+            "es": "Xingqing (Yinchuan), capital de Xia Occidental, China"
+          },
+          "text": {
+            "en": "A script of nearly 6,000 characters made in 1036 for the Tangut language of Western Xia. It looks Chinese but works differently. It was last carved in 1502 and was read again only in the 20th century.",
+            "es": "Una escritura de casi 6000 caracteres creada en 1036 para la lengua tangut de Xia Occidental. Parece china, pero funciona de otra manera. Se grabó por última vez en 1502 y solo se volvió a leer en el siglo XX."
+          },
+          "details": {
+            "en": "The Tanguts ruled Western Xia from 1038 until the Mongols destroyed it in 1227. Their script was taught in government schools and used for official documents and a great many Buddhist texts translated from Tibetan and Chinese, printed from blocks and with movable type. Very few characters have fewer than four strokes. After the kingdom fell the script lingered for almost three centuries: the last known example is a pair of Buddhist pillars of 1502 at Baoding. A 2004 count lists 5,863 characters; Unicode added the script in 2016.",
+            "es": "Los tanguts gobernaron Xia Occidental desde 1038 hasta que los mongoles la destruyeron en 1227. Su escritura se enseñaba en escuelas del gobierno y servía para documentos oficiales y muchísimos textos budistas traducidos del tibetano y del chino, impresos con bloques y con tipos móviles. Muy pocos caracteres tienen menos de cuatro trazos. Tras la caída del reino, la escritura sobrevivió casi tres siglos: el último ejemplo conocido es un par de pilares budistas de 1502 en Baoding. Un recuento de 2004 da 5863 caracteres; Unicode añadió la escritura en 2016."
+          },
+          "sample": {
+            "text": "𗴂𗹭𘜶𗴲𗂧",
+            "means": {
+              "en": "'Great State of the White and Lofty', the Tanguts' name for their country",
+              "es": "«Gran Estado de lo Blanco y Elevado», el nombre que los tanguts daban a su país"
+            }
+          },
+          "wiki": {
+            "en": "Tangut script",
+            "es": "Escritura tangut"
+          }
+        },
+        {
+          "id": "khara-khoto",
+          "name": {
+            "en": "Khara-Khoto",
+            "es": "Khara-Khoto"
+          },
+          "at": [
+            101.145,
+            41.765
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1032",
+          "until": "1372",
+          "place": {
+            "en": "Ejin Banner, Inner Mongolia, China",
+            "es": "Bandera de Ejin, Mongolia Interior, China"
+          },
+          "text": {
+            "en": "A Tangut desert town founded in 1032 and taken by the Ming in 1372. In 1908–1909 Pyotr Kozlov dug up more than 2,000 Tangut books and scrolls there, which brought the forgotten script back to light.",
+            "es": "Una ciudad tangut del desierto fundada en 1032 y tomada por los Ming en 1372. En 1908-1909, Piotr Kozlov desenterró allí más de 2000 libros y rollos en tangut, que sacaron a la luz la escritura olvidada."
+          },
+          "wiki": {
+            "en": "Khara-Khoto",
+            "es": "Khara-Khoto"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1209",
+      "title": {
+        "en": "Vietnam's own characters",
+        "es": "Los caracteres propios de Vietnam"
+      },
+      "text": {
+        "en": "Independent since 938, Vietnam still writes its laws and poems in classical Chinese. To write their own language, scholars build new characters, chữ Nôm, first seen on a pagoda stele of 1209.",
+        "es": "Independiente desde el 938, Vietnam sigue escribiendo leyes y poemas en chino clásico. Para escribir su propia lengua, los sabios crean nuevos caracteres, el chữ Nôm, vistos por primera vez en una estela de 1209."
+      },
+      "details": {
+        "en": "Chinese characters had come to Vietnam with Han rule in 111 BC. After independence, Vietnamese courts kept classical Chinese for government and for exams on the Confucian classics. To write Vietnamese words, scholars borrowed characters for their sound or meaning and built new ones, some from two sound parts at once, because Vietnamese had clusters of consonants that Chinese lacked. Nôm was hard: only people who already knew Chinese could use it, never more than five percent of the population. Still it carried folk songs, poems and, about 1820, the Tale of Kiều by Nguyễn Du, 3,254 lines long and one of the best-loved works of Vietnamese literature. Under the Hồ (1400–1407) and the Tây Sơn (1778–1802), Nôm briefly became the official script.",
+        "es": "Los caracteres chinos habían llegado a Vietnam con el dominio Han en el 111 a. C. Tras la independencia, las cortes vietnamitas conservaron el chino clásico para el gobierno y para los exámenes sobre los clásicos confucianos. Para escribir palabras vietnamitas, los sabios tomaron caracteres por su sonido o su significado y crearon otros nuevos, algunos con dos partes de sonido a la vez, porque el vietnamita tenía grupos de consonantes que el chino no tenía. El nôm era difícil: solo podía usarlo quien ya sabía chino, nunca más del cinco por ciento de la población. Aun así llevó canciones populares, poemas y, hacia 1820, el Cuento de Kiều de Nguyễn Du, de 3254 versos, una de las obras más queridas de la literatura vietnamita. Con los Hồ (1400-1407) y los Tây Sơn (1778-1802), el nôm fue por un tiempo la escritura oficial."
+      },
+      "camera": {
+        "lon": 105.75,
+        "lat": 20.6,
+        "zoom": 7.2
+      },
+      "control": {
+        "chinese": {
+          "minus": [
+            [
+              {
+                "hist": "Song Empire",
+                "year": 1200
+              },
+              {
+                "hist": "Liao",
+                "year": 1200
+              }
+            ],
+            {
+              "hist": "Goryeo",
+              "year": 1200
+            },
+            {
+              "hist": "Imperial Japan (Fujiwara)",
+              "year": 1200
+            },
+            {
+              "and": [
+                "VNM",
+                {
+                  "poly": [
+                    [
+                      100.0,
+                      24.5
+                    ],
+                    [
+                      110.0,
+                      24.5
+                    ],
+                    [
+                      110.0,
+                      17.9
+                    ],
+                    [
+                      100.0,
+                      17.9
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "korean": {
+          "hist": "Goryeo",
+          "year": 1200
+        },
+        "japanese": {
+          "hist": "Imperial Japan (Fujiwara)",
+          "year": 1200
+        },
+        "vietnamese": {
+          "and": [
+            "VNM",
+            {
+              "poly": [
+                [
+                  100.0,
+                  24.5
+                ],
+                [
+                  110.0,
+                  24.5
+                ],
+                [
+                  110.0,
+                  17.9
+                ],
+                [
+                  100.0,
+                  17.9
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "chu-han",
+          "name": {
+            "en": "Chữ Hán",
+            "es": "Chữ Hán"
+          },
+          "at": [
+            105.8372,
+            21.0394
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "-111",
+          "place": {
+            "en": "Thăng Long (Hanoi), Vietnam",
+            "es": "Thăng Long (Hanói), Vietnam"
+          },
+          "text": {
+            "en": "Chinese characters as used in Vietnam, also called chữ Nho, 'Confucian characters'. Used officially since Han rule began in 111 BC, classical Chinese stayed the language of government, schools and exams until the early 20th century.",
+            "es": "Los caracteres chinos tal como se usaban en Vietnam, llamados también chữ Nho, «caracteres confucianos». De uso oficial desde que comenzó el dominio Han en el 111 a. C., el chino clásico siguió siendo la lengua del gobierno, las escuelas y los exámenes hasta comienzos del siglo XX."
+          },
+          "details": {
+            "en": "In 1010 the Lý dynasty moved its capital to Thăng Long, today's Hanoi, and in 1070 it founded the Temple of Literature there, honouring Confucius; it later housed the national academy, and stone steles in its courtyards list the doctors who passed the court exams. Officials, monks and poets wrote in classical Chinese for nine centuries, much as Europeans wrote in Latin.",
+            "es": "En 1010 la dinastía Lý trasladó su capital a Thăng Long, la actual Hanói, y en 1070 fundó allí el Templo de la Literatura en honor a Confucio; más tarde albergó la academia nacional, y unas estelas de piedra en sus patios recogen a los doctores que aprobaban los exámenes de la corte. Funcionarios, monjes y poetas escribieron en chino clásico durante nueve siglos, como los europeos escribían en latín."
+          },
+          "sample": {
+            "text": "大越",
+            "latin": "Đại Việt",
+            "means": {
+              "en": "'Great Viet', the kingdom's old name",
+              "es": "«Gran Viet», el antiguo nombre del reino"
+            }
+          },
+          "wiki": {
+            "en": "Chữ Hán",
+            "es": "Chữ hán"
+          }
+        },
+        {
+          "id": "chu-nom",
+          "name": {
+            "en": "Chữ Nôm",
+            "es": "Chữ Nôm"
+          },
+          "at": [
+            105.7191,
+            21.1846
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "1209",
+          "place": {
+            "en": "First seen on a stele of 1209 at Tháp Miếu, near Phúc Yên, Vietnam",
+            "es": "Visto por primera vez en una estela de 1209 en Tháp Miếu, cerca de Phúc Yên, Vietnam"
+          },
+          "text": {
+            "en": "Characters made in Vietnam to write Vietnamese, often joining a Chinese character for the meaning with one for the sound. Hard to learn, it carried the great Vietnamese poems of the 15th to 19th centuries.",
+            "es": "Caracteres creados en Vietnam para escribir vietnamita, a menudo uniendo un carácter chino para el significado con otro para el sonido. Difícil de aprender, llevó los grandes poemas vietnamitas de los siglos XV al XIX."
+          },
+          "details": {
+            "en": "The oldest example is a stele at the Báo Ân pagoda in Tháp Miếu village: re-carved in the 18th century from an original of 1209, it is written in Chinese but gives the names of 21 people and villages in early Nôm. A mature Nôm had probably emerged by the 13th century. Today it is studied at the Institute of Hán-Nôm Studies in Hanoi and kept for ceremonies, and Unicode includes thousands of its characters.",
+            "es": "El ejemplo más antiguo es una estela de la pagoda Báo Ân, en la aldea de Tháp Miếu: regrabada en el siglo XVIII a partir de un original de 1209, está escrita en chino pero da los nombres de 21 personas y aldeas en un nôm temprano. Probablemente ya había un nôm maduro en el siglo XIII. Hoy se estudia en el Instituto de Estudios Hán-Nôm de Hanói y se conserva para ceremonias, y Unicode incluye miles de sus caracteres."
+          },
+          "sample": {
+            "text": "𤾓𢆥𥪞𡎝𠊛些",
+            "latin": "Trăm năm trong cõi người ta",
+            "means": {
+              "en": "'A hundred years in this world of ours…', the first line of the Tale of Kiều",
+              "es": "«Cien años en este mundo de los hombres…», el primer verso del Cuento de Kiều"
+            }
+          },
+          "wiki": {
+            "en": "Chữ Nôm",
+            "es": "Chữ Nôm"
+          }
+        },
+        {
+          "id": "ho-dynasty-citadel",
+          "name": {
+            "en": "Citadel of the Hồ dynasty",
+            "es": "Ciudadela de la dinastía Hồ"
+          },
+          "at": [
+            105.6047,
+            20.0781
+          ],
+          "cat": "ruler",
+          "type": "site",
+          "date": "1397",
+          "place": {
+            "en": "Vĩnh Lộc, Thanh Hóa province, Vietnam",
+            "es": "Vĩnh Lộc, provincia de Thanh Hóa, Vietnam"
+          },
+          "text": {
+            "en": "The stone fortress built in 1397 by Hồ Quý Ly. Under his Hồ dynasty (1400–1407) Nôm became the official script and he had the Chinese Book of Documents translated into it, until a Ming invasion ended his rule.",
+            "es": "La fortaleza de piedra que Hồ Quý Ly construyó en 1397. Con su dinastía (1400-1407), el nôm fue la escritura oficial y él mandó traducir a ella el Libro de los Documentos chino, hasta que una invasión Ming acabó con su gobierno."
+          },
+          "wiki": {
+            "en": "Citadel of the Hồ Dynasty",
+            "es": "Ciudadela de la dinastía Ho"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1377-07",
+      "title": {
+        "en": "Korea casts metal type",
+        "es": "Corea funde tipos de metal"
+      },
+      "text": {
+        "en": "Korean printers cast type in metal. In July 1377 monks at Heungdeok Temple, in Cheongju, print the Jikji, a Buddhist anthology: the oldest surviving book printed with metal type, 78 years before Gutenberg's Bible.",
+        "es": "En julio de 1377, los monjes del templo de Heungdeok, en Cheongju, imprimen con tipos de metal el Jikji, una antología budista: el libro más antiguo de su clase que se conserva, 78 años anterior a la Biblia de Gutenberg."
+      },
+      "details": {
+        "en": "Goryeo Korea was a land of printers. When Mongol armies burned its first set of scripture blocks in 1232, King Gojong had a new set carved from 1237 to 1248: the Tripitaka Koreana, more than 81,000 wooden blocks, still kept at Haeinsa. Korean printers were also casting type in metal, and books were printed with it in 1234, though none survive. The Jikji was compiled by the monk Baegun and printed after his death by his pupils Seoksan and Daldam, with help from the nun Myodeok. Only the second of its two volumes survives. The French diplomat Victor Collin de Plancy bought it in Seoul; a collector bought it in 1911 and left it to the National Library of France, which keeps it in Paris, while Korean groups ask for its return.",
+        "es": "La Corea de Goryeo era una tierra de impresores. Cuando los ejércitos mongoles quemaron su primer juego de bloques de escrituras en 1232, el rey Gojong mandó tallar uno nuevo de 1237 a 1248: la Tripitaka Coreana, más de 81 000 bloques de madera que todavía se guardan en Haeinsa. Los impresores coreanos también fundían tipos de metal, y con ellos se imprimieron libros en 1234, aunque ninguno se conserva. El Jikji lo compiló el monje Baegun y, tras su muerte, lo imprimieron sus discípulos Seoksan y Daldam, con ayuda de la monja Myodeok. Solo se conserva el segundo de sus dos tomos. El diplomático francés Victor Collin de Plancy lo compró en Seúl; un coleccionista lo adquirió en 1911 y lo legó a la Biblioteca Nacional de Francia, que lo guarda en París, mientras grupos coreanos piden su devolución."
+      },
+      "camera": {
+        "lon": 127.8,
+        "lat": 36.2,
+        "zoom": 7.0
+      },
+      "control": {
+        "chinese": {
+          "minus": [
+            {
+              "hist": "Ming Empire",
+              "year": 1492
+            },
+            {
+              "hist": "Goryeo",
+              "year": 1200
+            },
+            {
+              "and": [
+                "VNM",
+                {
+                  "poly": [
+                    [
+                      100.0,
+                      24.5
+                    ],
+                    [
+                      110.0,
+                      24.5
+                    ],
+                    [
+                      110.0,
+                      16.2
+                    ],
+                    [
+                      100.0,
+                      16.2
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "korean": {
+          "hist": "Goryeo",
+          "year": 1200
+        },
+        "japanese": {
+          "hist": "Shogun Japan (Kamakura)",
+          "year": 1300
+        },
+        "vietnamese": {
+          "and": [
+            "VNM",
+            {
+              "poly": [
+                [
+                  100.0,
+                  24.5
+                ],
+                [
+                  110.0,
+                  24.5
+                ],
+                [
+                  110.0,
+                  16.2
+                ],
+                [
+                  100.0,
+                  16.2
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "jikji",
+          "name": {
+            "en": "Jikji",
+            "es": "Jikji"
+          },
+          "at": [
+            127.4719,
+            36.6439
+          ],
+          "cat": "book",
+          "type": "work",
+          "date": "1377-07",
+          "place": {
+            "en": "Printed at Heungdeok Temple, Cheongju, South Korea; kept in Paris",
+            "es": "Impreso en el templo de Heungdeok, Cheongju, Corea del Sur; se guarda en París"
+          },
+          "text": {
+            "en": "A Korean Buddhist anthology printed with movable metal type at Heungdeok Temple in July 1377: the oldest surviving book of its kind, in UNESCO's Memory of the World since 2001.",
+            "es": "Una antología budista coreana impresa con tipos móviles de metal en el templo de Heungdeok en julio de 1377: el libro más antiguo de su clase que se conserva, en la Memoria del Mundo de la UNESCO desde 2001."
+          },
+          "sample": {
+            "text": "直指心體要節",
+            "latin": "Jikji simche yojeol",
+            "means": {
+              "en": "the end of its long title, from the saying 'point straight at the mind'",
+              "es": "el final de su largo título, de la frase «señalar directo a la mente»"
+            }
+          },
+          "wiki": {
+            "en": "Jikji",
+            "es": "Jikji"
+          }
+        },
+        {
+          "id": "tripitaka-koreana",
+          "name": {
+            "en": "Tripitaka Koreana",
+            "es": "Tripitaka Coreana"
+          },
+          "at": [
+            128.0986,
+            35.8017
+          ],
+          "cat": "printing",
+          "type": "work",
+          "date": "1237",
+          "end": "1248",
+          "place": {
+            "en": "Haeinsa Temple, Hapcheon, South Korea",
+            "es": "Templo Haeinsa, Hapcheon, Corea del Sur"
+          },
+          "text": {
+            "en": "The Buddhist scriptures carved on more than 81,000 wooden printing blocks between 1237 and 1248 to win divine help against the Mongols. Kept at Haeinsa since 1398, they are in UNESCO's Memory of the World.",
+            "es": "Las escrituras budistas talladas en más de 81 000 bloques de madera para imprimir entre 1237 y 1248, para ganar ayuda divina contra los mongoles. Se guardan en Haeinsa desde 1398 y están en la Memoria del Mundo de la UNESCO."
+          },
+          "wiki": {
+            "en": "Tripitaka Koreana",
+            "es": "Tripitaka Coreana"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1446-10",
+      "title": {
+        "en": "King Sejong's Hangul",
+        "es": "El hangul del rey Sejong"
+      },
+      "text": {
+        "en": "In 1443 King Sejong of Joseon finishes an alphabet of 28 letters so that ordinary people can write Korean; it is published in 1446. Scholars scorn it for centuries, but women and Buddhists take it up.",
+        "es": "En 1443, el rey Sejong de Joseon termina un alfabeto de 28 letras para que la gente común pueda escribir coreano; se publica en 1446. Los letrados lo desprecian durante siglos, pero las mujeres y los budistas lo adoptan."
+      },
+      "details": {
+        "en": "Hangul letters stand for single sounds and are grouped into square syllable blocks, so a page of Hangul looks much like a page of characters. For centuries Korean writing stayed mixed: official papers, histories and scholarship were in classical Chinese, while Hangul served for letters, songs, popular novels and notes on Chinese texts. In 1894 the government made Hangul the preferred script for official documents, and under Japanese rule (1910–1945) it became a symbol of the nation: members of the Korean Language Society were arrested and tortured from 1942. North Korea dropped hanja from everyday writing by 1949, and in the South Hangul slowly replaced them.",
+        "es": "Las letras del hangul representan sonidos sueltos y se agrupan en bloques cuadrados de sílabas, así que una página en hangul se parece mucho a una de caracteres. Durante siglos la escritura coreana fue mixta: los documentos oficiales, las historias y los estudios se escribían en chino clásico, y el hangul servía para cartas, canciones, novelas populares y notas a textos chinos. En 1894 el gobierno hizo del hangul la escritura preferida para los documentos oficiales, y bajo el dominio japonés (1910-1945) se volvió un símbolo de la nación: desde 1942, miembros de la Sociedad de la Lengua Coreana fueron detenidos y torturados. Corea del Norte dejó los hanja en la escritura diaria hacia 1949, y en el Sur el hangul los fue reemplazando poco a poco."
+      },
+      "camera": {
+        "lon": 126.987,
+        "lat": 37.587,
+        "zoom": 10.5
+      },
+      "control": {
+        "chinese": {
+          "minus": [
+            {
+              "hist": "Ming Empire",
+              "year": 1492
+            },
+            {
+              "hist": "Korea",
+              "year": 1492
+            },
+            {
+              "and": [
+                "VNM",
+                {
+                  "poly": [
+                    [
+                      100.0,
+                      24.5
+                    ],
+                    [
+                      110.0,
+                      24.5
+                    ],
+                    [
+                      110.0,
+                      16.2
+                    ],
+                    [
+                      100.0,
+                      16.2
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "korean": {
+          "hist": "Korea",
+          "year": 1492
+        },
+        "japanese": {
+          "hist": "Japan",
+          "year": 1492
+        },
+        "vietnamese": {
+          "and": [
+            "VNM",
+            {
+              "poly": [
+                [
+                  100.0,
+                  24.5
+                ],
+                [
+                  110.0,
+                  24.5
+                ],
+                [
+                  110.0,
+                  16.2
+                ],
+                [
+                  100.0,
+                  16.2
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "hangul",
+          "name": {
+            "en": "Hangul",
+            "es": "Hangul"
+          },
+          "at": [
+            126.9768,
+            37.5799
+          ],
+          "cat": "script",
+          "icon": "한",
+          "type": "script",
+          "date": "1443",
+          "place": {
+            "en": "Gyeongbokgung Palace, Seoul, South Korea",
+            "es": "Palacio Gyeongbokgung, Seúl, Corea del Sur"
+          },
+          "text": {
+            "en": "The Korean alphabet, made at King Sejong's court in 1443 and published in 1446. Its 24 basic letters are grouped into square syllable blocks; it is the script of both Koreas today.",
+            "es": "El alfabeto coreano, creado en la corte del rey Sejong en 1443 y publicado en 1446. Sus 24 letras básicas se agrupan en bloques cuadrados de sílabas; hoy es la escritura de las dos Coreas."
+          },
+          "sample": {
+            "text": "한글",
+            "latin": "Hangeul",
+            "means": {
+              "en": "its name in South Korea (in North Korea, Chosŏn'gŭl)",
+              "es": "su nombre en Corea del Sur (en Corea del Norte, Chosŏn'gŭl)"
+            }
+          },
+          "wiki": {
+            "en": "Hangul",
+            "es": "Hangul"
+          }
+        },
+        {
+          "id": "hunminjeongeum",
+          "name": {
+            "en": "Hunminjeongeum",
+            "es": "Hunminjeongeum"
+          },
+          "at": [
+            126.9966,
+            37.5942
+          ],
+          "cat": "book",
+          "type": "work",
+          "date": "1446-10",
+          "place": {
+            "en": "Kansong copy, Kansong Art Museum, Seoul, South Korea",
+            "es": "Copia Kansong, Museo de Arte Gansong, Seúl, Corea del Sur"
+          },
+          "text": {
+            "en": "'The Correct Sounds for the Instruction of the People', the book of 1446 that announced Hangul. A copy with its commentary, lost for centuries, was found in 1940; it is in UNESCO's Memory of the World.",
+            "es": "«Los sonidos correctos para instruir al pueblo», el libro de 1446 que dio a conocer el hangul. Una copia con su comentario, perdida durante siglos, apareció en 1940; está en la Memoria del Mundo de la UNESCO."
+          },
+          "sample": {
+            "text": "訓民正音",
+            "latin": "Hunminjeongeum",
+            "means": {
+              "en": "'the correct sounds for the instruction of the people'",
+              "es": "«los sonidos correctos para instruir al pueblo»"
+            }
+          },
+          "wiki": {
+            "en": "Hunminjeongeum",
+            "es": "Hunminjeongeum"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1651",
+      "title": {
+        "en": "Vietnamese in Latin letters",
+        "es": "El vietnamita en letras latinas"
+      },
+      "text": {
+        "en": "Jesuit missionaries write Vietnamese in Latin letters, with marks for its tones, to learn it and preach. In 1651 Alexandre de Rhodes prints a Vietnamese–Portuguese–Latin dictionary in Rome: the root of chữ Quốc ngữ.",
+        "es": "Los jesuitas escriben el vietnamita en letras latinas, con signos para sus tonos, para aprenderlo y predicar. En 1651, Alexandre de Rhodes imprime en Roma un diccionario vietnamita-portugués-latín: la raíz del chữ Quốc ngữ."
+      },
+      "details": {
+        "en": "From about 1620 the Portuguese Jesuit Francisco de Pina, in Hội An, wrote Vietnamese with Latin letters and Portuguese spelling. Others followed, and Alexandre de Rhodes gathered their work into a dictionary of about 8,000 words, printed in Rome with a catechism. For two centuries the new spelling stayed within the Catholic community, which itself still wrote mostly in Nôm. Under French rule it spread: the colonial government enforced it in 1910 and abolished the old Confucian exams in 1917, and schools taught Vietnamese in Latin letters, which cut many people off from writings in Hán and Nôm. Since the 1920s Vietnamese has been written mostly in Quốc ngữ, and since the end of colonial rule in 1954 it has been the only official script.",
+        "es": "Desde hacia 1620, el jesuita portugués Francisco de Pina, en Hội An, escribió el vietnamita con letras latinas y la ortografía del portugués. Otros siguieron, y Alexandre de Rhodes reunió su trabajo en un diccionario de unas 8000 palabras, impreso en Roma junto con un catecismo. Durante dos siglos, la nueva escritura no salió de la comunidad católica, que también escribía sobre todo en nôm. Con el dominio francés se difundió: el gobierno colonial la impuso en 1910 y abolió los viejos exámenes confucianos en 1917, y las escuelas enseñaron el vietnamita en letras latinas, lo que alejó a muchos de los escritos en hán y en nôm. Desde la década de 1920, el vietnamita se escribe sobre todo en quốc ngữ, y desde el fin del dominio colonial, en 1954, es la única escritura oficial."
+      },
+      "camera": {
+        "lon": 107.8,
+        "lat": 18.6,
+        "zoom": 4.4
+      },
+      "control": {
+        "chinese": {
+          "and": [
+            [
+              {
+                "hist": "Manchu Empire",
+                "year": 1650
+              },
+              {
+                "hist": "Post-Ming Warlords",
+                "year": 1650
+              }
+            ],
+            {
+              "a1": "CHN",
+              "except": [
+                "Tibet",
+                "Xinjiang",
+                "Qinghai",
+                "Inner Mongolia",
+                "Paracel Islands"
+              ]
+            }
+          ]
+        },
+        "korean": {
+          "hist": "Korea",
+          "year": 1650
+        },
+        "japanese": {
+          "hist": "Tokugawa shogunate",
+          "year": 1650
+        },
+        "vietnamese": {
+          "hist": "Đại Việt",
+          "year": 1650
+        }
+      },
+      "moves": [
+        {
+          "side": "vietnamese",
+          "path": [
+            [
+              113.54,
+              22.19
+            ],
+            [
+              112.2,
+              18.2
+            ],
+            [
+              109.9,
+              15.9
+            ],
+            [
+              108.34,
+              15.88
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Jesuits sail from Macau",
+            "es": "Los jesuitas zarpan de Macao"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "quoc-ngu",
+          "name": {
+            "en": "Chữ Quốc ngữ",
+            "es": "Chữ Quốc ngữ"
+          },
+          "at": [
+            108.327,
+            15.879
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "1620",
+          "place": {
+            "en": "First worked out by Jesuits in Hội An; today used all over Vietnam",
+            "es": "Ideado primero por jesuitas en Hội An; hoy se usa en todo Vietnam"
+          },
+          "text": {
+            "en": "The Vietnamese alphabet, 'script of the national language': Latin letters with accents for the tones, as in Việt Nam. Made by Jesuit missionaries in the 17th century, it has been Vietnam's only official script since 1954.",
+            "es": "El alfabeto vietnamita, «escritura de la lengua nacional»: letras latinas con acentos para los tonos, como en Việt Nam. Creado por misioneros jesuitas en el siglo XVII, es la única escritura oficial de Vietnam desde 1954."
+          },
+          "details": {
+            "en": "From about 1620 the Portuguese Jesuit Francisco de Pina, who lived in Hội An, wrote Vietnamese words in Latin letters to learn the language, borrowing Portuguese spelling; he is said to be the first European to speak it fluently. He drowned off Hội An in 1625. Other Jesuits continued his work, and Alexandre de Rhodes published it in 1651. Today it uses 22 letters of the Latin alphabet and seven more made with marks, such as ơ, ư and đ; five further marks show the tones.",
+            "es": "Desde hacia 1620, el jesuita portugués Francisco de Pina, que vivía en Hội An, escribió palabras vietnamitas en letras latinas para aprender la lengua, con la ortografía del portugués; se dice que fue el primer europeo que la habló con fluidez. Se ahogó frente a Hội An en 1625. Otros jesuitas siguieron su trabajo, y Alexandre de Rhodes lo publicó en 1651. Hoy usa 22 letras del alfabeto latino y otras siete hechas con signos, como ơ, ư y đ; otros cinco signos marcan los tonos."
+          },
+          "sample": {
+            "text": "Trăm năm trong cõi người ta",
+            "means": {
+              "en": "'A hundred years in this world of ours…', the first line of the Tale of Kiều",
+              "es": "«Cien años en este mundo de los hombres…», el primer verso del Cuento de Kiều"
+            }
+          },
+          "wiki": {
+            "en": "Vietnamese alphabet",
+            "es": "Alfabeto vietnamita"
+          },
+          "img": "L-2360-a 0008 1 t24-C-R0072.jpg"
+        },
+        {
+          "id": "alexandre-de-rhodes",
+          "name": {
+            "en": "Alexandre de Rhodes",
+            "es": "Alexandre de Rhodes"
+          },
+          "at": [
+            105.85,
+            21.0285
+          ],
+          "cat": "person",
+          "type": "person",
+          "date": "1651",
+          "life": [
+            "1593-03-15",
+            "1660-11-05"
+          ],
+          "place": {
+            "en": "Thăng Long (Hanoi), Vietnam; his dictionary was printed in Rome",
+            "es": "Thăng Long (Hanói), Vietnam; su diccionario se imprimió en Roma"
+          },
+          "text": {
+            "en": "A Jesuit from Avignon who preached in Vietnam between 1624 and the 1640s, when he was condemned and banished. His Vietnamese–Portuguese–Latin dictionary of 1651 fixed the Latin spelling of Vietnamese.",
+            "es": "Un jesuita de Aviñón que predicó en Vietnam entre 1624 y la década de 1640, cuando fue condenado y desterrado. Su diccionario vietnamita-portugués-latín de 1651 fijó la escritura latina del vietnamita."
+          },
+          "details": {
+            "en": "De Rhodes learned Vietnamese from Francisco de Pina in Hội An, then worked in the north, around Thăng Long, from 1627 to 1630, and later in the south around Huế, until the lord Nguyễn Phúc Lan sentenced him to death, a sentence changed to exile. Back in Rome he published his dictionary, with Portuguese and Latin glosses and a short grammar, and asked for more missions to Vietnam. He died in Isfahan, in Persia, in 1660.",
+            "es": "De Rhodes aprendió vietnamita con Francisco de Pina en Hội An, luego trabajó en el norte, cerca de Thăng Long, de 1627 a 1630, y más tarde en el sur, cerca de Huế, hasta que el señor Nguyễn Phúc Lan lo condenó a muerte, pena que se cambió por el destierro. De vuelta en Roma publicó su diccionario, con traducciones al portugués y al latín y una breve gramática, y pidió más misiones para Vietnam. Murió en Isfahán, en Persia, en 1660."
+          },
+          "wiki": {
+            "en": "Alexandre de Rhodes",
+            "es": "Alexandre de Rhodes"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1716",
+      "title": {
+        "en": "The Kangxi Dictionary",
+        "es": "El diccionario de Kangxi"
+      },
+      "text": {
+        "en": "In 1716 the Qing court publishes the dictionary ordered by the Kangxi Emperor: 47,035 characters sorted under 214 radicals. For two centuries it is the authority on characters, and Unicode still uses it as a source.",
+        "es": "En 1716, la corte Qing publica el diccionario que había encargado el emperador Kangxi: 47 035 caracteres ordenados bajo 214 radicales. Durante dos siglos es la autoridad sobre los caracteres, y Unicode aún lo usa como fuente."
+      },
+      "details": {
+        "en": "The Kangxi Emperor ordered the work in 1710, to show his care for Confucian learning and to fix the correct forms and readings of characters. Its first editors died within a year, and scholars of the Hanlin Academy finished it. It built on two Ming dictionaries, and its 214 radicals, the parts by which characters are sorted, came from the Zihui of 1615. With the Kangxi Dictionary they became the usual way to look characters up. About 40 percent of its entries are variant forms, and many others are rare or archaic: fewer than a quarter are in common use today. The emperor, a Manchu, reigned for 61 years, from 1661 to 1722, the longest reign in Chinese history.",
+        "es": "El emperador Kangxi encargó la obra en 1710, para mostrar su aprecio por el saber confuciano y fijar la forma y la lectura correctas de los caracteres. Sus primeros editores murieron en menos de un año, y la terminaron los sabios de la Academia Hanlin. Se basó en dos diccionarios de los Ming, y sus 214 radicales, las partes con que se ordenan los caracteres, venían del Zihui de 1615. Con el diccionario de Kangxi se volvieron la forma habitual de buscar caracteres. Cerca del 40 por ciento de sus entradas son variantes, y muchas otras son raras o arcaicas: menos de una cuarta parte se usan hoy. El emperador, un manchú, reinó 61 años, de 1661 a 1722, el reinado más largo de la historia de China."
+      },
+      "camera": {
+        "lon": 116.394,
+        "lat": 39.916,
+        "zoom": 11.5
+      },
+      "control": {
+        "chinese": {
+          "minus": [
+            [
+              {
+                "a1": "CHN",
+                "except": [
+                  "Tibet",
+                  "Xinjiang",
+                  "Qinghai",
+                  "Inner Mongolia",
+                  "Paracel Islands"
+                ]
+              },
+              "TWN"
+            ],
+            {
+              "hist": "Korea",
+              "year": 1715
+            },
+            {
+              "hist": "Đại Việt",
+              "year": 1715
+            }
+          ]
+        },
+        "korean": {
+          "hist": "Korea",
+          "year": 1715
+        },
+        "japanese": {
+          "hist": "Tokugawa shogunate",
+          "year": 1715
+        },
+        "vietnamese": {
+          "hist": "Đại Việt",
+          "year": 1715
+        }
+      },
+      "places": [
+        {
+          "id": "kangxi-dictionary",
+          "name": {
+            "en": "Kangxi Dictionary",
+            "es": "Diccionario de Kangxi"
+          },
+          "at": [
+            116.3908,
+            39.9158
+          ],
+          "cat": "grammar",
+          "type": "work",
+          "date": "1716",
+          "place": {
+            "en": "Forbidden City, Beijing, China",
+            "es": "Ciudad Prohibida, Pekín, China"
+          },
+          "text": {
+            "en": "The great character dictionary ordered by the Kangxi Emperor and published in 1716: 47,035 characters under 214 radicals. Its radicals still sort characters in dictionaries, and Unicode uses it as a source.",
+            "es": "El gran diccionario de caracteres encargado por el emperador Kangxi y publicado en 1716: 47 035 caracteres bajo 214 radicales. Sus radicales todavía ordenan los caracteres en los diccionarios, y Unicode lo usa como fuente."
+          },
+          "sample": {
+            "text": "康熙字典",
+            "latin": "Kāngxī zìdiǎn",
+            "means": {
+              "en": "'Kangxi dictionary'",
+              "es": "«diccionario de Kangxi»"
+            }
+          },
+          "wiki": {
+            "en": "Kangxi Dictionary",
+            "es": "Diccionario de Kangxi"
+          }
+        },
+        {
+          "id": "kangxi-emperor",
+          "name": {
+            "en": "The Kangxi Emperor",
+            "es": "El emperador Kangxi"
+          },
+          "at": [
+            116.3975,
+            39.918
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1710",
+          "life": [
+            "1654-05-04",
+            "1722-12-20"
+          ],
+          "place": {
+            "en": "Forbidden City, Beijing, China",
+            "es": "Ciudad Prohibida, Pekín, China"
+          },
+          "text": {
+            "en": "A Manchu emperor of the Qing dynasty who reigned for 61 years, from 1661 to 1722, the longest reign in Chinese history. In 1710 he ordered the dictionary that bears his name.",
+            "es": "Un emperador manchú de la dinastía Qing que reinó 61 años, de 1661 a 1722, el reinado más largo de la historia de China. En 1710 encargó el diccionario que lleva su nombre."
+          },
+          "wiki": {
+            "en": "Kangxi Emperor",
+            "es": "Kangxi"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1896",
+      "title": {
+        "en": "Writing for all",
+        "es": "Escritura para todos"
+      },
+      "text": {
+        "en": "Around 1900 writing reaches beyond the scholars. In 1896 Seoul gets a newspaper written in Hangul alone, with no Chinese characters, and in Jiangyong, in Hunan, women who were never taught Chinese write to each other in their own script, Nüshu.",
+        "es": "Hacia 1900, la escritura llega más allá de los letrados. En 1896 Seúl tiene un periódico escrito solo en hangul, sin caracteres chinos, y en Jiangyong, en Hunan, mujeres a las que nunca se enseñó chino se escriben en su propia escritura, el nüshu."
+      },
+      "details": {
+        "en": "In Korea the reformer Seo Jae-pil, also known as Philip Jaisohn, founded the Tongnip sinmun, 'The Independent', in 1896: the first newspaper printed entirely in Hangul, without hanja, with an English edition beside it, selling 2,000 to 3,000 copies. Two years earlier the government had made Hangul its preferred script. Far away, in Jiangyong county, Hunan, women had their own script: some 600 slanting signs for the syllables of the local dialect, adapted from Chinese characters. 'Sworn sisters' wrote each other letters and laments and, when a friend married and left her village, gave her a cloth-bound 'third-day book' of songs. In both places writing gave a voice to people the old learning had left out.",
+        "es": "En Corea, el reformista Seo Jae-pil, también llamado Philip Jaisohn, fundó en 1896 el Tongnip sinmun, «El Independiente»: el primer periódico impreso todo en hangul, sin hanja, con una edición en inglés al lado, que vendía de 2000 a 3000 ejemplares. Dos años antes, el gobierno había hecho del hangul su escritura preferida. Muy lejos, en el condado de Jiangyong, en Hunan, las mujeres tenían su propia escritura: unos 600 signos inclinados para las sílabas del dialecto local, adaptados de los caracteres chinos. Las «hermanas juramentadas» se escribían cartas y lamentos y, cuando una amiga se casaba y dejaba su aldea, le regalaban un «libro del tercer día» de canciones, encuadernado en tela. En ambos lugares, la escritura dio voz a quienes el viejo saber había dejado fuera."
+      },
+      "camera": {
+        "lon": 119.5,
+        "lat": 31.5,
+        "zoom": 3.3
+      },
+      "control": {
+        "chinese": {
+          "minus": [
+            [
+              {
+                "a1": "CHN",
+                "except": [
+                  "Tibet",
+                  "Xinjiang",
+                  "Qinghai",
+                  "Inner Mongolia",
+                  "Paracel Islands"
+                ]
+              },
+              "TWN"
+            ],
+            {
+              "hist": "Korea",
+              "year": 1900
+            }
+          ]
+        },
+        "korean": {
+          "hist": "Korea",
+          "year": 1900
+        },
+        "japanese": "JPN",
+        "vietnamese": "VNM"
+      },
+      "places": [
+        {
+          "id": "tongnip-sinmun",
+          "name": {
+            "en": "Tongnip sinmun",
+            "es": "Tongnip sinmun"
+          },
+          "at": [
+            126.978,
+            37.5665
+          ],
+          "cat": "book",
+          "type": "work",
+          "date": "1896",
+          "until": "1899-12-04",
+          "place": {
+            "en": "Seoul, Korea",
+            "es": "Seúl, Corea"
+          },
+          "text": {
+            "en": "'The Independent', founded in Seoul in 1896 by Seo Jae-pil: Korea's first privately run daily, with an English edition too; its Korean edition was the first written in Hangul alone, so that anyone who could read the alphabet could follow the news.",
+            "es": "«El Independiente», fundado en Seúl en 1896 por Seo Jae-pil: el primer diario privado de Corea, con una edición en inglés; su edición coreana fue la primera escrita solo en hangul, para que cualquiera que supiera leer el alfabeto pudiera seguir las noticias."
+          },
+          "sample": {
+            "text": "독립신문",
+            "latin": "Dongnip sinmun",
+            "means": {
+              "en": "'Independence newspaper'",
+              "es": "«periódico de la independencia»"
+            }
+          },
+          "wiki": {
+            "en": "Tongnip sinmun",
+            "es": "Tongnip Sinmun"
+          }
+        },
+        {
+          "id": "nushu",
+          "name": {
+            "en": "Nüshu",
+            "es": "Nüshu"
+          },
+          "at": [
+            111.343,
+            25.273
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "1850",
+          "place": {
+            "en": "Jiangyong County, Hunan, China",
+            "es": "Condado de Jiangyong, Hunan, China"
+          },
+          "text": {
+            "en": "A script used only by women in Jiangyong county, Hunan: some 600 slender signs for syllables, derived from Chinese characters. Its last fluent writer died in 2004, and it is taught again today.",
+            "es": "Una escritura que solo usaban las mujeres del condado de Jiangyong, en Hunan: unos 600 signos delgados para sílabas, derivados de los caracteres chinos. Su última escritora fluida murió en 2004, y hoy se vuelve a enseñar."
+          },
+          "details": {
+            "en": "Nobody knows when Nüshu began; it seems to have flourished in the late Qing dynasty. It wrote the local Chinese dialect, which women spoke but were seldom taught to write in ordinary characters. Girls who swore friendship as 'sworn sisters' sent each other letters and laments, and a bride leaving her village received a cloth-bound 'third-day book' of songs. Many texts were burned or buried with their owners. Japanese troops suppressed the script in the 1930s and 1940s, fearing secret messages, and the Cultural Revolution condemned it. Yang Huanyi, its last native writer, died in 2004; a museum opened in 2002, and Unicode added 396 Nüshu signs in 2017.",
+            "es": "Nadie sabe cuándo nació el nüshu; parece que floreció a fines de la dinastía Qing. Escribía el dialecto chino local, que las mujeres hablaban pero que rara vez aprendían a escribir con los caracteres comunes. Las muchachas que se juraban amistad como «hermanas juramentadas» se enviaban cartas y lamentos, y la novia que dejaba su aldea recibía un «libro del tercer día» de canciones, encuadernado en tela. Muchos textos se quemaban o se enterraban con sus dueñas. Las tropas japonesas persiguieron la escritura en las décadas de 1930 y 1940, por temor a mensajes secretos, y la Revolución Cultural la condenó. Yang Huanyi, su última escritora nativa, murió en 2004; en 2002 se abrió un museo, y Unicode añadió 396 signos nüshu en 2017."
+          },
+          "sample": {
+            "text": "𛆁𛈬",
+            "latin": "nüshu",
+            "means": {
+              "en": "'women's writing'",
+              "es": "«escritura de mujeres»"
+            }
+          },
+          "wiki": {
+            "en": "Nüshu",
+            "es": "Nüshu"
+          },
+          "img": "NüshuScript.jpg"
+        }
+      ]
+    },
+    {
+      "date": "1958-02-11",
+      "title": {
+        "en": "Simpler characters and pinyin",
+        "es": "Caracteres simplificados y pinyin"
+      },
+      "text": {
+        "en": "To help millions learn to read, China simplifies hundreds of characters from 1956 and adopts pinyin, a Latin spelling of Mandarin, on 11 February 1958. Japan limits its kanji, and Vietnam and North Korea leave characters behind.",
+        "es": "Para que millones aprendan a leer, China simplifica cientos de caracteres desde 1956 y adopta el pinyin, escritura latina del mandarín, el 11 de febrero de 1958. Japón limita sus kanji; Vietnam y Corea del Norte dejan los caracteres."
+      },
+      "details": {
+        "en": "Many Chinese reformers of the early 20th century blamed the hard script for mass illiteracy, and some wanted to replace it with an alphabet. In 1951 Premier Zhou Enlai set up a Script Reform Committee. Its 1956 scheme simplified 515 characters and 54 components, mostly with shapes long used in handwriting; a list of 2,235 followed in 1964. Pinyin, worked out by linguists led by the economist Zhou Youguang, was approved in 1958 to teach pronunciation, not to replace characters. A second, unpopular round of simplification in 1977 was withdrawn in 1986. Simplified forms are used in mainland China, Singapore and Malaysia; Taiwan, Hong Kong and Macau keep the traditional ones. Japan set a list of 1,850 everyday kanji in 1946 and simplified some forms its own way.",
+        "es": "Muchos reformistas chinos de comienzos del siglo XX culpaban a la difícil escritura del analfabetismo masivo, y algunos querían reemplazarla por un alfabeto. En 1951, el primer ministro Zhou Enlai creó un Comité de Reforma de la Escritura. Su plan de 1956 simplificó 515 caracteres y 54 componentes, casi siempre con formas usadas desde hacía tiempo al escribir a mano; en 1964 siguió una lista de 2235. El pinyin, preparado por lingüistas dirigidos por el economista Zhou Youguang, se aprobó en 1958 para enseñar la pronunciación, no para reemplazar los caracteres. Una segunda ronda de simplificación, impopular, de 1977, se retiró en 1986. Las formas simplificadas se usan en China continental, Singapur y Malasia; Taiwán, Hong Kong y Macao conservan las tradicionales. Japón fijó en 1946 una lista de 1850 kanji de uso común y simplificó algunas formas a su manera."
+      },
+      "camera": {
+        "lon": 116.39,
+        "lat": 39.91,
+        "zoom": 10.5
+      },
+      "control": {
+        "chinese": [
+          "CHN",
+          "TWN",
+          "HKG",
+          "MAC"
+        ],
+        "korean": [
+          "KOR",
+          "PRK"
+        ],
+        "japanese": "JPN",
+        "vietnamese": "VNM"
+      },
+      "places": [
+        {
+          "id": "simplified-chinese-characters",
+          "name": {
+            "en": "Simplified Chinese characters",
+            "es": "Caracteres chinos simplificados"
+          },
+          "at": [
+            116.383,
+            39.915
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "1956",
+          "place": {
+            "en": "Beijing, China",
+            "es": "Pekín, China"
+          },
+          "text": {
+            "en": "Standard character forms with fewer strokes, adopted in China from 1956 to help people learn to read: 汉 for 漢. They are used in mainland China, Singapore and Malaysia.",
+            "es": "Formas estándar de los caracteres con menos trazos, adoptadas en China desde 1956 para ayudar a la gente a aprender a leer: 汉 por 漢. Se usan en China continental, Singapur y Malasia."
+          },
+          "sample": {
+            "text": "汉字",
+            "latin": "hànzì",
+            "means": {
+              "en": "'Chinese characters', simplified (traditional: 漢字)",
+              "es": "«caracteres chinos», simplificados (tradicionales: 漢字)"
+            }
+          },
+          "wiki": {
+            "en": "Simplified Chinese characters",
+            "es": "Caracteres chinos simplificados"
+          },
+          "img": "Hanzi (simplified).svg"
+        },
+        {
+          "id": "pinyin",
+          "name": {
+            "en": "Pinyin",
+            "es": "Pinyin"
+          },
+          "at": [
+            116.3874,
+            39.9033
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "1958-02-11",
+          "place": {
+            "en": "Beijing, China",
+            "es": "Pekín, China"
+          },
+          "text": {
+            "en": "The official Latin spelling of Mandarin, approved in 1958, with marks for its four tones: Zhōngguó for 中国. Primary schools use it to teach pronunciation, and it is a common way to type Chinese.",
+            "es": "La escritura latina oficial del mandarín, aprobada en 1958, con signos para sus cuatro tonos: Zhōngguó por 中国. Las escuelas primarias la usan para enseñar la pronunciación, y es una forma común de escribir chino en el teclado."
+          },
+          "details": {
+            "en": "Zhou Youguang (1906–2017), a banker and economist who had studied in Japan, joined the script reform in the 1950s and is called the father of pinyin; he lived to 111. Pinyin became an international standard (ISO 7098) in 1982 and is used by the United Nations; Taiwan adopted it as its official romanization in 2009.",
+            "es": "Zhou Youguang (1906-2017), banquero y economista que había estudiado en Japón, se sumó a la reforma de la escritura en la década de 1950 y es llamado el padre del pinyin; vivió hasta los 111 años. El pinyin se volvió norma internacional (ISO 7098) en 1982 y lo usan las Naciones Unidas; Taiwán lo adoptó como romanización oficial en 2009."
+          },
+          "sample": {
+            "text": "Hànyǔ Pīnyīn",
+            "means": {
+              "en": "'Chinese language spelled sounds', pinyin's full name",
+              "es": "«sonidos deletreados de la lengua china», el nombre completo del pinyin"
+            }
+          },
+          "wiki": {
+            "en": "Pinyin",
+            "es": "Pinyin"
+          },
+          "img": "20220912 The No.6 Kindergarten of Jinshui District.jpg"
+        }
+      ]
+    },
+    {
+      "date": "2025",
+      "title": {
+        "en": "A billion and a half readers",
+        "es": "Mil quinientos millones de lectores"
+      },
+      "text": {
+        "en": "Today about a billion and a half people read Chinese characters, kana or Hangul every day. Phones and computers handle them all: Unicode encodes more than 100,000 Chinese characters, and Nüshu and Tangut too.",
+        "es": "Hoy, unos mil quinientos millones de personas leen a diario caracteres chinos, kana o hangul. Los celulares y las computadoras los manejan todos: Unicode codifica más de 100 000 caracteres chinos, y también el nüshu y el tangut."
+      },
+      "details": {
+        "en": "China, Taiwan, Japan and the two Koreas together are home to about 1.6 billion people. The scripts keep changing. Typists once needed trays of thousands of metal types or special typewriters, and early computers struggled with so many characters, until input methods let people type a word in pinyin, kana or Hangul and pick the right characters from a list. Korea and Vietnam now write almost only in their alphabets, but their classical books, temple steles and family records are in Chinese characters, so Korean pupils still learn some hanja and Vietnamese scholars study Hán and Nôm. In Anyang, where the oldest characters were found, the National Museum of Chinese Writing opened in 2009, and in Jiangyong some young women are learning Nüshu again.",
+        "es": "China, Taiwán, Japón y las dos Coreas suman unos 1600 millones de habitantes. Las escrituras siguen cambiando. Los mecanógrafos necesitaban antes bandejas con miles de tipos de metal o máquinas de escribir especiales, y las primeras computadoras sufrían con tantos caracteres, hasta que los métodos de entrada permitieron escribir una palabra en pinyin, kana o hangul y elegir los caracteres de una lista. Corea y Vietnam escriben hoy casi solo con sus alfabetos, pero sus libros clásicos, estelas de templos y registros familiares están en caracteres chinos, así que los alumnos coreanos todavía aprenden algunos hanja y los estudiosos vietnamitas estudian el hán y el nôm. En Anyang, donde se hallaron los caracteres más antiguos, se abrió en 2009 el Museo Nacional de la Escritura China, y en Jiangyong algunas jóvenes vuelven a aprender el nüshu."
+      },
+      "camera": {
+        "lon": 118.0,
+        "lat": 32.0,
+        "zoom": 2.6
+      },
+      "places": [
+        {
+          "id": "chinese-characters",
+          "name": {
+            "en": "Chinese characters",
+            "es": "Caracteres chinos"
+          },
+          "at": [
+            114.35,
+            36.07
+          ],
+          "cat": "script",
+          "icon": "字",
+          "type": "script",
+          "date": "-1250",
+          "place": {
+            "en": "Used across China and East Asia; National Museum of Chinese Writing, Anyang",
+            "es": "Se usan en China y Asia oriental; Museo Nacional de la Escritura China, Anyang"
+          },
+          "text": {
+            "en": "The only one of the world's first scripts still in use, for more than 3,000 years. Characters stand for meaningful parts of words; 3,500 to 5,000 cover everyday Chinese, and Unicode holds over 100,000.",
+            "es": "La única de las primeras escrituras del mundo que sigue en uso, desde hace más de 3000 años. Cada carácter es una parte de palabra con significado; de 3500 a 5000 bastan para el chino diario, y Unicode reúne más de 100 000."
+          },
+          "details": {
+            "en": "Most characters combine a part that hints at the meaning, called a radical, with a part that hints at the sound: 媽 mā, 'mother', joins 女 'woman' and 馬 mǎ. Because a character carries meaning rather than spelling, speakers of very different Chinese languages, and in the past Koreans, Japanese and Vietnamese, could all read the same classical texts. Literate people usually know 3,000 to 4,000 characters; modern dictionaries list around 15,000 in use. Simplified forms are official in mainland China, Singapore and Malaysia, and traditional forms in Taiwan, Hong Kong and Macau.",
+            "es": "La mayoría de los caracteres combinan una parte que sugiere el significado, llamada radical, con otra que sugiere el sonido: 媽 mā, «madre», une 女 «mujer» y 馬 mǎ. Como un carácter lleva significado y no deletreo, hablantes de lenguas chinas muy distintas, y en el pasado coreanos, japoneses y vietnamitas, podían leer los mismos textos clásicos. Las personas letradas suelen conocer de 3000 a 4000 caracteres; los diccionarios modernos registran unos 15 000 en uso. Las formas simplificadas son oficiales en China continental, Singapur y Malasia, y las tradicionales en Taiwán, Hong Kong y Macao."
+          },
+          "sample": {
+            "text": "漢字",
+            "latin": "hànzì",
+            "means": {
+              "en": "'Han characters', read kanji in Japan, hanja in Korea and Hán tự in Vietnam",
+              "es": "«caracteres de los Han»; en Japón se leen kanji, en Corea hanja y en Vietnam Hán tự"
+            }
+          },
+          "wiki": {
+            "en": "Chinese characters",
+            "es": "Caracteres chinos"
+          }
+        },
+        {
+          "id": "hangul",
+          "name": {
+            "en": "Hangul",
+            "es": "Hangul"
+          },
+          "at": [
+            126.9768,
+            37.5799
+          ],
+          "cat": "script",
+          "icon": "한",
+          "type": "script",
+          "date": "1443",
+          "place": {
+            "en": "Gyeongbokgung Palace, Seoul, South Korea",
+            "es": "Palacio Gyeongbokgung, Seúl, Corea del Sur"
+          },
+          "text": {
+            "en": "The Korean alphabet, made at King Sejong's court in 1443 and published in 1446. Its 24 basic letters are grouped into square syllable blocks; it is the script of both Koreas today.",
+            "es": "El alfabeto coreano, creado en la corte del rey Sejong en 1443 y publicado en 1446. Sus 24 letras básicas se agrupan en bloques cuadrados de sílabas; hoy es la escritura de las dos Coreas."
+          },
+          "sample": {
+            "text": "한글",
+            "latin": "Hangeul",
+            "means": {
+              "en": "its name in South Korea (in North Korea, Chosŏn'gŭl)",
+              "es": "su nombre en Corea del Sur (en Corea del Norte, Chosŏn'gŭl)"
+            }
+          },
+          "wiki": {
+            "en": "Hangul",
+            "es": "Hangul"
+          }
+        },
+        {
+          "id": "hiragana",
+          "name": {
+            "en": "Hiragana",
+            "es": "Hiragana"
+          },
+          "at": [
+            135.7422,
+            35.0136
+          ],
+          "cat": "script",
+          "icon": "あ",
+          "type": "script",
+          "date": "900",
+          "place": {
+            "en": "Heian-kyō (Kyoto), Japan",
+            "es": "Heian-kyō (Kioto), Japón"
+          },
+          "text": {
+            "en": "Japanese syllable signs born from man'yōgana written in fast cursive: あ comes from 安. Called 'women's hand' at the Heian court, today they write grammar endings and words without kanji.",
+            "es": "Signos silábicos japoneses nacidos del man'yōgana escrito en cursiva rápida: あ viene de 安. Llamados «mano de mujer» en la corte de Heian, hoy escriben terminaciones gramaticales y palabras sin kanji."
+          },
+          "details": {
+            "en": "Hiragana grew in the 9th and 10th centuries as scribes wrote man'yōgana faster and faster, until each character became a single flowing sign for a syllable. Men at court wrote formal texts in classical Chinese, so the new signs were first the writing of letters, diaries, poems and tales, much of it by court women, and they were called onnade, 'women's hand'. Male writers soon used them too. Today hiragana write grammar endings, particles and native words that have no kanji.",
+            "es": "El hiragana surgió en los siglos IX y X, cuando los escribas escribían el man'yōgana cada vez más rápido, hasta que cada carácter se volvió un solo signo fluido para una sílaba. Los hombres de la corte escribían los textos formales en chino clásico, así que los nuevos signos fueron primero la escritura de cartas, diarios, poemas y relatos, muchos de damas de la corte, y se los llamó onnade, «mano de mujer». Pronto los usaron también los hombres. Hoy el hiragana escribe las terminaciones gramaticales, las partículas y las palabras japonesas que no tienen kanji."
+          },
+          "sample": {
+            "text": "あいうえお",
+            "latin": "a i u e o",
+            "means": {
+              "en": "the five vowels, the first row of the table",
+              "es": "las cinco vocales, la primera fila de la tabla"
+            }
+          },
+          "wiki": {
+            "en": "Hiragana",
+            "es": "Hiragana"
+          },
+          "img": "Origin of Hiragana from Cursive Kanji Chart.png"
+        },
+        {
+          "id": "quoc-ngu",
+          "name": {
+            "en": "Chữ Quốc ngữ",
+            "es": "Chữ Quốc ngữ"
+          },
+          "at": [
+            108.327,
+            15.879
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "1620",
+          "place": {
+            "en": "First worked out by Jesuits in Hội An; today used all over Vietnam",
+            "es": "Ideado primero por jesuitas en Hội An; hoy se usa en todo Vietnam"
+          },
+          "text": {
+            "en": "The Vietnamese alphabet, 'script of the national language': Latin letters with accents for the tones, as in Việt Nam. Made by Jesuit missionaries in the 17th century, it has been Vietnam's only official script since 1954.",
+            "es": "El alfabeto vietnamita, «escritura de la lengua nacional»: letras latinas con acentos para los tonos, como en Việt Nam. Creado por misioneros jesuitas en el siglo XVII, es la única escritura oficial de Vietnam desde 1954."
+          },
+          "details": {
+            "en": "From about 1620 the Portuguese Jesuit Francisco de Pina, who lived in Hội An, wrote Vietnamese words in Latin letters to learn the language, borrowing Portuguese spelling; he is said to be the first European to speak it fluently. He drowned off Hội An in 1625. Other Jesuits continued his work, and Alexandre de Rhodes published it in 1651. Today it uses 22 letters of the Latin alphabet and seven more made with marks, such as ơ, ư and đ; five further marks show the tones.",
+            "es": "Desde hacia 1620, el jesuita portugués Francisco de Pina, que vivía en Hội An, escribió palabras vietnamitas en letras latinas para aprender la lengua, con la ortografía del portugués; se dice que fue el primer europeo que la habló con fluidez. Se ahogó frente a Hội An en 1625. Otros jesuitas siguieron su trabajo, y Alexandre de Rhodes lo publicó en 1651. Hoy usa 22 letras del alfabeto latino y otras siete hechas con signos, como ơ, ư y đ; otros cinco signos marcan los tonos."
+          },
+          "sample": {
+            "text": "Trăm năm trong cõi người ta",
+            "means": {
+              "en": "'A hundred years in this world of ours…', the first line of the Tale of Kiều",
+              "es": "«Cien años en este mundo de los hombres…», el primer verso del Cuento de Kiều"
+            }
+          },
+          "wiki": {
+            "en": "Vietnamese alphabet",
+            "es": "Alfabeto vietnamita"
+          },
+          "img": "L-2360-a 0008 1 t24-C-R0072.jpg"
+        },
+        {
+          "id": "nushu",
+          "name": {
+            "en": "Nüshu",
+            "es": "Nüshu"
+          },
+          "at": [
+            111.343,
+            25.273
+          ],
+          "cat": "script",
+          "type": "script",
+          "date": "1850",
+          "place": {
+            "en": "Jiangyong County, Hunan, China",
+            "es": "Condado de Jiangyong, Hunan, China"
+          },
+          "text": {
+            "en": "A script used only by women in Jiangyong county, Hunan: some 600 slender signs for syllables, derived from Chinese characters. Its last fluent writer died in 2004, and it is taught again today.",
+            "es": "Una escritura que solo usaban las mujeres del condado de Jiangyong, en Hunan: unos 600 signos delgados para sílabas, derivados de los caracteres chinos. Su última escritora fluida murió en 2004, y hoy se vuelve a enseñar."
+          },
+          "details": {
+            "en": "Nobody knows when Nüshu began; it seems to have flourished in the late Qing dynasty. It wrote the local Chinese dialect, which women spoke but were seldom taught to write in ordinary characters. Girls who swore friendship as 'sworn sisters' sent each other letters and laments, and a bride leaving her village received a cloth-bound 'third-day book' of songs. Many texts were burned or buried with their owners. Japanese troops suppressed the script in the 1930s and 1940s, fearing secret messages, and the Cultural Revolution condemned it. Yang Huanyi, its last native writer, died in 2004; a museum opened in 2002, and Unicode added 396 Nüshu signs in 2017.",
+            "es": "Nadie sabe cuándo nació el nüshu; parece que floreció a fines de la dinastía Qing. Escribía el dialecto chino local, que las mujeres hablaban pero que rara vez aprendían a escribir con los caracteres comunes. Las muchachas que se juraban amistad como «hermanas juramentadas» se enviaban cartas y lamentos, y la novia que dejaba su aldea recibía un «libro del tercer día» de canciones, encuadernado en tela. Muchos textos se quemaban o se enterraban con sus dueñas. Las tropas japonesas persiguieron la escritura en las décadas de 1930 y 1940, por temor a mensajes secretos, y la Revolución Cultural la condenó. Yang Huanyi, su última escritora nativa, murió en 2004; en 2002 se abrió un museo, y Unicode añadió 396 signos nüshu en 2017."
+          },
+          "sample": {
+            "text": "𛆁𛈬",
+            "latin": "nüshu",
+            "means": {
+              "en": "'women's writing'",
+              "es": "«escritura de mujeres»"
+            }
+          },
+          "wiki": {
+            "en": "Nüshu",
+            "es": "Nüshu"
+          },
+          "img": "NüshuScript.jpg"
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Chinese characters are the oldest writing system still in use, and for two thousand years they carried a shared classical culture from Vietnam to Japan. From them came kana, Nôm, Tangut and Nüshu, while Korea and Vietnam ended up with alphabets of their own, Hangul and Quốc ngữ. Paper, woodblock printing and movable type, all first made in this part of the world, spread their books far beyond it.",
+    "es": "Los caracteres chinos son el sistema de escritura más antiguo que sigue en uso, y durante dos mil años llevaron una cultura clásica compartida de Vietnam a Japón. De ellos nacieron los kana, el nôm, el tangut y el nüshu, mientras Corea y Vietnam terminaron con alfabetos propios, el hangul y el quốc ngữ. El papel, la impresión xilográfica y los tipos móviles, inventados primero en esta parte del mundo, llevaron sus libros mucho más allá."
+  },
+  "sources": [
+    {
+      "title": "Wikipedia: Chinese characters",
+      "url": "https://en.wikipedia.org/wiki/Chinese_characters"
+    },
+    {
+      "title": "Wikipedia: Oracle bone script",
+      "url": "https://en.wikipedia.org/wiki/Oracle_bone_script"
+    },
+    {
+      "title": "Wikipedia: Yinxu",
+      "url": "https://en.wikipedia.org/wiki/Yinxu"
+    },
+    {
+      "title": "Wikipedia: Wu Ding",
+      "url": "https://en.wikipedia.org/wiki/Wu_Ding"
+    },
+    {
+      "title": "Wikipedia: Chinese bronze inscriptions",
+      "url": "https://en.wikipedia.org/wiki/Chinese_bronze_inscriptions"
+    },
+    {
+      "title": "Wikipedia: Mao Gong ding",
+      "url": "https://en.wikipedia.org/wiki/Mao_Gong_ding"
+    },
+    {
+      "title": "Wikipedia: Shi Qiang pan",
+      "url": "https://en.wikipedia.org/wiki/Shi_Qiang_pan"
+    },
+    {
+      "title": "Wikipedia: Seal script",
+      "url": "https://en.wikipedia.org/wiki/Seal_script"
+    },
+    {
+      "title": "Wikipedia: Qin Shi Huang",
+      "url": "https://en.wikipedia.org/wiki/Qin_Shi_Huang"
+    },
+    {
+      "title": "Wikipedia: Li Si",
+      "url": "https://en.wikipedia.org/wiki/Li_Si"
+    },
+    {
+      "title": "Wikipedia: Burning of books and burying of scholars",
+      "url": "https://en.wikipedia.org/wiki/Burning_of_books_and_burying_of_scholars"
+    },
+    {
+      "title": "Wikipedia: Clerical script",
+      "url": "https://en.wikipedia.org/wiki/Clerical_script"
+    },
+    {
+      "title": "Wikipedia: Regular script",
+      "url": "https://en.wikipedia.org/wiki/Regular_script"
+    },
+    {
+      "title": "Wikipedia: Cai Lun",
+      "url": "https://en.wikipedia.org/wiki/Cai_Lun"
+    },
+    {
+      "title": "Wikipedia: Paper",
+      "url": "https://en.wikipedia.org/wiki/Paper"
+    },
+    {
+      "title": "Wikipedia: Wang Xizhi",
+      "url": "https://en.wikipedia.org/wiki/Wang_Xizhi"
+    },
+    {
+      "title": "Wikipedia: Lantingji Xu",
+      "url": "https://en.wikipedia.org/wiki/Lantingji_Xu"
+    },
+    {
+      "title": "Wikipedia: Hanja",
+      "url": "https://en.wikipedia.org/wiki/Hanja"
+    },
+    {
+      "title": "Wikipedia: Idu script",
+      "url": "https://en.wikipedia.org/wiki/Idu_script"
+    },
+    {
+      "title": "Wikipedia: Gwanggaeto Stele",
+      "url": "https://en.wikipedia.org/wiki/Gwanggaeto_Stele"
+    },
+    {
+      "title": "Wikipedia: Kanji",
+      "url": "https://en.wikipedia.org/wiki/Kanji"
+    },
+    {
+      "title": "Wikipedia: Inariyama Sword",
+      "url": "https://en.wikipedia.org/wiki/Inariyama_Sword"
+    },
+    {
+      "title": "Wikipedia: Man'yōgana",
+      "url": "https://en.wikipedia.org/wiki/Man'yōgana"
+    },
+    {
+      "title": "Wikipedia: Man'yōshū",
+      "url": "https://en.wikipedia.org/wiki/Man'yōshū"
+    },
+    {
+      "title": "Wikipedia: Kojiki",
+      "url": "https://en.wikipedia.org/wiki/Kojiki"
+    },
+    {
+      "title": "Wikipedia: Woodblock printing",
+      "url": "https://en.wikipedia.org/wiki/Woodblock_printing"
+    },
+    {
+      "title": "Wikipedia: Diamond Sutra",
+      "url": "https://en.wikipedia.org/wiki/Diamond_Sutra"
+    },
+    {
+      "title": "Wikipedia: Viśuddhaprabhā Dhāraṇī",
+      "url": "https://en.wikipedia.org/wiki/Viśuddhaprabhā_Dhāraṇī"
+    },
+    {
+      "title": "Wikipedia: Hiragana",
+      "url": "https://en.wikipedia.org/wiki/Hiragana"
+    },
+    {
+      "title": "Wikipedia: Katakana",
+      "url": "https://en.wikipedia.org/wiki/Katakana"
+    },
+    {
+      "title": "Wikipedia: The Tale of Genji",
+      "url": "https://en.wikipedia.org/wiki/The_Tale_of_Genji"
+    },
+    {
+      "title": "Wikipedia: Murasaki Shikibu",
+      "url": "https://en.wikipedia.org/wiki/Murasaki_Shikibu"
+    },
+    {
+      "title": "Wikipedia: Rozan-ji",
+      "url": "https://en.wikipedia.org/wiki/Rozan-ji"
+    },
+    {
+      "title": "Wikipedia: Bi Sheng",
+      "url": "https://en.wikipedia.org/wiki/Bi_Sheng"
+    },
+    {
+      "title": "Wikipedia: Movable type",
+      "url": "https://en.wikipedia.org/wiki/Movable_type"
+    },
+    {
+      "title": "Wikipedia: Dream Pool Essays",
+      "url": "https://en.wikipedia.org/wiki/Dream_Pool_Essays"
+    },
+    {
+      "title": "Wikipedia: Tangut script",
+      "url": "https://en.wikipedia.org/wiki/Tangut_script"
+    },
+    {
+      "title": "Wikipedia: Western Xia",
+      "url": "https://en.wikipedia.org/wiki/Western_Xia"
+    },
+    {
+      "title": "Wikipedia: Khara-Khoto",
+      "url": "https://en.wikipedia.org/wiki/Khara-Khoto"
+    },
+    {
+      "title": "Wikipedia: Chữ Hán",
+      "url": "https://en.wikipedia.org/wiki/Chữ_Hán"
+    },
+    {
+      "title": "Wikipedia: Chữ Nôm",
+      "url": "https://en.wikipedia.org/wiki/Chữ_Nôm"
+    },
+    {
+      "title": "Wikipedia: The Tale of Kieu",
+      "url": "https://en.wikipedia.org/wiki/The_Tale_of_Kieu"
+    },
+    {
+      "title": "Wikipedia: Citadel of the Hồ Dynasty",
+      "url": "https://en.wikipedia.org/wiki/Citadel_of_the_Hồ_Dynasty"
+    },
+    {
+      "title": "Wikipedia: Hồ Quý Ly",
+      "url": "https://en.wikipedia.org/wiki/Hồ_Quý_Ly"
+    },
+    {
+      "title": "Wikipedia: Jikji",
+      "url": "https://en.wikipedia.org/wiki/Jikji"
+    },
+    {
+      "title": "Wikipedia: Tripitaka Koreana",
+      "url": "https://en.wikipedia.org/wiki/Tripitaka_Koreana"
+    },
+    {
+      "title": "Wikipedia: Hangul",
+      "url": "https://en.wikipedia.org/wiki/Hangul"
+    },
+    {
+      "title": "Wikipedia: Hunminjeongeum",
+      "url": "https://en.wikipedia.org/wiki/Hunminjeongeum"
+    },
+    {
+      "title": "Wikipedia: Vietnamese alphabet",
+      "url": "https://en.wikipedia.org/wiki/Vietnamese_alphabet"
+    },
+    {
+      "title": "Wikipedia: Alexandre de Rhodes",
+      "url": "https://en.wikipedia.org/wiki/Alexandre_de_Rhodes"
+    },
+    {
+      "title": "Wikipedia: Francisco de Pina",
+      "url": "https://en.wikipedia.org/wiki/Francisco_de_Pina"
+    },
+    {
+      "title": "Wikipedia: Dictionarium Annamiticum Lusitanum et Latinum",
+      "url": "https://en.wikipedia.org/wiki/Dictionarium_Annamiticum_Lusitanum_et_Latinum"
+    },
+    {
+      "title": "Wikipedia: Kangxi Dictionary",
+      "url": "https://en.wikipedia.org/wiki/Kangxi_Dictionary"
+    },
+    {
+      "title": "Wikipedia: Kangxi Emperor",
+      "url": "https://en.wikipedia.org/wiki/Kangxi_Emperor"
+    },
+    {
+      "title": "Wikipedia: Nüshu",
+      "url": "https://en.wikipedia.org/wiki/Nüshu"
+    },
+    {
+      "title": "Wikipedia: Yang Huanyi",
+      "url": "https://en.wikipedia.org/wiki/Yang_Huanyi"
+    },
+    {
+      "title": "Wikipedia: Tongnip sinmun",
+      "url": "https://en.wikipedia.org/wiki/Tongnip_sinmun"
+    },
+    {
+      "title": "Wikipedia: Simplified Chinese characters",
+      "url": "https://en.wikipedia.org/wiki/Simplified_Chinese_characters"
+    },
+    {
+      "title": "Wikipedia: Pinyin",
+      "url": "https://en.wikipedia.org/wiki/Pinyin"
+    },
+    {
+      "title": "Wikipedia: Zhou Youguang",
+      "url": "https://en.wikipedia.org/wiki/Zhou_Youguang"
+    }
+  ]
+}
