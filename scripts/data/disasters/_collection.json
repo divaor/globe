@@ -1,0 +1,20 @@
+{
+  "name": { "en": "Natural disasters", "es": "Desastres naturales" },
+  "categories": [
+    { "id": "eruption", "name": { "en": "Eruptions", "es": "Erupciones" }, "icon": "🌋", "color": "#c0392b" },
+    { "id": "quake", "name": { "en": "Earthquakes", "es": "Terremotos" }, "icon": "🏚️", "color": "#8e5a2b" },
+    { "id": "tsunami", "name": { "en": "Tsunamis", "es": "Tsunamis" }, "icon": "🌊", "color": "#5dade2" },
+    { "id": "flood", "name": { "en": "Floods", "es": "Inundaciones" }, "icon": "💧", "color": "#2e86c1" },
+    { "id": "storm", "name": { "en": "Storms and cyclones", "es": "Tormentas y ciclones" }, "icon": "🌀", "color": "#7d3c98" },
+    { "id": "drought", "name": { "en": "Droughts and famines", "es": "Sequías y hambrunas" }, "icon": "🏜️", "color": "#d4a017" },
+    { "id": "climate", "name": { "en": "Effects on weather and climate", "es": "Efectos en el tiempo y el clima" }, "icon": "🌡️", "color": "#e67e22" },
+    { "id": "town", "name": { "en": "Towns and people hit", "es": "Pueblos y gente afectados" }, "icon": "🏘️", "color": "#5d6d7e" },
+    { "id": "site", "name": { "en": "Ruins and sites", "es": "Ruinas y sitios" }, "icon": "🏛️", "color": "#8c2f39" },
+    { "id": "witness", "name": { "en": "Witnesses and writings", "es": "Testigos y escritos" }, "icon": "📜", "color": "#b9770e" },
+    { "id": "science", "name": { "en": "Science and warnings", "es": "Ciencia y alertas" }, "icon": "🔬", "color": "#5b5fc7" },
+    { "id": "relief", "name": { "en": "Rescue and rebuilding", "es": "Rescate y reconstrucción" }, "icon": "🤝", "color": "#16a085" },
+    { "id": "art", "name": { "en": "Art and memory", "es": "Arte y memoria" }, "icon": "🎨", "color": "#e84393" },
+    { "id": "event", "name": { "en": "Turning points", "es": "Momentos clave" }, "icon": "⭐", "color": "#f39c12" }
+  ],
+  "catalog": []
+}

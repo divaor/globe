@@ -7,8 +7,8 @@ export interface TourStep {
   /** A story step to show: [collection, story id, step number (from 1)]. */
   story?: [StoryKind, string, number];
 }
-/** `group` places the tour in the list: our planet (none), cities through time, history and culture, life through time, games of the world, journeys and trade routes, religions and philosophies, or writing and languages. */
-export interface Tour { icon: string; en: string; es: string; group?: 'cities' | 'history' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing'; steps: TourStep[] }
+/** `group` places the tour in the list: our planet (none), cities through time, history and culture, life through time, games of the world, journeys and trade routes, religions and philosophies, writing and languages, plagues and cures, or natural disasters. */
+export interface Tour { icon: string; en: string; es: string; group?: 'cities' | 'history' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing' | 'plagues' | 'disasters'; steps: TourStep[] }
 
 /** A stop that opens a story step and then flies to [lon, lat, zoom] (null keeps the step's own view). */
 const at = (story: [StoryKind, string, number], fly: [number, number, number] | null, title_en: string, title_es: string, en: string, es: string): TourStep =>

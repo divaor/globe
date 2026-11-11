@@ -43,7 +43,7 @@ function joinList(names: string[]): string {
 const lower1 = (x: string) => x.charAt(0).toLowerCase() + x.slice(1);
 /** The civilization stories of Peoples and civilizations: the answers of "Which civilization?". */
 const CIV_STORIES = ['mesopotamia', 'ancient-egypt', 'indus-valley', 'persia', 'kush-aksum', 'ancient-china', 'khmer', 'west-african-empires', 'great-zimbabwe-swahili', 'olmecs-maya', 'andes'];
-const COLLECTION_DIR: Record<StoryKind, string> = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing' };
+const COLLECTION_DIR: Record<StoryKind, string> = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters' };
 const yearOf = (d: string) => Number(/^-?\d+/.exec(d)?.[0] ?? 0);
 
 /** Four years to choose from: the right one and three plausible others (no year 0, none in the future). */

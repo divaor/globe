@@ -125,8 +125,8 @@ export interface CollectionItem extends Omit<Item, 'first'> {
 }
 
 /** The collections of stories. */
-export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing';
-export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing'];
+export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing' | 'plagues' | 'disasters';
+export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters'];
 /** `paleo`: its old steps are drawn on the continents of their age. */
 const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text; paleo?: boolean }> = {
   wars: { dir: 'conflicts', hash: 'war', icon: '⚔️', name: { en: 'Wars and conquests', es: 'Guerras y conquistas' } },
@@ -139,6 +139,8 @@ const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: 
   journeys: { dir: 'journeys', hash: 'journeys', icon: '🧭', name: { en: 'Journeys and trade routes', es: 'Viajes y rutas comerciales' } },
   beliefs: { dir: 'beliefs', hash: 'beliefs', icon: '🛐', name: { en: 'Religions and philosophies', es: 'Religiones y filosofías' } },
   writing: { dir: 'writing', hash: 'writing', icon: '✍️', name: { en: 'Writing and languages', es: 'Escritura y lenguas' } },
+  plagues: { dir: 'plagues', hash: 'plagues', icon: '🦠', name: { en: 'Plagues and cures', es: 'Epidemias y curas' } },
+  disasters: { dir: 'disasters', hash: 'disasters', icon: '🌋', name: { en: 'Natural disasters', es: 'Desastres naturales' } },
 };
 export const storyHashKey = (k: StoryKind) => KINDS[k].hash;
 interface Area extends Shape { lp: Pt; area: number }
@@ -191,8 +193,11 @@ function fmtAgoRange(y0: number, y1: number): string {
   return `${a}\u00a0${UNIT_EN[ua]} – ${b}\u00a0${ub ? `${UNIT_EN[ub]} ` : ''}years ago`;
 }
 
-/** "1 September 1939", "May 334 BC", "336 a. C.", "3.2 million years ago"... */
+/** "1 September 1939", "May 334 BC", "336 a. C.", "3.2 million years ago", "1 November 1755, 09:40"... A time
+ *  of day is the local time at the place, as the story gives it. */
 export function fmtWhen(d: string, eraHint = 1): string {
+  const tm = /^(.*)T(\d{2}:\d{2})$/.exec(d);
+  if (tm) return `${fmtWhen(tm[1], eraHint)}, ${tm[2]}`;
   const m = /^(-?\d+)(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(d);
   if (!m) return d;
   const y = Number(m[1]), mo = m[2] ? Number(m[2]) : 0, day = m[3] ? Number(m[3]) : 0;
