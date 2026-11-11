@@ -14,11 +14,13 @@
  *   node scripts/data/build-fonts.mjs --check   fail when a character has no font (then run the build)
  *
  * Latin, Greek and Cyrillic letters, punctuation and emoji are left to the system's fonts.
- * The Noto fonts are under the SIL Open Font License 1.1 (public/data/fonts/OFL.txt).
+ * The Noto fonts are under the SIL Open Font License 1.1 (public/data/fonts/OFL.txt); Jigmo, for rare Chinese
+ * characters (CJK Extension B and later, as in chữ Nôm), is CC0 1.0.
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 import subsetFont from 'subset-font';
 import { Blob, Face } from 'harfbuzzjs';
 
@@ -29,6 +31,9 @@ const CHECK = process.argv.includes('--check');
 
 const NOTO = 'https://raw.githubusercontent.com/notofonts/notofonts.github.io/main/fonts';
 const CJK = 'https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/SubsetOTF';
+/** Jigmo (CC0 1.0, https://kamichikoichi.github.io/jigmo/): every rare Chinese character (CJK Extension B and
+ *  later), such as those of Vietnamese chữ Nôm, which the Noto CJK subsets lack. */
+const JIGMO = 'https://kamichikoichi.github.io/jigmo/Jigmo-20250912.zip';
 /** Unicode blocks → the Noto font for them: [first, last, font]. CJK fonts come from noto-cjk. */
 const BLOCKS = [
   [0x0530, 0x058f, 'NotoSansArmenian'], [0xfb13, 0xfb17, 'NotoSansArmenian'],
@@ -72,15 +77,16 @@ const BLOCKS = [
   [0x1100, 0x11ff, 'cjk:KR'], [0x3130, 0x318f, 'cjk:KR'], [0xa960, 0xa97f, 'cjk:KR'], [0xac00, 0xd7ff, 'cjk:KR'],
   [0x3040, 0x30ff, 'cjk:JP'], [0x31f0, 0x31ff, 'cjk:JP'], [0xff65, 0xff9f, 'cjk:JP'],
   [0x2e80, 0x2fdf, 'cjk:SC'], [0x3000, 0x303f, 'cjk:SC'], [0x3100, 0x312f, 'cjk:SC'], [0x3400, 0x4dbf, 'cjk:SC'],
-  [0x4e00, 0x9fff, 'cjk:SC'], [0xf900, 0xfaff, 'cjk:SC'], [0xff00, 0xff64, 'cjk:SC'], [0x20000, 0x2fa1f, 'cjk:SC'],
+  [0x4e00, 0x9fff, 'cjk:SC'], [0xf900, 0xfaff, 'cjk:SC'], [0xff00, 0xff64, 'cjk:SC'],
+  [0x20000, 0x2a6df, 'jigmo:Jigmo2'], [0x2a700, 0x323af, 'jigmo:Jigmo3'], [0x2f800, 0x2fa1f, 'cjk:SC'],
 ];
 /** What the system's fonts show well enough: Latin, IPA, Greek, Cyrillic, punctuation, symbols, emoji. */
 const SYSTEM = [[0x0000, 0x052f], [0x1d00, 0x1dbf], [0x1e00, 0x1fff], [0x2000, 0x27ff], [0x2900, 0x2bff], [0x2c60, 0x2c7f],
   [0xa720, 0xa7ff], [0xfe00, 0xfe0f], [0xfe20, 0xfe2f], [0x1f000, 0x1faff], [0xe0000, 0xe007f]];
 const inRanges = (cp, list) => list.some(([a, b]) => cp >= a && cp <= b);
 const fontOf = (cp) => BLOCKS.find(([a, b]) => cp >= a && cp <= b)?.[2];
-const fileName = (font) => `${font.startsWith('cjk:') ? `NotoSansCJK${font.slice(4)}` : font}.woff2`;
-const displayName = (font) => (font.startsWith('cjk:') ? `Noto Sans CJK ${font.slice(4)}` : font.replace(/([a-z])([A-Z])/g, '$1 $2').replace('N Ko', "N'Ko"));
+const fileName = (font) => `${font.startsWith('cjk:') ? `NotoSansCJK${font.slice(4)}` : font.startsWith('jigmo:') ? font.slice(6) : font}.woff2`;
+const displayName = (font) => (font.startsWith('cjk:') ? `Noto Sans CJK ${font.slice(4)}` : font.startsWith('jigmo:') ? `${font.slice(6)} (CC0)` : font.replace(/([a-z])([A-Z])/g, '$1 $2').replace('N Ko', "N'Ko"));
 
 /**
  * Every text the app shows in a script font, with where it comes from. Samples and marker letters must be
@@ -146,6 +152,17 @@ function ranges(cps) {
 
 async function download(font) {
   fs.mkdirSync(CACHE, { recursive: true });
+  if (font.startsWith('jigmo:')) {
+    // One archive holds Jigmo, Jigmo2 (Extension B) and Jigmo3 (Extensions C–H).
+    const zip = path.join(CACHE, 'Jigmo.zip');
+    if (!fs.existsSync(zip)) {
+      const r = await fetch(JIGMO);
+      if (!r.ok) throw new Error(`no download for Jigmo (${JIGMO})`);
+      fs.writeFileSync(zip, Buffer.from(await r.arrayBuffer()));
+      console.log('  downloaded Jigmo');
+    }
+    return execFileSync('unzip', ['-p', zip, `${font.slice(6)}.ttf`], { maxBuffer: 1 << 27 });
+  }
   const local = path.join(CACHE, font.replace(':', '-') + (font.startsWith('cjk:') ? '.otf' : '.ttf'));
   if (fs.existsSync(local)) return fs.readFileSync(local);
   const urls = font.startsWith('cjk:')
@@ -217,7 +234,7 @@ async function main() {
   if (!fs.existsSync(ofl)) {
     const r = await fetch('https://raw.githubusercontent.com/notofonts/phoenician/main/OFL.txt');
     const text = (await r.text()).replace(/^Copyright .*$/m, 'Copyright The Noto Project Authors (https://github.com/notofonts)');
-    if (r.ok) fs.writeFileSync(ofl, `The fonts in this folder are subsets of the Noto fonts (https://notofonts.github.io/,\nhttps://github.com/notofonts/noto-cjk), made by scripts/data/build-fonts.mjs. Their licence:\n\n${text}`);
+    if (r.ok) fs.writeFileSync(ofl, `The fonts in this folder are subsets made by scripts/data/build-fonts.mjs. Jigmo2 and Jigmo3 come from\nJigmo (https://kamichikoichi.github.io/jigmo/), released under CC0 1.0 (public domain). All the others come\nfrom the Noto fonts (https://notofonts.github.io/, https://github.com/notofonts/noto-cjk), under this licence:\n\n${text}`);
   }
   console.log(`script fonts: ${fonts.length} files, ${Math.round(total / 1024)} KB in all`);
 }
