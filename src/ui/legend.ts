@@ -25,6 +25,8 @@ export class LegendCard {
     this.el = h('aside', { class: 'legend glass' }, this.toggleBtn, this.body);
     this.banner = h('div', { class: 'lg-banner glass', hidden: true, role: 'status' });
     root.append(this.el, this.banner);
+    // Its height, for panels that share its side of the screen (the country card beside Compare's).
+    new ResizeObserver(() => document.documentElement.style.setProperty('--legend-h', `${this.el.offsetHeight}px`)).observe(this.el);
     app.on('layers', () => this.render());
     app.on('lang', () => this.render());
     app.on('theme', () => this.render());
@@ -58,6 +60,18 @@ export class LegendCard {
       if (pickers.length) sec.append(h('div', { class: 'lg-opts' }, pickers));
       sec.append(this.renderLegend(lg, inst.def.id, inst));
       if (lg.note) sec.append(h('div', { class: 'lg-note' }, lg.note));
+      const acts = [...(lg.actions ?? [])];
+      // A country-facts filter can be compared with another one (Compare two filters).
+      if (inst.def.compareKey && this.app.registry.has('compare') && !this.app.mode) {
+        acts.push({ icon: '⇄', label: this.app.lang === 'es' ? 'Comparar con…' : 'Compare with…', onClick: () => this.app.emit('compare', inst.def.compareKey) });
+      }
+      if (acts.length) {
+        sec.append(h('div', { class: 'lg-actions' }, acts.map((a) => {
+          const b = h('button', { type: 'button', class: `pill sm lg-act${a.primary ? ' primary' : ''}` }, a.icon ? h('span', { class: 'lg-act-icon', 'aria-hidden': 'true' }, a.icon) : null, a.label);
+          b.addEventListener('click', a.onClick);
+          return b;
+        })));
+      }
       this.body.append(sec);
     }
   }
@@ -69,8 +83,9 @@ export class LegendCard {
   private syncHighlight(legends: { inst: LayerInstance; lg: Legend | null }[]) {
     if (!this.activeItem) return;
     for (const { inst, lg } of legends) {
-      if (lg?.kind !== 'categories') continue;
-      const it = lg.items.find((x) => `${inst.def.id}:${x.label}` === this.activeItem);
+      const items = lg?.kind === 'categories' ? lg.items : lg?.kind === 'bivariate' ? lg.cells : null;
+      if (!items) continue;
+      const it = items.find((x) => `${inst.def.id}:${x.label}` === this.activeItem);
       if (it?.ids?.length) {
         const cur = this.app.renderer.highlight;
         if (!cur || cur.size !== it.ids.length || it.ids.some((id) => !cur.has(id))) {
@@ -119,6 +134,7 @@ export class LegendCard {
         h('div', { class: 'lg-ticks' }, h('span', null, lg.min), lg.mid ? h('span', null, lg.mid) : null, h('span', null, lg.max)));
     }
     if (lg.kind === 'html') return h('div', { class: 'lg-html', html: lg.html });
+    if (lg.kind === 'bivariate') return this.renderGrid(lg, layerId, inst);
     // Long names get a line each instead of being cut off (sooner on phones, where columns are narrow).
     const limit = matchMedia('(max-width: 720px)').matches ? 12 : 16;
     const oneCol = lg.items.some((it) => it.label.length > limit);
@@ -130,20 +146,47 @@ export class LegendCard {
         : h('span', { class: `lg-sw ${it.shape ?? 'square'}`, style: { background: it.shape === 'line' ? 'transparent' : it.color, borderColor: it.color } });
       const item = h('button', { type: 'button', class: `lg-item${this.activeItem === key ? ' on' : ''}`, disabled: !it.ids?.length, 'aria-pressed': this.activeItem === key ? 'true' : 'false' }, sw,
         it.icon && it.shape !== 'emoji' ? h('span', { class: 'lg-icon' }, it.icon) : null, h('span', { class: 'lg-label' }, it.label));
-      if (it.ids?.length) {
-        item.addEventListener('click', () => {
-          const on = this.activeItem === key;
-          this.activeItem = on ? null : key;
-          this.app.renderer.highlight = on ? null : new Set(it.ids);
-          this.app.renderer.requestRender();
-          list.querySelectorAll('.lg-item').forEach((x) => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
-          if (!on) { item.classList.add('on'); item.setAttribute('aria-pressed', 'true'); this.showBanner(inst, it); }
-          else this.banner.hidden = true;
-        });
-      }
+      if (it.ids?.length) item.addEventListener('click', () => this.toggleItem(key, it, inst, item, list));
       list.append(item);
     }
     return list;
+  }
+
+  /** Highlights an item's countries (or clears it when it was on), marking it in its legend. */
+  private toggleItem(key: string, it: LegendItem, inst: LayerInstance, el: HTMLElement, container: HTMLElement) {
+    const on = this.activeItem === key;
+    this.activeItem = on ? null : key;
+    this.app.renderer.highlight = on ? null : new Set(it.ids);
+    this.app.renderer.requestRender();
+    container.querySelectorAll('.on[aria-pressed]').forEach((x) => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
+    if (!on) { el.classList.add('on'); el.setAttribute('aria-pressed', 'true'); this.showBanner(inst, it); }
+    else this.banner.hidden = true;
+    this.app.emit('highlight');
+  }
+
+  /** Two filters at once: a 3 × 3 grid of squares (A across, B up), each tappable, with its count. */
+  private renderGrid(lg: Extract<Legend, { kind: 'bivariate' }>, layerId: string, inst: LayerInstance): HTMLElement {
+    const grid = h('div', { class: 'lg-bi-grid', role: 'group', 'aria-label': `${lg.x} × ${lg.y}` });
+    for (let b = 2; b >= 0; b--) {
+      for (let a = 0; a < 3; a++) {
+        const it = lg.cells[a + 3 * b];
+        if (!it) continue;
+        const key = `${layerId}:${it.label}`;
+        const on = this.activeItem === key;
+        const [r, g, bl] = [1, 3, 5].map((i) => parseInt(it.color.slice(i, i + 2), 16));
+        const dark = 0.299 * r + 0.587 * g + 0.114 * bl < 140;
+        const cell = h('button', {
+          type: 'button', class: `lg-bi-cell${on ? ' on' : ''}${dark ? ' dark' : ''}`, style: { background: it.color },
+          title: it.label, 'aria-label': `${it.label}${it.count != null ? ` (${it.count})` : ''}`, 'aria-pressed': on ? 'true' : 'false', disabled: !it.ids?.length,
+        }, it.count != null ? h('span', { class: 'lg-bi-n' }, String(it.count)) : null);
+        if (it.ids?.length) cell.addEventListener('click', () => this.toggleItem(key, it, inst, cell, grid));
+        grid.append(cell);
+      }
+    }
+    return h('div', { class: 'lg-bi' },
+      h('div', { class: 'lg-bi-y' }, `↑ ${lg.y}`),
+      grid,
+      h('div', { class: 'lg-bi-x' }, `→ ${lg.x}`));
   }
 
   clearHighlight() {
@@ -152,6 +195,7 @@ export class LegendCard {
     this.activeItem = null;
     this.app.renderer.highlight = null;
     this.app.renderer.requestRender();
-    this.body.querySelectorAll('.lg-item.on').forEach((x) => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
+    this.body.querySelectorAll('.on[aria-pressed]').forEach((x) => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); });
+    this.app.emit('highlight');
   }
 }

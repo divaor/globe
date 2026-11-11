@@ -35,6 +35,13 @@ spinning full-screen as an ambient display. English and Spanish.
   - Culture & fun: flags on the map, national colours, driving side, calling codes, Olympic medals and more.
   - Imagery: NASA Blue Marble, yesterday's real satellite view (NASA GIBS), shaded relief, ETOPO.
   - Live: day and night with city lights, earthquakes (USGS), weather now (Open-Meteo), the ISS.
+- **Compare two filters:** any two country facts at once. Two numbers make a two-colour map (each in thirds,
+  3 × 3 squares to tap) and a scatter chart linked to the globe both ways (tap a dot to fly to its country, tap
+  a square to light its countries on the chart), with Spearman's ρ and Pearson's r in plain words, the
+  countries furthest from the trend, and a reminder that correlation is not causation. A total against another
+  (Olympic medals and population, oil and area…) can be divided ("per million people"). A category against a
+  number gives a dot plot with medians; two categories give a cross table with Cramér's V. Start from the
+  Filters panel, the More menu, or "Compare with…" in any country-facts filter's legend.
 - **Time travel:** borders through time (54 maps, 123,000 BC → 2010) with start/end, play, speed and
   "What changed"; Pangea to today (Merdith et al. 2021 plate model, 1,000 Ma → today) with the geological time scale.
   Researched stories play step by step on the map, with territory, routes, markers and a card with a Wikipedia
@@ -71,7 +78,8 @@ spinning full-screen as an ambient display. English and Spanish.
 - **Explore:** measure distances (great circles, flight time), compare two countries, "true size" of countries.
 - **Learn & play:** quizzes (find the country, flags, capitals, states and provinces of 48 countries, where in
   the world, when was it built or made, dishes of the world, which era, which civilization, which geologic
-  period, who won), each ending with every answer and its picture; guided tours (our planet, eight cities
+  period, who won, guess the link between two country facts), each ending with every answer and its picture;
+  guided tours (our planet, eight cities
   through time, history and culture, Out of Africa, capitals of the ancient world, the dinosaur trail, the five
   mass extinctions, Olympic cities, World Cup finals, the Winter Games, great races); "On this day" (Wikipedia).
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
@@ -104,7 +112,8 @@ export const myFilter = numericLayer({
 
 Register it in `src/layers/index.ts`, or drop a module in `src/layers/packs/` whose default export registers
 filters. Even simpler: add a field to `public/data/attributes/countries.json` (with `label_en`, `label_es`,
-`type`…) and it becomes a filter automatically.
+`type`…) and it becomes a filter automatically, and one Compare two filters can use (a number with
+`"measure": "total"`, such as a production or a count, can also be divided by population, area or GDP).
 
 ## Data
 
