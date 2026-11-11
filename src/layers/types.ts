@@ -24,6 +24,8 @@ export interface LegendItem {
   shape?: 'square' | 'line' | 'dot' | 'dash' | 'emoji' | 'hatch';
   /** Country ids this item covers (for highlight on hover). */
   ids?: string[];
+  /** How many countries it counts, when `ids` also holds territories drawn as their own shapes. */
+  count?: number;
 }
 
 /** A button under a legend (open a chart, swap two filters...). */
@@ -39,7 +41,7 @@ export type Legend = LegendBase & (
    * Two filters at once: a 3 × 3 grid, filter A across (low to high) and filter B up. `cells[a + 3 * b]`
    * is the square for A's third `a` and B's third `b` (0 low, 1 middle, 2 high); `count` shows inside it.
    */
-  | { kind: 'bivariate'; cells: (LegendItem & { count?: number })[]; x: string; y: string });
+  | { kind: 'bivariate'; cells: LegendItem[]; x: string; y: string });
 
 export interface InfoRow { label: string; value: string; icon?: string }
 

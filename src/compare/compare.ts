@@ -231,7 +231,7 @@ export class Compare {
           if (th.tie) return [L(`below ${fmtVal(lo)}${us}`, `menos de ${fmtVal(lo)}${us}`), `${fmtVal(lo)}${us}`, L(`above ${fmtVal(lo)}${us}`, `más de ${fmtVal(lo)}${us}`)][k];
           return [`${L('bottom third', 'tercio inferior')} (< ${fmtVal(lo)}${us})`, `${L('middle third', 'tercio medio')} (${fmtVal(lo)}–${fmtVal(hi)}${us})`, `${L('top third', 'tercio superior')} (≥ ${fmtVal(hi)}${us})`][k];
         };
-        const cells: (LegendItem & { count: number })[] = [];
+        const cells: LegendItem[] = [];
         for (let k = 0; k < 9; k++) {
           const ia = k % 3, ib = Math.floor(k / 3);
           const isos = an.pts.filter((p) => an.cell.get(p.iso) === k).map((p) => p.iso);
@@ -250,11 +250,11 @@ export class Compare {
         };
       }
       case 'cn': {
-        const items: LegendItem[] = an.groups.map((g) => ({ color: an.color(g.k), label: `${tx(M.catLabel(an.catKey, g.k))} (${g.isos.length})`, ids: this.toMapIds(g.isos) }));
+        const items: LegendItem[] = an.groups.map((g) => ({ color: an.color(g.k), label: `${tx(M.catLabel(an.catKey, g.k))} (${g.isos.length})`, ids: this.toMapIds(g.isos), count: g.isos.length }));
         return { kind: 'categories', title: `${name(an.catKey)} × ${name(an.numKey)}`, items, actions, note: L(`The chart shows ${name(an.numKey)} in each group, with its median.`, `El gráfico muestra ${name(an.numKey)} en cada grupo, con su mediana.`) };
       }
       case 'cc': {
-        const items: LegendItem[] = this.combos(an).map((c) => ({ color: c.color, label: `${c.label} (${c.isos.length})`, ids: this.toMapIds(c.isos) }));
+        const items: LegendItem[] = this.combos(an).map((c) => ({ color: c.color, label: `${c.label} (${c.isos.length})`, ids: this.toMapIds(c.isos), count: c.isos.length }));
         return { kind: 'categories', title: `${name(a)} × ${name(b)}`, items, actions, note: `V = ${fmtR(an.V)}: ${this.vWords(an.V)} · ${nCountries(an.n)}` };
       }
     }

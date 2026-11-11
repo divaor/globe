@@ -606,7 +606,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate((i) => document.querySelectorAll('.lg-bi-cell')[i].click(), big);
   await page.waitForTimeout(500);
   const lit = await page.evaluate(() => ({ n: window.atlas.app.renderer.highlight?.size ?? 0, banner: document.querySelector('.lg-banner:not([hidden])')?.textContent ?? '' }));
-  check(grid.length === 9 && total >= 200 && lit.n >= grid[big] && /countries/.test(lit.banner), `the legend's nine squares hold ${total} countries; a tap lights ${grid[big]} of them (${lit.banner.slice(0, 60)})`);
+  // The banner counts countries as the square does (territories drawn apart are lit, not counted).
+  check(grid.length === 9 && total >= 200 && lit.n >= grid[big] && lit.banner.includes(`· ${grid[big]} countries`), `the legend's nine squares hold ${total} countries; a tap lights ${grid[big]} of them (${lit.banner.slice(0, 60)}…${lit.banner.slice(-14)})`);
   await page.evaluate(() => document.querySelector('.lg-banner-x')?.click());
   await page.evaluate(() => document.querySelector('.cmp-fold').click());
   await page.waitForSelector('.compare-card .cmp-canvas', { timeout: 10000 });

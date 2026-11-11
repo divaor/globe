@@ -114,7 +114,7 @@ export class LegendCard {
   }
 
   private showBanner(inst: LayerInstance, it: LegendItem) {
-    const n = it.ids?.length ?? 0;
+    const n = it.count ?? it.ids?.length ?? 0;
     const es = this.app.lang === 'es';
     const close = h('button', { type: 'button', class: 'lg-banner-x', title: t('close'), 'aria-label': t('close') }, icon(X, 16));
     close.addEventListener('click', () => this.clearHighlight());
