@@ -1,0 +1,5324 @@
+{
+  "id": "ibn-battuta",
+  "name": {
+    "en": "Ibn Battuta's travels",
+    "es": "Los viajes de Ibn Battuta"
+  },
+  "icon": "🐪",
+  "era": "medieval",
+  "region": {
+    "en": "From Morocco to China, East Africa and Mali",
+    "es": "De Marruecos a China, África oriental y Malí"
+  },
+  "start": "1325-06-14",
+  "end": "1355-12",
+  "summary": {
+    "en": "A young scholar from Tangier sets out for Mecca in 1325 and keeps travelling for almost 30 years, from East Africa and the Golden Horde to India, China and Mali.",
+    "es": "Un joven estudioso de Tánger parte hacia La Meca en 1325 y sigue viajando casi 30 años, de África oriental y la Horda de Oro a la India, China y Malí."
+  },
+  "camera": {
+    "lon": 45,
+    "lat": 25,
+    "zoom": 1.5
+  },
+  "sides": [
+    {
+      "id": "battuta",
+      "name": {
+        "en": "Ibn Battuta",
+        "es": "Ibn Battuta"
+      },
+      "color": "#c0392b",
+      "members": {
+        "en": "His journeys as the Rihla tells them, 1325–1354",
+        "es": "Sus viajes tal como los cuenta la Rihla, 1325-1354"
+      }
+    },
+    {
+      "id": "doubted",
+      "name": {
+        "en": "Journeys in doubt",
+        "es": "Viajes dudosos"
+      },
+      "color": "#5d6d7e",
+      "members": {
+        "en": "Trips that many scholars think he never made: up the Volga to Bolghar, and from Hangzhou to Beijing",
+        "es": "Viajes que muchos estudiosos creen que nunca hizo: por el Volga hasta Bolgar y de Hangzhou a Pekín"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "date": "1326",
+      "title": {
+        "en": "Leaving Tangier",
+        "es": "La salida de Tánger"
+      },
+      "text": {
+        "en": "On 14 June 1325 Ibn Battuta, a 21-year-old student of law, left Tangier alone to make the pilgrimage to Mecca. He crossed North Africa with caravans and reached Alexandria in the spring of 1326.",
+        "es": "El 14 de junio de 1325 Ibn Battuta, un estudiante de derecho de 21 años, salió solo de Tánger para peregrinar a La Meca. Cruzó el norte de África con caravanas y llegó a Alejandría en la primavera de 1326."
+      },
+      "details": {
+        "en": "He came from a family of judges of the Berber Lawata clan and had studied Islamic law of the Maliki school. 'I set out alone,' he remembered, 'and forsook my home as birds forsake their nests', grieving to leave his parents. For safety he joined caravans along the coast, through Tlemcen and Béjaïa to Tunis, where he wept with loneliness when no one in the crowd greeted him, and stayed two months. At Sfax he married for the first time, but soon left his bride after a quarrel with her father. After more than 3,500 km he reached Alexandria, whose ancient lighthouse still stood, partly in ruins. There a holy man, Burhan al-Din, saw that he loved to travel and asked him to greet his brothers in India, Sind and China.",
+        "es": "Venía de una familia de jueces del clan bereber de los lawata y había estudiado el derecho islámico de la escuela malikí. «Partí solo», recordaría, «y dejé mi hogar como los pájaros dejan sus nidos», con pena por separarse de sus padres. Por seguridad se unió a caravanas a lo largo de la costa, por Tremecén y Bugía hasta Túnez, donde lloró de soledad cuando nadie en la multitud lo saludó, y se quedó dos meses. En Sfax se casó por primera vez, pero pronto dejó a su esposa tras una pelea con el padre de ella. Después de más de 3500 km llegó a Alejandría, cuyo antiguo faro aún seguía en pie, en parte en ruinas. Allí un santo varón, Burhan al-Din, vio que le gustaba viajar y le pidió que saludara a sus hermanos de la India, el Sind y China."
+      },
+      "camera": {
+        "lon": 12,
+        "lat": 33.5,
+        "zoom": 2.6
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              -5.81,
+              35.78
+            ],
+            [
+              -5.37,
+              35.57
+            ],
+            [
+              -5.26,
+              35.17
+            ],
+            [
+              -4.01,
+              34.21
+            ],
+            [
+              -1.91,
+              34.68
+            ],
+            [
+              -1.32,
+              34.88
+            ],
+            [
+              0.14,
+              35.4
+            ],
+            [
+              2.23,
+              36.3
+            ],
+            [
+              3.06,
+              36.75
+            ],
+            [
+              5.08,
+              36.75
+            ],
+            [
+              6.61,
+              36.37
+            ],
+            [
+              7.77,
+              36.9
+            ],
+            [
+              9.18,
+              36.73
+            ],
+            [
+              10.18,
+              36.81
+            ],
+            [
+              10.64,
+              35.83
+            ],
+            [
+              10.76,
+              34.74
+            ],
+            [
+              10.1,
+              33.88
+            ],
+            [
+              11.22,
+              33.14
+            ],
+            [
+              13.19,
+              32.89
+            ],
+            [
+              15.09,
+              32.38
+            ],
+            [
+              16.59,
+              31.21
+            ],
+            [
+              19.58,
+              30.41
+            ],
+            [
+              20.22,
+              30.76
+            ],
+            [
+              23.96,
+              32.08
+            ],
+            [
+              25.16,
+              31.55
+            ],
+            [
+              27.24,
+              31.35
+            ],
+            [
+              29.92,
+              31.2
+            ]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        }
+      ],
+      "places": [
+        {
+          "id": "ibn-battuta",
+          "name": {
+            "en": "Ibn Battuta",
+            "es": "Ibn Battuta"
+          },
+          "at": [
+            -5.813,
+            35.785
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1325-06-14",
+          "life": [
+            "1304-02-24",
+            "1369"
+          ],
+          "place": {
+            "en": "Set out from Tangier, Morocco",
+            "es": "Partió de Tánger, Marruecos"
+          },
+          "text": {
+            "en": "A Moroccan scholar of Islamic law who travelled for almost 30 years, from 1325 to 1354: some 117,000 km across Africa, Asia and Europe, more than any other traveller of pre-modern times.",
+            "es": "Un sabio marroquí del derecho islámico que viajó casi 30 años, de 1325 a 1354: unos 117 000 km por África, Asia y Europa, más que ningún otro viajero antes de la época moderna."
+          },
+          "details": {
+            "en": "Muhammad ibn Battuta was born in Tangier on 24 February 1304 into a family of judges of Berber origin; his family name means 'son of the duckling'. Wherever he went he was received as a learned man and a pilgrim. He lived on the gifts of rulers, served as a judge in Delhi and the Maldives, married many times, left children in several countries and owned enslaved servants. He kept no journal: the Rihla he dictated in Fez is the only source for his life. He died in Morocco in 1368 or 1369.",
+            "es": "Muhammad ibn Battuta nació en Tánger el 24 de febrero de 1304 en una familia de jueces de origen bereber; su apellido significa «hijo del patito». Dondequiera que iba lo recibían como sabio y peregrino. Vivió de los regalos de los gobernantes, fue juez en Delhi y en las Maldivas, se casó muchas veces, dejó hijos en varios países y tuvo sirvientes esclavizados. No llevó diario: la Rihla que dictó en Fez es la única fuente sobre su vida. Murió en Marruecos en 1368 o 1369."
+          },
+          "wiki": {
+            "en": "Ibn Battuta",
+            "es": "Ibn Battuta"
+          }
+        },
+        {
+          "id": "tunis",
+          "name": {
+            "en": "Tunis",
+            "es": "Túnez"
+          },
+          "at": [
+            10.1817,
+            36.8064
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1325",
+          "place": {
+            "en": "Tunis, Tunisia",
+            "es": "Túnez, Túnez"
+          },
+          "text": {
+            "en": "Capital of the Hafsid sultans, where Ibn Battuta stayed two months on his way east. Arriving among strangers, with no one to greet him, he wept with loneliness until a pilgrim came to talk to him.",
+            "es": "Capital de los sultanes hafsíes, donde Ibn Battuta pasó dos meses camino del este. Al llegar entre desconocidos, sin nadie que lo saludara, lloró de soledad hasta que un peregrino se acercó a hablarle."
+          },
+          "wiki": {
+            "en": "Tunis",
+            "es": "Túnez (ciudad)"
+          }
+        },
+        {
+          "id": "alexandria",
+          "name": {
+            "en": "Alexandria",
+            "es": "Alejandría"
+          },
+          "at": [
+            29.8925,
+            31.1975
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1326",
+          "place": {
+            "en": "Alexandria, Egypt",
+            "es": "Alejandría, Egipto"
+          },
+          "text": {
+            "en": "The great Mediterranean port of Mamluk Egypt. Ibn Battuta saw its ancient lighthouse partly in ruins in 1326; when he came back in 1349 it could no longer be entered.",
+            "es": "El gran puerto mediterráneo del Egipto mameluco. Ibn Battuta vio su antiguo faro en parte en ruinas en 1326; cuando volvió en 1349 ya no se podía entrar en él."
+          },
+          "details": {
+            "en": "Two holy men here foretold his life of travel. Sheikh Burhan al-Din told him: 'It seems to me that you are fond of foreign travel', and asked him to greet his brothers in India, Sind and China. Another, al-Murshidi, explained one of his dreams as a sign that he would wander the world. The lighthouse, one of the Seven Wonders of the ancient world, had been badly damaged by earthquakes between 956 and 1303.",
+            "es": "Dos santos varones de aquí le predijeron su vida de viajes. El jeque Burhan al-Din le dijo: «Me parece que te gusta viajar por tierras extrañas», y le pidió que saludara a sus hermanos de la India, el Sind y China. Otro, al-Murshidi, interpretó uno de sus sueños como señal de que recorrería el mundo. El faro, una de las siete maravillas del mundo antiguo, había sufrido graves daños por terremotos entre 956 y 1303."
+          },
+          "wiki": {
+            "en": "Alexandria",
+            "es": "Alejandría"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1326-11",
+      "title": {
+        "en": "The first hajj",
+        "es": "La primera peregrinación"
+      },
+      "text": {
+        "en": "From Cairo, capital of the Mamluk Sultanate, Ibn Battuta tried the Red Sea route but had to turn back. He went through Jerusalem to Damascus, then with the pilgrim caravan to Medina and Mecca.",
+        "es": "Desde El Cairo, capital del sultanato mameluco, Ibn Battuta intentó la ruta del mar Rojo, pero tuvo que volver. Fue por Jerusalén a Damasco y luego, con la caravana de peregrinos, a Medina y La Meca."
+      },
+      "details": {
+        "en": "He spent about a month in Cairo, then went up the Nile and across the desert towards ʿAydhab, a Red Sea port shared by the Sultan of Egypt and the king of the Beja, from where pilgrims crossed to Jeddah. A local rebellion forced him back. So he took the road through Syria, which the Mamluks kept safe for pilgrims, visiting Hebron, Bethlehem and Jerusalem. In Damascus he spent the month of Ramadan studying with its scholars; legal texts he copied there in 1326 have been found in the archives of al-Azhar in Cairo. With the Syrian pilgrim caravan he rode 1,300 km south to Medina, prayed at the Prophet's Mosque and reached Mecca for the hajj in November 1326. Instead of going home, he decided to see more of the world.",
+        "es": "Pasó cerca de un mes en El Cairo y luego subió por el Nilo y cruzó el desierto hacia Aidhab, un puerto del mar Rojo compartido por el sultán de Egipto y el rey de los beja, desde donde los peregrinos cruzaban a Yeda. Una rebelión local lo obligó a volver. Entonces tomó el camino de Siria, que los mamelucos mantenían seguro para los peregrinos, y visitó Hebrón, Belén y Jerusalén. En Damasco pasó el mes de ramadán estudiando con sus sabios; se han hallado en los archivos de al-Azhar, en El Cairo, textos jurídicos que copió allí en 1326. Con la caravana de peregrinos de Siria recorrió 1300 km hacia el sur hasta Medina, rezó en la mezquita del Profeta y llegó a La Meca para el hach en noviembre de 1326. En lugar de volver a casa, decidió conocer más del mundo."
+      },
+      "camera": {
+        "lon": 35,
+        "lat": 27,
+        "zoom": 3.2
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              29.92,
+              31.2
+            ],
+            [
+              30.47,
+              31.05
+            ],
+            [
+              31.24,
+              30.04
+            ],
+            [
+              30.75,
+              28.1
+            ],
+            [
+              31.18,
+              27.18
+            ],
+            [
+              32.76,
+              25.91
+            ],
+            [
+              32.87,
+              24.98
+            ],
+            [
+              34.0,
+              24.0
+            ],
+            [
+              35.6,
+              22.9
+            ],
+            [
+              34.0,
+              24.0
+            ],
+            [
+              32.87,
+              24.98
+            ],
+            [
+              32.76,
+              25.91
+            ],
+            [
+              31.18,
+              27.18
+            ],
+            [
+              30.75,
+              28.1
+            ],
+            [
+              31.24,
+              30.04
+            ],
+            [
+              31.56,
+              30.42
+            ],
+            [
+              32.31,
+              30.86
+            ],
+            [
+              33.8,
+              31.13
+            ],
+            [
+              34.47,
+              31.5
+            ],
+            [
+              35.1,
+              31.53
+            ],
+            [
+              35.2,
+              31.7
+            ],
+            [
+              35.23,
+              31.78
+            ],
+            [
+              35.26,
+              32.22
+            ],
+            [
+              35.53,
+              32.79
+            ],
+            [
+              36.31,
+              33.51
+            ],
+            [
+              36.1,
+              32.62
+            ],
+            [
+              35.73,
+              30.19
+            ],
+            [
+              36.57,
+              28.38
+            ],
+            [
+              37.92,
+              26.62
+            ],
+            [
+              39.61,
+              24.47
+            ],
+            [
+              39.05,
+              23.0
+            ],
+            [
+              39.83,
+              21.42
+            ]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        }
+      ],
+      "places": [
+        {
+          "id": "cairo",
+          "name": {
+            "en": "Cairo",
+            "es": "El Cairo"
+          },
+          "at": [
+            31.2358,
+            30.0444
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1326",
+          "place": {
+            "en": "Cairo, Egypt",
+            "es": "El Cairo, Egipto"
+          },
+          "text": {
+            "en": "Capital of the Mamluk Sultanate and one of the great cities of the Islamic world. Ibn Battuta spent a month there in 1326; when he passed again in 1348, the plague was killing over a thousand people a day.",
+            "es": "Capital del sultanato mameluco y una de las grandes ciudades del mundo islámico. Ibn Battuta pasó allí un mes en 1326; cuando volvió en 1348, la peste mataba a más de mil personas al día."
+          },
+          "wiki": {
+            "en": "Cairo",
+            "es": "El Cairo"
+          }
+        },
+        {
+          "id": "aydhab",
+          "name": {
+            "en": "ʿAydhab",
+            "es": "Aidhab"
+          },
+          "at": [
+            36.4903,
+            22.3308
+          ],
+          "cat": "port",
+          "type": "site",
+          "date": "1326",
+          "place": {
+            "en": "Red Sea coast, on the border of Egypt and Sudan",
+            "es": "Costa del mar Rojo, en la frontera de Egipto y Sudán"
+          },
+          "text": {
+            "en": "A Red Sea port where pilgrims crossed to Jeddah, shared by the Sultan of Egypt and the king of the Beja people. A local rebellion forced Ibn Battuta to turn back before he reached it in 1326.",
+            "es": "Un puerto del mar Rojo desde donde los peregrinos cruzaban a Yeda, compartido por el sultán de Egipto y el rey del pueblo beja. Una rebelión local obligó a Ibn Battuta a volver atrás antes de llegar, en 1326."
+          },
+          "wiki": {
+            "en": "ʿAydhab",
+            "es": "Aidhab"
+          }
+        },
+        {
+          "id": "damascus",
+          "name": {
+            "en": "Damascus",
+            "es": "Damasco"
+          },
+          "at": [
+            36.3067,
+            33.5115
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1326",
+          "place": {
+            "en": "Damascus, Syria",
+            "es": "Damasco, Siria"
+          },
+          "text": {
+            "en": "The great city of Mamluk Syria, with its Umayyad Mosque. Ibn Battuta spent Ramadan 1326 here studying; legal texts he copied then have been found in Cairo. He came back in 1348, as the plague struck.",
+            "es": "La gran ciudad de la Siria mameluca, con su mezquita de los Omeyas. Ibn Battuta pasó aquí el ramadán de 1326 estudiando; se han hallado en El Cairo textos jurídicos que copió entonces. Volvió en 1348, cuando llegó la peste."
+          },
+          "wiki": {
+            "en": "Damascus",
+            "es": "Damasco"
+          }
+        },
+        {
+          "id": "medina",
+          "name": {
+            "en": "Medina",
+            "es": "Medina"
+          },
+          "at": [
+            39.6112,
+            24.4672
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1326",
+          "place": {
+            "en": "Medina, Saudi Arabia",
+            "es": "Medina, Arabia Saudita"
+          },
+          "text": {
+            "en": "The city of the Prophet Muhammad, who is buried in his mosque there. Ibn Battuta spent four days in Medina in 1326 with the Syrian pilgrim caravan before going on to Mecca.",
+            "es": "La ciudad del profeta Mahoma, que está enterrado en su mezquita. Ibn Battuta pasó cuatro días en Medina en 1326 con la caravana de peregrinos de Siria antes de seguir a La Meca."
+          },
+          "wiki": {
+            "en": "Medina",
+            "es": "Medina"
+          }
+        },
+        {
+          "id": "mecca",
+          "name": {
+            "en": "Mecca",
+            "es": "La Meca"
+          },
+          "at": [
+            39.8262,
+            21.4225
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1326-11",
+          "place": {
+            "en": "Mecca, Saudi Arabia",
+            "es": "La Meca, Arabia Saudita"
+          },
+          "text": {
+            "en": "The holiest city of Islam and the goal of the hajj. Ibn Battuta made his first pilgrimage here in November 1326 and came back several times; he praised the kindness and generosity of its people.",
+            "es": "La ciudad más santa del islam y la meta del hach. Ibn Battuta hizo aquí su primera peregrinación en noviembre de 1326 y volvió varias veces; elogió la bondad y la generosidad de su gente."
+          },
+          "wiki": {
+            "en": "Mecca",
+            "es": "La Meca"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1327",
+      "title": {
+        "en": "Iraq and Persia",
+        "es": "Irak y Persia"
+      },
+      "text": {
+        "en": "Instead of going home, Ibn Battuta crossed Arabia to Iraq, toured Persia as far as Shiraz, rode with the Mongol Ilkhan's court to Tabriz and came back to Mecca for a second hajj.",
+        "es": "En lugar de volver a casa, Ibn Battuta cruzó Arabia hasta Irak, recorrió Persia hasta Shiraz, viajó con la corte del iljan mongol hasta Tabriz y volvió a La Meca para una segunda peregrinación."
+      },
+      "details": {
+        "en": "On 17 November 1326 he joined the caravan of pilgrims going home to Iraq across the Najd. At Najaf he visited the tomb of Ali, the Prophet's cousin and son-in-law. Then he made a six-month detour into Persia: down the Tigris to Basra, over the Zagros to Isfahan, and on to Shiraz, a city the Mongols had spared. In June 1327 he reached Baghdad, still partly in ruins from Hulagu's sack of 1258, and travelled with the court of Abu Sa'id, the last Ilkhan of a united Persia, to Tabriz, a great trading city. After a trip up the Tigris to Mosul and Mardin, he joined the pilgrims in Baghdad and, ill and exhausted, reached Mecca for his second hajj. By the Rihla's account he then stayed three years in Mecca, studying; some scholars think he left after only one.",
+        "es": "El 17 de noviembre de 1326 se unió a la caravana de peregrinos que volvía a Irak por el centro de Arabia. En Náyaf visitó la tumba de Alí, primo y yerno del Profeta. Luego hizo un desvío de seis meses por Persia: bajó por el Tigris hasta Basora, cruzó los montes Zagros hasta Isfahán y siguió hasta Shiraz, una ciudad que los mongoles habían perdonado. En junio de 1327 llegó a Bagdad, todavía en parte en ruinas desde el saqueo de Hulagu en 1258, y viajó con la corte de Abu Said, el último iljan de una Persia unida, hasta Tabriz, una gran ciudad comercial. Tras una excursión por el Tigris hasta Mosul y Mardin, se unió a los peregrinos en Bagdad y, enfermo y agotado, llegó a La Meca para su segunda peregrinación. Según la Rihla se quedó después tres años en La Meca estudiando; algunos estudiosos creen que se fue al cabo de uno."
+      },
+      "camera": {
+        "lon": 46,
+        "lat": 29,
+        "zoom": 3.0
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              39.83,
+              21.42
+            ],
+            [
+              39.61,
+              24.47
+            ],
+            [
+              41.98,
+              27.11
+            ],
+            [
+              43.2,
+              30.0
+            ],
+            [
+              44.31,
+              32.0
+            ],
+            [
+              46.3,
+              32.19
+            ],
+            [
+              47.8,
+              30.51
+            ],
+            [
+              48.68,
+              31.32
+            ],
+            [
+              51.67,
+              32.65
+            ],
+            [
+              52.54,
+              29.61
+            ],
+            [
+              51.67,
+              32.65
+            ],
+            [
+              49.69,
+              34.09
+            ],
+            [
+              48.52,
+              34.8
+            ],
+            [
+              47.07,
+              34.31
+            ],
+            [
+              44.37,
+              33.31
+            ],
+            [
+              44.39,
+              35.47
+            ],
+            [
+              45.5,
+              36.7
+            ],
+            [
+              46.29,
+              38.08
+            ],
+            [
+              45.5,
+              36.7
+            ],
+            [
+              44.39,
+              35.47
+            ],
+            [
+              44.37,
+              33.31
+            ],
+            [
+              43.88,
+              34.2
+            ],
+            [
+              43.13,
+              36.34
+            ],
+            [
+              42.19,
+              37.33
+            ],
+            [
+              40.74,
+              37.31
+            ],
+            [
+              42.19,
+              37.33
+            ],
+            [
+              43.13,
+              36.34
+            ],
+            [
+              43.88,
+              34.2
+            ],
+            [
+              44.37,
+              33.31
+            ],
+            [
+              44.4,
+              32.03
+            ],
+            [
+              43.2,
+              30.0
+            ],
+            [
+              41.98,
+              27.11
+            ],
+            [
+              40.9,
+              24.3
+            ],
+            [
+              40.2,
+              22.0
+            ],
+            [
+              39.83,
+              21.42
+            ]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        }
+      ],
+      "places": [
+        {
+          "id": "najaf",
+          "name": {
+            "en": "Najaf",
+            "es": "Náyaf"
+          },
+          "at": [
+            44.3146,
+            31.9961
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1326",
+          "place": {
+            "en": "Najaf, Iraq",
+            "es": "Náyaf, Irak"
+          },
+          "text": {
+            "en": "The town of the tomb of Ali, cousin and son-in-law of the Prophet. Ibn Battuta described its shrine, with carpets and lamps of gold and silver, and the sick who came to it hoping to be healed.",
+            "es": "La ciudad de la tumba de Alí, primo y yerno del Profeta. Ibn Battuta describió su santuario, con alfombras y lámparas de oro y plata, y a los enfermos que llegaban con la esperanza de curarse."
+          },
+          "wiki": {
+            "en": "Najaf",
+            "es": "Náyaf"
+          }
+        },
+        {
+          "id": "shiraz",
+          "name": {
+            "en": "Shiraz",
+            "es": "Shiraz"
+          },
+          "at": [
+            52.5425,
+            29.61
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1327",
+          "place": {
+            "en": "Shiraz, Iran",
+            "es": "Shiraz, Irán"
+          },
+          "text": {
+            "en": "A large, flourishing Persian city that had escaped the destruction the Mongols brought to so many towns further north. Ibn Battuta reached it on his six-month detour through Persia.",
+            "es": "Una ciudad persa grande y próspera, que se había librado de la destrucción que los mongoles llevaron a tantas ciudades del norte. Ibn Battuta llegó a ella en su desvío de seis meses por Persia."
+          },
+          "wiki": {
+            "en": "Shiraz",
+            "es": "Shiraz"
+          }
+        },
+        {
+          "id": "baghdad",
+          "name": {
+            "en": "Baghdad",
+            "es": "Bagdad"
+          },
+          "at": [
+            44.3661,
+            33.3153
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1327-06",
+          "place": {
+            "en": "Baghdad, Iraq",
+            "es": "Bagdad, Irak"
+          },
+          "text": {
+            "en": "The old capital of the caliphs, sacked by the Mongols in 1258. When Ibn Battuta arrived in June 1327, parts of it were still in ruins; he saw the Ilkhan Abu Sa'id leave with his court.",
+            "es": "La antigua capital de los califas, saqueada por los mongoles en 1258. Cuando Ibn Battuta llegó, en junio de 1327, partes de la ciudad seguían en ruinas; vio partir al iljan Abu Said con su corte."
+          },
+          "details": {
+            "en": "Abu Sa'id was the last Mongol ruler of a united Persia, and the only Ilkhan who wrote poetry and music; Ibn Battuta called him one of the most beautiful of God's creatures. After his death in 1335 the Ilkhanate broke apart, and when Ibn Battuta came back twenty years later he was amazed that a realm that had seemed so mighty had dissolved so quickly.",
+            "es": "Abu Said fue el último gobernante mongol de una Persia unida y el único iljan que compuso poesía y música; Ibn Battuta lo llamó una de las criaturas más bellas de Dios. Tras su muerte, en 1335, el Iljanato se deshizo, y cuando Ibn Battuta volvió veinte años después le asombró que un reino que parecía tan poderoso se hubiera disuelto tan deprisa."
+          },
+          "wiki": {
+            "en": "Baghdad",
+            "es": "Bagdad"
+          }
+        },
+        {
+          "id": "tabriz",
+          "name": {
+            "en": "Tabriz",
+            "es": "Tabriz"
+          },
+          "at": [
+            46.2919,
+            38.08
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1327",
+          "place": {
+            "en": "Tabriz, Iran",
+            "es": "Tabriz, Irán"
+          },
+          "text": {
+            "en": "A great trading city of the Mongol Ilkhanate, the first in the region to open its gates to the Mongols. Ibn Battuta rode there with the Ilkhan's court in 1327.",
+            "es": "Una gran ciudad comercial del Iljanato mongol, la primera de la región que abrió sus puertas a los mongoles. Ibn Battuta llegó allí con la corte del iljan en 1327."
+          },
+          "wiki": {
+            "en": "Tabriz",
+            "es": "Tabriz"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1331",
+      "title": {
+        "en": "Down the Swahili coast",
+        "es": "Por la costa suajili"
+      },
+      "text": {
+        "en": "In about 1331 Ibn Battuta sailed down the Red Sea to Aden, then along the coast of East Africa to Mogadishu, Mombasa and Kilwa, which he called one of the most beautiful towns in the world.",
+        "es": "Hacia 1331 Ibn Battuta bajó por el mar Rojo hasta Adén y luego por la costa de África oriental hasta Mogadiscio, Mombasa y Kilwa, que llamó una de las ciudades más bellas del mundo."
+      },
+      "details": {
+        "en": "He sailed from Jeddah in jalbas, small boats of planks sewn together, visited Zabid and the highland town of Ta'izz in Yemen, and took ship at Aden. Mogadishu was 'an exceedingly large city' of rich merchants whose cloth was sold as far as Egypt, ruled by a Somali sultan, Abu Bakr ibn Shaikh Umar, who spoke Somali and Arabic; its people lodged visiting merchants in their own homes. He spent a night at Mombasa, whose wooden mosques he admired, and went on to Kilwa, a centre of the gold trade. Its sultan, al-Hasan ibn Sulaiman, was famous for his gifts and his piety, but he also raided the peoples of the interior for captives. The Rihla's dates for these years do not fit together, and some scholars place this voyage two years earlier, in 1329.",
+        "es": "Zarpó de Yeda en yalbas, pequeños barcos de tablas cosidas, visitó Zabid y la ciudad montañosa de Taiz, en Yemen, y se embarcó en Adén. Mogadiscio era «una ciudad sumamente grande» de mercaderes ricos, cuyas telas se vendían hasta en Egipto, gobernada por un sultán somalí, Abu Bakr ibn Shaikh Umar, que hablaba somalí y árabe; su gente alojaba en sus casas a los mercaderes de paso. Pasó una noche en Mombasa, cuyas mezquitas de madera admiró, y siguió hasta Kilwa, un centro del comercio del oro. Su sultán, al-Hasan ibn Sulaimán, era famoso por sus regalos y su piedad, pero también atacaba a los pueblos del interior en busca de cautivos. Las fechas de la Rihla para estos años no encajan, y algunos estudiosos sitúan este viaje dos años antes, en 1329."
+      },
+      "camera": {
+        "lon": 44,
+        "lat": 5,
+        "zoom": 2.5
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              39.83,
+              21.42
+            ],
+            [
+              39.5,
+              21.48
+            ],
+            [
+              39.17,
+              21.54
+            ]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              39.17,
+              21.54
+            ],
+            [
+              39.05,
+              21.3
+            ],
+            [
+              39.3,
+              20.6
+            ],
+            [
+              40.0,
+              19.4
+            ],
+            [
+              40.9,
+              18.0
+            ],
+            [
+              41.5,
+              16.6
+            ],
+            [
+              42.2,
+              15.3
+            ],
+            [
+              42.75,
+              14.0
+            ],
+            [
+              43.15,
+              13.0
+            ],
+            [
+              43.33,
+              12.58
+            ],
+            [
+              44.2,
+              12.35
+            ],
+            [
+              44.9,
+              12.6
+            ],
+            [
+              45.03,
+              12.78
+            ],
+            [
+              44.6,
+              12.2
+            ],
+            [
+              43.6,
+              11.5
+            ],
+            [
+              43.48,
+              11.35
+            ],
+            [
+              44.5,
+              11.2
+            ],
+            [
+              47.0,
+              11.2
+            ],
+            [
+              49.2,
+              11.55
+            ],
+            [
+              51.0,
+              12.15
+            ],
+            [
+              51.6,
+              12.0
+            ],
+            [
+              51.6,
+              10.4
+            ],
+            [
+              50.6,
+              8.0
+            ],
+            [
+              49.0,
+              5.0
+            ],
+            [
+              47.2,
+              3.0
+            ],
+            [
+              45.34,
+              2.04
+            ],
+            [
+              43.8,
+              0.6
+            ],
+            [
+              42.6,
+              -0.6
+            ],
+            [
+              41.5,
+              -2.2
+            ],
+            [
+              40.4,
+              -3.2
+            ],
+            [
+              39.9,
+              -4.0
+            ],
+            [
+              39.68,
+              -4.06
+            ],
+            [
+              39.75,
+              -4.6
+            ],
+            [
+              39.4,
+              -5.1
+            ],
+            [
+              39.3,
+              -5.6
+            ],
+            [
+              39.05,
+              -6.1
+            ],
+            [
+              39.5,
+              -6.95
+            ],
+            [
+              39.45,
+              -7.6
+            ],
+            [
+              39.55,
+              -8.4
+            ],
+            [
+              39.51,
+              -8.96
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "aden",
+          "name": {
+            "en": "Aden",
+            "es": "Adén"
+          },
+          "at": [
+            45.035,
+            12.785
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1331",
+          "place": {
+            "en": "Aden, Yemen",
+            "es": "Adén, Yemen"
+          },
+          "text": {
+            "en": "The great port at the mouth of the Red Sea, where ships from India, Egypt and East Africa met. Ibn Battuta sailed from here, in about 1331, for the coast of East Africa.",
+            "es": "El gran puerto de la boca del mar Rojo, donde se encontraban barcos de la India, Egipto y África oriental. Ibn Battuta zarpó de aquí, hacia 1331, hacia la costa de África oriental."
+          },
+          "wiki": {
+            "en": "Aden",
+            "es": "Adén"
+          }
+        },
+        {
+          "id": "mogadishu",
+          "name": {
+            "en": "Mogadishu",
+            "es": "Mogadiscio"
+          },
+          "at": [
+            45.3419,
+            2.0392
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1331",
+          "place": {
+            "en": "Mogadishu, Somalia",
+            "es": "Mogadiscio, Somalia"
+          },
+          "text": {
+            "en": "'An exceedingly large city' of rich merchants, ruled by the Somali sultan Abu Bakr ibn Shaikh Umar. Its fine cloth was sold as far as Egypt, and its people lodged visiting merchants in their own homes.",
+            "es": "«Una ciudad sumamente grande» de mercaderes ricos, gobernada por el sultán somalí Abu Bakr ibn Shaikh Umar. Sus telas finas se vendían hasta en Egipto, y su gente alojaba en sus casas a los mercaderes de paso."
+          },
+          "wiki": {
+            "en": "Mogadishu",
+            "es": "Mogadiscio"
+          }
+        },
+        {
+          "id": "mombasa",
+          "name": {
+            "en": "Mombasa",
+            "es": "Mombasa"
+          },
+          "at": [
+            39.679,
+            -4.062
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1331",
+          "place": {
+            "en": "Mombasa, Kenya",
+            "es": "Mombasa, Kenia"
+          },
+          "text": {
+            "en": "An island town of the Swahili coast where Ibn Battuta spent a single night. He found its people pious, trustworthy and upright, and admired their skilfully built wooden mosques.",
+            "es": "Una ciudad isleña de la costa suajili donde Ibn Battuta pasó una sola noche. Le parecieron gente piadosa, honrada y recta, y admiró sus mezquitas de madera, construidas con maestría."
+          },
+          "wiki": {
+            "en": "Mombasa",
+            "es": "Mombasa"
+          }
+        },
+        {
+          "id": "kilwa",
+          "name": {
+            "en": "Kilwa",
+            "es": "Kilwa"
+          },
+          "at": [
+            39.5128,
+            -8.96
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1331",
+          "place": {
+            "en": "Kilwa Kisiwani, Tanzania",
+            "es": "Kilwa Kisiwani, Tanzania"
+          },
+          "text": {
+            "en": "An island city of the Swahili coast that grew rich on the gold trade. Ibn Battuta called it one of the most beautiful and best-built towns in the world.",
+            "es": "Una ciudad isleña de la costa suajili que se enriqueció con el comercio del oro. Ibn Battuta la llamó una de las ciudades más bellas y mejor construidas del mundo."
+          },
+          "details": {
+            "en": "Its sultan, al-Hasan ibn Sulaiman, built the palace of Husuni Kubwa and enlarged the Great Mosque of coral stone, the largest of its kind. Ibn Battuta praised his humility, piety and generosity, which won him the name 'father of gifts', but also recorded that the sultan raided the peoples of the interior and took captives and booty. His authority reached from Malindi in the north to Inhambane in the south. Portuguese ships sacked Kilwa in 1505; its ruins are a UNESCO World Heritage Site.",
+            "es": "Su sultán, al-Hasan ibn Sulaimán, construyó el palacio de Husuni Kubwa y amplió la Gran Mezquita de piedra de coral, la mayor de su tipo. Ibn Battuta elogió su humildad, su piedad y su generosidad, que le valieron el nombre de «padre de los regalos», pero también anotó que el sultán atacaba a los pueblos del interior y se llevaba cautivos y botín. Su autoridad llegaba desde Malindi, al norte, hasta Inhambane, al sur. Barcos portugueses saquearon Kilwa en 1505; sus ruinas son Patrimonio de la Humanidad."
+          },
+          "wiki": {
+            "en": "Kilwa Kisiwani",
+            "es": "Kilwa Kisiwani"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1332",
+      "title": {
+        "en": "Oman, Hormuz and the Gulf",
+        "es": "Omán, Ormuz y el Golfo"
+      },
+      "text": {
+        "en": "With the monsoon he sailed back north to Dhofar and Oman, through the Strait of Hormuz and up the Persian Gulf, then crossed Arabia to Mecca once more, for the hajj of 1332 by the Rihla's dates.",
+        "es": "Con el monzón volvió al norte, a Dhofar y Omán, cruzó el estrecho de Ormuz y subió por el golfo Pérsico; luego atravesó Arabia hasta La Meca otra vez, para el hach de 1332 según las fechas de la Rihla."
+      },
+      "details": {
+        "en": "Zafar, in Dhofar, was a busy port on the south coast of Arabia. Qalhat, on the coast of Oman, had 'fine bazaars and one of the most beautiful mosques', built by Bibi Maryam, who ruled the town and Hormuz after her husband's death. Hormuz itself had moved a generation earlier from the mainland to a small island, which grew rich as the gateway between the Gulf and the Indian Ocean. Sailing up the Gulf past the pearl banks of Bahrain, he landed at Qatif and crossed the deserts of Arabia by al-Hasa to Mecca. After this hajj he decided to seek his fortune with the sultan of Delhi, said to be the richest ruler in the Muslim world, and set out by a long, roundabout road: across the Red Sea, back through Egypt and Syria, and north into Anatolia.",
+        "es": "Zafar, en Dhofar, era un puerto activo en la costa sur de Arabia. Qalhat, en la costa de Omán, tenía «buenos bazares y una de las mezquitas más bellas», construida por Bibi Maryam, que gobernó la ciudad y Ormuz tras la muerte de su esposo. La propia Ormuz se había mudado una generación antes de tierra firme a una pequeña isla, que se enriqueció como puerta entre el Golfo y el océano Índico. Subiendo por el Golfo junto a los bancos de perlas de Baréin, desembarcó en Qatif y cruzó los desiertos de Arabia por al-Hasa hasta La Meca. Después de este hach decidió buscar fortuna con el sultán de Delhi, que tenía fama de ser el soberano más rico del mundo musulmán, y partió por un camino largo y con muchos rodeos: cruzó el mar Rojo, volvió por Egipto y Siria y subió a Anatolia."
+      },
+      "camera": {
+        "lon": 50,
+        "lat": 17,
+        "zoom": 2.6
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              39.51,
+              -8.96
+            ],
+            [
+              39.9,
+              -8.3
+            ],
+            [
+              40.3,
+              -6.5
+            ],
+            [
+              40.2,
+              -5.0
+            ],
+            [
+              40.5,
+              -3.6
+            ],
+            [
+              41.8,
+              -2.2
+            ],
+            [
+              44.0,
+              0.5
+            ],
+            [
+              46.3,
+              2.3
+            ],
+            [
+              48.5,
+              4.8
+            ],
+            [
+              50.6,
+              8.0
+            ],
+            [
+              51.7,
+              10.4
+            ],
+            [
+              52.6,
+              13.0
+            ],
+            [
+              54.0,
+              16.6
+            ],
+            [
+              54.13,
+              17.01
+            ],
+            [
+              55.5,
+              17.2
+            ],
+            [
+              56.9,
+              17.7
+            ],
+            [
+              58.0,
+              18.8
+            ],
+            [
+              59.0,
+              20.0
+            ],
+            [
+              59.15,
+              20.7
+            ],
+            [
+              59.95,
+              22.3
+            ],
+            [
+              59.9,
+              22.75
+            ],
+            [
+              59.37,
+              22.7
+            ],
+            [
+              59.1,
+              23.35
+            ],
+            [
+              58.6,
+              23.75
+            ],
+            [
+              57.6,
+              24.4
+            ],
+            [
+              56.65,
+              25.4
+            ],
+            [
+              56.55,
+              26.3
+            ],
+            [
+              56.6,
+              26.85
+            ],
+            [
+              56.46,
+              27.06
+            ],
+            [
+              56.45,
+              26.6
+            ],
+            [
+              55.95,
+              26.45
+            ],
+            [
+              55.2,
+              26.05
+            ],
+            [
+              53.8,
+              26.0
+            ],
+            [
+              52.0,
+              26.6
+            ],
+            [
+              51.0,
+              26.5
+            ],
+            [
+              50.4,
+              26.6
+            ],
+            [
+              50.03,
+              26.56
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              50.03,
+              26.56
+            ],
+            [
+              49.59,
+              25.38
+            ],
+            [
+              47.3,
+              24.15
+            ],
+            [
+              45.0,
+              23.5
+            ],
+            [
+              42.5,
+              22.2
+            ],
+            [
+              39.83,
+              21.42
+            ],
+            [
+              39.5,
+              21.48
+            ],
+            [
+              39.17,
+              21.54
+            ]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              39.17,
+              21.54
+            ],
+            [
+              38.6,
+              21.7
+            ],
+            [
+              37.3,
+              22.1
+            ],
+            [
+              36.49,
+              22.33
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "zafar",
+          "name": {
+            "en": "Zafar (Al-Baleed)",
+            "es": "Zafar (Al-Baleed)"
+          },
+          "at": [
+            54.1306,
+            17.0064
+          ],
+          "cat": "port",
+          "type": "site",
+          "date": "1332",
+          "place": {
+            "en": "Salalah, Dhofar, Oman",
+            "es": "Salalah, Dhofar, Omán"
+          },
+          "text": {
+            "en": "The medieval port of Dhofar on the south coast of Arabia, visited by Marco Polo, Ibn Battuta and later Zheng He. Its ruins, beside today's Salalah, are part of the UNESCO site of the Land of Frankincense.",
+            "es": "El puerto medieval de Dhofar, en la costa sur de Arabia, que visitaron Marco Polo, Ibn Battuta y después Zheng He. Sus ruinas, junto a la actual Salalah, forman parte del sitio de la UNESCO de la Tierra del Incienso."
+          },
+          "wiki": {
+            "en": "Al-Baleed Archaeological Park",
+            "es": ""
+          }
+        },
+        {
+          "id": "qalhat",
+          "name": {
+            "en": "Qalhat",
+            "es": "Qalhat"
+          },
+          "at": [
+            59.3667,
+            22.7
+          ],
+          "cat": "port",
+          "type": "site",
+          "date": "1332",
+          "place": {
+            "en": "Qalhat, Oman",
+            "es": "Qalhat, Omán"
+          },
+          "text": {
+            "en": "A port of Oman ruled from Hormuz. Ibn Battuta found 'fine bazaars and one of the most beautiful mosques', built by Bibi Maryam, who governed Qalhat and Hormuz after her husband's death.",
+            "es": "Un puerto de Omán gobernado desde Ormuz. Ibn Battuta encontró «buenos bazares y una de las mezquitas más bellas», construida por Bibi Maryam, que gobernó Qalhat y Ormuz tras la muerte de su esposo."
+          },
+          "wiki": {
+            "en": "Qalhat",
+            "es": ""
+          }
+        },
+        {
+          "id": "hormuz",
+          "name": {
+            "en": "Hormuz",
+            "es": "Ormuz"
+          },
+          "at": [
+            56.46,
+            27.06
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1332",
+          "place": {
+            "en": "Hormuz Island, Iran",
+            "es": "Isla de Ormuz, Irán"
+          },
+          "text": {
+            "en": "The capital of a trading kingdom on a small island at the mouth of the Persian Gulf, where its people had moved from the mainland in 1301. Ibn Battuta came here in 1332 and passed again on his way home.",
+            "es": "La capital de un reino comercial en una pequeña isla en la boca del golfo Pérsico, adonde su gente se había mudado desde tierra firme en 1301. Ibn Battuta llegó aquí en 1332 y volvió a pasar de regreso a casa."
+          },
+          "wiki": {
+            "en": "Kingdom of Hormuz",
+            "es": ""
+          }
+        },
+        {
+          "id": "gulf-pearls",
+          "name": {
+            "en": "Pearls of the Gulf",
+            "es": "Perlas del Golfo"
+          },
+          "at": [
+            50.8,
+            26.4
+          ],
+          "cat": "goods",
+          "icon": "🦪",
+          "type": "goods",
+          "date": "1332",
+          "place": {
+            "en": "Off Bahrain, Persian Gulf",
+            "es": "Frente a Baréin, golfo Pérsico"
+          },
+          "text": {
+            "en": "For thousands of years divers of the Persian Gulf brought up pearl oysters from the sea floor, holding their breath. Ibn Battuta sailed up the Gulf past the pearl banks of Bahrain to Qatif.",
+            "es": "Durante miles de años, los buzos del golfo Pérsico sacaron ostras perlíferas del fondo del mar aguantando la respiración. Ibn Battuta subió por el Golfo junto a los bancos de perlas de Baréin hasta Qatif."
+          },
+          "wiki": {
+            "en": "Pearl hunting",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1333",
+      "title": {
+        "en": "Anatolia, land of the akhis",
+        "es": "Anatolia, tierra de los akhis"
+      },
+      "text": {
+        "en": "A Genoese ship took him from Syria to Anatolia, a land of rival Turkish princes. In town after town, brotherhoods of young craftsmen, the akhis, welcomed him with feasts, songs and a bed.",
+        "es": "Un barco genovés lo llevó de Siria a Anatolia, una tierra de príncipes turcos rivales. En una ciudad tras otra, las cofradías de jóvenes artesanos, los akhis, lo recibieron con banquetes, canciones y una cama."
+      },
+      "details": {
+        "en": "He landed at Alanya and went on to Antalya, where he first met the akhis, brotherhoods of craftsmen who kept lodges for travellers; he would stay in their lodges in more than 25 towns. He visited Konya, the old Seljuk capital where the poet Rumi is buried, and many small courts, though the order of towns in the Rihla is muddled. At İznik, newly taken by the Ottoman ruler Orhan, Orhan's wife received him, and he called Orhan the greatest of the Turkmen kings. Anatolia is also where Ibn Battuta first owned slaves: the ruler of Aydin gave him a Greek slave, and at Ephesus he bought a Greek girl for 40 dinars. From then on enslaved servants travelled with him. After forty days at Sinop, on the Black Sea, he sailed for Crimea.",
+        "es": "Desembarcó en Alanya y siguió hasta Antalya, donde conoció a los akhis, cofradías de artesanos que mantenían albergues para viajeros; se alojaría en ellos en más de 25 ciudades. Visitó Konya, la antigua capital selyúcida donde está enterrado el poeta Rumi, y muchas pequeñas cortes, aunque el orden de las ciudades en la Rihla es confuso. En İznik, recién tomada por el soberano otomano Orhan, lo recibió la esposa de Orhan, y llamó a este el más grande de los reyes turcomanos. En Anatolia, además, Ibn Battuta tuvo esclavos por primera vez: el señor de Aydın le regaló un esclavo griego, y en Éfeso compró una muchacha griega por 40 dinares. Desde entonces viajaron con él sirvientes esclavizados. Tras cuarenta días en Sinope, junto al mar Negro, se embarcó hacia Crimea."
+      },
+      "camera": {
+        "lon": 32,
+        "lat": 37,
+        "zoom": 3.6
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              36.49,
+              22.33
+            ],
+            [
+              34.8,
+              23.6
+            ],
+            [
+              32.87,
+              24.98
+            ],
+            [
+              32.76,
+              25.91
+            ],
+            [
+              31.18,
+              27.18
+            ],
+            [
+              30.75,
+              28.1
+            ],
+            [
+              31.24,
+              30.04
+            ],
+            [
+              31.56,
+              30.42
+            ],
+            [
+              32.31,
+              30.86
+            ],
+            [
+              33.8,
+              31.13
+            ],
+            [
+              34.47,
+              31.5
+            ],
+            [
+              35.23,
+              31.78
+            ],
+            [
+              35.26,
+              32.22
+            ],
+            [
+              35.53,
+              32.79
+            ],
+            [
+              36.31,
+              33.51
+            ],
+            [
+              36.72,
+              34.73
+            ],
+            [
+              36.75,
+              35.13
+            ],
+            [
+              35.78,
+              35.52
+            ]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              35.78,
+              35.52
+            ],
+            [
+              35.4,
+              35.75
+            ],
+            [
+              34.2,
+              36.0
+            ],
+            [
+              32.9,
+              35.85
+            ],
+            [
+              32.3,
+              36.15
+            ],
+            [
+              32.0,
+              36.54
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              32.0,
+              36.54
+            ],
+            [
+              30.71,
+              36.89
+            ],
+            [
+              30.87,
+              37.87
+            ],
+            [
+              32.49,
+              37.87
+            ],
+            [
+              29.09,
+              37.78
+            ],
+            [
+              28.05,
+              38.26
+            ],
+            [
+              27.37,
+              37.94
+            ],
+            [
+              27.14,
+              38.42
+            ],
+            [
+              27.43,
+              38.61
+            ],
+            [
+              27.88,
+              39.65
+            ],
+            [
+              29.06,
+              40.19
+            ],
+            [
+              29.72,
+              40.43
+            ],
+            [
+              31.61,
+              40.74
+            ],
+            [
+              33.78,
+              41.38
+            ],
+            [
+              35.15,
+              42.03
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ],
+      "places": [
+        {
+          "id": "akhi-brotherhoods",
+          "name": {
+            "en": "The akhi brotherhoods",
+            "es": "Las cofradías akhi"
+          },
+          "at": [
+            30.7056,
+            36.8841
+          ],
+          "cat": "encounter",
+          "icon": "🤝",
+          "type": "institution",
+          "date": "1333",
+          "place": {
+            "en": "Antalya and the towns of Anatolia, Turkey",
+            "es": "Antalya y las ciudades de Anatolia, Turquía"
+          },
+          "text": {
+            "en": "Brotherhoods of young craftsmen led by an akhi, found in every town of Anatolia. They pooled their earnings to keep lodges where they welcomed travellers like Ibn Battuta with feasts, song and dance.",
+            "es": "Cofradías de jóvenes artesanos dirigidas por un akhi, presentes en cada ciudad de Anatolia. Juntaban sus ganancias para mantener albergues donde recibían a viajeros como Ibn Battuta con banquetes, cantos y bailes."
+          },
+          "wiki": {
+            "en": "Futuwwa",
+            "es": ""
+          }
+        },
+        {
+          "id": "konya",
+          "name": {
+            "en": "Konya",
+            "es": "Konya"
+          },
+          "at": [
+            32.4931,
+            37.8744
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1333",
+          "place": {
+            "en": "Konya, Turkey",
+            "es": "Konya, Turquía"
+          },
+          "text": {
+            "en": "The old capital of the Seljuk sultans of Anatolia, where the Sufi poet Rumi is buried; his followers founded the order of the whirling dervishes. Ibn Battuta visited it on his tour of Anatolia.",
+            "es": "La antigua capital de los sultanes selyúcidas de Anatolia, donde está enterrado el poeta sufí Rumi; sus seguidores fundaron la orden de los derviches giróvagos. Ibn Battuta la visitó en su recorrido por Anatolia."
+          },
+          "wiki": {
+            "en": "Konya",
+            "es": "Konya"
+          }
+        },
+        {
+          "id": "orhan",
+          "name": {
+            "en": "Orhan",
+            "es": "Orhan"
+          },
+          "at": [
+            29.0622,
+            40.1972
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1333",
+          "place": {
+            "en": "Bursa, Turkey",
+            "es": "Bursa, Turquía"
+          },
+          "text": {
+            "en": "The second Ottoman ruler, who had recently taken Bursa and İznik from the Byzantines. Ibn Battuta called him 'the greatest of the Turkmen kings and the richest in wealth, lands and military forces'.",
+            "es": "El segundo soberano otomano, que poco antes había tomado Bursa e İznik a los bizantinos. Ibn Battuta lo llamó «el más grande de los reyes turcomanos y el más rico en bienes, tierras y fuerzas militares»."
+          },
+          "wiki": {
+            "en": "Orhan",
+            "es": "Orhan I"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1333",
+      "title": {
+        "en": "The Golden Horde and Constantinople",
+        "es": "La Horda de Oro y Constantinopla"
+      },
+      "text": {
+        "en": "In the steppes north of the Black Sea he joined the moving court of Öz Beg, khan of the Golden Horde, and travelled with a Byzantine-born wife of the khan to Constantinople, his first city outside Islam.",
+        "es": "En las estepas al norte del mar Negro se unió a la corte itinerante de Öz Beg, kan de la Horda de Oro, y viajó con una esposa del kan, nacida bizantina, hasta Constantinopla, su primera ciudad fuera del islam."
+      },
+      "details": {
+        "en": "Caffa, the Genoese port in Crimea, was 'inhabited by Christians, most of them Genoese'. From Azov he crossed the steppe to the camp of Öz Beg Khan, a Muslim ruler he counted among the seven greatest kings of the world. He says he went north up the Volga to Bolghar, where summer nights were very short, but scholars think that trip very unlikely; it is drawn here in grey. At Astrakhan the khan's pregnant wife Bayalun, daughter of the Byzantine emperor Andronikos III, was given leave to go home to give birth, and Ibn Battuta talked his way into her escort. In Constantinople he met the emperor and saw the great church of Hagia Sophia. A month later he was back on the Volga at New Sarai, the khan's capital, 'one of the finest of cities', where Mongols, Alans, Kipchaks, Circassians, Russians and Greeks each had their quarter.",
+        "es": "Caffa, el puerto genovés de Crimea, estaba «habitada por cristianos, la mayoría genoveses». Desde Azov cruzó la estepa hasta el campamento de Öz Beg Kan, un soberano musulmán al que contó entre los siete reyes más grandes del mundo. Dice que subió por el Volga hasta Bolgar, donde las noches de verano eran muy cortas, pero los estudiosos creen muy improbable ese viaje; aquí se dibuja en gris. En Astracán, la esposa embarazada del kan, Bayalun, hija del emperador bizantino Andrónico III, recibió permiso para ir a dar a luz a su tierra, e Ibn Battuta consiguió unirse a su escolta. En Constantinopla conoció al emperador y vio la gran iglesia de Santa Sofía. Un mes después estaba de vuelta junto al Volga, en la Nueva Sarai, la capital del kan, «una de las ciudades más hermosas», donde mongoles, alanos, kipchakos, circasianos, rusos y griegos tenían cada uno su barrio."
+      },
+      "camera": {
+        "lon": 38,
+        "lat": 46,
+        "zoom": 3.0
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              35.15,
+              42.03
+            ],
+            [
+              35.3,
+              42.6
+            ],
+            [
+              35.4,
+              44.4
+            ],
+            [
+              35.45,
+              44.95
+            ],
+            [
+              35.38,
+              45.03
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "doubted",
+          "path": [
+            [
+              48.03,
+              46.35
+            ],
+            [
+              46.6,
+              48.0
+            ],
+            [
+              45.7,
+              48.8
+            ],
+            [
+              45.4,
+              50.1
+            ],
+            [
+              46.03,
+              51.47
+            ],
+            [
+              48.47,
+              53.15
+            ],
+            [
+              49.06,
+              54.98
+            ],
+            [
+              48.47,
+              53.15
+            ],
+            [
+              46.03,
+              51.47
+            ],
+            [
+              45.4,
+              50.1
+            ],
+            [
+              45.7,
+              48.8
+            ],
+            [
+              46.6,
+              48.0
+            ],
+            [
+              48.03,
+              46.35
+            ]
+          ],
+          "by": "land"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              35.38,
+              45.03
+            ],
+            [
+              35.09,
+              45.04
+            ],
+            [
+              34.85,
+              46.05
+            ],
+            [
+              36.6,
+              46.75
+            ],
+            [
+              39.42,
+              47.11
+            ],
+            [
+              41.8,
+              45.8
+            ],
+            [
+              44.18,
+              44.78
+            ],
+            [
+              43.15,
+              44.1
+            ],
+            [
+              45.5,
+              45.4
+            ],
+            [
+              48.03,
+              46.35
+            ],
+            [
+              45.0,
+              47.2
+            ],
+            [
+              41.0,
+              47.3
+            ],
+            [
+              37.0,
+              47.0
+            ],
+            [
+              34.0,
+              46.8
+            ],
+            [
+              31.0,
+              46.6
+            ],
+            [
+              29.6,
+              45.9
+            ],
+            [
+              28.46,
+              45.27
+            ],
+            [
+              28.71,
+              44.89
+            ],
+            [
+              27.91,
+              43.21
+            ],
+            [
+              27.75,
+              42.15
+            ],
+            [
+              28.98,
+              41.01
+            ],
+            [
+              27.75,
+              42.15
+            ],
+            [
+              27.91,
+              43.21
+            ],
+            [
+              28.71,
+              44.89
+            ],
+            [
+              28.46,
+              45.27
+            ],
+            [
+              29.6,
+              45.9
+            ],
+            [
+              31.0,
+              46.6
+            ],
+            [
+              34.0,
+              46.8
+            ],
+            [
+              37.0,
+              47.0
+            ],
+            [
+              41.0,
+              47.3
+            ],
+            [
+              45.0,
+              47.2
+            ],
+            [
+              48.03,
+              46.35
+            ],
+            [
+              47.43,
+              47.18
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ],
+      "places": [
+        {
+          "id": "caffa",
+          "name": {
+            "en": "Caffa",
+            "es": "Caffa"
+          },
+          "at": [
+            35.3792,
+            45.0342
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1333",
+          "place": {
+            "en": "Feodosia, Crimea",
+            "es": "Feodosia, Crimea"
+          },
+          "text": {
+            "en": "A Genoese trading port in Crimea, 'a great city along the sea coast inhabited by Christians, most of them Genoese', with a wonderful harbour full of ships, Ibn Battuta wrote.",
+            "es": "Un puerto comercial genovés en Crimea, «una gran ciudad junto a la costa habitada por cristianos, la mayoría genoveses», con un puerto maravilloso lleno de barcos, escribió Ibn Battuta."
+          },
+          "wiki": {
+            "en": "Feodosia",
+            "es": "Feodosia"
+          }
+        },
+        {
+          "id": "oz-beg-khan",
+          "name": {
+            "en": "Öz Beg Khan",
+            "es": "Uzbeg Kan"
+          },
+          "at": [
+            43.15,
+            44.1
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1333",
+          "life": [
+            "1282",
+            "1341"
+          ],
+          "place": {
+            "en": "His camp near Mount Beshtau, North Caucasus, Russia",
+            "es": "Su campamento cerca del monte Beshtau, Cáucaso norte, Rusia"
+          },
+          "text": {
+            "en": "Khan of the Golden Horde from 1313 to 1341, who made Islam its religion. Ibn Battuta travelled with his moving court and counted him among the seven greatest kings of the world.",
+            "es": "Kan de la Horda de Oro de 1313 a 1341, que hizo del islam su religión. Ibn Battuta viajó con su corte itinerante y lo contó entre los siete reyes más grandes del mundo."
+          },
+          "wiki": {
+            "en": "Özbeg Khan",
+            "es": "Uzbeg Kan"
+          }
+        },
+        {
+          "id": "bolghar",
+          "name": {
+            "en": "Bolghar",
+            "es": "Bolgar"
+          },
+          "at": [
+            49.0564,
+            54.9789
+          ],
+          "cat": "city",
+          "icon": "❔",
+          "type": "site",
+          "date": "1333",
+          "place": {
+            "en": "Bolgar, Tatarstan, Russia",
+            "es": "Bolgar, Tartaristán, Rusia"
+          },
+          "text": {
+            "en": "A trading city on the Volga, the northernmost place in the Rihla. Ibn Battuta tells of its very short summer nights and of a silent fur trade with the 'land of darkness', but scholars think he never went.",
+            "es": "Una ciudad comercial junto al Volga, el lugar más al norte de la Rihla. Ibn Battuta habla de sus noches de verano muy cortas y de un comercio silencioso de pieles con la «tierra de la oscuridad», pero los estudiosos creen que nunca fue."
+          },
+          "wiki": {
+            "en": "Bolghar",
+            "es": ""
+          }
+        },
+        {
+          "id": "constantinople",
+          "name": {
+            "en": "Constantinople",
+            "es": "Constantinopla"
+          },
+          "at": [
+            28.98,
+            41.0125
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1333",
+          "place": {
+            "en": "Istanbul, Turkey",
+            "es": "Estambul, Turquía"
+          },
+          "text": {
+            "en": "The Byzantine capital, the first great city Ibn Battuta saw outside the Muslim world. He met the emperor Andronikos III, father of the khan's wife Bayalun, and saw the church of Hagia Sophia.",
+            "es": "La capital bizantina, la primera gran ciudad que Ibn Battuta vio fuera del mundo musulmán. Conoció al emperador Andrónico III, padre de Bayalun, la esposa del kan, y vio la iglesia de Santa Sofía."
+          },
+          "wiki": {
+            "en": "Constantinople",
+            "es": "Constantinopla"
+          }
+        },
+        {
+          "id": "sarai",
+          "name": {
+            "en": "Sarai",
+            "es": "Sarai"
+          },
+          "at": [
+            47.4345,
+            47.1814
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1333",
+          "place": {
+            "en": "Lower Volga, Astrakhan Oblast, Russia",
+            "es": "Bajo Volga, óblast de Astracán, Rusia"
+          },
+          "text": {
+            "en": "New Sarai, the capital of the Golden Horde. Ibn Battuta found it 'one of the finest of cities', with broad streets and fine bazaars, where Mongols, Alans, Kipchaks, Circassians, Russians and Greeks each had a quarter.",
+            "es": "La Nueva Sarai, capital de la Horda de Oro. A Ibn Battuta le pareció «una de las ciudades más hermosas», con calles anchas y buenos bazares, donde mongoles, alanos, kipchakos, circasianos, rusos y griegos tenían cada uno su barrio."
+          },
+          "wiki": {
+            "en": "Sarai (city)",
+            "es": "Sarai"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1333-09-12",
+      "title": {
+        "en": "Over the Hindu Kush",
+        "es": "Por el Hindú Kush"
+      },
+      "text": {
+        "en": "Past the Caspian and the Aral Sea, Ibn Battuta reached Bukhara and Samarkand, still scarred by the Mongol conquest, and crossed the snowy passes of the Hindu Kush. On 12 September 1333, says the Rihla, he reached the Indus.",
+        "es": "Pasando el Caspio y el mar de Aral, Ibn Battuta llegó a Bujará y Samarcanda, aún marcadas por la conquista mongola, y cruzó los pasos nevados del Hindú Kush. El 12 de septiembre de 1333, dice la Rihla, llegó al Indo."
+      },
+      "details": {
+        "en": "Samarkand was 'one of the greatest and finest of cities', with orchards watered by water wheels, though its walls lay in ruins. He was received by Tarmashirin, the Muslim khan of the Chagatai realm. Balkh, sacked by Genghis Khan, was empty, though its buildings still looked inhabited. He explained the name of the Hindu Kush as 'Hindu-killer', because so many enslaved people brought from India died of the cold on its passes, and he is the first known writer to use the name. His road from Afghanistan into India is uncertain. The Rihla's date for the Indus crossing leaves too little time for everything it tells before, so scholars think some of the journeys from East Africa to the Golden Horde took place a year or two earlier than the Rihla says.",
+        "es": "Samarcanda era «una de las ciudades más grandes y hermosas», con huertos regados por norias, aunque sus murallas estaban en ruinas. Lo recibió Tarmashirin, el kan musulmán del dominio de Chagatai. Balj, saqueada por Gengis Kan, estaba vacía, aunque sus edificios aún parecían habitados. Explicó el nombre del Hindú Kush como «mata-hindúes», porque muchas personas esclavizadas traídas de la India morían de frío en sus pasos, y es el primer autor conocido que usa ese nombre. No se sabe bien por qué camino pasó de Afganistán a la India. La fecha que da la Rihla para el cruce del Indo deja muy poco tiempo para todo lo que cuenta antes, así que los estudiosos creen que algunos viajes, de África oriental a la Horda de Oro, ocurrieron uno o dos años antes de lo que dice la Rihla."
+      },
+      "camera": {
+        "lon": 60,
+        "lat": 40,
+        "zoom": 2.8
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              47.43,
+              47.18
+            ],
+            [
+              51.53,
+              47.47
+            ],
+            [
+              55.0,
+              44.6
+            ],
+            [
+              59.15,
+              42.32
+            ],
+            [
+              61.8,
+              40.8
+            ],
+            [
+              64.42,
+              39.77
+            ],
+            [
+              65.79,
+              38.86
+            ],
+            [
+              66.96,
+              39.65
+            ],
+            [
+              67.03,
+              38.21
+            ],
+            [
+              67.28,
+              37.22
+            ],
+            [
+              66.9,
+              36.76
+            ],
+            [
+              68.86,
+              36.73
+            ],
+            [
+              68.71,
+              36.13
+            ],
+            [
+              69.6,
+              35.62
+            ],
+            [
+              69.17,
+              35.01
+            ],
+            [
+              69.18,
+              34.53
+            ],
+            [
+              68.42,
+              33.55
+            ],
+            [
+              69.4,
+              32.9
+            ],
+            [
+              70.2,
+              32.2
+            ],
+            [
+              70.9,
+              31.83
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ],
+      "places": [
+        {
+          "id": "samarkand",
+          "name": {
+            "en": "Samarkand",
+            "es": "Samarcanda"
+          },
+          "at": [
+            66.9758,
+            39.6547
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1333",
+          "place": {
+            "en": "Samarkand, Uzbekistan",
+            "es": "Samarcanda, Uzbekistán"
+          },
+          "text": {
+            "en": "Ibn Battuta called it 'one of the greatest and finest of cities, and most perfect of them in beauty', with orchards watered by water wheels, though its walls still lay in ruins from the Mongol conquest.",
+            "es": "Ibn Battuta la llamó «una de las ciudades más grandes y hermosas, y la más perfecta en belleza», con huertos regados por norias, aunque sus murallas seguían en ruinas desde la conquista mongola."
+          },
+          "wiki": {
+            "en": "Samarkand",
+            "es": "Samarcanda"
+          }
+        },
+        {
+          "id": "tarmashirin",
+          "name": {
+            "en": "Tarmashirin",
+            "es": "Tarmashirin"
+          },
+          "at": [
+            65.79,
+            38.86
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1333",
+          "place": {
+            "en": "Chagatai Khanate, Central Asia",
+            "es": "Kanato de Chagatai, Asia central"
+          },
+          "text": {
+            "en": "Khan of the Chagatai realm of Central Asia from 1331 to 1334, a Muslim who worked to spread Islam among the Mongols. Ibn Battuta visited his court, and Muslim writers remembered him fondly.",
+            "es": "Kan del dominio de Chagatai, en Asia central, de 1331 a 1334, un musulmán que procuró difundir el islam entre los mongoles. Ibn Battuta visitó su corte, y los autores musulmanes lo recordaron con afecto."
+          },
+          "wiki": {
+            "en": "Tarmashirin",
+            "es": ""
+          }
+        },
+        {
+          "id": "balkh",
+          "name": {
+            "en": "Balkh",
+            "es": "Balj"
+          },
+          "at": [
+            66.8981,
+            36.7581
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1333",
+          "place": {
+            "en": "Balkh, Afghanistan",
+            "es": "Balj, Afganistán"
+          },
+          "text": {
+            "en": "An ancient city sacked by Genghis Khan in 1220. When Ibn Battuta passed, around 1333, it was 'completely dilapidated and uninhabited', though its mosques and colleges still looked whole from outside.",
+            "es": "Una ciudad antigua saqueada por Gengis Kan en 1220. Cuando pasó Ibn Battuta, hacia 1333, estaba «completamente arruinada y deshabitada», aunque sus mezquitas y escuelas aún parecían enteras por fuera."
+          },
+          "wiki": {
+            "en": "Balkh",
+            "es": "Balj"
+          }
+        },
+        {
+          "id": "hindu-kush",
+          "name": {
+            "en": "Hindu Kush",
+            "es": "Hindú Kush"
+          },
+          "at": [
+            69.6,
+            35.5
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1333",
+          "place": {
+            "en": "Afghanistan and Pakistan",
+            "es": "Afganistán y Pakistán"
+          },
+          "text": {
+            "en": "The great range Ibn Battuta crossed into India. He is the first known writer to use its name, which he explained as 'Hindu-killer', because so many enslaved people taken from India died there of the cold.",
+            "es": "La gran cordillera que Ibn Battuta cruzó para entrar en la India. Es el primer autor conocido que usa su nombre, que explicó como «mata-hindúes», porque muchas personas esclavizadas traídas de la India morían allí de frío."
+          },
+          "wiki": {
+            "en": "Hindu Kush",
+            "es": "Hindú Kush"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1334",
+      "title": {
+        "en": "Judge for the sultan of Delhi",
+        "es": "Juez del sultán de Delhi"
+      },
+      "text": {
+        "en": "In Delhi the sultan Muhammad bin Tughluq, as lavish as he was cruel, made Ibn Battuta a qadi, a judge. For years he lived in luxury one day and in fear of the sultan the next.",
+        "es": "En Delhi, el sultán Muhammad bin Tughluq, tan espléndido como cruel, nombró cadí, es decir, juez, a Ibn Battuta. Durante años vivió un día en el lujo y al siguiente con miedo al sultán."
+      },
+      "details": {
+        "en": "On the way he paid his respects at the shrine of the Sufi saint Baba Farid at Pakpattan and admired the walled city of Hansi. Muhammad bin Tughluq, sultan from 1325 to 1351, was learned in medicine, philosophy and poetry, but also erratic and violent: he had moved the people of Delhi to a new capital in the Deccan, Daulatabad, a march on which many died, and had issued brass and copper coins meant to be worth silver. On the strength of his studies in Mecca, Ibn Battuta was made a judge of the Maliki school, but he found it hard to apply Islamic law beyond the court, and more than once he fell under suspicion. In India he also witnessed a sati, the burning of a widow on her husband's funeral pyre, which he described in detail. He tried to leave on the pretext of a pilgrimage, but the sultan would not let him go.",
+        "es": "En el camino rindió homenaje en el santuario del santo sufí Baba Farid, en Pakpattan, y admiró la ciudad amurallada de Hansi. Muhammad bin Tughluq, sultán de 1325 a 1351, sabía de medicina, filosofía y poesía, pero era imprevisible y violento: había trasladado a la gente de Delhi a una nueva capital en el Decán, Daulatabad, una marcha en la que murieron muchos, y había emitido monedas de latón y cobre que debían valer como las de plata. Gracias a sus estudios en La Meca, Ibn Battuta fue nombrado juez de la escuela malikí, pero le costaba aplicar la ley islámica fuera de la corte, y más de una vez cayó bajo sospecha. En la India presenció también un sati, la quema de una viuda en la pira funeraria de su esposo, que describió con detalle. Intentó irse con el pretexto de una peregrinación, pero el sultán no lo dejó marchar."
+      },
+      "camera": {
+        "lon": 74,
+        "lat": 30,
+        "zoom": 4.3
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              70.9,
+              31.83
+            ],
+            [
+              71.47,
+              30.2
+            ],
+            [
+              73.39,
+              30.34
+            ],
+            [
+              74.2,
+              30.14
+            ],
+            [
+              75.03,
+              29.53
+            ],
+            [
+              75.96,
+              29.1
+            ],
+            [
+              77.21,
+              28.59
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ],
+      "places": [
+        {
+          "id": "baba-farid",
+          "name": {
+            "en": "Shrine of Baba Farid",
+            "es": "Santuario de Baba Farid"
+          },
+          "at": [
+            73.3863,
+            30.3438
+          ],
+          "cat": "encounter",
+          "icon": "🕌",
+          "type": "structure",
+          "date": "1334",
+          "place": {
+            "en": "Pakpattan, Punjab, Pakistan",
+            "es": "Pakpattan, Punyab, Pakistán"
+          },
+          "text": {
+            "en": "The tomb of Baba Farid (about 1188–1266), a Sufi mystic and Punjabi poet revered by Muslims, Hindus and Sikhs alike. Ibn Battuta paid his respects here in 1334, on his way to Delhi.",
+            "es": "La tumba de Baba Farid (hacia 1188-1266), un místico sufí y poeta en panyabí venerado por musulmanes, hindúes y sijs. Ibn Battuta le presentó sus respetos aquí en 1334, camino de Delhi."
+          },
+          "wiki": {
+            "en": "Baba Farid",
+            "es": ""
+          }
+        },
+        {
+          "id": "muhammad-bin-tughluq",
+          "name": {
+            "en": "Muhammad bin Tughluq",
+            "es": "Muhammad bin Tughluq"
+          },
+          "at": [
+            77.22,
+            28.55
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1334",
+          "life": [
+            "1290",
+            "1351-03-20"
+          ],
+          "place": {
+            "en": "Delhi, India",
+            "es": "Delhi, India"
+          },
+          "text": {
+            "en": "Sultan of Delhi from 1325 to 1351, learned, lavish and violent. He made Ibn Battuta a judge, showered him with gifts, suspected him of treason and finally sent him as his envoy to China.",
+            "es": "Sultán de Delhi de 1325 a 1351, culto, espléndido y violento. Nombró juez a Ibn Battuta, lo colmó de regalos, sospechó de él y al final lo envió como embajador a China."
+          },
+          "details": {
+            "en": "He ruled most of India and was said to be the richest man in the Muslim world. He spoke Persian, Arabic, Sanskrit and Turkic and was interested in medicine and philosophy, but his bold reforms failed: in 1327 he moved the capital and much of Delhi's population to Daulatabad, in the Deccan, a march on which many died, and in 1330 he issued brass and copper coins meant to be worth silver ones. Later historians called him 'the wisest fool'.",
+            "es": "Gobernó la mayor parte de la India y se decía que era el hombre más rico del mundo musulmán. Hablaba persa, árabe, sánscrito y turco y le interesaban la medicina y la filosofía, pero sus atrevidas reformas fracasaron: en 1327 trasladó la capital y buena parte de la población de Delhi a Daulatabad, en el Decán, una marcha en la que murieron muchos, y en 1330 emitió monedas de latón y cobre que debían valer como las de plata. Historiadores posteriores lo llamaron «el más sabio de los tontos»."
+          },
+          "wiki": {
+            "en": "Muhammad bin Tughluq",
+            "es": "Muhammad bin Tughluq"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1342",
+      "title": {
+        "en": "Envoy to China, wrecked at Calicut",
+        "es": "Embajador a China, naufragio en Calicut"
+      },
+      "text": {
+        "en": "In 1342 the sultan sent him as his envoy to the Mongol emperor of China. Bandits nearly killed him on the way to the coast, and at Calicut a storm wrecked the embassy's ships.",
+        "es": "En 1342 el sultán lo envió como embajador ante el emperador mongol de China. Unos bandidos casi lo mataron camino de la costa, y en Calicut una tormenta hizo naufragar los barcos de la embajada."
+      },
+      "details": {
+        "en": "A Yuan embassy had come to Delhi asking leave to rebuild a temple visited by Chinese Buddhist pilgrims, and Ibn Battuta was put in charge of the return embassy, with gifts and a large escort. On the road to the coast rebels attacked the party; he was robbed, captured and almost killed, but caught up with his companions ten days later. From Khambhat, a rich port of fine buildings, they sailed down the coast to Calicut, where thirteen Chinese junks lay in the harbour and the ruler, whom he is the first known writer to call the Zamorin, received them. While Ibn Battuta was ashore at the mosque, a storm sank one of the expedition's ships; the other sailed without him and was seized months later by a king in Sumatra. Afraid to face the sultan, he stayed in southern India under the protection of Jamal al-Din of Honavar.",
+        "es": "Una embajada de los Yuan había llegado a Delhi para pedir permiso para reconstruir un templo que visitaban peregrinos budistas chinos, y pusieron a Ibn Battuta al frente de la embajada de respuesta, con regalos y una gran escolta. Camino de la costa, unos rebeldes atacaron al grupo; lo robaron, lo capturaron y casi lo mataron, pero diez días después alcanzó a sus compañeros. Desde Khambhat, un puerto rico de bellos edificios, bajaron por la costa hasta Calicut, donde había trece juncos chinos en el puerto y el soberano, al que él es el primer autor conocido en llamar zamorín, los recibió. Mientras Ibn Battuta estaba en tierra, en la mezquita, una tormenta hundió uno de los barcos de la expedición; el otro zarpó sin él y meses después lo capturó un rey de Sumatra. Con miedo de presentarse ante el sultán, se quedó en el sur de la India bajo la protección de Jamal al-Din de Honavar."
+      },
+      "camera": {
+        "lon": 76,
+        "lat": 20,
+        "zoom": 3.4
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              77.21,
+              28.59
+            ],
+            [
+              78.08,
+              27.88
+            ],
+            [
+              79.92,
+              27.05
+            ],
+            [
+              78.18,
+              26.22
+            ],
+            [
+              78.13,
+              24.72
+            ],
+            [
+              75.3,
+              22.6
+            ],
+            [
+              75.78,
+              23.18
+            ],
+            [
+              75.21,
+              19.94
+            ],
+            [
+              74.24,
+              21.37
+            ],
+            [
+              72.62,
+              22.31
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              72.62,
+              22.31
+            ],
+            [
+              72.4,
+              21.7
+            ],
+            [
+              72.35,
+              20.9
+            ],
+            [
+              72.5,
+              19.6
+            ],
+            [
+              72.7,
+              18.6
+            ],
+            [
+              73.05,
+              17.0
+            ],
+            [
+              73.55,
+              15.5
+            ],
+            [
+              74.25,
+              14.25
+            ],
+            [
+              74.7,
+              12.9
+            ],
+            [
+              75.05,
+              12.0
+            ],
+            [
+              75.65,
+              11.3
+            ],
+            [
+              75.78,
+              11.25
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "khambhat",
+          "name": {
+            "en": "Cambay (Khambhat)",
+            "es": "Cambay (Khambhat)"
+          },
+          "at": [
+            72.6194,
+            22.3131
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1342",
+          "place": {
+            "en": "Khambhat, Gujarat, India",
+            "es": "Khambhat, Guyarat, India"
+          },
+          "text": {
+            "en": "A rich port of Gujarat, famous for its cotton and silk cloth. Ibn Battuta admired its fine buildings and its merchants from many lands when he sailed from here with the embassy in 1342.",
+            "es": "Un puerto rico de Guyarat, famoso por sus telas de algodón y seda. Ibn Battuta admiró sus bellos edificios y sus mercaderes de muchas tierras cuando zarpó de aquí con la embajada en 1342."
+          },
+          "wiki": {
+            "en": "Khambhāt",
+            "es": "Khambhat"
+          }
+        },
+        {
+          "id": "calicut",
+          "name": {
+            "en": "Calicut",
+            "es": "Calicut"
+          },
+          "at": [
+            75.7804,
+            11.2588
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1342",
+          "place": {
+            "en": "Kozhikode, Kerala, India",
+            "es": "Kozhikode, Kerala, India"
+          },
+          "text": {
+            "en": "A great pepper port of the Malabar coast, where Chinese and Arab merchants met. Ibn Battuta is the first known writer to call its ruler the Zamorin; a storm here wrecked his embassy to China.",
+            "es": "Un gran puerto de la pimienta en la costa de Malabar, donde se encontraban mercaderes chinos y árabes. Ibn Battuta es el primer autor conocido que llama zamorín a su soberano; una tormenta hizo naufragar aquí su embajada a China."
+          },
+          "wiki": {
+            "en": "Kozhikode",
+            "es": "Kozhikode"
+          }
+        },
+        {
+          "id": "chinese-junks",
+          "name": {
+            "en": "Chinese junks",
+            "es": "Juncos chinos"
+          },
+          "at": [
+            75.55,
+            11.05
+          ],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1342",
+          "place": {
+            "en": "Harbour of Calicut, Kerala, India",
+            "es": "Puerto de Calicut, Kerala, India"
+          },
+          "text": {
+            "en": "When Ibn Battuta reached Calicut, thirteen Chinese junks lay in the harbour. He described their sails of plaited bamboo, never lowered, and crews of up to a thousand men: six hundred sailors and four hundred soldiers.",
+            "es": "Cuando Ibn Battuta llegó a Calicut, había trece juncos chinos en el puerto. Describió sus velas de bambú trenzado, que nunca se arriaban, y tripulaciones de hasta mil hombres: seiscientos marineros y cuatrocientos soldados."
+          },
+          "wiki": {
+            "en": "Junk (ship)",
+            "es": "Junco (embarcación)"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1344",
+      "title": {
+        "en": "Judge in the Maldives",
+        "es": "Juez en las Maldivas"
+      },
+      "text": {
+        "en": "In the Maldives, Muslim for less than two centuries, the rulers made Ibn Battuta chief judge and married him into the royal family. Nine months later he left for Sri Lanka and climbed Adam's Peak.",
+        "es": "En las Maldivas, musulmanas desde hacía menos de dos siglos, los gobernantes nombraron juez supremo a Ibn Battuta y lo casaron con la familia real. Nueve meses después partió hacia Sri Lanka y subió al pico de Adán."
+      },
+      "details": {
+        "en": "The islands exported coir rope and cowrie shells, which served as money as far away as Bengal and West Africa. Their rulers needed a judge who knew Arabic and the Qur'an, and kept Ibn Battuta from leaving with gifts of pearls, gold and slaves. He tried to impose a stricter law: men who missed Friday prayer were whipped, thieves lost a hand, and women were told to cover their breasts, as Maldivian women had never done; they took little notice. He took four wives, fell out with the rulers and left. In Sri Lanka he climbed Adam's Peak, sacred to Buddhists, Hindus and Muslims, by steps and iron chains fixed in the rock, and visited the great temple at Dondra. Sailing for India, his ship was nearly wrecked; he reached the coast of Ma'bar and the court of Madurai, where he saw the sultan's soldiers kill Hindu villagers.",
+        "es": "Las islas exportaban cuerda de fibra de coco y conchas de cauri, que servían como dinero hasta en Bengala y África occidental. Sus gobernantes necesitaban un juez que supiera árabe y conociera el Corán, y retuvieron a Ibn Battuta con regalos de perlas, oro y esclavos. Él intentó imponer una ley más estricta: los hombres que faltaban a la oración del viernes eran azotados, a los ladrones les cortaban una mano, y se ordenó a las mujeres cubrirse el pecho, cosa que las maldivas nunca habían hecho; casi nadie le hizo caso. Tomó cuatro esposas, se enemistó con los gobernantes y se fue. En Sri Lanka subió al pico de Adán, sagrado para budistas, hindúes y musulmanes, por escalones y cadenas de hierro fijadas en la roca, y visitó el gran templo de Dondra. Al navegar hacia la India, su barco casi naufragó; llegó a la costa de Ma'bar y a la corte de Madurai, donde vio a los soldados del sultán matar a aldeanos hindúes."
+      },
+      "camera": {
+        "lon": 77,
+        "lat": 7.5,
+        "zoom": 4.0
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              75.78,
+              11.25
+            ],
+            [
+              75.2,
+              10.5
+            ],
+            [
+              74.0,
+              6.5
+            ],
+            [
+              73.51,
+              4.18
+            ],
+            [
+              75.5,
+              5.0
+            ],
+            [
+              78.0,
+              6.8
+            ],
+            [
+              79.5,
+              7.9
+            ],
+            [
+              79.83,
+              8.03
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              79.83,
+              8.03
+            ],
+            [
+              80.36,
+              7.49
+            ],
+            [
+              80.57,
+              7.16
+            ],
+            [
+              80.5,
+              6.81
+            ],
+            [
+              80.4,
+              6.68
+            ],
+            [
+              80.59,
+              5.93
+            ],
+            [
+              80.22,
+              6.03
+            ],
+            [
+              79.86,
+              6.93
+            ],
+            [
+              79.84,
+              7.21
+            ],
+            [
+              79.8,
+              7.58
+            ],
+            [
+              79.83,
+              8.03
+            ]
+          ],
+          "by": "land",
+          "icon": "🚶"
+        }
+      ],
+      "places": [
+        {
+          "id": "maldives",
+          "name": {
+            "en": "Maldives",
+            "es": "Maldivas"
+          },
+          "at": [
+            73.5093,
+            4.1755
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1343",
+          "place": {
+            "en": "Malé, Maldives",
+            "es": "Malé, Maldivas"
+          },
+          "text": {
+            "en": "A kingdom of coral islands, Muslim for less than two centuries, whose rulers made Ibn Battuta chief judge. He married into the royal family and took four wives, but his strict judgments soon made enemies.",
+            "es": "Un reino de islas de coral, musulmán desde hacía menos de dos siglos, cuyos gobernantes nombraron juez supremo a Ibn Battuta. Se casó con la familia real y tomó cuatro esposas, pero sus sentencias estrictas pronto le ganaron enemigos."
+          },
+          "details": {
+            "en": "Ibn Battuta says the islands were converted to Islam by a holy man from the Maghreb, Abu al-Barakat the Berber; the Maldives' own chronicles instead name a man from Tabriz, and in Arabic script the two names look almost alike. He was shocked that women went bare above the waist, as was the custom of the islands, and when he complained, no one took notice. His nine months there fell sometime between 1341 and 1345.",
+            "es": "Ibn Battuta dice que las islas fueron convertidas al islam por un santo del Magreb, Abu al-Barakat el Bereber; las propias crónicas de las Maldivas nombran en cambio a un hombre de Tabriz, y en escritura árabe los dos nombres se parecen mucho. Le escandalizó que las mujeres no se cubrieran de la cintura para arriba, como era costumbre en las islas, y cuando se quejó nadie le hizo caso. Sus nueve meses allí fueron en algún momento entre 1341 y 1345."
+          },
+          "wiki": {
+            "en": "Maldives",
+            "es": "Maldivas"
+          }
+        },
+        {
+          "id": "cowries",
+          "name": {
+            "en": "Cowrie shells",
+            "es": "Conchas de cauri"
+          },
+          "at": [
+            73.45,
+            3.9
+          ],
+          "cat": "goods",
+          "icon": "🐚",
+          "type": "goods",
+          "date": "1343",
+          "place": {
+            "en": "Maldives",
+            "es": "Maldivas"
+          },
+          "text": {
+            "en": "The Maldives exported cowrie shells by the shipload, with rope of coconut fibre. The little shells served as money from Bengal to the empire of Mali, in West Africa.",
+            "es": "Las Maldivas exportaban conchas de cauri por barcos enteros, además de cuerda de fibra de coco. Las pequeñas conchas servían como dinero desde Bengala hasta el imperio de Malí, en África occidental."
+          },
+          "wiki": {
+            "en": "Cowrie",
+            "es": "Cauri"
+          }
+        },
+        {
+          "id": "adams-peak",
+          "name": {
+            "en": "Adam's Peak",
+            "es": "Pico de Adán"
+          },
+          "at": [
+            80.4997,
+            6.8094
+          ],
+          "cat": "nature",
+          "type": "place",
+          "date": "1344",
+          "place": {
+            "en": "Sri Lanka",
+            "es": "Sri Lanka"
+          },
+          "text": {
+            "en": "The holy mountain of Sri Lanka, 2,243 m high. Ibn Battuta climbed it in 1344 by steps and iron chains fixed in the rock, to see the footprint that Muslims honour as Adam's and Buddhists as the Buddha's.",
+            "es": "La montaña sagrada de Sri Lanka, de 2243 m. Ibn Battuta la subió en 1344 por escalones y cadenas de hierro fijadas en la roca, para ver la huella que los musulmanes veneran como de Adán y los budistas como del Buda."
+          },
+          "wiki": {
+            "en": "Adam's Peak",
+            "es": "Pico de Adán"
+          }
+        },
+        {
+          "id": "madurai-sultanate",
+          "name": {
+            "en": "Madurai Sultanate",
+            "es": "Sultanato de Madurai"
+          },
+          "at": [
+            78.1198,
+            9.9252
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1344",
+          "place": {
+            "en": "Madurai, Tamil Nadu, India",
+            "es": "Madurai, Tamil Nadu, India"
+          },
+          "text": {
+            "en": "A short-lived sultanate of southern India, whose founder was Ibn Battuta's father-in-law. He visited its court in 1344 and was appalled by the sultan's massacres of Hindu villagers.",
+            "es": "Un sultanato efímero del sur de la India, cuyo fundador era suegro de Ibn Battuta. Visitó su corte en 1344 y le horrorizaron las matanzas de aldeanos hindúes ordenadas por el sultán."
+          },
+          "wiki": {
+            "en": "Madurai Sultanate",
+            "es": "Sultanato de Madurai"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1345",
+      "title": {
+        "en": "Bengal and Sumatra",
+        "es": "Bengala y Sumatra"
+      },
+      "text": {
+        "en": "After a last visit to the Maldives, a Chinese junk took Ibn Battuta to Bengal, where he travelled a month to meet the holy man Shah Jalal. Then he sailed to Samudra Pasai in Sumatra, the last Muslim land before China.",
+        "es": "Tras una última visita a las Maldivas, un junco chino llevó a Ibn Battuta a Bengala, donde viajó un mes para conocer al santo Shah Jalal. Luego navegó hasta Samudra Pasai, en Sumatra, la última tierra musulmana antes de China."
+      },
+      "details": {
+        "en": "From the coast of Ma'bar he sailed back to the Maldives, where he had left a son, and boarded a Chinese junk that took him in 43 days to Chittagong. Bengal was one of the richest lands of trade in Asia, and the fine cotton cloth of Sonargaon was famous. He travelled for a month through the hills of Kamarupa to Sylhet, where Shah Jalal, a tall, lean Sufi who lived in a cave with a single goat, received him in 1345; Ibn Battuta later reported his death the following year. From Sonargaon he sailed forty days to Samudra Pasai, whose sultan, al-Malik al-Zahir, was a pious Muslim who fought the peoples of the interior. After two weeks in the wooden-walled town, the sultan gave him a junk for China. On the way he says he visited a Hindu kingdom he calls Mul Jawa and a land called Tawalisi, ruled by a warrior princess, Urduja; where they were, and whether Tawalisi existed at all, is disputed.",
+        "es": "Desde la costa de Ma'bar volvió a las Maldivas, donde había dejado un hijo, y se embarcó en un junco chino que lo llevó en 43 días a Chittagong. Bengala era una de las tierras más ricas para el comercio en Asia, y la fina tela de algodón de Sonargaon era famosa. Viajó un mes por las colinas de Kamarupa hasta Sylhet, donde Shah Jalal, un sufí alto y delgado que vivía en una cueva con una sola cabra, lo recibió en 1345; Ibn Battuta contó después que murió al año siguiente. Desde Sonargaon navegó cuarenta días hasta Samudra Pasai, cuyo sultán, al-Malik al-Zahir, era un musulmán piadoso que combatía a los pueblos del interior. Tras dos semanas en la ciudad amurallada de madera, el sultán le dio un junco para ir a China. En el camino dice que visitó un reino hindú al que llama Mul Jawa y una tierra llamada Tawalisi, gobernada por una princesa guerrera, Urduja; dónde estaban, y si Tawalisi existió siquiera, se discute."
+      },
+      "camera": {
+        "lon": 88,
+        "lat": 14,
+        "zoom": 2.8
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              79.83,
+              8.03
+            ],
+            [
+              79.5,
+              8.4
+            ],
+            [
+              78.6,
+              8.6
+            ],
+            [
+              77.6,
+              7.9
+            ],
+            [
+              76.0,
+              6.5
+            ],
+            [
+              73.51,
+              4.18
+            ],
+            [
+              76.5,
+              4.5
+            ],
+            [
+              81.0,
+              5.0
+            ],
+            [
+              85.0,
+              12.0
+            ],
+            [
+              89.0,
+              19.5
+            ],
+            [
+              91.3,
+              21.8
+            ],
+            [
+              91.8,
+              22.33
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              91.8,
+              22.33
+            ],
+            [
+              91.9,
+              23.5
+            ],
+            [
+              91.87,
+              24.9
+            ],
+            [
+              91.3,
+              24.4
+            ],
+            [
+              90.8,
+              24.0
+            ],
+            [
+              90.6,
+              23.65
+            ]
+          ],
+          "by": "land",
+          "icon": "🚶"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              90.6,
+              23.65
+            ],
+            [
+              90.55,
+              23.2
+            ],
+            [
+              90.7,
+              22.6
+            ],
+            [
+              91.0,
+              21.6
+            ],
+            [
+              92.5,
+              18.0
+            ],
+            [
+              94.0,
+              14.0
+            ],
+            [
+              95.0,
+              9.5
+            ],
+            [
+              96.5,
+              6.5
+            ],
+            [
+              97.6,
+              5.4
+            ],
+            [
+              97.2,
+              5.14
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        }
+      ],
+      "places": [
+        {
+          "id": "shah-jalal",
+          "name": {
+            "en": "Shah Jalal",
+            "es": "Shah Jalal"
+          },
+          "at": [
+            91.8687,
+            24.8949
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1345",
+          "place": {
+            "en": "Sylhet, Bangladesh",
+            "es": "Sylhet, Bangladés"
+          },
+          "text": {
+            "en": "A Sufi holy man revered in Bengal, who lived in a cave with a single goat. Ibn Battuta travelled a month through the hills to meet him in 1345, and later reported his death in 1346.",
+            "es": "Un santo sufí venerado en Bengala, que vivía en una cueva con una sola cabra. Ibn Battuta viajó un mes por las colinas para conocerlo en 1345, y después contó que había muerto en 1346."
+          },
+          "wiki": {
+            "en": "Shah Jalal",
+            "es": ""
+          }
+        },
+        {
+          "id": "muslin",
+          "name": {
+            "en": "Muslin of Bengal",
+            "es": "Muselina de Bengala"
+          },
+          "at": [
+            90.5978,
+            23.6475
+          ],
+          "cat": "goods",
+          "icon": "🧵",
+          "type": "goods",
+          "date": "1345",
+          "place": {
+            "en": "Sonargaon, Bangladesh",
+            "es": "Sonargaon, Bangladés"
+          },
+          "text": {
+            "en": "Bengal's fine cotton cloth, muslin, was traded across Asia. Ibn Battuta praised the cloth made in Sonargaon, the port from which he sailed forty days to Sumatra.",
+            "es": "La fina tela de algodón de Bengala, la muselina, se vendía en toda Asia. Ibn Battuta elogió la tela hecha en Sonargaon, el puerto desde el que navegó cuarenta días hasta Sumatra."
+          },
+          "wiki": {
+            "en": "Muslin",
+            "es": "Muselina"
+          }
+        },
+        {
+          "id": "samudra-pasai",
+          "name": {
+            "en": "Samudra Pasai",
+            "es": "Samudra Pasai"
+          },
+          "at": [
+            97.2006,
+            5.1341
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1345",
+          "place": {
+            "en": "Aceh, Sumatra, Indonesia",
+            "es": "Aceh, Sumatra, Indonesia"
+          },
+          "text": {
+            "en": "A port kingdom of northern Sumatra and, in Ibn Battuta's day, the easternmost land ruled by Muslims. Its pious sultan al-Malik al-Zahir welcomed him for two weeks and gave him a junk to sail to China.",
+            "es": "Un reino portuario del norte de Sumatra y, en tiempos de Ibn Battuta, la tierra más oriental gobernada por musulmanes. Su piadoso sultán, al-Malik al-Zahir, lo acogió dos semanas y le dio un junco para navegar a China."
+          },
+          "wiki": {
+            "en": "Samudera Pasai Sultanate",
+            "es": "Reino de Samudra Pasai"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1346",
+      "title": {
+        "en": "China, as the Rihla tells it",
+        "es": "China, según la Rihla"
+      },
+      "text": {
+        "en": "In 1345 Ibn Battuta landed at Quanzhou, called Zaitun by the Arabs, the greatest port he had ever seen. He saw Guangzhou and Hangzhou; whether he really reached Beijing, as he claims, is much doubted.",
+        "es": "En 1345 Ibn Battuta desembarcó en Quanzhou, llamada Zaitun por los árabes, el mayor puerto que había visto. Conoció Cantón y Hangzhou; mucho se duda que de verdad llegara a Pekín, como asegura."
+      },
+      "details": {
+        "en": "Zaitun means 'olive', he noted, but he found no olives there. The head of the Muslim merchants met him with flags and drums; Muslims lived in their own quarter, with mosques, bazaars and a hospital. He admired China's silk, its porcelain, its paper money and its great ships, and noted that artists painted portraits of newly arrived foreigners for the police. He went south to Guangzhou, then north with a merchant from Ceuta to Hangzhou, the biggest city he had ever seen, where he dined with the Mongol governor. His account of the journey up the Grand Canal to Khanbaliq is thin and has errors: he describes the burial of an emperor who in fact lived until 1370. So many scholars doubt he went north, drawn here in grey, and some doubt parts of his China altogether. Back at Quanzhou in 1346, he boarded a junk of the sultan of Samudra Pasai and began the long journey home.",
+        "es": "Zaitun significa «aceituna», anotó, pero no encontró aceitunas. El jefe de los mercaderes musulmanes lo recibió con banderas y tambores; los musulmanes vivían en su propio barrio, con mezquitas, bazares y un hospital. Admiró la seda de China, su porcelana, su dinero de papel y sus grandes barcos, y anotó que unos artistas pintaban retratos de los extranjeros recién llegados para la policía. Fue al sur hasta Cantón y luego al norte, con un mercader de Ceuta, hasta Hangzhou, la ciudad más grande que había visto, donde cenó con el gobernador mongol. Su relato del viaje por el Gran Canal hasta Janbalic es escaso y tiene errores: describe el entierro de un emperador que en realidad vivió hasta 1370. Por eso muchos estudiosos dudan de que fuera al norte, aquí dibujado en gris, y algunos dudan de partes de su China. De vuelta en Quanzhou en 1346, subió a un junco del sultán de Samudra Pasai y emprendió el largo regreso."
+      },
+      "camera": {
+        "lon": 112,
+        "lat": 22,
+        "zoom": 2.4
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              97.2,
+              5.14
+            ],
+            [
+              97.6,
+              5.4
+            ],
+            [
+              98.9,
+              4.5
+            ],
+            [
+              100.2,
+              3.8
+            ],
+            [
+              101.4,
+              2.7
+            ],
+            [
+              102.7,
+              1.8
+            ],
+            [
+              103.4,
+              1.2
+            ],
+            [
+              103.75,
+              1.2
+            ],
+            [
+              104.3,
+              1.3
+            ],
+            [
+              104.4,
+              2.0
+            ],
+            [
+              105.0,
+              5.5
+            ],
+            [
+              106.6,
+              8.4
+            ],
+            [
+              107.5,
+              9.8
+            ],
+            [
+              109.2,
+              11.2
+            ],
+            [
+              109.4,
+              12.0
+            ],
+            [
+              109.5,
+              13.8
+            ],
+            [
+              109.3,
+              15.5
+            ],
+            [
+              110.2,
+              17.8
+            ],
+            [
+              111.3,
+              19.0
+            ],
+            [
+              111.2,
+              20.3
+            ],
+            [
+              112.5,
+              21.4
+            ],
+            [
+              114.2,
+              22.0
+            ],
+            [
+              115.6,
+              22.5
+            ],
+            [
+              117.2,
+              23.4
+            ],
+            [
+              118.4,
+              24.25
+            ],
+            [
+              118.75,
+              24.75
+            ],
+            [
+              118.59,
+              24.91
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "doubted",
+          "path": [
+            [
+              120.17,
+              30.27
+            ],
+            [
+              120.75,
+              30.75
+            ],
+            [
+              120.62,
+              31.3
+            ],
+            [
+              119.97,
+              31.81
+            ],
+            [
+              119.45,
+              32.2
+            ],
+            [
+              119.41,
+              32.39
+            ],
+            [
+              119.02,
+              33.61
+            ],
+            [
+              117.18,
+              34.26
+            ],
+            [
+              116.59,
+              35.41
+            ],
+            [
+              115.7,
+              36.84
+            ],
+            [
+              116.36,
+              37.44
+            ],
+            [
+              116.84,
+              38.3
+            ],
+            [
+              117.2,
+              39.13
+            ],
+            [
+              116.66,
+              39.91
+            ],
+            [
+              116.4,
+              39.93
+            ],
+            [
+              116.66,
+              39.91
+            ],
+            [
+              117.2,
+              39.13
+            ],
+            [
+              116.84,
+              38.3
+            ],
+            [
+              116.36,
+              37.44
+            ],
+            [
+              115.7,
+              36.84
+            ],
+            [
+              116.59,
+              35.41
+            ],
+            [
+              117.18,
+              34.26
+            ],
+            [
+              119.02,
+              33.61
+            ],
+            [
+              119.41,
+              32.39
+            ],
+            [
+              119.45,
+              32.2
+            ],
+            [
+              119.97,
+              31.81
+            ],
+            [
+              120.62,
+              31.3
+            ],
+            [
+              120.75,
+              30.75
+            ],
+            [
+              120.17,
+              30.27
+            ]
+          ],
+          "by": "river"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              118.59,
+              24.91
+            ],
+            [
+              119.01,
+              25.43
+            ],
+            [
+              119.3,
+              26.08
+            ],
+            [
+              118.18,
+              26.64
+            ],
+            [
+              118.32,
+              27.05
+            ],
+            [
+              118.53,
+              27.92
+            ],
+            [
+              118.87,
+              28.97
+            ],
+            [
+              119.65,
+              29.8
+            ],
+            [
+              120.17,
+              30.27
+            ],
+            [
+              119.65,
+              29.8
+            ],
+            [
+              118.87,
+              28.97
+            ],
+            [
+              118.53,
+              27.92
+            ],
+            [
+              118.32,
+              27.05
+            ],
+            [
+              118.18,
+              26.64
+            ],
+            [
+              119.3,
+              26.08
+            ],
+            [
+              119.01,
+              25.43
+            ],
+            [
+              118.59,
+              24.91
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ],
+      "places": [
+        {
+          "id": "quanzhou",
+          "name": {
+            "en": "Quanzhou (Zaitun)",
+            "es": "Quanzhou (Zaitun)"
+          },
+          "at": [
+            118.588,
+            24.91
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1345",
+          "place": {
+            "en": "Quanzhou, Fujian, China",
+            "es": "Quanzhou, Fujian, China"
+          },
+          "text": {
+            "en": "Zaitun to the Arabs, and the greatest port in the world, Ibn Battuta wrote. Zaitun means 'olive', but he found no olives; Muslim merchants had their own quarter, with mosques, bazaars and a hospital.",
+            "es": "Zaitun para los árabes, y el mayor puerto del mundo, según Ibn Battuta. Zaitun significa «aceituna», pero no encontró aceitunas; los mercaderes musulmanes tenían su propio barrio, con mezquitas, bazares y un hospital."
+          },
+          "wiki": {
+            "en": "Quanzhou",
+            "es": "Quanzhou"
+          }
+        },
+        {
+          "id": "hangzhou",
+          "name": {
+            "en": "Hangzhou",
+            "es": "Hangzhou"
+          },
+          "at": [
+            120.165,
+            30.259
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1345",
+          "place": {
+            "en": "Hangzhou, Zhejiang, China",
+            "es": "Hangzhou, Zhejiang, China"
+          },
+          "text": {
+            "en": "'The biggest city I have ever seen on the face of the earth,' wrote Ibn Battuta. He admired its lake among green hills and its painted boats with silk awnings, and dined with the Mongol governor.",
+            "es": "«La ciudad más grande que he visto sobre la faz de la tierra», escribió Ibn Battuta. Admiró su lago entre colinas verdes y sus barcas pintadas con toldos de seda, y cenó con el gobernador mongol."
+          },
+          "wiki": {
+            "en": "Hangzhou",
+            "es": "Hangzhou"
+          }
+        },
+        {
+          "id": "khanbaliq",
+          "name": {
+            "en": "Khanbaliq (Dadu)",
+            "es": "Janbalic (Dadu)"
+          },
+          "at": [
+            116.4,
+            39.9333
+          ],
+          "cat": "city",
+          "icon": "❔",
+          "type": "place",
+          "date": "1346",
+          "place": {
+            "en": "Beijing, China",
+            "es": "Pekín, China"
+          },
+          "text": {
+            "en": "The Yuan capital, today's Beijing. Ibn Battuta says he went there as the sultan of Delhi's envoy and saw its palace of wood, but his account is thin and confused, and many scholars doubt he went.",
+            "es": "La capital de los Yuan, la actual Pekín. Ibn Battuta dice que fue allí como embajador del sultán de Delhi y vio su palacio de madera, pero su relato es escaso y confuso, y muchos estudiosos dudan de que fuera."
+          },
+          "wiki": {
+            "en": "Dadu (Beijing)",
+            "es": "Janbalic"
+          }
+        },
+        {
+          "id": "porcelain",
+          "name": {
+            "en": "Porcelain",
+            "es": "Porcelana"
+          },
+          "at": [
+            118.2417,
+            25.4917
+          ],
+          "cat": "goods",
+          "icon": "🏺",
+          "type": "goods",
+          "date": "1345",
+          "place": {
+            "en": "Fujian, China",
+            "es": "Fujian, China"
+          },
+          "text": {
+            "en": "Ibn Battuta admired China's craftsmen, its silk and its porcelain, but he wrongly believed that porcelain was made from a kind of coal, one of several errors in his account of China.",
+            "es": "Ibn Battuta admiró a los artesanos de China, su seda y su porcelana, pero creyó erróneamente que la porcelana se hacía con una especie de carbón, uno de varios errores de su relato sobre China."
+          },
+          "wiki": {
+            "en": "Porcelain",
+            "es": "Porcelana"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1348",
+      "title": {
+        "en": "Through the Black Death",
+        "es": "A través de la peste negra"
+      },
+      "text": {
+        "en": "Sailing home by India and Hormuz, Ibn Battuta found that Persia's Mongol realm had fallen apart. In 1348 the Black Death reached Syria and Egypt as he passed: in Damascus 2,400 people died in a day.",
+        "es": "De regreso por la India y Ormuz, Ibn Battuta encontró deshecho el reino mongol de Persia. En 1348 la peste negra llegó a Siria y Egipto mientras él pasaba: en Damasco morían 2400 personas al día."
+      },
+      "details": {
+        "en": "At Calicut he thought of going back to Delhi, but did not dare. Passing Hormuz on his way to Basra, he learned that Abu Sa'id, the Ilkhan he had seen in Baghdad, had died years before and that his realm had broken up in civil war. In Damascus, in 1348, he learned that his father had died fifteen years earlier. Then the plague came. He waited at Homs as it spread through Syria, Palestine and Arabia, and was back in Damascus in July, when 2,400 people were dying each day. Gaza was nearly empty, and in Cairo, he was told, 1,100 people died every day. The same epidemic killed between a third and more than half of the people of Europe, and about a third of those of the Middle East.",
+        "es": "En Calicut pensó en volver a Delhi, pero no se atrevió. Al pasar por Ormuz camino de Basora supo que Abu Said, el iljan al que había visto en Bagdad, había muerto años atrás y que su reino se había deshecho en una guerra civil. En Damasco, en 1348, supo que su padre había muerto quince años antes. Entonces llegó la peste. Esperó en Homs mientras se extendía por Siria, Palestina y Arabia, y en julio estaba de vuelta en Damasco, cuando morían 2400 personas cada día. Gaza estaba casi vacía, y en El Cairo, le dijeron, morían 1100 personas al día. La misma epidemia mató a entre un tercio y más de la mitad de la población de Europa, y a cerca de un tercio de la de Oriente Medio."
+      },
+      "camera": {
+        "lon": 75,
+        "lat": 22,
+        "zoom": 1.6
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              118.59,
+              24.91
+            ],
+            [
+              118.75,
+              24.75
+            ],
+            [
+              118.4,
+              24.25
+            ],
+            [
+              117.2,
+              23.4
+            ],
+            [
+              115.6,
+              22.5
+            ],
+            [
+              114.2,
+              22.0
+            ],
+            [
+              112.5,
+              21.4
+            ],
+            [
+              111.2,
+              20.3
+            ],
+            [
+              111.3,
+              19.0
+            ],
+            [
+              110.2,
+              17.8
+            ],
+            [
+              109.3,
+              15.5
+            ],
+            [
+              109.5,
+              13.8
+            ],
+            [
+              109.4,
+              12.0
+            ],
+            [
+              109.2,
+              11.2
+            ],
+            [
+              107.5,
+              9.8
+            ],
+            [
+              106.6,
+              8.4
+            ],
+            [
+              105.0,
+              5.5
+            ],
+            [
+              104.4,
+              2.0
+            ],
+            [
+              104.3,
+              1.3
+            ],
+            [
+              103.75,
+              1.2
+            ],
+            [
+              103.4,
+              1.2
+            ],
+            [
+              102.7,
+              1.8
+            ],
+            [
+              101.4,
+              2.7
+            ],
+            [
+              100.2,
+              3.8
+            ],
+            [
+              98.9,
+              4.5
+            ],
+            [
+              97.6,
+              5.4
+            ],
+            [
+              97.2,
+              5.14
+            ],
+            [
+              96.0,
+              5.9
+            ],
+            [
+              93.5,
+              6.5
+            ],
+            [
+              86.0,
+              6.2
+            ],
+            [
+              81.9,
+              5.8
+            ],
+            [
+              80.6,
+              5.75
+            ],
+            [
+              79.0,
+              6.8
+            ],
+            [
+              77.6,
+              7.9
+            ],
+            [
+              77.1,
+              8.05
+            ],
+            [
+              76.8,
+              8.35
+            ],
+            [
+              76.5,
+              8.8
+            ],
+            [
+              75.95,
+              10.2
+            ],
+            [
+              75.65,
+              11.15
+            ],
+            [
+              75.78,
+              11.25
+            ],
+            [
+              75.4,
+              11.6
+            ],
+            [
+              70.0,
+              17.0
+            ],
+            [
+              63.0,
+              22.5
+            ],
+            [
+              58.6,
+              23.75
+            ],
+            [
+              57.6,
+              24.4
+            ],
+            [
+              56.65,
+              25.4
+            ],
+            [
+              56.55,
+              26.3
+            ],
+            [
+              56.6,
+              26.85
+            ],
+            [
+              56.46,
+              27.06
+            ],
+            [
+              56.45,
+              26.6
+            ],
+            [
+              55.95,
+              26.45
+            ],
+            [
+              55.2,
+              26.05
+            ],
+            [
+              53.8,
+              26.0
+            ],
+            [
+              52.0,
+              26.6
+            ],
+            [
+              50.5,
+              27.8
+            ],
+            [
+              49.4,
+              29.2
+            ],
+            [
+              48.7,
+              29.8
+            ],
+            [
+              48.48,
+              29.97
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              48.48,
+              29.97
+            ],
+            [
+              47.8,
+              30.51
+            ],
+            [
+              46.3,
+              32.19
+            ],
+            [
+              44.37,
+              33.31
+            ],
+            [
+              41.97,
+              34.37
+            ],
+            [
+              40.45,
+              35.02
+            ],
+            [
+              38.27,
+              34.55
+            ],
+            [
+              36.31,
+              33.51
+            ],
+            [
+              36.72,
+              34.73
+            ],
+            [
+              36.31,
+              33.51
+            ],
+            [
+              35.53,
+              32.79
+            ],
+            [
+              35.26,
+              32.22
+            ],
+            [
+              35.23,
+              31.78
+            ],
+            [
+              35.2,
+              31.7
+            ],
+            [
+              35.1,
+              31.53
+            ],
+            [
+              34.47,
+              31.5
+            ],
+            [
+              33.8,
+              31.13
+            ],
+            [
+              32.31,
+              30.86
+            ],
+            [
+              31.56,
+              30.42
+            ],
+            [
+              31.24,
+              30.04
+            ]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        }
+      ],
+      "places": [
+        {
+          "id": "hormuz",
+          "name": {
+            "en": "Hormuz",
+            "es": "Ormuz"
+          },
+          "at": [
+            56.46,
+            27.06
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1332",
+          "place": {
+            "en": "Hormuz Island, Iran",
+            "es": "Isla de Ormuz, Irán"
+          },
+          "text": {
+            "en": "The capital of a trading kingdom on a small island at the mouth of the Persian Gulf, where its people had moved from the mainland in 1301. Ibn Battuta came here in 1332 and passed again on his way home.",
+            "es": "La capital de un reino comercial en una pequeña isla en la boca del golfo Pérsico, adonde su gente se había mudado desde tierra firme en 1301. Ibn Battuta llegó aquí en 1332 y volvió a pasar de regreso a casa."
+          },
+          "wiki": {
+            "en": "Kingdom of Hormuz",
+            "es": ""
+          }
+        },
+        {
+          "id": "black-death",
+          "name": {
+            "en": "The Black Death",
+            "es": "La peste negra"
+          },
+          "at": [
+            36.315,
+            33.52
+          ],
+          "cat": "event",
+          "icon": "☠️",
+          "type": "event",
+          "date": "1348-07",
+          "place": {
+            "en": "Damascus, Gaza and Cairo",
+            "es": "Damasco, Gaza y El Cairo"
+          },
+          "text": {
+            "en": "The plague that killed between a third and more than half of the people of Europe and about a third of those of the Middle East. In July 1348 Ibn Battuta saw 2,400 people die in a single day in Damascus.",
+            "es": "La peste que mató a entre un tercio y más de la mitad de la población de Europa y a cerca de un tercio de la de Oriente Medio. En julio de 1348 Ibn Battuta vio morir a 2400 personas en un solo día en Damasco."
+          },
+          "wiki": {
+            "en": "Black Death",
+            "es": "Peste negra"
+          }
+        },
+        {
+          "id": "cairo",
+          "name": {
+            "en": "Cairo",
+            "es": "El Cairo"
+          },
+          "at": [
+            31.2358,
+            30.0444
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1326",
+          "place": {
+            "en": "Cairo, Egypt",
+            "es": "El Cairo, Egipto"
+          },
+          "text": {
+            "en": "Capital of the Mamluk Sultanate and one of the great cities of the Islamic world. Ibn Battuta spent a month there in 1326; when he passed again in 1348, the plague was killing over a thousand people a day.",
+            "es": "Capital del sultanato mameluco y una de las grandes ciudades del mundo islámico. Ibn Battuta pasó allí un mes en 1326; cuando volvió en 1348, la peste mataba a más de mil personas al día."
+          },
+          "wiki": {
+            "en": "Cairo",
+            "es": "El Cairo"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1349",
+      "title": {
+        "en": "Home after 24 years",
+        "es": "En casa tras 24 años"
+      },
+      "text": {
+        "en": "After a last pilgrimage to Mecca, Ibn Battuta sailed west by Tunis and Sardinia and came home to Morocco in 1349, after nearly a quarter of a century away. His mother had died a few months before.",
+        "es": "Tras una última peregrinación a La Meca, Ibn Battuta navegó al oeste por Túnez y Cerdeña y volvió a Marruecos en 1349, después de casi un cuarto de siglo fuera. Su madre había muerto pocos meses antes."
+      },
+      "details": {
+        "en": "In Alexandria he found the great lighthouse so ruined that it could no longer be entered. From Tunis he sailed to Sardinia, a last detour, then to the coast of Algeria, and rode on to Fez, the capital of the Marinid sultan Abu Inan Faris. Then he went to Tangier to see his mother's grave. He had left as a student of 21; he came back a man of 45 who had crossed most of the Muslim world and much beyond it, who had served sultans as a judge, married many times and left children from Damascus to the Maldives. He would not stay home for long.",
+        "es": "En Alejandría encontró el gran faro tan arruinado que ya no se podía entrar. Desde Túnez navegó a Cerdeña, un último desvío, luego a la costa de Argelia, y siguió a caballo hasta Fez, la capital del sultán meriní Abu Inán Faris. Después fue a Tánger a ver la tumba de su madre. Se había ido como un estudiante de 21 años; volvió como un hombre de 45 que había recorrido casi todo el mundo musulmán y mucho más allá, que había servido a sultanes como juez, se había casado muchas veces y había dejado hijos desde Damasco hasta las Maldivas. No se quedaría mucho tiempo en casa."
+      },
+      "camera": {
+        "lon": 14,
+        "lat": 32,
+        "zoom": 2.5
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              31.24,
+              30.04
+            ],
+            [
+              32.55,
+              29.97
+            ],
+            [
+              35.0,
+              29.53
+            ],
+            [
+              35.7,
+              28.0
+            ],
+            [
+              36.45,
+              26.23
+            ],
+            [
+              38.06,
+              24.09
+            ],
+            [
+              38.79,
+              23.73
+            ],
+            [
+              39.83,
+              21.42
+            ],
+            [
+              38.79,
+              23.73
+            ],
+            [
+              38.06,
+              24.09
+            ],
+            [
+              36.45,
+              26.23
+            ],
+            [
+              35.7,
+              28.0
+            ],
+            [
+              35.0,
+              29.53
+            ],
+            [
+              32.55,
+              29.97
+            ],
+            [
+              31.24,
+              30.04
+            ],
+            [
+              30.47,
+              31.05
+            ],
+            [
+              29.92,
+              31.2
+            ]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              29.92,
+              31.2
+            ],
+            [
+              27.0,
+              32.5
+            ],
+            [
+              23.0,
+              33.5
+            ],
+            [
+              19.0,
+              34.0
+            ],
+            [
+              15.0,
+              35.3
+            ],
+            [
+              11.6,
+              37.3
+            ],
+            [
+              10.6,
+              37.15
+            ],
+            [
+              10.3,
+              36.82
+            ],
+            [
+              10.6,
+              37.15
+            ],
+            [
+              9.5,
+              38.5
+            ],
+            [
+              9.3,
+              38.95
+            ],
+            [
+              9.11,
+              39.21
+            ],
+            [
+              9.1,
+              38.9
+            ],
+            [
+              8.4,
+              38.55
+            ],
+            [
+              4.0,
+              37.4
+            ],
+            [
+              1.31,
+              36.52
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              1.31,
+              36.52
+            ],
+            [
+              1.0,
+              36.0
+            ],
+            [
+              0.14,
+              35.4
+            ],
+            [
+              -1.32,
+              34.88
+            ],
+            [
+              -1.91,
+              34.68
+            ],
+            [
+              -4.01,
+              34.21
+            ],
+            [
+              -4.98,
+              34.06
+            ],
+            [
+              -5.58,
+              34.8
+            ],
+            [
+              -5.81,
+              35.78
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ],
+      "places": [
+        {
+          "id": "alexandria",
+          "name": {
+            "en": "Alexandria",
+            "es": "Alejandría"
+          },
+          "at": [
+            29.8925,
+            31.1975
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1326",
+          "place": {
+            "en": "Alexandria, Egypt",
+            "es": "Alejandría, Egipto"
+          },
+          "text": {
+            "en": "The great Mediterranean port of Mamluk Egypt. Ibn Battuta saw its ancient lighthouse partly in ruins in 1326; when he came back in 1349 it could no longer be entered.",
+            "es": "El gran puerto mediterráneo del Egipto mameluco. Ibn Battuta vio su antiguo faro en parte en ruinas en 1326; cuando volvió en 1349 ya no se podía entrar en él."
+          },
+          "details": {
+            "en": "Two holy men here foretold his life of travel. Sheikh Burhan al-Din told him: 'It seems to me that you are fond of foreign travel', and asked him to greet his brothers in India, Sind and China. Another, al-Murshidi, explained one of his dreams as a sign that he would wander the world. The lighthouse, one of the Seven Wonders of the ancient world, had been badly damaged by earthquakes between 956 and 1303.",
+            "es": "Dos santos varones de aquí le predijeron su vida de viajes. El jeque Burhan al-Din le dijo: «Me parece que te gusta viajar por tierras extrañas», y le pidió que saludara a sus hermanos de la India, el Sind y China. Otro, al-Murshidi, interpretó uno de sus sueños como señal de que recorrería el mundo. El faro, una de las siete maravillas del mundo antiguo, había sufrido graves daños por terremotos entre 956 y 1303."
+          },
+          "wiki": {
+            "en": "Alexandria",
+            "es": "Alejandría"
+          }
+        },
+        {
+          "id": "abu-inan-faris",
+          "name": {
+            "en": "Abu Inan Faris",
+            "es": "Abu Inán Faris"
+          },
+          "at": [
+            -4.993,
+            34.054
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1349",
+          "life": [
+            "1329",
+            "1358-01-10"
+          ],
+          "place": {
+            "en": "Fez, Morocco",
+            "es": "Fez, Marruecos"
+          },
+          "text": {
+            "en": "The Marinid sultan of Morocco from 1348 to 1358. He called Ibn Battuta home from the Sahara in 1353 and asked his secretary Ibn Juzayy to write down the traveller's story.",
+            "es": "El sultán meriní de Marruecos de 1348 a 1358. Llamó a Ibn Battuta de vuelta desde el Sahara en 1353 y encargó a su secretario Ibn Juzayy que pusiera por escrito la historia del viajero."
+          },
+          "wiki": {
+            "en": "Abu Inan Faris",
+            "es": "Abu Inán Faris"
+          }
+        },
+        {
+          "id": "ibn-battuta",
+          "name": {
+            "en": "Ibn Battuta",
+            "es": "Ibn Battuta"
+          },
+          "at": [
+            -5.813,
+            35.785
+          ],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1325-06-14",
+          "life": [
+            "1304-02-24",
+            "1369"
+          ],
+          "place": {
+            "en": "Set out from Tangier, Morocco",
+            "es": "Partió de Tánger, Marruecos"
+          },
+          "text": {
+            "en": "A Moroccan scholar of Islamic law who travelled for almost 30 years, from 1325 to 1354: some 117,000 km across Africa, Asia and Europe, more than any other traveller of pre-modern times.",
+            "es": "Un sabio marroquí del derecho islámico que viajó casi 30 años, de 1325 a 1354: unos 117 000 km por África, Asia y Europa, más que ningún otro viajero antes de la época moderna."
+          },
+          "details": {
+            "en": "Muhammad ibn Battuta was born in Tangier on 24 February 1304 into a family of judges of Berber origin; his family name means 'son of the duckling'. Wherever he went he was received as a learned man and a pilgrim. He lived on the gifts of rulers, served as a judge in Delhi and the Maldives, married many times, left children in several countries and owned enslaved servants. He kept no journal: the Rihla he dictated in Fez is the only source for his life. He died in Morocco in 1368 or 1369.",
+            "es": "Muhammad ibn Battuta nació en Tánger el 24 de febrero de 1304 en una familia de jueces de origen bereber; su apellido significa «hijo del patito». Dondequiera que iba lo recibían como sabio y peregrino. Vivió de los regalos de los gobernantes, fue juez en Delhi y en las Maldivas, se casó muchas veces, dejó hijos en varios países y tuvo sirvientes esclavizados. No llevó diario: la Rihla que dictó en Fez es la única fuente sobre su vida. Murió en Marruecos en 1368 o 1369."
+          },
+          "wiki": {
+            "en": "Ibn Battuta",
+            "es": "Ibn Battuta"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1350",
+      "title": {
+        "en": "Gibraltar and Granada",
+        "es": "Gibraltar y Granada"
+      },
+      "text": {
+        "en": "In 1350 Ibn Battuta crossed to al-Andalus to help defend Gibraltar against Castile, but the king of Castile had died of the plague. He toured the Muslim kingdom of Granada instead.",
+        "es": "En 1350 Ibn Battuta cruzó a al-Ándalus para ayudar a defender Gibraltar de Castilla, pero el rey castellano había muerto de la peste. En lugar de luchar, recorrió el reino musulmán de Granada."
+      },
+      "details": {
+        "en": "King Alfonso XI of Castile had besieged Gibraltar, then held by the Marinids, and died of the Black Death in his camp in 1350. With the danger past, Ibn Battuta rode by Marbella and Málaga to Granada, capital of the Nasrid kings and the last Muslim state in Spain, which he called 'the metropolis of Andalusia and the bride of its cities'. There he met scholars and Sufis, among them Ibn Juzayy, a young secretary at the Nasrid court who would later write down his travels. Back in Morocco, he found Marrakesh almost a ghost town, emptied by the plague and by the move of the capital to Fez.",
+        "es": "El rey Alfonso XI de Castilla había sitiado Gibraltar, entonces en manos de los meriníes, y murió de la peste negra en su campamento en 1350. Pasado el peligro, Ibn Battuta fue a caballo por Marbella y Málaga hasta Granada, capital de los reyes nazaríes y último estado musulmán de España, a la que llamó «la metrópoli de al-Ándalus y la novia de sus ciudades». Allí conoció a sabios y sufíes, entre ellos Ibn Juzayy, un joven secretario de la corte nazarí que después escribiría sus viajes. De vuelta en Marruecos, encontró Marrakech casi convertida en una ciudad fantasma, vaciada por la peste y por el traslado de la capital a Fez."
+      },
+      "camera": {
+        "lon": -5,
+        "lat": 36.4,
+        "zoom": 6.5
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              -5.81,
+              35.78
+            ],
+            [
+              -5.6,
+              35.95
+            ],
+            [
+              -5.42,
+              36.05
+            ],
+            [
+              -5.35,
+              36.14
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              -5.35,
+              36.14
+            ],
+            [
+              -5.15,
+              36.43
+            ],
+            [
+              -4.88,
+              36.51
+            ],
+            [
+              -4.42,
+              36.72
+            ],
+            [
+              -3.99,
+              37.0
+            ],
+            [
+              -3.6,
+              37.18
+            ],
+            [
+              -3.99,
+              37.0
+            ],
+            [
+              -4.42,
+              36.72
+            ],
+            [
+              -4.88,
+              36.51
+            ],
+            [
+              -5.15,
+              36.43
+            ],
+            [
+              -5.35,
+              36.14
+            ]
+          ],
+          "by": "land",
+          "icon": "🐎"
+        }
+      ],
+      "places": [
+        {
+          "id": "gibraltar",
+          "name": {
+            "en": "Gibraltar",
+            "es": "Gibraltar"
+          },
+          "at": [
+            -5.3536,
+            36.1408
+          ],
+          "cat": "port",
+          "type": "place",
+          "date": "1350",
+          "place": {
+            "en": "Gibraltar",
+            "es": "Gibraltar"
+          },
+          "text": {
+            "en": "A Marinid fortress at the gate of the Mediterranean, besieged by King Alfonso XI of Castile. Ibn Battuta crossed in 1350 to help defend it, but the king had died of the plague.",
+            "es": "Una fortaleza meriní en la puerta del Mediterráneo, sitiada por el rey Alfonso XI de Castilla. Ibn Battuta cruzó en 1350 para ayudar a defenderla, pero el rey había muerto de la peste."
+          },
+          "wiki": {
+            "en": "Gibraltar",
+            "es": "Gibraltar"
+          }
+        },
+        {
+          "id": "granada",
+          "name": {
+            "en": "Granada",
+            "es": "Granada"
+          },
+          "at": [
+            -3.5986,
+            37.1773
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1350",
+          "place": {
+            "en": "Granada, Spain",
+            "es": "Granada, España"
+          },
+          "text": {
+            "en": "Capital of the Nasrid kingdom, the last Muslim state in Spain. Ibn Battuta called it 'the metropolis of Andalusia and the bride of its cities'; there he met Ibn Juzayy, who would later write down his Rihla.",
+            "es": "Capital del reino nazarí, el último estado musulmán de España. Ibn Battuta la llamó «la metrópoli de al-Ándalus y la novia de sus ciudades»; allí conoció a Ibn Juzayy, quien después escribiría su Rihla."
+          },
+          "wiki": {
+            "en": "Granada",
+            "es": "Granada"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1352-07",
+      "title": {
+        "en": "Across the Sahara to Mali",
+        "es": "Por el Sahara hasta Malí"
+      },
+      "text": {
+        "en": "In 1352 Ibn Battuta crossed the Sahara with a caravan, by the salt mines of Taghaza and the oasis of Oualata, to the court of Mansa Sulayman of Mali. He praised the safety of its roads.",
+        "es": "En 1352 Ibn Battuta cruzó el Sahara con una caravana, por las minas de sal de Taghaza y el oasis de Ualata, hasta la corte de Mansa Sulaymán de Malí. Elogió la seguridad de sus caminos."
+      },
+      "details": {
+        "en": "He left Fez in the autumn of 1351 and spent four months at Sijilmasa buying camels. In February 1352 the caravan set off; after 25 days it reached Taghaza, where men enslaved by the Masufa cut the salt and even the houses were built of salt. The last stretch was the hardest: a Masufa guide rode ahead alone to Oualata to send water back. In all, the 1,600 km crossing took two months. Oualata, now part of Mali, surprised him by the freedom its women enjoyed. Following the Niger, which he took for the Nile, he reached the capital of Mali in July 1352. Mansa Sulayman, Mansa Musa's brother, gave him a meagre welcome gift, then a house and gold after he complained. Ibn Battuta praised the justice of the mansa and the safety of travellers, but disapproved of local dress, and some of his remarks about Black Africans are plainly prejudiced. Where the capital stood is still debated.",
+        "es": "Salió de Fez en el otoño de 1351 y pasó cuatro meses en Siyilmasa comprando camellos. En febrero de 1352 partió la caravana; a los 25 días llegó a Taghaza, donde hombres esclavizados por los masufa cortaban la sal y hasta las casas eran de sal. El último tramo era el más duro: un guía masufa se adelantaba solo hasta Ualata para que enviaran agua. En total, la travesía de 1600 km duró dos meses. Ualata, ya parte de Malí, lo sorprendió por la libertad de que gozaban sus mujeres. Siguiendo el Níger, que creyó que era el Nilo, llegó a la capital de Malí en julio de 1352. Mansa Sulaymán, hermano de Mansa Musa, le dio un pobre regalo de bienvenida y, cuando se quejó, una casa y oro. Ibn Battuta elogió la justicia del mansa y la seguridad de los viajeros, pero desaprobó la forma de vestir, y algunos de sus comentarios sobre los africanos negros son claramente prejuiciosos. Todavía se discute dónde estaba la capital."
+      },
+      "camera": {
+        "lon": -6,
+        "lat": 24,
+        "zoom": 2.8
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              -5.35,
+              36.14
+            ],
+            [
+              -5.33,
+              36.0
+            ],
+            [
+              -5.31,
+              35.89
+            ]
+          ],
+          "by": "sea",
+          "icon": "⛵"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              -5.31,
+              35.89
+            ],
+            [
+              -5.37,
+              35.57
+            ],
+            [
+              -6.0,
+              35.0
+            ],
+            [
+              -6.8,
+              34.04
+            ],
+            [
+              -7.6,
+              33.0
+            ],
+            [
+              -7.98,
+              31.63
+            ],
+            [
+              -6.35,
+              32.34
+            ],
+            [
+              -5.55,
+              33.9
+            ],
+            [
+              -4.98,
+              34.06
+            ],
+            [
+              -4.74,
+              32.68
+            ],
+            [
+              -4.43,
+              31.93
+            ],
+            [
+              -4.28,
+              31.28
+            ],
+            [
+              -4.9,
+              27.0
+            ],
+            [
+              -5.0,
+              23.6
+            ],
+            [
+              -6.2,
+              20.5
+            ],
+            [
+              -7.03,
+              17.3
+            ],
+            [
+              -6.8,
+              15.0
+            ],
+            [
+              -6.27,
+              13.43
+            ],
+            [
+              -8.0,
+              12.65
+            ],
+            [
+              -8.38,
+              11.39
+            ]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        }
+      ],
+      "places": [
+        {
+          "id": "marrakesh",
+          "name": {
+            "en": "Marrakesh",
+            "es": "Marrakech"
+          },
+          "at": [
+            -7.9811,
+            31.6295
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1351",
+          "place": {
+            "en": "Marrakesh, Morocco",
+            "es": "Marrakech, Marruecos"
+          },
+          "text": {
+            "en": "The old imperial capital of Morocco, which Ibn Battuta found almost a ghost town in 1351, emptied by the plague and by the move of the capital to Fez.",
+            "es": "La antigua capital imperial de Marruecos, que Ibn Battuta encontró casi convertida en una ciudad fantasma en 1351, vaciada por la peste y por el traslado de la capital a Fez."
+          },
+          "wiki": {
+            "en": "Marrakesh",
+            "es": "Marrakech"
+          }
+        },
+        {
+          "id": "sijilmasa",
+          "name": {
+            "en": "Sijilmasa",
+            "es": "Siyilmasa"
+          },
+          "at": [
+            -4.28,
+            31.28
+          ],
+          "cat": "caravan",
+          "type": "site",
+          "date": "1351",
+          "place": {
+            "en": "Rissani, Tafilalt, Morocco",
+            "es": "Rissani, Tafilalet, Marruecos"
+          },
+          "text": {
+            "en": "The great caravan city at the northern edge of the Sahara, 'a very beautiful city' of excellent dates, Ibn Battuta wrote. He spent four months here buying camels before crossing the desert.",
+            "es": "La gran ciudad de caravanas en el borde norte del Sahara, «una ciudad muy hermosa» de excelentes dátiles, escribió Ibn Battuta. Pasó aquí cuatro meses comprando camellos antes de cruzar el desierto."
+          },
+          "wiki": {
+            "en": "Sijilmasa",
+            "es": "Siyilmasa"
+          }
+        },
+        {
+          "id": "taghaza",
+          "name": {
+            "en": "Taghaza",
+            "es": "Taghaza"
+          },
+          "at": [
+            -5.0,
+            23.6
+          ],
+          "cat": "caravan",
+          "type": "site",
+          "date": "1352",
+          "until": "1590",
+          "place": {
+            "en": "Sahara, northern Mali",
+            "es": "Sahara, norte de Malí"
+          },
+          "text": {
+            "en": "A salt mine in the heart of the Sahara, 25 days from Sijilmasa, where men enslaved by the Masufa cut slabs of salt and even the houses and the mosque were built of salt. Ibn Battuta hated its flies and brackish water.",
+            "es": "Una mina de sal en pleno Sahara, a 25 días de Siyilmasa, donde hombres esclavizados por los masufa cortaban losas de sal y hasta las casas y la mezquita eran de sal. Ibn Battuta detestó sus moscas y su agua salobre."
+          },
+          "details": {
+            "en": "Nothing grew there, and food had to be brought from far away, yet Taghaza was awash with the gold of Mali. Its slabs of salt were carried south by camel to Oualata and the cities of Mali, where salt was scarce and served as money; between Oualata and the capital of Mali, Ibn Battuta noted, its value rose fourfold. The mines were abandoned around the 1590s, after Morocco seized them.",
+            "es": "Allí no crecía nada y la comida debía traerse de muy lejos, pero Taghaza rebosaba del oro de Malí. Sus losas de sal se llevaban en camello hacia el sur, a Ualata y las ciudades de Malí, donde la sal escaseaba y servía como dinero; entre Ualata y la capital de Malí, anotó Ibn Battuta, su valor se multiplicaba por cuatro. Las minas se abandonaron hacia la década de 1590, después de que Marruecos se apoderara de ellas."
+          },
+          "wiki": {
+            "en": "Taghaza",
+            "es": "Taghaza"
+          }
+        },
+        {
+          "id": "oualata",
+          "name": {
+            "en": "Oualata",
+            "es": "Ualata"
+          },
+          "at": [
+            -7.025,
+            17.3
+          ],
+          "cat": "caravan",
+          "type": "place",
+          "date": "1352",
+          "place": {
+            "en": "Oualata, Mauritania",
+            "es": "Ualata, Mauritania"
+          },
+          "text": {
+            "en": "The oasis town where the caravans from the north entered the Mali Empire. Its people were mostly Masufa, and Ibn Battuta was surprised by the respect and freedom its women enjoyed.",
+            "es": "La ciudad oasis donde las caravanas del norte entraban en el Imperio de Malí. Su gente era sobre todo masufa, y a Ibn Battuta le sorprendieron el respeto y la libertad de que gozaban sus mujeres."
+          },
+          "wiki": {
+            "en": "Oualata",
+            "es": "Ualata"
+          }
+        },
+        {
+          "id": "mansa-sulayman",
+          "name": {
+            "en": "Mansa Sulayman",
+            "es": "Mansa Sulaymán"
+          },
+          "at": [
+            -8.38,
+            11.39
+          ],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1352-07",
+          "place": {
+            "en": "Capital of Mali (its site is debated; Niani, Guinea, is one candidate)",
+            "es": "Capital de Malí (su lugar se discute; Niani, en Guinea, es una posibilidad)"
+          },
+          "text": {
+            "en": "Mansa of Mali from about 1341 to about 1359 and brother of Mansa Musa. Ibn Battuta stayed at his court in 1352–1353 and found him a 'miserly king', but praised the justice and safety of his realm.",
+            "es": "Mansa de Malí de hacia 1341 a hacia 1359 y hermano de Mansa Musa. Ibn Battuta estuvo en su corte en 1352-1353 y lo consideró «un rey tacaño», pero elogió la justicia y la seguridad de su reino."
+          },
+          "details": {
+            "en": "Ibn Battuta's account, the fullest by an eyewitness of Mali at its height, describes the mansa's gold and silver lances and the bala, a xylophone of reeds and gourds, its earliest mention. He arrived in time for a memorial feast for the Marinid sultan Abu al-Hasan, then complained of his meagre welcome gift, and the mansa gave him a house and gold. Some historians doubt parts of the account, and his remarks about Black Africans are plainly prejudiced.",
+            "es": "El relato de Ibn Battuta, el más completo de un testigo sobre Malí en su apogeo, describe las lanzas de oro y plata del mansa y el bala, un xilófono de cañas y calabazas, su primera mención. Llegó a tiempo para un banquete en memoria del sultán meriní Abu al-Hasan, luego se quejó de su pobre regalo de bienvenida, y el mansa le dio una casa y oro. Algunos historiadores dudan de partes del relato, y sus comentarios sobre los africanos negros son claramente prejuiciosos."
+          },
+          "wiki": {
+            "en": "Sulayman of Mali",
+            "es": "Souleyman"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1354",
+      "title": {
+        "en": "Timbuktu, Gao and the Rihla",
+        "es": "Tombuctú, Gao y la Rihla"
+      },
+      "text": {
+        "en": "On the way home he passed Timbuktu, then a small town, and went down the Niger by canoe to Gao. Back in Fez in 1354, he dictated his travels to the scholar Ibn Juzayy: the Rihla.",
+        "es": "De regreso pasó por Tombuctú, entonces un pueblo pequeño, y bajó por el Níger en canoa hasta Gao. De vuelta en Fez en 1354, dictó sus viajes al sabio Ibn Juzayy: la Rihla."
+      },
+      "details": {
+        "en": "He left the capital in February 1353 with a Malian merchant, saw hippopotamuses in the Niger, which boatmen hunted with harpoons on ropes, and reached Timbuktu, which would become a great city only later. He spent a month in Gao, then crossed the desert to Takedda, a town of copper mines. There an order came from Sultan Abu Inan to return, and in September 1353 he set out north with a large caravan that carried 600 enslaved women across the Sahara. In Fez the sultan asked Ibn Juzayy to write down his story; the Rihla was finished in December 1355. Ibn Battuta had kept no notes, and Ibn Juzayy borrowed some descriptions from earlier travellers. The traveller spent his last years as a judge in Morocco and died in 1368 or 1369.",
+        "es": "Salió de la capital en febrero de 1353 con un mercader de Malí, vio hipopótamos en el Níger, que los barqueros cazaban con arpones atados a cuerdas, y llegó a Tombuctú, que solo después se convertiría en una gran ciudad. Pasó un mes en Gao y luego cruzó el desierto hasta Takedda, una ciudad de minas de cobre. Allí le llegó la orden del sultán Abu Inán de volver, y en septiembre de 1353 partió hacia el norte con una gran caravana que llevaba a 600 mujeres esclavizadas a través del Sahara. En Fez el sultán pidió a Ibn Juzayy que escribiera su historia; la Rihla se terminó en diciembre de 1355. Ibn Battuta no había tomado notas, e Ibn Juzayy tomó algunas descripciones de viajeros anteriores. El viajero pasó sus últimos años como juez en Marruecos y murió en 1368 o 1369."
+      },
+      "camera": {
+        "lon": -2,
+        "lat": 23,
+        "zoom": 2.6
+      },
+      "moves": [
+        {
+          "side": "battuta",
+          "path": [
+            [
+              -8.38,
+              11.39
+            ],
+            [
+              -8.0,
+              12.65
+            ],
+            [
+              -6.27,
+              13.43
+            ],
+            [
+              -4.55,
+              13.9
+            ],
+            [
+              -4.0,
+              15.0
+            ],
+            [
+              -3.01,
+              16.77
+            ]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              -3.01,
+              16.77
+            ],
+            [
+              -3.0,
+              16.7
+            ],
+            [
+              -1.93,
+              16.88
+            ],
+            [
+              -1.4,
+              17.03
+            ],
+            [
+              -0.35,
+              16.95
+            ],
+            [
+              -0.04,
+              16.27
+            ]
+          ],
+          "by": "river",
+          "icon": "🛶"
+        },
+        {
+          "side": "battuta",
+          "path": [
+            [
+              -0.04,
+              16.27
+            ],
+            [
+              2.5,
+              16.7
+            ],
+            [
+              6.78,
+              17.52
+            ],
+            [
+              7.5,
+              20.0
+            ],
+            [
+              5.5,
+              23.3
+            ],
+            [
+              2.5,
+              26.5
+            ],
+            [
+              -0.29,
+              27.87
+            ],
+            [
+              -2.2,
+              29.6
+            ],
+            [
+              -4.28,
+              31.28
+            ],
+            [
+              -4.43,
+              31.93
+            ],
+            [
+              -4.74,
+              32.68
+            ],
+            [
+              -4.98,
+              34.06
+            ]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        }
+      ],
+      "places": [
+        {
+          "id": "timbuktu",
+          "name": {
+            "en": "Timbuktu",
+            "es": "Tombuctú"
+          },
+          "at": [
+            -3.0094,
+            16.7758
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1353",
+          "place": {
+            "en": "Timbuktu, Mali",
+            "es": "Tombuctú, Malí"
+          },
+          "text": {
+            "en": "A small trading town on the edge of the Niger in Ibn Battuta's day; it became a great city of markets and scholars only later. He passed through it on his way home in 1353.",
+            "es": "Un pequeño pueblo comercial junto al Níger en tiempos de Ibn Battuta; solo después se convirtió en una gran ciudad de mercados y sabios. Pasó por ella de regreso a casa en 1353."
+          },
+          "wiki": {
+            "en": "Timbuktu",
+            "es": "Tombuctú"
+          }
+        },
+        {
+          "id": "gao",
+          "name": {
+            "en": "Gao",
+            "es": "Gao"
+          },
+          "at": [
+            -0.044,
+            16.272
+          ],
+          "cat": "city",
+          "type": "place",
+          "date": "1353",
+          "place": {
+            "en": "Gao, Mali",
+            "es": "Gao, Malí"
+          },
+          "text": {
+            "en": "An important trading town on the Niger, then part of the Mali Empire and later the capital of Songhai. Ibn Battuta reached it by canoe from Timbuktu and stayed a month.",
+            "es": "Una importante ciudad comercial junto al Níger, entonces parte del Imperio de Malí y después capital de Songhai. Ibn Battuta llegó en canoa desde Tombuctú y se quedó un mes."
+          },
+          "wiki": {
+            "en": "Gao",
+            "es": "Gao"
+          }
+        },
+        {
+          "id": "takedda",
+          "name": {
+            "en": "Takedda",
+            "es": "Takedda"
+          },
+          "at": [
+            6.7831,
+            17.5183
+          ],
+          "cat": "caravan",
+          "type": "site",
+          "date": "1353",
+          "place": {
+            "en": "Near Agadez, Niger",
+            "es": "Cerca de Agadez, Níger"
+          },
+          "text": {
+            "en": "A desert town of copper mines west of the Aïr mountains, whose copper bars were traded south for gold. Here an order from the sultan of Morocco called Ibn Battuta home.",
+            "es": "Una ciudad del desierto con minas de cobre, al oeste de los montes Aïr, cuyas barras de cobre se cambiaban por oro en el sur. Aquí le llegó a Ibn Battuta la orden del sultán de Marruecos de volver."
+          },
+          "wiki": {
+            "en": "Takedda",
+            "es": ""
+          }
+        },
+        {
+          "id": "the-rihla",
+          "name": {
+            "en": "The Rihla",
+            "es": "La Rihla"
+          },
+          "at": [
+            -4.974,
+            34.065
+          ],
+          "cat": "book",
+          "icon": "📖",
+          "type": "work",
+          "date": "1354",
+          "end": "1355-12",
+          "place": {
+            "en": "Written in Fez, Morocco",
+            "es": "Escrita en Fez, Marruecos"
+          },
+          "text": {
+            "en": "'A Gift to Those Who Contemplate the Wonders of Cities and the Marvels of Travelling': Ibn Battuta's travels as written down in Fez by Ibn Juzayy, finished in December 1355.",
+            "es": "«Un regalo para quienes contemplan las maravillas de las ciudades y los prodigios de los viajes»: los viajes de Ibn Battuta escritos en Fez por Ibn Juzayy y terminados en diciembre de 1355."
+          },
+          "details": {
+            "en": "Ibn Battuta dictated from memory, without notes, and Ibn Juzayy, a scholar from Granada and secretary of the sultan, shaped the text, borrowing some descriptions of Damascus, Mecca and Palestine from earlier travellers such as Ibn Jubayr. Scholars doubt some journeys, such as those to Bolghar, Sanaa and Beijing. The book was little known outside the Muslim world until European scholars found copies in the 19th century; a manuscript in Paris may be in Ibn Juzayy's own hand.",
+            "es": "Ibn Battuta dictó de memoria, sin notas, e Ibn Juzayy, un sabio de Granada y secretario del sultán, dio forma al texto y tomó algunas descripciones de Damasco, La Meca y Palestina de viajeros anteriores como Ibn Yubair. Los estudiosos dudan de algunos viajes, como los de Bolgar, Saná y Pekín. El libro fue poco conocido fuera del mundo musulmán hasta que estudiosos europeos hallaron copias en el siglo XIX; un manuscrito de París quizá sea de puño y letra de Ibn Juzayy."
+          },
+          "wiki": {
+            "en": "Rihla",
+            "es": "Rihla"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Ibn Battuta covered some 117,000 km, more than any other traveller of pre-modern times, and his Rihla is a unique portrait of the 14th-century world from Mali to China, seen by a Muslim scholar who found patrons and fellow believers almost everywhere. Parts of it are borrowed or doubted, but much has been confirmed. Little known outside the Muslim world for centuries, it was rediscovered by European scholars in the 19th century and is now read in many languages.",
+    "es": "Ibn Battuta recorrió unos 117 000 km, más que ningún otro viajero antes de la época moderna, y su Rihla es un retrato único del mundo del siglo XIV, de Malí a China, visto por un sabio musulmán que encontró protectores y correligionarios casi en todas partes. Partes del libro son prestadas o dudosas, pero mucho se ha confirmado. Poco conocida fuera del mundo musulmán durante siglos, los estudiosos europeos la redescubrieron en el siglo XIX y hoy se lee en muchos idiomas."
+  },
+  "sources": [
+    {
+      "title": "Ibn Battuta (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ibn_Battuta"
+    },
+    {
+      "title": "Rihla (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rihla"
+    },
+    {
+      "title": "Ibn Juzayy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ibn_Juzayy"
+    },
+    {
+      "title": "Tangier (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tangier"
+    },
+    {
+      "title": "Tunis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tunis"
+    },
+    {
+      "title": "Alexandria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Alexandria"
+    },
+    {
+      "title": "Lighthouse of Alexandria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lighthouse_of_Alexandria"
+    },
+    {
+      "title": "Cairo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cairo"
+    },
+    {
+      "title": "ʿAydhab (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/ʿAydhab"
+    },
+    {
+      "title": "Damascus (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Damascus"
+    },
+    {
+      "title": "Medina (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Medina"
+    },
+    {
+      "title": "Mecca (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mecca"
+    },
+    {
+      "title": "Hajj (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hajj"
+    },
+    {
+      "title": "Najaf (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Najaf"
+    },
+    {
+      "title": "Shiraz (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shiraz"
+    },
+    {
+      "title": "Baghdad (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Baghdad"
+    },
+    {
+      "title": "Abu Sa'id Bahadur Khan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Abu_Sa'id_Bahadur_Khan"
+    },
+    {
+      "title": "Tabriz (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tabriz"
+    },
+    {
+      "title": "Aden (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aden"
+    },
+    {
+      "title": "Mogadishu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mogadishu"
+    },
+    {
+      "title": "Mombasa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mombasa"
+    },
+    {
+      "title": "Kilwa Kisiwani (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kilwa_Kisiwani"
+    },
+    {
+      "title": "Al-Baleed Archaeological Park (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Al-Baleed_Archaeological_Park"
+    },
+    {
+      "title": "Qalhat (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Qalhat"
+    },
+    {
+      "title": "Kingdom of Hormuz (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hormuz"
+    },
+    {
+      "title": "Pearl hunting (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pearl_hunting"
+    },
+    {
+      "title": "Futuwwa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Futuwwa"
+    },
+    {
+      "title": "Konya (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Konya"
+    },
+    {
+      "title": "Orhan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Orhan"
+    },
+    {
+      "title": "Sinop, Turkey (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sinop,_Turkey"
+    },
+    {
+      "title": "Feodosia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Feodosia"
+    },
+    {
+      "title": "Golden Horde (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Golden_Horde"
+    },
+    {
+      "title": "Özbeg Khan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Özbeg_Khan"
+    },
+    {
+      "title": "Bolghar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bolghar"
+    },
+    {
+      "title": "Sarai (city) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sarai_(city)"
+    },
+    {
+      "title": "Constantinople (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Constantinople"
+    },
+    {
+      "title": "Andronikos III Palaiologos (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Andronikos_III_Palaiologos"
+    },
+    {
+      "title": "Samarkand (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Samarkand"
+    },
+    {
+      "title": "Tarmashirin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tarmashirin"
+    },
+    {
+      "title": "Balkh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Balkh"
+    },
+    {
+      "title": "Hindu Kush (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hindu_Kush"
+    },
+    {
+      "title": "Baba Farid (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Baba_Farid"
+    },
+    {
+      "title": "Muhammad bin Tughluq (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Muhammad_bin_Tughluq"
+    },
+    {
+      "title": "Delhi Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Delhi_Sultanate"
+    },
+    {
+      "title": "Khambhāt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Khambhāt"
+    },
+    {
+      "title": "Kozhikode (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kozhikode"
+    },
+    {
+      "title": "Zamorin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zamorin"
+    },
+    {
+      "title": "Junk (ship) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Junk_(ship)"
+    },
+    {
+      "title": "Maldives (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maldives"
+    },
+    {
+      "title": "Cowrie (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cowrie"
+    },
+    {
+      "title": "Adam's Peak (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Adam's_Peak"
+    },
+    {
+      "title": "Madurai Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Madurai_Sultanate"
+    },
+    {
+      "title": "Shah Jalal (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shah_Jalal"
+    },
+    {
+      "title": "Muslin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Muslin"
+    },
+    {
+      "title": "Samudera Pasai Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Samudera_Pasai_Sultanate"
+    },
+    {
+      "title": "Quanzhou (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Quanzhou"
+    },
+    {
+      "title": "Hangzhou (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hangzhou"
+    },
+    {
+      "title": "Dadu (Beijing) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dadu_(Beijing)"
+    },
+    {
+      "title": "Grand Canal (China) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Grand_Canal_(China)"
+    },
+    {
+      "title": "Great Wall of China (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Wall_of_China"
+    },
+    {
+      "title": "Porcelain (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Porcelain"
+    },
+    {
+      "title": "Black Death (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Black_Death"
+    },
+    {
+      "title": "Abu Inan Faris (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Abu_Inan_Faris"
+    },
+    {
+      "title": "Gibraltar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gibraltar"
+    },
+    {
+      "title": "Granada (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Granada"
+    },
+    {
+      "title": "Marrakesh (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Marrakesh"
+    },
+    {
+      "title": "Sijilmasa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sijilmasa"
+    },
+    {
+      "title": "Taghaza (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Taghaza"
+    },
+    {
+      "title": "Oualata (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Oualata"
+    },
+    {
+      "title": "Mali Empire (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mali_Empire"
+    },
+    {
+      "title": "Sulayman of Mali (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sulayman_of_Mali"
+    },
+    {
+      "title": "Timbuktu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Timbuktu"
+    },
+    {
+      "title": "Gao (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gao"
+    },
+    {
+      "title": "Takedda (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Takedda"
+    }
+  ]
+}
