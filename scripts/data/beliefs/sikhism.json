@@ -1,0 +1,2663 @@
+{
+  "id": "sikhism",
+  "name": {
+    "en": "Sikhism",
+    "es": "El sijismo"
+  },
+  "icon": "☬",
+  "era": "early-modern",
+  "region": {
+    "en": "Punjab, then the world",
+    "es": "El Punyab, y después el mundo"
+  },
+  "start": "1469",
+  "end": "2019",
+  "summary": {
+    "en": "From Guru Nanak, born in 1469 in Punjab, through the ten Gurus, the Golden Temple, the martyrdoms under the Mughals, the Khalsa and the scripture that became the Guru, to Ranjit Singh's empire, the Partition of Punjab, 1984 and the Kartarpur Corridor.",
+    "es": "De Gurú Nanak, nacido en 1469 en el Punyab, a los diez gurús, el Templo Dorado, los martirios bajo los mogoles, la Khalsa y la escritura que se volvió gurú, y de allí al imperio de Ranjit Singh, la partición del Punyab, 1984 y el corredor de Kartarpur."
+  },
+  "camera": {
+    "lon": 74.8,
+    "lat": 31.2,
+    "zoom": 5.5
+  },
+  "defs": {
+    "g1539": {
+      "land": [
+        [
+          74.5,
+          32.3
+        ],
+        [
+          75.3,
+          32.35
+        ],
+        [
+          75.6,
+          31.7
+        ],
+        [
+          75.4,
+          31.2
+        ],
+        [
+          74.9,
+          31.1
+        ],
+        [
+          74.5,
+          31.5
+        ]
+      ]
+    },
+    "g1604": {
+      "land": [
+        [
+          73.9,
+          31.9
+        ],
+        [
+          74.5,
+          32.35
+        ],
+        [
+          75.4,
+          32.4
+        ],
+        [
+          75.9,
+          31.8
+        ],
+        [
+          75.9,
+          31.2
+        ],
+        [
+          75.2,
+          30.95
+        ],
+        [
+          74.4,
+          31.0
+        ],
+        [
+          73.9,
+          31.3
+        ]
+      ]
+    },
+    "g1675": {
+      "land": [
+        [
+          73.6,
+          31.9
+        ],
+        [
+          74.4,
+          32.4
+        ],
+        [
+          75.4,
+          32.45
+        ],
+        [
+          76.3,
+          32.0
+        ],
+        [
+          76.9,
+          31.3
+        ],
+        [
+          76.7,
+          30.6
+        ],
+        [
+          75.7,
+          30.5
+        ],
+        [
+          74.6,
+          30.8
+        ],
+        [
+          73.8,
+          31.1
+        ]
+      ]
+    },
+    "sikh_empire": {
+      "land": [
+        [
+          71.0,
+          34.0
+        ],
+        [
+          71.5,
+          34.5
+        ],
+        [
+          72.4,
+          34.6
+        ],
+        [
+          73.2,
+          35.0
+        ],
+        [
+          74.6,
+          34.95
+        ],
+        [
+          75.5,
+          34.65
+        ],
+        [
+          76.5,
+          34.75
+        ],
+        [
+          77.6,
+          34.6
+        ],
+        [
+          78.5,
+          34.0
+        ],
+        [
+          78.6,
+          32.8
+        ],
+        [
+          77.6,
+          32.6
+        ],
+        [
+          76.8,
+          32.4
+        ],
+        [
+          76.4,
+          31.9
+        ],
+        [
+          76.5,
+          31.3
+        ],
+        [
+          75.9,
+          31.1
+        ],
+        [
+          75.2,
+          31.0
+        ],
+        [
+          74.6,
+          31.0
+        ],
+        [
+          73.9,
+          30.4
+        ],
+        [
+          73.0,
+          29.8
+        ],
+        [
+          71.6,
+          29.4
+        ],
+        [
+          70.7,
+          28.7
+        ],
+        [
+          70.2,
+          29.0
+        ],
+        [
+          70.3,
+          29.6
+        ],
+        [
+          70.4,
+          30.5
+        ],
+        [
+          70.6,
+          31.5
+        ],
+        [
+          70.6,
+          32.5
+        ],
+        [
+          70.9,
+          33.1
+        ],
+        [
+          71.3,
+          33.6
+        ]
+      ]
+    }
+  },
+  "sides": [
+    {
+      "id": "gurus",
+      "name": {
+        "en": "The Gurus' Punjab",
+        "es": "El Punyab de los gurús"
+      },
+      "color": "#e8590c"
+    },
+    {
+      "id": "empire",
+      "name": {
+        "en": "Sikh Empire",
+        "es": "Imperio sij"
+      },
+      "color": "#5dade2"
+    },
+    {
+      "id": "british",
+      "name": {
+        "en": "British India",
+        "es": "India británica"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "pakpunjab",
+      "name": {
+        "en": "Punjab, Pakistan",
+        "es": "Punyab (Pakistán)"
+      },
+      "color": "#196f3d"
+    },
+    {
+      "id": "indpunjab",
+      "name": {
+        "en": "Punjab, India",
+        "es": "Punyab (India)"
+      },
+      "color": "#a04000"
+    },
+    {
+      "id": "routes",
+      "name": {
+        "en": "Journeys",
+        "es": "Viajes"
+      },
+      "color": "#7d3c98"
+    }
+  ],
+  "steps": [
+    {
+      "date": "1499",
+      "title": {
+        "en": "No Hindu, no Muslim",
+        "es": "Ni hindú ni musulmán"
+      },
+      "text": {
+        "en": "Nanak was born in 1469 at Talwandi, today Nankana Sahib in Pakistan. About 1499, Sikh tradition says, he vanished into the river at Sultanpur Lodhi and came back saying: 'There is no Hindu, there is no Muslim.'",
+        "es": "Nanak nació en 1469 en Talwandi, hoy Nankana Sahib (Pakistán). Hacia 1499, dice la tradición sij, desapareció en el río de Sultanpur Lodhi y volvió diciendo: «No hay hindú, no hay musulmán»."
+      },
+      "details": {
+        "en": "Nanak's parents, Mehta Kalu and Tripta, were Hindus of the Khatri caste; his father kept the village accounts for a Muslim landlord, Rai Bular, and his childhood friend Mardana was a Muslim musician. The janamsakhis, stories of his life written down long after his death, mix memory and legend: as a boy he refused the sacred thread worn by high-caste Hindu boys, and spent money his father gave him for trading on food for wandering holy men. He married Sulakhani and worked in the storehouse of the governor Daulat Khan Lodi at Sultanpur. One morning, the story goes, he went to bathe in the Bein river and vanished for three days. When he came back he would say only: 'There is no Hindu, there is no Muslim', meaning that all people are equal before the one God. The event is usually dated about 1499; some accounts give 1496 or the early 1500s.",
+        "es": "Los padres de Nanak, Mehta Kalu y Tripta, eran hindúes de la casta khatri; su padre llevaba las cuentas de la aldea para un terrateniente musulmán, Rai Bular, y su amigo de la infancia, Mardana, era un músico musulmán. Los janamsakhis, relatos de su vida escritos mucho después de su muerte, mezclan recuerdos y leyendas: de niño rechazó el cordón sagrado de los niños hindúes de casta alta y gastó el dinero que su padre le dio para comerciar en dar de comer a santos errantes. Se casó con Sulakhani y trabajó en el almacén del gobernador Daulat Khan Lodi, en Sultanpur. Una mañana, cuenta la historia, fue a bañarse al río Bein y desapareció tres días. Al volver solo decía: «No hay hindú, no hay musulmán», es decir, que todas las personas son iguales ante el Dios único. El hecho suele fecharse hacia 1499; algunos relatos dan 1496 o los primeros años de 1500."
+      },
+      "camera": {
+        "lon": 74.45,
+        "lat": 31.35,
+        "zoom": 12.0
+      },
+      "places": [
+        {
+          "id": "guru-nanak",
+          "name": {
+            "en": "Guru Nanak",
+            "es": "Gurú Nanak"
+          },
+          "at": [
+            75.185,
+            31.2165
+          ],
+          "cat": "founder",
+          "type": "person",
+          "date": "1499",
+          "life": [
+            "1469-04-15",
+            "1539-09-22"
+          ],
+          "place": {
+            "en": "Sultanpur Lodhi, Punjab, India",
+            "es": "Sultanpur Lodhi, Punyab, India"
+          },
+          "text": {
+            "en": "The founder of Sikhism and first of its ten Gurus (1469–1539). He taught devotion to one God (Ik Onkar), honest work, sharing with others and the equality of all people, in hymns sung to music.",
+            "es": "El fundador del sijismo y primero de sus diez gurús (1469-1539). Enseñó la devoción a un solo Dios (Ik Onkar), el trabajo honrado, compartir con los demás y la igualdad de todas las personas, en himnos cantados con música."
+          },
+          "details": {
+            "en": "Born a Hindu of the Khatri caste, Nanak learned from Hindu and Muslim holy men, yet taught a path of his own. His 974 hymns, among them the Japji Sahib that Sikhs recite every morning, are in the Guru Granth Sahib. Sikhs believe that his light passed to each of the nine Gurus who followed him. His birthday, Guru Nanak Gurpurab, is celebrated every November. Gurdwara Ber Sahib in Sultanpur stands by the tree where he is said to have meditated.",
+            "es": "Nacido hindú, de la casta khatri, Nanak aprendió de santos hindúes y musulmanes, pero enseñó un camino propio. Sus 974 himnos, entre ellos el Japji Sahib que los sijs recitan cada mañana, están en el Gurú Granth Sahib. Los sijs creen que su luz pasó a cada uno de los nueve gurús que lo siguieron. Su cumpleaños, el Guru Nanak Gurpurab, se celebra cada noviembre. El gurdwara Ber Sahib de Sultanpur está junto al árbol donde, según se dice, meditaba."
+          },
+          "wiki": {
+            "en": "Guru Nanak",
+            "es": "Gurú Nanak Dev Ji"
+          }
+        },
+        {
+          "id": "nankana-sahib",
+          "name": {
+            "en": "Nankana Sahib",
+            "es": "Nankana Sahib"
+          },
+          "at": [
+            73.6972,
+            31.4475
+          ],
+          "cat": "sacred",
+          "type": "place",
+          "date": "1469",
+          "place": {
+            "en": "Punjab, Pakistan",
+            "es": "Punyab, Pakistán"
+          },
+          "text": {
+            "en": "The village of Talwandi, where Guru Nanak was born in 1469, now a town named Nankana Sahib in his honour. Gurdwara Janam Asthan marks his birthplace; since 1947 it lies in Pakistan.",
+            "es": "La aldea de Talwandi, donde nació Gurú Nanak en 1469, hoy una ciudad llamada Nankana Sahib en su honor. El gurdwara Janam Asthan marca el lugar donde nació; desde 1947 está en Pakistán."
+          },
+          "details": {
+            "en": "Several gurdwaras in the town mark places from Nanak's childhood, such as the field where, a story says, a cobra shaded the sleeping boy from the sun. On 20 February 1921 men of its hereditary keeper, Mahant Narayan Das, killed Sikh reformers at Janam Asthan, 86 by the official count and 140 to 260 by other accounts, a turning point in the campaign to put gurdwaras under elected Sikh control. Since Partition, groups of pilgrims from India cross the border to celebrate Guru Nanak's birthday here.",
+            "es": "Varios gurdwaras de la ciudad marcan lugares de la niñez de Nanak, como el campo donde, según un relato, una cobra protegió del sol al niño dormido. El 20 de febrero de 1921, hombres de su custodio hereditario, el mahant Narayan Das, mataron en Janam Asthan a reformistas sijs, 86 según la cifra oficial y entre 140 y 260 según otras fuentes, un momento clave de la campaña para poner los gurdwaras bajo control de los sijs por elección. Desde la Partición, grupos de peregrinos de la India cruzan la frontera para celebrar aquí el cumpleaños de Gurú Nanak."
+          },
+          "wiki": {
+            "en": "Nankana Sahib",
+            "es": "Nankana Sahib"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1520",
+      "title": {
+        "en": "Journeys of a teacher",
+        "es": "Los viajes de un maestro"
+      },
+      "text": {
+        "en": "With the Muslim musician Mardana, Nanak set out on long journeys to teach. Sikh tradition tells of four great tours, east to Assam, south to Sri Lanka, north to Tibet and west to Mecca and Baghdad; historians debate the details.",
+        "es": "Con el músico musulmán Mardana, Nanak hizo largos viajes para enseñar. La tradición sij cuenta cuatro: al este hasta Assam, al sur hasta Sri Lanka, al norte hasta el Tíbet y al oeste hasta La Meca y Bagdad; los detalles se discuten."
+      },
+      "details": {
+        "en": "The journeys, called udasis, are told in the janamsakhis, written down after his death; their routes, dates and many miracles are debated, and the earliest Sikh texts do not mention them all. As tradition tells it, Nanak dressed in a mix of the clothes of Hindu and Muslim holy men, visited temples, mosques and Sufi shrines, and debated with yogis, Brahmins and qazis, while Mardana played the rabab to his songs. At Haridwar, it is said, he threw water toward his fields in Punjab instead of toward the rising sun, to show that empty rituals help no one. A stone in Baghdad with a Turkish inscription naming 'Baba Nanak' is read by some as proof of his visit; others date it to the 19th century. Coming home about 1520, he saw Babur's army sack Saidpur.",
+        "es": "Los viajes, llamados udasis, se cuentan en los janamsakhis, escritos después de su muerte; sus rutas, fechas y muchos milagros se discuten, y los textos sijs más antiguos no los mencionan todos. Según la tradición, Nanak vestía una mezcla de ropas de santos hindúes y musulmanes, visitaba templos, mezquitas y santuarios sufíes y debatía con yoguis, brahmanes y cadíes, mientras Mardana tocaba el rabab para sus cantos. En Haridwar, se cuenta, arrojó agua hacia sus campos del Punyab en vez de hacia el sol naciente, para mostrar que los ritos vacíos no ayudan a nadie. Una piedra de Bagdad con una inscripción turca que nombra a «Baba Nanak» es para algunos la prueba de su visita; otros la fechan en el siglo XIX. De regreso, hacia 1520, vio al ejército de Babur saquear Saidpur."
+      },
+      "camera": {
+        "lon": 67.0,
+        "lat": 24.0,
+        "zoom": 2.1
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "by": "land",
+          "icon": "🚶",
+          "label": {
+            "en": "East",
+            "es": "Este"
+          },
+          "path": [
+            [
+              75.2,
+              31.2
+            ],
+            [
+              77.2,
+              28.6
+            ],
+            [
+              78.16,
+              29.95
+            ],
+            [
+              80.3,
+              26.4
+            ],
+            [
+              83.0,
+              25.3
+            ],
+            [
+              85.0,
+              24.8
+            ],
+            [
+              88.4,
+              24.0
+            ],
+            [
+              91.7,
+              26.2
+            ],
+            [
+              89.5,
+              23.0
+            ],
+            [
+              87.0,
+              21.5
+            ],
+            [
+              85.8,
+              19.8
+            ]
+          ]
+        },
+        {
+          "side": "routes",
+          "by": "land",
+          "icon": "🚶",
+          "label": {
+            "en": "South",
+            "es": "Sur"
+          },
+          "path": [
+            [
+              75.2,
+              31.2
+            ],
+            [
+              74.6,
+              26.5
+            ],
+            [
+              75.8,
+              23.2
+            ],
+            [
+              77.5,
+              17.9
+            ],
+            [
+              78.5,
+              13.0
+            ],
+            [
+              79.3,
+              9.3
+            ],
+            [
+              80.0,
+              8.0
+            ],
+            [
+              81.7,
+              7.7
+            ]
+          ]
+        },
+        {
+          "side": "routes",
+          "by": "land",
+          "icon": "🚶",
+          "label": {
+            "en": "North",
+            "es": "Norte"
+          },
+          "path": [
+            [
+              75.2,
+              31.2
+            ],
+            [
+              74.9,
+              32.7
+            ],
+            [
+              74.8,
+              34.1
+            ],
+            [
+              75.8,
+              34.6
+            ],
+            [
+              77.6,
+              34.2
+            ],
+            [
+              79.7,
+              32.5
+            ],
+            [
+              81.3,
+              31.1
+            ]
+          ]
+        },
+        {
+          "side": "routes",
+          "by": "land",
+          "icon": "🚶",
+          "label": {
+            "en": "West",
+            "es": "Oeste"
+          },
+          "path": [
+            [
+              75.2,
+              31.2
+            ],
+            [
+              71.5,
+              30.2
+            ],
+            [
+              68.9,
+              27.7
+            ],
+            [
+              66.0,
+              25.6
+            ],
+            [
+              62.0,
+              25.4
+            ],
+            [
+              58.0,
+              26.6
+            ],
+            [
+              54.0,
+              27.4
+            ],
+            [
+              51.0,
+              29.0
+            ],
+            [
+              48.0,
+              30.4
+            ],
+            [
+              44.0,
+              27.0
+            ],
+            [
+              39.83,
+              21.42
+            ],
+            [
+              39.6,
+              24.47
+            ],
+            [
+              44.37,
+              33.31
+            ],
+            [
+              47.1,
+              34.3
+            ],
+            [
+              51.4,
+              35.7
+            ],
+            [
+              59.6,
+              36.3
+            ],
+            [
+              62.2,
+              34.35
+            ],
+            [
+              69.2,
+              34.5
+            ],
+            [
+              71.6,
+              34.0
+            ],
+            [
+              74.26,
+              32.04
+            ]
+          ]
+        }
+      ],
+      "places": [
+        {
+          "id": "bhai-mardana",
+          "name": {
+            "en": "Bhai Mardana",
+            "es": "Bhai Mardana"
+          },
+          "at": [
+            73.71,
+            31.46
+          ],
+          "cat": "art",
+          "type": "person",
+          "date": "1500",
+          "life": [
+            "1459",
+            "1534"
+          ],
+          "place": {
+            "en": "Talwandi (Nankana Sahib), Pakistan",
+            "es": "Talwandi (Nankana Sahib), Pakistán"
+          },
+          "text": {
+            "en": "A Muslim musician from Nanak's village and one of the first Sikhs, who played the rabab, a stringed instrument, while the Guru sang his hymns on their journeys. He died at Kartarpur in 1534.",
+            "es": "Un músico musulmán de la aldea de Nanak y uno de los primeros sijs, que tocaba el rabab, un instrumento de cuerda, mientras el gurú cantaba sus himnos en sus viajes. Murió en Kartarpur en 1534."
+          },
+          "wiki": {
+            "en": "Bhai Mardana",
+            "es": ""
+          }
+        },
+        {
+          "id": "mount-kailash",
+          "name": {
+            "en": "Mount Kailash",
+            "es": "Monte Kailash"
+          },
+          "at": [
+            81.3125,
+            31.0667
+          ],
+          "cat": "sacred",
+          "type": "place",
+          "date": "1515",
+          "place": {
+            "en": "Ngari, Tibet, China",
+            "es": "Ngari, Tíbet, China"
+          },
+          "text": {
+            "en": "A 6,638 m peak in western Tibet, sacred to Hindus as Shiva's home and to Buddhists, Jains and Bon followers. Sikh tradition says Nanak debated with yogis on 'Mount Sumer', which some identify with Kailash.",
+            "es": "Pico de 6638 m del oeste del Tíbet, sagrado para hindúes (morada de Shiva), budistas, jainistas y seguidores del bön. Según la tradición sij, Nanak debatió con yoguis en el «monte Sumer», que algunos identifican con el Kailash."
+          },
+          "wiki": {
+            "en": "Mount Kailash",
+            "es": "Monte Kailāsh"
+          }
+        },
+        {
+          "id": "saidpur-sack",
+          "name": {
+            "en": "Babur's sack of Saidpur",
+            "es": "El saqueo de Saidpur por Babur"
+          },
+          "at": [
+            74.26,
+            32.0422
+          ],
+          "cat": "persecution",
+          "type": "event",
+          "date": "1520",
+          "place": {
+            "en": "Eminabad, Punjab, Pakistan",
+            "es": "Eminabad, Punyab, Pakistán"
+          },
+          "text": {
+            "en": "About 1520 the army of Babur, who soon founded the Mughal Empire, sacked the town of Saidpur, now Eminabad. Nanak, by tradition an eyewitness, mourned the slaughter in four hymns.",
+            "es": "Hacia 1520, el ejército de Babur, que poco después fundó el Imperio mogol, saqueó la ciudad de Saidpur, hoy Eminabad. Nanak, según la tradición testigo de los hechos, lloró la matanza en cuatro himnos."
+          },
+          "wiki": {
+            "en": "Eminabad",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1539-09-22",
+      "title": {
+        "en": "Kartarpur and the second Guru",
+        "es": "Kartarpur y el segundo gurú"
+      },
+      "text": {
+        "en": "At Kartarpur on the Ravi, Nanak's followers farmed, sang and ate together whatever their caste. Before he died in 1539 he named a disciple, Lehna, as Guru Angad, who is credited with fixing the Gurmukhi script.",
+        "es": "En Kartarpur, junto al Ravi, los seguidores de Nanak cultivaban, cantaban y comían juntos, sin importar la casta. Antes de morir, en 1539, nombró gurú a su discípulo Lehna, Gurú Angad, a quien se atribuye fijar la escritura gurmukhi."
+      },
+      "details": {
+        "en": "At Kartarpur the community rose at dawn, bathed, sang hymns together and then went to work in the fields; people of every caste sat in rows to share a common meal, the langar. Nanak passed over his own sons and chose Lehna, once a devotee of the goddess Durga, calling him Angad, 'part of me'. When Nanak died, tradition says, Hindus and Muslims argued over whether to cremate or bury him, and under his sheet found only flowers. Guru Angad (1539–1552) moved to Khadur, where his wife, Mata Khivi, ran the free kitchen. The third Guru, Amar Das (1552–1574), made the langar a rule at Goindwal: everyone had to eat before meeting him. He also set up a network of preachers, and spoke against the custom of sati and the veiling of women.",
+        "es": "En Kartarpur la comunidad se levantaba al alba, se bañaba, cantaba himnos y luego iba a trabajar al campo; personas de todas las castas se sentaban en filas para compartir una comida común, el langar. Nanak dejó de lado a sus propios hijos y eligió a Lehna, antes devoto de la diosa Durga, al que llamó Angad, «parte de mí». Cuando Nanak murió, dice la tradición, hindúes y musulmanes discutieron si cremarlo o enterrarlo, y bajo la sábana solo hallaron flores. Gurú Angad (1539-1552) se trasladó a Khadur, donde su esposa, Mata Khivi, dirigía la cocina gratuita. El tercer gurú, Amar Das (1552-1574), hizo del langar una regla en Goindwal: todos debían comer antes de verlo. También organizó una red de predicadores y habló contra el satí y el velo de las mujeres."
+      },
+      "camera": {
+        "lon": 75.05,
+        "lat": 31.7,
+        "zoom": 16.0
+      },
+      "control": {
+        "gurus": {
+          "ref": "g1539"
+        }
+      },
+      "places": [
+        {
+          "id": "kartarpur",
+          "name": {
+            "en": "Kartarpur",
+            "es": "Kartarpur"
+          },
+          "at": [
+            75.0166,
+            32.0874
+          ],
+          "cat": "sacred",
+          "type": "place",
+          "date": "1504",
+          "place": {
+            "en": "Narowal, Punjab, Pakistan",
+            "es": "Narowal, Punyab, Pakistán"
+          },
+          "text": {
+            "en": "The village on the Ravi that, by Sikh tradition, Guru Nanak founded in 1504, and where he farmed, taught and died in 1539. It lies in Pakistan, 4.7 km from the Indian border.",
+            "es": "La aldea junto al Ravi que, según la tradición sij, fundó Gurú Nanak en 1504, y donde cultivó la tierra, enseñó y murió en 1539. Está en Pakistán, a 4,7 km de la frontera india."
+          },
+          "details": {
+            "en": "After Nanak's death his Hindu and Muslim followers each raised a memorial, with a common wall between them; the Ravi later washed them away. The present Gurdwara Darbar Sahib was built in 1925 with money from the Maharaja of Patiala. After 1947 it stood almost abandoned until the Pakistani government repaired it in the 1990s and 2000s, while Indian Sikhs gazed at it from a platform across the border.",
+            "es": "Tras la muerte de Nanak, sus seguidores hindúes y musulmanes levantaron cada uno un monumento, con un muro común entre ambos; el Ravi se los llevó después. El actual gurdwara Darbar Sahib se construyó en 1925 con dinero del maharajá de Patiala. Después de 1947 quedó casi abandonado, hasta que el gobierno de Pakistán lo reparó en las décadas de 1990 y 2000, mientras los sijs de la India lo miraban desde una plataforma al otro lado de la frontera."
+          },
+          "wiki": {
+            "en": "Gurdwara Darbar Sahib Kartarpur",
+            "es": ""
+          }
+        },
+        {
+          "id": "guru-angad",
+          "name": {
+            "en": "Guru Angad",
+            "es": "Gurú Angad"
+          },
+          "at": [
+            75.0977,
+            31.4239
+          ],
+          "cat": "founder",
+          "type": "person",
+          "date": "1539",
+          "life": [
+            "1504-03-31",
+            "1552-03-29"
+          ],
+          "place": {
+            "en": "Khadur Sahib, Punjab, India",
+            "es": "Khadur Sahib, Punyab, India"
+          },
+          "text": {
+            "en": "The second Guru (1539–1552), a former trader named Lehna whom Nanak chose over his own sons. He is credited with fixing the Gurmukhi letters, in which Punjabi and the Sikh scripture are written.",
+            "es": "El segundo gurú (1539-1552), un antiguo comerciante llamado Lehna, al que Nanak eligió en lugar de sus propios hijos. Se le atribuye fijar las letras gurmukhi, con las que se escriben el panyabí y la escritura sij."
+          },
+          "details": {
+            "en": "Gurmukhi, 'from the mouth of the Guru', grew out of the scripts that merchants used in Punjab; some scholars think it existed in some form before Angad. It became the script of the Sikh scripture and is today the official script of Punjabi in India's Punjab. Angad also began to gather Nanak's hymns, and in turn chose not his son but his disciple Amar Das as Guru.",
+            "es": "El gurmukhi, «de la boca del gurú», nació de las escrituras que usaban los comerciantes del Punyab; algunos estudiosos creen que existía de alguna forma antes de Angad. Se volvió la escritura de los textos sagrados sijs y hoy es la escritura oficial del panyabí en el Punyab indio. Angad también empezó a reunir los himnos de Nanak, y a su vez eligió como gurú no a su hijo, sino a su discípulo Amar Das."
+          },
+          "sample": {
+            "text": "ਗੁਰਮੁਖੀ",
+            "latin": "gurmukhī",
+            "means": {
+              "en": "From the mouth of the Guru (the name of the script)",
+              "es": "De la boca del gurú (el nombre de la escritura)"
+            }
+          },
+          "wiki": {
+            "en": "Guru Angad",
+            "es": "Gurú Angad Dev Ji"
+          }
+        },
+        {
+          "id": "langar",
+          "name": {
+            "en": "Langar",
+            "es": "Langar"
+          },
+          "at": [
+            75.15,
+            31.3667
+          ],
+          "cat": "community",
+          "type": "institution",
+          "date": "1539",
+          "place": {
+            "en": "Goindwal, Punjab, India",
+            "es": "Goindwal, Punyab, India"
+          },
+          "text": {
+            "en": "The free kitchen of every gurdwara, where volunteers serve a vegetarian meal to anyone, of any faith or caste, seated together. Mata Khivi made it famous at Khadur, and Guru Amar Das made it a rule at Goindwal.",
+            "es": "La cocina gratuita de todo gurdwara, donde voluntarios sirven una comida vegetariana a cualquiera, de cualquier religión o casta, sentados juntos. Mata Khivi la hizo famosa en Khadur, y Gurú Amar Das la volvió una regla en Goindwal."
+          },
+          "details": {
+            "en": "Sufi shrines and Hindu holy men already fed travellers, but the Sikh Gurus made the shared meal a lasting institution, run on gifts and voluntary service (seva). Sikh tradition says that when the emperor Akbar came to see Guru Amar Das at Goindwal in 1567, he too first sat on the floor and ate in the langar. Today the Golden Temple's kitchen serves more than 100,000 meals a day.",
+            "es": "Los santuarios sufíes y los santos hindúes ya daban de comer a los viajeros, pero los gurús sijs hicieron de la comida compartida una institución duradera, sostenida con donaciones y servicio voluntario (seva). La tradición sij dice que cuando el emperador Akbar fue a ver a Gurú Amar Das a Goindwal, en 1567, también se sentó primero en el suelo a comer en el langar. Hoy la cocina del Templo Dorado sirve más de 100 000 comidas al día."
+          },
+          "wiki": {
+            "en": "Langar (Sikhism)",
+            "es": "Langar"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1604",
+      "title": {
+        "en": "Amritsar and the Adi Granth",
+        "es": "Amritsar y el Adi Granth"
+      },
+      "text": {
+        "en": "Guru Ram Das founded a town around a sacred pool: Amritsar. His son Guru Arjan built the Harmandir Sahib in its waters, and in 1604 installed there the Adi Granth, the first edition of the Sikh scripture.",
+        "es": "Gurú Ram Das fundó una ciudad en torno a un estanque sagrado: Amritsar. Su hijo, Gurú Arjan, construyó el Harmandir Sahib en sus aguas, y en 1604 instaló allí el Adi Granth, la primera edición de la escritura sij."
+      },
+      "details": {
+        "en": "Guru Ram Das (1574–1581) had the pool dug, finished in 1577, and the town that grew around it, first called Ramdaspur, took its name, Amritsar, 'pool of nectar'. Guru Arjan (1581–1606) began the Harmandir Sahib, the 'house of God', in 1581 and finished its brick shrine in 1589. He set it lower than the town, so that visitors step down in humility, and open on all four sides. Later writers said that his friend the Sufi saint Mian Mir of Lahore laid the foundation stone, but this is unproven. With the scribe Bhai Gurdas, Arjan gathered the hymns of the first five Gurus and of Hindu and Muslim saints, such as Kabir, Ravidas, Namdev and Sheikh Farid, into the Adi Granth, 'the first book', and installed it in the temple in 1604 with Baba Buddha as its first reader.",
+        "es": "Gurú Ram Das (1574-1581) mandó cavar el estanque, terminado en 1577, y la ciudad que creció a su alrededor, llamada primero Ramdaspur, tomó su nombre, Amritsar, «estanque de néctar». Gurú Arjan (1581-1606) empezó el Harmandir Sahib, la «casa de Dios», en 1581 y terminó su santuario de ladrillo en 1589. Lo puso más bajo que la ciudad, para que los visitantes bajaran con humildad, y abierto por sus cuatro lados. Escritores posteriores dijeron que su amigo, el santo sufí Mian Mir de Lahore, puso la primera piedra, pero no está probado. Con el escriba Bhai Gurdas, Arjan reunió los himnos de los cinco primeros gurús y de santos hindúes y musulmanes, como Kabir, Ravidas, Namdev y el jeque Farid, en el Adi Granth, «el primer libro», y lo instaló en el templo en 1604, con Baba Buddha como su primer lector."
+      },
+      "camera": {
+        "lon": 74.62,
+        "lat": 31.55,
+        "zoom": 15.0
+      },
+      "control": {
+        "gurus": {
+          "ref": "g1604"
+        }
+      },
+      "places": [
+        {
+          "id": "golden-temple",
+          "name": {
+            "en": "Golden Temple (Harmandir Sahib)",
+            "es": "Templo Dorado (Harmandir Sahib)"
+          },
+          "at": [
+            74.8764,
+            31.62
+          ],
+          "cat": "sacred",
+          "type": "structure",
+          "date": "1581",
+          "end": "1604",
+          "place": {
+            "en": "Amritsar, Punjab, India",
+            "es": "Amritsar, Punyab, India"
+          },
+          "text": {
+            "en": "The Harmandir Sahib, the holiest gurdwara of the Sikhs, in the middle of its pool, the Amrit Sarovar. Begun by Guru Arjan in 1581, it was destroyed and rebuilt several times; its gold dates from 1830.",
+            "es": "El Harmandir Sahib, el gurdwara más sagrado de los sijs, en medio de su estanque, el Amrit Sarovar. Iniciado por Gurú Arjan en 1581, fue destruido y reconstruido varias veces; su oro es de 1830."
+          },
+          "details": {
+            "en": "Its four doors, one on each side, say that people of every caste and faith are welcome. The Afghan ruler Ahmad Shah Durrani desecrated it in 1757 and blew it up in 1762; the Sikhs rebuilt it from 1764. Maharaja Ranjit Singh rebuilt it in marble and copper in 1809 and covered the sanctum with gold leaf in 1830, which gave it its English name. More than 150,000 people visit every day, and its langar serves over 100,000 free meals a day.",
+            "es": "Sus cuatro puertas, una en cada lado, dicen que la gente de toda casta y religión es bienvenida. El gobernante afgano Ahmad Shah Durrani lo profanó en 1757 y lo voló en 1762; los sijs lo reconstruyeron desde 1764. El maharajá Ranjit Singh lo rehízo en mármol y cobre en 1809 y cubrió el santuario con pan de oro en 1830, de ahí su nombre de Templo Dorado. Más de 150 000 personas lo visitan cada día, y su langar sirve más de 100 000 comidas gratis al día."
+          },
+          "wiki": {
+            "en": "Golden Temple",
+            "es": "Templo Dorado"
+          }
+        },
+        {
+          "id": "tarn-taran-sahib",
+          "name": {
+            "en": "Tarn Taran Sahib",
+            "es": "Tarn Taran Sahib"
+          },
+          "at": [
+            74.9258,
+            31.4554
+          ],
+          "cat": "sacred",
+          "type": "place",
+          "date": "1596",
+          "place": {
+            "en": "Tarn Taran, Punjab, India",
+            "es": "Tarn Taran, Punyab, India"
+          },
+          "text": {
+            "en": "A town that Guru Arjan founded in the 1590s around a sacred pool, where he also began to care for people with leprosy. Like Amritsar, it grew around its gurdwara and its tank.",
+            "es": "Una ciudad que Gurú Arjan fundó en la década de 1590 en torno a un estanque sagrado, donde además empezó a cuidar a enfermos de lepra. Como Amritsar, creció en torno a su gurdwara y su estanque."
+          },
+          "wiki": {
+            "en": "Tarn Taran Sahib",
+            "es": "Tarn Taran"
+          }
+        },
+        {
+          "id": "mian-mir",
+          "name": {
+            "en": "Mian Mir",
+            "es": "Mian Mir"
+          },
+          "at": [
+            74.3486,
+            31.5385
+          ],
+          "cat": "thinker",
+          "type": "person",
+          "date": "1589",
+          "life": [
+            "1550",
+            "1635"
+          ],
+          "place": {
+            "en": "Lahore, Punjab, Pakistan",
+            "es": "Lahore, Punyab, Pakistán"
+          },
+          "text": {
+            "en": "A Sufi saint of Lahore and friend of Guru Arjan. Later Sikh writers said he laid the foundation stone of the Harmandir Sahib, a sign of friendship between faiths, though the story is unproven.",
+            "es": "Un santo sufí de Lahore y amigo de Gurú Arjan. Escritores sijs posteriores dijeron que puso la primera piedra del Harmandir Sahib, señal de amistad entre religiones, aunque la historia no está probada."
+          },
+          "wiki": {
+            "en": "Mian Mir",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1606-05-30",
+      "title": {
+        "en": "A Guru put to death",
+        "es": "Un gurú ejecutado"
+      },
+      "text": {
+        "en": "In 1606 the Mughal emperor Jahangir had Guru Arjan arrested in Lahore, accusing him of backing a rebel prince; he was tortured and died. His son, Guru Hargobind, wore two swords and built the Akal Takht facing the Harmandir.",
+        "es": "En 1606, el emperador mogol Jahangir hizo arrestar a Gurú Arjan en Lahore, acusándolo de apoyar a un príncipe rebelde; fue torturado y murió. Su hijo, Gurú Hargobind, llevó dos espadas y construyó el Akal Takht frente al Harmandir."
+      },
+      "details": {
+        "en": "Jahangir wrote in his memoirs that too many people were being drawn to the Guru and that he had long thought of ending his mission or bringing him into Islam. Historians debate how far the execution was political, a punishment for blessing the rebel prince Khusrau, and how far religious. Sikh tradition remembers that Arjan refused to pay a fine or change his scripture, and that he died after torture, perhaps in the Ravi; a Jesuit in Lahore at the time also wrote of his torment. He is honoured as the first Sikh martyr. His eleven-year-old son, Guru Hargobind (1606–1644), wore two swords, one for spiritual and one for worldly authority (piri and miri), raised armed followers and in 1606 founded the Akal Takht, 'throne of the Timeless', as the seat of Sikh temporal authority. He was later held for a time in Gwalior Fort and fought several battles with Mughal forces.",
+        "es": "Jahangir escribió en sus memorias que demasiada gente se sentía atraída por el gurú y que hacía tiempo pensaba acabar con su misión o llevarlo al islam. Los historiadores discuten cuánto tuvo la ejecución de político, como castigo por bendecir al príncipe rebelde Khusrau, y cuánto de religioso. La tradición sij recuerda que Arjan se negó a pagar una multa o a cambiar su escritura, y que murió tras ser torturado, quizá en el Ravi; un jesuita que estaba entonces en Lahore también escribió sobre su tormento. Se le honra como el primer mártir sij. Su hijo de once años, Gurú Hargobind (1606-1644), llevó dos espadas, una por la autoridad espiritual y otra por la mundana (piri y miri), reunió seguidores armados y en 1606 fundó el Akal Takht, el «trono del Eterno», como sede de la autoridad temporal sij. Más tarde estuvo preso un tiempo en el fuerte de Gwalior y libró varias batallas contra fuerzas mogolas."
+      },
+      "camera": {
+        "lon": 75.45,
+        "lat": 31.4,
+        "zoom": 11.0
+      },
+      "places": [
+        {
+          "id": "guru-arjan",
+          "name": {
+            "en": "Guru Arjan",
+            "es": "Gurú Arjan"
+          },
+          "at": [
+            74.3118,
+            31.5898
+          ],
+          "cat": "founder",
+          "type": "person",
+          "date": "1606-05-30",
+          "life": [
+            "1563-04-15",
+            "1606-05-30"
+          ],
+          "place": {
+            "en": "Gurdwara Dera Sahib, Lahore, Pakistan",
+            "es": "Gurdwara Dera Sahib, Lahore, Pakistán"
+          },
+          "text": {
+            "en": "The fifth Guru (1581–1606), who built the Harmandir Sahib, compiled the Adi Granth and wrote the Sukhmani Sahib. Arrested on Jahangir's orders, he died after torture in Lahore in 1606: the first Sikh martyr.",
+            "es": "El quinto gurú (1581-1606), que construyó el Harmandir Sahib, compiló el Adi Granth y escribió el Sukhmani Sahib. Arrestado por orden de Jahangir, murió tras ser torturado en Lahore en 1606: el primer mártir sij."
+          },
+          "wiki": {
+            "en": "Guru Arjan",
+            "es": "Gurú Arjan Dev Ji"
+          }
+        },
+        {
+          "id": "akal-takht",
+          "name": {
+            "en": "Akal Takht",
+            "es": "Akal Takht"
+          },
+          "at": [
+            74.8753,
+            31.6206
+          ],
+          "cat": "council",
+          "type": "structure",
+          "date": "1606-06-15",
+          "place": {
+            "en": "Golden Temple complex, Amritsar, India",
+            "es": "Recinto del Templo Dorado, Amritsar, India"
+          },
+          "text": {
+            "en": "The 'throne of the Timeless', founded by Guru Hargobind in 1606 facing the Harmandir Sahib: the highest seat of Sikh authority, from which edicts for the whole community are issued.",
+            "es": "El «trono del Eterno», fundado por Gurú Hargobind en 1606 frente al Harmandir Sahib: la sede más alta de la autoridad sij, desde donde se dictan los edictos para toda la comunidad."
+          },
+          "details": {
+            "en": "Hargobind sat here on a raised platform to hear disputes and receive followers, as a king would. Afghan armies attacked it in the 18th century, and Ranjit Singh's general Hari Singh Nalwa covered its dome with gold. In June 1984 it was heavily damaged in the army assault on the temple complex; the Sikh community pulled down the government's repairs in 1986 and rebuilt it with its own volunteer labour.",
+            "es": "Hargobind se sentaba aquí en una plataforma elevada para resolver disputas y recibir a sus seguidores, como un rey. Ejércitos afganos lo atacaron en el siglo XVIII, y el general de Ranjit Singh, Hari Singh Nalwa, cubrió de oro su cúpula. En junio de 1984 quedó muy dañado en el asalto del ejército al recinto del templo; la comunidad sij derribó en 1986 las reparaciones del gobierno y lo reconstruyó con trabajo voluntario."
+          },
+          "wiki": {
+            "en": "Akal Takht",
+            "es": "Akal Takht"
+          }
+        },
+        {
+          "id": "guru-hargobind",
+          "name": {
+            "en": "Guru Hargobind",
+            "es": "Gurú Hargobind"
+          },
+          "at": [
+            76.5635,
+            31.1821
+          ],
+          "cat": "founder",
+          "type": "person",
+          "date": "1606",
+          "life": [
+            "1595-06-19",
+            "1644-02-28"
+          ],
+          "place": {
+            "en": "Kiratpur Sahib, Punjab, India",
+            "es": "Kiratpur Sahib, Punyab, India"
+          },
+          "text": {
+            "en": "The sixth Guru (1606–1644), who became Guru at eleven after his father's execution and took up the sword to defend the community. He spent his last years at Kiratpur in the Shivalik hills.",
+            "es": "El sexto gurú (1606-1644), que fue gurú a los once años tras la ejecución de su padre y tomó la espada para defender a la comunidad. Pasó sus últimos años en Kiratpur, en las colinas de Shivalik."
+          },
+          "wiki": {
+            "en": "Guru Hargobind",
+            "es": "Gurú Hargobind"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1675-11-11",
+      "title": {
+        "en": "The ninth Guru",
+        "es": "El noveno gurú"
+      },
+      "text": {
+        "en": "In 1675 the ninth Guru, Tegh Bahadur, was beheaded in Delhi on the orders of the emperor Aurangzeb. Sikh tradition says he gave his life defending the right of Kashmiri Hindus to keep their own faith.",
+        "es": "En 1675, el noveno gurú, Tegh Bahadur, fue decapitado en Delhi por orden del emperador Aurangzeb. La tradición sij dice que dio su vida por defender el derecho de los hindúes de Cachemira a conservar su fe."
+      },
+      "details": {
+        "en": "The seventh and eighth Gurus, Har Rai and the child Har Krishan, who died of smallpox before he was eight, held the community together while rival claimants sought Mughal favour. Tegh Bahadur, youngest son of Hargobind, became Guru in 1664, founded Anandpur in the Shivalik foothills and travelled as far as Bengal and Assam; 115 of his hymns are in the Guru Granth Sahib. Sikh accounts say that a group of Kashmiri Pandits asked his help against forced conversions, and that he went to face the emperor; Mughal-era sources accuse him of collecting money and stirring unrest in Punjab, and historians still debate the causes. On 11 November 1675, after companions were killed in front of him, he was beheaded in Chandni Chowk, where Gurdwara Sis Ganj Sahib now stands. A follower carried his head in secret to Anandpur, where his nine-year-old son Gobind became the tenth Guru.",
+        "es": "El séptimo y el octavo gurú, Har Rai y el niño Har Krishan, que murió de viruela antes de cumplir ocho años, mantuvieron unida a la comunidad mientras otros aspirantes buscaban el favor mogol. Tegh Bahadur, hijo menor de Hargobind, fue gurú desde 1664, fundó Anandpur al pie de las colinas de Shivalik y viajó hasta Bengala y Assam; 115 de sus himnos están en el Gurú Granth Sahib. Los relatos sijs dicen que un grupo de pandits de Cachemira le pidió ayuda contra las conversiones forzadas y que fue a enfrentarse al emperador; fuentes de la época mogola lo acusan de recaudar dinero y agitar el Punyab, y los historiadores aún discuten las causas. El 11 de noviembre de 1675, después de que mataran ante él a sus compañeros, fue decapitado en Chandni Chowk, donde hoy está el gurdwara Sis Ganj Sahib. Un seguidor llevó en secreto su cabeza a Anandpur, donde su hijo Gobind, de nueve años, se convirtió en el décimo gurú."
+      },
+      "camera": {
+        "lon": 76.85,
+        "lat": 29.95,
+        "zoom": 9.0
+      },
+      "control": {
+        "gurus": {
+          "ref": "g1675"
+        }
+      },
+      "places": [
+        {
+          "id": "guru-tegh-bahadur",
+          "name": {
+            "en": "Guru Tegh Bahadur",
+            "es": "Gurú Tegh Bahadur"
+          },
+          "at": [
+            77.2325,
+            28.6558
+          ],
+          "cat": "founder",
+          "type": "person",
+          "date": "1675-11-11",
+          "life": [
+            "1621-04-01",
+            "1675-11-11"
+          ],
+          "place": {
+            "en": "Gurdwara Sis Ganj Sahib, Delhi, India",
+            "es": "Gurdwara Sis Ganj Sahib, Delhi (India)"
+          },
+          "text": {
+            "en": "The ninth Guru (1664–1675), a poet who founded Anandpur and was beheaded in Delhi on Aurangzeb's orders. Sikhs remember him for giving his life for the freedom of faith of others.",
+            "es": "El noveno gurú (1664-1675), un poeta que fundó Anandpur y fue decapitado en Delhi por orden de Aurangzeb. Los sijs lo recuerdan por dar su vida por la libertad de creencia de otros."
+          },
+          "wiki": {
+            "en": "Guru Tegh Bahadur",
+            "es": "Gurú Tegh Bahadur"
+          }
+        },
+        {
+          "id": "anandpur-sahib",
+          "name": {
+            "en": "Anandpur Sahib",
+            "es": "Anandpur Sahib"
+          },
+          "at": [
+            76.4988,
+            31.235
+          ],
+          "cat": "sacred",
+          "type": "place",
+          "date": "1665",
+          "place": {
+            "en": "Rupnagar, Punjab, India",
+            "es": "Rupnagar, Punyab, India"
+          },
+          "text": {
+            "en": "The 'city of bliss', founded by Guru Tegh Bahadur in 1665 near the Sutlej. Here Guru Gobind Singh founded the Khalsa in 1699; it is home to Takht Kesgarh Sahib and the spring festival of Hola Mohalla.",
+            "es": "La «ciudad de la dicha», fundada por Gurú Tegh Bahadur en 1665 cerca del Sutlej. Aquí Gurú Gobind Singh fundó la Khalsa en 1699; en ella están el Takht Kesgarh Sahib y la fiesta de primavera de Hola Mohalla."
+          },
+          "wiki": {
+            "en": "Anandpur Sahib",
+            "es": "Anandpur Sahib"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1699-04-13",
+      "title": {
+        "en": "The Khalsa",
+        "es": "La Khalsa"
+      },
+      "text": {
+        "en": "At the Vaisakhi festival of 1699 at Anandpur, Guru Gobind Singh initiated five volunteers, the Panj Pyare, as the first members of the Khalsa, the order of initiated Sikhs, whose men took the name Singh.",
+        "es": "En la fiesta de Vaisakhi de 1699, en Anandpur, Gurú Gobind Singh inició a cinco voluntarios, los Panj Pyare, como primeros miembros de la Khalsa, la orden de los sijs iniciados, cuyos hombres tomaron el nombre de Singh."
+      },
+      "details": {
+        "en": "Tradition tells that the Guru asked who would give his head for the faith; five men from different castes and regions of India stepped forward one by one. He initiated them with sweetened water stirred with a double-edged sword, then asked them to initiate him. Khalsa Sikhs keep five articles of faith, the Five Ks: uncut hair (kesh), a wooden comb (kangha), a steel bracelet (kara), cotton undershorts (kachera) and a sword (kirpan). Men took the name Singh, 'lion', and women the name Kaur, which in the 20th century became the rule for all Sikh women. The Khalsa was to be an order of saint-soldiers, free of caste, sworn to defend the oppressed. Wars with the hill rajas and the Mughals followed: in 1704 the Guru had to leave Anandpur after a long siege, his two elder sons died fighting at Chamkaur, and his two youngest, aged about nine and six, were bricked up alive at Sirhind on the orders of its governor, Wazir Khan.",
+        "es": "La tradición cuenta que el gurú preguntó quién daría la cabeza por la fe; cinco hombres de distintas castas y regiones de la India se adelantaron uno por uno. Los inició con agua endulzada removida con una espada de doble filo y luego les pidió que lo iniciaran a él. Los sijs de la Khalsa llevan cinco artículos de fe, las cinco K: el cabello sin cortar (kesh), un peine de madera (kangha), un brazalete de acero (kara), unos calzones de algodón (kachera) y una espada (kirpan). Los hombres tomaron el nombre de Singh, «león», y las mujeres el de Kaur, que en el siglo XX se volvió la regla para todas las mujeres sijs. La Khalsa debía ser una orden de santos soldados, sin castas, dedicada a defender a los oprimidos. Siguieron guerras con los rajás de las colinas y los mogoles: en 1704 el gurú tuvo que dejar Anandpur tras un largo asedio, sus dos hijos mayores murieron combatiendo en Chamkaur y los dos menores, de unos nueve y seis años, fueron emparedados vivos en Sirhind por orden de su gobernador, Wazir Khan."
+      },
+      "camera": {
+        "lon": 76.45,
+        "lat": 30.95,
+        "zoom": 18.0
+      },
+      "places": [
+        {
+          "id": "guru-gobind-singh",
+          "name": {
+            "en": "Guru Gobind Singh",
+            "es": "Gurú Gobind Singh"
+          },
+          "at": [
+            76.4989,
+            31.235
+          ],
+          "cat": "founder",
+          "type": "person",
+          "date": "1699-04-13",
+          "life": [
+            "1666-12-22",
+            "1708-10-07"
+          ],
+          "place": {
+            "en": "Takht Kesgarh Sahib, Anandpur, India",
+            "es": "Takht Kesgarh Sahib, Anandpur (India)"
+          },
+          "text": {
+            "en": "The tenth and last human Guru (1675–1708): a warrior, poet and philosopher who founded the Khalsa in 1699, gave the Five Ks, and made the scripture the Guru after him. All four of his sons died before him.",
+            "es": "El décimo y último gurú humano (1675-1708): guerrero, poeta y filósofo, fundó la Khalsa en 1699, dio las cinco K y convirtió la escritura en el gurú después de él. Sus cuatro hijos murieron antes que él."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "The Five Ks",
+                "es": "Las cinco K"
+              },
+              "value": {
+                "en": "Kesh (uncut hair), kangha (comb), kara (steel bracelet), kachera (undershorts), kirpan (sword)",
+                "es": "Kesh (cabello sin cortar), kangha (peine), kara (brazalete de acero), kachera (calzones), kirpan (espada)"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Guru Gobind Singh",
+            "es": "Gurú Gobind Singh"
+          }
+        },
+        {
+          "id": "chamkaur",
+          "name": {
+            "en": "Chamkaur",
+            "es": "Chamkaur"
+          },
+          "at": [
+            76.4242,
+            30.8919
+          ],
+          "cat": "persecution",
+          "type": "event",
+          "date": "1704-12",
+          "place": {
+            "en": "Chamkaur Sahib, Punjab, India",
+            "es": "Chamkaur Sahib, Punyab, India"
+          },
+          "text": {
+            "en": "After leaving Anandpur in December 1704, Guru Gobind Singh and a few dozen Sikhs held out here against a Mughal army. His two elder sons, Ajit Singh and Jujhar Singh, were killed in the fighting.",
+            "es": "Tras dejar Anandpur en diciembre de 1704, Gurú Gobind Singh y unas pocas decenas de sijs resistieron aquí a un ejército mogol. Sus dos hijos mayores, Ajit Singh y Jujhar Singh, murieron en el combate."
+          },
+          "wiki": {
+            "en": "Chamkaur Sahib",
+            "es": ""
+          }
+        },
+        {
+          "id": "fatehgarh-sahib",
+          "name": {
+            "en": "Fatehgarh Sahib",
+            "es": "Fatehgarh Sahib"
+          },
+          "at": [
+            76.3931,
+            30.6472
+          ],
+          "cat": "persecution",
+          "type": "place",
+          "date": "1704-12",
+          "place": {
+            "en": "Sirhind, Punjab, India",
+            "es": "Sirhind, Punyab, India"
+          },
+          "text": {
+            "en": "At Sirhind the Guru's youngest sons, Zorawar Singh and Fateh Singh, were bricked up alive for refusing to become Muslims. The town that grew here is named after Fateh Singh.",
+            "es": "En Sirhind, los hijos menores del gurú, Zorawar Singh y Fateh Singh, fueron emparedados vivos por negarse a hacerse musulmanes. La ciudad que creció aquí lleva el nombre de Fateh Singh."
+          },
+          "wiki": {
+            "en": "Fatehgarh Sahib",
+            "es": "Fatehgarh Sahib"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1708-10-07",
+      "title": {
+        "en": "The scripture becomes the Guru",
+        "es": "La escritura se vuelve el gurú"
+      },
+      "text": {
+        "en": "In 1708 at Nanded, in the Deccan, the dying Guru Gobind Singh declared that after him there would be no human Guru: the scripture, the Guru Granth Sahib, would be the Guru forever, together with the community.",
+        "es": "En 1708, en Nanded, en el Decán, Gurú Gobind Singh, moribundo, declaró que después de él no habría un gurú humano: la escritura, el Gurú Granth Sahib, sería el gurú para siempre, junto con la comunidad."
+      },
+      "details": {
+        "en": "About 1705 the Guru added his father's hymns to the Adi Granth, creating its final text. After Aurangzeb's death in 1707 he travelled south with the new emperor, Bahadur Shah. At Nanded, on the Godavari, he was stabbed by an assassin and died on 7 October 1708. The commander he sent north, Banda Singh Bahadur, rose against the Mughals, took Sirhind in 1710 and gave land to the peasants who tilled it, but was captured and executed in Delhi in 1716, with hundreds of his followers. Through the 18th century the Sikhs were hunted by Mughal governors and by Afghan invaders; in February 1762 between 10,000 and 50,000 Sikh men, women and children were killed in the Vadda Ghallughara, the 'great massacre'. Yet their armed bands, the misls, went on to rule most of Punjab.",
+        "es": "Hacia 1705, el gurú añadió los himnos de su padre al Adi Granth y fijó su texto final. Tras la muerte de Aurangzeb, en 1707, viajó al sur con el nuevo emperador, Bahadur Shah. En Nanded, junto al Godavari, un asesino lo apuñaló, y murió el 7 de octubre de 1708. El jefe que envió al norte, Banda Singh Bahadur, se alzó contra los mogoles, tomó Sirhind en 1710 y dio la tierra a los campesinos que la trabajaban, pero fue capturado y ejecutado en Delhi en 1716, con cientos de sus seguidores. Durante el siglo XVIII, los sijs fueron perseguidos por gobernadores mogoles e invasores afganos; en febrero de 1762, entre 10 000 y 50 000 hombres, mujeres y niños sijs murieron en el Vadda Ghallughara, la «gran matanza». Aun así, sus bandas armadas, las misls, llegaron a gobernar casi todo el Punyab."
+      },
+      "camera": {
+        "lon": 76.5,
+        "lat": 24.8,
+        "zoom": 4.2
+      },
+      "places": [
+        {
+          "id": "guru-granth-sahib",
+          "name": {
+            "en": "Guru Granth Sahib",
+            "es": "Gurú Granth Sahib"
+          },
+          "at": [
+            77.3186,
+            19.1528
+          ],
+          "cat": "text",
+          "type": "work",
+          "date": "1604",
+          "end": "1708",
+          "place": {
+            "en": "Proclaimed Guru at Hazur Sahib, Nanded, India",
+            "es": "Proclamado gurú en Hazur Sahib, Nanded, India"
+          },
+          "text": {
+            "en": "The Sikh scripture and, for Sikhs, their eternal living Guru: 5,894 hymns of six Gurus and fifteen Hindu and Muslim saints, set to ragas on 1,430 pages. Compiled in 1604, it was proclaimed Guru at Nanded in 1708.",
+            "es": "La escritura sij y, para los sijs, su gurú vivo y eterno: 5894 himnos de seis gurús y quince santos hindúes y musulmanes, ordenados por ragas en 1430 páginas. Compilado en 1604, fue proclamado gurú en Nanded en 1708."
+          },
+          "details": {
+            "en": "Sikhs treat it as a living teacher: it rests on a throne under a canopy, is carried on the head and is put to rest at night. Every gurdwara is built around a copy, and Sikhs cover their heads and take off their shoes in its presence. It is written in Gurmukhi script but in many tongues, from Punjabi and old Hindi to Persian and Marathi. Takht Sachkhand Sri Hazur Sahib at Nanded stands where Guru Gobind Singh was cremated.",
+            "es": "Los sijs lo tratan como a un maestro vivo: descansa en un trono bajo un dosel, se lleva sobre la cabeza y se guarda por la noche. Todo gurdwara se construye en torno a un ejemplar, y los sijs se cubren la cabeza y se quitan los zapatos en su presencia. Está escrito con letras gurmukhi pero en muchas lenguas, del panyabí y el hindi antiguo al persa y el maratí. El Takht Sachkhand Sri Hazur Sahib de Nanded se alza donde fue cremado Gurú Gobind Singh."
+          },
+          "sample": {
+            "text": "ੴ ਸਤਿ ਨਾਮੁ ਕਰਤਾ ਪੁਰਖੁ",
+            "latin": "ik oankār sati nāmu kartā purakhu",
+            "means": {
+              "en": "One God, Truth is the Name, the Creator (its opening words)",
+              "es": "Un solo Dios, la Verdad es su Nombre, el Creador (sus primeras palabras)"
+            }
+          },
+          "wiki": {
+            "en": "Guru Granth Sahib",
+            "es": "Sri Gurú Granth Sahib Ji"
+          }
+        },
+        {
+          "id": "banda-singh-bahadur",
+          "name": {
+            "en": "Banda Singh Bahadur",
+            "es": "Banda Singh Bahadur"
+          },
+          "at": [
+            77.2,
+            28.53
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1710",
+          "life": [
+            "1670",
+            "1716-06-09"
+          ],
+          "place": {
+            "en": "Sirhind, Lohgarh and Delhi, India",
+            "es": "Sirhind, Lohgarh y Delhi, India"
+          },
+          "text": {
+            "en": "A former ascetic whom Guru Gobind Singh sent to Punjab in 1708. He took Sirhind in 1710, ruled from a fort he named Lohgarh, and gave peasants their land; captured in 1715, he was executed in Delhi in 1716.",
+            "es": "Un antiguo asceta al que Gurú Gobind Singh envió al Punyab en 1708. Tomó Sirhind en 1710, gobernó desde un fuerte al que llamó Lohgarh y dio la tierra a los campesinos; capturado en 1715, fue ejecutado en Delhi en 1716."
+          },
+          "wiki": {
+            "en": "Banda Singh Bahadur",
+            "es": ""
+          }
+        },
+        {
+          "id": "vadda-ghallughara",
+          "name": {
+            "en": "Vadda Ghallughara",
+            "es": "Vadda Ghallughara"
+          },
+          "at": [
+            75.83,
+            30.48
+          ],
+          "cat": "persecution",
+          "type": "event",
+          "date": "1762-02-05",
+          "place": {
+            "en": "Kup-Rahira, near Malerkotla, Punjab, India",
+            "es": "Kup-Rahira, cerca de Malerkotla, Punyab, India"
+          },
+          "text": {
+            "en": "The 'great massacre' of 5–6 February 1762, when the Afghan army of Ahmad Shah Durrani caught a large Sikh column with its families on the march. Between 10,000 and 50,000 Sikhs were killed.",
+            "es": "La «gran matanza» del 5 y 6 de febrero de 1762, cuando el ejército afgano de Ahmad Shah Durrani sorprendió en marcha a una gran columna sij con sus familias. Murieron entre 10 000 y 50 000 sijs."
+          },
+          "wiki": {
+            "en": "Vadda Ghallughara",
+            "es": ""
+          },
+          "img": "Folios of a claimed master-copy of the Damdami Bir recension rescued during the Vadda Ghallughara, kept at Gurdwara Shaheed Baba Sudha Singh Ji in Kuthala, Punjab.jpg"
+        }
+      ]
+    },
+    {
+      "date": "1839-06-27",
+      "title": {
+        "en": "Ranjit Singh's Sikh Empire",
+        "es": "El Imperio sij de Ranjit Singh"
+      },
+      "text": {
+        "en": "In 1799 Ranjit Singh took Lahore, and in 1801 he was crowned Maharaja of the Punjab. By his death in 1839 his Sikh Empire stretched from the Khyber Pass to Kashmir and Ladakh, though most of its people were Muslims.",
+        "es": "En 1799, Ranjit Singh tomó Lahore, y en 1801 fue coronado maharajá del Punyab. A su muerte, en 1839, su Imperio sij iba del paso Jáiber a Cachemira y Ladakh, aunque la mayoría de sus habitantes eran musulmanes."
+      },
+      "details": {
+        "en": "Ranjit Singh (1780–1839), the leader of one misl, had united the others by 1813. He took Multan in 1818, Kashmir in 1819 and the Peshawar valley from the Afghans, and modernised his Khalsa army with European officers. His court and army included Sikhs, Hindus, Muslims and Europeans; Sikhs made up perhaps a tenth of his 12 million subjects or fewer. He rebuilt the Harmandir Sahib in marble and gold, and also gave gold for the domes of the Hindu Kashi Vishwanath temple in Varanasi. After his death the empire fell into intrigue and murder. The British East India Company defeated the Khalsa army in two Anglo-Sikh Wars and annexed the Punjab on 29 March 1849. The boy king Duleep Singh, aged ten, was deposed and later taken to Britain, and the Koh-i-Noor diamond was surrendered to Queen Victoria.",
+        "es": "Ranjit Singh (1780-1839), jefe de una misl, había unido a las demás en 1813. Tomó Multán en 1818, Cachemira en 1819 y el valle de Peshawar a los afganos, y modernizó su ejército de la Khalsa con oficiales europeos. Su corte y su ejército incluían sijs, hindúes, musulmanes y europeos; los sijs eran quizá una décima parte de sus 12 millones de súbditos, o menos. Rehízo el Harmandir Sahib en mármol y oro, y también dio oro para las cúpulas del templo hindú de Kashi Vishwanath, en Benarés. Tras su muerte, el imperio cayó en intrigas y asesinatos. La Compañía Británica de las Indias Orientales derrotó al ejército de la Khalsa en dos guerras anglo-sijs y se anexionó el Punyab el 29 de marzo de 1849. El rey niño Duleep Singh, de diez años, fue depuesto y llevado después a Gran Bretaña, y el diamante Koh-i-Noor fue entregado a la reina Victoria."
+      },
+      "camera": {
+        "lon": 74.2,
+        "lat": 32.3,
+        "zoom": 4.8
+      },
+      "control": {
+        "gurus": null,
+        "empire": {
+          "ref": "sikh_empire"
+        },
+        "british": {
+          "minus": [
+            {
+              "hist": "British East India Company",
+              "year": 1815
+            },
+            {
+              "cur": "empire"
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "ranjit-singh",
+          "name": {
+            "en": "Ranjit Singh",
+            "es": "Ranjit Singh"
+          },
+          "at": [
+            74.3113,
+            31.5893
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1801-04-12",
+          "life": [
+            "1780-11-13",
+            "1839-06-27"
+          ],
+          "place": {
+            "en": "Lahore, Punjab, Pakistan",
+            "es": "Lahore, Punyab, Pakistán"
+          },
+          "text": {
+            "en": "The Maharaja crowned at Lahore in 1801 who built the Sikh Empire and covered the Golden Temple in gold. His tomb stands beside Lahore Fort, next to Gurdwara Dera Sahib.",
+            "es": "El maharajá coronado en Lahore en 1801 que construyó el Imperio sij y cubrió de oro el Templo Dorado. Su tumba está junto al fuerte de Lahore, al lado del gurdwara Dera Sahib."
+          },
+          "wiki": {
+            "en": "Ranjit Singh",
+            "es": "Ranjit Singh"
+          }
+        },
+        {
+          "id": "hari-singh-nalwa",
+          "name": {
+            "en": "Hari Singh Nalwa",
+            "es": "Hari Singh Nalwa"
+          },
+          "at": [
+            71.3714,
+            34.0021
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "1837-04-30",
+          "life": [
+            "1791-04-29",
+            "1837-04-30"
+          ],
+          "place": {
+            "en": "Jamrud, Khyber Pass, Pakistan",
+            "es": "Jamrud, paso Jáiber, Pakistán"
+          },
+          "text": {
+            "en": "Ranjit Singh's most famous general, governor of Kashmir and of Peshawar. He was killed in 1837 at the battle of Jamrud, defending the empire's frontier at the mouth of the Khyber Pass.",
+            "es": "El general más famoso de Ranjit Singh, gobernador de Cachemira y de Peshawar. Murió en 1837 en la batalla de Jamrud, defendiendo la frontera del imperio a la entrada del paso Jáiber."
+          },
+          "wiki": {
+            "en": "Hari Singh Nalwa",
+            "es": ""
+          }
+        },
+        {
+          "id": "golden-temple",
+          "name": {
+            "en": "Golden Temple (Harmandir Sahib)",
+            "es": "Templo Dorado (Harmandir Sahib)"
+          },
+          "at": [
+            74.8764,
+            31.62
+          ],
+          "cat": "sacred",
+          "type": "structure",
+          "date": "1581",
+          "end": "1604",
+          "place": {
+            "en": "Amritsar, Punjab, India",
+            "es": "Amritsar, Punyab, India"
+          },
+          "text": {
+            "en": "The Harmandir Sahib, the holiest gurdwara of the Sikhs, in the middle of its pool, the Amrit Sarovar. Begun by Guru Arjan in 1581, it was destroyed and rebuilt several times; its gold dates from 1830.",
+            "es": "El Harmandir Sahib, el gurdwara más sagrado de los sijs, en medio de su estanque, el Amrit Sarovar. Iniciado por Gurú Arjan en 1581, fue destruido y reconstruido varias veces; su oro es de 1830."
+          },
+          "details": {
+            "en": "Its four doors, one on each side, say that people of every caste and faith are welcome. The Afghan ruler Ahmad Shah Durrani desecrated it in 1757 and blew it up in 1762; the Sikhs rebuilt it from 1764. Maharaja Ranjit Singh rebuilt it in marble and copper in 1809 and covered the sanctum with gold leaf in 1830, which gave it its English name. More than 150,000 people visit every day, and its langar serves over 100,000 free meals a day.",
+            "es": "Sus cuatro puertas, una en cada lado, dicen que la gente de toda casta y religión es bienvenida. El gobernante afgano Ahmad Shah Durrani lo profanó en 1757 y lo voló en 1762; los sijs lo reconstruyeron desde 1764. El maharajá Ranjit Singh lo rehízo en mármol y cobre en 1809 y cubrió el santuario con pan de oro en 1830, de ahí su nombre de Templo Dorado. Más de 150 000 personas lo visitan cada día, y su langar sirve más de 100 000 comidas gratis al día."
+          },
+          "wiki": {
+            "en": "Golden Temple",
+            "es": "Templo Dorado"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1914-09-29",
+      "title": {
+        "en": "The Komagata Maru",
+        "es": "El Komagata Maru"
+      },
+      "text": {
+        "en": "In 1914, 376 people from Punjab, most of them Sikhs, sailed to Vancouver on the Komagata Maru to challenge Canada's ban on Indian immigrants. Only 24 were let in; back in India, police fire killed 20.",
+        "es": "En 1914, 376 personas del Punyab, la mayoría sijs, viajaron a Vancouver en el Komagata Maru para desafiar la prohibición canadiense a los inmigrantes indios. Solo dejaron entrar a 24; de vuelta en la India, la policía mató a 20."
+      },
+      "details": {
+        "en": "After 1849 the British recruited many Sikhs as soldiers and police, and Punjabis spread across the empire, from Malaya and Hong Kong to Canada and California, where they built gurdwaras: the first in North America at Golden, British Columbia, in 1905, then in Vancouver (1908) and in Stockton, California (1912). Canada required immigrants to come by a 'continuous journey' from their own country, which no ship from India made. The businessman Gurdit Singh chartered the Japanese ship in Hong Kong; it lay two months in Vancouver harbour and was then forced back under naval escort. At Budge Budge, near Calcutta, on 29 September 1914, police tried to arrest its leaders, and in the shooting 20 passengers were killed. The Ghadar movement, founded in 1913 by Indian migrants on the US Pacific coast, many of them Sikhs, called for revolt against British rule. In 2016 Prime Minister Justin Trudeau apologised in Canada's Parliament.",
+        "es": "Después de 1849, los británicos reclutaron a muchos sijs como soldados y policías, y los panyabíes se repartieron por el imperio, de la península malaya y Hong Kong a Canadá y California, donde construyeron gurdwaras: el primero de Norteamérica en Golden, Columbia Británica, en 1905, y después los de Vancouver (1908) y Stockton, California (1912). Canadá exigía que los inmigrantes llegaran en un «viaje continuo» desde su país, algo que ningún barco hacía desde la India. El empresario Gurdit Singh fletó el barco japonés en Hong Kong; pasó dos meses en el puerto de Vancouver y luego fue obligado a volver con escolta naval. En Budge Budge, cerca de Calcuta, el 29 de septiembre de 1914, la policía intentó arrestar a sus líderes, y en el tiroteo murieron 20 pasajeros. El movimiento Ghadar, fundado en 1913 por migrantes indios de la costa del Pacífico de Estados Unidos, muchos de ellos sijs, llamó a rebelarse contra el dominio británico. En 2016, el primer ministro Justin Trudeau pidió perdón en el Parlamento de Canadá."
+      },
+      "camera": {
+        "lon": 172.0,
+        "lat": 38.0,
+        "zoom": 1.15
+      },
+      "control": {
+        "empire": null,
+        "british": {
+          "hist": "British Raj",
+          "year": 1914
+        }
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "April–May 1914",
+            "es": "Abril-mayo de 1914"
+          },
+          "path": [
+            [
+              114.17,
+              22.28
+            ],
+            [
+              114.4,
+              22.1
+            ],
+            [
+              116.0,
+              22.5
+            ],
+            [
+              118.0,
+              23.8
+            ],
+            [
+              119.8,
+              25.3
+            ],
+            [
+              121.0,
+              27.5
+            ],
+            [
+              122.3,
+              29.8
+            ],
+            [
+              122.2,
+              31.0
+            ],
+            [
+              121.6,
+              31.35
+            ],
+            [
+              122.4,
+              31.0
+            ],
+            [
+              126.0,
+              32.8
+            ],
+            [
+              129.3,
+              33.7
+            ],
+            [
+              130.6,
+              34.05
+            ],
+            [
+              130.95,
+              33.95
+            ],
+            [
+              131.2,
+              33.85
+            ],
+            [
+              132.0,
+              33.75
+            ],
+            [
+              132.6,
+              33.9
+            ],
+            [
+              133.2,
+              34.12
+            ],
+            [
+              133.6,
+              34.4
+            ],
+            [
+              134.6,
+              34.45
+            ],
+            [
+              135.0,
+              34.6
+            ],
+            [
+              135.2,
+              34.45
+            ],
+            [
+              135.1,
+              34.0
+            ],
+            [
+              135.1,
+              33.5
+            ],
+            [
+              136.0,
+              33.3
+            ],
+            [
+              137.0,
+              33.9
+            ],
+            [
+              138.2,
+              34.4
+            ],
+            [
+              138.9,
+              34.5
+            ],
+            [
+              139.5,
+              34.9
+            ],
+            [
+              139.8,
+              35.15
+            ],
+            [
+              139.65,
+              35.44
+            ],
+            [
+              139.8,
+              35.15
+            ],
+            [
+              139.9,
+              34.9
+            ],
+            [
+              141.5,
+              35.0
+            ],
+            [
+              145.0,
+              38.0
+            ],
+            [
+              155.0,
+              43.0
+            ],
+            [
+              170.0,
+              48.0
+            ],
+            [
+              -175.0,
+              50.5
+            ],
+            [
+              -160.0,
+              51.5
+            ],
+            [
+              -140.0,
+              51.0
+            ],
+            [
+              -128.0,
+              48.8
+            ],
+            [
+              -124.8,
+              48.45
+            ],
+            [
+              -123.4,
+              48.25
+            ],
+            [
+              -123.25,
+              48.9
+            ],
+            [
+              -123.11,
+              49.29
+            ]
+          ]
+        },
+        {
+          "side": "routes",
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "Forced back, July–September 1914",
+            "es": "Obligado a volver, julio-septiembre de 1914"
+          },
+          "path": [
+            [
+              -123.11,
+              49.29
+            ],
+            [
+              -123.25,
+              48.9
+            ],
+            [
+              -123.4,
+              48.25
+            ],
+            [
+              -124.8,
+              48.45
+            ],
+            [
+              -128.0,
+              48.0
+            ],
+            [
+              -145.0,
+              47.0
+            ],
+            [
+              -165.0,
+              45.0
+            ],
+            [
+              175.0,
+              41.0
+            ],
+            [
+              155.0,
+              36.0
+            ],
+            [
+              141.5,
+              33.5
+            ],
+            [
+              136.0,
+              33.0
+            ],
+            [
+              131.0,
+              31.0
+            ],
+            [
+              125.0,
+              26.0
+            ],
+            [
+              121.5,
+              22.0
+            ],
+            [
+              115.0,
+              17.0
+            ],
+            [
+              109.0,
+              9.0
+            ],
+            [
+              104.6,
+              1.6
+            ],
+            [
+              104.5,
+              1.3
+            ],
+            [
+              103.8,
+              1.15
+            ],
+            [
+              103.4,
+              1.15
+            ],
+            [
+              101.3,
+              2.7
+            ],
+            [
+              99.0,
+              4.6
+            ],
+            [
+              97.0,
+              6.0
+            ],
+            [
+              94.5,
+              8.0
+            ],
+            [
+              91.5,
+              13.0
+            ],
+            [
+              89.5,
+              18.0
+            ],
+            [
+              88.25,
+              21.55
+            ]
+          ]
+        },
+        {
+          "side": "routes",
+          "by": "river",
+          "path": [
+            [
+              88.25,
+              21.55
+            ],
+            [
+              88.1,
+              21.9
+            ],
+            [
+              88.15,
+              22.2
+            ],
+            [
+              88.17,
+              22.47
+            ]
+          ]
+        }
+      ],
+      "places": [
+        {
+          "id": "komagata-maru",
+          "name": {
+            "en": "Komagata Maru",
+            "es": "Komagata Maru"
+          },
+          "at": [
+            -123.11,
+            49.29
+          ],
+          "cat": "persecution",
+          "type": "ship",
+          "date": "1914-05-23",
+          "place": {
+            "en": "Vancouver harbour, Canada",
+            "es": "Puerto de Vancouver, Canadá"
+          },
+          "text": {
+            "en": "The Japanese ship whose 376 passengers from Punjab, 340 of them Sikhs, were refused entry at Vancouver in 1914 under Canada's 'continuous journey' rule. Canada formally apologised in 2016.",
+            "es": "El barco japonés cuyos 376 pasajeros del Punyab, 340 de ellos sijs, no pudieron desembarcar en Vancouver en 1914 por la regla canadiense del «viaje continuo». Canadá pidió perdón formalmente en 2016."
+          },
+          "wiki": {
+            "en": "Komagata Maru incident",
+            "es": ""
+          }
+        },
+        {
+          "id": "budge-budge",
+          "name": {
+            "en": "Budge Budge shooting",
+            "es": "El tiroteo de Budge Budge"
+          },
+          "at": [
+            88.1739,
+            22.4737
+          ],
+          "cat": "persecution",
+          "type": "event",
+          "date": "1914-09-29",
+          "place": {
+            "en": "Budge Budge, near Kolkata, India",
+            "es": "Budge Budge, cerca de Calcuta, India"
+          },
+          "text": {
+            "en": "Where the Komagata Maru landed on its return, on 29 September 1914. Police trying to arrest its leaders opened fire, killing 20 passengers; many others were jailed. A memorial stands there today.",
+            "es": "Donde atracó el Komagata Maru a su regreso, el 29 de septiembre de 1914. La policía, que intentaba arrestar a sus líderes, abrió fuego y mató a 20 pasajeros; muchos otros fueron encarcelados. Hoy hay allí un monumento."
+          },
+          "wiki": {
+            "en": "Budge Budge",
+            "es": "Baj Baj"
+          },
+          "img": "Baba Gurdit Singh.jpg"
+        },
+        {
+          "id": "ghadar-movement",
+          "name": {
+            "en": "Ghadar movement",
+            "es": "Movimiento Ghadar"
+          },
+          "at": [
+            -122.4194,
+            37.7749
+          ],
+          "cat": "community",
+          "type": "institution",
+          "date": "1913-07-15",
+          "place": {
+            "en": "San Francisco, United States",
+            "es": "San Francisco, Estados Unidos"
+          },
+          "text": {
+            "en": "A movement founded in 1913 by Indian migrants on the US Pacific coast, many of them Punjabi Sikhs, to overthrow British rule in India. Its plans for a mutiny in 1915 were crushed.",
+            "es": "Un movimiento fundado en 1913 por migrantes indios de la costa del Pacífico de Estados Unidos, muchos de ellos sijs panyabíes, para derribar el dominio británico en la India. Sus planes de un motín en 1915 fueron aplastados."
+          },
+          "wiki": {
+            "en": "Ghadar movement",
+            "es": "Partido Ghadar"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1919-04-13",
+      "title": {
+        "en": "Jallianwala Bagh",
+        "es": "Jallianwala Bagh"
+      },
+      "text": {
+        "en": "On 13 April 1919, the day of Vaisakhi, British troops under General Reginald Dyer fired on a crowd in the Jallianwala Bagh, beside the Golden Temple. Between 379 and over 1,000 Hindus, Sikhs and Muslims were killed.",
+        "es": "El 13 de abril de 1919, día de Vaisakhi, tropas británicas al mando del general Reginald Dyer dispararon contra una multitud en el Jallianwala Bagh, junto al Templo Dorado. Murieron entre 379 y más de 1000 hindúes, sijs y musulmanes."
+      },
+      "details": {
+        "en": "People had gathered in the walled garden, which had only one narrow exit, to protest against the Rowlatt Act and the arrest of two nationalist leaders, while pilgrims came in from the Vaisakhi celebrations. Dyer blocked the exit and ordered his soldiers to fire until their ammunition ran low. A British inquiry counted 379 dead; other estimates are much higher, and more than 1,200 were wounded. The massacre turned many Indians against British rule. In 1940 Udham Singh, who as a youth had been serving water to the crowd that day, shot dead the former governor of Punjab, Michael O'Dwyer, in London, and was hanged. In the same years the Akali movement campaigned to take gurdwaras from hereditary keepers: at Nankana Sahib in 1921 between 86 and 260 reformers were killed, and in 1925 a new law put the shrines under an elected Sikh body, the SGPC.",
+        "es": "La gente se había reunido en el jardín amurallado, que tenía una sola salida estrecha, para protestar contra la Ley Rowlatt y el arresto de dos líderes nacionalistas, mientras llegaban peregrinos de las fiestas de Vaisakhi. Dyer bloqueó la salida y ordenó disparar hasta que casi se acabaron las municiones. Una investigación británica contó 379 muertos; otros cálculos son mucho mayores, y hubo más de 1200 heridos. La masacre volvió a muchos indios contra el dominio británico. En 1940, Udham Singh, que de joven había repartido agua entre la multitud ese día, mató a tiros en Londres al exgobernador del Punyab Michael O'Dwyer, y fue ahorcado. En esos mismos años, el movimiento akali luchó por quitar los gurdwaras a sus custodios hereditarios: en Nankana Sahib, en 1921, murieron entre 86 y 260 reformistas, y en 1925 una nueva ley puso los santuarios bajo un organismo sij elegido, el SGPC."
+      },
+      "camera": {
+        "lon": 74.4,
+        "lat": 31.0,
+        "zoom": 6.5
+      },
+      "places": [
+        {
+          "id": "jallianwala-bagh",
+          "name": {
+            "en": "Jallianwala Bagh massacre",
+            "es": "Masacre de Jallianwala Bagh"
+          },
+          "at": [
+            74.8806,
+            31.6205
+          ],
+          "cat": "persecution",
+          "type": "event",
+          "date": "1919-04-13",
+          "place": {
+            "en": "Amritsar, Punjab, India",
+            "es": "Amritsar, Punyab, India"
+          },
+          "text": {
+            "en": "The walled garden in Amritsar where British troops fired on an unarmed crowd on 13 April 1919. Bullet marks can still be seen on its walls, now part of a national memorial.",
+            "es": "El jardín amurallado de Amritsar donde tropas británicas dispararon contra una multitud desarmada el 13 de abril de 1919. Las marcas de las balas aún se ven en sus muros, hoy parte de un monumento nacional."
+          },
+          "wiki": {
+            "en": "Jallianwala Bagh massacre",
+            "es": "Masacre de Amritsar"
+          }
+        },
+        {
+          "id": "akali-movement",
+          "name": {
+            "en": "Akali movement",
+            "es": "Movimiento akali"
+          },
+          "at": [
+            73.7067,
+            31.4525
+          ],
+          "cat": "council",
+          "type": "event",
+          "date": "1920-10-12",
+          "end": "1925",
+          "place": {
+            "en": "Nankana Sahib and Amritsar",
+            "es": "Nankana Sahib y Amritsar"
+          },
+          "text": {
+            "en": "A non-violent Sikh campaign of the 1920s to take gurdwaras from hereditary keepers accused of corruption. At Nankana Sahib, 86 to 260 reformers were killed in 1921; in 1925 the shrines passed to the elected SGPC.",
+            "es": "Una campaña sij no violenta de la década de 1920 para quitar los gurdwaras a custodios hereditarios acusados de corrupción. En Nankana Sahib murieron entre 86 y 260 reformistas en 1921; en 1925 los santuarios pasaron al SGPC, elegido."
+          },
+          "wiki": {
+            "en": "Akali movement",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1947-08-17",
+      "title": {
+        "en": "Punjab divided",
+        "es": "El Punyab dividido"
+      },
+      "text": {
+        "en": "At Partition in August 1947 the new border split Punjab between India and Pakistan. In massacres on all sides, Sikhs, Hindus and Muslims were killed by the hundreds of thousands, and almost all Sikhs fled east.",
+        "es": "En la Partición, en agosto de 1947, la nueva frontera partió el Punyab entre la India y Pakistán. En masacres de todos los lados murieron cientos de miles de sijs, hindúes y musulmanes, y casi todos los sijs huyeron al este."
+      },
+      "details": {
+        "en": "Sikhs were about one in seven of Punjab's people but not a majority in any district, and their leaders, such as Master Tara Singh, opposed the creation of Pakistan. From March 1947 riots in Rawalpindi and other western districts killed and drove out Sikhs and Hindus; in the east, Sikh and Hindu bands in turn killed and expelled Muslims, above all after the border was announced on 17 August. Estimates of all the dead of Partition range from 200,000 to 2 million; many women were abducted or raped, or took their own lives, and one column of refugees, mostly Sikhs, stretched for 100 km. Sikhs left behind farms, homes and holy places, Nankana Sahib, Kartarpur and Lahore's Dera Sahib among them, in Pakistan, where only about 20,000 Sikhs live today. After years of campaigning for a Punjabi-speaking state, India redrew its Punjab on 1 November 1966, and Sikhs became the majority there.",
+        "es": "Los sijs eran cerca de uno de cada siete habitantes del Punyab, pero no eran mayoría en ningún distrito, y sus líderes, como Master Tara Singh, se opusieron a la creación de Pakistán. Desde marzo de 1947, disturbios en Rawalpindi y otros distritos del oeste mataron y expulsaron a sijs e hindúes; en el este, bandas sijs e hindúes mataron y expulsaron a su vez a musulmanes, sobre todo tras anunciarse la frontera, el 17 de agosto. Los cálculos de todos los muertos de la Partición van de 200 000 a 2 millones; muchas mujeres fueron raptadas o violadas, o se quitaron la vida, y una columna de refugiados, sobre todo sijs, se extendió por 100 km. Los sijs dejaron atrás campos, casas y lugares santos, como Nankana Sahib, Kartarpur y el Dera Sahib de Lahore, en Pakistán, donde hoy viven solo unos 20 000 sijs. Tras años de campaña por un estado de habla panyabí, la India redibujó su Punyab el 1 de noviembre de 1966, y allí los sijs pasaron a ser mayoría."
+      },
+      "camera": {
+        "lon": 74.6,
+        "lat": 31.3,
+        "zoom": 8.0
+      },
+      "control": {
+        "british": null,
+        "pakpunjab": {
+          "a1": "PAK",
+          "names": [
+            "Punjab",
+            "Islamabad Capital Territory"
+          ]
+        },
+        "indpunjab": {
+          "a1": "IND",
+          "names": [
+            "Punjab",
+            "Haryana",
+            "Chandigarh"
+          ]
+        }
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "by": "land",
+          "label": {
+            "en": "Sikhs and Hindus flee east",
+            "es": "Sijs e hindúes huyen al este"
+          },
+          "path": [
+            [
+              73.08,
+              31.42
+            ],
+            [
+              73.7,
+              31.5
+            ],
+            [
+              74.3,
+              31.6
+            ],
+            [
+              74.9,
+              31.62
+            ],
+            [
+              75.58,
+              31.33
+            ]
+          ]
+        },
+        {
+          "side": "routes",
+          "by": "land",
+          "label": {
+            "en": "Muslims flee west",
+            "es": "Musulmanes huyen al oeste"
+          },
+          "path": [
+            [
+              75.85,
+              30.9
+            ],
+            [
+              75.2,
+              30.95
+            ],
+            [
+              74.6,
+              30.95
+            ],
+            [
+              74.45,
+              31.12
+            ],
+            [
+              74.2,
+              31.25
+            ],
+            [
+              73.6,
+              31.15
+            ]
+          ]
+        }
+      ],
+      "places": [
+        {
+          "id": "radcliffe-line",
+          "name": {
+            "en": "Radcliffe Line",
+            "es": "Línea Radcliffe"
+          },
+          "at": [
+            74.5728,
+            31.6047
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1947-08-17",
+          "place": {
+            "en": "Wagah–Attari, India–Pakistan border",
+            "es": "Wagah-Attari, frontera entre la India y Pakistán"
+          },
+          "text": {
+            "en": "The border drawn in five weeks by the British lawyer Cyril Radcliffe, who had never been to India, and published two days after independence. It cut Punjab in two, giving Lahore to Pakistan and Amritsar to India.",
+            "es": "La frontera trazada en cinco semanas por el abogado británico Cyril Radcliffe, que nunca había estado en la India, y publicada dos días después de la independencia. Partió el Punyab en dos: Lahore para Pakistán y Amritsar para la India."
+          },
+          "wiki": {
+            "en": "Radcliffe Line",
+            "es": "Línea Radcliffe"
+          }
+        },
+        {
+          "id": "nankana-sahib",
+          "name": {
+            "en": "Nankana Sahib",
+            "es": "Nankana Sahib"
+          },
+          "at": [
+            73.6972,
+            31.4475
+          ],
+          "cat": "sacred",
+          "type": "place",
+          "date": "1469",
+          "place": {
+            "en": "Punjab, Pakistan",
+            "es": "Punyab, Pakistán"
+          },
+          "text": {
+            "en": "The village of Talwandi, where Guru Nanak was born in 1469, now a town named Nankana Sahib in his honour. Gurdwara Janam Asthan marks his birthplace; since 1947 it lies in Pakistan.",
+            "es": "La aldea de Talwandi, donde nació Gurú Nanak en 1469, hoy una ciudad llamada Nankana Sahib en su honor. El gurdwara Janam Asthan marca el lugar donde nació; desde 1947 está en Pakistán."
+          },
+          "details": {
+            "en": "Several gurdwaras in the town mark places from Nanak's childhood, such as the field where, a story says, a cobra shaded the sleeping boy from the sun. On 20 February 1921 men of its hereditary keeper, Mahant Narayan Das, killed Sikh reformers at Janam Asthan, 86 by the official count and 140 to 260 by other accounts, a turning point in the campaign to put gurdwaras under elected Sikh control. Since Partition, groups of pilgrims from India cross the border to celebrate Guru Nanak's birthday here.",
+            "es": "Varios gurdwaras de la ciudad marcan lugares de la niñez de Nanak, como el campo donde, según un relato, una cobra protegió del sol al niño dormido. El 20 de febrero de 1921, hombres de su custodio hereditario, el mahant Narayan Das, mataron en Janam Asthan a reformistas sijs, 86 según la cifra oficial y entre 140 y 260 según otras fuentes, un momento clave de la campaña para poner los gurdwaras bajo control de los sijs por elección. Desde la Partición, grupos de peregrinos de la India cruzan la frontera para celebrar aquí el cumpleaños de Gurú Nanak."
+          },
+          "wiki": {
+            "en": "Nankana Sahib",
+            "es": "Nankana Sahib"
+          }
+        },
+        {
+          "id": "kartarpur",
+          "name": {
+            "en": "Kartarpur",
+            "es": "Kartarpur"
+          },
+          "at": [
+            75.0166,
+            32.0874
+          ],
+          "cat": "sacred",
+          "type": "place",
+          "date": "1504",
+          "place": {
+            "en": "Narowal, Punjab, Pakistan",
+            "es": "Narowal, Punyab, Pakistán"
+          },
+          "text": {
+            "en": "The village on the Ravi that, by Sikh tradition, Guru Nanak founded in 1504, and where he farmed, taught and died in 1539. It lies in Pakistan, 4.7 km from the Indian border.",
+            "es": "La aldea junto al Ravi que, según la tradición sij, fundó Gurú Nanak en 1504, y donde cultivó la tierra, enseñó y murió en 1539. Está en Pakistán, a 4,7 km de la frontera india."
+          },
+          "details": {
+            "en": "After Nanak's death his Hindu and Muslim followers each raised a memorial, with a common wall between them; the Ravi later washed them away. The present Gurdwara Darbar Sahib was built in 1925 with money from the Maharaja of Patiala. After 1947 it stood almost abandoned until the Pakistani government repaired it in the 1990s and 2000s, while Indian Sikhs gazed at it from a platform across the border.",
+            "es": "Tras la muerte de Nanak, sus seguidores hindúes y musulmanes levantaron cada uno un monumento, con un muro común entre ambos; el Ravi se los llevó después. El actual gurdwara Darbar Sahib se construyó en 1925 con dinero del maharajá de Patiala. Después de 1947 quedó casi abandonado, hasta que el gobierno de Pakistán lo reparó en las décadas de 1990 y 2000, mientras los sijs de la India lo miraban desde una plataforma al otro lado de la frontera."
+          },
+          "wiki": {
+            "en": "Gurdwara Darbar Sahib Kartarpur",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1984-11-03",
+      "title": {
+        "en": "1984: Blue Star and the killings",
+        "es": "1984: Estrella Azul y las matanzas"
+      },
+      "text": {
+        "en": "In June 1984 the Indian Army stormed the Golden Temple complex to remove Jarnail Singh Bhindranwale and his armed followers. In October Indira Gandhi was killed by her Sikh bodyguards, and mobs killed thousands of Sikhs.",
+        "es": "En junio de 1984, el ejército indio asaltó el recinto del Templo Dorado para sacar a Jarnail Singh Bhindranwale y sus hombres armados. En octubre, Indira Gandhi fue asesinada por sus escoltas sijs, y turbas mataron a miles de sijs."
+      },
+      "details": {
+        "en": "Akali leaders had campaigned for more autonomy for Punjab, while the preacher Bhindranwale, honoured by some Sikhs as a martyr and blamed by others for the violence, made the temple complex his armed base; killings by militants and by the police spread across the state. Operation Blue Star (1–10 June 1984), with tanks and artillery, came during the anniversary of Guru Arjan's martyrdom, when many pilgrims were inside. The government counted 493 militants and civilians and 83 soldiers dead; other estimates run into the thousands, and the Akal Takht was wrecked. After Prime Minister Indira Gandhi was shot by two Sikh bodyguards on 31 October, organised mobs killed about 2,800 Sikhs in Delhi and 3,350 across India by official count, 8,000–17,000 by other estimates; few killers were ever convicted. An insurgency for a separate state, Khalistan, lasted until 1995 and cost thousands more lives, including the 329 people on Air India Flight 182, bombed by militants in 1985. In 2005 Prime Minister Manmohan Singh, a Sikh, apologised in Parliament for the 1984 killings.",
+        "es": "Los líderes akalis pedían más autonomía para el Punyab, mientras el predicador Bhindranwale, honrado como mártir por algunos sijs y culpado de la violencia por otros, hacía del recinto del templo su base armada; los asesinatos cometidos por militantes y por la policía se extendieron por el estado. La operación Estrella Azul (1-10 de junio de 1984), con tanques y artillería, llegó en el aniversario del martirio de Gurú Arjan, cuando había muchos peregrinos dentro. El gobierno contó 493 militantes y civiles y 83 soldados muertos; otros cálculos llegan a miles, y el Akal Takht quedó destruido. Después de que dos guardaespaldas sijs mataran a la primera ministra Indira Gandhi, el 31 de octubre, turbas organizadas mataron a unos 2800 sijs en Delhi y 3350 en toda la India según la cifra oficial, y a entre 8000 y 17 000 según otros cálculos; pocos asesinos fueron condenados. Una insurgencia por un estado separado, Jalistán, duró hasta 1995 y costó miles de vidas más, entre ellas las 329 del vuelo 182 de Air India, que militantes volaron en 1985. En 2005, el primer ministro Manmohan Singh, sij, pidió perdón en el Parlamento por las matanzas de 1984."
+      },
+      "camera": {
+        "lon": 76.0,
+        "lat": 30.1,
+        "zoom": 7.0
+      },
+      "control": {
+        "indpunjab": {
+          "a1": "IND",
+          "names": [
+            "Punjab",
+            "Chandigarh"
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "operation-blue-star",
+          "name": {
+            "en": "Operation Blue Star",
+            "es": "Operación Estrella Azul"
+          },
+          "at": [
+            74.8769,
+            31.62
+          ],
+          "cat": "persecution",
+          "type": "event",
+          "date": "1984-06-01",
+          "end": "1984-06-10",
+          "place": {
+            "en": "Golden Temple complex, Amritsar, India",
+            "es": "Recinto del Templo Dorado, Amritsar, India"
+          },
+          "text": {
+            "en": "The army assault of 1–10 June 1984 on the Golden Temple complex, where Bhindranwale and armed militants had fortified the Akal Takht. Hundreds to thousands died, many of them pilgrims.",
+            "es": "El asalto del ejército del 1 al 10 de junio de 1984 al recinto del Templo Dorado, donde Bhindranwale y militantes armados habían fortificado el Akal Takht. Murieron de cientos a miles de personas, muchas de ellas peregrinos."
+          },
+          "wiki": {
+            "en": "Operation Blue Star",
+            "es": "Operación Estrella Azul"
+          }
+        },
+        {
+          "id": "anti-sikh-riots-1984",
+          "name": {
+            "en": "1984 anti-Sikh riots",
+            "es": "Matanza de sijs de 1984"
+          },
+          "at": [
+            77.307,
+            28.61
+          ],
+          "cat": "persecution",
+          "type": "event",
+          "date": "1984-10-31",
+          "end": "1984-11-03",
+          "place": {
+            "en": "Trilokpuri and other districts, Delhi, India",
+            "es": "Trilokpuri y otros barrios, Delhi, India"
+          },
+          "text": {
+            "en": "Organised mobs killed Sikhs in Delhi and other cities from 31 October to 3 November 1984, after Indira Gandhi's murder: 3,350 dead by official count, 8,000–17,000 by other estimates.",
+            "es": "Turbas organizadas mataron a sijs en Delhi y otras ciudades del 31 de octubre al 3 de noviembre de 1984, tras el asesinato de Indira Gandhi: 3350 muertos según la cifra oficial, entre 8000 y 17 000 según otros cálculos."
+          },
+          "wiki": {
+            "en": "1984 anti-Sikh riots",
+            "es": "Masacre antisij"
+          },
+          "img": "Khanda emblem.svg"
+        }
+      ]
+    },
+    {
+      "date": "2019-11-09",
+      "title": {
+        "en": "The Kartarpur Corridor",
+        "es": "El corredor de Kartarpur"
+      },
+      "text": {
+        "en": "On 9 November 2019, for Guru Nanak's 550th birthday, India and Pakistan opened a visa-free corridor for Indian pilgrims to Kartarpur, where he died. Today there are about 25–30 million Sikhs, most of them in Indian Punjab.",
+        "es": "El 9 de noviembre de 2019, en el 550 aniversario de Gurú Nanak, la India y Pakistán abrieron un corredor sin visado para que peregrinos indios visiten Kartarpur, donde murió. Hoy hay entre 25 y 30 millones de sijs, sobre todo en el Punyab indio."
+      },
+      "details": {
+        "en": "The corridor links Dera Baba Nanak in India with Gurdwara Darbar Sahib Kartarpur, 4.7 km inside Pakistan, which for decades Indian Sikhs could only see from a viewing platform at the border. It closed during the COVID-19 pandemic and, after the attack at Pahalgam in Kashmir and the crisis between the two countries, India suspended it in May 2025. Estimates from 2019 put the world's Sikhs at about 25–30 million. India's 2011 census counted about 20.8 million, 1.7% of Indians; in Punjab they are 58% of the people. Large communities live in Canada (771,790 in the 2021 census, 2.1% of Canadians), the United Kingdom (about 535,000 in the 2021–22 censuses) and the United States (an estimated 280,000–500,000). Wherever they live, gurdwaras keep the langar open to anyone who comes.",
+        "es": "El corredor une Dera Baba Nanak, en la India, con el gurdwara Darbar Sahib de Kartarpur, a 4,7 km dentro de Pakistán, que durante décadas los sijs indios solo pudieron ver desde un mirador en la frontera. Cerró durante la pandemia de COVID-19 y, tras el atentado de Pahalgam, en Cachemira, y la crisis entre ambos países, la India lo suspendió en mayo de 2025. Los cálculos de 2019 dan entre 25 y 30 millones de sijs en el mundo. El censo indio de 2011 contó unos 20,8 millones, el 1,7 % de la población; en el Punyab son el 58 % de los habitantes. Hay grandes comunidades en Canadá (771 790 en el censo de 2021, el 2,1 % de los canadienses), el Reino Unido (unos 535 000 en los censos de 2021-2022) y Estados Unidos (entre 280 000 y 500 000, según estimaciones). Vivan donde vivan, los gurdwaras mantienen el langar abierto a todo el que llegue."
+      },
+      "camera": {
+        "lon": 74.95,
+        "lat": 31.85,
+        "zoom": 16.0
+      },
+      "places": [
+        {
+          "id": "kartarpur-corridor",
+          "name": {
+            "en": "Kartarpur Corridor",
+            "es": "Corredor de Kartarpur"
+          },
+          "at": [
+            75.0267,
+            32.0488
+          ],
+          "cat": "pilgrimage",
+          "type": "structure",
+          "date": "2019-11-09",
+          "place": {
+            "en": "India–Pakistan border, near Dera Baba Nanak",
+            "es": "Frontera entre la India y Pakistán, cerca de Dera Baba Nanak"
+          },
+          "text": {
+            "en": "A visa-free crossing opened in 2019 so that pilgrims from India can visit Gurdwara Darbar Sahib in Kartarpur, 4.7 km inside Pakistan. India suspended it in May 2025.",
+            "es": "Un paso sin visado abierto en 2019 para que los peregrinos de la India visiten el gurdwara Darbar Sahib de Kartarpur, a 4,7 km dentro de Pakistán. La India lo suspendió en mayo de 2025."
+          },
+          "wiki": {
+            "en": "Kartarpur Corridor",
+            "es": ""
+          },
+          "img": "Sri Dera Baba Nanak Sahib.jpg"
+        },
+        {
+          "id": "kartarpur",
+          "name": {
+            "en": "Kartarpur",
+            "es": "Kartarpur"
+          },
+          "at": [
+            75.0166,
+            32.0874
+          ],
+          "cat": "sacred",
+          "type": "place",
+          "date": "1504",
+          "place": {
+            "en": "Narowal, Punjab, Pakistan",
+            "es": "Narowal, Punyab, Pakistán"
+          },
+          "text": {
+            "en": "The village on the Ravi that, by Sikh tradition, Guru Nanak founded in 1504, and where he farmed, taught and died in 1539. It lies in Pakistan, 4.7 km from the Indian border.",
+            "es": "La aldea junto al Ravi que, según la tradición sij, fundó Gurú Nanak en 1504, y donde cultivó la tierra, enseñó y murió en 1539. Está en Pakistán, a 4,7 km de la frontera india."
+          },
+          "details": {
+            "en": "After Nanak's death his Hindu and Muslim followers each raised a memorial, with a common wall between them; the Ravi later washed them away. The present Gurdwara Darbar Sahib was built in 1925 with money from the Maharaja of Patiala. After 1947 it stood almost abandoned until the Pakistani government repaired it in the 1990s and 2000s, while Indian Sikhs gazed at it from a platform across the border.",
+            "es": "Tras la muerte de Nanak, sus seguidores hindúes y musulmanes levantaron cada uno un monumento, con un muro común entre ambos; el Ravi se los llevó después. El actual gurdwara Darbar Sahib se construyó en 1925 con dinero del maharajá de Patiala. Después de 1947 quedó casi abandonado, hasta que el gobierno de Pakistán lo reparó en las décadas de 1990 y 2000, mientras los sijs de la India lo miraban desde una plataforma al otro lado de la frontera."
+          },
+          "wiki": {
+            "en": "Gurdwara Darbar Sahib Kartarpur",
+            "es": ""
+          }
+        },
+        {
+          "id": "golden-temple",
+          "name": {
+            "en": "Golden Temple (Harmandir Sahib)",
+            "es": "Templo Dorado (Harmandir Sahib)"
+          },
+          "at": [
+            74.8764,
+            31.62
+          ],
+          "cat": "sacred",
+          "type": "structure",
+          "date": "1581",
+          "end": "1604",
+          "place": {
+            "en": "Amritsar, Punjab, India",
+            "es": "Amritsar, Punyab, India"
+          },
+          "text": {
+            "en": "The Harmandir Sahib, the holiest gurdwara of the Sikhs, in the middle of its pool, the Amrit Sarovar. Begun by Guru Arjan in 1581, it was destroyed and rebuilt several times; its gold dates from 1830.",
+            "es": "El Harmandir Sahib, el gurdwara más sagrado de los sijs, en medio de su estanque, el Amrit Sarovar. Iniciado por Gurú Arjan en 1581, fue destruido y reconstruido varias veces; su oro es de 1830."
+          },
+          "details": {
+            "en": "Its four doors, one on each side, say that people of every caste and faith are welcome. The Afghan ruler Ahmad Shah Durrani desecrated it in 1757 and blew it up in 1762; the Sikhs rebuilt it from 1764. Maharaja Ranjit Singh rebuilt it in marble and copper in 1809 and covered the sanctum with gold leaf in 1830, which gave it its English name. More than 150,000 people visit every day, and its langar serves over 100,000 free meals a day.",
+            "es": "Sus cuatro puertas, una en cada lado, dicen que la gente de toda casta y religión es bienvenida. El gobernante afgano Ahmad Shah Durrani lo profanó en 1757 y lo voló en 1762; los sijs lo reconstruyeron desde 1764. El maharajá Ranjit Singh lo rehízo en mármol y cobre en 1809 y cubrió el santuario con pan de oro en 1830, de ahí su nombre de Templo Dorado. Más de 150 000 personas lo visitan cada día, y su langar sirve más de 100 000 comidas gratis al día."
+          },
+          "wiki": {
+            "en": "Golden Temple",
+            "es": "Templo Dorado"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Sikhism, the faith of the ten Gurus from Nanak to Gobind Singh and of the Guru Granth Sahib, teaches devotion to one God, honest work, sharing and the equality of all people, lived out in the langar, where anyone may eat. Shaped by persecution and by the Khalsa's saint-soldier ideal, it has kept its heart in Punjab, divided since 1947, while its people have spread across the world. About 25–30 million people are Sikhs today, most of them in India (2019 estimates).",
+    "es": "El sijismo, la fe de los diez gurús, de Nanak a Gobind Singh, y del Gurú Granth Sahib, enseña la devoción a un solo Dios, el trabajo honrado, el compartir y la igualdad de todas las personas, que se viven en el langar, donde cualquiera puede comer. Marcado por la persecución y por el ideal de santo soldado de la Khalsa, conserva su corazón en el Punyab, dividido desde 1947, mientras su gente se ha repartido por el mundo. Hoy son sijs entre 25 y 30 millones de personas, la mayoría en la India (cálculos de 2019)."
+  },
+  "sources": [
+    {
+      "title": "Wikipedia: Sikhism",
+      "url": "https://en.wikipedia.org/wiki/Sikhism"
+    },
+    {
+      "title": "Wikipedia: Guru Nanak",
+      "url": "https://en.wikipedia.org/wiki/Guru_Nanak"
+    },
+    {
+      "title": "Wikipedia: Nankana Sahib",
+      "url": "https://en.wikipedia.org/wiki/Nankana_Sahib"
+    },
+    {
+      "title": "Wikipedia: Gurdwara Janam Asthan",
+      "url": "https://en.wikipedia.org/wiki/Gurdwara_Janam_Asthan"
+    },
+    {
+      "title": "Wikipedia: Sultanpur Lodhi",
+      "url": "https://en.wikipedia.org/wiki/Sultanpur_Lodhi"
+    },
+    {
+      "title": "Wikipedia: Bhai Mardana",
+      "url": "https://en.wikipedia.org/wiki/Bhai_Mardana"
+    },
+    {
+      "title": "Wikipedia: Mount Kailash",
+      "url": "https://en.wikipedia.org/wiki/Mount_Kailash"
+    },
+    {
+      "title": "Wikipedia: Eminabad",
+      "url": "https://en.wikipedia.org/wiki/Eminabad"
+    },
+    {
+      "title": "Wikipedia: Gurdwara Darbar Sahib Kartarpur",
+      "url": "https://en.wikipedia.org/wiki/Gurdwara_Darbar_Sahib_Kartarpur"
+    },
+    {
+      "title": "Wikipedia: Guru Angad",
+      "url": "https://en.wikipedia.org/wiki/Guru_Angad"
+    },
+    {
+      "title": "Wikipedia: Gurmukhi",
+      "url": "https://en.wikipedia.org/wiki/Gurmukhi"
+    },
+    {
+      "title": "Wikipedia: Khivi",
+      "url": "https://en.wikipedia.org/wiki/Khivi"
+    },
+    {
+      "title": "Wikipedia: Guru Amar Das",
+      "url": "https://en.wikipedia.org/wiki/Guru_Amar_Das"
+    },
+    {
+      "title": "Wikipedia: Langar (Sikhism)",
+      "url": "https://en.wikipedia.org/wiki/Langar_(Sikhism)"
+    },
+    {
+      "title": "Wikipedia: Guru Ram Das",
+      "url": "https://en.wikipedia.org/wiki/Guru_Ram_Das"
+    },
+    {
+      "title": "Wikipedia: Golden Temple",
+      "url": "https://en.wikipedia.org/wiki/Golden_Temple"
+    },
+    {
+      "title": "Wikipedia: Guru Arjan",
+      "url": "https://en.wikipedia.org/wiki/Guru_Arjan"
+    },
+    {
+      "title": "Wikipedia: Tarn Taran Sahib",
+      "url": "https://en.wikipedia.org/wiki/Tarn_Taran_Sahib"
+    },
+    {
+      "title": "Wikipedia: Mian Mir",
+      "url": "https://en.wikipedia.org/wiki/Mian_Mir"
+    },
+    {
+      "title": "Wikipedia: Guru Granth Sahib",
+      "url": "https://en.wikipedia.org/wiki/Guru_Granth_Sahib"
+    },
+    {
+      "title": "Wikipedia: Akal Takht",
+      "url": "https://en.wikipedia.org/wiki/Akal_Takht"
+    },
+    {
+      "title": "Wikipedia: Guru Hargobind",
+      "url": "https://en.wikipedia.org/wiki/Guru_Hargobind"
+    },
+    {
+      "title": "Wikipedia: Guru Tegh Bahadur",
+      "url": "https://en.wikipedia.org/wiki/Guru_Tegh_Bahadur"
+    },
+    {
+      "title": "Wikipedia: Anandpur Sahib",
+      "url": "https://en.wikipedia.org/wiki/Anandpur_Sahib"
+    },
+    {
+      "title": "Wikipedia: Khalsa",
+      "url": "https://en.wikipedia.org/wiki/Khalsa"
+    },
+    {
+      "title": "Wikipedia: Panj Pyare",
+      "url": "https://en.wikipedia.org/wiki/Panj_Pyare"
+    },
+    {
+      "title": "Wikipedia: Five Ks",
+      "url": "https://en.wikipedia.org/wiki/Five_Ks"
+    },
+    {
+      "title": "Wikipedia: Guru Gobind Singh",
+      "url": "https://en.wikipedia.org/wiki/Guru_Gobind_Singh"
+    },
+    {
+      "title": "Wikipedia: Chamkaur Sahib",
+      "url": "https://en.wikipedia.org/wiki/Chamkaur_Sahib"
+    },
+    {
+      "title": "Wikipedia: Fatehgarh Sahib",
+      "url": "https://en.wikipedia.org/wiki/Fatehgarh_Sahib"
+    },
+    {
+      "title": "Wikipedia: Hazur Sahib",
+      "url": "https://en.wikipedia.org/wiki/Hazur_Sahib"
+    },
+    {
+      "title": "Wikipedia: Banda Singh Bahadur",
+      "url": "https://en.wikipedia.org/wiki/Banda_Singh_Bahadur"
+    },
+    {
+      "title": "Wikipedia: Vadda Ghallughara",
+      "url": "https://en.wikipedia.org/wiki/Vadda_Ghallughara"
+    },
+    {
+      "title": "Wikipedia: Sikh Confederacy",
+      "url": "https://en.wikipedia.org/wiki/Sikh_Confederacy"
+    },
+    {
+      "title": "Wikipedia: Sikh Empire",
+      "url": "https://en.wikipedia.org/wiki/Sikh_Empire"
+    },
+    {
+      "title": "Wikipedia: Ranjit Singh",
+      "url": "https://en.wikipedia.org/wiki/Ranjit_Singh"
+    },
+    {
+      "title": "Wikipedia: Hari Singh Nalwa",
+      "url": "https://en.wikipedia.org/wiki/Hari_Singh_Nalwa"
+    },
+    {
+      "title": "Wikipedia: Duleep Singh",
+      "url": "https://en.wikipedia.org/wiki/Duleep_Singh"
+    },
+    {
+      "title": "Wikipedia: Koh-i-Noor",
+      "url": "https://en.wikipedia.org/wiki/Koh-i-Noor"
+    },
+    {
+      "title": "Wikipedia: Sikh diaspora",
+      "url": "https://en.wikipedia.org/wiki/Sikh_diaspora"
+    },
+    {
+      "title": "Wikipedia: Komagata Maru incident",
+      "url": "https://en.wikipedia.org/wiki/Komagata_Maru_incident"
+    },
+    {
+      "title": "Wikipedia: Khalsa Diwan Society Vancouver",
+      "url": "https://en.wikipedia.org/wiki/Khalsa_Diwan_Society_Vancouver"
+    },
+    {
+      "title": "Wikipedia: Ghadar movement",
+      "url": "https://en.wikipedia.org/wiki/Ghadar_movement"
+    },
+    {
+      "title": "Wikipedia: Jallianwala Bagh massacre",
+      "url": "https://en.wikipedia.org/wiki/Jallianwala_Bagh_massacre"
+    },
+    {
+      "title": "Wikipedia: Udham Singh",
+      "url": "https://en.wikipedia.org/wiki/Udham_Singh"
+    },
+    {
+      "title": "Wikipedia: Akali movement",
+      "url": "https://en.wikipedia.org/wiki/Akali_movement"
+    },
+    {
+      "title": "Wikipedia: Nankana massacre",
+      "url": "https://en.wikipedia.org/wiki/Nankana_massacre"
+    },
+    {
+      "title": "Wikipedia: Partition of India",
+      "url": "https://en.wikipedia.org/wiki/Partition_of_India"
+    },
+    {
+      "title": "Wikipedia: Radcliffe Line",
+      "url": "https://en.wikipedia.org/wiki/Radcliffe_Line"
+    },
+    {
+      "title": "Wikipedia: Punjabi Suba movement",
+      "url": "https://en.wikipedia.org/wiki/Punjabi_Suba_movement"
+    },
+    {
+      "title": "Wikipedia: Operation Blue Star",
+      "url": "https://en.wikipedia.org/wiki/Operation_Blue_Star"
+    },
+    {
+      "title": "Wikipedia: 1984 anti-Sikh riots",
+      "url": "https://en.wikipedia.org/wiki/1984_anti-Sikh_riots"
+    },
+    {
+      "title": "Wikipedia: Insurgency in Punjab, India",
+      "url": "https://en.wikipedia.org/wiki/Insurgency_in_Punjab,_India"
+    },
+    {
+      "title": "Wikipedia: Air India Flight 182",
+      "url": "https://en.wikipedia.org/wiki/Air_India_Flight_182"
+    },
+    {
+      "title": "Wikipedia: Kartarpur Corridor",
+      "url": "https://en.wikipedia.org/wiki/Kartarpur_Corridor"
+    },
+    {
+      "title": "Wikipedia: Sikhism in Canada",
+      "url": "https://en.wikipedia.org/wiki/Sikhism_in_Canada"
+    },
+    {
+      "title": "Wikipedia: Sikhism in the United Kingdom",
+      "url": "https://en.wikipedia.org/wiki/Sikhism_in_the_United_Kingdom"
+    },
+    {
+      "title": "Wikipedia: Sikhism in the United States",
+      "url": "https://en.wikipedia.org/wiki/Sikhism_in_the_United_States"
+    }
+  ]
+}

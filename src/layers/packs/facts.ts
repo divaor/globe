@@ -64,7 +64,7 @@ function fieldLayerDef(key: string, f: Field): LayerDef | null {
     });
   }
   const cats = () => Object.fromEntries(Object.entries(f.categories ?? {}).map(([k, v]) => [k, { ...v, color: c.colors?.[k] ?? v.color, icon: v.emoji ?? v.icon }]));
-  return categoricalLayer({ ...base, values: values(key), categories: cats, order: c.order, listInCard: f.type === 'list' });
+  return categoricalLayer({ ...base, values: values(key), categories: cats, order: c.order, listInCard: f.type === 'list', maxLegend: c.maxLegend });
 }
 
 // ---- Special filters -------------------------------------------------------------------------

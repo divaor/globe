@@ -1,0 +1,4290 @@
+{
+  "id": "judaism",
+  "name": {
+    "en": "Judaism",
+    "es": "El judaísmo"
+  },
+  "icon": "🕎",
+  "era": "ancient",
+  "region": {
+    "en": "The Levant and Jewish communities around the world",
+    "es": "El Levante y las comunidades judías de todo el mundo"
+  },
+  "start": "-1208",
+  "end": "2020",
+  "summary": {
+    "en": "From the Israelites of the Iron Age to about 15 million Jews today: kingdoms and exile, the rabbis and the Talmud, a diaspora from Spain to China, expulsions and migrations, the Holocaust and the State of Israel.",
+    "es": "De los israelitas de la Edad del Hierro a los unos 15 millones de judíos de hoy: reinos y exilio, los rabinos y el Talmud, una diáspora de España a China, expulsiones y migraciones, el Holocausto y el Estado de Israel."
+  },
+  "camera": {
+    "lon": 34.4,
+    "lat": 29.2,
+    "zoom": 4.0
+  },
+  "sides": [
+    {
+      "id": "jews",
+      "name": {
+        "en": "Israelites and Jewish communities",
+        "es": "Israelitas y comunidades judías"
+      },
+      "color": "#5dade2"
+    },
+    {
+      "id": "moves",
+      "name": {
+        "en": "Exiles, expulsions and migrations",
+        "es": "Exilios, expulsiones y migraciones"
+      },
+      "color": "#e67e22"
+    }
+  ],
+  "defs": {
+    "highlands": {
+      "land": [
+        [
+          34.98,
+          32.62
+        ],
+        [
+          35.3,
+          32.68
+        ],
+        [
+          35.55,
+          32.35
+        ],
+        [
+          35.47,
+          31.85
+        ],
+        [
+          35.33,
+          31.35
+        ],
+        [
+          35.0,
+          31.25
+        ],
+        [
+          34.9,
+          31.55
+        ],
+        [
+          35.0,
+          32.0
+        ],
+        [
+          34.96,
+          32.4
+        ]
+      ]
+    },
+    "israel_850": {
+      "land": [
+        [
+          35.08,
+          33.12
+        ],
+        [
+          35.62,
+          33.3
+        ],
+        [
+          35.85,
+          33.05
+        ],
+        [
+          36.15,
+          32.65
+        ],
+        [
+          36.05,
+          32.05
+        ],
+        [
+          35.62,
+          31.85
+        ],
+        [
+          35.4,
+          31.92
+        ],
+        [
+          35.2,
+          31.96
+        ],
+        [
+          34.95,
+          32.05
+        ],
+        [
+          34.84,
+          32.45
+        ],
+        [
+          34.95,
+          32.83
+        ]
+      ]
+    },
+    "judah_850": {
+      "land": [
+        [
+          34.95,
+          31.98
+        ],
+        [
+          35.2,
+          31.96
+        ],
+        [
+          35.4,
+          31.92
+        ],
+        [
+          35.55,
+          31.8
+        ],
+        [
+          35.45,
+          31.3
+        ],
+        [
+          35.3,
+          30.95
+        ],
+        [
+          34.75,
+          31.15
+        ],
+        [
+          34.8,
+          31.6
+        ]
+      ]
+    },
+    "babylonia": {
+      "land": [
+        [
+          43.9,
+          33.4
+        ],
+        [
+          44.8,
+          33.5
+        ],
+        [
+          45.9,
+          32.2
+        ],
+        [
+          45.5,
+          31.5
+        ],
+        [
+          44.6,
+          31.6
+        ],
+        [
+          44.0,
+          32.3
+        ]
+      ]
+    },
+    "yehud": {
+      "land": [
+        [
+          34.98,
+          31.96
+        ],
+        [
+          35.45,
+          31.96
+        ],
+        [
+          35.47,
+          31.55
+        ],
+        [
+          35.0,
+          31.55
+        ]
+      ]
+    },
+    "judea_164": {
+      "land": [
+        [
+          34.88,
+          32.0
+        ],
+        [
+          35.45,
+          32.02
+        ],
+        [
+          35.5,
+          31.55
+        ],
+        [
+          34.95,
+          31.5
+        ]
+      ]
+    },
+    "judea_70": {
+      "land": [
+        [
+          34.85,
+          32.05
+        ],
+        [
+          35.05,
+          32.55
+        ],
+        [
+          35.1,
+          33.05
+        ],
+        [
+          35.62,
+          33.12
+        ],
+        [
+          35.66,
+          32.68
+        ],
+        [
+          35.75,
+          32.2
+        ],
+        [
+          35.65,
+          31.6
+        ],
+        [
+          35.45,
+          31.25
+        ],
+        [
+          35.05,
+          31.25
+        ],
+        [
+          34.85,
+          31.55
+        ]
+      ]
+    },
+    "galilee": {
+      "land": [
+        [
+          35.0,
+          32.6
+        ],
+        [
+          35.1,
+          33.07
+        ],
+        [
+          35.62,
+          33.12
+        ],
+        [
+          35.66,
+          32.65
+        ],
+        [
+          35.45,
+          32.55
+        ]
+      ]
+    },
+    "alexandria": {
+      "circle": [
+        29.92,
+        31.2
+      ],
+      "km": 70
+    },
+    "elephantine": {
+      "circle": [
+        32.886,
+        24.086
+      ],
+      "km": 40
+    },
+    "rome": {
+      "circle": [
+        12.49,
+        41.89
+      ],
+      "km": 60
+    },
+    "antioch": {
+      "circle": [
+        36.16,
+        36.2
+      ],
+      "km": 50
+    },
+    "baghdad": {
+      "circle": [
+        44.4,
+        33.0
+      ],
+      "km": 160
+    },
+    "fustat": {
+      "circle": [
+        31.23,
+        30.03
+      ],
+      "km": 70
+    },
+    "kairouan": {
+      "circle": [
+        10.1,
+        35.68
+      ],
+      "km": 70
+    },
+    "cordoba": {
+      "circle": [
+        -4.78,
+        37.88
+      ],
+      "km": 90
+    },
+    "toledo": {
+      "circle": [
+        -4.03,
+        39.86
+      ],
+      "km": 80
+    },
+    "barcelona": {
+      "circle": [
+        2.1,
+        41.6
+      ],
+      "km": 90
+    },
+    "narbonne": {
+      "circle": [
+        3.4,
+        43.4
+      ],
+      "km": 80
+    },
+    "troyes": {
+      "circle": [
+        4.07,
+        48.3
+      ],
+      "km": 70
+    },
+    "rhineland": {
+      "circle": [
+        8.3,
+        49.85
+      ],
+      "km": 90
+    },
+    "sanaa": {
+      "circle": [
+        44.2,
+        15.35
+      ],
+      "km": 120
+    },
+    "gondar": {
+      "circle": [
+        37.6,
+        12.9
+      ],
+      "km": 140
+    },
+    "kerala": {
+      "circle": [
+        76.25,
+        10.1
+      ],
+      "km": 80
+    },
+    "kaifeng": {
+      "circle": [
+        114.31,
+        34.8
+      ],
+      "km": 70
+    },
+    "constantinople": {
+      "circle": [
+        28.97,
+        41.01
+      ],
+      "km": 60
+    },
+    "thessaloniki": {
+      "circle": [
+        22.94,
+        40.64
+      ],
+      "km": 70
+    },
+    "safed": {
+      "circle": [
+        35.5,
+        32.96
+      ],
+      "km": 40
+    },
+    "fez": {
+      "circle": [
+        -4.98,
+        34.03
+      ],
+      "km": 80
+    },
+    "venice_rome": [
+      {
+        "circle": [
+          12.33,
+          45.44
+        ],
+        "km": 60
+      },
+      {
+        "circle": [
+          12.49,
+          41.89
+        ],
+        "km": 60
+      }
+    ],
+    "amsterdam": {
+      "circle": [
+        4.9,
+        52.37
+      ],
+      "km": 60
+    },
+    "recife": {
+      "circle": [
+        -34.87,
+        -8.06
+      ],
+      "km": 60
+    },
+    "poland_1492": {
+      "land": [
+        [
+          15.5,
+          52.5
+        ],
+        [
+          19.5,
+          53.2
+        ],
+        [
+          24.0,
+          53.0
+        ],
+        [
+          26.5,
+          50.5
+        ],
+        [
+          24.0,
+          49.2
+        ],
+        [
+          20.0,
+          49.3
+        ],
+        [
+          16.5,
+          50.2
+        ]
+      ]
+    },
+    "commonwealth": {
+      "and": [
+        {
+          "hist": "Polish–Lithuanian Commonwealth",
+          "year": 1650
+        },
+        {
+          "poly": [
+            [
+              14,
+              47
+            ],
+            [
+              36,
+              47
+            ],
+            [
+              36,
+              57.2
+            ],
+            [
+              14,
+              57.2
+            ]
+          ]
+        }
+      ]
+    },
+    "pale": [
+      {
+        "a1": "UKR",
+        "except": [
+          "Kharkiv",
+          "Luhansk",
+          "Sumy",
+          "Donetsk",
+          "Zakarpattia",
+          "Lviv",
+          "Ivano-Frankivsk",
+          "Ternopil",
+          "Chernivtsi"
+        ]
+      },
+      "BLR",
+      "LTU",
+      "MDA",
+      {
+        "a1": "POL",
+        "names": [
+          "Masovian Voivodeship",
+          "Łódź Voivodeship",
+          "Lublin Voivodeship",
+          "Świętokrzyskie Voivodeship",
+          "Podlaskie Voivodeship"
+        ]
+      }
+    ],
+    "galicia": [
+      {
+        "a1": "POL",
+        "names": [
+          "Lesser Poland Voivodeship",
+          "Podkarpackie Voivodeship"
+        ]
+      }
+    ],
+    "new_york": {
+      "circle": [
+        -73.95,
+        40.75
+      ],
+      "km": 130
+    },
+    "buenos_aires": {
+      "circle": [
+        -58.45,
+        -34.6
+      ],
+      "km": 110
+    },
+    "yishuv": {
+      "land": [
+        [
+          34.6,
+          31.2
+        ],
+        [
+          34.9,
+          32.9
+        ],
+        [
+          35.6,
+          33.1
+        ],
+        [
+          35.6,
+          32.4
+        ],
+        [
+          35.25,
+          31.7
+        ],
+        [
+          34.9,
+          31.3
+        ]
+      ]
+    },
+    "israel_1949": {
+      "minus": [
+        "ISR",
+        {
+          "poly": [
+            [
+              35.62,
+              32.62
+            ],
+            [
+              35.66,
+              32.9
+            ],
+            [
+              35.6,
+              33.25
+            ],
+            [
+              35.8,
+              33.4
+            ],
+            [
+              35.95,
+              33.4
+            ],
+            [
+              36.05,
+              33.2
+            ],
+            [
+              35.98,
+              32.65
+            ],
+            [
+              35.75,
+              32.6
+            ]
+          ]
+        }
+      ]
+    },
+    "morocco": {
+      "circle": [
+        -7.6,
+        33.6
+      ],
+      "km": 120
+    },
+    "iraq_1900": {
+      "circle": [
+        44.4,
+        33.3
+      ],
+      "km": 120
+    }
+  },
+  "steps": [
+    {
+      "date": "-1208",
+      "title": {
+        "en": "The Israelites in Canaan",
+        "es": "Los israelitas en Canaán"
+      },
+      "text": {
+        "en": "Around 1208 BC an Egyptian stele names a people called Israel in Canaan, the first mention outside the Bible. Their villages were spreading across the hill country west of the Jordan.",
+        "es": "Hacia el 1208 a. C., una estela egipcia nombra a un pueblo llamado Israel en Canaán: es la primera mención fuera de la Biblia. Sus aldeas se extendían por las colinas al oeste del Jordán."
+      },
+      "details": {
+        "en": "The Bible tells how God called Abraham to leave Mesopotamia for Canaan and promised the land to his descendants; how his grandson Jacob, also named Israel, went down to Egypt, where the Israelites were later enslaved; and how Moses led them out, received the Torah at Mount Sinai and brought them to the edge of the promised land. Historians debate whether and how these events happened. Most see the stories of the patriarchs as traditions written down centuries later, and no trace of a great exodus has been found, though many think the story keeps memories of real events. Archaeology shows hundreds of new villages in the hill country from about 1200 BC, built by people who came mostly from Canaan itself, kept no pigs and worshipped Yahweh. Pharaoh Merneptah's stele is the first written record of them.",
+        "es": "La Biblia cuenta que Dios llamó a Abraham a dejar Mesopotamia por Canaán y prometió esa tierra a sus descendientes; que su nieto Jacob, también llamado Israel, bajó a Egipto, donde los israelitas fueron después esclavizados; y que Moisés los sacó de allí, recibió la Torá en el monte Sinaí y los llevó hasta las puertas de la tierra prometida. Los historiadores debaten si estos hechos ocurrieron y cómo. La mayoría ve los relatos de los patriarcas como tradiciones escritas siglos después, y no se ha hallado rastro de un gran éxodo, aunque muchos creen que el relato guarda recuerdos de hechos reales. La arqueología muestra cientos de aldeas nuevas en las colinas desde hacia el 1200 a. C., fundadas por gente que venía sobre todo del propio Canaán, que no criaba cerdos y adoraba a Yahvé. La estela del faraón Merneptah es el primer registro escrito de ellos."
+      },
+      "camera": {
+        "lon": 34.4,
+        "lat": 29.2,
+        "zoom": 4.0
+      },
+      "control": {
+        "jews": {
+          "ref": "highlands"
+        }
+      },
+      "places": [
+        {
+          "id": "abraham",
+          "name": {
+            "en": "Abraham",
+            "es": "Abraham"
+          },
+          "at": [
+            35.1107,
+            31.5247
+          ],
+          "cat": "founder",
+          "type": "person",
+          "date": "-1800",
+          "place": {
+            "en": "Hebron, West Bank (his tomb, by tradition)",
+            "es": "Hebrón, Cisjordania (su tumba, según la tradición)"
+          },
+          "text": {
+            "en": "The first patriarch of the Bible, whom God called to leave Mesopotamia for Canaan. Jews, Christians and Muslims honour him; most historians see his story as a tradition written down long after.",
+            "es": "El primer patriarca de la Biblia, a quien Dios llamó a dejar Mesopotamia por Canaán. Judíos, cristianos y musulmanes lo honran; la mayoría de los historiadores ve su historia como una tradición escrita mucho después."
+          },
+          "details": {
+            "en": "According to Genesis, Abraham left Ur of the Chaldees with his father, settled in Harran and went on to Canaan, where God made a covenant with him, marked by circumcision, and promised the land to his descendants. Tradition places him in the 20th to 18th centuries BC. In Judaism he is the first patriarch, who began the covenant between God and the Jewish people; Christians see him as their spiritual ancestor, and Muslims as a prophet. He is honoured as the forefather of the Jews through his son Isaac and of the Arabs through his son Ishmael. The Bible says he bought the Cave of Machpelah in Hebron as a family tomb, a place still holy to Jews and Muslims. Most scholars think the stories grew over centuries and took written form long after the time they describe.",
+            "es": "Según el Génesis, Abraham salió de Ur de los caldeos con su padre, vivió en Harán y siguió hasta Canaán, donde Dios hizo una alianza con él, sellada con la circuncisión, y prometió la tierra a sus descendientes. La tradición lo sitúa entre los siglos XX y XVIII a. C. En el judaísmo es el primer patriarca, quien inició la alianza entre Dios y el pueblo judío; los cristianos lo ven como su antepasado espiritual, y los musulmanes como un profeta. Se lo honra como antepasado de los judíos por su hijo Isaac y de los árabes por su hijo Ismael. La Biblia dice que compró la cueva de Macpelá, en Hebrón, como tumba familiar, un lugar todavía sagrado para judíos y musulmanes. La mayoría de los estudiosos piensa que los relatos crecieron a lo largo de siglos y se pusieron por escrito mucho después de la época que describen."
+          },
+          "wiki": {
+            "en": "Abraham",
+            "es": "Abraham"
+          }
+        },
+        {
+          "id": "moses",
+          "name": {
+            "en": "Moses",
+            "es": "Moisés"
+          },
+          "at": [
+            33.9754,
+            28.5392
+          ],
+          "cat": "founder",
+          "type": "person",
+          "date": "-1250",
+          "place": {
+            "en": "Mount Sinai, Egypt (traditional site)",
+            "es": "Monte Sinaí, Egipto (sitio tradicional)"
+          },
+          "text": {
+            "en": "According to the Bible, Moses led the Israelites out of slavery in Egypt and received the Torah from God on Mount Sinai. Historians debate whether he lived; some allow for a Moses-like leader in the 13th century BC.",
+            "es": "Según la Biblia, Moisés sacó a los israelitas de la esclavitud en Egipto y recibió la Torá de Dios en el monte Sinaí. Los historiadores debaten si existió; algunos admiten un líder parecido a Moisés en el siglo XIII a. C."
+          },
+          "details": {
+            "en": "In the Book of Exodus, Moses is born to an Israelite family in Egypt, raised by Pharaoh's daughter, and called by God from a burning bush. After ten plagues he leads the people across the sea, receives the Ten Commandments at Mount Sinai and guides them for forty years in the desert; he dies on Mount Nebo, in sight of the promised land. Jews honour him as the greatest prophet and as the lawgiver through whom the Torah was given, and Christians and Muslims also revere him. Rabbinic tradition dated his life to 1391–1271 BC. No Egyptian record mentions him or the Exodus, and most scholars see the story as a founding account of Israel written down centuries later, which may keep a memory of small groups who left Egypt.",
+            "es": "En el libro del Éxodo, Moisés nace en una familia israelita en Egipto, lo cría la hija del faraón y Dios lo llama desde una zarza ardiente. Tras diez plagas, guía al pueblo a través del mar, recibe los Diez Mandamientos en el monte Sinaí y lo conduce cuarenta años por el desierto; muere en el monte Nebo, a la vista de la tierra prometida. Los judíos lo honran como el mayor de los profetas y el legislador por medio del cual se entregó la Torá, y cristianos y musulmanes también lo veneran. La tradición rabínica situó su vida entre 1391 y 1271 a. C. Ningún documento egipcio lo menciona a él ni al Éxodo, y la mayoría de los estudiosos ve el relato como una historia fundacional de Israel escrita siglos después, que quizá guarde el recuerdo de pequeños grupos que salieron de Egipto."
+          },
+          "wiki": {
+            "en": "Moses",
+            "es": "Moisés"
+          }
+        },
+        {
+          "id": "merneptah-stele",
+          "name": {
+            "en": "Merneptah Stele",
+            "es": "Estela de Merneptah"
+          },
+          "at": [
+            32.6103,
+            25.7206
+          ],
+          "cat": "event",
+          "type": "work",
+          "date": "-1208",
+          "place": {
+            "en": "Luxor (ancient Thebes), Egypt; now in the Egyptian Museum, Cairo",
+            "es": "Lúxor (la antigua Tebas), Egipto; hoy en el Museo Egipcio de El Cairo"
+          },
+          "text": {
+            "en": "A granite stele of about 1208 BC in which Pharaoh Merneptah boasts of a campaign in Canaan: 'Israel is laid waste, his seed is not.' It is the oldest known mention of Israel.",
+            "es": "Una estela de granito de hacia el 1208 a. C. en la que el faraón Merneptah presume de una campaña en Canaán: «Israel está devastado, su semilla ya no existe». Es la mención más antigua que se conoce de Israel."
+          },
+          "details": {
+            "en": "The black granite slab, over 3 metres high, was found by Flinders Petrie in 1896 in the ruins of Merneptah's temple at Thebes. Most of its 28 lines celebrate the pharaoh's victory over the Libyans; the last lines list places in Canaan he claims to have crushed. The word 'Israel' is written with the sign for a people rather than a land, which suggests a group living in the highlands rather than a kingdom. It is one of only four inscriptions of the Iron Age that name Israel.",
+            "es": "Esta losa de granito negro, de más de 3 metros de alto, la halló Flinders Petrie en 1896 entre las ruinas del templo de Merneptah en Tebas. La mayoría de sus 28 líneas celebra la victoria del faraón sobre los libios; las últimas enumeran lugares de Canaán que dice haber aplastado. La palabra «Israel» lleva el signo que indica un pueblo y no un país, lo que hace pensar en un grupo que vivía en las colinas y no en un reino. Es una de las solo cuatro inscripciones de la Edad del Hierro que nombran a Israel."
+          },
+          "wiki": {
+            "en": "Merneptah Stele",
+            "es": "Estela de Merenptah"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-850",
+      "title": {
+        "en": "Kingdoms of Israel and Judah",
+        "es": "Los reinos de Israel y Judá"
+      },
+      "text": {
+        "en": "By the 9th century BC two kingdoms worship Yahweh: Israel in the north, ruled from Samaria, and Judah in the south, ruled from Jerusalem by kings who claimed descent from David.",
+        "es": "En el siglo IX a. C. dos reinos adoran a Yahvé: Israel al norte, gobernado desde Samaria, y Judá al sur, gobernado desde Jerusalén por reyes que se decían descendientes de David."
+      },
+      "details": {
+        "en": "According to the Bible, Saul, David and Solomon ruled a united kingdom, and Solomon built the first Temple in Jerusalem; historians debate how large and rich that kingdom really was. The two kingdoms that followed are well attested. Israel, the richer, built its capital at Samaria under King Omri, and Assyrian records name its king Ahab. An Aramaean stele found at Tel Dan speaks of the 'House of David'. Prophets such as Elijah, Amos and Isaiah called for justice and loyalty to one God, and scribes began to write down the traditions that became the Hebrew Bible. Around 720 BC the Assyrians conquered Israel and deported many of its people to Mesopotamia; later tradition remembers them as the 'ten lost tribes'. Judah survived as an Assyrian vassal.",
+        "es": "Según la Biblia, Saúl, David y Salomón gobernaron un reino unido, y Salomón construyó el primer Templo en Jerusalén; los historiadores debaten cuán grande y rico fue en realidad ese reino. Los dos reinos que siguieron están bien documentados. Israel, el más rico, construyó su capital en Samaria bajo el rey Omrí, y los registros asirios nombran a su rey Ajab. Una estela aramea hallada en Tel Dan habla de la «Casa de David». Profetas como Elías, Amós e Isaías pedían justicia y fidelidad a un solo Dios, y los escribas empezaron a poner por escrito las tradiciones que formarían la Biblia hebrea. Hacia el 720 a. C. los asirios conquistaron Israel y deportaron a gran parte de su gente a Mesopotamia; la tradición posterior los recuerda como las «diez tribus perdidas». Judá sobrevivió como vasallo de Asiria."
+      },
+      "camera": {
+        "lon": 35.4,
+        "lat": 32.1,
+        "zoom": 6.5
+      },
+      "control": {
+        "jews": [
+          {
+            "ref": "israel_850"
+          },
+          {
+            "ref": "judah_850"
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "jerusalem",
+          "name": {
+            "en": "Jerusalem",
+            "es": "Jerusalén"
+          },
+          "at": [
+            35.2316,
+            31.7767
+          ],
+          "cat": "sacred",
+          "type": "place",
+          "date": "-1000",
+          "place": {
+            "en": "Jerusalem",
+            "es": "Jerusalén"
+          },
+          "text": {
+            "en": "Capital of the kings of Judah and site of the Temple. For nearly 3,000 years Jews have turned toward Jerusalem in prayer; the city is also holy to Christians and Muslims.",
+            "es": "Capital de los reyes de Judá y sede del Templo. Desde hace casi 3000 años, los judíos se vuelven hacia Jerusalén para rezar; la ciudad también es sagrada para cristianos y musulmanes."
+          },
+          "details": {
+            "en": "The Bible says King David took the city from the Jebusites around 1000 BC and made it his capital, and that Solomon built the Temple on the hill now called the Temple Mount. Jerusalem was destroyed by the Babylonians in 587 or 586 BC and by the Romans in AD 70, and has been ruled since by Romans, Byzantines, caliphs, crusaders, Mamluks, Ottomans and the British. Jews pray facing it and end the Passover meal with the words 'Next year in Jerusalem'. Today Israelis and Palestinians both claim the city as their capital.",
+            "es": "La Biblia dice que el rey David tomó la ciudad a los jebuseos hacia el 1000 a. C. y la hizo su capital, y que Salomón construyó el Templo en la colina que hoy se llama Monte del Templo. Jerusalén fue destruida por los babilonios en el 587 o 586 a. C. y por los romanos en el 70 d. C., y desde entonces la gobernaron romanos, bizantinos, califas, cruzados, mamelucos, otomanos y británicos. Los judíos rezan mirando hacia ella y terminan la cena de Pésaj con las palabras «el año que viene en Jerusalén». Hoy israelíes y palestinos reclaman la ciudad como su capital."
+          },
+          "wiki": {
+            "en": "Jerusalem",
+            "es": "Jerusalén"
+          }
+        },
+        {
+          "id": "solomons-temple",
+          "name": {
+            "en": "Solomon's Temple (First Temple)",
+            "es": "Templo de Salomón (Primer Templo)"
+          },
+          "at": [
+            35.2354,
+            31.7781
+          ],
+          "cat": "sacred",
+          "type": "structure",
+          "date": "-950",
+          "until": "-587",
+          "place": {
+            "en": "Temple Mount, Jerusalem",
+            "es": "Monte del Templo, Jerusalén"
+          },
+          "text": {
+            "en": "The Bible says King Solomon built the first Temple to the God of Israel in the 10th century BC, to hold the Ark of the Covenant. No remains have been excavated; the Babylonians destroyed it in 587 or 586 BC.",
+            "es": "La Biblia dice que el rey Salomón construyó el primer Templo al Dios de Israel en el siglo X a. C., para guardar el Arca de la Alianza. No se han excavado restos; los babilonios lo destruyeron en el 587 o 586 a. C."
+          },
+          "wiki": {
+            "en": "Solomon's Temple",
+            "es": "Templo de Salomón"
+          }
+        },
+        {
+          "id": "samaria",
+          "name": {
+            "en": "Samaria",
+            "es": "Samaria"
+          },
+          "at": [
+            35.195,
+            32.2764
+          ],
+          "cat": "ruler",
+          "type": "place",
+          "date": "-880",
+          "place": {
+            "en": "Sebastia, West Bank",
+            "es": "Sebastia, Cisjordania"
+          },
+          "text": {
+            "en": "Capital of the kingdom of Israel, founded by King Omri around 880 BC on a hill with wide views. Its palace was among the largest in the Levant. Assyria took the city around 720 BC.",
+            "es": "Capital del reino de Israel, fundada por el rey Omrí hacia el 880 a. C. en una colina de amplias vistas. Su palacio fue de los más grandes del Levante. Asiria tomó la ciudad hacia el 720 a. C."
+          },
+          "wiki": {
+            "en": "Samaria (ancient city)",
+            "es": "Samaria (ciudad antigua)"
+          }
+        },
+        {
+          "id": "tel-dan-stele",
+          "name": {
+            "en": "Tel Dan Stele",
+            "es": "Estela de Tel Dan"
+          },
+          "at": [
+            35.6522,
+            33.2486
+          ],
+          "cat": "event",
+          "type": "work",
+          "date": "-840",
+          "place": {
+            "en": "Tel Dan, northern Israel; now in the Israel Museum, Jerusalem",
+            "es": "Tel Dan, norte de Israel; hoy en el Museo de Israel, Jerusalén"
+          },
+          "text": {
+            "en": "Fragments of an Aramaic victory stele of the 9th century BC, probably set up by King Hazael of Damascus. It mentions the 'House of David', the oldest widely accepted mention of David's dynasty outside the Bible.",
+            "es": "Fragmentos de una estela de victoria aramea del siglo IX a. C., probablemente levantada por el rey Jazael de Damasco. Menciona la «Casa de David», la referencia a la dinastía de David fuera de la Biblia más antigua y aceptada."
+          },
+          "sample": {
+            "text": "𐤁𐤉𐤕𐤃𐤅𐤃",
+            "latin": "bytdwd",
+            "means": {
+              "en": "House of David",
+              "es": "Casa de David"
+            }
+          },
+          "wiki": {
+            "en": "Tel Dan stele",
+            "es": "Estela de Tel Dan"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-587",
+      "title": {
+        "en": "Babylon destroys the Temple",
+        "es": "Babilonia destruye el Templo"
+      },
+      "text": {
+        "en": "Nebuchadnezzar II of Babylon takes Jerusalem in 587 or 586 BC, burns the Temple and carries many Judeans into exile. 'By the rivers of Babylon, there we sat down and wept,' says a psalm.",
+        "es": "Nabucodonosor II de Babilonia toma Jerusalén en el 587 o 586 a. C., quema el Templo y lleva al exilio a muchos habitantes de Judá. «Junto a los ríos de Babilonia, allí nos sentamos y lloramos», dice un salmo."
+      },
+      "details": {
+        "en": "After Babylon replaced Assyria as the great power, Judah was caught between Babylon and Egypt. In 597 BC Nebuchadnezzar took Jerusalem and exiled King Jehoiachin, his court and about 7,000 people, among them the prophet Ezekiel; clay tablets from Babylon list rations for 'the king of Judah'. When King Zedekiah rebelled, the Babylonians returned, and in 587 or 586 BC they broke in, burned the city and the Temple and deported more people. Judah's population fell sharply, though many stayed on the land, and some fled to Egypt. In Babylonia the exiles lived in villages near Nippur, kept the Sabbath and circumcision and began to gather their scriptures. Without a Temple they learned to worship far from home, the start of the Jewish diaspora. Jews still mourn the destruction on the fast of Tisha B'Av.",
+        "es": "Cuando Babilonia reemplazó a Asiria como gran potencia, Judá quedó atrapada entre Babilonia y Egipto. En el 597 a. C. Nabucodonosor tomó Jerusalén y desterró al rey Joaquín, a su corte y a unas 7000 personas, entre ellas el profeta Ezequiel; unas tablillas de arcilla de Babilonia registran las raciones para «el rey de Judá». Cuando el rey Sedecías se rebeló, los babilonios volvieron, y en el 587 o 586 a. C. entraron en la ciudad, la quemaron junto con el Templo y deportaron a más gente. La población de Judá cayó mucho, aunque muchos se quedaron en la tierra y algunos huyeron a Egipto. En Babilonia los desterrados vivían en aldeas cerca de Nippur, guardaban el sábado y la circuncisión y empezaron a reunir sus escrituras. Sin Templo, aprendieron a rendir culto lejos de casa: fue el comienzo de la diáspora judía. Los judíos aún lloran esa destrucción en el ayuno de Tishá be-Av."
+      },
+      "camera": {
+        "lon": 39.6,
+        "lat": 33.0,
+        "zoom": 4.0
+      },
+      "control": {
+        "jews": [
+          {
+            "ref": "judah_850"
+          },
+          {
+            "ref": "babylonia"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "moves",
+          "path": [
+            [
+              35.23,
+              31.78
+            ],
+            [
+              35.6,
+              32.4
+            ],
+            [
+              36.29,
+              33.51
+            ],
+            [
+              36.55,
+              34.45
+            ],
+            [
+              36.75,
+              35.13
+            ],
+            [
+              37.16,
+              36.2
+            ],
+            [
+              38.0,
+              36.8
+            ],
+            [
+              38.4,
+              36.3
+            ],
+            [
+              39.4,
+              35.6
+            ],
+            [
+              40.9,
+              34.55
+            ],
+            [
+              42.3,
+              34.2
+            ],
+            [
+              43.6,
+              33.3
+            ],
+            [
+              44.42,
+              32.54
+            ]
+          ],
+          "by": "land",
+          "label": {
+            "en": "Exile to Babylon",
+            "es": "Exilio a Babilonia"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "siege-of-jerusalem-587-bc",
+          "name": {
+            "en": "Siege of Jerusalem (587 BC)",
+            "es": "Sitio de Jerusalén (587 a. C.)"
+          },
+          "at": [
+            35.2296,
+            31.7745
+          ],
+          "cat": "persecution",
+          "type": "event",
+          "date": "-587",
+          "place": {
+            "en": "Jerusalem",
+            "es": "Jerusalén"
+          },
+          "text": {
+            "en": "After a long siege, Babylonian troops broke into Jerusalem in the summer of 587 or 586 BC (the year is debated), burned the Temple and the city and deported many of its people.",
+            "es": "Tras un largo sitio, las tropas babilónicas entraron en Jerusalén en el verano del 587 o 586 a. C. (el año se debate), quemaron el Templo y la ciudad y deportaron a buena parte de sus habitantes."
+          },
+          "wiki": {
+            "en": "Siege of Jerusalem (587 BC)",
+            "es": "Asedio de Jerusalén (587 a. C.)"
+          }
+        },
+        {
+          "id": "nebuchadnezzar-ii",
+          "name": {
+            "en": "Nebuchadnezzar II",
+            "es": "Nabucodonosor II"
+          },
+          "at": [
+            44.4211,
+            32.5425
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-605",
+          "life": [
+            "-642",
+            "-562"
+          ],
+          "place": {
+            "en": "Babylon, near Hillah, Iraq",
+            "es": "Babilonia, cerca de Hilla, Irak"
+          },
+          "text": {
+            "en": "King of Babylon from 605 to 562 BC, seen as its greatest king, who rebuilt the city's Ishtar Gate. His armies took Jerusalem twice, in 597 and in 587 or 586 BC, and he deported many Judeans to Babylonia.",
+            "es": "Rey de Babilonia del 605 al 562 a. C., considerado su mayor rey, que renovó la Puerta de Ishtar. Sus ejércitos tomaron Jerusalén dos veces, en el 597 y en el 587 o 586 a. C., y deportó a muchos judaítas a Babilonia."
+          },
+          "wiki": {
+            "en": "Nebuchadnezzar II",
+            "es": "Nabucodonosor II"
+          }
+        },
+        {
+          "id": "babylonian-exile",
+          "name": {
+            "en": "Babylonian exile",
+            "es": "Exilio en Babilonia"
+          },
+          "at": [
+            45.15,
+            32.15
+          ],
+          "cat": "community",
+          "type": "event",
+          "date": "-597",
+          "end": "-538",
+          "place": {
+            "en": "Babylon and Nippur, Iraq",
+            "es": "Babilonia y Nippur, Irak"
+          },
+          "text": {
+            "en": "From 597 BC Judeans were deported to Babylonia and settled in villages such as Tel-Abib near Nippur. Many stayed after the exile: Iraq's Jewish community lasted some 2,600 years, until most left in the early 1950s.",
+            "es": "Desde el 597 a. C. muchos habitantes de Judá fueron deportados a Babilonia y asentados en aldeas como Tel Abib, cerca de Nippur. Muchos se quedaron tras el exilio: la comunidad judía de Irak duró unos 2600 años, hasta que la mayoría se fue a comienzos de la década de 1950."
+          },
+          "wiki": {
+            "en": "Babylonian captivity",
+            "es": "Cautiverio de Babilonia"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-516",
+      "title": {
+        "en": "Return and the Second Temple",
+        "es": "El regreso y el Segundo Templo"
+      },
+      "text": {
+        "en": "After Persia's Cyrus takes Babylon in 539 BC, exiles begin to return. A modest Second Temple is finished around 516 BC, while many Jews stay in Babylonia and a garrison serves on the Nile.",
+        "es": "Después de que Ciro de Persia toma Babilonia en el 539 a. C., los desterrados empiezan a volver. Hacia el 516 a. C. se termina un modesto Segundo Templo, mientras muchos judíos se quedan en Babilonia y una guarnición sirve junto al Nilo."
+      },
+      "details": {
+        "en": "The Book of Ezra says Cyrus allowed the exiles to go home and rebuild the Temple. The Cyrus Cylinder speaks of letting deported peoples return to their shrines, though it names only places in Mesopotamia; archaeology suggests the return was a trickle over decades. Judah became Yehud, a small Persian province of perhaps 30,000 people. Under governors such as Zerubbabel and, later, Nehemiah, and the scribe Ezra, who read the Torah to the people, Judaism took a new shape around the Temple and the written law. Many scholars think the Torah received its final form in this period. Many Jews, often the wealthier, stayed in Babylonia. At Elephantine, on Egypt's southern border, Jewish soldiers in Persian service had their own temple to YHW, as Aramaic papyri of the 5th century BC reveal.",
+        "es": "El libro de Esdras dice que Ciro permitió a los desterrados volver a casa y reconstruir el Templo. El Cilindro de Ciro habla de dejar que los pueblos deportados regresaran a sus santuarios, aunque solo nombra lugares de Mesopotamia; la arqueología sugiere que el regreso fue un goteo a lo largo de décadas. Judá pasó a ser Yehud, una pequeña provincia persa de quizá 30 000 habitantes. Con gobernadores como Zorobabel y, más tarde, Nehemías, y con el escriba Esdras, que leyó la Torá al pueblo, el judaísmo tomó una nueva forma en torno al Templo y la ley escrita. Muchos estudiosos piensan que la Torá recibió su forma final en esta época. Muchos judíos, a menudo los más ricos, se quedaron en Babilonia. En Elefantina, en la frontera sur de Egipto, unos soldados judíos al servicio de Persia tenían su propio templo de YHW, como revelan papiros arameos del siglo V a. C."
+      },
+      "camera": {
+        "lon": 38.5,
+        "lat": 29.0,
+        "zoom": 3.4
+      },
+      "control": {
+        "jews": [
+          {
+            "ref": "yehud"
+          },
+          {
+            "ref": "babylonia"
+          },
+          {
+            "ref": "elephantine"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "moves",
+          "path": [
+            [
+              44.42,
+              32.54
+            ],
+            [
+              43.6,
+              33.3
+            ],
+            [
+              42.3,
+              34.2
+            ],
+            [
+              40.9,
+              34.55
+            ],
+            [
+              39.4,
+              35.6
+            ],
+            [
+              38.4,
+              36.3
+            ],
+            [
+              38.0,
+              36.8
+            ],
+            [
+              37.16,
+              36.2
+            ],
+            [
+              36.75,
+              35.13
+            ],
+            [
+              36.55,
+              34.45
+            ],
+            [
+              36.29,
+              33.51
+            ],
+            [
+              35.6,
+              32.4
+            ],
+            [
+              35.23,
+              31.78
+            ]
+          ],
+          "by": "land",
+          "label": {
+            "en": "Return to Zion",
+            "es": "Regreso a Sion"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "cyrus-cylinder",
+          "name": {
+            "en": "Cyrus Cylinder",
+            "es": "Cilindro de Ciro"
+          },
+          "at": [
+            44.405,
+            32.53
+          ],
+          "cat": "ruler",
+          "type": "work",
+          "date": "-539",
+          "place": {
+            "en": "Found in Babylon, Iraq; now in the British Museum, London",
+            "es": "Hallado en Babilonia, Irak; hoy en el Museo Británico, Londres"
+          },
+          "text": {
+            "en": "A clay cylinder in which Persia's Cyrus the Great boasts of taking Babylon in 539 BC and of letting deported peoples go home. It does not name Judah, but it fits the Bible's account of the return.",
+            "es": "Un cilindro de arcilla en el que Ciro el Grande de Persia presume de haber tomado Babilonia en el 539 a. C. y de dejar volver a casa a los pueblos deportados. No nombra a Judá, pero concuerda con el relato bíblico del regreso."
+          },
+          "wiki": {
+            "en": "Cyrus Cylinder",
+            "es": "Cilindro de Ciro"
+          }
+        },
+        {
+          "id": "second-temple",
+          "name": {
+            "en": "Second Temple",
+            "es": "Segundo Templo"
+          },
+          "at": [
+            35.2354,
+            31.7781
+          ],
+          "cat": "sacred",
+          "type": "structure",
+          "date": "-516",
+          "until": "70",
+          "place": {
+            "en": "Temple Mount, Jerusalem",
+            "es": "Monte del Templo, Jerusalén"
+          },
+          "text": {
+            "en": "The Temple rebuilt in Jerusalem and dedicated around 516 BC, smaller than Solomon's. Herod later turned it into one of the largest sanctuaries of the ancient world; Rome destroyed it in AD 70.",
+            "es": "El Templo reconstruido en Jerusalén y consagrado hacia el 516 a. C., más pequeño que el de Salomón. Herodes lo convirtió después en uno de los mayores santuarios del mundo antiguo; Roma lo destruyó en el 70 d. C."
+          },
+          "wiki": {
+            "en": "Second Temple",
+            "es": "Segundo Templo"
+          }
+        },
+        {
+          "id": "hebrew-bible",
+          "name": {
+            "en": "Hebrew Bible (Tanakh)",
+            "es": "Biblia hebrea (Tanaj)"
+          },
+          "at": [
+            35.2205,
+            31.7835
+          ],
+          "cat": "text",
+          "type": "work",
+          "date": "-450",
+          "place": {
+            "en": "Judah and Babylonia",
+            "es": "Judá y Babilonia"
+          },
+          "text": {
+            "en": "The 24 books of the Torah, the Prophets and the Writings. Jews believe the Torah was given to Moses; scholars think the books were written and edited over centuries and took final shape in Second Temple times.",
+            "es": "Los 24 libros de la Torá, los Profetas y los Escritos. Los judíos creen que la Torá fue entregada a Moisés; los estudiosos piensan que los libros se escribieron y editaron durante siglos y tomaron su forma final en tiempos del Segundo Templo."
+          },
+          "details": {
+            "en": "Tanakh is an acronym of its three parts: Torah (Teaching), Nevi'im (Prophets) and Ketuvim (Writings). The Torah, the five books from Genesis to Deuteronomy, tells of creation, the patriarchs, the Exodus and the laws given at Sinai. Tradition says the men of the Great Assembly completed the collection by about 450 BC; historians think the Torah gained authority in the Persian period, the Prophets by the 2nd century BC and the Writings later still. It is written mostly in Hebrew, with some chapters in Aramaic. Christians later adopted these books as their Old Testament.",
+            "es": "Tanaj es un acrónimo de sus tres partes: Torá (Enseñanza), Neviím (Profetas) y Ketuvím (Escritos). La Torá, los cinco libros del Génesis al Deuteronomio, narra la creación, los patriarcas, el Éxodo y las leyes dadas en el Sinaí. La tradición dice que los hombres de la Gran Asamblea completaron la colección hacia el 450 a. C.; los historiadores creen que la Torá ganó autoridad en la época persa, los Profetas hacia el siglo II a. C. y los Escritos aún más tarde. Está escrita sobre todo en hebreo, con algunos capítulos en arameo. Los cristianos adoptaron después estos libros como su Antiguo Testamento."
+          },
+          "sample": {
+            "text": "בְּרֵאשִׁית",
+            "latin": "bereshit",
+            "means": {
+              "en": "In the beginning (its first word)",
+              "es": "En el principio (su primera palabra)"
+            }
+          },
+          "wiki": {
+            "en": "Hebrew Bible",
+            "es": "Biblia hebrea"
+          }
+        },
+        {
+          "id": "elephantine-papyri",
+          "name": {
+            "en": "Elephantine papyri",
+            "es": "Papiros de Elefantina"
+          },
+          "at": [
+            32.8858,
+            24.0857
+          ],
+          "cat": "community",
+          "type": "work",
+          "date": "-495",
+          "end": "-399",
+          "place": {
+            "en": "Elephantine Island, Aswan, Egypt",
+            "es": "Isla Elefantina, Asuán, Egipto"
+          },
+          "text": {
+            "en": "Aramaic letters and contracts of a Jewish garrison on an island in the Nile, 495–399 BC. They tell of its own temple to YHW, wrecked in 410 BC, and of a festival letter of 419 BC.",
+            "es": "Cartas y contratos en arameo de una guarnición judía en una isla del Nilo, entre 495 y 399 a. C. Hablan de su propio templo de YHW, destruido en el 410 a. C., y de una carta sobre una fiesta del 419 a. C."
+          },
+          "wiki": {
+            "en": "Elephantine papyri and ostraca",
+            "es": "Papiros de Elefantina"
+          }
+        }
+      ]
+    },
+    {
+      "date": "-164",
+      "title": {
+        "en": "Alexandria and the Maccabees",
+        "es": "Alejandría y los macabeos"
+      },
+      "text": {
+        "en": "In Greek-ruled Alexandria, Jews translate the Torah into Greek. In Judea, King Antiochus IV bans Jewish practice; the Maccabees revolt and in 164 BC rededicate the Temple, the origin of Hanukkah.",
+        "es": "En Alejandría, gobernada por griegos, los judíos traducen la Torá al griego. En Judea, el rey Antíoco IV prohíbe las prácticas judías; los macabeos se rebelan y en el 164 a. C. vuelven a consagrar el Templo: es el origen de Janucá."
+      },
+      "details": {
+        "en": "After Alexander the Great's conquests, Judea was ruled first by the Ptolemies of Egypt and then by the Seleucids of Syria. Jews settled across the Greek world, and Alexandria grew into the largest Jewish community outside Judea; there the Torah was put into Greek in the 3rd century BC, the Septuagint. Greek culture divided Jews. In 167 BC Antiochus IV set up an altar to Zeus in the Temple and banned circumcision and the Sabbath; those who resisted were killed. The priest Mattathias of Modiin and his sons, led by Judah 'the Hammer' (Maccabee), began a guerrilla war, retook Jerusalem and purified the Temple in 164 BC. Their family, the Hasmoneans, ruled an independent Judea from 141 BC until Roman general Pompey took Jerusalem in 63 BC.",
+        "es": "Tras las conquistas de Alejandro Magno, Judea fue gobernada primero por los Ptolomeos de Egipto y después por los seléucidas de Siria. Los judíos se asentaron por todo el mundo griego, y Alejandría llegó a ser la mayor comunidad judía fuera de Judea; allí se tradujo la Torá al griego en el siglo III a. C.: la Septuaginta. La cultura griega dividió a los judíos. En el 167 a. C., Antíoco IV levantó un altar a Zeus en el Templo y prohibió la circuncisión y el sábado; quienes se resistían eran ejecutados. El sacerdote Matatías de Modín y sus hijos, encabezados por Judas «el Martillo» (Macabeo), iniciaron una guerra de guerrillas, recuperaron Jerusalén y purificaron el Templo en el 164 a. C. Su familia, los asmoneos, gobernó una Judea independiente desde el 141 a. C. hasta que el general romano Pompeyo tomó Jerusalén en el 63 a. C."
+      },
+      "camera": {
+        "lon": 37.0,
+        "lat": 32.0,
+        "zoom": 4.2
+      },
+      "control": {
+        "jews": [
+          {
+            "ref": "judea_164"
+          },
+          {
+            "ref": "alexandria"
+          },
+          {
+            "ref": "babylonia"
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "septuagint",
+          "name": {
+            "en": "Septuagint",
+            "es": "Septuaginta"
+          },
+          "at": [
+            29.9187,
+            31.2001
+          ],
+          "cat": "text",
+          "type": "work",
+          "date": "-250",
+          "place": {
+            "en": "Alexandria, Egypt",
+            "es": "Alejandría, Egipto"
+          },
+          "text": {
+            "en": "The Greek translation of the Torah, made by Jews of Alexandria in the 3rd century BC; the other books followed. A legend says 72 scholars made it. Early Christians later used it as their Old Testament.",
+            "es": "La traducción griega de la Torá, hecha por judíos de Alejandría en el siglo III a. C.; los demás libros vinieron después. Una leyenda dice que la hicieron 72 sabios. Los primeros cristianos la usaron luego como su Antiguo Testamento."
+          },
+          "sample": {
+            "text": "Ἐν ἀρχῇ ἐποίησεν ὁ θεός",
+            "latin": "En archēi epoiēsen ho theos",
+            "means": {
+              "en": "In the beginning God created",
+              "es": "En el principio creó Dios"
+            }
+          },
+          "wiki": {
+            "en": "Septuagint",
+            "es": "Septuaginta"
+          }
+        },
+        {
+          "id": "judas-maccabeus",
+          "name": {
+            "en": "Judah Maccabee",
+            "es": "Judas Macabeo"
+          },
+          "at": [
+            35.012,
+            31.905
+          ],
+          "cat": "ruler",
+          "type": "person",
+          "date": "-167",
+          "place": {
+            "en": "Modiin, Israel",
+            "es": "Modín, Israel"
+          },
+          "text": {
+            "en": "Son of the priest Mattathias of Modiin. From 167 BC he led a guerrilla revolt against the Seleucid king, retook Jerusalem and rededicated the Temple in 164 BC; he died in battle in 160 BC.",
+            "es": "Hijo del sacerdote Matatías de Modín. Desde el 167 a. C. dirigió una rebelión guerrillera contra el rey seléucida, recuperó Jerusalén y volvió a consagrar el Templo en el 164 a. C.; murió en batalla en el 160 a. C."
+          },
+          "wiki": {
+            "en": "Judas Maccabeus",
+            "es": "Judas Macabeo"
+          }
+        },
+        {
+          "id": "hanukkah",
+          "name": {
+            "en": "Hanukkah",
+            "es": "Janucá"
+          },
+          "at": [
+            35.2372,
+            31.7795
+          ],
+          "cat": "pilgrimage",
+          "type": "event",
+          "date": "-164",
+          "place": {
+            "en": "Jerusalem; celebrated by Jews everywhere",
+            "es": "Jerusalén; la celebran los judíos de todo el mundo"
+          },
+          "text": {
+            "en": "The eight-day Festival of Lights, which recalls the rededication of the Temple in 164 BC. The Talmud tells that oil for one day burned for eight; Jews light one more candle each night.",
+            "es": "La fiesta de las luminarias, de ocho días, que recuerda la nueva consagración del Templo en el 164 a. C. El Talmud cuenta que el aceite para un día ardió ocho; los judíos encienden una vela más cada noche."
+          },
+          "wiki": {
+            "en": "Hanukkah",
+            "es": "Janucá"
+          }
+        }
+      ]
+    },
+    {
+      "date": "70-08",
+      "title": {
+        "en": "Rome destroys Jerusalem",
+        "es": "Roma destruye Jerusalén"
+      },
+      "text": {
+        "en": "In AD 66 Judea rises against Rome. In 70 the legions of Titus take Jerusalem and burn the Second Temple; the last rebels fall at Masada in 73 or 74. Only the walls around the Temple Mount survive.",
+        "es": "En el 66 d. C. Judea se rebela contra Roma. En el 70 las legiones de Tito toman Jerusalén y queman el Segundo Templo; los últimos rebeldes caen en Masada en el 73 o 74. Solo sobreviven los muros que rodeaban el Monte del Templo."
+      },
+      "details": {
+        "en": "Under Roman rule Jews were divided into groups such as the Sadducees, the Pharisees and the Essenes, while followers of Jesus formed another. Revolt broke out in 66. In 70 Titus besieged Jerusalem, crowded with Passover pilgrims; famine and fighting killed huge numbers, though Josephus's figure of 1.1 million dead is thought much exaggerated. He says 97,000 captives were taken in the war, many sold as slaves. The Arch of Titus in Rome still shows the Temple's menorah carried in triumph. In 132–136 the Bar Kokhba revolt against Emperor Hadrian ended in a slaughter: Jerusalem was refounded as the pagan city of Aelia Capitolina, Jews were banned from it, and the province was renamed Syria Palaestina. By then far more Jews lived in the diaspora, from Rome to Babylonia, than in the land itself.",
+        "es": "Bajo el dominio romano, los judíos se dividían en grupos como los saduceos, los fariseos y los esenios, y los seguidores de Jesús formaban otro. La rebelión estalló en el 66. En el 70, Tito sitió Jerusalén, llena de peregrinos de Pésaj; el hambre y los combates mataron a muchísima gente, aunque la cifra de 1,1 millones de muertos que da Josefo se considera muy exagerada. Él dice que en la guerra se tomaron 97 000 cautivos, muchos vendidos como esclavos. El Arco de Tito, en Roma, aún muestra la menorá del Templo llevada en triunfo. En 132-136, la rebelión de Bar Kojba contra el emperador Adriano acabó en una matanza: Jerusalén fue refundada como la ciudad pagana de Aelia Capitolina, se prohibió a los judíos vivir en ella y la provincia pasó a llamarse Siria Palestina. Para entonces vivían muchos más judíos en la diáspora, de Roma a Babilonia, que en la propia tierra."
+      },
+      "camera": {
+        "lon": 24.0,
+        "lat": 36.0,
+        "zoom": 2.7
+      },
+      "control": {
+        "jews": [
+          {
+            "ref": "judea_70"
+          },
+          {
+            "ref": "alexandria"
+          },
+          {
+            "ref": "rome"
+          },
+          {
+            "ref": "antioch"
+          },
+          {
+            "ref": "babylonia"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "moves",
+          "path": [
+            [
+              35.23,
+              31.78
+            ],
+            [
+              34.89,
+              32.5
+            ],
+            [
+              34.3,
+              32.6
+            ],
+            [
+              32.3,
+              34.3
+            ],
+            [
+              28.6,
+              35.75
+            ],
+            [
+              26.4,
+              35.9
+            ],
+            [
+              23.4,
+              36.05
+            ],
+            [
+              21.5,
+              36.4
+            ],
+            [
+              17.5,
+              37.5
+            ],
+            [
+              15.55,
+              38.15
+            ],
+            [
+              15.2,
+              38.8
+            ],
+            [
+              14.0,
+              40.3
+            ],
+            [
+              12.6,
+              41.4
+            ],
+            [
+              12.3,
+              41.73
+            ]
+          ],
+          "label": {
+            "en": "Captives taken to Rome",
+            "es": "Cautivos llevados a Roma"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "western-wall",
+          "name": {
+            "en": "Western Wall",
+            "es": "Muro Occidental"
+          },
+          "at": [
+            35.2345,
+            31.7767
+          ],
+          "cat": "sacred",
+          "type": "structure",
+          "date": "-19",
+          "place": {
+            "en": "Old City of Jerusalem",
+            "es": "Ciudad Vieja de Jerusalén"
+          },
+          "text": {
+            "en": "Part of the retaining wall Herod built around the Temple Mount, which survived the Roman destruction. Also called the Wailing Wall, it is the place where Jews have prayed for centuries, closest to the Temple's site.",
+            "es": "Parte del muro de contención que Herodes construyó alrededor del Monte del Templo, que sobrevivió a la destrucción romana. También llamado Muro de los Lamentos, es donde los judíos rezan desde hace siglos, lo más cerca del lugar del Templo."
+          },
+          "details": {
+            "en": "Herod began rebuilding the Temple and enlarging its platform around 20 BC; the lower courses of huge limestone blocks are his. The Temple Mount above is holy to Jews as the site of both Temples and to Muslims as the Haram al-Sharif, with the Dome of the Rock and al-Aqsa Mosque. For centuries Jews came to the wall to mourn the Temple and to pray. From 1948 to 1967 the Old City was under Jordanian rule and Jews could not pray at the wall; since the 1967 war it has been under Israeli control, and the neighbouring Moroccan Quarter was demolished to open the plaza in front of it. Visitors leave prayers written on slips of paper between the stones.",
+            "es": "Herodes empezó a reconstruir el Templo y a ampliar su explanada hacia el 20 a. C.; las hileras inferiores de enormes bloques de piedra caliza son suyas. El Monte del Templo, arriba, es sagrado para los judíos como lugar de ambos Templos y para los musulmanes como el Haram al-Sharif, con la Cúpula de la Roca y la mezquita de al-Aqsa. Durante siglos los judíos acudieron al muro a llorar el Templo y a rezar. De 1948 a 1967 la Ciudad Vieja estuvo bajo dominio jordano y los judíos no podían rezar en el muro; desde la guerra de 1967 está bajo control israelí, y el vecino barrio Mugrabí fue demolido para abrir la explanada que hay frente a él. Los visitantes dejan oraciones escritas en papelitos entre las piedras."
+          },
+          "wiki": {
+            "en": "Western Wall",
+            "es": "Muro de las Lamentaciones"
+          }
+        },
+        {
+          "id": "masada",
+          "name": {
+            "en": "Masada",
+            "es": "Masada"
+          },
+          "at": [
+            35.3536,
+            31.3156
+          ],
+          "cat": "persecution",
+          "type": "event",
+          "date": "73",
+          "place": {
+            "en": "Masada, Israel",
+            "es": "Masada, Israel"
+          },
+          "text": {
+            "en": "Herod's desert fortress above the Dead Sea, the last stronghold of the revolt. When the Romans broke in, in 73 or 74, Josephus says its 960 defenders had killed themselves; archaeology questions parts of his account.",
+            "es": "La fortaleza de Herodes en el desierto, sobre el mar Muerto, último bastión de la rebelión. Cuando los romanos entraron, en el 73 o 74, Josefo dice que sus 960 defensores se habían dado muerte; la arqueología pone en duda partes de su relato."
+          },
+          "wiki": {
+            "en": "Masada",
+            "es": "Masada"
+          }
+        },
+        {
+          "id": "arch-of-titus",
+          "name": {
+            "en": "Arch of Titus",
+            "es": "Arco de Tito"
+          },
+          "at": [
+            12.4886,
+            41.8907
+          ],
+          "cat": "persecution",
+          "type": "structure",
+          "date": "81",
+          "place": {
+            "en": "Roman Forum, Rome, Italy",
+            "es": "Foro Romano, Roma, Italia"
+          },
+          "text": {
+            "en": "A triumphal arch in Rome, built around AD 81, whose relief shows Roman soldiers carrying the Temple's menorah and treasures. Many Jewish captives were sold as slaves in Italy.",
+            "es": "Un arco de triunfo en Roma, construido hacia el 81 d. C., cuyo relieve muestra a soldados romanos llevando la menorá y los tesoros del Templo. Muchos cautivos judíos fueron vendidos como esclavos en Italia."
+          },
+          "wiki": {
+            "en": "Arch of Titus",
+            "es": "Arco de Tito"
+          }
+        },
+        {
+          "id": "dead-sea-scrolls",
+          "name": {
+            "en": "Dead Sea Scrolls",
+            "es": "Manuscritos del mar Muerto"
+          },
+          "at": [
+            35.4586,
+            31.7408
+          ],
+          "cat": "text",
+          "type": "work",
+          "date": "-250",
+          "end": "68",
+          "place": {
+            "en": "Qumran caves, West Bank; now mostly in the Israel Museum, Jerusalem",
+            "es": "Cuevas de Qumrán, Cisjordania; hoy sobre todo en el Museo de Israel, Jerusalén"
+          },
+          "text": {
+            "en": "Hundreds of scrolls hidden in caves near the Dead Sea and found from 1947, written between the 3rd century BC and the 1st century AD. They include the oldest known copies of books of the Hebrew Bible.",
+            "es": "Cientos de rollos escondidos en cuevas junto al mar Muerto y hallados desde 1947, escritos entre el siglo III a. C. y el siglo I d. C. Incluyen las copias más antiguas que se conocen de libros de la Biblia hebrea."
+          },
+          "wiki": {
+            "en": "Dead Sea Scrolls",
+            "es": "Manuscritos del Mar Muerto"
+          },
+          "img": "Psalms Scroll (cropped).jpg"
+        }
+      ]
+    },
+    {
+      "date": "200",
+      "title": {
+        "en": "The rabbis: Mishnah and Talmud",
+        "es": "Los rabinos: la Mishná y el Talmud"
+      },
+      "text": {
+        "en": "Without a Temple, the rabbis renew Judaism around prayer, study and the synagogue. Around 200 Judah ha-Nasi gathers their oral law in the Mishnah; the Talmuds of Galilee and Babylonia follow.",
+        "es": "Sin Templo, los rabinos renuevan el judaísmo en torno a la oración, el estudio y la sinagoga. Hacia el 200 Yehudá ha-Nasí reúne su ley oral en la Mishná; después llegan los Talmuds de Galilea y de Babilonia."
+      },
+      "details": {
+        "en": "After 70 the sages, heirs of the Pharisees, met at Yavne and later in Galilee, at Usha, Beit She'arim, Sepphoris and Tiberias. Prayer, Torah study and good deeds took the place of sacrifice. Rabbi Judah ha-Nasi, leader of the Jews of Roman Palestine, edited the Mishnah around 200, arranging generations of oral teaching in six orders. Scholars then discussed it for centuries: the Jerusalem Talmud was compiled in Galilee in the late 4th or early 5th century, and the larger Babylonian Talmud in the academies of Sura and Pumbedita, finished by about the 6th century. Babylonia, under Persian rule, was home to perhaps a million Jews, led by an Exilarch. Synagogues spread across the Roman and Persian worlds; at Dura-Europos on the Euphrates one was painted with scenes from the Bible.",
+        "es": "Después del 70, los sabios, herederos de los fariseos, se reunieron en Yavne y luego en Galilea, en Usha, Beit Shearim, Séforis y Tiberíades. La oración, el estudio de la Torá y las buenas obras ocuparon el lugar de los sacrificios. El rabino Yehudá ha-Nasí, líder de los judíos de la Palestina romana, editó la Mishná hacia el 200, ordenando en seis partes generaciones de enseñanza oral. Luego los sabios la discutieron durante siglos: el Talmud de Jerusalén se compiló en Galilea a fines del siglo IV o comienzos del V, y el Talmud de Babilonia, más extenso, en las academias de Sura y Pumbedita, terminado hacia el siglo VI. Babilonia, bajo dominio persa, albergaba quizá a un millón de judíos, guiados por un exilarca. Las sinagogas se extendieron por los mundos romano y persa; en Dura Europos, junto al Éufrates, una se pintó con escenas de la Biblia."
+      },
+      "camera": {
+        "lon": 40.0,
+        "lat": 33.0,
+        "zoom": 4.2
+      },
+      "control": {
+        "jews": [
+          {
+            "ref": "galilee"
+          },
+          {
+            "ref": "babylonia"
+          },
+          {
+            "ref": "alexandria"
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "mishnah",
+          "name": {
+            "en": "Mishnah",
+            "es": "Mishná"
+          },
+          "at": [
+            35.2794,
+            32.7528
+          ],
+          "cat": "text",
+          "type": "work",
+          "date": "200",
+          "place": {
+            "en": "Sepphoris (Tzippori), Galilee, Israel",
+            "es": "Séforis (Tzipori), Galilea, Israel"
+          },
+          "text": {
+            "en": "The first written collection of the rabbis' oral law, edited around 200 by Judah ha-Nasi in Galilee. Its six 'orders' cover prayer and farming, festivals, marriage, civil law, the Temple and purity.",
+            "es": "La primera colección escrita de la ley oral de los rabinos, editada hacia el 200 por Yehudá ha-Nasí en Galilea. Sus seis «órdenes» tratan de la oración y el campo, las fiestas, el matrimonio, el derecho civil, el Templo y la pureza."
+          },
+          "wiki": {
+            "en": "Mishnah",
+            "es": "Mishná"
+          }
+        },
+        {
+          "id": "talmud",
+          "name": {
+            "en": "Talmud",
+            "es": "Talmud"
+          },
+          "at": [
+            43.78,
+            33.35
+          ],
+          "cat": "text",
+          "type": "work",
+          "date": "500",
+          "place": {
+            "en": "Pumbedita (near Fallujah) and Sura, Iraq",
+            "es": "Pumbedita (cerca de Faluya) y Sura, Irak"
+          },
+          "text": {
+            "en": "The Mishnah with centuries of rabbinic debate, the Gemara, compiled in Babylonia by about the 6th century. Its laws, arguments and stories in Aramaic and Hebrew are still studied page by page.",
+            "es": "La Mishná con siglos de debate rabínico, la Guemará, compilada en Babilonia hacia el siglo VI. Sus leyes, discusiones y relatos en arameo y hebreo se siguen estudiando página por página."
+          },
+          "details": {
+            "en": "The Babylonian Talmud has 63 tractates; printed editions run to 2,711 double pages, with the Mishnah in the centre and later commentaries, such as Rashi's, around it. Tradition credits Rav Ashi and Ravina with its compilation; historians date its completion to the 6th century, before the Arab conquests. An earlier and shorter Talmud was compiled in Galilee. The Talmud became the heart of Jewish learning and law; in medieval Europe church authorities often attacked it, and in 1242 some 24 wagonloads of Jewish books were burned in Paris. The first complete printed edition appeared in Venice in 1520–1523.",
+            "es": "El Talmud de Babilonia tiene 63 tratados; las ediciones impresas ocupan 2711 páginas dobles, con la Mishná en el centro y comentarios posteriores, como el de Rashi, alrededor. La tradición atribuye su compilación a Rav Ashi y Ravina; los historiadores fechan su conclusión en el siglo VI, antes de las conquistas árabes. Antes se había compilado en Galilea un Talmud más breve. El Talmud se convirtió en el corazón del estudio y la ley judíos; en la Europa medieval las autoridades eclesiásticas lo atacaron a menudo, y en 1242 se quemaron en París unas 24 carretas de libros judíos. La primera edición impresa completa apareció en Venecia en 1520-1523."
+          },
+          "sample": {
+            "text": "תַּלְמוּד",
+            "latin": "talmud",
+            "means": {
+              "en": "study, learning",
+              "es": "estudio, aprendizaje"
+            }
+          },
+          "wiki": {
+            "en": "Talmud",
+            "es": "Talmud"
+          }
+        },
+        {
+          "id": "sura-academy",
+          "name": {
+            "en": "Sura Academy",
+            "es": "Academia de Sura"
+          },
+          "at": [
+            44.47,
+            31.885
+          ],
+          "cat": "learning",
+          "type": "institution",
+          "date": "225",
+          "until": "1033",
+          "place": {
+            "en": "Near Kufa, Iraq",
+            "es": "Cerca de Kufa, Irak"
+          },
+          "text": {
+            "en": "The great rabbinic academy founded around 225 by Abba Arikha (Rav). With its rival Pumbedita it led Jewish learning for 800 years, until 1033; their heads, the Geonim, answered questions sent from across the Jewish world.",
+            "es": "La gran academia rabínica fundada hacia el 225 por Abba Arija (Rav). Junto con su rival, Pumbedita, guio el estudio judío durante 800 años, hasta 1033; sus jefes, los gaones, respondían preguntas llegadas de todo el mundo judío."
+          },
+          "wiki": {
+            "en": "Sura Academy",
+            "es": ""
+          }
+        },
+        {
+          "id": "dura-europos-synagogue",
+          "name": {
+            "en": "Dura-Europos synagogue",
+            "es": "Sinagoga de Dura Europos"
+          },
+          "at": [
+            40.7272,
+            34.7474
+          ],
+          "cat": "art",
+          "type": "structure",
+          "date": "244",
+          "until": "256",
+          "place": {
+            "en": "Dura-Europos, Syria; paintings now in the National Museum of Damascus",
+            "es": "Dura Europos, Siria; pinturas hoy en el Museo Nacional de Damasco"
+          },
+          "text": {
+            "en": "A synagogue on the Euphrates, rebuilt around 244, whose walls were painted with scenes from the Bible. Buried when the town fell to Persia in 256, it was dug up in 1932 with its paintings remarkably well kept.",
+            "es": "Una sinagoga junto al Éufrates, reconstruida hacia el 244, con las paredes pintadas con escenas de la Biblia. Quedó enterrada cuando la ciudad cayó ante Persia en el 256 y se excavó en 1932, con sus pinturas muy bien conservadas."
+          },
+          "wiki": {
+            "en": "Dura-Europos synagogue",
+            "es": "Sinagoga de Dura Europos"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1000",
+      "title": {
+        "en": "A people across the world",
+        "es": "Un pueblo por todo el mundo"
+      },
+      "text": {
+        "en": "By about 1000, Jewish communities stretch from Spain to India. Babylonia's sages guide them by letter; Jews live in Yemen, in Ethiopia's highlands, on India's Malabar coast and, a little later, in China.",
+        "es": "Hacia el año 1000, las comunidades judías se extienden de España a la India. Los sabios de Babilonia las guían por carta; hay judíos en Yemen, en las montañas de Etiopía, en la costa india de Malabar y, poco después, en China."
+      },
+      "details": {
+        "en": "After the Arab conquests most Jews lived under Muslim rule, as protected but taxed minorities. The heads of the Babylonian academies, the Geonim, answered questions sent from Kairouan, Fustat and Córdoba, and Jewish merchants traded from Spain to India, as letters kept in Cairo show. In Yemen, Jews had lived since ancient times, and kings of Himyar adopted Judaism in the 4th century. In Ethiopia, the Beta Israel kept a Judaism based on the Bible in Ge'ez; their origins are debated. On the Malabar coast of India, a Hindu king granted the Jewish leader Joseph Rabban privileges on copper plates, around 1000 by most estimates. Persian Jewish merchants probably settled in Kaifeng, China, in the Song era. In Christian Europe, small communities lived in Italy, in Byzantium, in Spain's Christian kingdoms and along the Rhine.",
+        "es": "Tras las conquistas árabes, la mayoría de los judíos vivía bajo dominio musulmán, como minorías protegidas pero sujetas a impuestos. Los jefes de las academias de Babilonia, los gaones, respondían preguntas enviadas desde Cairuán, Fustat y Córdoba, y los mercaderes judíos comerciaban de España a la India, como muestran las cartas guardadas en El Cairo. En Yemen había judíos desde la Antigüedad, y reyes de Himyar adoptaron el judaísmo en el siglo IV. En Etiopía, los Beta Israel guardaban un judaísmo basado en la Biblia en ge'ez; sus orígenes se debaten. En la costa india de Malabar, un rey hindú concedió privilegios al líder judío José Rabán en unas placas de cobre, hacia el año 1000 según la mayoría de los cálculos. Mercaderes judíos persas se asentaron probablemente en Kaifeng, China, en la época Song. En la Europa cristiana vivían pequeñas comunidades en Italia, en Bizancio, en los reinos cristianos de España y a orillas del Rin."
+      },
+      "camera": {
+        "lon": 55.0,
+        "lat": 25.0,
+        "zoom": 1.2
+      },
+      "control": {
+        "jews": [
+          {
+            "ref": "baghdad"
+          },
+          {
+            "ref": "fustat"
+          },
+          {
+            "ref": "kairouan"
+          },
+          {
+            "ref": "cordoba"
+          },
+          {
+            "ref": "narbonne"
+          },
+          {
+            "ref": "rhineland"
+          },
+          {
+            "ref": "constantinople"
+          },
+          {
+            "ref": "galilee"
+          },
+          {
+            "ref": "sanaa"
+          },
+          {
+            "ref": "gondar"
+          },
+          {
+            "ref": "kerala"
+          },
+          {
+            "ref": "kaifeng"
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "sura-academy",
+          "name": {
+            "en": "Sura Academy",
+            "es": "Academia de Sura"
+          },
+          "at": [
+            44.47,
+            31.885
+          ],
+          "cat": "learning",
+          "type": "institution",
+          "date": "225",
+          "until": "1033",
+          "place": {
+            "en": "Near Kufa, Iraq",
+            "es": "Cerca de Kufa, Irak"
+          },
+          "text": {
+            "en": "The great rabbinic academy founded around 225 by Abba Arikha (Rav). With its rival Pumbedita it led Jewish learning for 800 years, until 1033; their heads, the Geonim, answered questions sent from across the Jewish world.",
+            "es": "La gran academia rabínica fundada hacia el 225 por Abba Arija (Rav). Junto con su rival, Pumbedita, guio el estudio judío durante 800 años, hasta 1033; sus jefes, los gaones, respondían preguntas llegadas de todo el mundo judío."
+          },
+          "wiki": {
+            "en": "Sura Academy",
+            "es": ""
+          }
+        },
+        {
+          "id": "yemenite-jews",
+          "name": {
+            "en": "Jews of Yemen",
+            "es": "Judíos de Yemen"
+          },
+          "at": [
+            44.2075,
+            15.3547
+          ],
+          "cat": "community",
+          "type": "culture",
+          "date": "380",
+          "place": {
+            "en": "Sanaa, Yemen",
+            "es": "Saná, Yemen"
+          },
+          "text": {
+            "en": "One of the oldest Jewish communities, in Yemen since ancient times; kings of Himyar adopted Judaism in the 4th century. In 1949–50 almost all of Yemen's Jews were flown to Israel.",
+            "es": "Una de las comunidades judías más antiguas, en Yemen desde la Antigüedad; reyes de Himyar adoptaron el judaísmo en el siglo IV. En 1949-1950 casi todos los judíos de Yemen fueron llevados en avión a Israel."
+          },
+          "wiki": {
+            "en": "Yemenite Jews",
+            "es": "Judíos yemenitas"
+          }
+        },
+        {
+          "id": "beta-israel",
+          "name": {
+            "en": "Beta Israel",
+            "es": "Beta Israel"
+          },
+          "at": [
+            37.4667,
+            12.6
+          ],
+          "cat": "community",
+          "type": "culture",
+          "date": "1329",
+          "place": {
+            "en": "Gondar region, Ethiopia",
+            "es": "Región de Gondar, Etiopía"
+          },
+          "text": {
+            "en": "Ethiopia's Jews, who lived in hundreds of villages north of Lake Tana and kept a Judaism based on the Bible in Ge'ez. Their origins are debated; most now live in Israel.",
+            "es": "Los judíos de Etiopía, que vivían en cientos de aldeas al norte del lago Tana y guardaban un judaísmo basado en la Biblia en ge'ez. Sus orígenes se debaten; hoy la mayoría vive en Israel."
+          },
+          "details": {
+            "en": "The Beta Israel ('House of Israel') trace themselves to the tribe of Dan or to the time of King Solomon. Some historians think they descend from ancient Jewish settlers; others that they formed between the 14th and 16th centuries from Ethiopian Christians who embraced the Bible's laws. Ethiopian chronicles tell of wars against them from the 14th century. Cut off from other Jews, they kept a non-Talmudic Judaism called Haymanot. Israel recognised them as Jews in 1977, and airlifts such as Operation Moses (1984) and Operation Solomon (1991) brought most of them to Israel.",
+            "es": "Los Beta Israel («Casa de Israel») remontan su origen a la tribu de Dan o a la época del rey Salomón. Algunos historiadores creen que descienden de antiguos colonos judíos; otros, que se formaron entre los siglos XIV y XVI a partir de cristianos etíopes que abrazaron las leyes de la Biblia. Las crónicas etíopes hablan de guerras contra ellos desde el siglo XIV. Aislados de otros judíos, guardaron un judaísmo no talmúdico llamado Haymanot. Israel los reconoció como judíos en 1977, y puentes aéreos como la Operación Moisés (1984) y la Operación Salomón (1991) llevaron a la mayoría a Israel."
+          },
+          "wiki": {
+            "en": "Beta Israel",
+            "es": "Beta Israel"
+          },
+          "img": "Kahenim.png"
+        },
+        {
+          "id": "cochin-jews",
+          "name": {
+            "en": "Cochin Jews",
+            "es": "Judíos de Cochín"
+          },
+          "at": [
+            76.2155,
+            10.2236
+          ],
+          "cat": "community",
+          "type": "culture",
+          "date": "1000",
+          "place": {
+            "en": "Kodungallur and Kochi, Kerala, India",
+            "es": "Kodungallur y Kochi, Kerala, India"
+          },
+          "text": {
+            "en": "Jews of India's Malabar coast. A Hindu king granted their leader Joseph Rabban privileges on copper plates, around 1000 (the date is debated). Most of them moved to Israel in the 1950s.",
+            "es": "Judíos de la costa india de Malabar. Un rey hindú concedió privilegios a su líder, José Rabán, en unas placas de cobre hacia el año 1000 (la fecha se debate). La mayoría se fue a Israel en la década de 1950."
+          },
+          "wiki": {
+            "en": "Cochin Jews",
+            "es": "Judíos de Cochín"
+          }
+        },
+        {
+          "id": "kaifeng-jews",
+          "name": {
+            "en": "Kaifeng Jews",
+            "es": "Judíos de Kaifeng"
+          },
+          "at": [
+            114.3076,
+            34.7972
+          ],
+          "cat": "community",
+          "type": "culture",
+          "date": "1163",
+          "place": {
+            "en": "Kaifeng, Henan, China",
+            "es": "Kaifeng, Henan, China"
+          },
+          "text": {
+            "en": "A community probably founded by Persian Jewish merchants in the Song era; it built a synagogue in 1163. Over the centuries its members became Chinese, yet some descendants keep its memory.",
+            "es": "Una comunidad fundada probablemente por mercaderes judíos persas en la época Song; construyó una sinagoga en 1163. Con los siglos sus miembros se volvieron chinos, pero algunos descendientes guardan su memoria."
+          },
+          "wiki": {
+            "en": "Kaifeng Jews",
+            "es": "Judíos de Kaifeng"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1180",
+      "title": {
+        "en": "Sepharad and Ashkenaz",
+        "es": "Sefarad y Asquenaz"
+      },
+      "text": {
+        "en": "In Spain, called Sepharad, Jewish poets and scholars thrive under Muslim and Christian kings; Maimonides becomes their greatest thinker. Along the Rhine, in Ashkenaz, Rashi writes his commentaries.",
+        "es": "En España, llamada Sefarad, poetas y sabios judíos florecen bajo reyes musulmanes y cristianos; Maimónides se convierte en su mayor pensador. Junto al Rin, en Asquenaz, Rashi escribe sus comentarios."
+      },
+      "details": {
+        "en": "In Muslim al-Andalus, courtiers such as Hasdai ibn Shaprut in Córdoba and Samuel ha-Nagid in Granada protected scholars, and poets such as Solomon ibn Gabirol and Judah ha-Levi wrote in Hebrew. This golden age ended when the Almohads, who took Córdoba in 1148, forced Jews and Christians to convert or leave. Maimonides' family fled to Fez and then to Egypt, where he became the leader of Egypt's Jews; others moved north to Christian Toledo. In the Rhineland, communities at Speyer, Worms and Mainz grew from the 10th century, and Rashi of Troyes wrote commentaries still printed with the Bible and Talmud. In 1096 crusader bands killed at least 2,000 Jews in these towns. Over time, Sephardim and Ashkenazim developed different customs, prayers and languages, Judeo-Spanish (Ladino) and Yiddish.",
+        "es": "En al-Ándalus, cortesanos como Hasday ibn Shaprut en Córdoba y Samuel ha-Naguid en Granada protegieron a los sabios, y poetas como Salomón ibn Gabirol y Yehudá ha-Leví escribieron en hebreo. Esta edad de oro terminó cuando los almohades, que tomaron Córdoba en 1148, obligaron a judíos y cristianos a convertirse o marcharse. La familia de Maimónides huyó a Fez y luego a Egipto, donde él llegó a guiar a los judíos del país; otros se fueron al norte, a la Toledo cristiana. En Renania, las comunidades de Espira, Worms y Maguncia crecieron desde el siglo X, y Rashi de Troyes escribió comentarios que aún se imprimen con la Biblia y el Talmud. En 1096, bandas de cruzados mataron al menos a 2000 judíos en esas ciudades. Con el tiempo, sefardíes y asquenazíes desarrollaron costumbres, rezos y lenguas distintas: el judeoespañol (ladino) y el ídish."
+      },
+      "camera": {
+        "lon": 13.0,
+        "lat": 40.5,
+        "zoom": 2.6
+      },
+      "control": {
+        "jews": [
+          {
+            "ref": "toledo"
+          },
+          {
+            "ref": "barcelona"
+          },
+          {
+            "ref": "narbonne"
+          },
+          {
+            "ref": "troyes"
+          },
+          {
+            "ref": "rhineland"
+          },
+          {
+            "ref": "fustat"
+          },
+          {
+            "ref": "baghdad"
+          },
+          {
+            "ref": "constantinople"
+          },
+          {
+            "ref": "kairouan"
+          },
+          {
+            "ref": "galilee"
+          },
+          {
+            "ref": "sanaa"
+          },
+          {
+            "ref": "gondar"
+          },
+          {
+            "ref": "kerala"
+          },
+          {
+            "ref": "kaifeng"
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "maimonides",
+          "name": {
+            "en": "Maimonides",
+            "es": "Maimónides"
+          },
+          "at": [
+            31.2345,
+            30.0085
+          ],
+          "cat": "thinker",
+          "type": "person",
+          "date": "1180",
+          "life": [
+            "1138",
+            "1204-12-12"
+          ],
+          "place": {
+            "en": "Born in Córdoba, Spain; worked in Fustat (Old Cairo), Egypt",
+            "es": "Nació en Córdoba, España; trabajó en Fustat (El Cairo Viejo), Egipto"
+          },
+          "text": {
+            "en": "Rabbi, philosopher and physician, born in Córdoba in 1135 or 1138. Exiled by the Almohads, he settled in Egypt, wrote the Mishneh Torah code and the Guide for the Perplexed, and served Saladin's court.",
+            "es": "Rabino, filósofo y médico, nacido en Córdoba en 1135 o 1138. Desterrado por los almohades, se asentó en Egipto, escribió el código Mishné Torá y la Guía de perplejos y sirvió en la corte de Saladino."
+          },
+          "details": {
+            "en": "Moses ben Maimon, known as the Rambam, left Córdoba with his family after 1148, lived in Fez and settled in Fustat by 1168. After his brother drowned on a trading voyage, he earned his living as a physician and became doctor to Saladin's court. His Mishneh Torah (1170–1180) set out all of Jewish law in clear Hebrew, and his Guide for the Perplexed (1185–1190), written in Arabic, joined faith with the philosophy of Aristotle. He also wrote the Thirteen Principles of Faith and the Epistle to Yemen. Jews from Iraq to Yemen hailed him; others, especially in Spain, attacked his ideas. He died in Fustat in 1204; tradition says he was buried in Tiberias.",
+            "es": "Moisés ben Maimón, conocido como el Rambam, dejó Córdoba con su familia después de 1148, vivió en Fez y se estableció en Fustat hacia 1168. Cuando su hermano se ahogó en un viaje comercial, se ganó la vida como médico y llegó a ser doctor de la corte de Saladino. Su Mishné Torá (1170-1180) expuso toda la ley judía en un hebreo claro, y su Guía de perplejos (1185-1190), escrita en árabe, unió la fe con la filosofía de Aristóteles. También escribió los Trece Principios de la Fe y la Epístola a Yemen. Los judíos desde Irak hasta Yemen lo aclamaron; otros, sobre todo en España, atacaron sus ideas. Murió en Fustat en 1204; la tradición dice que fue enterrado en Tiberíades."
+          },
+          "wiki": {
+            "en": "Maimonides",
+            "es": "Maimónides"
+          }
+        },
+        {
+          "id": "cairo-geniza",
+          "name": {
+            "en": "Cairo Geniza",
+            "es": "Genizá de El Cairo"
+          },
+          "at": [
+            31.231,
+            30.0058
+          ],
+          "cat": "text",
+          "type": "work",
+          "date": "1025",
+          "place": {
+            "en": "Ben Ezra Synagogue, Old Cairo, Egypt",
+            "es": "Sinagoga Ben Ezra, El Cairo Viejo, Egipto"
+          },
+          "text": {
+            "en": "A storeroom of the Ben Ezra Synagogue where, for centuries, worn-out writings were kept instead of thrown away. Its 400,000 fragments show Jewish life from Spain to India, above all in the 10th to 13th centuries.",
+            "es": "Un depósito de la sinagoga Ben Ezra donde, durante siglos, se guardaban los escritos gastados en lugar de tirarlos. Sus 400 000 fragmentos muestran la vida judía de España a la India, sobre todo entre los siglos X y XIII."
+          },
+          "wiki": {
+            "en": "Cairo Geniza",
+            "es": "Geniza de El Cairo"
+          }
+        },
+        {
+          "id": "rashi",
+          "name": {
+            "en": "Rashi",
+            "es": "Rashi"
+          },
+          "at": [
+            4.0744,
+            48.2973
+          ],
+          "cat": "thinker",
+          "type": "person",
+          "date": "1070",
+          "life": [
+            "1040",
+            "1105-07-13"
+          ],
+          "place": {
+            "en": "Troyes, France",
+            "es": "Troyes, Francia"
+          },
+          "text": {
+            "en": "Rabbi Shlomo Yitzhaki of Troyes (1040–1105), who studied in Worms. His clear commentaries on the Bible and the Talmud are printed beside the text in almost every edition and are read by beginners and scholars alike.",
+            "es": "El rabino Shlomo Yitzjaki de Troyes (1040-1105), que estudió en Worms. Sus claros comentarios a la Biblia y al Talmud se imprimen junto al texto en casi todas las ediciones y los leen tanto principiantes como sabios."
+          },
+          "wiki": {
+            "en": "Rashi",
+            "es": "Rashi"
+          }
+        },
+        {
+          "id": "worms-synagogue",
+          "name": {
+            "en": "Worms Synagogue",
+            "es": "Sinagoga de Worms"
+          },
+          "at": [
+            8.3664,
+            49.6336
+          ],
+          "cat": "sacred",
+          "type": "structure",
+          "date": "1034",
+          "place": {
+            "en": "Worms, Germany",
+            "es": "Worms, Alemania"
+          },
+          "text": {
+            "en": "Built in 1034, wrecked by crusaders in 1096 and rebuilt in 1175, burned by the Nazis in 1938 and rebuilt in 1961. With sites in Speyer and Mainz it is a World Heritage Site since 2021.",
+            "es": "Construida en 1034, destrozada por los cruzados en 1096 y reconstruida en 1175, incendiada por los nazis en 1938 y reconstruida en 1961. Junto con sitios de Espira y Maguncia es Patrimonio de la Humanidad desde 2021."
+          },
+          "wiki": {
+            "en": "Worms Synagogue",
+            "es": "Sinagoga de Worms"
+          }
+        },
+        {
+          "id": "santa-maria-la-blanca",
+          "name": {
+            "en": "Synagogue of Santa María la Blanca",
+            "es": "Sinagoga de Santa María la Blanca"
+          },
+          "at": [
+            -4.0303,
+            39.8569
+          ],
+          "cat": "sacred",
+          "type": "structure",
+          "date": "1205",
+          "place": {
+            "en": "Toledo, Spain",
+            "es": "Toledo, España"
+          },
+          "text": {
+            "en": "A synagogue built in Christian Toledo around 1205, with rows of white horseshoe arches in the Mudéjar style. Seized after the riots of 1391, it was made a church in the early 1400s; it is now a museum.",
+            "es": "Una sinagoga construida en la Toledo cristiana hacia 1205, con hileras de arcos de herradura blancos de estilo mudéjar. Confiscada tras los motines de 1391, se convirtió en iglesia a comienzos del siglo XV; hoy es un museo."
+          },
+          "wiki": {
+            "en": "Synagogue of Santa María la Blanca",
+            "es": "Santa María la Blanca (Toledo)"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1492-07",
+      "title": {
+        "en": "Expulsions and refuge",
+        "es": "Expulsiones y refugio"
+      },
+      "text": {
+        "en": "Christian kingdoms expel their Jews: England in 1290, France in 1306 and 1394, Spain in 1492. Portugal forces its Jews to convert in 1497. Many exiles find refuge in the Ottoman Empire.",
+        "es": "Los reinos cristianos expulsan a sus judíos: Inglaterra en 1290, Francia en 1306 y 1394, España en 1492. Portugal obliga a los suyos a convertirse en 1497. Muchos desterrados encuentran refugio en el Imperio otomano."
+      },
+      "details": {
+        "en": "In medieval Christian Europe, Jews were kept out of most trades and landholding, forced to wear badges and falsely accused of crimes such as ritual murder; mobs attacked them in times of crusade and plague. In Spain, riots in 1391 killed thousands and forced many to convert, and from 1478 the Inquisition hunted converts suspected of keeping Jewish ways. On 31 March 1492 the Catholic Monarchs ordered all Jews to convert or leave within four months; estimates of those who left range from about 40,000 to 200,000. Many went to Portugal, where in 1497 King Manuel I had them baptized by force. Sultan Bayezid II welcomed exiles to the Ottoman Empire: Thessaloniki became a mostly Jewish city, and Safed a centre of the mystical Kabbalah. Ashkenazi Jews, meanwhile, moved east to Poland, whose kings granted them charters.",
+        "es": "En la Europa cristiana medieval, a los judíos se les cerraban la mayoría de los oficios y la propiedad de la tierra, se les obligaba a llevar distintivos y se les acusaba falsamente de crímenes como el asesinato ritual; las turbas los atacaban en tiempos de cruzada y de peste. En España, los motines de 1391 mataron a miles y forzaron a muchos a convertirse, y desde 1478 la Inquisición persiguió a los conversos sospechosos de mantener costumbres judías. El 31 de marzo de 1492 los Reyes Católicos ordenaron a todos los judíos convertirse o irse en cuatro meses; los cálculos de quienes se fueron van de unos 40 000 a 200 000. Muchos fueron a Portugal, donde en 1497 el rey Manuel I los hizo bautizar a la fuerza. El sultán Bayezid II acogió a los desterrados en el Imperio otomano: Salónica pasó a ser una ciudad mayoritariamente judía, y Safed un centro de la cábala mística. Los judíos asquenazíes, mientras tanto, se desplazaron al este, a Polonia, cuyos reyes les concedieron cartas de privilegio."
+      },
+      "camera": {
+        "lon": 10.0,
+        "lat": 42.0,
+        "zoom": 2.4
+      },
+      "control": {
+        "jews": [
+          {
+            "ref": "thessaloniki"
+          },
+          {
+            "ref": "constantinople"
+          },
+          {
+            "ref": "safed"
+          },
+          {
+            "ref": "fez"
+          },
+          {
+            "ref": "venice_rome"
+          },
+          {
+            "ref": "poland_1492"
+          },
+          {
+            "ref": "fustat"
+          },
+          {
+            "ref": "baghdad"
+          },
+          {
+            "ref": "sanaa"
+          },
+          {
+            "ref": "gondar"
+          },
+          {
+            "ref": "kerala"
+          },
+          {
+            "ref": "kaifeng"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "moves",
+          "path": [
+            [
+              -0.13,
+              51.5
+            ],
+            [
+              1.6,
+              50.7
+            ],
+            [
+              2.35,
+              48.86
+            ]
+          ],
+          "label": {
+            "en": "Expelled from England, 1290",
+            "es": "Expulsados de Inglaterra, 1290"
+          }
+        },
+        {
+          "side": "moves",
+          "path": [
+            [
+              -4.03,
+              39.86
+            ],
+            [
+              -6.5,
+              39.2
+            ],
+            [
+              -9.14,
+              38.72
+            ]
+          ],
+          "by": "land",
+          "label": {
+            "en": "To Portugal, 1492",
+            "es": "A Portugal, 1492"
+          }
+        },
+        {
+          "side": "moves",
+          "path": [
+            [
+              -0.3,
+              39.4
+            ],
+            [
+              1.5,
+              38.6
+            ],
+            [
+              5.0,
+              38.4
+            ],
+            [
+              8.5,
+              38.5
+            ],
+            [
+              11.0,
+              37.6
+            ],
+            [
+              12.4,
+              37.2
+            ],
+            [
+              14.5,
+              36.55
+            ],
+            [
+              16.5,
+              36.8
+            ],
+            [
+              21.0,
+              36.4
+            ],
+            [
+              22.5,
+              36.15
+            ],
+            [
+              23.4,
+              36.3
+            ],
+            [
+              24.0,
+              37.1
+            ],
+            [
+              24.75,
+              38.05
+            ],
+            [
+              24.6,
+              38.5
+            ],
+            [
+              23.9,
+              39.35
+            ],
+            [
+              23.0,
+              39.95
+            ],
+            [
+              22.9,
+              40.5
+            ]
+          ],
+          "by": "sea",
+          "label": {
+            "en": "To the Ottoman Empire",
+            "es": "Al Imperio otomano"
+          }
+        },
+        {
+          "side": "moves",
+          "path": [
+            [
+              -5.99,
+              37.39
+            ],
+            [
+              -5.6,
+              36.3
+            ],
+            [
+              -5.4,
+              35.6
+            ],
+            [
+              -4.98,
+              34.03
+            ]
+          ],
+          "label": {
+            "en": "To Morocco",
+            "es": "A Marruecos"
+          }
+        },
+        {
+          "side": "moves",
+          "path": [
+            [
+              8.3,
+              49.85
+            ],
+            [
+              11.5,
+              50.9
+            ],
+            [
+              14.6,
+              51.1
+            ],
+            [
+              17.0,
+              51.1
+            ],
+            [
+              19.94,
+              50.06
+            ]
+          ],
+          "by": "land",
+          "label": {
+            "en": "Ashkenazim move east",
+            "es": "Los asquenazíes van al este"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "edict-of-expulsion",
+          "name": {
+            "en": "Expulsion from England (1290)",
+            "es": "Expulsión de Inglaterra (1290)"
+          },
+          "at": [
+            -0.0918,
+            51.5141
+          ],
+          "cat": "persecution",
+          "type": "event",
+          "date": "1290-07-18",
+          "place": {
+            "en": "London, England",
+            "es": "Londres, Inglaterra"
+          },
+          "text": {
+            "en": "On 18 July 1290 Edward I ordered all Jews out of England, perhaps 2,000 people; it was the first time a European state banned them for good. They could not live openly in England again until the 1650s.",
+            "es": "El 18 de julio de 1290, Eduardo I ordenó a todos los judíos salir de Inglaterra, quizá unas 2000 personas; fue la primera vez que un Estado europeo los expulsó para siempre. No pudieron volver a vivir abiertamente en Inglaterra hasta la década de 1650."
+          },
+          "wiki": {
+            "en": "Edict of Expulsion",
+            "es": "Edicto de expulsión"
+          },
+          "img": "Letter from King Edward I to the Sheriff of Gloucester, dated 18 July 1290 C54 107, m. 5.jpg"
+        },
+        {
+          "id": "alhambra-decree",
+          "name": {
+            "en": "Alhambra Decree",
+            "es": "Edicto de Granada"
+          },
+          "at": [
+            -3.5882,
+            37.1763
+          ],
+          "cat": "persecution",
+          "type": "event",
+          "date": "1492-03-31",
+          "place": {
+            "en": "Alhambra, Granada, Spain",
+            "es": "La Alhambra, Granada, España"
+          },
+          "text": {
+            "en": "Signed in Granada on 31 March 1492 by Ferdinand and Isabella: Jews had to convert or leave Castile and Aragon within four months. Spain formally revoked it in 1968.",
+            "es": "Firmado en Granada el 31 de marzo de 1492 por Fernando e Isabel: los judíos debían convertirse o abandonar Castilla y Aragón en cuatro meses. España lo revocó formalmente en 1968."
+          },
+          "wiki": {
+            "en": "Alhambra Decree",
+            "es": "Edicto de Granada"
+          }
+        },
+        {
+          "id": "jews-of-thessaloniki",
+          "name": {
+            "en": "Jews of Thessaloniki",
+            "es": "Judíos de Salónica"
+          },
+          "at": [
+            22.9444,
+            40.6401
+          ],
+          "cat": "community",
+          "type": "culture",
+          "date": "1492",
+          "place": {
+            "en": "Thessaloniki, Greece",
+            "es": "Salónica (Tesalónica), Grecia"
+          },
+          "text": {
+            "en": "Sephardic exiles made Ottoman Salonica a mainly Jewish city by the late 1500s, where Ladino was spoken in the streets and port. In 1943 the Nazis deported its Jews to Auschwitz, where nearly all were murdered.",
+            "es": "Los desterrados sefardíes hicieron de la Salónica otomana una ciudad mayoritariamente judía a fines del siglo XVI, donde se hablaba ladino en las calles y el puerto. En 1943 los nazis deportaron a sus judíos a Auschwitz, donde casi todos fueron asesinados."
+          },
+          "wiki": {
+            "en": "History of the Jews in Thessaloniki",
+            "es": "Historia de los judíos de Salónica"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1654-09",
+      "title": {
+        "en": "Amsterdam and the Americas",
+        "es": "Ámsterdam y América"
+      },
+      "text": {
+        "en": "Descendants of Iberian converts return to Judaism in tolerant Amsterdam. In 1636 Jews in Dutch-ruled Recife, Brazil, open the first synagogue in the Americas; in 1654 some move on to New Amsterdam.",
+        "es": "Descendientes de conversos ibéricos vuelven al judaísmo en la tolerante Ámsterdam. En 1636, los judíos de Recife, en el Brasil holandés, abren la primera sinagoga de América; en 1654 algunos siguen hasta Nueva Ámsterdam."
+      },
+      "details": {
+        "en": "From around 1600, families of New Christians fleeing the Portuguese and Spanish Inquisitions settled in Amsterdam, where they could practise Judaism openly; their community produced scholars and printers, and banned the philosopher Spinoza for his ideas. When the Dutch took north-eastern Brazil in 1630, Jews followed: the Recife community, some 1,450 people, opened Kahal Zur Israel in 1636 and in 1642 welcomed its rabbi, Isaac Aboab da Fonseca, from Amsterdam. When Portugal retook Recife in 1654, the Jews left; 23 of them reached New Amsterdam, the future New York, that September. Further east, Poland-Lithuania was home to the world's largest Jewish community, with its own Council of Four Lands. In 1648 Cossack rebels in Ukraine massacred tens of thousands of Jews; estimates vary widely.",
+        "es": "Desde alrededor de 1600, familias de cristianos nuevos que huían de las Inquisiciones de Portugal y España se asentaron en Ámsterdam, donde podían practicar el judaísmo abiertamente; su comunidad dio sabios e impresores, y expulsó al filósofo Spinoza por sus ideas. Cuando los holandeses tomaron el noreste de Brasil en 1630, los judíos los siguieron: la comunidad de Recife, unas 1450 personas, abrió Kahal Zur Israel en 1636 y en 1642 recibió a su rabino, Isaac Aboab da Fonseca, llegado de Ámsterdam. Cuando Portugal recuperó Recife en 1654, los judíos se fueron; 23 de ellos llegaron en septiembre a Nueva Ámsterdam, la futura Nueva York. Más al este, Polonia-Lituania albergaba la mayor comunidad judía del mundo, con su propio Consejo de las Cuatro Tierras. En 1648, rebeldes cosacos en Ucrania asesinaron a decenas de miles de judíos; las cifras varían mucho."
+      },
+      "camera": {
+        "lon": -24.0,
+        "lat": 22.0,
+        "zoom": 1.5
+      },
+      "control": {
+        "jews": [
+          {
+            "ref": "amsterdam"
+          },
+          {
+            "ref": "recife"
+          },
+          {
+            "ref": "commonwealth"
+          },
+          {
+            "ref": "thessaloniki"
+          },
+          {
+            "ref": "constantinople"
+          },
+          {
+            "ref": "safed"
+          },
+          {
+            "ref": "fez"
+          },
+          {
+            "ref": "venice_rome"
+          },
+          {
+            "ref": "fustat"
+          },
+          {
+            "ref": "baghdad"
+          },
+          {
+            "ref": "sanaa"
+          },
+          {
+            "ref": "gondar"
+          },
+          {
+            "ref": "kerala"
+          },
+          {
+            "ref": "kaifeng"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "moves",
+          "path": [
+            [
+              4.9,
+              52.37
+            ],
+            [
+              4.4,
+              52.47
+            ],
+            [
+              3.0,
+              51.8
+            ],
+            [
+              1.9,
+              51.15
+            ],
+            [
+              1.3,
+              50.85
+            ],
+            [
+              -1.5,
+              50.2
+            ],
+            [
+              -5.5,
+              48.8
+            ],
+            [
+              -10.0,
+              43.0
+            ],
+            [
+              -17.5,
+              28.0
+            ],
+            [
+              -25.0,
+              15.0
+            ],
+            [
+              -31.0,
+              2.0
+            ],
+            [
+              -34.6,
+              -7.5
+            ],
+            [
+              -34.85,
+              -8.05
+            ]
+          ],
+          "by": "sea",
+          "label": {
+            "en": "Amsterdam to Recife",
+            "es": "De Ámsterdam a Recife"
+          }
+        },
+        {
+          "side": "moves",
+          "path": [
+            [
+              -34.85,
+              -8.05
+            ],
+            [
+              -34.6,
+              -7.9
+            ],
+            [
+              -34.5,
+              -6.0
+            ],
+            [
+              -35.0,
+              -4.6
+            ],
+            [
+              -38.0,
+              -2.8
+            ],
+            [
+              -44.0,
+              -1.0
+            ],
+            [
+              -50.0,
+              2.5
+            ],
+            [
+              -50.5,
+              5.5
+            ],
+            [
+              -55.0,
+              7.5
+            ],
+            [
+              -60.0,
+              11.0
+            ],
+            [
+              -62.0,
+              17.5
+            ],
+            [
+              -66.0,
+              23.0
+            ],
+            [
+              -72.0,
+              33.0
+            ],
+            [
+              -73.6,
+              40.2
+            ],
+            [
+              -74.02,
+              40.68
+            ]
+          ],
+          "by": "sea",
+          "label": {
+            "en": "To New Amsterdam, 1654",
+            "es": "A Nueva Ámsterdam, 1654"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "kahal-zur-israel",
+          "name": {
+            "en": "Kahal Zur Israel Synagogue",
+            "es": "Sinagoga Kahal Zur Israel"
+          },
+          "at": [
+            -34.8713,
+            -8.0613
+          ],
+          "cat": "sacred",
+          "type": "structure",
+          "date": "1636",
+          "place": {
+            "en": "Recife, Brazil",
+            "es": "Recife, Brasil"
+          },
+          "text": {
+            "en": "The first synagogue in the Americas, opened in 1636 in Recife by Sephardic Jews under Dutch rule. When Portugal retook Brazil in 1654 they left; a Jewish museum now stands on the site.",
+            "es": "La primera sinagoga de América, abierta en 1636 en Recife por judíos sefardíes bajo dominio holandés. Cuando Portugal recuperó Brasil en 1654 se marcharon; hoy hay un museo judío en el lugar."
+          },
+          "wiki": {
+            "en": "Kahal Zur Israel Synagogue",
+            "es": "Sinagoga Kahal Zur Israel"
+          }
+        },
+        {
+          "id": "portuguese-synagogue-amsterdam",
+          "name": {
+            "en": "Portuguese Synagogue, Amsterdam",
+            "es": "Sinagoga Portuguesa de Ámsterdam"
+          },
+          "at": [
+            4.9049,
+            52.3676
+          ],
+          "cat": "sacred",
+          "type": "structure",
+          "date": "1671",
+          "end": "1675",
+          "place": {
+            "en": "Amsterdam, Netherlands",
+            "es": "Ámsterdam, Países Bajos"
+          },
+          "text": {
+            "en": "The great synagogue, or Esnoga, of Amsterdam's Portuguese Jews, opened in 1675. Its builders' families had fled the Inquisition in Spain and Portugal and returned openly to Judaism in the Dutch Republic.",
+            "es": "La gran sinagoga, o Esnoga, de los judíos portugueses de Ámsterdam, inaugurada en 1675. Las familias que la construyeron habían huido de la Inquisición en España y Portugal y volvieron abiertamente al judaísmo en la República Holandesa."
+          },
+          "wiki": {
+            "en": "Portuguese Synagogue (Amsterdam)",
+            "es": "Sinagoga portuguesa de Ámsterdam"
+          }
+        },
+        {
+          "id": "congregation-shearith-israel",
+          "name": {
+            "en": "Congregation Shearith Israel",
+            "es": "Congregación Shearith Israel"
+          },
+          "at": [
+            -74.011,
+            40.7045
+          ],
+          "cat": "community",
+          "type": "institution",
+          "date": "1654-09",
+          "place": {
+            "en": "New York, United States",
+            "es": "Nueva York, Estados Unidos"
+          },
+          "text": {
+            "en": "Founded by 23 Jewish refugees from Recife who reached New Amsterdam in September 1654, at first unwelcome to its governor. It is the oldest Jewish congregation in the United States.",
+            "es": "Fundada por 23 refugiados judíos de Recife que llegaron a Nueva Ámsterdam en septiembre de 1654, al principio mal recibidos por su gobernador. Es la congregación judía más antigua de Estados Unidos."
+          },
+          "wiki": {
+            "en": "Congregation Shearith Israel",
+            "es": ""
+          }
+        },
+        {
+          "id": "council-of-four-lands",
+          "name": {
+            "en": "Council of Four Lands",
+            "es": "Consejo de las Cuatro Tierras"
+          },
+          "at": [
+            22.5684,
+            51.2465
+          ],
+          "cat": "community",
+          "type": "institution",
+          "date": "1580",
+          "until": "1764",
+          "place": {
+            "en": "Lublin, Poland",
+            "es": "Lublin, Polonia"
+          },
+          "text": {
+            "en": "The council of the Jews of Poland, which met at the fairs of Lublin and Jarosław from the 16th century until 1764, apportioning taxes and setting rules for hundreds of communities.",
+            "es": "El consejo de los judíos de Polonia, que se reunía en las ferias de Lublin y Jarosław desde el siglo XVI hasta 1764, repartiendo impuestos y dictando normas para cientos de comunidades."
+          },
+          "wiki": {
+            "en": "Council of Four Lands",
+            "es": "Consejo de las Cuatro Tierras"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1791",
+      "title": {
+        "en": "Hasidim, Enlightenment and rights",
+        "es": "Jasidim, Ilustración y derechos"
+      },
+      "text": {
+        "en": "In Poland-Lithuania the Baal Shem Tov's Hasidism spreads joyful prayer. In Berlin, Moses Mendelssohn leads a Jewish Enlightenment, and in 1791 France makes its Jews equal citizens.",
+        "es": "En Polonia-Lituania, el jasidismo del Baal Shem Tov difunde una oración alegre. En Berlín, Moses Mendelssohn encabeza una Ilustración judía, y en 1791 Francia convierte a sus judíos en ciudadanos iguales."
+      },
+      "details": {
+        "en": "The world's largest Jewish community lived in the lands of Poland-Lithuania, many in small market towns, or shtetls. The healer and mystic Israel ben Eliezer, the Baal Shem Tov (about 1700–1760), taught that God could be served with joy, song and simple prayer, and his followers' rebbes spread Hasidism across Eastern Europe. Talmud scholars led by the Vilna Gaon opposed them. In Berlin, Moses Mendelssohn translated the Torah into German and argued for freedom of conscience; his followers' Haskalah, or Enlightenment, promoted secular learning and Hebrew. Revolutionary France gave its 40,000 Jews equal rights in 1791, and other countries followed over the next century. But Russia, which took most of Poland's Jews in the partitions of 1772–1795, confined them from 1791 to 1917 to a Pale of Settlement in its western provinces.",
+        "es": "La mayor comunidad judía del mundo vivía en las tierras de Polonia-Lituania, muchos en pequeños pueblos con mercado, los shtetl. El sanador y místico Israel ben Eliezer, el Baal Shem Tov (hacia 1700-1760), enseñó que se podía servir a Dios con alegría, cantos y oración sencilla, y los rebes de sus seguidores difundieron el jasidismo por Europa del Este. Los estudiosos del Talmud, encabezados por el Gaón de Vilna, se les opusieron. En Berlín, Moses Mendelssohn tradujo la Torá al alemán y defendió la libertad de conciencia; la Haskalá, o Ilustración, de sus seguidores impulsó el saber laico y el hebreo. La Francia revolucionaria dio la igualdad de derechos a sus 40 000 judíos en 1791, y otros países la siguieron durante el siglo siguiente. Pero Rusia, que se quedó con la mayoría de los judíos de Polonia en los repartos de 1772-1795, los confinó de 1791 a 1917 en una Zona de Asentamiento en sus provincias occidentales."
+      },
+      "camera": {
+        "lon": 18.0,
+        "lat": 50.5,
+        "zoom": 3.4
+      },
+      "control": {
+        "jews": [
+          {
+            "ref": "commonwealth"
+          },
+          {
+            "ref": "amsterdam"
+          },
+          {
+            "ref": "thessaloniki"
+          },
+          {
+            "ref": "constantinople"
+          },
+          {
+            "ref": "morocco"
+          },
+          {
+            "ref": "fustat"
+          },
+          {
+            "ref": "baghdad"
+          },
+          {
+            "ref": "sanaa"
+          },
+          {
+            "ref": "gondar"
+          },
+          {
+            "ref": "kerala"
+          },
+          {
+            "ref": "kaifeng"
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "baal-shem-tov",
+          "name": {
+            "en": "Baal Shem Tov",
+            "es": "Baal Shem Tov"
+          },
+          "at": [
+            27.4114,
+            49.4369
+          ],
+          "cat": "founder",
+          "type": "person",
+          "date": "1740",
+          "life": [
+            "1700",
+            "1760"
+          ],
+          "place": {
+            "en": "Medzhybizh, Ukraine",
+            "es": "Medzhybizh, Ucrania"
+          },
+          "text": {
+            "en": "Israel ben Eliezer (about 1700–1760), a healer and mystic of Medzhybizh, in today's Ukraine, regarded as the founder of Hasidism, which taught that God can be served with joy, song and heartfelt prayer.",
+            "es": "Israel ben Eliezer (hacia 1700-1760), sanador y místico de Medzhybizh, en la actual Ucrania, considerado el fundador del jasidismo, que enseñaba que se puede servir a Dios con alegría, cantos y oración sincera."
+          },
+          "wiki": {
+            "en": "Baal Shem Tov",
+            "es": "Israel ben Eliezer"
+          },
+          "img": "Baal Shem Tov's shul restored.jpg"
+        },
+        {
+          "id": "vilna-gaon",
+          "name": {
+            "en": "Vilna Gaon",
+            "es": "Gaón de Vilna"
+          },
+          "at": [
+            25.2797,
+            54.6872
+          ],
+          "cat": "thinker",
+          "type": "person",
+          "date": "1760",
+          "life": [
+            "1720-04-23",
+            "1797-10-09"
+          ],
+          "place": {
+            "en": "Vilnius, Lithuania",
+            "es": "Vilna (Vilnius), Lituania"
+          },
+          "text": {
+            "en": "Elijah ben Solomon of Vilnius (1720–1797), the most famous Talmud scholar of his age, who led the opposition to Hasidism. His city became known as the 'Jerusalem of Lithuania'.",
+            "es": "Elías ben Salomón de Vilna (1720-1797), el estudioso del Talmud más famoso de su época, que encabezó la oposición al jasidismo. Su ciudad llegó a ser conocida como la «Jerusalén de Lituania»."
+          },
+          "wiki": {
+            "en": "Vilna Gaon",
+            "es": "Gaón de Vilna"
+          }
+        },
+        {
+          "id": "moses-mendelssohn",
+          "name": {
+            "en": "Moses Mendelssohn",
+            "es": "Moses Mendelssohn"
+          },
+          "at": [
+            13.405,
+            52.52
+          ],
+          "cat": "thinker",
+          "type": "person",
+          "date": "1783",
+          "life": [
+            "1729-09-06",
+            "1786-01-04"
+          ],
+          "place": {
+            "en": "Berlin, Germany",
+            "es": "Berlín, Alemania"
+          },
+          "text": {
+            "en": "A philosopher of Berlin (1729–1786) and father of the Haskalah, the Jewish Enlightenment. He translated the Torah into German and argued in Jerusalem (1783) that the state must not force anyone's religion.",
+            "es": "Filósofo de Berlín (1729-1786) y padre de la Haskalá, la Ilustración judía. Tradujo la Torá al alemán y defendió en Jerusalén (1783) que el Estado no debe imponer la religión de nadie."
+          },
+          "wiki": {
+            "en": "Moses Mendelssohn",
+            "es": "Moses Mendelssohn"
+          }
+        },
+        {
+          "id": "jewish-emancipation",
+          "name": {
+            "en": "Emancipation in France (1791)",
+            "es": "Emancipación en Francia (1791)"
+          },
+          "at": [
+            2.3522,
+            48.8566
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1791-09",
+          "place": {
+            "en": "Paris, France",
+            "es": "París, Francia"
+          },
+          "text": {
+            "en": "In September 1791 revolutionary France gave its 40,000 Jews equal citizenship, the first country in Europe to do so. Other states followed over the next century; Russia did so only in 1917.",
+            "es": "En septiembre de 1791 la Francia revolucionaria dio la ciudadanía plena a sus 40 000 judíos, el primer país de Europa en hacerlo. Otros Estados la siguieron durante el siglo siguiente; Rusia, solo en 1917."
+          },
+          "wiki": {
+            "en": "Jewish emancipation",
+            "es": "Emancipación judía"
+          }
+        },
+        {
+          "id": "pale-of-settlement",
+          "name": {
+            "en": "Pale of Settlement",
+            "es": "Zona de Asentamiento"
+          },
+          "at": [
+            27.56,
+            53.9
+          ],
+          "cat": "persecution",
+          "type": "place",
+          "date": "1791",
+          "until": "1917",
+          "place": {
+            "en": "Belarus, Lithuania, Ukraine, Moldova and eastern Poland",
+            "es": "Bielorrusia, Lituania, Ucrania, Moldavia y el este de Polonia"
+          },
+          "text": {
+            "en": "From 1791 to 1917 the Russian Empire let most of its Jews live only in its western provinces. Crowded into poor market towns, they built a rich Yiddish culture and, from 1881, emigrated in their millions.",
+            "es": "De 1791 a 1917, el Imperio ruso solo dejó vivir a la mayoría de sus judíos en sus provincias occidentales. Hacinados en pueblos pobres, crearon una rica cultura en ídish y, desde 1881, emigraron por millones."
+          },
+          "wiki": {
+            "en": "Pale of Settlement",
+            "es": "Zona de Asentamiento"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1903-04",
+      "title": {
+        "en": "Pogroms, migration and Zionism",
+        "es": "Pogromos, migración y sionismo"
+      },
+      "text": {
+        "en": "Pogroms in the Russian Empire, such as Kishinev's in 1903, push about two million Jews west in 1881–1914, mostly to New York, others to Argentina. Zionists call for a Jewish homeland in Palestine.",
+        "es": "Los pogromos en el Imperio ruso, como el de Kishinev en 1903, empujan a unos dos millones de judíos al oeste en 1881-1914, sobre todo a Nueva York, otros a Argentina. Los sionistas piden un hogar judío en Palestina."
+      },
+      "details": {
+        "en": "After Tsar Alexander II was assassinated in 1881, waves of anti-Jewish riots, or pogroms, swept the Pale, and new laws restricted where Jews could live and study. At Kishinev, over Easter 1903, rioters killed between 40 and 49 Jews and damaged some 1,500 homes. Emigrants travelled by train to Hamburg or Bremen and crossed the Atlantic; New York's Lower East Side filled with Yiddish newspapers, theatres and synagogues. Baron Maurice de Hirsch's Jewish Colonization Association settled families on Argentine farms, the 'Jewish gauchos'. In Western Europe, emancipation had not ended hatred: the Dreyfus affair in France convinced the Vienna journalist Theodor Herzl that Jews needed a state of their own. In 1897 he gathered the First Zionist Congress in Basel. Small groups of settlers went to Ottoman Palestine, where most people were Arabs.",
+        "es": "Tras el asesinato del zar Alejandro II en 1881, olas de disturbios antijudíos, o pogromos, recorrieron la Zona de Asentamiento, y nuevas leyes limitaron dónde podían vivir y estudiar los judíos. En Kishinev, en la Pascua de 1903, los atacantes mataron a entre 40 y 49 judíos y dañaron unas 1500 viviendas. Los emigrantes viajaban en tren hasta Hamburgo o Bremen y cruzaban el Atlántico; el Lower East Side de Nueva York se llenó de periódicos, teatros y sinagogas en ídish. La Asociación de Colonización Judía del barón Maurice de Hirsch instaló a familias en granjas argentinas: los «gauchos judíos». En Europa occidental, la emancipación no había acabado con el odio: el caso Dreyfus en Francia convenció al periodista vienés Theodor Herzl de que los judíos necesitaban un Estado propio. En 1897 reunió el Primer Congreso Sionista en Basilea. Pequeños grupos de colonos fueron a la Palestina otomana, donde la mayoría de la población era árabe."
+      },
+      "camera": {
+        "lon": -24.0,
+        "lat": 14.0,
+        "zoom": 1.2
+      },
+      "control": {
+        "jews": [
+          {
+            "ref": "pale"
+          },
+          {
+            "ref": "galicia"
+          },
+          {
+            "ref": "new_york"
+          },
+          {
+            "ref": "buenos_aires"
+          },
+          {
+            "ref": "thessaloniki"
+          },
+          {
+            "ref": "constantinople"
+          },
+          {
+            "ref": "morocco"
+          },
+          {
+            "ref": "iraq_1900"
+          },
+          {
+            "ref": "sanaa"
+          },
+          {
+            "ref": "gondar"
+          },
+          {
+            "ref": "kerala"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "moves",
+          "path": [
+            [
+              23.16,
+              53.13
+            ],
+            [
+              21.0,
+              52.23
+            ],
+            [
+              17.0,
+              52.4
+            ],
+            [
+              13.4,
+              52.52
+            ],
+            [
+              9.99,
+              53.55
+            ]
+          ],
+          "by": "land",
+          "label": {
+            "en": "To the ports",
+            "es": "Hacia los puertos"
+          }
+        },
+        {
+          "side": "moves",
+          "path": [
+            [
+              9.0,
+              54.0
+            ],
+            [
+              6.0,
+              53.9
+            ],
+            [
+              2.0,
+              51.2
+            ],
+            [
+              -2.0,
+              50.2
+            ],
+            [
+              -6.0,
+              49.8
+            ],
+            [
+              -20.0,
+              47.0
+            ],
+            [
+              -40.0,
+              43.5
+            ],
+            [
+              -60.0,
+              41.0
+            ],
+            [
+              -70.0,
+              40.3
+            ],
+            [
+              -73.9,
+              40.55
+            ]
+          ],
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "To New York",
+            "es": "A Nueva York"
+          }
+        },
+        {
+          "side": "moves",
+          "path": [
+            [
+              -6.0,
+              49.6
+            ],
+            [
+              -10.5,
+              44.0
+            ],
+            [
+              -13.0,
+              35.0
+            ],
+            [
+              -19.0,
+              22.0
+            ],
+            [
+              -27.0,
+              8.0
+            ],
+            [
+              -32.0,
+              -6.0
+            ],
+            [
+              -37.5,
+              -16.0
+            ],
+            [
+              -39.0,
+              -20.5
+            ],
+            [
+              -41.0,
+              -23.5
+            ],
+            [
+              -46.0,
+              -26.5
+            ],
+            [
+              -50.0,
+              -31.0
+            ],
+            [
+              -53.0,
+              -35.0
+            ],
+            [
+              -56.0,
+              -35.3
+            ],
+            [
+              -57.5,
+              -34.9
+            ],
+            [
+              -58.3,
+              -34.6
+            ]
+          ],
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "To Argentina",
+            "es": "A Argentina"
+          }
+        },
+        {
+          "side": "moves",
+          "path": [
+            [
+              30.73,
+              46.48
+            ],
+            [
+              31.5,
+              45.5
+            ],
+            [
+              29.6,
+              43.0
+            ],
+            [
+              29.12,
+              41.25
+            ],
+            [
+              29.05,
+              41.15
+            ],
+            [
+              28.98,
+              40.98
+            ],
+            [
+              28.0,
+              40.8
+            ],
+            [
+              27.0,
+              40.6
+            ],
+            [
+              26.65,
+              40.35
+            ],
+            [
+              26.3,
+              40.1
+            ],
+            [
+              26.0,
+              39.9
+            ],
+            [
+              25.6,
+              39.0
+            ],
+            [
+              25.6,
+              38.0
+            ],
+            [
+              26.5,
+              36.6
+            ],
+            [
+              27.5,
+              35.8
+            ],
+            [
+              31.0,
+              34.3
+            ],
+            [
+              34.6,
+              32.2
+            ],
+            [
+              34.75,
+              32.05
+            ]
+          ],
+          "by": "sea",
+          "label": {
+            "en": "To Palestine",
+            "es": "A Palestina"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "kishinev-pogrom",
+          "name": {
+            "en": "Kishinev pogrom",
+            "es": "Pogromo de Kishinev"
+          },
+          "at": [
+            28.8045,
+            47.0376
+          ],
+          "cat": "persecution",
+          "type": "event",
+          "date": "1903-04-19",
+          "place": {
+            "en": "Chișinău, Moldova",
+            "es": "Chisináu, Moldavia"
+          },
+          "text": {
+            "en": "Over Easter 1903, rioters in Kishinev killed between 40 and 49 Jews, wounded hundreds and damaged some 1,500 homes. News of the massacre shocked the world and spurred emigration and Jewish self-defence.",
+            "es": "En la Pascua de 1903, los atacantes de Kishinev mataron a entre 40 y 49 judíos, hirieron a cientos y dañaron unas 1500 viviendas. La noticia de la matanza conmocionó al mundo e impulsó la emigración y la autodefensa judía."
+          },
+          "wiki": {
+            "en": "Kishinev pogrom",
+            "es": "Pogromo de Chisináu"
+          },
+          "img": "Chișinău Pogrom Monument 1.jpg"
+        },
+        {
+          "id": "lower-east-side",
+          "name": {
+            "en": "Lower East Side",
+            "es": "Lower East Side"
+          },
+          "at": [
+            -73.985,
+            40.715
+          ],
+          "cat": "community",
+          "type": "place",
+          "date": "1881",
+          "place": {
+            "en": "Manhattan, New York, United States",
+            "es": "Manhattan, Nueva York, Estados Unidos"
+          },
+          "text": {
+            "en": "The crowded tenement district of Manhattan where many Jewish immigrants from Eastern Europe settled from the 1880s, with Yiddish newspapers, theatres, workshops and hundreds of small synagogues.",
+            "es": "El abarrotado barrio de vecindades de Manhattan donde se instalaron muchos inmigrantes judíos de Europa del Este desde la década de 1880, con periódicos y teatros en ídish, talleres y cientos de pequeñas sinagogas."
+          },
+          "wiki": {
+            "en": "Lower East Side",
+            "es": "Lower East Side"
+          }
+        },
+        {
+          "id": "moises-ville",
+          "name": {
+            "en": "Moisés Ville",
+            "es": "Moisés Ville"
+          },
+          "at": [
+            -61.4706,
+            -30.7194
+          ],
+          "cat": "community",
+          "type": "place",
+          "date": "1889-10-23",
+          "place": {
+            "en": "Santa Fe province, Argentina",
+            "es": "Provincia de Santa Fe, Argentina"
+          },
+          "text": {
+            "en": "A farming town founded in 1889 by Jews who had fled the Russian Empire, the first of the 'Jewish gaucho' colonies. Argentina became home to Latin America's largest Jewish community.",
+            "es": "Un pueblo agrícola fundado en 1889 por judíos que habían huido del Imperio ruso, la primera de las colonias de «gauchos judíos». Argentina llegó a tener la mayor comunidad judía de América Latina."
+          },
+          "wiki": {
+            "en": "Moisés Ville",
+            "es": "Moisés Ville"
+          }
+        },
+        {
+          "id": "first-zionist-congress",
+          "name": {
+            "en": "First Zionist Congress",
+            "es": "Primer Congreso Sionista"
+          },
+          "at": [
+            7.5891,
+            47.5541
+          ],
+          "cat": "council",
+          "type": "event",
+          "date": "1897-08-29",
+          "place": {
+            "en": "Basel, Switzerland",
+            "es": "Basilea, Suiza"
+          },
+          "text": {
+            "en": "Called by Theodor Herzl in Basel in August 1897: 208 delegates from 17 countries resolved to seek a publicly recognised home for the Jewish people in Palestine, then part of the Ottoman Empire.",
+            "es": "Convocado por Theodor Herzl en Basilea en agosto de 1897: 208 delegados de 17 países acordaron buscar un hogar reconocido públicamente para el pueblo judío en Palestina, entonces parte del Imperio otomano."
+          },
+          "wiki": {
+            "en": "First Zionist Congress",
+            "es": "Primer Congreso Sionista"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1942",
+      "title": {
+        "en": "The Holocaust",
+        "es": "El Holocausto"
+      },
+      "text": {
+        "en": "Nazi Germany and its collaborators murder about six million Jews, two-thirds of Europe's Jews, in mass shootings and in death camps such as Auschwitz. Roma, disabled people and millions of others are also killed.",
+        "es": "La Alemania nazi y sus colaboradores asesinan a unos seis millones de judíos, dos tercios de los judíos de Europa, en fusilamientos masivos y en campos de exterminio como Auschwitz. También matan a gitanos, a personas con discapacidad y a millones de otras personas."
+      },
+      "details": {
+        "en": "The Nazis took power in Germany in 1933 and stripped Jews of their rights; in the Kristallnacht pogrom of November 1938 synagogues burned across Germany and Austria. After the invasion of Poland in 1939, Jews were forced into ghettos, where many died of hunger and disease. From June 1941 shooting squads and local helpers murdered 1.5 to 2 million Jews in the Soviet lands; at Babi Yar, near Kyiv, 33,771 were shot in two days. From late 1941 trains carried Jews from all over occupied Europe to death camps in Poland: Chełmno, Bełżec, Sobibór, Treblinka, Majdanek and Auschwitz-Birkenau. Among the murdered were about 1.5 million children. Jews resisted in ghettos and camps, as in the Warsaw Ghetto in 1943, and some non-Jews risked their lives to hide them. Ancient communities, from Vilnius to Thessaloniki, were almost wiped out.",
+        "es": "Los nazis tomaron el poder en Alemania en 1933 y despojaron de sus derechos a los judíos; en el pogromo de la Noche de los Cristales Rotos, en noviembre de 1938, ardieron sinagogas en toda Alemania y Austria. Tras la invasión de Polonia en 1939, se obligó a los judíos a vivir en guetos, donde muchos murieron de hambre y enfermedades. Desde junio de 1941, escuadrones de fusilamiento y colaboradores locales asesinaron a entre 1,5 y 2 millones de judíos en tierras soviéticas; en Babi Yar, cerca de Kiev, mataron a 33 771 en dos días. Desde fines de 1941, trenes llevaron a judíos de toda la Europa ocupada a campos de exterminio en Polonia: Chełmno, Bełżec, Sobibór, Treblinka, Majdanek y Auschwitz-Birkenau. Entre los asesinados había alrededor de 1,5 millones de niños. Los judíos resistieron en guetos y campos, como en el gueto de Varsovia en 1943, y algunos no judíos arriesgaron la vida para esconderlos. Comunidades milenarias, de Vilna a Salónica, quedaron casi borradas."
+      },
+      "camera": {
+        "lon": 17.0,
+        "lat": 48.5,
+        "zoom": 3.3
+      },
+      "control": {
+        "jews": [
+          {
+            "ref": "new_york"
+          },
+          {
+            "ref": "buenos_aires"
+          },
+          {
+            "ref": "yishuv"
+          },
+          {
+            "ref": "morocco"
+          },
+          {
+            "ref": "iraq_1900"
+          },
+          {
+            "ref": "sanaa"
+          },
+          {
+            "ref": "gondar"
+          },
+          {
+            "ref": "kerala"
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "moves",
+          "path": [
+            [
+              6.61,
+              52.92
+            ],
+            [
+              19.18,
+              50.03
+            ]
+          ],
+          "by": "land",
+          "label": {
+            "en": "Deportations to Auschwitz",
+            "es": "Deportaciones a Auschwitz"
+          }
+        },
+        {
+          "side": "moves",
+          "path": [
+            [
+              2.45,
+              48.92
+            ],
+            [
+              19.18,
+              50.03
+            ]
+          ],
+          "by": "land"
+        },
+        {
+          "side": "moves",
+          "path": [
+            [
+              12.48,
+              41.89
+            ],
+            [
+              19.18,
+              50.03
+            ]
+          ],
+          "by": "land"
+        },
+        {
+          "side": "moves",
+          "path": [
+            [
+              22.94,
+              40.64
+            ],
+            [
+              19.18,
+              50.03
+            ]
+          ],
+          "by": "land"
+        },
+        {
+          "side": "moves",
+          "path": [
+            [
+              19.04,
+              47.5
+            ],
+            [
+              19.18,
+              50.03
+            ]
+          ],
+          "by": "land"
+        }
+      ],
+      "places": [
+        {
+          "id": "auschwitz-birkenau",
+          "name": {
+            "en": "Auschwitz-Birkenau",
+            "es": "Auschwitz-Birkenau"
+          },
+          "at": [
+            19.1786,
+            50.0359
+          ],
+          "cat": "persecution",
+          "type": "site",
+          "date": "1940-05",
+          "until": "1945-01-27",
+          "place": {
+            "en": "Oświęcim, Poland",
+            "es": "Oświęcim, Polonia"
+          },
+          "text": {
+            "en": "The largest Nazi camp, in occupied Poland, where at least 1.1 million people were murdered, about a million of them Jews. Soviet soldiers freed it on 27 January 1945, now Holocaust Remembrance Day.",
+            "es": "El mayor campo nazi, en la Polonia ocupada, donde fueron asesinadas al menos 1,1 millones de personas, alrededor de un millón de ellas judías. Soldados soviéticos lo liberaron el 27 de enero de 1945, hoy Día de Conmemoración del Holocausto."
+          },
+          "wiki": {
+            "en": "Auschwitz concentration camp",
+            "es": "Campo de concentración de Auschwitz"
+          }
+        },
+        {
+          "id": "warsaw-ghetto-uprising",
+          "name": {
+            "en": "Warsaw Ghetto Uprising",
+            "es": "Levantamiento del gueto de Varsovia"
+          },
+          "at": [
+            20.9933,
+            52.2497
+          ],
+          "cat": "persecution",
+          "type": "event",
+          "date": "1943-04-19",
+          "place": {
+            "en": "Warsaw, Poland",
+            "es": "Varsovia, Polonia"
+          },
+          "text": {
+            "en": "In April 1943 Jewish fighters in the Warsaw Ghetto, from which about a quarter of a million people had been deported to Treblinka and murdered, rose up and held out for almost a month.",
+            "es": "En abril de 1943, los combatientes judíos del gueto de Varsovia, desde donde unas 250 000 personas habían sido deportadas a Treblinka y asesinadas, se alzaron y resistieron casi un mes."
+          },
+          "wiki": {
+            "en": "Warsaw Ghetto Uprising",
+            "es": "Levantamiento del gueto de Varsovia"
+          }
+        },
+        {
+          "id": "babi-yar",
+          "name": {
+            "en": "Babi Yar",
+            "es": "Babi Yar"
+          },
+          "at": [
+            30.4469,
+            50.4717
+          ],
+          "cat": "persecution",
+          "type": "event",
+          "date": "1941-09-29",
+          "place": {
+            "en": "Kyiv, Ukraine",
+            "es": "Kiev, Ucrania"
+          },
+          "text": {
+            "en": "A ravine in Kyiv where German forces shot 33,771 Jews on 29 and 30 September 1941, one of the largest massacres of the Holocaust. In all, perhaps 100,000 people were murdered there.",
+            "es": "Un barranco de Kiev donde las fuerzas alemanas fusilaron a 33 771 judíos el 29 y el 30 de septiembre de 1941, una de las mayores matanzas del Holocausto. En total, allí fueron asesinadas quizá 100 000 personas."
+          },
+          "wiki": {
+            "en": "Babi Yar",
+            "es": "Babi Yar"
+          },
+          "img": "Babi Jar ravijn.jpg"
+        },
+        {
+          "id": "anne-frank",
+          "name": {
+            "en": "Anne Frank",
+            "es": "Ana Frank"
+          },
+          "at": [
+            4.884,
+            52.3752
+          ],
+          "cat": "persecution",
+          "type": "person",
+          "date": "1942-07-06",
+          "life": [
+            "1929-06-12",
+            "1945"
+          ],
+          "place": {
+            "en": "Amsterdam, Netherlands",
+            "es": "Ámsterdam, Países Bajos"
+          },
+          "text": {
+            "en": "A Jewish girl who hid with her family in an Amsterdam back house from 1942 to 1944 and kept a diary. Betrayed and deported, she died at Bergen-Belsen in 1945; her diary is read worldwide.",
+            "es": "Una niña judía que se escondió con su familia en la casa de atrás de un edificio de Ámsterdam de 1942 a 1944 y escribió un diario. Delatada y deportada, murió en Bergen-Belsen en 1945; su diario se lee en todo el mundo."
+          },
+          "wiki": {
+            "en": "Anne Frank",
+            "es": "Ana Frank"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1948-05-14",
+      "title": {
+        "en": "The State of Israel and the Nakba",
+        "es": "El Estado de Israel y la Nakba"
+      },
+      "text": {
+        "en": "On 14 May 1948 Israel declares independence and war follows. About 700,000 Palestinian Arabs flee or are expelled, the Nakba; over the next decades some 900,000 Jews leave Arab and Muslim countries.",
+        "es": "El 14 de mayo de 1948 Israel declara su independencia y sigue la guerra. Unos 700 000 árabes palestinos huyen o son expulsados: la Nakba. En las décadas siguientes, unos 900 000 judíos dejan países árabes y musulmanes."
+      },
+      "details": {
+        "en": "Britain had ruled Palestine since the First World War, and Jewish immigration and Arab opposition to it led to growing violence. After the Holocaust, in November 1947, the United Nations voted to divide the land into Jewish and Arab states with Jerusalem under international rule; Jewish leaders accepted the plan and Arab leaders rejected it, and fighting began. When the Mandate ended, David Ben-Gurion declared the State of Israel, and the armies of neighbouring Arab states entered the war. By the 1949 armistice Israel held more land than the plan gave it; Jordan held the West Bank and East Jerusalem, and Egypt the Gaza Strip. More than 700,000 Palestinian Arabs, about half of the Arab population, fled or were expelled; most were never allowed back, and they and their descendants remain refugees. Holocaust survivors and Jews from Arab and Muslim countries doubled Israel's population.",
+        "es": "Gran Bretaña gobernaba Palestina desde la Primera Guerra Mundial, y la inmigración judía y la oposición árabe a ella llevaron a una violencia creciente. Tras el Holocausto, en noviembre de 1947, las Naciones Unidas votaron dividir la tierra en un Estado judío y otro árabe, con Jerusalén bajo administración internacional; los líderes judíos aceptaron el plan y los árabes lo rechazaron, y comenzaron los combates. Al terminar el Mandato, David Ben-Gurión proclamó el Estado de Israel, y los ejércitos de los Estados árabes vecinos entraron en la guerra. Con el armisticio de 1949, Israel tenía más tierra de la que le daba el plan; Jordania controlaba Cisjordania y Jerusalén Este, y Egipto la Franja de Gaza. Más de 700 000 árabes palestinos, cerca de la mitad de la población árabe, huyeron o fueron expulsados; a la mayoría nunca se le permitió volver, y ellos y sus descendientes siguen siendo refugiados. Los sobrevivientes del Holocausto y los judíos de países árabes y musulmanes duplicaron la población de Israel."
+      },
+      "camera": {
+        "lon": 38.0,
+        "lat": 25.5,
+        "zoom": 3.6
+      },
+      "control": {
+        "jews": [
+          {
+            "ref": "israel_1949"
+          },
+          {
+            "ref": "new_york"
+          },
+          {
+            "ref": "buenos_aires"
+          },
+          {
+            "ref": "morocco"
+          },
+          {
+            "ref": "iraq_1900"
+          },
+          {
+            "ref": "sanaa"
+          },
+          {
+            "ref": "gondar"
+          },
+          {
+            "ref": "kerala"
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "israeli-declaration-of-independence",
+          "name": {
+            "en": "Israel's Declaration of Independence",
+            "es": "Declaración de independencia de Israel"
+          },
+          "at": [
+            34.7718,
+            32.0631
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1948-05-14",
+          "place": {
+            "en": "Independence Hall, Tel Aviv, Israel",
+            "es": "Salón de la Independencia, Tel Aviv, Israel"
+          },
+          "text": {
+            "en": "Read by David Ben-Gurion on 14 May 1948 in the Tel Aviv Museum, now Independence Hall, as the British Mandate ended. It proclaimed a Jewish state open to Jewish immigration, with equal rights for all its citizens.",
+            "es": "Leída por David Ben-Gurión el 14 de mayo de 1948 en el Museo de Tel Aviv, hoy Salón de la Independencia, al terminar el Mandato británico. Proclamó un Estado judío abierto a la inmigración judía, con igualdad de derechos para todos sus ciudadanos."
+          },
+          "wiki": {
+            "en": "Israeli Declaration of Independence",
+            "es": "Declaración de independencia de Israel"
+          }
+        },
+        {
+          "id": "palestinian-exodus-1948",
+          "name": {
+            "en": "Palestinian exodus of 1948 (the Nakba)",
+            "es": "Éxodo palestino de 1948 (la Nakba)"
+          },
+          "at": [
+            34.8952,
+            31.9516
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1947-12",
+          "end": "1949-07",
+          "place": {
+            "en": "Former Mandatory Palestine: today Israel and the Palestinian territories",
+            "es": "Antigua Palestina del Mandato: hoy Israel y los territorios palestinos"
+          },
+          "text": {
+            "en": "In the 1947–1949 war more than 700,000 Palestinian Arabs fled or were expelled from their homes, and hundreds of villages were destroyed. Palestinians call it the Nakba, 'catastrophe'.",
+            "es": "En la guerra de 1947-1949, más de 700 000 árabes palestinos huyeron o fueron expulsados de sus hogares, y cientos de aldeas fueron destruidas. Los palestinos la llaman la Nakba, «la catástrofe»."
+          },
+          "wiki": {
+            "en": "1948 Palestinian expulsion and flight",
+            "es": "Éxodo palestino de 1948"
+          }
+        },
+        {
+          "id": "operation-magic-carpet",
+          "name": {
+            "en": "Operation Magic Carpet",
+            "es": "Operación Alfombra Mágica"
+          },
+          "at": [
+            45.0299,
+            12.8291
+          ],
+          "cat": "community",
+          "type": "event",
+          "date": "1948-12-16",
+          "end": "1950-09-24",
+          "place": {
+            "en": "Aden, Yemen",
+            "es": "Adén, Yemen"
+          },
+          "text": {
+            "en": "The airlift that took about 49,000 Yemeni Jews to Israel in 1949–50. Some 900,000 Jews migrated, fled or were expelled from Muslim-majority countries, mostly between 1948 and the early 1970s.",
+            "es": "El puente aéreo que llevó a unos 49 000 judíos yemeníes a Israel en 1949-1950. Unos 900 000 judíos emigraron, huyeron o fueron expulsados de países de mayoría musulmana, sobre todo entre 1948 y comienzos de los años setenta."
+          },
+          "wiki": {
+            "en": "Operation Magic Carpet (Yemen)",
+            "es": "Operación Alfombra Mágica (Yemen)"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2020",
+      "title": {
+        "en": "Jewish life today",
+        "es": "La vida judía hoy"
+      },
+      "text": {
+        "en": "About 15 million Jews live in the world (Pew, 2020), fewer than before the Holocaust. About 85% live in Israel and the United States; the next largest communities are in France, Canada and Britain.",
+        "es": "En el mundo viven unos 15 millones de judíos (Pew, 2020), menos que antes del Holocausto. Alrededor del 85 % vive en Israel y Estados Unidos; las siguientes comunidades más grandes están en Francia, Canadá y el Reino Unido."
+      },
+      "details": {
+        "en": "The Pew Research Center counted about 14.8 million Jews in 2020, some 0.2% of humanity, compared with an estimated 16.6 million in 1939. About 46% live in Israel, the only country with a Jewish majority, and about 41% in North America; Argentina has Latin America's largest community. Jews range from strictly Orthodox to Conservative, Reform and secular, and differ over religious law, the role of women and the meaning of Israel. Hebrew, revived as an everyday language, is spoken in Israel, while Yiddish and Ladino survive in smaller circles. Antisemitic attacks continue in many countries. Israelis and Palestinians have not settled their conflict over land, Jerusalem and refugees. Jews everywhere still read the Torah each week, keep the Sabbath and festivals in many ways, and remember both the Temple and the Holocaust.",
+        "es": "El Centro de Investigaciones Pew contó unos 14,8 millones de judíos en 2020, alrededor del 0,2 % de la humanidad, frente a unos 16,6 millones calculados para 1939. Cerca del 46 % vive en Israel, el único país de mayoría judía, y cerca del 41 % en América del Norte; Argentina tiene la mayor comunidad de América Latina. Los judíos van de los ortodoxos estrictos a los conservadores, reformistas y laicos, y discrepan sobre la ley religiosa, el papel de las mujeres y el significado de Israel. El hebreo, revivido como lengua cotidiana, se habla en Israel, mientras el ídish y el ladino sobreviven en círculos más pequeños. Los ataques antisemitas continúan en muchos países. Israelíes y palestinos no han resuelto su conflicto por la tierra, Jerusalén y los refugiados. Los judíos de todo el mundo siguen leyendo la Torá cada semana, guardan el sábado y las fiestas de muchas maneras y recuerdan tanto el Templo como el Holocausto."
+      },
+      "camera": {
+        "lon": -32.0,
+        "lat": 18.0,
+        "zoom": 1.1
+      },
+      "control": {
+        "jews": [
+          {
+            "ref": "israel_1949"
+          },
+          "USA"
+        ]
+      },
+      "places": [
+        {
+          "id": "western-wall",
+          "name": {
+            "en": "Western Wall",
+            "es": "Muro Occidental"
+          },
+          "at": [
+            35.2345,
+            31.7767
+          ],
+          "cat": "sacred",
+          "type": "structure",
+          "date": "-19",
+          "place": {
+            "en": "Old City of Jerusalem",
+            "es": "Ciudad Vieja de Jerusalén"
+          },
+          "text": {
+            "en": "Part of the retaining wall Herod built around the Temple Mount, which survived the Roman destruction. Also called the Wailing Wall, it is the place where Jews have prayed for centuries, closest to the Temple's site.",
+            "es": "Parte del muro de contención que Herodes construyó alrededor del Monte del Templo, que sobrevivió a la destrucción romana. También llamado Muro de los Lamentos, es donde los judíos rezan desde hace siglos, lo más cerca del lugar del Templo."
+          },
+          "wiki": {
+            "en": "Western Wall",
+            "es": "Muro de las Lamentaciones"
+          }
+        },
+        {
+          "id": "american-jews",
+          "name": {
+            "en": "American Jews",
+            "es": "Judíos de Estados Unidos"
+          },
+          "at": [
+            -73.97,
+            40.78
+          ],
+          "cat": "community",
+          "type": "culture",
+          "date": "1654",
+          "place": {
+            "en": "New York and the United States",
+            "es": "Nueva York y Estados Unidos"
+          },
+          "text": {
+            "en": "The second-largest Jewish community: about 5.7 million Americans identify with Judaism as their religion, and about 7.5 million are Jewish by a broader definition (Pew, 2020). New York has the most.",
+            "es": "La segunda comunidad judía más grande: unos 5,7 millones de estadounidenses se identifican con el judaísmo como religión, y unos 7,5 millones son judíos según una definición más amplia (Pew, 2020). Nueva York tiene la mayor cantidad."
+          },
+          "wiki": {
+            "en": "American Jews",
+            "es": "Judíos estadounidenses"
+          }
+        },
+        {
+          "id": "jews-of-argentina",
+          "name": {
+            "en": "Jews of Argentina",
+            "es": "Judíos de Argentina"
+          },
+          "at": [
+            -58.3995,
+            -34.6014
+          ],
+          "cat": "community",
+          "type": "culture",
+          "date": "1889",
+          "place": {
+            "en": "Buenos Aires, Argentina",
+            "es": "Buenos Aires, Argentina"
+          },
+          "text": {
+            "en": "Latin America's largest Jewish community, about 180,000 people (2020 estimate), most in Buenos Aires. In 1994 a bombing of its AMIA community centre killed 85 people.",
+            "es": "La mayor comunidad judía de América Latina, unas 180 000 personas (estimación de 2020), la mayoría en Buenos Aires. En 1994 un atentado contra su centro comunitario AMIA mató a 85 personas."
+          },
+          "wiki": {
+            "en": "History of the Jews in Argentina",
+            "es": "Historia de los judíos en Argentina"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Judaism's scripture, the Hebrew Bible, became the root of Christianity's Old Testament and shaped Islam, and its ideas of one God, a weekly day of rest and justice for the stranger and the poor spread far beyond the Jewish people. Through exile, persecution and genocide, Jewish communities kept their law, learning and languages alive for some 3,000 years. Today about 15 million Jews (Pew, 2020) live mainly in Israel and the United States, while the meaning of Jerusalem and the land remains disputed between Israelis and Palestinians.",
+    "es": "La escritura del judaísmo, la Biblia hebrea, se convirtió en la raíz del Antiguo Testamento cristiano e influyó en el islam, y sus ideas de un solo Dios, de un día semanal de descanso y de justicia para el extranjero y el pobre llegaron mucho más allá del pueblo judío. A través del exilio, la persecución y el genocidio, las comunidades judías mantuvieron vivos su ley, su estudio y sus lenguas durante unos 3000 años. Hoy unos 15 millones de judíos (Pew, 2020) viven sobre todo en Israel y Estados Unidos, mientras el significado de Jerusalén y de la tierra sigue en disputa entre israelíes y palestinos."
+  },
+  "sources": [
+    {
+      "title": "Wikipedia: Judaism",
+      "url": "https://en.wikipedia.org/wiki/Judaism"
+    },
+    {
+      "title": "Wikipedia: Israelites",
+      "url": "https://en.wikipedia.org/wiki/Israelites"
+    },
+    {
+      "title": "Wikipedia: Merneptah Stele",
+      "url": "https://en.wikipedia.org/wiki/Merneptah_Stele"
+    },
+    {
+      "title": "Wikipedia: Abraham",
+      "url": "https://en.wikipedia.org/wiki/Abraham"
+    },
+    {
+      "title": "Wikipedia: Moses",
+      "url": "https://en.wikipedia.org/wiki/Moses"
+    },
+    {
+      "title": "Wikipedia: The Exodus",
+      "url": "https://en.wikipedia.org/wiki/The_Exodus"
+    },
+    {
+      "title": "Wikipedia: Kingdom of Judah",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Judah"
+    },
+    {
+      "title": "Wikipedia: Samaria (ancient city)",
+      "url": "https://en.wikipedia.org/wiki/Samaria_(ancient_city)"
+    },
+    {
+      "title": "Wikipedia: Tel Dan stele",
+      "url": "https://en.wikipedia.org/wiki/Tel_Dan_stele"
+    },
+    {
+      "title": "Wikipedia: Solomon's Temple",
+      "url": "https://en.wikipedia.org/wiki/Solomon's_Temple"
+    },
+    {
+      "title": "Wikipedia: Babylonian captivity",
+      "url": "https://en.wikipedia.org/wiki/Babylonian_captivity"
+    },
+    {
+      "title": "Wikipedia: Siege of Jerusalem (587 BC)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(587_BC)"
+    },
+    {
+      "title": "Wikipedia: Nebuchadnezzar II",
+      "url": "https://en.wikipedia.org/wiki/Nebuchadnezzar_II"
+    },
+    {
+      "title": "Wikipedia: Babylon",
+      "url": "https://en.wikipedia.org/wiki/Babylon"
+    },
+    {
+      "title": "Wikipedia: Cyrus Cylinder",
+      "url": "https://en.wikipedia.org/wiki/Cyrus_Cylinder"
+    },
+    {
+      "title": "Wikipedia: Second Temple",
+      "url": "https://en.wikipedia.org/wiki/Second_Temple"
+    },
+    {
+      "title": "Wikipedia: Hebrew Bible",
+      "url": "https://en.wikipedia.org/wiki/Hebrew_Bible"
+    },
+    {
+      "title": "Wikipedia: Elephantine papyri and ostraca",
+      "url": "https://en.wikipedia.org/wiki/Elephantine_papyri_and_ostraca"
+    },
+    {
+      "title": "Wikipedia: Septuagint",
+      "url": "https://en.wikipedia.org/wiki/Septuagint"
+    },
+    {
+      "title": "Wikipedia: Maccabean Revolt",
+      "url": "https://en.wikipedia.org/wiki/Maccabean_Revolt"
+    },
+    {
+      "title": "Wikipedia: Judas Maccabeus",
+      "url": "https://en.wikipedia.org/wiki/Judas_Maccabeus"
+    },
+    {
+      "title": "Wikipedia: Hanukkah",
+      "url": "https://en.wikipedia.org/wiki/Hanukkah"
+    },
+    {
+      "title": "Wikipedia: Siege of Jerusalem (70 CE)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(70_CE)"
+    },
+    {
+      "title": "Wikipedia: Masada",
+      "url": "https://en.wikipedia.org/wiki/Masada"
+    },
+    {
+      "title": "Wikipedia: Arch of Titus",
+      "url": "https://en.wikipedia.org/wiki/Arch_of_Titus"
+    },
+    {
+      "title": "Wikipedia: Western Wall",
+      "url": "https://en.wikipedia.org/wiki/Western_Wall"
+    },
+    {
+      "title": "Wikipedia: Dead Sea Scrolls",
+      "url": "https://en.wikipedia.org/wiki/Dead_Sea_Scrolls"
+    },
+    {
+      "title": "Wikipedia: Bar Kokhba revolt",
+      "url": "https://en.wikipedia.org/wiki/Bar_Kokhba_revolt"
+    },
+    {
+      "title": "Wikipedia: Jewish diaspora",
+      "url": "https://en.wikipedia.org/wiki/Jewish_diaspora"
+    },
+    {
+      "title": "Wikipedia: Mishnah",
+      "url": "https://en.wikipedia.org/wiki/Mishnah"
+    },
+    {
+      "title": "Wikipedia: Judah ha-Nasi",
+      "url": "https://en.wikipedia.org/wiki/Judah_ha-Nasi"
+    },
+    {
+      "title": "Wikipedia: Talmud",
+      "url": "https://en.wikipedia.org/wiki/Talmud"
+    },
+    {
+      "title": "Wikipedia: Jerusalem Talmud",
+      "url": "https://en.wikipedia.org/wiki/Jerusalem_Talmud"
+    },
+    {
+      "title": "Wikipedia: Sura Academy",
+      "url": "https://en.wikipedia.org/wiki/Sura_Academy"
+    },
+    {
+      "title": "Wikipedia: Dura-Europos synagogue",
+      "url": "https://en.wikipedia.org/wiki/Dura-Europos_synagogue"
+    },
+    {
+      "title": "Wikipedia: Yemenite Jews",
+      "url": "https://en.wikipedia.org/wiki/Yemenite_Jews"
+    },
+    {
+      "title": "Wikipedia: Beta Israel",
+      "url": "https://en.wikipedia.org/wiki/Beta_Israel"
+    },
+    {
+      "title": "Wikipedia: Cochin Jews",
+      "url": "https://en.wikipedia.org/wiki/Cochin_Jews"
+    },
+    {
+      "title": "Wikipedia: Kaifeng Jews",
+      "url": "https://en.wikipedia.org/wiki/Kaifeng_Jews"
+    },
+    {
+      "title": "Wikipedia: Sephardic Jews",
+      "url": "https://en.wikipedia.org/wiki/Sephardic_Jews"
+    },
+    {
+      "title": "Wikipedia: Ashkenazi Jews",
+      "url": "https://en.wikipedia.org/wiki/Ashkenazi_Jews"
+    },
+    {
+      "title": "Wikipedia: Maimonides",
+      "url": "https://en.wikipedia.org/wiki/Maimonides"
+    },
+    {
+      "title": "Wikipedia: Cairo Geniza",
+      "url": "https://en.wikipedia.org/wiki/Cairo_Geniza"
+    },
+    {
+      "title": "Wikipedia: Rashi",
+      "url": "https://en.wikipedia.org/wiki/Rashi"
+    },
+    {
+      "title": "Wikipedia: Worms Synagogue",
+      "url": "https://en.wikipedia.org/wiki/Worms_Synagogue"
+    },
+    {
+      "title": "Wikipedia: Rhineland massacres",
+      "url": "https://en.wikipedia.org/wiki/Rhineland_massacres"
+    },
+    {
+      "title": "Wikipedia: Synagogue of Santa María la Blanca",
+      "url": "https://en.wikipedia.org/wiki/Synagogue_of_Santa_María_la_Blanca"
+    },
+    {
+      "title": "Wikipedia: Edict of Expulsion",
+      "url": "https://en.wikipedia.org/wiki/Edict_of_Expulsion"
+    },
+    {
+      "title": "Wikipedia: Alhambra Decree",
+      "url": "https://en.wikipedia.org/wiki/Alhambra_Decree"
+    },
+    {
+      "title": "Wikipedia: History of the Jews in Thessaloniki",
+      "url": "https://en.wikipedia.org/wiki/History_of_the_Jews_in_Thessaloniki"
+    },
+    {
+      "title": "Wikipedia: Kahal Zur Israel Synagogue",
+      "url": "https://en.wikipedia.org/wiki/Kahal_Zur_Israel_Synagogue"
+    },
+    {
+      "title": "Wikipedia: Portuguese Synagogue (Amsterdam)",
+      "url": "https://en.wikipedia.org/wiki/Portuguese_Synagogue_(Amsterdam)"
+    },
+    {
+      "title": "Wikipedia: Congregation Shearith Israel",
+      "url": "https://en.wikipedia.org/wiki/Congregation_Shearith_Israel"
+    },
+    {
+      "title": "Wikipedia: History of the Jews in Latin America",
+      "url": "https://en.wikipedia.org/wiki/History_of_the_Jews_in_Latin_America"
+    },
+    {
+      "title": "Wikipedia: Council of Four Lands",
+      "url": "https://en.wikipedia.org/wiki/Council_of_Four_Lands"
+    },
+    {
+      "title": "Wikipedia: Khmelnytsky Uprising",
+      "url": "https://en.wikipedia.org/wiki/Khmelnytsky_Uprising"
+    },
+    {
+      "title": "Wikipedia: Hasidic Judaism",
+      "url": "https://en.wikipedia.org/wiki/Hasidic_Judaism"
+    },
+    {
+      "title": "Wikipedia: Baal Shem Tov",
+      "url": "https://en.wikipedia.org/wiki/Baal_Shem_Tov"
+    },
+    {
+      "title": "Wikipedia: Vilna Gaon",
+      "url": "https://en.wikipedia.org/wiki/Vilna_Gaon"
+    },
+    {
+      "title": "Wikipedia: Haskalah",
+      "url": "https://en.wikipedia.org/wiki/Haskalah"
+    },
+    {
+      "title": "Wikipedia: Moses Mendelssohn",
+      "url": "https://en.wikipedia.org/wiki/Moses_Mendelssohn"
+    },
+    {
+      "title": "Wikipedia: Jewish emancipation",
+      "url": "https://en.wikipedia.org/wiki/Jewish_emancipation"
+    },
+    {
+      "title": "Wikipedia: Pale of Settlement",
+      "url": "https://en.wikipedia.org/wiki/Pale_of_Settlement"
+    },
+    {
+      "title": "Wikipedia: Kishinev pogrom",
+      "url": "https://en.wikipedia.org/wiki/Kishinev_pogrom"
+    },
+    {
+      "title": "Wikipedia: Lower East Side",
+      "url": "https://en.wikipedia.org/wiki/Lower_East_Side"
+    },
+    {
+      "title": "Wikipedia: Moisés Ville",
+      "url": "https://en.wikipedia.org/wiki/Moisés_Ville"
+    },
+    {
+      "title": "Wikipedia: Zionism",
+      "url": "https://en.wikipedia.org/wiki/Zionism"
+    },
+    {
+      "title": "Wikipedia: Theodor Herzl",
+      "url": "https://en.wikipedia.org/wiki/Theodor_Herzl"
+    },
+    {
+      "title": "Wikipedia: First Zionist Congress",
+      "url": "https://en.wikipedia.org/wiki/First_Zionist_Congress"
+    },
+    {
+      "title": "Wikipedia: The Holocaust",
+      "url": "https://en.wikipedia.org/wiki/The_Holocaust"
+    },
+    {
+      "title": "Wikipedia: Auschwitz concentration camp",
+      "url": "https://en.wikipedia.org/wiki/Auschwitz_concentration_camp"
+    },
+    {
+      "title": "Wikipedia: Warsaw Ghetto Uprising",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Ghetto_Uprising"
+    },
+    {
+      "title": "Wikipedia: Babi Yar",
+      "url": "https://en.wikipedia.org/wiki/Babi_Yar"
+    },
+    {
+      "title": "Wikipedia: Anne Frank",
+      "url": "https://en.wikipedia.org/wiki/Anne_Frank"
+    },
+    {
+      "title": "Wikipedia: Israeli Declaration of Independence",
+      "url": "https://en.wikipedia.org/wiki/Israeli_Declaration_of_Independence"
+    },
+    {
+      "title": "Wikipedia: 1948 Palestinian expulsion and flight",
+      "url": "https://en.wikipedia.org/wiki/1948_Palestinian_expulsion_and_flight"
+    },
+    {
+      "title": "Wikipedia: Nakba",
+      "url": "https://en.wikipedia.org/wiki/Nakba"
+    },
+    {
+      "title": "Wikipedia: Jewish exodus from the Muslim world",
+      "url": "https://en.wikipedia.org/wiki/Jewish_exodus_from_the_Muslim_world"
+    },
+    {
+      "title": "Wikipedia: Operation Magic Carpet (Yemen)",
+      "url": "https://en.wikipedia.org/wiki/Operation_Magic_Carpet_(Yemen)"
+    },
+    {
+      "title": "Wikipedia: Jewish population by country",
+      "url": "https://en.wikipedia.org/wiki/Jewish_population_by_country"
+    },
+    {
+      "title": "Wikipedia: American Jews",
+      "url": "https://en.wikipedia.org/wiki/American_Jews"
+    },
+    {
+      "title": "Wikipedia: History of the Jews in Argentina",
+      "url": "https://en.wikipedia.org/wiki/History_of_the_Jews_in_Argentina"
+    },
+    {
+      "title": "Wikipedia: Jerusalem",
+      "url": "https://en.wikipedia.org/wiki/Jerusalem"
+    },
+    {
+      "title": "Pew Research Center (2025): How the Global Religious Landscape Changed From 2010 to 2020",
+      "url": "https://www.pewresearch.org/religion/2025/06/09/how-the-global-religious-landscape-changed-from-2010-to-2020/"
+    },
+    {
+      "title": "Pew Research Center (2025): Jewish population change, 2010–2020",
+      "url": "https://www.pewresearch.org/religion/2025/06/09/jewish-population-change/"
+    }
+  ]
+}

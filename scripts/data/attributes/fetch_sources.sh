@@ -13,7 +13,7 @@ cd "$DEST"
 
 fetch() {  # fetch <url> <out-file>
   echo "  get $1"
-  curl -fsSL --retry 3 -A "AtlasGlobeDataBuild/1.0 (https://github.com/divaor/globe)" -o "$2" "$1"
+  curl -fsSL --retry 3 -A "data-build-script/1.0" -o "$2" "$1"
 }
 
 echo "== raw files"

@@ -4,7 +4,7 @@ import { geoDistance } from 'd3-geo';
 import { h, icon, clear, add } from '../ui/dom';
 import { t, tx, lang, flagEmoji } from '../app/i18n';
 import { dataUrl, loadJSON } from '../data/store';
-import { fmtWhen, itemWhen, itemThumb, type CollectionItem, type StoryKind } from '../modes/stories';
+import { fmtWhen, itemWhen, itemThumb, sampleEl, type CollectionItem, type StoryKind } from '../modes/stories';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { TimeTravel } from '../modes';
@@ -21,17 +21,29 @@ const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
 const shuffle = <T,>(a: T[]) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 
-type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey';
+type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family';
 /** An item of a story collection, tagged with its collection. */
 interface QItem extends CollectionItem { kind: StoryKind }
 /** A question; once answered, whether it was right and what the player answered. */
-interface Q { id: string; options?: string[]; item?: QItem; ok?: boolean; given?: string; pick?: string; link?: Link }
+interface Q { id: string; options?: string[]; item?: QItem; ok?: boolean; given?: string; pick?: string; link?: Link; lang?: string }
 /** "Guess the link": two country facts, their correlation and how many countries have both. */
 interface Link { a: string; b: string; rho: number; n: number }
-const ITEM_QUIZZES: QuizKind[] = ['where', 'when', 'dish', 'era', 'civ', 'period', 'champion', 'journey'];
+const ITEM_QUIZZES: QuizKind[] = ['where', 'when', 'dish', 'era', 'civ', 'period', 'champion', 'journey', 'faith', 'script'];
+/** "Which faith?" asks about the faith stories, not the time tour of them all. */
+const FAITH_TOURS = ['faiths-through-time'];
+/** "Which language family?" leaves out languages whose name gives their family away (Japanese is Japonic). */
+const FAMILY_SKIP = new Set(['jpn', 'kor', 'mon', 'que', 'aym', 'hgm', 'khi', 'tur', 'zho']);
+/** "A, B and C" (Spanish "y", or "e" before an i sound). */
+function joinList(names: string[]): string {
+  if (names.length < 2) return names[0] ?? '';
+  const last = names[names.length - 1];
+  const and = !es() ? 'and' : /^(i|hi)(?![aeiouáéíóú])/i.test(last) ? 'e' : 'y';
+  return `${names.slice(0, -1).join(', ')} ${and} ${last}`;
+}
+const lower1 = (x: string) => x.charAt(0).toLowerCase() + x.slice(1);
 /** The civilization stories of Peoples and civilizations: the answers of "Which civilization?". */
 const CIV_STORIES = ['mesopotamia', 'ancient-egypt', 'indus-valley', 'persia', 'kush-aksum', 'ancient-china', 'khmer', 'west-african-empires', 'great-zimbabwe-swahili', 'olmecs-maya', 'andes'];
-const COLLECTION_DIR: Record<StoryKind, string> = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys' };
+const COLLECTION_DIR: Record<StoryKind, string> = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing' };
 const yearOf = (d: string) => Number(/^-?\d+/.exec(d)?.[0] ?? 0);
 
 /** Four years to choose from: the right one and three plausible others (no year 0, none in the future). */
@@ -94,6 +106,12 @@ export class Learn {
   private civs = new Map<string, { name: { en: string; es: string }; icon: string }>();
   /** Journeys and trade routes: the stories "Which journey?" asks about. */
   private journeys = new Map<string, { name: { en: string; es: string }; icon: string }>();
+  /** Religions and philosophies: the stories "Which faith?" asks about. */
+  private faiths = new Map<string, { name: { en: string; es: string }; icon: string }>();
+  /** "Which script?": the scripts' names, by item id. */
+  private scriptNames = new Map<string, { en: string; es: string }>();
+  /** "Which language family?": the languages and families of the country facts, and where each language is official. */
+  private famData: { langs: Record<string, { en: string; es: string; family?: string; branch?: string }>; fams: Record<string, { en: string; es: string }>; where: Map<string, string[]> } | null = null;
   /** The geologic periods of the last 1000 million years, oldest first (the answers of "Which period?"). */
   private periods: Unit[] = [];
   /** States and provinces: the country's regions, and the one picked in the result. */
@@ -181,6 +199,9 @@ export class Learn {
       ['period', '🦕', L('Which period?', '¿Qué periodo?'), L('Match fossils and ancient animals to their geologic period.', 'Relaciona fósiles y animales antiguos con su periodo geológico.')],
       ['champion', '🏆', L('Who won?', '¿Quién ganó?'), L('World Cup champions, and the countries that topped each Olympics\u2019 medal table.', 'Los campeones del Mundial y los países que encabezaron el medallero de cada Olimpiada.')],
       ['journey', '🧭', L('Which journey?', '¿Qué viaje?'), L('Match places, people and goods to the great journey or trade route they belong to.', 'Relaciona lugares, personas y mercancías con el gran viaje o la ruta comercial a la que pertenecen.')],
+      ['faith', '🛐', L('Which faith?', '¿Qué religión?'), L('Match sacred places, texts and teachers to the faith or school of thought they belong to.', 'Relaciona lugares sagrados, textos y maestros con la religión o la escuela de pensamiento a la que pertenecen.')],
+      ['script', '✍️', L('Which script?', '¿Qué escritura?'), L('A word or a few letters in one of the world\u2019s scripts: which script is it?', 'Una palabra o unas letras en una de las escrituras del mundo: ¿cuál es?')],
+      ['family', '🗣️', L('Which language family?', '¿Qué familia de lenguas?'), L('Hungarian, Swahili, Malagasy...: which family does each language belong to?', 'Húngaro, suajili, malgache...: ¿a qué familia pertenece cada lengua?')],
       ['link', '📈', L('Guess the link', 'Adivina la relación'), L('Do two facts about countries go together? Guess, then see the scatter plot.', '¿Van juntos dos datos de los países? Adivina y luego mira el diagrama de dispersión.')],
     ];
     const list2 = h('div', { class: 'mode-list' });
@@ -192,7 +213,7 @@ export class Learn {
       list2.append(c);
     }
     this.shell.openPanel('quiz', L('Quiz', 'Concurso'), h('div', null, h('h3', { class: 'sec-title' }, L('Region', 'Región')), regionRow, h('h3', { class: 'sec-title' }, L('Game', 'Juego')), list,
-      h('h3', { class: 'sec-title' }, L('History, art, food, life, sport and travel', 'Historia, arte, comida, vida, deporte y viajes')), list2));
+      h('h3', { class: 'sec-title' }, L('History, culture, life, sport and travel', 'Historia, cultura, vida, deporte y viajes')), list2));
   }
 
   private async startQuiz(kind: QuizKind, region: string) {
@@ -200,6 +221,7 @@ export class Learn {
     this.shell.sheet.close();
     if (kind === 'region') { await this.startRegionQuiz(region, false); return; }
     if (kind === 'link') { await this.startLinkQuiz(); return; }
+    if (kind === 'family') { await this.startFamilyQuiz(); return; }
     if (ITEM_QUIZZES.includes(kind)) { await this.startItemQuiz(kind); return; }
     const pool = this.pool(region);
     const ids = shuffle(pool.slice()).slice(0, 10);
@@ -402,6 +424,9 @@ export class Learn {
     if (kinds.includes('journeys') && !this.journeys.size) {
       for (const st of (await loadJSON<{ stories: { id: string; name: { en: string; es: string }; icon: string }[] }>('journeys/index.json')).stories) this.journeys.set(st.id, st);
     }
+    if (kinds.includes('beliefs') && !this.faiths.size) {
+      for (const st of (await loadJSON<{ stories: { id: string; name: { en: string; es: string }; icon: string }[] }>('beliefs/index.json')).stories) if (!FAITH_TOURS.includes(st.id)) this.faiths.set(st.id, st);
+    }
     if (kinds.includes('people') && !this.civs.size) {
       for (const st of (await loadJSON<{ stories: { id: string; name: { en: string; es: string }; icon: string }[] }>('people/index.json')).stories) if (CIV_STORIES.includes(st.id)) this.civs.set(st.id, st);
     }
@@ -410,21 +435,28 @@ export class Learn {
   /** The quizzes about the story collections: their items make the questions. */
   private async startItemQuiz(kind: QuizKind) {
     if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
-    const needs: StoryKind[] = kind === 'dish' ? ['food'] : kind === 'era' ? ['eras'] : kind === 'civ' ? ['people'] : kind === 'period' ? ['life'] : kind === 'champion' ? ['games'] : kind === 'journey' ? ['journeys'] : kind === 'where' ? ['structures', 'eras', 'food', 'people', 'life', 'games', 'journeys'] : ['structures', 'eras', 'food'];
+    const needs: StoryKind[] = kind === 'dish' ? ['food'] : kind === 'era' ? ['eras'] : kind === 'civ' ? ['people'] : kind === 'period' ? ['life'] : kind === 'champion' ? ['games'] : kind === 'journey' ? ['journeys'] : kind === 'faith' ? ['beliefs'] : kind === 'script' ? ['writing'] : kind === 'where' ? ['structures', 'eras', 'food', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing'] : ['structures', 'eras', 'food', 'writing'];
     try { await this.loadItems(needs); } catch { /* offline: the pool stays small */ }
     const tag = (k: StoryKind): QItem[] => (this.items[k] ?? []).map((it) => ({ ...it, kind: k }));
     const is = (it: QItem, ...types: string[]) => !!it.type && types.includes(it.type);
     let pool: QItem[] = [];
-    if (kind === 'where') pool = [...tag('structures'), ...tag('eras').filter((it) => !is(it, 'person')), ...tag('food').filter((it) => is(it, 'dish', 'site')), ...tag('people').filter((it) => is(it, 'site', 'structure', 'fossil', 'work', 'culture')), ...tag('life').filter((it) => is(it, 'fossil', 'site', 'species', 'animal')), ...tag('games').filter((it) => is(it, 'games')), ...tag('journeys').filter((it) => is(it, 'place', 'site') && it.cat !== 'slavery')];
+    if (kind === 'where') pool = [...tag('structures'), ...tag('eras').filter((it) => !is(it, 'person')), ...tag('food').filter((it) => is(it, 'dish', 'site')), ...tag('people').filter((it) => is(it, 'site', 'structure', 'fossil', 'work', 'culture')), ...tag('life').filter((it) => is(it, 'fossil', 'site', 'species', 'animal')), ...tag('games').filter((it) => is(it, 'games')), ...tag('journeys').filter((it) => is(it, 'place', 'site') && it.cat !== 'slavery'), ...tag('beliefs').filter((it) => is(it, 'site', 'structure')), ...tag('writing').filter((it) => is(it, 'site', 'work', 'structure'))];
     if (kind === 'champion') pool = tag('games').filter((it) => is(it, 'games') && (it.podium?.length ?? 0) >= 4);
-    if (kind === 'when') pool = [...tag('structures'), ...tag('eras').filter((it) => is(it, 'work', 'invention', 'structure', 'event', 'institution')), ...tag('food').filter((it) => is(it, 'dish'))];
+    if (kind === 'when') pool = [...tag('structures'), ...tag('eras').filter((it) => is(it, 'work', 'invention', 'structure', 'event', 'institution')), ...tag('food').filter((it) => is(it, 'dish')), ...tag('writing').filter((it) => is(it, 'script', 'work', 'invention'))];
     if (kind === 'dish') pool = tag('food').filter((it) => is(it, 'dish') && !!it.country && !!this.app.data.meta[it.country]);
     if (kind === 'era') pool = tag('eras').filter((it) => is(it, 'person', 'work', 'invention') && this.eras.has(it.story));
     if (kind === 'civ') pool = tag('people').filter((it) => is(it, 'person', 'work', 'structure', 'site', 'invention') && this.civs.has(it.story));
     if (kind === 'period') pool = tag('life').filter((it) => is(it, 'species', 'fossil', 'site') && this.periodOf(it) != null);
     // Not the travellers themselves (Marco Polo is in "Marco Polo's travels"), and nothing told by most of the stories.
     if (kind === 'journey') pool = tag('journeys').filter((it) => it.cat !== 'traveller' && this.journeys.has(it.story) && (it.also?.length ?? 0) < this.journeys.size - 4);
-    if (pool.length < 10 || (kind === 'era' && this.eras.size < 4) || (kind === 'civ' && this.civs.size < 4) || (kind === 'period' && this.periods.length < 4) || (kind === 'journey' && this.journeys.size < 4)) {
+    // Enough faiths left for three wrong answers (Jerusalem is told by three of them).
+    if (kind === 'faith') pool = tag('beliefs').filter((it) => !!this.faithOf(it) && this.faiths.size - [it.story, ...(it.also ?? [])].filter((x) => this.faiths.has(x)).length >= 3);
+    // Scripts with a sample in letters other than Latin (an "ABC" would give the answer away).
+    if (kind === 'script') {
+      pool = tag('writing').filter((it) => is(it, 'script') && !!it.sample && /[^\u0000-\u024f\s\u2000-\u206f]/u.test(it.sample.text));
+      this.scriptNames = new Map(pool.map((x) => [x.id ?? tx(x.name), x.name]));
+    }
+    if (pool.length < 10 || (kind === 'era' && this.eras.size < 4) || (kind === 'civ' && this.civs.size < 4) || (kind === 'period' && this.periods.length < 4) || (kind === 'journey' && this.journeys.size < 4) || (kind === 'faith' && this.faiths.size < 4)) {
       clear(this.card);
       const close = h('button', { type: 'button', class: 'pill sm' }, t('close'));
       close.addEventListener('click', () => { this.card.hidden = true; });
@@ -442,6 +474,8 @@ export class Learn {
       if (kind === 'era') return { id: it.story, item: it, options: shuffle([it.story, ...others(this.eras.keys())]) };
       if (kind === 'civ') return { id: it.story, item: it, options: shuffle([it.story, ...others(this.civs.keys())]) };
       if (kind === 'journey') return { id: it.story, item: it, options: shuffle([it.story, ...others(this.journeys.keys())]) };
+      if (kind === 'faith') { const f = this.faithOf(it)!; return { id: f, item: it, options: shuffle([f, ...others(this.faiths.keys())]) }; }
+      if (kind === 'script') { const id = it.id ?? tx(it.name); return { id, item: it, options: shuffle([id, ...shuffle([...this.scriptNames.keys()].filter((x) => x !== id)).slice(0, 3)]) }; }
       if (kind === 'period') return { id: this.periodOf(it)!, item: it, options: this.periodOptions(this.periodOf(it)!) };
       // "Who won?": the winner and the next three of the same Games.
       if (kind === 'champion') return { id: it.podium![0].c, item: it, options: shuffle(it.podium!.slice(0, 4).map((p) => p.c)) };
@@ -454,6 +488,9 @@ export class Learn {
     if (kind === 'where' && this.app.renderer.view.current.kind !== 'globe') this.app.setProjection('globe');
     this.renderQuiz();
   }
+
+  /** "Which faith?": the faith story that tells an item (the time tour may tell it first). */
+  private faithOf(it: QItem): string | undefined { return [it.story, ...(it.also ?? [])].find((x) => this.faiths.has(x)); }
 
   /**
    * "Which period?": the geologic period an item belongs to, by its date. Left out: species that
@@ -504,6 +541,8 @@ export class Learn {
     if (kind === 'dish') return L('Which country does this dish come from?', '¿De qué país es este plato?');
     if (kind === 'civ') return L('Which civilization does this belong to?', '¿A qué civilización pertenece?');
     if (kind === 'journey') return L('Which journey or trade route is it from?', '¿De qué viaje o ruta comercial es?');
+    if (kind === 'faith') return L('Which faith or school of thought does it belong to?', '¿A qué religión o escuela de pensamiento pertenece?');
+    if (kind === 'script') return L('Which script is this?', '¿Qué escritura es esta?');
     return L('Which era does this belong to?', '¿A qué época pertenece?');
   }
 
@@ -513,6 +552,8 @@ export class Learn {
     if (kind === 'era') { const e = this.eras.get(o); return e ? `${e.icon} ${tx(e.name)}` : o; }
     if (kind === 'civ') { const e = this.civs.get(o); return e ? `${e.icon} ${tx(e.name)}` : o; }
     if (kind === 'journey') { const e = this.journeys.get(o); return e ? `${e.icon} ${tx(e.name)}` : o; }
+    if (kind === 'faith') { const e = this.faiths.get(o); return e ? `${e.icon} ${tx(e.name)}` : o; }
+    if (kind === 'script') { const n = this.scriptNames.get(o); return n ? tx(n) : o; }
     if (kind === 'period') return this.periodLabel(o);
     if (kind === 'champion') { const p = q.item?.podium?.find((x) => x.c === o); return p ? `${p.a2 ? `${flagEmoji(p.a2)} ` : ''}${tx(p.n)}` : o; }
     return kind === 'capital' ? this.capital(o) : `${this.app.data.name(o, lang())}`;
@@ -589,6 +630,7 @@ export class Learn {
     if (cur.item) { this.renderItemQuestion(q.kind, cur, feedback); return; }
     if (q.kind === 'region') { this.renderRegionQuestion(cur, feedback); return; }
     if (q.kind === 'link') { this.renderLinkQuestion(cur, feedback); return; }
+    if (q.kind === 'family') { this.renderFamilyQuestion(cur, feedback); return; }
     const name = this.app.data.name(cur.id, lang());
     if (q.kind === 'find') add(this.card, h('div', { class: 'quiz-q' }, L(`Where is ${name}?`, `¿Dónde está ${name}?`)));
     if (q.kind === 'flag') add(this.card, h('div', { class: 'quiz-q' }, L('Which country has this flag?', '¿De qué país es esta bandera?')),
@@ -619,7 +661,10 @@ export class Learn {
     const img = h('img', { class: 'quiz-img', alt: '', hidden: true }) as HTMLImageElement;
     img.addEventListener('load', () => { img.hidden = false; });
     void itemThumb(it).then((src) => { if (src && img.isConnected) img.src = src; });
-    add(this.card, h('div', { class: 'quiz-q' }, this.itemQuestion(kind, it)), h('div', { class: 'quiz-item' }, `${it.icon} ${tx(it.name)}`), img);
+    // "Which script?": the sample is the question; its name, its reading and the picture wait for the answer.
+    const script = kind === 'script' && !!it.sample;
+    const what = script ? sampleEl(q.answered ? it.sample! : { text: it.sample!.text }) : h('div', { class: 'quiz-item' }, `${it.icon} ${tx(it.name)}`);
+    add(this.card, h('div', { class: 'quiz-q' }, this.itemQuestion(kind, it)), what, script && !q.answered ? null : img);
     if (cur.options) {
       const opts = h('div', { class: 'quiz-opts' });
       for (const o of cur.options) {
@@ -654,6 +699,11 @@ export class Learn {
     cur.ok = ok; cur.pick = o;
     cur.given = cur.item ? this.optionLabel(q.kind, o, cur) : q.kind === 'capital' ? this.capital(o) : this.app.data.name(o, lang());
     b.classList.add(ok ? 'ok' : 'bad');
+    if (cur.lang) {
+      cur.given = this.famName(o);
+      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${this.familySentence(cur.lang, cur.id)}` });
+      return;
+    }
     if (cur.link) {
       cur.given = this.linkLabel(o);
       const k = cur.link;
@@ -664,6 +714,7 @@ export class Learn {
       const it = cur.item;
       this.showItem(it);
       const right = q.kind === 'when' ? itemWhen(it, Math.min(...(cur.options ?? [cur.id]).map(Number))) : this.optionLabel(q.kind, cur.id, cur);
+      if (q.kind === 'script') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It is: ', 'Es: ')}${tx(it.name)}${it.place ? ` · ${tx(it.place)}` : ''}` }); return; }
       this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${right}.` });
       return;
     }
@@ -713,7 +764,7 @@ export class Learn {
   /** The result: the score, then every question, right or wrong, with a small picture; a tap shows it on the map. */
   private renderResult() {
     const q = this.quiz!;
-    const top = q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : q.kind === 'link' ? L('Data master! 📊', '¡Maestro de los datos! 📊') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
+    const top = q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : q.kind === 'family' || q.kind === 'script' ? L('Language master! 🗣️', '¡Maestro de las lenguas! 🗣️') : q.kind === 'link' ? L('Data master! 📊', '¡Maestro de los datos! 📊') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
     const msg = q.score >= 9 ? top : q.score >= 6 ? L('Great job! 🌍', '¡Muy bien! 🌍') : L('Keep exploring! 🧭', '¡Sigue explorando! 🧭');
     add(this.card, this.quizHead(`${L('Result', 'Resultado')} ${q.score}/${q.qs.length}`, ''));
     if (q.peek) return;
@@ -732,6 +783,7 @@ export class Learn {
   private resultRow(kind: QuizKind, cur: Q): HTMLElement {
     if (kind === 'region') return this.regionRow(cur);
     if (kind === 'link') return this.linkRow(cur);
+    if (kind === 'family') return this.familyRow(cur);
     const it = cur.item;
     const name = it ? tx(it.name) : this.app.data.name(cur.id, lang());
     const right = it
@@ -863,6 +915,123 @@ export class Learn {
     return row;
   }
 
+  // ---- Which language family?
+
+  /** Ten languages from the country facts, at most three of one family; the wrong answers come first from the
+   *  families spoken on the same continents (Hungarian: Indo-European, Turkic...). */
+  private async startFamilyQuiz() {
+    let ds: CM.Dataset;
+    try { ds = await CM.loadFacts(); } catch {
+      this.shell.toast(L('This quiz needs the country data; check your connection.', 'Este concurso necesita los datos de los países; revisa tu conexión.'));
+      return;
+    }
+    const langs = (ds.fields.languages?.categories ?? {}) as Record<string, { en: string; es: string; family?: string; branch?: string }>;
+    const fams = (ds.fields.language_family?.categories ?? {}) as Record<string, { en: string; es: string }>;
+    const where = new Map<string, string[]>();
+    for (const [iso, d] of Object.entries(ds.data)) for (const c of (d.languages as string[] | undefined) ?? []) where.set(c, [...(where.get(c) ?? []), iso]);
+    const famOf = (code: string) => langs[code]?.family ?? '';
+    const real = (code: string) => !!fams[famOf(code)] && !['creole', 'sign-language'].includes(famOf(code)) && !!where.get(code)?.length;
+    const byCont = new Map<string, Set<string>>();
+    for (const code of Object.keys(langs).filter(real)) {
+      for (const iso of where.get(code)!) {
+        const k = String(ds.data[iso]?.continent ?? '');
+        if (!byCont.has(k)) byCont.set(k, new Set());
+        byCont.get(k)!.add(famOf(code));
+      }
+    }
+    const pool = Object.keys(langs).filter((c) => real(c) && !FAMILY_SKIP.has(c));
+    const allFams = [...new Set(pool.map(famOf))];
+    // Mostly languages that are a country's main one (Hungarian, Thai, Swahili), some smaller ones (Kalanga, Lozi).
+    const main = new Set(Object.values(ds.data).map((d) => (d.languages as string[] | undefined)?.[0]).filter((c): c is string => !!c));
+    const order = [...shuffle(pool.filter((c) => main.has(c))).slice(0, 7), ...shuffle(pool)];
+    const per = new Map<string, number>();
+    const picks: string[] = [];
+    for (const code of order) {
+      if (picks.includes(code)) continue;
+      const f = famOf(code);
+      if ((per.get(f) ?? 0) >= 3) continue;
+      per.set(f, (per.get(f) ?? 0) + 1);
+      picks.push(code);
+      if (picks.length === 10) break;
+    }
+    const qs: Q[] = picks.map((code) => {
+      const f = famOf(code);
+      const near = new Set<string>();
+      for (const iso of where.get(code)!) for (const x of byCont.get(String(ds.data[iso]?.continent ?? '')) ?? []) if (x !== f) near.add(x);
+      const wrong = [...shuffle([...near]), ...shuffle(allFams.filter((x) => x !== f && !near.has(x)))].slice(0, 3);
+      return { id: f, lang: code, options: shuffle([f, ...wrong]) };
+    });
+    this.famData = { langs, fams, where };
+    this.quiz = { kind: 'family', region: 'world', qs, i: 0, score: 0, answered: false, savedLabels: { ...this.app.renderer.settings.labels }, peek: false };
+    this.app.select(null);
+    this.renderQuiz();
+  }
+
+  private langName(code: string) { const c = this.famData?.langs[code]; return c ? (es() ? c.es : c.en) : code; }
+  private famName(f: string) { const c = this.famData?.fams[f]; return c ? (es() ? c.es : c.en) : f; }
+
+  /** "Hungarian is a Uralic language, like Finnish and Estonian." */
+  private familySentence(code: string, f: string): string {
+    const d = this.famData!;
+    const official = (c: string) => d.where.get(c)?.length ?? 0;
+    // Close relatives first: Polish is like Czech and Russian (Slavic), then the family's big languages.
+    const br = d.langs[code].branch;
+    const like = Object.keys(d.langs).filter((c) => c !== code && d.langs[c].family === f && official(c) > 0)
+      .sort((a, b) => Number(d.langs[b].branch === br) - Number(d.langs[a].branch === br) || official(b) - official(a) || a.localeCompare(b)).slice(0, 2);
+    const fam = d.fams[f];
+    if (!es()) {
+      const a = /^[AEIOU]/.test(fam.en) ? 'an' : 'a';
+      return `${d.langs[code].en} is ${a} ${fam.en} language${like.length ? `, like ${joinList(like.map((c) => d.langs[c].en))}` : ''}.`;
+    }
+    return `El ${lower1(d.langs[code].es)} es una lengua ${lower1(fam.es)}${like.length ? `, como ${joinList(like.map((c) => `el ${lower1(d.langs[c].es)}`))}` : ''}.`;
+  }
+
+  /** Where a language is official: "Official in Hungary", "Official in Spain, Mexico, Colombia and 18 more". */
+  private officialIn(code: string): string {
+    const names = (this.famData?.where.get(code) ?? []).map((iso) => this.app.data.name(iso, lang())).sort((a, b) => a.localeCompare(b));
+    if (names.length > 4) return L(`Official in ${names.slice(0, 3).join(', ')} and ${names.length - 3} more`, `Oficial en ${names.slice(0, 3).join(', ')} y ${names.length - 3} más`);
+    return L(`Official in ${joinList(names)}`, `Oficial en ${joinList(names)}`);
+  }
+
+  /** The Languages filter by family, with the language's (first) country selected. */
+  private showFamilies(code: string) {
+    this.stopQuiz();
+    if (this.app.isActive('languages')) this.app.setOption('languages', 'view', 'family');
+    else void this.app.activate('languages', { options: { view: 'family' } });
+    const iso = this.famData?.where.get(code)?.[0];
+    if (iso) this.showCountry(iso);
+  }
+
+  private renderFamilyQuestion(cur: Q, feedback?: { ok: boolean; text: string }) {
+    const q = this.quiz!;
+    const code = cur.lang!;
+    add(this.card, h('div', { class: 'quiz-q' }, L('Which language family does it belong to?', '¿A qué familia de lenguas pertenece?')),
+      h('div', { class: 'quiz-item' }, `🗣️ ${this.langName(code)}`), h('div', { class: 'tool-hint' }, this.officialIn(code)));
+    const opts = h('div', { class: 'quiz-opts' });
+    for (const o of cur.options ?? []) {
+      const b = h('button', { type: 'button', class: 'pill quiz-opt' }, this.famName(o)) as HTMLButtonElement;
+      if (q.answered) { b.disabled = true; if (o === cur.id) b.classList.add('ok'); else if (o === cur.pick) b.classList.add('bad'); }
+      b.addEventListener('click', () => this.answerOption(o, b));
+      opts.append(b);
+    }
+    add(this.card, opts);
+    if (feedback) {
+      const see = h('button', { type: 'button', class: 'pill sm' }, L('See the families on the map', 'Ver las familias en el mapa'));
+      see.addEventListener('click', () => this.showFamilies(code));
+      add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text), h('div', { class: 'tool-actions' }, see, this.nextButton()));
+    }
+  }
+
+  /** A language in the result: its family and, if missed, your answer; a tap shows the families on the map. */
+  private familyRow(cur: Q): HTMLElement {
+    const row = h('button', { type: 'button', class: `quiz-sum-row ${cur.ok ? 'ok' : 'bad'}`, role: 'listitem' }, h('span', { class: 'quiz-thumb' }, '🗣️'),
+      h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, this.langName(cur.lang!)),
+        h('span', { class: 'quiz-sum-ans' }, [this.famName(cur.id), cur.ok ? '' : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : ''].filter(Boolean).join(' · '))),
+      h('span', { class: 'quiz-sum-mark', 'aria-label': cur.ok ? L('right', 'correcto') : L('wrong', 'incorrecto') }, cur.ok ? '✓' : '✗'));
+    row.addEventListener('click', () => this.showFamilies(cur.lang!));
+    return row;
+  }
+
   private stopQuiz() {
     if (!this.quiz) return;
     this.app.renderer.settings.labels = { ...this.quiz.savedLabels };
@@ -879,7 +1048,7 @@ export class Learn {
   // ---- Tours ----------------------------------------------------------------------------------
   private openTours() {
     const body = h('div');
-    const groups: [Tour['group'], string][] = [[undefined, L('Our planet', 'Nuestro planeta')], ['cities', L('Cities through time', 'Ciudades a través del tiempo')], ['history', L('History and culture', 'Historia y cultura')], ['life', L('Life through time', 'La vida en el tiempo')], ['games', L('Games of the world', 'Juegos del mundo')], ['journeys', L('Journeys and trade routes', 'Viajes y rutas comerciales')]];
+    const groups: [Tour['group'], string][] = [[undefined, L('Our planet', 'Nuestro planeta')], ['cities', L('Cities through time', 'Ciudades a través del tiempo')], ['history', L('History and culture', 'Historia y cultura')], ['life', L('Life through time', 'La vida en el tiempo')], ['games', L('Games of the world', 'Juegos del mundo')], ['journeys', L('Journeys and trade routes', 'Viajes y rutas comerciales')], ['beliefs', L('Religions and philosophies', 'Religiones y filosofías')], ['writing', L('Writing and languages', 'Escritura y lenguas')]];
     for (const [group, title] of groups) {
       const list = h('div', { class: 'mode-list' });
       for (const tour of TOURS.filter((x) => x.group === group)) {

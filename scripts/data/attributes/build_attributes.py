@@ -784,6 +784,9 @@ for iso in KEYS:
     if fam:
         put(iso, 'language_family', fam[0])
         put(iso, 'language_branch', fam[1])
+    script = CL.LANG_SCRIPT.get(codes[0])
+    if script:
+        put(iso, 'script', script)
 lang_cats = {}
 for code in sorted(lang_used):
     cc = lang_cldr_code(code)
@@ -793,15 +796,25 @@ for code in sorted(lang_used):
         print('WARNING: no Spanish name for language', code)
         es = en
     lang_cats[code] = {'en': en, 'es': es[0].upper() + es[1:]}
+    if code in CL.LANG_FAMILY:
+        lang_cats[code]['family'], lang_cats[code]['branch'] = CL.LANG_FAMILY[code]   # the "Which language family?" quiz
 field('languages', 'Official languages', 'Lenguas oficiales', 'culture', 'list', 'mledoze', categories=lang_cats,
       note='ISO 639-3 codes; ordered main language first (by speaker share from Unicode CLDR territoryInfo plus compiled adjustments). Spanish names from CLDR.')
-fam_used = {v['language_family'] for v in DATA.values() if 'language_family' in v}
+# every official language's family has a name (the quiz asks about them all), not only the main languages'
+fam_used = {v['language_family'] for v in DATA.values() if 'language_family' in v} | {CL.LANG_FAMILY[c][0] for c in lang_used if c in CL.LANG_FAMILY}
 br_used = {v['language_branch'] for v in DATA.values() if 'language_branch' in v}
 field('language_family', 'Language family (main language)', 'Familia lingüística (lengua principal)', 'culture', 'category', 'compiled',
       categories={k: {'en': v[0], 'es': v[1]} for k, v in CL.FAMILY_NAMES.items() if k in fam_used},
       note='Family of the first language in "languages" (standard classification).')
 field('language_branch', 'Language branch (main language)', 'Rama lingüística (lengua principal)', 'culture', 'category', 'compiled',
       categories={k: {'en': v[0], 'es': v[1]} for k, v in CL.BRANCH_NAMES.items() if k in br_used})
+sc_used = {v['script'] for v in DATA.values() if 'script' in v}
+field('script', 'Writing system (main language)', 'Sistema de escritura (lengua principal)', 'culture', 'category', 'compiled',
+      categories={k: {'en': v[0], 'es': v[1], 'emoji': v[2], 'color': v[3]} for k, v in CL.SCRIPT_NAMES.items() if k in sc_used},
+      note='Script of the first language in "languages", as it is officially written. Several countries use more than one: '
+           'Serbia and Montenegro (Cyrillic and Latin), Kazakhstan (moving from Cyrillic to Latin), Mongolia (Cyrillic and the '
+           'traditional Mongolian script), Morocco and Algeria (Arabic, and Tifinagh or Latin for Amazigh), and many countries '
+           'with English or French in Latin letters beside a language of their own.')
 
 # ------------------------------------------------------------------ currencies
 def cldr_current_currencies(a2):
