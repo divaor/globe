@@ -9,7 +9,7 @@
 // data grids keep their colours over land while the map moves; northern countries stay drawn on
 // zoomed-in flat maps; yesterday's satellite picture is not empty (needs NASA GIBS online); the
 // wars and conquests mode plays a conflict, with battle cards and step details; a story opens from a
-// shared link; Compare two filters (the two-colour map, its chart linked to the globe, a total divided
+// shared link; a journey keeps its trail on the map; Compare two filters (the two-colour map, its chart linked to the globe, a total divided
 // by another, categories, Spanish); the quizzes made from the stories and Guess the link, and a city
 // tour that hops between collections.
 import { createRequire } from 'node:module';
@@ -577,6 +577,36 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 12g. Journeys and trade routes: a shared link opens Marco Polo's travels at step 10; the routes of the
+// earlier steps stay on the map as a trail (a point on the Yunnan mission of step 9 is drawn in the
+// traveller's red), and the step bar counts the steps.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#journeys=marco-polo&step=10&p=globe&lang=en');
+  await page.waitForSelector('.warbar', { timeout: 30000 });
+  await page.evaluate(() => document.querySelectorAll('.wb-tick')[9].click());
+  await page.waitForTimeout(4500);
+  const j = await page.evaluate(() => {
+    const m = window.atlas.time.stories.journeys, ren = window.atlas.app.renderer, v = ren.view;
+    // The middle of the longest leg of step 9's route, where no marker sits.
+    const path = m.c.steps[8].moves[0].path;
+    let best = 0, at = path[0];
+    for (let k = 1; k < path.length; k++) {
+      const d = Math.hypot(path[k][0] - path[k - 1][0], path[k][1] - path[k - 1][1]);
+      if (d > best) { best = d; at = [(path[k][0] + path[k - 1][0]) / 2, (path[k][1] + path[k - 1][1]) / 2]; }
+    }
+    const p = v.project(at[0], at[1]);
+    let red = 0;
+    if (p) {
+      const d = document.getElementById('fg').getContext('2d').getImageData(Math.round(p[0] * v.dpr) - 4, Math.round(p[1] * v.dpr) - 4, 9, 9).data;
+      for (let i = 0; i < d.length; i += 4) red = Math.max(red, d[i] - Math.max(d[i + 1], d[i + 2]));
+    }
+    return { mode: window.atlas.app.mode, step: m.step, steps: m.c.steps.length, red, bar: document.querySelector('.warbar')?.textContent ?? '' };
+  });
+  check(j.mode === 'journeys' && j.step === 9 && /step 10 of 15/.test(j.bar) && j.red > 40, `Marco Polo at step 10: the way already travelled stays on the map as a trail (redness ${j.red})`);
+  check(!errors.length, `no page errors in Journeys and trade routes${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 // 12f. Compare two filters: from the Filters panel, GDP per capita against life expectancy on a
 // two-colour map, with its chart (a strong link); the legend's nine squares count the countries and a
 // tap lights theirs; a dot on the chart picks its country, whose strip shows both values with their
@@ -701,7 +731,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.waitForTimeout(400);
   };
   const storyButton = () => page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /See it in the story/.test(b.textContent)));
-  for (const kind of ['when', 'dish', 'era', 'civ', 'period', 'champion']) {
+  for (const kind of ['when', 'dish', 'era', 'civ', 'period', 'champion', 'journey']) {
     await menu('Quiz');
     await page.evaluate((k) => document.querySelector(`[data-quiz="${k}"]`).click(), kind);
     await page.waitForSelector('.learn-card:not([hidden]) .quiz-opt', { timeout: 30000 });
@@ -837,6 +867,14 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
   const cham = await stop();
   check(cham.mode === 'games' && /first Winter Games/.test(cham.bar) && /1\/12/.test(cham.n), `the Winter Games tour starts at Chamonix (${cham.bar})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
+  // Along the Silk Road: its first stop opens the Silk Road story at Zhang Qian's mission.
+  await menu('Guided tours');
+  await page.evaluate(() => document.querySelector('[data-tour="Along the Silk Road"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
+  const silk = await stop();
+  check(silk.mode === 'journeys' && /Zhang Qian/.test(silk.bar) && /1\/13/.test(silk.n), `the Silk Road tour starts with Zhang Qian (${silk.bar})`);
   await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
   await page.waitForTimeout(300);
   check(!errors.length, `no page errors in quizzes and tours${errors.length ? ': ' + errors.join(' | ') : ''}`);
