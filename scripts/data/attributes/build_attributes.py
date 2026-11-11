@@ -796,9 +796,12 @@ for code in sorted(lang_used):
         print('WARNING: no Spanish name for language', code)
         es = en
     lang_cats[code] = {'en': en, 'es': es[0].upper() + es[1:]}
+    if code in CL.LANG_FAMILY:
+        lang_cats[code]['family'], lang_cats[code]['branch'] = CL.LANG_FAMILY[code]   # the "Which language family?" quiz
 field('languages', 'Official languages', 'Lenguas oficiales', 'culture', 'list', 'mledoze', categories=lang_cats,
       note='ISO 639-3 codes; ordered main language first (by speaker share from Unicode CLDR territoryInfo plus compiled adjustments). Spanish names from CLDR.')
-fam_used = {v['language_family'] for v in DATA.values() if 'language_family' in v}
+# every official language's family has a name (the quiz asks about them all), not only the main languages'
+fam_used = {v['language_family'] for v in DATA.values() if 'language_family' in v} | {CL.LANG_FAMILY[c][0] for c in lang_used if c in CL.LANG_FAMILY}
 br_used = {v['language_branch'] for v in DATA.values() if 'language_branch' in v}
 field('language_family', 'Language family (main language)', 'Familia lingüística (lengua principal)', 'culture', 'category', 'compiled',
       categories={k: {'en': v[0], 'es': v[1]} for k, v in CL.FAMILY_NAMES.items() if k in fam_used},
