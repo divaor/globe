@@ -82,15 +82,20 @@ const fontOf = (cp) => BLOCKS.find(([a, b]) => cp >= a && cp <= b)?.[2];
 const fileName = (font) => `${font.startsWith('cjk:') ? `NotoSansCJK${font.slice(4)}` : font}.woff2`;
 const displayName = (font) => (font.startsWith('cjk:') ? `Noto Sans CJK ${font.slice(4)}` : font.replace(/([a-z])([A-Z])/g, '$1 $2').replace('N Ko', "N'Ko"));
 
-/** Every text the app shows in a script font, with where it comes from. */
+/**
+ * Every text the app shows in a script font, with where it comes from. Samples and marker letters must be
+ * covered (strict); the stories' other texts only add their rare letters, so a word such as "𐤀lp" in a step
+ * is drawn in one font, and a symbol no font here has is left to the system.
+ */
 function collect() {
   const texts = [];
   const walk = (v, where) => {
+    if (typeof v === 'string') { texts.push([v, where, false]); return; }
     if (Array.isArray(v)) v.forEach((x, i) => walk(x, `${where}[${i}]`));
     else if (v && typeof v === 'object') {
-      if (typeof v.sample?.text === 'string') texts.push([v.sample.text, `${where}.sample`]);
-      if (typeof v.icon === 'string' && v.name) texts.push([v.icon, `${where}.icon`]);
-      for (const [k, x] of Object.entries(v)) if (k !== 'sample') walk(x, `${where}.${k}`);
+      if (typeof v.sample?.text === 'string') texts.push([v.sample.text, `${where}.sample`, true]);
+      if (typeof v.icon === 'string' && v.name) texts.push([v.icon, `${where}.icon`, true]);
+      for (const [k, x] of Object.entries(v)) if (k !== 'sample' && k !== 'icon') walk(x, `${where}.${k}`);
     }
   };
   for (const dir of fs.readdirSync(path.join(ROOT, 'scripts/data'))) {
@@ -103,7 +108,7 @@ function collect() {
   // The Writing systems filter shows a letter of each script in its legend.
   try {
     const c = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/attributes/countries.json'), 'utf8'));
-    for (const [k, v] of Object.entries(c.fields.script?.categories ?? {})) if (v.emoji) texts.push([v.emoji, `countries.json script.${k}`]);
+    for (const [k, v] of Object.entries(c.fields.script?.categories ?? {})) if (v.emoji) texts.push([v.emoji, `countries.json script.${k}`, true]);
   } catch { /* no attributes yet */ }
   return texts;
 }
@@ -112,12 +117,12 @@ function collect() {
 function needs(texts) {
   const by = new Map();
   const unknown = [];
-  for (const [t, where] of texts) {
+  for (const [t, where, strict] of texts) {
     for (const ch of t) {
       const cp = ch.codePointAt(0);
       if (inRanges(cp, SYSTEM)) continue;
       const font = fontOf(cp);
-      if (!font) { unknown.push(`U+${cp.toString(16).toUpperCase()} (${ch}) in ${where}`); continue; }
+      if (!font) { if (strict) unknown.push(`U+${cp.toString(16).toUpperCase()} (${ch}) in ${where}`); continue; }
       if (!by.has(font)) by.set(font, new Set());
       by.get(font).add(cp);
     }

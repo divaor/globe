@@ -516,6 +516,8 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
 .sample-latin { margin-top: 4px; font-size: 13px; font-style: italic; color: var(--muted); }
 .sample-means { margin-top: 2px; font-size: 13px; color: var(--muted); }
 .flag-emoji, .story-item-icon { font-family: "Atlas Scripts", var(--font); }
+/* Stories, cards and quizzes may name letters of rare scripts (𐤀 → Α → A): the script fonts come first, for those letters only. */
+.warbar, .sheet, .country-card, .learn-card { font-family: "Atlas Scripts", var(--font); }
 .story-item-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
 .story-item-name { font-weight: 750; font-size: 14px; }
 .story-item-sub { font-size: 11.5px; color: var(--muted); }
