@@ -1,0 +1,1141 @@
+{
+  "id": "manila-galleons",
+  "name": { "en": "Silver and the Manila galleons", "es": "La plata y el Galeón de Manila" },
+  "icon": "🚢",
+  "era": "early-modern",
+  "region": { "en": "The Pacific: Spanish America, the Philippines and China", "es": "El Pacífico: la América española, Filipinas y China" },
+  "start": "1545",
+  "end": "1815",
+  "summary": {
+    "en": "Silver from Potosí and Zacatecas crossed the Pacific to Manila and China, and silk and porcelain came back: from 1565 to 1815 the Manila galleons made the first trade route around the whole world.",
+    "es": "La plata de Potosí y Zacatecas cruzaba el Pacífico hasta Manila y China, y volvían la seda y la porcelana: de 1565 a 1815 el Galeón de Manila formó la primera ruta comercial que daba la vuelta al mundo."
+  },
+  "camera": { "lon": -170.0, "lat": 15.0, "zoom": 1.0 },
+  "sides": [
+    { "id": "galleon", "name": { "en": "The Manila galleon", "es": "El Galeón de Manila" }, "color": "#c0392b" },
+    { "id": "fleets", "name": { "en": "The treasure fleets", "es": "Las flotas de Indias" }, "color": "#7d3c98" },
+    { "id": "road", "name": { "en": "The silver road (mules and llamas)", "es": "El camino de la plata (mulas y llamas)" }, "color": "#8e5a2b" },
+    { "id": "expedition", "name": { "en": "Legazpi and Urdaneta", "es": "Legazpi y Urdaneta" }, "color": "#16a085" },
+    { "id": "junks", "name": { "en": "Chinese junks", "es": "Juncos chinos" }, "color": "#d4a017" },
+    { "id": "mita", "name": { "en": "The mita (forced labour)", "es": "La mita (trabajo forzado)" }, "color": "#5d6d7e" }
+  ],
+  "steps": [
+    {
+      "date": "1545-04-01",
+      "title": { "en": "The silver mountain", "es": "La montaña de plata" },
+      "text": {
+        "en": "In 1545 a Quechua miner, Diego Huallpa, is said to have found silver on a red mountain in the Andes. Potosí was founded beneath it, and llamas and mules carried the silver down to the port of Arica.",
+        "es": "En 1545, según la tradición, un minero quechua, Diego Huallpa, encontró plata en un cerro rojo de los Andes. Al pie se fundó Potosí, y llamas y mulas bajaban la plata hasta el puerto de Arica."
+      },
+      "details": {
+        "en": "The Cerro Rico, 4,782 m high, held the richest silver ores ever found, and in the second half of the 16th century it produced about 60% of the world's silver. Potosí, more than 4,000 m up, grew into one of the largest cities in the Americas, with perhaps 200,000 people, and Spanish speakers still say 'vale un Potosí', it is worth a Potosí, of something priceless. At first Indigenous miners smelted the rich ore in small clay furnaces called guayras, used since Inca times. The silver went by llama and mule train down to Arica, by sea to Panama and over the isthmus to the Caribbean, then to Spain on the treasure fleets; some also went to Acapulco to buy Asian goods.",
+        "es": "El Cerro Rico, de 4782 m de altura, tenía los minerales de plata más ricos jamás hallados, y en la segunda mitad del siglo XVI dio alrededor del 60 % de la plata del mundo. Potosí, a más de 4000 m de altura, llegó a ser una de las mayores ciudades de América, con quizá 200 000 habitantes, y todavía se dice «vale un Potosí» de algo que vale muchísimo. Al principio los mineros indígenas fundían el mineral rico en pequeños hornos de barro llamados guayras, usados desde la época inca. La plata bajaba en recuas de llamas y mulas hasta Arica, iba por mar a Panamá, cruzaba el istmo hasta el Caribe y viajaba a España en las flotas de Indias; una parte también iba a Acapulco para comprar mercancías asiáticas."
+      },
+      "camera": { "lon": -68.0, "lat": -19.0, "zoom": 5.5 },
+      "moves": [
+        {
+          "side": "road",
+          "path": [[-65.75, -19.59], [-66.6, -19.25], [-67.3, -18.7], [-68.6, -18.2], [-69.56, -18.2], [-70.32, -18.48]],
+          "by": "land",
+          "icon": "🦙",
+          "label": { "en": "Silver down to the sea", "es": "La plata baja al mar" }
+        }
+      ],
+      "places": [
+        {
+          "id": "potosi",
+          "name": { "en": "Potosí", "es": "Potosí" },
+          "at": [-65.7533, -19.5892],
+          "cat": "city",
+          "type": "place",
+          "date": "1545-04-01",
+          "place": { "en": "Potosí, Bolivia", "es": "Potosí, Bolivia" },
+          "text": {
+            "en": "A mining town founded on 1 April 1545 below the Cerro Rico, more than 4,000 m up in the Andes. Its silver made it one of the largest cities in the Americas and a byword for wealth.",
+            "es": "Una ciudad minera fundada el 1 de abril de 1545 al pie del Cerro Rico, a más de 4000 m de altura en los Andes. Su plata la convirtió en una de las mayores ciudades de América y en sinónimo de riqueza."
+          },
+          "details": {
+            "en": "Viceroy Francisco de Toledo founded a royal mint here in 1572; its coins bore the letters PTSI, and one theory says that monogram is the origin of the dollar sign. The city mixed Andean miners and traders, Spanish settlers and enslaved Africans, and Indigenous women ran much of the street trade in food, coca leaves and chicha. Potosí and the Cerro Rico are a World Heritage Site, listed as in danger since 2014 because of uncontrolled mining.",
+            "es": "El virrey Francisco de Toledo fundó aquí una casa de moneda real en 1572; sus monedas llevaban las letras PTSI, y según una teoría ese monograma es el origen del signo de pesos. En la ciudad convivían mineros y comerciantes andinos, colonos españoles y africanos esclavizados, y las mujeres indígenas llevaban gran parte del comercio callejero de comida, hojas de coca y chicha. Potosí y el Cerro Rico son Patrimonio de la Humanidad, en peligro desde 2014 por la minería sin control."
+          },
+          "wiki": { "en": "Potosí", "es": "Potosí" }
+        },
+        {
+          "id": "silver",
+          "name": { "en": "Silver", "es": "Plata" },
+          "at": [-70.3212, -18.4784],
+          "cat": "goods",
+          "type": "goods",
+          "date": "1545",
+          "place": { "en": "Shipped from Arica, Chile", "es": "Embarcada en Arica, Chile" },
+          "text": {
+            "en": "Between 1500 and 1800 Bolivia and Mexico produced about 80% of the world's silver, and some 30% of it ended up in China. By 1545 Arica was the port where Potosí's silver reached the sea.",
+            "es": "Entre 1500 y 1800, Bolivia y México produjeron cerca del 80 % de la plata del mundo, y alrededor del 30 % terminó en China. Desde 1545, Arica era el puerto por donde la plata de Potosí llegaba al mar."
+          },
+          "details": {
+            "en": "Silver was minted into pieces of eight, cast into bars or shipped as ore, and the Spanish crown took a fifth of it, the quinto real. In the two centuries after 1545 the American mines produced about 40,000 tonnes of silver. The flood of it made Spain the richest country in Europe for a while, but it also fed inflation and paid for long wars.",
+            "es": "La plata se acuñaba en piezas de a ocho, se fundía en barras o se embarcaba en mineral, y la Corona española se quedaba con una quinta parte, el quinto real. En los dos siglos siguientes a 1545, las minas americanas produjeron unas 40 000 toneladas de plata. Esa avalancha hizo de España por un tiempo el país más rico de Europa, pero también alimentó la inflación y pagó largas guerras."
+          },
+          "wiki": { "en": "Silver", "es": "Plata" }
+        }
+      ]
+    },
+    {
+      "date": "1546-09-08",
+      "title": { "en": "Silver at Zacatecas", "es": "Plata en Zacatecas" },
+      "text": {
+        "en": "On 8 September 1546 Juan de Tolosa reached rich silver ore at Zacatecas, led by Indigenous people who had long mined it. Mule trains soon carried the silver south along the Camino Real to Mexico City.",
+        "es": "El 8 de septiembre de 1546 Juan de Tolosa llegó a las ricas vetas de plata de Zacatecas, guiado por indígenas que la explotaban desde antes. Pronto las recuas de mulas llevaban la plata al sur por el Camino Real hasta la Ciudad de México."
+      },
+      "details": {
+        "en": "In Tlaltenango, local people showed Tolosa, who travelled with Spanish soldiers and enslaved Indigenous men, rocks full of silver, and he followed them to the Cerro de la Bufa. A mining town was formally founded in 1548, and by 1600 Zacatecas was the second city of New Spain. Its silver went south on the Camino Real de Tierra Adentro, which later stretched 2,560 km to New Mexico. The mines drew settlers into the lands of the Chichimeca peoples, Zacatecos, Guachichiles and others, who fought back from 1550: the Chichimeca War lasted fifty years and ended only when Spain bought peace with food, clothing, tools and land, and settled 400 Tlaxcalan families on the frontier. Silver was refined with the patio process, a mercury method devised by Bartolomé de Medina in 1554.",
+        "es": "En Tlaltenango, la gente del lugar mostró a Tolosa, que viajaba con soldados españoles e indígenas esclavizados, unas rocas llenas de plata, y él siguió su rastro hasta el cerro de la Bufa. En 1548 se fundó formalmente un pueblo minero, y hacia 1600 Zacatecas era la segunda ciudad de la Nueva España. Su plata bajaba por el Camino Real de Tierra Adentro, que después llegó a medir 2560 km hasta Nuevo México. Las minas llevaron colonos a las tierras de los pueblos chichimecas, zacatecos, guachichiles y otros, que resistieron desde 1550: la guerra chichimeca duró cincuenta años y solo terminó cuando España compró la paz con comida, ropa, herramientas y tierras, y asentó a 400 familias tlaxcaltecas en la frontera. La plata se refinaba con el método de patio, que usaba mercurio y que ideó Bartolomé de Medina en 1554."
+      },
+      "camera": { "lon": -100.8, "lat": 21.1, "zoom": 6.0 },
+      "moves": [
+        {
+          "side": "road",
+          "path": [[-102.57, 22.77], [-102.3, 21.9], [-101.93, 21.36], [-101.0, 21.0], [-100.39, 20.59], [-99.99, 20.39], [-99.35, 19.95], [-99.13, 19.43]],
+          "by": "land",
+          "icon": "🐴",
+          "label": { "en": "The Camino Real", "es": "El Camino Real" }
+        }
+      ],
+      "places": [
+        {
+          "id": "zacatecas",
+          "name": { "en": "Zacatecas", "es": "Zacatecas" },
+          "at": [-102.5736, 22.7736],
+          "cat": "city",
+          "type": "place",
+          "date": "1546-09-08",
+          "place": { "en": "Zacatecas, Mexico", "es": "Zacatecas, México" },
+          "text": {
+            "en": "A silver town below the Cerro de la Bufa, founded after the strike of 1546. By 1600 it was the second city of New Spain, and in the 18th century Zacatecas produced a fifth of the world's silver.",
+            "es": "Una ciudad de la plata al pie del cerro de la Bufa, fundada tras el hallazgo de 1546. Hacia 1600 era la segunda ciudad de la Nueva España, y en el siglo XVIII Zacatecas producía la quinta parte de la plata del mundo."
+          },
+          "wiki": { "en": "Zacatecas (city)", "es": "Zacatecas (Zacatecas)" }
+        },
+        {
+          "id": "chichimeca-war",
+          "name": { "en": "Chichimeca War", "es": "Guerra chichimeca" },
+          "at": [-101.2, 21.6],
+          "cat": "encounter",
+          "type": "event",
+          "date": "1550",
+          "end": "1600",
+          "place": { "en": "The Bajío and the Central Mexican Plateau", "es": "El Bajío y el Altiplano central de México" },
+          "text": {
+            "en": "For fifty years the Zacatecos, Guachichiles and other Chichimeca peoples attacked the settlers and mule trains that silver brought into their lands. Spain's war failed, and it bought peace instead.",
+            "es": "Durante cincuenta años, los zacatecos, guachichiles y otros pueblos chichimecas atacaron a los colonos y las recuas que la plata llevó a sus tierras. La guerra de España fracasó, y compró la paz."
+          },
+          "details": {
+            "en": "The Chichimecas were nomadic and semi-nomadic hunters and gatherers of the dry plateau between Querétaro, Guadalajara, Durango and Saltillo. The war began in 1550 when Zacatecos raided supply trains near Zacatecas. Spaniards enslaved Chichimeca women, children and men, and by the 1570s some churchmen called the war unjust. From the 1580s the viceroys offered food, clothing, tools and land, and most Chichimecas slowly settled down and became Catholic.",
+            "es": "Los chichimecas eran cazadores y recolectores nómadas y seminómadas del altiplano seco entre Querétaro, Guadalajara, Durango y Saltillo. La guerra empezó en 1550, cuando los zacatecos atacaron recuas de abastecimiento cerca de Zacatecas. Los españoles esclavizaban a mujeres, niños y hombres chichimecas, y hacia 1570 algunos religiosos ya llamaban injusta la guerra. Desde la década de 1580 los virreyes ofrecieron comida, ropa, herramientas y tierras, y la mayoría de los chichimecas se fue asentando y se hizo católica."
+          },
+          "wiki": { "en": "Chichimeca War", "es": "Guerra Chichimeca" }
+        },
+        {
+          "id": "camino-real-de-tierra-adentro",
+          "name": { "en": "Royal Road of the Interior", "es": "Camino Real de Tierra Adentro" },
+          "at": [-100.3899, 20.5888],
+          "cat": "caravan",
+          "type": "structure",
+          "date": "1550",
+          "place": { "en": "From Mexico City to New Mexico; here at Querétaro", "es": "De la Ciudad de México a Nuevo México; aquí en Querétaro" },
+          "text": {
+            "en": "The 'silver route' north from Mexico City, walked by mule trains and their drivers. It later reached 2,560 km to New Mexico, and its Mexican towns, bridges and haciendas are a World Heritage Site.",
+            "es": "La «ruta de la plata» al norte de la Ciudad de México, recorrida por recuas de mulas y sus arrieros. Después llegó a medir 2560 km hasta Nuevo México, y sus pueblos, puentes y haciendas mexicanos son Patrimonio de la Humanidad."
+          },
+          "wiki": { "en": "Camino Real de Tierra Adentro", "es": "Camino Real de Tierra Adentro" }
+        },
+        {
+          "id": "mexico-city",
+          "name": { "en": "Mexico City", "es": "Ciudad de México" },
+          "at": [-99.1332, 19.4326],
+          "cat": "city",
+          "type": "place",
+          "date": "1521-08-13",
+          "place": { "en": "Mexico City, Mexico", "es": "Ciudad de México, México" },
+          "text": {
+            "en": "The capital of New Spain, built on the ruins of the Aztec capital Tenochtitlan. Its mint turned northern silver into pesos, and the galleons' Asian goods were sold in its Parián market.",
+            "es": "La capital de la Nueva España, construida sobre las ruinas de Tenochtitlan, la capital mexica. Su casa de moneda convertía en pesos la plata del norte, y las mercancías asiáticas del galeón se vendían en su mercado del Parián."
+          },
+          "wiki": { "en": "Mexico City", "es": "Ciudad de México" }
+        }
+      ]
+    },
+    {
+      "date": "1565-04-27",
+      "title": { "en": "Legazpi in Cebu", "es": "Legazpi en Cebú" },
+      "text": {
+        "en": "In November 1564 Miguel López de Legazpi sailed west from Mexico with four ships to take the Philippines for Spain. On 27 April 1565 he landed at Cebu, overpowered its ruler, Rajah Tupas, and founded a Spanish town.",
+        "es": "En noviembre de 1564 Miguel López de Legazpi zarpó de México hacia el oeste con cuatro barcos para tomar Filipinas para España. El 27 de abril de 1565 desembarcó en Cebú, venció a su gobernante, Rajah Tupas, y fundó una villa española."
+      },
+      "details": {
+        "en": "Philip II ordered the expedition, and Legazpi, a Basque official who had lived in Mexico City for more than thirty years, spent his own fortune on it; over half of his soldiers were Mexicans, Criollos, Mestizos and Indigenous. After 93 days at sea they anchored at Guam, where they fought the Chamorro people and burned huts. In the Philippines they met hostility, because Portuguese raiders had enslaved about 1,000 Visayans in 1563. On Bohol, on 16 March 1565, Legazpi and Datu Sikatuna sealed their friendship with a blood compact, the Sandugo. At Cebu the Spanish attacked three days after landing, and on 4 June Rajah Tupas signed a treaty that accepted Spanish rule. Legazpi became the first governor of the Philippines.",
+        "es": "Felipe II ordenó la expedición, y Legazpi, un funcionario vasco que llevaba más de treinta años viviendo en la Ciudad de México, gastó en ella su propia fortuna; más de la mitad de sus soldados eran mexicanos, criollos, mestizos e indígenas. Tras 93 días de mar fondearon en Guam, donde combatieron con el pueblo chamorro y quemaron chozas. En Filipinas los recibieron con hostilidad, porque en 1563 unos asaltantes portugueses habían esclavizado a unos 1000 bisayas. En Bohol, el 16 de marzo de 1565, Legazpi y Datu Sikatuna sellaron su amistad con un pacto de sangre, el Sandugo. En Cebú los españoles atacaron tres días después de desembarcar, y el 4 de junio Rajah Tupas firmó un tratado que aceptaba el dominio español. Legazpi fue el primer gobernador de Filipinas."
+      },
+      "camera": { "lon": -170.0, "lat": 14.0, "zoom": 1.2 },
+      "moves": [
+        {
+          "side": "expedition",
+          "path": [[-99.13, 19.43], [-99.66, 19.28], [-101.19, 19.7], [-103.35, 20.67], [-104.36, 19.77], [-104.68, 19.2]],
+          "by": "land",
+          "icon": "🐴",
+          "label": { "en": "To the Pacific coast", "es": "Hacia la costa del Pacífico" }
+        },
+        {
+          "side": "expedition",
+          "path": [[-104.68, 19.2], [-110.0, 16.5], [-125.0, 13.0], [-150.0, 11.0], [-170.0, 10.0], [170.0, 10.5], [155.0, 12.5], [145.0, 13.15], [144.55, 13.35], [135.0, 12.5], [126.2, 11.6], [125.8, 10.6], [125.42, 10.05], [125.1, 9.75], [124.5, 9.55], [123.95, 9.5], [123.65, 9.6], [123.75, 9.95], [123.9, 10.2], [123.89, 10.29]],
+          "by": "sea",
+          "icon": "⛵",
+          "label": { "en": "Legazpi's fleet, 1564–65", "es": "La flota de Legazpi, 1564-1565" }
+        }
+      ],
+      "places": [
+        {
+          "id": "miguel-lopez-de-legazpi",
+          "name": { "en": "Miguel López de Legazpi", "es": "Miguel López de Legazpi" },
+          "at": [-104.6833, 19.2033],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1565-04-27",
+          "life": ["1502-06-12", "1572-08-20"],
+          "place": { "en": "Sailed from Barra de Navidad, Mexico", "es": "Zarpó de Barra de Navidad, México" },
+          "text": {
+            "en": "A Basque official of Mexico City who led the conquest of the Philippines and became their first governor. He founded Spanish Cebu in 1565 and Manila in 1571, and died there, bankrupt, in 1572.",
+            "es": "Un funcionario vasco de la Ciudad de México que dirigió la conquista de Filipinas y fue su primer gobernador. Fundó la Cebú española en 1565 y Manila en 1571, y murió allí, arruinado, en 1572."
+          },
+          "wiki": { "en": "Miguel López de Legazpi", "es": "Miguel López de Legazpi" }
+        },
+        {
+          "id": "chamorro-people",
+          "name": { "en": "Chamorro people", "es": "Pueblo chamorro" },
+          "at": [144.7937, 13.4443],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1565-01",
+          "place": { "en": "Guam, Mariana Islands", "es": "Guam, islas Marianas" },
+          "text": {
+            "en": "The Indigenous people of the Mariana Islands, Austronesian farmers and seafarers. Legazpi's men fought them and burned huts on Guam in 1565; Spain later ruled the islands for over 300 years.",
+            "es": "El pueblo indígena de las islas Marianas, agricultores y navegantes austronesios. Los hombres de Legazpi los combatieron y quemaron chozas en Guam en 1565; España gobernó después las islas durante más de 300 años."
+          },
+          "wiki": { "en": "Chamorro people", "es": "Pueblo chamorro" }
+        },
+        {
+          "id": "sandugo",
+          "name": { "en": "The blood compact (Sandugo)", "es": "El pacto de sangre (Sandugo)" },
+          "at": [123.8545, 9.6474],
+          "cat": "encounter",
+          "type": "event",
+          "date": "1565-03-16",
+          "place": { "en": "Bohol, Philippines", "es": "Bohol, Filipinas" },
+          "text": {
+            "en": "On 16 March 1565 Legazpi and Datu Sikatuna, chief of Bohol, drank wine mixed with each other's blood to seal their friendship, following local custom. It is remembered as the first Filipino–Spanish treaty.",
+            "es": "El 16 de marzo de 1565, Legazpi y Datu Sikatuna, jefe de Bohol, bebieron vino mezclado con la sangre del otro para sellar su amistad, según la costumbre local. Se recuerda como el primer tratado entre filipinos y españoles."
+          },
+          "wiki": { "en": "Sandugo", "es": "Sandugo" }
+        },
+        {
+          "id": "rajah-tupas",
+          "name": { "en": "Rajah Tupas", "es": "Rajah Tupas" },
+          "at": [123.8907, 10.2929],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1565-06-04",
+          "life": ["1497", "1568"],
+          "place": { "en": "Cebu, Philippines", "es": "Cebú, Filipinas" },
+          "text": {
+            "en": "The last rajah of Sugbu (Cebu). His forces fell back when the Spanish attacked in 1565, and on 4 June he signed a treaty accepting Spanish rule. He was baptized under duress in 1568.",
+            "es": "El último rajá de Sugbu (Cebú). Sus fuerzas se retiraron cuando atacaron los españoles en 1565, y el 4 de junio firmó un tratado que aceptaba el dominio español. Fue bautizado bajo presión en 1568."
+          },
+          "wiki": { "en": "Rajah Tupas", "es": "" }
+        }
+      ]
+    },
+    {
+      "date": "1565-10-08",
+      "title": { "en": "The way back east", "es": "El tornaviaje" },
+      "text": {
+        "en": "On 1 June 1565 the San Pedro left Cebu with Urdaneta as its guide. He sailed north to about 38°N, where the Kuroshio current and westerly winds carried the ship across the Pacific to Acapulco on 8 October.",
+        "es": "El 1 de junio de 1565 el San Pedro salió de Cebú guiado por Urdaneta. Subió al norte hasta unos 38° N, donde la corriente de Kuroshio y los vientos del oeste lo llevaron a través del Pacífico hasta Acapulco el 8 de octubre."
+      },
+      "details": {
+        "en": "Ships had sailed west across the Pacific with the trade winds since Magellan, but every attempt to sail back had failed. Urdaneta, a Basque navigator who had spent eight years in the Spice Islands and become an Augustinian friar in Mexico, reasoned that the Pacific winds turned in a great circle, as in the Atlantic. The San Pedro, commanded by Legazpi's 17-year-old grandson Felipe de Salcedo, carried 200 men. On 18 September they sighted Santa Catalina Island off California and followed the coast south; by the end of the 129-day voyage scurvy had left only 18 men strong enough to sail. Alonso de Arellano's small San Lucas, which had left the fleet, had reached Mexico in August by a similar route, but Urdaneta's careful notes made the route his. The galleons followed it for 250 years.",
+        "es": "Desde Magallanes los barcos cruzaban el Pacífico hacia el oeste con los alisios, pero todos los intentos de volver habían fracasado. Urdaneta, navegante vasco que había pasado ocho años en las islas de las Especias y se había hecho fraile agustino en México, pensó que los vientos del Pacífico giraban en un gran círculo, como en el Atlántico. El San Pedro, al mando de Felipe de Salcedo, nieto de Legazpi de 17 años, llevaba 200 hombres. El 18 de septiembre avistaron la isla Santa Catalina, frente a California, y siguieron la costa hacia el sur; al final de los 129 días de viaje, el escorbuto había dejado solo a 18 hombres con fuerzas para navegar. El pequeño San Lucas de Alonso de Arellano, que se había separado de la flota, había llegado a México en agosto por una ruta parecida, pero las notas cuidadosas de Urdaneta hicieron suya la ruta. Los galeones la siguieron durante 250 años."
+      },
+      "camera": { "lon": -175.0, "lat": 24.0, "zoom": 1.2 },
+      "moves": [
+        {
+          "side": "expedition",
+          "path": [[123.89, 10.29], [124.15, 10.5], [124.2, 11.0], [124.2, 11.8], [124.15, 12.35], [124.25, 12.55], [124.8, 12.7], [125.6, 13.4], [128.0, 18.0], [133.0, 26.0], [140.0, 33.0], [146.0, 38.0], [160.0, 39.5], [-178.0, 40.0], [-160.0, 39.0], [-140.0, 36.5], [-125.0, 34.0], [-118.6, 33.2], [-117.6, 32.5], [-116.9, 31.0], [-115.6, 28.6], [-114.6, 27.0], [-112.6, 24.5], [-110.3, 22.6], [-106.6, 21.2], [-105.9, 20.3], [-104.9, 19.05], [-103.4, 18.05], [-101.6, 17.3], [-99.88, 16.84]],
+          "by": "sea",
+          "icon": "⛵",
+          "label": { "en": "Urdaneta's return route, 1565", "es": "El tornaviaje de Urdaneta, 1565" }
+        }
+      ],
+      "places": [
+        {
+          "id": "andres-de-urdaneta",
+          "name": { "en": "Andrés de Urdaneta", "es": "Andrés de Urdaneta" },
+          "at": [123.8907, 10.2929],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1565-06-01",
+          "life": ["1508", "1568-06-03"],
+          "place": { "en": "Set out from Cebu, Philippines", "es": "Partió de Cebú, Filipinas" },
+          "text": {
+            "en": "A Basque navigator and Augustinian friar. In 1565 he found the way back east across the Pacific, the tornaviaje, which made regular trade between Asia and the Americas possible.",
+            "es": "Navegante vasco y fraile agustino. En 1565 encontró el camino de vuelta hacia el este por el Pacífico, el tornaviaje, que hizo posible el comercio regular entre Asia y América."
+          },
+          "details": {
+            "en": "At 17 he sailed as a page to Juan Sebastián Elcano on the Loaísa expedition of 1525 and spent eight years in the Moluccas. He settled in New Spain around 1540 and became a friar in 1552. After his return voyage he went on to Spain to report to the Casa de Contratación and to Philip II, then came back to Mexico City, where he died in 1568.",
+            "es": "A los 17 años navegó como paje de Juan Sebastián Elcano en la expedición de Loaísa de 1525 y pasó ocho años en las Molucas. Se estableció en la Nueva España hacia 1540 y se hizo fraile en 1552. Tras el tornaviaje fue a España a informar a la Casa de Contratación y a Felipe II, y luego volvió a la Ciudad de México, donde murió en 1568."
+          },
+          "wiki": { "en": "Andrés de Urdaneta", "es": "Andrés de Urdaneta" }
+        },
+        {
+          "id": "kuroshio-current",
+          "name": { "en": "Kuroshio Current", "es": "Corriente de Kuroshio" },
+          "at": [137.0, 32.0],
+          "cat": "nature",
+          "type": "place",
+          "date": "1565",
+          "place": { "en": "Off the coast of Japan", "es": "Frente a las costas de Japón" },
+          "text": {
+            "en": "The 'Black Current', a warm stream that flows north past Taiwan and Japan, long known to Japanese sailors. Urdaneta rode it and the westerly winds beyond to sail east across the Pacific.",
+            "es": "La «corriente negra», un flujo de agua cálida que sube al norte junto a Taiwán y Japón, conocido desde siempre por los marinos japoneses. Urdaneta la aprovechó, y a los vientos del oeste más allá, para cruzar el Pacífico hacia el este."
+          },
+          "wiki": { "en": "Kuroshio Current", "es": "Corriente de Kuroshio" }
+        },
+        {
+          "id": "alonso-de-arellano",
+          "name": { "en": "Alonso de Arellano", "es": "Alonso de Arellano" },
+          "at": [-104.6833, 19.2033],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1565-08",
+          "place": { "en": "Reached Barra de Navidad, Mexico", "es": "Llegó a Barra de Navidad, México" },
+          "text": {
+            "en": "Captain of the small San Lucas, which left Legazpi's fleet, reached the Philippines alone and sailed back to Mexico by the north in August 1565, ahead of Urdaneta. He was suspected of desertion.",
+            "es": "Capitán del pequeño San Lucas, que se separó de la flota de Legazpi, llegó solo a Filipinas y volvió a México por el norte en agosto de 1565, antes que Urdaneta. Se sospechó que había desertado."
+          },
+          "wiki": { "en": "Alonso de Arellano", "es": "Alonso de Arellano" }
+        },
+        {
+          "id": "acapulco",
+          "name": { "en": "Acapulco", "es": "Acapulco" },
+          "at": [-99.8825, 16.8636],
+          "cat": "port",
+          "type": "place",
+          "date": "1565-10-08",
+          "place": { "en": "Guerrero, Mexico", "es": "Guerrero, México" },
+          "text": {
+            "en": "The galleons' port in New Spain, reached by Urdaneta on 8 October 1565. When a galleon arrived, a great fair sold its Asian goods, which then went by mule to Mexico City and Veracruz.",
+            "es": "El puerto de los galeones en la Nueva España, adonde llegó Urdaneta el 8 de octubre de 1565. Cuando llegaba un galeón, una gran feria vendía sus mercancías asiáticas, que seguían en mula a la Ciudad de México y Veracruz."
+          },
+          "details": {
+            "en": "A road joined Acapulco to Mexico City by 1531, and from 1573 it was the only port in New Spain allowed to trade with Manila. Dockworkers, mostly free Afro-Mexican men, unloaded the galleons for high pay, and Indigenous and mixed-race muleteers carried the goods inland. A Dutch fleet attacked the town in 1615, and the Fort of San Diego was built the next year to protect the port.",
+            "es": "Un camino unía Acapulco con la Ciudad de México desde 1531, y desde 1573 fue el único puerto de la Nueva España autorizado a comerciar con Manila. Los estibadores, en su mayoría afromexicanos libres, descargaban los galeones por buenos salarios, y arrieros indígenas y mestizos llevaban las mercancías tierra adentro. Una flota holandesa atacó el pueblo en 1615, y al año siguiente se construyó el fuerte de San Diego para proteger el puerto."
+          },
+          "wiki": { "en": "Acapulco", "es": "Acapulco de Juárez" }
+        }
+      ]
+    },
+    {
+      "date": "1566-04",
+      "title": { "en": "Silver to Seville", "es": "La plata hacia Sevilla" },
+      "text": {
+        "en": "From the 1560s, armed convoys called the treasure fleets carried American silver to Seville twice a year. Urdaneta took the same road and reached Spain in April 1566 to report his route to Philip II.",
+        "es": "Desde la década de 1560, convoyes armados llamados flotas de Indias llevaban dos veces al año la plata americana a Sevilla. Urdaneta siguió ese camino y llegó a España en abril de 1566 para contar su ruta a Felipe II."
+      },
+      "details": {
+        "en": "By law all trade with the Americas had to pass through Seville, where the Casa de Contratación registered every cargo and the crown took a fifth of the silver. The New Spain fleet loaded Mexican silver at Veracruz. The Tierra Firme fleet took the silver of Potosí, which came by sea from Arica and Callao to Panama and by mule across the isthmus to Nombre de Dios. The two fleets met at Havana and sailed home together. In 1572 and 1573 the English privateer Francis Drake raided Nombre de Dios and ambushed a mule train loaded with silver. American silver made Spain the richest country in Europe for a time, but it also fed inflation, and much of it went to pay for wars.",
+        "es": "Por ley, todo el comercio con América debía pasar por Sevilla, donde la Casa de Contratación registraba cada carga y la Corona se quedaba con la quinta parte de la plata. La flota de Nueva España cargaba la plata mexicana en Veracruz. La flota de Tierra Firme llevaba la plata de Potosí, que llegaba por mar desde Arica y El Callao a Panamá y cruzaba el istmo en mula hasta Nombre de Dios. Las dos flotas se reunían en La Habana y volvían juntas. En 1572 y 1573 el corsario inglés Francis Drake atacó Nombre de Dios y emboscó una recua cargada de plata. La plata americana hizo de España por un tiempo el país más rico de Europa, pero también alimentó la inflación, y gran parte se fue en pagar guerras."
+      },
+      "camera": { "lon": -48.0, "lat": 17.0, "zoom": 1.6 },
+      "moves": [
+        {
+          "side": "road",
+          "path": [[-99.88, 16.86], [-99.5, 17.55], [-99.54, 18.35], [-99.23, 18.92], [-99.13, 19.43], [-98.5, 19.5], [-97.85, 19.45], [-97.24, 19.56], [-96.92, 19.54], [-96.15, 19.19]],
+          "by": "land",
+          "icon": "🐴",
+          "label": { "en": "Urdaneta crosses Mexico", "es": "Urdaneta cruza México" }
+        },
+        {
+          "side": "fleets",
+          "path": [[-70.32, -18.48], [-71.4, -17.8], [-72.7, -17.0], [-74.6, -15.7], [-76.3, -13.9], [-77.15, -12.05], [-78.7, -9.4], [-80.0, -6.9], [-81.5, -5.1], [-81.2, -2.2], [-80.6, 0.0], [-79.3, 2.4], [-78.4, 4.9], [-79.0, 7.5], [-79.52, 8.95]],
+          "by": "sea",
+          "icon": "🚢",
+          "label": { "en": "The silver of Peru", "es": "La plata del Perú" }
+        },
+        {
+          "side": "road",
+          "path": [[-79.52, 8.97], [-79.6, 9.25], [-79.47, 9.58]],
+          "by": "land",
+          "icon": "🐴"
+        },
+        {
+          "side": "fleets",
+          "path": [[-79.47, 9.58], [-78.0, 9.9], [-75.55, 10.42], [-77.5, 13.5], [-81.5, 18.0], [-84.2, 20.8], [-85.25, 21.85], [-84.6, 23.15], [-83.3, 23.3], [-82.36, 23.16]],
+          "by": "sea",
+          "icon": "🚢",
+          "label": { "en": "The Tierra Firme fleet", "es": "La flota de Tierra Firme" }
+        },
+        {
+          "side": "fleets",
+          "path": [[-96.15, 19.19], [-94.0, 21.5], [-90.0, 23.6], [-86.0, 23.9], [-82.36, 23.16], [-80.5, 24.0], [-79.7, 25.6], [-79.6, 27.5], [-77.0, 31.0], [-72.0, 34.5], [-60.0, 37.5], [-45.0, 39.0], [-26.0, 37.5], [-15.0, 37.0], [-9.4, 36.9], [-7.0, 36.6], [-6.35, 36.78]],
+          "by": "sea",
+          "icon": "🚢",
+          "label": { "en": "The New Spain fleet", "es": "La flota de Nueva España" }
+        },
+        {
+          "side": "fleets",
+          "path": [[-6.35, 36.78], [-6.25, 36.92], [-6.12, 37.05], [-6.04, 37.22], [-5.99, 37.38]],
+          "by": "river"
+        }
+      ],
+      "places": [
+        {
+          "id": "seville",
+          "name": { "en": "Seville", "es": "Sevilla" },
+          "at": [-5.9969, 37.3886],
+          "cat": "port",
+          "type": "place",
+          "date": "1503",
+          "place": { "en": "Seville, Spain", "es": "Sevilla, España" },
+          "text": {
+            "en": "A river port on the Guadalquivir that held Spain's monopoly of trade with the Americas from 1503. Every fleet's silver was registered here by the Casa de Contratación, the House of Trade.",
+            "es": "Un puerto fluvial a orillas del Guadalquivir que tuvo desde 1503 el monopolio español del comercio con América. Aquí la Casa de Contratación registraba la plata de cada flota."
+          },
+          "wiki": { "en": "Seville", "es": "Sevilla" }
+        },
+        {
+          "id": "spanish-treasure-fleet",
+          "name": { "en": "The treasure fleets", "es": "Las flotas de Indias" },
+          "at": [-82.3589, 23.1367],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1566",
+          "until": "1790",
+          "place": { "en": "Gathered at Havana, Cuba", "es": "Se reunían en La Habana, Cuba" },
+          "text": {
+            "en": "Convoys of merchant ships guarded by warships, sailing from the 1560s until 1790. Two fleets left Spain each year and met at Havana to bring home the silver of Mexico and Peru.",
+            "es": "Convoyes de barcos mercantes escoltados por buques de guerra, que navegaron desde la década de 1560 hasta 1790. Cada año salían de España dos flotas, que se reunían en La Habana para llevar a casa la plata de México y del Perú."
+          },
+          "wiki": { "en": "Spanish treasure fleet", "es": "Flota de Indias" }
+        },
+        {
+          "id": "nombre-de-dios",
+          "name": { "en": "Nombre de Dios", "es": "Nombre de Dios" },
+          "at": [-79.4703, 9.5829],
+          "cat": "port",
+          "type": "place",
+          "date": "1540",
+          "place": { "en": "Colón, Panama", "es": "Colón, Panamá" },
+          "text": {
+            "en": "A Caribbean port on the isthmus of Panama where silver from Peru, carried across from Panama City by mule, was loaded onto the fleets. Francis Drake raided it in 1572; after 1595 Portobelo replaced it.",
+            "es": "Un puerto caribeño del istmo de Panamá donde la plata del Perú, llevada en mula desde la ciudad de Panamá, se cargaba en las flotas. Francis Drake lo atacó en 1572; después de 1595 lo reemplazó Portobelo."
+          },
+          "wiki": { "en": "Nombre de Dios, Colón", "es": "Nombre de Dios (Colón)" }
+        },
+        {
+          "id": "veracruz",
+          "name": { "en": "Veracruz", "es": "Veracruz" },
+          "at": [-96.1533, 19.1903],
+          "cat": "port",
+          "type": "place",
+          "date": "1519-04-22",
+          "place": { "en": "Veracruz, Mexico", "es": "Veracruz, México" },
+          "text": {
+            "en": "New Spain's Atlantic port, founded by Hernán Cortés in 1519. The fleet loaded Mexican silver and cochineal dye here, and later the silk and porcelain of the Manila galleons, brought overland from Acapulco.",
+            "es": "El puerto atlántico de la Nueva España, fundado por Hernán Cortés en 1519. Aquí la flota cargaba la plata mexicana y la grana cochinilla, y más tarde la seda y la porcelana del Galeón de Manila, traídas por tierra desde Acapulco."
+          },
+          "wiki": { "en": "Veracruz (city)", "es": "Veracruz" }
+        }
+      ]
+    },
+    {
+      "date": "1571-06-24",
+      "title": { "en": "Manila", "es": "Manila" },
+      "text": {
+        "en": "In 1570 Spanish troops attacked and burned Maynila, the town of Rajah Sulayman on Manila Bay. On 24 June 1571 Legazpi founded the Spanish city of Manila there, in a harbour where Chinese junks already came to trade.",
+        "es": "En 1570 tropas españolas atacaron e incendiaron Maynila, la ciudad de Rajah Sulayman en la bahía de Manila. El 24 de junio de 1571 Legazpi fundó allí la ciudad española de Manila, en un puerto adonde ya llegaban juncos chinos a comerciar."
+      },
+      "details": {
+        "en": "Short of food in Cebu, Legazpi moved his base to Panay in 1569, and in 1570 he sent Martín de Goiti north to find a harbour for trade with China. Maynila was a fortified Tagalog town ruled by Muslim rajahs with ties to the sultanate of Brunei. Goiti's men fought Rajah Sulayman's forces on 24 May 1570 and burned the town. The next year Legazpi made a pact with Sulayman and Lakan Dula of Tondo, and began building the walled city later called Intramuros; local forces who resisted were defeated at Bangkusay. That year the Spanish rescued the crew of a disabled Chinese ship off Mindoro, and in 1572 some of the rescued came back to Manila with large cargoes of goods.",
+        "es": "Con poca comida en Cebú, Legazpi trasladó su base a Panay en 1569, y en 1570 mandó a Martín de Goiti al norte a buscar un puerto para comerciar con China. Maynila era una ciudad tagala fortificada, gobernada por rajás musulmanes vinculados al sultanato de Brunéi. Los hombres de Goiti combatieron a las fuerzas de Rajah Sulayman el 24 de mayo de 1570 e incendiaron la ciudad. Al año siguiente Legazpi hizo un pacto con Sulayman y con Lakan Dula de Tondo, y empezó a construir la ciudad amurallada que luego se llamó Intramuros; las fuerzas locales que resistieron fueron derrotadas en Bangkusay. Ese año los españoles rescataron a la tripulación de un barco chino averiado frente a Mindoro, y en 1572 algunos de los rescatados volvieron a Manila con grandes cargamentos."
+      },
+      "camera": { "lon": 122.5, "lat": 12.4, "zoom": 5.5 },
+      "moves": [
+        {
+          "side": "expedition",
+          "path": [[123.89, 10.29], [124.15, 10.5], [124.2, 11.0], [124.1, 11.4], [123.5, 11.55], [123.0, 11.65], [122.75, 11.6], [122.2, 11.9], [121.75, 12.2], [121.65, 12.9], [121.6, 13.25], [121.25, 13.6], [120.5, 13.85], [120.45, 14.2], [120.65, 14.35], [120.97, 14.59]],
+          "by": "sea",
+          "icon": "⛵",
+          "label": { "en": "Legazpi moves north, 1569–71", "es": "Legazpi avanza al norte, 1569-1571" }
+        }
+      ],
+      "places": [
+        {
+          "id": "rajah-sulayman",
+          "name": { "en": "Rajah Sulayman", "es": "Rajah Sulayman" },
+          "at": [120.97, 14.595],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1570-05-24",
+          "place": { "en": "Maynila (Manila), Philippines", "es": "Maynila (Manila), Filipinas" },
+          "text": {
+            "en": "Co-ruler of the Tagalog kingdom of Maynila and nephew of Rajah Ache. He led his people against the Spanish in 1570, saw his town burned, and in 1571 made a pact with Legazpi.",
+            "es": "Corregente del reino tagalo de Maynila y sobrino de Rajah Ache. Dirigió a su pueblo contra los españoles en 1570, vio arder su ciudad y en 1571 hizo un pacto con Legazpi."
+          },
+          "wiki": { "en": "Rajah Sulayman", "es": "" }
+        },
+        {
+          "id": "panay",
+          "name": { "en": "Panay", "es": "Panay" },
+          "at": [122.79, 11.55],
+          "cat": "nature",
+          "type": "place",
+          "date": "1569",
+          "place": { "en": "Western Visayas, Philippines", "es": "Bisayas Occidentales, Filipinas" },
+          "text": {
+            "en": "A Visayan island where Legazpi moved in 1569, when food ran short in Cebu. From his base on its north coast, Spanish soldiers and Visayan warriors sailed north to conquer Luzon.",
+            "es": "Una isla de las Bisayas adonde Legazpi se trasladó en 1569, cuando faltó la comida en Cebú. Desde su base en la costa norte, soldados españoles y guerreros bisayas navegaron al norte para conquistar Luzón."
+          },
+          "wiki": { "en": "Panay", "es": "Panay" }
+        }
+      ]
+    },
+    {
+      "date": "1573",
+      "title": { "en": "The mita", "es": "La mita" },
+      "text": {
+        "en": "From 1573 Viceroy Toledo forced one in seven Indigenous men of the southern Andes to work in turns at Potosí. Mercury from Huancavelica let miners refine poorer ore, and silver output soared.",
+        "es": "Desde 1573 el virrey Toledo obligó a uno de cada siete hombres indígenas del sur de los Andes a trabajar por turnos en Potosí. El mercurio de Huancavelica permitió refinar minerales más pobres, y la producción de plata se disparó."
+      },
+      "details": {
+        "en": "Spain turned the mit'a, the Inca system of turns of work for the community, into a draft for the mines: about 13,000 men a year from an area of some 500,000 km², who walked to Potosí with their families and often worked one week in three. They carried ore up rickety ladders in loads of 45 to 135 kg, lit by a candle tied to the forehead; falls, pneumonia and mercury poisoning killed many, and the Cerro Rico became 'the mountain that eats men'. Thousands fled their villages to escape the draft. At Huancavelica, miners dug mercury in tunnels where a mass for the dead was said every morning before they went down. How many people died is unknown: a figure of eight million is often repeated, but historians think it far too high.",
+        "es": "España convirtió la mita, el sistema inca de turnos de trabajo para la comunidad, en un reclutamiento para las minas: unos 13 000 hombres al año de una región de unos 500 000 km², que caminaban hasta Potosí con sus familias y solían trabajar una semana de cada tres. Subían el mineral por escaleras precarias en cargas de 45 a 135 kg, alumbrados por una vela atada a la frente; las caídas, la neumonía y el envenenamiento por mercurio mataron a muchos, y el Cerro Rico pasó a ser «la montaña que come hombres». Miles huyeron de sus pueblos para escapar del reclutamiento. En Huancavelica, los mineros sacaban mercurio en túneles donde cada mañana, antes de bajar, se decía una misa de difuntos. No se sabe cuántas personas murieron: a menudo se repite la cifra de ocho millones, pero los historiadores la consideran muy exagerada."
+      },
+      "camera": { "lon": -70.0, "lat": -16.2, "zoom": 4.5 },
+      "moves": [
+        {
+          "side": "mita",
+          "path": [[-71.97, -13.53], [-71.23, -14.27], [-70.02, -15.84], [-69.04, -16.57], [-68.15, -16.5], [-67.11, -17.97], [-66.78, -18.9], [-65.75, -19.59]],
+          "by": "land",
+          "label": { "en": "The mita: walking to Potosí", "es": "La mita: a pie hacia Potosí" }
+        }
+      ],
+      "places": [
+        {
+          "id": "cerro-rico",
+          "name": { "en": "Cerro Rico", "es": "Cerro Rico" },
+          "at": [-65.7497, -19.6189],
+          "cat": "nature",
+          "type": "site",
+          "date": "1545",
+          "place": { "en": "Potosí, Bolivia", "es": "Potosí, Bolivia" },
+          "text": {
+            "en": "The 'rich mountain' above Potosí, the greatest silver deposit ever found. Centuries of digging have riddled it with tunnels; thousands still mine it, and many die young of silicosis.",
+            "es": "El «cerro rico» que domina Potosí, el mayor yacimiento de plata jamás hallado. Siglos de excavación lo han llenado de túneles; miles de mineros todavía lo trabajan, y muchos mueren jóvenes de silicosis."
+          },
+          "wiki": { "en": "Cerro Rico", "es": "Cerro Rico" }
+        },
+        {
+          "id": "mita",
+          "name": { "en": "The mita", "es": "La mita" },
+          "at": [-69.89, -15.89],
+          "cat": "event",
+          "type": "institution",
+          "date": "1573",
+          "place": { "en": "Southern Peru and Bolivia, from Cuzco to Potosí", "es": "Sur del Perú y Bolivia, de Cuzco a Potosí" },
+          "text": {
+            "en": "A forced labour draft that Spain built on the Inca system of turns of work. From 1573 it sent about 13,000 Indigenous men a year to the mines of Potosí, with terrible losses.",
+            "es": "Un reclutamiento de trabajo forzado que España montó sobre el sistema inca de turnos de trabajo. Desde 1573 mandó cada año unos 13 000 hombres indígenas a las minas de Potosí, con pérdidas terribles."
+          },
+          "details": {
+            "en": "Under the Incas the mit'a built and kept up roads, bridges and terraces near people's own villages. Under Spain it took men far from home for a year, and the cost of the journey could be more than a year's pay, so many stayed on as wage workers. By the late 17th century Upper Peru had lost nearly half of its Indigenous population, through epidemics, flight and the mines.",
+            "es": "Con los incas, la mita construía y mantenía caminos, puentes y terrazas cerca de los pueblos de la gente. Con España, se llevaba a los hombres lejos de casa durante un año, y el viaje podía costar más que un año de paga, así que muchos se quedaban como trabajadores asalariados. A fines del siglo XVII el Alto Perú había perdido casi la mitad de su población indígena, por epidemias, huidas y las minas."
+          },
+          "wiki": { "en": "Mit'a", "es": "Mita" }
+        },
+        {
+          "id": "huancavelica",
+          "name": { "en": "Mercury of Huancavelica", "es": "El mercurio de Huancavelica" },
+          "at": [-74.9756, -12.7864],
+          "cat": "goods",
+          "type": "goods",
+          "date": "1564",
+          "place": { "en": "Huancavelica, Peru", "es": "Huancavelica, Perú" },
+          "text": {
+            "en": "Mercury deposits shown to the Spanish around 1564 by an Indigenous man, Nahuincopa. Mercury was needed to refine silver, and a viceroy called Potosí and Huancavelica the two pillars of the kingdom.",
+            "es": "Yacimientos de mercurio que un indígena, Nahuincopa, mostró a los españoles hacia 1564. El mercurio hacía falta para refinar la plata, y un virrey llamó a Potosí y Huancavelica los dos pilares del reino."
+          },
+          "wiki": { "en": "Huancavelica", "es": "Huancavelica" }
+        }
+      ]
+    },
+    {
+      "date": "1573",
+      "title": { "en": "Silk and porcelain sail east", "es": "La seda y la porcelana viajan al este" },
+      "text": {
+        "en": "In 1573 the first galleons laden with Chinese silk and porcelain sailed from Manila to Acapulco. Merchants from Fujian brought such goods to Manila every year and took American silver home.",
+        "es": "En 1573 los primeros galeones cargados de seda y porcelana chinas zarparon de Manila hacia Acapulco. Cada año, mercaderes de Fujian llevaban esas mercancías a Manila y volvían a casa con plata americana."
+      },
+      "details": {
+        "en": "The galleons, built in the Philippines of local hardwoods, were among the largest ships of their time, and every space aboard was crammed with cargo. Eastward they carried silk cloth, porcelain, lacquerware, ivory, cloves and cinnamon, Indian cotton, Japanese screens and fans; enslaved people from across Asia, called chinos in Mexico, were sold there too. They left Manila in late June or July, threaded the islands to the San Bernardino Strait and sailed north to catch the Kuroshio and the westerlies. The voyage east took four to six months, and hunger, scurvy and storms killed many of the crew. From 1593 only two galleons a year were allowed.",
+        "es": "Los galeones, construidos en Filipinas con maderas duras del lugar, estaban entre los barcos más grandes de su tiempo, y cada rincón iba repleto de carga. Hacia el este llevaban telas de seda, porcelana, lacas, marfil, clavo y canela, algodón de la India, biombos y abanicos japoneses; también personas esclavizadas de toda Asia, a las que en México llamaban chinos, que eran vendidas allí. Salían de Manila a fines de junio o en julio, atravesaban las islas hasta el estrecho de San Bernardino y subían al norte en busca de la corriente de Kuroshio y los vientos del oeste. El viaje al este duraba de cuatro a seis meses, y el hambre, el escorbuto y las tormentas mataban a muchos tripulantes. Desde 1593 solo se permitieron dos galeones al año."
+      },
+      "camera": { "lon": -175.0, "lat": 24.0, "zoom": 1.2 },
+      "moves": [
+        {
+          "side": "galleon",
+          "path": [[120.97, 14.59], [120.65, 14.35], [120.45, 14.2], [120.5, 13.85], [121.25, 13.6], [121.6, 13.25], [122.4, 12.9], [123.4, 12.95], [123.9, 12.75], [124.25, 12.55], [124.8, 12.7], [125.6, 13.4], [128.0, 18.0], [133.0, 26.0], [140.0, 33.0], [146.0, 38.0], [160.0, 39.5], [-178.0, 40.0], [-160.0, 39.0], [-140.0, 36.5], [-125.0, 34.0], [-118.6, 33.2], [-117.6, 32.5], [-116.9, 31.0], [-115.6, 28.6], [-114.6, 27.0], [-112.6, 24.5], [-110.3, 22.6], [-106.6, 21.2], [-105.9, 20.3], [-104.9, 19.05], [-103.4, 18.05], [-101.6, 17.3], [-99.88, 16.84]],
+          "by": "sea",
+          "icon": "🚢",
+          "label": { "en": "The galleon east, 1573", "es": "El galeón hacia el este, 1573" }
+        }
+      ],
+      "places": [
+        {
+          "id": "manila",
+          "name": { "en": "Manila", "es": "Manila" },
+          "at": [120.975, 14.5908],
+          "cat": "port",
+          "type": "place",
+          "date": "1571-06-24",
+          "place": { "en": "Manila, Philippines", "es": "Manila, Filipinas" },
+          "text": {
+            "en": "The walled Spanish city founded in 1571 on the site of Maynila. For 250 years its galleons linked Asia and the Americas, and Chinese, Japanese, Malay and Indian traders crowded its port.",
+            "es": "La ciudad española amurallada fundada en 1571 donde estaba Maynila. Durante 250 años sus galeones unieron Asia y América, y comerciantes chinos, japoneses, malayos e indios llenaban su puerto."
+          },
+          "details": {
+            "en": "Most galleons were built and loaded at the shipyards of Cavite, on Manila Bay, by Filipino carpenters, with sails woven in Ilocos and rigging of Manila hemp. Before each voyage the archbishop said mass for the safety of the crossing before the Virgin of Solitude, the 'Queen of the Galleons'. From 1574, when the pirate Limahong attacked and burned it, Manila was ringed with stone walls.",
+            "es": "La mayoría de los galeones se construían y cargaban en los astilleros de Cavite, en la bahía de Manila, con carpinteros filipinos, velas tejidas en Ilocos y jarcias de abacá. Antes de cada viaje, el arzobispo decía misa por la seguridad de la travesía ante la Virgen de la Soledad, la «Reina de los Galeones». Desde 1574, cuando el pirata Limahong la atacó e incendió, Manila se rodeó de murallas de piedra."
+          },
+          "wiki": { "en": "Manila", "es": "Manila" }
+        },
+        {
+          "id": "silk",
+          "name": { "en": "Silk", "es": "Seda" },
+          "at": [120.5853, 31.2989],
+          "cat": "goods",
+          "type": "goods",
+          "date": "1573",
+          "place": { "en": "Woven in Jiangnan, China, around Suzhou", "es": "Tejida en Jiangnan, China, alrededor de Suzhou" },
+          "text": {
+            "en": "Chinese silk, woven in cities such as Suzhou, was the galleons' most valuable cargo. It sold in New Spain and Peru at great profit, and some went on to Spain on the treasure fleets.",
+            "es": "La seda china, tejida en ciudades como Suzhou, era la carga más valiosa de los galeones. Se vendía en la Nueva España y en el Perú con grandes ganancias, y una parte seguía a España en las flotas de Indias."
+          },
+          "wiki": { "en": "Silk", "es": "Seda" }
+        },
+        {
+          "id": "porcelain",
+          "name": { "en": "Porcelain", "es": "Porcelana" },
+          "at": [117.1784, 29.269],
+          "cat": "goods",
+          "type": "goods",
+          "date": "1573",
+          "place": { "en": "Made at Jingdezhen and Zhangzhou, China", "es": "Hecha en Jingdezhen y Zhangzhou, China" },
+          "text": {
+            "en": "Blue-and-white porcelain from the kilns of Jingdezhen and Zhangzhou crossed the Pacific by the shipload. Its shards are found from Mexico City to the beaches of Oregon.",
+            "es": "La porcelana azul y blanca de los hornos de Jingdezhen y Zhangzhou cruzaba el Pacífico por barcos enteros. Sus fragmentos aparecen desde la Ciudad de México hasta las playas de Oregón."
+          },
+          "wiki": { "en": "Chinese ceramics", "es": "Cerámica y porcelana china" }
+        },
+        {
+          "id": "acapulco",
+          "name": { "en": "Acapulco", "es": "Acapulco" },
+          "at": [-99.8825, 16.8636],
+          "cat": "port",
+          "type": "place",
+          "date": "1565-10-08",
+          "place": { "en": "Guerrero, Mexico", "es": "Guerrero, México" },
+          "text": {
+            "en": "The galleons' port in New Spain, reached by Urdaneta on 8 October 1565. When a galleon arrived, a great fair sold its Asian goods, which then went by mule to Mexico City and Veracruz.",
+            "es": "El puerto de los galeones en la Nueva España, adonde llegó Urdaneta el 8 de octubre de 1565. Cuando llegaba un galeón, una gran feria vendía sus mercancías asiáticas, que seguían en mula a la Ciudad de México y Veracruz."
+          },
+          "wiki": { "en": "Acapulco", "es": "Acapulco de Juárez" }
+        }
+      ]
+    },
+    {
+      "date": "1581",
+      "title": { "en": "Silver for China", "es": "Plata para China" },
+      "text": {
+        "en": "Westward the galleons carried silver pesos, which Chinese merchants took home from Manila. Around 1580 Ming China began to collect its taxes in silver, and its hunger for the metal seemed endless.",
+        "es": "Hacia el oeste, los galeones llevaban pesos de plata que los mercaderes chinos se llevaban de Manila a su tierra. Hacia 1580 la China de los Ming empezó a cobrar sus impuestos en plata, y su hambre del metal parecía no tener fin."
+      },
+      "details": {
+        "en": "The westward voyage, with the trade winds and a stop at Guam, was shorter and easier than the way back. In China silver was worth far more than in the Americas: Ming paper money had failed, and the 'single whip' reform, spread across the empire in 1580, turned most taxes and labour duties into one payment in silver. In the early 1600s about three million pesos a year, some 94 tonnes, went from Manila to China, much of it through Yuegang, the only Chinese port where private overseas trade had been legal since 1567. The silver travelled as Spanish dollars, pieces of eight minted at Potosí, Lima and Mexico City, which became the first world currency, used in Europe, the Americas and East Asia.",
+        "es": "El viaje hacia el oeste, con los alisios y una escala en Guam, era más corto y fácil que el de vuelta. En China la plata valía mucho más que en América: el papel moneda de los Ming había fracasado, y la reforma del «látigo único», extendida a todo el imperio en 1580, convirtió la mayoría de los impuestos y servicios de trabajo en un solo pago en plata. A comienzos del siglo XVII salían de Manila hacia China unos tres millones de pesos al año, unas 94 toneladas, en gran parte por Yuegang, el único puerto chino donde el comercio privado con el exterior era legal desde 1567. La plata viajaba en reales de a ocho acuñados en Potosí, Lima y la Ciudad de México, que fueron la primera moneda mundial, usada en Europa, América y Asia oriental."
+      },
+      "camera": { "lon": -172.0, "lat": 17.0, "zoom": 1.2 },
+      "moves": [
+        {
+          "side": "galleon",
+          "path": [[-99.88, 16.84], [-105.0, 15.0], [-120.0, 13.5], [-140.0, 13.0], [-160.0, 13.0], [175.0, 13.2], [155.0, 13.3], [145.0, 13.15], [144.55, 13.35], [135.0, 13.0], [126.0, 12.65], [124.8, 12.7], [124.25, 12.55], [123.9, 12.75], [123.4, 12.95], [122.4, 12.9], [121.6, 13.25], [121.25, 13.6], [120.5, 13.85], [120.45, 14.2], [120.65, 14.35], [120.97, 14.59]],
+          "by": "sea",
+          "icon": "🚢",
+          "label": { "en": "Silver west with the trade winds", "es": "La plata al oeste con los alisios" }
+        },
+        {
+          "side": "junks",
+          "path": [[120.97, 14.59], [120.55, 14.35], [119.75, 15.3], [119.7, 16.3], [120.2, 18.3], [120.0, 19.6], [119.3, 21.5], [118.6, 23.4], [118.15, 24.35], [117.82, 24.43]],
+          "by": "sea",
+          "icon": "⛵",
+          "label": { "en": "Silver to China", "es": "La plata hacia China" }
+        }
+      ],
+      "places": [
+        {
+          "id": "spanish-dollar",
+          "name": { "en": "Spanish dollar (piece of eight)", "es": "Real de a ocho" },
+          "at": [-99.1332, 19.4326],
+          "cat": "goods",
+          "type": "goods",
+          "date": "1497",
+          "place": { "en": "Minted at Mexico City, Potosí and Lima", "es": "Acuñado en Ciudad de México, Potosí y Lima" },
+          "text": {
+            "en": "A silver coin worth eight reales, about 38 mm wide, first minted in 1497 and later at Mexico City, Lima and Potosí. It became the first world currency and the model for the US dollar.",
+            "es": "Una moneda de plata de ocho reales, de unos 38 mm, acuñada desde 1497 y después en Ciudad de México, Lima y Potosí. Fue la primera moneda mundial y el modelo del dólar estadounidense."
+          },
+          "details": {
+            "en": "It was trusted everywhere because its weight and silver content were steady, and some countries stamped it with their own marks to use it as local money. The dollar sign may come from the Pillars of Hercules wrapped in ribbons on its reverse, or from the PTSI monogram of the Potosí mint. The Mexican and Philippine pesos, and at first the Chinese yuan and the Japanese yen, were based on it.",
+            "es": "Se aceptaba en todas partes porque su peso y su ley de plata eran constantes, y algunos países le ponían sus propias marcas para usarla como moneda local. El signo de pesos quizá venga de las columnas de Hércules envueltas en cintas de su reverso, o del monograma PTSI de la casa de moneda de Potosí. El peso mexicano y el filipino, y en sus inicios el yuan chino y el yen japonés, se basaron en ella."
+          },
+          "wiki": { "en": "Spanish dollar", "es": "Real de a ocho" }
+        },
+        {
+          "id": "single-whip-law",
+          "name": { "en": "The single whip reform", "es": "La reforma del látigo único" },
+          "at": [116.4074, 39.9042],
+          "cat": "event",
+          "type": "event",
+          "date": "1580",
+          "place": { "en": "Beijing, Ming China", "es": "Pekín, China de los Ming" },
+          "text": {
+            "en": "A Ming tax reform, spread across China in 1580 by the minister Zhang Juzheng, that turned land taxes, poll taxes and labour duties into a single payment in silver.",
+            "es": "Una reforma fiscal de los Ming, extendida a toda China en 1580 por el ministro Zhang Juzheng, que convirtió los impuestos sobre la tierra y las personas y los servicios de trabajo en un solo pago en plata."
+          },
+          "details": {
+            "en": "It made taxes simpler to collect but tied China's finances to silver from Japan and the Americas. When less silver arrived in the 1630s, after Japan closed itself off and fewer Spanish shipments reached Manila, prices rose, northern garrisons went unpaid and rebellions spread. It was one of the causes of the fall of the Ming dynasty in 1644.",
+            "es": "Hizo más fácil cobrar los impuestos, pero ató las finanzas de China a la plata de Japón y de América. Cuando llegó menos plata en la década de 1630, después de que Japón se cerrara al exterior y llegaran menos envíos españoles a Manila, subieron los precios, las guarniciones del norte quedaron sin paga y se extendieron las rebeliones. Fue una de las causas de la caída de la dinastía Ming en 1644."
+          },
+          "wiki": { "en": "Single whip law", "es": "Ley del látigo único" }
+        },
+        {
+          "id": "yuegang",
+          "name": { "en": "Yuegang (Moon Harbour)", "es": "Yuegang (Puerto de la Luna)" },
+          "at": [117.82, 24.43],
+          "cat": "port",
+          "type": "place",
+          "date": "1567-01-17",
+          "place": { "en": "Haicheng, Zhangzhou, Fujian, China", "es": "Haicheng, Zhangzhou, Fujian, China" },
+          "text": {
+            "en": "A smugglers' harbour in Fujian that in 1567 became the only Chinese port where private overseas trade was legal. Its merchants sailed to Manila and brought home American silver, sweet potatoes, maize and tobacco.",
+            "es": "Un puerto de contrabandistas en Fujian que en 1567 se convirtió en el único puerto chino donde el comercio privado con el exterior era legal. Sus mercaderes navegaban a Manila y traían plata americana, camotes, maíz y tabaco."
+          },
+          "wiki": { "en": "Yuegang", "es": "" }
+        }
+      ]
+    },
+    {
+      "date": "1603-10",
+      "title": { "en": "The Parián", "es": "El Parián" },
+      "text": {
+        "en": "Thousands of Chinese merchants and craftsmen, the Sangleys, lived in Manila's Parián. Fearing them, the Spanish crushed a rising in October 1603 and killed some 20,000; within a year trade resumed.",
+        "es": "Miles de mercaderes y artesanos chinos, los sangleyes, vivían en el Parián de Manila. Por miedo a ellos, los españoles aplastaron un levantamiento en octubre de 1603 y mataron a unos 20 000; en menos de un año el comercio se reanudó."
+      },
+      "details": {
+        "en": "The Sangleys, mostly Hokkien speakers from southern Fujian, far outnumbered the Spanish in Manila and ran much of its trade and crafts: baking, bookbinding, inns and stonemasonry. From 1581 those who were not Christian had to live in the Parián, a market quarter outside the walls; Catholic Chinese settled in Binondo from 1594. In 1603 a visit by Ming officials looking for a 'mountain of gold' in Cavite convinced the Spanish that China was about to invade. Threatened and harassed, the Chinese rose on 3 October; their attack on the walls failed, and Spanish, Japanese and Tagalog forces hunted them down for weeks. Manila still depended on them, and in 1606–1610 its trade reached its highest level ever. Further massacres followed in 1639 and 1662.",
+        "es": "Los sangleyes, en su mayoría hablantes de hokkien del sur de Fujian, eran muchos más que los españoles en Manila y llevaban gran parte de su comercio y sus oficios: panaderías, encuadernación, posadas y cantería. Desde 1581 los que no eran cristianos debían vivir en el Parián, un barrio de mercado fuera de las murallas; los chinos católicos se asentaron en Binondo desde 1594. En 1603 la visita de unos funcionarios Ming que buscaban una «montaña de oro» en Cavite convenció a los españoles de que China iba a invadir. Amenazados y acosados, los chinos se alzaron el 3 de octubre; su ataque a las murallas fracasó, y fuerzas españolas, japonesas y tagalas los persiguieron durante semanas. Manila seguía dependiendo de ellos, y en 1606-1610 su comercio alcanzó el nivel más alto de su historia. Después hubo nuevas matanzas, en 1639 y 1662."
+      },
+      "camera": { "lon": 119.5, "lat": 19.5, "zoom": 4.2 },
+      "moves": [
+        {
+          "side": "junks",
+          "path": [[117.82, 24.43], [118.15, 24.35], [118.6, 23.4], [119.3, 21.5], [120.0, 19.6], [120.2, 18.3], [119.7, 16.3], [119.75, 15.3], [120.55, 14.35], [120.97, 14.59]],
+          "by": "sea",
+          "icon": "⛵",
+          "label": { "en": "Junks bring silk to Manila", "es": "Los juncos llevan seda a Manila" }
+        }
+      ],
+      "places": [
+        {
+          "id": "sangley",
+          "name": { "en": "Sangleys", "es": "Sangleyes" },
+          "at": [120.979, 14.593],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1581",
+          "place": { "en": "Parián and Binondo, Manila", "es": "Parián y Binondo, Manila" },
+          "text": {
+            "en": "The Chinese of Spanish Manila, mostly Hokkien traders and craftsmen from Fujian; their name may come from the Hokkien word for business. Feared and needed, they suffered massacres in 1603 and 1639.",
+            "es": "Los chinos de la Manila española, en su mayoría comerciantes y artesanos hokkien de Fujian; su nombre quizá venga de la palabra hokkien para «negocio». Temidos y necesarios, sufrieron matanzas en 1603 y 1639."
+          },
+          "details": {
+            "en": "The Spanish tried to limit them to 6,000, but in the 1620s and 1630s Manila had 15,000 to 21,000 Chinese residents, who paid a yearly licence fee. In 1639 a rising of Chinese farm workers ended in another massacre, of about 20,000 people. Many Sangleys married Filipino women, and their mestizo children became important merchants. Their cooking shaped Filipino food: pancit noodles take their name from Hokkien.",
+            "es": "Los españoles intentaron limitarlos a 6000, pero en las décadas de 1620 y 1630 Manila tenía entre 15 000 y 21 000 residentes chinos, que pagaban una licencia anual. En 1639 un levantamiento de trabajadores agrícolas chinos terminó en otra matanza, de unas 20 000 personas. Muchos sangleyes se casaron con mujeres filipinas, y sus hijos mestizos llegaron a ser comerciantes importantes. Su cocina moldeó la comida filipina: los fideos pancit deben su nombre al hokkien."
+          },
+          "wiki": { "en": "Sangley", "es": "Sangley" }
+        },
+        {
+          "id": "selden-map",
+          "name": { "en": "Selden Map", "es": "Mapa de Selden" },
+          "at": [118.59, 24.91],
+          "cat": "book",
+          "type": "work",
+          "date": "1608",
+          "place": { "en": "Origin uncertain; now in Oxford", "es": "Origen incierto; hoy en Oxford" },
+          "text": {
+            "en": "The oldest surviving Chinese merchant chart of East Asia, made between about 1606 and 1624. Its sea routes run out from Fujian to Nagasaki, Southeast Asia and Manila.",
+            "es": "La carta náutica de mercaderes chinos más antigua que se conserva de Asia oriental, hecha entre 1606 y 1624, más o menos. Sus rutas salen de Fujian hacia Nagasaki, el Sudeste Asiático y Manila."
+          },
+          "wiki": { "en": "Selden Map", "es": "Mapa de Selden" }
+        },
+        {
+          "id": "yuegang",
+          "name": { "en": "Yuegang (Moon Harbour)", "es": "Yuegang (Puerto de la Luna)" },
+          "at": [117.82, 24.43],
+          "cat": "port",
+          "type": "place",
+          "date": "1567-01-17",
+          "place": { "en": "Haicheng, Zhangzhou, Fujian, China", "es": "Haicheng, Zhangzhou, Fujian, China" },
+          "text": {
+            "en": "A smugglers' harbour in Fujian that in 1567 became the only Chinese port where private overseas trade was legal. Its merchants sailed to Manila and brought home American silver, sweet potatoes, maize and tobacco.",
+            "es": "Un puerto de contrabandistas en Fujian que en 1567 se convirtió en el único puerto chino donde el comercio privado con el exterior era legal. Sus mercaderes navegaban a Manila y traían plata americana, camotes, maíz y tabaco."
+          },
+          "wiki": { "en": "Yuegang", "es": "" }
+        }
+      ]
+    },
+    {
+      "date": "1619",
+      "title": { "en": "Sailors who stayed", "es": "Marineros que se quedaron" },
+      "text": {
+        "en": "Most galleon sailors were Filipinos, often pressed into service and given a single pair of breeches. In 1619 a captain complained that 70 of his 75 Filipino crewmen had stayed behind in Mexico.",
+        "es": "La mayoría de los marineros del galeón eran filipinos, muchas veces reclutados a la fuerza y vestidos con un solo par de calzones. En 1619 un capitán se quejó de que 70 de sus 75 marineros filipinos se habían quedado en México."
+      },
+      "details": {
+        "en": "Filipino crewmen, many of them farmers, street children or vagrants seized for the job, made up most of the crews; the officers were Spaniards, many of them Basques. Hunger, cold, scurvy and storms killed many on the long voyage east, and in 1620 Philip III ordered merchants to give native crews proper clothing. Those who left the ships at Acapulco married local women and settled along the Pacific coast, at Coyuca, once called 'Filipino town', and in Colima, where they made tubâ, palm wine, and planted coconuts. In Mexico both free Filipinos and enslaved people from across Asia were called chinos. Their descendants live on: a 2018 study found Filipino ancestry in about a third of the people of Guerrero.",
+        "es": "Los tripulantes filipinos, muchos de ellos campesinos, niños de la calle o vagabundos reclutados a la fuerza, formaban la mayor parte de las tripulaciones; los oficiales eran españoles, muchos de ellos vascos. El hambre, el frío, el escorbuto y las tormentas mataban a muchos en el largo viaje al este, y en 1620 Felipe III ordenó a los mercaderes dar ropa adecuada a las tripulaciones nativas. Los que dejaban los barcos en Acapulco se casaban con mujeres del lugar y se asentaban en la costa del Pacífico, en Coyuca, a la que llegaron a llamar «pueblo filipino», y en Colima, donde hacían tuba, vino de palma, y plantaban cocoteros. En México, tanto a los filipinos libres como a las personas esclavizadas de toda Asia las llamaban chinos. Sus descendientes siguen allí: un estudio de 2018 encontró ascendencia filipina en cerca de un tercio de la gente de Guerrero."
+      },
+      "camera": { "lon": -175.0, "lat": 26.0, "zoom": 1.2 },
+      "moves": [
+        {
+          "side": "galleon",
+          "path": [[120.97, 14.59], [120.65, 14.35], [120.45, 14.2], [120.5, 13.85], [121.25, 13.6], [121.6, 13.25], [122.4, 12.9], [123.4, 12.95], [123.9, 12.75], [124.25, 12.55], [124.8, 12.7], [125.6, 13.4], [128.0, 18.0], [133.0, 26.0], [140.0, 33.0], [146.0, 38.0], [160.0, 40.0], [-178.0, 41.0], [-160.0, 41.0], [-140.0, 40.5], [-126.0, 40.4], [-124.8, 39.0], [-123.8, 37.5], [-122.0, 36.0], [-120.8, 34.5], [-118.6, 33.2], [-117.6, 32.5], [-116.9, 31.0], [-115.6, 28.6], [-114.6, 27.0], [-112.6, 24.5], [-110.3, 22.6], [-106.6, 21.2], [-105.9, 20.3], [-104.9, 19.05], [-103.4, 18.05], [-101.6, 17.3], [-99.88, 16.84]],
+          "by": "sea",
+          "icon": "🚢",
+          "label": { "en": "The long voyage east", "es": "El largo viaje al este" }
+        }
+      ],
+      "places": [
+        {
+          "id": "filipinos-in-mexico",
+          "name": { "en": "Filipino sailors and settlers", "es": "Marineros y colonos filipinos" },
+          "at": [-100.087, 17.009],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1619",
+          "place": { "en": "Coyuca de Benítez, Guerrero, Mexico", "es": "Coyuca de Benítez, Guerrero, México" },
+          "text": {
+            "en": "Filipinos sailed and died on the galleons, and many settled in Mexico, along the coast from Acapulco to Colima. They brought palm wine, coconuts, the mantón de Manila shawl and words such as palapa.",
+            "es": "Los filipinos navegaron y murieron en los galeones, y muchos se asentaron en México, en la costa de Acapulco a Colima. Trajeron el vino de palma, los cocos, el mantón de Manila y palabras como palapa."
+          },
+          "wiki": { "en": "Filipino immigration to Mexico", "es": "Inmigración filipina en México" }
+        },
+        {
+          "id": "tuba",
+          "name": { "en": "Tubâ (palm wine)", "es": "Tuba (vino de palma)" },
+          "at": [-103.7247, 19.2433],
+          "cat": "goods",
+          "type": "dish",
+          "date": "1619",
+          "place": { "en": "Colima, Mexico", "es": "Colima, México" },
+          "text": {
+            "en": "A Filipino palm wine made from the sap of coconut palms, brought to western Mexico by galleon sailors. In Colima it is still sold in the street as tuba fresca, with fruit and nuts.",
+            "es": "Un vino filipino de palma hecho con la savia de los cocoteros, que los marineros del galeón llevaron al occidente de México. En Colima todavía se vende en la calle como tuba fresca, con fruta y nueces."
+          },
+          "wiki": { "en": "Tubâ", "es": "Tuba (bebida)" }
+        }
+      ]
+    },
+    {
+      "date": "1693",
+      "title": { "en": "Wrecks and raiders", "es": "Naufragios y corsarios" },
+      "text": {
+        "en": "Of 108 Manila galleons, many were wrecked by storms or taken by enemies. In 1693 the Santo Cristo de Burgos sailed from Manila and vanished; its wreck, full of beeswax and porcelain, came ashore in Oregon.",
+        "es": "De los 108 galeones de Manila, muchos naufragaron en tormentas o cayeron en manos enemigas. En 1693 el Santo Cristo de Burgos salió de Manila y desapareció; sus restos, llenos de cera y porcelana, llegaron a Oregón."
+      },
+      "details": {
+        "en": "The galleons sailed overloaded, late in the season or in poor repair, and the typhoons of the western Pacific were deadly: twenty were wrecked in the Philippines alone. In 1596 the San Felipe was driven onto the coast of Japan; the local lord seized its rich cargo, and fear of Spanish plans led Toyotomi Hideyoshi to crucify 26 Christians at Nagasaki. The Santo Cristo de Burgos probably lost its way after damage or sickness and drifted far north. Tillamook and Clatsop oral histories remember the wreck near Nehalem Bay and its survivors, and lumps of its beeswax, meant for church candles, turned up on the beaches for two centuries. In wartime English and Dutch raiders hunted the galleons, and 26 were captured or sunk; Thomas Cavendish took the Santa Ana in 1587 and George Anson the Covadonga in 1743.",
+        "es": "Los galeones navegaban sobrecargados, tarde en la temporada o mal reparados, y los tifones del Pacífico occidental eran mortales: veinte naufragaron solo en Filipinas. En 1596 el San Felipe encalló en la costa de Japón; el señor local se quedó con su rica carga, y el temor a los planes españoles llevó a Toyotomi Hideyoshi a crucificar a 26 cristianos en Nagasaki. El Santo Cristo de Burgos probablemente perdió el rumbo por averías o enfermedades y fue a la deriva muy al norte. Las historias orales de los tillamook y los clatsop recuerdan el naufragio cerca de la bahía de Nehalem y a sus sobrevivientes, y durante dos siglos aparecieron en las playas trozos de su cera, destinada a las velas de las iglesias. En tiempos de guerra, corsarios ingleses y holandeses cazaban los galeones, y 26 fueron capturados o hundidos; Thomas Cavendish tomó el Santa Ana en 1587 y George Anson el Covadonga en 1743."
+      },
+      "camera": { "lon": -168.0, "lat": 33.0, "zoom": 1.3 },
+      "moves": [
+        {
+          "side": "galleon",
+          "path": [[120.97, 14.59], [120.65, 14.35], [120.45, 14.2], [120.5, 13.85], [121.25, 13.6], [121.6, 13.25], [122.4, 12.9], [123.4, 12.95], [123.9, 12.75], [124.25, 12.55], [124.8, 12.7], [125.6, 13.4], [128.0, 18.0], [133.0, 26.0], [140.0, 33.0], [146.0, 38.0], [160.0, 40.5], [-178.0, 42.0], [-160.0, 43.5], [-140.0, 45.0], [-128.0, 45.7], [-124.2, 45.7], [-123.95, 45.66]],
+          "by": "sea",
+          "icon": "🚢",
+          "label": { "en": "The Santo Cristo de Burgos, 1693", "es": "El Santo Cristo de Burgos, 1693" }
+        }
+      ],
+      "places": [
+        {
+          "id": "beeswax-wreck",
+          "name": { "en": "The Beeswax Wreck", "es": "El naufragio de la cera" },
+          "at": [-123.947, 45.656],
+          "cat": "event",
+          "type": "ship",
+          "date": "1693",
+          "place": { "en": "Near Nehalem Bay, Oregon, USA", "es": "Cerca de la bahía de Nehalem, Oregón, Estados Unidos" },
+          "text": {
+            "en": "A galleon wrecked on the Oregon coast, probably the Santo Cristo de Burgos, lost in 1693. Its beeswax, teak timbers and porcelain shards have been found there for two centuries.",
+            "es": "Un galeón naufragado en la costa de Oregón, probablemente el Santo Cristo de Burgos, perdido en 1693. Desde hace dos siglos aparecen allí su cera, sus maderas de teca y fragmentos de su porcelana."
+          },
+          "details": {
+            "en": "Bees' wings from the Philippines have been found inside the wax, and much of it bears Spanish shipping marks. The Clatsop traded the wax with fur traders by 1813. A tsunami that struck the coast in 1700 probably scattered the wreckage. Pieces of the hull were first found in sea caves near Manzanita in the 2010s and 2020s, but the main hull has never been located.",
+            "es": "Dentro de la cera se han encontrado alas de abejas de Filipinas, y gran parte lleva marcas de embarque españolas. Los clatsop ya comerciaban esa cera con los tratantes de pieles en 1813. Un tsunami que golpeó la costa en 1700 probablemente dispersó los restos. Trozos del casco se encontraron por primera vez en cuevas marinas cerca de Manzanita en las décadas de 2010 y 2020, pero el casco principal nunca ha aparecido."
+          },
+          "wiki": { "en": "Beeswax wreck", "es": "" }
+        },
+        {
+          "id": "san-felipe-1596",
+          "name": { "en": "Wreck of the San Felipe", "es": "Naufragio del San Felipe" },
+          "at": [133.57, 33.5],
+          "cat": "event",
+          "type": "ship",
+          "date": "1596-10-19",
+          "place": { "en": "Urado, Kōchi, Japan", "es": "Urado, Kōchi, Japón" },
+          "text": {
+            "en": "On 19 October 1596 the galleon San Felipe, bound from Manila to Acapulco, was wrecked in Japan. Its seized cargo and a pilot's boasting led to the crucifixion of 26 Christians at Nagasaki.",
+            "es": "El 19 de octubre de 1596 el galeón San Felipe, que iba de Manila a Acapulco, naufragó en Japón. Su carga confiscada y las bravuconadas de un piloto llevaron a la crucifixión de 26 cristianos en Nagasaki."
+          },
+          "wiki": { "en": "San Felipe incident (1596)", "es": "Incidente del San Felipe" }
+        },
+        {
+          "id": "cavendish-santa-ana",
+          "name": { "en": "Cavendish takes the Santa Ana", "es": "Cavendish captura el Santa Ana" },
+          "at": [-109.9157, 22.8905],
+          "cat": "event",
+          "type": "event",
+          "date": "1587-11-04",
+          "place": { "en": "Off Cabo San Lucas, Baja California, Mexico", "es": "Frente a Cabo San Lucas, Baja California, México" },
+          "text": {
+            "en": "On 4 November 1587 the English privateer Thomas Cavendish captured the 600-ton galleon Santa Ana, took its richest cargo and burned it. The crew, set ashore, refloated the ship and limped to Acapulco.",
+            "es": "El 4 de noviembre de 1587 el corsario inglés Thomas Cavendish capturó el galeón Santa Ana, de 600 toneladas, se llevó su carga más rica y lo incendió. La tripulación, dejada en tierra, reflotó el barco y llegó a duras penas a Acapulco."
+          },
+          "wiki": { "en": "Thomas Cavendish", "es": "Thomas Cavendish" }
+        }
+      ]
+    },
+    {
+      "date": "1697",
+      "title": { "en": "The China road", "es": "El camino de China" },
+      "text": {
+        "en": "From Acapulco, mule trains carried the galleon's silks and porcelain over the mountains to Mexico City and on to Veracruz. In 1697 the Italian traveller Gemelli Careri took this road after a terrible voyage.",
+        "es": "Desde Acapulco, las recuas de mulas llevaban las sedas y porcelanas del galeón por las montañas hasta la Ciudad de México y luego a Veracruz. En 1697 el viajero italiano Gemelli Careri hizo este camino después de un viaje terrible."
+      },
+      "details": {
+        "en": "When a galleon reached Acapulco, merchants gathered for the fair, and porters, innkeepers and muleteers, many of them Indigenous or Afro-Mexican, found work. The goods went up the China Road through the Sierra Madre to Mexico City, where some were sold in the Parián market, and on through Puebla to Veracruz and the fleet for Spain. Gemelli Careri, a lawyer from Naples travelling round the world, had carried mercury from Manila to sell at a 300% profit; he described his half-year crossing as a nightmare of bad food, sickness and storms. In Mexico the scholar Carlos de Sigüenza y Góngora took him to the pyramids of Teotihuacan, and he went on by Puebla to Veracruz and sailed home with the fleet.",
+        "es": "Cuando un galeón llegaba a Acapulco, los mercaderes se reunían para la feria, y cargadores, posaderos y arrieros, muchos de ellos indígenas o afromexicanos, encontraban trabajo. Las mercancías subían por el camino de China a través de la Sierra Madre hasta la Ciudad de México, donde una parte se vendía en el mercado del Parián, y seguían por Puebla hasta Veracruz y la flota de España. Gemelli Careri, un abogado de Nápoles que daba la vuelta al mundo, había llevado mercurio desde Manila para venderlo con un 300 % de ganancia; describió su travesía de medio año como una pesadilla de mala comida, enfermedades y tormentas. En México, el sabio Carlos de Sigüenza y Góngora lo llevó a las pirámides de Teotihuacan, y él siguió por Puebla hasta Veracruz y volvió a Europa con la flota."
+      },
+      "camera": { "lon": -98.0, "lat": 18.3, "zoom": 6.0 },
+      "moves": [
+        {
+          "side": "road",
+          "path": [[-99.88, 16.86], [-99.5, 17.55], [-99.54, 18.35], [-99.23, 18.92], [-99.13, 19.43], [-98.75, 19.3], [-98.2, 19.04], [-97.4, 18.9], [-97.1, 18.85], [-96.93, 18.89], [-96.15, 19.19]],
+          "by": "land",
+          "icon": "🐴",
+          "label": { "en": "The China Road", "es": "El camino de China" }
+        }
+      ],
+      "places": [
+        {
+          "id": "gemelli-careri",
+          "name": { "en": "Giovanni Francesco Gemelli Careri", "es": "Giovanni Francesco Gemelli Careri" },
+          "at": [-99.8825, 16.8636],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1697",
+          "life": ["1651", "1725"],
+          "place": { "en": "Landed at Acapulco from Manila", "es": "Desembarcó en Acapulco desde Manila" },
+          "text": {
+            "en": "A lawyer from Naples who travelled round the world for pleasure in 1693–98, paying his way by trading. His Giro del Mondo describes the galleon voyage, Mexico and its ancient codices.",
+            "es": "Un abogado de Nápoles que dio la vuelta al mundo por placer en 1693-1698, pagándose el viaje con el comercio. Su Giro del Mondo describe el viaje en el galeón, México y sus antiguos códices."
+          },
+          "wiki": { "en": "Giovanni Francesco Gemelli Careri", "es": "Gemelli Careri" }
+        },
+        {
+          "id": "mexico-city",
+          "name": { "en": "Mexico City", "es": "Ciudad de México" },
+          "at": [-99.1332, 19.4326],
+          "cat": "city",
+          "type": "place",
+          "date": "1521-08-13",
+          "place": { "en": "Mexico City, Mexico", "es": "Ciudad de México, México" },
+          "text": {
+            "en": "The capital of New Spain, built on the ruins of the Aztec capital Tenochtitlan. Its mint turned northern silver into pesos, and the galleons' Asian goods were sold in its Parián market.",
+            "es": "La capital de la Nueva España, construida sobre las ruinas de Tenochtitlan, la capital mexica. Su casa de moneda convertía en pesos la plata del norte, y las mercancías asiáticas del galeón se vendían en su mercado del Parián."
+          },
+          "wiki": { "en": "Mexico City", "es": "Ciudad de México" }
+        },
+        {
+          "id": "catarina-de-san-juan",
+          "name": { "en": "Catarina de San Juan", "es": "Catarina de San Juan" },
+          "at": [-98.1983, 19.0414],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1688-01-05",
+          "life": ["1607", "1688-01-05"],
+          "place": { "en": "Puebla, Mexico", "es": "Puebla, México" },
+          "text": {
+            "en": "A girl from India who was kidnapped, sold as a slave in Manila and taken to Mexico on the galleon. Freed, she lived in Puebla as a holy woman, and when she died in 1688 the city revered her as a saint.",
+            "es": "Una niña de la India que fue secuestrada, vendida como esclava en Manila y llevada a México en el galeón. Ya libre, vivió en Puebla como mujer santa, y cuando murió en 1688 la ciudad la veneró como santa."
+          },
+          "details": {
+            "en": "Her story comes from books by her confessors, which historians read with caution. They say she was named Mirra, was captured by Portuguese pirates and was baptized in Cochin. In Puebla she married a chino slave, Domingo Juárez, and later had visions. The Inquisition banned devotion to her in 1691. Tradition links her to the china poblana, a style of Mexican women's dress, but there is no early evidence for it.",
+            "es": "Su historia viene de los libros de sus confesores, que los historiadores leen con cautela. Dicen que se llamaba Mirra, que la capturaron piratas portugueses y que fue bautizada en Cochín. En Puebla se casó con un esclavo chino, Domingo Juárez, y más tarde tuvo visiones. La Inquisición prohibió su culto en 1691. La tradición la relaciona con la china poblana, un traje de mujer mexicano, pero no hay pruebas antiguas de ello."
+          },
+          "wiki": { "en": "Catarina de San Juan", "es": "Catarina de San Juan" }
+        },
+        {
+          "id": "veracruz",
+          "name": { "en": "Veracruz", "es": "Veracruz" },
+          "at": [-96.1533, 19.1903],
+          "cat": "port",
+          "type": "place",
+          "date": "1519-04-22",
+          "place": { "en": "Veracruz, Mexico", "es": "Veracruz, México" },
+          "text": {
+            "en": "New Spain's Atlantic port, founded by Hernán Cortés in 1519. The fleet loaded Mexican silver and cochineal dye here, and later the silk and porcelain of the Manila galleons, brought overland from Acapulco.",
+            "es": "El puerto atlántico de la Nueva España, fundado por Hernán Cortés en 1519. Aquí la flota cargaba la plata mexicana y la grana cochinilla, y más tarde la seda y la porcelana del Galeón de Manila, traídas por tierra desde Acapulco."
+          },
+          "wiki": { "en": "Veracruz (city)", "es": "Veracruz" }
+        }
+      ]
+    },
+    {
+      "date": "1815",
+      "title": { "en": "The last galleon", "es": "El último galeón" },
+      "text": {
+        "en": "Mexico's war of independence cut the galleons' road, and in 1813 the Cortes of Cádiz ended the trade. In 1815 the last galleon, the Magallanes, reached Manila empty, its cargo seized in Mexico.",
+        "es": "La guerra de independencia de México cortó el camino de los galeones, y en 1813 las Cortes de Cádiz pusieron fin al comercio. En 1815 el último galeón, el Magallanes, llegó vacío a Manila: su carga había sido confiscada en México."
+      },
+      "details": {
+        "en": "For 250 years the galleons had tied Asia, the Americas and Europe into one trade, and many historians date the birth of a global economy to the founding of Manila in 1571. In 1810 the insurgent priest José María Morelos burned Acapulco. Spain's parliament, the Cortes of Cádiz, meeting during the war against Napoleon, decreed the end of the route in 1813, and King Ferdinand VII confirmed it the next year. Mexico became independent in 1821, and the Philippines were then ruled directly from Madrid. The galleons left behind Mexican words and crops in the Philippines, Filipino ones in Mexico, and Chinese porcelain on both sides of the Pacific; today Mexico and the Philippines are preparing to nominate the route as a World Heritage Site.",
+        "es": "Durante 250 años los galeones habían unido Asia, América y Europa en un solo comercio, y muchos historiadores sitúan el nacimiento de una economía mundial en la fundación de Manila en 1571. En 1810 el cura insurgente José María Morelos incendió Acapulco. El parlamento de España, las Cortes de Cádiz, reunidas durante la guerra contra Napoleón, decretó el fin de la ruta en 1813, y el rey Fernando VII lo confirmó al año siguiente. México se independizó en 1821, y Filipinas pasó a ser gobernada directamente desde Madrid. Los galeones dejaron palabras y cultivos mexicanos en Filipinas, filipinos en México y porcelana china a ambos lados del Pacífico; hoy México y Filipinas preparan la candidatura de la ruta a Patrimonio de la Humanidad."
+      },
+      "camera": { "lon": -172.0, "lat": 15.0, "zoom": 1.2 },
+      "moves": [
+        {
+          "side": "galleon",
+          "path": [[-99.88, 16.84], [-105.0, 15.0], [-120.0, 13.5], [-140.0, 13.0], [-160.0, 13.0], [175.0, 13.2], [155.0, 13.3], [145.0, 13.15], [144.55, 13.35], [135.0, 13.0], [126.0, 12.65], [124.8, 12.7], [124.25, 12.55], [123.9, 12.75], [123.4, 12.95], [122.4, 12.9], [121.6, 13.25], [121.25, 13.6], [120.5, 13.85], [120.45, 14.2], [120.65, 14.35], [120.97, 14.59]],
+          "by": "sea",
+          "icon": "🚢",
+          "label": { "en": "The last galleon, 1815", "es": "El último galeón, 1815" }
+        }
+      ],
+      "places": [
+        {
+          "id": "magallanes-galleon",
+          "name": { "en": "The Magallanes, last galleon", "es": "El Magallanes, último galeón" },
+          "at": [120.9, 14.48],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1815",
+          "place": { "en": "Cavite, Manila Bay, Philippines", "es": "Cavite, bahía de Manila, Filipinas" },
+          "text": {
+            "en": "Also called the San Fernando, the last ship of the Manila–Acapulco trade. Its cargo was seized in Mexico during the war of independence, and it reached Manila empty in 1815.",
+            "es": "También llamado San Fernando, fue el último barco del comercio entre Manila y Acapulco. Su carga fue confiscada en México durante la guerra de independencia, y llegó vacío a Manila en 1815."
+          },
+          "wiki": { "en": "Manila galleon", "es": "Galeón de Manila" }
+        },
+        {
+          "id": "mexican-war-of-independence",
+          "name": { "en": "Mexican War of Independence", "es": "Guerra de Independencia de México" },
+          "at": [-99.8825, 16.8636],
+          "cat": "event",
+          "type": "event",
+          "date": "1810-09-16",
+          "end": "1821-09-27",
+          "place": { "en": "New Spain (Mexico); here at Acapulco", "es": "Nueva España (México); aquí en Acapulco" },
+          "text": {
+            "en": "The war that began in 1810 and ended with Mexico's independence in 1821. The insurgent priest José María Morelos burned Acapulco in 1810, and the galleon trade did not survive the fighting.",
+            "es": "La guerra que empezó en 1810 y terminó con la independencia de México en 1821. El cura insurgente José María Morelos incendió Acapulco en 1810, y el comercio del galeón no sobrevivió a la lucha."
+          },
+          "wiki": { "en": "Mexican War of Independence", "es": "Independencia de México" }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "For 250 years the Manila galleons and the treasure fleets carried American silver around the world, to Europe and to China, and brought Asian silk, porcelain and spices to the Americas, in what many call the first global trade. The silver was dug by Indigenous miners forced into the mita, the ships were sailed by Filipino crews who often died at sea, and the Chinese merchants of Manila suffered repeated massacres. The route left Filipino families, foods and words in Mexico, Mexican crops in Asia, and the peso, the coin that became the world's first common money.",
+    "es": "Durante 250 años el Galeón de Manila y las flotas de Indias llevaron la plata americana alrededor del mundo, a Europa y a China, y trajeron a América la seda, la porcelana y las especias de Asia, en lo que muchos llaman el primer comercio global. La plata la sacaron mineros indígenas forzados por la mita, los barcos los tripularon filipinos que a menudo morían en el mar, y los mercaderes chinos de Manila sufrieron matanzas repetidas. La ruta dejó familias, comidas y palabras filipinas en México, cultivos americanos en Asia y el peso, la moneda que fue el primer dinero común del mundo."
+  },
+  "sources": [
+    { "title": "Manila galleon (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Manila_galleon" },
+    { "title": "Andrés de Urdaneta (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Andr%C3%A9s_de_Urdaneta" },
+    { "title": "Miguel López de Legazpi (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Miguel_L%C3%B3pez_de_Legazpi" },
+    { "title": "Alonso de Arellano (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Alonso_de_Arellano" },
+    { "title": "Kuroshio Current (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Kuroshio_Current" },
+    { "title": "Potosí (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Potos%C3%AD" },
+    { "title": "Cerro Rico (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Cerro_Rico" },
+    { "title": "National Mint of Bolivia (Wikipedia)", "url": "https://en.wikipedia.org/wiki/National_Mint_of_Bolivia" },
+    { "title": "Mit'a (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Mit%27a" },
+    { "title": "Huancavelica (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Huancavelica" },
+    { "title": "Arica (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Arica" },
+    { "title": "Silver (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Silver" },
+    { "title": "Global silver trade from the 16th to 19th centuries (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Global_silver_trade_from_the_16th_to_19th_centuries" },
+    { "title": "Zacatecas (city) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Zacatecas_(city)" },
+    { "title": "Zacatecas (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Zacatecas" },
+    { "title": "Juan de Tolosa (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Juan_de_Tolosa" },
+    { "title": "Chichimeca War (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Chichimeca_War" },
+    { "title": "Camino Real de Tierra Adentro (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Camino_Real_de_Tierra_Adentro" },
+    { "title": "Patio process (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Patio_process" },
+    { "title": "Mexico City (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Mexico_City" },
+    { "title": "Chamorro people (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Chamorro_people" },
+    { "title": "Sandugo (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Sandugo" },
+    { "title": "Rajah Tupas (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Rajah_Tupas" },
+    { "title": "Cebu City (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Cebu_City" },
+    { "title": "Acapulco (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Acapulco" },
+    { "title": "Spanish treasure fleet (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Spanish_treasure_fleet" },
+    { "title": "Casa de Contratación (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Casa_de_Contrataci%C3%B3n" },
+    { "title": "Seville (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Seville" },
+    { "title": "Veracruz (city) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Veracruz_(city)" },
+    { "title": "Nombre de Dios, Colón (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Nombre_de_Dios,_Col%C3%B3n" },
+    { "title": "Havana (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Havana" },
+    { "title": "Rajah Sulayman (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Rajah_Sulayman" },
+    { "title": "Battle of Manila (1570) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_Manila_(1570)" },
+    { "title": "Panay (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Panay" },
+    { "title": "Manila (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Manila" },
+    { "title": "Intramuros (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Intramuros" },
+    { "title": "Silk (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Silk" },
+    { "title": "Chinese ceramics (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Chinese_ceramics" },
+    { "title": "Spanish dollar (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Spanish_dollar" },
+    { "title": "Single whip law (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Single_whip_law" },
+    { "title": "Yuegang (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Yuegang" },
+    { "title": "Sangley (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Sangley" },
+    { "title": "Sangley Rebellion (1603) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Sangley_Rebellion_(1603)" },
+    { "title": "Sangley Rebellion (1639) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Sangley_Rebellion_(1639)" },
+    { "title": "Parián (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Pari%C3%A1n" },
+    { "title": "Selden Map (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Selden_Map" },
+    { "title": "Filipino immigration to Mexico (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Filipino_immigration_to_Mexico" },
+    { "title": "Tubâ (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Tub%C3%A2" },
+    { "title": "Coyuca de Benítez (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Coyuca_de_Ben%C3%ADtez" },
+    { "title": "Beeswax wreck (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Beeswax_wreck" },
+    { "title": "San Felipe incident (1596) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/San_Felipe_incident_(1596)" },
+    { "title": "Thomas Cavendish (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Thomas_Cavendish" },
+    { "title": "Tillamook people (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Tillamook_people" },
+    { "title": "Giovanni Francesco Gemelli Careri (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Giovanni_Francesco_Gemelli_Careri" },
+    { "title": "Catarina de San Juan (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Catarina_de_San_Juan" },
+    { "title": "Puebla (city) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Puebla_(city)" },
+    { "title": "Mexican War of Independence (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Mexican_War_of_Independence" },
+    { "title": "Cortes of Cádiz (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Cortes_of_C%C3%A1diz" }
+  ]
+}

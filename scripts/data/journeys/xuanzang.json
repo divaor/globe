@@ -75,8 +75,8 @@
         "es": "En el 629, el monje Xuanzang, de 27 años, sale de Chang'an para buscar las enseñanzas del Buda en la India, desafiando la prohibición de viajar al extranjero. Sigue el corredor del Hexi hasta Guazhou y cruza el desierto hasta Hami."
       },
       "details": {
-        "en": "Xuanzang had become a monk as a boy and studied in Luoyang, Chang'an and Chengdu. The Chinese translations of Buddhist texts contradicted each other, and he wanted to read them in Sanskrit, as the pilgrim Faxian had done two centuries before. The Tang emperor Taizong had forbidden travel abroad, so he left without permission, helped by sympathetic Buddhists. Some sources date his departure to 627, which would fit with the death of the Turkic khagan he met on the way. At Guazhou, tradition says, he preached for a month at the temple now called Ta'er, and a local man, Shi Pantuo, became his first disciple. Beyond the last frontier post lay a stony desert. His biography says he chanted the Heart Sutra, which he had learned in Sichuan, whenever he was in danger. At last he reached the oasis of Hami, famous for its melons, where three Chinese monks took him in.",
-        "es": "Xuanzang se había hecho monje de niño y había estudiado en Luoyang, Chang'an y Chengdu. Las traducciones chinas de los textos budistas se contradecían, y quería leerlos en sánscrito, como había hecho el peregrino Faxian dos siglos antes. El emperador Tang Taizong había prohibido viajar al extranjero, así que partió sin permiso, con la ayuda de budistas que simpatizaban con él. Algunas fuentes fechan su salida en el 627, lo que encajaría con la muerte del kan turco al que conoció en el camino. En Guazhou, dice la tradición, predicó un mes en el templo hoy llamado Ta'er, y un hombre del lugar, Shi Pantuo, se convirtió en su primer discípulo. Más allá del último puesto fronterizo había un desierto pedregoso. Su biografía cuenta que recitaba el sutra del corazón, aprendido en Sichuan, cada vez que estaba en peligro. Por fin llegó al oasis de Hami, famoso por sus melones, donde lo acogieron tres monjes chinos."
+        "en": "Xuanzang had become a monk as a boy and studied in Luoyang, Chang'an and Chengdu. The Chinese translations of Buddhist texts contradicted each other, and he wanted to read them in Sanskrit, as the pilgrim Faxian had done two centuries before. The Tang emperor Taizong had forbidden travel abroad, so he left without permission, helped by sympathetic Buddhists. Some sources date his departure to 627, which would fit with the death of the Turkic khagan he met on the way. At Guazhou, tradition says, he preached for a month at the temple now called Ta'er, and a local man, Shi Pantuo, became his first disciple. Beyond the last frontier post, which in his day also bore the name Yumen, the 'Jade Gate', lay a stony desert. His biography says he chanted the Heart Sutra, which he had learned in Sichuan, whenever he was in danger. At last he reached the oasis of Hami, famous for its melons, where three Chinese monks took him in.",
+        "es": "Xuanzang se había hecho monje de niño y había estudiado en Luoyang, Chang'an y Chengdu. Las traducciones chinas de los textos budistas se contradecían, y quería leerlos en sánscrito, como había hecho el peregrino Faxian dos siglos antes. El emperador Tang Taizong había prohibido viajar al extranjero, así que partió sin permiso, con la ayuda de budistas que simpatizaban con él. Algunas fuentes fechan su salida en el 627, lo que encajaría con la muerte del kan turco al que conoció en el camino. En Guazhou, dice la tradición, predicó un mes en el templo hoy llamado Ta'er, y un hombre del lugar, Shi Pantuo, se convirtió en su primer discípulo. Más allá del último puesto fronterizo, que en su época también se llamaba Yumen, la «Puerta de Jade», había un desierto pedregoso. Su biografía cuenta que recitaba el sutra del corazón, aprendido en Sichuan, cada vez que estaba en peligro. Por fin llegó al oasis de Hami, famoso por sus melones, donde lo acogieron tres monjes chinos."
       },
       "camera": {
         "lon": 101,
@@ -354,6 +354,9 @@
         "lat": 42.6,
         "zoom": 6
       },
+      "control": {
+        "tang": null
+      },
       "moves": [
         {
           "side": "out",
@@ -559,7 +562,7 @@
           },
           "text": {
             "en": "Buddhist cave temples above the Muzat River, 65 km west of Kucha, cut and painted between the 3rd and 8th centuries: the oldest major cave complex in China. A World Heritage site since 2014.",
-            "es": "Templos budistas en cuevas sobre el río Muzat, 65 km al oeste de Kucha, excavados y pintados entre los siglos III y VIII: el mayor conjunto de cuevas antiguo de China. Patrimonio mundial desde 2014."
+            "es": "Templos budistas en cuevas sobre el río Muzat, 65 km al oeste de Kucha, excavados y pintados entre los siglos III y VIII: el gran conjunto budista de cuevas más antiguo de China. Patrimonio mundial desde 2014."
           },
           "wiki": {
             "en": "Kizil Caves",
@@ -588,10 +591,52 @@
         "zoom": 5
       },
       "control": {
-        "turks": {
-          "hist": "Western Gokturk Khaganate",
-          "year": 700
-        }
+        "turks": [
+          {
+            "hist": "Western Gokturk Khaganate",
+            "year": 700
+          },
+          {
+            "land": [
+              [
+                70.5,
+                44.8
+              ],
+              [
+                76.0,
+                45.5
+              ],
+              [
+                81.0,
+                45.2
+              ],
+              [
+                83.5,
+                44.2
+              ],
+              [
+                81.0,
+                42.6
+              ],
+              [
+                78.4,
+                41.5
+              ],
+              [
+                76.0,
+                40.9
+              ],
+              [
+                73.5,
+                41.0
+              ],
+              [
+                71.0,
+                41.8
+              ]
+            ]
+          }
+        ]
       },
       "moves": [
         {
@@ -951,8 +996,8 @@
         "es": "Xuanzang cruza el Oxus hasta Balj, ciudad de cien monasterios, y luego el nevado Hindú Kush hasta Bamiyán, donde dos budas gigantes tallados en el acantilado brillan con oro y joyas."
       },
       "details": {
-        "en": "Balkh, the ancient Bactra, had about a hundred monasteries and 3,000 monks; one kept a tooth of the Buddha, and Turkic chiefs often raided it for its jewels. South of it the road climbed into the Great Snow Mountains, whose valleys, he wrote, were 'infested with gangs of brigands'. The king and people of Bamiyan served the monks of its ten monasteries. Two standing Buddhas, 55 and 38 m tall, had been carved into the cliff a few decades before, and Xuanzang also wrote of a huge reclining Buddha that has never been found. The statues stood for some 1,400 years, until the Taliban blew them up in March 2001. Crossing the 'Black Range' to the east, he reached Kapisa, near today's Bagram, where more than 6,000 monks, mostly Mahayana, lived in over 100 monasteries, and people still remembered the Kushan king Kanishka.",
-        "es": "Balj, la antigua Bactra, tenía unos cien monasterios y 3000 monjes; uno guardaba un diente del Buda, y los jefes turcos lo asaltaban a menudo por sus joyas. Al sur, el camino subía a las Grandes Montañas Nevadas, cuyos valles, escribió, estaban «infestados de bandas de salteadores». El rey y el pueblo de Bamiyán servían a los monjes de sus diez monasterios. Dos budas de pie, de 55 y 38 m, se habían tallado en el acantilado unas décadas antes, y Xuanzang habló también de un enorme buda yacente que nunca se ha encontrado. Las estatuas resistieron unos 1400 años, hasta que los talibanes las volaron en marzo de 2001. Tras cruzar la «Cordillera Negra» hacia el este, llegó a Kapisa, cerca de la actual Bagram, donde más de 6000 monjes, en su mayoría mahayanas, vivían en más de 100 monasterios, y la gente aún recordaba al rey kushán Kanishka."
+        "en": "Balkh, the ancient Bactra, had about a hundred monasteries and 3,000 monks; one kept a tooth of the Buddha, and Turkic chiefs often raided it for its jewels. South of it the road climbed into the Great Snow Mountains, whose valleys, he wrote, were 'infested with gangs of brigands'. When Xuanzang came, in 630, the king and people of Bamiyan served the monks of its ten monasteries. Two standing Buddhas, 55 and 38 m tall, had been carved into the cliff a few decades before, and Xuanzang also wrote of a huge reclining Buddha that has never been found. The statues stood for some 1,400 years, until the Taliban blew them up in March 2001. Crossing the 'Black Range' to the east, he reached Kapisa, near today's Bagram, where more than 6,000 monks, mostly Mahayana, lived in over 100 monasteries, and people still remembered the Kushan king Kanishka.",
+        "es": "Balj, la antigua Bactra, tenía unos cien monasterios y 3000 monjes; uno guardaba un diente del Buda, y los jefes turcos lo asaltaban a menudo por sus joyas. Al sur, el camino subía a las Grandes Montañas Nevadas, cuyos valles, escribió, estaban «infestados de bandas de salteadores». Cuando llegó Xuanzang, en el 630, el rey y el pueblo de Bamiyán servían a los monjes de sus diez monasterios. Dos budas de pie, de 55 y 38 m, se habían tallado en el acantilado unas décadas antes, y Xuanzang habló también de un enorme buda yacente que nunca se ha encontrado. Las estatuas resistieron unos 1400 años, hasta que los talibanes las volaron en marzo de 2001. Tras cruzar la «Cordillera Negra» hacia el este, llegó a Kapisa, cerca de la actual Bagram, donde más de 6000 monjes, en su mayoría mahayanas, vivían en más de 100 monasterios, y la gente aún recordaba al rey kushán Kanishka."
       },
       "camera": {
         "lon": 68,
@@ -960,10 +1005,52 @@
         "zoom": 5.5
       },
       "control": {
-        "turks": {
-          "hist": "Western Gokturk Khaganate",
-          "year": 700
-        }
+        "turks": [
+          {
+            "hist": "Western Gokturk Khaganate",
+            "year": 700
+          },
+          {
+            "land": [
+              [
+                70.5,
+                44.8
+              ],
+              [
+                76.0,
+                45.5
+              ],
+              [
+                81.0,
+                45.2
+              ],
+              [
+                83.5,
+                44.2
+              ],
+              [
+                81.0,
+                42.6
+              ],
+              [
+                78.4,
+                41.5
+              ],
+              [
+                76.0,
+                40.9
+              ],
+              [
+                73.5,
+                41.0
+              ],
+              [
+                71.0,
+                41.8
+              ]
+            ]
+          }
+        ]
       },
       "moves": [
         {
@@ -1134,8 +1221,8 @@
         "es": "Xuanzang entra en la India por el paso del Khyber. En Gandhara encuentra medio arruinados los grandes monasterios de los kushanes; luego sigue hasta Cachemira, donde estudia dos años."
       },
       "details": {
-        "en": "To Xuanzang, India began at Lampaka, in today's Laghman. At Nagarahara, near Jalalabad, he walked around a stupa 300 feet high that Ashoka had built. Gandhara, with its capital at Purushapura (Peshawar), was the land of the great Buddhist thinkers Asanga and Vasubandhu, and he described Kanishka's stupa there as 400 feet high. But Buddhism had declined: a century before, the Hun king Mihirakula had destroyed many monasteries, and most now stood empty. In the Swat valley, the old kingdom of Udyana, its 1,400 monasteries were mostly desolate, and Taxila was half-ruined. Kashmir was different. Its king welcomed him, more than 5,000 monks lived in over 100 monasteries, and he stayed two years, studying the scriptures with its learned monks.",
-        "es": "Para Xuanzang, la India empezaba en Lampaka, la actual Laghman. En Nagarahara, cerca de Jalalabad, dio la vuelta a una estupa de 300 pies que había construido Ashoka. Gandhara, con su capital en Purushapura (Peshawar), era la tierra de los grandes pensadores budistas Asanga y Vasubandhu, y describió allí la estupa de Kanishka con 400 pies de alto. Pero el budismo había decaído: un siglo antes, el rey huno Mihirakula había destruido muchos monasterios, y la mayoría estaban vacíos. En el valle de Swat, el antiguo reino de Udyana, sus 1400 monasterios estaban casi todos desiertos, y Taxila estaba medio en ruinas. Cachemira era distinta. Su rey lo recibió bien, más de 5000 monjes vivían en más de 100 monasterios, y se quedó dos años estudiando las escrituras con sus sabios monjes."
+        "en": "To Xuanzang, India began at Lampaka, in today's Laghman. At Nagarahara, near Jalalabad, he walked around a stupa 300 feet high that Ashoka had built. Gandhara, with its capital at Purushapura (Peshawar), was the land of the great Buddhist thinkers Asanga and Vasubandhu, and he described Kanishka's stupa there as 400 feet high. But Buddhism had declined: a century before, the Hun king Mihirakula had destroyed many monasteries, and most now stood empty. In the Swat valley, the old kingdom of Udyana, its 1,400 monasteries were mostly desolate, and Taxila, which he saw in 630, was half-ruined. Kashmir was different. Its king welcomed him, more than 5,000 monks lived in over 100 monasteries, and he stayed two years, studying the scriptures with its learned monks.",
+        "es": "Para Xuanzang, la India empezaba en Lampaka, la actual Laghman. En Nagarahara, cerca de Jalalabad, dio la vuelta a una estupa de 300 pies que había construido Ashoka. Gandhara, con su capital en Purushapura (Peshawar), era la tierra de los grandes pensadores budistas Asanga y Vasubandhu, y describió allí la estupa de Kanishka con 400 pies de alto. Pero el budismo había decaído: un siglo antes, el rey huno Mihirakula había destruido muchos monasterios, y la mayoría estaban vacíos. En el valle de Swat, el antiguo reino de Udyana, sus 1400 monasterios estaban casi todos desiertos, y Taxila, que vio en el 630, estaba medio en ruinas. Cachemira era distinta. Su rey lo recibió bien, más de 5000 monjes vivían en más de 100 monasterios, y se quedó dos años estudiando las escrituras con sus sabios monjes."
       },
       "camera": {
         "lon": 72.3,
@@ -1883,16 +1970,12 @@
               21.71
             ],
             [
-              71.88,
-              21.89
-            ],
-            [
-              72.27,
-              25.0
-            ],
-            [
               75.78,
               23.18
+            ],
+            [
+              71.88,
+              21.89
             ],
             [
               68.9,
@@ -2164,7 +2247,7 @@
           ],
           "place": {
             "en": "Kannauj, Uttar Pradesh, India",
-            "es": "Kannauj, Uttar Pradesh, India"
+            "es": "Kannauj, estado de Uttar Pradesh, India"
           },
           "text": {
             "en": "Emperor of Kannauj from 606 to 647 and the most powerful king of northern India, a patron of all faiths and a playwright. Xuanzang, who called him Shiladitya, praised his justice and generosity.",
@@ -2216,7 +2299,7 @@
           "date": "644",
           "place": {
             "en": "Prayagraj, Uttar Pradesh, India",
-            "es": "Prayagraj, Uttar Pradesh, India"
+            "es": "Prayagraj, estado de Uttar Pradesh, India"
           },
           "text": {
             "en": "Where the Ganges and the Yamuna meet, Harsha gave away his wealth every five years. For some scholars Xuanzang's account is the earliest record of the Kumbh Mela; others doubt it.",
@@ -2450,8 +2533,8 @@
             "es": "Jotán"
           },
           "at": [
-            79.92,
-            37.11
+            79.9327,
+            37.1012
           ],
           "cat": "city",
           "type": "place",
