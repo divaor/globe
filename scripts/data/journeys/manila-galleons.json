@@ -10,11 +10,11 @@
     "en": "Silver from Potosí and Zacatecas crossed the Pacific to Manila and China, and silk and porcelain came back: from 1565 to 1815 the Manila galleons made the first trade route around the whole world.",
     "es": "La plata de Potosí y Zacatecas cruzaba el Pacífico hasta Manila y China, y volvían la seda y la porcelana: de 1565 a 1815 el Galeón de Manila formó la primera ruta comercial que daba la vuelta al mundo."
   },
-  "camera": { "lon": -170.0, "lat": 15.0, "zoom": 1.0 },
+  "camera": { "lon": -165.0, "lat": 15.0, "zoom": 1.0 },
   "sides": [
     { "id": "galleon", "name": { "en": "The Manila galleon", "es": "El Galeón de Manila" }, "color": "#c0392b" },
     { "id": "fleets", "name": { "en": "The treasure fleets", "es": "Las flotas de Indias" }, "color": "#7d3c98" },
-    { "id": "road", "name": { "en": "The silver road (mules and llamas)", "es": "El camino de la plata (mulas y llamas)" }, "color": "#8e5a2b" },
+    { "id": "road", "name": { "en": "The silver road", "es": "El camino de la plata" }, "color": "#8e5a2b" },
     { "id": "expedition", "name": { "en": "Legazpi and Urdaneta", "es": "Legazpi y Urdaneta" }, "color": "#16a085" },
     { "id": "junks", "name": { "en": "Chinese junks", "es": "Juncos chinos" }, "color": "#d4a017" },
     { "id": "mita", "name": { "en": "The mita (forced labour)", "es": "La mita (trabajo forzado)" }, "color": "#5d6d7e" }
@@ -176,7 +176,7 @@
         "en": "Philip II ordered the expedition, and Legazpi, a Basque official who had lived in Mexico City for more than thirty years, spent his own fortune on it; over half of his soldiers were Mexicans, Criollos, Mestizos and Indigenous. After 93 days at sea they anchored at Guam, where they fought the Chamorro people and burned huts. In the Philippines they met hostility, because Portuguese raiders had enslaved about 1,000 Visayans in 1563. On Bohol, on 16 March 1565, Legazpi and Datu Sikatuna sealed their friendship with a blood compact, the Sandugo. At Cebu the Spanish attacked three days after landing, and on 4 June Rajah Tupas signed a treaty that accepted Spanish rule. Legazpi became the first governor of the Philippines.",
         "es": "Felipe II ordenó la expedición, y Legazpi, un funcionario vasco que llevaba más de treinta años viviendo en la Ciudad de México, gastó en ella su propia fortuna; más de la mitad de sus soldados eran mexicanos, criollos, mestizos e indígenas. Tras 93 días de mar fondearon en Guam, donde combatieron con el pueblo chamorro y quemaron chozas. En Filipinas los recibieron con hostilidad, porque en 1563 unos asaltantes portugueses habían esclavizado a unos 1000 bisayas. En Bohol, el 16 de marzo de 1565, Legazpi y Datu Sikatuna sellaron su amistad con un pacto de sangre, el Sandugo. En Cebú los españoles atacaron tres días después de desembarcar, y el 4 de junio Rajah Tupas firmó un tratado que aceptaba el dominio español. Legazpi fue el primer gobernador de Filipinas."
       },
-      "camera": { "lon": -170.0, "lat": 14.0, "zoom": 1.2 },
+      "camera": { "lon": -165.0, "lat": 15.0, "zoom": 1.0 },
       "moves": [
         {
           "side": "expedition",
@@ -196,7 +196,7 @@
       "places": [
         {
           "id": "miguel-lopez-de-legazpi",
-          "name": { "en": "Miguel López de Legazpi", "es": "Miguel López de Legazpi" },
+          "name": { "en": "Miguel López de Legazpi", "es": "López de Legazpi" },
           "at": [-104.6833, 19.2033],
           "cat": "traveller",
           "type": "person",
@@ -222,20 +222,6 @@
             "es": "El pueblo indígena de las islas Marianas, agricultores y navegantes austronesios. Los hombres de Legazpi los combatieron y quemaron chozas en Guam en 1565; España gobernó después las islas durante más de 300 años."
           },
           "wiki": { "en": "Chamorro people", "es": "Pueblo chamorro" }
-        },
-        {
-          "id": "sandugo",
-          "name": { "en": "The blood compact (Sandugo)", "es": "El pacto de sangre (Sandugo)" },
-          "at": [123.8545, 9.6474],
-          "cat": "encounter",
-          "type": "event",
-          "date": "1565-03-16",
-          "place": { "en": "Bohol, Philippines", "es": "Bohol, Filipinas" },
-          "text": {
-            "en": "On 16 March 1565 Legazpi and Datu Sikatuna, chief of Bohol, drank wine mixed with each other's blood to seal their friendship, following local custom. It is remembered as the first Filipino–Spanish treaty.",
-            "es": "El 16 de marzo de 1565, Legazpi y Datu Sikatuna, jefe de Bohol, bebieron vino mezclado con la sangre del otro para sellar su amistad, según la costumbre local. Se recuerda como el primer tratado entre filipinos y españoles."
-          },
-          "wiki": { "en": "Sandugo", "es": "Sandugo" }
         },
         {
           "id": "rajah-tupas",
@@ -265,7 +251,7 @@
         "en": "Ships had sailed west across the Pacific with the trade winds since Magellan, but every attempt to sail back had failed. Urdaneta, a Basque navigator who had spent eight years in the Spice Islands and become an Augustinian friar in Mexico, reasoned that the Pacific winds turned in a great circle, as in the Atlantic. The San Pedro, commanded by Legazpi's 17-year-old grandson Felipe de Salcedo, carried 200 men. On 18 September they sighted Santa Catalina Island off California and followed the coast south; by the end of the 129-day voyage scurvy had left only 18 men strong enough to sail. Alonso de Arellano's small San Lucas, which had left the fleet, had reached Mexico in August by a similar route, but Urdaneta's careful notes made the route his. The galleons followed it for 250 years.",
         "es": "Desde Magallanes los barcos cruzaban el Pacífico hacia el oeste con los alisios, pero todos los intentos de volver habían fracasado. Urdaneta, navegante vasco que había pasado ocho años en las islas de las Especias y se había hecho fraile agustino en México, pensó que los vientos del Pacífico giraban en un gran círculo, como en el Atlántico. El San Pedro, al mando de Felipe de Salcedo, nieto de Legazpi de 17 años, llevaba 200 hombres. El 18 de septiembre avistaron la isla Santa Catalina, frente a California, y siguieron la costa hacia el sur; al final de los 129 días de viaje, el escorbuto había dejado solo a 18 hombres con fuerzas para navegar. El pequeño San Lucas de Alonso de Arellano, que se había separado de la flota, había llegado a México en agosto por una ruta parecida, pero las notas cuidadosas de Urdaneta hicieron suya la ruta. Los galeones la siguieron durante 250 años."
       },
-      "camera": { "lon": -175.0, "lat": 24.0, "zoom": 1.2 },
+      "camera": { "lon": -165.0, "lat": 24.0, "zoom": 1.0 },
       "moves": [
         {
           "side": "expedition",
@@ -354,7 +340,7 @@
         "en": "By law all trade with the Americas had to pass through Seville, where the Casa de Contratación registered every cargo and the crown took a fifth of the silver. The New Spain fleet loaded Mexican silver at Veracruz. The Tierra Firme fleet took the silver of Potosí, which came by sea from Arica and Callao to Panama and by mule across the isthmus to Nombre de Dios. The two fleets met at Havana and sailed home together. In 1572 and 1573 the English privateer Francis Drake raided Nombre de Dios and ambushed a mule train loaded with silver. American silver made Spain the richest country in Europe for a time, but it also fed inflation, and much of it went to pay for wars.",
         "es": "Por ley, todo el comercio con América debía pasar por Sevilla, donde la Casa de Contratación registraba cada carga y la Corona se quedaba con la quinta parte de la plata. La flota de Nueva España cargaba la plata mexicana en Veracruz. La flota de Tierra Firme llevaba la plata de Potosí, que llegaba por mar desde Arica y El Callao a Panamá y cruzaba el istmo en mula hasta Nombre de Dios. Las dos flotas se reunían en La Habana y volvían juntas. En 1572 y 1573 el corsario inglés Francis Drake atacó Nombre de Dios y emboscó una recua cargada de plata. La plata americana hizo de España por un tiempo el país más rico de Europa, pero también alimentó la inflación, y gran parte se fue en pagar guerras."
       },
-      "camera": { "lon": -48.0, "lat": 17.0, "zoom": 1.6 },
+      "camera": { "lon": -53.0, "lat": 15.0, "zoom": 1.4 },
       "moves": [
         {
           "side": "road",
@@ -365,7 +351,7 @@
         },
         {
           "side": "fleets",
-          "path": [[-70.32, -18.48], [-71.4, -17.8], [-72.7, -17.0], [-74.6, -15.7], [-76.3, -13.9], [-77.15, -12.05], [-78.7, -9.4], [-80.0, -6.9], [-81.5, -5.1], [-81.2, -2.2], [-80.6, 0.0], [-79.3, 2.4], [-78.4, 4.9], [-79.0, 7.5], [-79.52, 8.95]],
+          "path": [[-70.32, -18.48], [-71.45, -17.85], [-72.75, -17.05], [-75.0, -15.95], [-76.6, -13.9], [-77.15, -12.05], [-79.0, -9.3], [-79.6, -8.3], [-80.4, -7.0], [-81.4, -6.0], [-81.6, -5.0], [-81.2, -2.2], [-80.6, 0.0], [-79.3, 2.4], [-78.4, 4.9], [-79.0, 7.5], [-79.52, 8.95]],
           "by": "sea",
           "icon": "🚢",
           "label": { "en": "The silver of Peru", "es": "La plata del Perú" }
@@ -588,7 +574,7 @@
         "en": "The galleons, built in the Philippines of local hardwoods, were among the largest ships of their time, and every space aboard was crammed with cargo. Eastward they carried silk cloth, porcelain, lacquerware, ivory, cloves and cinnamon, Indian cotton, Japanese screens and fans; enslaved people from across Asia, called chinos in Mexico, were sold there too. They left Manila in late June or July, threaded the islands to the San Bernardino Strait and sailed north to catch the Kuroshio and the westerlies. The voyage east took four to six months, and hunger, scurvy and storms killed many of the crew. From 1593 only two galleons a year were allowed.",
         "es": "Los galeones, construidos en Filipinas con maderas duras del lugar, estaban entre los barcos más grandes de su tiempo, y cada rincón iba repleto de carga. Hacia el este llevaban telas de seda, porcelana, lacas, marfil, clavo y canela, algodón de la India, biombos y abanicos japoneses; también personas esclavizadas de toda Asia, a las que en México llamaban chinos, que eran vendidas allí. Salían de Manila a fines de junio o en julio, atravesaban las islas hasta el estrecho de San Bernardino y subían al norte en busca de la corriente de Kuroshio y los vientos del oeste. El viaje al este duraba de cuatro a seis meses, y el hambre, el escorbuto y las tormentas mataban a muchos tripulantes. Desde 1593 solo se permitieron dos galeones al año."
       },
-      "camera": { "lon": -175.0, "lat": 24.0, "zoom": 1.2 },
+      "camera": { "lon": -165.0, "lat": 24.0, "zoom": 1.0 },
       "moves": [
         {
           "side": "galleon",
@@ -634,11 +620,11 @@
         {
           "id": "porcelain",
           "name": { "en": "Porcelain", "es": "Porcelana" },
-          "at": [117.1784, 29.269],
+          "at": [117.3, 24.3],
           "cat": "goods",
           "type": "goods",
           "date": "1573",
-          "place": { "en": "Made at Jingdezhen and Zhangzhou, China", "es": "Hecha en Jingdezhen y Zhangzhou, China" },
+          "place": { "en": "Made at Jingdezhen and at kilns near Zhangzhou, China", "es": "Hecha en Jingdezhen y en hornos cercanos a Zhangzhou, China" },
           "text": {
             "en": "Blue-and-white porcelain from the kilns of Jingdezhen and Zhangzhou crossed the Pacific by the shipload. Its shards are found from Mexico City to the beaches of Oregon.",
             "es": "La porcelana azul y blanca de los hornos de Jingdezhen y Zhangzhou cruzaba el Pacífico por barcos enteros. Sus fragmentos aparecen desde la Ciudad de México hasta las playas de Oregón."
@@ -672,7 +658,7 @@
         "en": "The westward voyage, with the trade winds and a stop at Guam, was shorter and easier than the way back. In China silver was worth far more than in the Americas: Ming paper money had failed, and the 'single whip' reform, spread across the empire in 1580, turned most taxes and labour duties into one payment in silver. In the early 1600s about three million pesos a year, some 94 tonnes, went from Manila to China, much of it through Yuegang, the only Chinese port where private overseas trade had been legal since 1567. The silver travelled as Spanish dollars, pieces of eight minted at Potosí, Lima and Mexico City, which became the first world currency, used in Europe, the Americas and East Asia.",
         "es": "El viaje hacia el oeste, con los alisios y una escala en Guam, era más corto y fácil que el de vuelta. En China la plata valía mucho más que en América: el papel moneda de los Ming había fracasado, y la reforma del «látigo único», extendida a todo el imperio en 1580, convirtió la mayoría de los impuestos y servicios de trabajo en un solo pago en plata. A comienzos del siglo XVII salían de Manila hacia China unos tres millones de pesos al año, unas 94 toneladas, en gran parte por Yuegang, el único puerto chino donde el comercio privado con el exterior era legal desde 1567. La plata viajaba en reales de a ocho acuñados en Potosí, Lima y la Ciudad de México, que fueron la primera moneda mundial, usada en Europa, América y Asia oriental."
       },
-      "camera": { "lon": -172.0, "lat": 17.0, "zoom": 1.2 },
+      "camera": { "lon": -165.0, "lat": 18.0, "zoom": 1.0 },
       "moves": [
         {
           "side": "galleon",
@@ -733,7 +719,7 @@
           "cat": "port",
           "type": "place",
           "date": "1567-01-17",
-          "place": { "en": "Haicheng, Zhangzhou, Fujian, China", "es": "Haicheng, Zhangzhou, Fujian, China" },
+          "place": { "en": "Haicheng, Zhangzhou, Fujian, China", "es": "Haicheng, en Zhangzhou, Fujian (China)" },
           "text": {
             "en": "A smugglers' harbour in Fujian that in 1567 became the only Chinese port where private overseas trade was legal. Its merchants sailed to Manila and brought home American silver, sweet potatoes, maize and tobacco.",
             "es": "Un puerto de contrabandistas en Fujian que en 1567 se convirtió en el único puerto chino donde el comercio privado con el exterior era legal. Sus mercaderes navegaban a Manila y traían plata americana, camotes, maíz y tabaco."
@@ -795,20 +781,6 @@
             "es": "La carta náutica de mercaderes chinos más antigua que se conserva de Asia oriental, hecha entre 1606 y 1624, más o menos. Sus rutas salen de Fujian hacia Nagasaki, el Sudeste Asiático y Manila."
           },
           "wiki": { "en": "Selden Map", "es": "Mapa de Selden" }
-        },
-        {
-          "id": "yuegang",
-          "name": { "en": "Yuegang (Moon Harbour)", "es": "Yuegang (Puerto de la Luna)" },
-          "at": [117.82, 24.43],
-          "cat": "port",
-          "type": "place",
-          "date": "1567-01-17",
-          "place": { "en": "Haicheng, Zhangzhou, Fujian, China", "es": "Haicheng, Zhangzhou, Fujian, China" },
-          "text": {
-            "en": "A smugglers' harbour in Fujian that in 1567 became the only Chinese port where private overseas trade was legal. Its merchants sailed to Manila and brought home American silver, sweet potatoes, maize and tobacco.",
-            "es": "Un puerto de contrabandistas en Fujian que en 1567 se convirtió en el único puerto chino donde el comercio privado con el exterior era legal. Sus mercaderes navegaban a Manila y traían plata americana, camotes, maíz y tabaco."
-          },
-          "wiki": { "en": "Yuegang", "es": "" }
         }
       ]
     },
@@ -823,7 +795,7 @@
         "en": "Filipino crewmen, many of them farmers, street children or vagrants seized for the job, made up most of the crews; the officers were Spaniards, many of them Basques. Hunger, cold, scurvy and storms killed many on the long voyage east, and in 1620 Philip III ordered merchants to give native crews proper clothing. Those who left the ships at Acapulco married local women and settled along the Pacific coast, at Coyuca, once called 'Filipino town', and in Colima, where they made tubâ, palm wine, and planted coconuts. In Mexico both free Filipinos and enslaved people from across Asia were called chinos. Their descendants live on: a 2018 study found Filipino ancestry in about a third of the people of Guerrero.",
         "es": "Los tripulantes filipinos, muchos de ellos campesinos, niños de la calle o vagabundos reclutados a la fuerza, formaban la mayor parte de las tripulaciones; los oficiales eran españoles, muchos de ellos vascos. El hambre, el frío, el escorbuto y las tormentas mataban a muchos en el largo viaje al este, y en 1620 Felipe III ordenó a los mercaderes dar ropa adecuada a las tripulaciones nativas. Los que dejaban los barcos en Acapulco se casaban con mujeres del lugar y se asentaban en la costa del Pacífico, en Coyuca, a la que llegaron a llamar «pueblo filipino», y en Colima, donde hacían tuba, vino de palma, y plantaban cocoteros. En México, tanto a los filipinos libres como a las personas esclavizadas de toda Asia las llamaban chinos. Sus descendientes siguen allí: un estudio de 2018 encontró ascendencia filipina en cerca de un tercio de la gente de Guerrero."
       },
-      "camera": { "lon": -175.0, "lat": 26.0, "zoom": 1.2 },
+      "camera": { "lon": -155.0, "lat": 25.0, "zoom": 1.0 },
       "moves": [
         {
           "side": "galleon",
@@ -875,7 +847,7 @@
         "en": "The galleons sailed overloaded, late in the season or in poor repair, and the typhoons of the western Pacific were deadly: twenty were wrecked in the Philippines alone. In 1596 the San Felipe was driven onto the coast of Japan; the local lord seized its rich cargo, and fear of Spanish plans led Toyotomi Hideyoshi to crucify 26 Christians at Nagasaki. The Santo Cristo de Burgos probably lost its way after damage or sickness and drifted far north. Tillamook and Clatsop oral histories remember the wreck near Nehalem Bay and its survivors, and lumps of its beeswax, meant for church candles, turned up on the beaches for two centuries. In wartime English and Dutch raiders hunted the galleons, and 26 were captured or sunk; Thomas Cavendish took the Santa Ana in 1587 and George Anson the Covadonga in 1743.",
         "es": "Los galeones navegaban sobrecargados, tarde en la temporada o mal reparados, y los tifones del Pacífico occidental eran mortales: veinte naufragaron solo en Filipinas. En 1596 el San Felipe encalló en la costa de Japón; el señor local se quedó con su rica carga, y el temor a los planes españoles llevó a Toyotomi Hideyoshi a crucificar a 26 cristianos en Nagasaki. El Santo Cristo de Burgos probablemente perdió el rumbo por averías o enfermedades y fue a la deriva muy al norte. Las historias orales de los tillamook y los clatsop recuerdan el naufragio cerca de la bahía de Nehalem y a sus sobrevivientes, y durante dos siglos aparecieron en las playas trozos de su cera, destinada a las velas de las iglesias. En tiempos de guerra, corsarios ingleses y holandeses cazaban los galeones, y 26 fueron capturados o hundidos; Thomas Cavendish tomó el Santa Ana en 1587 y George Anson el Covadonga en 1743."
       },
-      "camera": { "lon": -168.0, "lat": 33.0, "zoom": 1.3 },
+      "camera": { "lon": -160.0, "lat": 33.0, "zoom": 1.1 },
       "moves": [
         {
           "side": "galleon",
@@ -958,7 +930,7 @@
       "places": [
         {
           "id": "gemelli-careri",
-          "name": { "en": "Giovanni Francesco Gemelli Careri", "es": "Giovanni Francesco Gemelli Careri" },
+          "name": { "en": "Gemelli Careri", "es": "Gemelli Careri" },
           "at": [-99.8825, 16.8636],
           "cat": "traveller",
           "type": "person",
@@ -987,7 +959,7 @@
         },
         {
           "id": "catarina-de-san-juan",
-          "name": { "en": "Catarina de San Juan", "es": "Catarina de San Juan" },
+          "name": { "en": "Catarina de San Juan, the China Poblana", "es": "Catarina de San Juan, la China Poblana" },
           "at": [-98.1983, 19.0414],
           "cat": "encounter",
           "type": "person",
@@ -1031,7 +1003,7 @@
         "en": "For 250 years the galleons had tied Asia, the Americas and Europe into one trade, and many historians date the birth of a global economy to the founding of Manila in 1571. In 1810 the insurgent priest José María Morelos burned Acapulco. Spain's parliament, the Cortes of Cádiz, meeting during the war against Napoleon, decreed the end of the route in 1813, and King Ferdinand VII confirmed it the next year. Mexico became independent in 1821, and the Philippines were then ruled directly from Madrid. The galleons left behind Mexican words and crops in the Philippines, Filipino ones in Mexico, and Chinese porcelain on both sides of the Pacific; today Mexico and the Philippines are preparing to nominate the route as a World Heritage Site.",
         "es": "Durante 250 años los galeones habían unido Asia, América y Europa en un solo comercio, y muchos historiadores sitúan el nacimiento de una economía mundial en la fundación de Manila en 1571. En 1810 el cura insurgente José María Morelos incendió Acapulco. El parlamento de España, las Cortes de Cádiz, reunidas durante la guerra contra Napoleón, decretó el fin de la ruta en 1813, y el rey Fernando VII lo confirmó al año siguiente. México se independizó en 1821, y Filipinas pasó a ser gobernada directamente desde Madrid. Los galeones dejaron palabras y cultivos mexicanos en Filipinas, filipinos en México y porcelana china a ambos lados del Pacífico; hoy México y Filipinas preparan la candidatura de la ruta a Patrimonio de la Humanidad."
       },
-      "camera": { "lon": -172.0, "lat": 15.0, "zoom": 1.2 },
+      "camera": { "lon": -165.0, "lat": 15.0, "zoom": 1.0 },
       "moves": [
         {
           "side": "galleon",
