@@ -7,6 +7,7 @@ import { TimeTravel } from './modes';
 import { STORY_KINDS, storyHashKey } from './modes/stories';
 import { Tools } from './tools/tools';
 import { Learn } from './learn/learn';
+import { registerScriptFonts } from './app/scriptFonts';
 import { PersonalMaps } from './personal/personal';
 import { Compare } from './compare/compare';
 
@@ -45,6 +46,8 @@ async function boot() {
   await app.start();
   document.getElementById('splash')?.classList.add('hide');
   setTimeout(() => document.getElementById('splash')?.remove(), 900);
+  // The fonts for rare scripts: only registered here (a small list); a file is fetched when a letter shows.
+  setTimeout(() => void registerScriptFonts(), 2500);
   app.emit('layers');
   if (!localStorage.getItem('atlas-globe:hinted')) {
     shell.toast(app.lang === 'es' ? 'Arrastra para girar · pellizca para acercar · toca un país' : 'Drag to spin · pinch to zoom · tap a country', 5000);

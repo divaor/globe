@@ -86,6 +86,7 @@ SOL Somaliland, CYN Northern Cyprus; Taiwan TWN, Western Sahara ESH and Palestin
 | `languages` | culture | list | 251 | mledoze/countries (github.com/mledoze/countries) | ODbL-1.0 |
 | `language_family` | culture | category | 251 | compiled | CC0-1.0 (compiled facts) |
 | `language_branch` | culture | category | 251 | compiled | CC0-1.0 (compiled facts) |
+| `script` | culture | category | 251 | compiled | CC0-1.0 (compiled facts) |
 | `start_of_week` | culture | category | 252 | Unicode CLDR 49 (cldr-json npm packages) | Unicode-3.0 |
 | `measurement_system` | culture | category | 252 | Unicode CLDR 49 (cldr-json npm packages) | Unicode-3.0 |
 | `clock_format` | culture | category | 252 | Unicode CLDR 49 (cldr-json npm packages) | Unicode-3.0 |
@@ -168,6 +169,9 @@ Compiled by hand from well-established facts (no invented precise numbers):
 
 * `language_family`, `language_branch` – standard genealogical classification of each official
   language (Glottolog/Ethnologue top-level families; creoles, pidgins and sign languages grouped).
+* `script` – the script each official language is officially written in (`LANG_SCRIPT` in
+  `compiled_languages.py`), for the first language in `languages`; the Writing systems filter. Countries that
+  use more than one script are named in the field's note.
 * `languages`: Austria and Switzerland use German (`deu`) instead of mledoze's dialect codes
   (`bar`, `gsw`).
 * main-language order in `languages` – CLDR speaker shares, with hand adjustments where a lingua

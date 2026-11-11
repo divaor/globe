@@ -16,6 +16,8 @@ export const CURATED: Record<string, Curated> = {
   income_group: { icon: '💼', order: ['high', 'upper-middle', 'lower-middle', 'low'], colors: { high: '#1a9850', 'upper-middle': '#a6d96a', 'lower-middle': '#fdae61', low: '#d73027' } },
   currency: { icon: '💱' }, vat_rate: { skip: true }, top_export: { icon: '📦' }, top_export_partner: { icon: '🤝' }, unesco_sites: { icon: '🏛️', palette: P.ylorrd },
   languages: { skip: true }, language_family: { skip: true }, language_branch: { skip: true }, start_of_week: { icon: '📅' },
+  script: { icon: '✍️', keywords: 'writing system script alphabet letters abc cyrillic arabic chinese characters hangul alfabeto escritura letras cirílico caracteres',
+    order: ['latin', 'cyrillic', 'greek', 'armenian', 'georgian', 'arabic', 'hebrew', 'thaana', 'geez', 'devanagari', 'bengali', 'sinhala', 'tibetan', 'burmese', 'thai', 'lao', 'khmer', 'han', 'japanese', 'hangul'] },
   measurement_system: { icon: '📏', colors: { metric: '#4dabf7', imperial: '#ff6b6b', mixed: '#ffd43b' } }, clock_format: { icon: '🕐' },
   religion: { icon: '🛐' }, religion_pct: { skip: true }, national_colors: { skip: true }, continent: { skip: true }, subregion: { icon: '🧭' },
   area_km2: { icon: '📐', palette: P.ylgnbu }, landlocked: { icon: '🏜️', colors: { yes: '#e8590c', no: '#74c0fc' } }, borders: { skip: true },

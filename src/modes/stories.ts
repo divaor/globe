@@ -20,6 +20,7 @@ import { t, tx, lang, fmtNumber, fmtCompact, flagEmoji } from '../app/i18n';
 import { h, icon, clear } from '../ui/dom';
 import { continentSwatch, mix } from '../engine/colors';
 import { loadPaleo, fmtLat, unitName, type PaleoWorld, type Unit } from './paleo';
+import { SCRIPT_FONT, loadGlyphs, registerScriptFonts, isVertical } from '../app/scriptFonts';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { LayerDef, RenderCtx } from '../layers/types';
@@ -45,6 +46,8 @@ export interface Item {
   until?: string; tu?: number;
   type?: string; country?: string; place?: Text; text: Text; details?: Text; why?: Text; how?: Text; by?: Text; size?: Text; status?: Text;
   facts?: { label: Text; value: Text }[]; wiki?: Text;
+  /** Text in the item's own script, shown large on its card: a script's first letters, a word, an inscription. */
+  sample?: Sample;
   /** A Wikimedia Commons file for the card, when the article has no picture of its own. */
   img?: string;
   /** Games of the world, a Games' host marker: the top four of its medal table or final ranking. */
@@ -55,6 +58,17 @@ export interface Item {
   first: number;
 }
 export interface Cat { id: string; name: Text; icon: string; color: string }
+/** An item's sample: the text, how it reads in Latin letters, and what it means. */
+export interface Sample { text: string; latin?: string; means?: Text }
+
+/** A sample as the card shows it: large, in the script fonts, with its reading and meaning. */
+export function sampleEl(sm: Sample): HTMLElement {
+  void registerScriptFonts();
+  return h('div', { class: 'item-sample' },
+    h('div', { class: `sample-text${isVertical(sm.text) ? ' vertical' : ''}`, dir: 'auto' }, sm.text),
+    sm.latin ? h('div', { class: 'sample-latin' }, sm.latin) : null,
+    sm.means ? h('div', { class: 'sample-means' }, `“${tx(sm.means)}”`) : null);
+}
 /** Games of the world: a team at a Games (a country, or a team such as the Soviet Union or England). */
 export interface Team {
   /** Its code (IOC or FIFA). */
@@ -107,8 +121,8 @@ export interface CollectionItem extends Omit<Item, 'first'> {
 }
 
 /** The collections of stories. */
-export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys';
-export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys'];
+export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing';
+export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing'];
 /** `paleo`: its old steps are drawn on the continents of their age. */
 const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text; paleo?: boolean }> = {
   wars: { dir: 'conflicts', hash: 'war', icon: '⚔️', name: { en: 'Wars and conquests', es: 'Guerras y conquistas' } },
@@ -119,6 +133,8 @@ const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: 
   life: { dir: 'life', hash: 'life', icon: '🦕', name: { en: 'Life through time', es: 'La vida en el tiempo' }, paleo: true },
   games: { dir: 'games', hash: 'games', icon: '🏅', name: { en: 'Games of the world', es: 'Juegos del mundo' } },
   journeys: { dir: 'journeys', hash: 'journeys', icon: '🧭', name: { en: 'Journeys and trade routes', es: 'Viajes y rutas comerciales' } },
+  beliefs: { dir: 'beliefs', hash: 'beliefs', icon: '🛐', name: { en: 'Religions and philosophies', es: 'Religiones y filosofías' } },
+  writing: { dir: 'writing', hash: 'writing', icon: '✍️', name: { en: 'Writing and languages', es: 'Escritura y lenguas' } },
 };
 export const storyHashKey = (k: StoryKind) => KINDS[k].hash;
 interface Area extends Shape { lp: Pt; area: number }
@@ -338,6 +354,9 @@ export class StoryMode {
     if (!this.active) await this.enterMode();
     this.stop();
     this.c = c;
+    // Markers may show a script's letter (𐤀, Ꭰ...): fetch its font, then draw again.
+    const letters = (c.items ?? []).map((it) => it.icon).join('');
+    if (/[^\u0000-\u052f\u2000-\u2bff\ufe0f\u{1f000}-\u{1faff}]/u.test(letters)) void loadGlyphs(letters).then((ok) => { if (ok && this.c === c) this.app.renderer.requestRender(); });
     this.areas = new Map(shapesFrom(topo, 'areas').map((s) => [Number(s.id), { ...s, ...labelPoint(s.feature) }]));
     this.step = Math.max(0, Math.min(c.steps.length - 1, at)); this.prev = -1;
     this.textOpen = false;
@@ -1049,7 +1068,7 @@ export class StoryMode {
     ctx.beginPath(); ctx.arc(p[0], p[1], r, 0, Math.PI * 2);
     ctx.fillStyle = rc.theme.dark ? '#1b2230' : '#ffffff'; ctx.fill();
     ctx.lineWidth = small ? 1.8 : 2.8; ctx.strokeStyle = col; ctx.stroke();
-    ctx.font = `${Math.round((small ? 9.5 : 13.5) * s)}px system-ui, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif`;
+    ctx.font = `${Math.round((small ? 9.5 : 13.5) * s)}px ${SCRIPT_FONT}, system-ui, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif`;
     ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
     ctx.fillText(it.icon, p[0], p[1] + 0.5);
     ctx.restore();
@@ -1218,7 +1237,7 @@ export class StoryMode {
     const sub = [cat ? `${cat.icon} ${tx(cat.name)}` : '', c ? tx(c.name) : ''].filter(Boolean).join(' · ');
     // A Games' host city: its medal table (or a World Cup's last four) under the facts.
     const g = it.type === 'games' ? c?.steps.find((st) => st.games && `games-${st.games.id}` === it.id)?.games : undefined;
-    const table = g ? this.standings(g, g.kind === 'wc' || g.kind === 'wwc' ? 4 : 10) : null;
+    const table = g ? this.standings(g, g.kind === 'wc' || g.kind === 'wwc' ? 4 : 10) : it.sample ? sampleEl(it.sample) : null;
     this.shell.card.showCustom(it.icon, tx(it.name), sub, rows, links, notes, this.wikiThumb(it), table);
   }
 

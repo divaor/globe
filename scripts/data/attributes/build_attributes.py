@@ -784,6 +784,9 @@ for iso in KEYS:
     if fam:
         put(iso, 'language_family', fam[0])
         put(iso, 'language_branch', fam[1])
+    script = CL.LANG_SCRIPT.get(codes[0])
+    if script:
+        put(iso, 'script', script)
 lang_cats = {}
 for code in sorted(lang_used):
     cc = lang_cldr_code(code)
@@ -802,6 +805,13 @@ field('language_family', 'Language family (main language)', 'Familia lingüísti
       note='Family of the first language in "languages" (standard classification).')
 field('language_branch', 'Language branch (main language)', 'Rama lingüística (lengua principal)', 'culture', 'category', 'compiled',
       categories={k: {'en': v[0], 'es': v[1]} for k, v in CL.BRANCH_NAMES.items() if k in br_used})
+sc_used = {v['script'] for v in DATA.values() if 'script' in v}
+field('script', 'Writing system (main language)', 'Sistema de escritura (lengua principal)', 'culture', 'category', 'compiled',
+      categories={k: {'en': v[0], 'es': v[1], 'emoji': v[2], 'color': v[3]} for k, v in CL.SCRIPT_NAMES.items() if k in sc_used},
+      note='Script of the first language in "languages", as it is officially written. Several countries use more than one: '
+           'Serbia and Montenegro (Cyrillic and Latin), Kazakhstan (moving from Cyrillic to Latin), Mongolia (Cyrillic and the '
+           'traditional Mongolian script), Morocco and Algeria (Arabic, and Tifinagh or Latin for Amazigh), and many countries '
+           'with English or French in Latin letters beside a language of their own.')
 
 # ------------------------------------------------------------------ currencies
 def cldr_current_currencies(a2):

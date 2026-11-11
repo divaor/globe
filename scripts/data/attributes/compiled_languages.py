@@ -220,3 +220,46 @@ LANG_FIX = {
     'AUT': ['deu'],                       # mledoze: Austro-Bavarian (bar); official language is German
     'CHE': ['deu', 'fra', 'ita', 'roh'],  # mledoze: Swiss German (gsw); official is (Standard) German
 }
+
+# Writing systems: the script each language is officially written in (`script` field, the Writing systems filter).
+# Sign languages have none. Where a language uses two scripts the usual one comes first in the note of the field.
+_SCRIPT_LANGS = {
+    'latin': 'afr aym aze bis bjz bos bwg cal cat ces cha cnr crs dan deu eng est fao fij fil fin fra gil gle glv grn hat her '
+             'hgm hif hmo hrv hun ind isl ita jam kal kck khi kin kon kwn lat lav lin lit loz ltz lua mah mfe mlg mlt mri msa '
+             'nau nbl ndc nde ndo nfr niu nld nno nob nor nrf nso nya pap pau pih pol por pov que rar roh ron run sag slk slv '
+             'smi smo sna som sot spa sqi ssw swa swe tet tkl toi ton tpi tsn tso tuk tur tvl uzb ven vie xho zdj zul',
+    'cyrillic': 'bel bul kaz kir mkd mon rus srp tgk ukr',
+    'arabic': 'ara ckb mey prs fas pus urd',
+    'hebrew': 'heb', 'syriac': 'arc', 'greek': 'ell', 'armenian': 'hye', 'georgian': 'kat', 'geez': 'amh tir',
+    'devanagari': 'hin nep', 'bengali': 'ben', 'tamil': 'tam', 'sinhala': 'sin', 'thaana': 'div', 'tibetan': 'dzo',
+    'thai': 'tha', 'lao': 'lao', 'khmer': 'khm', 'burmese': 'mya', 'han': 'zho', 'japanese': 'jpn', 'hangul': 'kor',
+    'tifinagh': 'ber',
+}
+LANG_SCRIPT = {code: script for script, codes in _SCRIPT_LANGS.items() for code in codes.split()}
+
+# id -> (English, Spanish, a letter of the script for the legend, colour). Neighbours get distinct colours.
+SCRIPT_NAMES = {
+    'latin': ('Latin', 'Latino', 'A', '#3d7ec9'),
+    'cyrillic': ('Cyrillic', 'Cirílico', 'Ж', '#8e44ad'),
+    'greek': ('Greek', 'Griego', 'Ω', '#17a589'),
+    'armenian': ('Armenian', 'Armenio', 'Ա', '#5d6d7e'),
+    'georgian': ('Georgian', 'Georgiano', 'ა', '#48c9b0'),
+    'arabic': ('Arabic', 'Árabe', 'ع', '#27ae60'),
+    'hebrew': ('Hebrew', 'Hebreo', 'א', '#f1c40f'),
+    'syriac': ('Syriac', 'Siríaco', 'ܐ', '#7d6608'),
+    'thaana': ('Thaana', 'Thaana', 'ތ', '#0e6655'),
+    'geez': ("Ge'ez (Ethiopic)", "Ge'ez (etíope)", 'ሀ', '#b9770e'),
+    'devanagari': ('Devanagari', 'Devanagari', 'अ', '#e67e22'),
+    'bengali': ('Bengali', 'Bengalí', 'অ', '#c0392b'),
+    'tamil': ('Tamil', 'Tamil', 'த', '#d98880'),
+    'sinhala': ('Sinhala', 'Cingalés', 'අ', '#e84393'),
+    'tibetan': ('Tibetan', 'Tibetano', 'ཀ', '#6e2c00'),
+    'burmese': ('Burmese', 'Birmano', 'က', '#d4ac0d'),
+    'thai': ('Thai', 'Tailandés', 'ก', '#ec7063'),
+    'lao': ('Lao', 'Lao', 'ກ', '#7dcea0'),
+    'khmer': ('Khmer', 'Jemer', 'ក', '#5b2c6f'),
+    'han': ('Chinese characters', 'Caracteres chinos', '字', '#922b21'),
+    'japanese': ('Japanese (kanji and kana)', 'Japonés (kanji y kana)', 'あ', '#f1948a'),
+    'hangul': ('Hangul (Korean)', 'Hangul (coreano)', '한', '#1abc9c'),
+    'tifinagh': ('Tifinagh', 'Tifinag', 'ⵣ', '#a04000'),
+}
