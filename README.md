@@ -25,7 +25,8 @@ spinning full-screen as an ambient display. English and Spanish.
 - **Filter stack:** turn on several filters, set opacity and order; each has a legend (tap an entry to highlight
   its countries) and values in the country card. Filters include:
   - Political: time zones with live clocks, alliances (EU, NATO, G20, BRICS…), government, independence…
-  - People: population, density glow, life expectancy, median age, languages (main / family / branch), religion…
+  - People: population, density glow, life expectancy, median age, languages (main / family / branch), writing
+    systems (the script of each country's main language, with a letter of each), religion…
   - Climate & weather: Köppen climate zones, temperature, rainfall, sea temperature, animated winds.
   - Landforms & water: mountain ranges, deserts, plateaus, peaks, rivers and lakes, shaded relief, elevation.
   - Flora & fauna: vegetation zones, forest cover, animal realms with the Wallace Line, 60 iconic animals,
@@ -81,15 +82,29 @@ spinning full-screen as an ambient display. English and Spanish.
     the South Pole; the Silk Road, the incense and spice routes, gold and salt across the Sahara, silver and the
     Manila galleons, and the Atlantic slave trade, told plainly with the Slave Voyages numbers and the
     resistance. The peoples met are named, with the guides and interpreters the journeys depended on.
+  - Religions and philosophies: 10 stories, 159 steps and 482 items. Where the faiths and schools of thought
+    began and how they spread, told plainly and with respect: what believers hold is given as their belief
+    ("Muslims believe…", "by tradition"), and debated dates are given as debated. Hinduism, Judaism, Buddhism,
+    the first philosophers of Greece, India and China, Confucius, the Dao and the kami, Christianity, Islam,
+    Sikhism, and the African faiths carried to the Americas; and a time tour of the world's faiths from Göbekli
+    Tepe to today, with today's numbers of believers from the Pew Research Center (2020).
+  - Writing and languages: 9 stories, 139 steps and 357 items. The separate inventions of writing in
+    Mesopotamia, Egypt, China and Mesoamerica, the alphabet's journey from Egyptian pictures to Unicode, the
+    characters of East Asia, scripts made by one person (Hangul, Cherokee, N'Ko…), the code breakers and the
+    scripts still unread, the world's language families, the Indo-European languages, the Bantu expansion, and
+    Spanish from Latin to the world. 161 cards show a sample in its own script (cuneiform, hieroglyphs,
+    Phoenician, Brahmi, Mongolian in columns…), drawn with small font files that are fetched only for the
+    letters on screen.
   - Browse and search every item of a story or a whole collection; shared links open a story at its step.
 - **Explore:** measure distances (great circles, flight time), compare two countries, "true size" of countries.
 - **Learn & play:** quizzes (find the country, flags, capitals, states and provinces of 48 countries, where in
   the world, when was it built or made, dishes of the world, which era, which civilization, which geologic
-  period, who won, guess the link between two country facts, which journey), each ending with every answer and
-  its picture; guided tours (our planet, eight cities through time, history and culture, Out of Africa, capitals
-  of the ancient world, the dinosaur trail, the five mass extinctions, Olympic cities, World Cup finals, the
-  Winter Games, great races, along the Silk Road, around the world under sail, to the ends of the Earth, gold,
-  silver and spices); "On this day" (Wikipedia).
+  period, who won, guess the link between two country facts, which journey, which faith, which script, which
+  language family), each ending with every answer and its picture; guided tours (our planet, eight cities
+  through time, history and culture, Out of Africa, capitals of the ancient world, the dinosaur trail, the five
+  mass extinctions, Olympic cities, World Cup finals, the Winter Games, great races, along the Silk Road, around
+  the world under sail, to the ends of the Earth, gold, silver and spices, holy places, pilgrims' ways, writing
+  is born, code breakers, the story of the alphabet, languages of the world); "On this day" (Wikipedia).
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Ambient mode:** full-screen rotating globe with your filters, screen kept awake, clock, optional filter cycling.
 
@@ -139,7 +154,10 @@ loaded from Wikipedia when a card opens, or a Wikimedia Commons file named by th
 dates, nations, athletes, medal table or World Cup ranking, and who boycotted or was kept out, are read from
 Wikipedia's articles on that Games (`scripts/data/games/README.md`, with the revisions read). The Journeys and
 trade routes stories are written from the Wikipedia articles listed in each story; the numbers of the Atlantic
-slave trade are those of the Trans-Atlantic Slave Trade Database (SlaveVoyages), as Wikipedia reports them.
+slave trade are those of the Trans-Atlantic Slave Trade Database (SlaveVoyages), as Wikipedia reports them. The Religions and
+philosophies and Writing and languages stories are written from the Wikipedia articles listed in each story.
+The script samples use subsets of the Noto fonts (SIL Open Font License 1.1) and, for rare Chinese characters,
+Jigmo (CC0), made by `scripts/data/build-fonts.mjs` (`public/data/fonts/`, with the licence in `OFL.txt`).
 
 ## Licence
 
