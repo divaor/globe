@@ -89,7 +89,8 @@ across all of them.
 - **Journeys:** traveller (explorers, merchants, pilgrims, sailors, guides), city (cities and courts), port, caravan
   (oases, caravanserais, desert and mountain stations), ship (ships and fleets), goods (silk, spices, gold, salt,
   silver, porcelain...), encounter (peoples and rulers met), discovery (discoveries and science), book (the books
-  and maps journeys left), nature (passes, capes, straits, rivers, glaciers), ice (polar camps, depots, the Poles),
+  and maps journeys left), nature (passes, capes, straits, rivers, glaciers), camp (camps, forts and winter quarters),
+  ice (polar camps, depots, the Poles),
   slavery (forts, ports, markets and ships of the slave trade), resistance (revolts, maroons, abolition), event
   (turning points: a landing, a death, a shipwreck).
 
