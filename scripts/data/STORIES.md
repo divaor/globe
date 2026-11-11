@@ -1,6 +1,6 @@
-# Eras and ideas, Food through time, Great structures, Peoples and civilizations, Life through time, Games of the world, Journeys and trade routes: authoring guide
+# Eras and ideas, Food through time, Great structures, Peoples and civilizations, Life through time, Games of the world, Journeys and trade routes, Religions and philosophies, Writing and languages: authoring guide
 
-Seven time-travel collections share the story format of Wars and conquests:
+Nine time-travel collections share the story format of Wars and conquests:
 
 | Collection | Folder | What a story shows |
 |---|---|---|
@@ -11,6 +11,8 @@ Seven time-travel collections share the story format of Wars and conquests:
 | Life through time | `scripts/data/life/` | the story of life on the drifting continents: first life, fossils, extinctions, dinosaurs, mammals, the Ice Age, tamed animals, species then and now (see [Life through time](#life-through-time) below) |
 | Games of the world | `scripts/data/games/` | every Summer and Winter Olympics and every men's and women's World Cup, with the countries that took part, medals, champions and boycotts; the Tour de France and the great marathons (see [Games of the world](#games-of-the-world) below) |
 | Journeys and trade routes | `scripts/data/journeys/` | great journeys followed leg by leg (Marco Polo, Ibn Battuta, Zheng He, Cook, the race to the Poles...) and the trade routes that carried silk, spices, gold, salt and silver, and enslaved people across the Atlantic (see [Journeys and trade routes](#journeys-and-trade-routes) below) |
+| Religions and philosophies | `scripts/data/beliefs/` | where faiths and schools of thought began and how they spread, told neutrally: founders and teachers, sacred places, texts, missions and pilgrimages, councils and reforms, persecutions, and where each is followed today (see [Religions and philosophies](#religions-and-philosophies) below) |
+| Writing and languages | `scripts/data/writing/` | the separate inventions of writing, how scripts spread and changed, the people who made and deciphered them, and how the great language families spread (see [Writing and languages](#writing-and-languages) below) |
 
 **Read `scripts/data/conflicts/README.md` first.** It covers dates, the camera, sides and their territory
 (`control` with area expressions), `moves` (routes), `events`, `aftermath` and sources, which work the
@@ -43,7 +45,7 @@ same here. `structures/seven-wonders.json` is a complete example that uses the c
 | `at` | `[lon, lat]`, precise (4 decimals) for buildings and sites; for a person, where the step's work happened |
 | `cat` | a category id from `_collection.json` (below) |
 | `icon` | optional emoji; defaults to the category's (✍️ for a writer, 🎭 for a theatre...) |
-| `type` | optional: `person`, `work`, `place`, `invention`, `event`, `site`, `dish`, `crop`, `animal`, `structure`, `institution`, `fossil` (a fossil find), `culture` (a civilization or people as a whole), `species` (a living or extinct kind of organism), `ship`, `goods` (a traded good) (quizzes use it) |
+| `type` | optional: `person`, `work`, `place`, `invention`, `event`, `site`, `dish`, `crop`, `animal`, `structure`, `institution`, `fossil` (a fossil find), `culture` (a civilization or people as a whole), `species` (a living or extinct kind of organism), `ship`, `goods` (a traded good), `script` (a writing system), `language` (a language or a family of languages) (quizzes use it) |
 | `date` | when it happened or was made: a work's creation, an invention, a dish's first record, the start of a building. Dates older than 10,000 BC are written as years ago (14,400 years ago is `-14400`, 3.2 million years ago is `-3200000`); the app shows them as "14,400 years ago" |
 | `end` | optional: when it was finished (a building, a long work) |
 | `until` | optional: when it stopped existing (a civilization's fall, a city abandoned, a building lost). The card shows `date`–`until`, and a time tour takes it off the map after `until` |
@@ -57,6 +59,7 @@ same here. `structures/seven-wonders.json` is a complete example that uses the c
 | `country` | optional: ISO A3 code of today's country of origin (dishes above all: the dish quiz uses it) |
 | `wiki` | `{ "en": "Article title", "es": "Título del artículo" }`: the **exact** titles of the Wikipedia articles (the card shows their picture). Check that both exist, for example `https://en.wikipedia.org/api/rest_v1/page/summary/Mona_Lisa` and `https://es.wikipedia.org/api/rest_v1/page/summary/La_Gioconda`. |
 | `img` | Optional. A Wikimedia Commons file name such as `"Pane di Pompei.jpg"` (no `File:`), for the card's picture when neither article has a lead picture of its own (the summary address above then has no `thumbnail`). It is used before the articles' picture. |
+| `sample` | Optional. Some text in the item's own script, shown large on its card: `{ "text": "𐤀𐤁𐤂𐤃", "latin"?: "ʾalp bēt gaml dalt", "means"?: { "en", "es" } }`. `text` is 1–40 characters, `latin` how it reads in Latin letters, `means` what it means. For scripts, languages, inscriptions and books (see [Writing and languages](#writing-and-languages)). |
 
 A step usually shows 2–8 items; a story has 8–16 steps (up to about 20 for a big time tour) and 30–80 items.
 
@@ -93,6 +96,16 @@ across all of them.
   ice (polar camps, depots, the Poles),
   slavery (forts, ports, markets and ships of the slave trade), resistance (revolts, maroons, abolition), event
   (turning points: a landing, a death, a shipwreck).
+- **Religions and philosophies:** founder (founders, prophets and teachers), thinker (philosophers and scholars), monk
+  (monks, nuns and missionaries), sacred (sacred places and temples), text (sacred texts and books), learning (schools,
+  monasteries, universities), pilgrimage (pilgrimages and festivals), spread (missions and conversions), ruler (rulers
+  and states), council (councils, schisms and reforms), persecution (persecution and conflict), community
+  (communities and diaspora), ancient (ancient rites and gods), art (art and music), event (turning points).
+- **Writing and languages:** script (writing systems), inscription (inscriptions and tablets), book (books and
+  manuscripts), printing (paper and printing), person (scribes, inventors and scholars), decipher (code breakers),
+  language (languages), homeland (homelands and origins), city (cities and centres of learning), ruler (rulers and
+  states), grammar (grammars and dictionaries), revival (languages lost and revived), code (codes and new media:
+  Braille, Morse, Unicode), event (turning points).
 
 Don't add or rename categories without asking. Only one person edits a `_collection.json` at a time.
 
@@ -232,3 +245,74 @@ World Cup names it with `"games"`, and the build adds the rest from Wikipedia's 
   the conditions of the Middle Passage, the resistance (revolts on ships, maroons, the Haitian Revolution), the
   long road to abolition, and its legacy; no euphemisms ("enslaved people", not "slaves" as a label for a people;
   "slave traders", "enslavers").
+
+## Religions and philosophies
+
+`scripts/data/beliefs/` tells where the world's faiths and schools of thought began and how they spread. It is
+**told neutrally**: as a good encyclopedia or a museum would, for readers of every faith and of none.
+
+- **Spread on the map.** Give each tradition or branch whose colour means something a side ("Theravada",
+  "Mahayana", "Vajrayana"; "Catholic", "Orthodox", "Protestant"; "Sunni", "Shia") and use `control` for the lands
+  where it was the faith of most people at the step's date, approximately, as a school atlas would draw it. Grow it
+  with `prev`. Sides should not overlap: where faiths shared a land, show the one most people followed, and say in
+  the text who else lived there. When a map shows a ruler's lands rather than believers (a caliphate whose people
+  were mostly not yet Muslim), say so in the text. `moves` (arrows) can show how a faith travelled: monks on the
+  Silk Road, missionaries by sea, merchants across the Sahara (`by` and `icon` as in journeys are optional).
+- **Items**: founders and teachers, sacred places, texts, schools, pilgrimages, missions, councils and reforms,
+  persecutions, communities. A temple's `icon` may show its kind: ⛪ 🕌 🕍 🛕 ⛩️ ☸️ 🏯.
+- **Neutral telling:**
+  - Tell beliefs as beliefs and history as history: "Buddhists believe...", "According to the Gospels...", "Muslims
+    believe the Quran was revealed to Muhammad...", "Historians date the oldest hymns of the Rigveda to about
+    1500–1200 BC". Where tradition and historians differ (dates, authors, events such as the Exodus), give both
+    without judging.
+  - No faith is presented as true or false, better or worse. A living faith's sacred stories are "stories",
+    "accounts" or "traditions", not "myths" or "legends" ("myth" is fine for the gods of ancient Greece or Egypt).
+  - Use each tradition's own names, with respect and without honorifics in the text: the Buddha, Guru Nanak,
+    Jesus, Muhammad, the Hebrew Bible, the Quran, the Guru Granth Sahib. In Spanish: el islam, el Corán, la
+    Biblia hebrea, los sijs, el budismo, el hinduismo.
+  - Say how each faith spread: by teachers, monks and missionaries, by traders, marriage and migration, and also by
+    conquest, force or law, plainly and for every faith alike. The same goes for persecution, suffered and inflicted:
+    the Roman persecutions of Christians, the Crusades, forced conversions, the Inquisition and the expulsions of
+    Jews and Muslims from Spain, destroyed temples, libraries and books (Nalanda, the Maya codices), pogroms and the
+    Holocaust, the violence of the Partition of India. Neither dwell on it nor leave it out.
+  - Today's numbers: the Pew Research Center's estimates for 2020 (published in 2025), with "about"; say the source
+    and year for other figures.
+  - Don't take sides in today's disputes (holy places claimed by more than one faith, Israel and Palestine, Kashmir,
+    Tibet): say what happened in neutral words, and say who claims what.
+  - Pictures: the card shows the article's lead picture. Never use a picture that shows Muhammad's face (the article
+    "Muhammad" leads with his name in calligraphy) or a portrait of the Báb or of Baháʼu'lláh (Baháʼís don't
+    display them). Where an article leads with such a picture, set `img` to a respectful one (a shrine, a mosque,
+    calligraphy).
+- **The time tour** `faiths-through-time` shows the catalogue (`_catalog-faiths.json`): founding places, sacred
+  places and texts of faiths old and new appear in their own time, while its steps tell the big picture. The other
+  stories use `places` and the same `id` for the same thing.
+
+## Writing and languages
+
+`scripts/data/writing/` tells the separate inventions of writing, how scripts spread and changed, the people who
+made and deciphered them, and how the great language families spread.
+
+- **Spread on the map.** Sides for script families or language branches ("The Phoenician alphabet and its
+  children", "Aramaic scripts", "Brahmic scripts"; "Romance", "Germanic", "Slavic"; "Bantu languages"), with
+  `control` for where they were written or spoken at the step's date, approximately, grown with `prev`. Arrows
+  (`moves`) can show how a script or a language travelled.
+- **Samples.** Every script item gets a `sample`, and so does a language, an inscription or a book when its text
+  can be typed in Unicode:
+  - a script: its first letters in their traditional order, or a short word in it (its own name is nice):
+    Phoenician `𐤀𐤁𐤂𐤃`, Greek `ΑΒΓΔ`, Cyrillic `АБВГД`, Hebrew `אבגד`, Arabic `ا ب ت ث`, Devanagari `अ आ इ ई`, Hangul
+    `한글`, Cherokee `ᏣᎳᎩ`;
+  - a language: a greeting or a well-known short phrase, with `latin` (how it reads) and `means`;
+  - use the real Unicode characters (cuneiform, Egyptian hieroglyphs, Linear B, Phoenician, Brahmi, runes, Ogham,
+    Gothic, Old Italic, Glagolitic, N'Ko, Vai, Bamum, Adlam, Cherokee, Canadian syllabics, Tifinagh, Mongolian,
+    ʼPhags-pa...), checked against the script's Unicode chart. Scripts that are not in Unicode (Maya glyphs, the
+    Indus signs, Proto-Sinaitic, rongorongo) have no sample; their card shows a picture.
+  - The app carries the fonts for these scripts (`scripts/data/build-fonts.mjs`), so they show on every phone.
+  - A script's `icon` may be one to three of its own letters instead of an emoji (`"𐤀"`, `"Α"`, `"Ꭰ"`): the map then
+    shows the letter on its marker.
+- **Say what is debated**: whether Egyptian writing was invented on its own or after Mesopotamia's; whether the
+  Indus signs are writing; the Olmec Cascajal block; where the Brahmi script came from; the Indo-European homeland
+  (the steppe hypothesis is favoured, the Anatolian hypothesis has supporters); the dates of the Bantu expansion.
+  Give numbers of speakers with their source and year (Ethnologue, the sources' census).
+- **Be fair**: name the peoples whose languages were banned or pushed out (Indigenous languages in boarding schools,
+  Irish, Kurdish, Catalan under Franco), and credit the speakers, teachers and communities who kept them alive or
+  revived them.
