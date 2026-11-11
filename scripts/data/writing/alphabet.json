@@ -1,0 +1,6084 @@
+{
+ "id": "alphabet",
+ "name": {
+  "en": "The alphabet's journey",
+  "es": "El viaje del alfabeto"
+ },
+ "icon": "🔤",
+ "era": "ancient",
+ "region": {
+  "en": "From Egypt and the Levant to the whole world",
+  "es": "De Egipto y el Levante a todo el mundo"
+ },
+ "start": "-1850",
+ "end": "1991",
+ "summary": {
+  "en": "One invention, many children: how a few Egyptian pictures, turned into letters by Semitic-speaking workers almost 4,000 years ago, became the Phoenician, Greek, Latin, Aramaic, Arabic and Cyrillic alphabets, and probably the Brahmic scripts too.",
+  "es": "Un invento, muchos hijos: cómo unos pocos dibujos egipcios, convertidos en letras por trabajadores de lengua semítica hace casi 4000 años, dieron origen a los alfabetos fenicio, griego, latino, arameo, árabe y cirílico, y probablemente también a las escrituras bráhmicas."
+ },
+ "camera": {
+  "lon": 32.9,
+  "lat": 27.6,
+  "zoom": 6.5
+ },
+ "defs": {
+  "sinai_mines": {
+   "land": [
+    [
+     33.0,
+     29.45
+    ],
+    [
+     33.85,
+     29.45
+    ],
+    [
+     33.95,
+     28.75
+    ],
+    [
+     33.15,
+     28.6
+    ]
+   ]
+  },
+  "wadi_hol": {
+   "land": [
+    [
+     32.15,
+     26.2
+    ],
+    [
+     32.75,
+     26.2
+    ],
+    [
+     32.75,
+     25.8
+    ],
+    [
+     32.15,
+     25.8
+    ]
+   ]
+  },
+  "canaan_1300": {
+   "land": [
+    [
+     34.2,
+     31.25
+    ],
+    [
+     34.55,
+     31.6
+    ],
+    [
+     34.95,
+     32.6
+    ],
+    [
+     35.1,
+     33.2
+    ],
+    [
+     35.5,
+     34.0
+    ],
+    [
+     35.85,
+     35.0
+    ],
+    [
+     35.75,
+     35.8
+    ],
+    [
+     36.15,
+     35.9
+    ],
+    [
+     36.45,
+     35.3
+    ],
+    [
+     36.35,
+     34.4
+    ],
+    [
+     36.15,
+     33.5
+    ],
+    [
+     35.95,
+     32.6
+    ],
+    [
+     35.6,
+     31.5
+    ],
+    [
+     35.4,
+     30.9
+    ],
+    [
+     34.75,
+     30.9
+    ]
+   ]
+  },
+  "levant_850": {
+   "land": [
+    [
+     34.2,
+     31.25
+    ],
+    [
+     34.55,
+     31.6
+    ],
+    [
+     34.95,
+     32.6
+    ],
+    [
+     35.1,
+     33.2
+    ],
+    [
+     35.5,
+     34.0
+    ],
+    [
+     35.85,
+     35.0
+    ],
+    [
+     35.75,
+     35.8
+    ],
+    [
+     36.15,
+     35.85
+    ],
+    [
+     36.3,
+     35.2
+    ],
+    [
+     36.25,
+     34.4
+    ],
+    [
+     36.0,
+     33.6
+    ],
+    [
+     36.2,
+     32.6
+    ],
+    [
+     36.3,
+     31.6
+    ],
+    [
+     35.9,
+     30.6
+    ],
+    [
+     35.4,
+     29.6
+    ],
+    [
+     34.9,
+     29.5
+    ],
+    [
+     34.6,
+     30.4
+    ]
+   ]
+  },
+  "aram_750": {
+   "minus": [
+    {
+     "land": [
+      [
+       36.1,
+       35.3
+      ],
+      [
+       36.6,
+       36.7
+      ],
+      [
+       38.0,
+       37.4
+      ],
+      [
+       40.0,
+       37.6
+      ],
+      [
+       42.5,
+       37.4
+      ],
+      [
+       44.0,
+       36.8
+      ],
+      [
+       45.5,
+       35.2
+      ],
+      [
+       46.7,
+       33.8
+      ],
+      [
+       47.8,
+       32.5
+      ],
+      [
+       48.6,
+       31.0
+      ],
+      [
+       48.8,
+       29.9
+      ],
+      [
+       47.5,
+       30.0
+      ],
+      [
+       46.0,
+       30.6
+      ],
+      [
+       44.2,
+       31.6
+      ],
+      [
+       42.7,
+       33.0
+      ],
+      [
+       40.5,
+       34.0
+      ],
+      [
+       38.5,
+       34.6
+      ],
+      [
+       37.4,
+       33.4
+      ],
+      [
+       36.4,
+       33.1
+      ],
+      [
+       36.0,
+       33.6
+      ],
+      [
+       36.3,
+       34.4
+      ]
+     ]
+    },
+    {
+     "ref": "levant_850"
+    }
+   ]
+  },
+  "greece_775": {
+   "land": [
+    [
+     19.5,
+     39.8
+    ],
+    [
+     20.8,
+     40.6
+    ],
+    [
+     22.6,
+     40.9
+    ],
+    [
+     24.2,
+     41.0
+    ],
+    [
+     26.2,
+     40.8
+    ],
+    [
+     26.6,
+     40.2
+    ],
+    [
+     27.2,
+     39.3
+    ],
+    [
+     27.3,
+     38.2
+    ],
+    [
+     27.6,
+     37.0
+    ],
+    [
+     28.4,
+     36.75
+    ],
+    [
+     28.2,
+     36.1
+    ],
+    [
+     27.0,
+     35.0
+    ],
+    [
+     26.4,
+     34.8
+    ],
+    [
+     23.4,
+     35.0
+    ],
+    [
+     22.6,
+     36.3
+    ],
+    [
+     21.4,
+     36.6
+    ],
+    [
+     21.1,
+     37.7
+    ],
+    [
+     20.5,
+     38.5
+    ]
+   ]
+  },
+  "phoen_west": [
+   {
+    "land": [
+     [
+      9.6,
+      37.4
+     ],
+     [
+      11.2,
+      37.2
+     ],
+     [
+      11.1,
+      36.3
+     ],
+     [
+      10.0,
+      36.2
+     ]
+    ]
+   },
+   {
+    "land": [
+     [
+      12.2,
+      38.25
+     ],
+     [
+      13.1,
+      38.3
+     ],
+     [
+      13.1,
+      37.5
+     ],
+     [
+      12.3,
+      37.55
+     ]
+    ]
+   },
+   {
+    "land": [
+     [
+      8.3,
+      39.6
+     ],
+     [
+      9.75,
+      39.6
+     ],
+     [
+      9.75,
+      38.8
+     ],
+     [
+      8.3,
+      38.8
+     ]
+    ]
+   },
+   "MLT",
+   {
+    "land": [
+     [
+      -6.5,
+      36.95
+     ],
+     [
+      -4.0,
+      37.05
+     ],
+     [
+      -2.0,
+      37.0
+     ],
+     [
+      -2.0,
+      36.6
+     ],
+     [
+      -6.3,
+      36.0
+     ]
+    ]
+   },
+   {
+    "land": [
+     [
+      33.1,
+      35.2
+     ],
+     [
+      34.0,
+      35.2
+     ],
+     [
+      34.0,
+      34.55
+     ],
+     [
+      33.1,
+      34.55
+     ]
+    ]
+   }
+  ],
+  "italy_600": {
+   "and": [
+    "ITA",
+    {
+     "poly": [
+      [
+       6.0,
+       36.0
+      ],
+      [
+       19.0,
+       36.0
+      ],
+      [
+       19.0,
+       44.2
+      ],
+      [
+       6.0,
+       44.2
+      ]
+     ]
+    }
+   ]
+  },
+  "massalia": {
+   "land": [
+    [
+     2.9,
+     43.6
+    ],
+    [
+     4.3,
+     43.75
+    ],
+    [
+     5.5,
+     43.5
+    ],
+    [
+     7.1,
+     43.75
+    ],
+    [
+     7.6,
+     43.8
+    ],
+    [
+     7.2,
+     42.9
+    ],
+    [
+     3.0,
+     42.0
+    ]
+   ]
+  },
+  "achaemenid": {
+   "hist": "Achaemenid Empire",
+   "year": -500
+  },
+  "anatolia": {
+   "land": [
+    [
+     26.2,
+     40.8
+    ],
+    [
+     29.0,
+     41.2
+    ],
+    [
+     31.5,
+     41.4
+    ],
+    [
+     34.0,
+     42.0
+    ],
+    [
+     36.0,
+     41.7
+    ],
+    [
+     38.0,
+     41.0
+    ],
+    [
+     39.5,
+     40.0
+    ],
+    [
+     38.0,
+     38.5
+    ],
+    [
+     36.5,
+     37.2
+    ],
+    [
+     36.0,
+     36.6
+    ],
+    [
+     34.0,
+     36.2
+    ],
+    [
+     32.0,
+     36.1
+    ],
+    [
+     30.0,
+     36.2
+    ],
+    [
+     28.0,
+     36.6
+    ],
+    [
+     27.0,
+     37.5
+    ],
+    [
+     26.4,
+     39.0
+    ]
+   ]
+  },
+  "roman_east_aram": {
+   "land": [
+    [
+     34.25,
+     31.3
+    ],
+    [
+     34.9,
+     32.4
+    ],
+    [
+     35.3,
+     33.1
+    ],
+    [
+     36.0,
+     33.6
+    ],
+    [
+     36.5,
+     34.6
+    ],
+    [
+     37.2,
+     35.6
+    ],
+    [
+     37.8,
+     36.8
+    ],
+    [
+     39.0,
+     37.4
+    ],
+    [
+     40.5,
+     37.3
+    ],
+    [
+     42.0,
+     36.8
+    ],
+    [
+     41.0,
+     35.0
+    ],
+    [
+     39.5,
+     34.2
+    ],
+    [
+     38.0,
+     33.0
+    ],
+    [
+     37.5,
+     31.5
+    ],
+    [
+     38.5,
+     29.5
+    ],
+    [
+     38.0,
+     27.0
+    ],
+    [
+     37.0,
+     26.5
+    ],
+    [
+     35.5,
+     28.0
+    ],
+    [
+     34.9,
+     29.5
+    ],
+    [
+     34.3,
+     30.6
+    ]
+   ]
+  },
+  "gandhara": {
+   "land": [
+    [
+     69.0,
+     36.5
+    ],
+    [
+     73.5,
+     36.5
+    ],
+    [
+     75.5,
+     34.5
+    ],
+    [
+     74.5,
+     32.0
+    ],
+    [
+     72.0,
+     31.5
+    ],
+    [
+     70.0,
+     32.5
+    ],
+    [
+     68.5,
+     34.0
+    ]
+   ]
+  },
+  "south_asia": [
+   "IND",
+   "LKA",
+   "NPL",
+   "BGD",
+   "BTN",
+   "PAK"
+  ],
+  "scandinavia": {
+   "land": [
+    [
+     4.5,
+     58.6
+    ],
+    [
+     7.5,
+     58.0
+    ],
+    [
+     10.8,
+     59.9
+    ],
+    [
+     12.5,
+     61.6
+    ],
+    [
+     16.0,
+     62.6
+    ],
+    [
+     19.2,
+     60.6
+    ],
+    [
+     18.8,
+     58.6
+    ],
+    [
+     16.6,
+     56.0
+    ],
+    [
+     14.4,
+     55.3
+    ],
+    [
+     12.6,
+     54.4
+    ],
+    [
+     10.0,
+     53.7
+    ],
+    [
+     8.4,
+     53.4
+    ],
+    [
+     7.9,
+     55.1
+    ],
+    [
+     8.0,
+     56.9
+    ]
+   ]
+  },
+  "ireland_ogham": [
+   "IRL",
+   {
+    "land": [
+     [
+      -8.3,
+      55.4
+     ],
+     [
+      -5.3,
+      55.4
+     ],
+     [
+      -5.3,
+      54.0
+     ],
+     [
+      -8.3,
+      54.0
+     ]
+    ]
+   },
+   {
+    "land": [
+     [
+      -5.5,
+      52.15
+     ],
+     [
+      -3.9,
+      52.15
+     ],
+     [
+      -3.9,
+      51.55
+     ],
+     [
+      -5.5,
+      51.55
+     ]
+    ]
+   }
+  ],
+  "armenia_georgia": {
+   "land": [
+    [
+     39.8,
+     41.6
+    ],
+    [
+     41.6,
+     42.6
+    ],
+    [
+     43.8,
+     42.8
+    ],
+    [
+     46.2,
+     41.9
+    ],
+    [
+     46.6,
+     41.0
+    ],
+    [
+     46.2,
+     39.4
+    ],
+    [
+     45.0,
+     38.9
+    ],
+    [
+     44.0,
+     38.5
+    ],
+    [
+     43.0,
+     38.7
+    ],
+    [
+     41.5,
+     38.9
+    ],
+    [
+     40.0,
+     39.5
+    ],
+    [
+     39.4,
+     40.5
+    ]
+   ]
+  },
+  "axum_himyar_200": [
+   {
+    "hist": "Axum",
+    "year": 200
+   },
+   {
+    "hist": "Himyarite Kingdom",
+    "year": 200
+   },
+   {
+    "hist": "Hadramaut",
+    "year": 200
+   }
+  ],
+  "axum_himyar_400": [
+   {
+    "hist": "Axum",
+    "year": 400
+   },
+   {
+    "hist": "Himyarite Kingdom",
+    "year": 400
+   },
+   {
+    "hist": "Hadramaut",
+    "year": 400
+   }
+  ],
+  "roman_400": [
+   {
+    "hist": "Western Roman Empire",
+    "year": 400
+   },
+   {
+    "hist": "Eastern Roman Empire",
+    "year": 400
+   }
+  ],
+  "caliphate_800": [
+   {
+    "hist": "Abbasid Caliphate",
+    "year": 800
+   },
+   {
+    "hist": "Emirate of Córdoba",
+    "year": 800
+   },
+   {
+    "hist": "Idrisid Caliphate",
+    "year": 800
+   },
+   {
+    "hist": "Aghlabid Emirate",
+    "year": 800
+   }
+  ],
+  "europe_800": [
+   {
+    "hist": "Carolingian Empire",
+    "year": 800
+   },
+   {
+    "hist": "Byzantine Empire",
+    "year": 800
+   },
+   {
+    "hist": "Asturias",
+    "year": 800
+   },
+   {
+    "hist": "Papal States",
+    "year": 800
+   },
+   {
+    "hist": "Lombard duchies",
+    "year": 800
+   },
+   "GBR",
+   "IRL"
+  ],
+  "bulgaria_900": {
+   "hist": "Bulgars",
+   "year": 900
+  },
+  "rus_1250": {
+   "land": [
+    [
+     23.8,
+     50.2
+    ],
+    [
+     23.6,
+     54.0
+    ],
+    [
+     27.5,
+     57.6
+    ],
+    [
+     28.0,
+     60.0
+    ],
+    [
+     33.0,
+     61.8
+    ],
+    [
+     40.0,
+     61.6
+    ],
+    [
+     45.5,
+     58.5
+    ],
+    [
+     44.5,
+     54.5
+    ],
+    [
+     40.0,
+     52.0
+    ],
+    [
+     36.5,
+     50.3
+    ],
+    [
+     32.5,
+     47.0
+    ],
+    [
+     28.5,
+     48.0
+    ]
+   ]
+  },
+  "balkan_cyril_1250": [
+   "BGR",
+   "SRB",
+   "MKD",
+   "MNE"
+  ],
+  "europe_1250": {
+   "land": [
+    [
+     -25.0,
+     63.0
+    ],
+    [
+     -24.0,
+     66.8
+    ],
+    [
+     -10.0,
+     71.5
+    ],
+    [
+     15.0,
+     71.2
+    ],
+    [
+     30.0,
+     70.5
+    ],
+    [
+     31.0,
+     61.5
+    ],
+    [
+     28.0,
+     57.6
+    ],
+    [
+     23.6,
+     54.0
+    ],
+    [
+     23.8,
+     50.2
+    ],
+    [
+     22.5,
+     47.5
+    ],
+    [
+     26.5,
+     45.5
+    ],
+    [
+     29.8,
+     45.2
+    ],
+    [
+     28.2,
+     41.5
+    ],
+    [
+     26.3,
+     40.0
+    ],
+    [
+     26.5,
+     38.5
+    ],
+    [
+     27.0,
+     35.0
+    ],
+    [
+     22.0,
+     35.5
+    ],
+    [
+     15.0,
+     35.0
+    ],
+    [
+     8.0,
+     37.5
+    ],
+    [
+     -1.0,
+     36.6
+    ],
+    [
+     -5.6,
+     35.9
+    ],
+    [
+     -9.8,
+     36.8
+    ],
+    [
+     -10.0,
+     44.0
+    ],
+    [
+     -11.0,
+     52.0
+    ],
+    [
+     -14.0,
+     58.0
+    ]
+   ]
+  },
+  "granada": {
+   "hist": "Granada",
+   "year": 1279
+  },
+  "mongol_uyghur": {
+   "land": [
+    [
+     86.5,
+     49.2
+    ],
+    [
+     92.0,
+     50.6
+    ],
+    [
+     98.0,
+     52.2
+    ],
+    [
+     106.0,
+     50.5
+    ],
+    [
+     112.0,
+     49.6
+    ],
+    [
+     117.5,
+     49.8
+    ],
+    [
+     119.8,
+     47.0
+    ],
+    [
+     112.0,
+     43.0
+    ],
+    [
+     105.0,
+     41.6
+    ],
+    [
+     97.0,
+     42.0
+    ],
+    [
+     90.0,
+     41.0
+    ],
+    [
+     84.0,
+     40.8
+    ],
+    [
+     80.0,
+     42.4
+    ],
+    [
+     82.0,
+     45.2
+    ],
+    [
+     85.0,
+     47.2
+    ]
+   ]
+  },
+  "tibet": {
+   "a1": "CHN",
+   "names": [
+    "Tibet"
+   ]
+  },
+  "malay_world": [
+   {
+    "a1": "IDN",
+    "names": [
+     "Aceh",
+     "North Sumatra",
+     "West Sumatra",
+     "Riau",
+     "Jambi",
+     "South Sumatra",
+     "Bengkulu",
+     "Lampung",
+     "Bangka Belitung Islands",
+     "Riau Islands"
+    ]
+   },
+   {
+    "a1": "MYS",
+    "names": [
+     "Johor",
+     "Kedah",
+     "Kelantan",
+     "Kuala Lumpur",
+     "Melaka",
+     "Negeri Sembilan",
+     "Pahang",
+     "Penang",
+     "Perak",
+     "Perlis",
+     "Putrajaya",
+     "Selangor",
+     "Terengganu"
+    ]
+   }
+  ],
+  "java_bali": {
+   "a1": "IDN",
+   "names": [
+    "Banten",
+    "Jakarta",
+    "West Java",
+    "Central Java",
+    "Yogyakarta",
+    "East Java",
+    "Bali"
+   ]
+  },
+  "viet_1600": {
+   "a1": "VNM",
+   "names": [
+    "Thừa Thiên Huế",
+    "Da Nang",
+    "Quảng Nam",
+    "Quảng Ngãi",
+    "Bình Định"
+   ]
+  },
+  "champa_1292": {
+   "a1": "VNM",
+   "names": [
+    "Thừa Thiên Huế",
+    "Da Nang",
+    "Quảng Nam",
+    "Quảng Ngãi",
+    "Bình Định",
+    "Phú Yên",
+    "Khánh Hòa",
+    "Ninh Thuận",
+    "Bình Thuận",
+    "Kon Tum",
+    "Gia Lai",
+    "Đắk Lắk",
+    "Đắk Nông",
+    "Lâm Đồng",
+    "Bình Phước",
+    "Tây Ninh",
+    "Bình Dương",
+    "Đông Nam Bộ",
+    "Ho Chi Minh",
+    "Bà Rịa-Vũng Tàu",
+    "Long An",
+    "Tiền Giang",
+    "Bến Tre",
+    "Trà Vinh",
+    "Vĩnh Long",
+    "Đồng Tháp",
+    "An Giang",
+    "Kiên Giang",
+    "Cần Thơ",
+    "Hậu Giang",
+    "Sóc Trăng",
+    "Bạc Liêu",
+    "Cà Mau"
+   ]
+  },
+  "china_scripts": {
+   "a1": "CHN",
+   "names": [
+    "Inner Mongolia",
+    "Xinjiang"
+   ]
+  },
+  "americas_1600": [
+   {
+    "hist": "Viceroyalty of New Spain",
+    "year": 1600
+   },
+   {
+    "hist": "Cuba (Spain)",
+    "year": 1600
+   },
+   {
+    "hist": "Hispaniola (Spain)",
+    "year": 1600
+   },
+   {
+    "hist": "Viceroyalty of Peru",
+    "year": 1650
+   },
+   {
+    "hist": "Portuguese Brazil",
+    "year": 1650
+   }
+  ],
+  "philippines_1600": {
+   "hist": "Philippines",
+   "year": 1650
+  },
+  "russia_1600": {
+   "land": [
+    [
+     23.6,
+     54.0
+    ],
+    [
+     27.5,
+     57.6
+    ],
+    [
+     28.0,
+     60.0
+    ],
+    [
+     30.0,
+     62.0
+    ],
+    [
+     30.0,
+     69.6
+    ],
+    [
+     40.0,
+     68.2
+    ],
+    [
+     50.0,
+     68.2
+    ],
+    [
+     60.0,
+     67.5
+    ],
+    [
+     60.0,
+     56.0
+    ],
+    [
+     57.0,
+     52.0
+    ],
+    [
+     50.0,
+     48.5
+    ],
+    [
+     46.5,
+     46.0
+    ],
+    [
+     40.0,
+     48.0
+    ],
+    [
+     36.0,
+     50.0
+    ],
+    [
+     32.5,
+     52.0
+    ],
+    [
+     28.5,
+     52.0
+    ],
+    [
+     23.8,
+     50.2
+    ]
+   ]
+  }
+ },
+ "sides": [
+  {
+   "id": "west",
+   "name": {
+    "en": "Phoenician, Greek and Latin family",
+    "es": "Familia fenicia, griega y latina"
+   },
+   "color": "#c0392b"
+  },
+  {
+   "id": "aram",
+   "name": {
+    "en": "Aramaic family (Hebrew, Syriac, Arabic...)",
+    "es": "Familia aramea (hebreo, siríaco, árabe...)"
+   },
+   "color": "#16a085"
+  },
+  {
+   "id": "brahmi",
+   "name": {
+    "en": "Brahmi and its children",
+    "es": "El brahmi y sus descendientes"
+   },
+   "color": "#e67e22"
+  },
+  {
+   "id": "cyril",
+   "name": {
+    "en": "Glagolitic and Cyrillic",
+    "es": "Glagolítico y cirílico"
+   },
+   "color": "#2e6f9e"
+  },
+  {
+   "id": "geez",
+   "name": {
+    "en": "South Arabian and Ge'ez",
+    "es": "Sudarábigo y ge'ez"
+   },
+   "color": "#8e5a2b"
+  },
+  {
+   "id": "cauc",
+   "name": {
+    "en": "Armenian and Georgian",
+    "es": "Armenio y georgiano"
+   },
+   "color": "#7d3c98"
+  },
+  {
+   "id": "runes",
+   "name": {
+    "en": "Runes and Ogham",
+    "es": "Runas y ogam"
+   },
+   "color": "#5d6d7e"
+  }
+ ],
+ "steps": [
+  {
+   "date": "-1850",
+   "title": {
+    "en": "Pictures that became letters",
+    "es": "Dibujos que se volvieron letras"
+   },
+   "text": {
+    "en": "Around 1850 BC, people who spoke a Semitic language, working in Egypt and in the Sinai mines, took a few Egyptian pictures and used each one for the first sound of its name: the first alphabet.",
+    "es": "Hacia el 1850 a. C., gente que hablaba una lengua semítica y trabajaba en Egipto y en las minas del Sinaí tomó unos pocos dibujos egipcios y usó cada uno por el primer sonido de su nombre: el primer alfabeto."
+   },
+   "details": {
+    "en": "Egyptian scribes used hundreds of signs, but some workers from Canaan found a shortcut. They picked about two dozen pictures and gave each the first sound of its name in their own language: the drawing of a house, bayt, stood for b, and an ox's head, ʾalp, for the catch in the throat that begins that word. That ox head is the ancestor of our letter A. In 1993 John and Deborah Darnell found two such inscriptions carved on a desert road at Wadi el-Hol, near Thebes, dated to about 1850–1800 BC. Some 30 to 40 more were found from 1905 on at Serabit el-Khadim, the turquoise mines of Sinai, where Alan Gardiner read the word lbʿlt, 'to the Lady', the goddess Hathor. Their date is debated, from about 1850 to 1550 BC. Only consonants were written, as in Egyptian.",
+    "es": "Los escribas egipcios usaban cientos de signos, pero unos trabajadores de Canaán encontraron un atajo. Eligieron unos veinticuatro dibujos y le dieron a cada uno el primer sonido de su nombre en su propia lengua: el dibujo de una casa, bayt, valía b, y una cabeza de buey, ʾalp, el golpe de garganta con que empieza esa palabra. Esa cabeza de buey es la antepasada de nuestra letra A. En 1993 John y Deborah Darnell hallaron dos de estas inscripciones talladas junto a un camino del desierto en Wadi el-Hol, cerca de Tebas, fechadas hacia 1850-1800 a. C. Otras 30 o 40 aparecieron desde 1905 en Serabit el-Jadim, las minas de turquesa del Sinaí, donde Alan Gardiner leyó la palabra lbʿlt, 'para la Señora', la diosa Hathor. Su fecha se discute, de hacia 1850 a 1550 a. C. Solo se escribían las consonantes, como en egipcio."
+   },
+   "camera": {
+    "lon": 32.9,
+    "lat": 27.6,
+    "zoom": 6.5
+   },
+   "control": {
+    "west": [
+     {
+      "ref": "sinai_mines"
+     },
+     {
+      "ref": "wadi_hol"
+     }
+    ]
+   },
+   "places": [
+    {
+     "id": "wadi-el-hol-inscriptions",
+     "name": {
+      "en": "Wadi el-Hol inscriptions",
+      "es": "Inscripciones de Wadi el-Hol"
+     },
+     "at": [
+      32.4167,
+      26.05
+     ],
+     "cat": "inscription",
+     "type": "work",
+     "date": "-1850",
+     "place": {
+      "en": "Wadi el-Hol, Qena, Egypt",
+      "es": "Wadi el-Hol, Qena, Egipto"
+     },
+     "text": {
+      "en": "Two short texts carved on a cliff by a desert road between Thebes and Hiw, about 1850–1800 BC. Found in 1993, they are among the oldest alphabetic writing known.",
+      "es": "Dos textos cortos tallados en un acantilado junto a un camino del desierto entre Tebas y Hiw, hacia 1850-1800 a. C. Hallados en 1993, están entre la escritura alfabética más antigua que se conoce."
+     },
+     "wiki": {
+      "en": "Wadi el-Hol inscriptions",
+      "es": ""
+     }
+    },
+    {
+     "id": "serabit-el-khadim",
+     "name": {
+      "en": "Serabit el-Khadim",
+      "es": "Serabit el-Jadim"
+     },
+     "at": [
+      33.4592,
+      29.0367
+     ],
+     "cat": "inscription",
+     "type": "site",
+     "date": "-1850",
+     "place": {
+      "en": "South Sinai, Egypt",
+      "es": "Sinaí del Sur, Egipto"
+     },
+     "text": {
+      "en": "Turquoise and copper mines in the Sinai with a temple of the goddess Hathor. Miners who spoke a Semitic language left here some 30–40 inscriptions in the first alphabet.",
+      "es": "Minas de turquesa y cobre del Sinaí con un templo de la diosa Hathor. Mineros que hablaban una lengua semítica dejaron aquí unas 30 o 40 inscripciones en el primer alfabeto."
+     },
+     "details": {
+      "en": "Egyptian kings sent expeditions here from the time of Senusret I, in the 20th century BC, and the miners, many of them from south-west Asia and perhaps prisoners of war, left stelae and offerings to Hathor, 'Lady of Turquoise'. Flinders and Hilda Petrie found the strange inscriptions in 1905. On one object a hieroglyphic text reads 'beloved of Hathor, Lady of Turquoise', and the alphabetic letters on it seem to say 'beloved of the Lady' in the miners' own language.",
+      "es": "Los reyes egipcios mandaban expediciones aquí desde la época de Sesostris I, en el siglo XX a. C., y los mineros, muchos de ellos del suroeste de Asia y quizá prisioneros de guerra, dejaron estelas y ofrendas a Hathor, 'Señora de la turquesa'. Flinders y Hilda Petrie hallaron las extrañas inscripciones en 1905. En un objeto, un texto jeroglífico dice 'amado de Hathor, Señora de la turquesa', y las letras alfabéticas parecen decir 'amado de la Señora' en la propia lengua de los mineros."
+     },
+     "wiki": {
+      "en": "Serabit el-Khadim",
+      "es": "Sarabit al-Khadim"
+     }
+    },
+    {
+     "id": "proto-sinaitic",
+     "name": {
+      "en": "Proto-Sinaitic script",
+      "es": "Escritura protosinaítica"
+     },
+     "at": [
+      33.472,
+      29.018
+     ],
+     "cat": "script",
+     "type": "script",
+     "date": "-1850",
+     "place": {
+      "en": "Sinai and Egypt",
+      "es": "Sinaí y Egipto"
+     },
+     "text": {
+      "en": "The earliest alphabet, about two dozen pictures taken from Egyptian hieroglyphs to write the consonants of a Semitic language. It has not been fully deciphered.",
+      "es": "El alfabeto más antiguo, unos veinticuatro dibujos tomados de los jeroglíficos egipcios para escribir las consonantes de una lengua semítica. No se ha descifrado del todo."
+     },
+     "details": {
+      "en": "Scholars still argue whether the inventors were miners, soldiers or traders, and whether the alphabet was born in Egypt or in Canaan. What is clear is the method: each picture stood for the first sound of its name. This 'acrophonic' trick made writing easy to learn, with a few dozen signs instead of hundreds. The script is not in Unicode, so the card shows a picture.",
+      "es": "Los especialistas aún discuten si los inventores eran mineros, soldados o comerciantes, y si el alfabeto nació en Egipto o en Canaán. Lo que está claro es el método: cada dibujo valía por el primer sonido de su nombre. Este truco 'acrofónico' hizo la escritura fácil de aprender, con unas pocas decenas de signos en vez de cientos. Esta escritura no está en Unicode, por eso la ficha muestra una imagen."
+     },
+     "wiki": {
+      "en": "Proto-Sinaitic script",
+      "es": "Alfabeto protosinaítico"
+     }
+    }
+   ]
+  },
+  {
+   "date": "-1300",
+   "title": {
+    "en": "Ugarit's ABC",
+    "es": "El abecedario de Ugarit"
+   },
+   "text": {
+    "en": "At Ugarit, a rich port of Syria, scribes pressed an alphabet of 30 letters into clay with a reed, the way cuneiform was written. Their school tablets list the letters in an order very like our ABC.",
+    "es": "En Ugarit, un rico puerto de Siria, los escribas marcaban en la arcilla con una caña un alfabeto de 30 letras, como se escribía el cuneiforme. Sus tablillas escolares ordenan las letras de un modo muy parecido a nuestro abecedario."
+   },
+   "details": {
+    "en": "Ugarit's scribes knew Babylonian cuneiform, with its hundreds of signs, but from about 1400 or 1300 BC they also wrote their own language with 30 simple wedge letters, for letters, contracts, myths and poems. Some tablets set out the alphabet in order, the oldest such lists known: one order, ʾa, b, g, ḫ, d..., is almost the one later used by Phoenician, Greek and Latin; another is the one Ge'ez still follows in Ethiopia. Ugarit was destroyed around 1190 BC, when the Bronze Age kingdoms of the eastern Mediterranean collapsed, and its wedge alphabet died with it. Further south, in Canaan, a few people kept writing the old picture letters, on daggers, jars and potsherds: scholars call them Proto-Canaanite.",
+    "es": "Los escribas de Ugarit conocían el cuneiforme babilónico, con sus cientos de signos, pero desde hacia el 1400 o el 1300 a. C. también escribían su propia lengua con 30 sencillas letras de cuñas, para cartas, contratos, mitos y poemas. Algunas tablillas presentan el alfabeto en orden, las listas más antiguas de este tipo: un orden, ʾa, b, g, ḫ, d..., es casi el que usarían después el fenicio, el griego y el latín; otro es el que todavía sigue el ge'ez en Etiopía. Ugarit fue destruida hacia el 1190 a. C., cuando se derrumbaron los reinos de la Edad del Bronce del Mediterráneo oriental, y su alfabeto de cuñas murió con ella. Más al sur, en Canaán, unas pocas personas seguían escribiendo las viejas letras de dibujos, en puñales, jarras y tiestos: los especialistas las llaman protocananeas."
+   },
+   "camera": {
+    "lon": 35.6,
+    "lat": 33.5,
+    "zoom": 7.5
+   },
+   "control": {
+    "west": {
+     "ref": "canaan_1300"
+    }
+   },
+   "places": [
+    {
+     "id": "ugaritic-alphabet",
+     "name": {
+      "en": "Ugaritic alphabet",
+      "es": "Alfabeto ugarítico"
+     },
+     "at": [
+      35.7856,
+      35.6019
+     ],
+     "cat": "script",
+     "icon": "𐎀",
+     "type": "script",
+     "date": "-1400",
+     "until": "-1190",
+     "place": {
+      "en": "Ugarit (Ras Shamra), Latakia, Syria",
+      "es": "Ugarit (Ras Shamra), Latakia, Siria"
+     },
+     "text": {
+      "en": "An alphabet of 30 letters made of wedges, used at Ugarit from about 1400 to 1190 BC. Its school tablets hold the oldest known lists of letters in order.",
+      "es": "Un alfabeto de 30 letras hechas de cuñas, usado en Ugarit de hacia 1400 a 1190 a. C. Sus tablillas escolares guardan las listas de letras en orden más antiguas que se conocen."
+     },
+     "details": {
+      "en": "A farmer ploughing his field at Ras Shamra opened an ancient tomb in 1928, and the excavations that followed uncovered the city of Ugarit, its palace archives and its tablets in an unknown script of only 30 signs. Ugaritic letters look like cuneiform, but they work like the Phoenician alphabet: one sign for each consonant, with three signs for a glottal stop followed by a, i or u. The sample shows the first letters: ʾa, b, g, ḫ, d.",
+      "es": "En 1928 un campesino que araba su campo en Ras Shamra abrió por accidente una tumba antigua, y las excavaciones que siguieron sacaron a la luz la ciudad de Ugarit, los archivos de su palacio y sus tablillas en una escritura desconocida de solo 30 signos. Las letras ugaríticas parecen cuneiformes, pero funcionan como el alfabeto fenicio: un signo para cada consonante, con tres signos para un golpe de garganta seguido de a, i o u. La muestra presenta las primeras letras: ʾa, b, g, ḫ, d."
+     },
+     "sample": {
+      "text": "𐎀𐎁𐎂𐎃𐎄",
+      "latin": "ʾa b g ḫ d",
+      "means": {
+       "en": "the first five letters, in the order of the Ugarit school tablets",
+       "es": "las cinco primeras letras, en el orden de las tablillas escolares de Ugarit"
+      }
+     },
+     "wiki": {
+      "en": "Ugaritic alphabet",
+      "es": "Alfabeto ugarítico"
+     },
+     "img": "Ugaritic-alphabet-chart.svg"
+    },
+    {
+     "id": "proto-canaanite",
+     "name": {
+      "en": "Proto-Canaanite inscriptions",
+      "es": "Inscripciones protocananeas"
+     },
+     "at": [
+      34.8489,
+      31.565
+     ],
+     "cat": "inscription",
+     "type": "work",
+     "date": "-1300",
+     "place": {
+      "en": "Lachish and the Shephelah, Israel",
+      "es": "Laquis y la Sefelá, Israel"
+     },
+     "text": {
+      "en": "About 20 short texts in the early picture letters, scratched on daggers, potsherds and jars in Canaan from about the 17th to the 11th century BC, such as the Lachish Dagger.",
+      "es": "Una veintena de textos cortos en las primeras letras de dibujos, rayados en puñales, tiestos y jarras de Canaán entre hacia los siglos XVII y XI a. C., como el puñal de Laquis."
+     },
+     "wiki": {
+      "en": "Proto-Canaanite alphabet",
+      "es": "Alfabeto protocananeo"
+     },
+     "img": "Oldest Hebrew Inscription X BC.jpg"
+    }
+   ]
+  },
+  {
+   "date": "-850",
+   "title": {
+    "en": "Phoenician letters",
+    "es": "Las letras fenicias"
+   },
+   "text": {
+    "en": "In the Phoenician ports, the letters settled into 22 simple signs for consonants, written from right to left. Neighbours used them for Hebrew, Moabite and Aramaic, as on King Mesha's stone of about 840 BC.",
+    "es": "En los puertos fenicios, las letras se fijaron en 22 signos sencillos para consonantes, escritos de derecha a izquierda. Los vecinos los usaron para el hebreo, el moabita y el arameo, como en la piedra del rey Mesa, de hacia el 840 a. C."
+   },
+   "details": {
+    "en": "At Byblos, around 1000 BC, a king's son carved a curse on the stone coffin of his father Ahiram, against anyone who would open it: the oldest long text in the fully formed Phoenician alphabet, though its date is debated. Its letters still carried the old names: ʾalp, 'ox', for 𐤀, now an ox head lying on its side; bet, 'house', for 𐤁. Byblos traded papyrus from Egypt so much that the Greeks called papyrus byblos, the root of the word Bible. The Israelites and Judeans wrote Hebrew in a sister script, Paleo-Hebrew; Mesha of Moab used it to tell how he threw off the rule of Israel, a war also told, differently, in the Bible's Books of Kings. In Damascus and north Syria, the Arameans wrote Aramaic in the same letters.",
+    "es": "En Biblos, hacia el 1000 a. C., el hijo de un rey grabó una maldición en el sarcófago de piedra de su padre Ahiram, contra quien se atreviera a abrirlo: el texto largo más antiguo en el alfabeto fenicio ya formado, aunque su fecha se discute. Sus letras conservaban los viejos nombres: ʾalp, 'buey', para 𐤀, ahora una cabeza de buey acostada; bet, 'casa', para 𐤁. Biblos comerciaba tanto papiro egipcio que los griegos llamaron byblos al papiro, la raíz de la palabra Biblia. Los israelitas y judaítas escribían hebreo en una escritura hermana, el paleohebreo; Mesa de Moab la usó para contar cómo se libró del dominio de Israel, una guerra que también cuentan, de otro modo, los Libros de los Reyes de la Biblia. En Damasco y el norte de Siria, los arameos escribían arameo con las mismas letras."
+   },
+   "camera": {
+    "lon": 35.6,
+    "lat": 32.7,
+    "zoom": 7.5
+   },
+   "control": {
+    "west": {
+     "ref": "levant_850"
+    }
+   },
+   "places": [
+    {
+     "id": "byblos",
+     "name": {
+      "en": "Byblos",
+      "es": "Biblos"
+     },
+     "at": [
+      35.6519,
+      34.1236
+     ],
+     "cat": "city",
+     "type": "site",
+     "date": "-3000",
+     "place": {
+      "en": "Jbeil, Lebanon",
+      "es": "Jbeil, Líbano"
+     },
+     "text": {
+      "en": "One of the oldest cities in the world, a Phoenician port that shipped timber and traded Egyptian papyrus. Its royal inscriptions of about 1000 BC show the Phoenician alphabet fully formed.",
+      "es": "Una de las ciudades más antiguas del mundo, un puerto fenicio que exportaba madera y comerciaba papiro egipcio. Sus inscripciones reales de hacia el 1000 a. C. muestran el alfabeto fenicio ya formado."
+     },
+     "wiki": {
+      "en": "Byblos",
+      "es": "Biblos"
+     }
+    },
+    {
+     "id": "ahiram-sarcophagus",
+     "name": {
+      "en": "Ahiram sarcophagus",
+      "es": "Sarcófago de Ahiram"
+     },
+     "at": [
+      35.648,
+      34.1185
+     ],
+     "cat": "inscription",
+     "type": "work",
+     "date": "-1000",
+     "place": {
+      "en": "Byblos; now in the National Museum of Beirut",
+      "es": "Biblos; hoy en el Museo Nacional de Beirut"
+     },
+     "text": {
+      "en": "The stone coffin of a king of Byblos, carved with a 38-word curse in Phoenician letters, about 1000 BC (the date is debated). It is the oldest long text in the Phoenician alphabet.",
+      "es": "El sarcófago de piedra de un rey de Biblos, tallado con una maldición de 38 palabras en letras fenicias, hacia el 1000 a. C. (la fecha se discute). Es el texto largo más antiguo en alfabeto fenicio."
+     },
+     "details": {
+      "en": "A landslide in 1923 opened the royal tombs of Byblos, and the French archaeologist Pierre Montet found Ahiram's coffin ten metres down. Its carvings show the king on a throne with winged sphinxes. The text warns that if any king, governor or general opens the coffin, his sceptre will break, his throne will overturn and peace will flee from Byblos. Most scholars date it about 1000 BC; others prefer the 13th century or about 850 BC.",
+      "es": "En 1923 un derrumbe abrió las tumbas reales de Biblos, y el arqueólogo francés Pierre Montet halló el sarcófago de Ahiram a diez metros de profundidad. Sus relieves muestran al rey en un trono con esfinges aladas. El texto advierte que si algún rey, gobernador o general abre el sarcófago, su cetro se romperá, su trono se volcará y la paz huirá de Biblos. La mayoría de los especialistas lo fecha hacia el 1000 a. C.; otros prefieren el siglo XIII o hacia el 850 a. C."
+     },
+     "sample": {
+      "text": "𐤁𐤍 𐤀𐤇𐤓𐤌 𐤌𐤋𐤊 𐤂𐤁𐤋",
+      "latin": "bn ʾḥrm mlk gbl",
+      "means": {
+       "en": "\"son of Ahiram, king of Byblos\"",
+       "es": "\"hijo de Ahiram, rey de Biblos\""
+      }
+     },
+     "wiki": {
+      "en": "Ahiram sarcophagus",
+      "es": "Sarcófago de Ahiram"
+     }
+    },
+    {
+     "id": "phoenician-alphabet",
+     "name": {
+      "en": "Phoenician alphabet",
+      "es": "Alfabeto fenicio"
+     },
+     "at": [
+      35.1961,
+      33.2708
+     ],
+     "cat": "script",
+     "icon": "𐤀",
+     "type": "script",
+     "date": "-1050",
+     "place": {
+      "en": "Phoenicia: Tyre, Sidon, Byblos (Lebanon)",
+      "es": "Fenicia: Tiro, Sidón, Biblos (Líbano)"
+     },
+     "text": {
+      "en": "22 letters for consonants, written right to left, used from about 1050 BC. Through Greek and Aramaic it became the ancestor of most alphabets in use today.",
+      "es": "22 letras para consonantes, escritas de derecha a izquierda, usadas desde hacia el 1050 a. C. A través del griego y del arameo se convirtió en la antepasada de la mayoría de los alfabetos actuales."
+     },
+     "details": {
+      "en": "Phoenician merchants from Tyre, Sidon and Byblos spread their letters around the Mediterranean, and in Carthage they were used until the 2nd century BC. Because each sign stood for one sound, a few dozen letters were enough, and writing no longer needed years of training. The French scholar Jean-Jacques Barthélemy deciphered the script in 1758. In 2005 UNESCO added the Phoenician alphabet to its Memory of the World register. The sample shows ʾalp, bet, gaml and delt, the ancestors of A, B, C (or G) and D.",
+      "es": "Los mercaderes fenicios de Tiro, Sidón y Biblos difundieron sus letras por el Mediterráneo, y en Cartago se usaron hasta el siglo II a. C. Como cada signo valía por un sonido, bastaban unas pocas decenas de letras, y escribir ya no requería años de formación. El sabio francés Jean-Jacques Barthélemy descifró la escritura en 1758. En 2005 la Unesco incluyó el alfabeto fenicio en su registro Memoria del Mundo. La muestra presenta ʾalp, bet, gaml y delt, antepasadas de A, B, C (o G) y D."
+     },
+     "sample": {
+      "text": "𐤀𐤁𐤂𐤃",
+      "latin": "ʾalp bet gaml delt",
+      "means": {
+       "en": "ox, house, throwing stick, door: the first four letters",
+       "es": "buey, casa, bastón arrojadizo, puerta: las cuatro primeras letras"
+      }
+     },
+     "wiki": {
+      "en": "Phoenician alphabet",
+      "es": "Alfabeto fenicio"
+     },
+     "img": "Phönizisch-6Sprachen.svg"
+    },
+    {
+     "id": "mesha-stele",
+     "name": {
+      "en": "Mesha Stele",
+      "es": "Estela de Mesa"
+     },
+     "at": [
+      35.7856,
+      31.4989
+     ],
+     "cat": "inscription",
+     "type": "work",
+     "date": "-840",
+     "place": {
+      "en": "Dhiban, Jordan; now in the Louvre, Paris",
+      "es": "Dhiban, Jordania; hoy en el Louvre, París"
+     },
+     "text": {
+      "en": "A black basalt stone of about 840 BC on which Mesha, king of Moab, tells in 34 lines how he freed his land from Israel. It is the longest Iron Age inscription found in the region.",
+      "es": "Una piedra de basalto negro de hacia el 840 a. C. en la que Mesa, rey de Moab, cuenta en 34 líneas cómo liberó su tierra de Israel. Es la inscripción más larga de la Edad del Hierro hallada en la región."
+     },
+     "details": {
+      "en": "A missionary saw the stone intact at Dhiban in 1868. An impression in wet paper was taken just in time: in 1869 local Bani Hamida Bedouins, pressed by the Ottoman authorities to hand it over, heated it in a fire and smashed it. Fragments with more than half of the letters were recovered, and the rest was restored from the impression. It names Israel's king Omri and the god of Israel, YHWH. Jordan has asked for its return.",
+      "es": "Un misionero vio la piedra intacta en Dhiban en 1868. Se tomó a tiempo una impresión en papel húmedo: en 1869 los beduinos locales Bani Hamida, presionados por las autoridades otomanas para entregarla, la calentaron en una hoguera y la rompieron. Se recuperaron fragmentos con más de la mitad de las letras, y el resto se restauró a partir de la impresión. Nombra al rey Omrí de Israel y al dios de Israel, YHWH. Jordania ha pedido su devolución."
+     },
+     "sample": {
+      "text": "𐤀𐤍𐤊 𐤌𐤔𐤏 … 𐤌𐤋𐤊 𐤌𐤀𐤁",
+      "latin": "ʾnk mšʿ … mlk mʾb",
+      "means": {
+       "en": "\"I am Mesha … king of Moab\", its opening words",
+       "es": "\"Yo soy Mesa … rey de Moab\", sus primeras palabras"
+      }
+     },
+     "wiki": {
+      "en": "Mesha Stele",
+      "es": "Estela de Mesa"
+     }
+    },
+    {
+     "id": "paleo-hebrew-alphabet",
+     "name": {
+      "en": "Paleo-Hebrew alphabet",
+      "es": "Alfabeto paleohebreo"
+     },
+     "at": [
+      35.2361,
+      31.7733
+     ],
+     "cat": "script",
+     "type": "script",
+     "date": "-1000",
+     "place": {
+      "en": "Kingdoms of Israel and Judah (here Jerusalem)",
+      "es": "Reinos de Israel y Judá (aquí Jerusalén)"
+     },
+     "text": {
+      "en": "The Hebrew form of the Phoenician letters, used from the 10th century BC, as in the Gezer calendar and the Siloam tunnel inscription. The Samaritans still use its descendant.",
+      "es": "La forma hebrea de las letras fenicias, usada desde el siglo X a. C., como en el calendario de Gézer y la inscripción del túnel de Siloé. Los samaritanos todavía usan su descendiente."
+     },
+     "sample": {
+      "text": "𐤄𐤊𐤕𐤁 𐤄𐤏𐤁𐤓𐤉",
+      "latin": "hktb hʿbry",
+      "means": {
+       "en": "\"the Hebrew script\"",
+       "es": "\"la escritura hebrea\""
+      }
+     },
+     "wiki": {
+      "en": "Paleo-Hebrew alphabet",
+      "es": "Alfabeto paleohebreo"
+     },
+     "img": "Shiloach.jpg"
+    }
+   ]
+  },
+  {
+   "date": "-750",
+   "title": {
+    "en": "Greeks add vowels",
+    "es": "Los griegos añaden vocales"
+   },
+   "text": {
+    "en": "Phoenician ships carried their letters to Cyprus, Carthage, Sardinia and Spain. In the 8th century BC Greeks borrowed them and turned the letters they did not need into vowels: ʾalp became alpha, Α.",
+    "es": "Los barcos fenicios llevaron sus letras a Chipre, Cartago, Cerdeña y España. En el siglo VIII a. C. los griegos las tomaron y convirtieron las letras que no necesitaban en vocales: ʾalp se volvió alfa, Α."
+   },
+   "details": {
+    "en": "Greek had sounds that Phoenician letters did not show, and it needed vowels to be read clearly. So Greek writers reused five Phoenician letters for consonants they lacked: ʾalp became alpha for a, he became epsilon for e, yod became iota, ʿayin became omicron and waw became upsilon. In the earliest inscriptions, alpha still lies on its side like the ox head. The Greek alphabet was the first to write vowels and consonants alike, and it is still used for Greek today. The oldest substantial texts, like the verse scratched on a jug at Athens about 740 BC, are playful: they are about dancing and drinking. Different Greek cities had their own forms of some letters until, by the end of the 4th century BC, the 24-letter alphabet of Ionia became the standard.",
+    "es": "El griego tenía sonidos que las letras fenicias no mostraban, y necesitaba vocales para leerse con claridad. Así que los griegos reutilizaron cinco letras fenicias de consonantes que no tenían: ʾalp se volvió alfa para la a, he se volvió épsilon para la e, yod se volvió iota, ʿayin se volvió ómicron y waw se volvió ípsilon. En las inscripciones más antiguas, la alfa aún está acostada como la cabeza de buey. El alfabeto griego fue el primero en escribir por igual vocales y consonantes, y todavía se usa para el griego. Los textos más antiguos de cierta extensión, como el verso rayado en una jarra de Atenas hacia el 740 a. C., son festivos: hablan de bailar y de beber. Cada ciudad griega tenía sus propias formas de algunas letras hasta que, a fines del siglo IV a. C., el alfabeto jonio de 24 letras se volvió el modelo."
+   },
+   "camera": {
+    "lon": 20.0,
+    "lat": 36.5,
+    "zoom": 2.9
+   },
+   "control": {
+    "west": [
+     {
+      "ref": "levant_850"
+     },
+     {
+      "ref": "greece_775"
+     },
+     {
+      "ref": "phoen_west"
+     }
+    ],
+    "aram": {
+     "ref": "aram_750"
+    }
+   },
+   "moves": [
+    {
+     "side": "west",
+     "path": [
+      [
+       35.15,
+       33.27
+      ],
+      [
+       34.4,
+       33.9
+      ],
+      [
+       33.66,
+       34.83
+      ],
+      [
+       32.0,
+       34.3
+      ],
+      [
+       28.0,
+       34.6
+      ],
+      [
+       24.5,
+       34.55
+      ],
+      [
+       20.0,
+       35.3
+      ],
+      [
+       15.5,
+       35.6
+      ],
+      [
+       14.5,
+       35.75
+      ],
+      [
+       12.2,
+       36.9
+      ],
+      [
+       10.6,
+       37.05
+      ],
+      [
+       10.35,
+       36.95
+      ],
+      [
+       9.7,
+       37.6
+      ],
+      [
+       9.0,
+       38.85
+      ],
+      [
+       6.0,
+       38.6
+      ],
+      [
+       2.0,
+       38.65
+      ],
+      [
+       1.45,
+       38.85
+      ],
+      [
+       -0.5,
+       37.7
+      ],
+      [
+       -2.0,
+       36.65
+      ],
+      [
+       -4.4,
+       36.62
+      ],
+      [
+       -5.0,
+       36.35
+      ],
+      [
+       -5.4,
+       36.05
+      ],
+      [
+       -5.65,
+       35.93
+      ],
+      [
+       -6.1,
+       36.05
+      ],
+      [
+       -6.42,
+       36.45
+      ],
+      [
+       -6.3,
+       36.53
+      ]
+     ],
+     "by": "sea",
+     "icon": "⛵",
+     "label": {
+      "en": "Phoenician sea routes",
+      "es": "Rutas marítimas fenicias"
+     }
+    },
+    {
+     "side": "west",
+     "path": [
+      [
+       35.15,
+       33.27
+      ],
+      [
+       35.3,
+       34.5
+      ],
+      [
+       34.8,
+       35.85
+      ],
+      [
+       33.0,
+       35.75
+      ],
+      [
+       31.0,
+       36.3
+      ],
+      [
+       30.4,
+       35.95
+      ],
+      [
+       29.3,
+       36.0
+      ],
+      [
+       28.4,
+       36.4
+      ],
+      [
+       26.5,
+       37.1
+      ],
+      [
+       24.6,
+       37.7
+      ],
+      [
+       24.3,
+       38.15
+      ],
+      [
+       23.7,
+       38.4
+      ]
+     ],
+     "by": "sea",
+     "icon": "⛵",
+     "label": {
+      "en": "To Greece",
+      "es": "Hacia Grecia"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "carthage",
+     "name": {
+      "en": "Carthage",
+      "es": "Cartago"
+     },
+     "at": [
+      10.3233,
+      36.8528
+     ],
+     "cat": "city",
+     "type": "site",
+     "date": "-814",
+     "place": {
+      "en": "Carthage, Tunis, Tunisia",
+      "es": "Cartago, Túnez, Túnez"
+     },
+     "text": {
+      "en": "A colony of Tyre, founded, tradition says, by Queen Elissa (Dido) in 814 BC. It grew into the capital of a Punic empire, writing in Phoenician letters, until Rome destroyed it in 146 BC.",
+      "es": "Una colonia de Tiro, fundada, según la tradición, por la reina Elisa (Dido) en el 814 a. C. Llegó a ser la capital de un imperio púnico, que escribía con letras fenicias, hasta que Roma la destruyó en el 146 a. C."
+     },
+     "wiki": {
+      "en": "Carthage",
+      "es": "Cartago"
+     }
+    },
+    {
+     "id": "nora-stone",
+     "name": {
+      "en": "Nora Stone",
+      "es": "Estela de Nora"
+     },
+     "at": [
+      9.015,
+      38.985
+     ],
+     "cat": "inscription",
+     "type": "work",
+     "date": "-800",
+     "place": {
+      "en": "Nora, Sardinia; now in Cagliari, Italy",
+      "es": "Nora, Cerdeña; hoy en Cagliari, Italia"
+     },
+     "text": {
+      "en": "A stone of the late 9th or early 8th century BC found in 1773 in southern Sardinia: the oldest Phoenician inscription found outside the Levant. It names Sardinia.",
+      "es": "Una piedra de fines del siglo IX o comienzos del VIII a. C. hallada en 1773 en el sur de Cerdeña: la inscripción fenicia más antigua hallada fuera del Levante. Nombra a Cerdeña."
+     },
+     "wiki": {
+      "en": "Nora Stone",
+      "es": "Estela de Nora"
+     }
+    },
+    {
+     "id": "greek-alphabet",
+     "name": {
+      "en": "Greek alphabet",
+      "es": "Alfabeto griego"
+     },
+     "at": [
+      23.6753,
+      38.4125
+     ],
+     "cat": "script",
+     "icon": "Α",
+     "type": "script",
+     "date": "-800",
+     "place": {
+      "en": "Greece (here Euboea)",
+      "es": "Grecia (aquí Eubea)"
+     },
+     "text": {
+      "en": "Adapted from the Phoenician letters around 800 BC, it was the first alphabet with letters for vowels. It is the parent of the Latin, Cyrillic, Coptic and Gothic alphabets.",
+      "es": "Adaptado de las letras fenicias hacia el 800 a. C., fue el primer alfabeto con letras para las vocales. Es el padre de los alfabetos latino, cirílico, copto y gótico."
+     },
+     "details": {
+      "en": "The Greeks called their letters phoinikeia grammata, 'Phoenician letters'. A Greek story said that Cadmus, a prince from Phoenicia, brought them. Greek traders from the island of Euboea, who sailed east to Syria and west to Italy, may have been among the first to use them. Greeks wrote right to left at first, then in lines that turned back and forth 'as the ox ploughs', and from about 500 BC left to right, which is why many letters face the other way from their Phoenician models.",
+      "es": "Los griegos llamaban a sus letras phoinikeia grammata, 'letras fenicias'. Un relato griego decía que las trajo Cadmo, un príncipe de Fenicia. Los comerciantes griegos de la isla de Eubea, que navegaban al este hasta Siria y al oeste hasta Italia, pudieron estar entre los primeros en usarlas. Los griegos escribieron primero de derecha a izquierda, luego en líneas que iban y volvían 'como ara el buey', y desde hacia el 500 a. C. de izquierda a derecha, por eso muchas letras miran al revés que sus modelos fenicios."
+     },
+     "sample": {
+      "text": "ΑΒΓΔ",
+      "latin": "alpha, beta, gamma, delta",
+      "means": {
+       "en": "the first four letters",
+       "es": "las cuatro primeras letras"
+      }
+     },
+     "wiki": {
+      "en": "Greek alphabet",
+      "es": "Alfabeto griego"
+     },
+     "img": "NAMA Alphabet grec.jpg"
+    },
+    {
+     "id": "dipylon-inscription",
+     "name": {
+      "en": "Dipylon inscription",
+      "es": "Inscripción del Dípilon"
+     },
+     "at": [
+      23.7186,
+      37.9781
+     ],
+     "cat": "inscription",
+     "type": "work",
+     "date": "-740",
+     "place": {
+      "en": "Kerameikos, Athens; now in the National Archaeological Museum",
+      "es": "Cerámico, Atenas; hoy en el Museo Arqueológico Nacional"
+     },
+     "text": {
+      "en": "A verse scratched around a wine jug about 740 BC, one of the oldest texts in the Greek alphabet: the jug was a prize for the best dancer. It is written right to left.",
+      "es": "Un verso rayado alrededor de una jarra de vino hacia el 740 a. C., uno de los textos más antiguos en alfabeto griego: la jarra era el premio para el mejor bailarín. Está escrito de derecha a izquierda."
+     },
+     "sample": {
+      "text": "ΗΟΣ ΝΥΝ ΟΡΧΕΣΤΟΝ ΠΑΝΤΟΝ",
+      "latin": "hos nun orkhēstōn pantōn",
+      "means": {
+       "en": "\"whoever of all the dancers now (dances most gracefully)\"",
+       "es": "\"quien de todos los bailarines ahora (baile con más gracia)\""
+      }
+     },
+     "wiki": {
+      "en": "Dipylon inscription",
+      "es": "Inscripción del Dípilon"
+     }
+    },
+    {
+     "id": "ancient-greek",
+     "name": {
+      "en": "Ancient Greek",
+      "es": "Griego antiguo"
+     },
+     "at": [
+      22.5011,
+      38.4824
+     ],
+     "cat": "language",
+     "type": "language",
+     "date": "-800",
+     "place": {
+      "en": "Greece and the Greek cities of the Mediterranean (here Delphi)",
+      "es": "Grecia y las ciudades griegas del Mediterráneo (aquí Delfos)"
+     },
+     "text": {
+      "en": "The language of Homer, Sappho, Plato and the New Testament, written in the Greek alphabet. Its words still fill science and medicine, and modern Greek grew from it.",
+      "es": "La lengua de Homero, Safo, Platón y el Nuevo Testamento, escrita en alfabeto griego. Sus palabras siguen llenando la ciencia y la medicina, y de ella nació el griego moderno."
+     },
+     "sample": {
+      "text": "γνῶθι σεαυτόν",
+      "latin": "gnōthi seautón",
+      "means": {
+       "en": "\"know yourself\", carved at the temple of Delphi",
+       "es": "\"conócete a ti mismo\", grabado en el templo de Delfos"
+      }
+     },
+     "wiki": {
+      "en": "Ancient Greek",
+      "es": "Griego antiguo"
+     }
+    }
+   ]
+  },
+  {
+   "date": "-600",
+   "title": {
+    "en": "Etruscans and Romans",
+    "es": "Etruscos y romanos"
+   },
+   "text": {
+    "en": "Greek settlers at Cumae, near Naples, passed their letters to the Etruscans of central Italy by about 700 BC. The Latins of Rome took them in turn, and around 570 BC carved a law on a sacred stone in the Forum.",
+    "es": "Los colonos griegos de Cumas, cerca de Nápoles, pasaron sus letras a los etruscos del centro de Italia hacia el 700 a. C. Los latinos de Roma las tomaron a su vez, y hacia el 570 a. C. grabaron una ley en una piedra sagrada del Foro."
+   },
+   "details": {
+    "en": "The Greeks of Euboea, who founded Pithekoussai and Cumae, the first Greek settlements in Italy, wrote a western form of the alphabet. The Etruscans, rich traders who built cities in today's Tuscany, took it over; an ivory writing tablet found at Marsiliana, of about 700 BC, has 26 letters along its frame for a pupil to copy. The Romans then borrowed the Etruscan letters. Latin A kept the shape of alpha, now standing upright. The Lapis Niger, a stone pillar found under black paving in the Roman Forum, carries one of the oldest Latin texts, written back and forth: it seems to curse anyone who disturbs a holy place, and it names a king, rex. Etruscan writing died out around AD 100, and the Etruscan language is still only partly understood.",
+    "es": "Los griegos de Eubea, que fundaron Pitecusa y Cumas, los primeros asentamientos griegos en Italia, escribían una forma occidental del alfabeto. Los etruscos, ricos comerciantes que construyeron ciudades en la actual Toscana, la adoptaron; una tablilla de escribir de marfil hallada en Marsiliana, de hacia el 700 a. C., tiene 26 letras en su marco para que un alumno las copiara. Luego los romanos tomaron las letras etruscas. La A latina conservó la forma de la alfa, ahora de pie. El Lapis Niger, un pilar de piedra hallado bajo un pavimento negro en el Foro romano, lleva uno de los textos latinos más antiguos, escrito de ida y vuelta: parece maldecir a quien perturbe un lugar sagrado, y nombra a un rey, rex. La escritura etrusca se extinguió hacia el año 100 d. C., y la lengua etrusca aún se entiende solo en parte."
+   },
+   "camera": {
+    "lon": 14.5,
+    "lat": 40.6,
+    "zoom": 4.6
+   },
+   "control": {
+    "west": [
+     {
+      "prev": true
+     },
+     {
+      "ref": "italy_600"
+     },
+     {
+      "ref": "massalia"
+     }
+    ]
+   },
+   "moves": [
+    {
+     "side": "west",
+     "path": [
+      [
+       23.7,
+       38.38
+      ],
+      [
+       24.0,
+       38.2
+      ],
+      [
+       24.55,
+       37.85
+      ],
+      [
+       23.4,
+       36.35
+      ],
+      [
+       22.3,
+       36.15
+      ],
+      [
+       21.0,
+       36.6
+      ],
+      [
+       19.5,
+       38.2
+      ],
+      [
+       17.2,
+       38.7
+      ],
+      [
+       16.2,
+       37.85
+      ],
+      [
+       15.65,
+       37.95
+      ],
+      [
+       15.62,
+       38.2
+      ],
+      [
+       15.2,
+       38.9
+      ],
+      [
+       14.6,
+       39.6
+      ],
+      [
+       14.0,
+       40.68
+      ],
+      [
+       14.04,
+       40.84
+      ]
+     ],
+     "by": "sea",
+     "icon": "⛵",
+     "label": {
+      "en": "Euboean settlers",
+      "es": "Colonos de Eubea"
+     }
+    },
+    {
+     "side": "west",
+     "path": [
+      [
+       14.04,
+       40.84
+      ],
+      [
+       13.8,
+       40.95
+      ],
+      [
+       13.0,
+       41.2
+      ],
+      [
+       12.3,
+       41.6
+      ],
+      [
+       11.72,
+       42.2
+      ]
+     ],
+     "by": "sea",
+     "label": {
+      "en": "To the Etruscans",
+      "es": "Hacia los etruscos"
+     }
+    },
+    {
+     "side": "west",
+     "path": [
+      [
+       11.76,
+       42.25
+      ],
+      [
+       12.1,
+       42.0
+      ],
+      [
+       12.48,
+       41.89
+      ]
+     ],
+     "by": "land",
+     "label": {
+      "en": "To Rome",
+      "es": "Hacia Roma"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "cumae",
+     "name": {
+      "en": "Cumae",
+      "es": "Cumas"
+     },
+     "at": [
+      14.0536,
+      40.8486
+     ],
+     "cat": "city",
+     "type": "site",
+     "date": "-740",
+     "place": {
+      "en": "Pozzuoli, Naples, Italy",
+      "es": "Pozzuoli, Nápoles, Italia"
+     },
+     "text": {
+      "en": "One of the first Greek settlements in Italy, founded by people from Euboea in the 8th century BC. The Etruscans and then the Romans learned the alphabet from this western Greek world.",
+      "es": "Uno de los primeros asentamientos griegos en Italia, fundado por gente de Eubea en el siglo VIII a. C. Los etruscos y luego los romanos aprendieron el alfabeto de este mundo griego occidental."
+     },
+     "wiki": {
+      "en": "Cumae",
+      "es": "Cumas"
+     }
+    },
+    {
+     "id": "old-italic",
+     "name": {
+      "en": "Etruscan and Old Italic alphabets",
+      "es": "Alfabetos etrusco e itálicos"
+     },
+     "at": [
+      11.37,
+      42.53
+     ],
+     "cat": "script",
+     "icon": "𐌀",
+     "type": "script",
+     "date": "-700",
+     "place": {
+      "en": "Marsiliana d'Albegna, Tuscany, Italy",
+      "es": "Marsiliana d'Albegna, Toscana, Italia"
+     },
+     "text": {
+      "en": "Alphabets of ancient Italy taken from the Greek, used for Etruscan, Oscan, Umbrian and other languages from about 700 BC. The oldest Etruscan ABC is on an ivory tablet from Marsiliana.",
+      "es": "Alfabetos de la Italia antigua tomados del griego, usados para el etrusco, el osco, el umbro y otras lenguas desde hacia el 700 a. C. El abecedario etrusco más antiguo está en una tablilla de marfil de Marsiliana."
+     },
+     "sample": {
+      "text": "𐌀𐌁𐌂𐌃𐌄",
+      "latin": "a b c d e",
+      "means": {
+       "en": "the first letters, as on the Marsiliana tablet",
+       "es": "las primeras letras, como en la tablilla de Marsiliana"
+      }
+     },
+     "wiki": {
+      "en": "Old Italic scripts",
+      "es": "Alfabetos itálicos"
+     },
+     "img": "Marsiliana tablet.svg"
+    },
+    {
+     "id": "lapis-niger",
+     "name": {
+      "en": "Lapis Niger",
+      "es": "Lapis Niger"
+     },
+     "at": [
+      12.4847,
+      41.8925
+     ],
+     "cat": "inscription",
+     "type": "work",
+     "date": "-570",
+     "place": {
+      "en": "Roman Forum, Rome, Italy",
+      "es": "Foro romano, Roma, Italia"
+     },
+     "text": {
+      "en": "A stone pillar of about 570–550 BC buried under black paving in the Roman Forum, with one of the oldest Latin inscriptions, written back and forth. It seems to curse anyone who violates the place.",
+      "es": "Un pilar de piedra de hacia 570-550 a. C., enterrado bajo un pavimento negro en el Foro romano, con una de las inscripciones latinas más antiguas, escrita de ida y vuelta. Parece maldecir a quien profane el lugar."
+     },
+     "sample": {
+      "text": "QVOI HO… SAKROS ES ED",
+      "latin": "quoi ho[…] sakros esed",
+      "means": {
+       "en": "\"whoever (violates) this … shall be cursed\", its first words",
+       "es": "\"quien (profane) esto … será maldito\", sus primeras palabras"
+      }
+     },
+     "wiki": {
+      "en": "Lapis Niger",
+      "es": "Lapis Niger"
+     }
+    },
+    {
+     "id": "latin-alphabet",
+     "name": {
+      "en": "Latin alphabet",
+      "es": "Alfabeto latino"
+     },
+     "at": [
+      12.75,
+      41.75
+     ],
+     "cat": "script",
+     "icon": "A",
+     "type": "script",
+     "date": "-650",
+     "place": {
+      "en": "Rome and Latium, Italy",
+      "es": "Roma y el Lacio, Italia"
+     },
+     "text": {
+      "en": "The Romans' version of the Etruscan letters, written from the 7th century BC. Carried by Rome, the Church and later by European empires, it is now used by about 3 billion people.",
+      "es": "La versión romana de las letras etruscas, escrita desde el siglo VII a. C. Llevado por Roma, la Iglesia y más tarde los imperios europeos, hoy lo usan unos 3000 millones de personas."
+     },
+     "details": {
+      "en": "The Romans kept the Etruscan C for both k and g until they added a stroke to make G, and later borrowed Y and Z from Greek for Greek words. All the letters had reached their classical shapes by about 100 BC. J, U and W came only in the Middle Ages and later. Today the Latin script writes more languages than any other, from English, Spanish and Swahili to Vietnamese and Indonesian; about 3 billion people, almost 40% of humanity, used it in 2024.",
+      "es": "Los romanos usaron la C etrusca tanto para k como para g hasta que le añadieron un trazo para formar la G, y más tarde tomaron del griego la Y y la Z para las palabras griegas. Hacia el 100 a. C. todas las letras tenían ya su forma clásica. La J, la U y la W llegaron recién en la Edad Media y después. Hoy la escritura latina escribe más lenguas que ninguna otra, del inglés, el español y el suajili al vietnamita y el indonesio; en 2024 la usaban unos 3000 millones de personas, casi el 40 % de la humanidad."
+     },
+     "sample": {
+      "text": "ABCDEFG",
+      "latin": "A B C D E F G",
+      "means": {
+       "en": "the first letters, as the Romans carved them",
+       "es": "las primeras letras, como las tallaban los romanos"
+      }
+     },
+     "wiki": {
+      "en": "Latin alphabet",
+      "es": "Alfabeto latino"
+     }
+    }
+   ]
+  },
+  {
+   "date": "-500",
+   "title": {
+    "en": "The Persian empire's script",
+    "es": "La escritura del Imperio persa"
+   },
+   "text": {
+    "en": "The Persian kings ruled from Egypt to the Indus, and their officials wrote to one another in Aramaic. Its letters, by now quite different from Phoenician, became the common script of the Near East.",
+    "es": "Los reyes persas gobernaban de Egipto al Indo, y sus funcionarios se escribían en arameo. Sus letras, ya bastante distintas de las fenicias, se volvieron la escritura común del Cercano Oriente."
+   },
+   "details": {
+    "en": "The Arameans were tribes and small kingdoms of Syria. The Assyrians conquered them and deported many across their empire, and from the 8th century BC Assyrian scribes wrote Aramaic, with ink on leather and papyrus, beside cuneiform on clay. The Babylonian kings, then the Persians from Cyrus onwards, kept it as the language of government, so that an order written at Susa could be read in Egypt or Bactria. At Elephantine, an island on the Nile, a garrison of Jewish soldiers serving Persia left Aramaic papyri: letters, marriage and divorce contracts, the freeing of enslaved people, even the story of the wise Ahiqar. Cuneiform slowly fell out of use. The Aramaic letters went on to give birth to Hebrew, Syriac, Arabic and the scripts of Central Asia, and probably of India.",
+    "es": "Los arameos eran tribus y pequeños reinos de Siria. Los asirios los conquistaron y deportaron a muchos por todo su imperio, y desde el siglo VIII a. C. los escribas asirios escribían el arameo, con tinta sobre cuero y papiro, junto al cuneiforme sobre arcilla. Los reyes babilonios y luego los persas, desde Ciro, lo mantuvieron como lengua de gobierno, de modo que una orden escrita en Susa se podía leer en Egipto o en Bactriana. En Elefantina, una isla del Nilo, una guarnición de soldados judíos al servicio de Persia dejó papiros arameos: cartas, contratos de matrimonio y divorcio, la liberación de personas esclavizadas, y hasta la historia del sabio Ajicar. El cuneiforme cayó poco a poco en desuso. Las letras arameas darían origen al hebreo, al siríaco, al árabe y a las escrituras de Asia central, y probablemente a las de la India."
+   },
+   "camera": {
+    "lon": 46.0,
+    "lat": 31.5,
+    "zoom": 2.5
+   },
+   "control": {
+    "aram": {
+     "minus": [
+      {
+       "ref": "achaemenid"
+      },
+      {
+       "cur": "west"
+      }
+     ]
+    }
+   },
+   "moves": [
+    {
+     "side": "aram",
+     "path": [
+      [
+       28.04,
+       38.488
+      ],
+      [
+       30.2,
+       39.0
+      ],
+      [
+       32.0,
+       39.6
+      ],
+      [
+       34.5,
+       39.6
+      ],
+      [
+       36.5,
+       38.8
+      ],
+      [
+       38.5,
+       38.3
+      ],
+      [
+       40.2,
+       37.9
+      ],
+      [
+       42.5,
+       37.2
+      ],
+      [
+       43.9,
+       36.2
+      ],
+      [
+       45.5,
+       34.5
+      ],
+      [
+       47.0,
+       33.2
+      ],
+      [
+       48.258,
+       32.191
+      ]
+     ],
+     "by": "land",
+     "icon": "🐎",
+     "label": {
+      "en": "The Royal Road",
+      "es": "El Camino Real"
+     }
+    },
+    {
+     "side": "aram",
+     "path": [
+      [
+       48.258,
+       32.191
+      ],
+      [
+       51.5,
+       30.6
+      ],
+      [
+       52.89,
+       29.935
+      ],
+      [
+       56.3,
+       30.3
+      ],
+      [
+       61.2,
+       31.0
+      ],
+      [
+       65.7,
+       31.6
+      ],
+      [
+       69.2,
+       34.5
+      ],
+      [
+       72.82,
+       33.75
+      ]
+     ],
+     "by": "land",
+     "icon": "🐎",
+     "label": {
+      "en": "To the Indus",
+      "es": "Hacia el Indo"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "aramaic-alphabet",
+     "name": {
+      "en": "Aramaic alphabet",
+      "es": "Alfabeto arameo"
+     },
+     "at": [
+      48.2578,
+      32.1906
+     ],
+     "cat": "script",
+     "icon": "𐡀",
+     "type": "script",
+     "date": "-800",
+     "place": {
+      "en": "Susa and the whole Persian empire",
+      "es": "Susa y todo el Imperio persa"
+     },
+     "text": {
+      "en": "The Phoenician letters as the Arameans of Syria shaped them from the 8th century BC. As the script of Assyria, Babylon and Persia, it became the ancestor of most scripts of Asia.",
+      "es": "Las letras fenicias tal como las moldearon los arameos de Siria desde el siglo VIII a. C. Como escritura de Asiria, Babilonia y Persia, se convirtió en la antepasada de la mayoría de las escrituras de Asia."
+     },
+     "sample": {
+      "text": "𐡀𐡁𐡂𐡃",
+      "latin": "ʾālap bēt gāmal dālat",
+      "means": {
+       "en": "the first four letters",
+       "es": "las cuatro primeras letras"
+      }
+     },
+     "wiki": {
+      "en": "Aramaic alphabet",
+      "es": "Alfabeto arameo"
+     }
+    },
+    {
+     "id": "aramaic",
+     "name": {
+      "en": "Aramaic",
+      "es": "Arameo"
+     },
+     "at": [
+      36.2913,
+      33.5138
+     ],
+     "cat": "language",
+     "type": "language",
+     "date": "-1000",
+     "place": {
+      "en": "Syria, then the whole Near East",
+      "es": "Siria, y luego todo el Cercano Oriente"
+     },
+     "text": {
+      "en": "A Semitic language of Syria that became the common language of the Near East for a thousand years, and the language of parts of the Bible and of the Talmud. Small communities still speak it.",
+      "es": "Una lengua semítica de Siria que fue la lengua común del Cercano Oriente durante mil años, y la de partes de la Biblia y del Talmud. Pequeñas comunidades todavía la hablan."
+     },
+     "details": {
+      "en": "Modern forms of Aramaic are still spoken by Assyrian Christians, Mizrahi Jews and Mandaeans, among them Suret and Turoyo, with about 240,000 and 250,000 speakers, and Western Neo-Aramaic, kept alive by about 3,000 people in two villages of the Anti-Lebanon mountains of Syria. All are endangered, and researchers are recording them before they disappear.",
+      "es": "Formas modernas del arameo siguen habladas por cristianos asirios, judíos mizrajíes y mandeos, entre ellas el suret y el turoyo, con unos 240 000 y 250 000 hablantes, y el neoarameo occidental, que mantienen vivo unas 3000 personas en dos aldeas de los montes del Antilíbano, en Siria. Todas están en peligro, y los investigadores las graban antes de que desaparezcan."
+     },
+     "sample": {
+      "text": "𐡔𐡋𐡌",
+      "latin": "šlām",
+      "means": {
+       "en": "\"peace\", also a greeting",
+       "es": "\"paz\", también un saludo"
+      }
+     },
+     "wiki": {
+      "en": "Aramaic",
+      "es": "Lenguas arameas"
+     },
+     "img": "Carpentras Stela, in CIS II 141 (cropped).jpg"
+    },
+    {
+     "id": "elephantine-papyri",
+     "name": {
+      "en": "Elephantine papyri",
+      "es": "Papiros de Elefantina"
+     },
+     "at": [
+      32.8847,
+      24.0861
+     ],
+     "cat": "book",
+     "type": "work",
+     "date": "-495",
+     "place": {
+      "en": "Elephantine, Aswan, Egypt",
+      "es": "Elefantina, Asuán, Egipto"
+     },
+     "text": {
+      "en": "Hundreds of papyri and potsherds from a Nile island garrison, many in Aramaic, from 495–399 BC: letters, contracts and stories of a Jewish community of soldiers serving the Persian kings.",
+      "es": "Cientos de papiros y tiestos de la guarnición de una isla del Nilo, muchos en arameo, de 495-399 a. C.: cartas, contratos e historias de una comunidad judía de soldados al servicio de los reyes persas."
+     },
+     "wiki": {
+      "en": "Elephantine papyri and ostraca",
+      "es": "Papiros de Elefantina"
+     }
+    }
+   ]
+  },
+  {
+   "date": "-250",
+   "title": {
+    "en": "Ashoka's letters",
+    "es": "Las letras de Ashoka"
+   },
+   "text": {
+    "en": "Around 250 BC the Indian emperor Ashoka had his edicts carved on rocks and pillars across his empire, most in a script called Brahmi. In the north-west he used Kharosthi, Aramaic and Greek.",
+    "es": "Hacia el 250 a. C., el emperador indio Ashoka mandó grabar sus edictos en rocas y columnas de todo su imperio, la mayoría en una escritura llamada brahmi. En el noroeste usó el kharosthi, el arameo y el griego."
+   },
+   "details": {
+    "en": "Ashoka's edicts, from about 260 to 232 BC, are the oldest securely dated writing of India since the Indus signs fell silent more than a thousand years before. They speak of dhamma: non-violence, tolerance of all sects, respect for parents and teachers. Brahmi was already a full system: each letter was a consonant with the vowel a, and small marks changed the vowel. Where it came from is debated: most scholars think it was modelled at least partly on a Semitic script, probably the Aramaic used by Persian officials in the Indus valley; others argue that it was invented in India. In Gandhara, today's northern Pakistan and eastern Afghanistan, people wrote Kharosthi, clearly a child of Aramaic, from right to left. Both scripts were later forgotten, until James Prinsep and others deciphered them in the 1830s.",
+    "es": "Los edictos de Ashoka, de hacia 260 a 232 a. C., son la escritura de la India de fecha segura más antigua desde que los signos del Indo enmudecieron más de mil años antes. Hablan del dhamma: la no violencia, la tolerancia de todas las creencias, el respeto a padres y maestros. El brahmi ya era un sistema completo: cada letra era una consonante con la vocal a, y pequeñas marcas cambiaban la vocal. Su origen se discute: la mayoría de los especialistas cree que se inspiró al menos en parte en una escritura semítica, probablemente el arameo de los funcionarios persas del valle del Indo; otros sostienen que se inventó en la India. En Gandhara, el actual norte de Pakistán y este de Afganistán, se escribía el kharosthi, claramente hijo del arameo, de derecha a izquierda. Ambas escrituras se olvidaron después, hasta que James Prinsep y otros las descifraron en la década de 1830."
+   },
+   "camera": {
+    "lon": 76.0,
+    "lat": 26.0,
+    "zoom": 3.2
+   },
+   "control": {
+    "west": [
+     {
+      "prev": true
+     },
+     {
+      "hist": "Ptolemaic Kingdom",
+      "year": -300
+     },
+     {
+      "ref": "anatolia"
+     }
+    ],
+    "aram": {
+     "minus": [
+      {
+       "prev": true
+      },
+      {
+       "cur": "west"
+      }
+     ]
+    },
+    "brahmi": {
+     "minus": [
+      {
+       "hist": "Mauryan Empire",
+       "year": -300
+      },
+      {
+       "cur": "aram"
+      }
+     ]
+    }
+   },
+   "places": [
+    {
+     "id": "brahmi",
+     "name": {
+      "en": "Brahmi script",
+      "es": "Escritura brahmi"
+     },
+     "at": [
+      85.1376,
+      25.5941
+     ],
+     "cat": "script",
+     "icon": "𑀅",
+     "type": "script",
+     "date": "-260",
+     "place": {
+      "en": "Pataliputra (Patna), Bihar, India",
+      "es": "Pataliputra (hoy Patna), Bihar, India"
+     },
+     "text": {
+      "en": "The script of most of Ashoka's edicts, about 250 BC, in which each letter is a consonant with a built-in vowel. It is the ancestor of the scripts of South and Southeast Asia.",
+      "es": "La escritura de la mayoría de los edictos de Ashoka, hacia el 250 a. C., en la que cada letra es una consonante con una vocal incluida. Es la antepasada de las escrituras del sur y el sudeste de Asia."
+     },
+     "sample": {
+      "text": "𑀩𑁆𑀭𑀸𑀳𑁆𑀫𑀻",
+      "latin": "brāhmī",
+      "means": {
+       "en": "the script's own name",
+       "es": "el nombre de la escritura"
+      }
+     },
+     "wiki": {
+      "en": "Brahmi script",
+      "es": "Brahmi"
+     }
+    },
+    {
+     "id": "edicts-of-ashoka",
+     "name": {
+      "en": "Edicts of Ashoka",
+      "es": "Edictos de Ashoka"
+     },
+     "at": [
+      83.0264,
+      25.3811
+     ],
+     "cat": "inscription",
+     "type": "work",
+     "date": "-260",
+     "place": {
+      "en": "Across India, Nepal, Pakistan and Afghanistan (here Sarnath)",
+      "es": "En toda la India, Nepal, Pakistán y Afganistán (aquí Sarnath)"
+     },
+     "text": {
+      "en": "More than thirty inscriptions on rocks and pillars, about 260–232 BC, in which Ashoka urges non-violence and respect for all faiths. They are the oldest dated writing of India after the Indus signs.",
+      "es": "Más de treinta inscripciones en rocas y columnas, de hacia 260-232 a. C., en las que Ashoka llama a la no violencia y al respeto de todas las creencias. Son la escritura fechada más antigua de la India después de los signos del Indo."
+     },
+     "sample": {
+      "text": "𑀥𑀁𑀫𑀮𑀺𑀧𑀺",
+      "latin": "dhaṃma lipi",
+      "means": {
+       "en": "\"writings of the dhamma\", Ashoka's own name for his edicts",
+       "es": "\"escritos del dhamma\", el nombre que Ashoka daba a sus edictos"
+      }
+     },
+     "wiki": {
+      "en": "Edicts of Ashoka",
+      "es": "Edictos de Ashoka"
+     }
+    },
+    {
+     "id": "kharosthi",
+     "name": {
+      "en": "Kharosthi script",
+      "es": "Escritura kharosthi"
+     },
+     "at": [
+      72.16,
+      34.2356
+     ],
+     "cat": "script",
+     "icon": "𐨀",
+     "type": "script",
+     "date": "-300",
+     "until": "300",
+     "place": {
+      "en": "Gandhara (here Shahbazgarhi, Pakistan)",
+      "es": "Gandhara (aquí Shahbazgarhi, Pakistán)"
+     },
+     "text": {
+      "en": "A script of Gandhara derived from Aramaic and written right to left, used from about the 4th century BC to the 3rd century AD, for Ashoka's edicts in the north-west and the oldest Buddhist manuscripts.",
+      "es": "Una escritura de Gandhara derivada del arameo y escrita de derecha a izquierda, usada de hacia el siglo IV a. C. al siglo III d. C., en los edictos de Ashoka del noroeste y en los manuscritos budistas más antiguos."
+     },
+     "sample": {
+      "text": "𐨑𐨪𐨆𐨮𐨿𐨛𐨁𐨌",
+      "latin": "kharoṣṭhī",
+      "means": {
+       "en": "the script's name",
+       "es": "el nombre de la escritura"
+      }
+     },
+     "wiki": {
+      "en": "Kharosthi",
+      "es": "Karosti"
+     }
+    },
+    {
+     "id": "kandahar-bilingual",
+     "name": {
+      "en": "Kandahar Bilingual Inscription",
+      "es": "Inscripción bilingüe de Kandahar"
+     },
+     "at": [
+      65.664,
+      31.6156
+     ],
+     "cat": "inscription",
+     "type": "work",
+     "date": "-260",
+     "place": {
+      "en": "Old Kandahar, Afghanistan",
+      "es": "Antigua Kandahar, Afganistán"
+     },
+     "text": {
+      "en": "Ashoka's first known edict, of about 260 BC, carved in Greek and Aramaic on a rock at the edge of his empire, where Greeks and Persians lived.",
+      "es": "El primer edicto conocido de Ashoka, de hacia el 260 a. C., grabado en griego y en arameo en una roca del borde de su imperio, donde vivían griegos y persas."
+     },
+     "wiki": {
+      "en": "Kandahar Bilingual Rock Inscription",
+      "es": ""
+     }
+    }
+   ]
+  },
+  {
+   "date": "200",
+   "title": {
+    "en": "Aramaic's children",
+    "es": "Los hijos del arameo"
+   },
+   "text": {
+    "en": "By AD 200 the Aramaic letters had many children: the square Hebrew letters of the Dead Sea Scrolls, Syriac at Edessa, Nabataean at Petra. In Egypt, Christians wrote their language in Greek letters: Coptic.",
+    "es": "Hacia el año 200 d. C. las letras arameas tenían muchos hijos: las letras hebreas cuadradas de los manuscritos del mar Muerto, el siríaco en Edesa, el nabateo en Petra. En Egipto, los cristianos escribían su lengua con letras griegas: el copto."
+   },
+   "details": {
+    "en": "After the Persian empire fell, each people shaped the Aramaic letters its own way. Jews used the 'square' letters for Hebrew, and by about the 3rd century BC they had become the Hebrew alphabet still used today; the Dead Sea Scrolls, hidden in caves near Qumran, show it. At Edessa, in today's Turkey, Syriac, a form of Aramaic, was written from the 1st century AD; its Christians and scholars later carried the script as far as India and China. The Nabataean traders of Petra wrote a rounded form of Aramaic from which the Arabic alphabet would grow. Across the Roman Empire, from Britain to Syria, people wrote Latin and Greek. In Egypt, where hieroglyphs were dying out, Egyptian was now written in Greek letters plus six or seven signs from demotic: the Coptic alphabet, the first to write Egyptian vowels.",
+    "es": "Tras la caída del Imperio persa, cada pueblo moldeó las letras arameas a su manera. Los judíos usaron las letras 'cuadradas' para el hebreo, y hacia el siglo III a. C. ya eran el alfabeto hebreo que se usa hoy; lo muestran los manuscritos del mar Muerto, escondidos en cuevas cerca de Qumrán. En Edesa, en la actual Turquía, el siríaco, una forma del arameo, se escribía desde el siglo I d. C.; sus cristianos y sabios llevaron más tarde la escritura hasta la India y China. Los comerciantes nabateos de Petra escribían una forma redondeada del arameo de la que nacería el alfabeto árabe. En todo el Imperio romano, de Britania a Siria, se escribía en latín y en griego. En Egipto, donde los jeroglíficos se extinguían, el egipcio se escribía ahora con letras griegas y seis o siete signos del demótico: el alfabeto copto, el primero que escribió las vocales del egipcio."
+   },
+   "camera": {
+    "lon": 27.0,
+    "lat": 35.0,
+    "zoom": 2.4
+   },
+   "control": {
+    "west": {
+     "minus": [
+      {
+       "hist": "Roman Empire",
+       "year": 200
+      },
+      {
+       "ref": "roman_east_aram"
+      }
+     ]
+    },
+    "aram": {
+     "minus": [
+      [
+       {
+        "hist": "Parthian Empire",
+        "year": 200
+       },
+       {
+        "ref": "roman_east_aram"
+       },
+       {
+        "ref": "gandhara"
+       }
+      ],
+      {
+       "cur": "west"
+      }
+     ]
+    },
+    "brahmi": {
+     "minus": [
+      {
+       "ref": "south_asia"
+      },
+      {
+       "cur": "aram"
+      }
+     ]
+    },
+    "geez": {
+     "minus": [
+      {
+       "ref": "axum_himyar_200"
+      },
+      {
+       "cur": "west"
+      },
+      {
+       "cur": "aram"
+      }
+     ]
+    }
+   },
+   "moves": [
+    {
+     "side": "aram",
+     "path": [
+      [
+       35.44,
+       30.33
+      ],
+      [
+       36.0,
+       29.5
+      ],
+      [
+       36.6,
+       28.4
+      ],
+      [
+       37.2,
+       27.6
+      ],
+      [
+       37.95,
+       26.79
+      ],
+      [
+       38.8,
+       25.6
+      ],
+      [
+       39.6,
+       24.47
+      ]
+     ],
+     "by": "land",
+     "icon": "🐪",
+     "label": {
+      "en": "Nabataean caravans",
+      "es": "Caravanas nabateas"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "hebrew-alphabet",
+     "name": {
+      "en": "Hebrew alphabet",
+      "es": "Alfabeto hebreo"
+     },
+     "at": [
+      35.4586,
+      31.7419
+     ],
+     "cat": "script",
+     "icon": "א",
+     "type": "script",
+     "date": "-250",
+     "place": {
+      "en": "Qumran, West Bank, and Jewish communities everywhere",
+      "es": "Qumrán, Cisjordania, y las comunidades judías de todo el mundo"
+     },
+     "text": {
+      "en": "The square letters that grew out of Aramaic by about the 3rd century BC. They wrote the Dead Sea Scrolls, Jewish books ever since, and Yiddish and Ladino too.",
+      "es": "Las letras cuadradas que nacieron del arameo hacia el siglo III a. C. Con ellas se escribieron los manuscritos del mar Muerto, los libros judíos desde entonces, y también el ídish y el ladino."
+     },
+     "details": {
+      "en": "The Dead Sea Scrolls, 981 texts of the 3rd century BC to the 1st century AD, were found between 1946 and 1956 in caves near Qumran. Most are in Hebrew, some in Aramaic and Greek, and a few, such as a scroll of Leviticus, still use the old Paleo-Hebrew letters. The Hebrew alphabet has 22 letters, all consonants; dots and dashes for vowels were added in the Middle Ages.",
+      "es": "Los manuscritos del mar Muerto, 981 textos del siglo III a. C. al siglo I d. C., se hallaron entre 1946 y 1956 en cuevas cerca de Qumrán. La mayoría está en hebreo, algunos en arameo y griego, y unos pocos, como un rollo del Levítico, usan aún las viejas letras paleohebreas. El alfabeto hebreo tiene 22 letras, todas consonantes; los puntos y rayas para las vocales se añadieron en la Edad Media."
+     },
+     "sample": {
+      "text": "אבגד",
+      "latin": "alef bet gimel dalet",
+      "means": {
+       "en": "the first four letters, read right to left",
+       "es": "las cuatro primeras letras, leídas de derecha a izquierda"
+      }
+     },
+     "wiki": {
+      "en": "Hebrew alphabet",
+      "es": "Alfabeto hebreo"
+     },
+     "img": "Aleppo Codex Joshua 1 1.jpg"
+    },
+    {
+     "id": "hebrew",
+     "name": {
+      "en": "Hebrew",
+      "es": "Hebreo"
+     },
+     "at": [
+      35.2137,
+      31.7683
+     ],
+     "cat": "language",
+     "type": "language",
+     "date": "-1000",
+     "place": {
+      "en": "Israel and Jewish communities worldwide",
+      "es": "Israel y las comunidades judías del mundo"
+     },
+     "text": {
+      "en": "The language of the Hebrew Bible. It stopped being spoken every day around AD 200–400 but lived on in prayer and study, and was revived in the late 19th century; about 9 million people speak it.",
+      "es": "La lengua de la Biblia hebrea. Dejó de hablarse a diario hacia los años 200-400, pero siguió viva en la oración y el estudio, y se revivió a fines del siglo XIX; la hablan unos 9 millones de personas."
+     },
+     "sample": {
+      "text": "שָׁלוֹם",
+      "latin": "shalom",
+      "means": {
+       "en": "\"peace\", also hello and goodbye",
+       "es": "\"paz\", también hola y adiós"
+      }
+     },
+     "wiki": {
+      "en": "Hebrew language",
+      "es": "Idioma hebreo"
+     }
+    },
+    {
+     "id": "syriac-alphabet",
+     "name": {
+      "en": "Syriac alphabet",
+      "es": "Alfabeto siríaco"
+     },
+     "at": [
+      38.7825,
+      37.15
+     ],
+     "cat": "script",
+     "icon": "ܐ",
+     "type": "script",
+     "date": "1",
+     "place": {
+      "en": "Edessa (Şanlıurfa), Turkey",
+      "es": "Edesa (Şanlıurfa), Turquía"
+     },
+     "text": {
+      "en": "A form of the Aramaic letters written at Edessa from the 1st century AD. Syriac Christians carried it to India and China, and through Sogdian it became the parent of the Mongolian script.",
+      "es": "Una forma de las letras arameas escrita en Edesa desde el siglo I d. C. Los cristianos siríacos la llevaron a la India y a China, y a través del sogdiano fue la madre de la escritura mongola."
+     },
+     "sample": {
+      "text": "ܐܒܓܕ",
+      "latin": "ālap bēt gāmal dālat",
+      "means": {
+       "en": "the first four letters",
+       "es": "las cuatro primeras letras"
+      }
+     },
+     "wiki": {
+      "en": "Syriac alphabet",
+      "es": "Alfabeto siríaco"
+     },
+     "img": "Estrangela.jpg"
+    },
+    {
+     "id": "nabataean-alphabet",
+     "name": {
+      "en": "Nabataean alphabet",
+      "es": "Alfabeto nabateo"
+     },
+     "at": [
+      35.4403,
+      30.3289
+     ],
+     "cat": "script",
+     "type": "script",
+     "date": "-150",
+     "place": {
+      "en": "Petra, Jordan",
+      "es": "Petra, Jordania"
+     },
+     "text": {
+      "en": "The Aramaic letters of the Nabataean traders of Petra and Hegra, used from the 2nd century BC. Their joined, rounded forms slowly turned into the Arabic alphabet.",
+      "es": "Las letras arameas de los comerciantes nabateos de Petra y Hegra, usadas desde el siglo II a. C. Sus formas unidas y redondeadas se convirtieron poco a poco en el alfabeto árabe."
+     },
+     "sample": {
+      "text": "𐢁𐢃𐢄𐢅",
+      "latin": "ʾ b g d",
+      "means": {
+       "en": "the first four letters",
+       "es": "las cuatro primeras letras"
+      }
+     },
+     "wiki": {
+      "en": "Nabataean script",
+      "es": "Alfabeto nabateo"
+     }
+    },
+    {
+     "id": "coptic-alphabet",
+     "name": {
+      "en": "Coptic alphabet",
+      "es": "Alfabeto copto"
+     },
+     "at": [
+      32.24,
+      26.05
+     ],
+     "cat": "script",
+     "icon": "Ⲁ",
+     "type": "script",
+     "date": "150",
+     "place": {
+      "en": "Egypt (here Nag Hammadi)",
+      "es": "Egipto (aquí Nag Hammadi)"
+     },
+     "text": {
+      "en": "Greek letters plus six or seven signs from demotic, used from about the 2nd century AD to write Egyptian. It is still the script of the Coptic Church's liturgy.",
+      "es": "Letras griegas más seis o siete signos del demótico, usadas desde hacia el siglo II d. C. para escribir el egipcio. Sigue siendo la escritura de la liturgia de la Iglesia copta."
+     },
+     "details": {
+      "en": "Coptic was the last stage of the Egyptian language and the first Egyptian writing to show vowels, which later helped Champollion read hieroglyphs. The ancient books found near Nag Hammadi in 1945 are all written in Coptic. After the Arab conquest of 641, Arabic slowly replaced Coptic as a spoken language, but Egypt's Copts still pray in it.",
+      "es": "El copto fue la última etapa de la lengua egipcia y la primera escritura egipcia que mostró las vocales, lo que más tarde ayudó a Champollion a leer los jeroglíficos. Los libros antiguos hallados cerca de Nag Hammadi en 1945 están todos escritos en copto. Después de la conquista árabe del 641, el árabe reemplazó poco a poco al copto como lengua hablada, pero los coptos de Egipto todavía rezan en ella."
+     },
+     "sample": {
+      "text": "ⲀⲂⲄⲆ",
+      "latin": "alfa, vida, gamma, dalda",
+      "means": {
+       "en": "the first four letters",
+       "es": "las cuatro primeras letras"
+      }
+     },
+     "wiki": {
+      "en": "Coptic script",
+      "es": "Alfabeto copto"
+     },
+     "img": "Coptic alphabet.jpg"
+    },
+    {
+     "id": "latin",
+     "name": {
+      "en": "Latin",
+      "es": "Latín"
+     },
+     "at": [
+      12.4964,
+      41.9028
+     ],
+     "cat": "language",
+     "type": "language",
+     "date": "-600",
+     "place": {
+      "en": "Rome and the Roman Empire",
+      "es": "Roma y el Imperio romano"
+     },
+     "text": {
+      "en": "Rome's language, spoken and written from Britain to North Africa. Its spoken forms became the Romance languages, from Spanish and Portuguese to French, Italian and Romanian.",
+      "es": "La lengua de Roma, hablada y escrita de Britania al norte de África. Sus formas habladas dieron origen a las lenguas romances, del español y el portugués al francés, el italiano y el rumano."
+     },
+     "sample": {
+      "text": "SENATVS POPVLVSQVE ROMANVS",
+      "latin": "senātus populusque rōmānus",
+      "means": {
+       "en": "\"the Senate and the People of Rome\"",
+       "es": "\"el Senado y el Pueblo de Roma\""
+      }
+     },
+     "wiki": {
+      "en": "Latin",
+      "es": "Latín"
+     }
+    }
+   ]
+  },
+  {
+   "date": "430",
+   "title": {
+    "en": "Alphabets for new peoples",
+    "es": "Alfabetos para nuevos pueblos"
+   },
+   "text": {
+    "en": "Around Rome's frontiers, peoples made alphabets of their own: runes in Scandinavia, Ogham in Ireland, Gothic for the Goths' Bible, Ge'ez in Ethiopia, Armenian and Georgian in the Caucasus.",
+    "es": "En torno a las fronteras de Roma, varios pueblos crearon sus propios alfabetos: las runas en Escandinavia, el ogam en Irlanda, el gótico para la Biblia de los godos, el ge'ez en Etiopía, y el armenio y el georgiano en el Cáucaso."
+   },
+   "details": {
+    "en": "Germanic peoples carved runes on combs, spearheads and stones from at least AD 150; the oldest secure ones come from bogs in Denmark, and their alphabet, the futhark, is named after its first six letters. It probably grew from an Italic or Latin model. In Ireland, from about the 4th century, people cut Ogham, groups of strokes along the edge of a stone, to write names in early Irish. In the 4th century the bishop Wulfila and his helpers made a Gothic alphabet, mostly from Greek letters, to translate the Bible. In Aksum, in today's Ethiopia and Eritrea, scribes added vowel marks to the old South Arabian consonants in the 4th century, under King Ezana. In 405 the monk Mesrop Mashtots created the Armenian alphabet, and Georgian letters appear by about 430. Most of these new scripts served new Christian churches; runes, older, did not.",
+    "es": "Los pueblos germánicos tallaban runas en peines, puntas de lanza y piedras al menos desde el año 150; las más antiguas seguras vienen de pantanos de Dinamarca, y su alfabeto, el futhark, lleva el nombre de sus seis primeras letras. Probablemente nació de un modelo itálico o latino. En Irlanda, desde hacia el siglo IV, se grababa el ogam, grupos de trazos a lo largo del borde de una piedra, para escribir nombres en irlandés antiguo. En el siglo IV el obispo Wulfila y sus ayudantes crearon un alfabeto gótico, sobre todo con letras griegas, para traducir la Biblia. En Aksum, en las actuales Etiopía y Eritrea, los escribas añadieron marcas de vocales a las viejas consonantes sudarábigas en el siglo IV, bajo el rey Ezana. En el 405 el monje Mesrop Mashtots creó el alfabeto armenio, y las letras georgianas aparecen hacia el 430. La mayoría de estas escrituras nuevas sirvió a nuevas iglesias cristianas; las runas, más antiguas, no."
+   },
+   "camera": {
+    "lon": 24.0,
+    "lat": 44.0,
+    "zoom": 2.1
+   },
+   "control": {
+    "west": {
+     "minus": [
+      {
+       "ref": "roman_400"
+      },
+      {
+       "ref": "roman_east_aram"
+      },
+      {
+       "ref": "armenia_georgia"
+      }
+     ]
+    },
+    "aram": {
+     "minus": [
+      [
+       {
+        "hist": "Persia",
+        "year": 400
+       },
+       {
+        "ref": "roman_east_aram"
+       }
+      ],
+      {
+       "ref": "armenia_georgia"
+      },
+      {
+       "cur": "west"
+      }
+     ]
+    },
+    "brahmi": {
+     "minus": [
+      {
+       "ref": "south_asia"
+      },
+      {
+       "cur": "aram"
+      }
+     ]
+    },
+    "geez": {
+     "minus": [
+      {
+       "ref": "axum_himyar_400"
+      },
+      {
+       "cur": "west"
+      },
+      {
+       "cur": "aram"
+      }
+     ]
+    },
+    "cauc": {
+     "ref": "armenia_georgia"
+    },
+    "runes": [
+     {
+      "ref": "scandinavia"
+     },
+     {
+      "minus": [
+       {
+        "ref": "ireland_ogham"
+       },
+       {
+        "cur": "west"
+       }
+      ]
+     }
+    ]
+   },
+   "places": [
+    {
+     "id": "runes",
+     "name": {
+      "en": "Runes",
+      "es": "Runas"
+     },
+     "at": [
+      10.3917,
+      55.3986
+     ],
+     "cat": "script",
+     "icon": "ᚠ",
+     "type": "script",
+     "date": "150",
+     "place": {
+      "en": "Scandinavia and northern Germany (here Vimose, Denmark)",
+      "es": "Escandinavia y el norte de Alemania (aquí Vimose, Dinamarca)"
+     },
+     "text": {
+      "en": "The letters of the Germanic peoples, carved on wood, bone, metal and stone from at least AD 150. Christian Latin replaced them by about 1100 in the north, though they lingered in rural Sweden.",
+      "es": "Las letras de los pueblos germánicos, talladas en madera, hueso, metal y piedra al menos desde el año 150. El latín cristiano las reemplazó hacia el 1100 en el norte, aunque perduraron en la Suecia rural."
+     },
+     "details": {
+      "en": "A comb found in a bog at Vimose, on the Danish island of Funen, carries one of the oldest runic inscriptions, from about AD 160. The early alphabet, the Elder Futhark, had 24 runes; in the Viking Age it was cut down to 16. In Dalarna, in Sweden, a form of runes was still used for decoration and calendars into the early 20th century.",
+      "es": "Un peine hallado en un pantano de Vimose, en la isla danesa de Fionia, lleva una de las inscripciones rúnicas más antiguas, de hacia el año 160. El primer alfabeto, el futhark antiguo, tenía 24 runas; en la época vikinga se redujo a 16. En Dalarna, en Suecia, se siguió usando una forma de runas en adornos y calendarios hasta comienzos del siglo XX."
+     },
+     "sample": {
+      "text": "ᚠᚢᚦᚨᚱᚲ",
+      "latin": "f u th a r k",
+      "means": {
+       "en": "\"futhark\", the first six runes that name the alphabet",
+       "es": "\"futhark\", las seis primeras runas, que dan nombre al alfabeto"
+      }
+     },
+     "wiki": {
+      "en": "Runes",
+      "es": "Alfabeto rúnico"
+     },
+     "img": "Kam-med-runer-fra-Vimose DO-4148 2000.jpg"
+    },
+    {
+     "id": "ogham",
+     "name": {
+      "en": "Ogham",
+      "es": "Ogam"
+     },
+     "at": [
+      -9.7,
+      52.27
+     ],
+     "cat": "script",
+     "icon": "ᚁ",
+     "type": "script",
+     "date": "350",
+     "place": {
+      "en": "Ireland and western Britain (here County Kerry)",
+      "es": "Irlanda y el oeste de Britania (aquí el condado de Kerry)"
+     },
+     "text": {
+      "en": "An alphabet of 20 letters made of strokes cut across the edge of a stone, used from about the 4th century to write early Irish. About 400 Ogham stones survive, most in Cork and Kerry.",
+      "es": "Un alfabeto de 20 letras hechas de trazos cortados a lo largo del borde de una piedra, usado desde hacia el siglo IV para escribir el irlandés antiguo. Se conservan unas 400 piedras con ogam, la mayoría en Cork y Kerry."
+     },
+     "sample": {
+      "text": "᚛ᚁᚂᚃᚄᚅ᚜",
+      "latin": "b l f s n (beith, luis, fearn, sail, nion)",
+      "means": {
+       "en": "the first group of five letters, named after trees",
+       "es": "el primer grupo de cinco letras, con nombres de árboles"
+      }
+     },
+     "wiki": {
+      "en": "Ogham",
+      "es": "Ogam"
+     }
+    },
+    {
+     "id": "gothic-alphabet",
+     "name": {
+      "en": "Gothic alphabet",
+      "es": "Alfabeto gótico"
+     },
+     "at": [
+      25.6111,
+      43.2172
+     ],
+     "cat": "script",
+     "icon": "𐌰",
+     "type": "script",
+     "date": "360",
+     "place": {
+      "en": "Moesia, near Nicopolis ad Istrum, Bulgaria",
+      "es": "Mesia, cerca de Nicópolis del Istro, Bulgaria"
+     },
+     "text": {
+      "en": "An alphabet made in the 4th century, mostly from Greek letters with some Latin and runic ones, so that the Bible could be read in Gothic. Wulfila, bishop of the Goths, is credited with it.",
+      "es": "Un alfabeto creado en el siglo IV, sobre todo con letras griegas y algunas latinas y rúnicas, para que la Biblia pudiera leerse en gótico. Se atribuye a Wulfila, obispo de los godos."
+     },
+     "details": {
+      "en": "Wulfila (about 311–383) was born among the Goths north of the Danube; his ancestors had been captured in a raid on Asia Minor. Driven out by a persecution of Christians in 348, he settled with his followers near Nicopolis in Roman Moesia, where the Gothic Bible was probably made, perhaps by a team of translators. Its most famous copy is the 6th-century Codex Argenteus, written in silver ink and now in Uppsala.",
+      "es": "Wulfila (hacia 311-383) nació entre los godos al norte del Danubio; sus antepasados habían sido capturados en una incursión en Asia Menor. Expulsado por una persecución de cristianos en el 348, se estableció con sus seguidores cerca de Nicópolis, en la Mesia romana, donde probablemente se hizo la Biblia gótica, quizá por un equipo de traductores. Su copia más famosa es el Codex Argenteus del siglo VI, escrito con tinta de plata y hoy en Upsala."
+     },
+     "sample": {
+      "text": "𐌰𐌱𐌲𐌳",
+      "latin": "ahsa, bairkan, giba, dags",
+      "means": {
+       "en": "the first four letters",
+       "es": "las cuatro primeras letras"
+      }
+     },
+     "wiki": {
+      "en": "Gothic alphabet",
+      "es": "Alfabeto gótico"
+     }
+    },
+    {
+     "id": "geez-script",
+     "name": {
+      "en": "Ge'ez script",
+      "es": "Escritura ge'ez"
+     },
+     "at": [
+      38.7278,
+      14.1208
+     ],
+     "cat": "script",
+     "icon": "ሀ",
+     "type": "script",
+     "date": "330",
+     "place": {
+      "en": "Aksum, Tigray, Ethiopia",
+      "es": "Aksum, Tigray, Etiopía"
+     },
+     "text": {
+      "en": "A child of the South Arabian alphabet that, from the 4th century, marked every vowel by changing the shape of each letter. Each sign is a syllable. It writes Amharic, Tigrinya and the church language Ge'ez.",
+      "es": "Hija del alfabeto sudarábigo que, desde el siglo IV, marcó todas las vocales cambiando la forma de cada letra. Cada signo es una sílaba. Escribe el amhárico, el tigriña y el ge'ez, lengua de la iglesia."
+     },
+     "details": {
+      "en": "The South Arabian alphabet, a cousin of Phoenician, was used on both sides of the Red Sea from the 9th century BC. In the kingdom of Aksum it became an abjad written right to left, then left to right; in the 4th century vowels were shown by small changes to each letter, as in the inscriptions of King Ezana. Ethiopian tradition credits the monk Frumentius. Its letters still follow the old hlḥm order already found at Ugarit: hä, lä, ḥä, mä.",
+      "es": "El alfabeto sudarábigo, primo del fenicio, se usó a ambos lados del mar Rojo desde el siglo IX a. C. En el reino de Aksum se convirtió en un abyad escrito de derecha a izquierda, y luego de izquierda a derecha; en el siglo IV las vocales se indicaron con pequeños cambios en cada letra, como en las inscripciones del rey Ezana. La tradición etíope lo atribuye al monje Frumencio. Sus letras siguen el viejo orden hlḥm que ya aparece en Ugarit: hä, lä, ḥä, mä."
+     },
+     "sample": {
+      "text": "ሀ ለ ሐ መ",
+      "latin": "hä lä ḥä mä",
+      "means": {
+       "en": "the first letters, in the hlḥm order known since Ugarit",
+       "es": "las primeras letras, en el orden hlḥm conocido desde Ugarit"
+      }
+     },
+     "wiki": {
+      "en": "Geʽez script",
+      "es": "Alfabeto etíope"
+     }
+    },
+    {
+     "id": "armenian-alphabet",
+     "name": {
+      "en": "Armenian alphabet",
+      "es": "Alfabeto armenio"
+     },
+     "at": [
+      44.2925,
+      40.1728
+     ],
+     "cat": "script",
+     "icon": "Ա",
+     "type": "script",
+     "date": "405",
+     "place": {
+      "en": "Vagharshapat (Etchmiadzin), Armenia",
+      "es": "Vagharshapat (Echmiadzín), Armenia"
+     },
+     "text": {
+      "en": "An alphabet of 36 letters created about 405 by the monk Mesrop Mashtots to translate the Bible, partly on a Greek model. With a few letters added later, it still writes Armenian.",
+      "es": "Un alfabeto de 36 letras creado hacia el 405 por el monje Mesrop Mashtots para traducir la Biblia, en parte según un modelo griego. Con unas pocas letras añadidas después, todavía escribe el armenio."
+     },
+     "sample": {
+      "text": "Ա Բ Գ Դ",
+      "latin": "ayb, ben, gim, da",
+      "means": {
+       "en": "the first letters; Armenians call the alphabet aybuben",
+       "es": "las primeras letras; los armenios llaman al alfabeto aybuben"
+      }
+     },
+     "wiki": {
+      "en": "Armenian alphabet",
+      "es": "Alfabeto armenio"
+     }
+    },
+    {
+     "id": "georgian-alphabet",
+     "name": {
+      "en": "Georgian alphabet",
+      "es": "Alfabeto georgiano"
+     },
+     "at": [
+      44.7194,
+      41.8464
+     ],
+     "cat": "script",
+     "icon": "ა",
+     "type": "script",
+     "date": "430",
+     "place": {
+      "en": "Mtskheta, Georgia",
+      "es": "Mtsjeta, Georgia"
+     },
+     "text": {
+      "en": "Georgian letters appear by about 430, in inscriptions of a Georgian monastery near Bethlehem. Their origin is unknown, but their order follows the Greek. Today's 33-letter form is Mkhedruli.",
+      "es": "Las letras georgianas aparecen hacia el 430, en inscripciones de un monasterio georgiano cerca de Belén. Su origen es desconocido, pero su orden sigue al griego. La forma actual, de 33 letras, es el mjedruli."
+     },
+     "details": {
+      "en": "Georgian has been written in three scripts that share the same letters and order: Asomtavruli, Nuskhuri and Mkhedruli, now the standard. UNESCO listed the living culture of the three Georgian scripts as intangible heritage in 2016. The oldest dated inscriptions, about 430, come from Bir el Qutt near Bethlehem; others, from 494, are at Bolnisi in Georgia.",
+      "es": "El georgiano se ha escrito en tres escrituras con las mismas letras y el mismo orden: asomtavruli, nuskhuri y mjedruli, hoy la habitual. La Unesco declaró en 2016 la cultura viva de las tres escrituras georgianas patrimonio inmaterial. Las inscripciones fechadas más antiguas, de hacia el 430, vienen de Bir el-Qutt, cerca de Belén; otras, del 494, están en Bolnisi, en Georgia."
+     },
+     "sample": {
+      "text": "ა ბ გ დ",
+      "latin": "an, ban, gan, don",
+      "means": {
+       "en": "the first letters of Mkhedruli",
+       "es": "las primeras letras del mjedruli"
+      }
+     },
+     "wiki": {
+      "en": "Georgian scripts",
+      "es": "Alfabeto georgiano"
+     }
+    }
+   ]
+  },
+  {
+   "date": "800",
+   "title": {
+    "en": "Arabic letters spread",
+    "es": "Las letras árabes se extienden"
+   },
+   "text": {
+    "en": "The Arabic alphabet grew out of Nabataean letters; its oldest dated text is from 512. With Islam and the Arab conquests of the 7th and 8th centuries, it was soon written from Spain to Central Asia.",
+    "es": "El alfabeto árabe nació de las letras nabateas; su texto fechado más antiguo es del 512. Con el islam y las conquistas árabes de los siglos VII y VIII, pronto se escribió de España a Asia central."
+   },
+   "details": {
+    "en": "In 328 the funeral stone of Imru' al-Qays, 'king of all the Arabs', at Namara in Syria, was written in the Arabic language but in late Nabataean letters. Over the next two centuries the letters joined up and changed shape; the oldest dated text in the Arabic alphabet, at Zabad in Syria, is from 512. Muslims believe the Quran was revealed to Muhammad in Arabic, and copying it beautifully made calligraphy one of the great arts of the Islamic world. As Arab rulers' power spread after 632, Arabic became a language of government and learning, and scholars added dots to tell similar letters apart and marks for short vowels. The script was adapted to write Persian, then Ottoman Turkish, Urdu, Malay, Swahili, Hausa and many other languages. It is the second most widely used alphabet in the world, after Latin.",
+    "es": "En el 328, la lápida de Imru al-Qays, 'rey de todos los árabes', en Namara, Siria, se escribió en lengua árabe pero con letras nabateas tardías. En los dos siglos siguientes las letras se unieron y cambiaron de forma; el texto fechado más antiguo en alfabeto árabe, en Zabad, Siria, es del 512. Los musulmanes creen que el Corán fue revelado a Mahoma en árabe, y copiarlo con belleza hizo de la caligrafía una de las grandes artes del mundo islámico. A medida que el poder de los gobernantes árabes se extendía después del 632, el árabe se volvió lengua de gobierno y de saber, y los sabios añadieron puntos para distinguir letras parecidas y marcas para las vocales breves. La escritura se adaptó al persa, y luego al turco otomano, el urdu, el malayo, el suajili, el hausa y muchas otras lenguas. Es el alfabeto más usado del mundo después del latino."
+   },
+   "camera": {
+    "lon": 25.0,
+    "lat": 30.0,
+    "zoom": 2.0
+   },
+   "control": {
+    "west": {
+     "minus": [
+      {
+       "ref": "europe_800"
+      },
+      {
+       "ref": "caliphate_800"
+      },
+      {
+       "ref": "armenia_georgia"
+      }
+     ]
+    },
+    "aram": {
+     "minus": [
+      [
+       {
+        "prev": true
+       },
+       {
+        "ref": "caliphate_800"
+       }
+      ],
+      {
+       "ref": "armenia_georgia"
+      },
+      {
+       "cur": "west"
+      }
+     ]
+    },
+    "brahmi": {
+     "minus": [
+      {
+       "ref": "south_asia"
+      },
+      {
+       "cur": "aram"
+      }
+     ]
+    },
+    "geez": {
+     "minus": [
+      {
+       "hist": "Axum",
+       "year": 800
+      },
+      {
+       "cur": "aram"
+      }
+     ]
+    },
+    "runes": {
+     "minus": [
+      {
+       "ref": "scandinavia"
+      },
+      {
+       "cur": "west"
+      }
+     ]
+    }
+   },
+   "places": [
+    {
+     "id": "namara-inscription",
+     "name": {
+      "en": "Namara inscription",
+      "es": "Inscripción de Namara"
+     },
+     "at": [
+      36.9,
+      32.92
+     ],
+     "cat": "inscription",
+     "type": "work",
+     "date": "328-12-07",
+     "place": {
+      "en": "al-Namara, southern Syria; now in the Louvre",
+      "es": "An-Namara, sur de Siria; hoy en el Louvre"
+     },
+     "text": {
+      "en": "The epitaph of Imru' al-Qays, 'king of all the Arabs', dated 7 December 328: one of the oldest texts in the Arabic language, written in Nabataean letters on the way to becoming Arabic.",
+      "es": "El epitafio de Imru al-Qays, 'rey de todos los árabes', fechado el 7 de diciembre del 328: uno de los textos más antiguos en lengua árabe, escrito con letras nabateas que estaban por convertirse en árabes."
+     },
+     "wiki": {
+      "en": "Namara inscription",
+      "es": "Inscripción de Namara"
+     }
+    },
+    {
+     "id": "arabic-alphabet",
+     "name": {
+      "en": "Arabic alphabet",
+      "es": "Alfabeto árabe"
+     },
+     "at": [
+      36.3065,
+      33.5114
+     ],
+     "cat": "script",
+     "icon": "ب",
+     "type": "script",
+     "date": "512",
+     "place": {
+      "en": "Born in Syria and Arabia; written from Morocco to Indonesia",
+      "es": "Nacido en Siria y Arabia; escrito de Marruecos a Indonesia"
+     },
+     "text": {
+      "en": "28 letters, written right to left and joined in cursive, with dots to tell similar shapes apart. Born from Nabataean, it writes Arabic, Persian, Urdu and many more languages.",
+      "es": "28 letras, escritas de derecha a izquierda y unidas en cursiva, con puntos para distinguir formas parecidas. Nacido del nabateo, escribe el árabe, el persa, el urdu y muchas lenguas más."
+     },
+     "sample": {
+      "text": "ا ب ت ث",
+      "latin": "alif, bāʾ, tāʾ, thāʾ",
+      "means": {
+       "en": "the first letters, read right to left",
+       "es": "las primeras letras, leídas de derecha a izquierda"
+      }
+     },
+     "wiki": {
+      "en": "Arabic alphabet",
+      "es": "Alfabeto árabe"
+     }
+    },
+    {
+     "id": "arabic",
+     "name": {
+      "en": "Arabic",
+      "es": "Árabe"
+     },
+     "at": [
+      39.8262,
+      21.4225
+     ],
+     "cat": "language",
+     "type": "language",
+     "date": "-800",
+     "place": {
+      "en": "Arabian Peninsula (here Mecca), then from Morocco to Iraq",
+      "es": "Península arábiga (aquí La Meca), y luego de Marruecos a Irak"
+     },
+     "text": {
+      "en": "A Semitic language from Arabia, the language of the Quran and, after the 7th century, of a vast area of learning and rule. About 411 million people speak it natively (2020–2024).",
+      "es": "Una lengua semítica de Arabia, la lengua del Corán y, desde el siglo VII, de un vasto mundo de saber y gobierno. La hablan como lengua materna unos 411 millones de personas (2020-2024)."
+     },
+     "sample": {
+      "text": "مرحبا",
+      "latin": "marḥaban",
+      "means": {
+       "en": "\"hello, welcome\"",
+       "es": "\"hola, bienvenido\""
+      }
+     },
+     "wiki": {
+      "en": "Arabic",
+      "es": "Idioma árabe"
+     }
+    }
+   ]
+  },
+  {
+   "date": "893",
+   "title": {
+    "en": "Letters for the Slavs",
+    "es": "Letras para los eslavos"
+   },
+   "text": {
+    "en": "In 863 the Byzantine brothers Cyril and Methodius brought a new alphabet for the Slavs, Glagolitic, to Great Moravia. Their disciples, welcomed in Bulgaria, made the Cyrillic alphabet there in the 890s.",
+    "es": "En el 863 los hermanos bizantinos Cirilo y Metodio llevaron a la Gran Moravia un alfabeto nuevo para los eslavos, el glagolítico. Sus discípulos, acogidos en Bulgaria, crearon allí el alfabeto cirílico en la década de 890."
+   },
+   "details": {
+    "en": "Prince Rastislav of Moravia asked Byzantium for teachers who could preach in Slavic, and the brothers, from Thessalonica, created Glagolitic letters with new shapes for every Slavic sound. After Methodius died in 885, their students were persecuted: in 886 the Frankish bishop Wiching banned the script and jailed some 200 of them. Some, such as Clement and Naum, reached Bulgaria, where Boris I set them to teach. At Ohrid they kept Glagolitic; at Preslav, scholars adapted the Greek capitals and added a few Glagolitic letters for Slavic sounds: the Cyrillic alphabet, named in Cyril's honour. Its oldest dated inscription is from 921. After Prince Vladimir of Kiev was baptized, around 988, Cyrillic books spread to the Rus'. Glagolitic lived on in Croatia until the 19th century. The A thread continues: Cyrillic А, called az, is Greek alpha.",
+    "es": "El príncipe Rastislav de Moravia pidió a Bizancio maestros que predicaran en eslavo, y los hermanos, de Tesalónica, crearon letras glagolíticas con formas nuevas para cada sonido eslavo. Tras la muerte de Metodio en el 885, sus discípulos fueron perseguidos: en el 886 el obispo franco Wiching prohibió la escritura y encarceló a unos 200 de ellos. Algunos, como Clemente y Naum, llegaron a Bulgaria, donde Boris I les encargó enseñar. En Ohrid conservaron el glagolítico; en Preslav, los sabios adaptaron las mayúsculas griegas y añadieron unas pocas letras glagolíticas para los sonidos eslavos: el alfabeto cirílico, llamado así en honor de Cirilo. Su inscripción fechada más antigua es del 921. Después del bautismo del príncipe Vladimiro de Kiev, hacia el 988, los libros cirílicos llegaron a la Rus. El glagolítico perduró en Croacia hasta el siglo XIX. El hilo de la A sigue: la А cirílica, llamada az, es la alfa griega."
+   },
+   "camera": {
+    "lon": 23.5,
+    "lat": 45.0,
+    "zoom": 4.0
+   },
+   "control": {
+    "cyril": {
+     "ref": "bulgaria_900"
+    },
+    "west": {
+     "minus": [
+      {
+       "prev": true
+      },
+      {
+       "ref": "bulgaria_900"
+      }
+     ]
+    }
+   },
+   "moves": [
+    {
+     "side": "cyril",
+     "path": [
+      [
+       28.98,
+       41.01
+      ],
+      [
+       26.6,
+       42.0
+      ],
+      [
+       24.75,
+       42.15
+      ],
+      [
+       23.32,
+       42.7
+      ],
+      [
+       21.9,
+       43.3
+      ],
+      [
+       20.46,
+       44.82
+      ],
+      [
+       19.1,
+       46.25
+      ],
+      [
+       18.1,
+       47.6
+      ],
+      [
+       17.39,
+       49.1
+      ]
+     ],
+     "by": "land",
+     "icon": "🚶",
+     "label": {
+      "en": "Cyril and Methodius, 863",
+      "es": "Cirilo y Metodio, 863"
+     }
+    },
+    {
+     "side": "cyril",
+     "path": [
+      [
+       17.39,
+       49.1
+      ],
+      [
+       19.5,
+       46.9
+      ],
+      [
+       21.0,
+       45.0
+      ],
+      [
+       22.5,
+       44.0
+      ],
+      [
+       24.5,
+       43.4
+      ],
+      [
+       26.82,
+       43.16
+      ]
+     ],
+     "by": "land",
+     "icon": "🚶",
+     "label": {
+      "en": "Their disciples, 886",
+      "es": "Sus discípulos, 886"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "glagolitic",
+     "name": {
+      "en": "Glagolitic alphabet",
+      "es": "Alfabeto glagolítico"
+     },
+     "at": [
+      17.3942,
+      49.1036
+     ],
+     "cat": "script",
+     "icon": "Ⰰ",
+     "type": "script",
+     "date": "863",
+     "place": {
+      "en": "Great Moravia (today Czech Republic and Slovakia)",
+      "es": "Gran Moravia (hoy Chequia y Eslovaquia)"
+     },
+     "text": {
+      "en": "The first Slavic alphabet, made about 863 for the Byzantine mission to Great Moravia. Banned there in 886, it lived on in Bulgaria for a time and in Croatia until the 19th century.",
+      "es": "El primer alfabeto eslavo, creado hacia el 863 para la misión bizantina a la Gran Moravia. Prohibido allí en el 886, perduró un tiempo en Bulgaria y en Croacia hasta el siglo XIX."
+     },
+     "sample": {
+      "text": "ⰀⰁⰂⰃ",
+      "latin": "az, buky, vedi, glagoli",
+      "means": {
+       "en": "the first four letters",
+       "es": "las cuatro primeras letras"
+      }
+     },
+     "wiki": {
+      "en": "Glagolitic script",
+      "es": "Alfabeto glagolítico"
+     }
+    },
+    {
+     "id": "cyrillic",
+     "name": {
+      "en": "Cyrillic alphabet",
+      "es": "Alfabeto cirílico"
+     },
+     "at": [
+      26.8194,
+      43.1608
+     ],
+     "cat": "script",
+     "icon": "А",
+     "type": "script",
+     "date": "893",
+     "place": {
+      "en": "Preslav, Shumen, Bulgaria",
+      "es": "Preslav, Shumen, Bulgaria"
+     },
+     "text": {
+      "en": "Greek capitals plus letters for Slavic sounds, made at the Preslav school in the 890s and named after Cyril. About 250 million people use it today, half of them in Russia.",
+      "es": "Mayúsculas griegas más letras para sonidos eslavos, creado en la escuela de Preslav en la década de 890 y llamado así por Cirilo. Hoy lo usan unos 250 millones de personas, la mitad en Rusia."
+     },
+     "details": {
+      "en": "Cyrillic spread with the Orthodox Church to Serbia, the Rus' and Romania, which used it until the 1860s. It now writes Russian, Ukrainian, Belarusian, Bulgarian, Serbian, Macedonian, Kazakh, Kyrgyz, Mongolian and many more languages. Since Bulgaria joined in 2007, it is the third official script of the European Union, after Latin and Greek.",
+      "es": "El cirílico se extendió con la Iglesia ortodoxa a Serbia, la Rus y Rumania, que lo usó hasta la década de 1860. Hoy escribe el ruso, el ucraniano, el bielorruso, el búlgaro, el serbio, el macedonio, el kazajo, el kirguís, el mongol y muchas otras lenguas. Desde la entrada de Bulgaria en 2007, es la tercera escritura oficial de la Unión Europea, tras la latina y la griega."
+     },
+     "sample": {
+      "text": "АБВГД",
+      "latin": "a, be, ve, ge, de",
+      "means": {
+       "en": "the first letters",
+       "es": "las primeras letras"
+      }
+     },
+     "wiki": {
+      "en": "Cyrillic script",
+      "es": "Alfabeto cirílico"
+     }
+    },
+    {
+     "id": "ohrid-literary-school",
+     "name": {
+      "en": "Ohrid Literary School",
+      "es": "Escuela literaria de Ohrid"
+     },
+     "at": [
+      20.7909,
+      41.1125
+     ],
+     "cat": "city",
+     "type": "institution",
+     "date": "886",
+     "place": {
+      "en": "Ohrid, North Macedonia",
+      "es": "Ohrid, Macedonia del Norte"
+     },
+     "text": {
+      "en": "A school founded by Clement of Ohrid, a disciple of Cyril and Methodius, where priests were trained and books copied in Glagolitic and Old Church Slavonic.",
+      "es": "Una escuela fundada por Clemente de Ohrid, discípulo de Cirilo y Metodio, donde se formaban sacerdotes y se copiaban libros en glagolítico y en antiguo eslavo eclesiástico."
+     },
+     "wiki": {
+      "en": "Ohrid Literary School",
+      "es": "Escuela literaria de Ohrid"
+     }
+    }
+   ]
+  },
+  {
+   "date": "1250",
+   "title": {
+    "en": "Letters on the Silk Road",
+    "es": "Letras en la Ruta de la Seda"
+   },
+   "text": {
+    "en": "Sogdian merchants from Samarkand carried letters born from Aramaic along the Silk Road. The Uyghurs adopted them, and in 1204 Genghis Khan had them adapted for Mongolian, written from top to bottom.",
+    "es": "Los mercaderes sogdianos de Samarcanda llevaron por la Ruta de la Seda letras nacidas del arameo. Los uigures las adoptaron, y en 1204 Gengis Kan las hizo adaptar para el mongol, que se escribe de arriba abajo."
+   },
+   "details": {
+    "en": "From about AD 100 to 1200, Sogdian was written across Central Asia, from the edge of Iran to China; Sogdian traders ran much of the caravan trade, and their letters travelled with them. Turkic peoples took up a flowing form of the script, and the Uyghurs who settled at Turpan after 840 wrote Buddhist, Manichaean and Christian books with it. Along the way it turned 90 degrees, to be written in columns like Chinese. After defeating the Naimans in 1204, Genghis Khan ordered a captured Uyghur official, Tata-tonga, to teach the Mongol princes to write. The Mongolian script is still used in Inner Mongolia and, since 2025, it is official again in Mongolia, beside Cyrillic. In 1599 the Manchu leader Nurhaci had it adapted for Manchu, the language of the dynasty that later ruled China. Meanwhile, in Europe, the Latin alphabet had replaced runes in Scandinavia, and Cyrillic had spread across the lands of the Rus'.",
+    "es": "De hacia el año 100 al 1200, el sogdiano se escribió en toda Asia central, del borde de Irán a China; los comerciantes sogdianos llevaban buena parte del comercio de caravanas, y sus letras viajaban con ellos. Los pueblos túrquicos adoptaron una forma cursiva de la escritura, y los uigures que se asentaron en Turfán después del 840 escribieron con ella libros budistas, maniqueos y cristianos. En el camino la escritura giró 90 grados, para escribirse en columnas como el chino. Tras vencer a los naimanos en 1204, Gengis Kan ordenó a un funcionario uigur capturado, Tata-tonga, que enseñara a escribir a los príncipes mongoles. La escritura mongola aún se usa en Mongolia Interior y, desde 2025, vuelve a ser oficial en Mongolia, junto al cirílico. En 1599 el jefe manchú Nurhaci la hizo adaptar para el manchú, la lengua de la dinastía que después gobernó China. Mientras tanto, en Europa, el alfabeto latino había reemplazado a las runas en Escandinavia, y el cirílico se había extendido por las tierras de la Rus."
+   },
+   "camera": {
+    "lon": 82.0,
+    "lat": 42.0,
+    "zoom": 2.4
+   },
+   "control": {
+    "west": {
+     "minus": [
+      {
+       "ref": "europe_1250"
+      },
+      {
+       "ref": "rus_1250"
+      },
+      {
+       "ref": "balkan_cyril_1250"
+      },
+      {
+       "ref": "granada"
+      },
+      {
+       "ref": "armenia_georgia"
+      }
+     ]
+    },
+    "aram": {
+     "minus": [
+      [
+       {
+        "prev": true
+       },
+       {
+        "ref": "mongol_uyghur"
+       },
+       {
+        "ref": "anatolia"
+       }
+      ],
+      {
+       "cur": "west"
+      },
+      {
+       "ref": "armenia_georgia"
+      },
+      {
+       "ref": "rus_1250"
+      },
+      {
+       "ref": "balkan_cyril_1250"
+      }
+     ]
+    },
+    "cyril": [
+     {
+      "ref": "rus_1250"
+     },
+     {
+      "ref": "balkan_cyril_1250"
+     }
+    ],
+    "runes": null
+   },
+   "moves": [
+    {
+     "side": "aram",
+     "path": [
+      [
+       66.97,
+       39.65
+      ],
+      [
+       71.0,
+       40.3
+      ],
+      [
+       75.99,
+       39.47
+      ],
+      [
+       80.26,
+       41.17
+      ],
+      [
+       82.93,
+       41.72
+      ],
+      [
+       86.15,
+       41.73
+      ],
+      [
+       89.19,
+       42.95
+      ],
+      [
+       91.5,
+       42.4
+      ],
+      [
+       94.66,
+       40.14
+      ],
+      [
+       98.49,
+       39.73
+      ],
+      [
+       103.83,
+       36.06
+      ],
+      [
+       108.94,
+       34.27
+      ]
+     ],
+     "by": "land",
+     "icon": "🐪",
+     "label": {
+      "en": "Sogdian merchants",
+      "es": "Mercaderes sogdianos"
+     }
+    },
+    {
+     "side": "aram",
+     "path": [
+      [
+       89.19,
+       42.95
+      ],
+      [
+       93.5,
+       44.5
+      ],
+      [
+       97.5,
+       46.0
+      ],
+      [
+       102.85,
+       47.21
+      ]
+     ],
+     "by": "land",
+     "icon": "🐎",
+     "label": {
+      "en": "Uyghur scribes for the Mongols",
+      "es": "Escribas uigures para los mongoles"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "sogdian-alphabet",
+     "name": {
+      "en": "Sogdian alphabet",
+      "es": "Alfabeto sogdiano"
+     },
+     "at": [
+      66.9758,
+      39.6547
+     ],
+     "cat": "script",
+     "type": "script",
+     "date": "100",
+     "until": "1200",
+     "place": {
+      "en": "Sogdia (here Samarkand, Uzbekistan)",
+      "es": "Sogdiana (aquí Samarcanda, Uzbekistán)"
+     },
+     "text": {
+      "en": "The script of the Sogdians, Iranian-speaking merchants of Samarkand and Bukhara, used across Central Asia from about AD 100 to 1200. Descended from Aramaic, it is the ancestor of the Uyghur and Mongolian scripts.",
+      "es": "La escritura de los sogdianos, mercaderes de lengua irania de Samarcanda y Bujará, usada en toda Asia central de hacia el año 100 al 1200. Descendiente del arameo, es antepasada de las escrituras uigur y mongola."
+     },
+     "sample": {
+      "text": "𐼰𐼱𐼲𐼳",
+      "latin": "ʾ b g h",
+      "means": {
+       "en": "the first letters (Sogdian had no d)",
+       "es": "las primeras letras (el sogdiano no tenía d)"
+      }
+     },
+     "wiki": {
+      "en": "Sogdian alphabet",
+      "es": "Alfabeto sogdiano"
+     }
+    },
+    {
+     "id": "old-uyghur-alphabet",
+     "name": {
+      "en": "Old Uyghur alphabet",
+      "es": "Alfabeto uigur antiguo"
+     },
+     "at": [
+      89.1895,
+      42.9512
+     ],
+     "cat": "script",
+     "type": "script",
+     "date": "840",
+     "place": {
+      "en": "Turpan, Xinjiang, China",
+      "es": "Turfán, Sinkiang, China"
+     },
+     "text": {
+      "en": "A Sogdian-born script that the Uyghurs used at Turpan from the 9th century for Buddhist, Manichaean and Christian books, written in vertical columns. It was the model for Mongolian.",
+      "es": "Una escritura nacida del sogdiano que los uigures usaron en Turfán desde el siglo IX para libros budistas, maniqueos y cristianos, escrita en columnas verticales. Fue el modelo del mongol."
+     },
+     "wiki": {
+      "en": "Old Uyghur alphabet",
+      "es": ""
+     },
+     "img": "Yuntai Uyghur west wall.jpg"
+    },
+    {
+     "id": "mongolian-script",
+     "name": {
+      "en": "Mongolian script",
+      "es": "Escritura mongola"
+     },
+     "at": [
+      102.8478,
+      47.2103
+     ],
+     "cat": "script",
+     "type": "script",
+     "date": "1204",
+     "place": {
+      "en": "Karakorum, Mongolia",
+      "es": "Karakórum, Mongolia"
+     },
+     "text": {
+      "en": "The Uyghur letters adapted for Mongolian after 1204, written in vertical lines from left to right. Replaced by Cyrillic in Mongolia from 1941, it was made official again there in 2025.",
+      "es": "Las letras uigures adaptadas al mongol después de 1204, escritas en líneas verticales de izquierda a derecha. Reemplazada por el cirílico en Mongolia desde 1941, allí volvió a ser oficial en 2025."
+     },
+     "sample": {
+      "text": "ᠮᠣᠩᠭᠣᠯ ᠪᠢᠴᠢᠭ",
+      "latin": "mongɣol bičig",
+      "means": {
+       "en": "\"Mongolian script\"",
+       "es": "\"escritura mongola\""
+      }
+     },
+     "wiki": {
+      "en": "Mongolian script",
+      "es": "Alfabeto mongol tradicional"
+     }
+    }
+   ]
+  },
+  {
+   "date": "1292",
+   "title": {
+    "en": "Brahmi's many children",
+    "es": "Los muchos hijos del brahmi"
+   },
+   "text": {
+    "en": "From Brahmi grew dozens of scripts: Devanagari for Sanskrit and Hindi, Tamil in the south, Tibetan and, carried by sea with traders and monks, the scripts of Myanmar, Thailand, Cambodia and Java.",
+    "es": "Del brahmi nacieron decenas de escrituras: el devanagari para el sánscrito y el hindi, el tamil en el sur, el tibetano y, llevadas por mar con comerciantes y monjes, las de Birmania, Tailandia, Camboya y Java."
+   },
+   "details": {
+    "en": "Over the centuries Brahmi letters changed with the pens, palm leaves and chisels of each region. In the 7th century the Pallava kingdom of southern India shaped a new Tamil script, and Pallava letters travelled with traders, priests and Buddhist monks across the Bay of Bengal: the oldest dated Khmer inscription, from Angkor Borei, is from 611, and in Java they became the Kawi script, parent of Javanese. Tibetan tradition says that King Songtsen Gampo sent his minister Thonmi Sambhota to India, and that around 620 he made a script from an Indian model. At Sukhothai, a stone dated 1292 credits King Ram Khamhaeng with creating Thai letters in 1283; some scholars think it a later forgery, though most accept it as at least partly genuine. Devanagari, whose name joins deva, 'divine', and nāgarī, 'urban', had its modern form by about 1000. All are abugidas: each letter carries a vowel that small marks can change.",
+    "es": "Con los siglos, las letras brahmi cambiaron con las plumas, las hojas de palma y los cinceles de cada región. En el siglo VII, el reino pallava del sur de la India dio forma a una nueva escritura tamil, y las letras pallava viajaron con comerciantes, sacerdotes y monjes budistas a través del golfo de Bengala: la inscripción jemer fechada más antigua, de Angkor Borei, es del 611, y en Java se convirtieron en la escritura kawi, madre del javanés. La tradición tibetana cuenta que el rey Songtsen Gampo envió a la India a su ministro Thonmi Sambhota, y que hacia el 620 este creó una escritura según un modelo indio. En Sukhothai, una piedra fechada en 1292 atribuye al rey Ram Khamhaeng la creación de las letras tailandesas en 1283; algunos especialistas la creen una falsificación posterior, aunque la mayoría la acepta como al menos en parte auténtica. El devanagari, cuyo nombre une deva, 'divino', y nāgarī, 'urbano', ya tenía su forma moderna hacia el año 1000. Todas son abugidas: cada letra lleva una vocal que pequeñas marcas pueden cambiar."
+   },
+   "camera": {
+    "lon": 96.0,
+    "lat": 14.0,
+    "zoom": 2.2
+   },
+   "control": {
+    "brahmi": [
+     {
+      "prev": true
+     },
+     "MMR",
+     "THA",
+     "LAO",
+     "KHM",
+     {
+      "ref": "tibet"
+     },
+     {
+      "ref": "malay_world"
+     },
+     {
+      "ref": "java_bali"
+     },
+     {
+      "ref": "champa_1292"
+     }
+    ]
+   },
+   "moves": [
+    {
+     "side": "brahmi",
+     "path": [
+      [
+       80.3,
+       12.6
+      ],
+      [
+       86.0,
+       10.0
+      ],
+      [
+       92.0,
+       8.0
+      ],
+      [
+       96.5,
+       6.0
+      ],
+      [
+       99.5,
+       4.5
+      ],
+      [
+       101.3,
+       2.5
+      ],
+      [
+       103.8,
+       1.2
+      ],
+      [
+       106.0,
+       -1.0
+      ],
+      [
+       107.0,
+       -1.8
+      ],
+      [
+       107.8,
+       -5.5
+      ],
+      [
+       110.4,
+       -6.9
+      ]
+     ],
+     "by": "sea",
+     "icon": "⛵",
+     "label": {
+      "en": "Traders, priests and monks",
+      "es": "Comerciantes, sacerdotes y monjes"
+     }
+    },
+    {
+     "side": "brahmi",
+     "path": [
+      [
+       103.8,
+       1.2
+      ],
+      [
+       104.5,
+       1.3
+      ],
+      [
+       104.9,
+       2.5
+      ],
+      [
+       104.6,
+       4.5
+      ],
+      [
+       104.3,
+       8.3
+      ],
+      [
+       104.6,
+       9.6
+      ],
+      [
+       104.95,
+       10.02
+      ]
+     ],
+     "by": "sea"
+    },
+    {
+     "side": "brahmi",
+     "path": [
+      [
+       85.44,
+       25.14
+      ],
+      [
+       85.32,
+       27.71
+      ],
+      [
+       88.0,
+       28.4
+      ],
+      [
+       91.12,
+       29.65
+      ]
+     ],
+     "by": "land",
+     "icon": "🚶",
+     "label": {
+      "en": "To Tibet",
+      "es": "Hacia el Tíbet"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "devanagari",
+     "name": {
+      "en": "Devanagari",
+      "es": "Devanagari"
+     },
+     "at": [
+      82.9739,
+      25.3176
+     ],
+     "cat": "script",
+     "icon": "अ",
+     "type": "script",
+     "date": "1000",
+     "place": {
+      "en": "North India and Nepal (here Varanasi)",
+      "es": "Norte de la India y Nepal (aquí Benarés)"
+     },
+     "text": {
+      "en": "A Brahmic script that had its modern form by about 1000, its letters hanging from a line along the top. It is used for over 120 languages, among them Hindi, Marathi, Nepali and Sanskrit.",
+      "es": "Una escritura bráhmica que ya tenía su forma moderna hacia el año 1000, con las letras colgadas de una línea superior. Se usa para más de 120 lenguas, entre ellas el hindi, el maratí, el nepalí y el sánscrito."
+     },
+     "sample": {
+      "text": "अ आ इ ई",
+      "latin": "a ā i ī",
+      "means": {
+       "en": "the first vowels",
+       "es": "las primeras vocales"
+      }
+     },
+     "wiki": {
+      "en": "Devanagari",
+      "es": "Devanagari"
+     }
+    },
+    {
+     "id": "tamil-script",
+     "name": {
+      "en": "Tamil script",
+      "es": "Escritura tamil"
+     },
+     "at": [
+      79.7036,
+      12.8342
+     ],
+     "cat": "script",
+     "icon": "அ",
+     "type": "script",
+     "date": "650",
+     "place": {
+      "en": "Kanchipuram, the Pallava capital, Tamil Nadu, India",
+      "es": "Kanchipuram, la capital pallava, Tamil Nadu, India"
+     },
+     "text": {
+      "en": "Tamil was first written in Tamil-Brahmi letters around Ashoka's time; today's Tamil script was formed in the 7th century in the Pallava kingdom, from simplified Pallava-Grantha letters.",
+      "es": "El tamil se escribió primero con letras tamil-brahmi hacia la época de Ashoka; la escritura tamil actual se formó en el siglo VII en el reino pallava, con letras pallava-grantha simplificadas."
+     },
+     "sample": {
+      "text": "அ ஆ இ ஈ",
+      "latin": "a ā i ī",
+      "means": {
+       "en": "the first vowels",
+       "es": "las primeras vocales"
+      }
+     },
+     "wiki": {
+      "en": "Tamil script",
+      "es": "Alfabeto tamil"
+     }
+    },
+    {
+     "id": "tibetan-script",
+     "name": {
+      "en": "Tibetan script",
+      "es": "Escritura tibetana"
+     },
+     "at": [
+      91.1172,
+      29.65
+     ],
+     "cat": "script",
+     "icon": "ཀ",
+     "type": "script",
+     "date": "640",
+     "place": {
+      "en": "Lhasa, Tibet, China",
+      "es": "Lhasa, Tíbet, China"
+     },
+     "text": {
+      "en": "Made in the 7th century from an Indian (Gupta) model, by tradition by Thonmi Sambhota for King Songtsen Gampo. It writes Tibetan, Dzongkha and other Himalayan languages.",
+      "es": "Creada en el siglo VII según un modelo indio (gupta), por tradición obra de Thonmi Sambhota para el rey Songtsen Gampo. Escribe el tibetano, el dzongkha y otras lenguas del Himalaya."
+     },
+     "sample": {
+      "text": "ཀ ཁ ག ང",
+      "latin": "ka kha ga nga",
+      "means": {
+       "en": "the first letters",
+       "es": "las primeras letras"
+      }
+     },
+     "wiki": {
+      "en": "Tibetan script",
+      "es": "Alfabeto tibetano"
+     }
+    },
+    {
+     "id": "thai-script",
+     "name": {
+      "en": "Thai script",
+      "es": "Escritura tailandesa"
+     },
+     "at": [
+      99.7036,
+      17.0186
+     ],
+     "cat": "script",
+     "icon": "ก",
+     "type": "script",
+     "date": "1283",
+     "place": {
+      "en": "Sukhothai, Thailand",
+      "es": "Sukhothai, Tailandia"
+     },
+     "text": {
+      "en": "Derived from Old Khmer letters, it is credited by a stone dated 1292 to King Ram Khamhaeng of Sukhothai, though some scholars doubt the stone. It added marks for the tones of Thai.",
+      "es": "Derivada de las letras del jemer antiguo, una piedra fechada en 1292 la atribuye al rey Ram Khamhaeng de Sukhothai, aunque algunos especialistas dudan de la piedra. Añadió marcas para los tonos del tailandés."
+     },
+     "sample": {
+      "text": "ก ข ฃ ค",
+      "latin": "ko kai, kho khai, kho khuat, kho khwai",
+      "means": {
+       "en": "the first letters, named after a chicken, an egg, a bottle and a buffalo",
+       "es": "las primeras letras, que llevan el nombre de una gallina, un huevo, una botella y un búfalo"
+      }
+     },
+     "wiki": {
+      "en": "Thai script",
+      "es": "Alfabeto tailandés"
+     },
+     "img": "Bangkok National Museum - 2017-04-22 (008).jpg"
+    },
+    {
+     "id": "khmer-script",
+     "name": {
+      "en": "Khmer script",
+      "es": "Escritura jemer"
+     },
+     "at": [
+      104.9747,
+      10.995
+     ],
+     "cat": "script",
+     "icon": "ក",
+     "type": "script",
+     "date": "611",
+     "place": {
+      "en": "Angkor Borei, Takéo, Cambodia",
+      "es": "Angkor Borei, Takéo, Camboya"
+     },
+     "text": {
+      "en": "Adapted from the Pallava letters of southern India; its oldest dated inscription, from Angkor Borei, is from 611. It was carved in the temples of Angkor and still writes Khmer.",
+      "es": "Adaptada de las letras pallava del sur de la India; su inscripción fechada más antigua, de Angkor Borei, es del 611. Se grabó en los templos de Angkor y todavía escribe el jemer."
+     },
+     "sample": {
+      "text": "ក ខ គ ឃ",
+      "latin": "ka kha ko kho",
+      "means": {
+       "en": "the first letters",
+       "es": "las primeras letras"
+      }
+     },
+     "wiki": {
+      "en": "Khmer script",
+      "es": "Alfabeto camboyano"
+     },
+     "img": "AncientKhmerScript.jpg"
+    },
+    {
+     "id": "javanese-script",
+     "name": {
+      "en": "Javanese script",
+      "es": "Escritura javanesa"
+     },
+     "at": [
+      110.3644,
+      -7.8014
+     ],
+     "cat": "script",
+     "type": "script",
+     "date": "1400",
+     "place": {
+      "en": "Java (here Yogyakarta), Indonesia",
+      "es": "Java (aquí Yogyakarta), Indonesia"
+     },
+     "text": {
+      "en": "Grown in the 15th century from Kawi, the Pallava-born script of Java's Hindu-Buddhist kingdoms. It wrote poems and chronicles until the mid-20th century, when Latin letters took over.",
+      "es": "Nacida en el siglo XV del kawi, la escritura de origen pallava de los reinos hindúes y budistas de Java. Escribió poemas y crónicas hasta mediados del siglo XX, cuando las letras latinas la desplazaron."
+     },
+     "sample": {
+      "text": "ꦲꦤꦕꦫꦏ",
+      "latin": "ha na ca ra ka",
+      "means": {
+       "en": "\"there were two messengers\", the verse that gives the letters their order",
+       "es": "\"había dos mensajeros\", el verso que da a las letras su orden"
+      }
+     },
+     "wiki": {
+      "en": "Javanese script",
+      "es": "Alfabeto javanés"
+     },
+     "img": "Babad-tanah-jawi.jpg"
+    }
+   ]
+  },
+  {
+   "date": "1600",
+   "title": {
+    "en": "Latin across the oceans",
+    "es": "El latín cruza los océanos"
+   },
+   "text": {
+    "en": "The Spanish and Portuguese empires carried Latin letters across the oceans. Friars and Indigenous scholars wrote Nahuatl, Quechua and other languages in them, while many older books and records were burned.",
+    "es": "Los imperios español y portugués llevaron las letras latinas a través de los océanos. Frailes y sabios indígenas escribieron en ellas el náhuatl, el quechua y otras lenguas, mientras muchos libros y registros antiguos eran quemados."
+   },
+   "details": {
+    "en": "With conquest came priests, notaries and schools that wrote in Latin letters, and some friars learned Indigenous languages to preach in them. From 1545 until his death in 1590, the Franciscan Bernardino de Sahagún worked with Nahua elders and his former students of the College of Santa Cruz de Tlatelolco on the Florentine Codex, twelve books on Nahua life in Nahuatl and Spanish. In 1575 the Council of the Indies urged that Indigenous peoples be taught in Spanish instead of their own languages, and Sahagún was made to hand over his papers. Missionaries had burned Maya books, and in 1583 a church council in Lima ordered khipus burned as idolatrous. In Peru, the Quechua nobleman Felipe Guaman Poma de Ayala wrote a 1,189-page chronicle against colonial abuses for the king, who never received it. In the Philippines, Latin letters slowly replaced Baybayin, and in Vietnam, Jesuit missionaries began writing Vietnamese with them.",
+    "es": "Con la conquista llegaron sacerdotes, escribanos y escuelas que escribían con letras latinas, y algunos frailes aprendieron lenguas indígenas para predicar en ellas. Desde 1545 hasta su muerte en 1590, el franciscano Bernardino de Sahagún trabajó con ancianos nahuas y con sus antiguos alumnos del Colegio de Santa Cruz de Tlatelolco en el Códice Florentino, doce libros sobre la vida nahua en náhuatl y español. En 1575 el Consejo de Indias propuso enseñar a los pueblos indígenas en español en lugar de sus propias lenguas, y Sahagún tuvo que entregar sus papeles. Los misioneros habían quemado libros mayas, y en 1583 un concilio de la Iglesia en Lima ordenó quemar quipus por idolátricos. En Perú, el noble quechua Felipe Guamán Poma de Ayala escribió para el rey una crónica de 1189 páginas contra los abusos coloniales, que el rey nunca recibió. En Filipinas, las letras latinas fueron desplazando al baybayin, y en Vietnam, los misioneros jesuitas empezaron a escribir el vietnamita con ellas."
+   },
+   "camera": {
+    "lon": -50.0,
+    "lat": 12.0,
+    "zoom": 1.4
+   },
+   "control": {
+    "west": [
+     {
+      "prev": true
+     },
+     {
+      "ref": "granada"
+     },
+     {
+      "ref": "americas_1600"
+     },
+     {
+      "ref": "philippines_1600"
+     }
+    ],
+    "aram": {
+     "minus": [
+      [
+       {
+        "prev": true
+       },
+       {
+        "ref": "malay_world"
+       }
+      ],
+      {
+       "ref": "granada"
+      }
+     ]
+    },
+    "brahmi": {
+     "minus": [
+      {
+       "prev": true
+      },
+      {
+       "ref": "malay_world"
+      },
+      {
+       "ref": "viet_1600"
+      }
+     ]
+    },
+    "cyril": [
+     {
+      "prev": true
+     },
+     {
+      "minus": [
+       {
+        "ref": "russia_1600"
+       },
+       {
+        "cur": "west"
+       }
+      ]
+     }
+    ]
+   },
+   "moves": [
+    {
+     "side": "west",
+     "path": [
+      [
+       -6.35,
+       36.78
+      ],
+      [
+       -16.5,
+       27.5
+      ],
+      [
+       -40.0,
+       20.0
+      ],
+      [
+       -61.3,
+       14.2
+      ],
+      [
+       -70.0,
+       15.5
+      ],
+      [
+       -75.5,
+       16.5
+      ],
+      [
+       -84.0,
+       19.5
+      ],
+      [
+       -86.0,
+       21.4
+      ],
+      [
+       -86.6,
+       22.2
+      ],
+      [
+       -89.5,
+       22.2
+      ],
+      [
+       -91.5,
+       21.6
+      ],
+      [
+       -96.13,
+       19.2
+      ]
+     ],
+     "by": "sea",
+     "icon": "⛵",
+     "label": {
+      "en": "Spanish fleets",
+      "es": "Flotas españolas"
+     }
+    },
+    {
+     "side": "west",
+     "path": [
+      [
+       -9.4,
+       38.6
+      ],
+      [
+       -17.3,
+       28.3
+      ],
+      [
+       -26.5,
+       13.0
+      ],
+      [
+       -32.0,
+       -2.0
+      ],
+      [
+       -34.3,
+       -8.5
+      ],
+      [
+       -37.0,
+       -12.0
+      ],
+      [
+       -38.5,
+       -12.97
+      ]
+     ],
+     "by": "sea",
+     "icon": "⛵",
+     "label": {
+      "en": "Portuguese ships",
+      "es": "Barcos portugueses"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "latin-alphabet",
+     "name": {
+      "en": "Latin alphabet",
+      "es": "Alfabeto latino"
+     },
+     "at": [
+      12.75,
+      41.75
+     ],
+     "cat": "script",
+     "icon": "A",
+     "type": "script",
+     "date": "-650",
+     "place": {
+      "en": "Rome and Latium, Italy",
+      "es": "Roma y el Lacio, Italia"
+     },
+     "text": {
+      "en": "The Romans' version of the Etruscan letters, written from the 7th century BC. Carried by Rome, the Church and later by European empires, it is now used by about 3 billion people.",
+      "es": "La versión romana de las letras etruscas, escrita desde el siglo VII a. C. Llevado por Roma, la Iglesia y más tarde los imperios europeos, hoy lo usan unos 3000 millones de personas."
+     },
+     "details": {
+      "en": "The Romans kept the Etruscan C for both k and g until they added a stroke to make G, and later borrowed Y and Z from Greek for Greek words. All the letters had reached their classical shapes by about 100 BC. J, U and W came only in the Middle Ages and later. Today the Latin script writes more languages than any other, from English, Spanish and Swahili to Vietnamese and Indonesian; about 3 billion people, almost 40% of humanity, used it in 2024.",
+      "es": "Los romanos usaron la C etrusca tanto para k como para g hasta que le añadieron un trazo para formar la G, y más tarde tomaron del griego la Y y la Z para las palabras griegas. Hacia el 100 a. C. todas las letras tenían ya su forma clásica. La J, la U y la W llegaron recién en la Edad Media y después. Hoy la escritura latina escribe más lenguas que ninguna otra, del inglés, el español y el suajili al vietnamita y el indonesio; en 2024 la usaban unos 3000 millones de personas, casi el 40 % de la humanidad."
+     },
+     "sample": {
+      "text": "ABCDEFG",
+      "latin": "A B C D E F G",
+      "means": {
+       "en": "the first letters, as the Romans carved them",
+       "es": "las primeras letras, como las tallaban los romanos"
+      }
+     },
+     "wiki": {
+      "en": "Latin alphabet",
+      "es": "Alfabeto latino"
+     }
+    },
+    {
+     "id": "florentine-codex",
+     "name": {
+      "en": "Florentine Codex",
+      "es": "Códice Florentino"
+     },
+     "at": [
+      -99.1367,
+      19.4509
+     ],
+     "cat": "book",
+     "type": "work",
+     "date": "1545",
+     "end": "1590",
+     "place": {
+      "en": "Colegio de Santa Cruz de Tlatelolco, Mexico City; now in Florence, Italy",
+      "es": "Colegio de Santa Cruz de Tlatelolco, Ciudad de México; hoy en Florencia, Italia"
+     },
+     "text": {
+      "en": "Twelve books on the life and beliefs of the Nahua, in Nahuatl and Spanish, made by Bernardino de Sahagún with Nahua elders and scholars, with over 2,000 pictures by Indigenous artists.",
+      "es": "Doce libros sobre la vida y las creencias de los nahuas, en náhuatl y español, hechos por Bernardino de Sahagún con ancianos y sabios nahuas, con más de 2000 imágenes de artistas indígenas."
+     },
+     "wiki": {
+      "en": "Florentine Codex",
+      "es": "Historia general de las cosas de Nueva España"
+     }
+    },
+    {
+     "id": "guaman-poma",
+     "name": {
+      "en": "Felipe Guaman Poma de Ayala",
+      "es": "Felipe Guamán Poma de Ayala"
+     },
+     "at": [
+      -74.2236,
+      -13.1588
+     ],
+     "cat": "person",
+     "type": "person",
+     "date": "1615",
+     "life": [
+      "1535",
+      "1616"
+     ],
+     "place": {
+      "en": "Huamanga (Ayacucho), Peru",
+      "es": "Huamanga (Ayacucho), Perú"
+     },
+     "text": {
+      "en": "A Quechua nobleman who wrote and drew a 1,189-page chronicle denouncing Spanish abuses in the Andes, addressed to King Philip III, who never received it. It was found in Copenhagen in 1908.",
+      "es": "Un noble quechua que escribió y dibujó una crónica de 1189 páginas que denunciaba los abusos españoles en los Andes, dirigida al rey Felipe III, que nunca la recibió. Se halló en Copenhague en 1908."
+     },
+     "wiki": {
+      "en": "Felipe Guaman Poma de Ayala",
+      "es": "Felipe Guamán Poma de Ayala"
+     }
+    }
+   ]
+  },
+  {
+   "date": "1928",
+   "title": {
+    "en": "Alphabets change",
+    "es": "Los alfabetos cambian"
+   },
+   "text": {
+    "en": "In 1928 Turkey replaced the Arabic letters of Ottoman Turkish with a Latin alphabet. In the same years the Soviet Union moved dozens of peoples to Latin letters and then, from 1936, to Cyrillic.",
+    "es": "En 1928 Turquía reemplazó las letras árabes del turco otomano por un alfabeto latino. En esos mismos años la Unión Soviética pasó a decenas de pueblos a las letras latinas y luego, desde 1936, al cirílico."
+   },
+   "details": {
+    "en": "Mustafa Kemal Atatürk announced the plan in July 1928 and toured the country to teach the new 29-letter alphabet, and a law of 1 November 1928 made it compulsory within weeks. Ottoman Turkish had been written in Arabic letters since about 1300. Until 2013, Q, W and X, letters of Kurdish but not of Turkish, were banned from official documents and public places in Turkey. In the Soviet Union, Latin alphabets were brought in for 50 of the 72 written languages, Azerbaijani, Uzbek, Kazakh and Tatar among them; from 1936 a new campaign moved almost all of them to Cyrillic by 1940, and Mongolia followed in 1941. In Vietnam, the French colonial administration enforced the Latin chữ Quốc ngữ from 1910, and Vietnam's own emperors and reformers promoted it; since the 1920s most Vietnamese have written with it, leaving behind the older literature in Chinese characters and chữ Nôm.",
+    "es": "Mustafa Kemal Atatürk anunció el plan en julio de 1928 y recorrió el país enseñando el nuevo alfabeto de 29 letras, y una ley del 1 de noviembre de 1928 lo hizo obligatorio en pocas semanas. El turco otomano se escribía con letras árabes desde hacia 1300. Hasta 2013, la Q, la W y la X, letras del kurdo pero no del turco, estuvieron prohibidas en los documentos oficiales y los lugares públicos de Turquía. En la Unión Soviética se introdujeron alfabetos latinos para 50 de las 72 lenguas escritas, entre ellas el azerí, el uzbeko, el kazajo y el tártaro; desde 1936 una nueva campaña pasó casi todas al cirílico antes de 1940, y Mongolia la siguió en 1941. En Vietnam, la administración colonial francesa impuso el chữ Quốc ngữ latino desde 1910, y los propios emperadores y reformistas vietnamitas lo promovieron; desde la década de 1920 la mayoría de los vietnamitas escribe con él, dejando atrás la literatura antigua en caracteres chinos y chữ Nôm."
+   },
+   "camera": {
+    "lon": 72.0,
+    "lat": 33.0,
+    "zoom": 1.4
+   },
+   "control": {
+    "west": [
+     "ABW",
+     "AGO",
+     "AIA",
+     "ALA",
+     "ALB",
+     "AND",
+     "ARG",
+     "ASM",
+     "ATG",
+     "AUS",
+     "AUT",
+     "AZE",
+     "BDI",
+     "BEL",
+     "BEN",
+     "BFA",
+     "BHS",
+     "BIH",
+     "BLM",
+     "BLZ",
+     "BMU",
+     "BOL",
+     "BRA",
+     "BRB",
+     "BRN",
+     "BWA",
+     "CAF",
+     "CAN",
+     "CHE",
+     "CHL",
+     "CIV",
+     "CMR",
+     "COD",
+     "COG",
+     "COK",
+     "COL",
+     "COM",
+     "CPV",
+     "CRI",
+     "CUB",
+     "CUW",
+     "CYM",
+     "CYN",
+     "CYP",
+     "CZE",
+     "DEU",
+     "DJI",
+     "DMA",
+     "DNK",
+     "DOM",
+     "ECU",
+     "ESP",
+     "EST",
+     "FIN",
+     "FJI",
+     "FLK",
+     "FRA",
+     "FRO",
+     "FSM",
+     "GAB",
+     "GBR",
+     "GGY",
+     "GHA",
+     "GIN",
+     "GMB",
+     "GNB",
+     "GNQ",
+     "GRC",
+     "GRD",
+     "GRL",
+     "GTM",
+     "GUM",
+     "GUY",
+     "HND",
+     "HRV",
+     "HTI",
+     "HUN",
+     "IDN",
+     "IMN",
+     "IRL",
+     "ISL",
+     "ITA",
+     "JAM",
+     "JEY",
+     "KAZ",
+     "KEN",
+     "KGZ",
+     "KIR",
+     "KNA",
+     "LBR",
+     "LCA",
+     "LIE",
+     "LSO",
+     "LTU",
+     "LUX",
+     "LVA",
+     "MAF",
+     "MCO",
+     "MDA",
+     "MDG",
+     "MEX",
+     "MHL",
+     "MLI",
+     "MLT",
+     "MNP",
+     "MOZ",
+     "MSR",
+     "MUS",
+     "MWI",
+     "MYS",
+     "NAM",
+     "NCL",
+     "NER",
+     "NFK",
+     "NGA",
+     "NIC",
+     "NIU",
+     "NLD",
+     "NOR",
+     "NRU",
+     "NZL",
+     "PAN",
+     "PCN",
+     "PER",
+     "PHL",
+     "PLW",
+     "PNG",
+     "POL",
+     "PRI",
+     "PRT",
+     "PRY",
+     "PYF",
+     "ROU",
+     "RWA",
+     "SEN",
+     "SGP",
+     "SHN",
+     "SLB",
+     "SLE",
+     "SLV",
+     "SMR",
+     "SOL",
+     "SPM",
+     "SSD",
+     "STP",
+     "SUR",
+     "SVK",
+     "SVN",
+     "SWE",
+     "SWZ",
+     "SXM",
+     "SYC",
+     "TCA",
+     "TCD",
+     "TGO",
+     "TJK",
+     "TKM",
+     "TLS",
+     "TON",
+     "TTO",
+     "TUR",
+     "TUV",
+     "TZA",
+     "UGA",
+     "URY",
+     "USA",
+     "UZB",
+     "VAT",
+     "VCT",
+     "VEN",
+     "VGB",
+     "VIR",
+     "VNM",
+     "VUT",
+     "WLF",
+     "WSM",
+     "XKX",
+     "ZAF",
+     "ZMB",
+     "ZWE"
+    ],
+    "aram": {
+     "minus": [
+      [
+       "DZA",
+       "BHR",
+       "EGY",
+       "IRQ",
+       "JOR",
+       "KWT",
+       "LBN",
+       "LBY",
+       "MRT",
+       "MAR",
+       "OMN",
+       "PSE",
+       "QAT",
+       "SAU",
+       "SDN",
+       "SYR",
+       "TUN",
+       "ARE",
+       "YEM",
+       "ESH",
+       "IRN",
+       "AFG",
+       "PAK",
+       "ISR",
+       "MNG",
+       {
+        "ref": "china_scripts"
+       }
+      ],
+      {
+       "cur": "west"
+      }
+     ]
+    },
+    "brahmi": [
+     "IND",
+     "NPL",
+     "BTN",
+     "BGD",
+     "LKA",
+     "MMR",
+     "THA",
+     "LAO",
+     "KHM",
+     {
+      "ref": "tibet"
+     }
+    ],
+    "cyril": {
+     "minus": [
+      [
+       "RUS",
+       "UKR",
+       "BLR",
+       "BGR",
+       "SRB",
+       "MKD",
+       "MNE"
+      ],
+      {
+       "cur": "aram"
+      }
+     ]
+    },
+    "geez": [
+     "ETH",
+     "ERI"
+    ],
+    "cauc": [
+     "ARM",
+     "GEO"
+    ]
+   },
+   "places": [
+    {
+     "id": "turkish-alphabet",
+     "name": {
+      "en": "Turkish alphabet",
+      "es": "Alfabeto turco"
+     },
+     "at": [
+      35.4875,
+      38.7225
+     ],
+     "cat": "script",
+     "type": "script",
+     "date": "1928",
+     "place": {
+      "en": "Turkey (here Kayseri, where Atatürk taught it in 1928)",
+      "es": "Turquía (aquí Kayseri, donde Atatürk lo enseñó en 1928)"
+     },
+     "text": {
+      "en": "The 29-letter Latin alphabet made compulsory in Turkey in 1928, with Ç, Ğ, I, İ, Ö, Ş and Ü for Turkish sounds. It replaced the Arabic letters of Ottoman Turkish.",
+      "es": "El alfabeto latino de 29 letras que se hizo obligatorio en Turquía en 1928, con Ç, Ğ, I, İ, Ö, Ş y Ü para los sonidos del turco. Reemplazó a las letras árabes del turco otomano."
+     },
+     "sample": {
+      "text": "Ç Ğ I İ Ö Ş Ü",
+      "means": {
+       "en": "the seven letters changed for Turkish sounds",
+       "es": "las siete letras modificadas para los sonidos del turco"
+      }
+     },
+     "wiki": {
+      "en": "Turkish alphabet",
+      "es": "Alfabeto turco"
+     },
+     "img": "Ataturk-September 20, 1928.jpg"
+    },
+    {
+     "id": "mustafa-kemal-ataturk",
+     "name": {
+      "en": "Mustafa Kemal Atatürk",
+      "es": "Mustafa Kemal Atatürk"
+     },
+     "at": [
+      32.8597,
+      39.9334
+     ],
+     "cat": "ruler",
+     "type": "person",
+     "date": "1928",
+     "life": [
+      "1881",
+      "1938-11-10"
+     ],
+     "place": {
+      "en": "Ankara, Turkey",
+      "es": "Ankara, Turquía"
+     },
+     "text": {
+      "en": "The founder of the Republic of Turkey, who in 1928 imposed a Latin alphabet for Turkish as one of his sweeping reforms, and toured the country explaining it.",
+      "es": "El fundador de la República de Turquía, que en 1928 impuso un alfabeto latino para el turco como una de sus grandes reformas, y recorrió el país explicándolo."
+     },
+     "wiki": {
+      "en": "Mustafa Kemal Atatürk",
+      "es": "Mustafa Kemal Atatürk"
+     }
+    },
+    {
+     "id": "yanalif",
+     "name": {
+      "en": "Yañalif, the \"new alphabet\"",
+      "es": "Yañalif, el \"nuevo alfabeto\""
+     },
+     "at": [
+      49.1089,
+      55.7964
+     ],
+     "cat": "script",
+     "type": "script",
+     "date": "1928",
+     "until": "1940",
+     "place": {
+      "en": "Kazan, Russia, and the Turkic peoples of the Soviet Union",
+      "es": "Kazán, Rusia, y los pueblos túrquicos de la Unión Soviética"
+     },
+     "text": {
+      "en": "A Latin alphabet for the Turkic languages of the Soviet Union, from Tatar to Kazakh and Azerbaijani. It replaced Arabic letters in the late 1920s and was itself replaced by Cyrillic in 1938–1940.",
+      "es": "Un alfabeto latino para las lenguas túrquicas de la Unión Soviética, del tártaro al kazajo y el azerí. Reemplazó a las letras árabes a fines de la década de 1920 y fue reemplazado a su vez por el cirílico en 1938-1940."
+     },
+     "wiki": {
+      "en": "Yañalif",
+      "es": "Yanalif"
+     }
+    },
+    {
+     "id": "quoc-ngu",
+     "name": {
+      "en": "Chữ Quốc ngữ",
+      "es": "Chữ Quốc ngữ"
+     },
+     "at": [
+      108.327,
+      15.879
+     ],
+     "cat": "script",
+     "type": "script",
+     "date": "1620",
+     "place": {
+      "en": "First worked out by Jesuits in Hội An; today used all over Vietnam",
+      "es": "Ideado primero por jesuitas en Hội An; hoy se usa en todo Vietnam"
+     },
+     "text": {
+      "en": "The Vietnamese alphabet, 'script of the national language': Latin letters with accents for the tones, as in Việt Nam. Made by Jesuit missionaries in the 17th century, it has been Vietnam's only official script since 1954.",
+      "es": "El alfabeto vietnamita, «escritura de la lengua nacional»: letras latinas con acentos para los tonos, como en Việt Nam. Creado por misioneros jesuitas en el siglo XVII, es la única escritura oficial de Vietnam desde 1954."
+     },
+     "details": {
+      "en": "From about 1620 the Portuguese Jesuit Francisco de Pina, who lived in Hội An, wrote Vietnamese words in Latin letters to learn the language, borrowing Portuguese spelling; he is said to be the first European to speak it fluently. He drowned off Hội An in 1625. Other Jesuits continued his work, and Alexandre de Rhodes published it in 1651. Today it uses 22 letters of the Latin alphabet and seven more made with marks, such as ơ, ư and đ; five further marks show the tones.",
+      "es": "Desde hacia 1620, el jesuita portugués Francisco de Pina, que vivía en Hội An, escribió palabras vietnamitas en letras latinas para aprender la lengua, con la ortografía del portugués; se dice que fue el primer europeo que la habló con fluidez. Se ahogó frente a Hội An en 1625. Otros jesuitas siguieron su trabajo, y Alexandre de Rhodes lo publicó en 1651. Hoy usa 22 letras del alfabeto latino y otras siete hechas con signos, como ơ, ư y đ; otros cinco signos marcan los tonos."
+     },
+     "sample": {
+      "text": "Trăm năm trong cõi người ta",
+      "means": {
+       "en": "'A hundred years in this world of ours…', the first line of the Tale of Kiều",
+       "es": "«Cien años en este mundo de los hombres…», el primer verso del Cuento de Kiều"
+      }
+     },
+     "wiki": {
+      "en": "Vietnamese alphabet",
+      "es": "Alfabeto vietnamita"
+     },
+     "img": "L-2360-a 0008 1 t24-C-R0072.jpg"
+    }
+   ]
+  },
+  {
+   "date": "1991-10",
+   "title": {
+    "en": "One code for every script",
+    "es": "Un código para todas las escrituras"
+   },
+   "text": {
+    "en": "In 1991 the Unicode Standard began giving every character of the world's scripts its own number, so that computers could mix them all. By 2026 it covered 175 scripts, from Phoenician to Cyrillic.",
+    "es": "En 1991 el estándar Unicode empezó a darle a cada carácter de las escrituras del mundo su propio número, para que las computadoras pudieran mezclarlas todas. En 2026 ya abarcaba 175 escrituras, del fenicio al cirílico."
+   },
+   "details": {
+    "en": "Before Unicode, each computer system used its own codes, and a text in Greek, Arabic or Thai often turned into gibberish on another machine. In 1987 Joe Becker, Lee Collins and Mark Davis began planning one universal code; the Unicode Consortium was incorporated in California in January 1991 and published the first volume of the standard that October, with 24 scripts. Version 18.0, of September 2026, has 172,808 characters in 175 scripts, Phoenician, Ugaritic and Gothic among them, while rongorongo and others still wait. Latin A, Greek Α and Cyrillic А look alike but are three characters, all heirs of an ox head drawn almost 4,000 years ago. Moldova had gone back to Latin letters in 1989; after the Soviet Union broke up that December, Azerbaijan, Turkmenistan and Uzbekistan adopted Latin alphabets too. In Ethiopia, the end of decades of Amharic assimilation in 1991 led Oromo, Somali, Sidama and other languages to move from Ge'ez to Latin letters.",
+    "es": "Antes de Unicode, cada sistema informático usaba sus propios códigos, y un texto en griego, árabe o tailandés a menudo se volvía un galimatías en otra máquina. En 1987 Joe Becker, Lee Collins y Mark Davis empezaron a planear un código universal; el Consorcio Unicode se constituyó en California en enero de 1991 y publicó el primer volumen del estándar en octubre, con 24 escrituras. La versión 18.0, de septiembre de 2026, tiene 172 808 caracteres en 175 escrituras, entre ellas el fenicio, el ugarítico y el gótico, mientras el rongorongo y otras siguen esperando. La A latina, la Α griega y la А cirílica se ven iguales pero son tres caracteres distintos, herederos de una cabeza de buey dibujada hace casi 4000 años. Moldavia había vuelto a las letras latinas en 1989; tras la disolución de la Unión Soviética en diciembre, Azerbaiyán, Turkmenistán y Uzbekistán también adoptaron alfabetos latinos. En Etiopía, el fin de décadas de asimilación al amhárico en 1991 llevó al oromo, el somalí, el sidamo y otras lenguas a pasar del ge'ez a las letras latinas."
+   },
+   "camera": {
+    "lon": -40.0,
+    "lat": 28.0,
+    "zoom": 1.0
+   },
+   "control": {
+    "west": [
+     "ABW",
+     "AGO",
+     "AIA",
+     "ALA",
+     "ALB",
+     "AND",
+     "ARG",
+     "ASM",
+     "ATG",
+     "AUS",
+     "AUT",
+     "AZE",
+     "BDI",
+     "BEL",
+     "BEN",
+     "BFA",
+     "BHS",
+     "BIH",
+     "BLM",
+     "BLZ",
+     "BMU",
+     "BOL",
+     "BRA",
+     "BRB",
+     "BRN",
+     "BWA",
+     "CAF",
+     "CAN",
+     "CHE",
+     "CHL",
+     "CIV",
+     "CMR",
+     "COD",
+     "COG",
+     "COK",
+     "COL",
+     "COM",
+     "CPV",
+     "CRI",
+     "CUB",
+     "CUW",
+     "CYM",
+     "CYN",
+     "CYP",
+     "CZE",
+     "DEU",
+     "DJI",
+     "DMA",
+     "DNK",
+     "DOM",
+     "ECU",
+     "ESP",
+     "EST",
+     "FIN",
+     "FJI",
+     "FLK",
+     "FRA",
+     "FRO",
+     "FSM",
+     "GAB",
+     "GBR",
+     "GGY",
+     "GHA",
+     "GIN",
+     "GMB",
+     "GNB",
+     "GNQ",
+     "GRC",
+     "GRD",
+     "GRL",
+     "GTM",
+     "GUM",
+     "GUY",
+     "HND",
+     "HRV",
+     "HTI",
+     "HUN",
+     "IDN",
+     "IMN",
+     "IRL",
+     "ISL",
+     "ITA",
+     "JAM",
+     "JEY",
+     "KEN",
+     "KIR",
+     "KNA",
+     "LBR",
+     "LCA",
+     "LIE",
+     "LSO",
+     "LTU",
+     "LUX",
+     "LVA",
+     "MAF",
+     "MCO",
+     "MDA",
+     "MDG",
+     "MEX",
+     "MHL",
+     "MLI",
+     "MLT",
+     "MNP",
+     "MOZ",
+     "MSR",
+     "MUS",
+     "MWI",
+     "MYS",
+     "NAM",
+     "NCL",
+     "NER",
+     "NFK",
+     "NGA",
+     "NIC",
+     "NIU",
+     "NLD",
+     "NOR",
+     "NRU",
+     "NZL",
+     "PAN",
+     "PCN",
+     "PER",
+     "PHL",
+     "PLW",
+     "PNG",
+     "POL",
+     "PRI",
+     "PRT",
+     "PRY",
+     "PYF",
+     "ROU",
+     "RWA",
+     "SEN",
+     "SGP",
+     "SHN",
+     "SLB",
+     "SLE",
+     "SLV",
+     "SMR",
+     "SOL",
+     "SOM",
+     "SPM",
+     "SSD",
+     "STP",
+     "SUR",
+     "SVK",
+     "SVN",
+     "SWE",
+     "SWZ",
+     "SXM",
+     "SYC",
+     "TCA",
+     "TCD",
+     "TGO",
+     "TLS",
+     "TON",
+     "TTO",
+     "TUR",
+     "TUV",
+     "TZA",
+     "UGA",
+     "URY",
+     "USA",
+     "VAT",
+     "VCT",
+     "VEN",
+     "VGB",
+     "VIR",
+     "VNM",
+     "VUT",
+     "WLF",
+     "WSM",
+     "XKX",
+     "ZAF",
+     "ZMB",
+     "ZWE"
+    ],
+    "aram": {
+     "minus": [
+      [
+       "DZA",
+       "BHR",
+       "EGY",
+       "IRQ",
+       "JOR",
+       "KWT",
+       "LBN",
+       "LBY",
+       "MRT",
+       "MAR",
+       "OMN",
+       "PSE",
+       "QAT",
+       "SAU",
+       "SDN",
+       "SYR",
+       "TUN",
+       "ARE",
+       "YEM",
+       "ESH",
+       "IRN",
+       "AFG",
+       "PAK",
+       "ISR",
+       {
+        "ref": "china_scripts"
+       }
+      ],
+      {
+       "cur": "west"
+      }
+     ]
+    },
+    "brahmi": [
+     "IND",
+     "NPL",
+     "BTN",
+     "BGD",
+     "LKA",
+     "MMR",
+     "THA",
+     "LAO",
+     "KHM",
+     {
+      "ref": "tibet"
+     }
+    ],
+    "cyril": {
+     "minus": [
+      [
+       "RUS",
+       "UKR",
+       "BLR",
+       "BGR",
+       "SRB",
+       "MKD",
+       "MNE",
+       "KAZ",
+       "KGZ",
+       "TJK",
+       "UZB",
+       "TKM",
+       "MNG"
+      ],
+      {
+       "cur": "aram"
+      }
+     ]
+    },
+    "geez": [
+     "ETH",
+     "ERI"
+    ],
+    "cauc": [
+     "ARM",
+     "GEO"
+    ]
+   },
+   "places": [
+    {
+     "id": "unicode",
+     "name": {
+      "en": "Unicode",
+      "es": "Unicode"
+     },
+     "at": [
+      -122.071,
+      37.4118
+     ],
+     "cat": "code",
+     "type": "invention",
+     "date": "1991-10",
+     "place": {
+      "en": "Unicode Consortium, Mountain View, California, US",
+      "es": "Consorcio Unicode, Mountain View, California, EE. UU."
+     },
+     "text": {
+      "en": "A single code that gives every character of the world's scripts its own number, first published in 1991. Version 18.0 (2026) has 172,808 characters in 175 scripts, and almost every web page uses it.",
+      "es": "Un código único que da a cada carácter de las escrituras del mundo su propio número, publicado por primera vez en 1991. La versión 18.0 (2026) tiene 172 808 caracteres en 175 escrituras, y casi todas las páginas web lo usan."
+     },
+     "sample": {
+      "text": "A Α А",
+      "latin": "U+0041 · U+0391 · U+0410",
+      "means": {
+       "en": "Latin A, Greek alpha and Cyrillic A: alike, but three different characters",
+       "es": "A latina, alfa griega y A cirílica: iguales a la vista, pero tres caracteres distintos"
+      }
+     },
+     "wiki": {
+      "en": "Unicode",
+      "es": "Unicode"
+     }
+    },
+    {
+     "id": "letter-a",
+     "name": {
+      "en": "The letter A",
+      "es": "La letra A"
+     },
+     "at": [
+      33.472,
+      29.018
+     ],
+     "cat": "script",
+     "type": "invention",
+     "date": "-1850",
+     "place": {
+      "en": "Born in Sinai, Egypt; written all over the world",
+      "es": "Nacida en el Sinaí, Egipto; escrita en todo el mundo"
+     },
+     "text": {
+      "en": "Our A probably began as a drawing of an ox's head, ʾalp, in the first alphabet almost 4,000 years ago. It became Phoenician 𐤀, Greek Α (alpha), Latin A and Cyrillic А (az).",
+      "es": "Nuestra A probablemente empezó como el dibujo de una cabeza de buey, ʾalp, en el primer alfabeto, hace casi 4000 años. Se convirtió en la 𐤀 fenicia, la Α griega (alfa), la A latina y la А cirílica (az)."
+     },
+     "details": {
+      "en": "The ox head stood for the catch in the throat at the start of ʾalp, a sound Greek did not have, so the Greeks used the letter for the vowel a and called it alpha. In the earliest Greek inscriptions, of the 8th century BC, it still rests on its side; later it stood up. The Etruscans kept its shape and passed it to the Romans, and Cyrillic took it from Greek. Hebrew alef and Arabic alif are its cousins through Aramaic.",
+      "es": "La cabeza de buey valía por el golpe de garganta con que empieza ʾalp, un sonido que el griego no tenía, así que los griegos usaron la letra para la vocal a y la llamaron alfa. En las primeras inscripciones griegas, del siglo VIII a. C., todavía está acostada; más tarde se puso de pie. Los etruscos conservaron su forma y la pasaron a los romanos, y el cirílico la tomó del griego. La álef hebrea y la álif árabe son sus primas a través del arameo."
+     },
+     "sample": {
+      "text": "𓃾 𐤀 Α A А",
+      "latin": "ox head, ʾalp, alpha, A, az",
+      "means": {
+       "en": "the letter A, from an Egyptian picture to Phoenician, Greek, Latin and Cyrillic",
+       "es": "la letra A, del dibujo egipcio al fenicio, el griego, el latín y el cirílico"
+      }
+     },
+     "wiki": {
+      "en": "A",
+      "es": "A"
+     },
+     "img": "Proto-semiticA-01.svg"
+    }
+   ]
+  }
+ ],
+ "outcome": {
+  "en": "From a few dozen pictures borrowed from Egyptian hieroglyphs came most of the world's alphabets: Greek, Latin and Cyrillic through the Phoenicians and Greeks; Hebrew, Syriac, Arabic and Mongolian through Aramaic; and, many scholars think, the Brahmic scripts. About 3 billion people write in Latin letters (2024) and some 250 million in Cyrillic (2019), while Arabic letters serve much of Asia and Africa and Brahmic scripts most of South and Southeast Asia. Alphabets also carried power: some peoples saw their scripts banned, burned or replaced, while others kept or revived their own, from the Georgian and Armenian letters to the Mongolian script, co-official again in Mongolia since 2025.",
+  "es": "De unas pocas decenas de dibujos tomados de los jeroglíficos egipcios nacieron la mayoría de los alfabetos del mundo: el griego, el latino y el cirílico a través de los fenicios y los griegos; el hebreo, el siríaco, el árabe y el mongol a través del arameo; y, según muchos especialistas, las escrituras bráhmicas. Unos 3000 millones de personas escriben con letras latinas (2024) y unos 250 millones con el cirílico (2019), mientras las letras árabes sirven a buena parte de Asia y África y las bráhmicas a casi todo el sur y el sudeste de Asia. Los alfabetos también llevaron poder: algunos pueblos vieron sus escrituras prohibidas, quemadas o reemplazadas, mientras otros conservaron o revivieron las suyas, de las letras georgianas y armenias a la escritura mongola, cooficial de nuevo en Mongolia desde 2025."
+ },
+ "sources": [
+  {
+   "title": "Wikipedia: History of the alphabet",
+   "url": "https://en.wikipedia.org/wiki/History_of_the_alphabet"
+  },
+  {
+   "title": "Wikipedia: Alphabet",
+   "url": "https://en.wikipedia.org/wiki/Alphabet"
+  },
+  {
+   "title": "Wikipedia: A",
+   "url": "https://en.wikipedia.org/wiki/A"
+  },
+  {
+   "title": "Wikipedia: Proto-Sinaitic script",
+   "url": "https://en.wikipedia.org/wiki/Proto-Sinaitic_script"
+  },
+  {
+   "title": "Wikipedia: Wadi el-Hol inscriptions",
+   "url": "https://en.wikipedia.org/wiki/Wadi_el-Hol_inscriptions"
+  },
+  {
+   "title": "Wikipedia: Serabit el-Khadim",
+   "url": "https://en.wikipedia.org/wiki/Serabit_el-Khadim"
+  },
+  {
+   "title": "Wikipedia: Ugaritic alphabet",
+   "url": "https://en.wikipedia.org/wiki/Ugaritic_alphabet"
+  },
+  {
+   "title": "Wikipedia: Ugarit",
+   "url": "https://en.wikipedia.org/wiki/Ugarit"
+  },
+  {
+   "title": "Wikipedia: Proto-Canaanite alphabet",
+   "url": "https://en.wikipedia.org/wiki/Proto-Canaanite_alphabet"
+  },
+  {
+   "title": "Wikipedia: Phoenician alphabet",
+   "url": "https://en.wikipedia.org/wiki/Phoenician_alphabet"
+  },
+  {
+   "title": "Wikipedia: Byblos",
+   "url": "https://en.wikipedia.org/wiki/Byblos"
+  },
+  {
+   "title": "Wikipedia: Ahiram sarcophagus",
+   "url": "https://en.wikipedia.org/wiki/Ahiram_sarcophagus"
+  },
+  {
+   "title": "Wikipedia: Paleo-Hebrew alphabet",
+   "url": "https://en.wikipedia.org/wiki/Paleo-Hebrew_alphabet"
+  },
+  {
+   "title": "Wikipedia: Mesha Stele",
+   "url": "https://en.wikipedia.org/wiki/Mesha_Stele"
+  },
+  {
+   "title": "Wikipedia: Carthage",
+   "url": "https://en.wikipedia.org/wiki/Carthage"
+  },
+  {
+   "title": "Wikipedia: Nora Stone",
+   "url": "https://en.wikipedia.org/wiki/Nora_Stone"
+  },
+  {
+   "title": "Wikipedia: Greek alphabet",
+   "url": "https://en.wikipedia.org/wiki/Greek_alphabet"
+  },
+  {
+   "title": "Wikipedia: Dipylon inscription",
+   "url": "https://en.wikipedia.org/wiki/Dipylon_inscription"
+  },
+  {
+   "title": "Wikipedia: Nestor's Cup (Pithekoussai)",
+   "url": "https://en.wikipedia.org/wiki/Nestor's_Cup_(Pithekoussai)"
+  },
+  {
+   "title": "Wikipedia: Cumae",
+   "url": "https://en.wikipedia.org/wiki/Cumae"
+  },
+  {
+   "title": "Wikipedia: Etruscan alphabet",
+   "url": "https://en.wikipedia.org/wiki/Etruscan_alphabet"
+  },
+  {
+   "title": "Wikipedia: Old Italic scripts",
+   "url": "https://en.wikipedia.org/wiki/Old_Italic_scripts"
+  },
+  {
+   "title": "Wikipedia: Latin alphabet",
+   "url": "https://en.wikipedia.org/wiki/Latin_alphabet"
+  },
+  {
+   "title": "Wikipedia: Latin script",
+   "url": "https://en.wikipedia.org/wiki/Latin_script"
+  },
+  {
+   "title": "Wikipedia: Lapis Niger",
+   "url": "https://en.wikipedia.org/wiki/Lapis_Niger"
+  },
+  {
+   "title": "Wikipedia: Aramaic alphabet",
+   "url": "https://en.wikipedia.org/wiki/Aramaic_alphabet"
+  },
+  {
+   "title": "Wikipedia: Aramaic",
+   "url": "https://en.wikipedia.org/wiki/Aramaic"
+  },
+  {
+   "title": "Wikipedia: Imperial Aramaic",
+   "url": "https://en.wikipedia.org/wiki/Imperial_Aramaic"
+  },
+  {
+   "title": "Wikipedia: Elephantine papyri and ostraca",
+   "url": "https://en.wikipedia.org/wiki/Elephantine_papyri_and_ostraca"
+  },
+  {
+   "title": "Wikipedia: Brahmi script",
+   "url": "https://en.wikipedia.org/wiki/Brahmi_script"
+  },
+  {
+   "title": "Wikipedia: Brahmic scripts",
+   "url": "https://en.wikipedia.org/wiki/Brahmic_scripts"
+  },
+  {
+   "title": "Wikipedia: Kharosthi",
+   "url": "https://en.wikipedia.org/wiki/Kharosthi"
+  },
+  {
+   "title": "Wikipedia: Edicts of Ashoka",
+   "url": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka"
+  },
+  {
+   "title": "Wikipedia: Kandahar Bilingual Rock Inscription",
+   "url": "https://en.wikipedia.org/wiki/Kandahar_Bilingual_Rock_Inscription"
+  },
+  {
+   "title": "Wikipedia: Hebrew alphabet",
+   "url": "https://en.wikipedia.org/wiki/Hebrew_alphabet"
+  },
+  {
+   "title": "Wikipedia: Hebrew language",
+   "url": "https://en.wikipedia.org/wiki/Hebrew_language"
+  },
+  {
+   "title": "Wikipedia: Dead Sea Scrolls",
+   "url": "https://en.wikipedia.org/wiki/Dead_Sea_Scrolls"
+  },
+  {
+   "title": "Wikipedia: Syriac alphabet",
+   "url": "https://en.wikipedia.org/wiki/Syriac_alphabet"
+  },
+  {
+   "title": "Wikipedia: Nabataean script",
+   "url": "https://en.wikipedia.org/wiki/Nabataean_script"
+  },
+  {
+   "title": "Wikipedia: Coptic script",
+   "url": "https://en.wikipedia.org/wiki/Coptic_script"
+  },
+  {
+   "title": "Wikipedia: Nag Hammadi library",
+   "url": "https://en.wikipedia.org/wiki/Nag_Hammadi_library"
+  },
+  {
+   "title": "Wikipedia: Latin",
+   "url": "https://en.wikipedia.org/wiki/Latin"
+  },
+  {
+   "title": "Wikipedia: Runes",
+   "url": "https://en.wikipedia.org/wiki/Runes"
+  },
+  {
+   "title": "Wikipedia: Vimose inscriptions",
+   "url": "https://en.wikipedia.org/wiki/Vimose_inscriptions"
+  },
+  {
+   "title": "Wikipedia: Ogham",
+   "url": "https://en.wikipedia.org/wiki/Ogham"
+  },
+  {
+   "title": "Wikipedia: Gothic alphabet",
+   "url": "https://en.wikipedia.org/wiki/Gothic_alphabet"
+  },
+  {
+   "title": "Wikipedia: Ulfilas",
+   "url": "https://en.wikipedia.org/wiki/Ulfilas"
+  },
+  {
+   "title": "Wikipedia: Codex Argenteus",
+   "url": "https://en.wikipedia.org/wiki/Codex_Argenteus"
+  },
+  {
+   "title": "Wikipedia: Geʽez script",
+   "url": "https://en.wikipedia.org/wiki/Geʽez_script"
+  },
+  {
+   "title": "Wikipedia: Armenian alphabet",
+   "url": "https://en.wikipedia.org/wiki/Armenian_alphabet"
+  },
+  {
+   "title": "Wikipedia: Georgian scripts",
+   "url": "https://en.wikipedia.org/wiki/Georgian_scripts"
+  },
+  {
+   "title": "Wikipedia: Bir el Qutt inscriptions",
+   "url": "https://en.wikipedia.org/wiki/Bir_el_Qutt_inscriptions"
+  },
+  {
+   "title": "Wikipedia: Namara inscription",
+   "url": "https://en.wikipedia.org/wiki/Namara_inscription"
+  },
+  {
+   "title": "Wikipedia: Arabic alphabet",
+   "url": "https://en.wikipedia.org/wiki/Arabic_alphabet"
+  },
+  {
+   "title": "Wikipedia: Arabic",
+   "url": "https://en.wikipedia.org/wiki/Arabic"
+  },
+  {
+   "title": "Wikipedia: Glagolitic script",
+   "url": "https://en.wikipedia.org/wiki/Glagolitic_script"
+  },
+  {
+   "title": "Wikipedia: Cyrillic script",
+   "url": "https://en.wikipedia.org/wiki/Cyrillic_script"
+  },
+  {
+   "title": "Wikipedia: Cyril and Methodius",
+   "url": "https://en.wikipedia.org/wiki/Cyril_and_Methodius"
+  },
+  {
+   "title": "Wikipedia: Ohrid Literary School",
+   "url": "https://en.wikipedia.org/wiki/Ohrid_Literary_School"
+  },
+  {
+   "title": "Wikipedia: Preslav Literary School",
+   "url": "https://en.wikipedia.org/wiki/Preslav_Literary_School"
+  },
+  {
+   "title": "Wikipedia: Christianization of Kievan Rus'",
+   "url": "https://en.wikipedia.org/wiki/Christianization_of_Kievan_Rus'"
+  },
+  {
+   "title": "Wikipedia: Sogdian alphabet",
+   "url": "https://en.wikipedia.org/wiki/Sogdian_alphabet"
+  },
+  {
+   "title": "Wikipedia: Old Uyghur script",
+   "url": "https://en.wikipedia.org/wiki/Old_Uyghur_script"
+  },
+  {
+   "title": "Wikipedia: Mongolian script",
+   "url": "https://en.wikipedia.org/wiki/Mongolian_script"
+  },
+  {
+   "title": "Wikipedia: Manchu alphabet",
+   "url": "https://en.wikipedia.org/wiki/Manchu_alphabet"
+  },
+  {
+   "title": "Wikipedia: Devanagari",
+   "url": "https://en.wikipedia.org/wiki/Devanagari"
+  },
+  {
+   "title": "Wikipedia: Tamil script",
+   "url": "https://en.wikipedia.org/wiki/Tamil_script"
+  },
+  {
+   "title": "Wikipedia: Pallava script",
+   "url": "https://en.wikipedia.org/wiki/Pallava_script"
+  },
+  {
+   "title": "Wikipedia: Tibetan script",
+   "url": "https://en.wikipedia.org/wiki/Tibetan_script"
+  },
+  {
+   "title": "Wikipedia: Thai script",
+   "url": "https://en.wikipedia.org/wiki/Thai_script"
+  },
+  {
+   "title": "Wikipedia: Ram Khamhaeng Inscription",
+   "url": "https://en.wikipedia.org/wiki/Ram_Khamhaeng_Inscription"
+  },
+  {
+   "title": "Wikipedia: Khmer script",
+   "url": "https://en.wikipedia.org/wiki/Khmer_script"
+  },
+  {
+   "title": "Wikipedia: Javanese script",
+   "url": "https://en.wikipedia.org/wiki/Javanese_script"
+  },
+  {
+   "title": "Wikipedia: Kawi script",
+   "url": "https://en.wikipedia.org/wiki/Kawi_script"
+  },
+  {
+   "title": "Wikipedia: Baybayin",
+   "url": "https://en.wikipedia.org/wiki/Baybayin"
+  },
+  {
+   "title": "Wikipedia: Florentine Codex",
+   "url": "https://en.wikipedia.org/wiki/Florentine_Codex"
+  },
+  {
+   "title": "Wikipedia: Bernardino de Sahagún",
+   "url": "https://en.wikipedia.org/wiki/Bernardino_de_Sahagún"
+  },
+  {
+   "title": "Wikipedia: Quipu",
+   "url": "https://en.wikipedia.org/wiki/Quipu"
+  },
+  {
+   "title": "Wikipedia: El primer nueva corónica y buen gobierno",
+   "url": "https://en.wikipedia.org/wiki/El_primer_nueva_corónica_y_buen_gobierno"
+  },
+  {
+   "title": "Wikipedia: Felipe Guaman Poma de Ayala",
+   "url": "https://en.wikipedia.org/wiki/Felipe_Guaman_Poma_de_Ayala"
+  },
+  {
+   "title": "Wikipedia: Vietnamese alphabet",
+   "url": "https://en.wikipedia.org/wiki/Vietnamese_alphabet"
+  },
+  {
+   "title": "Wikipedia: Turkish alphabet",
+   "url": "https://en.wikipedia.org/wiki/Turkish_alphabet"
+  },
+  {
+   "title": "Wikipedia: Ottoman Turkish alphabet",
+   "url": "https://en.wikipedia.org/wiki/Ottoman_Turkish_alphabet"
+  },
+  {
+   "title": "Wikipedia: Mustafa Kemal Atatürk",
+   "url": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atatürk"
+  },
+  {
+   "title": "Wikipedia: Latinisation in the Soviet Union",
+   "url": "https://en.wikipedia.org/wiki/Latinisation_in_the_Soviet_Union"
+  },
+  {
+   "title": "Wikipedia: Yañalif",
+   "url": "https://en.wikipedia.org/wiki/Yañalif"
+  },
+  {
+   "title": "Wikipedia: Mongolian Cyrillic alphabet",
+   "url": "https://en.wikipedia.org/wiki/Mongolian_Cyrillic_alphabet"
+  },
+  {
+   "title": "Wikipedia: Unicode",
+   "url": "https://en.wikipedia.org/wiki/Unicode"
+  },
+  {
+   "title": "Wikipedia: Unicode Consortium",
+   "url": "https://en.wikipedia.org/wiki/Unicode_Consortium"
+  }
+ ]
+}

@@ -114,8 +114,8 @@
       },
       "color": "#8e5a2b",
       "members": {
-        "en": "Proto-Indo-European, then Indo-European speech whose branch is unknown (Thracian, Illyrian...)",
-        "es": "protoindoeuropeo, y luego hablas indoeuropeas de rama desconocida (tracio, ilirio...)"
+        "en": "Proto-Indo-European, then Indo-European speech whose branch is unknown (Thracian, Dacian, Illyrian...)",
+        "es": "protoindoeuropeo, y luego hablas indoeuropeas de rama desconocida (tracio, dacio, ilirio...)"
       }
     }
   ],
@@ -2780,8 +2780,8 @@
         "es": "Con el emperador Trajano, el Imperio romano alcanza su mayor extensión. En su mitad occidental, el latín va desplazando al galo, al íbero y a otras lenguas locales; en el oriente, el griego sigue siendo la lengua común."
       },
       "details": {
-        "en": "Latin spread with roads, towns, army camps and Roman citizenship. Within a few centuries most people in Italy, Gaul, Iberia and the Danube provinces spoke it, and their everyday Latin, Vulgar Latin, would become Spanish, Portuguese, French, Italian, Romanian and the other Romance languages. In Britain, beyond the towns and forts, people went on speaking Brittonic Celtic, and Ireland, never conquered, kept Irish. Basque survived in the western Pyrenees. Beyond the Rhine and the Danube, Germanic peoples traded and fought with Rome and borrowed Latin words. In the east, Greek was replacing the last Anatolian languages, Celtic Galatian lingered around Ancyra, and Iranian peoples, the Parthians and the Kushans, ruled from Mesopotamia to northern India.",
-        "es": "El latín se extendió con las calzadas, las ciudades, los campamentos del ejército y la ciudadanía romana. En pocos siglos, la mayoría de la gente de Italia, la Galia, Hispania y las provincias del Danubio lo hablaba, y su latín de todos los días, el latín vulgar, daría el español, el portugués, el francés, el italiano, el rumano y las demás lenguas romances. En Britania, fuera de las ciudades y los fuertes, la gente siguió hablando celta britónico, e Irlanda, nunca conquistada, conservó el irlandés. El vasco sobrevivió en los Pirineos occidentales. Más allá del Rin y del Danubio, los pueblos germánicos comerciaban y guerreaban con Roma y tomaban palabras latinas. En el oriente, el griego reemplazaba a las últimas lenguas anatolias, el gálata celta perduraba en torno a Ancira, y pueblos iranios, partos y kushanas, gobernaban de Mesopotamia al norte de la India."
+        "en": "Latin spread with roads, towns, army camps and Roman citizenship. Within a few centuries most people in Italy, Gaul, Iberia and the Danube provinces spoke it, and their everyday Latin, Vulgar Latin, would become Spanish, Portuguese, French, Italian, Romanian and the other Romance languages. In Gaul, though, Gaulish lived on beside Latin until about the 5th century; in Britain, beyond the towns and forts, people went on speaking Brittonic Celtic, and Ireland, never conquered, kept Irish. Basque survived in the western Pyrenees. Beyond the Rhine and the Danube, Germanic peoples traded and fought with Rome and borrowed Latin words. In the east, Greek was replacing the last Anatolian languages, Celtic Galatian lingered around Ancyra, and Iranian peoples, the Parthians and the Kushans, ruled from Mesopotamia to northern India.",
+        "es": "El latín se extendió con las calzadas, las ciudades, los campamentos del ejército y la ciudadanía romana. En pocos siglos, la mayoría de la gente de Italia, la Galia, Hispania y las provincias del Danubio lo hablaba, y su latín de todos los días, el latín vulgar, daría el español, el portugués, el francés, el italiano, el rumano y las demás lenguas romances. Pero en la Galia el galo siguió vivo junto al latín hasta hacia el siglo V; en Britania, fuera de las ciudades y los fuertes, la gente siguió hablando celta britónico, e Irlanda, nunca conquistada, conservó el irlandés. El vasco sobrevivió en los Pirineos occidentales. Más allá del Rin y del Danubio, los pueblos germánicos comerciaban y guerreaban con Roma y tomaban palabras latinas. En el oriente, el griego reemplazaba a las últimas lenguas anatolias, el gálata celta perduraba en torno a Ancira, y pueblos iranios, partos y kushanas, gobernaban de Mesopotamia al norte de la India."
       },
       "camera": {
         "lon": 14,
@@ -2818,81 +2818,6 @@
           {
             "and": [
               "PRT",
-              {
-                "poly": [
-                  [
-                    -11,
-                    34
-                  ],
-                  [
-                    45,
-                    34
-                  ],
-                  [
-                    45,
-                    72
-                  ],
-                  [
-                    -11,
-                    72
-                  ]
-                ]
-              }
-            ]
-          },
-          {
-            "and": [
-              "FRA",
-              {
-                "poly": [
-                  [
-                    -11,
-                    34
-                  ],
-                  [
-                    45,
-                    34
-                  ],
-                  [
-                    45,
-                    72
-                  ],
-                  [
-                    -11,
-                    72
-                  ]
-                ]
-              }
-            ]
-          },
-          {
-            "and": [
-              "BEL",
-              {
-                "poly": [
-                  [
-                    -11,
-                    34
-                  ],
-                  [
-                    45,
-                    34
-                  ],
-                  [
-                    45,
-                    72
-                  ],
-                  [
-                    -11,
-                    72
-                  ]
-                ]
-              }
-            ]
-          },
-          {
-            "and": [
-              "CHE",
               {
                 "poly": [
                   [
@@ -3018,6 +2943,54 @@
           {
             "and": [
               {
+                "a1": "FRA",
+                "names": [
+                  "Pyrénées-Orientales",
+                  "Aude",
+                  "Hérault",
+                  "Gard",
+                  "Bouches-du-Rhône",
+                  "Var",
+                  "Alpes-Maritimes",
+                  "Alpes-de-Haute-Provence",
+                  "Hautes-Alpes",
+                  "Vaucluse",
+                  "Drôme",
+                  "Ardèche",
+                  "Isère",
+                  "Savoie",
+                  "Haute-Savoie",
+                  "Haute-Garonne",
+                  "Ariège",
+                  "Corse-du-Sud",
+                  "Haute-Corse"
+                ]
+              },
+              {
+                "poly": [
+                  [
+                    -11,
+                    34
+                  ],
+                  [
+                    45,
+                    34
+                  ],
+                  [
+                    45,
+                    72
+                  ],
+                  [
+                    -11,
+                    72
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "and": [
+              {
                 "a1": "ESP",
                 "except": [
                   "Gipuzkoa",
@@ -3053,38 +3026,78 @@
             "land": [
               [
                 16.0,
-                48.0
+                48.2
               ],
               [
-                19.0,
-                48.0
+                17.2,
+                48.1
               ],
               [
-                19.2,
+                18.8,
+                47.8
+              ],
+              [
+                19.05,
+                47.5
+              ],
+              [
+                18.9,
                 46.0
               ],
               [
-                19.5,
-                45.0
+                19.1,
+                45.4
+              ],
+              [
+                19.9,
+                45.2
+              ],
+              [
+                20.5,
+                44.8
               ],
               [
                 21.5,
-                44.8
+                44.75
               ],
               [
                 22.5,
                 44.6
               ],
               [
-                24.0,
-                43.9
-              ],
-              [
-                26.5,
+                22.9,
                 44.0
               ],
               [
+                24.0,
+                43.75
+              ],
+              [
+                25.4,
+                43.6
+              ],
+              [
+                26.0,
+                43.85
+              ],
+              [
+                27.3,
+                44.1
+              ],
+              [
                 28.0,
+                44.5
+              ],
+              [
+                28.3,
+                45.25
+              ],
+              [
+                29.7,
+                45.2
+              ],
+              [
+                28.7,
                 44.2
               ],
               [
@@ -3092,60 +3105,60 @@
                 43.8
               ],
               [
+                27.9,
+                43.2
+              ],
+              [
                 27.0,
-                43.4
+                43.3
               ],
               [
                 24.0,
-                43.4
+                43.45
               ],
               [
-                22.5,
+                22.6,
                 43.6
               ],
               [
-                21.0,
-                46.5
+                22.0,
+                43.0
               ],
               [
-                18.0,
-                47.2
-              ]
-            ]
-          },
-          {
-            "land": [
-              [
-                21.0,
-                46.5
+                21.3,
+                42.6
               ],
               [
-                22.5,
+                20.3,
+                43.0
+              ],
+              [
+                19.5,
+                43.8
+              ],
+              [
+                19.2,
                 44.6
               ],
               [
-                24.0,
-                44.0
+                17.5,
+                45.1
               ],
               [
-                26.5,
-                44.2
+                16.4,
+                45.4
               ],
               [
-                28.0,
-                45.2
+                15.7,
+                46.0
               ],
               [
-                27.0,
-                46.5
+                16.1,
+                46.7
               ],
               [
-                25.0,
-                47.8
-              ],
-              [
-                23.0,
-                47.8
+                16.0,
+                47.6
               ]
             ]
           }
@@ -3175,6 +3188,214 @@
                 31.8,
                 39.2
               ]
+            ]
+          },
+          {
+            "and": [
+              {
+                "a1": "FRA",
+                "except": [
+                  "Pyrénées-Orientales",
+                  "Aude",
+                  "Hérault",
+                  "Gard",
+                  "Bouches-du-Rhône",
+                  "Var",
+                  "Alpes-Maritimes",
+                  "Alpes-de-Haute-Provence",
+                  "Hautes-Alpes",
+                  "Vaucluse",
+                  "Drôme",
+                  "Ardèche",
+                  "Isère",
+                  "Savoie",
+                  "Haute-Savoie",
+                  "Haute-Garonne",
+                  "Ariège",
+                  "Corse-du-Sud",
+                  "Haute-Corse",
+                  "Landes",
+                  "Gers",
+                  "Hautes-Pyrénées",
+                  "Pyrenees-Atlantics"
+                ]
+              },
+              {
+                "poly": [
+                  [
+                    -11,
+                    34
+                  ],
+                  [
+                    45,
+                    34
+                  ],
+                  [
+                    45,
+                    72
+                  ],
+                  [
+                    -11,
+                    72
+                  ]
+                ]
+              }
+            ]
+          },
+          "BEL",
+          "LUX",
+          "CHE",
+          {
+            "minus": [
+              {
+                "and": [
+                  "DEU",
+                  {
+                    "poly": [
+                      [
+                        5.8,
+                        50.8
+                      ],
+                      [
+                        6.9,
+                        50.95
+                      ],
+                      [
+                        7.6,
+                        50.4
+                      ],
+                      [
+                        8.3,
+                        49.8
+                      ],
+                      [
+                        8.3,
+                        49.0
+                      ],
+                      [
+                        7.0,
+                        49.0
+                      ],
+                      [
+                        6.1,
+                        49.4
+                      ],
+                      [
+                        5.8,
+                        50.8
+                      ]
+                    ]
+                  }
+                ]
+              },
+              {
+                "land": [
+                  [
+                    6.0,
+                    51.0
+                  ],
+                  [
+                    6.5,
+                    53.4
+                  ],
+                  [
+                    8.5,
+                    55.0
+                  ],
+                  [
+                    8.2,
+                    57.1
+                  ],
+                  [
+                    10.6,
+                    57.8
+                  ],
+                  [
+                    11.5,
+                    59.0
+                  ],
+                  [
+                    10.5,
+                    60.0
+                  ],
+                  [
+                    5.2,
+                    59.3
+                  ],
+                  [
+                    5.0,
+                    62.0
+                  ],
+                  [
+                    8.0,
+                    63.5
+                  ],
+                  [
+                    12.0,
+                    65.5
+                  ],
+                  [
+                    15.5,
+                    63.5
+                  ],
+                  [
+                    17.5,
+                    62.0
+                  ],
+                  [
+                    18.5,
+                    60.2
+                  ],
+                  [
+                    16.5,
+                    57.0
+                  ],
+                  [
+                    14.0,
+                    55.4
+                  ],
+                  [
+                    17.0,
+                    54.6
+                  ],
+                  [
+                    19.5,
+                    54.4
+                  ],
+                  [
+                    19.5,
+                    52.5
+                  ],
+                  [
+                    18.0,
+                    50.5
+                  ],
+                  [
+                    16.0,
+                    50.3
+                  ],
+                  [
+                    14.5,
+                    49.5
+                  ],
+                  [
+                    13.5,
+                    48.6
+                  ],
+                  [
+                    10.0,
+                    48.8
+                  ],
+                  [
+                    8.5,
+                    49.5
+                  ],
+                  [
+                    7.5,
+                    50.3
+                  ]
+                ]
+              }
             ]
           }
         ],
@@ -3675,10 +3896,49 @@
                   ]
                 ]
               },
-              "ALB"
+              "ALB",
+              {
+                "land": [
+                  [
+                    21.0,
+                    46.5
+                  ],
+                  [
+                    22.5,
+                    44.6
+                  ],
+                  [
+                    24.0,
+                    44.0
+                  ],
+                  [
+                    26.5,
+                    44.2
+                  ],
+                  [
+                    28.0,
+                    45.2
+                  ],
+                  [
+                    27.0,
+                    46.5
+                  ],
+                  [
+                    25.0,
+                    47.8
+                  ],
+                  [
+                    23.0,
+                    47.8
+                  ]
+                ]
+              }
             ],
             {
               "cur": "greek"
+            },
+            {
+              "cur": "indoiranian"
             }
           ]
         }
@@ -4191,7 +4451,7 @@
               },
               {
                 "and": [
-                  "FRA",
+                  "BEL",
                   {
                     "poly": [
                       [
@@ -4216,7 +4476,7 @@
               },
               {
                 "and": [
-                  "BEL",
+                  "LUX",
                   {
                     "poly": [
                       [
@@ -4367,6 +4627,36 @@
               {
                 "and": [
                   {
+                    "a1": "FRA",
+                    "except": [
+                      "Pyrenees-Atlantics"
+                    ]
+                  },
+                  {
+                    "poly": [
+                      [
+                        -11,
+                        34
+                      ],
+                      [
+                        45,
+                        34
+                      ],
+                      [
+                        45,
+                        72
+                      ],
+                      [
+                        -11,
+                        72
+                      ]
+                    ]
+                  }
+                ]
+              },
+              {
+                "and": [
+                  {
                     "a1": "ESP",
                     "except": [
                       "Gipuzkoa",
@@ -4402,38 +4692,78 @@
                 "land": [
                   [
                     16.0,
-                    48.0
+                    48.2
                   ],
                   [
-                    19.0,
-                    48.0
+                    17.2,
+                    48.1
                   ],
                   [
-                    19.2,
+                    18.8,
+                    47.8
+                  ],
+                  [
+                    19.05,
+                    47.5
+                  ],
+                  [
+                    18.9,
                     46.0
                   ],
                   [
-                    19.5,
-                    45.0
+                    19.1,
+                    45.4
+                  ],
+                  [
+                    19.9,
+                    45.2
+                  ],
+                  [
+                    20.5,
+                    44.8
                   ],
                   [
                     21.5,
-                    44.8
+                    44.75
                   ],
                   [
                     22.5,
                     44.6
                   ],
                   [
-                    24.0,
-                    43.9
-                  ],
-                  [
-                    26.5,
+                    22.9,
                     44.0
                   ],
                   [
+                    24.0,
+                    43.75
+                  ],
+                  [
+                    25.4,
+                    43.6
+                  ],
+                  [
+                    26.0,
+                    43.85
+                  ],
+                  [
+                    27.3,
+                    44.1
+                  ],
+                  [
                     28.0,
+                    44.5
+                  ],
+                  [
+                    28.3,
+                    45.25
+                  ],
+                  [
+                    29.7,
+                    45.2
+                  ],
+                  [
+                    28.7,
                     44.2
                   ],
                   [
@@ -4441,25 +4771,102 @@
                     43.8
                   ],
                   [
+                    27.9,
+                    43.2
+                  ],
+                  [
                     27.0,
-                    43.4
+                    43.3
                   ],
                   [
                     24.0,
-                    43.4
+                    43.45
                   ],
                   [
-                    22.5,
+                    22.6,
                     43.6
                   ],
                   [
-                    21.0,
-                    46.5
+                    22.0,
+                    43.0
                   ],
                   [
-                    18.0,
-                    47.2
+                    21.3,
+                    42.6
+                  ],
+                  [
+                    20.3,
+                    43.0
+                  ],
+                  [
+                    19.5,
+                    43.8
+                  ],
+                  [
+                    19.2,
+                    44.6
+                  ],
+                  [
+                    17.5,
+                    45.1
+                  ],
+                  [
+                    16.4,
+                    45.4
+                  ],
+                  [
+                    15.7,
+                    46.0
+                  ],
+                  [
+                    16.1,
+                    46.7
+                  ],
+                  [
+                    16.0,
+                    47.6
                   ]
+                ]
+              },
+              {
+                "and": [
+                  "DEU",
+                  {
+                    "poly": [
+                      [
+                        5.8,
+                        50.8
+                      ],
+                      [
+                        6.9,
+                        50.95
+                      ],
+                      [
+                        7.6,
+                        50.4
+                      ],
+                      [
+                        8.3,
+                        49.8
+                      ],
+                      [
+                        8.3,
+                        49.0
+                      ],
+                      [
+                        7.0,
+                        49.0
+                      ],
+                      [
+                        6.1,
+                        49.4
+                      ],
+                      [
+                        5.8,
+                        50.8
+                      ]
+                    ]
+                  }
                 ]
               }
             ],
@@ -4490,9 +4897,145 @@
                   43.0
                 ]
               ]
+            },
+            {
+              "land": [
+                [
+                  6.0,
+                  51.0
+                ],
+                [
+                  6.5,
+                  53.4
+                ],
+                [
+                  8.5,
+                  55.0
+                ],
+                [
+                  8.2,
+                  57.1
+                ],
+                [
+                  10.6,
+                  57.8
+                ],
+                [
+                  11.5,
+                  59.0
+                ],
+                [
+                  10.5,
+                  60.0
+                ],
+                [
+                  5.2,
+                  59.3
+                ],
+                [
+                  5.0,
+                  62.0
+                ],
+                [
+                  8.0,
+                  63.5
+                ],
+                [
+                  12.0,
+                  65.5
+                ],
+                [
+                  15.5,
+                  63.5
+                ],
+                [
+                  17.5,
+                  62.0
+                ],
+                [
+                  18.5,
+                  60.2
+                ],
+                [
+                  16.5,
+                  57.0
+                ],
+                [
+                  14.0,
+                  55.4
+                ],
+                [
+                  17.0,
+                  54.6
+                ],
+                [
+                  19.5,
+                  54.4
+                ],
+                [
+                  19.5,
+                  52.5
+                ],
+                [
+                  18.0,
+                  50.5
+                ],
+                [
+                  16.0,
+                  50.3
+                ],
+                [
+                  14.5,
+                  49.5
+                ],
+                [
+                  13.5,
+                  48.6
+                ],
+                [
+                  10.0,
+                  48.8
+                ],
+                [
+                  8.5,
+                  49.5
+                ],
+                [
+                  7.5,
+                  50.3
+                ]
+              ]
             }
           ]
         },
+        "celtic": [
+          "GBR",
+          "IRL",
+          {
+            "land": [
+              [
+                31.5,
+                40.3
+              ],
+              [
+                34.0,
+                40.6
+              ],
+              [
+                34.8,
+                39.6
+              ],
+              [
+                33.5,
+                38.8
+              ],
+              [
+                31.8,
+                39.2
+              ]
+            ]
+          }
+        ],
         "early": {
           "minus": [
             [
