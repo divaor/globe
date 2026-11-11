@@ -10,9 +10,10 @@
 // zoomed-in flat maps; yesterday's satellite picture is not empty (needs NASA GIBS online); the
 // wars and conquests mode plays a conflict, with battle cards and step details; a story opens from a
 // shared link; a journey keeps its trail on the map; the Writing systems filter with its script letters in
-// the app's own fonts; Compare two filters (the two-colour map, its chart linked to the globe, a total divided
+// the app's own fonts; a script sample on a story card (Phoenician letters) and a religions story;
+// Compare two filters (the two-colour map, its chart linked to the globe, a total divided
 // by another, categories, Spanish); the quizzes made from the stories, Guess the link and Which language
-// family?, and a city tour that hops between collections.
+// family?, a city tour that hops between collections, and the tours of holy places and of the alphabet.
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 let chromium, devices;
@@ -630,6 +631,36 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 12i. Writing and languages, Religions and philosophies: a card in the alphabet story shows its sample
+// in Phoenician letters, drawn with the app's script fonts (fetched for those letters only); a shared link
+// opens a religions story at its step.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#writing=alphabet&step=3&p=globe&lang=en');
+  await page.waitForSelector('.warbar', { timeout: 30000 });
+  await page.waitForTimeout(3000);
+  await page.evaluate(() => { const b = document.querySelector('.warbar .tb-play'); if (b && b.getAttribute('aria-label') === 'Pause') b.click(); });
+  await page.evaluate(() => { const m = window.atlas.time.stories.writing; m.itemCard(m.c.items.find((it) => it.id === 'mesha-stele')); });
+  await page.waitForSelector('.country-card .item-sample', { timeout: 10000 });
+  const sm = await page.evaluate(async () => {
+    const text = document.querySelector('.country-card .sample-text')?.textContent ?? '';
+    await document.fonts.load('30px "Atlas Scripts"', text);
+    const cp = 0x10900;
+    const covers = (f) => f.unicodeRange.split(',').some((r) => { const [a, b] = r.trim().replace(/^U\+/i, '').split('-').map((x) => parseInt(x, 16)); return cp >= a && cp <= (b ?? a); });
+    const face = [...document.fonts].find((f) => f.family.includes('Atlas Scripts') && covers(f));
+    return { text, latin: document.querySelector('.country-card .sample-latin')?.textContent ?? '', means: document.querySelector('.country-card .sample-means')?.textContent ?? '', mode: window.atlas.app.mode, title: document.querySelector('.wb-title')?.textContent ?? '', face: face?.status ?? 'none' };
+  });
+  check(sm.mode === 'writing' && /Phoenician/.test(sm.title) && /𐤌𐤔𐤏/.test(sm.text) && /mlk mʾb/.test(sm.latin) && /king of Moab/.test(sm.means) && sm.face === 'loaded',
+    `the Mesha Stele card shows its words in Phoenician letters, in the app's font for them (${sm.face}; ${sm.means})`);
+  await ctx.close();
+  const b = await open({ ...devices['Pixel 7'] }, '#beliefs=buddhism&step=1&p=globe&lang=en');
+  await b.page.waitForSelector('.warbar', { timeout: 30000 });
+  await b.page.waitForTimeout(2500);
+  const bu = await b.page.evaluate(() => ({ mode: window.atlas.app.mode, title: document.querySelector('.wb-title')?.textContent ?? '', items: window.atlas.time.stories.beliefs.c?.items?.length ?? 0 }));
+  check(bu.mode === 'beliefs' && /awakening/i.test(bu.title) && bu.items > 20, `a shared link opens the story of Buddhism at its first step (${bu.title})`);
+  check(!errors.length && !b.errors.length, `no page errors in Writing and Religions stories${errors.length || b.errors.length ? ': ' + [...errors, ...b.errors].join(' | ') : ''}`);
+  await b.ctx.close();
+}
+
 // 12f. Compare two filters: from the Filters panel, GDP per capita against life expectancy on a
 // two-colour map, with its chart (a strong link); the legend's nine squares count the countries and a
 // tap lights theirs; a dot on the chart picks its country, whose strip shows both values with their
@@ -914,6 +945,22 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
   const silk = await stop();
   check(silk.mode === 'journeys' && /Zhang Qian/.test(silk.bar) && /1\/13/.test(silk.n), `the Silk Road tour starts with Zhang Qian (${silk.bar})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
+  // Holy places: its first stop opens the faiths story at Göbekli Tepe; The story of the alphabet starts
+  // with the first letters, in Egypt.
+  await menu('Guided tours');
+  await page.evaluate(() => document.querySelector('[data-tour="Holy places"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
+  const holy = await stop();
+  check(holy.mode === 'beliefs' && Math.abs(holy.lon - 38.92) < 0.3 && Math.abs(holy.lat - 37.22) < 0.3 && /1\/12/.test(holy.n), `the Holy places tour starts at Göbekli Tepe (${holy.bar})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
+  await menu('Guided tours');
+  await page.evaluate(() => document.querySelector('[data-tour="The story of the alphabet"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
+  const abc = await stop();
+  check(abc.mode === 'writing' && /letters/.test(abc.bar) && /1\/9/.test(abc.n), `the alphabet tour starts with the first letters (${abc.bar})`);
   await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
   await page.waitForTimeout(300);
   check(!errors.length, `no page errors in quizzes and tours${errors.length ? ': ' + errors.join(' | ') : ''}`);
