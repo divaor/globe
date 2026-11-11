@@ -1,0 +1,2630 @@
+{
+  "id": "zheng-he",
+  "name": {
+    "en": "Zheng He's treasure voyages",
+    "es": "Los viajes del tesoro de Zheng He"
+  },
+  "icon": "🚢",
+  "era": "medieval",
+  "region": {
+    "en": "The South China Sea and the Indian Ocean",
+    "es": "El mar de la China Meridional y el océano Índico"
+  },
+  "start": "1371",
+  "end": "1433",
+  "summary": {
+    "en": "Between 1405 and 1433 the Muslim eunuch admiral Zheng He led seven huge Ming fleets from China to Calicut, Hormuz, Arabia and the Swahili coast. Then the voyages stopped for good.",
+    "es": "Entre 1405 y 1433, el almirante Zheng He, un eunuco musulmán, dirigió siete enormes flotas Ming de China a Calicut, Ormuz, Arabia y la costa suajili. Luego los viajes cesaron para siempre."
+  },
+  "camera": {
+    "lon": 95.0,
+    "lat": 14.0,
+    "zoom": 1.6
+  },
+  "sides": [
+    {
+      "id": "zhudi",
+      "name": {
+        "en": "Zhu Di's army",
+        "es": "El ejército de Zhu Di"
+      },
+      "color": "#5d6d7e"
+    },
+    {
+      "id": "fleet",
+      "name": {
+        "en": "The treasure fleet",
+        "es": "La flota del tesoro"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "squadrons",
+      "name": {
+        "en": "Detached squadrons",
+        "es": "Escuadras destacadas"
+      },
+      "color": "#7d3c98"
+    }
+  ],
+  "steps": [
+    {
+      "date": "1402-07-13",
+      "title": {
+        "en": "A captive from Yunnan",
+        "es": "Un cautivo de Yunnan"
+      },
+      "camera": {
+        "lon": 110.0,
+        "lat": 32.0,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "Ma He was born in 1371 to a Muslim family in Yunnan. Taken prisoner by Ming soldiers as a boy and made a eunuch, he served Prince Zhu Di and helped him seize the throne in 1402.",
+        "es": "Ma He nació en 1371 en una familia musulmana de Yunnan. De niño lo apresaron soldados Ming y lo hicieron eunuco; sirvió al príncipe Zhu Di y lo ayudó a tomar el trono en 1402."
+      },
+      "details": {
+        "en": "His father and grandfather bore the title hajji, a sign that they had made the pilgrimage to Mecca. When Ming armies conquered Yunnan from its last Mongol prince in 1381, his father died in the fighting and the boy was captured. Castrated between the ages of 10 and 14, he was sent to the household of Zhu Di, Prince of Yan, who ruled Beiping (Beijing) on the Mongol frontier. There Ma He was educated and grew into a soldier and a trusted adviser. When Zhu Di rebelled against his nephew, the Jianwen Emperor, Ma He defended a reservoir outside Beiping in 1399 and was one of his commanders on the march south in 1402. On 13 July Nanjing opened its gates, and Zhu Di became the Yongle Emperor. On 11 February 1404 he gave Ma He a new surname: Zheng.",
+        "es": "Su padre y su abuelo llevaban el título de hajji, señal de que habían peregrinado a La Meca. Cuando los ejércitos Ming conquistaron Yunnan a su último príncipe mongol en 1381, su padre murió en los combates y el niño fue capturado. Lo castraron entre los 10 y los 14 años y lo enviaron a la casa de Zhu Di, príncipe de Yan, que gobernaba Beiping (Pekín) en la frontera mongola. Allí Ma He recibió educación y se convirtió en soldado y consejero de confianza. Cuando Zhu Di se rebeló contra su sobrino, el emperador Jianwen, Ma He defendió en 1399 un embalse a las afueras de Beiping y fue uno de sus comandantes en la marcha hacia el sur de 1402. El 13 de julio Nankín abrió sus puertas y Zhu Di se convirtió en el emperador Yongle. El 11 de febrero de 1404 le dio a Ma He un nuevo apellido: Zheng."
+      },
+      "moves": [
+        {
+          "side": "zhudi",
+          "path": [
+            [116.4, 39.9],
+            [115.46, 38.87],
+            [114.57, 38.15],
+            [115.6, 36.6],
+            [116.47, 35.94],
+            [117.18, 34.26],
+            [116.98, 33.64],
+            [117.55, 33.54],
+            [118.52, 33.0],
+            [119.41, 32.39],
+            [118.63, 32.07],
+            [118.78, 32.06]
+          ],
+          "by": "land",
+          "icon": "🐎",
+          "label": {
+            "en": "Zhu Di's march on Nanjing, 1402",
+            "es": "La marcha de Zhu Di sobre Nankín, 1402"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "zheng-he",
+          "name": {
+            "en": "Zheng He",
+            "es": "Zheng He"
+          },
+          "at": [102.5917, 24.6667],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1371",
+          "life": [
+            "1371",
+            "1433"
+          ],
+          "place": {
+            "en": "Kunyang, Yunnan, China",
+            "es": "Kunyang, Yunnan (China)"
+          },
+          "text": {
+            "en": "Born Ma He to a Muslim family in Yunnan, he became a palace eunuch and the admiral of Ming China's treasure fleets, which he led on seven voyages across the Indian Ocean from 1405 to 1433.",
+            "es": "Nacido Ma He en una familia musulmana de Yunnan, llegó a ser eunuco de palacio y almirante de las flotas del tesoro de la China Ming, que dirigió en siete viajes por el océano Índico entre 1405 y 1433."
+          },
+          "details": {
+            "en": "At the prince's court he was also called Sanbao, \"Three Jewels\". A Ming record describes him as tall, with a voice as loud as a bell. Although a Muslim, he prayed before each voyage to Tianfei, the goddess who protected sailors, and he honoured the faiths of the lands he visited. He commanded tens of thousands of soldiers and did not shrink from force: his fleets fought pirates and kings. He probably died in 1433, on his last voyage. Long neglected by the official histories, he became famous again after 1904, and Chinese communities across Southeast Asia still honour him in temples named Sam Po.",
+            "es": "En la corte del príncipe también lo llamaban Sanbao, «Tres Joyas». Un texto Ming lo describe alto y con una voz tan fuerte como una campana. Aunque era musulmán, antes de cada viaje rezaba a Tianfei, la diosa que protegía a los marinos, y honraba las religiones de los lugares que visitaba. Mandaba a decenas de miles de soldados y no dudaba en usar la fuerza: sus flotas combatieron a piratas y a reyes. Probablemente murió en 1433, en su último viaje. Las historias oficiales lo olvidaron durante siglos, pero volvió a ser famoso después de 1904, y las comunidades chinas del Sudeste Asiático todavía lo honran en templos llamados Sam Po."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Other names",
+                "es": "Otros nombres"
+              },
+              "value": {
+                "en": "Ma He, Ma Sanbao",
+                "es": "Ma He y Ma Sanbao"
+              }
+            },
+            {
+              "label": {
+                "en": "Voyages",
+                "es": "Viajes"
+              },
+              "value": {
+                "en": "Seven, 1405–1433",
+                "es": "Siete, 1405–1433"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Zheng He",
+            "es": "Zheng He"
+          }
+        },
+        {
+          "id": "beijing",
+          "name": {
+            "en": "Beiping (Beijing)",
+            "es": "Beiping (Pekín)"
+          },
+          "at": [116.3975, 39.9067],
+          "cat": "city",
+          "type": "place",
+          "date": "1380",
+          "place": {
+            "en": "Beijing, China",
+            "es": "Pekín (China)"
+          },
+          "text": {
+            "en": "Beiping, near the Mongol frontier, was Prince Zhu Di's seat from 1380; young Ma He served and fought here. As emperor, Zhu Di renamed it Beijing, \"northern capital\", and moved his court there in 1420.",
+            "es": "Beiping, cerca de la frontera mongola, fue la sede del príncipe Zhu Di desde 1380; allí sirvió y combatió el joven Ma He. Como emperador, Zhu Di la llamó Pekín, «capital del norte», y trasladó allí su corte en 1420."
+          },
+          "wiki": {
+            "en": "Beijing",
+            "es": "Pekín"
+          }
+        },
+        {
+          "id": "yongle-emperor",
+          "name": {
+            "en": "The Yongle Emperor",
+            "es": "El emperador Yongle"
+          },
+          "at": [118.8167, 32.0389],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1402-07-17",
+          "life": [
+            "1360",
+            "1424"
+          ],
+          "place": {
+            "en": "Nanjing, China",
+            "es": "Nankín (China)"
+          },
+          "text": {
+            "en": "Zhu Di, Prince of Yan, took the throne from his nephew in 1402 and ruled as the Yongle Emperor until 1424. He ordered the treasure fleet built in 1403 and sent it out six times.",
+            "es": "Zhu Di, príncipe de Yan, arrebató el trono a su sobrino en 1402 y reinó como emperador Yongle hasta 1424. En 1403 mandó construir la flota del tesoro y la envió seis veces al mar."
+          },
+          "wiki": {
+            "en": "Yongle Emperor",
+            "es": "Yongle"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1405",
+      "title": {
+        "en": "The treasure fleet",
+        "es": "La flota del tesoro"
+      },
+      "camera": {
+        "lon": 120.5,
+        "lat": 29.0,
+        "zoom": 5.0
+      },
+      "text": {
+        "en": "In 1405 about 27,800 men sailed in 317 ships, 62 of them giant \"treasure ships\", by Ming counts. They went down the Yangtze to Liujiagang and waited in Fujian for the winter monsoon.",
+        "es": "En 1405 zarparon unos 27 800 hombres en 317 barcos, 62 de ellos enormes «barcos del tesoro», según las cuentas Ming. Bajaron por el Yangtsé hasta Liujiagang y esperaron en Fujian el monzón de invierno."
+      },
+      "details": {
+        "en": "From 1403 the emperor ordered hundreds of ships, and all the treasure ships were built at the Longjiang shipyard by Nanjing, with timber from the Min and upper Yangtze valleys. An edict of 11 July 1405 sent Zheng He and his deputy Wang Jinghong to \"the countries of the Western Ocean\" with gold brocade and silks for their kings. How big were the ships? The History of Ming, finished in 1739, makes the largest 44 zhang long, about 125–135 metres, almost twice any wooden ship known. Many historians doubt it: the figure first appears in a novel of 1597, an inscription of Zheng He's own time speaks of ships of 2,000 liao (about 500 tons), and the dock basins dug up at Nanjing could not have held ships much over 41 metres wide. Most estimates now put the biggest at 60–75 metres. Some scholars also think the 317 ships were really about 250.",
+        "es": "Desde 1403 el emperador encargó cientos de barcos, y todos los barcos del tesoro se construyeron en el astillero de Longjiang, junto a Nankín, con madera de los valles del Min y del alto Yangtsé. Un edicto del 11 de julio de 1405 envió a Zheng He y a su segundo, Wang Jinghong, a «los países del Océano Occidental» con brocados de oro y sedas para sus reyes. ¿Qué tan grandes eran los barcos? La Historia de Ming, terminada en 1739, dice que los mayores medían 44 zhang, unos 125–135 metros, casi el doble que cualquier barco de madera conocido. Muchos historiadores lo dudan: la cifra aparece por primera vez en una novela de 1597, una inscripción de la época de Zheng He habla de barcos de 2000 liao (unas 500 toneladas) y las dársenas excavadas en Nankín no podían contener barcos de mucho más de 41 metros de ancho. Hoy la mayoría calcula que los mayores medían 60–75 metros. Algunos estudiosos creen además que los 317 barcos eran en realidad unos 250."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [118.73, 32.07],
+            [118.95, 32.19],
+            [119.45, 32.24],
+            [119.85, 32.15],
+            [120.28, 31.95],
+            [120.6, 31.98],
+            [120.9, 31.82],
+            [121.26, 31.51]
+          ],
+          "by": "river",
+          "icon": "🚢",
+          "label": {
+            "en": "Down the Yangtze",
+            "es": "Por el Yangtsé"
+          }
+        },
+        {
+          "side": "fleet",
+          "path": [
+            [121.26, 31.51],
+            [121.7, 31.25],
+            [122.15, 30.85],
+            [122.75, 30.4],
+            [122.6, 29.5],
+            [122.15, 28.6],
+            [121.6, 27.85],
+            [120.85, 26.95],
+            [120.15, 26.3],
+            [119.75, 26.1],
+            [119.55, 25.98]
+          ],
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "To Changle",
+            "es": "Hacia Changle"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "treasure-ships",
+          "name": {
+            "en": "The treasure ships",
+            "es": "Los barcos del tesoro"
+          },
+          "at": [118.733, 32.071],
+          "cat": "ship",
+          "type": "ship",
+          "date": "1403",
+          "place": {
+            "en": "Treasure Shipyard, Nanjing, China",
+            "es": "Astillero del Tesoro, Nankín (China)"
+          },
+          "text": {
+            "en": "The largest junks of the fleet, floating markets of silk and porcelain. Ming records make them about 125–135 m long; most historians think 60–75 m, still giants of their time.",
+            "es": "Los juncos más grandes de la flota, mercados flotantes de seda y porcelana. Las crónicas Ming les dan unos 125–135 m de largo; la mayoría de los historiadores cree que medían 60–75 m: aun así, gigantes para su época."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Size in the History of Ming",
+                "es": "Tamaño según la Historia de Ming"
+              },
+              "value": {
+                "en": "44 by 18 zhang",
+                "es": "44 por 18 zhang"
+              }
+            },
+            {
+              "label": {
+                "en": "Crew",
+                "es": "Tripulación"
+              },
+              "value": {
+                "en": "About 500–600 per ship (estimates vary)",
+                "es": "Unos 500–600 por barco (las estimaciones varían)"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Chinese treasure ship",
+            "es": "Barco del tesoro"
+          }
+        },
+        {
+          "id": "liujiagang",
+          "name": {
+            "en": "Liujiagang",
+            "es": "Liujiagang"
+          },
+          "at": [121.264, 31.506],
+          "cat": "port",
+          "type": "place",
+          "date": "1405",
+          "place": {
+            "en": "Liuhe, Taicang, Jiangsu, China",
+            "es": "Liuhe, Taicang, Jiangsu (China)"
+          },
+          "text": {
+            "en": "The harbour where the Liu River meets the Yangtze estuary. Here the fleets were organized into squadrons and the crews prayed to Tianfei, goddess of sailors, before each voyage.",
+            "es": "El puerto donde el río Liu se une al estuario del Yangtsé. Aquí las flotas se organizaban en escuadras y las tripulaciones rezaban a Tianfei, diosa de los marinos, antes de cada viaje."
+          },
+          "wiki": {
+            "en": "Liuhe, Taicang",
+            "es": ""
+          }
+        },
+        {
+          "id": "changle",
+          "name": {
+            "en": "Changle",
+            "es": "Changle"
+          },
+          "at": [119.55, 25.97],
+          "cat": "port",
+          "type": "place",
+          "date": "1405",
+          "place": {
+            "en": "Changle, Fuzhou, Fujian, China",
+            "es": "Changle, Fuzhou, Fujian (China)"
+          },
+          "text": {
+            "en": "At the Taiping anchorage on the Min River estuary, the fleets waited for the northeast winds of winter, then sailed out to sea through the Five Tigers Gate.",
+            "es": "En el fondeadero de Taiping, en el estuario del río Min, las flotas esperaban los vientos del noreste del invierno y luego salían al mar por la Puerta de los Cinco Tigres."
+          },
+          "wiki": {
+            "en": "Changle, Fuzhou",
+            "es": "Changle"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1407-10-02",
+      "title": {
+        "en": "First voyage: Calicut",
+        "es": "Primer viaje: Calicut"
+      },
+      "camera": {
+        "lon": 95.0,
+        "lat": 10.0,
+        "zoom": 2.0
+      },
+      "text": {
+        "en": "The first fleet called at Champa, Java, Malacca and Sumatra, crossed the open ocean to Ceylon and reached Calicut, the great pepper port. Coming home, it crushed a pirate fleet at Palembang.",
+        "es": "La primera flota hizo escala en Champa, Java, Malaca y Sumatra, cruzó el océano abierto hasta Ceilán y llegó a Calicut, el gran puerto de la pimienta. De regreso, aplastó a una flota pirata en Palembang."
+      },
+      "details": {
+        "en": "Leaving Fujian with the winter monsoon of 1405–06, the fleet followed sea lanes that Arab, Persian, Indian, Malay and Chinese merchants had sailed for centuries. Its first call, as on every voyage, was Champa, by today's Quy Nhon. In Java it landed in the middle of a civil war, and the West King's men killed 170 of its soldiers who had gone ashore to trade. From Lambri, at the tip of Sumatra, the ships struck straight across the ocean; nine days later they sighted the mountains of Ceylon, whose ruler, Alakeshvara, was hostile. At Calicut the fleet may have stayed from December 1406 to April 1407. On the way home it met Chen Zuyi, a pirate who ruled Palembang. Warned of his planned surprise attack, the Ming forces destroyed his ships and killed some 5,000 of his men. He was executed in Nanjing on 2 October 1407, the day the fleet returned.",
+        "es": "La flota salió de Fujian con el monzón de invierno de 1405–1406 y siguió rutas que mercaderes árabes, persas, indios, malayos y chinos recorrían desde hacía siglos. Su primera escala, como en todos los viajes, fue Champa, junto a la actual Quy Nhon. En Java llegó en plena guerra civil, y los hombres del rey del oeste mataron a 170 de sus soldados que habían bajado a tierra a comerciar. Desde Lambri, en la punta de Sumatra, los barcos cruzaron directamente el océano; nueve días después vieron las montañas de Ceilán, cuyo soberano, Alakeshvara, se mostró hostil. En Calicut la flota quizá se quedó de diciembre de 1406 a abril de 1407. De regreso se topó con Chen Zuyi, un pirata que gobernaba Palembang. Avisadas de su ataque sorpresa, las fuerzas Ming destruyeron sus barcos y mataron a unos 5000 de sus hombres. Chen fue ejecutado en Nankín el 2 de octubre de 1407, el día en que volvió la flota."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [119.55, 25.98],
+            [119.75, 26.05],
+            [120.05, 25.3],
+            [118.95, 24.45],
+            [117.4, 23.25],
+            [115.6, 22.35],
+            [113.9, 21.85],
+            [112.0, 21.0],
+            [111.3, 19.9],
+            [110.85, 18.6],
+            [110.1, 16.8],
+            [109.55, 14.8],
+            [109.27, 13.75],
+            [109.6, 12.85],
+            [109.4, 12.0],
+            [109.15, 11.25],
+            [108.3, 10.55],
+            [107.3, 9.75],
+            [106.6, 8.45],
+            [106.9, 5.0],
+            [107.6, 1.5],
+            [108.5, -1.5],
+            [109.6, -3.6],
+            [111.0, -5.3],
+            [112.0, -6.55],
+            [112.6, -6.85],
+            [112.68, -7.05],
+            [112.3, -6.6],
+            [111.2, -6.25],
+            [110.9, -6.1],
+            [109.8, -6.55],
+            [108.5, -6.0],
+            [107.4, -5.75],
+            [106.6, -5.55],
+            [106.3, -4.3],
+            [106.25, -3.3],
+            [106.05, -3.0],
+            [105.9, -2.8],
+            [105.8, -2.55],
+            [105.6, -2.33],
+            [105.2, -2.15],
+            [105.0, -2.1],
+            [105.3, -1.2],
+            [105.05, -0.3],
+            [104.75, 0.55],
+            [104.85, 1.05],
+            [104.45, 1.3],
+            [104.0, 1.21],
+            [103.6, 1.17],
+            [103.2, 1.35],
+            [102.75, 1.75],
+            [102.3, 2.1],
+            [101.35, 2.8],
+            [100.55, 3.55],
+            [99.7, 4.25],
+            [98.85, 4.8],
+            [97.9, 5.25],
+            [97.25, 5.35],
+            [96.4, 5.45],
+            [95.45, 5.72],
+            [94.5, 6.2],
+            [88.0, 5.9],
+            [81.5, 5.7],
+            [80.6, 5.75],
+            [80.25, 5.95],
+            [80.1, 6.2],
+            [79.95, 6.45],
+            [79.78, 6.93],
+            [78.7, 7.2],
+            [77.6, 7.85],
+            [77.0, 8.25],
+            [76.45, 8.85],
+            [76.2, 9.5],
+            [76.12, 10.0],
+            [75.85, 10.6],
+            [75.72, 11.25]
+          ],
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "First voyage, 1405–1407",
+            "es": "Primer viaje, 1405–1407"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "champa",
+          "name": {
+            "en": "Champa",
+            "es": "Champa"
+          },
+          "at": [109.22, 13.78],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1406",
+          "place": {
+            "en": "Quy Nhon, Vietnam",
+            "es": "Quy Nhon (Vietnam)"
+          },
+          "text": {
+            "en": "The kingdom of the Cham people, on the coast of today's Vietnam. Its harbour by the capital, Vijaya, near Quy Nhon, was the first foreign stop of every treasure voyage.",
+            "es": "El reino del pueblo cham, en la costa del actual Vietnam. Su puerto junto a la capital, Vijaya, cerca de Quy Nhon, fue la primera escala extranjera de todos los viajes del tesoro."
+          },
+          "wiki": {
+            "en": "Champa",
+            "es": "Champa"
+          }
+        },
+        {
+          "id": "majapahit",
+          "name": {
+            "en": "Majapahit (Java)",
+            "es": "Majapahit (Java)"
+          },
+          "at": [112.3833, -7.55],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1406",
+          "place": {
+            "en": "Trowulan, East Java, Indonesia",
+            "es": "Trowulan, Java Oriental (Indonesia)"
+          },
+          "text": {
+            "en": "Java's great Hindu-Buddhist kingdom, torn by civil war in 1406. The West King's men killed 170 men of the fleet who were trading ashore; China demanded 60,000 liang of gold in atonement.",
+            "es": "El gran reino hindú-budista de Java, desgarrado por una guerra civil en 1406. Los hombres del rey del oeste mataron a 170 hombres de la flota que comerciaban en tierra; China exigió 60 000 liang de oro como reparación."
+          },
+          "wiki": {
+            "en": "Majapahit",
+            "es": "Imperio mayapajit"
+          }
+        },
+        {
+          "id": "chen-zuyi",
+          "name": {
+            "en": "Chen Zuyi",
+            "es": "Chen Zuyi"
+          },
+          "at": [104.7564, -2.9861],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1407",
+          "place": {
+            "en": "Palembang, Sumatra, Indonesia",
+            "es": "Palembang, Sumatra (Indonesia)"
+          },
+          "text": {
+            "en": "A pirate from Guangdong who ruled Palembang and preyed on ships in the Strait of Malacca. In 1407 Zheng He's fleet destroyed his ships, and he was executed in Nanjing.",
+            "es": "Un pirata de Guangdong que gobernaba Palembang y asaltaba barcos en el estrecho de Malaca. En 1407 la flota de Zheng He destruyó sus naves y él fue ejecutado en Nankín."
+          },
+          "details": {
+            "en": "Ming records say he had 5,000 men and 10 ships. A Chinese Muslim of Palembang, Shi Jinqing, asked the Ming for help against him, and after the battle the Ming made Shi the \"Pacification Superintendent\" of Palembang, an ally on the strait. Some historians point out that making passing ships pay was normal for the rulers of Southeast Asian ports, so Chen may have been less of an outlaw than the Chinese records say.",
+            "es": "Las crónicas Ming dicen que tenía 5000 hombres y 10 barcos. Un musulmán chino de Palembang, Shi Jinqing, pidió ayuda a los Ming contra él, y tras la batalla los Ming nombraron a Shi «superintendente de pacificación» de Palembang, un aliado sobre el estrecho. Algunos historiadores señalan que cobrar a los barcos que pasaban era normal entre los gobernantes de los puertos del Sudeste Asiático, así que Chen quizá era menos forajido de lo que dicen las fuentes chinas."
+          },
+          "wiki": {
+            "en": "Chen Zuyi",
+            "es": ""
+          }
+        },
+        {
+          "id": "calicut",
+          "name": {
+            "en": "Calicut",
+            "es": "Calicut"
+          },
+          "at": [75.7804, 11.25],
+          "cat": "port",
+          "type": "place",
+          "date": "1406",
+          "place": {
+            "en": "Kozhikode, Kerala, India",
+            "es": "Kozhikode, Kerala (India)"
+          },
+          "text": {
+            "en": "The great pepper port of the Malabar Coast, ruled by the Zamorin. Ma Huan called it the \"great country of the Western Ocean\"; every voyage called here, and the later ones sailed on from it.",
+            "es": "El gran puerto de la pimienta de la costa de Malabar, gobernado por el samorín. Ma Huan lo llamó «el gran país del Océano Occidental»; todos los viajes hicieron escala aquí, y los últimos siguieron desde aquí más al oeste."
+          },
+          "details": {
+            "en": "Ma Huan admired how its officials checked weights and measures, counted the 20 or 30 mosques built for its Muslim merchants and watched traders reckon prices on their fingers and toes. The second voyage formally made its ruler a king with a Ming patent and left a stone tablet in the city. On the later voyages the squadrons met again at Calicut, and Zheng He probably died near here in 1433.",
+            "es": "Ma Huan admiró cómo sus funcionarios vigilaban pesos y medidas, contó las 20 o 30 mezquitas de sus mercaderes musulmanes y vio a los comerciantes calcular precios con los dedos de las manos y de los pies. El segundo viaje nombró formalmente rey a su soberano con un título Ming y dejó una lápida en la ciudad. En los últimos viajes las escuadras volvían a reunirse en Calicut, y Zheng He probablemente murió cerca de aquí en 1433."
+          },
+          "wiki": {
+            "en": "Kozhikode",
+            "es": "Kozhikode"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1409",
+      "title": {
+        "en": "Second voyage: a king for Calicut",
+        "es": "Segundo viaje: un rey para Calicut"
+      },
+      "text": {
+        "en": "In 1407–09 the fleet took foreign envoys home and made the ruler of Calicut a king with a Ming patent. Squadrons probably visited Siam and Java before meeting again at Malacca.",
+        "es": "En 1407–1409 la flota llevó a casa a los embajadores extranjeros y nombró rey al soberano de Calicut con un título Ming. Probablemente hubo escuadras que visitaron Siam y Java antes de reunirse en Malaca."
+      },
+      "details": {
+        "en": "The order for this voyage came in October 1407, days after the first fleet returned, and some 249 ships were refitted for it. Whether Zheng He sailed is debated: a great ceremony for the goddess Tianfei in January 1409 may have kept him in China, but Fei Xin's account of the voyage names him. The fleet called at Champa, Siam, Java, Malacca, the ports of Sumatra and the Indian ports of Quilon, Cochin and Calicut, but did not land on Ceylon. Java's West King, who had killed the 170 men, sent an envoy to apologize and paid part of the 60,000 liang of gold demanded; the emperor later forgave the 50,000 still owed. On the way home, in 1409, soldiers landed on the Nine Islands in the Strait of Malacca and cut six huge logs of fragrant wood. The fleet was back in Nanjing in the summer of 1409.",
+        "es": "La orden de este viaje llegó en octubre de 1407, pocos días después del regreso de la primera flota, y se reacondicionaron unos 249 barcos. Se discute si Zheng He viajó: una gran ceremonia para la diosa Tianfei en enero de 1409 quizá lo retuvo en China, pero el relato de Fei Xin sobre el viaje lo nombra. La flota hizo escala en Champa, Siam, Java, Malaca, los puertos de Sumatra y los puertos indios de Quilon, Cochín y Calicut, pero no desembarcó en Ceilán. El rey del oeste de Java, que había matado a los 170 hombres, envió a un embajador a pedir perdón y pagó parte de los 60 000 liang de oro exigidos; el emperador perdonó después los 50 000 que aún debía. De regreso, en 1409, unos soldados desembarcaron en las Nueve Islas, en el estrecho de Malaca, y cortaron seis enormes troncos de madera aromática. La flota volvió a Nankín en el verano de 1409."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [119.55, 25.98],
+            [119.75, 26.05],
+            [120.05, 25.3],
+            [118.95, 24.45],
+            [117.4, 23.25],
+            [115.6, 22.35],
+            [113.9, 21.85],
+            [112.0, 21.0],
+            [111.3, 19.9],
+            [110.85, 18.6],
+            [110.1, 16.8],
+            [109.55, 14.8],
+            [109.27, 13.75],
+            [109.6, 12.85],
+            [109.4, 12.0],
+            [109.15, 11.25],
+            [108.3, 10.55],
+            [107.3, 9.75],
+            [106.6, 8.45],
+            [106.3, 5.5],
+            [105.6, 3.2],
+            [104.85, 1.6],
+            [104.45, 1.3],
+            [104.0, 1.21],
+            [103.6, 1.17],
+            [103.2, 1.35],
+            [102.75, 1.75],
+            [102.3, 2.1],
+            [101.35, 2.8],
+            [100.55, 3.55],
+            [99.7, 4.25],
+            [98.85, 4.8],
+            [97.9, 5.25],
+            [97.25, 5.35],
+            [96.4, 5.45],
+            [95.45, 5.72],
+            [94.5, 6.2],
+            [88.0, 5.9],
+            [81.5, 5.7],
+            [80.6, 5.75],
+            [78.7, 7.0],
+            [77.6, 7.85],
+            [77.0, 8.25],
+            [76.45, 8.85],
+            [76.2, 9.5],
+            [76.12, 10.0],
+            [75.85, 10.6],
+            [75.72, 11.25]
+          ],
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "Second voyage, 1407–1409",
+            "es": "Segundo viaje, 1407–1409"
+          }
+        },
+        {
+          "side": "squadrons",
+          "path": [
+            [109.27, 13.75],
+            [109.6, 12.85],
+            [109.4, 12.0],
+            [109.15, 11.25],
+            [108.3, 10.55],
+            [107.3, 9.75],
+            [106.0, 8.2],
+            [104.9, 8.1],
+            [103.2, 9.3],
+            [101.7, 11.4],
+            [100.75, 12.75],
+            [100.58, 13.45]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "To Siam",
+            "es": "A Siam"
+          }
+        },
+        {
+          "side": "squadrons",
+          "path": [
+            [106.6, 8.45],
+            [106.9, 5.0],
+            [107.6, 1.5],
+            [108.5, -1.5],
+            [109.6, -3.6],
+            [111.0, -5.3],
+            [112.0, -6.55],
+            [112.6, -6.85],
+            [112.68, -7.05]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "To Java",
+            "es": "A Java"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "calicut",
+          "name": {
+            "en": "Calicut",
+            "es": "Calicut"
+          },
+          "at": [75.7804, 11.25],
+          "cat": "port",
+          "type": "place",
+          "date": "1406",
+          "place": {
+            "en": "Kozhikode, Kerala, India",
+            "es": "Kozhikode, Kerala (India)"
+          },
+          "text": {
+            "en": "The great pepper port of the Malabar Coast, ruled by the Zamorin. Ma Huan called it the \"great country of the Western Ocean\"; every voyage called here, and the later ones sailed on from it.",
+            "es": "El gran puerto de la pimienta de la costa de Malabar, gobernado por el samorín. Ma Huan lo llamó «el gran país del Océano Occidental»; todos los viajes hicieron escala aquí, y los últimos siguieron desde aquí más al oeste."
+          },
+          "details": {
+            "en": "Ma Huan admired how its officials checked weights and measures, counted the 20 or 30 mosques built for its Muslim merchants and watched traders reckon prices on their fingers and toes. The second voyage formally made its ruler a king with a Ming patent and left a stone tablet in the city. On the later voyages the squadrons met again at Calicut, and Zheng He probably died near here in 1433.",
+            "es": "Ma Huan admiró cómo sus funcionarios vigilaban pesos y medidas, contó las 20 o 30 mezquitas de sus mercaderes musulmanes y vio a los comerciantes calcular precios con los dedos de las manos y de los pies. El segundo viaje nombró formalmente rey a su soberano con un título Ming y dejó una lápida en la ciudad. En los últimos viajes las escuadras volvían a reunirse en Calicut, y Zheng He probablemente murió cerca de aquí en 1433."
+          },
+          "wiki": {
+            "en": "Kozhikode",
+            "es": "Kozhikode"
+          }
+        },
+        {
+          "id": "ayutthaya",
+          "name": {
+            "en": "Siam (Ayutthaya)",
+            "es": "Siam (Ayutthaya)"
+          },
+          "at": [100.5686, 14.3532],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1408",
+          "place": {
+            "en": "Ayutthaya, Thailand",
+            "es": "Ayutthaya (Tailandia)"
+          },
+          "text": {
+            "en": "The Thai kingdom of Siam, which then claimed Malacca. Ming envoys and squadrons came here, and Ma Huan wrote that once China took Malacca under its protection, Siam did not dare attack it.",
+            "es": "El reino tai de Siam, que entonces reclamaba Malaca. Aquí llegaron enviados y escuadras Ming, y Ma Huan escribió que, cuando China tomó Malaca bajo su protección, Siam no se atrevió a atacarla."
+          },
+          "wiki": {
+            "en": "Ayutthaya Kingdom",
+            "es": "Reino de Ayutthaya"
+          }
+        },
+        {
+          "id": "nine-islands",
+          "name": {
+            "en": "The Nine Islands",
+            "es": "Las Nueve Islas"
+          },
+          "at": [100.53, 4.04],
+          "cat": "nature",
+          "type": "place",
+          "date": "1409",
+          "place": {
+            "en": "Pulau Sembilan, Perak, Malaysia",
+            "es": "Pulau Sembilan, Perak (Malasia)"
+          },
+          "text": {
+            "en": "Small islands in the Strait of Malacca. In 1409 the fleet's soldiers cut six huge logs of fragrant wood here and told the astonished islanders they were \"soldiers of the Heavenly Court\".",
+            "es": "Pequeñas islas del estrecho de Malaca. En 1409, los soldados de la flota cortaron aquí seis enormes troncos de madera aromática y dijeron a los isleños asombrados que eran «soldados de la Corte Celestial»."
+          },
+          "wiki": {
+            "en": "Ming treasure voyages",
+            "es": "Viajes del tesoro de la dinastía Ming"
+          }
+        },
+        {
+          "id": "cochin",
+          "name": {
+            "en": "Cochin",
+            "es": "Cochín"
+          },
+          "at": [76.24, 9.965],
+          "cat": "port",
+          "type": "place",
+          "date": "1408",
+          "place": {
+            "en": "Kochi, Kerala, India",
+            "es": "Kochi, Kerala (India)"
+          },
+          "text": {
+            "en": "A Malabar pepper port and Calicut's rival. The Ming backed its king, Keyili: the fifth voyage brought him a seal and named a hill there \"the Mountain that Protects the Country\".",
+            "es": "Un puerto de la pimienta de Malabar, rival de Calicut. Los Ming apoyaron a su rey, Keyili: el quinto viaje le llevó un sello y llamó a una colina «la Montaña que Protege al País»."
+          },
+          "details": {
+            "en": "Keyili had sent tribute to China since 1411, and the fleet brought him a stone tablet with a long proclamation said to have been written by the Yongle Emperor himself. As long as Cochin stayed under Ming protection, the Zamorin of Calicut could not attack it; after the voyages ended, he invaded. A century later Cochin's rulers sided with the Portuguese against Calicut.",
+            "es": "Keyili enviaba tributo a China desde 1411, y la flota le llevó una lápida con una larga proclama que, según se dice, escribió el propio emperador Yongle. Mientras Cochín estuvo bajo la protección Ming, el samorín de Calicut no pudo atacarla; cuando terminaron los viajes, la invadió. Un siglo después, los gobernantes de Cochín se aliaron con los portugueses contra Calicut."
+          },
+          "wiki": {
+            "en": "Kingdom of Cochin",
+            "es": "Reino de Cochín"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1411-07-06",
+      "title": {
+        "en": "Third voyage: war in Ceylon",
+        "es": "Tercer viaje: guerra en Ceilán"
+      },
+      "text": {
+        "en": "On the third voyage, 1409–11, the fleet built a depot at Malacca and set up a stone at Galle honouring three faiths. In Ceylon, Zheng He's troops captured the king of Kotte.",
+        "es": "En el tercer viaje, de 1409 a 1411, la flota construyó un depósito en Malaca y colocó en Galle una piedra que honraba a tres religiones. En Ceilán, las tropas de Zheng He capturaron al rey de Kotte."
+      },
+      "details": {
+        "en": "The fleet left Changle in January 1410 and reached Champa in ten days. At Malacca, a young port whose ruler wanted protection from Siam, the Chinese built a stockade with watchtowers, warehouses and granaries, a depot for every later voyage. In Ceylon, King Alakeshvara of Kotte had been hostile since the first voyage and was accused of piracy against China's friends. In 1410 or 1411 he lured Zheng He and 2,000 soldiers inland while he planned to attack the fleet at Colombo. Instead the Chinese stormed his capital and captured him and his family, then fought their way back to the ships for six days against an army said to number 50,000. In Nanjing the emperor freed the captives, and the Ming backed Parakramabahu VI as king. After that, the fleet met no hostility in Ceylon. It was home on 6 July 1411.",
+        "es": "La flota salió de Changle en enero de 1410 y llegó a Champa en diez días. En Malaca, un puerto joven cuyo soberano buscaba protección frente a Siam, los chinos levantaron una empalizada con torres, almacenes y graneros, un depósito para todos los viajes siguientes. En Ceilán, el rey Alakeshvara de Kotte era hostil desde el primer viaje y lo acusaban de piratería contra los amigos de China. En 1410 o 1411 atrajo tierra adentro a Zheng He y a 2000 soldados mientras planeaba atacar la flota en Colombo. Pero los chinos asaltaron su capital y lo capturaron con su familia, y luego se abrieron paso hasta los barcos durante seis días contra un ejército que, según se dice, tenía 50 000 hombres. En Nankín el emperador liberó a los cautivos, y los Ming apoyaron como rey a Parakramabahu VI. Desde entonces la flota no encontró hostilidad en Ceilán. Volvió el 6 de julio de 1411."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [119.55, 25.98],
+            [119.75, 26.05],
+            [120.05, 25.3],
+            [118.95, 24.45],
+            [117.4, 23.25],
+            [115.6, 22.35],
+            [113.9, 21.85],
+            [112.0, 21.0],
+            [111.3, 19.9],
+            [110.85, 18.6],
+            [110.1, 16.8],
+            [109.55, 14.8],
+            [109.27, 13.75],
+            [109.6, 12.85],
+            [109.4, 12.0],
+            [109.15, 11.25],
+            [108.3, 10.55],
+            [107.3, 9.75],
+            [106.6, 8.45],
+            [106.9, 5.0],
+            [107.6, 1.5],
+            [108.5, -1.5],
+            [109.6, -3.6],
+            [111.0, -5.3],
+            [112.0, -6.55],
+            [112.6, -6.85],
+            [112.68, -7.05],
+            [112.3, -6.6],
+            [111.2, -6.25],
+            [110.9, -6.1],
+            [109.8, -6.55],
+            [108.5, -6.0],
+            [107.4, -5.75],
+            [106.6, -5.55],
+            [106.3, -4.3],
+            [106.25, -3.3],
+            [106.05, -3.0],
+            [105.9, -2.8],
+            [105.8, -2.55],
+            [105.6, -2.33],
+            [105.2, -2.15],
+            [105.0, -2.1],
+            [105.3, -1.2],
+            [105.05, -0.3],
+            [104.75, 0.55],
+            [104.85, 1.05],
+            [104.45, 1.3],
+            [104.0, 1.21],
+            [103.6, 1.17],
+            [103.2, 1.35],
+            [102.75, 1.75],
+            [102.3, 2.1],
+            [101.35, 2.8],
+            [100.55, 3.55],
+            [99.7, 4.25],
+            [98.85, 4.8],
+            [97.9, 5.25],
+            [97.25, 5.35],
+            [96.4, 5.45],
+            [95.45, 5.72],
+            [94.5, 6.2],
+            [88.0, 5.9],
+            [81.5, 5.7],
+            [80.6, 5.75],
+            [80.25, 5.95],
+            [80.1, 6.2],
+            [79.95, 6.45],
+            [79.78, 6.93],
+            [78.7, 7.2],
+            [77.6, 7.85],
+            [77.0, 8.25],
+            [76.45, 8.85],
+            [76.2, 9.5],
+            [76.12, 10.0],
+            [75.85, 10.6],
+            [75.72, 11.25]
+          ],
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "Third voyage, 1409–1411",
+            "es": "Tercer viaje, 1409–1411"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "malacca",
+          "name": {
+            "en": "Malacca",
+            "es": "Malaca"
+          },
+          "at": [102.2501, 2.1896],
+          "cat": "port",
+          "type": "place",
+          "date": "1400",
+          "place": {
+            "en": "Malacca, Malaysia",
+            "es": "Malaca (Malasia)"
+          },
+          "text": {
+            "en": "A port founded about 1400 on the strait between the Indian Ocean and the South China Sea. Under Ming protection it grew rich, and the fleet kept a walled depot of warehouses here.",
+            "es": "Un puerto fundado hacia 1400 en el estrecho entre el océano Índico y el mar de la China Meridional. Bajo la protección Ming se enriqueció, y la flota tenía aquí un depósito amurallado de almacenes."
+          },
+          "details": {
+            "en": "Ma Huan wrote that whenever the treasure ships arrived they put up a stockade \"like a city wall\", with watchtowers at four gates and drums for the night patrols, and inside it a second wall around warehouses and granaries where money and food were stored. Malacca had been a vassal of Siam; with China's backing it became a kingdom. In 1411 its ruler, Parameswara, sailed to China himself with more than 540 of his people to pay homage to the emperor.",
+            "es": "Ma Huan escribió que, cada vez que llegaban los barcos del tesoro, levantaban una empalizada «como la muralla de una ciudad», con torres en cuatro puertas y tambores para las rondas nocturnas, y dentro, otro muro alrededor de almacenes y graneros donde guardaban el dinero y los víveres. Malaca había sido vasalla de Siam; con el respaldo de China se convirtió en reino. En 1411 su soberano, Parameswara, viajó a China con más de 540 de los suyos para rendir homenaje al emperador."
+          },
+          "wiki": {
+            "en": "Malacca Sultanate",
+            "es": "Sultanato de Malaca"
+          }
+        },
+        {
+          "id": "galle-inscription",
+          "name": {
+            "en": "Galle Trilingual Inscription",
+            "es": "Inscripción trilingüe de Galle"
+          },
+          "at": [80.2156, 6.0328],
+          "cat": "book",
+          "type": "work",
+          "date": "1409-02-15",
+          "place": {
+            "en": "Galle, Sri Lanka (now in the Colombo National Museum)",
+            "es": "Galle, Sri Lanka (hoy en el Museo Nacional de Colombo)"
+          },
+          "text": {
+            "en": "A stone dated 15 February 1409, written in Chinese, Tamil and Persian. Each text honours a different faith, the Buddha, the Hindu god Tenavarai Nayanar and Allah, and lists the same offerings.",
+            "es": "Una piedra fechada el 15 de febrero de 1409, escrita en chino, tamil y persa. Cada texto honra a una religión distinta, a Buda, al dios hindú Tenavarai Nayanar y a Alá, y enumera las mismas ofrendas."
+          },
+          "details": {
+            "en": "The offerings it lists include 1,000 pieces of gold, 5,000 of silver, rolls of embroidered silk, 2,500 catties of scented oil, and brass incense burners and lamps. It was probably carved in Nanjing; scholars still debate whether it was set up in 1409, at the end of the second voyage, or in 1410–11, during the third. It was found in 1911, face down, covering a drain in Galle.",
+            "es": "Entre las ofrendas que enumera hay 1000 piezas de oro, 5000 de plata, rollos de seda bordada, 2500 catties de aceite perfumado e incensarios y lámparas de latón. Probablemente se talló en Nankín; los estudiosos aún discuten si se colocó en 1409, al final del segundo viaje, o en 1410–1411, durante el tercero. Se encontró en 1911, boca abajo, tapando un desagüe en Galle."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "Languages",
+                "es": "Idiomas"
+              },
+              "value": {
+                "en": "Chinese, Tamil, Persian",
+                "es": "Chino, tamil, persa"
+              }
+            },
+            {
+              "label": {
+                "en": "Found",
+                "es": "Hallazgo"
+              },
+              "value": {
+                "en": "1911, in Galle",
+                "es": "1911, en Galle"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Galle Trilingual Inscription",
+            "es": ""
+          }
+        },
+        {
+          "id": "kotte",
+          "name": {
+            "en": "Kotte and King Alakeshvara",
+            "es": "Kotte y el rey Alakeshvara"
+          },
+          "at": [79.9022, 6.8868],
+          "cat": "encounter",
+          "type": "event",
+          "date": "1411",
+          "place": {
+            "en": "Sri Jayawardenepura Kotte, Sri Lanka",
+            "es": "Sri Jayawardenepura Kotte (Sri Lanka)"
+          },
+          "text": {
+            "en": "The capital of Alakeshvara, a Sinhalese ruler hostile to the fleet. In 1410 or 1411 Zheng He's soldiers stormed it and took the king, his family and his officials to China as captives.",
+            "es": "La capital de Alakeshvara, un soberano cingalés hostil a la flota. En 1410 o 1411 los soldados de Zheng He la asaltaron y llevaron a China como cautivos al rey, a su familia y a sus funcionarios."
+          },
+          "wiki": {
+            "en": "Ming–Kotte War",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1415-08-12",
+      "title": {
+        "en": "Fourth voyage: on to Hormuz",
+        "es": "Cuarto viaje: hasta Ormuz"
+      },
+      "camera": {
+        "lon": 82.0,
+        "lat": 15.0,
+        "zoom": 1.7
+      },
+      "text": {
+        "en": "In 1413–15 the fleet sailed beyond India for the first time, across the Arabian Sea to Hormuz, the island market at the mouth of the Persian Gulf. The interpreter Ma Huan came too.",
+        "es": "En 1413–1415 la flota navegó por primera vez más allá de la India: cruzó el mar Arábigo hasta Ormuz, el mercado insular a la entrada del golfo Pérsico. Con ella viajaba el intérprete Ma Huan."
+      },
+      "details": {
+        "en": "This voyage led into the Muslim lands of the west, so Zheng He looked for interpreters: in Xi'an he found Hasan, who knew Arabic, and Ma Huan, a Muslim from Zhejiang, joined for the first time. Ma Huan counted 63 treasure ships and about 28,000 men. Leaving Fujian in the winter of 1413–14, the fleet called at Champa, at Kelantan and Pahang on the Malay coast, at Malacca, Java, Palembang and Sumatra, then at Ceylon, Cochin and Calicut. It passed the Laccadive atolls and sailed on to Hormuz; a stone of 1523 in a Xi'an mosque says that this voyage also reached Arabia. Coming home in 1415, the fleet fought Sekandar, who had seized the throne of Semudera in Sumatra, chased him to Lambri and took him to China to be executed. The fleet reached Nanjing on 12 August 1415, and envoys from 18 countries followed it to court.",
+        "es": "Este viaje entraba en las tierras musulmanas del oeste, así que Zheng He buscó intérpretes: en Xi'an encontró a Hasan, que sabía árabe, y Ma Huan, un musulmán de Zhejiang, se sumó por primera vez. Ma Huan contó 63 barcos del tesoro y unos 28 000 hombres. La flota salió de Fujian en el invierno de 1413–1414 e hizo escala en Champa, en Kelantan y Pahang, en la costa malaya, en Malaca, Java, Palembang y Sumatra, y luego en Ceilán, Cochín y Calicut. Pasó junto a los atolones de las Laquedivas y siguió hasta Ormuz; una piedra de 1523 en una mezquita de Xi'an dice que este viaje llegó también a Arabia. De regreso, en 1415, la flota combatió a Sekandar, que se había apoderado del trono de Semudera, en Sumatra, lo persiguió hasta Lambri y lo llevó a China para ejecutarlo. La flota llegó a Nankín el 12 de agosto de 1415, y enviados de 18 países la siguieron a la corte."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [119.55, 25.98],
+            [119.75, 26.05],
+            [120.05, 25.3],
+            [118.95, 24.45],
+            [117.4, 23.25],
+            [115.6, 22.35],
+            [113.9, 21.85],
+            [112.0, 21.0],
+            [111.3, 19.9],
+            [110.85, 18.6],
+            [110.1, 16.8],
+            [109.55, 14.8],
+            [109.27, 13.75],
+            [109.6, 12.85],
+            [109.4, 12.0],
+            [109.15, 11.25],
+            [108.3, 10.55],
+            [107.3, 9.75],
+            [106.6, 8.45],
+            [104.5, 7.4],
+            [102.6, 6.35],
+            [103.2, 5.6],
+            [103.7, 4.6],
+            [103.6, 3.65],
+            [103.95, 2.7],
+            [104.45, 1.6],
+            [104.45, 1.3],
+            [104.0, 1.21],
+            [103.6, 1.17],
+            [103.2, 1.35],
+            [102.75, 1.75],
+            [102.3, 2.1],
+            [101.35, 2.8],
+            [100.55, 3.55],
+            [99.7, 4.25],
+            [98.85, 4.8],
+            [97.9, 5.25],
+            [97.25, 5.35],
+            [96.4, 5.45],
+            [95.45, 5.72],
+            [94.5, 6.2],
+            [88.0, 5.9],
+            [81.5, 5.7],
+            [80.6, 5.75],
+            [80.25, 5.95],
+            [80.1, 6.2],
+            [79.95, 6.45],
+            [78.7, 7.1],
+            [77.6, 7.85],
+            [77.0, 8.25],
+            [76.45, 8.85],
+            [76.2, 9.5],
+            [76.12, 10.0],
+            [75.85, 10.6],
+            [75.72, 11.25],
+            [72.5, 11.9],
+            [66.0, 17.5],
+            [60.2, 22.2],
+            [59.3, 23.3],
+            [58.0, 24.4],
+            [57.0, 25.4],
+            [56.65, 26.3],
+            [56.48, 26.95]
+          ],
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "Fourth voyage, 1413–1415",
+            "es": "Cuarto viaje, 1413–1415"
+          }
+        },
+        {
+          "side": "squadrons",
+          "path": [
+            [76.12, 10.0],
+            [75.2, 8.0],
+            [74.0, 5.5],
+            [73.55, 4.25]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "To the Maldives",
+            "es": "A las Maldivas"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "hormuz",
+          "name": {
+            "en": "Hormuz",
+            "es": "Ormuz"
+          },
+          "at": [56.46, 27.0675],
+          "cat": "port",
+          "type": "place",
+          "date": "1414",
+          "place": {
+            "en": "Hormuz Island, Iran",
+            "es": "Isla de Ormuz (Irán)"
+          },
+          "text": {
+            "en": "An island kingdom at the mouth of the Persian Gulf and a great market of the western Indian Ocean. The fleet first reached it on the fourth voyage and came back on the next three.",
+            "es": "Un reino insular a la entrada del golfo Pérsico y un gran mercado del oeste del océano Índico. La flota llegó por primera vez en el cuarto viaje y volvió en los tres siguientes."
+          },
+          "details": {
+            "en": "Its kings had moved from the mainland to the island of Jarun in 1301, and from there they controlled both shores of the strait. Ma Huan praised its people as \"refined and fair\" and their clothes as handsome and elegant, while the soldier Fei Xin wrote that even \"the lower classes are wealthy\". Envoys of its king sailed to China with the fleet.",
+            "es": "Sus reyes se habían mudado del continente a la isla de Jarun en 1301, y desde allí controlaban ambas orillas del estrecho. Ma Huan elogió a su gente, «refinada y de piel clara», y sus ropas, hermosas y elegantes, mientras que el soldado Fei Xin escribió que hasta «las clases bajas son ricas». Enviados de su rey viajaron a China con la flota."
+          },
+          "wiki": {
+            "en": "Kingdom of Hormuz",
+            "es": ""
+          }
+        },
+        {
+          "id": "ma-huan",
+          "name": {
+            "en": "Ma Huan",
+            "es": "Ma Huan"
+          },
+          "at": [120.58, 30.0],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1413",
+          "life": [
+            "1380",
+            "1460"
+          ],
+          "place": {
+            "en": "Shaoxing, Zhejiang, China",
+            "es": "Shaoxing, Zhejiang (China)"
+          },
+          "text": {
+            "en": "A Muslim from Zhejiang who learned Arabic and sailed as an interpreter on the fourth, sixth and seventh voyages. His notes became the best eyewitness account of the lands the fleet visited.",
+            "es": "Un musulmán de Zhejiang que aprendió árabe y viajó como intérprete en el cuarto, el sexto y el séptimo viaje. Sus notas son el mejor relato de testigo sobre las tierras que visitó la flota."
+          },
+          "wiki": {
+            "en": "Ma Huan",
+            "es": "Ma Huan"
+          }
+        },
+        {
+          "id": "semudera",
+          "name": {
+            "en": "Semudera (Samudera Pasai)",
+            "es": "Semudera (Samudra Pasai)"
+          },
+          "at": [97.2006, 5.1341],
+          "cat": "port",
+          "type": "place",
+          "date": "1415",
+          "place": {
+            "en": "Near Lhokseumawe, Aceh, Indonesia",
+            "es": "Cerca de Lhokseumawe, Aceh (Indonesia)"
+          },
+          "text": {
+            "en": "A Muslim port-kingdom of northern Sumatra where the fleet gathered before crossing to Ceylon. In 1415 the fleet captured Sekandar, who had seized its throne.",
+            "es": "Un reino portuario musulmán del norte de Sumatra donde la flota se reunía antes de cruzar a Ceilán. En 1415 la flota capturó a Sekandar, que se había apoderado de su trono."
+          },
+          "details": {
+            "en": "Ma Huan called it the main gateway to the Western Ocean and the fleet's most important meeting place. Sekandar fought the Ming forces with what the records call tens of thousands of men; he was chased to Lambri, captured with his wife and child, and later executed in China. A great bronze bell given by Zheng He, the Cakra Donya, is kept today in the Aceh Museum.",
+            "es": "Ma Huan lo llamó la puerta principal del Océano Occidental y el lugar de reunión más importante de la flota. Sekandar combatió a las fuerzas Ming con lo que las crónicas llaman decenas de miles de hombres; lo persiguieron hasta Lambri, lo capturaron con su esposa y su hijo y más tarde lo ejecutaron en China. Una gran campana de bronce regalada por Zheng He, la Cakra Donya, se guarda hoy en el Museo de Aceh."
+          },
+          "wiki": {
+            "en": "Samudera Pasai Sultanate",
+            "es": "Reino de Samudra Pasai"
+          }
+        },
+        {
+          "id": "maldives",
+          "name": {
+            "en": "The Maldives (Liushan)",
+            "es": "Las Maldivas (Liushan)"
+          },
+          "at": [73.5093, 4.1755],
+          "cat": "nature",
+          "type": "place",
+          "date": "1414",
+          "place": {
+            "en": "Maldives",
+            "es": "Maldivas"
+          },
+          "text": {
+            "en": "The Chinese called the Maldive and Laccadive atolls \"Liushan\". Ships of the fleet called here; their coir, coconut-husk rope, held together the sewn boats of the Indian Ocean.",
+            "es": "Los chinos llamaban «Liushan» a los atolones de las Maldivas y las Laquedivas. Barcos de la flota hicieron escala aquí; su bonote, cuerda de fibra de coco, mantenía unidos los barcos cosidos del océano Índico."
+          },
+          "wiki": {
+            "en": "Maldives",
+            "es": "Maldivas"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1418",
+      "title": {
+        "en": "Fifth voyage and the qilin",
+        "es": "El quinto viaje y el qilin"
+      },
+      "text": {
+        "en": "In 1414 envoys from Bengal gave the emperor an African giraffe, hailed at court as a qilin. In 1417 a fifth fleet set out to take the envoys of 18 countries home, as far as Arabia and Africa.",
+        "es": "En 1414, enviados de Bengala regalaron al emperador una jirafa africana, a la que la corte aclamó como un qilin. En 1417 zarpó una quinta flota para llevar a casa a los enviados de 18 países, hasta Arabia y África."
+      },
+      "details": {
+        "en": "On 20 September 1414 envoys presented a giraffe at court in the name of the Sultan of Bengal. It had come from East Africa: envoys from Malindi had brought giraffes to the Bengal court. Officials hailed it as a qilin, a gentle beast of legend whose coming marked a wise ruler; the emperor refused their congratulations. Many books say Zheng He brought this giraffe from Malindi, but the treasure fleet only reached Africa on its fifth voyage. That voyage was ordered on 28 December 1416, to take home the envoys of 18 countries and reward their kings. On 31 May 1417 Zheng He burned incense for a safe voyage at Quanzhou, where the fleet loaded porcelain. It called at Champa, Pahang, Java, Palembang, Malacca, Sumatra, Ceylon and Cochin, whose king received a seal from the emperor, and at Calicut, then sailed on to Hormuz.",
+        "es": "El 20 de septiembre de 1414, unos enviados presentaron en la corte una jirafa en nombre del sultán de Bengala. Venía de África oriental: enviados de Malindi habían llevado jirafas a la corte de Bengala. Los funcionarios la aclamaron como un qilin, un animal manso de leyenda cuya llegada anunciaba a un gobernante sabio; el emperador rechazó sus felicitaciones. Muchos libros dicen que Zheng He trajo esta jirafa de Malindi, pero la flota del tesoro llegó a África recién en su quinto viaje. Ese viaje se ordenó el 28 de diciembre de 1416 para llevar a casa a los enviados de 18 países y recompensar a sus reyes. El 31 de mayo de 1417 Zheng He quemó incienso en Quanzhou para tener un buen viaje, y la flota cargó allí porcelana. Hizo escala en Champa, Pahang, Java, Palembang, Malaca, Sumatra, Ceilán y Cochín, cuyo rey recibió un sello del emperador, y en Calicut, y luego siguió hasta Ormuz."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [119.55, 25.98],
+            [119.75, 26.05],
+            [120.05, 25.3],
+            [118.95, 24.6],
+            [118.8, 24.8],
+            [118.95, 24.45],
+            [117.4, 23.25],
+            [115.6, 22.35],
+            [113.9, 21.85],
+            [112.0, 21.0],
+            [111.3, 19.9],
+            [110.85, 18.6],
+            [110.1, 16.8],
+            [109.55, 14.8],
+            [109.27, 13.75],
+            [109.6, 12.85],
+            [109.4, 12.0],
+            [109.15, 11.25],
+            [108.3, 10.55],
+            [107.3, 9.75],
+            [106.6, 8.45],
+            [104.5, 7.4],
+            [102.6, 6.35],
+            [103.2, 5.6],
+            [103.7, 4.6],
+            [103.6, 3.65],
+            [103.95, 2.7],
+            [104.45, 1.6],
+            [104.45, 1.3],
+            [104.0, 1.21],
+            [103.6, 1.17],
+            [103.2, 1.35],
+            [102.75, 1.75],
+            [102.3, 2.1],
+            [101.35, 2.8],
+            [100.55, 3.55],
+            [99.7, 4.25],
+            [98.85, 4.8],
+            [97.9, 5.25],
+            [97.25, 5.35],
+            [96.4, 5.45],
+            [95.45, 5.72],
+            [94.5, 6.2],
+            [88.0, 5.9],
+            [81.5, 5.7],
+            [80.6, 5.75],
+            [78.7, 7.0],
+            [77.6, 7.85],
+            [77.0, 8.25],
+            [76.45, 8.85],
+            [76.2, 9.5],
+            [76.12, 10.0],
+            [75.85, 10.6],
+            [75.72, 11.25],
+            [72.5, 11.9],
+            [66.0, 17.5],
+            [60.2, 22.2],
+            [59.3, 23.3],
+            [58.0, 24.4],
+            [57.0, 25.4],
+            [56.65, 26.3],
+            [56.48, 26.95]
+          ],
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "Fifth voyage, 1417–1419",
+            "es": "Quinto viaje, 1417–1419"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "qilin-giraffe",
+          "name": {
+            "en": "The giraffe that became a qilin",
+            "es": "La jirafa que se volvió qilin"
+          },
+          "at": [116.3972, 39.9163],
+          "cat": "event",
+          "icon": "🦒",
+          "type": "animal",
+          "date": "1414-09-20",
+          "place": {
+            "en": "Presented at the Ming court, Beijing, China",
+            "es": "Presentada en la corte Ming, Pekín (China)"
+          },
+          "text": {
+            "en": "On 20 September 1414 envoys of the Sultan of Bengal gave the emperor an East African giraffe. Courtiers hailed it as a qilin, a lucky beast of legend; the emperor stayed doubtful.",
+            "es": "El 20 de septiembre de 1414, enviados del sultán de Bengala regalaron al emperador una jirafa de África oriental. Los cortesanos la aclamaron como un qilin, un animal legendario de buena suerte; el emperador siguió dudando."
+          },
+          "details": {
+            "en": "The qilin was a gentle beast of Chinese legend whose appearance was said to mark a wise ruler, and officials asked to congratulate the emperor; he refused, and he probably did not think it was a qilin. The court painter Shen Du painted the animal with its keeper. Many books say that Zheng He brought this giraffe from Malindi, but the treasure fleet only reached Africa on its fifth voyage; the Bengal court had received giraffes from Malindi's envoys. Giraffes are still called kirin in Japanese and girin in Korean.",
+            "es": "El qilin era un animal manso de la leyenda china cuya aparición, se decía, anunciaba a un gobernante sabio, y los funcionarios pidieron felicitar al emperador; él se negó y probablemente no creyó que fuera un qilin. El pintor de la corte Shen Du pintó al animal con su cuidador. Muchos libros dicen que Zheng He trajo esta jirafa de Malindi, pero la flota del tesoro llegó a África recién en su quinto viaje; la corte de Bengala había recibido jirafas de los enviados de Malindi. En japonés la jirafa aún se llama kirin, y en coreano, girin."
+          },
+          "wiki": {
+            "en": "Qilin",
+            "es": "Qilin"
+          }
+        },
+        {
+          "id": "bengal",
+          "name": {
+            "en": "Bengal",
+            "es": "Bengala"
+          },
+          "at": [90.6086, 23.6447],
+          "cat": "encounter",
+          "type": "culture",
+          "date": "1405",
+          "place": {
+            "en": "Sonargaon, Bangladesh",
+            "es": "Sonargaon (Bangladés)"
+          },
+          "text": {
+            "en": "A rich Muslim sultanate famed for its muslin. Its sultans sent embassies to China from 1405, and envoys from Malindi brought giraffes to their court; one went on to the emperor.",
+            "es": "Un rico sultanato musulmán famoso por su muselina. Sus sultanes enviaron embajadas a China desde 1405, y enviados de Malindi llevaron jirafas a su corte; una de ellas siguió viaje hasta el emperador."
+          },
+          "wiki": {
+            "en": "Bengal Sultanate",
+            "es": "Sultanato de Bengala"
+          }
+        },
+        {
+          "id": "quanzhou",
+          "name": {
+            "en": "Quanzhou",
+            "es": "Quanzhou"
+          },
+          "at": [118.6757, 24.8744],
+          "cat": "port",
+          "type": "place",
+          "date": "1417-05-31",
+          "place": {
+            "en": "Quanzhou, Fujian, China",
+            "es": "Quanzhou, Fujian (China)"
+          },
+          "text": {
+            "en": "The old port of Zaiton, home to Muslim, Hindu and Christian merchants. On 31 May 1417 Zheng He burned incense here for a safe voyage, and the fleet loaded porcelain.",
+            "es": "El antiguo puerto de Zaitún, hogar de mercaderes musulmanes, hindúes y cristianos. El 31 de mayo de 1417, Zheng He quemó incienso aquí para tener un buen viaje, y la flota cargó porcelana."
+          },
+          "wiki": {
+            "en": "Quanzhou",
+            "es": "Quanzhou"
+          }
+        },
+        {
+          "id": "cochin",
+          "name": {
+            "en": "Cochin",
+            "es": "Cochín"
+          },
+          "at": [76.24, 9.965],
+          "cat": "port",
+          "type": "place",
+          "date": "1408",
+          "place": {
+            "en": "Kochi, Kerala, India",
+            "es": "Kochi, Kerala (India)"
+          },
+          "text": {
+            "en": "A Malabar pepper port and Calicut's rival. The Ming backed its king, Keyili: the fifth voyage brought him a seal and named a hill there \"the Mountain that Protects the Country\".",
+            "es": "Un puerto de la pimienta de Malabar, rival de Calicut. Los Ming apoyaron a su rey, Keyili: el quinto viaje le llevó un sello y llamó a una colina «la Montaña que Protege al País»."
+          },
+          "details": {
+            "en": "Keyili had sent tribute to China since 1411, and the fleet brought him a stone tablet with a long proclamation said to have been written by the Yongle Emperor himself. As long as Cochin stayed under Ming protection, the Zamorin of Calicut could not attack it; after the voyages ended, he invaded. A century later Cochin's rulers sided with the Portuguese against Calicut.",
+            "es": "Keyili enviaba tributo a China desde 1411, y la flota le llevó una lápida con una larga proclama que, según se dice, escribió el propio emperador Yongle. Mientras Cochín estuvo bajo la protección Ming, el samorín de Calicut no pudo atacarla; cuando terminaron los viajes, la invadió. Un siglo después, los gobernantes de Cochín se aliaron con los portugueses contra Calicut."
+          },
+          "wiki": {
+            "en": "Kingdom of Cochin",
+            "es": "Reino de Cochín"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1419",
+      "title": {
+        "en": "To the Swahili coast",
+        "es": "Hasta la costa suajili"
+      },
+      "camera": {
+        "lon": 50.0,
+        "lat": 8.0,
+        "zoom": 2.8
+      },
+      "text": {
+        "en": "From Hormuz the fifth fleet sailed to Aden, then along the Somali coast to Mogadishu and Brava, and on to Malindi. In 1419 it came home with lions, zebras, ostriches and giraffes.",
+        "es": "Desde Ormuz, la quinta flota navegó hasta Adén, luego por la costa somalí hasta Mogadiscio y Brava, y siguió hasta Malindi. En 1419 volvió a casa con leones, cebras, avestruces y jirafas."
+      },
+      "details": {
+        "en": "Arabic chronicles say Chinese ships reached Aden in January 1419 and that their envoys stayed at the Rasulid sultan's capital, Ta'izz, until at least 19 March. The likeliest course after Hormuz was Lasa, Aden, Mogadishu, Brava, Zhubu, near the Jubba River, and Malindi. Whether Zheng He himself went to Africa is not known: detached squadrons often sailed where the main fleet did not. Chinese porcelain of this period has been found in the East African ports, and the Mao Kun map later charted this coast, probably with help from Arab pilots. The fleet was back in China on 8 August 1419. At court, which was then in Beijing, the envoys presented lions, leopards, camels, ostriches, zebras, rhinoceroses, antelopes and giraffes, a sensation in the capital.",
+        "es": "Las crónicas árabes cuentan que barcos chinos llegaron a Adén en enero de 1419 y que sus enviados se quedaron en la capital del sultán rasúlida, Taiz, al menos hasta el 19 de marzo. El recorrido más probable después de Ormuz fue Lasa, Adén, Mogadiscio, Brava, Zhubu, cerca del río Juba, y Malindi. No se sabe si Zheng He fue en persona a África: a menudo escuadras destacadas iban adonde no iba la flota principal. En los puertos de África oriental se ha hallado porcelana china de esta época, y el mapa de Mao Kun trazó luego esta costa, probablemente con ayuda de pilotos árabes. La flota volvió a China el 8 de agosto de 1419. En la corte, que entonces estaba en Pekín, los enviados presentaron leones, leopardos, camellos, avestruces, cebras, rinocerontes, antílopes y jirafas, un gran revuelo en la capital."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [56.48, 26.95],
+            [56.65, 26.3],
+            [57.3, 25.3],
+            [58.4, 24.05],
+            [59.35, 23.25],
+            [59.95, 22.45],
+            [59.55, 21.2],
+            [59.2, 20.3],
+            [58.05, 18.85],
+            [56.8, 17.65],
+            [55.4, 16.85],
+            [54.5, 16.7],
+            [53.4, 16.35],
+            [52.35, 15.4],
+            [51.0, 14.9],
+            [49.8, 14.5],
+            [49.2, 14.25],
+            [48.7, 13.85],
+            [48.0, 13.7],
+            [46.6, 13.25],
+            [45.3, 12.65],
+            [45.08, 12.75],
+            [46.5, 12.35],
+            [48.5, 12.1],
+            [50.5, 12.05],
+            [51.45, 11.95],
+            [51.7, 11.3],
+            [51.7, 10.4],
+            [51.6, 9.6],
+            [51.0, 8.4],
+            [50.2, 7.0],
+            [49.2, 5.4],
+            [47.6, 3.5],
+            [46.0, 2.15],
+            [45.4, 1.95],
+            [44.8, 1.55],
+            [44.1, 0.95],
+            [42.65, -0.45],
+            [41.8, -1.85],
+            [41.0, -2.6],
+            [40.3, -3.15],
+            [40.15, -3.22]
+          ],
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "To Aden and Africa, 1419",
+            "es": "A Adén y África, 1419"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "aden",
+          "name": {
+            "en": "Aden",
+            "es": "Adén"
+          },
+          "at": [45.0367, 12.7797],
+          "cat": "port",
+          "type": "place",
+          "date": "1419",
+          "place": {
+            "en": "Aden, Yemen",
+            "es": "Adén (Yemen)"
+          },
+          "text": {
+            "en": "The great port of the Rasulid sultans of Yemen, at the mouth of the Red Sea. Chinese ships came in 1419, 1421 and the early 1430s, and the sultan's envoys sailed to China with the fleet.",
+            "es": "El gran puerto de los sultanes rasúlidas de Yemen, a la entrada del mar Rojo. Los barcos chinos llegaron en 1419, en 1421 y a comienzos de la década de 1430, y los enviados del sultán viajaron a China con la flota."
+          },
+          "wiki": {
+            "en": "Aden",
+            "es": "Adén"
+          }
+        },
+        {
+          "id": "mogadishu",
+          "name": {
+            "en": "Mogadishu",
+            "es": "Mogadiscio"
+          },
+          "at": [45.3419, 2.0392],
+          "cat": "city",
+          "type": "place",
+          "date": "1419",
+          "place": {
+            "en": "Mogadishu, Somalia",
+            "es": "Mogadiscio (Somalia)"
+          },
+          "text": {
+            "en": "A wealthy Somali city that minted its own coins and traded gold, ivory and cloth. Ming ships called here on the fifth, sixth and seventh voyages.",
+            "es": "Una rica ciudad somalí que acuñaba sus propias monedas y comerciaba oro, marfil y telas. Los barcos Ming hicieron escala aquí en el quinto, el sexto y el séptimo viaje."
+          },
+          "wiki": {
+            "en": "Mogadishu",
+            "es": "Mogadiscio"
+          }
+        },
+        {
+          "id": "brava",
+          "name": {
+            "en": "Brava (Barawa)",
+            "es": "Brava (Barawa)"
+          },
+          "at": [44.0303, 1.1133],
+          "cat": "city",
+          "type": "place",
+          "date": "1419",
+          "place": {
+            "en": "Barawa, Somalia",
+            "es": "Barawa (Somalia)"
+          },
+          "text": {
+            "en": "A small port of the Somali coast, south of Mogadishu. It appears among the calls of the fifth, sixth and seventh voyages, and on the Mao Kun map.",
+            "es": "Un pequeño puerto de la costa somalí, al sur de Mogadiscio. Aparece entre las escalas del quinto, el sexto y el séptimo viaje, y en el mapa de Mao Kun."
+          },
+          "wiki": {
+            "en": "Barawa",
+            "es": "Barāwe"
+          }
+        },
+        {
+          "id": "malindi",
+          "name": {
+            "en": "Malindi",
+            "es": "Malindi"
+          },
+          "at": [40.1167, -3.2175],
+          "cat": "city",
+          "type": "place",
+          "date": "1419",
+          "place": {
+            "en": "Malindi, Kenya",
+            "es": "Malindi (Kenia)"
+          },
+          "text": {
+            "en": "A Swahili town on the Kenyan coast, rival of Mombasa. Its envoys took giraffes to Bengal and China, and it is the southernmost port the treasure fleet is recorded to have reached.",
+            "es": "Una ciudad suajili de la costa de Kenia, rival de Mombasa. Sus enviados llevaron jirafas a Bengala y a China, y es el puerto más al sur al que, según los registros, llegó la flota del tesoro."
+          },
+          "details": {
+            "en": "Ming records list Malindi among the calls of the fifth voyage, around 1419, but no trace of the visit has been found on the ground: Chinese pottery of the period turns up on the Kenyan coast, yet a Chinese-funded team that dug near Mambrui for several years found no proof. The Mao Kun map charts about 400 km of this coast, and suggests that the fleet sailed no farther south than about six degrees below the Equator.",
+            "es": "Las crónicas Ming incluyen a Malindi entre las escalas del quinto viaje, hacia 1419, pero en el terreno no se ha hallado rastro de la visita: en la costa de Kenia aparece cerámica china de la época, pero un equipo financiado por China que excavó varios años cerca de Mambrui no encontró pruebas. El mapa de Mao Kun traza unos 400 km de esta costa y sugiere que la flota no navegó más al sur de unos seis grados por debajo del ecuador."
+          },
+          "wiki": {
+            "en": "Malindi",
+            "es": "Malindi"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1422-09-03",
+      "title": {
+        "en": "Sixth voyage: the fleet divides",
+        "es": "Sexto viaje: la flota se divide"
+      },
+      "camera": {
+        "lon": 76.0,
+        "lat": 12.0,
+        "zoom": 1.6
+      },
+      "text": {
+        "en": "In 1421 the fleet took the envoys of 16 countries home. From Sumatra and India its squadrons fanned out to Hormuz, Dhofar, Aden, Mogadishu and Brava, while the main fleet went to Calicut.",
+        "es": "En 1421 la flota llevó a casa a los enviados de 16 países. Desde Sumatra y la India sus escuadras se repartieron hacia Ormuz, Dhofar, Adén, Mogadiscio y Brava, mientras el grueso iba a Calicut."
+      },
+      "details": {
+        "en": "Early in 1421 the envoys had joined the celebrations for Beijing, the new capital, and an order of 3 March sent Zheng He with letters and silks to their rulers. At Semudera the fleet split into squadrons, which met again in Ceylon and then parted for different Indian ports. The eunuchs Zhou Man and Li Xing took three treasure ships from Sumatra to Aden, perhaps calling at Dhofar, the frankincense coast where Ma Huan landed; another squadron left near Quilon for Mogadishu and Brava; a large one sailed from Calicut to Hormuz. The fleet came home on 3 September 1422, though some ships were still trading in Yemen early in 1423. By then the emperor had suspended the voyages, on 14 May 1421, to pay for his wars against the Mongols. He died on 12 August 1424, and his son, the Hongxi Emperor, ended the voyages on the day he took the throne.",
+        "es": "A comienzos de 1421 los enviados habían asistido a las fiestas por Pekín, la nueva capital, y una orden del 3 de marzo envió a Zheng He con cartas y sedas para sus soberanos. En Semudera la flota se dividió en escuadras, que volvieron a reunirse en Ceilán y luego partieron hacia distintos puertos de la India. Los eunucos Zhou Man y Li Xing llevaron tres barcos del tesoro de Sumatra a Adén, quizá con escala en Dhofar, la costa del incienso, donde desembarcó Ma Huan; otra escuadra salió cerca de Quilon hacia Mogadiscio y Brava, y una grande navegó de Calicut a Ormuz. La flota volvió el 3 de septiembre de 1422, aunque algunos barcos aún comerciaban en Yemen a comienzos de 1423. Para entonces el emperador había suspendido los viajes, el 14 de mayo de 1421, para pagar sus guerras contra los mongoles. Murió el 12 de agosto de 1424, y su hijo, el emperador Hongxi, puso fin a los viajes el mismo día en que subió al trono."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [119.55, 25.98],
+            [119.75, 26.05],
+            [120.05, 25.3],
+            [118.95, 24.45],
+            [117.4, 23.25],
+            [115.6, 22.35],
+            [113.9, 21.85],
+            [112.0, 21.0],
+            [111.3, 19.9],
+            [110.85, 18.6],
+            [110.1, 16.8],
+            [109.55, 14.8],
+            [109.27, 13.75],
+            [109.6, 12.85],
+            [109.4, 12.0],
+            [109.15, 11.25],
+            [108.3, 10.55],
+            [107.3, 9.75],
+            [106.6, 8.45],
+            [106.3, 5.5],
+            [105.6, 3.2],
+            [104.85, 1.6],
+            [104.45, 1.3],
+            [104.0, 1.21],
+            [103.6, 1.17],
+            [103.2, 1.35],
+            [102.75, 1.75],
+            [102.3, 2.1],
+            [101.35, 2.8],
+            [100.55, 3.55],
+            [99.7, 4.25],
+            [98.85, 4.8],
+            [97.9, 5.25],
+            [97.25, 5.35],
+            [96.4, 5.45],
+            [95.45, 5.72],
+            [94.5, 6.2],
+            [88.0, 5.9],
+            [81.5, 5.7],
+            [80.6, 5.75],
+            [78.7, 7.0],
+            [77.6, 7.85],
+            [77.0, 8.25],
+            [76.45, 8.85],
+            [76.2, 9.5],
+            [76.12, 10.0],
+            [75.85, 10.6],
+            [75.72, 11.25]
+          ],
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "Sixth voyage, 1421–1422",
+            "es": "Sexto viaje, 1421–1422"
+          }
+        },
+        {
+          "side": "squadrons",
+          "path": [
+            [95.45, 5.72],
+            [94.5, 6.2],
+            [88.0, 5.9],
+            [81.5, 5.7],
+            [80.6, 5.75],
+            [77.0, 6.6],
+            [73.3, 7.6],
+            [62.0, 12.5],
+            [56.5, 16.2],
+            [54.5, 16.7],
+            [53.4, 16.35],
+            [52.35, 15.4],
+            [51.0, 14.9],
+            [49.8, 14.5],
+            [49.2, 14.25],
+            [48.7, 13.85],
+            [48.0, 13.7],
+            [46.6, 13.25],
+            [45.3, 12.65],
+            [45.08, 12.75]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Zhou Man to Dhofar and Aden",
+            "es": "Zhou Man, a Dhofar y Adén"
+          }
+        },
+        {
+          "side": "squadrons",
+          "path": [
+            [76.45, 8.85],
+            [73.3, 7.7],
+            [65.0, 5.5],
+            [55.0, 3.5],
+            [48.0, 2.5],
+            [45.4, 1.95],
+            [44.8, 1.55],
+            [44.1, 0.95]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "To Mogadishu and Brava",
+            "es": "A Mogadiscio y Brava"
+          }
+        },
+        {
+          "side": "squadrons",
+          "path": [
+            [75.72, 11.25],
+            [72.5, 11.9],
+            [66.0, 17.5],
+            [60.2, 22.2],
+            [59.3, 23.3],
+            [58.0, 24.4],
+            [57.0, 25.4],
+            [56.65, 26.3],
+            [56.48, 26.95]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "To Hormuz",
+            "es": "A Ormuz"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "dhofar",
+          "name": {
+            "en": "Dhofar (Zufar)",
+            "es": "Dhofar (Zufar)"
+          },
+          "at": [54.11, 16.995],
+          "cat": "port",
+          "type": "place",
+          "date": "1421",
+          "place": {
+            "en": "Al-Baleed, Salalah, Oman",
+            "es": "Al-Baleed, Salalah (Omán)"
+          },
+          "text": {
+            "en": "The frankincense coast of southern Arabia, with its port at today's Salalah. Ma Huan came here in 1421, and its king, Ali, sent envoys to China with the last fleet.",
+            "es": "La costa del incienso del sur de Arabia, con su puerto en la actual Salalah. Ma Huan llegó aquí en 1421, y su rey, Alí, envió embajadores a China con la última flota."
+          },
+          "wiki": {
+            "en": "Dhofar Governorate",
+            "es": "Gobernación de Dhofar"
+          }
+        },
+        {
+          "id": "aden",
+          "name": {
+            "en": "Aden",
+            "es": "Adén"
+          },
+          "at": [45.0367, 12.7797],
+          "cat": "port",
+          "type": "place",
+          "date": "1419",
+          "place": {
+            "en": "Aden, Yemen",
+            "es": "Adén (Yemen)"
+          },
+          "text": {
+            "en": "The great port of the Rasulid sultans of Yemen, at the mouth of the Red Sea. Chinese ships came in 1419, 1421 and the early 1430s, and the sultan's envoys sailed to China with the fleet.",
+            "es": "El gran puerto de los sultanes rasúlidas de Yemen, a la entrada del mar Rojo. Los barcos chinos llegaron en 1419, en 1421 y a comienzos de la década de 1430, y los enviados del sultán viajaron a China con la flota."
+          },
+          "wiki": {
+            "en": "Aden",
+            "es": "Adén"
+          }
+        },
+        {
+          "id": "beijing",
+          "name": {
+            "en": "Beiping (Beijing)",
+            "es": "Beiping (Pekín)"
+          },
+          "at": [116.3975, 39.9067],
+          "cat": "city",
+          "type": "place",
+          "date": "1380",
+          "place": {
+            "en": "Beijing, China",
+            "es": "Pekín (China)"
+          },
+          "text": {
+            "en": "Beiping, near the Mongol frontier, was Prince Zhu Di's seat from 1380; young Ma He served and fought here. As emperor, Zhu Di renamed it Beijing, \"northern capital\", and moved his court there in 1420.",
+            "es": "Beiping, cerca de la frontera mongola, fue la sede del príncipe Zhu Di desde 1380; allí sirvió y combatió el joven Ma He. Como emperador, Zhu Di la llamó Pekín, «capital del norte», y trasladó allí su corte en 1420."
+          },
+          "wiki": {
+            "en": "Beijing",
+            "es": "Pekín"
+          }
+        },
+        {
+          "id": "yongle-emperor",
+          "name": {
+            "en": "The Yongle Emperor",
+            "es": "El emperador Yongle"
+          },
+          "at": [118.8167, 32.0389],
+          "cat": "encounter",
+          "type": "person",
+          "date": "1402-07-17",
+          "life": [
+            "1360",
+            "1424"
+          ],
+          "place": {
+            "en": "Nanjing, China",
+            "es": "Nankín (China)"
+          },
+          "text": {
+            "en": "Zhu Di, Prince of Yan, took the throne from his nephew in 1402 and ruled as the Yongle Emperor until 1424. He ordered the treasure fleet built in 1403 and sent it out six times.",
+            "es": "Zhu Di, príncipe de Yan, arrebató el trono a su sobrino en 1402 y reinó como emperador Yongle hasta 1424. En 1403 mandó construir la flota del tesoro y la envió seis veces al mar."
+          },
+          "wiki": {
+            "en": "Yongle Emperor",
+            "es": "Yongle"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1433-01-17",
+      "title": {
+        "en": "The last voyage",
+        "es": "El último viaje"
+      },
+      "camera": {
+        "lon": 88.0,
+        "lat": 16.0,
+        "zoom": 1.6
+      },
+      "text": {
+        "en": "In 1431, aged about 60, Zheng He sailed once more for a new emperor. He set up stones listing his voyages at Liujiagang and Changle; the fleet reached Hormuz on 17 January 1433.",
+        "es": "En 1431, con unos 60 años, Zheng He zarpó una vez más por orden de un nuevo emperador. Dejó en Liujiagang y Changle piedras con la lista de sus viajes; la flota llegó a Ormuz el 17 de enero de 1433."
+      },
+      "details": {
+        "en": "For six years the ships had guarded Nanjing, where Zheng He became the city's defender in 1425 and oversaw the rebuilding of the Great Bao'en Temple. Then the Xuande Emperor, going against most of his court, ordered a seventh voyage. A day-by-day record survives: the fleet left Nanjing on 19 January 1431, waited at Changle for most of the year and left Fujian on 12 January 1432. It called at Champa, Surabaya, Palembang, Malacca and Semudera, sheltered for three days at the Nicobar Islands, where islanders paddled out in log boats to trade coconuts, and reached Beruwala in Ceylon on 28 November, Calicut on 10 December and Hormuz in January. Hong Bao led a squadron to Bengal, to Chittagong, Sonargaon and the capital Gaur, then on to Calicut. The two stones speak of over a hundred large ships, and the record counts about 27,550 men.",
+        "es": "Durante seis años los barcos habían custodiado Nankín, donde Zheng He fue nombrado defensor de la ciudad en 1425 y dirigió la reconstrucción del gran templo de Bao'en. Entonces el emperador Xuande, contra la opinión de casi toda su corte, ordenó un séptimo viaje. Se conserva un registro día por día: la flota salió de Nankín el 19 de enero de 1431, esperó en Changle buena parte del año y dejó Fujian el 12 de enero de 1432. Hizo escala en Champa, Surabaya, Palembang, Malaca y Semudera, se refugió tres días en las islas Nicobar, donde los isleños se acercaron en canoas de tronco para cambiar cocos, y llegó a Beruwala, en Ceilán, el 28 de noviembre, a Calicut el 10 de diciembre y a Ormuz en enero. Hong Bao llevó una escuadra a Bengala, a Chittagong, Sonargaon y la capital, Gaur, y luego a Calicut. Las dos piedras hablan de más de cien barcos grandes, y el registro cuenta unos 27 550 hombres."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [121.26, 31.51],
+            [121.7, 31.25],
+            [122.15, 30.85],
+            [122.75, 30.4],
+            [122.6, 29.5],
+            [122.15, 28.6],
+            [121.6, 27.85],
+            [120.85, 26.95],
+            [120.15, 26.3],
+            [119.75, 26.1],
+            [119.55, 25.98],
+            [119.75, 26.05],
+            [120.05, 25.3],
+            [118.95, 24.45],
+            [117.4, 23.25],
+            [115.6, 22.35],
+            [113.9, 21.85],
+            [112.0, 21.0],
+            [111.3, 19.9],
+            [110.85, 18.6],
+            [110.1, 16.8],
+            [109.55, 14.8],
+            [109.27, 13.75],
+            [109.6, 12.85],
+            [109.4, 12.0],
+            [109.15, 11.25],
+            [108.3, 10.55],
+            [107.3, 9.75],
+            [106.6, 8.45],
+            [106.9, 5.0],
+            [107.6, 1.5],
+            [108.5, -1.5],
+            [109.6, -3.6],
+            [111.0, -5.3],
+            [112.0, -6.55],
+            [112.6, -6.85],
+            [112.68, -7.05],
+            [112.3, -6.6],
+            [111.2, -6.25],
+            [110.9, -6.1],
+            [109.8, -6.55],
+            [108.5, -6.0],
+            [107.4, -5.75],
+            [106.6, -5.55],
+            [106.3, -4.3],
+            [106.25, -3.3],
+            [106.05, -3.0],
+            [105.9, -2.8],
+            [105.8, -2.55],
+            [105.6, -2.33],
+            [105.2, -2.15],
+            [105.0, -2.1],
+            [105.3, -1.2],
+            [105.05, -0.3],
+            [104.75, 0.55],
+            [104.85, 1.05],
+            [104.45, 1.3],
+            [104.0, 1.21],
+            [103.6, 1.17],
+            [103.2, 1.35],
+            [102.75, 1.75],
+            [102.3, 2.1],
+            [101.35, 2.8],
+            [100.55, 3.55],
+            [99.7, 4.25],
+            [98.85, 4.8],
+            [97.9, 5.25],
+            [97.25, 5.35],
+            [96.4, 5.45],
+            [95.45, 5.72],
+            [94.5, 6.5],
+            [93.5, 7.1],
+            [88.0, 5.9],
+            [81.5, 5.7],
+            [80.6, 5.75],
+            [80.25, 5.95],
+            [80.1, 6.2],
+            [79.95, 6.45],
+            [78.7, 7.1],
+            [77.6, 7.85],
+            [77.0, 8.25],
+            [76.45, 8.85],
+            [76.2, 9.5],
+            [76.12, 10.0],
+            [75.85, 10.6],
+            [75.72, 11.25],
+            [72.5, 11.9],
+            [66.0, 17.5],
+            [60.2, 22.2],
+            [59.3, 23.3],
+            [58.0, 24.4],
+            [57.0, 25.4],
+            [56.65, 26.3],
+            [56.48, 26.95]
+          ],
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "Seventh voyage, 1431–1433",
+            "es": "Séptimo viaje, 1431–1433"
+          }
+        },
+        {
+          "side": "squadrons",
+          "path": [
+            [97.25, 5.35],
+            [96.2, 7.5],
+            [95.3, 11.0],
+            [94.3, 14.8],
+            [93.4, 18.0],
+            [92.4, 20.3],
+            [91.75, 22.0],
+            [91.8, 22.25],
+            [90.5, 20.5],
+            [86.5, 15.0],
+            [83.0, 9.5],
+            [81.5, 6.0],
+            [80.6, 5.75],
+            [78.7, 7.0],
+            [77.6, 7.85],
+            [77.0, 8.25],
+            [76.45, 8.85],
+            [76.2, 9.5],
+            [76.12, 10.0],
+            [75.85, 10.6],
+            [75.72, 11.25]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Hong Bao to Bengal",
+            "es": "Hong Bao, a Bengala"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "liujiagang-inscription",
+          "name": {
+            "en": "The Liujiagang inscription",
+            "es": "La inscripción de Liujiagang"
+          },
+          "at": [121.258, 31.5],
+          "cat": "book",
+          "type": "work",
+          "date": "1431-03-14",
+          "place": {
+            "en": "Tianfei Palace, Liuhe, Taicang, China",
+            "es": "Palacio de Tianfei, Liuhe, Taicang (China)"
+          },
+          "text": {
+            "en": "A stone set up on 14 March 1431 at the temple of Tianfei by Zheng He and his fellow envoys. It recounts the six earlier voyages; the stone was lost, but its text survives in a Ming book.",
+            "es": "Una piedra colocada el 14 de marzo de 1431 en el templo de Tianfei por Zheng He y sus compañeros enviados. Relata los seis viajes anteriores; la piedra se perdió, pero su texto sobrevive en un libro Ming."
+          },
+          "wiki": {
+            "en": "Liuhe, Taicang",
+            "es": ""
+          }
+        },
+        {
+          "id": "changle-inscription",
+          "name": {
+            "en": "The Changle inscription",
+            "es": "La inscripción de Changle"
+          },
+          "at": [119.517, 25.965],
+          "cat": "book",
+          "type": "work",
+          "date": "1431-12",
+          "place": {
+            "en": "Tianfei Palace, Changle, Fujian, China",
+            "es": "Palacio de Tianfei, Changle, Fujian (China)"
+          },
+          "text": {
+            "en": "Raised at Changle in the winter of 1431–32, this stele dates each voyage and thanks Tianfei for a \"divine lantern\" that shone at the masthead in storms: what we call St. Elmo's fire.",
+            "es": "Levantada en Changle en el invierno de 1431–1432, esta estela fecha cada viaje y agradece a Tianfei una «linterna divina» que brillaba en lo alto del mástil durante las tormentas: lo que llamamos fuego de San Telmo."
+          },
+          "wiki": {
+            "en": "Mazu",
+            "es": "Matsu (mitología)"
+          }
+        },
+        {
+          "id": "hong-bao",
+          "name": {
+            "en": "Hong Bao",
+            "es": "Hong Bao"
+          },
+          "at": [91.8317, 22.335],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1432",
+          "place": {
+            "en": "Chittagong, Bangladesh",
+            "es": "Chittagong (Bangladés)"
+          },
+          "text": {
+            "en": "A eunuch envoy who led a squadron of the last voyage to Bengal and then on to Calicut, perhaps also to Arabia and Africa. From Calicut he sent seven men to Mecca.",
+            "es": "Un enviado eunuco que dirigió una escuadra del último viaje hasta Bengala y luego a Calicut, quizá también a Arabia y África. Desde Calicut envió a siete hombres a La Meca."
+          },
+          "wiki": {
+            "en": "Hong Bao",
+            "es": ""
+          }
+        },
+        {
+          "id": "porcelain-tower",
+          "name": {
+            "en": "The Porcelain Tower of Nanjing",
+            "es": "La torre de porcelana de Nankín"
+          },
+          "at": [118.7797, 32.0128],
+          "cat": "event",
+          "type": "structure",
+          "date": "1428",
+          "end": "1431",
+          "place": {
+            "en": "Nanjing, China",
+            "es": "Nankín (China)"
+          },
+          "text": {
+            "en": "While the fleet waited, Zheng He oversaw the rebuilding of the Great Bao'en Temple, finished in 1431. Its pagoda, faced with glazed porcelain, was later counted among the wonders of the world.",
+            "es": "Mientras la flota esperaba, Zheng He dirigió la reconstrucción del gran templo de Bao'en, terminado en 1431. Su pagoda, revestida de porcelana vidriada, llegó a contarse entre las maravillas del mundo."
+          },
+          "wiki": {
+            "en": "Porcelain Tower of Nanjing",
+            "es": "Torre de porcelana"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1433-07-07",
+      "title": {
+        "en": "Mecca, and a death at sea",
+        "es": "La Meca y la muerte del almirante"
+      },
+      "camera": {
+        "lon": 80.0,
+        "lat": 16.0,
+        "zoom": 1.5
+      },
+      "text": {
+        "en": "From Calicut, seven of Hong Bao's men sailed to Mecca, where Zheng He's forebears had gone as pilgrims. The fleet was home in July 1433; Zheng He had probably died on the way.",
+        "es": "Desde Calicut, siete hombres de Hong Bao navegaron hasta La Meca, adonde habían peregrinado los antepasados de Zheng He. La flota volvió en julio de 1433; Zheng He probablemente había muerto en el camino."
+      },
+      "details": {
+        "en": "Ma Huan wrote that Hong Bao, seeing that Calicut was sending men to Mecca, sent seven with them on a Calicut ship; the journey there and back took a year, and they brought home giraffes, lions and ostriches. Ma Huan was probably one of them; Zheng He never made the pilgrimage himself. The main fleet left Hormuz on 9 March 1433, called at Calicut and ran before the southwest monsoon to Sumatra and Malacca, where the squadrons regrouped. It reached Taicang on 7 July, and on 22 July its officers came to the court in Beijing; in September envoys of 11 countries, Mecca among them, presented their gifts. The official histories do not record Zheng He's death. Most historians think he died in 1433 on the voyage home, probably near Calicut, and was buried at sea; others say he died in Nanjing in 1435. His tomb on Cattle Head Hill in Nanjing is empty.",
+        "es": "Ma Huan escribió que Hong Bao, al ver que Calicut enviaba hombres a La Meca, mandó a siete con ellos en un barco de Calicut; el viaje de ida y vuelta duró un año, y trajeron jirafas, leones y avestruces. Ma Huan probablemente era uno de ellos; Zheng He nunca hizo la peregrinación. La flota principal salió de Ormuz el 9 de marzo de 1433, hizo escala en Calicut y avanzó con el monzón del suroeste hasta Sumatra y Malaca, donde se reunieron las escuadras. Llegó a Taicang el 7 de julio, y el 22 de julio sus oficiales se presentaron en la corte de Pekín; en septiembre, enviados de 11 países, entre ellos La Meca, entregaron sus regalos. Las historias oficiales no registran la muerte de Zheng He. La mayoría de los historiadores cree que murió en 1433 en el viaje de regreso, probablemente cerca de Calicut, y que fue sepultado en el mar; otros dicen que murió en Nankín en 1435. Su tumba en la colina de la Cabeza de Buey, en Nankín, está vacía."
+      },
+      "moves": [
+        {
+          "side": "fleet",
+          "path": [
+            [56.48, 26.95],
+            [56.65, 26.3],
+            [57.0, 25.4],
+            [58.0, 24.4],
+            [59.3, 23.3],
+            [60.2, 22.2],
+            [66.0, 17.5],
+            [72.5, 11.9],
+            [75.72, 11.25],
+            [75.85, 10.6],
+            [76.12, 10.0],
+            [76.2, 9.5],
+            [76.45, 8.85],
+            [77.0, 8.25],
+            [77.6, 7.85],
+            [78.7, 7.0],
+            [80.6, 5.75],
+            [81.5, 5.7],
+            [88.0, 5.9],
+            [94.5, 6.2],
+            [95.45, 5.72],
+            [96.4, 5.45],
+            [97.25, 5.35],
+            [97.9, 5.25],
+            [98.85, 4.8],
+            [99.7, 4.25],
+            [100.55, 3.55],
+            [101.35, 2.8],
+            [102.3, 2.1],
+            [102.75, 1.75],
+            [103.2, 1.35],
+            [103.6, 1.17],
+            [104.0, 1.21],
+            [104.45, 1.3],
+            [104.85, 1.6],
+            [105.6, 3.2],
+            [106.3, 5.5],
+            [106.6, 8.45],
+            [107.3, 9.75],
+            [108.3, 10.55],
+            [109.15, 11.25],
+            [109.4, 12.0],
+            [109.6, 12.85],
+            [109.27, 13.75],
+            [109.55, 14.8],
+            [110.1, 16.8],
+            [110.85, 18.6],
+            [111.3, 19.9],
+            [112.0, 21.0],
+            [113.9, 21.85],
+            [115.6, 22.35],
+            [117.4, 23.25],
+            [118.95, 24.45],
+            [120.05, 25.3],
+            [119.75, 26.05],
+            [119.55, 25.98],
+            [119.75, 26.1],
+            [120.15, 26.3],
+            [120.85, 26.95],
+            [121.6, 27.85],
+            [122.15, 28.6],
+            [122.6, 29.5],
+            [122.75, 30.4],
+            [122.15, 30.85],
+            [121.7, 31.25],
+            [121.26, 31.51]
+          ],
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "Homeward, 1433",
+            "es": "De regreso, 1433"
+          }
+        },
+        {
+          "side": "squadrons",
+          "path": [
+            [75.72, 11.25],
+            [70.0, 12.6],
+            [60.0, 13.4],
+            [54.0, 13.2],
+            [51.0, 12.8],
+            [48.0, 12.6],
+            [45.6, 12.45],
+            [43.45, 12.62],
+            [43.0, 13.1],
+            [42.45, 13.85],
+            [41.6, 15.4],
+            [40.4, 17.5],
+            [39.3, 19.6],
+            [39.1, 21.4]
+          ],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "Seven men to Mecca",
+            "es": "Siete hombres a La Meca"
+          }
+        },
+        {
+          "side": "squadrons",
+          "path": [
+            [39.17, 21.49],
+            [39.5, 21.45],
+            [39.83, 21.42]
+          ],
+          "by": "land",
+          "icon": "🐪"
+        }
+      ],
+      "places": [
+        {
+          "id": "mecca",
+          "name": {
+            "en": "Mecca",
+            "es": "La Meca"
+          },
+          "at": [39.8262, 21.4225],
+          "cat": "city",
+          "type": "place",
+          "date": "1433",
+          "place": {
+            "en": "Mecca, Saudi Arabia",
+            "es": "La Meca (Arabia Saudita)"
+          },
+          "text": {
+            "en": "Islam's holiest city. Seven men of the fleet, probably with the interpreter Ma Huan, reached it on a Calicut ship by way of Jeddah, and its ruler sent envoys to China.",
+            "es": "La ciudad más sagrada del islam. Siete hombres de la flota, probablemente con el intérprete Ma Huan, llegaron en un barco de Calicut por Yeda, y su soberano envió embajadores a China."
+          },
+          "wiki": {
+            "en": "Mecca",
+            "es": "La Meca"
+          }
+        },
+        {
+          "id": "zheng-he-death",
+          "name": {
+            "en": "The death of Zheng He",
+            "es": "La muerte de Zheng He"
+          },
+          "at": [75.5, 11.3],
+          "cat": "event",
+          "icon": "🕯️",
+          "type": "event",
+          "date": "1433",
+          "place": {
+            "en": "At sea off Calicut, India (probably)",
+            "es": "En el mar frente a Calicut, India (probablemente)"
+          },
+          "text": {
+            "en": "Zheng He probably died in 1433 on the voyage home and was buried at sea off the Malabar Coast; some historians think he died in Nanjing in 1435. His tomb in Nanjing is empty.",
+            "es": "Zheng He probablemente murió en 1433, en el viaje de regreso, y fue sepultado en el mar frente a la costa de Malabar; algunos historiadores creen que murió en Nankín en 1435. Su tumba en Nankín está vacía."
+          },
+          "wiki": {
+            "en": "Zheng He",
+            "es": "Zheng He"
+          }
+        },
+        {
+          "id": "calicut",
+          "name": {
+            "en": "Calicut",
+            "es": "Calicut"
+          },
+          "at": [75.7804, 11.25],
+          "cat": "port",
+          "type": "place",
+          "date": "1406",
+          "place": {
+            "en": "Kozhikode, Kerala, India",
+            "es": "Kozhikode, Kerala (India)"
+          },
+          "text": {
+            "en": "The great pepper port of the Malabar Coast, ruled by the Zamorin. Ma Huan called it the \"great country of the Western Ocean\"; every voyage called here, and the later ones sailed on from it.",
+            "es": "El gran puerto de la pimienta de la costa de Malabar, gobernado por el samorín. Ma Huan lo llamó «el gran país del Océano Occidental»; todos los viajes hicieron escala aquí, y los últimos siguieron desde aquí más al oeste."
+          },
+          "details": {
+            "en": "Ma Huan admired how its officials checked weights and measures, counted the 20 or 30 mosques built for its Muslim merchants and watched traders reckon prices on their fingers and toes. The second voyage formally made its ruler a king with a Ming patent and left a stone tablet in the city. On the later voyages the squadrons met again at Calicut, and Zheng He probably died near here in 1433.",
+            "es": "Ma Huan admiró cómo sus funcionarios vigilaban pesos y medidas, contó las 20 o 30 mezquitas de sus mercaderes musulmanes y vio a los comerciantes calcular precios con los dedos de las manos y de los pies. El segundo viaje nombró formalmente rey a su soberano con un título Ming y dejó una lápida en la ciudad. En los últimos viajes las escuadras volvían a reunirse en Calicut, y Zheng He probablemente murió cerca de aquí en 1433."
+          },
+          "wiki": {
+            "en": "Kozhikode",
+            "es": "Kozhikode"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1435",
+      "title": {
+        "en": "Why the voyages stopped",
+        "es": "Por qué cesaron los viajes"
+      },
+      "camera": {
+        "lon": 114.0,
+        "lat": 34.0,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "No fleet sailed again. Officials who resented the eunuchs' power took charge in 1435 and broke up the seagoing ships, and the empire turned to its Mongol frontier.",
+        "es": "Ninguna flota volvió a zarpar. Los funcionarios, molestos con el poder de los eunucos, tomaron el control en 1435 y desmantelaron los barcos de altura, y el imperio se volcó hacia su frontera mongola."
+      },
+      "details": {
+        "en": "Nobody knows exactly why the voyages ended. The old story blames Confucian officials who scorned trade and foreign curiosities, but historians also point to the rivalry between the court eunuchs, who ran the fleets, and the civil officials, who had to find the money; to the move of the capital to Beijing, far from the sea; and to the costly wars against the Mongols. When the Xuande Emperor died in 1435, leaving an eight-year-old heir, officials cancelled further voyages, broke up the seagoing ships or made them unfit for the sea, and stopped carrying foreign envoys home. In 1449 Mongol horsemen captured the emperor at Tumu, and the Ming later rebuilt the Great Wall. Chinese merchants kept trading across Southeast Asia, but the ban on private sea trade drove many into smuggling and piracy.",
+        "es": "Nadie sabe con exactitud por qué terminaron los viajes. La versión clásica culpa a los funcionarios confucianos, que despreciaban el comercio y las rarezas extranjeras, pero los historiadores también señalan la rivalidad entre los eunucos de la corte, que dirigían las flotas, y los funcionarios civiles, que debían conseguir el dinero; el traslado de la capital a Pekín, lejos del mar, y las costosas guerras contra los mongoles. Cuando el emperador Xuande murió en 1435, dejando un heredero de ocho años, los funcionarios cancelaron nuevos viajes, desarmaron los barcos de altura o los dejaron inservibles para el mar, y dejaron de llevar a casa a los enviados extranjeros. En 1449 jinetes mongoles capturaron al emperador en Tumu, y más tarde los Ming reconstruyeron la Gran Muralla. Los mercaderes chinos siguieron comerciando por el Sudeste Asiático, pero la prohibición del comercio marítimo privado empujó a muchos al contrabando y la piratería."
+      },
+      "places": [
+        {
+          "id": "haijin",
+          "name": {
+            "en": "The sea ban (haijin)",
+            "es": "La prohibición marítima (haijin)"
+          },
+          "at": [118.8, 32.075],
+          "cat": "event",
+          "type": "event",
+          "date": "1371",
+          "place": {
+            "en": "Ordered from Nanjing, China",
+            "es": "Ordenada desde Nankín (China)"
+          },
+          "text": {
+            "en": "From 1371 the Ming banned private trade by sea. The treasure fleets were the state's own trade; after they ended, the ban drove many coastal people into smuggling and piracy until it was lifted.",
+            "es": "Desde 1371 los Ming prohibieron el comercio marítimo privado. Las flotas del tesoro eran el comercio del Estado; al terminar, la prohibición empujó a muchos costeños al contrabando y la piratería hasta que se levantó."
+          },
+          "wiki": {
+            "en": "Haijin",
+            "es": "Haijin"
+          }
+        },
+        {
+          "id": "tumu-crisis",
+          "name": {
+            "en": "The Tumu Crisis",
+            "es": "La crisis de Tumu"
+          },
+          "at": [115.6, 40.3833],
+          "cat": "event",
+          "type": "event",
+          "date": "1449-09-01",
+          "place": {
+            "en": "Huailai, Hebei, China",
+            "es": "Huailai, Hebei (China)"
+          },
+          "text": {
+            "en": "In 1449 Oirat Mongol horsemen destroyed a Ming army near Tumu fortress and captured the Zhengtong Emperor. The northern frontier, not the sea, became the empire's great worry.",
+            "es": "En 1449, jinetes mongoles oirates destruyeron un ejército Ming cerca del fuerte de Tumu y capturaron al emperador Zhengtong. La frontera del norte, y no el mar, se volvió la gran preocupación del imperio."
+          },
+          "wiki": {
+            "en": "Tumu Crisis",
+            "es": "Crisis de Tumu"
+          }
+        },
+        {
+          "id": "lost-records",
+          "name": {
+            "en": "The lost records",
+            "es": "Los registros perdidos"
+          },
+          "at": [116.41, 39.9],
+          "cat": "event",
+          "type": "event",
+          "date": "1477",
+          "place": {
+            "en": "Ministry of War, Beijing, China",
+            "es": "Ministerio de la Guerra, Pekín (China)"
+          },
+          "text": {
+            "en": "Ming writers told that in the 1470s the official Liu Daxia hid and burned the voyage archives as \"deceitful exaggerations\". Historians doubt it; the records may have been lost later.",
+            "es": "Escritores Ming contaron que en la década de 1470 el funcionario Liu Daxia escondió y quemó los archivos de los viajes por ser «exageraciones engañosas». Los historiadores lo dudan; quizá se perdieron después."
+          },
+          "wiki": {
+            "en": "Ming treasure voyages",
+            "es": "Viajes del tesoro de la dinastía Ming"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1451",
+      "title": {
+        "en": "Ma Huan's book",
+        "es": "El libro de Ma Huan"
+      },
+      "camera": {
+        "lon": 98.0,
+        "lat": 18.0,
+        "zoom": 1.7
+      },
+      "text": {
+        "en": "In 1451 Ma Huan's \"Overall Survey of the Ocean's Shores\" was printed: an eyewitness guide to the lands the fleets had visited, from Champa to Mecca.",
+        "es": "En 1451 se imprimió la «Descripción general de las costas del océano», de Ma Huan: una guía de testigo de las tierras que habían visitado las flotas, de Champa a La Meca."
+      },
+      "details": {
+        "en": "Ma Huan began arranging his notes after his first voyage and wrote a preface in 1416; with his shipmate Guo Chongli he kept adding to the book until it was printed. He described Calicut's mosques and its traders counting on their fingers and toes, the fleet's stockade at Malacca, and Bengal's walled cities with their orderly bazaars. Two other men of the fleet wrote books too: the soldier Fei Xin, whose \"Description of the Starry Raft\" has a preface dated 1436, and Gong Zhen, Zheng He's secretary on the last voyage. The fleet's sailing charts survived in a military book of 1621 as the Mao Kun map. Long left out of the official histories, Zheng He became famous again after 1904; since 2005 China has marked 11 July, the day of the first voyage's edict, as Maritime Day.",
+        "es": "Ma Huan empezó a ordenar sus notas después de su primer viaje y escribió un prefacio en 1416; con su compañero de viaje Guo Chongli siguió ampliando el libro hasta que se imprimió. Describió las mezquitas de Calicut y a sus comerciantes que contaban con los dedos de las manos y de los pies, la empalizada de la flota en Malaca y las ciudades amuralladas de Bengala con sus bazares ordenados. Otros dos hombres de la flota también escribieron libros: el soldado Fei Xin, cuya «Descripción de la balsa estrellada» tiene un prefacio de 1436, y Gong Zhen, secretario de Zheng He en el último viaje. Las cartas de navegación de la flota sobrevivieron en un libro militar de 1621: el mapa de Mao Kun. Olvidado durante siglos por las historias oficiales, Zheng He volvió a ser famoso después de 1904; desde 2005, China celebra el 11 de julio, día del edicto del primer viaje, como Día Marítimo."
+      },
+      "places": [
+        {
+          "id": "yingya-shenglan",
+          "name": {
+            "en": "Yingya Shenglan",
+            "es": "Yingya Shenglan"
+          },
+          "at": [120.592, 30.012],
+          "cat": "book",
+          "type": "work",
+          "date": "1451",
+          "place": {
+            "en": "Written by Ma Huan of Shaoxing, China",
+            "es": "Escrito por Ma Huan, de Shaoxing (China)"
+          },
+          "text": {
+            "en": "\"The Overall Survey of the Ocean's Shores\": Ma Huan's eyewitness account of the lands the fleet visited, from Champa to Mecca, begun in 1416 and printed in 1451.",
+            "es": "«Descripción general de las costas del océano»: el relato de testigo de Ma Huan sobre las tierras que visitó la flota, de Champa a La Meca, comenzado en 1416 e impreso en 1451."
+          },
+          "wiki": {
+            "en": "Yingya Shenglan",
+            "es": ""
+          }
+        },
+        {
+          "id": "xingcha-shenglan",
+          "name": {
+            "en": "Xingcha Shenglan",
+            "es": "Xingcha Shenglan"
+          },
+          "at": [121.13, 31.46],
+          "cat": "book",
+          "type": "work",
+          "date": "1436",
+          "place": {
+            "en": "Taicang, Jiangsu, China",
+            "es": "Taicang, Jiangsu (China)"
+          },
+          "text": {
+            "en": "\"Description of the Starry Raft\", by Fei Xin, a poor soldier of the Taicang garrison who sailed with the fleet four times and taught himself Arabic. Its preface is dated 1436.",
+            "es": "«Descripción de la balsa estrellada», de Fei Xin, un soldado pobre de la guarnición de Taicang que navegó cuatro veces con la flota y aprendió árabe por su cuenta. Su prefacio está fechado en 1436."
+          },
+          "wiki": {
+            "en": "Fei Xin",
+            "es": ""
+          }
+        },
+        {
+          "id": "mao-kun-map",
+          "name": {
+            "en": "The Mao Kun map",
+            "es": "El mapa de Mao Kun"
+          },
+          "at": [118.7969, 32.0603],
+          "cat": "book",
+          "type": "work",
+          "date": "1621",
+          "place": {
+            "en": "Published in the Wubei Zhi, China",
+            "es": "Publicado en el Wubei Zhi (China)"
+          },
+          "text": {
+            "en": "The fleet's sailing charts, printed in a military book compiled in 1621: a 5.6-metre strip from Nanjing to Hormuz and East Africa, with compass bearings, sailing times and star sightings.",
+            "es": "Las cartas de navegación de la flota, impresas en un libro militar compilado en 1621: una tira de 5,6 metros de Nankín a Ormuz y África oriental, con rumbos de brújula, tiempos de navegación y alturas de estrellas."
+          },
+          "wiki": {
+            "en": "Mao Kun map",
+            "es": "Mapa de Mao Kun"
+          }
+        },
+        {
+          "id": "ma-huan",
+          "name": {
+            "en": "Ma Huan",
+            "es": "Ma Huan"
+          },
+          "at": [120.58, 30.0],
+          "cat": "traveller",
+          "type": "person",
+          "date": "1413",
+          "life": [
+            "1380",
+            "1460"
+          ],
+          "place": {
+            "en": "Shaoxing, Zhejiang, China",
+            "es": "Shaoxing, Zhejiang (China)"
+          },
+          "text": {
+            "en": "A Muslim from Zhejiang who learned Arabic and sailed as an interpreter on the fourth, sixth and seventh voyages. His notes became the best eyewitness account of the lands the fleet visited.",
+            "es": "Un musulmán de Zhejiang que aprendió árabe y viajó como intérprete en el cuarto, el sexto y el séptimo viaje. Sus notas son el mejor relato de testigo sobre las tierras que visitó la flota."
+          },
+          "wiki": {
+            "en": "Ma Huan",
+            "es": "Ma Huan"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Zheng He's seven voyages, the greatest fleets of their age, carried Ming power from Champa to the Swahili coast and drew some 30 states into China's tribute system, by gifts, trade and force. Ports such as Malacca grew under their protection. When the voyages ended, Chinese merchants kept sailing, and when Portuguese ships reached Calicut in 1498, people there still told of pale strangers who had come in giant ships.",
+    "es": "Los siete viajes de Zheng He, las mayores flotas de su tiempo, llevaron el poder Ming de Champa a la costa suajili y sumaron unos 30 estados al sistema de tributos de China, con regalos, comercio y fuerza. Puertos como Malaca crecieron bajo su protección. Cuando los viajes terminaron, los mercaderes chinos siguieron navegando, y cuando los barcos portugueses llegaron a Calicut en 1498, la gente aún hablaba de unos extranjeros de piel clara que habían venido en barcos gigantes."
+  },
+  "sources": [
+    {
+      "title": "Zheng He (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zheng_He"
+    },
+    {
+      "title": "Ming treasure voyages (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ming_treasure_voyages"
+    },
+    {
+      "title": "Chinese treasure ship (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chinese_treasure_ship"
+    },
+    {
+      "title": "Yongle Emperor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yongle_Emperor"
+    },
+    {
+      "title": "Jingnan campaign (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jingnan_campaign"
+    },
+    {
+      "title": "Galle Trilingual Inscription (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Galle_Trilingual_Inscription"
+    },
+    {
+      "title": "Ming–Kotte War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ming–Kotte_War"
+    },
+    {
+      "title": "Chen Zuyi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chen_Zuyi"
+    },
+    {
+      "title": "Malacca Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Malacca_Sultanate"
+    },
+    {
+      "title": "Kozhikode (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kozhikode"
+    },
+    {
+      "title": "Kingdom of Cochin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Cochin"
+    },
+    {
+      "title": "Samudera Pasai Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Samudera_Pasai_Sultanate"
+    },
+    {
+      "title": "Kingdom of Hormuz (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Hormuz"
+    },
+    {
+      "title": "Bengal Sultanate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bengal_Sultanate"
+    },
+    {
+      "title": "Qilin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Qilin"
+    },
+    {
+      "title": "Malindi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Malindi"
+    },
+    {
+      "title": "Malindi Kingdom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Malindi_Kingdom"
+    },
+    {
+      "title": "Mogadishu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mogadishu"
+    },
+    {
+      "title": "Barawa (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Barawa"
+    },
+    {
+      "title": "Aden (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aden"
+    },
+    {
+      "title": "Dhofar Governorate (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dhofar_Governorate"
+    },
+    {
+      "title": "Hong Bao (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hong_Bao"
+    },
+    {
+      "title": "Ma Huan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ma_Huan"
+    },
+    {
+      "title": "Yingya Shenglan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yingya_Shenglan"
+    },
+    {
+      "title": "Fei Xin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fei_Xin"
+    },
+    {
+      "title": "Mao Kun map (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mao_Kun_map"
+    },
+    {
+      "title": "Porcelain Tower of Nanjing (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Porcelain_Tower_of_Nanjing"
+    },
+    {
+      "title": "Mazu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mazu"
+    },
+    {
+      "title": "Haijin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Haijin"
+    },
+    {
+      "title": "Tumu Crisis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tumu_Crisis"
+    },
+    {
+      "title": "Liuhe, Taicang (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Liuhe,_Taicang"
+    }
+  ]
+}
