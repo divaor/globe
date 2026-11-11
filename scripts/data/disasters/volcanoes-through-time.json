@@ -1,0 +1,410 @@
+{
+  "id": "volcanoes-through-time",
+  "name": { "en": "Volcanoes through time", "es": "Los volcanes a través del tiempo" },
+  "icon": "🌋",
+  "era": "prehistory",
+  "region": { "en": "The whole world", "es": "Todo el mundo" },
+  "start": "-74000",
+  "end": "2025",
+  "summary": {
+    "en": "Seventy-four thousand years of great eruptions, from the Toba supereruption to Hunga Tonga: how volcanoes buried towns, chilled the climate and brought hunger to distant lands, and how people learned to watch them and get out of the way.",
+    "es": "Setenta y cuatro mil años de grandes erupciones, de la supererupción del Toba al Hunga Tonga: cómo los volcanes sepultaron ciudades, enfriaron el clima y llevaron el hambre a tierras lejanas, y cómo la gente aprendió a vigilarlos y a ponerse a salvo."
+  },
+  "catalog": "volcanoes",
+  "camera": { "lon": 88, "lat": 8, "zoom": 1.4 },
+  "sides": [
+    { "id": "ash", "name": { "en": "Volcanic ash", "es": "Ceniza volcánica" }, "color": "#5d6d7e" },
+    { "id": "haze", "name": { "en": "Laki's haze (1783)", "es": "Neblina del Laki (1783)" }, "color": "#d4a017" },
+    { "id": "veil", "name": { "en": "Sulphate veil", "es": "Velo de sulfatos" }, "color": "#7d3c98" }
+  ],
+  "steps": [
+    {
+      "date": "-74000",
+      "title": { "en": "A supereruption in Sumatra", "es": "Una supererupción en Sumatra" },
+      "camera": { "lon": 88, "lat": 8, "zoom": 1.4 },
+      "text": {
+        "en": "About 74,000 years ago Toba, in Sumatra, produced the largest explosive eruption of the last 2.6 million years (VEI 8). Its ash fell from the South China Sea to India and the Arabian Sea.",
+        "es": "Hace unos 74 000 años, el Toba, en Sumatra, tuvo la mayor erupción explosiva de los últimos 2,6 millones de años (IEV 8). Su ceniza cayó del mar de China Meridional a la India y el mar Arábigo."
+      },
+      "details": {
+        "en": "Volcanoes shaped life on Earth long before people: the lava floods of the Siberian Traps set off the Great Dying about 252 million years ago. Toba is the largest eruption in the time of our species, and traces of its ash have been found as far as Africa. In perhaps a week or two it threw out thousands of cubic kilometres of rock and ash, and its collapsed crater, 100 km long, now holds Lake Toba. The grey area shows, roughly, where its ash has been found. Some scientists argued that the volcanic winter that followed nearly wiped out humanity. But lake mud in Malawi shows little cooling there, and in southern India people made the same kinds of stone tools below and above the ash. Most researchers now think humans came through, even if the cold years were hard.",
+        "es": "Los volcanes moldearon la vida en la Tierra mucho antes que las personas: las coladas de lava de los Traps Siberianos desataron la Gran Mortandad hace unos 252 millones de años. El Toba es la mayor erupción desde que existe nuestra especie, y se han hallado rastros de su ceniza hasta en África. En quizá una o dos semanas expulsó miles de kilómetros cúbicos de roca y ceniza, y su cráter hundido, de 100 km de largo, guarda hoy el lago Toba. La zona gris muestra, a grandes rasgos, dónde se ha hallado su ceniza. Algunos científicos sostuvieron que el invierno volcánico que siguió casi acabó con la humanidad. Pero el lodo del lago Malaui muestra allí poco enfriamiento, y en el sur de la India la gente hizo el mismo tipo de herramientas de piedra por debajo y por encima de la ceniza. Hoy la mayoría de los investigadores cree que los humanos sobrevivieron, aunque los años fríos fueran duros."
+      },
+      "control": {
+        "ash": { "poly": [[56, 18], [62, 24], [68, 27], [76, 30], [85, 29], [92, 27], [100, 23], [108, 22], [116, 19], [120, 12], [118, 3], [110, -4], [100, -10], [88, -14], [75, -14], [64, -10], [58, -3], [55, 8], [56, 18]] }
+      },
+      "moves": [
+        { "side": "ash", "path": [[98.88, 2.68], [90, 8], [80, 13], [70, 16]], "label": { "en": "Most of the ash fell to the west", "es": "La mayor parte de la ceniza cayó al oeste" } }
+      ],
+      "show": ["toba", "jwalapuram"]
+    },
+    {
+      "date": "-1600",
+      "title": { "en": "Thera and the Minoans", "es": "Tera y los minoicos" },
+      "camera": { "lon": 25.4, "lat": 36.25, "zoom": 22 },
+      "control": { "ash": null },
+      "text": {
+        "en": "Around 1600 BC the island volcano of Thera, today's Santorini, exploded (VEI 7). The people of Akrotiri seem to have fled after early tremors and ash; then tsunamis struck the coast of Crete.",
+        "es": "Hacia el 1600 a. C., el volcán de la isla de Tera, la actual Santorini, estalló (IEV 7). La gente de Acrotiri parece haber huido tras los primeros temblores y cenizas; luego los tsunamis golpearon la costa de Creta."
+      },
+      "details": {
+        "en": "The Bronze Age Aegean was the world of the Minoans of Crete, whose ships linked Egypt, the Levant and the islands. On Thera, Akrotiri was a rich town of painted houses. A first fall of fine ash, and perhaps earthquakes, gave its people time to leave. Then a column 30–35 km high rose, pyroclastic flows poured into the sea, and the centre of the island collapsed, leaving the flooded caldera that ships sail into today. Ash fell to the east as far as Anatolia, and waves up to 9 m high hit Crete. The Minoans recovered, and their palaces flourished for a time. The date is one of archaeology's great arguments: radiocarbon points to the late 1600s BC, the links with Egypt's history to the 1500s.",
+        "es": "El Egeo de la Edad del Bronce era el mundo de los minoicos de Creta, cuyos barcos unían Egipto, el Levante y las islas. En Tera, Acrotiri era una ciudad rica de casas pintadas. Una primera caída de ceniza fina, y quizá unos sismos, dieron tiempo a su gente para irse. Luego se alzó una columna de 30 a 35 km, los flujos piroclásticos se volcaron al mar y el centro de la isla se hundió, dejando la caldera inundada en la que hoy entran los barcos. La ceniza cayó hacia el este hasta Anatolia, y olas de hasta 9 m golpearon Creta. Los minoicos se recuperaron, y sus palacios florecieron un tiempo. La fecha es una de las grandes discusiones de la arqueología: el radiocarbono apunta a finales del siglo XVII a. C., y los vínculos con la historia de Egipto, al siglo XVI."
+      },
+      "show": ["thera", "akrotiri"]
+    },
+    {
+      "date": "79",
+      "title": { "en": "Vesuvius and Pliny", "es": "El Vesubio y Plinio" },
+      "camera": { "lon": 14.3, "lat": 40.8, "zoom": 30 },
+      "text": {
+        "en": "In AD 79 Vesuvius buried Pompeii and Herculaneum. Watching from across the bay, Pliny the Younger left the first eyewitness account of an eruption; his uncle, Pliny the Elder, died trying to help.",
+        "es": "En el 79 d. C., el Vesubio sepultó Pompeya y Herculano. Plinio el Joven, que lo vio desde el otro lado del golfo, dejó el primer relato de un testigo de una erupción; su tío, Plinio el Viejo, murió intentando ayudar."
+      },
+      "details": {
+        "en": "Vesuvius had been quiet for about three centuries, and gardens and vineyards covered its slopes. An earthquake had damaged Pompeii in AD 62, and the small tremors before the eruption alarmed no one. On the first day a column of pumice rose 33 km and rained on Pompeii, crushing roofs; most people had time to flee. Then the column collapsed into pyroclastic surges, clouds of hot gas and ash that swept over Herculaneum and Pompeii and killed those who remained. The same ash kept the towns for more than 1,600 years, until digs began in the 1700s. Pyroclastic flows and surges, faster than anyone can run, are the deadliest of all volcanic dangers.",
+        "es": "El Vesubio llevaba unos tres siglos tranquilo, y jardines y viñedos cubrían sus laderas. Un terremoto había dañado Pompeya en el 62 d. C., y los pequeños temblores antes de la erupción no alarmaron a nadie. El primer día, una columna de piedra pómez subió 33 km y llovió sobre Pompeya, hundiendo techos; la mayoría de la gente tuvo tiempo de huir. Luego la columna se desplomó en oleadas piroclásticas, nubes de gas caliente y ceniza que barrieron Herculano y Pompeya y mataron a quienes se habían quedado. Esa misma ceniza conservó las ciudades durante más de 1600 años, hasta que empezaron las excavaciones en el siglo XVIII. Los flujos y oleadas piroclásticos, más rápidos que cualquier persona corriendo, son el más mortífero de los peligros volcánicos."
+      },
+      "show": ["vesuvius", "pompeii", "herculaneum", "pliny-the-younger"]
+    },
+    {
+      "date": "536",
+      "title": { "en": "The year of the dim sun", "es": "El año del sol apagado" },
+      "camera": { "lon": -30, "lat": 32, "zoom": 1 },
+      "text": {
+        "en": "In 536 a dry fog dimmed the sun from the Mediterranean to China, and summers stayed cold for years. Ice cores show eruptions in 536 and 540, but which volcanoes they were is still debated.",
+        "es": "En 536, una niebla seca atenuó el sol del Mediterráneo a China, y los veranos siguieron fríos durante años. Los núcleos de hielo muestran erupciones en 536 y 540, pero aún se discute qué volcanes fueron."
+      },
+      "details": {
+        "en": "This is how eruptions change the weather. A big explosive eruption throws sulphur dioxide high into the stratosphere, above the rain. There it turns into tiny droplets of sulphuric acid, a veil that reflects sunlight for a year or two and cools the ground below. In 536 Procopius in Constantinople and Cassiodorus in Italy described a pale sun without heat, and harvests failed from Ireland to China. Ilopango, in El Salvador, was long suspected: its great eruption buried Maya fields and towns, but it has now been dated to about 431. Recent studies point instead to eruptions in North America.",
+        "es": "Así cambian el tiempo las erupciones. Una gran erupción explosiva lanza dióxido de azufre a lo alto de la estratosfera, por encima de la lluvia. Allí se convierte en diminutas gotas de ácido sulfúrico, un velo que refleja la luz del sol durante uno o dos años y enfría el suelo de abajo. En 536, Procopio en Constantinopla y Casiodoro en Italia describieron un sol pálido y sin calor, y las cosechas se perdieron de Irlanda a China. Durante mucho tiempo se sospechó del Ilopango, en El Salvador: su gran erupción sepultó campos y pueblos mayas, pero hoy está fechada hacia el 431. Los estudios recientes apuntan más bien a erupciones en América del Norte."
+      },
+      "show": ["ilopango", "volcanic-winter-536"]
+    },
+    {
+      "date": "1257",
+      "title": { "en": "Eruptions written in the ice", "es": "Erupciones escritas en el hielo" },
+      "camera": { "lon": 145, "lat": 5, "zoom": 1.1 },
+      "text": {
+        "en": "Greenland and Antarctic ice keeps a yearly record of volcanic sulphur. With tree rings, it helped date Taupō (about 232), Paektu (946) and the giant of 1257, traced in 2013 to Samalas.",
+        "es": "El hielo de Groenlandia y la Antártida guarda un registro anual del azufre volcánico. Con los anillos de los árboles, ayudó a fechar el Taupo (hacia 232), el Paektu (946) y el gigante de 1257, atribuido en 2013 al Samalas."
+      },
+      "details": {
+        "en": "Each year's snow traps a little of what is in the air, so ice cores drilled deep into the ice sheets hold a calendar of eruptions. Taupō, in New Zealand, erupted in a land that no human had yet reached. Paektu, on today's border between China and North Korea, dropped ash on Japan and left Heaven Lake in its crater; a tree it killed, with 172 rings after a carbon spike of the year 774, fixed the date. For decades the biggest sulphur spike of the Middle Ages, from about 1257, had no known volcano, until scientists matched it to Samalas, on Lombok, whose destruction of the town of Pamatan is told in palm-leaf chronicles. Its cold years may have helped start the Little Ice Age.",
+        "es": "La nieve de cada año atrapa un poco de lo que hay en el aire, así que los núcleos de hielo perforados en los casquetes guardan un calendario de erupciones. El Taupo, en Nueva Zelanda, entró en erupción en una tierra adonde aún no había llegado ningún ser humano. El Paektu, en la actual frontera entre China y Corea del Norte, dejó caer ceniza sobre Japón y el lago del Cielo en su cráter; un árbol que mató, con 172 anillos después de un pico de carbono del año 774, fijó la fecha. Durante décadas, el mayor pico de azufre de la Edad Media, de hacia 1257, no tuvo volcán conocido, hasta que los científicos lo relacionaron con el Samalas, en Lombok, cuya destrucción de la ciudad de Pamatan cuentan unas crónicas en hojas de palma. Sus años fríos quizá ayudaron a iniciar la Pequeña Edad de Hielo."
+      },
+      "show": ["taupo-hatepe", "paektu-946", "samalas-1257"]
+    },
+    {
+      "date": "1600-02-19",
+      "title": { "en": "A volcano and a famine", "es": "Un volcán y una hambruna" },
+      "camera": { "lon": -17, "lat": 20, "zoom": 1 },
+      "text": {
+        "en": "In February 1600 Huaynaputina, in southern Peru, buried villages and wrapped Arequipa in ash (VEI 6). Its veil chilled the north, and in Russia failed harvests brought a famine that killed perhaps two million.",
+        "es": "En febrero de 1600, el Huaynaputina, en el sur del Perú, sepultó pueblos y envolvió Arequipa en ceniza (IEV 6). Su velo enfrió el norte, y en Rusia las cosechas perdidas trajeron una hambruna que mató quizá a dos millones."
+      },
+      "details": {
+        "en": "Huaynaputina hardly looks like a volcano, and its eruption, the largest ever witnessed in South America, came after only four days of earthquakes. It killed perhaps 1,000–1,500 people in the region and ruined the vineyards of Moquegua. Then its sulphur made 1601 one of the coldest summers of the last 600 years across the Northern Hemisphere. In Russia, rain and early frosts destroyed the harvest of 1601, and the next year many peasants had no seed left to sow; Tsar Boris Godunov's handouts could not stop the famine, and the country slid into the Time of Troubles. Nobody at the time could link a Peruvian volcano to a Russian famine: geologists made the connection in 2008.",
+        "es": "El Huaynaputina apenas parece un volcán, y su erupción, la mayor jamás presenciada en América del Sur, llegó tras solo cuatro días de sismos. Mató quizá a entre 1000 y 1500 personas en la región y arruinó los viñedos de Moquegua. Después, su azufre hizo de 1601 uno de los veranos más fríos de los últimos 600 años en todo el hemisferio norte. En Rusia, la lluvia y las heladas tempranas destruyeron la cosecha de 1601, y al año siguiente muchos campesinos no tenían semilla para sembrar; las ayudas del zar Borís Godunov no pudieron frenar la hambruna, y el país cayó en la Época de la Inestabilidad. Nadie en aquel tiempo podía relacionar un volcán peruano con una hambruna rusa: los geólogos lo hicieron en 2008."
+      },
+      "show": ["huaynaputina", "arequipa-1600", "russian-famine-1601"]
+    },
+    {
+      "date": "1783-06-08",
+      "title": { "en": "Laki's poison fog", "es": "La niebla venenosa del Laki" },
+      "camera": { "lon": -2, "lat": 55, "zoom": 2.4 },
+      "text": {
+        "en": "On 8 June 1783 a 25 km fissure opened at Laki, in Iceland. For eight months it poured out lava and poisonous gases; a sulphurous haze spread over Europe, and Iceland lost a fifth of its people.",
+        "es": "El 8 de junio de 1783 se abrió una fisura de 25 km en el Laki, en Islandia. Durante ocho meses derramó lava y gases venenosos; una neblina sulfurosa se extendió por Europa, e Islandia perdió a una quinta parte de su gente."
+      },
+      "details": {
+        "en": "Laki was not very explosive, only VEI 4, yet it released one of the largest amounts of sulphur of the last thousand years, much of it low enough to be breathed. In Iceland fluorine in the ash killed most of the sheep and half the cattle and horses, and about 8,000–9,500 people died in the famine called the Móðuharðindin, the 'mist hardships'. The pastor Jón Steingrímsson wrote down what he saw. The haze, drawn here roughly as it was reported in June and July, reached Prague, Berlin, Paris and Britain within days: the sun turned 'blood-coloured', and in England deaths rose among people working outdoors. A bitter winter followed in Europe and North America.",
+        "es": "El Laki no fue muy explosivo, solo IEV 4, pero liberó una de las mayores cantidades de azufre de los últimos mil años, buena parte lo bastante baja como para respirarla. En Islandia, el flúor de la ceniza mató a la mayoría de las ovejas y a la mitad de las vacas y caballos, y unas 8000-9500 personas murieron en la hambruna llamada Móðuharðindin, «las penurias de la niebla». El pastor Jón Steingrímsson anotó lo que vio. La neblina, dibujada aquí a grandes rasgos según los informes de junio y julio, llegó en pocos días a Praga, Berlín, París y Gran Bretaña: el sol se volvió «del color de la sangre», y en Inglaterra aumentaron las muertes entre quienes trabajaban al aire libre. Siguió un invierno durísimo en Europa y América del Norte."
+      },
+      "control": {
+        "haze": { "poly": [[-24, 66], [-14, 67], [0, 65], [12, 66], [24, 64], [30, 60], [32, 54], [28, 48], [20, 45], [14, 42], [6, 42], [0, 43], [-5, 43], [-10, 48], [-12, 54], [-16, 60], [-24, 63], [-24, 66]] }
+      },
+      "moves": [
+        { "side": "haze", "path": [[-18.23, 64.06], [-8, 61], [3, 57], [10, 53], [14.4, 50.1]], "label": { "en": "The haze drifted south-east", "es": "La neblina derivó hacia el sureste" } }
+      ],
+      "show": ["laki", "jon-steingrimsson", "benjamin-franklin"]
+    },
+    {
+      "date": "1792-05-21",
+      "title": { "en": "Fuji's ash, Unzen's wave", "es": "La ceniza del Fuji, la ola del Unzen" },
+      "camera": { "lon": 134.5, "lat": 34, "zoom": 4.5 },
+      "control": { "haze": null },
+      "text": {
+        "en": "Two Japanese disasters show the many ways volcanoes kill. In 1707 Mount Fuji dusted Edo with ash; in 1792 a lava dome at Unzen collapsed into the sea, and its tsunami killed about 15,000 people.",
+        "es": "Dos desastres japoneses muestran las muchas formas en que matan los volcanes. En 1707 el monte Fuji cubrió Edo de ceniza; en 1792 un domo de lava del Unzen se desplomó en el mar, y su tsunami mató a unas 15 000 personas."
+      },
+      "details": {
+        "en": "Fuji's Hōei eruption opened new craters on its southeastern flank 49 days after one of Japan's strongest earthquakes. It sent out no lava, but its ash and cinders smothered the farms to the east, and the next summer rivers choked with ash flooded the plains, bringing hunger. At Unzen, on the island of Kyushu, eruptions and earthquakes in early 1792 shook the Mayuyama dome until, on the night of 21 May, its flank slid through Shimabara into the Ariake Sea. The tsunami struck Higo, across the bay, and bounced back: Japan's deadliest volcanic disaster. Not every volcanic killer is an eruption: collapses, landslides and the waves they raise can be just as deadly.",
+        "es": "La erupción Hōei del Fuji abrió nuevos cráteres en su ladera sureste 49 días después de uno de los terremotos más fuertes de Japón. No arrojó lava, pero su ceniza y su escoria ahogaron los campos del este, y al verano siguiente los ríos, atascados de ceniza, inundaron las llanuras y trajeron hambre. En el Unzen, en la isla de Kyushu, las erupciones y los sismos de comienzos de 1792 sacudieron el domo Mayuyama hasta que, la noche del 21 de mayo, su flanco se deslizó a través de Shimabara hasta el mar de Ariake. El tsunami golpeó Higo, al otro lado de la bahía, y rebotó: el desastre volcánico más mortífero de Japón. No todos los peligros volcánicos son erupciones: los derrumbes, los deslizamientos y las olas que levantan pueden ser igual de mortales."
+      },
+      "show": ["hoei-eruption", "unzen-1792"]
+    },
+    {
+      "date": "1815-04-10",
+      "title": { "en": "The year without a summer", "es": "El año sin verano" },
+      "camera": { "lon": 78, "lat": 18, "zoom": 1 },
+      "text": {
+        "en": "In April 1815 Tambora produced the most powerful eruption in recorded history (VEI 7). Its sulphur veil made 1816 the 'Year Without a Summer', with snow in June and failed harvests.",
+        "es": "En abril de 1815, el Tambora tuvo la erupción más potente de la historia registrada (IEV 7). Su velo de azufre hizo de 1816 el «año sin verano», con nieve en junio y cosechas perdidas."
+      },
+      "details": {
+        "en": "On Sumbawa and the islands nearby, the eruption and the hunger and disease that followed killed tens of thousands of people. Far away, hardly anyone knew a volcano had erupted, but the world grew about half a degree cooler. In New England it snowed in June; in western Europe, still recovering from the Napoleonic Wars, harvests failed, food prices soared and typhus spread; in China the monsoon was disrupted and the Yangtze flooded. In Switzerland, incessant rain kept Mary Shelley and her friends indoors at the Villa Diodati, where she began to write Frankenstein.",
+        "es": "En Sumbawa y las islas vecinas, la erupción y el hambre y las enfermedades que siguieron mataron a decenas de miles de personas. Lejos de allí casi nadie sabía que un volcán había estallado, pero el mundo se enfrió cerca de medio grado. En Nueva Inglaterra nevó en junio; en Europa occidental, que aún se recuperaba de las guerras napoleónicas, se perdieron las cosechas, los precios de los alimentos se dispararon y se extendió el tifus; en China el monzón se alteró y el Yangtsé se desbordó. En Suiza, la lluvia incesante mantuvo a Mary Shelley y a sus amigos encerrados en la Villa Diodati, donde ella empezó a escribir Frankenstein."
+      },
+      "show": ["tambora", "mary-shelley"]
+    },
+    {
+      "date": "1883-08-27",
+      "title": { "en": "Krakatoa, heard round the world", "es": "El Krakatoa, oído en todo el mundo" },
+      "text": {
+        "en": "In 1883 Krakatoa's explosion was heard 4,800 km away, and barometers everywhere recorded its air wave. Telegraph cables spread the news faster than for any disaster before.",
+        "es": "En 1883, la explosión del Krakatoa se oyó a 4800 km, y los barómetros de todo el mundo registraron su onda de aire. Los cables telegráficos difundieron la noticia más rápido que la de cualquier desastre anterior."
+      },
+      "details": {
+        "en": "Science was starting to watch volcanoes. Since 1841 an observatory on Vesuvius, the oldest in the world, had kept records, and its director Luigi Palmieri used an electromagnetic seismometer to detect slight tremors before eruptions. Krakatoa showed how far a single eruption could reach. The eruption and its tsunamis killed about 36,000 people on the shores of the Sunda Strait. Barographs recorded its pressure wave seven times over five days as it circled the Earth, and for months its haze turned sunsets red around the world. In England the artist William Ascroft sketched those skies thousands of times.",
+        "es": "La ciencia empezaba a vigilar los volcanes. Desde 1841, un observatorio en el Vesubio, el más antiguo del mundo, llevaba registros, y su director Luigi Palmieri usaba un sismómetro electromagnético para detectar temblores leves antes de las erupciones. El Krakatoa mostró hasta dónde podía llegar una sola erupción. La erupción y sus tsunamis mataron a unas 36 000 personas en las costas del estrecho de la Sonda. Los barógrafos registraron su onda de presión siete veces en cinco días mientras rodeaba la Tierra, y durante meses su bruma enrojeció los atardeceres en todo el mundo. En Inglaterra, el pintor William Ascroft dibujó esos cielos miles de veces."
+      },
+      "show": ["krakatoa", "vesuvius-observatory"]
+    },
+    {
+      "date": "1902-05-08",
+      "title": { "en": "Saint-Pierre's last morning", "es": "La última mañana de Saint-Pierre" },
+      "camera": { "lon": -61.12, "lat": 14.75, "zoom": 30 },
+      "text": {
+        "en": "On 8 May 1902 a burning cloud from Mount Pelée destroyed Saint-Pierre, on Martinique, in about a minute. About 28,000 people died; a prisoner in a thick-walled cell was one of very few survivors.",
+        "es": "El 8 de mayo de 1902, una nube ardiente del monte Pelée destruyó Saint-Pierre, en Martinica, en cerca de un minuto. Murieron unas 28 000 personas; un preso en una celda de muros gruesos fue uno de los poquísimos sobrevivientes."
+      },
+      "details": {
+        "en": "Pelée had been rumbling for weeks: ash fell, animals died, and on 5 May a mudflow buried a sugar works and about 150 people. Many left the town, but refugees from the countryside poured in, the newspapers said it was safe, and no evacuation was ordered. At about 8 a.m. a pyroclastic surge hotter than 1,000 °C rushed down the mountain and set the town and the ships in the harbour ablaze. Scientists sent to the ruins, among them Alfred Lacroix of France and Thomas Jaggar of the United States, made this 'burning cloud', the nuée ardente, the starting point of modern volcanology. For Jaggar, it became a life's work.",
+        "es": "El Pelée llevaba semanas retumbando: caía ceniza, morían animales y, el 5 de mayo, un flujo de lodo sepultó un ingenio azucarero y a unas 150 personas. Mucha gente se fue de la ciudad, pero llegaron refugiados del campo, los periódicos decían que no había peligro y no se ordenó ninguna evacuación. Hacia las 8 de la mañana, una oleada piroclástica a más de 1000 °C bajó por la montaña e incendió la ciudad y los barcos del puerto. Los científicos enviados a las ruinas, entre ellos Alfred Lacroix, de Francia, y Thomas Jaggar, de Estados Unidos, hicieron de esta «nube ardiente», la nuée ardente, el punto de partida de la vulcanología moderna. Para Jaggar, se convirtió en la obra de su vida."
+      },
+      "show": ["pelee", "saint-pierre", "ludger-sylbaris"]
+    },
+    {
+      "date": "1963-11-14",
+      "title": { "en": "Watching volcanoes grow", "es": "Ver crecer los volcanes" },
+      "camera": { "lon": -95, "lat": 42, "zoom": 1 },
+      "text": {
+        "en": "In 1912 Thomas Jaggar opened an observatory on Kīlauea to watch a volcano every day. Scientists then followed Parícutin from its birth in a Mexican cornfield (1943) and Surtsey rising from the sea (1963).",
+        "es": "En 1912, Thomas Jaggar abrió un observatorio en el Kīlauea para vigilar un volcán todos los días. Después, los científicos siguieron al Paricutín desde su nacimiento en una milpa mexicana (1943) y a Surtsey al salir del mar (1963)."
+      },
+      "details": {
+        "en": "The same year the Hawaiian observatory opened, the century's largest eruption shook remote Alaska at Novarupta; nobody died as a direct result, helped by what Alaska Natives knew from earlier eruptions. Hawaiian lava, mostly fluid and gentle, let Jaggar's team study eruptions safely, year after year. In Mexico, William Foshag and Jenaro González Reyna recorded Parícutin's whole life, from 1943 to 1952, while the people of two villages had to move away. Off Iceland, Surtsey became a laboratory for how life settles new land. Watching volcanoes closely, over years, is the basis of every warning today.",
+        "es": "El mismo año en que abrió el observatorio hawaiano, la mayor erupción del siglo sacudió la remota Alaska en el Novarupta; nadie murió como consecuencia directa, en parte gracias a lo que los pueblos nativos de Alaska sabían de erupciones anteriores. La lava hawaiana, casi siempre fluida y tranquila, permitió al equipo de Jaggar estudiar las erupciones sin peligro, año tras año. En México, William Foshag y Jenaro González Reyna registraron toda la vida del Paricutín, de 1943 a 1952, mientras la gente de dos pueblos tuvo que mudarse. Frente a Islandia, Surtsey se volvió un laboratorio de cómo la vida ocupa una tierra nueva. Vigilar los volcanes de cerca, durante años, es la base de todas las alertas de hoy."
+      },
+      "show": ["hawaiian-volcano-observatory", "novarupta-1912", "paricutin", "surtsey"]
+    },
+    {
+      "date": "1982-04-04",
+      "title": { "en": "St. Helens and El Chichón", "es": "El Santa Helena y El Chichón" },
+      "camera": { "lon": -100, "lat": 33, "zoom": 1.6 },
+      "text": {
+        "en": "In 1980 the bulging flank of Mount St. Helens collapsed and exploded sideways, killing about 57 people, among them the volcanologist David Johnston. In 1982 El Chichón killed some 1,900 in Mexico.",
+        "es": "En 1980, el flanco abombado del monte Santa Helena se derrumbó y estalló de lado, y mató a unas 57 personas, entre ellas el vulcanólogo David Johnston. En 1982, El Chichón mató a unas 1900 en México."
+      },
+      "details": {
+        "en": "At St. Helens, scientists had seen the danger, a bulge growing on the north flank, and the authorities closed the area around the mountain and kept it closed despite heavy pressure to reopen it. The blast taught volcanologists how a volcano can fail sideways. Two years later in Chiapas, El Chichón, thought to be dormant and not closely monitored, destroyed nine villages of its Zoque neighbours. It was smaller than St. Helens, but so rich in sulphur that its veil circled the globe in three weeks. That year Christopher Newhall and Stephen Self proposed the Volcanic Explosivity Index, a scale of eruption size from 0 to 8. But size is not everything: a volcano's effect on climate depends on its sulphur.",
+        "es": "En el Santa Helena, los científicos habían visto el peligro, un abultamiento que crecía en el flanco norte, y las autoridades cerraron la zona alrededor de la montaña y la mantuvieron cerrada pese a fuertes presiones para reabrirla. La explosión enseñó a los vulcanólogos cómo un volcán puede romperse de lado. Dos años después, en Chiapas, El Chichón, que se creía dormido y no estaba bien vigilado, destruyó nueve pueblos de sus vecinos zoques. Era más pequeño que el Santa Helena, pero tan rico en azufre que su velo dio la vuelta al globo en tres semanas. Ese año, Christopher Newhall y Stephen Self propusieron el índice de explosividad volcánica, una escala del tamaño de las erupciones de 0 a 8. Pero el tamaño no lo es todo: el efecto de un volcán en el clima depende de su azufre."
+      },
+      "show": ["mount-st-helens", "david-johnston", "el-chichon", "volcanic-explosivity-index"]
+    },
+    {
+      "date": "1985-11-13",
+      "title": { "en": "Armero: warnings unheard", "es": "Armero: las alertas que no llegaron" },
+      "camera": { "lon": -97, "lat": 25, "zoom": 1.6 },
+      "text": {
+        "en": "On 13 November 1985 a small eruption of Nevado del Ruiz melted its ice cap. About two hours later lahars swept over Armero, 48 km away, and more than 23,000 people died.",
+        "es": "El 13 de noviembre de 1985, una pequeña erupción del Nevado del Ruiz derritió su casquete de hielo. Unas dos horas después, los lahares arrasaron Armero, a 48 km, y murieron más de 23 000 personas."
+      },
+      "details": {
+        "en": "Scientists had warned for weeks, and a hazard map showed the danger, but it reached few people, Congress called the warnings scaremongering, and local authorities were unwilling to pay for an evacuation without clear signs. On the day, ash fell in the afternoon, and officials and the radio told people to stay calm and stay indoors. The evacuation ordered that evening never reached the town: a storm had cut the power, and its thunder hid the volcano's roar. Lahars, floods of melted ice, ash and rock, run fast and far down river valleys. Afterwards Colombia built a national disaster management system, and the United States created the Volcano Disaster Assistance Program to help other countries watch and warn.",
+        "es": "Los científicos llevaban semanas alertando, y un mapa de amenazas mostraba el peligro, pero llegó a poca gente, el Congreso tachó las alertas de alarmistas y las autoridades locales no quisieron pagar una evacuación sin señales claras. Ese día cayó ceniza por la tarde, y las autoridades y la radio pidieron calma y quedarse en casa. La evacuación ordenada esa noche nunca llegó al pueblo: una tormenta había cortado la luz, y sus truenos taparon el rugido del volcán. Los lahares, crecidas de hielo derretido, ceniza y roca, corren rápido y lejos por los valles de los ríos. Después, Colombia creó un sistema nacional de gestión de desastres, y Estados Unidos creó el Programa de Asistencia en Desastres Volcánicos para ayudar a otros países a vigilar y alertar."
+      },
+      "show": ["nevado-del-ruiz-1985", "armero", "volcano-disaster-assistance-program"]
+    },
+    {
+      "date": "1991-06-15",
+      "title": { "en": "Pinatubo: the warning that worked", "es": "Pinatubo: la alerta que funcionó" },
+      "camera": { "lon": 118, "lat": 12, "zoom": 1.3 },
+      "text": {
+        "en": "On 15 June 1991 Pinatubo produced the second-largest eruption of the century (VEI 6). Forecasts and evacuations saved at least 5,000 lives, and its sulphate veil cooled the Earth for two years.",
+        "es": "El 15 de junio de 1991, el Pinatubo tuvo la segunda mayor erupción del siglo (IEV 6). Los pronósticos y las evacuaciones salvaron al menos 5000 vidas, y su velo de sulfatos enfrió la Tierra durante dos años."
+      },
+      "details": {
+        "en": "When the volcano woke in April, scientists of PHIVOLCS and the US Geological Survey had only weeks to learn its history and set up instruments. They drew danger zones, issued alert levels every day and showed the Kraffts' film of Armero to officials; tens of thousands of people left, among them the Aeta of the slopes, who were hit hardest. Still, 847 people died, most under roofs that collapsed under wet ash as a typhoon passed. Jets that flew into the ash were damaged, a danger known since a jumbo jet lost all its engines over Java in 1982. Within weeks the veil, drawn here roughly, circled the tropics; it spread worldwide and cooled the Earth by about 0.5 °C.",
+        "es": "Cuando el volcán despertó en abril, los científicos de PHIVOLCS y del Servicio Geológico de Estados Unidos tuvieron solo semanas para conocer su historia e instalar instrumentos. Trazaron zonas de peligro, dieron niveles de alerta cada día y mostraron a las autoridades la película de los Krafft sobre Armero; se fueron decenas de miles de personas, entre ellas los aetas de las laderas, los más golpeados. Aun así murieron 847 personas, la mayoría bajo techos que se hundieron por la ceniza mojada mientras pasaba un tifón. Los aviones que entraron en la ceniza sufrieron daños, un peligro conocido desde que un jumbo perdió todos sus motores sobre Java en 1982. En pocas semanas el velo, dibujado aquí a grandes rasgos, rodeó los trópicos; luego se extendió por todo el mundo y enfrió la Tierra cerca de 0,5 °C."
+      },
+      "control": {
+        "veil": [{"poly": [[-179.9, -20], [-165, -20.1], [-150, -20], [-135, -20.1], [-120, -20], [-105, -20.1], [-90, -20], [-75, -20.1], [-60, -20], [-45, -20.1], [-30, -20], [-15, -20.1], [-0.1, -20], [-0.1, 30], [-15, 30.1], [-30, 30], [-45, 30.1], [-60, 30], [-75, 30.1], [-90, 30], [-105, 30.1], [-120, 30], [-135, 30.1], [-150, 30], [-165, 30.1], [-179.9, 30]]}, {"poly": [[0.1, -20], [15, -20.1], [30, -20], [45, -20.1], [60, -20], [75, -20.1], [90, -20], [105, -20.1], [120, -20], [135, -20.1], [150, -20], [165, -20.1], [179.9, -20], [179.9, 30], [165, 30.1], [150, 30], [135, 30.1], [120, 30], [105, 30.1], [90, 30], [75, 30.1], [60, 30], [45, 30.1], [30, 30], [15, 30.1], [0.1, 30]]}]
+      },
+      "moves": [
+        { "side": "veil", "path": [[120.35, 15.14], [100, 12], [80, 10], [60, 9], [42, 8]], "label": { "en": "The cloud drifted west", "es": "La nube derivó hacia el oeste" } }
+      ],
+      "show": ["pinatubo", "phivolcs", "katia-and-maurice-krafft", "british-airways-flight-9"]
+    },
+    {
+      "date": "1997-06-25",
+      "title": { "en": "Montserrat: an island divided", "es": "Montserrat: una isla dividida" },
+      "camera": { "lon": -62, "lat": 16.4, "zoom": 6 },
+      "control": { "veil": null },
+      "text": {
+        "en": "On Montserrat the volcano woke in 1995. The south of the island was evacuated and became an exclusion zone; on 25 June 1997 pyroclastic flows killed 19 people, and they soon buried the capital, Plymouth.",
+        "es": "En Montserrat, el volcán despertó en 1995. El sur de la isla fue evacuado y se convirtió en zona de exclusión; el 25 de junio de 1997, los flujos piroclásticos mataron a 19 personas, y pronto sepultaron la capital, Plymouth."
+      },
+      "details": {
+        "en": "Evacuating is never easy. Plymouth's people were moved out three times in 1995–1996, and about two-thirds of the islanders eventually left Montserrat, many for Britain; anger at the slow aid led to riots. The Caribbean had already seen both extremes: at Saint-Pierre in 1902 nobody was evacuated, while on Guadeloupe in 1976 some 72,000 people were moved out for months before an eruption that turned out small, and scientists quarrelled in public. On Montserrat, the Volcano Observatory run by the British Geological Survey advises where people may live, and more than half the island remains uninhabitable.",
+        "es": "Evacuar nunca es fácil. La gente de Plymouth tuvo que salir tres veces en 1995-1996, y cerca de dos tercios de los isleños acabaron dejando Montserrat, muchos rumbo a Gran Bretaña; el enojo por la lentitud de la ayuda provocó disturbios. El Caribe ya había visto los dos extremos: en Saint-Pierre, en 1902, no se evacuó a nadie, mientras que en Guadalupe, en 1976, se sacó durante meses a unas 72 000 personas antes de una erupción que resultó pequeña, y los científicos discutieron en público. En Montserrat, el Observatorio Vulcanológico a cargo del Servicio Geológico Británico aconseja dónde se puede vivir, y más de la mitad de la isla sigue inhabitable."
+      },
+      "show": ["soufriere-hills", "plymouth-montserrat", "la-soufriere-guadeloupe-1976"]
+    },
+    {
+      "date": "2002-01-17",
+      "title": { "en": "Lava through Goma", "es": "Lava en Goma" },
+      "camera": { "lon": 20, "lat": 2, "zoom": 2.6 },
+      "text": {
+        "en": "On 17 January 2002 lava from Nyiragongo flowed through Goma into Lake Kivu. Warned in time, some 400,000 people crossed into Rwanda; about 245 died, and 120,000 lost their homes.",
+        "es": "El 17 de enero de 2002, la lava del Nyiragongo atravesó Goma hasta el lago Kivu. Avisadas a tiempo, unas 400 000 personas cruzaron a Ruanda; murieron unas 245, y 120 000 perdieron su casa."
+      },
+      "details": {
+        "en": "Nyiragongo's lava is among the most fluid on Earth, and in 1977 a lava flow had killed at least 50 villagers in less than an hour. In 2002 a fissure opened above Goma, a provincial capital already scarred by war and refugee crises. When the lava reached Lake Kivu, scientists feared another danger: the lake's deep water holds dissolved gases, and in 1986 a sudden burst of carbon dioxide from Lake Nyos, a crater lake in Cameroon, had suffocated 1,746 people in one night. It did not happen at Kivu, but the area is watched closely, and since 2001 pipes have slowly drained the gas from Nyos.",
+        "es": "La lava del Nyiragongo está entre las más fluidas del planeta, y en 1977 una colada había matado al menos a 50 aldeanos en menos de una hora. En 2002 se abrió una fisura sobre Goma, una capital provincial ya marcada por la guerra y las crisis de refugiados. Cuando la lava llegó al lago Kivu, los científicos temieron otro peligro: las aguas profundas del lago guardan gases disueltos, y en 1986 una súbita salida de dióxido de carbono del lago Nyos, un lago de cráter en Camerún, había asfixiado a 1746 personas en una noche. En el Kivu no ocurrió, pero la zona se vigila de cerca, y desde 2001 unas tuberías extraen poco a poco el gas del Nyos."
+      },
+      "show": ["nyiragongo-2002", "goma", "lake-nyos"]
+    },
+    {
+      "date": "2010-04-15",
+      "title": { "en": "Ash over Europe", "es": "Ceniza sobre Europa" },
+      "camera": { "lon": -2, "lat": 57, "zoom": 2.3 },
+      "text": {
+        "en": "In April 2010 a mid-sized eruption under an Icelandic glacier sent fine ash into the jet stream. For six days most of Europe's airspace closed, and over 95,000 flights were cancelled.",
+        "es": "En abril de 2010, una erupción mediana bajo un glaciar islandés lanzó ceniza fina a la corriente en chorro. Durante seis días se cerró casi todo el espacio aéreo de Europa, y se cancelaron más de 95 000 vuelos."
+      },
+      "details": {
+        "en": "Ash is a hidden danger for jets: it does not show on weather radar, and it melts inside engines. Pilots learned this in 1982, when a British Airways 747 lost all four engines over Java, and again over Alaska in 1989. Since the 1990s nine Volcanic Ash Advisory Centres have tracked ash clouds for aviation. In 2010 the London centre followed Eyjafjallajökull's cloud, drawn here roughly as it was on 15–18 April, as it drifted over some of the world's busiest skies. About 10 million travellers were affected. Afterwards, regulators replaced the rule of 'no ash at all' with safe limits.",
+        "es": "La ceniza es un peligro oculto para los aviones: no aparece en el radar meteorológico y se funde dentro de los motores. Los pilotos lo aprendieron en 1982, cuando un 747 de British Airways perdió sus cuatro motores sobre Java, y otra vez sobre Alaska en 1989. Desde los años noventa, nueve Centros de Avisos de Cenizas Volcánicas siguen las nubes de ceniza para la aviación. En 2010, el centro de Londres siguió la nube del Eyjafjallajökull, dibujada aquí a grandes rasgos como estaba del 15 al 18 de abril, mientras derivaba sobre algunos de los cielos más transitados del mundo. Unos 10 millones de viajeros se vieron afectados. Después, las autoridades cambiaron la regla de «nada de ceniza» por límites seguros."
+      },
+      "control": {
+        "ash": { "poly": [[-24, 66], [-12, 67], [2, 68], [16, 70], [28, 70], [32, 62], [30, 54], [24, 50], [16, 47], [8, 46], [2, 46], [-5, 47], [-10, 51], [-14, 56], [-20, 61], [-24, 66]] }
+      },
+      "moves": [
+        { "side": "ash", "path": [[-19.61, 63.62], [-10, 60], [0, 57], [10, 53]], "label": { "en": "The jet stream carried the ash south-east", "es": "La corriente en chorro llevó la ceniza al sureste" } }
+      ],
+      "show": ["eyjafjallajokull", "european-airspace-closure-2010"]
+    },
+    {
+      "date": "2022-01-15",
+      "title": { "en": "Hunga Tonga's shock wave", "es": "La onda expansiva del Hunga Tonga" },
+      "camera": { "lon": -165, "lat": 0, "zoom": 1.3 },
+      "control": { "ash": null },
+      "text": {
+        "en": "On 15 January 2022 the undersea volcano Hunga Tonga–Hunga Haʻapai exploded. Its air wave circled the Earth several times, and a tsunami crossed the Pacific, killing four people in Tonga and two in Peru.",
+        "es": "El 15 de enero de 2022 estalló el volcán submarino Hunga Tonga-Hunga Haʻapai. Su onda de aire dio varias vueltas a la Tierra, y un tsunami cruzó el Pacífico y mató a cuatro personas en Tonga y a dos en Perú."
+      },
+      "details": {
+        "en": "It was the biggest explosion in the atmosphere ever recorded by instruments, with a plume 58 km high. Tonga's government had issued a tsunami warning the day before, after a smaller blast, and many people were heading for higher ground. Far across the ocean, the air wave itself pushed on the sea and raised waves that warning systems designed for earthquakes had not foreseen. Four years earlier, in 2018, Kīlauea on Hawaiʻi had shown a quieter face of the Pacific's volcanoes: no great explosion, but lava that destroyed about 700 homes in three months, with no deaths after the evacuations.",
+        "es": "Fue la mayor explosión en la atmósfera registrada por instrumentos, con una columna de 58 km de altura. El gobierno de Tonga había emitido una alerta de tsunami el día anterior, tras una explosión más pequeña, y mucha gente se dirigía a zonas altas. Al otro lado del océano, la propia onda de aire empujó el mar y levantó olas que los sistemas de alerta, pensados para terremotos, no habían previsto. Cuatro años antes, en 2018, el Kīlauea, en Hawái, había mostrado una cara más tranquila de los volcanes del Pacífico: ninguna gran explosión, pero lava que destruyó unas 700 casas en tres meses, sin muertos gracias a las evacuaciones."
+      },
+      "show": ["hunga-tonga", "kilauea-2018"]
+    },
+    {
+      "date": "2025",
+      "title": { "en": "Living beside volcanoes", "es": "Vivir junto a los volcanes" },
+      "camera": { "lon": -8, "lat": 47, "zoom": 1.6 },
+      "text": {
+        "en": "People live, farm and fish beside volcanoes from Iceland to the Canary Islands. They cannot stop eruptions, but they can watch them, warn, evacuate and sometimes steer the lava.",
+        "es": "La gente vive, cultiva y pesca junto a volcanes, de Islandia a las islas Canarias. No puede detener las erupciones, pero sí vigilarlas, alertar, evacuar y a veces desviar la lava."
+      },
+      "details": {
+        "en": "Catania's walls turned Etna's lava into the sea in 1669. In 1973 the people of Heimaey left their island within six hours, then sprayed the lava with seawater for months and saved their harbour. On La Palma in 2021 about 7,000 people were moved out as lava buried more than 3,000 buildings; one person died. Since 2021 the Reykjanes Peninsula, near Reykjavík, has erupted again and again after some 800 years of quiet: Grindavík was evacuated in 2023, and walls of earth now steer the lava away from the town, its power plant and the Blue Lagoon. Science cannot yet say exactly when the next eruption will come or how big it will be, but where warnings are trusted, most people survive.",
+        "es": "Las murallas de Catania desviaron hacia el mar la lava del Etna en 1669. En 1973, la gente de Heimaey dejó su isla en seis horas y luego roció la lava con agua de mar durante meses hasta salvar su puerto. En La Palma, en 2021, se sacó a unas 7000 personas mientras la lava sepultaba más de 3000 edificios; murió una persona. Desde 2021, la península de Reykjanes, cerca de Reikiavik, ha entrado en erupción una y otra vez tras unos 800 años de calma: Grindavík fue evacuado en 2023, y muros de tierra desvían ahora la lava del pueblo, de su central eléctrica y de la Laguna Azul. La ciencia aún no puede decir con exactitud cuándo llegará la próxima erupción ni qué tamaño tendrá, pero donde se confía en las alertas, la mayoría sobrevive."
+      },
+      "show": ["etna-1669", "eldfell-1973", "la-palma-2021", "fagradalsfjall-2021", "grindavik"]
+    }
+  ],
+  "outcome": {
+    "en": "Eruptions have buried towns from Akrotiri and Pompeii to Saint-Pierre, Armero and Plymouth, and the largest have chilled the whole planet through veils of sulphur, bringing hunger far from the volcano. Since the first observatory opened on Vesuvius in 1841, scientists have learned to read the warning signs: earthquakes, swelling ground, changing gases. Where warnings were heard and trusted, as at Pinatubo, Heimaey and La Palma, thousands of lives were saved; where they never reached people, as at Saint-Pierre and Armero, the toll was terrible.",
+    "es": "Las erupciones han sepultado ciudades, de Acrotiri y Pompeya a Saint-Pierre, Armero y Plymouth, y las mayores han enfriado todo el planeta con velos de azufre, llevando el hambre lejos del volcán. Desde que abrió el primer observatorio en el Vesubio, en 1841, los científicos han aprendido a leer las señales de alerta: sismos, suelo que se hincha, gases que cambian. Donde las alertas se escucharon y se creyeron, como en el Pinatubo, Heimaey y La Palma, se salvaron miles de vidas; donde nunca llegaron a la gente, como en Saint-Pierre y Armero, el costo fue terrible."
+  },
+  "sources": [
+    { "title": "Youngest Toba eruption (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Youngest_Toba_eruption" },
+    { "title": "Jwalapuram (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Jwalapuram" },
+    { "title": "Minoan eruption (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Minoan_eruption" },
+    { "title": "Akrotiri (prehistoric city) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Akrotiri_(prehistoric_city)" },
+    { "title": "Eruption of Mount Vesuvius in 79 AD (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Eruption_of_Mount_Vesuvius_in_79_AD" },
+    { "title": "Mount Vesuvius (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Mount_Vesuvius" },
+    { "title": "Pompeii (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Pompeii" },
+    { "title": "Herculaneum (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Herculaneum" },
+    { "title": "Pliny the Younger (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Pliny_the_Younger" },
+    { "title": "Hatepe eruption (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Hatepe_eruption" },
+    { "title": "Tierra Blanca Joven eruption (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Tierra_Blanca_Joven_eruption" },
+    { "title": "Lake Ilopango (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Lake_Ilopango" },
+    { "title": "Volcanic winter of 536 (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Volcanic_winter_of_536" },
+    { "title": "Volcanic winter (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Volcanic_winter" },
+    { "title": "946 eruption of Mount Paektu (Wikipedia)", "url": "https://en.wikipedia.org/wiki/946_eruption_of_Mount_Paektu" },
+    { "title": "1257 Samalas eruption (Wikipedia)", "url": "https://en.wikipedia.org/wiki/1257_Samalas_eruption" },
+    { "title": "Huaynaputina (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Huaynaputina" },
+    { "title": "Russian famine of 1601–1603 (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Russian_famine_of_1601%E2%80%931603" },
+    { "title": "Arequipa (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Arequipa" },
+    { "title": "Mount Etna (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Mount_Etna" },
+    { "title": "Hōei eruption (Wikipedia)", "url": "https://en.wikipedia.org/wiki/H%C5%8Dei_eruption" },
+    { "title": "Laki (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Laki" },
+    { "title": "Kirkjubæjarklaustur (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Kirkjub%C3%A6jarklaustur" },
+    { "title": "Benjamin Franklin (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Benjamin_Franklin" },
+    { "title": "1792 Unzen landslide and tsunami (Wikipedia)", "url": "https://en.wikipedia.org/wiki/1792_Unzen_landslide_and_tsunami" },
+    { "title": "Mount Unzen (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Mount_Unzen" },
+    { "title": "1815 eruption of Mount Tambora (Wikipedia)", "url": "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora" },
+    { "title": "Year Without a Summer (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Year_Without_a_Summer" },
+    { "title": "Mary Shelley (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Mary_Shelley" },
+    { "title": "Vesuvius Observatory (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Vesuvius_Observatory" },
+    { "title": "Luigi Palmieri (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Luigi_Palmieri" },
+    { "title": "1883 eruption of Krakatoa (Wikipedia)", "url": "https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa" },
+    { "title": "1902 eruption of Mount Pelée (Wikipedia)", "url": "https://en.wikipedia.org/wiki/1902_eruption_of_Mount_Pel%C3%A9e" },
+    { "title": "Saint-Pierre, Martinique (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Saint-Pierre,_Martinique" },
+    { "title": "Ludger Sylbaris (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Ludger_Sylbaris" },
+    { "title": "Alfred Lacroix (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Alfred_Lacroix" },
+    { "title": "Pyroclastic flow (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Pyroclastic_flow" },
+    { "title": "Hawaiian Volcano Observatory (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Hawaiian_Volcano_Observatory" },
+    { "title": "Thomas Jaggar (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Thomas_Jaggar" },
+    { "title": "Novarupta (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Novarupta" },
+    { "title": "Parícutin (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Par%C3%ADcutin" },
+    { "title": "Surtsey (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Surtsey" },
+    { "title": "Eldfell (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Eldfell" },
+    { "title": "La Grande Soufrière (Wikipedia)", "url": "https://en.wikipedia.org/wiki/La_Grande_Soufri%C3%A8re" },
+    { "title": "1980 eruption of Mount St. Helens (Wikipedia)", "url": "https://en.wikipedia.org/wiki/1980_eruption_of_Mount_St._Helens" },
+    { "title": "David A. Johnston (Wikipedia)", "url": "https://en.wikipedia.org/wiki/David_A._Johnston" },
+    { "title": "El Chichón (Wikipedia)", "url": "https://en.wikipedia.org/wiki/El_Chich%C3%B3n" },
+    { "title": "El Chichón (Wikipedia en español)", "url": "https://es.wikipedia.org/wiki/El_Chich%C3%B3n" },
+    { "title": "British Airways Flight 009 (Wikipedia)", "url": "https://en.wikipedia.org/wiki/British_Airways_Flight_009" },
+    { "title": "Volcanic Ash Advisory Center (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Volcanic_Ash_Advisory_Center" },
+    { "title": "Volcanic explosivity index (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Volcanic_explosivity_index" },
+    { "title": "Nevado del Ruiz (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Nevado_del_Ruiz" },
+    { "title": "Armero tragedy (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Armero_tragedy" },
+    { "title": "Armero (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Armero" },
+    { "title": "Lahar (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Lahar" },
+    { "title": "Volcano Disaster Assistance Program (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Volcano_Disaster_Assistance_Program" },
+    { "title": "Lake Nyos disaster (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Lake_Nyos_disaster" },
+    { "title": "1991 eruption of Mount Pinatubo (Wikipedia)", "url": "https://en.wikipedia.org/wiki/1991_eruption_of_Mount_Pinatubo" },
+    { "title": "Philippine Institute of Volcanology and Seismology (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Philippine_Institute_of_Volcanology_and_Seismology" },
+    { "title": "The Cataclysmic 1991 Eruption of Mount Pinatubo, Philippines (USGS Fact Sheet 113-97)", "url": "https://pubs.usgs.gov/fs/1997/fs113-97/" },
+    { "title": "Global Effects of Mount Pinatubo (NASA Earth Observatory)", "url": "https://earthobservatory.nasa.gov/images/1510/global-effects-of-mount-pinatubo" },
+    { "title": "Katia and Maurice Krafft (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Katia_and_Maurice_Krafft" },
+    { "title": "1991 Mount Unzen eruption (Wikipedia)", "url": "https://en.wikipedia.org/wiki/1991_Mount_Unzen_eruption" },
+    { "title": "Soufrière Hills (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Soufri%C3%A8re_Hills" },
+    { "title": "Plymouth, Montserrat (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Plymouth,_Montserrat" },
+    { "title": "Mount Nyiragongo (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Mount_Nyiragongo" },
+    { "title": "Goma (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Goma" },
+    { "title": "2010 eruptions of Eyjafjallajökull (Wikipedia)", "url": "https://en.wikipedia.org/wiki/2010_eruptions_of_Eyjafjallaj%C3%B6kull" },
+    { "title": "Air travel disruption after the 2010 Eyjafjallajökull eruption (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Air_travel_disruption_after_the_2010_Eyjafjallaj%C3%B6kull_eruption" },
+    { "title": "2018 lower Puna eruption (Wikipedia)", "url": "https://en.wikipedia.org/wiki/2018_lower_Puna_eruption" },
+    { "title": "2022 Hunga Tonga–Hunga Haʻapai eruption and tsunami (Wikipedia)", "url": "https://en.wikipedia.org/wiki/2022_Hunga_Tonga%E2%80%93Hunga_Ha%CA%BBapai_eruption_and_tsunami" },
+    { "title": "2021 Cumbre Vieja volcanic eruption (Wikipedia)", "url": "https://en.wikipedia.org/wiki/2021_Cumbre_Vieja_volcanic_eruption" },
+    { "title": "Fagradalsfjall (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Fagradalsfjall" },
+    { "title": "2023–2025 Sundhnúkur eruptions (Wikipedia)", "url": "https://en.wikipedia.org/wiki/2023%E2%80%932025_Sundhn%C3%BAkur_eruptions" },
+    { "title": "Grindavík (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Grindav%C3%ADk" }
+  ]
+}
