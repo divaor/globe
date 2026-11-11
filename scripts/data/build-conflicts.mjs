@@ -195,6 +195,30 @@ function ringPoly(ring, where) {
   return [[r]];
 }
 
+/**
+ * A drawn ring whose edges follow the lines drawn on a flat lon/lat map (a band of latitude stays on its
+ * parallel): a point every degree along each edge. Geometry operations drop points in a straight line, and
+ * the map draws what is left as great circles, which bulge towards the poles; so each added point is moved
+ * alternately 0.0001° (about 11 m) to either side of its edge, out of line.
+ */
+function denseRing(ring) {
+  const out = [];
+  for (let k = 0; k < ring.length - 1; k++) {
+    const [x0, y0] = ring[k], [x1, y1] = ring[k + 1];
+    out.push([x0, y0]);
+    // Meridians are great circles already: an edge along one needs no points (and two halves of a band then meet
+    // exactly).
+    const n = x0 === x1 ? 1 : Math.ceil(Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0)));
+    const len = Math.hypot(x1 - x0, y1 - y0) || 1, nx = -(y1 - y0) / len, ny = (x1 - x0) / len;
+    for (let j = 1; j < n; j++) {
+      const f = j / n, e = j % 2 ? 1e-4 : -1e-4;
+      out.push([x0 + (x1 - x0) * f + nx * e, y0 + (y1 - y0) * f + ny * e]);
+    }
+  }
+  out.push(ring[ring.length - 1]);
+  return out;
+}
+
 function safe(op, where, ...geoms) {
   const gs = geoms.filter((g) => g && g.length);
   try {
@@ -220,7 +244,9 @@ function landIn(mp, where) {
  *   "DEU"                                   a country of today (see --list countries)
  *   { "a1": "ESP", "names": [...] }          provinces/states of a country (or "except": [...], or all)
  *   { "hist": "Mongol Empire", "year": 1279 } a polity on a historical map (see --list hist 1279)
- *   { "poly": [[lon, lat], ...] }            a drawn polygon
+ *   { "poly": [[lon, lat], ...] }            a drawn polygon (its edges are great circles; with "dense": true
+ *                                           they follow the lines as drawn on a flat lon/lat map)
+ *   { "band": [lonW, latS, lonE, latN] }     a box whose edges follow its parallels and meridians (a band of latitude)
  *   { "land": [[lon, lat], ...] | area }     the land inside a drawn polygon (or inside an area)
  *   { "sea": [[lon, lat], ...] | area }      the sea inside a drawn polygon or an area (a tsunami's reach)
  *   { "circle": [lon, lat], "km": 40 }       a disc (a city, a siege)
@@ -244,7 +270,7 @@ function resolve(expr, ctx, where) {
     return safe('union', where, ...expr.map((e, i) => resolve(e, ctx, `${where}[${i}]`)));
   }
   if (!expr || typeof expr !== 'object') throw new Error(`${where}: an area must be a country code, a list or an object, got ${JSON.stringify(expr)}`);
-  const key = Object.keys(expr).find((k) => ['a1', 'hist', 'poly', 'land', 'sea', 'circle', 'ref', 'prev', 'cur', 'union', 'and', 'minus', 'country'].includes(k));
+  const key = Object.keys(expr).find((k) => ['a1', 'hist', 'poly', 'band', 'land', 'sea', 'circle', 'ref', 'prev', 'cur', 'union', 'and', 'minus', 'country'].includes(k));
   switch (key) {
     case 'country': return resolve(expr.country, ctx, where);
     case 'a1': {
@@ -268,7 +294,18 @@ function resolve(expr, ctx, where) {
     }
     case 'poly': {
       if (!isRing(expr.poly)) throw new Error(`${where}: "poly" must be a list of at least 3 [lon, lat] points`);
-      return ringPoly(expr.poly, where);
+      if (expr.dense != null && typeof expr.dense !== 'boolean') throw new Error(`${where}: "dense" is true or false`);
+      const mp = ringPoly(expr.poly, where);
+      return expr.dense ? [[denseRing(mp[0][0])]] : mp;
+    }
+    case 'band': {
+      const b = expr.band;
+      if (!Array.isArray(b) || b.length !== 4 || !b.every(Number.isFinite) || !(b[0] < b[2] && b[1] < b[3])) throw new Error(`${where}: "band" is [lonW, latS, lonE, latN], west before east and south before north`);
+      const [w, s, e, n] = b;
+      // Wider than 180°: two halves, as a drawn polygon may not span more (each half is checked like one).
+      const mid = e - w > 180 ? (w + e) / 2 : null;
+      const box = (x0, x1) => [[denseRing(ringPoly([[x0, s], [x1, s], [x1, n], [x0, n]], where)[0][0])]];
+      return mid == null ? box(w, e) : safe('union', where, box(w, mid), box(mid, e));
     }
     case 'land': {
       const inner = isRing(expr.land) ? ringPoly(expr.land, where) : resolve(expr.land, ctx, `${where}.land`);

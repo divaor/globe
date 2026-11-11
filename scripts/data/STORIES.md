@@ -346,6 +346,8 @@ doctors and scientists learned to fight them.
   Black Death and other fast spreads, steps may be a month or a season apart (`"1348-06"`). `moves` (arrows) show
   how it travelled: ships from Caffa to Constantinople and Messina, caravans, armies, pilgrims, railways, steamships,
   flights. A second side can show something else that matters: where a vaccine campaign had reached, quarantine.
+  A drawn polygon with long east–west edges takes `"dense": true`, so its edges follow the parallels instead of
+  bulging towards the poles.
 - **Items**: outbreaks (a town, a ship, a camp), the disease itself (`type: "disease"`), its carriers, doctors and
   scientists, discoveries, vaccines, medicines, hospitals and public health, how people lived through it, blame and
   persecution, art and books.
@@ -388,6 +390,9 @@ hour, who was hit, how far the effects reached, and what science and warnings ca
     [lon, lat], "km": 1100 }] } }`, or the sea a wave had crossed by then: `{ "sea": { "circle": [lon, lat], "km": 1600 } }`.
     `sea` keeps only the sea inside an area, as `land` keeps the land. Draw the distances from the published
     travel-time maps (NOAA's), not from a constant speed: tsunamis are slower in shallow water;
+  - a band of latitude (a sulphate veil, a cold summer) as `{ "band": [lonW, latS, lonE, latN] }`, whose edges follow
+    the parallels. A drawn polygon's edges are great circles, which bulge towards the poles when they are long; add
+    `"dense": true` to a `poly` to make its edges follow the lines as drawn on a flat map;
   - `moves` (arrows) for a pressure wave, an ash cloud on the wind, a wave reaching a far coast, people fleeing.
 - **Numbers**: magnitudes (Mw, and say when older ones are estimates), the Volcanic Explosivity Index (VEI), deaths as
   ranges with their source; say when estimates differ.
