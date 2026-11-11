@@ -640,7 +640,7 @@ async function build(file, opts) {
     c.sides = c.sides.filter((s) => !unused.includes(s.id));
     for (const st of steps) for (const id of unused) delete st.control[id];
   }
-  if (c.catalog === 'all' || coll.parts.has(c.catalog)) {
+  if (coll && (c.catalog === 'all' || coll.parts.has(c.catalog))) {
     // A time tour: every catalogue item (or every item of one catalogue file) of the story's period (from its start to its last step)
     // appears on the map from its date on (and goes after its "until"). Older items appear only
     // when a step shows them, except those still standing in the period ("until" after its start).
