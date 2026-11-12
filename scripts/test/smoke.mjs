@@ -729,8 +729,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await card(page, 'Violin');
     await page.waitForSelector('.country-card .item-clip', { timeout: 10000 }).catch(() => {});
     await page.evaluate(() => document.querySelector('.country-card .clip-play')?.click());
-    await page.waitForSelector('.country-card .item-clip.playing', { timeout: 10000 }).catch(() => {});
-    await page.waitForTimeout(1600);
+    // Playing, and a second in: a busy test machine's sound can take a second or two to start moving after the
+    // player says it plays.
+    await page.waitForFunction(() => /playing/.test(document.querySelector('.country-card .item-clip')?.className ?? '') && !/^0:00 \//.test(document.querySelector('.country-card .clip-time')?.textContent ?? '0:00 /'), null, { timeout: 10000 }).catch(() => {});
     const clip = await page.evaluate(() => ({ cls: document.querySelector('.country-card .item-clip')?.className ?? '', time: document.querySelector('.country-card .clip-time')?.textContent ?? '', credit: document.querySelector('.country-card .clip-credit')?.textContent ?? '' }));
     check(/playing/.test(clip.cls) && !/^0:00 \//.test(clip.time) && /Wikimedia Commons/.test(clip.credit), `a music card plays its clip, with its credit (${clip.time}; ${clip.credit.slice(0, 70)})`);
     await page.evaluate(() => document.querySelector('.country-card .card-close')?.click());
