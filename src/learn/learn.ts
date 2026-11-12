@@ -4,6 +4,7 @@ import { geoDistance } from 'd3-geo';
 import { h, icon, clear, add } from '../ui/dom';
 import { t, tx, lang, flagEmoji } from '../app/i18n';
 import { dataUrl, loadJSON } from '../data/store';
+import { zoomable } from '../ui/zoom';
 import { fmtWhen, itemWhen, itemThumb, sampleEl, type CollectionItem, type StoryKind } from '../modes/stories';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
@@ -642,6 +643,12 @@ export class Learn {
 
   private renderQuiz(feedback?: { ok: boolean; text: string }) {
     const q = this.quiz!;
+    // No questions (the data it needs is missing): say so instead of "Question 1/0".
+    if (!q.qs.length) {
+      this.stopQuiz();
+      this.shell.toast(L('This quiz could not load its questions; try again in a moment.', 'Este concurso no pudo cargar sus preguntas; vuelve a intentarlo en un momento.'));
+      return;
+    }
     if (feedback) q.fb = feedback;
     feedback = q.answered ? q.fb : undefined;
     const cur = q.qs[q.i];
@@ -697,7 +704,7 @@ export class Learn {
     // "Which script?": the sample is the question; its name, its reading and the picture wait for the answer.
     const script = kind === 'script' && !!it.sample;
     const what = script ? sampleEl(q.answered ? it.sample! : { text: it.sample!.text }) : h('div', { class: 'quiz-item' }, `${it.icon} ${tx(it.name)}`);
-    add(this.card, h('div', { class: 'quiz-q' }, this.itemQuestion(kind, it)), what, script && !q.answered ? null : img);
+    add(this.card, h('div', { class: 'quiz-q' }, this.itemQuestion(kind, it)), what, script && !q.answered ? null : zoomable(img));
     if (cur.options) {
       const opts = h('div', { class: 'quiz-opts' });
       for (const o of cur.options) {

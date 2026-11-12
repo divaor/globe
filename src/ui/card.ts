@@ -7,6 +7,7 @@ import { t, tx, fmtCompact, fmtMoney, flagEmoji, subregion } from '../app/i18n';
 import type { App } from '../app/app';
 import type { InfoRow } from '../layers/types';
 import { dataUrl } from '../data/store';
+import { zoomable } from './zoom';
 
 export class CountryCard {
   readonly el: HTMLElement;
@@ -62,7 +63,7 @@ export class CountryCard {
       actions.append(el);
     }
     add(this.body,
-      img,
+      img ? zoomable(img) : null,
       h('div', { class: 'card-head' }, h('span', { class: 'flag-emoji' }, iconText), h('div', null, h('div', { class: 'card-title' }, title), h('div', { class: 'card-sub' }, sub))),
       h('div', { class: 'rows' }, rows.map(rowEl)),
       extra ?? null,

@@ -36,7 +36,15 @@ export interface City {
 }
 
 const BASE_URL = new URL(/* @vite-ignore */ './', document.baseURI).href;
-export const dataUrl = (path: string) => new URL(`data/${path}`, BASE_URL).href;
+declare const __APP_VERSION__: string;
+/** A data file's address. Its app version (?v=0.15.0) keeps the offline cache from answering a new version of
+ * the app with an older copy of a file: a phone once got last version's country facts, without the language
+ * families a new quiz needed. Flags never change, so they stay unversioned. */
+export const dataUrl = (path: string) => {
+  const u = new URL(`data/${path}`, BASE_URL);
+  if (!path.startsWith('../')) u.searchParams.set('v', __APP_VERSION__);
+  return u.href;
+};
 
 const jsonCache = new Map<string, Promise<unknown>>();
 export function loadJSON<T = unknown>(path: string): Promise<T> {

@@ -13,7 +13,8 @@
 // the app's own fonts; a script sample on a story card (Phoenician letters) and a religions story; a
 // disaster step with its time of day and a plagues story;
 // Compare two filters (the two-colour map, its chart linked to the globe, a total divided
-// by another, categories, Spanish); the quizzes made from the stories, Guess the link and Which language
+// by another, categories, Spanish); the quizzes made from the stories (with a picture opened full screen and
+// zoomed), Guess the link and Which language
 // family?, a city tour that hops between collections, and the tours of holy places, the alphabet,
 // pandemics and tsunamis.
 import { createRequire } from 'node:module';
@@ -824,6 +825,25 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
     await page.waitForTimeout(300);
   }
+  // A quiz picture opens full screen; a double tap zooms in, and the X closes it and leaves the quiz open.
+  await menu('Quiz');
+  await page.evaluate(() => document.querySelector('[data-quiz="disaster"]').click());
+  await page.waitForSelector('.learn-card .zoom-wrap .quiz-img:not([hidden])', { timeout: 30000 });
+  await page.tap('.learn-card .quiz-img');
+  await page.waitForSelector('.zoom-view .zoom-img', { timeout: 5000 });
+  await page.waitForTimeout(300);
+  const zr = await page.evaluate(() => { const r = document.querySelector('.zoom-img').getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2, w: r.width }; });
+  await page.touchscreen.tap(zr.x, zr.y);
+  await page.waitForTimeout(120);
+  await page.touchscreen.tap(zr.x, zr.y);
+  await page.waitForTimeout(400);
+  const zt = await page.evaluate(() => document.querySelector('.zoom-img')?.style.transform ?? '');
+  await page.tap('.zoom-close');
+  await page.waitForTimeout(300);
+  const zc = await page.evaluate(() => ({ gone: !document.querySelector('.zoom-view'), quiz: !document.querySelector('.learn-card').hidden }));
+  check(zr.w > 300 && /scale\(2\.5\)/.test(zt) && zc.gone && zc.quiz, `a quiz picture opens full screen (${Math.round(zr.w)} px wide), a double tap zooms in (${zt}), and the X closes it`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
   // Guess the link: two country facts and four answers; the answer comes with its chart, and "See it
   // on the map" opens Compare two filters on that pair.
   await menu('Quiz');
