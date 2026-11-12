@@ -806,27 +806,27 @@
             "es": "Cable telegráfico transatlántico"
           },
           "at": [
-            -10.3958,
-            51.8875
+            -10.2906,
+            51.9244
           ],
           "cat": "communication",
           "type": "invention",
-          "date": "1866-07-27",
+          "date": "1858-08-16",
           "place": {
-            "en": "Foilhommerum, Valentia Island, Ireland",
-            "es": "Foilhommerum, isla de Valentia, Irlanda"
+            "en": "Knightstown, Valentia Island, Ireland",
+            "es": "Knightstown, isla de Valentia, Irlanda"
           },
           "by": {
             "en": "Cyrus Field's Atlantic Telegraph Company",
             "es": "La Atlantic Telegraph Company de Cyrus Field"
           },
           "text": {
-            "en": "The first lasting telegraph link between Europe and America, laid in 1866 from the Telegraph Field on Valentia Island to Heart's Content. Its copper core was wrapped in gutta-percha and armoured with steel wire.",
-            "es": "El primer enlace telegráfico duradero entre Europa y América, tendido en 1866 desde el Campo del Telégrafo de la isla de Valentia hasta Heart's Content. Su núcleo de cobre iba envuelto en gutapercha y protegido con alambre de acero."
+            "en": "A copper wire wrapped in gutta-percha and steel, laid on the ocean floor. The 1858 cable from Valentia Island carried the first telegrams between Europe and America but failed within weeks; the 1866 one lasted.",
+            "es": "Un hilo de cobre envuelto en gutapercha y acero, tendido en el fondo del océano. El cable de 1858 desde la isla de Valentia llevó los primeros telegramas entre Europa y América, pero falló a las pocas semanas; el de 1866 duró."
           },
           "details": {
-            "en": "The 1866 cable weighed nearly a tonne per kilometre, about twice the 1858 one; 250 workers at Hay Mills, Birmingham, spent eleven months making its steel armour. Valentia Island sent transatlantic telegrams for a hundred years, until 1966, and the cable also let astronomers link America's longitudes exactly to Greenwich. A slate memorial on Foilhommerum cliff marks the spot.",
-            "es": "El cable de 1866 pesaba casi una tonelada por kilómetro, el doble que el de 1858; 250 obreros de Hay Mills, en Birmingham, pasaron once meses fabricando su armadura de acero. La isla de Valentia envió telegramas transatlánticos durante cien años, hasta 1966, y el cable permitió además a los astrónomos medir con exactitud las longitudes de América respecto a Greenwich. Un monumento de pizarra en el acantilado de Foilhommerum recuerda el lugar."
+            "en": "The 1866 cable weighed nearly a tonne per kilometre, about twice the 1858 one; 250 workers at Hay Mills, Birmingham, spent eleven months making its steel armour. Valentia Island sent transatlantic telegrams for a hundred years, until 1966, and the cable also let astronomers link America's longitudes exactly to Greenwich. The 1866 cable started from the Telegraph Field at Foilhommerum, on the same island, where a slate memorial now stands.",
+            "es": "El cable de 1866 pesaba casi una tonelada por kilómetro, el doble que el de 1858; 250 obreros de Hay Mills, en Birmingham, pasaron once meses fabricando su armadura de acero. La isla de Valentia envió telegramas transatlánticos durante cien años, hasta 1966, y el cable permitió además a los astrónomos medir con exactitud las longitudes de América respecto a Greenwich. El cable de 1866 partió del Campo del Telégrafo de Foilhommerum, en la misma isla, donde hoy hay un monumento de pizarra."
           },
           "wiki": {
             "en": "Transatlantic telegraph cable",
@@ -2521,10 +2521,10 @@
       ],
       "places": [
         {
-          "id": "arpanet",
+          "id": "internet",
           "name": {
-            "en": "ARPANET",
-            "es": "ARPANET"
+            "en": "Internet (ARPANET)",
+            "es": "Internet (ARPANET)"
           },
           "at": [
             -118.4443,
@@ -2538,12 +2538,12 @@
             "es": "Boelter Hall, UCLA, Los Ángeles, Estados Unidos"
           },
           "by": {
-            "en": "ARPA (Bob Taylor and Larry Roberts), with BBN and UCLA",
-            "es": "ARPA (Bob Taylor y Larry Roberts), con BBN y la UCLA"
+            "en": "ARPANET teams; Vint Cerf and Bob Kahn",
+            "es": "Los equipos de ARPANET; Vint Cerf y Bob Kahn"
           },
           "text": {
-            "en": "The first wide-area network to send data in packets. At 10.30 pm on 29 October 1969 the student Charley Kline typed 'login' to SRI; the computer there crashed after 'lo'. An hour later it worked.",
-            "es": "La primera red de área amplia que envió datos en paquetes. A las 22.30 del 29 de octubre de 1969, el estudiante Charley Kline escribió «login» hacia el SRI; la computadora de allí falló tras «lo». Una hora después funcionó."
+            "en": "ARPANET, the first wide-area packet network, grew into the internet. At 10.30 pm on 29 October 1969 Charley Kline typed 'login' to SRI; the computer there crashed after 'lo'. An hour later it worked.",
+            "es": "ARPANET, la primera gran red de paquetes, dio origen a internet. A las 22.30 del 29 de octubre de 1969, Charley Kline escribió «login» hacia el SRI; la computadora de allí falló tras «lo». Una hora después funcionó."
           },
           "details": {
             "en": "The first lasting link, between UCLA and SRI, was set up on 21 November 1969. The first node was at UCLA because Leonard Kleinrock's team there would measure how the network performed. ARPANET grew to the East Coast in 1970 and in 1973 reached Norway and London by satellite. It was shut down in 1990, by then replaced by the internet it had helped to create.",
@@ -2713,10 +2713,10 @@
       ],
       "places": [
         {
-          "id": "internet",
+          "id": "tcp-ip",
           "name": {
-            "en": "Internet",
-            "es": "Internet"
+            "en": "TCP/IP",
+            "es": "TCP/IP"
           },
           "at": [
             -77.0727,
@@ -2734,16 +2734,16 @@
             "es": "Vint Cerf y Bob Kahn"
           },
           "text": {
-            "en": "A network of networks, joined by the TCP/IP rules. Vint Cerf and Bob Kahn designed them in 1974; on 1 January 1983 ARPANET adopted them, and any network that speaks TCP/IP can join.",
-            "es": "Una red de redes, unidas por las reglas TCP/IP. Vint Cerf y Bob Kahn las diseñaron en 1974; el 1 de enero de 1983 ARPANET las adoptó, y cualquier red que hable TCP/IP puede unirse."
+            "en": "The rules that join networks into one internet, a network of networks. Vint Cerf and Bob Kahn designed them in 1974; on 1 January 1983 ARPANET adopted them, and any network that speaks TCP/IP can join.",
+            "es": "Las reglas que unen redes en una sola internet, una red de redes. Vint Cerf y Bob Kahn las diseñaron en 1974; el 1 de enero de 1983 ARPANET las adoptó, y cualquier red que hable TCP/IP puede unirse."
           },
           "details": {
             "en": "TCP checks that data arrive complete and in order; IP addresses the packets and passes them from network to network. Cerf wrote the first full specification with Yogen Dalal and Carl Sunshine at Stanford in December 1974, and tests ran between Stanford, BBN and University College London. No one owns the internet: each network sets its own rules. By 2023 about two-thirds of the world's people used it.",
             "es": "TCP comprueba que los datos lleguen completos y en orden; IP pone dirección a los paquetes y los pasa de una red a otra. Cerf escribió la primera especificación completa con Yogen Dalal y Carl Sunshine en Stanford, en diciembre de 1974, y las pruebas se hicieron entre Stanford, BBN y el University College de Londres. Nadie es dueño de internet: cada red pone sus propias reglas. En 2023, unas dos terceras partes de la población mundial la usaban."
           },
           "wiki": {
-            "en": "Internet",
-            "es": "Internet"
+            "en": "Internet protocol suite",
+            "es": "Familia de protocolos de internet"
           }
         },
         {
@@ -3270,8 +3270,8 @@
             "es": "M-Pesa"
           },
           "at": [
-            36.8219,
-            -1.2921
+            36.7861,
+            -1.2592
           ],
           "cat": "communication",
           "type": "invention",
