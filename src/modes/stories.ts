@@ -171,6 +171,10 @@ const MONTHS: Record<'en' | 'es', string[]> = {
   en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
 };
+const MONTHS_SHORT: Record<'en' | 'es', string[]> = {
+  en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  es: ['ene.', 'feb.', 'mar.', 'abr.', 'may.', 'jun.', 'jul.', 'ago.', 'sept.', 'oct.', 'nov.', 'dic.'],
+};
 
 // Timing of a step, in ms at 1×: the territory fades in, arrows draw, battles and items pop up one
 // by one.
@@ -215,9 +219,9 @@ function fmtAgoRange(y0: number, y1: number): string {
 
 /** "1 September 1939", "May 334 BC", "336 a. C.", "3.2 million years ago", "1 November 1755, 09:40"... A time
  *  of day is the local time at the place, as the story gives it. */
-export function fmtWhen(d: string, eraHint = 1): string {
+export function fmtWhen(d: string, eraHint = 1, short = false): string {
   const tm = /^(.*)T(\d{2}:\d{2})$/.exec(d);
-  if (tm) return `${fmtWhen(tm[1], eraHint)}, ${tm[2]}`;
+  if (tm) return `${fmtWhen(tm[1], eraHint, short)}, ${tm[2]}`;
   const m = /^(-?\d+)(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(d);
   if (!m) return d;
   const y = Number(m[1]), mo = m[2] ? Number(m[2]) : 0, day = m[3] ? Number(m[3]) : 0;
@@ -225,7 +229,9 @@ export function fmtWhen(d: string, eraHint = 1): string {
   const es = lang() === 'es';
   // Non-breaking spaces keep "216 a. C." and "AD 476" together when the text wraps.
   const year = y < 0 ? (es ? `${-y}\u00a0a.\u00a0C.` : `${-y}\u00a0BC`) : eraHint < 0 && y < 1000 ? (es ? `${y}\u00a0d.\u00a0C.` : `AD\u00a0${y}`) : String(y);
-  const mon = mo ? MONTHS[es ? 'es' : 'en'][mo - 1] : '';
+  const mon = mo ? (short ? MONTHS_SHORT : MONTHS)[es ? 'es' : 'en'][mo - 1] : '';
+  // Short: "1 nov. 1755" (a day's date that would not fit the story bar of a phone).
+  if (es && short && day) return `${day} ${mon} ${year}`;
   if (es) return day ? `${day} de ${mon} de ${year}` : mo ? `${mon} de ${year}` : year;
   return day ? `${day} ${mon} ${year}` : mo ? `${mon[0].toUpperCase()}${mon.slice(1)} ${year}` : year;
 }
@@ -289,7 +295,7 @@ export class StoryMode {
   private snaps: { year: number; astro: number; file: string }[] = [];
   private borders = new Map<string, Line[] | 'loading'>();
   private onKey = (e: KeyboardEvent) => this.key(e);
-  private onResize = () => { this.fitText(); this.measureBar(); };
+  private onResize = () => { this.fitText(); this.fitDate(); this.measureBar(); };
   /** The step text is shown whole (tapped open) rather than in three lines. */
   private textOpen = false;
   /** The markers as drawn in the last frame (story and step, item index → spot): taps and labels use them. */
@@ -1448,12 +1454,24 @@ export class StoryMode {
     this.app.root.append(this.bar);
   }
 
+  /** The step's date in the bar, made smaller to fit; a long date with a time of day that still does not
+   * fit a phone ("1 de noviembre de 1755, 09:40") gets a short month ("1 nov. 1755, 09:40"). */
+  private fitDate() {
+    const c = this.c, ui = this.ui;
+    if (!c || !ui) return;
+    const d = c.steps[this.step].date;
+    ui.date.textContent = fmtWhen(d, c.t0);
+    fitLine(ui.date);
+    if (ui.date.scrollWidth > ui.date.clientWidth + 1) { ui.date.textContent = fmtWhen(d, c.t0, true); fitLine(ui.date); }
+  }
+
   private renderBar() {
     const c = this.c, ui = this.ui;
     if (!c || !ui) return;
     const st = c.steps[this.step];
-    ui.date.textContent = fmtWhen(st.date, c.t0);
-    fitLine(ui.date);
+    this.fitDate();
+    // Again once the fonts have loaded: the app's font is wider than the fallback one.
+    void document.fonts?.ready.then(() => { if (this.ui === ui) this.fitDate(); });
     ui.count.textContent = ` · ${t('warStepOf', { k: this.step + 1, n: c.steps.length })}`;
     clear(ui.title);
     ui.title.append(...(st.aftermath ? [h('span', { class: 'wb-tag' }, t('warAftermath')), ' '] : []), stepTitle(st));

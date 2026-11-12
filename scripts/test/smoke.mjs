@@ -664,7 +664,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 }
 
 // 12j. Plagues and cures, Natural disasters: a step with a time of day shows it after the date, in English
-// and in Spanish; a shared link opens the cholera story in Soho.
+// and in Spanish (with a short month when the long date would not fit); a shared link opens the cholera
+// story in Soho.
 {
   const stepDate = async (hash) => {
     const s = await open({ ...devices['Pixel 7'] }, hash);
@@ -676,9 +677,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     return { ...r, errors: s.errors };
   };
   const en = await stepDate('#disasters=lisbon-1755&step=1&p=globe&lang=en');
-  check(en.mode === 'disasters' && /1 November 1755, 09:40/.test(en.date) && /All Saints/.test(en.title), `the Lisbon earthquake opens at its time of day (${en.date}: ${en.title})`);
+  check(en.mode === 'disasters' && /1 Nov(ember)? 1755, 09:40/.test(en.date) && /All Saints/.test(en.title), `the Lisbon earthquake opens at its time of day (${en.date}: ${en.title})`);
   const es = await stepDate('#disasters=lisbon-1755&step=1&p=globe&lang=es');
-  check(/1 de noviembre de 1755, 09:40/.test(es.date), `in Spanish: ${es.date}`);
+  check(/1 (de noviembre de|nov\.) 1755, 09:40/.test(es.date), `in Spanish, the month shortened if the date would not fit: ${es.date}`);
   const ch = await stepDate('#plagues=cholera&step=5&p=globe&lang=en');
   check(ch.mode === 'plagues' && /Soho/.test(ch.title) && ch.items > 20, `a shared link opens the cholera story in Soho (${ch.date}: ${ch.title})`);
   const errs = [...en.errors, ...es.errors, ...ch.errors];
