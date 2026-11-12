@@ -138,10 +138,10 @@
    },
    "places": [
     {
-     "id": "mesoamerican-rubber",
+     "id": "rubber",
      "name": {
-      "en": "Mesoamerican rubber",
-      "es": "El hule mesoamericano"
+      "en": "Rubber",
+      "es": "El hule"
      },
      "at": [
       -94.6416,
@@ -459,10 +459,10 @@
    },
    "places": [
     {
-     "id": "chinampa",
+     "id": "chinampas",
      "name": {
       "en": "Chinampas",
-      "es": "Chinampas"
+      "es": "Las chinampas"
      },
      "at": [
       -98.965,
@@ -790,7 +790,7 @@
       -74.1989,
       -13.0606
      ],
-     "cat": "computing",
+     "cat": "communication",
      "type": "invention",
      "date": "600",
      "place": {
@@ -840,14 +840,14 @@
     {
      "id": "qhapaq-nan",
      "name": {
-      "en": "Qhapaq Ñan",
-      "es": "Qhapaq Ñan"
+      "en": "Qhapaq Ñan, the Inca road",
+      "es": "Qhapaq Ñan, el camino inca"
      },
      "at": [
       -76.8158,
       -9.8742
      ],
-     "cat": "transport",
+     "cat": "communication",
      "type": "site",
      "date": "1438",
      "place": {
@@ -875,15 +875,19 @@
       -13.7053
      ],
      "cat": "communication",
-     "type": "person",
-     "date": "1438",
+     "type": "invention",
+     "date": "1450",
      "place": {
       "en": "Along the Inca roads, Peru",
       "es": "A lo largo de los caminos incas, Perú"
      },
      "text": {
-      "en": "Trained relay runners who carried messages, quipus and small loads to the next post on the Inca roads, so news crossed the empire in days.",
-      "es": "Corredores entrenados que llevaban mensajes, quipus y pequeñas cargas hasta la siguiente posta de los caminos incas, de modo que las noticias cruzaban el imperio en días."
+      "en": "A relay of trained runners who carried messages, quipus and small loads to the next post on the Inca roads, so news crossed the empire in days.",
+      "es": "Un sistema de corredores entrenados que llevaban mensajes, quipus y pequeñas cargas hasta la siguiente posta de los caminos incas, de modo que las noticias cruzaban el imperio en días."
+     },
+     "by": {
+      "en": "The Incas",
+      "es": "Los incas"
      },
      "wiki": {
       "en": "Chasqui",
@@ -1181,7 +1185,7 @@
      "type": "person",
      "date": "1833",
      "life": [
-      "1804-02",
+      "1804",
       "1879-03-27"
      ],
      "place": {
@@ -1516,7 +1520,7 @@
       2.2945,
       48.8582
      ],
-     "cat": "flight",
+     "cat": "event",
      "type": "event",
      "date": "1901-10-19",
      "place": {
@@ -1691,8 +1695,8 @@
       "es": "El Apóstol"
      },
      "at": [
-      -58.3816,
-      -34.6037
+      -58.372,
+      -34.609
      ],
      "cat": "communication",
      "type": "work",
@@ -1856,12 +1860,12 @@
       "es": "Bolígrafo"
      },
      "at": [
-      -58.405,
-      -34.615
+      -58.3816,
+      -34.6037
      ],
      "cat": "home",
      "type": "invention",
-     "date": "1943-06",
+     "date": "1943-06-10",
      "place": {
       "en": "Buenos Aires, Argentina (first designs in Budapest, Hungary)",
       "es": "Buenos Aires, Argentina (primeros diseños en Budapest, Hungría)"
@@ -1871,8 +1875,8 @@
       "es": "Una pluma en la que una bolita hace rodar tinta de secado rápido sobre el papel. László Bíró la patentó en Europa en 1938 y, perfeccionada, en la Argentina en 1943."
      },
      "by": {
-      "en": "László Bíró, with his brother György",
-      "es": "László Bíró, con su hermano György"
+      "en": "László Bíró and his brother György",
+      "es": "László Bíró y su hermano György"
      },
      "wiki": {
       "en": "Ballpoint pen",
@@ -1936,10 +1940,10 @@
    },
    "places": [
     {
-     "id": "norethisterone",
+     "id": "birth-control-pill",
      "name": {
-      "en": "Norethisterone",
-      "es": "Noretisterona"
+      "en": "Norethisterone, the pill's hormone",
+      "es": "Noretisterona, la hormona de la píldora"
      },
      "at": [
       -99.178,
