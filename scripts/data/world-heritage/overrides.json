@@ -1,76 +1,213 @@
 {
  "509": {
   "at": [
-   25.8572,
+   25.8567,
    -17.9244
   ],
-  "note": "Victoria Falls"
+  "note": "Victoria Falls, the falls themselves (English Wikipedia's coordinates); the property spans Zambia and Zimbabwe"
  },
  "624": {
   "at": [
    10.8869,
-   49.8917
+   49.8914
   ],
-  "note": "Bamberg's old town"
+  "note": "Bamberg's old town, the town centre (English Wikipedia's coordinates for Bamberg)"
  },
  "946": {
   "at": [
-   17.8151,
+   17.815,
    43.3373
   ],
-  "note": "Stari Most, Mostar"
+  "note": "Stari Most, the Old Bridge of Mostar (English Wikipedia's coordinates)"
  },
  "1567": {
   "at": [
    2.8917,
-   50.8517
+   50.8522
   ],
-  "note": "Ypres (Menin Gate), one of the sites; the property spans Belgium and France"
+  "note": "Menin Gate, Ypres (English Wikipedia's coordinates), one of the 139 sites; the property spans Belgium and France"
  },
  "1586": {
   "at": [
-   30.0606,
-   -1.9306
+   30.0601,
+   -1.9312
   ],
-  "note": "Kigali Genocide Memorial, Gisozi"
+  "note": "Kigali Genocide Memorial, Gisozi (English Wikipedia's coordinates), one of the four memorials (Nyamata, Murambi, Gisozi, Bisesero)"
  },
  "1752": {
   "at": [
-   22.6889,
-   60.4558
+   22.7353,
+   60.465
   ],
-  "note": "approximate: Paimio Sanatorium, one of Aalto's works (to check)"
+  "note": "Paimio Sanatorium (component 1752-002), the best known of the 13 Aalto works: UNESCO's coordinates N60°27′54″ E22°44′07″ (English and Finnish Wikipedia agree within 50 m)"
  },
  "1755": {
   "at": [
-   2.5578,
-   42.8708
+   2.5553,
+   42.8709
   ],
-  "note": "approximate: Peyrepertuse, one of the fortresses (to check)"
+  "note": "Château de Peyrepertuse (component 1755-005), the largest of the seven sentinel castles: UNESCO's coordinates N42°52′15″ E2°33′19″. The system's head, the castle and ramparts of Carcassonne (1755-001, N43.2070 E2.3638), already has its own marker as site 345"
  },
  "1759": {
   "at": [
-   106.9,
-   47.9
+   106.509,
+   48.5624
   ],
-  "note": "approximate: central Mongolia (to check)"
+  "note": "Noyon Uul (Noin-Ula), Sujigt valley, Bornuur, Töv (component 1759-005): the best known of the eight Xiongnu cemeteries, three of which are at Noyon Uul; UNESCO's coordinates N48°33′45″ E106°30′32″"
  },
  "1760": {
   "at": [
-   51.5,
-   44.0
+   54.0702,
+   43.5971
   ],
-  "note": "approximate: Mangyshlak Peninsula (to check)"
+  "en": "Rock Mosques and Associated Sacred Sites of Mangystau",
+  "note": "The name it was inscribed under (UNESCO's map page, English Wikipedia's list for Kazakhstan, Spanish Wikipedia's list); the list by year of inscription still has the nomination's working name. Place: Beket-Ata underground mosque at Oglandy (component 1760-001), the main pilgrimage site of the five: UNESCO's coordinates N43°35′50″ E54°04′13″ (Russian Wikipedia agrees within 200 m)"
  },
  "1762": {
   "at": [
-   13.0,
-   43.4
+   13.7175,
+   43.1603
   ],
-  "note": "approximate: the Marche, central Italy (to check)"
+  "note": "Teatro dell'Aquila, Fermo (component 1762-006), the largest of the ten theatres: UNESCO's coordinates N43°09′37″ E13°43′03″ (Italian Wikipedia agrees)"
  },
  "148": {
   "cc": [],
   "note": "UNESCO lists the Old City of Jerusalem (proposed by Jordan) under no State Party: it counts for no country"
+ },
+ "790": {
+  "merged": 2025,
+  "into": 1582,
+  "note": "In July 2025 the Colonial Transisthmian Route of Panamá (1582) was inscribed as an extension of this property, which is now part of it (Panamá Viejo is component 1582rev-005); UNESCO counted 1,248 sites after that session (1,223 + 26 new - 1)"
+ },
+ "136": {
+  "d": [
+   [
+    1984,
+    1992
+   ],
+   [
+    1996,
+    null
+   ]
+  ],
+  "note": "Danger list 1984-1992 and since 1996: the Wikipedia table's row shares its year-listed cell with the row above, so build.py skipped it"
+ },
+ "183": {
+  "d": [
+   [
+    2016,
+    null
+   ]
+  ],
+  "note": "Danger list since 2016 (all five Libyan sites): the Wikipedia row shares its cells with Cyrene's, so build.py skipped it"
+ },
+ "184": {
+  "d": [
+   [
+    2016,
+    null
+   ]
+  ],
+  "note": "Danger list since 2016 (all five Libyan sites): the Wikipedia row shares its cells with Cyrene's, so build.py skipped it"
+ },
+ "1167": {
+  "d": [
+   [
+    2011,
+    null
+   ]
+  ],
+  "note": "Danger list since 2011: the Wikipedia row has no years cell and build.py took the row above's (2012)"
+ },
+ "269": {
+  "cc": [
+   "CHE"
+  ],
+  "note": "Müstair is in Switzerland: its place, a few hundred metres from the border, falls in Italy on the app's country shapes"
+ },
+ "736": {
+  "cc": [
+   "KOR"
+  ],
+  "note": "A stray Wikidata item near Naples (Q3661719) carries this site's number and added Italy"
+ },
+ "956": {
+  "cc": [
+   "SEN"
+  ],
+  "note": "Saint-Louis is in Senegal: its place, by the border on the Senegal River, falls in Mauritania on the app's country shapes"
+ },
+ "999": {
+  "cc": [
+   "BRA"
+  ],
+  "note": "The Pantanal Conservation Area is in Brazil only: Wikidata's item for the whole Pantanal region (Q157603) carries this site's number and added Bolivia and Paraguay"
+ },
+ "100": {
+  "cc": [
+   "MNE"
+  ],
+  "note": "Durmitor is in Montenegro: its place, near the border, falls in Bosnia and Herzegovina on the app's country shapes"
+ },
+ "1149": {
+  "cc": [
+   "DNK",
+   "GRL"
+  ],
+  "note": "In Greenland; UNESCO lists it under Denmark, and Wikipedia counts it for Denmark"
+ },
+ "1536": {
+  "cc": [
+   "DNK",
+   "GRL"
+  ],
+  "note": "In Greenland; UNESCO lists it under Denmark, and Wikipedia counts it for Denmark"
+ },
+ "1557": {
+  "cc": [
+   "DNK",
+   "GRL"
+  ],
+  "note": "In Greenland; UNESCO lists it under Denmark, and Wikipedia counts it for Denmark"
+ },
+ "819": {
+  "cc": [
+   "NLD",
+   "CUW"
+  ],
+  "note": "In Curaçao; UNESCO lists it under the Netherlands, and Wikipedia counts it for the Netherlands"
+ },
+ "1314": {
+  "cc": [
+   "DEU",
+   "DNK",
+   "NLD"
+  ],
+  "note": "The Wadden Sea spans Germany, Denmark and the Netherlands; Wikidata's item leaves out the Netherlands"
+ },
+ "1631": {
+  "cc": [
+   "DEU",
+   "NLD"
+  ],
+  "note": "The Lower German Limes runs through Germany and the Netherlands; Wikidata's item leaves out the Netherlands"
+ },
+ "1411": {
+  "cc": [
+   "UKR"
+  ],
+  "note": "In Crimea; UNESCO lists it under Ukraine (Wikidata adds Russia, and Wikipedia counts it for Ukraine only)"
+ },
+ "588": {
+  "cc": [
+   "ROU"
+  ],
+  "note": "The World Heritage property is the Romanian part of the delta only; Wikidata's item for the whole delta adds Ukraine"
+ },
+ "1351": {
+  "cc": [
+   "MEX"
+  ],
+  "note": "The World Heritage property is the Mexican part of the route only; Wikidata's item for the whole route adds the United States"
  }
 }

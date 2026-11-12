@@ -8,7 +8,10 @@ Sources (fetched once with fetch.sh into .cache/v017/, which is not committed):
 - Wikipedia, "List of World Heritage in Danger": the sites on the danger list now and before, with their years.
 - Wikidata (CC0), by World Heritage Site ID (P757): coordinates, Spanish name, the English and Spanish Wikipedia
   articles, a picture on Commons, the selection criteria, the countries, and how many Wikipedias have an article.
-- overrides.json (committed): fixes and Spanish names checked by hand, by reference number.
+- names-es.json (committed): each site's Spanish name as UNESCO gives it, by reference number, from Spanish
+  Wikipedia's lists by country ("Anexo:Patrimonio de la Humanidad en ...") and, for the few no list gives, translated
+  by hand in the same style. It comes before Wikidata's Spanish label.
+- overrides.json (committed): fixes and Spanish names checked by hand, by reference number (these win over all).
 
   python3 -I scripts/data/world-heritage/build.py            build
   python3 -I scripts/data/world-heritage/build.py --report   also list sites with no Spanish name or no picture
@@ -21,6 +24,7 @@ CACHE = os.path.join(ROOT, '.cache/v017')
 WIKI = os.path.join(CACHE, 'wiki')
 OUT = os.path.join(ROOT, 'public/data/layers/heritage.json')
 OVERRIDES = os.path.join(os.path.dirname(__file__), 'overrides.json')
+NAMES_ES = os.path.join(os.path.dirname(__file__), 'names-es.json')
 AS_OF = '2026-07'
 ROMAN = {'i': 1, 'ii': 2, 'iii': 3, 'iv': 4, 'v': 5, 'vi': 6, 'vii': 7, 'viii': 8, 'ix': 9, 'x': 10}
 
@@ -115,6 +119,8 @@ def main():
     sites = parse_list()
     wd = wikidata()
     over = json.load(open(OVERRIDES)) if os.path.exists(OVERRIDES) else {}
+    names_es = json.load(open(NAMES_ES, encoding='utf-8')) if os.path.exists(NAMES_ES) else {}
+    es_from = defaultdict(int)
     meta = json.load(open(os.path.join(ROOT, 'public/data/base/countries-meta.json')))
     # ISO codes to the app's country ids; a code shared by a country and its territories goes to the country.
     a2 = {}
@@ -165,9 +171,12 @@ def main():
             cult, nat = any(c <= 6 for c in crits), any(c >= 7 for c in crits)
             cat = 'm' if cult and nat else 'c' if cult else 'n'
         ccs = sorted({a2[c] for it in items for c in it['ccs'] if c in a2})
-        # The Spanish name and the articles come from the site's own item only (another item may be one of its parts).
-        es = main_it.get('es') or title(main_it.get('eswiki'))
+        # The Spanish name: UNESCO's, from names-es.json; else Wikidata's label or Spanish article, from the site's
+        # own item only (another item may be one of its parts), as are the articles.
+        es = names_es.get(str(ref)) or main_it.get('es') or title(main_it.get('eswiki'))
         es = es[:1].upper() + es[1:]
+        es_from['overrides.json' if 'es' in over.get(str(ref), {}) else 'names-es.json' if str(ref) in names_es
+                else 'Wikidata label' if main_it.get('es') else 'Spanish article title' if es else 'none (English)'] += 1
         site = {
             'ref': ref,
             'n': [s['name'], es or s['name']],
@@ -212,6 +221,7 @@ def main():
     subprocess.run(['node', os.path.join(os.path.dirname(__file__), 'locate.mjs')], check=True)
     print(f'{len(out)} sites written ({len(current)} on the list: {counts}; {len(in_danger)} in danger), {os.path.getsize(OUT) // 1024} KB')
     print(f'no Spanish name: {len(missing_es)}, no picture: {len(missing_img)}, no place: {len(missing_at)} {missing_at}')
+    print('Spanish names from:', dict(es_from))
     if unmatched:
         print('danger list rows not matched:', unmatched)
     if report:
