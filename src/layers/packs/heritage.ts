@@ -187,7 +187,10 @@ export const heritage: LayerDef = {
   labels(rc, inst) {
     if (!doc || rc.webZoom < 4) return;
     const color = rc.theme.dark ? '#ffe3b3' : '#7a4a00';
+    // Only the best-known sites are named until the map is close (many official names are long).
+    const minPop = rc.webZoom < 6 ? 90 : rc.webZoom < 8 ? 40 : 0;
     for (const s of visible(inst)) {
+      if (s.pop < minPop) continue;
       const p = rc.project(s.at[0], s.at[1]);
       if (!p) continue;
       rc.labels.add({ text: siteName(s), x: p[0] + 7, y: p[1], align: 'left', priority: 520 + Math.min(300, s.pop), size: 10.5, weight: 650, color, halo: rc.theme.labelHalo });
