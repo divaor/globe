@@ -1,0 +1,3033 @@
+{
+  "id": "looted-and-returned-art",
+  "name": {
+    "en": "Taken and returned",
+    "es": "Arte saqueado y devuelto"
+  },
+  "icon": "⚖️",
+  "era": "modern",
+  "region": {
+    "en": "Europe, Africa, Asia and the Americas",
+    "es": "Europa, África, Asia y América"
+  },
+  "start": "1797",
+  "end": "2023",
+  "summary": {
+    "en": "From Napoleon's spoils to the Benin Bronzes: works of art carried off in war, by empires and by force, the cases for and against giving them back, and what has come home so far.",
+    "es": "Del botín de Napoleón a los bronces de Benín: obras de arte llevadas por la guerra, los imperios y la fuerza, los argumentos a favor y en contra de devolverlas, y lo que ha vuelto a casa hasta ahora."
+  },
+  "camera": {
+    "lon": 15,
+    "lat": 35,
+    "zoom": 1.6
+  },
+  "sides": [
+    {
+      "id": "taken",
+      "name": {
+        "en": "Taken",
+        "es": "Llevado"
+      },
+      "color": "#8c2f39"
+    },
+    {
+      "id": "returned",
+      "name": {
+        "en": "Returned",
+        "es": "Devuelto"
+      },
+      "color": "#16a085"
+    }
+  ],
+  "steps": [
+    {
+      "date": "1797-09-11",
+      "title": {
+        "en": "Napoleon's spoils",
+        "es": "El botín de Napoleón"
+      },
+      "camera": {
+        "lon": 7.5,
+        "lat": 45.5,
+        "zoom": 5
+      },
+      "text": {
+        "en": "As Napoleon's armies conquered Italy in 1796–97, treaties forced cities and the Pope to hand over masterpieces. In Venice, soldiers took the ancient horses of St Mark's and cut a giant Veronese in two.",
+        "es": "Mientras los ejércitos de Napoleón conquistaban Italia en 1796-1797, los tratados obligaron a las ciudades y al papa a entregar obras maestras. En Venecia, los soldados se llevaron los caballos antiguos de San Marcos y cortaron en dos un Veronés gigante."
+      },
+      "details": {
+        "en": "In May 1796 France's government told Napoleon that 'the glory of art and that of the army' were 'inseparable'. Committees of scholars and artists chose what to take, and treaties made the losers give it up: under the Treaty of Tolentino of February 1797 the Pope had to send more than a hundred works to Paris, and in 1798 the ancient Laocoön left the Vatican. In Venice, on 11 September 1797, soldiers cut Veronese's Wedding at Cana, almost ten metres wide, and rolled it up; the four horses that Venice had itself carried off from Constantinople in 1204 were lowered from St Mark's. A French officer told the National Assembly that such works, 'soiled too long by slavery', had come to 'the homeland of liberty'. In Paris they filled the Louvre, renamed the Musée Napoléon, and the horses were set on a new triumphal arch. A few French voices, such as the writer Quatremère de Quincy, argued that art torn from its place loses its meaning.",
+        "es": "En mayo de 1796, el gobierno francés le escribió a Napoleón que «la gloria del arte y la del ejército» eran «inseparables». Comités de sabios y artistas elegían qué llevarse, y los tratados obligaban a los vencidos a entregarlo: por el Tratado de Tolentino, de febrero de 1797, el papa tuvo que enviar más de cien obras a París, y en 1798 el antiguo Laocoonte salió del Vaticano. En Venecia, el 11 de septiembre de 1797, los soldados cortaron Las bodas de Caná de Veronés, de casi diez metros de ancho, y la enrollaron; los cuatro caballos que la propia Venecia se había llevado de Constantinopla en 1204 fueron bajados de San Marcos. Un oficial francés dijo ante la Asamblea Nacional que esas obras, «manchadas demasiado tiempo por la esclavitud», habían llegado a «la patria de la libertad». En París llenaron el Louvre, rebautizado Museo Napoleón, y los caballos se colocaron sobre un nuevo arco de triunfo. Algunas voces francesas, como el escritor Quatremère de Quincy, sostenían que el arte arrancado de su lugar pierde su sentido."
+      },
+      "moves": [
+        {
+          "side": "taken",
+          "path": [
+            [
+              12.3397,
+              45.4345
+            ],
+            [
+              2.3376,
+              48.8606
+            ]
+          ],
+          "label": {
+            "en": "The horses and the Wedding at Cana (1797)",
+            "es": "Los caballos y Las bodas de Caná (1797)"
+          }
+        },
+        {
+          "side": "taken",
+          "path": [
+            [
+              12.4545,
+              41.9065
+            ],
+            [
+              2.3376,
+              48.8606
+            ]
+          ],
+          "label": {
+            "en": "Works from Rome (1797–98)",
+            "es": "Obras de Roma (1797-1798)"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "horses-of-saint-mark",
+          "name": {
+            "en": "Horses of Saint Mark",
+            "es": "Caballos de San Marcos"
+          },
+          "at": [
+            12.3397,
+            45.4345
+          ],
+          "cat": "sculpture",
+          "type": "work",
+          "date": "200",
+          "place": {
+            "en": "Venice, Italy",
+            "es": "Venecia, Italia"
+          },
+          "text": {
+            "en": "Four ancient horses of gilded copper, probably made in the 2nd or 3rd century AD. Venice took them from Constantinople in 1204, Napoleon took them from Venice in 1797, and they came back in 1815.",
+            "es": "Cuatro caballos antiguos de cobre dorado, hechos probablemente en los siglos II o III. Venecia se los llevó de Constantinopla en 1204, Napoleón se los llevó de Venecia en 1797 y volvieron en 1815."
+          },
+          "by": {
+            "en": "Unknown ancient sculptors",
+            "es": "Escultores antiguos desconocidos"
+          },
+          "status": {
+            "en": "Originals inside St Mark's Basilica, Venice; copies on the façade since the 1980s",
+            "es": "Los originales, dentro de la basílica de San Marcos, Venecia; copias en la fachada desde la década de 1980"
+          },
+          "wiki": {
+            "en": "Horses of Saint Mark",
+            "es": "Caballos de San Marcos"
+          },
+          "img": "Horses of Basilica San Marco bright.jpg"
+        },
+        {
+          "id": "the-wedding-at-cana",
+          "name": {
+            "en": "The Wedding at Cana",
+            "es": "Las bodas de Caná"
+          },
+          "at": [
+            12.3433,
+            45.4291
+          ],
+          "cat": "painting",
+          "type": "work",
+          "date": "1562",
+          "end": "1563",
+          "place": {
+            "en": "San Giorgio Maggiore, Venice, Italy",
+            "es": "San Giorgio Maggiore, Venecia, Italia"
+          },
+          "text": {
+            "en": "Veronese's huge wedding feast, painted in 1562–63 for the monks' dining hall on the island of San Giorgio Maggiore in Venice. Taken in 1797, it never went back; it is the largest painting in the Louvre.",
+            "es": "El enorme banquete de bodas de Veronés, pintado en 1562-1563 para el comedor de los monjes de la isla de San Giorgio Maggiore, en Venecia. Llevado en 1797, nunca volvió; es el cuadro más grande del Louvre."
+          },
+          "by": {
+            "en": "Paolo Veronese",
+            "es": "Paolo Veronés"
+          },
+          "size": {
+            "en": "6.77 m high, 9.94 m wide",
+            "es": "6,77 m de alto y 9,94 m de ancho"
+          },
+          "status": {
+            "en": "Louvre, Paris; a full-size digital copy hangs in Venice since 2007",
+            "es": "Louvre, París; una copia digital de tamaño real cuelga en Venecia desde 2007"
+          },
+          "wiki": {
+            "en": "The Wedding at Cana (Veronese)",
+            "es": "Las bodas de Caná (Veronese)"
+          },
+          "img": "Paolo Veronese 008.jpg"
+        },
+        {
+          "id": "laocoon",
+          "name": {
+            "en": "Laocoön and His Sons",
+            "es": "Laocoonte y sus hijos"
+          },
+          "at": [
+            12.4545,
+            41.9065
+          ],
+          "cat": "sculpture",
+          "type": "work",
+          "date": "-200",
+          "end": "70",
+          "place": {
+            "en": "Vatican Museums, Vatican City",
+            "es": "Museos Vaticanos, Ciudad del Vaticano"
+          },
+          "text": {
+            "en": "An ancient marble of a Trojan priest and his sons fighting sea serpents, found in Rome in 1506 and dated by scholars anywhere from about 200 BC to AD 70. Taken to Paris in 1798, it came back in 1816.",
+            "es": "Un mármol antiguo de un sacerdote troyano y sus hijos luchando contra serpientes marinas, hallado en Roma en 1506 y fechado por los expertos entre el 200 a. C. y el 70 d. C. Llevado a París en 1798, volvió en 1816."
+          },
+          "by": {
+            "en": "Agesander, Athenodoros and Polydorus of Rhodes",
+            "es": "Agesandro, Atenodoro y Polidoro de Rodas"
+          },
+          "size": {
+            "en": "208 cm high",
+            "es": "208 cm de alto"
+          },
+          "status": {
+            "en": "Vatican Museums",
+            "es": "Museos Vaticanos"
+          },
+          "wiki": {
+            "en": "Laocoön and His Sons",
+            "es": "Laocoonte y sus hijos"
+          },
+          "img": "Laocoön and his sons group.jpg"
+        },
+        {
+          "id": "louvre",
+          "name": {
+            "en": "Louvre",
+            "es": "Museo del Louvre"
+          },
+          "at": [
+            2.3376,
+            48.8606
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "1793-08-10",
+          "place": {
+            "en": "Paris, France",
+            "es": "París, Francia"
+          },
+          "text": {
+            "en": "The former royal palace in Paris, opened as a public museum on 10 August 1793. Filled with spoils from Italy, the Low Countries and Germany, it was called the Musée Napoléon from 1803 to 1815.",
+            "es": "El antiguo palacio real de París, abierto como museo público el 10 de agosto de 1793. Lleno de botines de Italia, los Países Bajos y Alemania, se llamó Museo Napoleón de 1803 a 1815."
+          },
+          "wiki": {
+            "en": "Louvre",
+            "es": "Museo del Louvre"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1815-10-24",
+      "title": {
+        "en": "Taken back from the Louvre",
+        "es": "Recuperados del Louvre"
+      },
+      "camera": {
+        "lon": 7.5,
+        "lat": 45.5,
+        "zoom": 5
+      },
+      "text": {
+        "en": "After Napoleon's defeat at Waterloo, the allies emptied much of the Louvre in 1815. Prussians, Belgians and Dutch took back their paintings and the horses went home to Venice, but almost half of the loot stayed in France.",
+        "es": "Tras la derrota de Napoleón en Waterloo, los aliados vaciaron buena parte del Louvre en 1815. Prusianos, belgas y neerlandeses recuperaron sus cuadros y los caballos volvieron a Venecia, pero casi la mitad del botín se quedó en Francia."
+      },
+      "details": {
+        "en": "On 20 September 1815 Austria, Britain and Prussia agreed that no principle of conquest allowed France to keep its spoils. The Louvre's director, Vivant Denon, resisted, so Prussian and British soldiers took paintings off the walls themselves, and Austrian dragoons blocked the streets while workers spent more than a week lowering the horses from their arch. The Pope sent the sculptor Antonio Canova to Paris; with Britain paying part of the transport, he won back the Laocoön and many other statues and paintings, and on 24 October a convoy of 41 wagons, guarded by Prussian soldiers, set off for Milan. Much stayed behind: some works were never claimed, and Denon argued that the Wedding at Cana was too fragile to travel, so Venice got a painting by Charles Le Brun instead. The French writer Stendhal protested that France had taken its paintings by treaty, while 'the allies took our paintings without a treaty'. Italian calls for the Wedding at Cana, as recently as 2010, have not succeeded.",
+        "es": "El 20 de septiembre de 1815, Austria, Gran Bretaña y Prusia acordaron que ningún principio de conquista permitía a Francia quedarse con su botín. El director del Louvre, Vivant Denon, se resistió, así que soldados prusianos y británicos descolgaron ellos mismos los cuadros, y dragones austriacos cerraron las calles mientras unos obreros pasaban más de una semana bajando los caballos de su arco. El papa envió a París al escultor Antonio Canova; con Gran Bretaña pagando parte del transporte, recuperó el Laocoonte y muchas otras estatuas y cuadros, y el 24 de octubre partió hacia Milán un convoy de 41 carros escoltado por soldados prusianos. Mucho se quedó: algunas obras nunca se reclamaron, y Denon alegó que Las bodas de Caná eran demasiado frágiles para viajar, así que Venecia recibió a cambio un cuadro de Charles Le Brun. El escritor francés Stendhal protestó que Francia se había llevado sus cuadros por tratado, mientras que «los aliados se llevaron nuestros cuadros sin tratado». Los pedidos italianos de devolver Las bodas de Caná, hasta 2010, no han tenido éxito."
+      },
+      "moves": [
+        {
+          "side": "returned",
+          "path": [
+            [
+              2.3376,
+              48.8606
+            ],
+            [
+              12.3397,
+              45.4345
+            ]
+          ],
+          "label": {
+            "en": "The horses go home (1815)",
+            "es": "Los caballos vuelven a casa (1815)"
+          }
+        },
+        {
+          "side": "returned",
+          "path": [
+            [
+              2.3376,
+              48.8606
+            ],
+            [
+              9.19,
+              45.4642
+            ],
+            [
+              12.4545,
+              41.9065
+            ]
+          ],
+          "label": {
+            "en": "Canova's convoy, via Milan to Rome (1815–16)",
+            "es": "El convoy de Canova, por Milán a Roma (1815-1816)"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "antonio-canova",
+          "name": {
+            "en": "Antonio Canova",
+            "es": "Antonio Canova"
+          },
+          "at": [
+            12.479,
+            41.906
+          ],
+          "cat": "artist",
+          "type": "person",
+          "date": "1815",
+          "life": [
+            "1757-11-01",
+            "1822-10-13"
+          ],
+          "place": {
+            "en": "Rome, Italy",
+            "es": "Roma, Italia"
+          },
+          "text": {
+            "en": "The most famous sculptor of his day, born in the Republic of Venice and working in Rome. In 1815 the Pope sent him to Paris to recover the works taken from Italy, and he brought many home.",
+            "es": "El escultor más famoso de su tiempo, nacido en la República de Venecia y activo en Roma. En 1815 el papa lo envió a París para recuperar las obras sacadas de Italia, y se trajo muchas de vuelta."
+          },
+          "wiki": {
+            "en": "Antonio Canova",
+            "es": "Antonio Canova"
+          }
+        },
+        {
+          "id": "arc-de-triomphe-du-carrousel",
+          "name": {
+            "en": "Arc de Triomphe du Carrousel",
+            "es": "Arco de Triunfo del Carrusel"
+          },
+          "at": [
+            2.3329,
+            48.8617
+          ],
+          "cat": "loot",
+          "type": "structure",
+          "date": "1806",
+          "end": "1808",
+          "place": {
+            "en": "Paris, France",
+            "es": "París, Francia"
+          },
+          "text": {
+            "en": "A triumphal arch built in 1806–08 beside the Louvre to celebrate Napoleon's victories, crowned with the horses of St Mark's until 1815. A copy of the horses stands on top today.",
+            "es": "Un arco de triunfo construido en 1806-1808 junto al Louvre para celebrar las victorias de Napoleón, coronado por los caballos de San Marcos hasta 1815. Hoy tiene encima una copia de los caballos."
+          },
+          "wiki": {
+            "en": "Arc de Triomphe du Carrousel",
+            "es": "Arco de triunfo del Carrusel"
+          }
+        },
+        {
+          "id": "horses-of-saint-mark",
+          "name": {
+            "en": "Horses of Saint Mark",
+            "es": "Caballos de San Marcos"
+          },
+          "at": [
+            12.3397,
+            45.4345
+          ],
+          "cat": "sculpture",
+          "type": "work",
+          "date": "200",
+          "place": {
+            "en": "Venice, Italy",
+            "es": "Venecia, Italia"
+          },
+          "text": {
+            "en": "Four ancient horses of gilded copper, probably made in the 2nd or 3rd century AD. Venice took them from Constantinople in 1204, Napoleon took them from Venice in 1797, and they came back in 1815.",
+            "es": "Cuatro caballos antiguos de cobre dorado, hechos probablemente en los siglos II o III. Venecia se los llevó de Constantinopla en 1204, Napoleón se los llevó de Venecia en 1797 y volvieron en 1815."
+          },
+          "by": {
+            "en": "Unknown ancient sculptors",
+            "es": "Escultores antiguos desconocidos"
+          },
+          "status": {
+            "en": "Originals inside St Mark's Basilica, Venice; copies on the façade since the 1980s",
+            "es": "Los originales, dentro de la basílica de San Marcos, Venecia; copias en la fachada desde la década de 1980"
+          },
+          "wiki": {
+            "en": "Horses of Saint Mark",
+            "es": "Caballos de San Marcos"
+          },
+          "img": "Horses of Basilica San Marco bright.jpg"
+        },
+        {
+          "id": "laocoon",
+          "name": {
+            "en": "Laocoön and His Sons",
+            "es": "Laocoonte y sus hijos"
+          },
+          "at": [
+            12.4545,
+            41.9065
+          ],
+          "cat": "sculpture",
+          "type": "work",
+          "date": "-200",
+          "end": "70",
+          "place": {
+            "en": "Vatican Museums, Vatican City",
+            "es": "Museos Vaticanos, Ciudad del Vaticano"
+          },
+          "text": {
+            "en": "An ancient marble of a Trojan priest and his sons fighting sea serpents, found in Rome in 1506 and dated by scholars anywhere from about 200 BC to AD 70. Taken to Paris in 1798, it came back in 1816.",
+            "es": "Un mármol antiguo de un sacerdote troyano y sus hijos luchando contra serpientes marinas, hallado en Roma en 1506 y fechado por los expertos entre el 200 a. C. y el 70 d. C. Llevado a París en 1798, volvió en 1816."
+          },
+          "by": {
+            "en": "Agesander, Athenodoros and Polydorus of Rhodes",
+            "es": "Agesandro, Atenodoro y Polidoro de Rodas"
+          },
+          "size": {
+            "en": "208 cm high",
+            "es": "208 cm de alto"
+          },
+          "status": {
+            "en": "Vatican Museums",
+            "es": "Museos Vaticanos"
+          },
+          "wiki": {
+            "en": "Laocoön and His Sons",
+            "es": "Laocoonte y sus hijos"
+          },
+          "img": "Laocoön and his sons group.jpg"
+        },
+        {
+          "id": "the-wedding-at-cana",
+          "name": {
+            "en": "The Wedding at Cana",
+            "es": "Las bodas de Caná"
+          },
+          "at": [
+            12.3433,
+            45.4291
+          ],
+          "cat": "painting",
+          "type": "work",
+          "date": "1562",
+          "end": "1563",
+          "place": {
+            "en": "San Giorgio Maggiore, Venice, Italy",
+            "es": "San Giorgio Maggiore, Venecia, Italia"
+          },
+          "text": {
+            "en": "Veronese's huge wedding feast, painted in 1562–63 for the monks' dining hall on the island of San Giorgio Maggiore in Venice. Taken in 1797, it never went back; it is the largest painting in the Louvre.",
+            "es": "El enorme banquete de bodas de Veronés, pintado en 1562-1563 para el comedor de los monjes de la isla de San Giorgio Maggiore, en Venecia. Llevado en 1797, nunca volvió; es el cuadro más grande del Louvre."
+          },
+          "by": {
+            "en": "Paolo Veronese",
+            "es": "Paolo Veronés"
+          },
+          "size": {
+            "en": "6.77 m high, 9.94 m wide",
+            "es": "6,77 m de alto y 9,94 m de ancho"
+          },
+          "status": {
+            "en": "Louvre, Paris; a full-size digital copy hangs in Venice since 2007",
+            "es": "Louvre, París; una copia digital de tamaño real cuelga en Venecia desde 2007"
+          },
+          "wiki": {
+            "en": "The Wedding at Cana (Veronese)",
+            "es": "Las bodas de Caná (Veronese)"
+          },
+          "img": "Paolo Veronese 008.jpg"
+        }
+      ]
+    },
+    {
+      "date": "1816-08-08",
+      "title": {
+        "en": "The Parthenon sculptures go to London",
+        "es": "Las esculturas del Partenón viajan a Londres"
+      },
+      "camera": {
+        "lon": 10,
+        "lat": 45,
+        "zoom": 3
+      },
+      "text": {
+        "en": "Between 1801 and 1812, agents of Lord Elgin, Britain's ambassador to the Ottoman Empire, removed about half the surviving sculptures of the Parthenon in Athens. In 1816 Parliament bought them for the British Museum.",
+        "es": "Entre 1801 y 1812, agentes de lord Elgin, embajador británico ante el Imperio otomano, retiraron cerca de la mitad de las esculturas que quedaban del Partenón de Atenas. En 1816, el Parlamento las compró para el Museo Británico."
+      },
+      "details": {
+        "en": "Athens was then ruled by the Ottoman Empire. Elgin said his men worked with the permission of Ottoman officials, under an order of July 1801; the original has never been found, and historians still argue whether it allowed sculptures fixed to the temple to be taken. His men removed 15 metopes, some 21 figures from the pediments and 75 metres of the frieze, and shipped them by way of Malta. Elgin argued that he had saved them from neglect and from Napoleon's armies, and a local reported that fallen marble was being burned for lime; the poet Lord Byron called him a vandal. In 1816 a committee of the House of Commons found that he had acquired them legally, and Parliament paid £35,000, less than half of what he had spent. Since 8 August 1816 they have been in the British Museum. The year before, the Louvre's director, forced to give up his own loot, had complained that England 'has stolen the Elgin Marbles'.",
+        "es": "Atenas estaba entonces bajo el Imperio otomano. Elgin dijo que sus hombres trabajaban con permiso de los funcionarios otomanos, según una orden de julio de 1801; el original nunca se ha encontrado, y los historiadores todavía discuten si permitía llevarse esculturas fijadas al templo. Sus hombres retiraron 15 metopas, unas 21 figuras de los frontones y 75 metros del friso, y las enviaron por mar pasando por Malta. Elgin alegó que las había salvado del abandono y de los ejércitos de Napoleón, y un vecino contó que el mármol caído se quemaba para hacer cal; el poeta lord Byron lo llamó vándalo. En 1816, una comisión de la Cámara de los Comunes concluyó que las había adquirido legalmente, y el Parlamento pagó 35 000 libras, menos de la mitad de lo que él había gastado. Desde el 8 de agosto de 1816 están en el Museo Británico. Un año antes, el director del Louvre, obligado a devolver su propio botín, se había quejado de que Inglaterra «ha robado los mármoles de Elgin»."
+      },
+      "moves": [
+        {
+          "side": "taken",
+          "path": [
+            [
+              23.62,
+              37.93
+            ],
+            [
+              23.25,
+              36.35
+            ],
+            [
+              22.0,
+              36.15
+            ],
+            [
+              14.55,
+              35.85
+            ],
+            [
+              11.3,
+              37.4
+            ],
+            [
+              8.8,
+              38.7
+            ],
+            [
+              1.5,
+              37.8
+            ],
+            [
+              -5.4,
+              35.95
+            ],
+            [
+              -9.2,
+              36.8
+            ],
+            [
+              -10.0,
+              39.5
+            ],
+            [
+              -9.8,
+              43.2
+            ],
+            [
+              -7.0,
+              46.5
+            ],
+            [
+              -5.3,
+              48.5
+            ],
+            [
+              -1.0,
+              50.3
+            ],
+            [
+              1.4,
+              50.95
+            ],
+            [
+              0.8,
+              51.45
+            ],
+            [
+              -0.05,
+              51.5
+            ]
+          ],
+          "by": "sea",
+          "label": {
+            "en": "By sea via Malta to London (1801–12)",
+            "es": "Por mar, vía Malta, a Londres (1801-1812)"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "parthenon-marbles",
+          "name": {
+            "en": "Parthenon Marbles",
+            "es": "Mármoles del Partenón"
+          },
+          "at": [
+            23.7266,
+            37.9715
+          ],
+          "cat": "sculpture",
+          "type": "work",
+          "date": "-447",
+          "end": "-438",
+          "place": {
+            "en": "Acropolis, Athens, Greece",
+            "es": "Acrópolis, Atenas, Grecia"
+          },
+          "text": {
+            "en": "Sculptures carved in about 447–438 BC for the Parthenon, the temple of Athena on the Acropolis: the frieze, the metopes and the figures of the two pediments. What survives is split between London and Athens.",
+            "es": "Esculturas talladas hacia 447-438 a. C. para el Partenón, el templo de Atenea en la Acrópolis: el friso, las metopas y las figuras de los dos frontones. Lo que queda está repartido entre Londres y Atenas."
+          },
+          "by": {
+            "en": "Phidias and his workshop",
+            "es": "Fidias y su taller"
+          },
+          "status": {
+            "en": "About half in the British Museum, London; most of the rest in the Acropolis Museum, Athens",
+            "es": "Cerca de la mitad en el Museo Británico, Londres; casi todo el resto en el Museo de la Acrópolis, Atenas"
+          },
+          "wiki": {
+            "en": "Elgin Marbles",
+            "es": "Mármoles de Elgin"
+          },
+          "img": "Cavalcade west frieze Parthenon BM.jpg"
+        },
+        {
+          "id": "lord-elgin",
+          "name": {
+            "en": "Lord Elgin",
+            "es": "Lord Elgin"
+          },
+          "at": [
+            28.976,
+            41.033
+          ],
+          "cat": "loot",
+          "type": "person",
+          "date": "1801",
+          "life": [
+            "1766-07-20",
+            "1841-11-14"
+          ],
+          "place": {
+            "en": "Istanbul (Constantinople), Turkey",
+            "es": "Estambul (Constantinopla), Turquía"
+          },
+          "text": {
+            "en": "Thomas Bruce, 7th Earl of Elgin, a Scottish nobleman and Britain's ambassador to the Ottoman sultan from 1799. Deep in debt, he sold the Parthenon sculptures to the British government in 1816.",
+            "es": "Thomas Bruce, séptimo conde de Elgin, noble escocés y embajador británico ante el sultán otomano desde 1799. Muy endeudado, vendió las esculturas del Partenón al gobierno británico en 1816."
+          },
+          "wiki": {
+            "en": "Thomas Bruce, 7th Earl of Elgin",
+            "es": "Thomas Bruce Elgin"
+          }
+        },
+        {
+          "id": "british-museum",
+          "name": {
+            "en": "British Museum",
+            "es": "Museo Británico"
+          },
+          "at": [
+            -0.1269,
+            51.5194
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "1753-06-07",
+          "place": {
+            "en": "London, UK",
+            "es": "Londres, Reino Unido"
+          },
+          "text": {
+            "en": "London's museum of world history and culture, founded in 1753. A law of 1963 forbids it to give away objects from its collection except in a few special cases.",
+            "es": "El museo de historia y cultura del mundo de Londres, fundado en 1753. Una ley de 1963 le prohíbe deshacerse de objetos de su colección salvo en unos pocos casos especiales."
+          },
+          "wiki": {
+            "en": "British Museum",
+            "es": "Museo Británico"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1850-07-03",
+      "title": {
+        "en": "A diamond for a queen",
+        "es": "Un diamante para una reina"
+      },
+      "camera": {
+        "lon": 30,
+        "lat": 10,
+        "zoom": 1.1
+      },
+      "text": {
+        "en": "In 1849, after defeating the Sikh Empire, the British East India Company made the boy Maharaja Duleep Singh surrender the Koh-i-Noor diamond. On 3 July 1850 it was presented to Queen Victoria in London.",
+        "es": "En 1849, tras derrotar al Imperio sij, la Compañía Británica de las Indias Orientales obligó al niño maharajá Duleep Singh a entregar el diamante Koh-i-Noor. El 3 de julio de 1850 se lo presentaron a la reina Victoria en Londres."
+      },
+      "details": {
+        "en": "The diamond, possibly mined at Kollur in southern India, had passed from the Mughal emperors to the Persian conqueror Nader Shah, who carried it off from Delhi in 1739, then to Afghan rulers and in 1813 to Ranjit Singh of the Punjab; the Afghan Shah Shuja wrote that it had been extorted from him. The Treaty of Lahore of 1849 said that the gem 'shall be surrendered by the Maharajah of Lahore to the Queen of England'. It sailed from Bombay in April 1850 on HMS Medea, by way of Mauritius. Shown at the Great Exhibition of 1851, it was cut down from 186 to 105.6 carats in 1852. Victoria later wrote to her daughter: 'You know also how I dislike wearing the Koh-i-Noor.' India, Pakistan, Iran and Afghanistan have all asked for it; Britain says it was acquired legally under the treaty, and in 2010 Prime Minister David Cameron said that agreeing to one such return would leave 'the British Museum empty'. At the coronation of 2023, Queen Camilla was crowned without it.",
+        "es": "El diamante, quizá extraído en Kollur, en el sur de la India, había pasado de los emperadores mogoles al conquistador persa Nader Shah, que se lo llevó de Delhi en 1739; luego a gobernantes afganos y, en 1813, a Ranjit Singh del Punyab. El afgano Shah Shuja escribió que se lo habían arrancado por la fuerza. El Tratado de Lahore de 1849 decía que la gema «será entregada por el maharajá de Lahore a la reina de Inglaterra». Zarpó de Bombay en abril de 1850 en el HMS Medea, pasando por Mauricio. Tras exhibirse en la Gran Exposición de 1851, fue tallado de nuevo en 1852 y pasó de 186 a 105,6 quilates. Victoria le escribió después a su hija: «Ya sabes también cuánto me disgusta llevar el Koh-i-Noor». India, Pakistán, Irán y Afganistán lo han reclamado; Gran Bretaña sostiene que lo adquirió legalmente por el tratado, y en 2010 el primer ministro David Cameron dijo que aceptar una devolución así dejaría «vacío el Museo Británico». En la coronación de 2023, la reina Camila fue coronada sin él."
+      },
+      "moves": [
+        {
+          "side": "taken",
+          "path": [
+            [
+              77.241,
+              28.6562
+            ],
+            [
+              59.61,
+              36.297
+            ]
+          ],
+          "label": {
+            "en": "1739: Nader Shah takes it from Delhi",
+            "es": "1739: Nader Shah se lo lleva de Delhi"
+          }
+        },
+        {
+          "side": "taken",
+          "path": [
+            [
+              69.17,
+              34.53
+            ],
+            [
+              74.3095,
+              31.588
+            ]
+          ],
+          "label": {
+            "en": "1813: Ranjit Singh gets it from Shah Shuja",
+            "es": "1813: Ranjit Singh se lo quita a Shah Shuja"
+          }
+        },
+        {
+          "side": "taken",
+          "path": [
+            [
+              72.835,
+              18.922
+            ],
+            [
+              70.0,
+              12.0
+            ],
+            [
+              62.0,
+              -2.0
+            ],
+            [
+              57.48,
+              -20.1
+            ],
+            [
+              50.0,
+              -28.0
+            ],
+            [
+              35.0,
+              -36.0
+            ],
+            [
+              20.0,
+              -35.8
+            ],
+            [
+              12.0,
+              -30.0
+            ],
+            [
+              2.0,
+              -15.0
+            ],
+            [
+              -12.0,
+              5.0
+            ],
+            [
+              -22.0,
+              20.0
+            ],
+            [
+              -18.0,
+              35.0
+            ],
+            [
+              -12.0,
+              44.0
+            ],
+            [
+              -6.0,
+              48.5
+            ],
+            [
+              -4.14,
+              50.33
+            ],
+            [
+              -1.1,
+              50.74
+            ]
+          ],
+          "by": "sea",
+          "label": {
+            "en": "HMS Medea, Bombay to Portsmouth (1850)",
+            "es": "HMS Medea, de Bombay a Portsmouth (1850)"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "koh-i-noor",
+          "name": {
+            "en": "Koh-i-Noor",
+            "es": "Koh-i-Noor"
+          },
+          "at": [
+            74.3095,
+            31.588
+          ],
+          "cat": "craft",
+          "type": "work",
+          "date": "1526",
+          "place": {
+            "en": "Lahore, Pakistan",
+            "es": "Lahore, Pakistán"
+          },
+          "text": {
+            "en": "One of the largest cut diamonds in the world. Taken from Delhi by Nader Shah in 1739, it reached Lahore in 1813 and was surrendered to Britain in 1849. The picture shows a replica.",
+            "es": "Uno de los diamantes tallados más grandes del mundo. Nader Shah se lo llevó de Delhi en 1739; llegó a Lahore en 1813 y fue entregado a Gran Bretaña en 1849. La imagen muestra una réplica."
+          },
+          "size": {
+            "en": "105.6 carats (21.12 g)",
+            "es": "105,6 quilates (21,12 g)"
+          },
+          "status": {
+            "en": "Crown of Queen Elizabeth the Queen Mother, Jewel House, Tower of London",
+            "es": "Corona de la reina Isabel, la reina madre, Casa de las Joyas, Torre de Londres"
+          },
+          "wiki": {
+            "en": "Koh-i-Noor",
+            "es": "Koh-i-Noor"
+          },
+          "img": "Replica of the Koh-i-Noor (cropped).jpg"
+        },
+        {
+          "id": "great-exhibition",
+          "name": {
+            "en": "Great Exhibition",
+            "es": "Gran Exposición"
+          },
+          "at": [
+            -0.17,
+            51.5031
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1851-05-01",
+          "place": {
+            "en": "Hyde Park, London, UK",
+            "es": "Hyde Park, Londres, Reino Unido"
+          },
+          "text": {
+            "en": "The world's fair of 1851 in the Crystal Palace in Hyde Park, London. The Koh-i-Noor had pride of place in the central gallery, a show of the British Empire's might.",
+            "es": "La exposición universal de 1851 en el Palacio de Cristal de Hyde Park, en Londres. El Koh-i-Noor ocupó un lugar de honor en la galería central, como muestra del poder del Imperio británico."
+          },
+          "wiki": {
+            "en": "Great Exhibition",
+            "es": "Gran Exposición"
+          }
+        },
+        {
+          "id": "tower-of-london",
+          "name": {
+            "en": "Tower of London",
+            "es": "Torre de Londres"
+          },
+          "at": [
+            -0.0761,
+            51.5081
+          ],
+          "cat": "museum",
+          "type": "structure",
+          "date": "1078",
+          "place": {
+            "en": "London, UK",
+            "es": "Londres, Reino Unido"
+          },
+          "text": {
+            "en": "The Norman fortress on the Thames, begun in 1078, where the Crown Jewels are kept. The Koh-i-Noor is set in the crown made in 1937 for Queen Elizabeth, later the Queen Mother.",
+            "es": "La fortaleza normanda a orillas del Támesis, iniciada en 1078, donde se guardan las Joyas de la Corona. El Koh-i-Noor está engastado en la corona hecha en 1937 para la reina Isabel, después la reina madre."
+          },
+          "wiki": {
+            "en": "Tower of London",
+            "es": "Torre de Londres"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1860-10-18",
+      "title": {
+        "en": "The burning of the Summer Palace",
+        "es": "El incendio del Palacio de Verano"
+      },
+      "camera": {
+        "lon": 70,
+        "lat": 48,
+        "zoom": 1.4
+      },
+      "text": {
+        "en": "In October 1860, at the end of the Second Opium War, British and French troops looted the Old Summer Palace near Beijing. Then Lord Elgin, son of the Elgin of the Parthenon, ordered it burned.",
+        "es": "En octubre de 1860, al final de la Segunda Guerra del Opio, tropas británicas y francesas saquearon el Antiguo Palacio de Verano, cerca de Pekín. Luego lord Elgin, hijo del Elgin del Partenón, ordenó quemarlo."
+      },
+      "details": {
+        "en": "The Yuanmingyuan, the 'Gardens of Perfect Brightness', had been built by Qing emperors since 1707, with European-style palaces and fountains designed by Jesuit missionaries. French troops reached it on the night of 5 October, after the emperor had fled, and soldiers of both armies looted it for days. The Qing government had imprisoned a British and French delegation and tortured many of its members; in revenge, and as a warning, Elgin ordered the palace destroyed on 18 October, though the French commander refused to take part. About 3,500 British troops set fires that burned for three days, and some 300 eunuchs and maids hiding inside were killed. Among the loot were twelve bronze animal heads from a zodiac fountain. Many treasures went to Europe; the Empress Eugénie set up a Chinese Museum at the palace of Fontainebleau. From exile, Victor Hugo wrote: 'Two robbers breaking into a museum... one of the two bandits will be called France and the other England.' The ruins are now a public park.",
+        "es": "El Yuanmingyuan, los «Jardines de la Claridad Perfecta», lo habían construido los emperadores Qing desde 1707, con palacios y fuentes de estilo europeo diseñados por misioneros jesuitas. Las tropas francesas llegaron la noche del 5 de octubre, cuando el emperador ya había huido, y soldados de ambos ejércitos lo saquearon durante días. El gobierno Qing había encarcelado a una delegación británica y francesa y torturado a muchos de sus miembros; como venganza y advertencia, Elgin ordenó destruir el palacio el 18 de octubre, aunque el comandante francés se negó a participar. Unos 3500 soldados británicos prendieron fuegos que ardieron tres días, y murieron unos 300 eunucos y criadas escondidos dentro. Entre el botín había doce cabezas de bronce de animales de una fuente del zodiaco. Muchos tesoros fueron a Europa; la emperatriz Eugenia creó un Museo Chino en el palacio de Fontainebleau. Desde el exilio, Victor Hugo escribió: «Dos ladrones entrando en un museo… uno de los dos bandidos se llamará Francia y el otro Inglaterra». Las ruinas son hoy un parque público."
+      },
+      "moves": [
+        {
+          "side": "taken",
+          "path": [
+            [
+              116.2925,
+              40.0072
+            ],
+            [
+              2.7006,
+              48.4021
+            ]
+          ],
+          "label": {
+            "en": "Treasures to France",
+            "es": "Tesoros a Francia"
+          }
+        },
+        {
+          "side": "taken",
+          "path": [
+            [
+              116.2925,
+              40.0072
+            ],
+            [
+              -0.1269,
+              51.5194
+            ]
+          ],
+          "label": {
+            "en": "Treasures to Britain",
+            "es": "Tesoros a Gran Bretaña"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "old-summer-palace",
+          "name": {
+            "en": "Old Summer Palace",
+            "es": "Antiguo Palacio de Verano"
+          },
+          "at": [
+            116.2925,
+            40.0072
+          ],
+          "cat": "loot",
+          "type": "site",
+          "date": "1707",
+          "place": {
+            "en": "Beijing, China",
+            "es": "Pekín, China"
+          },
+          "text": {
+            "en": "The Qing emperors' vast garden of palaces near Beijing, begun in 1707, with European-style buildings designed by Jesuits. British and French troops looted it and burned it in October 1860.",
+            "es": "El enorme jardín de palacios de los emperadores Qing cerca de Pekín, iniciado en 1707, con edificios de estilo europeo diseñados por jesuitas. Tropas británicas y francesas lo saquearon y lo quemaron en octubre de 1860."
+          },
+          "status": {
+            "en": "Ruins in Yuanmingyuan Park, Beijing",
+            "es": "Ruinas en el parque Yuanmingyuan, Pekín"
+          },
+          "wiki": {
+            "en": "Old Summer Palace",
+            "es": "Antiguo Palacio de Verano"
+          }
+        },
+        {
+          "id": "zodiac-bronze-heads",
+          "name": {
+            "en": "Zodiac bronze heads",
+            "es": "Cabezas de bronce del zodiaco"
+          },
+          "at": [
+            116.305,
+            40.0088
+          ],
+          "cat": "sculpture",
+          "type": "work",
+          "date": "1750",
+          "place": {
+            "en": "Beijing, China",
+            "es": "Pekín, China"
+          },
+          "text": {
+            "en": "Twelve bronze animal heads that spouted water in turn to tell the time, at a fountain made in the 18th century for the Qianlong Emperor. Looted in 1860; seven are back in China. Shown: the horse.",
+            "es": "Doce cabezas de animales de bronce que echaban agua por turnos para dar la hora, en una fuente hecha en el siglo XVIII para el emperador Qianlong. Saqueadas en 1860; siete han vuelto a China. En la imagen, el caballo."
+          },
+          "by": {
+            "en": "Designed, it is believed, by the Jesuit Giuseppe Castiglione",
+            "es": "Diseño atribuido al jesuita Giuseppe Castiglione"
+          },
+          "status": {
+            "en": "Seven back in China (Beijing); five still missing",
+            "es": "Siete han vuelto a China (Pekín); cinco siguen perdidas"
+          },
+          "wiki": {
+            "en": "Old Summer Palace bronze heads",
+            "es": "Fuente del Zodíaco"
+          },
+          "img": "Bronze Horse Head Grand Lisboa 05.jpg"
+        },
+        {
+          "id": "victor-hugo",
+          "name": {
+            "en": "Victor Hugo",
+            "es": "Victor Hugo"
+          },
+          "at": [
+            -2.5373,
+            49.4559
+          ],
+          "cat": "loot",
+          "type": "person",
+          "date": "1861",
+          "life": [
+            "1802-02-26",
+            "1885-05-22"
+          ],
+          "place": {
+            "en": "Guernsey, Channel Islands",
+            "es": "Guernsey, islas del Canal"
+          },
+          "text": {
+            "en": "The French writer, then in exile on the island of Guernsey, condemned the sack and hoped France would one day give back what it had taken. A bust of him stands at the palace ruins.",
+            "es": "El escritor francés, entonces exiliado en la isla de Guernsey, condenó el saqueo y deseó que Francia devolviera algún día lo que se había llevado. Un busto suyo se alza junto a las ruinas del palacio."
+          },
+          "wiki": {
+            "en": "Victor Hugo",
+            "es": "Victor Hugo"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1868-04-13",
+      "title": {
+        "en": "The loot of Maqdala",
+        "es": "El botín de Magdala"
+      },
+      "camera": {
+        "lon": 18,
+        "lat": 33,
+        "zoom": 1.7
+      },
+      "text": {
+        "en": "In April 1868 a British army stormed Maqdala, the mountain fortress of Emperor Tewodros II of Ethiopia, to free European hostages. Tewodros took his own life, and the soldiers looted the fortress and its church.",
+        "es": "En abril de 1868, un ejército británico asaltó Magdala, la fortaleza de montaña del emperador Teodoro II de Etiopía, para liberar a unos rehenes europeos. Teodoro se quitó la vida, y los soldados saquearon la fortaleza y su iglesia."
+      },
+      "details": {
+        "en": "Fifteen elephants and almost two hundred mules carried the loot down from the plateau: crowns, crosses, manuscripts and tabots, the sacred altar tablets that every Ethiopian church keeps and only priests may see. The army auctioned it on the spot; Richard Holmes of the British Museum, who had come with the expedition, bought much of it, and more than 300 manuscripts went to his museum, others to Oxford and Windsor. As his father had wished, Tewodros's son Alemayehu, aged six, was put in British care; he died in England at 18 and lies at Windsor Castle, and the royal household has refused Ethiopia's request for his remains, saying it would disturb other graves. Since 1999 the AFROMET campaign has asked for the treasures back. Some have come home: a crown in 1924, a tabot found in an Edinburgh church in 2002, a lock of Tewodros's hair in 2019, objects bought at auction and returned in 2021, a tabot in 2023. The British Museum keeps 11 tabots in storage, which since 2004 only Ethiopian Orthodox clergy may view.",
+        "es": "Quince elefantes y casi doscientas mulas bajaron el botín de la meseta: coronas, cruces, manuscritos y tabots, las sagradas tablas de altar que guarda cada iglesia etíope y que solo pueden ver los sacerdotes. El ejército lo subastó allí mismo; Richard Holmes, del Museo Británico, que acompañaba a la expedición, compró gran parte, y más de 300 manuscritos fueron a su museo y otros a Oxford y Windsor. Como había deseado su padre, Alemayehu, el hijo de Teodoro, de seis años, quedó bajo tutela británica; murió en Inglaterra a los 18 años y está enterrado en el castillo de Windsor, y la casa real ha rechazado la petición etíope de sus restos, alegando que perturbaría otras tumbas. Desde 1999, la campaña AFROMET pide la devolución de los tesoros. Algunos han vuelto: una corona en 1924, un tabot hallado en una iglesia de Edimburgo en 2002, un mechón de pelo de Teodoro en 2019, objetos comprados en subastas y devueltos en 2021, un tabot en 2023. El Museo Británico guarda 11 tabots en depósito, que desde 2004 solo puede ver el clero ortodoxo etíope."
+      },
+      "moves": [
+        {
+          "side": "taken",
+          "path": [
+            [
+              39.1814,
+              11.3464
+            ],
+            [
+              -0.1269,
+              51.5194
+            ]
+          ],
+          "label": {
+            "en": "The loot of Maqdala, to Britain",
+            "es": "El botín de Magdala, a Gran Bretaña"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "maqdala",
+          "name": {
+            "en": "Maqdala",
+            "es": "Magdala"
+          },
+          "at": [
+            39.1814,
+            11.3464
+          ],
+          "cat": "loot",
+          "type": "event",
+          "date": "1868-04-13",
+          "place": {
+            "en": "Amhara Region, Ethiopia",
+            "es": "Región de Amhara, Etiopía"
+          },
+          "text": {
+            "en": "Emperor Tewodros II's mountain fortress, stormed by a British army in April 1868. Its treasures and its church's sacred objects were looted and auctioned, and the fortress was burned.",
+            "es": "La fortaleza de montaña del emperador Teodoro II, asaltada por un ejército británico en abril de 1868. Sus tesoros y los objetos sagrados de su iglesia fueron saqueados y subastados, y la fortaleza, quemada."
+          },
+          "wiki": {
+            "en": "Battle of Magdala",
+            "es": "Batalla de Magdala"
+          }
+        },
+        {
+          "id": "tewodros-ii",
+          "name": {
+            "en": "Tewodros II",
+            "es": "Teodoro II"
+          },
+          "at": [
+            38.0167,
+            11.85
+          ],
+          "cat": "loot",
+          "type": "person",
+          "date": "1855-02-11",
+          "life": [
+            "1818",
+            "1868-04"
+          ],
+          "place": {
+            "en": "Debre Tabor, Ethiopia",
+            "es": "Debre Tabor, Etiopía"
+          },
+          "text": {
+            "en": "Emperor of Ethiopia from 1855, who ended the rule of rival regional lords and moved his capital from Gondar to Debre Tabor and later to Maqdala. He died there in 1868.",
+            "es": "Emperador de Etiopía desde 1855, que acabó con el dominio de los señores regionales rivales y trasladó su capital de Gondar a Debre Tabor y luego a Magdala. Murió allí en 1868."
+          },
+          "wiki": {
+            "en": "Tewodros II",
+            "es": "Teodoro II de Etiopía"
+          }
+        },
+        {
+          "id": "prince-alemayehu",
+          "name": {
+            "en": "Prince Alemayehu",
+            "es": "Príncipe Alemayehu"
+          },
+          "at": [
+            -0.6075,
+            51.4838
+          ],
+          "cat": "loot",
+          "type": "person",
+          "date": "1868",
+          "life": [
+            "1861-04-23",
+            "1879-11-14"
+          ],
+          "place": {
+            "en": "Windsor, UK",
+            "es": "Windsor, Reino Unido"
+          },
+          "text": {
+            "en": "The son of Tewodros II, taken to Britain after Maqdala at the age of six. He died in 1879, aged 18, and was buried at St George's Chapel, Windsor; Ethiopia has asked for his remains.",
+            "es": "El hijo de Teodoro II, llevado a Gran Bretaña tras Magdala a los seis años. Murió en 1879, a los 18, y fue enterrado en la capilla de San Jorge de Windsor; Etiopía ha pedido sus restos."
+          },
+          "wiki": {
+            "en": "Prince Alemayehu",
+            "es": ""
+          }
+        },
+        {
+          "id": "british-museum",
+          "name": {
+            "en": "British Museum",
+            "es": "Museo Británico"
+          },
+          "at": [
+            -0.1269,
+            51.5194
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "1753-06-07",
+          "place": {
+            "en": "London, UK",
+            "es": "Londres, Reino Unido"
+          },
+          "text": {
+            "en": "London's museum of world history and culture, founded in 1753. A law of 1963 forbids it to give away objects from its collection except in a few special cases.",
+            "es": "El museo de historia y cultura del mundo de Londres, fundado en 1753. Una ley de 1963 le prohíbe deshacerse de objetos de su colección salvo en unos pocos casos especiales."
+          },
+          "wiki": {
+            "en": "British Museum",
+            "es": "Museo Británico"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1897-02-18",
+      "title": {
+        "en": "The sack of Benin City",
+        "es": "El saqueo de la ciudad de Benín"
+      },
+      "camera": {
+        "lon": 0,
+        "lat": 30,
+        "zoom": 2.0
+      },
+      "text": {
+        "en": "On 18 February 1897 a British force of about 1,200 men captured Benin City, in today's Nigeria. They burned the city and carried off thousands of brass plaques, heads and ivories from the Oba's palace: the Benin Bronzes.",
+        "es": "El 18 de febrero de 1897, una fuerza británica de unos 1200 hombres tomó la ciudad de Benín, en la actual Nigeria. Quemaron la ciudad y se llevaron miles de placas, cabezas y marfiles del palacio del oba: los bronces de Benín."
+      },
+      "details": {
+        "en": "For centuries the royal guild of casters of the kingdom of Benin had made brass plaques, heads and figures for the Oba's palace and the altars of his ancestors; the plaques record the court's history. In January 1897 a British party led by James Phillips pushed towards the city during a sacred festival, against the Oba's wishes, and most of its members, including many African porters, were killed. Britain called its reply a 'punitive expedition' and said it had freed the people from 'a reign of terror'; many historians now see it as a planned conquest to depose Oba Ovonramwen and open up trade. The palace was burned, the Oba was exiled to Calabar, and some 2,500 objects were officially shipped to Britain, where the Admiralty auctioned many to pay for the war. They spread to museums in Germany, the United States and elsewhere; the British Museum kept about 900. By 1988 perhaps only fifty pieces were left in Nigeria.",
+        "es": "Durante siglos, el gremio real de fundidores del reino de Benín había hecho placas, cabezas y figuras de latón para el palacio del oba y los altares de sus antepasados; las placas cuentan la historia de la corte. En enero de 1897, un grupo británico encabezado por James Phillips avanzó hacia la ciudad durante una fiesta sagrada, contra los deseos del oba, y la mayoría de sus miembros, entre ellos muchos porteadores africanos, murieron. Gran Bretaña llamó a su respuesta una «expedición punitiva» y dijo que había liberado al pueblo de «un reino de terror»; muchos historiadores la ven hoy como una conquista planeada para derrocar al oba Ovonramwen y abrir el comercio. El palacio fue quemado, el oba fue desterrado a Calabar y unos 2500 objetos se enviaron oficialmente a Gran Bretaña, donde el Almirantazgo subastó muchos para pagar la guerra. Se dispersaron por museos de Alemania, Estados Unidos y otros países; el Museo Británico se quedó con unos 900. En 1988 quizá solo quedaban cincuenta piezas en Nigeria."
+      },
+      "moves": [
+        {
+          "side": "taken",
+          "path": [
+            [
+              5.6222,
+              6.3333
+            ],
+            [
+              5.05,
+              5.75
+            ],
+            [
+              3.0,
+              4.8
+            ],
+            [
+              -3.0,
+              4.2
+            ],
+            [
+              -9.0,
+              4.5
+            ],
+            [
+              -14.5,
+              9.0
+            ],
+            [
+              -18.0,
+              15.0
+            ],
+            [
+              -18.5,
+              22.0
+            ],
+            [
+              -16.0,
+              29.0
+            ],
+            [
+              -12.5,
+              36.0
+            ],
+            [
+              -11.0,
+              43.0
+            ],
+            [
+              -6.0,
+              48.4
+            ],
+            [
+              -2.0,
+              50.2
+            ],
+            [
+              1.4,
+              50.95
+            ],
+            [
+              0.8,
+              51.45
+            ],
+            [
+              -0.1269,
+              51.5194
+            ]
+          ],
+          "label": {
+            "en": "Some 2,500 objects shipped to Britain (1897)",
+            "es": "Unos 2500 objetos enviados a Gran Bretaña (1897)"
+          }
+        },
+        {
+          "side": "taken",
+          "path": [
+            [
+              -0.1269,
+              51.5194
+            ],
+            [
+              13.297,
+              52.455
+            ]
+          ],
+          "label": {
+            "en": "Sold on, many to Berlin",
+            "es": "Revendidos, muchos a Berlín"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "benin-bronzes",
+          "name": {
+            "en": "Benin Bronzes",
+            "es": "Bronces de Benín"
+          },
+          "at": [
+            5.6222,
+            6.3333
+          ],
+          "cat": "craft",
+          "type": "work",
+          "date": "1300",
+          "place": {
+            "en": "Benin City, Nigeria",
+            "es": "Ciudad de Benín, Nigeria"
+          },
+          "text": {
+            "en": "Several thousand brass plaques, heads and figures made from about the 14th century by the royal casters of the kingdom of Benin for the Oba's palace. British troops carried them off in 1897.",
+            "es": "Varios miles de placas, cabezas y figuras de latón hechas desde el siglo XIV por los fundidores reales del reino de Benín para el palacio del oba. Las tropas británicas se las llevaron en 1897."
+          },
+          "by": {
+            "en": "Edo casters of the royal guild of Benin",
+            "es": "Fundidores edo del gremio real de Benín"
+          },
+          "status": {
+            "en": "About 900 in the British Museum; many in Berlin and other museums; hundreds handed back to Nigeria since 2021",
+            "es": "Unos 900 en el Museo Británico; muchos en Berlín y otros museos; cientos devueltos a Nigeria desde 2021"
+          },
+          "wiki": {
+            "en": "Benin Bronzes",
+            "es": "Bronces de Benín"
+          },
+          "img": "Benin brass plaque 03 (cropped).jpg"
+        },
+        {
+          "id": "ovonramwen",
+          "name": {
+            "en": "Ovonramwen",
+            "es": "Ovonramwen"
+          },
+          "at": [
+            5.623,
+            6.3345
+          ],
+          "cat": "loot",
+          "type": "person",
+          "date": "1888",
+          "life": [
+            "1857",
+            "1914-01"
+          ],
+          "place": {
+            "en": "Benin City, Nigeria",
+            "es": "Ciudad de Benín, Nigeria"
+          },
+          "text": {
+            "en": "The Oba (king) of Benin from 1888. After the British took his city in 1897 he was deposed and exiled to Calabar, where he died in 1914.",
+            "es": "El oba (rey) de Benín desde 1888. Después de que los británicos tomaran su ciudad en 1897, fue depuesto y desterrado a Calabar, donde murió en 1914."
+          },
+          "wiki": {
+            "en": "Ovonramwen",
+            "es": ""
+          }
+        },
+        {
+          "id": "british-museum",
+          "name": {
+            "en": "British Museum",
+            "es": "Museo Británico"
+          },
+          "at": [
+            -0.1269,
+            51.5194
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "1753-06-07",
+          "place": {
+            "en": "London, UK",
+            "es": "Londres, Reino Unido"
+          },
+          "text": {
+            "en": "London's museum of world history and culture, founded in 1753. A law of 1963 forbids it to give away objects from its collection except in a few special cases.",
+            "es": "El museo de historia y cultura del mundo de Londres, fundado en 1753. Una ley de 1963 le prohíbe deshacerse de objetos de su colección salvo en unos pocos casos especiales."
+          },
+          "wiki": {
+            "en": "British Museum",
+            "es": "Museo Británico"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1912-11",
+      "title": {
+        "en": "From Machu Picchu to Yale",
+        "es": "De Machu Picchu a Yale"
+      },
+      "camera": {
+        "lon": -73,
+        "lat": 14,
+        "zoom": 1.9
+      },
+      "text": {
+        "en": "Guided by local farmers who knew the ruins, the Yale lecturer Hiram Bingham made Machu Picchu famous in 1911. His expeditions of 1912–15 shipped thousands of Inca objects and human bones to New Haven, Connecticut.",
+        "es": "Guiado por campesinos de la zona que conocían las ruinas, Hiram Bingham, profesor de Yale, hizo famoso Machu Picchu en 1911. Sus expediciones de 1912-1915 enviaron miles de objetos incas y huesos humanos a New Haven, Connecticut."
+      },
+      "details": {
+        "en": "On 24 July 1911 the farmer and innkeeper Melchor Arteaga led Bingham up the mountain, where two Quechua farmers, Richarte and Álvarez, were growing crops on the old Inca terraces; the Peruvian explorer Agustín Lizárraga had written his name on a wall there in 1902. Machu Picchu was a royal retreat of the Inca emperors, built in the 15th century. Peru's law banned exporting antiquities, but a special agreement under President Augusto Leguía let Yale take the finds while 'the Peruvian Government reserves the right to exact ... the return' of them. In 1916 Bingham himself wrote: 'Now they do not belong to us, but to the Peruvian government, who allowed us to take them out of the country on condition that they be returned in 18 months.' Peru asked for them back in 1920; Yale asked for more time, and the collection stayed in its Peabody Museum for almost a century.",
+        "es": "El 24 de julio de 1911, el campesino y posadero Melchor Arteaga guio a Bingham montaña arriba, donde dos campesinos quechuas, Richarte y Álvarez, cultivaban las antiguas terrazas incas; el explorador peruano Agustín Lizárraga había escrito su nombre en un muro de allí en 1902. Machu Picchu fue un refugio de los emperadores incas, construido en el siglo XV. La ley peruana prohibía exportar antigüedades, pero un acuerdo especial bajo el presidente Augusto Leguía permitió a Yale llevarse los hallazgos, mientras que «el gobierno peruano se reserva el derecho de exigir... la devolución». En 1916, el propio Bingham escribió: «Ahora no nos pertenecen a nosotros, sino al gobierno peruano, que nos permitió sacarlos del país a condición de que fueran devueltos en 18 meses». Perú los reclamó en 1920; Yale pidió más tiempo, y la colección se quedó en su Museo Peabody durante casi un siglo."
+      },
+      "moves": [
+        {
+          "side": "taken",
+          "path": [
+            [
+              -72.5456,
+              -13.1633
+            ],
+            [
+              -72.921,
+              41.3158
+            ]
+          ],
+          "label": {
+            "en": "Objects and bones, to Yale (1912–15)",
+            "es": "Objetos y huesos, a Yale (1912-1915)"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "machu-picchu",
+          "name": {
+            "en": "Machu Picchu",
+            "es": "Machu Picchu"
+          },
+          "at": [
+            -72.5456,
+            -13.1633
+          ],
+          "cat": "loot",
+          "type": "site",
+          "date": "1450",
+          "place": {
+            "en": "Cusco Region, Peru",
+            "es": "Región del Cusco, Perú"
+          },
+          "text": {
+            "en": "An Inca royal retreat high in the Andes, built in the 15th century and abandoned by the 1530s. Thousands of objects and human bones taken from it in 1912–15 went to Yale and came back in 2011–12.",
+            "es": "Un refugio real inca en lo alto de los Andes, construido en el siglo XV y abandonado hacia la década de 1530. Miles de objetos y huesos humanos sacados de allí en 1912-1915 fueron a Yale y volvieron en 2011-2012."
+          },
+          "wiki": {
+            "en": "Machu Picchu",
+            "es": "Machu Picchu"
+          }
+        },
+        {
+          "id": "hiram-bingham-iii",
+          "name": {
+            "en": "Hiram Bingham III",
+            "es": "Hiram Bingham III"
+          },
+          "at": [
+            -72.9271,
+            41.3083
+          ],
+          "cat": "loot",
+          "type": "person",
+          "date": "1911",
+          "life": [
+            "1875-11-19",
+            "1956-06-06"
+          ],
+          "place": {
+            "en": "New Haven, Connecticut, USA",
+            "es": "New Haven, Connecticut, Estados Unidos"
+          },
+          "text": {
+            "en": "A Yale lecturer in South American history, later a US senator, who made Machu Picchu world-famous in 1911. His expeditions took thousands of its objects to Yale.",
+            "es": "Profesor de historia sudamericana en Yale, luego senador de Estados Unidos, que hizo mundialmente famoso Machu Picchu en 1911. Sus expediciones se llevaron miles de sus objetos a Yale."
+          },
+          "wiki": {
+            "en": "Hiram Bingham III",
+            "es": "Hiram Bingham III"
+          }
+        },
+        {
+          "id": "peabody-museum",
+          "name": {
+            "en": "Yale Peabody Museum",
+            "es": "Museo Peabody de Yale"
+          },
+          "at": [
+            -72.921,
+            41.3158
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "1866",
+          "place": {
+            "en": "New Haven, Connecticut, USA",
+            "es": "New Haven, Connecticut, Estados Unidos"
+          },
+          "text": {
+            "en": "Yale University's natural history museum, founded in 1866. It kept, studied and sometimes showed the Machu Picchu objects for almost a hundred years.",
+            "es": "El museo de historia natural de la Universidad de Yale, fundado en 1866. Guardó, estudió y a veces exhibió los objetos de Machu Picchu durante casi cien años."
+          },
+          "wiki": {
+            "en": "Peabody Museum of Natural History",
+            "es": "Museo Peabody de Historia Natural"
+          },
+          "img": "Yale Peabody Museum (54106346944).jpg"
+        }
+      ]
+    },
+    {
+      "date": "1941-12",
+      "title": {
+        "en": "Stolen by the Nazis",
+        "es": "Robado por los nazis"
+      },
+      "camera": {
+        "lon": 10,
+        "lat": 48.5,
+        "zoom": 5
+      },
+      "text": {
+        "en": "After Nazi Germany annexed Austria in 1938, the Jewish industrialist Ferdinand Bloch-Bauer fled Vienna and his art was seized. In December 1941 Klimt's golden portrait of his late wife Adele was handed to the Belvedere.",
+        "es": "Cuando la Alemania nazi se anexionó Austria en 1938, el industrial judío Ferdinand Bloch-Bauer huyó de Viena y su colección fue confiscada. En diciembre de 1941, el retrato dorado de su difunta esposa Adele, obra de Klimt, fue entregado al Belvedere."
+      },
+      "details": {
+        "en": "Across occupied Europe the Nazis looted on a vast scale, above all from Jewish families. Hitler wanted the best works for a giant museum in Linz, his home town; Hermann Göring built his own collection. In Paris, a Nazi task force sorted seized art at the Jeu de Paume museum, where the curator Rose Valland secretly recorded more than 20,000 works that passed through and where they were sent. Bloch-Bauer was falsely accused of tax evasion; a Nazi lawyer, Friedrich Führer, sold off his property, and in December 1941 he gave the portrait to the Belvedere, saying he was following Adele's will. To hide that its sitter was Jewish, the gallery called it 'Lady in Gold'. Göring took the jewelled choker Adele wears in the painting. About a fifth of Europe's art is thought to have been looted by the Nazis, and more than 100,000 items have never been returned to their owners.",
+        "es": "En toda la Europa ocupada, los nazis saquearon a enorme escala, sobre todo a familias judías. Hitler quería las mejores obras para un museo gigante en Linz, su ciudad; Hermann Göring formó su propia colección. En París, un grupo especial nazi clasificaba el arte confiscado en el museo del Jeu de Paume, donde la conservadora Rose Valland anotó en secreto más de 20 000 obras que pasaron por allí y adónde las enviaban. A Bloch-Bauer lo acusaron falsamente de evadir impuestos; un abogado nazi, Friedrich Führer, vendió sus bienes y en diciembre de 1941 le dio el retrato al Belvedere, diciendo que cumplía el testamento de Adele. Para ocultar que la retratada era judía, la galería lo llamó «Dama de oro». Göring se quedó con la gargantilla de joyas que Adele lleva en el cuadro. Se calcula que los nazis saquearon una quinta parte del arte de Europa, y más de 100 000 objetos nunca han vuelto a sus dueños."
+      },
+      "moves": [
+        {
+          "side": "taken",
+          "path": [
+            [
+              2.3239,
+              48.8658
+            ],
+            [
+              10.7498,
+              47.5576
+            ]
+          ],
+          "label": {
+            "en": "Art from Paris to Germany",
+            "es": "Arte de París a Alemania"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "portrait-of-adele-bloch-bauer-i",
+          "name": {
+            "en": "Portrait of Adele Bloch-Bauer I",
+            "es": "Retrato de Adele Bloch-Bauer I"
+          },
+          "at": [
+            16.3478,
+            48.2102
+          ],
+          "cat": "painting",
+          "type": "work",
+          "date": "1903",
+          "end": "1907",
+          "place": {
+            "en": "Vienna, Austria",
+            "es": "Viena, Austria"
+          },
+          "text": {
+            "en": "Klimt's golden portrait of Adele Bloch-Bauer, a Jewish woman of Vienna, finished in 1907. The Nazis seized it from her family and gave it to the Belvedere in 1941; it was returned to her heirs in 2006.",
+            "es": "El retrato dorado de Adele Bloch-Bauer, una mujer judía de Viena, terminado por Klimt en 1907. Los nazis se lo quitaron a su familia y lo entregaron al Belvedere en 1941; volvió a sus herederos en 2006."
+          },
+          "by": {
+            "en": "Gustav Klimt",
+            "es": "Gustav Klimt"
+          },
+          "size": {
+            "en": "140 cm high, 140 cm wide",
+            "es": "140 cm de alto y 140 cm de ancho"
+          },
+          "status": {
+            "en": "Neue Galerie, New York",
+            "es": "Neue Galerie, Nueva York"
+          },
+          "wiki": {
+            "en": "Portrait of Adele Bloch-Bauer I",
+            "es": "Retrato de Adele Bloch-Bauer I"
+          },
+          "img": "Gustav Klimt, 1907, Adele Bloch-Bauer I, Neue Galerie New York.jpg"
+        },
+        {
+          "id": "belvedere",
+          "name": {
+            "en": "Belvedere",
+            "es": "Belvedere"
+          },
+          "at": [
+            16.3809,
+            48.1915
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "1723",
+          "place": {
+            "en": "Vienna, Austria",
+            "es": "Viena, Austria"
+          },
+          "text": {
+            "en": "Two Baroque palaces in Vienna, now a museum of Austrian art. From 1941 to 2006 it held Adele Bloch-Bauer's portrait, which Austria argued Adele had left it in her will.",
+            "es": "Dos palacios barrocos de Viena, hoy museo de arte austriaco. De 1941 a 2006 tuvo el retrato de Adele Bloch-Bauer, que según Austria ella le había dejado en su testamento."
+          },
+          "wiki": {
+            "en": "Belvedere, Vienna",
+            "es": "Palacio Belvedere"
+          }
+        },
+        {
+          "id": "rose-valland",
+          "name": {
+            "en": "Rose Valland",
+            "es": "Rose Valland"
+          },
+          "at": [
+            2.3239,
+            48.8658
+          ],
+          "cat": "loot",
+          "type": "person",
+          "date": "1941",
+          "life": [
+            "1898-11-01",
+            "1980-09-18"
+          ],
+          "place": {
+            "en": "Jeu de Paume, Paris, France",
+            "es": "Jeu de Paume, París, Francia"
+          },
+          "text": {
+            "en": "A French curator who, while the Nazis sorted looted art at the Jeu de Paume, secretly recorded where it was going. Working with the Resistance, she helped save thousands of works.",
+            "es": "Conservadora francesa que, mientras los nazis clasificaban arte saqueado en el Jeu de Paume, anotaba en secreto adónde lo enviaban. Con la Resistencia, ayudó a salvar miles de obras."
+          },
+          "wiki": {
+            "en": "Rose Valland",
+            "es": "Rose Valland"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1945-05-08",
+      "title": {
+        "en": "Treasure in a salt mine",
+        "es": "Tesoros en una mina de sal"
+      },
+      "camera": {
+        "lon": 14,
+        "lat": 48,
+        "zoom": 3.2
+      },
+      "text": {
+        "en": "On 8 May 1945 US troops reached Altaussee in the Austrian Alps, where the Nazis had hidden about 6,500 paintings in a salt mine. Allied art experts, the 'Monuments Men', began sending looted art home.",
+        "es": "El 8 de mayo de 1945, tropas estadounidenses llegaron a Altaussee, en los Alpes austriacos, donde los nazis habían escondido unos 6500 cuadros en una mina de sal. Expertos aliados en arte, los «Monuments Men», empezaron a devolver el arte saqueado."
+      },
+      "details": {
+        "en": "Deep inside the mountain the air stayed cool and steady, safe from bombs. The mine held works meant for Hitler's museum in Linz, among them Michelangelo's Madonna of Bruges and the Ghent Altarpiece, which Hitler had seized in 1942 from a French museum where it was being kept safe; eight 500-kilogram bombs placed in the mine were removed. In 1945 the altarpiece went back to Belgium. The Monuments, Fine Arts and Archives section, 345 men and women from 13 countries, found more than 1,000 hiding places holding an estimated 5 million objects, and sorted them at collecting points such as the old Nazi party building in Munich. Many works went back to countries rather than to the families they had been taken from. The Soviet army also took art from Germany, as compensation for Nazi destruction in the USSR: Priam's Treasure, gold that Heinrich Schliemann had dug up at Troy in 1873 and smuggled out of the Ottoman Empire, was flown from Berlin to Moscow and kept secret until 1994. A Russian law of 1998 forbids its return.",
+        "es": "En lo profundo de la montaña, el aire se mantenía fresco y estable, a salvo de las bombas. La mina guardaba obras destinadas al museo de Hitler en Linz, entre ellas la Virgen de Brujas de Miguel Ángel y el Políptico de Gante, que Hitler se había llevado en 1942 de un museo francés donde estaba protegido; se retiraron ocho bombas de 500 kilos colocadas en la mina. En 1945, el políptico volvió a Bélgica. La sección de Monumentos, Bellas Artes y Archivos, 345 hombres y mujeres de 13 países, encontró más de 1000 escondites con unos 5 millones de objetos, y los clasificó en centros como el antiguo edificio del partido nazi en Múnich. Muchas obras volvieron a países, no a las familias a las que se las habían quitado. El ejército soviético también se llevó arte de Alemania como compensación por la destrucción nazi en la URSS: el Tesoro de Príamo, oro que Heinrich Schliemann había desenterrado en Troya en 1873 y sacado de contrabando del Imperio otomano, fue llevado en avión de Berlín a Moscú y se mantuvo en secreto hasta 1994. Una ley rusa de 1998 prohíbe devolverlo."
+      },
+      "moves": [
+        {
+          "side": "taken",
+          "path": [
+            [
+              -0.37,
+              43.2951
+            ],
+            [
+              10.7498,
+              47.5576
+            ],
+            [
+              13.7828,
+              47.61
+            ]
+          ],
+          "label": {
+            "en": "The Ghent Altarpiece: Pau, Neuschwanstein, Altaussee (1942–44)",
+            "es": "El Políptico de Gante: Pau, Neuschwanstein, Altaussee (1942-1944)"
+          }
+        },
+        {
+          "side": "returned",
+          "path": [
+            [
+              13.7828,
+              47.61
+            ],
+            [
+              3.7265,
+              51.0532
+            ]
+          ],
+          "label": {
+            "en": "Back to Ghent (1945)",
+            "es": "De vuelta a Gante (1945)"
+          }
+        },
+        {
+          "side": "returned",
+          "path": [
+            [
+              10.7498,
+              47.5576
+            ],
+            [
+              2.3239,
+              48.8658
+            ]
+          ],
+          "label": {
+            "en": "1,400 crates from Neuschwanstein back to Paris",
+            "es": "1400 cajas de Neuschwanstein de vuelta a París"
+          }
+        },
+        {
+          "side": "taken",
+          "path": [
+            [
+              13.34,
+              52.508
+            ],
+            [
+              37.605,
+              55.7473
+            ]
+          ],
+          "label": {
+            "en": "Priam's Treasure, Berlin to Moscow (1945)",
+            "es": "El Tesoro de Príamo, de Berlín a Moscú (1945)"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "altaussee-salt-mine",
+          "name": {
+            "en": "Altaussee salt mine",
+            "es": "Mina de sal de Altaussee"
+          },
+          "at": [
+            13.7828,
+            47.61
+          ],
+          "cat": "loot",
+          "type": "site",
+          "date": "1943",
+          "place": {
+            "en": "Altaussee, Austria",
+            "es": "Altaussee, Austria"
+          },
+          "text": {
+            "en": "A salt mine in the Austrian Alps where, from 1943, the Nazis stored about 6,500 paintings meant for Hitler's museum in Linz. US troops reached it on 8 May 1945.",
+            "es": "Una mina de sal en los Alpes austriacos donde, desde 1943, los nazis guardaron unos 6500 cuadros destinados al museo de Hitler en Linz. Las tropas estadounidenses llegaron el 8 de mayo de 1945."
+          },
+          "wiki": {
+            "en": "Altaussee",
+            "es": "Altaussee"
+          }
+        },
+        {
+          "id": "ghent-altarpiece",
+          "name": {
+            "en": "Ghent Altarpiece",
+            "es": "Políptico de Gante"
+          },
+          "at": [
+            3.7265,
+            51.0532
+          ],
+          "cat": "painting",
+          "type": "work",
+          "date": "1420",
+          "end": "1432",
+          "place": {
+            "en": "Ghent, Belgium",
+            "es": "Gante, Bélgica"
+          },
+          "text": {
+            "en": "The van Eyck brothers' great altarpiece, finished in 1432. Carried to Paris under Napoleon and seized for Hitler in 1942, it was hidden in the Altaussee mine and returned to Ghent in 1945.",
+            "es": "El gran retablo de los hermanos Van Eyck, terminado en 1432. Llevado a París en tiempos de Napoleón y confiscado para Hitler en 1942, estuvo escondido en la mina de Altaussee y volvió a Gante en 1945."
+          },
+          "by": {
+            "en": "Hubert and Jan van Eyck",
+            "es": "Hubert y Jan van Eyck"
+          },
+          "status": {
+            "en": "St Bavo's Cathedral, Ghent; one panel, the Just Judges, stolen in 1934, is still missing",
+            "es": "Catedral de San Bavón, Gante; un panel, los Jueces Justos, robado en 1934, sigue perdido"
+          },
+          "wiki": {
+            "en": "Ghent Altarpiece",
+            "es": "Políptico de Gante"
+          },
+          "img": "Ghent Altarpiece Google Art Project.jpg"
+        },
+        {
+          "id": "monuments-men",
+          "name": {
+            "en": "Monuments Men",
+            "es": "Monuments Men"
+          },
+          "at": [
+            11.5664,
+            48.1458
+          ],
+          "cat": "loot",
+          "type": "institution",
+          "date": "1943",
+          "place": {
+            "en": "Munich, Germany",
+            "es": "Múnich, Alemania"
+          },
+          "text": {
+            "en": "The Allies' Monuments, Fine Arts and Archives section: 345 art experts from 13 countries. After the war they traced looted art and sent it home from collecting points such as Munich's.",
+            "es": "La sección de Monumentos, Bellas Artes y Archivos de los aliados: 345 expertos en arte de 13 países. Tras la guerra rastrearon el arte saqueado y lo devolvieron desde centros como el de Múnich."
+          },
+          "wiki": {
+            "en": "Monuments, Fine Arts, and Archives program",
+            "es": "Programa de Monumentos, Arte y Archivos"
+          }
+        },
+        {
+          "id": "priams-treasure",
+          "name": {
+            "en": "Priam's Treasure",
+            "es": "Tesoro de Príamo"
+          },
+          "at": [
+            26.239,
+            39.9575
+          ],
+          "cat": "craft",
+          "type": "work",
+          "date": "-2500",
+          "end": "-2300",
+          "place": {
+            "en": "Troy (Hisarlık), Turkey",
+            "es": "Troya (Hisarlık), Turquía"
+          },
+          "text": {
+            "en": "Gold jewellery and vessels that Schliemann dug up at Troy in 1873 and named after King Priam, though they come from a far older layer. Smuggled to Berlin, they were taken to Moscow in 1945.",
+            "es": "Joyas y vasos de oro que Schliemann desenterró en Troya en 1873 y bautizó con el nombre del rey Príamo, aunque son de una capa mucho más antigua. Llevados de contrabando a Berlín, en 1945 fueron trasladados a Moscú."
+          },
+          "by": {
+            "en": "Bronze Age goldsmiths of Troy",
+            "es": "Orfebres de Troya de la Edad del Bronce"
+          },
+          "status": {
+            "en": "Mostly in the Pushkin Museum, Moscow; some pieces in Istanbul",
+            "es": "En su mayoría en el Museo Pushkin, Moscú; algunas piezas en Estambul"
+          },
+          "wiki": {
+            "en": "Priam's Treasure",
+            "es": "Tesoro de Príamo"
+          },
+          "img": "Priam's treasure (r).jpg"
+        }
+      ]
+    },
+    {
+      "date": "1983",
+      "title": {
+        "en": "Greece asks for the marbles",
+        "es": "Grecia pide los mármoles"
+      },
+      "camera": {
+        "lon": 10,
+        "lat": 45,
+        "zoom": 3
+      },
+      "text": {
+        "en": "In 1970 a UNESCO convention set rules against smuggling cultural treasures. In 1983 Greece, led by its culture minister, the actress Melina Mercouri, formally asked Britain to return the Parthenon sculptures.",
+        "es": "En 1970, una convención de la UNESCO fijó reglas contra el contrabando de tesoros culturales. En 1983, Grecia, impulsada por su ministra de Cultura, la actriz Melina Mercouri, pidió formalmente a Gran Bretaña que devolviera las esculturas del Partenón."
+      },
+      "details": {
+        "en": "After the Second World War, many newly independent countries realised how much of their heritage they had lost under colonial rule, and pressed for new rules. The UNESCO convention, signed in Paris on 14 November 1970, asks countries to stop the illegal import, export and sale of cultural property; by 2026, 150 states had joined. Greece had asked for pieces from the Acropolis as early as 1836. Its 1983 request covered 'all the sculptures which were removed from the Acropolis of Athens and are at present in the British Museum', and in 1984 it took the dispute to UNESCO. Mercouri, Greece's first woman culture minister, debated the British Museum's director on television and launched a competition for a new museum in Athens to show the sculptures. The British government and the museum have answered that Elgin acquired them legally, and in 2013 they turned down UNESCO's offer to mediate.",
+        "es": "Tras la Segunda Guerra Mundial, muchos países recién independizados se dieron cuenta de cuánto patrimonio habían perdido bajo el dominio colonial y pidieron nuevas reglas. La convención de la UNESCO, firmada en París el 14 de noviembre de 1970, pide a los países frenar la importación, exportación y venta ilegales de bienes culturales; en 2026 la habían ratificado 150 Estados. Grecia ya había pedido piezas de la Acrópolis en 1836. Su petición de 1983 abarcaba «todas las esculturas que fueron retiradas de la Acrópolis de Atenas y están actualmente en el Museo Británico», y en 1984 llevó la disputa a la UNESCO. Mercouri, la primera mujer ministra de Cultura de Grecia, debatió por televisión con el director del Museo Británico y lanzó un concurso para un nuevo museo en Atenas que mostrara las esculturas. El gobierno británico y el museo han respondido que Elgin las adquirió legalmente, y en 2013 rechazaron la oferta de mediación de la UNESCO."
+      },
+      "places": [
+        {
+          "id": "melina-mercouri",
+          "name": {
+            "en": "Melina Mercouri",
+            "es": "Melina Mercouri"
+          },
+          "at": [
+            23.73,
+            37.976
+          ],
+          "cat": "loot",
+          "type": "person",
+          "date": "1981",
+          "life": [
+            "1920-10-18",
+            "1994-03-06"
+          ],
+          "place": {
+            "en": "Athens, Greece",
+            "es": "Atenas, Grecia"
+          },
+          "text": {
+            "en": "A Greek actress and singer who became Greece's first woman culture minister in 1981. She campaigned for the return of the Parthenon sculptures until her death in 1994.",
+            "es": "Actriz y cantante griega que en 1981 se convirtió en la primera mujer ministra de Cultura de Grecia. Hizo campaña por la devolución de las esculturas del Partenón hasta su muerte en 1994."
+          },
+          "wiki": {
+            "en": "Melina Mercouri",
+            "es": "Melina Mercouri"
+          }
+        },
+        {
+          "id": "unesco-1970-convention",
+          "name": {
+            "en": "UNESCO 1970 Convention",
+            "es": "Convención de la UNESCO de 1970"
+          },
+          "at": [
+            2.3061,
+            48.8497
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1970-11-14",
+          "place": {
+            "en": "Paris, France",
+            "es": "París, Francia"
+          },
+          "text": {
+            "en": "A treaty signed at UNESCO in Paris on 14 November 1970 against the illegal import, export and sale of cultural property, such as antiquities dug up and smuggled abroad. 150 states have joined it.",
+            "es": "Un tratado firmado en la UNESCO, en París, el 14 de noviembre de 1970 contra la importación, exportación y venta ilegales de bienes culturales, como antigüedades excavadas y sacadas de contrabando. Lo han ratificado 150 Estados."
+          },
+          "wiki": {
+            "en": "UNESCO 1970 Convention",
+            "es": ""
+          }
+        },
+        {
+          "id": "parthenon-marbles",
+          "name": {
+            "en": "Parthenon Marbles",
+            "es": "Mármoles del Partenón"
+          },
+          "at": [
+            23.7266,
+            37.9715
+          ],
+          "cat": "sculpture",
+          "type": "work",
+          "date": "-447",
+          "end": "-438",
+          "place": {
+            "en": "Acropolis, Athens, Greece",
+            "es": "Acrópolis, Atenas, Grecia"
+          },
+          "text": {
+            "en": "Sculptures carved in about 447–438 BC for the Parthenon, the temple of Athena on the Acropolis: the frieze, the metopes and the figures of the two pediments. What survives is split between London and Athens.",
+            "es": "Esculturas talladas hacia 447-438 a. C. para el Partenón, el templo de Atenea en la Acrópolis: el friso, las metopas y las figuras de los dos frontones. Lo que queda está repartido entre Londres y Atenas."
+          },
+          "by": {
+            "en": "Phidias and his workshop",
+            "es": "Fidias y su taller"
+          },
+          "status": {
+            "en": "About half in the British Museum, London; most of the rest in the Acropolis Museum, Athens",
+            "es": "Cerca de la mitad en el Museo Británico, Londres; casi todo el resto en el Museo de la Acrópolis, Atenas"
+          },
+          "wiki": {
+            "en": "Elgin Marbles",
+            "es": "Mármoles de Elgin"
+          },
+          "img": "Cavalcade west frieze Parthenon BM.jpg"
+        },
+        {
+          "id": "british-museum",
+          "name": {
+            "en": "British Museum",
+            "es": "Museo Británico"
+          },
+          "at": [
+            -0.1269,
+            51.5194
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "1753-06-07",
+          "place": {
+            "en": "London, UK",
+            "es": "Londres, Reino Unido"
+          },
+          "text": {
+            "en": "London's museum of world history and culture, founded in 1753. A law of 1963 forbids it to give away objects from its collection except in a few special cases.",
+            "es": "El museo de historia y cultura del mundo de Londres, fundado en 1753. Una ley de 1963 le prohíbe deshacerse de objetos de su colección salvo en unos pocos casos especiales."
+          },
+          "wiki": {
+            "en": "British Museum",
+            "es": "Museo Británico"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2006-01-15",
+      "title": {
+        "en": "The Lady in Gold goes home",
+        "es": "La dama de oro vuelve a su familia"
+      },
+      "camera": {
+        "lon": -58,
+        "lat": 42,
+        "zoom": 1.25
+      },
+      "text": {
+        "en": "In January 2006 an Austrian arbitration panel ruled that Klimt's portrait of Adele Bloch-Bauer and four other paintings must go to her heirs. Her niece Maria Altmann, then 89, had fought for them for seven years.",
+        "es": "En enero de 2006, un tribunal de arbitraje austriaco decidió que el retrato de Adele Bloch-Bauer de Klimt y otros cuatro cuadros debían ir a sus herederos. Su sobrina Maria Altmann, de 89 años, había luchado por ellos durante siete años."
+      },
+      "details": {
+        "en": "In 1998 the journalist Hubertus Czernin showed, from newly opened archives, that the Belvedere held art taken from Jewish owners; he called Austria's refusal to return it 'a double crime'. Austria argued that Adele's will had asked for the paintings to go to the gallery, although they belonged to her husband Ferdinand, whose last will left everything to his nephew and nieces. Altmann, who had fled Austria and settled in Los Angeles, sued Austria in the United States; the US Supreme Court let the case go ahead in 2004, and both sides then agreed to arbitration in Vienna. The Belvedere said goodbye with posters reading 'Ciao Adele'. In June 2006 the businessman Ronald Lauder bought the portrait for 135 million dollars, then a record, for the Neue Galerie, his public museum in New York. Altmann had said: 'It is very meaningful to me that they are seen by anybody who wants to see them, because that would have been the wish of my aunt.' The other four paintings went to private collectors.",
+        "es": "En 1998, el periodista Hubertus Czernin demostró, con archivos recién abiertos, que el Belvedere tenía arte quitado a propietarios judíos; llamó «un doble crimen» a la negativa de Austria a devolverlo. Austria alegó que el testamento de Adele pedía que los cuadros fueran a la galería, aunque pertenecían a su esposo Ferdinand, cuyo último testamento lo dejaba todo a su sobrino y sus sobrinas. Altmann, que había huido de Austria y vivía en Los Ángeles, demandó a Austria en Estados Unidos; la Corte Suprema estadounidense permitió que el caso siguiera en 2004, y luego ambas partes aceptaron un arbitraje en Viena. El Belvedere se despidió con carteles que decían «Ciao Adele». En junio de 2006, el empresario Ronald Lauder compró el retrato por 135 millones de dólares, entonces un récord, para la Neue Galerie, su museo público de Nueva York. Altmann había dicho: «Para mí es muy significativo que los vea cualquiera que quiera verlos, porque ese habría sido el deseo de mi tía». Los otros cuatro cuadros fueron a coleccionistas privados."
+      },
+      "moves": [
+        {
+          "side": "returned",
+          "path": [
+            [
+              16.3809,
+              48.1915
+            ],
+            [
+              -118.412,
+              34.045
+            ],
+            [
+              -73.9603,
+              40.7813
+            ]
+          ],
+          "label": {
+            "en": "Adele, to her heirs: Los Angeles, then New York (2006)",
+            "es": "Adele, a sus herederos: Los Ángeles y luego Nueva York (2006)"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "maria-altmann",
+          "name": {
+            "en": "Maria Altmann",
+            "es": "Maria Altmann"
+          },
+          "at": [
+            -118.412,
+            34.045
+          ],
+          "cat": "loot",
+          "type": "person",
+          "date": "1998",
+          "life": [
+            "1916-02-18",
+            "2011-02-07"
+          ],
+          "place": {
+            "en": "Los Angeles, USA",
+            "es": "Los Ángeles, Estados Unidos"
+          },
+          "text": {
+            "en": "Adele Bloch-Bauer's niece, who fled Nazi-ruled Austria and settled in Los Angeles. In her eighties she took on the Austrian state for her family's Klimts, and won in 2006.",
+            "es": "Sobrina de Adele Bloch-Bauer, que huyó de la Austria nazi y se instaló en Los Ángeles. Con más de ochenta años se enfrentó al Estado austriaco por los Klimts de su familia, y ganó en 2006."
+          },
+          "wiki": {
+            "en": "Maria Altmann",
+            "es": "Maria Altmann"
+          }
+        },
+        {
+          "id": "neue-galerie",
+          "name": {
+            "en": "Neue Galerie New York",
+            "es": "Neue Galerie de Nueva York"
+          },
+          "at": [
+            -73.9603,
+            40.7813
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "2001-11-16",
+          "place": {
+            "en": "New York, USA",
+            "es": "Nueva York, Estados Unidos"
+          },
+          "text": {
+            "en": "A museum of German and Austrian art in a Fifth Avenue mansion, opened in 2001 by the art dealer Serge Sabarsky and the businessman Ronald Lauder. Adele Bloch-Bauer I has hung there since 2006.",
+            "es": "Un museo de arte alemán y austriaco en una mansión de la Quinta Avenida, abierto en 2001 por el marchante Serge Sabarsky y el empresario Ronald Lauder. Adele Bloch-Bauer I cuelga allí desde 2006."
+          },
+          "wiki": {
+            "en": "Neue Galerie New York",
+            "es": "Neue Galerie"
+          },
+          "img": "Neue Gallery (48059179353).jpg"
+        },
+        {
+          "id": "portrait-of-adele-bloch-bauer-i",
+          "name": {
+            "en": "Portrait of Adele Bloch-Bauer I",
+            "es": "Retrato de Adele Bloch-Bauer I"
+          },
+          "at": [
+            16.3478,
+            48.2102
+          ],
+          "cat": "painting",
+          "type": "work",
+          "date": "1903",
+          "end": "1907",
+          "place": {
+            "en": "Vienna, Austria",
+            "es": "Viena, Austria"
+          },
+          "text": {
+            "en": "Klimt's golden portrait of Adele Bloch-Bauer, a Jewish woman of Vienna, finished in 1907. The Nazis seized it from her family and gave it to the Belvedere in 1941; it was returned to her heirs in 2006.",
+            "es": "El retrato dorado de Adele Bloch-Bauer, una mujer judía de Viena, terminado por Klimt en 1907. Los nazis se lo quitaron a su familia y lo entregaron al Belvedere en 1941; volvió a sus herederos en 2006."
+          },
+          "by": {
+            "en": "Gustav Klimt",
+            "es": "Gustav Klimt"
+          },
+          "size": {
+            "en": "140 cm high, 140 cm wide",
+            "es": "140 cm de alto y 140 cm de ancho"
+          },
+          "status": {
+            "en": "Neue Galerie, New York",
+            "es": "Neue Galerie, Nueva York"
+          },
+          "wiki": {
+            "en": "Portrait of Adele Bloch-Bauer I",
+            "es": "Retrato de Adele Bloch-Bauer I"
+          },
+          "img": "Gustav Klimt, 1907, Adele Bloch-Bauer I, Neue Galerie New York.jpg"
+        },
+        {
+          "id": "belvedere",
+          "name": {
+            "en": "Belvedere",
+            "es": "Belvedere"
+          },
+          "at": [
+            16.3809,
+            48.1915
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "1723",
+          "place": {
+            "en": "Vienna, Austria",
+            "es": "Viena, Austria"
+          },
+          "text": {
+            "en": "Two Baroque palaces in Vienna, now a museum of Austrian art. From 1941 to 2006 it held Adele Bloch-Bauer's portrait, which Austria argued Adele had left it in her will.",
+            "es": "Dos palacios barrocos de Viena, hoy museo de arte austriaco. De 1941 a 2006 tuvo el retrato de Adele Bloch-Bauer, que según Austria ella le había dejado en su testamento."
+          },
+          "wiki": {
+            "en": "Belvedere, Vienna",
+            "es": "Palacio Belvedere"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2011-03-30",
+      "title": {
+        "en": "Machu Picchu's objects come home",
+        "es": "Los objetos de Machu Picchu vuelven a casa"
+      },
+      "camera": {
+        "lon": -73,
+        "lat": 14,
+        "zoom": 1.9
+      },
+      "text": {
+        "en": "After protests and a lawsuit, Yale agreed in November 2010 to return everything Bingham had taken. The objects came home to Peru in three shipments, from March 2011 to November 2012.",
+        "es": "Tras protestas y una demanda, Yale aceptó en noviembre de 2010 devolver todo lo que se había llevado Bingham. Los objetos volvieron a Perú en tres envíos, de marzo de 2011 a noviembre de 2012."
+      },
+      "details": {
+        "en": "Yale had argued that it had owned the collection since the excavations, under the Peruvian law of the time, and that it had kept it together for the world. Peru answered that the objects had only been lent; in 2008 it counted 46,332 items it said Yale held illegally, and in 2009 it sued the university in an American court. On 5 November 2010 President Alan García led a march in Lima calling Yale's refusal a 'global crime', as crowds chanted 'Give us back our heritage!' Two weeks later the two sides agreed. Yale and Cusco's San Antonio Abad University now look after the collection together, at the Machu Picchu Museum in Casa Concha, a colonial house in Cusco built where an Inca palace once stood. García thanked Yale for having conserved pieces 'that otherwise would have been dispersed in private collections throughout the world, and perhaps would have disappeared'.",
+        "es": "Yale había alegado que la colección era suya desde las excavaciones, según la ley peruana de entonces, y que la había mantenido unida para el mundo. Perú respondió que los objetos solo habían sido prestados; en 2008 contó 46 332 piezas que, según decía, Yale tenía ilegalmente, y en 2009 demandó a la universidad ante un tribunal estadounidense. El 5 de noviembre de 2010, el presidente Alan García encabezó una marcha en Lima que calificó de «crimen global» la negativa de Yale, mientras la multitud coreaba «¡Devuélvenos el patrimonio!». Dos semanas después, las dos partes llegaron a un acuerdo. Yale y la Universidad San Antonio Abad del Cusco cuidan hoy juntas la colección, en el Museo Machu Picchu de la Casa Concha, una casona colonial del Cusco levantada donde antes hubo un palacio inca. García agradeció a Yale haber conservado piezas «que de otro modo se habrían dispersado en colecciones privadas por todo el mundo, y quizá habrían desaparecido»."
+      },
+      "moves": [
+        {
+          "side": "returned",
+          "path": [
+            [
+              -72.921,
+              41.3158
+            ],
+            [
+              -71.9769,
+              -13.5173
+            ]
+          ],
+          "label": {
+            "en": "Back to Cusco (2011–12)",
+            "es": "De vuelta al Cusco (2011-2012)"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "casa-concha",
+          "name": {
+            "en": "Machu Picchu Museum, Casa Concha",
+            "es": "Museo Machu Picchu, Casa Concha"
+          },
+          "at": [
+            -71.9769,
+            -13.5173
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "2011",
+          "place": {
+            "en": "Cusco, Peru",
+            "es": "Cusco, Perú"
+          },
+          "text": {
+            "en": "A colonial house of 1710 in Cusco, built on the site of the palace of the Inca Túpac Inca Yupanqui. Since 2011 it has housed the Machu Picchu Museum, with the objects returned by Yale.",
+            "es": "Una casona colonial de 1710 en el Cusco, levantada donde estuvo el palacio del inca Túpac Inca Yupanqui. Desde 2011 alberga el Museo Machu Picchu, con los objetos devueltos por Yale."
+          },
+          "wiki": {
+            "en": "Casa Concha",
+            "es": "Casa Concha"
+          }
+        },
+        {
+          "id": "machu-picchu",
+          "name": {
+            "en": "Machu Picchu",
+            "es": "Machu Picchu"
+          },
+          "at": [
+            -72.5456,
+            -13.1633
+          ],
+          "cat": "loot",
+          "type": "site",
+          "date": "1450",
+          "place": {
+            "en": "Cusco Region, Peru",
+            "es": "Región del Cusco, Perú"
+          },
+          "text": {
+            "en": "An Inca royal retreat high in the Andes, built in the 15th century and abandoned by the 1530s. Thousands of objects and human bones taken from it in 1912–15 went to Yale and came back in 2011–12.",
+            "es": "Un refugio real inca en lo alto de los Andes, construido en el siglo XV y abandonado hacia la década de 1530. Miles de objetos y huesos humanos sacados de allí en 1912-1915 fueron a Yale y volvieron en 2011-2012."
+          },
+          "wiki": {
+            "en": "Machu Picchu",
+            "es": "Machu Picchu"
+          }
+        },
+        {
+          "id": "peabody-museum",
+          "name": {
+            "en": "Yale Peabody Museum",
+            "es": "Museo Peabody de Yale"
+          },
+          "at": [
+            -72.921,
+            41.3158
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "1866",
+          "place": {
+            "en": "New Haven, Connecticut, USA",
+            "es": "New Haven, Connecticut, Estados Unidos"
+          },
+          "text": {
+            "en": "Yale University's natural history museum, founded in 1866. It kept, studied and sometimes showed the Machu Picchu objects for almost a hundred years.",
+            "es": "El museo de historia natural de la Universidad de Yale, fundado en 1866. Guardó, estudió y a veces exhibió los objetos de Machu Picchu durante casi cien años."
+          },
+          "wiki": {
+            "en": "Peabody Museum of Natural History",
+            "es": "Museo Peabody de Historia Natural"
+          },
+          "img": "Yale Peabody Museum (54106346944).jpg"
+        }
+      ]
+    },
+    {
+      "date": "2013-06-28",
+      "title": {
+        "en": "Zodiac heads come back",
+        "es": "Vuelven las cabezas del zodiaco"
+      },
+      "camera": {
+        "lon": 70,
+        "lat": 40,
+        "zoom": 1.4
+      },
+      "text": {
+        "en": "In 2009 Christie's in Paris sold the rat and rabbit heads looted from the Old Summer Palace, despite China's protests. In June 2013 François Pinault, the French businessman who owns Christie's, gave them to China.",
+        "es": "En 2009, Christie's vendió en París las cabezas de la rata y el conejo saqueadas del Antiguo Palacio de Verano, pese a las protestas de China. En junio de 2013, François Pinault, el empresario francés dueño de Christie's, se las regaló a China."
+      },
+      "details": {
+        "en": "The two heads had belonged to the designer Yves Saint Laurent and were sold in February 2009 with his collection. China's heritage administration said the sale went against 'the international common understanding that cultural relics should be returned to their country of origin'. Their owner, Pierre Bergé, replied that he would hand them over if China gave the Tibetans back their freedom. The winning bidder, an adviser to a Chinese fund for recovering lost relics, then refused to pay. Other heads had already come back through the market: the state-owned Poly Group bought the ox, the tiger and the monkey at auctions in Hong Kong in 2000, and the casino magnate Stanley Ho bought the pig and, in 2007, the horse, which he gave to China in 2019; it now stands again at the Old Summer Palace. China's government itself would not buy them, since paying would suggest they had been taken legally. Five heads are still missing. Poly's director, Jiang Yingchun, said: 'If you kidnapped my children and then treated them well, the crime is still not forgiven.'",
+        "es": "Las dos cabezas habían sido del diseñador Yves Saint Laurent y se vendieron en febrero de 2009 con su colección. La administración de patrimonio de China dijo que la venta iba contra «el entendimiento internacional común de que los bienes culturales deben volver a su país de origen». Su dueño, Pierre Bergé, respondió que las entregaría si China les devolvía la libertad a los tibetanos. El ganador de la subasta, asesor de un fondo chino para recuperar reliquias perdidas, se negó luego a pagar. Otras cabezas ya habían vuelto por el mercado: el grupo estatal Poly compró el buey, el tigre y el mono en subastas de Hong Kong en 2000, y el magnate de los casinos Stanley Ho compró el cerdo y, en 2007, el caballo, que regaló a China en 2019; hoy está otra vez en el Antiguo Palacio de Verano. El propio gobierno chino no quiso comprarlas, porque pagar daría a entender que se las habían llevado legalmente. Cinco cabezas siguen perdidas. El director de Poly, Jiang Yingchun, dijo: «Si secuestras a mis hijos y luego los tratas bien, el crimen sigue sin ser perdonado»."
+      },
+      "moves": [
+        {
+          "side": "returned",
+          "path": [
+            [
+              2.3376,
+              48.8606
+            ],
+            [
+              116.4005,
+              39.9035
+            ]
+          ],
+          "label": {
+            "en": "The rat and the rabbit, from Paris (2013)",
+            "es": "La rata y el conejo, desde París (2013)"
+          }
+        },
+        {
+          "side": "returned",
+          "path": [
+            [
+              114.1694,
+              22.3193
+            ],
+            [
+              116.4005,
+              39.9035
+            ]
+          ],
+          "label": {
+            "en": "Ox, tiger and monkey, bought in Hong Kong (2000)",
+            "es": "Buey, tigre y mono, comprados en Hong Kong (2000)"
+          }
+        },
+        {
+          "side": "returned",
+          "path": [
+            [
+              113.5439,
+              22.1987
+            ],
+            [
+              116.305,
+              40.0088
+            ]
+          ],
+          "label": {
+            "en": "The horse, from Macau (2019)",
+            "es": "El caballo, desde Macao (2019)"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "national-museum-of-china",
+          "name": {
+            "en": "National Museum of China",
+            "es": "Museo Nacional de China"
+          },
+          "at": [
+            116.4005,
+            39.9035
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "2003",
+          "place": {
+            "en": "Beijing, China",
+            "es": "Pekín, China"
+          },
+          "text": {
+            "en": "China's national museum on Tiananmen Square in Beijing, formed in 2003 from two older museums. It received the rat and rabbit heads returned in 2013.",
+            "es": "El museo nacional de China, en la plaza de Tiananmén de Pekín, creado en 2003 a partir de dos museos más antiguos. Recibió las cabezas de la rata y el conejo devueltas en 2013."
+          },
+          "wiki": {
+            "en": "National Museum of China",
+            "es": "Museo Nacional de China"
+          }
+        },
+        {
+          "id": "zodiac-bronze-heads",
+          "name": {
+            "en": "Zodiac bronze heads",
+            "es": "Cabezas de bronce del zodiaco"
+          },
+          "at": [
+            116.305,
+            40.0088
+          ],
+          "cat": "sculpture",
+          "type": "work",
+          "date": "1750",
+          "place": {
+            "en": "Beijing, China",
+            "es": "Pekín, China"
+          },
+          "text": {
+            "en": "Twelve bronze animal heads that spouted water in turn to tell the time, at a fountain made in the 18th century for the Qianlong Emperor. Looted in 1860; seven are back in China. Shown: the horse.",
+            "es": "Doce cabezas de animales de bronce que echaban agua por turnos para dar la hora, en una fuente hecha en el siglo XVIII para el emperador Qianlong. Saqueadas en 1860; siete han vuelto a China. En la imagen, el caballo."
+          },
+          "by": {
+            "en": "Designed, it is believed, by the Jesuit Giuseppe Castiglione",
+            "es": "Diseño atribuido al jesuita Giuseppe Castiglione"
+          },
+          "status": {
+            "en": "Seven back in China (Beijing); five still missing",
+            "es": "Siete han vuelto a China (Pekín); cinco siguen perdidas"
+          },
+          "wiki": {
+            "en": "Old Summer Palace bronze heads",
+            "es": "Fuente del Zodíaco"
+          },
+          "img": "Bronze Horse Head Grand Lisboa 05.jpg"
+        },
+        {
+          "id": "old-summer-palace",
+          "name": {
+            "en": "Old Summer Palace",
+            "es": "Antiguo Palacio de Verano"
+          },
+          "at": [
+            116.2925,
+            40.0072
+          ],
+          "cat": "loot",
+          "type": "site",
+          "date": "1707",
+          "place": {
+            "en": "Beijing, China",
+            "es": "Pekín, China"
+          },
+          "text": {
+            "en": "The Qing emperors' vast garden of palaces near Beijing, begun in 1707, with European-style buildings designed by Jesuits. British and French troops looted it and burned it in October 1860.",
+            "es": "El enorme jardín de palacios de los emperadores Qing cerca de Pekín, iniciado en 1707, con edificios de estilo europeo diseñados por jesuitas. Tropas británicas y francesas lo saquearon y lo quemaron en octubre de 1860."
+          },
+          "status": {
+            "en": "Ruins in Yuanmingyuan Park, Beijing",
+            "es": "Ruinas en el parque Yuanmingyuan, Pekín"
+          },
+          "wiki": {
+            "en": "Old Summer Palace",
+            "es": "Antiguo Palacio de Verano"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2022-12-20",
+      "title": {
+        "en": "Benin Bronzes go home",
+        "es": "Los bronces de Benín vuelven a casa"
+      },
+      "camera": {
+        "lon": 8,
+        "lat": 30,
+        "zoom": 2.0
+      },
+      "text": {
+        "en": "On 20 December 2022 Germany's foreign minister handed 20 Benin Bronzes to Nigeria in Abuja, after Germany agreed to transfer ownership of more than 1,100 held in its museums. Museums in Britain and the US returned some too.",
+        "es": "El 20 de diciembre de 2022, la ministra de Exteriores de Alemania entregó 20 bronces de Benín a Nigeria en Abuya, después de que su país aceptara traspasar la propiedad de más de 1100 piezas de sus museos. Museos británicos y estadounidenses también devolvieron algunos."
+      },
+      "details": {
+        "en": "Annalena Baerbock said the return acknowledged 'the injustice of a colonial past', and Berlin dropped its plans to make the bronzes a centrepiece of the new Humboldt Forum. In Britain, the University of Aberdeen and Jesus College, Cambridge, returned a head and a cockerel in 2021, and in November 2022 London's Horniman Museum handed over ownership of its bronzes; the Smithsonian in Washington signed over 29 that October. In June 2025 the Netherlands returned 119, the largest single return so far. Not everyone agreed: an African American group, the Restitution Study Group, argued that descendants of enslaved Africans also had a claim, because brass for the bronzes was traded for captives, but US courts rejected its case. In March 2023 Nigeria's outgoing president declared that all returned bronzes belong to the Oba of Benin, Ewuare II, and a new museum in Benin City opened without them. The British Museum keeps its 900 objects; a 1963 law bars it from giving them away.",
+        "es": "Annalena Baerbock dijo que la devolución reconocía «la injusticia de un pasado colonial», y Berlín abandonó sus planes de hacer de los bronces una pieza central del nuevo Humboldt Forum. En Gran Bretaña, la Universidad de Aberdeen y el Jesus College de Cambridge devolvieron una cabeza y un gallo en 2021, y en noviembre de 2022 el Museo Horniman de Londres traspasó la propiedad de sus bronces; el Smithsonian de Washington cedió 29 ese octubre. En junio de 2025, los Países Bajos devolvieron 119, la mayor devolución hasta ahora. No todos estuvieron de acuerdo: un grupo afroestadounidense, el Restitution Study Group, sostuvo que los descendientes de africanos esclavizados también tenían derecho, porque el latón de los bronces se intercambiaba por cautivos, pero los tribunales de Estados Unidos rechazaron su demanda. En marzo de 2023, el presidente saliente de Nigeria declaró que todos los bronces devueltos pertenecen al oba de Benín, Ewuare II, y un nuevo museo en la ciudad de Benín abrió sin ellos. El Museo Británico conserva sus 900 objetos; una ley de 1963 le impide cederlos."
+      },
+      "moves": [
+        {
+          "side": "returned",
+          "path": [
+            [
+              13.4028,
+              52.5175
+            ],
+            [
+              7.4951,
+              9.0579
+            ]
+          ],
+          "label": {
+            "en": "20 bronzes from Berlin to Abuja (2022)",
+            "es": "20 bronces de Berlín a Abuya (2022)"
+          }
+        },
+        {
+          "side": "returned",
+          "path": [
+            [
+              4.487,
+              52.163
+            ],
+            [
+              5.6222,
+              6.3333
+            ]
+          ],
+          "label": {
+            "en": "119 bronzes from the Netherlands (2025)",
+            "es": "119 bronces desde los Países Bajos (2025)"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "humboldt-forum",
+          "name": {
+            "en": "Humboldt Forum",
+            "es": "Humboldt Forum"
+          },
+          "at": [
+            13.4028,
+            52.5175
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "2021-07-20",
+          "place": {
+            "en": "Berlin, Germany",
+            "es": "Berlín, Alemania"
+          },
+          "text": {
+            "en": "A museum in Berlin's rebuilt royal palace, home of the Ethnological Museum's collections since 2021. Germany transferred ownership of its Benin Bronzes to Nigeria in 2022; some stay on loan.",
+            "es": "Un museo en el palacio real reconstruido de Berlín, sede de las colecciones del Museo Etnológico desde 2021. Alemania traspasó la propiedad de sus bronces de Benín a Nigeria en 2022; algunos siguen allí en préstamo."
+          },
+          "wiki": {
+            "en": "Humboldt Forum",
+            "es": "Humboldt Forum"
+          },
+          "img": "Humboldt Forum Foyer-002.jpg"
+        },
+        {
+          "id": "ewuare-ii",
+          "name": {
+            "en": "Ewuare II",
+            "es": "Ewuare II"
+          },
+          "at": [
+            5.6215,
+            6.3325
+          ],
+          "cat": "loot",
+          "type": "person",
+          "date": "2016-10-20",
+          "life": [
+            "1953-10-20",
+            null
+          ],
+          "place": {
+            "en": "Benin City, Nigeria",
+            "es": "Ciudad de Benín, Nigeria"
+          },
+          "text": {
+            "en": "The Oba (king) of Benin, crowned in 2016. In 2023 Nigeria's government declared that the returned bronzes belong to him; he welcomed the Dutch return of 2025 as a 'divine intervention'.",
+            "es": "El oba (rey) de Benín, coronado en 2016. En 2023, el gobierno de Nigeria declaró que los bronces devueltos le pertenecen; él celebró la devolución neerlandesa de 2025 como una «intervención divina»."
+          },
+          "wiki": {
+            "en": "Ewuare II",
+            "es": ""
+          }
+        },
+        {
+          "id": "benin-bronzes",
+          "name": {
+            "en": "Benin Bronzes",
+            "es": "Bronces de Benín"
+          },
+          "at": [
+            5.6222,
+            6.3333
+          ],
+          "cat": "craft",
+          "type": "work",
+          "date": "1300",
+          "place": {
+            "en": "Benin City, Nigeria",
+            "es": "Ciudad de Benín, Nigeria"
+          },
+          "text": {
+            "en": "Several thousand brass plaques, heads and figures made from about the 14th century by the royal casters of the kingdom of Benin for the Oba's palace. British troops carried them off in 1897.",
+            "es": "Varios miles de placas, cabezas y figuras de latón hechas desde el siglo XIV por los fundidores reales del reino de Benín para el palacio del oba. Las tropas británicas se las llevaron en 1897."
+          },
+          "by": {
+            "en": "Edo casters of the royal guild of Benin",
+            "es": "Fundidores edo del gremio real de Benín"
+          },
+          "status": {
+            "en": "About 900 in the British Museum; many in Berlin and other museums; hundreds handed back to Nigeria since 2021",
+            "es": "Unos 900 en el Museo Británico; muchos en Berlín y otros museos; cientos devueltos a Nigeria desde 2021"
+          },
+          "wiki": {
+            "en": "Benin Bronzes",
+            "es": "Bronces de Benín"
+          },
+          "img": "Benin brass plaque 03 (cropped).jpg"
+        },
+        {
+          "id": "british-museum",
+          "name": {
+            "en": "British Museum",
+            "es": "Museo Británico"
+          },
+          "at": [
+            -0.1269,
+            51.5194
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "1753-06-07",
+          "place": {
+            "en": "London, UK",
+            "es": "Londres, Reino Unido"
+          },
+          "text": {
+            "en": "London's museum of world history and culture, founded in 1753. A law of 1963 forbids it to give away objects from its collection except in a few special cases.",
+            "es": "El museo de historia y cultura del mundo de Londres, fundado en 1753. Una ley de 1963 le prohíbe deshacerse de objetos de su colección salvo en unos pocos casos especiales."
+          },
+          "wiki": {
+            "en": "British Museum",
+            "es": "Museo Británico"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2023-11",
+      "title": {
+        "en": "Still waiting in London",
+        "es": "Todavía esperan en Londres"
+      },
+      "camera": {
+        "lon": 10,
+        "lat": 45,
+        "zoom": 3
+      },
+      "text": {
+        "en": "Three Parthenon fragments have come back to Athens from the Vatican and one from Palermo, but the sculptures in London have not. In November 2023 Britain's prime minister cancelled a meeting with Greece's over the marbles.",
+        "es": "Tres fragmentos del Partenón han vuelto a Atenas desde el Vaticano y uno desde Palermo, pero las esculturas de Londres no. En noviembre de 2023, el primer ministro británico canceló una reunión con el griego por los mármoles."
+      },
+      "details": {
+        "en": "The Acropolis Museum, opened in 2009 below the hill, shows the surviving frieze in its original order, with white plaster casts where the pieces in London belong. In 2021 UNESCO called on Britain to negotiate, and Greek officials and the British Museum began talks in late 2022, but no deal has been reached. The museum argues that the sculptures were obtained legally, that it shows them beside other world cultures to about six million visitors a year, and that it would lend them if Greece accepted its ownership. Greece answers that they were removed unethically and belong together, in sight of the temple. Other cases also remain open: the Koh-i-Noor, five zodiac heads, the tabots and Benin Bronzes in the British Museum, Priam's Treasure in Moscow. In Venice, a full-size digital copy of the Wedding at Cana has hung since 2007 in the monks' dining hall where the original once was.",
+        "es": "El Museo de la Acrópolis, abierto en 2009 al pie de la colina, muestra el friso que se conserva en su orden original, con calcos blancos de yeso donde van las piezas de Londres. En 2021, la UNESCO pidió a Gran Bretaña que negociara, y funcionarios griegos y el Museo Británico iniciaron conversaciones a fines de 2022, pero no hay acuerdo. El museo sostiene que las esculturas se obtuvieron legalmente, que las muestra junto a otras culturas del mundo a unos seis millones de visitantes al año y que las prestaría si Grecia aceptara que son suyas. Grecia responde que fueron retiradas de forma poco ética y que deben estar juntas, a la vista del templo. Otros casos siguen abiertos: el Koh-i-Noor, cinco cabezas del zodiaco, los tabots y los bronces de Benín del Museo Británico, el Tesoro de Príamo en Moscú. En Venecia, una copia digital de tamaño real de Las bodas de Caná cuelga desde 2007 en el comedor de los monjes donde estuvo el original."
+      },
+      "moves": [
+        {
+          "side": "returned",
+          "path": [
+            [
+              13.3617,
+              38.12
+            ],
+            [
+              23.7283,
+              37.9686
+            ]
+          ],
+          "label": {
+            "en": "A fragment from Palermo (2022)",
+            "es": "Un fragmento desde Palermo (2022)"
+          }
+        },
+        {
+          "side": "returned",
+          "path": [
+            [
+              12.4545,
+              41.9065
+            ],
+            [
+              23.7283,
+              37.9686
+            ]
+          ],
+          "label": {
+            "en": "Three fragments from the Vatican (2023)",
+            "es": "Tres fragmentos desde el Vaticano (2023)"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "acropolis-museum",
+          "name": {
+            "en": "Acropolis Museum",
+            "es": "Museo de la Acrópolis"
+          },
+          "at": [
+            23.7283,
+            37.9686
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "2009-06-20",
+          "place": {
+            "en": "Athens, Greece",
+            "es": "Atenas, Grecia"
+          },
+          "text": {
+            "en": "A museum at the foot of the Acropolis, opened on 20 June 2009. Its top floor shows the Parthenon frieze in its original order, in sight of the temple, with casts standing in for the pieces in London.",
+            "es": "Un museo al pie de la Acrópolis, inaugurado el 20 de junio de 2009. Su último piso muestra el friso del Partenón en su orden original, a la vista del templo, con calcos en lugar de las piezas de Londres."
+          },
+          "wiki": {
+            "en": "Acropolis Museum",
+            "es": "Museo de la Acrópolis"
+          },
+          "img": "Acropolis and Acropolis Museum.jpg"
+        },
+        {
+          "id": "parthenon-marbles",
+          "name": {
+            "en": "Parthenon Marbles",
+            "es": "Mármoles del Partenón"
+          },
+          "at": [
+            23.7266,
+            37.9715
+          ],
+          "cat": "sculpture",
+          "type": "work",
+          "date": "-447",
+          "end": "-438",
+          "place": {
+            "en": "Acropolis, Athens, Greece",
+            "es": "Acrópolis, Atenas, Grecia"
+          },
+          "text": {
+            "en": "Sculptures carved in about 447–438 BC for the Parthenon, the temple of Athena on the Acropolis: the frieze, the metopes and the figures of the two pediments. What survives is split between London and Athens.",
+            "es": "Esculturas talladas hacia 447-438 a. C. para el Partenón, el templo de Atenea en la Acrópolis: el friso, las metopas y las figuras de los dos frontones. Lo que queda está repartido entre Londres y Atenas."
+          },
+          "by": {
+            "en": "Phidias and his workshop",
+            "es": "Fidias y su taller"
+          },
+          "status": {
+            "en": "About half in the British Museum, London; most of the rest in the Acropolis Museum, Athens",
+            "es": "Cerca de la mitad en el Museo Británico, Londres; casi todo el resto en el Museo de la Acrópolis, Atenas"
+          },
+          "wiki": {
+            "en": "Elgin Marbles",
+            "es": "Mármoles de Elgin"
+          },
+          "img": "Cavalcade west frieze Parthenon BM.jpg"
+        },
+        {
+          "id": "british-museum",
+          "name": {
+            "en": "British Museum",
+            "es": "Museo Británico"
+          },
+          "at": [
+            -0.1269,
+            51.5194
+          ],
+          "cat": "museum",
+          "type": "institution",
+          "date": "1753-06-07",
+          "place": {
+            "en": "London, UK",
+            "es": "Londres, Reino Unido"
+          },
+          "text": {
+            "en": "London's museum of world history and culture, founded in 1753. A law of 1963 forbids it to give away objects from its collection except in a few special cases.",
+            "es": "El museo de historia y cultura del mundo de Londres, fundado en 1753. Una ley de 1963 le prohíbe deshacerse de objetos de su colección salvo en unos pocos casos especiales."
+          },
+          "wiki": {
+            "en": "British Museum",
+            "es": "Museo Británico"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Since 1815, when the allies emptied the Louvre, the idea that taken art should go home has grown, from peace treaties and UNESCO rules to Germany's return of the Benin Bronzes. Some works have come back, such as the horses of St Mark's, Adele Bloch-Bauer's portrait, the Machu Picchu objects and seven zodiac heads; many others, from the Parthenon sculptures to the Koh-i-Noor, are still claimed. The debate goes on between those who see great museums as places where everyone can see the world's art and those who want their heritage back where it was made.",
+    "es": "Desde 1815, cuando los aliados vaciaron el Louvre, ha crecido la idea de que el arte llevado debe volver a casa, desde los tratados de paz y las reglas de la UNESCO hasta la devolución alemana de los bronces de Benín. Algunas obras han vuelto, como los caballos de San Marcos, el retrato de Adele Bloch-Bauer, los objetos de Machu Picchu y siete cabezas del zodiaco; muchas otras, de las esculturas del Partenón al Koh-i-Noor, siguen reclamadas. El debate continúa entre quienes ven los grandes museos como lugares donde todos pueden ver el arte del mundo y quienes quieren recuperar su patrimonio allí donde se hizo."
+  },
+  "sources": [
+    {
+      "title": "Napoleonic looting of art (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Napoleonic_looting_of_art"
+    },
+    {
+      "title": "Treaty of Tolentino (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Treaty_of_Tolentino"
+    },
+    {
+      "title": "Horses of Saint Mark (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Horses_of_Saint_Mark"
+    },
+    {
+      "title": "The Wedding at Cana (Veronese) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/The_Wedding_at_Cana_(Veronese)"
+    },
+    {
+      "title": "Laocoön and His Sons (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Laocoön_and_His_Sons"
+    },
+    {
+      "title": "Apollo Belvedere (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Apollo_Belvedere"
+    },
+    {
+      "title": "Antonio Canova (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Antonio_Canova"
+    },
+    {
+      "title": "Arc de Triomphe du Carrousel (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Arc_de_Triomphe_du_Carrousel"
+    },
+    {
+      "title": "Louvre (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Louvre"
+    },
+    {
+      "title": "Elgin Marbles (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Elgin_Marbles"
+    },
+    {
+      "title": "Thomas Bruce, 7th Earl of Elgin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Thomas_Bruce,_7th_Earl_of_Elgin"
+    },
+    {
+      "title": "Parthenon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Parthenon"
+    },
+    {
+      "title": "Parthenon Frieze (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Parthenon_Frieze"
+    },
+    {
+      "title": "British Museum (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/British_Museum"
+    },
+    {
+      "title": "Koh-i-Noor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Koh-i-Noor"
+    },
+    {
+      "title": "Great Exhibition (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Exhibition"
+    },
+    {
+      "title": "Tower of London (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tower_of_London"
+    },
+    {
+      "title": "Old Summer Palace (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Old_Summer_Palace"
+    },
+    {
+      "title": "Old Summer Palace bronze heads (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Old_Summer_Palace_bronze_heads"
+    },
+    {
+      "title": "2009 auction of Old Summer Palace bronze heads (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/2009_auction_of_Old_Summer_Palace_bronze_heads"
+    },
+    {
+      "title": "James Bruce, 8th Earl of Elgin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/James_Bruce,_8th_Earl_of_Elgin"
+    },
+    {
+      "title": "Victor Hugo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Victor_Hugo"
+    },
+    {
+      "title": "Battle of Magdala (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Magdala"
+    },
+    {
+      "title": "British expedition to Abyssinia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/British_expedition_to_Abyssinia"
+    },
+    {
+      "title": "Tewodros II (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tewodros_II"
+    },
+    {
+      "title": "Prince Alemayehu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Prince_Alemayehu"
+    },
+    {
+      "title": "Tabot (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tabot"
+    },
+    {
+      "title": "Benin Bronzes (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Benin_Bronzes"
+    },
+    {
+      "title": "Benin Expedition of 1897 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Benin_Expedition_of_1897"
+    },
+    {
+      "title": "Ovonramwen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ovonramwen"
+    },
+    {
+      "title": "Okukor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Okukor"
+    },
+    {
+      "title": "Machu Picchu (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Machu_Picchu"
+    },
+    {
+      "title": "Peru–Yale University dispute (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Peru–Yale_University_dispute"
+    },
+    {
+      "title": "Hiram Bingham III (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hiram_Bingham_III"
+    },
+    {
+      "title": "Peabody Museum of Natural History (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Peabody_Museum_of_Natural_History"
+    },
+    {
+      "title": "Casa Concha (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Casa_Concha"
+    },
+    {
+      "title": "Nazi plunder (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nazi_plunder"
+    },
+    {
+      "title": "Portrait of Adele Bloch-Bauer I (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Portrait_of_Adele_Bloch-Bauer_I"
+    },
+    {
+      "title": "Republic of Austria v. Altmann (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Republic_of_Austria_v._Altmann"
+    },
+    {
+      "title": "Maria Altmann (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maria_Altmann"
+    },
+    {
+      "title": "Belvedere, Vienna (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Belvedere,_Vienna"
+    },
+    {
+      "title": "Rose Valland (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rose_Valland"
+    },
+    {
+      "title": "Altaussee (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Altaussee"
+    },
+    {
+      "title": "Ghent Altarpiece (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ghent_Altarpiece"
+    },
+    {
+      "title": "Monuments, Fine Arts, and Archives program (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Monuments,_Fine_Arts,_and_Archives_program"
+    },
+    {
+      "title": "Priam's Treasure (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Priam's_Treasure"
+    },
+    {
+      "title": "Troy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Troy"
+    },
+    {
+      "title": "UNESCO 1970 Convention (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/UNESCO_1970_Convention"
+    },
+    {
+      "title": "Melina Mercouri (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Melina_Mercouri"
+    },
+    {
+      "title": "Neue Galerie New York (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Neue_Galerie_New_York"
+    },
+    {
+      "title": "National Museum of China (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/National_Museum_of_China"
+    },
+    {
+      "title": "Humboldt Forum (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Humboldt_Forum"
+    },
+    {
+      "title": "Ewuare II (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ewuare_II"
+    },
+    {
+      "title": "Museum of West African Art (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Museum_of_West_African_Art"
+    },
+    {
+      "title": "Acropolis Museum (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Acropolis_Museum"
+    },
+    {
+      "title": "Palermo Fragment (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Palermo_Fragment"
+    },
+    {
+      "title": "Repatriation (cultural property) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Repatriation_(cultural_property)"
+    }
+  ]
+}

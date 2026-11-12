@@ -1,0 +1,1483 @@
+{
+ "id": "art-through-time",
+ "name": {
+  "en": "Art through time",
+  "es": "El arte a través del tiempo"
+ },
+ "icon": "🎨",
+ "era": "prehistory",
+ "region": {
+  "en": "The whole world",
+  "es": "Todo el mundo"
+ },
+ "start": "-100000",
+ "end": "2026",
+ "summary": {
+  "en": "From ochre marks 100,000 years old to street art and new museums: where the world's masterpieces were made, who made them, and where they are kept today.",
+  "es": "De las marcas de ocre de hace 100 000 años al arte urbano y los nuevos museos: dónde se hicieron las obras maestras del mundo, quién las hizo y dónde se guardan hoy."
+ },
+ "catalog": "art",
+ "camera": {
+  "lon": 40,
+  "lat": 22,
+  "zoom": 1.0
+ },
+ "sides": [
+  {
+   "id": "loot",
+   "name": {
+    "en": "Looted or disputed",
+    "es": "Saqueadas o en disputa"
+   },
+   "color": "#8c2f39"
+  },
+  {
+   "id": "away",
+   "name": {
+    "en": "Carried abroad",
+    "es": "Llevadas lejos"
+   },
+   "color": "#d4a017"
+  },
+  {
+   "id": "home",
+   "name": {
+    "en": "Returned",
+    "es": "Devueltas"
+   },
+   "color": "#48c9b0"
+  }
+ ],
+ "steps": [
+  {
+   "date": "-51200",
+   "title": {
+    "en": "The first marks",
+    "es": "Las primeras marcas"
+   },
+   "camera": {
+    "lon": 80,
+    "lat": -12,
+    "zoom": 1.05
+   },
+   "text": {
+    "en": "In South Africa, people mixed ochre paint 100,000 years ago and drew lines with an ochre crayon 73,000 years ago. By 51,200 years ago, painters in Sulawesi showed people and a pig on a cave wall.",
+    "es": "En Sudáfrica, hace 100 000 años la gente mezclaba pintura de ocre, y hace 73 000 trazó líneas con un lápiz de ocre. Hace 51 200 años, pintores de Sulawesi ya representaban personas y un cerdo en la pared de una cueva."
+   },
+   "details": {
+    "en": "Art is older than farming, cities or writing. On the south coast of Africa, early modern humans ground red ochre into paint, wore shell beads and scratched crosshatched patterns onto stones and onto the ostrich eggshells they carried water in: the first signs of symbols. As people spread out of Africa, they took this habit with them. On the Indonesian island of Sulawesi, on the way to Australia, they sprayed paint around their hands and painted the animals they hunted. Some of these images are older than any known in Europe, though dates from uranium-series methods are debated: a stencil on Muna Island may be at least 67,800 years old. Nobody knows what these first marks meant, but they show people sharing ideas through images.",
+    "es": "El arte es más antiguo que la agricultura, las ciudades o la escritura. En la costa sur de África, los primeros humanos modernos molían ocre rojo para hacer pintura, llevaban cuentas de conchas y grababan tramas cruzadas en piedras y en los huevos de avestruz en que llevaban agua: los primeros signos de símbolos. Al salir de África, la gente llevó consigo esta costumbre. En la isla indonesia de Sulawesi, camino de Australia, soplaron pintura alrededor de sus manos y pintaron los animales que cazaban. Algunas de estas imágenes son más antiguas que cualquiera conocida en Europa, aunque las fechas obtenidas por series de uranio se discuten: una mano en la isla Muna podría tener al menos 67 800 años. Nadie sabe qué significaban estas primeras marcas, pero muestran a personas compartiendo ideas mediante imágenes."
+   },
+   "show": [
+    "blombos-cave",
+    "diepkloof",
+    "liang-metanduno",
+    "maros-pangkep-caves"
+   ]
+  },
+  {
+   "date": "-17000",
+   "title": {
+    "en": "Ice Age masterpieces",
+    "es": "Obras maestras de la Edad de Hielo"
+   },
+   "camera": {
+    "lon": 5.5,
+    "lat": 46.5,
+    "zoom": 4.2
+   },
+   "text": {
+    "en": "In Ice Age Europe, hunter-gatherers carved a lion-man from mammoth ivory and a woman from stone, and painted lions, bison and horses deep inside caves: Chauvet, Altamira, Lascaux.",
+    "es": "En la Europa de la Edad de Hielo, cazadores-recolectores tallaron un hombre león en marfil de mamut y una mujer en piedra, y pintaron leones, bisontes y caballos en lo hondo de las cuevas: Chauvet, Altamira, Lascaux."
+   },
+   "details": {
+    "en": "From about 40,000 years ago, the people of Ice Age Europe carved figures of animals, humans and imagined beings in ivory, bone and stone, like the Lion-man of the Swabian Jura and the Venus of Willendorf. Deep in caves, by the light of torches and fat lamps, they painted with charcoal and ochre, using the bulges of the rock to give animals volume. Chauvet's lions are some 36,000 years old; Lascaux's horses and aurochs, about 17,000 to 22,000. Their meaning is still debated: hunting magic, rituals, stories or teaching. Painting on rock was not only European: in Australia's Kimberley, figures like the Gwion Gwion were painted about 12,000 years ago, and in Argentina's Cueva de las Manos people stencilled their hands from about 7300 BC.",
+    "es": "Desde hace unos 40 000 años, la gente de la Europa de la Edad de Hielo talló figuras de animales, humanos y seres imaginarios en marfil, hueso y piedra, como el Hombre león del Jura de Suabia y la Venus de Willendorf. En lo hondo de las cuevas, a la luz de antorchas y lámparas de grasa, pintaron con carbón y ocre, aprovechando los relieves de la roca para dar volumen a los animales. Los leones de Chauvet tienen unos 36 000 años; los caballos y uros de Lascaux, entre 17 000 y 22 000. Su significado aún se discute: magia de caza, rituales, relatos o enseñanza. Pintar sobre roca no fue solo cosa de Europa: en Kimberley, Australia, figuras como las Gwion Gwion se pintaron hace unos 12 000 años, y en la Cueva de las Manos, en Argentina, la gente estampó sus manos desde hacia el 7300 a. C."
+   },
+   "show": [
+    "lion-man",
+    "chauvet-cave",
+    "venus-of-willendorf",
+    "altamira",
+    "lascaux"
+   ]
+  },
+  {
+   "date": "-569",
+   "title": {
+    "en": "Kings and gods of the rivers",
+    "es": "Reyes y dioses de los ríos"
+   },
+   "camera": {
+    "lon": 27,
+    "lat": 39,
+    "zoom": 2.4
+   },
+   "text": {
+    "en": "Along the Nile, the Tigris and the Euphrates, artists carved kings and queens, inlaid boxes with lapis lazuli and glazed a blue gate for Babylon. In the 20th century many of these treasures went to Europe.",
+    "es": "Junto al Nilo, el Tigris y el Éufrates, los artistas tallaron reyes y reinas, adornaron cajas con lapislázuli y esmaltaron de azul una puerta para Babilonia. En el siglo XX muchos de estos tesoros acabaron en Europa."
+   },
+   "details": {
+    "en": "The first cities and kingdoms gave artists new patrons: kings, temples and the dead. In Egypt, sculptors followed strict rules for showing pharaohs for some 3,000 years, from the Narmer Palette of about 3100 BC, with some of the earliest hieroglyphs, to the gold mask of Tutankhamun. Around 1345 BC, in Akhenaten's new capital at Amarna, the workshop of the sculptor Thutmose made the bust of Queen Nefertiti. In Mesopotamia, Sumerian craftsmen at Ur inlaid shell and lapis lazuli, and Babylon's brickmakers glazed the Ishtar Gate blue. In the 20th century European excavators shared or carried many finds home under the rules of the time; Egypt still asks Germany to return the Nefertiti Bust.",
+    "es": "Las primeras ciudades y reinos dieron a los artistas nuevos mecenas: reyes, templos y muertos. En Egipto, los escultores siguieron reglas estrictas para representar a los faraones durante unos 3000 años, de la Paleta de Narmer, de hacia el 3100 a. C., con algunos de los jeroglíficos más antiguos, a la máscara de oro de Tutankamón. Hacia el 1345 a. C., en Amarna, la nueva capital de Akenatón, el taller del escultor Tutmose hizo el busto de la reina Nefertiti. En Mesopotamia, los artesanos sumerios de Ur incrustaron concha y lapislázuli, y los ladrilleros de Babilonia esmaltaron de azul la Puerta de Istar. En el siglo XX, los excavadores europeos repartieron o se llevaron muchos hallazgos según las reglas de entonces; Egipto sigue pidiendo a Alemania la devolución del busto de Nefertiti."
+   },
+   "moves": [
+    {
+     "side": "loot",
+     "path": [
+      [
+       30.905,
+       27.644
+      ],
+      [
+       29.0,
+       33.5
+      ],
+      [
+       18.5,
+       44.0
+      ],
+      [
+       13.3977,
+       52.5206
+      ]
+     ],
+     "label": {
+      "en": "1913: Nefertiti to Berlin",
+      "es": "1913: Nefertiti, a Berlín"
+     }
+    },
+    {
+     "side": "away",
+     "path": [
+      [
+       44.4222,
+       32.5433
+      ],
+      [
+       36.0,
+       38.5
+      ],
+      [
+       24.0,
+       47.0
+      ],
+      [
+       13.3977,
+       52.5206
+      ]
+     ],
+     "label": {
+      "en": "Ishtar Gate bricks to Berlin",
+      "es": "Ladrillos de la Puerta de Istar, a Berlín"
+     }
+    },
+    {
+     "side": "away",
+     "path": [
+      [
+       46.1061,
+       30.9615
+      ],
+      [
+       33.0,
+       36.0
+      ],
+      [
+       14.0,
+       45.0
+      ],
+      [
+       -0.1269,
+       51.5194
+      ]
+     ],
+     "label": {
+      "en": "1928: Standard of Ur to London",
+      "es": "1928: Estandarte de Ur, a Londres"
+     }
+    }
+   ],
+   "show": [
+    "narmer-palette",
+    "standard-of-ur",
+    "nefertiti-bust",
+    "mask-of-tutankhamun",
+    "ishtar-gate"
+   ]
+  },
+  {
+   "date": "-210",
+   "title": {
+    "en": "Bronze and clay",
+    "es": "Bronce y barro"
+   },
+   "camera": {
+    "lon": 58,
+    "lat": 22,
+    "zoom": 1.0
+   },
+   "text": {
+    "en": "Shang casters made giant bronze vessels for the ancestors, Sanxingdui buried masks with bulging eyes, Nok artists shaped clay heads in Nigeria, and China's first emperor took a clay army to his grave.",
+    "es": "Los fundidores Shang hicieron enormes vasijas de bronce, Sanxingdui enterró máscaras de ojos saltones, los nok modelaron cabezas de barro en Nigeria y el primer emperador chino se llevó a la tumba un ejército de barro."
+   },
+   "details": {
+    "en": "In Bronze Age China, kings of the Shang dynasty used bronze vessels in rituals for their ancestors; the Houmuwu ding, over 800 kg, is the heaviest to survive. Far to the south-west, the people of Sanxingdui, with no writing that has been found, cast bronze heads, masks and a figure 2.6 m tall, unlike anything in Shang art. In West Africa, the Nok culture of central Nigeria made clay heads and figures from perhaps 900 BC: apart from Egypt's, the earliest large sculptures known in Africa. Around 210 BC Qin Shi Huang, who had united China, was buried with more than 8,000 clay soldiers, each with its own face, made by government labourers and local craftsmen.",
+    "es": "En la China de la Edad del Bronce, los reyes de la dinastía Shang usaban vasijas de bronce en los ritos a sus antepasados; el ding de Houmuwu, de más de 800 kg, es la más pesada que se conserva. Muy al suroeste, la gente de Sanxingdui, sin escritura conocida, fundió cabezas, máscaras y una figura de 2,6 m de bronce, distintas de todo el arte Shang. En África occidental, la cultura nok del centro de Nigeria modeló cabezas y figuras de barro desde quizá el 900 a. C.: aparte de las egipcias, las esculturas grandes más antiguas que se conocen en África. Hacia el 210 a. C., Qin Shi Huang, que había unificado China, fue enterrado con más de 8000 soldados de barro, cada uno con su propio rostro, hechos por peones del gobierno y artesanos locales."
+   },
+   "show": [
+    "houmuwu-ding",
+    "sanxingdui",
+    "nok-terracottas",
+    "terracotta-army"
+   ]
+  },
+  {
+   "date": "79",
+   "title": {
+    "en": "Marble gods and Roman walls",
+    "es": "Dioses de mármol y muros romanos"
+   },
+   "camera": {
+    "lon": 15,
+    "lat": 41,
+    "zoom": 2.5
+   },
+   "text": {
+    "en": "Greek sculptors carved gods and citizens in marble, and Romans decorated their homes with mosaics and paintings. In AD 79 Vesuvius buried Pompeii, keeping its art for us.",
+    "es": "Los escultores griegos tallaron dioses y ciudadanos en mármol, y los romanos decoraron sus casas con mosaicos y pinturas. En el 79 d. C. el Vesubio sepultó Pompeya y guardó su arte para nosotros."
+   },
+   "details": {
+    "en": "In 5th-century BC Athens, sculptors working under Phidias carved the Parthenon's frieze and statues, showing bodies in movement under clinging drapery. Later Hellenistic sculptors, like the maker of the Venus de Milo, carved more dramatic and sensual figures, and Greek statues were copied all over the Roman world. Romans paved their floors with mosaics, such as the battle of Alexander in Pompeii, and in Roman Egypt painters made portraits of the dead that still look straight at us. These works travelled far later: Lord Elgin's agents took half the Parthenon's surviving sculptures to London in 1801–1812, and an envoy of the French ambassador bought the Venus de Milo in 1820. Greece has asked for the marbles back since 1983.",
+    "es": "En la Atenas del siglo V a. C., los escultores que trabajaban con Fidias tallaron el friso y las estatuas del Partenón, con cuerpos en movimiento bajo telas ceñidas. Más tarde, escultores helenísticos como el autor de la Venus de Milo tallaron figuras más dramáticas y sensuales, y las estatuas griegas se copiaron por todo el mundo romano. Los romanos cubrieron sus suelos de mosaicos, como la batalla de Alejandro en Pompeya, y en el Egipto romano los pintores hicieron retratos de los muertos que todavía nos miran de frente. Más tarde estas obras viajaron lejos: los agentes de lord Elgin se llevaron a Londres la mitad de las esculturas que quedaban del Partenón en 1801-1812, y un enviado del embajador francés compró la Venus de Milo en 1820. Grecia pide los mármoles desde 1983."
+   },
+   "moves": [
+    {
+     "side": "loot",
+     "path": [
+      [
+       23.7266,
+       37.9715
+      ],
+      [
+       20.0,
+       40.5
+      ],
+      [
+       5.0,
+       46.0
+      ],
+      [
+       -0.1269,
+       51.5194
+      ]
+     ],
+     "label": {
+      "en": "1801–1812: Parthenon marbles to London",
+      "es": "1801-1812: mármoles del Partenón, a Londres"
+     }
+    },
+    {
+     "side": "away",
+     "path": [
+      [
+       24.4219,
+       36.7356
+      ],
+      [
+       16.0,
+       37.0
+      ],
+      [
+       8.0,
+       42.0
+      ],
+      [
+       2.3376,
+       48.8606
+      ]
+     ],
+     "label": {
+      "en": "1820: Venus de Milo to Paris",
+      "es": "1820: Venus de Milo, a París"
+     }
+    }
+   ],
+   "show": [
+    "parthenon-marbles",
+    "venus-de-milo",
+    "alexander-mosaic",
+    "fayum-mummy-portraits"
+   ]
+  },
+  {
+   "date": "691",
+   "title": {
+    "en": "Images of faith",
+    "es": "Imágenes de la fe"
+   },
+   "camera": {
+    "lon": 47,
+    "lat": 32,
+    "zoom": 1.85
+   },
+   "text": {
+    "en": "Gandhara's sculptors gave the Buddha a human body, painters filled the caves of Ajanta, Byzantine artists set gold mosaics and icons, and the Dome of the Rock wrote Islam's message on its walls.",
+    "es": "Los escultores de Gandhara dieron al Buda un cuerpo humano, los pintores llenaron las cuevas de Ajanta, los artistas bizantinos hicieron mosaicos de oro e iconos, y la Cúpula de la Roca escribió el mensaje del islam en sus muros."
+   },
+   "details": {
+    "en": "In the first centuries AD, the great faiths shaped art from India to the Mediterranean. In Gandhara, where Greek, Indian and Iranian traditions met, Buddhist sculptors made some of the first statues of the Buddha as a man, and the style travelled with monks along the Silk Road. At Ajanta, painters covered monastery caves with stories of the Buddha's past lives. In Ravenna and at Mount Sinai, Byzantine artists made gold mosaics and icons of Christ, the empress Theodora and the saints. In Jerusalem, the Dome of the Rock (691–692) followed Byzantine models but showed no people or animals, only plants, jewels and words: its inscriptions made calligraphy a central art of Islam. Around 600, giant Buddhas were carved at Bamiyan; the Taliban destroyed them in 2001.",
+    "es": "En los primeros siglos de nuestra era, las grandes religiones dieron forma al arte desde la India hasta el Mediterráneo. En Gandhara, donde se encontraban las tradiciones griega, india e irania, los escultores budistas hicieron algunas de las primeras estatuas del Buda como hombre, y el estilo viajó con los monjes por la Ruta de la Seda. En Ajanta, los pintores cubrieron cuevas monásticas con relatos de las vidas pasadas del Buda. En Rávena y en el monte Sinaí, artistas bizantinos hicieron mosaicos de oro e iconos de Cristo, de la emperatriz Teodora y de los santos. En Jerusalén, la Cúpula de la Roca (691-692) siguió modelos bizantinos pero sin personas ni animales, solo plantas, joyas y palabras: sus inscripciones hicieron de la caligrafía un arte central del islam. Hacia el año 600 se tallaron los budas gigantes de Bamiyán; los talibanes los destruyeron en 2001."
+   },
+   "show": [
+    "gandhara-buddhas",
+    "ajanta-caves",
+    "san-vitale-mosaics",
+    "christ-pantocrator-sinai",
+    "dome-of-the-rock"
+   ]
+  },
+  {
+   "date": "1130",
+   "title": {
+    "en": "Landscapes in ink",
+    "es": "Paisajes en tinta"
+   },
+   "camera": {
+    "lon": 122,
+    "lat": 33.5,
+    "zoom": 3.3
+   },
+   "text": {
+    "en": "Song dynasty painters made mountains, mist and rivers the great subject of Chinese art, and a scroll over 5 m long showed a whole city. In Japan, court painters illustrated The Tale of Genji.",
+    "es": "Los pintores de la dinastía Song hicieron de montañas, nieblas y ríos el gran tema del arte chino, y un rollo de más de 5 m mostró una ciudad entera. En Japón, los pintores de la corte ilustraron La historia de Genji."
+   },
+   "details": {
+    "en": "Under the Northern Song dynasty (960–1127), Chinese painters made landscape, 'mountain and water', their highest art. With ink and a little colour on silk, Fan Kuan built a towering cliff from countless brushstrokes around the year 1000, and Guo Xi painted Early Spring in 1072 from several viewpoints at once. Zhang Zeduan's long handscroll unrolls the busy life of a city, with 814 people. Their works passed through the imperial collections, and in 1948–49, during China's civil war, many of the finest Song paintings were shipped to Taiwan; they are now in Taipei's National Palace Museum. In Heian Japan, court artists painted The Tale of Genji on scrolls, looking into rooms from above as if the roofs had been blown away.",
+    "es": "Con la dinastía Song del Norte (960-1127), los pintores chinos hicieron del paisaje, de «montaña y agua», su arte más alto. Con tinta y un poco de color sobre seda, Fan Kuan construyó un acantilado con incontables pinceladas hacia el año 1000, y Guo Xi pintó Primavera reciente en 1072 desde varios puntos de vista a la vez. El largo rollo de Zhang Zeduan despliega la vida bulliciosa de una ciudad, con 814 personas. Sus obras pasaron por las colecciones imperiales, y en 1948-49, durante la guerra civil china, muchas de las mejores pinturas Song se embarcaron hacia Taiwán; hoy están en el Museo Nacional del Palacio de Taipéi. En el Japón de Heian, los artistas de la corte pintaron La historia de Genji en rollos, mirando las habitaciones desde arriba como si se hubiera volado el techo."
+   },
+   "show": [
+    "travelers-among-mountains-and-streams",
+    "early-spring-guo-xi",
+    "along-the-river-during-the-qingming-festival",
+    "genji-monogatari-emaki"
+   ]
+  },
+  {
+   "date": "1512",
+   "title": {
+    "en": "Rebirth in Flanders and Italy",
+    "es": "Renacimiento en Flandes e Italia"
+   },
+   "camera": {
+    "lon": 8.5,
+    "lat": 46.6,
+    "zoom": 4.1
+   },
+   "text": {
+    "en": "In Flanders, the van Eyck brothers painted with jewel-like oil colours. In Italy, Leonardo painted the Mona Lisa, and Michelangelo carved David and covered the Sistine Chapel ceiling with frescoes.",
+    "es": "En Flandes, los hermanos van Eyck pintaron con colores al óleo como joyas. En Italia, Leonardo pintó la Gioconda, y Miguel Ángel talló el David y cubrió de frescos la bóveda de la Capilla Sixtina."
+   },
+   "details": {
+    "en": "In the 15th and early 16th centuries, artists in Europe's richest trading cities looked again at ancient Rome and at nature. In Ghent, the van Eycks finished their great altarpiece in 1432, painting every jewel and blade of grass in layers of oil glaze. In Florence, artists worked out perspective and studied the human body; Leonardo da Vinci, painter, engineer and anatomist, began the Mona Lisa around 1503, while Michelangelo carved his marble David. Pope Julius II brought the greatest artists to Rome, and from 1508 to 1512 Michelangelo painted the Sistine Chapel ceiling. Printing spread their images and ideas across Europe. Their works would later be stolen and fought over: the Mona Lisa was taken from the Louvre in 1911.",
+    "es": "En el siglo XV y a principios del XVI, los artistas de las ciudades comerciales más ricas de Europa volvieron a mirar la antigua Roma y la naturaleza. En Gante, los van Eyck terminaron su gran retablo en 1432, pintando cada joya y cada brizna de hierba con capas de veladura al óleo. En Florencia, los artistas desarrollaron la perspectiva y estudiaron el cuerpo humano; Leonardo da Vinci, pintor, ingeniero y anatomista, empezó la Gioconda hacia 1503, mientras Miguel Ángel tallaba su David de mármol. El papa Julio II llevó a los mejores artistas a Roma, y de 1508 a 1512 Miguel Ángel pintó la bóveda de la Capilla Sixtina. La imprenta difundió sus imágenes e ideas por toda Europa. Sus obras serían luego robadas y disputadas: la Gioconda fue sustraída del Louvre en 1911."
+   },
+   "show": [
+    "ghent-altarpiece",
+    "leonardo-da-vinci",
+    "mona-lisa",
+    "michelangelo",
+    "sistine-chapel-ceiling"
+   ]
+  },
+  {
+   "date": "1520",
+   "title": {
+    "en": "Maya and Mexica art",
+    "es": "Arte maya y mexica"
+   },
+   "camera": {
+    "lon": -94.2,
+    "lat": 18.7,
+    "zoom": 5.2
+   },
+   "text": {
+    "en": "Maya painters covered the rooms of Bonampak and scribes painted books of the stars, while Mexica sculptors carved the Sun Stone in Tenochtitlan. Then came the Spanish conquest of 1519–1521.",
+    "es": "Los pintores mayas cubrieron los cuartos de Bonampak y los escribas pintaron libros de los astros, mientras los escultores mexicas tallaban la Piedra del Sol en Tenochtitlan. Luego llegó la conquista española de 1519-1521."
+   },
+   "details": {
+    "en": "Classic Maya kings, like Pakal of Palenque, were buried with carved stone and jade, and around 790 painters covered the rooms of Bonampak with a royal court, music and war in brilliant Maya blue. Maya scribes painted folding books of fig-bark paper. In Tenochtitlan, the island capital of the Mexica, sculptors carved huge monuments for the Templo Mayor, and feather workers made headdresses of quetzal plumes. After the Spanish conquest in 1521, an archbishop had the Sun Stone buried, churchmen burned many books, and treasures were sent to Europe; only four Maya books survive, one of them in Dresden. Mexico has asked Austria to return Moctezuma's headdress, which experts judge too fragile to travel.",
+    "es": "Los reyes mayas del Clásico, como Pakal de Palenque, fueron enterrados con piedra tallada y jade, y hacia el 790 los pintores cubrieron los cuartos de Bonampak con una corte real, música y guerra en un brillante azul maya. Los escribas mayas pintaban libros plegables de papel de corteza de higuera. En Tenochtitlan, la capital isleña de los mexicas, los escultores tallaron enormes monumentos para el Templo Mayor, y los plumarios hicieron penachos de plumas de quetzal. Tras la conquista española de 1521, un arzobispo hizo enterrar la Piedra del Sol, los religiosos quemaron muchos libros y se enviaron tesoros a Europa; solo sobreviven cuatro libros mayas, uno de ellos en Dresde. México ha pedido a Austria la devolución del penacho de Moctezuma, que los expertos consideran demasiado frágil para viajar."
+   },
+   "show": [
+    "tomb-of-pakal",
+    "bonampak-murals",
+    "dresden-codex",
+    "coyolxauhqui-stone",
+    "aztec-sun-stone",
+    "moctezumas-headdress"
+   ]
+  },
+  {
+   "date": "1550",
+   "title": {
+    "en": "Bronze and ivory for kings",
+    "es": "Bronce y marfil para los reyes"
+   },
+   "camera": {
+    "lon": 3,
+    "lat": 24,
+    "zoom": 1.9
+   },
+   "text": {
+    "en": "In West Africa, Igbo-Ukwu cast delicate bronzes in the 9th century, Ife made lifelike royal heads, and Benin's guild of brass casters made plaques for the Oba's palace. British troops looted Benin in 1897.",
+    "es": "En África occidental, Igbo-Ukwu fundió delicados bronces en el siglo IX, Ife hizo cabezas reales llenas de vida y el gremio de fundidores de Benín hizo placas para el palacio del oba. Las tropas británicas saquearon Benín en 1897."
+   },
+   "details": {
+    "en": "Casting in copper alloys flourished in what is now Nigeria long before Europeans arrived. The bronzes of Igbo-Ukwu date from around the 9th century; the heads of Ife, mostly from the 14th and early 15th centuries, are among the most naturalistic sculptures ever made in Africa. In the Kingdom of Benin, a guild of casters made brass plaques and heads for the Oba's palace, and ivory carvers made masks like the one of Queen Mother Idia. Early European scholars refused to believe Africans had made such works and invented foreign origins for them. In 1897 a British punitive expedition burned Benin City and took thousands of works, which were sold to museums across Europe and the United States.",
+    "es": "La fundición en aleaciones de cobre floreció en lo que hoy es Nigeria mucho antes de que llegaran los europeos. Los bronces de Igbo-Ukwu son de hacia el siglo IX; las cabezas de Ife, sobre todo de los siglos XIV y principios del XV, están entre las esculturas más naturalistas jamás hechas en África. En el reino de Benín, un gremio de fundidores hizo placas y cabezas de latón para el palacio del oba, y los talladores de marfil hicieron máscaras como la de la reina madre Idia. Los primeros estudiosos europeos se negaron a creer que los africanos hubieran hecho esas obras y les inventaron orígenes extranjeros. En 1897 una expedición punitiva británica incendió la Ciudad de Benín y se llevó miles de obras, que se vendieron a museos de Europa y Estados Unidos."
+   },
+   "moves": [
+    {
+     "side": "loot",
+     "path": [
+      [
+       5.6222,
+       6.3333
+      ],
+      [
+       -5.0,
+       12.0
+      ],
+      [
+       -12.0,
+       30.0
+      ],
+      [
+       -8.0,
+       44.0
+      ],
+      [
+       -0.1269,
+       51.5194
+      ]
+     ],
+     "label": {
+      "en": "1897: Benin Bronzes to London",
+      "es": "1897: bronces de Benín, a Londres"
+     }
+    }
+   ],
+   "show": [
+    "igbo-ukwu-bronzes",
+    "ife-heads",
+    "benin-bronzes",
+    "benin-ivory-mask"
+   ]
+  },
+  {
+   "date": "1620",
+   "title": {
+    "en": "Painting for shahs and emperors",
+    "es": "Pintura para shas y emperadores"
+   },
+   "camera": {
+    "lon": 55,
+    "lat": 34,
+    "zoom": 2.4
+   },
+   "text": {
+    "en": "Persian painters in Herat and Tabriz made jewel-like book paintings, Akbar's workshop in India blended Persian and Indian art, and tiles from Iznik and Isfahan covered mosques in colour.",
+    "es": "Los pintores persas de Herat y Tabriz hicieron pinturas de libros como joyas, el taller de Akbar en la India mezcló el arte persa y el indio, y los azulejos de Iznik e Isfahán cubrieron de color las mezquitas."
+   },
+   "details": {
+    "en": "From Istanbul to Delhi, Muslim rulers of the 16th and 17th centuries showed their power and taste through art. In Herat, Behzad made Persian book painting famous for its crowded, lifelike scenes; in Tabriz, the painters of the Safavid shahs illustrated Iran's national epic, the Shahnameh, with 258 pictures, a book so precious it was sent as a gift to the Ottoman sultan in 1568. Persian masters went to India, where the Mughal emperor Akbar's workshop painted the huge Hamzanama on cotton and created a new style. Ottoman potters at Iznik painted tulips and carnations on gleaming tiles, and in Isfahan Shah Abbas covered his royal mosque in blue tiles and calligraphy.",
+    "es": "De Estambul a Delhi, los gobernantes musulmanes de los siglos XVI y XVII mostraban su poder y su gusto a través del arte. En Herat, Behzad dio fama a la pintura persa de libros por sus escenas llenas de gente y de vida; en Tabriz, los pintores de los shas safávidas ilustraron la epopeya nacional de Irán, el Shahnameh, con 258 imágenes, un libro tan valioso que en 1568 se envió de regalo al sultán otomano. Maestros persas viajaron a la India, donde el taller del emperador mogol Akbar pintó el enorme Hamzanama sobre algodón y creó un nuevo estilo. Los alfareros otomanos de Iznik pintaron tulipanes y claveles en azulejos relucientes, y en Isfahán el sha Abás cubrió su mezquita real de azulejos azules y caligrafía."
+   },
+   "moves": [
+    {
+     "side": "away",
+     "path": [
+      [
+       46.2919,
+       38.08
+      ],
+      [
+       38.0,
+       40.5
+      ],
+      [
+       32.0,
+       41.0
+      ],
+      [
+       26.5557,
+       41.6771
+      ]
+     ],
+     "label": {
+      "en": "1568: the Shahnameh, a gift to the Ottoman sultan",
+      "es": "1568: el Shahnameh, regalo al sultán otomano"
+     }
+    }
+   ],
+   "show": [
+    "kamal-ud-din-behzad",
+    "shahnameh-of-shah-tahmasp",
+    "hamzanama",
+    "iznik-pottery",
+    "shah-mosque"
+   ]
+  },
+  {
+   "date": "1665",
+   "title": {
+    "en": "Golden ages of Holland and Spain",
+    "es": "Siglos de oro en Holanda y España"
+   },
+   "camera": {
+    "lon": 0,
+    "lat": 46,
+    "zoom": 3.6
+   },
+   "text": {
+    "en": "In the trading cities of the Dutch Republic, Rembrandt, Judith Leyster and Vermeer painted citizens and quiet rooms; at the Spanish court, Velázquez painted Las Meninas.",
+    "es": "En las ciudades comerciales de la República neerlandesa, Rembrandt, Judith Leyster y Vermeer pintaron ciudadanos y habitaciones tranquilas; en la corte española, Velázquez pintó Las meninas."
+   },
+   "details": {
+    "en": "In the 17th century the Dutch Republic grew rich on trade, and merchants, guilds and militias, not only kings and churches, bought paintings: portraits, landscapes, still lifes and scenes of everyday life. Rembrandt painted the militia of Amsterdam in The Night Watch (1642); in Haarlem, Judith Leyster ran her own workshop; in Delft, Vermeer painted light falling through a window. In Spain, the Catholic monarchy and the Church remained the great patrons, and Diego Velázquez, painter to King Philip IV, made Las Meninas (1656), a puzzle about looking and painting. In Italy, Artemisia Gentileschi became the first woman member of Florence's academy of art.",
+    "es": "En el siglo XVII la República neerlandesa se enriqueció con el comercio, y comerciantes, gremios y milicias, no solo reyes e iglesias, compraban cuadros: retratos, paisajes, naturalezas muertas y escenas de la vida diaria. Rembrandt pintó la milicia de Ámsterdam en La ronda de noche (1642); en Haarlem, Judith Leyster dirigía su propio taller; en Delft, Vermeer pintó la luz que entra por una ventana. En España, la monarquía católica y la Iglesia siguieron siendo los grandes mecenas, y Diego Velázquez, pintor del rey Felipe IV, hizo Las meninas (1656), un enigma sobre el mirar y el pintar. En Italia, Artemisia Gentileschi fue la primera mujer miembro de la academia de arte de Florencia."
+   },
+   "show": [
+    "the-night-watch",
+    "judith-leyster",
+    "girl-with-a-pearl-earring",
+    "diego-velazquez",
+    "las-meninas"
+   ]
+  },
+  {
+   "date": "1819-11-19",
+   "title": {
+    "en": "Museums open their doors",
+    "es": "Los museos abren sus puertas"
+   },
+   "camera": {
+    "lon": 13,
+    "lat": 45,
+    "zoom": 2.9
+   },
+   "text": {
+    "en": "Public museums opened in London (1759), Paris (1793) and Madrid (1819). Napoleon's armies filled the Louvre with art taken across Europe, and after 1815 much of it went home.",
+    "es": "Abrieron museos públicos en Londres (1759), París (1793) y Madrid (1819). Los ejércitos de Napoleón llenaron el Louvre de arte llevado de toda Europa, y desde 1815 gran parte volvió a casa."
+   },
+   "details": {
+    "en": "Art had belonged to kings, nobles and churches; now nations opened collections to the public. The British Museum, founded in 1753, was the first national public museum. During the French Revolution the royal palace of the Louvre became a museum, and Napoleon's armies filled it with works seized from Italy, the Low Countries and beyond, among them the bronze horses of St Mark's in Venice, themselves looted from Constantinople in 1204. After his defeat in 1815, the allies ordered the art returned; much went home, but some stayed. In Spain, where Goya painted the horrors of the war against Napoleon, the royal collection opened as the Prado in November 1819.",
+    "es": "El arte había pertenecido a reyes, nobles e iglesias; ahora las naciones abrían sus colecciones al público. El Museo Británico, fundado en 1753, fue el primer museo nacional público. Durante la Revolución francesa, el palacio real del Louvre se convirtió en museo, y los ejércitos de Napoleón lo llenaron de obras confiscadas en Italia, los Países Bajos y otros lugares, entre ellas los caballos de bronce de San Marcos de Venecia, saqueados a su vez de Constantinopla en 1204. Tras su derrota en 1815, los aliados ordenaron devolver el arte; mucho volvió, pero una parte se quedó. En España, donde Goya pintó los horrores de la guerra contra Napoleón, la colección real abrió como Museo del Prado en noviembre de 1819."
+   },
+   "moves": [
+    {
+     "side": "loot",
+     "path": [
+      [
+       28.9753,
+       41.0056
+      ],
+      [
+       22.0,
+       37.5
+      ],
+      [
+       18.5,
+       40.0
+      ],
+      [
+       12.3397,
+       45.4345
+      ]
+     ],
+     "label": {
+      "en": "1204: horses taken to Venice",
+      "es": "1204: caballos llevados a Venecia"
+     }
+    },
+    {
+     "side": "loot",
+     "path": [
+      [
+       12.3397,
+       45.4345
+      ],
+      [
+       8.0,
+       46.5
+      ],
+      [
+       2.3376,
+       48.8606
+      ]
+     ],
+     "label": {
+      "en": "1797: Napoleon takes them to Paris",
+      "es": "1797: Napoleón los lleva a París"
+     }
+    },
+    {
+     "side": "home",
+     "path": [
+      [
+       2.3376,
+       48.8606
+      ],
+      [
+       6.0,
+       44.5
+      ],
+      [
+       11.0,
+       44.8
+      ],
+      [
+       12.3397,
+       45.4345
+      ]
+     ],
+     "label": {
+      "en": "1815: back to Venice",
+      "es": "1815: de vuelta a Venecia"
+     }
+    }
+   ],
+   "show": [
+    "british-museum",
+    "louvre",
+    "horses-of-saint-mark",
+    "the-third-of-may-1808",
+    "prado-museum"
+   ]
+  },
+  {
+   "date": "1833",
+   "title": {
+    "en": "Pictures of the floating world",
+    "es": "Imágenes del mundo flotante"
+   },
+   "camera": {
+    "lon": 139.2,
+    "lat": 35.5,
+    "zoom": 9
+   },
+   "text": {
+    "en": "In Edo, today's Tokyo, ukiyo-e artists made cheap colour woodblock prints of actors, beauties and landscapes. Hokusai's Great Wave (1831) and Hiroshige's views of the Tōkaidō road became famous worldwide.",
+    "es": "En Edo, la actual Tokio, los artistas del ukiyo-e hacían estampas baratas a color, grabadas en madera, de actores, bellezas y paisajes. La gran ola de Hokusai (1831) y el Tōkaidō de Hiroshige dieron la vuelta al mundo."
+   },
+   "details": {
+    "en": "Under the Tokugawa shoguns, Japan was mostly closed to foreigners, and Edo grew to more than a million people. Its townspeople bought woodblock prints, made by teams of designers, carvers and printers and sold for little. Utamaro portrayed women of the city in the 1790s, though censors punished prints of forbidden subjects. From about 1830, a boom in travel made landscape prints popular: Hokusai's Thirty-six Views of Mount Fuji, with its new Prussian blue, and Hiroshige's Fifty-three Stations of the Tōkaidō. After Japan opened to the West in the 1850s, the prints reached Paris, where Monet, Van Gogh and others collected them and learned from their flat colours and bold framing.",
+    "es": "Bajo los shogunes Tokugawa, Japón estaba casi cerrado a los extranjeros, y Edo llegó a tener más de un millón de habitantes. Sus habitantes compraban estampas grabadas en madera, hechas por equipos de dibujantes, talladores e impresores y vendidas por poco dinero. Utamaro retrató a las mujeres de la ciudad en la década de 1790, aunque la censura castigaba las estampas de temas prohibidos. Desde hacia 1830, el auge de los viajes puso de moda las estampas de paisajes: las Treinta y seis vistas del monte Fuji de Hokusai, con el nuevo azul de Prusia, y Las cincuenta y tres estaciones del Tōkaidō de Hiroshige. Cuando Japón se abrió a Occidente en la década de 1850, las estampas llegaron a París, donde Monet, Van Gogh y otros las coleccionaron y aprendieron de sus colores planos y sus encuadres audaces."
+   },
+   "show": [
+    "ukiyo-e",
+    "utamaro",
+    "katsushika-hokusai",
+    "the-great-wave-off-kanagawa",
+    "utagawa-hiroshige"
+   ]
+  },
+  {
+   "date": "1889-06",
+   "title": {
+    "en": "Painting light",
+    "es": "Pintar la luz"
+   },
+   "camera": {
+    "lon": 2.7,
+    "lat": 46.6,
+    "zoom": 6
+   },
+   "text": {
+    "en": "In 1874 Monet, Morisot and their friends showed their work on their own and were mocked as 'Impressionists'. In the south, Van Gogh painted in blazing colour, and in June 1889 he painted The Starry Night.",
+    "es": "En 1874, Monet, Morisot y sus amigos expusieron por su cuenta y se burlaron de ellos llamándolos «impresionistas». En el sur, Van Gogh pintó con colores encendidos, y en junio de 1889 pintó La noche estrellada."
+   },
+   "details": {
+    "en": "Tired of rejection by the official Salon in Paris, a group of painters held their own exhibition in 1874. They painted outdoors, with quick strokes of pure colour, to catch light and passing moments of modern life: boats, train stations, gardens, cafés and families. A critic mocked Monet's Impression, Sunrise, and the name Impressionism stuck. Berthe Morisot showed in all but one of their eight exhibitions. After them, painters went further: Cézanne built pictures from blocks of colour, Gauguin sailed to Tahiti, and Vincent van Gogh, who had collected hundreds of Japanese prints, painted the south of France in blazing colours. Scorned in their day, these paintings now fill museums such as the Musée d'Orsay in Paris.",
+    "es": "Cansados del rechazo del Salón oficial de París, un grupo de pintores organizó su propia exposición en 1874. Pintaban al aire libre, con pinceladas rápidas de color puro, para atrapar la luz y los instantes fugaces de la vida moderna: barcas, estaciones de tren, jardines, cafés y familias. Un crítico se burló de Impresión, sol naciente de Monet, y el nombre de impresionismo se quedó. Berthe Morisot expuso en todas menos una de sus ocho exposiciones. Después de ellos, los pintores fueron más allá: Cézanne construyó cuadros con bloques de color, Gauguin navegó a Tahití y Vincent van Gogh, que había coleccionado cientos de estampas japonesas, pintó el sur de Francia con colores encendidos. Despreciados en su tiempo, estos cuadros llenan hoy museos como el de Orsay, en París."
+   },
+   "show": [
+    "impression-sunrise",
+    "claude-monet",
+    "berthe-morisot",
+    "vincent-van-gogh",
+    "the-starry-night"
+   ]
+  },
+  {
+   "date": "1915-12",
+   "title": {
+    "en": "Modern art breaks the rules",
+    "es": "El arte moderno rompe las reglas"
+   },
+   "camera": {
+    "lon": 17,
+    "lat": 50,
+    "zoom": 2.8
+   },
+   "text": {
+    "en": "Painters stopped copying what they saw. Picasso broke figures into sharp planes, while Hilma af Klint, Kandinsky and Malevich painted pure shapes and colours, with no objects at all.",
+    "es": "Los pintores dejaron de copiar lo que veían. Picasso partió las figuras en planos afilados, y Hilma af Klint, Kandinski y Malévich pintaron formas y colores puros, sin objetos."
+   },
+   "details": {
+    "en": "Photography could now record the world, and painters asked what else a picture could do. In Paris in 1907 Picasso painted Les Demoiselles d'Avignon, and with Georges Braque he developed Cubism, showing things from several sides at once. Others gave up objects altogether. In Stockholm, Hilma af Klint painted large abstract works from 1906 but kept them hidden; in Munich, Wassily Kandinsky compared colours to musical notes; and in December 1915, in Petrograd, Kazimir Malevich hung his Black Square in the corner where Russian homes keep their icons. Some of these works are still under copyright, so their cards show no picture.",
+    "es": "La fotografía ya podía registrar el mundo, y los pintores se preguntaron qué más podía hacer un cuadro. En París, en 1907, Picasso pintó Las señoritas de Avignon, y con Georges Braque desarrolló el cubismo, que muestra las cosas desde varios lados a la vez. Otros abandonaron del todo los objetos. En Estocolmo, Hilma af Klint pintó grandes obras abstractas desde 1906, pero las mantuvo ocultas; en Múnich, Vasili Kandinski comparó los colores con las notas musicales; y en diciembre de 1915, en Petrogrado, Kazimir Malévich colgó su Cuadrado negro en la esquina donde las casas rusas guardan sus iconos. Algunas de estas obras aún tienen derechos de autor, así que sus fichas no muestran imagen."
+   },
+   "show": [
+    "pablo-picasso",
+    "les-demoiselles-davignon",
+    "hilma-af-klint",
+    "wassily-kandinsky",
+    "black-square"
+   ]
+  },
+  {
+   "date": "1939",
+   "title": {
+    "en": "Murals and a cry against war",
+    "es": "Murales y un grito contra la guerra"
+   },
+   "camera": {
+    "lon": -42,
+    "lat": 31,
+    "zoom": 1.15
+   },
+   "text": {
+    "en": "Mexico's muralists painted the nation's history on public walls, and Frida Kahlo painted herself. In 1937 Picasso answered the bombing of Gernika with Guernica, while the Nazis mocked modern art in Munich.",
+    "es": "Los muralistas mexicanos pintaron la historia de la nación en muros públicos y Frida Kahlo se retrató a sí misma. En 1937 Picasso respondió al bombardeo de Gernika con el Guernica, y en Múnich los nazis se burlaban del arte moderno."
+   },
+   "details": {
+    "en": "After the Mexican Revolution, the government gave artists the walls of schools, ministries and palaces: Diego Rivera, José Clemente Orozco and David Alfaro Siqueiros painted Indigenous civilisations, conquest, workers and revolution for everyone to see, and their work later inspired artists in the United States. Frida Kahlo turned her pain and her Mexican identity into small, intense self-portraits. In Europe, art was caught up in war and dictatorship: in July 1937 the Nazis mocked modern art in their 'Degenerate Art' show, while Picasso's Guernica protested against the bombing of a Basque town. When Franco won the Spanish Civil War, Guernica went to New York, and Picasso asked that it stay there until Spain was free.",
+    "es": "Tras la Revolución mexicana, el gobierno entregó a los artistas los muros de escuelas, ministerios y palacios: Diego Rivera, José Clemente Orozco y David Alfaro Siqueiros pintaron civilizaciones indígenas, conquista, obreros y revolución a la vista de todos, y su obra inspiró después a artistas de Estados Unidos. Frida Kahlo convirtió su dolor y su identidad mexicana en autorretratos pequeños e intensos. En Europa, el arte quedó atrapado entre la guerra y la dictadura: en julio de 1937 los nazis se burlaron del arte moderno en su muestra de «arte degenerado», mientras el Guernica de Picasso protestaba contra el bombardeo de una villa vasca. Cuando Franco ganó la Guerra Civil española, el Guernica viajó a Nueva York, y Picasso pidió que se quedara allí hasta que España fuera libre."
+   },
+   "moves": [
+    {
+     "side": "away",
+     "path": [
+      [
+       2.3376,
+       48.8606
+      ],
+      [
+       -30.0,
+       47.0
+      ],
+      [
+       -73.9775,
+       40.7617
+      ]
+     ],
+     "label": {
+      "en": "1939: Guernica to New York",
+      "es": "1939: el Guernica, a Nueva York"
+     }
+    },
+    {
+     "side": "home",
+     "path": [
+      [
+       -73.9775,
+       40.7617
+      ],
+      [
+       -35.0,
+       40.0
+      ],
+      [
+       -3.6945,
+       40.408
+      ]
+     ],
+     "label": {
+      "en": "1981: back to Spain",
+      "es": "1981: de vuelta a España"
+     }
+    }
+   ],
+   "show": [
+    "mexican-muralism",
+    "diego-rivera",
+    "frida-kahlo",
+    "guernica",
+    "degenerate-art"
+   ]
+  },
+  {
+   "date": "1962-07",
+   "title": {
+    "en": "Drips and soup cans",
+    "es": "Chorreos y latas de sopa"
+   },
+   "camera": {
+    "lon": -73.15,
+    "lat": 40.85,
+    "zoom": 22
+   },
+   "text": {
+    "en": "After the war New York became the capital of modern art. Jackson Pollock dripped paint onto huge canvases, Yayoi Kusama covered hers with infinite nets, and in 1962 Andy Warhol showed 32 Campbell's Soup Cans.",
+    "es": "Tras la guerra, Nueva York fue la capital del arte moderno. Pollock chorreó pintura sobre lienzos enormes, Yayoi Kusama cubrió los suyos de redes infinitas y en 1962 Andy Warhol expuso 32 Latas de sopa Campbell."
+   },
+   "details": {
+    "en": "The Second World War drove many European artists to New York, and the city's museums, galleries and collectors made it the new centre of modern art. Abstract Expressionists such as Jackson Pollock, who learned from the Mexican muralists, poured feelings into huge abstract canvases, while his wife, the painter Lee Krasner, worked beside him. Yayoi Kusama arrived from Japan in 1958 and covered canvases, objects and rooms with nets and dots. In the 1960s Pop artists turned to advertising, comics and film stars: Andy Warhol painted soup cans and celebrities almost as if they came from a factory. These artists' works are still under copyright, so their cards show no picture.",
+    "es": "La Segunda Guerra Mundial llevó a muchos artistas europeos a Nueva York, y los museos, galerías y coleccionistas de la ciudad la convirtieron en el nuevo centro del arte moderno. Expresionistas abstractos como Jackson Pollock, que aprendió de los muralistas mexicanos, volcaron sus sentimientos en enormes lienzos abstractos, mientras su esposa, la pintora Lee Krasner, trabajaba a su lado. Yayoi Kusama llegó de Japón en 1958 y cubrió lienzos, objetos y salas de redes y lunares. En los años sesenta, los artistas pop se fijaron en la publicidad, las historietas y las estrellas de cine: Andy Warhol pintó latas de sopa y celebridades casi como si salieran de una fábrica. Las obras de estos artistas aún tienen derechos de autor, así que sus fichas no muestran imagen."
+   },
+   "show": [
+    "jackson-pollock",
+    "campbells-soup-cans",
+    "yayoi-kusama",
+    "museum-of-modern-art"
+   ]
+  },
+  {
+   "date": "1988",
+   "title": {
+    "en": "Dreamings in paint",
+    "es": "Los Sueños en pintura"
+   },
+   "camera": {
+    "lon": 133.2,
+    "lat": -23.1,
+    "zoom": 9
+   },
+   "text": {
+    "en": "In Central Australia, Albert Namatjira's watercolours won fame from 1938. From 1971 the painters of Papunya put their Dreaming stories into acrylic, and in 1988 Emily Kame Kngwarreye began painting at Utopia.",
+    "es": "En Australia central, las acuarelas de Albert Namatjira se hicieron famosas desde 1938. Desde 1971, los pintores de Papunya pintaron sus relatos del Sueño en acrílico, y en 1988 Emily Kame Kngwarreye empezó a pintar en Utopía."
+   },
+   "details": {
+    "en": "Aboriginal Australians have made art for tens of thousands of years, on rock, bark, sand and bodies. Under colonial rule their lands were taken and their lives controlled by law. Albert Namatjira, an Arrernte watercolourist, became famous in the 1930s, yet was granted citizenship rights only in 1957. At Papunya, a settlement where the government had moved several desert peoples, senior men began in 1971 to paint their Dreamings, the stories of the ancestors who shaped the land, with acrylic dots and lines, keeping sacred details hidden from outsiders. Their company, Papunya Tula, brought desert painting to the world, and women such as Emily Kame Kngwarreye joined the movement. Their works are under copyright, so no pictures are shown.",
+    "es": "Los aborígenes australianos han hecho arte durante decenas de miles de años, sobre roca, corteza, arena y cuerpos. Bajo el dominio colonial, les quitaron sus tierras y la ley controló sus vidas. Albert Namatjira, acuarelista arrernte, se hizo famoso en los años treinta, pero solo recibió derechos de ciudadanía en 1957. En Papunya, un asentamiento donde el gobierno había trasladado a varios pueblos del desierto, en 1971 hombres mayores empezaron a pintar sus Sueños, los relatos de los antepasados que dieron forma a la tierra, con puntos y líneas de acrílico, ocultando a los forasteros los detalles sagrados. Su empresa, Papunya Tula, llevó la pintura del desierto al mundo, y mujeres como Emily Kame Kngwarreye se sumaron al movimiento. Sus obras tienen derechos de autor, así que no se muestran imágenes."
+   },
+   "show": [
+    "albert-namatjira",
+    "papunya-tula",
+    "warlugulong",
+    "emily-kame-kngwarreye"
+   ]
+  },
+  {
+   "date": "2026-04",
+   "title": {
+    "en": "Street art, new museums, homecomings",
+    "es": "Arte urbano, nuevos museos, regresos"
+   },
+   "camera": {
+    "lon": 3,
+    "lat": 18,
+    "zoom": 1.0
+   },
+   "text": {
+    "en": "Today art is painted on city walls as well as shown in new museums, such as those of Abu Dhabi and Giza. Looted works are going home: Benin Bronzes since 2021, the last Zimbabwe Bird in 2026.",
+    "es": "Hoy el arte se pinta en los muros de las ciudades y se exhibe en nuevos museos, como los de Abu Dabi y Guiza. Las obras saqueadas vuelven a casa: bronces de Benín desde 2021, la última ave de Zimbabue en 2026."
+   },
+   "details": {
+    "en": "Graffiti and street art, born on the walls and subway trains of New York and Paris, spread to cities worldwide; works by artists like Banksy now fetch high prices, while most street art remains free to see and some of it illegal. Museums have changed too: the Louvre Abu Dhabi (2017) shows art across cultures, and the Grand Egyptian Museum (2025) keeps Egypt's treasures in Egypt. Museums face growing calls to return what was taken in war and colonial conquest. Germany, the United States and the Netherlands have returned Benin Bronzes, and South Africa returned the last soapstone bird to Zimbabwe in April 2026. Other claims, such as the Parthenon marbles, the Nefertiti Bust and Moctezuma's headdress, are still debated.",
+    "es": "El grafiti y el arte urbano, nacidos en los muros y los vagones del metro de Nueva York y París, se extendieron a ciudades de todo el mundo; las obras de artistas como Banksy alcanzan hoy precios altos, mientras casi todo el arte urbano sigue siendo gratis para verlo y una parte, ilegal. Los museos también han cambiado: el Louvre Abu Dabi (2017) muestra el arte a través de las culturas, y el Gran Museo Egipcio (2025) guarda en Egipto los tesoros de Egipto. Los museos reciben cada vez más pedidos de devolver lo que se llevó en guerras y conquistas coloniales. Alemania, Estados Unidos y los Países Bajos han devuelto bronces de Benín, y Sudáfrica devolvió a Zimbabue la última ave de esteatita en abril de 2026. Otros reclamos, como los mármoles del Partenón, el busto de Nefertiti y el penacho de Moctezuma, siguen en debate."
+   },
+   "moves": [
+    {
+     "side": "home",
+     "path": [
+      [
+       13.3977,
+       52.5206
+      ],
+      [
+       8.0,
+       38.0
+      ],
+      [
+       7.0,
+       20.0
+      ],
+      [
+       7.4951,
+       9.0579
+      ]
+     ],
+     "label": {
+      "en": "2022: Germany returns Benin Bronzes",
+      "es": "2022: Alemania devuelve bronces de Benín"
+     }
+    },
+    {
+     "side": "home",
+     "path": [
+      [
+       4.4826,
+       52.1601
+      ],
+      [
+       -2.0,
+       38.0
+      ],
+      [
+       2.0,
+       15.0
+      ],
+      [
+       5.6222,
+       6.3333
+      ]
+     ],
+     "label": {
+      "en": "2025: the Netherlands returns 119",
+      "es": "2025: los Países Bajos devuelven 119"
+     }
+    },
+    {
+     "side": "home",
+     "path": [
+      [
+       18.4655,
+       -33.9555
+      ],
+      [
+       25.0,
+       -28.0
+      ],
+      [
+       30.9339,
+       -20.2675
+      ]
+     ],
+     "label": {
+      "en": "2026: the last bird goes home",
+      "es": "2026: la última ave vuelve a casa"
+     }
+    }
+   ],
+   "show": [
+    "street-art",
+    "banksy",
+    "louvre-abu-dhabi",
+    "grand-egyptian-museum",
+    "benin-bronzes-returned",
+    "zimbabwe-birds"
+   ]
+  }
+ ],
+ "outcome": {
+  "en": "People have made art for at least 100,000 years, on every continent they reached: in caves and on rock, in bronze, clay and stone, on silk, paper, canvas and city walls. Many of its masterpieces now live far from where they were made, carried off by conquest, colonial expeditions, sales and excavations, and the debate over returning them is changing museums. Some, like the Benin Bronzes and the birds of Great Zimbabwe, have begun to go home; others, like the Parthenon marbles and the Nefertiti Bust, are still claimed. Women artists, Indigenous painters and the makers whose names were never recorded are being given back their place in the story.",
+  "es": "La humanidad hace arte desde hace al menos 100 000 años, en todos los continentes a los que llegó: en cuevas y rocas, en bronce, barro y piedra, en seda, papel, lienzo y muros de ciudades. Muchas de sus obras maestras viven hoy lejos de donde se hicieron, llevadas por conquistas, expediciones coloniales, ventas y excavaciones, y el debate sobre su devolución está cambiando los museos. Algunas, como los bronces de Benín y las aves de Gran Zimbabue, han empezado a volver a casa; otras, como los mármoles del Partenón y el busto de Nefertiti, siguen reclamándose. Las artistas mujeres, los pintores indígenas y los creadores cuyos nombres nunca se registraron están recuperando su lugar en la historia."
+ },
+ "sources": [
+  {
+   "title": "Blombos Cave (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Blombos_Cave"
+  },
+  {
+   "title": "Diepkloof Rock Shelter (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Diepkloof_Rock_Shelter"
+  },
+  {
+   "title": "Liang Metanduno (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Liang_Metanduno"
+  },
+  {
+   "title": "Caves in the Maros-Pangkep karst (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Caves_in_the_Maros-Pangkep_karst"
+  },
+  {
+   "title": "Lion-man of Hohlenstein-Stadel (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Lion-man_of_Hohlenstein-Stadel"
+  },
+  {
+   "title": "Chauvet Cave (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Chauvet_Cave"
+  },
+  {
+   "title": "Venus of Willendorf (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Venus_of_Willendorf"
+  },
+  {
+   "title": "Cave of Altamira (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Cave_of_Altamira"
+  },
+  {
+   "title": "Lascaux (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Lascaux"
+  },
+  {
+   "title": "Gwion Gwion rock paintings (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Gwion_Gwion_rock_paintings"
+  },
+  {
+   "title": "Cueva de las Manos (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Cueva_de_las_Manos"
+  },
+  {
+   "title": "Narmer Palette (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Narmer_Palette"
+  },
+  {
+   "title": "Standard of Ur (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Standard_of_Ur"
+  },
+  {
+   "title": "Nefertiti Bust (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Nefertiti_Bust"
+  },
+  {
+   "title": "Mask of Tutankhamun (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Mask_of_Tutankhamun"
+  },
+  {
+   "title": "Ishtar Gate (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Ishtar_Gate"
+  },
+  {
+   "title": "Houmuwu ding (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Houmuwu_ding"
+  },
+  {
+   "title": "Sanxingdui (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Sanxingdui"
+  },
+  {
+   "title": "Nok culture (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Nok_culture"
+  },
+  {
+   "title": "Terracotta Army (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Terracotta_Army"
+  },
+  {
+   "title": "Elgin Marbles (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Elgin_Marbles"
+  },
+  {
+   "title": "Venus de Milo (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Venus_de_Milo"
+  },
+  {
+   "title": "Alexander Mosaic (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Alexander_Mosaic"
+  },
+  {
+   "title": "Fayum mummy portraits (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Fayum_mummy_portraits"
+  },
+  {
+   "title": "Greco-Buddhist art (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Greco-Buddhist_art"
+  },
+  {
+   "title": "Ajanta Caves (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Ajanta_Caves"
+  },
+  {
+   "title": "Buddhas of Bamiyan (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Buddhas_of_Bamiyan"
+  },
+  {
+   "title": "Basilica of San Vitale (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Basilica_of_San_Vitale"
+  },
+  {
+   "title": "Christ Pantocrator (Sinai) (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Christ_Pantocrator_(Sinai)"
+  },
+  {
+   "title": "Dome of the Rock (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Dome_of_the_Rock"
+  },
+  {
+   "title": "Book of Kells (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Book_of_Kells"
+  },
+  {
+   "title": "Blue Quran (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Blue_Quran"
+  },
+  {
+   "title": "Fan Kuan (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Fan_Kuan"
+  },
+  {
+   "title": "Early Spring (painting) (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Early_Spring_(painting)"
+  },
+  {
+   "title": "Along the River During the Qingming Festival (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Along_the_River_During_the_Qingming_Festival"
+  },
+  {
+   "title": "Genji Monogatari Emaki (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Genji_Monogatari_Emaki"
+  },
+  {
+   "title": "Ghent Altarpiece (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Ghent_Altarpiece"
+  },
+  {
+   "title": "Leonardo da Vinci (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Leonardo_da_Vinci"
+  },
+  {
+   "title": "Mona Lisa (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Mona_Lisa"
+  },
+  {
+   "title": "Michelangelo (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Michelangelo"
+  },
+  {
+   "title": "Sistine Chapel ceiling (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Sistine_Chapel_ceiling"
+  },
+  {
+   "title": "Temple of the Inscriptions (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Temple_of_the_Inscriptions"
+  },
+  {
+   "title": "Bonampak (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Bonampak"
+  },
+  {
+   "title": "Dresden Codex (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Dresden_Codex"
+  },
+  {
+   "title": "Coyolxauhqui Stone (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Coyolxauhqui_Stone"
+  },
+  {
+   "title": "Aztec sun stone (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Aztec_sun_stone"
+  },
+  {
+   "title": "Moctezuma's headdress (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Moctezuma's_headdress"
+  },
+  {
+   "title": "Igbo-Ukwu (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Igbo-Ukwu"
+  },
+  {
+   "title": "Bronze Head from Ife (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Bronze_Head_from_Ife"
+  },
+  {
+   "title": "Benin Bronzes (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Benin_Bronzes"
+  },
+  {
+   "title": "Benin ivory mask (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Benin_ivory_mask"
+  },
+  {
+   "title": "Zimbabwe Bird (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Zimbabwe_Bird"
+  },
+  {
+   "title": "Kamāl ud-Dīn Behzād (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Kam%C4%81l_ud-D%C4%ABn_Behz%C4%81d"
+  },
+  {
+   "title": "Shahnameh of Shah Tahmasp (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Shahnameh_of_Shah_Tahmasp"
+  },
+  {
+   "title": "Hamzanama (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Hamzanama"
+  },
+  {
+   "title": "Shah Mosque (Isfahan) (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Shah_Mosque_(Isfahan)"
+  },
+  {
+   "title": "Iznik pottery (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Iznik_pottery"
+  },
+  {
+   "title": "Artemisia Gentileschi (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Artemisia_Gentileschi"
+  },
+  {
+   "title": "Rembrandt (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Rembrandt"
+  },
+  {
+   "title": "The Night Watch (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/The_Night_Watch"
+  },
+  {
+   "title": "Judith Leyster (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Judith_Leyster"
+  },
+  {
+   "title": "Girl with a Pearl Earring (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Girl_with_a_Pearl_Earring"
+  },
+  {
+   "title": "Diego Velázquez (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Diego_Vel%C3%A1zquez"
+  },
+  {
+   "title": "Las Meninas (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Las_Meninas"
+  },
+  {
+   "title": "Uffizi (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Uffizi"
+  },
+  {
+   "title": "British Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/British_Museum"
+  },
+  {
+   "title": "Louvre (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Louvre"
+  },
+  {
+   "title": "Horses of Saint Mark (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Horses_of_Saint_Mark"
+  },
+  {
+   "title": "Francisco Goya (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Francisco_Goya"
+  },
+  {
+   "title": "The Third of May 1808 (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/The_Third_of_May_1808"
+  },
+  {
+   "title": "Museo del Prado (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Museo_del_Prado"
+  },
+  {
+   "title": "Ukiyo-e (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Ukiyo-e"
+  },
+  {
+   "title": "Utamaro (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Utamaro"
+  },
+  {
+   "title": "Hokusai (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Hokusai"
+  },
+  {
+   "title": "The Great Wave off Kanagawa (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa"
+  },
+  {
+   "title": "Hiroshige (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Hiroshige"
+  },
+  {
+   "title": "Metropolitan Museum of Art (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Metropolitan_Museum_of_Art"
+  },
+  {
+   "title": "Impression, Sunrise (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Impression,_Sunrise"
+  },
+  {
+   "title": "Claude Monet (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Claude_Monet"
+  },
+  {
+   "title": "Berthe Morisot (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Berthe_Morisot"
+  },
+  {
+   "title": "Vincent van Gogh (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Vincent_van_Gogh"
+  },
+  {
+   "title": "The Starry Night (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/The_Starry_Night"
+  },
+  {
+   "title": "Pablo Picasso (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Pablo_Picasso"
+  },
+  {
+   "title": "Les Demoiselles d'Avignon (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Les_Demoiselles_d'Avignon"
+  },
+  {
+   "title": "Hilma af Klint (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Hilma_af_Klint"
+  },
+  {
+   "title": "Wassily Kandinsky (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Wassily_Kandinsky"
+  },
+  {
+   "title": "Black Square (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Black_Square"
+  },
+  {
+   "title": "Museum of Modern Art (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Museum_of_Modern_Art"
+  },
+  {
+   "title": "Mexican muralism (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Mexican_muralism"
+  },
+  {
+   "title": "Diego Rivera (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Diego_Rivera"
+  },
+  {
+   "title": "Frida Kahlo (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Frida_Kahlo"
+  },
+  {
+   "title": "Guernica (Picasso) (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Guernica_(Picasso)"
+  },
+  {
+   "title": "Degenerate art (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Degenerate_art"
+  },
+  {
+   "title": "Jackson Pollock (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Jackson_Pollock"
+  },
+  {
+   "title": "Campbell's Soup Cans (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Campbell's_Soup_Cans"
+  },
+  {
+   "title": "Yayoi Kusama (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Yayoi_Kusama"
+  },
+  {
+   "title": "National Palace Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/National_Palace_Museum"
+  },
+  {
+   "title": "Albert Namatjira (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Albert_Namatjira"
+  },
+  {
+   "title": "Papunya Tula (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Papunya_Tula"
+  },
+  {
+   "title": "Warlugulong (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Warlugulong"
+  },
+  {
+   "title": "Emily Kame Kngwarreye (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Emily_Kame_Kngwarreye"
+  },
+  {
+   "title": "Jean-Michel Basquiat (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Jean-Michel_Basquiat"
+  },
+  {
+   "title": "Musée d'Orsay (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Mus%C3%A9e_d'Orsay"
+  },
+  {
+   "title": "Street art (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Street_art"
+  },
+  {
+   "title": "Banksy (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Banksy"
+  },
+  {
+   "title": "Acropolis Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Acropolis_Museum"
+  },
+  {
+   "title": "Louvre Abu Dhabi (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Louvre_Abu_Dhabi"
+  },
+  {
+   "title": "Grand Egyptian Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Grand_Egyptian_Museum"
+  },
+  {
+   "title": "Cave painting (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Cave_painting"
+  },
+  {
+   "title": "Napoleonic looting of art (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Napoleonic_looting_of_art"
+  },
+  {
+   "title": "Mughal painting (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Mughal_painting"
+  },
+  {
+   "title": "Persian miniature (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Persian_miniature"
+  },
+  {
+   "title": "Idia (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Idia"
+  },
+  {
+   "title": "Kʼinich Janaabʼ Pakal (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/K%CA%BCinich_Janaab%CA%BC_Pakal"
+  },
+  {
+   "title": "Clifford Possum Tjapaltjarri (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Clifford_Possum_Tjapaltjarri"
+  },
+  {
+   "title": "Kitagawa Utamaro (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Kitagawa_Utamaro"
+  },
+  {
+   "title": "Impressionism (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Impressionism"
+  },
+  {
+   "title": "Cubism (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Cubism"
+  },
+  {
+   "title": "Pop art (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Pop_art"
+  },
+  {
+   "title": "Andy Warhol (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Andy_Warhol"
+  },
+  {
+   "title": "Kazimir Malevich (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Kazimir_Malevich"
+  },
+  {
+   "title": "Composition VII (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Composition_VII"
+  },
+  {
+   "title": "Museum of West African Art (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Museum_of_West_African_Art"
+  },
+  {
+   "title": "Keith Haring (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Keith_Haring"
+  },
+  {
+   "title": "Parthenon (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Parthenon"
+  },
+  {
+   "title": "Pergamon Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Pergamon_Museum"
+  },
+  {
+   "title": "Neues Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Neues_Museum"
+  },
+  {
+   "title": "Egyptian Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Egyptian_Museum"
+  }
+ ]
+}
