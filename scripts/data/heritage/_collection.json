@@ -1,0 +1,17 @@
+{
+  "name": { "en": "World Heritage", "es": "Patrimonio de la Humanidad" },
+  "categories": [
+    { "id": "monument", "name": { "en": "Monuments and temples", "es": "Monumentos y templos" }, "icon": "🏛️", "color": "#d4a017" },
+    { "id": "city", "name": { "en": "Historic towns", "es": "Ciudades históricas" }, "icon": "🏘️", "color": "#e67e22" },
+    { "id": "archaeology", "name": { "en": "Ruins and archaeological sites", "es": "Ruinas y sitios arqueológicos" }, "icon": "🏺", "color": "#8e5a2b" },
+    { "id": "landscape", "name": { "en": "Cultural landscapes", "es": "Paisajes culturales" }, "icon": "🌄", "color": "#e84393" },
+    { "id": "nature", "name": { "en": "Natural sites", "es": "Sitios naturales" }, "icon": "🌿", "color": "#16a085" },
+    { "id": "wildlife", "name": { "en": "Wildlife", "es": "Fauna" }, "icon": "🐢", "color": "#48c9b0" },
+    { "id": "threat", "name": { "en": "Threats and damage", "es": "Amenazas y daños" }, "icon": "⚠️", "color": "#c0392b" },
+    { "id": "rescue", "name": { "en": "Rescue and rebuilding", "es": "Rescate y reconstrucción" }, "icon": "🛠️", "color": "#5dade2" },
+    { "id": "person", "name": { "en": "People", "es": "Personas" }, "icon": "👤", "color": "#7d3c98" },
+    { "id": "institution", "name": { "en": "UNESCO and its partners", "es": "La UNESCO y sus aliados" }, "icon": "🇺🇳", "color": "#5d6d7e" },
+    { "id": "event", "name": { "en": "Turning points", "es": "Momentos clave" }, "icon": "⭐", "color": "#f39c12" }
+  ],
+  "catalog": []
+}

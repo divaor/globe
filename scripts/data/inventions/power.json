@@ -1,0 +1,1684 @@
+{
+  "id": "power",
+  "name": { "en": "Power: from water wheels to solar panels", "es": "Energía: de la rueda hidráulica a los paneles solares" },
+  "icon": "⚡",
+  "era": "modern",
+  "region": { "en": "The whole world, from Egypt, Persia and China to Europe and the Americas", "es": "Todo el mundo, de Egipto, Persia y China a Europa y América" },
+  "start": "-250",
+  "end": "2026",
+  "summary": {
+    "en": "For most of history, the only power came from muscles. This is how people learned to make water, wind, steam, electricity, oil, the atom and sunlight work for them, and what it cost.",
+    "es": "Durante casi toda la historia, la única fuerza fue la de los músculos. Así aprendimos a hacer trabajar el agua, el viento, el vapor, la electricidad, el petróleo, el átomo y la luz del sol, y esto es lo que costó."
+  },
+  "camera": { "lon": 58, "lat": 35, "zoom": 1.4 },
+  "sides": [
+    {
+      "id": "nature",
+      "name": { "en": "Water and wind", "es": "Agua y viento" },
+      "color": "#48c9b0"
+    },
+    {
+      "id": "steam",
+      "name": { "en": "Steam and coal", "es": "Vapor y carbón" },
+      "color": "#5d6d7e"
+    },
+    {
+      "id": "elec",
+      "name": { "en": "Electricity", "es": "Electricidad" },
+      "color": "#d4a017"
+    },
+    {
+      "id": "oil",
+      "name": { "en": "Engines that burn fuel", "es": "Motores de combustión" },
+      "color": "#8e5a2b"
+    }
+  ],
+  "steps": [
+    {
+      "date": "-250",
+      "title": { "en": "Wheels turned by water", "es": "Ruedas que mueve el agua" },
+      "text": {
+        "en": "By the 3rd century BC, wheels turned by flowing water lifted water in Ptolemaic Egypt, and soon they ground grain. Romans, Persians and Chinese put the same force to work.",
+        "es": "Hacia el siglo III a. C., en el Egipto ptolemaico, ruedas movidas por la corriente subían agua, y pronto molieron grano. Romanos, persas y chinos pusieron a trabajar la misma fuerza."
+      },
+      "details": {
+        "en": "For most of history the only power people had came from muscles: their own, those of enslaved people and those of animals. The water wheel was the first machine to tap a force of nature. Its beginnings are debated: the oldest remains come from Egypt's Faiyum oasis, where wheels lifted irrigation water by the 3rd century BC, and the Greek engineer Philo of Byzantium described one. Geared mills that ground grain followed, perhaps in Alexandria or Byzantium; the Roman architect Vitruvius described one in about 25 BC. In China, the official Du Shi used water wheels to work the bellows of iron furnaces in AD 31. Rome took water power furthest: at Barbegal, in Gaul, 16 wheels ground flour for the city of Arles, and at Hierapolis a wheel drove stone saws through a crank and connecting rod, the same link that would one day join steam engines to wheels.",
+        "es": "Durante casi toda la historia, la única fuerza disponible fue la de los músculos: los propios, los de personas esclavizadas y los de los animales. La rueda hidráulica fue la primera máquina que aprovechó una fuerza de la naturaleza. Su origen se discute: los restos más antiguos vienen del oasis de El Fayum, en Egipto, donde las ruedas subían agua para regar hacia el siglo III a. C., y el ingeniero griego Filón de Bizancio describió una. Después llegaron los molinos con engranajes que molían grano, quizá en Alejandría o Bizancio; el arquitecto romano Vitruvio describió uno hacia el 25 a. C. En China, el funcionario Du Shi usó ruedas hidráulicas para mover los fuelles de los hornos de hierro en el año 31. Roma llevó la fuerza del agua más lejos que nadie: en Barbegal, en la Galia, 16 ruedas molían harina para la ciudad de Arlés, y en Hierápolis una rueda movía sierras de piedra con una manivela y una biela, la misma pieza que un día uniría las máquinas de vapor a las ruedas."
+      },
+      "places": [
+        {
+          "id": "water-powered-bellows",
+          "name": { "en": "Water-powered bellows", "es": "Fuelles movidos por agua" },
+          "at": [112.5283, 32.9908],
+          "cat": "tools",
+          "type": "invention",
+          "date": "31",
+          "place": { "en": "Nanyang, Henan, China", "es": "Nanyang, Henan, China" },
+          "by": { "en": "Du Shi", "es": "Du Shi" },
+          "text": {
+            "en": "In AD 31 Du Shi, prefect of Nanyang, used water wheels to work the bellows of iron furnaces, so cast iron could be made with far less human and animal labour.",
+            "es": "En el año 31, Du Shi, prefecto de Nanyang, usó ruedas hidráulicas para mover los fuelles de los hornos de hierro, de modo que el hierro fundido se hiciera con mucho menos trabajo de personas y animales."
+          },
+          "details": {
+            "en": "Chinese ironworkers had cast iron since the 6th century BC, and blast furnaces needed a strong, steady blast of air. Du Shi, an official of the Eastern Han dynasty, is credited with being the first to drive the bellows with water power. A writer of about AD 20, Huan Tan, already mentions water wheels pounding grain in China, so water power was spreading there at the same time as in the Roman world, perhaps on its own.",
+            "es": "Los herreros chinos fundían hierro desde el siglo VI a. C., y los altos hornos necesitaban un soplo de aire fuerte y constante. A Du Shi, funcionario de la dinastía Han oriental, se le atribuye ser el primero en mover los fuelles con la fuerza del agua. Hacia el año 20, el escritor Huan Tan ya menciona ruedas hidráulicas que machacaban grano en China, así que la fuerza del agua se extendía allí al mismo tiempo que en el mundo romano, quizá por su cuenta."
+          },
+          "wiki": { "en": "Du Shi", "es": "" }
+        },
+        {
+          "id": "barbegal-mills",
+          "name": { "en": "Barbegal mills", "es": "Molinos de Barbegal" },
+          "at": [4.7214, 43.7025],
+          "cat": "energy",
+          "type": "site",
+          "date": "100",
+          "until": "300",
+          "place": { "en": "Fontvieille, near Arles, France", "es": "Fontvieille, cerca de Arlés, Francia" },
+          "text": {
+            "en": "Sixteen water wheels in two rows down a hillside ground flour for Roman Arles from the early 2nd century to the late 3rd: the greatest known concentration of mechanical power in the ancient world.",
+            "es": "Dieciséis ruedas hidráulicas en dos filas, ladera abajo, molieron harina para la Arlés romana desde comienzos del siglo II hasta fines del III: la mayor concentración de fuerza mecánica conocida del mundo antiguo."
+          },
+          "details": {
+            "en": "An aqueduct brought the water, which fell from wheel to wheel down the slope. The mills may have made about 4.5 tonnes of flour a day (some estimates say far more), enough bread for 10,000 people or more. A similar mill complex stood on the Janiculum hill in Rome. The ruins are still there, signposted as a Roman aqueduct.",
+            "es": "Un acueducto traía el agua, que caía de rueda en rueda por la pendiente. Los molinos quizá producían unas 4,5 toneladas de harina al día (algunos cálculos dicen mucho más), pan suficiente para 10 000 personas o más. Un conjunto parecido se alzaba en la colina del Janículo, en Roma. Las ruinas siguen allí, señalizadas como acueducto romano."
+          },
+          "wiki": { "en": "Barbegal aqueduct and mills", "es": "Acueducto y molinos de Barbegal" }
+        },
+        {
+          "id": "hierapolis-sawmill",
+          "name": { "en": "Hierapolis sawmill", "es": "Aserradero de Hierápolis" },
+          "at": [29.1233, 37.9239],
+          "cat": "energy",
+          "type": "invention",
+          "date": "250",
+          "place": { "en": "Hierapolis, near Pamukkale, Turkey", "es": "Hierápolis, cerca de Pamukkale, Turquía" },
+          "by": { "en": "Credited to the miller Marcus Aurelius Ammianos", "es": "Atribuido al molinero Marco Aurelio Amiano" },
+          "text": {
+            "en": "A relief on a 3rd-century miller's tomb shows a water wheel driving two stone saws through cranks and connecting rods: the earliest known machine to use them.",
+            "es": "Un relieve en la tumba de un molinero del siglo III muestra una rueda hidráulica que mueve dos sierras de piedra con manivelas y bielas: la máquina más antigua conocida que las usa."
+          },
+          "details": {
+            "en": "The Greek inscription praises Ammianos for his 'skills with wheels'. Similar water-powered stone saws have been found at Gerasa in Jordan and Ephesus in Turkey. With the crank and connecting rod, the Romans knew every part a steam engine would need, except the idea of putting them together. A metal crank of the 2nd century has also been found at Augusta Raurica, in Switzerland.",
+            "es": "La inscripción griega elogia a Amiano por su «habilidad con las ruedas». Se han hallado sierras de piedra parecidas, movidas por agua, en Gerasa (Jordania) y Éfeso (Turquía). Con la manivela y la biela, los romanos conocían todas las piezas que necesitaría una máquina de vapor, menos la idea de juntarlas. También se ha hallado una manivela de metal del siglo II en Augusta Raurica, en Suiza."
+          },
+          "wiki": { "en": "Hierapolis sawmill", "es": "Serrería de Hierápolis" },
+          "whs": 485
+        },
+        {
+          "id": "shushtar-hydraulic-system",
+          "name": { "en": "Shushtar's dams and mills", "es": "Represas y molinos de Shushtar" },
+          "at": [48.8487, 32.0537],
+          "cat": "energy",
+          "type": "site",
+          "date": "250",
+          "place": { "en": "Shushtar, Khuzestan, Iran", "es": "Shushtar, Juzestán, Irán" },
+          "text": {
+            "en": "Dams, tunnels and canals on the Karun river, many built in the 3rd century by a Roman workforce for the Sasanian kings, watered fields and turned a cascade of watermills.",
+            "es": "Represas, túneles y canales sobre el río Karun, muchos construidos en el siglo III por obreros romanos para los reyes sasánidas, regaban los campos y movían una cascada de molinos."
+          },
+          "details": {
+            "en": "Parts of the system are said to go back to the Achaemenid king Darius the Great. Its key structure, the Band-e Kaisar ('Caesar's dam'), a weir about 500 m long, was the easternmost Roman bridge and dam. Water led through tunnels from behind the Gargar dam still pours past the old mills in a row of waterfalls.",
+            "es": "Se dice que partes del sistema se remontan al rey aqueménida Darío el Grande. Su pieza clave, el Band-e Kaisar («la presa del César»), un dique de unos 500 m, fue el puente y presa romanos más orientales. El agua que llega por túneles desde detrás de la presa de Gargar todavía cae junto a los viejos molinos en una fila de cascadas."
+          },
+          "wiki": { "en": "Shushtar Historical Hydraulic System", "es": "Sistema hidráulico de Shushtar" },
+          "whs": 1315
+        }
+      ],
+      "show": ["water-wheel"]
+    },
+    {
+      "date": "900",
+      "title": { "en": "Windmills of Persia", "es": "Los molinos de viento de Persia" },
+      "text": {
+        "en": "The first practical windmills turned in eastern Persia, with sails spinning around an upright shaft. They ground grain and lifted water in the windy lands of Sistan and Khorasan.",
+        "es": "Los primeros molinos de viento prácticos giraron en el este de Persia, con aspas que daban vueltas alrededor de un eje vertical. Molían grano y subían agua en las tierras ventosas de Sistán y Jorasán."
+      },
+      "details": {
+        "en": "Wind had pushed sailing ships for thousands of years, and Hero of Alexandria described a wind-driven organ in the 1st century AD, but there is no clear evidence of working windmills before the 9th century (some sources say the 7th). The Persian mill stood between walls that funnelled the wind onto six to twelve sails of reed matting or cloth, fixed to an upright shaft that turned the millstone below. A story says a Persian craftsman, Abu Lu'lu'a, built windmills in the 7th century, but it was written down 300 years later. The geographer Estakhri reported windmills in Khorasan. Such mills spread across the Middle East and Central Asia, reached al-Andalus and the Aegean by the 11th century, and after 1219 reached northern China, through the travels of Yelü Chucai.",
+        "es": "El viento llevaba miles de años empujando barcos de vela, y Herón de Alejandría describió un órgano movido por el viento en el siglo I, pero no hay pruebas claras de molinos de viento en funcionamiento antes del siglo IX (algunas fuentes dicen el VII). El molino persa se alzaba entre muros que encauzaban el viento hacia seis a doce aspas de estera de junco o tela, fijadas a un eje vertical que hacía girar la muela de abajo. Un relato cuenta que un artesano persa, Abu Lulu, construyó molinos de viento en el siglo VII, pero se escribió 300 años después. El geógrafo Istajri describió molinos de viento en Jorasán. Estos molinos se extendieron por Oriente Medio y Asia central, llegaron a al-Ándalus y al Egeo hacia el siglo XI y, después de 1219, al norte de China, gracias a los viajes de Yelü Chucai."
+      },
+      "camera": { "lon": 42, "lat": 36, "zoom": 1.8 },
+      "moves": [
+        {
+          "side": "nature",
+          "path": [[60.35, 34.43], [57.0, 35.5], [51.4, 35.7], [44.4, 33.3], [36.3, 33.5], [31.2, 30.0], [20.1, 32.1], [10.2, 36.8], [-0.6, 35.7], [-4.78, 37.88]],
+          "by": "land",
+          "label": { "en": "To al-Andalus (by the 11th century)", "es": "Hacia al-Ándalus (hacia el siglo XI)" }
+        },
+        {
+          "side": "nature",
+          "path": [[60.35, 34.43], [62.2, 34.35], [66.97, 39.65], [76.0, 39.5], [87.6, 43.8], [103.8, 36.06], [116.4, 39.9]],
+          "by": "land",
+          "label": { "en": "To northern China (13th century)", "es": "Hacia el norte de China (siglo XIII)" }
+        }
+      ],
+      "places": [
+        {
+          "id": "hero-wind-wheel",
+          "name": { "en": "Hero's wind-driven organ", "es": "El órgano de viento de Herón" },
+          "at": [29.9187, 31.2001],
+          "cat": "energy",
+          "icon": "🌬️",
+          "type": "invention",
+          "date": "50",
+          "place": { "en": "Alexandria, Egypt", "es": "Alejandría, Egipto" },
+          "by": { "en": "Hero of Alexandria", "es": "Herón de Alejandría" },
+          "text": {
+            "en": "In the 1st century AD Hero of Alexandria described a wheel turned by the wind to work an organ. It was probably a toy or an idea on paper, not a working windmill.",
+            "es": "En el siglo I, Herón de Alejandría describió una rueda movida por el viento para hacer sonar un órgano. Probablemente era un juguete o una idea en papel, no un molino de viento en funcionamiento."
+          },
+          "details": {
+            "en": "Hero, a Greek engineer of Roman Egypt, also described the aeolipile, a ball spun by jets of steam, and many machines worked by water and air. His texts are unclear, and historians doubt that the wind organ was ever built. A prayer wheel turned by the wind may also be old, in Tibet and China, but its date is uncertain.",
+            "es": "Herón, ingeniero griego del Egipto romano, también describió la eolípila, una esfera que giraba con chorros de vapor, y muchas máquinas movidas por agua y aire. Sus textos son poco claros, y los historiadores dudan de que el órgano de viento llegara a construirse. También puede ser antiguo el molinillo de oraciones movido por el viento, en el Tíbet y China, pero su fecha es incierta."
+          },
+          "wiki": { "en": "Hero of Alexandria", "es": "Herón de Alejandría" }
+        }
+      ],
+      "show": ["windmill"]
+    },
+    {
+      "date": "1712",
+      "title": { "en": "A fire engine for the mines", "es": "Una «máquina de fuego» para las minas" },
+      "text": {
+        "en": "In 1712 Thomas Newcomen's steam engine began pumping water out of a coal mine at Tipton, in England. For the first time, burning fuel did steady mechanical work.",
+        "es": "En 1712, la máquina de vapor de Thomas Newcomen empezó a sacar agua de una mina de carbón en Tipton, Inglaterra. Por primera vez, quemar combustible producía trabajo mecánico continuo."
+      },
+      "details": {
+        "en": "People had played with steam since Hero of Alexandria's spinning aeolipile in the 1st century AD. In 1606 the Spaniard Jerónimo de Ayanz patented a steam pump that drained the flooded mines of Guadalcanal, and in 1698 Thomas Savery patented the 'Miner's Friend', a pump with no moving parts that could not lift water far. Newcomen, an ironmonger and Baptist preacher from Dartmouth, used a piston, as the Frenchman Denis Papin had proposed. Steam filled a cylinder, a jet of cold water condensed it, and the weight of the air pushed the piston down, rocking a great beam that worked the pumps. It burned a lot of coal, but at a coal mine that hardly mattered. By Newcomen's death in 1729 more than a hundred had been built, and a few went abroad, to France, Belgium, Spain, Hungary and Sweden.",
+        "es": "La gente jugaba con el vapor desde la eolípila giratoria de Herón de Alejandría, en el siglo I. En 1606, el español Jerónimo de Ayanz patentó una bomba de vapor que desaguó las minas inundadas de Guadalcanal, y en 1698 Thomas Savery patentó el «amigo del minero», una bomba sin piezas móviles que no podía subir el agua muy alto. Newcomen, ferretero y predicador bautista de Dartmouth, usó un pistón, como había propuesto el francés Denis Papin. El vapor llenaba un cilindro, un chorro de agua fría lo condensaba y el peso del aire empujaba el pistón hacia abajo, balanceando una gran viga que movía las bombas. Gastaba mucho carbón, pero en una mina de carbón eso apenas importaba. Cuando Newcomen murió, en 1729, ya se habían construido más de cien, y algunas salieron al extranjero: a Francia, Bélgica, España, Hungría y Suecia."
+      },
+      "camera": { "lon": 2, "lat": 53.5, "zoom": 4 },
+      "moves": [
+        {
+          "side": "steam",
+          "path": [[-2.064, 52.519], [-0.5, 51.6], [1.4, 50.9], [2.28, 48.858]],
+          "label": { "en": "To Paris (Passy, 1726)", "es": "Hacia París (Passy, 1726)" }
+        },
+        {
+          "side": "steam",
+          "path": [[-2.064, 52.519], [1.0, 54.5], [8.0, 57.5], [12.5, 58.6], [17.86, 60.2]],
+          "label": { "en": "To Dannemora, Sweden", "es": "Hacia Dannemora, Suecia" }
+        }
+      ],
+      "places": [
+        {
+          "id": "thomas-newcomen",
+          "name": { "en": "Thomas Newcomen", "es": "Thomas Newcomen" },
+          "at": [-3.5795, 50.3514],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1712",
+          "life": ["1664", "1729-08-05"],
+          "place": { "en": "Dartmouth, Devon, England", "es": "Dartmouth, Devon, Inglaterra" },
+          "text": {
+            "en": "An ironmonger and Baptist preacher from Dartmouth who sold tools to mines and spent years building an engine to keep them from flooding. No portrait of him is known.",
+            "es": "Ferretero y predicador bautista de Dartmouth que vendía herramientas a las minas y pasó años construyendo una máquina para que no se inundaran. No se conoce ningún retrato suyo."
+          },
+          "wiki": { "en": "Thomas Newcomen", "es": "Thomas Newcomen" }
+        },
+        {
+          "id": "thomas-savery",
+          "name": { "en": "Thomas Savery", "es": "Thomas Savery" },
+          "at": [-0.1276, 51.5072],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1698",
+          "life": ["1650", "1715-05-15"],
+          "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+          "text": {
+            "en": "An English military engineer who in 1698 patented the first steam pump to be sold, the 'Miner's Friend'. It had no piston, could lift water only a few metres and its boilers could burst.",
+            "es": "Ingeniero militar inglés que en 1698 patentó la primera bomba de vapor que se vendió, el «amigo del minero». No tenía pistón, solo subía el agua unos pocos metros y sus calderas podían reventar."
+          },
+          "wiki": { "en": "Thomas Savery", "es": "Thomas Savery" }
+        },
+        {
+          "id": "coalbrookdale",
+          "name": { "en": "Coalbrookdale", "es": "Coalbrookdale" },
+          "at": [-2.4935, 52.6393],
+          "cat": "lab",
+          "type": "site",
+          "date": "1709",
+          "place": { "en": "Ironbridge Gorge, Shropshire, England", "es": "Garganta de Ironbridge, Shropshire, Inglaterra" },
+          "text": {
+            "en": "The Darby family's ironworks cast cylinders for Newcomen engines from 1723. From 1742 one of those engines pumped water back up to turn the works' water wheels again: steam serving water.",
+            "es": "La fundición de la familia Darby fabricó cilindros para máquinas de Newcomen desde 1723. Desde 1742, una de esas máquinas devolvía el agua cuesta arriba para volver a mover las ruedas hidráulicas: el vapor al servicio del agua."
+          },
+          "details": {
+            "en": "Here in 1709 Abraham Darby first smelted iron with coke made from coal instead of charcoal. The works later cast the first iron rails (1767) and the Iron Bridge (opened in 1781), and in 1802 built a locomotive for Richard Trevithick. The valley is now a World Heritage site with ten museums.",
+            "es": "Aquí, en 1709, Abraham Darby fundió por primera vez hierro con coque hecho de carbón en lugar de carbón vegetal. La fundición hizo después los primeros rieles de hierro (1767) y el Puente de Hierro (inaugurado en 1781), y en 1802 construyó una locomotora para Richard Trevithick. El valle es hoy Patrimonio de la Humanidad, con diez museos."
+          },
+          "wiki": { "en": "Coalbrookdale", "es": "Coalbrookdale" },
+          "whs": 371
+        }
+      ],
+      "show": ["steam-engine"]
+    },
+    {
+      "date": "1740",
+      "title": { "en": "Wind drains the Netherlands", "es": "El viento seca los Países Bajos" },
+      "text": {
+        "en": "The Dutch made wind their great source of power. Around 1740, nineteen windmills at Kinderdijk began lifting water out of the low-lying Alblasserwaard polder; they still stand.",
+        "es": "Los neerlandeses hicieron del viento su gran fuente de energía. Hacia 1740, diecinueve molinos de viento en Kinderdijk empezaron a sacar agua del pólder del Alblasserwaard, que está bajo el nivel del río; siguen en pie."
+      },
+      "details": {
+        "en": "Europe's own windmills, with sails on a horizontal axle, appeared in the 12th century between northern France, eastern England and Flanders; the earliest certain record is from Weedley, in Yorkshire, in 1185. Whether the idea came from Persia is unknown. In 1594 Cornelis Corneliszoon of Uitgeest built a wind-driven sawmill whose crankshaft turned the sails' rotation into the up-and-down stroke of a saw. Sawmills filled the Zaan district north of Amsterdam, one of the world's first industrial areas, and cut timber for the ships of Dutch trade. Rows of drainage mills pumped lakes dry to make farmland, such as the Beemster (1609–1612). But drained land sinks, so pumping never ends: in the 19th century steam pumps took over much of the work, and the Wouda station in Friesland, opened in 1920, is the largest steam pumping station still working in the world.",
+        "es": "Los molinos de viento propios de Europa, con aspas en un eje horizontal, aparecieron en el siglo XII entre el norte de Francia, el este de Inglaterra y Flandes; el registro seguro más antiguo es de Weedley, en Yorkshire, en 1185. No se sabe si la idea llegó de Persia. En 1594, Cornelis Corneliszoon, de Uitgeest, construyó un aserradero de viento cuyo cigüeñal convertía el giro de las aspas en el vaivén de una sierra. Los aserraderos llenaron la región del Zaan, al norte de Ámsterdam, una de las primeras zonas industriales del mundo, y cortaron la madera de los barcos del comercio neerlandés. Filas de molinos de drenaje vaciaron lagos para hacer tierras de cultivo, como el Beemster (1609-1612). Pero la tierra drenada se hunde, así que el bombeo nunca termina: en el siglo XIX las bombas de vapor asumieron gran parte del trabajo, y la estación Wouda, en Frisia, inaugurada en 1920, es la mayor estación de bombeo a vapor que sigue funcionando en el mundo."
+      },
+      "camera": { "lon": 5.0, "lat": 52.35, "zoom": 7.5 },
+      "places": [
+        {
+          "id": "kinderdijk-windmills",
+          "name": { "en": "Kinderdijk windmills", "es": "Molinos de viento de Kinderdijk" },
+          "at": [4.6405, 51.8825],
+          "cat": "energy",
+          "icon": "🌬️",
+          "type": "site",
+          "date": "1740",
+          "place": { "en": "Kinderdijk, South Holland, Netherlands", "es": "Kinderdijk, Holanda Meridional, Países Bajos" },
+          "text": {
+            "en": "Nineteen windmills built around 1740 to drain the Alblasserwaard, lifting water in steps into a reservoir and then into the river. They are the largest group of old windmills in the Netherlands.",
+            "es": "Diecinueve molinos construidos hacia 1740 para drenar el Alblasserwaard, subiendo el agua por etapas a un depósito y después al río. Son el mayor grupo de molinos antiguos de los Países Bajos."
+          },
+          "details": {
+            "en": "The soil of the polder kept sinking while the river bed rose with sand, so the water had to be lifted ever higher. The mills pump it into a reservoir at an intermediate level, which other mills empty into the river when it is low enough. Today two diesel pumping stations do the main work, but the old mills are kept in working order.",
+            "es": "El suelo del pólder se hundía mientras el lecho del río subía con la arena, así que había que levantar el agua cada vez más. Los molinos la bombean a un depósito de nivel intermedio, que otros molinos vacían en el río cuando este baja lo suficiente. Hoy dos estaciones de bombeo diésel hacen el trabajo principal, pero los viejos molinos se mantienen en condiciones de funcionar."
+          },
+          "wiki": { "en": "Kinderdijk windmills", "es": "Molinos de viento de Kinderdijk" },
+          "whs": 818
+        },
+        {
+          "id": "wind-sawmill",
+          "name": { "en": "Wind-powered sawmill", "es": "Aserradero movido por el viento" },
+          "at": [4.7097, 52.5292],
+          "cat": "energy",
+          "icon": "🌬️",
+          "type": "invention",
+          "date": "1594",
+          "place": { "en": "Uitgeest, North Holland, Netherlands", "es": "Uitgeest, Holanda Septentrional, Países Bajos" },
+          "by": { "en": "Cornelis Corneliszoon van Uitgeest", "es": "Cornelis Corneliszoon, de Uitgeest" },
+          "text": {
+            "en": "In 1594 Cornelis Corneliszoon built a windmill whose crankshaft drove a saw, cutting logs into planks about 30 times faster than before. It helped the Dutch build their great merchant fleet.",
+            "es": "En 1594, Cornelis Corneliszoon construyó un molino de viento cuyo cigüeñal movía una sierra y cortaba troncos en tablas unas 30 veces más rápido que antes. Ayudó a los neerlandeses a construir su gran flota mercante."
+          },
+          "wiki": { "en": "Cornelis Corneliszoon", "es": "" }
+        },
+        {
+          "id": "beemster-polder",
+          "name": { "en": "Beemster Polder", "es": "Pólder de Beemster" },
+          "at": [4.9278, 52.55],
+          "cat": "energy",
+          "type": "site",
+          "date": "1609",
+          "end": "1612",
+          "place": { "en": "North Holland, Netherlands", "es": "Holanda Septentrional, Países Bajos" },
+          "text": {
+            "en": "From 1609 to 1612, windmills pumped a lake dry north of Amsterdam to make new farmland, laid out in a regular grid of fields, roads and canals.",
+            "es": "Entre 1609 y 1612, los molinos de viento vaciaron un lago al norte de Ámsterdam para crear nuevas tierras de cultivo, trazadas en una cuadrícula regular de campos, caminos y canales."
+          },
+          "details": {
+            "en": "Private investors began the work around 1605. In 1610 the lake had almost been pumped dry when a dike broke and it filled again, so the ring dike was raised; by 1612 the polder was dry. The engineer Jan Adriaanszoon Leeghwater, a friend of Cornelis Corneliszoon, worked on it, his first big drainage scheme. It was the first polder in the Netherlands made from a lake.",
+            "es": "Inversionistas privados empezaron la obra hacia 1605. En 1610 el lago estaba casi vacío cuando se rompió un dique y volvió a llenarse, así que se elevó el dique que lo rodeaba; en 1612 el pólder estaba seco. El ingeniero Jan Adriaanszoon Leeghwater, amigo de Cornelis Corneliszoon, trabajó en él, su primera gran obra de drenaje. Fue el primer pólder de los Países Bajos ganado a un lago."
+          },
+          "wiki": { "en": "Beemster", "es": "Beemster" },
+          "whs": 899
+        },
+        {
+          "id": "wouda-pumping-station",
+          "name": { "en": "Wouda steam pumping station", "es": "Estación de bombeo a vapor Wouda" },
+          "at": [5.6789, 52.8458],
+          "cat": "energy",
+          "type": "site",
+          "date": "1920-10-07",
+          "place": { "en": "Lemmer, Friesland, Netherlands", "es": "Lemmer, Frisia, Países Bajos" },
+          "text": {
+            "en": "Opened by Queen Wilhelmina in 1920, it is the largest steam-powered pumping station still working in the world. Its four steam engines can pump 4,000 m³ of water a minute out of Friesland.",
+            "es": "Inaugurada por la reina Guillermina en 1920, es la mayor estación de bombeo a vapor que sigue funcionando en el mundo. Sus cuatro máquinas de vapor pueden sacar de Frisia 4000 m³ de agua por minuto."
+          },
+          "details": {
+            "en": "Its four tandem-compound steam engines, designed by J. C. Dijxhoorn and built by the Jaffa machine works in Utrecht, each drive two large centrifugal pumps. The station drained Friesland's polders until 1966. Its coal-fired boilers were later converted to burn heavy fuel oil, and it still runs about once a year, when the water in Friesland rises exceptionally high, with practice runs to keep the crew skilled.",
+            "es": "Sus cuatro máquinas de vapor de doble expansión, diseñadas por J. C. Dijxhoorn y construidas por los talleres Jaffa de Utrecht, mueven cada una dos grandes bombas centrífugas. La estación drenó los pólderes de Frisia hasta 1966. Sus calderas de carbón se adaptaron después al fueloil pesado, y todavía funciona más o menos una vez al año, cuando el agua de Frisia sube de forma excepcional, además de prácticas para que el personal no pierda la mano."
+          },
+          "wiki": { "en": "Wouda pumping station", "es": "Ir. D. F. Woudagemaal" },
+          "whs": 867
+        }
+      ]
+    },
+    {
+      "date": "1776",
+      "title": { "en": "Watt's engine and horsepower", "es": "La máquina de Watt y el caballo de fuerza" },
+      "text": {
+        "en": "James Watt's separate condenser, patented in 1769, cut an engine's fuel by about three-quarters. From 1776 Boulton and Watt sold engines, and Watt measured their power in 'horsepower'.",
+        "es": "El condensador separado de James Watt, patentado en 1769, redujo en unas tres cuartas partes el combustible de una máquina. Desde 1776, Boulton y Watt vendieron máquinas, y Watt midió su potencia en «caballos de fuerza»."
+      },
+      "details": {
+        "en": "Watt, an instrument maker at the University of Glasgow, saw that a Newcomen engine wasted most of its steam reheating a cylinder that had just been cooled. In May 1765, crossing Glasgow Green, he thought of condensing the steam in a separate chamber, so the cylinder could stay hot. Building it took years and money, first from John Roebuck and then from Matthew Boulton of Birmingham, and John Wilkinson's new boring machine made cylinders true enough to hold the steam. The first big engines started work in March and April 1776, at a colliery in Tipton and at Wilkinson's ironworks at Broseley. From 1781 Watt's sun-and-planet gears turned the piston's push into rotation, so engines could drive mills anywhere, not only beside rivers. Watt's father, a Greenock merchant, had traded in enslaved people and the goods they produced.",
+        "es": "Watt, fabricante de instrumentos de la Universidad de Glasgow, vio que una máquina de Newcomen desperdiciaba casi todo su vapor en recalentar un cilindro que acababa de enfriarse. En mayo de 1765, cruzando el parque Glasgow Green, pensó en condensar el vapor en una cámara aparte, para que el cilindro se mantuviera caliente. Construirla llevó años y dinero, primero de John Roebuck y después de Matthew Boulton, de Birmingham, y la nueva mandriladora de John Wilkinson hizo cilindros lo bastante exactos para retener el vapor. Las primeras máquinas grandes empezaron a trabajar en marzo y abril de 1776, en una mina de carbón de Tipton y en la fundición de Wilkinson en Broseley. Desde 1781, los engranajes «sol y planeta» de Watt convirtieron el empuje del pistón en giro, y las máquinas pudieron mover molinos en cualquier lugar, no solo junto a los ríos. El padre de Watt, comerciante de Greenock, había traficado con personas esclavizadas y con los productos de su trabajo."
+      },
+      "camera": { "lon": -3.2, "lat": 53.4, "zoom": 5 },
+      "moves": [
+        {
+          "side": "steam",
+          "path": [[-1.9263, 52.4989], [-2.6, 51.45], [-3.9, 50.75], [-5.1728, 50.2588]],
+          "label": { "en": "Engines for Cornwall's mines (1777)", "es": "Máquinas para las minas de Cornualles (1777)" }
+        }
+      ],
+      "places": [
+        {
+          "id": "james-watt",
+          "name": { "en": "James Watt", "es": "James Watt" },
+          "at": [-4.2886, 55.8721],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1765-05",
+          "life": ["1736-01-30", "1819-08-25"],
+          "place": { "en": "University of Glasgow, Scotland", "es": "Universidad de Glasgow, Escocia" },
+          "text": {
+            "en": "A Scottish instrument maker whose separate condenser made steam engines far more efficient. The watt, the unit of power, is named after him.",
+            "es": "Fabricante de instrumentos escocés cuyo condensador separado hizo mucho más eficientes las máquinas de vapor. El vatio, la unidad de potencia, lleva su nombre."
+          },
+          "details": {
+            "en": "Born in Greenock, Watt trained as an instrument maker in London and opened a small workshop inside the University of Glasgow in 1757, where the chemist Joseph Black and the economist Adam Smith became his friends. Besides the condenser, he invented a letter-copying press and the centrifugal governor that kept engines at a steady speed. To sell engines to customers who used horses, he worked out the horsepower in the 1780s.",
+            "es": "Nacido en Greenock, Watt aprendió el oficio de fabricante de instrumentos en Londres y abrió en 1757 un pequeño taller dentro de la Universidad de Glasgow, donde el químico Joseph Black y el economista Adam Smith fueron sus amigos. Además del condensador, inventó una prensa para copiar cartas y el regulador centrífugo que mantenía las máquinas a velocidad constante. Para vender máquinas a clientes que usaban caballos, ideó el caballo de fuerza en la década de 1780."
+          },
+          "wiki": { "en": "James Watt", "es": "James Watt" }
+        },
+        {
+          "id": "watt-steam-engine",
+          "name": { "en": "Watt's steam engine", "es": "Máquina de vapor de Watt" },
+          "at": [-1.9263, 52.4989],
+          "cat": "energy",
+          "type": "invention",
+          "date": "1776",
+          "place": { "en": "Soho Manufactory, Birmingham, England", "es": "Soho Manufactory, Birmingham, Inglaterra" },
+          "by": { "en": "James Watt, with Matthew Boulton", "es": "James Watt, con Matthew Boulton" },
+          "text": {
+            "en": "Watt's engine condensed the steam in a separate chamber, keeping its cylinder hot. It used about 75% less fuel than a Newcomen engine, and from 1781 it could turn wheels.",
+            "es": "La máquina de Watt condensaba el vapor en una cámara aparte y mantenía caliente su cilindro. Gastaba un 75 % menos de combustible que una de Newcomen y, desde 1781, podía hacer girar ruedas."
+          },
+          "details": {
+            "en": "Boulton and Watt earned most of their money from a fee based on the fuel each engine saved. The oldest surviving one, 'Old Bess' of 1777, is in London's Science Museum, and the Smethwick Engine of 1779, now in Birmingham, is the oldest working engine in the world. Boulton told a visitor: 'I sell here, sir, what all the world desires to have: POWER.'",
+            "es": "Boulton y Watt ganaban la mayor parte de su dinero con un pago calculado según el combustible que ahorraba cada máquina. La más antigua que se conserva, «Old Bess», de 1777, está en el Museo de Ciencias de Londres, y la máquina de Smethwick, de 1779, hoy en Birmingham, es la máquina en funcionamiento más antigua del mundo. Boulton le dijo a un visitante: «Aquí vendo, señor, lo que todo el mundo desea tener: FUERZA»."
+          },
+          "wiki": { "en": "Watt steam engine", "es": "Máquina de vapor de Watt" }
+        },
+        {
+          "id": "cornish-mines",
+          "name": { "en": "Cornwall's mining engines", "es": "Las máquinas de las minas de Cornualles" },
+          "at": [-5.1728, 50.2588],
+          "cat": "energy",
+          "type": "site",
+          "date": "1777",
+          "place": { "en": "Wheal Busy, near Chacewater, Cornwall, England", "es": "Wheal Busy, cerca de Chacewater, Cornualles, Inglaterra" },
+          "text": {
+            "en": "Cornwall's deep tin and copper mines, where coal was costly, were Boulton and Watt's best customers: three engines were ordered in 1777 for Wheal Busy, Ting Tang and Chacewater.",
+            "es": "Las hondas minas de estaño y cobre de Cornualles, donde el carbón era caro, fueron los mejores clientes de Boulton y Watt: en 1777 se encargaron tres máquinas para Wheal Busy, Ting Tang y Chacewater."
+          },
+          "details": {
+            "en": "Cornish engineers later outdid Watt. Richard Trevithick built compact high-pressure engines, and his 'Cornish engine' of the 1810s pumped mines and city water for the rest of the century. Their ruined engine houses still stand on the hills and clifftops. From the early 19th century many Cornish miners emigrated, taking their skills and engines to mines around the world.",
+            "es": "Más tarde, los ingenieros de Cornualles superaron a Watt. Richard Trevithick construyó máquinas compactas de alta presión, y su «máquina de Cornualles» de la década de 1810 bombeó agua de minas y ciudades durante el resto del siglo. Sus casas de máquinas en ruinas siguen en pie en las colinas y los acantilados. Desde comienzos del siglo XIX, muchos mineros de Cornualles emigraron y llevaron sus conocimientos y sus máquinas a minas de todo el mundo."
+          },
+          "wiki": { "en": "Cornwall and West Devon Mining Landscape", "es": "Paisaje minero de Cornualles y el oeste de Devon" },
+          "whs": 1215
+        },
+        {
+          "id": "albion-mills",
+          "name": { "en": "Albion Mills", "es": "Albion Mills" },
+          "at": [-0.1028, 51.5083],
+          "cat": "energy",
+          "type": "site",
+          "date": "1786",
+          "until": "1791-03-02",
+          "place": { "en": "Southwark, London, England", "es": "Southwark, Londres, Inglaterra" },
+          "text": {
+            "en": "London's first steam-powered flour mill (1786): Boulton and Watt engines turned 20 pairs of millstones. It burned down in 1791, and its ruin is said to have inspired Blake's 'dark Satanic mills'.",
+            "es": "El primer molino harinero a vapor de Londres (1786): máquinas de Boulton y Watt movían 20 pares de muelas. Se incendió en 1791, y se dice que su ruina inspiró los «oscuros molinos satánicos» de Blake."
+          },
+          "wiki": { "en": "Albion Mills, Southwark", "es": "" }
+        }
+      ]
+    },
+    {
+      "date": "1800-03-20",
+      "title": { "en": "Electricity from a pile", "es": "Electricidad de una pila" },
+      "text": {
+        "en": "Alessandro Volta stacked discs of zinc and copper between pieces of cardboard soaked in brine and got a steady electric current: the first battery. He described it in a letter to London in March 1800.",
+        "es": "Alessandro Volta apiló discos de cinc y cobre entre cartones empapados en salmuera y obtuvo una corriente eléctrica constante: la primera pila. La describió en una carta a Londres en marzo de 1800."
+      },
+      "details": {
+        "en": "In the 1780s Luigi Galvani of Bologna made the legs of dead frogs twitch with two metals, and thought the electricity came from the animals. Volta, a professor at Pavia, believed it came from the metals, and set out to prove it. His pile, built late in 1799, gave the first continuous electric current; until then electricity had come only in sparks. He reported it on 20 March 1800 to the president of London's Royal Society. Within weeks, William Nicholson and Anthony Carlisle used a pile to split water into hydrogen and oxygen, and by 1808 Humphry Davy, with a pile of 2,000 pairs of plates at the Royal Institution, had discovered new elements and lit a dazzling electric arc. Napoleon made Volta a count, and the volt, the unit of electrical potential, carries his name.",
+        "es": "En la década de 1780, Luigi Galvani, de Bolonia, hizo moverse las patas de ranas muertas con dos metales y pensó que la electricidad venía de los animales. Volta, profesor en Pavía, creía que venía de los metales y se propuso demostrarlo. Su pila, construida a fines de 1799, dio la primera corriente eléctrica continua; hasta entonces la electricidad solo llegaba en chispas. Lo comunicó el 20 de marzo de 1800 al presidente de la Royal Society de Londres. En pocas semanas, William Nicholson y Anthony Carlisle usaron una pila para separar el agua en hidrógeno y oxígeno, y hacia 1808 Humphry Davy, con una pila de 2000 pares de placas en la Royal Institution, ya había descubierto nuevos elementos y encendido un deslumbrante arco eléctrico. Napoleón nombró conde a Volta, y el voltio, la unidad de potencial eléctrico, lleva su nombre."
+      },
+      "camera": { "lon": 3.5, "lat": 48.6, "zoom": 4.3 },
+      "moves": [
+        {
+          "side": "elec",
+          "path": [[9.0852, 45.8081], [6.6, 46.5], [4.8, 47.6], [2.35, 48.86], [1.1, 50.3], [-0.12, 51.51]],
+          "label": { "en": "Volta's letter to London (1800)", "es": "La carta de Volta a Londres (1800)" }
+        }
+      ],
+      "places": [
+        {
+          "id": "alessandro-volta",
+          "name": { "en": "Alessandro Volta", "es": "Alessandro Volta" },
+          "at": [9.1557, 45.1868],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1800",
+          "life": ["1745-02-18", "1827-03-05"],
+          "place": { "en": "University of Pavia, Italy", "es": "Universidad de Pavía, Italia" },
+          "text": {
+            "en": "A physicist from Como who taught at the University of Pavia for nearly 40 years. His pile settled his argument with Galvani and opened the age of electricity.",
+            "es": "Físico de Como que enseñó en la Universidad de Pavía durante casi 40 años. Su pila zanjó su discusión con Galvani y abrió la era de la electricidad."
+          },
+          "details": {
+            "en": "Before the pile, Volta had improved the electrophorus, a device that makes static electricity, and in 1776 he found methane bubbling from the marshes of Lake Maggiore. His lectures in Pavia were so crowded that the emperor Joseph II had a new lecture hall built for him. Napoleon invited him to Paris in 1801 to demonstrate the pile to the Institute of France.",
+            "es": "Antes de la pila, Volta había mejorado el electróforo, un aparato que produce electricidad estática, y en 1776 descubrió el metano que burbujeaba en los pantanos del lago Mayor. Sus clases en Pavía estaban tan llenas que el emperador José II mandó construirle una nueva aula. Napoleón lo invitó a París en 1801 para mostrar la pila en el Instituto de Francia."
+          },
+          "wiki": { "en": "Alessandro Volta", "es": "Alessandro Volta" }
+        }
+      ],
+      "show": ["electric-battery"]
+    },
+    {
+      "date": "1829-10",
+      "title": { "en": "Steam on the move", "es": "El vapor se pone en marcha" },
+      "text": {
+        "en": "High-pressure steam made engines small enough to move. In 1825 Locomotion No. 1 opened the Stockton and Darlington Railway; in 1829 Rocket won the Rainhill Trials at up to 48 km/h.",
+        "es": "El vapor a alta presión hizo máquinas lo bastante pequeñas para moverse. En 1825, la Locomotion n.º 1 inauguró el ferrocarril de Stockton a Darlington; en 1829, la Rocket ganó las pruebas de Rainhill a hasta 48 km/h."
+      },
+      "details": {
+        "en": "Watt distrusted high-pressure steam, but after his patent ran out in 1800, Richard Trevithick in Cornwall and Oliver Evans in the United States built engines that pushed with the steam itself instead of relying on a vacuum. On 21 February 1804 Trevithick's locomotive pulled 10 tonnes of iron and 70 people along a tramway in south Wales. George Stephenson, a self-taught engineer whose parents could not read or write, built the Stockton and Darlington, the first public steam railway. For the Liverpool and Manchester line, the directors held a contest at Rainhill in October 1829, and Rocket, built by his son Robert, won it. Its many-tubed boiler made steam fast, and locomotives kept its basic design for more than a century. Steam drove ships too, and soon railways and steamships shrank the world.",
+        "es": "Watt desconfiaba del vapor a alta presión, pero cuando su patente venció en 1800, Richard Trevithick en Cornualles y Oliver Evans en Estados Unidos construyeron máquinas que empujaban con el propio vapor en lugar de depender del vacío. El 21 de febrero de 1804, la locomotora de Trevithick arrastró 10 toneladas de hierro y 70 personas por una vía de vagonetas en el sur de Gales. George Stephenson, un ingeniero autodidacta cuyos padres no sabían leer ni escribir, construyó el ferrocarril de Stockton a Darlington, el primer ferrocarril público a vapor. Para la línea de Liverpool a Mánchester, los directores convocaron un concurso en Rainhill en octubre de 1829, y lo ganó la Rocket, construida por su hijo Robert. Su caldera de muchos tubos producía vapor rápido, y las locomotoras conservaron su diseño básico durante más de un siglo. El vapor también movió barcos, y pronto los trenes y los buques de vapor achicaron el mundo."
+      },
+      "camera": { "lon": -2.2, "lat": 54.2, "zoom": 6.5 },
+      "moves": [
+        {
+          "side": "steam",
+          "path": [[-1.649, 54.632], [-1.596, 54.575], [-1.553, 54.533], [-1.44, 54.548], [-1.318, 54.566]],
+          "by": "land",
+          "icon": "🚂",
+          "label": { "en": "Stockton and Darlington (1825)", "es": "Stockton-Darlington (1825)" }
+        },
+        {
+          "side": "steam",
+          "path": [[-2.98, 53.4], [-2.7625, 53.4157], [-2.55, 53.45], [-2.25, 53.48]],
+          "by": "land",
+          "icon": "🚂",
+          "label": { "en": "Liverpool and Manchester (1830)", "es": "Liverpool-Mánchester (1830)" }
+        }
+      ],
+      "places": [
+        {
+          "id": "locomotion-no-1",
+          "name": { "en": "Locomotion No. 1", "es": "Locomotion n.º 1" },
+          "at": [-1.555, 54.536],
+          "cat": "transport",
+          "icon": "🚂",
+          "type": "invention",
+          "date": "1825-09-27",
+          "place": { "en": "Darlington, County Durham, England", "es": "Darlington, condado de Durham, Inglaterra" },
+          "by": { "en": "George and Robert Stephenson", "es": "George y Robert Stephenson" },
+          "text": {
+            "en": "Built by Robert Stephenson and Company, it hauled the first train of the Stockton and Darlington Railway on 27 September 1825, the first public railway worked by steam locomotives.",
+            "es": "Construida por Robert Stephenson and Company, arrastró el primer tren del ferrocarril de Stockton a Darlington el 27 de septiembre de 1825, el primer ferrocarril público con locomotoras de vapor."
+          },
+          "wiki": { "en": "Locomotion No. 1", "es": "Locomotion No. 1" }
+        },
+        {
+          "id": "stephensons-rocket",
+          "name": { "en": "Stephenson's Rocket", "es": "La Rocket de Stephenson" },
+          "at": [-2.7625, 53.4157],
+          "cat": "transport",
+          "icon": "🚂",
+          "type": "invention",
+          "date": "1829-10",
+          "place": { "en": "Rainhill, Merseyside, England", "es": "Rainhill, Merseyside, Inglaterra" },
+          "by": { "en": "Robert Stephenson, with George Stephenson", "es": "Robert Stephenson, con George Stephenson" },
+          "text": {
+            "en": "Robert Stephenson's locomotive won the Rainhill Trials in October 1829. Its many-tubed boiler and direct drive became the model for steam locomotives for well over a century.",
+            "es": "La locomotora de Robert Stephenson ganó las pruebas de Rainhill en octubre de 1829. Su caldera de muchos tubos y su transmisión directa fueron el modelo de las locomotoras de vapor durante más de un siglo."
+          },
+          "wiki": { "en": "Stephenson's Rocket", "es": "The Rocket" }
+        },
+        {
+          "id": "george-stephenson",
+          "name": { "en": "George Stephenson", "es": "George Stephenson" },
+          "at": [-1.5557, 55.0318],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1814",
+          "life": ["1781-06-09", "1848-08-12"],
+          "place": { "en": "Killingworth, near Newcastle upon Tyne, England", "es": "Killingworth, cerca de Newcastle upon Tyne, Inglaterra" },
+          "text": {
+            "en": "The 'Father of Railways', the son of a colliery engine fireman. He built his first locomotive at Killingworth in 1814, and his track width became the world's most common gauge.",
+            "es": "El «padre de los ferrocarriles», hijo de un fogonero de la máquina de una mina. Construyó su primera locomotora en Killingworth en 1814, y su ancho de vía se convirtió en el más común del mundo."
+          },
+          "wiki": { "en": "George Stephenson", "es": "George Stephenson" }
+        }
+      ],
+      "show": ["locomotive"]
+    },
+    {
+      "date": "1831",
+      "title": { "en": "Electricity from magnets", "es": "Electricidad a partir de imanes" },
+      "text": {
+        "en": "At London's Royal Institution, Michael Faraday found in 1831 that a moving magnet makes an electric current flow in a wire. His spinning copper disc was the first electric generator.",
+        "es": "En la Royal Institution de Londres, Michael Faraday descubrió en 1831 que un imán en movimiento hace circular una corriente eléctrica por un cable. Su disco de cobre giratorio fue el primer generador eléctrico."
+      },
+      "details": {
+        "en": "Faraday, the son of a blacksmith, left school early and educated himself while apprenticed to a bookbinder; he sent Humphry Davy a 300-page book of notes on his lectures, and in 1813 Davy hired him as an assistant. In 1821 he made a wire carrying a current spin around a magnet, the first electric motor. Ten years later he found that switching a current on and off in one coil produced a brief current in another, and that a magnet moving in a coil did the same. This electromagnetic induction, found independently by Joseph Henry in America in 1832, is how nearly all electricity is still made. Faraday's disc was too weak to be useful. In 1832 Hippolyte Pixii of Paris built a hand-turned generator, and in 1866–67 Werner von Siemens, Charles Wheatstone and Samuel Varley each made dynamos that fed their own magnets (the Hungarian priest Ányos Jedlik had the idea about 1856). Zénobe Gramme's dynamos of the 1870s were the first sold widely.",
+        "es": "Faraday, hijo de un herrero, dejó pronto la escuela y se educó solo mientras era aprendiz de encuadernador; le envió a Humphry Davy un libro de 300 páginas con sus apuntes de las conferencias, y en 1813 Davy lo contrató como ayudante. En 1821 hizo girar alrededor de un imán un cable por el que pasaba corriente: el primer motor eléctrico. Diez años después descubrió que al encender y apagar una corriente en una bobina aparecía una corriente breve en otra, y que un imán que se movía dentro de una bobina hacía lo mismo. Esta inducción electromagnética, hallada también por Joseph Henry en Estados Unidos en 1832, es la forma en que todavía se produce casi toda la electricidad. El disco de Faraday era demasiado débil para ser útil. En 1832, Hippolyte Pixii, de París, construyó un generador de manivela, y en 1866-1867 Werner von Siemens, Charles Wheatstone y Samuel Varley hicieron, cada uno por su lado, dinamos que alimentaban sus propios imanes (el sacerdote húngaro Ányos Jedlik había tenido la idea hacia 1856). Las dinamos de Zénobe Gramme, en la década de 1870, fueron las primeras que se vendieron mucho."
+      },
+      "camera": { "lon": 4.5, "lat": 51.5, "zoom": 4.6 },
+      "places": [
+        {
+          "id": "michael-faraday",
+          "name": { "en": "Michael Faraday", "es": "Michael Faraday" },
+          "at": [-0.1424, 51.5099],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1831",
+          "life": ["1791-09-22", "1867-08-25"],
+          "place": { "en": "Royal Institution, London, England", "es": "Royal Institution, Londres, Inglaterra" },
+          "text": {
+            "en": "A self-taught scientist who began as a bookbinder's apprentice. His discovery of electromagnetic induction in 1831 is the basis of nearly every power station.",
+            "es": "Científico autodidacta que empezó como aprendiz de encuadernador. Su descubrimiento de la inducción electromagnética, en 1831, es la base de casi todas las centrales eléctricas."
+          },
+          "details": {
+            "en": "Faraday also discovered benzene, popularised the words 'electrode', 'anode', 'cathode' and 'ion', and championed the Royal Institution's Christmas Lectures for young people, which still go on. A devout member of a small Christian church, he refused a knighthood, preferring to remain 'plain Mr Faraday'. He also served the public, investigating a colliery explosion, lighthouses and industrial pollution.",
+            "es": "Faraday también descubrió el benceno, popularizó las palabras «electrodo», «ánodo», «cátodo» e «ion» e impulsó las Conferencias de Navidad de la Royal Institution para jóvenes, que siguen hasta hoy. Miembro devoto de una pequeña iglesia cristiana, rechazó el título de caballero: prefería seguir siendo «simplemente el señor Faraday». También sirvió al público: investigó una explosión en una mina de carbón, los faros y la contaminación industrial."
+          },
+          "wiki": { "en": "Michael Faraday", "es": "Michael Faraday" }
+        },
+        {
+          "id": "faraday-disc",
+          "name": { "en": "Faraday's disc generator", "es": "El disco de Faraday" },
+          "at": [-0.1395, 51.5085],
+          "cat": "energy",
+          "type": "invention",
+          "date": "1831",
+          "place": { "en": "Royal Institution, London, England", "es": "Royal Institution, Londres, Inglaterra" },
+          "by": { "en": "Michael Faraday", "es": "Michael Faraday" },
+          "text": {
+            "en": "A copper disc spinning between the poles of a horseshoe magnet: the first electric generator. It gave only a tiny current, but showed that motion could be turned into electricity.",
+            "es": "Un disco de cobre que gira entre los polos de un imán de herradura: el primer generador eléctrico. Daba una corriente diminuta, pero mostró que el movimiento podía convertirse en electricidad."
+          },
+          "wiki": { "en": "Homopolar generator", "es": "Generador homopolar" }
+        },
+        {
+          "id": "dynamo",
+          "name": { "en": "Dynamo", "es": "Dinamo" },
+          "at": [13.3889, 52.507],
+          "cat": "energy",
+          "type": "invention",
+          "date": "1866",
+          "place": { "en": "Berlin, Germany", "es": "Berlín, Alemania" },
+          "by": {
+            "en": "Werner von Siemens, Charles Wheatstone and Samuel Varley, independently",
+            "es": "Werner von Siemens, Charles Wheatstone y Samuel Varley, cada uno por su lado"
+          },
+          "text": {
+            "en": "A generator that uses part of its own current to power its electromagnets. Invented independently by several engineers in 1866–67, it made electricity cheap enough for lighting and industry.",
+            "es": "Un generador que usa parte de su propia corriente para alimentar sus electroimanes. Inventada por varios ingenieros a la vez en 1866-1867, hizo la electricidad lo bastante barata para el alumbrado y la industria."
+          },
+          "details": {
+            "en": "Varley patented his design in December 1866, and Siemens and Wheatstone announced theirs on the same day, 17 January 1867. Siemens, who called it the 'dynamo-electric principle', built his company in Berlin into a giant of electrical engineering, and in 1879 ran the world's first electric passenger train there. In the 1870s Zénobe Gramme's dynamos powered the first commercial power plants in Paris.",
+            "es": "Varley patentó su diseño en diciembre de 1866, y Siemens y Wheatstone presentaron los suyos el mismo día, el 17 de enero de 1867. Siemens, que lo llamó «principio dinamoeléctrico», convirtió su empresa de Berlín en un gigante de la ingeniería eléctrica y en 1879 hizo circular allí el primer tren eléctrico de pasajeros del mundo. En la década de 1870, las dinamos de Zénobe Gramme movieron las primeras centrales comerciales de París."
+          },
+          "wiki": { "en": "Dynamo", "es": "Dinamo" }
+        }
+      ]
+    },
+    {
+      "date": "1882-09-04",
+      "title": { "en": "Light and the first power stations", "es": "La luz y las primeras centrales eléctricas" },
+      "text": {
+        "en": "Electric light needed a steady supply. In 1882 Edison's company opened the first coal-fired power stations for the public, at Holborn Viaduct in London (January) and Pearl Street in New York (September).",
+        "es": "La luz eléctrica necesitaba un suministro constante. En 1882, la empresa de Edison abrió las primeras centrales de carbón para el público, en Holborn Viaduct, Londres (enero), y en Pearl Street, Nueva York (septiembre)."
+      },
+      "details": {
+        "en": "Many inventors had made lamps glow, from Warren De la Rue in 1840 to Alexander Lodygin in Russia (1872) and Henry Woodward and Mathew Evans in Canada (1874). In Newcastle, Joseph Swan showed a carbon lamp in December 1878 and January 1879, and his house in Gateshead was the first lit by light bulbs. At Menlo Park, New Jersey, Thomas Edison's team found a carbon filament that glowed for 13.5 hours on 22 October 1879, and, crucially, designed a whole system of dynamos, cables, fuses and meters. Lewis Latimer, a Black draughtsman and inventor, patented a better way of making carbon filaments in 1882. In Britain, the Edison and Swan companies merged as Ediswan. Water power lit the way too: Cragside, a country house, from 1878; the town of Godalming in 1881; and in September 1882 a water wheel at Appleton, Wisconsin.",
+        "es": "Muchos inventores habían hecho brillar lámparas, desde Warren De la Rue en 1840 hasta Alexander Lodiguin en Rusia (1872) y Henry Woodward y Mathew Evans en Canadá (1874). En Newcastle, Joseph Swan mostró una lámpara de carbono en diciembre de 1878 y enero de 1879, y su casa de Gateshead fue la primera iluminada con bombillas. En Menlo Park, Nueva Jersey, el equipo de Thomas Edison encontró un filamento de carbono que brilló 13 horas y media el 22 de octubre de 1879 y, sobre todo, diseñó un sistema completo de dinamos, cables, fusibles y medidores. Lewis Latimer, dibujante e inventor negro, patentó en 1882 una forma mejor de fabricar filamentos de carbono. En Gran Bretaña, las empresas de Edison y Swan se fusionaron como Ediswan. La fuerza del agua también dio luz: en Cragside, una casa de campo, desde 1878; en el pueblo de Godalming en 1881, y en septiembre de 1882 con una rueda hidráulica en Appleton, Wisconsin."
+      },
+      "camera": { "lon": -37, "lat": 48, "zoom": 2.0 },
+      "places": [
+        {
+          "id": "joseph-swan",
+          "name": { "en": "Joseph Swan", "es": "Joseph Swan" },
+          "at": [-1.604, 54.939],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1878-12-18",
+          "life": ["1828-10-31", "1914-05-27"],
+          "place": { "en": "Underhill, Low Fell, Gateshead, England", "es": "Underhill, Low Fell, Gateshead, Inglaterra" },
+          "text": {
+            "en": "An English chemist who showed a working carbon lamp in Newcastle in 1878–79. His house was the first in the world lit by light bulbs, and London's Savoy Theatre the first public building, in 1881.",
+            "es": "Químico inglés que mostró una lámpara de carbono que funcionaba en Newcastle en 1878-1879. Su casa fue la primera del mundo iluminada con bombillas, y el teatro Savoy de Londres, en 1881, el primer edificio público."
+          },
+          "wiki": { "en": "Joseph Swan", "es": "Joseph Wilson Swan" }
+        },
+        {
+          "id": "thomas-edison",
+          "name": { "en": "Thomas Edison", "es": "Thomas Edison" },
+          "at": [-74.3375, 40.565],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1879",
+          "life": ["1847-02-11", "1931-10-18"],
+          "place": { "en": "Menlo Park, New Jersey, United States", "es": "Menlo Park, Nueva Jersey, Estados Unidos" },
+          "text": {
+            "en": "An American inventor whose Menlo Park laboratory, opened in 1876, was one of the first research labs. His team made a long-lasting light bulb and the whole system to power it.",
+            "es": "Inventor estadounidense cuyo laboratorio de Menlo Park, abierto en 1876, fue uno de los primeros laboratorios de investigación. Su equipo hizo una bombilla duradera y todo el sistema para alimentarla."
+          },
+          "details": {
+            "en": "Edison's name is on 1,093 US patents, many of them for work done largely by his staff, whom he drove hard. Besides the light bulb he developed the phonograph and a film camera. He backed direct current and fought the rise of alternating current, a battle he lost. In 1887 he moved to a laboratory ten times larger at West Orange, New Jersey.",
+            "es": "El nombre de Edison figura en 1093 patentes de Estados Unidos, muchas por trabajos hechos en gran parte por su personal, al que exigía muchísimo. Además de la bombilla, desarrolló el fonógrafo y una cámara de cine. Defendió la corriente continua y combatió el auge de la corriente alterna, una batalla que perdió. En 1887 se trasladó a un laboratorio diez veces mayor en West Orange, Nueva Jersey."
+          },
+          "wiki": { "en": "Thomas Edison", "es": "Thomas Alva Edison" }
+        },
+        {
+          "id": "cragside",
+          "name": { "en": "Cragside", "es": "Cragside" },
+          "at": [-1.8853, 55.3136],
+          "cat": "energy",
+          "type": "site",
+          "date": "1878",
+          "place": { "en": "Rothbury, Northumberland, England", "es": "Rothbury, Northumberland, Inglaterra" },
+          "text": {
+            "en": "The country house of the industrialist William Armstrong was the first in the world lit by hydroelectricity: water from its lakes turned a dynamo for an arc lamp in 1878, then for Swan's bulbs in 1880.",
+            "es": "La casa de campo del industrial William Armstrong fue la primera del mundo iluminada con energía hidroeléctrica: el agua de sus lagos movía una dinamo para una lámpara de arco en 1878 y para las bombillas de Swan en 1880."
+          },
+          "wiki": { "en": "Cragside", "es": "Cragside" }
+        },
+        {
+          "id": "holborn-viaduct-power-station",
+          "name": { "en": "Holborn Viaduct power station", "es": "Central de Holborn Viaduct" },
+          "at": [-0.1051, 51.5172],
+          "cat": "energy",
+          "type": "site",
+          "date": "1882-01-12",
+          "until": "1886-09",
+          "place": { "en": "Holborn Viaduct, London, England", "es": "Holborn Viaduct, Londres, Inglaterra" },
+          "text": {
+            "en": "The world's first coal-fired power station for public use, opened by Edison's company on 12 January 1882. Its 'Jumbo' dynamo lit nearly a thousand street lamps.",
+            "es": "La primera central de carbón del mundo para uso público, abierta por la empresa de Edison el 12 de enero de 1882. Su dinamo «Jumbo» encendía casi mil faroles."
+          },
+          "details": {
+            "en": "Only the gas companies had the right to dig up London's streets, so Edison's associate Edward Hibberd Johnson laid the cables in passages that already ran inside the viaduct. A steam engine drove a 27-tonne 'Jumbo' dynamo, named after a famous circus elephant. The station lost money and closed in 1886, when the lamps went back to gas, and its building was destroyed by bombs in the Blitz. Two months before it opened, a water wheel in Godalming, Surrey, had started the world's first public electricity supply.",
+            "es": "Solo las compañías de gas tenían derecho a abrir las calles de Londres, así que Edward Hibberd Johnson, socio de Edison, tendió los cables por pasadizos que ya existían dentro del viaducto. Una máquina de vapor movía una dinamo «Jumbo» de 27 toneladas, llamada así por un famoso elefante de circo. La central perdió dinero y cerró en 1886, cuando los faroles volvieron al gas, y su edificio fue destruido por las bombas del Blitz. Dos meses antes de su apertura, una rueda hidráulica en Godalming, Surrey, había puesto en marcha el primer suministro eléctrico público del mundo."
+          },
+          "wiki": { "en": "Holborn Viaduct power station", "es": "" }
+        },
+        {
+          "id": "pearl-street-station",
+          "name": { "en": "Pearl Street Station", "es": "Central de Pearl Street" },
+          "at": [-74.0047, 40.7078],
+          "cat": "energy",
+          "type": "site",
+          "date": "1882-09-04",
+          "until": "1890",
+          "place": { "en": "Lower Manhattan, New York, United States", "es": "Bajo Manhattan, Nueva York, Estados Unidos" },
+          "text": {
+            "en": "Edison's New York power station began on 4 September 1882 with coal-fired steam engines and six dynamos, lighting 400 lamps for 82 customers through the world's first underground urban network.",
+            "es": "La central de Edison en Nueva York arrancó el 4 de septiembre de 1882 con máquinas de vapor de carbón y seis dinamos, e iluminó 400 lámparas de 82 clientes por la primera red urbana subterránea del mundo."
+          },
+          "details": {
+            "en": "By 1884 it served 508 customers and more than 10,000 lamps, with direct current at 110 volts. Direct current at such low voltage could not be sent far, so every neighbourhood needed its own station, the weakness alternating current would overcome. Its first Porter-Allen steam engines proved unreliable and were replaced by engines from Armington & Sims.",
+            "es": "En 1884 abastecía a 508 clientes y más de 10 000 lámparas, con corriente continua a 110 voltios. La corriente continua a tan bajo voltaje no podía enviarse lejos, así que cada barrio necesitaba su propia central, la debilidad que superaría la corriente alterna. Sus primeras máquinas de vapor Porter-Allen resultaron poco fiables y se reemplazaron por otras de Armington & Sims."
+          },
+          "wiki": { "en": "Pearl Street Station", "es": "Central de Pearl Street" }
+        }
+      ],
+      "show": ["light-bulb"]
+    },
+    {
+      "date": "1888-08-05",
+      "title": { "en": "Engines that burn fuel inside", "es": "Motores que queman el combustible por dentro" },
+      "text": {
+        "en": "Fuel burned inside a cylinder made engines light enough to carry. On 5 August 1888 Bertha Benz drove her husband Carl's Motorwagen about 105 km, from Mannheim to Pforzheim.",
+        "es": "El combustible quemado dentro de un cilindro hizo motores lo bastante livianos para llevarlos en un vehículo. El 5 de agosto de 1888, Bertha Benz condujo el Motorwagen de su esposo Carl unos 105 km, de Mannheim a Pforzheim."
+      },
+      "details": {
+        "en": "A steam engine burns its fuel outside, under a boiler; an internal combustion engine burns it inside the cylinder. The Niépce brothers in France tried one in a boat in 1807, and the Italians Eugenio Barsanti and Felice Matteucci patented one in the 1850s. Nicolaus Otto's four-stroke engine of 1876, built at Deutz near Cologne, became the model for most car engines. Carl Benz fitted a small petrol engine to a three-wheeler and applied for a patent on 29 January 1886; at Cannstatt, Gottlieb Daimler and Wilhelm Maybach built motor vehicles of their own. Bertha Benz, who had put her dowry into Carl's business, set off at dawn with her sons Eugen and Richard, bought fuel at a pharmacy in Wiesloch, cleared a blocked fuel line with her hat pin and had a cobbler fit leather to the brakes. Her trip proved the car could work and made it famous.",
+        "es": "Una máquina de vapor quema su combustible afuera, bajo una caldera; un motor de combustión interna lo quema dentro del cilindro. Los hermanos Niépce, en Francia, probaron uno en un barco en 1807, y los italianos Eugenio Barsanti y Felice Matteucci patentaron otro en la década de 1850. El motor de cuatro tiempos de Nicolaus Otto, de 1876, construido en Deutz, cerca de Colonia, fue el modelo de casi todos los motores de auto. Carl Benz montó un pequeño motor de gasolina en un triciclo y pidió la patente el 29 de enero de 1886; en Cannstatt, Gottlieb Daimler y Wilhelm Maybach construyeron sus propios vehículos a motor. Bertha Benz, que había invertido su dote en el negocio de Carl, salió al amanecer con sus hijos Eugen y Richard, compró combustible en una farmacia de Wiesloch, destapó un conducto de combustible con su alfiler de sombrero e hizo que un zapatero pusiera cuero en los frenos. Su viaje demostró que el auto funcionaba y lo hizo famoso."
+      },
+      "camera": { "lon": 8.7, "lat": 49.5, "zoom": 6.3 },
+      "moves": [
+        {
+          "side": "oil",
+          "path": [[8.466, 49.4875], [8.6724, 49.3988], [8.6986, 49.2944], [8.598, 49.124], [8.62, 49.0], [8.7045, 48.8922]],
+          "by": "land",
+          "icon": "🚗",
+          "label": { "en": "Bertha Benz's drive (1888)", "es": "El viaje de Bertha Benz (1888)" }
+        }
+      ],
+      "places": [
+        {
+          "id": "karl-benz",
+          "name": { "en": "Carl Benz", "es": "Carl Benz" },
+          "at": [8.466, 49.4875],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1886",
+          "life": ["1844-11-25", "1929-04-04"],
+          "place": { "en": "Mannheim, Germany", "es": "Mannheim, Alemania" },
+          "text": {
+            "en": "A German engine designer whose Benz & Cie, in Mannheim, was the world's first car factory. In 1926 it merged with Daimler's firm to form Daimler-Benz.",
+            "es": "Diseñador de motores alemán cuya empresa Benz & Cie., en Mannheim, fue la primera fábrica de autos del mundo. En 1926 se fusionó con la de Daimler para formar Daimler-Benz."
+          },
+          "wiki": { "en": "Carl Benz", "es": "Carl Benz" }
+        },
+        {
+          "id": "bertha-benz",
+          "name": { "en": "Bertha Benz", "es": "Bertha Benz" },
+          "at": [8.6986, 49.2944],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1888-08-05",
+          "life": ["1849-05-03", "1944-05-05"],
+          "place": { "en": "Wiesloch, on the way from Mannheim to Pforzheim, Germany", "es": "Wiesloch, en el camino de Mannheim a Pforzheim, Alemania" },
+          "text": {
+            "en": "Carl Benz's wife and business partner, who paid for his work with her dowry. In 1888 she made the first long-distance car journey, fixing problems on the way and inventing brake linings.",
+            "es": "Esposa y socia de Carl Benz, que financió su trabajo con su dote. En 1888 hizo el primer viaje largo en auto, resolvió problemas por el camino e inventó las pastillas de freno."
+          },
+          "details": {
+            "en": "She drove without telling her husband or the authorities. The pharmacy in Wiesloch where she bought fuel is now called the world's first filling station. Her report led Carl to add a gear for climbing hills. Since 2008 the Bertha Benz Memorial Route follows her way. She was 39; her sons Eugen and Richard were 15 and 13.",
+            "es": "Condujo sin avisar a su esposo ni a las autoridades. La farmacia de Wiesloch donde compró combustible se considera hoy la primera gasolinera del mundo. Gracias a su informe, Carl añadió una marcha para subir cuestas. Desde 2008, la Ruta Conmemorativa Bertha Benz sigue su camino. Tenía 39 años; sus hijos Eugen y Richard tenían 15 y 13."
+          },
+          "wiki": { "en": "Bertha Benz", "es": "Bertha Benz" }
+        },
+        {
+          "id": "four-stroke-engine",
+          "name": { "en": "Four-stroke engine", "es": "Motor de cuatro tiempos" },
+          "at": [6.9744, 50.9375],
+          "cat": "energy",
+          "type": "invention",
+          "date": "1876",
+          "place": { "en": "Deutz, Cologne, Germany", "es": "Deutz, Colonia, Alemania" },
+          "by": { "en": "Nicolaus Otto", "es": "Nicolaus Otto" },
+          "text": {
+            "en": "Nicolaus Otto's engine of 1876 sucks in fuel and air, squeezes them, burns them and pushes out the exhaust in four strokes. It became the model for most car engines.",
+            "es": "El motor de Nicolaus Otto, de 1876, aspira combustible y aire, los comprime, los quema y expulsa los gases en cuatro tiempos. Fue el modelo de casi todos los motores de auto."
+          },
+          "wiki": { "en": "Internal combustion engine", "es": "Motor de combustión interna" }
+        },
+        {
+          "id": "diesel-engine",
+          "name": { "en": "Diesel engine", "es": "Motor diésel" },
+          "at": [10.884, 48.378],
+          "cat": "energy",
+          "type": "invention",
+          "date": "1897-02-17",
+          "place": { "en": "Maschinenfabrik Augsburg, Augsburg, Germany", "es": "Maschinenfabrik Augsburg, Augsburgo, Alemania" },
+          "by": { "en": "Rudolf Diesel", "es": "Rudolf Diesel" },
+          "text": {
+            "en": "An engine that ignites its fuel by squeezing air until it is hot. In 1897 Rudolf Diesel's engine turned 26% of its fuel's energy into work, far more than any steam engine.",
+            "es": "Un motor que enciende su combustible al comprimir el aire hasta calentarlo. En 1897, el motor de Rudolf Diesel convirtió en trabajo el 26 % de la energía de su combustible, mucho más que cualquier máquina de vapor."
+          },
+          "details": {
+            "en": "Diesel had learned in Carl von Linde's lectures in Munich that steam engines wasted 90% of their heat. Prototypes built at Augsburg with Krupp from 1893 failed, and the first blew apart a measuring instrument; the engineer Imanuel Lauster designed the third, which worked. Diesel engines took over ships, trucks, trains, tractors and generators.",
+            "es": "Diesel había aprendido en las clases de Carl von Linde, en Múnich, que las máquinas de vapor desperdiciaban el 90 % de su calor. Los prototipos construidos en Augsburgo con Krupp desde 1893 fallaron, y el primero hizo estallar un instrumento de medición; el ingeniero Imanuel Lauster diseñó el tercero, que funcionó. Los motores diésel conquistaron barcos, camiones, trenes, tractores y generadores."
+          },
+          "wiki": { "en": "Diesel engine", "es": "Motor diésel" },
+          "img": "First Diesel motor.jpg"
+        },
+        {
+          "id": "volklingen-ironworks",
+          "name": { "en": "Völklingen Ironworks", "es": "Siderúrgica de Völklingen" },
+          "at": [6.85, 49.2444],
+          "cat": "energy",
+          "type": "site",
+          "date": "1900",
+          "place": { "en": "Völklingen, Saarland, Germany", "es": "Völklingen, Sarre, Alemania" },
+          "text": {
+            "en": "From 1900 giant gas engines here burned the blast furnaces' own waste gas to blow air into the furnaces: the first large ironworks to do so. It made iron from 1882 to 1986.",
+            "es": "Desde 1900, enormes motores de gas quemaban aquí el gas sobrante de los altos hornos para soplar aire en ellos: fue la primera gran siderúrgica en hacerlo. Produjo hierro de 1882 a 1986."
+          },
+          "details": {
+            "en": "The works was copied around the world. It was also a place of suffering: in the First World War about 1,446 people from occupied lands were forced to work here and over 143 died, and in the Second World War 12,393 prisoners of war and deported civilians worked in brutal conditions. It is now a museum, and its blower hall still holds the huge gas engines.",
+            "es": "La planta fue copiada en todo el mundo. También fue un lugar de sufrimiento: en la Primera Guerra Mundial, unas 1446 personas de territorios ocupados fueron obligadas a trabajar aquí y más de 143 murieron, y en la Segunda Guerra Mundial trabajaron en condiciones brutales 12 393 prisioneros de guerra y civiles deportados. Hoy es un museo, y su sala de soplantes aún guarda los enormes motores de gas."
+          },
+          "wiki": { "en": "Völklingen Ironworks", "es": "Siderúrgica de Völklingen" },
+          "whs": 687
+        }
+      ],
+      "show": ["automobile"]
+    },
+    {
+      "date": "1891",
+      "title": { "en": "Electricity from the wind", "es": "Electricidad del viento" },
+      "text": {
+        "en": "Windmills learned to make electricity. James Blyth lit his Scottish cottage in 1887, Charles Brush his Cleveland mansion in 1888, and in 1891 Poul la Cour began his wind experiments in Denmark.",
+        "es": "Los molinos de viento aprendieron a producir electricidad. James Blyth iluminó su casa de campo escocesa en 1887, Charles Brush su mansión de Cleveland en 1888, y en 1891 Poul la Cour empezó sus experimentos eólicos en Dinamarca."
+      },
+      "details": {
+        "en": "Blyth, a professor in Glasgow, built a cloth-sailed wind turbine at his holiday cottage in Marykirk in July 1887 and stored its power in batteries; when he offered to light the main street, people refused, calling electricity 'the work of the Devil'. That winter Charles Brush, who had made his fortune with arc lamps, raised a huge automatic wind turbine behind his mansion on Euclid Avenue; it charged the house's batteries for 20 years. At Askov Folk High School, the teacher and inventor Poul la Cour built an experimental wind power plant in 1891, stored its energy as hydrogen to light the school, and tested blades in a wind tunnel. He found that a few fast-turning blades work best, as today's turbines show. In 1903 he founded a society that planned about a hundred small Danish power plants, a third of them driven by wind.",
+        "es": "Blyth, profesor en Glasgow, construyó en julio de 1887 un aerogenerador de velas de tela junto a su casa de vacaciones en Marykirk y guardó su energía en baterías; cuando ofreció iluminar la calle principal, los vecinos se negaron, porque la electricidad era «obra del diablo». Ese invierno, Charles Brush, que había hecho fortuna con las lámparas de arco, levantó un enorme aerogenerador automático detrás de su mansión de la avenida Euclid; cargó las baterías de la casa durante 20 años. En la escuela popular superior de Askov, el maestro e inventor Poul la Cour construyó en 1891 una central eólica experimental, guardó su energía en forma de hidrógeno para iluminar la escuela y probó aspas en un túnel de viento. Descubrió que unas pocas aspas que giran rápido funcionan mejor, como muestran los aerogeneradores de hoy. En 1903 fundó una sociedad que planeó un centenar de pequeñas centrales danesas, un tercio de ellas movidas por el viento."
+      },
+      "camera": { "lon": -36, "lat": 50, "zoom": 1.8 },
+      "places": [
+        {
+          "id": "wind-turbine",
+          "name": { "en": "Wind turbine", "es": "Aerogenerador" },
+          "at": [-2.5164, 56.776],
+          "cat": "energy",
+          "icon": "🌬️",
+          "type": "invention",
+          "date": "1887-07",
+          "place": { "en": "Marykirk, Aberdeenshire, Scotland", "es": "Marykirk, Aberdeenshire, Escocia" },
+          "by": { "en": "James Blyth and Charles Brush, independently", "es": "James Blyth y Charles Brush, cada uno por su lado" },
+          "text": {
+            "en": "A windmill that drives a generator. The first, James Blyth's, lit his cottage at Marykirk in 1887. By 2024 more than 1,100 gigawatts of wind turbines were turning around the world.",
+            "es": "Un molino de viento que mueve un generador. El primero, el de James Blyth, iluminó su casa en Marykirk en 1887. En 2024 ya giraban en el mundo aerogeneradores con más de 1100 gigavatios de potencia."
+          },
+          "details": {
+            "en": "Blyth patented his 'wind engine' in 1891 and in 1895 built one for a hospital in Montrose. Denmark had about 2,500 windmills and wind pumps by 1900. The first megawatt-sized turbine fed the grid in Vermont in 1941. The biggest machines today, built in China, are rated at 20 to 26 megawatts, with blades longer than 150 m.",
+            "es": "Blyth patentó su «motor de viento» en 1891 y en 1895 construyó uno para un hospital de Montrose. Dinamarca tenía unos 2500 molinos y bombas de viento hacia 1900. El primer aerogenerador de un megavatio entregó electricidad a la red en Vermont en 1941. Las máquinas más grandes de hoy, construidas en China, tienen entre 20 y 26 megavatios, con aspas de más de 150 m."
+          },
+          "wiki": { "en": "Wind turbine", "es": "Aeroturbina" }
+        },
+        {
+          "id": "charles-brush",
+          "name": { "en": "Charles F. Brush", "es": "Charles F. Brush" },
+          "at": [-81.6584, 41.5036],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1888",
+          "life": ["1849-03-17", "1929-06-15"],
+          "place": { "en": "Euclid Avenue, Cleveland, Ohio, United States", "es": "Avenida Euclid, Cleveland, Ohio, Estados Unidos" },
+          "text": {
+            "en": "An American inventor of arc lamps and dynamos. In 1888 he built the first automatically operated wind turbine, whose 12 kW dynamo powered his mansion, the first house in Cleveland with electricity.",
+            "es": "Inventor estadounidense de lámparas de arco y dinamos. En 1888 construyó el primer aerogenerador automático, cuya dinamo de 12 kW alimentaba su mansión, la primera casa de Cleveland con electricidad."
+          },
+          "wiki": { "en": "Charles F. Brush", "es": "Charles Francis Brush" }
+        },
+        {
+          "id": "poul-la-cour",
+          "name": { "en": "Poul la Cour", "es": "Poul la Cour" },
+          "at": [9.112, 55.468],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1891",
+          "life": ["1846-04-13", "1908-04-24"],
+          "place": { "en": "Askov, Jutland, Denmark", "es": "Askov, Jutlandia, Dinamarca" },
+          "text": {
+            "en": "A Danish meteorologist, teacher and inventor who built a wind power plant at Askov in 1891 and tested blades in a wind tunnel. He is seen as the pioneer of modern wind turbines.",
+            "es": "Meteorólogo, maestro e inventor danés que construyó una central eólica en Askov en 1891 y probó aspas en un túnel de viento. Se lo considera el pionero de los aerogeneradores modernos."
+          },
+          "details": {
+            "en": "Earlier, la Cour had invented a way to send several telegraph messages on one wire with tuning forks (1874), but could not afford to defend his US patent. His test mill at Askov is now the Poul la Cour Museum, and the European wind industry's top prize bears his name.",
+            "es": "Antes, la Cour había inventado una forma de enviar varios mensajes telegráficos por un solo cable con diapasones (1874), pero no pudo pagar la defensa de su patente en Estados Unidos. Su molino de pruebas de Askov es hoy el Museo Poul la Cour, y el principal premio de la industria eólica europea lleva su nombre."
+          },
+          "wiki": { "en": "Poul la Cour", "es": "" },
+          "img": "Poul la Cour Museet 01.jpg"
+        }
+      ]
+    },
+    {
+      "date": "1896",
+      "title": { "en": "The current that won", "es": "La corriente que ganó" },
+      "text": {
+        "en": "Alternating current could be sent far at high voltage. In 1895 Westinghouse generators built on Tesla's designs began turning at Niagara Falls, and from 1896 their power reached Buffalo.",
+        "es": "La corriente alterna podía enviarse lejos a alto voltaje. En 1895, generadores de Westinghouse basados en los diseños de Tesla empezaron a girar en las cataratas del Niágara, y desde 1896 su electricidad llegó a Buffalo."
+      },
+      "details": {
+        "en": "Edison's direct current had to be made close to where it was used. With transformers, developed by Lucien Gaulard and John Gibbs and improved by William Stanley's team for Westinghouse, alternating current could be raised to high voltage for long lines and lowered for homes. Nikola Tesla and Galileo Ferraris, in Turin, each invented an AC motor in 1885–87, and Westinghouse bought Tesla's patents in 1888. In the 'war of the currents', Edison's camp warned that AC was deadly, but AC won. In 1891 a 175-km line carried three-phase current from Lauffen to an exhibition in Frankfurt, built by engineers of AEG and Oerlikon, among them Mikhail Dolivo-Dobrovolsky; in 1893 Westinghouse lit the Chicago World's Fair. At Niagara, ten 5,000-horsepower generators were fed by water led through a tunnel whose building cost 28 workers their lives. Most of the world's grids still run on AC.",
+        "es": "La corriente continua de Edison tenía que producirse cerca de donde se usaba. Con los transformadores, creados por Lucien Gaulard y John Gibbs y mejorados por el equipo de William Stanley para Westinghouse, la corriente alterna podía elevarse a alto voltaje para las líneas largas y bajarse para los hogares. Nikola Tesla y Galileo Ferraris, en Turín, inventaron cada uno un motor de corriente alterna en 1885-1887, y Westinghouse compró las patentes de Tesla en 1888. En la «guerra de las corrientes», el bando de Edison advertía que la corriente alterna era mortal, pero ganó la alterna. En 1891, una línea de 175 km llevó corriente trifásica de Lauffen a una exposición en Fráncfort, construida por ingenieros de AEG y Oerlikon, entre ellos Mijaíl Dolivo-Dobrovolski; en 1893, Westinghouse iluminó la Feria Mundial de Chicago. En el Niágara, diez generadores de 5000 caballos de fuerza recibían el agua por un túnel cuya construcción costó la vida a 28 obreros. La mayoría de las redes del mundo siguen funcionando con corriente alterna."
+      },
+      "camera": { "lon": -35, "lat": 46, "zoom": 1.8 },
+      "moves": [
+        {
+          "side": "elec",
+          "path": [[9.1478, 49.0731], [9.05, 49.4], [8.85, 49.8], [8.6821, 50.1109]],
+          "label": { "en": "Lauffen–Frankfurt line (1891)", "es": "Línea Lauffen-Fráncfort (1891)" }
+        },
+        {
+          "side": "elec",
+          "path": [[-79.0428, 43.0818], [-78.95, 42.98], [-78.8784, 42.8864]],
+          "label": { "en": "Niagara to Buffalo (1896)", "es": "Del Niágara a Buffalo (1896)" }
+        }
+      ],
+      "places": [
+        {
+          "id": "nikola-tesla",
+          "name": { "en": "Nikola Tesla", "es": "Nikola Tesla" },
+          "at": [-74.0105, 40.709],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1887",
+          "life": ["1856-07-10", "1943-01-07"],
+          "place": { "en": "New York, United States", "es": "Nueva York, Estados Unidos" },
+          "text": {
+            "en": "A Serbian engineer born in Smiljan, in today's Croatia, who emigrated to the United States in 1884. His AC induction motor of 1887 helped make alternating current the world's standard.",
+            "es": "Ingeniero serbio nacido en Smiljan, en la actual Croacia, que emigró a Estados Unidos en 1884. Su motor de inducción de corriente alterna, de 1887, ayudó a que la corriente alterna se volviera el estándar mundial."
+          },
+          "details": {
+            "en": "Tesla worked briefly for Edison's companies before setting up his own laboratory in New York. He later experimented with radio, remote control and wireless power, but spent most of his money and died poor in a New York hotel in 1943. The unit of magnetic flux density, the tesla, is named after him.",
+            "es": "Tesla trabajó un tiempo para las empresas de Edison antes de montar su propio laboratorio en Nueva York. Después experimentó con la radio, el control remoto y la energía inalámbrica, pero gastó casi todo su dinero y murió pobre en un hotel de Nueva York en 1943. La unidad de densidad de flujo magnético, el tesla, lleva su nombre."
+          },
+          "wiki": { "en": "Nikola Tesla", "es": "Nikola Tesla" }
+        },
+        {
+          "id": "george-westinghouse",
+          "name": { "en": "George Westinghouse", "es": "George Westinghouse" },
+          "at": [-79.9959, 40.4406],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1886",
+          "life": ["1846-10-06", "1914-03-12"],
+          "place": { "en": "Pittsburgh, Pennsylvania, United States", "es": "Pittsburgh, Pensilvania, Estados Unidos" },
+          "text": {
+            "en": "An American inventor and industrialist, famous for the railway air brake, who founded Westinghouse Electric in 1886 and championed alternating current against Edison.",
+            "es": "Inventor e industrial estadounidense, famoso por el freno de aire para trenes, que fundó Westinghouse Electric en 1886 y defendió la corriente alterna frente a Edison."
+          },
+          "wiki": { "en": "George Westinghouse", "es": "George Westinghouse" }
+        },
+        {
+          "id": "induction-motor",
+          "name": { "en": "AC induction motor", "es": "Motor de inducción" },
+          "at": [7.6869, 45.0703],
+          "cat": "energy",
+          "type": "invention",
+          "date": "1885",
+          "place": { "en": "Turin, Italy, and New York, United States", "es": "Turín, Italia, y Nueva York, Estados Unidos" },
+          "by": { "en": "Galileo Ferraris and Nikola Tesla, independently", "es": "Galileo Ferraris y Nikola Tesla, cada uno por su lado" },
+          "text": {
+            "en": "A motor turned by a rotating magnetic field made with alternating current. Galileo Ferraris showed one in Turin in 1885 and Nikola Tesla in New York in 1887. It still drives most of the world's machines.",
+            "es": "Un motor que gira por un campo magnético rotatorio creado con corriente alterna. Galileo Ferraris mostró uno en Turín en 1885, y Nikola Tesla en Nueva York en 1887. Todavía mueve la mayoría de las máquinas del mundo."
+          },
+          "wiki": { "en": "Induction motor", "es": "Motor asíncrono" }
+        },
+        {
+          "id": "adams-power-plant",
+          "name": { "en": "Adams Power Plant, Niagara Falls", "es": "Central Adams, cataratas del Niágara" },
+          "at": [-79.0428, 43.0818],
+          "cat": "energy",
+          "type": "site",
+          "date": "1895-08-25",
+          "until": "1961",
+          "place": { "en": "Niagara Falls, New York, United States", "es": "Niagara Falls, Nueva York, Estados Unidos" },
+          "text": {
+            "en": "The first large alternating-current power station in the world, opened in August 1895. Water from above the falls turned ten Westinghouse generators of 5,000 horsepower each.",
+            "es": "La primera gran central de corriente alterna del mundo, inaugurada en agosto de 1895. El agua de encima de las cataratas movía diez generadores Westinghouse de 5000 caballos de fuerza cada uno."
+          },
+          "details": {
+            "en": "The plan, first drawn up by Thomas Evershed in 1886, led water from above the falls through a canal to the turbines and out through a brick-lined tunnel beneath the town. The Cataract Construction Company, led by Edward Dean Adams, hesitated between systems until the engineer George Forbes persuaded it to choose alternating current in 1893. Power was sent at up to 20,000 volts to Buffalo, Lockport and Tonawanda. The station closed in 1961; only its transformer house, designed by McKim, Mead and White, still stands.",
+            "es": "El plan, trazado por Thomas Evershed en 1886, llevaba el agua de encima de las cataratas por un canal hasta las turbinas y la devolvía por un túnel revestido de ladrillo bajo la ciudad. La Cataract Construction Company, dirigida por Edward Dean Adams, dudó entre sistemas hasta que el ingeniero George Forbes la convenció en 1893 de elegir la corriente alterna. La electricidad se enviaba a hasta 20 000 voltios a Buffalo, Lockport y Tonawanda. La central cerró en 1961; solo sigue en pie su casa de transformadores, diseñada por McKim, Mead y White."
+          },
+          "wiki": { "en": "Adams Power Plant Transformer House", "es": "" }
+        },
+        {
+          "id": "lauffen-frankfurt-line",
+          "name": { "en": "Lauffen–Frankfurt power line", "es": "Línea eléctrica Lauffen-Fráncfort" },
+          "at": [9.1478, 49.0731],
+          "cat": "event",
+          "type": "event",
+          "date": "1891",
+          "place": { "en": "Lauffen am Neckar to Frankfurt, Germany", "es": "De Lauffen am Neckar a Fráncfort, Alemania" },
+          "text": {
+            "en": "In 1891 a water turbine at Lauffen fed three-phase current along 175 km of overhead line to the electrical exhibition in Frankfurt: the first long-distance transmission of high-power three-phase current.",
+            "es": "En 1891, una turbina hidráulica en Lauffen envió corriente trifásica por 175 km de línea aérea hasta la exposición eléctrica de Fráncfort: la primera transmisión a larga distancia de corriente trifásica de alta potencia."
+          },
+          "details": {
+            "en": "The current, stepped up to 8,000 volts and later 25,000, ran on 3,000 masts and powered lamps and an artificial waterfall at the exhibition. After it closed, Lauffen's plant went on supplying the town of Heilbronn, the first to get three-phase power. The exhibition ran from 16 May to 19 October 1891, and its success made three-phase current the standard for power grids around the world.",
+            "es": "La corriente, elevada a 8000 voltios y después a 25 000, corría sobre 3000 postes y alimentaba lámparas y una cascada artificial en la exposición. Al cerrar esta, la central de Lauffen siguió abasteciendo a la ciudad de Heilbronn, la primera con electricidad trifásica. La exposición duró del 16 de mayo al 19 de octubre de 1891, y su éxito convirtió la corriente trifásica en el estándar de las redes eléctricas de todo el mundo."
+          },
+          "wiki": { "en": "International Electrotechnical Exhibition", "es": "" }
+        }
+      ]
+    },
+    {
+      "date": "1936",
+      "title": { "en": "Rivers turned into power", "es": "Ríos convertidos en energía" },
+      "text": {
+        "en": "Giant dams turned rivers into electricity. The Hoover Dam began generating in 1936; later, Itaipu and the Three Gorges Dam became the largest power stations on Earth.",
+        "es": "Las represas gigantes convirtieron los ríos en electricidad. La represa Hoover empezó a generar en 1936; después, Itaipú y la de las Tres Gargantas se convirtieron en las mayores centrales eléctricas de la Tierra."
+      },
+      "details": {
+        "en": "Hydroelectricity began small, with a single water wheel at Appleton, Wisconsin, in 1882, and grew fast where rivers fell steeply. In Norway, Norsk Hydro used waterfalls to make fertilizer from the nitrogen in the air with electric arcs, and its Vemork plant at Rjukan was the largest hydroelectric station in the world in 1911. During the Great Depression thousands of men built the Hoover Dam in desert heat; 112 deaths are on its official list. After 1950 new nations built huge dams for power, farming and pride. Their lakes drowned valleys, towns, waterfalls and sacred places, and forced millions of people to move: more than 100,000 Nubians for Egypt's Aswan High Dam, 10,000 families for Itaipu, about 1.24 million people for the Three Gorges. In 2025 the world had almost 1,456 gigawatts of hydropower, more than any other renewable source.",
+        "es": "La hidroelectricidad empezó en pequeño, con una sola rueda hidráulica en Appleton, Wisconsin, en 1882, y creció rápido donde los ríos bajaban con fuerza. En Noruega, Norsk Hydro usó las cascadas para fabricar fertilizante con el nitrógeno del aire mediante arcos eléctricos, y su central de Vemork, en Rjukan, era en 1911 la mayor central hidroeléctrica del mundo. Durante la Gran Depresión, miles de hombres construyeron la represa Hoover con el calor del desierto; su lista oficial registra 112 muertes. Después de 1950, las nuevas naciones levantaron enormes represas para tener energía, regar los campos y sentir orgullo. Sus embalses anegaron valles, pueblos, cascadas y lugares sagrados, y obligaron a millones de personas a mudarse: más de 100 000 nubios por la presa de Asuán, en Egipto, 10 000 familias por Itaipú, unos 1,24 millones de personas por las Tres Gargantas. En 2025, el mundo tenía casi 1456 gigavatios de energía hidroeléctrica, más que cualquier otra fuente renovable."
+      },
+      "camera": { "lon": -45, "lat": 25, "zoom": 1.1 },
+      "places": [
+        {
+          "id": "vulcan-street-plant",
+          "name": { "en": "Vulcan Street Plant", "es": "Central de Vulcan Street" },
+          "at": [-88.4117, 44.2533],
+          "cat": "energy",
+          "icon": "💧",
+          "type": "site",
+          "date": "1882-09-30",
+          "until": "1891",
+          "place": { "en": "Appleton, Wisconsin, United States", "es": "Appleton, Wisconsin, Estados Unidos" },
+          "text": {
+            "en": "A water wheel on the Fox River that from 30 September 1882 lit homes and a paper mill in Appleton: the first hydroelectric central station in North America to serve private and business customers.",
+            "es": "Una rueda hidráulica sobre el río Fox que desde el 30 de septiembre de 1882 iluminó casas y una fábrica de papel en Appleton: la primera central hidroeléctrica de América del Norte para clientes privados y comerciales."
+          },
+          "wiki": { "en": "Vulcan Street Plant", "es": "" }
+        },
+        {
+          "id": "rjukan-notodden",
+          "name": { "en": "Rjukan and Notodden", "es": "Rjukan y Notodden" },
+          "at": [8.5097, 59.8697],
+          "cat": "energy",
+          "icon": "💧",
+          "type": "site",
+          "date": "1911",
+          "place": { "en": "Vemork, Rjukan, Telemark, Norway", "es": "Vemork, Rjukan, Telemark, Noruega" },
+          "text": {
+            "en": "Norsk Hydro built power stations, factories and company towns here to make fertilizer from the air with electricity. Its Vemork plant was the largest hydroelectric station in the world in 1911.",
+            "es": "Norsk Hydro construyó aquí centrales, fábricas y pueblos de la empresa para fabricar fertilizante a partir del aire con electricidad. Su central de Vemork era en 1911 la mayor central hidroeléctrica del mundo."
+          },
+          "details": {
+            "en": "The Birkeland–Eyde process, named after the scientist Kristian Birkeland and the industrialist Sam Eyde, used giant electric arcs to turn the nitrogen of the air into nitrate fertilizer, so it needed vast amounts of cheap power. During the Second World War, saboteurs attacked the nearby hydrogen plant to stop heavy water reaching Nazi Germany's nuclear programme.",
+            "es": "El proceso Birkeland-Eyde, llamado así por el científico Kristian Birkeland y el industrial Sam Eyde, usaba enormes arcos eléctricos para convertir el nitrógeno del aire en fertilizante de nitrato, así que necesitaba muchísima energía barata. En la Segunda Guerra Mundial, unos saboteadores atacaron la planta de hidrógeno cercana para impedir que el agua pesada llegara al programa nuclear de la Alemania nazi."
+          },
+          "wiki": { "en": "Rjukan–Notodden Industrial Heritage Site", "es": "Sitio del Patrimonio Industrial de Rjukan-Notodden" },
+          "whs": 1486
+        },
+        {
+          "id": "hoover-dam",
+          "name": { "en": "Hoover Dam", "es": "Represa Hoover" },
+          "at": [-114.7378, 36.0156],
+          "cat": "energy",
+          "icon": "💧",
+          "type": "site",
+          "date": "1936-09-11",
+          "place": { "en": "Black Canyon of the Colorado River, Nevada–Arizona, United States", "es": "Cañón Negro del río Colorado, entre Nevada y Arizona, Estados Unidos" },
+          "text": {
+            "en": "A concrete arch dam on the Colorado River, built in 1931–1936 during the Great Depression. It created Lake Mead and sends electricity and water across the US South-West.",
+            "es": "Una represa de arco de hormigón sobre el río Colorado, construida entre 1931 y 1936 durante la Gran Depresión. Creó el lago Mead y envía electricidad y agua a todo el suroeste de Estados Unidos."
+          },
+          "details": {
+            "en": "Its first generator started on 11 September 1936. The workers lived in a company town, Boulder City, and toiled in tunnels that reached 60 °C. The official list counts 112 deaths linked to the project; 42 more deaths recorded as pneumonia may have been caused by exhaust fumes in the tunnels.",
+            "es": "Su primer generador arrancó el 11 de septiembre de 1936. Los obreros vivían en un pueblo de la empresa, Boulder City, y trabajaban en túneles que llegaban a 60 °C. La lista oficial registra 112 muertes ligadas a la obra; otras 42, anotadas como neumonía, quizá se debieron a los gases de los motores en los túneles."
+          },
+          "wiki": { "en": "Hoover Dam", "es": "Presa Hoover" }
+        },
+        {
+          "id": "itaipu-dam",
+          "name": { "en": "Itaipu Dam", "es": "Represa de Itaipú" },
+          "at": [-54.5888, -25.4078],
+          "cat": "energy",
+          "icon": "💧",
+          "type": "site",
+          "date": "1984-05-05",
+          "place": { "en": "Paraná River, on the border of Brazil and Paraguay", "es": "Río Paraná, en la frontera entre Brasil y Paraguay" },
+          "text": {
+            "en": "Built by Brazil and Paraguay together, its 20 generators of 700 MW each started up between 1984 and 1991. Its name comes from Guaraní, 'sounding stone'.",
+            "es": "Construida por Brasil y Paraguay juntos, sus 20 generadores de 700 MW cada uno arrancaron entre 1984 y 1991. Su nombre viene del guaraní: «piedra que suena»."
+          },
+          "details": {
+            "en": "After talks through the 1960s, Brazil and Paraguay signed a treaty in 1973 and built the dam on their shared border, 15 km north of the Friendship Bridge. Half of the generators work for each country. Its lake displaced 10,000 families and drowned the Guaíra Falls, one of the largest waterfalls in the world. For about two decades it was the world's biggest power station; it is now second only to the Three Gorges Dam.",
+            "es": "Tras negociar durante la década de 1960, Brasil y Paraguay firmaron un tratado en 1973 y construyeron la represa en su frontera común, 15 km al norte del Puente de la Amistad. La mitad de los generadores trabaja para cada país. Su embalse desplazó a 10 000 familias y sumergió los saltos del Guairá, una de las mayores cataratas del mundo. Durante unas dos décadas fue la central más grande del mundo; hoy solo la supera la de las Tres Gargantas."
+          },
+          "wiki": { "en": "Itaipu Dam", "es": "Represa de Itaipú" }
+        },
+        {
+          "id": "three-gorges-dam",
+          "name": { "en": "Three Gorges Dam", "es": "Represa de las Tres Gargantas" },
+          "at": [111.0036, 30.8233],
+          "cat": "energy",
+          "icon": "💧",
+          "type": "site",
+          "date": "2003",
+          "end": "2012",
+          "place": { "en": "Yangtze River, near Yichang, Hubei, China", "es": "Río Yangtsé, cerca de Yichang, Hubei, China" },
+          "text": {
+            "en": "The largest power station in the world: 32 turbines of 700 MW each, all running since 2012. It also tames the Yangtze's floods, but about 1.24 million people had to leave their homes.",
+            "es": "La mayor central eléctrica del mundo: 32 turbinas de 700 MW cada una, todas en marcha desde 2012. También doma las crecidas del Yangtsé, pero unos 1,24 millones de personas tuvieron que dejar sus hogares."
+          },
+          "details": {
+            "en": "Sun Yat-sen imagined a dam here in 1919. The dam wall, 185 m high and 2.3 km long, was finished in 2006, and a ship lift in 2015. It protects millions of people on the Yangtze plain from floods, and China's government sees it as a source of national pride. But its reservoir flooded parts of 13 cities, 140 towns and 1,350 villages. Living conditions grew worse for many of those moved, and hundreds of thousands could not find work.",
+            "es": "Sun Yat-sen imaginó una represa aquí en 1919. El muro, de 185 m de alto y 2,3 km de largo, se terminó en 2006, y un ascensor de barcos en 2015. Protege de las crecidas a millones de personas de la llanura del Yangtsé, y el gobierno chino la ve como un motivo de orgullo nacional. Pero su embalse inundó partes de 13 ciudades, 140 pueblos y 1350 aldeas. Para muchas de las personas trasladadas la vida empeoró, y cientos de miles no encontraron trabajo."
+          },
+          "wiki": { "en": "Three Gorges Dam", "es": "Presa de las Tres Gargantas" }
+        }
+      ]
+    },
+    {
+      "date": "1954-06-27",
+      "title": { "en": "Sunlight and atoms", "es": "Luz del sol y átomos" },
+      "text": {
+        "en": "1954 brought two new kinds of power. In April Bell Labs showed the first practical solar cell; in June a plant at Obninsk, near Moscow, became the first nuclear power station to feed a grid.",
+        "es": "1954 trajo dos nuevas formas de energía. En abril, los Laboratorios Bell mostraron la primera celda solar práctica; en junio, una central en Óbninsk, cerca de Moscú, fue la primera central nuclear conectada a una red."
+      },
+      "details": {
+        "en": "In 1839 the 19-year-old Edmond Becquerel found that light could make an electric current, and in 1884 Charles Fritts put selenium cells on a New York roof, but they turned only about 1% of sunlight into electricity. At Bell Labs, Daryl Chapin, Calvin Fuller and Gerald Pearson made silicon cells that reached 6%. They were too costly for homes, but from 1958 they powered satellites. Nuclear power grew out of the atomic bomb projects: Obninsk's small reactor made 5 MW from 1954 to 2002. Britain's Calder Hall, opened by Queen Elizabeth II in October 1956, was the first full-scale nuclear power station, though its main purpose was making plutonium for nuclear weapons. Nuclear plants make power without burning fuel, but the disasters at Chernobyl (1986) and Fukushima (2011), and the problem of storing waste for thousands of years, have kept them controversial.",
+        "es": "En 1839, Edmond Becquerel, de 19 años, descubrió que la luz podía producir una corriente eléctrica, y en 1884 Charles Fritts colocó celdas de selenio en un techo de Nueva York, pero convertían en electricidad solo el 1 % de la luz del sol. En los Laboratorios Bell, Daryl Chapin, Calvin Fuller y Gerald Pearson hicieron celdas de silicio que llegaron al 6 %. Eran demasiado caras para los hogares, pero desde 1958 alimentaron satélites. La energía nuclear nació de los proyectos de la bomba atómica: el pequeño reactor de Óbninsk produjo 5 MW de 1954 a 2002. La central británica de Calder Hall, inaugurada por la reina Isabel II en octubre de 1956, fue la primera central nuclear a gran escala, aunque su objetivo principal era producir plutonio para armas nucleares. Las centrales nucleares producen energía sin quemar combustible, pero los desastres de Chernóbil (1986) y Fukushima (2011) y el problema de guardar los residuos durante miles de años las han mantenido en la polémica."
+      },
+      "camera": { "lon": -19, "lat": 50, "zoom": 1.6 },
+      "places": [
+        {
+          "id": "solar-cell",
+          "name": { "en": "Silicon solar cell", "es": "Celda solar de silicio" },
+          "at": [-74.4003, 40.6833],
+          "cat": "energy",
+          "icon": "☀️",
+          "type": "invention",
+          "date": "1954-04-25",
+          "place": { "en": "Bell Labs, Murray Hill, New Jersey, United States", "es": "Laboratorios Bell, Murray Hill, Nueva Jersey, Estados Unidos" },
+          "by": { "en": "Daryl Chapin, Calvin Fuller and Gerald Pearson", "es": "Daryl Chapin, Calvin Fuller y Gerald Pearson" },
+          "text": {
+            "en": "Shown on 25 April 1954, the first practical solar cell turned 6% of sunlight into electricity. The New York Times said it might mark 'the beginning of a new era'.",
+            "es": "Presentada el 25 de abril de 1954, la primera celda solar práctica convertía en electricidad el 6 % de la luz del sol. The New York Times dijo que podía marcar «el comienzo de una nueva era»."
+          },
+          "details": {
+            "en": "Chapin was looking for a way to power telephone equipment in humid places where batteries failed. Pearson and Fuller, working on silicon, found that a treated piece made a current in sunlight. In 1958 the satellite Vanguard 1 became the first powered by solar cells. The best silicon cells today turn about a quarter of sunlight into electricity.",
+            "es": "Chapin buscaba cómo alimentar equipos telefónicos en lugares húmedos donde las pilas fallaban. Pearson y Fuller, que trabajaban con silicio, descubrieron que una pieza tratada producía corriente al sol. En 1958, el satélite Vanguard 1 fue el primero alimentado con celdas solares. Las mejores celdas de silicio de hoy convierten en electricidad cerca de una cuarta parte de la luz del sol."
+          },
+          "wiki": { "en": "Solar cell", "es": "Célula fotoeléctrica" }
+        },
+        {
+          "id": "obninsk-nuclear-power-plant",
+          "name": { "en": "Obninsk Nuclear Power Plant", "es": "Central nuclear de Óbninsk" },
+          "at": [36.5714, 55.0839],
+          "cat": "energy",
+          "icon": "⚛️",
+          "type": "site",
+          "date": "1954-06-27",
+          "until": "2002-04-29",
+          "place": { "en": "Obninsk, Kaluga Oblast, Russia", "es": "Óbninsk, óblast de Kaluga, Rusia" },
+          "text": {
+            "en": "The first nuclear power station to send electricity into a grid, on 27 June 1954. Its single small reactor, named 'Peaceful Atom', made about 5 MW until 2002; it is now a museum.",
+            "es": "La primera central nuclear que envió electricidad a una red, el 27 de junio de 1954. Su único y pequeño reactor, llamado «Átomo Pacífico», produjo unos 5 MW hasta 2002; hoy es un museo."
+          },
+          "wiki": { "en": "Obninsk Nuclear Power Plant", "es": "Central nuclear de Óbninsk" }
+        },
+        {
+          "id": "calder-hall",
+          "name": { "en": "Calder Hall", "es": "Calder Hall" },
+          "at": [-3.4914, 54.4186],
+          "cat": "energy",
+          "icon": "⚛️",
+          "type": "site",
+          "date": "1956-10-17",
+          "until": "2003-03-31",
+          "place": { "en": "Sellafield, Cumbria, England", "es": "Sellafield, Cumbria, Inglaterra" },
+          "text": {
+            "en": "Opened by Queen Elizabeth II on 17 October 1956, the first full-scale nuclear power station. Its main job was to make plutonium for Britain's nuclear weapons; electricity was a by-product.",
+            "es": "Inaugurada por la reina Isabel II el 17 de octubre de 1956, fue la primera central nuclear a gran escala. Su tarea principal era producir plutonio para las armas nucleares británicas; la electricidad era un subproducto."
+          },
+          "details": {
+            "en": "The station was named after the farm whose land it was built on, next to the Windscale site, and its design was nicknamed PIPPA, 'Pressurised Pile Producing Power and Plutonium', for its double role. A sister plant at Chapelcross in Scotland followed in 1958. Its first reactor worked for nearly 47 years, until 2003. Its cooling towers were blown up in 2007, and the site is being slowly dismantled.",
+            "es": "La central tomó el nombre de la granja en cuyas tierras se construyó, junto a las instalaciones de Windscale, y su diseño se apodó PIPPA, por las iniciales en inglés de «pila presurizada que produce energía y plutonio», por su doble función. En 1958 la siguió una central hermana en Chapelcross, Escocia. Su primer reactor funcionó casi 47 años, hasta 2003. Sus torres de refrigeración se demolieron con explosivos en 2007, y el lugar se desmantela poco a poco."
+          },
+          "wiki": { "en": "Calder Hall nuclear power station", "es": "" }
+        },
+        {
+          "id": "chernobyl-disaster",
+          "name": { "en": "Chernobyl disaster", "es": "Accidente de Chernóbil" },
+          "at": [30.0992, 51.3897],
+          "cat": "event",
+          "type": "event",
+          "date": "1986-04-26",
+          "place": { "en": "Chernobyl Nuclear Power Plant, near Pripyat, Ukraine", "es": "Central nuclear de Chernóbil, cerca de Prípiat, Ucrania" },
+          "text": {
+            "en": "On 26 April 1986 a reactor exploded during a safety test at Chernobyl, in Soviet Ukraine, the worst nuclear accident ever. Radioactive fallout spread across Europe and a zone around it is still closed.",
+            "es": "El 26 de abril de 1986, un reactor explotó durante una prueba de seguridad en Chernóbil, en la Ucrania soviética: el peor accidente nuclear de la historia. La radiactividad cayó sobre Europa, y una zona a su alrededor sigue cerrada."
+          },
+          "wiki": { "en": "Chernobyl disaster", "es": "Accidente de Chernóbil" }
+        }
+      ]
+    },
+    {
+      "date": "1991",
+      "title": { "en": "Power in your pocket", "es": "Energía en el bolsillo" },
+      "text": {
+        "en": "In 1991 Sony began selling lithium-ion batteries built on Akira Yoshino's design. Light and rechargeable, they made cell phones, laptops and electric cars possible.",
+        "es": "En 1991, Sony empezó a vender baterías de ion de litio basadas en el diseño de Akira Yoshino. Livianas y recargables, hicieron posibles los celulares, las computadoras portátiles y los autos eléctricos."
+      },
+      "details": {
+        "en": "In the 1970s Stanley Whittingham, at Exxon, made the first rechargeable lithium battery, in which lithium ions slip between layers of another material, but its lithium metal could catch fire. In 1980 John Goodenough and Koichi Mizushima at Oxford, and separately Ned Godshall's group at Stanford, found that lithium cobalt oxide gave a higher voltage. In 1985 Yoshino, at Asahi Kasei in Japan, paired it with a carbon anode, making a battery safe enough to sell. Others made key steps too, among them Jürgen Besenhard, Rachid Yazami and Jeff Dahn. Between 1991 and 2024 the price of lithium-ion cells fell by about 99%. Today the same batteries store solar and wind power for the grid, though mining the lithium, cobalt and nickel they need has its own costs for people and nature. Goodenough, Whittingham and Yoshino shared the 2019 Nobel Prize in Chemistry.",
+        "es": "En la década de 1970, Stanley Whittingham, en Exxon, hizo la primera batería recargable de litio, en la que los iones de litio se meten entre las capas de otro material, pero su litio metálico podía incendiarse. En 1980, John Goodenough y Koichi Mizushima en Oxford, y por su lado el grupo de Ned Godshall en Stanford, descubrieron que el óxido de litio y cobalto daba un voltaje mayor. En 1985, Yoshino, en Asahi Kasei, en Japón, lo combinó con un ánodo de carbono y logró una batería lo bastante segura para venderla. Otros dieron pasos clave, entre ellos Jürgen Besenhard, Rachid Yazami y Jeff Dahn. Entre 1991 y 2024, el precio de las celdas de ion de litio bajó cerca de un 99 %. Hoy esas mismas baterías guardan la energía solar y eólica para la red, aunque la minería del litio, el cobalto y el níquel que necesitan tiene sus propios costos para las personas y la naturaleza. Goodenough, Whittingham y Yoshino compartieron el Premio Nobel de Química de 2019."
+      },
+      "camera": { "lon": 30, "lat": 62, "zoom": 1.1 },
+      "places": [
+        {
+          "id": "lithium-ion-battery",
+          "name": { "en": "Lithium-ion battery", "es": "Batería de ion de litio" },
+          "at": [139.7029, 35.5308],
+          "cat": "energy",
+          "icon": "🔋",
+          "type": "invention",
+          "date": "1985",
+          "place": { "en": "Asahi Kasei's Kawasaki Laboratory, Kawasaki, Japan", "es": "Laboratorio de Asahi Kasei en Kawasaki, Japón" },
+          "by": { "en": "M. Stanley Whittingham, John Goodenough and Akira Yoshino", "es": "M. Stanley Whittingham, John Goodenough y Akira Yoshino" },
+          "text": {
+            "en": "A rechargeable battery in which lithium ions shuttle between two electrodes. Akira Yoshino built the first safe, practical one in 1985, on the work of Whittingham and Goodenough; Sony sold it from 1991.",
+            "es": "Una batería recargable en la que los iones de litio van y vienen entre dos electrodos. Akira Yoshino construyó la primera segura y práctica en 1985, a partir del trabajo de Whittingham y Goodenough; Sony la vendió desde 1991."
+          },
+          "wiki": { "en": "Lithium-ion battery", "es": "Batería de ion de litio" }
+        },
+        {
+          "id": "akira-yoshino",
+          "name": { "en": "Akira Yoshino", "es": "Akira Yoshino" },
+          "at": [139.6965, 35.5275],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1985",
+          "life": ["1948-01-30", null],
+          "place": { "en": "Kawasaki, Kanagawa, Japan", "es": "Kawasaki, Kanagawa, Japón" },
+          "text": {
+            "en": "A Japanese chemist who spent his whole career at Asahi Kasei. In 1985 he made the first prototype of the modern lithium-ion battery and received its basic patent.",
+            "es": "Químico japonés que pasó toda su carrera en Asahi Kasei. En 1985 hizo el primer prototipo de la batería moderna de ion de litio y obtuvo su patente básica."
+          },
+          "wiki": { "en": "Akira Yoshino", "es": "Akira Yoshino" }
+        },
+        {
+          "id": "john-goodenough",
+          "name": { "en": "John B. Goodenough", "es": "John B. Goodenough" },
+          "at": [-1.2537, 51.759],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1980",
+          "life": ["1922-07-25", "2023-06-25"],
+          "place": { "en": "University of Oxford, England", "es": "Universidad de Oxford, Inglaterra" },
+          "text": {
+            "en": "An American scientist who, heading Oxford's Inorganic Chemistry Laboratory, found the lithium cobalt oxide cathode in 1980. Oxford declined to patent it. He won the Nobel Prize at 97 and lived to 100.",
+            "es": "Científico estadounidense que, al frente del Laboratorio de Química Inorgánica de Oxford, encontró el cátodo de óxido de litio y cobalto en 1980. Oxford no quiso patentarlo. Ganó el Nobel a los 97 años y vivió hasta los 100."
+          },
+          "wiki": { "en": "John B. Goodenough", "es": "John B. Goodenough" }
+        },
+        {
+          "id": "stanley-whittingham",
+          "name": { "en": "M. Stanley Whittingham", "es": "M. Stanley Whittingham" },
+          "at": [-74.2446, 40.622],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1976",
+          "life": ["1941-12-22", null],
+          "place": { "en": "Exxon research laboratory, Linden, New Jersey, United States", "es": "Laboratorio de investigación de Exxon, Linden, Nueva Jersey, Estados Unidos" },
+          "text": {
+            "en": "A British-American chemist who, at Exxon in the 1970s, discovered how lithium ions can slip between the layers of a solid, and built the first rechargeable lithium battery.",
+            "es": "Químico británico-estadounidense que, en Exxon durante la década de 1970, descubrió cómo los iones de litio pueden meterse entre las capas de un sólido y construyó la primera batería recargable de litio."
+          },
+          "wiki": { "en": "M. Stanley Whittingham", "es": "Stanley Whittingham" }
+        }
+      ]
+    },
+    {
+      "date": "2026",
+      "title": { "en": "Where power comes from today", "es": "De dónde viene la energía hoy" },
+      "text": {
+        "en": "In 2025 coal and gas still made more than half of the world's electricity, but solar (9%) and wind (over 8%) grew fastest, and their growth outpaced the rise in demand.",
+        "es": "En 2025, el carbón y el gas todavía producían más de la mitad de la electricidad del mundo, pero la solar (9 %) y la eólica (más del 8 %) fueron las que más crecieron, y su aumento superó al de la demanda."
+      },
+      "details": {
+        "en": "In 2024 the world made about 30,850 TWh of electricity: 34% from coal, 22% from gas, 14% from water, 9% from nuclear power, 8% from wind and 7% from the sun. Burning coal, oil and gas is the main cause of climate change, so the race is on to replace them. Solar panels and onshore wind turbines became the cheapest sources of new power in most countries; in 2025 the world added more than 600 GW of solar panels, and renewables made up 85.6% of all new generating capacity. In April 2026, for the first time, wind and solar together made more electricity in a month than gas, according to the think tank Ember. Batteries, many of them lithium-ion, store sunshine for the evening. Old coal regions have had to reinvent themselves: the Zollverein mine in Essen, closed in 1986, is now a museum, and in October 2026 Finland licensed Onkalo, the world's first final store for spent nuclear fuel.",
+        "es": "En 2024, el mundo produjo unos 30 850 TWh de electricidad: el 34 % con carbón, el 22 % con gas, el 14 % con agua, el 9 % con energía nuclear, el 8 % con viento y el 7 % con sol. Quemar carbón, petróleo y gas es la principal causa del cambio climático, así que hay una carrera por reemplazarlos. Los paneles solares y los aerogeneradores en tierra se volvieron las fuentes más baratas de nueva energía en la mayoría de los países; en 2025 el mundo instaló más de 600 GW de paneles, y las renovables fueron el 85,6 % de toda la nueva capacidad de generación. En abril de 2026, por primera vez, el viento y el sol juntos produjeron en un mes más electricidad que el gas, según el centro de estudios Ember. Las baterías, muchas de ion de litio, guardan la luz del sol para la noche. Las viejas regiones del carbón han tenido que reinventarse: la mina de Zollverein, en Essen, cerrada en 1986, es hoy un museo, y en octubre de 2026 Finlandia autorizó Onkalo, el primer depósito definitivo del mundo para combustible nuclear gastado."
+      },
+      "camera": { "lon": 55, "lat": 42, "zoom": 1.3 },
+      "places": [
+        {
+          "id": "talatan-solar-park",
+          "name": { "en": "Talatan Solar Park", "es": "Parque solar de Talatan" },
+          "at": [100.5422, 36.1907],
+          "cat": "energy",
+          "icon": "☀️",
+          "type": "site",
+          "date": "2011",
+          "place": { "en": "Gonghe County, Qinghai, China", "es": "Condado de Gonghe, Qinghai, China" },
+          "text": {
+            "en": "The world's largest solar power plant, on the Tibetan Plateau: by March 2026 its panels covered about 420 km² and could deliver 21 GW. Tibetan herders' sheep graze beneath them.",
+            "es": "La mayor central solar del mundo, en la meseta tibetana: en marzo de 2026 sus paneles cubrían unos 420 km² y podían entregar 21 GW. Bajo ellos pastan las ovejas de los pastores tibetanos."
+          },
+          "details": {
+            "en": "Building began in 2011 on dry, wind-eroded grazing land beside the Longyangxia Dam on the Yellow River, whose hydropower helps balance the panels' output. The 'photovoltaic sheep' keep the grass down and earn local herders an income. China installed about 60% of the world's new solar capacity in 2023. On average it produces more than 18,000 GWh of electricity a year.",
+            "es": "La construcción empezó en 2011 en tierras de pastoreo secas y erosionadas por el viento, junto a la represa de Longyangxia, en el río Amarillo, cuya energía hidroeléctrica ayuda a equilibrar la producción de los paneles. Las «ovejas fotovoltaicas» mantienen corto el pasto y dan ingresos a los pastores de la zona. China instaló cerca del 60 % de la nueva capacidad solar del mundo en 2023. En promedio produce más de 18 000 GWh de electricidad al año."
+          },
+          "wiki": { "en": "Talatan Solar Park", "es": "" }
+        },
+        {
+          "id": "hornsea-wind-farm",
+          "name": { "en": "Hornsea Wind Farm", "es": "Parque eólico de Hornsea" },
+          "at": [1.791, 53.885],
+          "cat": "energy",
+          "icon": "🌬️",
+          "type": "site",
+          "date": "2019",
+          "place": { "en": "North Sea, 120 km off the coast of Yorkshire, England", "es": "Mar del Norte, a 120 km de la costa de Yorkshire, Inglaterra" },
+          "text": {
+            "en": "Hundreds of turbines standing in the North Sea, 120 km from land. When its second part was finished in 2022, with 2.6 GW in all, it was the largest offshore wind farm in the world.",
+            "es": "Cientos de aerogeneradores plantados en el mar del Norte, a 120 km de la costa. Cuando se terminó su segunda parte, en 2022, con 2,6 GW en total, era el mayor parque eólico marino del mundo."
+          },
+          "wiki": { "en": "Hornsea Wind Farm", "es": "" }
+        },
+        {
+          "id": "zollverein-coal-mine",
+          "name": { "en": "Zollverein Coal Mine", "es": "Mina de carbón de Zollverein" },
+          "at": [7.0441, 51.4865],
+          "cat": "energy",
+          "type": "site",
+          "date": "1851",
+          "until": "1986-12-23",
+          "place": { "en": "Essen, Ruhr, Germany", "es": "Essen, Ruhr, Alemania" },
+          "text": {
+            "en": "Coal was mined here in the Ruhr from 1851 to 1986. Its Shaft XII (1932), built in the Bauhaus style, could raise 12,000 tonnes a day. Today the mine is a museum and design centre.",
+            "es": "Aquí, en el Ruhr, se extrajo carbón de 1851 a 1986. Su Pozo XII (1932), construido en estilo Bauhaus, podía subir 12 000 toneladas al día. Hoy la mina es un museo y un centro de diseño."
+          },
+          "wiki": { "en": "Zollverein Coal Mine Industrial Complex", "es": "Complejo industrial de la mina de carbón de Zollverein" },
+          "whs": 975
+        },
+        {
+          "id": "three-gorges-dam",
+          "name": { "en": "Three Gorges Dam", "es": "Represa de las Tres Gargantas" },
+          "at": [111.0036, 30.8233],
+          "cat": "energy",
+          "icon": "💧",
+          "type": "site",
+          "date": "2003",
+          "end": "2012",
+          "place": { "en": "Yangtze River, near Yichang, Hubei, China", "es": "Río Yangtsé, cerca de Yichang, Hubei, China" },
+          "text": {
+            "en": "The largest power station in the world: 32 turbines of 700 MW each, all running since 2012. It also tames the Yangtze's floods, but about 1.24 million people had to leave their homes.",
+            "es": "La mayor central eléctrica del mundo: 32 turbinas de 700 MW cada una, todas en marcha desde 2012. También doma las crecidas del Yangtsé, pero unos 1,24 millones de personas tuvieron que dejar sus hogares."
+          },
+          "wiki": { "en": "Three Gorges Dam", "es": "Presa de las Tres Gargantas" },
+          "details": {
+            "en": "Sun Yat-sen imagined a dam here in 1919. The dam wall, 185 m high and 2.3 km long, was finished in 2006, and a ship lift in 2015. It protects millions of people on the Yangtze plain from floods, and China's government sees it as a source of national pride. But its reservoir flooded parts of 13 cities, 140 towns and 1,350 villages. Living conditions grew worse for many of those moved, and hundreds of thousands could not find work.",
+            "es": "Sun Yat-sen imaginó una represa aquí en 1919. El muro, de 185 m de alto y 2,3 km de largo, se terminó en 2006, y un ascensor de barcos en 2015. Protege de las crecidas a millones de personas de la llanura del Yangtsé, y el gobierno chino la ve como un motivo de orgullo nacional. Pero su embalse inundó partes de 13 ciudades, 140 pueblos y 1350 aldeas. Para muchas de las personas trasladadas la vida empeoró, y cientos de miles no encontraron trabajo."
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Each new source of power changed how people lived: water and wind freed hands from grinding, steam built factories and railways, electricity lit homes and ran machines, and engines put the world on wheels. The price was paid by miners, by people moved for dams, by workers forced to labour, and by a climate warmed by burning coal, oil and gas. In 2026 the sun and the wind, the oldest sources of all, are growing faster than any other.",
+    "es": "Cada nueva fuente de energía cambió la vida de la gente: el agua y el viento liberaron las manos de moler, el vapor levantó fábricas y ferrocarriles, la electricidad iluminó los hogares y movió las máquinas, y los motores pusieron el mundo sobre ruedas. Lo pagaron los mineros, las personas desplazadas por las represas, los trabajadores forzados y un clima calentado al quemar carbón, petróleo y gas. En 2026, el sol y el viento, las fuentes más antiguas de todas, crecen más rápido que ninguna otra."
+  },
+  "sources": [
+    {
+      "title": "Water wheel (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Water_wheel"
+    },
+    {
+      "title": "Barbegal aqueduct and mills (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Barbegal_aqueduct_and_mills"
+    },
+    {
+      "title": "Du Shi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Du_Shi"
+    },
+    {
+      "title": "Hierapolis sawmill (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hierapolis_sawmill"
+    },
+    {
+      "title": "Shushtar Historical Hydraulic System (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shushtar_Historical_Hydraulic_System"
+    },
+    {
+      "title": "Windmill (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Windmill"
+    },
+    {
+      "title": "Panemone windmill (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Panemone_windmill"
+    },
+    {
+      "title": "Nashtifan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nashtifan"
+    },
+    {
+      "title": "Steam engine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Steam_engine"
+    },
+    {
+      "title": "Newcomen atmospheric engine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Newcomen_atmospheric_engine"
+    },
+    {
+      "title": "Thomas Newcomen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Thomas_Newcomen"
+    },
+    {
+      "title": "Thomas Savery (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Thomas_Savery"
+    },
+    {
+      "title": "Coalbrookdale (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Coalbrookdale"
+    },
+    {
+      "title": "Kinderdijk windmills (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kinderdijk_windmills"
+    },
+    {
+      "title": "Cornelis Corneliszoon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cornelis_Corneliszoon"
+    },
+    {
+      "title": "Beemster (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Beemster"
+    },
+    {
+      "title": "Wouda pumping station (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wouda_pumping_station"
+    },
+    {
+      "title": "Watt steam engine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Watt_steam_engine"
+    },
+    {
+      "title": "James Watt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/James_Watt"
+    },
+    {
+      "title": "Albion Mills, Southwark (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Albion_Mills,_Southwark"
+    },
+    {
+      "title": "Cornwall and West Devon Mining Landscape (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cornwall_and_West_Devon_Mining_Landscape"
+    },
+    {
+      "title": "Voltaic pile (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Voltaic_pile"
+    },
+    {
+      "title": "Alessandro Volta (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Alessandro_Volta"
+    },
+    {
+      "title": "Locomotion No. 1 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Locomotion_No._1"
+    },
+    {
+      "title": "Stephenson's Rocket (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Stephenson%27s_Rocket"
+    },
+    {
+      "title": "George Stephenson (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/George_Stephenson"
+    },
+    {
+      "title": "Michael Faraday (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Michael_Faraday"
+    },
+    {
+      "title": "Homopolar generator (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Homopolar_generator"
+    },
+    {
+      "title": "Dynamo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dynamo"
+    },
+    {
+      "title": "Electromagnetic induction (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Electromagnetic_induction"
+    },
+    {
+      "title": "Incandescent light bulb (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Incandescent_light_bulb"
+    },
+    {
+      "title": "Joseph Swan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Joseph_Swan"
+    },
+    {
+      "title": "Thomas Edison (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Thomas_Edison"
+    },
+    {
+      "title": "Cragside (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cragside"
+    },
+    {
+      "title": "Holborn Viaduct power station (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Holborn_Viaduct_power_station"
+    },
+    {
+      "title": "Pearl Street Station (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pearl_Street_Station"
+    },
+    {
+      "title": "Internal combustion engine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Internal_combustion_engine"
+    },
+    {
+      "title": "Benz Patent-Motorwagen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Benz_Patent-Motorwagen"
+    },
+    {
+      "title": "Carl Benz (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Carl_Benz"
+    },
+    {
+      "title": "Bertha Benz (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bertha_Benz"
+    },
+    {
+      "title": "Diesel engine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Diesel_engine"
+    },
+    {
+      "title": "Völklingen Ironworks (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/V%C3%B6lklingen_Ironworks"
+    },
+    {
+      "title": "Wind turbine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wind_turbine"
+    },
+    {
+      "title": "James Blyth (engineer) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/James_Blyth_(engineer)"
+    },
+    {
+      "title": "Charles F. Brush (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Charles_F._Brush"
+    },
+    {
+      "title": "Poul la Cour (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Poul_la_Cour"
+    },
+    {
+      "title": "Nikola Tesla (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nikola_Tesla"
+    },
+    {
+      "title": "George Westinghouse (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/George_Westinghouse"
+    },
+    {
+      "title": "Induction motor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Induction_motor"
+    },
+    {
+      "title": "Adams Power Plant Transformer House (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Adams_Power_Plant_Transformer_House"
+    },
+    {
+      "title": "International Electrotechnical Exhibition (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/International_Electrotechnical_Exhibition"
+    },
+    {
+      "title": "Vulcan Street Plant (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vulcan_Street_Plant"
+    },
+    {
+      "title": "Rjukan–Notodden Industrial Heritage Site (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rjukan%E2%80%93Notodden_Industrial_Heritage_Site"
+    },
+    {
+      "title": "Hoover Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hoover_Dam"
+    },
+    {
+      "title": "Itaipu Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Itaipu_Dam"
+    },
+    {
+      "title": "Three Gorges Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Three_Gorges_Dam"
+    },
+    {
+      "title": "Solar cell (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Solar_cell"
+    },
+    {
+      "title": "Daryl Chapin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Daryl_Chapin"
+    },
+    {
+      "title": "Obninsk Nuclear Power Plant (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Obninsk_Nuclear_Power_Plant"
+    },
+    {
+      "title": "Calder Hall nuclear power station (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Calder_Hall_nuclear_power_station"
+    },
+    {
+      "title": "Nuclear power (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nuclear_power"
+    },
+    {
+      "title": "Lithium-ion battery (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lithium-ion_battery"
+    },
+    {
+      "title": "Akira Yoshino (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Akira_Yoshino"
+    },
+    {
+      "title": "John B. Goodenough (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/John_B._Goodenough"
+    },
+    {
+      "title": "M. Stanley Whittingham (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/M._Stanley_Whittingham"
+    },
+    {
+      "title": "Electricity generation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Electricity_generation"
+    },
+    {
+      "title": "Solar power (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Solar_power"
+    },
+    {
+      "title": "Wind power (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wind_power"
+    },
+    {
+      "title": "Renewable energy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Renewable_energy"
+    },
+    {
+      "title": "Hydroelectricity (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hydroelectricity"
+    },
+    {
+      "title": "Talatan Solar Park (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Talatan_Solar_Park"
+    },
+    {
+      "title": "Hornsea Wind Farm (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hornsea_Wind_Farm"
+    },
+    {
+      "title": "Zollverein Coal Mine Industrial Complex (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zollverein_Coal_Mine_Industrial_Complex"
+    }
+  ]
+}

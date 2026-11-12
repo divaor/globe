@@ -1,0 +1,1343 @@
+{
+  "id": "through-the-lens",
+  "name": { "en": "Through the lens", "es": "A través de la lente" },
+  "icon": "🔭",
+  "era": "early-modern",
+  "region": { "en": "The Middle East, Europe, the Americas and space", "es": "Oriente Medio, Europa, América y el espacio" },
+  "start": "1021",
+  "end": "2021-12-25",
+  "summary": {
+    "en": "From a scholar in Cairo who explained how we see to reading glasses, telescopes, microscopes, photography, cinema and telescopes in space: where people learned to bend light and keep its pictures.",
+    "es": "De un sabio de El Cairo que explicó cómo vemos a los anteojos, los telescopios, los microscopios, la fotografía, el cine y los telescopios espaciales: dónde aprendimos a doblar la luz y a guardar sus imágenes."
+  },
+  "camera": { "lon": 12, "lat": 42, "zoom": 2.3 },
+  "sides": [
+    { "id": "spread", "name": { "en": "How lenses and pictures travelled", "es": "Cómo viajaron las lentes y las imágenes" }, "color": "#e67e22" }
+  ],
+  "steps": [
+    {
+      "date": "1021",
+      "title": { "en": "How we see", "es": "Cómo vemos" },
+      "text": {
+        "en": "In Cairo, the scholar Ibn al-Haytham finished his Book of Optics around 1021. He showed by experiment that we see because light enters the eye, and he explained the 'dark room', the camera obscura.",
+        "es": "En El Cairo, el sabio Ibn al-Haytham terminó hacia 1021 su Libro de óptica. Demostró con experimentos que vemos porque la luz entra en el ojo, y explicó el «cuarto oscuro», la cámara oscura."
+      },
+      "details": {
+        "en": "Born in Basra, in today's Iraq, around 965, Ibn al-Haytham spent most of his working life in Cairo, the capital of the Fatimid caliphs. Greek scholars such as Euclid and Ptolemy had taught that the eye sends out rays towards what it sees. In seven books, written between 1011 and 1021, he argued the opposite and tested his ideas with lenses, mirrors and beams of light passing through small holes. He insisted that every theory be checked by careful experiment, which is why many call him a pioneer of the scientific method. His book was translated into Latin around 1200 and, as Alhazen, he was read by Roger Bacon, Witelo, Kepler and Descartes. Far to the east, the Chinese scholar Shen Kuo also wrote about the camera obscura, in 1088.",
+        "es": "Nacido en Basora, en el actual Irak, hacia 965, Ibn al-Haytham pasó la mayor parte de su vida de trabajo en El Cairo, la capital de los califas fatimíes. Sabios griegos como Euclides y Ptolomeo habían enseñado que el ojo lanza rayos hacia lo que mira. En siete libros, escritos entre 1011 y 1021, él defendió lo contrario y puso a prueba sus ideas con lentes, espejos y haces de luz que pasaban por agujeros pequeños. Insistía en comprobar cada teoría con experimentos cuidadosos, por eso muchos lo consideran un pionero del método científico. Su libro se tradujo al latín hacia 1200 y, con el nombre de Alhacén, lo leyeron Roger Bacon, Witelo, Kepler y Descartes. Muy lejos, en China, el sabio Shen Kuo también escribió sobre la cámara oscura, en 1088."
+      },
+      "camera": { "lon": 31.25, "lat": 30.05, "zoom": 8 },
+      "places": [
+        {
+          "id": "ibn-al-haytham",
+          "name": { "en": "Ibn al-Haytham (Alhazen)", "es": "Ibn al-Haytham (Alhacén)" },
+          "at": [31.2627, 30.0457],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1021",
+          "life": ["965", "1040"],
+          "place": { "en": "Cairo, Egypt", "es": "El Cairo, Egipto" },
+          "text": {
+            "en": "A mathematician and physicist from Basra who worked in Fatimid Cairo. Often called the father of modern optics, he showed that we see when light from things enters the eye.",
+            "es": "Matemático y físico de Basora que trabajó en El Cairo fatimí. Llamado a menudo el padre de la óptica moderna, demostró que vemos cuando la luz de las cosas entra en el ojo."
+          },
+          "details": {
+            "en": "A story, perhaps a legend, says he promised the caliph al-Hakim to control the floods of the Nile, failed, and pretended to be mad to escape the caliph's anger. He is said to have written the Book of Optics while kept in hiding, until al-Hakim died in 1021. He then lived near the al-Azhar mosque, earning his living from his writings and his teaching, and also wrote on astronomy, mathematics and the doubts he had about Ptolemy.",
+            "es": "Un relato, quizá una leyenda, cuenta que prometió al califa al-Hakim controlar las crecidas del Nilo, fracasó y se fingió loco para escapar de su ira. Se dice que escribió el Libro de óptica mientras estaba escondido, hasta que al-Hakim murió en 1021. Después vivió cerca de la mezquita de al-Azhar, ganándose la vida con sus escritos y sus clases, y escribió también sobre astronomía, matemáticas y las dudas que le inspiraba Ptolomeo."
+          },
+          "wiki": { "en": "Ibn al-Haytham", "es": "Alhacén" }
+        },
+        {
+          "id": "book-of-optics",
+          "name": { "en": "Book of Optics", "es": "Libro de óptica" },
+          "at": [31.2612, 30.0503],
+          "cat": "optics",
+          "type": "work",
+          "date": "1021",
+          "by": { "en": "Ibn al-Haytham", "es": "Ibn al-Haytham" },
+          "place": { "en": "Cairo, Egypt", "es": "El Cairo, Egipto" },
+          "text": {
+            "en": "Kitab al-Manazir: seven books on light and sight, written between 1011 and 1021. Its Latin version, De aspectibus, shaped the study of optics in Europe from the 13th to the 17th century.",
+            "es": "El Kitab al-Manazir: siete libros sobre la luz y la vista, escritos entre 1011 y 1021. Su versión latina, De aspectibus, marcó el estudio de la óptica en Europa entre los siglos XIII y XVII."
+          },
+          "details": {
+            "en": "Ibn al-Haytham described the parts of the eye, how mirrors reflect, how light bends when it passes from air into water or glass, and how a lens magnifies. An unknown scholar translated it into Latin around 1200, and in 1572 Friedrich Risner printed it, giving its author the name Alhazen. Manuscripts survive in libraries from Istanbul to Oxford.",
+            "es": "Ibn al-Haytham describió las partes del ojo, cómo reflejan los espejos, cómo se desvía la luz al pasar del aire al agua o al vidrio, y cómo aumenta una lente. Un sabio desconocido lo tradujo al latín hacia 1200, y en 1572 Friedrich Risner lo imprimió y llamó Alhazen a su autor. Se conservan manuscritos en bibliotecas desde Estambul hasta Oxford."
+          },
+          "wiki": { "en": "Book of Optics", "es": "Libro de Óptica" }
+        },
+        {
+          "id": "camera-obscura",
+          "name": { "en": "Camera obscura", "es": "Cámara oscura" },
+          "at": [31.2575, 30.0478],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1021",
+          "by": { "en": "unknown", "es": "desconocido" },
+          "place": { "en": "Cairo, Egypt, where Ibn al-Haytham explained it", "es": "El Cairo, Egipto, donde Ibn al-Haytham la explicó" },
+          "text": {
+            "en": "A dark room with a tiny hole shows an upside-down picture of the world outside. Mozi in China and Aristotle noticed it; Ibn al-Haytham was the first to describe it clearly.",
+            "es": "Un cuarto oscuro con un agujerito muestra una imagen invertida del mundo de afuera. Mozi en China y Aristóteles ya lo notaron; Ibn al-Haytham fue el primero en describirlo con claridad."
+          },
+          "details": {
+            "en": "Ibn al-Haytham used it to watch eclipses of the Sun safely. Later, with a lens in the hole, it became a drawing aid: Giambattista della Porta described one in Naples in 1558, and in 1604 Johannes Kepler gave it its Latin name, 'dark chamber'. By the 18th century artists carried it as a portable box, and the painter Joshua Reynolds owned one disguised as a book; whether Vermeer used one is still hotly debated. In the 1820s Nicéphore Niépce put a light-sensitive plate inside such a box and made the first photograph.",
+            "es": "Ibn al-Haytham la usó para observar sin peligro los eclipses de Sol. Más tarde, con una lente en el agujero, se volvió una ayuda para dibujar: Giambattista della Porta describió una en Nápoles en 1558, y en 1604 Johannes Kepler le dio su nombre latino, «cámara oscura». En el siglo XVIII los artistas la llevaban como una caja portátil, y el pintor Joshua Reynolds tenía una disfrazada de libro; si Vermeer la usó todavía se discute con pasión. En la década de 1820, Nicéphore Niépce puso una placa sensible a la luz dentro de una de esas cajas e hizo la primera fotografía."
+          },
+          "wiki": { "en": "Camera obscura", "es": "Cámara oscura" },
+          "img": "1646 Athanasius Kircher - Camera obscura.jpg"
+        }
+      ]
+    },
+    {
+      "date": "1286",
+      "title": { "en": "Glasses for reading", "es": "Anteojos para leer" },
+      "text": {
+        "en": "Around 1286, someone in Pisa or Florence set two lenses in a frame: the first eyeglasses. Venice, with the clear glass of Murano, soon became the great centre for making them.",
+        "es": "Hacia 1286, alguien en Pisa o Florencia montó dos lentes en un armazón: los primeros anteojos. Venecia, con el vidrio claro de Murano, pronto se volvió el gran centro donde se fabricaban."
+      },
+      "details": {
+        "en": "In a sermon in Florence on 23 February 1306, the Dominican friar Giordano da Pisa said that the art of making eyeglasses had been found 'not yet twenty years' before, and that he had met and talked with the man who first made them. That inventor's name is lost; a later claim for Salvino degli Armati of Florence has been shown to be false. Giordano's fellow friar in Pisa, Alessandro della Spina, learned to make glasses too and, his monastery's chronicle says, shared them 'with a cheerful and willing heart'. Before glasses, scholars read with 'reading stones', magnifying lenses laid on the page. The first glasses had convex lenses, for long sight and for ageing eyes; lenses for short sight came in the 15th century.",
+        "es": "En un sermón en Florencia, el 23 de febrero de 1306, el fraile dominico Giordano da Pisa dijo que el arte de hacer anteojos se había descubierto «hace aún no veinte años», y que había conocido y hablado con el hombre que los hizo primero. El nombre de ese inventor se perdió; una atribución posterior a Salvino degli Armati, de Florencia, resultó ser falsa. Alessandro della Spina, compañero de Giordano en Pisa, también aprendió a hacerlos y, según la crónica de su convento, los compartió «con corazón alegre y generoso». Antes de los anteojos se leía con «piedras de lectura», lentes de aumento apoyadas sobre la página. Los primeros anteojos tenían lentes convexas, para la hipermetropía y la vista cansada; las lentes para la miopía llegaron en el siglo XV."
+      },
+      "camera": { "lon": 11.4, "lat": 44.6, "zoom": 6.3 },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [[12.3525, 45.458], [11.35, 46.5], [11.0, 48.5], [10.4, 50.6], [10.1856, 52.58]],
+          "label": { "en": "Glasses reach northern Europe by 1400", "es": "Los anteojos llegan al norte de Europa hacia 1400" }
+        }
+      ],
+      "places": [
+        {
+          "id": "eyeglasses",
+          "name": { "en": "Eyeglasses", "es": "Anteojos" },
+          "at": [10.4035, 43.7208],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1286",
+          "by": { "en": "unknown", "es": "desconocido" },
+          "place": { "en": "Pisa or Florence, Italy", "es": "Pisa o Florencia, Italia" },
+          "text": {
+            "en": "Two convex lenses riveted together and balanced on the nose, invented in Tuscany around 1286 by a craftsman whose name is lost. They let people with ageing eyes keep on reading.",
+            "es": "Dos lentes convexas unidas con un remache y apoyadas en la nariz, inventadas en la Toscana hacia 1286 por un artesano cuyo nombre se perdió. Permitieron seguir leyendo a quienes tenían la vista cansada."
+          },
+          "details": {
+            "en": "The first frames were 'rivet spectacles': two magnifying glasses joined at their handles to grip the nose. The oldest surviving pairs, from around 1400, were found under the floorboards of the convent of Wienhausen in Germany. Arms that hook over the ears only came in the 1700s. In China, glasses are first mentioned in the 15th century, by sources that say they were imported. In 1604 Johannes Kepler finally explained why convex and concave lenses help the eye. The picture shows an apostle wearing rivet spectacles, painted by Conrad von Soest in 1403.",
+            "es": "Los primeros armazones eran «anteojos de remache»: dos lupas unidas por sus mangos para sujetarse en la nariz. Los pares más antiguos que se conservan, de hacia 1400, aparecieron bajo el piso del convento de Wienhausen, en Alemania. Las patillas que se apoyan en las orejas llegaron recién en el siglo XVIII. En China, los anteojos se mencionan por primera vez en el siglo XV, en textos que dicen que eran importados. En 1604 Johannes Kepler explicó por fin por qué las lentes convexas y cóncavas ayudan al ojo. La imagen muestra a un apóstol con anteojos de remache, pintado por Conrad von Soest en 1403."
+          },
+          "wiki": { "en": "Glasses", "es": "Gafas" },
+          "img": "Conrad von Soest, 'Brillenapostel' (1403).jpg"
+        },
+        {
+          "id": "giordano-da-pisa-sermon",
+          "name": { "en": "Giordano da Pisa's sermon", "es": "El sermón de Giordano da Pisa" },
+          "at": [11.2497, 43.7736],
+          "cat": "event",
+          "type": "event",
+          "date": "1306-02-23",
+          "place": { "en": "Santa Maria Novella, Florence, Italy", "es": "Santa Maria Novella, Florencia, Italia" },
+          "text": {
+            "en": "The oldest record of eyeglasses: a Dominican friar preaching in Florence said they had been invented less than twenty years before, and that he had spoken with the inventor.",
+            "es": "El registro más antiguo de los anteojos: un fraile dominico que predicaba en Florencia dijo que se habían inventado hacía menos de veinte años y que había hablado con el inventor."
+          },
+          "details": {
+            "en": "Giordano da Pisa, born around 1255, was one of the first preachers to speak to crowds in Italian rather than Latin, and his listeners took notes that survive. From 1305 he taught at the Dominican church of Santa Maria Novella. His friends in Pisa, at the convent of Santa Caterina, were among the first to make the new glasses.",
+            "es": "Giordano da Pisa, nacido hacia 1255, fue uno de los primeros predicadores que hablaron a las multitudes en italiano y no en latín, y se conservan las notas que tomaron sus oyentes. Desde 1305 enseñó en la iglesia dominica de Santa Maria Novella. Sus amigos de Pisa, en el convento de Santa Caterina, estuvieron entre los primeros que fabricaron los nuevos anteojos."
+          },
+          "wiki": { "en": "Jordan of Pisa", "es": "" },
+          "whs": 174
+        },
+        {
+          "id": "murano-glassmakers",
+          "name": { "en": "Murano glassmakers", "es": "Vidrieros de Murano" },
+          "at": [12.3525, 45.458],
+          "cat": "lab",
+          "type": "place",
+          "date": "1291-11-08",
+          "place": { "en": "Murano, Venice, Italy", "es": "Murano, Venecia, Italia" },
+          "text": {
+            "en": "In 1291 Venice moved its glass furnaces to the island of Murano, away from the wooden city. By 1301 it had rules for selling eyeglasses, and spectacle-makers formed their own guild in 1320.",
+            "es": "En 1291 Venecia trasladó sus hornos de vidrio a la isla de Murano, lejos de la ciudad de madera. Hacia 1301 ya tenía reglas para vender anteojos, y los fabricantes formaron su propio gremio en 1320."
+          },
+          "details": {
+            "en": "Venetian glassmakers had learned much from the more advanced glass of Syria and Egypt. Their guild guarded its secrets fiercely: a glassworker who left Venice without permission could see his family imprisoned. The clear, even glass of Murano made the best lenses of the time, and Venice became the first great centre of the spectacle trade.",
+            "es": "Los vidrieros venecianos habían aprendido mucho del vidrio, más avanzado, de Siria y Egipto. Su gremio guardaba sus secretos con dureza: si un vidriero se iba de Venecia sin permiso, su familia podía ir a la cárcel. El vidrio claro y parejo de Murano daba las mejores lentes de su época, y Venecia se convirtió en el primer gran centro del comercio de anteojos."
+          },
+          "wiki": { "en": "Venetian glass", "es": "Vidrio veneciano" },
+          "whs": 394
+        },
+        {
+          "id": "hugh-of-saint-cher-portrait",
+          "name": { "en": "The first painting of glasses", "es": "La primera pintura de unos anteojos" },
+          "at": [12.2408, 45.666],
+          "cat": "optics",
+          "type": "work",
+          "date": "1352",
+          "by": { "en": "Tommaso da Modena", "es": "Tommaso da Modena" },
+          "place": { "en": "Former convent of San Nicolò, Treviso, Italy", "es": "Antiguo convento de San Nicolò, Treviso, Italia" },
+          "text": {
+            "en": "In 1352 Tommaso da Modena painted Cardinal Hugh of Saint-Cher reading with spectacles on his nose. It is the oldest known picture of eyeglasses.",
+            "es": "En 1352, Tommaso da Modena pintó al cardenal Hugo de Saint-Cher leyendo con anteojos sobre la nariz. Es la imagen más antigua que se conoce de unos anteojos."
+          },
+          "details": {
+            "en": "The fresco is one of forty portraits of Dominican scholars at their desks, painted for the chapter room of the Dominican convent of San Nicolò in Treviso, today a seminary. The cardinal had died before eyeglasses were invented, so the painter gave him the newest tool of a scholar of his own day.",
+            "es": "El fresco es uno de cuarenta retratos de sabios dominicos en sus escritorios, pintados para la sala capitular del convento dominico de San Nicolò, en Treviso, hoy un seminario. El cardenal había muerto antes de que se inventaran los anteojos, así que el pintor le dio la herramienta más nueva de los sabios de su tiempo."
+          },
+          "wiki": { "en": "Tommaso da Modena", "es": "Tommaso da Modena" },
+          "img": "Tommaso da modena, ritratti di domenicani (Ugo di Provenza) 1352 150cm, treviso, ex convento di san niccolò, sala del capitolo.jpg"
+        }
+      ]
+    },
+    {
+      "date": "1608-10-02",
+      "title": { "en": "A tube to see far", "es": "Un tubo para ver lejos" },
+      "text": {
+        "en": "On 2 October 1608 Hans Lipperhey, a spectacle-maker in Middelburg, asked the Dutch government for a patent on a tube that made distant things look near. He did not get it: others were making them too.",
+        "es": "El 2 de octubre de 1608, Hans Lipperhey, un fabricante de anteojos de Middelburg, pidió al gobierno neerlandés una patente para un tubo que acercaba las cosas lejanas. No se la dieron: otros también los fabricaban."
+      },
+      "details": {
+        "en": "Lipperhey's 'perspective glass' had two lenses at the ends of a tube and magnified about three times. A few weeks later Jacob Metius of Alkmaar asked for a patent on a similar device, and decades later the son of another Middelburg spectacle-maker, Zacharias Janssen, claimed that his father had been first. No one knows for sure who made the first one. The news spread fast. A printed report on an embassy from King Ekathotsarot of Siam, which had reached The Hague in September 1608, ended with a note on the new spyglass, and it was read across Europe. Paolo Sarpi in Venice heard of it that November, and by the summer of 1609 Thomas Harriot in England was looking at the sky through a telescope that magnified six times.",
+        "es": "El «anteojo de larga vista» de Lipperhey tenía dos lentes en los extremos de un tubo y aumentaba unas tres veces. Pocas semanas después, Jacob Metius, de Alkmaar, pidió una patente para un aparato parecido, y décadas más tarde el hijo de otro óptico de Middelburg, Zacharias Janssen, afirmó que su padre había sido el primero. Nadie sabe con certeza quién hizo el primero. La noticia corrió rápido. Un informe impreso sobre una embajada del rey Ekathotsarot de Siam, llegada a La Haya en septiembre de 1608, terminaba con una nota sobre el nuevo catalejo, y se leyó en toda Europa. Paolo Sarpi se enteró en Venecia en noviembre, y en el verano de 1609 Thomas Harriot ya miraba el cielo en Inglaterra con un telescopio que aumentaba seis veces."
+      },
+      "camera": { "lon": 5, "lat": 49.4, "zoom": 4.2 },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [[4.3127, 52.0799], [6.5, 49.5], [8.6, 47.0], [11.0, 45.9], [12.3356, 45.438]],
+          "label": { "en": "News of the spyglass, 1608–1609", "es": "La noticia del catalejo, 1608-1609" }
+        },
+        {
+          "side": "spread",
+          "path": [[4.3127, 52.0799], [2.0, 51.75], [-0.3115, 51.4768]]
+        }
+      ],
+      "places": [
+        {
+          "id": "telescope",
+          "name": { "en": "Telescope", "es": "Telescopio" },
+          "at": [3.6136, 51.4988],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1608-10-02",
+          "by": { "en": "Hans Lipperhey", "es": "Hans Lipperhey" },
+          "place": { "en": "Middelburg, Netherlands", "es": "Middelburg, Países Bajos" },
+          "text": {
+            "en": "The first record of a telescope is Lipperhey's patent request of 1608. Who built the very first is unknown, but within two years telescopes had changed astronomy for ever.",
+            "es": "El primer registro de un telescopio es la solicitud de patente de Lipperhey de 1608. No se sabe quién construyó el primero, pero en dos años los telescopios cambiaron la astronomía para siempre."
+          },
+          "details": {
+            "en": "Lipperhey, born in Wesel in Germany around 1570, had settled in Middelburg in 1594 as a lens grinder. The government refused his patent because the idea was already known, but paid him well to make binocular versions. Many stories tell how he hit on it, one with children playing with lenses in his shop; none can be proved. The name 'telescope', Greek for 'far-seeing', was coined in 1611 at a banquet in Rome held in Galileo's honour. The picture, from 1624, is one of the oldest drawings of a Dutch telescope.",
+            "es": "Lipperhey, nacido en Wesel, Alemania, hacia 1570, se había instalado en Middelburg en 1594 como pulidor de lentes. El gobierno le negó la patente porque la idea ya se conocía, pero le pagó bien por fabricar versiones binoculares. Muchas historias cuentan cómo se le ocurrió, una con niños que jugaban con lentes en su taller; ninguna se puede probar. El nombre «telescopio», que en griego significa «ver lejos», se inventó en 1611 en un banquete en Roma en honor de Galileo. La imagen, de 1624, es uno de los dibujos más antiguos de un telescopio neerlandés."
+          },
+          "wiki": { "en": "Telescope", "es": "Telescopio" },
+          "img": "Emblemata 1624.jpg"
+        },
+        {
+          "id": "jacob-metius",
+          "name": { "en": "Jacob Metius", "es": "Jacob Metius" },
+          "at": [4.7485, 52.6324],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1608-10",
+          "place": { "en": "Alkmaar, Netherlands", "es": "Alkmaar, Países Bajos" },
+          "text": {
+            "en": "An instrument-maker from Alkmaar who asked for a telescope patent a few weeks after Lipperhey. Hurt when he was turned down, he hid his telescope and ordered his tools destroyed at his death.",
+            "es": "Un fabricante de instrumentos de Alkmaar que pidió una patente de telescopio pocas semanas después que Lipperhey. Dolido por el rechazo, escondió su telescopio y ordenó destruir sus herramientas a su muerte."
+          },
+          "wiki": { "en": "Jacob Metius", "es": "Jacob Metius" }
+        },
+        {
+          "id": "embassy-of-siam-report",
+          "name": { "en": "News from the embassy of Siam", "es": "Noticias de la embajada de Siam" },
+          "at": [4.3127, 52.0799],
+          "cat": "event",
+          "type": "event",
+          "date": "1608-09-10",
+          "place": { "en": "The Hague, Netherlands", "es": "La Haya, Países Bajos" },
+          "text": {
+            "en": "Envoys of King Ekathotsarot of Siam, today's Thailand, reached The Hague in September 1608. The printed report of their visit ended with news of the spyglass, and it travelled all over Europe.",
+            "es": "Los enviados del rey Ekathotsarot de Siam, la actual Tailandia, llegaron a La Haya en septiembre de 1608. El informe impreso de su visita terminaba con la noticia del catalejo, y circuló por toda Europa."
+          },
+          "wiki": { "en": "History of the telescope", "es": "Historia del telescopio" }
+        },
+        {
+          "id": "thomas-harriot",
+          "name": { "en": "Thomas Harriot", "es": "Thomas Harriot" },
+          "at": [-0.3115, 51.4768],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1609",
+          "life": ["1560", "1621-07-02"],
+          "place": { "en": "Syon House, near London, England", "es": "Syon House, cerca de Londres, Inglaterra" },
+          "text": {
+            "en": "In the summer of 1609, four months before Galileo, this English mathematician drew the Moon through a six-power telescope. He published almost nothing, so his drawings stayed unknown for centuries.",
+            "es": "En el verano de 1609, cuatro meses antes que Galileo, este matemático inglés dibujó la Luna con un telescopio de seis aumentos. Casi no publicó nada, así que sus dibujos quedaron olvidados durante siglos."
+          },
+          "wiki": { "en": "Thomas Harriot", "es": "Thomas Harriot" }
+        }
+      ]
+    },
+    {
+      "date": "1610-03-13",
+      "title": { "en": "Moons around Jupiter", "es": "Lunas alrededor de Júpiter" },
+      "text": {
+        "en": "In Padua, Galileo built ever better telescopes and turned them to the sky. He saw mountains on the Moon and four moons circling Jupiter, and told the world in a little book printed in Venice in March 1610.",
+        "es": "En Padua, Galileo construyó telescopios cada vez mejores y los apuntó al cielo. Vio montañas en la Luna y cuatro lunas que giraban alrededor de Júpiter, y lo contó en un librito impreso en Venecia en marzo de 1610."
+      },
+      "details": {
+        "en": "Galileo, professor of mathematics at Padua, heard of the Dutch spyglass in 1609 and ground his own lenses. On 25 August 1609 he showed a telescope magnifying 8 or 9 times to the lawmakers of Venice, and he soon reached about 20 times. From the end of November he drew the mountains and craters of the Moon, and on 7 January 1610 he noticed three faint 'stars' in a line beside Jupiter that moved from night to night: they were moons. In Ansbach, in Germany, Simon Marius saw them one night later, and the names we use, Io, Europa, Ganymede and Callisto, are his. Galileo's Sidereus Nuncius, the 'Starry Messenger', came out on 13 March 1610, less than two months after his first sighting.",
+        "es": "Galileo, profesor de matemáticas en Padua, se enteró del catalejo neerlandés en 1609 y pulió sus propias lentes. El 25 de agosto de 1609 mostró a los legisladores de Venecia un telescopio que aumentaba 8 o 9 veces, y pronto llegó a unas 20. Desde fines de noviembre dibujó las montañas y los cráteres de la Luna, y el 7 de enero de 1610 vio junto a Júpiter tres «estrellas» débiles en línea que cambiaban de lugar cada noche: eran lunas. En Ansbach, Alemania, Simon Marius las vio una noche después, y los nombres que usamos, Ío, Europa, Ganimedes y Calisto, son suyos. El Sidereus Nuncius de Galileo, el «Mensajero sideral», salió el 13 de marzo de 1610, menos de dos meses después de su primera observación."
+      },
+      "camera": { "lon": 11.9, "lat": 44.7, "zoom": 6.6 },
+      "places": [
+        {
+          "id": "galileo-galilei",
+          "name": { "en": "Galileo Galilei", "es": "Galileo Galilei" },
+          "at": [11.8768, 45.4069],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1609",
+          "life": ["1564-02-15", "1642-01-08"],
+          "place": { "en": "University of Padua, Italy", "es": "Universidad de Padua, Italia" },
+          "text": {
+            "en": "A professor at Padua who improved the Dutch spyglass to about 20 times and was the first to publish what a telescope shows in the sky. He also built an early microscope.",
+            "es": "Profesor en Padua que mejoró el catalejo neerlandés hasta unas 20 veces y fue el primero en publicar lo que un telescopio muestra en el cielo. También construyó uno de los primeros microscopios."
+          },
+          "details": {
+            "en": "Galileo named Jupiter's moons the Medicean Stars, after the Medici family, and in 1610 Grand Duke Cosimo II made him his mathematician in Florence. Later that year he saw that Venus shows phases like the Moon, which fits only if Venus circles the Sun. Defending Copernicus' Sun-centred system led to his trial in Rome in 1633 and to house arrest for the rest of his life.",
+            "es": "Galileo llamó a las lunas de Júpiter «estrellas mediceas», en honor de la familia Médici, y en 1610 el gran duque Cosme II lo nombró su matemático en Florencia. Ese mismo año vio que Venus tiene fases como la Luna, algo posible solo si Venus gira alrededor del Sol. Defender el sistema de Copérnico, con el Sol en el centro, lo llevó a juicio en Roma en 1633 y al arresto domiciliario por el resto de su vida."
+          },
+          "wiki": { "en": "Galileo Galilei", "es": "Galileo Galilei" }
+        },
+        {
+          "id": "galilean-moons",
+          "name": { "en": "Jupiter's four moons", "es": "Las cuatro lunas de Júpiter" },
+          "at": [11.8823, 45.4036],
+          "cat": "event",
+          "type": "event",
+          "date": "1610-01-07",
+          "place": { "en": "Seen from Padua, Italy", "es": "Vistas desde Padua, Italia" },
+          "text": {
+            "en": "On 7 January 1610 Galileo saw small 'stars' beside Jupiter that moved every night. They were moons: the first bodies ever seen circling another planet, proof that not everything turns around the Earth.",
+            "es": "El 7 de enero de 1610, Galileo vio junto a Júpiter unas pequeñas «estrellas» que se movían cada noche. Eran lunas: los primeros cuerpos vistos girando alrededor de otro planeta, prueba de que no todo gira alrededor de la Tierra."
+          },
+          "wiki": { "en": "Galilean moons", "es": "Satélite galileano" }
+        },
+        {
+          "id": "galileo-shows-venice",
+          "name": { "en": "Galileo shows Venice his telescope", "es": "Galileo muestra su telescopio en Venecia" },
+          "at": [12.3388, 45.434],
+          "cat": "event",
+          "type": "event",
+          "date": "1609-08-25",
+          "place": { "en": "Venice, Italy", "es": "Venecia, Italia" },
+          "text": {
+            "en": "On 25 August 1609 Galileo showed the lawmakers of Venice a telescope that magnified 8 or 9 times. Making and selling telescopes soon became a profitable sideline for him.",
+            "es": "El 25 de agosto de 1609, Galileo mostró a los legisladores de Venecia un telescopio que aumentaba 8 o 9 veces. Fabricar y vender telescopios pronto se volvió para él un negocio rentable."
+          },
+          "wiki": { "en": "Venice", "es": "Venecia" },
+          "img": "Bertini fresco of Galileo Galilei and Doge of Venice.jpg",
+          "whs": 394
+        },
+        {
+          "id": "sidereus-nuncius",
+          "name": { "en": "Sidereus Nuncius", "es": "Sidereus Nuncius" },
+          "at": [12.3356, 45.438],
+          "cat": "optics",
+          "type": "work",
+          "date": "1610-03-13",
+          "by": { "en": "Galileo Galilei", "es": "Galileo Galilei" },
+          "place": { "en": "Venice, Italy", "es": "Venecia, Italia" },
+          "text": {
+            "en": "The 'Starry Messenger', printed in Venice on 13 March 1610: the first book based on observations through a telescope, with drawings of the Moon, the Pleiades and Jupiter's moons.",
+            "es": "El «Mensajero sideral», impreso en Venecia el 13 de marzo de 1610: el primer libro basado en observaciones con telescopio, con dibujos de la Luna, las Pléyades y las lunas de Júpiter."
+          },
+          "wiki": { "en": "Sidereus Nuncius", "es": "Sidereus nuncius" }
+        },
+        {
+          "id": "museo-galileo",
+          "name": { "en": "Museo Galileo", "es": "Museo Galileo" },
+          "at": [11.2558, 43.7678],
+          "cat": "lab",
+          "type": "place",
+          "date": "2010-06",
+          "place": { "en": "Florence, Italy", "es": "Florencia, Italia" },
+          "text": {
+            "en": "This museum by the Arno keeps Galileo's only two surviving telescopes and the framed lens through which he discovered the moons of Jupiter.",
+            "es": "Este museo junto al Arno guarda los dos únicos telescopios de Galileo que se conservan y la lente enmarcada con la que descubrió las lunas de Júpiter."
+          },
+          "details": {
+            "en": "Its instruments come from the collections of the Medici and Lorraine grand dukes of Tuscany. Long called the Institute and Museum of the History of Science, it took Galileo's name when it reopened in June 2010, four hundred years after the Starry Messenger.",
+            "es": "Sus instrumentos vienen de las colecciones de los grandes duques de Toscana, los Médici y los Lorena. Durante mucho tiempo se llamó Instituto y Museo de Historia de la Ciencia, y tomó el nombre de Galileo al reabrir en junio de 2010, cuatrocientos años después del Mensajero sideral."
+          },
+          "wiki": { "en": "Museo Galileo", "es": "Museo Galileo" },
+          "img": "Galileo galilei, telescopi del 1609-10 ca..JPG",
+          "whs": 174
+        }
+      ]
+    },
+    {
+      "date": "1611",
+      "title": { "en": "Two convex lenses", "es": "Dos lentes convexas" },
+      "text": {
+        "en": "In Prague, Johannes Kepler explained how the eye and lenses form images, and in 1611 he described a telescope with two convex lenses. It could magnify far more, and by the 1650s astronomers had adopted it.",
+        "es": "En Praga, Johannes Kepler explicó cómo forman imágenes el ojo y las lentes, y en 1611 describió un telescopio con dos lentes convexas. Podía aumentar mucho más, y hacia 1650 los astrónomos ya lo usaban."
+      },
+      "details": {
+        "en": "Kepler, mathematician to Emperor Rudolf II, studied light as an astronomer. In 1604 he showed that the eye's lens throws an upside-down picture onto the retina, explained why convex and concave spectacle lenses help poor sight, and named the camera obscura. When Galileo's book reached him in 1610 he backed it at once and, with a borrowed telescope, worked out the theory of lenses in Dioptrice, published in 1611. His design shows the image upside down, which hardly matters for stars. The Jesuit Christoph Scheiner was the first to build one, and in 1655 Christiaan Huygens and his brother Constantijn, in The Hague, made a powerful version with which Christiaan discovered Titan, Saturn's largest moon.",
+        "es": "Kepler, matemático del emperador Rodolfo II, estudiaba la luz como astrónomo. En 1604 demostró que el cristalino proyecta una imagen invertida sobre la retina, explicó por qué las lentes convexas y cóncavas de los anteojos ayudan a ver mejor y le dio nombre a la cámara oscura. Cuando le llegó el libro de Galileo en 1610, lo apoyó enseguida y, con un telescopio prestado, desarrolló la teoría de las lentes en su Dioptrice, publicada en 1611. Su diseño muestra la imagen al revés, algo que importa poco para mirar estrellas. El jesuita Christoph Scheiner fue el primero en construir uno, y en 1655 Christiaan Huygens y su hermano Constantijn, en La Haya, hicieron una versión potente con la que Christiaan descubrió Titán, la luna más grande de Saturno."
+      },
+      "camera": { "lon": 9.5, "lat": 49.5, "zoom": 4.6 },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [[12.3356, 45.438], [12.6, 47.5], [13.6, 49.0], [14.4176, 50.0861]],
+          "label": { "en": "Galileo's book reaches Kepler, 1610", "es": "El libro de Galileo llega a Kepler, 1610" }
+        }
+      ],
+      "places": [
+        {
+          "id": "johannes-kepler",
+          "name": { "en": "Johannes Kepler", "es": "Johannes Kepler" },
+          "at": [14.4176, 50.0861],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1611",
+          "life": ["1571-12-27", "1630-11-15"],
+          "place": { "en": "Prague, Czech Republic", "es": "Praga, República Checa" },
+          "text": {
+            "en": "The emperor's mathematician in Prague, who found the laws of the planets' orbits and laid the foundations of modern optics: how the eye sees and how lenses work.",
+            "es": "El matemático del emperador en Praga, que descubrió las leyes de las órbitas de los planetas y sentó las bases de la óptica moderna: cómo ve el ojo y cómo funcionan las lentes."
+          },
+          "wiki": { "en": "Johannes Kepler", "es": "Johannes Kepler" }
+        },
+        {
+          "id": "keplerian-telescope",
+          "name": { "en": "Kepler's telescope", "es": "El telescopio de Kepler" },
+          "at": [14.4005, 50.0905],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1611",
+          "by": { "en": "Johannes Kepler", "es": "Johannes Kepler" },
+          "place": { "en": "Prague, Czech Republic (described in his Dioptrice)", "es": "Praga, República Checa (descrito en su Dioptrice)" },
+          "text": {
+            "en": "Two convex lenses instead of Galileo's convex and concave pair. The picture is upside down, but it magnifies far more: it became the astronomers' telescope.",
+            "es": "Dos lentes convexas en lugar del par convexo y cóncavo de Galileo. La imagen sale invertida, pero aumenta mucho más: se convirtió en el telescopio de los astrónomos."
+          },
+          "wiki": { "en": "Refracting telescope", "es": "Telescopio refractor" }
+        },
+        {
+          "id": "christiaan-huygens",
+          "name": { "en": "Christiaan Huygens", "es": "Christiaan Huygens" },
+          "at": [4.3007, 52.0705],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1655",
+          "life": ["1629-04-14", "1695-07-08"],
+          "place": { "en": "The Hague, Netherlands", "es": "La Haya, Países Bajos" },
+          "text": {
+            "en": "A Dutch scientist who ground long telescope lenses with his brother Constantijn. In 1655 he found Titan, Saturn's largest moon, and in 1659 he explained Saturn's ring.",
+            "es": "Científico neerlandés que pulía largas lentes de telescopio con su hermano Constantijn. En 1655 descubrió Titán, la luna más grande de Saturno, y en 1659 explicó el anillo de Saturno."
+          },
+          "wiki": { "en": "Christiaan Huygens", "es": "Christiaan Huygens" }
+        }
+      ]
+    },
+    {
+      "date": "1665-01",
+      "title": { "en": "Hooke's Micrographia", "es": "La Micrographia de Hooke" },
+      "text": {
+        "en": "Microscopes with two lenses appeared in Europe around 1620. In January 1665 Robert Hooke of the Royal Society published Micrographia, with giant drawings of a flea, a louse and the 'cells' of cork.",
+        "es": "Los microscopios de dos lentes aparecieron en Europa hacia 1620. En enero de 1665, Robert Hooke, de la Royal Society, publicó Micrographia, con dibujos gigantes de una pulga, un piojo y las «celdas» del corcho."
+      },
+      "details": {
+        "en": "Who made the first compound microscope is unknown. Claims have been made for Zacharias Janssen of Middelburg, by his son decades later, and for Cornelis Drebbel, a Dutch inventor who had one in London in 1619. Galileo built his own 'little eye' after seeing one of Drebbel's in Rome, and in 1625 a member of the Accademia dei Lincei named it the microscope. Hooke, the Royal Society's curator of experiments, used a microscope made by the London instrument-maker Christopher Cock. Micrographia, the Society's first major publication, had fold-out plates larger than the book itself. Looking at cork, Hooke saw rows of tiny boxes and called them cells, a word biologists still use. It became the first scientific best-seller.",
+        "es": "No se sabe quién hizo el primer microscopio compuesto. Se atribuyó a Zacharias Janssen, de Middelburg, por boca de su hijo décadas después, y a Cornelis Drebbel, un inventor neerlandés que tenía uno en Londres en 1619. Galileo construyó su propio «ojito» después de ver uno de Drebbel en Roma, y en 1625 un miembro de la Accademia dei Lincei lo llamó microscopio. Hooke, encargado de experimentos de la Royal Society, usaba un microscopio hecho por el fabricante londinense Christopher Cock. Micrographia, la primera gran publicación de la Sociedad, tenía láminas desplegables más grandes que el propio libro. Al mirar un trozo de corcho, Hooke vio hileras de cajitas y las llamó células, palabra que la biología usa todavía. Fue el primer éxito de ventas científico."
+      },
+      "camera": { "lon": -0.1, "lat": 51.51, "zoom": 10 },
+      "places": [
+        {
+          "id": "microscope",
+          "name": { "en": "Microscope", "es": "Microscopio" },
+          "at": [-0.092, 51.513],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1619",
+          "by": { "en": "unknown (perhaps Cornelis Drebbel or Zacharias Janssen)", "es": "desconocido (quizá Cornelis Drebbel o Zacharias Janssen)" },
+          "place": { "en": "London, England (first recorded); also claimed for Middelburg, Netherlands", "es": "Londres, Inglaterra (primer registro); también se atribuye a Middelburg, Países Bajos" },
+          "text": {
+            "en": "A lens near the sample and another near the eye: the compound microscope appeared around 1620. Its inventor is unknown; the oldest record is of Cornelis Drebbel's, in London in 1619.",
+            "es": "Una lente cerca de la muestra y otra cerca del ojo: el microscopio compuesto apareció hacia 1620. Su inventor es desconocido; el registro más antiguo es el de Cornelis Drebbel, en Londres en 1619."
+          },
+          "wiki": { "en": "Microscope", "es": "Microscopio" },
+          "img": "Old-microscopes.jpg"
+        },
+        {
+          "id": "micrographia",
+          "name": { "en": "Hooke's Micrographia", "es": "Micrographia de Hooke" },
+          "at": [-0.0985, 51.5138],
+          "cat": "optics",
+          "type": "work",
+          "date": "1665-01",
+          "by": { "en": "Robert Hooke", "es": "Robert Hooke" },
+          "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+          "text": {
+            "en": "Hooke's book of drawings through the microscope, with a fold-out louse four times the size of the page. Looking at cork, he named the tiny boxes he saw 'cells'.",
+            "es": "El libro de dibujos al microscopio de Hooke, con un piojo desplegable cuatro veces más grande que la página. Al mirar el corcho, llamó «células» a las cajitas que veía."
+          },
+          "wiki": { "en": "Micrographia", "es": "Micrographia" }
+        },
+        {
+          "id": "robert-hooke",
+          "name": { "en": "Robert Hooke", "es": "Robert Hooke" },
+          "at": [-0.0828, 51.515],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1665",
+          "life": ["1635-07-18", "1703-03-03"],
+          "place": { "en": "Gresham College, London, England", "es": "Gresham College, Londres, Inglaterra" },
+          "text": {
+            "en": "The Royal Society's curator of experiments and a professor at Gresham College. He built air pumps, studied springs and light, and helped Christopher Wren rebuild London after the Great Fire of 1666.",
+            "es": "Encargado de experimentos de la Royal Society y profesor en el Gresham College. Construyó bombas de vacío, estudió los resortes y la luz, y ayudó a Christopher Wren a reconstruir Londres tras el gran incendio de 1666."
+          },
+          "details": {
+            "en": "No portrait of Hooke made in his lifetime is known for certain, so his face is a mystery; the picture on his card is uncertain. He quarrelled with Newton over light and gravity, and for a long time his fame was overshadowed, but he is now seen as one of the most inventive scientists of his age.",
+            "es": "No se conoce con certeza ningún retrato de Hooke hecho en vida, así que su cara es un misterio; la imagen de su ficha es dudosa. Discutió con Newton sobre la luz y la gravedad, y durante mucho tiempo su fama quedó opacada, pero hoy se lo considera uno de los científicos más inventivos de su época."
+          },
+          "wiki": { "en": "Robert Hooke", "es": "Robert Hooke" }
+        }
+      ]
+    },
+    {
+      "date": "1676-10-09",
+      "title": { "en": "Little animals", "es": "Animalitos" },
+      "text": {
+        "en": "In Delft, the cloth merchant Antonie van Leeuwenhoek made tiny lenses that magnified more than 200 times. On 9 October 1676 he told the Royal Society of 'little animals' in water: the first microbes ever seen.",
+        "es": "En Delft, el comerciante de telas Antonie van Leeuwenhoek fabricó lentes diminutas que aumentaban más de 200 veces. El 9 de octubre de 1676 contó a la Royal Society que había visto «animalitos» en el agua: los primeros microbios."
+      },
+      "details": {
+        "en": "Leeuwenhoek had no university training and wrote his letters in Dutch. His microscopes held a single tiny bead of glass between two metal plates, with screws to move the sample in front of it. He made more than 500 lenses and at least 25 microscopes, of which nine survive. From 1673 he sent letter after letter to the Royal Society in London, describing protists, bacteria, sperm and blood cells. When the Society doubted his tiny creatures, it asked trusted witnesses in Delft, among them local ministers, to look through his lenses, and they confirmed what he said. He was elected a Fellow in 1680. He kept his way of making lenses secret, and it remained a mystery for centuries.",
+        "es": "Leeuwenhoek no había ido a la universidad y escribía sus cartas en neerlandés. Sus microscopios tenían una sola bolita de vidrio entre dos placas de metal, con tornillos para mover la muestra delante de ella. Hizo más de 500 lentes y al menos 25 microscopios, de los que se conservan nueve. Desde 1673 envió carta tras carta a la Royal Society de Londres, describiendo protistas, bacterias, espermatozoides y glóbulos de la sangre. Cuando la Sociedad dudó de sus criaturas diminutas, pidió a testigos de confianza en Delft, entre ellos pastores de la ciudad, que miraran por sus lentes, y estos confirmaron lo que decía. Fue elegido miembro en 1680. Guardó en secreto cómo hacía sus lentes, y el método siguió siendo un misterio durante siglos."
+      },
+      "camera": { "lon": 2.1, "lat": 51.8, "zoom": 6.6 },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [[4.3571, 52.0116], [4.12, 51.98], [2.6, 51.75], [1.4, 51.5], [0.5, 51.47], [-0.0836, 51.5152]],
+          "label": { "en": "Leeuwenhoek's letters to the Royal Society, from 1673", "es": "Las cartas de Leeuwenhoek a la Royal Society, desde 1673" }
+        }
+      ],
+      "places": [
+        {
+          "id": "antonie-van-leeuwenhoek",
+          "name": { "en": "Antonie van Leeuwenhoek", "es": "Antonie van Leeuwenhoek" },
+          "at": [4.3571, 52.0116],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1676",
+          "life": ["1632-10-24", "1723-08-26"],
+          "place": { "en": "Delft, Netherlands", "es": "Delft, Países Bajos" },
+          "text": {
+            "en": "A cloth merchant with no university training who became the first person to see bacteria and other microbes. He is often called the father of microbiology.",
+            "es": "Un comerciante de telas sin estudios universitarios que fue la primera persona en ver bacterias y otros microbios. A menudo se lo llama el padre de la microbiología."
+          },
+          "details": {
+            "en": "He was born in Delft in 1632, a few days after another famous citizen of the town, the painter Johannes Vermeer. Some have suggested that he posed for Vermeer's The Astronomer and The Geographer, but others see little likeness. He found his 'animalcules' everywhere: in stale water, in ditches and even on his own teeth.",
+            "es": "Nació en Delft en 1632, pocos días después que otro famoso vecino de la ciudad, el pintor Johannes Vermeer. Hay quien piensa que posó para El astrónomo y El geógrafo de Vermeer, pero otros ven poco parecido. Encontró sus «animálculos» en todas partes: en agua estancada, en las zanjas y hasta en sus propios dientes."
+          },
+          "wiki": { "en": "Antonie van Leeuwenhoek", "es": "Anton van Leeuwenhoek" }
+        },
+        {
+          "id": "leeuwenhoek-microscope",
+          "name": { "en": "Leeuwenhoek's microscope", "es": "El microscopio de Leeuwenhoek" },
+          "at": [4.3545, 52.0128],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1673",
+          "by": { "en": "Antonie van Leeuwenhoek", "es": "Antonie van Leeuwenhoek" },
+          "place": { "en": "Delft, Netherlands", "es": "Delft, Países Bajos" },
+          "text": {
+            "en": "A metal plate no longer than a finger, holding one tiny glass bead in front of the eye. The nine that survive magnify up to 275 times.",
+            "es": "Una placa de metal no más larga que un dedo, con una diminuta bolita de vidrio frente al ojo. Los nueve que se conservan aumentan hasta 275 veces."
+          },
+          "wiki": { "en": "Antonie van Leeuwenhoek", "es": "Anton van Leeuwenhoek" },
+          "img": "Leeuwenhoek Microscope.png"
+        },
+        {
+          "id": "royal-society",
+          "name": { "en": "Royal Society", "es": "Royal Society" },
+          "at": [-0.0836, 51.5152],
+          "cat": "lab",
+          "type": "institution",
+          "date": "1660-11-28",
+          "place": { "en": "Gresham College, London, England", "es": "Gresham College, Londres, Inglaterra" },
+          "text": {
+            "en": "Founded in London in 1660 to learn from experiments. It published Hooke's Micrographia, and Leeuwenhoek's letters appeared in its Philosophical Transactions, the oldest science journal still published.",
+            "es": "Fundada en Londres en 1660 para aprender de los experimentos. Publicó la Micrographia de Hooke, y las cartas de Leeuwenhoek salieron en sus Philosophical Transactions, la revista científica más antigua que se sigue publicando."
+          },
+          "wiki": { "en": "Royal Society", "es": "Royal Society" }
+        }
+      ]
+    },
+    {
+      "date": "1781-03-13",
+      "title": { "en": "Mirrors and a new planet", "es": "Espejos y un planeta nuevo" },
+      "text": {
+        "en": "Lenses split light into colours, so in 1668 Isaac Newton built a telescope with a mirror. In Bath, William Herschel made far bigger mirrors, and on 13 March 1781 he found a new planet: Uranus.",
+        "es": "Las lentes descomponen la luz en colores, así que en 1668 Isaac Newton construyó un telescopio con un espejo. En Bath, William Herschel hizo espejos mucho más grandes, y el 13 de marzo de 1781 descubrió un planeta nuevo: Urano."
+      },
+      "details": {
+        "en": "Newton's first little reflector, about six inches long, was built in Cambridge to prove his idea that white light is a mix of colours; a second one was shown to King Charles II in 1672. A century later Herschel, a German-born musician who led the orchestra in Bath, spent up to 16 hours a day grinding and polishing metal mirrors, helped by his sister Caroline and his brother Alexander. With a seven-foot telescope built in the workshop of their house, he spotted a small disc that slowly moved among the stars: the first planet discovered with a telescope. With £4,000 from King George III he later built a telescope 40 feet long, the largest scientific instrument of its day. He also discovered infrared light.",
+        "es": "El primer reflector de Newton, de unas seis pulgadas de largo, se construyó en Cambridge para probar su idea de que la luz blanca es una mezcla de colores; un segundo se le mostró al rey Carlos II en 1672. Un siglo después Herschel, un músico nacido en Alemania que dirigía la orquesta de Bath, pasaba hasta 16 horas al día puliendo espejos de metal, con la ayuda de su hermana Caroline y su hermano Alexander. Con un telescopio de siete pies construido en el taller de su casa, vio un pequeño disco que se movía despacio entre las estrellas: el primer planeta descubierto con un telescopio. Con 4000 libras del rey Jorge III construyó después un telescopio de 40 pies de largo, el mayor instrumento científico de su época. También descubrió la luz infrarroja."
+      },
+      "camera": { "lon": -1.3, "lat": 51.75, "zoom": 6.8 },
+      "places": [
+        {
+          "id": "newtonian-telescope",
+          "name": { "en": "Newton's reflecting telescope", "es": "El telescopio reflector de Newton" },
+          "at": [0.117, 52.207],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1668",
+          "by": { "en": "Isaac Newton", "es": "Isaac Newton" },
+          "place": { "en": "Trinity College, Cambridge, England", "es": "Trinity College, Cambridge, Inglaterra" },
+          "text": {
+            "en": "A curved mirror instead of a lens gathers the light, so the image has no coloured fringes. Newton built the first one in 1668; the giant telescopes of today all use mirrors.",
+            "es": "Un espejo curvo, en lugar de una lente, recoge la luz, así que la imagen no tiene bordes de colores. Newton construyó el primero en 1668; los telescopios gigantes de hoy usan todos espejos."
+          },
+          "wiki": { "en": "Newtonian telescope", "es": "Telescopio newtoniano" },
+          "img": "Newton telescope replica 1668.jpg"
+        },
+        {
+          "id": "herschel-house-bath",
+          "name": { "en": "Herschel's house in Bath", "es": "La casa de Herschel en Bath" },
+          "at": [-2.3669, 51.3825],
+          "cat": "lab",
+          "type": "place",
+          "date": "1781-03-13",
+          "place": { "en": "19 New King Street, Bath, England", "es": "19 New King Street, Bath, Inglaterra" },
+          "text": {
+            "en": "In this town house William Herschel discovered Uranus with a telescope built in its workshop. It is now the Herschel Museum of Astronomy, opened on 13 March 1981, 200 years to the day later.",
+            "es": "En esta casa, William Herschel descubrió Urano con un telescopio construido en su taller. Hoy es el Museo de Astronomía Herschel, abierto el 13 de marzo de 1981, justo 200 años después."
+          },
+          "wiki": { "en": "Herschel Museum of Astronomy", "es": "" },
+          "whs": 428
+        },
+        {
+          "id": "william-herschel",
+          "name": { "en": "William Herschel", "es": "William Herschel" },
+          "at": [-0.595, 51.5095],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1781",
+          "life": ["1738-11-15", "1822-08-25"],
+          "place": { "en": "Bath and Slough, England", "es": "Bath y Slough, Inglaterra" },
+          "text": {
+            "en": "Born in Hanover, he came to England as a musician and taught himself astronomy. He made hundreds of telescope mirrors, found Uranus, listed 2,500 nebulae and discovered infrared light.",
+            "es": "Nacido en Hannover, llegó a Inglaterra como músico y aprendió astronomía por su cuenta. Hizo cientos de espejos de telescopio, descubrió Urano, catalogó 2500 nebulosas y descubrió la luz infrarroja."
+          },
+          "wiki": { "en": "William Herschel", "es": "William Herschel" }
+        },
+        {
+          "id": "caroline-herschel",
+          "name": { "en": "Caroline Herschel", "es": "Caroline Herschel" },
+          "at": [-0.588, 51.507],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1786-08-01",
+          "life": ["1750-03-16", "1848-01-09"],
+          "place": { "en": "Slough, England", "es": "Slough, Inglaterra" },
+          "text": {
+            "en": "William's sister and partner. She discovered eight comets from 1786 and in 1787 became the first woman paid a salary for science: £50 a year from the king.",
+            "es": "Hermana y compañera de trabajo de William. Descubrió ocho cometas desde 1786 y en 1787 fue la primera mujer con un sueldo por hacer ciencia: 50 libras al año pagadas por el rey."
+          },
+          "details": {
+            "en": "Caroline came from Hanover in 1772 to keep house for William and sing in his concerts, and became an astronomer in her own right. William built her a telescope for hunting comets, and she found her first on 1 August 1786, while he was away. She also catalogued nebulae and corrected Flamsteed's star catalogue, and in 1828 the Royal Astronomical Society gave her its Gold Medal, the first woman to receive it.",
+            "es": "Caroline llegó de Hannover en 1772 para llevar la casa de William y cantar en sus conciertos, y llegó a ser astrónoma por mérito propio. William le construyó un telescopio para buscar cometas, y ella encontró el primero el 1 de agosto de 1786, mientras él estaba de viaje. También catalogó nebulosas y corrigió el catálogo de estrellas de Flamsteed, y en 1828 la Real Sociedad Astronómica le dio su Medalla de Oro, la primera que recibió una mujer."
+          },
+          "wiki": { "en": "Caroline Herschel", "es": "Carolina Herschel" }
+        }
+      ]
+    },
+    {
+      "date": "1827",
+      "title": { "en": "The first photograph", "es": "La primera fotografía" },
+      "text": {
+        "en": "In the summer of 1827, at his country house near Chalon-sur-Saône, Nicéphore Niépce put a plate coated with bitumen in a camera obscura. After hours, or perhaps days, it kept the view from his window.",
+        "es": "En el verano de 1827, en su casa de campo cerca de Chalon-sur-Saône, Nicéphore Niépce puso en una cámara oscura una placa cubierta de betún. Tras horas, o quizá días, guardó la vista desde su ventana."
+      },
+      "details": {
+        "en": "Niépce, who had also built an early engine with his brother Claude, tried paper coated with silver salts around 1816, but could not stop his pictures from darkening. He turned to bitumen of Judea, a natural asphalt that hardens in light, and called his process heliography, 'sun drawing'. View from the Window at Le Gras, made between June and July 1827 on a pewter plate, is the oldest surviving camera photograph. Its exposure is usually said to have lasted about eight hours, but a researcher who repeated his process thinks it took several days. That autumn Niépce took it to England, where the Royal Society turned down his paper because he kept his method secret. Lost for decades, the plate was found in 1952 and is now in Austin, Texas.",
+        "es": "Niépce, que también había construido uno de los primeros motores con su hermano Claude, probó hacia 1816 papel cubierto de sales de plata, pero no lograba que sus imágenes dejaran de oscurecerse. Pasó al betún de Judea, un asfalto natural que se endurece con la luz, y llamó a su método heliografía, «dibujo del sol». Vista desde la ventana en Le Gras, hecha entre junio y julio de 1827 sobre una placa de peltre, es la fotografía de cámara más antigua que se conserva. Se suele decir que la exposición duró unas ocho horas, pero un investigador que repitió su proceso cree que tardó varios días. Ese otoño, Niépce la llevó a Inglaterra, donde la Royal Society rechazó su trabajo porque mantenía su método en secreto. Perdida durante décadas, la placa apareció en 1952 y hoy está en Austin, Texas."
+      },
+      "camera": { "lon": 2.9, "lat": 48.9, "zoom": 5.4 },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [[4.8572, 46.7269], [3.9, 47.9], [2.3, 49.2], [1.3, 50.4], [0.2, 51.1], [-0.295, 51.478]],
+          "label": { "en": "Niépce takes his plates to England, 1827", "es": "Niépce lleva sus placas a Inglaterra, 1827" }
+        }
+      ],
+      "places": [
+        {
+          "id": "photography",
+          "name": { "en": "Photography", "es": "Fotografía" },
+          "at": [4.8572, 46.7269],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1827",
+          "by": { "en": "Nicéphore Niépce and Louis Daguerre", "es": "Nicéphore Niépce y Louis Daguerre" },
+          "place": { "en": "Le Gras, Saint-Loup-de-Varennes, France", "es": "Le Gras, Saint-Loup-de-Varennes, Francia" },
+          "text": {
+            "en": "'Writing with light': a camera picture fixed for good. Niépce made the oldest surviving photograph here; Daguerre, Talbot and, in Brazil, Hércules Florence found their own ways soon after.",
+            "es": "«Escribir con luz»: una imagen de cámara fijada para siempre. Niépce hizo aquí la fotografía más antigua que se conserva; Daguerre, Talbot y, en Brasil, Hércules Florence encontraron sus propios caminos poco después."
+          },
+          "details": {
+            "en": "The picture shows the rooftops and courtyard of Le Gras, Niépce's estate, seen from an upstairs window. This is the version retouched by the historian Helmut Gernsheim in 1952; the original pewter plate is so faint that it can only be seen in the right light. It has been kept since 1963 at the Harry Ransom Center of the University of Texas in Austin.",
+            "es": "La imagen muestra los tejados y el patio de Le Gras, la finca de Niépce, vistos desde una ventana del piso de arriba. Es la versión retocada por el historiador Helmut Gernsheim en 1952; la placa de peltre original es tan tenue que solo se ve con la luz adecuada. Desde 1963 se guarda en el Harry Ransom Center de la Universidad de Texas, en Austin."
+          },
+          "wiki": { "en": "Photography", "es": "Fotografía" },
+          "img": "View from the Window at Le Gras, Joseph Nicéphore Niépce.jpg"
+        },
+        {
+          "id": "nicephore-niepce",
+          "name": { "en": "Nicéphore Niépce", "es": "Nicéphore Niépce" },
+          "at": [4.853, 46.7808],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1827",
+          "life": ["1765-03-07", "1833-07-05"],
+          "place": { "en": "Chalon-sur-Saône, France", "es": "Chalon-sur-Saône, Francia" },
+          "text": {
+            "en": "A French inventor who made the world's oldest surviving photographs. He died in 1833, ruined, before his partner Louis Daguerre made photography famous.",
+            "es": "Inventor francés que hizo las fotografías más antiguas que se conservan. Murió arruinado en 1833, antes de que su socio Louis Daguerre hiciera famosa la fotografía."
+          },
+          "details": {
+            "en": "Niépce was born in Chalon-sur-Saône, where a museum of photography now bears his name. In 1829 he went into partnership with Daguerre. When the daguerreotype was announced in 1839, Niépce's part was played down, and it was his son Isidore who fought to have his father remembered as the first.",
+            "es": "Niépce nació en Chalon-sur-Saône, donde hoy un museo de fotografía lleva su nombre. En 1829 se asoció con Daguerre. Cuando se anunció el daguerrotipo en 1839, se minimizó el papel de Niépce, y fue su hijo Isidore quien luchó para que se recordara a su padre como el primero."
+          },
+          "wiki": { "en": "Nicéphore Niépce", "es": "Joseph Nicéphore Niépce" }
+        }
+      ]
+    },
+    {
+      "date": "1839-08-19",
+      "title": { "en": "A gift to the world", "es": "Un regalo al mundo" },
+      "text": {
+        "en": "On 19 August 1839 France made Louis Daguerre's way of taking pictures 'free to the world'. In England, Henry Fox Talbot had made paper negatives; in Brazil, Hércules Florence had made photographs in 1833.",
+        "es": "El 19 de agosto de 1839, Francia hizo «libre para el mundo» el método de Louis Daguerre para tomar imágenes. En Inglaterra, Henry Fox Talbot había hecho negativos en papel; en Brasil, Hércules Florence había hecho fotos en 1833."
+      },
+      "details": {
+        "en": "Daguerre, a theatre painter famous for his Diorama in Paris, had been Niépce's partner since 1829. After Niépce died he found a much faster method: a silvered copper plate made sensitive to light and developed with mercury fumes. Each daguerreotype was a one-off, as sharp as a mirror. The French government gave pensions to Daguerre and to Niépce's son, and François Arago explained the process at the Institut de France; only England and Wales, where Daguerre took out a patent, had to pay. Talbot, at Lacock Abbey, had made a negative of a window in 1835, and his calotype of 1841 let one negative give many prints. In Campinas, Hércules Florence fixed pictures on paper with silver nitrate and called it 'photographie', but he never published it, and only in the 20th century did the historian Boris Kossoy bring his work to light.",
+        "es": "Daguerre, un pintor de teatro famoso por su Diorama de París, era socio de Niépce desde 1829. Tras la muerte de este, encontró un método mucho más rápido: una placa de cobre plateada, sensibilizada a la luz y revelada con vapores de mercurio. Cada daguerrotipo era único, nítido como un espejo. El gobierno francés dio pensiones a Daguerre y al hijo de Niépce, y François Arago explicó el procedimiento en el Instituto de Francia; solo Inglaterra y Gales, donde Daguerre sacó una patente, tuvieron que pagar. Talbot, en la abadía de Lacock, había hecho un negativo de una ventana en 1835, y su calotipo de 1841 permitía sacar muchas copias de un solo negativo. En Campinas, Hércules Florence fijó imágenes en papel con nitrato de plata y lo llamó «photographie», pero nunca lo publicó, y recién en el siglo XX el historiador Boris Kossoy dio a conocer su obra."
+      },
+      "camera": { "lon": -24, "lat": 12, "zoom": 1.5 },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [[2.337, 48.8572], [-74.006, 40.7128]],
+          "label": { "en": "The daguerreotype crosses the Atlantic, 1839", "es": "El daguerrotipo cruza el Atlántico, 1839" }
+        }
+      ],
+      "places": [
+        {
+          "id": "daguerreotype",
+          "name": { "en": "Daguerreotype", "es": "Daguerrotipo" },
+          "at": [2.3638, 48.869],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1839-01-07",
+          "by": { "en": "Louis Daguerre", "es": "Louis Daguerre" },
+          "place": { "en": "Daguerre's Diorama, Paris, France", "es": "El Diorama de Daguerre, París, Francia" },
+          "text": {
+            "en": "A picture on a polished silver plate, sharp as a mirror and one of a kind. Announced in January 1839, it set off a craze: by 1853 Americans alone were making some three million a year.",
+            "es": "Una imagen sobre una placa de plata pulida, nítida como un espejo y única. Anunciado en enero de 1839, desató una fiebre: en 1853 solo en Estados Unidos se hacían unos tres millones al año."
+          },
+          "details": {
+            "en": "The picture is Daguerre's View of the Boulevard du Temple, taken from the window of his Diorama in 1838. The exposure lasted several minutes, so the busy traffic left no trace, except for a man who stood still to have his boots polished: the oldest known photograph of a person. For the first time, ordinary families could own an exact likeness of their loved ones.",
+            "es": "La imagen es la Vista del bulevar del Temple de Daguerre, tomada desde la ventana de su Diorama en 1838. La exposición duró varios minutos, así que el tránsito no dejó rastro, salvo un hombre que se quedó quieto mientras le lustraban las botas: la fotografía más antigua que se conoce de una persona. Por primera vez, las familias comunes podían tener un retrato exacto de sus seres queridos."
+          },
+          "wiki": { "en": "Daguerreotype", "es": "Daguerrotipo" },
+          "img": "Boulevard du Temple by Daguerre.jpg"
+        },
+        {
+          "id": "photography-free-to-the-world",
+          "name": { "en": "Photography given to the world", "es": "La fotografía, regalada al mundo" },
+          "at": [2.337, 48.8572],
+          "cat": "event",
+          "type": "event",
+          "date": "1839-08-19",
+          "place": { "en": "Institut de France, Paris, France", "es": "Instituto de Francia, París, Francia" },
+          "text": {
+            "en": "At a joint meeting of the Academies of Sciences and Fine Arts here, François Arago revealed how the daguerreotype worked. France had bought it, and gave it free to the world.",
+            "es": "En una sesión conjunta de las Academias de Ciencias y de Bellas Artes, aquí, François Arago reveló cómo funcionaba el daguerrotipo. Francia lo había comprado y lo regaló al mundo."
+          },
+          "wiki": { "en": "Institut de France", "es": "Instituto de Francia" },
+          "img": "Institut France.jpg",
+          "whs": 600
+        },
+        {
+          "id": "calotype",
+          "name": { "en": "Talbot's calotype", "es": "El calotipo de Talbot" },
+          "at": [-2.1172, 51.4147],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1841",
+          "by": { "en": "Henry Fox Talbot", "es": "Henry Fox Talbot" },
+          "place": { "en": "Lacock Abbey, Wiltshire, England", "es": "Abadía de Lacock, Wiltshire, Inglaterra" },
+          "text": {
+            "en": "A paper negative from which many prints could be made, the idea behind all film photography. Talbot photographed a window of his home here in 1835 and introduced the calotype in 1841.",
+            "es": "Un negativo de papel del que se podían sacar muchas copias, la idea en la que se basa toda la fotografía con película. Talbot fotografió una ventana de su casa aquí en 1835 y presentó el calotipo en 1841."
+          },
+          "details": {
+            "en": "Talbot, a scientist who also helped decipher Assyrian cuneiform, showed his first 'photogenic drawings' in London in January 1839, days after Daguerre's news. Unlike Daguerre's, his process was patented, which slowed its spread in England. His book The Pencil of Nature, from 1844, was one of the first illustrated with photographs.",
+            "es": "Talbot, un científico que también ayudó a descifrar la escritura cuneiforme asiria, mostró sus primeros «dibujos fotogénicos» en Londres en enero de 1839, días después de la noticia de Daguerre. A diferencia del de Daguerre, su procedimiento estaba patentado, lo que frenó su difusión en Inglaterra. Su libro El lápiz de la naturaleza, de 1844, fue de los primeros ilustrados con fotografías."
+          },
+          "wiki": { "en": "Calotype", "es": "Calotipo" }
+        },
+        {
+          "id": "hercules-florence",
+          "name": { "en": "Hércules Florence", "es": "Hércules Florence" },
+          "at": [-47.0608, -22.9056],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1833",
+          "life": ["1804", "1879-03-27"],
+          "place": { "en": "Campinas, São Paulo, Brazil", "es": "Campinas, São Paulo, Brasil" },
+          "text": {
+            "en": "A French-born painter in Brazil who in 1833 fixed camera images on paper with silver salts and named his process 'photographie'. Unpublished and far from Europe, he was long forgotten.",
+            "es": "Un pintor nacido en Francia y radicado en Brasil que en 1833 fijó imágenes de cámara en papel con sales de plata y llamó a su método «photographie». Sin publicarlo y lejos de Europa, quedó olvidado mucho tiempo."
+          },
+          "details": {
+            "en": "Florence came to Rio de Janeiro in 1824 and drew for the Langsdorff expedition through the Paraguay and Amazon basins. Settled in Campinas, he looked for a cheap way to print, worked with the pharmacist Joaquim Correa de Mello, and used his negative and positive method to copy labels and diplomas. A print of pharmacy labels from 1833 is the oldest photographic record known in the Americas.",
+            "es": "Florence llegó a Río de Janeiro en 1824 y dibujó para la expedición de Langsdorff por las cuencas del Paraguay y del Amazonas. Ya instalado en Campinas, buscaba una forma barata de imprimir, trabajó con el farmacéutico Joaquim Correa de Mello y usó su método de negativo y positivo para copiar etiquetas y diplomas. Una copia de etiquetas de farmacia de 1833 es el registro fotográfico más antiguo que se conoce en América."
+          },
+          "wiki": { "en": "Hércules Florence", "es": "Hércules Florence" }
+        },
+        {
+          "id": "anna-atkins",
+          "name": { "en": "Anna Atkins", "es": "Anna Atkins" },
+          "at": [0.13, 51.329],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1843-10",
+          "life": ["1799-03-16", "1871-06-09"],
+          "place": { "en": "Halstead Place, near Sevenoaks, Kent, England", "es": "Halstead Place, cerca de Sevenoaks, Kent, Inglaterra" },
+          "text": {
+            "en": "A botanist who made blue cyanotype prints of seaweeds by laying them on sensitive paper. Her Photographs of British Algae, from 1843, is often called the first book illustrated with photographs.",
+            "es": "Una botánica que hizo copias azules, cianotipos, de algas al apoyarlas sobre papel sensible. Sus Fotografías de algas británicas, de 1843, suelen considerarse el primer libro ilustrado con fotografías."
+          },
+          "details": {
+            "en": "The cyanotype had been invented in 1842 by her friend John Herschel, William Herschel's son. Within a year Atkins used it to make exact pictures of algae, which she published herself in parts. Some sources also call her the first woman to make a photograph.",
+            "es": "El cianotipo lo había inventado en 1842 su amigo John Herschel, hijo de William Herschel. En menos de un año, Atkins lo usó para hacer imágenes exactas de algas, que publicó ella misma por entregas. Algunas fuentes la consideran además la primera mujer que hizo una fotografía."
+          },
+          "wiki": { "en": "Anna Atkins", "es": "Anna Atkins" }
+        }
+      ]
+    },
+    {
+      "date": "1888",
+      "title": { "en": "You press the button", "es": "Usted aprieta el botón" },
+      "text": {
+        "en": "In 1888 George Eastman of Rochester sold the Kodak, a box camera loaded with film for 100 pictures. 'You press the button, we do the rest': photography was no longer only for experts.",
+        "es": "En 1888, George Eastman, de Rochester, sacó a la venta la Kodak, una cámara de caja cargada con película para 100 fotos. «Usted aprieta el botón, nosotros hacemos el resto»: la fotografía dejó de ser solo para expertos."
+      },
+      "details": {
+        "en": "Early photographers needed glass plates, chemicals and a darkroom. Eastman, a former bank clerk, first made ready-coated dry plates, then flexible roll film. The Kodak cost 25 dollars; when the roll was finished, owners mailed the whole camera to Rochester and, for 10 dollars more, got back their prints and a reloaded camera. In 1900 the Brownie, designed by Frank Brownell and aimed at children, cost just one dollar, and more than 150,000 were shipped in its first year. Eastman's flexible film also made moving pictures possible: Edison's team and Louis Le Prince both used it.",
+        "es": "Los primeros fotógrafos necesitaban placas de vidrio, productos químicos y un cuarto oscuro. Eastman, que había sido empleado de banco, fabricó primero placas secas ya preparadas y luego película flexible en rollo. La Kodak costaba 25 dólares; cuando se acababa el rollo, se enviaba la cámara entera a Rochester y, por 10 dólares más, volvía con las copias y cargada otra vez. En 1900, la Brownie, diseñada por Frank Brownell y pensada para niños, costaba solo un dólar, y en su primer año se enviaron más de 150 000. La película flexible de Eastman también hizo posible el cine: la usaron el equipo de Edison y Louis Le Prince."
+      },
+      "camera": { "lon": -77.61, "lat": 43.16, "zoom": 10 },
+      "places": [
+        {
+          "id": "kodak-camera",
+          "name": { "en": "Kodak camera", "es": "Cámara Kodak" },
+          "at": [-77.6168, 43.1593],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1888",
+          "by": { "en": "George Eastman", "es": "George Eastman" },
+          "place": { "en": "Rochester, New York, United States", "es": "Rochester, Nueva York, Estados Unidos" },
+          "text": {
+            "en": "A small box camera with a roll of film for 100 pictures, sent back to the factory to be developed. It made snapshots part of everyday life.",
+            "es": "Una pequeña cámara de caja con un rollo de película para 100 fotos, que se mandaba de vuelta a la fábrica para revelarla. Hizo de las instantáneas algo de todos los días."
+          },
+          "details": {
+            "en": "Eastman made up the name Kodak with his mother, using a set of anagram letters: he wanted a short word that was easy to say and meant nothing else. The company became one of the world's largest makers of film, but it struggled to move from film to digital pictures and went bankrupt in 2012.",
+            "es": "Eastman inventó el nombre Kodak con su madre, jugando con letras de anagramas: quería una palabra corta, fácil de decir y que no significara otra cosa. La empresa llegó a ser una de las mayores fabricantes de película del mundo, pero le costó pasar de la película a la imagen digital y quebró en 2012."
+          },
+          "wiki": { "en": "Kodak", "es": "Kodak" },
+          "img": "One Kodak Camera.jpg"
+        },
+        {
+          "id": "george-eastman",
+          "name": { "en": "George Eastman", "es": "George Eastman" },
+          "at": [-77.5802, 43.1526],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1888",
+          "life": ["1854-07-12", "1932-03-14"],
+          "place": { "en": "Rochester, New York, United States", "es": "Rochester, Nueva York, Estados Unidos" },
+          "text": {
+            "en": "The founder of Kodak, who made photography cheap and simple. He gave much of his fortune away, to a music school, a dental hospital and universities.",
+            "es": "El fundador de Kodak, que hizo la fotografía barata y sencilla. Donó gran parte de su fortuna a una escuela de música, a un hospital dental y a universidades."
+          },
+          "details": {
+            "en": "Born in 1854 on a farm at Waterville, New York, he was working as a bank clerk in the 1870s when he became interested in photography. After taking photography lessons, he built a machine for coating dry plates in 1879 and founded his first company in 1881. By 1896 Kodak was the world's leading supplier of film. His mansion in Rochester is now the George Eastman Museum, a museum of photography and film.",
+            "es": "Nacido en 1854 en una granja de Waterville, Nueva York, trabajaba como empleado de banco en la década de 1870 cuando se interesó por la fotografía. Tras tomar clases de fotografía, construyó en 1879 una máquina para preparar placas secas y fundó su primera empresa en 1881. Hacia 1896 Kodak era el mayor proveedor de película del mundo. Su mansión de Rochester es hoy el Museo George Eastman, dedicado a la fotografía y el cine."
+          },
+          "wiki": { "en": "George Eastman", "es": "George Eastman" }
+        },
+        {
+          "id": "kodak-brownie",
+          "name": { "en": "Kodak Brownie", "es": "Kodak Brownie" },
+          "at": [-77.6425, 43.2005],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1900-02",
+          "by": { "en": "Frank A. Brownell", "es": "Frank A. Brownell" },
+          "place": { "en": "Rochester, New York, United States", "es": "Rochester, Nueva York, Estados Unidos" },
+          "text": {
+            "en": "A cardboard box camera for children that cost one dollar. Brownies, made from 1900 to 1986, gave countless families their first snapshots.",
+            "es": "Una cámara de caja de cartón para niños que costaba un dólar. Las Brownie, fabricadas de 1900 a 1986, dieron a muchísimas familias sus primeras instantáneas."
+          },
+          "wiki": { "en": "Kodak Brownie", "es": "Kodak Brownie" }
+        }
+      ]
+    },
+    {
+      "date": "1895-12-28",
+      "title": { "en": "Pictures that move", "es": "Imágenes que se mueven" },
+      "text": {
+        "en": "On 28 December 1895, in the Indian Room of the Grand Café in Paris, the Lumière brothers of Lyon showed ten short films to a paying audience. Within a year their operators were showing films around the world.",
+        "es": "El 28 de diciembre de 1895, en el Salón Indio del Grand Café de París, los hermanos Lumière, de Lyon, proyectaron diez películas cortas ante un público que pagó entrada. En un año, sus operadores mostraban películas por todo el mundo."
+      },
+      "details": {
+        "en": "The Lumières ran a big photographic factory in Lyon. Their Cinématographe, light enough to carry, could film, print and project; the first film they showed, in March 1895, was of workers leaving their factory. Others were close behind, or ahead. Louis Le Prince filmed a garden in Leeds in 1888 but vanished in 1890. In the United States, William Kennedy Dickson, working in Thomas Edison's laboratory, built the Kinetoscope, a peep-show cabinet for one viewer, shown in 1893. In Berlin the Skladanowsky brothers projected films in November 1895. But it was the Lumières' operators who took cinema to London, Bombay, Buenos Aires and Mexico City, where President Porfirio Díaz watched their films at Chapultepec Castle on 6 August 1896.",
+        "es": "Los Lumière dirigían una gran fábrica de material fotográfico en Lyon. Su Cinematógrafo, tan liviano que se podía cargar, filmaba, copiaba y proyectaba; la primera película que mostraron, en marzo de 1895, era la de unos obreros saliendo de su fábrica. Otros iban cerca, o delante. Louis Le Prince filmó un jardín en Leeds en 1888, pero desapareció en 1890. En Estados Unidos, William Kennedy Dickson, que trabajaba en el laboratorio de Thomas Edison, construyó el quinetoscopio, una caja con mirilla para un solo espectador, presentada en 1893. En Berlín, los hermanos Skladanowsky proyectaron películas en noviembre de 1895. Pero fueron los operadores de los Lumière quienes llevaron el cine a Londres, Bombay, Buenos Aires y Ciudad de México, donde el presidente Porfirio Díaz vio sus películas en el castillo de Chapultepec el 6 de agosto de 1896."
+      },
+      "camera": { "lon": -20, "lat": 14, "zoom": 1.3 },
+      "moves": [
+        {
+          "side": "spread",
+          "path": [[2.3312, 48.8711], [72.8311, 18.9283]],
+          "label": { "en": "Lumière operators, 1896", "es": "Operadores de los Lumière, 1896" }
+        },
+        {
+          "side": "spread",
+          "path": [[2.3312, 48.8711], [-99.1813, 19.4204]]
+        },
+        {
+          "side": "spread",
+          "path": [[2.3312, 48.8711], [-58.3816, -34.6037]]
+        }
+      ],
+      "places": [
+        {
+          "id": "cinema",
+          "name": { "en": "Cinema", "es": "Cine" },
+          "at": [2.3312, 48.8711],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1895-12-28",
+          "by": { "en": "Lumière brothers", "es": "Hermanos Lumière" },
+          "place": { "en": "Grand Café, Boulevard des Capucines, Paris, France", "es": "Grand Café, bulevar de los Capuchinos, París, Francia" },
+          "text": {
+            "en": "Films projected on a screen for a paying audience. On 28 December 1895 about 40 people watched ten Lumière films, each less than a minute long: the traditional birth of cinema.",
+            "es": "Películas proyectadas en una pantalla ante un público que paga. El 28 de diciembre de 1895, unas 40 personas vieron diez películas de los Lumière, de menos de un minuto cada una: el nacimiento tradicional del cine."
+          },
+          "details": {
+            "en": "The Lumières' Cinématographe, pictured here, was a camera, printer and projector in one. Its first form had been patented by Léon Bouly in 1892, and the Lumières developed it, using film perforations first used by Émile Reynaud. The brothers are said to have called cinema 'an invention without a future' and at first refused to sell their machine to others, such as Georges Méliès.",
+            "es": "El Cinematógrafo de los Lumière, el de la imagen, era cámara, copiadora y proyector a la vez. Su primera versión la había patentado Léon Bouly en 1892, y los Lumière la perfeccionaron, con las perforaciones en la película que había usado antes Émile Reynaud. Se cuenta que los hermanos llamaron al cine «un invento sin futuro» y que al principio no quisieron vender su máquina a otros, como Georges Méliès."
+          },
+          "wiki": { "en": "Cinematograph", "es": "Cinematógrafo" }
+        },
+        {
+          "id": "lumiere-brothers",
+          "name": { "en": "Lumière brothers", "es": "Hermanos Lumière" },
+          "at": [4.8712, 45.7457],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1895",
+          "place": { "en": "Monplaisir, Lyon, France", "es": "Monplaisir, Lyon, Francia" },
+          "text": {
+            "en": "Auguste and Louis Lumière ran their family's photographic factory in Lyon. They made more than a thousand short films of everyday life, and later an early colour photography process.",
+            "es": "Auguste y Louis Lumière dirigían la fábrica fotográfica de su familia en Lyon. Hicieron más de mil películas cortas sobre la vida diaria y, más tarde, uno de los primeros procedimientos de fotografía en color."
+          },
+          "facts": [
+            { "label": { "en": "Auguste Lumière", "es": "Auguste Lumière" }, "value": { "en": "1862–1954", "es": "1862-1954" } },
+            { "label": { "en": "Louis Lumière", "es": "Louis Lumière" }, "value": { "en": "1864–1948", "es": "1864-1948" } }
+          ],
+          "wiki": { "en": "Lumière brothers", "es": "Hermanos Lumière" }
+        },
+        {
+          "id": "workers-leaving-the-lumiere-factory",
+          "name": { "en": "Workers Leaving the Lumière Factory", "es": "La salida de la fábrica Lumière" },
+          "at": [4.8696, 45.7452],
+          "cat": "optics",
+          "type": "work",
+          "date": "1895-03-22",
+          "by": { "en": "Louis Lumière", "es": "Louis Lumière" },
+          "place": { "en": "Lyon, France", "es": "Lyon, Francia" },
+          "text": {
+            "en": "Forty-six seconds of workers streaming out of the gates of the Lumière factory. First shown in March 1895, it is often called the first real motion picture.",
+            "es": "Cuarenta y seis segundos de obreros saliendo por el portón de la fábrica Lumière. Proyectada por primera vez en marzo de 1895, a menudo se la llama la primera película de verdad."
+          },
+          "wiki": { "en": "Workers Leaving the Lumière Factory", "es": "La Sortie de l'usine Lumière à Lyon" }
+        },
+        {
+          "id": "kinetoscope",
+          "name": { "en": "Kinetoscope", "es": "Quinetoscopio" },
+          "at": [-74.2339, 40.7836],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1891-05-20",
+          "by": { "en": "William Kennedy Dickson and Thomas Edison", "es": "William Kennedy Dickson y Thomas Edison" },
+          "place": { "en": "Edison's laboratory, West Orange, New Jersey, United States", "es": "Laboratorio de Edison, West Orange, Nueva Jersey, Estados Unidos" },
+          "text": {
+            "en": "A cabinet with a peephole for watching a short film, one person at a time. Edison took the credit, but historians give most of it to his employee William Kennedy Dickson.",
+            "es": "Una caja con una mirilla para ver una película corta, de a una persona por vez. Edison se llevó el mérito, pero los historiadores se lo dan sobre todo a su empleado William Kennedy Dickson."
+          },
+          "details": {
+            "en": "The first demonstration, on 20 May 1891, was for about 150 members of the National Federation of Women's Clubs visiting the laboratory. Its films, shot in the Black Maria, the world's first film studio, used Eastman's celluloid in strips 35 millimetres wide, still a standard size for film today. The first Kinetoscope parlour opened on Broadway in New York on 14 April 1894.",
+            "es": "La primera demostración, el 20 de mayo de 1891, fue para unas 150 integrantes de la Federación Nacional de Clubes de Mujeres que visitaban el laboratorio. Sus películas, filmadas en el Black Maria, el primer estudio de cine del mundo, usaban tiras de celuloide de Eastman de 35 milímetros de ancho, una medida que sigue siendo estándar. El primer salón de quinetoscopios abrió en Broadway, Nueva York, el 14 de abril de 1894."
+          },
+          "wiki": { "en": "Kinetoscope", "es": "Quinetoscopio" }
+        },
+        {
+          "id": "louis-le-prince",
+          "name": { "en": "Louis Le Prince", "es": "Louis Le Prince" },
+          "at": [-1.4994, 53.8394],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1888-10",
+          "life": ["1841-08-28", "1890"],
+          "place": { "en": "Roundhay, Leeds, England", "es": "Roundhay, Leeds, Inglaterra" },
+          "text": {
+            "en": "A French inventor living in Leeds who filmed his family in a garden in October 1888: the oldest surviving film. On 16 September 1890 he vanished on a train journey, before he could show his work.",
+            "es": "Un inventor francés que vivía en Leeds y filmó a su familia en un jardín en octubre de 1888: la película más antigua que se conserva. El 16 de septiembre de 1890 desapareció durante un viaje en tren, antes de poder mostrar su obra."
+          },
+          "wiki": { "en": "Louis Le Prince", "es": "Louis Le Prince" }
+        }
+      ]
+    },
+    {
+      "date": "1931",
+      "title": { "en": "Seeing with electrons", "es": "Ver con electrones" },
+      "text": {
+        "en": "Light cannot show anything smaller than about a quarter of a micrometre. In Berlin in 1931, Max Knoll and Ernst Ruska built a microscope that used electrons and magnets instead of light and glass.",
+        "es": "La luz no puede mostrar nada más pequeño que un cuarto de micrómetro. En Berlín, en 1931, Max Knoll y Ernst Ruska construyeron un microscopio que usaba electrones e imanes en lugar de luz y vidrio."
+      },
+      "details": {
+        "en": "Ruska, a young student at the Technical University in Charlottenburg, and Knoll, who led his team, focused a beam of electrons with magnetic coils, whose waves are far shorter than those of light. By 1933 their instrument showed finer detail than any light microscope. Reinhold Rüdenberg of Siemens had filed patents in 1932, and who invented it first is still argued about. Siemens began selling electron microscopes in 1938–1939, and Ruska's brother Helmut, a doctor, used them to study living things. In 1986 Ruska won the Nobel Prize in Physics, shared with Gerd Binnig and Heinrich Rohrer, who had built a microscope at IBM in Zurich that could feel single atoms; Knoll and Rüdenberg had died by then.",
+        "es": "Ruska, un joven estudiante de la Universidad Técnica de Charlottenburg, y Knoll, que dirigía su equipo, enfocaron un haz de electrones con bobinas magnéticas; sus ondas son muchísimo más cortas que las de la luz. En 1933 su aparato ya mostraba más detalle que cualquier microscopio de luz. Reinhold Rüdenberg, de Siemens, había presentado patentes en 1932, y todavía se discute quién lo inventó primero. Siemens empezó a vender microscopios electrónicos en 1938-1939, y Helmut, el hermano médico de Ruska, los usó para estudiar seres vivos. En 1986 Ruska ganó el Premio Nobel de Física, compartido con Gerd Binnig y Heinrich Rohrer, que habían construido en IBM, en Zúrich, un microscopio capaz de palpar átomos sueltos; Knoll y Rüdenberg ya habían muerto."
+      },
+      "camera": { "lon": 11, "lat": 50.2, "zoom": 4.8 },
+      "places": [
+        {
+          "id": "electron-microscope",
+          "name": { "en": "Electron microscope", "es": "Microscopio electrónico" },
+          "at": [13.3265, 52.5125],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1931",
+          "by": { "en": "Max Knoll and Ernst Ruska", "es": "Max Knoll y Ernst Ruska" },
+          "place": { "en": "Technical University of Berlin, Germany", "es": "Universidad Técnica de Berlín, Alemania" },
+          "text": {
+            "en": "Electrons have far shorter waves than light, so a beam of them, focused by magnetic lenses, shows much finer detail. Today's electron microscopes magnify up to two million times.",
+            "es": "Los electrones tienen ondas mucho más cortas que la luz, así que un haz de electrones, enfocado por lentes magnéticas, muestra detalles mucho más finos. Los microscopios electrónicos actuales aumentan hasta dos millones de veces."
+          },
+          "wiki": { "en": "Electron microscope", "es": "Microscopio electrónico" },
+          "img": "Ernst Ruska Electron Microscope - Deutsches Museum - Munich-edit.jpg"
+        },
+        {
+          "id": "ernst-ruska",
+          "name": { "en": "Ernst Ruska", "es": "Ernst Ruska" },
+          "at": [13.3242, 52.5136],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1931",
+          "life": ["1906-12-25", "1988-05-27"],
+          "place": { "en": "Berlin, Germany", "es": "Berlín, Alemania" },
+          "text": {
+            "en": "A German physicist who built the first electron microscope as a student, then designed the first ones sold by Siemens. He won the Nobel Prize in Physics in 1986, 55 years after his invention.",
+            "es": "Físico alemán que construyó el primer microscopio electrónico siendo estudiante y luego diseñó los primeros que vendió Siemens. Ganó el Premio Nobel de Física en 1986, 55 años después de su invento."
+          },
+          "wiki": { "en": "Ernst Ruska", "es": "Ernst Ruska" }
+        },
+        {
+          "id": "scanning-tunneling-microscope",
+          "name": { "en": "Scanning tunnelling microscope", "es": "Microscopio de efecto túnel" },
+          "at": [8.5497, 47.3108],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1981",
+          "by": { "en": "Gerd Binnig and Heinrich Rohrer", "es": "Gerd Binnig y Heinrich Rohrer" },
+          "place": { "en": "IBM Zurich Research Laboratory, Rüschlikon, Switzerland", "es": "Laboratorio de Investigación de IBM en Zúrich, Rüschlikon, Suiza" },
+          "text": {
+            "en": "A very sharp metal tip moved across a surface, a few atoms away from it, maps the surface atom by atom. It won its inventors the Nobel Prize in 1986.",
+            "es": "Una punta de metal muy afilada que recorre una superficie, a unos pocos átomos de distancia, dibuja la superficie átomo por átomo. Les dio a sus inventores el Premio Nobel en 1986."
+          },
+          "wiki": { "en": "Scanning tunneling microscope", "es": "Microscopio de efecto túnel" }
+        }
+      ]
+    },
+    {
+      "date": "1975",
+      "title": { "en": "A camera without film", "es": "Una cámara sin película" },
+      "text": {
+        "en": "In 1975 Steven Sasson, a young engineer at Kodak in Rochester, built a camera that stored pictures as numbers. It weighed 3.6 kg, and each black-and-white picture took 23 seconds to save on a cassette tape.",
+        "es": "En 1975, Steven Sasson, un joven ingeniero de Kodak en Rochester, construyó una cámara que guardaba las imágenes como números. Pesaba 3,6 kg, y cada foto en blanco y negro tardaba 23 segundos en grabarse en un casete."
+      },
+      "details": {
+        "en": "Its eye was a charge-coupled device, a light-sensitive chip invented at Bell Labs in 1969 by Willard Boyle and George E. Smith. Sasson's pictures had just 100 by 100 pixels, 0.01 megapixels. His supervisor, Gareth Lloyd, who had asked him to try, shared the patent, and Kodak first showed the prototype in public only in 2000. Others had made digital pictures before: a scanner designed by Virginia Norwood sent digital images of the Earth from the Landsat 1 satellite from 1972. Japanese companies led what followed: Fujifilm showed a fully digital camera with a memory card in 1988, and Kyocera and Sharp sold the first camera phones in 1999 and 2000. By 2007 most mobile phones had a camera, and in 2012 Kodak went bankrupt.",
+        "es": "Su ojo era un dispositivo de carga acoplada, un chip sensible a la luz inventado en Bell Labs en 1969 por Willard Boyle y George E. Smith. Las fotos de Sasson tenían apenas 100 por 100 píxeles, 0,01 megapíxeles. Su jefe, Gareth Lloyd, que le había pedido intentarlo, compartió la patente, y Kodak no mostró el prototipo en público hasta 2000. Otros ya habían hecho imágenes digitales: un escáner diseñado por Virginia Norwood enviaba desde 1972 imágenes digitales de la Tierra desde el satélite Landsat 1. Empresas japonesas llevaron la delantera después: Fujifilm presentó en 1988 una cámara totalmente digital con tarjeta de memoria, y Kyocera y Sharp vendieron los primeros celulares con cámara en 1999 y 2000. En 2007 la mayoría de los celulares ya tenían cámara, y en 2012 Kodak quebró."
+      },
+      "camera": { "lon": -76, "lat": 42, "zoom": 5.6 },
+      "places": [
+        {
+          "id": "digital-camera",
+          "name": { "en": "Digital camera", "es": "Cámara digital" },
+          "at": [-77.6475, 43.2015],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1975",
+          "by": { "en": "Steven Sasson", "es": "Steven Sasson" },
+          "place": { "en": "Kodak, Rochester, New York, United States", "es": "Kodak, Rochester, Nueva York, Estados Unidos" },
+          "text": {
+            "en": "Sasson's prototype turned light into numbers with a CCD chip and saved them on tape: the first self-contained, hand-held digital camera. Today almost every photo is digital.",
+            "es": "El prototipo de Sasson convertía la luz en números con un chip CCD y los guardaba en una cinta: la primera cámara digital portátil y completa. Hoy casi todas las fotos son digitales."
+          },
+          "wiki": { "en": "Digital camera", "es": "Cámara digital" }
+        },
+        {
+          "id": "charge-coupled-device",
+          "name": { "en": "Charge-coupled device (CCD)", "es": "Dispositivo de carga acoplada (CCD)" },
+          "at": [-74.3985, 40.6846],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1969",
+          "by": { "en": "Willard Boyle and George E. Smith", "es": "Willard Boyle y George E. Smith" },
+          "place": { "en": "Bell Labs, Murray Hill, New Jersey, United States", "es": "Bell Labs, Murray Hill, Nueva Jersey, Estados Unidos" },
+          "text": {
+            "en": "The first chip that could turn a picture into electric charges, pixel by pixel. CCDs went into digital cameras, video cameras and the Hubble Space Telescope.",
+            "es": "El primer chip capaz de convertir una imagen en cargas eléctricas, píxel por píxel. Los CCD llegaron a las cámaras digitales, a las de video y al telescopio espacial Hubble."
+          },
+          "wiki": { "en": "Charge-coupled device", "es": "Dispositivo de carga acoplada" }
+        },
+        {
+          "id": "bell-labs",
+          "name": { "en": "Bell Labs", "es": "Bell Labs" },
+          "at": [-74.4003, 40.6833],
+          "cat": "lab",
+          "type": "institution",
+          "date": "1925",
+          "place": { "en": "Murray Hill, New Jersey, United States", "es": "Murray Hill, Nueva Jersey, Estados Unidos" },
+          "text": {
+            "en": "The research laboratory of the American telephone company, where the CCD image sensor was invented in 1969, among many other inventions.",
+            "es": "El laboratorio de investigación de la compañía telefónica estadounidense, donde se inventó en 1969 el sensor de imagen CCD, entre muchos otros inventos."
+          },
+          "wiki": { "en": "Bell Labs", "es": "Bell Labs" }
+        }
+      ]
+    },
+    {
+      "date": "1990-04-24",
+      "title": { "en": "An eye above the air", "es": "Un ojo por encima del aire" },
+      "text": {
+        "en": "On 24 April 1990 the Space Shuttle Discovery carried the Hubble Space Telescope into orbit, above the air that blurs the stars. Its mirror had a flaw, which astronauts corrected in 1993.",
+        "es": "El 24 de abril de 1990, el transbordador Discovery llevó a la órbita el telescopio espacial Hubble, por encima del aire que hace borrosas las estrellas. Su espejo tenía un defecto, que unos astronautas corrigieron en 1993."
+      },
+      "details": {
+        "en": "The idea came from the astronomer Lyman Spitzer, who explained in 1946 why a telescope in space would see far more sharply. Nancy Grace Roman, NASA's first chief of astronomy, planned and defended it for years and is called the 'Mother of Hubble'. The 2.4-metre mirror had been ground to slightly the wrong shape, so the first pictures were fuzzy, until a Shuttle crew fitted corrective optics in December 1993. Five servicing missions kept it going. It is named after Edwin Hubble, who at Mount Wilson in the 1920s showed that the universe is full of galaxies and expanding, building on Henrietta Swan Leavitt's way of measuring distances. In 2026 it is still working, about 470 km up, and more than 22,000 scientific papers have used its data.",
+        "es": "La idea fue del astrónomo Lyman Spitzer, que en 1946 explicó por qué un telescopio en el espacio vería con mucha más nitidez. Nancy Grace Roman, la primera jefa de astronomía de la NASA, lo planeó y lo defendió durante años, y se la llama la «madre del Hubble». El espejo de 2,4 metros se había pulido con una forma apenas equivocada, así que las primeras imágenes salieron borrosas, hasta que en diciembre de 1993 una tripulación del transbordador le colocó ópticas correctoras. Cinco misiones de servicio lo mantuvieron en marcha. Lleva el nombre de Edwin Hubble, que en Monte Wilson, en la década de 1920, demostró que el universo está lleno de galaxias y se expande, gracias al método de Henrietta Swan Leavitt para medir distancias. En 2026 sigue funcionando, a unos 470 km de altura, y más de 22 000 artículos científicos han usado sus datos."
+      },
+      "camera": { "lon": -95, "lat": 36, "zoom": 2.9 },
+      "places": [
+        {
+          "id": "hubble-space-telescope",
+          "name": { "en": "Hubble Space Telescope", "es": "Telescopio espacial Hubble" },
+          "at": [-80.6208, 28.6272],
+          "cat": "optics",
+          "type": "invention",
+          "date": "1990-04-24",
+          "by": { "en": "NASA and the European Space Agency", "es": "La NASA y la Agencia Espacial Europea" },
+          "place": { "en": "Launched from Kennedy Space Center, Florida, United States", "es": "Lanzado desde el Centro Espacial Kennedy, Florida, Estados Unidos" },
+          "text": {
+            "en": "A telescope with a 2.4-metre mirror that circles the Earth every 94 minutes. Its pictures of galaxies, nebulae and planets changed how we see the universe.",
+            "es": "Un telescopio con un espejo de 2,4 metros que da la vuelta a la Tierra cada 94 minutos. Sus imágenes de galaxias, nebulosas y planetas cambiaron nuestra forma de ver el universo."
+          },
+          "wiki": { "en": "Hubble Space Telescope", "es": "Telescopio espacial Hubble" }
+        },
+        {
+          "id": "nancy-grace-roman",
+          "name": { "en": "Nancy Grace Roman", "es": "Nancy Grace Roman" },
+          "at": [-77.0163, 38.883],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1960",
+          "life": ["1925-05-16", "2018-12-25"],
+          "place": { "en": "NASA Headquarters, Washington, D.C., United States", "es": "Sede de la NASA, Washington D. C., Estados Unidos" },
+          "text": {
+            "en": "An astronomer who became NASA's first chief of astronomy and its first woman executive. She built its space astronomy programme and is remembered as the 'Mother of Hubble'.",
+            "es": "Astrónoma que fue la primera jefa de astronomía de la NASA y su primera mujer directiva. Creó su programa de astronomía espacial y se la recuerda como la «madre del Hubble»."
+          },
+          "wiki": { "en": "Nancy Grace Roman", "es": "Nancy Roman" }
+        },
+        {
+          "id": "edwin-hubble",
+          "name": { "en": "Edwin Hubble", "es": "Edwin Hubble" },
+          "at": [-118.0572, 34.225],
+          "cat": "inventor",
+          "type": "person",
+          "date": "1929",
+          "life": ["1889-11-20", "1953-09-28"],
+          "place": { "en": "Mount Wilson Observatory, California, United States", "es": "Observatorio del Monte Wilson, California, Estados Unidos" },
+          "text": {
+            "en": "With the 2.5-metre Hooker telescope, then the world's largest, he showed that the Milky Way is one galaxy among many and, in 1929, that galaxies are rushing apart.",
+            "es": "Con el telescopio Hooker de 2,5 metros, entonces el más grande del mundo, demostró que la Vía Láctea es una galaxia entre muchas y, en 1929, que las galaxias se alejan unas de otras."
+          },
+          "details": {
+            "en": "Hubble measured the distances to galaxies using the pulsing stars whose rule had been found by Henrietta Swan Leavitt at Harvard. The law that galaxies move away faster the farther they are had been proposed two years before him by the Belgian priest and physicist Georges Lemaître.",
+            "es": "Hubble midió las distancias a las galaxias con las estrellas pulsantes cuya regla había descubierto Henrietta Swan Leavitt en Harvard. La ley según la cual las galaxias se alejan más rápido cuanto más lejos están la había propuesto dos años antes el sacerdote y físico belga Georges Lemaître."
+          },
+          "wiki": { "en": "Edwin Hubble", "es": "Edwin Hubble" }
+        },
+        {
+          "id": "space-telescope-science-institute",
+          "name": { "en": "Space Telescope Science Institute", "es": "Instituto Científico del Telescopio Espacial" },
+          "at": [-76.6233, 39.3328],
+          "cat": "lab",
+          "type": "institution",
+          "date": "1981",
+          "place": { "en": "Johns Hopkins University, Baltimore, Maryland, United States", "es": "Universidad Johns Hopkins, Baltimore, Maryland, Estados Unidos" },
+          "text": {
+            "en": "The institute in Baltimore that schedules Hubble's observations and shares its data with astronomers everywhere. It also runs the James Webb Space Telescope.",
+            "es": "El instituto de Baltimore que programa las observaciones del Hubble y comparte sus datos con astrónomos de todo el mundo. También opera el telescopio espacial James Webb."
+          },
+          "wiki": { "en": "Space Telescope Science Institute", "es": "" },
+          "img": "Muller jhu stsci.jpg"
+        }
+      ]
+    },
+    {
+      "date": "2021-12-25",
+      "title": { "en": "Back to the first galaxies", "es": "Hacia las primeras galaxias" },
+      "text": {
+        "en": "On Christmas Day 2021 an Ariane 5 rocket launched the James Webb Space Telescope from Kourou, in French Guiana. Its gold mirror, 6.5 metres wide, sees the infrared light of the first galaxies.",
+        "es": "El día de Navidad de 2021, un cohete Ariane 5 lanzó el telescopio espacial James Webb desde Kourou, en la Guayana Francesa. Su espejo dorado, de 6,5 metros, capta la luz infrarroja de las primeras galaxias."
+      },
+      "details": {
+        "en": "Webb was led by NASA with the European Space Agency, which provided the rocket and an instrument, and the Canadian Space Agency. Its 18 hexagonal mirrors of gold-plated beryllium had to fold up to fit inside the rocket and open in space, behind a five-layer sunshield about 21 by 14 metres that keeps the telescope colder than −223 °C. It works 1.5 million km from Earth. Its first deep field of galaxies was revealed on 11 July 2022. The infrared light it sees was discovered by William Herschel. On 30 August 2026 NASA launched its next great space telescope, named after Nancy Grace Roman, whose camera sees an area of sky 100 times larger than Hubble's.",
+        "es": "Webb lo dirigió la NASA con la Agencia Espacial Europea, que aportó el cohete y un instrumento, y con la Agencia Espacial Canadiense. Sus 18 espejos hexagonales de berilio bañado en oro tuvieron que plegarse para caber en el cohete y abrirse en el espacio, detrás de un parasol de cinco capas de unos 21 por 14 metros que mantiene el telescopio a menos de −223 °C. Trabaja a 1,5 millones de km de la Tierra. Su primer campo profundo de galaxias se dio a conocer el 11 de julio de 2022. La luz infrarroja que capta la descubrió William Herschel. El 30 de agosto de 2026, la NASA lanzó su siguiente gran telescopio espacial, que lleva el nombre de Nancy Grace Roman y cuya cámara abarca un área del cielo 100 veces mayor que la del Hubble."
+      },
+      "camera": { "lon": -65, "lat": 22, "zoom": 2.6 },
+      "places": [
+        {
+          "id": "james-webb-space-telescope",
+          "name": { "en": "James Webb Space Telescope", "es": "Telescopio espacial James Webb" },
+          "at": [-52.7683, 5.239],
+          "cat": "optics",
+          "type": "invention",
+          "date": "2021-12-25",
+          "by": { "en": "NASA, ESA and the Canadian Space Agency", "es": "La NASA, la ESA y la Agencia Espacial Canadiense" },
+          "place": { "en": "Launched from Kourou, French Guiana", "es": "Lanzado desde Kourou, Guayana Francesa" },
+          "text": {
+            "en": "The largest telescope ever sent into space, folded to fit inside a rocket. From 1.5 million km away it studies the first galaxies, newborn stars and the air of distant planets.",
+            "es": "El telescopio más grande enviado jamás al espacio, plegado para caber en un cohete. Desde 1,5 millones de km estudia las primeras galaxias, las estrellas que nacen y el aire de planetas lejanos."
+          },
+          "wiki": { "en": "James Webb Space Telescope", "es": "Telescopio espacial James Webb" }
+        },
+        {
+          "id": "space-telescope-science-institute",
+          "name": { "en": "Space Telescope Science Institute", "es": "Instituto Científico del Telescopio Espacial" },
+          "at": [-76.6233, 39.3328],
+          "cat": "lab",
+          "type": "institution",
+          "date": "1981",
+          "place": { "en": "Johns Hopkins University, Baltimore, Maryland, United States", "es": "Universidad Johns Hopkins, Baltimore, Maryland, Estados Unidos" },
+          "text": {
+            "en": "The institute in Baltimore that schedules Hubble's observations and shares its data with astronomers everywhere. It also runs the James Webb Space Telescope.",
+            "es": "El instituto de Baltimore que programa las observaciones del Hubble y comparte sus datos con astrónomos de todo el mundo. También opera el telescopio espacial James Webb."
+          },
+          "wiki": { "en": "Space Telescope Science Institute", "es": "" },
+          "img": "Muller jhu stsci.jpg"
+        },
+        {
+          "id": "nancy-grace-roman-space-telescope",
+          "name": { "en": "Nancy Grace Roman Space Telescope", "es": "Telescopio espacial Nancy Grace Roman" },
+          "at": [-80.6041, 28.6083],
+          "cat": "optics",
+          "type": "invention",
+          "date": "2026-08-30",
+          "by": { "en": "NASA", "es": "La NASA" },
+          "place": { "en": "Launched from Kennedy Space Center, Florida, United States", "es": "Lanzado desde el Centro Espacial Kennedy, Florida, Estados Unidos" },
+          "text": {
+            "en": "Launched on a Falcon Heavy on 30 August 2026, with a 2.4-metre mirror like Hubble's and a 300-megapixel camera. It will hunt for planets and study the dark energy that speeds up the universe.",
+            "es": "Lanzado en un Falcon Heavy el 30 de agosto de 2026, con un espejo de 2,4 metros como el del Hubble y una cámara de 300 megapíxeles. Buscará planetas y estudiará la energía oscura que acelera el universo."
+          },
+          "wiki": { "en": "Nancy Grace Roman Space Telescope", "es": "Telescopio espacial Nancy Grace Roman" }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Lenses and cameras changed what people could know: glasses gave scholars and craftspeople years more of reading and fine work, telescopes moved the Earth from the centre of the universe, and microscopes revealed the microbes behind disease. Photography and cinema turned memory, news and art into pictures anyone could make or see. In 2026 most of the world's photos are taken with phones, while Hubble, Webb and the new Roman telescope look back to the first galaxies.",
+    "es": "Las lentes y las cámaras cambiaron lo que podíamos saber: los anteojos dieron a sabios y artesanos años más de lectura y de trabajo fino, los telescopios sacaron a la Tierra del centro del universo y los microscopios revelaron los microbios que causan enfermedades. La fotografía y el cine convirtieron la memoria, las noticias y el arte en imágenes que cualquiera podía hacer o ver. En 2026 la mayoría de las fotos del mundo se toman con celulares, mientras el Hubble, el Webb y el nuevo telescopio Roman miran hacia las primeras galaxias."
+  },
+  "sources": [
+    { "title": "Ibn al-Haytham (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Ibn_al-Haytham" },
+    { "title": "Book of Optics (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Book_of_Optics" },
+    { "title": "Camera obscura (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Camera_obscura" },
+    { "title": "Glasses (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Glasses" },
+    { "title": "Jordan of Pisa (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Jordan_of_Pisa" },
+    { "title": "Venetian glass (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Venetian_glass" },
+    { "title": "Tommaso da Modena (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Tommaso_da_Modena" },
+    { "title": "Hans Lipperhey (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Hans_Lipperhey" },
+    { "title": "History of the telescope (Wikipedia)", "url": "https://en.wikipedia.org/wiki/History_of_the_telescope" },
+    { "title": "Jacob Metius (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Jacob_Metius" },
+    { "title": "Galileo Galilei (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Galileo_Galilei" },
+    { "title": "Sidereus Nuncius (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Sidereus_Nuncius" },
+    { "title": "Galilean moons (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Galilean_moons" },
+    { "title": "Simon Marius (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Simon_Marius" },
+    { "title": "Museo Galileo (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Museo_Galileo" },
+    { "title": "Johannes Kepler (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Johannes_Kepler" },
+    { "title": "Microscope (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Microscope" },
+    { "title": "Micrographia (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Micrographia" },
+    { "title": "Robert Hooke (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Robert_Hooke" },
+    { "title": "Antonie van Leeuwenhoek (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Antonie_van_Leeuwenhoek" },
+    { "title": "Newton's reflector (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Newton%27s_reflector" },
+    { "title": "Newtonian telescope (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Newtonian_telescope" },
+    { "title": "William Herschel (Wikipedia)", "url": "https://en.wikipedia.org/wiki/William_Herschel" },
+    { "title": "Caroline Herschel (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Caroline_Herschel" },
+    { "title": "Herschel Museum of Astronomy (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Herschel_Museum_of_Astronomy" },
+    { "title": "Nicéphore Niépce (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Nic%C3%A9phore_Ni%C3%A9pce" },
+    { "title": "View from the Window at Le Gras (Wikipedia)", "url": "https://en.wikipedia.org/wiki/View_from_the_Window_at_Le_Gras" },
+    { "title": "Daguerreotype (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Daguerreotype" },
+    { "title": "Louis Daguerre (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Louis_Daguerre" },
+    { "title": "Henry Fox Talbot (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Henry_Fox_Talbot" },
+    { "title": "Calotype (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Calotype" },
+    { "title": "Hércules Florence (Wikipedia)", "url": "https://en.wikipedia.org/wiki/H%C3%A9rcules_Florence" },
+    { "title": "Anna Atkins (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Anna_Atkins" },
+    { "title": "Kodak (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Kodak" },
+    { "title": "George Eastman (Wikipedia)", "url": "https://en.wikipedia.org/wiki/George_Eastman" },
+    { "title": "Kodak Brownie (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Kodak_Brownie" },
+    { "title": "Lumière brothers (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Auguste_and_Louis_Lumi%C3%A8re" },
+    { "title": "Cinematograph (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Cin%C3%A9matographe" },
+    { "title": "Workers Leaving the Lumière Factory (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Workers_Leaving_the_Lumi%C3%A8re_Factory" },
+    { "title": "Kinetoscope (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Kinetoscope" },
+    { "title": "Louis Le Prince (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Louis_Le_Prince" },
+    { "title": "Cinema of Mexico (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Cinema_of_Mexico" },
+    { "title": "Watson's Hotel (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Watson%27s_Hotel" },
+    { "title": "Electron microscope (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Electron_microscope" },
+    { "title": "Ernst Ruska (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Ernst_Ruska" },
+    { "title": "Scanning tunneling microscope (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Scanning_tunneling_microscope" },
+    { "title": "Steven Sasson (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Steven_Sasson" },
+    { "title": "Digital camera (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Digital_camera" },
+    { "title": "Charge-coupled device (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Charge-coupled_device" },
+    { "title": "Hubble Space Telescope (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope" },
+    { "title": "Nancy Grace Roman (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Nancy_Grace_Roman" },
+    { "title": "Edwin Hubble (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Edwin_Hubble" },
+    { "title": "James Webb Space Telescope (Wikipedia)", "url": "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope" },
+    { "title": "Nancy Grace Roman Space Telescope (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Nancy_Grace_Roman_Space_Telescope" }
+  ]
+}

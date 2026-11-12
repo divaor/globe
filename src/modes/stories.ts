@@ -41,6 +41,20 @@ interface Battle { name: Text; at: Pt; date?: string; winner?: string; casualtie
 interface Move { side: string; path: Pt[]; label?: Text; pls?: (string | null)[]; by?: 'sea' | 'land' | 'river' | 'ice' | 'air'; icon?: string }
 interface WarEvent { icon: string; text: Text; at?: Pt; date?: string; pl?: string }
 /** A marker of the stories other than wars: a person, work, site, dish, structure... */
+export interface Whs { ref: number; n: [string, string]; y: number; c: 'c' | 'n' | 'm'; d?: 1; x?: number; m?: number; into?: [string, string] }
+/** A World Heritage site's line on a card: "Since 1983 · cultural", in danger, or removed from the list. */
+export function whsRows(w: Whs): { label: string; value: string; icon: string }[] {
+  const kind = t(w.c === 'n' ? 'whsNatural' : w.c === 'm' ? 'whsMixed' : 'whsCultural');
+  const value = w.x ? t('whsRemoved').replace('{y}', String(w.y)).replace('{x}', String(w.x))
+    : w.m && w.into ? t('whsMerged').replace('{y}', String(w.y)).replace('{m}', String(w.m)).replace('{into}', lang() === 'es' ? w.into[1] : w.into[0])
+    : `${t('whsSince').replace('{y}', String(w.y))} · ${kind}`;
+  const rows = [{ label: t('whsLabel'), value, icon: '🏛️' }];
+  if (w.d && !w.x && !w.m) rows.push({ label: t('whsDangerLabel'), value: t('whsDanger'), icon: '⚠️' });
+  return rows;
+}
+/** UNESCO's page of a site, in the reader's language. */
+export const whsUrl = (ref: number) => `https://whc.unesco.org/${lang() === 'es' ? 'es' : 'en'}/list/${ref}`;
+
 export interface Item {
   id?: string; name: Text; at: Pt; cat: string; icon: string; date: string; t: number; end?: string; life?: [string, string | null];
   /** When it stopped existing (a civilization's end); `tu` is that time. Off the map after it. */
@@ -53,6 +67,8 @@ export interface Item {
   img?: string;
   /** Music and dance: a clip of a free recording on Commons, played on the card and, with music on, with its step. */
   audio?: Clip;
+  /** A World Heritage site: its UNESCO number, official names, year listed, category, in danger now, year removed. */
+  whs?: Whs;
   /** Books and writers: a line of the book in its own language. */
   quote?: Quote;
   /** Games of the world, a Games' host marker: the top four of its medal table or final ranking. */
@@ -145,8 +161,8 @@ export interface CollectionItem extends Omit<Item, 'first'> {
 }
 
 /** The collections of stories. */
-export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing' | 'plagues' | 'disasters' | 'music' | 'books' | 'art';
-export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters', 'music', 'books', 'art'];
+export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing' | 'plagues' | 'disasters' | 'music' | 'books' | 'art' | 'inventions' | 'heritage';
+export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters', 'music', 'books', 'art', 'inventions', 'heritage'];
 /** `paleo`: its old steps are drawn on the continents of their age. */
 const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text; paleo?: boolean }> = {
   wars: { dir: 'conflicts', hash: 'war', icon: '⚔️', name: { en: 'Wars and conquests', es: 'Guerras y conquistas' } },
@@ -164,6 +180,8 @@ const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: 
   music: { dir: 'music', hash: 'music', icon: '🎵', name: { en: 'Music and dance', es: 'Música y baile' } },
   books: { dir: 'books', hash: 'books', icon: '📚', name: { en: 'Books and writers', es: 'Libros y escritores' } },
   art: { dir: 'art', hash: 'art', icon: '🖼️', name: { en: 'Art of the world', es: 'Arte del mundo' } },
+  inventions: { dir: 'inventions', hash: 'inventions', icon: '💡', name: { en: 'Inventions', es: 'Inventos' } },
+  heritage: { dir: 'heritage', hash: 'heritage', icon: '🏛️', name: { en: 'World Heritage', es: 'Patrimonio de la Humanidad' } },
 };
 export const storyHashKey = (k: StoryKind) => KINDS[k].hash;
 interface Area extends Shape { lp: Pt; area: number; outline?: MultiLineString | null }
@@ -1320,12 +1338,14 @@ export class StoryMode {
     if (it.size) rows.push({ label: t('storySize'), value: tx(it.size), icon: '📏' });
     if (it.status) rows.push({ label: t('storyStatus'), value: tx(it.status), icon: '🏷️' });
     for (const f of it.facts ?? []) rows.push({ label: tx(f.label), value: tx(f.value), icon: '⭐' });
+    if (it.whs) rows.push(...whsRows(it.whs));
     const notes = [tx(it.text)];
     if (it.by) notes.push(`${t('storyBy')}: ${tx(it.by)}`);
     if (it.why) notes.push(`${t('storyWhy')}: ${tx(it.why)}`);
     if (it.how) notes.push(`${t('storyHow')}: ${tx(it.how)}`);
     if (it.details) notes.push(tx(it.details));
     const links = it.wiki ? [{ label: t('wikipedia'), href: wikiUrl(it.wiki) }] : [];
+    if (it.whs) links.push({ label: 'UNESCO', href: whsUrl(it.whs.ref) });
     const sub = [cat ? `${cat.icon} ${tx(cat.name)}` : '', c ? tx(c.name) : ''].filter(Boolean).join(' · ');
     // A Games' host city: its medal table (or a World Cup's last four) under the facts.
     const g = it.type === 'games' ? c?.steps.find((st) => st.games && `games-${st.games.id}` === it.id)?.games : undefined;

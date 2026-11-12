@@ -1,0 +1,2182 @@
+{
+  "id": "world-heritage-begins",
+  "name": {
+    "en": "How World Heritage began",
+    "es": "Cómo nació el Patrimonio de la Humanidad"
+  },
+  "icon": "🏛️",
+  "era": "contemporary",
+  "region": {
+    "en": "Nubia, Paris and the whole world",
+    "es": "Nubia, París y todo el mundo"
+  },
+  "start": "1960",
+  "end": "2026",
+  "summary": {
+    "en": "A dam on the Nile, temples cut up and carried uphill, a flood in Venice and an idea born in Yellowstone: how the world came to share a list of places that belong to everyone, from the first 12 sites in 1978 to 1,273 today.",
+    "es": "Una presa en el Nilo, templos cortados y subidos cuesta arriba, una inundación en Venecia y una idea nacida en Yellowstone: cómo el mundo llegó a compartir una lista de lugares que son de todos, de los 12 primeros sitios en 1978 a 1273 hoy."
+  },
+  "camera": {
+    "lon": 20,
+    "lat": 28,
+    "zoom": 1.5
+  },
+  "sides": [
+    {
+      "id": "gift",
+      "name": {
+        "en": "Temples given in thanks",
+        "es": "Templos regalados en agradecimiento"
+      },
+      "color": "#d4a017"
+    }
+  ],
+  "steps": [
+    {
+      "date": "1960-01-09",
+      "title": {
+        "en": "A dam to tame the Nile",
+        "es": "Una presa para domar el Nilo"
+      },
+      "camera": {
+        "lon": 32.3,
+        "lat": 23.1,
+        "zoom": 5.6
+      },
+      "text": {
+        "en": "On 9 January 1960 Egypt began the Aswan High Dam. Its lake would drown 500 km of the Nile valley in Lower Nubia, with its ancient temples and the homes of over 100,000 Nubians.",
+        "es": "El 9 de enero de 1960, Egipto empezó la gran presa de Asuán. Su lago iba a anegar 500 km del valle del Nilo en la Baja Nubia, con sus templos antiguos y los hogares de más de 100 000 nubios."
+      },
+      "details": {
+        "en": "Egypt's new government wanted the dam to end the Nile's floods and droughts, water new fields and make electricity for industry; the Soviet Union helped build it. Behind it would rise Lake Nasser, stretching into Sudan. Lower Nubia, between the first and second cataracts of the Nile, held temples, fortresses, churches and villages thousands of years old. It was also the homeland of the Nubians, a people with their own languages and a long history on the river. Between 100,000 and 120,000 people had to move. Egyptian Nubians were taken to new villages near Kom Ombo; in Sudan, the people of Wadi Halfa, who protested in October 1960, were sent to New Halfa, about 700 km away. The old town disappeared under the water in 1964.",
+        "es": "El nuevo gobierno de Egipto quería la presa para acabar con las crecidas y las sequías del Nilo, regar nuevos campos y dar electricidad a la industria; la Unión Soviética ayudó a construirla. Detrás iba a formarse el lago Nasser, que llegaría hasta Sudán. La Baja Nubia, entre la primera y la segunda catarata del Nilo, guardaba templos, fortalezas, iglesias y aldeas de miles de años. Era también la tierra de los nubios, un pueblo con lenguas propias y una larga historia junto al río. Entre 100 000 y 120 000 personas tuvieron que irse. Los nubios de Egipto fueron llevados a nuevas aldeas cerca de Kom Ombo; en Sudán, la gente de Wadi Halfa, que protestó en octubre de 1960, fue enviada a Nueva Halfa, a unos 700 km. El viejo pueblo desapareció bajo el agua en 1964."
+      },
+      "places": [
+        {
+          "id": "aswan-high-dam",
+          "name": {
+            "en": "Aswan High Dam",
+            "es": "Gran presa de Asuán"
+          },
+          "at": [
+            32.8778,
+            23.9706
+          ],
+          "cat": "threat",
+          "type": "structure",
+          "date": "1960-01-09",
+          "end": "1970",
+          "place": {
+            "en": "Aswan, Egypt",
+            "es": "Asuán, Egipto"
+          },
+          "text": {
+            "en": "A dam of rock and clay 111 m high and 3.8 km long across the Nile, built in 1960–70 with Soviet help. It holds back floods and makes electricity, but its lake drowned Lower Nubia.",
+            "es": "Una presa de roca y arcilla de 111 m de alto y 3,8 km de largo sobre el Nilo, construida en 1960-1970 con ayuda soviética. Contiene las crecidas y da electricidad, pero su lago anegó la Baja Nubia."
+          },
+          "wiki": {
+            "en": "Aswan High Dam",
+            "es": "Presa de Asuán"
+          }
+        },
+        {
+          "id": "lake-nasser",
+          "name": {
+            "en": "Lake Nasser",
+            "es": "Lago Nasser"
+          },
+          "at": [
+            32.3,
+            22.95
+          ],
+          "cat": "threat",
+          "type": "place",
+          "date": "1964-09",
+          "place": {
+            "en": "Egypt and Sudan",
+            "es": "Egipto y Sudán"
+          },
+          "text": {
+            "en": "The reservoir behind the High Dam, about 500 km long, began to fill in September 1964. Sudanese call their part Lake Nubia. Under it lie villages, towns and ancient sites that could not be moved.",
+            "es": "El embalse de la gran presa, de unos 500 km de largo, empezó a llenarse en septiembre de 1964. Los sudaneses llaman a su parte lago Nubia. Bajo sus aguas quedan aldeas, pueblos y sitios antiguos que no se pudieron mover."
+          },
+          "wiki": {
+            "en": "Lake Nasser",
+            "es": "Lago Nasser"
+          }
+        },
+        {
+          "id": "wadi-halfa",
+          "name": {
+            "en": "Wadi Halfa",
+            "es": "Wadi Halfa"
+          },
+          "at": [
+            31.3667,
+            21.7833
+          ],
+          "cat": "threat",
+          "type": "place",
+          "date": "1964",
+          "place": {
+            "en": "Northern State, Sudan",
+            "es": "Estado del Norte, Sudán"
+          },
+          "text": {
+            "en": "A Sudanese Nubian town of about 11,000 people, flooded by the lake in 1964. Its people protested against leaving in October 1960; many were moved some 700 km away, to New Halfa.",
+            "es": "Un pueblo nubio de Sudán de unos 11 000 habitantes, anegado por el lago en 1964. Su gente protestó contra el traslado en octubre de 1960; muchos fueron llevados a unos 700 km, a Nueva Halfa."
+          },
+          "wiki": {
+            "en": "Wadi Halfa",
+            "es": "Wadi Halfa"
+          }
+        },
+        {
+          "id": "nubians",
+          "name": {
+            "en": "Nubians",
+            "es": "Nubios"
+          },
+          "at": [
+            32.93,
+            24.47
+          ],
+          "cat": "person",
+          "type": "culture",
+          "date": "1964",
+          "place": {
+            "en": "Kom Ombo and Aswan, Egypt; northern Sudan",
+            "es": "Kom Ombo y Asuán, Egipto; norte de Sudán"
+          },
+          "text": {
+            "en": "A people of the Nile with their own languages, who have lived in Nubia since ancient times. The lake took their homeland: 100,000 to 120,000 were resettled, and Egypt began to pay compensation only in 2019–20.",
+            "es": "Un pueblo del Nilo con lenguas propias, que vive en Nubia desde la Antigüedad. El lago se llevó su tierra: de 100 000 a 120 000 personas fueron reasentadas, y Egipto empezó a indemnizarlas recién en 2019-2020."
+          },
+          "wiki": {
+            "en": "Nubians",
+            "es": "Nubios"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1960-03-08",
+      "title": {
+        "en": "UNESCO's call to the world",
+        "es": "La UNESCO llama al mundo"
+      },
+      "camera": {
+        "lon": 26,
+        "lat": 37,
+        "zoom": 2.6
+      },
+      "text": {
+        "en": "On 8 March 1960 UNESCO asked the world to help save the monuments of Nubia. About 50 countries answered with money and engineers, and some 40 teams of archaeologists raced the rising water.",
+        "es": "El 8 de marzo de 1960, la UNESCO pidió al mundo que ayudara a salvar los monumentos de Nubia. Unos 50 países respondieron con dinero e ingenieros, y unos 40 equipos de arqueólogos corrieron contra el agua."
+      },
+      "details": {
+        "en": "Egypt asked UNESCO for help in April 1959 and Sudan that October. Behind the appeal were the French Egyptologist Christiane Desroches Noblecourt, who had pressed for it since 1955, Egypt's minister of culture Tharwat Okasha, who won over President Nasser, and René Maheu of UNESCO. 'It is not easy to choose between temples and crops,' wrote UNESCO's director-general, Vittorino Veronese. Egypt promised to pay a third, to let foreign teams dig and keep half of their finds, and to give temples to the countries that helped most. Teams from many countries surveyed and dug hundreds of sites before the lake rose. In Washington, Jacqueline Kennedy pushed for funds, and the United States became the largest donor.",
+        "es": "Egipto pidió ayuda a la UNESCO en abril de 1959, y Sudán en octubre. Detrás del llamado estaban la egiptóloga francesa Christiane Desroches Noblecourt, que lo pedía desde 1955, el ministro de Cultura de Egipto, Sarwat Okasha, que convenció al presidente Nasser, y René Maheu, de la UNESCO. «No es fácil elegir entre templos y cosechas», escribió el director general de la UNESCO, Vittorino Veronese. Egipto prometió pagar un tercio, dejar excavar a equipos extranjeros y que se quedaran con la mitad de sus hallazgos, y regalar templos a los países que más ayudaran. Equipos de muchos países estudiaron y excavaron cientos de sitios antes de que subiera el lago. En Washington, Jacqueline Kennedy impulsó la ayuda, y Estados Unidos fue el mayor donante."
+      },
+      "places": [
+        {
+          "id": "unesco",
+          "name": {
+            "en": "UNESCO",
+            "es": "UNESCO"
+          },
+          "at": [
+            2.3061,
+            48.8497
+          ],
+          "cat": "institution",
+          "type": "institution",
+          "date": "1945-11-16",
+          "place": {
+            "en": "Place de Fontenoy, Paris, France",
+            "es": "Place de Fontenoy, París, Francia"
+          },
+          "text": {
+            "en": "The United Nations' agency for education, science and culture, founded in 1945 and based in Paris. It led the Nubian campaign and runs the World Heritage Convention.",
+            "es": "La agencia de las Naciones Unidas para la educación, la ciencia y la cultura, fundada en 1945 y con sede en París. Dirigió la campaña de Nubia y administra la Convención del Patrimonio Mundial."
+          },
+          "wiki": {
+            "en": "UNESCO",
+            "es": "Unesco"
+          },
+          "img": "Paris 20080731 - UNESCO.jpg"
+        },
+        {
+          "id": "nubia-campaign",
+          "name": {
+            "en": "Campaign to Save the Monuments of Nubia",
+            "es": "Campaña para salvar los monumentos de Nubia"
+          },
+          "at": [
+            32.5,
+            23.2
+          ],
+          "cat": "rescue",
+          "type": "event",
+          "date": "1960-03-08",
+          "end": "1980-03-10",
+          "place": {
+            "en": "Lower Nubia, Egypt and Sudan",
+            "es": "Baja Nubia, Egipto y Sudán"
+          },
+          "text": {
+            "en": "UNESCO's campaign of 1960–80 moved 22 monuments away from the rising water and dug and recorded hundreds of sites. It cost about US$80 million, half of it given by some 50 countries.",
+            "es": "La campaña de la UNESCO de 1960-1980 trasladó 22 monumentos lejos del agua que subía y excavó y documentó cientos de sitios. Costó unos 80 millones de dólares, la mitad aportada por unos 50 países."
+          },
+          "wiki": {
+            "en": "International Campaign to Save the Monuments of Nubia",
+            "es": "Campaña de salvamento de los monumentos de Nubia"
+          },
+          "img": "Dismantling of the statues of the Great Temple.jpg"
+        },
+        {
+          "id": "tharwat-okasha",
+          "name": {
+            "en": "Tharwat Okasha",
+            "es": "Sarwat Okasha"
+          },
+          "at": [
+            31.2243,
+            30.0626
+          ],
+          "cat": "person",
+          "type": "person",
+          "date": "1959",
+          "life": [
+            "1921",
+            "2012-02-27"
+          ],
+          "place": {
+            "en": "Ministry of Culture, Cairo, Egypt",
+            "es": "Ministerio de Cultura, El Cairo, Egipto"
+          },
+          "text": {
+            "en": "Egypt's minister of culture in 1958–62 and 1966–70. In 1959 he persuaded President Nasser to ask the world for help, and he secretly ordered the study that showed how Abu Simbel could be cut up and moved.",
+            "es": "Ministro de Cultura de Egipto en 1958-1962 y 1966-1970. En 1959 convenció al presidente Nasser de pedir ayuda al mundo, y encargó en secreto el estudio que mostró cómo cortar y mover Abu Simbel."
+          },
+          "wiki": {
+            "en": "Tharwat Okasha",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1964",
+      "title": {
+        "en": "Abu Simbel cut and lifted",
+        "es": "Abu Simbel, cortado y elevado"
+      },
+      "camera": {
+        "lon": 32.2,
+        "lat": 23.1,
+        "zoom": 6.2
+      },
+      "text": {
+        "en": "From 1964 to 1968 engineers and stonecutters sawed the temples of Abu Simbel into 1,036 blocks and rebuilt them 65 m higher and 200 m back, just ahead of the rising lake.",
+        "es": "De 1964 a 1968, ingenieros y canteros cortaron los templos de Abu Simbel en 1036 bloques y los rearmaron 65 m más arriba y 200 m tierra adentro, justo antes de que subiera el lago."
+      },
+      "details": {
+        "en": "A Swedish firm, VBB, proposed cutting the temples up; in 1963 the United States promised US$12 million and the work could begin. A joint venture led by the German firm Hochtief, with Egyptian, French, Italian and Swedish companies, first built a cofferdam against the water. Egyptian workers strengthened the soft sandstone with resin, and Italian stonecutters trained in the Carrara marble quarries cut the façades by hand, with cuts about 6 mm wide. By 1965 some 1,850 people worked on the site. The blocks, up to 30 tonnes, were rebuilt about 200 m back from the river, under a concrete dome, aligned so that the sun still reaches the inner shrine around 22 February and 22 October. The temples reopened on 22 September 1968. West Germany had already moved Kalabsha, and France moved Amada on rails.",
+        "es": "Una empresa sueca, VBB, propuso cortar los templos; en 1963 Estados Unidos prometió 12 millones de dólares y la obra pudo empezar. Un consorcio dirigido por la empresa alemana Hochtief, con firmas egipcias, francesas, italianas y suecas, levantó primero una ataguía contra el agua. Obreros egipcios reforzaron la blanda arenisca con resina, y canteros italianos formados en las canteras de mármol de Carrara cortaron las fachadas a mano, con cortes de unos 6 mm. En 1965 trabajaban en el lugar unas 1850 personas. Los bloques, de hasta 30 toneladas, se rearmaron unos 200 m tierra adentro, bajo una cúpula de hormigón, orientados para que el sol siga llegando al santuario hacia el 22 de febrero y el 22 de octubre. Los templos reabrieron el 22 de septiembre de 1968. Alemania Occidental ya había movido Kalabsha, y Francia movió Amada sobre rieles."
+      },
+      "places": [
+        {
+          "id": "abu-simbel",
+          "name": {
+            "en": "Abu Simbel",
+            "es": "Abu Simbel"
+          },
+          "at": [
+            31.6256,
+            22.3369
+          ],
+          "cat": "monument",
+          "type": "site",
+          "date": "-1264",
+          "end": "-1244",
+          "place": {
+            "en": "Aswan Governorate, Egypt (Nubia)",
+            "es": "Gobernación de Asuán, Egipto (Nubia)"
+          },
+          "text": {
+            "en": "Two temples carved into a cliff for Ramesses II about 1264 BC, with four 20 m statues of the king at the door. In 1964–68 they were cut into 1,036 blocks and rebuilt 65 m higher, away from the lake.",
+            "es": "Dos templos excavados en un acantilado para Ramsés II hacia el 1264 a. C., con cuatro estatuas del rey de 20 m en la entrada. En 1964-1968 se cortaron en 1036 bloques y se rearmaron 65 m más arriba, lejos del lago."
+          },
+          "whs": 88,
+          "wiki": {
+            "en": "Abu Simbel",
+            "es": "Abu Simbel"
+          }
+        },
+        {
+          "id": "kalabsha",
+          "name": {
+            "en": "Temple of Kalabsha",
+            "es": "Templo de Kalabsha"
+          },
+          "at": [
+            32.8672,
+            23.9608
+          ],
+          "cat": "monument",
+          "type": "site",
+          "date": "-30",
+          "place": {
+            "en": "New Kalabsha, near the High Dam, Aswan, Egypt",
+            "es": "Nueva Kalabsha, junto a la gran presa, Asuán, Egipto"
+          },
+          "text": {
+            "en": "The largest temple of Lower Nubia, built when Rome ruled Egypt, about 30 BC. In 1961–63 West Germany paid to take it apart and rebuild it near the High Dam; its gate went to a Berlin museum.",
+            "es": "El mayor templo de la Baja Nubia, construido cuando Roma gobernaba Egipto, hacia el 30 a. C. En 1961-1963 Alemania Occidental pagó para desmontarlo y rearmarlo junto a la gran presa; su puerta fue a un museo de Berlín."
+          },
+          "whs": 88,
+          "wiki": {
+            "en": "New Kalabsha",
+            "es": "Kalabsha"
+          },
+          "img": "The Temple of Kalabsha by Dennis G. Jarvis.jpg"
+        },
+        {
+          "id": "christiane-desroches-noblecourt",
+          "name": {
+            "en": "Christiane Desroches Noblecourt",
+            "es": "Christiane Desroches Noblecourt"
+          },
+          "at": [
+            32.2626,
+            22.7312
+          ],
+          "cat": "person",
+          "type": "person",
+          "date": "1955",
+          "life": [
+            "1913-11-17",
+            "2011-06-23"
+          ],
+          "place": {
+            "en": "Amada, Nubia; Cairo; the Louvre, Paris",
+            "es": "Amada, Nubia; El Cairo; el Louvre, París"
+          },
+          "text": {
+            "en": "A French Egyptologist of the Louvre, the first woman to lead a French dig in Egypt. From 1955 she urged UNESCO and Egypt to save the temples of Nubia, and she ran the centre in Cairo that recorded them.",
+            "es": "Egiptóloga francesa del Louvre, la primera mujer en dirigir una excavación francesa en Egipto. Desde 1955 instó a la UNESCO y a Egipto a salvar los templos de Nubia, y dirigió el centro de El Cairo que los documentó."
+          },
+          "details": {
+            "en": "Desroches Noblecourt had hidden the Louvre's Egyptian treasures from the Nazis during the war. In Cairo she ran a UNESCO documentation centre that photographed and drew hundreds of tombs and temples. She lobbied UNESCO's leaders for years, drafted the letter in which President Nasser asked UNESCO for help in April 1959, and guided the experts who toured Nubia that October. When she promised that France would save the temple of Amada and General de Gaulle asked how she dared to do so without his government's approval, she reminded him of his own call to resist in June 1940, made without asking anyone. He laughed and kept her promise.",
+            "es": "Desroches Noblecourt había escondido de los nazis los tesoros egipcios del Louvre durante la guerra. En El Cairo dirigió un centro de documentación de la UNESCO que fotografió y dibujó cientos de tumbas y templos. Presionó durante años a los jefes de la UNESCO, redactó la carta con la que el presidente Nasser pidió ayuda a la UNESCO en abril de 1959 y guio a los expertos que recorrieron Nubia ese octubre. Cuando prometió que Francia salvaría el templo de Amada y el general De Gaulle le preguntó cómo se atrevía sin permiso de su gobierno, ella le recordó su propio llamado a resistir en junio de 1940, hecho sin pedir permiso a nadie. Él se rio y cumplió la promesa."
+          },
+          "wiki": {
+            "en": "Christiane Desroches Noblecourt",
+            "es": "Christiane Desroches Noblecourt"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1965",
+      "title": {
+        "en": "A trust for the world's treasures",
+        "es": "Un fondo para los tesoros del mundo"
+      },
+      "camera": {
+        "lon": -50,
+        "lat": 42,
+        "zoom": 1.4
+      },
+      "text": {
+        "en": "In 1965 a White House conference in Washington called for a 'World Heritage Trust' to protect the world's finest natural areas and historic sites, an idea that grew out of America's national parks.",
+        "es": "En 1965, una conferencia en la Casa Blanca pidió un «Fondo del Patrimonio Mundial» para proteger los mejores espacios naturales y sitios históricos del mundo, una idea nacida de los parques nacionales de Estados Unidos."
+      },
+      "details": {
+        "en": "Yellowstone, created on 1 March 1872, was the world's first national park, on land that Native American peoples had used for at least 11,000 years. By the 1960s many countries had parks of their own. The 1965 conference proposed a trust to protect 'the world's superb natural and scenic areas and historic sites for the present and the future of the entire world citizenry'. In 1968 the International Union for Conservation of Nature (IUCN) drew up similar proposals. Meanwhile UNESCO, with ICOMOS, the new council of monument experts founded in 1965, was preparing a treaty to protect cultural heritage. The two ideas, one for nature and one for culture, would soon be joined in a single convention.",
+        "es": "Yellowstone, creado el 1 de marzo de 1872, fue el primer parque nacional del mundo, en tierras que los pueblos indígenas de América usaban desde hacía al menos 11 000 años. En los años sesenta muchos países ya tenían sus propios parques. La conferencia de 1965 propuso un fondo para proteger «las magníficas áreas naturales y paisajísticas y los sitios históricos del mundo, para el presente y el futuro de toda la ciudadanía mundial». En 1968, la Unión Internacional para la Conservación de la Naturaleza (UICN) preparó propuestas parecidas. Mientras, la UNESCO, con el ICOMOS, el nuevo consejo de expertos en monumentos fundado en 1965, preparaba un tratado para proteger el patrimonio cultural. Las dos ideas, una para la naturaleza y otra para la cultura, pronto se unirían en una sola convención."
+      },
+      "places": [
+        {
+          "id": "white-house-conference",
+          "name": {
+            "en": "White House conference of 1965",
+            "es": "Conferencia de la Casa Blanca de 1965"
+          },
+          "at": [
+            -77.0365,
+            38.8977
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1965",
+          "place": {
+            "en": "Washington, D.C., United States",
+            "es": "Washington D. C., Estados Unidos"
+          },
+          "text": {
+            "en": "A conference on international cooperation at the White House that in 1965 called for a 'World Heritage Trust' to protect the world's finest natural areas and historic sites.",
+            "es": "Una conferencia sobre cooperación internacional en la Casa Blanca que en 1965 pidió un «Fondo del Patrimonio Mundial» para proteger los mejores espacios naturales y sitios históricos del mundo."
+          },
+          "wiki": {
+            "en": "World Heritage Convention",
+            "es": "Convención sobre la Protección del Patrimonio Mundial Cultural y Natural"
+          },
+          "img": "White House north and south sides.jpg"
+        },
+        {
+          "id": "yellowstone",
+          "name": {
+            "en": "Yellowstone",
+            "es": "Yellowstone"
+          },
+          "at": [
+            -110.5,
+            44.6
+          ],
+          "cat": "nature",
+          "type": "site",
+          "date": "1872-03-01",
+          "place": {
+            "en": "Wyoming, Montana and Idaho, United States",
+            "es": "Wyoming, Montana e Idaho, Estados Unidos"
+          },
+          "text": {
+            "en": "The world's first national park, created on 1 March 1872, with geysers, hot springs, bison and wolves on top of a sleeping supervolcano. It was one of the first 12 World Heritage Sites.",
+            "es": "El primer parque nacional del mundo, creado el 1 de marzo de 1872, con géiseres, fuentes termales, bisontes y lobos sobre un supervolcán dormido. Fue uno de los 12 primeros sitios del Patrimonio Mundial."
+          },
+          "whs": 28,
+          "wiki": {
+            "en": "Yellowstone National Park",
+            "es": "Parque nacional de Yellowstone"
+          }
+        },
+        {
+          "id": "iucn",
+          "name": {
+            "en": "IUCN",
+            "es": "UICN"
+          },
+          "at": [
+            6.27,
+            46.42
+          ],
+          "cat": "institution",
+          "type": "institution",
+          "date": "1948-10-05",
+          "place": {
+            "en": "Gland, Switzerland",
+            "es": "Gland, Suiza"
+          },
+          "text": {
+            "en": "The International Union for Conservation of Nature, founded in 1948 at Fontainebleau and now based in Gland. Under the convention it judges every natural site proposed for the list.",
+            "es": "La Unión Internacional para la Conservación de la Naturaleza, fundada en 1948 en Fontainebleau y hoy con sede en Gland. Según la convención, evalúa cada sitio natural propuesto para la lista."
+          },
+          "wiki": {
+            "en": "International Union for Conservation of Nature",
+            "es": "Unión Internacional para la Conservación de la Naturaleza"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1966-11-04",
+      "title": {
+        "en": "Venice under water",
+        "es": "Venecia bajo el agua"
+      },
+      "camera": {
+        "lon": 11.9,
+        "lat": 44.6,
+        "zoom": 6.5
+      },
+      "text": {
+        "en": "On 4 November 1966 a storm tide rose 194 cm in Venice, the highest ever measured, and the Arno flooded Florence. UNESCO appealed for both cities, and the world answered again.",
+        "es": "El 4 de noviembre de 1966, una marea de tormenta subió 194 cm en Venecia, la más alta jamás medida, y el Arno inundó Florencia. La UNESCO pidió ayuda para ambas ciudades, y el mundo volvió a responder."
+      },
+      "details": {
+        "en": "The same storm hit both cities. In Florence the Arno killed 35 people and buried paintings, books and archives in mud and oil; young volunteers from Italy and abroad, the 'Mud Angels', dug them out, and new methods of restoration were born. In Venice the flood showed how fragile the city had become, slowly sinking while the sea rose. In 1971 UNESCO launched a campaign for all of Venice. Private committees such as Venice in Peril in Britain and Save Venice in the United States have since paid for hundreds of restorations. Venice and its lagoon were listed in 1987. Since October 2020 the MOSE barriers, raised from the seabed, have held back the worst tides, but tourism and rising seas still threaten the city.",
+        "es": "La misma tormenta golpeó a las dos ciudades. En Florencia, el Arno mató a 35 personas y cubrió de barro y petróleo cuadros, libros y archivos; jóvenes voluntarios de Italia y del extranjero, los «ángeles del barro», los rescataron, y nacieron nuevos métodos de restauración. En Venecia, la inundación mostró lo frágil que se había vuelto la ciudad, que se hunde poco a poco mientras el mar sube. En 1971 la UNESCO lanzó una campaña para toda Venecia. Comités privados como Venice in Peril, en Gran Bretaña, y Save Venice, en Estados Unidos, han pagado desde entonces cientos de restauraciones. Venecia y su laguna se inscribieron en 1987. Desde octubre de 2020 las barreras MOSE, que se levantan desde el fondo, frenan las peores mareas, pero el turismo y la subida del mar aún amenazan la ciudad."
+      },
+      "places": [
+        {
+          "id": "venice",
+          "name": {
+            "en": "Venice",
+            "es": "Venecia"
+          },
+          "at": [
+            12.3389,
+            45.4343
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "421",
+          "place": {
+            "en": "Veneto, Italy",
+            "es": "Véneto, Italia"
+          },
+          "text": {
+            "en": "A city of 126 islands in a lagoon, built on wooden piles and, by tradition, founded in 421; for a thousand years a sea republic. Listed in 1987, it faces high tides, sinking ground and mass tourism.",
+            "es": "Una ciudad de 126 islas en una laguna, construida sobre pilotes y, según la tradición, fundada en el 421; durante mil años, una república marítima. Inscrita en 1987, sufre mareas altas, hundimiento y turismo masivo."
+          },
+          "whs": 394,
+          "wiki": {
+            "en": "Venice",
+            "es": "Venecia"
+          }
+        },
+        {
+          "id": "arno-flood",
+          "name": {
+            "en": "Florence flood of 1966",
+            "es": "Inundación de Florencia de 1966"
+          },
+          "at": [
+            11.2625,
+            43.7686
+          ],
+          "cat": "threat",
+          "type": "event",
+          "date": "1966-11-04",
+          "place": {
+            "en": "Florence, Italy",
+            "es": "Florencia, Italia"
+          },
+          "text": {
+            "en": "The Arno burst into Florence on 4 November 1966, killing 35 people and soaking thousands of artworks and millions of books in mud. Volunteers from many countries, the 'Mud Angels', helped save them.",
+            "es": "El Arno inundó Florencia el 4 de noviembre de 1966, mató a 35 personas y cubrió de barro miles de obras de arte y millones de libros. Voluntarios de muchos países, los «ángeles del barro», ayudaron a salvarlos."
+          },
+          "wiki": {
+            "en": "1966 flood of the Arno",
+            "es": "Inundación de Florencia de 1966"
+          },
+          "img": "National Library manuscripts being washed in Florence after the 1966 flood of the Arno - UNESCO - PHOTO 0000001407 0001 - Restoration.jpg"
+        }
+      ]
+    },
+    {
+      "date": "1968",
+      "title": {
+        "en": "Temples given in thanks",
+        "es": "Templos regalados en agradecimiento"
+      },
+      "camera": {
+        "lon": -22,
+        "lat": 38,
+        "zoom": 1.5
+      },
+      "text": {
+        "en": "To thank the countries that helped most, Egypt gave away four small temples. Dendur went to New York, Ellesyia to Turin, Debod to Madrid and Taffeh to Leiden, where they stand today.",
+        "es": "Para agradecer a los países que más ayudaron, Egipto regaló cuatro templos pequeños. Dendur fue a Nueva York, Ellesiya a Turín, Debod a Madrid y Taffa a Leiden, donde están hoy."
+      },
+      "details": {
+        "en": "The gifts had been promised in 1959. The Temple of Dendur, built under Augustus, was given to the United States in 1965; after a contest among American cities that the press called the 'Dendur Derby', it went to the Metropolitan Museum, which has shown it in a glass hall since 1978. Ellesyia, a chapel cut into a cliff for Thutmose III, was moved to Turin's Egyptian Museum in 1967. Debod, begun by a Kushite king of Meroë, was given to Spain in 1968 and rebuilt on a hill in Madrid in 1970–72. Taffeh reached Leiden in 1979 and was rebuilt inside the museum. West Germany received the gate of Kalabsha for Berlin. Some Egyptologists warn that Debod, the only one left in the open air, suffers from the weather.",
+        "es": "Los regalos se habían prometido en 1959. El templo de Dendur, construido bajo Augusto, se regaló a Estados Unidos en 1965; tras una competencia entre ciudades estadounidenses que la prensa llamó el «Derby de Dendur», fue al Museo Metropolitano, que lo muestra en una sala de vidrio desde 1978. Ellesiya, una capilla excavada en un acantilado para Tutmosis III, se llevó al Museo Egipcio de Turín en 1967. Debod, iniciado por un rey kushita de Meroe, se regaló a España en 1968 y se rearmó en una colina de Madrid en 1970-1972. Taffa llegó a Leiden en 1979 y se rearmó dentro del museo. Alemania Occidental recibió la puerta de Kalabsha para Berlín. Algunos egiptólogos advierten que Debod, el único que quedó al aire libre, sufre por el clima."
+      },
+      "moves": [
+        {
+          "side": "gift",
+          "path": [
+            [
+              32.95,
+              23.3831
+            ],
+            [
+              -73.9637,
+              40.7801
+            ]
+          ],
+          "label": {
+            "en": "Dendur to New York",
+            "es": "Dendur, a Nueva York"
+          }
+        },
+        {
+          "side": "gift",
+          "path": [
+            [
+              31.9627,
+              22.6226
+            ],
+            [
+              7.6843,
+              45.0684
+            ]
+          ],
+          "label": {
+            "en": "Ellesyia to Turin",
+            "es": "Ellesiya, a Turín"
+          }
+        },
+        {
+          "side": "gift",
+          "path": [
+            [
+              32.86,
+              23.93
+            ],
+            [
+              -3.7178,
+              40.4241
+            ]
+          ],
+          "label": {
+            "en": "Debod to Madrid",
+            "es": "Debod, a Madrid"
+          }
+        },
+        {
+          "side": "gift",
+          "path": [
+            [
+              32.8721,
+              23.6197
+            ],
+            [
+              4.4855,
+              52.1584
+            ]
+          ],
+          "label": {
+            "en": "Taffeh to Leiden",
+            "es": "Taffa, a Leiden"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "temple-of-dendur",
+          "name": {
+            "en": "Temple of Dendur",
+            "es": "Templo de Dendur"
+          },
+          "at": [
+            -73.9637,
+            40.7801
+          ],
+          "cat": "monument",
+          "type": "structure",
+          "date": "-23",
+          "end": "-10",
+          "place": {
+            "en": "Metropolitan Museum of Art, New York, United States (from Dendur, Nubia)",
+            "es": "Museo Metropolitano de Arte, Nueva York, Estados Unidos (de Dendur, Nubia)"
+          },
+          "text": {
+            "en": "A small sandstone temple to Isis and two local brothers, Pedesi and Pihor, built under the Roman emperor Augustus about 23–10 BC. Egypt gave it to the United States in 1965; it has stood in the Met since 1978.",
+            "es": "Un pequeño templo de arenisca dedicado a Isis y a dos hermanos del lugar, Pedesi y Pihor, construido bajo el emperador romano Augusto hacia 23-10 a. C. Egipto lo regaló a Estados Unidos en 1965; está en el Met desde 1978."
+          },
+          "wiki": {
+            "en": "Temple of Dendur",
+            "es": ""
+          }
+        },
+        {
+          "id": "temple-of-ellesyia",
+          "name": {
+            "en": "Temple of Ellesyia",
+            "es": "Templo de Ellesiya"
+          },
+          "at": [
+            7.6843,
+            45.0684
+          ],
+          "cat": "monument",
+          "type": "structure",
+          "date": "-1450",
+          "place": {
+            "en": "Egyptian Museum, Turin, Italy (from Ellesyia, Nubia)",
+            "es": "Museo Egipcio, Turín, Italia (de Ellesiya, Nubia)"
+          },
+          "text": {
+            "en": "A small chapel cut into a cliff near Qasr Ibrim for Thutmose III, about 1450 BC. Given to Italy for its help, it was cut out of the rock and moved to Turin in 1967.",
+            "es": "Una pequeña capilla excavada en un acantilado cerca de Qasr Ibrim para Tutmosis III, hacia el 1450 a. C. Regalada a Italia por su ayuda, se cortó de la roca y se llevó a Turín en 1967."
+          },
+          "wiki": {
+            "en": "Temple of Ellesyia",
+            "es": "Templo de Ellesiya"
+          }
+        },
+        {
+          "id": "temple-of-debod",
+          "name": {
+            "en": "Temple of Debod",
+            "es": "Templo de Debod"
+          },
+          "at": [
+            -3.7178,
+            40.4241
+          ],
+          "cat": "monument",
+          "type": "structure",
+          "date": "-200",
+          "place": {
+            "en": "Parque del Oeste, Madrid, Spain (from Debod, Nubia)",
+            "es": "Parque del Oeste, Madrid, España (de Debod, Nubia)"
+          },
+          "text": {
+            "en": "Begun in the early 2nd century BC by Adikhalamani, a Kushite king of Meroë, and enlarged under the Ptolemies and Rome. Given to Spain in 1968, it opened in a park in Madrid in 1972.",
+            "es": "Iniciado a comienzos del siglo II a. C. por Adijalamani, un rey kushita de Meroe, y ampliado bajo los Ptolomeos y Roma. Regalado a España en 1968, se abrió en un parque de Madrid en 1972."
+          },
+          "wiki": {
+            "en": "Temple of Debod",
+            "es": "Templo de Debod"
+          }
+        },
+        {
+          "id": "temple-of-taffeh",
+          "name": {
+            "en": "Temple of Taffeh",
+            "es": "Templo de Taffa"
+          },
+          "at": [
+            4.4855,
+            52.1584
+          ],
+          "cat": "monument",
+          "type": "structure",
+          "date": "-25",
+          "end": "14",
+          "place": {
+            "en": "National Museum of Antiquities, Leiden, Netherlands (from Taffeh, Nubia)",
+            "es": "Museo Nacional de Antigüedades, Leiden, Países Bajos (de Taffa, Nubia)"
+          },
+          "text": {
+            "en": "A small temple built between 25 BC and AD 14, part of a Roman fort. Given to the Netherlands, its 657 blocks were rebuilt in 1979 inside Leiden's National Museum of Antiquities.",
+            "es": "Un pequeño templo construido entre el 25 a. C. y el 14 d. C., parte de un fuerte romano. Regalado a los Países Bajos, sus 657 bloques se rearmaron en 1979 dentro del Museo Nacional de Antigüedades de Leiden."
+          },
+          "wiki": {
+            "en": "Temple of Taffeh",
+            "es": "Templo de Taffa"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1972-11-16",
+      "title": {
+        "en": "A convention for the world",
+        "es": "Una convención para el mundo"
+      },
+      "camera": {
+        "lon": 10,
+        "lat": 50,
+        "zoom": 3.6
+      },
+      "text": {
+        "en": "On 16 November 1972, UNESCO's General Conference in Paris adopted the World Heritage Convention: countries would protect places of 'outstanding universal value', cultural and natural alike.",
+        "es": "El 16 de noviembre de 1972, la Conferencia General de la UNESCO, en París, aprobó la Convención del Patrimonio Mundial: los países protegerían los lugares de «valor universal excepcional», culturales y naturales."
+      },
+      "details": {
+        "en": "The convention joined UNESCO's draft for monuments with the proposals for nature, which had been presented in June 1972 at the UN Conference on the Human Environment in Stockholm. Each country pledges to identify and care for its own heritage, and all pay into a World Heritage Fund that helps where help is most needed. A committee of 21 countries decides which places join the list, advised by three expert bodies: ICOMOS for culture, the IUCN for nature and ICCROM, in Rome, for conservation and training. The treaty came into force on 17 December 1975, after 20 countries had joined. Today 196 states are parties, one of the most widely accepted treaties in the world; among UN members only Liechtenstein has not ratified it.",
+        "es": "La convención unió el proyecto de la UNESCO para los monumentos con las propuestas para la naturaleza, presentadas en junio de 1972 en la Conferencia de las Naciones Unidas sobre el Medio Humano, en Estocolmo. Cada país se compromete a identificar y cuidar su patrimonio, y todos aportan a un Fondo del Patrimonio Mundial que ayuda donde más se necesita. Un comité de 21 países decide qué lugares entran en la lista, asesorado por tres organismos expertos: el ICOMOS para la cultura, la UICN para la naturaleza y el ICCROM, en Roma, para la conservación y la formación. El tratado entró en vigor el 17 de diciembre de 1975, cuando se habían sumado 20 países. Hoy son parte 196 Estados, uno de los tratados más aceptados del mundo; entre los miembros de la ONU, solo Liechtenstein no lo ha ratificado."
+      },
+      "places": [
+        {
+          "id": "world-heritage-convention",
+          "name": {
+            "en": "World Heritage Convention",
+            "es": "Convención del Patrimonio Mundial"
+          },
+          "at": [
+            2.3061,
+            48.8497
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1972-11-16",
+          "place": {
+            "en": "UNESCO, Paris, France",
+            "es": "UNESCO, París, Francia"
+          },
+          "text": {
+            "en": "The treaty adopted on 16 November 1972, in force since 1975, that created the World Heritage List. Countries promise to protect places of 'outstanding universal value' and share a fund to help.",
+            "es": "El tratado aprobado el 16 de noviembre de 1972, vigente desde 1975, que creó la Lista del Patrimonio Mundial. Los países se comprometen a proteger lugares de «valor universal excepcional» y comparten un fondo de ayuda."
+          },
+          "wiki": {
+            "en": "World Heritage Convention",
+            "es": "Convención sobre la Protección del Patrimonio Mundial Cultural y Natural"
+          },
+          "img": "Adoption of the World Heritage Convention in 1972 at UNESCO.jpg"
+        },
+        {
+          "id": "stockholm-conference",
+          "name": {
+            "en": "Stockholm Conference",
+            "es": "Conferencia de Estocolmo"
+          },
+          "at": [
+            18.0686,
+            59.3293
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1972-06-05",
+          "end": "1972-06-16",
+          "place": {
+            "en": "Stockholm, Sweden",
+            "es": "Estocolmo, Suecia"
+          },
+          "text": {
+            "en": "The UN's first great conference on the environment, in June 1972. Proposals to protect the world's natural heritage were presented there and went into the convention adopted five months later.",
+            "es": "La primera gran conferencia de la ONU sobre el medio ambiente, en junio de 1972. Allí se presentaron propuestas para proteger el patrimonio natural del mundo, que entraron en la convención aprobada cinco meses después."
+          },
+          "wiki": {
+            "en": "United Nations Conference on the Human Environment",
+            "es": "Cumbre de la Tierra de Estocolmo"
+          },
+          "img": "UN-environment-in-Stockholm-1972.jpg"
+        },
+        {
+          "id": "icomos",
+          "name": {
+            "en": "ICOMOS",
+            "es": "ICOMOS"
+          },
+          "at": [
+            21.0122,
+            52.2297
+          ],
+          "cat": "institution",
+          "type": "institution",
+          "date": "1965",
+          "place": {
+            "en": "Founded in Warsaw, Poland; based in Charenton-le-Pont, France",
+            "es": "Fundado en Varsovia, Polonia; con sede en Charenton-le-Pont, Francia"
+          },
+          "text": {
+            "en": "The International Council on Monuments and Sites, a network of architects, archaeologists and restorers founded in Warsaw in 1965. It judges every cultural site proposed for the list.",
+            "es": "El Consejo Internacional de Monumentos y Sitios, una red de arquitectos, arqueólogos y restauradores fundada en Varsovia en 1965. Evalúa cada sitio cultural propuesto para la lista."
+          },
+          "wiki": {
+            "en": "International Council on Monuments and Sites",
+            "es": "Consejo Internacional de Monumentos y Sitios"
+          },
+          "img": "Icomos-logo-en.svg"
+        },
+        {
+          "id": "iccrom",
+          "name": {
+            "en": "ICCROM",
+            "es": "ICCROM"
+          },
+          "at": [
+            12.4772,
+            41.8858
+          ],
+          "cat": "institution",
+          "type": "institution",
+          "date": "1956",
+          "place": {
+            "en": "Via di San Michele, Rome, Italy",
+            "es": "Via di San Michele, Roma, Italia"
+          },
+          "text": {
+            "en": "An intergovernmental centre for conservation, proposed at UNESCO in 1956 and set up in Rome in 1959. It trains restorers from around the world and advises the World Heritage Committee.",
+            "es": "Un centro intergubernamental de conservación, propuesto en la UNESCO en 1956 y creado en Roma en 1959. Forma restauradores de todo el mundo y asesora al Comité del Patrimonio Mundial."
+          },
+          "wiki": {
+            "en": "International Centre for the Study of the Preservation and Restoration of Cultural Property",
+            "es": "Centro Internacional de Estudios para la Conservación y la Restauración de los Bienes Culturales"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1978-09-08",
+      "title": {
+        "en": "The first twelve sites",
+        "es": "Los doce primeros sitios"
+      },
+      "camera": {
+        "lon": -88,
+        "lat": 25,
+        "zoom": 1.9
+      },
+      "text": {
+        "en": "In September 1978, meeting in Washington, the committee listed the first 12 World Heritage Sites. Six were in the Americas: the Galápagos, Quito, Yellowstone, Mesa Verde, Nahanni and L'Anse aux Meadows.",
+        "es": "En septiembre de 1978, reunido en Washington, el comité inscribió los 12 primeros sitios del Patrimonio Mundial. Seis estaban en América: las Galápagos, Quito, Yellowstone, Mesa Verde, Nahanni y L'Anse aux Meadows."
+      },
+      "details": {
+        "en": "The Galápagos Islands of Ecuador became site number 1. From the start the list mixed nature and culture: islands whose animals helped Charles Darwin think about evolution; the colonial heart of Quito, high in the Andes; Yellowstone's geysers; the cliff villages of the Ancestral Puebloans at Mesa Verde; the canyons and waterfalls of the Nahanni in northern Canada; and L'Anse aux Meadows in Newfoundland, where Norse sailors lived about 1,000 years ago, the only proven Viking site in the Americas outside Greenland. The other six sites were in Europe and Africa. Few countries had joined yet; over the years Europe and North America came to hold far more sites than the rest of the world.",
+        "es": "Las islas Galápagos de Ecuador fueron el sitio número 1. Desde el inicio la lista mezcló naturaleza y cultura: islas cuyos animales ayudaron a Charles Darwin a pensar la evolución; el corazón colonial de Quito, en lo alto de los Andes; los géiseres de Yellowstone; los pueblos en los acantilados de los ancestrales indígenas pueblo en Mesa Verde; los cañones y cascadas del Nahanni, en el norte de Canadá; y L'Anse aux Meadows, en Terranova, donde vivieron marinos nórdicos hace unos 1000 años, el único sitio vikingo probado en América fuera de Groenlandia. Los otros seis sitios estaban en Europa y África. Pocos países se habían sumado aún; con los años, Europa y América del Norte llegaron a tener muchos más sitios que el resto del mundo."
+      },
+      "places": [
+        {
+          "id": "galapagos-islands",
+          "name": {
+            "en": "Galápagos Islands",
+            "es": "Islas Galápagos"
+          },
+          "at": [
+            -90.3333,
+            -0.6167
+          ],
+          "cat": "nature",
+          "type": "site",
+          "date": "1959",
+          "place": {
+            "en": "Pacific Ocean, Ecuador",
+            "es": "Océano Pacífico, Ecuador"
+          },
+          "text": {
+            "en": "Volcanic islands about 1,000 km off Ecuador, whose giant tortoises, finches and marine iguanas helped Darwin think about evolution. World Heritage Site number 1; in danger in 2007–10.",
+            "es": "Islas volcánicas a unos 1000 km de Ecuador, cuyas tortugas gigantes, pinzones e iguanas marinas ayudaron a Darwin a pensar la evolución. Sitio del Patrimonio Mundial número 1; en peligro en 2007-2010."
+          },
+          "whs": 1,
+          "wiki": {
+            "en": "Galápagos Islands",
+            "es": "Islas Galápagos"
+          }
+        },
+        {
+          "id": "quito",
+          "name": {
+            "en": "Quito",
+            "es": "Quito"
+          },
+          "at": [
+            -78.5121,
+            -0.22
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1534-12-06",
+          "place": {
+            "en": "Quito, Ecuador",
+            "es": "Quito, Ecuador"
+          },
+          "text": {
+            "en": "Ecuador's capital, 2,850 m up in the Andes, founded by the Spanish in 1534 where an Inca city had stood. Its centre of churches, convents and plazas is one of the best preserved in Latin America.",
+            "es": "La capital de Ecuador, a 2850 m de altura en los Andes, fundada por los españoles en 1534 donde había una ciudad inca. Su centro de iglesias, conventos y plazas es uno de los mejor conservados de América Latina."
+          },
+          "whs": 2,
+          "wiki": {
+            "en": "Quito",
+            "es": "Centro histórico de Quito"
+          },
+          "img": "Quito Plaza Independencia Pal Carondelet 2010.jpg"
+        },
+        {
+          "id": "yellowstone",
+          "name": {
+            "en": "Yellowstone",
+            "es": "Yellowstone"
+          },
+          "at": [
+            -110.5,
+            44.6
+          ],
+          "cat": "nature",
+          "type": "site",
+          "date": "1872-03-01",
+          "place": {
+            "en": "Wyoming, Montana and Idaho, United States",
+            "es": "Wyoming, Montana e Idaho, Estados Unidos"
+          },
+          "text": {
+            "en": "The world's first national park, created on 1 March 1872, with geysers, hot springs, bison and wolves on top of a sleeping supervolcano. It was one of the first 12 World Heritage Sites.",
+            "es": "El primer parque nacional del mundo, creado el 1 de marzo de 1872, con géiseres, fuentes termales, bisontes y lobos sobre un supervolcán dormido. Fue uno de los 12 primeros sitios del Patrimonio Mundial."
+          },
+          "whs": 28,
+          "wiki": {
+            "en": "Yellowstone National Park",
+            "es": "Parque nacional de Yellowstone"
+          }
+        },
+        {
+          "id": "mesa-verde",
+          "name": {
+            "en": "Mesa Verde",
+            "es": "Mesa Verde"
+          },
+          "at": [
+            -108.4734,
+            37.1678
+          ],
+          "cat": "archaeology",
+          "type": "site",
+          "date": "1190",
+          "end": "1281",
+          "place": {
+            "en": "Colorado, United States",
+            "es": "Colorado, Estados Unidos"
+          },
+          "text": {
+            "en": "Some 600 cliff dwellings built by Ancestral Puebloans, such as Cliff Palace, the largest. The last tree for building was felled in 1281; after years of drought and cold, the people moved away by about 1300.",
+            "es": "Unas 600 viviendas en acantilados construidas por los ancestrales indígenas pueblo, como el Palacio del Acantilado, la mayor. El último árbol para construir se taló en 1281; tras años de sequía y frío, la gente se fue hacia 1300."
+          },
+          "whs": 27,
+          "wiki": {
+            "en": "Mesa Verde National Park",
+            "es": "Parque nacional de Mesa Verde"
+          }
+        },
+        {
+          "id": "nahanni",
+          "name": {
+            "en": "Nahanni",
+            "es": "Nahanni"
+          },
+          "at": [
+            -125.7367,
+            61.6072
+          ],
+          "cat": "nature",
+          "type": "site",
+          "date": "1972",
+          "place": {
+            "en": "Northwest Territories, Canada",
+            "es": "Territorios del Noroeste, Canadá"
+          },
+          "text": {
+            "en": "A wild river park in northern Canada, with deep canyons and Virginia Falls, where the South Nahanni drops 90 m. The Dene have used these lands for thousands of years.",
+            "es": "Un parque de ríos salvajes en el norte de Canadá, con cañones profundos y las cataratas Virginia, donde el Nahanni del Sur cae 90 m. Los dene usan estas tierras desde hace miles de años."
+          },
+          "whs": 24,
+          "wiki": {
+            "en": "Nahanni National Park Reserve",
+            "es": "Parque nacional Nahanni"
+          }
+        },
+        {
+          "id": "l-anse-aux-meadows",
+          "name": {
+            "en": "L'Anse aux Meadows",
+            "es": "L'Anse aux Meadows"
+          },
+          "at": [
+            -55.5333,
+            51.5964
+          ],
+          "cat": "archaeology",
+          "type": "site",
+          "date": "1021",
+          "place": {
+            "en": "Newfoundland, Canada",
+            "es": "Terranova, Canadá"
+          },
+          "text": {
+            "en": "The remains of a Norse settlement of sod houses at the northern tip of Newfoundland, the only proven Viking site in the Americas outside Greenland. Tree rings show wood was cut there in 1021.",
+            "es": "Los restos de un asentamiento nórdico de casas de turba en el extremo norte de Terranova, el único sitio vikingo probado en América fuera de Groenlandia. Los anillos de los árboles muestran que allí se cortó madera en 1021."
+          },
+          "whs": 4,
+          "wiki": {
+            "en": "L'Anse aux Meadows",
+            "es": "L'Anse aux Meadows"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1978-09-08",
+      "title": {
+        "en": "...and in Europe and Africa",
+        "es": "...y en Europa y África"
+      },
+      "camera": {
+        "lon": 17,
+        "lat": 30,
+        "zoom": 2.0
+      },
+      "text": {
+        "en": "The other six of 1978 were Aachen Cathedral, Kraków's old town and the Wieliczka salt mine in Europe, and in Africa the island of Gorée and Ethiopia's Lalibela churches and Simien Mountains.",
+        "es": "Los otros seis de 1978 fueron la catedral de Aquisgrán, el centro de Cracovia y la mina de sal de Wieliczka en Europa, y en África la isla de Gorea y las iglesias de Lalibela y las montañas Simien de Etiopía."
+      },
+      "details": {
+        "en": "Aachen's chapel was built for Charlemagne about 800, and German kings were crowned there for six centuries. Kraków, Poland's old royal capital, kept its great market square; nearby, miners at Wieliczka carved chapels and statues out of salt for seven centuries. Gorée, off Dakar in Senegal, was a European trading post that shipped enslaved Africans; today it is a memorial to the Atlantic slave trade, although historians debate how many captives passed through the island itself. In Ethiopia, the eleven churches of Lalibela were carved down into the rock about 800 years ago and are still places of pilgrimage, and the Simien Mountains shelter the walia ibex, the Ethiopian wolf and the gelada.",
+        "es": "La capilla de Aquisgrán se construyó para Carlomagno hacia el año 800, y allí se coronaron reyes alemanes durante seis siglos. Cracovia, la antigua capital real de Polonia, conservó su gran plaza del mercado; cerca, los mineros de Wieliczka tallaron capillas y estatuas en la sal durante siete siglos. Gorea, frente a Dakar, en Senegal, fue una factoría europea que embarcaba a africanos esclavizados; hoy es un memorial de la trata atlántica, aunque los historiadores debaten cuántos cautivos pasaron por la propia isla. En Etiopía, las once iglesias de Lalibela se excavaron hacia abajo en la roca hace unos 800 años y siguen siendo lugares de peregrinación, y las montañas Simien protegen al íbice de Walia, al lobo etíope y al gelada."
+      },
+      "places": [
+        {
+          "id": "aachen-cathedral",
+          "name": {
+            "en": "Aachen Cathedral",
+            "es": "Catedral de Aquisgrán"
+          },
+          "at": [
+            6.0839,
+            50.7747
+          ],
+          "cat": "monument",
+          "type": "site",
+          "date": "796",
+          "end": "805",
+          "place": {
+            "en": "Aachen, Germany",
+            "es": "Aquisgrán, Alemania"
+          },
+          "text": {
+            "en": "Charlemagne's palace chapel, begun about 796 and consecrated in 805; he was buried there in 814. From 936 to 1531, thirty-one German kings were crowned in it.",
+            "es": "La capilla del palacio de Carlomagno, empezada hacia el 796 y consagrada en el 805; él fue enterrado allí en el 814. Entre 936 y 1531 se coronaron en ella treinta y un reyes alemanes."
+          },
+          "whs": 3,
+          "wiki": {
+            "en": "Aachen Cathedral",
+            "es": "Catedral de Aquisgrán"
+          }
+        },
+        {
+          "id": "krakow",
+          "name": {
+            "en": "Kraków Old Town",
+            "es": "Centro histórico de Cracovia"
+          },
+          "at": [
+            19.9369,
+            50.0621
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1038",
+          "place": {
+            "en": "Kraków, Poland",
+            "es": "Cracovia, Polonia"
+          },
+          "text": {
+            "en": "Poland's royal capital until 1596, with one of Europe's largest medieval market squares and its Cloth Hall, the Gothic St. Mary's Basilica and, nearby, Wawel Castle and Cathedral.",
+            "es": "La capital real de Polonia hasta 1596, con una de las mayores plazas de mercado medievales de Europa y su Lonja de los Paños, la basílica gótica de Santa María y, cerca, el castillo y la catedral de Wawel."
+          },
+          "whs": 29,
+          "wiki": {
+            "en": "Kraków Old Town",
+            "es": ""
+          },
+          "img": "Krakow - Cloth Hall from Basilica - 1.jpg"
+        },
+        {
+          "id": "wieliczka",
+          "name": {
+            "en": "Wieliczka Salt Mine",
+            "es": "Mina de sal de Wieliczka"
+          },
+          "at": [
+            20.0564,
+            49.9832
+          ],
+          "cat": "monument",
+          "type": "site",
+          "date": "1250",
+          "end": "1996",
+          "place": {
+            "en": "Wieliczka, near Kraków, Poland",
+            "es": "Wieliczka, cerca de Cracovia, Polonia"
+          },
+          "text": {
+            "en": "A royal salt mine worked from the 13th century to 1996, 327 m deep with more than 287 km of passages. Its miners carved chapels, statues and an underground world out of grey rock salt.",
+            "es": "Una mina real de sal explotada desde el siglo XIII hasta 1996, de 327 m de profundidad y más de 287 km de galerías. Sus mineros tallaron capillas, estatuas y todo un mundo subterráneo en la sal gris."
+          },
+          "whs": 32,
+          "wiki": {
+            "en": "Wieliczka Salt Mine",
+            "es": "Minas de sal de Wieliczka"
+          }
+        },
+        {
+          "id": "goree",
+          "name": {
+            "en": "Gorée",
+            "es": "Gorea"
+          },
+          "at": [
+            -17.3983,
+            14.6669
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1628",
+          "place": {
+            "en": "Off Dakar, Senegal",
+            "es": "Frente a Dakar, Senegal"
+          },
+          "text": {
+            "en": "A small island off Dakar, a European trading post from the 1600s that shipped enslaved Africans. Today it is a memorial to the Atlantic slave trade; historians debate how many captives left from the island itself.",
+            "es": "Una pequeña isla frente a Dakar, factoría europea desde el siglo XVII que embarcó a africanos esclavizados. Hoy es un memorial de la trata atlántica; los historiadores debaten cuántos cautivos partieron de la propia isla."
+          },
+          "whs": 26,
+          "wiki": {
+            "en": "Gorée",
+            "es": "Isla de Gorea"
+          }
+        },
+        {
+          "id": "lalibela",
+          "name": {
+            "en": "Lalibela",
+            "es": "Lalibela"
+          },
+          "at": [
+            39.0404,
+            12.0294
+          ],
+          "cat": "monument",
+          "type": "site",
+          "date": "1181",
+          "end": "1221",
+          "place": {
+            "en": "Amhara Region, Ethiopia",
+            "es": "Región de Amhara, Etiopía"
+          },
+          "text": {
+            "en": "Eleven churches carved down into solid rock for King Lalibela of the Zagwe dynasty around 1200. They are still living churches and a place of pilgrimage for Ethiopian Orthodox Christians.",
+            "es": "Once iglesias excavadas hacia abajo en la roca maciza para el rey Lalibela, de la dinastía zagüe, hacia el año 1200. Siguen siendo iglesias vivas y un lugar de peregrinación de los cristianos ortodoxos etíopes."
+          },
+          "whs": 18,
+          "wiki": {
+            "en": "Rock-Hewn Churches, Lalibela",
+            "es": "Iglesias excavadas en la roca de Lalibela"
+          }
+        },
+        {
+          "id": "simien",
+          "name": {
+            "en": "Simien Mountains",
+            "es": "Montañas Simien"
+          },
+          "at": [
+            38.0667,
+            13.1833
+          ],
+          "cat": "nature",
+          "type": "site",
+          "date": "1969",
+          "place": {
+            "en": "Amhara Region, Ethiopia",
+            "es": "Región de Amhara, Etiopía"
+          },
+          "text": {
+            "en": "Jagged peaks and cliffs in northern Ethiopia, home of the walia ibex, a wild goat found nowhere else, the Ethiopian wolf and the gelada. It was in danger from 1996 to 2017, until the ibex recovered.",
+            "es": "Picos y acantilados en el norte de Etiopía, hogar del íbice de Walia, una cabra salvaje que no vive en ningún otro lugar, del lobo etíope y del gelada. Estuvo en peligro de 1996 a 2017, hasta que el íbice se recuperó."
+          },
+          "whs": 9,
+          "wiki": {
+            "en": "Simien Mountains National Park",
+            "es": "Parque nacional de Simien"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1979-10-26",
+      "title": {
+        "en": "Nubia listed, Kotor in danger",
+        "es": "Nubia en la lista, Kotor en peligro"
+      },
+      "camera": {
+        "lon": 25,
+        "lat": 33,
+        "zoom": 3.1
+      },
+      "text": {
+        "en": "In October 1979 the committee met in Cairo and Luxor and listed the Nubian monuments, the pyramids and Thebes. It also put Kotor, hit by an earthquake, on a new list: World Heritage in Danger.",
+        "es": "En octubre de 1979, el comité se reunió en El Cairo y Luxor e inscribió los monumentos de Nubia, las pirámides y Tebas. También puso a Kotor, golpeada por un terremoto, en una lista nueva: Patrimonio Mundial en Peligro."
+      },
+      "details": {
+        "en": "The convention had foreseen a second list for sites under serious threat, so that the world would know and help. The first was the Bay of Kotor, in today's Montenegro, where an earthquake on 15 April 1979 badly damaged the walled town and its churches; it stayed on the danger list until 2003, after years of repairs. The danger list is meant as an alarm bell and a call for help, not a punishment, but some governments resent it and lobby to keep their sites off. In 1979 the list grew to 57 sites, among them Auschwitz, as a memorial of the Holocaust, the Grand Canyon, Dubrovnik and the Kathmandu Valley.",
+        "es": "La convención había previsto una segunda lista para los sitios en grave peligro, para que el mundo lo supiera y ayudara. El primero fue la bahía de Kotor, en el actual Montenegro, donde un terremoto el 15 de abril de 1979 dañó gravemente la ciudad amurallada y sus iglesias; siguió en la lista de peligro hasta 2003, tras años de reparaciones. La lista de peligro quiere ser una alarma y un pedido de ayuda, no un castigo, pero a algunos gobiernos les molesta y presionan para que sus sitios no entren. En 1979 la lista creció a 57 sitios, entre ellos Auschwitz, como memorial del Holocausto, el Gran Cañón, Dubrovnik y el valle de Katmandú."
+      },
+      "places": [
+        {
+          "id": "abu-simbel",
+          "name": {
+            "en": "Abu Simbel",
+            "es": "Abu Simbel"
+          },
+          "at": [
+            31.6256,
+            22.3369
+          ],
+          "cat": "monument",
+          "type": "site",
+          "date": "-1264",
+          "end": "-1244",
+          "place": {
+            "en": "Aswan Governorate, Egypt (Nubia)",
+            "es": "Gobernación de Asuán, Egipto (Nubia)"
+          },
+          "text": {
+            "en": "Two temples carved into a cliff for Ramesses II about 1264 BC, with four 20 m statues of the king at the door. In 1964–68 they were cut into 1,036 blocks and rebuilt 65 m higher, away from the lake.",
+            "es": "Dos templos excavados en un acantilado para Ramsés II hacia el 1264 a. C., con cuatro estatuas del rey de 20 m en la entrada. En 1964-1968 se cortaron en 1036 bloques y se rearmaron 65 m más arriba, lejos del lago."
+          },
+          "whs": 88,
+          "wiki": {
+            "en": "Abu Simbel",
+            "es": "Abu Simbel"
+          }
+        },
+        {
+          "id": "giza",
+          "name": {
+            "en": "Pyramids of Giza",
+            "es": "Pirámides de Guiza"
+          },
+          "at": [
+            31.1342,
+            29.9792
+          ],
+          "cat": "archaeology",
+          "type": "site",
+          "date": "-2560",
+          "place": {
+            "en": "Giza, Egypt",
+            "es": "Guiza, Egipto"
+          },
+          "text": {
+            "en": "The pyramids of Giza, Saqqara and Dahshur and the ruins of Memphis, Egypt's first capital, listed in 1979 as 'Memphis and its Necropolis'. The Great Pyramid is the last standing wonder of the ancient world.",
+            "es": "Las pirámides de Guiza, Saqqara y Dahshur y las ruinas de Menfis, la primera capital de Egipto, inscritas en 1979 como «Menfis y su necrópolis». La Gran Pirámide es la última maravilla del mundo antiguo en pie."
+          },
+          "whs": 86,
+          "wiki": {
+            "en": "Great Pyramid of Giza",
+            "es": "Gran Pirámide de Guiza"
+          }
+        },
+        {
+          "id": "thebes",
+          "name": {
+            "en": "Ancient Thebes",
+            "es": "Tebas"
+          },
+          "at": [
+            32.6583,
+            25.7183
+          ],
+          "cat": "archaeology",
+          "type": "site",
+          "date": "-2000",
+          "place": {
+            "en": "Luxor, Egypt",
+            "es": "Luxor, Egipto"
+          },
+          "text": {
+            "en": "The capital of Egypt's New Kingdom, at today's Luxor: the temples of Karnak and Luxor on the east bank, the Valley of the Kings and the tombs of the nobles on the west.",
+            "es": "La capital del Imperio Nuevo de Egipto, en la actual Luxor: los templos de Karnak y Luxor en la orilla este, el Valle de los Reyes y las tumbas de los nobles en la oeste."
+          },
+          "whs": 87,
+          "wiki": {
+            "en": "Thebes, Egypt",
+            "es": "Tebas (Egipto)"
+          }
+        },
+        {
+          "id": "kotor",
+          "name": {
+            "en": "Kotor",
+            "es": "Kotor"
+          },
+          "at": [
+            18.7712,
+            42.4247
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1979-04-15",
+          "place": {
+            "en": "Bay of Kotor, Montenegro",
+            "es": "Bahía de Kotor, Montenegro"
+          },
+          "text": {
+            "en": "A walled medieval port at the end of a deep bay. An earthquake on 15 April 1979 damaged it badly, and that year it became the first site on the List of World Heritage in Danger, until 2003.",
+            "es": "Un puerto medieval amurallado al fondo de una bahía profunda. Un terremoto el 15 de abril de 1979 lo dañó gravemente, y ese año fue el primer sitio de la Lista del Patrimonio Mundial en Peligro, hasta 2003."
+          },
+          "whs": 125,
+          "wiki": {
+            "en": "Kotor",
+            "es": "Kotor"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1980-03-10",
+      "title": {
+        "en": "Philae moves to a new island",
+        "es": "File se muda a otra isla"
+      },
+      "camera": {
+        "lon": 32.6,
+        "lat": 23.9,
+        "zoom": 7
+      },
+      "text": {
+        "en": "The temples of Philae, half drowned since the first Aswan dam, were taken apart in some 40,000 pieces and rebuilt on the island of Agilkia. On 10 March 1980 the Nubian campaign came to an end.",
+        "es": "Los templos de File, medio sumergidos desde la primera presa de Asuán, se desmontaron en unas 40 000 piezas y se rearmaron en la isla de Agilkia. El 10 de marzo de 1980 terminó la campaña de Nubia."
+      },
+      "details": {
+        "en": "After the British built the first Aswan dam in 1902 and raised it twice, Philae was under water most of the year and the colours of its reliefs washed away. In 1968 UNESCO launched a second appeal. From 1974 a cofferdam of steel walls filled with sand kept the river out; the island was pumped dry and the monuments were cleaned, measured with photogrammetry, numbered and moved in 1977–80 to Agilkia, 500 m away, which was reshaped to look like Philae. In twenty years the campaign had moved 22 monuments and recorded hundreds of sites, with help from about 50 countries. Its success led to later campaigns, from Mohenjo-daro in Pakistan to Borobudur in Indonesia. In 2019–20 Egypt began, at last, to compensate the Nubians who had lost their homes.",
+        "es": "Después de que los británicos construyeran la primera presa de Asuán en 1902 y la elevaran dos veces, File pasaba bajo el agua casi todo el año y los colores de sus relieves se borraron. En 1968 la UNESCO lanzó un segundo llamado. Desde 1974, una ataguía de muros de acero rellenos de arena contuvo el río; la isla se secó con bombas y los monumentos se limpiaron, se midieron con fotogrametría, se numeraron y se trasladaron en 1977-1980 a Agilkia, a 500 m, que se remodeló para parecerse a File. En veinte años, la campaña había movido 22 monumentos y documentado cientos de sitios, con ayuda de unos 50 países. Su éxito llevó a otras campañas, de Mohenjo-daro, en Pakistán, a Borobudur, en Indonesia. En 2019-2020 Egipto empezó, por fin, a indemnizar a los nubios que habían perdido sus casas."
+      },
+      "places": [
+        {
+          "id": "philae",
+          "name": {
+            "en": "Philae",
+            "es": "File"
+          },
+          "at": [
+            32.8894,
+            24.0208
+          ],
+          "cat": "monument",
+          "type": "site",
+          "date": "-280",
+          "place": {
+            "en": "Agilkia Island, Aswan, Egypt",
+            "es": "Isla de Agilkia, Asuán, Egipto"
+          },
+          "text": {
+            "en": "The temples of Isis, the last sanctuary of Egypt's old gods, where the last hieroglyphs were carved in AD 394. In 1977–80 they were moved in some 40,000 pieces to Agilkia, an island 500 m away.",
+            "es": "Los templos de Isis, último santuario de los viejos dioses de Egipto, donde se tallaron los últimos jeroglíficos en el 394 d. C. En 1977-1980 se trasladaron en unas 40 000 piezas a Agilkia, una isla a 500 m."
+          },
+          "whs": 88,
+          "wiki": {
+            "en": "Philae temple complex",
+            "es": "Templo de Isis (File)"
+          }
+        },
+        {
+          "id": "nubia-campaign",
+          "name": {
+            "en": "Campaign to Save the Monuments of Nubia",
+            "es": "Campaña para salvar los monumentos de Nubia"
+          },
+          "at": [
+            32.5,
+            23.2
+          ],
+          "cat": "rescue",
+          "type": "event",
+          "date": "1960-03-08",
+          "end": "1980-03-10",
+          "place": {
+            "en": "Lower Nubia, Egypt and Sudan",
+            "es": "Baja Nubia, Egipto y Sudán"
+          },
+          "text": {
+            "en": "UNESCO's campaign of 1960–80 moved 22 monuments away from the rising water and dug and recorded hundreds of sites. It cost about US$80 million, half of it given by some 50 countries.",
+            "es": "La campaña de la UNESCO de 1960-1980 trasladó 22 monumentos lejos del agua que subía y excavó y documentó cientos de sitios. Costó unos 80 millones de dólares, la mitad aportada por unos 50 países."
+          },
+          "wiki": {
+            "en": "International Campaign to Save the Monuments of Nubia",
+            "es": "Campaña de salvamento de los monumentos de Nubia"
+          },
+          "img": "Dismantling of the statues of the Great Temple.jpg"
+        },
+        {
+          "id": "nubians",
+          "name": {
+            "en": "Nubians",
+            "es": "Nubios"
+          },
+          "at": [
+            32.93,
+            24.47
+          ],
+          "cat": "person",
+          "type": "culture",
+          "date": "1964",
+          "place": {
+            "en": "Kom Ombo and Aswan, Egypt; northern Sudan",
+            "es": "Kom Ombo y Asuán, Egipto; norte de Sudán"
+          },
+          "text": {
+            "en": "A people of the Nile with their own languages, who have lived in Nubia since ancient times. The lake took their homeland: 100,000 to 120,000 were resettled, and Egypt began to pay compensation only in 2019–20.",
+            "es": "Un pueblo del Nilo con lenguas propias, que vive en Nubia desde la Antigüedad. El lago se llevó su tierra: de 100 000 a 120 000 personas fueron reasentadas, y Egipto empezó a indemnizarlas recién en 2019-2020."
+          },
+          "wiki": {
+            "en": "Nubians",
+            "es": "Nubios"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2010-07",
+      "title": {
+        "en": "Saved from the danger list",
+        "es": "Fuera de la lista de peligro"
+      },
+      "camera": {
+        "lon": -88,
+        "lat": 18,
+        "zoom": 2.1
+      },
+      "text": {
+        "en": "The danger list can work. In 2010 the Galápagos came off it after Ecuador fought invasive species, as Yellowstone had in 2003. That same year the Everglades went back on.",
+        "es": "La lista de peligro puede funcionar. En 2010 las Galápagos salieron de ella después de que Ecuador combatiera las especies invasoras, como Yellowstone en 2003. Ese mismo año, los Everglades volvieron a entrar."
+      },
+      "details": {
+        "en": "Being put on the list brings attention, experts and sometimes money. In the Galápagos, goats, cats, cattle and hundreds of plants brought by people, along with tourism, settlers and illegal fishing, threatened the islands' unique wildlife; Ecuador began removing the invaders and limiting newcomers. Yellowstone went on the list in 1995, partly because a gold mine was planned near its border. Belize's 300 km barrier reef was in danger from 2009 over mangrove cutting and building; Belize banned bottom trawling and oil drilling near the reef, and it came off in 2018. Angkor in Cambodia (1992–2004) and the Simien Mountains (1996–2017) recovered too. Others stay for decades: Florida's Everglades, harmed by drained marshes and diverted water, have been back on the list since 2010.",
+        "es": "Entrar en la lista atrae atención, expertos y a veces dinero. En las Galápagos, cabras, gatos, vacas y cientos de plantas llevadas por la gente, además del turismo, los colonos y la pesca ilegal, amenazaban su fauna única; Ecuador empezó a eliminar a los invasores y a limitar la llegada de gente. Yellowstone entró en 1995, en parte porque se planeaba una mina de oro junto a su límite. La barrera de coral de Belice, de 300 km, estuvo en peligro desde 2009 por la tala de manglares y las construcciones; Belice prohibió la pesca de arrastre y la perforación petrolera cerca del arrecife, y salió en 2018. Angkor, en Camboya (1992-2004), y las montañas Simien (1996-2017) también se recuperaron. Otros siguen décadas: los Everglades de Florida, dañados por pantanos desecados y aguas desviadas, están de nuevo en la lista desde 2010."
+      },
+      "places": [
+        {
+          "id": "galapagos-islands",
+          "name": {
+            "en": "Galápagos Islands",
+            "es": "Islas Galápagos"
+          },
+          "at": [
+            -90.3333,
+            -0.6167
+          ],
+          "cat": "nature",
+          "type": "site",
+          "date": "1959",
+          "place": {
+            "en": "Pacific Ocean, Ecuador",
+            "es": "Océano Pacífico, Ecuador"
+          },
+          "text": {
+            "en": "Volcanic islands about 1,000 km off Ecuador, whose giant tortoises, finches and marine iguanas helped Darwin think about evolution. World Heritage Site number 1; in danger in 2007–10.",
+            "es": "Islas volcánicas a unos 1000 km de Ecuador, cuyas tortugas gigantes, pinzones e iguanas marinas ayudaron a Darwin a pensar la evolución. Sitio del Patrimonio Mundial número 1; en peligro en 2007-2010."
+          },
+          "whs": 1,
+          "wiki": {
+            "en": "Galápagos Islands",
+            "es": "Islas Galápagos"
+          }
+        },
+        {
+          "id": "yellowstone",
+          "name": {
+            "en": "Yellowstone",
+            "es": "Yellowstone"
+          },
+          "at": [
+            -110.5,
+            44.6
+          ],
+          "cat": "nature",
+          "type": "site",
+          "date": "1872-03-01",
+          "place": {
+            "en": "Wyoming, Montana and Idaho, United States",
+            "es": "Wyoming, Montana e Idaho, Estados Unidos"
+          },
+          "text": {
+            "en": "The world's first national park, created on 1 March 1872, with geysers, hot springs, bison and wolves on top of a sleeping supervolcano. It was one of the first 12 World Heritage Sites.",
+            "es": "El primer parque nacional del mundo, creado el 1 de marzo de 1872, con géiseres, fuentes termales, bisontes y lobos sobre un supervolcán dormido. Fue uno de los 12 primeros sitios del Patrimonio Mundial."
+          },
+          "whs": 28,
+          "wiki": {
+            "en": "Yellowstone National Park",
+            "es": "Parque nacional de Yellowstone"
+          }
+        },
+        {
+          "id": "belize-barrier-reef",
+          "name": {
+            "en": "Belize Barrier Reef",
+            "es": "Barrera de coral de Belice"
+          },
+          "at": [
+            -88.0833,
+            16.8125
+          ],
+          "cat": "nature",
+          "type": "site",
+          "date": "1996",
+          "place": {
+            "en": "Caribbean Sea, Belize",
+            "es": "Mar Caribe, Belice"
+          },
+          "text": {
+            "en": "A 300 km chain of coral reefs, atolls and mangroves off Belize, with the Great Blue Hole. In danger in 2009–18 over mangrove cutting and building, it came off the list after Belize protected it.",
+            "es": "Una cadena de 300 km de arrecifes de coral, atolones y manglares frente a Belice, con el Gran Agujero Azul. En peligro en 2009-2018 por la tala de manglares y las construcciones, salió de la lista cuando Belice la protegió."
+          },
+          "whs": 764,
+          "wiki": {
+            "en": "Belize Barrier Reef",
+            "es": "Sistema de Reservas de la Barrera del Arrecife de Belice"
+          }
+        },
+        {
+          "id": "everglades",
+          "name": {
+            "en": "Everglades National Park",
+            "es": "Parque Nacional de los Everglades"
+          },
+          "at": [
+            -80.6875,
+            25.3125
+          ],
+          "cat": "nature",
+          "type": "site",
+          "date": "1947",
+          "place": {
+            "en": "Florida, United States",
+            "es": "Florida, Estados Unidos"
+          },
+          "text": {
+            "en": "A vast 'river of grass' of sawgrass marsh and mangroves at the tip of Florida, home to manatees, alligators and wading birds. Draining and diverted water put it in danger in 1993–2007 and again since 2010.",
+            "es": "Un enorme «río de hierba» de pantanos y manglares en el extremo de Florida, hogar de manatíes, caimanes y aves zancudas. El drenaje y el agua desviada lo pusieron en peligro en 1993-2007 y de nuevo desde 2010."
+          },
+          "whs": 76,
+          "wiki": {
+            "en": "Everglades National Park",
+            "es": "Parque nacional de los Everglades"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2014-06-22",
+      "title": {
+        "en": "The 1,000th site",
+        "es": "El sitio número 1000"
+      },
+      "camera": {
+        "lon": -18,
+        "lat": 5,
+        "zoom": 1.3
+      },
+      "text": {
+        "en": "On 22 June 2014, meeting in Doha, the committee listed the Okavango Delta in Botswana as the 1,000th World Heritage Site: a river that spreads into the Kalahari Desert and never reaches the sea.",
+        "es": "El 22 de junio de 2014, reunido en Doha, el comité inscribió el delta del Okavango, en Botsuana, como el sitio número 1000 del Patrimonio Mundial: un río que se abre en el desierto de Kalahari y nunca llega al mar."
+      },
+      "details": {
+        "en": "Each year rains in the highlands of Angola send a flood down the Okavango River; it spreads over channels, islands and grassland and nearly all of it evaporates. The delta shelters elephants, lions, buffaloes, rhinos, hippos and more than 400 kinds of birds. Five peoples live around it, among them the Bugakhwe and ǁanikhwe, two groups of Bushmen who have fished and hunted there for generations. Botswana chose tourism with few, high-paying visitors to protect it. The same meeting listed the Qhapaq Ñan, the Inca road network shared by six South American countries, France's Chauvet Cave, painted some 30,000 years ago, and China's Grand Canal. Even so, Europe and North America still hold nearly half of all sites.",
+        "es": "Cada año, las lluvias de las tierras altas de Angola mandan una crecida por el río Okavango; se reparte entre canales, islas y pastizales, y casi toda se evapora. El delta da refugio a elefantes, leones, búfalos, rinocerontes, hipopótamos y más de 400 especies de aves. A su alrededor viven cinco pueblos, entre ellos los bugakhwe y los ǁanikhwe, dos grupos de bosquimanos que pescan y cazan allí desde hace generaciones. Botsuana eligió un turismo de pocos visitantes que pagan mucho para protegerlo. La misma reunión inscribió el Qhapaq Ñan, la red de caminos incas compartida por seis países sudamericanos, la cueva de Chauvet, en Francia, pintada hace unos 30 000 años, y el Gran Canal de China. Aun así, Europa y América del Norte siguen teniendo casi la mitad de todos los sitios."
+      },
+      "places": [
+        {
+          "id": "okavango-delta",
+          "name": {
+            "en": "Okavango Delta",
+            "es": "Delta del Okavango"
+          },
+          "at": [
+            22.9,
+            -19.4
+          ],
+          "cat": "nature",
+          "type": "site",
+          "date": "2014-06-22",
+          "place": {
+            "en": "Botswana",
+            "es": "Botsuana"
+          },
+          "text": {
+            "en": "A river that never reaches the sea: each year floodwater from Angola spreads over up to 15,000 km² of the Kalahari and evaporates. It became the 1,000th World Heritage Site in 2014.",
+            "es": "Un río que nunca llega al mar: cada año el agua de las lluvias de Angola se extiende por hasta 15 000 km² del Kalahari y se evapora. En 2014 fue el sitio número 1000 del Patrimonio Mundial."
+          },
+          "whs": 1432,
+          "wiki": {
+            "en": "Okavango Delta",
+            "es": "Delta del Okavango"
+          }
+        },
+        {
+          "id": "qhapaq-nan",
+          "name": {
+            "en": "Qhapaq Ñan, the Inca road",
+            "es": "Qhapaq Ñan, el camino inca"
+          },
+          "at": [
+            -76.8158,
+            -9.8742
+          ],
+          "cat": "landscape",
+          "type": "site",
+          "date": "1400",
+          "end": "1533",
+          "place": {
+            "en": "Peru and five other Andean countries",
+            "es": "Perú y otros cinco países andinos"
+          },
+          "text": {
+            "en": "The Inca road system, about 40,000 km of roads, stairways and bridges centred on Cusco. Listed in 2014 by six countries: Argentina, Bolivia, Chile, Colombia, Ecuador and Peru.",
+            "es": "La red vial de los incas, unos 40 000 km de caminos, escalinatas y puentes con centro en Cusco. Inscrita en 2014 por seis países: Argentina, Bolivia, Chile, Colombia, Ecuador y Perú."
+          },
+          "whs": 1459,
+          "wiki": {
+            "en": "Inca road system",
+            "es": "Red vial del Tahuantinsuyo"
+          }
+        },
+        {
+          "id": "chauvet-cave",
+          "name": {
+            "en": "Chauvet Cave",
+            "es": "Cueva de Chauvet"
+          },
+          "at": [
+            4.4142,
+            44.3875
+          ],
+          "cat": "archaeology",
+          "type": "site",
+          "date": "-32000",
+          "place": {
+            "en": "Ardèche, France",
+            "es": "Ardèche, Francia"
+          },
+          "text": {
+            "en": "A cave whose walls were painted with lions, rhinos and horses about 32,000–30,000 years ago. Found in 1994 by three cavers and closed to protect it, it can be seen in a full-size replica opened in 2015.",
+            "es": "Una cueva cuyas paredes se pintaron con leones, rinocerontes y caballos hace unos 32 000-30 000 años. Hallada en 1994 por tres espeleólogos y cerrada para protegerla, puede verse en una réplica de tamaño real abierta en 2015."
+          },
+          "whs": 1426,
+          "wiki": {
+            "en": "Chauvet Cave",
+            "es": "Cueva de Chauvet"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2021-07-21",
+      "title": {
+        "en": "Three sites struck off",
+        "es": "Tres sitios borrados de la lista"
+      },
+      "camera": {
+        "lon": 33,
+        "lat": 38,
+        "zoom": 1.9
+      },
+      "text": {
+        "en": "On 21 July 2021 Liverpool became the third site ever removed from the list, after new building on its docks. The Arabian Oryx Sanctuary (2007) and Dresden's Elbe Valley (2009) had gone before.",
+        "es": "El 21 de julio de 2021, Liverpool fue el tercer sitio retirado de la lista, por las nuevas construcciones en sus muelles. Antes habían salido el Santuario del órix árabe (2007) y el valle del Elba en Dresde (2009)."
+      },
+      "details": {
+        "en": "Removal is the committee's last resort, when a site has lost what made it special. In 2007 Oman cut the Arabian Oryx Sanctuary by 90% after oil was found there, while poachers had cut the oryx from 450 animals in 1996 to 65; it became the first site ever struck off. In Dresden, voters approved a four-lane bridge across the Elbe meadows in 2005; UNESCO warned that it would ruin the landscape, and in June 2009 removed the valley, by 14 votes to 5. Liverpool, a great port of the British Empire and a centre of the slave trade until 1807, was listed in 2004 and put in danger in 2012 over the Liverpool Waters towers; a new Everton stadium on its docks sealed its removal, by 13 votes to 5.",
+        "es": "Retirar un sitio es el último recurso del comité, cuando ha perdido lo que lo hacía especial. En 2007, Omán redujo un 90 % el Santuario del órix árabe tras hallar petróleo, mientras los cazadores furtivos habían reducido los órix de 450 en 1996 a 65; fue el primer sitio borrado de la lista. En Dresde, los votantes aprobaron en 2005 un puente de cuatro carriles sobre las praderas del Elba; la UNESCO advirtió que arruinaría el paisaje y en junio de 2009 retiró el valle, por 14 votos contra 5. Liverpool, gran puerto del Imperio británico y centro de la trata de esclavos hasta 1807, se inscribió en 2004 y entró en la lista de peligro en 2012 por las torres de Liverpool Waters; un nuevo estadio del Everton en sus muelles selló su salida, por 13 votos contra 5."
+      },
+      "places": [
+        {
+          "id": "arabian-oryx-sanctuary",
+          "name": {
+            "en": "Arabian Oryx Sanctuary",
+            "es": "Santuario del órix árabe"
+          },
+          "at": [
+            57.0,
+            19.7
+          ],
+          "cat": "wildlife",
+          "type": "site",
+          "date": "1994",
+          "place": {
+            "en": "Al Wusta, Oman",
+            "es": "Al Wusta, Omán"
+          },
+          "text": {
+            "en": "A desert reserve in Oman for the Arabian oryx and other wildlife. In 2007 it became the first site struck off the list: Oman had cut it by 90% after oil was found, and poaching had left only 65 oryx.",
+            "es": "Una reserva del desierto de Omán para el órix árabe y otros animales. En 2007 fue el primer sitio borrado de la lista: Omán la había reducido un 90 % tras hallar petróleo, y la caza furtiva había dejado solo 65 órix."
+          },
+          "whs": 654,
+          "wiki": {
+            "en": "Al Wusta Wildlife Reserve",
+            "es": "Santuario del Oryx árabe"
+          }
+        },
+        {
+          "id": "dresden-elbe-valley",
+          "name": {
+            "en": "Dresden Elbe Valley",
+            "es": "Valle del Elba en Dresde"
+          },
+          "at": [
+            13.8132,
+            51.0498
+          ],
+          "cat": "landscape",
+          "type": "site",
+          "date": "2004",
+          "place": {
+            "en": "Dresden, Germany",
+            "es": "Dresde, Alemania"
+          },
+          "text": {
+            "en": "Some 20 km of river meadows, palaces, villas and vineyards along the Elbe in Dresden, listed in 2004. In June 2009 it lost its place on the list because of a new four-lane bridge.",
+            "es": "Unos 20 km de praderas, palacios, villas y viñedos a orillas del Elba en Dresde, inscritos en 2004. En junio de 2009 perdieron su lugar en la lista por un nuevo puente de cuatro carriles."
+          },
+          "whs": 1156,
+          "wiki": {
+            "en": "Dresden Elbe Valley",
+            "es": "Valle del Elba en Dresde"
+          }
+        },
+        {
+          "id": "waldschlosschen-bridge",
+          "name": {
+            "en": "Waldschlösschen Bridge",
+            "es": "Puente de Waldschlösschen"
+          },
+          "at": [
+            13.7768,
+            51.0639
+          ],
+          "cat": "threat",
+          "type": "structure",
+          "date": "2007",
+          "end": "2013-08-24",
+          "place": {
+            "en": "Dresden, Germany",
+            "es": "Dresde, Alemania"
+          },
+          "text": {
+            "en": "A road bridge over the Elbe approved by Dresden's voters in 2005 to ease traffic. UNESCO warned that it would spoil the valley's landscape; it was built anyway and opened in 2013.",
+            "es": "Un puente vial sobre el Elba aprobado por los votantes de Dresde en 2005 para aliviar el tráfico. La UNESCO advirtió que dañaría el paisaje del valle; se construyó igual y se abrió en 2013."
+          },
+          "wiki": {
+            "en": "Waldschlösschen Bridge",
+            "es": "Puente del Waldschlößchen"
+          }
+        },
+        {
+          "id": "liverpool",
+          "name": {
+            "en": "Liverpool waterfront",
+            "es": "Puerto de Liverpool"
+          },
+          "at": [
+            -2.9944,
+            53.4067
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1846",
+          "place": {
+            "en": "Liverpool, England, United Kingdom",
+            "es": "Liverpool, Inglaterra, Reino Unido"
+          },
+          "text": {
+            "en": "The docks and buildings of one of the great ports of the British Empire, and of the Atlantic slave trade until 1807. Listed in 2004, it was removed in 2021 after new building on its waterfront.",
+            "es": "Los muelles y edificios de uno de los grandes puertos del Imperio británico, y de la trata atlántica de esclavos hasta 1807. Inscrito en 2004, fue retirado en 2021 por las nuevas construcciones en su frente marítimo."
+          },
+          "whs": 1150,
+          "wiki": {
+            "en": "Liverpool Maritime Mercantile City",
+            "es": "Puerto de Liverpool"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "title": {
+        "en": "Busan, 2026",
+        "es": "Busan, 2026"
+      },
+      "camera": {
+        "lon": 78,
+        "lat": 25,
+        "zoom": 1.3
+      },
+      "text": {
+        "en": "Meeting in Busan, South Korea, in July 2026, the committee added 25 sites, bringing the list to 1,273 sites in 173 countries. Of these, 58 are on the List of World Heritage in Danger.",
+        "es": "Reunido en Busan, Corea del Sur, en julio de 2026, el comité añadió 25 sitios y llevó la lista a 1273, en 173 países. De ellos, 58 están en la Lista del Patrimonio Mundial en Peligro."
+      },
+      "details": {
+        "en": "The new sites ranged from the D-Day beaches of Normandy, a place of memory of 1944, to Sarnath in India, where Buddhists believe the Buddha first taught, the porcelain workshops of Jingdezhen in China and the roças of São Tomé and Príncipe, colonial plantations built on forced migration and labour. Three went straight onto the danger list: the great antelope migration of Boma-Badingilo in South Sudan, Sebastia in the West Bank, listed under Palestine, and the castles of Mount Amel in southern Lebanon. The committee also put Tyre, old Paramaribo and Tauric Chersonese in Crimea in danger, and took Vienna off. Since 1978 the list has grown from 12 sites to 1,273, but the questions of the Nubian campaign remain: who pays, who decides, and how to protect a place without pushing out the people who live there.",
+        "es": "Los nuevos sitios iban desde las playas del Desembarco de Normandía, lugar de memoria de 1944, hasta Sarnath, en la India, donde según los budistas Buda enseñó por primera vez, los talleres de porcelana de Jingdezhen, en China, y las roças de Santo Tomé y Príncipe, plantaciones coloniales basadas en la migración y el trabajo forzados. Tres entraron directamente en la lista de peligro: la gran migración de antílopes de Boma-Badingilo, en Sudán del Sur, Sebastia, en Cisjordania, inscrita a nombre de Palestina, y los castillos del monte Amel, en el sur del Líbano. El comité también puso en peligro Tiro, el centro antiguo de Paramaribo y el Quersoneso Táurico, en Crimea, y sacó de esa lista a Viena. Desde 1978 la lista pasó de 12 sitios a 1273, pero las preguntas de la campaña de Nubia siguen ahí: quién paga, quién decide y cómo proteger un lugar sin expulsar a la gente que vive en él."
+      },
+      "places": [
+        {
+          "id": "busan-2026",
+          "name": {
+            "en": "Busan session, 2026",
+            "es": "Sesión de Busan, 2026"
+          },
+          "at": [
+            129.1336,
+            35.169
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "2026-07-19",
+          "end": "2026-07-29",
+          "place": {
+            "en": "Busan, South Korea",
+            "es": "Busan, Corea del Sur"
+          },
+          "text": {
+            "en": "The World Heritage Committee's 48th session, held in Busan from 19 to 29 July 2026. It added 25 sites, bringing the list to 1,273 sites in 173 countries.",
+            "es": "La 48.ª sesión del Comité del Patrimonio Mundial, celebrada en Busan del 19 al 29 de julio de 2026. Añadió 25 sitios y llevó la lista a 1273, en 173 países."
+          },
+          "wiki": {
+            "en": "World Heritage Committee",
+            "es": "Comité del Patrimonio de la Humanidad"
+          },
+          "img": "Busan City Haeundae District (01).jpg"
+        },
+        {
+          "id": "d-day-beaches",
+          "name": {
+            "en": "D-Day beaches",
+            "es": "Playas del Desembarco de Normandía"
+          },
+          "at": [
+            -0.8796,
+            49.3708
+          ],
+          "cat": "landscape",
+          "type": "site",
+          "date": "1944-06-06",
+          "place": {
+            "en": "Normandy, France",
+            "es": "Normandía, Francia"
+          },
+          "text": {
+            "en": "The five beaches where Allied troops landed on 6 June 1944 to free Western Europe from Nazi Germany, with their ruins, harbours and cemeteries. Listed in 2026 as a place of memory and peace.",
+            "es": "Las cinco playas donde desembarcaron las tropas aliadas el 6 de junio de 1944 para liberar Europa occidental de la Alemania nazi, con sus ruinas, puertos y cementerios. Inscritas en 2026 como lugar de memoria y paz."
+          },
+          "whs": 1581,
+          "wiki": {
+            "en": "Normandy landings",
+            "es": "Desembarco de Normandia"
+          },
+          "img": "Mémorial omaha beach, plage de normandie.jpg"
+        },
+        {
+          "id": "sarnath",
+          "name": {
+            "en": "Sarnath",
+            "es": "Sarnath"
+          },
+          "at": [
+            83.0251,
+            25.378
+          ],
+          "cat": "archaeology",
+          "type": "site",
+          "date": "-528",
+          "place": {
+            "en": "Near Varanasi, Uttar Pradesh, India",
+            "es": "Cerca de Varanasi, Uttar Pradesh, India"
+          },
+          "text": {
+            "en": "The deer park near Varanasi where, Buddhists believe, the Buddha gave his first teaching to five disciples. Its stupas and monastery ruins, and Ashoka's lion capital, were listed in 2026.",
+            "es": "El parque de los ciervos cerca de Varanasi donde, según los budistas, Buda dio su primera enseñanza a cinco discípulos. Sus estupas y ruinas de monasterios, y el capitel de los leones de Ashoka, se inscribieron en 2026."
+          },
+          "whs": 927,
+          "wiki": {
+            "en": "Sarnath",
+            "es": "Sarnath"
+          }
+        },
+        {
+          "id": "jingdezhen",
+          "name": {
+            "en": "Jingdezhen",
+            "es": "Jingdezhen"
+          },
+          "at": [
+            117.1986,
+            29.2917
+          ],
+          "cat": "city",
+          "type": "site",
+          "date": "1004",
+          "place": {
+            "en": "Jiangxi, China",
+            "es": "Jiangxi, China"
+          },
+          "text": {
+            "en": "China's 'Porcelain Capital', where kilns have fired ceramics for at least 1,000 years, many of them for the emperors and for export across the world. Its porcelain workshops were listed in 2026.",
+            "es": "La «capital de la porcelana» de China, donde los hornos cuecen cerámica desde hace al menos 1000 años, mucha para los emperadores y para vender en todo el mundo. Sus talleres de porcelana se inscribieron en 2026."
+          },
+          "whs": 1765,
+          "wiki": {
+            "en": "Jingdezhen",
+            "es": "Jingdezhen"
+          }
+        },
+        {
+          "id": "boma-badingilo",
+          "name": {
+            "en": "Boma-Badingilo",
+            "es": "Boma-Badingilo"
+          },
+          "at": [
+            32.9586,
+            6.5138
+          ],
+          "cat": "wildlife",
+          "type": "site",
+          "date": "2026-07",
+          "place": {
+            "en": "South Sudan",
+            "es": "Sudán del Sur"
+          },
+          "text": {
+            "en": "Perhaps the largest land-mammal migration on Earth: millions of white-eared kob, tiang and gazelles cross South Sudan's floodplains each year. Listed in 2026, and in danger from the start.",
+            "es": "Quizá la mayor migración de mamíferos terrestres del planeta: millones de cobos de orejas blancas, topis y gacelas cruzan cada año las llanuras inundables de Sudán del Sur. Inscrita en 2026, y en peligro desde el inicio."
+          },
+          "whs": 1808,
+          "wiki": {
+            "en": "Boma–Badingilo Migratory Landscape",
+            "es": ""
+          },
+          "img": "Kobus kob leucotis 332144529.jpg"
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Born of a dam, a flood and an idea from Yellowstone, the World Heritage Convention has been joined by 196 countries, and in 2026 1,273 places are on its list. It has rescued temples, towns and wild places, drawn money, experts and visitors, and its danger list still raises the alarm. Its critics point to the list's tilt towards Europe, to the lobbying around each listing and to tourism that can crowd out the people who live in these places.",
+    "es": "Nacida de una presa, una inundación y una idea de Yellowstone, la Convención del Patrimonio Mundial reúne a 196 países, y en 2026 hay 1273 lugares en su lista. Ha rescatado templos, ciudades y lugares salvajes, ha atraído dinero, expertos y visitantes, y su lista de peligro sigue dando la alarma. Sus críticos señalan que la lista se inclina hacia Europa, el cabildeo detrás de cada inscripción y el turismo que puede desplazar a la gente que vive en estos lugares."
+  },
+  "sources": [
+    {
+      "title": "Wikipedia: International Campaign to Save the Monuments of Nubia",
+      "url": "https://en.wikipedia.org/wiki/International_Campaign_to_Save_the_Monuments_of_Nubia"
+    },
+    {
+      "title": "Wikipedia: Aswan High Dam",
+      "url": "https://en.wikipedia.org/wiki/Aswan_High_Dam"
+    },
+    {
+      "title": "Wikipedia: Lake Nasser",
+      "url": "https://en.wikipedia.org/wiki/Lake_Nasser"
+    },
+    {
+      "title": "Wikipedia: Wadi Halfa",
+      "url": "https://en.wikipedia.org/wiki/Wadi_Halfa"
+    },
+    {
+      "title": "Wikipedia: Nubians",
+      "url": "https://en.wikipedia.org/wiki/Nubians"
+    },
+    {
+      "title": "Wikipedia: Christiane Desroches Noblecourt",
+      "url": "https://en.wikipedia.org/wiki/Christiane_Desroches_Noblecourt"
+    },
+    {
+      "title": "Wikipedia: Tharwat Okasha",
+      "url": "https://en.wikipedia.org/wiki/Tharwat_Okasha"
+    },
+    {
+      "title": "Wikipedia: Abu Simbel",
+      "url": "https://en.wikipedia.org/wiki/Abu_Simbel"
+    },
+    {
+      "title": "Wikipedia: Temple of Amada",
+      "url": "https://en.wikipedia.org/wiki/Temple_of_Amada"
+    },
+    {
+      "title": "Wikipedia: Philae temple complex",
+      "url": "https://en.wikipedia.org/wiki/Philae_temple_complex"
+    },
+    {
+      "title": "Wikipedia: Temple of Debod",
+      "url": "https://en.wikipedia.org/wiki/Temple_of_Debod"
+    },
+    {
+      "title": "Wikipedia: Temple of Dendur",
+      "url": "https://en.wikipedia.org/wiki/Temple_of_Dendur"
+    },
+    {
+      "title": "Wikipedia: Temple of Taffeh",
+      "url": "https://en.wikipedia.org/wiki/Temple_of_Taffeh"
+    },
+    {
+      "title": "Wikipedia: Temple of Ellesyia",
+      "url": "https://en.wikipedia.org/wiki/Temple_of_Ellesyia"
+    },
+    {
+      "title": "Wikipedia: Yellowstone National Park",
+      "url": "https://en.wikipedia.org/wiki/Yellowstone_National_Park"
+    },
+    {
+      "title": "Wikipedia: 1966 flood of the Arno",
+      "url": "https://en.wikipedia.org/wiki/1966_flood_of_the_Arno"
+    },
+    {
+      "title": "Wikipedia: Acqua alta",
+      "url": "https://en.wikipedia.org/wiki/Acqua_alta"
+    },
+    {
+      "title": "Wikipedia: Venice in Peril Fund",
+      "url": "https://en.wikipedia.org/wiki/Venice_in_Peril_Fund"
+    },
+    {
+      "title": "Wikipedia: Venice",
+      "url": "https://en.wikipedia.org/wiki/Venice"
+    },
+    {
+      "title": "Wikipedia: World Heritage Convention",
+      "url": "https://en.wikipedia.org/wiki/World_Heritage_Convention"
+    },
+    {
+      "title": "Wikipedia: World Heritage Site",
+      "url": "https://en.wikipedia.org/wiki/World_Heritage_Site"
+    },
+    {
+      "title": "Wikipedia: World Heritage Committee",
+      "url": "https://en.wikipedia.org/wiki/World_Heritage_Committee"
+    },
+    {
+      "title": "Wikipedia: List of World Heritage Sites by year of inscription",
+      "url": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_by_year_of_inscription"
+    },
+    {
+      "title": "Wikipedia: List of World Heritage in Danger",
+      "url": "https://en.wikipedia.org/wiki/List_of_World_Heritage_in_Danger"
+    },
+    {
+      "title": "Wikipedia: International Council on Monuments and Sites",
+      "url": "https://en.wikipedia.org/wiki/International_Council_on_Monuments_and_Sites"
+    },
+    {
+      "title": "Wikipedia: International Union for Conservation of Nature",
+      "url": "https://en.wikipedia.org/wiki/International_Union_for_Conservation_of_Nature"
+    },
+    {
+      "title": "Wikipedia: ICCROM",
+      "url": "https://en.wikipedia.org/wiki/International_Centre_for_the_Study_of_the_Preservation_and_Restoration_of_Cultural_Property"
+    },
+    {
+      "title": "Wikipedia: Kotor",
+      "url": "https://en.wikipedia.org/wiki/Kotor"
+    },
+    {
+      "title": "Wikipedia: Angkor",
+      "url": "https://en.wikipedia.org/wiki/Angkor"
+    },
+    {
+      "title": "Wikipedia: Galápagos Islands",
+      "url": "https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands"
+    },
+    {
+      "title": "Wikipedia: Okavango Delta",
+      "url": "https://en.wikipedia.org/wiki/Okavango_Delta"
+    },
+    {
+      "title": "Wikipedia: Al Wusta Wildlife Reserve (Arabian Oryx Sanctuary)",
+      "url": "https://en.wikipedia.org/wiki/Al_Wusta_Wildlife_Reserve"
+    },
+    {
+      "title": "Wikipedia: Dresden Elbe Valley",
+      "url": "https://en.wikipedia.org/wiki/Dresden_Elbe_Valley"
+    },
+    {
+      "title": "Wikipedia: Waldschlösschen Bridge",
+      "url": "https://en.wikipedia.org/wiki/Waldschl%C3%B6sschen_Bridge"
+    },
+    {
+      "title": "Wikipedia: Liverpool Maritime Mercantile City",
+      "url": "https://en.wikipedia.org/wiki/Liverpool_Maritime_Mercantile_City"
+    },
+    {
+      "title": "Wikipedia: Gorée",
+      "url": "https://en.wikipedia.org/wiki/Gor%C3%A9e"
+    },
+    {
+      "title": "Wikipedia: Boma–Badingilo Migratory Landscape",
+      "url": "https://en.wikipedia.org/wiki/Boma%E2%80%93Badingilo_Migratory_Landscape"
+    },
+    {
+      "title": "Wikipedia: Tyre, Lebanon",
+      "url": "https://en.wikipedia.org/wiki/Tyre,_Lebanon"
+    },
+    {
+      "title": "UNESCO World Heritage List",
+      "url": "https://whc.unesco.org/en/list/"
+    }
+  ]
+}

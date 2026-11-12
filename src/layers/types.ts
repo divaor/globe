@@ -83,6 +83,16 @@ export interface RenderCtx {
   fillCountries(ids: Iterable<string>, color: string): void;
 }
 
+/** What a filter gets when the reader taps the map (see LayerDef.tap). */
+export interface LayerTapUi {
+  /** Opens a card, as ui/card.ts showCustom does: icon, title, subtitle, rows, links, paragraphs, picture, extra. */
+  card(icon: string, title: string, sub: string, rows: InfoRow[], links?: { label: string; href?: string; onClick?: () => void }[], notes?: string[], image?: Promise<string | null>, extra?: HTMLElement | null): void;
+  /** Screen position of a point, or null when it is hidden; `x`, `y` is where the reader tapped. */
+  project(lon: number, lat: number): [number, number] | null;
+  x: number;
+  y: number;
+}
+
 export interface LayerInstance {
   def: LayerDef;
   opacity: number;
@@ -135,6 +145,8 @@ export interface LayerDef {
   valueLabel?(countryId: string, inst: LayerInstance): string | null;
   info?(countryId: string, inst: LayerInstance, lang: Lang): InfoRow[] | null;
   pick?(lon: number, lat: number, inst: LayerInstance, lang: Lang): InfoRow[] | null;
+  /** A tap on something the filter draws (a site, a marker): open its card and return true; else false. */
+  tap?(lon: number, lat: number, inst: LayerInstance, ui: LayerTapUi): boolean;
   onOptionsChanged?(inst: LayerInstance): void;
   /** Called when the filter is turned off (stop timers, polling...). */
   onDeactivate?(inst: LayerInstance): void;

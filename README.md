@@ -34,6 +34,11 @@ spinning full-screen as an ambient display. English and Spanish.
   - Earth science: tectonic plates by boundary type, volcanoes, animated ocean currents.
   - Economy & energy: GDP, income groups, top producers of 21 resources (oil, lithium, cobalt…), CO₂, renewables…
   - Culture & fun: flags on the map, national colours, driving side, calling codes, Olympic medals and more.
+  - World Heritage: every site on UNESCO's World Heritage List after the July 2026 session (1,273, plus the 3
+    removed), by category or by year listed, with the 58 in danger ringed in red. "Watch the list grow" plays the
+    years from the first 12 sites of 1978; a tap on a site opens its picture, Wikipedia's summary, its year,
+    criteria and UNESCO's page, and a country's card counts its sites.
+  - Where things were invented: the inventions of the Inventions stories where they were made, by age and field.
   - Imagery: NASA Blue Marble, yesterday's real satellite view (NASA GIBS), shaded relief, ETOPO.
   - Live: day and night with city lights, earthquakes (USGS), weather now (Open-Meteo), the ISS.
 - **Compare two filters:** any two country facts at once. Two numbers make a two-colour map (each in thirds,
@@ -126,18 +131,30 @@ spinning full-screen as an ambient display. English and Spanish.
     art with a catalogue of 109 works, artists and museums; cave and rock art; the ancient world; Renaissance and
     Baroque painting; art of Asia; Impressionism to modern art; and works taken in war and by empires, and
     returned, with each side's case. Works still under copyright have no picture.
+  - Inventions: 10 stories, 163 steps and 539 items. Where things were invented and how they travelled: a time
+    tour from the stone tools of Lomekwi, 3.3 million years ago, to generative AI, with a catalogue of 113
+    inventions; China's four great inventions and their journeys west; keeping time, from shadow clocks to the end
+    of the leap second; lenses, from Ibn al-Haytham to the Webb telescope; flight, from kites to drones; messages,
+    from Inca runners to undersea cables; power, from water wheels to solar panels; everyday inventions; who really
+    invented it, with the disputed firsts and forgotten inventors; and inventions from Latin America.
+  - World Heritage: 4 stories, 61 steps and 170 items. How World Heritage began with the rescue of Abu Simbel;
+    sites destroyed and rebuilt, from Warsaw to Mosul; saving nature's wonders; and Latin America's history told
+    through its World Heritage. Any story card for a World Heritage site says when it was listed and whether it is
+    in danger, with a link to UNESCO.
   - Browse and search every item of a story or a whole collection; shared links open a story at its step.
 - **Explore:** measure distances (great circles, flight time), compare two countries, "true size" of countries.
 - **Learn & play:** quizzes (find the country, flags, capitals, states and provinces of 48 countries, where in
   the world, when was it built or made, dishes of the world, which era, which civilization, which geologic
   period, who won, guess the link between two country facts, which journey, which faith, which script, which
-  language family, which epidemic, which disaster, what are you hearing, which book is it from, who made it), each ending with every answer and its picture; guided tours (our planet, eight cities
+  language family, which epidemic, which disaster, what are you hearing, which book is it from, who made it, which World Heritage site, who invented it), each ending with every answer and its picture; guided tours (our planet, eight cities
   through time, history and culture, Out of Africa, capitals of the ancient world, the dinosaur trail, the five
   mass extinctions, Olympic cities, World Cup finals, the Winter Games, great races, along the Silk Road, around
   the world under sail, to the ends of the Earth, gold, silver and spices, holy places, pilgrims' ways, writing
   is born, code breakers, the story of the alphabet, languages of the world, pandemics that changed history,
   medicine's great discoveries, tsunamis across the oceans, the year without a summer, the Ring of Fire, first lines,
-  great libraries, masterpieces and where they are, sounds of the world, cities of music); "On this day" (Wikipedia).
+  great libraries, masterpieces and where they are, sounds of the world, cities of music, Latin America's World
+  Heritage, nature's wonders, lost and rebuilt, China's great inventions, from the telegraph to the Web, invented in
+  Latin America); "On this day" (Wikipedia).
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Ambient mode:** full-screen rotating globe with your filters, screen kept awake, clock, optional filter cycling.
 
@@ -196,6 +213,11 @@ The Music and dance, Books and writers and Art of the world stories are written 
 in each story. Their clips are free recordings on Wikimedia Commons (public domain or Creative Commons, each credited
 with its licence and a link to its page), streamed from Commons by the reader's browser only when played; quotes in
 other languages come from Wikisource and the articles, translated plainly where no public-domain translation exists.
+The Inventions and World Heritage stories are written from the Wikipedia articles listed in each story. The World
+Heritage List (`public/data/layers/heritage.json`, made by `scripts/data/world-heritage/build.py`) comes from
+Wikipedia's lists of World Heritage Sites by year of inscription and in danger, with places, pictures and articles
+from Wikidata (CC0) and Spanish names from Spanish Wikipedia's lists by country; it also gives the country fact
+"UNESCO World Heritage Sites".
 The script samples use subsets of the Noto fonts (SIL Open Font License 1.1) and, for rare Chinese characters,
 Jigmo (CC0), made by `scripts/data/build-fonts.mjs` (`public/data/fonts/`, with the licence in `OFL.txt`).
 

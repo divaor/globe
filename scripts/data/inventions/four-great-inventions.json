@@ -1,0 +1,3390 @@
+{
+ "id": "four-great-inventions",
+ "name": {
+  "en": "China's four great inventions",
+  "es": "Los cuatro grandes inventos de China"
+ },
+ "icon": "🧭",
+ "era": "medieval",
+ "region": {
+  "en": "From China across Asia to Europe",
+  "es": "De China a Europa, a través de Asia"
+ },
+ "start": "-179",
+ "end": "2008",
+ "summary": {
+  "en": "Paper, printing, the compass and gunpowder: where in China each was made, who made it when we know, and how each one travelled west along the Silk Roads and the sea routes to change the world.",
+  "es": "El papel, la imprenta, la brújula y la pólvora: dónde se hizo cada uno en China, quién lo hizo cuando lo sabemos, y cómo viajó cada uno hacia el oeste por las rutas de la seda y del mar hasta cambiar el mundo."
+ },
+ "camera": {
+  "lon": 104,
+  "lat": 36,
+  "zoom": 3.4
+ },
+ "trail": true,
+ "sides": [
+  {
+   "id": "paper",
+   "name": {
+    "en": "Paper's journey",
+    "es": "El viaje del papel"
+   },
+   "color": "#d4a017"
+  },
+  {
+   "id": "printing",
+   "name": {
+    "en": "Printing",
+    "es": "La imprenta"
+   },
+   "color": "#e84393"
+  },
+  {
+   "id": "compass",
+   "name": {
+    "en": "The compass",
+    "es": "La brújula"
+   },
+   "color": "#16a085"
+  },
+  {
+   "id": "gunpowder",
+   "name": {
+    "en": "Gunpowder",
+    "es": "La pólvora"
+   },
+   "color": "#5d6d7e"
+  }
+ ],
+ "steps": [
+  {
+   "date": "105",
+   "title": {
+    "en": "Paper from Han China",
+    "es": "El papel de la China Han"
+   },
+   "text": {
+    "en": "In 105 the court official Cai Lun presents the Han emperor with paper made of bark, hemp, rags and old fishing nets. Paper was older, but his recipe made good paper cheap.",
+    "es": "En el año 105, el funcionario Cai Lun presenta al emperador Han un papel hecho de corteza, cáñamo, trapos y viejas redes de pesca. El papel ya existía, pero su receta abarató el buen papel."
+   },
+   "details": {
+    "en": "For centuries the Chinese had written on bamboo slips, which were heavy, or on silk, which was costly. Paper, made of plant fibres beaten into a pulp and dried on a screen, appeared in the 2nd century BC: the oldest piece known is a scrap of a map buried in a tomb at Fangmatan, in Gansu, around 179–141 BC. Scraps from frontier posts near Dunhuang and at the Yumen Pass date from 65 and 8 BC. Cai Lun, a eunuch who ran the palace workshops in Luoyang, did not invent paper, but in 105 he fixed a recipe of tree bark, hemp waste, old rags and fishing nets that made it cheap, and it soon replaced bamboo slips. Of all the people behind the four great inventions, he is the only early one whose name we know. China honours him as the god of papermaking.",
+    "es": "Durante siglos, los chinos habían escrito en tablillas de bambú, que pesaban mucho, o en seda, que era cara. El papel, hecho de fibras vegetales machacadas hasta formar una pasta y secadas sobre un tamiz, apareció en el siglo II a. C.: el trozo más antiguo que se conoce es un fragmento de mapa enterrado en una tumba de Fangmatan, en Gansu, hacia 179-141 a. C. Hay restos de puestos fronterizos cerca de Dunhuang y del paso de Yumen fechados en el 65 y el 8 a. C. Cai Lun, un eunuco que dirigía los talleres del palacio en Luoyang, no inventó el papel, pero en el año 105 fijó una receta de corteza de árbol, restos de cáñamo, trapos viejos y redes de pesca que lo abarató, y el papel pronto reemplazó a las tablillas de bambú. De todas las personas detrás de los cuatro grandes inventos, es la única de los primeros tiempos cuyo nombre conocemos. China lo honra como dios de la fabricación del papel."
+   },
+   "camera": {
+    "lon": 103.5,
+    "lat": 37,
+    "zoom": 3.6
+   },
+   "places": [
+    {
+     "id": "fangmatan-map",
+     "name": {
+      "en": "The Fangmatan paper map",
+      "es": "El mapa de papel de Fangmatan"
+     },
+     "at": [
+      106.1,
+      34.4
+     ],
+     "cat": "print",
+     "type": "work",
+     "date": "-179",
+     "place": {
+      "en": "Fangmatan, near Tianshui, Gansu, China",
+      "es": "Fangmatan, cerca de Tianshui, Gansu, China"
+     },
+     "text": {
+      "en": "A scrap of a map, 5.6 by 2.6 cm, drawn on paper and laid on a man's chest in a tomb of the early 2nd century BC: the oldest piece of paper known, nearly three centuries older than Cai Lun's recipe.",
+      "es": "Un fragmento de mapa de 5,6 por 2,6 cm, dibujado en papel y colocado sobre el pecho de un hombre en una tumba de principios del siglo II a. C.: el trozo de papel más antiguo que se conoce, casi tres siglos anterior a la receta de Cai Lun."
+     },
+     "wiki": {
+      "en": "Fangmatan",
+      "es": ""
+     },
+     "img": "Fangmatan paper map.jpg"
+    },
+    {
+     "id": "yumen-pass",
+     "name": {
+      "en": "Yumen Pass (Jade Gate)",
+      "es": "Paso de Yumen (Puerta de Jade)"
+     },
+     "at": [
+      93.864,
+      40.3535
+     ],
+     "cat": "print",
+     "type": "site",
+     "date": "-111",
+     "whs": 1442,
+     "place": {
+      "en": "Near Dunhuang, Gansu, China",
+      "es": "Cerca de Dunhuang, Gansu, China"
+     },
+     "text": {
+      "en": "The Han frontier fort at the Jade Gate, 80 km northwest of Dunhuang. Scraps of paper found here date from 8 BC, more than a century before Cai Lun. Its ruins are part of the Silk Roads World Heritage Site.",
+      "es": "El fuerte fronterizo de los Han en la Puerta de Jade, 80 km al noroeste de Dunhuang. Aquí se hallaron restos de papel del 8 a. C., más de un siglo antes de Cai Lun. Sus ruinas forman parte del Patrimonio de la Humanidad de las rutas de la seda."
+     },
+     "wiki": {
+      "en": "Yumen Pass",
+      "es": "Puerta de Jade"
+     }
+    },
+    {
+     "id": "cai-lun",
+     "name": {
+      "en": "Cai Lun",
+      "es": "Cai Lun"
+     },
+     "at": [
+      112.624,
+      34.727
+     ],
+     "cat": "inventor",
+     "type": "person",
+     "date": "105",
+     "life": [
+      "50",
+      "121"
+     ],
+     "place": {
+      "en": "Luoyang, China (the Han capital)",
+      "es": "Luoyang, China (la capital de los Han)"
+     },
+     "text": {
+      "en": "A eunuch who ran the Han palace workshops and in 105 gave the emperor a cheaper, better paper. China honours him as the god of papermaking, and his hometown, Leiyang, still makes paper.",
+      "es": "Un eunuco que dirigía los talleres del palacio Han y en el año 105 dio al emperador un papel mejor y más barato. China lo honra como dios del papel, y su pueblo natal, Leiyang, todavía hace papel."
+     },
+     "details": {
+      "en": "Born in Guiyang commandery, today Leiyang in Hunan, Cai Lun came to the court at Luoyang by 75 and rose to oversee the making of tools and weapons in the Palace Workshop. The official history of the Han says that writing on bamboo was heavy and on silk expensive, so he made paper from tree bark, hemp, rags and fishing nets, and was praised throughout the empire. In 114 he was made a marquis. Caught up in palace intrigue, he took his own life in 121, when he expected to be condemned.",
+      "es": "Nacido en la comandancia de Guiyang, hoy Leiyang, en Hunan, Cai Lun llegó a la corte de Luoyang hacia el año 75 y pasó a supervisar la fabricación de herramientas y armas en el Taller del Palacio. La historia oficial de los Han cuenta que escribir en bambú pesaba y en seda costaba caro, así que hizo papel con corteza, cáñamo, trapos y redes de pesca, y fue alabado en todo el imperio. En el 114 fue nombrado marqués. Envuelto en intrigas de palacio, se quitó la vida en el 121, cuando esperaba ser condenado."
+     },
+     "wiki": {
+      "en": "Cai Lun",
+      "es": "Cai Lun"
+     }
+    },
+    {
+     "id": "paper",
+     "name": {
+      "en": "Paper",
+      "es": "El papel"
+     },
+     "at": [
+      112.6178,
+      34.7231
+     ],
+     "cat": "print",
+     "type": "invention",
+     "date": "105",
+     "by": {
+      "en": "Cai Lun",
+      "es": "Cai Lun"
+     },
+     "place": {
+      "en": "Luoyang, China (the Han capital)",
+      "es": "Luoyang, China (la capital de los Han)"
+     },
+     "text": {
+      "en": "Sheets of plant fibre beaten to a pulp, caught on a screen and dried. Made in China from the 2nd century BC and improved by Cai Lun in 105, it reached Europe about a thousand years later.",
+      "es": "Hojas de fibra vegetal machacada hasta formar una pasta, recogida en un tamiz y secada. Se hacía en China desde el siglo II a. C.; Cai Lun lo mejoró en el año 105 y llegó a Europa unos mil años después."
+     },
+     "facts": [
+      {
+       "label": {
+        "en": "Cai Lun's recipe",
+        "es": "La receta de Cai Lun"
+       },
+       "value": {
+        "en": "Tree bark, hemp waste, old rags and fishing nets",
+        "es": "Corteza de árbol, restos de cáñamo, trapos viejos y redes de pesca"
+       }
+      }
+     ],
+     "wiki": {
+      "en": "Paper",
+      "es": "Papel"
+     },
+     "img": "Chinese hemp paper western han.jpg"
+    }
+   ]
+  },
+  {
+   "date": "794",
+   "title": {
+    "en": "Paper goes west",
+    "es": "El papel viaja al oeste"
+   },
+   "text": {
+    "en": "After 751, when an Abbasid army beats the Tang by the Talas River, Samarkand becomes famous for its paper. By 794 a paper mill works in Baghdad, the Abbasid capital.",
+    "es": "Después del 751, cuando un ejército abasí vence a los Tang junto al río Talas, Samarcanda se hace famosa por su papel. Hacia el 794 ya funciona un molino de papel en Bagdad, la capital abasí."
+   },
+   "details": {
+    "en": "Paper travelled west with Buddhist monks and merchants long before any battle: it was made at Gilgit, in today's Pakistan, by the 6th century. In July 751 Abbasid troops crushed a Tang army near the Talas River. In the 11th century the writer al-Tha'alibi claimed that Chinese prisoners taken there taught papermaking in Samarkand, but historians such as Jonathan Bloom find the story unlikely: paper was used in Samarkand decades before, and Du Huan, a captive who came home, listed weavers and painters among the prisoners, but no papermakers. Central Asian makers used mostly rags, not bark. In Baghdad the caliph's viziers ordered paper to replace parchment in government offices, and a mill was working by 794–795. Soon a street of the city held more than 100 paper and book shops.",
+    "es": "El papel viajó al oeste con monjes budistas y mercaderes mucho antes de cualquier batalla: en el siglo VI ya se hacía en Gilgit, en el actual Pakistán. En julio del 751, tropas abasíes aplastaron a un ejército Tang junto al río Talas. En el siglo XI, el escritor al-Tha'alibi afirmó que prisioneros chinos capturados allí enseñaron a hacer papel en Samarcanda, pero historiadores como Jonathan Bloom lo ven poco probable: en Samarcanda se usaba papel décadas antes, y Du Huan, un cautivo que volvió a casa, nombró tejedores y pintores entre los prisioneros, pero ningún papelero. Los artesanos de Asia central usaban sobre todo trapos, no corteza. En Bagdad, los visires del califa ordenaron que el papel reemplazara al pergamino en las oficinas del gobierno, y hacia el 794-795 ya funcionaba un molino. Pronto una calle de la ciudad tenía más de 100 tiendas de papel y de libros."
+   },
+   "camera": {
+    "lon": 76,
+    "lat": 38,
+    "zoom": 2.5
+   },
+   "moves": [
+    {
+     "side": "paper",
+     "path": [
+      [
+       112.62,
+       34.72
+      ],
+      [
+       108.94,
+       34.27
+      ],
+      [
+       105.72,
+       34.58
+      ],
+      [
+       103.83,
+       36.06
+      ],
+      [
+       102.64,
+       37.93
+      ],
+      [
+       100.45,
+       38.93
+      ],
+      [
+       98.49,
+       39.73
+      ],
+      [
+       94.66,
+       40.14
+      ],
+      [
+       93.51,
+       42.82
+      ],
+      [
+       89.19,
+       42.95
+      ],
+      [
+       86.57,
+       42.06
+      ],
+      [
+       86.15,
+       41.73
+      ],
+      [
+       82.93,
+       41.72
+      ],
+      [
+       80.26,
+       41.17
+      ],
+      [
+       75.99,
+       39.47
+      ],
+      [
+       73.95,
+       39.68
+      ],
+      [
+       73.25,
+       39.73
+      ],
+      [
+       73.45,
+       40.32
+      ],
+      [
+       72.8,
+       40.53
+      ],
+      [
+       72.34,
+       40.78
+      ],
+      [
+       70.94,
+       40.53
+      ],
+      [
+       69.62,
+       40.28
+      ],
+      [
+       67.84,
+       40.12
+      ],
+      [
+       66.99,
+       39.67
+      ]
+     ],
+     "by": "land",
+     "icon": "📜",
+     "label": {
+      "en": "Paper on the Silk Roads",
+      "es": "El papel por las rutas de la seda"
+     }
+    },
+    {
+     "side": "paper",
+     "path": [
+      [
+       66.99,
+       39.67
+      ],
+      [
+       64.42,
+       39.77
+      ],
+      [
+       63.58,
+       39.08
+      ],
+      [
+       62.19,
+       37.66
+      ],
+      [
+       61.16,
+       36.53
+      ],
+      [
+       58.8,
+       36.21
+      ],
+      [
+       57.68,
+       36.21
+      ],
+      [
+       54.34,
+       36.17
+      ],
+      [
+       53.39,
+       35.58
+      ],
+      [
+       51.43,
+       35.59
+      ],
+      [
+       48.52,
+       34.8
+      ],
+      [
+       47.06,
+       34.31
+      ],
+      [
+       44.38,
+       33.35
+      ]
+     ],
+     "by": "land",
+     "icon": "📜",
+     "label": {
+      "en": "To Baghdad, 794",
+      "es": "A Bagdad, 794"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "battle-of-talas",
+     "name": {
+      "en": "Battle of Talas",
+      "es": "Batalla del Talas"
+     },
+     "at": [
+      72.2333,
+      42.525
+     ],
+     "cat": "event",
+     "type": "event",
+     "date": "751-07",
+     "place": {
+      "en": "Talas River, Kyrgyzstan and Kazakhstan",
+      "es": "Río Talas, Kirguistán y Kazajistán"
+     },
+     "text": {
+      "en": "In July 751 an Abbasid army, helped by Karluk Turks who changed sides, beat a Tang army near the Talas River. A later story says prisoners taken here brought papermaking west.",
+      "es": "En julio del 751, un ejército abasí, ayudado por turcos karluk que cambiaron de bando, venció a un ejército Tang junto al río Talas. Un relato posterior dice que los prisioneros tomados aquí llevaron al oeste el arte del papel."
+     },
+     "wiki": {
+      "en": "Battle of Talas",
+      "es": "Batalla del Talas"
+     }
+    },
+    {
+     "id": "samarkand",
+     "name": {
+      "en": "Samarkand",
+      "es": "Samarcanda"
+     },
+     "at": [
+      66.9867,
+      39.6697
+     ],
+     "cat": "print",
+     "type": "site",
+     "date": "751",
+     "whs": 603,
+     "place": {
+      "en": "Samarkand, Uzbekistan",
+      "es": "Samarcanda, Uzbekistán"
+     },
+     "text": {
+      "en": "The great Sogdian city of the Silk Roads, already making paper before 751. A 10th-century Persian geography praises its paper, sent to many cities; ministers in Egypt ordered it. A World Heritage Site.",
+      "es": "La gran ciudad sogdiana de las rutas de la seda, que ya hacía papel antes del 751. Una geografía persa del siglo X alaba su papel, enviado a muchas ciudades; ministros de Egipto lo encargaban. Es Patrimonio de la Humanidad."
+     },
+     "wiki": {
+      "en": "Samarkand",
+      "es": "Samarcanda"
+     }
+    },
+    {
+     "id": "baghdad",
+     "name": {
+      "en": "Baghdad",
+      "es": "Bagdad"
+     },
+     "at": [
+      44.38,
+      33.345
+     ],
+     "cat": "print",
+     "type": "place",
+     "date": "794",
+     "place": {
+      "en": "Baghdad, Iraq",
+      "es": "Bagdad, Irak"
+     },
+     "text": {
+      "en": "The round city of the Abbasid caliphs, founded in 762. A paper mill worked here by 794–795, and its Paper Market had more than 100 shops selling paper and books.",
+      "es": "La ciudad redonda de los califas abasíes, fundada en el 762. Aquí funcionaba un molino de papel hacia el 794-795, y su Mercado del Papel tenía más de 100 tiendas de papel y libros."
+     },
+     "wiki": {
+      "en": "Baghdad",
+      "es": "Bagdad"
+     }
+    },
+    {
+     "id": "paper",
+     "name": {
+      "en": "Paper",
+      "es": "El papel"
+     },
+     "at": [
+      112.6178,
+      34.7231
+     ],
+     "cat": "print",
+     "type": "invention",
+     "date": "105",
+     "by": {
+      "en": "Cai Lun",
+      "es": "Cai Lun"
+     },
+     "place": {
+      "en": "Luoyang, China (the Han capital)",
+      "es": "Luoyang, China (la capital de los Han)"
+     },
+     "text": {
+      "en": "Sheets of plant fibre beaten to a pulp, caught on a screen and dried. Made in China from the 2nd century BC and improved by Cai Lun in 105, it reached Europe about a thousand years later.",
+      "es": "Hojas de fibra vegetal machacada hasta formar una pasta, recogida en un tamiz y secada. Se hacía en China desde el siglo II a. C.; Cai Lun lo mejoró en el año 105 y llegó a Europa unos mil años después."
+     },
+     "facts": [
+      {
+       "label": {
+        "en": "Cai Lun's recipe",
+        "es": "La receta de Cai Lun"
+       },
+       "value": {
+        "en": "Tree bark, hemp waste, old rags and fishing nets",
+        "es": "Corteza de árbol, restos de cáñamo, trapos viejos y redes de pesca"
+       }
+      }
+     ],
+     "wiki": {
+      "en": "Paper",
+      "es": "Papel"
+     },
+     "img": "Chinese hemp paper western han.jpg"
+    }
+   ]
+  },
+  {
+   "date": "868-05-11",
+   "title": {
+    "en": "The Diamond Sutra",
+    "es": "El Sutra del diamante"
+   },
+   "text": {
+    "en": "On 11 May 868 a man named Wang Jie pays for a Buddhist scripture printed from carved wooden blocks 'for universal free distribution': the Diamond Sutra, the oldest printed book that bears a date.",
+    "es": "El 11 de mayo del 868, un hombre llamado Wang Jie paga una escritura budista impresa con bloques de madera tallada «para su libre distribución universal»: el Sutra del diamante, el libro impreso más antiguo que lleva fecha."
+   },
+   "details": {
+    "en": "Woodblock printing began in Tang China by the 7th century. A page was written on thin paper, pasted face down on a smooth board and carved so that the characters stood out in reverse; the block was then inked and pressed onto paper. Buddhists led the way, because copying sacred texts earned merit. Printing soon reached Korea and Japan: a Buddhist charm printed between 704 and 751 was found at Bulguksa temple in 1966, and around 770 Empress Shōtoku had a million charms printed and placed in small wooden pagodas. The Diamond Sutra of 868, a scroll about five metres long, lay walled up in a cave at Mogao, near Dunhuang, until it was found in 1900. The archaeologist Aurel Stein bought it in 1907, and it is now in the British Library in London.",
+    "es": "La impresión xilográfica comenzó en la China de los Tang hacia el siglo VII. Se escribía una página en papel fino, se pegaba boca abajo sobre una tabla lisa y se tallaba para que los caracteres quedaran en relieve y al revés; luego se entintaba el bloque y se presionaba sobre el papel. Los budistas fueron los primeros, porque copiar textos sagrados daba mérito. La impresión con bloques llegó pronto a Corea y Japón: en 1966 se halló en el templo de Bulguksa un amuleto budista impreso entre el 704 y el 751, y hacia el 770 la emperatriz Shōtoku mandó imprimir un millón de amuletos y guardarlos en pequeñas pagodas de madera. El Sutra del diamante del 868, un rollo de unos cinco metros, estuvo tapiado en una cueva de Mogao, cerca de Dunhuang, hasta que se halló en 1900. El arqueólogo Aurel Stein lo compró en 1907, y hoy está en la Biblioteca Británica, en Londres."
+   },
+   "camera": {
+    "lon": 114,
+    "lat": 37,
+    "zoom": 2.8
+   },
+   "moves": [
+    {
+     "side": "printing",
+     "path": [
+      [
+       108.94,
+       34.26
+      ],
+      [
+       112.45,
+       34.62
+      ],
+      [
+       117,
+       36.65
+      ],
+      [
+       120.3,
+       36.1
+      ],
+      [
+       124,
+       36
+      ],
+      [
+       126.7,
+       35.9
+      ],
+      [
+       129.33,
+       35.79
+      ]
+     ],
+     "label": {
+      "en": "To Korea, by 751",
+      "es": "A Corea, antes del 751"
+     }
+    },
+    {
+     "side": "printing",
+     "path": [
+      [
+       108.94,
+       34.26
+      ],
+      [
+       114.3,
+       34.8
+      ],
+      [
+       119.4,
+       32.4
+      ],
+      [
+       121.9,
+       31
+      ],
+      [
+       126,
+       31.5
+      ],
+      [
+       129.8,
+       32.8
+      ],
+      [
+       131,
+       33.9
+      ],
+      [
+       133.5,
+       34.3
+      ],
+      [
+       135.2,
+       34.65
+      ],
+      [
+       135.73,
+       34.61
+      ]
+     ],
+     "label": {
+      "en": "To Japan, about 770",
+      "es": "A Japón, hacia el 770"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "woodblock-printing",
+     "name": {
+      "en": "Woodblock printing",
+      "es": "La impresión xilográfica"
+     },
+     "at": [
+      108.94,
+      34.26
+     ],
+     "cat": "print",
+     "type": "invention",
+     "date": "650",
+     "by": {
+      "en": "Unknown printers of Tang China",
+      "es": "Impresores desconocidos de la China Tang"
+     },
+     "place": {
+      "en": "Tang China; here, Chang'an (Xi'an)",
+      "es": "China de los Tang; aquí, Chang'an (Xi'an)"
+     },
+     "text": {
+      "en": "Printing from a whole page carved in reverse on a wooden block, used in China by the 7th century. It stayed East Asia's main way of printing books and pictures until the 19th century.",
+      "es": "Impresión con una página entera tallada al revés en un bloque de madera, usada en China desde el siglo VII. Fue la principal forma de imprimir libros e imágenes en Asia oriental hasta el siglo XIX."
+     },
+     "wiki": {
+      "en": "Woodblock printing",
+      "es": "Impresión xilográfica"
+     },
+     "img": "中文梵文最早期印本650-670.jpg"
+    },
+    {
+     "id": "diamond-sutra",
+     "name": {
+      "en": "The Diamond Sutra of 868",
+      "es": "El Sutra del diamante del 868"
+     },
+     "at": [
+      94.806,
+      40.0355
+     ],
+     "cat": "print",
+     "type": "work",
+     "date": "868-05-11",
+     "place": {
+      "en": "Mogao Caves, near Dunhuang, Gansu, China",
+      "es": "Cuevas de Mogao, cerca de Dunhuang, Gansu, China"
+     },
+     "text": {
+      "en": "A Buddhist scripture printed from wooden blocks on a scroll about five metres long, with a picture of the Buddha at its start. Its last line gives the date, 11 May 868: the oldest dated printed book.",
+      "es": "Una escritura budista impresa con bloques de madera en un rollo de unos cinco metros, con una imagen del Buda al comienzo. Su última línea da la fecha, 11 de mayo del 868: el libro impreso con fecha más antiguo."
+     },
+     "wiki": {
+      "en": "Diamond Sutra",
+      "es": "Sutra del diamante"
+     }
+    },
+    {
+     "id": "mogao-caves",
+     "name": {
+      "en": "Mogao Caves",
+      "es": "Cuevas de Mogao"
+     },
+     "at": [
+      94.8042,
+      40.0372
+     ],
+     "cat": "print",
+     "type": "site",
+     "date": "366",
+     "whs": 440,
+     "place": {
+      "en": "Near Dunhuang, Gansu, China",
+      "es": "Cerca de Dunhuang, Gansu, China"
+     },
+     "text": {
+      "en": "About 500 Buddhist cave temples cut into a cliff near Dunhuang from the 4th to the 14th century. A walled-up cave kept the Diamond Sutra and tens of thousands of manuscripts for 900 years.",
+      "es": "Unos 500 templos budistas excavados en un acantilado cerca de Dunhuang entre los siglos IV y XIV. Una cueva tapiada guardó el Sutra del diamante y decenas de miles de manuscritos durante 900 años."
+     },
+     "wiki": {
+      "en": "Mogao Caves",
+      "es": "Cuevas de Mogao"
+     }
+    },
+    {
+     "id": "bulguksa",
+     "name": {
+      "en": "Bulguksa",
+      "es": "Bulguksa"
+     },
+     "at": [
+      129.332,
+      35.79
+     ],
+     "cat": "print",
+     "type": "site",
+     "date": "751",
+     "whs": 736,
+     "place": {
+      "en": "Gyeongju, South Korea",
+      "es": "Gyeongju, Corea del Sur"
+     },
+     "text": {
+      "en": "A Buddhist temple of the Silla kingdom. In 1966 a printed Buddhist charm on a paper scroll more than six metres long, made between 704 and 751, was found here: one of the oldest prints in the world.",
+      "es": "Un templo budista del reino de Silla. En 1966 se halló aquí un amuleto budista impreso en un rollo de papel de más de seis metros, hecho entre el 704 y el 751: uno de los impresos más antiguos del mundo."
+     },
+     "wiki": {
+      "en": "Bulguksa",
+      "es": "Bulguksa"
+     }
+    },
+    {
+     "id": "million-pagodas",
+     "name": {
+      "en": "The million pagodas",
+      "es": "El millón de pagodas"
+     },
+     "at": [
+      135.7342,
+      34.6144
+     ],
+     "cat": "print",
+     "type": "work",
+     "date": "770",
+     "place": {
+      "en": "Nara, Japan",
+      "es": "Nara, Japón"
+     },
+     "text": {
+      "en": "A million small wooden pagodas, each holding a printed Buddhist charm, ordered by Empress Shōtoku and finished around 770. Many still survive at Hōryū-ji temple.",
+      "es": "Un millón de pequeñas pagodas de madera, cada una con un amuleto budista impreso, encargadas por la emperatriz Shōtoku y terminadas hacia el 770. Muchas se conservan aún en el templo de Hōryū-ji."
+     },
+     "wiki": {
+      "en": "Viśuddhaprabhā Dhāraṇī",
+      "es": ""
+     },
+     "img": "Hyakumantō Darani Scrolls.jpg"
+    }
+   ]
+  },
+  {
+   "date": "904",
+   "title": {
+    "en": "The 'fire drug'",
+    "es": "La «medicina de fuego»"
+   },
+   "text": {
+    "en": "Seeking an elixir of long life, Chinese alchemists heat saltpetre and sulphur. A text of about 850 warns of mixtures that burned hands, faces and whole houses. By 904 this fire drug goes to war.",
+    "es": "En busca de un elixir de larga vida, alquimistas chinos calientan salitre y azufre. Un texto de hacia el 850 advierte de mezclas que quemaron manos, caras y casas enteras. Hacia el 904, esa medicina de fuego va a la guerra."
+   },
+   "details": {
+    "en": "Chinese alchemists had long heated saltpetre and sulphur while seeking gold and an elixir of immortality; around 300 the Taoist Ge Hong wrote about such experiments. A formula of 808 mixed sulphur, saltpetre and a herb. About fifty years later a Taoist book, the Zhenyuan miaodao yaolüe, warned that some people had heated sulphur, realgar and saltpetre with honey, 'so that their hands and faces have been burnt, and even the whole house burned down'. The new powder was called huoyao, 'fire drug', the Chinese word for gunpowder to this day. Who first made it, and where, nobody knows. Early gunpowder had too little saltpetre to explode, but it burned fiercely. In 904, at the siege of Yuzhang, today's Nanchang, soldiers launched 'flying fire', probably fire arrows, to burn a city gate.",
+    "es": "Los alquimistas chinos calentaban desde hacía mucho salitre y azufre en busca de oro y de un elixir de inmortalidad; hacia el año 300, el taoísta Ge Hong escribió sobre esos experimentos. Una fórmula del 808 mezclaba azufre, salitre y una hierba. Unos cincuenta años después, un libro taoísta, el Zhenyuan miaodao yaolüe, advertía que algunos habían calentado azufre, rejalgar y salitre con miel, «de modo que se quemaron las manos y la cara, y hasta se incendió la casa entera». El nuevo polvo se llamó huoyao, «medicina de fuego», la palabra china para la pólvora hasta hoy. Nadie sabe quién lo hizo primero ni dónde. La primera pólvora tenía poco salitre para explotar, pero ardía con furia. En el 904, en el sitio de Yuzhang, la actual Nanchang, unos soldados lanzaron «fuego volador», probablemente flechas de fuego, para quemar una puerta de la ciudad."
+   },
+   "camera": {
+    "lon": 112,
+    "lat": 31.5,
+    "zoom": 4.2
+   },
+   "places": [
+    {
+     "id": "gunpowder",
+     "name": {
+      "en": "Gunpowder",
+      "es": "La pólvora"
+     },
+     "at": [
+      108.9534,
+      34.2658
+     ],
+     "cat": "weapons",
+     "type": "invention",
+     "date": "850",
+     "by": {
+      "en": "Chinese alchemists",
+      "es": "Alquimistas chinos"
+     },
+     "place": {
+      "en": "Tang China (exactly where is unknown); here, Chang'an",
+      "es": "China de los Tang (no se sabe dónde exactamente); aquí, Chang'an"
+     },
+     "text": {
+      "en": "A mix of saltpetre, sulphur and charcoal that burns fast and, with enough saltpetre, explodes. Chinese alchemists found it in the 9th century while looking for an elixir of long life.",
+      "es": "Una mezcla de salitre, azufre y carbón que arde muy rápido y, con suficiente salitre, explota. Alquimistas chinos la descubrieron en el siglo IX mientras buscaban un elixir de larga vida."
+     },
+     "facts": [
+      {
+       "label": {
+        "en": "In Chinese",
+        "es": "En chino"
+       },
+       "value": {
+        "en": "huoyao, 'fire drug'",
+        "es": "huoyao, «medicina de fuego»"
+       }
+      }
+     ],
+     "wiki": {
+      "en": "Gunpowder",
+      "es": "Pólvora"
+     }
+    },
+    {
+     "id": "fire-arrow",
+     "name": {
+      "en": "Fire arrows and rockets",
+      "es": "Flechas de fuego y cohetes"
+     },
+     "at": [
+      115.8921,
+      28.6765
+     ],
+     "cat": "weapons",
+     "type": "invention",
+     "date": "904",
+     "by": {
+      "en": "unknown",
+      "es": "desconocido"
+     },
+     "place": {
+      "en": "Yuzhang (today Nanchang), Jiangxi, China",
+      "es": "Yuzhang (hoy Nanchang), Jiangxi, China"
+     },
+     "text": {
+      "en": "Arrows carrying a burning packet of gunpowder, perhaps first used at Yuzhang in 904. Later, a tube of powder pushed the arrow itself: the first rockets, used in war by the 13th century.",
+      "es": "Flechas que llevaban un paquete de pólvora encendido, usadas quizá por primera vez en Yuzhang en el 904. Más tarde, un tubo de pólvora empujaba la propia flecha: los primeros cohetes, usados en la guerra en el siglo XIII."
+     },
+     "wiki": {
+      "en": "Fire arrow",
+      "es": "Flecha de fuego"
+     }
+    }
+   ]
+  },
+  {
+   "date": "1044",
+   "title": {
+    "en": "A manual of war",
+    "es": "Un manual de guerra"
+   },
+   "text": {
+    "en": "At the Song capital, Kaifeng, scholars finish a military manual, the Wujing Zongyao. It holds the oldest written formulas for gunpowder and an iron 'south-pointing fish' for finding the way at night.",
+    "es": "En Kaifeng, la capital de los Song, unos eruditos terminan un manual militar, el Wujing Zongyao. Contiene las fórmulas escritas más antiguas de la pólvora y un «pez que apunta al sur» de hierro para orientarse de noche."
+   },
+   "details": {
+    "en": "The Collection of the Most Important Military Techniques was compiled from about 1040 to 1044 by Zeng Gongliang, Ding Du and Yang Weide for Emperor Renzong. It gives the oldest surviving formulas for gunpowder, with saltpetre, sulphur, charcoal and other ingredients, and describes fire arrows, smoke bombs and the 'thunderclap bomb'. In Kaifeng the court ran large workshops for gunpowder and fire arrows; in 1083 it sent 100,000 gunpowder arrows to a single garrison. The same book tells soldiers lost on dark nights to float a thin iron fish, magnetised by heating, in a bowl of water: it turns to point south. The Chinese had known the pull of the lodestone for more than a thousand years. Around AD 80 the writer Wang Chong described a 'south-pointing spoon' that comes to rest facing south, perhaps the first compass.",
+    "es": "La Colección de las técnicas militares más importantes fue compilada hacia 1040-1044 por Zeng Gongliang, Ding Du y Yang Weide para el emperador Renzong. Da las fórmulas de la pólvora más antiguas que se conservan, con salitre, azufre, carbón y otros ingredientes, y describe flechas de fuego, bombas de humo y la «bomba de trueno». En Kaifeng, la corte tenía grandes talleres de pólvora y flechas de fuego; en 1083 envió 100 000 flechas de pólvora a una sola guarnición. El mismo libro aconseja a los soldados perdidos en noches oscuras que hagan flotar en un cuenco de agua un pez de hierro delgado, imantado al calentarlo: gira hasta apuntar al sur. Los chinos conocían la atracción de la piedra imán desde hacía más de mil años. Hacia el año 80, el escritor Wang Chong describió una «cuchara que apunta al sur» que se detiene mirando al sur, quizá la primera brújula."
+   },
+   "camera": {
+    "lon": 114,
+    "lat": 34.2,
+    "zoom": 5
+   },
+   "places": [
+    {
+     "id": "wujing-zongyao",
+     "name": {
+      "en": "Wujing Zongyao",
+      "es": "Wujing Zongyao"
+     },
+     "at": [
+      114.3497,
+      34.8064
+     ],
+     "cat": "weapons",
+     "type": "work",
+     "date": "1044",
+     "by": {
+      "en": "Zeng Gongliang, Ding Du and Yang Weide",
+      "es": "Zeng Gongliang, Ding Du y Yang Weide"
+     },
+     "place": {
+      "en": "Kaifeng, Henan, China (the Song capital)",
+      "es": "Kaifeng, Henan, China (la capital de los Song)"
+     },
+     "text": {
+      "en": "A military manual compiled in 1040–1044 for the Song emperor. It holds the oldest surviving formulas for gunpowder, a 'thunderclap bomb', a flamethrower and an early compass. The oldest copy left is from 1510.",
+      "es": "Un manual militar compilado en 1040-1044 para el emperador Song. Contiene las fórmulas de la pólvora más antiguas que se conservan, una «bomba de trueno», un lanzallamas y una brújula temprana. La copia más antigua que queda es de 1510."
+     },
+     "wiki": {
+      "en": "Wujing Zongyao",
+      "es": ""
+     }
+    },
+    {
+     "id": "south-pointing-fish",
+     "name": {
+      "en": "The south-pointing fish",
+      "es": "El pez que apunta al sur"
+     },
+     "icon": "🐟",
+     "at": [
+      114.3305,
+      34.7905
+     ],
+     "cat": "transport",
+     "type": "invention",
+     "date": "1044",
+     "by": {
+      "en": "unknown",
+      "es": "desconocido"
+     },
+     "place": {
+      "en": "Song China; described in Kaifeng",
+      "es": "China de los Song; descrito en Kaifeng"
+     },
+     "text": {
+      "en": "A thin leaf of iron cut like a fish, heated so it becomes weakly magnetic, then floated in a bowl of water to point south. Song soldiers used it on dark nights: an early compass.",
+      "es": "Una hoja delgada de hierro cortada en forma de pez, calentada para que quede algo imantada y puesta a flotar en un cuenco de agua para que apunte al sur. Los soldados Song la usaban en noches oscuras: una brújula temprana."
+     },
+     "wiki": {
+      "en": "History of the compass",
+      "es": ""
+     }
+    },
+    {
+     "id": "south-pointing-spoon",
+     "name": {
+      "en": "The south-pointing spoon",
+      "es": "La cuchara que apunta al sur"
+     },
+     "icon": "🥄",
+     "at": [
+      112.6305,
+      34.7175
+     ],
+     "cat": "transport",
+     "type": "invention",
+     "date": "80",
+     "by": {
+      "en": "unknown",
+      "es": "desconocido"
+     },
+     "place": {
+      "en": "Han China; here, Luoyang",
+      "es": "China de los Han; aquí, Luoyang"
+     },
+     "text": {
+      "en": "Around AD 80 Wang Chong wrote that a 'south-pointing spoon' thrown on the ground comes to rest facing south. Many think it was a lodestone ladle on a bronze plate; the text does not say it was magnetic.",
+      "es": "Hacia el año 80, Wang Chong escribió que una «cuchara que apunta al sur», echada al suelo, se detiene mirando al sur. Muchos creen que era un cucharón de piedra imán sobre una placa de bronce; el texto no dice que fuera magnética."
+     },
+     "wiki": {
+      "en": "Lunheng",
+      "es": ""
+     },
+     "img": "Model Si Nan of Han Dynasty.jpg"
+    },
+    {
+     "id": "gunpowder",
+     "name": {
+      "en": "Gunpowder",
+      "es": "La pólvora"
+     },
+     "at": [
+      108.9534,
+      34.2658
+     ],
+     "cat": "weapons",
+     "type": "invention",
+     "date": "850",
+     "by": {
+      "en": "Chinese alchemists",
+      "es": "Alquimistas chinos"
+     },
+     "place": {
+      "en": "Tang China (exactly where is unknown); here, Chang'an",
+      "es": "China de los Tang (no se sabe dónde exactamente); aquí, Chang'an"
+     },
+     "text": {
+      "en": "A mix of saltpetre, sulphur and charcoal that burns fast and, with enough saltpetre, explodes. Chinese alchemists found it in the 9th century while looking for an elixir of long life.",
+      "es": "Una mezcla de salitre, azufre y carbón que arde muy rápido y, con suficiente salitre, explota. Alquimistas chinos la descubrieron en el siglo IX mientras buscaban un elixir de larga vida."
+     },
+     "facts": [
+      {
+       "label": {
+        "en": "In Chinese",
+        "es": "En chino"
+       },
+       "value": {
+        "en": "huoyao, 'fire drug'",
+        "es": "huoyao, «medicina de fuego»"
+       }
+      }
+     ],
+     "wiki": {
+      "en": "Gunpowder",
+      "es": "Pólvora"
+     }
+    }
+   ]
+  },
+  {
+   "date": "1088",
+   "title": {
+    "en": "Shen Kuo's notebook",
+    "es": "Las notas de Shen Kuo"
+   },
+   "text": {
+    "en": "In his Dream Pool Essays of 1088 the scholar Shen Kuo describes a magnetised needle hung on a silk thread, the first clear account of a needle compass, and the movable type of the craftsman Bi Sheng.",
+    "es": "En sus Ensayos del Estanque de los Sueños, de 1088, el erudito Shen Kuo describe una aguja imantada colgada de un hilo de seda, el primer relato claro de una brújula de aguja, y los tipos móviles del artesano Bi Sheng."
+   },
+   "details": {
+    "en": "Shen Kuo, a statesman, astronomer and engineer, wrote his book in retirement at his Dream Brook estate near today's Zhenjiang. Geomancers, he says, rub the point of a needle on a lodestone; hung by a single silk thread with a dab of wax, it points south, though always slightly to the east: the first known note of magnetic declination, the gap between magnetic north and true north. He also tells how, in the 1040s, Bi Sheng, 'a man of unofficial position', cut characters in sticky clay, baked them hard and set them in an iron frame to print a page, then took the pieces out to use again. For two or three copies it was slow, but for hundreds or thousands it was 'marvellously quick'. With thousands of characters to make, Chinese printers kept using woodblocks for most books.",
+    "es": "Shen Kuo, hombre de Estado, astrónomo e ingeniero, escribió su libro retirado en su finca del Arroyo de los Sueños, cerca de la actual Zhenjiang. Los geománticos, cuenta, frotan la punta de una aguja con piedra imán; colgada de un solo hilo de seda con una gota de cera, apunta al sur, aunque siempre un poco hacia el este: la primera nota conocida de la declinación magnética, la diferencia entre el norte magnético y el norte verdadero. También cuenta cómo hacia 1040 Bi Sheng, «un hombre sin cargo oficial», cortaba caracteres en arcilla pegajosa, los cocía hasta endurecerlos y los ponía en un marco de hierro para imprimir una página, y luego los sacaba para volver a usarlos. Para dos o tres copias era lento, pero para cientos o miles era «maravillosamente rápido». Como había que hacer miles de caracteres, los impresores chinos siguieron usando bloques de madera para la mayoría de los libros."
+   },
+   "camera": {
+    "lon": 117.5,
+    "lat": 31.6,
+    "zoom": 5
+   },
+   "places": [
+    {
+     "id": "shen-kuo",
+     "name": {
+      "en": "Shen Kuo",
+      "es": "Shen Kuo"
+     },
+     "at": [
+      119.4255,
+      32.1878
+     ],
+     "cat": "inventor",
+     "type": "person",
+     "date": "1088",
+     "life": [
+      "1031",
+      "1095"
+     ],
+     "place": {
+      "en": "Zhenjiang, Jiangsu, China",
+      "es": "Zhenjiang, Jiangsu, China"
+     },
+     "text": {
+      "en": "A Song statesman, astronomer and engineer who wrote about almost everything. His Dream Pool Essays of 1088 give the first clear account of the magnetic needle compass and of Bi Sheng's movable type.",
+      "es": "Hombre de Estado, astrónomo e ingeniero de los Song que escribió sobre casi todo. Sus Ensayos del Estanque de los Sueños, de 1088, dan el primer relato claro de la brújula de aguja y de los tipos móviles de Bi Sheng."
+     },
+     "wiki": {
+      "en": "Shen Kuo",
+      "es": "Shen Kuo"
+     }
+    },
+    {
+     "id": "magnetic-compass",
+     "name": {
+      "en": "The magnetic compass",
+      "es": "La brújula"
+     },
+     "icon": "🧭",
+     "at": [
+      119.4316,
+      32.1905
+     ],
+     "cat": "transport",
+     "type": "invention",
+     "date": "1088",
+     "by": {
+      "en": "Chinese geomancers",
+      "es": "Geománticos chinos"
+     },
+     "place": {
+      "en": "Song China; first described at Zhenjiang, Jiangsu",
+      "es": "China de los Song; descrita por primera vez en Zhenjiang, Jiangsu"
+     },
+     "text": {
+      "en": "A magnetised needle that turns to point north and south. First clearly described by Shen Kuo in 1088, it guided Chinese ships by the 1110s and reached the Indian Ocean and Europe by about 1190–1230.",
+      "es": "Una aguja imantada que gira hasta apuntar al norte y al sur. Descrita con claridad por Shen Kuo en 1088, guiaba barcos chinos hacia 1110 y llegó al océano Índico y a Europa hacia 1190-1230."
+     },
+     "wiki": {
+      "en": "Compass",
+      "es": "Brújula"
+     },
+     "img": "Chinese Geomantic Compass c. 1760, National Maritime Museum.JPG"
+    },
+    {
+     "id": "bi-sheng",
+     "name": {
+      "en": "Bi Sheng",
+      "es": "Bi Sheng"
+     },
+     "at": [
+      115.681,
+      30.735
+     ],
+     "cat": "inventor",
+     "type": "person",
+     "date": "1040",
+     "life": [
+      "990",
+      "1051"
+     ],
+     "place": {
+      "en": "Song China; his gravestone was found in Yingshan, Hubei",
+      "es": "China de los Song; su lápida se halló en Yingshan, Hubei"
+     },
+     "text": {
+      "en": "A craftsman, not a scholar, who between 1039 and 1048 invented movable type: one baked-clay piece for each character, set in an iron frame. Almost nothing else is known of his life.",
+      "es": "Un artesano, no un erudito, que entre 1039 y 1048 inventó los tipos móviles: una pieza de arcilla cocida para cada carácter, colocada en un marco de hierro. Casi nada más se sabe de su vida."
+     },
+     "wiki": {
+      "en": "Bi Sheng",
+      "es": "Bi Sheng"
+     }
+    },
+    {
+     "id": "movable-type",
+     "name": {
+      "en": "Movable type",
+      "es": "Los tipos móviles"
+     },
+     "at": [
+      115.6905,
+      30.7411
+     ],
+     "cat": "print",
+     "type": "invention",
+     "date": "1040",
+     "by": {
+      "en": "Bi Sheng",
+      "es": "Bi Sheng"
+     },
+     "place": {
+      "en": "Song China; here, Yingshan, Hubei, where Bi Sheng's gravestone was found",
+      "es": "China de los Song; aquí, Yingshan, Hubei, donde se halló la lápida de Bi Sheng"
+     },
+     "text": {
+      "en": "Printing with a separate piece for each character, set in a frame and used again and again. Bi Sheng made it of baked clay in the 1040s; Korea later cast it in metal, and Gutenberg in Europe.",
+      "es": "Imprimir con una pieza suelta para cada carácter, colocada en un marco y usada una y otra vez. Bi Sheng los hizo de arcilla cocida hacia 1040; Corea los fundió luego en metal, y Gutenberg en Europa."
+     },
+     "wiki": {
+      "en": "Movable type",
+      "es": "Tipos móviles"
+     },
+     "img": "Beijing.Musee imprimerie.caracteres mobiles.Bisheng.jpg"
+    }
+   ]
+  },
+  {
+   "date": "1117",
+   "title": {
+    "en": "The compass goes to sea",
+    "es": "La brújula se hace a la mar"
+   },
+   "text": {
+    "en": "Zhu Yu's Pingzhou Table Talks, written in 1111–1117, describe ships at Guangzhou: pilots steer by the stars at night and the sun by day, and 'in dark weather they look at the south-pointing needle'.",
+    "es": "Las Charlas de mesa de Pingzhou de Zhu Yu, escritas en 1111-1117, describen los barcos de Cantón: los pilotos se guían por las estrellas de noche y por el sol de día, y «con mal tiempo miran la aguja que apunta al sur»."
+   },
+   "details": {
+    "en": "Zhu Yu's book is the first clear record anywhere of a compass used at sea. Guangzhou was the great port of southern China, with large communities of Arab and Persian merchants, and ships sailed from it to Southeast Asia, India and the Persian Gulf. An early Western scholar read the passage as describing foreign ships, which would make Arab or Persian sailors the first to steer by the needle, but Joseph Needham showed that this rested on a mistranslation. The needle floated in a bowl of water. Up the coast, Quanzhou, which got its own office of maritime trade in the 1080s, grew into one of the busiest ports in the world, known to Arab sailors as Zaitun. In 1206 its merchants came from Arabia, Iran, India, Sumatra, Java, Korea and Japan.",
+    "es": "El libro de Zhu Yu es el primer registro claro en el mundo de una brújula usada en el mar. Cantón era el gran puerto del sur de China, con grandes comunidades de mercaderes árabes y persas, y de allí zarpaban barcos al Sudeste Asiático, la India y el golfo Pérsico. Un antiguo estudioso occidental leyó el pasaje como si hablara de barcos extranjeros, lo que haría de los marinos árabes o persas los primeros en guiarse por la aguja, pero Joseph Needham mostró que se basaba en un error de traducción. La aguja flotaba en un cuenco de agua. Más al norte por la costa, Quanzhou, que tuvo su propia oficina de comercio marítimo en la década de 1080, se convirtió en uno de los puertos más activos del mundo, al que los marinos árabes llamaban Zaitún. En 1206 llegaban a él mercaderes de Arabia, Irán, la India, Sumatra, Java, Corea y Japón."
+   },
+   "camera": {
+    "lon": 116,
+    "lat": 23.5,
+    "zoom": 4.6
+   },
+   "places": [
+    {
+     "id": "pingzhou-table-talks",
+     "name": {
+      "en": "Pingzhou Table Talks",
+      "es": "Charlas de mesa de Pingzhou"
+     },
+     "at": [
+      113.2644,
+      23.1291
+     ],
+     "cat": "transport",
+     "type": "work",
+     "date": "1117",
+     "by": {
+      "en": "Zhu Yu",
+      "es": "Zhu Yu"
+     },
+     "place": {
+      "en": "Describes Guangzhou, China",
+      "es": "Describe Cantón, China"
+     },
+     "text": {
+      "en": "A book of notes by Zhu Yu, written in 1111–1117, about Guangzhou, where his father had been a high official. Its line on pilots who 'look at the south-pointing needle' is the oldest record of a compass at sea.",
+      "es": "Un libro de notas de Zhu Yu, escrito en 1111-1117, sobre Cantón, donde su padre había sido un alto funcionario. Su frase sobre los pilotos que «miran la aguja que apunta al sur» es el registro más antiguo de una brújula en el mar."
+     },
+     "wiki": {
+      "en": "Zhu Yu (author)",
+      "es": ""
+     },
+     "img": "Ming-marine-compass.jpg"
+    },
+    {
+     "id": "quanzhou",
+     "name": {
+      "en": "Quanzhou",
+      "es": "Quanzhou"
+     },
+     "at": [
+      118.5878,
+      24.9083
+     ],
+     "cat": "transport",
+     "type": "site",
+     "date": "1087",
+     "whs": 1561,
+     "place": {
+      "en": "Quanzhou, Fujian, China",
+      "es": "Quanzhou, Fujian, China"
+     },
+     "text": {
+      "en": "China's great port for foreign traders from the 11th to the 14th century, called Zaitun by Arab sailors. Marco Polo and Ibn Battuta praised it as one of the greatest ports in the world. A World Heritage Site.",
+      "es": "El gran puerto de China para los comerciantes extranjeros entre los siglos XI y XIV, al que los marinos árabes llamaban Zaitún. Marco Polo e Ibn Battuta lo alabaron como uno de los mayores puertos del mundo. Es Patrimonio de la Humanidad."
+     },
+     "wiki": {
+      "en": "Quanzhou",
+      "es": "Quanzhou"
+     }
+    },
+    {
+     "id": "magnetic-compass",
+     "name": {
+      "en": "The magnetic compass",
+      "es": "La brújula"
+     },
+     "icon": "🧭",
+     "at": [
+      119.4316,
+      32.1905
+     ],
+     "cat": "transport",
+     "type": "invention",
+     "date": "1088",
+     "by": {
+      "en": "Chinese geomancers",
+      "es": "Geománticos chinos"
+     },
+     "place": {
+      "en": "Song China; first described at Zhenjiang, Jiangsu",
+      "es": "China de los Song; descrita por primera vez en Zhenjiang, Jiangsu"
+     },
+     "text": {
+      "en": "A magnetised needle that turns to point north and south. First clearly described by Shen Kuo in 1088, it guided Chinese ships by the 1110s and reached the Indian Ocean and Europe by about 1190–1230.",
+      "es": "Una aguja imantada que gira hasta apuntar al norte y al sur. Descrita con claridad por Shen Kuo en 1088, guiaba barcos chinos hacia 1110 y llegó al océano Índico y a Europa hacia 1190-1230."
+     },
+     "wiki": {
+      "en": "Compass",
+      "es": "Brújula"
+     },
+     "img": "Chinese Geomantic Compass c. 1760, National Maritime Museum.JPG"
+    }
+   ]
+  },
+  {
+   "date": "1150",
+   "title": {
+    "en": "Paper crosses the Islamic world",
+    "es": "El papel cruza el mundo islámico"
+   },
+   "text": {
+    "en": "From Baghdad, papermaking spreads to Damascus, Cairo and Fez, and into al-Andalus. By 1150 Xàtiva, near Valencia, is a centre of papermaking, the first in Europe.",
+    "es": "Desde Bagdad, la fabricación de papel se extiende a Damasco, El Cairo y Fez, y llega a al-Ándalus. Hacia 1150, Xàtiva, cerca de Valencia, es un centro papelero, el primero de Europa."
+   },
+   "details": {
+    "en": "Paper replaced papyrus across the Islamic world: Egypt made it by about 900, and by the mid-10th century hardly anyone in Asia or Africa still wrote on papyrus. Damascus gave its name to a fine paper, charta damascena. In 1035 the Persian traveller Nasir Khusraw saw Cairo's shopkeepers wrap vegetables and spices in paper. In al-Andalus the first recorded paper mill was at Xàtiva, in 1056, and Fez made paper by about 1100. Monks at Nájera, in Christian Spain, wrote part of a missal on Andalusian paper before 1080: the oldest paper book made in Europe. After Christian kings took Xàtiva, its Muslim papermakers kept working, and in 1282 King Peter III of Aragon set up a water-powered paper mill there, run by them: the first clear one in Europe.",
+    "es": "El papel reemplazó al papiro en todo el mundo islámico: Egipto lo fabricaba hacia el año 900, y a mediados del siglo X casi nadie en Asia ni en África escribía ya en papiro. Damasco dio su nombre a un papel fino, la charta damascena. En 1035, el viajero persa Nasir Khusraw vio a los tenderos de El Cairo envolver verduras y especias en papel. En al-Ándalus, el primer molino de papel registrado estuvo en Xàtiva, en 1056, y Fez hacía papel hacia el año 1100. Unos monjes de Nájera, en la España cristiana, escribieron parte de un misal en papel andalusí antes de 1080: el libro en papel más antiguo hecho en Europa. Cuando los reyes cristianos tomaron Xàtiva, sus papeleros musulmanes siguieron trabajando, y en 1282 el rey Pedro III de Aragón instaló allí un molino de papel movido por agua, que ellos manejaban: el primero seguro de Europa."
+   },
+   "camera": {
+    "lon": 18,
+    "lat": 34,
+    "zoom": 2.6
+   },
+   "moves": [
+    {
+     "side": "paper",
+     "path": [
+      [
+       44.38,
+       33.35
+      ],
+      [
+       43.3,
+       34
+      ],
+      [
+       40.9,
+       34.5
+      ],
+      [
+       38.27,
+       34.55
+      ],
+      [
+       36.31,
+       33.51
+      ]
+     ],
+     "by": "land",
+     "icon": "📜",
+     "label": {
+      "en": "To Damascus",
+      "es": "A Damasco"
+     }
+    },
+    {
+     "side": "paper",
+     "path": [
+      [
+       36.31,
+       33.51
+      ],
+      [
+       35.9,
+       32.6
+      ],
+      [
+       35.2,
+       31.8
+      ],
+      [
+       34.45,
+       31.5
+      ],
+      [
+       32.6,
+       30.95
+      ],
+      [
+       31.26,
+       30.05
+      ]
+     ],
+     "by": "land",
+     "icon": "📜",
+     "label": {
+      "en": "To Egypt, by 900",
+      "es": "A Egipto, hacia el 900"
+     }
+    },
+    {
+     "side": "paper",
+     "path": [
+      [
+       31.26,
+       30.05
+      ],
+      [
+       29.9,
+       31.2
+      ],
+      [
+       25.2,
+       31.6
+      ],
+      [
+       20.07,
+       32.12
+      ],
+      [
+       15.6,
+       31.3
+      ],
+      [
+       13.18,
+       32.89
+      ],
+      [
+       10.1,
+       35.68
+      ],
+      [
+       7,
+       36.3
+      ],
+      [
+       3.06,
+       36.75
+      ],
+      [
+       -0.64,
+       35.7
+      ],
+      [
+       -2.46,
+       36.84
+      ],
+      [
+       -1.13,
+       37.99
+      ],
+      [
+       -0.52,
+       38.99
+      ]
+     ],
+     "icon": "📜",
+     "label": {
+      "en": "To al-Andalus, by 1056",
+      "es": "A al-Ándalus, hacia 1056"
+     }
+    },
+    {
+     "side": "paper",
+     "path": [
+      [
+       -0.64,
+       35.7
+      ],
+      [
+       -1.32,
+       34.88
+      ],
+      [
+       -3,
+       34.4
+      ],
+      [
+       -4.97,
+       34.06
+      ]
+     ],
+     "by": "land",
+     "icon": "📜",
+     "label": {
+      "en": "Fez, about 1100",
+      "es": "Fez, hacia el 1100"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "damascus",
+     "name": {
+      "en": "Damascus",
+      "es": "Damasco"
+     },
+     "at": [
+      36.3064,
+      33.5115
+     ],
+     "cat": "print",
+     "type": "site",
+     "date": "1000",
+     "whs": 20,
+     "place": {
+      "en": "Damascus, Syria",
+      "es": "Damasco, Siria"
+     },
+     "text": {
+      "en": "One of the great papermaking cities of the Islamic world, until the wars of the Crusades interrupted its mills. Its fine paper was known in Latin as charta damascena. Its old city is a World Heritage Site.",
+      "es": "Una de las grandes ciudades papeleras del mundo islámico, hasta que las guerras de las cruzadas interrumpieron sus molinos. Su papel fino se conocía en latín como charta damascena. Su ciudad vieja es Patrimonio de la Humanidad."
+     },
+     "wiki": {
+      "en": "Damascus",
+      "es": "Damasco"
+     }
+    },
+    {
+     "id": "cairo",
+     "name": {
+      "en": "Cairo",
+      "es": "El Cairo"
+     },
+     "at": [
+      31.2627,
+      30.046
+     ],
+     "cat": "print",
+     "type": "site",
+     "date": "900",
+     "whs": 89,
+     "place": {
+      "en": "Cairo, Egypt",
+      "es": "El Cairo, Egipto"
+     },
+     "text": {
+      "en": "Egypt made paper by about 900, and it soon replaced papyrus, Egypt's own writing sheet for over 3,000 years. In 1035 a traveller saw shopkeepers wrap spices in paper. Historic Cairo is a World Heritage Site.",
+      "es": "Egipto hacía papel hacia el año 900, y pronto reemplazó al papiro, la hoja de escribir propia de Egipto durante más de 3000 años. En 1035, un viajero vio a los tenderos envolver especias en papel. El Cairo Histórico es Patrimonio de la Humanidad."
+     },
+     "wiki": {
+      "en": "Islamic Cairo",
+      "es": "El Cairo Histórico"
+     }
+    },
+    {
+     "id": "fez",
+     "name": {
+      "en": "Fez",
+      "es": "Fez"
+     },
+     "at": [
+      -4.9725,
+      34.0625
+     ],
+     "cat": "print",
+     "type": "site",
+     "date": "1100",
+     "whs": 170,
+     "place": {
+      "en": "Fez, Morocco",
+      "es": "Fez, Marruecos"
+     },
+     "text": {
+      "en": "A great Moroccan city that made paper by about 1100, when papermaking was spreading across North Africa and al-Andalus. Its walled medina is a World Heritage Site.",
+      "es": "Una gran ciudad marroquí que hacía papel hacia el año 1100, cuando la fabricación de papel se extendía por el norte de África y al-Ándalus. Su medina amurallada es Patrimonio de la Humanidad."
+     },
+     "wiki": {
+      "en": "Fez, Morocco",
+      "es": "Fez"
+     }
+    },
+    {
+     "id": "xativa",
+     "name": {
+      "en": "Xàtiva",
+      "es": "Xàtiva (Játiva)"
+     },
+     "at": [
+      -0.5192,
+      38.9887
+     ],
+     "cat": "print",
+     "type": "place",
+     "date": "1056",
+     "place": {
+      "en": "Xàtiva, Valencia, Spain",
+      "es": "Xàtiva, Valencia, España"
+     },
+     "text": {
+      "en": "The first place in Europe known to make paper: a mill is recorded here in 1056, in Muslim al-Andalus. In 1282 it got Europe's first certain water-powered paper mill, worked by its Muslim papermakers.",
+      "es": "El primer lugar de Europa del que se sabe que hacía papel: aquí se registra un molino en 1056, en el al-Ándalus musulmán. En 1282 tuvo el primer molino de papel movido por agua seguro de Europa, a cargo de sus papeleros musulmanes."
+     },
+     "wiki": {
+      "en": "Xàtiva",
+      "es": "Játiva"
+     }
+    },
+    {
+     "id": "missal-of-silos",
+     "name": {
+      "en": "The Missal of Silos",
+      "es": "El Misal de Silos"
+     },
+     "at": [
+      -2.7317,
+      42.4164
+     ],
+     "cat": "print",
+     "type": "work",
+     "date": "1080",
+     "place": {
+      "en": "Made at Nájera; kept at Santo Domingo de Silos, Spain",
+      "es": "Hecho en Nájera; se guarda en Santo Domingo de Silos, España"
+     },
+     "text": {
+      "en": "A book of Mozarabic prayers written before 1080 at the monastery of Nájera, its first 37 leaves on paper made in al-Andalus: the oldest paper book made in Europe. It is kept at the abbey of Silos, pictured.",
+      "es": "Un libro de oraciones mozárabes escrito antes de 1080 en el monasterio de Nájera, con sus primeras 37 hojas en papel hecho en al-Ándalus: el libro en papel más antiguo hecho en Europa. Se guarda en la abadía de Silos, en la imagen."
+     },
+     "wiki": {
+      "en": "Missal of Silos",
+      "es": "Misal de Silos"
+     },
+     "img": "Santo Domingo de Silos-01-Kloster-gje.jpg"
+    }
+   ]
+  },
+  {
+   "date": "1232-04",
+   "title": {
+    "en": "Fire lances at Kaifeng",
+    "es": "Lanzas de fuego en Kaifeng"
+   },
+   "text": {
+    "en": "In 1232 the Mongols besiege Kaifeng, capital of the Jin. Its defenders fight back with gunpowder: iron 'heaven-shaking thunder' bombs, rockets and fire lances, flame-throwing tubes that are the ancestors of guns.",
+    "es": "En 1232 los mongoles sitian Kaifeng, la capital de los Jin. Sus defensores responden con pólvora: bombas de hierro de «trueno que sacude el cielo», cohetes y lanzas de fuego, tubos lanzallamas antepasados de las armas de fuego."
+   },
+   "details": {
+    "en": "Gunpowder weapons grew deadlier in the wars between the Song and the Jurchen Jin, who took Kaifeng from the Song in 1127. The fire lance, a bamboo or paper tube of powder tied to a spear, appears in a painting from Dunhuang of about 950 and was first used in battle at De'an in 1132. Later, bombs with iron shells burst with enough force to break them. In 1232 Mongol armies, forcing Chinese captives to haul supplies and fill the moats, besieged Kaifeng with bombs of their own. The Jin lowered iron bombs on iron cords onto the Mongol diggers under the walls and charged out with 'flying fire lances'. Hit by famine and disease, Kaifeng held out until May 1233. Chinese craftsmen then served the Mongols, willingly or not, and Mongol fleets carried bombs to Japan in 1274 and 1281: their shells have been found in a sunken ship off Takashima.",
+    "es": "Las armas de pólvora se volvieron más mortíferas en las guerras entre los Song y los jurchen Jin, que arrebataron Kaifeng a los Song en 1127. La lanza de fuego, un tubo de bambú o de papel lleno de pólvora atado a una lanza, aparece en una pintura de Dunhuang de hacia el 950 y se usó por primera vez en batalla en De'an en 1132. Más tarde, las bombas de casco de hierro estallaban con fuerza suficiente para romperlo. En 1232, los ejércitos mongoles, que obligaban a cautivos chinos a acarrear provisiones y rellenar los fosos, sitiaron Kaifeng con sus propias bombas. Los Jin bajaban bombas de hierro colgadas de cables de hierro sobre los mongoles que cavaban al pie de las murallas, y salían a atacar con «lanzas de fuego voladoras». Golpeada por el hambre y las enfermedades, Kaifeng resistió hasta mayo de 1233. Luego, artesanos chinos sirvieron a los mongoles, por voluntad propia o a la fuerza, y las flotas mongolas llevaron bombas a Japón en 1274 y 1281: sus cascos se han hallado en un barco hundido frente a Takashima."
+   },
+   "camera": {
+    "lon": 114,
+    "lat": 33.5,
+    "zoom": 4.6
+   },
+   "places": [
+    {
+     "id": "siege-of-kaifeng-1232",
+     "name": {
+      "en": "Siege of Kaifeng, 1232",
+      "es": "Sitio de Kaifeng, 1232"
+     },
+     "at": [
+      114.3403,
+      34.7936
+     ],
+     "cat": "event",
+     "type": "event",
+     "date": "1232-04-08",
+     "place": {
+      "en": "Kaifeng, Henan, China",
+      "es": "Kaifeng, Henan, China"
+     },
+     "text": {
+      "en": "The Mongol siege of the Jin capital, where both sides used gunpowder bombs and the Jin fought with fire lances. Struck by famine and disease, the city held out until May 1233, when it surrendered.",
+      "es": "El sitio mongol de la capital de los Jin, donde ambos bandos usaron bombas de pólvora y los Jin lucharon con lanzas de fuego. Azotada por el hambre y las enfermedades, la ciudad resistió hasta mayo de 1233, cuando se rindió."
+     },
+     "wiki": {
+      "en": "Siege of Kaifeng (1232)",
+      "es": ""
+     }
+    },
+    {
+     "id": "fire-lance",
+     "name": {
+      "en": "The fire lance",
+      "es": "La lanza de fuego"
+     },
+     "icon": "🔥",
+     "at": [
+      113.6886,
+      31.2575
+     ],
+     "cat": "weapons",
+     "type": "invention",
+     "date": "1132",
+     "by": {
+      "en": "unknown",
+      "es": "desconocido"
+     },
+     "place": {
+      "en": "De'an (today Anlu), Hubei, China, where it was first used",
+      "es": "De'an (hoy Anlu), Hubei, China, donde se usó por primera vez"
+     },
+     "text": {
+      "en": "A tube of gunpowder tied to a spear that shot out flames, and later pellets. Painted at Dunhuang about 950 and first used at De'an in 1132, it became the first gun when its tube was made of metal.",
+      "es": "Un tubo de pólvora atado a una lanza que lanzaba llamas y, más tarde, perdigones. Pintada en Dunhuang hacia el 950 y usada por primera vez en De'an en 1132, se convirtió en la primera arma de fuego cuando su tubo se hizo de metal."
+     },
+     "wiki": {
+      "en": "Fire lance",
+      "es": "Lanza de fuego"
+     },
+     "img": "FireLanceAndGrenade10thCenturyDunhuang.jpg"
+    },
+    {
+     "id": "thunder-crash-bomb",
+     "name": {
+      "en": "The 'heaven-shaking thunder' bomb",
+      "es": "La bomba de «trueno que sacude el cielo»"
+     },
+     "at": [
+      114.3381,
+      34.7811
+     ],
+     "cat": "weapons",
+     "type": "invention",
+     "date": "1231",
+     "by": {
+      "en": "unknown",
+      "es": "desconocido"
+     },
+     "place": {
+      "en": "Jin China; used at Kaifeng",
+      "es": "China de los Jin; usada en Kaifeng"
+     },
+     "text": {
+      "en": "A gunpowder bomb with a cast-iron shell, thrown by catapults or lowered from walls, that burst with a roar. The Jin used it against the Mongols in 1231–1232; the Mongols took it to Japan.",
+      "es": "Una bomba de pólvora con casco de hierro fundido, lanzada con catapultas o bajada desde las murallas, que estallaba con estruendo. Los Jin la usaron contra los mongoles en 1231-1232; los mongoles la llevaron a Japón."
+     },
+     "wiki": {
+      "en": "Thunder crash bomb",
+      "es": ""
+     }
+    },
+    {
+     "id": "fire-arrow",
+     "name": {
+      "en": "Fire arrows and rockets",
+      "es": "Flechas de fuego y cohetes"
+     },
+     "at": [
+      115.8921,
+      28.6765
+     ],
+     "cat": "weapons",
+     "type": "invention",
+     "date": "904",
+     "by": {
+      "en": "unknown",
+      "es": "desconocido"
+     },
+     "place": {
+      "en": "Yuzhang (today Nanchang), Jiangxi, China",
+      "es": "Yuzhang (hoy Nanchang), Jiangxi, China"
+     },
+     "text": {
+      "en": "Arrows carrying a burning packet of gunpowder, perhaps first used at Yuzhang in 904. Later, a tube of powder pushed the arrow itself: the first rockets, used in war by the 13th century.",
+      "es": "Flechas que llevaban un paquete de pólvora encendido, usadas quizá por primera vez en Yuzhang en el 904. Más tarde, un tubo de pólvora empujaba la propia flecha: los primeros cohetes, usados en la guerra en el siglo XIII."
+     },
+     "wiki": {
+      "en": "Fire arrow",
+      "es": "Flecha de fuego"
+     }
+    }
+   ]
+  },
+  {
+   "date": "1276",
+   "title": {
+    "en": "Paper mills of Italy",
+    "es": "Los molinos de papel de Italia"
+   },
+   "text": {
+    "en": "Papermaking reaches Italy in the 13th century. By 1276 the hill town of Fabriano makes paper, and its craftsmen add water-driven hammers, glue sizing and the first watermarks.",
+    "es": "La fabricación de papel llega a Italia en el siglo XIII. En 1276 el pueblo de Fabriano ya hace papel, y sus artesanos añaden mazos movidos por agua, encolado con gelatina y las primeras filigranas."
+   },
+   "details": {
+    "en": "Europe had used paper from al-Andalus and the Arab world for two centuries, but most books were still written on parchment. In the 13th century mills opened at Amalfi, Fabriano, Treviso and other Italian towns. In Fabriano, a wool-weaving town in the Marche, papermakers used waterwheels to drive rows of wooden hammers that beat rags into pulp, sized their sheets with glue boiled from scraps of animal skin so that ink did not run, and twisted wire designs onto the mould to leave a watermark, a maker's sign seen against the light. Italian paper soon cost a sixth as much as parchment. Papermaking crossed the Alps more slowly: Nuremberg got its mill in 1390, just in time for printing.",
+    "es": "Europa usaba papel de al-Ándalus y del mundo árabe desde hacía dos siglos, pero la mayoría de los libros todavía se escribían en pergamino. En el siglo XIII se abrieron molinos en Amalfi, Fabriano, Treviso y otras ciudades italianas. En Fabriano, un pueblo de tejedores de lana en las Marcas, los papeleros usaron ruedas hidráulicas para mover filas de mazos de madera que machacaban los trapos hasta hacerlos pasta, encolaron sus hojas con cola hervida de recortes de piel para que la tinta no se corriera, y fijaron dibujos de alambre en el molde para dejar una filigrana, la marca del fabricante que se ve a contraluz. El papel italiano pronto costó la sexta parte que el pergamino. La fabricación de papel cruzó los Alpes más despacio: Núremberg tuvo su molino en 1390, justo a tiempo para la imprenta."
+   },
+   "camera": {
+    "lon": 8,
+    "lat": 41,
+    "zoom": 4
+   },
+   "moves": [
+    {
+     "side": "paper",
+     "path": [
+      [
+       -0.52,
+       38.99
+      ],
+      [
+       2.5,
+       40.2
+      ],
+      [
+       6.5,
+       41
+      ],
+      [
+       9.3,
+       41.3
+      ],
+      [
+       11.8,
+       42.1
+      ],
+      [
+       12.5,
+       42.8
+      ],
+      [
+       12.91,
+       43.34
+      ]
+     ],
+     "icon": "📜",
+     "label": {
+      "en": "Papermaking reaches Italy, 1200s",
+      "es": "El papel llega a Italia, siglo XIII"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "fabriano",
+     "name": {
+      "en": "Fabriano",
+      "es": "Fabriano"
+     },
+     "at": [
+      12.9085,
+      43.3386
+     ],
+     "cat": "print",
+     "type": "place",
+     "date": "1276",
+     "place": {
+      "en": "Fabriano, Marche, Italy",
+      "es": "Fabriano, Marcas, Italia"
+     },
+     "text": {
+      "en": "A hill town in central Italy making paper by 1276, where papermakers added water-driven hammers, sizing with animal glue and watermarks. It still makes fine paper and has a Paper and Watermark Museum.",
+      "es": "Un pueblo de las colinas del centro de Italia que hacía papel en 1276, donde los papeleros añadieron mazos movidos por agua, encolado con gelatina animal y filigranas. Todavía hace papel fino y tiene un Museo del Papel y la Filigrana."
+     },
+     "wiki": {
+      "en": "Fabriano",
+      "es": "Fabriano"
+     }
+    },
+    {
+     "id": "watermark",
+     "name": {
+      "en": "The watermark",
+      "es": "La filigrana"
+     },
+     "at": [
+      12.9115,
+      43.3362
+     ],
+     "cat": "print",
+     "type": "invention",
+     "date": "1282",
+     "by": {
+      "en": "Papermakers of Fabriano",
+      "es": "Papeleros de Fabriano"
+     },
+     "place": {
+      "en": "Fabriano, Marche, Italy",
+      "es": "Fabriano, Marcas, Italia"
+     },
+     "text": {
+      "en": "A picture or letters pressed into a sheet of paper as it is made, seen when it is held up to the light. Italian papermakers of the late 13th century used it as a maker's mark; banknotes still carry one.",
+      "es": "Un dibujo o unas letras marcados en la hoja de papel al fabricarla, que se ven al ponerla a contraluz. Los papeleros italianos de fines del siglo XIII la usaban como marca del fabricante; los billetes todavía la llevan."
+     },
+     "wiki": {
+      "en": "Watermark",
+      "es": "Filigrana (papel)"
+     }
+    },
+    {
+     "id": "amalfi",
+     "name": {
+      "en": "Amalfi",
+      "es": "Amalfi"
+     },
+     "at": [
+      14.6027,
+      40.634
+     ],
+     "cat": "print",
+     "type": "site",
+     "date": "1250",
+     "whs": 830,
+     "place": {
+      "en": "Amalfi Coast, Italy",
+      "es": "Costa Amalfitana, Italia"
+     },
+     "text": {
+      "en": "A seafaring town south of Naples, one of the first places in Europe to make paper, a skill learned from the Arabs. A legend also credits a pilot of Amalfi, Flavio Gioia, with the sailor's compass.",
+      "es": "Un pueblo de marinos al sur de Nápoles, uno de los primeros lugares de Europa en hacer papel, un arte aprendido de los árabes. Una leyenda atribuye además a un piloto de Amalfi, Flavio Gioia, la brújula de los marinos."
+     },
+     "details": {
+      "en": "Amalfi was a seafaring republic that rivalled Pisa and Genoa, and its people learned papermaking from the Arabs; a Museum of Handmade Paper now works the old machines in a mill of its Mill Valley. By tradition, a pilot named Flavio Gioia perfected the compass around 1300 by setting its needle over a wind rose in a glass-covered box. He may never have existed: a writer of 1511 said the compass was invented in Amalfi 'according to Flavio', meaning the historian Flavio Biondo, and a misplaced comma later turned this into 'invented by Flavio'. The Amalfi Coast has been a World Heritage Site since 1997.",
+      "es": "Amalfi fue una república marinera rival de Pisa y Génova, y su gente aprendió de los árabes a hacer papel; hoy un Museo del Papel Hecho a Mano hace funcionar las viejas máquinas en un molino de su Valle de los Molinos. Según la tradición, un piloto llamado Flavio Gioia perfeccionó la brújula hacia 1300 al poner su aguja sobre una rosa de los vientos, en una caja con tapa de vidrio. Quizá nunca existió: un autor de 1511 escribió que la brújula se inventó en Amalfi «según Flavio», es decir, el historiador Flavio Biondo, y una coma mal puesta lo convirtió después en «inventada por Flavio». La Costa Amalfitana es Patrimonio de la Humanidad desde 1997."
+     },
+     "wiki": {
+      "en": "Amalfi",
+      "es": "Amalfi (Italia)"
+     }
+    }
+   ]
+  },
+  {
+   "date": "1282",
+   "title": {
+    "en": "The needle sails west",
+    "es": "La aguja navega al oeste"
+   },
+   "text": {
+    "en": "About 1190 an English scholar in Paris writes that sailors steer by a magnetised needle. A Persian book of about 1230 tells of an iron fish on a ship, and in 1282 a writer in Cairo describes the compass at sea.",
+    "es": "Hacia 1190, un erudito inglés en París escribe que los marinos se guían por una aguja imantada. Un libro persa de hacia 1230 habla de un pez de hierro en un barco, y en 1282 un autor en El Cairo describe la brújula en el mar."
+   },
+   "details": {
+    "en": "How the compass reached the Indian Ocean and the Mediterranean is not known: perhaps with Arab and Persian merchants who traded in Chinese ports, perhaps overland, and some scholars think Europeans invented it again on their own. Alexander Neckam, writing around 1190, treats it as nothing new: a ship should carry a needle that turns until it points north, to guide sailors in murky weather. Around 1230 Muhammad Aufi's Persian collection of stories, written in Delhi, tells of a fish-shaped iron leaf used to find the way on a voyage, much like the Chinese fish. In Cairo in 1282 Baylak al-Qibjaqi described a needle floating in a bowl that he had seen on a voyage from Syria to Alexandria in 1242, and said Indian Ocean sailors used iron fish. In 1269 Peter Peregrinus described a dry compass turning on a pivot, and in Egypt Ibn Sim'un used one to find the direction of Mecca.",
+    "es": "No se sabe cómo llegó la brújula al océano Índico y al Mediterráneo: quizá con mercaderes árabes y persas que comerciaban en los puertos chinos, quizá por tierra, y algunos estudiosos creen que los europeos la inventaron de nuevo por su cuenta. Alexander Neckam, que escribe hacia 1190, no la presenta como una novedad: un barco debe llevar una aguja que gira hasta apuntar al norte, para guiar a los marinos con tiempo nublado. Hacia 1230, la colección persa de relatos de Muhammad Aufi, escrita en Delhi, cuenta cómo se usó una hoja de hierro en forma de pez para orientarse en un viaje, muy parecida al pez chino. En El Cairo, en 1282, Baylak al-Qibjaqi describió una aguja flotando en un cuenco que había visto en un viaje de Siria a Alejandría en 1242, y dijo que los marinos del océano Índico usaban peces de hierro. En 1269, Pedro Peregrino describió una brújula seca que giraba sobre un eje, y en Egipto Ibn Sim'un usó una para hallar la dirección de La Meca."
+   },
+   "camera": {
+    "lon": 50,
+    "lat": 27,
+    "zoom": 1.6
+   },
+   "moves": [
+    {
+     "side": "compass",
+     "by": "sea",
+     "icon": "⛵",
+     "label": {
+      "en": "Across the Indian Ocean",
+      "es": "Por el océano Índico"
+     },
+     "path": [
+      [
+       113.55,
+       22.15
+      ],
+      [
+       111.6,
+       19.6
+      ],
+      [
+       110.6,
+       16.5
+      ],
+      [
+       109.8,
+       12.5
+      ],
+      [
+       108.6,
+       9.5
+      ],
+      [
+       106,
+       6.5
+      ],
+      [
+       104.9,
+       2.6
+      ],
+      [
+       104.3,
+       1.25
+      ],
+      [
+       103.75,
+       1.17
+      ],
+      [
+       103.3,
+       1.22
+      ],
+      [
+       102.8,
+       1.6
+      ],
+      [
+       102.2,
+       1.98
+      ],
+      [
+       101.3,
+       2.55
+      ],
+      [
+       100.6,
+       3.2
+      ],
+      [
+       99.5,
+       4
+      ],
+      [
+       98.4,
+       5
+      ],
+      [
+       97.5,
+       5.8
+      ],
+      [
+       95.3,
+       6.2
+      ],
+      [
+       90,
+       6
+      ],
+      [
+       82,
+       5.5
+      ],
+      [
+       80.3,
+       5.6
+      ],
+      [
+       77,
+       7.5
+      ],
+      [
+       72,
+       12
+      ],
+      [
+       62,
+       14
+      ],
+      [
+       52,
+       13
+      ],
+      [
+       45,
+       12.4
+      ],
+      [
+       43.4,
+       12.6
+      ],
+      [
+       42.2,
+       14.8
+      ],
+      [
+       39.6,
+       19.5
+      ],
+      [
+       36.6,
+       23.4
+      ],
+      [
+       34.6,
+       25.9
+      ]
+     ]
+    },
+    {
+     "side": "compass",
+     "by": "sea",
+     "icon": "⛵",
+     "label": {
+      "en": "Into the Mediterranean",
+      "es": "Hacia el Mediterráneo"
+     },
+     "path": [
+      [
+       29.9,
+       31.3
+      ],
+      [
+       27.5,
+       32.6
+      ],
+      [
+       24.5,
+       34.5
+      ],
+      [
+       20.5,
+       36.4
+      ],
+      [
+       16.6,
+       37.7
+      ],
+      [
+       15.64,
+       38.05
+      ],
+      [
+       15.66,
+       38.3
+      ],
+      [
+       15.2,
+       39.2
+      ],
+      [
+       14.55,
+       40.3
+      ],
+      [
+       14.6,
+       40.6
+      ]
+     ]
+    }
+   ],
+   "places": [
+    {
+     "id": "alexander-neckam",
+     "name": {
+      "en": "Alexander Neckam",
+      "es": "Alexander Neckam"
+     },
+     "at": [
+      2.3469,
+      48.853
+     ],
+     "cat": "inventor",
+     "type": "person",
+     "date": "1190",
+     "life": [
+      "1157",
+      "1217"
+     ],
+     "place": {
+      "en": "Paris, France",
+      "es": "París, Francia"
+     },
+     "text": {
+      "en": "An English scholar born at St Albans, pictured, and foster brother of King Richard the Lionheart. In Paris he probably learned how sailors used a magnetised needle; his books of about 1190 first mention it in Europe.",
+      "es": "Un erudito inglés nacido en St Albans, en la imagen, y hermano de leche del rey Ricardo Corazón de León. En París supo probablemente cómo usaban los marinos una aguja imantada; sus libros de hacia 1190 la mencionan por primera vez en Europa."
+     },
+     "wiki": {
+      "en": "Alexander Neckam",
+      "es": "Alexander Neckam"
+     },
+     "img": "St Albans Cathedral Exterior from west, Herfordshire, UK - Diliff.jpg"
+    },
+    {
+     "id": "muhammad-aufi",
+     "name": {
+      "en": "Muhammad Aufi",
+      "es": "Muhammad Aufi"
+     },
+     "at": [
+      77.1855,
+      28.5244
+     ],
+     "cat": "inventor",
+     "type": "person",
+     "date": "1232",
+     "place": {
+      "en": "Delhi, India",
+      "es": "Delhi, India"
+     },
+     "text": {
+      "en": "A Persian writer from Bukhara at the court of Iltutmish, the Delhi sultan who finished the Qutb Minar, pictured. His book of stories of about 1228–1232 tells of a fish-shaped iron that guided sailors.",
+      "es": "Un escritor persa de Bujará en la corte de Iltutmish, el sultán de Delhi que terminó el Qutb Minar, en la imagen. Su libro de relatos de hacia 1228-1232 habla de un hierro en forma de pez que guiaba a los marinos."
+     },
+     "wiki": {
+      "en": "Mohammad Aufi",
+      "es": "Zahiriddin Nasr Muhammad Aufi"
+     },
+     "img": "Qutb Minar 2022.jpg"
+    },
+    {
+     "id": "peter-peregrinus",
+     "name": {
+      "en": "Peter Peregrinus",
+      "es": "Pedro Peregrino"
+     },
+     "at": [
+      15.3378,
+      41.5085
+     ],
+     "cat": "inventor",
+     "type": "person",
+     "date": "1269",
+     "place": {
+      "en": "Lucera, Italy (perhaps)",
+      "es": "Lucera, Italia (quizá)"
+     },
+     "text": {
+      "en": "A French scholar who in 1269, perhaps in an army camp at the siege of Lucera, wrote the oldest surviving study of magnets, with a floating compass and a dry compass turning on a pivot.",
+      "es": "Un erudito francés que en 1269, quizá en un campamento militar durante el sitio de Lucera, escribió el estudio sobre los imanes más antiguo que se conserva, con una brújula flotante y una brújula seca que gira sobre un eje."
+     },
+     "wiki": {
+      "en": "Petrus Peregrinus de Maricourt",
+      "es": "Peter Peregrinus de Maricourt"
+     }
+    },
+    {
+     "id": "amalfi",
+     "name": {
+      "en": "Amalfi",
+      "es": "Amalfi"
+     },
+     "at": [
+      14.6027,
+      40.634
+     ],
+     "cat": "print",
+     "type": "site",
+     "date": "1250",
+     "whs": 830,
+     "place": {
+      "en": "Amalfi Coast, Italy",
+      "es": "Costa Amalfitana, Italia"
+     },
+     "text": {
+      "en": "A seafaring town south of Naples, one of the first places in Europe to make paper, a skill learned from the Arabs. A legend also credits a pilot of Amalfi, Flavio Gioia, with the sailor's compass.",
+      "es": "Un pueblo de marinos al sur de Nápoles, uno de los primeros lugares de Europa en hacer papel, un arte aprendido de los árabes. Una leyenda atribuye además a un piloto de Amalfi, Flavio Gioia, la brújula de los marinos."
+     },
+     "details": {
+      "en": "Amalfi was a seafaring republic that rivalled Pisa and Genoa, and its people learned papermaking from the Arabs; a Museum of Handmade Paper now works the old machines in a mill of its Mill Valley. By tradition, a pilot named Flavio Gioia perfected the compass around 1300 by setting its needle over a wind rose in a glass-covered box. He may never have existed: a writer of 1511 said the compass was invented in Amalfi 'according to Flavio', meaning the historian Flavio Biondo, and a misplaced comma later turned this into 'invented by Flavio'. The Amalfi Coast has been a World Heritage Site since 1997.",
+      "es": "Amalfi fue una república marinera rival de Pisa y Génova, y su gente aprendió de los árabes a hacer papel; hoy un Museo del Papel Hecho a Mano hace funcionar las viejas máquinas en un molino de su Valle de los Molinos. Según la tradición, un piloto llamado Flavio Gioia perfeccionó la brújula hacia 1300 al poner su aguja sobre una rosa de los vientos, en una caja con tapa de vidrio. Quizá nunca existió: un autor de 1511 escribió que la brújula se inventó en Amalfi «según Flavio», es decir, el historiador Flavio Biondo, y una coma mal puesta lo convirtió después en «inventada por Flavio». La Costa Amalfitana es Patrimonio de la Humanidad desde 1997."
+     },
+     "wiki": {
+      "en": "Amalfi",
+      "es": "Amalfi (Italia)"
+     }
+    },
+    {
+     "id": "magnetic-compass",
+     "name": {
+      "en": "The magnetic compass",
+      "es": "La brújula"
+     },
+     "icon": "🧭",
+     "at": [
+      119.4316,
+      32.1905
+     ],
+     "cat": "transport",
+     "type": "invention",
+     "date": "1088",
+     "by": {
+      "en": "Chinese geomancers",
+      "es": "Geománticos chinos"
+     },
+     "place": {
+      "en": "Song China; first described at Zhenjiang, Jiangsu",
+      "es": "China de los Song; descrita por primera vez en Zhenjiang, Jiangsu"
+     },
+     "text": {
+      "en": "A magnetised needle that turns to point north and south. First clearly described by Shen Kuo in 1088, it guided Chinese ships by the 1110s and reached the Indian Ocean and Europe by about 1190–1230.",
+      "es": "Una aguja imantada que gira hasta apuntar al norte y al sur. Descrita con claridad por Shen Kuo en 1088, guiaba barcos chinos hacia 1110 y llegó al océano Índico y a Europa hacia 1190-1230."
+     },
+     "wiki": {
+      "en": "Compass",
+      "es": "Brújula"
+     },
+     "img": "Chinese Geomantic Compass c. 1760, National Maritime Museum.JPG"
+    }
+   ]
+  },
+  {
+   "date": "1326",
+   "title": {
+    "en": "Gunpowder goes west",
+    "es": "La pólvora viaja al oeste"
+   },
+   "text": {
+    "en": "In the 13th century gunpowder reaches the Islamic world, perhaps with the Mongols, and Europe, where Roger Bacon describes it in 1267. China makes the first metal guns; in 1326 Florence orders cannons.",
+    "es": "En el siglo XIII la pólvora llega al mundo islámico, quizá con los mongoles, y a Europa, donde Roger Bacon la describe en 1267. China hace las primeras armas de metal; en 1326 Florencia encarga cañones."
+   },
+   "details": {
+    "en": "Between 1240 and 1280 the Syrian engineer Hasan al-Rammah wrote recipes for gunpowder and rockets and explained how to purify saltpetre, which Arabic writers called 'Chinese snow'. Many historians think the Mongols, who took Chinese gunpowder experts west, spread it, though written proof is scarce. In 1267 the English friar Roger Bacon described a children's firecracker that roared louder than thunder. In China, metal tubes replaced bamboo: a bronze hand gun found in Heilongjiang dates from about 1288, and one inscribed with the year 1298 was found at Xanadu, the Mongol summer capital. In 1326 an English manuscript by Walter de Milemete showed a vase-shaped cannon firing an arrow, and Florence ordered metal cannons. Some historians argue for earlier guns in the Islamic world or for inventions made separately in Europe, but most agree that the gun was born in China. Cannons fired at Crécy in 1346, and in 1453 Ottoman guns broke the walls of Constantinople.",
+    "es": "Entre 1240 y 1280, el ingeniero sirio Hasan al-Rammah escribió recetas de pólvora y de cohetes y explicó cómo purificar el salitre, al que los autores árabes llamaban «nieve de China». Muchos historiadores creen que la difundieron los mongoles, que llevaron al oeste a expertos chinos en pólvora, aunque hay pocas pruebas escritas. En 1267, el fraile inglés Roger Bacon describió un petardo infantil que rugía más que el trueno. En China, los tubos de metal reemplazaron al bambú: un arma de mano de bronce hallada en Heilongjiang es de hacia 1288, y una con el año 1298 inscrito apareció en Xanadú, la capital de verano de los mongoles. En 1326, un manuscrito inglés de Walter de Milemete mostró un cañón con forma de jarrón que disparaba una flecha, y Florencia encargó cañones de metal. Algunos historiadores defienden armas de fuego anteriores en el mundo islámico o inventos hechos por separado en Europa, pero la mayoría coincide en que el arma de fuego nació en China. Hubo cañones en Crécy en 1346, y en 1453 los cañones otomanos derribaron las murallas de Constantinopla."
+   },
+   "camera": {
+    "lon": 68,
+    "lat": 44,
+    "zoom": 1.35
+   },
+   "moves": [
+    {
+     "side": "gunpowder",
+     "label": {
+      "en": "Perhaps with the Mongols, 1200s",
+      "es": "Quizá con los mongoles, siglo XIII"
+     },
+     "path": [
+      [
+       114.3,
+       34.8
+      ],
+      [
+       108.94,
+       34.27
+      ],
+      [
+       103.83,
+       36.06
+      ],
+      [
+       98.49,
+       39.73
+      ],
+      [
+       94.66,
+       40.14
+      ],
+      [
+       89.19,
+       42.95
+      ],
+      [
+       87.6,
+       43.8
+      ],
+      [
+       80.87,
+       44.05
+      ],
+      [
+       76.9,
+       43.25
+      ],
+      [
+       74.6,
+       42.87
+      ],
+      [
+       71.37,
+       42.9
+      ],
+      [
+       68.3,
+       42.85
+      ],
+      [
+       66.98,
+       39.65
+      ],
+      [
+       62.19,
+       37.66
+      ],
+      [
+       58.8,
+       36.21
+      ],
+      [
+       51.43,
+       35.59
+      ],
+      [
+       47.06,
+       34.31
+      ],
+      [
+       44.38,
+       33.34
+      ],
+      [
+       40.1,
+       34.4
+      ],
+      [
+       38.27,
+       34.55
+      ],
+      [
+       36.31,
+       33.51
+      ]
+     ]
+    },
+    {
+     "side": "gunpowder",
+     "label": {
+      "en": "To Europe, by 1267",
+      "es": "A Europa, hacia 1267"
+     },
+     "path": [
+      [
+       36.31,
+       33.51
+      ],
+      [
+       35.5,
+       33.9
+      ],
+      [
+       28,
+       35
+      ],
+      [
+       20,
+       37
+      ],
+      [
+       15,
+       39.5
+      ],
+      [
+       11.25,
+       43.77
+      ],
+      [
+       7,
+       46
+      ],
+      [
+       2.35,
+       48.86
+      ],
+      [
+       -1.26,
+       51.75
+      ]
+     ]
+    }
+   ],
+   "places": [
+    {
+     "id": "hasan-al-rammah",
+     "name": {
+      "en": "Hasan al-Rammah",
+      "es": "Hasan al-Rammah"
+     },
+     "at": [
+      36.2913,
+      33.5021
+     ],
+     "cat": "inventor",
+     "type": "person",
+     "date": "1280",
+     "place": {
+      "en": "Mamluk Syria; here, Damascus",
+      "es": "Siria mameluca; aquí, Damasco"
+     },
+     "text": {
+      "en": "A Syrian engineer of the Mamluk sultans who wrote down gunpowder recipes, rockets ('Chinese arrows'), fireworks ('Chinese flowers') and the first clear way to purify saltpetre, between 1240 and 1280.",
+      "es": "Un ingeniero sirio de los sultanes mamelucos que escribió recetas de pólvora, cohetes («flechas chinas»), fuegos artificiales («flores chinas») y el primer método claro para purificar el salitre, entre 1240 y 1280."
+     },
+     "wiki": {
+      "en": "Hasan al-Rammah",
+      "es": ""
+     },
+     "img": "Arabs gunpowder weapons 1.jpg"
+    },
+    {
+     "id": "roger-bacon",
+     "name": {
+      "en": "Roger Bacon",
+      "es": "Roger Bacon"
+     },
+     "at": [
+      -1.2577,
+      51.752
+     ],
+     "cat": "inventor",
+     "type": "person",
+     "date": "1267",
+     "life": [
+      "1220",
+      "1292"
+     ],
+     "place": {
+      "en": "Oxford, England",
+      "es": "Oxford, Inglaterra"
+     },
+     "text": {
+      "en": "An English Franciscan friar and scholar of Oxford and Paris. In his Opus Majus, sent to the pope in 1267, he described a firecracker made of saltpetre: Europe's first mention of gunpowder.",
+      "es": "Un fraile franciscano y erudito inglés de Oxford y París. En su Opus Majus, enviado al papa en 1267, describió un petardo hecho de salitre: la primera mención de la pólvora en Europa."
+     },
+     "wiki": {
+      "en": "Roger Bacon",
+      "es": "Roger Bacon"
+     }
+    },
+    {
+     "id": "heilongjiang-hand-cannon",
+     "name": {
+      "en": "The Heilongjiang hand cannon",
+      "es": "El cañón de mano de Heilongjiang"
+     },
+     "at": [
+      126.9581,
+      45.5455
+     ],
+     "cat": "weapons",
+     "type": "invention",
+     "date": "1288",
+     "by": {
+      "en": "unknown",
+      "es": "desconocido"
+     },
+     "place": {
+      "en": "Banlachengzi, Acheng District, Heilongjiang, China",
+      "es": "Banlachengzi, distrito de Acheng, Heilongjiang, China"
+     },
+     "text": {
+      "en": "A bronze hand gun 34 cm long, found in 1970 near a battlefield of 1287–1288 where Yuan soldiers carried guns on their backs: the oldest surviving firearm known for certain.",
+      "es": "Un arma de mano de bronce de 34 cm, hallada en 1970 cerca de un campo de batalla de 1287-1288 donde soldados Yuan llevaban armas de fuego a la espalda: el arma de fuego más antigua que se conoce con certeza."
+     },
+     "wiki": {
+      "en": "Heilongjiang hand cannon",
+      "es": ""
+     }
+    },
+    {
+     "id": "xanadu",
+     "name": {
+      "en": "Xanadu (Shangdu)",
+      "es": "Xanadú (Shangdu)"
+     },
+     "at": [
+      116.1852,
+      42.358
+     ],
+     "cat": "weapons",
+     "type": "site",
+     "date": "1256",
+     "whs": 1389,
+     "place": {
+      "en": "Inner Mongolia, China",
+      "es": "Mongolia Interior, China"
+     },
+     "text": {
+      "en": "Kublai Khan's summer capital, built in 1252–1256 and sacked in 1369. In its ruins archaeologists found a bronze gun inscribed with a date that matches 1298: the oldest gun bearing a date. A World Heritage Site.",
+      "es": "La capital de verano de Kublai Kan, construida en 1252-1256 y saqueada en 1369. En sus ruinas, los arqueólogos hallaron un arma de bronce con una fecha inscrita que corresponde a 1298: la más antigua que lleva fecha. Es Patrimonio de la Humanidad."
+     },
+     "wiki": {
+      "en": "Shangdu",
+      "es": "Xanadú"
+     }
+    },
+    {
+     "id": "cannon",
+     "name": {
+      "en": "Cannons in Europe",
+      "es": "Los cañones en Europa"
+     },
+     "at": [
+      11.2563,
+      43.7694
+     ],
+     "cat": "weapons",
+     "type": "invention",
+     "date": "1326",
+     "by": {
+      "en": "unknown",
+      "es": "desconocido"
+     },
+     "place": {
+      "en": "Florence, Italy",
+      "es": "Florencia, Italia"
+     },
+     "text": {
+      "en": "On 11 February 1326 Florence named two officers to obtain metal cannons and their ammunition. The same year an English manuscript drew a cannon: Europe's first records of the gun.",
+      "es": "El 11 de febrero de 1326, Florencia nombró a dos oficiales para conseguir cañones de metal y su munición. Ese mismo año, un manuscrito inglés dibujó un cañón: los primeros registros del arma de fuego en Europa."
+     },
+     "wiki": {
+      "en": "Cannon",
+      "es": "Cañón (artillería)"
+     },
+     "img": "British Library Additional MS 47680 f.44v.jpg"
+    }
+   ]
+  },
+  {
+   "date": "1377-07",
+   "title": {
+    "en": "Korea's metal type",
+    "es": "Los tipos de metal de Corea"
+   },
+   "text": {
+    "en": "In July 1377 monks at Heungdeok Temple, in Cheongju, print a Buddhist anthology, the Jikji, with type cast in metal: the oldest surviving book of its kind, 78 years before Gutenberg's Bible.",
+    "es": "En julio de 1377, monjes del templo de Heungdeok, en Cheongju, imprimen una antología budista, el Jikji, con tipos de metal fundido: el libro más antiguo de su tipo que se conserva, 78 años antes de la Biblia de Gutenberg."
+   },
+   "details": {
+    "en": "In China, the magistrate Wang Zhen had more than 30,000 wooden types carved at Jingde around 1298 and printed a county history with them. Korean printers of the Goryeo kingdom cast type in bronze, with the methods used to make coins: books in metal type were printed in 1234, though none survives. The Jikji was compiled by the monk Baegun and printed by his students Seoksan and Daldam, with the help of the nun Myodeok. Only its second volume survives: a French diplomat, Victor Collin de Plancy, bought it in Seoul and took it to France. It is now in the National Library of France, and its ownership is disputed: many Koreans want it back. In Korea metal type was used mostly by the royal foundry for government books, while temples kept carving woodblocks, like the 81,000 blocks of the Tripitaka Koreana.",
+    "es": "En China, el magistrado Wang Zhen mandó tallar más de 30 000 tipos de madera en Jingde hacia 1298 e imprimió con ellos una historia del distrito. Los impresores coreanos del reino de Goryeo fundieron tipos de bronce, con los métodos que se usaban para hacer monedas: en 1234 se imprimieron libros con tipos de metal, aunque ninguno se conserva. El Jikji fue compilado por el monje Baegun e impreso por sus discípulos Seoksan y Daldam, con la ayuda de la monja Myodeok. Solo se conserva su segundo volumen: un diplomático francés, Victor Collin de Plancy, lo compró en Seúl y lo llevó a Francia. Hoy está en la Biblioteca Nacional de Francia, y su propiedad está en disputa: muchos coreanos piden que vuelva. En Corea, los tipos de metal los usaba sobre todo la fundición real para los libros del gobierno, mientras los templos seguían tallando bloques de madera, como los 81 000 de la Tripitaka Coreana."
+   },
+   "camera": {
+    "lon": 123,
+    "lat": 34.5,
+    "zoom": 4.3
+   },
+   "places": [
+    {
+     "id": "jikji",
+     "name": {
+      "en": "Jikji",
+      "es": "Jikji"
+     },
+     "at": [
+      127.4719,
+      36.6439
+     ],
+     "cat": "print",
+     "type": "work",
+     "date": "1377-07",
+     "place": {
+      "en": "Heungdeok Temple, Cheongju, South Korea",
+      "es": "Templo de Heungdeok, Cheongju, Corea del Sur"
+     },
+     "text": {
+      "en": "A Korean anthology of Buddhist teachings printed with movable metal type in July 1377: the oldest surviving book of its kind. Its second volume is kept in Paris; UNESCO lists it in the Memory of the World.",
+      "es": "Una antología coreana de enseñanzas budistas impresa con tipos móviles de metal en julio de 1377: el libro más antiguo de su tipo que se conserva. Su segundo volumen se guarda en París; la UNESCO lo incluye en la Memoria del Mundo."
+     },
+     "wiki": {
+      "en": "Jikji",
+      "es": "Jikji"
+     }
+    },
+    {
+     "id": "wang-zhen",
+     "name": {
+      "en": "Wang Zhen",
+      "es": "Wang Zhen"
+     },
+     "at": [
+      118.5317,
+      30.2895
+     ],
+     "cat": "inventor",
+     "type": "person",
+     "date": "1298",
+     "place": {
+      "en": "Jingde, Anhui, China",
+      "es": "Jingde, Anhui, China"
+     },
+     "text": {
+      "en": "A Yuan-dynasty official and agronomist who, as magistrate of Jingde in the 1290s, printed with wooden movable type and sped up typesetting with revolving tables of type. He described it in 1313.",
+      "es": "Un funcionario y agrónomo de la dinastía Yuan que, como magistrado de Jingde en la década de 1290, imprimió con tipos móviles de madera y aceleró la composición con mesas giratorias de tipos. Lo describió en 1313."
+     },
+     "wiki": {
+      "en": "Wang Zhen (inventor)",
+      "es": "Wang Zhen (inventor)"
+     }
+    },
+    {
+     "id": "tripitaka-koreana",
+     "name": {
+      "en": "Haeinsa and the Tripitaka Koreana",
+      "es": "Haeinsa y la Tripitaka Coreana"
+     },
+     "at": [
+      128.0986,
+      35.8017
+     ],
+     "cat": "print",
+     "type": "site",
+     "date": "1237",
+     "whs": 737,
+     "place": {
+      "en": "Haeinsa Temple, Hapcheon, South Korea",
+      "es": "Templo de Haeinsa, Hapcheon, Corea del Sur"
+     },
+     "text": {
+      "en": "More than 81,000 woodblocks of the Buddhist scriptures, carved in 1237–1248 to seek divine help against the Mongols. They are kept in airy halls at Haeinsa Temple, a World Heritage Site.",
+      "es": "Más de 81 000 bloques de madera con las escrituras budistas, tallados en 1237-1248 para pedir ayuda divina contra los mongoles. Se guardan en salas bien ventiladas del templo de Haeinsa, Patrimonio de la Humanidad."
+     },
+     "wiki": {
+      "en": "Tripitaka Koreana",
+      "es": "Tripitaka Coreana"
+     }
+    },
+    {
+     "id": "movable-type",
+     "name": {
+      "en": "Movable type",
+      "es": "Los tipos móviles"
+     },
+     "at": [
+      115.6905,
+      30.7411
+     ],
+     "cat": "print",
+     "type": "invention",
+     "date": "1040",
+     "by": {
+      "en": "Bi Sheng",
+      "es": "Bi Sheng"
+     },
+     "place": {
+      "en": "Song China; here, Yingshan, Hubei, where Bi Sheng's gravestone was found",
+      "es": "China de los Song; aquí, Yingshan, Hubei, donde se halló la lápida de Bi Sheng"
+     },
+     "text": {
+      "en": "Printing with a separate piece for each character, set in a frame and used again and again. Bi Sheng made it of baked clay in the 1040s; Korea later cast it in metal, and Gutenberg in Europe.",
+      "es": "Imprimir con una pieza suelta para cada carácter, colocada en un marco y usada una y otra vez. Bi Sheng los hizo de arcilla cocida hacia 1040; Corea los fundió luego en metal, y Gutenberg en Europa."
+     },
+     "wiki": {
+      "en": "Movable type",
+      "es": "Tipos móviles"
+     },
+     "img": "Beijing.Musee imprimerie.caracteres mobiles.Bisheng.jpg"
+    }
+   ]
+  },
+  {
+   "date": "1455",
+   "title": {
+    "en": "Gutenberg's press",
+    "es": "La imprenta de Gutenberg"
+   },
+   "text": {
+    "en": "In Mainz, the goldsmith Johannes Gutenberg casts metal type in a hand mould, mixes an oil-based ink and prints with a screw press. About 1455 he finishes a Latin Bible with 42 lines a page.",
+    "es": "En Maguncia, el orfebre Johannes Gutenberg funde tipos de metal en un molde de mano, prepara una tinta al aceite e imprime con una prensa de tornillo. Hacia 1455 termina una Biblia en latín de 42 líneas por página."
+   },
+   "details": {
+    "en": "Gutenberg worked on his secret 'enterprise' in Strasbourg around 1440 and had a press running in Mainz by 1450. He cast letters from an alloy of lead, tin and antimony, the standard for the next 550 years, and built a wooden press like the screw presses farmers used. With a few dozen letters to cast instead of thousands of characters, movable type suited Europe's alphabets perfectly. His Bible was printed mostly on paper, some copies on vellum, and 49 survive. Did he know of Chinese or Korean printing? No document shows it, and historians still debate whether word of it reached Europe. Printing spread fast: Venice had a press in 1469 and Paris in 1470, and by 1480 more than 100 presses worked across Europe.",
+    "es": "Gutenberg trabajó en su «empresa» secreta en Estrasburgo hacia 1440 y tenía una prensa funcionando en Maguncia en 1450. Fundía las letras con una aleación de plomo, estaño y antimonio, la norma durante los 550 años siguientes, y construyó una prensa de madera como las prensas de tornillo de los campesinos. Con unas pocas decenas de letras por fundir en lugar de miles de caracteres, los tipos móviles eran ideales para los alfabetos de Europa. Su Biblia se imprimió sobre todo en papel, algunas copias en vitela, y se conservan 49. ¿Conocía la imprenta china o coreana? Ningún documento lo muestra, y los historiadores aún debaten si la noticia llegó a Europa. La imprenta se extendió deprisa: Venecia tuvo una prensa en 1469 y París en 1470, y hacia 1480 funcionaban más de 100 prensas en toda Europa."
+   },
+   "camera": {
+    "lon": 6.5,
+    "lat": 48.5,
+    "zoom": 4.6
+   },
+   "moves": [
+    {
+     "side": "printing",
+     "path": [
+      [
+       8.27,
+       50
+      ],
+      [
+       9.2,
+       48.5
+      ],
+      [
+       10.5,
+       47.3
+      ],
+      [
+       11.6,
+       46.5
+      ],
+      [
+       12.33,
+       45.44
+      ]
+     ],
+     "label": {
+      "en": "Venice, 1469",
+      "es": "Venecia, 1469"
+     }
+    },
+    {
+     "side": "printing",
+     "path": [
+      [
+       8.27,
+       50
+      ],
+      [
+       6.2,
+       49.6
+      ],
+      [
+       4,
+       49.2
+      ],
+      [
+       2.35,
+       48.86
+      ]
+     ],
+     "label": {
+      "en": "Paris, 1470",
+      "es": "París, 1470"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "johannes-gutenberg",
+     "name": {
+      "en": "Johannes Gutenberg",
+      "es": "Johannes Gutenberg"
+     },
+     "at": [
+      8.2736,
+      49.9994
+     ],
+     "cat": "inventor",
+     "type": "person",
+     "date": "1450",
+     "life": [
+      "1400",
+      "1468"
+     ],
+     "place": {
+      "en": "Mainz, Germany",
+      "es": "Maguncia, Alemania"
+     },
+     "text": {
+      "en": "A goldsmith of Mainz, born about 1400, who around 1440–1450 worked out how to cast metal type and print with a press. He lost his workshop to his lender in 1455 and died in Mainz in 1468.",
+      "es": "Un orfebre de Maguncia, nacido hacia 1400, que hacia 1440-1450 descubrió cómo fundir tipos de metal e imprimir con una prensa. Perdió su taller ante su prestamista en 1455 y murió en Maguncia en 1468."
+     },
+     "wiki": {
+      "en": "Johannes Gutenberg",
+      "es": "Johannes Gutenberg"
+     }
+    },
+    {
+     "id": "printing-press",
+     "name": {
+      "en": "The printing press",
+      "es": "La imprenta"
+     },
+     "at": [
+      8.2712,
+      49.9978
+     ],
+     "cat": "print",
+     "type": "invention",
+     "date": "1450",
+     "by": {
+      "en": "Johannes Gutenberg",
+      "es": "Johannes Gutenberg"
+     },
+     "place": {
+      "en": "Mainz, Germany",
+      "es": "Maguncia, Alemania"
+     },
+     "text": {
+      "en": "Metal type cast in a hand mould, oil-based ink and a wooden screw press: Gutenberg's system made books cheap and identical, and spread across Europe and then the world.",
+      "es": "Tipos de metal fundidos en un molde de mano, tinta al aceite y una prensa de tornillo de madera: el sistema de Gutenberg hizo los libros baratos e idénticos, y se extendió por Europa y luego por el mundo."
+     },
+     "wiki": {
+      "en": "Printing press",
+      "es": "Imprenta"
+     }
+    },
+    {
+     "id": "gutenberg-bible",
+     "name": {
+      "en": "Gutenberg Bible",
+      "es": "Biblia de Gutenberg"
+     },
+     "at": [
+      8.2753,
+      49.9997
+     ],
+     "cat": "print",
+     "type": "work",
+     "date": "1455",
+     "by": {
+      "en": "Johannes Gutenberg",
+      "es": "Johannes Gutenberg"
+     },
+     "place": {
+      "en": "Mainz, Germany",
+      "es": "Maguncia, Alemania"
+     },
+     "text": {
+      "en": "The first major book printed in Europe with movable metal type, finished about 1455. Of some 158 to 180 copies, 49 survive; one cost about three years' wages of a clerk.",
+      "es": "El primer gran libro impreso en Europa con tipos móviles de metal, terminado hacia 1455. De unas 158 a 180 copias, se conservan 49; una costaba unos tres años de sueldo de un escribiente."
+     },
+     "wiki": {
+      "en": "Gutenberg Bible",
+      "es": "Biblia de Gutenberg"
+     }
+    }
+   ]
+  },
+  {
+   "date": "1620",
+   "title": {
+    "en": "Three inventions that changed everything",
+    "es": "Tres inventos que lo cambiaron todo"
+   },
+   "text": {
+    "en": "In 1620 the English philosopher Francis Bacon writes that printing, gunpowder and the compass 'have changed the whole face and state of things throughout the world'. All three came from China.",
+    "es": "En 1620, el filósofo inglés Francis Bacon escribe que la imprenta, la pólvora y la brújula «han cambiado todo el aspecto y el estado de las cosas en el mundo entero». Los tres habían llegado de China."
+   },
+   "details": {
+    "en": "Since the 16th century, European writers had praised three modern inventions unknown to the Greeks and Romans: printing, firearms and the sailor's compass, often credited to Germany. Then reports from Portuguese sailors and Spanish missionaries in Asia arrived, from the 1530s on. In 1585 the Augustinian friar Juan González de Mendoza wrote in his history of China that the Chinese had printed books long before Gutenberg, and that the art perhaps reached Germany through Russia or by sea through Arabia. Bacon, in his Novum Organum, called the origin of the three inventions 'obscure', but his words made them famous. In the 19th century the missionary Joseph Edkins, who lived 57 years in China, named papermaking, printing, the compass and gunpowder together as China's gifts.",
+    "es": "Desde el siglo XVI, autores europeos alababan tres inventos modernos que griegos y romanos no conocieron: la imprenta, las armas de fuego y la brújula de los marinos, que a menudo se atribuían a Alemania. Luego, desde la década de 1530, llegaron los relatos de marinos portugueses y misioneros españoles en Asia. En 1585, el fraile agustino Juan González de Mendoza escribió en su historia de China que los chinos imprimían libros mucho antes que Gutenberg, y que ese arte quizá llegó a Alemania a través de Rusia o por mar a través de Arabia. Bacon, en su Novum Organum, llamó «oscuro» el origen de los tres inventos, pero sus palabras los hicieron famosos. En el siglo XIX, el misionero Joseph Edkins, que vivió 57 años en China, nombró juntos la fabricación del papel, la imprenta, la brújula y la pólvora como regalos de China."
+   },
+   "camera": {
+    "lon": -2,
+    "lat": 46,
+    "zoom": 3.6
+   },
+   "places": [
+    {
+     "id": "francis-bacon",
+     "name": {
+      "en": "Francis Bacon",
+      "es": "Francis Bacon"
+     },
+     "at": [
+      -0.1131,
+      51.5203
+     ],
+     "cat": "inventor",
+     "type": "person",
+     "date": "1620",
+     "life": [
+      "1561",
+      "1626"
+     ],
+     "place": {
+      "en": "Gray's Inn, London, England",
+      "es": "Gray's Inn, Londres, Inglaterra"
+     },
+     "text": {
+      "en": "An English philosopher and statesman who urged scholars to learn from experiments. In 1620 he wrote that printing, gunpowder and the compass had changed the world more than any empire.",
+      "es": "Un filósofo y hombre de Estado inglés que animó a los sabios a aprender de los experimentos. En 1620 escribió que la imprenta, la pólvora y la brújula habían cambiado el mundo más que cualquier imperio."
+     },
+     "wiki": {
+      "en": "Francis Bacon",
+      "es": "Francis Bacon"
+     }
+    },
+    {
+     "id": "mendoza-history-of-china",
+     "name": {
+      "en": "Mendoza's History of China",
+      "es": "La Historia de China de Mendoza"
+     },
+     "at": [
+      12.4964,
+      41.9028
+     ],
+     "cat": "print",
+     "type": "work",
+     "date": "1585",
+     "by": {
+      "en": "Juan González de Mendoza",
+      "es": "Juan González de Mendoza"
+     },
+     "place": {
+      "en": "Rome, Italy, where it was first printed",
+      "es": "Roma, Italia, donde se imprimió por primera vez"
+     },
+     "text": {
+      "en": "A history of China by a Spanish Augustinian friar who never went there, drawn from the reports of Spanish travellers. Printed in Rome in 1585, it was soon read in Italian, French, English, German, Latin and Dutch.",
+      "es": "Una historia de China de un fraile agustino español que nunca estuvo allí, basada en los relatos de viajeros españoles. Impresa en Roma en 1585, pronto se leyó en italiano, francés, inglés, alemán, latín y neerlandés."
+     },
+     "details": {
+      "en": "Born at Torrecilla en Cameros, in La Rioja, Juan González de Mendoza never reached China, but he gathered the accounts of Spanish friars and soldiers who had, such as Miguel de Luarca. His book of 1585 went through 38 editions in seven languages within 15 years and was Europe's main picture of China until the Jesuits' reports of 1615. Among much else, it said that the Chinese had printed books for centuries before Gutenberg. Mendoza later became a bishop in Italy and in the Americas, and died in 1618 at Popayán, in today's Colombia.",
+      "es": "Nacido en Torrecilla en Cameros, en La Rioja, Juan González de Mendoza nunca llegó a China, pero reunió los relatos de frailes y soldados españoles que sí estuvieron allí, como Miguel de Luarca. Su libro de 1585 tuvo 38 ediciones en siete lenguas en 15 años y fue la principal imagen de China en Europa hasta los informes de los jesuitas de 1615. Entre muchas otras cosas, decía que los chinos imprimían libros siglos antes que Gutenberg. Mendoza fue luego obispo en Italia y en América, y murió en 1618 en Popayán, en la actual Colombia."
+     },
+     "wiki": {
+      "en": "Juan González de Mendoza",
+      "es": "Juan González de Mendoza"
+     },
+     "img": "Mendoza-1585-f134.png"
+    }
+   ]
+  },
+  {
+   "date": "2008-08-08",
+   "title": {
+    "en": "The four great inventions today",
+    "es": "Los cuatro grandes inventos hoy"
+   },
+   "text": {
+    "en": "On 8 August 2008 the opening ceremony of the Beijing Olympics celebrates the four great inventions with a giant scroll of paper, dancing blocks of type, an ancient compass and fireworks.",
+    "es": "El 8 de agosto de 2008, la ceremonia de apertura de los Juegos Olímpicos de Pekín celebra los cuatro grandes inventos con un enorme rollo de papel, bloques de tipos que bailan, una brújula antigua y fuegos artificiales."
+   },
+   "details": {
+    "en": "The idea of 'four great inventions' came from Europe, from the three of Bacon's day. The historian Joseph Needham, whose Science and Civilisation in China began to appear in 1954, made the list famous, and it is now taught in every Chinese school. Some Chinese historians, such as Deng Yinke, point out that China gave the world much more, in farming, iron casting, medicine, astronomy, porcelain and silk, some of it as important at home as the famous four. Other Chinese firsts include paper money, the clock escapement and ships' watertight compartments. In 2009 UNESCO listed Chinese woodblock printing as Intangible Cultural Heritage. Since 2017 people in China also speak of 'four great new inventions': high-speed rail, mobile payment, online shopping and shared bikes, none of them first invented in China.",
+    "es": "La idea de los «cuatro grandes inventos» nació en Europa, a partir de los tres de la época de Bacon. El historiador Joseph Needham, cuya obra Ciencia y civilización en China empezó a publicarse en 1954, hizo famosa la lista, y hoy se enseña en todas las escuelas chinas. Algunos historiadores chinos, como Deng Yinke, señalan que China dio al mundo mucho más, en agricultura, fundición de hierro, medicina, astronomía, porcelana y seda, en parte tan importante dentro del país como los cuatro famosos. Otros inventos chinos son el papel moneda, el escape de los relojes y los compartimentos estancos de los barcos. En 2009, la UNESCO declaró la impresión xilográfica china Patrimonio Cultural Inmaterial. Desde 2017, en China se habla también de los «cuatro grandes inventos nuevos»: el tren de alta velocidad, el pago por celular, las compras en línea y las bicicletas compartidas, aunque ninguno se inventó primero en China."
+   },
+   "camera": {
+    "lon": 78,
+    "lat": 39,
+    "zoom": 1.35
+   },
+   "places": [
+    {
+     "id": "beijing-2008-opening-ceremony",
+     "name": {
+      "en": "Beijing 2008 opening ceremony",
+      "es": "Ceremonia de apertura de Pekín 2008"
+     },
+     "at": [
+      116.3966,
+      39.9929
+     ],
+     "cat": "event",
+     "type": "event",
+     "date": "2008-08-08",
+     "place": {
+      "en": "Beijing National Stadium, Beijing, China",
+      "es": "Estadio Nacional de Pekín, Pekín, China"
+     },
+     "text": {
+      "en": "The opening of the 2008 Olympic Games made the four great inventions one of its main themes: a dance on a huge sheet of paper, blocks of type that rose and fell, a replica compass and fireworks.",
+      "es": "La inauguración de los Juegos Olímpicos de 2008 hizo de los cuatro grandes inventos uno de sus temas principales: un baile sobre una enorme hoja de papel, bloques de tipos que subían y bajaban, una réplica de brújula y fuegos artificiales."
+     },
+     "wiki": {
+      "en": "2008 Summer Olympics opening ceremony",
+      "es": "Ceremonia de apertura de los Juegos Olímpicos de Pekín 2008"
+     }
+    },
+    {
+     "id": "joseph-needham",
+     "name": {
+      "en": "Joseph Needham",
+      "es": "Joseph Needham"
+     },
+     "at": [
+      0.1176,
+      52.206
+     ],
+     "cat": "inventor",
+     "type": "person",
+     "date": "1954",
+     "life": [
+      "1900",
+      "1995"
+     ],
+     "place": {
+      "en": "Cambridge, England",
+      "es": "Cambridge, Inglaterra"
+     },
+     "text": {
+      "en": "A British biochemist taught Chinese by Lu Gwei-djen, a scientist from Nanjing, in 1937. He worked in wartime China and spent half a century on Science and Civilisation in China, the great history of Chinese science.",
+      "es": "Un bioquímico británico al que Lu Gwei-djen, una científica de Nankín, enseñó chino en 1937. Trabajó en la China en guerra y dedicó medio siglo a Ciencia y civilización en China, la gran historia de la ciencia china."
+     },
+     "wiki": {
+      "en": "Joseph Needham",
+      "es": "Joseph Needham"
+     }
+    },
+    {
+     "id": "joseph-edkins",
+     "name": {
+      "en": "Joseph Edkins",
+      "es": "Joseph Edkins"
+     },
+     "at": [
+      121.4737,
+      31.2304
+     ],
+     "cat": "inventor",
+     "type": "person",
+     "date": "1848",
+     "life": [
+      "1823",
+      "1905"
+     ],
+     "place": {
+      "en": "Shanghai, China",
+      "es": "Shanghái, China"
+     },
+     "text": {
+      "en": "A British missionary and scholar who reached China in 1848 and spent 57 years there. Comparing China with Japan, he named papermaking, printing, the compass and gunpowder as China's great inventions.",
+      "es": "Un misionero y estudioso británico que llegó a China en 1848 y vivió allí 57 años. Al comparar China con Japón, nombró la fabricación del papel, la imprenta, la brújula y la pólvora como los grandes inventos de China."
+     },
+     "wiki": {
+      "en": "Joseph Edkins",
+      "es": ""
+     }
+    },
+    {
+     "id": "paper",
+     "name": {
+      "en": "Paper",
+      "es": "El papel"
+     },
+     "at": [
+      112.6178,
+      34.7231
+     ],
+     "cat": "print",
+     "type": "invention",
+     "date": "105",
+     "by": {
+      "en": "Cai Lun",
+      "es": "Cai Lun"
+     },
+     "place": {
+      "en": "Luoyang, China (the Han capital)",
+      "es": "Luoyang, China (la capital de los Han)"
+     },
+     "text": {
+      "en": "Sheets of plant fibre beaten to a pulp, caught on a screen and dried. Made in China from the 2nd century BC and improved by Cai Lun in 105, it reached Europe about a thousand years later.",
+      "es": "Hojas de fibra vegetal machacada hasta formar una pasta, recogida en un tamiz y secada. Se hacía en China desde el siglo II a. C.; Cai Lun lo mejoró en el año 105 y llegó a Europa unos mil años después."
+     },
+     "facts": [
+      {
+       "label": {
+        "en": "Cai Lun's recipe",
+        "es": "La receta de Cai Lun"
+       },
+       "value": {
+        "en": "Tree bark, hemp waste, old rags and fishing nets",
+        "es": "Corteza de árbol, restos de cáñamo, trapos viejos y redes de pesca"
+       }
+      }
+     ],
+     "wiki": {
+      "en": "Paper",
+      "es": "Papel"
+     },
+     "img": "Chinese hemp paper western han.jpg"
+    },
+    {
+     "id": "magnetic-compass",
+     "name": {
+      "en": "The magnetic compass",
+      "es": "La brújula"
+     },
+     "icon": "🧭",
+     "at": [
+      119.4316,
+      32.1905
+     ],
+     "cat": "transport",
+     "type": "invention",
+     "date": "1088",
+     "by": {
+      "en": "Chinese geomancers",
+      "es": "Geománticos chinos"
+     },
+     "place": {
+      "en": "Song China; first described at Zhenjiang, Jiangsu",
+      "es": "China de los Song; descrita por primera vez en Zhenjiang, Jiangsu"
+     },
+     "text": {
+      "en": "A magnetised needle that turns to point north and south. First clearly described by Shen Kuo in 1088, it guided Chinese ships by the 1110s and reached the Indian Ocean and Europe by about 1190–1230.",
+      "es": "Una aguja imantada que gira hasta apuntar al norte y al sur. Descrita con claridad por Shen Kuo en 1088, guiaba barcos chinos hacia 1110 y llegó al océano Índico y a Europa hacia 1190-1230."
+     },
+     "wiki": {
+      "en": "Compass",
+      "es": "Brújula"
+     },
+     "img": "Chinese Geomantic Compass c. 1760, National Maritime Museum.JPG"
+    },
+    {
+     "id": "gunpowder",
+     "name": {
+      "en": "Gunpowder",
+      "es": "La pólvora"
+     },
+     "at": [
+      108.9534,
+      34.2658
+     ],
+     "cat": "weapons",
+     "type": "invention",
+     "date": "850",
+     "by": {
+      "en": "Chinese alchemists",
+      "es": "Alquimistas chinos"
+     },
+     "place": {
+      "en": "Tang China (exactly where is unknown); here, Chang'an",
+      "es": "China de los Tang (no se sabe dónde exactamente); aquí, Chang'an"
+     },
+     "text": {
+      "en": "A mix of saltpetre, sulphur and charcoal that burns fast and, with enough saltpetre, explodes. Chinese alchemists found it in the 9th century while looking for an elixir of long life.",
+      "es": "Una mezcla de salitre, azufre y carbón que arde muy rápido y, con suficiente salitre, explota. Alquimistas chinos la descubrieron en el siglo IX mientras buscaban un elixir de larga vida."
+     },
+     "facts": [
+      {
+       "label": {
+        "en": "In Chinese",
+        "es": "En chino"
+       },
+       "value": {
+        "en": "huoyao, 'fire drug'",
+        "es": "huoyao, «medicina de fuego»"
+       }
+      }
+     ],
+     "wiki": {
+      "en": "Gunpowder",
+      "es": "Pólvora"
+     }
+    }
+   ]
+  }
+ ],
+ "outcome": {
+  "en": "Paper, printing, the compass and gunpowder were born in China between the 2nd century BC and the 11th century and reached Europe through the Islamic world and the Mongol empire, often centuries later. Together they helped make the modern world: cheap books, ocean voyages and the guns of empires. In 2026 paper and print are still everywhere, compasses work beside satellite navigation, and gunpowder lives on in fireworks and mining, while historians keep debating which inventions travelled and which were made again.",
+  "es": "El papel, la imprenta, la brújula y la pólvora nacieron en China entre el siglo II a. C. y el siglo XI y llegaron a Europa a través del mundo islámico y del imperio mongol, a menudo siglos después. Juntos ayudaron a crear el mundo moderno: libros baratos, viajes oceánicos y las armas de los imperios. En 2026, el papel y lo impreso siguen en todas partes, las brújulas funcionan junto a la navegación por satélite y la pólvora sigue viva en los fuegos artificiales y la minería, mientras los historiadores siguen debatiendo qué inventos viajaron y cuáles se inventaron de nuevo."
+ },
+ "sources": [
+  {
+   "title": "Wikipedia: Four Great Inventions",
+   "url": "https://en.wikipedia.org/wiki/Four_Great_Inventions"
+  },
+  {
+   "title": "Wikipedia: History of paper",
+   "url": "https://en.wikipedia.org/wiki/History_of_paper"
+  },
+  {
+   "title": "Wikipedia: Paper",
+   "url": "https://en.wikipedia.org/wiki/Paper"
+  },
+  {
+   "title": "Wikipedia: Papermaking",
+   "url": "https://en.wikipedia.org/wiki/Papermaking"
+  },
+  {
+   "title": "Wikipedia: Cai Lun",
+   "url": "https://en.wikipedia.org/wiki/Cai_Lun"
+  },
+  {
+   "title": "Wikipedia: Fangmatan",
+   "url": "https://en.wikipedia.org/wiki/Fangmatan"
+  },
+  {
+   "title": "Wikipedia: Battle of Talas",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Talas"
+  },
+  {
+   "title": "Wikipedia: Samarkand",
+   "url": "https://en.wikipedia.org/wiki/Samarkand"
+  },
+  {
+   "title": "Wikipedia: Woodblock printing",
+   "url": "https://en.wikipedia.org/wiki/Woodblock_printing"
+  },
+  {
+   "title": "Wikipedia: Diamond Sutra",
+   "url": "https://en.wikipedia.org/wiki/Diamond_Sutra"
+  },
+  {
+   "title": "Wikipedia: Mogao Caves",
+   "url": "https://en.wikipedia.org/wiki/Mogao_Caves"
+  },
+  {
+   "title": "Wikipedia: Gunpowder",
+   "url": "https://en.wikipedia.org/wiki/Gunpowder"
+  },
+  {
+   "title": "Wikipedia: History of gunpowder",
+   "url": "https://en.wikipedia.org/wiki/History_of_gunpowder"
+  },
+  {
+   "title": "Wikipedia: Fire arrow",
+   "url": "https://en.wikipedia.org/wiki/Fire_arrow"
+  },
+  {
+   "title": "Wikipedia: Wujing Zongyao",
+   "url": "https://en.wikipedia.org/wiki/Wujing_Zongyao"
+  },
+  {
+   "title": "Wikipedia: History of the compass",
+   "url": "https://en.wikipedia.org/wiki/History_of_the_compass"
+  },
+  {
+   "title": "Wikipedia: Compass",
+   "url": "https://en.wikipedia.org/wiki/Compass"
+  },
+  {
+   "title": "Wikipedia: Lunheng",
+   "url": "https://en.wikipedia.org/wiki/Lunheng"
+  },
+  {
+   "title": "Wikipedia: Shen Kuo",
+   "url": "https://en.wikipedia.org/wiki/Shen_Kuo"
+  },
+  {
+   "title": "Wikipedia: Dream Pool Essays",
+   "url": "https://en.wikipedia.org/wiki/Dream_Pool_Essays"
+  },
+  {
+   "title": "Wikipedia: Bi Sheng",
+   "url": "https://en.wikipedia.org/wiki/Bi_Sheng"
+  },
+  {
+   "title": "Wikipedia: Movable type",
+   "url": "https://en.wikipedia.org/wiki/Movable_type"
+  },
+  {
+   "title": "Wikipedia: Zhu Yu (author)",
+   "url": "https://en.wikipedia.org/wiki/Zhu_Yu_(author)"
+  },
+  {
+   "title": "Wikipedia: Guangzhou",
+   "url": "https://en.wikipedia.org/wiki/Guangzhou"
+  },
+  {
+   "title": "Wikipedia: Quanzhou",
+   "url": "https://en.wikipedia.org/wiki/Quanzhou"
+  },
+  {
+   "title": "Wikipedia: Xàtiva",
+   "url": "https://en.wikipedia.org/wiki/X%C3%A0tiva"
+  },
+  {
+   "title": "Wikipedia: Missal of Silos",
+   "url": "https://en.wikipedia.org/wiki/Missal_of_Silos"
+  },
+  {
+   "title": "Wikipedia: Fire lance",
+   "url": "https://en.wikipedia.org/wiki/Fire_lance"
+  },
+  {
+   "title": "Wikipedia: Siege of Kaifeng (1232)",
+   "url": "https://en.wikipedia.org/wiki/Siege_of_Kaifeng_(1232)"
+  },
+  {
+   "title": "Wikipedia: Thunder crash bomb",
+   "url": "https://en.wikipedia.org/wiki/Thunder_crash_bomb"
+  },
+  {
+   "title": "Wikipedia: Fabriano",
+   "url": "https://en.wikipedia.org/wiki/Fabriano"
+  },
+  {
+   "title": "Wikipedia: Amalfi",
+   "url": "https://en.wikipedia.org/wiki/Amalfi"
+  },
+  {
+   "title": "Wikipedia: Watermark",
+   "url": "https://en.wikipedia.org/wiki/Watermark"
+  },
+  {
+   "title": "Wikipedia: Alexander Neckam",
+   "url": "https://en.wikipedia.org/wiki/Alexander_Neckam"
+  },
+  {
+   "title": "Wikipedia: Mohammad Aufi",
+   "url": "https://en.wikipedia.org/wiki/Mohammad_Aufi"
+  },
+  {
+   "title": "Wikipedia: Flavio Gioja",
+   "url": "https://en.wikipedia.org/wiki/Flavio_Gioja"
+  },
+  {
+   "title": "Wikipedia: Petrus Peregrinus de Maricourt",
+   "url": "https://en.wikipedia.org/wiki/Petrus_Peregrinus_de_Maricourt"
+  },
+  {
+   "title": "Wikipedia: Hasan al-Rammah",
+   "url": "https://en.wikipedia.org/wiki/Hasan_al-Rammah"
+  },
+  {
+   "title": "Wikipedia: Roger Bacon",
+   "url": "https://en.wikipedia.org/wiki/Roger_Bacon"
+  },
+  {
+   "title": "Wikipedia: Heilongjiang hand cannon",
+   "url": "https://en.wikipedia.org/wiki/Heilongjiang_hand_cannon"
+  },
+  {
+   "title": "Wikipedia: Xanadu Gun",
+   "url": "https://en.wikipedia.org/wiki/Xanadu_Gun"
+  },
+  {
+   "title": "Wikipedia: Shangdu",
+   "url": "https://en.wikipedia.org/wiki/Shangdu"
+  },
+  {
+   "title": "Wikipedia: Cannon",
+   "url": "https://en.wikipedia.org/wiki/Cannon"
+  },
+  {
+   "title": "Wikipedia: Walter de Milemete",
+   "url": "https://en.wikipedia.org/wiki/Walter_de_Milemete"
+  },
+  {
+   "title": "Wikipedia: Jikji",
+   "url": "https://en.wikipedia.org/wiki/Jikji"
+  },
+  {
+   "title": "Wikipedia: Wang Zhen (inventor)",
+   "url": "https://en.wikipedia.org/wiki/Wang_Zhen_(inventor)"
+  },
+  {
+   "title": "Wikipedia: Tripitaka Koreana",
+   "url": "https://en.wikipedia.org/wiki/Tripitaka_Koreana"
+  },
+  {
+   "title": "Wikipedia: Johannes Gutenberg",
+   "url": "https://en.wikipedia.org/wiki/Johannes_Gutenberg"
+  },
+  {
+   "title": "Wikipedia: Gutenberg Bible",
+   "url": "https://en.wikipedia.org/wiki/Gutenberg_Bible"
+  },
+  {
+   "title": "Wikipedia: Global spread of the printing press",
+   "url": "https://en.wikipedia.org/wiki/Global_spread_of_the_printing_press"
+  },
+  {
+   "title": "Wikipedia: Francis Bacon",
+   "url": "https://en.wikipedia.org/wiki/Francis_Bacon"
+  },
+  {
+   "title": "Wikipedia: Juan González de Mendoza",
+   "url": "https://en.wikipedia.org/wiki/Juan_Gonz%C3%A1lez_de_Mendoza"
+  },
+  {
+   "title": "Wikipedia: Joseph Edkins",
+   "url": "https://en.wikipedia.org/wiki/Joseph_Edkins"
+  },
+  {
+   "title": "Wikipedia: Joseph Needham",
+   "url": "https://en.wikipedia.org/wiki/Joseph_Needham"
+  },
+  {
+   "title": "Wikipedia: 2008 Summer Olympics opening ceremony",
+   "url": "https://en.wikipedia.org/wiki/2008_Summer_Olympics_opening_ceremony"
+  }
+ ]
+}

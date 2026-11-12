@@ -1,0 +1,1073 @@
+{
+  "id": "saving-natures-wonders",
+  "name": { "en": "Saving nature's wonders", "es": "Salvar las maravillas de la naturaleza" },
+  "icon": "🌿",
+  "era": "contemporary",
+  "region": { "en": "The whole world", "es": "El mundo entero" },
+  "start": "1978",
+  "end": "2026",
+  "summary": {
+    "en": "From the Galápagos and Yellowstone on the first list of 1978 to the new sites of 2026: how natural World Heritage was chosen, put in danger and fought for, from coral reefs and mangroves to gorillas, wolves and the last vaquitas.",
+    "es": "De las Galápagos y Yellowstone en la primera lista de 1978 a los nuevos sitios de 2026: cómo se eligió el patrimonio natural de la humanidad, cómo estuvo en peligro y cómo se luchó por él, de los arrecifes de coral y los manglares a los gorilas, los lobos y las últimas vaquitas."
+  },
+  "camera": { "lon": -30, "lat": 10, "zoom": 1.2 },
+  "sides": [
+    { "id": "listed", "name": { "en": "Natural World Heritage sites", "es": "Sitios naturales del Patrimonio Mundial" }, "color": "#16a085" },
+    { "id": "danger", "name": { "en": "On the List of World Heritage in Danger", "es": "En la Lista del Patrimonio Mundial en Peligro" }, "color": "#c0392b" },
+    { "id": "wildlife", "name": { "en": "Animals on the move", "es": "Animales en movimiento" }, "color": "#e67e22" },
+    { "id": "water", "name": { "en": "Flowing water", "es": "Agua que corre" }, "color": "#5dade2" }
+  ],
+  "defs": {
+    "galapagos": { "land": { "poly": [[-92.1, 1.8], [-89.1, 1.8], [-89.1, -1.5], [-92.1, -1.5]] } },
+    "yellowstone": { "poly": [[-111.15, 45.11], [-109.83, 45.11], [-109.83, 44.13], [-111.15, 44.13]] },
+    "serengeti": { "and": ["TZA", { "poly": [[33.85, -2.05], [34.3, -1.85], [34.7, -1.4], [35.3, -1.4], [35.35, -2.3], [35.2, -2.9], [34.85, -3.3], [34.5, -3.1], [34.4, -2.5], [33.85, -2.3]] }] },
+    "gbr": { "minus": [{ "poly": [[142.4, -10.5], [144.6, -10.5], [145.2, -12.6], [145.6, -14.3], [146.4, -15.8], [147.2, -17.3], [148.8, -18.6], [150.4, -19.6], [152.3, -20.9], [152.9, -21.8], [153.2, -23.2], [152.9, -24.6], [152.0, -24.9], [150.2, -23.3], [148.6, -21.0], [146.0, -19.3], [145.4, -17.0], [144.9, -15.2], [143.4, -13.3], [142.9, -12.0], [142.3, -10.9]] }, "AUS", "PNG"] },
+    "iguazu": { "land": { "poly": [[-54.6, -25.75], [-54.45, -25.55], [-54.2, -25.3], [-53.9, -25.05], [-53.6, -25.1], [-53.7, -25.5], [-54.0, -25.7], [-54.15, -25.9], [-54.5, -25.9]] } },
+    "sundarbans": { "land": { "poly": [[88.6, 22.15], [89.9, 22.3], [89.95, 21.6], [88.6, 21.6]] } },
+    "virunga": { "and": ["COD", { "poly": [[29.15, -1.62], [29.45, -1.5], [29.62, -1.35], [29.72, -0.95], [29.6, -0.55], [29.65, -0.15], [29.95, 0.45], [30.0, 0.9], [29.7, 0.75], [29.45, 0.2], [29.3, -0.05], [29.15, -0.45], [29.15, -1.0], [29.05, -1.3]] }] },
+    "everglades": { "land": { "poly": [[-81.45, 25.9], [-80.85, 25.78], [-80.55, 25.62], [-80.45, 25.35], [-80.6, 25.05], [-81.15, 25.05], [-81.35, 25.4]] } },
+    "okavango": { "and": ["BWA", { "poly": [[21.75, -18.15], [22.3, -18.25], [22.8, -18.55], [23.5, -18.9], [23.8, -19.6], [23.4, -20.05], [22.7, -19.95], [22.1, -19.5], [21.9, -18.8]] }] },
+    "belize": { "minus": [{ "poly": [[-88.25, 18.2], [-87.7, 18.2], [-87.35, 17.4], [-87.55, 16.6], [-88.0, 16.05], [-88.55, 16.05], [-88.35, 16.5], [-88.2, 17.2], [-88.15, 17.6]] }, "BLZ", "MEX", "GTM"] },
+    "gulf": { "minus": [{ "poly": [[-114.95, 31.9], [-114.3, 31.6], [-112.9, 30.2], [-111.6, 28.3], [-110.4, 27.0], [-109.2, 25.6], [-108.6, 24.8], [-109.4, 23.1], [-110.2, 23.5], [-110.8, 24.6], [-111.7, 26.3], [-112.6, 27.8], [-113.4, 29.0], [-114.6, 30.6]] }, "MEX", "USA"] },
+    "boma": { "and": ["SSD", { "poly": [[31.4, 4.6], [33.0, 4.5], [34.2, 4.9], [34.9, 5.6], [34.6, 6.8], [34.0, 7.8], [33.2, 8.1], [32.2, 7.6], [31.6, 6.8], [31.3, 5.6]] }] },
+    "okefenokee": { "land": { "circle": [-82.32, 30.8], "km": 22 } }
+  },
+  "steps": [
+    {
+      "date": "1978-09",
+      "title": { "en": "The first natural wonders", "es": "Las primeras maravillas naturales" },
+      "text": {
+        "en": "In September 1978 UNESCO's World Heritage Committee named the first 12 World Heritage sites. Four were natural: the Galápagos Islands, Yellowstone, Canada's Nahanni and Ethiopia's Simien Mountains.",
+        "es": "En septiembre de 1978, el Comité del Patrimonio Mundial de la UNESCO nombró los primeros 12 sitios del Patrimonio Mundial. Cuatro eran naturales: las islas Galápagos, Yellowstone, Nahanni en Canadá y las montañas Simien en Etiopía."
+      },
+      "details": {
+        "en": "The World Heritage Convention, adopted by UNESCO in 1972, asks countries to protect places of 'outstanding universal value' for all humanity, natural as well as cultural. Meeting in Washington in September 1978, the Committee drew up the first list: 12 sites in seven countries, from Kraków to the Island of Gorée. Ecuador's Galápagos took reference number 1. Their tortoises, marine iguanas and finches had helped Charles Darwin work out evolution; Ecuador made 97% of their land a national park in 1959, and the Charles Darwin Research Station has worked there since 1964. Yellowstone, created by the US Congress in 1872, is widely seen as the world's first national park. Listing brought fame and help, but no guarantee: both would later go on the List of World Heritage in Danger, the Committee's warning that a site's value is at risk.",
+        "es": "La Convención del Patrimonio Mundial, adoptada por la UNESCO en 1972, pide a los países proteger los lugares de 'valor universal excepcional' para toda la humanidad, tanto naturales como culturales. Reunido en Washington en septiembre de 1978, el Comité hizo la primera lista: 12 sitios en siete países, de Cracovia a la isla de Gorea. Las Galápagos de Ecuador recibieron el número de referencia 1. Sus tortugas, iguanas marinas y pinzones habían ayudado a Charles Darwin a pensar la evolución; Ecuador declaró parque nacional el 97 % de su tierra en 1959, y la Estación Científica Charles Darwin trabaja allí desde 1964. Yellowstone, creado por el Congreso de Estados Unidos en 1872, suele considerarse el primer parque nacional del mundo. Entrar en la lista trajo fama y ayuda, pero no garantías: los dos pasarían más tarde por la Lista del Patrimonio Mundial en Peligro, la advertencia del Comité de que el valor de un sitio está amenazado."
+      },
+      "camera": { "lon": -100, "lat": 22, "zoom": 2.1 },
+      "control": { "listed": [{ "ref": "galapagos" }, { "ref": "yellowstone" }] },
+      "places": [
+        {
+          "id": "galapagos-islands",
+          "name": { "en": "Galápagos Islands", "es": "Islas Galápagos" },
+          "at": [-90.3333, -0.6167],
+          "cat": "nature",
+          "type": "site",
+          "date": "1978",
+          "place": { "en": "Galápagos Province, Ecuador", "es": "Provincia de Galápagos, Ecuador" },
+          "text": {
+            "en": "Volcanic islands about 1,000 km off Ecuador, home to giant tortoises, marine iguanas and Darwin's finches. As site number 1, they opened the World Heritage List in 1978.",
+            "es": "Islas volcánicas a unos 1000 km de Ecuador, hogar de tortugas gigantes, iguanas marinas y pinzones de Darwin. Como sitio número 1, abrieron la Lista del Patrimonio Mundial en 1978."
+          },
+          "details": {
+            "en": "A Spanish bishop, Tomás de Berlanga, came upon the islands by chance in 1535. Pirates, whalers and settlers later took thousands of tortoises for meat and oil and left goats, rats and pigs behind. Ecuador claimed the islands in 1832. Today about 33,000 people live in towns on four islands, and the rest of the land is national park. In 1986 Ecuador also protected the sea around them; the Galápagos Marine Reserve, now about 133,000 km², was added to the World Heritage site in 2001.",
+            "es": "Un obispo español, Tomás de Berlanga, dio con las islas por casualidad en 1535. Piratas, balleneros y colonos se llevaron después miles de tortugas por su carne y su aceite, y dejaron cabras, ratas y cerdos. Ecuador tomó posesión de las islas en 1832. Hoy unas 33 000 personas viven en pueblos de cuatro islas, y el resto de la tierra es parque nacional. En 1986 Ecuador protegió también el mar que las rodea; la Reserva Marina de Galápagos, hoy de unos 133 000 km², se sumó al sitio del Patrimonio Mundial en 2001."
+          },
+          "wiki": { "en": "Galápagos Islands", "es": "Islas Galápagos" },
+          "whs": 1
+        },
+        {
+          "id": "charles-darwin-research-station",
+          "name": { "en": "Charles Darwin Research Station", "es": "Estación Científica Charles Darwin" },
+          "at": [-90.3041, -0.7419],
+          "cat": "rescue",
+          "type": "institution",
+          "date": "1964",
+          "place": { "en": "Puerto Ayora, Santa Cruz Island, Galápagos, Ecuador", "es": "Puerto Ayora, isla Santa Cruz, Galápagos, Ecuador" },
+          "text": {
+            "en": "Opened in 1964 by the Charles Darwin Foundation, set up in 1959 with the backing of UNESCO and the IUCN. With Ecuador's park rangers, its scientists study the islands, breed young tortoises and return them to the wild.",
+            "es": "Abierta en 1964 por la Fundación Charles Darwin, creada en 1959 con el apoyo de la UNESCO y la UICN. Con los guardaparques de Ecuador, sus científicos estudian las islas, crían tortugas jóvenes y las devuelven a la naturaleza."
+          },
+          "wiki": { "en": "Charles Darwin Research Station", "es": "Estación Científica Charles Darwin" },
+          "whs": 1
+        },
+        {
+          "id": "galapagos-tortoise",
+          "name": { "en": "Galápagos giant tortoise", "es": "Tortuga gigante de Galápagos" },
+          "at": [-91.1167, -0.4333],
+          "cat": "wildlife",
+          "type": "species",
+          "date": "1970",
+          "place": { "en": "Alcedo Volcano, Isabela Island, Galápagos, Ecuador", "es": "Volcán Alcedo, isla Isabela, Galápagos, Ecuador" },
+          "text": {
+            "en": "The tortoises, which can live over 100 years, gave the islands their name: galápago is an old Spanish word for tortoise. Hunting and alien animals cut them from over 250,000 to about 15,000 by the 1970s.",
+            "es": "Las tortugas, que pueden vivir más de 100 años, dieron nombre a las islas: galápago es una vieja palabra española para tortuga. La caza y los animales introducidos las redujeron de más de 250 000 a unas 15 000 hacia 1970."
+          },
+          "wiki": { "en": "Galápagos tortoise", "es": "Complejo Chelonoidis nigra" }
+        },
+        {
+          "id": "yellowstone",
+          "name": { "en": "Yellowstone", "es": "Yellowstone" },
+          "at": [-110.5, 44.6],
+          "cat": "nature",
+          "type": "site",
+          "date": "1978",
+          "place": { "en": "Wyoming, Montana and Idaho, United States", "es": "Wyoming, Montana e Idaho, Estados Unidos" },
+          "text": {
+            "en": "Created in 1872 and widely seen as the world's first national park. More than half the world's geysers boil up here over a giant volcano, and bison, elk, bears and wolves roam its high plateau.",
+            "es": "Creado en 1872, suele considerarse el primer parque nacional del mundo. Aquí brotan más de la mitad de los géiseres del planeta, sobre un volcán gigante, y bisontes, alces, osos y lobos recorren su alta meseta."
+          },
+          "details": {
+            "en": "Native peoples used the region for at least 11,000 years: Shoshone, Crow, Blackfoot, Nez Perce and others came to hunt and to quarry obsidian. After 1872 they were pushed out of the new park, and the United States never ratified the 1868 treaty that let the Tukudeka, the 'Sheepeaters', keep hunting there. The US Army ran the park from 1886 to 1916, until the new National Park Service took over. Its bison, hunted almost to extinction across North America, fell to fewer than 50 in the park in 1902; about 6,000 roamed there in 2023.",
+            "es": "Los pueblos indígenas usaron la región durante al menos 11 000 años: shoshones, crows, pies negros, nez percés y otros venían a cazar y a sacar obsidiana. Después de 1872 fueron expulsados del nuevo parque, y Estados Unidos nunca ratificó el tratado de 1868 que permitía a los tukudeka, los 'comedores de borregos', seguir cazando allí. El ejército estadounidense administró el parque de 1886 a 1916, hasta que lo tomó el nuevo Servicio de Parques Nacionales. Sus bisontes, cazados casi hasta extinguirse en toda Norteamérica, bajaron a menos de 50 en el parque en 1902; en 2023 vivían allí unos 6000."
+          },
+          "wiki": { "en": "Yellowstone National Park", "es": "Parque nacional de Yellowstone" },
+          "whs": 28
+        }
+      ]
+    },
+    {
+      "date": "1981-10",
+      "title": { "en": "The endless plains", "es": "Las llanuras sin fin" },
+      "text": {
+        "en": "Meeting in Sydney in October 1981, the Committee listed Tanzania's Serengeti, where some 1.5 million wildebeest and 250,000 zebras follow the rains each year on a loop of about 800 km.",
+        "es": "Reunido en Sídney en octubre de 1981, el Comité inscribió el Serengueti de Tanzania, donde cada año un millón y medio de ñus y 250 000 cebras siguen las lluvias en un circuito de unos 800 km."
+      },
+      "details": {
+        "en": "A national park since 1940, the Serengeti covers 14,763 km² of grassland and woodland and, with Kenya's Maasai Mara, forms one great ecosystem. Wildebeest calve on the southern plains from January to March, cross the western corridor from May to July, then head north to the Mara River, where predators wait at the crossings. In 1959 the German zoo director Bernhard Grzimek made the film and best-selling book Serengeti Shall Not Die; his son Michael was killed in a plane crash while they worked there. Protection had a cost: in the 1950s the British colonial government moved the Maasai, who grazed their cattle on these plains, out of the park, most of them to Ngorongoro. Today's threats are poaching, farms and towns at the park's edge, and a highway across the north, debated from 2005 to 2012 and again in 2024.",
+        "es": "Parque nacional desde 1940, el Serengueti abarca 14 763 km² de pastizales y bosques y forma, con el Masái Mara de Kenia, un solo gran ecosistema. Los ñus paren en las llanuras del sur de enero a marzo, cruzan el corredor occidental de mayo a julio y luego suben hacia el río Mara, donde los depredadores esperan en los cruces. En 1959 el director de zoológico alemán Bernhard Grzimek hizo la película y el libro de gran éxito El Serengueti no morirá; su hijo Michael murió en un accidente de avioneta mientras trabajaban allí. La protección tuvo un costo: en la década de 1950 el gobierno colonial británico sacó del parque a los masái, que pastoreaban su ganado en estas llanuras, y llevó a la mayoría a Ngorongoro. Hoy lo amenazan la caza furtiva, los cultivos y pueblos en sus bordes y una carretera por el norte, debatida de 2005 a 2012 y de nuevo en 2024."
+      },
+      "camera": { "lon": 34.75, "lat": -2.35, "zoom": 18 },
+      "control": { "listed": [{ "prev": true }, { "ref": "serengeti" }] },
+      "moves": [
+        { "side": "wildlife", "path": [[35.05, -2.95], [34.6, -2.75], [34.2, -2.25], [34.6, -1.85], [34.95, -1.55], [35.25, -1.85], [35.25, -2.5], [35.08, -2.9]], "by": "land", "icon": "🦓", "label": { "en": "The great migration", "es": "La gran migración" } }
+      ],
+      "places": [
+        {
+          "id": "serengeti",
+          "name": { "en": "Serengeti", "es": "Serengueti" },
+          "at": [34.8333, -2.3308],
+          "cat": "nature",
+          "type": "site",
+          "date": "1981",
+          "place": { "en": "Mara and Simiyu regions, Tanzania", "es": "Regiones de Mara y Simiyu, Tanzania" },
+          "text": {
+            "en": "Endless grass plains, often said to take their name from a Maasai word for 'the place where the land runs on forever'. The park has Africa's largest lion population and the greatest wildebeest migration on Earth.",
+            "es": "Llanuras de pasto sin fin, cuyo nombre suele atribuirse a una palabra masái que significa 'el lugar donde la tierra corre para siempre'. El parque tiene la mayor población de leones de África y la mayor migración de ñus del planeta."
+          },
+          "wiki": { "en": "Serengeti National Park", "es": "Parque nacional Serengueti" },
+          "whs": 156
+        },
+        {
+          "id": "wildebeest-migration",
+          "name": { "en": "The wildebeest migration", "es": "La migración de los ñus" },
+          "at": [34.95, -1.6],
+          "cat": "wildlife",
+          "type": "species",
+          "date": "1981",
+          "place": { "en": "Serengeti and Maasai Mara, Tanzania and Kenya", "es": "Serengueti y Masái Mara, Tanzania y Kenia" },
+          "text": {
+            "en": "About 1.5 million wildebeest, with zebras and gazelles, circle the Serengeti and the Maasai Mara each year after fresh grass. Some 500,000 calves are born in a few weeks, and about 250,000 animals die on the way.",
+            "es": "Un millón y medio de ñus, con cebras y gacelas, recorren cada año el Serengueti y el Masái Mara en busca de pasto fresco. Unas 500 000 crías nacen en pocas semanas, y unos 250 000 animales mueren en el camino."
+          },
+          "wiki": { "en": "Wildebeest", "es": "Connochaetes" }
+        },
+        {
+          "id": "bernhard-grzimek",
+          "name": { "en": "Bernhard Grzimek", "es": "Bernhard Grzimek" },
+          "at": [34.95, -2.15],
+          "cat": "person",
+          "type": "person",
+          "life": ["1909-04-24", "1987-03-13"],
+          "date": "1959",
+          "place": { "en": "Frankfurt, Germany; filmed in the Serengeti, Tanzania", "es": "Fráncfort, Alemania; filmó en el Serengueti, Tanzania" },
+          "text": {
+            "en": "The director of the Frankfurt Zoo, whose book and Oscar-winning film Serengeti Shall Not Die (1959) made the migration famous. He also pushed for moving Maasai herders out of the park.",
+            "es": "El director del zoológico de Fráncfort, cuyo libro y cuya película El Serengueti no morirá (1959), ganadora de un Óscar, hicieron famosa la migración. También impulsó la salida de los pastores masái del parque."
+          },
+          "wiki": { "en": "Bernhard Grzimek", "es": "Bernhard Grzimek" }
+        },
+        {
+          "id": "ngorongoro",
+          "name": { "en": "Ngorongoro", "es": "Ngorongoro" },
+          "at": [35.5833, -3.1667],
+          "cat": "landscape",
+          "type": "site",
+          "date": "1979",
+          "place": { "en": "Arusha Region, Tanzania", "es": "Región de Arusha, Tanzania" },
+          "text": {
+            "en": "A great volcanic crater and its highlands, set apart from the Serengeti in 1959 so that the Maasai moved out of the park could keep their herds. Since 2021 Tanzania has been moving Maasai out again, to Msomera.",
+            "es": "Un gran cráter volcánico y sus tierras altas, separados del Serengueti en 1959 para que los masái sacados del parque pudieran conservar sus rebaños. Desde 2021 Tanzania vuelve a trasladar masái, ahora a Msomera."
+          },
+          "details": {
+            "en": "Listed in 1979, Ngorongoro is a World Heritage site where wildlife and herders were meant to share the land; it was on the danger list from 1984 to 1989. Tanzania calls the move to Msomera, 600 km away, voluntary and pays those who go, but Human Rights Watch says the government has acted coercively, without the free and informed consent of the Maasai.",
+            "es": "Inscrito en 1979, Ngorongoro es un sitio del Patrimonio Mundial donde la fauna y los pastores debían compartir la tierra; estuvo en la lista en peligro de 1984 a 1989. Tanzania dice que el traslado a Msomera, a 600 km, es voluntario y paga a quienes se van, pero Human Rights Watch afirma que el gobierno ha actuado de forma coercitiva, sin el consentimiento libre e informado de los masái."
+          },
+          "wiki": { "en": "Ngorongoro Conservation Area", "es": "Zona de conservación de Ngorongoro" },
+          "whs": 39
+        }
+      ]
+    },
+    {
+      "date": "1981-10",
+      "title": { "en": "The largest reef on Earth", "es": "El arrecife más grande de la Tierra" },
+      "text": {
+        "en": "At the same meeting, the Great Barrier Reef joined the list: some 2,900 reefs and 900 islands along 2,300 km of Queensland's coast, the largest structure built by living things.",
+        "es": "En la misma reunión entró en la lista la Gran Barrera de Coral: unos 2900 arrecifes y 900 islas a lo largo de 2300 km de la costa de Queensland, la mayor estructura construida por seres vivos."
+      },
+      "details": {
+        "en": "Aboriginal Australians have lived along this coast for at least 40,000 years and Torres Strait Islanders for about 10,000; for some 70 clan groups the reef is part of their culture and spirituality. Its living reef began growing about 9,000 years ago, as the sea rose after the last ice age. In 1970 two Royal Commissions looked into drilling for oil on the reef, and drilling was stopped; in 1975 Australia created the Great Barrier Reef Marine Park. The reef holds more than 1,500 kinds of fish, 30 kinds of whales and dolphins, large herds of dugongs and nesting sea turtles. Its main threat, the Marine Park Authority says, is climate change: mass bleaching struck in 1998 and 2002, and much worse from 2016.",
+        "es": "Los aborígenes australianos viven en esta costa desde hace al menos 40 000 años, y los isleños del estrecho de Torres desde hace unos 10 000; para unos 70 clanes el arrecife es parte de su cultura y su espiritualidad. El arrecife vivo empezó a crecer hace unos 9000 años, cuando el mar subió tras la última glaciación. En 1970 dos comisiones reales estudiaron la perforación petrolera en el arrecife, y se prohibió; en 1975 Australia creó el Parque Marino de la Gran Barrera de Coral. El arrecife alberga más de 1500 especies de peces, 30 de ballenas y delfines, grandes grupos de dugongos y tortugas marinas que anidan. Su mayor amenaza, dice la autoridad del parque marino, es el cambio climático: hubo blanqueamientos masivos en 1998 y 2002, y mucho peores desde 2016."
+      },
+      "camera": { "lon": 148.5, "lat": -17.5, "zoom": 3.6 },
+      "control": { "listed": [{ "prev": true }, { "ref": "gbr" }] },
+      "places": [
+        {
+          "id": "great-barrier-reef",
+          "name": { "en": "Great Barrier Reef", "es": "Gran Barrera de Coral" },
+          "at": [145.8, -16.4],
+          "cat": "nature",
+          "type": "site",
+          "date": "1981",
+          "place": { "en": "Coral Sea, off Queensland, Australia", "es": "Mar del Coral, frente a Queensland, Australia" },
+          "text": {
+            "en": "The world's largest coral reef system, about 344,400 km² of reefs, islands and lagoons, built by billions of tiny coral polyps. It can be seen from space.",
+            "es": "El mayor sistema de arrecifes de coral del mundo, unos 344 400 km² de arrecifes, islas y lagunas, construido por miles de millones de diminutos pólipos de coral. Se ve desde el espacio."
+          },
+          "wiki": { "en": "Great Barrier Reef", "es": "Gran Barrera de Coral" },
+          "whs": 154
+        },
+        {
+          "id": "gbr-marine-park",
+          "name": { "en": "Great Barrier Reef Marine Park", "es": "Parque Marino de la Gran Barrera de Coral" },
+          "at": [146.8169, -19.259],
+          "cat": "rescue",
+          "type": "institution",
+          "date": "1975",
+          "place": { "en": "Townsville, Queensland, Australia", "es": "Townsville, Queensland, Australia" },
+          "text": {
+            "en": "Created in 1975, after oil drilling on the reef was stopped. Its zoning plan of 2004 raised the strictly protected share of the park from 4.5% to over a third, then a world benchmark.",
+            "es": "Creado en 1975, después de que se prohibiera perforar en busca de petróleo. Su plan de zonas de 2004 elevó la parte estrictamente protegida del parque del 4,5 % a más de un tercio, un modelo para el mundo."
+          },
+          "wiki": { "en": "Great Barrier Reef Marine Park", "es": "Parque marino de la Gran Barrera de Coral" },
+          "whs": 154
+        },
+        {
+          "id": "dugong",
+          "name": { "en": "Dugong", "es": "Dugongo" },
+          "at": [150.35, -22.25],
+          "cat": "wildlife",
+          "type": "species",
+          "date": "1981",
+          "place": { "en": "Great Barrier Reef, Australia", "es": "Gran Barrera de Coral, Australia" },
+          "text": {
+            "en": "A 'sea cow' that grazes on seagrass meadows, vulnerable to extinction. Hunting it has deep meaning for Aboriginal and Torres Strait Islander peoples; in 2011 four Traditional Owner groups agreed to stop, as numbers fell.",
+            "es": "Una 'vaca marina' que pasta en praderas submarinas, vulnerable a la extinción. Cazarla tiene hondo sentido para aborígenes e isleños del estrecho de Torres; en 2011 cuatro grupos de dueños tradicionales acordaron dejar de cazarla."
+          },
+          "wiki": { "en": "Dugong", "es": "Dugong dugon" }
+        }
+      ]
+    },
+    {
+      "date": "1984",
+      "title": { "en": "Big water on a border", "es": "Agua grande en la frontera" },
+      "text": {
+        "en": "Argentina's Iguazú National Park was listed in 1984 and Brazil's Iguaçu in 1986. Between them the river roars over some 275 falls along 2.7 km, amid a rare stretch of Atlantic forest.",
+        "es": "El Parque Nacional Iguazú, en Argentina, entró en la lista en 1984, y el de Iguaçu, en Brasil, en 1986. Entre ambos, el río se precipita por unos 275 saltos a lo largo de 2,7 km, en un raro tramo de selva atlántica."
+      },
+      "details": {
+        "en": "Iguazú comes from the Guaraní or Tupí words for 'big water'; Guaraní peoples lived here for some thousand years before Spanish and Portuguese conquerors arrived. Argentina created its park in 1934 and Brazil in 1939; together they protect about 2,600 km² of forest, with jaguars, tapirs, ocelots, giant anteaters and harpy eagles. The border runs through the Devil's Throat, a chasm 80–90 m wide where the falls are highest. In 1999 UNESCO put Brazil's park on the danger list: settlers had illegally reopened the Colono Road through its forest, and dams upstream and helicopter flights over the falls added to the worry. It came off the list in 2001. Argentina bans helicopter tours over the falls.",
+        "es": "Iguazú viene de las palabras guaraníes o tupíes para 'agua grande'; los pueblos guaraníes vivieron aquí durante unos mil años antes de que llegaran los conquistadores españoles y portugueses. Argentina creó su parque en 1934 y Brasil en 1939; juntos protegen unos 2600 km² de selva, con yaguaretés, tapires, ocelotes, osos hormigueros gigantes y águilas arpías. La frontera pasa por la Garganta del Diablo, un abismo de 80 a 90 m de ancho donde los saltos son más altos. En 1999 la UNESCO incluyó el parque brasileño en la lista en peligro: unos colonos habían reabierto ilegalmente la Estrada do Colono a través de su selva, y las represas río arriba y los vuelos en helicóptero sobre las cataratas aumentaban la preocupación. Salió de la lista en 2001. Argentina prohíbe los paseos en helicóptero sobre las cataratas."
+      },
+      "camera": { "lon": -54.1, "lat": -25.45, "zoom": 22 },
+      "control": { "listed": [{ "prev": true }, { "ref": "iguazu" }] },
+      "places": [
+        {
+          "id": "iguazu",
+          "name": { "en": "Iguazú Falls", "es": "Cataratas del Iguazú" },
+          "at": [-54.4364, -25.6953],
+          "cat": "nature",
+          "type": "site",
+          "date": "1984",
+          "place": { "en": "Misiones, Argentina, and Paraná, Brazil", "es": "Misiones, Argentina, y Paraná, Brasil" },
+          "text": {
+            "en": "Some 275 waterfalls in a horseshoe 2.7 km wide, dropping up to about 80 m into a canyon. About 80% of the falls lie on the Argentine side; most of the river's basin lies in Brazil.",
+            "es": "Unos 275 saltos en una herradura de 2,7 km de ancho, que caen hasta unos 80 m en un cañón. Cerca del 80 % de los saltos están del lado argentino; casi toda la cuenca del río está en Brasil."
+          },
+          "wiki": { "en": "Iguazu Falls", "es": "Cataratas del Iguazú" },
+          "whs": 303
+        },
+        {
+          "id": "estrada-do-colono",
+          "name": { "en": "The Colono Road", "es": "La Estrada do Colono" },
+          "at": [-53.95, -25.5],
+          "cat": "threat",
+          "type": "event",
+          "date": "1999",
+          "place": { "en": "Iguaçu National Park, Paraná, Brazil", "es": "Parque Nacional do Iguaçu, Paraná, Brasil" },
+          "text": {
+            "en": "The 'Settlers' Road', an old track across Brazil's Iguaçu National Park, illegally reopened in the late 1990s. It put the park on the danger list from 1999 to 2001.",
+            "es": "La 'Carretera de los Colonos', un viejo camino que cruzaba el Parque Nacional do Iguaçu, en Brasil, reabierto ilegalmente a fines de los años noventa. Puso al parque en la lista en peligro de 1999 a 2001."
+          },
+          "wiki": { "en": "Iguaçu National Park", "es": "Parque nacional del Iguazú" },
+          "whs": 355
+        },
+        {
+          "id": "jaguar",
+          "name": { "en": "Jaguar", "es": "Yaguareté (jaguar)" },
+          "at": [-54.3333, -25.6167],
+          "cat": "wildlife",
+          "type": "species",
+          "date": "1984",
+          "place": { "en": "Iguazú National Park, Misiones, Argentina", "es": "Parque Nacional Iguazú, Misiones, Argentina" },
+          "text": {
+            "en": "The largest cat of the Americas, yaguareté in Guaraní. Hunted and squeezed by farms and logging, it survives in the Atlantic forest mainly in a few large reserves such as Iguazú.",
+            "es": "El felino más grande de América, yaguareté en guaraní. Cazado y arrinconado por los cultivos y la tala, sobrevive en la selva atlántica sobre todo en unas pocas reservas grandes, como Iguazú."
+          },
+          "wiki": { "en": "Jaguar", "es": "Panthera onca" }
+        }
+      ]
+    },
+    {
+      "date": "1987-12",
+      "title": { "en": "Tigers of the mangroves", "es": "Tigres de los manglares" },
+      "text": {
+        "en": "India's Sundarbans National Park joined the list in 1987, and Bangladesh's Sundarbans in 1997. Together they hold the world's largest mangrove forest, where tigers swim from island to island.",
+        "es": "El Parque Nacional Sundarbans, en la India, entró en la lista en 1987, y los Sundarbans de Bangladés en 1997. Juntos guardan el mayor manglar del mundo, donde los tigres nadan de isla en isla."
+      },
+      "details": {
+        "en": "The Sundarbans, 'beautiful forest', probably named after the sundari mangrove tree, spread over about 10,000 km² of islands, mudflats and tidal channels where the Ganges, Brahmaputra and Meghna meet the sea; about 60% lies in Bangladesh. Camera traps counted about 180 tigers in 2011–2015, and estuarine crocodiles, Ganges river dolphins and river terrapins live here too. More than 4 million people live around the forest; honey gatherers, woodcutters and fishers go in for a living, after praying to Bonbibi for protection. Cyclones hit hard: Sidr damaged about 40% of the forest in 2007, and Aila struck in 2009. Rising seas push salt water further in, and in 2016 UNESCO criticized the coal-fired Rampal power station being built 14 km north of the forest.",
+        "es": "Los Sundarbans, 'bosque hermoso', llamados probablemente así por el mangle sundari, ocupan unos 10 000 km² de islas, marismas y canales de marea donde el Ganges, el Brahmaputra y el Meghna llegan al mar; cerca del 60 % está en Bangladés. Las cámaras trampa contaron unos 180 tigres en 2011-2015, y también viven aquí cocodrilos marinos, delfines del Ganges y tortugas de río. Más de 4 millones de personas viven alrededor del bosque; recolectores de miel, leñadores y pescadores entran a ganarse la vida, después de rezarle a Bonbibi para que los proteja. Los ciclones golpean con fuerza: el Sidr dañó cerca del 40 % del bosque en 2007, y el Aila llegó en 2009. El mar que sube empuja el agua salada tierra adentro, y en 2016 la UNESCO criticó la central de carbón de Rampal, construida a 14 km al norte del bosque."
+      },
+      "camera": { "lon": 89.25, "lat": 22.1, "zoom": 16 },
+      "control": { "listed": [{ "prev": true }, { "ref": "sundarbans" }] },
+      "places": [
+        {
+          "id": "sundarbans",
+          "name": { "en": "Sundarbans National Park", "es": "Parque Nacional Sundarbans" },
+          "at": [88.8852, 21.838],
+          "cat": "nature",
+          "type": "site",
+          "date": "1987",
+          "place": { "en": "South 24 Parganas, West Bengal, India", "es": "Sur 24 Parganas, Bengala Occidental, India" },
+          "text": {
+            "en": "The core of India's Sundarbans tiger reserve: 54 small islands of mangrove cut by channels of the Ganges delta, where tides rise and fall up to 8 m twice a day.",
+            "es": "El corazón de la reserva de tigres de los Sundarbans indios: 54 islitas de manglar cortadas por los canales del delta del Ganges, donde la marea sube y baja hasta 8 m dos veces al día."
+          },
+          "wiki": { "en": "Sundarbans National Park", "es": "Parque nacional de Sundarbans" },
+          "whs": 452
+        },
+        {
+          "id": "sundarbans-bangladesh",
+          "name": { "en": "The Sundarbans of Bangladesh", "es": "Los Sundarbans de Bangladés" },
+          "at": [89.5167, 22.0333],
+          "cat": "nature",
+          "type": "site",
+          "date": "1997",
+          "place": { "en": "Khulna Division, Bangladesh", "es": "División de Khulna, Bangladés" },
+          "text": {
+            "en": "Three wildlife sanctuaries in the larger, Bangladeshi part of the mangrove forest, listed in 1997. The forest shields the coast from storm surges and feeds millions with fish, honey and wood.",
+            "es": "Tres santuarios de fauna en la parte más grande del manglar, la de Bangladés, inscritos en 1997. El bosque protege la costa de las marejadas de los ciclones y da pescado, miel y madera a millones de personas."
+          },
+          "wiki": { "en": "Sundarbans", "es": "Sundarbans" },
+          "whs": 798
+        },
+        {
+          "id": "bengal-tiger",
+          "name": { "en": "Bengal tiger", "es": "Tigre de Bengala" },
+          "at": [89.3, 21.65],
+          "cat": "wildlife",
+          "type": "species",
+          "date": "2015",
+          "place": { "en": "Sundarbans, India and Bangladesh", "es": "Sundarbans, India y Bangladés" },
+          "text": {
+            "en": "The only tigers that live in a mangrove forest. They swim between islands, hunt deer and wild boar, and drink brackish water. About 180 were counted in 2011–2015.",
+            "es": "Los únicos tigres que viven en un manglar. Nadan entre las islas, cazan ciervos y jabalíes y beben agua salobre. Se contaron unos 180 en 2011-2015."
+          },
+          "wiki": { "en": "Bengal tiger", "es": "Panthera tigris tigris" }
+        },
+        {
+          "id": "bonbibi",
+          "name": { "en": "Honey gatherers and Bonbibi", "es": "Los recolectores de miel y Bonbibi" },
+          "at": [88.81, 22.165],
+          "cat": "person",
+          "date": "1987",
+          "place": { "en": "Gosaba, Sundarbans, West Bengal, India", "es": "Gosaba, Sundarbans, Bengala Occidental, India" },
+          "text": {
+            "en": "Before entering the forest, honey gatherers and woodcutters, Hindu and Muslim alike, pray to Bonbibi, the lady of the forest, to guard them from tigers.",
+            "es": "Antes de entrar al bosque, los recolectores de miel y los leñadores, hindúes y musulmanes por igual, le rezan a Bonbibi, la señora del bosque, para que los proteja de los tigres."
+          },
+          "wiki": { "en": "Bonbibi", "es": "" }
+        },
+        {
+          "id": "rampal-power-station",
+          "name": { "en": "Rampal power station", "es": "Central eléctrica de Rampal" },
+          "at": [89.554, 22.5956],
+          "cat": "threat",
+          "type": "place",
+          "date": "2016",
+          "place": { "en": "Rampal, Bagerhat, Bangladesh", "es": "Rampal, Bagerhat, Bangladés" },
+          "text": {
+            "en": "A 1,320-megawatt coal-fired power station built by Bangladesh and India 14 km north of the Sundarbans. In 2016 a UNESCO report called its environmental study questionable and asked for it to be shelved.",
+            "es": "Una central de carbón de 1320 megavatios construida por Bangladés y la India a 14 km al norte de los Sundarbans. En 2016 un informe de la UNESCO calificó de dudoso su estudio ambiental y pidió suspenderla."
+          },
+          "wiki": { "en": "Rampal Power Station", "es": "" }
+        }
+      ]
+    },
+    {
+      "date": "1994-12",
+      "title": { "en": "Gorillas and rangers in a war", "es": "Gorilas y guardaparques en una guerra" },
+      "text": {
+        "en": "Virunga, founded in 1925 and listed in 1979, went on the danger list in 1994. After Rwanda's genocide some 850,000 refugees camped around it, and thousands a day went in for firewood and food.",
+        "es": "Virunga, fundado en 1925 e inscrito en 1979, pasó a la lista en peligro en 1994. Tras el genocidio de Ruanda, unos 850 000 refugiados acamparon a su alrededor, y miles entraban cada día a buscar leña y comida."
+      },
+      "details": {
+        "en": "Created by Belgian colonial rulers as Albert National Park, the Congo's first, Virunga runs 300 km along the borders with Uganda and Rwanda, from the snows of the Rwenzori to the lava fields of Nyiragongo and Nyamuragira, two of Africa's most active volcanoes. Mountain gorillas live on the slopes of its southern volcanoes. The wars that followed the genocide turned the park into a battlefield: armed groups still hide in its forests, and by 2018 they had killed 175 of its rangers, with more since. Critics say the park's answer, rangers with military training, has also hurt local people such as the Mbuti, pushed out of forests they lived from. Oil is another threat: the British company Soco stopped exploring in 2014 after protests and the film Virunga, but in 2022 the government auctioned oil blocks overlapping the park. In 2026 its staff also helped fight an Ebola outbreak.",
+        "es": "Creado por los gobernantes coloniales belgas como Parque Nacional Alberto, el primero del Congo, Virunga se extiende 300 km a lo largo de las fronteras con Uganda y Ruanda, de las nieves del Ruwenzori a los campos de lava del Nyiragongo y el Nyamuragira, dos de los volcanes más activos de África. Los gorilas de montaña viven en las laderas de sus volcanes del sur. Las guerras que siguieron al genocidio convirtieron el parque en un campo de batalla: grupos armados todavía se esconden en sus bosques y para 2018 habían matado a 175 de sus guardaparques, y a más desde entonces. Según sus críticos, la respuesta del parque, guardaparques con entrenamiento militar, también ha perjudicado a la gente del lugar, como los mbuti, expulsados de los bosques de los que vivían. El petróleo es otra amenaza: la empresa británica Soco dejó de explorar en 2014 tras las protestas y la película Virunga, pero en 2022 el gobierno subastó bloques petroleros que se superponen al parque. En 2026 su personal también ayudó a combatir un brote de ébola."
+      },
+      "camera": { "lon": 29.4, "lat": -0.7, "zoom": 15 },
+      "control": { "danger": { "ref": "virunga" } },
+      "places": [
+        {
+          "id": "virunga",
+          "name": { "en": "Virunga National Park", "es": "Parque Nacional de Virunga" },
+          "at": [29.5, -0.5],
+          "cat": "nature",
+          "type": "site",
+          "date": "1979",
+          "place": { "en": "North Kivu, Democratic Republic of the Congo", "es": "Kivu del Norte, República Democrática del Congo" },
+          "text": {
+            "en": "One of Africa's oldest national parks, 7,800 km² of volcanoes, glaciers, rainforest, savanna and lakes, with more than 3,000 kinds of plants and animals. On the danger list since 1994.",
+            "es": "Uno de los parques nacionales más antiguos de África, 7800 km² de volcanes, glaciares, selva, sabana y lagos, con más de 3000 especies de plantas y animales. En la lista en peligro desde 1994."
+          },
+          "wiki": { "en": "Virunga National Park", "es": "Parque nacional de Virunga" },
+          "whs": 63
+        },
+        {
+          "id": "mountain-gorilla",
+          "name": { "en": "Mountain gorilla", "es": "Gorila de montaña" },
+          "at": [29.5, -1.5],
+          "cat": "wildlife",
+          "type": "species",
+          "date": "2019",
+          "place": { "en": "Mikeno sector, Virunga National Park, DR Congo", "es": "Sector Mikeno, Parque Nacional de Virunga, RD del Congo" },
+          "text": {
+            "en": "About 1,063 mountain gorillas lived in 2019, on the Virunga volcanoes shared by Congo, Rwanda and Uganda and in Uganda's Bwindi forest. Patrols, vets and tourism have slowly raised their numbers.",
+            "es": "En 2019 vivían unos 1063 gorilas de montaña, en los volcanes Virunga que comparten el Congo, Ruanda y Uganda y en el bosque de Bwindi, en Uganda. Las patrullas, los veterinarios y el turismo han hecho crecer poco a poco su número."
+          },
+          "wiki": { "en": "Mountain gorilla", "es": "Gorilla beringei beringei" }
+        },
+        {
+          "id": "virunga-rangers",
+          "name": { "en": "Virunga's rangers", "es": "Los guardaparques de Virunga" },
+          "at": [29.367, -1.317],
+          "cat": "person",
+          "date": "2008",
+          "place": { "en": "Rumangabo park headquarters, North Kivu, DR Congo", "es": "Sede del parque en Rumangabo, Kivu del Norte, RD del Congo" },
+          "text": {
+            "en": "Some 700 rangers, nearly all Congolese, guard gorillas, elephants and okapis in a war zone; armed groups had killed 175 of them by 2018. Since 2008 they have been led by director Emmanuel de Merode.",
+            "es": "Unos 700 guardaparques, casi todos congoleños, cuidan gorilas, elefantes y okapis en una zona de guerra; los grupos armados habían matado a 175 de ellos para 2018. Desde 2008 los dirige Emmanuel de Merode."
+          },
+          "details": {
+            "en": "The film Virunga (2014) followed gorilla keeper André Bauma, warden Rodrigue Mugaruka Katembo and de Merode during the M23 rebellion of 2012. De Merode was shot on the road to the headquarters in April 2014 and survived. In 2018 a ranger was killed defending two kidnapped tourists, and the park closed to visitors until February 2019. Since 2013 the Virunga Alliance has built small hydropower plants that bring electricity and jobs to people around the park.",
+            "es": "La película Virunga (2014) siguió al cuidador de gorilas André Bauma, al guardián Rodrigue Mugaruka Katembo y a De Merode durante la rebelión del M23 de 2012. De Merode recibió disparos en la carretera a la sede en abril de 2014 y sobrevivió. En 2018 un guardaparque murió defendiendo a dos turistas secuestrados, y el parque cerró a los visitantes hasta febrero de 2019. Desde 2013 la Alianza Virunga construye pequeñas centrales hidroeléctricas que llevan electricidad y trabajo a la gente que vive alrededor del parque."
+          },
+          "wiki": { "en": "Virunga (film)", "es": "Virunga" },
+          "img": "Rangers, Virunga.jpg"
+        },
+        {
+          "id": "goma-refugee-camps",
+          "name": { "en": "Refugee camps around Goma", "es": "Campamentos de refugiados de Goma" },
+          "at": [29.23, -1.68],
+          "cat": "threat",
+          "type": "event",
+          "date": "1994-07",
+          "place": { "en": "Around Goma, North Kivu, DR Congo", "es": "Alrededores de Goma, Kivu del Norte, RD del Congo" },
+          "text": {
+            "en": "In 1994 hundreds of thousands of people fled Rwanda into eastern Congo. Up to 40,000 a day entered the park in search of firewood and food, and large areas of forest were cut.",
+            "es": "En 1994 cientos de miles de personas huyeron de Ruanda al este del Congo. Hasta 40 000 por día entraban al parque en busca de leña y comida, y se taló gran parte del bosque."
+          },
+          "wiki": { "en": "Virunga National Park", "es": "Parque nacional de Virunga" },
+          "whs": 63
+        }
+      ]
+    },
+    {
+      "date": "1995-12",
+      "title": { "en": "Wolves back, a mine stopped", "es": "Vuelven los lobos, se frena una mina" },
+      "text": {
+        "en": "In 1995 wolves returned to Yellowstone, 69 years after the last were killed. That December the Committee put the park in danger, over a gold mine planned 6 km from its gate and other threats.",
+        "es": "En 1995 los lobos volvieron a Yellowstone, 69 años después de que mataran a los últimos. En diciembre, el Comité declaró el parque en peligro por una mina de oro proyectada a 6 km de su entrada y otras amenazas."
+      },
+      "details": {
+        "en": "Government predator control had wiped wolves out of Yellowstone by 1926; without them, elk overgrazed the valleys. In January 1995, 14 wolves caught near Hinton, Alberta, were brought to pens in the Lamar Valley and set free that March; 17 more followed in 1996. Their packs spread, elk numbers fell, and willows and aspens grew back along the streams. The same year the World Heritage Committee listed the park as in danger, citing the New World gold, silver and copper mine proposed about 6 km from its northeast entrance, sewage leaks, threats to its native cutthroat trout and plans to cull bison over a cattle disease. Conservation groups such as the Greater Yellowstone Coalition led the fight against the mine, and in 2003 Yellowstone came off the danger list.",
+        "es": "El control de depredadores del gobierno había acabado con los lobos de Yellowstone en 1926; sin ellos, los alces arrasaban el pasto de los valles. En enero de 1995, 14 lobos capturados cerca de Hinton, en Alberta, llegaron a unos corrales del valle Lamar y fueron liberados en marzo; otros 17 llegaron en 1996. Sus manadas se extendieron, los alces disminuyeron y los sauces y álamos volvieron a crecer junto a los arroyos. Ese mismo año el Comité del Patrimonio Mundial declaró el parque en peligro por la mina New World de oro, plata y cobre, proyectada a unos 6 km de su entrada noreste, fugas de aguas residuales, amenazas a su trucha nativa y planes para matar bisontes por una enfermedad del ganado. Grupos ambientalistas como la Greater Yellowstone Coalition encabezaron la lucha contra la mina, y en 2003 Yellowstone salió de la lista en peligro."
+      },
+      "camera": { "lon": -113.6, "lat": 49.2, "zoom": 6.5 },
+      "control": { "listed": { "minus": [{ "prev": true }, { "ref": "yellowstone" }] }, "danger": [{ "prev": true }, { "ref": "yellowstone" }] },
+      "moves": [
+        { "side": "wildlife", "path": [[-117.5883, 53.3998], [-110.25, 44.9]], "by": "air", "icon": "🐺", "label": { "en": "Wolves from Canada", "es": "Lobos de Canadá" } }
+      ],
+      "places": [
+        {
+          "id": "yellowstone-wolves",
+          "name": { "en": "Yellowstone's wolves", "es": "Los lobos de Yellowstone" },
+          "at": [-110.25, 44.9],
+          "cat": "wildlife",
+          "type": "species",
+          "date": "1995-01",
+          "place": { "en": "Lamar Valley, Yellowstone, Wyoming, United States", "es": "Valle Lamar, Yellowstone, Wyoming, Estados Unidos" },
+          "text": {
+            "en": "Gray wolves caught in Canada and released in the Lamar Valley in 1995 and 1996: 31 in all. Their return changed how elk graze, and woodlands along the rivers began to recover.",
+            "es": "Lobos grises capturados en Canadá y liberados en el valle Lamar en 1995 y 1996: 31 en total. Su regreso cambió la forma de pastar de los alces, y los bosques junto a los ríos empezaron a recuperarse."
+          },
+          "wiki": { "en": "History of wolves in Yellowstone", "es": "" }
+        },
+        {
+          "id": "new-world-mine",
+          "name": { "en": "The New World Mine", "es": "La mina New World" },
+          "at": [-109.9, 45.05],
+          "cat": "threat",
+          "type": "place",
+          "date": "1995",
+          "place": { "en": "Near Cooke City, Montana, United States", "es": "Cerca de Cooke City, Montana, Estados Unidos" },
+          "text": {
+            "en": "A gold, silver and copper mine proposed in the early 1990s on old mine land about 6 km from Yellowstone's northeast entrance. Opposition from conservationists and UNESCO's warning stopped it.",
+            "es": "Una mina de oro, plata y cobre proyectada a comienzos de los años noventa en viejas tierras mineras, a unos 6 km de la entrada noreste de Yellowstone. La oposición de los ambientalistas y la advertencia de la UNESCO la frenaron."
+          },
+          "wiki": { "en": "Greater Yellowstone Coalition", "es": "" },
+          "img": "New World Mine Site - Cooke City, Montana (3762841335).jpg"
+        },
+        {
+          "id": "yellowstone-bison",
+          "name": { "en": "Yellowstone's bison", "es": "Los bisontes de Yellowstone" },
+          "at": [-110.46, 44.66],
+          "cat": "wildlife",
+          "type": "species",
+          "date": "1997",
+          "place": { "en": "Hayden Valley, Yellowstone, Wyoming, United States", "es": "Valle Hayden, Yellowstone, Wyoming, Estados Unidos" },
+          "text": {
+            "en": "The largest public bison herd in the United States. Ranchers fear it spreads brucellosis to cattle, though no case has been recorded; in the winter of 1996–97, 1,079 bison that left the park were shot or slaughtered.",
+            "es": "La mayor manada pública de bisontes de Estados Unidos. Los ganaderos temen que contagie brucelosis a las vacas, aunque no se ha registrado ningún caso; en el invierno de 1996-1997, 1079 bisontes que salieron del parque fueron abatidos o sacrificados."
+          },
+          "wiki": { "en": "American bison", "es": "Bison bison" }
+        }
+      ]
+    },
+    {
+      "date": "2007-06",
+      "title": { "en": "Too many goats, too many people", "es": "Demasiadas cabras, demasiada gente" },
+      "text": {
+        "en": "In 2007 the Galápagos went on the danger list: goats, rats and other alien species, fast-growing tourism and migration, and overfishing. Ecuador acted, and in July 2010 the islands came off it.",
+        "es": "En 2007 las Galápagos pasaron a la lista en peligro: cabras, ratas y otras especies invasoras, el turismo y la migración que crecían sin control, y la sobrepesca. Ecuador actuó, y en julio de 2010 las islas salieron de ella."
+      },
+      "details": {
+        "en": "About 3,500 people lived on the islands in 1972; by 2010 there were over 25,000, many drawn from the mainland by tourism and fishing. In the 1990s and 2000s some fishers fought the park service over sea-cucumber quotas, killing tortoises and taking park staff hostage. Alien animals were the worst danger: three goats left on Pinta Island in 1959 had become tens of thousands, stripping it bare. Project Isabela, run by the national park and the Charles Darwin Foundation from 1997 to 2006, used helicopters, skilled hunters and radio-collared 'Judas goats' to remove 150,000 goats from Santiago, Pinta and northern Isabela. On 24 June 2012 Lonesome George, the last Pinta tortoise, died at the Darwin station, but tortoises are coming back on many islands, and in 2021 Ecuador added 60,000 km² of sea to its protected waters.",
+        "es": "En 1972 vivían en las islas unas 3500 personas; en 2010 eran más de 25 000, muchas llegadas del continente por el turismo y la pesca. En los años noventa y dos mil algunos pescadores se enfrentaron al servicio del parque por las cuotas de pepino de mar: mataron tortugas y tomaron como rehenes a empleados del parque. Los animales introducidos eran el peor peligro: tres cabras dejadas en la isla Pinta en 1959 se habían vuelto decenas de miles y la habían pelado. El Proyecto Isabela, dirigido por el parque nacional y la Fundación Charles Darwin de 1997 a 2006, usó helicópteros, cazadores expertos y 'cabras Judas' con collares de radio para sacar 150 000 cabras de Santiago, Pinta y el norte de Isabela. El 24 de junio de 2012 murió en la estación Darwin el Solitario George, la última tortuga de Pinta, pero las tortugas se recuperan en muchas islas, y en 2021 Ecuador sumó 60 000 km² de mar a sus aguas protegidas."
+      },
+      "camera": { "lon": -90.8, "lat": -0.3, "zoom": 13 },
+      "control": { "listed": { "minus": [[{ "prev": true }, { "ref": "yellowstone" }], { "ref": "galapagos" }] }, "danger": [{ "ref": "virunga" }, { "ref": "galapagos" }] },
+      "places": [
+        {
+          "id": "galapagos-islands",
+          "name": { "en": "Galápagos Islands", "es": "Islas Galápagos" },
+          "at": [-90.3333, -0.6167],
+          "cat": "nature",
+          "type": "site",
+          "date": "1978",
+          "text": { "en": "The Galápagos Islands.", "es": "Las islas Galápagos." },
+          "whs": 1
+        },
+        {
+          "id": "project-isabela",
+          "name": { "en": "Project Isabela", "es": "Proyecto Isabela" },
+          "at": [-91.12, -0.43],
+          "cat": "rescue",
+          "type": "event",
+          "date": "1997",
+          "end": "2006",
+          "place": { "en": "Isabela, Santiago and Pinta islands, Galápagos, Ecuador", "es": "Islas Isabela, Santiago y Pinta, Galápagos, Ecuador" },
+          "text": {
+            "en": "From 1997 to 2006 park rangers and scientists removed 150,000 feral goats, with donkeys and pigs, from three islands: the world's largest island restoration project of its time.",
+            "es": "De 1997 a 2006, guardaparques y científicos sacaron 150 000 cabras asilvestradas, además de burros y cerdos, de tres islas: el mayor proyecto de restauración de islas del mundo en su época."
+          },
+          "wiki": { "en": "Project Isabela", "es": "" },
+          "whs": 1
+        },
+        {
+          "id": "lonesome-george",
+          "name": { "en": "Lonesome George", "es": "Solitario George" },
+          "at": [-90.7622, 0.5873],
+          "cat": "wildlife",
+          "type": "species",
+          "date": "1971-11-01",
+          "until": "2012-06-24",
+          "place": { "en": "Pinta Island, Galápagos, Ecuador", "es": "Isla Pinta, Galápagos, Ecuador" },
+          "text": {
+            "en": "The last known Pinta Island tortoise, found in 1971 on an island stripped bare by goats. He lived at the Darwin station, cared for by Fausto Llerena for 40 years, until he died in 2012.",
+            "es": "La última tortuga conocida de la isla Pinta, hallada en 1971 en una isla pelada por las cabras. Vivió en la estación Darwin, cuidado durante 40 años por Fausto Llerena, hasta que murió en 2012."
+          },
+          "wiki": { "en": "Lonesome George", "es": "Solitario George" }
+        },
+        {
+          "id": "galapagos-marine-reserve",
+          "name": { "en": "Galápagos Marine Reserve", "es": "Reserva Marina de Galápagos" },
+          "at": [-90.7692, -0.0536],
+          "cat": "rescue",
+          "type": "site",
+          "date": "1998",
+          "place": { "en": "Waters around the Galápagos, Ecuador", "es": "Aguas de las Galápagos, Ecuador" },
+          "text": {
+            "en": "About 133,000 km² of ocean around the islands, with whale sharks, hammerheads, sea lions and penguins. Illegal fishing for shark fins and sea cucumbers is its greatest threat.",
+            "es": "Unos 133 000 km² de océano alrededor de las islas, con tiburones ballena, tiburones martillo, lobos marinos y pingüinos. La pesca ilegal de aletas de tiburón y pepinos de mar es su mayor amenaza."
+          },
+          "wiki": { "en": "Galápagos Marine Reserve", "es": "Reserva marina de Galápagos" },
+          "whs": 1
+        }
+      ]
+    },
+    {
+      "date": "2010-07",
+      "title": { "en": "The river of grass", "es": "El río de hierba" },
+      "text": {
+        "en": "In 2010 the Everglades, listed in 1979, went back on the danger list it had left only in 2007. Canals and farms still starve this 'river of grass' of clean fresh water.",
+        "es": "En 2010 los Everglades, inscritos en 1979, volvieron a la lista en peligro, de la que habían salido apenas en 2007. Canales y cultivos aún le quitan agua dulce y limpia a este 'río de hierba'."
+      },
+      "details": {
+        "en": "The Everglades are a slow river: a sheet of water flowing south from Lake Okeechobee to Florida Bay through sawgrass, cypress and mangroves, the largest mangrove forest of the Western Hemisphere. From the 1880s people drained it for farms and for Miami's growth; in the 1950s and 60s some 2,300 km of canals and levees turned its water toward the cities, and wading birds fell by 90%. The national park, dedicated in 1947, protects its southern fifth. It first went on the danger list in 1993, after Hurricane Andrew and as runoff from farms and towns fouled its water. In 2000 Congress approved the Comprehensive Everglades Restoration Plan, billed as the largest environmental restoration in history, but its work is slow, and rising seas now push salt water into the marshes.",
+        "es": "Los Everglades son un río lento: una lámina de agua que corre hacia el sur, del lago Okeechobee a la bahía de Florida, entre juncos, cipreses y manglares, el mayor manglar del hemisferio occidental. Desde la década de 1880 se los drenó para cultivos y para el crecimiento de Miami; en los años cincuenta y sesenta unos 2300 km de canales y diques desviaron su agua hacia las ciudades, y las aves zancudas disminuyeron un 90 %. El parque nacional, inaugurado en 1947, protege su quinta parte sur. Entró por primera vez en la lista en peligro en 1993, tras el huracán Andrew y porque el agua que llegaba de cultivos y ciudades lo contaminaba. En 2000 el Congreso aprobó el Plan Integral de Restauración de los Everglades, presentado como la mayor restauración ambiental de la historia, pero avanza despacio, y el mar que sube ya empuja agua salada hacia los pantanos."
+      },
+      "camera": { "lon": -80.75, "lat": 25.9, "zoom": 16 },
+      "control": { "listed": [{ "prev": true }, { "ref": "galapagos" }], "danger": [{ "ref": "virunga" }, { "ref": "everglades" }] },
+      "moves": [
+        { "side": "water", "path": [[-80.8, 26.75], [-80.6, 26.3], [-80.68, 25.9], [-80.8, 25.55], [-80.85, 25.1]], "by": "river", "icon": "💧", "label": { "en": "The river of grass", "es": "El río de hierba" } }
+      ],
+      "places": [
+        {
+          "id": "everglades",
+          "name": { "en": "Everglades National Park", "es": "Parque Nacional de los Everglades" },
+          "at": [-80.6875, 25.3125],
+          "cat": "nature",
+          "type": "site",
+          "date": "1979",
+          "place": { "en": "Florida, United States", "es": "Florida, Estados Unidos" },
+          "text": {
+            "en": "Over 6,000 km² of wetland at Florida's tip, the first US national park created to protect a living ecosystem rather than scenery. On the danger list in 1993–2007 and again since 2010.",
+            "es": "Más de 6000 km² de humedales en el extremo de Florida, el primer parque nacional de Estados Unidos creado para proteger un ecosistema vivo y no un paisaje. En la lista en peligro en 1993-2007 y de nuevo desde 2010."
+          },
+          "wiki": { "en": "Everglades National Park", "es": "Parque nacional de los Everglades" },
+          "whs": 76
+        },
+        {
+          "id": "marjory-stoneman-douglas",
+          "name": { "en": "Marjory Stoneman Douglas", "es": "Marjory Stoneman Douglas" },
+          "at": [-80.2458, 25.728],
+          "cat": "person",
+          "type": "person",
+          "life": ["1890-04-07", "1998-05-14"],
+          "date": "1947",
+          "place": { "en": "Coconut Grove, Miami, Florida, United States", "es": "Coconut Grove, Miami, Florida, Estados Unidos" },
+          "text": {
+            "en": "A Miami journalist whose book The Everglades: River of Grass (1947) showed that the swamp was a living river. At 79 she founded Friends of the Everglades, and she fought for it until her death at 108.",
+            "es": "Una periodista de Miami cuyo libro Los Everglades: río de hierba (1947) mostró que el pantano era un río vivo. A los 79 años fundó Amigos de los Everglades, y luchó por ellos hasta su muerte a los 108."
+          },
+          "wiki": { "en": "Marjory Stoneman Douglas", "es": "Marjory Stoneman Douglas" }
+        },
+        {
+          "id": "florida-panther",
+          "name": { "en": "Florida panther", "es": "Pantera de Florida" },
+          "at": [-81.3, 26.1],
+          "cat": "wildlife",
+          "type": "species",
+          "date": "2017",
+          "place": { "en": "South Florida, United States", "es": "Sur de Florida, Estados Unidos" },
+          "text": {
+            "en": "The only cougars left in the eastern United States. About 20 survived in the wild in the 1970s; protection raised them to an estimated 230 by 2017, but cars and lost habitat still kill many.",
+            "es": "Los únicos pumas que quedan en el este de Estados Unidos. En la década de 1970 sobrevivían unos 20 en libertad; la protección los llevó a unos 230 en 2017, pero los autos y la pérdida de hábitat aún matan a muchos."
+          },
+          "wiki": { "en": "Florida panther", "es": "Pantera de Florida" }
+        },
+        {
+          "id": "hurricane-andrew",
+          "name": { "en": "Hurricane Andrew", "es": "Huracán Andrew" },
+          "at": [-80.4776, 25.4687],
+          "cat": "threat",
+          "type": "event",
+          "date": "1992-08-24",
+          "place": { "en": "Homestead, Florida, United States", "es": "Homestead, Florida, Estados Unidos" },
+          "text": {
+            "en": "A Category 5 hurricane that struck south of Miami on 24 August 1992, the most destructive ever to hit Florida until then. Its damage helped put the Everglades on the danger list in 1993.",
+            "es": "Un huracán de categoría 5 que golpeó al sur de Miami el 24 de agosto de 1992, el más destructivo que había azotado Florida. Sus daños contribuyeron a que los Everglades entraran en la lista en peligro en 1993."
+          },
+          "wiki": { "en": "Hurricane Andrew", "es": "Huracán Andrew" }
+        }
+      ]
+    },
+    {
+      "date": "2014-06-22",
+      "title": { "en": "The thousandth site", "es": "El sitio número mil" },
+      "text": {
+        "en": "On 22 June 2014, at the Committee's meeting in Doha, Botswana's Okavango Delta became the 1,000th World Heritage site: a river from Angola that spreads into the Kalahari and never reaches the sea.",
+        "es": "El 22 de junio de 2014, en la reunión del Comité en Doha, el delta del Okavango, en Botsuana, se volvió el sitio número 1000 del Patrimonio Mundial: un río que baja de Angola, se abre en el Kalahari y nunca llega al mar."
+      },
+      "details": {
+        "en": "Summer rains in the Angolan highlands, in January and February, send a flood some 1,200 km downriver in about a month. It spreads over the delta from March to June and peaks from June to August, Botswana's dry winter, when the wetland swells to three times its size and animals gather from far around. Almost all the water evaporates or is taken up by plants. Elephants, buffalo, lions, leopards and both kinds of rhino live here. Five peoples share the delta, each with its own language: the Hambukushu, Dceriku and Wayeyi, who farm, fish and herd, and the Bugakhwe and ǁanikhwe, San peoples of the forest and the river. Guides still pole visitors through the channels in dugout canoes, the mokoros, and Botswana keeps tourism small and costly to spare the delta.",
+        "es": "Las lluvias de verano en las tierras altas de Angola, en enero y febrero, mandan una crecida de unos 1200 km río abajo en cerca de un mes. Se extiende por el delta de marzo a junio y llega a su punto más alto de junio a agosto, el invierno seco de Botsuana, cuando el humedal triplica su tamaño y los animales llegan desde muy lejos. Casi toda el agua se evapora o la absorben las plantas. Aquí viven elefantes, búfalos, leones, leopardos y las dos especies de rinoceronte. Cinco pueblos comparten el delta, cada uno con su lengua: los hambukushu, dceriku y wayeyi, que cultivan, pescan y crían ganado, y los bugakhwe y ǁanikhwe, pueblos san del bosque y del río. Los guías todavía llevan a los visitantes por los canales en canoas talladas en un tronco, los mokoros, y Botsuana mantiene un turismo pequeño y caro para cuidar el delta."
+      },
+      "camera": { "lon": 19.8, "lat": -16.3, "zoom": 7 },
+      "control": { "listed": [{ "prev": true }, { "ref": "okavango" }] },
+      "moves": [
+        { "side": "water", "path": [[16.0, -12.9], [16.8, -14.6], [17.4, -16.3], [17.9, -17.4], [18.9, -17.8], [19.77, -17.92], [20.7, -17.97], [21.45, -18.05], [21.78, -18.27], [22.2, -18.65], [22.6, -19.1], [22.9, -19.4]], "by": "river", "icon": "💧", "label": { "en": "The Okavango River", "es": "El río Okavango" } }
+      ],
+      "places": [
+        {
+          "id": "okavango-delta",
+          "name": { "en": "Okavango Delta", "es": "Delta del Okavango" },
+          "at": [22.9, -19.4],
+          "cat": "nature",
+          "type": "site",
+          "date": "2014-06-22",
+          "place": { "en": "North-West District, Botswana", "es": "Distrito Noroeste, Botsuana" },
+          "text": {
+            "en": "One of the very few large inland deltas: a maze of channels, lagoons, floodplains and thousands of islands in the Kalahari, many of them born as termite mounds. It was the 1,000th World Heritage site.",
+            "es": "Uno de los pocos grandes deltas interiores: un laberinto de canales, lagunas, llanuras inundables y miles de islas en el Kalahari, muchas nacidas de termiteros. Fue el sitio número 1000 del Patrimonio Mundial."
+          },
+          "wiki": { "en": "Okavango Delta", "es": "Delta del Okavango" },
+          "whs": 1432
+        },
+        {
+          "id": "african-bush-elephant",
+          "name": { "en": "African bush elephant", "es": "Elefante africano de sabana" },
+          "at": [23.3, -19.15],
+          "cat": "wildlife",
+          "type": "species",
+          "date": "2014",
+          "place": { "en": "Okavango Delta, Botswana", "es": "Delta del Okavango, Botsuana" },
+          "text": {
+            "en": "The largest land animal. In the dry season elephants crowd into the flooded delta from the dry land around it; Botswana is a stronghold for the species, hunted for ivory across much of Africa.",
+            "es": "El animal terrestre más grande. En la estación seca los elefantes se juntan en el delta inundado, llegados de las tierras secas que lo rodean; Botsuana es un refugio para la especie, cazada por su marfil en buena parte de África."
+          },
+          "wiki": { "en": "African bush elephant", "es": "Loxodonta africana" }
+        },
+        {
+          "id": "okavango-peoples",
+          "name": { "en": "People of the delta", "es": "Los pueblos del delta" },
+          "at": [22.4167, -18.8167],
+          "cat": "person",
+          "type": "culture",
+          "date": "2014",
+          "place": { "en": "Seronga, Okavango Delta, Botswana", "es": "Seronga, delta del Okavango, Botsuana" },
+          "text": {
+            "en": "Hambukushu, Dceriku, Wayeyi, Bugakhwe and ǁanikhwe people live by the delta's floods, planting crops on the moist land the water leaves behind and poling mokoro canoes through the reeds.",
+            "es": "Los hambukushu, dceriku, wayeyi, bugakhwe y ǁanikhwe viven al ritmo de las crecidas del delta: siembran en la tierra húmeda que deja el agua y navegan entre los juncos en canoas mokoro."
+          },
+          "wiki": { "en": "Mokoro", "es": "" }
+        }
+      ]
+    },
+    {
+      "date": "2018-06",
+      "title": { "en": "A reef saved from oil", "es": "Un arrecife salvado del petróleo" },
+      "text": {
+        "en": "Belize's barrier reef, listed in 1996, went on the danger list in 2009 over mangrove clearing and building. After Belize halted all offshore oil activity in 2017, it came off the list in 2018.",
+        "es": "La barrera de coral de Belice, inscrita en 1996, pasó a la lista en peligro en 2009 por la tala de manglares y las construcciones. Después de que Belice frenara toda actividad petrolera en el mar en 2017, salió de la lista en 2018."
+      },
+      "details": {
+        "en": "The Belize Barrier Reef runs for 300 km, part of a 900-km reef that stretches from Mexico's Yucatán to Honduras, the second largest in the world. Charles Darwin called it 'the most remarkable reef in the West Indies' in 1842. The World Heritage site joins seven protected areas with some 450 cayes, about 960 km² in all. Mangroves cut for resorts and building plots, and oil concessions offered at sea, alarmed scientists and many Belizeans, who depend on the reef for fishing and tourism. Belize was the first country to ban bottom trawling, in 2010; in 2015 it banned oil drilling near the reef, and in 2017 it adopted an indefinite moratorium on oil activity in all its waters. Bleaching, hurricanes and pollution remain: scientists say over 40% of the reef has been damaged since 1998.",
+        "es": "La barrera de coral de Belice mide 300 km y es parte de un arrecife de 900 km que va de Yucatán, en México, hasta Honduras, el segundo más grande del mundo. Charles Darwin la llamó 'el arrecife más notable de las Indias Occidentales' en 1842. El sitio del Patrimonio Mundial reúne siete áreas protegidas con unos 450 cayos, unos 960 km² en total. La tala de manglares para hoteles y terrenos, y las concesiones petroleras ofrecidas en el mar, alarmaron a los científicos y a muchos beliceños, que viven de la pesca y el turismo del arrecife. Belice fue el primer país en prohibir la pesca de arrastre de fondo, en 2010; en 2015 prohibió perforar en busca de petróleo cerca del arrecife, y en 2017 adoptó una moratoria indefinida sobre la actividad petrolera en todas sus aguas. Quedan el blanqueamiento, los huracanes y la contaminación: según los científicos, más del 40 % del arrecife ha sufrido daños desde 1998."
+      },
+      "camera": { "lon": -88.0, "lat": 17.2, "zoom": 16 },
+      "control": { "listed": [{ "prev": true }, { "ref": "belize" }] },
+      "places": [
+        {
+          "id": "belize-barrier-reef",
+          "name": { "en": "Belize Barrier Reef", "es": "Barrera de coral de Belice" },
+          "at": [-88.0833, 16.8125],
+          "cat": "nature",
+          "type": "site",
+          "date": "1996",
+          "place": { "en": "Off the coast of Belize", "es": "Frente a la costa de Belice" },
+          "text": {
+            "en": "A 300-km barrier reef with cayes, mangroves and atolls, Belize's top attraction and the base of its fishing. On the danger list from 2009 to 2018.",
+            "es": "Una barrera de coral de 300 km, con cayos, manglares y atolones, la mayor atracción de Belice y la base de su pesca. En la lista en peligro de 2009 a 2018."
+          },
+          "wiki": { "en": "Belize Barrier Reef", "es": "Sistema de Reservas de la Barrera del Arrecife de Belice" },
+          "whs": 764
+        },
+        {
+          "id": "great-blue-hole",
+          "name": { "en": "Great Blue Hole", "es": "Gran Agujero Azul" },
+          "at": [-87.5344, 17.3156],
+          "cat": "nature",
+          "type": "site",
+          "date": "1971",
+          "place": { "en": "Lighthouse Reef, Belize", "es": "Arrecife Lighthouse, Belice" },
+          "text": {
+            "en": "A round sinkhole 318 m across and 124 m deep in the middle of Lighthouse Reef, a cave that flooded as the sea rose after the ice ages. Jacques Cousteau made it famous in 1971.",
+            "es": "Una dolina redonda de 318 m de ancho y 124 m de profundidad en medio del arrecife Lighthouse, una cueva que se inundó al subir el mar tras las glaciaciones. Jacques Cousteau la hizo famosa en 1971."
+          },
+          "wiki": { "en": "Great Blue Hole", "es": "Gran Agujero Azul" },
+          "whs": 764
+        },
+        {
+          "id": "west-indian-manatee",
+          "name": { "en": "West Indian manatee", "es": "Manatí del Caribe" },
+          "at": [-88.12, 17.48],
+          "cat": "wildlife",
+          "type": "species",
+          "date": "2018",
+          "place": { "en": "Coast and cayes of Belize", "es": "Costa y cayos de Belice" },
+          "text": {
+            "en": "A gentle 'sea cow' that grazes seagrass in the lagoons behind the reef and shelters among mangroves. Boats, nets and lost mangroves are its main dangers.",
+            "es": "Una mansa 'vaca marina' que pasta pastos marinos en las lagunas detrás del arrecife y se refugia entre los manglares. Las lanchas, las redes y la pérdida de manglares son sus mayores peligros."
+          },
+          "wiki": { "en": "West Indian manatee", "es": "Trichechus manatus" }
+        }
+      ]
+    },
+    {
+      "date": "2019-07",
+      "title": { "en": "The last vaquitas", "es": "Las últimas vaquitas" },
+      "text": {
+        "en": "In 2019 the Gulf of California's islands and reserves went on the danger list. Illegal gillnets set for the totoaba fish were drowning the vaquita, the world's smallest porpoise: only about ten remain.",
+        "es": "En 2019 las islas y áreas protegidas del golfo de California pasaron a la lista en peligro. Las redes agalleras ilegales tendidas para la totoaba ahogaban a la vaquita marina, la marsopa más pequeña del mundo: quedan unas diez."
+      },
+      "details": {
+        "en": "Listed in 2005, the site takes in hundreds of islands and coastal reserves of one of the richest seas on Earth, with whales, sea lions and huge seabird colonies. The vaquita, a porpoise up to 1.5 m long that lives only in the upper gulf, was described by scientists only in 1958. A survey in 1997 counted about 567; by 2018 fewer than 19 were left, and surveys in 2024 and 2025 saw only 6 to 11, though calves were also seen. They drown in gillnets set, illegally, for the totoaba, a big fish whose swim bladder sells for huge sums in China, where it is wrongly believed to be a medicine. Mexico banned gillnets in stages from 2015, with payments to fishers, created a zero-tolerance zone in 2020, and from 2022 its navy sank concrete blocks with hooks that snag nets. Fishing towns of the upper gulf, which live from the sea, have struggled with the bans.",
+        "es": "Inscrito en 2005, el sitio abarca cientos de islas y reservas costeras de uno de los mares más ricos del planeta, con ballenas, lobos marinos y enormes colonias de aves marinas. La vaquita, una marsopa de hasta 1,5 m que solo vive en el alto golfo, fue descrita por los científicos apenas en 1958. Un censo de 1997 contó unas 567; en 2018 quedaban menos de 19, y los censos de 2024 y 2025 vieron solo entre 6 y 11, aunque también se vieron crías. Mueren en redes agalleras tendidas ilegalmente para la totoaba, un pez grande cuyo buche se vende a precios enormes en China, donde por error se cree que es medicina. México prohibió las redes agalleras por etapas desde 2015, con pagos a los pescadores, creó una zona de tolerancia cero en 2020 y desde 2022 su Marina hundió bloques de concreto con ganchos que atrapan las redes. Los pueblos pesqueros del alto golfo, que viven del mar, han sufrido con las prohibiciones."
+      },
+      "camera": { "lon": -112.3, "lat": 28.8, "zoom": 8 },
+      "control": { "danger": [{ "prev": true }, { "ref": "gulf" }] },
+      "places": [
+        {
+          "id": "gulf-of-california",
+          "name": { "en": "Gulf of California", "es": "Golfo de California" },
+          "at": [-111.6728, 27.7531],
+          "cat": "nature",
+          "type": "site",
+          "date": "2005",
+          "place": { "en": "Baja California, Baja California Sur, Sonora, Sinaloa and Nayarit, Mexico", "es": "Baja California, Baja California Sur, Sonora, Sinaloa y Nayarit, México" },
+          "text": {
+            "en": "Islands and protected areas of the narrow sea between Baja California and mainland Mexico, home to blue, fin and gray whales and to more than 900 islands and islets. In danger since 2019.",
+            "es": "Las islas y áreas protegidas del angosto mar entre Baja California y el resto de México, hogar de ballenas azules, de aleta y grises y de más de 900 islas e islotes. En peligro desde 2019."
+          },
+          "wiki": { "en": "Gulf of California", "es": "Golfo de California" },
+          "whs": 1182
+        },
+        {
+          "id": "vaquita",
+          "name": { "en": "Vaquita", "es": "Vaquita marina" },
+          "at": [-114.4, 31.25],
+          "cat": "wildlife",
+          "type": "species",
+          "date": "2019",
+          "place": { "en": "Upper Gulf of California, Mexico", "es": "Alto golfo de California, México" },
+          "text": {
+            "en": "The smallest of all whales and dolphins, a shy porpoise with dark rings around its eyes, found only in the upper gulf. Critically endangered: perhaps ten are left.",
+            "es": "El más pequeño de todos los cetáceos, una marsopa tímida con anillos oscuros alrededor de los ojos, que solo vive en el alto golfo. En peligro crítico: quizá quedan diez."
+          },
+          "wiki": { "en": "Vaquita", "es": "Phocoena sinus" },
+          "img": "Vaquita2 Olson NOAA crop2.jpg"
+        },
+        {
+          "id": "totoaba",
+          "name": { "en": "Totoaba poaching", "es": "La pesca ilegal de totoaba" },
+          "at": [-114.6, 30.85],
+          "cat": "threat",
+          "type": "species",
+          "date": "2015",
+          "place": { "en": "Upper Gulf of California, Mexico", "es": "Alto golfo de California, México" },
+          "text": {
+            "en": "A drum fish up to 2 m long, protected since 1975. Its dried swim bladder is smuggled to China: in 2013, 200 bladders could fetch US$3.6 million. The nets set for it kill vaquitas.",
+            "es": "Un pez de hasta 2 m, protegido desde 1975. Su buche seco se contrabandea a China: en 2013, 200 buches podían valer 3,6 millones de dólares. Las redes tendidas para pescarlo matan vaquitas."
+          },
+          "wiki": { "en": "Totoaba", "es": "" }
+        },
+        {
+          "id": "tiburon-island",
+          "name": { "en": "Tiburón Island", "es": "Isla Tiburón" },
+          "at": [-112.373, 28.9889],
+          "cat": "nature",
+          "type": "site",
+          "date": "1963",
+          "place": { "en": "Sonora, Mexico", "es": "Sonora, México" },
+          "text": {
+            "en": "Mexico's largest island, a nature reserve since 1963 and part of the homeland of the Comcaac (Seri) people, whose government runs it as an ecological preserve with the federal government.",
+            "es": "La isla más grande de México, reserva natural desde 1963 y parte del territorio del pueblo comcaac (seri), cuyo gobierno la administra como reserva ecológica junto con el gobierno federal."
+          },
+          "wiki": { "en": "Tiburón Island", "es": "Isla Tiburón" },
+          "whs": 1182
+        }
+      ]
+    },
+    {
+      "date": "2021-07",
+      "title": { "en": "A reef in hot water", "es": "Un arrecife en aguas calientes" },
+      "text": {
+        "en": "In 2021 UNESCO's experts said the Great Barrier Reef should be listed 'in danger' after mass bleachings in 2016, 2017 and 2020. Australia lobbied hard against it, and the Committee did not list it.",
+        "es": "En 2021 los expertos de la UNESCO dijeron que la Gran Barrera de Coral debía declararse 'en peligro' tras los blanqueamientos masivos de 2016, 2017 y 2020. Australia hizo una fuerte campaña en contra, y el Comité no la incluyó."
+      },
+      "details": {
+        "en": "When the sea stays too warm, corals expel the tiny algae that feed and colour them and turn white; if the heat lasts, they die. Bleaching in 2016 killed between 29 and 50% of the reef's corals, worst in the north. Farm runoff, crown-of-thorns starfish and port building add to the strain; the Committee had raised concerns since 2010, and in 2012 UNESCO criticized new ports and dredging. In July 2021 the Committee, made up of diplomats from 21 countries, set aside UNESCO's assessment after Australia campaigned against listing. A UNESCO mission in March 2022 recommended it again. In May 2023 Australia pledged A$4.4 billion, no-fishing zones in a third of the site and an end to gillnets by 2027, and the reef stayed off the danger list. But bleaching struck again in 2022, 2024 and 2025, and a 2026 study found heavy coral losses across the reef in 2024–2025.",
+        "es": "Cuando el mar se queda demasiado caliente, los corales expulsan las diminutas algas que los alimentan y les dan color, y se vuelven blancos; si el calor dura, mueren. El blanqueamiento de 2016 mató entre el 29 y el 50 % de los corales del arrecife, sobre todo en el norte. Los desechos agrícolas, la estrella de mar corona de espinas y la construcción de puertos aumentan la presión; el Comité expresaba su preocupación desde 2010, y en 2012 la UNESCO criticó los nuevos puertos y dragados. En julio de 2021 el Comité, formado por diplomáticos de 21 países, dejó de lado la evaluación de la UNESCO tras una campaña de Australia contra la inclusión. Una misión de la UNESCO en marzo de 2022 volvió a recomendarla. En mayo de 2023 Australia prometió 4400 millones de dólares australianos, zonas sin pesca en un tercio del sitio y el fin de las redes de enmalle para 2027, y el arrecife siguió fuera de la lista en peligro. Pero el blanqueamiento volvió en 2022, 2024 y 2025, y un estudio de 2026 halló grandes pérdidas de coral en todo el arrecife en 2024-2025."
+      },
+      "camera": { "lon": 148.0, "lat": -17.0, "zoom": 4.0 },
+      "places": [
+        {
+          "id": "great-barrier-reef",
+          "name": { "en": "Great Barrier Reef", "es": "Gran Barrera de Coral" },
+          "at": [145.8, -16.4],
+          "cat": "nature",
+          "type": "site",
+          "date": "1981",
+          "text": { "en": "The Great Barrier Reef.", "es": "La Gran Barrera de Coral." },
+          "whs": 154
+        },
+        {
+          "id": "coral-bleaching",
+          "name": { "en": "Coral bleaching", "es": "Blanqueamiento del coral" },
+          "at": [145.45, -14.65],
+          "cat": "threat",
+          "type": "event",
+          "date": "2016",
+          "place": { "en": "Northern Great Barrier Reef, Australia", "es": "Norte de la Gran Barrera de Coral, Australia" },
+          "text": {
+            "en": "In 2016 marine heatwaves bleached most of the reef's northern third, and much of an 800-km stretch died. Mass bleaching came again in 2017, 2020, 2022, 2024 and 2025.",
+            "es": "En 2016 las olas de calor marinas blanquearon casi todo el tercio norte del arrecife, y murió gran parte de un tramo de 800 km. Hubo blanqueamientos masivos de nuevo en 2017, 2020, 2022, 2024 y 2025."
+          },
+          "wiki": { "en": "Coral bleaching", "es": "Blanqueo del coral" },
+          "whs": 154
+        },
+        {
+          "id": "gbr-marine-park",
+          "name": { "en": "Great Barrier Reef Marine Park", "es": "Parque Marino de la Gran Barrera de Coral" },
+          "at": [146.8169, -19.259],
+          "cat": "rescue",
+          "type": "institution",
+          "date": "1975",
+          "text": { "en": "The Great Barrier Reef Marine Park.", "es": "El Parque Marino de la Gran Barrera de Coral." },
+          "whs": 154
+        }
+      ]
+    },
+    {
+      "date": "2026-07",
+      "title": { "en": "Busan 2026: new wild places", "es": "Busan 2026: nuevos lugares salvajes" },
+      "text": {
+        "en": "In Busan in July 2026, South Sudan's Boma-Badingilo, home of perhaps the largest land migration on Earth, was listed and put in danger at once. Georgia's Okefenokee swamp joined the list too.",
+        "es": "En Busan, en julio de 2026, Boma-Badingilo, en Sudán del Sur, hogar quizá de la mayor migración terrestre del planeta, fue inscrito y declarado en peligro a la vez. El pantano de Okefenokee, en Georgia, también entró en la lista."
+      },
+      "details": {
+        "en": "Through South Sudan's long wars many feared that the great antelope herds of the east had been killed off. Aerial surveys proved them wrong: in 2023 they counted about 5 million white-eared kob, 350,000 Mongalla gazelles, 300,000 tiang and 160,000 Bohor reedbuck, moving with the seasons between Badingilo and Boma national parks and on into Ethiopia's Gambella. Since 2022 the conservation group African Parks has helped South Sudan run the two parks. The Committee put the country's first World Heritage site straight onto the danger list, as farming and oil, gas and mining projects threaten the plains. Okefenokee, a peat swamp of 1,770 km² on the Georgia–Florida border, feeds the Suwannee and St. Marys rivers. A titanium mine planned beside it from 2018 drew over 60,000 objections, until in June 2025 The Conservation Fund bought the miners' 3,100 ha for about US$60 million.",
+        "es": "Durante las largas guerras de Sudán del Sur, muchos temían que los grandes rebaños de antílopes del este hubieran sido exterminados. Los censos aéreos demostraron lo contrario: en 2023 contaron unos 5 millones de cobos de orejas blancas, 350 000 gacelas de Mongalla, 300 000 tiang y 160 000 redunca común, que se mueven con las estaciones entre los parques nacionales de Badingilo y Boma y siguen hasta Gambela, en Etiopía. Desde 2022 la organización African Parks ayuda a Sudán del Sur a administrar los dos parques. El Comité llevó el primer sitio del Patrimonio Mundial del país directamente a la lista en peligro, porque la agricultura y los proyectos de petróleo, gas y minería amenazan sus llanuras. Okefenokee, un pantano de turba de 1770 km² en la frontera entre Georgia y Florida, alimenta los ríos Suwannee y St. Marys. Una mina de titanio proyectada a su lado desde 2018 recibió más de 60 000 objeciones, hasta que en junio de 2025 The Conservation Fund compró las 3100 ha de la empresa minera por unos 60 millones de dólares."
+      },
+      "camera": { "lon": -15, "lat": 18, "zoom": 1.1 },
+      "control": { "listed": [{ "prev": true }, { "ref": "okefenokee" }], "danger": [{ "prev": true }, { "ref": "boma" }] },
+      "moves": [
+        { "side": "wildlife", "path": [[31.85, 5.6], [32.5, 6.1], [33.3, 6.5], [33.9, 6.6], [34.1, 7.3], [34.2, 7.9]], "by": "land", "label": { "en": "The kob migration", "es": "La migración de los cobos" } }
+      ],
+      "places": [
+        {
+          "id": "boma-badingilo",
+          "name": { "en": "Boma-Badingilo", "es": "Boma-Badingilo" },
+          "at": [32.9586, 6.5138],
+          "cat": "nature",
+          "type": "site",
+          "date": "2026-07",
+          "place": { "en": "Eastern South Sudan", "es": "Este de Sudán del Sur" },
+          "text": {
+            "en": "Two national parks and the plains between them, crossed by millions of antelope each year: perhaps the largest land mammal migration on Earth. South Sudan's first World Heritage site, in danger from the day it was listed.",
+            "es": "Dos parques nacionales y las llanuras entre ellos, que millones de antílopes cruzan cada año: quizá la mayor migración de mamíferos terrestres del planeta. El primer sitio del Patrimonio Mundial de Sudán del Sur, en peligro desde el día de su inscripción."
+          },
+          "wiki": { "en": "Boma–Badingilo Migratory Landscape", "es": "" },
+          "img": "Kobus kob leucotis 332144580.jpg",
+          "whs": 1808
+        },
+        {
+          "id": "white-eared-kob",
+          "name": { "en": "White-eared kob", "es": "Cobo de orejas blancas" },
+          "at": [33.9, 6.6],
+          "cat": "wildlife",
+          "type": "species",
+          "date": "2023",
+          "place": { "en": "Boma National Park, South Sudan", "es": "Parque Nacional Boma, Sudán del Sur" },
+          "text": {
+            "en": "A dark antelope with white patches around its eyes and ears, found in South Sudan and nearby Ethiopia and Uganda. A survey in 2023 counted about 5 million on the move.",
+            "es": "Un antílope oscuro con manchas blancas alrededor de los ojos y las orejas, que vive en Sudán del Sur y en zonas vecinas de Etiopía y Uganda. Un censo de 2023 contó unos 5 millones en movimiento."
+          },
+          "wiki": { "en": "Kob", "es": "Kobus kob" },
+          "img": "Kobus kob leucotis 332144580.jpg"
+        },
+        {
+          "id": "okefenokee",
+          "name": { "en": "Okefenokee Swamp", "es": "Pantano de Okefenokee" },
+          "at": [-82.32, 30.8],
+          "cat": "nature",
+          "type": "site",
+          "date": "2026-07",
+          "place": { "en": "Georgia and Florida, United States", "es": "Georgia y Florida, Estados Unidos" },
+          "text": {
+            "en": "'The land of trembling earth': a blackwater swamp on peat up to 4.6 m thick, with cypress, prairies, islands, alligators and cranes. A wildlife refuge since 1937, it is Georgia's first World Heritage site.",
+            "es": "'La tierra que tiembla': un pantano de aguas negras sobre turba de hasta 4,6 m de espesor, con cipreses, praderas, islas, caimanes y grullas. Refugio de fauna desde 1937, es el primer sitio del Patrimonio Mundial de Georgia."
+          },
+          "details": {
+            "en": "Native peoples lived in the swamp from about 2500 BC; the Seminoles were the last to take refuge there, until US troops drove them out in the Second Seminole War of 1838–1842. A company tried to drain it in the 1890s, and loggers took out over 431 million board feet of cypress before 1927. Fire is part of its life: the Bugaboo Fire of 2007 was the largest in Georgia's and Florida's history.",
+            "es": "Los pueblos indígenas vivieron en el pantano desde hacia el 2500 a. C.; los seminolas fueron los últimos en refugiarse allí, hasta que las tropas estadounidenses los expulsaron en la segunda guerra seminola, de 1838 a 1842. Una empresa intentó drenarlo en la década de 1890, y los madereros sacaron más de un millón de metros cúbicos de ciprés antes de 1927. El fuego es parte de su vida: el incendio Bugaboo de 2007 fue el mayor de la historia de Georgia y Florida."
+          },
+          "wiki": { "en": "Okefenokee National Wildlife Refuge", "es": "" },
+          "whs": 1751
+        },
+        {
+          "id": "american-alligator",
+          "name": { "en": "American alligator", "es": "Caimán americano" },
+          "at": [-82.25, 30.72],
+          "cat": "wildlife",
+          "type": "species",
+          "date": "2026",
+          "place": { "en": "Okefenokee Swamp, Georgia, United States", "es": "Pantano de Okefenokee, Georgia, Estados Unidos" },
+          "text": {
+            "en": "The swamp's best-known resident. Once hunted close to extinction for its skin, the American alligator recovered under protection and thrives in the Okefenokee's lakes and channels.",
+            "es": "El habitante más conocido del pantano. Cazado casi hasta la extinción por su piel, el caimán americano se recuperó gracias a la protección y prospera en los lagos y canales de Okefenokee."
+          },
+          "wiki": { "en": "American alligator", "es": "Alligator mississippiensis" }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "In 2026 the World Heritage List holds 1,273 sites, 240 of them natural and 42 mixed. Listing brought fame, money and sometimes the international pressure that saved a place: Yellowstone, the Galápagos, Iguaçu and Belize's reef came off the danger list after their governments acted. But 14 natural sites are on it in 2026, many in war-torn Central Africa, and warming seas, rising water and new mines and oil fields threaten listed and unlisted places alike.",
+    "es": "En 2026 la Lista del Patrimonio Mundial reúne 1273 sitios, 240 de ellos naturales y 42 mixtos. La inscripción trajo fama, dinero y a veces la presión internacional que salvó un lugar: Yellowstone, las Galápagos, Iguaçu y el arrecife de Belice salieron de la lista en peligro después de que sus gobiernos actuaran. Pero en 2026 hay 14 sitios naturales en ella, muchos en zonas de guerra de África central, y el mar más caliente, el agua que sube y las nuevas minas y pozos petroleros amenazan por igual a los lugares inscritos y a los que no lo están."
+  },
+  "sources": [
+    { "title": "Wikipedia: World Heritage Site", "url": "https://en.wikipedia.org/wiki/World_Heritage_Site" },
+    { "title": "Wikipedia: List of World Heritage in Danger", "url": "https://en.wikipedia.org/wiki/List_of_World_Heritage_in_Danger" },
+    { "title": "Wikipedia: List of World Heritage Sites by year of inscription", "url": "https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_by_year_of_inscription" },
+    { "title": "Wikipedia: Galápagos Islands", "url": "https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands" },
+    { "title": "Wikipedia: Galápagos National Park", "url": "https://en.wikipedia.org/wiki/Gal%C3%A1pagos_National_Park" },
+    { "title": "Wikipedia: Project Isabela", "url": "https://en.wikipedia.org/wiki/Project_Isabela" },
+    { "title": "Wikipedia: Lonesome George", "url": "https://en.wikipedia.org/wiki/Lonesome_George" },
+    { "title": "Wikipedia: Yellowstone National Park", "url": "https://en.wikipedia.org/wiki/Yellowstone_National_Park" },
+    { "title": "Wikipedia: History of wolves in Yellowstone", "url": "https://en.wikipedia.org/wiki/History_of_wolves_in_Yellowstone" },
+    { "title": "Wikipedia: Greater Yellowstone Coalition", "url": "https://en.wikipedia.org/wiki/Greater_Yellowstone_Coalition" },
+    { "title": "Wikipedia: Serengeti National Park", "url": "https://en.wikipedia.org/wiki/Serengeti_National_Park" },
+    { "title": "Wikipedia: Ngorongoro Conservation Area", "url": "https://en.wikipedia.org/wiki/Ngorongoro_Conservation_Area" },
+    { "title": "Wikipedia: Bernhard Grzimek", "url": "https://en.wikipedia.org/wiki/Bernhard_Grzimek" },
+    { "title": "Wikipedia: Great Barrier Reef", "url": "https://en.wikipedia.org/wiki/Great_Barrier_Reef" },
+    { "title": "Wikipedia: Environmental threats to the Great Barrier Reef", "url": "https://en.wikipedia.org/wiki/Environmental_threats_to_the_Great_Barrier_Reef" },
+    { "title": "Wikipedia: Coral bleaching", "url": "https://en.wikipedia.org/wiki/Coral_bleaching" },
+    { "title": "Wikipedia: Iguazu Falls", "url": "https://en.wikipedia.org/wiki/Iguazu_Falls" },
+    { "title": "Wikipedia: Iguaçu National Park", "url": "https://en.wikipedia.org/wiki/Igua%C3%A7u_National_Park" },
+    { "title": "Wikipedia: Sundarbans", "url": "https://en.wikipedia.org/wiki/Sundarbans" },
+    { "title": "Wikipedia: Bonbibi", "url": "https://en.wikipedia.org/wiki/Bonbibi" },
+    { "title": "Wikipedia: Rampal Power Station", "url": "https://en.wikipedia.org/wiki/Rampal_Power_Station" },
+    { "title": "Wikipedia: Virunga National Park", "url": "https://en.wikipedia.org/wiki/Virunga_National_Park" },
+    { "title": "Wikipedia: Mountain gorilla", "url": "https://en.wikipedia.org/wiki/Mountain_gorilla" },
+    { "title": "Wikipedia: Virunga (film)", "url": "https://en.wikipedia.org/wiki/Virunga_(film)" },
+    { "title": "Wikipedia: Everglades National Park", "url": "https://en.wikipedia.org/wiki/Everglades_National_Park" },
+    { "title": "Wikipedia: Marjory Stoneman Douglas", "url": "https://en.wikipedia.org/wiki/Marjory_Stoneman_Douglas" },
+    { "title": "Wikipedia: Florida panther", "url": "https://en.wikipedia.org/wiki/Florida_panther" },
+    { "title": "Wikipedia: Okavango Delta", "url": "https://en.wikipedia.org/wiki/Okavango_Delta" },
+    { "title": "Wikipedia: Belize Barrier Reef", "url": "https://en.wikipedia.org/wiki/Belize_Barrier_Reef" },
+    { "title": "Wikipedia: Belize", "url": "https://en.wikipedia.org/wiki/Belize" },
+    { "title": "Wikipedia: Gulf of California", "url": "https://en.wikipedia.org/wiki/Gulf_of_California" },
+    { "title": "Wikipedia: Vaquita", "url": "https://en.wikipedia.org/wiki/Vaquita" },
+    { "title": "Wikipedia: Totoaba", "url": "https://en.wikipedia.org/wiki/Totoaba" },
+    { "title": "Wikipedia: Tiburón Island", "url": "https://en.wikipedia.org/wiki/Tibur%C3%B3n_Island" },
+    { "title": "Wikipedia: Boma–Badingilo Migratory Landscape", "url": "https://en.wikipedia.org/wiki/Boma%E2%80%93Badingilo_Migratory_Landscape" },
+    { "title": "Wikipedia: Boma National Park", "url": "https://en.wikipedia.org/wiki/Boma_National_Park" },
+    { "title": "Wikipedia: Okefenokee Swamp", "url": "https://en.wikipedia.org/wiki/Okefenokee_Swamp" },
+    { "title": "Wikipedia: Okefenokee National Wildlife Refuge", "url": "https://en.wikipedia.org/wiki/Okefenokee_National_Wildlife_Refuge" },
+    { "title": "World Heritage List data in the app (public/data/layers/heritage.json, as of July 2026)", "url": "https://whc.unesco.org/en/list/" }
+  ]
+}

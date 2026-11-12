@@ -772,6 +772,62 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   }
 }
 
+// 12l. World Heritage: the filter shows every site on the list with its counts by category and in danger; a tap
+// on the Taj Mahal opens its card (year, UNESCO's page); "Watch the list grow" plays the years; India's card counts
+// its sites.
+{
+  const { page, errors, ctx } = await open({ viewport: { width: 1366, height: 820 } }, '#p=globe&l=political,heritage&c=78,27,4&lang=en');
+  await page.waitForFunction(() => /World Heritage sites/.test(document.querySelector('.legend')?.textContent ?? ''), null, { timeout: 30000 }).catch(() => {});
+  const leg = await page.evaluate(() => document.querySelector('.legend')?.textContent ?? '');
+  const n = Number((/([\d,]+) World Heritage sites/.exec(leg)?.[1] ?? '0').replace(/,/g, ''));
+  const by = ['Cultural', 'Natural', 'Mixed \\(cultural and natural\\)', 'In danger'].map((k) => Number((new RegExp(`${k}: ([\\d,]+)`).exec(leg)?.[1] ?? '0').replace(/,/g, '')));
+  check(n > 1200 && by[0] + by[1] + by[2] === n && by[3] > 30, `the World Heritage filter shows ${n} sites (${by[0]} cultural, ${by[1]} natural, ${by[2]} mixed; ${by[3]} in danger)`);
+  const xy = await page.evaluate(() => window.atlas.app.renderer.view.project(78.0419, 27.175));
+  if (xy) await page.mouse.click(xy[0], xy[1]);
+  await page.waitForFunction(() => /Taj Mahal/.test(document.querySelector('.country-card:not([hidden])')?.textContent ?? ''), null, { timeout: 10000 }).catch(() => {});
+  const c = await page.evaluate(() => ({ text: document.querySelector('.country-card:not([hidden])')?.textContent ?? '', links: [...document.querySelectorAll('.country-card:not([hidden]) a')].map((a) => a.href) }));
+  check(/Taj Mahal/.test(c.text) && /1983/.test(c.text) && c.links.some((l) => /whc\.unesco\.org\/en\/list\/252/.test(l)), `a tap on the Taj Mahal opens its card, listed in 1983, with UNESCO's page (${c.text.slice(0, 60)})`);
+  await page.evaluate(() => [...document.querySelectorAll('.legend button')].find((b) => /Watch the list grow/.test(b.textContent))?.click());
+  await page.waitForTimeout(2200);
+  const t1 = await page.evaluate(() => /(\d{4}): ([\d,]+) sites/.exec(document.querySelector('.legend')?.textContent ?? '')?.slice(1) ?? null);
+  await page.waitForTimeout(2500);
+  const t2 = await page.evaluate(() => /(\d{4}): ([\d,]+) sites/.exec(document.querySelector('.legend')?.textContent ?? '')?.slice(1) ?? null);
+  check(!!t1 && !!t2 && Number(t2[0]) > Number(t1[0]) && Number(t2[1].replace(/,/g, '')) > Number(t1[1].replace(/,/g, '')) && Number(t1[0]) < 2000, `"Watch the list grow" plays the years (${t1?.join(': ')} → ${t2?.join(': ')} sites)`);
+  await page.evaluate(() => { window.atlas.app.select('IND'); });
+  await page.waitForTimeout(800);
+  const ind = await page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.textContent ?? '');
+  check(/World Heritage sites\s*\d+ \(/.test(ind), `India's card counts its World Heritage sites (${/World Heritage sites[^A-Z]*/.exec(ind)?.[0] ?? ind.slice(0, 60)})`);
+  check(!errors.length, `no page errors with the World Heritage filter${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 12m. Inventions and World Heritage stories: a World Heritage story card says when the site was listed, with UNESCO's
+// page; the inventions map shows the collection's inventions, and a tap opens one's card.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#heritage=world-heritage-begins&step=3&p=globe&lang=en');
+  await page.waitForSelector('.warbar', { timeout: 30000 });
+  await page.waitForTimeout(1500);
+  await page.evaluate(() => { const b = document.querySelector('.warbar .tb-play'); if (b && b.getAttribute('aria-label') === 'Pause') b.click(); });
+  await page.evaluate(() => { const m = window.atlas.time.stories.heritage; m.itemCard(m.c.items.find((it) => it.id === 'abu-simbel')); });
+  await page.waitForTimeout(800);
+  const c = await page.evaluate(() => ({ rows: document.querySelector('.country-card:not([hidden]) .rows')?.textContent ?? '', links: [...document.querySelectorAll('.country-card:not([hidden]) a')].map((a) => a.href) }));
+  check(/World Heritage\s*Since 1979/.test(c.rows) && c.links.some((l) => /whc\.unesco\.org\/en\/list\/88$/.test(l)), `a World Heritage story card says when Abu Simbel was listed, with UNESCO's page (${/World Heritage[^📜]*/.exec(c.rows)?.[0].slice(0, 50) ?? c.rows.slice(0, 60)})`);
+  check(!errors.length, `no page errors in a World Heritage story${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+{
+  const { page, errors, ctx } = await open({ viewport: { width: 1366, height: 820 } }, '#p=globe&l=political,inventions&c=-99.15,19.43,6&lang=en');
+  await page.waitForFunction(() => /\d+ inventions/.test(document.querySelector('.legend')?.textContent ?? ''), null, { timeout: 30000 }).catch(() => {});
+  const n = await page.evaluate(() => Number(/(\d+) inventions/.exec(document.querySelector('.legend')?.textContent ?? '')?.[1] ?? 0));
+  const xy = await page.evaluate(() => window.atlas.app.renderer.view.project(-99.153, 19.4302));
+  if (xy) await page.mouse.click(xy[0], xy[1]);
+  await page.waitForTimeout(1200);
+  const card = await page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.textContent ?? '');
+  check(n > 100 && /Invented by/.test(card) && /Open its story/.test(card), `the inventions map shows ${n} inventions, and a tap in Mexico City opens one (${card.slice(0, 60)})`);
+  check(!errors.length, `no page errors on the inventions map${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 // 12f. Compare two filters: from the Filters panel, GDP per capita against life expectancy on a
 // two-colour map, with its chart (a strong link); the legend's nine squares count the countries and a
 // tap lights theirs; a dot on the chart picks its country, whose strip shows both values with their
@@ -1039,7 +1095,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForSelector('.warbar', { timeout: 30000 }).catch(() => {});
   await page.waitForTimeout(1500);
   const opened = await page.evaluate(() => ({ mode: window.atlas.app.mode, card: !!document.querySelector('.country-card:not([hidden])') }));
-  check(['eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing'].includes(opened.mode) && opened.card, `"See it in the story" opens the story at the item (${opened.mode})`);
+  // Any collection the Where quiz draws from.
+  check(['eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters', 'music', 'art', 'inventions', 'heritage'].includes(opened.mode) && opened.card, `"See it in the story" opens the story at the item (${opened.mode})`);
   // A city tour: Hagia Sophia (Great structures), then the siege of 717 (Wars), both over Istanbul.
   await menu('Guided tours');
   await page.evaluate(() => document.querySelector('[data-tour="Istanbul through time"]').click());
@@ -1117,7 +1174,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(300);
   // What are you hearing?, Which book is it from?, Who made it?: the clip, the line or the picture is the
   // question, and the name stays hidden until the answer.
-  for (const kind of ['listen', 'opening', 'artist']) {
+  for (const kind of ['listen', 'opening', 'artist', 'site']) {
     await menu('Quiz');
     await page.evaluate((k) => document.querySelector(`[data-quiz="${k}"]`).click(), kind);
     await page.waitForSelector('.learn-card:not([hidden]) .quiz-opt', { timeout: 30000 });
@@ -1143,6 +1200,32 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
   const fl = await stop();
   check(fl.mode === 'books' && /Genji|Heian/i.test(fl.bar) && /1\/10/.test(fl.n), `the First lines tour starts in Heian Kyoto (${fl.bar})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
+  // Lost and rebuilt starts in Warsaw; Invented in Latin America starts with Olmec rubber.
+  await menu('Guided tours');
+  await page.evaluate(() => document.querySelector('[data-tour="Lost and rebuilt"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
+  const lr = await stop();
+  check(lr.mode === 'heritage' && /Warsaw|paintings/i.test(lr.bar) && /1\/6/.test(lr.n), `the Lost and rebuilt tour starts in Warsaw (${lr.bar})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
+  await menu('Guided tours');
+  await page.evaluate(() => document.querySelector('[data-tour="Invented in Latin America"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
+  const ila = await stop();
+  check(ila.mode === 'inventions' && /rubber/i.test(ila.bar) && /1\/11/.test(ila.n), `the Invented in Latin America tour starts with rubber (${ila.bar})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
+  // Who invented it?: the invention is named, four inventors to choose from.
+  await menu('Quiz');
+  await page.evaluate(() => document.querySelector('[data-quiz="inventor"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .quiz-opt', { timeout: 30000 });
+  const iq = await page.evaluate(() => ({ head: document.querySelector('.learn-card .tool-head')?.textContent ?? '', q: document.querySelector('.learn-card .quiz-q')?.textContent ?? '', named: document.querySelector('.learn-card .quiz-item')?.textContent ?? '', opts: [...document.querySelectorAll('.learn-card .quiz-opt')].map((b) => b.textContent) }));
+  await page.evaluate(() => document.querySelector('.learn-card .quiz-opt').click());
+  await page.waitForTimeout(400);
+  const ifb = await page.evaluate(() => document.querySelector('.learn-card .quiz-fb')?.textContent ?? '');
+  check(/1\/10/.test(iq.head) && /Who invented it/.test(iq.q) && !!iq.named && iq.opts.length === 4 && new Set(iq.opts).size === 4 && /: /.test(ifb), `quiz "inventor": ${iq.named} (${iq.opts.join(' / ')}) → ${ifb.slice(0, 70)}`);
   await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
   await page.waitForTimeout(300);
   check(!errors.length, `no page errors in quizzes and tours${errors.length ? ': ' + errors.join(' | ') : ''}`);
