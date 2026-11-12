@@ -1,33 +1,291 @@
 {
   "id": "vaccines",
-  "name": { "en": "Vaccines for all", "es": "Vacunas para todos" },
+  "name": {
+    "en": "Vaccines for all",
+    "es": "Vacunas para todos"
+  },
   "icon": "💉",
   "era": "modern",
-  "region": { "en": "Worldwide", "es": "Todo el mundo" },
+  "region": {
+    "en": "Worldwide",
+    "es": "Todo el mundo"
+  },
   "start": "1853",
   "end": "2026",
   "summary": {
     "en": "After Jenner, Pasteur and many others made vaccines against rabies, tuberculosis, yellow fever, polio, measles, HPV and malaria, and the world set out to give them to every child. They have saved an estimated 154 million lives since 1974, though doubts and gaps remain.",
     "es": "Después de Jenner, Pasteur y muchos otros hicieron vacunas contra la rabia, la tuberculosis, la fiebre amarilla, la polio, el sarampión, el VPH y la malaria, y el mundo se propuso dárselas a todos los niños. Se calcula que han salvado 154 millones de vidas desde 1974, aunque aún hay dudas y lagunas."
   },
-  "camera": { "lon": -1.5, "lat": 52.3, "zoom": 6 },
+  "camera": {
+    "lon": -1.5,
+    "lat": 52.3,
+    "zoom": 6
+  },
   "sides": [
-    { "id": "travel", "name": { "en": "Vaccines and patients travel", "es": "Viajes de vacunas y pacientes" }, "color": "#7d3c98" },
-    { "id": "free", "name": { "en": "Certified free of wild polio", "es": "Certificado libre de polio salvaje" }, "color": "#16a085" },
-    { "id": "wild", "name": { "en": "Wild polio still endemic", "es": "Polio salvaje aún endémica" }, "color": "#c0392b" },
-    { "id": "malaria", "name": { "en": "Malaria vaccine pilots, 2019", "es": "Pilotos de la vacuna contra la malaria, 2019" }, "color": "#d4a017" }
+    {
+      "id": "travel",
+      "name": {
+        "en": "Vaccines and patients travel",
+        "es": "Viajes de vacunas y pacientes"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "free",
+      "name": {
+        "en": "Certified free of wild polio",
+        "es": "Certificado libre de polio salvaje"
+      },
+      "color": "#16a085"
+    },
+    {
+      "id": "wild",
+      "name": {
+        "en": "Wild polio still endemic",
+        "es": "Polio salvaje aún endémica"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "malaria",
+      "name": {
+        "en": "Malaria vaccine pilots, 2019",
+        "es": "Pilotos de la vacuna contra la malaria, 2019"
+      },
+      "color": "#d4a017"
+    }
   ],
   "defs": {
-    "amro": ["USA", "CAN", "MEX", "GTM", "BLZ", "SLV", "HND", "NIC", "CRI", "PAN", "CUB", "JAM", "HTI", "DOM", "PRI", "BHS", "BRB", "TTO", "GRD", "LCA", "VCT", "DMA", "ATG", "KNA", "COL", "VEN", "GUY", "SUR", "ECU", "PER", "BOL", "BRA", "PRY", "URY", "ARG", "CHL", { "and": ["FRA", { "poly": [[-55.0, 1.5], [-51.0, 1.5], [-51.0, 6.5], [-55.0, 6.5]] }] }],
-    "wpro": ["CHN", "HKG", "MAC", "MNG", "JPN", "KOR", "VNM", "LAO", "KHM", "MYS", "SGP", "BRN", "PHL", "AUS", "NZL", "PNG", "FJI", "SLB", "VUT", "WSM", "TON", "KIR", "TUV", "NRU", "MHL", "FSM", "PLW", "COK", "NIU", "NCL", "PYF"],
-    "euro": ["ALB", "AND", "AUT", "BLR", "BEL", "BIH", "BGR", "HRV", "CYP", "CYN", "CZE", "DNK", "GRL", "FRO", "EST", "FIN", "ALA", "FRA", "DEU", "GRC", "HUN", "ISL", "IRL", "ITA", "LVA", "LIE", "LTU", "LUX", "MLT", "MCO", "MNE", "NLD", "MKD", "NOR", "POL", "PRT", "MDA", "ROU", "RUS", "SMR", "SRB", "XKX", "SVK", "SVN", "ESP", "SWE", "CHE", "UKR", "GBR", "IMN", "GGY", "JEY", "ARM", "AZE", "GEO", "KAZ", "KGZ", "TJK", "TKM", "UZB", "TUR", "ISR"],
-    "searo": ["IND", "BGD", "BTN", "PRK", "IDN", "MDV", "MMR", "NPL", "LKA", "THA", "TLS"],
-    "afro": ["DZA", "AGO", "BEN", "BWA", "BFA", "BDI", "CPV", "CMR", "CAF", "TCD", "COM", "COG", "CIV", "COD", "GNQ", "ERI", "SWZ", "ETH", "GAB", "GMB", "GHA", "GIN", "GNB", "KEN", "LSO", "LBR", "MDG", "MWI", "MLI", "MRT", "MUS", "MOZ", "NAM", "NER", "NGA", "RWA", "STP", "SEN", "SYC", "SLE", "ZAF", "SSD", "TGO", "UGA", "TZA", "ZMB", "ZWE"]
+    "amro": [
+      "USA",
+      "CAN",
+      "MEX",
+      "GTM",
+      "BLZ",
+      "SLV",
+      "HND",
+      "NIC",
+      "CRI",
+      "PAN",
+      "CUB",
+      "JAM",
+      "HTI",
+      "DOM",
+      "PRI",
+      "BHS",
+      "BRB",
+      "TTO",
+      "GRD",
+      "LCA",
+      "VCT",
+      "DMA",
+      "ATG",
+      "KNA",
+      "COL",
+      "VEN",
+      "GUY",
+      "SUR",
+      "ECU",
+      "PER",
+      "BOL",
+      "BRA",
+      "PRY",
+      "URY",
+      "ARG",
+      "CHL",
+      {
+        "and": [
+          "FRA",
+          {
+            "poly": [
+              [
+                -55.0,
+                1.5
+              ],
+              [
+                -51.0,
+                1.5
+              ],
+              [
+                -51.0,
+                6.5
+              ],
+              [
+                -55.0,
+                6.5
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "wpro": [
+      "CHN",
+      "HKG",
+      "MAC",
+      "MNG",
+      "JPN",
+      "KOR",
+      "VNM",
+      "LAO",
+      "KHM",
+      "MYS",
+      "SGP",
+      "BRN",
+      "PHL",
+      "AUS",
+      "NZL",
+      "PNG",
+      "FJI",
+      "SLB",
+      "VUT",
+      "WSM",
+      "TON",
+      "KIR",
+      "TUV",
+      "NRU",
+      "MHL",
+      "FSM",
+      "PLW",
+      "COK",
+      "NIU",
+      "NCL",
+      "PYF"
+    ],
+    "euro": [
+      "ALB",
+      "AND",
+      "AUT",
+      "BLR",
+      "BEL",
+      "BIH",
+      "BGR",
+      "HRV",
+      "CYP",
+      "CYN",
+      "CZE",
+      "DNK",
+      "GRL",
+      "FRO",
+      "EST",
+      "FIN",
+      "ALA",
+      "FRA",
+      "DEU",
+      "GRC",
+      "HUN",
+      "ISL",
+      "IRL",
+      "ITA",
+      "LVA",
+      "LIE",
+      "LTU",
+      "LUX",
+      "MLT",
+      "MCO",
+      "MNE",
+      "NLD",
+      "MKD",
+      "NOR",
+      "POL",
+      "PRT",
+      "MDA",
+      "ROU",
+      "RUS",
+      "SMR",
+      "SRB",
+      "XKX",
+      "SVK",
+      "SVN",
+      "ESP",
+      "SWE",
+      "CHE",
+      "UKR",
+      "GBR",
+      "IMN",
+      "GGY",
+      "JEY",
+      "ARM",
+      "AZE",
+      "GEO",
+      "KAZ",
+      "KGZ",
+      "TJK",
+      "TKM",
+      "UZB",
+      "TUR",
+      "ISR"
+    ],
+    "searo": [
+      "IND",
+      "BGD",
+      "BTN",
+      "PRK",
+      "IDN",
+      "MDV",
+      "MMR",
+      "NPL",
+      "LKA",
+      "THA",
+      "TLS"
+    ],
+    "afro": [
+      "DZA",
+      "AGO",
+      "BEN",
+      "BWA",
+      "BFA",
+      "BDI",
+      "CPV",
+      "CMR",
+      "CAF",
+      "TCD",
+      "COM",
+      "COG",
+      "CIV",
+      "COD",
+      "GNQ",
+      "ERI",
+      "SWZ",
+      "ETH",
+      "GAB",
+      "GMB",
+      "GHA",
+      "GIN",
+      "GNB",
+      "KEN",
+      "LSO",
+      "LBR",
+      "MDG",
+      "MWI",
+      "MLI",
+      "MRT",
+      "MUS",
+      "MOZ",
+      "NAM",
+      "NER",
+      "NGA",
+      "RWA",
+      "STP",
+      "SEN",
+      "SYC",
+      "SLE",
+      "ZAF",
+      "SSD",
+      "TGO",
+      "UGA",
+      "TZA",
+      "ZMB",
+      "ZWE"
+    ]
   },
   "steps": [
     {
       "date": "1853-08-20",
-      "title": { "en": "Vaccination by law", "es": "Vacunación por ley" },
+      "title": {
+        "en": "Vaccination by law",
+        "es": "Vacunación por ley"
+      },
       "text": {
         "en": "In 1853 a law made smallpox vaccination compulsory for babies in England and Wales, with fines for parents who refused. Protests grew, and in 1885 over 20,000 people rallied against it in Leicester.",
         "es": "En 1853 una ley hizo obligatoria la vacuna contra la viruela para los bebés de Inglaterra y Gales, con multas para los padres que se negaran. Las protestas crecieron, y en 1885 más de 20 000 personas se manifestaron en Leicester."
@@ -39,27 +297,48 @@
       "places": [
         {
           "id": "vaccination-act-1853",
-          "name": { "en": "Vaccination Act 1853", "es": "Ley de Vacunación de 1853" },
-          "at": [-0.1247, 51.4992],
+          "name": {
+            "en": "Vaccination Act 1853",
+            "es": "Ley de Vacunación de 1853"
+          },
+          "at": [
+            -0.1247,
+            51.4992
+          ],
           "cat": "health",
           "type": "event",
           "date": "1853-08-20",
-          "place": { "en": "Westminster, London, England", "es": "Westminster, Londres, Inglaterra" },
+          "place": {
+            "en": "Westminster, London, England",
+            "es": "Westminster, Londres, Inglaterra"
+          },
           "text": {
             "en": "A British law that made smallpox vaccination compulsory for babies in England and Wales, with a fine of £1 for parents who did not comply. Later Acts enforced it more harshly.",
             "es": "Una ley británica que hizo obligatoria la vacuna contra la viruela para los bebés de Inglaterra y Gales, con una multa de 1 libra para los padres que no cumplieran. Leyes posteriores la aplicaron con más dureza."
           },
-          "wiki": { "en": "Vaccination Act", "es": "" },
+          "wiki": {
+            "en": "Vaccination Act",
+            "es": ""
+          },
           "img": "Coat of Arms of the United Kingdom (1837).svg"
         },
         {
           "id": "leicester-demonstration",
-          "name": { "en": "Leicester anti-vaccination rally", "es": "Manifestación antivacunas de Leicester" },
-          "at": [-1.1331, 52.6361],
+          "name": {
+            "en": "Leicester anti-vaccination rally",
+            "es": "Manifestación antivacunas de Leicester"
+          },
+          "at": [
+            -1.1331,
+            52.6361
+          ],
           "cat": "society",
           "type": "event",
           "date": "1885",
-          "place": { "en": "Leicester, England", "es": "Leicester, Inglaterra" },
+          "place": {
+            "en": "Leicester, England",
+            "es": "Leicester, Inglaterra"
+          },
           "text": {
             "en": "In 1885, with over 3,000 prosecutions pending, more than 20,000 people rallied in Leicester against compulsory vaccination. The town then fought smallpox mainly by isolating the sick.",
             "es": "En 1885, con más de 3000 juicios pendientes, más de 20 000 personas se manifestaron en Leicester contra la vacunación obligatoria. Después la ciudad combatió la viruela sobre todo aislando a los enfermos."
@@ -68,14 +347,20 @@
             "en": "Working families, who paid most of the fines, filled the protests, while middle-class societies and some famous writers, scientists, doctors and MPs led the movement. As early as 1802 James Gillray had drawn vaccinated people sprouting cow parts. Leicester's system of reporting cases and isolating patients and contacts worked, but it relied on compulsory isolation, and from 1901 its health officer also encouraged contacts to be vaccinated.",
             "es": "Las familias trabajadoras, que pagaban la mayoría de las multas, llenaban las protestas, mientras sociedades de clase media y algunos escritores, científicos, médicos y diputados famosos encabezaban el movimiento. Ya en 1802 James Gillray había dibujado a vacunados a los que les salían partes de vaca. El sistema de Leicester de avisar de los casos y aislar a enfermos y contactos funcionó, pero dependía del aislamiento obligatorio, y desde 1901 su responsable de salud también animó a los contactos a vacunarse."
           },
-          "wiki": { "en": "Vaccine hesitancy", "es": "Controversia de las vacunas" },
+          "wiki": {
+            "en": "Vaccine hesitancy",
+            "es": "Controversia de las vacunas"
+          },
           "img": "The cow pock.jpg"
         }
       ]
     },
     {
       "date": "1885-07-06",
-      "title": { "en": "Pasteur saves Joseph Meister", "es": "Pasteur salva a Joseph Meister" },
+      "title": {
+        "en": "Pasteur saves Joseph Meister",
+        "es": "Pasteur salva a Joseph Meister"
+      },
       "text": {
         "en": "On 6 July 1885 Louis Pasteur's team began treating Joseph Meister, 9, bitten by a rabid dog, with a weakened rabies virus. The boy lived, and patients soon came to Paris from as far as America.",
         "es": "El 6 de julio de 1885, el equipo de Louis Pasteur empezó a tratar a Joseph Meister, de 9 años, mordido por un perro rabioso, con un virus de la rabia debilitado. El niño vivió, y pronto llegaron pacientes a París desde lugares tan lejanos como América."
@@ -84,30 +369,98 @@
         "en": "Rabies is almost always fatal once symptoms appear. Pasteur's laboratory had been learning to weaken germs on purpose, starting with chicken cholera, and in 1881 it tested an anthrax vaccine on sheep in public at Pouilly-le-Fort. For rabies, the virus was grown in rabbits and weakened by drying their spinal cords, a method devised by his colleague Émile Roux. Joseph Meister had been bitten on his way to school in Alsace, then part of Germany. Pasteur was a chemist, not a doctor, so the physician Jacques-Joseph Grancher gave the 13 injections over 11 days. Pasteur's notebooks later showed that he had treated two people before Meister, one of whom died. In 1886 some 350 people were treated, and only one developed rabies. Pasteur called his weakened germs 'vaccines' in honour of Jenner, and in 1887 the Pasteur Institute was founded to treat rabies and study infectious disease.",
         "es": "La rabia es casi siempre mortal una vez que aparecen los síntomas. El laboratorio de Pasteur venía aprendiendo a debilitar microbios a propósito, empezando por el del cólera de las gallinas, y en 1881 probó en público una vacuna contra el carbunco en ovejas en Pouilly-le-Fort. Para la rabia, el virus se cultivaba en conejos y se debilitaba secando su médula espinal, un método ideado por su colega Émile Roux. Joseph Meister había sido mordido camino de la escuela, en Alsacia, entonces parte de Alemania. Pasteur era químico, no médico, así que el médico Jacques-Joseph Grancher le puso las 13 inyecciones en 11 días. Los cuadernos de Pasteur mostraron después que había tratado a dos personas antes de Meister, y que una murió. En 1886 se trató a unas 350 personas, y solo una desarrolló la rabia. Pasteur llamó «vacunas» a sus microbios debilitados en honor a Jenner, y en 1887 se fundó el Instituto Pasteur para tratar la rabia y estudiar las enfermedades infecciosas."
       },
-      "camera": { "lon": -34, "lat": 46, "zoom": 1.7 },
+      "camera": {
+        "lon": -34,
+        "lat": 46,
+        "zoom": 1.7
+      },
       "moves": [
         {
           "side": "travel",
-          "path": [[7.26, 48.35], [6.18, 48.69], [4.03, 49.26], [2.34, 48.84]],
-          "label": { "en": "Joseph Meister to Paris, July 1885", "es": "Joseph Meister a París, julio de 1885" }
+          "path": [
+            [
+              7.26,
+              48.35
+            ],
+            [
+              6.18,
+              48.69
+            ],
+            [
+              4.03,
+              49.26
+            ],
+            [
+              2.34,
+              48.84
+            ]
+          ],
+          "label": {
+            "en": "Joseph Meister to Paris, July 1885",
+            "es": "Joseph Meister a París, julio de 1885"
+          }
         },
         {
           "side": "travel",
-          "path": [[-74.02, 40.6], [-70.0, 40.4], [-50.0, 43.0], [-25.0, 47.5], [-6.0, 49.6], [-1.0, 49.85], [0.1, 49.5]],
+          "path": [
+            [
+              -74.02,
+              40.6
+            ],
+            [
+              -70.0,
+              40.4
+            ],
+            [
+              -50.0,
+              43.0
+            ],
+            [
+              -25.0,
+              47.5
+            ],
+            [
+              -6.0,
+              49.6
+            ],
+            [
+              -1.0,
+              49.85
+            ],
+            [
+              0.1,
+              49.5
+            ]
+          ],
           "by": "sea",
-          "label": { "en": "Four children from the US, late 1885", "es": "Cuatro niños de EE. UU., fines de 1885" }
+          "label": {
+            "en": "Four children from the US, late 1885",
+            "es": "Cuatro niños de EE. UU., fines de 1885"
+          }
         }
       ],
       "places": [
         {
           "id": "louis-pasteur",
-          "name": { "en": "Louis Pasteur", "es": "Louis Pasteur" },
-          "at": [2.3447, 48.8419],
+          "name": {
+            "en": "Louis Pasteur",
+            "es": "Louis Pasteur"
+          },
+          "at": [
+            2.3447,
+            48.8419
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "1885-07-06",
-          "life": ["1822-12-27", "1895-09-28"],
-          "place": { "en": "École normale supérieure, Paris, France", "es": "Escuela Normal Superior, París, Francia" },
+          "life": [
+            "1822-12-27",
+            "1895-09-28"
+          ],
+          "place": {
+            "en": "École normale supérieure, Paris, France",
+            "es": "Escuela Normal Superior, París, Francia"
+          },
           "text": {
             "en": "French chemist whose laboratory learned to weaken germs to make vaccines, for animals against anthrax and, in 1885, for people against rabies. He also gave his name to pasteurisation.",
             "es": "Químico francés cuyo laboratorio aprendió a debilitar microbios para hacer vacunas, para animales contra el carbunco y, en 1885, para personas contra la rabia. También dio nombre a la pasteurización."
@@ -116,43 +469,76 @@
             "en": "Historians who read his notebooks found that he was not always open about his methods: the anthrax vaccine he showed off in 1881 had been made by a method close to that of his rival Henry Toussaint. His colleagues Émile Roux and Charles Chamberland did much of the laboratory work. He died in 1895 and is buried at the Pasteur Institute.",
             "es": "Los historiadores que leyeron sus cuadernos descubrieron que no siempre fue claro sobre sus métodos: la vacuna contra el carbunco que exhibió en 1881 se había hecho con un método parecido al de su rival Henry Toussaint. Sus colegas Émile Roux y Charles Chamberland hicieron gran parte del trabajo de laboratorio. Murió en 1895 y está enterrado en el Instituto Pasteur."
           },
-          "wiki": { "en": "Louis Pasteur", "es": "Louis Pasteur" }
+          "wiki": {
+            "en": "Louis Pasteur",
+            "es": "Louis Pasteur"
+          }
         },
         {
           "id": "joseph-meister",
-          "name": { "en": "Joseph Meister", "es": "Joseph Meister" },
-          "at": [7.2617, 48.355],
+          "name": {
+            "en": "Joseph Meister",
+            "es": "Joseph Meister"
+          },
+          "at": [
+            7.2617,
+            48.355
+          ],
           "cat": "vaccine",
           "type": "person",
           "date": "1885-07-06",
-          "life": ["1876-02-21", "1940-06-24"],
-          "place": { "en": "Maisonsgoutte (Meissengott), Alsace, France", "es": "Maisonsgoutte (Meissengott), Alsacia, Francia" },
+          "life": [
+            "1876-02-21",
+            "1940-06-24"
+          ],
+          "place": {
+            "en": "Maisonsgoutte (Meissengott), Alsace, France",
+            "es": "Maisonsgoutte (Meissengott), Alsacia, Francia"
+          },
           "text": {
             "en": "A nine-year-old from Alsace, bitten by a rabid dog on his way to school, who in July 1885 became the first person to receive Pasteur's rabies vaccine. He never developed rabies and later worked at the Pasteur Institute.",
             "es": "Un niño alsaciano de nueve años, mordido por un perro rabioso camino de la escuela, que en julio de 1885 fue el primero en recibir la vacuna de Pasteur contra la rabia. Nunca enfermó y de adulto trabajó en el Instituto Pasteur."
           },
-          "wiki": { "en": "Joseph Meister", "es": "Joseph Meister" }
+          "wiki": {
+            "en": "Joseph Meister",
+            "es": "Joseph Meister"
+          }
         },
         {
           "id": "rabies",
-          "name": { "en": "Rabies", "es": "Rabia" },
-          "at": [2.3117, 48.8405],
+          "name": {
+            "en": "Rabies",
+            "es": "Rabia"
+          },
+          "at": [
+            2.3117,
+            48.8405
+          ],
           "cat": "disease",
           "type": "disease",
           "date": "1885",
-          "place": { "en": "Worldwide, above all Africa and Asia", "es": "Todo el mundo, sobre todo África y Asia" },
+          "place": {
+            "en": "Worldwide, above all Africa and Asia",
+            "es": "Todo el mundo, sobre todo África y Asia"
+          },
           "text": {
             "en": "A viral disease passed on by the bites of infected animals, mostly dogs. Almost always fatal once symptoms begin, it still kills an estimated 59,000 people a year, over 95% of them in Africa and Asia.",
             "es": "Enfermedad viral que se transmite por la mordedura de animales infectados, sobre todo perros. Casi siempre mortal cuando empiezan los síntomas, aún mata a unas 59 000 personas al año, más del 95 % en África y Asia."
           },
-          "wiki": { "en": "Rabies", "es": "Rabia" },
+          "wiki": {
+            "en": "Rabies",
+            "es": "Rabia"
+          },
           "img": "Rabies Virus EM PHIL 1876.JPG"
         }
       ]
     },
     {
       "date": "1890",
-      "title": { "en": "A cure from horses' blood", "es": "Una cura con sangre de caballo" },
+      "title": {
+        "en": "A cure from horses' blood",
+        "es": "Una cura con sangre de caballo"
+      },
       "text": {
         "en": "In Berlin in 1890, Emil von Behring and Kitasato Shibasaburō showed that serum from immunised animals could protect against diphtheria and tetanus. From 1894 antitoxin made in horses saved children from diphtheria.",
         "es": "En Berlín, en 1890, Emil von Behring y Kitasato Shibasaburō mostraron que el suero de animales inmunizados podía proteger de la difteria y el tétanos. Desde 1894, la antitoxina hecha con caballos salvó a niños de la difteria."
@@ -161,65 +547,149 @@
         "en": "Diphtheria, a throat infection, was then one of the great killers of children. Kitasato, who studied under Robert Koch in Berlin, had grown the tetanus germ in pure culture, and with Behring he found that animals given small doses of the germs' poisons made 'antitoxins' in their blood that could protect or cure others. This 'serum therapy' was not a vaccine: it lent ready-made protection, and the horse serum could cause allergic reactions. Paul Ehrlich worked with Behring on the serum. In 1901 Behring won the first Nobel Prize in Physiology or Medicine; Kitasato, who had done much of the work, was nominated but not awarded. Vaccines against other diseases followed: at the Pasteur Institute, Waldemar Haffkine tested a cholera vaccine on himself in 1892, and in 1897, in Bombay, a plague vaccine.",
         "es": "La difteria, una infección de la garganta, era entonces una de las grandes asesinas de niños. Kitasato, alumno de Robert Koch en Berlín, había cultivado puro el microbio del tétanos, y con Behring descubrió que los animales que recibían pequeñas dosis de los venenos de los microbios fabricaban en su sangre «antitoxinas» que podían proteger o curar a otros. Esta «sueroterapia» no era una vacuna: prestaba una protección ya hecha, y el suero de caballo podía causar alergias. Paul Ehrlich trabajó con Behring en el suero. En 1901 Behring ganó el primer Premio Nobel de Fisiología o Medicina; Kitasato, que había hecho gran parte del trabajo, fue candidato pero no lo recibió. Siguieron vacunas contra otras enfermedades: en el Instituto Pasteur, Waldemar Haffkine probó en sí mismo una vacuna contra el cólera en 1892, y en 1897, en Bombay, una contra la peste."
       },
-      "camera": { "lon": 45, "lat": 38, "zoom": 1.6 },
+      "camera": {
+        "lon": 45,
+        "lat": 38,
+        "zoom": 1.6
+      },
       "moves": [
         {
           "side": "travel",
-          "path": [[2.34, 48.84], [12.5, 41.9], [31.2, 30.0], [44.4, 33.3], [61.0, 29.0], [77.2, 28.6], [88.37, 22.57]],
-          "label": { "en": "Haffkine takes his cholera vaccine to India, 1893", "es": "Haffkine lleva su vacuna contra el cólera a la India, 1893" }
+          "path": [
+            [
+              2.34,
+              48.84
+            ],
+            [
+              12.5,
+              41.9
+            ],
+            [
+              31.2,
+              30.0
+            ],
+            [
+              44.4,
+              33.3
+            ],
+            [
+              61.0,
+              29.0
+            ],
+            [
+              77.2,
+              28.6
+            ],
+            [
+              88.37,
+              22.57
+            ]
+          ],
+          "label": {
+            "en": "Haffkine takes his cholera vaccine to India, 1893",
+            "es": "Haffkine lleva su vacuna contra el cólera a la India, 1893"
+          }
         }
       ],
       "places": [
         {
           "id": "emil-von-behring",
-          "name": { "en": "Emil von Behring", "es": "Emil von Behring" },
-          "at": [13.379, 52.526],
+          "name": {
+            "en": "Emil von Behring",
+            "es": "Emil von Behring"
+          },
+          "at": [
+            13.379,
+            52.526
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "1890",
-          "life": ["1854-03-15", "1917-03-31"],
-          "place": { "en": "Berlin, Germany", "es": "Berlín, Alemania" },
+          "life": [
+            "1854-03-15",
+            "1917-03-31"
+          ],
+          "place": {
+            "en": "Berlin, Germany",
+            "es": "Berlín, Alemania"
+          },
           "text": {
             "en": "German physiologist, called the 'saviour of children', who developed serum therapy against diphtheria. In 1901 he received the first Nobel Prize in Physiology or Medicine.",
             "es": "Fisiólogo alemán, llamado el «salvador de los niños», que desarrolló la sueroterapia contra la difteria. En 1901 recibió el primer Premio Nobel de Fisiología o Medicina."
           },
-          "wiki": { "en": "Emil von Behring", "es": "Emil Adolf von Behring" }
+          "wiki": {
+            "en": "Emil von Behring",
+            "es": "Emil Adolf von Behring"
+          }
         },
         {
           "id": "kitasato-shibasaburo",
-          "name": { "en": "Kitasato Shibasaburō", "es": "Kitasato Shibasaburō" },
-          "at": [13.3845, 52.5235],
+          "name": {
+            "en": "Kitasato Shibasaburō",
+            "es": "Kitasato Shibasaburō"
+          },
+          "at": [
+            13.3845,
+            52.5235
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "1890",
-          "life": ["1853-01-29", "1931-06-13"],
-          "place": { "en": "Berlin, Germany", "es": "Berlín, Alemania" },
+          "life": [
+            "1853-01-29",
+            "1931-06-13"
+          ],
+          "place": {
+            "en": "Berlin, Germany",
+            "es": "Berlín, Alemania"
+          },
           "text": {
             "en": "Japanese bacteriologist who grew the tetanus germ in pure culture and, with Behring, discovered antitoxins in 1890. He did much of the work but was left out of the 1901 Nobel Prize.",
             "es": "Bacteriólogo japonés que cultivó puro el microbio del tétanos y, con Behring, descubrió las antitoxinas en 1890. Hizo gran parte del trabajo, pero quedó fuera del Premio Nobel de 1901."
           },
-          "wiki": { "en": "Kitasato Shibasaburō", "es": "Kitasato Shibasaburō" }
+          "wiki": {
+            "en": "Kitasato Shibasaburō",
+            "es": "Kitasato Shibasaburō"
+          }
         },
         {
           "id": "waldemar-haffkine",
-          "name": { "en": "Waldemar Haffkine", "es": "Waldemar Haffkine" },
-          "at": [72.8442, 19.0021],
+          "name": {
+            "en": "Waldemar Haffkine",
+            "es": "Waldemar Haffkine"
+          },
+          "at": [
+            72.8442,
+            19.0021
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "1897-01-10",
-          "life": ["1860-03-15", "1930-10-26"],
-          "place": { "en": "Haffkine Institute, Mumbai, India", "es": "Instituto Haffkine, Bombay, India" },
+          "life": [
+            "1860-03-15",
+            "1930-10-26"
+          ],
+          "place": {
+            "en": "Haffkine Institute, Mumbai, India",
+            "es": "Instituto Haffkine, Bombay, India"
+          },
           "text": {
             "en": "Jewish microbiologist from Odessa who made the first vaccines against cholera and plague and tried each on himself first. By 1900 some four million people in India had received his plague vaccine.",
             "es": "Microbiólogo judío de Odesa que creó las primeras vacunas contra el cólera y la peste y probó cada una primero en sí mismo. Hacia 1900 unos cuatro millones de personas en la India habían recibido su vacuna contra la peste."
           },
-          "wiki": { "en": "Waldemar Haffkine", "es": "Waldemar Haffkine" }
+          "wiki": {
+            "en": "Waldemar Haffkine",
+            "es": "Waldemar Haffkine"
+          }
         }
       ]
     },
     {
       "date": "1921",
-      "title": { "en": "BCG against tuberculosis", "es": "La BCG contra la tuberculosis" },
+      "title": {
+        "en": "BCG against tuberculosis",
+        "es": "La BCG contra la tuberculosis"
+      },
       "text": {
         "en": "In 1921 babies in Paris were the first people given BCG, a tuberculosis vaccine made by Albert Calmette and Camille Guérin from a cattle germ they had weakened over 13 years. It is still given to babies today.",
         "es": "En 1921, unos bebés de París fueron los primeros en recibir la BCG, una vacuna contra la tuberculosis que Albert Calmette y Camille Guérin hicieron con un microbio bovino que debilitaron durante 13 años. Aún hoy se aplica a los bebés."
@@ -228,86 +698,159 @@
         "en": "Calmette, a doctor who had founded the Pasteur Institute in Saigon, and Guérin, a veterinarian, worked at the Pasteur Institute of Lille. From 1908 they grew a strain of the cattle tuberculosis germ again and again on potato, glycerine and bile, more than 230 times, until it no longer caused disease; the work went on through the First World War. Acceptance was slow. In 1930, in Lübeck, Germany, 72 babies died after receiving BCG contaminated with a dangerous strain kept in the same incubator; safer production won back trust. In Canada, more than 600 children in residential schools for Indigenous children were used in BCG trials without their consent between 1933 and 1945. After the Second World War relief agencies vaccinated over eight million babies in Eastern Europe. BCG protects young children well against the severest forms of tuberculosis, less well against the disease in the lungs.",
         "es": "Calmette, un médico que había fundado el Instituto Pasteur de Saigón, y Guérin, un veterinario, trabajaban en el Instituto Pasteur de Lille. Desde 1908 cultivaron una y otra vez una cepa del microbio de la tuberculosis bovina en papa, glicerina y bilis, más de 230 veces, hasta que dejó de causar la enfermedad; el trabajo siguió durante la Primera Guerra Mundial. La aceptación fue lenta. En 1930, en Lübeck (Alemania), murieron 72 bebés tras recibir una BCG contaminada con una cepa peligrosa guardada en la misma incubadora; una fabricación más segura devolvió la confianza. En Canadá, más de 600 niños de los internados para niños indígenas fueron usados sin su consentimiento en ensayos de la BCG entre 1933 y 1945. Tras la Segunda Guerra Mundial, varias organizaciones de ayuda vacunaron a más de ocho millones de bebés en Europa del Este. La BCG protege bien a los niños pequeños contra las formas más graves de tuberculosis, y menos contra la enfermedad en los pulmones."
       },
-      "camera": { "lon": 7.5, "lat": 50.5, "zoom": 4 },
+      "camera": {
+        "lon": 7.5,
+        "lat": 50.5,
+        "zoom": 4
+      },
       "places": [
         {
           "id": "bcg-vaccine",
-          "name": { "en": "BCG vaccine", "es": "Vacuna BCG" },
-          "at": [2.33, 48.8556],
+          "name": {
+            "en": "BCG vaccine",
+            "es": "Vacuna BCG"
+          },
+          "at": [
+            2.33,
+            48.8556
+          ],
           "cat": "vaccine",
           "type": "invention",
           "date": "1921",
-          "place": { "en": "Hôpital de la Charité, Paris, France", "es": "Hospital de la Caridad, París, Francia" },
+          "place": {
+            "en": "Hôpital de la Charité, Paris, France",
+            "es": "Hospital de la Caridad, París, Francia"
+          },
           "text": {
             "en": "Bacillus Calmette–Guérin, a weakened cattle tuberculosis germ, used as a vaccine since 1921. It protects babies well against the most severe forms of tuberculosis and is still given to them in many countries.",
             "es": "El bacilo de Calmette y Guérin, un microbio de la tuberculosis bovina debilitado, usado como vacuna desde 1921. Protege bien a los bebés contra las formas más graves de tuberculosis y aún se les aplica en muchos países."
           },
-          "wiki": { "en": "BCG vaccine", "es": "Bacilo de Calmette y Guérin" }
+          "wiki": {
+            "en": "BCG vaccine",
+            "es": "Bacilo de Calmette y Guérin"
+          }
         },
         {
           "id": "albert-calmette",
-          "name": { "en": "Albert Calmette", "es": "Albert Calmette" },
-          "at": [3.0739, 50.6278],
+          "name": {
+            "en": "Albert Calmette",
+            "es": "Albert Calmette"
+          },
+          "at": [
+            3.0739,
+            50.6278
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "1921",
-          "life": ["1863-07-12", "1933-10-29"],
-          "place": { "en": "Pasteur Institute of Lille, France", "es": "Instituto Pasteur de Lille, Francia" },
+          "life": [
+            "1863-07-12",
+            "1933-10-29"
+          ],
+          "place": {
+            "en": "Pasteur Institute of Lille, France",
+            "es": "Instituto Pasteur de Lille, Francia"
+          },
           "text": {
             "en": "French doctor and bacteriologist who founded the Pasteur Institute in Saigon, ran the one in Lille and, with Guérin, created BCG. He also made the first antivenom against snakebite.",
             "es": "Médico y bacteriólogo francés que fundó el Instituto Pasteur de Saigón, dirigió el de Lille y, con Guérin, creó la BCG. También hizo el primer antídoto contra la mordedura de serpiente."
           },
-          "wiki": { "en": "Albert Calmette", "es": "Albert Calmette" }
+          "wiki": {
+            "en": "Albert Calmette",
+            "es": "Albert Calmette"
+          }
         },
         {
           "id": "camille-guerin",
-          "name": { "en": "Camille Guérin", "es": "Camille Guérin" },
-          "at": [3.0712, 50.6262],
+          "name": {
+            "en": "Camille Guérin",
+            "es": "Camille Guérin"
+          },
+          "at": [
+            3.0712,
+            50.6262
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "1921",
-          "life": ["1872-12-22", "1961-06-09"],
-          "place": { "en": "Pasteur Institute of Lille, France", "es": "Instituto Pasteur de Lille, Francia" },
+          "life": [
+            "1872-12-22",
+            "1961-06-09"
+          ],
+          "place": {
+            "en": "Pasteur Institute of Lille, France",
+            "es": "Instituto Pasteur de Lille, Francia"
+          },
           "text": {
             "en": "French veterinarian who found in 1905 that a cattle tuberculosis germ could protect animals, then spent years with Calmette weakening it into BCG.",
             "es": "Veterinario francés que descubrió en 1905 que un microbio de la tuberculosis bovina podía proteger a los animales, y luego pasó años con Calmette debilitándolo hasta obtener la BCG."
           },
-          "wiki": { "en": "Camille Guérin", "es": "Camille Guérin" }
+          "wiki": {
+            "en": "Camille Guérin",
+            "es": "Camille Guérin"
+          }
         },
         {
           "id": "tuberculosis",
-          "name": { "en": "Tuberculosis", "es": "Tuberculosis" },
-          "at": [13.379, 52.5232],
+          "name": {
+            "en": "Tuberculosis",
+            "es": "Tuberculosis"
+          },
+          "at": [
+            13.379,
+            52.5232
+          ],
           "cat": "disease",
           "type": "disease",
           "date": "1882",
-          "place": { "en": "Worldwide", "es": "Todo el mundo" },
+          "place": {
+            "en": "Worldwide",
+            "es": "Todo el mundo"
+          },
           "text": {
             "en": "A bacterial disease that usually attacks the lungs; Robert Koch identified its germ in Berlin in 1882. It is still the world's deadliest infectious disease: in 2024 it killed an estimated 1.23 million people.",
             "es": "Enfermedad bacteriana que suele atacar los pulmones; Robert Koch identificó su microbio en Berlín en 1882. Sigue siendo la enfermedad infecciosa más mortal del mundo: en 2024 mató a unos 1,23 millones de personas."
           },
-          "wiki": { "en": "Tuberculosis", "es": "Tuberculosis" },
+          "wiki": {
+            "en": "Tuberculosis",
+            "es": "Tuberculosis"
+          },
           "img": "Mycobacterium tuberculosis.jpg"
         },
         {
           "id": "institut-pasteur",
-          "name": { "en": "Pasteur Institute", "es": "Instituto Pasteur" },
-          "at": [2.3117, 48.84],
+          "name": {
+            "en": "Institut Pasteur",
+            "es": "Instituto Pasteur"
+          },
+          "at": [
+            2.3117,
+            48.84
+          ],
           "cat": "health",
           "type": "institution",
           "date": "1887-06-04",
-          "place": { "en": "Paris, France", "es": "París, Francia" },
+          "place": {
+            "en": "Paris, France",
+            "es": "París, Francia"
+          },
           "text": {
             "en": "Founded in 1887 with donations from many countries, first to treat rabies. Its scientists and its network of institutes around the world worked on diphtheria, plague, tuberculosis, yellow fever and, later, HIV.",
             "es": "Fundado en 1887 con donaciones de muchos países, primero para tratar la rabia. Sus científicos y su red de institutos por el mundo trabajaron en la difteria, la peste, la tuberculosis, la fiebre amarilla y, después, el VIH."
           },
-          "wiki": { "en": "Pasteur Institute", "es": "Instituto Pasteur" }
+          "wiki": {
+            "en": "Pasteur Institute",
+            "es": "Instituto Pasteur"
+          }
         }
       ]
     },
     {
       "date": "1937",
-      "title": { "en": "The 17D yellow fever vaccine", "es": "La vacuna 17D contra la fiebre amarilla" },
+      "title": {
+        "en": "The 17D yellow fever vaccine",
+        "es": "La vacuna 17D contra la fiebre amarilla"
+      },
       "text": {
         "en": "In 1937 Max Theiler and Hugh Smith at the Rockefeller Foundation in New York found a weakened yellow fever virus, 17D, that made a safe vaccine. After trials in Brazil, over a million people were vaccinated by 1939.",
         "es": "En 1937, Max Theiler y Hugh Smith, de la Fundación Rockefeller en Nueva York, hallaron un virus debilitado de la fiebre amarilla, el 17D, que dio una vacuna segura. Tras ensayos en Brasil, para 1939 se había vacunado a más de un millón de personas."
@@ -316,64 +859,166 @@
         "en": "Yellow fever, carried by mosquitoes, came from Africa and spread to the Americas from the 17th century with the trafficking of enslaved Africans. In 1927 scientists in West Africa isolated its virus, the first human virus ever isolated, from a man named Asibi. Theiler, born in South Africa, passed the Asibi strain through mice and then more than 100 times through chicken embryos until a lucky mutation produced 17D. Earlier vaccines, such as a French one used in Dakar from 1934, could cause serious side effects. After field trials in Brazil, the vaccine spread widely; in 1941–1942, batches made with human serum infected hundreds of thousands of US soldiers with hepatitis B, and safer production followed. In 1951 Theiler became the first African-born Nobel laureate. 17D is still the only yellow fever vaccine in use: more than 400 million doses have been given.",
         "es": "La fiebre amarilla, transmitida por mosquitos, vino de África y llegó a América desde el siglo XVII con la trata de africanos esclavizados. En 1927, unos científicos aislaron en África occidental su virus, el primer virus humano aislado, de un hombre llamado Asibi. Theiler, nacido en Sudáfrica, pasó la cepa Asibi por ratones y luego más de 100 veces por embriones de pollo, hasta que una mutación afortunada produjo la 17D. Vacunas anteriores, como una francesa usada en Dakar desde 1934, podían causar efectos graves. Tras ensayos de campo en Brasil, la vacuna se difundió; en 1941-1942, lotes hechos con suero humano contagiaron hepatitis B a cientos de miles de soldados estadounidenses, y después se fabricó de forma más segura. En 1951 Theiler fue el primer premio Nobel nacido en África. La 17D sigue siendo la única vacuna contra la fiebre amarilla en uso: se han aplicado más de 400 millones de dosis."
       },
-      "camera": { "lon": -32, "lat": 12, "zoom": 1.35 },
+      "camera": {
+        "lon": -32,
+        "lat": 12,
+        "zoom": 1.35
+      },
       "moves": [
         {
           "side": "travel",
-          "path": [[-74.02, 40.6], [-70.0, 37.0], [-55.0, 20.0], [-40.0, 2.0], [-34.6, -5.0], [-34.4, -8.0], [-36.5, -11.5], [-38.2, -14.5], [-38.5, -18.0], [-40.0, -21.0], [-41.8, -23.2], [-43.15, -23.05], [-43.17, -22.9]],
+          "path": [
+            [
+              -74.02,
+              40.6
+            ],
+            [
+              -70.0,
+              37.0
+            ],
+            [
+              -55.0,
+              20.0
+            ],
+            [
+              -40.0,
+              2.0
+            ],
+            [
+              -34.6,
+              -5.0
+            ],
+            [
+              -34.4,
+              -8.0
+            ],
+            [
+              -36.5,
+              -11.5
+            ],
+            [
+              -38.2,
+              -14.5
+            ],
+            [
+              -38.5,
+              -18.0
+            ],
+            [
+              -40.0,
+              -21.0
+            ],
+            [
+              -41.8,
+              -23.2
+            ],
+            [
+              -43.15,
+              -23.05
+            ],
+            [
+              -43.17,
+              -22.9
+            ]
+          ],
           "by": "sea",
-          "label": { "en": "17D to Brazil for field trials", "es": "La 17D a Brasil para ensayos de campo" }
+          "label": {
+            "en": "17D to Brazil for field trials",
+            "es": "La 17D a Brasil para ensayos de campo"
+          }
         }
       ],
       "places": [
         {
           "id": "max-theiler",
-          "name": { "en": "Max Theiler", "es": "Max Theiler" },
-          "at": [-73.9556, 40.7625],
+          "name": {
+            "en": "Max Theiler",
+            "es": "Max Theiler"
+          },
+          "at": [
+            -73.9556,
+            40.7625
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "1937",
-          "life": ["1899-01-30", "1972-08-11"],
-          "place": { "en": "Rockefeller Foundation laboratories, New York, US", "es": "Laboratorios de la Fundación Rockefeller, Nueva York, EE. UU." },
+          "life": [
+            "1899-01-30",
+            "1972-08-11"
+          ],
+          "place": {
+            "en": "Rockefeller Foundation laboratories, New York, US",
+            "es": "Laboratorios de la Fundación Rockefeller, Nueva York, EE. UU."
+          },
           "text": {
             "en": "South African-born virologist who developed the 17D yellow fever vaccine in 1937. In 1951 he became the first African-born winner of a Nobel Prize.",
             "es": "Virólogo nacido en Sudáfrica que desarrolló en 1937 la vacuna 17D contra la fiebre amarilla. En 1951 fue el primer ganador de un Premio Nobel nacido en África."
           },
-          "wiki": { "en": "Max Theiler", "es": "Max Theiler" }
+          "wiki": {
+            "en": "Max Theiler",
+            "es": "Max Theiler"
+          }
         },
         {
           "id": "yellow-fever-vaccine",
-          "name": { "en": "Yellow fever vaccine (17D)", "es": "Vacuna contra la fiebre amarilla (17D)" },
-          "at": [-43.2453, -22.8764],
+          "name": {
+            "en": "Yellow fever vaccine (17D)",
+            "es": "Vacuna contra la fiebre amarilla (17D)"
+          },
+          "at": [
+            -43.2453,
+            -22.8764
+          ],
           "cat": "vaccine",
           "type": "invention",
           "date": "1937",
-          "place": { "en": "Trials in Brazil; used worldwide", "es": "Ensayos en Brasil; usada en todo el mundo" },
+          "place": {
+            "en": "Trials in Brazil; used worldwide",
+            "es": "Ensayos en Brasil; usada en todo el mundo"
+          },
           "text": {
             "en": "A live, weakened vaccine that gives long-lasting protection in one shot. Tested in Brazil in the late 1930s, it ended yellow fever as a major disease where it was used; supplies are still short in big outbreaks.",
             "es": "Una vacuna viva atenuada que da protección duradera con una dosis. Probada en Brasil a fines de la década de 1930, acabó con la fiebre amarilla como gran enfermedad donde se usó; en los grandes brotes aún escasean las dosis."
           },
-          "wiki": { "en": "Yellow fever vaccine", "es": "Vacuna contra la fiebre amarilla" }
+          "wiki": {
+            "en": "Yellow fever vaccine",
+            "es": "Vacuna contra la fiebre amarilla"
+          }
         },
         {
           "id": "yellow-fever",
-          "name": { "en": "Yellow fever", "es": "Fiebre amarilla" },
-          "at": [-0.187, 5.6037],
+          "name": {
+            "en": "Yellow fever",
+            "es": "Fiebre amarilla"
+          },
+          "at": [
+            -0.187,
+            5.6037
+          ],
           "cat": "disease",
           "type": "disease",
           "date": "1927",
-          "place": { "en": "Tropical Africa and South America", "es": "África tropical y Sudamérica" },
+          "place": {
+            "en": "Tropical Africa and South America",
+            "es": "África tropical y Sudamérica"
+          },
           "text": {
             "en": "A mosquito-borne viral disease of tropical Africa and South America. The WHO estimates about 200,000 cases a year, some 90% of them in Africa. In 1927 its virus became the first human virus to be isolated.",
             "es": "Enfermedad viral transmitida por mosquitos en el África tropical y Sudamérica. La OMS calcula unos 200 000 casos al año, cerca del 90 % en África. En 1927 su virus fue el primer virus humano aislado."
           },
-          "wiki": { "en": "Yellow fever", "es": "Fiebre amarilla" }
+          "wiki": {
+            "en": "Yellow fever",
+            "es": "Fiebre amarilla"
+          }
         }
       ]
     },
     {
       "date": "1955-04-12",
-      "title": { "en": "Salk's polio vaccine", "es": "La vacuna de Salk contra la polio" },
+      "title": {
+        "en": "Salk's polio vaccine",
+        "es": "La vacuna de Salk contra la polio"
+      },
       "text": {
         "en": "On 12 April 1955 a huge field trial showed that Jonas Salk's injected polio vaccine worked. It was licensed that day, but within weeks faulty batches from Cutter Laboratories gave polio to children.",
         "es": "El 12 de abril de 1955, un enorme ensayo de campo mostró que la vacuna inyectable de Jonas Salk contra la polio funcionaba. Se aprobó ese mismo día, pero en pocas semanas unos lotes defectuosos de los Laboratorios Cutter contagiaron la polio a niños."
@@ -382,72 +1027,136 @@
         "en": "Polio, which can paralyse within hours, struck the United States hard: 58,000 cases in 1952. In 1948 John Enders's team in Boston had learned to grow the virus in the laboratory, and Jonas Salk's team at the University of Pittsburgh made a vaccine of killed virus; Leone Farrell's team in Toronto found a way to mass-produce it. In 1954 Thomas Francis led a trial involving 1.8 million children, the 'polio pioneers', paid for by millions of donors to the March of Dimes. Salk did not patent the vaccine. But some lots made by Cutter Laboratories held live virus: about 40,000 children got mild polio, 56 were paralysed and 5 died, and the virus spread to their families, paralysing 113 more people and killing 5. A government scientist, Bernice Eddy, had warned of the danger in 1954. Controls were tightened, and US cases fell from 35,000 in 1953 to 5,600 in 1957.",
         "es": "La polio, que puede paralizar en pocas horas, golpeó con fuerza a Estados Unidos: 58 000 casos en 1952. En 1948 el equipo de John Enders, en Boston, había aprendido a cultivar el virus en el laboratorio, y el equipo de Jonas Salk, en la Universidad de Pittsburgh, hizo una vacuna de virus muerto; el equipo de Leone Farrell, en Toronto, encontró la forma de producirla en masa. En 1954 Thomas Francis dirigió un ensayo con 1,8 millones de niños, los «pioneros de la polio», pagado por millones de donantes de la March of Dimes. Salk no patentó la vacuna. Pero algunos lotes de los Laboratorios Cutter contenían virus vivo: unos 40 000 niños tuvieron una polio leve, 56 quedaron paralizados y 5 murieron, y el virus pasó a sus familias, donde paralizó a 113 personas más y mató a 5. Una científica del gobierno, Bernice Eddy, había advertido del peligro en 1954. Se endurecieron los controles, y los casos en Estados Unidos bajaron de 35 000 en 1953 a 5600 en 1957."
       },
-      "camera": { "lon": -97, "lat": 39, "zoom": 2.4 },
+      "camera": {
+        "lon": -97,
+        "lat": 39,
+        "zoom": 2.4
+      },
       "places": [
         {
           "id": "jonas-salk",
-          "name": { "en": "Jonas Salk", "es": "Jonas Salk" },
-          "at": [-79.9629, 40.4427],
+          "name": {
+            "en": "Jonas Salk",
+            "es": "Jonas Salk"
+          },
+          "at": [
+            -79.9629,
+            40.4427
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "1955-04-12",
-          "life": ["1914-10-28", "1995-06-23"],
-          "place": { "en": "University of Pittsburgh, Pennsylvania, US", "es": "Universidad de Pittsburgh, Pensilvania, EE. UU." },
+          "life": [
+            "1914-10-28",
+            "1995-06-23"
+          ],
+          "place": {
+            "en": "University of Pittsburgh, Pennsylvania, US",
+            "es": "Universidad de Pittsburgh, Pensilvania, EE. UU."
+          },
           "text": {
             "en": "American virologist whose team made the first effective polio vaccine, from killed virus. Asked who owned the patent, he replied: 'Well, the people, I would say. There is no patent.'",
             "es": "Virólogo estadounidense cuyo equipo hizo la primera vacuna eficaz contra la polio, con virus muerto. Cuando le preguntaron quién tenía la patente, respondió: «Pues la gente, diría yo. No hay patente»."
           },
-          "wiki": { "en": "Jonas Salk", "es": "Jonas Salk" }
+          "wiki": {
+            "en": "Jonas Salk",
+            "es": "Jonas Salk"
+          }
         },
         {
           "id": "thomas-francis-jr",
-          "name": { "en": "Thomas Francis Jr.", "es": "Thomas Francis Jr." },
-          "at": [-83.7383, 42.2811],
+          "name": {
+            "en": "Thomas Francis Jr.",
+            "es": "Thomas Francis Jr."
+          },
+          "at": [
+            -83.7383,
+            42.2811
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "1955-04-12",
-          "life": ["1900-07-15", "1969-10-01"],
-          "place": { "en": "University of Michigan, Ann Arbor, US", "es": "Universidad de Míchigan, Ann Arbor, EE. UU." },
+          "life": [
+            "1900-07-15",
+            "1969-10-01"
+          ],
+          "place": {
+            "en": "University of Michigan, Ann Arbor, US",
+            "es": "Universidad de Míchigan, Ann Arbor, EE. UU."
+          },
           "text": {
             "en": "American virologist who ran the 1954 field trial of Salk's vaccine, with 1.8 million children in 44 states, and announced its success in Ann Arbor on 12 April 1955.",
             "es": "Virólogo estadounidense que dirigió el ensayo de campo de 1954 de la vacuna de Salk, con 1,8 millones de niños en 44 estados, y anunció su éxito en Ann Arbor el 12 de abril de 1955."
           },
-          "wiki": { "en": "Thomas Francis Jr.", "es": "Thomas Francis, Jr." }
+          "wiki": {
+            "en": "Thomas Francis Jr.",
+            "es": "Thomas Francis, Jr."
+          }
         },
         {
           "id": "cutter-laboratories",
-          "name": { "en": "Cutter Laboratories", "es": "Laboratorios Cutter" },
-          "at": [-122.2727, 37.8716],
+          "name": {
+            "en": "Cutter Laboratories",
+            "es": "Laboratorios Cutter"
+          },
+          "at": [
+            -122.2727,
+            37.8716
+          ],
           "cat": "event",
           "type": "institution",
           "date": "1955-04",
-          "place": { "en": "Berkeley, California, US", "es": "Berkeley, California, EE. UU." },
+          "place": {
+            "en": "Berkeley, California, US",
+            "es": "Berkeley, California, EE. UU."
+          },
           "text": {
             "en": "A drug company whose Salk vaccine, in April 1955, contained live poliovirus: 56 children were paralysed and 5 died, and more fell ill around them. The US then tightened its control of vaccines.",
             "es": "Una farmacéutica cuya vacuna de Salk, en abril de 1955, contenía virus vivo de la polio: 56 niños quedaron paralizados y 5 murieron, y enfermaron más personas a su alrededor. Estados Unidos endureció entonces el control de las vacunas."
           },
-          "wiki": { "en": "Cutter Laboratories", "es": "Laboratorios Cutter" }
+          "wiki": {
+            "en": "Cutter Laboratories",
+            "es": "Laboratorios Cutter"
+          }
         },
         {
           "id": "bernice-eddy",
-          "name": { "en": "Bernice Eddy", "es": "Bernice Eddy" },
-          "at": [-77.1037, 38.9998],
+          "name": {
+            "en": "Bernice Eddy",
+            "es": "Bernice Eddy"
+          },
+          "at": [
+            -77.1037,
+            38.9998
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "1954",
-          "life": ["1903-09-30", "1989-05-29"],
-          "place": { "en": "National Institutes of Health, Bethesda, Maryland, US", "es": "Institutos Nacionales de Salud, Bethesda, Maryland, EE. UU." },
+          "life": [
+            "1903-09-30",
+            "1989-05-29"
+          ],
+          "place": {
+            "en": "National Institutes of Health, Bethesda, Maryland, US",
+            "es": "Institutos Nacionales de Salud, Bethesda, Maryland, EE. UU."
+          },
           "text": {
             "en": "American scientist at the NIH who in 1954 found that some polio vaccine paralysed monkeys, and warned her superiors. The NIH director rejected her report.",
             "es": "Científica estadounidense de los NIH que en 1954 descubrió que alguna vacuna contra la polio paralizaba a monos y avisó a sus superiores. El director de los NIH rechazó su informe."
           },
-          "wiki": { "en": "Bernice Eddy", "es": "Bernice Eddy" }
+          "wiki": {
+            "en": "Bernice Eddy",
+            "es": "Bernice Eddy"
+          }
         }
       ]
     },
     {
       "date": "1959",
-      "title": { "en": "Drops on a sugar cube", "es": "Gotas en un terrón de azúcar" },
+      "title": {
+        "en": "Drops on a sugar cube",
+        "es": "Gotas en un terrón de azúcar"
+      },
       "text": {
         "en": "In 1959 ten million children in the Soviet Union took Albert Sabin's oral polio vaccine, produced by Mikhail Chumakov's team. Cheap, given as drops and able to spread protection, it became the main weapon against polio.",
         "es": "En 1959, diez millones de niños de la Unión Soviética tomaron la vacuna oral de Albert Sabin contra la polio, producida por el equipo de Mijaíl Chumakov. Barata, dada en gotas y capaz de extender la protección, se volvió el arma principal contra la polio."
@@ -456,65 +1165,142 @@
         "en": "Sabin, a Polish-born virologist in Cincinnati, used live but weakened viruses that multiply in the gut, so the vaccine could be swallowed, and those vaccinated passed protection on to others. Because Salk's vaccine was already used in the United States, he tested his abroad. During the Cold War he sent his strains to Soviet scientists, and Mikhail Chumakov and Marina Voroshilova organised the first industrial production; by 1961 more than 90 million people in the Soviet Union, Eastern Europe, Singapore, Mexico and the Netherlands had received it. In 1960, 78,476 schoolchildren in Cincinnati took it too. Licensed in the US in 1961 and 1962, it was often given on a sugar cube. Sabin took no profit from it. In very rare cases, about one in 2.7 million doses, the live vaccine virus can itself cause paralysis. Cuba began nationwide campaigns with it in 1962.",
         "es": "Sabin, un virólogo nacido en Polonia que trabajaba en Cincinnati, usó virus vivos pero debilitados que se multiplican en el intestino, así que la vacuna podía tragarse, y los vacunados pasaban la protección a otros. Como en Estados Unidos ya se usaba la vacuna de Salk, la probó en el extranjero. En plena Guerra Fría envió sus cepas a científicos soviéticos, y Mijaíl Chumakov y Marina Voroshílova organizaron la primera producción industrial; para 1961 la habían recibido más de 90 millones de personas en la Unión Soviética, Europa del Este, Singapur, México y los Países Bajos. En 1960 la tomaron también 78 476 escolares de Cincinnati. Aprobada en Estados Unidos en 1961 y 1962, solía darse en un terrón de azúcar. Sabin no ganó dinero con ella. En casos muy raros, cerca de uno por cada 2,7 millones de dosis, el virus vivo de la vacuna puede causar parálisis. Cuba empezó a usarla en campañas nacionales en 1962."
       },
-      "camera": { "lon": -25, "lat": 55, "zoom": 1.3 },
+      "camera": {
+        "lon": -25,
+        "lat": 55,
+        "zoom": 1.3
+      },
       "moves": [
         {
           "side": "travel",
-          "path": [[-84.5, 39.14], [-70.0, 45.0], [-40.0, 55.0], [-10.0, 57.5], [15.0, 57.0], [37.62, 55.76]],
-          "label": { "en": "Sabin's strains to Moscow, 1956–1959", "es": "Las cepas de Sabin a Moscú, 1956-1959" }
+          "path": [
+            [
+              -84.5,
+              39.14
+            ],
+            [
+              -70.0,
+              45.0
+            ],
+            [
+              -40.0,
+              55.0
+            ],
+            [
+              -10.0,
+              57.5
+            ],
+            [
+              15.0,
+              57.0
+            ],
+            [
+              37.62,
+              55.76
+            ]
+          ],
+          "label": {
+            "en": "Sabin's strains to Moscow, 1956–1959",
+            "es": "Las cepas de Sabin a Moscú, 1956-1959"
+          }
         }
       ],
       "places": [
         {
           "id": "albert-sabin",
-          "name": { "en": "Albert Sabin", "es": "Albert Sabin" },
-          "at": [-84.502, 39.141],
+          "name": {
+            "en": "Albert Sabin",
+            "es": "Albert Sabin"
+          },
+          "at": [
+            -84.502,
+            39.141
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "1959",
-          "life": ["1906-08-26", "1993-03-03"],
-          "place": { "en": "Cincinnati Children's Hospital, Ohio, US", "es": "Hospital Infantil de Cincinnati, Ohio, EE. UU." },
+          "life": [
+            "1906-08-26",
+            "1993-03-03"
+          ],
+          "place": {
+            "en": "Cincinnati Children's Hospital, Ohio, US",
+            "es": "Hospital Infantil de Cincinnati, Ohio, EE. UU."
+          },
           "text": {
             "en": "Polish-born American virologist who made the oral polio vaccine from weakened live virus. Cheap and easy to give, it became the main tool of polio eradication, and he took no profit from it.",
             "es": "Virólogo estadounidense nacido en Polonia que hizo la vacuna oral contra la polio con virus vivo debilitado. Barata y fácil de dar, se volvió la principal herramienta para erradicar la polio, y él no ganó dinero con ella."
           },
-          "wiki": { "en": "Albert Sabin", "es": "Albert Sabin" }
+          "wiki": {
+            "en": "Albert Sabin",
+            "es": "Albert Sabin"
+          }
         },
         {
           "id": "mikhail-chumakov",
-          "name": { "en": "Mikhail Chumakov", "es": "Mijaíl Chumakov" },
-          "at": [37.6173, 55.7558],
+          "name": {
+            "en": "Mikhail Chumakov",
+            "es": "Mijaíl Chumakov"
+          },
+          "at": [
+            37.6173,
+            55.7558
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "1959",
-          "life": ["1909-11-14", "1993-06-11"],
-          "place": { "en": "Moscow, Soviet Union (today Russia)", "es": "Moscú, Unión Soviética (hoy Rusia)" },
+          "life": [
+            "1909-11-14",
+            "1993-06-11"
+          ],
+          "place": {
+            "en": "Moscow, Soviet Union (today Russia)",
+            "es": "Moscú, Unión Soviética (hoy Rusia)"
+          },
           "text": {
             "en": "Soviet virologist who, with Marina Voroshilova, organised the first mass production and use of Sabin's oral vaccine, given to ten million Soviet children in 1959.",
             "es": "Virólogo soviético que, con Marina Voroshílova, organizó la primera producción y uso masivos de la vacuna oral de Sabin, que recibieron diez millones de niños soviéticos en 1959."
           },
-          "wiki": { "en": "Mikhail Chumakov", "es": "" }
+          "wiki": {
+            "en": "Mikhail Chumakov",
+            "es": ""
+          }
         },
         {
           "id": "polio",
-          "name": { "en": "Polio", "es": "Poliomielitis (polio)" },
-          "at": [16.3738, 48.2082],
+          "name": {
+            "en": "Polio",
+            "es": "Poliomielitis (polio)"
+          },
+          "at": [
+            16.3738,
+            48.2082
+          ],
           "cat": "disease",
           "type": "disease",
           "date": "1909",
-          "place": { "en": "Worldwide; virus identified in Vienna in 1909", "es": "Todo el mundo; virus identificado en Viena en 1909" },
+          "place": {
+            "en": "Worldwide; virus identified in Vienna in 1909",
+            "es": "Todo el mundo; virus identificado en Viena en 1909"
+          },
           "text": {
             "en": "A viral disease spread mainly through contaminated hands, food and water. One infection in 200 causes lasting paralysis, usually of the legs; 5 to 10% of those paralysed die when their breathing muscles fail (WHO).",
             "es": "Enfermedad viral que se transmite sobre todo por manos, comida y agua contaminadas. Una de cada 200 infecciones causa parálisis permanente, casi siempre en las piernas; del 5 al 10 % de los paralizados muere al fallar sus músculos respiratorios (OMS)."
           },
-          "wiki": { "en": "Polio", "es": "Poliomielitis" },
+          "wiki": {
+            "en": "Polio",
+            "es": "Poliomielitis"
+          },
           "img": "Polio EM PHIL 1875 lores.PNG"
         }
       ]
     },
     {
       "date": "1963",
-      "title": { "en": "A vaccine against measles", "es": "Una vacuna contra el sarampión" },
+      "title": {
+        "en": "A vaccine against measles",
+        "es": "Una vacuna contra el sarampión"
+      },
       "text": {
         "en": "In 1963 a measles vaccine made by John Enders's team was licensed in the US. Measles then killed an estimated two million people a year. In 1971 Maurice Hilleman combined it with mumps and rubella vaccines: MMR.",
         "es": "En 1963 se aprobó en Estados Unidos una vacuna contra el sarampión hecha por el equipo de John Enders. El sarampión mataba entonces a unos dos millones de personas al año. En 1971 Maurice Hilleman la combinó con las de las paperas y la rubéola: la triple viral."
@@ -523,130 +1309,234 @@
         "en": "In 1954 Thomas Peebles, working with Enders, isolated the measles virus from 11-year-old David Edmonston during an outbreak at the Fay School in Massachusetts; the vaccine strain still bears the boy's name. Early trials ran in 1960 in Nigeria, where measles killed many young children: the British paediatrician David Morley tested a vaccine in a village near Ilesha and included his own four children. In 1968 Hilleman, at Merck, made a gentler version, and in 1971 he combined measles, mumps and rubella in one shot. Two doses protect about 97% of people against measles. Because measles is so contagious, outbreaks stop only when more than 92 to 95% of people are immune. A WHO-led study found that measles vaccination accounts for about 60% of the 154 million lives saved by vaccines since 1974.",
         "es": "En 1954 Thomas Peebles, que trabajaba con Enders, aisló el virus del sarampión de David Edmonston, un niño de 11 años, durante un brote en la Fay School de Massachusetts; la cepa de la vacuna aún lleva su nombre. Los primeros ensayos se hicieron en 1960 en Nigeria, donde el sarampión mataba a muchos niños pequeños: el pediatra británico David Morley probó una vacuna en una aldea cerca de Ilesa e incluyó a sus cuatro hijos. En 1968 Hilleman, en Merck, hizo una versión más suave, y en 1971 combinó en una sola inyección las vacunas del sarampión, las paperas y la rubéola. Dos dosis protegen a cerca del 97 % de las personas contra el sarampión. Como el sarampión es tan contagioso, los brotes solo se detienen cuando más del 92 al 95 % de la gente es inmune. Un estudio dirigido por la OMS halló que la vacuna contra el sarampión explica cerca del 60 % de los 154 millones de vidas salvadas por las vacunas desde 1974."
       },
-      "camera": { "lon": -36, "lat": 28, "zoom": 1.5 },
+      "camera": {
+        "lon": -36,
+        "lat": 28,
+        "zoom": 1.5
+      },
       "places": [
         {
           "id": "measles",
-          "name": { "en": "Measles", "es": "Sarampión" },
-          "at": [-71.5331, 42.3047],
+          "name": {
+            "en": "Measles",
+            "es": "Sarampión"
+          },
+          "at": [
+            -71.5331,
+            42.3047
+          ],
           "cat": "disease",
           "type": "disease",
           "date": "1954",
-          "place": { "en": "Worldwide; virus isolated in Massachusetts in 1954", "es": "Todo el mundo; virus aislado en Massachusetts en 1954" },
+          "place": {
+            "en": "Worldwide; virus isolated in Massachusetts in 1954",
+            "es": "Todo el mundo; virus aislado en Massachusetts en 1954"
+          },
           "text": {
             "en": "A very contagious viral disease spread through the air. Before vaccination it killed an estimated two million people a year; it still kills tens of thousands, mostly young children in poor countries.",
             "es": "Enfermedad viral muy contagiosa que se transmite por el aire. Antes de la vacuna mataba a unos dos millones de personas al año; aún mata a decenas de miles, sobre todo niños pequeños de países pobres."
           },
-          "wiki": { "en": "Measles", "es": "Sarampión" },
+          "wiki": {
+            "en": "Measles",
+            "es": "Sarampión"
+          },
           "img": "Measles virus.JPG"
         },
         {
           "id": "john-franklin-enders",
-          "name": { "en": "John Franklin Enders", "es": "John Franklin Enders" },
-          "at": [-71.1054, 42.3374],
+          "name": {
+            "en": "John Franklin Enders",
+            "es": "John Franklin Enders"
+          },
+          "at": [
+            -71.1054,
+            42.3374
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "1963",
-          "life": ["1897-02-10", "1985-09-08"],
-          "place": { "en": "Children's Hospital, Boston, US", "es": "Hospital Infantil de Boston, EE. UU." },
+          "life": [
+            "1897-02-10",
+            "1985-09-08"
+          ],
+          "place": {
+            "en": "Children's Hospital, Boston, US",
+            "es": "Hospital Infantil de Boston, EE. UU."
+          },
           "text": {
             "en": "American scientist who shared the 1954 Nobel Prize for growing poliovirus in the laboratory, which made polio vaccines possible, and whose team made the first measles vaccine.",
             "es": "Científico estadounidense que compartió el Premio Nobel de 1954 por cultivar el virus de la polio en el laboratorio, lo que hizo posibles las vacunas contra la polio, y cuyo equipo hizo la primera vacuna contra el sarampión."
           },
-          "wiki": { "en": "John Franklin Enders", "es": "John Franklin Enders" }
+          "wiki": {
+            "en": "John Franklin Enders",
+            "es": "John Franklin Enders"
+          }
         },
         {
           "id": "maurice-hilleman",
-          "name": { "en": "Maurice Hilleman", "es": "Maurice Hilleman" },
-          "at": [-75.2994, 40.2067],
+          "name": {
+            "en": "Maurice Hilleman",
+            "es": "Maurice Hilleman"
+          },
+          "at": [
+            -75.2994,
+            40.2067
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "1971",
-          "life": ["1919-08-30", "2005-04-11"],
-          "place": { "en": "Merck, West Point, Pennsylvania, US", "es": "Merck, West Point, Pensilvania, EE. UU." },
+          "life": [
+            "1919-08-30",
+            "2005-04-11"
+          ],
+          "place": {
+            "en": "Merck, West Point, Pennsylvania, US",
+            "es": "Merck, West Point, Pensilvania, EE. UU."
+          },
           "text": {
             "en": "American microbiologist who developed more than 40 vaccines, among them the MMR in 1971 and vaccines against mumps and hepatitis B. His measles vaccine is estimated to prevent a million deaths a year.",
             "es": "Microbiólogo estadounidense que creó más de 40 vacunas, entre ellas la triple viral en 1971 y vacunas contra las paperas y la hepatitis B. Se calcula que su vacuna contra el sarampión evita un millón de muertes al año."
           },
-          "wiki": { "en": "Maurice Hilleman", "es": "Maurice Hilleman" }
+          "wiki": {
+            "en": "Maurice Hilleman",
+            "es": "Maurice Hilleman"
+          }
         },
         {
           "id": "ilesa",
-          "name": { "en": "Ilesa", "es": "Ilesa" },
-          "at": [4.7167, 7.6167],
+          "name": {
+            "en": "Ilesa",
+            "es": "Ilesa"
+          },
+          "at": [
+            4.7167,
+            7.6167
+          ],
           "cat": "vaccine",
           "type": "place",
           "date": "1960",
-          "place": { "en": "Osun State, Nigeria", "es": "Estado de Osun, Nigeria" },
+          "place": {
+            "en": "Osun State, Nigeria",
+            "es": "Estado de Osun, Nigeria"
+          },
           "text": {
             "en": "In 1960, near this Nigerian town, David Morley ran the first trial of a live weakened measles vaccine, in a region where measles killed many young children, with help from the Wesley Guild Hospital.",
             "es": "En 1960, cerca de esta ciudad nigeriana, David Morley hizo el primer ensayo de una vacuna viva atenuada contra el sarampión, en una región donde el sarampión mataba a muchos niños pequeños, con ayuda del Hospital Wesley Guild."
           },
-          "wiki": { "en": "Ilesa", "es": "Ilesa" }
+          "wiki": {
+            "en": "Ilesa",
+            "es": "Ilesa"
+          }
         }
       ]
     },
     {
       "date": "1974-05",
-      "title": { "en": "Vaccines for every child", "es": "Vacunas para cada niño" },
+      "title": {
+        "en": "Vaccines for every child",
+        "es": "Vacunas para cada niño"
+      },
       "text": {
-        "en": "In May 1974 the WHO launched the Expanded Programme on Immunization, to give every child vaccines against seven diseases. At the time only 5% of children in low-income countries received basic vaccines.",
-        "es": "En mayo de 1974 la OMS lanzó el Programa Ampliado de Inmunización, para dar a todos los niños vacunas contra siete enfermedades. Entonces solo el 5 % de los niños de los países de ingresos bajos recibía las vacunas básicas."
+        "en": "In May 1974 the WHO launched the Expanded Programme on Immunization, to give every child vaccines against six childhood diseases. At the time only 5% of children in low-income countries received basic vaccines.",
+        "es": "En mayo de 1974 la OMS lanzó el Programa Ampliado de Inmunización, para dar a todos los niños vacunas contra seis enfermedades infantiles. Entonces solo el 5 % de los niños de los países de ingresos bajos recibía las vacunas básicas."
       },
       "details": {
-        "en": "The seven were tuberculosis, polio, measles, smallpox, diphtheria, tetanus and whooping cough, and the success against smallpox showed what vaccination could do. The work was hard: vaccines had to stay cold all the way to remote villages, and health workers had to be trained in every country. In the 1980s UNICEF, led by James Grant, pushed a 'child survival revolution', and the share of children given three doses of the diphtheria–tetanus–whooping cough vaccine rose from 20% in 1982 to 76% in 1990. Solar-powered refrigerators and vial labels that change colour when a vaccine gets too warm later helped reach more children. Today the programme, renamed the Essential Programme on Immunization, recommends vaccines against 12 diseases for everyone. A WHO-led study published in 2024 estimated that vaccination had saved 154 million lives since 1974, 101 million of them babies.",
-        "es": "Las siete eran la tuberculosis, la polio, el sarampión, la viruela, la difteria, el tétanos y la tos ferina, y el éxito contra la viruela mostró lo que podía lograr la vacunación. El trabajo era difícil: las vacunas tenían que mantenerse frías hasta las aldeas más remotas, y había que formar personal sanitario en cada país. En la década de 1980 Unicef, dirigido por James Grant, impulsó una «revolución por la supervivencia infantil», y la proporción de niños con tres dosis de la vacuna contra la difteria, el tétanos y la tos ferina subió del 20 % en 1982 al 76 % en 1990. Los refrigeradores solares y las etiquetas que cambian de color cuando una vacuna se calienta demasiado ayudaron después a llegar a más niños. Hoy el programa, rebautizado Programa Esencial de Inmunización, recomienda vacunas contra 12 enfermedades para todos. Un estudio dirigido por la OMS y publicado en 2024 calculó que la vacunación había salvado 154 millones de vidas desde 1974, 101 millones de ellas de bebés."
+        "en": "The six were tuberculosis, polio, measles, diphtheria, tetanus and whooping cough, and the success against smallpox, then nearly won, showed what vaccination could do. The work was hard: vaccines had to stay cold all the way to remote villages, and health workers had to be trained in every country. In the 1980s UNICEF, led by James Grant, pushed a 'child survival revolution', and the share of children given three doses of the diphtheria–tetanus–whooping cough vaccine rose from 20% in 1982 to 76% in 1990. Solar-powered refrigerators and vial labels that change colour when a vaccine gets too warm later helped reach more children. Today the programme, renamed the Essential Programme on Immunization, recommends vaccines against 12 diseases for everyone. A WHO-led study published in 2024 estimated that vaccination had saved 154 million lives since 1974, 101 million of them babies.",
+        "es": "Las seis eran la tuberculosis, la polio, el sarampión, la difteria, el tétanos y la tos ferina, y el éxito contra la viruela, entonces casi lograda, mostró lo que podía lograr la vacunación. El trabajo era difícil: las vacunas tenían que mantenerse frías hasta las aldeas más remotas, y había que formar personal sanitario en cada país. En la década de 1980 Unicef, dirigido por James Grant, impulsó una «revolución por la supervivencia infantil», y la proporción de niños con tres dosis de la vacuna contra la difteria, el tétanos y la tos ferina subió del 20 % en 1982 al 76 % en 1990. Los refrigeradores solares y las etiquetas que cambian de color cuando una vacuna se calienta demasiado ayudaron después a llegar a más niños. Hoy el programa, rebautizado Programa Esencial de Inmunización, recomienda vacunas contra 12 enfermedades para todos. Un estudio dirigido por la OMS y publicado en 2024 calculó que la vacunación había salvado 154 millones de vidas desde 1974, 101 millones de ellas de bebés."
       },
-      "camera": { "lon": -34, "lat": 44, "zoom": 1.5 },
+      "camera": {
+        "lon": -34,
+        "lat": 44,
+        "zoom": 1.5
+      },
       "places": [
         {
           "id": "world-health-organization",
-          "name": { "en": "World Health Organization (WHO)", "es": "Organización Mundial de la Salud (OMS)" },
-          "at": [6.1342, 46.2335],
+          "name": {
+            "en": "World Health Organization (WHO)",
+            "es": "Organización Mundial de la Salud (OMS)"
+          },
+          "at": [
+            6.1342,
+            46.2335
+          ],
           "cat": "health",
           "type": "institution",
           "date": "1948-04-07",
-          "place": { "en": "Geneva, Switzerland", "es": "Ginebra, Suiza" },
+          "place": {
+            "en": "Geneva, Switzerland",
+            "es": "Ginebra, Suiza"
+          },
           "text": {
             "en": "The United Nations health agency, founded in 1948 and based in Geneva. It led the eradication of smallpox and guides the world's immunization programmes with UNICEF and other partners.",
             "es": "La agencia de salud de las Naciones Unidas, fundada en 1948 y con sede en Ginebra. Dirigió la erradicación de la viruela y orienta los programas de vacunación del mundo con Unicef y otros socios."
           },
-          "wiki": { "en": "World Health Organization", "es": "Organización Mundial de la Salud" }
+          "wiki": {
+            "en": "World Health Organization",
+            "es": "Organización Mundial de la Salud"
+          }
         },
         {
           "id": "expanded-programme-on-immunization",
-          "name": { "en": "Expanded Programme on Immunization (EPI)", "es": "Programa Ampliado de Inmunización (PAI)" },
-          "at": [6.1406, 46.2267],
+          "name": {
+            "en": "Expanded Programme on Immunization (EPI)",
+            "es": "Programa Ampliado de Inmunización (PAI)"
+          },
+          "at": [
+            6.1406,
+            46.2267
+          ],
           "cat": "health",
           "type": "event",
           "date": "1974-05",
-          "place": { "en": "Launched by the World Health Assembly, Geneva", "es": "Lanzado por la Asamblea Mundial de la Salud, Ginebra" },
+          "place": {
+            "en": "Launched by the World Health Assembly, Geneva",
+            "es": "Lanzado por la Asamblea Mundial de la Salud, Ginebra"
+          },
           "text": {
             "en": "The WHO programme, launched in May 1974, that set out to vaccinate every child. A WHO-led study estimates that in its first 50 years vaccines saved 154 million lives.",
             "es": "El programa de la OMS, lanzado en mayo de 1974, que se propuso vacunar a todos los niños. Un estudio dirigido por la OMS calcula que en sus primeros 50 años las vacunas salvaron 154 millones de vidas."
           },
-          "wiki": { "en": "Expanded Program on Immunization", "es": "" }
+          "wiki": {
+            "en": "Expanded Program on Immunization",
+            "es": ""
+          }
         },
         {
           "id": "unicef",
-          "name": { "en": "UNICEF", "es": "Unicef" },
-          "at": [-73.969, 40.7513],
+          "name": {
+            "en": "UNICEF",
+            "es": "Unicef"
+          },
+          "at": [
+            -73.969,
+            40.7513
+          ],
           "cat": "health",
           "type": "institution",
           "date": "1946-12-11",
-          "place": { "en": "New York, US", "es": "Nueva York, EE. UU." },
+          "place": {
+            "en": "New York, US",
+            "es": "Nueva York, EE. UU."
+          },
           "text": {
             "en": "The United Nations children's agency, founded in 1946. It delivers vaccines to children in poorer countries: in 2018 alone it gave five-in-one vaccines to an estimated 65.5 million children.",
             "es": "La agencia de las Naciones Unidas para la infancia, fundada en 1946. Lleva vacunas a los niños de los países más pobres: solo en 2018 aplicó vacunas pentavalentes a unos 65,5 millones de niños."
           },
-          "wiki": { "en": "UNICEF", "es": "Unicef" },
+          "wiki": {
+            "en": "UNICEF",
+            "es": "Unicef"
+          },
           "img": "UNICEF world warehouse gate.jpg"
         }
       ]
     },
     {
       "date": "1988-05",
-      "title": { "en": "Setting out to end polio", "es": "La meta de acabar con la polio" },
+      "title": {
+        "en": "Setting out to end polio",
+        "es": "La meta de acabar con la polio"
+      },
       "text": {
         "en": "In May 1988 the World Health Assembly resolved to eradicate polio, which then caused an estimated 350,000 cases a year in more than 125 countries. WHO, UNICEF, Rotary and the US CDC led the work.",
         "es": "En mayo de 1988 la Asamblea Mundial de la Salud decidió erradicar la polio, que entonces causaba unos 350 000 casos al año en más de 125 países. La OMS, Unicef, Rotary y los CDC de Estados Unidos encabezaron el trabajo."
@@ -655,42 +1545,90 @@
         "en": "The Global Polio Eradication Initiative grew out of a pledge by Rotary International in 1985 to raise money to immunise the world's children, and out of the Pan American Health Organization's campaign begun the same year under the Brazilian epidemiologist Ciro de Quadros. It relied mostly on Sabin's oral drops, given again and again to every child under five on 'national immunization days', and on testing every child with sudden paralysis. The last wild case in the Americas came in Peru in August 1991, and the Americas were certified polio-free on 20 August 1994. In 1994 India launched its Pulse Polio campaign. Wild poliovirus type 2 was last found in India in 1999 and declared eradicated in 2015; type 3, last seen in Nigeria in 2012, was declared eradicated in 2019. The Gates Foundation later became a leading funder.",
         "es": "La Iniciativa Mundial de Erradicación de la Poliomielitis nació de una promesa de Rotary International en 1985 de reunir dinero para vacunar a los niños del mundo, y de la campaña de la Organización Panamericana de la Salud iniciada ese mismo año por el epidemiólogo brasileño Ciro de Quadros. Se apoyó sobre todo en las gotas orales de Sabin, dadas una y otra vez a todos los menores de cinco años en «jornadas nacionales de vacunación», y en analizar a cada niño con una parálisis repentina. El último caso salvaje de América se dio en Perú en agosto de 1991, y América fue certificada libre de polio el 20 de agosto de 1994. En 1994 la India lanzó su campaña Pulse Polio. El poliovirus salvaje de tipo 2 se halló por última vez en la India en 1999 y se declaró erradicado en 2015; el de tipo 3, visto por última vez en Nigeria en 2012, se declaró erradicado en 2019. Más tarde la Fundación Gates se volvió uno de los principales donantes."
       },
-      "camera": { "lon": -30, "lat": 35, "zoom": 1.25 },
+      "camera": {
+        "lon": -30,
+        "lat": 35,
+        "zoom": 1.25
+      },
       "places": [
         {
           "id": "global-polio-eradication-initiative",
-          "name": { "en": "Global Polio Eradication Initiative", "es": "Iniciativa Mundial de Erradicación de la Poliomielitis" },
-          "at": [6.1365, 46.2318],
+          "name": {
+            "en": "Global Polio Eradication Initiative",
+            "es": "Iniciativa Mundial de Erradicación de la Poliomielitis"
+          },
+          "at": [
+            6.1365,
+            46.2318
+          ],
           "cat": "health",
           "type": "institution",
           "date": "1988-05",
-          "place": { "en": "Led from the WHO, Geneva", "es": "Dirigida desde la OMS, Ginebra" },
+          "place": {
+            "en": "Led from the WHO, Geneva",
+            "es": "Dirigida desde la OMS, Ginebra"
+          },
           "text": {
             "en": "The largest international public health effort in history, launched in 1988 by WHO, UNICEF, Rotary and the US CDC, later joined by the Gates Foundation. Wild polio cases have fallen by over 99%.",
             "es": "El mayor esfuerzo internacional de salud pública de la historia, lanzado en 1988 por la OMS, Unicef, Rotary y los CDC, a los que luego se unió la Fundación Gates. Los casos de polio salvaje han caído más del 99 %."
           },
-          "wiki": { "en": "Global Polio Eradication Initiative", "es": "" }
+          "wiki": {
+            "en": "Global Polio Eradication Initiative",
+            "es": ""
+          }
         },
         {
           "id": "rotary-international",
-          "name": { "en": "Rotary International", "es": "Rotary International" },
-          "at": [-87.6812, 42.0465],
+          "name": {
+            "en": "Rotary International",
+            "es": "Rotary International"
+          },
+          "at": [
+            -87.6812,
+            42.0465
+          ],
           "cat": "health",
           "type": "institution",
           "date": "1985",
-          "place": { "en": "Evanston, Illinois, US", "es": "Evanston, Illinois, EE. UU." },
+          "place": {
+            "en": "Evanston, Illinois, US",
+            "es": "Evanston, Illinois, EE. UU."
+          },
           "text": {
             "en": "A worldwide network of service clubs whose 1985 pledge to immunise the world's children against polio helped launch the eradication effort. Its members raise money and volunteer in vaccination campaigns.",
             "es": "Una red mundial de clubes de servicio cuya promesa de 1985 de vacunar contra la polio a los niños del mundo ayudó a lanzar la erradicación. Sus miembros reúnen dinero y trabajan como voluntarios en campañas de vacunación."
           },
-          "wiki": { "en": "Rotary International", "es": "Rotary International" }
+          "wiki": {
+            "en": "Rotary International",
+            "es": "Rotary International"
+          }
         },
-        { "id": "polio", "name": { "en": "Polio", "es": "Poliomielitis (polio)" }, "at": [16.3738, 48.2082], "cat": "disease", "type": "disease", "date": "1909", "text": { "en": "Polio", "es": "Polio" } }
+        {
+          "id": "polio",
+          "name": {
+            "en": "Polio",
+            "es": "Poliomielitis (polio)"
+          },
+          "at": [
+            16.3738,
+            48.2082
+          ],
+          "cat": "disease",
+          "type": "disease",
+          "date": "1909",
+          "text": {
+            "en": "Polio",
+            "es": "Polio"
+          }
+        }
       ]
     },
     {
       "date": "1998-02-28",
-      "title": { "en": "A fraudulent study", "es": "Un estudio fraudulento" },
+      "title": {
+        "en": "A fraudulent study",
+        "es": "Un estudio fraudulento"
+      },
       "text": {
         "en": "On 28 February 1998 The Lancet published a paper by Andrew Wakefield suggesting a link between the MMR vaccine and autism. It was found to be fraudulent and retracted in 2010, but vaccination rates fell.",
         "es": "El 28 de febrero de 1998, The Lancet publicó un artículo de Andrew Wakefield que sugería un vínculo entre la vacuna triple viral y el autismo. Se demostró que era fraudulento y se retiró en 2010, pero la vacunación bajó."
@@ -699,42 +1637,77 @@
         "en": "The paper described 12 children at the Royal Free Hospital in London, and at a press conference Wakefield urged parents to choose single vaccines instead of the combined MMR. Many later studies found no link between MMR and autism, and the scientific consensus is that there is none. The journalist Brian Deer revealed that Wakefield had been paid by lawyers suing vaccine makers, held a patent for a rival measles vaccine and had manipulated the children's data. Ten of the 13 authors withdrew the paper's interpretation in 2004; The Lancet fully retracted it in 2010, and Wakefield was struck off the UK medical register. Meanwhile MMR coverage in the UK fell to about 80%. Doubts about vaccines are much older, as Leicester showed in 1885. The map shows the Americas, certified free of wild polio in 1994.",
         "es": "El artículo describía a 12 niños del Hospital Royal Free de Londres, y en una conferencia de prensa Wakefield pidió a los padres elegir vacunas separadas en lugar de la triple viral combinada. Muchos estudios posteriores no hallaron ningún vínculo entre la triple viral y el autismo, y el consenso científico es que no lo hay. El periodista Brian Deer reveló que Wakefield había cobrado de abogados que demandaban a los fabricantes de vacunas, tenía la patente de una vacuna rival contra el sarampión y había manipulado los datos de los niños. Diez de los 13 autores retiraron la interpretación del artículo en 2004; The Lancet lo retiró por completo en 2010, y Wakefield fue expulsado del registro médico británico. Mientras tanto, la vacunación con la triple viral en el Reino Unido bajó a cerca del 80 %. Las dudas sobre las vacunas son mucho más antiguas, como mostró Leicester en 1885. El mapa muestra América, certificada libre de polio salvaje en 1994."
       },
-      "camera": { "lon": -40, "lat": 35, "zoom": 1.3 },
-      "control": { "free": { "ref": "amro" } },
+      "camera": {
+        "lon": -40,
+        "lat": 35,
+        "zoom": 1.3
+      },
+      "control": {
+        "free": {
+          "ref": "amro"
+        }
+      },
       "places": [
         {
           "id": "wakefield-mmr-fraud",
-          "name": { "en": "Wakefield's retracted paper", "es": "El artículo retirado de Wakefield" },
-          "at": [-0.1653, 51.5531],
+          "name": {
+            "en": "Wakefield's retracted paper",
+            "es": "El artículo retirado de Wakefield"
+          },
+          "at": [
+            -0.1653,
+            51.5531
+          ],
           "cat": "event",
           "type": "work",
           "date": "1998-02-28",
-          "place": { "en": "Royal Free Hospital, London, England", "es": "Hospital Royal Free, Londres, Inglaterra" },
+          "place": {
+            "en": "Royal Free Hospital, London, England",
+            "es": "Hospital Royal Free, Londres, Inglaterra"
+          },
           "text": {
             "en": "A 1998 paper in The Lancet that claimed a link between the MMR vaccine and autism. Shown to be fraudulent, it was retracted in 2010; many studies have found no link.",
             "es": "Un artículo de 1998 en The Lancet que afirmaba un vínculo entre la vacuna triple viral y el autismo. Se demostró que era fraudulento y se retiró en 2010; muchos estudios no han hallado ningún vínculo."
           },
-          "wiki": { "en": "Wakefield MMR-autism fraud", "es": "" }
+          "wiki": {
+            "en": "Wakefield MMR-autism fraud",
+            "es": ""
+          }
         },
         {
           "id": "mmr-vaccine",
-          "name": { "en": "MMR vaccine", "es": "Vacuna triple viral" },
-          "at": [-75.295, 40.21],
+          "name": {
+            "en": "MMR vaccine",
+            "es": "Vacuna triple viral"
+          },
+          "at": [
+            -75.295,
+            40.21
+          ],
           "cat": "vaccine",
           "type": "invention",
           "date": "1971",
-          "place": { "en": "Merck, West Point, Pennsylvania, US", "es": "Merck, West Point, Pensilvania, EE. UU." },
+          "place": {
+            "en": "Merck, West Point, Pennsylvania, US",
+            "es": "Merck, West Point, Pensilvania, EE. UU."
+          },
           "text": {
             "en": "One vaccine against measles, mumps and rubella, combined by Maurice Hilleman in 1971. Two doses protect about 97% of people against measles; it does not cause autism.",
             "es": "Una sola vacuna contra el sarampión, las paperas y la rubéola, combinada por Maurice Hilleman en 1971. Dos dosis protegen a cerca del 97 % de las personas contra el sarampión; no causa autismo."
           },
-          "wiki": { "en": "MMR vaccine", "es": "Vacuna triple vírica" }
+          "wiki": {
+            "en": "MMR vaccine",
+            "es": "Vacuna triple vírica"
+          }
         }
       ]
     },
     {
       "date": "2000",
-      "title": { "en": "Gavi, the Vaccine Alliance", "es": "Gavi, la Alianza para las Vacunas" },
+      "title": {
+        "en": "Gavi, the Vaccine Alliance",
+        "es": "Gavi, la Alianza para las Vacunas"
+      },
       "text": {
         "en": "Gavi, founded in 2000, joins donor governments, the Gates Foundation, WHO, UNICEF, the World Bank and vaccine makers to buy vaccines for the poorest countries. By 2019 it had helped immunise over 760 million children.",
         "es": "Gavi, fundada en 2000, une a gobiernos donantes, la Fundación Gates, la OMS, Unicef, el Banco Mundial y los fabricantes de vacunas para comprar vacunas para los países más pobres. Para 2019 había ayudado a inmunizar a más de 760 millones de niños."
@@ -743,29 +1716,82 @@
         "en": "Gavi, based in Geneva, pools donors' money, negotiates low prices by buying in bulk and helps countries strengthen their health systems and train health workers. It supports the immunisation of almost half the world's children, and by 2019 it said it had helped prevent over 13 million deaths. Most of its money comes from rich countries, above all the United Kingdom, and from the Gates Foundation. It has also been criticised: for giving private donors great power over global health, for favouring new, costly vaccines over basic coverage and for having vaccine makers on its board. It supported the WHO's Yellow Fever Initiative, which from 2006 vaccinated more than 105 million people in West Africa, and in 2020 it helped lead COVAX, which tried to share COVID-19 vaccines fairly.",
         "es": "Gavi, con sede en Ginebra, reúne el dinero de los donantes, negocia precios bajos comprando al por mayor y ayuda a los países a fortalecer sus sistemas de salud y formar personal sanitario. Apoya la vacunación de casi la mitad de los niños del mundo, y para 2019 afirmaba haber ayudado a evitar más de 13 millones de muertes. La mayor parte de su dinero viene de países ricos, sobre todo el Reino Unido, y de la Fundación Gates. También ha recibido críticas: por dar mucho poder a donantes privados sobre la salud mundial, por preferir vacunas nuevas y caras a la cobertura básica y por tener fabricantes de vacunas en su consejo. Apoyó la Iniciativa contra la Fiebre Amarilla de la OMS, que desde 2006 vacunó a más de 105 millones de personas en África occidental, y en 2020 ayudó a dirigir COVAX, que intentó repartir con equidad las vacunas contra la COVID-19."
       },
-      "camera": { "lon": -25, "lat": 38, "zoom": 1.4 },
+      "camera": {
+        "lon": -25,
+        "lat": 38,
+        "zoom": 1.4
+      },
       "places": [
         {
           "id": "gavi",
-          "name": { "en": "Gavi, the Vaccine Alliance", "es": "Gavi, la Alianza para las Vacunas" },
-          "at": [6.1269, 46.2339],
+          "name": {
+            "en": "Gavi, the Vaccine Alliance",
+            "es": "Gavi, la Alianza para las Vacunas"
+          },
+          "at": [
+            6.1269,
+            46.2339
+          ],
           "cat": "health",
           "type": "institution",
           "date": "2000",
-          "place": { "en": "Geneva, Switzerland", "es": "Ginebra, Suiza" },
+          "place": {
+            "en": "Geneva, Switzerland",
+            "es": "Ginebra, Suiza"
+          },
           "text": {
             "en": "A partnership founded in 2000 that buys vaccines at low prices for poorer countries. It supports the immunisation of almost half the world's children, and by 2019 it said it had helped prevent over 13 million deaths.",
             "es": "Una alianza fundada en 2000 que compra vacunas a bajo precio para los países más pobres. Apoya la vacunación de casi la mitad de los niños del mundo, y para 2019 afirmaba haber ayudado a evitar más de 13 millones de muertes."
           },
-          "wiki": { "en": "GAVI", "es": "GAVI" }
+          "wiki": {
+            "en": "GAVI",
+            "es": "GAVI"
+          }
         },
-        { "id": "unicef", "name": { "en": "UNICEF", "es": "Unicef" }, "at": [-73.969, 40.7513], "cat": "health", "type": "institution", "date": "1946-12-11", "text": { "en": "UNICEF", "es": "Unicef" } },
-        { "id": "world-health-organization", "name": { "en": "World Health Organization (WHO)", "es": "Organización Mundial de la Salud (OMS)" }, "at": [6.1342, 46.2335], "cat": "health", "type": "institution", "date": "1948-04-07", "text": { "en": "WHO", "es": "OMS" } }
+        {
+          "id": "unicef",
+          "name": {
+            "en": "UNICEF",
+            "es": "Unicef"
+          },
+          "at": [
+            -73.969,
+            40.7513
+          ],
+          "cat": "health",
+          "type": "institution",
+          "date": "1946-12-11",
+          "text": {
+            "en": "UNICEF",
+            "es": "Unicef"
+          }
+        },
+        {
+          "id": "world-health-organization",
+          "name": {
+            "en": "World Health Organization (WHO)",
+            "es": "Organización Mundial de la Salud (OMS)"
+          },
+          "at": [
+            6.1342,
+            46.2335
+          ],
+          "cat": "health",
+          "type": "institution",
+          "date": "1948-04-07",
+          "text": {
+            "en": "WHO",
+            "es": "OMS"
+          }
+        }
       ]
     },
     {
       "date": "2006",
-      "title": { "en": "A vaccine against cancer", "es": "Una vacuna contra el cáncer" },
+      "title": {
+        "en": "A vaccine against cancer",
+        "es": "Una vacuna contra el cáncer"
+      },
       "text": {
         "en": "In 2006 the first vaccine against human papillomavirus (HPV), the main cause of cervical cancer, was approved, built on work by Ian Frazer and Jian Zhou in Australia. It may prevent some 70% of cervical cancers.",
         "es": "En 2006 se aprobó la primera vacuna contra el virus del papiloma humano (VPH), principal causa del cáncer de cuello uterino, basada en el trabajo de Ian Frazer y Jian Zhou en Australia. Puede prevenir cerca del 70 % de esos cánceres."
@@ -774,46 +1800,95 @@
         "en": "The German virologist Harald zur Hausen showed that certain types of HPV cause cervical cancer, work that won him a Nobel Prize in 2008. At the University of Queensland, Frazer and Zhou learned in 1990–1991 to make harmless virus-like particles from an HPV protein, the basis of the vaccines; Zhou died in 1999, before his work reached patients. The first vaccine, Gardasil, made by Merck, was approved in the United States in 2006 and in 80 countries within a year. The WHO recommends one or two doses for girls aged 9 to 14, and in 2020 it launched a strategy to eliminate cervical cancer with vaccination at its heart. As of 2025 about a third of girls of that age worldwide had received at least one dose. The map now also shows the Western Pacific and Europe, certified free of wild polio in 2000 and 2002, and the four countries where it was still endemic in 2006.",
         "es": "El virólogo alemán Harald zur Hausen demostró que ciertos tipos de VPH causan el cáncer de cuello uterino, un trabajo que le valió un Premio Nobel en 2008. En la Universidad de Queensland, Frazer y Zhou aprendieron en 1990-1991 a fabricar partículas inofensivas parecidas al virus a partir de una proteína del VPH, la base de las vacunas; Zhou murió en 1999, antes de que su trabajo llegara a los pacientes. La primera vacuna, Gardasil, de Merck, se aprobó en Estados Unidos en 2006 y en 80 países en menos de un año. La OMS recomienda una o dos dosis para las niñas de 9 a 14 años, y en 2020 lanzó una estrategia para eliminar el cáncer de cuello uterino centrada en la vacunación. En 2025 cerca de un tercio de las niñas de esa edad en el mundo había recibido al menos una dosis. El mapa muestra ahora también el Pacífico occidental y Europa, certificados libres de polio salvaje en 2000 y 2002, y los cuatro países donde aún era endémica en 2006."
       },
-      "camera": { "lon": 138, "lat": -14, "zoom": 1.6 },
+      "camera": {
+        "lon": 138,
+        "lat": -14,
+        "zoom": 1.6
+      },
       "control": {
-        "free": [{ "ref": "amro" }, { "ref": "wpro" }, { "ref": "euro" }],
-        "wild": ["NGA", "IND", "PAK", "AFG"]
+        "free": [
+          {
+            "ref": "amro"
+          },
+          {
+            "ref": "wpro"
+          },
+          {
+            "ref": "euro"
+          }
+        ],
+        "wild": [
+          "NGA",
+          "IND",
+          "PAK",
+          "AFG"
+        ]
       },
       "places": [
         {
           "id": "hpv-vaccine",
-          "name": { "en": "HPV vaccine", "es": "Vacuna contra el VPH" },
-          "at": [153.0131, -27.4972],
+          "name": {
+            "en": "HPV vaccine",
+            "es": "Vacuna contra el VPH"
+          },
+          "at": [
+            153.0131,
+            -27.4972
+          ],
           "cat": "vaccine",
           "type": "invention",
           "date": "2006",
-          "place": { "en": "University of Queensland, Brisbane, Australia", "es": "Universidad de Queensland, Brisbane, Australia" },
+          "place": {
+            "en": "University of Queensland, Brisbane, Australia",
+            "es": "Universidad de Queensland, Brisbane, Australia"
+          },
           "text": {
             "en": "Vaccines against the human papillomavirus, first approved in 2006. Given before exposure, usually to girls aged 9 to 14, they may prevent about 70% of cervical cancers.",
             "es": "Vacunas contra el virus del papiloma humano, aprobadas por primera vez en 2006. Puestas antes de la exposición, por lo general a niñas de 9 a 14 años, pueden prevenir cerca del 70 % de los cánceres de cuello uterino."
           },
-          "wiki": { "en": "HPV vaccine", "es": "Vacuna contra el virus del papiloma humano" }
+          "wiki": {
+            "en": "HPV vaccine",
+            "es": "Vacuna contra el virus del papiloma humano"
+          }
         },
         {
           "id": "ian-frazer",
-          "name": { "en": "Ian Frazer", "es": "Ian Frazer" },
-          "at": [153.0104, -27.4979],
+          "name": {
+            "en": "Ian Frazer",
+            "es": "Ian Frazer"
+          },
+          "at": [
+            153.0104,
+            -27.4979
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "1991",
-          "life": ["1953-01-06", null],
-          "place": { "en": "University of Queensland, Brisbane, Australia", "es": "Universidad de Queensland, Brisbane, Australia" },
+          "life": [
+            "1953-01-06",
+            null
+          ],
+          "place": {
+            "en": "University of Queensland, Brisbane, Australia",
+            "es": "Universidad de Queensland, Brisbane, Australia"
+          },
           "text": {
             "en": "Scottish-born Australian immunologist who, with the Chinese virologist Jian Zhou, developed the technology behind the HPV vaccines at the University of Queensland from 1990.",
             "es": "Inmunólogo australiano nacido en Escocia que, con el virólogo chino Jian Zhou, desarrolló desde 1990 en la Universidad de Queensland la tecnología de las vacunas contra el VPH."
           },
-          "wiki": { "en": "Ian Frazer", "es": "" }
+          "wiki": {
+            "en": "Ian Frazer",
+            "es": ""
+          }
         }
       ]
     },
     {
       "date": "2020-12-08",
-      "title": { "en": "The first mRNA vaccines", "es": "Las primeras vacunas de ARNm" },
+      "title": {
+        "en": "The first mRNA vaccines",
+        "es": "Las primeras vacunas de ARNm"
+      },
       "text": {
         "en": "On 8 December 2020, in Coventry, England, Margaret Keenan was the first person outside trials to get an approved COVID-19 vaccine. Like Moderna's, it used mRNA, thanks to work by Katalin Karikó and Drew Weissman.",
         "es": "El 8 de diciembre de 2020, en Coventry (Inglaterra), Margaret Keenan fue la primera persona fuera de los ensayos en recibir una vacuna aprobada contra la COVID-19. Como la de Moderna, era de ARNm, gracias al trabajo de Katalin Karikó y Drew Weissman."
@@ -822,75 +1897,149 @@
         "en": "mRNA vaccines give the body's cells instructions to make a harmless piece of a virus, which trains the immune system. For years the idea struggled: synthetic mRNA set off inflammation, and Karikó, a Hungarian biochemist who had moved to the United States in 1985, often lacked funding. In 1997 she met the immunologist Drew Weissman at a photocopier at the University of Pennsylvania, and from 2005 they showed that changing some of mRNA's building blocks stopped the harmful reaction. When COVID-19 struck, BioNTech with Pfizer, and Moderna, used their discoveries to make vaccines. Billions of doses followed; COVAX, led by Gavi, the WHO and CEPI with UNICEF, tried to share them fairly with poorer countries. In 2023 Karikó and Weissman won the Nobel Prize in Physiology or Medicine. By then Africa, too, had been certified free of wild polio, in August 2020, leaving only Afghanistan and Pakistan.",
         "es": "Las vacunas de ARNm dan a las células del cuerpo instrucciones para fabricar un trozo inofensivo de un virus, que entrena al sistema inmunitario. Durante años la idea tropezó: el ARNm sintético provocaba inflamación, y Karikó, una bioquímica húngara que se había ido a Estados Unidos en 1985, a menudo se quedó sin fondos. En 1997 conoció al inmunólogo Drew Weissman junto a una fotocopiadora de la Universidad de Pensilvania, y desde 2005 mostraron que cambiar algunas piezas del ARNm evitaba la reacción dañina. Cuando llegó la COVID-19, BioNTech con Pfizer, y Moderna, usaron sus descubrimientos para hacer vacunas. Siguieron miles de millones de dosis; COVAX, dirigido por Gavi, la OMS y la CEPI con Unicef, intentó repartirlas con equidad entre los países más pobres. En 2023 Karikó y Weissman ganaron el Premio Nobel de Fisiología o Medicina. Para entonces también África había sido certificada libre de polio salvaje, en agosto de 2020, y solo quedaban Afganistán y Pakistán."
       },
-      "camera": { "lon": -38, "lat": 46, "zoom": 1.6 },
+      "camera": {
+        "lon": -38,
+        "lat": 46,
+        "zoom": 1.6
+      },
       "control": {
-        "free": [{ "prev": true }, { "ref": "searo" }, { "ref": "afro" }],
-        "wild": ["AFG", "PAK"]
+        "free": [
+          {
+            "prev": true
+          },
+          {
+            "ref": "searo"
+          },
+          {
+            "ref": "afro"
+          }
+        ],
+        "wild": [
+          "AFG",
+          "PAK"
+        ]
       },
       "places": [
         {
           "id": "katalin-kariko",
-          "name": { "en": "Katalin Karikó", "es": "Katalin Karikó" },
-          "at": [-75.1936, 39.9519],
+          "name": {
+            "en": "Katalin Karikó",
+            "es": "Katalin Karikó"
+          },
+          "at": [
+            -75.1936,
+            39.9519
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "2005",
-          "life": ["1955-01-17", null],
-          "place": { "en": "University of Pennsylvania, Philadelphia, US", "es": "Universidad de Pensilvania, Filadelfia, EE. UU." },
+          "life": [
+            "1955-01-17",
+            null
+          ],
+          "place": {
+            "en": "University of Pennsylvania, Philadelphia, US",
+            "es": "Universidad de Pensilvania, Filadelfia, EE. UU."
+          },
           "text": {
             "en": "Hungarian-American biochemist who kept working on mRNA through years of rejection. With Drew Weissman she found how to make it safe to use, the basis of the mRNA COVID-19 vaccines; they shared the 2023 Nobel Prize.",
             "es": "Bioquímica húngara y estadounidense que siguió trabajando con el ARNm pese a años de rechazos. Con Drew Weissman descubrió cómo hacerlo seguro, la base de las vacunas de ARNm contra la COVID-19; compartieron el Nobel de 2023."
           },
-          "wiki": { "en": "Katalin Karikó", "es": "Katalin Karikó" }
+          "wiki": {
+            "en": "Katalin Karikó",
+            "es": "Katalin Karikó"
+          }
         },
         {
           "id": "drew-weissman",
-          "name": { "en": "Drew Weissman", "es": "Drew Weissman" },
-          "at": [-75.1955, 39.9475],
+          "name": {
+            "en": "Drew Weissman",
+            "es": "Drew Weissman"
+          },
+          "at": [
+            -75.1955,
+            39.9475
+          ],
           "cat": "scientist",
           "type": "person",
           "date": "2005",
-          "life": ["1959-09-07", null],
-          "place": { "en": "University of Pennsylvania, Philadelphia, US", "es": "Universidad de Pensilvania, Filadelfia, EE. UU." },
+          "life": [
+            "1959-09-07",
+            null
+          ],
+          "place": {
+            "en": "University of Pennsylvania, Philadelphia, US",
+            "es": "Universidad de Pensilvania, Filadelfia, EE. UU."
+          },
           "text": {
             "en": "American immunologist who worked with Karikó from 1997 and shared the 2023 Nobel Prize for the discoveries that made effective mRNA vaccines against COVID-19 possible.",
             "es": "Inmunólogo estadounidense que trabajó con Karikó desde 1997 y compartió el Nobel de 2023 por los descubrimientos que hicieron posibles vacunas de ARNm eficaces contra la COVID-19."
           },
-          "wiki": { "en": "Drew Weissman", "es": "Drew Weissman" }
+          "wiki": {
+            "en": "Drew Weissman",
+            "es": "Drew Weissman"
+          }
         },
         {
           "id": "margaret-keenan",
-          "name": { "en": "First COVID-19 vaccination", "es": "Primera vacunación contra la COVID-19" },
-          "at": [-1.4378, 52.4212],
+          "name": {
+            "en": "First COVID-19 vaccination",
+            "es": "Primera vacunación contra la COVID-19"
+          },
+          "at": [
+            -1.4378,
+            52.4212
+          ],
           "cat": "vaccine",
           "type": "event",
           "date": "2020-12-08",
-          "place": { "en": "University Hospital Coventry, England", "es": "Hospital Universitario de Coventry, Inglaterra" },
+          "place": {
+            "en": "University Hospital Coventry, England",
+            "es": "Hospital Universitario de Coventry, Inglaterra"
+          },
           "text": {
             "en": "On 8 December 2020 Margaret Keenan received the Pfizer–BioNTech vaccine here, the first person in the world to get an approved COVID-19 vaccine outside trials.",
             "es": "El 8 de diciembre de 2020, Margaret Keenan recibió aquí la vacuna de Pfizer y BioNTech: la primera persona del mundo en recibir una vacuna aprobada contra la COVID-19 fuera de los ensayos."
           },
-          "wiki": { "en": "COVID-19 vaccination in the United Kingdom", "es": "Vacunación contra la COVID-19 en Reino Unido" }
+          "wiki": {
+            "en": "COVID-19 vaccination in the United Kingdom",
+            "es": "Vacunación contra la COVID-19 en Reino Unido"
+          }
         },
         {
           "id": "mrna-vaccine",
-          "name": { "en": "mRNA vaccine", "es": "Vacuna de ARNm" },
-          "at": [8.2473, 49.9929],
+          "name": {
+            "en": "mRNA vaccine",
+            "es": "Vacuna de ARNm"
+          },
+          "at": [
+            8.2473,
+            49.9929
+          ],
           "cat": "vaccine",
           "type": "invention",
           "date": "2020",
-          "place": { "en": "BioNTech, Mainz, Germany, and Moderna, US", "es": "BioNTech, Maguncia, Alemania, y Moderna, EE. UU." },
+          "place": {
+            "en": "BioNTech, Mainz, Germany, and Moderna, US",
+            "es": "BioNTech, Maguncia, Alemania, y Moderna, EE. UU."
+          },
           "text": {
             "en": "Vaccines that deliver mRNA instructions so that the body's own cells make a harmless piece of a germ. The first, against COVID-19, were made by BioNTech with Pfizer and by Moderna in 2020.",
             "es": "Vacunas que llevan instrucciones de ARNm para que las propias células del cuerpo fabriquen un trozo inofensivo de un microbio. Las primeras, contra la COVID-19, las hicieron BioNTech con Pfizer y Moderna en 2020."
           },
-          "wiki": { "en": "MRNA vaccine", "es": "Vacuna de ARN" }
+          "wiki": {
+            "en": "MRNA vaccine",
+            "es": "Vacuna de ARN"
+          }
         }
       ]
     },
     {
       "date": "2023-10",
-      "title": { "en": "Vaccines against malaria", "es": "Vacunas contra la malaria" },
+      "title": {
+        "en": "Vaccines against malaria",
+        "es": "Vacunas contra la malaria"
+      },
       "text": {
         "en": "In October 2023 the WHO recommended R21, a second malaria vaccine after RTS,S in 2021. Malaria kills about 600,000 people a year, 95% of them in Africa, many of them young children.",
         "es": "En octubre de 2023 la OMS recomendó la R21, una segunda vacuna contra la malaria (paludismo) tras la RTS,S en 2021. La malaria mata a unas 600 000 personas al año, el 95 % en África, muchas de ellas niños pequeños."
@@ -899,57 +2048,108 @@
         "en": "The malaria parasite goes through many stages and keeps changing, which made a vaccine very hard to build. RTS,S was conceived in the late 1980s at SmithKline Beecham, now GSK, in Belgium and developed with the US Walter Reed Army Institute; trials began in the Gambia in 1998, and pilot programmes started in Malawi, Ghana and Kenya in 2019. It reduces hospital admissions for severe malaria by about 30%. R21/Matrix-M was developed at the University of Oxford's Jenner Institute, named after Edward Jenner, with the Kenya Medical Research Institute, the London School of Hygiene and Tropical Medicine, Novavax and the Serum Institute of India, and tested in Nanoro, Burkina Faso, under Halidou Tinto. It was the first malaria vaccine to reach the WHO's goal of 75% efficacy, and the Serum Institute planned to make up to 200 million doses a year. Both need several doses.",
         "es": "El parásito de la malaria pasa por muchas fases y cambia sin cesar, lo que hacía muy difícil crear una vacuna. La RTS,S se concibió a fines de la década de 1980 en SmithKline Beecham, hoy GSK, en Bélgica, y se desarrolló con el Instituto de Investigación Walter Reed del Ejército de Estados Unidos; los ensayos empezaron en Gambia en 1998, y los programas piloto, en Malaui, Ghana y Kenia en 2019. Reduce cerca de un 30 % los ingresos hospitalarios por malaria grave. La R21/Matrix-M se desarrolló en el Instituto Jenner de la Universidad de Oxford, que lleva el nombre de Edward Jenner, con el Instituto de Investigación Médica de Kenia, la Escuela de Higiene y Medicina Tropical de Londres, Novavax y el Serum Institute of India, y se probó en Nanoro (Burkina Faso), bajo la dirección de Halidou Tinto. Fue la primera vacuna contra la malaria en alcanzar la meta de la OMS de un 75 % de eficacia, y el Serum Institute planeaba fabricar hasta 200 millones de dosis al año. Las dos necesitan varias dosis."
       },
-      "camera": { "lon": 12, "lat": 20, "zoom": 1.5 },
-      "control": { "malaria": ["MWI", "GHA", "KEN"], "free": null, "wild": null },
+      "camera": {
+        "lon": 12,
+        "lat": 20,
+        "zoom": 1.5
+      },
+      "control": {
+        "malaria": [
+          "MWI",
+          "GHA",
+          "KEN"
+        ],
+        "free": null,
+        "wild": null
+      },
       "places": [
         {
           "id": "malaria",
-          "name": { "en": "Malaria", "es": "Malaria (paludismo)" },
-          "at": [-2.2, 12.6833],
+          "name": {
+            "en": "Malaria",
+            "es": "Malaria (paludismo)"
+          },
+          "at": [
+            -2.2,
+            12.6833
+          ],
           "cat": "disease",
           "type": "disease",
           "date": "2023",
-          "place": { "en": "Tropical regions, above all Africa", "es": "Regiones tropicales, sobre todo África" },
+          "place": {
+            "en": "Tropical regions, above all Africa",
+            "es": "Regiones tropicales, sobre todo África"
+          },
           "text": {
             "en": "A disease caused by parasites that mosquitoes pass on. In 2024 it caused some 282 million cases and an estimated 610,000 deaths, 95% of them in Africa (WHO).",
             "es": "Enfermedad causada por parásitos que transmiten los mosquitos. En 2024 causó unos 282 millones de casos y unas 610 000 muertes, el 95 % en África (OMS)."
           },
-          "wiki": { "en": "Malaria", "es": "Malaria" }
+          "wiki": {
+            "en": "Malaria",
+            "es": "Malaria"
+          }
         },
         {
           "id": "rts-s",
-          "name": { "en": "RTS,S malaria vaccine", "es": "Vacuna RTS,S contra la malaria" },
-          "at": [33.7741, -13.9626],
+          "name": {
+            "en": "RTS,S malaria vaccine",
+            "es": "Vacuna RTS,S contra la malaria"
+          },
+          "at": [
+            33.7741,
+            -13.9626
+          ],
           "cat": "vaccine",
           "type": "invention",
           "date": "2021-10",
-          "place": { "en": "First pilot in Malawi, 2019", "es": "Primer piloto en Malaui, 2019" },
+          "place": {
+            "en": "First pilot in Malawi, 2019",
+            "es": "Primer piloto en Malaui, 2019"
+          },
           "text": {
             "en": "The first malaria vaccine, recommended by the WHO in October 2021 after pilots in Malawi, Ghana and Kenya. It cuts hospital admissions for severe malaria by about 30%.",
             "es": "La primera vacuna contra la malaria, recomendada por la OMS en octubre de 2021 tras pilotos en Malaui, Ghana y Kenia. Reduce cerca de un 30 % los ingresos hospitalarios por malaria grave."
           },
-          "wiki": { "en": "RTS,S", "es": "RTS,S" }
+          "wiki": {
+            "en": "RTS,S",
+            "es": "RTS,S"
+          }
         },
         {
           "id": "r21-matrix-m",
-          "name": { "en": "R21/Matrix-M", "es": "R21/Matrix-M" },
-          "at": [-1.2163, 51.7519],
+          "name": {
+            "en": "R21/Matrix-M",
+            "es": "R21/Matrix-M"
+          },
+          "at": [
+            -1.2163,
+            51.7519
+          ],
           "cat": "vaccine",
           "type": "invention",
           "date": "2023-10",
-          "place": { "en": "Jenner Institute, Oxford, England", "es": "Instituto Jenner, Oxford, Inglaterra" },
+          "place": {
+            "en": "Jenner Institute, Oxford, England",
+            "es": "Instituto Jenner, Oxford, Inglaterra"
+          },
           "text": {
             "en": "A malaria vaccine developed at Oxford's Jenner Institute with partners in Kenya, Britain, the US and India, and tested in Burkina Faso. Recommended by the WHO in 2023, it showed about 75% efficacy.",
             "es": "Una vacuna contra la malaria desarrollada en el Instituto Jenner de Oxford con socios de Kenia, el Reino Unido, Estados Unidos y la India, y probada en Burkina Faso. Recomendada por la OMS en 2023, mostró cerca de un 75 % de eficacia."
           },
-          "wiki": { "en": "Malaria vaccine", "es": "Vacuna contra la malaria" },
+          "wiki": {
+            "en": "Malaria vaccine",
+            "es": "Vacuna contra la malaria"
+          },
           "img": "Which-countries-include-malaria-vaccines-in-their-vaccination-schedules.svg"
         }
       ]
     },
     {
       "date": "2026",
-      "title": { "en": "Polio's last strongholds", "es": "Los últimos reductos de la polio" },
+      "title": {
+        "en": "Polio's last strongholds",
+        "es": "Los últimos reductos de la polio"
+      },
       "text": {
         "en": "In 2026 wild polio still circulated only in Afghanistan and Pakistan, and vaccine-derived outbreaks hit places where too few children were vaccinated. Vaccines have saved some 154 million lives since 1974 (WHO).",
         "es": "En 2026 la polio salvaje solo circulaba en Afganistán y Pakistán, y hubo brotes derivados de la vacuna donde muy pocos niños estaban vacunados. Las vacunas han salvado unos 154 millones de vidas desde 1974 (OMS)."
@@ -958,26 +2158,99 @@
         "en": "Five of the WHO's six regions are certified free of wild polio: the Americas in 1994, the Western Pacific in 2000, Europe in 2002, South-East Asia in 2014 and Africa in 2020. Only wild type 1 survives, in eastern Afghanistan and Pakistan, where insecurity, distrust and deadly attacks on vaccinators have slowed the work; by 9 November 2026 there had been 59 cases that year. The WHO explains that 'variant', or vaccine-derived, outbreaks are rare: in communities with low immunisation, the weakened virus from the oral drops can pass from one unvaccinated child to another for a year or more and change into a form that can paralyse, like wild polio. The answer is the same for both: vaccinate every child, several times. A newer oral vaccine, nOPV2, is less likely to change this way. The WHO adds that more than 20 million people can walk today who would otherwise have been paralysed by polio.",
         "es": "Cinco de las seis regiones de la OMS están certificadas libres de polio salvaje: América en 1994, el Pacífico occidental en 2000, Europa en 2002, Asia sudoriental en 2014 y África en 2020. Solo sobrevive el tipo 1 salvaje, en el este de Afganistán y en Pakistán, donde la inseguridad, la desconfianza y los ataques mortales contra vacunadores han frenado el trabajo; al 9 de noviembre de 2026 había habido 59 casos en el año. La OMS explica que los brotes «variantes», o derivados de la vacuna, son raros: en comunidades con poca vacunación, el virus debilitado de las gotas orales puede pasar de un niño no vacunado a otro durante un año o más y cambiar a una forma capaz de paralizar, como la polio salvaje. La respuesta es la misma para ambas: vacunar a todos los niños, varias veces. Una vacuna oral más nueva, la nOPV2, tiene menos probabilidades de cambiar así. La OMS añade que más de 20 millones de personas pueden caminar hoy gracias a que la vacuna las libró de la parálisis."
       },
-      "camera": { "lon": 42, "lat": 30, "zoom": 1.3 },
-      "control": { "malaria": null, "free": [{ "ref": "amro" }, { "ref": "wpro" }, { "ref": "euro" }, { "ref": "searo" }, { "ref": "afro" }], "wild": ["AFG", "PAK"] },
+      "camera": {
+        "lon": 42,
+        "lat": 30,
+        "zoom": 1.3
+      },
+      "control": {
+        "malaria": null,
+        "free": [
+          {
+            "ref": "amro"
+          },
+          {
+            "ref": "wpro"
+          },
+          {
+            "ref": "euro"
+          },
+          {
+            "ref": "searo"
+          },
+          {
+            "ref": "afro"
+          }
+        ],
+        "wild": [
+          "AFG",
+          "PAK"
+        ]
+      },
       "places": [
         {
           "id": "polio-last-strongholds",
-          "name": { "en": "Wild polio's last refuge", "es": "El último refugio de la polio salvaje" },
-          "at": [71.5785, 34.0151],
+          "name": {
+            "en": "Wild polio's last refuge",
+            "es": "El último refugio de la polio salvaje"
+          },
+          "at": [
+            71.5785,
+            34.0151
+          ],
           "cat": "outbreak",
           "type": "place",
           "date": "2026",
-          "place": { "en": "Afghanistan and Pakistan", "es": "Afganistán y Pakistán" },
+          "place": {
+            "en": "Afghanistan and Pakistan",
+            "es": "Afganistán y Pakistán"
+          },
           "text": {
             "en": "Wild poliovirus type 1 now survives only in Afghanistan and Pakistan: 50 and 9 cases by 9 November 2026. Vaccinators there have faced distrust, insecurity and deadly attacks.",
             "es": "El poliovirus salvaje de tipo 1 solo sobrevive hoy en Afganistán y Pakistán: 50 y 9 casos al 9 de noviembre de 2026. Allí los vacunadores han sufrido desconfianza, inseguridad y ataques mortales."
           },
-          "wiki": { "en": "Polio eradication", "es": "Erradicación de la poliomielitis" },
+          "wiki": {
+            "en": "Polio eradication",
+            "es": "Erradicación de la poliomielitis"
+          },
           "img": "Poliomyelitis reported cases by year.svg"
         },
-        { "id": "world-health-organization", "name": { "en": "World Health Organization (WHO)", "es": "Organización Mundial de la Salud (OMS)" }, "at": [6.1342, 46.2335], "cat": "health", "type": "institution", "date": "1948-04-07", "text": { "en": "WHO", "es": "OMS" } },
-        { "id": "polio", "name": { "en": "Polio", "es": "Poliomielitis (polio)" }, "at": [16.3738, 48.2082], "cat": "disease", "type": "disease", "date": "1909", "text": { "en": "Polio", "es": "Polio" } }
+        {
+          "id": "world-health-organization",
+          "name": {
+            "en": "World Health Organization (WHO)",
+            "es": "Organización Mundial de la Salud (OMS)"
+          },
+          "at": [
+            6.1342,
+            46.2335
+          ],
+          "cat": "health",
+          "type": "institution",
+          "date": "1948-04-07",
+          "text": {
+            "en": "WHO",
+            "es": "OMS"
+          }
+        },
+        {
+          "id": "polio",
+          "name": {
+            "en": "Polio",
+            "es": "Poliomielitis (polio)"
+          },
+          "at": [
+            16.3738,
+            48.2082
+          ],
+          "cat": "disease",
+          "type": "disease",
+          "date": "1909",
+          "text": {
+            "en": "Polio",
+            "es": "Polio"
+          }
+        }
       ]
     }
   ],
@@ -986,50 +2259,185 @@
     "es": "Las vacunas convirtieron asesinas de niños como la difteria, el sarampión y la polio en enfermedades raras en buena parte del mundo, y un estudio dirigido por la OMS calcula que salvaron 154 millones de vidas entre 1974 y 2024. Fueron obra de muchos, de los laboratorios de Pasteur y Koch a Kitasato, Haffkine, Sabin y Chumakov a través de la Guerra Fría, hasta Karikó y Weissman, y del personal sanitario y los voluntarios que las llevan a cada aldea. La polio salvaje solo sobrevive en Afganistán y Pakistán, y donde fallan la confianza o el acceso vuelven el sarampión y la polio derivada de la vacuna."
   },
   "sources": [
-    { "title": "Wikipedia: Vaccination Act", "url": "https://en.wikipedia.org/wiki/Vaccination_Act" },
-    { "title": "Wikipedia: Vaccine hesitancy", "url": "https://en.wikipedia.org/wiki/Vaccine_hesitancy" },
-    { "title": "Wikipedia: Louis Pasteur", "url": "https://en.wikipedia.org/wiki/Louis_Pasteur" },
-    { "title": "Wikipedia: Joseph Meister", "url": "https://en.wikipedia.org/wiki/Joseph_Meister" },
-    { "title": "Wikipedia (es): Joseph Meister", "url": "https://es.wikipedia.org/wiki/Joseph_Meister" },
-    { "title": "Wikipedia: Rabies vaccine", "url": "https://en.wikipedia.org/wiki/Rabies_vaccine" },
-    { "title": "Wikipedia: Rabies", "url": "https://en.wikipedia.org/wiki/Rabies" },
-    { "title": "Wikipedia: Pasteur Institute", "url": "https://en.wikipedia.org/wiki/Pasteur_Institute" },
-    { "title": "Wikipedia: Emil von Behring", "url": "https://en.wikipedia.org/wiki/Emil_von_Behring" },
-    { "title": "Wikipedia: Kitasato Shibasaburō", "url": "https://en.wikipedia.org/wiki/Kitasato_Shibasabur%C5%8D" },
-    { "title": "Wikipedia: Diphtheria antitoxin", "url": "https://en.wikipedia.org/wiki/Diphtheria_antitoxin" },
-    { "title": "Wikipedia: Waldemar Haffkine", "url": "https://en.wikipedia.org/wiki/Waldemar_Haffkine" },
-    { "title": "Wikipedia: BCG vaccine", "url": "https://en.wikipedia.org/wiki/BCG_vaccine" },
-    { "title": "Wikipedia: Albert Calmette", "url": "https://en.wikipedia.org/wiki/Albert_Calmette" },
-    { "title": "Wikipedia: Camille Guérin", "url": "https://en.wikipedia.org/wiki/Camille_Gu%C3%A9rin" },
-    { "title": "Wikipedia: Tuberculosis", "url": "https://en.wikipedia.org/wiki/Tuberculosis" },
-    { "title": "Wikipedia: Yellow fever vaccine", "url": "https://en.wikipedia.org/wiki/Yellow_fever_vaccine" },
-    { "title": "Wikipedia: Max Theiler", "url": "https://en.wikipedia.org/wiki/Max_Theiler" },
-    { "title": "Wikipedia: Yellow fever", "url": "https://en.wikipedia.org/wiki/Yellow_fever" },
-    { "title": "Wikipedia: Polio vaccine", "url": "https://en.wikipedia.org/wiki/Polio_vaccine" },
-    { "title": "Wikipedia: Jonas Salk", "url": "https://en.wikipedia.org/wiki/Jonas_Salk" },
-    { "title": "Wikipedia: Cutter Laboratories", "url": "https://en.wikipedia.org/wiki/Cutter_Laboratories" },
-    { "title": "Wikipedia: Albert Sabin", "url": "https://en.wikipedia.org/wiki/Albert_Sabin" },
-    { "title": "Wikipedia: Polio", "url": "https://en.wikipedia.org/wiki/Polio" },
-    { "title": "Wikipedia: Polio eradication", "url": "https://en.wikipedia.org/wiki/Polio_eradication" },
-    { "title": "Wikipedia: Global Polio Eradication Initiative", "url": "https://en.wikipedia.org/wiki/Global_Polio_Eradication_Initiative" },
-    { "title": "Wikipedia: Measles vaccine", "url": "https://en.wikipedia.org/wiki/Measles_vaccine" },
-    { "title": "Wikipedia: Measles", "url": "https://en.wikipedia.org/wiki/Measles" },
-    { "title": "Wikipedia: Maurice Hilleman", "url": "https://en.wikipedia.org/wiki/Maurice_Hilleman" },
-    { "title": "Wikipedia: Expanded Program on Immunization", "url": "https://en.wikipedia.org/wiki/Expanded_Program_on_Immunization" },
-    { "title": "Wikipedia: GAVI", "url": "https://en.wikipedia.org/wiki/GAVI" },
-    { "title": "Wikipedia: Wakefield MMR-autism fraud", "url": "https://en.wikipedia.org/wiki/Wakefield_MMR-autism_fraud" },
-    { "title": "Wikipedia: HPV vaccine", "url": "https://en.wikipedia.org/wiki/HPV_vaccine" },
-    { "title": "Wikipedia: Ian Frazer", "url": "https://en.wikipedia.org/wiki/Ian_Frazer" },
-    { "title": "Wikipedia: MRNA vaccine", "url": "https://en.wikipedia.org/wiki/MRNA_vaccine" },
-    { "title": "Wikipedia: Katalin Karikó", "url": "https://en.wikipedia.org/wiki/Katalin_Karik%C3%B3" },
-    { "title": "Wikipedia: Drew Weissman", "url": "https://en.wikipedia.org/wiki/Drew_Weissman" },
-    { "title": "Wikipedia: COVID-19 vaccination in the United Kingdom", "url": "https://en.wikipedia.org/wiki/COVID-19_vaccination_in_the_United_Kingdom" },
-    { "title": "Wikipedia: COVAX", "url": "https://en.wikipedia.org/wiki/COVAX" },
-    { "title": "Wikipedia: RTS,S", "url": "https://en.wikipedia.org/wiki/RTS,S" },
-    { "title": "Wikipedia: Malaria vaccine", "url": "https://en.wikipedia.org/wiki/Malaria_vaccine" },
-    { "title": "Wikipedia: Malaria", "url": "https://en.wikipedia.org/wiki/Malaria" },
-    { "title": "WHO: Poliomyelitis fact sheet", "url": "https://www.who.int/news-room/fact-sheets/detail/poliomyelitis" },
-    { "title": "WHO: Poliomyelitis, questions and answers (vaccine-derived polio)", "url": "https://www.who.int/news-room/questions-and-answers/item/poliomyelitis" },
-    { "title": "WHO: Global immunization efforts have saved at least 154 million lives over the past 50 years (24 April 2024)", "url": "https://www.who.int/news/item/24-04-2024-global-immunization-efforts-have-saved-at-least-154-million-lives-over-the-past-50-years" }
+    {
+      "title": "Wikipedia: Vaccination Act",
+      "url": "https://en.wikipedia.org/wiki/Vaccination_Act"
+    },
+    {
+      "title": "Wikipedia: Vaccine hesitancy",
+      "url": "https://en.wikipedia.org/wiki/Vaccine_hesitancy"
+    },
+    {
+      "title": "Wikipedia: Louis Pasteur",
+      "url": "https://en.wikipedia.org/wiki/Louis_Pasteur"
+    },
+    {
+      "title": "Wikipedia: Joseph Meister",
+      "url": "https://en.wikipedia.org/wiki/Joseph_Meister"
+    },
+    {
+      "title": "Wikipedia (es): Joseph Meister",
+      "url": "https://es.wikipedia.org/wiki/Joseph_Meister"
+    },
+    {
+      "title": "Wikipedia: Rabies vaccine",
+      "url": "https://en.wikipedia.org/wiki/Rabies_vaccine"
+    },
+    {
+      "title": "Wikipedia: Rabies",
+      "url": "https://en.wikipedia.org/wiki/Rabies"
+    },
+    {
+      "title": "Wikipedia: Pasteur Institute",
+      "url": "https://en.wikipedia.org/wiki/Pasteur_Institute"
+    },
+    {
+      "title": "Wikipedia: Emil von Behring",
+      "url": "https://en.wikipedia.org/wiki/Emil_von_Behring"
+    },
+    {
+      "title": "Wikipedia: Kitasato Shibasaburō",
+      "url": "https://en.wikipedia.org/wiki/Kitasato_Shibasabur%C5%8D"
+    },
+    {
+      "title": "Wikipedia: Diphtheria antitoxin",
+      "url": "https://en.wikipedia.org/wiki/Diphtheria_antitoxin"
+    },
+    {
+      "title": "Wikipedia: Waldemar Haffkine",
+      "url": "https://en.wikipedia.org/wiki/Waldemar_Haffkine"
+    },
+    {
+      "title": "Wikipedia: BCG vaccine",
+      "url": "https://en.wikipedia.org/wiki/BCG_vaccine"
+    },
+    {
+      "title": "Wikipedia: Albert Calmette",
+      "url": "https://en.wikipedia.org/wiki/Albert_Calmette"
+    },
+    {
+      "title": "Wikipedia: Camille Guérin",
+      "url": "https://en.wikipedia.org/wiki/Camille_Gu%C3%A9rin"
+    },
+    {
+      "title": "Wikipedia: Tuberculosis",
+      "url": "https://en.wikipedia.org/wiki/Tuberculosis"
+    },
+    {
+      "title": "Wikipedia: Yellow fever vaccine",
+      "url": "https://en.wikipedia.org/wiki/Yellow_fever_vaccine"
+    },
+    {
+      "title": "Wikipedia: Max Theiler",
+      "url": "https://en.wikipedia.org/wiki/Max_Theiler"
+    },
+    {
+      "title": "Wikipedia: Yellow fever",
+      "url": "https://en.wikipedia.org/wiki/Yellow_fever"
+    },
+    {
+      "title": "Wikipedia: Polio vaccine",
+      "url": "https://en.wikipedia.org/wiki/Polio_vaccine"
+    },
+    {
+      "title": "Wikipedia: Jonas Salk",
+      "url": "https://en.wikipedia.org/wiki/Jonas_Salk"
+    },
+    {
+      "title": "Wikipedia: Cutter Laboratories",
+      "url": "https://en.wikipedia.org/wiki/Cutter_Laboratories"
+    },
+    {
+      "title": "Wikipedia: Albert Sabin",
+      "url": "https://en.wikipedia.org/wiki/Albert_Sabin"
+    },
+    {
+      "title": "Wikipedia: Polio",
+      "url": "https://en.wikipedia.org/wiki/Polio"
+    },
+    {
+      "title": "Wikipedia: Polio eradication",
+      "url": "https://en.wikipedia.org/wiki/Polio_eradication"
+    },
+    {
+      "title": "Wikipedia: Global Polio Eradication Initiative",
+      "url": "https://en.wikipedia.org/wiki/Global_Polio_Eradication_Initiative"
+    },
+    {
+      "title": "Wikipedia: Measles vaccine",
+      "url": "https://en.wikipedia.org/wiki/Measles_vaccine"
+    },
+    {
+      "title": "Wikipedia: Measles",
+      "url": "https://en.wikipedia.org/wiki/Measles"
+    },
+    {
+      "title": "Wikipedia: Maurice Hilleman",
+      "url": "https://en.wikipedia.org/wiki/Maurice_Hilleman"
+    },
+    {
+      "title": "Wikipedia: Expanded Program on Immunization",
+      "url": "https://en.wikipedia.org/wiki/Expanded_Program_on_Immunization"
+    },
+    {
+      "title": "Wikipedia: GAVI",
+      "url": "https://en.wikipedia.org/wiki/GAVI"
+    },
+    {
+      "title": "Wikipedia: Wakefield MMR-autism fraud",
+      "url": "https://en.wikipedia.org/wiki/Wakefield_MMR-autism_fraud"
+    },
+    {
+      "title": "Wikipedia: HPV vaccine",
+      "url": "https://en.wikipedia.org/wiki/HPV_vaccine"
+    },
+    {
+      "title": "Wikipedia: Ian Frazer",
+      "url": "https://en.wikipedia.org/wiki/Ian_Frazer"
+    },
+    {
+      "title": "Wikipedia: MRNA vaccine",
+      "url": "https://en.wikipedia.org/wiki/MRNA_vaccine"
+    },
+    {
+      "title": "Wikipedia: Katalin Karikó",
+      "url": "https://en.wikipedia.org/wiki/Katalin_Karik%C3%B3"
+    },
+    {
+      "title": "Wikipedia: Drew Weissman",
+      "url": "https://en.wikipedia.org/wiki/Drew_Weissman"
+    },
+    {
+      "title": "Wikipedia: COVID-19 vaccination in the United Kingdom",
+      "url": "https://en.wikipedia.org/wiki/COVID-19_vaccination_in_the_United_Kingdom"
+    },
+    {
+      "title": "Wikipedia: COVAX",
+      "url": "https://en.wikipedia.org/wiki/COVAX"
+    },
+    {
+      "title": "Wikipedia: RTS,S",
+      "url": "https://en.wikipedia.org/wiki/RTS,S"
+    },
+    {
+      "title": "Wikipedia: Malaria vaccine",
+      "url": "https://en.wikipedia.org/wiki/Malaria_vaccine"
+    },
+    {
+      "title": "Wikipedia: Malaria",
+      "url": "https://en.wikipedia.org/wiki/Malaria"
+    },
+    {
+      "title": "WHO: Poliomyelitis fact sheet",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/poliomyelitis"
+    },
+    {
+      "title": "WHO: Poliomyelitis, questions and answers (vaccine-derived polio)",
+      "url": "https://www.who.int/news-room/questions-and-answers/item/poliomyelitis"
+    },
+    {
+      "title": "WHO: Global immunization efforts have saved at least 154 million lives over the past 50 years (24 April 2024)",
+      "url": "https://www.who.int/news/item/24-04-2024-global-immunization-efforts-have-saved-at-least-154-million-lives-over-the-past-50-years"
+    }
   ]
 }

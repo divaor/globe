@@ -10,7 +10,8 @@
 // zoomed-in flat maps; yesterday's satellite picture is not empty (needs NASA GIBS online); the
 // wars and conquests mode plays a conflict, with battle cards and step details; a story opens from a
 // shared link; a journey keeps its trail on the map; the Writing systems filter with its script letters in
-// the app's own fonts; a script sample on a story card (Phoenician letters) and a religions story;
+// the app's own fonts; a script sample on a story card (Phoenician letters) and a religions story; a
+// disaster step with its time of day and a plagues story;
 // Compare two filters (the two-colour map, its chart linked to the globe, a total divided
 // by another, categories, Spanish); the quizzes made from the stories, Guess the link and Which language
 // family?, a city tour that hops between collections, and the tours of holy places and of the alphabet.
@@ -661,6 +662,28 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await b.ctx.close();
 }
 
+// 12j. Plagues and cures, Natural disasters: a step with a time of day shows it after the date, in English
+// and in Spanish; a shared link opens the cholera story in Soho.
+{
+  const stepDate = async (hash) => {
+    const s = await open({ ...devices['Pixel 7'] }, hash);
+    await s.page.waitForSelector('.warbar', { timeout: 30000 });
+    await s.page.waitForTimeout(2500);
+    await s.page.evaluate(() => { const b = document.querySelector('.warbar .tb-play'); if (b && b.getAttribute('aria-label') === 'Pause') b.click(); });
+    const r = await s.page.evaluate(() => ({ mode: window.atlas.app.mode, date: document.querySelector('.wb-date')?.textContent ?? '', title: document.querySelector('.wb-title')?.textContent ?? '', items: window.atlas.time.stories[window.atlas.app.mode]?.c?.items?.length ?? 0 }));
+    await s.ctx.close();
+    return { ...r, errors: s.errors };
+  };
+  const en = await stepDate('#disasters=lisbon-1755&step=1&p=globe&lang=en');
+  check(en.mode === 'disasters' && /1 November 1755, 09:40/.test(en.date) && /All Saints/.test(en.title), `the Lisbon earthquake opens at its time of day (${en.date}: ${en.title})`);
+  const es = await stepDate('#disasters=lisbon-1755&step=1&p=globe&lang=es');
+  check(/1 de noviembre de 1755, 09:40/.test(es.date), `in Spanish: ${es.date}`);
+  const ch = await stepDate('#plagues=cholera&step=5&p=globe&lang=en');
+  check(ch.mode === 'plagues' && /Soho/.test(ch.title) && ch.items > 20, `a shared link opens the cholera story in Soho (${ch.date}: ${ch.title})`);
+  const errs = [...en.errors, ...es.errors, ...ch.errors];
+  check(!errs.length, `no page errors in Plagues and Disasters stories${errs.length ? ': ' + errs.join(' | ') : ''}`);
+}
+
 // 12f. Compare two filters: from the Filters panel, GDP per capita against life expectancy on a
 // two-colour map, with its chart (a strong link); the legend's nine squares count the countries and a
 // tap lights theirs; a dot on the chart picks its country, whose strip shows both values with their
@@ -785,7 +808,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.waitForTimeout(400);
   };
   const storyButton = () => page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /See it in the story/.test(b.textContent)));
-  for (const kind of ['when', 'dish', 'era', 'civ', 'period', 'champion', 'journey', 'faith', 'script']) {
+  for (const kind of ['when', 'dish', 'era', 'civ', 'period', 'champion', 'journey', 'faith', 'script', 'plague', 'disaster']) {
     await menu('Quiz');
     await page.evaluate((k) => document.querySelector(`[data-quiz="${k}"]`).click(), kind);
     await page.waitForSelector('.learn-card:not([hidden]) .quiz-opt', { timeout: 30000 });
