@@ -11,7 +11,7 @@
     "es": "Europa, África, Asia y América"
   },
   "start": "1797",
-  "end": "2023",
+  "end": "2026",
   "summary": {
     "en": "From Napoleon's spoils to the Benin Bronzes: works of art carried off in war, by empires and by force, the cases for and against giving them back, and what has come home so far.",
     "es": "Del botín de Napoleón a los bronces de Benín: obras de arte llevadas por la guerra, los imperios y la fuerza, los argumentos a favor y en contra de devolverlas, y lo que ha vuelto a casa hasta ahora."
@@ -2649,25 +2649,42 @@
       ]
     },
     {
-      "date": "2023-11",
+      "date": "2026-04",
       "title": {
-        "en": "Still waiting in London",
-        "es": "Todavía esperan en Londres"
+        "en": "Some come home, some still wait",
+        "es": "Unos vuelven, otros esperan"
       },
       "camera": {
-        "lon": 10,
-        "lat": 45,
-        "zoom": 3
+        "lon": 22,
+        "lat": 8,
+        "zoom": 1.2
       },
       "text": {
-        "en": "Three Parthenon fragments have come back to Athens from the Vatican and one from Palermo, but the sculptures in London have not. In November 2023 Britain's prime minister cancelled a meeting with Greece's over the marbles.",
-        "es": "Tres fragmentos del Partenón han vuelto a Atenas desde el Vaticano y uno desde Palermo, pero las esculturas de Londres no. En noviembre de 2023, el primer ministro británico canceló una reunión con el griego por los mármoles."
+        "en": "In April 2026 South Africa handed back the last of the soapstone birds taken from Great Zimbabwe in colonial times. The Parthenon sculptures, though, are still in London, and talks with Greece have not settled their future.",
+        "es": "En abril de 2026, Sudáfrica devolvió el último de los pájaros de esteatita sacados de Gran Zimbabue en tiempos coloniales. Las esculturas del Partenón, en cambio, siguen en Londres, y las conversaciones con Grecia no han decidido su futuro."
       },
       "details": {
-        "en": "The Acropolis Museum, opened in 2009 below the hill, shows the surviving frieze in its original order, with white plaster casts where the pieces in London belong. In 2021 UNESCO called on Britain to negotiate, and Greek officials and the British Museum began talks in late 2022, but no deal has been reached. The museum argues that the sculptures were obtained legally, that it shows them beside other world cultures to about six million visitors a year, and that it would lend them if Greece accepted its ownership. Greece answers that they were removed unethically and belong together, in sight of the temple. Other cases also remain open: the Koh-i-Noor, five zodiac heads, the tabots and Benin Bronzes in the British Museum, Priam's Treasure in Moscow. In Venice, a full-size digital copy of the Wedding at Cana has hung since 2007 in the monks' dining hall where the original once was.",
-        "es": "El Museo de la Acrópolis, abierto en 2009 al pie de la colina, muestra el friso que se conserva en su orden original, con calcos blancos de yeso donde van las piezas de Londres. En 2021, la UNESCO pidió a Gran Bretaña que negociara, y funcionarios griegos y el Museo Británico iniciaron conversaciones a fines de 2022, pero no hay acuerdo. El museo sostiene que las esculturas se obtuvieron legalmente, que las muestra junto a otras culturas del mundo a unos seis millones de visitantes al año y que las prestaría si Grecia aceptara que son suyas. Grecia responde que fueron retiradas de forma poco ética y que deben estar juntas, a la vista del templo. Otros casos siguen abiertos: el Koh-i-Noor, cinco cabezas del zodiaco, los tabots y los bronces de Benín del Museo Británico, el Tesoro de Príamo en Moscú. En Venecia, una copia digital de tamaño real de Las bodas de Caná cuelga desde 2007 en el comedor de los monjes donde estuvo el original."
+        "en": "The birds once stood on tall columns in Great Zimbabwe, the stone city built from the 11th century by ancestors of the Shona. In 1889 a hunter, Willi Posselt, hacked one off its pedestal and sold it to Cecil Rhodes, who kept it in his Cape Town house; British writers credited the city to foreign builders, unwilling to believe that Africans had made it. South Africa returned four birds in 1981 and the last in 2026, with eight ancestral remains; Berlin gave back part of a pedestal in 2003. In Athens, the Acropolis Museum, opened in 2009, shows the Parthenon frieze with white casts where the London pieces belong, and fragments have come back from the Vatican and Palermo. In November 2023 Britain's prime minister cancelled a meeting with Greece's over the marbles. The British Museum says they were acquired legally, are seen by some six million visitors a year beside other world cultures, and could be lent if Greece accepted its ownership; Greece answers that they were removed unethically and belong together, by the temple.",
+        "es": "Los pájaros se alzaban sobre altas columnas en Gran Zimbabue, la ciudad de piedra construida desde el siglo XI por los antepasados de los shona. En 1889, un cazador, Willi Posselt, arrancó uno de su pedestal y se lo vendió a Cecil Rhodes, que lo guardó en su casa de Ciudad del Cabo; autores británicos atribuyeron la ciudad a constructores extranjeros, porque no querían creer que la hubieran hecho africanos. Sudáfrica devolvió cuatro pájaros en 1981 y el último en 2026, con ocho restos de antepasados; Berlín devolvió parte de un pedestal en 2003. En Atenas, el Museo de la Acrópolis, abierto en 2009, muestra el friso del Partenón con calcos blancos donde van las piezas de Londres, y han vuelto fragmentos del Vaticano y de Palermo. En noviembre de 2023, el primer ministro británico canceló una reunión con el griego por los mármoles. El Museo Británico dice que se adquirieron legalmente, que los ven unos seis millones de visitantes al año junto a otras culturas del mundo y que podría prestarlos si Grecia aceptara que son suyos; Grecia responde que fueron retirados de forma poco ética y deben estar reunidos, junto al templo."
       },
       "moves": [
+        {
+          "side": "returned",
+          "path": [
+            [
+              18.4633,
+              -33.954
+            ],
+            [
+              30.9333,
+              -20.2667
+            ]
+          ],
+          "label": {
+            "en": "The last bird comes home from Cape Town (2026)",
+            "es": "El último pájaro vuelve de Ciudad del Cabo (2026)"
+          }
+        },
         {
           "side": "returned",
           "path": [
@@ -2704,6 +2721,42 @@
         }
       ],
       "places": [
+        {
+          "id": "zimbabwe-birds",
+          "name": {
+            "en": "Zimbabwe Birds",
+            "es": "Pájaros de Zimbabue"
+          },
+          "at": [
+            30.9333,
+            -20.2667
+          ],
+          "cat": "sculpture",
+          "type": "work",
+          "date": "1100",
+          "end": "1450",
+          "place": {
+            "en": "Great Zimbabwe, Zimbabwe",
+            "es": "Gran Zimbabue, Zimbabue"
+          },
+          "text": {
+            "en": "Soapstone birds about 40 cm tall, set on columns in the medieval stone city of Great Zimbabwe; nothing like them is known anywhere else. Taken in colonial times, the last one came home in April 2026.",
+            "es": "Pájaros de esteatita de unos 40 cm de alto, colocados sobre columnas en la ciudad medieval de piedra de Gran Zimbabue; no se conoce nada parecido en ningún otro lugar. Sacados en tiempos coloniales, el último volvió en abril de 2026."
+          },
+          "by": {
+            "en": "Sculptors of Great Zimbabwe, ancestors of the Shona",
+            "es": "Escultores de Gran Zimbabue, antepasados de los shona"
+          },
+          "status": {
+            "en": "All back in Zimbabwe, in a museum at Great Zimbabwe; the last returned from Cape Town in April 2026",
+            "es": "Todos han vuelto a Zimbabue, a un museo en Gran Zimbabue; el último regresó de Ciudad del Cabo en abril de 2026"
+          },
+          "wiki": {
+            "en": "Zimbabwe Bird",
+            "es": "Ave de Zimbabue"
+          },
+          "img": "Soapstone birds on pedestals.jpg"
+        },
         {
           "id": "acropolis-museum",
           "name": {
@@ -2797,8 +2850,8 @@
     }
   ],
   "outcome": {
-    "en": "Since 1815, when the allies emptied the Louvre, the idea that taken art should go home has grown, from peace treaties and UNESCO rules to Germany's return of the Benin Bronzes. Some works have come back, such as the horses of St Mark's, Adele Bloch-Bauer's portrait, the Machu Picchu objects and seven zodiac heads; many others, from the Parthenon sculptures to the Koh-i-Noor, are still claimed. The debate goes on between those who see great museums as places where everyone can see the world's art and those who want their heritage back where it was made.",
-    "es": "Desde 1815, cuando los aliados vaciaron el Louvre, ha crecido la idea de que el arte llevado debe volver a casa, desde los tratados de paz y las reglas de la UNESCO hasta la devolución alemana de los bronces de Benín. Algunas obras han vuelto, como los caballos de San Marcos, el retrato de Adele Bloch-Bauer, los objetos de Machu Picchu y siete cabezas del zodiaco; muchas otras, de las esculturas del Partenón al Koh-i-Noor, siguen reclamadas. El debate continúa entre quienes ven los grandes museos como lugares donde todos pueden ver el arte del mundo y quienes quieren recuperar su patrimonio allí donde se hizo."
+    "en": "Since 1815, when the allies emptied the Louvre, the idea that taken art should go home has grown, from peace treaties and UNESCO rules to Germany's return of the Benin Bronzes. Some works have come back, such as the horses of St Mark's, Adele Bloch-Bauer's portrait, the Machu Picchu objects, seven zodiac heads and the birds of Great Zimbabwe; many others, from the Parthenon sculptures to the Koh-i-Noor, are still claimed. The debate goes on between those who see great museums as places where everyone can see the world's art and those who want their heritage back where it was made.",
+    "es": "Desde 1815, cuando los aliados vaciaron el Louvre, ha crecido la idea de que el arte llevado debe volver a casa, desde los tratados de paz y las reglas de la UNESCO hasta la devolución alemana de los bronces de Benín. Algunas obras han vuelto, como los caballos de San Marcos, el retrato de Adele Bloch-Bauer, los objetos de Machu Picchu, siete cabezas del zodiaco y los pájaros de Gran Zimbabue; muchas otras, de las esculturas del Partenón al Koh-i-Noor, siguen reclamadas. El debate continúa entre quienes ven los grandes museos como lugares donde todos pueden ver el arte del mundo y quienes quieren recuperar su patrimonio allí donde se hizo."
   },
   "sources": [
     {
@@ -3024,6 +3077,14 @@
     {
       "title": "Palermo Fragment (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Palermo_Fragment"
+    },
+    {
+      "title": "Zimbabwe Bird (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zimbabwe_Bird"
+    },
+    {
+      "title": "Great Zimbabwe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Zimbabwe"
     },
     {
       "title": "Repatriation (cultural property) (Wikipedia)",
