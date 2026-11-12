@@ -46,6 +46,9 @@ export default defineConfig({
         globIgnores: ['flags/**'],
         maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
         navigateFallback: 'index.html',
+        // Data files carry the app's version (?v=…); the precached ones belong to this build, so the version
+        // need not match.
+        ignoreURLParametersMatching: [/^utm_/, /^fbclid$/, /^v$/],
         runtimeCaching: [
           { urlPattern: ({ url }) => url.pathname.includes('/data/') && /\.(jpg|png|webp)$/.test(url.pathname), handler: 'CacheFirst', options: { cacheName: 'atlas-images', expiration: { maxEntries: 60 } } },
           { urlPattern: ({ url }) => url.pathname.includes('/data/'), handler: 'StaleWhileRevalidate', options: { cacheName: 'atlas-data', expiration: { maxEntries: 400 } } },

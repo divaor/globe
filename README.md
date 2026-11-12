@@ -95,16 +95,30 @@ spinning full-screen as an ambient display. English and Spanish.
     Spanish from Latin to the world. 161 cards show a sample in its own script (cuneiform, hieroglyphs,
     Phoenician, Brahmi, Mongolian in columns…), drawn with small font files that are fetched only for the
     letters on screen.
+  - Plagues and cures: 11 stories, 177 steps and 498 items. How epidemics spread and how people learned to
+    fight them, told plainly: death tolls are given as ranges with their sources, and the people wrongly
+    blamed are named as wrongly blamed. The Black Death month by month, plague through the ages, smallpox from
+    variolation to eradication, cholera and John Snow, germs and antibiotics, malaria, yellow fever and the
+    mosquito, the 1918 flu, HIV and AIDS, COVID-19 (with the debate over its origin as it stands) and vaccines
+    for all; and a time tour of medicine from Egypt's papyri to mRNA vaccines, with 103 healers, books,
+    hospitals and discoveries.
+  - Natural disasters: 9 stories, 144 steps and 352 items. Eruptions, earthquakes, tsunamis, floods and
+    storms, and how far their effects reached. Some go hour by hour, in the local time of each place
+    ("1 November 1755, 09:40"): Vesuvius in AD 79, the Lisbon earthquake and its tsunami across the Atlantic,
+    Krakatoa, the Indian Ocean tsunami of 2004 and the tsunamis that crossed the Pacific, drawn as they
+    spread. Also Tambora and the year without a summer, floods, storms and droughts since 1887, and time
+    tours of volcanoes and of earthquakes, with today's plate boundaries.
   - Browse and search every item of a story or a whole collection; shared links open a story at its step.
 - **Explore:** measure distances (great circles, flight time), compare two countries, "true size" of countries.
 - **Learn & play:** quizzes (find the country, flags, capitals, states and provinces of 48 countries, where in
   the world, when was it built or made, dishes of the world, which era, which civilization, which geologic
   period, who won, guess the link between two country facts, which journey, which faith, which script, which
-  language family), each ending with every answer and its picture; guided tours (our planet, eight cities
+  language family, which epidemic, which disaster), each ending with every answer and its picture; guided tours (our planet, eight cities
   through time, history and culture, Out of Africa, capitals of the ancient world, the dinosaur trail, the five
   mass extinctions, Olympic cities, World Cup finals, the Winter Games, great races, along the Silk Road, around
   the world under sail, to the ends of the Earth, gold, silver and spices, holy places, pilgrims' ways, writing
-  is born, code breakers, the story of the alphabet, languages of the world); "On this day" (Wikipedia).
+  is born, code breakers, the story of the alphabet, languages of the world, pandemics that changed history,
+  medicine's great discoveries, tsunamis across the oceans, the year without a summer, the Ring of Fire); "On this day" (Wikipedia).
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Ambient mode:** full-screen rotating globe with your filters, screen kept awake, clock, optional filter cycling.
 
@@ -156,6 +170,9 @@ Wikipedia's articles on that Games (`scripts/data/games/README.md`, with the rev
 trade routes stories are written from the Wikipedia articles listed in each story; the numbers of the Atlantic
 slave trade are those of the Trans-Atlantic Slave Trade Database (SlaveVoyages), as Wikipedia reports them. The Religions and
 philosophies and Writing and languages stories are written from the Wikipedia articles listed in each story.
+So are the Plagues and cures and Natural disasters stories, with figures from the WHO, UNAIDS and NOAA where
+the stories say so; the tsunami fronts are computed from NOAA's seafloor depths and checked against the
+arrival times that tide gauges recorded.
 The script samples use subsets of the Noto fonts (SIL Open Font License 1.1) and, for rare Chinese characters,
 Jigmo (CC0), made by `scripts/data/build-fonts.mjs` (`public/data/fonts/`, with the licence in `OFL.txt`).
 

@@ -125,8 +125,8 @@ export interface CollectionItem extends Omit<Item, 'first'> {
 }
 
 /** The collections of stories. */
-export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing';
-export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing'];
+export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing' | 'plagues' | 'disasters';
+export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters'];
 /** `paleo`: its old steps are drawn on the continents of their age. */
 const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text; paleo?: boolean }> = {
   wars: { dir: 'conflicts', hash: 'war', icon: '⚔️', name: { en: 'Wars and conquests', es: 'Guerras y conquistas' } },
@@ -139,15 +139,41 @@ const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: 
   journeys: { dir: 'journeys', hash: 'journeys', icon: '🧭', name: { en: 'Journeys and trade routes', es: 'Viajes y rutas comerciales' } },
   beliefs: { dir: 'beliefs', hash: 'beliefs', icon: '🛐', name: { en: 'Religions and philosophies', es: 'Religiones y filosofías' } },
   writing: { dir: 'writing', hash: 'writing', icon: '✍️', name: { en: 'Writing and languages', es: 'Escritura y lenguas' } },
+  plagues: { dir: 'plagues', hash: 'plagues', icon: '🦠', name: { en: 'Plagues and cures', es: 'Epidemias y curas' } },
+  disasters: { dir: 'disasters', hash: 'disasters', icon: '🌋', name: { en: 'Natural disasters', es: 'Desastres naturales' } },
 };
 export const storyHashKey = (k: StoryKind) => KINDS[k].hash;
-interface Area extends Shape { lp: Pt; area: number }
+interface Area extends Shape { lp: Pt; area: number; outline?: MultiLineString | null }
+
+/** An area's outline without its edges along the ±180° meridian, where an area that crosses it is cut
+ * in two, so the cut does not show as a line across the ocean; null when the area has no such edge. */
+function outlineOf(g: Geometry): MultiLineString | null {
+  if (g.type !== 'Polygon' && g.type !== 'MultiPolygon') return null;
+  const onCut = (p: number[]) => Math.abs(Math.abs(p[0]) - 180) < 1e-6;
+  const lines: number[][][] = [];
+  let cut = false;
+  for (const poly of g.type === 'Polygon' ? [g.coordinates] : g.coordinates) {
+    for (const ring of poly) {
+      let cur: number[][] = [];
+      ring.forEach((p, i) => {
+        if (i > 0 && onCut(p) && onCut(ring[i - 1])) { cut = true; if (cur.length > 1) lines.push(cur); cur = []; }
+        cur.push(p);
+      });
+      if (cur.length > 1) lines.push(cur);
+    }
+  }
+  return cut ? { type: 'MultiLineString', coordinates: lines } : null;
+}
 
 /** The groups of the story lists: the geologic eras (Life through time), then the ages of history. */
 export const ERAS = ['precambrian', 'paleozoic', 'mesozoic', 'cenozoic', 'prehistory', 'ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
 const MONTHS: Record<'en' | 'es', string[]> = {
   en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
+};
+const MONTHS_SHORT: Record<'en' | 'es', string[]> = {
+  en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  es: ['ene.', 'feb.', 'mar.', 'abr.', 'may.', 'jun.', 'jul.', 'ago.', 'sept.', 'oct.', 'nov.', 'dic.'],
 };
 
 // Timing of a step, in ms at 1×: the territory fades in, arrows draw, battles and items pop up one
@@ -191,8 +217,11 @@ function fmtAgoRange(y0: number, y1: number): string {
   return `${a}\u00a0${UNIT_EN[ua]} – ${b}\u00a0${ub ? `${UNIT_EN[ub]} ` : ''}years ago`;
 }
 
-/** "1 September 1939", "May 334 BC", "336 a. C.", "3.2 million years ago"... */
-export function fmtWhen(d: string, eraHint = 1): string {
+/** "1 September 1939", "May 334 BC", "336 a. C.", "3.2 million years ago", "1 November 1755, 09:40"... A time
+ *  of day is the local time at the place, as the story gives it. */
+export function fmtWhen(d: string, eraHint = 1, short = false): string {
+  const tm = /^(.*)T(\d{2}:\d{2})$/.exec(d);
+  if (tm) return `${fmtWhen(tm[1], eraHint, short)}, ${tm[2]}`;
   const m = /^(-?\d+)(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(d);
   if (!m) return d;
   const y = Number(m[1]), mo = m[2] ? Number(m[2]) : 0, day = m[3] ? Number(m[3]) : 0;
@@ -200,7 +229,9 @@ export function fmtWhen(d: string, eraHint = 1): string {
   const es = lang() === 'es';
   // Non-breaking spaces keep "216 a. C." and "AD 476" together when the text wraps.
   const year = y < 0 ? (es ? `${-y}\u00a0a.\u00a0C.` : `${-y}\u00a0BC`) : eraHint < 0 && y < 1000 ? (es ? `${y}\u00a0d.\u00a0C.` : `AD\u00a0${y}`) : String(y);
-  const mon = mo ? MONTHS[es ? 'es' : 'en'][mo - 1] : '';
+  const mon = mo ? (short ? MONTHS_SHORT : MONTHS)[es ? 'es' : 'en'][mo - 1] : '';
+  // Short: "1 nov. 1755" (a day's date that would not fit the story bar of a phone).
+  if (es && short && day) return `${day} ${mon} ${year}`;
   if (es) return day ? `${day} de ${mon} de ${year}` : mo ? `${mon} de ${year}` : year;
   return day ? `${day} ${mon} ${year}` : mo ? `${mon[0].toUpperCase()}${mon.slice(1)} ${year}` : year;
 }
@@ -264,7 +295,7 @@ export class StoryMode {
   private snaps: { year: number; astro: number; file: string }[] = [];
   private borders = new Map<string, Line[] | 'loading'>();
   private onKey = (e: KeyboardEvent) => this.key(e);
-  private onResize = () => { this.fitText(); this.measureBar(); };
+  private onResize = () => { this.fitText(); this.fitDate(); this.measureBar(); };
   /** The step text is shown whole (tapped open) rather than in three lines. */
   private textOpen = false;
   /** The markers as drawn in the last frame (story and step, item index → spot): taps and labels use them. */
@@ -600,6 +631,8 @@ export class StoryMode {
     ctx.beginPath(); path(a.feature as never);
     ctx.fillStyle = color; ctx.globalAlpha *= 0.82; ctx.fill();
     ctx.globalAlpha /= 0.82;
+    if (a.outline === undefined) a.outline = outlineOf(a.feature.geometry as Geometry);
+    if (a.outline) { ctx.beginPath(); path(a.outline as never); }
     ctx.strokeStyle = darker(color); ctx.lineWidth = 1.1; ctx.stroke();
     ctx.restore();
   }
@@ -1421,12 +1454,24 @@ export class StoryMode {
     this.app.root.append(this.bar);
   }
 
+  /** The step's date in the bar, made smaller to fit; a long date with a time of day that still does not
+   * fit a phone ("1 de noviembre de 1755, 09:40") gets a short month ("1 nov. 1755, 09:40"). */
+  private fitDate() {
+    const c = this.c, ui = this.ui;
+    if (!c || !ui) return;
+    const d = c.steps[this.step].date;
+    ui.date.textContent = fmtWhen(d, c.t0);
+    fitLine(ui.date);
+    if (ui.date.scrollWidth > ui.date.clientWidth) { ui.date.textContent = fmtWhen(d, c.t0, true); fitLine(ui.date); }
+  }
+
   private renderBar() {
     const c = this.c, ui = this.ui;
     if (!c || !ui) return;
     const st = c.steps[this.step];
-    ui.date.textContent = fmtWhen(st.date, c.t0);
-    fitLine(ui.date);
+    this.fitDate();
+    // Again once the fonts have loaded: the app's font is wider than the fallback one.
+    void document.fonts?.ready.then(() => { if (this.ui === ui) this.fitDate(); });
     ui.count.textContent = ` · ${t('warStepOf', { k: this.step + 1, n: c.steps.length })}`;
     clear(ui.title);
     ui.title.append(...(st.aftermath ? [h('span', { class: 'wb-tag' }, t('warAftermath')), ' '] : []), stepTitle(st));
@@ -1734,7 +1779,8 @@ function cutAt(s: string, n: number): string {
 function fitLine(el: HTMLElement, min = 13) {
   el.style.fontSize = '';
   let size = parseFloat(getComputedStyle(el).fontSize);
-  while (el.scrollWidth > el.clientWidth + 1 && size > min) el.style.fontSize = `${--size}px`;
+  // Strictly: even a pixel too wide shows an ellipsis.
+  while (el.scrollWidth > el.clientWidth && size > min) el.style.fontSize = `${--size}px`;
 }
 
 function labelPoint(f: Feature<Geometry>): { lp: Pt; area: number } {

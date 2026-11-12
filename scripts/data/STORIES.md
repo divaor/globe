@@ -1,6 +1,6 @@
-# Eras and ideas, Food through time, Great structures, Peoples and civilizations, Life through time, Games of the world, Journeys and trade routes, Religions and philosophies, Writing and languages: authoring guide
+# Eras and ideas, Food through time, Great structures, Peoples and civilizations, Life through time, Games of the world, Journeys and trade routes, Religions and philosophies, Writing and languages, Plagues and cures, Natural disasters: authoring guide
 
-Nine time-travel collections share the story format of Wars and conquests:
+Eleven time-travel collections share the story format of Wars and conquests:
 
 | Collection | Folder | What a story shows |
 |---|---|---|
@@ -13,6 +13,8 @@ Nine time-travel collections share the story format of Wars and conquests:
 | Journeys and trade routes | `scripts/data/journeys/` | great journeys followed leg by leg (Marco Polo, Ibn Battuta, Zheng He, Cook, the race to the Poles...) and the trade routes that carried silk, spices, gold, salt and silver, and enslaved people across the Atlantic (see [Journeys and trade routes](#journeys-and-trade-routes) below) |
 | Religions and philosophies | `scripts/data/beliefs/` | where faiths and schools of thought began and how they spread, told neutrally: founders and teachers, sacred places, texts, missions and pilgrimages, councils and reforms, persecutions, and where each is followed today (see [Religions and philosophies](#religions-and-philosophies) below) |
 | Writing and languages | `scripts/data/writing/` | the separate inventions of writing, how scripts spread and changed, the people who made and deciphered them, and how the great language families spread (see [Writing and languages](#writing-and-languages) below) |
+| Plagues and cures | `scripts/data/plagues/` | where epidemics began and how they travelled, month by month where the sources allow, how people lived through them, and the discoveries, vaccines and medicines that fought them (see [Plagues and cures](#plagues-and-cures) below) |
+| Natural disasters | `scripts/data/disasters/` | great eruptions, earthquakes, tsunamis, floods and storms, hour by hour where the sources allow, with their effects around the world, the science and the warnings that came after (see [Natural disasters](#natural-disasters) below) |
 
 **Read `scripts/data/conflicts/README.md` first.** It covers dates, the camera, sides and their territory
 (`control` with area expressions), `moves` (routes), `events`, `aftermath` and sources, which work the
@@ -34,7 +36,8 @@ same here. `structures/seven-wonders.json` is a complete example that uses the c
   them opens its card, with a picture from Wikipedia.
 - `"catalog": "all"` at the top of a story makes a **time tour**: every catalogue item dated from the
   story's `start` to its last step appears on the map from its `date` on, while the steps tell the story
-  and `show` the highlights (a step can also `show` an older item).
+  and `show` the highlights (a step can also `show` an older item). `"catalog": "quakes"` makes a time tour of the
+  items in `_catalog-quakes.json` only, for a collection with more than one time tour.
 
 ## Items
 
@@ -45,7 +48,7 @@ same here. `structures/seven-wonders.json` is a complete example that uses the c
 | `at` | `[lon, lat]`, precise (4 decimals) for buildings and sites; for a person, where the step's work happened |
 | `cat` | a category id from `_collection.json` (below) |
 | `icon` | optional emoji; defaults to the category's (✍️ for a writer, 🎭 for a theatre...) |
-| `type` | optional: `person`, `work`, `place`, `invention`, `event`, `site`, `dish`, `crop`, `animal`, `structure`, `institution`, `fossil` (a fossil find), `culture` (a civilization or people as a whole), `species` (a living or extinct kind of organism), `ship`, `goods` (a traded good), `script` (a writing system), `language` (a language or a family of languages) (quizzes use it) |
+| `type` | optional: `person`, `work`, `place`, `invention`, `event`, `site`, `dish`, `crop`, `animal`, `structure`, `institution`, `fossil` (a fossil find), `culture` (a civilization or people as a whole), `species` (a living or extinct kind of organism), `ship`, `goods` (a traded good), `script` (a writing system), `language` (a language or a family of languages), `disease` (a disease or the germ that causes it) (quizzes use it) |
 | `date` | when it happened or was made: a work's creation, an invention, a dish's first record, the start of a building. Dates older than 10,000 BC are written as years ago (14,400 years ago is `-14400`, 3.2 million years ago is `-3200000`); the app shows them as "14,400 years ago" |
 | `end` | optional: when it was finished (a building, a long work) |
 | `until` | optional: when it stopped existing (a civilization's fall, a city abandoned, a building lost). The card shows `date`–`until`, and a time tour takes it off the map after `until` |
@@ -106,6 +109,15 @@ across all of them.
   language (languages), homeland (homelands and origins), city (cities and centres of learning), ruler (rulers and
   states), grammar (grammars and dictionaries), revival (languages lost and revived), code (codes and new media:
   Braille, Morse, Unicode), event (turning points).
+- **Plagues and cures:** outbreak (outbreaks and epidemics: where a disease struck), disease (diseases and germs), carrier
+  (rats, fleas, mosquitoes, bats and other carriers), route (how it travelled: ships, caravans, armies, railways, flights),
+  scientist (doctors and scientists), discovery (discoveries), vaccine (vaccines), medicine (medicines and treatments),
+  health (hospitals and public health: quarantine, sewers, the WHO), society (how people lived through it: work, wages,
+  faith, daily life), persecution (blame and persecution), art (art, books and memory), event (turning points).
+- **Natural disasters:** eruption (eruptions), quake (earthquakes), tsunami (tsunamis), flood (floods), storm (storms and
+  cyclones), drought (droughts and famines), climate (effects on weather and climate: a year without a summer, red
+  sunsets), town (towns and people hit), site (ruins and sites), witness (witnesses and writings), science (science and
+  warnings), relief (rescue and rebuilding), art (art and memory), event (turning points).
 
 Don't add or rename categories without asking. Only one person edits a `_collection.json` at a time.
 
@@ -316,3 +328,85 @@ made and deciphered them, and how the great language families spread.
 - **Be fair**: name the peoples whose languages were banned or pushed out (Indigenous languages in boarding schools,
   Irish, Kurdish, Catalan under Franco), and credit the speakers, teachers and communities who kept them alive or
   revived them.
+
+## Times of day
+
+A step's `date` (and an item's) may carry a time: `"1755-11-01T09:40"`. Use it when steps are hours apart on the
+same day (an eruption, an earthquake and its tsunami). It is the **local time at the place the step is about**, as
+the sources give it, and the app shows it as "1 November 1755, 09:40". When a step's time is somewhere else's, say
+so in its text ("at 07:58 in Aceh, 01:58 in London"). Times must go forward like dates do.
+
+## Plagues and cures
+
+`scripts/data/plagues/` tells where epidemics began and how they travelled, how people lived through them, and how
+doctors and scientists learned to fight them.
+
+- **Spread on the map.** Give the disease a side ("Plague", "Cholera's second pandemic", "Reported cases") and use
+  `control` for the lands it had reached by the step's date, as historians' maps draw it, grown with `prev`. For the
+  Black Death and other fast spreads, steps may be a month or a season apart (`"1348-06"`). `moves` (arrows) show
+  how it travelled: ships from Caffa to Constantinople and Messina, caravans, armies, pilgrims, railways, steamships,
+  flights. A second side can show something else that matters: where a vaccine campaign had reached, quarantine.
+  A drawn polygon with long east–west edges takes `"dense": true`, so its edges follow the parallels instead of
+  bulging towards the poles.
+- **Items**: outbreaks (a town, a ship, a camp), the disease itself (`type: "disease"`), its carriers, doctors and
+  scientists, discoveries, vaccines, medicines, hospitals and public health, how people lived through it, blame and
+  persecution, art and books.
+- **Numbers.** Deaths and cases are estimates: give them as ranges or with "about", with the source and year ("WHO
+  estimates 14.9 million excess deaths in 2020–2021"), and say when historians disagree (the Black Death killed
+  between a third and half of Europe's people, by different counts). No false precision.
+- **Be fair and humane:**
+  - Name the people hit hardest, and those blamed and persecuted: Jews murdered in 1348–1349 on the false charge
+    of poisoning wells, foreigners and the poor, people with HIV and gay men in the 1980s, Asian people in 2020.
+    Say plainly that the accusations were false.
+  - Credit the many people behind the cures: variolation in China, India, Africa and the Ottoman Empire (Onesimus in
+    Boston, Lady Mary Wortley Montagu), the Quechua healers who knew cinchona bark, Carlos Finlay, Kitasato
+    Shibasaburō, Waldemar Haffkine, Tu Youyou, the orphan boys of the Balmis expedition, the health workers of the
+    smallpox eradication campaign.
+  - Say what is debated: where the Black Death began, where the 1918 flu began, the origin of SARS-CoV-2 (a natural
+    spillover from animals or a laboratory accident; there is no consensus) without taking sides.
+  - Names: "the 1918 flu" (explain why it was called the "Spanish flu"), "COVID-19", "HIV and AIDS". In Spanish:
+    "la gripe de 1918", "la peste negra", "la viruela", "el sida".
+  - Vaccines and medicines: tell what they did with the WHO's and historians' figures. This is history, not medical
+    advice.
+- **Pictures**: no pictures of dead bodies or of sick people's bodies (sores, rashes, wasting), and no photos of
+  identifiable patients. Many disease articles lead with such a photo (smallpox, cholera, leprosy): set `img` to a
+  map, a microscope image, an engraving, a poster, a hospital or a portrait instead. Paintings such as a Danse
+  macabre are fine.
+- **The time tour** `medicine-through-time` (`"catalog": "medicine"`) uses `_catalog-medicine.json`: physicians,
+  hospitals, discoveries and medicines from the ancient world to today appear in their own time, while its steps tell
+  the big picture. The other stories use `places`, with the same `id` for the same thing.
+
+## Natural disasters
+
+`scripts/data/disasters/` tells great eruptions, earthquakes, tsunamis, floods and storms: what happened hour by
+hour, who was hit, how far the effects reached, and what science and warnings came after.
+
+- **Hour by hour.** The first steps of a single disaster may be hours apart, with [times of day](#times-of-day): the
+  eruption column, the first surges, the tsunami reaching each coast. Later steps move to days and years: relief,
+  rebuilding, what science learned, the place today.
+- **On the map:**
+  - areas (`control`) for what was hit: the shaking felt, the ash fall, the flooded land, the cold summer of 1816;
+  - a tsunami front as a ring over the sea: `{ "sea": { "minus": [{ "circle": [lon, lat], "km": 1600 }, { "circle":
+    [lon, lat], "km": 1100 }] } }`, or the sea a wave had crossed by then: `{ "sea": { "circle": [lon, lat], "km": 1600 } }`.
+    `sea` keeps only the sea inside an area, as `land` keeps the land. Draw the distances from the published
+    travel-time maps (NOAA's), not from a constant speed: tsunamis are slower in shallow water;
+  - a band of latitude (a sulphate veil, a cold summer) as `{ "band": [lonW, latS, lonE, latN] }`, whose edges follow
+    the parallels. A drawn polygon's edges are great circles, which bulge towards the poles when they are long; add
+    `"dense": true` to a `poly` to make its edges follow the lines as drawn on a flat map;
+  - `moves` (arrows) for a pressure wave, an ash cloud on the wind, a wave reaching a far coast, people fleeing.
+- **Numbers**: magnitudes (Mw, and say when older ones are estimates), the Volcanic Explosivity Index (VEI), deaths as
+  ranges with their source; say when estimates differ.
+- **Be fair and humane:**
+  - Name who was hit hardest and why: the poor in weak buildings, people under colonial rule, villages without
+    warning. Credit the rescuers, the scientists and the people whose knowledge saved lives (the Simeulue islanders'
+    *smong*, the evacuation before Pinatubo).
+  - No sensationalism. Say plainly what is debated (the date of Vesuvius' eruption, the death toll of Tambora,
+    whether Krakatoa inspired *The Scream*).
+  - Climate change: say what the IPCC finds (more intense heavy rain, a larger share of the strongest tropical
+    cyclones, higher seas), and link a single event to it only when an attribution study did, naming it.
+- **Pictures**: no pictures of the dead, of bodies being recovered or of grieving survivors, and not the Pompeii
+  body casts: use the place, the volcano, a map, a painting or a satellite image. Set `img` when an article leads
+  with such a photo.
+- **The time tours** `earthquakes-through-time` (`"catalog": "quakes"`, items in `_catalog-quakes.json`) and
+  `volcanoes-through-time` (`"catalog": "volcanoes"`, items in `_catalog-volcanoes.json`) each show their own
+  catalogue file, as the faiths tour does; the other stories use `places`, with the same `id` for the same thing.

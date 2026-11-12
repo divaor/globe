@@ -53,14 +53,14 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const DATA = path.join(ROOT, 'public/data');
 
 /** The collections: where their sources and outputs live. */
-export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing' };
+export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters' };
 /** The collections whose deep-time steps are drawn on the continents of their age (the plate model). */
 const PALEO_KINDS = new Set(['life']);
 const srcDir = (kind) => path.join(ROOT, 'scripts/data', KINDS[kind]);
 const outDir = (kind) => path.join(DATA, KINDS[kind]);
 /** How a route goes: by sea (the lint checks it stays at sea), over land, up a river, over the ice, by air. */
 const MOVE_BY = ['sea', 'land', 'river', 'ice', 'air'];
-const ITEM_TYPES = ['person', 'work', 'place', 'invention', 'event', 'site', 'dish', 'crop', 'animal', 'structure', 'institution', 'fossil', 'culture', 'species', 'games', 'goods', 'ship', 'script', 'language'];
+const ITEM_TYPES = ['person', 'work', 'place', 'invention', 'event', 'site', 'dish', 'crop', 'animal', 'structure', 'institution', 'fossil', 'culture', 'species', 'games', 'goods', 'ship', 'script', 'language', 'disease'];
 
 export const ERAS = ['precambrian', 'paleozoic', 'mesozoic', 'cenozoic', 'prehistory', 'ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
 /** The geologic eras: only the Life through time stories are grouped by them. */
@@ -195,6 +195,30 @@ function ringPoly(ring, where) {
   return [[r]];
 }
 
+/**
+ * A drawn ring whose edges follow the lines drawn on a flat lon/lat map (a band of latitude stays on its
+ * parallel): a point every degree along each edge. Geometry operations drop points in a straight line, and
+ * the map draws what is left as great circles, which bulge towards the poles; so each added point is moved
+ * alternately 0.0001° (about 11 m) to either side of its edge, out of line.
+ */
+function denseRing(ring) {
+  const out = [];
+  for (let k = 0; k < ring.length - 1; k++) {
+    const [x0, y0] = ring[k], [x1, y1] = ring[k + 1];
+    out.push([x0, y0]);
+    // Meridians are great circles already: an edge along one needs no points (and two halves of a band then meet
+    // exactly).
+    const n = x0 === x1 ? 1 : Math.ceil(Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0)));
+    const len = Math.hypot(x1 - x0, y1 - y0) || 1, nx = -(y1 - y0) / len, ny = (x1 - x0) / len;
+    for (let j = 1; j < n; j++) {
+      const f = j / n, e = j % 2 ? 1e-4 : -1e-4;
+      out.push([x0 + (x1 - x0) * f + nx * e, y0 + (y1 - y0) * f + ny * e]);
+    }
+  }
+  out.push(ring[ring.length - 1]);
+  return out;
+}
+
 function safe(op, where, ...geoms) {
   const gs = geoms.filter((g) => g && g.length);
   try {
@@ -220,8 +244,11 @@ function landIn(mp, where) {
  *   "DEU"                                   a country of today (see --list countries)
  *   { "a1": "ESP", "names": [...] }          provinces/states of a country (or "except": [...], or all)
  *   { "hist": "Mongol Empire", "year": 1279 } a polity on a historical map (see --list hist 1279)
- *   { "poly": [[lon, lat], ...] }            a drawn polygon
+ *   { "poly": [[lon, lat], ...] }            a drawn polygon (its edges are great circles; with "dense": true
+ *                                           they follow the lines as drawn on a flat lon/lat map)
+ *   { "band": [lonW, latS, lonE, latN] }     a box whose edges follow its parallels and meridians (a band of latitude)
  *   { "land": [[lon, lat], ...] | area }     the land inside a drawn polygon (or inside an area)
+ *   { "sea": [[lon, lat], ...] | area }      the sea inside a drawn polygon or an area (a tsunami's reach)
  *   { "circle": [lon, lat], "km": 40 }       a disc (a city, a siege)
  *   { "ref": "name" }                        an area defined in "defs"
  *   { "prev": "side" | true }                that side's territory at the previous step
@@ -243,7 +270,7 @@ function resolve(expr, ctx, where) {
     return safe('union', where, ...expr.map((e, i) => resolve(e, ctx, `${where}[${i}]`)));
   }
   if (!expr || typeof expr !== 'object') throw new Error(`${where}: an area must be a country code, a list or an object, got ${JSON.stringify(expr)}`);
-  const key = Object.keys(expr).find((k) => ['a1', 'hist', 'poly', 'land', 'circle', 'ref', 'prev', 'cur', 'union', 'and', 'minus', 'country'].includes(k));
+  const key = Object.keys(expr).find((k) => ['a1', 'hist', 'poly', 'band', 'land', 'sea', 'circle', 'ref', 'prev', 'cur', 'union', 'and', 'minus', 'country'].includes(k));
   switch (key) {
     case 'country': return resolve(expr.country, ctx, where);
     case 'a1': {
@@ -267,11 +294,26 @@ function resolve(expr, ctx, where) {
     }
     case 'poly': {
       if (!isRing(expr.poly)) throw new Error(`${where}: "poly" must be a list of at least 3 [lon, lat] points`);
-      return ringPoly(expr.poly, where);
+      if (expr.dense != null && typeof expr.dense !== 'boolean') throw new Error(`${where}: "dense" is true or false`);
+      const mp = ringPoly(expr.poly, where);
+      return expr.dense ? [[denseRing(mp[0][0])]] : mp;
+    }
+    case 'band': {
+      const b = expr.band;
+      if (!Array.isArray(b) || b.length !== 4 || !b.every(Number.isFinite) || !(b[0] < b[2] && b[1] < b[3])) throw new Error(`${where}: "band" is [lonW, latS, lonE, latN], west before east and south before north`);
+      const [w, s, e, n] = b;
+      // Wider than 180°: two halves, as a drawn polygon may not span more (each half is checked like one).
+      const mid = e - w > 180 ? (w + e) / 2 : null;
+      const box = (x0, x1) => [[denseRing(ringPoly([[x0, s], [x1, s], [x1, n], [x0, n]], where)[0][0])]];
+      return mid == null ? box(w, e) : safe('union', where, box(w, mid), box(mid, e));
     }
     case 'land': {
       const inner = isRing(expr.land) ? ringPoly(expr.land, where) : resolve(expr.land, ctx, `${where}.land`);
       return landIn(inner, where);
+    }
+    case 'sea': {
+      const inner = isRing(expr.sea) ? ringPoly(expr.sea, where) : resolve(expr.sea, ctx, `${where}.sea`);
+      return safe('difference', where, inner, landIn(inner, where));
     }
     case 'circle': {
       const [lon, lat] = expr.circle;
@@ -326,19 +368,22 @@ function toD3(mp) {
 }
 
 // ---------------------------------------------------------------------------------------------
-// Dates: "YYYY", "YYYY-MM" or "YYYY-MM-DD"; negative years are BC (-334 = 334 BC, no year 0).
+// Dates: "YYYY", "YYYY-MM" or "YYYY-MM-DD", and for steps hours apart "YYYY-MM-DDTHH:MM", the local time at
+// the place (Lisbon's 9:40 on 1 November 1755); negative years are BC (-334 = 334 BC, no year 0).
 
 export function parseDate(s, where) {
   // Up to ten digits: deep time (7 million years ago is -7000000).
-  const m = /^(-?\d{1,10})(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(String(s ?? ''));
-  if (!m) throw new Error(`${where}: date "${s}" must be YYYY, YYYY-MM or YYYY-MM-DD (negative years are BC)`);
+  const m = /^(-?\d{1,10})(?:-(\d{2}))?(?:-(\d{2})(?:T(\d{2}):(\d{2}))?)?$/.exec(String(s ?? ''));
+  if (!m) throw new Error(`${where}: date "${s}" must be YYYY, YYYY-MM, YYYY-MM-DD or YYYY-MM-DDTHH:MM (negative years are BC)`);
   const y = Number(m[1]);
   if (y === 0) throw new Error(`${where}: there is no year 0 (1 BC is -1, AD 1 is 1)`);
   const mo = m[2] ? Number(m[2]) : 0, d = m[3] ? Number(m[3]) : 0;
   if (mo && (mo < 1 || mo > 12)) throw new Error(`${where}: month ${mo} out of range`);
   if (d && (d < 1 || d > 31)) throw new Error(`${where}: day ${d} out of range`);
+  const hh = m[4] ? Number(m[4]) : 0, mm = m[5] ? Number(m[5]) : 0;
+  if (hh > 23 || mm > 59) throw new Error(`${where}: time ${m[4]}:${m[5]} out of range`);
   const astro = y < 0 ? y + 1 : y;
-  return astro + (mo ? (mo - 1) / 12 : 0) + (d ? (d - 1) / 365.25 : 0);
+  return astro + (mo ? (mo - 1) / 12 : 0) + (d ? (d - 1) / 365.25 : 0) + (hh * 60 + mm) / (1440 * 365.25);
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -443,17 +488,22 @@ function loadCollection(kind) {
     cats.set(cat.id, { id: cat.id, name: cat.name, icon: cat.icon, color: cat.color });
   }
   if (!cats.size) throw new Error(`${where}: at least one category`);
-  const coll = { kind, name: c.name, cats, catalog: new Map() };
+  // `part`: each catalogue item's file, "quakes" for _catalog-quakes.json ("" for _collection.json), so a time
+  // tour can show one part only.
+  const coll = { kind, name: c.name, cats, catalog: new Map(), part: new Map(), parts: new Set() };
   // The catalogue may be split over _collection.json and any _catalog-*.json files beside it.
-  const parts = [[where, c.catalog ?? []]];
+  const parts = [[where, c.catalog ?? [], '']];
   for (const f of fs.readdirSync(srcDir(kind)).filter((x) => /^_catalog.*\.json$/.test(x)).sort()) {
-    parts.push([`${KINDS[kind]}/${f}`, readJSON(path.join(srcDir(kind), f)).catalog ?? []]);
+    const part = f.replace(/^_catalog-?/, '').replace(/\.json$/, '');
+    parts.push([`${KINDS[kind]}/${f}`, readJSON(path.join(srcDir(kind), f)).catalog ?? [], part]);
+    if (part) coll.parts.add(part);
   }
-  for (const [w, list] of parts) {
+  for (const [w, list, part] of parts) {
     for (const [i, it] of list.entries()) {
       checkItem(it, `${w} catalog[${i}] (${it?.id})`, coll, true);
       if (coll.catalog.has(it.id)) throw new Error(`${w}: catalogue item "${it.id}" is already in the catalogue`);
       coll.catalog.set(it.id, it);
+      coll.part.set(it.id, part);
     }
   }
   return coll;
@@ -474,7 +524,7 @@ function validate(c, file, kind = 'wars', coll = null) {
   if (wars && (!Array.isArray(c.sides) || c.sides.length < 2)) throw new Error(`${where}: at least two "sides"`);
   if (c.sides != null && !Array.isArray(c.sides)) throw new Error(`${where}: "sides" is a list`);
   if ((c.sides ?? []).length > 8) throw new Error(`${where}: at most 8 "sides"`);
-  if (!wars && c.catalog != null && !['all', 'shown'].includes(c.catalog)) throw new Error(`${where}: "catalog" is "all" (every catalogue item appears from its date on) or "shown" (only the items the steps show)`);
+  if (!wars && c.catalog != null && !['all', 'shown'].includes(c.catalog) && !coll.parts.has(c.catalog)) throw new Error(`${where}: "catalog" is "all" (every catalogue item appears from its date on), the name of one catalogue file (${[...coll.parts].map((p) => `"${p}" for _catalog-${p}.json`).join(', ') || 'none yet'}: only its items) or "shown" (only the items the steps show)`);
   if (c.catalog === 'all' && !coll.catalog.size) throw new Error(`${where}: "catalog": "all" but the collection has no catalogue`);
   if (!wars && c.casualties != null) throw new Error(`${where}: "casualties" is for wars`);
   if (c.trail != null && typeof c.trail !== 'boolean') throw new Error(`${where}: "trail" is true (earlier steps' routes stay on the map) or false`);
@@ -627,13 +677,14 @@ async function build(file, opts) {
     c.sides = c.sides.filter((s) => !unused.includes(s.id));
     for (const st of steps) for (const id of unused) delete st.control[id];
   }
-  if (c.catalog === 'all') {
-    // A time tour: every catalogue item of the story's period (from its start to its last step)
+  if (coll && (c.catalog === 'all' || coll.parts.has(c.catalog))) {
+    // A time tour: every catalogue item (or every item of one catalogue file) of the story's period (from its start to its last step)
     // appears on the map from its date on (and goes after its "until"). Older items appear only
     // when a step shows them, except those still standing in the period ("until" after its start).
     const first = c.start != null ? parseDate(c.start, '') : -Infinity;
     const last = steps[steps.length - 1].t;
     for (const it of [...coll.catalog.values()].sort((a, b) => parseDate(a.date, '') - parseDate(b.date, ''))) {
+      if (c.catalog !== 'all' && coll.part.get(it.id) !== c.catalog) continue;
       const t = parseDate(it.date, '');
       const inPeriod = it.until != null ? parseDate(it.until, '') >= first - 1e-6 : t >= first - 1e-6;
       if (inPeriod && t <= last + 1e-6) addItem(it, -1);
@@ -659,7 +710,8 @@ async function build(file, opts) {
 
   const { defs: _d, steps: _s, ...meta } = c;
   const t0 = parseDate(c.start, ''), t1 = parseDate(c.end, '');
-  const out = keepNumbers({ ...meta, t0, t1, steps });
+  // A time tour of one catalogue file plays like any time tour: its items were picked above.
+  const out = keepNumbers({ ...meta, ...(coll?.parts.has(c.catalog) ? { catalog: 'all' } : {}), t0, t1, steps });
   if (!wars) {
     out.kind = kind;
     out.items = items;
@@ -806,13 +858,13 @@ function lint(c, steps, areas) {
 // Previews: each step drawn on a globe as a PNG, to check the territory and arrows by eye.
 
 function fmtDate(s) {
-  const [y, mo, d] = (/^(-?\d+)(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(s) ?? []).slice(1);
+  const [y, mo, d, hh, mm] = (/^(-?\d+)(?:-(\d{2}))?(?:-(\d{2})(?:T(\d{2}):(\d{2}))?)?$/.exec(s) ?? []).slice(1);
   const n = -Number(y);
   if (n >= 1e9) return `${Math.round(n / 1e7) / 100} billion years ago`;
   if (n >= 1e6) return `${Math.round(n / 1e4) / 100} million years ago`;
   if (n > 10000) return `${n.toLocaleString('en')} years ago`;
   const year = Number(y) < 0 ? `${-Number(y)} BC` : y;
-  return [d, mo && ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][Number(mo) - 1], year].filter(Boolean).join(' ');
+  return [d, mo && ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][Number(mo) - 1], year, hh && `${hh}:${mm}`].filter(Boolean).join(' ');
 }
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 

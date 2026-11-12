@@ -4,6 +4,7 @@ import { geoDistance } from 'd3-geo';
 import { h, icon, clear, add } from '../ui/dom';
 import { t, tx, lang, flagEmoji } from '../app/i18n';
 import { dataUrl, loadJSON } from '../data/store';
+import { zoomable } from '../ui/zoom';
 import { fmtWhen, itemWhen, itemThumb, sampleEl, type CollectionItem, type StoryKind } from '../modes/stories';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
@@ -21,16 +22,25 @@ const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
 const shuffle = <T,>(a: T[]) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 
-type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family';
+type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family' | 'plague' | 'disaster';
 /** An item of a story collection, tagged with its collection. */
 interface QItem extends CollectionItem { kind: StoryKind }
 /** A question; once answered, whether it was right and what the player answered. */
 interface Q { id: string; options?: string[]; item?: QItem; ok?: boolean; given?: string; pick?: string; link?: Link; lang?: string }
 /** "Guess the link": two country facts, their correlation and how many countries have both. */
 interface Link { a: string; b: string; rho: number; n: number }
-const ITEM_QUIZZES: QuizKind[] = ['where', 'when', 'dish', 'era', 'civ', 'period', 'champion', 'journey', 'faith', 'script'];
+const ITEM_QUIZZES: QuizKind[] = ['where', 'when', 'dish', 'era', 'civ', 'period', 'champion', 'journey', 'faith', 'script', 'plague', 'disaster'];
 /** "Which faith?" asks about the faith stories, not the time tour of them all. */
 const FAITH_TOURS = ['faiths-through-time'];
+/**
+ * "Which epidemic?" and "Which disaster?": an item and four stories of its collection. They ask about the stories
+ * of one epidemic or one disaster, not the time tours, nor the stories of germs and vaccines (their people and
+ * discoveries belong to every epidemic).
+ */
+const STORY_QUIZ: Partial<Record<QuizKind, { kind: StoryKind; skip: string[] }>> = {
+  plague: { kind: 'plagues', skip: ['medicine-through-time', 'microbe-hunters', 'vaccines'] },
+  disaster: { kind: 'disasters', skip: ['earthquakes-through-time', 'volcanoes-through-time'] },
+};
 /** "Which language family?" leaves out languages whose name gives their family away (Japanese is Japonic). */
 const FAMILY_SKIP = new Set(['jpn', 'kor', 'mon', 'que', 'aym', 'hgm', 'khi', 'tur', 'zho']);
 /** "A, B and C" (Spanish "y", or "e" before an i sound). */
@@ -43,7 +53,7 @@ function joinList(names: string[]): string {
 const lower1 = (x: string) => x.charAt(0).toLowerCase() + x.slice(1);
 /** The civilization stories of Peoples and civilizations: the answers of "Which civilization?". */
 const CIV_STORIES = ['mesopotamia', 'ancient-egypt', 'indus-valley', 'persia', 'kush-aksum', 'ancient-china', 'khmer', 'west-african-empires', 'great-zimbabwe-swahili', 'olmecs-maya', 'andes'];
-const COLLECTION_DIR: Record<StoryKind, string> = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing' };
+const COLLECTION_DIR: Record<StoryKind, string> = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters' };
 const yearOf = (d: string) => Number(/^-?\d+/.exec(d)?.[0] ?? 0);
 
 /** Four years to choose from: the right one and three plausible others (no year 0, none in the future). */
@@ -108,6 +118,8 @@ export class Learn {
   private journeys = new Map<string, { name: { en: string; es: string }; icon: string }>();
   /** Religions and philosophies: the stories "Which faith?" asks about. */
   private faiths = new Map<string, { name: { en: string; es: string }; icon: string }>();
+  /** The stories "Which epidemic?" and "Which disaster?" ask about. */
+  private storySets = new Map<QuizKind, Map<string, { name: { en: string; es: string }; icon: string }>>();
   /** "Which script?": the scripts' names, by item id. */
   private scriptNames = new Map<string, { en: string; es: string }>();
   /** "Which language family?": the languages and families of the country facts, and where each language is official. */
@@ -200,6 +212,8 @@ export class Learn {
       ['champion', '🏆', L('Who won?', '¿Quién ganó?'), L('World Cup champions, and the countries that topped each Olympics\u2019 medal table.', 'Los campeones del Mundial y los países que encabezaron el medallero de cada Olimpiada.')],
       ['journey', '🧭', L('Which journey?', '¿Qué viaje?'), L('Match places, people and goods to the great journey or trade route they belong to.', 'Relaciona lugares, personas y mercancías con el gran viaje o la ruta comercial a la que pertenecen.')],
       ['faith', '🛐', L('Which faith?', '¿Qué religión?'), L('Match sacred places, texts and teachers to the faith or school of thought they belong to.', 'Relaciona lugares sagrados, textos y maestros con la religión o la escuela de pensamiento a la que pertenecen.')],
+      ['plague', '🦠', L('Which epidemic?', '¿Qué epidemia?'), L('Match places, people and discoveries to the epidemic they belong to: the Black Death, smallpox, cholera, the 1918 flu...', 'Relaciona lugares, personas y descubrimientos con la epidemia a la que pertenecen: la peste negra, la viruela, el cólera, la gripe de 1918...')],
+      ['disaster', '🌋', L('Which disaster?', '¿Qué desastre?'), L('Match towns, witnesses and discoveries to the eruption, earthquake or tsunami they belong to.', 'Relaciona pueblos, testigos y descubrimientos con la erupción, el terremoto o el tsunami al que pertenecen.')],
       ['script', '✍️', L('Which script?', '¿Qué escritura?'), L('A word or a few letters in one of the world\u2019s scripts: which script is it?', 'Una palabra o unas letras en una de las escrituras del mundo: ¿cuál es?')],
       ['family', '🗣️', L('Which language family?', '¿Qué familia de lenguas?'), L('Hungarian, Swahili, Malagasy...: which family does each language belong to?', 'Húngaro, suajili, malgache...: ¿a qué familia pertenece cada lengua?')],
       ['link', '📈', L('Guess the link', 'Adivina la relación'), L('Do two facts about countries go together? Guess, then see the scatter plot.', '¿Van juntos dos datos de los países? Adivina y luego mira el diagrama de dispersión.')],
@@ -427,6 +441,12 @@ export class Learn {
     if (kinds.includes('beliefs') && !this.faiths.size) {
       for (const st of (await loadJSON<{ stories: { id: string; name: { en: string; es: string }; icon: string }[] }>('beliefs/index.json')).stories) if (!FAITH_TOURS.includes(st.id)) this.faiths.set(st.id, st);
     }
+    for (const [q, sq] of Object.entries(STORY_QUIZ) as [QuizKind, { kind: StoryKind; skip: string[] }][]) {
+      if (!kinds.includes(sq.kind) || this.storySets.get(q)?.size) continue;
+      const set = new Map<string, { name: { en: string; es: string }; icon: string }>();
+      for (const st of (await loadJSON<{ stories: { id: string; name: { en: string; es: string }; icon: string }[] }>(`${COLLECTION_DIR[sq.kind]}/index.json`)).stories) if (!sq.skip.includes(st.id)) set.set(st.id, st);
+      this.storySets.set(q, set);
+    }
     if (kinds.includes('people') && !this.civs.size) {
       for (const st of (await loadJSON<{ stories: { id: string; name: { en: string; es: string }; icon: string }[] }>('people/index.json')).stories) if (CIV_STORIES.includes(st.id)) this.civs.set(st.id, st);
     }
@@ -435,14 +455,14 @@ export class Learn {
   /** The quizzes about the story collections: their items make the questions. */
   private async startItemQuiz(kind: QuizKind) {
     if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
-    const needs: StoryKind[] = kind === 'dish' ? ['food'] : kind === 'era' ? ['eras'] : kind === 'civ' ? ['people'] : kind === 'period' ? ['life'] : kind === 'champion' ? ['games'] : kind === 'journey' ? ['journeys'] : kind === 'faith' ? ['beliefs'] : kind === 'script' ? ['writing'] : kind === 'where' ? ['structures', 'eras', 'food', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing'] : ['structures', 'eras', 'food', 'writing'];
+    const needs: StoryKind[] = kind === 'dish' ? ['food'] : kind === 'era' ? ['eras'] : kind === 'civ' ? ['people'] : kind === 'period' ? ['life'] : kind === 'champion' ? ['games'] : kind === 'journey' ? ['journeys'] : kind === 'faith' ? ['beliefs'] : kind === 'script' ? ['writing'] : kind === 'plague' ? ['plagues'] : kind === 'disaster' ? ['disasters'] : kind === 'where' ? ['structures', 'eras', 'food', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters'] : ['structures', 'eras', 'food', 'writing', 'plagues', 'disasters'];
     try { await this.loadItems(needs); } catch { /* offline: the pool stays small */ }
     const tag = (k: StoryKind): QItem[] => (this.items[k] ?? []).map((it) => ({ ...it, kind: k }));
     const is = (it: QItem, ...types: string[]) => !!it.type && types.includes(it.type);
     let pool: QItem[] = [];
-    if (kind === 'where') pool = [...tag('structures'), ...tag('eras').filter((it) => !is(it, 'person')), ...tag('food').filter((it) => is(it, 'dish', 'site')), ...tag('people').filter((it) => is(it, 'site', 'structure', 'fossil', 'work', 'culture')), ...tag('life').filter((it) => is(it, 'fossil', 'site', 'species', 'animal')), ...tag('games').filter((it) => is(it, 'games')), ...tag('journeys').filter((it) => is(it, 'place', 'site') && it.cat !== 'slavery'), ...tag('beliefs').filter((it) => is(it, 'site', 'structure')), ...tag('writing').filter((it) => is(it, 'site', 'work', 'structure'))];
+    if (kind === 'where') pool = [...tag('structures'), ...tag('eras').filter((it) => !is(it, 'person')), ...tag('food').filter((it) => is(it, 'dish', 'site')), ...tag('people').filter((it) => is(it, 'site', 'structure', 'fossil', 'work', 'culture')), ...tag('life').filter((it) => is(it, 'fossil', 'site', 'species', 'animal')), ...tag('games').filter((it) => is(it, 'games')), ...tag('journeys').filter((it) => is(it, 'place', 'site') && it.cat !== 'slavery'), ...tag('beliefs').filter((it) => is(it, 'site', 'structure')), ...tag('writing').filter((it) => is(it, 'site', 'work', 'structure')), ...tag('plagues').filter((it) => is(it, 'site', 'structure')), ...tag('disasters').filter((it) => is(it, 'site', 'event'))];
     if (kind === 'champion') pool = tag('games').filter((it) => is(it, 'games') && (it.podium?.length ?? 0) >= 4);
-    if (kind === 'when') pool = [...tag('structures'), ...tag('eras').filter((it) => is(it, 'work', 'invention', 'structure', 'event', 'institution')), ...tag('food').filter((it) => is(it, 'dish')), ...tag('writing').filter((it) => is(it, 'script', 'work', 'invention'))];
+    if (kind === 'when') pool = [...tag('structures'), ...tag('eras').filter((it) => is(it, 'work', 'invention', 'structure', 'event', 'institution')), ...tag('food').filter((it) => is(it, 'dish')), ...tag('writing').filter((it) => is(it, 'script', 'work', 'invention')), ...tag('plagues').filter((it) => is(it, 'invention', 'work')), ...tag('disasters').filter((it) => is(it, 'event'))];
     if (kind === 'dish') pool = tag('food').filter((it) => is(it, 'dish') && !!it.country && !!this.app.data.meta[it.country]);
     if (kind === 'era') pool = tag('eras').filter((it) => is(it, 'person', 'work', 'invention') && this.eras.has(it.story));
     if (kind === 'civ') pool = tag('people').filter((it) => is(it, 'person', 'work', 'structure', 'site', 'invention') && this.civs.has(it.story));
@@ -451,12 +471,22 @@ export class Learn {
     if (kind === 'journey') pool = tag('journeys').filter((it) => it.cat !== 'traveller' && this.journeys.has(it.story) && (it.also?.length ?? 0) < this.journeys.size - 4);
     // Enough faiths left for three wrong answers (Jerusalem is told by three of them).
     if (kind === 'faith') pool = tag('beliefs').filter((it) => !!this.faithOf(it) && this.faiths.size - [it.story, ...(it.also ?? [])].filter((x) => this.faiths.has(x)).length >= 3);
+    // An item of an epidemic or a disaster, with three other stories left for the wrong answers, but not the
+    // disease itself, nor an item whose name gives its story away (Krakatoa in "Krakatoa, 1883").
+    const sq = STORY_QUIZ[kind], set = this.storySets.get(kind);
+    if (sq && set) {
+      pool = tag(sq.kind).filter((it) => {
+        const told = [it.story, ...(it.also ?? [])].filter((x) => set.has(x));
+        const n = tx(it.name).toLowerCase();
+        return told.length > 0 && set.size - told.length >= 3 && !is(it, 'disease') && !told.some((x) => tx(set.get(x)!.name).toLowerCase().includes(n));
+      });
+    }
     // Scripts with a sample in letters other than Latin (an "ABC" would give the answer away).
     if (kind === 'script') {
       pool = tag('writing').filter((it) => is(it, 'script') && !!it.sample && /[^\u0000-\u024f\s\u2000-\u206f]/u.test(it.sample.text));
       this.scriptNames = new Map(pool.map((x) => [x.id ?? tx(x.name), x.name]));
     }
-    if (pool.length < 10 || (kind === 'era' && this.eras.size < 4) || (kind === 'civ' && this.civs.size < 4) || (kind === 'period' && this.periods.length < 4) || (kind === 'journey' && this.journeys.size < 4) || (kind === 'faith' && this.faiths.size < 4)) {
+    if (pool.length < 10 || (kind === 'era' && this.eras.size < 4) || (kind === 'civ' && this.civs.size < 4) || (kind === 'period' && this.periods.length < 4) || (kind === 'journey' && this.journeys.size < 4) || (kind === 'faith' && this.faiths.size < 4) || (!!sq && (set?.size ?? 0) < 4)) {
       clear(this.card);
       const close = h('button', { type: 'button', class: 'pill sm' }, t('close'));
       close.addEventListener('click', () => { this.card.hidden = true; });
@@ -475,6 +505,7 @@ export class Learn {
       if (kind === 'civ') return { id: it.story, item: it, options: shuffle([it.story, ...others(this.civs.keys())]) };
       if (kind === 'journey') return { id: it.story, item: it, options: shuffle([it.story, ...others(this.journeys.keys())]) };
       if (kind === 'faith') { const f = this.faithOf(it)!; return { id: f, item: it, options: shuffle([f, ...others(this.faiths.keys())]) }; }
+      if (sq && set) { const f = [it.story, ...(it.also ?? [])].find((x) => set.has(x))!; return { id: f, item: it, options: shuffle([f, ...others(set.keys())]) }; }
       if (kind === 'script') { const id = it.id ?? tx(it.name); return { id, item: it, options: shuffle([id, ...shuffle([...this.scriptNames.keys()].filter((x) => x !== id)).slice(0, 3)]) }; }
       if (kind === 'period') return { id: this.periodOf(it)!, item: it, options: this.periodOptions(this.periodOf(it)!) };
       // "Who won?": the winner and the next three of the same Games.
@@ -542,6 +573,8 @@ export class Learn {
     if (kind === 'civ') return L('Which civilization does this belong to?', '¿A qué civilización pertenece?');
     if (kind === 'journey') return L('Which journey or trade route is it from?', '¿De qué viaje o ruta comercial es?');
     if (kind === 'faith') return L('Which faith or school of thought does it belong to?', '¿A qué religión o escuela de pensamiento pertenece?');
+    if (kind === 'plague') return L('Which epidemic is it part of?', '¿De qué epidemia forma parte?');
+    if (kind === 'disaster') return L('Which disaster is it part of?', '¿De qué desastre forma parte?');
     if (kind === 'script') return L('Which script is this?', '¿Qué escritura es esta?');
     return L('Which era does this belong to?', '¿A qué época pertenece?');
   }
@@ -553,6 +586,7 @@ export class Learn {
     if (kind === 'civ') { const e = this.civs.get(o); return e ? `${e.icon} ${tx(e.name)}` : o; }
     if (kind === 'journey') { const e = this.journeys.get(o); return e ? `${e.icon} ${tx(e.name)}` : o; }
     if (kind === 'faith') { const e = this.faiths.get(o); return e ? `${e.icon} ${tx(e.name)}` : o; }
+    if (STORY_QUIZ[kind]) { const e = this.storySets.get(kind)?.get(o); return e ? `${e.icon} ${tx(e.name)}` : o; }
     if (kind === 'script') { const n = this.scriptNames.get(o); return n ? tx(n) : o; }
     if (kind === 'period') return this.periodLabel(o);
     if (kind === 'champion') { const p = q.item?.podium?.find((x) => x.c === o); return p ? `${p.a2 ? `${flagEmoji(p.a2)} ` : ''}${tx(p.n)}` : o; }
@@ -609,6 +643,12 @@ export class Learn {
 
   private renderQuiz(feedback?: { ok: boolean; text: string }) {
     const q = this.quiz!;
+    // No questions (the data it needs is missing): say so instead of "Question 1/0".
+    if (!q.qs.length) {
+      this.stopQuiz();
+      this.shell.toast(L('This quiz could not load its questions; try again in a moment.', 'Este concurso no pudo cargar sus preguntas; vuelve a intentarlo en un momento.'));
+      return;
+    }
     if (feedback) q.fb = feedback;
     feedback = q.answered ? q.fb : undefined;
     const cur = q.qs[q.i];
@@ -664,7 +704,7 @@ export class Learn {
     // "Which script?": the sample is the question; its name, its reading and the picture wait for the answer.
     const script = kind === 'script' && !!it.sample;
     const what = script ? sampleEl(q.answered ? it.sample! : { text: it.sample!.text }) : h('div', { class: 'quiz-item' }, `${it.icon} ${tx(it.name)}`);
-    add(this.card, h('div', { class: 'quiz-q' }, this.itemQuestion(kind, it)), what, script && !q.answered ? null : img);
+    add(this.card, h('div', { class: 'quiz-q' }, this.itemQuestion(kind, it)), what, script && !q.answered ? null : zoomable(img));
     if (cur.options) {
       const opts = h('div', { class: 'quiz-opts' });
       for (const o of cur.options) {
@@ -764,7 +804,7 @@ export class Learn {
   /** The result: the score, then every question, right or wrong, with a small picture; a tap shows it on the map. */
   private renderResult() {
     const q = this.quiz!;
-    const top = q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : q.kind === 'family' || q.kind === 'script' ? L('Language master! 🗣️', '¡Maestro de las lenguas! 🗣️') : q.kind === 'link' ? L('Data master! 📊', '¡Maestro de los datos! 📊') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
+    const top = q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : q.kind === 'family' || q.kind === 'script' ? L('Language master! 🗣️', '¡Maestro de las lenguas! 🗣️') : q.kind === 'link' ? L('Data master! 📊', '¡Maestro de los datos! 📊') : q.kind === 'plague' ? L('Disease detective! 🔬', '¡Detective de epidemias! 🔬') : q.kind === 'disaster' ? L('Disaster expert! 🌋', '¡Experto en desastres! 🌋') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
     const msg = q.score >= 9 ? top : q.score >= 6 ? L('Great job! 🌍', '¡Muy bien! 🌍') : L('Keep exploring! 🧭', '¡Sigue explorando! 🧭');
     add(this.card, this.quizHead(`${L('Result', 'Resultado')} ${q.score}/${q.qs.length}`, ''));
     if (q.peek) return;
@@ -1048,7 +1088,7 @@ export class Learn {
   // ---- Tours ----------------------------------------------------------------------------------
   private openTours() {
     const body = h('div');
-    const groups: [Tour['group'], string][] = [[undefined, L('Our planet', 'Nuestro planeta')], ['cities', L('Cities through time', 'Ciudades a través del tiempo')], ['history', L('History and culture', 'Historia y cultura')], ['life', L('Life through time', 'La vida en el tiempo')], ['games', L('Games of the world', 'Juegos del mundo')], ['journeys', L('Journeys and trade routes', 'Viajes y rutas comerciales')], ['beliefs', L('Religions and philosophies', 'Religiones y filosofías')], ['writing', L('Writing and languages', 'Escritura y lenguas')]];
+    const groups: [Tour['group'], string][] = [[undefined, L('Our planet', 'Nuestro planeta')], ['cities', L('Cities through time', 'Ciudades a través del tiempo')], ['history', L('History and culture', 'Historia y cultura')], ['life', L('Life through time', 'La vida en el tiempo')], ['games', L('Games of the world', 'Juegos del mundo')], ['journeys', L('Journeys and trade routes', 'Viajes y rutas comerciales')], ['beliefs', L('Religions and philosophies', 'Religiones y filosofías')], ['writing', L('Writing and languages', 'Escritura y lenguas')], ['plagues', L('Plagues and cures', 'Epidemias y curas')], ['disasters', L('Natural disasters', 'Desastres naturales')]];
     for (const [group, title] of groups) {
       const list = h('div', { class: 'mode-list' });
       for (const tour of TOURS.filter((x) => x.group === group)) {

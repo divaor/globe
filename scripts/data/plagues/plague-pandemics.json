@@ -1,0 +1,1961 @@
+{
+  "id": "plague-pandemics",
+  "name": {
+    "en": "Plague through the ages",
+    "es": "La peste a lo largo de la historia"
+  },
+  "icon": "🦠",
+  "era": "medieval",
+  "region": {
+    "en": "Worldwide",
+    "es": "Todo el mundo"
+  },
+  "start": "541",
+  "end": "2017",
+  "summary": {
+    "en": "Plague's three great pandemics: the Plague of Justinian, the outbreaks that followed the Black Death, from London to Moscow, and the third pandemic, when the germ and its fleas were found and a vaccine made.",
+    "es": "Las tres grandes pandemias de peste: la plaga de Justiniano, los brotes que siguieron a la peste negra, de Londres a Moscú, y la tercera pandemia, cuando se hallaron el microbio y sus pulgas y se creó una vacuna."
+  },
+  "camera": {
+    "lon": 40,
+    "lat": 30,
+    "zoom": 1.3
+  },
+  "sides": [
+    {
+      "id": "first",
+      "name": {
+        "en": "First pandemic, 541–750",
+        "es": "Primera pandemia, 541-750"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "second",
+      "name": {
+        "en": "Second pandemic outbreaks",
+        "es": "Brotes de la segunda pandemia"
+      },
+      "color": "#e67e22"
+    },
+    {
+      "id": "third",
+      "name": {
+        "en": "Third pandemic, from 1855",
+        "es": "Tercera pandemia, desde 1855"
+      },
+      "color": "#c0392b"
+    },
+    {
+      "id": "today",
+      "name": {
+        "en": "Most cases in recent years",
+        "es": "Más casos en los últimos años"
+      },
+      "color": "#d4a017"
+    }
+  ],
+  "steps": [
+    {
+      "date": "541",
+      "title": {
+        "en": "Pelusium, 541",
+        "es": "Pelusio, 541"
+      },
+      "text": {
+        "en": "In 541 plague appeared at Pelusium, a port on the eastern edge of the Nile delta in Roman Egypt. It soon reached Alexandria, the port that shipped Egypt's grain to Constantinople.",
+        "es": "En el 541 la peste apareció en Pelusio, un puerto en el borde oriental del delta del Nilo, en el Egipto romano. Pronto llegó a Alejandría, el puerto que enviaba el grano de Egipto a Constantinopla."
+      },
+      "details": {
+        "en": "The historian Procopius, who lived through it, says the plague began at Pelusium. Syriac and Greek writers of the time said it came from Kush, south of Egypt, or from Ethiopia and Yemen. Where it really came from is still debated. DNA studies trace the strain's ancestors to Central Asia, near the Tian Shan mountains, while some historians argue that it came up the Red Sea, with the trade of the kingdom of Aksum, Rome's ally against Persia. It is the first epidemic of the bacterium Yersinia pestis recorded in history. It struck in the reign of Justinian I, whose armies were winning back Italy and North Africa, and its returns over the next two centuries are called the first plague pandemic.",
+        "es": "El historiador Procopio, que la vivió, dice que la peste empezó en Pelusio. Escritores siriacos y griegos de la época dijeron que venía de Kush, al sur de Egipto, o de Etiopía y Yemen. De dónde vino en realidad sigue en debate. Los estudios de ADN sitúan a los antepasados de la cepa en Asia central, cerca de los montes Tian Shan, mientras que algunos historiadores sostienen que subió por el mar Rojo con el comercio del reino de Aksum, aliado de Roma contra Persia. Es la primera epidemia de la bacteria Yersinia pestis registrada en la historia. Golpeó en el reinado de Justiniano I, cuyos ejércitos estaban recuperando Italia y el norte de África, y sus rebrotes durante los dos siglos siguientes se conocen como la primera pandemia de peste."
+      },
+      "camera": {
+        "lon": 34,
+        "lat": 25,
+        "zoom": 3.0
+      },
+      "control": {
+        "first": {
+          "a1": "EGY",
+          "names": [
+            "Port Said",
+            "Damietta",
+            "Dakahlia",
+            "Al Sharqia",
+            "Ismailia",
+            "Alexandria",
+            "Beheira",
+            "Kafr el-Sheikh",
+            "Gharbia",
+            "Monufia",
+            "Qalyubia",
+            "Cairo",
+            "Giza"
+          ]
+        }
+      },
+      "moves": [
+        {
+          "side": "first",
+          "path": [[39.65, 15.27], [39.9, 16.5], [38.5, 19.5], [37.3, 22.5], [35.3, 26.0], [33.8, 27.8], [33.2, 28.6], [32.7, 29.5], [32.55, 29.92]],
+          "by": "sea",
+          "label": {
+            "en": "From the Red Sea? (debated)",
+            "es": "¿Desde el mar Rojo? (en debate)"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "pelusium",
+          "name": {
+            "en": "Pelusium",
+            "es": "Pelusio"
+          },
+          "at": [32.545, 31.0417],
+          "cat": "outbreak",
+          "type": "place",
+          "date": "541",
+          "place": {
+            "en": "near Port Said, Egypt",
+            "es": "cerca de Puerto Saíd, Egipto"
+          },
+          "text": {
+            "en": "An ancient fortress port on the easternmost branch of the Nile, the gateway to Egypt from Palestine. Procopius says the plague of 541 began here.",
+            "es": "Un antiguo puerto fortificado en el brazo más oriental del Nilo, puerta de Egipto desde Palestina. Procopio dice que la peste del 541 empezó aquí."
+          },
+          "wiki": {
+            "en": "Pelusium",
+            "es": "Pelusio"
+          }
+        },
+        {
+          "id": "plague",
+          "name": {
+            "en": "Plague (Yersinia pestis)",
+            "es": "La peste (Yersinia pestis)"
+          },
+          "at": [30.45, 30.45],
+          "cat": "disease",
+          "type": "disease",
+          "date": "541",
+          "place": {
+            "en": "Nile delta, Egypt",
+            "es": "Delta del Nilo, Egipto"
+          },
+          "text": {
+            "en": "A disease of wild rodents caused by the bacterium Yersinia pestis and spread by their fleas. In people it causes bubonic plague, with swollen glands, and pneumonic plague, which passes by coughing.",
+            "es": "Una enfermedad de roedores silvestres causada por la bacteria Yersinia pestis y propagada por sus pulgas. En las personas causa la peste bubónica, con ganglios hinchados, y la neumónica, que se contagia al toser."
+          },
+          "details": {
+            "en": "For centuries nobody knew what caused plague. In 2013 researchers confirmed, with DNA from the graves of its victims, that the Plague of Justinian was caused by Yersinia pestis, the same bacterium as the Black Death, though the two strains belong to different branches. It has struck in three great pandemics: from 541 to about 750, from 1346 to the 19th century, and from 1855. It still lives among wild rodents in Asia, Africa and the Americas, but antibiotics now cure it if given early.",
+            "es": "Durante siglos nadie supo qué causaba la peste. En 2013, con ADN de las tumbas de sus víctimas, los investigadores confirmaron que la plaga de Justiniano la causó Yersinia pestis, la misma bacteria de la peste negra, aunque las dos cepas pertenecen a ramas distintas. Ha golpeado en tres grandes pandemias: del 541 hasta cerca del 750, de 1346 al siglo XIX, y desde 1855. Sigue viva entre roedores silvestres de Asia, África y América, pero hoy los antibióticos la curan si se dan a tiempo."
+          },
+          "wiki": {
+            "en": "Plague (disease)",
+            "es": "Peste"
+          }
+        },
+        {
+          "id": "aksum",
+          "name": {
+            "en": "Kingdom of Aksum",
+            "es": "Reino de Aksum"
+          },
+          "at": [38.7173, 14.1284],
+          "cat": "route",
+          "type": "culture",
+          "date": "541",
+          "place": {
+            "en": "Aksum, Ethiopia",
+            "es": "Aksum, Etiopía"
+          },
+          "text": {
+            "en": "A trading kingdom of Ethiopia and Eritrea whose ships sailed the Red Sea, allied with Rome. Ancient writers said the plague came from this part of the world; DNA points to Central Asia. Both views have support.",
+            "es": "Un reino comerciante de Etiopía y Eritrea cuyos barcos surcaban el mar Rojo, aliado de Roma. Los autores antiguos dijeron que la peste venía de esta parte del mundo; el ADN apunta a Asia central. Ambas ideas tienen defensores."
+          },
+          "wiki": {
+            "en": "Kingdom of Aksum",
+            "es": "Reino de Axum"
+          }
+        }
+      ]
+    },
+    {
+      "date": "542",
+      "title": {
+        "en": "Constantinople, 542",
+        "es": "Constantinopla, 542"
+      },
+      "text": {
+        "en": "In 542 plague reached Constantinople, probably with the grain ships from Egypt. Procopius wrote that at its height it killed 10,000 people a day. Emperor Justinian fell ill and recovered.",
+        "es": "En el 542 la peste llegó a Constantinopla, probablemente con los barcos del grano de Egipto. Procopio escribió que en su peor momento mataba a 10 000 personas al día. El emperador Justiniano enfermó y se recuperó."
+      },
+      "details": {
+        "en": "Procopius modelled his account on Thucydides' Plague of Athens. He described fevers, delirium and swellings in the groin and armpits, and a city with no room left to bury its dead. His figure of 10,000 deaths a day is doubted; some modern scholars estimate about 5,000 at the peak, and estimates of the city's losses run from a fifth to two-fifths of its people. In his Secret History, Procopius accused Justinian of making the survivors pay the taxes of their dead neighbours. With so many dead, wages rose: papyri from Egypt record increases of up to 150 percent. By 543 the plague had reached every corner of the empire.",
+        "es": "Procopio se inspiró en el relato de Tucídides sobre la peste de Atenas. Describió fiebres, delirios y bultos en la ingle y las axilas, y una ciudad sin lugar para enterrar a sus muertos. Su cifra de 10 000 muertes diarias se pone en duda; algunos estudiosos actuales calculan unas 5000 en el peor momento, y las estimaciones de las pérdidas de la ciudad van de una quinta parte a dos quintas partes de sus habitantes. En su Historia secreta, Procopio acusó a Justiniano de hacer pagar a los sobrevivientes los impuestos de sus vecinos muertos. Con tantos muertos subieron los salarios: papiros de Egipto registran aumentos de hasta el 150 %. Hacia el 543 la peste había llegado a todos los rincones del imperio."
+      },
+      "camera": {
+        "lon": 30,
+        "lat": 36.5,
+        "zoom": 3.4
+      },
+      "control": {
+        "first": [
+          {
+            "prev": true
+          },
+          {
+            "hist": "Eastern Roman Empire",
+            "year": 500
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "first",
+          "path": [[29.88, 31.21], [29.9, 31.6], [28.3, 35.4], [27.0, 36.2], [26.4, 37.4], [26.2, 38.6], [25.8, 39.5], [26.15, 40.03], [26.4, 40.17], [26.68, 40.38], [27.4, 40.65], [28.4, 40.9], [28.98, 41.0]],
+          "by": "sea",
+          "label": {
+            "en": "Grain ships from Egypt",
+            "es": "Barcos del grano de Egipto"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "plague-of-justinian",
+          "name": {
+            "en": "Plague of Justinian",
+            "es": "Plaga de Justiniano"
+          },
+          "at": [28.98, 41.0125],
+          "cat": "outbreak",
+          "type": "event",
+          "date": "541",
+          "end": "549",
+          "place": {
+            "en": "Constantinople (Istanbul, Turkey)",
+            "es": "Constantinopla (Estambul, Turquía)"
+          },
+          "text": {
+            "en": "The first recorded epidemic of plague, from 541 to 549. It struck the whole Mediterranean world, Persia and northern Europe; at its height, in 542, it killed thousands a day in Constantinople.",
+            "es": "La primera epidemia de peste registrada, del 541 al 549. Golpeó todo el mundo mediterráneo, Persia y el norte de Europa; en su peor momento, en el 542, mataba a miles de personas al día en Constantinopla."
+          },
+          "wiki": {
+            "en": "Plague of Justinian",
+            "es": "Plaga de Justiniano"
+          },
+          "img": "Byzantium550.png"
+        },
+        {
+          "id": "justinian-i",
+          "name": {
+            "en": "Justinian I",
+            "es": "Justiniano I"
+          },
+          "at": [28.9768, 41.0057],
+          "cat": "society",
+          "type": "person",
+          "date": "542",
+          "life": ["482", "565-11-14"],
+          "place": {
+            "en": "Constantinople",
+            "es": "Constantinopla"
+          },
+          "text": {
+            "en": "Roman emperor from 527 to 565, builder of Hagia Sophia. He caught the plague in 542 and recovered; the epidemic cut the taxes and armies he needed for his wars of reconquest.",
+            "es": "Emperador romano de 527 a 565, constructor de Santa Sofía. Se contagió de la peste en el 542 y se recuperó; la epidemia redujo los impuestos y los ejércitos que necesitaba para sus guerras de reconquista."
+          },
+          "wiki": {
+            "en": "Justinian I",
+            "es": "Justiniano I"
+          }
+        }
+      ]
+    },
+    {
+      "date": "544",
+      "title": {
+        "en": "Around the Mediterranean",
+        "es": "Alrededor del Mediterráneo"
+      },
+      "text": {
+        "en": "By 544 plague had spread around the Mediterranean, to Italy, North Africa, Spain and Gaul, and east into Persia. It reached southern Germany and Britain, and lasted in the north until 549.",
+        "es": "Hacia el 544 la peste se había extendido alrededor del Mediterráneo, a Italia, el norte de África, Hispania y la Galia, y al este hasta Persia. Llegó al sur de Germania y a Britania, y duró en el norte hasta el 549."
+      },
+      "details": {
+        "en": "Ships, armies and pilgrims carried it. It struck Italy as Justinian's troops fought the Ostrogoths there, and gave his enemies new life. Bishop Gregory of Tours later recorded plague in Gaul from Arles in the late 540s onwards, describing swellings in the groin or armpit and death within two or three days. Graves at Edix Hill, near Cambridge, show that it reached Britain, and DNA from victims buried in Germany helped to confirm in 2013 that the disease was plague. The map shows these lands only roughly: the written evidence is thin. How many died is hotly debated. Some historians speak of a quarter of the people of the eastern Mediterranean; others, such as Lee Mordechai and Merle Eisenberg, argue that the toll has been greatly exaggerated.",
+        "es": "La llevaron barcos, ejércitos y peregrinos. Golpeó Italia mientras las tropas de Justiniano luchaban allí contra los ostrogodos, y dio nuevo aliento a sus enemigos. El obispo Gregorio de Tours registró más tarde la peste en la Galia desde Arlés a fines de la década del 540 en adelante, y describió bultos en la ingle o la axila y la muerte en dos o tres días. Tumbas en Edix Hill, cerca de Cambridge, muestran que llegó a Britania, y el ADN de víctimas enterradas en Alemania ayudó a confirmar en 2013 que la enfermedad era peste. El mapa muestra estas tierras solo a grandes rasgos: los testimonios escritos son escasos. Cuántos murieron se discute mucho. Algunos historiadores hablan de una cuarta parte de la población del Mediterráneo oriental; otros, como Lee Mordechai y Merle Eisenberg, sostienen que la cifra se ha exagerado mucho."
+      },
+      "camera": {
+        "lon": 18,
+        "lat": 41,
+        "zoom": 2.3
+      },
+      "control": {
+        "first": [
+          {
+            "prev": true
+          },
+          {
+            "hist": "Ostrogoths",
+            "year": 500
+          },
+          {
+            "hist": "Vandals",
+            "year": 500
+          },
+          {
+            "hist": "Visigoths",
+            "year": 500
+          },
+          {
+            "hist": "Suebi",
+            "year": 500
+          },
+          {
+            "hist": "Franks",
+            "year": 500
+          },
+          {
+            "hist": "Burgundians",
+            "year": 500
+          },
+          {
+            "hist": "Anglo-Saxons",
+            "year": 500
+          },
+          {
+            "hist": "Sasanian Empire",
+            "year": 500
+          },
+          {
+            "hist": "Himyarite Kingdom",
+            "year": 500
+          },
+          {
+            "a1": "DEU",
+            "names": ["Bavaria", "Baden-Württemberg"]
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "gregory-of-tours",
+          "name": {
+            "en": "Gregory of Tours",
+            "es": "Gregorio de Tours"
+          },
+          "at": [0.689, 47.3941],
+          "cat": "art",
+          "type": "person",
+          "date": "571",
+          "life": ["538", "594"],
+          "place": {
+            "en": "Tours, France",
+            "es": "Tours, Francia"
+          },
+          "text": {
+            "en": "Bishop of Tours and historian of the Franks. He recorded waves of plague in Gaul from the 540s to the 590s, and how people met them with processions, prayers and vigils.",
+            "es": "Obispo de Tours e historiador de los francos. Registró las oleadas de peste en la Galia desde la década del 540 hasta la del 590, y cómo la gente les respondía con procesiones, oraciones y vigilias."
+          },
+          "wiki": {
+            "en": "Gregory of Tours",
+            "es": "Gregorio de Tours"
+          }
+        },
+        {
+          "id": "arles",
+          "name": {
+            "en": "Arles",
+            "es": "Arlés"
+          },
+          "at": [4.6278, 43.6767],
+          "cat": "outbreak",
+          "type": "place",
+          "date": "543",
+          "place": {
+            "en": "Provence, France",
+            "es": "Provenza, Francia"
+          },
+          "text": {
+            "en": "A Roman city on the Rhône. Gregory of Tours records that plague struck Arles and its region in the late 540s; it returned to Gaul again and again over the next fifty years.",
+            "es": "Una ciudad romana junto al Ródano. Gregorio de Tours cuenta que la peste golpeó Arlés y su región a fines de la década del 540; volvió a la Galia una y otra vez durante los cincuenta años siguientes."
+          },
+          "wiki": {
+            "en": "Arles",
+            "es": "Arlés"
+          }
+        }
+      ]
+    },
+    {
+      "date": "750",
+      "title": {
+        "en": "Two centuries of returns",
+        "es": "Dos siglos de rebrotes"
+      },
+      "text": {
+        "en": "Plague came back again and again for two centuries: to Rome in 590, to Syria in 638–639, to Britain and Ireland in 664. The first pandemic faded out after about 750.",
+        "es": "La peste volvió una y otra vez durante dos siglos: a Roma en el 590, a Siria en el 638-639, a Britania e Irlanda en el 664. La primera pandemia se apagó después del 750."
+      },
+      "details": {
+        "en": "At least fifteen to eighteen great waves followed the Plague of Justinian. In Rome, Pope Pelagius II died of plague in February 590, and his successor, Gregory the Great, led processions of penance through the city; a later legend tells that he saw the archangel Michael sheathe his sword above Hadrian's tomb, now Castel Sant'Angelo. In 638–639 the plague of Amwas killed up to 25,000 soldiers of the Arab army in Syria and their families, including most of its commanders, and shaped later Muslim teaching on epidemics. The monk Bede described the plague of 664 in England. The last waves came in the 740s and 760s. Estimates for the whole pandemic run from 15 to 100 million deaths; a 2019 study argued that its toll and effects have been exaggerated.",
+        "es": "Al menos quince a dieciocho grandes oleadas siguieron a la plaga de Justiniano. En Roma, el papa Pelagio II murió de peste en febrero del 590, y su sucesor, Gregorio Magno, encabezó procesiones de penitencia por la ciudad; una leyenda posterior cuenta que vio al arcángel Miguel envainar su espada sobre la tumba de Adriano, hoy el castillo de Sant'Angelo. En el 638-639, la plaga de Amwas mató a hasta 25 000 soldados del ejército árabe en Siria y a sus familias, incluida la mayoría de sus jefes, y marcó las enseñanzas musulmanas posteriores sobre las epidemias. El monje Beda describió la peste del 664 en Inglaterra. Las últimas oleadas llegaron en las décadas del 740 y el 760. Las estimaciones para toda la pandemia van de 15 a 100 millones de muertos; un estudio de 2019 sostuvo que sus muertes y sus efectos se han exagerado."
+      },
+      "camera": {
+        "lon": 24,
+        "lat": 39,
+        "zoom": 2.8
+      },
+      "places": [
+        {
+          "id": "roman-plague-590",
+          "name": {
+            "en": "Rome's plague of 590",
+            "es": "La peste de Roma del 590"
+          },
+          "at": [12.4663, 41.9031],
+          "cat": "outbreak",
+          "type": "event",
+          "date": "590",
+          "place": {
+            "en": "Rome, Italy",
+            "es": "Roma, Italia"
+          },
+          "text": {
+            "en": "Plague struck Rome after the Tiber flooded in 589 and killed Pope Pelagius II. His successor, Gregory the Great, led processions of penance through the city.",
+            "es": "La peste golpeó Roma tras la crecida del Tíber del 589 y mató al papa Pelagio II. Su sucesor, Gregorio Magno, encabezó procesiones de penitencia por la ciudad."
+          },
+          "wiki": {
+            "en": "Roman Plague of 590",
+            "es": "Plaga romana de 590"
+          }
+        },
+        {
+          "id": "plague-of-amwas",
+          "name": {
+            "en": "Plague of Amwas",
+            "es": "Plaga de Amwas"
+          },
+          "at": [34.9894, 31.8392],
+          "cat": "outbreak",
+          "type": "event",
+          "date": "638",
+          "end": "639",
+          "place": {
+            "en": "Emmaus Nicopolis, near Latrun",
+            "es": "Emaús Nicópolis, cerca de Latrún"
+          },
+          "text": {
+            "en": "A plague of 638–639 named after the main camp of the Arab army in Palestine. It killed up to 25,000 soldiers and their families, and the Arabic sources remembered it more than any epidemic before the Black Death.",
+            "es": "Una peste del 638-639 llamada así por el campamento principal del ejército árabe en Palestina. Mató a hasta 25 000 soldados y sus familias, y las fuentes árabes la recordaron más que a ninguna epidemia antes de la peste negra."
+          },
+          "wiki": {
+            "en": "Plague of Amwas",
+            "es": "Plaga de Amwas"
+          },
+          "img": "Emmaus - panoramio (1).jpg"
+        }
+      ]
+    },
+    {
+      "date": "1377",
+      "title": {
+        "en": "Thirty days, then forty",
+        "es": "Treinta días, luego cuarenta"
+      },
+      "text": {
+        "en": "The Black Death of 1346–1353 began a second pandemic that came back for 500 years. In 1377 Ragusa made travellers from plague-hit places wait 30 days before entering.",
+        "es": "La peste negra de 1346-1353 abrió una segunda pandemia que volvió durante 500 años. En 1377, Ragusa hizo esperar 30 días a los viajeros que llegaban de lugares con peste antes de dejarlos entrar."
+      },
+      "details": {
+        "en": "After the Black Death (see the story of that name), plague was present somewhere in Europe almost every year until the 1670s, and in the Islamic world almost every year from 1500 to 1850. Cities learned to defend themselves. Ragusa, today's Dubrovnik, held newcomers on nearby islands for a trentino of 30 days to see whether they fell ill. In 1423 Venice turned the island of Santa Maria di Nazareth into a quarantine station and plague hospital, the Lazzaretto Vecchio, where ships' crews waited 40 days: in Venetian a quarantena, which gave us the word quarantine. Health boards, isolation hospitals and health passes spread from Italy across Europe.",
+        "es": "Tras la peste negra (ver la historia de ese nombre), la peste estuvo presente en algún lugar de Europa casi todos los años hasta la década de 1670, y en el mundo islámico casi todos los años de 1500 a 1850. Las ciudades aprendieron a defenderse. Ragusa, la actual Dubrovnik, retenía a los recién llegados en islas cercanas durante un trentino de 30 días para ver si enfermaban. En 1423, Venecia convirtió la isla de Santa María de Nazaret en estación de cuarentena y hospital de la peste, el Lazzaretto Vecchio, donde las tripulaciones esperaban 40 días: en veneciano, una quarantena, de donde viene la palabra cuarentena. Las juntas de sanidad, los hospitales de aislamiento y los pases sanitarios se extendieron de Italia a toda Europa."
+      },
+      "camera": {
+        "lon": 15,
+        "lat": 44,
+        "zoom": 4.4
+      },
+      "control": {
+        "first": null
+      },
+      "places": [
+        {
+          "id": "ragusa",
+          "name": {
+            "en": "Ragusa (Dubrovnik)",
+            "es": "Ragusa (Dubrovnik)"
+          },
+          "at": [18.1083, 42.6403],
+          "cat": "health",
+          "type": "place",
+          "date": "1377",
+          "place": {
+            "en": "Dubrovnik, Croatia",
+            "es": "Dubrovnik, Croacia"
+          },
+          "text": {
+            "en": "A Dalmatian city republic that in 1377 ordered newcomers from plague-hit places to spend 30 days on nearby islands first: the earliest known quarantine of this kind.",
+            "es": "Una ciudad república de Dalmacia que en 1377 ordenó a los recién llegados de lugares con peste pasar antes 30 días en islas cercanas: la cuarentena de este tipo más antigua que se conoce."
+          },
+          "wiki": {
+            "en": "Dubrovnik",
+            "es": "Dubrovnik"
+          }
+        },
+        {
+          "id": "lazzaretto-vecchio",
+          "name": {
+            "en": "Lazzaretto Vecchio",
+            "es": "Lazzaretto Vecchio"
+          },
+          "at": [12.3595, 45.4062],
+          "cat": "health",
+          "type": "institution",
+          "date": "1423-10",
+          "place": {
+            "en": "Venice, Italy",
+            "es": "Venecia, Italia"
+          },
+          "text": {
+            "en": "An island of the Venetian lagoon turned in 1423 into a quarantine station and plague hospital. It gave its name to the lazaretto; ships' crews waited there 40 days.",
+            "es": "Una isla de la laguna de Venecia convertida en 1423 en estación de cuarentena y hospital de la peste. Dio nombre al lazareto; las tripulaciones esperaban allí 40 días."
+          },
+          "wiki": {
+            "en": "Lazzaretto Vecchio",
+            "es": "Lazzaretto Vecchio"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1665-09",
+      "title": {
+        "en": "London's Great Plague",
+        "es": "La gran peste de Londres"
+      },
+      "text": {
+        "en": "In September 1665 more than 7,000 Londoners a week were dying of plague. The rich fled; the poor stayed, shut in houses marked with a red cross.",
+        "es": "En septiembre de 1665 morían de peste más de 7000 londinenses por semana. Los ricos huyeron; los pobres se quedaron, encerrados en casas marcadas con una cruz roja."
+      },
+      "details": {
+        "en": "The epidemic probably came from the Netherlands, where Amsterdam had been struck in 1663–1664. The weekly Bills of Mortality counted 68,596 plague deaths in 1665, but families and searchers often hid the cause, and historians estimate about 100,000 deaths, almost a quarter of London's people. A house where someone had died of plague was locked up for 40 days with everyone inside. The king and his court left; Samuel Pepys stayed at his post and wrote in his diary, 'Lord! How empty the streets are and how melancholy'. Believing that bad air spread the disease, the city lit bonfires and killed dogs and cats, which may have helped the rats. The beaked costume of the plague doctor, first described in Paris in 1619, belongs to this century, not to the Middle Ages.",
+        "es": "La epidemia probablemente llegó de los Países Bajos, donde Ámsterdam había sido golpeada en 1663-1664. Los boletines semanales de mortalidad contaron 68 596 muertes por peste en 1665, pero las familias y los inspectores solían ocultar la causa, y los historiadores calculan unas 100 000 muertes, casi una cuarta parte de los londinenses. Una casa donde alguien había muerto de peste se cerraba con llave durante 40 días con todos dentro. El rey y su corte se fueron; Samuel Pepys siguió en su puesto y escribió en su diario: «¡Señor! Qué vacías están las calles y qué tristes». Creyendo que el mal aire contagiaba, la ciudad encendió hogueras y mató perros y gatos, lo que quizá ayudó a las ratas. El traje con pico del médico de la peste, descrito por primera vez en París en 1619, es de este siglo, no de la Edad Media."
+      },
+      "camera": {
+        "lon": 1.1,
+        "lat": 50.2,
+        "zoom": 12
+      },
+      "control": {
+        "second": {
+          "land": {
+            "circle": [-0.1, 51.51],
+            "km": 30
+          }
+        }
+      },
+      "places": [
+        {
+          "id": "great-plague-of-london",
+          "name": {
+            "en": "Great Plague of London",
+            "es": "Gran peste de Londres"
+          },
+          "at": [-0.092, 51.5155],
+          "cat": "outbreak",
+          "type": "event",
+          "date": "1665",
+          "end": "1666",
+          "place": {
+            "en": "London, England",
+            "es": "Londres, Inglaterra"
+          },
+          "text": {
+            "en": "The last great plague in England, in 1665–1666. It killed about 100,000 people, almost a quarter of London's population, most of them poor people who could not leave.",
+            "es": "La última gran peste de Inglaterra, en 1665-1666. Mató a unas 100 000 personas, casi una cuarta parte de la población de Londres, en su mayoría pobres que no podían irse."
+          },
+          "wiki": {
+            "en": "Great Plague of London",
+            "es": "Gran peste de Londres"
+          },
+          "img": "Wenceslas Hollar - Plan of London before the fire (State 2), variant.jpg"
+        },
+        {
+          "id": "samuel-pepys",
+          "name": {
+            "en": "Samuel Pepys",
+            "es": "Samuel Pepys"
+          },
+          "at": [-0.0786, 51.5105],
+          "cat": "art",
+          "type": "person",
+          "date": "1665",
+          "life": ["1633-02-23", "1703-05-26"],
+          "place": {
+            "en": "London, England",
+            "es": "Londres, Inglaterra"
+          },
+          "text": {
+            "en": "An official of the navy whose diary is a vivid record of London in the plague year: the shut houses, the empty streets and the weekly count of the dead.",
+            "es": "Un funcionario de la Marina cuyo diario es un vivo testimonio del Londres del año de la peste: las casas cerradas, las calles vacías y el recuento semanal de muertos."
+          },
+          "wiki": {
+            "en": "Samuel Pepys",
+            "es": "Samuel Pepys"
+          }
+        },
+        {
+          "id": "plague-doctor",
+          "name": {
+            "en": "The plague doctor's mask",
+            "es": "La máscara del médico de la peste"
+          },
+          "at": [2.3522, 48.8566],
+          "cat": "health",
+          "type": "invention",
+          "date": "1619",
+          "place": {
+            "en": "Paris, France",
+            "es": "París, Francia"
+          },
+          "text": {
+            "en": "The beaked mask, long coat and hat of 17th-century plague doctors, first described in Paris in 1619. The beak held herbs against 'bad air'. Medieval doctors did not wear it.",
+            "es": "La máscara con pico, el abrigo largo y el sombrero de los médicos de la peste del siglo XVII, descritos por primera vez en París en 1619. El pico llevaba hierbas contra el «mal aire». Los médicos medievales no la usaban."
+          },
+          "details": {
+            "en": "Towns hired plague doctors to treat the sick, rich and poor alike, and to count the dead; many had little training. The costume is known mostly from satirical prints such as Paul Fürst's Doctor Schnabel von Rom of 1656, and the first written description of a beak stuffed with herbs comes from Rome's epidemic of 1656–1658. Only two masks are known to survive, both from the 17th century and found in Germany. There is no evidence that doctors of the Black Death dressed this way.",
+            "es": "Las ciudades contrataban médicos de la peste para atender a los enfermos, ricos o pobres, y para contar a los muertos; muchos tenían poca formación. El traje se conoce sobre todo por grabados satíricos como el Doctor Schnabel von Rom de Paul Fürst, de 1656, y la primera descripción escrita de un pico relleno de hierbas viene de la epidemia de Roma de 1656-1658. Solo se conservan dos máscaras, ambas del siglo XVII y halladas en Alemania. No hay pruebas de que los médicos de la peste negra vistieran así."
+          },
+          "wiki": {
+            "en": "Plague doctor",
+            "es": "Médico de la peste negra"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1666-08",
+      "title": {
+        "en": "Eyam shuts itself in",
+        "es": "Eyam se encierra"
+      },
+      "text": {
+        "en": "In 1666 the Derbyshire village of Eyam, struck by plague from London, sealed itself off so as not to spread it. Neighbours left food at stones on its boundary.",
+        "es": "En 1666, el pueblo de Eyam, en Derbyshire, golpeado por una peste llegada de Londres, se aisló para no contagiar a otros. Los vecinos dejaban comida en piedras de su límite."
+      },
+      "details": {
+        "en": "Plague arrived in 1665 in a bundle of cloth from London for the village tailor; his assistant, George Viccars, was the first to die. In May 1666 the rector, William Mompesson, and the former minister Thomas Stanley persuaded the villagers to stay within the village bounds, to bury their own dead and to hold services in the open air at Cucklett Delph. Neighbouring villages left supplies at marked stones, where the villagers paid with coins left in vinegar. The plague lasted 14 months. The church records 273 victims; how many people lived in Eyam is disputed, so the death rate is uncertain, between about a third and three-quarters. The village still remembers them every year on Plague Sunday.",
+        "es": "La peste llegó en 1665 en un fardo de tela de Londres para el sastre del pueblo; su ayudante, George Viccars, fue el primero en morir. En mayo de 1666, el rector, William Mompesson, y el antiguo pastor Thomas Stanley convencieron a los vecinos de no salir de los límites del pueblo, de enterrar ellos mismos a sus muertos y de celebrar los oficios al aire libre, en Cucklett Delph. Los pueblos vecinos dejaban provisiones en piedras señaladas, donde los de Eyam pagaban con monedas dejadas en vinagre. La peste duró 14 meses. La iglesia registra 273 víctimas; cuántas personas vivían en Eyam se discute, así que la proporción de muertos es incierta, entre cerca de un tercio y tres cuartas partes. El pueblo aún los recuerda cada año en el Domingo de la Peste."
+      },
+      "camera": {
+        "lon": -1.0,
+        "lat": 52.5,
+        "zoom": 12
+      },
+      "control": {
+        "second": [
+          {
+            "prev": true
+          },
+          {
+            "land": {
+              "circle": [-1.671, 53.284],
+              "km": 6
+            }
+          }
+        ]
+      },
+      "places": [
+        {
+          "id": "eyam",
+          "name": {
+            "en": "Eyam",
+            "es": "Eyam"
+          },
+          "at": [-1.671, 53.284],
+          "cat": "health",
+          "type": "place",
+          "date": "1665-09",
+          "place": {
+            "en": "Derbyshire, England",
+            "es": "Derbyshire, Inglaterra"
+          },
+          "text": {
+            "en": "A lead-mining village in the Peak District that cut itself off in 1666 to keep the plague from spreading to its neighbours.",
+            "es": "Un pueblo minero de plomo del Peak District que en 1666 se aisló para que la peste no llegara a sus vecinos."
+          },
+          "wiki": {
+            "en": "Eyam",
+            "es": "Eyam"
+          }
+        },
+        {
+          "id": "william-mompesson",
+          "name": {
+            "en": "William Mompesson",
+            "es": "William Mompesson"
+          },
+          "at": [-1.6735, 53.2843],
+          "cat": "health",
+          "type": "person",
+          "date": "1666-05",
+          "life": ["1639", "1709-03-07"],
+          "place": {
+            "en": "Eyam, England",
+            "es": "Eyam, Inglaterra"
+          },
+          "text": {
+            "en": "Eyam's young rector who, with Thomas Stanley, led the village's quarantine. His wife Catherine stayed with him and died of plague in its last weeks.",
+            "es": "El joven rector de Eyam que, con Thomas Stanley, encabezó la cuarentena del pueblo. Su esposa, Catherine, se quedó con él y murió de peste en las últimas semanas."
+          },
+          "wiki": {
+            "en": "William Mompesson",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1720-08",
+      "title": {
+        "en": "Marseille and the plague wall",
+        "es": "Marsella y el muro de la peste"
+      },
+      "text": {
+        "en": "In May 1720 the ship Grand-Saint-Antoine brought plague from the Levant to Marseille. Merchants had its quarantine cut short to sell its cloth, and tens of thousands died.",
+        "es": "En mayo de 1720, el barco Grand-Saint-Antoine trajo la peste de Levante a Marsella. Los comerciantes lograron acortar su cuarentena para vender sus telas, y murieron decenas de miles."
+      },
+      "details": {
+        "en": "The ship had sailed from Sidon, calling at Smyrna, Tripoli and plague-ridden Cyprus, and had lost a passenger, several crew and its surgeon on the way. Marseille's health board placed it in quarantine, but powerful merchants wanted its silk and cotton for the fair of Beaucaire. Within weeks the hospitals were overwhelmed. Nicolas Roze, a merchant who had served as vice-consul in Greece, organised checkpoints, a field hospital, food and burials in his district; most of the volunteers and convicts who worked with him died. Between 30,000 and 50,000 of the city's 90,000 people died, by different counts, and about as many again in Provence. In 1721 a dry-stone wall was built across the Vaucluse plateau to protect the papal lands around Avignon. It was western Europe's last great plague.",
+        "es": "El barco había zarpado de Sidón, con escalas en Esmirna, Trípoli y Chipre, donde había peste, y en el viaje había perdido a un pasajero, a varios tripulantes y a su cirujano. La junta de sanidad de Marsella lo puso en cuarentena, pero comerciantes poderosos querían su seda y su algodón para la feria de Beaucaire. En pocas semanas los hospitales se desbordaron. Nicolas Roze, un comerciante que había sido vicecónsul en Grecia, organizó controles, un hospital de campaña, comida y entierros en su barrio; la mayoría de los voluntarios y presos que trabajaron con él murieron. Murieron entre 30 000 y 50 000 de los 90 000 habitantes de la ciudad, según distintos recuentos, y otros tantos en Provenza. En 1721 se levantó un muro de piedra seca a través de la meseta de Vaucluse para proteger las tierras del papa en torno a Aviñón. Fue la última gran peste de Europa occidental."
+      },
+      "camera": {
+        "lon": 6.5,
+        "lat": 42.5,
+        "zoom": 7
+      },
+      "control": {
+        "second": {
+          "land": [[4.5, 43.4], [4.6, 43.86], [5.05, 43.86], [5.6, 43.95], [6.2, 43.7], [6.3, 43.05], [5.6, 43.1], [5.0, 43.25]]
+        }
+      },
+      "moves": [
+        {
+          "side": "second",
+          "path": [[35.36, 33.57], [34.4, 34.2], [33.0, 34.25], [30.0, 34.4], [26.0, 34.6], [23.4, 34.75], [22.4, 35.5], [21.0, 36.5], [18.5, 37.3], [16.3, 37.8], [15.65, 38.05], [15.62, 38.25], [15.3, 38.6], [12.0, 40.5], [10.3, 42.6], [10.2, 43.5], [9.0, 43.6], [7.5, 43.55], [6.6, 42.95], [5.6, 43.1], [5.36, 43.29]],
+          "by": "sea",
+          "icon": "⛵",
+          "label": {
+            "en": "The Grand-Saint-Antoine",
+            "es": "El Grand-Saint-Antoine"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "great-plague-of-marseille",
+          "name": {
+            "en": "Great Plague of Marseille",
+            "es": "Gran peste de Marsella"
+          },
+          "at": [5.3698, 43.2965],
+          "cat": "outbreak",
+          "type": "event",
+          "date": "1720-05-25",
+          "end": "1722",
+          "place": {
+            "en": "Marseille, France",
+            "es": "Marsella, Francia"
+          },
+          "text": {
+            "en": "The last great plague of western Europe, from 1720 to 1722. It killed some 30,000 to 50,000 people in Marseille, by different counts, and about as many in the rest of Provence.",
+            "es": "La última gran peste de Europa occidental, de 1720 a 1722. Mató a unas 30 000 a 50 000 personas en Marsella, según distintos recuentos, y a otras tantas en el resto de Provenza."
+          },
+          "wiki": {
+            "en": "Great Plague of Marseille",
+            "es": "Gran peste de Marsella"
+          },
+          "img": "Arrêt pendant la peste de Provence - Archives nationales - AD+767.jpg"
+        },
+        {
+          "id": "nicolas-roze",
+          "name": {
+            "en": "Nicolas Roze",
+            "es": "Nicolas Roze"
+          },
+          "at": [5.3641, 43.2985],
+          "cat": "health",
+          "type": "person",
+          "date": "1720-09-16",
+          "life": ["1675", "1733"],
+          "place": {
+            "en": "Marseille, France",
+            "es": "Marsella, Francia"
+          },
+          "text": {
+            "en": "A Marseille merchant and former vice-consul who organised relief in 1720: checkpoints, a field hospital, food for the poor and the burial of the dead. He caught the plague and survived.",
+            "es": "Un comerciante de Marsella y antiguo vicecónsul que organizó la ayuda en 1720: controles, un hospital de campaña, comida para los pobres y el entierro de los muertos. Se contagió de la peste y sobrevivió."
+          },
+          "wiki": {
+            "en": "Nicolas Roze (chevalier)",
+            "es": ""
+          }
+        },
+        {
+          "id": "mur-de-la-peste",
+          "name": {
+            "en": "The plague wall",
+            "es": "El muro de la peste"
+          },
+          "at": [5.1395, 43.8948],
+          "cat": "health",
+          "type": "structure",
+          "date": "1721-03",
+          "end": "1721-07",
+          "place": {
+            "en": "Vaucluse, France",
+            "es": "Vaucluse, Francia"
+          },
+          "text": {
+            "en": "A dry-stone wall about 2 metres high, built by 500 men in 1721 across the Vaucluse plateau to keep plague out of the papal Comtat Venaissin. Guards were ordered to shoot anyone who crossed.",
+            "es": "Un muro de piedra seca de unos 2 metros de alto, levantado por 500 hombres en 1721 a través de la meseta de Vaucluse para mantener la peste fuera del Condado Venaissin, del papa. Los guardias tenían orden de disparar a quien cruzara."
+          },
+          "wiki": {
+            "en": "Mur de la peste",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1771-09",
+      "title": {
+        "en": "Moscow's Plague Riot",
+        "es": "El motín de la peste de Moscú"
+      },
+      "text": {
+        "en": "In September 1771 crowds in plague-stricken Moscow rose against the quarantines and the removal of a holy icon. They killed Archbishop Ambrose, and troops fired on them.",
+        "es": "En septiembre de 1771, multitudes de un Moscú asolado por la peste se alzaron contra las cuarentenas y el retiro de un icono sagrado. Mataron al arzobispo Ambrosio, y las tropas les dispararon."
+      },
+      "details": {
+        "en": "The plague came from the war against the Ottomans: Russian troops met it in Moldavia in January 1770, and it spread north through Ukraine. In Moscow it peaked in September 1771. The governor and many nobles fled. Forced quarantines, the burning of belongings without payment and the closing of baths, shops and factories left people without work or food. When Archbishop Ambrose had a much-visited icon of the Virgin removed, to stop crowds gathering around it, rioters stormed his residence in the Kremlin, then dragged him from the Donskoy Monastery and killed him. Catherine the Great sent Grigory Orlov, who made the quarantines more humane, ended the burning of property, reopened the baths and gave people food and work. Between 52,000 and 100,000 people died in Moscow alone.",
+        "es": "La peste llegó de la guerra contra los otomanos: las tropas rusas la encontraron en Moldavia en enero de 1770, y se extendió al norte por Ucrania. En Moscú alcanzó su peor momento en septiembre de 1771. El gobernador y muchos nobles huyeron. Las cuarentenas forzosas, la quema de bienes sin pago y el cierre de baños, tiendas y fábricas dejaron a la gente sin trabajo ni comida. Cuando el arzobispo Ambrosio hizo retirar un icono de la Virgen muy visitado, para evitar que la gente se amontonara a su alrededor, los amotinados asaltaron su residencia en el Kremlin, y luego lo sacaron del monasterio Donskói y lo mataron. Catalina la Grande envió a Grigori Orlov, que hizo más humanas las cuarentenas, terminó con la quema de bienes, reabrió los baños y dio a la gente comida y trabajo. Solo en Moscú murieron entre 52 000 y 100 000 personas."
+      },
+      "camera": {
+        "lon": 37.6,
+        "lat": 55.74,
+        "zoom": 18
+      },
+      "control": {
+        "second": {
+          "land": {
+            "circle": [37.62, 55.75],
+            "km": 30
+          }
+        }
+      },
+      "places": [
+        {
+          "id": "moscow-plague-riot",
+          "name": {
+            "en": "Moscow Plague Riot",
+            "es": "Motín de la peste de Moscú"
+          },
+          "at": [37.6305, 55.7545],
+          "cat": "society",
+          "type": "event",
+          "date": "1771-09",
+          "place": {
+            "en": "Kitai-gorod, Moscow, Russia",
+            "es": "Kitái-gorod, Moscú, Rusia"
+          },
+          "text": {
+            "en": "Three days of rioting in September 1771 against plague measures that had left people without work or food. Some 300 people were tried afterwards, and four were executed.",
+            "es": "Tres días de disturbios en septiembre de 1771 contra medidas que habían dejado a la gente sin trabajo ni comida. Después se juzgó a unas 300 personas, y cuatro fueron ejecutadas."
+          },
+          "wiki": {
+            "en": "Moscow plague riot of 1771",
+            "es": ""
+          }
+        },
+        {
+          "id": "ambrose-of-moscow",
+          "name": {
+            "en": "Archbishop Ambrose",
+            "es": "El arzobispo Ambrosio"
+          },
+          "at": [37.6021, 55.7143],
+          "cat": "persecution",
+          "type": "person",
+          "date": "1771-09",
+          "life": ["1708-10-28", "1771-09-27"],
+          "place": {
+            "en": "Donskoy Monastery, Moscow, Russia",
+            "es": "Monasterio Donskói, Moscú, Rusia"
+          },
+          "text": {
+            "en": "Archbishop of Moscow, a founder of churches and helper of the poor. He had an icon removed to stop crowds spreading the plague around it; rioters blamed him and killed him.",
+            "es": "Arzobispo de Moscú, fundador de iglesias y protector de los pobres. Hizo retirar un icono para que las multitudes no propagaran la peste a su alrededor; los amotinados lo culparon y lo mataron."
+          },
+          "wiki": {
+            "en": "Ambrose of Moscow",
+            "es": ""
+          }
+        },
+        {
+          "id": "grigory-orlov",
+          "name": {
+            "en": "Grigory Orlov",
+            "es": "Grigori Orlov"
+          },
+          "at": [37.6178, 55.7517],
+          "cat": "health",
+          "type": "person",
+          "date": "1771-09",
+          "life": ["1734-10-17", "1783-04-24"],
+          "place": {
+            "en": "Moscow Kremlin, Russia",
+            "es": "Kremlin de Moscú, Rusia"
+          },
+          "text": {
+            "en": "Favourite of Catherine the Great, sent to Moscow after the riot. His commission eased the hated measures, fed the hungry and improved the quarantines as winter ended the epidemic.",
+            "es": "Favorito de Catalina la Grande, enviado a Moscú tras el motín. Su comisión suavizó las medidas odiadas, dio de comer a los hambrientos y mejoró las cuarentenas mientras el invierno terminaba con la epidemia."
+          },
+          "wiki": {
+            "en": "Grigory Orlov",
+            "es": "Grigori Orlov"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1855",
+      "title": {
+        "en": "Yunnan, 1855",
+        "es": "Yunnan, 1855"
+      },
+      "text": {
+        "en": "A third pandemic began in 1855 in Yunnan, in south-west China, where plague lives among wild rodents. Miners, soldiers and traders slowly carried it east to the coast.",
+        "es": "Una tercera pandemia empezó en 1855 en Yunnan, en el suroeste de China, donde la peste vive entre roedores silvestres. Mineros, soldados y comerciantes la llevaron poco a poco al este, hasta la costa."
+      },
+      "details": {
+        "en": "Western Yunnan holds a natural reservoir of plague, and local records mention outbreaks as early as 1772. In the 19th century more than 7 million people had crowded in, many of them Han Chinese miners drawn by copper, and new roads and trade brought them into contact with the infected fleas of local rats. From 1856 to 1873 the province was torn by the Panthay Rebellion of its Hui Muslims, and some historians think returning troops and refugees carried the plague towards the coast; others point to the growing opium trade. It reached parts of Guangxi and Guangdong by the 1860s, Beihai on the south coast in 1882, and the Pearl River delta in the 1890s.",
+        "es": "El oeste de Yunnan alberga un foco natural de peste, y los registros locales mencionan brotes ya en 1772. En el siglo XIX se habían agolpado allí más de 7 millones de personas, muchas de ellas mineros chinos han atraídos por el cobre, y los nuevos caminos y el comercio los pusieron en contacto con las pulgas infectadas de las ratas del lugar. De 1856 a 1873 la provincia vivió la rebelión de los panthay, sus musulmanes hui, y algunos historiadores creen que las tropas y los refugiados que volvían llevaron la peste hacia la costa; otros apuntan al creciente comercio del opio. Llegó a partes de Guangxi y Guangdong en la década de 1860, a Beihai, en la costa sur, en 1882, y al delta del río de las Perlas en la de 1890."
+      },
+      "camera": {
+        "lon": 104,
+        "lat": 25,
+        "zoom": 4.2
+      },
+      "control": {
+        "second": null,
+        "third": {
+          "a1": "CHN",
+          "names": [
+            "Yunnan"
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "yunnan",
+          "name": {
+            "en": "Yunnan",
+            "es": "Yunnan"
+          },
+          "at": [102.7089, 25.0494],
+          "cat": "outbreak",
+          "type": "place",
+          "date": "1855",
+          "place": {
+            "en": "China",
+            "es": "China"
+          },
+          "text": {
+            "en": "A mountainous province of south-west China and one of the world's natural homes of plague. The third pandemic began here in 1855, during a boom in copper mining.",
+            "es": "Una provincia montañosa del suroeste de China y uno de los focos naturales de peste del mundo. La tercera pandemia empezó aquí en 1855, durante un auge de la minería del cobre."
+          },
+          "wiki": {
+            "en": "Yunnan",
+            "es": "Yunnan"
+          }
+        },
+        {
+          "id": "panthay-rebellion",
+          "name": {
+            "en": "Panthay Rebellion",
+            "es": "Rebelión de los panthay"
+          },
+          "at": [100.165, 25.6065],
+          "cat": "event",
+          "type": "event",
+          "date": "1856",
+          "end": "1873",
+          "place": {
+            "en": "Dali, Yunnan, China",
+            "es": "Dali, Yunnan, China"
+          },
+          "text": {
+            "en": "A rising of Yunnan's Hui Muslims and their allies against the Qing dynasty, from 1856 to 1873, with its capital at Dali. Troops and refugees may have helped carry the plague.",
+            "es": "Un levantamiento de los musulmanes hui de Yunnan y sus aliados contra la dinastía Qing, de 1856 a 1873, con capital en Dali. Las tropas y los refugiados quizá ayudaron a llevar la peste."
+          },
+          "wiki": {
+            "en": "Panthay Rebellion",
+            "es": "Rebelión de los panthay"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1894-06",
+      "title": {
+        "en": "Hong Kong: the germ is found",
+        "es": "Hong Kong: se halla el microbio"
+      },
+      "text": {
+        "en": "Plague struck Canton and Hong Kong in 1894. In June, Kitasato Shibasaburō and Alexandre Yersin, working separately, found the bacterium that causes it.",
+        "es": "La peste golpeó Cantón y Hong Kong en 1894. En junio, Kitasato Shibasaburō y Alexandre Yersin, trabajando por separado, hallaron la bacteria que la causa."
+      },
+      "details": {
+        "en": "In Canton plague killed some 80,000 people in the first months of 1894, and boats and workers carried it to Hong Kong, where the first case was found on 8 May. More than 6,000 died there by October, the crowded Chinese district of Tai Ping Shan worst of all, and a third of the people fled. Japan sent Kitasato, who had worked with Robert Koch; he arrived on 12 June and found the bacillus two days later, helped by the hospital's doctors. Yersin, a Swiss-born doctor of the Institut Pasteur, came alone from Indochina on 15 June, was refused bodies to study and bribed sailors for samples; within days he found the bacterium and described it more accurately. Historians still differ: some credit Yersin alone, others both. The bacterium was named Yersinia pestis after Yersin.",
+        "es": "En Cantón la peste mató a unas 80 000 personas en los primeros meses de 1894, y los barcos y los trabajadores la llevaron a Hong Kong, donde el primer caso se halló el 8 de mayo. Allí murieron más de 6000 personas hasta octubre, sobre todo en el abarrotado barrio chino de Tai Ping Shan, y un tercio de la población huyó. Japón envió a Kitasato, que había trabajado con Robert Koch; llegó el 12 de junio y halló el bacilo dos días después, con ayuda de los médicos del hospital. Yersin, un médico del Instituto Pasteur nacido en Suiza, llegó solo desde Indochina el 15 de junio, no le dejaron estudiar cadáveres y sobornó a unos marineros para obtener muestras; en pocos días halló la bacteria y la describió con más precisión. Los historiadores aún discrepan: unos dan el mérito solo a Yersin, otros a ambos. La bacteria recibió el nombre de Yersinia pestis en honor a Yersin."
+      },
+      "camera": {
+        "lon": 111,
+        "lat": 23.5,
+        "zoom": 4.4
+      },
+      "control": {
+        "third": [
+          {
+            "prev": true
+          },
+          {
+            "a1": "CHN",
+            "names": ["Guangdong", "Guangxi"]
+          },
+          "HKG",
+          "MAC"
+        ]
+      },
+      "moves": [
+        {
+          "side": "third",
+          "path": [[102.71, 25.05], [104.5, 24.2], [106.6, 23.9], [108.3, 22.8], [110.3, 23.4], [111.3, 23.5], [112.5, 23.1], [113.26, 23.13], [113.9, 22.6], [114.15, 22.28]],
+          "by": "land",
+          "label": {
+            "en": "Over four decades",
+            "es": "En cuatro décadas"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "hong-kong-plague-1894",
+          "name": {
+            "en": "Hong Kong's plague of 1894",
+            "es": "La peste de Hong Kong de 1894"
+          },
+          "at": [114.1485, 22.2845],
+          "cat": "outbreak",
+          "type": "event",
+          "date": "1894-05-08",
+          "place": {
+            "en": "Tai Ping Shan, Sheung Wan, Hong Kong",
+            "es": "Tai Ping Shan, en Sheung Wan, Hong Kong"
+          },
+          "text": {
+            "en": "An outbreak that killed more than 6,000 people from May to October 1894, hitting hardest the crowded Chinese district of Tai Ping Shan. Plague returned every year until 1929.",
+            "es": "Un brote que mató a más de 6000 personas de mayo a octubre de 1894, sobre todo en el abarrotado barrio chino de Tai Ping Shan. La peste volvió cada año hasta 1929."
+          },
+          "wiki": {
+            "en": "1894 Hong Kong plague",
+            "es": "Peste de Hong Kong de 1894"
+          }
+        },
+        {
+          "id": "kitasato-shibasaburo",
+          "name": {
+            "en": "Kitasato Shibasaburō",
+            "es": "Kitasato Shibasaburō"
+          },
+          "at": [114.1405, 22.2852],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1894-06-14",
+          "life": ["1853-01-29", "1931-06-13"],
+          "place": {
+            "en": "Hong Kong",
+            "es": "Hong Kong"
+          },
+          "text": {
+            "en": "Japanese bacteriologist who had worked with Robert Koch in Berlin and first grew the tetanus germ. Sent to Hong Kong in June 1894, he identified the plague bacterium on 14 June.",
+            "es": "Bacteriólogo japonés que había trabajado con Robert Koch en Berlín y fue el primero en cultivar el microbio del tétanos. Enviado a Hong Kong en junio de 1894, identificó la bacteria de la peste el 14 de junio."
+          },
+          "wiki": {
+            "en": "Kitasato Shibasaburō",
+            "es": "Kitasato Shibasaburō"
+          }
+        },
+        {
+          "id": "alexandre-yersin",
+          "name": {
+            "en": "Alexandre Yersin",
+            "es": "Alexandre Yersin"
+          },
+          "at": [114.1545, 22.2826],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1894-06",
+          "life": ["1863-09-22", "1943-03-01"],
+          "place": {
+            "en": "Hong Kong",
+            "es": "Hong Kong"
+          },
+          "text": {
+            "en": "Swiss-born French doctor of the Institut Pasteur. In June 1894, working alone with the microscope he had brought, he isolated the plague bacterium, later named Yersinia pestis after him.",
+            "es": "Médico francés del Instituto Pasteur nacido en Suiza. En junio de 1894, trabajando solo con el microscopio que había traído, aisló la bacteria de la peste, que después recibió su nombre: Yersinia pestis."
+          },
+          "wiki": {
+            "en": "Alexandre Yersin",
+            "es": "Alexandre Yersin"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1897-01",
+      "title": {
+        "en": "Bombay and Haffkine's vaccine",
+        "es": "Bombay y la vacuna de Haffkine"
+      },
+      "text": {
+        "en": "Plague reached Bombay by sea in 1896. On 10 January 1897 Waldemar Haffkine tested a plague vaccine on himself. The pandemic would kill some 10 million people in India.",
+        "es": "La peste llegó a Bombay por mar en 1896. El 10 de enero de 1897, Waldemar Haffkine probó en sí mismo una vacuna contra la peste. La pandemia mataría a unos 10 millones de personas en la India."
+      },
+      "details": {
+        "en": "In September 1896 a Goan doctor, Acacio Gabriel Viegas, recognised the first cases in Mandvi and campaigned to clean the slums and kill rats. By January 1897 half the city had fled; mill workers, who could not afford to leave, bore the brunt. Under the Epidemic Diseases Act of 1897, soldiers searched homes and forced the sick into camps and hospitals, ignoring caste, purdah and funeral rites; people hid their sick, and in Pune the plague commissioner Walter Rand was shot in June 1897. Haffkine, a Jewish scientist from Odessa who had worked at the Institut Pasteur, set up his laboratory in a corridor of Grant Medical College. After his self-test, volunteers at Byculla jail were inoculated and survived, while seven of those left uninoculated died. By 1925 some 26 million doses had been sent out from Bombay.",
+        "es": "En septiembre de 1896, un médico de Goa, Acacio Gabriel Viegas, reconoció los primeros casos en Mandvi e hizo campaña para limpiar los barrios pobres y matar ratas. En enero de 1897 había huido la mitad de la ciudad; los obreros de las fábricas textiles, que no podían irse, se llevaron la peor parte. Con la Ley de Enfermedades Epidémicas de 1897, los soldados registraban las casas y llevaban a la fuerza a los enfermos a campamentos y hospitales, sin respetar castas, la reclusión de las mujeres ni los ritos funerarios; la gente escondía a sus enfermos, y en Pune el comisario de la peste, Walter Rand, fue asesinado en junio de 1897. Haffkine, un científico judío de Odesa que había trabajado en el Instituto Pasteur, instaló su laboratorio en un pasillo del Grant Medical College. Tras probarla en sí mismo, se vacunó a voluntarios de la cárcel de Byculla, que sobrevivieron, mientras que murieron siete de los no vacunados. Hasta 1925 se enviaron desde Bombay unos 26 millones de dosis."
+      },
+      "camera": {
+        "lon": 73.4,
+        "lat": 19.4,
+        "zoom": 6
+      },
+      "control": {
+        "third": [
+          {
+            "prev": true
+          },
+          {
+            "a1": "IND",
+            "names": ["Maharashtra", "Gujarat"]
+          },
+          {
+            "a1": "PAK",
+            "names": [
+              "Sindh"
+            ]
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "third",
+          "path": [[114.15, 22.28], [114.4, 21.9], [111.5, 17.8], [110.0, 12.0], [107.0, 6.0], [104.6, 1.6], [103.6, 1.15], [101.0, 2.8], [98.5, 5.5], [95.0, 6.3], [86.0, 6.5], [80.5, 5.6], [77.3, 7.5], [75.5, 11.0], [73.4, 15.5], [72.8, 17.0], [72.65, 18.5], [72.85, 18.92]],
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "By steamship",
+            "es": "En barco de vapor"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "waldemar-haffkine",
+          "name": {
+            "en": "Waldemar Haffkine",
+            "es": "Waldemar Haffkine"
+          },
+          "at": [72.8348, 18.9641],
+          "cat": "vaccine",
+          "type": "person",
+          "date": "1897-01-10",
+          "life": ["1860-03-15", "1930-10-26"],
+          "place": {
+            "en": "Grant Medical College, Mumbai, India",
+            "es": "Grant Medical College, Bombay, India"
+          },
+          "text": {
+            "en": "A microbiologist from Odessa who made the first vaccines against cholera and plague and tested both on himself. In 1899 he founded the Plague Research Laboratory in Bombay.",
+            "es": "Un microbiólogo de Odesa que creó las primeras vacunas contra el cólera y la peste y probó ambas en sí mismo. En 1899 fundó el Laboratorio de Investigación de la Peste en Bombay."
+          },
+          "wiki": {
+            "en": "Waldemar Haffkine",
+            "es": "Waldemar Haffkine"
+          }
+        },
+        {
+          "id": "acacio-gabriel-viegas",
+          "name": {
+            "en": "Acacio Gabriel Viegas",
+            "es": "Acacio Gabriel Viegas"
+          },
+          "at": [72.8384, 18.9568],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1896-09",
+          "life": ["1856-04-01", "1933-02-21"],
+          "place": {
+            "en": "Mandvi, Mumbai, India",
+            "es": "Mandvi, Bombay, India"
+          },
+          "text": {
+            "en": "A Goan doctor in Bombay who recognised the first cases of plague in 1896, cared for the sick at great risk and campaigned to clean up the slums and kill rats.",
+            "es": "Un médico de Goa en Bombay que reconoció los primeros casos de peste en 1896, atendió a los enfermos con gran riesgo e hizo campaña para limpiar los barrios pobres y matar ratas."
+          },
+          "wiki": {
+            "en": "Acacio Gabriel Viegas",
+            "es": "Acacio Gabriel Viegas"
+          }
+        },
+        {
+          "id": "bombay-plague",
+          "name": {
+            "en": "Bombay plague epidemic",
+            "es": "Epidemia de peste de Bombay"
+          },
+          "at": [72.8311, 18.9497],
+          "cat": "outbreak",
+          "type": "event",
+          "date": "1896-09",
+          "place": {
+            "en": "Mumbai, India",
+            "es": "Bombay, India"
+          },
+          "text": {
+            "en": "Plague in Bombay from 1896. Some 20,000 had died by March 1897; harsh colonial measures, house searches and forced removals, drove people to hide the sick and stirred anger.",
+            "es": "La peste en Bombay desde 1896. Hacia marzo de 1897 habían muerto unas 20 000 personas; las duras medidas coloniales, con registros de casas y traslados forzosos, llevaron a esconder a los enfermos y despertaron la ira."
+          },
+          "wiki": {
+            "en": "Bombay plague epidemic",
+            "es": "Epidemia de peste en Bombay"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1898-06",
+      "title": {
+        "en": "Rats, fleas and steamships",
+        "es": "Ratas, pulgas y vapores"
+      },
+      "text": {
+        "en": "In Karachi in June 1898, Paul-Louis Simond showed that rat fleas carry plague. Steamships were by then taking it to ports on every inhabited continent.",
+        "es": "En Karachi, en junio de 1898, Paul-Louis Simond demostró que las pulgas de las ratas transmiten la peste. Para entonces los barcos de vapor la llevaban a puertos de todos los continentes habitados."
+      },
+      "details": {
+        "en": "Simond, a French army doctor of the Institut Pasteur, put a dying plague-infected rat with fleas in a jar, and a healthy rat beside it behind wire mesh; the healthy rat caught plague. It explained why human outbreaks followed die-offs of rats, as hungry fleas left dead rats for new hosts. His idea was doubted at first and accepted by 1907; a 2022 study of his notebooks found that he had not reported all his results. Meanwhile ships carried rats and fleas around the world. Plague reached Taiwan in 1896, Calcutta, Madagascar and Kobe in 1898, and Mecca, Egypt, Porto, Paraguay and Honolulu in 1899. India suffered most: in the end some 10 to 12 million people died there.",
+        "es": "Simond, un médico militar francés del Instituto Pasteur, puso en un frasco una rata moribunda infectada de peste y con pulgas, y a su lado una rata sana tras una malla de alambre; la rata sana se contagió. Eso explicaba por qué los brotes en las personas seguían a las mortandades de ratas: las pulgas hambrientas dejaban las ratas muertas en busca de nuevos huéspedes. Su idea se puso en duda al principio y se aceptó hacia 1907; un estudio de 2022 de sus cuadernos halló que no había informado de todos sus resultados. Mientras tanto, los barcos llevaban ratas y pulgas por el mundo. La peste llegó a Taiwán en 1896, a Calcuta, Madagascar y Kobe en 1898, y a La Meca, Egipto, Oporto, Paraguay y Honolulu en 1899. La India fue la que más sufrió: al final murieron allí unos 10 a 12 millones de personas."
+      },
+      "camera": {
+        "lon": 60,
+        "lat": 18,
+        "zoom": 1.3
+      },
+      "control": {
+        "third": [
+          {
+            "prev": true
+          },
+          {
+            "a1": "IND"
+          },
+          {
+            "a1": "PAK"
+          },
+          "TWN",
+          {
+            "land": {
+              "circle": [49.41, -18.155],
+              "km": 60
+            }
+          },
+          {
+            "land": {
+              "circle": [135.19, 34.69],
+              "km": 50
+            }
+          },
+          {
+            "land": {
+              "circle": [39.83, 21.42],
+              "km": 60
+            }
+          },
+          {
+            "land": {
+              "circle": [29.92, 31.2],
+              "km": 50
+            }
+          },
+          {
+            "land": {
+              "circle": [-8.61, 41.15],
+              "km": 50
+            }
+          },
+          {
+            "land": {
+              "circle": [-57.58, -25.26],
+              "km": 60
+            }
+          },
+          {
+            "land": {
+              "circle": [-157.86, 21.31],
+              "km": 40
+            }
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "third",
+          "path": [[72.85, 18.92], [72.6, 18.5], [66.0, 16.0], [57.0, 14.0], [51.0, 12.5], [45.0, 12.4], [43.4, 12.65], [41.5, 15.0], [39.0, 19.5], [37.4, 22.5], [35.3, 26.0], [34.0, 27.6], [33.55, 28.15], [33.15, 28.65], [32.75, 29.25], [32.58, 29.75], [32.55, 29.95]],
+          "by": "sea",
+          "icon": "🚢",
+          "label": {
+            "en": "Steamship routes",
+            "es": "Rutas de los vapores"
+          }
+        },
+        {
+          "side": "third",
+          "path": [[32.55, 29.95], [32.34, 30.5], [32.3, 30.9], [32.31, 31.26]],
+          "by": "river"
+        },
+        {
+          "side": "third",
+          "path": [[32.31, 31.26], [31.8, 31.65], [30.8, 31.7], [30.0, 31.42], [29.9, 31.22]],
+          "by": "sea",
+          "icon": "🚢"
+        },
+        {
+          "side": "third",
+          "path": [[114.15, 22.28], [116.5, 22.9], [119.5, 24.5], [122.5, 28.0], [127.0, 30.5], [130.0, 30.6], [131.5, 31.2], [133.0, 32.5], [134.8, 33.5], [135.0, 34.2], [135.19, 34.62]],
+          "by": "sea",
+          "icon": "🚢"
+        },
+        {
+          "side": "third",
+          "path": [[114.15, 22.28], [118.0, 21.0], [121.0, 21.0], [140.0, 22.0], [165.0, 22.5], [-175.0, 22.0], [-158.0, 21.2]],
+          "by": "sea",
+          "icon": "🚢"
+        }
+      ],
+      "places": [
+        {
+          "id": "paul-louis-simond",
+          "name": {
+            "en": "Paul-Louis Simond",
+            "es": "Paul-Louis Simond"
+          },
+          "at": [67.0099, 24.8607],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1898-06",
+          "life": ["1858-07-30", "1947-03-03"],
+          "place": {
+            "en": "Karachi, Pakistan",
+            "es": "Karachi, Pakistán"
+          },
+          "text": {
+            "en": "French army doctor who in 1898, in Karachi, showed with rats in a jar that the fleas of infected rats pass plague to new hosts, people included.",
+            "es": "Médico militar francés que en 1898, en Karachi, demostró con ratas en un frasco que las pulgas de las ratas infectadas pasan la peste a nuevos huéspedes, incluidas las personas."
+          },
+          "wiki": {
+            "en": "Paul-Louis Simond",
+            "es": ""
+          }
+        },
+        {
+          "id": "oriental-rat-flea",
+          "name": {
+            "en": "Oriental rat flea",
+            "es": "Pulga de la rata (Xenopsylla cheopis)"
+          },
+          "at": [67.2, 25.3],
+          "cat": "carrier",
+          "type": "animal",
+          "date": "1898",
+          "place": {
+            "en": "Karachi, Pakistan",
+            "es": "Karachi, Pakistán"
+          },
+          "text": {
+            "en": "The main carrier of plague in the third pandemic. Plague bacteria block its gut, so the starving flea bites again and again and passes them into each wound.",
+            "es": "El principal portador de la peste en la tercera pandemia. Las bacterias de la peste le bloquean el intestino, así que la pulga hambrienta pica una y otra vez y las pasa a cada herida."
+          },
+          "wiki": {
+            "en": "Oriental rat flea",
+            "es": "Xenopsylla cheopis"
+          }
+        },
+        {
+          "id": "black-rat",
+          "name": {
+            "en": "Black rat",
+            "es": "Rata negra"
+          },
+          "at": [72.8777, 19.076],
+          "cat": "carrier",
+          "type": "animal",
+          "date": "1896",
+          "place": {
+            "en": "Mumbai, India",
+            "es": "Bombay, India"
+          },
+          "text": {
+            "en": "A climbing rat that lives close to people and travels in ships' holds. Where it had not yet been replaced by the brown rat, as in Bombay, plague struck hardest.",
+            "es": "Una rata trepadora que vive cerca de las personas y viaja en las bodegas de los barcos. Donde aún no la había reemplazado la rata parda, como en Bombay, la peste golpeó con más fuerza."
+          },
+          "wiki": {
+            "en": "Black rat",
+            "es": "Rattus rattus"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1900-03",
+      "title": {
+        "en": "San Francisco's Chinatown",
+        "es": "El barrio chino de San Francisco"
+      },
+      "text": {
+        "en": "In March 1900 plague was found in San Francisco's Chinatown, and police roped it off. Chinese Americans were blamed, and the governor denied the outbreak for two years.",
+        "es": "En marzo de 1900 se halló la peste en el barrio chino de San Francisco, y la policía lo cercó con cuerdas. Se culpó a los chinoestadounidenses, y el gobernador negó el brote durante dos años."
+      },
+      "details": {
+        "en": "On 7 March 1900, after Wong Chut King died in a Chinatown hotel, police sealed off twelve blocks and some 25,000 to 35,000 people, while white residents could come and go. Mayor James Phelan called Chinese Americans 'a constant menace to the public health', a racist charge: the disease came with ships and rats, not with any people. An order to inoculate everyone of Asian descent with an experimental vaccine was struck down when a Chinese merchant, Wong Wai, won in court. Governor Henry Gage, fearing for trade, denied the plague and smeared the federal health officer Joseph Kinyoun. A new governor acted in 1903, and the outbreak ended in 1904: 121 cases, 119 deaths. The delay may have let plague settle among ground squirrels and other wild rodents of the western United States, where it lives on.",
+        "es": "El 7 de marzo de 1900, tras la muerte de Wong Chut King en un hotel del barrio chino, la policía cercó doce manzanas con unas 25 000 a 35 000 personas, mientras los vecinos blancos podían entrar y salir. El alcalde James Phelan llamó a los chinoestadounidenses «una amenaza constante para la salud pública», una acusación racista: la enfermedad llegó con barcos y ratas, no con ningún pueblo. Una orden de vacunar a todas las personas de origen asiático con una vacuna experimental fue anulada cuando un comerciante chino, Wong Wai, ganó en los tribunales. El gobernador Henry Gage, temiendo por el comercio, negó la peste y difamó al funcionario federal de salud Joseph Kinyoun. Un nuevo gobernador actuó en 1903, y el brote terminó en 1904: 121 casos y 119 muertes. La demora quizá permitió que la peste se instalara entre las ardillas de tierra y otros roedores silvestres del oeste de Estados Unidos, donde sigue viva."
+      },
+      "camera": {
+        "lon": -140,
+        "lat": 30,
+        "zoom": 2.4
+      },
+      "control": {
+        "third": [
+          {
+            "prev": true
+          },
+          {
+            "land": {
+              "circle": [-122.42, 37.77],
+              "km": 50
+            }
+          },
+          {
+            "land": {
+              "circle": [151.21, -33.87],
+              "km": 60
+            }
+          },
+          {
+            "land": {
+              "circle": [-4.25, 55.86],
+              "km": 40
+            }
+          },
+          {
+            "land": {
+              "circle": [120.98, 14.6],
+              "km": 50
+            }
+          },
+          {
+            "land": {
+              "circle": [18.42, -33.92],
+              "km": 50
+            }
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "third",
+          "path": [[-157.86, 21.3], [-150.0, 26.0], [-135.0, 33.0], [-123.0, 37.7], [-122.6, 37.79], [-122.42, 37.8]],
+          "by": "sea",
+          "icon": "🚢"
+        }
+      ],
+      "places": [
+        {
+          "id": "san-francisco-chinatown",
+          "name": {
+            "en": "San Francisco's Chinatown",
+            "es": "El barrio chino de San Francisco"
+          },
+          "at": [-122.4058, 37.7941],
+          "cat": "persecution",
+          "type": "place",
+          "date": "1900-03-07",
+          "place": {
+            "en": "San Francisco, United States",
+            "es": "San Francisco, Estados Unidos"
+          },
+          "text": {
+            "en": "Twelve crowded blocks where Chinese Americans, kept by discrimination in poor housing, were quarantined and blamed when plague arrived in 1900.",
+            "es": "Doce manzanas abarrotadas donde los chinoestadounidenses, relegados por la discriminación a viviendas pobres, fueron puestos en cuarentena y culpados cuando llegó la peste en 1900."
+          },
+          "wiki": {
+            "en": "1900–1904 San Francisco plague",
+            "es": "Peste de San Francisco de 1900-1904"
+          }
+        },
+        {
+          "id": "joseph-kinyoun",
+          "name": {
+            "en": "Joseph Kinyoun",
+            "es": "Joseph Kinyoun"
+          },
+          "at": [-122.4325, 37.8605],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1900-03-11",
+          "life": ["1860-11-25", "1919-02-14"],
+          "place": {
+            "en": "Angel Island, San Francisco Bay, United States",
+            "es": "Isla Ángel, bahía de San Francisco, Estados Unidos"
+          },
+          "text": {
+            "en": "The federal quarantine officer whose laboratory on Angel Island confirmed plague in March 1900. Business leaders, newspapers and the governor smeared him, and he was moved away.",
+            "es": "El funcionario federal de cuarentena cuyo laboratorio en la isla Ángel confirmó la peste en marzo de 1900. Empresarios, periódicos y el gobernador lo difamaron, y fue trasladado."
+          },
+          "wiki": {
+            "en": "Joseph J. Kinyoun",
+            "es": ""
+          }
+        },
+        {
+          "id": "honolulu-chinatown-fire",
+          "name": {
+            "en": "Honolulu's Chinatown fire",
+            "es": "El incendio del barrio chino de Honolulu"
+          },
+          "at": [-157.8628, 21.3122],
+          "cat": "persecution",
+          "type": "event",
+          "date": "1900-01-20",
+          "place": {
+            "en": "Honolulu, Hawaii, United States",
+            "es": "Honolulu, Hawái, Estados Unidos"
+          },
+          "text": {
+            "en": "On 20 January 1900 a fire set by Honolulu's health board to burn plague houses ran out of control and destroyed Chinatown, leaving some 6,000 to 7,000 Chinese and Japanese residents homeless.",
+            "es": "El 20 de enero de 1900, un incendio provocado por la junta de salud de Honolulu para quemar casas con peste se descontroló y destruyó el barrio chino, y dejó sin hogar a unos 6000 a 7000 vecinos chinos y japoneses."
+          },
+          "wiki": {
+            "en": "Chinatown, Honolulu",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1911-01",
+      "title": {
+        "en": "Masks in Manchuria",
+        "es": "Mascarillas en Manchuria"
+      },
+      "text": {
+        "en": "In the winter of 1910–1911 pneumonic plague spread along the railways of Manchuria. Dr Wu Lien-teh had doctors and the public wear gauze masks, and by spring it was stopped.",
+        "es": "En el invierno de 1910-1911, la peste neumónica se extendió por los ferrocarriles de Manchuria. El doctor Wu Lien-teh hizo usar mascarillas de gasa a médicos y vecinos, y en primavera se detuvo."
+      },
+      "details": {
+        "en": "The outbreak began among hunters of tarbagan marmots, whose fur was in demand, and spread with migrant workers going home for the Chinese New Year. This form of plague passed between people by coughing and killed almost everyone it struck. Wu, born in Penang and trained at Cambridge, was sent by the Qing court to Harbin. He carried out an autopsy, rare in China then, showed that the disease spread through the air, and promoted cloth masks, quarantine and disinfection; with imperial permission the dead were cremated, since the frozen ground made burial impossible. A French doctor who refused a mask died within days. About 60,000 people died. In April 1911 Wu chaired an International Plague Conference at Mukden, a step towards world cooperation on health.",
+        "es": "El brote empezó entre cazadores de marmotas tarbagán, cuya piel era muy buscada, y se extendió con los trabajadores que volvían a casa por el Año Nuevo chino. Esta forma de peste pasaba entre las personas al toser y mataba a casi todos los que alcanzaba. Wu, nacido en Penang y formado en Cambridge, fue enviado a Harbin por la corte Qing. Hizo una autopsia, algo raro entonces en China, demostró que la enfermedad se transmitía por el aire y promovió las mascarillas de tela, la cuarentena y la desinfección; con permiso imperial se incineró a los muertos, ya que la tierra helada impedía enterrarlos. Un médico francés que rechazó la mascarilla murió en pocos días. Murieron unas 60 000 personas. En abril de 1911, Wu presidió en Mukden una Conferencia Internacional sobre la Peste, un paso hacia la cooperación mundial en salud."
+      },
+      "camera": {
+        "lon": 123,
+        "lat": 44.5,
+        "zoom": 4.0
+      },
+      "control": {
+        "third": [
+          {
+            "prev": true
+          },
+          {
+            "a1": "CHN",
+            "names": [
+              "Heilongjiang",
+              "Jilin",
+              "Liaoning"
+            ]
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "third",
+          "path": [[117.8, 49.4], [119.7, 49.2], [122.0, 48.0], [123.9, 47.35], [126.64, 45.76], [125.32, 43.82], [123.43, 41.8], [121.0, 41.0], [119.75, 40.0], [118.2, 39.6], [116.4, 39.9]],
+          "by": "land",
+          "icon": "🚂",
+          "label": {
+            "en": "Along the railways",
+            "es": "Por los ferrocarriles"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "wu-lien-teh",
+          "name": {
+            "en": "Wu Lien-teh",
+            "es": "Wu Lien-teh"
+          },
+          "at": [126.6409, 45.7576],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1910-12",
+          "life": ["1879-03-10", "1960-01-21"],
+          "place": {
+            "en": "Harbin, China",
+            "es": "Harbin, China"
+          },
+          "text": {
+            "en": "A Malayan Chinese doctor, the first student of Chinese descent to study medicine at Cambridge. He led the fight against the Manchurian plague and designed a gauze mask, a forerunner of the N95.",
+            "es": "Un médico malayo de origen chino, el primer estudiante de ascendencia china en estudiar medicina en Cambridge. Dirigió la lucha contra la peste de Manchuria y diseñó una mascarilla de gasa, precursora de la N95."
+          },
+          "wiki": {
+            "en": "Wu Lien-teh",
+            "es": "Wu Lien-teh"
+          }
+        },
+        {
+          "id": "tarbagan-marmot",
+          "name": {
+            "en": "Tarbagan marmot",
+            "es": "Marmota tarbagán"
+          },
+          "at": [117.6, 49.0],
+          "cat": "carrier",
+          "type": "animal",
+          "date": "1910",
+          "place": {
+            "en": "Hulunbuir steppe, China",
+            "es": "Estepa de Hulunbuir, China"
+          },
+          "text": {
+            "en": "A marmot of the Mongolian steppes hunted for its fur. The 1910 epidemic began among its hunters; Wu argued that newcomers, unlike the traditional Mongol and Buryat hunters, caught sick animals.",
+            "es": "Una marmota de las estepas de Mongolia cazada por su piel. La epidemia de 1910 empezó entre sus cazadores; Wu sostuvo que los recién llegados, a diferencia de los cazadores mongoles y buriatos tradicionales, atrapaban animales enfermos."
+          },
+          "wiki": {
+            "en": "Tarbagan marmot",
+            "es": "Marmota sibirica"
+          }
+        },
+        {
+          "id": "manchurian-plague",
+          "name": {
+            "en": "Manchurian plague",
+            "es": "Peste de Manchuria"
+          },
+          "at": [123.4315, 41.8057],
+          "cat": "outbreak",
+          "type": "event",
+          "date": "1910-10",
+          "end": "1911-04",
+          "place": {
+            "en": "Manchuria, China",
+            "es": "Manchuria, China"
+          },
+          "text": {
+            "en": "An epidemic of pneumonic plague in 1910–1911 that killed about 60,000 people. Plague workers in masks and protective suits were an early form of today's protective equipment.",
+            "es": "Una epidemia de peste neumónica en 1910-1911 que mató a unas 60 000 personas. Los trabajadores con mascarilla y trajes protectores fueron una forma temprana de los equipos de protección actuales."
+          },
+          "wiki": {
+            "en": "Manchurian plague",
+            "es": "Peste de Manchuria"
+          },
+          "img": "Plague Workers Mukden, Manchuria, 1882-ca. 1936 (imp-cswc-GB-237-CSWC47-LS8-045).jpg"
+        }
+      ]
+    },
+    {
+      "date": "2017-10",
+      "title": {
+        "en": "Plague today",
+        "es": "La peste hoy"
+      },
+      "text": {
+        "en": "Antibiotics cure plague if given early, but it lives on among wild rodents. In 2017 an outbreak in Madagascar, mostly of pneumonic plague, caused some 2,500 cases and 200 deaths.",
+        "es": "Los antibióticos curan la peste si se dan a tiempo, pero sigue viva entre los roedores silvestres. En 2017, un brote en Madagascar, sobre todo de peste neumónica, causó unos 2500 casos y 200 muertes."
+      },
+      "details": {
+        "en": "Streptomycin, isolated in 1943 by Albert Schatz in Selman Waksman's laboratory, became a standard cure for plague; doctors now also use drugs such as gentamicin and doxycycline. With treatment about one patient in ten dies; without it, most do. The World Health Organization considered the third pandemic over by 1960, when deaths fell below 200 a year. About 600 cases are now reported each year, mostly in the Democratic Republic of the Congo, Madagascar and Peru, with a few in the western United States, Mongolia and China. In 2017 the disease reached Madagascar's cities: it began in August with a traveller in a crowded minibus bound for Antananarivo and spread from person to person until November. A drug-resistant strain found in Madagascar in 1995 is a reminder to keep watch.",
+        "es": "La estreptomicina, aislada en 1943 por Albert Schatz en el laboratorio de Selman Waksman, se volvió una cura habitual de la peste; hoy los médicos usan también fármacos como la gentamicina y la doxiciclina. Con tratamiento muere cerca de un paciente de cada diez; sin él, la mayoría. La Organización Mundial de la Salud dio por terminada la tercera pandemia hacia 1960, cuando las muertes bajaron de 200 al año. Hoy se notifican unos 600 casos al año, sobre todo en la República Democrática del Congo, Madagascar y Perú, y unos pocos en el oeste de Estados Unidos, Mongolia y China. En 2017 la enfermedad llegó a las ciudades de Madagascar: empezó en agosto con un viajero en un minibús lleno que iba a Antananarivo y pasó de persona a persona hasta noviembre. Una cepa resistente a los fármacos hallada en Madagascar en 1995 recuerda que hay que seguir vigilando."
+      },
+      "camera": {
+        "lon": -15,
+        "lat": 0,
+        "zoom": 1.0
+      },
+      "control": {
+        "third": null,
+        "today": [
+          "COD",
+          "MDG",
+          "PER"
+        ]
+      },
+      "places": [
+        {
+          "id": "antananarivo",
+          "name": {
+            "en": "Antananarivo",
+            "es": "Antananarivo"
+          },
+          "at": [47.525, -18.91],
+          "cat": "outbreak",
+          "type": "place",
+          "date": "2017-08",
+          "place": {
+            "en": "Madagascar",
+            "es": "Madagascar"
+          },
+          "text": {
+            "en": "Madagascar's capital. With the port of Toamasina it had more than half of the cases of the 2017 outbreak, which spread fast in the crowded cities.",
+            "es": "La capital de Madagascar. Junto con el puerto de Toamasina tuvo más de la mitad de los casos del brote de 2017, que se propagó rápido en las ciudades abarrotadas."
+          },
+          "wiki": {
+            "en": "Antananarivo",
+            "es": "Antananarivo"
+          }
+        },
+        {
+          "id": "streptomycin",
+          "name": {
+            "en": "Streptomycin",
+            "es": "Estreptomicina"
+          },
+          "at": [-74.4474, 40.5008],
+          "cat": "medicine",
+          "type": "invention",
+          "date": "1943-10-19",
+          "place": {
+            "en": "Rutgers University, New Jersey, United States",
+            "es": "Universidad Rutgers, Nueva Jersey, Estados Unidos"
+          },
+          "text": {
+            "en": "An antibiotic from a soil microbe, isolated in 1943 by the student Albert Schatz in Selman Waksman's laboratory. It became a standard treatment for plague and the first antibiotic cure for tuberculosis.",
+            "es": "Un antibiótico de un microbio del suelo, aislado en 1943 por el estudiante Albert Schatz en el laboratorio de Selman Waksman. Se volvió un tratamiento habitual de la peste y la primera cura antibiótica de la tuberculosis."
+          },
+          "wiki": {
+            "en": "Streptomycin",
+            "es": "Estreptomicina"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Plague has struck in three great pandemics: from 541 to about 750, from the Black Death to the 19th century, and from 1855, when it killed some 15 million people, 10 million of them in India. Each taught something: quarantine in Ragusa and Venice, the germ and its fleas in Hong Kong and Karachi, vaccines in Bombay, masks and international cooperation in Manchuria. Those blamed, from Jews in the Middle Ages to Chinese immigrants in San Francisco, were blamed falsely. Plague can now be cured with antibiotics, but it lives on among wild rodents, so health services keep watch.",
+    "es": "La peste ha golpeado en tres grandes pandemias: del 541 hasta cerca del 750, de la peste negra al siglo XIX, y desde 1855, cuando mató a unos 15 millones de personas, 10 millones de ellas en la India. Cada una enseñó algo: la cuarentena en Ragusa y Venecia, el microbio y sus pulgas en Hong Kong y Karachi, las vacunas en Bombay, las mascarillas y la cooperación internacional en Manchuria. A quienes se culpó, de los judíos en la Edad Media a los inmigrantes chinos en San Francisco, se los culpó falsamente. Hoy la peste se cura con antibióticos, pero sigue viva entre los roedores silvestres, así que los servicios de salud siguen vigilando."
+  },
+  "sources": [
+    {
+      "title": "Wikipedia: Plague (disease)",
+      "url": "https://en.wikipedia.org/wiki/Plague_(disease)"
+    },
+    {
+      "title": "Wikipedia: Plague of Justinian",
+      "url": "https://en.wikipedia.org/wiki/Plague_of_Justinian"
+    },
+    {
+      "title": "Wikipedia: First plague pandemic",
+      "url": "https://en.wikipedia.org/wiki/First_plague_pandemic"
+    },
+    {
+      "title": "Wikipedia: Procopius",
+      "url": "https://en.wikipedia.org/wiki/Procopius"
+    },
+    {
+      "title": "Wikipedia: Justinian I",
+      "url": "https://en.wikipedia.org/wiki/Justinian_I"
+    },
+    {
+      "title": "Wikipedia: Pelusium",
+      "url": "https://en.wikipedia.org/wiki/Pelusium"
+    },
+    {
+      "title": "Wikipedia: Kingdom of Aksum",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum"
+    },
+    {
+      "title": "Wikipedia: Gregory of Tours",
+      "url": "https://en.wikipedia.org/wiki/Gregory_of_Tours"
+    },
+    {
+      "title": "Wikipedia: Roman Plague of 590",
+      "url": "https://en.wikipedia.org/wiki/Roman_Plague_of_590"
+    },
+    {
+      "title": "Wikipedia: Plague of Amwas",
+      "url": "https://en.wikipedia.org/wiki/Plague_of_Amwas"
+    },
+    {
+      "title": "Wikipedia: Plague of 664",
+      "url": "https://en.wikipedia.org/wiki/Plague_of_664"
+    },
+    {
+      "title": "Wikipedia: Second plague pandemic",
+      "url": "https://en.wikipedia.org/wiki/Second_plague_pandemic"
+    },
+    {
+      "title": "Wikipedia: Quarantine",
+      "url": "https://en.wikipedia.org/wiki/Quarantine"
+    },
+    {
+      "title": "Wikipedia: Lazzaretto Vecchio",
+      "url": "https://en.wikipedia.org/wiki/Lazzaretto_Vecchio"
+    },
+    {
+      "title": "Wikipedia: Great Plague of London",
+      "url": "https://en.wikipedia.org/wiki/Great_Plague_of_London"
+    },
+    {
+      "title": "Wikipedia: Samuel Pepys",
+      "url": "https://en.wikipedia.org/wiki/Samuel_Pepys"
+    },
+    {
+      "title": "Wikipedia: Plague doctor",
+      "url": "https://en.wikipedia.org/wiki/Plague_doctor"
+    },
+    {
+      "title": "Wikipedia: Eyam",
+      "url": "https://en.wikipedia.org/wiki/Eyam"
+    },
+    {
+      "title": "Wikipedia: William Mompesson",
+      "url": "https://en.wikipedia.org/wiki/William_Mompesson"
+    },
+    {
+      "title": "Wikipedia: Great Plague of Marseille",
+      "url": "https://en.wikipedia.org/wiki/Great_Plague_of_Marseille"
+    },
+    {
+      "title": "Wikipedia: Nicolas Roze (chevalier)",
+      "url": "https://en.wikipedia.org/wiki/Nicolas_Roze_(chevalier)"
+    },
+    {
+      "title": "Wikipedia: Mur de la peste",
+      "url": "https://en.wikipedia.org/wiki/Mur_de_la_peste"
+    },
+    {
+      "title": "Wikipedia: Moscow plague riot of 1771",
+      "url": "https://en.wikipedia.org/wiki/Moscow_plague_riot_of_1771"
+    },
+    {
+      "title": "Wikipedia: 1770–1772 Russian plague",
+      "url": "https://en.wikipedia.org/wiki/1770–1772_Russian_plague"
+    },
+    {
+      "title": "Wikipedia: Ambrose of Moscow",
+      "url": "https://en.wikipedia.org/wiki/Ambrose_of_Moscow"
+    },
+    {
+      "title": "Wikipedia: Grigory Orlov",
+      "url": "https://en.wikipedia.org/wiki/Grigory_Orlov"
+    },
+    {
+      "title": "Wikipedia: Third plague pandemic",
+      "url": "https://en.wikipedia.org/wiki/Third_plague_pandemic"
+    },
+    {
+      "title": "Wikipedia: Panthay Rebellion",
+      "url": "https://en.wikipedia.org/wiki/Panthay_Rebellion"
+    },
+    {
+      "title": "Wikipedia: 1894 Hong Kong plague",
+      "url": "https://en.wikipedia.org/wiki/1894_Hong_Kong_plague"
+    },
+    {
+      "title": "Wikipedia: Alexandre Yersin",
+      "url": "https://en.wikipedia.org/wiki/Alexandre_Yersin"
+    },
+    {
+      "title": "Wikipedia: Kitasato Shibasaburō",
+      "url": "https://en.wikipedia.org/wiki/Kitasato_Shibasaburō"
+    },
+    {
+      "title": "Wikipedia: Bombay plague epidemic",
+      "url": "https://en.wikipedia.org/wiki/Bombay_plague_epidemic"
+    },
+    {
+      "title": "Wikipedia: Waldemar Haffkine",
+      "url": "https://en.wikipedia.org/wiki/Waldemar_Haffkine"
+    },
+    {
+      "title": "Wikipedia: Acacio Gabriel Viegas",
+      "url": "https://en.wikipedia.org/wiki/Acacio_Gabriel_Viegas"
+    },
+    {
+      "title": "Wikipedia: Haffkine Institute",
+      "url": "https://en.wikipedia.org/wiki/Haffkine_Institute"
+    },
+    {
+      "title": "Wikipedia: Paul-Louis Simond",
+      "url": "https://en.wikipedia.org/wiki/Paul-Louis_Simond"
+    },
+    {
+      "title": "Wikipedia: Oriental rat flea",
+      "url": "https://en.wikipedia.org/wiki/Oriental_rat_flea"
+    },
+    {
+      "title": "Wikipedia: Black rat",
+      "url": "https://en.wikipedia.org/wiki/Black_rat"
+    },
+    {
+      "title": "Wikipedia: 1900–1904 San Francisco plague",
+      "url": "https://en.wikipedia.org/wiki/1900–1904_San_Francisco_plague"
+    },
+    {
+      "title": "Wikipedia: Joseph J. Kinyoun",
+      "url": "https://en.wikipedia.org/wiki/Joseph_J._Kinyoun"
+    },
+    {
+      "title": "Wikipedia: Chinatown, Honolulu",
+      "url": "https://en.wikipedia.org/wiki/Chinatown,_Honolulu"
+    },
+    {
+      "title": "Wikipedia: Manchurian plague",
+      "url": "https://en.wikipedia.org/wiki/Manchurian_plague"
+    },
+    {
+      "title": "Wikipedia: Wu Lien-teh",
+      "url": "https://en.wikipedia.org/wiki/Wu_Lien-teh"
+    },
+    {
+      "title": "Wikipedia: Tarbagan marmot",
+      "url": "https://en.wikipedia.org/wiki/Tarbagan_marmot"
+    },
+    {
+      "title": "Wikipedia: Streptomycin",
+      "url": "https://en.wikipedia.org/wiki/Streptomycin"
+    },
+    {
+      "title": "Wikipedia: 21st-century Madagascar plague outbreaks",
+      "url": "https://en.wikipedia.org/wiki/21st-century_Madagascar_plague_outbreaks"
+    }
+  ]
+}

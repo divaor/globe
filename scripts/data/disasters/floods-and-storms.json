@@ -1,0 +1,3340 @@
+{
+  "id": "floods-and-storms",
+  "name": {
+    "en": "Floods, storms and droughts",
+    "es": "Inundaciones, tormentas y sequías"
+  },
+  "icon": "🌀",
+  "era": "modern",
+  "region": {
+    "en": "China, the Americas, Europe, Africa and South and South-East Asia",
+    "es": "China, América, Europa, África y el sur y sureste de Asia"
+  },
+  "start": "1887",
+  "end": "2023",
+  "summary": {
+    "en": "From the Yellow River floods to Hurricane Katrina, Cyclone Nargis and Pakistan's floods of 2022: the deadliest floods, storms and droughts of the last 140 years, who suffered most, and the warnings, barriers and science that came after.",
+    "es": "De las inundaciones del río Amarillo al huracán Katrina, el ciclón Nargis y las inundaciones de Pakistán de 2022: las inundaciones, tormentas y sequías más mortíferas de los últimos 140 años, quiénes sufrieron más, y los avisos, barreras y la ciencia que vinieron después."
+  },
+  "camera": {
+    "lon": 110,
+    "lat": 30,
+    "zoom": 1.2
+  },
+  "sides": [
+    {
+      "id": "river",
+      "name": {
+        "en": "River floods",
+        "es": "Inundaciones de ríos"
+      },
+      "color": "#5dade2"
+    },
+    {
+      "id": "surge",
+      "name": {
+        "en": "Storm surges and sea floods",
+        "es": "Mareas de tormenta e inundaciones del mar"
+      },
+      "color": "#48c9b0"
+    },
+    {
+      "id": "storm",
+      "name": {
+        "en": "Storm tracks and hardest-hit lands",
+        "es": "Trayectorias de tormentas y tierras más golpeadas"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "famine",
+      "name": {
+        "en": "Famine",
+        "es": "Hambruna"
+      },
+      "color": "#8c2f39"
+    },
+    {
+      "id": "drought",
+      "name": {
+        "en": "Drought",
+        "es": "Sequía"
+      },
+      "color": "#d4a017"
+    }
+  ],
+  "steps": [
+    {
+      "date": "1887-09-28",
+      "title": {
+        "en": "The Yellow River breaks out",
+        "es": "El río Amarillo se desborda"
+      },
+      "camera": {
+        "lon": 115.6,
+        "lat": 33.9,
+        "zoom": 8.0
+      },
+      "text": {
+        "en": "In late September 1887 the swollen Yellow River burst its dikes near Zhengzhou and flooded some 130,000 km² of the North China Plain. Estimates of the dead run from 900,000 to 2 million.",
+        "es": "A fines de septiembre de 1887, el río Amarillo crecido rompió sus diques cerca de Zhengzhou e inundó unos 130 000 km² de la llanura del Norte de China. Las estimaciones de muertos van de 900 000 a 2 millones."
+      },
+      "details": {
+        "en": "For centuries, farmers on the North China Plain had built dikes to hold the Yellow River, and as its silt settled the river rose above the fields around it. After days of heavy rain in 1887, it broke through, probably at Huayuankou, and spread across the low plain, drowning villages and market towns. The blue area on the map shows roughly where the water went; historians give different outlines. About two million people lost their homes, and disease and hunger afterwards killed about as many as the water. With 900,000 to 2 million dead, it is among the deadliest natural disasters in history. From 595 BC to 1946 the river is reckoned to have flooded 1,593 times.",
+        "es": "Durante siglos, los campesinos de la llanura del Norte de China levantaron diques para contener el río Amarillo, y a medida que su limo se depositaba, el río quedó por encima de los campos que lo rodeaban. Tras días de lluvias intensas en 1887, rompió los diques, probablemente en Huayuankou, y se extendió por la llanura baja, ahogando aldeas y pueblos con mercado. La zona azul del mapa muestra más o menos adónde llegó el agua; los historiadores dan contornos distintos. Unos dos millones de personas perdieron su casa, y las enfermedades y el hambre de después mataron a casi tantas como el agua. Con 900 000 a 2 millones de muertos, está entre los desastres naturales más mortíferos de la historia. Del 595 a. C. a 1946 se calcula que el río se desbordó 1593 veces."
+      },
+      "control": {
+        "river": {
+          "land": {
+            "poly": [
+              [
+                113.55,
+                34.95
+              ],
+              [
+                114.6,
+                35.0
+              ],
+              [
+                115.6,
+                34.6
+              ],
+              [
+                116.6,
+                34.0
+              ],
+              [
+                117.6,
+                33.5
+              ],
+              [
+                118.6,
+                33.3
+              ],
+              [
+                118.8,
+                32.9
+              ],
+              [
+                117.8,
+                32.5
+              ],
+              [
+                116.5,
+                32.4
+              ],
+              [
+                115.5,
+                32.6
+              ],
+              [
+                114.7,
+                33.1
+              ],
+              [
+                114.0,
+                33.6
+              ],
+              [
+                113.5,
+                34.3
+              ]
+            ],
+            "dense": true
+          }
+        }
+      },
+      "places": [
+        {
+          "id": "yellow-river",
+          "name": {
+            "en": "Yellow River",
+            "es": "Río Amarillo"
+          },
+          "at": [
+            114.35,
+            34.93
+          ],
+          "cat": "flood",
+          "type": "place",
+          "date": "1887",
+          "place": {
+            "en": "North China Plain, China",
+            "es": "Llanura del Norte de China, China"
+          },
+          "text": {
+            "en": "China's second-longest river, 5,464 km, carries so much silt that its bed rises above the plain behind its dikes. Between 595 BC and 1946 it is reckoned to have flooded 1,593 times.",
+            "es": "El segundo río más largo de China, de 5464 km, arrastra tanto limo que su cauce se eleva por encima de la llanura, entre diques. Se calcula que entre el 595 a. C. y 1946 se desbordó 1593 veces."
+          },
+          "details": {
+            "en": "Chinese civilisation grew up on its banks, and tradition says the Xia dynasty began when Yu the Great tamed its floods. The yellow loess it carries settles on the riverbed, so for centuries farmers raised the dikes higher and higher, and the river flowed above the fields around it. When a dike broke, the water could pour across hundreds of kilometres of plain. Over 2,540 years the river shifted its course noticeably 26 times and severely nine times, sometimes reaching the sea hundreds of kilometres from its old mouth. Its floods of 1887, 1931 and 1938 are among the deadliest disasters in history.",
+            "es": "La civilización china creció en sus orillas, y la tradición dice que la dinastía Xia comenzó cuando Yu el Grande domó sus crecidas. El loess amarillo que arrastra se deposita en el cauce, así que durante siglos los campesinos subieron los diques cada vez más, y el río corría por encima de los campos que lo rodeaban. Cuando un dique se rompía, el agua podía extenderse por cientos de kilómetros de llanura. En 2540 años el río cambió notablemente de curso 26 veces, y gravemente nueve, desembocando a veces a cientos de kilómetros de su antigua boca. Sus inundaciones de 1887, 1931 y 1938 están entre los desastres más mortíferos de la historia."
+          },
+          "wiki": {
+            "en": "Yellow River",
+            "es": "Río Amarillo"
+          }
+        },
+        {
+          "id": "yellow-river-flood-1887",
+          "name": {
+            "en": "Yellow River flood of 1887",
+            "es": "Inundación del río Amarillo de 1887"
+          },
+          "at": [
+            113.6253,
+            34.7466
+          ],
+          "cat": "flood",
+          "type": "event",
+          "date": "1887-09-28",
+          "place": {
+            "en": "Near Zhengzhou, Henan, China",
+            "es": "Cerca de Zhengzhou, Henan, China"
+          },
+          "text": {
+            "en": "In late September 1887, swollen by days of rain, the Yellow River broke its dikes near Zhengzhou and flooded some 130,000 km² of the plain. Estimates of the dead run from 900,000 to 2 million.",
+            "es": "A fines de septiembre de 1887, crecido por días de lluvia, el río Amarillo rompió sus diques cerca de Zhengzhou e inundó unos 130 000 km² de llanura. Las estimaciones de muertos van de 900 000 a 2 millones."
+          },
+          "details": {
+            "en": "The water is thought to have broken through at Huayuankou, near Zhengzhou, around 28 September, and spread fast across the low plains, swamping farms and market towns. Some two million people lost their homes. Disease and hunger after the flood killed about as many people as the water itself. With estimates from 900,000 to 2 million dead, it is counted among the deadliest natural disasters ever recorded; only the 1931 floods may have killed more in China. It struck under the Qing dynasty.",
+            "es": "Se cree que el agua rompió el dique en Huayuankou, cerca de Zhengzhou, hacia el 28 de septiembre, y se extendió deprisa por las llanuras bajas, anegando granjas y pueblos con mercado. Unos dos millones de personas perdieron su casa. Las enfermedades y el hambre después de la inundación mataron más o menos a tantas personas como el agua misma. Con estimaciones de 900 000 a 2 millones de muertos, se cuenta entre los desastres naturales más mortíferos registrados; solo las inundaciones de 1931 quizá mataron a más gente en China. Ocurrió bajo la dinastía Qing."
+          },
+          "wiki": {
+            "en": "1887 Yellow River flood",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1900-09-08",
+      "title": {
+        "en": "Galveston drowns",
+        "es": "Galveston se ahoga"
+      },
+      "camera": {
+        "lon": -86,
+        "lat": 24.5,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "On 8 September 1900 a Category 4 hurricane drove the sea over Galveston Island, Texas. Between 6,000 and 12,000 people died, still the deadliest natural disaster in US history.",
+        "es": "El 8 de septiembre de 1900, un huracán de categoría 4 lanzó el mar sobre la isla de Galveston, en Texas. Murieron entre 6000 y 12 000 personas: sigue siendo el peor desastre natural de la historia de Estados Unidos."
+      },
+      "details": {
+        "en": "The storm crossed the Caribbean and Cuba before turning into the Gulf of Mexico. In Havana, forecasters of the Jesuit observatory of Belén, where Father Benito Viñes had pioneered hurricane warnings, said it would keep going west; but the director of the US Weather Bureau had blocked their telegrams after the Spanish–American War, and his forecasters expected it to turn north. Galveston, a rich port whose highest point was 2.7 m above the sea, did not evacuate. On the evening of 8 September a storm surge of more than 4.5 m swept the whole island, and every bridge to the mainland was lost. Afterwards the city voted to build a seawall and raised itself on dredged sand; in 1915 another hurricane killed 53 people there instead of thousands.",
+        "es": "La tormenta cruzó el Caribe y Cuba antes de entrar en el golfo de México. En La Habana, los meteorólogos del observatorio jesuita de Belén, donde el padre Benito Viñes había sido pionero de los avisos de huracán, dijeron que seguiría hacia el oeste; pero el director de la Oficina Meteorológica de Estados Unidos había bloqueado sus telegramas tras la guerra hispano-estadounidense, y sus meteorólogos esperaban que girara al norte. Galveston, un puerto rico cuyo punto más alto estaba a 2,7 m sobre el mar, no se evacuó. La tarde del 8 de septiembre, una marea de tormenta de más de 4,5 m barrió toda la isla, y se perdieron todos los puentes a tierra firme. Después la ciudad votó construir un malecón y se elevó sobre arena dragada; en 1915 otro huracán mató allí a 53 personas en vez de miles."
+      },
+      "control": {
+        "river": null,
+        "surge": {
+          "land": [
+            [
+              -95.2,
+              29.05
+            ],
+            [
+              -94.68,
+              29.3
+            ],
+            [
+              -94.7,
+              29.38
+            ],
+            [
+              -95.15,
+              29.2
+            ]
+          ]
+        }
+      },
+      "moves": [
+        {
+          "side": "storm",
+          "path": [
+            [
+              -61.0,
+              15.0
+            ],
+            [
+              -66.0,
+              16.5
+            ],
+            [
+              -70.3,
+              18.2
+            ],
+            [
+              -74.5,
+              20.0
+            ],
+            [
+              -78.5,
+              21.8
+            ],
+            [
+              -82.5,
+              23.5
+            ],
+            [
+              -86.5,
+              24.8
+            ],
+            [
+              -90.5,
+              26.8
+            ],
+            [
+              -94.0,
+              28.6
+            ],
+            [
+              -95.3,
+              29.6
+            ]
+          ],
+          "icon": "🌀",
+          "label": {
+            "en": "Galveston hurricane",
+            "es": "Huracán de Galveston"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "galveston-hurricane-1900",
+          "name": {
+            "en": "Galveston hurricane",
+            "es": "Huracán de Galveston"
+          },
+          "at": [
+            -94.8258,
+            29.2811
+          ],
+          "cat": "storm",
+          "type": "event",
+          "date": "1900-09-08",
+          "place": {
+            "en": "Galveston, Texas, United States",
+            "es": "Galveston, Texas, Estados Unidos"
+          },
+          "text": {
+            "en": "On 8 September 1900 a Category 4 hurricane drove a surge of over 4.5 m across Galveston Island, whose highest point was 2.7 m. Between 6,000 and 12,000 died: the deadliest US disaster.",
+            "es": "El 8 de septiembre de 1900, un huracán de categoría 4 lanzó una marea de tormenta de más de 4,5 m sobre la isla de Galveston, cuyo punto más alto era de 2,7 m. Murieron entre 6000 y 12 000 personas: el peor desastre de Estados Unidos."
+          },
+          "details": {
+            "en": "Galveston was a booming port of almost 38,000 people. The US Weather Bureau thought the storm would turn north over Florida; its director had blocked the telegrams of Cuba's forecasters, who insisted it would go west. Few people left the island. The water rose through the afternoon and evening of 8 September, winds blew away the Weather Bureau's instruments, and the surge swept buildings off their foundations; all the bridges to the mainland were lost. The most cited official figure is 8,000 dead. Bodies were so many that, in the days after, about 50 African American men were forced at gunpoint to load them onto a barge to be dumped at sea; when the currents washed many back, the dead were burned on pyres for weeks. Clara Barton, 78, founder of the American Red Cross, came to help.",
+            "es": "Galveston era un puerto en auge de casi 38 000 habitantes. La Oficina Meteorológica de Estados Unidos creía que la tormenta giraría al norte sobre Florida; su director había bloqueado los telegramas de los meteorólogos de Cuba, que insistían en que iría al oeste. Pocos dejaron la isla. El agua subió la tarde y la noche del 8 de septiembre, el viento arrancó los instrumentos de la oficina meteorológica, y la marea arrastró edificios de sus cimientos; se perdieron todos los puentes a tierra firme. La cifra oficial más citada es de 8000 muertos. Eran tantos los cuerpos que en los días siguientes obligaron a punta de pistola a unos 50 hombres afroestadounidenses a cargarlos en una barcaza para arrojarlos al mar; cuando las corrientes devolvieron muchos, los muertos se quemaron en piras durante semanas. La fundadora de la Cruz Roja, Clara Barton, de 78 años, acudió a ayudar."
+          },
+          "wiki": {
+            "en": "1900 Galveston hurricane",
+            "es": "Huracán de Galveston (1900)"
+          }
+        },
+        {
+          "id": "benito-vines",
+          "name": {
+            "en": "Benito Viñes",
+            "es": "Benito Viñes"
+          },
+          "at": [
+            -82.3534,
+            23.1357
+          ],
+          "cat": "science",
+          "type": "person",
+          "date": "1875-09-11",
+          "life": [
+            "1837-09-19",
+            "1893-07-23"
+          ],
+          "place": {
+            "en": "Belén College Observatory, Havana, Cuba",
+            "es": "Observatorio del Colegio de Belén, La Habana, Cuba"
+          },
+          "text": {
+            "en": "Jesuit priest who directed the Belén observatory in Havana and in 1875 very likely issued the first hurricane warning. In 1900 his successors' forecast for Galveston was ignored.",
+            "es": "Sacerdote jesuita que dirigió el observatorio de Belén en La Habana y en 1875 emitió muy probablemente el primer aviso de huracán. En 1900 se ignoró el pronóstico de sus sucesores para Galveston."
+          },
+          "details": {
+            "en": "Born in Catalonia in 1837, Viñes arrived in Havana in 1870 to run the Royal Observatory of the Colegio de Belén. He studied the clouds, winds and air pressure of passing storms and learned to tell where a hurricane was and where it was heading. On 11 September 1875 he published a forecast in the newspapers and warned Havana's harbour master, very likely the first hurricane warning ever issued. His book of practical hints on West Indian hurricanes was translated into English by the US Navy. He died in 1893, but the observatory he built up was still, in 1900, one of the most advanced in the world, and its forecasters correctly said the Galveston storm would go west.",
+            "es": "Nacido en Cataluña en 1837, Viñes llegó a La Habana en 1870 para dirigir el Real Observatorio del Colegio de Belén. Estudió las nubes, los vientos y la presión del aire de las tormentas y aprendió a saber dónde estaba un huracán y hacia dónde iba. El 11 de septiembre de 1875 publicó un pronóstico en los periódicos y avisó al capitán del puerto de La Habana: muy probablemente el primer aviso de huracán de la historia. Su libro de consejos prácticos sobre los huracanes de las Antillas fue traducido al inglés por la Marina de Estados Unidos. Murió en 1893, pero el observatorio que impulsó seguía siendo en 1900 uno de los más avanzados del mundo, y sus meteorólogos acertaron al decir que la tormenta de Galveston iría al oeste."
+          },
+          "wiki": {
+            "en": "Benito Viñes",
+            "es": "Benito Viñes"
+          }
+        },
+        {
+          "id": "galveston-seawall",
+          "name": {
+            "en": "Galveston Seawall",
+            "es": "Malecón de Galveston"
+          },
+          "at": [
+            -94.7742,
+            29.3025
+          ],
+          "cat": "relief",
+          "type": "structure",
+          "date": "1902",
+          "end": "1963",
+          "place": {
+            "en": "Galveston, Texas, United States",
+            "es": "Galveston, Texas, Estados Unidos"
+          },
+          "text": {
+            "en": "After 1900 Galveston built a concrete seawall 5.2 m high and pumped in sand to raise the whole city, by up to 5.2 m. A 1915 hurricane tested it: 53 died instead of thousands.",
+            "es": "Después de 1900 Galveston construyó un muro de concreto de 5,2 m de alto y bombeó arena para elevar la ciudad entera, hasta 5,2 m. Un huracán de 1915 lo puso a prueba: murieron 53 personas en vez de miles."
+          },
+          "details": {
+            "en": "Three engineers, Alfred Noble, Henry Martyn Robert and H. C. Ripley, designed the defences. In November 1902 the people of Galveston voted 3,085 to 21 to pay for the seawall; the first 4.8 km were finished in July 1904, and it eventually stretched more than 16 km. At the same time some 11 million m³ of sand dredged from the shipping channel were pumped under the city, and over 2,100 buildings, including a 3,000-tonne church, were jacked up. The seawall has held back many storms since; but the disaster ended Galveston's golden era, as investors turned to Houston instead.",
+            "es": "Tres ingenieros, Alfred Noble, Henry Martyn Robert y H. C. Ripley, diseñaron las defensas. En noviembre de 1902 los vecinos de Galveston votaron 3085 contra 21 para pagar el malecón; los primeros 4,8 km se terminaron en julio de 1904, y con el tiempo alcanzó más de 16 km. Al mismo tiempo, unos 11 millones de m³ de arena dragada del canal de navegación se bombearon bajo la ciudad, y se levantaron más de 2100 edificios, entre ellos una iglesia de 3000 toneladas. El malecón ha contenido muchas tormentas desde entonces; pero el desastre acabó con la época dorada de Galveston, porque los inversores se volcaron hacia Houston."
+          },
+          "wiki": {
+            "en": "Galveston Seawall",
+            "es": ""
+          },
+          "img": "No. 3, Sea Wall, From West of Rapid Fire Battery, Fort Crockett - NARA - 278143.jpg"
+        }
+      ]
+    },
+    {
+      "date": "1931-08-25",
+      "title": {
+        "en": "China's great flood",
+        "es": "La gran inundación de China"
+      },
+      "camera": {
+        "lon": 116.3,
+        "lat": 31.7,
+        "zoom": 6.5
+      },
+      "text": {
+        "en": "In summer 1931 the Yangtze and Huai rivers flooded some 180,000 km², with Wuhan under water for months. Estimates of the dead range from about 422,000 to 4 million.",
+        "es": "En el verano de 1931, los ríos Yangtsé y Huai inundaron unos 180 000 km², y Wuhan quedó meses bajo el agua. Las estimaciones de muertos van de unas 422 000 a 4 millones."
+      },
+      "details": {
+        "en": "Years of drought were followed by a snowy winter and very heavy rain in spring and summer. The rivers rose across central China; at Hankou, in Wuhan, the water stood 16 m above average, and the city stayed flooded for nearly three months. On 25 August the dikes of Gaoyou Lake gave way, drowning 18,000 people in one county. Up to 53 million people were affected. The death toll is one of the most uncertain of any disaster: a field survey found 150,000 drowned in the first months, Chinese historians count about 422,000 deaths, and some Western sources claim 3.7 to 4 million with the famine and cholera that followed. The Nationalist government's relief commission brought in Chinese and foreign experts and the League of Nations. The map shows the flooded valleys only roughly.",
+        "es": "A años de sequía siguieron un invierno de mucha nieve y lluvias muy intensas en primavera y verano. Los ríos crecieron en todo el centro de China; en Hankou, en Wuhan, el agua llegó a 16 m por encima de lo normal, y la ciudad estuvo inundada casi tres meses. El 25 de agosto cedieron los diques del lago Gaoyou y se ahogaron 18 000 personas en un solo condado. Hubo hasta 53 millones de afectados. El número de muertos es de los más inciertos de cualquier desastre: una encuesta de campo halló 150 000 ahogados en los primeros meses, historiadores chinos cuentan unas 422 000 muertes, y algunas fuentes occidentales hablan de 3,7 a 4 millones con el hambre y el cólera que siguieron. La comisión de socorro del gobierno nacionalista reunió a expertos chinos y extranjeros y a la Sociedad de las Naciones. El mapa muestra los valles inundados solo de forma aproximada."
+      },
+      "control": {
+        "surge": null,
+        "river": {
+          "land": [
+            {
+              "poly": [
+                [
+                  111.681,
+                  30.799
+                ],
+                [
+                  112.469,
+                  30.658
+                ],
+                [
+                  113.261,
+                  30.057
+                ],
+                [
+                  113.032,
+                  29.8
+                ],
+                [
+                  113.345,
+                  30.163
+                ],
+                [
+                  114.18,
+                  30.991
+                ],
+                [
+                  115.282,
+                  30.552
+                ],
+                [
+                  116.032,
+                  30.154
+                ],
+                [
+                  116.3,
+                  30.411
+                ],
+                [
+                  116.76,
+                  30.818
+                ],
+                [
+                  117.518,
+                  31.224
+                ],
+                [
+                  118.017,
+                  31.589
+                ],
+                [
+                  118.468,
+                  32.341
+                ],
+                [
+                  119.466,
+                  32.604
+                ],
+                [
+                  120.426,
+                  32.39
+                ],
+                [
+                  120.175,
+                  31.61
+                ],
+                [
+                  119.435,
+                  31.796
+                ],
+                [
+                  119.13,
+                  31.758
+                ],
+                [
+                  118.781,
+                  31.11
+                ],
+                [
+                  118.08,
+                  30.575
+                ],
+                [
+                  117.338,
+                  30.181
+                ],
+                [
+                  116.899,
+                  29.789
+                ],
+                [
+                  115.969,
+                  29.346
+                ],
+                [
+                  114.819,
+                  29.848
+                ],
+                [
+                  114.419,
+                  30.209
+                ],
+                [
+                  114.054,
+                  29.636
+                ],
+                [
+                  113.168,
+                  29.0
+                ],
+                [
+                  112.541,
+                  29.542
+                ],
+                [
+                  112.033,
+                  29.942
+                ],
+                [
+                  111.519,
+                  30.001
+                ]
+              ]
+            },
+            {
+              "poly": [
+                [
+                  113.923,
+                  32.759
+                ],
+                [
+                  114.881,
+                  32.709
+                ],
+                [
+                  115.459,
+                  32.808
+                ],
+                [
+                  116.173,
+                  32.809
+                ],
+                [
+                  116.377,
+                  32.844
+                ],
+                [
+                  116.779,
+                  32.958
+                ],
+                [
+                  117.161,
+                  33.249
+                ],
+                [
+                  117.745,
+                  33.486
+                ],
+                [
+                  118.524,
+                  33.659
+                ],
+                [
+                  119.139,
+                  33.399
+                ],
+                [
+                  119.657,
+                  33.049
+                ],
+                [
+                  119.861,
+                  32.497
+                ],
+                [
+                  119.04,
+                  32.302
+                ],
+                [
+                  118.944,
+                  32.65
+                ],
+                [
+                  118.663,
+                  32.8
+                ],
+                [
+                  118.476,
+                  32.941
+                ],
+                [
+                  118.054,
+                  32.814
+                ],
+                [
+                  117.637,
+                  32.651
+                ],
+                [
+                  117.219,
+                  32.341
+                ],
+                [
+                  116.622,
+                  32.155
+                ],
+                [
+                  116.227,
+                  32.091
+                ],
+                [
+                  115.541,
+                  32.092
+                ],
+                [
+                  114.919,
+                  31.991
+                ],
+                [
+                  113.877,
+                  32.041
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "china-floods-1931",
+          "name": {
+            "en": "China floods of 1931",
+            "es": "Inundaciones de China de 1931"
+          },
+          "at": [
+            114.2726,
+            30.5812
+          ],
+          "cat": "flood",
+          "type": "event",
+          "date": "1931-08-19",
+          "place": {
+            "en": "Wuhan and the Yangtze and Huai valleys, China",
+            "es": "Wuhan y los valles del Yangtsé y el Huai, China"
+          },
+          "text": {
+            "en": "In the summer of 1931 the Yangtze, the Huai and the Yellow River flooded about 180,000 km² of central China. Estimates of the dead range from about 422,000 to 4 million.",
+            "es": "En el verano de 1931 el Yangtsé, el Huai y el río Amarillo inundaron unos 180 000 km² del centro de China. Las estimaciones de muertos van de unas 422 000 a 4 millones."
+          },
+          "details": {
+            "en": "A long drought, a snowy winter and then extreme rains in spring and summer filled the rivers. On 19 August the water at Hankou, in Wuhan, stood 16 m above average; a dike had already failed there before dawn on 27 July, and the city stayed under several metres of water for close to three months. Nanjing, then the capital, was flooded too, and on 25 August the dikes of Gaoyou Lake broke. Up to 53 million people were affected. The estimates of the dead differ hugely: a survey led by John Lossing Buck found 150,000 drowned in the first months, Chinese historians count 422,420 deaths, and some Western sources claim 3.7 to 4 million with the famine and disease that followed. The boat-dwelling Tanka people suffered greatly.",
+            "es": "Una larga sequía, un invierno de mucha nieve y después lluvias extremas en primavera y verano llenaron los ríos. El 19 de agosto el agua en Hankou, en Wuhan, estaba 16 m por encima de lo normal; un dique ya había fallado allí antes del amanecer del 27 de julio, y la ciudad quedó bajo varios metros de agua durante casi tres meses. Nankín, entonces la capital, también se inundó, y el 25 de agosto se rompieron los diques del lago Gaoyou. Hubo hasta 53 millones de afectados. Las estimaciones de muertos difieren muchísimo: una encuesta dirigida por John Lossing Buck halló 150 000 ahogados en los primeros meses, historiadores chinos cuentan 422 420 muertes, y algunas fuentes occidentales hablan de 3,7 a 4 millones con el hambre y las enfermedades que siguieron. El pueblo tanka, que vive en barcos, sufrió mucho."
+          },
+          "wiki": {
+            "en": "1931 China floods",
+            "es": "Inundaciones en China de 1931"
+          }
+        },
+        {
+          "id": "gaoyou-dike-1931",
+          "name": {
+            "en": "Gaoyou Lake dike breach",
+            "es": "Rotura de los diques del lago Gaoyou"
+          },
+          "at": [
+            119.3333,
+            32.8333
+          ],
+          "cat": "flood",
+          "type": "event",
+          "date": "1931-08-25",
+          "place": {
+            "en": "Gaoyou Lake, Jiangsu, China",
+            "es": "Lago Gaoyou, Jiangsu, China"
+          },
+          "text": {
+            "en": "On 25 August 1931 water rushing down the Grand Canal broke the dikes of Gaoyou Lake. In Gaoyou County alone, 18,000 people drowned and 58,000 more died of famine.",
+            "es": "El 25 de agosto de 1931, el agua que bajaba por el Gran Canal rompió los diques del lago Gaoyou. Solo en el condado de Gaoyou se ahogaron 18 000 personas y otras 58 000 murieron de hambre."
+          },
+          "details": {
+            "en": "It was one of the most disastrous single events of the 1931 floods. The government set up a National Flood Relief Commission under T. V. Soong, with Chinese and foreign experts, among them the epidemiologist Wu Liande and the British refugee expert John Hope Simpson, and help from the League of Nations; the aviators Charles and Anne Lindbergh even flew over the flood zone to survey it. At Gaoyou, the missionary Thomas Harnsberger and General Wang Shuxiang, an expert in hydraulics, led the rebuilding of the dikes. Even so, the flood is little remembered in China today.",
+            "es": "Fue uno de los sucesos más desastrosos de las inundaciones de 1931. El gobierno creó una Comisión Nacional de Socorro por las Inundaciones, presidida por T. V. Soong, con expertos chinos y extranjeros, entre ellos el epidemiólogo Wu Liande y el experto británico en refugiados John Hope Simpson, y con ayuda de la Sociedad de las Naciones; los aviadores Charles y Anne Lindbergh llegaron a sobrevolar la zona para estudiarla. En Gaoyou, el misionero Thomas Harnsberger y el general Wang Shuxiang, experto en hidráulica, dirigieron la reconstrucción de los diques. Aun así, la inundación se recuerda poco hoy en China."
+          },
+          "wiki": {
+            "en": "Gaoyou Lake",
+            "es": "Lago Gaoyou"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1936-03",
+      "title": {
+        "en": "The Dust Bowl",
+        "es": "El Dust Bowl"
+      },
+      "camera": {
+        "lon": -109,
+        "lat": 37.5,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "In the 1930s drought and ploughed-up prairie turned the southern Great Plains into the Dust Bowl. Millions left; in 1936 Dorothea Lange photographed a migrant mother in California.",
+        "es": "En los años treinta, la sequía y la pradera arada convirtieron las Grandes Llanuras del sur en el Dust Bowl. Millones se fueron; en 1936 Dorothea Lange fotografió a una madre migrante en California."
+      },
+      "details": {
+        "en": "Settlers had ploughed up the deep-rooted grass of the Plains to grow wheat. When droughts struck in waves, in 1934, 1936 and 1939–1940, the wind lifted the bare soil into \"black blizzards\". On Black Sunday, 14 April 1935, a wall of dust swept the Oklahoma and Texas panhandles, and a reporter named the region \"the Dust Bowl\". Between 1930 and 1940 about 3.5 million people left the Plains states, many for California, where the newcomers, called \"Okies\", found that the Depression had left things little better. In March 1936, in a pea-pickers' camp at Nipomo, Dorothea Lange photographed Florence Owens Thompson, a farm worker of Cherokee descent, and her children; Migrant Mother became the face of the Great Depression. The government paid farmers, taught soil conservation and planted 220 million trees.",
+        "es": "Los colonos habían arado la hierba de raíces profundas de las Llanuras para sembrar trigo. Cuando llegaron las sequías en oleadas, en 1934, 1936 y 1939-1940, el viento levantó el suelo desnudo en «ventiscas negras». El Domingo Negro, 14 de abril de 1935, un muro de polvo barrió los extremos de Oklahoma y Texas, y un periodista llamó a la región «el Dust Bowl». Entre 1930 y 1940, unos 3,5 millones de personas dejaron los estados de las Llanuras, muchas hacia California, donde los recién llegados, llamados «okies», hallaron que la Depresión había dejado las cosas poco mejor. En marzo de 1936, en un campamento de recolectores de arvejas de Nipomo, Dorothea Lange fotografió a Florence Owens Thompson, jornalera de ascendencia cheroqui, y a sus hijos; Madre migrante se convirtió en el rostro de la Gran Depresión. El gobierno pagó a los agricultores, enseñó a conservar el suelo y plantó 220 millones de árboles."
+      },
+      "control": {
+        "river": null,
+        "drought": {
+          "land": {
+            "poly": [
+              [
+                -105.2,
+                39.3
+              ],
+              [
+                -99.3,
+                39.3
+              ],
+              [
+                -99.3,
+                34.3
+              ],
+              [
+                -103.1,
+                34.3
+              ],
+              [
+                -105.2,
+                35.5
+              ]
+            ],
+            "dense": true
+          }
+        }
+      },
+      "moves": [
+        {
+          "side": "drought",
+          "path": [
+            [
+              -101.5,
+              36.5
+            ],
+            [
+              -106.6,
+              35.1
+            ],
+            [
+              -112.0,
+              35.2
+            ],
+            [
+              -117.0,
+              34.9
+            ],
+            [
+              -119.7,
+              35.6
+            ]
+          ],
+          "by": "land",
+          "icon": "🚗",
+          "label": {
+            "en": "West to California",
+            "es": "Al oeste, a California"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "dust-bowl",
+          "name": {
+            "en": "Dust Bowl",
+            "es": "Dust Bowl"
+          },
+          "at": [
+            -101.4794,
+            36.6853
+          ],
+          "cat": "drought",
+          "type": "event",
+          "date": "1930",
+          "end": "1940",
+          "place": {
+            "en": "Southern Great Plains, United States",
+            "es": "Grandes Llanuras del sur, Estados Unidos"
+          },
+          "text": {
+            "en": "In the 1930s drought and the ploughing up of prairie grass turned the southern Great Plains into a land of dust storms. About 3.5 million people left the Plains states.",
+            "es": "En los años treinta, la sequía y el arado de la pradera convirtieron las Grandes Llanuras del sur en una tierra de tormentas de polvo. Unos 3,5 millones de personas dejaron los estados de las Llanuras."
+          },
+          "details": {
+            "en": "Settlers had broken the deep-rooted grasses to plant wheat, without the dryland farming methods that hold the soil. When drought came in waves, in 1934, 1936 and 1939–1940, the wind lifted the bare topsoil into \"black blizzards\" across some 400,000 km² centred on the Oklahoma and Texas panhandles. Crops failed and many farm families lost everything; between 1930 and 1940 about 3.5 million people moved out of the Plains states, many to California, where they were called \"Okies\". Roosevelt's government paid farmers, set up the Soil Erosion Service under Hugh Hammond Bennett and taught soil conservation, and planted windbreaks of trees across the Plains.",
+            "es": "Los colonos habían roto las hierbas de raíces profundas para sembrar trigo, sin los métodos de cultivo de secano que retienen el suelo. Cuando llegó la sequía en oleadas, en 1934, 1936 y 1939-1940, el viento levantó la capa fértil desnuda en «ventiscas negras» sobre unos 400 000 km² centrados en los extremos de Oklahoma y Texas. Las cosechas se perdieron y muchas familias campesinas lo perdieron todo; entre 1930 y 1940 unos 3,5 millones de personas salieron de los estados de las Llanuras, muchas hacia California, donde las llamaban «okies». El gobierno de Roosevelt pagó a los agricultores, creó el Servicio de Erosión del Suelo bajo Hugh Hammond Bennett, enseñó a conservar el suelo y plantó cortavientos de árboles en las Llanuras."
+          },
+          "wiki": {
+            "en": "Dust Bowl",
+            "es": "Dust Bowl"
+          }
+        },
+        {
+          "id": "black-sunday-1935",
+          "name": {
+            "en": "Black Sunday",
+            "es": "Domingo Negro"
+          },
+          "at": [
+            -102.0721,
+            36.3361
+          ],
+          "cat": "drought",
+          "type": "event",
+          "date": "1935-04-14",
+          "place": {
+            "en": "Oklahoma and Texas panhandles, United States",
+            "es": "Extremos de Oklahoma y Texas, Estados Unidos"
+          },
+          "text": {
+            "en": "On 14 April 1935 one of the worst dust storms in US history, a \"black blizzard\", swept the southern Plains, turning afternoon into night. It carried off some 300,000 tons of topsoil.",
+            "es": "El 14 de abril de 1935, una de las peores tormentas de polvo de la historia de Estados Unidos, una «ventisca negra», barrió las Llanuras del sur y convirtió la tarde en noche. Se llevó unas 300 000 toneladas de suelo fértil."
+          },
+          "details": {
+            "en": "The storm first struck the Oklahoma panhandle and north-western Oklahoma in the afternoon, reaching Beaver around 4 pm, Boise City around 5:15 and Amarillo, Texas, at 7:20. In his account of the storm, the reporter Robert E. Geiger called the region \"the Dust Bowl\", and the name stuck. The photograph of the wall of dust rolling towards Stratford, Texas, became one of the images of the decade.",
+            "es": "La tormenta golpeó primero el extremo de Oklahoma y el noroeste del estado por la tarde: llegó a Beaver hacia las 4, a Boise City hacia las 5:15 y a Amarillo, en Texas, a las 7:20. En su crónica de la tormenta, el periodista Robert E. Geiger llamó a la región «el Dust Bowl» (el cuenco de polvo), y el nombre se quedó. La fotografía del muro de polvo que avanza hacia Stratford, Texas, se convirtió en una de las imágenes de la década."
+          },
+          "wiki": {
+            "en": "Black Sunday (storm)",
+            "es": ""
+          }
+        },
+        {
+          "id": "migrant-mother",
+          "name": {
+            "en": "Migrant Mother",
+            "es": "Madre migrante"
+          },
+          "at": [
+            -120.4757,
+            35.0428
+          ],
+          "cat": "art",
+          "type": "work",
+          "date": "1936-03",
+          "place": {
+            "en": "Nipomo, California, United States",
+            "es": "Nipomo, California, Estados Unidos"
+          },
+          "text": {
+            "en": "In March 1936 Dorothea Lange photographed Florence Owens Thompson and her children in a pea-pickers' camp in California. The picture became the face of the Great Depression.",
+            "es": "En marzo de 1936 Dorothea Lange fotografió a Florence Owens Thompson y a sus hijos en un campamento de recolectores de arvejas en California. La foto se convirtió en el rostro de la Gran Depresión."
+          },
+          "details": {
+            "en": "Lange, working for the government's Resettlement Administration, took seven pictures in about ten minutes at a camp in Nipomo where freezing rain had destroyed the pea crop. Thompson, then 32, was born in Indian Territory, today's Oklahoma, to parents of Cherokee descent, and had come to California with her family in the 1920s; she followed the harvests as a farm worker. Her picture stood for all the migrants of the 1930s, including those driven west by the Dust Bowl. Lange did not ask her name. When a journalist found her in 1978 she said she wished the picture had never been taken: she had never received a penny from it. The photograph is in the public domain.",
+            "es": "Lange, que trabajaba para la Administración de Reasentamiento del gobierno, tomó siete fotos en unos diez minutos en un campamento de Nipomo donde la lluvia helada había destruido la cosecha de arvejas. Thompson, de 32 años, había nacido en el Territorio Indio, hoy Oklahoma, de padres de ascendencia cheroqui, y había llegado a California con su familia en los años veinte; seguía las cosechas como jornalera. Su foto representó a todos los migrantes de los años treinta, entre ellos a los que el Dust Bowl empujó al oeste. Lange no le preguntó su nombre. Cuando un periodista la encontró en 1978, dijo que ojalá nunca le hubieran tomado la foto: nunca había recibido un centavo por ella. La fotografía es de dominio público."
+          },
+          "wiki": {
+            "en": "Migrant Mother",
+            "es": ""
+          }
+        },
+        {
+          "id": "great-plains-shelterbelt",
+          "name": {
+            "en": "Great Plains Shelterbelt",
+            "es": "Cinturón de árboles de las Grandes Llanuras"
+          },
+          "at": [
+            -99.508,
+            34.878
+          ],
+          "cat": "relief",
+          "type": "event",
+          "date": "1934",
+          "end": "1942",
+          "place": {
+            "en": "From North Dakota to Texas, United States",
+            "es": "De Dakota del Norte a Texas, Estados Unidos"
+          },
+          "text": {
+            "en": "From 1934 the US government planted windbreaks of trees across the Great Plains to slow the wind and hold the soil. By 1942 there were 220 million trees.",
+            "es": "Desde 1934 el gobierno de Estados Unidos plantó cortavientos de árboles a lo largo de las Grandes Llanuras para frenar el viento y retener el suelo. En 1942 había 220 millones de árboles."
+          },
+          "details": {
+            "en": "The Forest Service believed that rows of trees around farms would cut the wind and keep moisture in the soil. Oklahoma's first state forester planted the first tree of the first federal shelterbelt in 1935, and the Civilian Conservation Corps and farmers planted belt after belt. By 1942 the trees covered some 48,000 km² in a zone about 160 km wide, from the Canadian border in North Dakota to the Brazos River in Texas. With contour ploughing, strip farming and other ways to save the soil that the government taught farmers, they helped bring the dust under control.",
+            "es": "El Servicio Forestal creía que las hileras de árboles alrededor de las granjas cortarían el viento y conservarían la humedad del suelo. El primer guardabosques del estado de Oklahoma plantó el primer árbol del primer cinturón federal en 1935, y el Cuerpo Civil de Conservación y los agricultores plantaron franja tras franja. En 1942 los árboles cubrían unos 48 000 km² en una zona de unos 160 km de ancho, desde la frontera con Canadá en Dakota del Norte hasta el río Brazos en Texas. Junto con el arado en curvas de nivel, el cultivo en franjas y otras formas de proteger el suelo que el gobierno enseñó a los agricultores, ayudaron a dominar el polvo."
+          },
+          "wiki": {
+            "en": "Great Plains Shelterbelt",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1938-06-13",
+      "title": {
+        "en": "Breaking the dikes on purpose",
+        "es": "Romper los diques a propósito"
+      },
+      "camera": {
+        "lon": 115.8,
+        "lat": 33.8,
+        "zoom": 8.5
+      },
+      "text": {
+        "en": "In June 1938, to stop the Japanese army, China's Nationalist forces broke the Yellow River dikes at Huayuankou. The human-made flood killed 400,000 to 500,000 people.",
+        "es": "En junio de 1938, para detener al ejército japonés, las fuerzas nacionalistas chinas rompieron los diques del río Amarillo en Huayuankou. La inundación provocada mató a entre 400 000 y 500 000 personas."
+      },
+      "details": {
+        "en": "During the war with Japan, after the defeat at Xuzhou, the Japanese army was close to the railway junction of Zhengzhou. On 1 June Chiang Kai-shek approved breaking the dikes, \"using water as a substitute for soldiers\". Soldiers dug through the dike at Huayuankou on 5 and 7 June, and on 13 June the water reached Zhongmu County, then poured south-east across Henan, Anhui and Jiangsu into the Huai valley, as the blue band roughly shows. Between 30,000 and 89,000 people drowned; with famine and disease, historians estimate 400,000 to 500,000 deaths, and some 5 million people lived on flooded land until the breach was closed in 1947. The government at first falsely blamed Japanese bombing. The flood slowed the Japanese advance, at a terrible cost to China's own people.",
+        "es": "Durante la guerra con Japón, tras la derrota de Xuzhou, el ejército japonés estaba cerca del nudo ferroviario de Zhengzhou. El 1 de junio Chiang Kai-shek aprobó romper los diques, «usar el agua en lugar de soldados». Los soldados cavaron a través del dique en Huayuankou el 5 y el 7 de junio, y el 13 de junio el agua llegó al condado de Zhongmu y luego corrió hacia el sureste por Henan, Anhui y Jiangsu hasta el valle del Huai, como muestra a grandes rasgos la franja azul. Se ahogaron entre 30 000 y 89 000 personas; con el hambre y las enfermedades, los historiadores estiman entre 400 000 y 500 000 muertes, y unos 5 millones de personas vivieron en tierras inundadas hasta que se cerró la brecha en 1947. El gobierno culpó al principio, falsamente, a los bombardeos japoneses. La inundación frenó el avance japonés, a un costo terrible para el propio pueblo chino."
+      },
+      "control": {
+        "drought": null,
+        "river": {
+          "land": {
+            "poly": [
+              [
+                113.845,
+                35.133
+              ],
+              [
+                114.247,
+                34.898
+              ],
+              [
+                114.484,
+                34.528
+              ],
+              [
+                114.687,
+                34.172
+              ],
+              [
+                114.822,
+                33.909
+              ],
+              [
+                114.859,
+                33.826
+              ],
+              [
+                115.237,
+                33.641
+              ],
+              [
+                115.565,
+                33.468
+              ],
+              [
+                116.024,
+                33.099
+              ],
+              [
+                116.45,
+                32.853
+              ],
+              [
+                116.488,
+                32.77
+              ],
+              [
+                116.835,
+                32.881
+              ],
+              [
+                117.221,
+                33.174
+              ],
+              [
+                117.784,
+                33.402
+              ],
+              [
+                118.406,
+                33.558
+              ],
+              [
+                118.593,
+                33.042
+              ],
+              [
+                118.016,
+                32.898
+              ],
+              [
+                117.578,
+                32.726
+              ],
+              [
+                117.164,
+                32.419
+              ],
+              [
+                116.511,
+                32.23
+              ],
+              [
+                116.091,
+                32.406
+              ],
+              [
+                115.617,
+                32.681
+              ],
+              [
+                115.156,
+                33.051
+              ],
+              [
+                114.904,
+                33.179
+              ],
+              [
+                114.442,
+                33.413
+              ],
+              [
+                114.239,
+                33.67
+              ],
+              [
+                114.094,
+                33.948
+              ],
+              [
+                113.897,
+                34.291
+              ],
+              [
+                113.754,
+                34.542
+              ],
+              [
+                113.476,
+                34.687
+              ]
+            ]
+          }
+        }
+      },
+      "places": [
+        {
+          "id": "yellow-river-flood-1938",
+          "name": {
+            "en": "Yellow River flood of 1938",
+            "es": "Inundación del río Amarillo de 1938"
+          },
+          "at": [
+            113.661,
+            34.912
+          ],
+          "cat": "flood",
+          "type": "event",
+          "date": "1938-06-07",
+          "place": {
+            "en": "Huayuankou, near Zhengzhou, Henan, China",
+            "es": "Huayuankou, cerca de Zhengzhou, Henan, China"
+          },
+          "text": {
+            "en": "In June 1938 China's Nationalist army broke the Yellow River dikes at Huayuankou on purpose to stop the Japanese advance. The flood killed 400,000 to 500,000 people, by historians' estimates.",
+            "es": "En junio de 1938, el ejército nacionalista chino rompió a propósito los diques del río Amarillo en Huayuankou para frenar el avance japonés. La inundación mató a entre 400 000 y 500 000 personas, según los historiadores."
+          },
+          "details": {
+            "en": "On 1 June Chiang Kai-shek approved the plan, \"using water as a substitute for soldiers\". Soldiers dug through the south dike at Huayuankou on 5 and 7 June, and on 13 June the first wave reached Zhongmu County. The river left its bed and flowed south-east into the Huai valley, across Henan, Anhui and Jiangsu. Between 30,000 and 89,000 people drowned at once; with the famine and disease that followed, 400,000 to 500,000 died, and some 5 million lived on flooded land. The government first falsely blamed Japanese bombing. The flood did slow the Japanese army. The breach was not closed until March 1947.",
+            "es": "El 1 de junio Chiang Kai-shek aprobó el plan de «usar el agua en lugar de soldados». Los soldados cavaron a través del dique sur en Huayuankou el 5 y el 7 de junio, y el 13 de junio la primera ola llegó al condado de Zhongmu. El río dejó su cauce y corrió hacia el sureste, hacia el valle del Huai, a través de Henan, Anhui y Jiangsu. Entre 30 000 y 89 000 personas se ahogaron de inmediato; con el hambre y las enfermedades que siguieron murieron entre 400 000 y 500 000, y unos 5 millones vivieron en tierras inundadas. El gobierno culpó al principio, falsamente, a los bombardeos japoneses. La inundación sí frenó al ejército japonés. La brecha no se cerró hasta marzo de 1947."
+          },
+          "wiki": {
+            "en": "1938 Yellow River flood",
+            "es": "Inundación del río Amarillo de 1938"
+          }
+        },
+        {
+          "id": "yellow-river",
+          "name": {
+            "en": "Yellow River",
+            "es": "Río Amarillo"
+          },
+          "at": [
+            114.35,
+            34.93
+          ],
+          "cat": "flood",
+          "type": "place",
+          "date": "1887",
+          "place": {
+            "en": "North China Plain, China",
+            "es": "Llanura del Norte de China, China"
+          },
+          "text": {
+            "en": "China's second-longest river, 5,464 km, carries so much silt that its bed rises above the plain behind its dikes. Between 595 BC and 1946 it is reckoned to have flooded 1,593 times.",
+            "es": "El segundo río más largo de China, de 5464 km, arrastra tanto limo que su cauce se eleva por encima de la llanura, entre diques. Se calcula que entre el 595 a. C. y 1946 se desbordó 1593 veces."
+          },
+          "details": {
+            "en": "Chinese civilisation grew up on its banks, and tradition says the Xia dynasty began when Yu the Great tamed its floods. The yellow loess it carries settles on the riverbed, so for centuries farmers raised the dikes higher and higher, and the river flowed above the fields around it. When a dike broke, the water could pour across hundreds of kilometres of plain. Over 2,540 years the river shifted its course noticeably 26 times and severely nine times, sometimes reaching the sea hundreds of kilometres from its old mouth. Its floods of 1887, 1931 and 1938 are among the deadliest disasters in history.",
+            "es": "La civilización china creció en sus orillas, y la tradición dice que la dinastía Xia comenzó cuando Yu el Grande domó sus crecidas. El loess amarillo que arrastra se deposita en el cauce, así que durante siglos los campesinos subieron los diques cada vez más, y el río corría por encima de los campos que lo rodeaban. Cuando un dique se rompía, el agua podía extenderse por cientos de kilómetros de llanura. En 2540 años el río cambió notablemente de curso 26 veces, y gravemente nueve, desembocando a veces a cientos de kilómetros de su antigua boca. Sus inundaciones de 1887, 1931 y 1938 están entre los desastres más mortíferos de la historia."
+          },
+          "wiki": {
+            "en": "Yellow River",
+            "es": "Río Amarillo"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1953-02-01",
+      "title": {
+        "en": "The North Sea floods",
+        "es": "El mar del Norte inunda"
+      },
+      "camera": {
+        "lon": 2.2,
+        "lat": 52.2,
+        "zoom": 15.0
+      },
+      "text": {
+        "en": "On the night of 31 January 1953 a storm surge broke the dikes of the Netherlands and flooded coasts in England and Belgium. More than 2,500 died. The Delta Works and the Thames Barrier followed.",
+        "es": "La noche del 31 de enero de 1953, una marea de tormenta rompió los diques de los Países Bajos e inundó costas de Inglaterra y Bélgica. Murieron más de 2500 personas. Después llegaron el Plan Delta y la barrera del Támesis."
+      },
+      "details": {
+        "en": "A severe windstorm and a high spring tide raised the North Sea up to 5.6 m above its mean level. Warnings were broadcast in the evening, but local radio was off at night and many emergency offices were closed for the weekend. In the early hours the sea broke through the dikes of Zeeland in 67 places: 1,836 people died in the Netherlands, 307 in England, 28 in Belgium and more than 200 at sea. Amateur radio operators kept the flooded islands in touch with the world. The Dutch answered with the Delta Works, a chain of dams and storm barriers built from 1954 to 1997 that shortened the coast; the British built the Thames Barrier to protect London, working since 1982. Today a museum in the caissons used to close the last breach keeps the memory.",
+        "es": "Una fuerte tormenta de viento y una marea viva elevaron el mar del Norte hasta 5,6 m por encima de su nivel medio. Se emitieron avisos por la tarde, pero las radios locales no emitían de noche y muchas oficinas de emergencia estaban cerradas por el fin de semana. De madrugada el mar rompió los diques de Zelanda en 67 puntos: murieron 1836 personas en los Países Bajos, 307 en Inglaterra, 28 en Bélgica y más de 200 en el mar. Radioaficionados mantuvieron las islas inundadas en contacto con el mundo. Los neerlandeses respondieron con el Plan Delta, una cadena de presas y barreras contra tormentas construida de 1954 a 1997 que acortó la costa; los británicos construyeron la barrera del Támesis para proteger Londres, en funcionamiento desde 1982. Hoy un museo en los cajones usados para cerrar la última brecha guarda la memoria."
+      },
+      "control": {
+        "river": null,
+        "surge": {
+          "land": [
+            [
+              [
+                3.3,
+                51.72
+              ],
+              [
+                4.15,
+                51.92
+              ],
+              [
+                4.65,
+                51.78
+              ],
+              [
+                4.45,
+                51.5
+              ],
+              [
+                4.05,
+                51.38
+              ],
+              [
+                3.45,
+                51.5
+              ]
+            ],
+            {
+              "circle": [
+                0.5725,
+                51.522
+              ],
+              "km": 6
+            },
+            {
+              "circle": [
+                1.105,
+                51.775
+              ],
+              "km": 5
+            },
+            {
+              "circle": [
+                1.33,
+                51.96
+              ],
+              "km": 5
+            },
+            {
+              "circle": [
+                0.49,
+                52.93
+              ],
+              "km": 4
+            },
+            {
+              "poly": [
+                [
+                  0.32,
+                  53.355
+                ],
+                [
+                  0.368,
+                  53.259
+                ],
+                [
+                  0.404,
+                  53.152
+                ],
+                [
+                  0.286,
+                  53.138
+                ],
+                [
+                  0.252,
+                  53.241
+                ],
+                [
+                  0.204,
+                  53.335
+                ]
+              ]
+            },
+            {
+              "circle": [
+                2.95,
+                51.25
+              ],
+              "km": 6
+            },
+            {
+              "circle": [
+                3.28,
+                51.35
+              ],
+              "km": 5
+            }
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "north-sea-flood-1953",
+          "name": {
+            "en": "North Sea flood of 1953",
+            "es": "Inundación del mar del Norte de 1953"
+          },
+          "at": [
+            4.2125,
+            51.6917
+          ],
+          "cat": "flood",
+          "type": "event",
+          "date": "1953-02-01T03:00",
+          "place": {
+            "en": "Zeeland and South Holland, Netherlands; eastern England; Belgium",
+            "es": "Zelanda y Holanda Meridional, Países Bajos; este de Inglaterra; Bélgica"
+          },
+          "text": {
+            "en": "On the night of 31 January 1953 a storm and a spring tide drove the North Sea over the dikes of the Netherlands, England and Belgium. Over 2,500 people died, 1,836 of them in the Netherlands.",
+            "es": "La noche del 31 de enero de 1953, una tormenta y una marea viva lanzaron el mar del Norte sobre los diques de los Países Bajos, Inglaterra y Bélgica. Murieron más de 2500 personas, 1836 de ellas en los Países Bajos."
+          },
+          "details": {
+            "en": "The sea rose up to 5.6 m above its mean level. It was Saturday night: local radio stations did not broadcast at night, and the weather service's warnings did not reach the threatened villages. Around 3 am on 1 February dikes in Zeeland broke in 67 places, and the islands of Schouwen-Duiveland, Tholen, Goeree-Overflakkee and others were flooded; about 9% of Dutch farmland went under water. In England 307 people died, 58 of them on Canvey Island; 28 died in Belgium and hundreds more at sea, including more than 130 on the ferry Princess Victoria. With telephone lines cut, amateur radio operators kept the flooded areas in touch with the world for ten days.",
+            "es": "El mar subió hasta 5,6 m por encima de su nivel medio. Era sábado por la noche: las radios locales no emitían de noche, y los avisos del servicio meteorológico no llegaron a los pueblos amenazados. Hacia las 3 de la madrugada del 1 de febrero, los diques de Zelanda se rompieron en 67 puntos y se inundaron las islas de Schouwen-Duiveland, Tholen, Goeree-Overflakkee y otras; quedó bajo el agua cerca del 9 % de las tierras agrícolas neerlandesas. En Inglaterra murieron 307 personas, 58 en la isla de Canvey; en Bélgica murieron 28, y cientos más en el mar, entre ellos más de 130 en el ferry Princess Victoria. Con las líneas de teléfono cortadas, radioaficionados mantuvieron en contacto con el mundo las zonas inundadas durante diez días."
+          },
+          "wiki": {
+            "en": "North Sea flood of 1953",
+            "es": "Inundación del mar del Norte de 1953"
+          }
+        },
+        {
+          "id": "canvey-island",
+          "name": {
+            "en": "Canvey Island",
+            "es": "Isla de Canvey"
+          },
+          "at": [
+            0.5725,
+            51.525
+          ],
+          "cat": "town",
+          "type": "place",
+          "date": "1953-02-01",
+          "place": {
+            "en": "Essex, England",
+            "es": "Essex, Inglaterra"
+          },
+          "text": {
+            "en": "A low island in the Thames estuary where the 1953 sea flood drowned 58 people in the night. In 2011 a plaque was unveiled in their memory.",
+            "es": "Una isla baja del estuario del Támesis donde la inundación del mar de 1953 ahogó a 58 personas en la noche. En 2011 se descubrió una placa en su memoria."
+          },
+          "details": {
+            "en": "Canvey lies below sea level and is protected by sea walls. On the night of the 1953 flood the water came over the defences while people slept; many of the victims were in the holiday bungalows of the Newlands estate, where it reached the ceilings, and all 13,000 residents were evacuated for a time. Along the same coast, 41 people died in wooden prefabricated homes in Felixstowe and 37 at Jaywick, near Clacton. The flood led Britain to strengthen its sea walls and, in the end, to build the Thames Barrier to protect London.",
+            "es": "Canvey está por debajo del nivel del mar y la protegen muros contra el mar. La noche de la inundación de 1953, el agua superó las defensas mientras la gente dormía; muchas víctimas estaban en las casitas de vacaciones del barrio de Newlands, donde el agua llegó al techo, y los 13 000 vecinos fueron evacuados por un tiempo. En la misma costa murieron 41 personas en casas prefabricadas de madera en Felixstowe y 37 en Jaywick, cerca de Clacton. La inundación llevó a Gran Bretaña a reforzar sus muros contra el mar y, al final, a construir la barrera del Támesis para proteger Londres."
+          },
+          "wiki": {
+            "en": "Canvey Island",
+            "es": "Canvey Island"
+          }
+        },
+        {
+          "id": "delta-works",
+          "name": {
+            "en": "Delta Works",
+            "es": "Plan Delta"
+          },
+          "at": [
+            3.7044,
+            51.6336
+          ],
+          "cat": "relief",
+          "type": "structure",
+          "date": "1954",
+          "end": "1997",
+          "place": {
+            "en": "Zeeland and South Holland, Netherlands",
+            "es": "Zelanda y Holanda Meridional, Países Bajos"
+          },
+          "text": {
+            "en": "After 1953 the Netherlands built the Delta Works, dams and storm-surge barriers that shortened its coast. Begun in 1954 and finished in 1997, they are one of the great engineering works of the world.",
+            "es": "Después de 1953 los Países Bajos construyeron el Plan Delta, presas y barreras contra las mareas de tormenta que acortaron su costa. Empezado en 1954 y terminado en 1997, es una de las grandes obras de ingeniería del mundo."
+          },
+          "details": {
+            "en": "Instead of raising hundreds of kilometres of dikes, the Dutch closed off the estuaries of the Rhine, Meuse and Scheldt with dams, sluices and barriers. The Delta law of 1958 fixed how rare a flood the defences must withstand, and the cost was estimated at 20% of the country's yearly income. After public protests, the Oosterschelde was not dammed but closed by a 9 km barrier with huge gates that stay open except in storms, so that the tides and the sea life could stay; Queen Beatrix opened it in 1986. The Maeslantkering, which protects Rotterdam, completed the works in 1997. With sea levels rising, the dikes will have to keep growing.",
+            "es": "En lugar de elevar cientos de kilómetros de diques, los neerlandeses cerraron los estuarios del Rin, el Mosa y el Escalda con presas, esclusas y barreras. La ley Delta de 1958 fijó qué inundación, por rara que fuera, debían resistir las defensas, y el costo se estimó en el 20 % del ingreso anual del país. Tras las protestas públicas, el Escalda Oriental no se cerró con una presa, sino con una barrera de 9 km con enormes compuertas que solo se cierran en las tormentas, para que siguieran las mareas y la vida marina; la reina Beatriz la inauguró en 1986. La barrera de Maeslant, que protege Róterdam, completó las obras en 1997. Con el mar subiendo, los diques tendrán que seguir creciendo."
+          },
+          "wiki": {
+            "en": "Delta Works",
+            "es": "Plan Delta"
+          },
+          "img": "Oosterscheldedam storm Rens Jacobs.jpg"
+        },
+        {
+          "id": "thames-barrier",
+          "name": {
+            "en": "Thames Barrier",
+            "es": "Barrera del Támesis"
+          },
+          "at": [
+            0.0367,
+            51.4969
+          ],
+          "cat": "relief",
+          "type": "structure",
+          "date": "1974",
+          "end": "1982",
+          "place": {
+            "en": "London, England",
+            "es": "Londres, Inglaterra"
+          },
+          "text": {
+            "en": "A movable barrier across the Thames, operational since 1982, that closes when a North Sea surge threatens London. By July 2026 it had been closed against floods 221 times.",
+            "es": "Una barrera móvil sobre el Támesis, en funcionamiento desde 1982, que se cierra cuando una marea de tormenta del mar del Norte amenaza Londres. Hasta julio de 2026 se había cerrado 221 veces contra inundaciones."
+          },
+          "details": {
+            "en": "After the 1953 flood, a government committee recommended a barrier across the Thames as an alternative to raising the riverbanks. Built from 1974 and officially opened on 8 May 1984, its curved gates, inspired by the taps of a gas cooker, lie on the riverbed and rotate up to close the river when high tides and storm surges are forecast. It was closed twice on 9 November 2007, when a surge was compared to that of 1953. It was designed to protect London from a once-in-a-thousand-years surge tide up to about 2030; as the sea rises, it closes more often.",
+            "es": "Tras la inundación de 1953, un comité del gobierno recomendó una barrera sobre el Támesis en lugar de elevar las orillas. Construida desde 1974 e inaugurada oficialmente el 8 de mayo de 1984, sus compuertas curvas, inspiradas en las llaves de una cocina de gas, descansan en el lecho del río y giran hacia arriba para cerrarlo cuando se pronostican mareas altas y de tormenta. Se cerró dos veces el 9 de noviembre de 2007, ante una marea comparada con la de 1953. Se diseñó para proteger Londres de una marea de tormenta de las que llegan una vez en mil años, hasta cerca de 2030; a medida que sube el mar, se cierra más a menudo."
+          },
+          "wiki": {
+            "en": "Thames Barrier",
+            "es": "Barrera del Támesis"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1970-11-12",
+      "title": {
+        "en": "The Bhola cyclone",
+        "es": "El ciclón Bhola"
+      },
+      "camera": {
+        "lon": 90.6,
+        "lat": 19.0,
+        "zoom": 6.0
+      },
+      "text": {
+        "en": "On 12 November 1970 a cyclone's storm surge swept the islands of East Pakistan, killing 300,000 to 500,000 people. Anger at the government's slow response fed the push for Bangladesh's independence.",
+        "es": "El 12 de noviembre de 1970, la marea de tormenta de un ciclón barrió las islas de Pakistán Oriental y mató a entre 300 000 y 500 000 personas. La ira por la lenta respuesta del gobierno impulsó la independencia de Bangladés."
+      },
+      "details": {
+        "en": "The cyclone formed over the Bay of Bengal on 8 November and came ashore on the evening of 12 November, at high tide, over the low islands of the Ganges Delta. Most victims drowned in the surge; in Tazumuddin, on Bhola Island, more than 45% of the people died. It is the deadliest tropical cyclone on record. The military government of General Yahya Khan, in West Pakistan, was slow to send help and refused to let India fly aid in, and East Pakistani politicians accused it of \"gross neglect, callous indifference\". A month later the Awami League of Sheikh Mujibur Rahman swept the East in the general election, but the military did not hand over power. In March 1971 the army began a brutal crackdown, the Bangladesh genocide, and after a war Bangladesh became independent in December 1971.",
+        "es": "El ciclón se formó sobre el golfo de Bengala el 8 de noviembre y tocó tierra la tarde del 12 de noviembre, con marea alta, sobre las islas bajas del delta del Ganges. La mayoría de las víctimas se ahogó en la marea; en Tazumuddin, en la isla de Bhola, murió más del 45 % de la población. Es el ciclón tropical más mortífero registrado. El gobierno militar del general Yahya Khan, en Pakistán Occidental, tardó en enviar ayuda y no dejó que la India la llevara por aire, y los políticos de Pakistán Oriental lo acusaron de «negligencia grave e indiferencia cruel». Un mes después, la Liga Awami de Sheikh Mujibur Rahman arrasó en el Este en las elecciones generales, pero los militares no entregaron el poder. En marzo de 1971 el ejército inició una represión brutal, el genocidio de Bangladés, y tras una guerra Bangladés se independizó en diciembre de 1971."
+      },
+      "control": {
+        "surge": {
+          "land": [
+            [
+              90.3,
+              21.8
+            ],
+            [
+              91.0,
+              21.8
+            ],
+            [
+              91.6,
+              22.2
+            ],
+            [
+              91.5,
+              22.65
+            ],
+            [
+              90.95,
+              22.85
+            ],
+            [
+              90.55,
+              22.7
+            ],
+            [
+              90.3,
+              22.3
+            ]
+          ]
+        }
+      },
+      "moves": [
+        {
+          "side": "storm",
+          "path": [
+            [
+              88.0,
+              12.5
+            ],
+            [
+              88.6,
+              16.0
+            ],
+            [
+              89.6,
+              19.5
+            ],
+            [
+              90.7,
+              22.1
+            ]
+          ],
+          "icon": "🌀",
+          "label": {
+            "en": "Bhola cyclone",
+            "es": "Ciclón Bhola"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "bhola-cyclone-1970",
+          "name": {
+            "en": "Bhola cyclone",
+            "es": "Ciclón Bhola"
+          },
+          "at": [
+            90.75,
+            22.25
+          ],
+          "cat": "storm",
+          "type": "event",
+          "date": "1970-11-12",
+          "place": {
+            "en": "Bhola and the islands of the Ganges Delta, East Pakistan (Bangladesh)",
+            "es": "Bhola y las islas del delta del Ganges, Pakistán Oriental (Bangladés)"
+          },
+          "text": {
+            "en": "On 12 November 1970 a cyclone drove a storm surge over the low islands of the Ganges Delta in East Pakistan. Between 300,000 and 500,000 people died: the deadliest tropical cyclone on record.",
+            "es": "El 12 de noviembre de 1970, un ciclón lanzó una marea de tormenta sobre las islas bajas del delta del Ganges, en Pakistán Oriental. Murieron entre 300 000 y 500 000 personas: el ciclón tropical más mortífero registrado."
+          },
+          "details": {
+            "en": "The storm formed over the central Bay of Bengal on 8 November and reached land with winds of about 185 km/h. Most victims drowned in the surge, which swept over islands such as Bhola, Hatiya and Sandwip, where there were almost no shelters: in Tazumuddin, more than 45% of its 167,000 people died, and rice crops were destroyed across the region. Whether all the warnings the Indian weather service received reached East Pakistan is uncertain. The government of General Yahya Khan, far away in West Pakistan, was slow to send help, and it refused to let Indian aid be flown in. Its handling of the disaster fed anger in the East.",
+            "es": "La tormenta se formó sobre el centro del golfo de Bengala el 8 de noviembre y llegó a tierra con vientos de unos 185 km/h. La mayoría de las víctimas se ahogaron en la marea, que barrió islas como Bhola, Hatiya y Sandwip, donde casi no había refugios: en Tazumuddin murió más del 45 % de sus 167 000 habitantes, y se perdieron las cosechas de arroz de toda la región. No se sabe si todos los avisos que recibió el servicio meteorológico indio llegaron a Pakistán Oriental. El gobierno del general Yahya Khan, lejos, en Pakistán Occidental, tardó en enviar ayuda y no dejó que la ayuda india llegara por aire. Su forma de manejar el desastre alimentó la ira en el Este."
+          },
+          "wiki": {
+            "en": "1970 Bhola cyclone",
+            "es": "Ciclón Bhola"
+          }
+        },
+        {
+          "id": "tazumuddin",
+          "name": {
+            "en": "Tazumuddin",
+            "es": "Tazumuddin"
+          },
+          "at": [
+            90.8486,
+            22.4167
+          ],
+          "cat": "town",
+          "type": "place",
+          "date": "1970-11-12",
+          "place": {
+            "en": "Bhola Island, Bangladesh",
+            "es": "Isla de Bhola, Bangladés"
+          },
+          "text": {
+            "en": "A district on Bhola Island, the area hardest hit by the 1970 cyclone: more than 45% of its 167,000 people were killed by the storm surge.",
+            "es": "Un distrito de la isla de Bhola, la zona más golpeada por el ciclón de 1970: más del 45 % de sus 167 000 habitantes murieron por la marea de tormenta."
+          },
+          "details": {
+            "en": "Bhola lies at the mouth of the Meghna, where the waters of the Ganges and the Brahmaputra reach the sea. Its farmers and fishermen lived on land only a few metres above high tide. In 1970 there were almost no buildings tall or strong enough to shelter in. Today the coast has cyclone shelters and volunteers who spread warnings, but its low islands remain exposed to storms.",
+            "es": "Bhola está en la desembocadura del Meghna, donde las aguas del Ganges y el Brahmaputra llegan al mar. Sus campesinos y pescadores vivían en tierras apenas unos metros por encima de la marea alta. En 1970 casi no había edificios lo bastante altos o fuertes para refugiarse. Hoy la costa tiene refugios contra ciclones y voluntarios que difunden los avisos, pero sus islas bajas siguen expuestas a las tormentas."
+          },
+          "wiki": {
+            "en": "Tazumuddin Upazila",
+            "es": "Tazumuddin"
+          }
+        },
+        {
+          "id": "pakistan-election-1970",
+          "name": {
+            "en": "1970 election in Pakistan",
+            "es": "Elecciones de 1970 en Pakistán"
+          },
+          "at": [
+            90.4125,
+            23.8103
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "1970-12-07",
+          "place": {
+            "en": "Dhaka, East Pakistan (Bangladesh)",
+            "es": "Daca, Pakistán Oriental (Bangladés)"
+          },
+          "text": {
+            "en": "A month after the cyclone, the Awami League of Sheikh Mujibur Rahman won a landslide in East Pakistan. Anger at the cyclone response fed the push that led to Bangladesh's independence in 1971.",
+            "es": "Un mes después del ciclón, la Liga Awami de Sheikh Mujibur Rahman arrasó en Pakistán Oriental. La ira por la respuesta al ciclón alimentó el impulso que llevó a la independencia de Bangladés en 1971."
+          },
+          "details": {
+            "en": "Eleven East Pakistani politicians accused the central government of \"gross neglect, callous indifference\" in the relief effort. The election went ahead on 7 December, though the vote in the worst-hit areas was delayed until January. The Awami League won 160 of the East's 162 general seats, an absolute majority in the national assembly, but the military government did not hand over power. On 25 March 1971 the army launched a crackdown in the East, and the war that followed, in which the Pakistani army carried out mass killings now called the Bangladesh genocide, ended in December 1971 with independent Bangladesh. The concert for Bangladesh organised by George Harrison and Ravi Shankar in 1971 was inspired partly by the cyclone.",
+            "es": "Once políticos de Pakistán Oriental acusaron al gobierno central de «negligencia grave e indiferencia cruel» en el socorro. Las elecciones se celebraron el 7 de diciembre, aunque en las zonas más golpeadas se aplazaron hasta enero. La Liga Awami ganó 160 de los 162 escaños generales del Este, la mayoría absoluta de la asamblea nacional, pero el gobierno militar no entregó el poder. El 25 de marzo de 1971 el ejército lanzó una represión en el Este, y la guerra que siguió, en la que el ejército paquistaní cometió matanzas masivas hoy llamadas genocidio de Bangladés, terminó en diciembre de 1971 con Bangladés independiente. El concierto por Bangladés que organizaron George Harrison y Ravi Shankar en 1971 se inspiró en parte en el ciclón."
+          },
+          "wiki": {
+            "en": "1970 Pakistani general election",
+            "es": "Elecciones generales de Pakistán de 1970"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1984-10-23",
+      "title": {
+        "en": "Drought, war and famine",
+        "es": "Sequía, guerra y hambruna"
+      },
+      "camera": {
+        "lon": 14,
+        "lat": 26,
+        "zoom": 1.4
+      },
+      "text": {
+        "en": "Droughts struck the Sahel from the late 1960s to the mid-1980s. In northern Ethiopia, drought, civil war and government policy together caused a famine that killed 300,000 to 1.2 million.",
+        "es": "Las sequías golpearon el Sahel de fines de los sesenta a mediados de los ochenta. En el norte de Etiopía, la sequía, la guerra civil y la política del gobierno causaron una hambruna que mató a entre 300 000 y 1,2 millones."
+      },
+      "details": {
+        "en": "After wet decades, the rains of the Sahel failed: in 1968–1973 grazing became impossible from Mauritania to Chad, and in 1983–1984 some places had the lowest rainfall on record. In Ethiopia the drought fell on regions at war. The military government of Mengistu Haile Mariam was fighting rebels in Tigray and Eritrea, and Human Rights Watch and Oxfam found that its policies, including restricting food to rebel areas and buying grain from peasants at low fixed prices, made the famine worse; Human Rights Watch attributes more than half the deaths to such abuses. The government then moved some 600,000 people, many by force, and at least 50,000 died in the resettlement. On 23 October 1984 a BBC report showed the famine to the world; the next summer, the Live Aid concerts raised about £145 million.",
+        "es": "Tras décadas lluviosas, fallaron las lluvias del Sahel: en 1968-1973 el pastoreo se volvió imposible de Mauritania a Chad, y en 1983-1984 algunos lugares tuvieron las lluvias más bajas registradas. En Etiopía, la sequía cayó sobre regiones en guerra. El gobierno militar de Mengistu Haile Mariam combatía a rebeldes en Tigray y Eritrea, y Human Rights Watch y Oxfam hallaron que sus políticas, entre ellas restringir los alimentos a las zonas rebeldes y comprar el grano a los campesinos a precios fijos bajos, agravaron la hambruna; Human Rights Watch atribuye más de la mitad de las muertes a esos abusos. Después el gobierno trasladó a unas 600 000 personas, muchas por la fuerza, y al menos 50 000 murieron en el reasentamiento. El 23 de octubre de 1984 un reportaje de la BBC mostró la hambruna al mundo; el verano siguiente, los conciertos de Live Aid recaudaron unos 145 millones de libras."
+      },
+      "control": {
+        "surge": null,
+        "famine": [
+          "ERI",
+          {
+            "a1": "ETH",
+            "names": [
+              "Tigray"
+            ]
+          },
+          {
+            "and": [
+              {
+                "a1": "ETH",
+                "names": [
+                  "Amhara"
+                ]
+              },
+              {
+                "poly": [
+                  [
+                    36.3,
+                    14.0
+                  ],
+                  [
+                    40.3,
+                    14.0
+                  ],
+                  [
+                    40.3,
+                    10.2
+                  ],
+                  [
+                    38.8,
+                    10.2
+                  ],
+                  [
+                    38.4,
+                    11.0
+                  ],
+                  [
+                    37.6,
+                    11.7
+                  ],
+                  [
+                    37.0,
+                    12.0
+                  ],
+                  [
+                    36.3,
+                    12.3
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "drought": {
+          "land": {
+            "band": [
+              -17.5,
+              12.5,
+              24.0,
+              18.0
+            ]
+          }
+        }
+      },
+      "places": [
+        {
+          "id": "sahel-drought",
+          "name": {
+            "en": "Sahel droughts",
+            "es": "Sequías del Sahel"
+          },
+          "at": [
+            -0.0446,
+            16.2666
+          ],
+          "cat": "drought",
+          "type": "event",
+          "date": "1968",
+          "end": "1985",
+          "place": {
+            "en": "The Sahel, from Mauritania and Senegal to Chad",
+            "es": "El Sahel, de Mauritania y Senegal a Chad"
+          },
+          "text": {
+            "en": "From the late 1960s to the mid-1980s the Sahel, the dry belt south of the Sahara, suffered its worst droughts on record. Famine killed about 100,000 people from the late 1960s to the early 1980s.",
+            "es": "De fines de los años sesenta a mediados de los ochenta, el Sahel, la franja seca al sur del Sahara, sufrió sus peores sequías registradas. El hambre mató a unas 100 000 personas entre fines de los sesenta y principios de los ochenta."
+          },
+          "details": {
+            "en": "After unusually wet years from 1950 to 1970, the rains failed again and again. The drought of 1968–1973 made grazing impossible across Mauritania, Mali, Niger, Chad and Upper Volta (now Burkina Faso), and set off the first big international aid effort for the region; in 1983–1984 some places had the lowest rainfall ever recorded, though people coped better than in the 1970s. Scientists first blamed overgrazing and cutting trees; later studies pointed to shifts in the temperature of the oceans, and possibly to air pollution from Europe and North America that changed the rains. Since the 1990s rainfall has partly recovered, with a \"greening\" of the Sahel.",
+            "es": "Tras unos años inusualmente lluviosos entre 1950 y 1970, las lluvias fallaron una y otra vez. La sequía de 1968-1973 hizo imposible el pastoreo en Mauritania, Malí, Níger, Chad y Alto Volta (hoy Burkina Faso), y desató el primer gran esfuerzo de ayuda internacional para la región; en 1983-1984 algunos lugares tuvieron las lluvias más bajas jamás registradas, aunque la gente resistió mejor que en los setenta. Los científicos culparon primero al sobrepastoreo y a la tala de árboles; estudios posteriores señalaron cambios en la temperatura de los océanos, y quizá la contaminación del aire de Europa y Norteamérica, que alteró las lluvias. Desde los años noventa las lluvias se han recuperado en parte, con un «reverdecimiento» del Sahel."
+          },
+          "wiki": {
+            "en": "Droughts in the Sahel",
+            "es": ""
+          }
+        },
+        {
+          "id": "ethiopia-famine-1983",
+          "name": {
+            "en": "Famine in Ethiopia, 1983–1985",
+            "es": "Hambruna de Etiopía, 1983-1985"
+          },
+          "at": [
+            39.5167,
+            12.5
+          ],
+          "cat": "drought",
+          "type": "event",
+          "date": "1983",
+          "end": "1985",
+          "place": {
+            "en": "Tigray, Wollo and Eritrea, northern Ethiopia",
+            "es": "Tigray, Wollo y Eritrea, norte de Etiopía"
+          },
+          "text": {
+            "en": "From 1983 to 1985 famine killed 300,000 to 1.2 million people in northern Ethiopia. It came with drought, but also with civil war and the policies of the military government.",
+            "es": "De 1983 a 1985 el hambre mató a entre 300 000 y 1,2 millones de personas en el norte de Etiopía. Llegó con la sequía, pero también con la guerra civil y las políticas del gobierno militar."
+          },
+          "details": {
+            "en": "About 7.75 million people were affected. The worst-hit regions, Tigray, Wollo and Eritrea, were also where rebel movements fought the Derg, the military regime of Mengistu Haile Mariam. According to Human Rights Watch and Oxfam, its counter-insurgency policies, which restricted food supplies to fight the rebels, and its forced purchase of grain from peasants at low prices made the famine come earlier, strike harder and spread further: Human Rights Watch attributes more than half the deaths to such abuses. In 1985–1986 the government moved about 600,000 people, many by force, to the south and west; at least 50,000 died in the resettlement, according to Human Rights Watch. A BBC report in October 1984 moved millions abroad to give.",
+            "es": "Hubo unos 7,75 millones de afectados. Las regiones más golpeadas, Tigray, Wollo y Eritrea, eran también donde los movimientos rebeldes combatían al Derg, el régimen militar de Mengistu Haile Mariam. Según Human Rights Watch y Oxfam, su política de contrainsurgencia, que restringía los alimentos para combatir a los rebeldes, y la compra forzosa de grano a los campesinos a precios bajos hicieron que la hambruna llegara antes, golpeara más fuerte y se extendiera más: Human Rights Watch atribuye más de la mitad de las muertes a esos abusos. En 1985-1986 el gobierno trasladó a unas 600 000 personas, muchas por la fuerza, al sur y al oeste; al menos 50 000 murieron en el reasentamiento, según Human Rights Watch. Un reportaje de la BBC en octubre de 1984 movió a millones de personas en el extranjero a donar."
+          },
+          "wiki": {
+            "en": "1983–1985 famine in Ethiopia",
+            "es": "Hambruna de Etiopía de 1983-1985"
+          }
+        },
+        {
+          "id": "live-aid",
+          "name": {
+            "en": "Live Aid",
+            "es": "Live Aid"
+          },
+          "at": [
+            -0.2797,
+            51.5556
+          ],
+          "cat": "relief",
+          "type": "event",
+          "date": "1985-07-13",
+          "place": {
+            "en": "Wembley Stadium, London, and Philadelphia",
+            "es": "Estadio de Wembley, Londres, y Filadelfia"
+          },
+          "text": {
+            "en": "On 13 July 1985 concerts in London and Philadelphia, watched by an estimated 1.9 billion people, raised money for the famine in Ethiopia. It followed the charity song \"Do They Know It's Christmas?\".",
+            "es": "El 13 de julio de 1985, conciertos en Londres y Filadelfia, vistos por unos 1900 millones de personas, recaudaron dinero para la hambruna de Etiopía. Siguió a la canción benéfica «Do They Know It's Christmas?»."
+          },
+          "details": {
+            "en": "On 23 October 1984 a BBC report by Michael Buerk described \"a biblical famine in the 20th century\". The Irish singer Bob Geldof saw it, gathered British and Irish stars as Band Aid, and their single, released in December 1984, became Britain's best-selling record within weeks. With Midge Ure he then organised Live Aid, held at Wembley Stadium and at John F. Kennedy Stadium in Philadelphia and broadcast to some 150 nations. The event raised about £145 million, and millions of people urged their governments to join the relief effort. Some of the money went to famine-hit areas of Eritrea.",
+            "es": "El 23 de octubre de 1984, un reportaje de la BBC de Michael Buerk describió «una hambruna bíblica en el siglo XX». El cantante irlandés Bob Geldof lo vio, reunió a estrellas británicas e irlandesas como Band Aid, y su sencillo, publicado en diciembre de 1984, fue en pocas semanas el disco más vendido de Gran Bretaña. Con Midge Ure organizó después Live Aid, en el estadio de Wembley y en el estadio John F. Kennedy de Filadelfia, transmitido a unos 150 países. El evento recaudó unos 145 millones de libras, y millones de personas pidieron a sus gobiernos que se sumaran al socorro. Parte del dinero fue a zonas de Eritrea golpeadas por la hambruna."
+          },
+          "wiki": {
+            "en": "Live Aid",
+            "es": "Live Aid"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1991-04-29",
+      "title": {
+        "en": "Bangladesh learns to warn",
+        "es": "Bangladés aprende a avisar"
+      },
+      "camera": {
+        "lon": 90.9,
+        "lat": 18.5,
+        "zoom": 5.5
+      },
+      "text": {
+        "en": "In April 1991 a super cyclone struck near Chittagong and killed about 138,000 people. Volunteers had warned days ahead, and later cyclones killed far fewer.",
+        "es": "En abril de 1991, un superciclón golpeó cerca de Chittagong y mató a unas 138 000 personas. Los voluntarios habían avisado días antes, y los ciclones posteriores mataron a muchas menos."
+      },
+      "details": {
+        "en": "After 1970, Bangladesh and its Red Crescent built a Cyclone Preparedness Programme: volunteers in the coastal villages to spread warnings and lead people to shelters, of which more than 200 were built in thirty years. When the 1991 cyclone came ashore at high tide with a 6 m surge, 2 to 3 million people had left the coast and over 350,000 were in shelters and brick buildings, though many others had not believed the warnings. About 138,000 died, most of them children and older women, still a terrible toll, but far below 1970. More shelters and better forecasts followed. Cyclone Sidr in 2007 killed about 3,500, and in 2020 Cyclone Amphan, even stronger, killed about 20 in Bangladesh after 2.2 million people were evacuated.",
+        "es": "Después de 1970, Bangladés y su Media Luna Roja crearon un Programa de Preparación para Ciclones: voluntarios en las aldeas de la costa para difundir los avisos y llevar a la gente a los refugios, de los que se construyeron más de 200 en treinta años. Cuando el ciclón de 1991 tocó tierra con marea alta y una marea de tormenta de 6 m, entre 2 y 3 millones de personas habían dejado la costa y más de 350 000 estaban en refugios y edificios de ladrillo, aunque muchas otras no habían creído los avisos. Murieron unas 138 000 personas, sobre todo niños y mujeres mayores, un saldo aún terrible pero muy por debajo del de 1970. Siguieron más refugios y mejores pronósticos. El ciclón Sidr, en 2007, mató a unas 3500 personas, y en 2020 el ciclón Amphan, aún más fuerte, mató a unas 20 en Bangladés tras evacuarse a 2,2 millones."
+      },
+      "control": {
+        "famine": null,
+        "drought": null,
+        "surge": {
+          "land": [
+            [
+              91.4,
+              21.4
+            ],
+            [
+              92.05,
+              21.4
+            ],
+            [
+              92.0,
+              22.2
+            ],
+            [
+              91.85,
+              22.5
+            ],
+            [
+              91.45,
+              22.6
+            ],
+            [
+              91.35,
+              22.2
+            ]
+          ]
+        }
+      },
+      "moves": [
+        {
+          "side": "storm",
+          "path": [
+            [
+              88.0,
+              10.5
+            ],
+            [
+              88.2,
+              13.5
+            ],
+            [
+              89.4,
+              17.5
+            ],
+            [
+              91.0,
+              20.8
+            ],
+            [
+              91.85,
+              22.3
+            ]
+          ],
+          "icon": "🌀",
+          "label": {
+            "en": "Cyclone of 1991",
+            "es": "Ciclón de 1991"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "bangladesh-cyclone-1991",
+          "name": {
+            "en": "Bangladesh cyclone of 1991",
+            "es": "Ciclón de Bangladés de 1991"
+          },
+          "at": [
+            91.8667,
+            21.8167
+          ],
+          "cat": "storm",
+          "type": "event",
+          "date": "1991-04-29",
+          "place": {
+            "en": "Chittagong coast and islands, Bangladesh",
+            "es": "Costa e islas de Chittagong, Bangladés"
+          },
+          "text": {
+            "en": "On the night of 29 April 1991 a super cyclone drove a 6 m storm surge onto the coast near Chittagong. About 138,000 people died, far fewer than in 1970, partly thanks to warnings and shelters.",
+            "es": "La noche del 29 de abril de 1991, un superciclón lanzó una marea de tormenta de 6 m sobre la costa cercana a Chittagong. Murieron unas 138 000 personas, muchas menos que en 1970, en parte gracias a los avisos y los refugios."
+          },
+          "details": {
+            "en": "The storm made landfall at high tide, with winds of about 250 km/h; on the island of Kutubdia more than 20,000 people died, and some small islands lost all their people. Most victims were children under 10 and women over 40. Before it struck, 2 to 3 million people had left the coast, and volunteers of the Cyclone Preparedness Programme had spread warnings two to three days ahead; over 350,000 took refuge in shelters and brick buildings. Many who stayed had not believed the storm would be so bad. Afterwards a US task force returning from the Gulf War, with British, Chinese, Indian, Pakistani and Japanese help, brought food and water to survivors in Operation Sea Angel.",
+            "es": "La tormenta tocó tierra con marea alta y vientos de unos 250 km/h; en la isla de Kutubdia murieron más de 20 000 personas, y algunas islas pequeñas perdieron a toda su población. La mayoría de las víctimas fueron niños menores de 10 años y mujeres mayores de 40. Antes del golpe, entre 2 y 3 millones de personas dejaron la costa, y los voluntarios del Programa de Preparación para Ciclones difundieron los avisos con dos o tres días de antelación; más de 350 000 se refugiaron en refugios y edificios de ladrillo. Muchos de los que se quedaron no creyeron que la tormenta fuera tan grave. Después, una fuerza naval de Estados Unidos que volvía de la guerra del Golfo, con ayuda británica, china, india, paquistaní y japonesa, llevó comida y agua a los sobrevivientes en la operación Ángel del Mar."
+          },
+          "wiki": {
+            "en": "1991 Bangladesh cyclone",
+            "es": ""
+          }
+        },
+        {
+          "id": "cyclone-preparedness-programme",
+          "name": {
+            "en": "Cyclone Preparedness Programme",
+            "es": "Programa de Preparación para Ciclones"
+          },
+          "at": [
+            91.97,
+            21.45
+          ],
+          "cat": "relief",
+          "type": "institution",
+          "date": "1973",
+          "place": {
+            "en": "Coastal Bangladesh (headquarters in Dhaka)",
+            "es": "Costa de Bangladés (sede en Daca)"
+          },
+          "text": {
+            "en": "Run by Bangladesh's government and Red Crescent since the early 1970s, its tens of thousands of volunteers carry cyclone warnings village by village and help people reach shelters.",
+            "es": "Dirigido por el gobierno y la Media Luna Roja de Bangladés desde principios de los años setenta, sus decenas de miles de voluntarios llevan los avisos de ciclón aldea por aldea y ayudan a la gente a llegar a los refugios."
+          },
+          "details": {
+            "en": "The Red Crescent had begun working on a cyclone warning system in 1966; after 1970 it grew into the programme, set up in 1972–1973 under Sheikh Mujibur Rahman. Its volunteers, now about 55,000, spread the alerts and help people to shelters, and over 200 cyclone shelters were built on the coast in the thirty years after 1970. Deaths have fallen sharply: about 138,000 in 1991, about 3,500 in Cyclone Sidr in 2007, and about 20 in Bangladesh in the even stronger Cyclone Amphan in 2020, when 2.2 million people were evacuated. Among those who died in Amphan was a programme team leader. It is often held up as a model for the world.",
+            "es": "La Media Luna Roja había empezado a trabajar en un sistema de alerta de ciclones en 1966; tras 1970 se convirtió en el programa, creado en 1972-1973 bajo Sheikh Mujibur Rahman. Sus voluntarios, hoy unos 55 000, difunden las alertas y ayudan a la gente a llegar a los refugios, y en los treinta años posteriores a 1970 se construyeron más de 200 refugios contra ciclones en la costa. Las muertes han bajado mucho: unas 138 000 en 1991, unas 3500 en el ciclón Sidr de 2007 y unas 20 en Bangladés con el ciclón Amphan, aún más fuerte, en 2020, cuando se evacuó a 2,2 millones de personas. Entre los muertos de Amphan hubo un jefe de equipo del programa. A menudo se pone como modelo para el mundo."
+          },
+          "wiki": {
+            "en": "Cyclone Preparedness Programme",
+            "es": ""
+          },
+          "img": "Cyclone surgemap lg.jpg"
+        },
+        {
+          "id": "bhola-cyclone-1970",
+          "name": {
+            "en": "Bhola cyclone",
+            "es": "Ciclón Bhola"
+          },
+          "at": [
+            90.75,
+            22.25
+          ],
+          "cat": "storm",
+          "type": "event",
+          "date": "1970-11-12",
+          "place": {
+            "en": "Bhola and the islands of the Ganges Delta, East Pakistan (Bangladesh)",
+            "es": "Bhola y las islas del delta del Ganges, Pakistán Oriental (Bangladés)"
+          },
+          "text": {
+            "en": "On 12 November 1970 a cyclone drove a storm surge over the low islands of the Ganges Delta in East Pakistan. Between 300,000 and 500,000 people died: the deadliest tropical cyclone on record.",
+            "es": "El 12 de noviembre de 1970, un ciclón lanzó una marea de tormenta sobre las islas bajas del delta del Ganges, en Pakistán Oriental. Murieron entre 300 000 y 500 000 personas: el ciclón tropical más mortífero registrado."
+          },
+          "details": {
+            "en": "The storm formed over the central Bay of Bengal on 8 November and reached land with winds of about 185 km/h. Most victims drowned in the surge, which swept over islands such as Bhola, Hatiya and Sandwip, where there were almost no shelters: in Tazumuddin, more than 45% of its 167,000 people died, and rice crops were destroyed across the region. Whether all the warnings the Indian weather service received reached East Pakistan is uncertain. The government of General Yahya Khan, far away in West Pakistan, was slow to send help, and it refused to let Indian aid be flown in. Its handling of the disaster fed anger in the East.",
+            "es": "La tormenta se formó sobre el centro del golfo de Bengala el 8 de noviembre y llegó a tierra con vientos de unos 185 km/h. La mayoría de las víctimas se ahogaron en la marea, que barrió islas como Bhola, Hatiya y Sandwip, donde casi no había refugios: en Tazumuddin murió más del 45 % de sus 167 000 habitantes, y se perdieron las cosechas de arroz de toda la región. No se sabe si todos los avisos que recibió el servicio meteorológico indio llegaron a Pakistán Oriental. El gobierno del general Yahya Khan, lejos, en Pakistán Occidental, tardó en enviar ayuda y no dejó que la ayuda india llegara por aire. Su forma de manejar el desastre alimentó la ira en el Este."
+          },
+          "wiki": {
+            "en": "1970 Bhola cyclone",
+            "es": "Ciclón Bhola"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1998-10-30",
+      "title": {
+        "en": "Mitch stalls over Central America",
+        "es": "El Mitch se detiene sobre Centroamérica"
+      },
+      "camera": {
+        "lon": -83.5,
+        "lat": 18.5,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "In October 1998 Hurricane Mitch, which had reached Category 5, crawled across Honduras and dropped torrents of rain. Floods and mudslides killed about 11,000 people.",
+        "es": "En octubre de 1998, el huracán Mitch, que había llegado a la categoría 5, avanzó despacio sobre Honduras y descargó lluvias torrenciales. Las inundaciones y los deslaves mataron a unas 11 000 personas."
+      },
+      "details": {
+        "en": "Mitch reached Category 5 on 26 October, with winds of 285 km/h, on the Saffir–Simpson scale devised in 1971 by the engineer Herbert Saffir and the meteorologist Robert Simpson. Then it slowed off the coast of Honduras and crept inland, and for days its rain fell on Honduras, Nicaragua and Guatemala: unofficially up to 1,900 mm. Rivers tore through Tegucigalpa, and hillsides gave way. In Nicaragua, the flank of the Casita volcano collapsed into a mudflow that buried villages, killing more than 2,000 people. In all about 11,000 died and nearly as many were missing, most of them in Honduras; up to 1.5 million Hondurans lost their homes. As Mitch showed, a hurricane's category measures its wind, not its rain.",
+        "es": "El Mitch alcanzó la categoría 5 el 26 de octubre, con vientos de 285 km/h, en la escala de Saffir-Simpson, creada en 1971 por el ingeniero Herbert Saffir y el meteorólogo Robert Simpson. Luego se frenó frente a la costa de Honduras y avanzó despacio tierra adentro, y durante días su lluvia cayó sobre Honduras, Nicaragua y Guatemala: extraoficialmente, hasta 1900 mm. Los ríos arrasaron Tegucigalpa y las laderas cedieron. En Nicaragua, el flanco del volcán Casita se derrumbó en un alud de lodo que sepultó aldeas y mató a más de 2000 personas. En total murieron unas 11 000 personas y casi otras tantas desaparecieron, la mayoría en Honduras; hasta 1,5 millones de hondureños perdieron su casa. Como mostró el Mitch, la categoría de un huracán mide su viento, no su lluvia."
+      },
+      "control": {
+        "surge": null,
+        "storm": [
+          "HND",
+          {
+            "and": [
+              "NIC",
+              {
+                "poly": [
+                  [
+                    -87.8,
+                    12.2
+                  ],
+                  [
+                    -85.6,
+                    12.2
+                  ],
+                  [
+                    -85.4,
+                    13.9
+                  ],
+                  [
+                    -87.8,
+                    13.9
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "moves": [
+        {
+          "side": "storm",
+          "path": [
+            [
+              -77.8,
+              12.0
+            ],
+            [
+              -78.5,
+              14.5
+            ],
+            [
+              -81.0,
+              16.5
+            ],
+            [
+              -83.5,
+              17.1
+            ],
+            [
+              -85.6,
+              16.6
+            ],
+            [
+              -86.4,
+              15.9
+            ],
+            [
+              -87.5,
+              14.9
+            ],
+            [
+              -89.5,
+              15.2
+            ],
+            [
+              -91.5,
+              16.5
+            ]
+          ],
+          "icon": "🌀",
+          "label": {
+            "en": "Hurricane Mitch",
+            "es": "Huracán Mitch"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "hurricane-mitch-1998",
+          "name": {
+            "en": "Hurricane Mitch",
+            "es": "Huracán Mitch"
+          },
+          "at": [
+            -87.2068,
+            14.0723
+          ],
+          "cat": "storm",
+          "type": "event",
+          "date": "1998-10-29",
+          "place": {
+            "en": "Honduras and Nicaragua",
+            "es": "Honduras y Nicaragua"
+          },
+          "text": {
+            "en": "In late October 1998 Hurricane Mitch stalled over Central America and dropped up to 1,900 mm of rain. Floods and mudslides killed about 11,000 people, and almost as many went missing.",
+            "es": "A fines de octubre de 1998 el huracán Mitch se detuvo sobre Centroamérica y dejó caer hasta 1900 mm de lluvia. Las inundaciones y los deslizamientos mataron a unas 11 000 personas, y casi otras tantas desaparecieron."
+          },
+          "details": {
+            "en": "Mitch reached Category 5 in the western Caribbean on 26 October, then slowed off the coast of Honduras and crawled inland, weakening but pouring rain on Honduras, Nicaragua and Guatemala until early November. Rivers tore through Tegucigalpa and other towns, and mountainsides gave way. Honduras lost about 7,000 people; its president said the storm set the country back 50 years, and up to 1.5 million people, a fifth of the population, were left homeless. In Nicaragua at least 3,800 died. It was the deadliest Atlantic hurricane since the Great Hurricane of 1780, and most of its victims died in floods and mudslides rather than in the wind.",
+            "es": "Mitch alcanzó la categoría 5 en el oeste del Caribe el 26 de octubre, luego se frenó frente a la costa de Honduras y avanzó despacio tierra adentro, debilitándose pero descargando lluvia sobre Honduras, Nicaragua y Guatemala hasta principios de noviembre. Los ríos arrasaron Tegucigalpa y otros pueblos, y las laderas cedieron. Honduras perdió unas 7000 personas; su presidente dijo que la tormenta hizo retroceder al país 50 años, y hasta 1,5 millones de personas, una quinta parte de la población, quedaron sin hogar. En Nicaragua murieron al menos 3800. Fue el huracán atlántico más mortífero desde el Gran Huracán de 1780, y la mayoría de sus víctimas murieron en inundaciones y deslizamientos, no por el viento."
+          },
+          "wiki": {
+            "en": "Hurricane Mitch",
+            "es": "Huracán Mitch"
+          }
+        },
+        {
+          "id": "casita-mudflow-1998",
+          "name": {
+            "en": "Casita volcano mudflow",
+            "es": "Deslave del volcán Casita"
+          },
+          "at": [
+            -86.975,
+            12.69
+          ],
+          "cat": "flood",
+          "type": "event",
+          "date": "1998-10-30",
+          "place": {
+            "en": "Casita volcano, north-western Nicaragua",
+            "es": "Volcán Casita, noroeste de Nicaragua"
+          },
+          "text": {
+            "en": "On 30 October 1998 Mitch's rains made the flank of the Casita volcano collapse into a mudflow that buried villages below. More than 2,000 people died.",
+            "es": "El 30 de octubre de 1998, las lluvias del Mitch hicieron que el flanco del volcán Casita se desplomara en un alud de lodo que sepultó las aldeas de abajo. Murieron más de 2000 personas."
+          },
+          "details": {
+            "en": "Mitch never crossed into Nicaragua, but its huge circulation dropped more than 1,300 mm of rain there. The soaked flank of Casita, part of the San Cristóbal volcanic complex, gave way and became a lahar, a flood of mud and rock, that rushed down onto the towns of El Porvenir and Rolando Rodríguez, burying at least four villages under metres of mud. It was the storm's deadliest single disaster.",
+            "es": "El Mitch nunca entró en Nicaragua, pero su enorme circulación dejó caer allí más de 1300 mm de lluvia. El flanco empapado del Casita, parte del complejo volcánico San Cristóbal, cedió y se convirtió en un lahar, una avalancha de lodo y rocas, que cayó sobre los pueblos de El Porvenir y Rolando Rodríguez y sepultó al menos cuatro aldeas bajo metros de lodo. Fue el desastre más mortífero de la tormenta en un solo lugar."
+          },
+          "wiki": {
+            "en": "San Cristóbal Volcano",
+            "es": "Volcán San Cristóbal"
+          },
+          "img": "Mitch- Casita Mudslide.JPG"
+        },
+        {
+          "id": "saffir-simpson-scale",
+          "name": {
+            "en": "Saffir–Simpson scale",
+            "es": "Escala de Saffir-Simpson"
+          },
+          "at": [
+            -80.3838,
+            25.7543
+          ],
+          "cat": "science",
+          "type": "invention",
+          "date": "1971",
+          "place": {
+            "en": "National Hurricane Center, Miami, Florida, United States",
+            "es": "Centro Nacional de Huracanes, Miami, Florida, Estados Unidos"
+          },
+          "text": {
+            "en": "In 1971 the engineer Herbert Saffir and the meteorologist Robert Simpson created the scale that rates hurricanes from Category 1 to 5 by the speed of their winds.",
+            "es": "En 1971 el ingeniero Herbert Saffir y el meteorólogo Robert Simpson crearon la escala que clasifica los huracanes de la categoría 1 a la 5 según la velocidad de sus vientos."
+          },
+          "details": {
+            "en": "Saffir, a structural engineer studying low-cost housing in hurricane-prone areas for the United Nations, saw that there was no simple way to describe the damage a hurricane would do. Simpson, then director of the US National Hurricane Center, organised the categories by one-minute sustained winds and added storm-surge ranges. The scale reached the public in 1973. A Category 5 storm has winds of at least 252 km/h. Since 2010 it measures wind only. It says nothing of a storm's rain or surge, which killed most of the victims of Mitch and Haiyan, so a \"weaker\" storm can still be deadly.",
+            "es": "Saffir, ingeniero estructural que estudiaba viviendas baratas en zonas de huracanes para las Naciones Unidas, vio que no había una forma sencilla de describir los daños que causaría un huracán. Simpson, entonces director del Centro Nacional de Huracanes de Estados Unidos, ordenó las categorías según los vientos sostenidos durante un minuto y añadió rangos de marea de tormenta. La escala llegó al público en 1973. Una tormenta de categoría 5 tiene vientos de al menos 252 km/h. Desde 2010 mide solo el viento. No dice nada de la lluvia ni de la marea de una tormenta, que mataron a la mayoría de las víctimas del Mitch y del Haiyan, así que una tormenta «más débil» puede ser mortal."
+          },
+          "wiki": {
+            "en": "Saffir–Simpson scale",
+            "es": "Escala de huracanes de Saffir-Simpson"
+          },
+          "img": "Kelly Safer award.jpg"
+        }
+      ]
+    },
+    {
+      "date": "2005-08-29",
+      "title": {
+        "en": "Katrina and the levees",
+        "es": "El Katrina y los diques"
+      },
+      "camera": {
+        "lon": -86.0,
+        "lat": 27.6,
+        "zoom": 5.0
+      },
+      "text": {
+        "en": "On 29 August 2005 Hurricane Katrina struck Louisiana and Mississippi. New Orleans' levees failed and 80% of the city flooded; at least 1,392 people died, many of them elderly and poor.",
+        "es": "El 29 de agosto de 2005 el huracán Katrina golpeó Luisiana y Misisipi. Fallaron los diques de Nueva Orleans y se inundó el 80 % de la ciudad; murieron al menos 1392 personas, muchas de ellas ancianas y pobres."
+      },
+      "details": {
+        "en": "Katrina made landfall near Buras, Louisiana, as a Category 3 storm; its surge flattened much of the Mississippi coast. New Orleans had been ordered to evacuate, but there was no plan for people without cars, and about 97,000 stayed, many in the Superdome. The flood defences, built by the Army Corps of Engineers, failed in more than 50 places; two-thirds of the flooding came from failed floodwalls, and the Corps admitted faulty design and construction. Water stood for weeks in the Lower Ninth Ward and other districts. Most of the city's dead were elderly people living near the breaches. The response of all levels of government was widely criticised. Black and poorer residents were hit hardest, and many never came back: about 175,000 Black residents left, and some 100,000 returned.",
+        "es": "El Katrina tocó tierra cerca de Buras, Luisiana, como tormenta de categoría 3; su marea arrasó gran parte de la costa de Misisipi. Se había ordenado evacuar Nueva Orleans, pero no había un plan para quienes no tenían auto, y unas 97 000 personas se quedaron, muchas en el Superdome. Las defensas, construidas por el Cuerpo de Ingenieros del Ejército, fallaron en más de 50 puntos; dos tercios de la inundación se debieron a los muros que cedieron, y el Cuerpo admitió fallos de diseño y construcción. El agua estuvo semanas en el Lower Ninth Ward y otros barrios. La mayoría de los muertos de la ciudad eran ancianos que vivían cerca de las brechas. La respuesta de todos los niveles de gobierno fue muy criticada. Los vecinos negros y pobres fueron los más golpeados, y muchos nunca volvieron: unos 175 000 vecinos negros se fueron y unos 100 000 regresaron."
+      },
+      "control": {
+        "storm": null,
+        "surge": {
+          "land": [
+            [
+              [
+                -90.14,
+                30.035
+              ],
+              [
+                -89.96,
+                30.075
+              ],
+              [
+                -89.8,
+                30.03
+              ],
+              [
+                -89.7,
+                29.9
+              ],
+              [
+                -89.95,
+                29.9
+              ],
+              [
+                -90.12,
+                29.95
+              ]
+            ],
+            [
+              [
+                -89.45,
+                30.15
+              ],
+              [
+                -88.4,
+                30.3
+              ],
+              [
+                -88.4,
+                30.42
+              ],
+              [
+                -89.45,
+                30.36
+              ]
+            ]
+          ]
+        }
+      },
+      "moves": [
+        {
+          "side": "storm",
+          "path": [
+            [
+              -75.5,
+              23.5
+            ],
+            [
+              -78.5,
+              25.5
+            ],
+            [
+              -80.2,
+              25.95
+            ],
+            [
+              -82.3,
+              25.2
+            ],
+            [
+              -85.0,
+              25.0
+            ],
+            [
+              -87.7,
+              26.4
+            ],
+            [
+              -89.3,
+              28.4
+            ],
+            [
+              -89.6,
+              29.3
+            ],
+            [
+              -89.6,
+              30.2
+            ],
+            [
+              -89.2,
+              31.6
+            ]
+          ],
+          "icon": "🌀",
+          "label": {
+            "en": "Hurricane Katrina",
+            "es": "Huracán Katrina"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "hurricane-katrina-2005",
+          "name": {
+            "en": "Hurricane Katrina",
+            "es": "Huracán Katrina"
+          },
+          "at": [
+            -89.6,
+            29.37
+          ],
+          "cat": "storm",
+          "type": "event",
+          "date": "2005-08-29",
+          "place": {
+            "en": "Louisiana and Mississippi, United States",
+            "es": "Luisiana y Misisipi, Estados Unidos"
+          },
+          "text": {
+            "en": "On 29 August 2005 Hurricane Katrina struck the US Gulf Coast. Its surge broke New Orleans' flood defences in more than 50 places and flooded 80% of the city. At least 1,392 people died.",
+            "es": "El 29 de agosto de 2005 el huracán Katrina golpeó la costa estadounidense del golfo de México. Su marea rompió las defensas de Nueva Orleans en más de 50 puntos e inundó el 80 % de la ciudad. Murieron al menos 1392 personas."
+          },
+          "details": {
+            "en": "Katrina crossed southern Florida, grew to Category 5 over the Gulf and made landfall near Buras, Louisiana, as a Category 3, then again near the Mississippi border. Its surge flattened much of the Mississippi coast. In New Orleans, much of which lies below sea level, a mandatory evacuation had been ordered, but it made no plan for people without cars, and about 97,000 stayed; many sheltered in the Superdome. The levees and floodwalls failed, and the city flooded for weeks. The response of federal, state and local governments was widely criticised, and the head of the federal emergency agency resigned. The damage, about US$125 billion, made it the costliest tropical cyclone on record.",
+            "es": "Katrina cruzó el sur de Florida, alcanzó la categoría 5 sobre el golfo y tocó tierra cerca de Buras, Luisiana, como categoría 3, y otra vez cerca de la frontera con Misisipi. Su marea arrasó gran parte de la costa de Misisipi. En Nueva Orleans, buena parte de la cual está bajo el nivel del mar, se había ordenado la evacuación obligatoria, pero no se planeó nada para quienes no tenían auto, y unas 97 000 personas se quedaron; muchas se refugiaron en el Superdome. Los diques y muros de contención fallaron, y la ciudad estuvo inundada durante semanas. La respuesta de los gobiernos federal, estatal y local fue muy criticada, y el jefe de la agencia federal de emergencias dimitió. Los daños, de unos 125 000 millones de dólares, lo hicieron el ciclón tropical más costoso registrado."
+          },
+          "wiki": {
+            "en": "Hurricane Katrina",
+            "es": "Huracán Katrina"
+          }
+        },
+        {
+          "id": "new-orleans-levee-failures",
+          "name": {
+            "en": "New Orleans levee failures",
+            "es": "Fallos de los diques de Nueva Orleans"
+          },
+          "at": [
+            -90.1233,
+            30.0158
+          ],
+          "cat": "flood",
+          "type": "event",
+          "date": "2005-08-29",
+          "place": {
+            "en": "New Orleans, Louisiana, United States",
+            "es": "Nueva Orleans, Luisiana, Estados Unidos"
+          },
+          "text": {
+            "en": "In August 2005 New Orleans' levees and floodwalls, built by the US Army Corps of Engineers, failed in dozens of places. The Corps later admitted faulty design and construction.",
+            "es": "En agosto de 2005, los diques y muros de contención de Nueva Orleans, construidos por el Cuerpo de Ingenieros del Ejército de Estados Unidos, fallaron en decenas de puntos. El Cuerpo admitió después fallos de diseño y construcción."
+          },
+          "details": {
+            "en": "After Hurricane Betsy flooded the city in 1965, Congress made the Corps responsible for a new system of hurricane defences, still unfinished in 2005. On the morning of 29 August floodwalls along the 17th Street and London Avenue canals collapsed, some well below the water levels they were designed for, and two breaches on the Industrial Canal put the whole Lower Ninth Ward under more than 3 m of water. A 2007 engineering report found that two-thirds of the flooding came from the failures of the floodwalls, and in 2006 the Corps admitted that faulty design, incomplete sections and poor construction had contributed. Most of the city's dead were elderly people living near the breaches.",
+            "es": "Después de que el huracán Betsy inundara la ciudad en 1965, el Congreso encargó al Cuerpo un nuevo sistema de defensas contra huracanes, aún sin terminar en 2005. La mañana del 29 de agosto se derrumbaron muros de contención a lo largo de los canales de la calle 17 y de London Avenue, algunos con el agua muy por debajo del nivel para el que se habían diseñado, y dos brechas en el Canal Industrial dejaron todo el Lower Ninth Ward bajo más de 3 m de agua. Un informe de ingenieros de 2007 halló que dos tercios de la inundación se debieron a los fallos de los muros, y en 2006 el Cuerpo admitió que el diseño defectuoso, los tramos sin terminar y la mala construcción habían contribuido. La mayoría de los muertos de la ciudad eran ancianos que vivían cerca de las brechas."
+          },
+          "wiki": {
+            "en": "Effects of Hurricane Katrina in New Orleans",
+            "es": ""
+          },
+          "img": "NOAA Katrina NOLA 17th Street breach Aug 31 2005.jpg"
+        },
+        {
+          "id": "lower-ninth-ward",
+          "name": {
+            "en": "Lower Ninth Ward",
+            "es": "Lower Ninth Ward"
+          },
+          "at": [
+            -90.0128,
+            29.9703
+          ],
+          "cat": "town",
+          "type": "place",
+          "date": "2005-08-29",
+          "place": {
+            "en": "New Orleans, Louisiana, United States",
+            "es": "Nueva Orleans, Luisiana, Estados Unidos"
+          },
+          "text": {
+            "en": "A New Orleans neighbourhood that was completely flooded when the Industrial Canal floodwall broke. Its slow recovery became a symbol of how Katrina hit Black and poorer residents hardest.",
+            "es": "Un barrio de Nueva Orleans que quedó completamente inundado cuando se rompió el muro del Canal Industrial. Su lenta recuperación se convirtió en símbolo de cómo el Katrina golpeó más a los vecinos negros y pobres."
+          },
+          "details": {
+            "en": "The breaches sent water up to the ceilings within hours; many people cut their way onto their roofs with hatchets, as the mayor had advised, and waited for rescuers in boats and Coast Guard helicopters. Afterwards, many said the hurricane had hit Black and poorer people far harder than white and wealthier ones. About 175,000 Black residents left New Orleans in the year after the storm and only about 100,000 returned. In the Lower Ninth Ward rebuilding was slow: families lived in FEMA trailers until 2012, and charities built new homes.",
+            "es": "Las brechas hicieron subir el agua hasta los techos en pocas horas; mucha gente se abrió paso hasta el tejado con hachas, como había aconsejado el alcalde, y esperó a los rescatistas en botes y a los helicópteros de la Guardia Costera. Después, muchos dijeron que el huracán había golpeado mucho más a los negros y a los pobres que a los blancos y a los ricos. Unos 175 000 vecinos negros dejaron Nueva Orleans en el año posterior a la tormenta y solo unos 100 000 regresaron. En el Lower Ninth Ward la reconstrucción fue lenta: hubo familias en tráileres de la agencia federal hasta 2012, y organizaciones benéficas construyeron casas nuevas."
+          },
+          "wiki": {
+            "en": "Lower Ninth Ward",
+            "es": ""
+          }
+        },
+        {
+          "id": "superdome",
+          "name": {
+            "en": "Louisiana Superdome",
+            "es": "Superdome de Luisiana"
+          },
+          "at": [
+            -90.0811,
+            29.9508
+          ],
+          "cat": "relief",
+          "type": "structure",
+          "date": "2005-08-28",
+          "place": {
+            "en": "New Orleans, Louisiana, United States",
+            "es": "Nueva Orleans, Luisiana, Estados Unidos"
+          },
+          "text": {
+            "en": "New Orleans' stadium was opened as the \"refuge of last resort\" for people who could not leave before Katrina. Thousands sheltered there for days as the roof leaked and supplies ran short.",
+            "es": "El estadio de Nueva Orleans se abrió como «refugio de último recurso» para quienes no pudieron salir antes del Katrina. Miles de personas se refugiaron allí durante días mientras el techo goteaba y faltaban suministros."
+          },
+          "details": {
+            "en": "Mayor Ray Nagin announced the shelter on 28 August, when he ordered the city's first mandatory evacuation. The storm peeled off parts of the roof's waterproof covering, and the floodwaters around it made it hard to reach. A FEMA team flown in by helicopter could barely communicate with the outside world. Television images of people stranded at the Superdome and elsewhere, without enough water or food, shocked the country and fed the criticism of the government's response. The stadium was repaired and reopened in September 2006.",
+            "es": "El alcalde Ray Nagin anunció el refugio el 28 de agosto, cuando ordenó la primera evacuación obligatoria de la ciudad. La tormenta arrancó partes de la cubierta impermeable del techo, y la inundación a su alrededor lo dejó de difícil acceso. Un equipo de la agencia federal de emergencias llegado en helicóptero apenas podía comunicarse con el exterior. Las imágenes de televisión de personas atrapadas en el Superdome y en otros lugares, sin agua ni comida suficientes, conmocionaron al país y alimentaron las críticas a la respuesta del gobierno. El estadio se reparó y reabrió en septiembre de 2006."
+          },
+          "wiki": {
+            "en": "Caesars Superdome",
+            "es": "Louisiana Superdome"
+          },
+          "img": "Superdome Roof Damage FEMA.jpg"
+        }
+      ]
+    },
+    {
+      "date": "2008-05-02",
+      "title": {
+        "en": "Nargis, and aid held back",
+        "es": "El Nargis y la ayuda retenida"
+      },
+      "camera": {
+        "lon": 92.6,
+        "lat": 16.0,
+        "zoom": 5.3
+      },
+      "text": {
+        "en": "On 2 May 2008 Cyclone Nargis sent a storm surge deep into Myanmar's Irrawaddy Delta. At least 138,000 died, and the military government kept out foreign aid workers for weeks.",
+        "es": "El 2 de mayo de 2008, el ciclón Nargis lanzó una marea de tormenta muy adentro del delta del Irawadi, en Myanmar. Murieron al menos 138 000 personas, y el gobierno militar impidió durante semanas la entrada de cooperantes extranjeros."
+      },
+      "details": {
+        "en": "The surge pushed 40 km up the low, crowded delta, washing away rice fields and fishing villages; around Labutta alone some 80,000 died. The UN estimated that 1.5 million people were severely affected. The junta asked the UN for help but resisted large-scale international aid, kept out foreign relief workers and refused military ships and helicopters offered by other countries, while survivors waited for food, water and shelter; local groups and Buddhist volunteers did much of the early relief. Only after a meeting of South-East Asian nations on 19 May and talks with UN Secretary-General Ban Ki-moon on 23 May were aid workers of all nationalities let in. Meanwhile the junta held its constitutional referendum on 10 May, delaying the vote only in the worst-hit areas.",
+        "es": "La marea avanzó 40 km por el delta, bajo y muy poblado, arrasando arrozales y aldeas de pescadores; solo en torno a Labutta murieron unas 80 000 personas. La ONU calculó que 1,5 millones de personas resultaron gravemente afectadas. La junta pidió ayuda a la ONU pero se resistió a la ayuda internacional a gran escala, impidió la entrada de cooperantes extranjeros y rechazó los barcos y helicópteros militares que ofrecían otros países, mientras los sobrevivientes esperaban comida, agua y refugio; grupos locales y voluntarios budistas hicieron gran parte del primer socorro. Solo tras una reunión de los países del Sudeste Asiático el 19 de mayo y las conversaciones con el secretario general de la ONU, Ban Ki-moon, el 23 de mayo, se dejó entrar a cooperantes de todas las nacionalidades. Mientras tanto, la junta celebró su referéndum constitucional el 10 de mayo, y solo lo aplazó en las zonas más golpeadas."
+      },
+      "control": {
+        "surge": {
+          "land": [
+            [
+              94.2,
+              15.8
+            ],
+            [
+              96.3,
+              15.95
+            ],
+            [
+              96.4,
+              16.6
+            ],
+            [
+              95.6,
+              16.9
+            ],
+            [
+              94.8,
+              16.9
+            ],
+            [
+              94.2,
+              16.4
+            ]
+          ]
+        }
+      },
+      "moves": [
+        {
+          "side": "storm",
+          "path": [
+            [
+              86.0,
+              12.5
+            ],
+            [
+              86.4,
+              14.5
+            ],
+            [
+              87.5,
+              15.6
+            ],
+            [
+              90.5,
+              16.0
+            ],
+            [
+              93.5,
+              15.8
+            ],
+            [
+              94.8,
+              16.0
+            ],
+            [
+              96.2,
+              16.9
+            ],
+            [
+              97.6,
+              17.8
+            ]
+          ],
+          "icon": "🌀",
+          "label": {
+            "en": "Cyclone Nargis",
+            "es": "Ciclón Nargis"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "cyclone-nargis-2008",
+          "name": {
+            "en": "Cyclone Nargis",
+            "es": "Ciclón Nargis"
+          },
+          "at": [
+            95.0,
+            16.4833
+          ],
+          "cat": "storm",
+          "type": "event",
+          "date": "2008-05-02",
+          "place": {
+            "en": "Irrawaddy Delta, Myanmar",
+            "es": "Delta del Irawadi, Myanmar"
+          },
+          "text": {
+            "en": "On 2 May 2008 Cyclone Nargis sent a storm surge 40 km up the crowded Irrawaddy Delta of Myanmar. At least 138,000 people died, and the military government held back foreign aid for weeks.",
+            "es": "El 2 de mayo de 2008, el ciclón Nargis lanzó una marea de tormenta 40 km río arriba por el poblado delta del Irawadi, en Myanmar. Murieron al menos 138 000 personas, y el gobierno militar retuvo la ayuda extranjera durante semanas."
+          },
+          "details": {
+            "en": "The storm surge swept over the low rice fields and fishing villages of the delta; in the township of Labutta alone some 80,000 died. The UN estimated that 1.5 million people were severely affected. The junta at first resisted large-scale international aid and kept out foreign relief workers, while UN Secretary-General Ban Ki-moon and many governments urged it to let help in. Local groups and Buddhist volunteers did much of the early relief work. Only after a meeting of South-East Asian nations on 19 May, and talks with Ban Ki-moon on 23 May, were aid workers of all nationalities allowed in. Meanwhile the junta went ahead with its constitutional referendum on 10 May.",
+            "es": "La marea barrió los arrozales bajos y las aldeas de pescadores del delta; solo en el municipio de Labutta murieron unas 80 000 personas. La ONU calculó que 1,5 millones de personas resultaron gravemente afectadas. La junta se resistió al principio a la ayuda internacional a gran escala y no dejó entrar a cooperantes extranjeros, mientras el secretario general de la ONU, Ban Ki-moon, y muchos gobiernos le pedían que permitiera la ayuda. Grupos locales y voluntarios budistas hicieron gran parte del primer socorro. Solo tras una reunión de los países del Sudeste Asiático el 19 de mayo, y las conversaciones con Ban Ki-moon el 23 de mayo, se permitió la entrada a cooperantes de todas las nacionalidades. Mientras tanto, la junta celebró su referéndum constitucional el 10 de mayo."
+          },
+          "wiki": {
+            "en": "Cyclone Nargis",
+            "es": "Ciclón Nargis"
+          }
+        },
+        {
+          "id": "labutta",
+          "name": {
+            "en": "Labutta",
+            "es": "Labutta"
+          },
+          "at": [
+            94.7611,
+            16.1467
+          ],
+          "cat": "town",
+          "type": "place",
+          "date": "2008-05-02",
+          "place": {
+            "en": "Ayeyarwady Region, Myanmar",
+            "es": "Región de Ayeyarwady, Myanmar"
+          },
+          "text": {
+            "en": "A township in the Irrawaddy Delta where some 80,000 people died in Cyclone Nargis, more than half of all the dead.",
+            "es": "Un municipio del delta del Irawadi donde murieron unas 80 000 personas en el ciclón Nargis, más de la mitad de todos los muertos."
+          },
+          "details": {
+            "en": "Labutta is a town in the south-west of the Irrawaddy Delta, the seat of its township, in country only a few metres above the tides. State television reported that three-quarters of the town's buildings collapsed and a fifth lost their roofs, and many villages around it were wiped away by the surge while help was slow to arrive. The township lost some 80,000 people, more than half of all who died in Nargis.",
+            "es": "Labutta es un pueblo del suroeste del delta del Irawadi, cabecera de su municipio, en tierras apenas unos metros por encima de las mareas. La televisión estatal informó que tres cuartas partes de los edificios del pueblo se derrumbaron y una quinta parte perdió el techo, y muchas aldeas a su alrededor fueron arrasadas por la marea, mientras la ayuda tardaba en llegar. Murieron unas 80 000 personas del municipio, más de la mitad de todas las víctimas del ciclón."
+          },
+          "wiki": {
+            "en": "Labutta",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "2013-11-08",
+      "title": {
+        "en": "Haiyan's storm surge",
+        "es": "La marea de tormenta del Haiyan"
+      },
+      "camera": {
+        "lon": 129,
+        "lat": 11.5,
+        "zoom": 3.0
+      },
+      "text": {
+        "en": "On 8 November 2013 Typhoon Haiyan, one of the most intense storms ever recorded, struck the central Philippines. Its storm surge devastated Tacloban; more than 6,300 people died.",
+        "es": "El 8 de noviembre de 2013, el tifón Haiyan, una de las tormentas más intensas jamás registradas, golpeó el centro de Filipinas. Su marea de tormenta devastó Tacloban; murieron más de 6300 personas."
+      },
+      "details": {
+        "en": "The typhoon, called Yolanda in the Philippines, crossed the Pacific from Micronesia, and came ashore at Guiuan, in Eastern Samar, at 4:40 am, with winds of about 315 km/h by US estimates. Warnings had been issued and people in flood-prone areas told to evacuate, but most victims were killed by the storm surge, over 5 m high, which swept the low eastern shores of Leyte and Samar. Tacloban, hit by the strongest part of the storm, was largely destroyed; its airport terminal was flooded to the second storey. The UN counted about 11 million people affected. Help came from the Philippine government and from around the world. The storm went on to Vietnam and China.",
+        "es": "El tifón, llamado Yolanda en Filipinas, cruzó el Pacífico desde Micronesia y tocó tierra en Guiuan, en Samar Oriental, a las 4:40, con vientos de unos 315 km/h según estimaciones estadounidenses. Se habían dado avisos y se pidió evacuar a la gente de las zonas inundables, pero la mayoría de las víctimas murió por la marea de tormenta, de más de 5 m, que barrió las costas bajas del este de Leyte y Samar. Tacloban, golpeada por la parte más fuerte de la tormenta, quedó en gran parte destruida; la terminal de su aeropuerto se inundó hasta el segundo piso. La ONU contó unos 11 millones de afectados. Llegó ayuda del gobierno filipino y de todo el mundo. La tormenta siguió hacia Vietnam y China."
+      },
+      "control": {
+        "surge": {
+          "land": [
+            [
+              124.95,
+              10.95
+            ],
+            [
+              125.1,
+              11.0
+            ],
+            [
+              125.75,
+              10.95
+            ],
+            [
+              125.8,
+              11.15
+            ],
+            [
+              125.2,
+              11.38
+            ],
+            [
+              124.95,
+              11.3
+            ]
+          ]
+        }
+      },
+      "moves": [
+        {
+          "side": "storm",
+          "path": [
+            [
+              152.0,
+              6.5
+            ],
+            [
+              143.0,
+              7.0
+            ],
+            [
+              134.5,
+              7.9
+            ],
+            [
+              129.0,
+              9.6
+            ],
+            [
+              125.7,
+              11.0
+            ],
+            [
+              124.0,
+              11.3
+            ],
+            [
+              122.0,
+              11.6
+            ],
+            [
+              119.5,
+              12.0
+            ],
+            [
+              115.0,
+              13.8
+            ],
+            [
+              110.0,
+              17.0
+            ],
+            [
+              107.5,
+              20.6
+            ]
+          ],
+          "icon": "🌀",
+          "label": {
+            "en": "Typhoon Haiyan",
+            "es": "Tifón Haiyan"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "typhoon-haiyan-2013",
+          "name": {
+            "en": "Typhoon Haiyan (Yolanda)",
+            "es": "Tifón Haiyan (Yolanda)"
+          },
+          "at": [
+            125.73,
+            11.03
+          ],
+          "cat": "storm",
+          "type": "event",
+          "date": "2013-11-08",
+          "place": {
+            "en": "Guiuan, Eastern Samar, and Leyte, Philippines",
+            "es": "Guiuan, Samar Oriental, y Leyte, Filipinas"
+          },
+          "text": {
+            "en": "On 8 November 2013 one of the most intense tropical cyclones ever recorded struck the central Philippines. Its storm surge, over 5 m high, destroyed much of Tacloban. More than 6,300 died.",
+            "es": "El 8 de noviembre de 2013, uno de los ciclones tropicales más intensos jamás registrados golpeó el centro de Filipinas. Su marea de tormenta, de más de 5 m, destruyó gran parte de Tacloban. Murieron más de 6300 personas."
+          },
+          "details": {
+            "en": "Known in the Philippines as Yolanda, Haiyan came ashore at Guiuan, in Eastern Samar, with sustained winds of about 315 km/h by US estimates, and crossed the Visayas islands. Warnings had been raised and residents of flood-prone areas were told to evacuate, but the storm surge, which caused most of the deaths, swept over the low coasts of Leyte and Samar. The death toll reached 6,352, with over 1,000 missing, and the UN said about 11 million people were affected. Relief came from the Philippine government and from around the world. It was the costliest disaster in the country's history.",
+            "es": "Conocido en Filipinas como Yolanda, el Haiyan tocó tierra en Guiuan, en Samar Oriental, con vientos sostenidos de unos 315 km/h según estimaciones estadounidenses, y cruzó las islas Visayas. Se habían dado avisos y se pidió evacuar a los vecinos de zonas inundables, pero la marea de tormenta, que causó la mayoría de las muertes, barrió las costas bajas de Leyte y Samar. Los muertos llegaron a 6352, con más de 1000 desaparecidos, y la ONU calculó unos 11 millones de afectados. La ayuda llegó del gobierno filipino y de todo el mundo. Fue el desastre más costoso de la historia del país."
+          },
+          "wiki": {
+            "en": "Typhoon Haiyan",
+            "es": "Tifón Haiyan"
+          }
+        },
+        {
+          "id": "tacloban",
+          "name": {
+            "en": "Tacloban",
+            "es": "Tacloban"
+          },
+          "at": [
+            125.0,
+            11.24
+          ],
+          "cat": "town",
+          "type": "place",
+          "date": "2013-11-08",
+          "place": {
+            "en": "Leyte, Philippines",
+            "es": "Leyte, Filipinas"
+          },
+          "text": {
+            "en": "The city on Leyte hardest hit by Typhoon Haiyan. A surge 5.2 m high reached the second storey of the airport terminal and washed away low-lying districts.",
+            "es": "La ciudad de Leyte más golpeada por el tifón Haiyan. Una marea de 5,2 m llegó al segundo piso de la terminal del aeropuerto y arrasó los barrios bajos."
+          },
+          "details": {
+            "en": "Tacloban, today a city of some 259,000 people between Samar and Leyte, was struck by the strongest part of the storm, the northern eyewall, and it had suffered destructive typhoons before, in 1897 and 1912. Low-lying neighbourhoods on the east side of the city, many of them poor fishing communities, were hit hardest, some completely washed away. A UN official said the destruction was on a scale he had last seen after the 2004 Indian Ocean tsunami.",
+            "es": "Tacloban, hoy una ciudad de unos 259 000 habitantes entre Samar y Leyte, recibió la parte más fuerte de la tormenta, la pared norte del ojo, y ya había sufrido tifones destructivos en 1897 y 1912. Los barrios bajos del este de la ciudad, muchos de ellos comunidades pobres de pescadores, fueron los más golpeados, y algunos desaparecieron por completo. Un funcionario de la ONU dijo que no veía una destrucción así desde el tsunami del océano Índico de 2004."
+          },
+          "wiki": {
+            "en": "Tacloban",
+            "es": "Tacloban"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2017-09-20",
+      "title": {
+        "en": "Maria and the uncounted dead",
+        "es": "María y los muertos sin contar"
+      },
+      "camera": {
+        "lon": -63.5,
+        "lat": 17.5,
+        "zoom": 5.0
+      },
+      "text": {
+        "en": "In September 2017 Hurricane Maria devastated Dominica and then Puerto Rico, leaving the whole island without power. The official toll of 64 was later raised to 2,975.",
+        "es": "En septiembre de 2017 el huracán María devastó Dominica y luego Puerto Rico, que se quedó entera sin electricidad. La cifra oficial de 64 muertos se elevó después a 2975."
+      },
+      "details": {
+        "en": "Maria jumped from Category 1 to Category 5 in a day and struck Dominica on 18 September, killing 65 people. On the 20th it crossed Puerto Rico from Yabucoa, two weeks after Hurricane Irma, as a strong Category 4. The island was bankrupt and its aging power grid collapsed; for months many people lived without electricity, clean water or working hospitals, and the federal response was criticised as slow. The government long held to a count of 64 deaths, mostly drowning and falling debris. After journalists and lawsuits pressed for the records, George Washington University compared deaths after the storm with those expected and estimated 2,975 excess deaths from September to February, mostly among the poor and the elderly. The government adopted that figure in August 2018.",
+        "es": "María saltó de categoría 1 a categoría 5 en un día y golpeó Dominica el 18 de septiembre, donde mató a 65 personas. El día 20 cruzó Puerto Rico desde Yabucoa, dos semanas después del huracán Irma, como un fuerte categoría 4. La isla estaba en bancarrota y su vieja red eléctrica se derrumbó; durante meses mucha gente vivió sin electricidad, agua potable ni hospitales en funcionamiento, y la respuesta federal fue criticada por lenta. El gobierno mantuvo mucho tiempo una cifra de 64 muertos, sobre todo ahogados y golpeados por escombros. Después de que periodistas y demandas exigieran los registros, la Universidad George Washington comparó las muertes tras la tormenta con las esperadas y estimó 2975 muertes en exceso de septiembre a febrero, sobre todo entre pobres y ancianos. El gobierno adoptó esa cifra en agosto de 2018."
+      },
+      "control": {
+        "surge": null,
+        "storm": [
+          "PRI",
+          "DMA"
+        ]
+      },
+      "moves": [
+        {
+          "side": "storm",
+          "path": [
+            [
+              -55.5,
+              12.5
+            ],
+            [
+              -59.0,
+              14.2
+            ],
+            [
+              -61.3,
+              15.4
+            ],
+            [
+              -63.6,
+              16.7
+            ],
+            [
+              -65.9,
+              18.05
+            ],
+            [
+              -67.4,
+              18.9
+            ],
+            [
+              -69.2,
+              19.8
+            ],
+            [
+              -71.0,
+              21.4
+            ],
+            [
+              -72.3,
+              24.0
+            ],
+            [
+              -72.7,
+              27.5
+            ]
+          ],
+          "icon": "🌀",
+          "label": {
+            "en": "Hurricane Maria",
+            "es": "Huracán María"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "hurricane-maria-2017",
+          "name": {
+            "en": "Hurricane Maria",
+            "es": "Huracán María"
+          },
+          "at": [
+            -65.8794,
+            18.0506
+          ],
+          "cat": "storm",
+          "type": "event",
+          "date": "2017-09-20",
+          "place": {
+            "en": "Puerto Rico and Dominica",
+            "es": "Puerto Rico y Dominica"
+          },
+          "text": {
+            "en": "On 20 September 2017 Hurricane Maria crossed Puerto Rico, two days after devastating Dominica. It knocked out the island's whole power grid; about 2,975 people died in Puerto Rico in the following months.",
+            "es": "El 20 de septiembre de 2017 el huracán María cruzó Puerto Rico, dos días después de devastar Dominica. Dejó sin funcionar toda la red eléctrica de la isla; en los meses siguientes murieron unas 2975 personas en Puerto Rico."
+          },
+          "details": {
+            "en": "Maria grew from Category 1 to Category 5 in 24 hours and struck Dominica on 18 September, destroying most of its homes and killing 65. It reached Puerto Rico near Yabucoa as a strong Category 4, two weeks after Hurricane Irma. The island was bankrupt, and its power company, with plants 44 years old on average, had lost 30% of its staff since 2012. Without electricity, clean water and working hospitals, and with roads cut, many people, above all the old and the poor, died in the weeks and months that followed. The federal response was criticised as slow and poorly coordinated. It was the deadliest and costliest hurricane in Puerto Rico's history.",
+            "es": "María pasó de categoría 1 a categoría 5 en 24 horas y golpeó Dominica el 18 de septiembre, destruyó la mayoría de sus casas y mató a 65 personas. Llegó a Puerto Rico cerca de Yabucoa como un fuerte categoría 4, dos semanas después del huracán Irma. La isla estaba en bancarrota, y su compañía eléctrica, con centrales de 44 años de media, había perdido el 30 % de su personal desde 2012. Sin electricidad, agua potable ni hospitales funcionando, y con las carreteras cortadas, muchas personas, sobre todo ancianos y pobres, murieron en las semanas y meses siguientes. La respuesta federal fue criticada por lenta y mal coordinada. Fue el huracán más mortífero y costoso de la historia de Puerto Rico."
+          },
+          "wiki": {
+            "en": "Hurricane Maria",
+            "es": "Huracán María"
+          }
+        },
+        {
+          "id": "maria-death-toll-study",
+          "name": {
+            "en": "Counting Maria's dead",
+            "es": "Contar a los muertos de María"
+          },
+          "at": [
+            -66.0614,
+            18.4655
+          ],
+          "cat": "science",
+          "type": "event",
+          "date": "2018-08-28",
+          "place": {
+            "en": "San Juan, Puerto Rico",
+            "es": "San Juan (Puerto Rico)"
+          },
+          "text": {
+            "en": "For months Puerto Rico's official toll stood at 64. A study of excess deaths by George Washington University found 2,975 from September 2017 to February 2018, and the government adopted it.",
+            "es": "Durante meses la cifra oficial de Puerto Rico fue de 64 muertos. Un estudio de muertes en exceso de la Universidad George Washington halló 2975 entre septiembre de 2017 y febrero de 2018, y el gobierno la adoptó."
+          },
+          "details": {
+            "en": "The 64 deaths counted at first were mostly from drowning and falling debris. Reporters found many more: a CNN survey of half the island's funeral homes counted 499 storm-related deaths in a month. After lawsuits forced the release of death records, Governor Ricardo Rosselló commissioned the Milken Institute School of Public Health at George Washington University to compare deaths after the storm with the number expected. On 27 August 2018 it estimated 2,658 to 3,290 excess deaths, most likely 2,975, and found that the poor and the elderly were at greatest risk; the next day the government made 2,975 the official toll. A Harvard household survey had estimated 4,645, with a much wider margin of uncertainty.",
+            "es": "Los 64 muertos contados al principio fueron sobre todo por ahogamiento y golpes de escombros. Los periodistas hallaron muchos más: una encuesta de CNN en la mitad de las funerarias de la isla contó 499 muertes ligadas a la tormenta en un mes. Después de que unas demandas obligaran a publicar los registros de defunción, el gobernador Ricardo Rosselló encargó a la Escuela Milken de Salud Pública de la Universidad George Washington comparar las muertes tras la tormenta con las esperadas. El 27 de agosto de 2018 estimó entre 2658 y 3290 muertes en exceso, lo más probable 2975, y halló que los pobres y los ancianos corrían más riesgo; al día siguiente el gobierno hizo de 2975 la cifra oficial. Una encuesta de hogares de Harvard había estimado 4645, con un margen de incertidumbre mucho mayor."
+          },
+          "wiki": {
+            "en": "Hurricane Maria death toll controversy",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "2022-08-25",
+      "title": {
+        "en": "Pakistan under water",
+        "es": "Pakistán bajo el agua"
+      },
+      "camera": {
+        "lon": 68.4,
+        "lat": 26.8,
+        "zoom": 6.5
+      },
+      "text": {
+        "en": "In 2022 monsoon rains far above normal flooded large parts of Pakistan, killing 1,739 people and affecting 33 million. A study found global warming made the heaviest rain up to 50% worse.",
+        "es": "En 2022, lluvias monzónicas muy por encima de lo normal inundaron gran parte de Pakistán, mataron a 1739 personas y afectaron a 33 millones. Un estudio halló que el calentamiento agravó hasta un 50 % las lluvias más fuertes."
+      },
+      "details": {
+        "en": "After a severe heat wave in spring, the monsoon of 2022 brought Sindh and Balochistan several times their usual August rain, and glaciers in the north melted fast. From June to October the Indus and its tributaries spread over the plains of Sindh; Pakistan declared a national emergency on 25 August. Nearly 900,000 houses were destroyed and about 8 million people displaced. A rapid study by the World Weather Attribution group, led by Friederike Otto, found that global warming had made the heaviest rainfall up to 50% worse, and future floods more likely. Pakistan produces less than 1% of the world's greenhouse gases; unregulated building and deforestation at home also made the floods worse. The blue area shows the worst-flooded lands roughly.",
+        "es": "Tras una fuerte ola de calor en primavera, el monzón de 2022 trajo a Sindh y Baluchistán varias veces su lluvia habitual de agosto, y los glaciares del norte se derritieron deprisa. De junio a octubre, el Indo y sus afluentes se extendieron por las llanuras de Sindh; Pakistán declaró la emergencia nacional el 25 de agosto. Se destruyeron casi 900 000 casas y unos 8 millones de personas fueron desplazadas. Un estudio rápido del grupo World Weather Attribution, dirigido por Friederike Otto, halló que el calentamiento global había empeorado hasta un 50 % las lluvias más fuertes y que hacía más probables futuras inundaciones. Pakistán emite menos del 1 % de los gases de efecto invernadero del mundo; la construcción sin control y la deforestación en el país también empeoraron las inundaciones. La zona azul muestra a grandes rasgos las tierras más inundadas."
+      },
+      "control": {
+        "storm": null,
+        "river": {
+          "land": [
+            [
+              67.3,
+              28.6
+            ],
+            [
+              68.6,
+              28.5
+            ],
+            [
+              69.3,
+              27.6
+            ],
+            [
+              69.1,
+              26.5
+            ],
+            [
+              68.6,
+              25.4
+            ],
+            [
+              68.0,
+              24.6
+            ],
+            [
+              67.6,
+              25.3
+            ],
+            [
+              67.4,
+              26.4
+            ],
+            [
+              67.2,
+              27.3
+            ]
+          ]
+        }
+      },
+      "places": [
+        {
+          "id": "pakistan-floods-2022",
+          "name": {
+            "en": "Pakistan floods of 2022",
+            "es": "Inundaciones de Pakistán de 2022"
+          },
+          "at": [
+            68.2,
+            27.0
+          ],
+          "cat": "flood",
+          "type": "event",
+          "date": "2022-08-25",
+          "place": {
+            "en": "Sindh and Balochistan, Pakistan",
+            "es": "Sindh y Baluchistán, Pakistán"
+          },
+          "text": {
+            "en": "From June to October 2022, monsoon rains far above normal and melting glaciers flooded large parts of Pakistan. 1,739 people died, 33 million were affected and damage reached about US$40 billion.",
+            "es": "De junio a octubre de 2022, lluvias monzónicas muy por encima de lo normal y el deshielo de glaciares inundaron gran parte de Pakistán. Murieron 1739 personas, hubo 33 millones de afectados y daños por unos 40 000 millones de dólares."
+          },
+          "details": {
+            "en": "After a severe heat wave, Sindh and Balochistan received many times their usual August rainfall, and the Indus and its tributaries spread across the plains of Sindh. On 25 August Pakistan declared a national emergency. Of the dead, 647 were children; nearly 900,000 houses were destroyed, more than a million livestock were killed, and some 8 million people were displaced, many to tent camps where malaria and diarrhoea spread. It was the deadliest flood anywhere since 2020 and one of the costliest disasters on record. Pakistan produces less than 1% of the world's greenhouse gases, but unregulated building and deforestation at home also made the floods worse.",
+            "es": "Tras una fuerte ola de calor, Sindh y Baluchistán recibieron varias veces la lluvia habitual de agosto, y el Indo y sus afluentes se extendieron por las llanuras de Sindh. El 25 de agosto Pakistán declaró la emergencia nacional. De los muertos, 647 eran niños; se destruyeron casi 900 000 casas, murieron más de un millón de cabezas de ganado y unos 8 millones de personas fueron desplazadas, muchas a campamentos de tiendas donde se propagaron la malaria y la diarrea. Fue la inundación más mortífera del mundo desde 2020 y uno de los desastres más costosos registrados. Pakistán emite menos del 1 % de los gases de efecto invernadero del mundo, pero la construcción sin control y la deforestación en el propio país también empeoraron las inundaciones."
+          },
+          "wiki": {
+            "en": "2022 Pakistan floods",
+            "es": "Inundaciones en Pakistán de 2022"
+          }
+        },
+        {
+          "id": "lake-manchar",
+          "name": {
+            "en": "Lake Manchar",
+            "es": "Lago Manchar"
+          },
+          "at": [
+            67.68,
+            26.41
+          ],
+          "cat": "flood",
+          "type": "place",
+          "date": "2022-09",
+          "place": {
+            "en": "Jamshoro and Dadu, Sindh, Pakistan",
+            "es": "Jamshoro y Dadu, Sindh, Pakistán"
+          },
+          "text": {
+            "en": "Pakistan's largest natural freshwater lake, west of the Indus in Sindh. In September 2022 it overflowed, and engineers cut its banks to save nearby towns, flooding villages instead.",
+            "es": "El mayor lago natural de agua dulce de Pakistán, al oeste del Indo, en Sindh. En septiembre de 2022 se desbordó, y los ingenieros cortaron sus orillas para salvar ciudades cercanas, inundando aldeas en su lugar."
+          },
+          "details": {
+            "en": "The lake gathers water from the hills of Balochistan and from the Indus, whose bed lies 6 m above it. It overflowed in the floods of 2010, and again in 2022; then, to protect the city of Sehwan and the town of Bhan Syedabad, engineers breached its embankment, at the cost of flooding villages home to some 150,000 people. Officials hoped the cut would protect up to 500,000.",
+            "es": "El lago recoge agua de las colinas de Baluchistán y del Indo, cuyo cauce está 6 m más alto. Se desbordó en las inundaciones de 2010 y otra vez en 2022; entonces, para proteger la ciudad de Sehwan y el pueblo de Bhan Syedabad, los ingenieros abrieron una brecha en su terraplén, a costa de inundar aldeas donde vivían unas 150 000 personas. Las autoridades esperaban proteger así a hasta 500 000."
+          },
+          "wiki": {
+            "en": "Lake Manchar",
+            "es": "Lago Manchar"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2023-03-20",
+      "title": {
+        "en": "A warming world",
+        "es": "Un mundo que se calienta"
+      },
+      "camera": {
+        "lon": 40,
+        "lat": 25,
+        "zoom": 1.0
+      },
+      "text": {
+        "en": "The IPCC's Sixth Assessment Report (2021–2023) found that warming is making heavy rain more frequent and intense, likely raising the share of the strongest cyclones, and lifting the seas.",
+        "es": "El Sexto Informe de Evaluación del IPCC (2021-2023) halló que el calentamiento hace más frecuentes e intensas las lluvias fuertes, probablemente aumenta la proporción de los ciclones más fuertes y sube el nivel del mar."
+      },
+      "details": {
+        "en": "The UN's Intergovernmental Panel on Climate Change judged it unequivocal that human activity has warmed the planet, by about 1.1 °C. It found that heavy downpours and droughts already come more often, that the share of major tropical cyclones has likely grown over four decades, and that the seas rose about 20 cm between 1901 and 2018, so every storm surge reaches farther. Linking a single flood or storm to warming is the work of attribution studies, such as the one on Pakistan in 2022. The record of the last 140 years also shows what saves lives: warnings that reach everyone, shelters, sea walls and barriers kept up to date, and governments that let help in.",
+        "es": "El Grupo Intergubernamental de Expertos sobre el Cambio Climático de la ONU consideró inequívoco que la actividad humana ha calentado el planeta, cerca de 1,1 °C. Halló que los aguaceros intensos y las sequías ya llegan más a menudo, que la proporción de ciclones tropicales fuertes probablemente ha crecido en cuatro décadas y que el mar subió unos 20 cm entre 1901 y 2018, así que cada marea de tormenta llega más lejos. Relacionar una inundación o una tormenta concreta con el calentamiento es la tarea de los estudios de atribución, como el de Pakistán en 2022. La historia de los últimos 140 años muestra también lo que salva vidas: avisos que lleguen a todos, refugios, diques y barreras al día, y gobiernos que dejen entrar la ayuda."
+      },
+      "control": {
+        "river": null
+      },
+      "places": [
+        {
+          "id": "ipcc-ar6",
+          "name": {
+            "en": "IPCC Sixth Assessment Report",
+            "es": "Sexto Informe de Evaluación del IPCC"
+          },
+          "at": [
+            6.1374,
+            46.2236
+          ],
+          "cat": "science",
+          "type": "work",
+          "date": "2021-08-09",
+          "place": {
+            "en": "IPCC, Geneva, Switzerland",
+            "es": "IPCC, Ginebra, Suiza"
+          },
+          "text": {
+            "en": "The UN climate panel's report (2021–2023) found that human-caused warming is already making heavy rain more frequent and intense and seas higher, and has likely raised the share of the strongest cyclones.",
+            "es": "El informe de los expertos del clima de la ONU (2021-2023) halló que el calentamiento humano ya hace más frecuentes e intensas las lluvias fuertes y sube el mar, y que probablemente aumentó la proporción de los ciclones más fuertes."
+          },
+          "details": {
+            "en": "Its first part, on the physical science, written by 234 scientists from 66 countries from more than 14,000 studies, appeared on 9 August 2021; the synthesis followed on 20 March 2023. It found it unequivocal that human activity has warmed the planet, by about 1.1 °C over 1850–1900 in 2011–2020. With that warming, a heavy downpour that used to come once in ten years now comes about 1.3 times as often and is about 7% wetter, and droughts that came once a decade 1.7 times as often. Seas rose about 20 cm from 1901 to 2018, which makes every storm surge reach farther. The report also found that the people most at risk live mainly in poorer countries.",
+            "es": "Su primera parte, sobre la ciencia física, escrita por 234 científicos de 66 países a partir de más de 14 000 estudios, apareció el 9 de agosto de 2021; la síntesis llegó el 20 de marzo de 2023. Concluyó que es inequívoco que la actividad humana ha calentado el planeta, unos 1,1 °C en 2011-2020 respecto a 1850-1900. Con ese calentamiento, un aguacero que antes llegaba una vez cada diez años ahora llega unas 1,3 veces más a menudo y trae un 7 % más de agua, y las sequías que llegaban una vez por década, 1,7 veces más a menudo. El mar subió unos 20 cm entre 1901 y 2018, lo que hace que cada marea de tormenta llegue más lejos. El informe halló también que las personas más expuestas viven sobre todo en países más pobres."
+          },
+          "wiki": {
+            "en": "IPCC Sixth Assessment Report",
+            "es": ""
+          },
+          "img": "GSTA 1850-2019.png"
+        },
+        {
+          "id": "thames-barrier",
+          "name": {
+            "en": "Thames Barrier",
+            "es": "Barrera del Támesis"
+          },
+          "at": [
+            0.0367,
+            51.4969
+          ],
+          "cat": "relief",
+          "type": "structure",
+          "date": "1974",
+          "end": "1982",
+          "place": {
+            "en": "London, England",
+            "es": "Londres, Inglaterra"
+          },
+          "text": {
+            "en": "A movable barrier across the Thames, operational since 1982, that closes when a North Sea surge threatens London. By July 2026 it had been closed against floods 221 times.",
+            "es": "Una barrera móvil sobre el Támesis, en funcionamiento desde 1982, que se cierra cuando una marea de tormenta del mar del Norte amenaza Londres. Hasta julio de 2026 se había cerrado 221 veces contra inundaciones."
+          },
+          "details": {
+            "en": "After the 1953 flood, a government committee recommended a barrier across the Thames as an alternative to raising the riverbanks. Built from 1974 and officially opened on 8 May 1984, its curved gates, inspired by the taps of a gas cooker, lie on the riverbed and rotate up to close the river when high tides and storm surges are forecast. It was closed twice on 9 November 2007, when a surge was compared to that of 1953. It was designed to protect London from a once-in-a-thousand-years surge tide up to about 2030; as the sea rises, it closes more often.",
+            "es": "Tras la inundación de 1953, un comité del gobierno recomendó una barrera sobre el Támesis en lugar de elevar las orillas. Construida desde 1974 e inaugurada oficialmente el 8 de mayo de 1984, sus compuertas curvas, inspiradas en las llaves de una cocina de gas, descansan en el lecho del río y giran hacia arriba para cerrarlo cuando se pronostican mareas altas y de tormenta. Se cerró dos veces el 9 de noviembre de 2007, ante una marea comparada con la de 1953. Se diseñó para proteger Londres de una marea de tormenta de las que llegan una vez en mil años, hasta cerca de 2030; a medida que sube el mar, se cierra más a menudo."
+          },
+          "wiki": {
+            "en": "Thames Barrier",
+            "es": "Barrera del Támesis"
+          }
+        },
+        {
+          "id": "cyclone-preparedness-programme",
+          "name": {
+            "en": "Cyclone Preparedness Programme",
+            "es": "Programa de Preparación para Ciclones"
+          },
+          "at": [
+            91.97,
+            21.45
+          ],
+          "cat": "relief",
+          "type": "institution",
+          "date": "1973",
+          "place": {
+            "en": "Coastal Bangladesh (headquarters in Dhaka)",
+            "es": "Costa de Bangladés (sede en Daca)"
+          },
+          "text": {
+            "en": "Run by Bangladesh's government and Red Crescent since the early 1970s, its tens of thousands of volunteers carry cyclone warnings village by village and help people reach shelters.",
+            "es": "Dirigido por el gobierno y la Media Luna Roja de Bangladés desde principios de los años setenta, sus decenas de miles de voluntarios llevan los avisos de ciclón aldea por aldea y ayudan a la gente a llegar a los refugios."
+          },
+          "details": {
+            "en": "The Red Crescent had begun working on a cyclone warning system in 1966; after 1970 it grew into the programme, set up in 1972–1973 under Sheikh Mujibur Rahman. Its volunteers, now about 55,000, spread the alerts and help people to shelters, and over 200 cyclone shelters were built on the coast in the thirty years after 1970. Deaths have fallen sharply: about 138,000 in 1991, about 3,500 in Cyclone Sidr in 2007, and about 20 in Bangladesh in the even stronger Cyclone Amphan in 2020, when 2.2 million people were evacuated. Among those who died in Amphan was a programme team leader. It is often held up as a model for the world.",
+            "es": "La Media Luna Roja había empezado a trabajar en un sistema de alerta de ciclones en 1966; tras 1970 se convirtió en el programa, creado en 1972-1973 bajo Sheikh Mujibur Rahman. Sus voluntarios, hoy unos 55 000, difunden las alertas y ayudan a la gente a llegar a los refugios, y en los treinta años posteriores a 1970 se construyeron más de 200 refugios contra ciclones en la costa. Las muertes han bajado mucho: unas 138 000 en 1991, unas 3500 en el ciclón Sidr de 2007 y unas 20 en Bangladés con el ciclón Amphan, aún más fuerte, en 2020, cuando se evacuó a 2,2 millones de personas. Entre los muertos de Amphan hubo un jefe de equipo del programa. A menudo se pone como modelo para el mundo."
+          },
+          "wiki": {
+            "en": "Cyclone Preparedness Programme",
+            "es": ""
+          },
+          "img": "Cyclone surgemap lg.jpg"
+        },
+        {
+          "id": "pakistan-floods-2022",
+          "name": {
+            "en": "Pakistan floods of 2022",
+            "es": "Inundaciones de Pakistán de 2022"
+          },
+          "at": [
+            68.2,
+            27.0
+          ],
+          "cat": "flood",
+          "type": "event",
+          "date": "2022-08-25",
+          "place": {
+            "en": "Sindh and Balochistan, Pakistan",
+            "es": "Sindh y Baluchistán, Pakistán"
+          },
+          "text": {
+            "en": "From June to October 2022, monsoon rains far above normal and melting glaciers flooded large parts of Pakistan. 1,739 people died, 33 million were affected and damage reached about US$40 billion.",
+            "es": "De junio a octubre de 2022, lluvias monzónicas muy por encima de lo normal y el deshielo de glaciares inundaron gran parte de Pakistán. Murieron 1739 personas, hubo 33 millones de afectados y daños por unos 40 000 millones de dólares."
+          },
+          "details": {
+            "en": "After a severe heat wave, Sindh and Balochistan received many times their usual August rainfall, and the Indus and its tributaries spread across the plains of Sindh. On 25 August Pakistan declared a national emergency. Of the dead, 647 were children; nearly 900,000 houses were destroyed, more than a million livestock were killed, and some 8 million people were displaced, many to tent camps where malaria and diarrhoea spread. It was the deadliest flood anywhere since 2020 and one of the costliest disasters on record. Pakistan produces less than 1% of the world's greenhouse gases, but unregulated building and deforestation at home also made the floods worse.",
+            "es": "Tras una fuerte ola de calor, Sindh y Baluchistán recibieron varias veces la lluvia habitual de agosto, y el Indo y sus afluentes se extendieron por las llanuras de Sindh. El 25 de agosto Pakistán declaró la emergencia nacional. De los muertos, 647 eran niños; se destruyeron casi 900 000 casas, murieron más de un millón de cabezas de ganado y unos 8 millones de personas fueron desplazadas, muchas a campamentos de tiendas donde se propagaron la malaria y la diarrea. Fue la inundación más mortífera del mundo desde 2020 y uno de los desastres más costosos registrados. Pakistán emite menos del 1 % de los gases de efecto invernadero del mundo, pero la construcción sin control y la deforestación en el propio país también empeoraron las inundaciones."
+          },
+          "wiki": {
+            "en": "2022 Pakistan floods",
+            "es": "Inundaciones en Pakistán de 2022"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Floods, storms and droughts have killed millions since the 1880s, and the toll has fallen most where people are warned in time and have somewhere safe to go: in Bangladesh, cyclone deaths dropped from hundreds of thousands to a few dozen. Again and again, the worst harm fell on the poor, the old, people under military rule or at war, and those without cars or strong homes, and some of the deadliest floods, like the Yellow River in 1938, were made by people. With seas rising and heavy rain growing more intense, as the IPCC finds, barriers, warnings and fair relief matter more than ever.",
+    "es": "Las inundaciones, tormentas y sequías han matado a millones de personas desde la década de 1880, y las cifras han bajado sobre todo donde la gente recibe aviso a tiempo y tiene un lugar seguro adonde ir: en Bangladés, los muertos por ciclones pasaron de cientos de miles a unas pocas decenas. Una y otra vez, el mayor daño cayó sobre los pobres, los ancianos, los pueblos bajo gobiernos militares o en guerra y quienes no tenían auto ni casas sólidas, y algunas de las inundaciones más mortíferas, como la del río Amarillo en 1938, las provocaron las personas. Con el mar subiendo y las lluvias fuertes cada vez más intensas, como halla el IPCC, las barreras, los avisos y un socorro justo importan más que nunca."
+  },
+  "sources": [
+    {
+      "title": "Yellow River (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yellow_River"
+    },
+    {
+      "title": "1887 Yellow River flood (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1887_Yellow_River_flood"
+    },
+    {
+      "title": "1900 Galveston hurricane (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1900_Galveston_hurricane"
+    },
+    {
+      "title": "Benito Viñes (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Benito_Viñes"
+    },
+    {
+      "title": "Galveston Seawall (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Galveston_Seawall"
+    },
+    {
+      "title": "1931 China floods (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1931_China_floods"
+    },
+    {
+      "title": "Gaoyou Lake (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gaoyou_Lake"
+    },
+    {
+      "title": "Dust Bowl (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dust_Bowl"
+    },
+    {
+      "title": "Black Sunday (storm) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Black_Sunday_(storm)"
+    },
+    {
+      "title": "Migrant Mother (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Migrant_Mother"
+    },
+    {
+      "title": "Great Plains Shelterbelt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Great_Plains_Shelterbelt"
+    },
+    {
+      "title": "1938 Yellow River flood (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1938_Yellow_River_flood"
+    },
+    {
+      "title": "North Sea flood of 1953 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/North_Sea_flood_of_1953"
+    },
+    {
+      "title": "Canvey Island (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Canvey_Island"
+    },
+    {
+      "title": "Delta Works (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Delta_Works"
+    },
+    {
+      "title": "Thames Barrier (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Thames_Barrier"
+    },
+    {
+      "title": "1970 Bhola cyclone (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1970_Bhola_cyclone"
+    },
+    {
+      "title": "Tazumuddin Upazila (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tazumuddin_Upazila"
+    },
+    {
+      "title": "1970 Pakistani general election (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1970_Pakistani_general_election"
+    },
+    {
+      "title": "Droughts in the Sahel (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Droughts_in_the_Sahel"
+    },
+    {
+      "title": "1983–1985 famine in Ethiopia (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1983–1985_famine_in_Ethiopia"
+    },
+    {
+      "title": "Live Aid (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Live_Aid"
+    },
+    {
+      "title": "1991 Bangladesh cyclone (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/1991_Bangladesh_cyclone"
+    },
+    {
+      "title": "Cyclone Preparedness Programme (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cyclone_Preparedness_Programme"
+    },
+    {
+      "title": "Hurricane Mitch (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hurricane_Mitch"
+    },
+    {
+      "title": "San Cristóbal Volcano (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/San_Cristóbal_Volcano"
+    },
+    {
+      "title": "Saffir–Simpson scale (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Saffir–Simpson_scale"
+    },
+    {
+      "title": "Hurricane Katrina (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hurricane_Katrina"
+    },
+    {
+      "title": "Effects of Hurricane Katrina in New Orleans (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Effects_of_Hurricane_Katrina_in_New_Orleans"
+    },
+    {
+      "title": "Lower Ninth Ward (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lower_Ninth_Ward"
+    },
+    {
+      "title": "Caesars Superdome (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Caesars_Superdome"
+    },
+    {
+      "title": "Cyclone Nargis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cyclone_Nargis"
+    },
+    {
+      "title": "Labutta (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Labutta"
+    },
+    {
+      "title": "Typhoon Haiyan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Typhoon_Haiyan"
+    },
+    {
+      "title": "Tacloban (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tacloban"
+    },
+    {
+      "title": "Hurricane Maria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hurricane_Maria"
+    },
+    {
+      "title": "Hurricane Maria death toll controversy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hurricane_Maria_death_toll_controversy"
+    },
+    {
+      "title": "2022 Pakistan floods (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/2022_Pakistan_floods"
+    },
+    {
+      "title": "Lake Manchar (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lake_Manchar"
+    },
+    {
+      "title": "IPCC Sixth Assessment Report (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/IPCC_Sixth_Assessment_Report"
+    },
+    {
+      "title": "Isaac Cline (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Isaac_Cline"
+    },
+    {
+      "title": "Dorothea Lange (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dorothea_Lange"
+    },
+    {
+      "title": "Florence Owens Thompson (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Florence_Owens_Thompson"
+    },
+    {
+      "title": "Hugh Hammond Bennett (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hugh_Hammond_Bennett"
+    },
+    {
+      "title": "Oosterscheldekering (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Oosterscheldekering"
+    },
+    {
+      "title": "Watersnoodmuseum (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Watersnoodmuseum"
+    },
+    {
+      "title": "Bangladesh Liberation War (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bangladesh_Liberation_War"
+    },
+    {
+      "title": "Cyclone Sidr (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cyclone_Sidr"
+    },
+    {
+      "title": "Cyclone Amphan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cyclone_Amphan"
+    },
+    {
+      "title": "Herbert Saffir (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Herbert_Saffir"
+    },
+    {
+      "title": "Robert Simpson (meteorologist) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Robert_Simpson_(meteorologist)"
+    },
+    {
+      "title": "Effects of Hurricane Maria in Puerto Rico (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Effects_of_Hurricane_Maria_in_Puerto_Rico"
+    },
+    {
+      "title": "World Weather Attribution (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/World_Weather_Attribution"
+    },
+    {
+      "title": "Tropical cyclones and climate change (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tropical_cyclones_and_climate_change"
+    },
+    {
+      "title": "Sea level rise (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sea_level_rise"
+    },
+    {
+      "title": "Tropical cyclone (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tropical_cyclone"
+    },
+    {
+      "title": "Guiuan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Guiuan"
+    },
+    {
+      "title": "Harvey, F., \"Pakistan floods 'made up to 50% worse by global heating'\", The Guardian, 15 September 2022 (on the World Weather Attribution study)",
+      "url": "https://www.theguardian.com/environment/2022/sep/15/pakistan-floods-made-up-to-50-worse-by-global-heating"
+    },
+    {
+      "title": "World Weather Attribution: Climate change likely increased extreme monsoon rainfall, flooding highly vulnerable communities in Pakistan (2022)",
+      "url": "https://www.worldweatherattribution.org/climate-change-likely-increased-extreme-monsoon-rainfall-flooding-highly-vulnerable-communities-in-pakistan/"
+    },
+    {
+      "title": "IPCC, Climate Change 2021: The Physical Science Basis, Summary for Policymakers",
+      "url": "https://www.ipcc.ch/report/ar6/wg1/chapter/summary-for-policymakers/"
+    }
+  ]
+}

@@ -1,0 +1,2248 @@
+{
+  "id": "microbe-hunters",
+  "name": {
+    "en": "Germs and antibiotics",
+    "es": "Gérmenes y antibióticos"
+  },
+  "icon": "🔬",
+  "era": "modern",
+  "region": {
+    "en": "Europe and North America",
+    "es": "Europa y Norteamérica"
+  },
+  "start": "1546",
+  "end": "2024",
+  "summary": {
+    "en": "How people learned that tiny living things cause disease, from Fracastoro's 'seeds of contagion' and Leeuwenhoek's 'little animals' to Pasteur and Koch, and found drugs to kill them: Salvarsan, the sulfa drugs, penicillin and streptomycin. Now the germs are fighting back.",
+    "es": "Cómo se descubrió que seres vivos diminutos causan enfermedades, de las «semillas del contagio» de Fracastoro y los «animalitos» de Leeuwenhoek a Pasteur y Koch, y cómo se hallaron fármacos para matarlos: el Salvarsán, las sulfamidas, la penicilina y la estreptomicina. Hoy los gérmenes contraatacan."
+  },
+  "camera": {
+    "lon": 6.0,
+    "lat": 49.0,
+    "zoom": 2.6
+  },
+  "sides": [
+    {
+      "id": "routes",
+      "name": {
+        "en": "Ideas, people and moulds on the move",
+        "es": "Ideas, personas y mohos en movimiento"
+      },
+      "color": "#7d3c98"
+    },
+    {
+      "id": "pen1944",
+      "name": {
+        "en": "Mass-producing penicillin by 1944",
+        "es": "Producción masiva de penicilina en 1944"
+      },
+      "color": "#16a085"
+    },
+    {
+      "id": "amr2050",
+      "name": {
+        "en": "Highest resistance death rates forecast for 2050",
+        "es": "Mayor mortalidad por resistencia prevista para 2050"
+      },
+      "color": "#c0392b"
+    }
+  ],
+  "steps": [
+    {
+      "date": "1546",
+      "title": {
+        "en": "Seeds of contagion",
+        "es": "Las semillas del contagio"
+      },
+      "text": {
+        "en": "In 1546 the Verona physician Girolamo Fracastoro wrote that epidemics spread by tiny 'seeds', passed by touch, on clothes and things, or through the air. Nobody could see them yet.",
+        "es": "En 1546 el médico de Verona Girolamo Fracastoro escribió que las epidemias se propagaban por diminutas «semillas», que pasaban por contacto, por la ropa y los objetos o por el aire. Nadie podía verlas aún."
+      },
+      "details": {
+        "en": "Fracastoro's book On Contagion (De contagione) described three ways a disease could pass: by direct contact, by 'fomites', things such as clothes and linen that carried the seeds, and at a distance through the air. It gave the first description of typhus and suggested that rabies passed in a dog's saliva; in a poem of 1530 he had already named syphilis. The idea of 'seeds' of disease went back to the Roman poet Lucretius and to Galen, and Ibn Sina had written about contagion too; Fracastoro's seeds may have been chemical rather than living. Most doctors still blamed bad air or an imbalance of the body's humours, but his theory stayed influential for nearly three centuries, and the 19th-century germ hunters read him.",
+        "es": "El libro de Fracastoro Sobre el contagio (De contagione) describía tres maneras de transmitirse una enfermedad: por contacto directo, por «fómites», objetos como la ropa y los paños que llevaban las semillas, y a distancia por el aire. Dio la primera descripción del tifus y propuso que la rabia se transmitía por la saliva del perro; ya en un poema de 1530 había dado nombre a la sífilis. La idea de las «semillas» de la enfermedad venía del poeta romano Lucrecio y de Galeno, y Avicena también había escrito sobre el contagio; las semillas de Fracastoro quizá eran químicas y no seres vivos. La mayoría de los médicos seguía culpando al aire viciado o al desequilibrio de los humores del cuerpo, pero su teoría siguió influyendo durante casi tres siglos, y los cazadores de microbios del siglo XIX lo leyeron."
+      },
+      "camera": {
+        "lon": 12.6,
+        "lat": 43.4,
+        "zoom": 5.0
+      },
+      "places": [
+        {
+          "id": "girolamo-fracastoro",
+          "name": {
+            "en": "Girolamo Fracastoro",
+            "es": "Girolamo Fracastoro"
+          },
+          "at": [
+            10.9978,
+            45.443
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1546",
+          "life": [
+            "1478",
+            "1553-08-06"
+          ],
+          "place": {
+            "en": "Verona, Italy",
+            "es": "Verona, Italia"
+          },
+          "text": {
+            "en": "A physician, poet and astronomer of Verona. His theory of 'seeds' of contagion (1546) foreshadowed germ theory, three centuries before anyone could prove it.",
+            "es": "Médico, poeta y astrónomo de Verona. Su teoría de las «semillas» del contagio (1546) anticipó la teoría de los gérmenes, tres siglos antes de que nadie pudiera demostrarla."
+          },
+          "wiki": {
+            "en": "Girolamo Fracastoro",
+            "es": "Girolamo Fracastoro"
+          }
+        },
+        {
+          "id": "syphilis",
+          "name": {
+            "en": "Syphilis",
+            "es": "Sífilis"
+          },
+          "at": [
+            14.2681,
+            40.8518
+          ],
+          "cat": "disease",
+          "type": "disease",
+          "date": "1495",
+          "place": {
+            "en": "Naples, Italy (first recorded outbreak in Europe)",
+            "es": "Nápoles, Italia (primer brote registrado en Europa)"
+          },
+          "text": {
+            "en": "A sexually transmitted infection by the bacterium Treponema pallidum. Europe's first recorded outbreak struck Naples in 1495, during a French invasion; where it came from is still debated.",
+            "es": "Infección de transmisión sexual causada por la bacteria Treponema pallidum. El primer brote registrado en Europa estalló en Nápoles en 1495, durante una invasión francesa; su origen aún se debate."
+          },
+          "details": {
+            "en": "Each country blamed its neighbours: Italians, English and Germans called it \"the French disease\", and the French called it \"the Neapolitan disease\". In one theory, sailors returning with Columbus brought it from the Americas, where it already existed; other evidence suggests that related diseases were in Europe before. Fracastoro gave it its name in a poem of 1530. For four centuries the only remedies were toxic mercury and guaiac wood, until Salvarsan in 1910 and penicillin in the 1940s. It is still with us: in 2015 it caused about 107,000 deaths.",
+            "es": "Cada país culpaba a sus vecinos: italianos, ingleses y alemanes la llamaban «mal francés», y los franceses, «mal napolitano». Según una teoría, los marineros que volvían con Colón la trajeron de América, donde ya existía; otras pruebas indican que enfermedades emparentadas ya estaban en Europa. Fracastoro le dio nombre en un poema de 1530. Durante cuatro siglos los únicos remedios fueron el tóxico mercurio y el palo de guayaco, hasta el Salvarsán en 1910 y la penicilina en los años cuarenta. Sigue entre nosotros: en 2015 causó unas 107 000 muertes."
+          },
+          "wiki": {
+            "en": "Syphilis",
+            "es": "Sífilis"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1676-10-09",
+      "title": {
+        "en": "Little animals in Delft",
+        "es": "Animalitos en Delft"
+      },
+      "text": {
+        "en": "With tiny lenses he made himself, the Delft cloth merchant Antonie van Leeuwenhoek saw 'little animals' in drops of water. His letter of 9 October 1676 described single-celled life.",
+        "es": "Con diminutas lentes que él mismo fabricaba, el comerciante de telas de Delft Anton van Leeuwenhoek vio «animalitos» en gotas de agua. Su carta del 9 de octubre de 1676 describía la vida unicelular."
+      },
+      "details": {
+        "en": "Leeuwenhoek made more than 500 lenses and at least 25 single-lens microscopes, some magnifying up to 275 times, and kept his method secret. In about 190 letters to the Royal Society in London, all in everyday Dutch, he described protists, sperm, red blood cells and bacteria; he found 'animalcules' in rain and pond water and on his own teeth. The Society doubted the creatures of his 1676 letter until, in 1677, witnesses that included ministers of Delft's churches confirmed what he saw. He was elected a Fellow in 1680. Nobody then guessed that some of these tiny creatures cause disease.",
+        "es": "Leeuwenhoek talló más de 500 lentes y fabricó al menos 25 microscopios de una sola lente, algunos de hasta 275 aumentos, y guardó en secreto su método. En unas 190 cartas a la Royal Society de Londres, todas en neerlandés corriente, describió protistas, espermatozoides, glóbulos rojos y bacterias; halló «animálculos» en el agua de lluvia y de los estanques y en sus propios dientes. La Sociedad dudó de los seres de su carta de 1676 hasta que en 1677 unos testigos, entre ellos pastores de las iglesias de Delft, confirmaron lo que veía. Fue elegido miembro en 1680. Nadie sospechaba entonces que algunos de esos seres diminutos causan enfermedades."
+      },
+      "camera": {
+        "lon": 2.1,
+        "lat": 51.85,
+        "zoom": 9.0
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "path": [
+            [
+              4.357,
+              52.012
+            ],
+            [
+              4.1,
+              51.98
+            ],
+            [
+              2.5,
+              51.8
+            ],
+            [
+              1.2,
+              51.5
+            ],
+            [
+              0.3,
+              51.48
+            ],
+            [
+              -0.13,
+              51.51
+            ]
+          ],
+          "label": {
+            "en": "Letters to the Royal Society",
+            "es": "Cartas a la Royal Society"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "antonie-van-leeuwenhoek",
+          "name": {
+            "en": "Antonie van Leeuwenhoek",
+            "es": "Anton van Leeuwenhoek"
+          },
+          "at": [
+            4.3571,
+            52.0116
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1676-10-09",
+          "life": [
+            "1632-10-24",
+            "1723-08-26"
+          ],
+          "place": {
+            "en": "Delft, Netherlands",
+            "es": "Delft, Países Bajos"
+          },
+          "text": {
+            "en": "A Delft cloth merchant and town official with no university training. With microscopes of his own making he was the first to see microbes; he is called the father of microbiology.",
+            "es": "Comerciante de telas y funcionario de Delft sin estudios universitarios. Con microscopios hechos por él mismo fue el primero en ver microbios; se lo llama el padre de la microbiología."
+          },
+          "wiki": {
+            "en": "Antonie van Leeuwenhoek",
+            "es": "Anton van Leeuwenhoek"
+          }
+        },
+        {
+          "id": "royal-society",
+          "name": {
+            "en": "Royal Society",
+            "es": "Royal Society"
+          },
+          "at": [
+            -0.1322,
+            51.5058
+          ],
+          "cat": "scientist",
+          "icon": "🏛️",
+          "type": "institution",
+          "date": "1660-11-28",
+          "place": {
+            "en": "London, United Kingdom",
+            "es": "Londres, Reino Unido"
+          },
+          "text": {
+            "en": "London's society of natural philosophers, founded in 1660. It published Leeuwenhoek's letters in English from 1673 and made him a Fellow in 1680, though he never attended a meeting.",
+            "es": "La sociedad de filósofos naturales de Londres, fundada en 1660. Publicó en inglés las cartas de Leeuwenhoek desde 1673 y lo nombró miembro en 1680, aunque él nunca asistió a una reunión."
+          },
+          "wiki": {
+            "en": "Royal Society",
+            "es": "Royal Society"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1847-05",
+      "title": {
+        "en": "Wash your hands!",
+        "es": "¡Lávense las manos!"
+      },
+      "text": {
+        "en": "In Vienna in May 1847, Ignaz Semmelweis made doctors wash their hands in chlorinated lime before examining women in labour. Deaths from childbed fever fell from 18% to about 2%.",
+        "es": "En Viena, en mayo de 1847, Ignaz Semmelweis obligó a los médicos a lavarse las manos con cal clorada antes de examinar a las parturientas. Las muertes por fiebre puerperal bajaron del 18 % a cerca del 2 %."
+      },
+      "details": {
+        "en": "The Vienna General Hospital had two maternity clinics. In the First, run by doctors and medical students, far more mothers died of childbed fever than in the Second, run by midwives, and women begged not to be sent there. When his friend Jakob Kolletschka died after being cut during an autopsy, with signs like the dying mothers', Semmelweis guessed that doctors carried 'cadaverous particles' on their hands from the dissecting room. Handwashing worked, but he could not explain why, and some doctors were offended at the idea that their hands were unclean. He lost his post in 1849 and moved to Pest, where he again cut deaths. Mocked and bitter, he was committed to an asylum in 1865 and died there two weeks later, possibly after being beaten by guards.",
+        "es": "El Hospital General de Viena tenía dos clínicas de maternidad. En la Primera, atendida por médicos y estudiantes, morían de fiebre puerperal muchas más madres que en la Segunda, atendida por parteras, y las mujeres suplicaban que no las enviaran allí. Cuando su amigo Jakob Kolletschka murió tras cortarse en una autopsia, con signos parecidos a los de las madres moribundas, Semmelweis supuso que los médicos llevaban en las manos «partículas cadavéricas» desde la sala de disección. Lavarse las manos funcionó, pero no pudo explicar por qué, y algunos médicos se ofendieron ante la idea de tener las manos sucias. Perdió su puesto en 1849 y se fue a Pest, donde volvió a reducir las muertes. Ridiculizado y amargado, fue internado en un asilo en 1865 y murió allí dos semanas después, posiblemente tras ser golpeado por los guardias."
+      },
+      "camera": {
+        "lon": 16.36,
+        "lat": 48.21,
+        "zoom": 18
+      },
+      "places": [
+        {
+          "id": "ignaz-semmelweis",
+          "name": {
+            "en": "Ignaz Semmelweis",
+            "es": "Ignaz Semmelweis"
+          },
+          "at": [
+            16.3535,
+            48.216
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1847-05",
+          "life": [
+            "1818-07-01",
+            "1865-08-13"
+          ],
+          "place": {
+            "en": "Vienna General Hospital, Austria",
+            "es": "Hospital General de Viena, Austria"
+          },
+          "text": {
+            "en": "A Hungarian doctor who showed in 1847 that handwashing saved mothers' lives. Rejected by colleagues, he died in an asylum in 1865; he is now called the 'saviour of mothers'.",
+            "es": "Médico húngaro que demostró en 1847 que lavarse las manos salvaba la vida de las madres. Rechazado por sus colegas, murió en un asilo en 1865; hoy se lo llama el «salvador de las madres»."
+          },
+          "wiki": {
+            "en": "Ignaz Semmelweis",
+            "es": "Ignaz Semmelweis"
+          }
+        },
+        {
+          "id": "puerperal-fever",
+          "name": {
+            "en": "Childbed fever",
+            "es": "Fiebre puerperal"
+          },
+          "at": [
+            16.3548,
+            48.2148
+          ],
+          "cat": "disease",
+          "type": "disease",
+          "date": "1847",
+          "place": {
+            "en": "Vienna General Hospital, Austria",
+            "es": "Hospital General de Viena, Austria"
+          },
+          "text": {
+            "en": "An infection of the womb after childbirth, mostly caused by Streptococcus bacteria. It killed many mothers in 19th-century hospitals, where doctors carried it on their hands.",
+            "es": "Infección del útero después del parto, causada sobre todo por bacterias Streptococcus. Mató a muchas madres en los hospitales del siglo XIX, donde los médicos la llevaban en las manos."
+          },
+          "details": {
+            "en": "Semmelweis's figures for Vienna's First Clinic, run by doctors, showed 7 to 16% of mothers dying each year in 1841–1846, against 2 to 8% in the midwives' Second Clinic. In 1843 the American doctor Oliver Wendell Holmes had argued that the fever was contagious. A cure came only in the 1930s, when Leonard Colebrook used the new sulfa drug Prontosil on mothers in London, where the disease still killed around 2,000 women a year in England and Wales.",
+            "es": "Las cifras de Semmelweis para la Primera Clínica de Viena, atendida por médicos, mostraban que morían cada año entre el 7 y el 16 % de las madres en 1841-1846, frente al 2 a 8 % en la Segunda Clínica, de las parteras. En 1843 el médico estadounidense Oliver Wendell Holmes había sostenido que la fiebre era contagiosa. La cura llegó recién en los años treinta, cuando Leonard Colebrook usó la nueva sulfamida Prontosil con madres en Londres, donde la enfermedad aún mataba a unas 2000 mujeres al año en Inglaterra y Gales."
+          },
+          "wiki": {
+            "en": "Postpartum infections",
+            "es": "Infección puerperal"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1855-03",
+      "title": {
+        "en": "Florence Nightingale at Scutari",
+        "es": "Florence Nightingale en Scutari"
+      },
+      "text": {
+        "en": "At the army hospital in Scutari, Florence Nightingale and her nurses found soldiers dying of disease amid filth. A sanitary commission flushed the sewers in March 1855, and deaths fell sharply.",
+        "es": "En el hospital militar de Scutari, Florence Nightingale y sus enfermeras hallaron soldados que morían de enfermedades en medio de la suciedad. Una comisión sanitaria limpió las cloacas en marzo de 1855, y las muertes cayeron."
+      },
+      "details": {
+        "en": "Nightingale arrived early in November 1854 with 38 volunteer nurses, among them 15 Catholic nuns. In the first winter 4,077 soldiers died at Scutari, ten times more from typhus, typhoid, cholera and dysentery than from wounds. Overcrowding, broken sewers and no ventilation were to blame. Nightingale believed that disease came from bad air, not germs, yet her insistence on cleanliness, fresh air and good food saved lives, and she never claimed credit for the fall in deaths. Back in Britain she used statistics and new kinds of charts to push the government to reform army hospitals, and in 1859 she became the first woman elected to the Royal Statistical Society. Her school for nurses made nursing a respected profession.",
+        "es": "Nightingale llegó a comienzos de noviembre de 1854 con 38 enfermeras voluntarias, entre ellas 15 monjas católicas. En el primer invierno murieron en Scutari 4077 soldados, diez veces más de tifus, fiebre tifoidea, cólera y disentería que de heridas. La culpa era del hacinamiento, las cloacas rotas y la falta de ventilación. Nightingale creía que las enfermedades venían del aire viciado, no de los gérmenes, pero su insistencia en la limpieza, el aire puro y la buena comida salvó vidas, y nunca se atribuyó la caída de las muertes. De vuelta en Gran Bretaña usó estadísticas y nuevos tipos de gráficos para presionar al gobierno a reformar los hospitales militares, y en 1859 fue la primera mujer elegida en la Real Sociedad de Estadística. Su escuela de enfermeras hizo de la enfermería una profesión respetada."
+      },
+      "camera": {
+        "lon": 31.2,
+        "lat": 42.6,
+        "zoom": 5.2
+      },
+      "places": [
+        {
+          "id": "florence-nightingale",
+          "name": {
+            "en": "Florence Nightingale",
+            "es": "Florence Nightingale"
+          },
+          "at": [
+            29.0158,
+            41.0081
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1854-11",
+          "life": [
+            "1820-05-12",
+            "1910-08-13"
+          ],
+          "place": {
+            "en": "Selimiye Barracks, Scutari (Üsküdar), Istanbul, Turkey",
+            "es": "Cuartel de Selimiye, Scutari (Üsküdar), Estambul, Turquía"
+          },
+          "text": {
+            "en": "An English nurse and statistician who reformed the army hospital at Scutari in the Crimean War and founded modern nursing. Soldiers called her 'the Lady with the Lamp'.",
+            "es": "Enfermera y estadística inglesa que reformó el hospital militar de Scutari en la guerra de Crimea y fundó la enfermería moderna. Los soldados la llamaban «la dama de la lámpara»."
+          },
+          "wiki": {
+            "en": "Florence Nightingale",
+            "es": "Florence Nightingale"
+          }
+        },
+        {
+          "id": "nightingale-rose",
+          "name": {
+            "en": "Nightingale's rose diagram",
+            "es": "El diagrama de rosa de Nightingale"
+          },
+          "at": [
+            29.03,
+            40.995
+          ],
+          "cat": "discovery",
+          "icon": "📊",
+          "type": "work",
+          "date": "1858",
+          "place": {
+            "en": "Data from Scutari and the Crimea; published in London",
+            "es": "Datos de Scutari y Crimea; publicado en Londres"
+          },
+          "text": {
+            "en": "Her 'Diagram of the causes of mortality in the army in the East' (1858) showed at a glance that far more soldiers died of preventable disease than of wounds. It swayed politicians who never read tables.",
+            "es": "Su «Diagrama de las causas de mortalidad en el ejército de Oriente» (1858) mostraba de un vistazo que muchos más soldados morían de enfermedades evitables que de heridas. Convenció a políticos que nunca leían tablas."
+          },
+          "wiki": {
+            "en": "Florence Nightingale",
+            "es": "Florence Nightingale"
+          },
+          "img": "Nightingale-mortality.jpg"
+        },
+        {
+          "id": "mary-seacole",
+          "name": {
+            "en": "Mary Seacole",
+            "es": "Mary Seacole"
+          },
+          "at": [
+            33.605,
+            44.52
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1855-03",
+          "life": [
+            "1805-11-23",
+            "1881-05-14"
+          ],
+          "place": {
+            "en": "The British Hotel, near Balaklava, Crimea",
+            "es": "El British Hotel, cerca de Balaklava, Crimea"
+          },
+          "text": {
+            "en": "A Jamaican-born nurse and businesswoman who, turned away from Nightingale's group, went to the Crimea at her own expense in 1855. She fed and nursed soldiers, who called her 'Mother Seacole'.",
+            "es": "Enfermera y empresaria nacida en Jamaica que, rechazada para el grupo de Nightingale, viajó a Crimea por su cuenta en 1855. Alimentó y cuidó a los soldados, que la llamaban «Madre Seacole»."
+          },
+          "details": {
+            "en": "Seacole had learned the healing arts from her mother, a Creole \"doctress\" who ran a boarding house in Kingston, and had treated cholera in Jamaica and Panama. When she tried to join the nurses bound for the war, she was refused; she believed racism lay behind it. So she sailed with her own supplies, built the \"British Hotel\" from salvaged wood and iron near the British camp, and nursed casualties from the trenches, sometimes under fire. In 2004 she was voted the greatest Black Briton.",
+            "es": "Seacole había aprendido a curar de su madre, una «doctora» criolla que tenía una casa de huéspedes en Kingston, y había tratado el cólera en Jamaica y Panamá. Cuando intentó unirse a las enfermeras que partían a la guerra, la rechazaron; ella creyó que por racismo. Entonces viajó con sus propias provisiones, levantó el «British Hotel» con madera y hierro recuperados cerca del campamento británico y cuidó a los heridos de las trincheras, a veces bajo el fuego. En 2004 fue elegida la británica negra más destacada de la historia."
+          },
+          "wiki": {
+            "en": "Mary Seacole",
+            "es": "Mary Seacole"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1862",
+      "title": {
+        "en": "Pasteur's swan-neck flasks",
+        "es": "Los matraces de Pasteur"
+      },
+      "text": {
+        "en": "In Paris, Louis Pasteur boiled broth in flasks with long, curved necks. Dust and germs settled in the bend and the broth stayed fresh: life came from life, not from nothing.",
+        "es": "En París, Louis Pasteur hirvió caldo en matraces de cuello largo y curvo. El polvo y los gérmenes quedaban en la curva y el caldo no se pudría: la vida venía de la vida, no de la nada."
+      },
+      "details": {
+        "en": "Many scientists still believed in spontaneous generation, the idea that microbes arise by themselves in rotting matter, and Félix Pouchet of Rouen claimed his experiments proved it. Pasteur had already shown that yeasts and other microbes cause fermentation and spoil wine, beer and milk; heating them gently, pasteurisation, kept them good. In his swan-neck flasks air could reach the boiled broth but particles could not, and he found fewer germs in mountain air. In 1862 the French Academy of Sciences gave him its Alhumbert Prize. If microbes cause rot, Pasteur reasoned, they may cause disease too. He went on to study diseases of silkworms, and later made vaccines against anthrax (1881) and rabies (1885).",
+        "es": "Muchos científicos aún creían en la generación espontánea, la idea de que los microbios nacen solos en la materia en descomposición, y Félix Pouchet, de Ruan, afirmaba que sus experimentos lo probaban. Pasteur ya había mostrado que las levaduras y otros microbios causan la fermentación y echan a perder el vino, la cerveza y la leche; calentarlos suavemente, la pasteurización, los conservaba. En sus matraces de cuello de cisne el aire llegaba al caldo hervido pero las partículas no, y halló menos gérmenes en el aire de la montaña. En 1862 la Academia de Ciencias de Francia le dio su premio Alhumbert. Si los microbios causan la putrefacción, razonó Pasteur, también pueden causar enfermedades. Luego estudió las enfermedades de los gusanos de seda, y más tarde creó vacunas contra el carbunco (1881) y la rabia (1885)."
+      },
+      "camera": {
+        "lon": 1.75,
+        "lat": 49.15,
+        "zoom": 10
+      },
+      "places": [
+        {
+          "id": "louis-pasteur",
+          "name": {
+            "en": "Louis Pasteur",
+            "es": "Louis Pasteur"
+          },
+          "at": [
+            2.3443,
+            48.8418
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1862",
+          "life": [
+            "1822-12-27",
+            "1895-09-28"
+          ],
+          "place": {
+            "en": "École normale supérieure, Paris, France",
+            "es": "Escuela Normal Superior, París, Francia"
+          },
+          "text": {
+            "en": "A French chemist who showed that microbes cause fermentation and spoilage, disproved spontaneous generation and made vaccines against anthrax and rabies. Pasteurisation bears his name.",
+            "es": "Químico francés que demostró que los microbios causan la fermentación y la descomposición, refutó la generación espontánea y creó vacunas contra el carbunco y la rabia. La pasteurización lleva su nombre."
+          },
+          "wiki": {
+            "en": "Louis Pasteur",
+            "es": "Louis Pasteur"
+          }
+        },
+        {
+          "id": "swan-neck-flask",
+          "name": {
+            "en": "Swan-neck flask",
+            "es": "Matraz de cuello de cisne"
+          },
+          "at": [
+            2.346,
+            48.8405
+          ],
+          "cat": "discovery",
+          "icon": "⚗️",
+          "type": "invention",
+          "date": "1862",
+          "place": {
+            "en": "École normale supérieure, Paris, France",
+            "es": "Escuela Normal Superior, París, Francia"
+          },
+          "text": {
+            "en": "A flask whose long, curved neck let air reach the boiled broth but trapped dust and microbes. The broth stayed clear; when the neck was broken off, it soon teemed with life.",
+            "es": "Un matraz cuyo cuello largo y curvo dejaba pasar el aire hasta el caldo hervido, pero atrapaba el polvo y los microbios. El caldo seguía limpio; al romper el cuello, pronto bullía de vida."
+          },
+          "wiki": {
+            "en": "Spontaneous generation",
+            "es": "Generación espontánea"
+          },
+          "img": "Coldecygne.svg"
+        },
+        {
+          "id": "felix-pouchet",
+          "name": {
+            "en": "Félix Pouchet",
+            "es": "Félix Pouchet"
+          },
+          "at": [
+            1.0993,
+            49.4431
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1859",
+          "life": [
+            "1800-08-26",
+            "1872-12-06"
+          ],
+          "place": {
+            "en": "Natural History Museum, Rouen, France",
+            "es": "Museo de Historia Natural, Ruan, Francia"
+          },
+          "text": {
+            "en": "Director of Rouen's natural history museum and Pasteur's great rival, he argued that microbes arise on their own in rotting liquids. Pasteur's experiments won the Academy's prize.",
+            "es": "Director del museo de historia natural de Ruan y gran rival de Pasteur, sostenía que los microbios nacen solos en los líquidos en descomposición. Los experimentos de Pasteur ganaron el premio de la Academia."
+          },
+          "wiki": {
+            "en": "Félix Archimède Pouchet",
+            "es": "Félix Archimède Pouchet"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1867",
+      "title": {
+        "en": "Lister's carbolic acid",
+        "es": "El ácido fénico de Lister"
+      },
+      "text": {
+        "en": "Reading Pasteur, the Glasgow surgeon Joseph Lister reasoned that germs from outside infected wounds. He killed them with carbolic acid, and in 1867 published his antiseptic method.",
+        "es": "Leyendo a Pasteur, el cirujano de Glasgow Joseph Lister razonó que los gérmenes de afuera infectaban las heridas. Los mató con ácido fénico, y en 1867 publicó su método antiséptico."
+      },
+      "details": {
+        "en": "In Lister's wards, nearly half of the patients who had a limb amputated died, many of infection. In 1864 or 1865 the chemist Thomas Anderson showed him Pasteur's papers on germs and putrefaction. Lister chose carbolic acid, which had been used to treat sewage in Carlisle, and on 12 August 1865 an 11-year-old boy, James Greenlees, whose leg had been broken through the skin by a cart wheel, healed without infection. Lister went on to clean wounds, dressings, instruments, stitches and hands with it, and published his cases in The Lancet from March 1867. In his wards, deaths after amputation fell from 16 of 35 patients to 6 of 40. Many surgeons criticised him at first, but antiseptic surgery spread, and Lister became one of the most honoured doctors of his age.",
+        "es": "En las salas de Lister moría casi la mitad de los pacientes a los que se amputaba un miembro, muchos por infección. En 1864 o 1865 el químico Thomas Anderson le mostró los artículos de Pasteur sobre los gérmenes y la putrefacción. Lister eligió el ácido fénico, que se había usado para tratar las aguas negras en Carlisle, y el 12 de agosto de 1865 un niño de 11 años, James Greenlees, con una pierna fracturada y la piel rota por la rueda de un carro, sanó sin infección. Lister pasó a limpiar con él heridas, vendajes, instrumentos, suturas y manos, y publicó sus casos en The Lancet desde marzo de 1867. En sus salas, las muertes tras una amputación bajaron de 16 de 35 pacientes a 6 de 40. Muchos cirujanos lo criticaron al principio, pero la cirugía antiséptica se difundió y Lister fue uno de los médicos más honrados de su época."
+      },
+      "camera": {
+        "lon": -1.8,
+        "lat": 53.4,
+        "zoom": 4.6
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "path": [
+            [
+              2.35,
+              48.86
+            ],
+            [
+              1.0,
+              50.5
+            ],
+            [
+              -0.13,
+              51.51
+            ],
+            [
+              -1.6,
+              53.5
+            ],
+            [
+              -3.2,
+              55.0
+            ],
+            [
+              -4.25,
+              55.86
+            ]
+          ],
+          "label": {
+            "en": "Pasteur's papers reach Glasgow, 1865",
+            "es": "Los artículos de Pasteur llegan a Glasgow, 1865"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "joseph-lister",
+          "name": {
+            "en": "Joseph Lister",
+            "es": "Joseph Lister"
+          },
+          "at": [
+            -4.2342,
+            55.8645
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1867",
+          "life": [
+            "1827-04-05",
+            "1912-02-10"
+          ],
+          "place": {
+            "en": "Glasgow Royal Infirmary, Scotland",
+            "es": "Real Enfermería de Glasgow, Escocia"
+          },
+          "text": {
+            "en": "A Quaker surgeon who brought germ theory into the operating room. His antiseptic method, first used in Glasgow in 1865, made surgery far safer.",
+            "es": "Cirujano cuáquero que llevó la teoría de los gérmenes al quirófano. Su método antiséptico, usado por primera vez en Glasgow en 1865, hizo la cirugía mucho más segura."
+          },
+          "wiki": {
+            "en": "Joseph Lister",
+            "es": "Joseph Lister"
+          }
+        },
+        {
+          "id": "carbolic-acid",
+          "name": {
+            "en": "Carbolic acid",
+            "es": "Ácido fénico"
+          },
+          "at": [
+            -4.2328,
+            55.8652
+          ],
+          "cat": "medicine",
+          "icon": "🧴",
+          "type": "invention",
+          "date": "1865-08-12",
+          "place": {
+            "en": "Glasgow Royal Infirmary, Scotland",
+            "es": "Real Enfermería de Glasgow, Escocia"
+          },
+          "text": {
+            "en": "Carbolic acid, or phenol, a disinfectant made from coal tar. Lister used it on wounds, dressings, instruments and hands to kill germs before they could infect.",
+            "es": "El ácido fénico, o fenol, un desinfectante obtenido del alquitrán de hulla. Lister lo usó en heridas, vendajes, instrumentos y manos para matar los gérmenes antes de que infectaran."
+          },
+          "wiki": {
+            "en": "Phenol",
+            "es": "Fenol"
+          }
+        },
+        {
+          "id": "the-lancet",
+          "name": {
+            "en": "The Lancet",
+            "es": "The Lancet"
+          },
+          "at": [
+            -0.1235,
+            51.5115
+          ],
+          "cat": "art",
+          "icon": "📰",
+          "type": "work",
+          "date": "1823",
+          "place": {
+            "en": "London, United Kingdom",
+            "es": "Londres, Reino Unido"
+          },
+          "text": {
+            "en": "A London medical journal founded in 1823. It published Lister's antiseptic method in 1867, the Oxford penicillin results in 1940 and the GRAM estimates of antibiotic resistance in 2024.",
+            "es": "Revista médica de Londres fundada en 1823. Publicó el método antiséptico de Lister en 1867, los resultados de la penicilina de Oxford en 1940 y las estimaciones del estudio GRAM sobre la resistencia a los antibióticos en 2024."
+          },
+          "wiki": {
+            "en": "The Lancet",
+            "es": "The Lancet"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1876",
+      "title": {
+        "en": "Koch and anthrax",
+        "es": "Koch y el carbunco"
+      },
+      "text": {
+        "en": "In a laboratory beside his surgery in Wollstein, the country doctor Robert Koch worked out the life of the anthrax germ, spores and all. His 1876 study is called the birth of modern bacteriology.",
+        "es": "En un laboratorio junto a su consultorio en Wollstein, el médico rural Robert Koch descifró la vida del germen del carbunco, con sus esporas. Su estudio de 1876 se considera el nacimiento de la bacteriología moderna."
+      },
+      "details": {
+        "en": "Anthrax regularly killed livestock, and sometimes people, around Wollstein (today Wolsztyn, in Poland), where Koch was district doctor. He grew the bacillus outside the body and found that it formed hardy spores that could lie dormant and later cause disease, explaining why some fields stayed dangerous. Ferdinand Cohn, a botanist at Breslau, saw the importance of his work and helped him publish it. Koch went on to invent ways of staining and photographing bacteria and of growing them on solid food in glass dishes, which his assistant Julius Petri improved into the Petri dish. In 1880 he moved to the Imperial Health Office in Berlin. Pasteur argued that Koch had not fully proved the cause, and the two became bitter rivals.",
+        "es": "El carbunco mataba con frecuencia al ganado, y a veces a personas, en torno a Wollstein (hoy Wolsztyn, en Polonia), donde Koch era médico de distrito. Cultivó el bacilo fuera del cuerpo y descubrió que formaba esporas resistentes que podían quedar latentes y causar la enfermedad después, lo que explicaba por qué algunos campos seguían siendo peligrosos. Ferdinand Cohn, botánico de Breslavia, vio la importancia de su trabajo y lo ayudó a publicarlo. Koch inventó luego formas de teñir y fotografiar bacterias y de cultivarlas sobre un alimento sólido en placas de vidrio, que su ayudante Julius Petri mejoró hasta crear la placa de Petri. En 1880 pasó a la Oficina Imperial de Salud de Berlín. Pasteur sostuvo que Koch no había probado del todo la causa, y ambos fueron rivales encarnizados."
+      },
+      "camera": {
+        "lon": 15.3,
+        "lat": 52.0,
+        "zoom": 7.0
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "path": [
+            [
+              16.12,
+              52.12
+            ],
+            [
+              16.6,
+              51.6
+            ],
+            [
+              17.04,
+              51.11
+            ]
+          ],
+          "label": {
+            "en": "To Cohn in Breslau, 1876",
+            "es": "A ver a Cohn en Breslavia, 1876"
+          }
+        }
+      ],
+      "places": [
+        {
+          "id": "bacillus-anthracis",
+          "name": {
+            "en": "Anthrax bacillus",
+            "es": "Bacilo del carbunco"
+          },
+          "at": [
+            16.1167,
+            52.1167
+          ],
+          "cat": "disease",
+          "type": "disease",
+          "date": "1876",
+          "place": {
+            "en": "Wollstein (today Wolsztyn), Poland",
+            "es": "Wollstein (hoy Wolsztyn), Polonia"
+          },
+          "text": {
+            "en": "The bacterium that causes anthrax, a disease of cattle and sheep that can kill people. Koch found that its spores survive in the soil and can cause disease long after.",
+            "es": "La bacteria que causa el carbunco, una enfermedad del ganado que también puede matar a personas. Koch descubrió que sus esporas sobreviven en el suelo y pueden causar la enfermedad mucho después."
+          },
+          "wiki": {
+            "en": "Bacillus anthracis",
+            "es": "Bacillus anthracis"
+          }
+        },
+        {
+          "id": "ferdinand-cohn",
+          "name": {
+            "en": "Ferdinand Cohn",
+            "es": "Ferdinand Cohn"
+          },
+          "at": [
+            17.0385,
+            51.1079
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1876",
+          "life": [
+            "1828-01-24",
+            "1898-06-25"
+          ],
+          "place": {
+            "en": "University of Breslau (today Wrocław), Poland",
+            "es": "Universidad de Breslavia (hoy Wrocław), Polonia"
+          },
+          "text": {
+            "en": "A botanist at Breslau and a founder of bacteriology. He saw the value of the unknown country doctor's anthrax work and helped Koch publish it in 1876.",
+            "es": "Botánico de Breslavia y uno de los fundadores de la bacteriología. Vio el valor del trabajo sobre el carbunco de aquel médico rural desconocido y ayudó a Koch a publicarlo en 1876."
+          },
+          "wiki": {
+            "en": "Ferdinand Cohn",
+            "es": "Ferdinand Cohn"
+          }
+        },
+        {
+          "id": "robert-koch",
+          "name": {
+            "en": "Robert Koch",
+            "es": "Robert Koch"
+          },
+          "at": [
+            13.38,
+            52.5235
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1876",
+          "life": [
+            "1843-12-11",
+            "1910-05-27"
+          ],
+          "place": {
+            "en": "Imperial Health Office, Berlin, Germany",
+            "es": "Oficina Imperial de Salud, Berlín, Alemania"
+          },
+          "text": {
+            "en": "A German doctor who found the germs of anthrax (1876), tuberculosis (1882) and cholera (1884), and showed how to prove that a germ causes a disease. He won the Nobel Prize in 1905.",
+            "es": "Médico alemán que halló los gérmenes del carbunco (1876), la tuberculosis (1882) y el cólera (1884), y mostró cómo demostrar que un germen causa una enfermedad. Ganó el Premio Nobel en 1905."
+          },
+          "wiki": {
+            "en": "Robert Koch",
+            "es": "Robert Koch"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1882-03-24",
+      "title": {
+        "en": "The germ of tuberculosis",
+        "es": "El germen de la tuberculosis"
+      },
+      "text": {
+        "en": "On 24 March 1882 Koch told the Physiological Society in Berlin that he had found the bacterium that causes tuberculosis. The day is now World Tuberculosis Day.",
+        "es": "El 24 de marzo de 1882 Koch anunció ante la Sociedad de Fisiología de Berlín que había hallado la bacteria que causa la tuberculosis. Ese día es hoy el Día Mundial de la Tuberculosis."
+      },
+      "details": {
+        "en": "Many people then believed that tuberculosis, 'consumption', was inherited. Its bacterium grows slowly and is hard to see, but Koch found a way to stain it, and it \"remained a beautiful blue\". \"These bacilli are the true agents of tuberculosis,\" he concluded. There was no great reaction at first, and the famous pathologist Rudolf Virchow remained sceptical, but the young Paul Ehrlich called it his greatest scientific experience. With his assistant Friedrich Loeffler, Koch set out the rules now called Koch's postulates. His 'tuberculin' cure of 1890 failed, though it became a test for the disease; he won the Nobel Prize in 1905. Koch went on to find the cholera germ in Calcutta in 1884.",
+        "es": "Mucha gente creía entonces que la tuberculosis, la «tisis», era hereditaria. Su bacteria crece despacio y es difícil de ver, pero Koch halló la forma de teñirla, y «quedaba de un hermoso azul». «Estos bacilos son los verdaderos agentes de la tuberculosis», concluyó. Al principio no hubo gran reacción, y el famoso patólogo Rudolf Virchow siguió escéptico, pero el joven Paul Ehrlich lo llamó su mayor experiencia científica. Con su ayudante Friedrich Loeffler, Koch formuló las reglas hoy llamadas postulados de Koch. Su cura con «tuberculina» de 1890 fracasó, aunque se convirtió en una prueba para detectar la enfermedad; ganó el Premio Nobel en 1905. Después Koch halló el germen del cólera en Calcuta, en 1884."
+      },
+      "camera": {
+        "lon": 13.387,
+        "lat": 52.522,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "robert-koch",
+          "name": {
+            "en": "Robert Koch",
+            "es": "Robert Koch"
+          },
+          "at": [
+            13.38,
+            52.5235
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1876",
+          "life": [
+            "1843-12-11",
+            "1910-05-27"
+          ],
+          "place": {
+            "en": "Imperial Health Office, Berlin, Germany",
+            "es": "Oficina Imperial de Salud, Berlín, Alemania"
+          },
+          "text": {
+            "en": "A German doctor who found the germs of anthrax (1876), tuberculosis (1882) and cholera (1884), and showed how to prove that a germ causes a disease. He won the Nobel Prize in 1905.",
+            "es": "Médico alemán que halló los gérmenes del carbunco (1876), la tuberculosis (1882) y el cólera (1884), y mostró cómo demostrar que un germen causa una enfermedad. Ganó el Premio Nobel en 1905."
+          },
+          "wiki": {
+            "en": "Robert Koch",
+            "es": "Robert Koch"
+          }
+        },
+        {
+          "id": "tuberculosis",
+          "name": {
+            "en": "Tuberculosis",
+            "es": "Tuberculosis"
+          },
+          "at": [
+            13.3925,
+            52.5194
+          ],
+          "cat": "disease",
+          "type": "disease",
+          "date": "1882-03-24",
+          "place": {
+            "en": "Physiological Society, Berlin, Germany (where Koch announced its germ)",
+            "es": "Sociedad de Fisiología, Berlín, Alemania (donde Koch anunció su germen)"
+          },
+          "text": {
+            "en": "A disease mostly of the lungs, caused by Mycobacterium tuberculosis and spread through the air by coughing. Called 'consumption', it caused a quarter of all deaths in 19th-century Europe.",
+            "es": "Enfermedad sobre todo de los pulmones, causada por Mycobacterium tuberculosis y transmitida por el aire al toser. Llamada «tisis», causó la cuarta parte de las muertes en la Europa del siglo XIX."
+          },
+          "details": {
+            "en": "About a quarter of the world's people carry the bacterium without being ill; 5 to 15% of them will develop the disease, far more among people with HIV or who are poor and malnourished. Before streptomycin, sanatoriums offered rest and fresh air, but half of their patients died within five years. Today treatment needs several antibiotics for months, and drug-resistant forms are a growing danger. WHO estimates that in 2024 tuberculosis made 10.7 million people ill and killed 1.23 million, more than any other infectious disease. World Tuberculosis Day, 24 March, recalls Koch's announcement.",
+            "es": "Cerca de una cuarta parte de la población mundial porta la bacteria sin estar enferma; entre el 5 y el 15 % desarrollará la enfermedad, muchos más entre las personas con VIH o pobres y desnutridas. Antes de la estreptomicina, los sanatorios ofrecían reposo y aire puro, pero la mitad de sus pacientes moría en cinco años. Hoy el tratamiento exige varios antibióticos durante meses, y las formas resistentes son un peligro creciente. La OMS estima que en 2024 la tuberculosis enfermó a 10,7 millones de personas y mató a 1,23 millones, más que ninguna otra enfermedad infecciosa. El Día Mundial de la Tuberculosis, el 24 de marzo, recuerda el anuncio de Koch."
+          },
+          "wiki": {
+            "en": "Tuberculosis",
+            "es": "Tuberculosis"
+          },
+          "img": "Aetiologie der Tuberkulose.jpg"
+        },
+        {
+          "id": "kochs-postulates",
+          "name": {
+            "en": "Koch's postulates",
+            "es": "Postulados de Koch"
+          },
+          "at": [
+            13.3835,
+            52.5262
+          ],
+          "cat": "discovery",
+          "icon": "📜",
+          "type": "work",
+          "date": "1884",
+          "place": {
+            "en": "Berlin, Germany",
+            "es": "Berlín, Alemania"
+          },
+          "text": {
+            "en": "Four rules to prove that a microbe causes a disease: find it in every case, grow it pure, cause the disease with it, and find it again. Koch and Friedrich Loeffler set them out in 1884.",
+            "es": "Cuatro reglas para probar que un microbio causa una enfermedad: hallarlo en cada caso, cultivarlo puro, provocar con él la enfermedad y volver a hallarlo. Koch y Friedrich Loeffler las formularon en 1884."
+          },
+          "wiki": {
+            "en": "Koch's postulates",
+            "es": "Postulados de Koch"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1910",
+      "title": {
+        "en": "A magic bullet",
+        "es": "Una bala mágica"
+      },
+      "text": {
+        "en": "In Frankfurt, Paul Ehrlich's team tested hundreds of arsenic compounds for a 'magic bullet' that would kill a germ but spare the patient. Number 606, Salvarsan, cured syphilis.",
+        "es": "En Fráncfort, el equipo de Paul Ehrlich probó cientos de compuestos de arsénico en busca de una «bala mágica» que matara al germen sin dañar al paciente. El número 606, el Salvarsán, curaba la sífilis."
+      },
+      "details": {
+        "en": "Ehrlich, a pioneer of immunology and of staining cells, had seen that some dyes stain some microbes and not others, and hoped that a chemical could likewise seek out a germ. Alfred Bertheim made compound 606 in 1907; in 1909 the Japanese bacteriologist Sahachiro Hata found that it destroyed the spirochaete that causes syphilis, and patients recovered. The Hoechst company sold it as Salvarsan from the end of 1910. It was hard to prepare and could have serious side effects, but it was far better than toxic mercury, and it became the most widely prescribed drug in the world. Ehrlich named the idea 'chemotherapy'. Some attacks on him had antisemitic undertones, and Nazi Germany later tried to erase the memory of this Jewish scientist.",
+        "es": "Ehrlich, pionero de la inmunología y de la tinción de células, había visto que algunos tintes tiñen unos microbios y otros no, y esperaba que una sustancia química pudiera, del mismo modo, buscar un germen. Alfred Bertheim fabricó el compuesto 606 en 1907; en 1909 el bacteriólogo japonés Sahachiro Hata descubrió que destruía la espiroqueta que causa la sífilis, y los pacientes sanaban. La empresa Hoechst lo vendió como Salvarsán desde fines de 1910. Era difícil de preparar y podía tener efectos graves, pero era mucho mejor que el tóxico mercurio, y se convirtió en el fármaco más recetado del mundo. Ehrlich llamó a la idea «quimioterapia». Algunos ataques contra él tenían un trasfondo antisemita, y la Alemania nazi intentó después borrar la memoria de este científico judío."
+      },
+      "camera": {
+        "lon": 8.61,
+        "lat": 50.1,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "paul-ehrlich",
+          "name": {
+            "en": "Paul Ehrlich",
+            "es": "Paul Ehrlich"
+          },
+          "at": [
+            8.661,
+            50.096
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1909",
+          "life": [
+            "1854-03-14",
+            "1915-08-20"
+          ],
+          "place": {
+            "en": "Georg-Speyer-Haus, Frankfurt, Germany",
+            "es": "Georg-Speyer-Haus, Fráncfort, Alemania"
+          },
+          "text": {
+            "en": "A German doctor who founded chemotherapy, the search for chemicals that kill germs inside the body. He shared the 1908 Nobel Prize for his work on immunity.",
+            "es": "Médico alemán que fundó la quimioterapia, la búsqueda de sustancias químicas que maten a los gérmenes dentro del cuerpo. Compartió el Premio Nobel de 1908 por su trabajo sobre la inmunidad."
+          },
+          "wiki": {
+            "en": "Paul Ehrlich",
+            "es": "Paul Ehrlich"
+          }
+        },
+        {
+          "id": "sahachiro-hata",
+          "name": {
+            "en": "Sahachiro Hata",
+            "es": "Sahachiro Hata"
+          },
+          "at": [
+            8.6628,
+            50.0955
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1909",
+          "life": [
+            "1873-03-23",
+            "1938-11-22"
+          ],
+          "place": {
+            "en": "Georg-Speyer-Haus, Frankfurt, Germany",
+            "es": "Georg-Speyer-Haus, Fráncfort, Alemania"
+          },
+          "text": {
+            "en": "A Japanese bacteriologist who joined Ehrlich's team and in 1909 found that compound 606 killed the syphilis germ. He went on with the work back in Japan.",
+            "es": "Bacteriólogo japonés que se unió al equipo de Ehrlich y en 1909 descubrió que el compuesto 606 mataba al germen de la sífilis. Continuó el trabajo de vuelta en Japón."
+          },
+          "wiki": {
+            "en": "Sahachiro Hata",
+            "es": ""
+          }
+        },
+        {
+          "id": "salvarsan",
+          "name": {
+            "en": "Salvarsan",
+            "es": "Salvarsán"
+          },
+          "at": [
+            8.544,
+            50.099
+          ],
+          "cat": "medicine",
+          "icon": "💉",
+          "type": "invention",
+          "date": "1910",
+          "place": {
+            "en": "Hoechst works, Frankfurt-Höchst, Germany",
+            "es": "Fábrica de Hoechst, Fráncfort-Höchst, Alemania"
+          },
+          "text": {
+            "en": "Arsphenamine, sold as Salvarsan from 1910: the first modern drug made to kill a germ inside the body. It cured syphilis and was used until penicillin replaced it in the 1940s.",
+            "es": "La arsfenamina, vendida como Salvarsán desde 1910: el primer fármaco moderno creado para matar un germen dentro del cuerpo. Curaba la sífilis y se usó hasta que la penicilina la reemplazó en los años cuarenta."
+          },
+          "wiki": {
+            "en": "Arsphenamine",
+            "es": "Arsfenamina"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1928-09-03",
+      "title": {
+        "en": "A mouldy plate",
+        "es": "Una placa con moho"
+      },
+      "text": {
+        "en": "Back from holiday on 3 September 1928, Alexander Fleming found a mould on a plate of bacteria at St Mary's Hospital, London. Around it, the bacteria had died.",
+        "es": "De vuelta de vacaciones el 3 de septiembre de 1928, Alexander Fleming encontró un moho en una placa con bacterias en el Hospital St Mary's de Londres. A su alrededor, las bacterias habían muerto."
+      },
+      "details": {
+        "en": "Fleming, who had seen soldiers die of infected wounds in the First World War, was studying staphylococci. The mould, a Penicillium, had probably drifted up from the mycology laboratory on the floor below. 'That's funny,' he is said to have remarked. He grew it, found that its juice killed several kinds of bacteria, and on 7 March 1929 named the substance 'penicillin'. But it was unstable, and his assistants Stuart Craddock and Frederick Ridley could not purify it. Fleming published his findings in 1929, used penicillin mainly to sort bacteria in the laboratory, and kept sending samples of the mould to other researchers. For ten years it was nearly forgotten.",
+        "es": "Fleming, que había visto morir soldados por heridas infectadas en la Primera Guerra Mundial, estudiaba los estafilococos. El moho, un Penicillium, probablemente había subido desde el laboratorio de micología del piso de abajo. «Qué curioso», dicen que comentó. Lo cultivó, comprobó que su jugo mataba varias clases de bacterias y el 7 de marzo de 1929 llamó a la sustancia «penicilina». Pero era inestable, y sus ayudantes Stuart Craddock y Frederick Ridley no lograron purificarla. Fleming publicó sus resultados en 1929, usó la penicilina sobre todo para separar bacterias en el laboratorio y siguió enviando muestras del moho a otros investigadores. Durante diez años quedó casi olvidada."
+      },
+      "camera": {
+        "lon": -0.1735,
+        "lat": 51.5172,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "alexander-fleming",
+          "name": {
+            "en": "Alexander Fleming",
+            "es": "Alexander Fleming"
+          },
+          "at": [
+            -0.1735,
+            51.5172
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1928-09-03",
+          "life": [
+            "1881-08-06",
+            "1955-03-11"
+          ],
+          "place": {
+            "en": "St Mary's Hospital, Paddington, London",
+            "es": "Hospital St Mary's, Paddington, Londres"
+          },
+          "text": {
+            "en": "A Scottish doctor and bacteriologist at St Mary's Hospital who discovered lysozyme (1922) and penicillin (1928). He shared the 1945 Nobel Prize with Florey and Chain.",
+            "es": "Médico y bacteriólogo escocés del Hospital St Mary's que descubrió la lisozima (1922) y la penicilina (1928). Compartió el Premio Nobel de 1945 con Florey y Chain."
+          },
+          "wiki": {
+            "en": "Alexander Fleming",
+            "es": "Alexander Fleming"
+          }
+        },
+        {
+          "id": "fleming-mould",
+          "name": {
+            "en": "Fleming's mould",
+            "es": "El moho de Fleming"
+          },
+          "at": [
+            -0.1729,
+            51.5168
+          ],
+          "cat": "discovery",
+          "icon": "🍄",
+          "type": "species",
+          "date": "1928-09-03",
+          "place": {
+            "en": "St Mary's Hospital, Paddington, London",
+            "es": "Hospital St Mary's, Paddington, Londres"
+          },
+          "text": {
+            "en": "The blue-green mould on Fleming's plate, a Penicillium now called P. rubens. Its spores had probably drifted up from the mycology laboratory on the floor below.",
+            "es": "El moho verde azulado de la placa de Fleming, un Penicillium hoy llamado P. rubens. Sus esporas probablemente subieron desde el laboratorio de micología del piso de abajo."
+          },
+          "wiki": {
+            "en": "Discovery of penicillin",
+            "es": ""
+          }
+        },
+        {
+          "id": "penicillin",
+          "name": {
+            "en": "Penicillin",
+            "es": "Penicilina"
+          },
+          "at": [
+            -0.1741,
+            51.5177
+          ],
+          "cat": "medicine",
+          "type": "invention",
+          "date": "1929-03-07",
+          "place": {
+            "en": "St Mary's Hospital, London, and Oxford",
+            "es": "Hospital St Mary's, Londres, y Oxford"
+          },
+          "text": {
+            "en": "The first antibiotic: a substance made by Penicillium moulds that stops bacteria from multiplying. Fleming named it in 1929; an Oxford team made it a medicine in 1940–1941.",
+            "es": "El primer antibiótico: una sustancia producida por mohos Penicillium que impide que las bacterias se multipliquen. Fleming le dio nombre en 1929; un equipo de Oxford la convirtió en medicamento en 1940-1941."
+          },
+          "wiki": {
+            "en": "Penicillin",
+            "es": "Penicilina"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1935-02-15",
+      "title": {
+        "en": "Sulfa drugs from a red dye",
+        "es": "Sulfamidas de un tinte rojo"
+      },
+      "text": {
+        "en": "At Bayer in Elberfeld, Gerhard Domagk found in 1932 that a red dye, Prontosil, cured mice of deadly streptococcal infections. Published in 1935, it opened the age of the sulfa drugs.",
+        "es": "En Bayer, en Elberfeld, Gerhard Domagk descubrió en 1932 que un tinte rojo, el Prontosil, curaba a ratones de infecciones mortales por estreptococos. Publicado en 1935, abrió la era de las sulfamidas."
+      },
+      "details": {
+        "en": "Following Ehrlich, chemists at IG Farben's Bayer laboratories, among them Josef Klarer and Fritz Mietzsch, made thousands of dyes, and Domagk tested them on infected mice. In December 1935 he gave Prontosil to his own six-year-old daughter, Hildegard, whose arm was badly infected; she recovered and kept the arm. In London, Leonard Colebrook used it to cure mothers dying of childbed fever, the disease Semmelweis had fought. At the Institut Pasteur in Paris, Jacques and Thérèse Tréfouël, Daniel Bovet and Federico Nitti found late in 1935 that the body turns Prontosil into sulfanilamide, a simpler, colourless drug that no one could patent. Cheap sulfa drugs saved millions. Domagk won the 1939 Nobel Prize, but the Nazi government forbade him to accept it.",
+        "es": "Siguiendo a Ehrlich, químicos de los laboratorios Bayer de IG Farben, entre ellos Josef Klarer y Fritz Mietzsch, fabricaron miles de tintes, y Domagk los probó en ratones infectados. En diciembre de 1935 le dio Prontosil a su propia hija de seis años, Hildegard, que tenía un brazo gravemente infectado; se recuperó y conservó el brazo. En Londres, Leonard Colebrook lo usó para curar a madres que morían de fiebre puerperal, la enfermedad que había combatido Semmelweis. En el Instituto Pasteur de París, Jacques y Thérèse Tréfouël, Daniel Bovet y Federico Nitti descubrieron a fines de 1935 que el cuerpo transforma el Prontosil en sulfanilamida, un fármaco más simple e incoloro que nadie podía patentar. Las baratas sulfamidas salvaron a millones. Domagk ganó el Premio Nobel de 1939, pero el gobierno nazi le prohibió aceptarlo."
+      },
+      "camera": {
+        "lon": 3.4,
+        "lat": 50.4,
+        "zoom": 5.4
+      },
+      "places": [
+        {
+          "id": "gerhard-domagk",
+          "name": {
+            "en": "Gerhard Domagk",
+            "es": "Gerhard Domagk"
+          },
+          "at": [
+            7.1333,
+            51.2667
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1932",
+          "life": [
+            "1895-10-30",
+            "1964-04-24"
+          ],
+          "place": {
+            "en": "Bayer laboratories, Elberfeld (Wuppertal), Germany",
+            "es": "Laboratorios Bayer, Elberfeld (Wuppertal), Alemania"
+          },
+          "text": {
+            "en": "A German pathologist at Bayer who found that Prontosil cured streptococcal infections. The Nazi government forbade him to accept his 1939 Nobel Prize.",
+            "es": "Patólogo alemán de Bayer que descubrió que el Prontosil curaba infecciones por estreptococos. El gobierno nazi le prohibió aceptar el Premio Nobel de 1939."
+          },
+          "wiki": {
+            "en": "Gerhard Domagk",
+            "es": "Gerhard Domagk"
+          }
+        },
+        {
+          "id": "prontosil",
+          "name": {
+            "en": "Prontosil",
+            "es": "Prontosil"
+          },
+          "at": [
+            7.142,
+            51.2615
+          ],
+          "cat": "medicine",
+          "icon": "💊",
+          "type": "invention",
+          "date": "1932",
+          "place": {
+            "en": "Bayer laboratories, Elberfeld (Wuppertal), Germany",
+            "es": "Laboratorios Bayer, Elberfeld (Wuppertal), Alemania"
+          },
+          "text": {
+            "en": "A red dye that the body turns into sulfanilamide, the first of the sulfa drugs. Before penicillin they were the only cure for infections such as childbed fever and blood poisoning.",
+            "es": "Un tinte rojo que el cuerpo transforma en sulfanilamida, la primera de las sulfamidas. Antes de la penicilina eran la única cura para infecciones como la fiebre puerperal y la septicemia."
+          },
+          "wiki": {
+            "en": "Prontosil",
+            "es": "Prontosil"
+          }
+        },
+        {
+          "id": "institut-pasteur",
+          "name": {
+            "en": "Institut Pasteur",
+            "es": "Instituto Pasteur"
+          },
+          "at": [
+            2.3117,
+            48.84
+          ],
+          "cat": "health",
+          "type": "institution",
+          "date": "1887",
+          "place": {
+            "en": "Paris, France",
+            "es": "París, Francia"
+          },
+          "text": {
+            "en": "Founded by Louis Pasteur in Paris in 1887. In 1935 its scientists found that Prontosil works by turning into sulfanilamide, a simple drug that anyone could make.",
+            "es": "Fundado por Louis Pasteur en París en 1887. En 1935 sus científicos descubrieron que el Prontosil actúa al transformarse en sulfanilamida, un fármaco sencillo que cualquiera podía fabricar."
+          },
+          "wiki": {
+            "en": "Pasteur Institute",
+            "es": "Instituto Pasteur"
+          }
+        },
+        {
+          "id": "leonard-colebrook",
+          "name": {
+            "en": "Leonard Colebrook",
+            "es": "Leonard Colebrook"
+          },
+          "at": [
+            -0.165,
+            51.523
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1935",
+          "life": [
+            "1883-03-02",
+            "1967-09-27"
+          ],
+          "place": {
+            "en": "Queen Charlotte's Hospital, London",
+            "es": "Hospital Queen Charlotte's, Londres"
+          },
+          "text": {
+            "en": "A London doctor who from 1935 used Prontosil to cure mothers with childbed fever, which still killed around 2,000 women a year in England and Wales.",
+            "es": "Médico de Londres que desde 1935 usó el Prontosil para curar a madres con fiebre puerperal, que aún mataba a unas 2000 mujeres al año en Inglaterra y Gales."
+          },
+          "wiki": {
+            "en": "Leonard Colebrook",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1941-02-12",
+      "title": {
+        "en": "The Oxford team",
+        "es": "El equipo de Oxford"
+      },
+      "text": {
+        "en": "In Oxford, Howard Florey, Ernst Chain, Norman Heatley and their team purified penicillin and cured mice in 1940. On 12 February 1941 they gave it to their first patient, a policeman.",
+        "es": "En Oxford, Howard Florey, Ernst Chain, Norman Heatley y su equipo purificaron la penicilina y curaron ratones en 1940. El 12 de febrero de 1941 se la dieron a su primer paciente, un policía."
+      },
+      "details": {
+        "en": "Chain found Fleming's forgotten paper in 1939, and Florey led a team that included Edward Abraham, Ethel Florey, Arthur Gardner, Margaret Jennings, Jean Orr-Ewing and Gordon Sanders, working together in a way then rare in Britain. They grew the mould in bedpans and specially made ceramic vessels, tended by women hired for the work; Heatley found a way to get the drug out of the broth, and Chain freeze-dried it. On 25 May 1940 eight mice were given deadly bacteria; within a day the four untreated ones were dead, while those given penicillin lived. The team published in The Lancet that August. Albert Alexander began to recover, but there was not enough penicillin to save him. Several patients, among them children, were then treated successfully.",
+        "es": "Chain encontró en 1939 el artículo olvidado de Fleming, y Florey dirigió un equipo que incluía a Edward Abraham, Ethel Florey, Arthur Gardner, Margaret Jennings, Jean Orr-Ewing y Gordon Sanders, que trabajaban juntos de un modo entonces raro en Gran Bretaña. Cultivaron el moho en orinales de hospital y en recipientes de cerámica hechos a medida, atendidos por mujeres contratadas para el trabajo; Heatley halló la forma de extraer el fármaco del caldo, y Chain lo liofilizó. El 25 de mayo de 1940 se inyectaron bacterias mortales a ocho ratones; en menos de un día los cuatro no tratados habían muerto, mientras que los que recibieron penicilina vivían. El equipo lo publicó en The Lancet ese agosto. Albert Alexander empezó a recuperarse, pero no hubo penicilina suficiente para salvarlo. Luego se trató con éxito a varios pacientes, entre ellos niños."
+      },
+      "camera": {
+        "lon": -1.256,
+        "lat": 51.7597,
+        "zoom": 30
+      },
+      "places": [
+        {
+          "id": "howard-florey",
+          "name": {
+            "en": "Howard Florey",
+            "es": "Howard Florey"
+          },
+          "at": [
+            -1.2515,
+            51.7595
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1941-02-12",
+          "life": [
+            "1898-09-24",
+            "1968-02-21"
+          ],
+          "place": {
+            "en": "Sir William Dunn School of Pathology, Oxford",
+            "es": "Escuela de Patología Sir William Dunn, Oxford"
+          },
+          "text": {
+            "en": "An Australian pathologist who led the Oxford team that turned penicillin into a medicine. He insisted that it was a team effort, and did not patent it.",
+            "es": "Patólogo australiano que dirigió el equipo de Oxford que convirtió la penicilina en medicamento. Insistía en que había sido un trabajo de equipo, y no la patentó."
+          },
+          "wiki": {
+            "en": "Howard Florey",
+            "es": "Howard Walter Florey"
+          }
+        },
+        {
+          "id": "ernst-chain",
+          "name": {
+            "en": "Ernst Chain",
+            "es": "Ernst Chain"
+          },
+          "at": [
+            -1.2507,
+            51.7591
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1940",
+          "life": [
+            "1906-06-19",
+            "1979-08-12"
+          ],
+          "place": {
+            "en": "Sir William Dunn School of Pathology, Oxford",
+            "es": "Escuela de Patología Sir William Dunn, Oxford"
+          },
+          "text": {
+            "en": "A Berlin-born biochemist who fled Nazi Germany in 1933. He found Fleming's forgotten paper and worked out how to purify penicillin.",
+            "es": "Bioquímico nacido en Berlín que huyó de la Alemania nazi en 1933. Encontró el artículo olvidado de Fleming y descubrió cómo purificar la penicilina."
+          },
+          "wiki": {
+            "en": "Ernst Chain",
+            "es": "Ernst Boris Chain"
+          }
+        },
+        {
+          "id": "norman-heatley",
+          "name": {
+            "en": "Norman Heatley",
+            "es": "Norman Heatley"
+          },
+          "at": [
+            -1.2523,
+            51.76
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1940",
+          "life": [
+            "1911-01-10",
+            "2004-01-05"
+          ],
+          "place": {
+            "en": "Sir William Dunn School of Pathology, Oxford",
+            "es": "Escuela de Patología Sir William Dunn, Oxford"
+          },
+          "text": {
+            "en": "A biochemist whose ingenuity made penicillin possible: he built the culture vessels and a way to extract the drug, and in 1941 flew to America with Florey to start mass production.",
+            "es": "Bioquímico cuyo ingenio hizo posible la penicilina: construyó los recipientes de cultivo y un método para extraer el fármaco, y en 1941 viajó a América con Florey para iniciar la producción masiva."
+          },
+          "wiki": {
+            "en": "Norman Heatley",
+            "es": ""
+          }
+        },
+        {
+          "id": "albert-alexander",
+          "name": {
+            "en": "Albert Alexander",
+            "es": "Albert Alexander"
+          },
+          "at": [
+            -1.2619,
+            51.7603
+          ],
+          "cat": "event",
+          "type": "person",
+          "date": "1941-02-12",
+          "life": [
+            "1896",
+            "1941-03-15"
+          ],
+          "place": {
+            "en": "Radcliffe Infirmary, Oxford",
+            "es": "Enfermería Radcliffe, Oxford"
+          },
+          "text": {
+            "en": "An Oxford police constable and the first person treated with injections of penicillin. He began to recover, but the supply ran out and he died on 15 March 1941.",
+            "es": "Un agente de policía de Oxford, la primera persona tratada con inyecciones de penicilina. Empezó a recuperarse, pero la penicilina se acabó y murió el 15 de marzo de 1941."
+          },
+          "details": {
+            "en": "Alexander had a terrible infection of staphylococci and streptococci in his face and scalp, and had lost an eye. A popular story says it began with a scratch from a rose thorn, but an injury in a bombing raid is the more likely cause. On 12 February 1941 Dr Charles Fletcher gave him penicillin; within a day his fever fell and his wounds began to heal. The team even recovered penicillin from his urine, but by the fifth day it was gone. After his death, Florey treated children, who needed smaller doses, until production improved.",
+            "es": "Alexander tenía una terrible infección por estafilococos y estreptococos en la cara y el cuero cabelludo, y había perdido un ojo. Una historia popular dice que empezó con un rasguño de una espina de rosal, pero es más probable que la causara una herida en un bombardeo. El 12 de febrero de 1941 el doctor Charles Fletcher le dio penicilina; en un día le bajó la fiebre y las heridas empezaron a sanar. El equipo hasta recuperó penicilina de su orina, pero al quinto día se acabó. Después de su muerte, Florey trató a niños, que necesitaban dosis menores, hasta que mejoró la producción."
+          },
+          "wiki": {
+            "en": "Albert Alexander (police officer)",
+            "es": "Albert Alexander"
+          },
+          "img": "Radcliffe Infirmary, Oxford - geograph.org.uk - 82358.jpg"
+        }
+      ]
+    },
+    {
+      "date": "1943",
+      "title": {
+        "en": "Penicillin for millions",
+        "es": "Penicilina para millones"
+      },
+      "text": {
+        "en": "In Peoria, Illinois, a US government laboratory grew the mould in corn steep liquor, and a mouldy cantaloupe gave a far better strain. By D-Day, in June 1944, 2.3 million doses were ready.",
+        "es": "En Peoria, Illinois, un laboratorio del gobierno de Estados Unidos cultivó el moho en agua de maceración de maíz, y un melón mohoso dio una cepa mucho mejor. Para el Día D, en junio de 1944, había 2,3 millones de dosis."
+      },
+      "details": {
+        "en": "Wartime Britain could not make enough, so in June 1941 Florey and Heatley flew to the United States, with the mould smeared inside their coat pockets in case the vials were lost. In Peoria, Andrew Moyer and Heatley found that corn steep liquor, a by-product of the corn industry, raised the yield tenfold. The cantaloupe's mould, recorded in Dorothy Fennell Alexander's notebook, was improved with X-rays and ultraviolet light. Companies such as Pfizer grew it in great tanks, and the engineer Margaret Hutchinson Rousseau designed a deep-tank plant. US output rose from 21 billion units in 1943 to 1,663 billion in 1944. Gas gangrene, which had killed 15% of the wounded in the First World War, almost vanished, and penicillin went on sale to the American public in March 1945.",
+        "es": "La Gran Bretaña en guerra no podía producir lo suficiente, así que en junio de 1941 Florey y Heatley volaron a Estados Unidos, con el moho untado dentro de los bolsillos del abrigo por si se perdían los frascos. En Peoria, Andrew Moyer y Heatley descubrieron que el agua de maceración del maíz, un subproducto de la industria del maíz, multiplicaba por diez el rendimiento. El moho del melón, registrado en el cuaderno de Dorothy Fennell Alexander, se mejoró con rayos X y luz ultravioleta. Empresas como Pfizer lo cultivaron en grandes tanques, y la ingeniera Margaret Hutchinson Rousseau diseñó una planta de tanques profundos. La producción de Estados Unidos pasó de 21 000 millones de unidades en 1943 a 1,663 billones en 1944. La gangrena gaseosa, que había matado al 15 % de los heridos en la Primera Guerra Mundial, casi desapareció, y la penicilina se vendió al público estadounidense desde marzo de 1945."
+      },
+      "camera": {
+        "lon": -45.0,
+        "lat": 43.0,
+        "zoom": 1.6
+      },
+      "control": {
+        "pen1944": [
+          "USA",
+          "GBR",
+          "CAN",
+          "AUS"
+        ]
+      },
+      "moves": [
+        {
+          "side": "routes",
+          "path": [
+            [
+              -1.25,
+              51.76
+            ],
+            [
+              -9.14,
+              38.72
+            ],
+            [
+              -28.0,
+              38.5
+            ],
+            [
+              -64.75,
+              32.3
+            ],
+            [
+              -73.9,
+              40.7
+            ],
+            [
+              -89.59,
+              40.69
+            ]
+          ],
+          "label": {
+            "en": "Florey and Heatley fly to America, 1941",
+            "es": "Florey y Heatley vuelan a América, 1941"
+          },
+          "by": "air",
+          "icon": "✈️"
+        }
+      ],
+      "places": [
+        {
+          "id": "nrrl-peoria",
+          "name": {
+            "en": "Northern Regional Research Laboratory",
+            "es": "Laboratorio Regional de Investigación del Norte"
+          },
+          "at": [
+            -89.6142,
+            40.7097
+          ],
+          "cat": "discovery",
+          "type": "institution",
+          "date": "1941-07-14",
+          "place": {
+            "en": "Peoria, Illinois, United States",
+            "es": "Peoria, Illinois, Estados Unidos"
+          },
+          "text": {
+            "en": "A US Department of Agriculture laboratory set up to find new uses for farm products. From 1941 its fermentation experts learned to grow penicillin in quantity.",
+            "es": "Un laboratorio del Departamento de Agricultura de Estados Unidos creado para buscar nuevos usos de los productos agrícolas. Desde 1941 sus expertos en fermentación aprendieron a producir penicilina en cantidad."
+          },
+          "wiki": {
+            "en": "National Center for Agricultural Utilization Research",
+            "es": ""
+          }
+        },
+        {
+          "id": "peoria-cantaloupe",
+          "name": {
+            "en": "The Peoria cantaloupe",
+            "es": "El melón de Peoria"
+          },
+          "at": [
+            -89.589,
+            40.6936
+          ],
+          "cat": "discovery",
+          "icon": "🍈",
+          "type": "species",
+          "date": "1943",
+          "place": {
+            "en": "A fruit market in Peoria, Illinois",
+            "es": "Un mercado de frutas de Peoria, Illinois"
+          },
+          "text": {
+            "en": "In 1943 a mouldy cantaloupe from a Peoria market gave the best penicillin mould yet found, the ancestor of the strains used ever since. By the usual account, the lab assistant Mary Hunt found it.",
+            "es": "En 1943 un melón mohoso de un mercado de Peoria dio el mejor moho de penicilina hallado hasta entonces, antepasado de las cepas usadas después. Según el relato habitual, lo encontró la asistente Mary Hunt."
+          },
+          "wiki": {
+            "en": "Penicillium chrysogenum",
+            "es": "Penicillium chrysogenum"
+          },
+          "img": "Mary Hunt, believed to be on the left, with a fellow worker inside Peoria’s USDA Northern Regional Research Laboratory, ca. 1943.jpg"
+        },
+        {
+          "id": "deep-tank-fermentation",
+          "name": {
+            "en": "Deep-tank fermentation",
+            "es": "Fermentación en tanques profundos"
+          },
+          "at": [
+            -73.9475,
+            40.7003
+          ],
+          "cat": "medicine",
+          "icon": "🏭",
+          "type": "invention",
+          "date": "1944-03-01",
+          "place": {
+            "en": "Pfizer plant, Brooklyn, New York",
+            "es": "Planta de Pfizer, Brooklyn, Nueva York"
+          },
+          "text": {
+            "en": "Instead of shallow pans, the mould was grown in huge stirred, aerated tanks. Pfizer opened the first deep-tank penicillin plant, a converted ice factory in Brooklyn, on 1 March 1944.",
+            "es": "En lugar de bandejas planas, el moho se cultivó en enormes tanques agitados y aireados. Pfizer abrió la primera planta de penicilina en tanques profundos, una fábrica de hielo reconvertida en Brooklyn, el 1 de marzo de 1944."
+          },
+          "wiki": {
+            "en": "History of penicillin",
+            "es": "Anexo:Descubrimiento de la penicilina"
+          },
+          "img": "Penicillin bioreactor.jpg"
+        },
+        {
+          "id": "tuskegee-study",
+          "name": {
+            "en": "Tuskegee syphilis study",
+            "es": "El estudio de Tuskegee"
+          },
+          "at": [
+            -85.7069,
+            32.424
+          ],
+          "cat": "persecution",
+          "type": "event",
+          "date": "1932",
+          "end": "1972",
+          "place": {
+            "en": "Macon County, Alabama, United States",
+            "es": "Condado de Macon, Alabama, Estados Unidos"
+          },
+          "text": {
+            "en": "From 1932 to 1972 US government doctors followed 399 poor Black men with syphilis without treating them, and kept them from penicillin even after it became the standard cure in 1947.",
+            "es": "De 1932 a 1972, médicos del gobierno de Estados Unidos siguieron a 399 hombres negros pobres con sífilis sin tratarlos, y les negaron la penicilina incluso cuando se volvió la cura habitual, en 1947."
+          },
+          "details": {
+            "en": "The men, sharecroppers in Macon County, were never told their diagnosis; they were promised free medical care, hot meals and burial insurance. When campaigns to treat syphilis reached the county, the researchers kept them out. By 1972, 28 of the men had died of syphilis and 100 of related complications, 40 of their wives had been infected and 19 children had been born with the disease. A whistleblower, Peter Buxtun, took the story to the press in 1972. It led to rules requiring informed consent in medical research, and left a deep distrust of medicine among many African Americans.",
+            "es": "A los hombres, aparceros del condado de Macon, nunca se les dijo su diagnóstico; se les prometió atención médica gratuita, comidas calientes y un seguro de entierro. Cuando las campañas para tratar la sífilis llegaron al condado, los investigadores los dejaron fuera. Para 1972, 28 de los hombres habían muerto de sífilis y 100 por complicaciones relacionadas, 40 de sus esposas se habían contagiado y 19 niños habían nacido con la enfermedad. Un denunciante, Peter Buxtun, llevó el caso a la prensa en 1972. Eso llevó a exigir el consentimiento informado en la investigación médica, y dejó una profunda desconfianza hacia la medicina en muchos afroestadounidenses."
+          },
+          "wiki": {
+            "en": "Tuskegee Syphilis Study",
+            "es": "Experimento Tuskegee"
+          },
+          "img": "Syphilis-poster-wpa-cure.jpg"
+        }
+      ]
+    },
+    {
+      "date": "1943-10-19",
+      "title": {
+        "en": "A cure for tuberculosis",
+        "es": "Una cura para la tuberculosis"
+      },
+      "text": {
+        "en": "On 19 October 1943, at Rutgers in New Jersey, the student Albert Schatz found that a soil microbe made a substance that killed the tuberculosis germ: streptomycin.",
+        "es": "El 19 de octubre de 1943, en la Universidad Rutgers de Nueva Jersey, el estudiante Albert Schatz descubrió que un microbio del suelo producía una sustancia que mataba el germen de la tuberculosis: la estreptomicina."
+      },
+      "details": {
+        "en": "Schatz worked alone in a basement laboratory of the soil microbiologist Selman Waksman, who had set out to find antibiotics made by soil microbes. His two strains of Streptomyces griseus came from heavily manured soil and from the throat of a healthy chicken, provided by Doris Jones; Elizabeth Bugie ran the tests. At the Mayo Clinic, William Feldman and Corwin Hinshaw showed that it saved infected guinea pigs, and then people. In Britain, a trial in 1946–1948 was the first randomised trial of a cure. Resistant germs soon appeared, and doctors learned to give several drugs together, adding PAS and isoniazid; tuberculosis became curable. Waksman alone received the 1952 Nobel Prize; Schatz had to sue to be recognised as co-discoverer.",
+        "es": "Schatz trabajaba solo en un laboratorio del sótano del microbiólogo del suelo Selman Waksman, que buscaba antibióticos producidos por microbios del suelo. Sus dos cepas de Streptomyces griseus venían de una tierra muy abonada y de la garganta de una gallina sana, aportada por Doris Jones; Elizabeth Bugie hizo las pruebas. En la Clínica Mayo, William Feldman y Corwin Hinshaw mostraron que salvaba a cobayos infectados, y luego a personas. En Gran Bretaña, un ensayo de 1946-1948 fue el primer ensayo aleatorizado de una cura. Pronto aparecieron gérmenes resistentes, y los médicos aprendieron a dar varios fármacos juntos, sumando el PAS y la isoniazida; la tuberculosis se volvió curable. Solo Waksman recibió el Premio Nobel de 1952; Schatz tuvo que demandar para que se lo reconociera como codescubridor."
+      },
+      "camera": {
+        "lon": -74.437,
+        "lat": 40.481,
+        "zoom": 30
+      },
+      "control": {
+        "pen1944": null
+      },
+      "places": [
+        {
+          "id": "albert-schatz",
+          "name": {
+            "en": "Albert Schatz",
+            "es": "Albert Schatz"
+          },
+          "at": [
+            -74.437,
+            40.481
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1943-10-19",
+          "life": [
+            "1920-02-02",
+            "2005-01-17"
+          ],
+          "place": {
+            "en": "Rutgers University, New Brunswick, New Jersey",
+            "es": "Universidad Rutgers, New Brunswick, Nueva Jersey"
+          },
+          "text": {
+            "en": "A farmers' son and student who discovered streptomycin, the first antibiotic to work against tuberculosis, in 1943. He had to fight for recognition; Rutgers honoured him only in 1994.",
+            "es": "Hijo de granjeros y estudiante que descubrió la estreptomicina, el primer antibiótico eficaz contra la tuberculosis, en 1943. Tuvo que luchar por su reconocimiento; Rutgers lo honró recién en 1994."
+          },
+          "wiki": {
+            "en": "Albert Schatz (scientist)",
+            "es": "Albert Schatz"
+          }
+        },
+        {
+          "id": "selman-waksman",
+          "name": {
+            "en": "Selman Waksman",
+            "es": "Selman Waksman"
+          },
+          "at": [
+            -74.4362,
+            40.4816
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1943",
+          "life": [
+            "1888-07-22",
+            "1973-08-16"
+          ],
+          "place": {
+            "en": "Rutgers University, New Brunswick, New Jersey",
+            "es": "Universidad Rutgers, New Brunswick, Nueva Jersey"
+          },
+          "text": {
+            "en": "A Ukrainian-born American soil microbiologist whose laboratory searched soil microbes for antibiotics and found streptomycin and neomycin. He alone received the 1952 Nobel Prize.",
+            "es": "Microbiólogo del suelo estadounidense nacido en Ucrania, cuyo laboratorio buscó antibióticos en los microbios del suelo y halló la estreptomicina y la neomicina. Recibió solo el Premio Nobel de 1952."
+          },
+          "wiki": {
+            "en": "Selman Waksman",
+            "es": "Selman Waksman"
+          }
+        },
+        {
+          "id": "elizabeth-bugie",
+          "name": {
+            "en": "Elizabeth Bugie",
+            "es": "Elizabeth Bugie"
+          },
+          "at": [
+            -74.4378,
+            40.4803
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1943",
+          "life": [
+            "1920-10-05",
+            "2001-04-10"
+          ],
+          "place": {
+            "en": "Rutgers University, New Brunswick, New Jersey",
+            "es": "Universidad Rutgers, New Brunswick, Nueva Jersey"
+          },
+          "text": {
+            "en": "A young biochemist who ran the tests that showed streptomycin's power. She was an author of the first report on it, but was left off the patent.",
+            "es": "Joven bioquímica que hizo las pruebas que demostraron el poder de la estreptomicina. Fue autora del primer informe sobre ella, pero quedó fuera de la patente."
+          },
+          "wiki": {
+            "en": "Elizabeth Bugie",
+            "es": "Elizabeth Bugie"
+          }
+        },
+        {
+          "id": "streptomycin",
+          "name": {
+            "en": "Streptomycin",
+            "es": "Estreptomicina"
+          },
+          "at": [
+            -74.4384,
+            40.4808
+          ],
+          "cat": "medicine",
+          "icon": "💊",
+          "type": "invention",
+          "date": "1943-10-19",
+          "place": {
+            "en": "Rutgers University, New Brunswick, New Jersey",
+            "es": "Universidad Rutgers, New Brunswick, Nueva Jersey"
+          },
+          "text": {
+            "en": "An antibiotic made by the soil microbe Streptomyces griseus. It was the first effective drug against tuberculosis and is still on WHO's list of essential medicines.",
+            "es": "Un antibiótico producido por el microbio del suelo Streptomyces griseus. Fue el primer fármaco eficaz contra la tuberculosis y sigue en la lista de medicamentos esenciales de la OMS."
+          },
+          "wiki": {
+            "en": "Streptomycin",
+            "es": "Estreptomicina"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1945-12-11",
+      "title": {
+        "en": "A structure and a warning",
+        "es": "Una estructura y una advertencia"
+      },
+      "text": {
+        "en": "In 1945 Dorothy Hodgkin worked out the structure of penicillin in Oxford. Fleming, Florey and Chain shared the Nobel Prize, and Fleming warned that misuse would breed resistant germs.",
+        "es": "En 1945 Dorothy Hodgkin descifró en Oxford la estructura de la penicilina. Fleming, Florey y Chain compartieron el Premio Nobel, y Fleming advirtió que el mal uso criaría gérmenes resistentes."
+      },
+      "details": {
+        "en": "Using X-ray crystallography, Hodgkin, Barbara Low and colleagues showed that penicillin contains a beta-lactam ring, as Edward Abraham had proposed and many chemists doubted. Published in 1949, the work helped chemists make new penicillins, and Hodgkin won the 1964 Nobel Prize in Chemistry. Fleming had seen bacteria become resistant when exposed to too little penicillin. \"The time may come when penicillin can be bought by anyone in the shops,\" he said in his Nobel lecture in Stockholm on 11 December 1945. \"Then there is the danger that the ignorant man may easily underdose himself and by exposing his microbes to non-lethal quantities of the drug make them resistant.\" The first cases of resistance in patients were reported about then.",
+        "es": "Mediante la cristalografía de rayos X, Hodgkin, Barbara Low y sus colegas mostraron que la penicilina tiene un anillo betalactámico, como había propuesto Edward Abraham y muchos químicos dudaban. Publicado en 1949, el trabajo ayudó a crear nuevas penicilinas, y Hodgkin ganó el Premio Nobel de Química de 1964. Fleming había visto que las bacterias se volvían resistentes cuando recibían muy poca penicilina. «Puede llegar el día en que cualquiera pueda comprar penicilina en las tiendas», dijo en su discurso del Nobel, en Estocolmo, el 11 de diciembre de 1945. «Entonces existe el peligro de que el ignorante tome dosis insuficientes y, al exponer a sus microbios a cantidades no mortales del fármaco, los vuelva resistentes». Por entonces se informaron los primeros casos de resistencia en pacientes."
+      },
+      "camera": {
+        "lon": -0.72,
+        "lat": 51.64,
+        "zoom": 14
+      },
+      "places": [
+        {
+          "id": "dorothy-hodgkin",
+          "name": {
+            "en": "Dorothy Hodgkin",
+            "es": "Dorothy Hodgkin"
+          },
+          "at": [
+            -1.2556,
+            51.7586
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1945",
+          "life": [
+            "1910-05-12",
+            "1994-07-29"
+          ],
+          "place": {
+            "en": "University of Oxford, England",
+            "es": "Universidad de Oxford, Inglaterra"
+          },
+          "text": {
+            "en": "An English chemist who used X-rays to find the shapes of penicillin (1945), vitamin B12 and insulin. She is the only British woman to have won a Nobel Prize in science.",
+            "es": "Química inglesa que usó los rayos X para descifrar la forma de la penicilina (1945), la vitamina B12 y la insulina. Es la única británica que ha ganado un Premio Nobel de ciencias."
+          },
+          "wiki": {
+            "en": "Dorothy Hodgkin",
+            "es": "Dorothy Hodgkin"
+          }
+        },
+        {
+          "id": "alexander-fleming",
+          "name": {
+            "en": "Alexander Fleming",
+            "es": "Alexander Fleming"
+          },
+          "at": [
+            -0.1735,
+            51.5172
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1928-09-03",
+          "life": [
+            "1881-08-06",
+            "1955-03-11"
+          ],
+          "place": {
+            "en": "St Mary's Hospital, Paddington, London",
+            "es": "Hospital St Mary's, Paddington, Londres"
+          },
+          "text": {
+            "en": "A Scottish doctor and bacteriologist at St Mary's Hospital who discovered lysozyme (1922) and penicillin (1928). He shared the 1945 Nobel Prize with Florey and Chain.",
+            "es": "Médico y bacteriólogo escocés del Hospital St Mary's que descubrió la lisozima (1922) y la penicilina (1928). Compartió el Premio Nobel de 1945 con Florey y Chain."
+          },
+          "wiki": {
+            "en": "Alexander Fleming",
+            "es": "Alexander Fleming"
+          }
+        },
+        {
+          "id": "howard-florey",
+          "name": {
+            "en": "Howard Florey",
+            "es": "Howard Florey"
+          },
+          "at": [
+            -1.2515,
+            51.7595
+          ],
+          "cat": "scientist",
+          "type": "person",
+          "date": "1941-02-12",
+          "life": [
+            "1898-09-24",
+            "1968-02-21"
+          ],
+          "place": {
+            "en": "Sir William Dunn School of Pathology, Oxford",
+            "es": "Escuela de Patología Sir William Dunn, Oxford"
+          },
+          "text": {
+            "en": "An Australian pathologist who led the Oxford team that turned penicillin into a medicine. He insisted that it was a team effort, and did not patent it.",
+            "es": "Patólogo australiano que dirigió el equipo de Oxford que convirtió la penicilina en medicamento. Insistía en que había sido un trabajo de equipo, y no la patentó."
+          },
+          "wiki": {
+            "en": "Howard Florey",
+            "es": "Howard Walter Florey"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2024-09-26",
+      "title": {
+        "en": "The germs fight back",
+        "es": "Los gérmenes contraatacan"
+      },
+      "text": {
+        "en": "Overuse of antibiotics in medicine and farming breeds resistant germs. The GRAM study in The Lancet (2024) estimated that resistance directly caused 1.14 million deaths in 2021.",
+        "es": "El abuso de antibióticos en la medicina y la ganadería cría gérmenes resistentes. El estudio GRAM, publicado en The Lancet en 2024, estimó que la resistencia causó directamente 1,14 millones de muertes en 2021."
+      },
+      "details": {
+        "en": "The study, by the GBD Antimicrobial Resistance Collaborators of the GRAM project (the Institute for Health Metrics and Evaluation in Seattle and the University of Oxford), also linked bacterial resistance to 4.71 million deaths in 2021. Since 1990 such deaths among children under five had fallen by more than half, but among people over 70 they had risen by over 80%; MRSA and germs resistant to carbapenems grew fastest. Without action, it forecast 1.91 million deaths caused by resistance, and 8.22 million linked to it, in 2050, with the highest death rates in South Asia and in Latin America and the Caribbean. In 2015 the World Health Assembly endorsed a global action plan, and in 2024 the UN pledged action. Fleming's warning has come true, and for decades hardly any new classes of antibiotics have been approved.",
+        "es": "El estudio, de los colaboradores sobre resistencia antimicrobiana del GBD dentro del proyecto GRAM (el Instituto de Métricas y Evaluación de la Salud de Seattle y la Universidad de Oxford), también asoció la resistencia bacteriana a 4,71 millones de muertes en 2021. Desde 1990 esas muertes habían bajado más de la mitad entre los menores de cinco años, pero habían subido más del 80 % entre los mayores de 70; el SARM y los gérmenes resistentes a los carbapenémicos fueron los que más crecieron. Sin medidas, pronosticó 1,91 millones de muertes causadas por la resistencia, y 8,22 millones asociadas a ella, en 2050, con la mayor mortalidad en el sur de Asia y en América Latina y el Caribe. En 2015 la Asamblea Mundial de la Salud aprobó un plan de acción mundial, y en 2024 la ONU se comprometió a actuar. La advertencia de Fleming se cumplió, y desde hace décadas casi no se aprueban nuevas clases de antibióticos."
+      },
+      "camera": {
+        "lon": -20.0,
+        "lat": 22.0,
+        "zoom": 1.0
+      },
+      "control": {
+        "amr2050": [
+          "IND",
+          "PAK",
+          "BGD",
+          "NPL",
+          "BTN",
+          "MEX",
+          "GTM",
+          "BLZ",
+          "SLV",
+          "HND",
+          "NIC",
+          "CRI",
+          "PAN",
+          "COL",
+          "VEN",
+          "ECU",
+          "PER",
+          "BOL",
+          "BRA",
+          "PRY",
+          "URY",
+          "ARG",
+          "CHL",
+          "GUY",
+          "SUR",
+          "CUB",
+          "JAM",
+          "HTI",
+          "DOM",
+          "PRI",
+          "TTO",
+          "BHS",
+          "BRB",
+          "ATG",
+          "DMA",
+          "GRD",
+          "KNA",
+          "LCA",
+          "VCT"
+        ]
+      },
+      "places": [
+        {
+          "id": "antimicrobial-resistance",
+          "name": {
+            "en": "Antimicrobial resistance",
+            "es": "Resistencia a los antimicrobianos"
+          },
+          "at": [
+            -1.216,
+            51.7525
+          ],
+          "cat": "event",
+          "icon": "⚠️",
+          "type": "event",
+          "date": "2024-09",
+          "place": {
+            "en": "Worldwide; GRAM estimates from Oxford and Seattle",
+            "es": "Todo el mundo; estimaciones GRAM desde Oxford y Seattle"
+          },
+          "text": {
+            "en": "When germs evolve to survive the drugs meant to kill them. The GRAM study (The Lancet, 2024) estimated 1.14 million deaths caused by bacterial resistance in 2021, and 4.71 million linked to it.",
+            "es": "Cuando los gérmenes evolucionan para sobrevivir a los fármacos que deberían matarlos. El estudio GRAM (The Lancet, 2024) estimó 1,14 millones de muertes causadas por bacterias resistentes en 2021 y 4,71 millones asociadas a ellas."
+          },
+          "wiki": {
+            "en": "Antimicrobial resistance",
+            "es": "Resistencia a antibióticos"
+          }
+        },
+        {
+          "id": "the-lancet",
+          "name": {
+            "en": "The Lancet",
+            "es": "The Lancet"
+          },
+          "at": [
+            -0.1235,
+            51.5115
+          ],
+          "cat": "art",
+          "icon": "📰",
+          "type": "work",
+          "date": "1823",
+          "place": {
+            "en": "London, United Kingdom",
+            "es": "Londres, Reino Unido"
+          },
+          "text": {
+            "en": "A London medical journal founded in 1823. It published Lister's antiseptic method in 1867, the Oxford penicillin results in 1940 and the GRAM estimates of antibiotic resistance in 2024.",
+            "es": "Revista médica de Londres fundada en 1823. Publicó el método antiséptico de Lister en 1867, los resultados de la penicilina de Oxford en 1940 y las estimaciones del estudio GRAM sobre la resistencia a los antibióticos en 2024."
+          },
+          "wiki": {
+            "en": "The Lancet",
+            "es": "The Lancet"
+          }
+        },
+        {
+          "id": "world-health-organization",
+          "name": {
+            "en": "World Health Organization",
+            "es": "Organización Mundial de la Salud"
+          },
+          "at": [
+            6.1342,
+            46.2335
+          ],
+          "cat": "health",
+          "type": "institution",
+          "date": "1948-04-07",
+          "place": {
+            "en": "Geneva, Switzerland",
+            "es": "Ginebra, Suiza"
+          },
+          "text": {
+            "en": "The UN health agency, founded in 1948. In May 2015 the World Health Assembly endorsed its global action plan against antimicrobial resistance.",
+            "es": "La agencia de salud de la ONU, fundada en 1948. En mayo de 2015 la Asamblea Mundial de la Salud aprobó su plan de acción mundial contra la resistencia a los antimicrobianos."
+          },
+          "wiki": {
+            "en": "World Health Organization",
+            "es": "Organización Mundial de la Salud"
+          }
+        },
+        {
+          "id": "un-amr-2024",
+          "name": {
+            "en": "UN pledge on resistance, 2024",
+            "es": "Compromiso de la ONU sobre resistencia, 2024"
+          },
+          "at": [
+            -73.968,
+            40.7489
+          ],
+          "cat": "event",
+          "type": "event",
+          "date": "2024-09-26",
+          "place": {
+            "en": "United Nations headquarters, New York",
+            "es": "Sede de las Naciones Unidas, Nueva York"
+          },
+          "text": {
+            "en": "On 26 September 2024 world leaders at the UN General Assembly pledged to cut the deaths linked to bacterial resistance, estimated at 4.95 million a year, by 10% by 2030.",
+            "es": "El 26 de septiembre de 2024, líderes mundiales en la Asamblea General de la ONU se comprometieron a reducir un 10 % para 2030 las muertes asociadas a bacterias resistentes, estimadas en 4,95 millones al año."
+          },
+          "wiki": {
+            "en": "United Nations General Assembly",
+            "es": "Asamblea General de las Naciones Unidas"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "In a century, germ theory turned medicine around: clean hands, antiseptic surgery, safe water and, from the 1930s, sulfa drugs and antibiotics that made once-deadly infections curable and added years to lives everywhere. Many hands made it possible, from midwives and nurses to Japanese, French and American scientists and the women of Peoria, and some people, like the men of Tuskegee, were wronged along the way. Today resistance threatens these gains, and antibiotics must be used with care, as Fleming warned.",
+    "es": "En un siglo, la teoría de los gérmenes transformó la medicina: manos limpias, cirugía antiséptica, agua segura y, desde los años treinta, sulfamidas y antibióticos que volvieron curables infecciones antes mortales y sumaron años de vida en todo el mundo. Lo hicieron posible muchas manos, de parteras y enfermeras a científicos japoneses, franceses y estadounidenses y las mujeres de Peoria, y algunas personas, como los hombres de Tuskegee, sufrieron abusos en el camino. Hoy la resistencia amenaza estos logros, y los antibióticos deben usarse con cuidado, como advirtió Fleming."
+  },
+  "sources": [
+    {
+      "title": "Wikipedia: Germ theory of disease",
+      "url": "https://en.wikipedia.org/wiki/Germ_theory_of_disease"
+    },
+    {
+      "title": "Wikipedia: Girolamo Fracastoro",
+      "url": "https://en.wikipedia.org/wiki/Girolamo_Fracastoro"
+    },
+    {
+      "title": "Wikipedia: Syphilis",
+      "url": "https://en.wikipedia.org/wiki/Syphilis"
+    },
+    {
+      "title": "Wikipedia: Antonie van Leeuwenhoek",
+      "url": "https://en.wikipedia.org/wiki/Antonie_van_Leeuwenhoek"
+    },
+    {
+      "title": "Wikipedia: Royal Society",
+      "url": "https://en.wikipedia.org/wiki/Royal_Society"
+    },
+    {
+      "title": "Wikipedia: Ignaz Semmelweis",
+      "url": "https://en.wikipedia.org/wiki/Ignaz_Semmelweis"
+    },
+    {
+      "title": "Wikipedia: Postpartum infections",
+      "url": "https://en.wikipedia.org/wiki/Postpartum_infections"
+    },
+    {
+      "title": "Wikipedia: Florence Nightingale",
+      "url": "https://en.wikipedia.org/wiki/Florence_Nightingale"
+    },
+    {
+      "title": "Wikipedia: Mary Seacole",
+      "url": "https://en.wikipedia.org/wiki/Mary_Seacole"
+    },
+    {
+      "title": "Wikipedia: Miasma theory",
+      "url": "https://en.wikipedia.org/wiki/Miasma_theory"
+    },
+    {
+      "title": "Wikipedia: Louis Pasteur",
+      "url": "https://en.wikipedia.org/wiki/Louis_Pasteur"
+    },
+    {
+      "title": "Wikipedia: Spontaneous generation",
+      "url": "https://en.wikipedia.org/wiki/Spontaneous_generation"
+    },
+    {
+      "title": "Wikipedia: Félix Archimède Pouchet",
+      "url": "https://en.wikipedia.org/wiki/Félix_Archimède_Pouchet"
+    },
+    {
+      "title": "Wikipedia: Joseph Lister",
+      "url": "https://en.wikipedia.org/wiki/Joseph_Lister"
+    },
+    {
+      "title": "Wikipedia: Phenol",
+      "url": "https://en.wikipedia.org/wiki/Phenol"
+    },
+    {
+      "title": "Wikipedia: The Lancet",
+      "url": "https://en.wikipedia.org/wiki/The_Lancet"
+    },
+    {
+      "title": "Wikipedia: Robert Koch",
+      "url": "https://en.wikipedia.org/wiki/Robert_Koch"
+    },
+    {
+      "title": "Wikipedia: Bacillus anthracis",
+      "url": "https://en.wikipedia.org/wiki/Bacillus_anthracis"
+    },
+    {
+      "title": "Wikipedia: Ferdinand Cohn",
+      "url": "https://en.wikipedia.org/wiki/Ferdinand_Cohn"
+    },
+    {
+      "title": "Wikipedia: Tuberculosis",
+      "url": "https://en.wikipedia.org/wiki/Tuberculosis"
+    },
+    {
+      "title": "Wikipedia: Koch's postulates",
+      "url": "https://en.wikipedia.org/wiki/Koch's_postulates"
+    },
+    {
+      "title": "Wikipedia: World Tuberculosis Day",
+      "url": "https://en.wikipedia.org/wiki/World_Tuberculosis_Day"
+    },
+    {
+      "title": "Wikipedia: Paul Ehrlich",
+      "url": "https://en.wikipedia.org/wiki/Paul_Ehrlich"
+    },
+    {
+      "title": "Wikipedia: Arsphenamine",
+      "url": "https://en.wikipedia.org/wiki/Arsphenamine"
+    },
+    {
+      "title": "Wikipedia: Sahachiro Hata",
+      "url": "https://en.wikipedia.org/wiki/Sahachiro_Hata"
+    },
+    {
+      "title": "Wikipedia: Alexander Fleming",
+      "url": "https://en.wikipedia.org/wiki/Alexander_Fleming"
+    },
+    {
+      "title": "Wikipedia: History of penicillin",
+      "url": "https://en.wikipedia.org/wiki/History_of_penicillin"
+    },
+    {
+      "title": "Wikipedia: Discovery of penicillin",
+      "url": "https://en.wikipedia.org/wiki/Discovery_of_penicillin"
+    },
+    {
+      "title": "Wikipedia: Penicillin",
+      "url": "https://en.wikipedia.org/wiki/Penicillin"
+    },
+    {
+      "title": "Wikipedia: Penicillium chrysogenum",
+      "url": "https://en.wikipedia.org/wiki/Penicillium_chrysogenum"
+    },
+    {
+      "title": "Wikipedia: Prontosil",
+      "url": "https://en.wikipedia.org/wiki/Prontosil"
+    },
+    {
+      "title": "Wikipedia: Gerhard Domagk",
+      "url": "https://en.wikipedia.org/wiki/Gerhard_Domagk"
+    },
+    {
+      "title": "Wikipedia: Leonard Colebrook",
+      "url": "https://en.wikipedia.org/wiki/Leonard_Colebrook"
+    },
+    {
+      "title": "Wikipedia: Pasteur Institute",
+      "url": "https://en.wikipedia.org/wiki/Pasteur_Institute"
+    },
+    {
+      "title": "Wikipedia: Howard Florey",
+      "url": "https://en.wikipedia.org/wiki/Howard_Florey"
+    },
+    {
+      "title": "Wikipedia: Ernst Chain",
+      "url": "https://en.wikipedia.org/wiki/Ernst_Chain"
+    },
+    {
+      "title": "Wikipedia: Norman Heatley",
+      "url": "https://en.wikipedia.org/wiki/Norman_Heatley"
+    },
+    {
+      "title": "Wikipedia: Albert Alexander (police officer)",
+      "url": "https://en.wikipedia.org/wiki/Albert_Alexander_(police_officer)"
+    },
+    {
+      "title": "Wikipedia: Sir William Dunn School of Pathology",
+      "url": "https://en.wikipedia.org/wiki/Sir_William_Dunn_School_of_Pathology"
+    },
+    {
+      "title": "Wikipedia: Radcliffe Infirmary",
+      "url": "https://en.wikipedia.org/wiki/Radcliffe_Infirmary"
+    },
+    {
+      "title": "Wikipedia: National Center for Agricultural Utilization Research",
+      "url": "https://en.wikipedia.org/wiki/National_Center_for_Agricultural_Utilization_Research"
+    },
+    {
+      "title": "Wikipedia: Andrew J. Moyer",
+      "url": "https://en.wikipedia.org/wiki/Andrew_J._Moyer"
+    },
+    {
+      "title": "Wikipedia: Tuskegee Syphilis Study",
+      "url": "https://en.wikipedia.org/wiki/Tuskegee_Syphilis_Study"
+    },
+    {
+      "title": "Wikipedia: Streptomycin",
+      "url": "https://en.wikipedia.org/wiki/Streptomycin"
+    },
+    {
+      "title": "Wikipedia: Albert Schatz (scientist)",
+      "url": "https://en.wikipedia.org/wiki/Albert_Schatz_(scientist)"
+    },
+    {
+      "title": "Wikipedia: Selman Waksman",
+      "url": "https://en.wikipedia.org/wiki/Selman_Waksman"
+    },
+    {
+      "title": "Wikipedia: Elizabeth Bugie",
+      "url": "https://en.wikipedia.org/wiki/Elizabeth_Bugie"
+    },
+    {
+      "title": "Wikipedia: Dorothy Hodgkin",
+      "url": "https://en.wikipedia.org/wiki/Dorothy_Hodgkin"
+    },
+    {
+      "title": "Wikipedia: Antimicrobial resistance",
+      "url": "https://en.wikipedia.org/wiki/Antimicrobial_resistance"
+    },
+    {
+      "title": "Wikipedia: World Health Organization",
+      "url": "https://en.wikipedia.org/wiki/World_Health_Organization"
+    },
+    {
+      "title": "GBD 2021 Antimicrobial Resistance Collaborators, \"Global burden of bacterial antimicrobial resistance 1990–2021: a systematic analysis with forecasts to 2050\", The Lancet (2024)",
+      "url": "https://doi.org/10.1016/S0140-6736(24)01867-1"
+    }
+  ]
+}

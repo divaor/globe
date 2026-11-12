@@ -10,10 +10,13 @@
 // zoomed-in flat maps; yesterday's satellite picture is not empty (needs NASA GIBS online); the
 // wars and conquests mode plays a conflict, with battle cards and step details; a story opens from a
 // shared link; a journey keeps its trail on the map; the Writing systems filter with its script letters in
-// the app's own fonts; a script sample on a story card (Phoenician letters) and a religions story;
+// the app's own fonts; a script sample on a story card (Phoenician letters) and a religions story; a
+// disaster step with its time of day and a plagues story;
 // Compare two filters (the two-colour map, its chart linked to the globe, a total divided
-// by another, categories, Spanish); the quizzes made from the stories, Guess the link and Which language
-// family?, a city tour that hops between collections, and the tours of holy places and of the alphabet.
+// by another, categories, Spanish); the quizzes made from the stories (with a picture opened full screen and
+// zoomed), Guess the link and Which language
+// family?, a city tour that hops between collections, and the tours of holy places, the alphabet,
+// pandemics and tsunamis.
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 let chromium, devices;
@@ -661,6 +664,29 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await b.ctx.close();
 }
 
+// 12j. Plagues and cures, Natural disasters: a step with a time of day shows it after the date, in English
+// and in Spanish (with a short month when the long date would not fit); a shared link opens the cholera
+// story in Soho.
+{
+  const stepDate = async (hash) => {
+    const s = await open({ ...devices['Pixel 7'] }, hash);
+    await s.page.waitForSelector('.warbar', { timeout: 30000 });
+    await s.page.waitForTimeout(2500);
+    await s.page.evaluate(() => { const b = document.querySelector('.warbar .tb-play'); if (b && b.getAttribute('aria-label') === 'Pause') b.click(); });
+    const r = await s.page.evaluate(() => ({ mode: window.atlas.app.mode, date: document.querySelector('.wb-date')?.textContent ?? '', title: document.querySelector('.wb-title')?.textContent ?? '', items: window.atlas.time.stories[window.atlas.app.mode]?.c?.items?.length ?? 0 }));
+    await s.ctx.close();
+    return { ...r, errors: s.errors };
+  };
+  const en = await stepDate('#disasters=lisbon-1755&step=1&p=globe&lang=en');
+  check(en.mode === 'disasters' && /1 Nov(ember)? 1755, 09:40/.test(en.date) && /All Saints/.test(en.title), `the Lisbon earthquake opens at its time of day (${en.date}: ${en.title})`);
+  const es = await stepDate('#disasters=lisbon-1755&step=1&p=globe&lang=es');
+  check(/1 (de noviembre de|nov\.) 1755, 09:40/.test(es.date), `in Spanish, the month shortened if the date would not fit: ${es.date}`);
+  const ch = await stepDate('#plagues=cholera&step=5&p=globe&lang=en');
+  check(ch.mode === 'plagues' && /Soho/.test(ch.title) && ch.items > 20, `a shared link opens the cholera story in Soho (${ch.date}: ${ch.title})`);
+  const errs = [...en.errors, ...es.errors, ...ch.errors];
+  check(!errs.length, `no page errors in Plagues and Disasters stories${errs.length ? ': ' + errs.join(' | ') : ''}`);
+}
+
 // 12f. Compare two filters: from the Filters panel, GDP per capita against life expectancy on a
 // two-colour map, with its chart (a strong link); the legend's nine squares count the countries and a
 // tap lights theirs; a dot on the chart picks its country, whose strip shows both values with their
@@ -785,7 +811,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.waitForTimeout(400);
   };
   const storyButton = () => page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /See it in the story/.test(b.textContent)));
-  for (const kind of ['when', 'dish', 'era', 'civ', 'period', 'champion', 'journey', 'faith', 'script']) {
+  for (const kind of ['when', 'dish', 'era', 'civ', 'period', 'champion', 'journey', 'faith', 'script', 'plague', 'disaster']) {
     await menu('Quiz');
     await page.evaluate((k) => document.querySelector(`[data-quiz="${k}"]`).click(), kind);
     await page.waitForSelector('.learn-card:not([hidden]) .quiz-opt', { timeout: 30000 });
@@ -799,6 +825,25 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
     await page.waitForTimeout(300);
   }
+  // A quiz picture opens full screen; a double tap zooms in, and the X closes it and leaves the quiz open.
+  await menu('Quiz');
+  await page.evaluate(() => document.querySelector('[data-quiz="disaster"]').click());
+  await page.waitForSelector('.learn-card .zoom-wrap .quiz-img:not([hidden])', { timeout: 30000 });
+  await page.tap('.learn-card .quiz-img');
+  await page.waitForSelector('.zoom-view .zoom-img', { timeout: 5000 });
+  await page.waitForTimeout(300);
+  const zr = await page.evaluate(() => { const r = document.querySelector('.zoom-img').getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2, w: r.width }; });
+  await page.touchscreen.tap(zr.x, zr.y);
+  await page.waitForTimeout(120);
+  await page.touchscreen.tap(zr.x, zr.y);
+  await page.waitForTimeout(400);
+  const zt = await page.evaluate(() => document.querySelector('.zoom-img')?.style.transform ?? '');
+  await page.tap('.zoom-close');
+  await page.waitForTimeout(300);
+  const zc = await page.evaluate(() => ({ gone: !document.querySelector('.zoom-view'), quiz: !document.querySelector('.learn-card').hidden }));
+  check(zr.w > 300 && /scale\(2\.5\)/.test(zt) && zc.gone && zc.quiz, `a quiz picture opens full screen (${Math.round(zr.w)} px wide), a double tap zooms in (${zt}), and the X closes it`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
   // Guess the link: two country facts and four answers; the answer comes with its chart, and "See it
   // on the map" opens Compare two filters on that pair.
   await menu('Quiz');
@@ -961,6 +1006,22 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
   const abc = await stop();
   check(abc.mode === 'writing' && /letters/.test(abc.bar) && /1\/9/.test(abc.n), `the alphabet tour starts with the first letters (${abc.bar})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
+  // Pandemics that changed history starts at Constantinople in 542; Tsunamis across the oceans with the
+  // orphan tsunami of 1700 in Japan.
+  await menu('Guided tours');
+  await page.evaluate(() => document.querySelector('[data-tour="Pandemics that changed history"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
+  const pan = await stop();
+  check(pan.mode === 'plagues' && Math.abs(pan.lon - 28.98) < 0.3 && Math.abs(pan.lat - 41.01) < 0.3 && /1\/7/.test(pan.n), `the pandemics tour starts at Constantinople (${pan.bar})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
+  await menu('Guided tours');
+  await page.evaluate(() => document.querySelector('[data-tour="Tsunamis across the oceans"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
+  const tsu = await stop();
+  check(tsu.mode === 'disasters' && /orphan tsunami/i.test(tsu.bar) && /1\/9/.test(tsu.n), `the tsunamis tour starts with the orphan tsunami of 1700 (${tsu.bar})`);
   await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
   await page.waitForTimeout(300);
   check(!errors.length, `no page errors in quizzes and tours${errors.length ? ': ' + errors.join(' | ') : ''}`);
