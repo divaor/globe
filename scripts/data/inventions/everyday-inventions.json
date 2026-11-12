@@ -12,7 +12,11 @@
   },
   "camera": { "lon": 40, "lat": 34, "zoom": 3.5 },
   "sides": [
-    { "id": "travel", "name": { "en": "How it travelled", "es": "Cómo viajó" }, "color": "#e84393" }
+    {
+      "id": "travel",
+      "name": { "en": "How it travelled", "es": "Cómo viajó" },
+      "color": "#e84393"
+    }
   ],
   "steps": [
     {
@@ -35,7 +39,7 @@
         },
         {
           "side": "travel",
-          "path": [[35.7, 35.5], [34.5, 35.0], [28.0, 34.6], [20.0, 36.3], [12.5, 36.8], [8.0, 38.3], [6.5, 41.5], [5.37, 43.25]],
+          "path": [[35.7, 35.5], [35.0, 34.7], [33.0, 34.3], [28.0, 34.0], [24.0, 34.4], [20.0, 36.0], [12.5, 36.8], [8.0, 38.3], [6.5, 41.5], [5.37, 43.25]],
           "by": "sea",
           "label": { "en": "Hard soap to Europe (Middle Ages)", "es": "El jabón duro llega a Europa (Edad Media)" }
         }
@@ -90,7 +94,7 @@
         "en": "People shaded themselves with parasols in Egypt by about 2450 BC and in Greece, where a folding one from about 700 BC was found on Samos. Chinese tradition credits the wife of Lu Ban, a master carpenter, with the first umbrella. The oiled-paper umbrella, waterproof enough for rain, spread among ordinary Chinese people after the Han dynasty and reached Japan and Southeast Asia from the Tang dynasty on. In France and England umbrellas were adopted around the middle of the 17th century, probably after Chinese models. A Paris merchant, Jean Marius, sold a light folding umbrella from 1710, and in London Jonas Hanway braved jeers by carrying one in the rain. Paper had been invented in China, and a scholar mentioned using it in the toilet around 589. The first bristle toothbrushes, of hog hair on bamboo or bone handles, were used in Tang China.",
         "es": "En Egipto la gente se protegía con sombrillas hacia el 2450 a. C., y también en Grecia, donde se halló en Samos una plegable de hacia el 700 a. C. La tradición china atribuye el primer paraguas a la esposa de Lu Ban, un maestro carpintero. El paraguas de papel aceitado, bastante impermeable para la lluvia, se extendió entre la gente común de China después de la dinastía Han y llegó a Japón y al Sudeste Asiático desde la dinastía Tang. En Francia e Inglaterra el paraguas se adoptó hacia mediados del siglo XVII, probablemente según modelos chinos. Un comerciante de París, Jean Marius, vendió un paraguas plegable y liviano desde 1710, y en Londres Jonas Hanway soportó las burlas por llevar uno bajo la lluvia. El papel se había inventado en China, y un erudito mencionó su uso en el baño hacia el año 589. Los primeros cepillos de dientes de cerdas, de pelo de cerdo sobre mangos de bambú o hueso, se usaron en la China Tang."
       },
-      "camera": { "lon": 60, "lat": 42, "zoom": 1.6 },
+      "camera": { "lon": 70, "lat": 42, "zoom": 1.4 },
       "moves": [
         {
           "side": "travel",
@@ -187,7 +191,7 @@
         "en": "Toilets washed by water are far older. The people of the Indus civilisation, in cities such as Mohenjo-daro, led waste water into covered street drains about 4,500 years ago, and Minoan palaces in Crete, such as Knossos, had water-flushed latrines in the 2nd millennium BC. In 2023 Chinese archaeologists found pieces of a flush toilet about 2,400 years old in palace ruins near Xi'an. Roman latrines had running water beneath them. Harington's design had a cistern and a valve, but his book, The Metamorphosis of Ajax (a pun on 'a jakes', slang for a toilet), was also a coded attack on the court, and few copied his invention. In 1775 the Scottish watchmaker Alexander Cumming patented the S-shaped trap, whose water seal keeps sewer smells out, and Joseph Bramah improved the valve. Flush toilets spread with sewers in the 19th century; George Jennings installed public ones at the Great Exhibition of 1851.",
         "es": "Los inodoros lavados con agua son mucho más antiguos. Los pueblos de la civilización del Indo, en ciudades como Mohenjo-Daro, llevaban las aguas sucias a desagües cubiertos bajo las calles hace unos 4500 años, y los palacios minoicos de Creta, como Cnosos, tenían letrinas con descarga de agua en el II milenio a. C. En 2023, arqueólogos chinos hallaron restos de un inodoro con descarga de unos 2400 años en las ruinas de un palacio cerca de Xi'an. Las letrinas romanas tenían agua corriente debajo. El diseño de Harington tenía una cisterna y una válvula, pero su libro, La metamorfosis de Áyax (un juego de palabras con «a jakes», «el retrete» en la jerga inglesa), también era un ataque en clave contra la corte, y pocos copiaron su invento. En 1775, el relojero escocés Alexander Cumming patentó el sifón en forma de S, cuyo cierre de agua impide que suban los olores de la cloaca, y Joseph Bramah mejoró la válvula. Los inodoros con cisterna se extendieron con las redes de cloacas en el siglo XIX; George Jennings instaló baños públicos en la Gran Exposición de 1851."
       },
-      "camera": { "lon": 30, "lat": 40, "zoom": 2.2 },
+      "camera": { "lon": 33, "lat": 40, "zoom": 1.8 },
       "places": [
         {
           "id": "flush-toilet",
@@ -433,26 +437,6 @@
           "wiki": { "en": "Safety pin", "es": "Imperdible" }
         },
         {
-          "id": "sewing-machine",
-          "name": { "en": "Sewing machine", "es": "Máquina de coser" },
-          "at": [2.322, 48.848],
-          "cat": "home",
-          "icon": "🪡",
-          "type": "invention",
-          "date": "1830-07-17",
-          "place": { "en": "Paris, France", "es": "París, Francia" },
-          "by": { "en": "Barthélemy Thimonnier; later Walter Hunt, Elias Howe and Isaac Singer", "es": "Barthélemy Thimonnier; después Walter Hunt, Elias Howe e Isaac Singer" },
-          "text": {
-            "en": "Thimonnier's machine of 1830, which sewed with a chain stitch, was the first widely used. American lockstitch machines of the 1840s and 1850s made clothes cheaper for everyone.",
-            "es": "La máquina de Thimonnier de 1830, que cosía con punto de cadeneta, fue la primera de uso extendido. Las máquinas estadounidenses de punto cerrado de las décadas de 1840 y 1850 abarataron la ropa para todos."
-          },
-          "details": {
-            "en": "Thomas Saint designed one in London in 1790, and the Austrian tailor Josef Madersperger built one in 1814. A man's shirt took a seamstress about 14 hours by hand. Clothing firms bought machines first; from the 1860s families did too, often paying in instalments, a selling method Singer's company pioneered.",
-            "es": "Thomas Saint diseñó una en Londres en 1790, y el sastre austríaco Josef Madersperger construyó otra en 1814. Una camisa de hombre le llevaba a una costurera unas 14 horas a mano. Primero compraron máquinas las fábricas de ropa; desde la década de 1860 también las familias, a menudo en cuotas, una forma de venta que impulsó la empresa de Singer."
-          },
-          "wiki": { "en": "Sewing machine", "es": "Máquina de coser" }
-        },
-        {
           "id": "barthelemy-thimonnier",
           "name": { "en": "Barthélemy Thimonnier", "es": "Barthélemy Thimonnier" },
           "at": [4.3872, 45.4397],
@@ -467,7 +451,8 @@
           },
           "wiki": { "en": "Barthélemy Thimonnier", "es": "Barthélemy Thimonnier" }
         }
-      ]
+      ],
+      "show": ["sewing-machine"]
     },
     {
       "date": "1873-05-20",
@@ -480,7 +465,7 @@
         "en": "The cloth came first. Jean, a sturdy fabric, was woven in Genoa in the 16th century and serge de Nîmes ('denim') in Nîmes in the 17th; dungaree was a coarse blue cotton from Dongri, near Bombay. The blue came from indigo, grown mostly in India and, in the Americas, by enslaved people on plantations. Davis, a Jewish tailor born in Riga, bought his cloth from the San Francisco wholesaler Levi Strauss, a Jewish immigrant from Bavaria. When a customer kept ripping his pockets, Davis riveted them in 1871. He could not afford the $68 patent fee, so he asked Strauss to share it, and moved to San Francisco to run the new production. Jeans were work clothes for miners, farmers and cowboys until films of the 1950s turned them into the uniform of young people everywhere.",
         "es": "Primero llegó la tela. El jean, un tejido resistente, se tejía en Génova en el siglo XVI, y la sarga de Nîmes («denim») en Nîmes en el XVII; el dungaree era un algodón azul y basto de Dongri, cerca de Bombay. El azul venía del índigo, cultivado sobre todo en la India y, en América, por personas esclavizadas en plantaciones. Davis, un sastre judío nacido en Riga, compraba su tela al mayorista de San Francisco Levi Strauss, un inmigrante judío de Baviera. Como un cliente rompía una y otra vez sus bolsillos, Davis los remachó en 1871. No podía pagar los 68 dólares de la patente, así que le pidió a Strauss compartirla, y se mudó a San Francisco para dirigir la nueva producción. Los jeans fueron ropa de trabajo de mineros, granjeros y vaqueros hasta que las películas de los años cincuenta los convirtieron en el uniforme de los jóvenes de todas partes."
       },
-      "camera": { "lon": -60, "lat": 40, "zoom": 1.6 },
+      "camera": { "lon": -58, "lat": 42, "zoom": 1.3 },
       "places": [
         {
           "id": "jeans",
@@ -545,7 +530,7 @@
         "en": "Washing clothes by hand, with water carried from a well and heated on a fire, could take a whole day each week. Jacob Christian Schäffer published a design for a washing machine in Germany in 1767, Margaret Colvin's improved washer was shown at Philadelphia in 1876, and electric washing machines were advertised from 1904; who built the first is not known (Alva Fisher is often wrongly named). Josephine Cochrane, a wealthy woman in Shelbyville, Illinois, wanted a machine that would not chip her china; with the mechanic George Butters she built a dishwasher that sprayed water on dishes held in wire racks, patented in 1886. In 1901 Hubert Cecil Booth in London and David Kenney in the United States each invented a vacuum cleaner that sucked up dust; Booth's first was horse-drawn. In Dresden, Melitta Bentz lined a pierced brass pot with blotting paper from her son's school notebook and made smoother coffee; she patented her filter in 1908.",
         "es": "Lavar la ropa a mano, con agua acarreada de un pozo y calentada al fuego, podía llevar un día entero cada semana. Jacob Christian Schäffer publicó el diseño de una lavadora en Alemania en 1767, la lavadora mejorada de Margaret Colvin se mostró en Filadelfia en 1876 y las lavadoras eléctricas se anunciaban desde 1904; no se sabe quién construyó la primera (a menudo se nombra por error a Alva Fisher). Josephine Cochrane, una mujer adinerada de Shelbyville, Illinois, quería una máquina que no le desportillara la vajilla; con el mecánico George Butters construyó un lavaplatos que rociaba agua sobre los platos colocados en rejillas de alambre, patentado en 1886. En 1901, Hubert Cecil Booth en Londres y David Kenney en Estados Unidos inventaron cada uno una aspiradora que chupaba el polvo; la primera de Booth iba tirada por caballos. En Dresde, Melitta Bentz cubrió una olla de latón agujereada con papel secante del cuaderno escolar de su hijo y obtuvo un café más suave; patentó su filtro en 1908."
       },
-      "camera": { "lon": -38, "lat": 46, "zoom": 2.2 },
+      "camera": { "lon": -38, "lat": 46, "zoom": 1.6 },
       "places": [
         {
           "id": "dishwasher",
@@ -780,7 +765,7 @@
         "en": "An American, John J. Loud, patented a ballpoint for marking leather and boxes in 1888, but it was too crude for writing. Bíró noticed that newspaper ink dried fast but was too thick for a fountain pen; with his brother György, who knew chemistry, he designed a ball in a socket that picked up thick ink. He patented it in 1938 (sources name Britain or France). Bíró, from a Jewish family, left Hungary as anti-Jewish laws spread; sources give 1940, 1941 or 1943 for his arrival in Argentina. With their partner Juan Jorge Meyne the brothers sold the 'Birome', still the Argentine word for a ballpoint. Britain's Royal Air Force used licensed pens, because they did not leak at altitude. In France, Marcel Bich bought the rights and in 1950 launched the cheap Bic Cristal, the best-selling pen in the world. Argentina celebrates Inventors' Day on Bíró's birthday, 29 September.",
         "es": "Un estadounidense, John J. Loud, patentó en 1888 un bolígrafo para marcar cuero y cajas, pero era demasiado tosco para escribir. Bíró notó que la tinta de los diarios se secaba rápido pero era muy espesa para una pluma fuente; con su hermano György, que sabía química, diseñó una bolita en un encaje que recogía la tinta espesa. La patentó en 1938 (las fuentes dicen en Gran Bretaña o en Francia). Bíró, de familia judía, se fue de Hungría mientras se extendían las leyes antijudías; las fuentes dan 1940, 1941 o 1943 para su llegada a la Argentina. Con su socio Juan Jorge Meyne, los hermanos vendieron la «birome», que sigue siendo la palabra argentina para el bolígrafo. La Real Fuerza Aérea británica usó plumas fabricadas con licencia, porque no goteaban en la altura. En Francia, Marcel Bich compró los derechos y en 1950 lanzó la barata Bic Cristal, el bolígrafo más vendido del mundo. La Argentina celebra el Día del Inventor el día del nacimiento de Bíró, el 29 de septiembre."
       },
-      "camera": { "lon": -20, "lat": 10, "zoom": 1.5 },
+      "camera": { "lon": -20, "lat": 8, "zoom": 1.4 },
       "moves": [
         {
           "side": "travel",
@@ -996,7 +981,7 @@
         "en": "In 1948 Bernard Silver, a student at Drexel in Philadelphia, overheard a supermarket boss asking for a way to read products automatically at the till. His friend Norman Joseph Woodland, sitting on a Florida beach, drew Morse code's dots and dashes in the sand and stretched them into thick and thin lines. They patented the idea in 1952, but it took lasers and computers to make it work; IBM's George Laurer designed the UPC barcode chosen in 1973, and a packet of chewing gum was the first item scanned, in Ohio in 1974. Barcodes hold only a short number, so Hara's team made a square code that stores much more and can be read fast from any angle; its pattern was inspired by the black and white stones of the board game Go. Denso chose not to charge for its use, and with smartphone cameras QR codes spread to tickets, menus and payments, especially in China and India.",
         "es": "En 1948, Bernard Silver, estudiante de Drexel, en Filadelfia, oyó que el jefe de unos supermercados pedía una forma de leer los productos automáticamente en la caja. Su amigo Norman Joseph Woodland, sentado en una playa de Florida, dibujó en la arena los puntos y rayas del código Morse y los alargó en líneas gruesas y finas. Patentaron la idea en 1952, pero hicieron falta el láser y las computadoras para que funcionara; George Laurer, de IBM, diseñó el código de barras UPC elegido en 1973, y un paquete de chicles fue el primer producto leído, en Ohio, en 1974. Los códigos de barras guardan solo un número corto, así que el equipo de Hara hizo un código cuadrado que almacena mucho más y se lee rápido desde cualquier ángulo; su dibujo se inspiró en las piedras blancas y negras del juego de mesa go. Denso decidió no cobrar por su uso, y con las cámaras de los celulares los códigos QR se extendieron a boletos, menús y pagos, sobre todo en China y la India."
       },
-      "camera": { "lon": -175, "lat": 40, "zoom": 1.4 },
+      "camera": { "lon": -150, "lat": 60, "zoom": 1.2 },
       "places": [
         {
           "id": "qr-code",
@@ -1055,56 +1040,209 @@
     "es": "Casi todas las cosas cotidianas tienen muchos padres y madres: artesanos olvidados, mujeres cuyo trabajo no se veía, inventores que vendieron sus patentes por unos pocos dólares y empresas que hicieron fortunas. Sus ideas viajaron desde Babilonia, China, Persia y Europa hasta cada hogar. En 2026, miles de millones de personas todavía se lavan con jabón, cierran sus chaquetas con un cierre, comen fideos instantáneos y pagan con códigos QR todos los días."
   },
   "sources": [
-    { "title": "Soap (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Soap" },
-    { "title": "Aleppo soap (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Aleppo_soap" },
-    { "title": "Umbrella (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Umbrella" },
-    { "title": "Jonas Hanway (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Jonas_Hanway" },
-    { "title": "Toilet paper (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Toilet_paper" },
-    { "title": "Toothbrush (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Toothbrush" },
-    { "title": "Flush toilet (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Flush_toilet" },
-    { "title": "John Harington (writer) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/John_Harington_(writer)" },
-    { "title": "Alexander Cumming (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Alexander_Cumming" },
-    { "title": "Mohenjo-daro (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Mohenjo-daro" },
-    { "title": "Knossos (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Knossos" },
-    { "title": "Canning (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Canning" },
-    { "title": "Nicolas Appert (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Nicolas_Appert" },
-    { "title": "Steel and tin cans (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Steel_and_tin_cans" },
-    { "title": "Match (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Match" },
-    { "title": "John Walker (inventor) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/John_Walker_(inventor)" },
-    { "title": "Matchgirls' strike (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Matchgirls%27_strike" },
-    { "title": "Safety pin (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Safety_pin" },
-    { "title": "Walter Hunt (inventor) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Walter_Hunt_(inventor)" },
-    { "title": "Sewing machine (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Sewing_machine" },
-    { "title": "Barthélemy Thimonnier (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Barth%C3%A9lemy_Thimonnier" },
-    { "title": "Jeans (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Jeans" },
-    { "title": "Jacob W. Davis (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Jacob_W._Davis" },
-    { "title": "Levi Strauss (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Levi_Strauss" },
-    { "title": "Dishwasher (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Dishwasher" },
-    { "title": "Josephine Cochrane (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Josephine_Cochrane" },
-    { "title": "Washing machine (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Washing_machine" },
-    { "title": "Vacuum cleaner (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Vacuum_cleaner" },
-    { "title": "Hubert Cecil Booth (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Hubert_Cecil_Booth" },
-    { "title": "Coffee filter (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Coffee_filter" },
-    { "title": "Melitta Bentz (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Melitta_Bentz" },
-    { "title": "Zipper (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Zipper" },
-    { "title": "Gideon Sundback (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Gideon_Sundback" },
-    { "title": "Whitcomb L. Judson (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Whitcomb_L._Judson" },
-    { "title": "Refrigerator (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Refrigerator" },
-    { "title": "Yakhchāl (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Yakhch%C4%81l" },
-    { "title": "Carl von Linde (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Carl_von_Linde" },
-    { "title": "Ballpoint pen (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Ballpoint_pen" },
-    { "title": "László Bíró (Wikipedia)", "url": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_B%C3%ADr%C3%B3" },
-    { "title": "Bic Cristal (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Bic_Cristal" },
-    { "title": "Microwave oven (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Microwave_oven" },
-    { "title": "Percy Spencer (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Percy_Spencer" },
-    { "title": "Marion Donovan (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Marion_Donovan" },
-    { "title": "Velcro (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Velcro" },
-    { "title": "George de Mestral (Wikipedia)", "url": "https://en.wikipedia.org/wiki/George_de_Mestral" },
-    { "title": "Instant noodles (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Instant_noodles" },
-    { "title": "Momofuku Ando (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Momofuku_Ando" },
-    { "title": "QR code (Wikipedia)", "url": "https://en.wikipedia.org/wiki/QR_code" },
-    { "title": "Masahiro Hara (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Masahiro_Hara" },
-    { "title": "Barcode (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Barcode" },
-    { "title": "Norman Joseph Woodland (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Norman_Joseph_Woodland" }
+    {
+      "title": "Soap (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Soap"
+    },
+    {
+      "title": "Aleppo soap (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aleppo_soap"
+    },
+    {
+      "title": "Umbrella (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Umbrella"
+    },
+    {
+      "title": "Jonas Hanway (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jonas_Hanway"
+    },
+    {
+      "title": "Toilet paper (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Toilet_paper"
+    },
+    {
+      "title": "Toothbrush (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Toothbrush"
+    },
+    {
+      "title": "Flush toilet (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Flush_toilet"
+    },
+    {
+      "title": "John Harington (writer) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/John_Harington_(writer)"
+    },
+    {
+      "title": "Alexander Cumming (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Alexander_Cumming"
+    },
+    {
+      "title": "Mohenjo-daro (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mohenjo-daro"
+    },
+    {
+      "title": "Knossos (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Knossos"
+    },
+    {
+      "title": "Canning (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Canning"
+    },
+    {
+      "title": "Nicolas Appert (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nicolas_Appert"
+    },
+    {
+      "title": "Steel and tin cans (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Steel_and_tin_cans"
+    },
+    {
+      "title": "Match (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Match"
+    },
+    {
+      "title": "John Walker (inventor) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/John_Walker_(inventor)"
+    },
+    {
+      "title": "Matchgirls' strike (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Matchgirls%27_strike"
+    },
+    {
+      "title": "Safety pin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Safety_pin"
+    },
+    {
+      "title": "Walter Hunt (inventor) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Walter_Hunt_(inventor)"
+    },
+    {
+      "title": "Sewing machine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sewing_machine"
+    },
+    {
+      "title": "Barthélemy Thimonnier (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Barth%C3%A9lemy_Thimonnier"
+    },
+    {
+      "title": "Jeans (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jeans"
+    },
+    {
+      "title": "Jacob W. Davis (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Jacob_W._Davis"
+    },
+    {
+      "title": "Levi Strauss (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Levi_Strauss"
+    },
+    {
+      "title": "Dishwasher (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dishwasher"
+    },
+    {
+      "title": "Josephine Cochrane (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Josephine_Cochrane"
+    },
+    {
+      "title": "Washing machine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Washing_machine"
+    },
+    {
+      "title": "Vacuum cleaner (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vacuum_cleaner"
+    },
+    {
+      "title": "Hubert Cecil Booth (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hubert_Cecil_Booth"
+    },
+    {
+      "title": "Coffee filter (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Coffee_filter"
+    },
+    {
+      "title": "Melitta Bentz (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Melitta_Bentz"
+    },
+    {
+      "title": "Zipper (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zipper"
+    },
+    {
+      "title": "Gideon Sundback (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gideon_Sundback"
+    },
+    {
+      "title": "Whitcomb L. Judson (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Whitcomb_L._Judson"
+    },
+    {
+      "title": "Refrigerator (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Refrigerator"
+    },
+    {
+      "title": "Yakhchāl (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yakhch%C4%81l"
+    },
+    {
+      "title": "Carl von Linde (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Carl_von_Linde"
+    },
+    {
+      "title": "Ballpoint pen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ballpoint_pen"
+    },
+    {
+      "title": "László Bíró (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_B%C3%ADr%C3%B3"
+    },
+    {
+      "title": "Bic Cristal (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bic_Cristal"
+    },
+    {
+      "title": "Microwave oven (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Microwave_oven"
+    },
+    {
+      "title": "Percy Spencer (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Percy_Spencer"
+    },
+    {
+      "title": "Marion Donovan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Marion_Donovan"
+    },
+    {
+      "title": "Velcro (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Velcro"
+    },
+    {
+      "title": "George de Mestral (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/George_de_Mestral"
+    },
+    {
+      "title": "Instant noodles (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Instant_noodles"
+    },
+    {
+      "title": "Momofuku Ando (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Momofuku_Ando"
+    },
+    {
+      "title": "QR code (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/QR_code"
+    },
+    {
+      "title": "Masahiro Hara (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Masahiro_Hara"
+    },
+    {
+      "title": "Barcode (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Barcode"
+    },
+    {
+      "title": "Norman Joseph Woodland (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Norman_Joseph_Woodland"
+    }
   ]
 }

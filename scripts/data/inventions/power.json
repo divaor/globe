@@ -12,10 +12,26 @@
   },
   "camera": { "lon": 58, "lat": 35, "zoom": 1.4 },
   "sides": [
-    { "id": "nature", "name": { "en": "Water and wind", "es": "Agua y viento" }, "color": "#48c9b0" },
-    { "id": "steam", "name": { "en": "Steam and coal", "es": "Vapor y carbón" }, "color": "#5d6d7e" },
-    { "id": "elec", "name": { "en": "Electricity", "es": "Electricidad" }, "color": "#d4a017" },
-    { "id": "oil", "name": { "en": "Engines that burn fuel", "es": "Motores de combustión" }, "color": "#8e5a2b" }
+    {
+      "id": "nature",
+      "name": { "en": "Water and wind", "es": "Agua y viento" },
+      "color": "#48c9b0"
+    },
+    {
+      "id": "steam",
+      "name": { "en": "Steam and coal", "es": "Vapor y carbón" },
+      "color": "#5d6d7e"
+    },
+    {
+      "id": "elec",
+      "name": { "en": "Electricity", "es": "Electricidad" },
+      "color": "#d4a017"
+    },
+    {
+      "id": "oil",
+      "name": { "en": "Engines that burn fuel", "es": "Motores de combustión" },
+      "color": "#8e5a2b"
+    }
   ],
   "steps": [
     {
@@ -30,27 +46,6 @@
         "es": "Durante casi toda la historia, la única fuerza disponible fue la de los músculos: los propios, los de personas esclavizadas y los de los animales. La rueda hidráulica fue la primera máquina que aprovechó una fuerza de la naturaleza. Su origen se discute: los restos más antiguos vienen del oasis de El Fayum, en Egipto, donde las ruedas subían agua para regar hacia el siglo III a. C., y el ingeniero griego Filón de Bizancio describió una. Después llegaron los molinos con engranajes que molían grano, quizá en Alejandría o Bizancio; el arquitecto romano Vitruvio describió uno hacia el 25 a. C. En China, el funcionario Du Shi usó ruedas hidráulicas para mover los fuelles de los hornos de hierro en el año 31. Roma llevó la fuerza del agua más lejos que nadie: en Barbegal, en la Galia, 16 ruedas molían harina para la ciudad de Arlés, y en Hierápolis una rueda movía sierras de piedra con una manivela y una biela, la misma pieza que un día uniría las máquinas de vapor a las ruedas."
       },
       "places": [
-        {
-          "id": "water-wheel",
-          "name": { "en": "Water wheel", "es": "Rueda hidráulica" },
-          "at": [30.8418, 29.3084],
-          "cat": "energy",
-          "icon": "💧",
-          "type": "invention",
-          "date": "-300",
-          "place": { "en": "Faiyum, Egypt", "es": "El Fayum, Egipto" },
-          "by": { "en": "Unknown engineers of Ptolemaic Egypt", "es": "Ingenieros desconocidos del Egipto ptolemaico" },
-          "text": {
-            "en": "The first machine to harness a force of nature. Wheels turned by the current lifted irrigation water in Egypt by the 3rd century BC; geared to millstones, they became watermills.",
-            "es": "La primera máquina que aprovechó una fuerza de la naturaleza. Ruedas movidas por la corriente subían agua para regar en Egipto hacia el siglo III a. C.; unidas a muelas con engranajes, se convirtieron en molinos."
-          },
-          "details": {
-            "en": "The oldest known remains, from the Faiyum oasis, date to the 3rd century BC, and Greek papyri from Ptolemaic Egypt mention such wheels. Who built the first watermill is debated: the historian M. J. T. Lewis suggested Byzantium and Alexandria in the 3rd century BC, while others find the evidence too thin. By Roman times watermills ground grain from Britain to Syria. In the Middle Ages they also sawed wood, beat cloth and worked hammers and bellows, and they drove the first factories of the Industrial Revolution until steam engines and turbines took over.",
-            "es": "Los restos más antiguos que se conocen, del oasis de El Fayum, son del siglo III a. C., y papiros griegos del Egipto ptolemaico mencionan estas ruedas. Quién construyó el primer molino de agua se discute: el historiador M. J. T. Lewis propuso Bizancio y Alejandría en el siglo III a. C., mientras que otros creen que las pruebas son escasas. En época romana, los molinos de agua molían grano de Britania a Siria. En la Edad Media también aserraban madera, golpeaban paños y movían martillos y fuelles, y movieron las primeras fábricas de la Revolución Industrial hasta que las máquinas de vapor y las turbinas los reemplazaron."
-          },
-          "wiki": { "en": "Water wheel", "es": "Rueda hidráulica" },
-          "img": "Braine-le-Château JPG02.jpg"
-        },
         {
           "id": "water-powered-bellows",
           "name": { "en": "Water-powered bellows", "es": "Fuelles movidos por agua" },
@@ -128,7 +123,8 @@
           "wiki": { "en": "Shushtar Historical Hydraulic System", "es": "Sistema hidráulico de Shushtar" },
           "whs": 1315
         }
-      ]
+      ],
+      "show": ["water-wheel"]
     },
     {
       "date": "900",
@@ -158,38 +154,27 @@
       ],
       "places": [
         {
-          "id": "persian-windmill",
-          "name": { "en": "Persian windmill", "es": "Molino de viento persa" },
-          "at": [61.4936, 31.0287],
+          "id": "hero-wind-wheel",
+          "name": { "en": "Hero's wind-driven organ", "es": "El órgano de viento de Herón" },
+          "at": [29.9187, 31.2001],
           "cat": "energy",
           "icon": "🌬️",
           "type": "invention",
-          "date": "850",
-          "place": { "en": "Sistan, on today's border of Iran and Afghanistan", "es": "Sistán, en la actual frontera entre Irán y Afganistán" },
-          "by": { "en": "Unknown Persian millwrights", "es": "Molineros persas desconocidos" },
+          "date": "50",
+          "place": { "en": "Alexandria, Egypt", "es": "Alejandría, Egipto" },
+          "by": { "en": "Hero of Alexandria", "es": "Herón de Alejandría" },
           "text": {
-            "en": "The earliest known practical windmill, invented in Persia between about 700 and 900. Its sails turned around an upright shaft, first to pump water, then to grind grain.",
-            "es": "El molino de viento práctico más antiguo que se conoce, inventado en Persia entre los años 700 y 900, aproximadamente. Sus aspas giraban alrededor de un eje vertical, primero para bombear agua y después para moler grano."
+            "en": "In the 1st century AD Hero of Alexandria described a wheel turned by the wind to work an organ. It was probably a toy or an idea on paper, not a working windmill.",
+            "es": "En el siglo I, Herón de Alejandría describió una rueda movida por el viento para hacer sonar un órgano. Probablemente era un juguete o una idea en papel, no un molino de viento en funcionamiento."
           },
-          "wiki": { "en": "Panemone windmill", "es": "" }
-        },
-        {
-          "id": "nashtifan-windmills",
-          "name": { "en": "Windmills of Nashtifan", "es": "Molinos de viento de Nashtifán" },
-          "at": [60.1811, 34.4310],
-          "cat": "energy",
-          "icon": "🌬️",
-          "type": "site",
-          "date": "1500",
-          "place": { "en": "Nashtifan, Razavi Khorasan, Iran", "es": "Nashtifán, Jorasán Razavi, Irán" },
-          "text": {
-            "en": "A long row of tall mud-brick windmills of the old Persian kind, with upright wooden shafts, still stands at Nashtifan, near the Afghan border. They are among the last of their kind.",
-            "es": "Una larga fila de altos molinos de viento de adobe, del antiguo tipo persa, con ejes verticales de madera, sigue en pie en Nashtifán, cerca de la frontera afgana. Están entre los últimos de su clase."
+          "details": {
+            "en": "Hero, a Greek engineer of Roman Egypt, also described the aeolipile, a ball spun by jets of steam, and many machines worked by water and air. His texts are unclear, and historians doubt that the wind organ was ever built.",
+            "es": "Herón, ingeniero griego del Egipto romano, también describió la eolípila, una esfera que giraba con chorros de vapor, y muchas máquinas movidas por agua y aire. Sus textos son poco claros, y los historiadores dudan de que el órgano de viento llegara a construirse."
           },
-          "wiki": { "en": "Nashtifan", "es": "" },
-          "img": "Ancient Windmills of Nashtifan 2021-07-17.jpg"
+          "wiki": { "en": "Hero of Alexandria", "es": "Herón de Alejandría" }
         }
-      ]
+      ],
+      "show": ["windmill"]
     },
     {
       "date": "1712",
@@ -216,25 +201,6 @@
         }
       ],
       "places": [
-        {
-          "id": "steam-engine",
-          "name": { "en": "Steam engine", "es": "Máquina de vapor" },
-          "at": [-2.064, 52.519],
-          "cat": "energy",
-          "type": "invention",
-          "date": "1712",
-          "place": { "en": "Conygree Coalworks, Tipton, West Midlands, England", "es": "Mina de carbón de Conygree, Tipton, Midlands Occidentales, Inglaterra" },
-          "by": { "en": "Thomas Newcomen", "es": "Thomas Newcomen" },
-          "text": {
-            "en": "The first practical steam engine, built in 1712 by Thomas Newcomen to pump water from a coal mine at Tipton. Steam condensing under a piston let the weight of the air push it down.",
-            "es": "La primera máquina de vapor práctica, construida en 1712 por Thomas Newcomen para sacar agua de una mina de carbón en Tipton. El vapor, al condensarse bajo un pistón, dejaba que el peso del aire lo empujara hacia abajo."
-          },
-          "details": {
-            "en": "Newcomen worked with his partner John Calley. His 'atmospheric engine' was simple and safe, because the steam was barely above the pressure of the air, but it wasted most of its heat by cooling and reheating the same cylinder, a problem James Watt would solve. Newcomen engines also pumped water back above water wheels, so mills could keep turning in dry weather. The only one still in its original engine house, at Elsecar near Barnsley, ran from 1795 until 1923, and a working replica of the 1712 engine stands at the Black Country Living Museum in Dudley.",
-            "es": "Newcomen trabajó con su socio John Calley. Su «máquina atmosférica» era sencilla y segura, porque el vapor apenas superaba la presión del aire, pero desperdiciaba casi todo su calor al enfriar y recalentar el mismo cilindro, un problema que resolvería James Watt. Las máquinas de Newcomen también devolvían el agua por encima de las ruedas hidráulicas, para que los molinos siguieran girando en tiempo seco. La única que sigue en su casa de máquinas original, en Elsecar, cerca de Barnsley, funcionó de 1795 a 1923, y una réplica que funciona de la máquina de 1712 se encuentra en el Black Country Living Museum de Dudley."
-          },
-          "wiki": { "en": "Newcomen atmospheric engine", "es": "Máquina de Newcomen" }
-        },
         {
           "id": "thomas-newcomen",
           "name": { "en": "Thomas Newcomen", "es": "Thomas Newcomen" },
@@ -284,7 +250,8 @@
           "wiki": { "en": "Coalbrookdale", "es": "Coalbrookdale" },
           "whs": 371
         }
-      ]
+      ],
+      "show": ["steam-engine"]
     },
     {
       "date": "1740",
@@ -491,26 +458,6 @@
       ],
       "places": [
         {
-          "id": "electric-battery",
-          "name": { "en": "Electric battery (voltaic pile)", "es": "Pila eléctrica (pila de Volta)" },
-          "at": [9.0852, 45.8081],
-          "cat": "energy",
-          "icon": "🔋",
-          "type": "invention",
-          "date": "1800",
-          "place": { "en": "Como, Italy", "es": "Como, Italia" },
-          "by": { "en": "Alessandro Volta", "es": "Alessandro Volta" },
-          "text": {
-            "en": "The first battery to give a steady electric current: pairs of zinc and copper discs separated by cloth or cardboard soaked in salt water. Volta built it in 1799 and announced it in 1800.",
-            "es": "La primera pila que dio una corriente eléctrica constante: pares de discos de cinc y cobre separados por tela o cartón empapados en agua salada. Volta la construyó en 1799 y la anunció en 1800."
-          },
-          "details": {
-            "en": "Each zinc–copper pair gives a little under one volt, and stacking pairs adds them up. Volta thought the current came from the contact between the two metals; chemists soon showed it came from a chemical reaction. Volta did most of his experiments near his home town of Como, where the Tempio Voltiano museum now keeps his instruments.",
-            "es": "Cada par de cinc y cobre da algo menos de un voltio, y al apilar pares se suman. Volta creía que la corriente nacía del contacto entre los dos metales; los químicos pronto mostraron que venía de una reacción química. Volta hizo la mayoría de sus experimentos cerca de Como, su ciudad natal, donde el museo Tempio Voltiano guarda hoy sus instrumentos."
-          },
-          "wiki": { "en": "Voltaic pile", "es": "" }
-        },
-        {
           "id": "alessandro-volta",
           "name": { "en": "Alessandro Volta", "es": "Alessandro Volta" },
           "at": [9.1557, 45.1868],
@@ -529,7 +476,8 @@
           },
           "wiki": { "en": "Alessandro Volta", "es": "Alessandro Volta" }
         }
-      ]
+      ],
+      "show": ["electric-battery"]
     },
     {
       "date": "1829-10",
@@ -607,7 +555,8 @@
           },
           "wiki": { "en": "George Stephenson", "es": "George Stephenson" }
         }
-      ]
+      ],
+      "show": ["locomotive"]
     },
     {
       "date": "1831",
@@ -664,7 +613,10 @@
           "type": "invention",
           "date": "1866",
           "place": { "en": "Berlin, Germany", "es": "Berlín, Alemania" },
-          "by": { "en": "Werner von Siemens, Charles Wheatstone and Samuel Varley, independently", "es": "Werner von Siemens, Charles Wheatstone y Samuel Varley, cada uno por su lado" },
+          "by": {
+            "en": "Werner von Siemens, Charles Wheatstone and Samuel Varley, independently",
+            "es": "Werner von Siemens, Charles Wheatstone y Samuel Varley, cada uno por su lado"
+          },
           "text": {
             "en": "A generator that uses part of its own current to power its electromagnets. Invented independently by several engineers in 1866–67, it made electricity cheap enough for lighting and industry.",
             "es": "Un generador que usa parte de su propia corriente para alimentar sus electroimanes. Inventada por varios ingenieros a la vez en 1866-1867, hizo la electricidad lo bastante barata para el alumbrado y la industria."
@@ -690,26 +642,6 @@
       },
       "camera": { "lon": -37, "lat": 48, "zoom": 2.0 },
       "places": [
-        {
-          "id": "light-bulb",
-          "name": { "en": "Light bulb", "es": "Bombilla eléctrica" },
-          "at": [-74.3355, 40.5662],
-          "cat": "energy",
-          "icon": "💡",
-          "type": "invention",
-          "date": "1879-10-22",
-          "place": { "en": "Menlo Park, New Jersey, United States", "es": "Menlo Park, Nueva Jersey, Estados Unidos" },
-          "by": { "en": "Joseph Swan and Thomas Edison", "es": "Joseph Swan y Thomas Edison" },
-          "text": {
-            "en": "A carbon thread glowing inside a glass bulb emptied of air. Joseph Swan in England and Thomas Edison's team in the United States made the first practical ones in 1878–1880.",
-            "es": "Un hilo de carbono que brilla dentro de una ampolla de vidrio sin aire. Joseph Swan en Inglaterra y el equipo de Thomas Edison en Estados Unidos hicieron las primeras bombillas prácticas en 1878-1880."
-          },
-          "details": {
-            "en": "Edison's lamp won because of a high-resistance filament, a better vacuum and a whole system to feed it from a central station. Courts argued for years over the patents. From 1904 tungsten filaments, first made by the Hungarian firm Tungsram, replaced carbon. Incandescent bulbs waste most of their energy as heat, and since the 2010s many countries have phased them out in favour of LED lamps.",
-            "es": "La lámpara de Edison se impuso por su filamento de alta resistencia, un mejor vacío y un sistema completo para alimentarla desde una central. Los tribunales discutieron las patentes durante años. Desde 1904, los filamentos de tungsteno, fabricados primero por la empresa húngara Tungsram, sustituyeron al carbono. Las bombillas incandescentes pierden casi toda su energía en forma de calor, y desde la década de 2010 muchos países las han ido retirando en favor de las lámparas LED."
-          },
-          "wiki": { "en": "Incandescent light bulb", "es": "Lámpara incandescente" }
-        },
         {
           "id": "joseph-swan",
           "name": { "en": "Joseph Swan", "es": "Joseph Swan" },
@@ -796,7 +728,8 @@
           },
           "wiki": { "en": "Pearl Street Station", "es": "Central de Pearl Street" }
         }
-      ]
+      ],
+      "show": ["light-bulb"]
     },
     {
       "date": "1888-08-05",
@@ -820,26 +753,6 @@
         }
       ],
       "places": [
-        {
-          "id": "automobile",
-          "name": { "en": "Automobile", "es": "Automóvil" },
-          "at": [8.4725, 49.4885],
-          "cat": "transport",
-          "icon": "🚗",
-          "type": "invention",
-          "date": "1886-01-29",
-          "place": { "en": "Mannheim, Germany", "es": "Mannheim, Alemania" },
-          "by": { "en": "Carl Benz", "es": "Carl Benz" },
-          "text": {
-            "en": "Carl Benz's three-wheeled Patent-Motorwagen, patented in 1886 in Mannheim, is considered the first practical car. A single-cylinder petrol engine of under one horsepower drove it at about 16 km/h.",
-            "es": "El Patent-Motorwagen de tres ruedas de Carl Benz, patentado en 1886 en Mannheim, se considera el primer auto práctico. Un motor de gasolina de un cilindro y menos de un caballo de fuerza lo movía a unos 16 km/h."
-          },
-          "details": {
-            "en": "Benz first drove it in public on Mannheim's Ringstrasse on 3 July 1886 and began selling it in 1888, making it the first car sold to the public. About 25 were built by 1893. The fuel was ligroin, a petroleum solvent sold in pharmacies.",
-            "es": "Benz lo condujo en público por primera vez en la Ringstrasse de Mannheim el 3 de julio de 1886 y empezó a venderlo en 1888: fue el primer auto a la venta. Hasta 1893 se construyeron unos 25. El combustible era ligroína, un disolvente de petróleo que se vendía en las farmacias."
-          },
-          "wiki": { "en": "Benz Patent-Motorwagen", "es": "Benz Patent-Motorwagen" }
-        },
         {
           "id": "karl-benz",
           "name": { "en": "Carl Benz", "es": "Carl Benz" },
@@ -928,7 +841,8 @@
           "wiki": { "en": "Völklingen Ironworks", "es": "Siderúrgica de Völklingen" },
           "whs": 687
         }
-      ]
+      ],
+      "show": ["automobile"]
     },
     {
       "date": "1891",
@@ -1470,78 +1384,297 @@
     "es": "Cada nueva fuente de energía cambió la vida de la gente: el agua y el viento liberaron las manos de moler, el vapor levantó fábricas y ferrocarriles, la electricidad iluminó los hogares y movió las máquinas, y los motores pusieron el mundo sobre ruedas. Lo pagaron los mineros, las personas desplazadas por las represas, los trabajadores forzados y un clima calentado al quemar carbón, petróleo y gas. En 2026, el sol y el viento, las fuentes más antiguas de todas, crecen más rápido que ninguna otra."
   },
   "sources": [
-    { "title": "Water wheel (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Water_wheel" },
-    { "title": "Barbegal aqueduct and mills (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Barbegal_aqueduct_and_mills" },
-    { "title": "Du Shi (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Du_Shi" },
-    { "title": "Hierapolis sawmill (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Hierapolis_sawmill" },
-    { "title": "Shushtar Historical Hydraulic System (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Shushtar_Historical_Hydraulic_System" },
-    { "title": "Windmill (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Windmill" },
-    { "title": "Panemone windmill (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Panemone_windmill" },
-    { "title": "Nashtifan (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Nashtifan" },
-    { "title": "Steam engine (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Steam_engine" },
-    { "title": "Newcomen atmospheric engine (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Newcomen_atmospheric_engine" },
-    { "title": "Thomas Newcomen (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Thomas_Newcomen" },
-    { "title": "Thomas Savery (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Thomas_Savery" },
-    { "title": "Coalbrookdale (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Coalbrookdale" },
-    { "title": "Kinderdijk windmills (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Kinderdijk_windmills" },
-    { "title": "Cornelis Corneliszoon (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Cornelis_Corneliszoon" },
-    { "title": "Beemster (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Beemster" },
-    { "title": "Wouda pumping station (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Wouda_pumping_station" },
-    { "title": "Watt steam engine (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Watt_steam_engine" },
-    { "title": "James Watt (Wikipedia)", "url": "https://en.wikipedia.org/wiki/James_Watt" },
-    { "title": "Albion Mills, Southwark (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Albion_Mills,_Southwark" },
-    { "title": "Cornwall and West Devon Mining Landscape (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Cornwall_and_West_Devon_Mining_Landscape" },
-    { "title": "Voltaic pile (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Voltaic_pile" },
-    { "title": "Alessandro Volta (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Alessandro_Volta" },
-    { "title": "Locomotion No. 1 (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Locomotion_No._1" },
-    { "title": "Stephenson's Rocket (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Stephenson%27s_Rocket" },
-    { "title": "George Stephenson (Wikipedia)", "url": "https://en.wikipedia.org/wiki/George_Stephenson" },
-    { "title": "Michael Faraday (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Michael_Faraday" },
-    { "title": "Homopolar generator (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Homopolar_generator" },
-    { "title": "Dynamo (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Dynamo" },
-    { "title": "Electromagnetic induction (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Electromagnetic_induction" },
-    { "title": "Incandescent light bulb (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Incandescent_light_bulb" },
-    { "title": "Joseph Swan (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Joseph_Swan" },
-    { "title": "Thomas Edison (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Thomas_Edison" },
-    { "title": "Cragside (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Cragside" },
-    { "title": "Holborn Viaduct power station (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Holborn_Viaduct_power_station" },
-    { "title": "Pearl Street Station (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Pearl_Street_Station" },
-    { "title": "Internal combustion engine (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Internal_combustion_engine" },
-    { "title": "Benz Patent-Motorwagen (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Benz_Patent-Motorwagen" },
-    { "title": "Carl Benz (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Carl_Benz" },
-    { "title": "Bertha Benz (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Bertha_Benz" },
-    { "title": "Diesel engine (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Diesel_engine" },
-    { "title": "Völklingen Ironworks (Wikipedia)", "url": "https://en.wikipedia.org/wiki/V%C3%B6lklingen_Ironworks" },
-    { "title": "Wind turbine (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Wind_turbine" },
-    { "title": "James Blyth (engineer) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/James_Blyth_(engineer)" },
-    { "title": "Charles F. Brush (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Charles_F._Brush" },
-    { "title": "Poul la Cour (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Poul_la_Cour" },
-    { "title": "Nikola Tesla (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Nikola_Tesla" },
-    { "title": "George Westinghouse (Wikipedia)", "url": "https://en.wikipedia.org/wiki/George_Westinghouse" },
-    { "title": "Induction motor (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Induction_motor" },
-    { "title": "Adams Power Plant Transformer House (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Adams_Power_Plant_Transformer_House" },
-    { "title": "International Electrotechnical Exhibition (Wikipedia)", "url": "https://en.wikipedia.org/wiki/International_Electrotechnical_Exhibition" },
-    { "title": "Vulcan Street Plant (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Vulcan_Street_Plant" },
-    { "title": "Rjukan–Notodden Industrial Heritage Site (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Rjukan%E2%80%93Notodden_Industrial_Heritage_Site" },
-    { "title": "Hoover Dam (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Hoover_Dam" },
-    { "title": "Itaipu Dam (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Itaipu_Dam" },
-    { "title": "Three Gorges Dam (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Three_Gorges_Dam" },
-    { "title": "Solar cell (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Solar_cell" },
-    { "title": "Daryl Chapin (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Daryl_Chapin" },
-    { "title": "Obninsk Nuclear Power Plant (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Obninsk_Nuclear_Power_Plant" },
-    { "title": "Calder Hall nuclear power station (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Calder_Hall_nuclear_power_station" },
-    { "title": "Nuclear power (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Nuclear_power" },
-    { "title": "Lithium-ion battery (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Lithium-ion_battery" },
-    { "title": "Akira Yoshino (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Akira_Yoshino" },
-    { "title": "John B. Goodenough (Wikipedia)", "url": "https://en.wikipedia.org/wiki/John_B._Goodenough" },
-    { "title": "M. Stanley Whittingham (Wikipedia)", "url": "https://en.wikipedia.org/wiki/M._Stanley_Whittingham" },
-    { "title": "Electricity generation (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Electricity_generation" },
-    { "title": "Solar power (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Solar_power" },
-    { "title": "Wind power (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Wind_power" },
-    { "title": "Renewable energy (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Renewable_energy" },
-    { "title": "Hydroelectricity (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Hydroelectricity" },
-    { "title": "Talatan Solar Park (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Talatan_Solar_Park" },
-    { "title": "Hornsea Wind Farm (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Hornsea_Wind_Farm" },
-    { "title": "Zollverein Coal Mine Industrial Complex (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Zollverein_Coal_Mine_Industrial_Complex" }
+    {
+      "title": "Water wheel (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Water_wheel"
+    },
+    {
+      "title": "Barbegal aqueduct and mills (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Barbegal_aqueduct_and_mills"
+    },
+    {
+      "title": "Du Shi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Du_Shi"
+    },
+    {
+      "title": "Hierapolis sawmill (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hierapolis_sawmill"
+    },
+    {
+      "title": "Shushtar Historical Hydraulic System (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Shushtar_Historical_Hydraulic_System"
+    },
+    {
+      "title": "Windmill (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Windmill"
+    },
+    {
+      "title": "Panemone windmill (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Panemone_windmill"
+    },
+    {
+      "title": "Nashtifan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nashtifan"
+    },
+    {
+      "title": "Steam engine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Steam_engine"
+    },
+    {
+      "title": "Newcomen atmospheric engine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Newcomen_atmospheric_engine"
+    },
+    {
+      "title": "Thomas Newcomen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Thomas_Newcomen"
+    },
+    {
+      "title": "Thomas Savery (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Thomas_Savery"
+    },
+    {
+      "title": "Coalbrookdale (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Coalbrookdale"
+    },
+    {
+      "title": "Kinderdijk windmills (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kinderdijk_windmills"
+    },
+    {
+      "title": "Cornelis Corneliszoon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cornelis_Corneliszoon"
+    },
+    {
+      "title": "Beemster (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Beemster"
+    },
+    {
+      "title": "Wouda pumping station (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wouda_pumping_station"
+    },
+    {
+      "title": "Watt steam engine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Watt_steam_engine"
+    },
+    {
+      "title": "James Watt (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/James_Watt"
+    },
+    {
+      "title": "Albion Mills, Southwark (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Albion_Mills,_Southwark"
+    },
+    {
+      "title": "Cornwall and West Devon Mining Landscape (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cornwall_and_West_Devon_Mining_Landscape"
+    },
+    {
+      "title": "Voltaic pile (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Voltaic_pile"
+    },
+    {
+      "title": "Alessandro Volta (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Alessandro_Volta"
+    },
+    {
+      "title": "Locomotion No. 1 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Locomotion_No._1"
+    },
+    {
+      "title": "Stephenson's Rocket (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Stephenson%27s_Rocket"
+    },
+    {
+      "title": "George Stephenson (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/George_Stephenson"
+    },
+    {
+      "title": "Michael Faraday (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Michael_Faraday"
+    },
+    {
+      "title": "Homopolar generator (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Homopolar_generator"
+    },
+    {
+      "title": "Dynamo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dynamo"
+    },
+    {
+      "title": "Electromagnetic induction (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Electromagnetic_induction"
+    },
+    {
+      "title": "Incandescent light bulb (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Incandescent_light_bulb"
+    },
+    {
+      "title": "Joseph Swan (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Joseph_Swan"
+    },
+    {
+      "title": "Thomas Edison (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Thomas_Edison"
+    },
+    {
+      "title": "Cragside (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Cragside"
+    },
+    {
+      "title": "Holborn Viaduct power station (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Holborn_Viaduct_power_station"
+    },
+    {
+      "title": "Pearl Street Station (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Pearl_Street_Station"
+    },
+    {
+      "title": "Internal combustion engine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Internal_combustion_engine"
+    },
+    {
+      "title": "Benz Patent-Motorwagen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Benz_Patent-Motorwagen"
+    },
+    {
+      "title": "Carl Benz (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Carl_Benz"
+    },
+    {
+      "title": "Bertha Benz (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Bertha_Benz"
+    },
+    {
+      "title": "Diesel engine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Diesel_engine"
+    },
+    {
+      "title": "Völklingen Ironworks (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/V%C3%B6lklingen_Ironworks"
+    },
+    {
+      "title": "Wind turbine (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wind_turbine"
+    },
+    {
+      "title": "James Blyth (engineer) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/James_Blyth_(engineer)"
+    },
+    {
+      "title": "Charles F. Brush (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Charles_F._Brush"
+    },
+    {
+      "title": "Poul la Cour (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Poul_la_Cour"
+    },
+    {
+      "title": "Nikola Tesla (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nikola_Tesla"
+    },
+    {
+      "title": "George Westinghouse (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/George_Westinghouse"
+    },
+    {
+      "title": "Induction motor (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Induction_motor"
+    },
+    {
+      "title": "Adams Power Plant Transformer House (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Adams_Power_Plant_Transformer_House"
+    },
+    {
+      "title": "International Electrotechnical Exhibition (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/International_Electrotechnical_Exhibition"
+    },
+    {
+      "title": "Vulcan Street Plant (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Vulcan_Street_Plant"
+    },
+    {
+      "title": "Rjukan–Notodden Industrial Heritage Site (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Rjukan%E2%80%93Notodden_Industrial_Heritage_Site"
+    },
+    {
+      "title": "Hoover Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hoover_Dam"
+    },
+    {
+      "title": "Itaipu Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Itaipu_Dam"
+    },
+    {
+      "title": "Three Gorges Dam (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Three_Gorges_Dam"
+    },
+    {
+      "title": "Solar cell (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Solar_cell"
+    },
+    {
+      "title": "Daryl Chapin (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Daryl_Chapin"
+    },
+    {
+      "title": "Obninsk Nuclear Power Plant (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Obninsk_Nuclear_Power_Plant"
+    },
+    {
+      "title": "Calder Hall nuclear power station (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Calder_Hall_nuclear_power_station"
+    },
+    {
+      "title": "Nuclear power (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Nuclear_power"
+    },
+    {
+      "title": "Lithium-ion battery (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lithium-ion_battery"
+    },
+    {
+      "title": "Akira Yoshino (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Akira_Yoshino"
+    },
+    {
+      "title": "John B. Goodenough (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/John_B._Goodenough"
+    },
+    {
+      "title": "M. Stanley Whittingham (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/M._Stanley_Whittingham"
+    },
+    {
+      "title": "Electricity generation (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Electricity_generation"
+    },
+    {
+      "title": "Solar power (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Solar_power"
+    },
+    {
+      "title": "Wind power (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Wind_power"
+    },
+    {
+      "title": "Renewable energy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Renewable_energy"
+    },
+    {
+      "title": "Hydroelectricity (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hydroelectricity"
+    },
+    {
+      "title": "Talatan Solar Park (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Talatan_Solar_Park"
+    },
+    {
+      "title": "Hornsea Wind Farm (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hornsea_Wind_Farm"
+    },
+    {
+      "title": "Zollverein Coal Mine Industrial Complex (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zollverein_Coal_Mine_Industrial_Complex"
+    }
   ]
 }
