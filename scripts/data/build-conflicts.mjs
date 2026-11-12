@@ -39,6 +39,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import pc from 'polygon-clipping';
 import { feature, quantize } from 'topojson-client';
@@ -53,14 +54,14 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const DATA = path.join(ROOT, 'public/data');
 
 /** The collections: where their sources and outputs live. */
-export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters' };
+export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art' };
 /** The collections whose deep-time steps are drawn on the continents of their age (the plate model). */
 const PALEO_KINDS = new Set(['life']);
 const srcDir = (kind) => path.join(ROOT, 'scripts/data', KINDS[kind]);
 const outDir = (kind) => path.join(DATA, KINDS[kind]);
 /** How a route goes: by sea (the lint checks it stays at sea), over land, up a river, over the ice, by air. */
 const MOVE_BY = ['sea', 'land', 'river', 'ice', 'air'];
-const ITEM_TYPES = ['person', 'work', 'place', 'invention', 'event', 'site', 'dish', 'crop', 'animal', 'structure', 'institution', 'fossil', 'culture', 'species', 'games', 'goods', 'ship', 'script', 'language', 'disease'];
+const ITEM_TYPES = ['person', 'work', 'place', 'invention', 'event', 'site', 'dish', 'crop', 'animal', 'structure', 'institution', 'fossil', 'culture', 'species', 'games', 'goods', 'ship', 'script', 'language', 'disease', 'instrument', 'genre'];
 
 export const ERAS = ['precambrian', 'paleozoic', 'mesozoic', 'cenozoic', 'prehistory', 'ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
 /** The geologic eras: only the Life through time stories are grouped by them. */
@@ -442,7 +443,9 @@ function checkItem(it, where, coll, catalog = false) {
   // An SVG is fine too: Commons serves the card a PNG thumbnail of it.
   if (it.img != null && (typeof it.img !== 'string' || !/\.(jpe?g|png|gif|tiff?|webp|svg)$/i.test(it.img) || /^(File:|https?:)/i.test(it.img))) throw new Error(`${where}: "img" is a Commons file name such as "Pompeii bread.jpg" (no "File:", no address)`);
   if (it.sample != null) checkSample(it.sample, `${where}.sample`);
-  const known = new Set(['id', 'name', 'at', 'cat', 'icon', 'type', 'date', 'end', 'until', 'life', 'text', 'facts', 'wiki', 'img', 'country', 'sample', ...ITEM_TEXTS]);
+  if (it.audio != null) checkAudio(it.audio, `${where}.audio`);
+  if (it.quote != null) checkQuote(it.quote, `${where}.quote`);
+  const known = new Set(['id', 'name', 'at', 'cat', 'icon', 'type', 'date', 'end', 'until', 'life', 'text', 'facts', 'wiki', 'img', 'country', 'sample', 'audio', 'quote', ...ITEM_TEXTS]);
   for (const k of Object.keys(it)) if (!known.has(k)) throw new Error(`${where}: unknown field "${k}"`);
   return t;
 }
@@ -460,10 +463,60 @@ function checkSample(sm, where) {
   for (const k of Object.keys(sm)) if (!['text', 'latin', 'means'].includes(k)) throw new Error(`${where}: unknown field "${k}"`);
 }
 
+/**
+ * "audio": a recording on Wikimedia Commons to play on the item's card, and with its step when music is on:
+ * { "file": "Beethoven Symphony 5 opening.ogg", "start"?: s, "end"?: s, "by": {en, es}, "license": "CC0" }.
+ * The clip runs from start to end (at most 30 s; end defaults to start + 20). "by" names the performers and
+ * the recording; "license" is the file's licence as Commons gives it (only free ones: public domain, CC0,
+ * CC BY, CC BY-SA, the EFF Open Audio License, the Free Art License, the GFDL). The app streams Commons' MP3 copy of the file.
+ */
+const AUDIO_EXT = /\.(ogg|oga|opus|flac|wav|mp3|webm|mid)$/i;
+const FREE_LICENSE = /^(Public domain|CC0|CC BY(-SA)? ([1-4]\.0|2\.5)|EFF OAL|Free Art License|GFDL)$/;
+function checkAudio(a, where) {
+  if (!a || typeof a !== 'object' || Array.isArray(a)) throw new Error(`${where}: { "file", "start"?, "end"?, "by", "license" }`);
+  if (typeof a.file !== 'string' || !AUDIO_EXT.test(a.file) || /^(File:|https?:)/i.test(a.file) || a.file.includes('/')) throw new Error(`${where}.file: a Commons audio file name such as "Beethoven Symphony 5 opening.ogg" (no "File:", no address)`);
+  if (/\.mid$/i.test(a.file)) throw new Error(`${where}.file: MIDI files have no recording to stream; pick a recording`);
+  const s0 = a.start ?? 0, s1 = a.end ?? s0 + 20;
+  if (typeof s0 !== 'number' || s0 < 0 || typeof s1 !== 'number' || s1 <= s0 || s1 - s0 > 30) throw new Error(`${where}: "start" and "end" are seconds into the recording, a clip of at most 30 s`);
+  text(a.by, `${where}.by`);
+  if (typeof a.license !== 'string' || !FREE_LICENSE.test(a.license)) throw new Error(`${where}.license: the file's free licence as Commons gives it: "Public domain", "CC0", "CC BY 4.0", "CC BY-SA 3.0", "EFF OAL", "Free Art License", "GFDL"`);
+  for (const k of Object.keys(a)) if (!['file', 'start', 'end', 'by', 'license'].includes(k)) throw new Error(`${where}: unknown field "${k}"`);
+}
+
+/** Where Commons keeps a file: its MP3 copy (which every phone plays), the original, and its page. */
+function commonsAudio(a) {
+  const name = (a.file.charAt(0).toUpperCase() + a.file.slice(1)).replace(/ /g, '_');
+  const h = crypto.createHash('md5').update(name).digest('hex');
+  const dir = `${h[0]}/${h.slice(0, 2)}`, enc = encodeURIComponent(name);
+  const orig = `https://upload.wikimedia.org/wikipedia/commons/${dir}/${enc}`;
+  const src = /\.mp3$/i.test(name) ? orig : `https://upload.wikimedia.org/wikipedia/commons/transcoded/${dir}/${enc}/${enc}.mp3`;
+  return { src, orig, page: `https://commons.wikimedia.org/wiki/File:${enc}`, start: a.start ?? 0, end: a.end ?? (a.start ?? 0) + 20, by: a.by, license: a.license };
+}
+
+/**
+ * "quote": a line of a book, a poem or a song, shown on the item's card in its own language and script:
+ * { "text": "En un lugar de la Mancha...", "lang": "es", "latin"?: "how it reads", "means"?: {en, es},
+ *   "from"?: {en, es}, "free": true }. "means" translates it (left out in the reader's own language); "from"
+ * says where it comes from ("Opening of Part One", "Translated by Edith Grossman"). "free" is true when the
+ * text is in the public domain; a quote from a work still under copyright must be one short sentence.
+ */
+function checkQuote(q, where) {
+  if (!q || typeof q !== 'object' || Array.isArray(q)) throw new Error(`${where}: { "text", "lang", "latin"?, "means"?, "from"?, "free" }`);
+  if (typeof q.free !== 'boolean') throw new Error(`${where}.free: true if the text is in the public domain, false if not`);
+  const max = q.free ? 400 : 160;
+  if (typeof q.text !== 'string' || !q.text.trim() || [...q.text].length > max) throw new Error(`${where}.text: the quote itself, at most ${max} characters${q.free ? '' : ' (a short line: the work is not in the public domain)'}`);
+  if (typeof q.lang !== 'string' || !/^[a-z]{2,3}(-[A-Za-z0-9]+)?$/.test(q.lang)) throw new Error(`${where}.lang: the language code of the quote, such as "es", "it", "ja", "grc"`);
+  if (q.latin != null && (typeof q.latin !== 'string' || !q.latin.trim() || q.latin.length > 500)) throw new Error(`${where}.latin: how it reads in Latin letters (at most 500 characters)`);
+  if (q.means != null) text(q.means, `${where}.means`);
+  if (q.from != null) text(q.from, `${where}.from`);
+  for (const k of Object.keys(q)) if (!['text', 'lang', 'latin', 'means', 'from', 'free'].includes(k)) throw new Error(`${where}: unknown field "${k}"`);
+}
+
 /** An item as the app gets it: fixed field order, with its time and icon filled in. */
 function normItem(it, coll) {
   const o = { id: it.id, name: it.name, at: it.at.map((v) => Math.round(v * 1e4) / 1e4), cat: it.cat, icon: it.icon ?? coll.cats.get(it.cat).icon, date: it.date, t: parseDate(it.date, '') };
-  for (const k of ['end', 'until', 'life', 'type', 'country', 'place', 'text', 'details', 'why', 'how', 'by', 'size', 'status', 'facts', 'sample', 'wiki', 'img', 'podium']) if (it[k] != null) o[k] = it[k];
+  for (const k of ['end', 'until', 'life', 'type', 'country', 'place', 'text', 'details', 'why', 'how', 'by', 'size', 'status', 'facts', 'sample', 'quote', 'wiki', 'img', 'podium']) if (it[k] != null) o[k] = it[k];
+  if (it.audio != null) o.audio = commonsAudio(it.audio);
   if (it.until != null) o.tu = parseDate(it.until, '');
   if (o.id == null) delete o.id;
   return o;

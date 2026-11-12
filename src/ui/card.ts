@@ -8,6 +8,7 @@ import type { App } from '../app/app';
 import type { InfoRow } from '../layers/types';
 import { dataUrl } from '../data/store';
 import { zoomable } from './zoom';
+import { stopClip } from './audio';
 
 export class CountryCard {
   readonly el: HTMLElement;
@@ -36,6 +37,8 @@ export class CountryCard {
   setPicks(p: { title: string; rows: InfoRow[] }[]) { this.pickRows = p; }
 
   hide() {
+    // A clip started from the card stops with it (a story step's music goes on).
+    stopClip(250, 'card');
     this.el.hidden = true;
     this.setCompact(false);
   }
@@ -48,6 +51,7 @@ export class CountryCard {
 
   /** Shows arbitrary content (historical polities, battles, quiz feedback...) in the card; `notes` are paragraphs under the rows. */
   showCustom(iconText: string, title: string, sub: string, rows: InfoRow[], links: { label: string; href?: string; onClick?: () => void }[] = [], notes: string[] = [], image?: Promise<string | null>, extra?: HTMLElement | null) {
+    stopClip(250, 'card');
     clear(this.body);
     // A picture (from Wikipedia) appears on top once it has loaded, if the card is still open.
     const img = image ? (h('img', { class: 'card-img', alt: '', hidden: true }) as HTMLImageElement) : null;

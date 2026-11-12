@@ -437,6 +437,15 @@ html.mode-story .legend { display: none; }
 /* Wide screens: with a side panel open (the step details), the bar moves into the free space. */
 @media (min-width: 721px) {
   html:has(.sheet:not([hidden])) .warbar { left: calc(50% + 214px); width: min(760px, calc(100vw - 464px)); }
+  /* A card open beside the story keeps clear of the bar: it ends above it (the bar would cover its end)... */
+  html.mode-story:has(.sheet:not([hidden])) .country-card { max-height: max(200px, calc(100vh - var(--wb-h, 200px) - 168px - var(--safe-t) - var(--safe-b))); }
+}
+@media (min-width: 721px) and (max-width: 1039px) {
+  html.mode-story .country-card { max-height: max(200px, calc(100vh - var(--wb-h, 200px) - 168px - var(--safe-t) - var(--safe-b))); }
+}
+/* ...or, where there is room, the bar moves into the space left of the card (wider screens clear it as it is). */
+@media (min-width: 1040px) and (max-width: 1583px) {
+  html.mode-story:not(:has(.sheet:not([hidden]))):has(.country-card:not([hidden])) .warbar { left: calc((100vw - 404px - var(--safe-r)) / 2); width: min(760px, calc(100vw - 440px - var(--safe-r))); }
 }
 html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + var(--safe-b)); }
 .war-details p { line-height: 1.5; margin: 0 0 10px; }
@@ -515,6 +524,39 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
 .sample-text.vertical { writing-mode: vertical-lr; display: inline-block; max-height: 190px; text-align: start; }
 .sample-latin { margin-top: 4px; font-size: 13px; font-style: italic; color: var(--muted); }
 .sample-means { margin-top: 2px; font-size: 13px; color: var(--muted); }
+/* A music card's clip (src/ui/audio.ts): play, progress, time, and the recording's credit. */
+.card-extras { display: flex; flex-direction: column; }
+.item-clip { margin: 10px 2px 2px; padding: 9px 10px; border-radius: 12px; background: var(--glass-strong); border: 1px solid var(--line); }
+.clip-row { display: flex; align-items: center; gap: 10px; }
+.clip-play { flex: none; width: 42px; height: 42px; border-radius: 50%; border: 0; display: grid; place-items: center; background: var(--accent-grad); color: #fff; cursor: pointer; position: relative; }
+.clip-play svg { margin-left: 1px; }
+.clip-play:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.item-clip.loading .clip-play::after { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid transparent; border-top-color: var(--accent); animation: clip-spin .9s linear infinite; }
+@keyframes clip-spin { to { transform: rotate(360deg); } }
+.clip-main { flex: 1; min-width: 0; }
+.clip-label { font-size: 12.5px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.clip-bar { height: 5px; border-radius: 3px; background: var(--line-strong, rgba(255,255,255,.18)); overflow: hidden; }
+.clip-bar i { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 3px; }
+.clip-time { flex: none; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.clip-note { margin-top: 6px; font-size: 12.5px; color: var(--muted); }
+.clip-credit { margin-top: 7px; font-size: 11.5px; color: var(--muted); line-height: 1.4; }
+/* A book's line in its own language and script. */
+.item-quote { margin: 10px 2px 2px; padding: 10px 12px 9px; border-radius: 12px; background: var(--glass-strong); border: 1px solid var(--line); border-left: 3px solid var(--accent); }
+.quote-text { margin: 0; font-family: "Atlas Scripts", Georgia, "Times New Roman", serif; font-size: 16px; line-height: 1.5; font-style: italic; color: var(--text); overflow-wrap: anywhere; }
+.quote-text:lang(zh), .quote-text:lang(ja), .quote-text:lang(ko), .quote-text:lang(ar), .quote-text:lang(fa), .quote-text:lang(he), .quote-text:lang(hi), .quote-text:lang(sa), .quote-text:lang(bn) { font-style: normal; font-size: 18px; }
+.quote-text.vertical { writing-mode: vertical-lr; max-height: 220px; }
+.quote-latin { margin-top: 6px; font-size: 13px; font-style: italic; color: var(--muted); }
+.quote-means { margin-top: 5px; font-size: 13.5px; line-height: 1.45; color: var(--text); opacity: .85; }
+.quote-from { margin-top: 6px; font-size: 12px; color: var(--muted); }
+.quote-from::before { content: '— '; }
+/* Music with the story (♪ in the bar) and what the step plays. */
+.wb-music.on { background: var(--chip-on); color: var(--accent); }
+.story-item-clip { color: var(--accent); font-weight: 700; }
+.wb-now { border: 0; background: none; padding: 0; font: inherit; font-weight: 600; font-size: 12px; color: var(--text); cursor: pointer; }
+.wb-now .wb-note { color: var(--accent); }
+.wb-now.playing .wb-note { animation: wb-note 1.1s ease-in-out infinite; display: inline-block; }
+@keyframes wb-note { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+@media (prefers-reduced-motion: reduce) { .wb-now.playing .wb-note, .item-clip.loading .clip-play::after { animation: none; } }
 .flag-emoji, .story-item-icon { font-family: "Atlas Scripts", var(--font); }
 /* Stories, cards and quizzes may name letters of rare scripts (𐤀 → Α → A): the script fonts come first, for those letters only. */
 .warbar, .sheet, .country-card, .learn-card { font-family: "Atlas Scripts", var(--font); }

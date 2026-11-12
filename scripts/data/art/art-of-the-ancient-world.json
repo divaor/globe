@@ -1,0 +1,2689 @@
+{
+ "id": "art-of-the-ancient-world",
+ "name": {
+  "en": "Art of the ancient world",
+  "es": "El arte del mundo antiguo"
+ },
+ "icon": "🏺",
+ "era": "ancient",
+ "region": {
+  "en": "From the Mediterranean and Mesopotamia to China, Africa and the Americas",
+  "es": "Del Mediterráneo y Mesopotamia a China, África y América"
+ },
+ "start": "-2600",
+ "end": "2025-11-01",
+ "summary": {
+  "en": "From the Standard of Ur and Nefertiti's face to the Terracotta Army, the Olmec heads and the gold of Sipán: masterpieces of the ancient world, where they were made, where they are now, and why some are asked to come home.",
+  "es": "Del Estandarte de Ur y el rostro de Nefertiti a los guerreros de terracota, las cabezas olmecas y el oro de Sipán: obras maestras del mundo antiguo, dónde se hicieron, dónde están hoy y por qué se reclama la vuelta de algunas."
+ },
+ "camera": {
+  "lon": 25,
+  "lat": 30,
+  "zoom": 1.2
+ },
+ "trail": true,
+ "sides": [
+  {
+   "id": "abroad",
+   "name": {
+    "en": "To a museum abroad",
+    "es": "A un museo de otro país"
+   },
+   "color": "#c0392b"
+  },
+  {
+   "id": "home",
+   "name": {
+    "en": "Moved within its country",
+    "es": "Trasladado dentro de su país"
+   },
+   "color": "#16a085"
+  },
+  {
+   "id": "returned",
+   "name": {
+    "en": "Returned",
+    "es": "Devuelto"
+   },
+   "color": "#d4a017"
+  }
+ ],
+ "steps": [
+  {
+   "date": "-2550",
+   "title": {
+    "en": "Treasures of Ur",
+    "es": "Los tesoros de Ur"
+   },
+   "text": {
+    "en": "In the royal tombs of Ur, in today's Iraq, Sumerians buried their rulers with gold, lapis lazuli and the mosaic box called the Standard of Ur, around 2600–2400 BC. The treasures are now in Baghdad, London and Philadelphia.",
+    "es": "En las tumbas reales de Ur, en el actual Irak, los sumerios enterraron a sus reyes con oro, lapislázuli y el Estandarte de Ur, una caja de mosaico, hacia el 2600–2400 a. C. Hoy sus tesoros están en Bagdad, Londres y Filadelfia."
+   },
+   "details": {
+    "en": "Between 1922 and 1934 Leonard Woolley dug about 2,000 graves at Ur for the British Museum and the University of Pennsylvania Museum; sixteen were royal. Queen Puabi lay in a headdress of golden leaves, and in the 'Great Death Pit' dozens of attendants had been buried with their rulers. The Standard of Ur, found crushed in 1927–28, shows war on one side and a feast on the other in shell, red limestone and lapis lazuli; nobody knows what it was for. As was usual then, the finds were divided: one of the two golden goats called the 'Ram in a Thicket' went to London and the other to Philadelphia, and Iraq's share went to the Iraq Museum in Baghdad. In April 2003, during the invasion of Iraq, looters ransacked that museum; a harp from Ur was torn apart for its gold, and many objects are still missing.",
+    "es": "Entre 1922 y 1934, Leonard Woolley excavó unas 2000 tumbas en Ur para el Museo Británico y el Museo de la Universidad de Pensilvania; dieciséis eran reales. La reina Puabi yacía con un tocado de hojas de oro, y en el «Gran Pozo de la Muerte» decenas de sirvientes habían sido enterrados con sus soberanos. El Estandarte de Ur, hallado aplastado en 1927–28, muestra la guerra en un lado y un banquete en el otro, con conchas, caliza roja y lapislázuli; nadie sabe para qué servía. Como era costumbre entonces, los hallazgos se repartieron: una de las dos cabras de oro llamadas «carnero en la espesura» fue a Londres y la otra a Filadelfia, y la parte de Irak fue al Museo de Irak, en Bagdad. En abril de 2003, durante la invasión de Irak, saqueadores asaltaron ese museo: arrancaron el oro de un arpa de Ur, y muchos objetos siguen perdidos."
+   },
+   "camera": {
+    "lon": -14,
+    "lat": 40,
+    "zoom": 1.15
+   },
+   "moves": [
+    {
+     "side": "abroad",
+     "path": [
+      [
+       46.1056,
+       30.9619
+      ],
+      [
+       -0.1269,
+       51.5194
+      ]
+     ],
+     "label": {
+      "en": "To London",
+      "es": "A Londres"
+     }
+    },
+    {
+     "side": "abroad",
+     "path": [
+      [
+       46.1066,
+       30.9611
+      ],
+      [
+       -75.1911,
+       39.949
+      ]
+     ],
+     "label": {
+      "en": "To Philadelphia",
+      "es": "A Filadelfia"
+     }
+    },
+    {
+     "side": "home",
+     "path": [
+      [
+       46.1061,
+       30.9615
+      ],
+      [
+       44.3858,
+       33.3286
+      ]
+     ],
+     "label": {
+      "en": "To Baghdad",
+      "es": "A Bagdad"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "royal-cemetery-at-ur",
+     "name": {
+      "en": "Royal Cemetery at Ur",
+      "es": "Cementerio Real de Ur"
+     },
+     "at": [
+      46.1061,
+      30.9615
+     ],
+     "cat": "craft",
+     "type": "site",
+     "date": "-2600",
+     "place": {
+      "en": "Tell el-Muqayyar, near Nasiriyah, Iraq",
+      "es": "Tell el-Muqayyar, cerca de Nasiriya, Irak"
+     },
+     "text": {
+      "en": "About 2,000 graves dug in 1922–1934, sixteen of them royal, full of gold, silver, lapis lazuli and carnelian. A queen called Puabi wore a headdress of golden leaves.",
+      "es": "Unas 2000 tumbas excavadas en 1922–1934, dieciséis de ellas reales, llenas de oro, plata, lapislázuli y cornalina. Una reina llamada Puabi llevaba un tocado de hojas de oro."
+     },
+     "wiki": {
+      "en": "Royal Cemetery at Ur",
+      "es": "Cementerio Real de Ur"
+     }
+    },
+    {
+     "id": "standard-of-ur",
+     "name": {
+      "en": "Standard of Ur",
+      "es": "Estandarte de Ur"
+     },
+     "at": [
+      46.1056,
+      30.9619
+     ],
+     "cat": "craft",
+     "type": "work",
+     "date": "-2550",
+     "by": {
+      "en": "Sumerian craftsmen of Ur",
+      "es": "Artesanos sumerios de Ur"
+     },
+     "place": {
+      "en": "Ur, Iraq",
+      "es": "Ur, Irak"
+     },
+     "text": {
+      "en": "A hollow wooden box covered in a mosaic of shell, red limestone and lapis lazuli, about 4,500 years old. One side shows war, the other a feast with a lyre player; no one knows what it was for.",
+      "es": "Una caja hueca de madera cubierta con un mosaico de conchas, caliza roja y lapislázuli, de unos 4500 años. Un lado muestra la guerra y el otro un banquete con un músico que toca la lira; nadie sabe para qué servía."
+     },
+     "details": {
+      "en": "Woolley called it a standard because it lay by the shoulder of a man, as if carried on a pole. It is only 50 cm long. Its wooden frame had rotted, so the diggers lifted the tiny pieces with wax; the mosaic seen today was put together again in 1973. The war side shows one of the earliest pictures of an army, with four-wheeled wagons pulled by donkey-like animals.",
+      "es": "Woolley la llamó estandarte porque estaba junto al hombro de un hombre, como si la llevara en un palo. Mide solo 50 cm de largo. Su armazón de madera se había podrido, así que los excavadores levantaron las piezas diminutas con cera; el mosaico que se ve hoy se volvió a armar en 1973. El lado de la guerra muestra una de las imágenes más antiguas de un ejército, con carros de cuatro ruedas tirados por animales parecidos a burros."
+     },
+     "status": {
+      "en": "British Museum, London",
+      "es": "Museo Británico, Londres"
+     },
+     "img": "Standard of Ur - War.jpg",
+     "wiki": {
+      "en": "Standard of Ur",
+      "es": "Estandarte de Ur"
+     }
+    },
+    {
+     "id": "ram-in-a-thicket",
+     "name": {
+      "en": "Ram in a Thicket",
+      "es": "Carnero en la espesura"
+     },
+     "at": [
+      46.1066,
+      30.9611
+     ],
+     "cat": "craft",
+     "type": "work",
+     "date": "-2600",
+     "end": "-2400",
+     "by": {
+      "en": "Sumerian craftsmen of Ur",
+      "es": "Artesanos sumerios de Ur"
+     },
+     "place": {
+      "en": "Ur, Iraq",
+      "es": "Ur, Irak"
+     },
+     "text": {
+      "en": "A pair of figures of a goat rearing up against a flowering tree, made of gold, copper, shell and lapis lazuli, found together in 1928–29. One is in London, the other in Philadelphia.",
+      "es": "Un par de figuras de una cabra que se alza contra un árbol en flor, hechas de oro, cobre, conchas y lapislázuli, halladas juntas en 1928–29. Una está en Londres y la otra en Filadelfia."
+     },
+     "status": {
+      "en": "British Museum, London, and Penn Museum, Philadelphia",
+      "es": "Museo Británico, Londres, y Museo Penn, Filadelfia"
+     },
+     "wiki": {
+      "en": "Ram in a Thicket",
+      "es": "Cabra ramoneando un matorral"
+     }
+    },
+    {
+     "id": "iraq-museum",
+     "name": {
+      "en": "Iraq Museum",
+      "es": "Museo Nacional de Irak"
+     },
+     "at": [
+      44.3858,
+      33.3286
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1926",
+     "place": {
+      "en": "Baghdad, Iraq",
+      "es": "Bagdad, Irak"
+     },
+     "text": {
+      "en": "Iraq's national museum in Baghdad, founded in 1926, which keeps its share of the Ur treasures. Looted in April 2003; the 5,000-year-old Warka Vase came back that June, but many objects are still missing.",
+      "es": "El museo nacional de Irak, en Bagdad, fundado en 1926, que guarda su parte de los tesoros de Ur. Fue saqueado en abril de 2003; el vaso de Warka, de 5000 años, volvió en junio, pero muchos objetos siguen perdidos."
+     },
+     "details": {
+      "en": "Thieves broke in between 10 and 12 April 2003, while fighting went on nearby, until the museum's staff came back and drove off further looters. The carved alabaster Warka Vase, wrenched from its case, was handed back on 12 June by three young men during an amnesty. A statue of King Entemena of Lagash was recovered in the United States in 2006. After years of repairs the museum reopened in February 2015.",
+      "es": "Los ladrones entraron entre el 10 y el 12 de abril de 2003, mientras se combatía cerca, hasta que el personal del museo volvió y ahuyentó a otros saqueadores. El vaso de Warka, de alabastro tallado, arrancado de su vitrina, lo devolvieron el 12 de junio tres jóvenes durante una amnistía. Una estatua del rey Entemena de Lagash se recuperó en Estados Unidos en 2006. Tras años de reparaciones, el museo reabrió en febrero de 2015."
+     },
+     "wiki": {
+      "en": "Iraq Museum",
+      "es": "Museo Nacional de Irak"
+     }
+    },
+    {
+     "id": "british-museum",
+     "name": {
+      "en": "British Museum",
+      "es": "Museo Británico"
+     },
+     "at": [
+      -0.1269,
+      51.5194
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1753-06-07",
+     "place": {
+      "en": "Bloomsbury, London, United Kingdom",
+      "es": "Bloomsbury, Londres, Reino Unido"
+     },
+     "text": {
+      "en": "Founded in 1753, it holds about eight million objects, the largest collection of its kind, among them the Standard of Ur and about half of the surviving Parthenon sculptures. Several countries ask for objects back.",
+      "es": "Fundado en 1753, guarda unos ocho millones de objetos, la mayor colección de su tipo, entre ellos el Estandarte de Ur y cerca de la mitad de las esculturas del Partenón que se conservan. Varios países reclaman objetos."
+     },
+     "details": {
+      "en": "Much of its collection came from archaeological digs it paid for, such as Leonard Woolley's at Ur, from purchases like Lord Elgin's marbles in 1816, and from the age of the British Empire. A law of 1963, the British Museum Act, forbids it to give away objects from its collection except in a few special cases, so any permanent return would need Parliament. It lends objects abroad and argues that its galleries let visitors compare the cultures of the whole world.",
+      "es": "Gran parte de su colección vino de excavaciones que pagó, como la de Leonard Woolley en Ur, de compras como la de los mármoles de lord Elgin en 1816 y de la época del Imperio británico. Una ley de 1963, la British Museum Act, le prohíbe deshacerse de los objetos de su colección salvo en unos pocos casos especiales, así que cualquier devolución definitiva necesitaría al Parlamento. Presta objetos al extranjero y sostiene que sus salas permiten comparar las culturas de todo el mundo."
+     },
+     "wiki": {
+      "en": "British Museum",
+      "es": "Museo Británico"
+     }
+    },
+    {
+     "id": "penn-museum",
+     "name": {
+      "en": "Penn Museum",
+      "es": "Museo Penn"
+     },
+     "at": [
+      -75.1911,
+      39.949
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1887",
+     "place": {
+      "en": "University of Pennsylvania, Philadelphia, United States",
+      "es": "Universidad de Pensilvania, Filadelfia, Estados Unidos"
+     },
+     "text": {
+      "en": "The University of Pennsylvania's museum of archaeology, founded in 1887. It sponsored Woolley's dig at Ur with the British Museum and received a share of the finds, among them one of the two Rams in a Thicket.",
+      "es": "El museo de arqueología de la Universidad de Pensilvania, fundado en 1887. Financió con el Museo Británico la excavación de Woolley en Ur y recibió parte de los hallazgos, entre ellos uno de los dos carneros en la espesura."
+     },
+     "wiki": {
+      "en": "Penn Museum",
+      "es": ""
+     }
+    }
+   ]
+  },
+  {
+   "date": "-2300",
+   "title": {
+    "en": "The Dancing Girl",
+    "es": "La Bailarina"
+   },
+   "text": {
+    "en": "In Mohenjo-daro, a city of the Indus valley, a metalworker cast a bronze girl 10.5 cm tall, standing with confident ease, about 2300–1750 BC. Found in 1926, she stayed in India at Partition.",
+    "es": "En Mohenjo-daro, una ciudad del valle del Indo, un metalúrgico fundió en bronce una muchacha de 10,5 cm, de pie con aire seguro, hacia el 2300–1750 a. C. Hallada en 1926, quedó en la India con la Partición."
+   },
+   "details": {
+    "en": "The Dancing Girl was cast by the lost-wax method: a wax model was covered in clay, the wax melted out and bronze poured in. She wears 24 or 25 bangles on her left arm and her hair in a big bun. The archaeologist Mortimer Wheeler said: 'There's nothing like her, I think, in the world.' Others think she is carrying an offering rather than dancing. The finds of Mohenjo-daro were taken to Lahore and then to Delhi, the capital of British India. When India and Pakistan were divided in 1947, the 12,000 objects were split equally, some necklaces bead by bead. Pakistan chose the stone 'Priest-King', now in Karachi, and India kept the Dancing Girl, now in New Delhi. In 2016 a Pakistani lawyer asked a court in Lahore to bring her back, but Pakistan's government has made no request.",
+    "es": "La Bailarina se fundió a la cera perdida: un modelo de cera se cubría de arcilla, la cera se derretía y en su lugar se vertía el bronce. Lleva 24 o 25 brazaletes en el brazo izquierdo y el pelo recogido en un gran moño. El arqueólogo Mortimer Wheeler dijo: «Creo que no hay nada como ella en el mundo». Otros piensan que lleva una ofrenda en vez de bailar. Los hallazgos de Mohenjo-daro se llevaron a Lahore y luego a Delhi, la capital de la India británica. Cuando la India y Pakistán se separaron en 1947, los 12 000 objetos se repartieron a partes iguales, algunos collares cuenta por cuenta. Pakistán eligió el «Rey Sacerdote» de piedra, hoy en Karachi, y la India se quedó con la Bailarina, hoy en Nueva Delhi. En 2016 un abogado pakistaní pidió a un tribunal de Lahore que la recuperara, pero el gobierno de Pakistán no ha hecho ningún reclamo."
+   },
+   "camera": {
+    "lon": 72.2,
+    "lat": 26.4,
+    "zoom": 4.3
+   },
+   "moves": [
+    {
+     "side": "abroad",
+     "path": [
+      [
+       68.1365,
+       27.327
+      ],
+      [
+       74.3082,
+       31.5682
+      ],
+      [
+       77.2193,
+       28.6118
+      ]
+     ],
+     "label": {
+      "en": "To Lahore and Delhi",
+      "es": "A Lahore y Delhi"
+     }
+    },
+    {
+     "side": "home",
+     "path": [
+      [
+       68.14,
+       27.3255
+      ],
+      [
+       67.0178,
+       24.8527
+      ]
+     ],
+     "label": {
+      "en": "To Karachi",
+      "es": "A Karachi"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "mohenjo-daro",
+     "name": {
+      "en": "Mohenjo-daro",
+      "es": "Mohenjo-Daro"
+     },
+     "at": [
+      68.1389,
+      27.3292
+     ],
+     "cat": "sculpture",
+     "type": "site",
+     "date": "-2500",
+     "until": "-1700",
+     "place": {
+      "en": "Larkana, Sindh, Pakistan",
+      "es": "Larkana, Sind, Pakistán"
+     },
+     "text": {
+      "en": "The largest city of the Indus civilization, built around 2500 BC with brick houses, wells and drains on a grid. Abandoned by about 1700 BC, it is now a World Heritage Site.",
+      "es": "La mayor ciudad de la civilización del Indo, construida hacia el 2500 a. C. con casas de ladrillo, pozos y desagües en cuadrícula. Abandonada hacia el 1700 a. C., hoy es Patrimonio de la Humanidad."
+     },
+     "wiki": {
+      "en": "Mohenjo-daro",
+      "es": "Mohenjo-Daro"
+     }
+    },
+    {
+     "id": "dancing-girl",
+     "name": {
+      "en": "Dancing Girl",
+      "es": "La Bailarina de Mohenjo-Daro"
+     },
+     "at": [
+      68.1365,
+      27.327
+     ],
+     "cat": "sculpture",
+     "type": "work",
+     "date": "-2300",
+     "end": "-1750",
+     "by": {
+      "en": "An Indus bronze-caster",
+      "es": "Un fundidor del Indo"
+     },
+     "place": {
+      "en": "Mohenjo-daro, Pakistan",
+      "es": "Mohenjo-Daro, Pakistán"
+     },
+     "text": {
+      "en": "A bronze figure only 10.5 cm tall of a young woman with bangles up her arm and a hand on her hip, cast around 2300–1750 BC. One of the masterpieces of the Indus civilization.",
+      "es": "Una figura de bronce de solo 10,5 cm: una joven con brazaletes hasta el hombro y una mano en la cadera, fundida hacia el 2300–1750 a. C. Una de las obras maestras de la civilización del Indo."
+     },
+     "status": {
+      "en": "National Museum, New Delhi",
+      "es": "Museo Nacional, Nueva Delhi"
+     },
+     "wiki": {
+      "en": "Dancing Girl (prehistoric sculpture)",
+      "es": "Bailarina (escultura)"
+     }
+    },
+    {
+     "id": "priest-king",
+     "name": {
+      "en": "Priest-King",
+      "es": "Rey Sacerdote"
+     },
+     "at": [
+      68.14,
+      27.3255
+     ],
+     "cat": "sculpture",
+     "type": "work",
+     "date": "-2000",
+     "end": "-1900",
+     "by": {
+      "en": "An Indus sculptor",
+      "es": "Un escultor del Indo"
+     },
+     "place": {
+      "en": "Mohenjo-daro, Pakistan",
+      "es": "Mohenjo-Daro, Pakistán"
+     },
+     "text": {
+      "en": "A 17.5 cm stone bust of a bearded man in a robe patterned with trefoils, about 2000–1900 BC. Its name is a modern guess; Pakistan keeps the original in safety and shows a replica.",
+      "es": "Un busto de piedra de 17,5 cm de un hombre barbado con un manto decorado con tréboles, de hacia el 2000–1900 a. C. Su nombre es una suposición moderna; Pakistán guarda el original a salvo y expone una réplica."
+     },
+     "status": {
+      "en": "National Museum of Pakistan, Karachi",
+      "es": "Museo Nacional de Pakistán, Karachi"
+     },
+     "wiki": {
+      "en": "Priest-King (sculpture)",
+      "es": "Rey Sacerdote"
+     }
+    },
+    {
+     "id": "national-museum-new-delhi",
+     "name": {
+      "en": "National Museum, New Delhi",
+      "es": "Museo Nacional, Nueva Delhi"
+     },
+     "at": [
+      77.2193,
+      28.6118
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1949-08-15",
+     "place": {
+      "en": "New Delhi, India",
+      "es": "Nueva Delhi, India"
+     },
+     "text": {
+      "en": "India's national museum, founded on 15 August 1949 and moved to its own building in 1960. Its Harappan gallery shows the Dancing Girl with seals and other finds of the Indus cities.",
+      "es": "El museo nacional de la India, fundado el 15 de agosto de 1949 y trasladado a su propio edificio en 1960. Su sala harappa muestra la Bailarina junto a sellos y otros hallazgos de las ciudades del Indo."
+     },
+     "img": "India national museum 01.jpg",
+     "wiki": {
+      "en": "National Museum of India",
+      "es": ""
+     }
+    },
+    {
+     "id": "national-museum-of-pakistan",
+     "name": {
+      "en": "National Museum of Pakistan",
+      "es": "Museo Nacional de Pakistán"
+     },
+     "at": [
+      67.0178,
+      24.8527
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1950",
+     "place": {
+      "en": "Karachi, Pakistan",
+      "es": "Karachi, Pakistán"
+     },
+     "text": {
+      "en": "Pakistan's national museum in Karachi, founded in 1950, which keeps the Priest-King, a second bronze girl and other finds from Mohenjo-daro.",
+      "es": "El museo nacional de Pakistán, en Karachi, fundado en 1950, que guarda el Rey Sacerdote, una segunda muchacha de bronce y otros hallazgos de Mohenjo-Daro."
+     },
+     "wiki": {
+      "en": "National Museum of Pakistan",
+      "es": "Museo nacional de Pakistán"
+     }
+    }
+   ]
+  },
+  {
+   "date": "-1345",
+   "title": {
+    "en": "The face of Nefertiti",
+    "es": "El rostro de Nefertiti"
+   },
+   "text": {
+    "en": "At Amarna, Akhenaten's new capital, the sculptor Thutmose probably made a painted bust of Queen Nefertiti about 1345 BC. Found in 1912, it was taken to Berlin; Egypt has asked for it back since 1924.",
+    "es": "En Amarna, la nueva capital de Akenatón, el escultor Tutmose hizo probablemente un busto pintado de la reina Nefertiti hacia el 1345 a. C. Hallado en 1912, se lo llevaron a Berlín; Egipto lo reclama desde 1924."
+   },
+   "details": {
+    "en": "On 6 December 1912 a German team led by Ludwig Borchardt, paid for by the merchant James Simon, found the bust in the ruins of Thutmose's workshop, beside unfinished heads of the queen. In January 1913 the finds were divided with Egypt's antiquities service, then run by French officials. Egypt says Borchardt hid the bust's value: he showed an unflattering photograph, kept it wrapped in a dim room and listed it as a painted plaster bust of a princess. Germany and the Berlin museum say the division was legal and signed by both sides. The bust was first shown to the public in 1924 and has been in Germany ever since. Egypt has asked for it many times, and Germany says it is too fragile to travel.",
+    "es": "El 6 de diciembre de 1912, un equipo alemán dirigido por Ludwig Borchardt y pagado por el comerciante James Simon encontró el busto en las ruinas del taller de Tutmose, junto a cabezas inacabadas de la reina. En enero de 1913 los hallazgos se repartieron con el servicio de antigüedades de Egipto, entonces en manos de funcionarios franceses. Egipto dice que Borchardt ocultó el valor del busto: mostró una foto poco favorecedora, lo dejó envuelto en una sala oscura y lo registró como un busto de yeso pintado de una princesa. Alemania y el museo de Berlín dicen que el reparto fue legal y lo firmaron las dos partes. El busto se mostró al público por primera vez en 1924 y desde entonces está en Alemania. Egipto lo ha reclamado muchas veces, y Alemania dice que es demasiado frágil para viajar."
+   },
+   "camera": {
+    "lon": 22,
+    "lat": 40.5,
+    "zoom": 2.3
+   },
+   "moves": [
+    {
+     "side": "abroad",
+     "path": [
+      [
+       30.905,
+       27.644
+      ],
+      [
+       13.3978,
+       52.5206
+      ]
+     ],
+     "label": {
+      "en": "To Berlin, 1913",
+      "es": "A Berlín, 1913"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "amarna",
+     "name": {
+      "en": "Amarna",
+      "es": "Amarna"
+     },
+     "at": [
+      30.8964,
+      27.6453
+     ],
+     "cat": "sculpture",
+     "type": "site",
+     "date": "-1346",
+     "until": "-1332",
+     "place": {
+      "en": "Tell el-Amarna, Minya, Egypt",
+      "es": "Tell el-Amarna, Minia, Egipto"
+     },
+     "text": {
+      "en": "Akhenaten's capital, built in a few years on empty desert around 1346 BC and abandoned soon after his death. Its artists broke with tradition, showing the royal family in a new, freer style.",
+      "es": "La capital de Akenatón, construida en pocos años en pleno desierto hacia el 1346 a. C. y abandonada al poco de su muerte. Sus artistas rompieron con la tradición y retrataron a la familia real con un estilo más libre."
+     },
+     "wiki": {
+      "en": "Amarna",
+      "es": "Amarna"
+     }
+    },
+    {
+     "id": "nefertiti-bust",
+     "name": {
+      "en": "Nefertiti Bust",
+      "es": "Busto de Nefertiti"
+     },
+     "at": [
+      30.905,
+      27.644
+     ],
+     "cat": "sculpture",
+     "type": "work",
+     "date": "-1345",
+     "by": {
+      "en": "Thutmose (attributed)",
+      "es": "Tutmose (atribuido)"
+     },
+     "place": {
+      "en": "Thutmose's workshop, Amarna, Egypt",
+      "es": "Taller de Tutmose, Amarna, Egipto"
+     },
+     "text": {
+      "en": "A painted bust of Queen Nefertiti in limestone and stucco, 48 cm tall, with her tall blue crown. One eye was never inlaid; it may have been a model for other portraits of the queen.",
+      "es": "Un busto pintado de la reina Nefertiti en piedra caliza y estuco, de 48 cm, con su alta corona azul. Un ojo nunca se incrustó; quizá era un modelo para otros retratos de la reina."
+     },
+     "details": {
+      "en": "Scans in 2006 showed that the sculptor had carved a limestone face with wrinkles and a bump on the nose, then smoothed it with layers of stucco. About 500,000 people a year see the bust in Berlin, and it has become an icon of beauty. Egypt first asked for it in 1924, offered other objects in exchange in 1929, and asked again many times, as in 2005 and 2007 through its antiquities chief Zahi Hawass.",
+      "es": "Unos escaneos de 2006 mostraron que el escultor talló un rostro de caliza con arrugas y un bulto en la nariz, y luego lo suavizó con capas de estuco. Unas 500 000 personas al año ven el busto en Berlín, y se ha vuelto un ícono de belleza. Egipto lo pidió por primera vez en 1924, ofreció otros objetos a cambio en 1929 y volvió a reclamarlo muchas veces, como en 2005 y 2007 por medio de su jefe de antigüedades, Zahi Hawass."
+     },
+     "status": {
+      "en": "Neues Museum, Berlin; Egypt asks for its return",
+      "es": "Neues Museum, Berlín; Egipto pide su devolución"
+     },
+     "wiki": {
+      "en": "Nefertiti Bust",
+      "es": "Busto de Nefertiti"
+     }
+    },
+    {
+     "id": "neues-museum",
+     "name": {
+      "en": "Neues Museum",
+      "es": "Neues Museum"
+     },
+     "at": [
+      13.3978,
+      52.5206
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1855",
+     "place": {
+      "en": "Museum Island, Berlin, Germany",
+      "es": "Isla de los Museos, Berlín, Alemania"
+     },
+     "text": {
+      "en": "A museum on Berlin's Museum Island, opened in 1855, bombed in the Second World War and reopened in 2009 after a rebuilding by David Chipperfield. Nefertiti's bust is its centrepiece.",
+      "es": "Un museo de la Isla de los Museos de Berlín, abierto en 1855, bombardeado en la Segunda Guerra Mundial y reabierto en 2009 tras una reconstrucción de David Chipperfield. El busto de Nefertiti es su gran atracción."
+     },
+     "details": {
+      "en": "The bust was first shown there before the war. In 1939 the museums were emptied; the bust was kept in a bank cellar and a flak tower, then in a salt mine, where the US Army found it in 1945. It was shown in Wiesbaden and West Berlin, at the Egyptian Museum in Charlottenburg and the Altes Museum, and came back to the Neues Museum when it reopened in October 2009.",
+      "es": "El busto se expuso allí por primera vez antes de la guerra. En 1939 los museos se vaciaron; el busto se guardó en el sótano de un banco y en una torre antiaérea, y luego en una mina de sal, donde lo encontró el ejército de Estados Unidos en 1945. Se expuso en Wiesbaden y en Berlín Occidental, en el Museo Egipcio de Charlottenburg y en el Altes Museum, y volvió al Neues Museum cuando este reabrió en octubre de 2009."
+     },
+     "wiki": {
+      "en": "Neues Museum",
+      "es": "Neues Museum"
+     }
+    }
+   ]
+  },
+  {
+   "date": "-1323",
+   "title": {
+    "en": "Tutankhamun's gold",
+    "es": "El oro de Tutankamón"
+   },
+   "text": {
+    "en": "About 1323 BC the young king Tutankhamun was buried with a mask of more than 10 kg of gold. When Howard Carter's team found his tomb in 1922, newly independent Egypt kept the treasures together.",
+    "es": "Hacia el 1323 a. C., el joven rey Tutankamón fue enterrado con una máscara de más de 10 kg de oro. Cuando el equipo de Howard Carter halló su tumba en 1922, el Egipto recién independizado conservó juntos sus tesoros."
+   },
+   "details": {
+    "en": "The tomb in the Valley of the Kings was found on 4 November 1922 by Howard Carter's team, paid for by Lord Carnarvon; Egyptian foremen such as Ahmed Gerigar worked on it from start to finish. In earlier digs the finds had been shared between Egypt and the excavators, as Nefertiti's had been, but Egypt, partly independent since 1922, wanted more say. After a legal fight it was agreed in January 1925 that the treasures would not be divided. The gold mask, seen on 28 October 1925, has a spell from the Book of the Dead on its back. In 2014 its beard fell off during cleaning and was glued back with epoxy; a German–Egyptian team refixed it with beeswax in 2015. Since 2025 all the treasures are shown together in the Grand Egyptian Museum, beside the pyramids of Giza.",
+    "es": "La tumba del Valle de los Reyes la encontró el 4 de noviembre de 1922 el equipo de Howard Carter, pagado por lord Carnarvon; capataces egipcios como Ahmed Gerigar trabajaron en ella de principio a fin. En excavaciones anteriores los hallazgos se repartían entre Egipto y los excavadores, como los de Nefertiti, pero Egipto, en parte independiente desde 1922, quería tener más voz. Tras una disputa legal, en enero de 1925 se acordó que los tesoros no se dividirían. La máscara de oro, vista el 28 de octubre de 1925, tiene en la espalda un conjuro del Libro de los Muertos. En 2014 se le cayó la barba durante una limpieza y se la pegaron con resina epoxi; un equipo germano-egipcio la volvió a fijar con cera de abejas en 2015. Desde 2025 todos los tesoros se exponen juntos en el Gran Museo Egipcio, junto a las pirámides de Guiza."
+   },
+   "camera": {
+    "lon": 31.8,
+    "lat": 27.9,
+    "zoom": 5
+   },
+   "moves": [
+    {
+     "side": "home",
+     "path": [
+      [
+       32.603,
+       25.7392
+      ],
+      [
+       31.2333,
+       30.0478
+      ],
+      [
+       31.1193,
+       29.995
+      ]
+     ],
+     "label": {
+      "en": "To Cairo, 1925, and Giza",
+      "es": "A El Cairo, 1925, y a Guiza"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "tomb-of-tutankhamun",
+     "name": {
+      "en": "Tomb of Tutankhamun (KV62)",
+      "es": "Tumba de Tutankamón (KV62)"
+     },
+     "at": [
+      32.6014,
+      25.7404
+     ],
+     "cat": "craft",
+     "type": "site",
+     "date": "-1323",
+     "place": {
+      "en": "Valley of the Kings, Luxor, Egypt",
+      "es": "Valle de los Reyes, Luxor, Egipto"
+     },
+     "text": {
+      "en": "A small tomb of four rooms crammed with treasure, found on 4 November 1922, that robbers had entered only briefly in ancient times. The king's mummy still lies there; the objects went to Cairo.",
+      "es": "Una pequeña tumba de cuatro salas repleta de tesoros, hallada el 4 de noviembre de 1922, en la que los ladrones solo entraron un momento en la Antigüedad. La momia del rey sigue allí; los objetos fueron a El Cairo."
+     },
+     "wiki": {
+      "en": "Tomb of Tutankhamun",
+      "es": "KV62"
+     }
+    },
+    {
+     "id": "mask-of-tutankhamun",
+     "name": {
+      "en": "Mask of Tutankhamun",
+      "es": "Máscara de Tutankamón"
+     },
+     "at": [
+      32.603,
+      25.7392
+     ],
+     "cat": "craft",
+     "type": "work",
+     "date": "-1323",
+     "by": {
+      "en": "Royal goldsmiths of Egypt",
+      "es": "Orfebres reales de Egipto"
+     },
+     "place": {
+      "en": "Valley of the Kings, Egypt",
+      "es": "Valle de los Reyes, Egipto"
+     },
+     "text": {
+      "en": "The gold mask that covered the king's mummy: 54 cm tall and 10.23 kg of gold inlaid with lapis lazuli, quartz, obsidian and coloured glass. Perhaps the best-known object of ancient Egypt.",
+      "es": "La máscara de oro que cubría la momia del rey: 54 cm de alto y 10,23 kg de oro con incrustaciones de lapislázuli, cuarzo, obsidiana y vidrio de colores. Quizá el objeto más conocido del antiguo Egipto."
+     },
+     "details": {
+      "en": "It shows the king as Osiris, god of the afterlife, wearing the striped nemes headcloth with a cobra and a vulture, the signs of Lower and Upper Egypt. Since 2001 some Egyptologists have argued that it was first made for an earlier ruler, Neferneferuaten, perhaps Nefertiti herself, and given a new face; the conservator who restored it in 2015 saw no sign of this.",
+      "es": "Muestra al rey como Osiris, dios del más allá, con el tocado a rayas nemes, una cobra y un buitre, símbolos del Bajo y el Alto Egipto. Desde 2001 algunos egiptólogos sostienen que se hizo primero para una gobernante anterior, Neferneferuatón, quizá la propia Nefertiti, y que se le puso otra cara; el restaurador que la trató en 2015 no vio señales de ello."
+     },
+     "status": {
+      "en": "Grand Egyptian Museum, Giza",
+      "es": "Gran Museo Egipcio, Guiza"
+     },
+     "wiki": {
+      "en": "Mask of Tutankhamun",
+      "es": "Máscara funeraria de Tutankamón"
+     }
+    },
+    {
+     "id": "grand-egyptian-museum",
+     "name": {
+      "en": "Grand Egyptian Museum",
+      "es": "Gran Museo Egipcio"
+     },
+     "at": [
+      31.1193,
+      29.995
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "2025-11-01",
+     "place": {
+      "en": "Giza, Egypt",
+      "es": "Guiza, Egipto"
+     },
+     "text": {
+      "en": "A vast museum 2 km from the Giza pyramids, fully opened on 1 November 2025. Two halls show all 5,398 objects from Tutankhamun's tomb together for the first time.",
+      "es": "Un enorme museo a 2 km de las pirámides de Guiza, inaugurado del todo el 1 de noviembre de 2025. Dos salas muestran juntos por primera vez los 5398 objetos de la tumba de Tutankamón."
+     },
+     "details": {
+      "en": "Announced in 1992 and built from 2005, it cost about 1.2 billion dollars and holds more than 100,000 objects, at least 20,000 of them never shown before. Its walls line up with the Great Pyramid, and the pyramids can be seen from its atrium. The king's mummy stays in his tomb in the Valley of the Kings. Its conservation centre, opened in 2010, is the largest in the Middle East for restoring antiquities.",
+      "es": "Anunciado en 1992 y construido desde 2005, costó unos 1200 millones de dólares y guarda más de 100 000 objetos, al menos 20 000 nunca expuestos antes. Sus muros se alinean con la Gran Pirámide, y desde su atrio se ven las pirámides. La momia del rey sigue en su tumba del Valle de los Reyes. Su centro de conservación, abierto en 2010, es el mayor de Oriente Medio para restaurar antigüedades."
+     },
+     "img": "Grand Egyptian Museum.jpg",
+     "wiki": {
+      "en": "Grand Egyptian Museum",
+      "es": "Gran Museo Egipcio"
+     }
+    }
+   ]
+  },
+  {
+   "date": "-1200",
+   "title": {
+    "en": "Bronzes of the Shang",
+    "es": "Los bronces de los Shang"
+   },
+   "text": {
+    "en": "At Yin, the last Shang capital near today's Anyang, founders cast great bronze vessels for offerings to the ancestors. The Houmuwu ding, of about 1200 BC, weighs 832.84 kg.",
+    "es": "En Yin, la última capital de los Shang, cerca de la actual Anyang, los fundidores hacían grandes vasijas de bronce para las ofrendas a los antepasados. El ding de Houmuwu, de hacia el 1200 a. C., pesa 832,84 kg."
+   },
+   "details": {
+    "en": "Shang founders built a clay model, pressed moulds around it in sections and poured molten bronze into the gap, so that the decoration came out crisp: monster faces called taotie, dragons and tigers. Only kings and nobles could own such vessels. The tomb of Fu Hao, a queen and general, found untouched in 1976, held 468 bronzes and more than 700 jades. The Houmuwu ding was dug up at Wuguan village in 1939; it is now in the National Museum of China, on a list of treasures that may never be shown abroad. Far to the south-west, at Sanxingdui in Sichuan, a different bronze-age people made heads and masks with bulging eyes and a 2.6 m standing figure, discovered in 1986 and in new pits since 2020.",
+    "es": "Los fundidores shang hacían un modelo de arcilla, le aplicaban moldes por partes y vertían el bronce fundido en el hueco, así que la decoración salía nítida: caras de monstruos llamadas taotie, dragones y tigres. Solo los reyes y los nobles podían tener esas vasijas. La tumba de Fu Hao, reina y general, hallada intacta en 1976, guardaba 468 bronces y más de 700 jades. El ding de Houmuwu se desenterró en la aldea de Wuguan en 1939; hoy está en el Museo Nacional de China, en una lista de tesoros que no pueden exponerse en el extranjero. Muy al suroeste, en Sanxingdui, en Sichuan, otro pueblo de la Edad del Bronce hizo cabezas y máscaras de ojos saltones y una figura de pie de 2,6 m, descubiertas en 1986 y en nuevas fosas desde 2020."
+   },
+   "camera": {
+    "lon": 110.5,
+    "lat": 35,
+    "zoom": 3.8
+   },
+   "moves": [
+    {
+     "side": "home",
+     "path": [
+      [
+       114.3117,
+       36.1264
+      ],
+      [
+       116.395,
+       39.9036
+      ]
+     ],
+     "label": {
+      "en": "To Beijing",
+      "es": "A Pekín"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "yinxu",
+     "name": {
+      "en": "Yinxu",
+      "es": "Yin Xu"
+     },
+     "at": [
+      114.3186,
+      36.1225
+     ],
+     "cat": "craft",
+     "type": "site",
+     "date": "-1250",
+     "until": "-1046",
+     "place": {
+      "en": "Anyang, Henan, China",
+      "es": "Anyang, Henan, China"
+     },
+     "text": {
+      "en": "The last capital of the Shang kings, about 1250 to 1046 BC: palaces, royal tombs, bronze foundries and pits of inscribed oracle bones. A World Heritage Site since 2006.",
+      "es": "La última capital de los reyes shang, de hacia el 1250 al 1046 a. C.: palacios, tumbas reales, fundiciones de bronce y fosas de huesos oraculares con inscripciones. Patrimonio de la Humanidad desde 2006."
+     },
+     "wiki": {
+      "en": "Yinxu",
+      "es": "Yin Xu"
+     }
+    },
+    {
+     "id": "houmuwu-ding",
+     "name": {
+      "en": "Houmuwu ding",
+      "es": "Ding de Houmuwu"
+     },
+     "at": [
+      114.3117,
+      36.1264
+     ],
+     "cat": "craft",
+     "type": "work",
+     "date": "-1200",
+     "by": {
+      "en": "Shang bronze casters of Anyang",
+      "es": "Fundidores de bronce Shang de Anyang"
+     },
+     "place": {
+      "en": "Wuguan, Anyang, China",
+      "es": "Wuguan, Anyang, China"
+     },
+     "text": {
+      "en": "A square bronze cauldron 133 cm high and 832.84 kg, the heaviest bronze to survive from the ancient world, cast for a dead queen. Each handle shows two tigers with a human head between their jaws.",
+      "es": "Un caldero cuadrado de bronce de 133 cm de alto y 832,84 kg, el bronce más pesado que se conserva del mundo antiguo, fundido para una reina muerta. Cada asa muestra dos tigres con una cabeza humana entre sus fauces."
+     },
+     "status": {
+      "en": "National Museum of China, Beijing",
+      "es": "Museo Nacional de China, Pekín"
+     },
+     "wiki": {
+      "en": "Houmuwu ding",
+      "es": "Houmuwu ding"
+     }
+    },
+    {
+     "id": "tomb-of-fu-hao",
+     "name": {
+      "en": "Tomb of Fu Hao",
+      "es": "Tumba de Fu Hao"
+     },
+     "at": [
+      114.3162,
+      36.121
+     ],
+     "cat": "craft",
+     "type": "site",
+     "date": "-1200",
+     "place": {
+      "en": "Yinxu, Anyang, China",
+      "es": "Yin Xu, Anyang, China"
+     },
+     "text": {
+      "en": "The only Shang royal tomb found untouched, opened in 1976: 468 bronzes, more than 700 jades and thousands of cowrie shells for Fu Hao, a queen, priestess and general.",
+      "es": "La única tumba real shang hallada intacta, abierta en 1976: 468 bronces, más de 700 jades y miles de conchas de cauri para Fu Hao, reina, sacerdotisa y general."
+     },
+     "wiki": {
+      "en": "Tomb of Fu Hao",
+      "es": "Tumba de Fu Hao"
+     }
+    },
+    {
+     "id": "sanxingdui",
+     "name": {
+      "en": "Bronzes of Sanxingdui",
+      "es": "Bronces de Sanxingdui"
+     },
+     "at": [
+      104.2,
+      30.993
+     ],
+     "cat": "sculpture",
+     "type": "work",
+     "date": "-1200",
+     "by": {
+      "en": "Bronze casters of Sanxingdui (ancient Shu)",
+      "es": "Fundidores de Sanxingdui (antiguo reino de Shu)"
+     },
+     "place": {
+      "en": "Guanghan, Sichuan, China",
+      "es": "Guanghan, Sichuan, China"
+     },
+     "text": {
+      "en": "Bronze heads and masks with bulging eyes, a bronze tree almost 4 m tall and the world's oldest life-size standing statue, 2.6 m high, buried in pits in Sichuan in the 12th–11th centuries BC.",
+      "es": "Cabezas y máscaras de bronce de ojos saltones, un árbol de bronce de casi 4 m y la estatua de pie a tamaño real más antigua del mundo, de 2,6 m, enterrados en fosas de Sichuan en los siglos XII y XI a. C."
+     },
+     "details": {
+      "en": "A farmer found the first jades in 1927 while dredging a ditch. In 1986 local workers struck two pits holding thousands of objects of gold, bronze, jade and pottery that had been broken, burned and carefully buried, perhaps in a ritual. Archaeologists link the site with the ancient kingdom of Shu. Some masks have bulging eyes, perhaps showing Cancong, the legendary first king of Shu, who was said to have protruding eyes. Six more pits, dug from 2020 to 2022, held hundreds more objects, among them a gold mask. Since 1997 the finds have been shown in a museum beside the site.",
+      "es": "Un campesino halló los primeros jades en 1927, al dragar una acequia. En 1986, unos trabajadores dieron con dos fosas con miles de objetos de oro, bronce, jade y cerámica que se habían roto, quemado y enterrado con cuidado, quizá en un ritual. Los arqueólogos relacionan el sitio con el antiguo reino de Shu. Algunas máscaras tienen ojos saltones, quizá por Cancong, el legendario primer rey de Shu, de quien se decía que tenía los ojos salientes. Seis fosas más, excavadas de 2020 a 2022, guardaban cientos de objetos más, entre ellos una máscara de oro. Desde 1997 los hallazgos se exponen en un museo junto al sitio."
+     },
+     "status": {
+      "en": "Sanxingdui Museum, Guanghan",
+      "es": "Museo de Sanxingdui, Guanghan"
+     },
+     "wiki": {
+      "en": "Sanxingdui",
+      "es": "Sanxingdui"
+     }
+    }
+   ]
+  },
+  {
+   "date": "-1150",
+   "title": {
+    "en": "Giant heads of the Olmecs",
+    "es": "Las cabezas gigantes olmecas"
+   },
+   "text": {
+    "en": "On Mexico's Gulf Coast, the Olmecs carved colossal heads of basalt up to 3.4 m tall, probably portraits of their rulers. The ten of San Lorenzo were buried by 900 BC; all 17 known heads are still in Mexico.",
+    "es": "En la costa del golfo de México, los olmecas tallaron cabezas colosales de basalto de hasta 3,4 m, quizá retratos de sus gobernantes. Las de San Lorenzo ya estaban enterradas hacia el 900 a. C.; las 17 conocidas siguen en México."
+   },
+   "details": {
+    "en": "The boulders came from the Tuxtla Mountains, more than 150 km away for some sites, and the heaviest heads weigh up to some 40 tonnes. Each wears its own helmet-like headdress, and two were recut from older stone thrones. José María Melgar reported the first head, at Tres Zapotes, in 1862, and Matthew Stirling's digs from 1938 made them famous. Seven of the San Lorenzo heads are in the Xalapa Museum of Anthropology, two in the National Museum of Anthropology in Mexico City and one in a village museum at San Lorenzo; the four from La Venta stand in a park-museum in Villahermosa. Mexico lends heads to exhibitions abroad, and replicas stand in Chicago, Paris, Washington and other cities. In 2009 vandals smeared the La Venta heads with salt, juice and oil in a supposed ritual.",
+    "es": "Las rocas venían de la sierra de los Tuxtlas, a más de 150 km de algunos sitios, y las cabezas más pesadas llegan a unas 40 toneladas. Cada una lleva su propio tocado, parecido a un casco, y dos se tallaron a partir de antiguos tronos de piedra. José María Melgar dio a conocer la primera cabeza, en Tres Zapotes, en 1862, y las excavaciones de Matthew Stirling desde 1938 las hicieron famosas. Siete de las cabezas de San Lorenzo están en el Museo de Antropología de Xalapa, dos en el Museo Nacional de Antropología de la Ciudad de México y una en un museo comunitario en San Lorenzo; las cuatro de La Venta están en un parque-museo de Villahermosa. México presta cabezas a exposiciones en el extranjero, y hay réplicas en Chicago, París, Washington y otras ciudades. En 2009 unos vándalos untaron las cabezas de La Venta con sal, jugo y aceite en un supuesto ritual."
+   },
+   "camera": {
+    "lon": -96.6,
+    "lat": 18.6,
+    "zoom": 6
+   },
+   "moves": [
+    {
+     "side": "home",
+     "path": [
+      [
+       -94.7545,
+       17.7505
+      ],
+      [
+       -96.931,
+       19.5505
+      ]
+     ],
+     "label": {
+      "en": "To Xalapa",
+      "es": "A Xalapa"
+     }
+    },
+    {
+     "side": "home",
+     "path": [
+      [
+       -94.7545,
+       17.7505
+      ],
+      [
+       -99.1861,
+       19.4261
+      ]
+     ],
+     "label": {
+      "en": "To Mexico City",
+      "es": "A la Ciudad de México"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "san-lorenzo",
+     "name": {
+      "en": "San Lorenzo",
+      "es": "San Lorenzo"
+     },
+     "at": [
+      -94.76,
+      17.7536
+     ],
+     "cat": "sculpture",
+     "type": "site",
+     "date": "-1400",
+     "until": "-900",
+     "place": {
+      "en": "Texistepec, Veracruz, Mexico",
+      "es": "Texistepec, Veracruz, México"
+     },
+     "text": {
+      "en": "The first great Olmec centre, about 1400–900 BC, on a plateau raised by hand above the Coatzacoalcos river. Ten colossal heads and great stone thrones stood here.",
+      "es": "El primer gran centro olmeca, de hacia el 1400–900 a. C., en una meseta alzada a mano sobre el río Coatzacoalcos. Aquí se alzaban diez cabezas colosales y grandes tronos de piedra."
+     },
+     "wiki": {
+      "en": "San Lorenzo Tenochtitlán",
+      "es": "San Lorenzo (zona arqueológica)"
+     }
+    },
+    {
+     "id": "olmec-colossal-heads",
+     "name": {
+      "en": "Olmec colossal heads",
+      "es": "Cabezas colosales olmecas"
+     },
+     "at": [
+      -94.7545,
+      17.7505
+     ],
+     "cat": "sculpture",
+     "type": "work",
+     "date": "-1200",
+     "by": {
+      "en": "Olmec sculptors",
+      "es": "Escultores olmecas"
+     },
+     "place": {
+      "en": "San Lorenzo, La Venta and Tres Zapotes, Mexico",
+      "es": "San Lorenzo, La Venta y Tres Zapotes, México"
+     },
+     "text": {
+      "en": "Seventeen giant basalt heads, up to 3.4 m tall, each with its own headdress: probably portraits of Olmec rulers. Their faces look like those of people still living in Veracruz and Tabasco.",
+      "es": "Diecisiete cabezas gigantes de basalto, de hasta 3,4 m, cada una con su propio tocado: probablemente retratos de gobernantes olmecas. Sus rostros se parecen a los de la gente que aún vive en Veracruz y Tabasco."
+     },
+     "status": {
+      "en": "Xalapa Museum of Anthropology, National Museum of Anthropology (Mexico City) and Villahermosa",
+      "es": "Museo de Antropología de Xalapa, Museo Nacional de Antropología (Ciudad de México) y Villahermosa"
+     },
+     "wiki": {
+      "en": "Olmec colossal heads",
+      "es": "Cabeza colosal"
+     }
+    },
+    {
+     "id": "xalapa-museum-of-anthropology",
+     "name": {
+      "en": "Xalapa Museum of Anthropology",
+      "es": "Museo de Antropología de Xalapa"
+     },
+     "at": [
+      -96.931,
+      19.5505
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1957",
+     "place": {
+      "en": "Xalapa, Veracruz, Mexico",
+      "es": "Xalapa, Veracruz, México"
+     },
+     "text": {
+      "en": "The museum of the University of Veracruz, founded in 1957; its present building opened in 1986. It keeps seven of the San Lorenzo heads among thousands of works of the Gulf Coast's ancient peoples.",
+      "es": "El museo de la Universidad Veracruzana, fundado en 1957; su edificio actual abrió en 1986. Guarda siete de las cabezas de San Lorenzo entre miles de obras de los pueblos antiguos de la costa del golfo."
+     },
+     "wiki": {
+      "en": "Xalapa Museum of Anthropology",
+      "es": "Museo de Antropología de Xalapa"
+     }
+    },
+    {
+     "id": "museo-nacional-de-antropologia",
+     "name": {
+      "en": "National Museum of Anthropology",
+      "es": "Museo Nacional de Antropología"
+     },
+     "at": [
+      -99.1861,
+      19.4261
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1964",
+     "place": {
+      "en": "Chapultepec, Mexico City, Mexico",
+      "es": "Chapultepec, Ciudad de México, México"
+     },
+     "text": {
+      "en": "Mexico's great museum of the ancient Americas, opened in Chapultepec Park in 1964. Two Olmec heads from San Lorenzo are on show there.",
+      "es": "El gran museo de la América antigua de México, abierto en el bosque de Chapultepec en 1964. Allí se exponen dos cabezas olmecas de San Lorenzo."
+     },
+     "wiki": {
+      "en": "National Museum of Anthropology (Mexico)",
+      "es": "Museo Nacional de Antropología (México)"
+     }
+    }
+   ]
+  },
+  {
+   "date": "-900",
+   "title": {
+    "en": "The terracottas of Nok",
+    "es": "Las terracotas de Nok"
+   },
+   "text": {
+    "en": "In central Nigeria, the Nok people made nearly life-size terracotta figures with finely dressed hair from about 900 BC: the oldest large figure sculpture in Africa outside Egypt.",
+    "es": "En el centro de Nigeria, el pueblo nok hizo figuras de terracota casi de tamaño natural, con peinados muy elaborados, desde hacia el 900 a. C.: la escultura figurativa grande más antigua de África fuera de Egipto."
+   },
+   "details": {
+    "en": "The first Nok terracotta turned up in 1928 in a tin mine near the village of Nok. In 1943 a mine clerk used another head as a scarecrow in his yam field for a year, until the archaeologist Bernard Fagg noticed it. The figures are hollow, built up in coils of clay, with large eyes, elaborate hairstyles and jewellery; some hold bows, and two people paddle a canoe. Since the 1970s, and on a huge scale since the 1990s, looters have dug up the sites to sell figures abroad: a German–Nigerian project found that more than 90% of the known sites had been looted, and over 1,000 sculptures have been smuggled to Europe, the United States and Japan. Nigeria forbids their export without a permit, and in 2013 France returned five statuettes stolen in 2010 and seized by its customs.",
+    "es": "La primera terracota nok apareció en 1928 en una mina de estaño cerca del pueblo de Nok. En 1943, el encargado de una mina usó otra cabeza como espantapájaros en su campo de ñame durante un año, hasta que el arqueólogo Bernard Fagg se fijó en ella. Las figuras son huecas, hechas con rollos de arcilla, con grandes ojos, peinados elaborados y joyas; algunas sostienen arcos, y dos personas reman en una canoa. Desde los años setenta, y a gran escala desde los noventa, los saqueadores han excavado los sitios para vender figuras en el extranjero: un proyecto germano-nigeriano halló que más del 90 % de los sitios conocidos habían sido saqueados, y más de 1000 esculturas han salido de contrabando hacia Europa, Estados Unidos y Japón. Nigeria prohíbe exportarlas sin permiso, y en 2013 Francia devolvió cinco estatuillas robadas en 2010 e incautadas por su aduana."
+   },
+   "camera": {
+    "lon": 5,
+    "lat": 29,
+    "zoom": 1.9
+   },
+   "moves": [
+    {
+     "side": "abroad",
+     "path": [
+      [
+       8.023,
+       9.492
+      ],
+      [
+       7.2,
+       30.0
+      ],
+      [
+       2.3358,
+       48.8611
+      ]
+     ],
+     "label": {
+      "en": "Five statuettes, stolen in 2010",
+      "es": "Cinco estatuillas, robadas en 2010"
+     }
+    },
+    {
+     "side": "returned",
+     "path": [
+      [
+       2.1,
+       48.6
+      ],
+      [
+       3.2,
+       30.0
+      ],
+      [
+       7.4951,
+       9.0579
+      ]
+     ],
+     "label": {
+      "en": "Returned to Nigeria, 2013",
+      "es": "Devueltas a Nigeria, 2013"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "nok-culture",
+     "name": {
+      "en": "Nok culture",
+      "es": "Cultura nok"
+     },
+     "at": [
+      8.0204,
+      9.4903
+     ],
+     "cat": "sculpture",
+     "type": "culture",
+     "date": "-1500",
+     "until": "-1",
+     "place": {
+      "en": "Nok, Kaduna State, Nigeria",
+      "es": "Nok, estado de Kaduna, Nigeria"
+     },
+     "text": {
+      "en": "A farming people of central Nigeria, about 1500 BC to 1 BC, who grew pearl millet and worked iron. They are named after the village of Nok, where their terracottas were first found in 1928.",
+      "es": "Un pueblo agricultor del centro de Nigeria, de hacia el 1500 a. C. al 1 a. C., que cultivaba mijo perla y trabajaba el hierro. Su nombre viene del pueblo de Nok, donde se hallaron sus terracotas en 1928."
+     },
+     "wiki": {
+      "en": "Nok culture",
+      "es": "Cultura Nok"
+     }
+    },
+    {
+     "id": "nok-terracottas",
+     "name": {
+      "en": "Nok terracottas",
+      "es": "Terracotas nok"
+     },
+     "at": [
+      8.023,
+      9.492
+     ],
+     "cat": "sculpture",
+     "type": "work",
+     "date": "-900",
+     "end": "1",
+     "by": {
+      "en": "Nok artists",
+      "es": "Artistas nok"
+     },
+     "place": {
+      "en": "Nok, Kaduna State, Nigeria",
+      "es": "Nok, estado de Kaduna, Nigeria"
+     },
+     "text": {
+      "en": "Hollow clay heads and figures, nearly life-size, with large eyes, elaborate hairstyles and jewellery, made from about 900 BC to around the turn of the era. Most survive only in pieces, like the head in the picture.",
+      "es": "Cabezas y figuras huecas de arcilla, casi de tamaño natural, con grandes ojos, peinados elaborados y joyas, hechas desde hacia el 900 a. C. hasta el cambio de era. Casi todas se conservan en pedazos, como la de la imagen."
+     },
+     "status": {
+      "en": "Museums in Nigeria and abroad; many were looted",
+      "es": "Museos de Nigeria y del extranjero; muchas fueron saqueadas"
+     },
+     "img": "Terracotta head.jpg",
+     "wiki": {
+      "en": "Nok culture",
+      "es": "Cultura Nok"
+     }
+    }
+   ]
+  },
+  {
+   "date": "-569",
+   "title": {
+    "en": "Babylon's blue gate",
+    "es": "La puerta azul de Babilonia"
+   },
+   "text": {
+    "en": "Around 569 BC Nebuchadnezzar II built the Ishtar Gate of Babylon, faced with blue glazed bricks showing bulls and dragons. German archaeologists took its bricks to Berlin, where it was rebuilt by 1930.",
+    "es": "Hacia el 569 a. C., Nabucodonosor II construyó la puerta de Istar de Babilonia, revestida de ladrillos vidriados azules con toros y dragones. Arqueólogos alemanes llevaron sus ladrillos a Berlín, donde se reconstruyó hacia 1930."
+   },
+   "details": {
+    "en": "The gate, 15 m high, was the eighth gate of the inner city, on the Processional Way where statues of the gods were paraded at New Year. Its bricks were pressed in moulds, glazed blue to look like lapis lazuli and fired: bulls stood for the storm god Adad and dragons for Marduk, and 120 lions lined the road. Robert Koldewey dug Babylon from 1899 to 1914 for the German Oriental Society, which wanted finds to show for its money; of the 120 lions, the Germans took 118. Hundreds of crates of fragments went to Berlin, where they were cleaned of salt and pieced together with new bricks, and the smaller front gate was rebuilt in the Pergamon Museum. Iraq asked for the gate's return in 2002 and 2009. Some argue it is safer in Berlin, away from Iraq's wars; others note that the museum itself was bombed in the Second World War.",
+    "es": "La puerta, de 15 m de alto, era la octava de la ciudad interior, sobre la Vía Procesional, por donde en Año Nuevo se paseaban las estatuas de los dioses. Sus ladrillos se prensaban en moldes, se vidriaban de azul para parecer lapislázuli y se cocían: los toros representaban al dios de la tormenta, Adad, y los dragones a Marduk, y 120 leones adornaban la vía. Robert Koldewey excavó Babilonia de 1899 a 1914 para la Sociedad Oriental Alemana, que quería hallazgos que justificaran su dinero; de los 120 leones, los alemanes se llevaron 118. Cientos de cajas de fragmentos fueron a Berlín, donde se les quitó la sal y se armaron con ladrillos nuevos, y la puerta delantera, la más pequeña, se reconstruyó en el Museo de Pérgamo. Irak pidió su devolución en 2002 y 2009. Algunos sostienen que está más segura en Berlín, lejos de las guerras de Irak; otros recuerdan que el propio museo fue bombardeado en la Segunda Guerra Mundial."
+   },
+   "camera": {
+    "lon": 28,
+    "lat": 42.5,
+    "zoom": 2.3
+   },
+   "moves": [
+    {
+     "side": "abroad",
+     "path": [
+      [
+       44.4222,
+       32.5433
+      ],
+      [
+       13.396,
+       52.521
+      ]
+     ],
+     "label": {
+      "en": "To Berlin",
+      "es": "A Berlín"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "babylon",
+     "name": {
+      "en": "Babylon",
+      "es": "Babilonia"
+     },
+     "at": [
+      44.4211,
+      32.5425
+     ],
+     "cat": "craft",
+     "type": "site",
+     "date": "-2300",
+     "place": {
+      "en": "Near Hillah, Babil, Iraq",
+      "es": "Cerca de Hilla, Babil, Irak"
+     },
+     "text": {
+      "en": "The great city of Mesopotamia for 1,500 years. Nebuchadnezzar II rebuilt it on a grand scale in the 6th century BC; its ruins became a World Heritage Site in 2019.",
+      "es": "La gran ciudad de Mesopotamia durante 1500 años. Nabucodonosor II la reconstruyó a lo grande en el siglo VI a. C.; sus ruinas son Patrimonio de la Humanidad desde 2019."
+     },
+     "wiki": {
+      "en": "Babylon",
+      "es": "Babilonia (ciudad)"
+     }
+    },
+    {
+     "id": "ishtar-gate",
+     "name": {
+      "en": "Ishtar Gate",
+      "es": "Puerta de Istar"
+     },
+     "at": [
+      44.4222,
+      32.5433
+     ],
+     "cat": "craft",
+     "type": "work",
+     "date": "-569",
+     "by": {
+      "en": "Builders and glaze makers of Nebuchadnezzar II",
+      "es": "Constructores y esmaltadores de Nabucodonosor II"
+     },
+     "place": {
+      "en": "Babylon, Iraq",
+      "es": "Babilonia, Irak"
+     },
+     "text": {
+      "en": "The eighth gate of Babylon's inner city, 15 m high, faced with blue glazed bricks showing bulls and dragons. Its front part was rebuilt in Berlin; lions and dragons from it are in museums around the world.",
+      "es": "La octava puerta de la ciudad interior de Babilonia, de 15 m, revestida de ladrillos vidriados azules con toros y dragones. Su parte delantera se rehízo en Berlín; leones y dragones suyos están en museos de todo el mundo."
+     },
+     "details": {
+      "en": "Its dedication, 60 lines of cuneiform in glazed bricks, has Nebuchadnezzar say that he placed wild bulls and ferocious dragons in the gateways 'so that mankind might gaze on them in wonder'. Lions and dragons from the gate and the Processional Way are in Istanbul, Copenhagen, Paris, Detroit, New York, Chicago and other cities. A smaller copy of the gate was built at Babylon in the 1980s.",
+      "es": "Su dedicatoria, 60 líneas de cuneiforme en ladrillos vidriados, hace decir a Nabucodonosor que puso toros salvajes y dragones feroces en la entrada «para que la humanidad los contemple asombrada». Leones y dragones de la puerta y de la Vía Procesional están en Estambul, Copenhague, París, Detroit, Nueva York, Chicago y otras ciudades. En los años ochenta se construyó en Babilonia una copia más pequeña de la puerta."
+     },
+     "status": {
+      "en": "Front gate rebuilt in the Pergamon Museum, Berlin; Iraq has asked for its return",
+      "es": "Puerta delantera reconstruida en el Museo de Pérgamo, Berlín; Irak ha pedido su devolución"
+     },
+     "wiki": {
+      "en": "Ishtar Gate",
+      "es": "Puerta de Istar"
+     }
+    },
+    {
+     "id": "pergamon-museum",
+     "name": {
+      "en": "Pergamon Museum",
+      "es": "Museo de Pérgamo"
+     },
+     "at": [
+      13.396,
+      52.521
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1930",
+     "place": {
+      "en": "Museum Island, Berlin, Germany",
+      "es": "Isla de los Museos, Berlín, Alemania"
+     },
+     "text": {
+      "en": "A museum on Berlin's Museum Island, built from 1910 to 1930 for great finds of German digs: the Pergamon Altar and the Ishtar Gate. Closed in 2023 for rebuilding, it is to reopen in stages from 2027.",
+      "es": "Un museo de la Isla de los Museos de Berlín, construido de 1910 a 1930 para grandes hallazgos de excavaciones alemanas: el altar de Pérgamo y la puerta de Istar. Cerrado en 2023 por obras, reabrirá por etapas desde 2027."
+     },
+     "wiki": {
+      "en": "Pergamon Museum",
+      "es": "Museo de Pérgamo"
+     }
+    }
+   ]
+  },
+  {
+   "date": "-438",
+   "title": {
+    "en": "The Parthenon sculptures",
+    "es": "Las esculturas del Partenón"
+   },
+   "text": {
+    "en": "On the Acropolis of Athens, sculptors directed by Phidias carved the Parthenon's frieze, metopes and pediments in 447–432 BC. About half of what survives is in London, and Greece asks for it back.",
+    "es": "En la Acrópolis de Atenas, escultores dirigidos por Fidias tallaron el friso, las metopas y los frontones del Partenón entre el 447 y el 432 a. C. Cerca de la mitad de lo que se conserva está en Londres, y Grecia pide que vuelva."
+   },
+   "details": {
+    "en": "The temple of Athena was decorated with a frieze 160 m long showing a procession, 92 carved metopes and two great pediments full of gods. In 1687 a Venetian shell blew up the gunpowder that the Ottoman garrison kept inside, and the building has stood in ruins since. Between 1801 and 1812 agents of Lord Elgin, Britain's ambassador to the Ottoman sultan, removed about half of the sculptures that survived, with a permission from Ottoman officials whose legality is disputed. Britain bought them in 1816 for the British Museum. Greece has formally asked for their return since 1983, and in 2009 it opened the Acropolis Museum, where the sculptures face outwards as they did on the temple. The British Museum says they were acquired legally and are best seen among the cultures of the world; talks between the two sides go on.",
+    "es": "El templo de Atenea estaba decorado con un friso de 160 m que mostraba una procesión, 92 metopas talladas y dos grandes frontones llenos de dioses. En 1687 un proyectil veneciano hizo estallar la pólvora que la guarnición otomana guardaba dentro, y desde entonces el edificio está en ruinas. Entre 1801 y 1812, agentes de lord Elgin, embajador británico ante el sultán otomano, retiraron cerca de la mitad de las esculturas que quedaban, con un permiso de funcionarios otomanos cuya legalidad se discute. Gran Bretaña las compró en 1816 para el Museo Británico. Grecia pide formalmente su devolución desde 1983, y en 2009 abrió el Museo de la Acrópolis, donde las esculturas miran hacia afuera, como en el templo. El Museo Británico dice que se adquirieron legalmente y que se aprecian mejor entre las culturas del mundo; las conversaciones entre ambas partes continúan."
+   },
+   "camera": {
+    "lon": 11.5,
+    "lat": 45,
+    "zoom": 2.6
+   },
+   "moves": [
+    {
+     "side": "abroad",
+     "path": [
+      [
+       23.727,
+       37.9713
+      ],
+      [
+       -0.1269,
+       51.5194
+      ]
+     ],
+     "label": {
+      "en": "Elgin's agents, 1801–1812",
+      "es": "Los agentes de Elgin, 1801–1812"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "parthenon",
+     "name": {
+      "en": "Parthenon",
+      "es": "Partenón"
+     },
+     "at": [
+      23.7266,
+      37.9715
+     ],
+     "cat": "sculpture",
+     "type": "structure",
+     "date": "-447",
+     "end": "-432",
+     "place": {
+      "en": "Acropolis, Athens, Greece",
+      "es": "Acrópolis, Atenas, Grecia"
+     },
+     "text": {
+      "en": "The marble temple of Athena on the Acropolis, built in 447–432 BC under Pericles, with sculptures directed by Phidias. In ruins since an explosion in 1687, and under restoration.",
+      "es": "El templo de mármol de Atenea en la Acrópolis, construido entre el 447 y el 432 a. C. en tiempos de Pericles, con esculturas dirigidas por Fidias. En ruinas desde una explosión en 1687, y en restauración."
+     },
+     "wiki": {
+      "en": "Parthenon",
+      "es": "Partenón"
+     }
+    },
+    {
+     "id": "parthenon-marbles",
+     "name": {
+      "en": "Parthenon Marbles",
+      "es": "Mármoles del Partenón"
+     },
+     "at": [
+      23.727,
+      37.9713
+     ],
+     "cat": "sculpture",
+     "type": "work",
+     "date": "-447",
+     "end": "-432",
+     "by": {
+      "en": "Sculptors directed by Phidias",
+      "es": "Escultores dirigidos por Fidias"
+     },
+     "place": {
+      "en": "Parthenon, Athens, Greece",
+      "es": "Partenón, Atenas, Grecia"
+     },
+     "text": {
+      "en": "The frieze, metopes and pediment statues of the Parthenon, a high point of Greek sculpture. Removed by Lord Elgin's agents in 1801–1812, about half are in London; Greece asks for them back.",
+      "es": "El friso, las metopas y las estatuas de los frontones del Partenón, una cumbre de la escultura griega. Retiradas por los agentes de lord Elgin en 1801–1812, cerca de la mitad están en Londres; Grecia pide que vuelvan."
+     },
+     "status": {
+      "en": "About half in the British Museum, London, most of the rest in the Acropolis Museum, Athens; Greece asks for the return of the London pieces",
+      "es": "Cerca de la mitad en el Museo Británico, Londres, y casi todo el resto en el Museo de la Acrópolis, Atenas; Grecia pide la devolución de las piezas de Londres"
+     },
+     "img": "East pediment O Parthenon BM n2.jpg",
+     "wiki": {
+      "en": "Elgin Marbles",
+      "es": "Mármoles de Elgin"
+     }
+    },
+    {
+     "id": "acropolis-museum",
+     "name": {
+      "en": "Acropolis Museum",
+      "es": "Museo de la Acrópolis"
+     },
+     "at": [
+      23.7283,
+      37.9691
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "2009-06-20",
+     "place": {
+      "en": "Athens, Greece",
+      "es": "Atenas, Grecia"
+     },
+     "text": {
+      "en": "A glass-walled museum opened in 2009 at the foot of the Acropolis, 280 m from the Parthenon. Its top floor follows the temple's outline and shows its sculptures facing outwards, as they were.",
+      "es": "Un museo de muros de vidrio abierto en 2009 al pie de la Acrópolis, a 280 m del Partenón. Su planta alta sigue el contorno del templo y muestra sus esculturas mirando hacia afuera, como estaban."
+     },
+     "img": "Acropolis and Acropolis Museum.jpg",
+     "wiki": {
+      "en": "Acropolis Museum",
+      "es": "Museo de la Acrópolis"
+     }
+    },
+    {
+     "id": "british-museum",
+     "name": {
+      "en": "British Museum",
+      "es": "Museo Británico"
+     },
+     "at": [
+      -0.1269,
+      51.5194
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1753-06-07",
+     "place": {
+      "en": "Bloomsbury, London, United Kingdom",
+      "es": "Bloomsbury, Londres, Reino Unido"
+     },
+     "text": {
+      "en": "Founded in 1753, it holds about eight million objects, the largest collection of its kind, among them the Standard of Ur and about half of the surviving Parthenon sculptures. Several countries ask for objects back.",
+      "es": "Fundado en 1753, guarda unos ocho millones de objetos, la mayor colección de su tipo, entre ellos el Estandarte de Ur y cerca de la mitad de las esculturas del Partenón que se conservan. Varios países reclaman objetos."
+     },
+     "details": {
+      "en": "Much of its collection came from archaeological digs it paid for, such as Leonard Woolley's at Ur, from purchases like Lord Elgin's marbles in 1816, and from the age of the British Empire. A law of 1963, the British Museum Act, forbids it to give away objects from its collection except in a few special cases, so any permanent return would need Parliament. It lends objects abroad and argues that its galleries let visitors compare the cultures of the whole world.",
+      "es": "Gran parte de su colección vino de excavaciones que pagó, como la de Leonard Woolley en Ur, de compras como la de los mármoles de lord Elgin en 1816 y de la época del Imperio británico. Una ley de 1963, la British Museum Act, le prohíbe deshacerse de los objetos de su colección salvo en unos pocos casos especiales, así que cualquier devolución definitiva necesitaría al Parlamento. Presta objetos al extranjero y sostiene que sus salas permiten comparar las culturas de todo el mundo."
+     },
+     "wiki": {
+      "en": "British Museum",
+      "es": "Museo Británico"
+     }
+    }
+   ]
+  },
+  {
+   "date": "-210",
+   "title": {
+    "en": "An army of clay",
+    "es": "Un ejército de barro"
+   },
+   "text": {
+    "en": "Near Xi'an, thousands of life-size clay soldiers, horses and chariots were made to guard the tomb of China's First Emperor, who died in 210 BC. Farmers digging a well found them in 1974.",
+    "es": "Cerca de Xi'an, miles de soldados, caballos y carros de barro de tamaño natural se hicieron para custodiar la tumba del primer emperador de China, que murió en el 210 a. C. Unos campesinos que cavaban un pozo los hallaron en 1974."
+   },
+   "details": {
+    "en": "On 29 March 1974 Yang Zhifa, his five brothers and their neighbour Wang Puzhi were digging a well 1.5 km from the emperor's burial mound when they struck pieces of clay figures. The three pits hold an estimated 8,000 soldiers, 130 chariots with 520 horses and 150 cavalry horses; other pits held officials, acrobats and musicians. The figures vary in height and dress by rank, and no two faces are quite the same, though scholars have found ten basic face shapes. They were once brightly painted, but in Xi'an's dry air the paint can flake off within minutes of being uncovered, one reason why the emperor's own tomb has never been opened. The army stays where it was buried, under great halls, a World Heritage Site since 1987; groups of figures travel to exhibitions abroad, the first to Melbourne in 1982.",
+    "es": "El 29 de marzo de 1974, Yang Zhifa, sus cinco hermanos y su vecino Wang Puzhi cavaban un pozo a 1,5 km del túmulo del emperador cuando dieron con pedazos de figuras de barro. Las tres fosas guardan unos 8000 soldados, 130 carros con 520 caballos y 150 caballos de caballería; otras fosas tenían funcionarios, acróbatas y músicos. Las figuras varían en altura y vestimenta según su rango, y no hay dos caras iguales, aunque los expertos hallaron diez formas básicas de rostro. Estaban pintadas de colores vivos, pero en el aire seco de Xi'an la pintura puede desprenderse a los pocos minutos de quedar al descubierto, una de las razones por las que la tumba del emperador nunca se ha abierto. El ejército sigue donde lo enterraron, bajo grandes naves, Patrimonio de la Humanidad desde 1987; grupos de figuras viajan a exposiciones en el extranjero, la primera en Melbourne en 1982."
+   },
+   "camera": {
+    "lon": 109.26,
+    "lat": 34.38,
+    "zoom": 5.5
+   },
+   "places": [
+    {
+     "id": "terracotta-army",
+     "name": {
+      "en": "Terracotta Army",
+      "es": "Guerreros de terracota"
+     },
+     "at": [
+      109.2731,
+      34.385
+     ],
+     "cat": "sculpture",
+     "type": "work",
+     "date": "-210",
+     "by": {
+      "en": "Workshops of the First Emperor of Qin",
+      "es": "Talleres del primer emperador Qin"
+     },
+     "place": {
+      "en": "Lintong District, Xi'an, Shaanxi, China",
+      "es": "Distrito de Lintong, Xi'an, Shaanxi, China"
+     },
+     "text": {
+      "en": "More than 8,000 life-size clay soldiers, with horses and chariots, made in the late 3rd century BC to guard the tomb of Qin Shi Huang. Most still stand in their pits.",
+      "es": "Más de 8000 soldados de barro de tamaño natural, con caballos y carros, hechos a fines del siglo III a. C. para custodiar la tumba de Qin Shi Huang. La mayoría sigue en sus fosas."
+     },
+     "status": {
+      "en": "In its pits near Xi'an, under museum halls",
+      "es": "En sus fosas cerca de Xi'an, bajo naves de museo"
+     },
+     "wiki": {
+      "en": "Terracotta Army",
+      "es": "Guerreros de terracota"
+     }
+    },
+    {
+     "id": "mausoleum-of-qin-shi-huang",
+     "name": {
+      "en": "Mausoleum of Qin Shi Huang",
+      "es": "Mausoleo de Qin Shi Huang"
+     },
+     "at": [
+      109.2539,
+      34.3817
+     ],
+     "cat": "sculpture",
+     "type": "site",
+     "date": "-246",
+     "end": "-208",
+     "place": {
+      "en": "Mount Li, Lintong, Xi'an, China",
+      "es": "Monte Li, Lintong, Xi'an, China"
+     },
+     "text": {
+      "en": "The burial mound of the First Emperor, begun in 246 BC. The historian Sima Qian wrote of rivers of mercury inside; high levels of mercury in the soil suggest he may have been right. It has never been opened.",
+      "es": "El túmulo del primer emperador, empezado en el 246 a. C. El historiador Sima Qian habló de ríos de mercurio en su interior; los altos niveles de mercurio del suelo sugieren que quizá tenía razón. Nunca se ha abierto."
+     },
+     "wiki": {
+      "en": "Mausoleum of Qin Shi Huang",
+      "es": "Mausoleo de Qin Shi Huang"
+     }
+    }
+   ]
+  },
+  {
+   "date": "-190",
+   "title": {
+    "en": "Two goddesses in the Louvre",
+    "es": "Dos diosas en el Louvre"
+   },
+   "text": {
+    "en": "Greek sculptors carved the Winged Victory of Samothrace about 190 BC and the Venus de Milo later in the 2nd century BC. Found on two Aegean islands in 1863 and 1820, both went to the Louvre.",
+    "es": "Escultores griegos tallaron la Victoria alada de Samotracia hacia el 190 a. C. y la Venus de Milo más tarde, en el siglo II a. C. Halladas en dos islas del Egeo en 1863 y 1820, ambas fueron al Louvre."
+   },
+   "details": {
+    "en": "On 8 April 1820 a farmer on Milos, then part of the Ottoman Empire, dug up the Venus in pieces while a French sailor, Olivier Voutier, looked on. French diplomats bought her, King Louis XVIII gave her to the Louvre, and she has been there since 1821, never given new arms. In 1863 Charles Champoiseau, a French consular official, found the Victory in the sanctuary of the Great Gods on Samothrace and sent her to Paris; in 1879 he came back for the blocks of her base, carved as the prow of a warship. Since 1884 she has stood at the top of the Louvre's Daru staircase. Greece regards the Victory as taken illegally and has asked for her, but she remains in Paris. During the Second World War both statues were hidden in the Château de Valençay.",
+    "es": "El 8 de abril de 1820, un campesino de Milo, entonces parte del Imperio otomano, desenterró la Venus en pedazos mientras un marino francés, Olivier Voutier, miraba. Diplomáticos franceses la compraron, el rey Luis XVIII la dio al Louvre, y está allí desde 1821, sin que le pusieran brazos nuevos. En 1863 Charles Champoiseau, un funcionario consular francés, encontró la Victoria en el santuario de los Grandes Dioses de Samotracia y la envió a París; en 1879 volvió por los bloques de su base, tallados como la proa de un barco de guerra. Desde 1884 está en lo alto de la escalera Daru del Louvre. Grecia considera que la Victoria se sacó ilegalmente y la ha reclamado, pero sigue en París. Durante la Segunda Guerra Mundial ambas estatuas se escondieron en el castillo de Valençay."
+   },
+   "camera": {
+    "lon": 14,
+    "lat": 43.5,
+    "zoom": 2.8
+   },
+   "moves": [
+    {
+     "side": "abroad",
+     "path": [
+      [
+       25.5301,
+       40.5008
+      ],
+      [
+       2.3358,
+       48.8611
+      ]
+     ],
+     "label": {
+      "en": "To Paris, 1863",
+      "es": "A París, 1863"
+     }
+    },
+    {
+     "side": "abroad",
+     "path": [
+      [
+       24.4219,
+       36.7356
+      ],
+      [
+       2.3358,
+       48.8611
+      ]
+     ],
+     "label": {
+      "en": "To Paris, 1820",
+      "es": "A París, 1820"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "winged-victory-of-samothrace",
+     "name": {
+      "en": "Winged Victory of Samothrace",
+      "es": "Victoria alada de Samotracia"
+     },
+     "at": [
+      25.5301,
+      40.5008
+     ],
+     "cat": "sculpture",
+     "type": "work",
+     "date": "-190",
+     "by": {
+      "en": "Unknown Hellenistic sculptor",
+      "es": "Escultor helenístico desconocido"
+     },
+     "place": {
+      "en": "Sanctuary of the Great Gods, Samothrace, Greece",
+      "es": "Santuario de los Grandes Dioses, Samotracia, Grecia"
+     },
+     "text": {
+      "en": "The goddess Victory landing on the prow of a warship, wings spread and robes pressed by the wind, 2.75 m tall, about 190 BC: one of the few great Hellenistic statues that survive in the original.",
+      "es": "La diosa Victoria posándose en la proa de un barco de guerra, con las alas abiertas y la ropa pegada por el viento, de 2,75 m, hacia el 190 a. C.: una de las pocas grandes estatuas helenísticas que se conservan en original."
+     },
+     "status": {
+      "en": "Louvre, Paris; Greece asks for its return",
+      "es": "Museo del Louvre, París; Grecia pide su devolución"
+     },
+     "wiki": {
+      "en": "Winged Victory of Samothrace",
+      "es": "Victoria alada de Samotracia"
+     }
+    },
+    {
+     "id": "venus-de-milo",
+     "name": {
+      "en": "Venus de Milo",
+      "es": "Venus de Milo"
+     },
+     "at": [
+      24.4219,
+      36.7356
+     ],
+     "cat": "sculpture",
+     "type": "work",
+     "date": "-150",
+     "by": {
+      "en": "Perhaps Alexandros of Antioch",
+      "es": "Quizá Alejandro de Antioquía"
+     },
+     "place": {
+      "en": "Milos, Greece",
+      "es": "Milo, Grecia"
+     },
+     "text": {
+      "en": "A marble Aphrodite more than 2 m tall, carved perhaps between 160 and 110 BC and found without her arms on the island of Milos in 1820. One of the most famous statues in the world.",
+      "es": "Una Afrodita de mármol de más de 2 m, tallada quizá entre el 160 y el 110 a. C. y hallada sin brazos en la isla de Milo en 1820. Una de las estatuas más famosas del mundo."
+     },
+     "details": {
+      "en": "A hand holding an apple was found with her, and recent studies suggest it belongs to the statue. A lost inscription found nearby named a sculptor, Alexandros of Antioch on the Maeander, but its link to the Venus is disputed. She is carved from marble of the island of Paros, and she has left France only once, for exhibitions in Tokyo and Kyoto in 1964.",
+      "es": "Junto a ella se halló una mano que sostiene una manzana, y estudios recientes sugieren que es parte de la estatua. Una inscripción perdida hallada cerca nombraba a un escultor, Alejandro de Antioquía del Meandro, pero su relación con la Venus se discute. Está tallada en mármol de la isla de Paros, y solo ha salido de Francia una vez, para exposiciones en Tokio y Kioto en 1964."
+     },
+     "status": {
+      "en": "Louvre, Paris",
+      "es": "Museo del Louvre, París"
+     },
+     "wiki": {
+      "en": "Venus de Milo",
+      "es": "Venus de Milo"
+     }
+    },
+    {
+     "id": "louvre",
+     "name": {
+      "en": "Louvre",
+      "es": "Museo del Louvre"
+     },
+     "at": [
+      2.3358,
+      48.8611
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1793-08-10",
+     "place": {
+      "en": "Paris, France",
+      "es": "París, Francia"
+     },
+     "text": {
+      "en": "The former royal palace in Paris that opened as a public museum on 10 August 1793. The most visited museum in the world, with 9 million visitors in 2025, it shows the Venus de Milo and the Winged Victory.",
+      "es": "El antiguo palacio real de París que abrió como museo público el 10 de agosto de 1793. Es el museo más visitado del mundo, con 9 millones de visitantes en 2025, y expone la Venus de Milo y la Victoria alada."
+     },
+     "details": {
+      "en": "Napoleon's armies filled it with art seized across Europe, Egypt and Syria, and for a while it was called the Musée Napoléon; after his fall in 1815 many of those works were returned to their owners, among them the Laocoön, which went back to the Vatican. The Venus de Milo arrived soon after, in 1821, when the museum had just lost many of those works, and the Winged Victory in 1864.",
+      "es": "Los ejércitos de Napoleón lo llenaron de arte confiscado por Europa, Egipto y Siria, y durante un tiempo se llamó Museo Napoleón; tras su caída en 1815, muchas de esas obras se devolvieron a sus dueños, entre ellas el Laocoonte, que volvió al Vaticano. La Venus de Milo llegó poco después, en 1821, cuando el museo acababa de perder muchas de esas obras, y la Victoria alada en 1864."
+     },
+     "wiki": {
+      "en": "Louvre",
+      "es": "Museo del Louvre"
+     }
+    }
+   ]
+  },
+  {
+   "date": "-20",
+   "title": {
+    "en": "Rome's marbles and mosaics",
+    "es": "Mármoles y mosaicos de Roma"
+   },
+   "text": {
+    "en": "Rome copied and collected Greek art and made its own: the statue of Augustus from Prima Porta, the Laocoön group, and the Alexander Mosaic from a house in Pompeii, buried by Vesuvius in AD 79.",
+    "es": "Roma copió y coleccionó arte griego e hizo el suyo: la estatua de Augusto de Prima Porta, el grupo del Laocoonte y el mosaico de Alejandro de una casa de Pompeya, sepultada por el Vesubio en el 79 d. C."
+   },
+   "details": {
+    "en": "The Augustus, found in 1863 at the villa of his wife Livia, is probably a 1st-century AD marble copy of a bronze: his breastplate shows a Parthian handing back Roman standards lost years before, which happened in 20 BC. Like most ancient statues, it was once painted. The Laocoön, a Trojan priest and his sons fighting sea serpents, was dug up in a Roman vineyard in 1506, and Michelangelo came to see it at once; the Roman writer Pliny named three sculptors from Rhodes. Napoleon's army took it to Paris in 1798, and it came back to the Vatican in 1816. The Alexander Mosaic, about 1.5 million tiny stones showing Alexander the Great fighting Darius III, was made around 120–100 BC, probably after a Greek painting. Found in 1831, it was moved to Naples in 1843, and a copy now lies in its place in Pompeii.",
+    "es": "El Augusto, hallado en 1863 en la villa de su esposa Livia, es probablemente una copia en mármol del siglo I d. C. de una estatua de bronce: su coraza muestra a un parto que devuelve unos estandartes romanos perdidos años antes, algo que ocurrió en el 20 a. C. Como casi todas las estatuas antiguas, estaba pintado. El Laocoonte, un sacerdote troyano y sus hijos luchando contra serpientes marinas, se desenterró en un viñedo de Roma en 1506, y Miguel Ángel fue a verlo enseguida; el escritor romano Plinio nombró a tres escultores de Rodas. El ejército de Napoleón se lo llevó a París en 1798, y volvió al Vaticano en 1816. El mosaico de Alejandro, de un millón y medio de piedrecitas que muestran a Alejandro Magno luchando contra Darío III, se hizo hacia el 120–100 a. C., probablemente a partir de una pintura griega. Hallado en 1831, se trasladó a Nápoles en 1843, y hoy una copia ocupa su lugar en Pompeya."
+   },
+   "camera": {
+    "lon": 8.8,
+    "lat": 45.2,
+    "zoom": 3.6
+   },
+   "moves": [
+    {
+     "side": "home",
+     "path": [
+      [
+       14.4843,
+       40.7514
+      ],
+      [
+       14.2506,
+       40.8536
+      ]
+     ],
+     "label": {
+      "en": "To Naples, 1843",
+      "es": "A Nápoles, 1843"
+     }
+    },
+    {
+     "side": "abroad",
+     "path": [
+      [
+       12.4544,
+       41.9064
+      ],
+      [
+       7.4,
+       46.6
+      ],
+      [
+       2.3358,
+       48.8611
+      ]
+     ],
+     "label": {
+      "en": "Taken by Napoleon, 1798",
+      "es": "Se lo llevó Napoleón, 1798"
+     }
+    },
+    {
+     "side": "returned",
+     "path": [
+      [
+       2.3358,
+       48.8611
+      ],
+      [
+       10.4,
+       44.0
+      ],
+      [
+       12.4544,
+       41.9064
+      ]
+     ],
+     "label": {
+      "en": "Back to Rome, 1816",
+      "es": "De vuelta a Roma, 1816"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "augustus-of-prima-porta",
+     "name": {
+      "en": "Augustus of Prima Porta",
+      "es": "Augusto de Prima Porta"
+     },
+     "at": [
+      12.4936,
+      42.0021
+     ],
+     "cat": "sculpture",
+     "type": "work",
+     "date": "14",
+     "by": {
+      "en": "Roman sculptors, perhaps Greek",
+      "es": "Escultores romanos, quizá griegos"
+     },
+     "place": {
+      "en": "Villa of Livia, Prima Porta, Rome, Italy",
+      "es": "Villa de Livia, Prima Porta, Roma, Italia"
+     },
+     "text": {
+      "en": "A 2.08 m marble statue of the first Roman emperor as a commander addressing his troops, his breastplate showing a Parthian handing back lost Roman standards. Found in 1863 at his wife Livia's villa.",
+      "es": "Una estatua de mármol de 2,08 m del primer emperador romano como general que arenga a sus tropas, con una coraza que muestra a un parto devolviendo estandartes romanos perdidos. Hallada en 1863 en la villa de su esposa Livia."
+     },
+     "status": {
+      "en": "Vatican Museums, Vatican City",
+      "es": "Museos Vaticanos, Ciudad del Vaticano"
+     },
+     "wiki": {
+      "en": "Augustus of Prima Porta",
+      "es": "Augusto de Prima Porta"
+     }
+    },
+    {
+     "id": "laocoon",
+     "name": {
+      "en": "Laocoön and His Sons",
+      "es": "Laocoonte y sus hijos"
+     },
+     "at": [
+      12.5003,
+      41.8921
+     ],
+     "cat": "sculpture",
+     "type": "work",
+     "date": "-27",
+     "end": "68",
+     "by": {
+      "en": "Agesander, Athenodoros and Polydorus of Rhodes, according to Pliny",
+      "es": "Agesandro, Atenodoro y Polidoro de Rodas, según Plinio"
+     },
+     "place": {
+      "en": "Found on the Esquiline Hill, Rome, Italy",
+      "es": "Hallado en el monte Esquilino, Roma, Italia"
+     },
+     "text": {
+      "en": "The Trojan priest Laocoön and his two sons in the coils of sea serpents, a marble group just over 2 m high. Dug up in Rome in 1506, it deeply impressed Michelangelo.",
+      "es": "El sacerdote troyano Laocoonte y sus dos hijos atrapados por serpientes marinas, un grupo de mármol de algo más de 2 m. Desenterrado en Roma en 1506, impresionó mucho a Miguel Ángel."
+     },
+     "details": {
+      "en": "Its date is debated, from 200 BC to the AD 70s; most scholars now prefer the reign of the first emperors, 27 BC to AD 68. It may be an original or a copy of a bronze from Pergamon. It went on show in the Vatican, and the Vatican Museums date their founding to that same year, 1506.",
+      "es": "Su fecha se discute, del 200 a. C. a la década del 70 d. C.; hoy casi todos los expertos prefieren el reinado de los primeros emperadores, del 27 a. C. al 68 d. C. Puede ser un original o una copia de un bronce de Pérgamo. Se expuso en el Vaticano, y los Museos Vaticanos fechan su fundación en ese mismo año, 1506."
+     },
+     "status": {
+      "en": "Vatican Museums; in Paris from 1798 to 1816",
+      "es": "Museos Vaticanos; en París de 1798 a 1816"
+     },
+     "wiki": {
+      "en": "Laocoön and His Sons",
+      "es": "Laocoonte y sus hijos"
+     }
+    },
+    {
+     "id": "alexander-mosaic",
+     "name": {
+      "en": "Alexander Mosaic",
+      "es": "Mosaico de Alejandro"
+     },
+     "at": [
+      14.4843,
+      40.7514
+     ],
+     "cat": "painting",
+     "type": "work",
+     "date": "-120",
+     "end": "-100",
+     "by": {
+      "en": "Unknown mosaic makers, after a Greek painting",
+      "es": "Mosaiquistas anónimos, según una pintura griega"
+     },
+     "place": {
+      "en": "House of the Faun, Pompeii, Italy",
+      "es": "Casa del Fauno, Pompeya, Italia"
+     },
+     "text": {
+      "en": "A floor mosaic of about 1.5 million tiny stones, 5 m wide, showing Alexander the Great charging Darius III of Persia. Made around 120–100 BC for the House of the Faun in Pompeii.",
+      "es": "Un mosaico de suelo de un millón y medio de piedrecitas, de 5 m de ancho, que muestra a Alejandro Magno cargando contra Darío III de Persia. Hecho hacia el 120–100 a. C. para la Casa del Fauno de Pompeya."
+     },
+     "status": {
+      "en": "National Archaeological Museum, Naples",
+      "es": "Museo Arqueológico Nacional de Nápoles"
+     },
+     "wiki": {
+      "en": "Alexander Mosaic",
+      "es": "Mosaico de Issos"
+     }
+    },
+    {
+     "id": "vatican-museums",
+     "name": {
+      "en": "Vatican Museums",
+      "es": "Museos Vaticanos"
+     },
+     "at": [
+      12.4544,
+      41.9064
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1506",
+     "place": {
+      "en": "Vatican City",
+      "es": "Ciudad del Vaticano"
+     },
+     "text": {
+      "en": "The popes' museums, founded by Pope Julius II in the early 16th century, with the Laocoön, the Augustus of Prima Porta and Michelangelo's Sistine Chapel ceiling among their treasures.",
+      "es": "Los museos de los papas, fundados por el papa Julio II a comienzos del siglo XVI, con el Laocoonte, el Augusto de Prima Porta y el techo de la Capilla Sixtina de Miguel Ángel entre sus tesoros."
+     },
+     "img": "Museums in the Vatican City.jpg",
+     "wiki": {
+      "en": "Vatican Museums",
+      "es": "Museos Vaticanos"
+     }
+    },
+    {
+     "id": "naples-archaeological-museum",
+     "name": {
+      "en": "National Archaeological Museum of Naples",
+      "es": "Museo Arqueológico Nacional de Nápoles"
+     },
+     "at": [
+      14.2506,
+      40.8536
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1777",
+     "place": {
+      "en": "Naples, Italy",
+      "es": "Nápoles, Italia"
+     },
+     "text": {
+      "en": "A museum founded in 1777 that holds the great finds of Pompeii and Herculaneum, from the Alexander Mosaic to wall paintings, and the ancient sculptures of the Farnese collection.",
+      "es": "Un museo fundado en 1777 que guarda los grandes hallazgos de Pompeya y Herculano, del mosaico de Alejandro a pinturas murales, y las esculturas antiguas de la colección Farnesio."
+     },
+     "wiki": {
+      "en": "National Archaeological Museum, Naples",
+      "es": "Museo Arqueológico Nacional de Nápoles"
+     }
+    }
+   ]
+  },
+  {
+   "date": "100",
+   "title": {
+    "en": "The Buddha in a Greek robe",
+    "es": "Buda con túnica griega"
+   },
+   "text": {
+    "en": "In Gandhara, in today's Pakistan and Afghanistan, sculptors gave the Buddha a human form, with wavy hair and a toga-like robe learned from Greek art. Under the Kushan kings the style spread across Asia.",
+    "es": "En Gandhara, entre los actuales Pakistán y Afganistán, unos escultores dieron forma humana al Buda, con cabello ondulado y una túnica como una toga, aprendida del arte griego. Con los reyes kushán, el estilo se extendió por Asia."
+   },
+   "details": {
+    "en": "Alexander the Great's campaign and the Greek kingdoms that followed brought Greek art to the region, and the Mauryan emperor Ashoka spread Buddhism there. Earlier Buddhist art showed the Buddha only by symbols: a footprint, an empty seat, a tree. Sometime between the 2nd century BC and the 1st century AD, artists began to show him as a man, both in Gandhara and in Mathura, in India; which came first is still debated. Gandhara's Buddhas wear the Greek himation, stand in relaxed poses like Greek statues and have curly hair. The style flowered under the Kushan Empire and spread with Buddhism along the Silk Road to China, Korea and Japan. Many Gandharan sculptures are in the museums of Peshawar and Lahore, others far away, like the gold Bimaran casket, dug out of a stupa near Jalalabad by Charles Masson in the 1830s and now in the British Museum.",
+    "es": "La campaña de Alejandro Magno y los reinos griegos que la siguieron llevaron el arte griego a la región, y el emperador maurya Ashoka difundió allí el budismo. El arte budista anterior mostraba al Buda solo con símbolos: una huella, un asiento vacío, un árbol. En algún momento entre el siglo II a. C. y el siglo I d. C., algunos artistas empezaron a mostrarlo como un hombre, tanto en Gandhara como en Mathura, en la India; cuál fue primero aún se discute. Los budas de Gandhara visten el himatión griego, se paran con poses relajadas como las estatuas griegas y tienen el pelo rizado. El estilo floreció en el Imperio kushán y se extendió con el budismo por la Ruta de la Seda hasta China, Corea y Japón. Muchas esculturas de Gandhara están en los museos de Peshawar y Lahore, y otras muy lejos, como el relicario de oro de Bimaran, sacado de una estupa cerca de Jalalabad por Charles Masson en la década de 1830 y hoy en el Museo Británico."
+   },
+   "camera": {
+    "lon": 38,
+    "lat": 43,
+    "zoom": 1.6
+   },
+   "moves": [
+    {
+     "side": "abroad",
+     "path": [
+      [
+       70.3498,
+       34.4585
+      ],
+      [
+       -0.1269,
+       51.5194
+      ]
+     ],
+     "label": {
+      "en": "To London",
+      "es": "A Londres"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "gandhara-buddhas",
+     "name": {
+      "en": "Buddhas of Gandhara",
+      "es": "Budas de Gandhara"
+     },
+     "at": [
+      71.9461,
+      34.2861
+     ],
+     "cat": "sculpture",
+     "type": "genre",
+     "date": "100",
+     "end": "500",
+     "place": {
+      "en": "Gandhara: Peshawar valley, Taxila and Swat, Pakistan, and eastern Afghanistan",
+      "es": "Gandhara: valle de Peshawar, Taxila y Swat, Pakistán, y el este de Afganistán"
+     },
+     "text": {
+      "en": "Buddhas of stone and stucco with wavy hair and robes like those of Greek statues, made in Gandhara from about the 1st to the 5th century AD: some of the first images of the Buddha as a man.",
+      "es": "Budas de piedra y estuco, de cabello ondulado y túnicas como las de las estatuas griegas, hechos en Gandhara entre los siglos I y V d. C.: de las primeras imágenes del Buda como hombre."
+     },
+     "details": {
+      "en": "Gandhara's sculptors worked in stone and in stucco. Stucco, easy to model, let them give their figures great expression, and sculpting in stucco spread wherever Buddhism went from Gandhara: India, Afghanistan, Central Asia and China. Some standing Buddhas were made the Greek way, with hands and sometimes feet of marble on a body of another material, to look more real. Besides the Buddha, they carved scenes of his life in Greek-looking settings, bodhisattvas such as Maitreya, and even the Greek god Atlas holding up Buddhist monuments.",
+      "es": "Los escultores de Gandhara trabajaban la piedra y el estuco. El estuco, fácil de modelar, les permitía dar gran expresividad a sus figuras, y la escultura en estuco se extendió adonde el budismo llegó desde Gandhara: la India, Afganistán, Asia central y China. Algunos budas de pie se hicieron a la manera griega, con manos y a veces pies de mármol sobre un cuerpo de otro material, para que parecieran más reales. Además del Buda, tallaron escenas de su vida en escenarios de aire griego, bodhisattvas como Maitreya y hasta al dios griego Atlas sosteniendo monumentos budistas."
+     },
+     "status": {
+      "en": "Peshawar Museum and museums around the world",
+      "es": "Museo de Peshawar y museos de todo el mundo"
+     },
+     "wiki": {
+      "en": "Greco-Buddhist art",
+      "es": "Arte greco-budista"
+     }
+    },
+    {
+     "id": "bimaran-casket",
+     "name": {
+      "en": "Bimaran casket",
+      "es": "Relicario de Bimaran"
+     },
+     "at": [
+      70.3498,
+      34.4585
+     ],
+     "cat": "craft",
+     "type": "work",
+     "date": "50",
+     "by": {
+      "en": "Goldsmiths of Gandhara",
+      "es": "Orfebres de Gandhara"
+     },
+     "place": {
+      "en": "Bimaran, near Jalalabad, Afghanistan",
+      "es": "Bimaran, cerca de Jalalabad, Afganistán"
+     },
+     "text": {
+      "en": "A little gold reliquary set with gems, 6.7 cm high, showing the Buddha between the gods Brahma and Indra: one of the earliest known images of the Buddha, from the 1st century AD.",
+      "es": "Un pequeño relicario de oro con piedras incrustadas, de 6,7 cm, que muestra al Buda entre los dioses Brahma e Indra: una de las imágenes más antiguas conocidas del Buda, del siglo I d. C."
+     },
+     "details": {
+      "en": "Its date matters for the history of the Buddha image, and estimates range from about 30 BC to the 2nd century AD; the British Museum dates it to around AD 50–60. Charles Masson found it in the 1830s inside stupa no. 2 at Bimaran, with coins of Indo-Scythian kings, digging into the core of the stupa with methods that would not be accepted today.",
+      "es": "Su fecha importa para la historia de la imagen del Buda, y las estimaciones van de hacia el 30 a. C. al siglo II d. C.; el Museo Británico lo fecha hacia el 50–60 d. C. Charles Masson lo encontró en la década de 1830 dentro de la estupa n.º 2 de Bimaran, con monedas de reyes indoescitas, cavando hasta el corazón de la estupa con métodos que hoy no se aceptarían."
+     },
+     "status": {
+      "en": "British Museum, London",
+      "es": "Museo Británico, Londres"
+     },
+     "wiki": {
+      "en": "Bimaran casket",
+      "es": "Relicario de Bimaran"
+     }
+    },
+    {
+     "id": "peshawar-museum",
+     "name": {
+      "en": "Peshawar Museum",
+      "es": "Museo de Peshawar"
+     },
+     "at": [
+      71.5583,
+      34.0077
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1907-11",
+     "place": {
+      "en": "Peshawar, Khyber Pakhtunkhwa, Pakistan",
+      "es": "Peshawar, Khyber Pakhtunkhwa, Pakistán"
+     },
+     "text": {
+      "en": "A museum opened in 1907 in Peshawar with one of the great collections of Gandhara art: nearly 14,000 objects, from statues of the Buddha and scenes of his life to relic caskets and coins.",
+      "es": "Un museo abierto en 1907 en Peshawar con una de las grandes colecciones de arte de Gandhara: casi 14 000 objetos, de estatuas del Buda y escenas de su vida a relicarios y monedas."
+     },
+     "wiki": {
+      "en": "Peshawar Museum",
+      "es": ""
+     }
+    }
+   ]
+  },
+  {
+   "date": "250",
+   "title": {
+    "en": "The gold of Sipán",
+    "es": "El oro de Sipán"
+   },
+   "text": {
+    "en": "On Peru's north coast, Moche potters made vessels with portraits of real faces, and goldsmiths made jewels for their lords. The Lord of Sipán, buried about AD 250, was found in 1987 after looters struck gold nearby.",
+    "es": "En la costa norte del Perú, los alfareros moche hacían vasijas con rostros reales, y los orfebres, joyas para sus señores. El Señor de Sipán, enterrado hacia el 250 d. C., se halló en 1987, tras un saqueo cerca de allí."
+   },
+   "details": {
+    "en": "The Moche flourished on the north coast of Peru from about AD 100 to 800, building great adobe pyramids and irrigating the desert. Their potters shaped portrait vessels so individual that some show scars or a missing eye; of more than 900 known, about 95% were dug up by looters, so where they came from is unknown, and many are now in museums abroad. In early 1987 looters at Huaca Rajada, near Sipán, quarrelled over gold they had found; the police stepped in and called the archaeologist Walter Alva, who with Susana Meneses excavated the untouched tomb of a ruler aged 35 to 45, buried with gold masks and necklaces of gold and silver peanuts. His treasures stayed in Peru: since 2002 they have been shown in the Royal Tombs of Sipán Museum in Lambayeque. Later finds, like the tattooed Lady of Cao in 2006, show that women could rule too.",
+    "es": "Los moche florecieron en la costa norte del Perú de hacia el 100 al 800 d. C., construyeron grandes pirámides de adobe y regaron el desierto. Sus alfareros hacían vasijas retrato tan personales que algunas muestran cicatrices o un ojo perdido; de las más de 900 conocidas, cerca del 95 % las desenterraron saqueadores, así que no se sabe de dónde salieron, y muchas están hoy en museos del extranjero. A comienzos de 1987, unos saqueadores de Huaca Rajada, cerca de Sipán, se pelearon por el oro que habían hallado; la policía intervino y llamó al arqueólogo Walter Alva, quien con Susana Meneses excavó la tumba intacta de un gobernante de 35 a 45 años, enterrado con máscaras de oro y collares de maníes de oro y plata. Sus tesoros se quedaron en el Perú: desde 2002 se exponen en el Museo Tumbas Reales de Sipán, en Lambayeque. Hallazgos posteriores, como la Señora de Cao, tatuada, en 2006, muestran que las mujeres también podían gobernar."
+   },
+   "camera": {
+    "lon": -78.6,
+    "lat": -8.6,
+    "zoom": 5.2
+   },
+   "moves": [
+    {
+     "side": "home",
+     "path": [
+      [
+       -79.6022,
+       -6.8014
+      ],
+      [
+       -79.8994,
+       -6.705
+      ]
+     ],
+     "label": {
+      "en": "To Lambayeque",
+      "es": "A Lambayeque"
+     }
+    }
+   ],
+   "places": [
+    {
+     "id": "lord-of-sipan",
+     "name": {
+      "en": "Lord of Sipán",
+      "es": "Señor de Sipán"
+     },
+     "at": [
+      -79.6022,
+      -6.8014
+     ],
+     "cat": "craft",
+     "type": "site",
+     "date": "250",
+     "place": {
+      "en": "Huaca Rajada, Sipán, Lambayeque, Peru",
+      "es": "Huaca Rajada, Sipán, Lambayeque, Perú"
+     },
+     "text": {
+      "en": "A Moche ruler of about AD 250 found in 1987 in an unlooted tomb with gold masks, headdresses and necklaces of gold and silver peanuts. The photo shows a reconstruction of his tomb.",
+      "es": "Un gobernante moche de hacia el 250 d. C. hallado en 1987 en una tumba sin saquear, con máscaras de oro, tocados y collares de maníes de oro y plata. La foto muestra una reconstrucción de su tumba."
+     },
+     "status": {
+      "en": "Royal Tombs of Sipán Museum, Lambayeque",
+      "es": "Museo Tumbas Reales de Sipán, Lambayeque"
+     },
+     "img": "Señor de Sipan (Detalle).jpg",
+     "wiki": {
+      "en": "Lord of Sipán",
+      "es": "Señor de Sipán"
+     }
+    },
+    {
+     "id": "moche-portrait-vessels",
+     "name": {
+      "en": "Moche portrait vessels",
+      "es": "Huacos retrato moche"
+     },
+     "at": [
+      -78.9914,
+      -8.135
+     ],
+     "cat": "craft",
+     "type": "work",
+     "date": "100",
+     "end": "800",
+     "by": {
+      "en": "Moche potters",
+      "es": "Alfareros moche"
+     },
+     "place": {
+      "en": "North coast of Peru",
+      "es": "Costa norte del Perú"
+     },
+     "text": {
+      "en": "Clay vessels shaped as portraits of real people, nearly all men, some with scars or a missing eye: among the few lifelike portraits of the ancient Americas. Most were taken from graves by looters.",
+      "es": "Vasijas de arcilla con forma de retratos de personas reales, casi todos hombres, algunos con cicatrices o un ojo perdido: de los pocos retratos realistas de la América antigua. Casi todos los sacaron saqueadores de tumbas."
+     },
+     "status": {
+      "en": "Larco Museum, Lima, and museums around the world; the one in the photo is in Paris",
+      "es": "Museo Larco, Lima, y museos de todo el mundo; el de la foto está en París"
+     },
+     "wiki": {
+      "en": "Moche portrait vessel",
+      "es": "Huaco retrato moche"
+     }
+    },
+    {
+     "id": "royal-tombs-of-sipan-museum",
+     "name": {
+      "en": "Royal Tombs of Sipán Museum",
+      "es": "Museo Tumbas Reales de Sipán"
+     },
+     "at": [
+      -79.8994,
+      -6.705
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "2002",
+     "place": {
+      "en": "Lambayeque, Peru",
+      "es": "Lambayeque, Perú"
+     },
+     "text": {
+      "en": "A museum opened in 2002 and built to look like a Moche tomb. Visitors climb a ramp to the top floor to see the Lord of Sipán and his priest, then go down to an older burial, the Old Lord of Sipán.",
+      "es": "Un museo abierto en 2002 y construido como una tumba moche. Los visitantes suben por una rampa al piso alto para ver al Señor de Sipán y a su sacerdote, y luego bajan a un entierro más antiguo, el del Viejo Señor de Sipán."
+     },
+     "wiki": {
+      "en": "Royal Tombs of Sipán Museum",
+      "es": "Museo Tumbas Reales de Sipán"
+     }
+    },
+    {
+     "id": "larco-museum",
+     "name": {
+      "en": "Larco Museum",
+      "es": "Museo Larco"
+     },
+     "at": [
+      -77.0709,
+      -12.0725
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1926-07-28",
+     "place": {
+      "en": "Pueblo Libre, Lima, Peru",
+      "es": "Pueblo Libre, Lima, Perú"
+     },
+     "text": {
+      "en": "A private museum of ancient Peruvian art in Lima, founded in 1926, in an 18th-century mansion. Its gold and silver gallery and its Moche pottery are among the finest anywhere.",
+      "es": "Un museo privado de arte antiguo peruano en Lima, fundado en 1926, en una casona del siglo XVIII. Su sala de oro y plata y su cerámica moche están entre las mejores del mundo."
+     },
+     "wiki": {
+      "en": "Larco Museum",
+      "es": "Museo Arqueológico Rafael Larco Herrera"
+     }
+    }
+   ]
+  },
+  {
+   "date": "2025-11-01",
+   "title": {
+    "en": "Where the treasures are now",
+    "es": "Dónde están hoy los tesoros"
+   },
+   "text": {
+    "en": "On 1 November 2025 Egypt opened the Grand Egyptian Museum beside the pyramids, with all of Tutankhamun's treasures. Many ancient masterpieces are still in Europe's museums, and their homelands ask for some back.",
+    "es": "El 1 de noviembre de 2025, Egipto abrió el Gran Museo Egipcio junto a las pirámides, con todos los tesoros de Tutankamón. Muchas obras maestras antiguas siguen en museos de Europa, y sus países de origen reclaman algunas."
+   },
+   "details": {
+    "en": "Many of the works in this story left their lands in the 19th and early 20th centuries, when foreign archaeologists shared or bought the finds of their digs, sometimes with permissions now disputed. Egypt still asks for Nefertiti's bust, Greece for the Parthenon sculptures and the Winged Victory, and Iraq has asked for the Ishtar Gate; the museums that hold them say they were acquired legally and are seen there by millions. Other treasures never left: Tutankhamun's gold, the Terracotta Army, the Olmec heads and the gold of Sipán stay in their own countries, and some, like the Houmuwu ding, may not even travel for exhibitions. Looting goes on, from the Iraq Museum in 2003 to the Nok sites of Nigeria, and some stolen pieces come home, like the Warka Vase in 2003 and five Nok figures in 2013.",
+    "es": "Muchas de las obras de esta historia salieron de sus tierras en el siglo XIX y a comienzos del XX, cuando arqueólogos extranjeros se repartían o compraban los hallazgos de sus excavaciones, a veces con permisos que hoy se discuten. Egipto sigue reclamando el busto de Nefertiti, Grecia las esculturas del Partenón y la Victoria alada, e Irak ha pedido la puerta de Istar; los museos que las guardan dicen que se adquirieron legalmente y que allí las ven millones de personas. Otros tesoros nunca se fueron: el oro de Tutankamón, los guerreros de terracota, las cabezas olmecas y el oro de Sipán siguen en sus países, y algunos, como el Houmuwu ding, ni siquiera pueden viajar a exposiciones. El saqueo continúa, del Museo de Irak en 2003 a los sitios nok de Nigeria, y algunas piezas robadas vuelven a casa, como el vaso de Warka en 2003 y cinco figuras nok en 2013."
+   },
+   "camera": {
+    "lon": 18,
+    "lat": 40,
+    "zoom": 1.8
+   },
+   "places": [
+    {
+     "id": "grand-egyptian-museum",
+     "name": {
+      "en": "Grand Egyptian Museum",
+      "es": "Gran Museo Egipcio"
+     },
+     "at": [
+      31.1193,
+      29.995
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "2025-11-01",
+     "place": {
+      "en": "Giza, Egypt",
+      "es": "Guiza, Egipto"
+     },
+     "text": {
+      "en": "A vast museum 2 km from the Giza pyramids, fully opened on 1 November 2025. Two halls show all 5,398 objects from Tutankhamun's tomb together for the first time.",
+      "es": "Un enorme museo a 2 km de las pirámides de Guiza, inaugurado del todo el 1 de noviembre de 2025. Dos salas muestran juntos por primera vez los 5398 objetos de la tumba de Tutankamón."
+     },
+     "details": {
+      "en": "Announced in 1992 and built from 2005, it cost about 1.2 billion dollars and holds more than 100,000 objects, at least 20,000 of them never shown before. Its walls line up with the Great Pyramid, and the pyramids can be seen from its atrium. The king's mummy stays in his tomb in the Valley of the Kings. Its conservation centre, opened in 2010, is the largest in the Middle East for restoring antiquities.",
+      "es": "Anunciado en 1992 y construido desde 2005, costó unos 1200 millones de dólares y guarda más de 100 000 objetos, al menos 20 000 nunca expuestos antes. Sus muros se alinean con la Gran Pirámide, y desde su atrio se ven las pirámides. La momia del rey sigue en su tumba del Valle de los Reyes. Su centro de conservación, abierto en 2010, es el mayor de Oriente Medio para restaurar antigüedades."
+     },
+     "img": "Grand Egyptian Museum.jpg",
+     "wiki": {
+      "en": "Grand Egyptian Museum",
+      "es": "Gran Museo Egipcio"
+     }
+    },
+    {
+     "id": "neues-museum",
+     "name": {
+      "en": "Neues Museum",
+      "es": "Neues Museum"
+     },
+     "at": [
+      13.3978,
+      52.5206
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1855",
+     "place": {
+      "en": "Museum Island, Berlin, Germany",
+      "es": "Isla de los Museos, Berlín, Alemania"
+     },
+     "text": {
+      "en": "A museum on Berlin's Museum Island, opened in 1855, bombed in the Second World War and reopened in 2009 after a rebuilding by David Chipperfield. Nefertiti's bust is its centrepiece.",
+      "es": "Un museo de la Isla de los Museos de Berlín, abierto en 1855, bombardeado en la Segunda Guerra Mundial y reabierto en 2009 tras una reconstrucción de David Chipperfield. El busto de Nefertiti es su gran atracción."
+     },
+     "details": {
+      "en": "The bust was first shown there before the war. In 1939 the museums were emptied; the bust was kept in a bank cellar and a flak tower, then in a salt mine, where the US Army found it in 1945. It was shown in Wiesbaden and West Berlin, at the Egyptian Museum in Charlottenburg and the Altes Museum, and came back to the Neues Museum when it reopened in October 2009.",
+      "es": "El busto se expuso allí por primera vez antes de la guerra. En 1939 los museos se vaciaron; el busto se guardó en el sótano de un banco y en una torre antiaérea, y luego en una mina de sal, donde lo encontró el ejército de Estados Unidos en 1945. Se expuso en Wiesbaden y en Berlín Occidental, en el Museo Egipcio de Charlottenburg y en el Altes Museum, y volvió al Neues Museum cuando este reabrió en octubre de 2009."
+     },
+     "wiki": {
+      "en": "Neues Museum",
+      "es": "Neues Museum"
+     }
+    },
+    {
+     "id": "pergamon-museum",
+     "name": {
+      "en": "Pergamon Museum",
+      "es": "Museo de Pérgamo"
+     },
+     "at": [
+      13.396,
+      52.521
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1930",
+     "place": {
+      "en": "Museum Island, Berlin, Germany",
+      "es": "Isla de los Museos, Berlín, Alemania"
+     },
+     "text": {
+      "en": "A museum on Berlin's Museum Island, built from 1910 to 1930 for great finds of German digs: the Pergamon Altar and the Ishtar Gate. Closed in 2023 for rebuilding, it is to reopen in stages from 2027.",
+      "es": "Un museo de la Isla de los Museos de Berlín, construido de 1910 a 1930 para grandes hallazgos de excavaciones alemanas: el altar de Pérgamo y la puerta de Istar. Cerrado en 2023 por obras, reabrirá por etapas desde 2027."
+     },
+     "wiki": {
+      "en": "Pergamon Museum",
+      "es": "Museo de Pérgamo"
+     }
+    },
+    {
+     "id": "british-museum",
+     "name": {
+      "en": "British Museum",
+      "es": "Museo Británico"
+     },
+     "at": [
+      -0.1269,
+      51.5194
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1753-06-07",
+     "place": {
+      "en": "Bloomsbury, London, United Kingdom",
+      "es": "Bloomsbury, Londres, Reino Unido"
+     },
+     "text": {
+      "en": "Founded in 1753, it holds about eight million objects, the largest collection of its kind, among them the Standard of Ur and about half of the surviving Parthenon sculptures. Several countries ask for objects back.",
+      "es": "Fundado en 1753, guarda unos ocho millones de objetos, la mayor colección de su tipo, entre ellos el Estandarte de Ur y cerca de la mitad de las esculturas del Partenón que se conservan. Varios países reclaman objetos."
+     },
+     "details": {
+      "en": "Much of its collection came from archaeological digs it paid for, such as Leonard Woolley's at Ur, from purchases like Lord Elgin's marbles in 1816, and from the age of the British Empire. A law of 1963, the British Museum Act, forbids it to give away objects from its collection except in a few special cases, so any permanent return would need Parliament. It lends objects abroad and argues that its galleries let visitors compare the cultures of the whole world.",
+      "es": "Gran parte de su colección vino de excavaciones que pagó, como la de Leonard Woolley en Ur, de compras como la de los mármoles de lord Elgin en 1816 y de la época del Imperio británico. Una ley de 1963, la British Museum Act, le prohíbe deshacerse de los objetos de su colección salvo en unos pocos casos especiales, así que cualquier devolución definitiva necesitaría al Parlamento. Presta objetos al extranjero y sostiene que sus salas permiten comparar las culturas de todo el mundo."
+     },
+     "wiki": {
+      "en": "British Museum",
+      "es": "Museo Británico"
+     }
+    },
+    {
+     "id": "louvre",
+     "name": {
+      "en": "Louvre",
+      "es": "Museo del Louvre"
+     },
+     "at": [
+      2.3358,
+      48.8611
+     ],
+     "cat": "museum",
+     "type": "institution",
+     "date": "1793-08-10",
+     "place": {
+      "en": "Paris, France",
+      "es": "París, Francia"
+     },
+     "text": {
+      "en": "The former royal palace in Paris that opened as a public museum on 10 August 1793. The most visited museum in the world, with 9 million visitors in 2025, it shows the Venus de Milo and the Winged Victory.",
+      "es": "El antiguo palacio real de París que abrió como museo público el 10 de agosto de 1793. Es el museo más visitado del mundo, con 9 millones de visitantes en 2025, y expone la Venus de Milo y la Victoria alada."
+     },
+     "details": {
+      "en": "Napoleon's armies filled it with art seized across Europe, Egypt and Syria, and for a while it was called the Musée Napoléon; after his fall in 1815 many of those works were returned to their owners, among them the Laocoön, which went back to the Vatican. The Venus de Milo arrived soon after, in 1821, when the museum had just lost many of those works, and the Winged Victory in 1864.",
+      "es": "Los ejércitos de Napoleón lo llenaron de arte confiscado por Europa, Egipto y Siria, y durante un tiempo se llamó Museo Napoleón; tras su caída en 1815, muchas de esas obras se devolvieron a sus dueños, entre ellas el Laocoonte, que volvió al Vaticano. La Venus de Milo llegó poco después, en 1821, cuando el museo acababa de perder muchas de esas obras, y la Victoria alada en 1864."
+     },
+     "wiki": {
+      "en": "Louvre",
+      "es": "Museo del Louvre"
+     }
+    }
+   ]
+  }
+ ],
+ "outcome": {
+  "en": "The ancient world's masterpieces were made from Ur to Sipán, but many now stand in a few great museums of Europe and North America, carried there by archaeologists, diplomats and armies in the 19th and early 20th centuries. Others stayed home, like Tutankhamun's gold, the Terracotta Army and the Olmec heads, and new museums in Giza, Athens and Lambayeque show them where they were made. The debate over returning the rest, from Nefertiti to the Parthenon sculptures, goes on, while looting still destroys the history of sites like Nok.",
+  "es": "Las obras maestras del mundo antiguo se hicieron de Ur a Sipán, pero muchas están hoy en unos pocos grandes museos de Europa y América del Norte, llevadas allí por arqueólogos, diplomáticos y ejércitos en el siglo XIX y a comienzos del XX. Otras se quedaron en casa, como el oro de Tutankamón, los guerreros de terracota y las cabezas olmecas, y nuevos museos en Guiza, Atenas y Lambayeque las muestran donde se hicieron. El debate sobre la devolución de las demás, de Nefertiti a las esculturas del Partenón, continúa, mientras el saqueo sigue destruyendo la historia de sitios como Nok."
+ },
+ "sources": [
+  {
+   "title": "Royal Cemetery at Ur (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Royal_Cemetery_at_Ur"
+  },
+  {
+   "title": "Standard of Ur (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Standard_of_Ur"
+  },
+  {
+   "title": "Ram in a Thicket (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Ram_in_a_Thicket"
+  },
+  {
+   "title": "Puabi (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Puabi"
+  },
+  {
+   "title": "Iraq Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Iraq_Museum"
+  },
+  {
+   "title": "Warka Vase (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Warka_Vase"
+  },
+  {
+   "title": "Dancing Girl (prehistoric sculpture) (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Dancing_Girl_(prehistoric_sculpture)"
+  },
+  {
+   "title": "Priest-King (sculpture) (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Priest-King_(sculpture)"
+  },
+  {
+   "title": "Nefertiti Bust (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Nefertiti_Bust"
+  },
+  {
+   "title": "Neues Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Neues_Museum"
+  },
+  {
+   "title": "Mask of Tutankhamun (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Mask_of_Tutankhamun"
+  },
+  {
+   "title": "Tomb of Tutankhamun (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Tomb_of_Tutankhamun"
+  },
+  {
+   "title": "Grand Egyptian Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Grand_Egyptian_Museum"
+  },
+  {
+   "title": "Houmuwu ding (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Houmuwu_ding"
+  },
+  {
+   "title": "Tomb of Fu Hao (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Tomb_of_Fu_Hao"
+  },
+  {
+   "title": "Sanxingdui (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Sanxingdui"
+  },
+  {
+   "title": "List of Chinese cultural relics forbidden to be exhibited abroad (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/List_of_Chinese_cultural_relics_forbidden_to_be_exhibited_abroad"
+  },
+  {
+   "title": "Olmec colossal heads (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Olmec_colossal_heads"
+  },
+  {
+   "title": "Nok culture (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Nok_culture"
+  },
+  {
+   "title": "Ishtar Gate (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Ishtar_Gate"
+  },
+  {
+   "title": "Robert Koldewey (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Robert_Koldewey"
+  },
+  {
+   "title": "Pergamon Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Pergamon_Museum"
+  },
+  {
+   "title": "Parthenon (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Parthenon"
+  },
+  {
+   "title": "Elgin Marbles (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Elgin_Marbles"
+  },
+  {
+   "title": "Acropolis Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Acropolis_Museum"
+  },
+  {
+   "title": "Terracotta Army (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Terracotta_Army"
+  },
+  {
+   "title": "Mausoleum of Qin Shi Huang (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Mausoleum_of_Qin_Shi_Huang"
+  },
+  {
+   "title": "Winged Victory of Samothrace (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Winged_Victory_of_Samothrace"
+  },
+  {
+   "title": "Venus de Milo (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Venus_de_Milo"
+  },
+  {
+   "title": "Louvre (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Louvre"
+  },
+  {
+   "title": "Augustus of Prima Porta (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Augustus_of_Prima_Porta"
+  },
+  {
+   "title": "Laocoön and His Sons (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Laoco%C3%B6n_and_His_Sons"
+  },
+  {
+   "title": "Alexander Mosaic (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Alexander_Mosaic"
+  },
+  {
+   "title": "Greco-Buddhist art (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Greco-Buddhist_art"
+  },
+  {
+   "title": "Art of Mathura (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Art_of_Mathura"
+  },
+  {
+   "title": "Bimaran casket (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Bimaran_casket"
+  },
+  {
+   "title": "Peshawar Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Peshawar_Museum"
+  },
+  {
+   "title": "Moche portrait vessel (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Moche_portrait_vessel"
+  },
+  {
+   "title": "Lord of Sipán (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Lord_of_Sip%C3%A1n"
+  },
+  {
+   "title": "Royal Tombs of Sipán Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Royal_Tombs_of_Sip%C3%A1n_Museum"
+  },
+  {
+   "title": "Larco Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Larco_Museum"
+  },
+  {
+   "title": "British Museum (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/British_Museum"
+  }
+ ]
+}

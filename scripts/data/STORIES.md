@@ -48,7 +48,7 @@ same here. `structures/seven-wonders.json` is a complete example that uses the c
 | `at` | `[lon, lat]`, precise (4 decimals) for buildings and sites; for a person, where the step's work happened |
 | `cat` | a category id from `_collection.json` (below) |
 | `icon` | optional emoji; defaults to the category's (✍️ for a writer, 🎭 for a theatre...) |
-| `type` | optional: `person`, `work`, `place`, `invention`, `event`, `site`, `dish`, `crop`, `animal`, `structure`, `institution`, `fossil` (a fossil find), `culture` (a civilization or people as a whole), `species` (a living or extinct kind of organism), `ship`, `goods` (a traded good), `script` (a writing system), `language` (a language or a family of languages), `disease` (a disease or the germ that causes it) (quizzes use it) |
+| `type` | optional: `person`, `work`, `place`, `invention`, `event`, `site`, `dish`, `crop`, `animal`, `structure`, `institution`, `fossil` (a fossil find), `culture` (a civilization or people as a whole), `species` (a living or extinct kind of organism), `ship`, `goods` (a traded good), `script` (a writing system), `language` (a language or a family of languages), `disease` (a disease or the germ that causes it), `instrument` (a musical instrument), `genre` (a style of music, dance, writing or art) (quizzes use it) |
 | `date` | when it happened or was made: a work's creation, an invention, a dish's first record, the start of a building. Dates older than 10,000 BC are written as years ago (14,400 years ago is `-14400`, 3.2 million years ago is `-3200000`); the app shows them as "14,400 years ago" |
 | `end` | optional: when it was finished (a building, a long work) |
 | `until` | optional: when it stopped existing (a civilization's fall, a city abandoned, a building lost). The card shows `date`–`until`, and a time tour takes it off the map after `until` |
@@ -56,13 +56,16 @@ same here. `structures/seven-wonders.json` is a complete example that uses the c
 | `place` | `{ "en", "es" }`: where, as a reader would say it today ("Florence, Italy") |
 | `text` | **required**: 1–2 sentences (about 220 characters at most): what it is and why it matters |
 | `details` | optional: 60–150 words of story, shown on the card |
-| `why`, `how`, `by` | optional (structures above all): why it was built, how (materials, workforce, techniques), who built or designed it |
+| `why`, `how`, `by` | optional (structures above all): why it was built, how (materials, workforce, techniques), who built or designed it. For a work, `by` is its maker: the painter, sculptor, writer or composer, as `{ "en": "Vincent van Gogh", "es": "Vincent van Gogh" }` (the Who made it? quiz uses it) |
 | `size`, `status` | optional: dimensions; what is left today (standing, ruins, lost, rebuilt) |
 | `facts` | optional: `[{ "label": {en, es}, "value": {en, es} }]`, e.g. a record, a famous quote, an ingredient list |
 | `country` | optional: ISO A3 code of today's country of origin (dishes above all: the dish quiz uses it) |
 | `wiki` | `{ "en": "Article title", "es": "Título del artículo" }`: the **exact** titles of the Wikipedia articles (the card shows their picture). Check that both exist, for example `https://en.wikipedia.org/api/rest_v1/page/summary/Mona_Lisa` and `https://es.wikipedia.org/api/rest_v1/page/summary/La_Gioconda`. |
 | `img` | Optional. A Wikimedia Commons file name such as `"Pane di Pompei.jpg"` (no `File:`), for the card's picture when neither article has a lead picture of its own (the summary address above then has no `thumbnail`). It is used before the articles' picture. |
 | `sample` | Optional. Some text in the item's own script, shown large on its card: `{ "text": "𐤀𐤁𐤂𐤃", "latin"?: "ʾalp bēt gaml dalt", "means"?: { "en", "es" } }`. `text` is 1–40 characters, `latin` how it reads in Latin letters, `means` what it means, shown as written: a translation in quotes (`"'water'"`) or a short note (`"the first four letters"`). A meaning that only repeats the sample ("Hello" for an English reader) is left out of the card. For scripts, languages, inscriptions and books (see [Writing and languages](#writing-and-languages)). |
+
+| `audio` | Optional. A recording on Wikimedia Commons, played on the card and with its step when music is on: `{ "file": "Beethoven Symphony 5 opening.ogg", "start"?: 0, "end"?: 20, "by": {en, es}, "license": "CC0" }`. See [Music and dance](#music-and-dance). |
+| `quote` | Optional. A line of a book, poem or song in its own language and script: `{ "text": "En un lugar de la Mancha...", "lang": "es", "latin"?: "...", "means"?: {en, es}, "from"?: {en, es}, "free": true }`. See [Books and writers](#books-and-writers). |
 
 A step usually shows 2–8 items; a story has 8–16 steps (up to about 20 for a big time tour) and 30–80 items.
 
@@ -410,3 +413,62 @@ hour, who was hit, how far the effects reached, and what science and warnings ca
 - **The time tours** `earthquakes-through-time` (`"catalog": "quakes"`, items in `_catalog-quakes.json`) and
   `volcanoes-through-time` (`"catalog": "volcanoes"`, items in `_catalog-volcanoes.json`) each show their own
   catalogue file, as the faiths tour does; the other stories use `places`, with the same `id` for the same thing.
+
+## Music and dance
+
+`scripts/data/music/` tells where music and dance styles were born and how they travelled, with a short recording
+on the cards that have one.
+
+- **Recordings (`audio`).** A clip of at most 30 seconds from a recording on Wikimedia Commons. The app streams
+  Commons' MP3 copy of the file (any audio format Commons has works), only when the reader taps play or turns music
+  on for the story. Only free files: `"license"` is the file's licence as its Commons page gives it (`"Public
+  domain"`, `"CC0"`, `"CC BY 4.0"`, `"CC BY-SA 3.0"`...); check the page. Good sources: the short excerpts Wikipedia's
+  articles play (often 10–30 seconds, made to show a theme), Musopen and US military bands (public domain), recordings
+  published long enough ago to be in the public domain, and musicians who share their recordings under CC licences.
+  Pick the moment: `start` and `end` in seconds (a famous theme, not silence or applause); an excerpt file starts at
+  0. `by` names the performers and the recording ("Musopen Symphony, 2012", "Original Dixieland Jass Band, 1917").
+- **No clip for music still under copyright.** Most music recorded in the last hundred years is: tell it, picture it,
+  and leave `audio` out. Never take a recording from YouTube or a record.
+- **With the story.** When the reader turns music on (♪ in the story bar), each step plays the clip of its first item
+  that has one, softly, while the map moves. Put the item whose sound fits the step first.
+- **Dances**: where a dance was born (`at`), who danced it, how it travelled; pictures of the dance, not of a dancer's
+  face alone.
+- **Items**: styles and genres (`type: "genre"`), dances, instruments (`type: "instrument"`), musicians and composers,
+  pieces and songs (`by` the composer), halls, clubs and stages, music cities, recording and radio, festivals.
+
+## Books and writers
+
+`scripts/data/books/` tells great books and where they take place, where their writers lived, and how books were
+made, read, banned and kept.
+
+- **Quotes (`quote`).** A famous line in the book's own language and script: the opening of Don Quixote in Spanish,
+  of the Divine Comedy in Italian, of the Tale of Genji in Japanese. `lang` is its language code (`"es"`, `"it"`,
+  `"ja"`, `"grc"` for ancient Greek); `latin` how it reads in Latin letters, for other scripts; `means` its meaning in
+  English and Spanish (left out of the card in the reader's own language); `from` where it comes from ("Opening of
+  Chapter One"; for a translation into English or Spanish, whose: "Translated by John Ormsby, 1885"). Use a translation
+  that is in the public domain, or translate it yourself, plainly.
+- **Copyright.** `"free": true` only when the text is in the public domain (its author died long ago: Cervantes,
+  Dante, Tolstoy). A book still under copyright gets at most one short, famous line (`"free": false`, at most 160
+  characters), clearly credited, or no quote.
+- **On the map**: a book's item sits where it takes place (Don Quixote's La Mancha, Dickens's London, Macondo's
+  Aracataca); its writer where they lived and wrote. Say when a place is invented and what it is based on.
+- **Items**: books, poems and epics, tales and legends (`by` the writer or "traditional"), writers, places in books,
+  libraries, printing and publishing, prizes, books banned and burned.
+
+## Art of the world
+
+`scripts/data/art/` tells where masterpieces were made and where they are now, from cave paintings to street art,
+including art that was taken and art that was returned.
+
+- **Pictures.** The card shows the work itself: set `img` to the Commons file of the work (a photograph of the
+  painting, the sculpture, the object), large and sharp, not a portrait of its maker. The reader can open it full
+  screen and zoom. Commons only has works in the public domain (old enough, or their makers died long enough ago) and
+  photos of objects that are; for a work still under copyright (Picasso, Frida Kahlo, Dalí, Warhol) there is no free
+  picture: leave `img` out, give the museum in `status`, and say in the text that the picture is under copyright.
+- **Made here, kept there.** `at` is where a work was made; `status` says where it is now ("Louvre, Paris"). When it
+  travelled (sold, looted, given back), draw it with `moves` arrows from where it was made to where it went.
+- **Taken and returned.** Tell how works were taken (wars, colonial expeditions, sales under pressure) and the cases
+  for and against returning them, with dates: the Benin Bronzes, the Parthenon sculptures, Napoleon's spoils,
+  art looted by the Nazis. Give each side's view in its own words; say what has been returned and when.
+- **Items**: paintings, sculpture, cave and rock art, prints, drawings and calligraphy, crafts and treasures
+  (ceramics, textiles, metalwork), artists, movements and schools, museums, taken and returned.

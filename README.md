@@ -108,17 +108,36 @@ spinning full-screen as an ambient display. English and Spanish.
     Krakatoa, the Indian Ocean tsunami of 2004 and the tsunamis that crossed the Pacific, drawn as they
     spread. Also Tambora and the year without a summer, floods, storms and droughts since 1887, and time
     tours of volcanoes and of earthquakes, with today's plate boundaries.
+  - Music and dance: 7 stories, 112 steps and 383 items, 90 of them with a short clip of a free recording on
+    Wikimedia Commons. Tap play on a card, or turn on ♪ in the story bar to hear each step's clip while the map
+    moves, in stories and in tours. A time tour from the Ice Age flutes of the Swabian Jura to streaming, with a
+    catalogue of 93 instruments, styles, pieces and musicians; classical music from Bach's Leipzig to the Rite of
+    Spring; instruments of the world, each with its own sound; jazz, blues and soul, from Congo Square to
+    International Jazz Day; rock, pop and hip hop, from Bombay's film songs to Afrobeats; Latin rhythms; and dances
+    of the world, from the Natya Shastra to breaking at the Paris Olympics. Music still under copyright has no clip.
+  - Books and writers: 7 stories, 116 steps and 319 items, 105 of them with a famous line in its own language and
+    script (Homer's Greek, Murasaki's Japanese, Ferdowsi's Persian…), with how it reads and what it means. A time
+    tour from Gilgamesh to e-books with a catalogue of 96 books, writers and libraries; epics of the world; tales
+    that travel, from the Panchatantra to Pinocchio; novels at the places where they happen; poetry of the world;
+    literature in Spanish, from the jarchas to today; and the story of the book, from clay tablets to screens.
+    Long quotes come only from texts in the public domain; books still under copyright get one short line.
+  - Art of the world: 7 stories, 113 steps and 341 items. Each work sits where it was made, its card shows the work
+    itself (to open full screen and zoom) and where it is now. A time tour from the ochre of Blombos Cave to street
+    art with a catalogue of 109 works, artists and museums; cave and rock art; the ancient world; Renaissance and
+    Baroque painting; art of Asia; Impressionism to modern art; and works taken in war and by empires, and
+    returned, with each side's case. Works still under copyright have no picture.
   - Browse and search every item of a story or a whole collection; shared links open a story at its step.
 - **Explore:** measure distances (great circles, flight time), compare two countries, "true size" of countries.
 - **Learn & play:** quizzes (find the country, flags, capitals, states and provinces of 48 countries, where in
   the world, when was it built or made, dishes of the world, which era, which civilization, which geologic
   period, who won, guess the link between two country facts, which journey, which faith, which script, which
-  language family, which epidemic, which disaster), each ending with every answer and its picture; guided tours (our planet, eight cities
+  language family, which epidemic, which disaster, what are you hearing, which book is it from, who made it), each ending with every answer and its picture; guided tours (our planet, eight cities
   through time, history and culture, Out of Africa, capitals of the ancient world, the dinosaur trail, the five
   mass extinctions, Olympic cities, World Cup finals, the Winter Games, great races, along the Silk Road, around
   the world under sail, to the ends of the Earth, gold, silver and spices, holy places, pilgrims' ways, writing
   is born, code breakers, the story of the alphabet, languages of the world, pandemics that changed history,
-  medicine's great discoveries, tsunamis across the oceans, the year without a summer, the Ring of Fire); "On this day" (Wikipedia).
+  medicine's great discoveries, tsunamis across the oceans, the year without a summer, the Ring of Fire, first lines,
+  great libraries, masterpieces and where they are, sounds of the world, cities of music); "On this day" (Wikipedia).
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Ambient mode:** full-screen rotating globe with your filters, screen kept awake, clock, optional filter cycling.
 
@@ -173,6 +192,10 @@ philosophies and Writing and languages stories are written from the Wikipedia ar
 So are the Plagues and cures and Natural disasters stories, with figures from the WHO, UNAIDS and NOAA where
 the stories say so; the tsunami fronts are computed from NOAA's seafloor depths and checked against the
 arrival times that tide gauges recorded.
+The Music and dance, Books and writers and Art of the world stories are written from the Wikipedia articles listed
+in each story. Their clips are free recordings on Wikimedia Commons (public domain or Creative Commons, each credited
+with its licence and a link to its page), streamed from Commons by the reader's browser only when played; quotes in
+other languages come from Wikisource and the articles, translated plainly where no public-domain translation exists.
 The script samples use subsets of the Noto fonts (SIL Open Font License 1.1) and, for rare Chinese characters,
 Jigmo (CC0), made by `scripts/data/build-fonts.mjs` (`public/data/fonts/`, with the licence in `OFL.txt`).
 
