@@ -37,7 +37,7 @@
     "en": "Printing",
     "es": "La imprenta"
    },
-   "color": "#c0392b"
+   "color": "#e84393"
   },
   {
    "id": "compass",
@@ -53,7 +53,7 @@
     "en": "Gunpowder",
     "es": "La pólvora"
    },
-   "color": "#7d3c98"
+   "color": "#5d6d7e"
   }
  ],
  "steps": [
@@ -1292,8 +1292,8 @@
     "es": "Desde Bagdad, la fabricación de papel se extiende a Damasco, El Cairo y Fez, y llega a al-Ándalus. Hacia 1150, Xàtiva, cerca de Valencia, es famosa por su papel, el primero hecho en Europa."
    },
    "details": {
-    "en": "Paper replaced papyrus across the Islamic world: Egypt made it by about 900, and by the mid-10th century hardly anyone in Asia or Africa still wrote on papyrus. Damascus gave its name to a fine paper, charta damascena. In 1035 the Persian traveller Nasir Khusraw saw Cairo's shopkeepers wrap vegetables and spices in paper. Fez made paper by about 1100. In al-Andalus the first recorded paper mill was at Xàtiva, in 1056. Monks at Nájera, in Christian Spain, wrote part of a missal on Andalusian paper before 1080: the oldest paper book made in Europe. After Christian kings took Xàtiva, its Muslim papermakers kept working, and in 1282 King Peter III of Aragon set up a water-powered paper mill there, run by them: the first clear one in Europe.",
-    "es": "El papel reemplazó al papiro en todo el mundo islámico: Egipto lo fabricaba hacia el año 900, y a mediados del siglo X casi nadie en Asia ni en África escribía ya en papiro. Damasco dio su nombre a un papel fino, la charta damascena. En 1035, el viajero persa Nasir Khusraw vio a los tenderos de El Cairo envolver verduras y especias en papel. Fez hacía papel hacia el año 1100. En al-Ándalus, el primer molino de papel registrado estuvo en Xàtiva, en 1056. Unos monjes de Nájera, en la España cristiana, escribieron parte de un misal en papel andalusí antes de 1080: el libro en papel más antiguo hecho en Europa. Cuando los reyes cristianos tomaron Xàtiva, sus papeleros musulmanes siguieron trabajando, y en 1282 el rey Pedro III de Aragón instaló allí un molino de papel movido por agua, que ellos manejaban: el primero seguro de Europa."
+    "en": "Paper replaced papyrus across the Islamic world: Egypt made it by about 900, and by the mid-10th century hardly anyone in Asia or Africa still wrote on papyrus. Damascus gave its name to a fine paper, charta damascena. In 1035 the Persian traveller Nasir Khusraw saw Cairo's shopkeepers wrap vegetables and spices in paper. In al-Andalus the first recorded paper mill was at Xàtiva, in 1056, and Fez made paper by about 1100. Monks at Nájera, in Christian Spain, wrote part of a missal on Andalusian paper before 1080: the oldest paper book made in Europe. After Christian kings took Xàtiva, its Muslim papermakers kept working, and in 1282 King Peter III of Aragon set up a water-powered paper mill there, run by them: the first clear one in Europe.",
+    "es": "El papel reemplazó al papiro en todo el mundo islámico: Egipto lo fabricaba hacia el año 900, y a mediados del siglo X casi nadie en Asia ni en África escribía ya en papiro. Damasco dio su nombre a un papel fino, la charta damascena. En 1035, el viajero persa Nasir Khusraw vio a los tenderos de El Cairo envolver verduras y especias en papel. En al-Ándalus, el primer molino de papel registrado estuvo en Xàtiva, en 1056, y Fez hacía papel hacia el año 1100. Unos monjes de Nájera, en la España cristiana, escribieron parte de un misal en papel andalusí antes de 1080: el libro en papel más antiguo hecho en Europa. Cuando los reyes cristianos tomaron Xàtiva, sus papeleros musulmanes siguieron trabajando, y en 1282 el rey Pedro III de Aragón instaló allí un molino de papel movido por agua, que ellos manejaban: el primero seguro de Europa."
    },
    "camera": {
     "lon": 18,
@@ -1411,47 +1411,8 @@
        35.7
       ],
       [
-       -1.32,
-       34.88
-      ],
-      [
-       -4.97,
-       34.06
-      ]
-     ],
-     "by": "land",
-     "icon": "📜",
-     "label": {
-      "en": "To Fez, about 1100",
-      "es": "A Fez, hacia el 1100"
-     }
-    },
-    {
-     "side": "paper",
-     "path": [
-      [
-       -4.97,
-       34.06
-      ],
-      [
-       -5.35,
-       35.57
-      ],
-      [
-       -5.6,
-       36
-      ],
-      [
-       -5.45,
-       36.13
-      ],
-      [
-       -4.78,
-       37.88
-      ],
-      [
-       -3.6,
-       37.18
+       -2.46,
+       36.84
       ],
       [
        -1.13,
@@ -1462,11 +1423,37 @@
        38.99
       ]
      ],
+     "icon": "📜",
+     "label": {
+      "en": "To al-Andalus, by 1056",
+      "es": "A al-Ándalus, hacia 1056"
+     }
+    },
+    {
+     "side": "paper",
+     "path": [
+      [
+       -0.64,
+       35.7
+      ],
+      [
+       -1.32,
+       34.88
+      ],
+      [
+       -3,
+       34.4
+      ],
+      [
+       -4.97,
+       34.06
+      ]
+     ],
      "by": "land",
      "icon": "📜",
      "label": {
-      "en": "To Xàtiva, 1056",
-      "es": "A Xàtiva, 1056"
+      "en": "Fez, about 1100",
+      "es": "Fez, hacia el 1100"
      }
     }
    ],
@@ -1526,6 +1513,33 @@
      }
     },
     {
+     "id": "fez",
+     "name": {
+      "en": "Fez",
+      "es": "Fez"
+     },
+     "at": [
+      -4.9725,
+      34.0625
+     ],
+     "cat": "print",
+     "type": "site",
+     "date": "1100",
+     "whs": 170,
+     "place": {
+      "en": "Fez, Morocco",
+      "es": "Fez, Marruecos"
+     },
+     "text": {
+      "en": "A great Moroccan city that made paper by about 1100, when papermaking was spreading across North Africa and al-Andalus. Its walled medina is a World Heritage Site.",
+      "es": "Una gran ciudad marroquí que hacía papel hacia el año 1100, cuando la fabricación de papel se extendía por el norte de África y al-Ándalus. Su medina amurallada es Patrimonio de la Humanidad."
+     },
+     "wiki": {
+      "en": "Fez, Morocco",
+      "es": "Fez"
+     }
+    },
+    {
      "id": "xativa",
      "name": {
       "en": "Xàtiva",
@@ -1580,7 +1594,7 @@
    ]
   },
   {
-   "date": "1232",
+   "date": "1232-04",
    "title": {
     "en": "Fire lances at Kaifeng",
     "es": "Lanzas de fuego en Kaifeng"
@@ -1590,8 +1604,8 @@
     "es": "En 1232 los mongoles sitian Kaifeng, la capital de los Jin. Sus defensores responden con pólvora: bombas de hierro de «trueno que sacude el cielo», cohetes y lanzas de fuego, tubos lanzallamas antepasados de las armas de fuego."
    },
    "details": {
-    "en": "Gunpowder weapons grew deadlier in the wars between the Song and the Jurchen Jin, who took Kaifeng from the Song in 1127. The fire lance, a bamboo or paper tube of powder tied to a spear, appears in a painting from Dunhuang of about 950 and was first used in battle at De'an in 1132. Later, bombs with iron shells burst with enough force to break them. In 1232 Mongol armies, forcing Chinese captives to haul supplies and fill the moats, besieged Kaifeng with bombs of their own. The Jin lowered iron bombs on iron cords onto the Mongol diggers under the walls and charged out with 'flying fire lances'. Kaifeng held out for about a year. Chinese craftsmen then served the Mongols, willingly or not, and Mongol fleets carried bombs to Japan in 1274 and 1281: their shells have been found in a sunken ship off Takashima.",
-    "es": "Las armas de pólvora se volvieron más mortíferas en las guerras entre los Song y los jurchen Jin, que arrebataron Kaifeng a los Song en 1127. La lanza de fuego, un tubo de bambú o de papel lleno de pólvora atado a una lanza, aparece en una pintura de Dunhuang de hacia el 950 y se usó por primera vez en batalla en De'an en 1132. Más tarde, las bombas de casco de hierro estallaban con fuerza suficiente para romperlo. En 1232, los ejércitos mongoles, que obligaban a cautivos chinos a acarrear provisiones y rellenar los fosos, sitiaron Kaifeng con sus propias bombas. Los Jin bajaban bombas de hierro colgadas de cadenas sobre los mongoles que cavaban al pie de las murallas, y salían a atacar con «lanzas de fuego voladoras». Kaifeng resistió cerca de un año. Luego, artesanos chinos sirvieron a los mongoles, por voluntad propia o a la fuerza, y las flotas mongolas llevaron bombas a Japón en 1274 y 1281: sus cascos se han hallado en un barco hundido frente a Takashima."
+    "en": "Gunpowder weapons grew deadlier in the wars between the Song and the Jurchen Jin, who took Kaifeng from the Song in 1127. The fire lance, a bamboo or paper tube of powder tied to a spear, appears in a painting from Dunhuang of about 950 and was first used in battle at De'an in 1132. Later, bombs with iron shells burst with enough force to break them. In 1232 Mongol armies, forcing Chinese captives to haul supplies and fill the moats, besieged Kaifeng with bombs of their own. The Jin lowered iron bombs on iron cords onto the Mongol diggers under the walls and charged out with 'flying fire lances'. Hit by famine and disease, Kaifeng held out until May 1233. Chinese craftsmen then served the Mongols, willingly or not, and Mongol fleets carried bombs to Japan in 1274 and 1281: their shells have been found in a sunken ship off Takashima.",
+    "es": "Las armas de pólvora se volvieron más mortíferas en las guerras entre los Song y los jurchen Jin, que arrebataron Kaifeng a los Song en 1127. La lanza de fuego, un tubo de bambú o de papel lleno de pólvora atado a una lanza, aparece en una pintura de Dunhuang de hacia el 950 y se usó por primera vez en batalla en De'an en 1132. Más tarde, las bombas de casco de hierro estallaban con fuerza suficiente para romperlo. En 1232, los ejércitos mongoles, que obligaban a cautivos chinos a acarrear provisiones y rellenar los fosos, sitiaron Kaifeng con sus propias bombas. Los Jin bajaban bombas de hierro colgadas de cadenas sobre los mongoles que cavaban al pie de las murallas, y salían a atacar con «lanzas de fuego voladoras». Golpeada por el hambre y las enfermedades, Kaifeng resistió hasta mayo de 1233. Luego, artesanos chinos sirvieron a los mongoles, por voluntad propia o a la fuerza, y las flotas mongolas llevaron bombas a Japón en 1274 y 1281: sus cascos se han hallado en un barco hundido frente a Takashima."
    },
    "camera": {
     "lon": 114,
@@ -1606,19 +1620,19 @@
       "es": "Sitio de Kaifeng, 1232"
      },
      "at": [
-      114.3075,
-      34.7972
+      114.3403,
+      34.7936
      ],
      "cat": "event",
      "type": "event",
-     "date": "1232",
+     "date": "1232-04-08",
      "place": {
       "en": "Kaifeng, Henan, China",
       "es": "Kaifeng, Henan, China"
      },
      "text": {
-      "en": "The Mongol siege of the Jin capital, where both sides used gunpowder bombs and the Jin fought with flying fire lances. The city held out for about a year before surrendering in 1233.",
-      "es": "El sitio mongol de la capital de los Jin, donde ambos bandos usaron bombas de pólvora y los Jin lucharon con lanzas de fuego voladoras. La ciudad resistió cerca de un año antes de rendirse en 1233."
+      "en": "The Mongol siege of the Jin capital, where both sides used gunpowder bombs and the Jin fought with fire lances. Struck by famine and disease, the city held out until May 1233, when it surrendered.",
+      "es": "El sitio mongol de la capital de los Jin, donde ambos bandos usaron bombas de pólvora y los Jin lucharon con lanzas de fuego. Azotada por el hambre y las enfermedades, la ciudad resistió hasta mayo de 1233, cuando se rindió."
      },
      "wiki": {
       "en": "Siege of Kaifeng (1232)",
@@ -1854,16 +1868,16 @@
       "es": "Costa Amalfitana, Italia"
      },
      "text": {
-      "en": "A seafaring town south of Naples whose mills were among the first in Italy to make paper, in the 13th century. A legend also credits a pilot of Amalfi, Flavio Gioia, with the sailor's compass.",
-      "es": "Un pueblo de marinos al sur de Nápoles cuyos molinos fueron de los primeros de Italia en hacer papel, en el siglo XIII. Una leyenda atribuye además a un piloto de Amalfi, Flavio Gioia, la brújula de los marinos."
+      "en": "A seafaring town south of Naples, one of the first places in Europe to make paper, a skill learned from the Arabs. A legend also credits a pilot of Amalfi, Flavio Gioia, with the sailor's compass.",
+      "es": "Un pueblo de marinos al sur de Nápoles, uno de los primeros lugares de Europa en hacer papel, un arte aprendido de los árabes. Una leyenda atribuye además a un piloto de Amalfi, Flavio Gioia, la brújula de los marinos."
      },
      "details": {
-      "en": "Amalfi was a trading republic with ships all over the Mediterranean, and its paper mills in the Valley of the Mills worked for centuries; one, the Amatruda mill, still makes paper by hand. By tradition, around 1302 Flavio Gioia improved the compass by setting the needle over a card marked with the winds. Historians doubt he existed: compasses on a pivot had been described decades earlier, by Peter Peregrinus in 1269 and in Egypt by 1300. The Amalfi Coast, with its terraced lemon groves and towns, has been a World Heritage Site since 1997.",
-      "es": "Amalfi era una república comerciante con barcos por todo el Mediterráneo, y sus molinos de papel del Valle de los Molinos funcionaron durante siglos; uno, el molino Amatruda, todavía hace papel a mano. Según la tradición, hacia 1302 Flavio Gioia mejoró la brújula al poner la aguja sobre una rosa de los vientos. Los historiadores dudan que existiera: las brújulas sobre un eje ya se habían descrito décadas antes, por Pedro Peregrino en 1269 y en Egipto hacia 1300. La Costa Amalfitana, con sus limoneros en terrazas y sus pueblos, es Patrimonio de la Humanidad desde 1997."
+      "en": "Amalfi was a seafaring republic that rivalled Pisa and Genoa, and its people learned papermaking from the Arabs; a Museum of Handmade Paper now works the old machines in a mill of its Mill Valley. By tradition, a pilot named Flavio Gioia perfected the compass around 1300 by setting its needle over a wind rose in a glass-covered box. He may never have existed: a writer of 1511 said the compass was invented in Amalfi 'according to Flavio', meaning the historian Flavio Biondo, and a misplaced comma later turned this into 'invented by Flavio'. The Amalfi Coast has been a World Heritage Site since 1997.",
+      "es": "Amalfi fue una república marinera rival de Pisa y Génova, y su gente aprendió de los árabes a hacer papel; hoy un Museo del Papel Hecho a Mano hace funcionar las viejas máquinas en un molino de su Valle de los Molinos. Según la tradición, un piloto llamado Flavio Gioia perfeccionó la brújula hacia 1300 al poner su aguja sobre una rosa de los vientos, en una caja con tapa de vidrio. Quizá nunca existió: un autor de 1511 escribió que la brújula se inventó en Amalfi «según Flavio», es decir, el historiador Flavio Biondo, y una coma mal puesta lo convirtió después en «inventada por Flavio». La Costa Amalfitana es Patrimonio de la Humanidad desde 1997."
      },
      "wiki": {
       "en": "Amalfi",
-      "es": "Amalfi"
+      "es": "Amalfi (Italia)"
      }
     }
    ]
@@ -1875,17 +1889,17 @@
     "es": "La aguja navega al oeste"
    },
    "text": {
-    "en": "About 1190 an English scholar in Paris writes that sailors steer by a magnetised needle. A Persian book of 1232 tells of an iron fish on a ship, and in 1282 a writer in Cairo describes the compass at sea.",
-    "es": "Hacia 1190, un erudito inglés en París escribe que los marinos se guían por una aguja imantada. Un libro persa de 1232 habla de un pez de hierro en un barco, y en 1282 un autor en El Cairo describe la brújula en el mar."
+    "en": "About 1190 an English scholar in Paris writes that sailors steer by a magnetised needle. A Persian book of about 1230 tells of an iron fish on a ship, and in 1282 a writer in Cairo describes the compass at sea.",
+    "es": "Hacia 1190, un erudito inglés en París escribe que los marinos se guían por una aguja imantada. Un libro persa de hacia 1230 habla de un pez de hierro en un barco, y en 1282 un autor en El Cairo describe la brújula en el mar."
    },
    "details": {
-    "en": "How the compass reached the Indian Ocean and the Mediterranean is not known: perhaps with Arab and Persian merchants who traded in Chinese ports, perhaps overland, and some scholars think Europeans invented it again on their own. Alexander Neckam, writing around 1190, treats it as nothing new: a ship should carry a needle that turns until it points north, to guide sailors in murky weather. In 1232 Muhammad Awfi's Persian collection of stories tells of a fish-shaped iron leaf used to find the way on a voyage, much like the Chinese fish. In Cairo in 1282 Baylak al-Qibjaqi described a needle floating in a bowl that he had seen on a voyage from Syria to Alexandria in 1242, and said Indian Ocean sailors used iron fish. In 1269 Peter Peregrinus described a dry compass turning on a pivot, and in Egypt Ibn Sim'un used one to find the direction of Mecca.",
-    "es": "No se sabe cómo llegó la brújula al océano Índico y al Mediterráneo: quizá con mercaderes árabes y persas que comerciaban en los puertos chinos, quizá por tierra, y algunos estudiosos creen que los europeos la inventaron de nuevo por su cuenta. Alexander Neckam, que escribe hacia 1190, no la presenta como una novedad: un barco debe llevar una aguja que gira hasta apuntar al norte, para guiar a los marinos con tiempo nublado. En 1232, la colección persa de relatos de Muhammad Awfi cuenta cómo se usó una hoja de hierro en forma de pez para orientarse en un viaje, muy parecida al pez chino. En El Cairo, en 1282, Baylak al-Qibjaqi describió una aguja flotando en un cuenco que había visto en un viaje de Siria a Alejandría en 1242, y dijo que los marinos del océano Índico usaban peces de hierro. En 1269, Pedro Peregrino describió una brújula seca que giraba sobre un eje, y en Egipto Ibn Sim'un usó una para hallar la dirección de La Meca."
+    "en": "How the compass reached the Indian Ocean and the Mediterranean is not known: perhaps with Arab and Persian merchants who traded in Chinese ports, perhaps overland, and some scholars think Europeans invented it again on their own. Alexander Neckam, writing around 1190, treats it as nothing new: a ship should carry a needle that turns until it points north, to guide sailors in murky weather. Around 1230 Muhammad Aufi's Persian collection of stories, written in Delhi, tells of a fish-shaped iron leaf used to find the way on a voyage, much like the Chinese fish. In Cairo in 1282 Baylak al-Qibjaqi described a needle floating in a bowl that he had seen on a voyage from Syria to Alexandria in 1242, and said Indian Ocean sailors used iron fish. In 1269 Peter Peregrinus described a dry compass turning on a pivot, and in Egypt Ibn Sim'un used one to find the direction of Mecca.",
+    "es": "No se sabe cómo llegó la brújula al océano Índico y al Mediterráneo: quizá con mercaderes árabes y persas que comerciaban en los puertos chinos, quizá por tierra, y algunos estudiosos creen que los europeos la inventaron de nuevo por su cuenta. Alexander Neckam, que escribe hacia 1190, no la presenta como una novedad: un barco debe llevar una aguja que gira hasta apuntar al norte, para guiar a los marinos con tiempo nublado. Hacia 1230, la colección persa de relatos de Muhammad Aufi, escrita en Delhi, cuenta cómo se usó una hoja de hierro en forma de pez para orientarse en un viaje, muy parecida al pez chino. En El Cairo, en 1282, Baylak al-Qibjaqi describió una aguja flotando en un cuenco que había visto en un viaje de Siria a Alejandría en 1242, y dijo que los marinos del océano Índico usaban peces de hierro. En 1269, Pedro Peregrino describió una brújula seca que giraba sobre un eje, y en Egipto Ibn Sim'un usó una para hallar la dirección de La Meca."
    },
    "camera": {
-    "lon": 52,
-    "lat": 28,
-    "zoom": 1.7
+    "lon": 50,
+    "lat": 27,
+    "zoom": 1.6
    },
    "moves": [
     {
@@ -1930,20 +1944,36 @@
        1.25
       ],
       [
-       103.6,
-       1.15
+       103.75,
+       1.17
       ],
       [
-       102.4,
-       2.2
+       103.3,
+       1.22
       ],
       [
-       100.8,
+       102.8,
+       1.6
+      ],
+      [
+       102.2,
+       1.98
+      ],
+      [
+       101.3,
+       2.55
+      ],
+      [
+       100.6,
        3.2
       ],
       [
-       99,
-       4.6
+       99.5,
+       4
+      ],
+      [
+       98.4,
+       5
       ],
       [
        97.5,
@@ -2091,10 +2121,10 @@
      }
     },
     {
-     "id": "muhammad-awfi",
+     "id": "muhammad-aufi",
      "name": {
-      "en": "Muhammad Awfi",
-      "es": "Muhammad Awfi"
+      "en": "Muhammad Aufi",
+      "es": "Muhammad Aufi"
      },
      "at": [
       77.2167,
@@ -2108,12 +2138,12 @@
       "es": "Delhi, India"
      },
      "text": {
-      "en": "A Persian writer whose great collection of stories, the Jawami ul-Hikayat, finished about 1232, describes a fish-shaped piece of iron that sailors used to find their way: the Islamic world's first record of a compass.",
-      "es": "Un escritor persa cuya gran colección de relatos, el Yawami al-Hikayat, terminada hacia 1232, describe una pieza de hierro en forma de pez con la que los marinos se orientaban: el primer registro de una brújula en el mundo islámico."
+      "en": "A Persian writer from Bukhara who worked at the court of the sultans of Delhi. His great collection of stories, finished about 1228–1232, describes a fish-shaped iron that sailors used to find their way.",
+      "es": "Un escritor persa de Bujará que trabajó en la corte de los sultanes de Delhi. Su gran colección de relatos, terminada hacia 1228-1232, describe un hierro en forma de pez con el que los marinos se orientaban."
      },
      "wiki": {
-      "en": "Muhammad Aufi",
-      "es": ""
+      "en": "Mohammad Aufi",
+      "es": "Zahiriddin Nasr Muhammad Aufi"
      }
     },
     {
@@ -2130,16 +2160,16 @@
      "type": "person",
      "date": "1269",
      "place": {
-      "en": "Lucera, Italy",
-      "es": "Lucera, Italia"
+      "en": "Lucera, Italy (perhaps)",
+      "es": "Lucera, Italia (quizá)"
      },
      "text": {
-      "en": "A French scholar who in 1269, in an army camp at the siege of Lucera, wrote the first known study of magnets in Europe, with a floating compass and a dry compass turning on a pivot.",
-      "es": "Un erudito francés que en 1269, en un campamento militar durante el sitio de Lucera, escribió el primer estudio conocido sobre los imanes en Europa, con una brújula flotante y una brújula seca que gira sobre un eje."
+      "en": "A French scholar who in 1269, perhaps in an army camp at the siege of Lucera, wrote the oldest surviving study of magnets, with a floating compass and a dry compass turning on a pivot.",
+      "es": "Un erudito francés que en 1269, quizá en un campamento militar durante el sitio de Lucera, escribió el estudio sobre los imanes más antiguo que se conserva, con una brújula flotante y una brújula seca que gira sobre un eje."
      },
      "wiki": {
       "en": "Petrus Peregrinus de Maricourt",
-      "es": "Petrus Peregrinus de Maricourt"
+      "es": "Peter Peregrinus de Maricourt"
      }
     },
     {
@@ -2161,16 +2191,16 @@
       "es": "Costa Amalfitana, Italia"
      },
      "text": {
-      "en": "A seafaring town south of Naples whose mills were among the first in Italy to make paper, in the 13th century. A legend also credits a pilot of Amalfi, Flavio Gioia, with the sailor's compass.",
-      "es": "Un pueblo de marinos al sur de Nápoles cuyos molinos fueron de los primeros de Italia en hacer papel, en el siglo XIII. Una leyenda atribuye además a un piloto de Amalfi, Flavio Gioia, la brújula de los marinos."
+      "en": "A seafaring town south of Naples, one of the first places in Europe to make paper, a skill learned from the Arabs. A legend also credits a pilot of Amalfi, Flavio Gioia, with the sailor's compass.",
+      "es": "Un pueblo de marinos al sur de Nápoles, uno de los primeros lugares de Europa en hacer papel, un arte aprendido de los árabes. Una leyenda atribuye además a un piloto de Amalfi, Flavio Gioia, la brújula de los marinos."
      },
      "details": {
-      "en": "Amalfi was a trading republic with ships all over the Mediterranean, and its paper mills in the Valley of the Mills worked for centuries; one, the Amatruda mill, still makes paper by hand. By tradition, around 1302 Flavio Gioia improved the compass by setting the needle over a card marked with the winds. Historians doubt he existed: compasses on a pivot had been described decades earlier, by Peter Peregrinus in 1269 and in Egypt by 1300. The Amalfi Coast, with its terraced lemon groves and towns, has been a World Heritage Site since 1997.",
-      "es": "Amalfi era una república comerciante con barcos por todo el Mediterráneo, y sus molinos de papel del Valle de los Molinos funcionaron durante siglos; uno, el molino Amatruda, todavía hace papel a mano. Según la tradición, hacia 1302 Flavio Gioia mejoró la brújula al poner la aguja sobre una rosa de los vientos. Los historiadores dudan que existiera: las brújulas sobre un eje ya se habían descrito décadas antes, por Pedro Peregrino en 1269 y en Egipto hacia 1300. La Costa Amalfitana, con sus limoneros en terrazas y sus pueblos, es Patrimonio de la Humanidad desde 1997."
+      "en": "Amalfi was a seafaring republic that rivalled Pisa and Genoa, and its people learned papermaking from the Arabs; a Museum of Handmade Paper now works the old machines in a mill of its Mill Valley. By tradition, a pilot named Flavio Gioia perfected the compass around 1300 by setting its needle over a wind rose in a glass-covered box. He may never have existed: a writer of 1511 said the compass was invented in Amalfi 'according to Flavio', meaning the historian Flavio Biondo, and a misplaced comma later turned this into 'invented by Flavio'. The Amalfi Coast has been a World Heritage Site since 1997.",
+      "es": "Amalfi fue una república marinera rival de Pisa y Génova, y su gente aprendió de los árabes a hacer papel; hoy un Museo del Papel Hecho a Mano hace funcionar las viejas máquinas en un molino de su Valle de los Molinos. Según la tradición, un piloto llamado Flavio Gioia perfeccionó la brújula hacia 1300 al poner su aguja sobre una rosa de los vientos, en una caja con tapa de vidrio. Quizá nunca existió: un autor de 1511 escribió que la brújula se inventó en Amalfi «según Flavio», es decir, el historiador Flavio Biondo, y una coma mal puesta lo convirtió después en «inventada por Flavio». La Costa Amalfitana es Patrimonio de la Humanidad desde 1997."
      },
      "wiki": {
       "en": "Amalfi",
-      "es": "Amalfi"
+      "es": "Amalfi (Italia)"
      }
     },
     {
@@ -2222,9 +2252,9 @@
     "es": "Entre 1240 y 1280, el ingeniero sirio Hasan al-Rammah escribió recetas de pólvora y de cohetes y explicó cómo purificar el salitre, al que los autores árabes llamaban «nieve de China». Muchos historiadores creen que la difundieron los mongoles, que llevaron al oeste a expertos chinos en pólvora, aunque hay pocas pruebas escritas. En 1267, el fraile inglés Roger Bacon describió un petardo infantil que rugía más que el trueno. En China, los tubos de metal reemplazaron al bambú: un arma de mano de bronce hallada en Heilongjiang es de hacia 1288, y una con el año 1298 inscrito apareció en Xanadú, la capital de verano de los mongoles. En 1326, un manuscrito inglés de Walter de Milemete mostró un cañón con forma de jarrón que disparaba una flecha, y Florencia encargó cañones de metal. Algunos historiadores defienden armas de fuego anteriores en el mundo islámico o inventos hechos por separado en Europa, pero la mayoría coincide en que el arma de fuego nació en China. Hubo cañones en Crécy en 1346, y en 1453 los cañones otomanos derribaron las murallas de Constantinopla."
    },
    "camera": {
-    "lon": 62,
-    "lat": 42,
-    "zoom": 1.7
+    "lon": 63,
+    "lat": 44,
+    "zoom": 1.35
    },
    "moves": [
     {
@@ -2441,8 +2471,8 @@
       "es": "desconocido"
      },
      "place": {
-      "en": "Banlachengzi, Acheng, Heilongjiang, China",
-      "es": "Banlachengzi, Acheng, Heilongjiang, China"
+      "en": "Banlachengzi, Acheng District, Heilongjiang, China",
+      "es": "Banlachengzi, distrito de Acheng, Heilongjiang, China"
      },
      "text": {
       "en": "A bronze hand gun 34 cm long, found in 1970 near a battlefield of 1287–1288 where Yuan soldiers carried guns on their backs: the oldest surviving firearm known for certain.",
@@ -2456,8 +2486,8 @@
     {
      "id": "xanadu",
      "name": {
-      "en": "Xanadu",
-      "es": "Xanadú"
+      "en": "Xanadu (Shangdu)",
+      "es": "Xanadú (Shangdu)"
      },
      "at": [
       116.1852,
@@ -2472,11 +2502,11 @@
       "es": "Mongolia Interior, China"
      },
      "text": {
-      "en": "Kublai Khan's summer capital, founded in 1256. In its ruins archaeologists found a bronze gun inscribed with a date that matches 1298: the oldest gun bearing a date. A World Heritage Site.",
-      "es": "La capital de verano de Kublai Kan, fundada en 1256. En sus ruinas, los arqueólogos hallaron un arma de bronce con una fecha inscrita que corresponde a 1298: la más antigua que lleva fecha. Es Patrimonio de la Humanidad."
+      "en": "Kublai Khan's summer capital, built in 1252–1256 and sacked in 1369. In its ruins archaeologists found a bronze gun inscribed with a date that matches 1298: the oldest gun bearing a date. A World Heritage Site.",
+      "es": "La capital de verano de Kublai Kan, construida en 1252-1256 y saqueada en 1369. En sus ruinas, los arqueólogos hallaron un arma de bronce con una fecha inscrita que corresponde a 1298: la más antigua que lleva fecha. Es Patrimonio de la Humanidad."
      },
      "wiki": {
-      "en": "Xanadu",
+      "en": "Shangdu",
       "es": "Xanadú"
      }
     },
@@ -2885,8 +2915,12 @@
       "es": "Roma, Italia, donde se imprimió por primera vez"
      },
      "text": {
-      "en": "A history of China by a Spanish Augustinian friar, printed in Rome in 1585 and soon translated into many languages. It told Europe that the Chinese had printed books long before Gutenberg.",
-      "es": "Una historia de China de un fraile agustino español, impresa en Roma en 1585 y pronto traducida a muchas lenguas. Contó a Europa que los chinos imprimían libros mucho antes que Gutenberg."
+      "en": "A history of China by a Spanish Augustinian friar who never went there, drawn from the reports of Spanish travellers. Printed in Rome in 1585, it was soon read in Italian, French, English, German, Latin and Dutch.",
+      "es": "Una historia de China de un fraile agustino español que nunca estuvo allí, basada en los relatos de viajeros españoles. Impresa en Roma en 1585, pronto se leyó en italiano, francés, inglés, alemán, latín y neerlandés."
+     },
+     "details": {
+      "en": "Born at Torrecilla en Cameros, in La Rioja, Juan González de Mendoza never reached China, but he gathered the accounts of Spanish friars and soldiers who had, such as Miguel de Luarca. His book of 1585 went through 38 editions in a few years and was Europe's main picture of China until the Jesuits' reports of 1615. Among much else, it said that the Chinese had printed books for centuries before Gutenberg. Mendoza later became a bishop in Italy and in the Americas, and died in 1618 at Popayán, in today's Colombia.",
+      "es": "Nacido en Torrecilla en Cameros, en La Rioja, Juan González de Mendoza nunca llegó a China, pero reunió los relatos de frailes y soldados españoles que sí estuvieron allí, como Miguel de Luarca. Su libro de 1585 tuvo 38 ediciones en pocos años y fue la principal imagen de China en Europa hasta los informes de los jesuitas de 1615. Entre muchas otras cosas, decía que los chinos imprimían libros siglos antes que Gutenberg. Mendoza fue luego obispo en Italia y en América, y murió en 1618 en Popayán, en la actual Colombia."
      },
      "wiki": {
       "en": "Juan González de Mendoza",
@@ -2940,9 +2974,9 @@
     "es": "La idea de los «cuatro grandes inventos» nació en Europa, a partir de los tres de la época de Bacon. El historiador Joseph Needham, cuya obra Ciencia y civilización en China empezó a publicarse en 1954, hizo famosa la lista, y hoy se enseña en todas las escuelas chinas. Algunos historiadores chinos, como Deng Yinke, señalan que China dio al mundo mucho más, en agricultura, fundición de hierro, medicina, astronomía, porcelana y seda, y que algunos importaron tanto como ellos dentro del país; otros inventos chinos son el papel moneda, el detector de terremotos de Zhang Heng y la torre del reloj astronómico de Su Song. En 2009, la UNESCO declaró la impresión xilográfica china Patrimonio Cultural Inmaterial. Desde 2017, en China se habla también de los «cuatro grandes inventos nuevos»: el tren de alta velocidad, el pago por celular, las compras en línea y las bicicletas compartidas, aunque ninguno se inventó primero en China."
    },
    "camera": {
-    "lon": 70,
+    "lon": 72,
     "lat": 38,
-    "zoom": 1.5
+    "zoom": 1.4
    },
    "places": [
     {
@@ -3294,8 +3328,12 @@
    "url": "https://en.wikipedia.org/wiki/Alexander_Neckam"
   },
   {
-   "title": "Wikipedia: Muhammad Aufi",
-   "url": "https://en.wikipedia.org/wiki/Muhammad_Aufi"
+   "title": "Wikipedia: Mohammad Aufi",
+   "url": "https://en.wikipedia.org/wiki/Mohammad_Aufi"
+  },
+  {
+   "title": "Wikipedia: Flavio Gioja",
+   "url": "https://en.wikipedia.org/wiki/Flavio_Gioja"
   },
   {
    "title": "Wikipedia: Petrus Peregrinus de Maricourt",
@@ -3316,6 +3354,10 @@
   {
    "title": "Wikipedia: Xanadu Gun",
    "url": "https://en.wikipedia.org/wiki/Xanadu_Gun"
+  },
+  {
+   "title": "Wikipedia: Shangdu",
+   "url": "https://en.wikipedia.org/wiki/Shangdu"
   },
   {
    "title": "Wikipedia: Cannon",
