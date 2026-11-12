@@ -2206,32 +2206,6 @@
           }
         },
         {
-          "id": "alexandra-palace",
-          "name": {
-            "en": "Alexandra Palace",
-            "es": "Alexandra Palace"
-          },
-          "at": [
-            -0.1308,
-            51.5942
-          ],
-          "cat": "communication",
-          "type": "site",
-          "date": "1936-11-02",
-          "place": {
-            "en": "London, United Kingdom",
-            "es": "Londres, Reino Unido"
-          },
-          "text": {
-            "en": "From a mast on this Victorian palace, the BBC began the world's first regular high-definition television service, of 405 lines, on 2 November 1936.",
-            "es": "Desde un mástil sobre este palacio victoriano, la BBC empezó el 2 de noviembre de 1936 el primer servicio regular de televisión de alta definición del mundo, de 405 líneas."
-          },
-          "wiki": {
-            "en": "Alexandra Palace",
-            "es": "Alexandra Palace"
-          }
-        },
-        {
           "id": "guillermo-gonzalez-camarena",
           "name": {
             "en": "Guillermo González Camarena",
@@ -2508,9 +2482,9 @@
         "es": "Las computadoras se hablan"
       },
       "camera": {
-        "lon": -62,
-        "lat": 44,
-        "zoom": 1.5
+        "lon": -72,
+        "lat": 58,
+        "zoom": 1.4
       },
       "text": {
         "en": "On 29 October 1969 a student at UCLA logged in over ARPANET to a computer at SRI, 500 km away. It crashed after two letters, 'LO'. In 1971 Ray Tomlinson sent the first email between networked computers.",
@@ -2744,15 +2718,15 @@
             "es": "Internet"
           },
           "at": [
-            -122.1697,
-            37.4275
+            -77.0727,
+            38.8951
           ],
           "cat": "computing",
           "type": "invention",
           "date": "1983-01-01",
           "place": {
-            "en": "Stanford University, California, United States",
-            "es": "Universidad de Stanford, California, Estados Unidos"
+            "en": "DARPA, Arlington, Virginia, United States",
+            "es": "DARPA, Arlington, Virginia, Estados Unidos"
           },
           "by": {
             "en": "Vint Cerf and Bob Kahn",
@@ -3206,8 +3180,8 @@
         "es": "Una computadora en cada bolsillo"
       },
       "camera": {
-        "lon": -45,
-        "lat": 18,
+        "lon": -24,
+        "lat": 44,
         "zoom": 1
       },
       "text": {
@@ -3283,37 +3257,6 @@
             "en": "IBM Simon",
             "es": "IBM Simon"
           }
-        },
-        {
-          "id": "android",
-          "name": {
-            "en": "Android",
-            "es": "Android"
-          },
-          "at": [
-            -122.084,
-            37.422
-          ],
-          "cat": "computing",
-          "type": "invention",
-          "date": "2008-09-23",
-          "place": {
-            "en": "Googleplex, Mountain View, California, United States",
-            "es": "Googleplex, Mountain View, California, Estados Unidos"
-          },
-          "by": {
-            "en": "Andy Rubin and Chris White, then Google",
-            "es": "Andy Rubin y Chris White, luego Google"
-          },
-          "text": {
-            "en": "An operating system for phones, based on Linux and largely open source, first released on 23 September 2008. Many companies make Android phones, and it is the most used system in the world.",
-            "es": "Un sistema operativo para teléfonos, basado en Linux y en gran parte de código abierto, que salió el 23 de septiembre de 2008. Muchas empresas fabrican teléfonos Android, y es el sistema más usado del mundo."
-          },
-          "wiki": {
-            "en": "Android (operating system)",
-            "es": "Android"
-          },
-          "img": "HTC Android T-Mobile G1.jpg"
         },
         {
           "id": "m-pesa",
@@ -3519,8 +3462,16 @@
               14.7
             ],
             [
+              -17.8,
+              12.5
+            ],
+            [
+              -16.5,
+              10.3
+            ],
+            [
               -14.5,
-              9.0
+              8.5
             ],
             [
               -9.0,
@@ -3535,52 +3486,88 @@
               6.0
             ],
             [
-              8.0,
-              2.0
+              6.5,
+              3.0
             ],
             [
-              10.5,
-              -4.0
+              8.0,
+              -1.0
+            ],
+            [
+              10.0,
+              -4.5
             ],
             [
               12.4,
               -8.8
             ],
             [
-              11.5,
+              11.0,
               -17.0
             ],
             [
-              14.0,
-              -23.0
+              13.5,
+              -23.5
             ],
             [
-              16.5,
+              14.2,
+              -27.0
+            ],
+            [
+              15.6,
               -30.0
             ],
             [
+              17.2,
+              -33.0
+            ],
+            [
               18.0,
+              -34.7
+            ],
+            [
+              20.0,
+              -35.3
+            ],
+            [
+              23.0,
               -34.6
             ],
             [
-              20.5,
-              -35.2
+              26.5,
+              -34.3
             ],
             [
-              25.6,
-              -34.5
+              30.0,
+              -31.8
             ],
             [
-              31.2,
-              -30.1
+              31.5,
+              -29.5
             ],
             [
-              35.6,
+              32.8,
+              -28.8
+            ],
+            [
+              33.5,
+              -26.5
+            ],
+            [
+              35.8,
               -24.0
             ],
             [
-              40.8,
+              36.0,
+              -20.0
+            ],
+            [
+              41.2,
               -15.0
+            ],
+            [
+              41.0,
+              -11.0
             ],
             [
               40.2,
@@ -3591,27 +3578,43 @@
               -2.6
             ],
             [
-              45.4,
-              1.9
+              45.8,
+              1.6
+            ],
+            [
+              48.4,
+              3.0
+            ],
+            [
+              50.0,
+              6.0
             ],
             [
               51.6,
-              11.9
+              9.0
             ],
             [
-              47.5,
-              13.0
+              52.0,
+              10.5
             ],
             [
-              43.6,
-              12.4
+              51.8,
+              12.1
+            ],
+            [
+              48.0,
+              12.6
+            ],
+            [
+              43.45,
+              12.58
             ],
             [
               42.5,
               15.0
             ],
             [
-              39.0,
+              38.8,
               21.3
             ],
             [
@@ -3619,8 +3622,8 @@
               26.5
             ],
             [
-              33.5,
-              28.0
+              33.3,
+              28.2
             ]
           ]
         }
