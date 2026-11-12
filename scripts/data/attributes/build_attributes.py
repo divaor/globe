@@ -67,6 +67,8 @@ S = {
     'olympedia': ('Olympedia results via github.com/KeithGalli/Olympics-Dataset', 'MIT (repository); facts from olympedia.org'),
     'wiki_olympics': ('Wikipedia, "All-time Olympic Games medal table" (via scripts/data/games/_data/medals-alltime.json)', 'CC BY-SA 4.0'),
     'compiled': ('compiled', 'CC0-1.0 (compiled facts)'),
+    'heritage': ('UNESCO World Heritage List after the July 2026 session, via Wikipedia and Wikidata (public/data/layers/heritage.json, made by scripts/data/world-heritage/build.py)',
+                 'CC BY-SA 4.0 (Wikipedia); CC0 (Wikidata)'),
 }
 
 FIELDS = collections.OrderedDict()
@@ -446,13 +448,18 @@ y = fb_field('railways_km', 'Transportation', 'Railways', 'total', nd=0)
 field('railways_km', 'Railway network', 'Red ferroviaria', 'fun', 'number', 'factbook', unit='km', scale='log', higherIs='neutral',
       note='Survey years vary.')
 
-# UNESCO World Heritage Sites
+# UNESCO World Heritage Sites: from the app's own World Heritage data (every site counts for each of its countries).
+_wh = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../../public/data/layers/heritage.json'), encoding='utf-8'))
+_whc = {}
+for _s in _wh['sites']:
+    if _s.get('x') or _s.get('merged'):
+        continue
+    for _c in _s['cc']:
+        _whc[_c] = _whc.get(_c, 0) + 1
 for iso in KEYS:
-    vals = [fb.number(t) for t in fb_all(iso, 'Government', 'National heritage', 'total World Heritage Sites') if t]
-    vals = [v for v in vals if v is not None]
-    if vals:
-        put(iso, 'unesco_sites', int(sum(vals)))
-field('unesco_sites', 'UNESCO World Heritage Sites', 'Sitios del Patrimonio Mundial (UNESCO)', 'culture', 'number', 'factbook', unit='sites', year=2025,
+    if iso in _whc:
+        put(iso, 'unesco_sites', _whc[iso])
+field('unesco_sites', 'UNESCO World Heritage Sites', 'Sitios del Patrimonio Mundial (UNESCO)', 'culture', 'number', 'heritage', unit='sites', year=2026,
       scale='linear', higherIs='neutral', note='Transnational sites count for every country involved.')
 
 # Suffrage

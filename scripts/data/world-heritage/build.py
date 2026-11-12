@@ -190,6 +190,9 @@ def main():
                 site['n'][1] = val
             elif k == 'en':
                 site['n'][0] = val
+            elif k == 'cc':
+                site['cc'] = val
+                site['ccx'] = 1  # the countries are fixed by hand: locate.mjs leaves them
             elif k != 'note':
                 site[k] = val
         if not es and 'es' not in o:
@@ -205,6 +208,8 @@ def main():
     doc = {'asOf': AS_OF, 'count': len(current), 'counts': counts, 'danger': len(in_danger), 'sites': out}
     with open(OUT, 'w', encoding='utf-8') as f:
         json.dump(doc, f, ensure_ascii=False, separators=(',', ':'))
+    import subprocess
+    subprocess.run(['node', os.path.join(os.path.dirname(__file__), 'locate.mjs')], check=True)
     print(f'{len(out)} sites written ({len(current)} on the list: {counts}; {len(in_danger)} in danger), {os.path.getsize(OUT) // 1024} KB')
     print(f'no Spanish name: {len(missing_es)}, no picture: {len(missing_img)}, no place: {len(missing_at)} {missing_at}')
     if unmatched:

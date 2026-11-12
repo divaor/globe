@@ -82,7 +82,7 @@ SOL Somaliland, CYN Northern Cyprus; Taiwan TWN, Western Sahara ESH and Palestin
 | `vat_rate` | economy | number | 31 | countries Ruby gem data (github.com/countries/countries) | MIT |
 | `top_export` | economy | category | 236 | CIA World Factbook, final edition (2025/26), via github.com/factbook/factbook.json | Public domain (U.S. Government work); repository CC0-1.0 |
 | `top_export_partner` | economy | category | 234 | CIA World Factbook, final edition (2025/26), via github.com/factbook/factbook.json | Public domain (U.S. Government work); repository CC0-1.0 |
-| `unesco_sites` | culture | number | 177 | CIA World Factbook, final edition (2025/26), via github.com/factbook/factbook.json | Public domain (U.S. Government work); repository CC0-1.0 |
+| `unesco_sites` | culture | number | 185 | UNESCO World Heritage List after the July 2026 session, via Wikipedia and Wikidata (`public/data/layers/heritage.json`, made by `scripts/data/world-heritage/build.py`) | CC BY-SA 4.0 (Wikipedia); CC0 (Wikidata) |
 | `languages` | culture | list | 251 | mledoze/countries (github.com/mledoze/countries) | ODbL-1.0 |
 | `language_family` | culture | category | 251 | compiled | CC0-1.0 (compiled facts) |
 | `language_branch` | culture | category | 251 | compiled | CC0-1.0 (compiled facts) |

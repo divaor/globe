@@ -44,7 +44,7 @@ export class TimeTravel {
       await pangea.enter(Number(ma));
     })());
     // Each story collection opens its list of stories; the mode starts when one is picked.
-    const icons: Record<StoryKind, string> = { wars: '⚔️', eras: '🎨', food: '🌾', structures: '🏛️', people: '🏺', life: '🦕', games: '🏅', journeys: '🧭', beliefs: '🛐', writing: '✍️', plagues: '🦠', disasters: '🌋', music: '🎵', books: '📚', art: '🖼️' };
+    const icons: Record<StoryKind, string> = { wars: '⚔️', eras: '🎨', food: '🌾', structures: '🏛️', people: '🏺', life: '🦕', games: '🏅', journeys: '🧭', beliefs: '🛐', writing: '✍️', plagues: '🦠', disasters: '🌋', music: '🎵', books: '📚', art: '🖼️', inventions: '💡', heritage: '🏛️' };
     for (const kind of STORY_KINDS) {
       const m = (this.stories[kind] = new StoryMode(app, shell, kind));
       this.add({
@@ -52,6 +52,15 @@ export class TimeTravel {
         enter: () => m.pick(), exit: () => m.exit(), tap: (lon, lat) => m.tap(lon, lat),
       });
     }
+    // A filter's card (the inventions map) opens the story its item comes from, at its step.
+    app.on('open-story', (kind, id, step) => void (async () => {
+      const k = kind as StoryKind;
+      const m = this.stories[k];
+      if (!m) return;
+      if (app.mode && app.mode !== k) await this.modes.find((x) => x.id === app.mode)?.exit();
+      shell.sheet.close();
+      await m.show(String(id), Number(step));
+    })());
     shell.addDock({ id: 'time', icon: History, label: () => t('timeTravelShort'), order: 30, onClick: () => this.open() });
     // In a mode, taps go to the mode instead of selecting today's countries.
     shell.tapHandlers.unshift((_x, _y, g) => {

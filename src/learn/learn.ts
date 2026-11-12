@@ -23,17 +23,19 @@ const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
 const shuffle = <T,>(a: T[]) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 
-type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family' | 'plague' | 'disaster' | 'listen' | 'opening' | 'artist';
+type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family' | 'plague' | 'disaster' | 'listen' | 'opening' | 'artist' | 'site' | 'inventor';
 /** An item of a story collection, tagged with its collection. */
-interface QItem extends CollectionItem { kind: StoryKind }
+interface QItem extends CollectionItem { kind: StoryKind; pop?: number }
+/** A site of data/layers/heritage.json (scripts/data/world-heritage/build.py). */
+interface WhSite { ref: number; n: [string, string]; at: [number, number]; c: 'c' | 'n' | 'm'; y: number; cc: string[]; w: [string, string]; img: string; pop: number; x?: number; merged?: number }
 /** A question; once answered, whether it was right and what the player answered. */
 interface Q { id: string; options?: string[]; item?: QItem; ok?: boolean; given?: string; pick?: string; link?: Link; lang?: string }
 /** "Guess the link": two country facts, their correlation and how many countries have both. */
 interface Link { a: string; b: string; rho: number; n: number }
-const ITEM_QUIZZES: QuizKind[] = ['where', 'when', 'dish', 'era', 'civ', 'period', 'champion', 'journey', 'faith', 'script', 'plague', 'disaster', 'listen', 'opening', 'artist'];
+const ITEM_QUIZZES: QuizKind[] = ['where', 'when', 'dish', 'era', 'civ', 'period', 'champion', 'journey', 'faith', 'script', 'plague', 'disaster', 'listen', 'opening', 'artist', 'site', 'inventor'];
 /** The quizzes whose question is a clip, a line or a picture, its name hidden until the answer: what are you hearing,
  * which book is it from, who made it. */
-const HIDDEN_NAME: QuizKind[] = ['listen', 'opening', 'artist'];
+const HIDDEN_NAME: QuizKind[] = ['listen', 'opening', 'artist', 'site'];
 /** "Who made it?" leaves out works by unknown or many hands, and makers' names too long for a button. */
 const ANONYMOUS = /unknown|anonymous|traditional|workshop|artists|craftsmen|makers|people|desconocid|anónim/i;
 /** "What are you hearing?": the wrong answers are of the same kind (instruments with instruments, styles with dances). */
@@ -61,7 +63,7 @@ function joinList(names: string[]): string {
 const lower1 = (x: string) => x.charAt(0).toLowerCase() + x.slice(1);
 /** The civilization stories of Peoples and civilizations: the answers of "Which civilization?". */
 const CIV_STORIES = ['mesopotamia', 'ancient-egypt', 'indus-valley', 'persia', 'kush-aksum', 'ancient-china', 'khmer', 'west-african-empires', 'great-zimbabwe-swahili', 'olmecs-maya', 'andes'];
-const COLLECTION_DIR: Record<StoryKind, string> = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art' };
+const COLLECTION_DIR: Record<StoryKind, string> = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art', inventions: 'inventions', heritage: 'heritage' };
 const yearOf = (d: string) => Number(/^-?\d+/.exec(d)?.[0] ?? 0);
 
 /** Four years to choose from: the right one and three plausible others (no year 0, none in the future). */
@@ -229,6 +231,8 @@ export class Learn {
       ['listen', '🎧', L('What are you hearing?', '¿Qué estás oyendo?'), L('Listen to a short clip of an instrument, a piece or a style of music, and name it.', 'Escucha un fragmento de un instrumento, una obra o un estilo musical, y di cuál es.')],
       ['opening', '📖', L('Which book is it from?', '¿De qué libro es?'), L('A famous line in its own language: which book or poem is it from?', 'Una frase famosa en su propia lengua: ¿de qué libro o poema es?')],
       ['artist', '🎨', L('Who made it?', '¿Quién lo hizo?'), L('Look at a masterpiece and pick the artist who made it.', 'Mira una obra maestra y elige al artista que la hizo.')],
+      ['site', '🏛️', L('Which World Heritage site?', '¿Qué sitio del Patrimonio Mundial?'), L('Look at a picture of a World Heritage site and name it.', 'Mira la foto de un sitio del Patrimonio Mundial y di cuál es.')],
+      ['inventor', '💡', L('Who invented it?', '¿Quién lo inventó?'), L('The telephone, paper, the World Wide Web...: pick who invented it.', 'El teléfono, el papel, la World Wide Web...: elige quién lo inventó.')],
       ['link', '📈', L('Guess the link', 'Adivina la relación'), L('Do two facts about countries go together? Guess, then see the scatter plot.', '¿Van juntos dos datos de los países? Adivina y luego mira el diagrama de dispersión.')],
     ];
     const list2 = h('div', { class: 'mode-list' });
@@ -468,14 +472,14 @@ export class Learn {
   /** The quizzes about the story collections: their items make the questions. */
   private async startItemQuiz(kind: QuizKind) {
     if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
-    const needs: StoryKind[] = kind === 'dish' ? ['food'] : kind === 'era' ? ['eras'] : kind === 'civ' ? ['people'] : kind === 'period' ? ['life'] : kind === 'champion' ? ['games'] : kind === 'journey' ? ['journeys'] : kind === 'faith' ? ['beliefs'] : kind === 'script' ? ['writing'] : kind === 'plague' ? ['plagues'] : kind === 'disaster' ? ['disasters'] : kind === 'listen' ? ['music'] : kind === 'opening' ? ['books'] : kind === 'artist' ? ['art'] : kind === 'where' ? ['structures', 'eras', 'food', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters', 'music', 'art'] : ['structures', 'eras', 'food', 'writing', 'plagues', 'disasters', 'books', 'art'];
+    const needs: StoryKind[] = kind === 'dish' ? ['food'] : kind === 'era' ? ['eras'] : kind === 'civ' ? ['people'] : kind === 'period' ? ['life'] : kind === 'champion' ? ['games'] : kind === 'journey' ? ['journeys'] : kind === 'faith' ? ['beliefs'] : kind === 'script' ? ['writing'] : kind === 'plague' ? ['plagues'] : kind === 'disaster' ? ['disasters'] : kind === 'listen' ? ['music'] : kind === 'opening' ? ['books'] : kind === 'artist' ? ['art'] : kind === 'inventor' ? ['inventions'] : kind === 'site' ? [] : kind === 'where' ? ['structures', 'eras', 'food', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters', 'music', 'art', 'inventions', 'heritage'] : ['structures', 'eras', 'food', 'writing', 'plagues', 'disasters', 'books', 'art', 'inventions'];
     try { await this.loadItems(needs); } catch { /* offline: the pool stays small */ }
     const tag = (k: StoryKind): QItem[] => (this.items[k] ?? []).map((it) => ({ ...it, kind: k }));
     const is = (it: QItem, ...types: string[]) => !!it.type && types.includes(it.type);
     let pool: QItem[] = [];
-    if (kind === 'where') pool = [...tag('structures'), ...tag('eras').filter((it) => !is(it, 'person')), ...tag('food').filter((it) => is(it, 'dish', 'site')), ...tag('people').filter((it) => is(it, 'site', 'structure', 'fossil', 'work', 'culture')), ...tag('life').filter((it) => is(it, 'fossil', 'site', 'species', 'animal')), ...tag('games').filter((it) => is(it, 'games')), ...tag('journeys').filter((it) => is(it, 'place', 'site') && it.cat !== 'slavery'), ...tag('beliefs').filter((it) => is(it, 'site', 'structure')), ...tag('writing').filter((it) => is(it, 'site', 'work', 'structure')), ...tag('plagues').filter((it) => is(it, 'site', 'structure')), ...tag('disasters').filter((it) => is(it, 'site', 'event')), ...tag('music').filter((it) => is(it, 'genre', 'instrument')), ...tag('art').filter((it) => is(it, 'work'))];
+    if (kind === 'where') pool = [...tag('structures'), ...tag('eras').filter((it) => !is(it, 'person')), ...tag('food').filter((it) => is(it, 'dish', 'site')), ...tag('people').filter((it) => is(it, 'site', 'structure', 'fossil', 'work', 'culture')), ...tag('life').filter((it) => is(it, 'fossil', 'site', 'species', 'animal')), ...tag('games').filter((it) => is(it, 'games')), ...tag('journeys').filter((it) => is(it, 'place', 'site') && it.cat !== 'slavery'), ...tag('beliefs').filter((it) => is(it, 'site', 'structure')), ...tag('writing').filter((it) => is(it, 'site', 'work', 'structure')), ...tag('plagues').filter((it) => is(it, 'site', 'structure')), ...tag('disasters').filter((it) => is(it, 'site', 'event')), ...tag('music').filter((it) => is(it, 'genre', 'instrument')), ...tag('art').filter((it) => is(it, 'work')), ...tag('inventions').filter((it) => is(it, 'invention')), ...tag('heritage').filter((it) => is(it, 'site'))];
     if (kind === 'champion') pool = tag('games').filter((it) => is(it, 'games') && (it.podium?.length ?? 0) >= 4);
-    if (kind === 'when') pool = [...tag('structures'), ...tag('eras').filter((it) => is(it, 'work', 'invention', 'structure', 'event', 'institution')), ...tag('food').filter((it) => is(it, 'dish')), ...tag('writing').filter((it) => is(it, 'script', 'work', 'invention')), ...tag('plagues').filter((it) => is(it, 'invention', 'work')), ...tag('disasters').filter((it) => is(it, 'event')), ...tag('books').filter((it) => is(it, 'work')), ...tag('art').filter((it) => is(it, 'work'))];
+    if (kind === 'when') pool = [...tag('structures'), ...tag('eras').filter((it) => is(it, 'work', 'invention', 'structure', 'event', 'institution')), ...tag('food').filter((it) => is(it, 'dish')), ...tag('writing').filter((it) => is(it, 'script', 'work', 'invention')), ...tag('plagues').filter((it) => is(it, 'invention', 'work')), ...tag('disasters').filter((it) => is(it, 'event')), ...tag('books').filter((it) => is(it, 'work')), ...tag('art').filter((it) => is(it, 'work')), ...tag('inventions').filter((it) => is(it, 'invention'))];
     if (kind === 'dish') pool = tag('food').filter((it) => is(it, 'dish') && !!it.country && !!this.app.data.meta[it.country]);
     if (kind === 'era') pool = tag('eras').filter((it) => is(it, 'person', 'work', 'invention') && this.eras.has(it.story));
     if (kind === 'civ') pool = tag('people').filter((it) => is(it, 'person', 'work', 'structure', 'site', 'invention') && this.civs.has(it.story));
@@ -504,8 +508,12 @@ export class Learn {
     // Lines from books and poems (a writer's own card, with a line of theirs, is not "which book is it from?").
     if (kind === 'opening') pool = tag('books').filter((it) => is(it, 'work') && !!it.quote && it.quote.text.length >= 12);
     if (kind === 'artist') pool = tag('art').filter((it) => is(it, 'work') && !!it.by && !!(it.img || it.wiki) && tx(it.by).length <= 40 && !ANONYMOUS.test(it.by.en));
-    if (HIDDEN_NAME.includes(kind)) {
-      this.optNames = new Map(pool.map((x) => kind === 'artist' ? [x.by!.en, x.by!] : [x.id ?? x.name.en, x.name]));
+    // Who invented it?: inventions with a named inventor (not "unknown" or a whole people).
+    if (kind === 'inventor') pool = tag('inventions').filter((it) => is(it, 'invention') && !!it.by && tx(it.by).length <= 40 && !ANONYMOUS.test(it.by.en));
+    // Which World Heritage site?: the better-known sites on the list (in many Wikipedias) that have a picture.
+    if (kind === 'site') pool = await this.heritagePool();
+    if (HIDDEN_NAME.includes(kind) || kind === 'inventor') {
+      this.optNames = new Map(pool.map((x) => kind === 'artist' || kind === 'inventor' ? [x.by!.en, x.by!] : [x.id ?? x.name.en, x.name]));
     }
     if (pool.length < 10 || (HIDDEN_NAME.includes(kind) && this.optNames.size < 4) || (kind === 'era' && this.eras.size < 4) || (kind === 'civ' && this.civs.size < 4) || (kind === 'period' && this.periods.length < 4) || (kind === 'journey' && this.journeys.size < 4) || (kind === 'faith' && this.faiths.size < 4) || (!!sq && (set?.size ?? 0) < 4)) {
       clear(this.card);
@@ -535,7 +543,16 @@ export class Learn {
         const rest = like.length >= 3 ? like : pool.filter((x) => (x.id ?? x.name.en) !== id);
         return { id, item: it, options: shuffle([id, ...shuffle([...new Set(rest.map((x) => x.id ?? x.name.en))]).slice(0, 3)]) };
       }
-      if (kind === 'artist') {
+      if (kind === 'site') {
+        // Three other sites of the same continent, of about the same fame.
+        const id = it.id!;
+        const cont = (x: QItem) => this.app.data.meta[x.country ?? '']?.ct;
+        const same = pool.filter((x) => x.id !== id && cont(x) === cont(it));
+        const near = (same.length >= 6 ? same : pool.filter((x) => x.id !== id)).map((x) => [x.id!, Math.abs((x.pop ?? 0) - (it.pop ?? 0))] as const)
+          .sort((a, b) => a[1] - b[1]).slice(0, 10).map(([n]) => n);
+        return { id, item: it, options: shuffle([id, ...shuffle(near).slice(0, 3)]) };
+      }
+      if (kind === 'artist' || kind === 'inventor') {
         // Three other artists, from the closest in time of the eight nearest (Monet with Renoir, not with the Lascaux painters).
         const id = it.by!.en;
         const near = [...new Map(pool.filter((x) => x.by!.en !== id).map((x) => [x.by!.en, Math.abs(x.t - it.t)] as const)).entries()]
@@ -553,6 +570,24 @@ export class Learn {
     this.app.select(null);
     if (kind === 'where' && this.app.renderer.view.current.kind !== 'globe') this.app.setProjection('globe');
     this.renderQuiz();
+  }
+
+  private heritageSites: QItem[] | null = null;
+  /** "Which World Heritage site?": the sites on the list with a picture that many Wikipedias have an article on. */
+  private async heritagePool(): Promise<QItem[]> {
+    if (!this.heritageSites) {
+      try {
+        const doc = await loadJSON<{ sites: WhSite[] }>('layers/heritage.json');
+        const meta = this.app.data.meta;
+        const names = (ids: string[], l: 'en' | 'es') => ids.map((c) => (meta[c] ? (l === 'es' ? meta[c].es : meta[c].n) : c)).join(', ');
+        this.heritageSites = doc.sites.filter((x) => !x.x && !x.merged && !!x.img && x.pop >= 45).map((x) => ({
+          id: `whs-${x.ref}`, name: { en: x.n[0], es: x.n[1] || x.n[0] }, at: x.at, cat: x.c, icon: x.c === 'n' ? '🌿' : x.c === 'm' ? '⛰️' : '🏛️',
+          date: String(x.y), t: x.y, type: 'site', img: x.img, wiki: x.w[0] ? { en: x.w[0], es: x.w[1] } : undefined,
+          place: { en: names(x.cc, 'en'), es: names(x.cc, 'es') }, country: x.cc[0], text: { en: '', es: '' }, story: '', step: 0, kind: 'heritage', pop: x.pop,
+        }) as unknown as QItem);
+      } catch { this.heritageSites = []; }
+    }
+    return this.heritageSites;
   }
 
   /** "Which faith?": the faith story that tells an item (the time tour may tell it first). */
@@ -617,6 +652,8 @@ export class Learn {
     if (kind === 'listen') return ty === 'instrument' ? L('Which instrument are you hearing?', '¿Qué instrumento estás oyendo?') : ty === 'work' ? L('Which piece are you hearing?', '¿Qué obra estás oyendo?') : ty === 'genre' ? L('Which style of music is this?', '¿Qué estilo de música es este?') : L('What are you hearing?', '¿Qué estás oyendo?');
     if (kind === 'opening') return L('Which book or poem is this line from?', '¿De qué libro o poema es esta frase?');
     if (kind === 'artist') return L('Who made this?', '¿Quién hizo esta obra?');
+    if (kind === 'site') return L('Which World Heritage site is this?', '¿Qué sitio del Patrimonio Mundial es este?');
+    if (kind === 'inventor') return L('Who invented it?', '¿Quién lo inventó?');
     return L('Which era does this belong to?', '¿A qué época pertenece?');
   }
 
@@ -629,7 +666,7 @@ export class Learn {
     if (kind === 'faith') { const e = this.faiths.get(o); return e ? `${e.icon} ${tx(e.name)}` : o; }
     if (STORY_QUIZ[kind]) { const e = this.storySets.get(kind)?.get(o); return e ? `${e.icon} ${tx(e.name)}` : o; }
     if (kind === 'script') { const n = this.scriptNames.get(o); return n ? tx(n) : o; }
-    if (HIDDEN_NAME.includes(kind)) { const n = this.optNames.get(o); return n ? tx(n) : o; }
+    if (HIDDEN_NAME.includes(kind) || kind === 'inventor') { const n = this.optNames.get(o); return n ? tx(n) : o; }
     if (kind === 'period') return this.periodLabel(o);
     if (kind === 'champion') { const p = q.item?.podium?.find((x) => x.c === o); return p ? `${p.a2 ? `${flagEmoji(p.a2)} ` : ''}${tx(p.n)}` : o; }
     return kind === 'capital' ? this.capital(o) : `${this.app.data.name(o, lang())}`;
@@ -751,7 +788,7 @@ export class Learn {
     // A clip, a line or a work's picture: its name (and the recording's credit, the line's source) wait for the answer.
     if (kind === 'listen') { what = h('div', null, q.answered ? named : null, clipEl(it.audio!, { title: q.answered ? tx(it.name) : '', credit: q.answered })); if (!q.answered) pic = null; }
     if (kind === 'opening') { what = h('div', null, q.answered ? named : null, quoteEl(q.answered ? it.quote! : { ...it.quote!, from: undefined })); if (!q.answered) pic = null; }
-    if (kind === 'artist') what = q.answered ? named : null;
+    if (kind === 'artist' || kind === 'site') what = q.answered ? named : null;
     add(this.card, h('div', { class: 'quiz-q' }, this.itemQuestion(kind, it)), what, pic);
     if (cur.options) {
       const opts = h('div', { class: 'quiz-opts' });
@@ -804,6 +841,8 @@ export class Learn {
       const right = q.kind === 'when' ? itemWhen(it, Math.min(...(cur.options ?? [cur.id]).map(Number))) : this.optionLabel(q.kind, cur.id, cur);
       if (q.kind === 'script') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It is: ', 'Es: ')}${tx(it.name)}${it.place ? ` · ${tx(it.place)}` : ''}` }); return; }
       if (q.kind === 'listen' || q.kind === 'opening') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It was: ', 'Era: ')}${tx(it.name)}${it.by ? ` (${tx(it.by)})` : ''}${it.place ? ` · ${tx(it.place)}` : ''}` }); return; }
+      if (q.kind === 'site') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It was: ', 'Era: ')}${tx(it.name)}${it.place ? ` · ${tx(it.place)}` : ''} · ${L(`on the list since ${it.t}`, `en la lista desde ${it.t}`)}` }); return; }
+      if (q.kind === 'inventor') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${tx(it.by!)} (${itemWhen(it, it.t)}${it.place ? `, ${tx(it.place)}` : ''})` }); return; }
       if (q.kind === 'artist') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${tx(it.by!)}${it.status ? ` · ${tx(it.status)}` : ''}` }); return; }
       this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${right}.` });
       return;
@@ -855,7 +894,7 @@ export class Learn {
   /** The result: the score, then every question, right or wrong, with a small picture; a tap shows it on the map. */
   private renderResult() {
     const q = this.quiz!;
-    const top = q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : q.kind === 'family' || q.kind === 'script' ? L('Language master! 🗣️', '¡Maestro de las lenguas! 🗣️') : q.kind === 'link' ? L('Data master! 📊', '¡Maestro de los datos! 📊') : q.kind === 'plague' ? L('Disease detective! 🔬', '¡Detective de epidemias! 🔬') : q.kind === 'disaster' ? L('Disaster expert! 🌋', '¡Experto en desastres! 🌋') : q.kind === 'listen' ? L('Golden ears! 🎧', '¡Oído de oro! 🎧') : q.kind === 'opening' ? L('Bookworm! 📚', '¡Ratón de biblioteca! 📚') : q.kind === 'artist' ? L('Art expert! 🎨', '¡Experto en arte! 🎨') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
+    const top = q.kind === 'site' ? L('Heritage explorer! 🏛️', '¡Explorador del patrimonio! 🏛️') : q.kind === 'inventor' ? L('Inventive mind! 💡', '¡Mente inventiva! 💡') : q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : q.kind === 'family' || q.kind === 'script' ? L('Language master! 🗣️', '¡Maestro de las lenguas! 🗣️') : q.kind === 'link' ? L('Data master! 📊', '¡Maestro de los datos! 📊') : q.kind === 'plague' ? L('Disease detective! 🔬', '¡Detective de epidemias! 🔬') : q.kind === 'disaster' ? L('Disaster expert! 🌋', '¡Experto en desastres! 🌋') : q.kind === 'listen' ? L('Golden ears! 🎧', '¡Oído de oro! 🎧') : q.kind === 'opening' ? L('Bookworm! 📚', '¡Ratón de biblioteca! 📚') : q.kind === 'artist' ? L('Art expert! 🎨', '¡Experto en arte! 🎨') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
     const msg = q.score >= 9 ? top : q.score >= 6 ? L('Great job! 🌍', '¡Muy bien! 🌍') : L('Keep exploring! 🧭', '¡Sigue explorando! 🧭');
     add(this.card, this.quizHead(`${L('Result', 'Resultado')} ${q.score}/${q.qs.length}`, ''));
     if (q.peek) return;

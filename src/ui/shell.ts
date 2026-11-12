@@ -206,6 +206,15 @@ export class Shell {
     for (const fn of this.tapHandlers) if (fn(x, y, g)) return;
     this.legend.clearHighlight();
     if (!g) { this.app.select(null); return; }
+    // A filter's own markers (World Heritage sites, inventions) open their own card; the top filter first.
+    const ui = {
+      card: (...a: Parameters<CountryCard['showCustom']>) => { this.app.select(null); this.card.showCustom(...a); },
+      project: (lon: number, lat: number) => this.app.renderer.view.project(lon, lat), x, y,
+    };
+    for (const l of [...this.app.layers].reverse()) {
+      if (!l.ready || !l.def.tap) continue;
+      if (l.def.tap(g[0], g[1], l, ui)) { if (this.sheet.isOpen() && matchMedia('(max-width: 720px)').matches) this.sheet.close(); return; }
+    }
     const id = this.app.renderer.countryAt(g[0], g[1]);
     const picks = this.app.pickAt(g[0], g[1]).map((p) => ({ title: tx(p.def.name), rows: p.rows }));
     this.card.setPicks(picks);
