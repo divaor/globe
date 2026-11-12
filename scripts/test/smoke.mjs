@@ -32,7 +32,12 @@ async function open(opts, hash) {
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
-  await page.goto(url + hash, { waitUntil: 'networkidle' });
+  // A page whose outside server is slow (NASA's satellite tiles) may never go quiet: the checks that need its
+  // layer wait for it themselves, so a long load does not stop the whole run.
+  await page.goto(url + hash, { waitUntil: 'networkidle', timeout: 45000 }).catch((e) => {
+    if (!/Timeout/.test(String(e))) throw e;
+    console.log(`note: ${hash} was still loading after 45 s (a slow outside server); going on`);
+  });
   await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
   await page.waitForTimeout(1200);
   return { page, errors, ctx };
