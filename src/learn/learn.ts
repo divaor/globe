@@ -509,7 +509,7 @@ export class Learn {
     if (kind === 'opening') pool = tag('books').filter((it) => is(it, 'work') && !!it.quote && it.quote.text.length >= 12);
     if (kind === 'artist') pool = tag('art').filter((it) => is(it, 'work') && !!it.by && !!(it.img || it.wiki) && tx(it.by).length <= 40 && !ANONYMOUS.test(it.by.en));
     // Who invented it?: inventions with a named inventor (not "unknown" or a whole people).
-    if (kind === 'inventor') pool = tag('inventions').filter((it) => is(it, 'invention') && !!it.by && tx(it.by).length <= 40 && !ANONYMOUS.test(it.by.en));
+    if (kind === 'inventor') pool = tag('inventions').filter((it) => is(it, 'invention') && !!it.by && tx(it.by).length <= 40 && !ANONYMOUS.test(it.by.en) && !/many other|Department of/i.test(it.by.en));
     // Which World Heritage site?: the better-known sites on the list (in many Wikipedias) that have a picture.
     if (kind === 'site') pool = await this.heritagePool();
     if (HIDDEN_NAME.includes(kind) || kind === 'inventor') {
