@@ -14,7 +14,8 @@
 // disaster step with its time of day and a plagues story;
 // Compare two filters (the two-colour map, its chart linked to the globe, a total divided
 // by another, categories, Spanish); the quizzes made from the stories, Guess the link and Which language
-// family?, a city tour that hops between collections, and the tours of holy places and of the alphabet.
+// family?, a city tour that hops between collections, and the tours of holy places, the alphabet,
+// pandemics and tsunamis.
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 let chromium, devices;
@@ -984,6 +985,22 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
   const abc = await stop();
   check(abc.mode === 'writing' && /letters/.test(abc.bar) && /1\/9/.test(abc.n), `the alphabet tour starts with the first letters (${abc.bar})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
+  // Pandemics that changed history starts at Constantinople in 542; Tsunamis across the oceans with the
+  // orphan tsunami of 1700 in Japan.
+  await menu('Guided tours');
+  await page.evaluate(() => document.querySelector('[data-tour="Pandemics that changed history"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
+  const pan = await stop();
+  check(pan.mode === 'plagues' && Math.abs(pan.lon - 28.98) < 0.3 && Math.abs(pan.lat - 41.01) < 0.3 && /1\/7/.test(pan.n), `the pandemics tour starts at Constantinople (${pan.bar})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
+  await menu('Guided tours');
+  await page.evaluate(() => document.querySelector('[data-tour="Tsunamis across the oceans"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
+  const tsu = await stop();
+  check(tsu.mode === 'disasters' && /orphan tsunami/i.test(tsu.bar) && /1\/9/.test(tsu.n), `the tsunamis tour starts with the orphan tsunami of 1700 (${tsu.bar})`);
   await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
   await page.waitForTimeout(300);
   check(!errors.length, `no page errors in quizzes and tours${errors.length ? ': ' + errors.join(' | ') : ''}`);

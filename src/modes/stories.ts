@@ -143,7 +143,27 @@ const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: 
   disasters: { dir: 'disasters', hash: 'disasters', icon: '🌋', name: { en: 'Natural disasters', es: 'Desastres naturales' } },
 };
 export const storyHashKey = (k: StoryKind) => KINDS[k].hash;
-interface Area extends Shape { lp: Pt; area: number }
+interface Area extends Shape { lp: Pt; area: number; outline?: MultiLineString | null }
+
+/** An area's outline without its edges along the ±180° meridian, where an area that crosses it is cut
+ * in two, so the cut does not show as a line across the ocean; null when the area has no such edge. */
+function outlineOf(g: Geometry): MultiLineString | null {
+  if (g.type !== 'Polygon' && g.type !== 'MultiPolygon') return null;
+  const onCut = (p: number[]) => Math.abs(Math.abs(p[0]) - 180) < 1e-6;
+  const lines: number[][][] = [];
+  let cut = false;
+  for (const poly of g.type === 'Polygon' ? [g.coordinates] : g.coordinates) {
+    for (const ring of poly) {
+      let cur: number[][] = [];
+      ring.forEach((p, i) => {
+        if (i > 0 && onCut(p) && onCut(ring[i - 1])) { cut = true; if (cur.length > 1) lines.push(cur); cur = []; }
+        cur.push(p);
+      });
+      if (cur.length > 1) lines.push(cur);
+    }
+  }
+  return cut ? { type: 'MultiLineString', coordinates: lines } : null;
+}
 
 /** The groups of the story lists: the geologic eras (Life through time), then the ages of history. */
 export const ERAS = ['precambrian', 'paleozoic', 'mesozoic', 'cenozoic', 'prehistory', 'ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
@@ -605,6 +625,8 @@ export class StoryMode {
     ctx.beginPath(); path(a.feature as never);
     ctx.fillStyle = color; ctx.globalAlpha *= 0.82; ctx.fill();
     ctx.globalAlpha /= 0.82;
+    if (a.outline === undefined) a.outline = outlineOf(a.feature.geometry as Geometry);
+    if (a.outline) { ctx.beginPath(); path(a.outline as never); }
     ctx.strokeStyle = darker(color); ctx.lineWidth = 1.1; ctx.stroke();
     ctx.restore();
   }
