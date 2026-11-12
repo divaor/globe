@@ -235,6 +235,7 @@ const STRINGS: Record<string, [string, string]> = {
   musicToggle: ['Music with the story', 'Música con la historia'],
   musicOnToast: ['Music on: each step with a recording plays a short clip of it.', 'Música activada: cada paso con una grabación toca un fragmento.'],
   musicNow: ['Now playing', 'Suena'],
+  storyHasClip: ['Has a recording', 'Tiene una grabación'],
   gamesTeam: ['Team', 'Selección'],
   gamesNation: ['Nation', 'País'],
   gamesTotal: ['Total', 'Total'],

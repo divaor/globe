@@ -1372,7 +1372,7 @@ export class StoryMode {
     const b = h('button', { type: 'button', class: 'story-item' },
       h('span', { class: 'story-item-icon', style: { borderColor: this.catOf(it.cat)?.color ?? 'var(--line)' } }, it.icon),
       h('span', { class: 'story-item-text' },
-        h('span', { class: 'story-item-name' }, tx(it.name)),
+        h('span', { class: 'story-item-name' }, tx(it.name), it.audio ? h('span', { class: 'story-item-clip', title: t('storyHasClip') }, ' ♪') : null),
         h('span', { class: 'story-item-sub' }, [itemWhen(it, this.c?.t0 ?? 1), it.place ? tx(it.place) : '', extra ?? ''].filter(Boolean).join(' · ')),
         h('span', { class: 'story-item-desc' }, tx(it.text))));
     b.addEventListener('click', onClick);
