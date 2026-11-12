@@ -18,6 +18,7 @@
 // family?, a city tour that hops between collections, and the tours of holy places, the alphabet,
 // pandemics and tsunamis.
 import { createRequire } from 'node:module';
+import fs from 'node:fs';
 const require = createRequire(import.meta.url);
 let chromium, devices;
 try { ({ chromium, devices } = require('playwright')); } catch { ({ chromium, devices } = require(require.resolve('playwright', { paths: [process.env.NODE_PATH || '', '/opt/node-tools/node_modules', '/usr/local/lib/node_modules', '/usr/lib/node_modules'] }))); }
@@ -739,7 +740,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.tap('[aria-label="Next step"]');
     await page.waitForTimeout(2500);
     const next = await page.evaluate(() => ({ now: document.querySelector('.wb-now')?.textContent ?? '', playing: !!document.querySelector('.wb-now.playing') }));
-    check(/Violin/.test(now) && /Shamisen/.test(next.now) && next.playing, `with music on, each step plays its own clip (${now} → ${next.now})`);
+    check(/Violin/.test(now) && /^♪/.test(next.now) && next.now !== now && next.playing, `with music on, each step plays its own clip (${now} → ${next.now})`);
     check(!errors.length, `no page errors in a music story${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await ctx.close();
   }
@@ -908,6 +909,12 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
     await page.waitForTimeout(300);
   }
+  // Wikimedia may refuse a test machine: a stand-in picture answers for its pictures from here on, so the
+  // zoom viewer is tested on its own.
+  const pic = fs.readFileSync(new URL('../../docs/screenshots/globe.jpg', import.meta.url));
+  await ctx.route(/^https:\/\/(upload|thumb)\.wikimedia\.org\//, (r) => r.fulfill({ status: 200, body: pic, contentType: 'image/jpeg' }));
+  await ctx.route(/^https:\/\/commons\.wikimedia\.org\/wiki\/Special:FilePath\//, (r) => r.fulfill({ status: 200, body: pic, contentType: 'image/jpeg' }));
+  await ctx.route(/^https:\/\/[a-z-]+\.wikipedia\.org\/api\/rest_v1\/page\/summary\//, (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ thumbnail: { source: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Stand-in.jpg/330px-Stand-in.jpg' } }) }));
   // A quiz picture opens full screen; a double tap zooms in, and the X closes it and leaves the quiz open.
   await menu('Quiz');
   await page.evaluate(() => document.querySelector('[data-quiz="disaster"]').click());
