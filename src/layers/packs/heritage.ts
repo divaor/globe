@@ -282,7 +282,8 @@ const tx2 = (x?: { en: string; es: string }) => (x ? (es() ? x.es || x.en : x.en
 /** Years of a date string, for "12,000 years ago" or "1876". */
 function when(it: Invention): string {
   if (it.t < -10000) return L(`${fmtNumber(-it.t)} years ago`, `hace ${fmtNumber(-it.t)} años`);
-  if (it.t < 0) return L(`${-it.t} BC`, `${-it.t} a. C.`);
+  if (it.t < 0) return L(`${Math.ceil(-it.t)} BC`, `${Math.ceil(-it.t)} a. C.`);
+  if (it.t < 1000) return L(`AD ${Math.floor(it.t)}`, `${Math.floor(it.t)} d. C.`);
   return String(Math.floor(it.t));
 }
 function shownInventions(inst: LayerInstance): Invention[] {
