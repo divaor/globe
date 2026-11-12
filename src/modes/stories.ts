@@ -14,13 +14,14 @@ import { geoArea, geoCentroid, geoContains, geoDistance, geoInterpolate } from '
 import { mesh } from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry, MultiLineString, Polygon } from 'geojson';
-import { Play, Pause, X, ChevronLeft, ChevronRight, ListOrdered, BookOpen, Search } from 'lucide';
+import { Play, Pause, X, ChevronLeft, ChevronRight, ListOrdered, BookOpen, Search, Music } from 'lucide';
 import { loadJSON, shapesFrom, chunkLines, dataUrl, type Shape, type Line } from '../data/store';
 import { t, tx, lang, fmtNumber, fmtCompact, flagEmoji } from '../app/i18n';
 import { h, icon, clear } from '../ui/dom';
 import { continentSwatch, mix } from '../engine/colors';
 import { loadPaleo, fmtLat, unitName, type PaleoWorld, type Unit } from './paleo';
 import { SCRIPT_FONT, loadGlyphs, registerScriptFonts, isVertical } from '../app/scriptFonts';
+import { clipEl, playClip, stopClip, musicOn, setMusicOn, onClip, clipPlaying, unlockAudio, type Clip } from '../ui/audio';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { LayerDef, RenderCtx } from '../layers/types';
@@ -50,6 +51,10 @@ export interface Item {
   sample?: Sample;
   /** A Wikimedia Commons file for the card, when the article has no picture of its own. */
   img?: string;
+  /** Music and dance: a clip of a free recording on Commons, played on the card and, with music on, with its step. */
+  audio?: Clip;
+  /** Books and writers: a line of the book in its own language. */
+  quote?: Quote;
   /** Games of the world, a Games' host marker: the top four of its medal table or final ranking. */
   podium?: { c: string; n: Text; a2?: string }[];
   /** Life through time: the plate that carries it, so it moves with its continent on an old map. */
@@ -60,6 +65,21 @@ export interface Item {
 export interface Cat { id: string; name: Text; icon: string; color: string }
 /** An item's sample: the text, how it reads in Latin letters, and what it means. */
 export interface Sample { text: string; latin?: string; means?: Text }
+/** A line of a book, poem or song in its own language (`lang`), how it reads in Latin letters, what it means, and
+ * where it comes from; `free`: the text is in the public domain. */
+export interface Quote { text: string; lang: string; latin?: string; means?: Text; from?: Text; free?: boolean }
+
+/** A quote as the card shows it: the words in their own language and script, then how they read and what they
+ * mean (not for a reader of that language), and where they come from. */
+export function quoteEl(q: Quote): HTMLElement {
+  void registerScriptFonts();
+  const own = q.lang.split('-')[0] === lang();
+  return h('figure', { class: 'item-quote' },
+    h('blockquote', { class: `quote-text${isVertical(q.text) ? ' vertical' : ''}`, lang: q.lang, dir: 'auto' }, q.text),
+    q.latin ? h('div', { class: 'quote-latin' }, q.latin) : null,
+    q.means && !own ? h('div', { class: 'quote-means' }, tx(q.means)) : null,
+    q.from ? h('figcaption', { class: 'quote-from' }, tx(q.from)) : null);
+}
 
 /** A sample as the card shows it: large, in the script fonts, with its reading and meaning. */
 export function sampleEl(sm: Sample): HTMLElement {
@@ -125,8 +145,8 @@ export interface CollectionItem extends Omit<Item, 'first'> {
 }
 
 /** The collections of stories. */
-export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing' | 'plagues' | 'disasters';
-export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters'];
+export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing' | 'plagues' | 'disasters' | 'music' | 'books' | 'art';
+export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters', 'music', 'books', 'art'];
 /** `paleo`: its old steps are drawn on the continents of their age. */
 const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text; paleo?: boolean }> = {
   wars: { dir: 'conflicts', hash: 'war', icon: '⚔️', name: { en: 'Wars and conquests', es: 'Guerras y conquistas' } },
@@ -141,6 +161,9 @@ const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: 
   writing: { dir: 'writing', hash: 'writing', icon: '✍️', name: { en: 'Writing and languages', es: 'Escritura y lenguas' } },
   plagues: { dir: 'plagues', hash: 'plagues', icon: '🦠', name: { en: 'Plagues and cures', es: 'Epidemias y curas' } },
   disasters: { dir: 'disasters', hash: 'disasters', icon: '🌋', name: { en: 'Natural disasters', es: 'Desastres naturales' } },
+  music: { dir: 'music', hash: 'music', icon: '🎵', name: { en: 'Music and dance', es: 'Música y baile' } },
+  books: { dir: 'books', hash: 'books', icon: '📚', name: { en: 'Books and writers', es: 'Libros y escritores' } },
+  art: { dir: 'art', hash: 'art', icon: '🖼️', name: { en: 'Art of the world', es: 'Arte del mundo' } },
 };
 export const storyHashKey = (k: StoryKind) => KINDS[k].hash;
 interface Area extends Shape { lp: Pt; area: number; outline?: MultiLineString | null }
@@ -289,7 +312,9 @@ export class StoryMode {
   private speed = 1;
   private raf = 0;
   private bar: HTMLElement | null = null;
-  private ui: { date: HTMLElement; title: HTMLElement; text: HTMLElement; meta: HTMLElement; play: HTMLButtonElement; track: HTMLElement; count: HTMLElement } | null = null;
+  private ui: { date: HTMLElement; title: HTMLElement; text: HTMLElement; meta: HTMLElement; play: HTMLButtonElement; track: HTMLElement; count: HTMLElement; music: HTMLButtonElement | null } | null = null;
+  /** Stops listening to the clip player (the bar's "now playing" chip follows it). */
+  private offClip: (() => void) | null = null;
   private savedStack: string[] = [];
   private savedProjection: string | null = null;
   private snaps: { year: number; astro: number; file: string }[] = [];
@@ -379,6 +404,7 @@ export class StoryMode {
   /** Opens a story (at a step, from a shared link) and starts playing it; `focus` shows one item. */
   async open(id: string, at = 0, focus?: { name: string; at: Pt }) {
     this.shell.sheet.close();
+    stopClip(300);
     await this.ensureIndex();
     const [c, topo] = await Promise.all([loadJSON<Conflict>(`${this.dir}/${id}.json`), loadJSON<Topology>(`${this.dir}/${id}-areas.json`)]);
     if (this.paleoKind && !this.paleo && c.steps.some((st) => st.ma != null)) {
@@ -427,6 +453,8 @@ export class StoryMode {
     if (!this.active) return;
     const app = this.app;
     this.stop();
+    stopClip(400);
+    this.offClip?.(); this.offClip = null;
     this.bar?.remove();
     this.bar = null; this.ui = null; this.c = null;
     window.removeEventListener('keydown', this.onKey);
@@ -538,6 +566,32 @@ export class StoryMode {
     }
     this.stepAt = performance.now() + delay;
     this.kick();
+    this.music();
+  }
+
+  /** The first item the step shows that has a recording. */
+  private stepClip(): Item | undefined {
+    const c = this.c;
+    if (!c?.items) return undefined;
+    return (c.steps[this.step].show ?? []).map((k) => c.items![k]).find((it) => it.audio);
+  }
+
+  /** With music on, the step plays its clip, softly; a step without one lets the clip playing go on to its end. */
+  private music() {
+    if (!musicOn() || !this.active) return;
+    const it = this.stepClip();
+    if (it?.audio) playClip(it.audio, { volume: 0.75, fadeIn: 700, title: tx(it.name), from: 'step' });
+  }
+
+  /** Turns music with the story on or off (kept for the next visit). */
+  private setMusic(on: boolean) {
+    setMusicOn(on);
+    if (on) {
+      unlockAudio();
+      this.music();
+      this.shell.toast(t('musicOnToast'), 2600);
+    } else stopClip(400);
+    this.renderBar();
   }
 
   private stepMs() {
@@ -571,6 +625,7 @@ export class StoryMode {
     if (!this.c) return;
     if (!this.playing && this.step === this.c.steps.length - 1) this.go(0, { user: true });
     this.playing = !this.playing;
+    if (this.playing) this.music(); else stopClip(500, 'step');
     this.renderBar();
     this.kick();
   }
@@ -1274,8 +1329,14 @@ export class StoryMode {
     const sub = [cat ? `${cat.icon} ${tx(cat.name)}` : '', c ? tx(c.name) : ''].filter(Boolean).join(' · ');
     // A Games' host city: its medal table (or a World Cup's last four) under the facts.
     const g = it.type === 'games' ? c?.steps.find((st) => st.games && `games-${st.games.id}` === it.id)?.games : undefined;
-    const table = g ? this.standings(g, g.kind === 'wc' || g.kind === 'wwc' ? 4 : 10) : it.sample ? sampleEl(it.sample) : null;
-    this.shell.card.showCustom(it.icon, tx(it.name), sub, rows, links, notes, this.wikiThumb(it), table);
+    // Music: its clip; books: a line of it; scripts: a sample in their letters.
+    const extras = [
+      it.audio ? clipEl(it.audio, { title: tx(it.name) }) : null,
+      it.quote ? quoteEl(it.quote) : null,
+      g ? this.standings(g, g.kind === 'wc' || g.kind === 'wwc' ? 4 : 10) : it.sample ? sampleEl(it.sample) : null,
+    ].filter((x): x is HTMLElement => !!x);
+    const extra = extras.length > 1 ? h('div', { class: 'card-extras' }, ...extras) : extras[0] ?? null;
+    this.shell.card.showCustom(it.icon, tx(it.name), sub, rows, links, notes, this.wikiThumb(it), extra);
   }
 
   private wikiThumb(it: Omit<Item, 'first'>) { return itemThumb(it); }
@@ -1426,6 +1487,13 @@ export class StoryMode {
       browse.addEventListener('click', () => this.browse());
       tools.unshift(browse);
     }
+    // Music with the story, for a story with recordings: off unless the reader turns it on.
+    let music: HTMLButtonElement | null = null;
+    if (c.items?.some((it) => it.audio)) {
+      music = h('button', { type: 'button', class: 'icon-btn wb-music', title: t('musicToggle'), 'aria-label': t('musicToggle') }, icon(Music, 18)) as HTMLButtonElement;
+      music.addEventListener('click', () => this.setMusic(!musicOn()));
+      tools.unshift(music);
+    }
     const date = h('div', { class: 'wb-date' });
     const count = h('span', { class: 'wb-count' });
     const title = h('div', { class: 'wb-title' });
@@ -1450,8 +1518,15 @@ export class StoryMode {
         h('div', { class: 'wb-head' }, date, h('div', { class: 'wb-name' }, h('span', { class: 'wb-title-short' }, `${c.icon} ${tx(c.name)}`), count)),
         h('div', { class: 'wb-tools' }, ...tools)),
       title, text, meta, h('div', { class: 'wb-nav' }, prev, track, next));
-    this.ui = { date, title, text, meta, play, track, count };
+    this.ui = { date, title, text, meta, play, track, count, music };
     this.app.root.append(this.bar);
+    // The "now playing" chip shows whether its clip is playing.
+    this.offClip?.();
+    this.offClip = onClip(() => {
+      const chip = this.bar?.querySelector('.wb-now');
+      const it = this.stepClip();
+      if (chip && it?.audio) chip.classList.toggle('playing', clipPlaying(it.audio));
+    });
   }
 
   /** The step's date in the bar, made smaller to fit; a long date with a time of day that still does not
@@ -1481,6 +1556,15 @@ export class StoryMode {
     ui.play.setAttribute('aria-label', this.playing ? 'Pause' : 'Play');
     ui.track.querySelectorAll('.wb-tick').forEach((el, i) => { el.classList.toggle('done', i < this.step); el.classList.toggle('on', i === this.step); });
     clear(ui.meta);
+    const on = musicOn();
+    if (ui.music) { ui.music.classList.toggle('on', on); ui.music.setAttribute('aria-pressed', String(on)); }
+    // With music on: what the step plays (a tap opens its card).
+    const sc = on ? this.stepClip() : undefined;
+    if (sc?.audio) {
+      const chip = h('button', { type: 'button', class: `wb-side wb-now${clipPlaying(sc.audio) ? ' playing' : ''}`, title: `${t('musicNow')}: ${tx(sc.name)}` }, h('b', { class: 'story-cat wb-note' }, '♪'), tx(sc.name));
+      chip.addEventListener('click', () => this.itemCard(sc));
+      ui.meta.append(chip);
+    }
     const age = this.ageChip(st);
     if (age) ui.meta.append(age);
     const teams = new Set(st.games?.teams.map((tm) => tm.s));

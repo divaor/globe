@@ -44,7 +44,7 @@ export class TimeTravel {
       await pangea.enter(Number(ma));
     })());
     // Each story collection opens its list of stories; the mode starts when one is picked.
-    const icons: Record<StoryKind, string> = { wars: '⚔️', eras: '🎨', food: '🌾', structures: '🏛️', people: '🏺', life: '🦕', games: '🏅', journeys: '🧭', beliefs: '🛐', writing: '✍️', plagues: '🦠', disasters: '🌋' };
+    const icons: Record<StoryKind, string> = { wars: '⚔️', eras: '🎨', food: '🌾', structures: '🏛️', people: '🏺', life: '🦕', games: '🏅', journeys: '🧭', beliefs: '🛐', writing: '✍️', plagues: '🦠', disasters: '🌋', music: '🎵', books: '📚', art: '🖼️' };
     for (const kind of STORY_KINDS) {
       const m = (this.stories[kind] = new StoryMode(app, shell, kind));
       this.add({
