@@ -612,7 +612,7 @@
       ],
       "places": [
         {
-          "id": "santos-dumont-14-bis",
+          "id": "14-bis",
           "name": { "en": "Santos-Dumont 14-bis", "es": "14-bis de Santos-Dumont" },
           "at": [2.2477, 48.8681],
           "cat": "flight",
@@ -646,7 +646,7 @@
           "wiki": { "en": "Alberto Santos-Dumont", "es": "Alberto Santos Dumont" }
         },
         {
-          "id": "santos-dumont-no-6",
+          "id": "deutsch-prize-flight",
           "name": { "en": "Around the Eiffel Tower", "es": "Alrededor de la torre Eiffel" },
           "at": [2.2945, 48.8584],
           "cat": "event",
@@ -1282,7 +1282,7 @@
         "en": "In 1918 the Dayton engineer Charles Kettering built the Bug, a pilotless 'aerial torpedo' and a forerunner of cruise missiles. Target drones trained gunners in the Second World War, and during the 1967–1970 war in the Middle East Israel first used small drones with cameras for reconnaissance. Cheap batteries, chips and cameras brought drones to everyone: in 2013 the Chinese company DJI, founded in Shenzhen by Frank Wang, sold the Phantom, a ready-to-fly camera drone, and by 2024 it made over 90% of the world's consumer drones. In Rwanda's steep hills, Zipline's drones drop medical supplies by parachute; studies found that they cut delivery times and waste, and by January 2026 the company had made two million deliveries in several countries. Drones are also weapons: since 2022 Russia and Ukraine have used them in huge numbers. This story stops at the edge of space; rockets and astronauts are another chapter.",
         "es": "En 1918, el ingeniero Charles Kettering, de Dayton, construyó el Bug, un «torpedo aéreo» sin piloto y precursor de los misiles de crucero. En la Segunda Guerra Mundial, drones usados como blancos entrenaban a los artilleros, y durante la guerra de 1967-1970 en Oriente Medio, Israel usó por primera vez pequeños drones con cámaras para hacer reconocimiento. Las baterías, los chips y las cámaras baratas pusieron los drones al alcance de todos: en 2013 la empresa china DJI, fundada en Shenzhen por Frank Wang, vendió el Phantom, un dron con cámara listo para volar, y en 2024 ya fabricaba más del 90 % de los drones de consumo del mundo. En las empinadas colinas de Ruanda, los drones de Zipline lanzan suministros médicos en paracaídas; según varios estudios, acortan las entregas y reducen el desperdicio, y en enero de 2026 la empresa ya había hecho dos millones de entregas en varios países. Los drones también son armas: desde 2022, Rusia y Ucrania los usan en cantidades enormes. Esta historia se detiene en el borde del espacio; los cohetes y los astronautas son otro capítulo."
       },
-      "camera": { "lon": 40, "lat": 18, "zoom": 1.4 },
+      "camera": { "lon": 72, "lat": 10, "zoom": 1.5 },
       "places": [
         {
           "id": "zipline-rwanda",
@@ -1313,21 +1313,6 @@
           },
           "wiki": { "en": "DJI", "es": "DJI (compañía)" },
           "img": "DJI Phantom 2 Vision+ V3 hovering over Weissfluhjoch (cropped).jpg"
-        },
-        {
-          "id": "kettering-bug",
-          "name": { "en": "Kettering Bug", "es": "Kettering Bug" },
-          "at": [-84.1916, 39.7589],
-          "cat": "weapons",
-          "type": "invention",
-          "date": "1918-10-02",
-          "by": { "en": "Charles Kettering", "es": "Charles Kettering" },
-          "place": { "en": "Dayton, Ohio, United States", "es": "Dayton, Ohio, Estados Unidos" },
-          "text": {
-            "en": "A pilotless 'aerial torpedo' built in the Wrights' home town in 1918 and guided by a gyroscope. The war ended before it was used, but it foreshadowed today's drones and cruise missiles.",
-            "es": "Un «torpedo aéreo» sin piloto construido en 1918 en la ciudad de los Wright y guiado por un giroscopio. La guerra terminó antes de que se usara, pero anticipó los drones y los misiles de crucero actuales."
-          },
-          "wiki": { "en": "Kettering Bug", "es": "Kettering Bug" }
         }
       ]
     }
