@@ -290,6 +290,7 @@ const STRINGS: Record<string, [string, string]> = {
   whsNatural: ['natural site', 'sitio natural'],
   whsMixed: ['cultural and natural site', 'sitio cultural y natural'],
   whsRemoved: ['Listed in {y}, removed in {x}', 'Inscrito en {y}, retirado en {x}'],
+  whsMerged: ['Listed in {y}; part of {into} since {m}', 'Inscrito en {y}; parte de {into} desde {m}'],
   whsDangerLabel: ['UNESCO', 'UNESCO'],
   whsDanger: ['On the List of World Heritage in Danger', 'En la Lista del Patrimonio Mundial en Peligro'],
   storyLived: ['Lived', 'Vivió'],

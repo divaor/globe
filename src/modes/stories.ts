@@ -41,12 +41,15 @@ interface Battle { name: Text; at: Pt; date?: string; winner?: string; casualtie
 interface Move { side: string; path: Pt[]; label?: Text; pls?: (string | null)[]; by?: 'sea' | 'land' | 'river' | 'ice' | 'air'; icon?: string }
 interface WarEvent { icon: string; text: Text; at?: Pt; date?: string; pl?: string }
 /** A marker of the stories other than wars: a person, work, site, dish, structure... */
-export interface Whs { ref: number; n: [string, string]; y: number; c: 'c' | 'n' | 'm'; d?: 1; x?: number }
+export interface Whs { ref: number; n: [string, string]; y: number; c: 'c' | 'n' | 'm'; d?: 1; x?: number; m?: number; into?: [string, string] }
 /** A World Heritage site's line on a card: "Since 1983 · cultural", in danger, or removed from the list. */
 export function whsRows(w: Whs): { label: string; value: string; icon: string }[] {
   const kind = t(w.c === 'n' ? 'whsNatural' : w.c === 'm' ? 'whsMixed' : 'whsCultural');
-  const rows = [{ label: t('whsLabel'), value: w.x ? t('whsRemoved').replace('{y}', String(w.y)).replace('{x}', String(w.x)) : `${t('whsSince').replace('{y}', String(w.y))} · ${kind}`, icon: '🏛️' }];
-  if (w.d && !w.x) rows.push({ label: t('whsDangerLabel'), value: t('whsDanger'), icon: '⚠️' });
+  const value = w.x ? t('whsRemoved').replace('{y}', String(w.y)).replace('{x}', String(w.x))
+    : w.m && w.into ? t('whsMerged').replace('{y}', String(w.y)).replace('{m}', String(w.m)).replace('{into}', lang() === 'es' ? w.into[1] : w.into[0])
+    : `${t('whsSince').replace('{y}', String(w.y))} · ${kind}`;
+  const rows = [{ label: t('whsLabel'), value, icon: '🏛️' }];
+  if (w.d && !w.x && !w.m) rows.push({ label: t('whsDangerLabel'), value: t('whsDanger'), icon: '⚠️' });
   return rows;
 }
 /** UNESCO's page of a site, in the reader's language. */

@@ -535,6 +535,8 @@ function whsInfo(ref) {
   const o = { ref, n: x.n, y: x.y, c: x.c };
   if (x.d?.some(([, b]) => b == null)) o.d = 1;
   if (x.x) o.x = x.x;
+  // Folded into another site (Panamá Viejo into the Colonial Transisthmian Route of Panamá, 2025).
+  if (x.merged) { o.m = x.merged; o.into = heritage().get(x.into)?.n; }
   return o;
 }
 
