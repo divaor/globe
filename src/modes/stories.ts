@@ -1462,7 +1462,7 @@ export class StoryMode {
     const d = c.steps[this.step].date;
     ui.date.textContent = fmtWhen(d, c.t0);
     fitLine(ui.date);
-    if (ui.date.scrollWidth > ui.date.clientWidth + 1) { ui.date.textContent = fmtWhen(d, c.t0, true); fitLine(ui.date); }
+    if (ui.date.scrollWidth > ui.date.clientWidth) { ui.date.textContent = fmtWhen(d, c.t0, true); fitLine(ui.date); }
   }
 
   private renderBar() {
@@ -1779,7 +1779,8 @@ function cutAt(s: string, n: number): string {
 function fitLine(el: HTMLElement, min = 13) {
   el.style.fontSize = '';
   let size = parseFloat(getComputedStyle(el).fontSize);
-  while (el.scrollWidth > el.clientWidth + 1 && size > min) el.style.fontSize = `${--size}px`;
+  // Strictly: even a pixel too wide shows an ellipsis.
+  while (el.scrollWidth > el.clientWidth && size > min) el.style.fontSize = `${--size}px`;
 }
 
 function labelPoint(f: Feature<Geometry>): { lp: Pt; area: number } {
