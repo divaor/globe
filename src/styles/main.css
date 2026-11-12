@@ -437,6 +437,15 @@ html.mode-story .legend { display: none; }
 /* Wide screens: with a side panel open (the step details), the bar moves into the free space. */
 @media (min-width: 721px) {
   html:has(.sheet:not([hidden])) .warbar { left: calc(50% + 214px); width: min(760px, calc(100vw - 464px)); }
+  /* A card open beside the story keeps clear of the bar: it ends above it (the bar would cover its end)... */
+  html.mode-story:has(.sheet:not([hidden])) .country-card { max-height: max(200px, calc(100vh - var(--wb-h, 200px) - 168px - var(--safe-t) - var(--safe-b))); }
+}
+@media (min-width: 721px) and (max-width: 1039px) {
+  html.mode-story .country-card { max-height: max(200px, calc(100vh - var(--wb-h, 200px) - 168px - var(--safe-t) - var(--safe-b))); }
+}
+/* ...or, where there is room, the bar moves into the space left of the card (wider screens clear it as it is). */
+@media (min-width: 1040px) and (max-width: 1583px) {
+  html.mode-story:not(:has(.sheet:not([hidden]))):has(.country-card:not([hidden])) .warbar { left: calc((100vw - 404px - var(--safe-r)) / 2); width: min(760px, calc(100vw - 440px - var(--safe-r))); }
 }
 html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + var(--safe-b)); }
 .war-details p { line-height: 1.5; margin: 0 0 10px; }

@@ -501,7 +501,8 @@ export class Learn {
     }
     // A clip, a line or a work's picture is the question; the answers are names of the same kind.
     if (kind === 'listen') pool = tag('music').filter((it) => !!it.audio);
-    if (kind === 'opening') pool = tag('books').filter((it) => !!it.quote && it.quote.text.length >= 12);
+    // Lines from books and poems (a writer's own card, with a line of theirs, is not "which book is it from?").
+    if (kind === 'opening') pool = tag('books').filter((it) => is(it, 'work') && !!it.quote && it.quote.text.length >= 12);
     if (kind === 'artist') pool = tag('art').filter((it) => is(it, 'work') && !!it.by && !!(it.img || it.wiki) && tx(it.by).length <= 40 && !ANONYMOUS.test(it.by.en));
     if (HIDDEN_NAME.includes(kind)) {
       this.optNames = new Map(pool.map((x) => kind === 'artist' ? [x.by!.en, x.by!] : [x.id ?? x.name.en, x.name]));
