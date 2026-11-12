@@ -54,7 +54,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const DATA = path.join(ROOT, 'public/data');
 
 /** The collections: where their sources and outputs live. */
-export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art' };
+export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art', inventions: 'inventions', heritage: 'heritage' };
 /** The collections whose deep-time steps are drawn on the continents of their age (the plate model). */
 const PALEO_KINDS = new Set(['life']);
 const srcDir = (kind) => path.join(ROOT, 'scripts/data', KINDS[kind]);
@@ -445,7 +445,8 @@ function checkItem(it, where, coll, catalog = false) {
   if (it.sample != null) checkSample(it.sample, `${where}.sample`);
   if (it.audio != null) checkAudio(it.audio, `${where}.audio`);
   if (it.quote != null) checkQuote(it.quote, `${where}.quote`);
-  const known = new Set(['id', 'name', 'at', 'cat', 'icon', 'type', 'date', 'end', 'until', 'life', 'text', 'facts', 'wiki', 'img', 'country', 'sample', 'audio', 'quote', ...ITEM_TEXTS]);
+  if (it.whs != null) checkWhs(it.whs, `${where}.whs`);
+  const known = new Set(['id', 'name', 'at', 'cat', 'icon', 'type', 'date', 'end', 'until', 'life', 'text', 'facts', 'wiki', 'img', 'country', 'sample', 'audio', 'quote', 'whs', ...ITEM_TEXTS]);
   for (const k of Object.keys(it)) if (!known.has(k)) throw new Error(`${where}: unknown field "${k}"`);
   return t;
 }
@@ -512,11 +513,37 @@ function checkQuote(q, where) {
   for (const k of Object.keys(q)) if (!['text', 'lang', 'latin', 'means', 'from', 'free'].includes(k)) throw new Error(`${where}: unknown field "${k}"`);
 }
 
+/**
+ * "whs": the UNESCO reference number of a World Heritage site the item is (or is part of), such as 252 for the Taj
+ * Mahal. The build checks it against public/data/layers/heritage.json (made by scripts/data/world-heritage/build.py)
+ * and gives the card the site's name, year, category and whether it is in danger.
+ */
+let heritageSites = null;
+function heritage() {
+  if (!heritageSites) {
+    const doc = JSON.parse(fs.readFileSync(path.join(DATA, 'layers/heritage.json'), 'utf8'));
+    heritageSites = new Map(doc.sites.map((x) => [x.ref, x]));
+  }
+  return heritageSites;
+}
+function checkWhs(ref, where) {
+  if (!Number.isInteger(ref) || ref < 1) throw new Error(`${where}: the site's UNESCO reference number, such as 252 for the Taj Mahal (whc.unesco.org/en/list/252)`);
+  if (!heritage().has(ref)) throw new Error(`${where}: ${ref} is not on the World Heritage List (public/data/layers/heritage.json)`);
+}
+function whsInfo(ref) {
+  const x = heritage().get(ref);
+  const o = { ref, n: x.n, y: x.y, c: x.c };
+  if (x.d?.some(([, b]) => b == null)) o.d = 1;
+  if (x.x) o.x = x.x;
+  return o;
+}
+
 /** An item as the app gets it: fixed field order, with its time and icon filled in. */
 function normItem(it, coll) {
   const o = { id: it.id, name: it.name, at: it.at.map((v) => Math.round(v * 1e4) / 1e4), cat: it.cat, icon: it.icon ?? coll.cats.get(it.cat).icon, date: it.date, t: parseDate(it.date, '') };
   for (const k of ['end', 'until', 'life', 'type', 'country', 'place', 'text', 'details', 'why', 'how', 'by', 'size', 'status', 'facts', 'sample', 'quote', 'wiki', 'img', 'podium']) if (it[k] != null) o[k] = it[k];
   if (it.audio != null) o.audio = commonsAudio(it.audio);
+  if (it.whs != null) o.whs = whsInfo(it.whs);
   if (it.until != null) o.tu = parseDate(it.until, '');
   if (o.id == null) delete o.id;
   return o;

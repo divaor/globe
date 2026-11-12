@@ -66,6 +66,7 @@ same here. `structures/seven-wonders.json` is a complete example that uses the c
 
 | `audio` | Optional. A recording on Wikimedia Commons, played on the card and with its step when music is on: `{ "file": "Beethoven Symphony 5 opening.ogg", "start"?: 0, "end"?: 20, "by": {en, es}, "license": "CC0" }`. See [Music and dance](#music-and-dance). |
 | `quote` | Optional. A line of a book, poem or song in its own language and script: `{ "text": "En un lugar de la Mancha...", "lang": "es", "latin"?: "...", "means"?: {en, es}, "from"?: {en, es}, "free": true }`. See [Books and writers](#books-and-writers). |
+| `whs` | Optional. The UNESCO reference number of the World Heritage site the item is or belongs to, such as `252` for the Taj Mahal (the number in its address, whc.unesco.org/en/list/252). The build checks it against the World Heritage List and the card says "World Heritage since 1983", with a link to UNESCO's page and a warning when the site is in danger. Any collection may use it. |
 
 A step usually shows 2–8 items; a story has 8–16 steps (up to about 20 for a big time tour) and 30–80 items.
 
@@ -121,6 +122,17 @@ across all of them.
   cyclones), drought (droughts and famines), climate (effects on weather and climate: a year without a summer, red
   sunsets), town (towns and people hit), site (ruins and sites), witness (witnesses and writings), science (science and
   warnings), relief (rescue and rebuilding), art (art and memory), event (turning points).
+
+- **Inventions:** tools (tools and materials: stone, pottery, metals, glass, concrete), farming (farming and food), transport
+  (getting around: wheels, ships, bicycles, trains, cars), flight, print (paper and printing), communication (messages
+  and media: telegraph, telephone, radio, television, the Internet), time (time and measurement), optics (lenses and
+  images: glasses, telescopes, microscopes, cameras, film), energy (power and energy), computing, home (everyday
+  things), medicine, weapons (gunpowder and weapons), inventor (inventors), lab (workshops and labs), event (turning
+  points).
+- **World Heritage:** monument (monuments and temples), city (historic towns), archaeology (ruins and archaeological
+  sites), landscape (cultural landscapes), nature (natural sites), wildlife, threat (threats and damage: war, fire,
+  floods, tourism, mining), rescue (rescue and rebuilding), person (people), institution (UNESCO and its partners:
+  ICOMOS, IUCN, ICCROM), event (turning points).
 
 Don't add or rename categories without asking. Only one person edits a `_collection.json` at a time.
 
@@ -472,3 +484,37 @@ including art that was taken and art that was returned.
   art looted by the Nazis. Give each side's view in its own words; say what has been returned and when.
 - **Items**: paintings, sculpture, cave and rock art, prints, drawings and calligraphy, crafts and treasures
   (ceramics, textiles, metalwork), artists, movements and schools, museums, taken and returned.
+
+## Inventions
+
+`scripts/data/inventions/` tells where things were invented and how they travelled: who made them, where, what came
+before, and how they spread from one country to the next.
+
+- **Where it was made.** `at` is where the invention was made or first shown (a workshop, a lab, a town); when two
+  people or places claim it, say so and show both. `by` names the inventor or inventors as `{ "en", "es" }`
+  ("Alexander Graham Bell", "Cai Lun"; "unknown"/"desconocido" for prehistoric ones); the Who invented it? quiz uses it.
+  Use `type: "invention"` for the invention itself and `type: "person"` for an inventor.
+- **How it travelled.** Draw it with `moves` arrows: paper from China to Samarkand, Baghdad and Spain; the compass to
+  the Indian Ocean and the Mediterranean; the telegraph cable across the Atlantic. Give dates for each stage.
+- **Credit fairly.** Many inventions had several fathers and mothers, or someone the story forgot: say who else
+  worked on it, who was first, and who got the credit and why (Meucci and Bell, Swan and Edison, Ada Lovelace,
+  Hedy Lamarr). Say "is credited with" when the sources do, and "perhaps" or "by tradition" for old claims.
+- **Items**: inventions, inventors, workshops and labs (Menlo Park, Bell Labs, CERN), patents and first
+  demonstrations (events), and where an invention changed lives.
+
+## World Heritage
+
+`scripts/data/heritage/` tells the story of UNESCO's World Heritage List: how it began, sites lost and rebuilt,
+nature saved, and the sites of a region. The app also has a World Heritage filter with every site on the list.
+
+- **Every site item has `whs`**, its UNESCO reference number: the card then says when it was listed and whether it is
+  in danger, with a link to UNESCO's page. Look the number up in `public/data/layers/heritage.json` (`ref`, `n`
+  names, `y` year, `c` category, `d` years in danger, `x` year removed from the list) or in the site's Wikipedia
+  infobox ("Reference no.").
+- **Name sites as people know them** ("Machu Picchu", "the Taj Mahal") in `name`; the card shows UNESCO's official
+  name too.
+- **Threats and damage.** Tell wars, fires, earthquakes, floods, mining and mass tourism plainly, without pictures of
+  violence or of the dead; say who destroyed what when the sources agree, and who rebuilt it.
+- **Items**: sites (by kind: monuments, towns, ruins, landscapes, nature), wildlife, threats, rescue campaigns and
+  rebuilding, people (archaeologists, engineers, rangers, local communities), UNESCO and its advisers, turning points.
+
