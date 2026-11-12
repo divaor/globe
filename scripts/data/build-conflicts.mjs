@@ -471,7 +471,7 @@ function checkSample(sm, where) {
  * CC BY, CC BY-SA, the EFF Open Audio License, the Free Art License, the GFDL). The app streams Commons' MP3 copy of the file.
  */
 const AUDIO_EXT = /\.(ogg|oga|opus|flac|wav|mp3|webm|mid)$/i;
-const FREE_LICENSE = /^(Public domain|CC0|CC BY(-SA)? [1-4]\.0|EFF OAL|Free Art License|GFDL)$/;
+const FREE_LICENSE = /^(Public domain|CC0|CC BY(-SA)? ([1-4]\.0|2\.5)|EFF OAL|Free Art License|GFDL)$/;
 function checkAudio(a, where) {
   if (!a || typeof a !== 'object' || Array.isArray(a)) throw new Error(`${where}: { "file", "start"?, "end"?, "by", "license" }`);
   if (typeof a.file !== 'string' || !AUDIO_EXT.test(a.file) || /^(File:|https?:)/i.test(a.file) || a.file.includes('/')) throw new Error(`${where}.file: a Commons audio file name such as "Beethoven Symphony 5 opening.ogg" (no "File:", no address)`);
