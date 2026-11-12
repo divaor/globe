@@ -687,6 +687,84 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(!errs.length, `no page errors in Plagues and Disasters stories${errs.length ? ': ' + errs.join(' | ') : ''}`);
 }
 
+// 12k. Music, books and art: a music card plays its clip (Commons is answered here by a stand-in tone, so the
+// test does not depend on Commons), and with music on each step plays its clip and names it; a book card shows
+// its first line in its own language, with a translation for readers of other languages; an art card shows the
+// work, which opens full screen.
+{
+  const n = 8000 * 12, wav = Buffer.alloc(44 + n);
+  wav.write('RIFF', 0); wav.writeUInt32LE(36 + n, 4); wav.write('WAVE', 8); wav.write('fmt ', 12); wav.writeUInt32LE(16, 16); wav.writeUInt16LE(1, 20); wav.writeUInt16LE(1, 22);
+  wav.writeUInt32LE(8000, 24); wav.writeUInt32LE(8000, 28); wav.writeUInt16LE(1, 32); wav.writeUInt16LE(8, 34); wav.write('data', 36); wav.writeUInt32LE(n, 40);
+  for (let i = 0; i < n; i++) wav[44 + i] = 128 + Math.round(60 * Math.sin((2 * Math.PI * 440 * i) / 8000));
+  const tone = async (ctx) => ctx.route('https://upload.wikimedia.org/**', (route) => {
+    const u = route.request().url();
+    if (!/\/transcoded\/|\.(ogg|oga|opus|mp3|flac|wav)$/i.test(u)) return route.continue();
+    const m = /bytes=(\d+)-(\d*)/.exec(route.request().headers()['range'] ?? '');
+    if (!m) return route.fulfill({ status: 200, body: wav, contentType: 'audio/wav', headers: { 'accept-ranges': 'bytes' } });
+    const a = Number(m[1]), b = m[2] ? Math.min(Number(m[2]), wav.length - 1) : wav.length - 1;
+    return route.fulfill({ status: 206, body: wav.subarray(a, b + 1), contentType: 'audio/wav', headers: { 'accept-ranges': 'bytes', 'content-range': `bytes ${a}-${b}/${wav.length}` } });
+  });
+  const pause = (page) => page.evaluate(() => { const b = document.querySelector('.warbar .tb-play'); if (b && b.getAttribute('aria-label') === 'Pause') b.click(); });
+  const card = async (page, name) => {
+    await page.tap('.wb-browse');
+    await page.waitForSelector('.story-list .story-item', { timeout: 30000 });
+    await page.evaluate((nm) => [...document.querySelectorAll('.story-list .story-item')].find((b) => b.querySelector('.story-item-name')?.textContent.replace(/ ♪$/, '') === nm)?.click(), name);
+    await page.waitForFunction((nm) => document.querySelector('.country-card:not([hidden]) .card-title')?.textContent === nm, name, { timeout: 10000 }).catch(() => {});
+  };
+  // Music: the violins of Cremona.
+  {
+    const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#music=instruments-of-the-world&step=8&p=globe&lang=en');
+    await tone(ctx);
+    await page.waitForSelector('.warbar', { timeout: 30000 });
+    await page.waitForTimeout(1500);
+    await pause(page);
+    const off = await page.evaluate(() => ({ has: !!document.querySelector('.wb-music'), on: document.querySelector('.wb-music')?.classList.contains('on') }));
+    check(off.has && !off.on, 'a music story has the ♪ button, off by default');
+    await card(page, 'Violin');
+    await page.waitForSelector('.country-card .item-clip', { timeout: 10000 }).catch(() => {});
+    await page.evaluate(() => document.querySelector('.country-card .clip-play')?.click());
+    await page.waitForSelector('.country-card .item-clip.playing', { timeout: 10000 }).catch(() => {});
+    await page.waitForTimeout(1600);
+    const clip = await page.evaluate(() => ({ cls: document.querySelector('.country-card .item-clip')?.className ?? '', time: document.querySelector('.country-card .clip-time')?.textContent ?? '', credit: document.querySelector('.country-card .clip-credit')?.textContent ?? '' }));
+    check(/playing/.test(clip.cls) && !/^0:00 \//.test(clip.time) && /Wikimedia Commons/.test(clip.credit), `a music card plays its clip, with its credit (${clip.time}; ${clip.credit.slice(0, 70)})`);
+    await page.evaluate(() => document.querySelector('.country-card .card-close')?.click());
+    await page.tap('.wb-music');
+    await page.waitForSelector('.wb-now.playing', { timeout: 10000 }).catch(() => {});
+    const now = await page.evaluate(() => document.querySelector('.wb-now')?.textContent ?? '');
+    await page.tap('[aria-label="Next step"]');
+    await page.waitForTimeout(2500);
+    const next = await page.evaluate(() => ({ now: document.querySelector('.wb-now')?.textContent ?? '', playing: !!document.querySelector('.wb-now.playing') }));
+    check(/Violin/.test(now) && /Shamisen/.test(next.now) && next.playing, `with music on, each step plays its own clip (${now} → ${next.now})`);
+    check(!errors.length, `no page errors in a music story${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await ctx.close();
+  }
+  // Books: the first line of Don Quixote, in Spanish, with Ormsby's English for English readers only.
+  for (const lg of ['en', 'es']) {
+    const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, `#books=literature-in-spanish&step=5&p=globe&lang=${lg}`);
+    await page.waitForSelector('.warbar', { timeout: 30000 });
+    await page.waitForTimeout(1500);
+    await pause(page);
+    await card(page, lg === 'en' ? 'Don Quixote' : 'Don Quijote de la Mancha');
+    await page.waitForSelector('.country-card .item-quote', { timeout: 10000 }).catch(() => {});
+    const q = await page.evaluate(() => ({ lang: document.querySelector('.country-card .quote-text')?.getAttribute('lang'), text: document.querySelector('.country-card .quote-text')?.textContent ?? '', means: document.querySelector('.country-card .quote-means')?.textContent ?? null }));
+    check(q.lang === 'es' && /^En un lugar de la Mancha/.test(q.text) && (lg === 'en' ? /^In a village of La Mancha/.test(q.means ?? '') : q.means === null), `a book card shows its first line (${lg}: ${q.text.slice(0, 30)}…${q.means ? ' / ' + q.means.slice(0, 30) + '…' : ''})`);
+    check(!errors.length, `no page errors in a books story (${lg})${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await ctx.close();
+  }
+  // Art: the Mona Lisa, made in Florence and now in the Louvre.
+  {
+    const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#art=art-through-time&step=8&p=globe&lang=en');
+    await page.waitForSelector('.warbar', { timeout: 30000 });
+    await page.waitForTimeout(1500);
+    await pause(page);
+    await card(page, 'Mona Lisa');
+    const a = await page.evaluate(() => ({ zoom: !!document.querySelector('.country-card .zoom-wrap'), rows: document.querySelector('.country-card .rows')?.textContent ?? '' }));
+    check(a.zoom && /Louvre/.test(a.rows), `an art card shows the work and where it is now (${a.rows.slice(0, 80)})`);
+    check(!errors.length, `no page errors in an art story${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await ctx.close();
+  }
+}
+
 // 12f. Compare two filters: from the Filters panel, GDP per capita against life expectancy on a
 // two-colour map, with its chart (a strong link); the legend's nine squares count the countries and a
 // tap lights theirs; a dot on the chart picks its country, whose strip shows both values with their
@@ -1022,6 +1100,36 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
   const tsu = await stop();
   check(tsu.mode === 'disasters' && /orphan tsunami/i.test(tsu.bar) && /1\/9/.test(tsu.n), `the tsunamis tour starts with the orphan tsunami of 1700 (${tsu.bar})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
+  // What are you hearing?, Which book is it from?, Who made it?: the clip, the line or the picture is the
+  // question, and the name stays hidden until the answer.
+  for (const kind of ['listen', 'opening', 'artist']) {
+    await menu('Quiz');
+    await page.evaluate((k) => document.querySelector(`[data-quiz="${k}"]`).click(), kind);
+    await page.waitForSelector('.learn-card:not([hidden]) .quiz-opt', { timeout: 30000 });
+    const q = await page.evaluate(() => ({ head: document.querySelector('.learn-card .tool-head')?.textContent ?? '', q: document.querySelector('.learn-card .quiz-q')?.textContent ?? '', named: !!document.querySelector('.learn-card .quiz-item'), clip: !!document.querySelector('.learn-card .item-clip'), quote: !!document.querySelector('.learn-card .item-quote'), img: !!document.querySelector('.learn-card .quiz-img'), opts: [...document.querySelectorAll('.learn-card .quiz-opt')].map((b) => b.textContent) }));
+    await page.evaluate(() => document.querySelector('.learn-card .quiz-opt').click());
+    await page.waitForTimeout(400);
+    const a = await page.evaluate(() => ({ fb: document.querySelector('.learn-card .quiz-fb')?.textContent ?? '', named: !!document.querySelector('.learn-card .quiz-item') }));
+    const shown = kind === 'listen' ? q.clip : kind === 'opening' ? q.quote : q.img;
+    check(/1\/10/.test(q.head) && q.opts.length === 4 && new Set(q.opts).size === 4 && shown && !q.named && a.named && !!a.fb, `quiz "${kind}": ${q.q} (${q.opts.join(' / ')}) → ${a.fb.slice(0, 60)}`);
+    await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+    await page.waitForTimeout(300);
+  }
+  // Sounds of the world opens the gamelan of Java; First lines opens The Tale of Genji in Kyoto.
+  await menu('Guided tours');
+  await page.evaluate(() => document.querySelector('[data-tour="Sounds of the world"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
+  const snd = await stop();
+  check(snd.mode === 'music' && /gamelan/i.test(snd.bar) && /1\/11/.test(snd.n), `the instruments tour starts with the gamelan (${snd.bar})`);
+  await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
+  await menu('Guided tours');
+  await page.evaluate(() => document.querySelector('[data-tour="First lines"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
+  const fl = await stop();
+  check(fl.mode === 'books' && /Genji|Heian/i.test(fl.bar) && /1\/10/.test(fl.n), `the First lines tour starts in Heian Kyoto (${fl.bar})`);
   await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
   await page.waitForTimeout(300);
   check(!errors.length, `no page errors in quizzes and tours${errors.length ? ': ' + errors.join(' | ') : ''}`);
