@@ -772,6 +772,35 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   }
 }
 
+// 12l. World Heritage: the filter shows every site on the list with its counts by category and in danger; a tap
+// on the Taj Mahal opens its card (year, UNESCO's page); "Watch the list grow" plays the years; India's card counts
+// its sites.
+{
+  const { page, errors, ctx } = await open({ viewport: { width: 1366, height: 820 } }, '#p=globe&l=political,heritage&c=78,27,4&lang=en');
+  await page.waitForFunction(() => /World Heritage sites/.test(document.querySelector('.legend')?.textContent ?? ''), null, { timeout: 30000 }).catch(() => {});
+  const leg = await page.evaluate(() => document.querySelector('.legend')?.textContent ?? '');
+  const n = Number((/([\d,]+) World Heritage sites/.exec(leg)?.[1] ?? '0').replace(/,/g, ''));
+  const by = ['Cultural', 'Natural', 'Mixed \\(cultural and natural\\)', 'In danger'].map((k) => Number((new RegExp(`${k}: ([\\d,]+)`).exec(leg)?.[1] ?? '0').replace(/,/g, '')));
+  check(n > 1200 && by[0] + by[1] + by[2] === n && by[3] > 30, `the World Heritage filter shows ${n} sites (${by[0]} cultural, ${by[1]} natural, ${by[2]} mixed; ${by[3]} in danger)`);
+  const xy = await page.evaluate(() => window.atlas.app.renderer.view.project(78.0419, 27.175));
+  if (xy) await page.mouse.click(xy[0], xy[1]);
+  await page.waitForFunction(() => /Taj Mahal/.test(document.querySelector('.country-card:not([hidden])')?.textContent ?? ''), null, { timeout: 10000 }).catch(() => {});
+  const c = await page.evaluate(() => ({ text: document.querySelector('.country-card:not([hidden])')?.textContent ?? '', links: [...document.querySelectorAll('.country-card:not([hidden]) a')].map((a) => a.href) }));
+  check(/Taj Mahal/.test(c.text) && /1983/.test(c.text) && c.links.some((l) => /whc\.unesco\.org\/en\/list\/252/.test(l)), `a tap on the Taj Mahal opens its card, listed in 1983, with UNESCO's page (${c.text.slice(0, 60)})`);
+  await page.evaluate(() => [...document.querySelectorAll('.legend button')].find((b) => /Watch the list grow/.test(b.textContent))?.click());
+  await page.waitForTimeout(2200);
+  const t1 = await page.evaluate(() => /(\d{4}): ([\d,]+) sites/.exec(document.querySelector('.legend')?.textContent ?? '')?.slice(1) ?? null);
+  await page.waitForTimeout(2500);
+  const t2 = await page.evaluate(() => /(\d{4}): ([\d,]+) sites/.exec(document.querySelector('.legend')?.textContent ?? '')?.slice(1) ?? null);
+  check(!!t1 && !!t2 && Number(t2[0]) > Number(t1[0]) && Number(t2[1].replace(/,/g, '')) > Number(t1[1].replace(/,/g, '')) && Number(t1[0]) < 2000, `"Watch the list grow" plays the years (${t1?.join(': ')} → ${t2?.join(': ')} sites)`);
+  await page.evaluate(() => { window.atlas.app.select('IND'); });
+  await page.waitForTimeout(800);
+  const ind = await page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.textContent ?? '');
+  check(/World Heritage sites\s*\d+ \(/.test(ind), `India's card counts its World Heritage sites (${/World Heritage sites[^A-Z]*/.exec(ind)?.[0] ?? ind.slice(0, 60)})`);
+  check(!errors.length, `no page errors with the World Heritage filter${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 // 12f. Compare two filters: from the Filters panel, GDP per capita against life expectancy on a
 // two-colour map, with its chart (a strong link); the legend's nine squares count the countries and a
 // tap lights theirs; a dot on the chart picks its country, whose strip shows both values with their
@@ -1117,7 +1146,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(300);
   // What are you hearing?, Which book is it from?, Who made it?: the clip, the line or the picture is the
   // question, and the name stays hidden until the answer.
-  for (const kind of ['listen', 'opening', 'artist']) {
+  for (const kind of ['listen', 'opening', 'artist', 'site']) {
     await menu('Quiz');
     await page.evaluate((k) => document.querySelector(`[data-quiz="${k}"]`).click(), kind);
     await page.waitForSelector('.learn-card:not([hidden]) .quiz-opt', { timeout: 30000 });
