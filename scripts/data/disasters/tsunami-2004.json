@@ -47,6 +47,14 @@
       "color": "#48c9b0"
     },
     {
+      "id": "waves",
+      "name": {
+        "en": "Waves to far coasts",
+        "es": "Olas hacia costas lejanas"
+      },
+      "color": "#5dade2"
+    },
+    {
       "id": "dead",
       "name": {
         "en": "Countries where people died",
@@ -260,7 +268,7 @@
       },
       "text": {
         "en": "At 07:58 in Aceh (00:58 UTC) the seabed off Sumatra tore along the Sunda megathrust: a magnitude 9.1–9.3 earthquake whose rupture ran 1,300–1,600 km north in about ten minutes.",
-        "es": "A las 07:58 en Aceh (00:58 UTC), el fondo marino frente a Sumatra se rasgó a lo largo del megacabalgamiento de la Sonda: un terremoto de magnitud 9,1 a 9,3 cuya ruptura avanzó de 1300 a 1600 km hacia el norte en unos diez minutos."
+        "es": "A las 07:58 en Aceh (00:58 UTC), el fondo marino frente a Sumatra se rasgó en el megacabalgamiento de la Sonda: un sismo de magnitud 9,1 a 9,3 cuya ruptura recorrió de 1300 a 1600 km al norte en unos diez minutos."
       },
       "details": {
         "en": "Here the Indian plate slides under the Burma plate at about 6 cm a year. On 26 December 2004 the fault between Simeulue and the Andaman Islands slipped by up to about 15 m and lifted the seabed by several metres along its whole length. The rupture began 30 km down, just north of Simeulue, and spread north in two bursts at 2 to 3 km a second; the faulting lasted at least ten minutes, the longest ever observed. The USGS gives a magnitude of 9.1, later studies 9.2–9.3: the strongest earthquake recorded in Asia and the second or third strongest anywhere since 1900. Its seismic waves made the whole planet vibrate by up to a centimetre. The rising seabed pushed up about 30 cubic kilometres of water, and the waves set off along the whole length of the break.",
@@ -499,7 +507,7 @@
       },
       "moves": [
         {
-          "side": "front",
+          "side": "waves",
           "path": [[93.9, 6.2], [81.95, 7.5]],
           "by": "sea",
           "label": {
@@ -598,7 +606,7 @@
       },
       "text": {
         "en": "At about 10:00 in Thailand (03:00 UTC) the waves, slowed by the shallow Andaman Sea, reached Phuket and Khao Lak, crowded with holiday visitors. About 8,000 people died in Thailand.",
-        "es": "Hacia las 10:00 en Tailandia (03:00 UTC), las olas, frenadas por el poco profundo mar de Andamán, llegaron a Phuket y Khao Lak, llenas de turistas. En Tailandia murieron unas 8000 personas."
+        "es": "Hacia las 10:00 en Tailandia (03:00 UTC), las olas, frenadas por el poco profundo mar de Andamán, llegaron a Phuket y Khao Lak, repletos de turistas. En Tailandia murieron unas 8000 personas."
       },
       "details": {
         "en": "Phang Nga province suffered most. In Khao Lak, a strip of low bungalow resorts, about 4,000–5,000 people died, more than half of them foreign tourists, and the water ran up to 2 km inland. Many Burmese migrant workers who died were never counted, because they had no papers. In the fishing village of Ban Nam Khem about a quarter of the 4,200 people were lost. On Phuket the sea drew far back from Kata Noi beach at 10:25, just before the third and strongest wave. On Mai Khao beach a ten-year-old English girl, Tilly Smith, recognised the frothing, retreating sea from a geography lesson; with her parents and the beach guards, she helped clear the beach in time. The Moken sea nomads of the Surin Islands also read the sea and saved many lives.",
@@ -625,7 +633,7 @@
       },
       "moves": [
         {
-          "side": "front",
+          "side": "waves",
           "path": [[94.6, 7.8], [98.12, 8.66]],
           "by": "sea",
           "label": {
@@ -680,7 +688,7 @@
           },
           "text": {
             "en": "A strip of beach resorts north of Phuket, the worst-hit place in Thailand: about 4,000–5,000 died. A navy patrol boat carried more than a kilometre inland still lies there as a memorial.",
-            "es": "Una franja de playas y hoteles al norte de Phuket, el lugar más golpeado de Tailandia: murieron entre 4000 y 5000 personas. Una lancha patrullera de la Armada arrastrada más de un kilómetro tierra adentro sigue allí como monumento."
+            "es": "Una franja de playas y hoteles al norte de Phuket, el lugar más golpeado de Tailandia: murieron de 4000 a 5000 personas. Una lancha de la Armada arrastrada más de un kilómetro tierra adentro sigue allí como monumento."
           },
           "wiki": {
             "en": "Khao Lak",
@@ -779,7 +787,7 @@
       },
       "moves": [
         {
-          "side": "front",
+          "side": "waves",
           "path": [[92.6, 10.3], [80.05, 10.85]],
           "by": "sea",
           "label": {
@@ -788,7 +796,7 @@
           }
         },
         {
-          "side": "front",
+          "side": "waves",
           "path": [[93.0, 6.6], [81.0, 5.3], [77.5, 7.55], [76.3, 9.0]],
           "by": "sea",
           "label": {
@@ -909,7 +917,7 @@
       },
       "moves": [
         {
-          "side": "front",
+          "side": "waves",
           "path": [[92.8, 4.6], [73.7, 4.2]],
           "by": "sea",
           "label": {
@@ -918,7 +926,7 @@
           }
         },
         {
-          "side": "front",
+          "side": "waves",
           "path": [[92.8, 3.4], [80.5, 4.5], [60.0, 8.4], [51.65, 10.4]],
           "by": "sea",
           "label": {
@@ -1016,7 +1024,7 @@
       },
       "moves": [
         {
-          "side": "front",
+          "side": "waves",
           "path": [[90.0, -3.0], [62.0, -24.0], [33.3, -29.1]],
           "by": "sea",
           "label": {
@@ -1099,7 +1107,7 @@
       },
       "moves": [
         {
-          "side": "front",
+          "side": "waves",
           "path": [[96.0, -2.0], [112.5, -36.0], [150.0, -49.5], [-160.0, -50.0], [-120.0, -10.0], [-104.6, 18.8]],
           "by": "sea",
           "label": {
@@ -1108,7 +1116,7 @@
           }
         },
         {
-          "side": "front",
+          "side": "waves",
           "path": [[-160.0, -50.0], [-100.0, -42.0], [-71.9, -33.0]],
           "by": "sea",
           "label": {
@@ -1117,7 +1125,7 @@
           }
         },
         {
-          "side": "front",
+          "side": "waves",
           "path": [[88.0, -6.0], [55.0, -30.0], [20.0, -38.5], [-10.0, -30.0], [-28.0, 0.0], [-40.0, 30.0], [-63.3, 44.4]],
           "by": "sea",
           "label": {
@@ -1260,8 +1268,8 @@
             "es": "La gran mezquita de Banda Aceh, símbolo del pueblo acehnés. Resistió el tsunami con daños menores y se convirtió en refugio para quienes habían perdido su casa."
           },
           "details": {
-            "en": "The earthquake cracked and slightly tilted its 35 m minaret, but the building stood while much of the city around it was swept away. For two weeks it housed people who had lost everything, and only then reopened for prayers.",
-            "es": "El terremoto agrietó e inclinó un poco su minarete de 35 m, pero el edificio resistió mientras gran parte de la ciudad a su alrededor era arrasada. Durante dos semanas acogió a personas que lo habían perdido todo, y solo entonces volvió a abrir para la oración."
+            "en": "The first great mosque here burned in 1873, when Dutch colonial troops attacked Aceh; the Dutch rebuilt it in 1879–1881, and many Acehnese at first refused to pray in it. On 26 December 2004 the earthquake cracked and slightly tilted its 35 m minaret, but the building stood while much of the city around it was swept away. For two weeks it housed people who had lost everything, and only then reopened for prayers.",
+            "es": "La primera gran mezquita de este lugar ardió en 1873, cuando las tropas coloniales neerlandesas atacaron Aceh; los neerlandeses la reconstruyeron en 1879–1881, y al principio muchos acehneses se negaron a rezar en ella. El 26 de diciembre de 2004, el terremoto agrietó e inclinó un poco su minarete de 35 m, pero el edificio resistió mientras gran parte de la ciudad a su alrededor era arrasada. Durante dos semanas acogió a personas que lo habían perdido todo, y solo entonces volvió a abrir para la oración."
           },
           "wiki": {
             "en": "Baiturrahman Grand Mosque",
@@ -1353,8 +1361,8 @@
         "es": "El 15 de agosto de 2005, en Helsinki, Indonesia y el Movimiento Aceh Libre firmaron un acuerdo de paz que terminó con una guerra de casi 30 años. El propio acuerdo cita el tsunami como una de sus razones."
       },
       "details": {
-        "en": "Since 1976 the Free Aceh Movement (GAM) had fought for independence, and about 15,000 people had been killed. Two days after the tsunami GAM declared a ceasefire so that aid could reach the coast, and Indonesia opened the province to aid workers and journalists. Talks in Finland, led by the former Finnish president Martti Ahtisaari, produced the agreement, signed by the negotiators Hamid Awaluddin for Indonesia and Malik Mahmud for GAM. GAM gave up its weapons and its demand for independence, most Indonesian troops left, and Aceh gained special self-government. In December 2006 a former GAM leader, Irwandi Yusuf, was elected governor in Aceh's first direct election. Ahtisaari received the Nobel Peace Prize in 2008 for his work resolving conflicts.",
-        "es": "Desde 1976, el Movimiento Aceh Libre (GAM) luchaba por la independencia, y habían muerto unas 15 000 personas. Dos días después del tsunami, el GAM declaró un alto el fuego para que la ayuda llegara a la costa, e Indonesia abrió la provincia a los trabajadores humanitarios y a los periodistas. Las conversaciones en Finlandia, dirigidas por el expresidente finlandés Martti Ahtisaari, dieron lugar al acuerdo, firmado por los negociadores Hamid Awaluddin, por Indonesia, y Malik Mahmud, por el GAM. El GAM entregó sus armas y renunció a la independencia, la mayoría de las tropas indonesias se retiró y Aceh obtuvo un autogobierno especial. En diciembre de 2006, un antiguo dirigente del GAM, Irwandi Yusuf, fue elegido gobernador en la primera elección directa de Aceh. Ahtisaari recibió el Premio Nobel de la Paz en 2008 por su labor para resolver conflictos."
+        "en": "Since 1976 the Free Aceh Movement (GAM) had fought for independence, and about 15,000 people had been killed. Two days after the tsunami GAM declared a ceasefire so that aid could reach the coast, and Indonesia opened the province to aid workers and journalists. Talks in Finland, led by the former Finnish president Martti Ahtisaari, produced the agreement, signed by Hamid Awaluddin, Indonesia's chief negotiator, and the GAM leader Malik Mahmud. GAM gave up its weapons and its demand for independence, the troops Indonesia had brought in from outside left, and Aceh gained special self-government. In December 2006 a former GAM leader, Irwandi Yusuf, was elected governor in Aceh's first direct election. Ahtisaari received the Nobel Peace Prize in 2008 for his work resolving conflicts.",
+        "es": "Desde 1976, el Movimiento Aceh Libre (GAM) luchaba por la independencia, y habían muerto unas 15 000 personas. Dos días después del tsunami, el GAM declaró un alto el fuego para que la ayuda llegara a la costa, e Indonesia abrió la provincia a los trabajadores humanitarios y a los periodistas. Las conversaciones en Finlandia, dirigidas por el expresidente finlandés Martti Ahtisaari, dieron lugar al acuerdo, firmado por Hamid Awaluddin, jefe negociador de Indonesia, y por el dirigente del GAM Malik Mahmud. El GAM entregó sus armas y renunció a la independencia, se retiraron las tropas que Indonesia había traído de fuera de la provincia y Aceh obtuvo un autogobierno especial. En diciembre de 2006, un antiguo dirigente del GAM, Irwandi Yusuf, fue elegido gobernador en la primera elección directa de Aceh. Ahtisaari recibió el Premio Nobel de la Paz en 2008 por su labor para resolver conflictos."
       },
       "camera": {
         "lon": 60,
@@ -1414,12 +1422,12 @@
     {
       "date": "2006-06",
       "title": {
-        "en": "A warning system for the Indian Ocean",
-        "es": "Un sistema de alerta para el océano Índico"
+        "en": "An Indian Ocean warning system",
+        "es": "Un sistema de alerta para el Índico"
       },
       "text": {
         "en": "In late June 2006 the Indian Ocean Tsunami Warning System, agreed in Kobe in January 2005, went live: seismic stations, sea-level gauges and deep-ocean buoys linked to national warning centres.",
-        "es": "A fines de junio de 2006 entró en servicio el Sistema de Alerta de Tsunamis del océano Índico, acordado en Kobe en enero de 2005: estaciones sísmicas, mareógrafos y boyas de aguas profundas conectados a centros nacionales de alerta."
+        "es": "A fines de junio de 2006 entró en servicio el Sistema de Alerta de Tsunamis del océano Índico, acordado en Kobe en enero de 2005: estaciones sísmicas, mareógrafos y boyas oceánicas unidos a centros nacionales de alerta."
       },
       "details": {
         "en": "In 2004 there was no tsunami warning system in the Indian Ocean, and even where the waves took hours to arrive almost no one was warned. The new system, led by UNESCO, began with 25 seismic stations, six deep-ocean DART buoys and 26 national tsunami centres. Until the region's own centres were ready, the Pacific Tsunami Warning Center in Hawaii and the Japan Meteorological Agency sent advice; India opened its tsunami warning centre in Hyderabad in October 2007, and today Australia, India and Indonesia lead the warnings. A warning only saves lives if it reaches people: in July 2006 a tsunami on Java's south coast killed about 700 because there was no way to pass the alert on, but in 2012 the system warned the Andaman and Nicobar Islands within eight minutes. Thailand put warning sirens along its beaches.",

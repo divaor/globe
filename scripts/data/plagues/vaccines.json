@@ -286,7 +286,8 @@
             "en": "A bacterial disease that usually attacks the lungs; Robert Koch identified its germ in Berlin in 1882. It is still the world's deadliest infectious disease: in 2024 it killed an estimated 1.23 million people.",
             "es": "Enfermedad bacteriana que suele atacar los pulmones; Robert Koch identificó su microbio en Berlín en 1882. Sigue siendo la enfermedad infecciosa más mortal del mundo: en 2024 mató a unos 1,23 millones de personas."
           },
-          "wiki": { "en": "Tuberculosis", "es": "Tuberculosis" }
+          "wiki": { "en": "Tuberculosis", "es": "Tuberculosis" },
+          "img": "Mycobacterium tuberculosis.jpg"
         },
         {
           "id": "institut-pasteur",
@@ -735,12 +736,12 @@
       "date": "2000",
       "title": { "en": "Gavi, the Vaccine Alliance", "es": "Gavi, la Alianza para las Vacunas" },
       "text": {
-        "en": "Gavi, founded in 2000, joins donor governments, the Gates Foundation, WHO, UNICEF, the World Bank and vaccine makers to buy vaccines for the poorest countries. It has helped immunise over 760 million children.",
-        "es": "Gavi, fundada en 2000, une a gobiernos donantes, la Fundación Gates, la OMS, Unicef, el Banco Mundial y los fabricantes de vacunas para comprar vacunas para los países más pobres. Ha ayudado a inmunizar a más de 760 millones de niños."
+        "en": "Gavi, founded in 2000, joins donor governments, the Gates Foundation, WHO, UNICEF, the World Bank and vaccine makers to buy vaccines for the poorest countries. By 2019 it had helped immunise over 760 million children.",
+        "es": "Gavi, fundada en 2000, une a gobiernos donantes, la Fundación Gates, la OMS, Unicef, el Banco Mundial y los fabricantes de vacunas para comprar vacunas para los países más pobres. Para 2019 había ayudado a inmunizar a más de 760 millones de niños."
       },
       "details": {
-        "en": "Gavi, based in Geneva, pools donors' money, negotiates low prices by buying in bulk and helps countries strengthen their health systems and train health workers. It supports the immunisation of almost half the world's children and says it has helped prevent over 13 million deaths. Most of its money comes from rich countries, above all the United Kingdom, and from the Gates Foundation. It has also been criticised: for giving private donors great power over global health, for favouring new, costly vaccines over basic coverage and for having vaccine makers on its board. It supported the WHO's Yellow Fever Initiative, which from 2006 vaccinated more than 105 million people in West Africa, and in 2020 it helped lead COVAX, which tried to share COVID-19 vaccines fairly.",
-        "es": "Gavi, con sede en Ginebra, reúne el dinero de los donantes, negocia precios bajos comprando al por mayor y ayuda a los países a fortalecer sus sistemas de salud y formar personal sanitario. Apoya la vacunación de casi la mitad de los niños del mundo y afirma haber ayudado a evitar más de 13 millones de muertes. La mayor parte de su dinero viene de países ricos, sobre todo el Reino Unido, y de la Fundación Gates. También ha recibido críticas: por dar mucho poder a donantes privados sobre la salud mundial, por preferir vacunas nuevas y caras a la cobertura básica y por tener fabricantes de vacunas en su consejo. Apoyó la Iniciativa contra la Fiebre Amarilla de la OMS, que desde 2006 vacunó a más de 105 millones de personas en África occidental, y en 2020 ayudó a dirigir COVAX, que intentó repartir con equidad las vacunas contra la COVID-19."
+        "en": "Gavi, based in Geneva, pools donors' money, negotiates low prices by buying in bulk and helps countries strengthen their health systems and train health workers. It supports the immunisation of almost half the world's children, and by 2019 it said it had helped prevent over 13 million deaths. Most of its money comes from rich countries, above all the United Kingdom, and from the Gates Foundation. It has also been criticised: for giving private donors great power over global health, for favouring new, costly vaccines over basic coverage and for having vaccine makers on its board. It supported the WHO's Yellow Fever Initiative, which from 2006 vaccinated more than 105 million people in West Africa, and in 2020 it helped lead COVAX, which tried to share COVID-19 vaccines fairly.",
+        "es": "Gavi, con sede en Ginebra, reúne el dinero de los donantes, negocia precios bajos comprando al por mayor y ayuda a los países a fortalecer sus sistemas de salud y formar personal sanitario. Apoya la vacunación de casi la mitad de los niños del mundo, y para 2019 afirmaba haber ayudado a evitar más de 13 millones de muertes. La mayor parte de su dinero viene de países ricos, sobre todo el Reino Unido, y de la Fundación Gates. También ha recibido críticas: por dar mucho poder a donantes privados sobre la salud mundial, por preferir vacunas nuevas y caras a la cobertura básica y por tener fabricantes de vacunas en su consejo. Apoyó la Iniciativa contra la Fiebre Amarilla de la OMS, que desde 2006 vacunó a más de 105 millones de personas en África occidental, y en 2020 ayudó a dirigir COVAX, que intentó repartir con equidad las vacunas contra la COVID-19."
       },
       "camera": { "lon": -25, "lat": 38, "zoom": 1.4 },
       "places": [
@@ -753,8 +754,8 @@
           "date": "2000",
           "place": { "en": "Geneva, Switzerland", "es": "Ginebra, Suiza" },
           "text": {
-            "en": "A partnership founded in 2000 that buys vaccines at low prices for poorer countries. It supports the immunisation of almost half the world's children and says it has helped prevent over 13 million deaths.",
-            "es": "Una alianza fundada en 2000 que compra vacunas a bajo precio para los países más pobres. Apoya la vacunación de casi la mitad de los niños del mundo y afirma haber ayudado a evitar más de 13 millones de muertes."
+            "en": "A partnership founded in 2000 that buys vaccines at low prices for poorer countries. It supports the immunisation of almost half the world's children, and by 2019 it said it had helped prevent over 13 million deaths.",
+            "es": "Una alianza fundada en 2000 que compra vacunas a bajo precio para los países más pobres. Apoya la vacunación de casi la mitad de los niños del mundo, y para 2019 afirmaba haber ayudado a evitar más de 13 millones de muertes."
           },
           "wiki": { "en": "GAVI", "es": "GAVI" }
         },
@@ -858,10 +859,10 @@
           "wiki": { "en": "Drew Weissman", "es": "Drew Weissman" }
         },
         {
-          "id": "first-covid-19-vaccination",
+          "id": "margaret-keenan",
           "name": { "en": "First COVID-19 vaccination", "es": "Primera vacunación contra la COVID-19" },
           "at": [-1.4378, 52.4212],
-          "cat": "event",
+          "cat": "vaccine",
           "type": "event",
           "date": "2020-12-08",
           "place": { "en": "University Hospital Coventry, England", "es": "Hospital Universitario de Coventry, Inglaterra" },
@@ -972,7 +973,8 @@
             "en": "Wild poliovirus type 1 now survives only in Afghanistan and Pakistan: 50 and 9 cases by 9 November 2026. Vaccinators there have faced distrust, insecurity and deadly attacks.",
             "es": "El poliovirus salvaje de tipo 1 solo sobrevive hoy en Afganistán y Pakistán: 50 y 9 casos al 9 de noviembre de 2026. Allí los vacunadores han sufrido desconfianza, inseguridad y ataques mortales."
           },
-          "wiki": { "en": "Polio eradication", "es": "Erradicación de la poliomielitis" }
+          "wiki": { "en": "Polio eradication", "es": "Erradicación de la poliomielitis" },
+          "img": "Poliomyelitis reported cases by year.svg"
         },
         { "id": "world-health-organization", "name": { "en": "World Health Organization (WHO)", "es": "Organización Mundial de la Salud (OMS)" }, "at": [6.1342, 46.2335], "cat": "health", "type": "institution", "date": "1948-04-07", "text": { "en": "WHO", "es": "OMS" } },
         { "id": "polio", "name": { "en": "Polio", "es": "Poliomielitis (polio)" }, "at": [16.3738, 48.2082], "cat": "disease", "type": "disease", "date": "1909", "text": { "en": "Polio", "es": "Polio" } }
