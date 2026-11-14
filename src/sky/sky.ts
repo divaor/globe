@@ -168,7 +168,8 @@ export class Sky {
     // enough that the horizon sits near the bottom of the view.
     else if (first && !s.target) { this.az = 180; this.alt = this.startAlt(); }
     if (s.target) this.lookAt(s.target, !s.fov);
-    this.picked = null;
+    // A target is ringed and named (not in a quiz, which hides the names).
+    this.picked = s.target && !s.bare ? this.resolve(d, s.target) : null;
     this.renderFoot();
     this.dirty();
   }
@@ -457,8 +458,12 @@ export class Sky {
       }
     }
     // Deep-sky objects: the famous ones always, the others when zoomed in.
+    // The picked thing is always named (a tour's or a link's target).
+    const pickObj = this.picked?.kind === 'object' ? this.picked.obj.id : null;
+    const pickHip = this.picked?.kind === 'star' ? this.picked.star.hip : -1;
     for (const o of d.objects) {
-      if (!o.famous && this.fov > 45) continue;
+      const isPick = o.id === pickObj;
+      if (!o.famous && this.fov > 45 && !isPick) continue;
       const w = P8(o.v!);
       if (!up(w)) continue;
       const p = P(w);
@@ -466,7 +471,7 @@ export class Sky {
       const t = OBJECT_TYPES[o.type] ?? OBJECT_TYPES.other;
       ctx.strokeStyle = t.color; ctx.globalAlpha = 0.85 * fade + 0.15; ctx.lineWidth = 1.3;
       ctx.beginPath(); ctx.arc(p![0], p![1], 4.5, 0, Math.PI * 2); ctx.stroke(); ctx.globalAlpha = 1;
-      if (this.opts.names && !this.bare && (o.famous || this.fov < 30)) label(tr(o.name), p![0] + 7, p![1], '500 11px system-ui, sans-serif', t.color);
+      if (this.opts.names && !this.bare && (o.famous || this.fov < 30 || isPick)) label(tr(o.name), p![0] + (isPick ? 14 : 7), p![1], isPick ? '700 12px system-ui, sans-serif' : '500 11px system-ui, sans-serif', isPick ? '#ffd479' : t.color, 'left', isPick);
       spots.push({ pick: { kind: 'object', obj: o }, x: p![0], y: p![1], r: 12 });
     }
     // Stars: names of the bright ones, and spots to tap.
@@ -480,7 +485,8 @@ export class Sky {
       if (!onScreen(p, 4)) continue;
       shown++;
       spots.push({ pick: { kind: 'star', star: s }, x: p![0], y: p![1], r: Math.max(6, 11 - s.mag * 1.5) });
-      if (this.opts.names && !this.bare && s.mag <= named && (s.name || d.info.has(s.hip))) label(starName(d, s), p![0] + 6, p![1] - 1, '500 11.5px system-ui, sans-serif', 'rgba(235,240,255,0.86)');
+      if (s.hip === pickHip && this.opts.names && !this.bare) label(starName(d, s), p![0] + 14, p![1] - 1, '700 12px system-ui, sans-serif', '#ffd479', 'left', true);
+      else if (this.opts.names && !this.bare && s.mag <= named && (s.name || d.info.has(s.hip))) label(starName(d, s), p![0] + 6, p![1] - 1, '500 11.5px system-ui, sans-serif', 'rgba(235,240,255,0.86)');
     }
     // Constellation names.
     const visible: string[] = [];

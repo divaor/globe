@@ -199,6 +199,13 @@ export class Galaxy {
     const spots: Spot[] = [];
     const labels: string[] = [];
     const placed: [number, number, number, number][] = [];
+    // Room for "we are here", drawn last, on top of everything.
+    const sunText = R > 1e5 ? L('The Milky Way (we are here)', 'La Vía Láctea (estamos aquí)') : L('The Sun (we are here)', 'El Sol (estamos aquí)');
+    {
+      const p = S([0, 0]);
+      ctx.font = '700 12px system-ui, sans-serif';
+      placed.push([p[0] - 6, p[1] - 8, p[0] + 10 + ctx.measureText(sunText).width, p[1] + 9]);
+    }
     const label = (text: string, x: number, y: number, font: string, color: string, align: CanvasTextAlign = 'left', force = false) => {
       ctx.font = font; ctx.textAlign = align; ctx.textBaseline = 'middle';
       const tw = ctx.measureText(text).width;
@@ -319,7 +326,7 @@ export class Galaxy {
       const p = S([0, 0]);
       ctx.fillStyle = '#ffd25a'; ctx.shadowColor = '#ffd25a'; ctx.shadowBlur = 10;
       ctx.beginPath(); ctx.arc(p[0], p[1], 4.5, 0, Math.PI * 2); ctx.fill(); ctx.shadowBlur = 0;
-      label(R > 1e5 ? L('The Milky Way (we are here)', 'La Vía Láctea (estamos aquí)') : L('The Sun (we are here)', 'El Sol (estamos aquí)'), p[0] + 8, p[1] + 1, '700 12px system-ui, sans-serif', '#ffe08a', 'left', true);
+      label(sunText, p[0] + 8, p[1] + 1, '700 12px system-ui, sans-serif', '#ffe08a', 'left', true);
       const sunF = this.gd?.galaxy.find((f) => f.id === 'sun');
       spots.push({ x: p[0], y: p[1], r: 14, open: () => (sunF ? this.featureCard(sunF) : void this.space.factsCard('sun')) });
     }
