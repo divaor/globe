@@ -538,9 +538,9 @@ export class Renderer {
     }
     for (const o of this.overlays) { ctx.save(); o(rc); ctx.restore(); }
 
-    // ---- selection
+    // ---- selection (not on another world, which has no countries)
     for (const [id, strong] of [[this.hover, false], [this.selection, true]] as const) {
-      if (!id) continue;
+      if (!id || this.worldStyle) continue;
       const s = level.byId.get(id);
       if (!s) continue;
       const p = this.countryPath(s);

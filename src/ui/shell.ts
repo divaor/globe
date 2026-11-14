@@ -230,7 +230,8 @@ export class Shell {
 
   private onHover(x: number, y: number) {
     const r = this.app.renderer;
-    if (x < 0 || r.moving) {
+    // On another world (r.worldStyle) there are no countries to name or outline.
+    if (x < 0 || r.moving || r.worldStyle) {
       this.tooltip.hidden = true;
       if (this.hoverId) { this.hoverId = null; r.hover = null; r.requestRender(); }
       return;

@@ -1540,6 +1540,11 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(500);
   const lcard = await page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
   check(/Apollo 11/.test(lcard) && /Armstrong/.test(lcard), `a tap on the Apollo 11 marker opens its card (${lcard.split('\n').slice(0, 3).join(' · ')})`);
+  // The pointer over the Moon names no Earth country (on the Earth, Apollo 11's spot is in the Congo) and outlines none.
+  await page.mouse.move(a11[0] + 30, a11[1] + 30);
+  await page.waitForTimeout(400);
+  const hov = await page.evaluate(() => ({ tip: !document.querySelector('.tooltip')?.hidden, hover: window.atlas.app.renderer.hover }));
+  check(!hov.tip && !hov.hover, `the pointer over the Moon names no Earth country${hov.tip || hov.hover ? ` (${hov.hover})` : ''}`);
 
   // Mars in 3D: its own heights (Olympus Mons is about 21 km high).
   await page.evaluate(() => { window.atlas.shell.card.hide(); return window.atlas.space.enter('mars', { camera: { lon: -134, lat: 18.6, zoom: 6 } }); });
