@@ -63,8 +63,10 @@ export function settingsPanel(app: App, reopen: () => void): HTMLElement {
     h('h3', { class: 'sec-title' }, t('ambient')),
     field(t('ambientSpeed'), slider(app.ambient.speed, 0.25, 4, 0.25, (v) => { app.ambient.speed = v; app.save(); })),
     h('div', { class: 'toggles' },
-      toggle(app.ambient.cycle, (v) => { app.ambient.cycle = v; app.save(); }, t('ambientCycle')),
       toggle(app.ambient.clock, (v) => { app.ambient.clock = v; app.save(); }, t('ambientClock'))),
+    h('p', { class: 'muted small' }, app.lang === 'es'
+      ? 'Las listas de reproducción del salvapantallas están en Más → Modo ambiente.'
+      : 'The screensaver’s playlists are in More → Ambient mode.'),
     h('div', { class: 'settings-actions' }, installBtn),
     h('p', { class: 'muted small' }, `${t('version')} ${__APP_VERSION__}`),
   );

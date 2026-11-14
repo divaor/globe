@@ -1,6 +1,7 @@
 import './styles/main.css';
 import { App } from './app/app';
 import { Shell } from './ui/shell';
+import { playlistFromLink, MINE_ID } from './ui/playlists';
 import { coreLayers } from './layers';
 import { t } from './app/i18n';
 import { TimeTravel } from './modes';
@@ -76,7 +77,12 @@ async function boot() {
   }
   registerSW(shell);
   // Home-screen shortcut: open straight into ambient mode.
-  if (/ambient=1/.test(location.hash)) setTimeout(() => void shell.ambient.start(), 600);
+  // A playlist link (#ambient=1&playlist=planet, or the reader's own in #mine=...).
+  if (/ambient=1/.test(location.hash)) {
+    const shared = playlistFromLink(location.hash);
+    const id = shared ? MINE_ID : /[#&]playlist=([a-z]+)/.exec(location.hash)?.[1];
+    setTimeout(() => void shell.ambient.start(id ?? undefined), 600);
+  }
   // A shared world: #world=moon&c=lon,lat,zoom (and &map=elev).
   const world = shared.get('world');
   if (world) {

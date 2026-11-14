@@ -11,6 +11,7 @@ import { CountryCard } from './card';
 import { LegendCard } from './legend';
 import { SearchBox } from './search';
 import { Ambient } from './ambient';
+import { screensaverPanel } from './playlists';
 import { settingsPanel, aboutPanel } from './settings';
 import type { App } from '../app/app';
 import type { IconNode } from 'lucide';
@@ -60,7 +61,7 @@ export class Shell {
     this.addDock({ id: 'filters', icon: Layers, label: () => t('filters'), order: 10, onClick: () => this.openFilters() });
     this.addDock({ id: 'projection', icon: Globe, label: () => t(`proj.${app.projection}`), order: 20, onClick: () => void this.openProjections() });
     this.addDock({ id: 'more', icon: Ellipsis, label: () => t('more'), order: 90, onClick: () => this.toggleMenu() });
-    this.addMenu({ id: 'ambient', icon: MonitorPlay, label: () => t('ambient'), order: 10, onClick: () => void this.ambient.start() });
+    this.addMenu({ id: 'ambient', icon: MonitorPlay, label: () => t('ambient'), order: 10, onClick: () => this.openScreensaver() });
     this.addMenu({ id: 'share', icon: Share2, label: () => t('share'), order: 80, onClick: () => void this.share() });
     this.addMenu({ id: 'settings', icon: Settings, label: () => t('settings'), order: 90, onClick: () => this.openSettings() });
     this.addMenu({ id: 'about', icon: Info, label: () => t('about'), order: 95, onClick: () => this.openAbout() });
@@ -172,6 +173,12 @@ export class Shell {
   openAbout(force = false) {
     if (!force && this.sheet.isOpen('about')) { this.sheet.close(); return; }
     this.sheet.open('about', t('about'), aboutPanel(this.app));
+  }
+
+  /** Ambient mode's panel: its playlists, the reader's own, and its settings. */
+  openScreensaver() {
+    const el = screensaverPanel(this.app, (id) => { this.sheet.close(); void this.ambient.start(id); }, (m) => this.toast(m, 2200));
+    this.openPanel('screensaver', t('ambient'), el);
   }
 
   openPanel(id: string, title: string, el: HTMLElement, onClose?: () => void, bar?: HTMLElement) {
