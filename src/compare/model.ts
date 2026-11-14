@@ -17,10 +17,27 @@ export interface Dataset { fields: Record<string, Field>; data: Record<string, R
 
 let DS: Dataset | null = null;
 let loading: Promise<Dataset> | null = null;
-/** The country facts (public/data/attributes/countries.json), loaded once. */
+/** The country facts (public/data/attributes/countries.json), loaded once, with the reader's own numbers. */
 export function loadFacts(): Promise<Dataset> {
-  loading ??= loadJSON<Dataset>('attributes/countries.json').then((d) => (DS = d));
+  loading ??= loadJSON<Dataset>('attributes/countries.json').then((d) => { DS = d; for (const k of extra.keys()) applyExtra(k); return d; });
   return loading;
+}
+
+/** The reader's own data (src/mydata): numbers by country that Compare can use as A or B. */
+const extra = new Map<string, { field: Field; values: Record<string, number> }>();
+function applyExtra(key: string) {
+  if (!DS) return;
+  for (const d of Object.values(DS.data)) delete d[key];
+  delete DS.fields[key];
+  const e = extra.get(key);
+  if (!e) return;
+  DS.fields[key] = e.field;
+  for (const [id, v] of Object.entries(e.values)) (DS.data[id] ??= {})[key] = v;
+}
+/** Adds (or with null, removes) one of the reader's own number columns. */
+export function setExtraField(key: string, e: { field: Field; values: Record<string, number> } | null) {
+  if (e) extra.set(key, e); else extra.delete(key);
+  applyExtra(key);
 }
 export const facts = () => DS;
 

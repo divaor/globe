@@ -72,6 +72,15 @@ spinning full-screen as an ambient display. English and Spanish.
   J. A. Johnson, 2019); an element's card shows where that happens in the sky, who mines it today (the resources
   filter, now with 54 mined commodities) and where it was discovered. Search finds constellations, stars, sky objects
   and elements; shared links open them (`#sky=Ori`, `#galaxy=M42`, `#element=Au`).
+- **Your data:** a CSV (or a table pasted from a spreadsheet) becomes a filter with a legend, kept on your device
+  and nowhere else. Rows can be countries (names in English or Spanish, the usual aliases, or ISO codes), regions
+  inside a country (4,596 states, provinces and departments) or places with a latitude and longitude. Numbers are
+  read with a decimal point or a decimal comma; a row per place and year (Our World in Data) or a column per year
+  (World Bank) gives a year picker and "Play the years"; world and regional totals are set aside. Countries and
+  regions are coloured by a number (nine palettes; automatic, even, logarithmic or rank scales) or by categories;
+  points are sized by a number and coloured by a category, each with its card. Number columns by country can be
+  compared with any country fact. Four samples to try: life expectancy since 1950, Latin America's biggest cities,
+  World Heritage sites by Mexican state, and a list of travels.
 - **Compare two filters:** any two country facts at once. Two numbers make a two-colour map (each in thirds,
   3 × 3 squares to tap) and a scatter chart linked to the globe both ways (tap a dot to fly to its country, tap
   a square to light its countries on the chart), with Spearman's ρ and Pearson's r in plain words, the
@@ -200,7 +209,13 @@ spinning full-screen as an ambient display. English and Spanish.
   Southern sky); "On this day", any day of the year: what the Time travel stories tell of it, each opening its
   step, and Wikipedia's selection of events, linked to the story that tells the same event.
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
-- **Ambient mode:** full-screen rotating globe with your filters, screen kept awake, clock, optional filter cycling.
+- **Read aloud:** guided tours and the Time travel stories read by your device's own voices, in English or Latin
+  American Spanish (a Mexican or other Latin American voice before Spain's); the sentence being read is marked, the
+  next stop or step waits for the voice, and music turns down while it reads. Choose the voice and speed in Settings.
+- **Ambient mode:** full-screen rotating globe, screen kept awake, clock. Show the filters on your map, or a
+  screensaver playlist: Our planet, Night and day, Restless Earth, Water and weather, Life on Earth, People and
+  cultures, or Around Latin America, each view with its title and a line about it, read aloud if you like; or make
+  your own playlist from views of the map (filters and place) and share it as a link.
 
 ## Development
 
@@ -278,6 +293,8 @@ artist's impression (NASA/JPL-Caltech/ESO/R. Hurt); the constellations', stars',
 cards are written from Wikipedia, NASA, ESA, ESO and the papers listed in each, the elements' origins after Johnson
 (2019), and the mining figures are the USGS Mineral Commodity Summaries 2026 (`scripts/data/sky/`,
 `public/data/sky/SOURCES.md`).
+The samples for "Your data" are Our World in Data's life expectancy (CC BY 4.0) and tables made from the app's own
+cities and World Heritage list (`scripts/data/samples/`, `public/data/samples/SOURCES.md`).
 The script samples use subsets of the Noto fonts (SIL Open Font License 1.1) and, for rare Chinese characters,
 Jigmo (CC0), made by `scripts/data/build-fonts.mjs` (`public/data/fonts/`, with the licence in `OFL.txt`).
 

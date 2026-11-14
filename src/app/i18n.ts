@@ -99,6 +99,9 @@ const STRINGS: Record<string, [string, string]> = {
   'cat.imagery': ['Imagery', 'Imágenes'],
   'cat.live': ['Live', 'En vivo'],
   'cat.fun': ['Fun facts', 'Curiosidades'],
+  'cat.mine': ['Your data', 'Tus datos'],
+  myDataAdd: ['Add your data', 'Agregar tus datos'],
+  myDataAddDesc: ['A CSV of countries, regions or places becomes a map.', 'Un CSV de países, regiones o lugares se vuelve un mapa.'],
   featured: ['Compare', 'Comparar'],
   // projections
   'proj.globe': ['Globe', 'Globo'],

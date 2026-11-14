@@ -207,10 +207,11 @@ async function open(opts, hash) {
     const c = body.querySelector(`.fcard[data-id="${id}"]`);
     return { top: Math.round(c.getBoundingClientRect().top), scroll: Math.round(body.scrollTop) };
   }, id);
-  // A filter that turns on in the list (Compare two filters opens its own card and closes the panel).
+  // A filter that turns on in the list (Compare two filters opens its own card and closes the panel; "Add your
+  // data" is a button that opens its panel, not a filter).
   const pickCard = () => page.evaluate(() => {
     const b = document.querySelector('.sheet-body').getBoundingClientRect();
-    return [...document.querySelectorAll('.sheet-body .fcard')].find((c) => c.getBoundingClientRect().top > b.top + 150 && c.getBoundingClientRect().bottom < b.bottom && !c.classList.contains('on') && c.dataset.id !== 'compare').dataset.id;
+    return [...document.querySelectorAll('.sheet-body .fcard')].find((c) => c.getBoundingClientRect().top > b.top + 150 && c.getBoundingClientRect().bottom < b.bottom && !c.classList.contains('on') && c.dataset.id !== 'compare' && !c.classList.contains('fcard-add')).dataset.id;
   });
   const tapAndWait = async (id) => {
     await page.tap(`.sheet-body .fcard[data-id="${id}"]`);
@@ -1757,6 +1758,181 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const after = await page.evaluate(() => ({ open: window.atlas.sky.info.open, card: document.querySelector('.country-card:not([hidden])')?.innerText ?? '' }));
   check(hits.some((x) => /Orion.*Constellation/.test(x)) && hits2.some((x) => /Sirius.*Star/.test(x)) && after.open && /Sirius/.test(after.card), `search finds Orion (constellation) and Sirius (star); picking Sirius opens the sky at it with its card`);
   check(!errors.length, `no page errors among the stars${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 18. Narrated tours and your own data. With a stand-in for the device's voices (headless browsers have none): a
+// tour read aloud in Spanish by a Mexican voice rather than a Spanish one, the sentence being read marked, auto-play
+// moving on when the voice is done; a story that waits for the voice; the screensaver's playlists (a view, its
+// caption read aloud, the next view, the map put back) and a shared playlist link; your data: the panel, a sample
+// with years (totals set aside, a year picked), a pasted table with decimal commas, regions, points with a card,
+// Compare offered your numbers, the tables still there after a reload, and deleting one.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => {
+    try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {}
+    window.__spoken = [];
+    const voices = [
+      { name: 'Monica', lang: 'es-ES', voiceURI: 'es-es', localService: true },
+      { name: 'Paulina', lang: 'es-MX', voiceURI: 'es-mx', localService: true },
+      { name: 'Samantha', lang: 'en-US', voiceURI: 'en-us', localService: true },
+    ];
+    let speaking = false, cur = null, timer = 0;
+    const synth = {
+      getVoices: () => voices, get speaking() { return speaking; }, get pending() { return false; },
+      speak(u) { speaking = true; cur = u; window.__spoken.push({ text: u.text, voice: u.voice && u.voice.name, at: Date.now() }); setTimeout(() => u.onstart && u.onstart(), 10); timer = setTimeout(() => { speaking = false; cur = null; u.onend && u.onend(); }, Math.min(1000, 20 * u.text.length)); },
+      cancel() { clearTimeout(timer); speaking = false; const u = cur; cur = null; if (u && u.onend) u.onend(); },
+      addEventListener() {}, pause() {}, resume() {},
+    };
+    Object.defineProperty(window, 'speechSynthesis', { value: synth, configurable: true });
+    window.SpeechSynthesisUtterance = class { constructor(t) { this.text = t; this.lang = ''; this.voice = null; this.rate = 1; } };
+  });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  const boot = async (hash) => {
+    await page.goto(url + hash, { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+    await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+    await page.waitForTimeout(800);
+  };
+  await boot('#p=globe&l=political&c=-60,0,1&lang=es');
+
+  // A tour read aloud: the Mexican voice, the sentence marked, and auto-play going on after the voice.
+  await page.evaluate(() => window.atlas.learn['openTours']());
+  await page.waitForTimeout(600);
+  await page.click('[data-tour="Born in the stars"]');
+  await page.waitForTimeout(1200);
+  await page.click('.tour-voice');
+  await page.waitForTimeout(300);
+  const v1 = await page.evaluate(() => ({ spoken: window.__spoken.slice(), marked: document.querySelectorAll('.tour-s.reading').length }));
+  await page.click('.tour-tools [aria-label="Auto"]');
+  await page.waitForFunction(() => window.atlas.learn['tour']?.i >= 1, null, { timeout: 30000 }).catch(() => {});
+  const v2 = await page.evaluate(() => ({ i: window.atlas.learn['tour']?.i, n: window.__spoken.length, first: window.__spoken.findIndex((s) => /átomos/i.test(s.text)) }));
+  check(v1.spoken[0]?.voice === 'Paulina' && /Los primeros átomos/.test(v1.spoken[0]?.text) && v1.marked === 1 && v2.i === 1 && v2.n >= 3,
+    `a tour read aloud in Spanish by a Mexican voice (${v1.spoken[0]?.voice}: "${v1.spoken[0]?.text}"), its sentence marked, auto-play on to stop ${(v2.i ?? 0) + 1} after the voice`);
+  await page.evaluate(() => window.atlas.learn['stopTour']());
+  await page.waitForTimeout(300);
+  const quiet = await page.evaluate(() => window.speechSynthesis.speaking);
+  check(!quiet, 'closing the tour stops the voice');
+
+  // A story playing waits for the voice: the step changes only after its last sentence.
+  await page.evaluate(() => { window.__spoken.length = 0; });
+  await page.evaluate(() => window.atlas.time.stories.eras.open('scientific-revolution'));
+  await page.waitForFunction(() => window.atlas.time.stories.eras.step >= 1, null, { timeout: 40000 }).catch(() => {});
+  const st = await page.evaluate(() => ({ step: window.atlas.time.stories.eras.step, spoken: window.__spoken.map((x) => x.text) }));
+  const firstNext = st.spoken.findIndex((x, i) => i > 0 && /^1543\.$/.test(x));
+  check(st.step === 1 && firstNext > 2, `a story read aloud moves on when the voice is done (${firstNext} sentences of the first step read before "1543.")`);
+  await page.evaluate(() => window.atlas.time.stories.eras.exit());
+  await page.waitForTimeout(800);
+
+  // The screensaver: the panel's playlists, my playlist, and a playlist playing with its captions read aloud.
+  await page.evaluate(() => window.atlas.app.setLang('en'));
+  await page.evaluate(() => window.atlas.shell.openScreensaver());
+  await page.waitForTimeout(500);
+  const pls = await page.$$eval('[data-playlist]', (b) => b.map((x) => x.getAttribute('data-playlist')));
+  await page.click('.ss .settings-actions .pill.primary');
+  await page.waitForTimeout(300);
+  const mine = await page.evaluate(() => JSON.parse(localStorage.getItem('atlas-playlist') || '[]'));
+  check(['', 'planet', 'night', 'restless', 'water', 'life', 'people', 'latam'].every((k) => pls.includes(k)) && mine.length === 1 && mine[0].stack.includes('political'),
+    `ambient mode offers 7 playlists and my own (${pls.length} cards); "Add this view" adds the map to my playlist`);
+  await page.evaluate(() => { window.__spoken.length = 0; window.atlas.app.ambient.secs = 4; window.atlas.app.ambient.narrate = true; });
+  await page.click('[data-playlist="restless"]');
+  // The view's filters load, the map arrives, then the voice reads its line.
+  await page.waitForFunction(() => window.__spoken.some((x) => /tectonic plates/.test(x.text)), null, { timeout: 20000 }).catch(() => {});
+  const a1 = await page.evaluate(() => ({ ...window.atlas.shell.ambient.info, on: window.atlas.app.ambient.on, layers: window.atlas.app.layers.map((l) => l.def.id), cap: document.querySelector('.amb-caption')?.innerText, spoken: window.__spoken.map((x) => x.text).join(' ') }));
+  await page.waitForFunction(() => window.atlas.shell.ambient.info.views >= 2, null, { timeout: 30000 }).catch(() => {});
+  const a2 = await page.evaluate(() => ({ ...window.atlas.shell.ambient.info, layers: window.atlas.app.layers.map((l) => l.def.id) }));
+  check(a1.on && a1.playlist === 'restless' && a1.layers.join() === 'relief,plates' && /tectonic plates/.test(a1.cap) && /tectonic plates/.test(a1.spoken) && a2.index === 1 && a2.layers.includes('volcanoes'),
+    `Restless Earth plays: the plates (caption and voice), then the volcanoes (${a2.layers.join(', ')})${a1.on && a1.layers.join() === 'relief,plates' && /tectonic plates/.test(a1.cap ?? '') && /tectonic plates/.test(a1.spoken) ? '' : ` [${JSON.stringify(a1).slice(0, 300)}]`}`);
+  await page.evaluate(() => window.atlas.shell.ambient.stop());
+  await page.waitForTimeout(1000);
+  const back = await page.evaluate(() => window.atlas.app.layers.map((l) => l.def.id).join());
+  check(back === 'political', `stopping the screensaver puts the map back (${back})`);
+
+  // Your data: the Filters list has its section and button; a sample with years.
+  await page.click('[data-dock="filters"]');
+  await page.waitForTimeout(600);
+  const sec = await page.evaluate(() => !!document.querySelector('.cat-mine .fcard-add'));
+  await page.click('.cat-mine .fcard-add');
+  await page.waitForSelector('[data-sample="life-expectancy.csv"]', { timeout: 15000 });
+  await page.click('[data-sample="life-expectancy.csv"]');
+  await page.waitForSelector('.md-card', { timeout: 30000 });
+  const pv = await page.evaluate(() => document.querySelector('.md-found')?.innerText ?? '');
+  check(sec && /230 countries/.test(pv) && /1950–2023/.test(pv) && /totals set aside \(Africa/.test(pv) && /French Guiana|GUF/.test(pv),
+    `"Your data" in the Filters list opens its panel; the life-expectancy sample: ${pv.split('\n').slice(0, 2).join(' · ')}`);
+  await page.click('.md-add');
+  await page.waitForTimeout(1500);
+  const le = await page.evaluate(() => {
+    const a = window.atlas, s = a.myData.sets[a.myData.sets.length - 1], id = `my-${s.id}`, inst = a.app.instance(id);
+    const jp = inst?.def.info?.('JPN', inst, 'en')?.[0]?.value;
+    a.app.setOption(id, 'year', '1950');
+    const jp50 = inst?.def.info?.('JPN', inst, 'en')?.[0]?.value;
+    return { id, on: !!inst, jp, jp50, legend: (inst?.def.legend?.(inst, 'en')?.actions ?? []).map((x) => x.label).join() };
+  });
+  check(le.on && parseFloat(le.jp) > 80 && parseFloat(le.jp50) < 70 && /Play the years/.test(le.legend), `on the map: Japan ${le.jp} in 2023, ${le.jp50} in 1950; the legend plays the years${/Play the years/.test(le.legend) ? '' : ` [legend: ${le.legend.slice(0, 120)}]`}`);
+
+  // A pasted table with semicolons and decimal commas; a name it cannot find.
+  await page.evaluate(() => window.atlas.app.emit('mydata'));
+  await page.waitForTimeout(500);
+  await page.click('.md-paste-box summary');
+  await page.fill('.md-paste', 'País;Café (kg por persona)\nBrasil;6,2\nFinlandia;12\nAtlantis;3');
+  await page.click('.md-paste-box .pill');
+  await page.waitForSelector('.md-card', { timeout: 15000 });
+  const pp = await page.evaluate(() => document.querySelector('.md-found')?.innerText ?? '');
+  await page.click('.md-add');
+  await page.waitForTimeout(1000);
+  const bra = await page.evaluate(() => { const a = window.atlas, s = a.myData.sets[a.myData.sets.length - 1], inst = a.app.instance(`my-${s.id}`); return inst?.def.valueLabel?.('BRA', inst); });
+  check(/2 countries/.test(pp) && /Not found \(1\): Atlantis/.test(pp) && bra === '6.2', `a pasted table with decimal commas: Brazil ${bra}; "Atlantis" reported as not found`);
+
+  // Regions and points.
+  for (const f of ['mexico-world-heritage.csv', 'latin-america-cities.csv']) {
+    await page.evaluate(() => window.atlas.app.emit('mydata'));
+    await page.waitForTimeout(400);
+    await page.click(`[data-sample="${f}"]`);
+    await page.waitForSelector('.md-card', { timeout: 30000 });
+    await page.click('.md-add');
+    await page.waitForTimeout(1500);
+  }
+  const rg = await page.evaluate(async () => {
+    const a = window.atlas, s = a.myData.sets.find((x) => x.geo === 'region'), inst = a.app.instance(`my-${s.id}`);
+    await new Promise((r) => setTimeout(r, 1500));
+    return { ready: inst?.ready, rows: inst?.def.pick?.(-89.2, 20.6, inst, 'en') };
+  });
+  check(rg.ready && /Yucat/.test(rg.rows?.[0]?.value ?? '') && rg.rows?.length === 2, `regions: a point in Yucatán finds its state and value (${(rg.rows ?? []).map((r) => r.value).join(', ')})`);
+  await page.evaluate(() => { window.atlas.shell.sheet.close(); window.atlas.app.flyTo(-46.6, -23.6, 4); });
+  await page.waitForTimeout(3000);
+  const sp = await page.evaluate(() => window.atlas.app.renderer.view.project(-46.627, -23.557)) ?? [0, 0];
+  await page.mouse.click(sp[0], sp[1]);
+  await page.waitForTimeout(1000);
+  const card = await page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
+  check(/São Paulo/.test(card) && /Population/.test(card), `points: a tap on São Paulo opens its card (${card.split('\n').slice(0, 2).join(' · ')})`);
+
+  // Compare two filters offers your numbers.
+  await page.evaluate(() => window.atlas.shell.card.hide());
+  await page.evaluate(() => window.atlas.app.emit('compare'));
+  await page.waitForSelector('[data-pick="a"]', { timeout: 30000 }).catch(() => {});
+  const cmp = await page.evaluate(() => [...(document.querySelector('[data-pick="a"]')?.options ?? [])].map((o) => o.value).filter((v) => v.startsWith('my:')));
+  const leId = await page.evaluate(() => { const s = window.atlas.myData.sets.find((x) => x.years.length > 1); return `my:${s.id}:${s.columns[0].key}`; });
+  check(cmp.includes(leId), `Compare two filters offers your numbers by country (${cmp.length}: life expectancy; a table of two countries is too small to compare)`);
+  await page.evaluate(() => window.atlas.compare['stop']?.());
+
+  // After a reload the tables are still there (and still on the map); deleting one takes its filter away.
+  const before = await page.evaluate(() => window.atlas.myData.sets.length);
+  await boot('');
+  await page.waitForFunction(() => window.atlas.myData.sets.length > 0, null, { timeout: 15000 }).catch(() => {});
+  const kept = await page.evaluate(() => ({ n: window.atlas.myData.sets.length, on: window.atlas.app.layers.filter((l) => l.def.id.startsWith('my-')).length }));
+  const del = await page.evaluate(async () => { const a = window.atlas, s = a.myData.sets[0]; await a.myData.remove(s.id); return { left: a.myData.sets.length, reg: a.app.registry.has(`my-${s.id}`) }; });
+  check(kept.n === before && kept.on >= 1 && del.left === before - 1 && !del.reg, `after a reload ${kept.n} tables are still here (${kept.on} on the map); deleting one removes its filter`);
+  // A shared playlist: the link carries its views, and opens the screensaver with them.
+  const link = Buffer.from(JSON.stringify([{ stack: ['koppen'] }, { stack: ['popdensity'], fly: [-58.4, -34.6, 3] }])).toString('base64url');
+  await page.goto(url + `#ambient=1&mine=${link}&lang=en`).catch(() => {});
+  await page.reload({ waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForFunction(() => window.atlas.shell.ambient.info.views >= 1, null, { timeout: 15000 }).catch(() => {});
+  const sh = await page.evaluate(() => ({ ...window.atlas.shell.ambient.info, layers: window.atlas.app.layers.map((l) => l.def.id), saved: JSON.parse(localStorage.getItem('atlas-playlist') || '[]').length }));
+  await page.evaluate(() => window.atlas.shell.ambient.stop());
+  check(sh.playlist === 'mine' && sh.layers.join() === 'koppen' && sh.saved === 2, `a shared playlist link opens the screensaver with its views (${sh.layers.join()}, ${sh.saved} views kept)`);
+  check(!errors.length, `no page errors in v0.22.0's features${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

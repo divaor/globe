@@ -1,6 +1,7 @@
 // Settings and About/credits panels.
 import { Download } from 'lucide';
-import { h, icon, toggle, segmented, slider } from './dom';
+import { h, icon, toggle, segmented, slider, fillSelect } from './dom';
+import { canSpeak, narrationOn, setNarrationOn, voicesFor, voiceFor, setVoice, voiceRate, setVoiceRate, voiceRegion, speak, onNarration } from './narrator';
 import { t, tx, LANGS, type Lang } from '../app/i18n';
 import type { App } from '../app/app';
 import { terrainSettings } from './terrain';
@@ -57,11 +58,15 @@ export function settingsPanel(app: App, reopen: () => void): HTMLElement {
     ...(app.renderer.gl ? [h('div', { class: 'toggles' }, toggle(s.gpuMotion, (v) => { s.gpuMotion = v; app.renderer.requestRender(); save(); }, t('gpuMotion')))] : []),
     h('h3', { class: 'sec-title' }, app.lang === 'es' ? 'Relieve detallado' : 'Detailed terrain'),
     terrainSettings(app, reopen),
+    h('h3', { class: 'sec-title' }, app.lang === 'es' ? 'Lectura en voz alta' : 'Reading aloud'),
+    voiceSettings(app),
     h('h3', { class: 'sec-title' }, t('ambient')),
     field(t('ambientSpeed'), slider(app.ambient.speed, 0.25, 4, 0.25, (v) => { app.ambient.speed = v; app.save(); })),
     h('div', { class: 'toggles' },
-      toggle(app.ambient.cycle, (v) => { app.ambient.cycle = v; app.save(); }, t('ambientCycle')),
       toggle(app.ambient.clock, (v) => { app.ambient.clock = v; app.save(); }, t('ambientClock'))),
+    h('p', { class: 'muted small' }, app.lang === 'es'
+      ? 'Las listas de reproducción del salvapantallas están en Más → Modo ambiente.'
+      : 'The screensaver’s playlists are in More → Ambient mode.'),
     h('div', { class: 'settings-actions' }, installBtn),
     h('p', { class: 'muted small' }, `${t('version')} ${__APP_VERSION__}`),
   );
@@ -87,4 +92,46 @@ export function aboutPanel(app: App): HTMLElement {
       : 'Open source (GPL-3.0). Data keep their own licences; see public/data/*/SOURCES.md in the repository.'),
     h('p', { class: 'small' }, h('a', { href: 'https://github.com/divaor/globe', target: '_blank', rel: 'noopener' }, 'github.com/divaor/globe')),
   );
+}
+
+/** Reading aloud: on or off, the voice for the app's language (Latin American Spanish voices first), its speed, and
+ * a sample. The voices are the device's own; some devices have none for a language. */
+function voiceSettings(app: App): HTMLElement {
+  const es = app.lang === 'es';
+  const box = h('div', { class: 'voice-settings' });
+  if (!canSpeak()) {
+    box.append(h('p', { class: 'muted small' }, es ? 'Este navegador no puede leer en voz alta.' : 'This browser cannot read aloud.'));
+    return box;
+  }
+  const render = () => {
+    box.replaceChildren();
+    const list = voicesFor(app.lang);
+    const cur = voiceFor(app.lang);
+    box.append(h('div', { class: 'toggles' }, toggle(narrationOn(), (v) => setNarrationOn(v), es ? 'Leer en voz alta las visitas guiadas y las historias' : 'Read tours and stories aloud')));
+    if (!list.length) {
+      box.append(h('p', { class: 'muted small' }, es
+        ? 'Este dispositivo no tiene voces en español. Puedes agregar una en los ajustes de texto a voz del sistema.'
+        : 'This device has no English voices. You can add one in the system’s text-to-speech settings.'));
+      return;
+    }
+    const sel = h('select', { class: 'select', 'aria-label': es ? 'Voz' : 'Voice' }) as HTMLSelectElement;
+    fillSelect(sel, list.map((v) => ({ value: v.voiceURI, label: `${v.name}${voiceRegion(v, app.lang) ? ` · ${voiceRegion(v, app.lang)}` : ''}` })));
+    if (cur) sel.value = cur.voiceURI;
+    sel.addEventListener('change', () => setVoice(app.lang, sel.value));
+    const sample = h('button', { type: 'button', class: 'pill' }, es ? '▶ Probar la voz' : '▶ Try the voice');
+    sample.addEventListener('click', () => void speak(es
+      ? 'Hola. Así sonarán las visitas guiadas y las historias.'
+      : 'Hello. This is how the tours and stories will sound.', { lang: app.lang }));
+    box.append(
+      field(es ? 'Voz' : 'Voice', sel),
+      field(es ? 'Velocidad' : 'Speed', slider(voiceRate(), 0.7, 1.4, 0.05, (v) => setVoiceRate(v))),
+      h('div', { class: 'settings-actions' }, sample),
+      h('p', { class: 'muted small' }, es
+        ? 'Lee una voz de tu dispositivo; la app no graba ni envía nada.'
+        : 'One of your device’s own voices reads; the app records and sends nothing.'));
+  };
+  render();
+  // The voices arrive a moment after the page loads on some browsers; the switch can change from a tour.
+  const off = onNarration(() => { if (!box.isConnected) { off(); return; } if (!box.contains(document.activeElement)) render(); });
+  return box;
 }

@@ -24,7 +24,7 @@ interface Saved {
   quality?: 'auto' | 'high' | 'low';
   gpuMotion?: boolean;
   labelScale?: number;
-  ambient?: { speed: number; cycle: boolean; clock: boolean };
+  ambient?: { speed: number; cycle: boolean; clock: boolean; playlist?: string; secs?: number; narrate?: boolean };
   camera?: { lon: number; lat: number; zoom: number };
 }
 
@@ -39,7 +39,8 @@ export class App {
   lang: Lang = detectLang();
   themeId: 'dark' | 'light' = 'dark';
   selection: string | null = null;
-  ambient = { on: false, speed: 1, cycle: false, clock: true };
+  /** Ambient mode (the screensaver): its playlist ('' for the filters on the map), seconds a view, reading aloud. */
+  ambient = { on: false, speed: 1, cycle: false, clock: true, playlist: '', secs: 40, narrate: false };
   private listeners = new Map<string, Set<Listener>>();
   private saveTimer = 0;
   /** Modes such as 'timeline' or 'pangea' take over the map; null = normal exploring. */
@@ -281,7 +282,7 @@ export class App {
       active: this.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, opacity: Math.round(l.opacity * 100) / 100, options: l.options })),
       labels: r.settings.labels, graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality, gpuMotion: r.settings.gpuMotion,
       labelScale: r.settings.labelScale,
-      ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock },
+      ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock, playlist: this.ambient.playlist, secs: this.ambient.secs, narrate: this.ambient.narrate },
       camera: r.view.camera(),
     };
   }
@@ -347,6 +348,8 @@ export class App {
     if (saved.gpuMotion !== undefined) r.settings.gpuMotion = saved.gpuMotion;
     if (saved.labelScale) r.settings.labelScale = saved.labelScale;
     if (saved.ambient) Object.assign(this.ambient, saved.ambient);
+    // Before playlists, "cycle through filters" played the filters of what is now the playlist Our planet.
+    if (saved.ambient?.cycle && saved.ambient.playlist === undefined) this.ambient.playlist = 'planet';
     if (saved.projection && PROJECTIONS[saved.projection]) r.view.setProjection(saved.projection, false);
     if (saved.camera) Object.assign(r.view, saved.camera);
     return saved;
