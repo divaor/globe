@@ -8,7 +8,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-const DIRS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art', inventions: 'inventions', heritage: 'heritage' };
+const DIRS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art', inventions: 'inventions', heritage: 'heritage', space: 'space' };
 const args = process.argv.slice(2);
 const list = args.includes('--list');
 const files = args.filter((a) => !a.startsWith('--'));
@@ -76,6 +76,12 @@ for (const tour of tours) {
         const d = pts.length ? Math.min(...pts.map((p) => km(p, s.fly))) : 0;
         if (d > 150) warn(`${at}: flies ${Math.round(d)} km from anything ${kind}/${id} step ${n} shows`);
       }
+    } else if (s.world) {
+      if (!fs.existsSync(path.join(ROOT, 'public/data/worlds', `${s.world}-2k.jpg`))) err(`${at}: no world "${s.world}"`);
+      label = `world ${s.world}${s.map ? ` (${s.map})` : ''}`;
+    } else if (s.orrery) {
+      if (!/^-?\d{1,4}-\d{2}-\d{2}$/.test(s.orrery.date ?? '')) err(`${at}: orrery date ${s.orrery.date} is not YYYY-MM-DD`);
+      label = `solar system ${s.orrery.date}`;
     } else if (s.mode) label = `mode ${s.mode}`;
     else label = `map ${s.projection ?? ''} ${(s.stack ?? []).join('+')}`;
     if (list) console.log(`  ${String(i + 1).padStart(2)}. ${s.icon ?? ''}${s.title_en} | ${label}${s.fly ? ` | fly ${s.fly.join(', ')}` : ''}`);

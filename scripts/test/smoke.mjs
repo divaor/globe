@@ -1477,6 +1477,140 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   });
 }
 
+
+// 16. Beyond Earth, with stand-in Trek tiles: the Space panel lists the worlds; the Moon shows its map, IAU names and
+// landing sites, sharper tiles as you zoom in, a place's card ("named after") and a landing's card; Mars in 3D from its
+// own heights; the solar system on a date; a space story steps onto the Moon and back; Which world is this? and Who
+// landed here? show the world with no names; Back to Earth restores the map.
+{
+  const zlib = await import('node:zlib');
+  const png = (px) => {
+    const raw = Buffer.alloc(256 * (256 * 4 + 1));
+    for (let y = 0; y < 256; y++) { raw[y * 1025] = 0; for (let x = 0; x < 256; x++) { const [r, g, b] = px(x, y); const o = y * 1025 + 1 + x * 4; raw[o] = r; raw[o + 1] = g; raw[o + 2] = b; raw[o + 3] = 255; } }
+    const chunk = (type, data) => { const len = Buffer.alloc(4); len.writeUInt32BE(data.length); const td = Buffer.concat([Buffer.from(type), data]); const crc = Buffer.alloc(4); crc.writeUInt32BE(zlib.crc32(td)); return Buffer.concat([len, td, crc]); };
+    const ihdr = Buffer.alloc(13); ihdr.writeUInt32BE(256, 0); ihdr.writeUInt32BE(256, 4); ihdr[8] = 8; ihdr[9] = 6;
+    return Buffer.concat([Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]), chunk('IHDR', ihdr), chunk('IDAT', zlib.deflateSync(raw)), chunk('IEND', Buffer.alloc(0))]);
+  };
+  const greyTile = png((px, py) => [90 + (px & 31), 90 + (py & 31), 95]);
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  let trek = 0;
+  await ctx.route(/^https:\/\/trek\.nasa\.gov\/tiles\//, (r) => { trek++; return r.fulfill({ status: 200, body: greyTile, contentType: 'image/png', headers: { 'access-control-allow-origin': '*' } }); });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {} });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(url + '#p=globe&l=political&c=0,20,1&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(800);
+  const frames = () => page.evaluate(() => new Promise((done) => requestAnimationFrame(() => requestAnimationFrame(done))));
+
+  // The Space panel: every world, by planets, moons and dwarf planets.
+  await page.click('[data-dock="space"]');
+  await page.waitForTimeout(500);
+  const worlds = await page.$$eval('.world-btn[data-world]', (b) => b.map((x) => x.getAttribute('data-world')));
+  check(worlds.length >= 19 && worlds.includes('moon') && worlds.includes('pluto') && worlds.includes('titan'), `the Space panel lists ${worlds.length} worlds (${worlds.slice(0, 6).join(', ')}…)`);
+
+  // The Moon: its map, names, landings and a bar with its maps; zoomed in, Trek tiles sharpen it.
+  await page.click('.world-btn[data-world="moon"]');
+  await page.waitForFunction(() => window.atlas.space.surface.ready && window.atlas.space.surface.names, null, { timeout: 20000 }).catch(() => {});
+  await page.waitForTimeout(1200);
+  const moon = await page.evaluate(() => { const s = window.atlas.space.surface; return { mode: window.atlas.app.mode, id: s.id, names: s.names?.rows.length ?? 0, landings: s.here.length, chips: [...document.querySelectorAll('.worldbar [data-map]')].map((b) => b.getAttribute('data-map')), glow: window.atlas.app.renderer.worldStyle }; });
+  check(moon.mode === 'world' && moon.id === 'moon' && moon.names > 1500 && moon.landings >= 30 && moon.chips.join() === 'photo,elev', `the Moon: ${moon.names} IAU names, ${moon.landings} landing sites, maps ${moon.chips.join(' and ')}`);
+  await page.evaluate(() => { const v = window.atlas.app.renderer.view; v.flyTo({ lon: -20.08, lat: 9.62, zoom: 30 }, 10); window.atlas.app.renderer.requestRender(); });
+  await page.waitForFunction(() => { const m = window.atlas.space.surface.mosaic; return m && m.total > 0 && m.loaded === m.total; }, null, { timeout: 20000 }).catch(() => {});
+  const det = await page.evaluate(() => { const m = window.atlas.space.surface.mosaic; return { loaded: m?.loaded ?? 0, total: m?.total ?? 0 }; });
+  check(det.total > 0 && det.loaded === det.total && trek > 0, `zoomed in on Copernicus, ${det.loaded}/${det.total} Trek tiles sharpen the map (${trek} fetched)`);
+  // A named place's card.
+  const cp = await page.evaluate(() => window.atlas.app.renderer.view.project(-20.08, 9.62));
+  await page.mouse.click(cp[0], cp[1]);
+  await page.waitForTimeout(500);
+  const card = await page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
+  check(/Copernicus/.test(card) && /Crater/.test(card) && /Named after/.test(card) && /Polish astronomer/.test(card), `a tap on Copernicus opens its card: ${card.split('\n').slice(0, 9).join(' · ').slice(0, 140)}`);
+  // A landing's card: Apollo 11.
+  await page.evaluate(() => { window.atlas.shell.card.hide(); const v = window.atlas.app.renderer.view; v.flyTo({ lon: 23.47, lat: 0.67, zoom: 12 }, 10); window.atlas.app.renderer.requestRender(); });
+  await page.waitForTimeout(800); await frames();
+  const a11 = await page.evaluate(() => window.atlas.app.renderer.view.project(23.473, 0.6741));
+  await page.mouse.click(a11[0], a11[1]);
+  await page.waitForTimeout(500);
+  const lcard = await page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
+  check(/Apollo 11/.test(lcard) && /Armstrong/.test(lcard), `a tap on the Apollo 11 marker opens its card (${lcard.split('\n').slice(0, 3).join(' · ')})`);
+
+  // Mars in 3D: its own heights (Olympus Mons is about 21 km high).
+  await page.evaluate(() => { window.atlas.shell.card.hide(); return window.atlas.space.enter('mars', { camera: { lon: -134, lat: 18.6, zoom: 6 } }); });
+  await page.waitForTimeout(1500);
+  await page.click('.wd-3d');
+  await page.waitForFunction(() => window.atlas.terrain3d.info.ready, null, { timeout: 40000 }).catch(() => {});
+  await page.waitForTimeout(1500);
+  const t3 = await page.evaluate(() => window.atlas.terrain3d.info);
+  check(t3.ready && t3.heights > 0 && t3.top > 20000 && t3.top < 23000 && t3.drape === 'photo', `Mars in 3D: ${t3.heights} height tiles, top ${Math.round(t3.top)} m, drape ${t3.drape}, ×${t3.k}`);
+  await page.click('.t3d-close');
+
+  // The solar system on a date: on 9 February 1986 Halley's Comet was at its closest to the Sun.
+  await page.evaluate(() => window.atlas.space.openOrrery());
+  await page.waitForTimeout(600);
+  await page.fill('.orr-input', '1986-02-09');
+  await page.dispatchEvent('.orr-input', 'change');
+  await page.waitForTimeout(500);
+  const orr = await page.evaluate(() => window.atlas.orrery.info);
+  await page.click('[data-scale="inner"]');
+  await page.waitForTimeout(400);
+  const ep = await page.evaluate(() => { const s = window.atlas.orrery.spots?.find?.((x) => x.id === 'earth'); return s ? [s.x, s.y] : null; }).catch(() => null);
+  const tapped = await page.evaluate(() => { const o = window.atlas.orrery; const s = o.spots.find((x) => x.id === 'mars'); return s ? o.tap(s.x, s.y) : null; });
+  await page.waitForTimeout(800);
+  const ocard = await page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
+  check(orr.open && Math.abs(orr.jd - 2446470.5) < 1 && !!ep && tapped === 'mars' && /From the Sun on this date/.test(ocard), `the solar system on 9 February 1986 (JD ${orr.jd}); a tap on Mars opens its card with its distance`);
+  await page.click('.orr-close');
+
+  // A space story steps onto the Moon and back to the Earth.
+  await page.evaluate(() => window.atlas.space.exit());
+  await page.evaluate(() => window.atlas.time.stories.space.open('space-race', 0));
+  await page.waitForTimeout(1500);
+  const steps = await page.evaluate(async () => { const r = await fetch('data/space/space-race.json'); const c = await r.json(); return c.steps.map((s) => s.world ?? 'earth'); });
+  const mi = steps.indexOf('moon');
+  let onMoon = null, back = null;
+  if (mi >= 0) {
+    await page.evaluate((i) => window.atlas.time.stories.space.show('space-race', i), mi);
+    await page.waitForTimeout(1500);
+    onMoon = await page.evaluate(() => ({ id: window.atlas.space.surface.id, style: !!window.atlas.app.renderer.worldStyle }));
+    const ei = steps.findIndex((w, k) => k > mi && w === 'earth');
+    await page.evaluate((i) => window.atlas.time.stories.space.show('space-race', i), ei >= 0 ? ei : 0);
+    await page.waitForTimeout(1000);
+    back = await page.evaluate(() => ({ id: window.atlas.space.surface.id, style: !!window.atlas.app.renderer.worldStyle }));
+  }
+  check(mi >= 0 && onMoon?.id === 'moon' && onMoon.style && back?.id === null && !back.style, `The space race: step ${mi + 1} is on the Moon (the globe turns into it), the next Earth step brings the Earth back`);
+  await page.evaluate(() => window.atlas.time.stories.space.exit());
+
+  // Which world is this?: a world with no names and no bar; after the answer, the names come out.
+  await page.evaluate(() => window.atlas.learn['startQuiz']('world', 'world'));
+  await page.waitForTimeout(1500);
+  const wq = await page.evaluate(() => ({ active: window.atlas.space.active, bare: window.atlas.space.surface.bare, bar: !!document.querySelector('.worldbar'), q: document.querySelector('.learn-card .quiz-q')?.textContent, opts: document.querySelectorAll('.learn-card .quiz-opt').length }));
+  await page.click('.learn-card .quiz-opt');
+  await page.waitForTimeout(600);
+  const wa = await page.evaluate(() => ({ bare: window.atlas.space.surface.bare, fb: document.querySelector('.learn-card .quiz-fb')?.textContent ?? '' }));
+  check(wq.active && wq.bare && !wq.bar && wq.opts === 4 && !wa.bare && wa.fb.length > 5, `Which world is this?: a world with no names or bar, four answers; then "${wa.fb.slice(0, 60)}"`);
+  await page.evaluate(() => window.atlas.learn['stopQuiz']());
+  // Who landed here?: a pin on the Moon or Mars, four missions to that world.
+  await page.evaluate(() => window.atlas.learn['startQuiz']('landed', 'world'));
+  await page.waitForTimeout(1500);
+  const lq = await page.evaluate(() => ({ id: window.atlas.space.surface.id, bare: window.atlas.space.surface.bare, q: document.querySelector('.learn-card .quiz-q')?.textContent ?? '', opts: document.querySelectorAll('.learn-card .quiz-opt').length }));
+  check((lq.id === 'moon' || lq.id === 'mars') && lq.bare && /Who landed here/.test(lq.q) && lq.opts === 4, `Who landed here?: "${lq.q}" with four missions`);
+  await page.evaluate(() => window.atlas.learn['stopQuiz']());
+  await page.waitForTimeout(500);
+  const afterQuiz = await page.evaluate(() => ({ active: window.atlas.space.active, id: window.atlas.space.surface.id }));
+  check(!afterQuiz.active && afterQuiz.id === null, 'closing the quiz brings the Earth back');
+
+  // Mercury's map; Back to Earth restores the map.
+  await page.evaluate(() => window.atlas.space.enter('mercury'));
+  await page.waitForTimeout(1500);
+  const merc = await page.evaluate(() => ({ id: window.atlas.space.surface.id, ready: window.atlas.space.surface.ready }));
+  await page.click('.wd-exit');
+  await page.waitForTimeout(1200);
+  const earth = await page.evaluate(() => ({ mode: window.atlas.app.mode, base: window.atlas.app.renderer.baseMap, style: window.atlas.app.renderer.worldStyle, layers: window.atlas.app.layers.map((l) => l.def.id) }));
+  check(merc.id === 'mercury' && merc.ready && earth.mode === null && earth.base && earth.style === null && earth.layers.includes('political'), `Mercury's map loads; Back to Earth restores the map (${earth.layers.join(', ')})`);
+  check(!errors.length, `no page errors beyond Earth${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

@@ -75,6 +75,8 @@ export interface Item {
   podium?: { c: string; n: Text; a2?: string }[];
   /** Life through time: the plate that carries it, so it moves with its continent on an old map. */
   pl?: string;
+  /** Space exploration: the world it is on (the Moon, Mars...); the Earth when left out. */
+  world?: string;
   /** The first step that shows it (-1: a time tour's catalogue item, shown from its date). */
   first: number;
 }
@@ -139,6 +141,8 @@ interface Step {
   ma?: number; deep?: boolean;
   /** Games of the world: the Games or World Cup this step is. */
   games?: Games;
+  /** Space exploration: the world the step happens on (the Moon, Mars...); the Earth when left out. */
+  world?: string;
 }
 interface Conflict {
   id: string; name: Text; icon: string; era: string; region: Text; summary: Text; start: string; end: string; t0: number; t1: number;
@@ -161,10 +165,10 @@ export interface CollectionItem extends Omit<Item, 'first'> {
 }
 
 /** The collections of stories. */
-export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing' | 'plagues' | 'disasters' | 'music' | 'books' | 'art' | 'inventions' | 'heritage';
-export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters', 'music', 'books', 'art', 'inventions', 'heritage'];
-/** `paleo`: its old steps are drawn on the continents of their age. */
-const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text; paleo?: boolean }> = {
+export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing' | 'plagues' | 'disasters' | 'music' | 'books' | 'art' | 'inventions' | 'heritage' | 'space';
+export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters', 'music', 'books', 'art', 'inventions', 'heritage', 'space'];
+/** `paleo`: its old steps are drawn on the continents of their age. `worlds`: its steps may happen on another world. */
+const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text; paleo?: boolean; worlds?: boolean }> = {
   wars: { dir: 'conflicts', hash: 'war', icon: '⚔️', name: { en: 'Wars and conquests', es: 'Guerras y conquistas' } },
   eras: { dir: 'eras', hash: 'eras', icon: '🎨', name: { en: 'Eras and ideas', es: 'Épocas e ideas' } },
   food: { dir: 'food', hash: 'food', icon: '🌾', name: { en: 'Food through time', es: 'La comida en el tiempo' } },
@@ -182,7 +186,11 @@ const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: 
   art: { dir: 'art', hash: 'art', icon: '🖼️', name: { en: 'Art of the world', es: 'Arte del mundo' } },
   inventions: { dir: 'inventions', hash: 'inventions', icon: '💡', name: { en: 'Inventions', es: 'Inventos' } },
   heritage: { dir: 'heritage', hash: 'heritage', icon: '🏛️', name: { en: 'World Heritage', es: 'Patrimonio de la Humanidad' } },
+  space: { dir: 'space', hash: 'space', icon: '🚀', name: { en: 'Space exploration', es: 'Exploración espacial' }, worlds: true },
 };
+/** Set by space/space.ts: shows another world under a story's step (null: the Earth). */
+export const worldHook: { show: ((id: string | null) => void) | null } = { show: null };
+const worldOf = (x: { world?: string } | null | undefined) => x?.world ?? 'earth';
 export const storyHashKey = (k: StoryKind) => KINDS[k].hash;
 interface Area extends Shape { lp: Pt; area: number; outline?: MultiLineString | null }
 
@@ -462,7 +470,8 @@ export class StoryMode {
     document.documentElement.classList.add('mode-time', 'mode-story', `mode-${this.kind}`);
     app.select(null);
     app.renderer.baseMap = false;
-    await app.setStack([this.layer.id]);
+    // A story that may visit other worlds keeps the world's map under it (see space/surface.ts).
+    await app.setStack(KINDS[this.kind].worlds ? ['world', this.layer.id] : [this.layer.id]);
     window.addEventListener('keydown', this.onKey);
     window.addEventListener('resize', this.onResize);
   }
@@ -484,6 +493,7 @@ export class StoryMode {
     for (const id of [this.sheetId, 'war-step', 'story-browse']) if (this.shell.sheet.isOpen(id)) this.shell.sheet.close();
     app.select(null);
     this.shell.card.hide();
+    if (KINDS[this.kind].worlds) worldHook.show?.(null);
     await app.setStack(this.savedStack.length ? this.savedStack : ['political']);
     if (this.savedProjection && this.savedProjection !== app.projection) app.setProjection(this.savedProjection as never);
     app.emit('mode', null);
@@ -569,6 +579,8 @@ export class StoryMode {
     // The address names the war and the step, so the page can be shared or reloaded there.
     history.replaceState(null, '', `#${KINDS[this.kind].hash}=${c.id}&step=${i + 1}&p=${this.app.projection}&lang=${lang()}`);
     if (!this.noBorders(c.steps[i])) void this.ensureBorders(c.steps[i]);
+    // A step on another world shows that world's map.
+    if (KINDS[this.kind].worlds) worldHook.show?.(c.steps[i].world ?? null);
     if (this.shell.sheet.isOpen('war-step')) this.openDetails(true);
     this.shell.card.hide();
     this.renderBar();
@@ -666,7 +678,7 @@ export class StoryMode {
   /** Does this story keep the routes of earlier steps on the map (a journey's trail)? */
   private get trail(): boolean { return this.c?.trail ?? this.c?.kind === 'journeys'; }
 
-  private noBorders(st: Step) { return (this.paleoKind && st.t < -10000) || !!st.games; }
+  private noBorders(st: Step) { return (this.paleoKind && st.t < -10000) || !!st.games || !!st.world; }
 
   private snapFor(st: Step) {
     let best = this.snaps[0];
@@ -712,6 +724,8 @@ export class StoryMode {
 
   private drawFill(rc: RenderCtx) {
     const c = this.c;
+    // Another world's step: its map is drawn underneath (space/surface.ts), with no Earth on it.
+    if (c?.steps[this.step].world) return;
     const { ctx, path, theme } = rc;
     // Plain land and coasts (the base map is off in this mode). In the dark theme the land is a
     // neutral grey, so the sides' colours (blues especially) stand out against it.
@@ -1057,13 +1071,13 @@ export class StoryMode {
     const fadeOut = 1 - ease(el / FADE);
     const ma = this.ageNow();
     // Battles of earlier steps stay as small dots: the war's history.
-    for (let k = 0; k < this.step; k++) for (const b of c.steps[k].battles ?? []) this.drawBattle(rc, b, 1, 0, true);
+    for (let k = 0; k < this.step; k++) if (worldOf(c.steps[k]) === worldOf(st)) for (const b of c.steps[k].battles ?? []) this.drawBattle(rc, b, 1, 0, true);
     if (this.trail) {
       // The journey so far: every earlier step's routes stay, thin and faded, under this step's.
-      for (let k = 0; k < this.step; k++) for (const mv of c.steps[k].moves ?? []) this.drawTrail(rc, mv, ma);
+      for (let k = 0; k < this.step; k++) if (worldOf(c.steps[k]) === worldOf(st)) for (const mv of c.steps[k].moves ?? []) this.drawTrail(rc, mv, ma);
       // Going back, the later step's routes fade away.
-      if (old && this.prev > this.step && fadeOut > 0) for (const mv of old.moves ?? []) this.drawRoute(rc, mv, 1, fadeOut * 0.7, ma);
-    } else if (old && fadeOut > 0) for (const mv of old.moves ?? []) this.drawRoute(rc, mv, 1, fadeOut * 0.7, ma);
+      if (old && this.prev > this.step && fadeOut > 0 && worldOf(old) === worldOf(st)) for (const mv of old.moves ?? []) this.drawRoute(rc, mv, 1, fadeOut * 0.7, ma);
+    } else if (old && fadeOut > 0 && worldOf(old) === worldOf(st)) for (const mv of old.moves ?? []) this.drawRoute(rc, mv, 1, fadeOut * 0.7, ma);
     if (st.games) this.drawArcs(rc, st.games, ease((el - MOVE_FROM) / ARC_MS));
     (st.moves ?? []).forEach((mv, k) => this.drawRoute(rc, mv, ease((el - MOVE_FROM - k * 300) / MOVE_MS), 1, ma));
     (st.events ?? []).forEach((ev, k) => {
@@ -1106,6 +1120,7 @@ export class StoryMode {
   /** Is an item on the map at this step (other than as one of the step's own)? */
   private onMap(it: Item, st: Step) {
     if (it.tu != null && st.t > it.tu + 1e-6) return false;
+    if (worldOf(it) !== worldOf(st)) return false;
     return (it.first >= 0 && it.first < this.step) || (this.c?.catalog === 'all' && it.t <= st.t + 1e-6);
   }
 

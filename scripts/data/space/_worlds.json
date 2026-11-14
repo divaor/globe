@@ -1,0 +1,3467 @@
+{
+  "worlds": [
+    {
+      "id": "sun",
+      "name": {
+        "en": "Sun",
+        "es": "Sol"
+      },
+      "kind": "star",
+      "radius": 695700,
+      "mass": 333000,
+      "gravity": 274.0,
+      "day": 609.12,
+      "temp": {
+        "en": "About 5,500 °C at the surface and 15 million °C in the core",
+        "es": "Unos 5500 °C en la superficie y 15 millones de °C en el núcleo"
+      },
+      "atmosphere": {
+        "en": "All glowing gas: about 91% hydrogen and 9% helium atoms; its outer layer, the corona, reaches 2 million °C",
+        "es": "Todo es gas incandescente: cerca de 91 % de átomos de hidrógeno y 9 % de helio; su capa exterior, la corona, alcanza 2 millones de °C"
+      },
+      "firstVisit": {
+        "en": "Parker Solar Probe flew through its outer atmosphere in 2021",
+        "es": "La sonda Parker Solar Probe atravesó su atmósfera exterior en 2021"
+      },
+      "text": {
+        "en": "The Sun is a 4.6-billion-year-old star, a huge ball of hot hydrogen and helium. It holds 99.8% of all the mass in the solar system, and its light and heat make life on Earth possible.",
+        "es": "El Sol es una estrella de 4600 millones de años, una enorme bola de hidrógeno y helio calientes. Reúne el 99,8 % de la masa del sistema solar, y su luz y su calor hacen posible la vida en la Tierra."
+      },
+      "wow": {
+        "en": "Sunlight reaches Earth in about 8 minutes, but the energy made in the Sun's core takes around 170,000 years to work its way out.",
+        "es": "La luz del Sol llega a la Tierra en unos 8 minutos, pero la energía que se produce en su núcleo tarda unos 170 000 años en abrirse paso hacia afuera."
+      },
+      "wiki": {
+        "en": "Sun",
+        "es": "Sol"
+      },
+      "sources": [
+        {
+          "title": "NASA NSSDCA Sun Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html"
+        },
+        {
+          "title": "NASA Science: Sun facts",
+          "url": "https://science.nasa.gov/sun/facts/"
+        }
+      ]
+    },
+    {
+      "id": "mercury",
+      "name": {
+        "en": "Mercury",
+        "es": "Mercurio"
+      },
+      "kind": "planet",
+      "parent": "sun",
+      "radius": 2439.7,
+      "mass": 0.0553,
+      "gravity": 3.7,
+      "day": 1407.6,
+      "solarDay": 4222.6,
+      "year": 87.969,
+      "distance": 57.909,
+      "moons": 0,
+      "temp": {
+        "en": "167 °C on average (−180 to 430 °C)",
+        "es": "167 °C en promedio (de −180 a 430 °C)"
+      },
+      "atmosphere": {
+        "en": "Almost none: a thin exosphere of oxygen, sodium, hydrogen, helium and potassium atoms",
+        "es": "Casi ninguna: una exosfera tenue de átomos de oxígeno, sodio, hidrógeno, helio y potasio"
+      },
+      "discovered": {
+        "en": "Known since ancient times",
+        "es": "Conocido desde la Antigüedad"
+      },
+      "firstVisit": {
+        "en": "Mariner 10 flew past in 1974",
+        "es": "La Mariner 10 pasó cerca en 1974"
+      },
+      "text": {
+        "en": "The smallest planet and the closest to the Sun, Mercury is a rocky, cratered world only a bit larger than our Moon. It circles the Sun every 88 days, but from one sunrise to the next takes 176 Earth days.",
+        "es": "Mercurio, el planeta más pequeño y el más cercano al Sol, es un mundo rocoso y lleno de cráteres, apenas algo más grande que la Luna. Da la vuelta al Sol en 88 días, pero de un amanecer al siguiente pasan 176 días terrestres."
+      },
+      "wow": {
+        "en": "Mercury has ice: craters near its poles never see sunlight, so frozen water survives on the planet closest to the Sun.",
+        "es": "Mercurio tiene hielo: hay cráteres cerca de sus polos donde nunca llega la luz del Sol, y allí sobrevive agua congelada."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Caloris Planitia",
+            "es": "Caloris Planitia"
+          },
+          "iau": "Caloris Planitia",
+          "at": [
+            161.98,
+            31.65
+          ],
+          "text": {
+            "en": "One of the biggest impact basins in the solar system, about 1,500 km across, blasted out by an asteroid early in Mercury's history.",
+            "es": "Una de las cuencas de impacto más grandes del sistema solar, de unos 1500 km de ancho, abierta por un asteroide al principio de la historia de Mercurio."
+          }
+        },
+        {
+          "name": {
+            "en": "Rachmaninoff crater",
+            "es": "Cráter Rachmaninoff"
+          },
+          "iau": "Rachmaninoff",
+          "at": [
+            57.37,
+            27.66
+          ],
+          "text": {
+            "en": "A crater about 300 km wide with an inner ring of mountains and smooth volcanic plains on its floor.",
+            "es": "Un cráter de unos 300 km de ancho con un anillo interior de montañas y llanuras volcánicas lisas en el fondo."
+          }
+        },
+        {
+          "name": {
+            "en": "Hokusai crater",
+            "es": "Cráter Hokusai"
+          },
+          "iau": "Hokusai",
+          "at": [
+            16.65,
+            57.84
+          ],
+          "text": {
+            "en": "A young, 114 km crater whose bright rays streak across a large part of the planet.",
+            "es": "Un cráter joven de 114 km cuyos rayos brillantes cruzan buena parte del planeta."
+          }
+        },
+        {
+          "name": {
+            "en": "Enterprise Rupes",
+            "es": "Enterprise Rupes"
+          },
+          "iau": "Enterprise Rupes",
+          "at": [
+            76.54,
+            -36.54
+          ],
+          "text": {
+            "en": "A cliff more than 800 km long, raised as Mercury's core cooled and the whole planet shrank.",
+            "es": "Un acantilado de más de 800 km de largo que se levantó cuando el núcleo de Mercurio se enfrió y todo el planeta se encogió."
+          }
+        },
+        {
+          "name": {
+            "en": "Beethoven basin",
+            "es": "Cuenca Beethoven"
+          },
+          "iau": "Beethoven",
+          "at": [
+            -124.21,
+            -20.86
+          ],
+          "text": {
+            "en": "An ancient impact basin over 600 km wide; Mercury's craters are named after artists, writers and composers.",
+            "es": "Una antigua cuenca de impacto de más de 600 km; los cráteres de Mercurio llevan nombres de artistas, escritores y compositores."
+          }
+        },
+        {
+          "name": {
+            "en": "Prokofiev crater",
+            "es": "Cráter Prokofiev"
+          },
+          "iau": "Prokofiev",
+          "at": [
+            62.92,
+            85.77
+          ],
+          "text": {
+            "en": "A crater near the north pole whose permanently shadowed floor holds water ice.",
+            "es": "Un cráter cerca del polo norte cuyo fondo, siempre en sombra, guarda hielo de agua."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Mercury (planet)",
+        "es": "Mercurio (planeta)"
+      },
+      "sources": [
+        {
+          "title": "NASA NSSDCA Mercury Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/mercuryfact.html"
+        },
+        {
+          "title": "NASA Science: Mercury facts",
+          "url": "https://science.nasa.gov/mercury/facts/"
+        },
+        {
+          "title": "IAU/USGS Gazetteer of Planetary Nomenclature",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        }
+      ]
+    },
+    {
+      "id": "venus",
+      "name": {
+        "en": "Venus",
+        "es": "Venus"
+      },
+      "kind": "planet",
+      "parent": "sun",
+      "radius": 6051.8,
+      "mass": 0.815,
+      "gravity": 8.87,
+      "day": -5832.5,
+      "solarDay": 2802.0,
+      "year": 224.701,
+      "distance": 108.21,
+      "moons": 0,
+      "temp": {
+        "en": "464 °C, day and night, all over the planet",
+        "es": "464 °C, de día y de noche, en todo el planeta"
+      },
+      "atmosphere": {
+        "en": "Crushing: 96.5% carbon dioxide at 92 times Earth's pressure, with clouds of sulfuric acid",
+        "es": "Aplastante: 96,5 % dióxido de carbono a 92 veces la presión de la Tierra, con nubes de ácido sulfúrico"
+      },
+      "discovered": {
+        "en": "Known since ancient times",
+        "es": "Conocido desde la Antigüedad"
+      },
+      "firstVisit": {
+        "en": "Mariner 2 flew past in 1962; Venera 7 landed in 1970",
+        "es": "La Mariner 2 pasó cerca en 1962; la Venera 7 aterrizó en 1970"
+      },
+      "text": {
+        "en": "Venus is nearly Earth's twin in size, but under its thick clouds lies a scorching desert hot enough to melt lead. Its air is so heavy that standing on the surface would feel like being 900 m deep in the ocean.",
+        "es": "Venus es casi gemela de la Tierra en tamaño, pero bajo sus nubes espesas hay un desierto abrasador, tan caliente que derrite el plomo. Su aire es tan pesado que estar en la superficie se sentiría como bucear a 900 m de profundidad."
+      },
+      "wow": {
+        "en": "A day on Venus is longer than its year, and it spins backward: there the Sun rises in the west and sets in the east.",
+        "es": "En Venus un día dura más que un año, y el planeta gira al revés: allí el Sol sale por el oeste y se pone por el este."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Maxwell Montes",
+            "es": "Montes Maxwell"
+          },
+          "iau": "Maxwell Montes",
+          "at": [
+            3.3,
+            65.2
+          ],
+          "text": {
+            "en": "Venus's highest mountains, about 11 km above the average surface, and one of the few features there not named after a woman.",
+            "es": "Las montañas más altas de Venus, a unos 11 km sobre la superficie media, y uno de los pocos lugares del planeta que no lleva nombre de mujer."
+          }
+        },
+        {
+          "name": {
+            "en": "Ishtar Terra",
+            "es": "Ishtar Terra"
+          },
+          "iau": "Ishtar Terra",
+          "at": [
+            27.5,
+            70.4
+          ],
+          "text": {
+            "en": "A northern highland, a raised 'continent' about the size of Australia.",
+            "es": "Una meseta del norte, un «continente» elevado de tamaño parecido al de Australia."
+          }
+        },
+        {
+          "name": {
+            "en": "Aphrodite Terra",
+            "es": "Aphrodite Terra"
+          },
+          "iau": "Aphrodite Terra",
+          "at": [
+            104.8,
+            -5.8
+          ],
+          "text": {
+            "en": "The largest highland on Venus, stretching some 10,000 km along the equator, roughly the size of South America.",
+            "es": "La meseta más grande de Venus: se extiende unos 10 000 km a lo largo del ecuador, más o menos del tamaño de Sudamérica."
+          }
+        },
+        {
+          "name": {
+            "en": "Maat Mons",
+            "es": "Monte Maat"
+          },
+          "iau": "Maat Mons",
+          "at": [
+            -165.4,
+            0.5
+          ],
+          "text": {
+            "en": "Venus's tallest volcano, about 8 km high. Radar images show one of its vents changed shape in 1991, a sign of an eruption.",
+            "es": "El volcán más alto de Venus, de unos 8 km. Imágenes de radar muestran que una de sus bocas cambió de forma en 1991, señal de una erupción."
+          }
+        },
+        {
+          "name": {
+            "en": "Baltis Vallis",
+            "es": "Baltis Vallis"
+          },
+          "iau": "Baltis Vallis",
+          "at": [
+            161.4,
+            37.3
+          ],
+          "text": {
+            "en": "A lava channel about 6,000 km long, the longest known channel in the solar system.",
+            "es": "Un canal de lava de unos 6000 km de largo, el canal más largo conocido del sistema solar."
+          }
+        },
+        {
+          "name": {
+            "en": "Mead crater",
+            "es": "Cráter Mead"
+          },
+          "iau": "Mead",
+          "at": [
+            57.2,
+            12.5
+          ],
+          "text": {
+            "en": "The largest impact crater on Venus, about 270 km wide, named after the anthropologist Margaret Mead.",
+            "es": "El mayor cráter de impacto de Venus, de unos 270 km, llamado así por la antropóloga Margaret Mead."
+          }
+        },
+        {
+          "name": {
+            "en": "Idunn Mons",
+            "es": "Monte Idunn"
+          },
+          "iau": "Idunn Mons",
+          "at": [
+            -145.5,
+            -46.5
+          ],
+          "text": {
+            "en": "A volcano whose lava flows looked surprisingly fresh to the Venus Express probe, a hint of recent eruptions.",
+            "es": "Un volcán cuyas coladas de lava le parecieron sorprendentemente frescas a la sonda Venus Express, un indicio de erupciones recientes."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Venus",
+        "es": "Venus (planeta)"
+      },
+      "sources": [
+        {
+          "title": "NASA NSSDCA Venus Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html"
+        },
+        {
+          "title": "NASA Science: Venus facts",
+          "url": "https://science.nasa.gov/venus/venus-facts/"
+        },
+        {
+          "title": "IAU/USGS Gazetteer of Planetary Nomenclature",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        }
+      ]
+    },
+    {
+      "id": "earth",
+      "name": {
+        "en": "Earth",
+        "es": "Tierra"
+      },
+      "kind": "planet",
+      "parent": "sun",
+      "radius": 6371.0,
+      "mass": 1,
+      "gravity": 9.8,
+      "day": 23.9345,
+      "year": 365.256,
+      "distance": 149.598,
+      "moons": 1,
+      "temp": {
+        "en": "15 °C on average (−89 to 57 °C)",
+        "es": "15 °C en promedio (de −89 a 57 °C)"
+      },
+      "atmosphere": {
+        "en": "78% nitrogen, 21% oxygen and almost 1% argon",
+        "es": "78 % nitrógeno, 21 % oxígeno y casi 1 % argón"
+      },
+      "text": {
+        "en": "Our home is the only place where we know life exists, and the only world with oceans of liquid water on its surface. Water covers about 71% of it.",
+        "es": "Nuestro hogar es el único lugar donde sabemos que existe vida y el único mundo con océanos de agua líquida en su superficie. El agua cubre cerca del 71 % del planeta."
+      },
+      "wow": {
+        "en": "Earth is the densest planet in the solar system, and the only one not named after a Greek or Roman god.",
+        "es": "La Tierra es el planeta más denso del sistema solar y el único que no lleva el nombre de un dios griego o romano."
+      },
+      "wiki": {
+        "en": "Earth",
+        "es": "Tierra"
+      },
+      "sources": [
+        {
+          "title": "NASA NSSDCA Earth Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+        },
+        {
+          "title": "NASA Science: Earth facts",
+          "url": "https://science.nasa.gov/earth/facts/"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/planets/phys_par.html"
+        }
+      ]
+    },
+    {
+      "id": "moon",
+      "name": {
+        "en": "Moon",
+        "es": "Luna"
+      },
+      "kind": "moon",
+      "parent": "earth",
+      "radius": 1737.4,
+      "mass": 0.0123,
+      "gravity": 1.62,
+      "day": 655.72,
+      "solarDay": 708.7,
+      "year": 27.3217,
+      "distance": 384.4,
+      "temp": {
+        "en": "−20 °C on average (−173 to 127 °C)",
+        "es": "−20 °C en promedio (de −173 a 127 °C)"
+      },
+      "atmosphere": {
+        "en": "Almost none: an extremely thin exosphere",
+        "es": "Casi ninguna: una exosfera tenuísima"
+      },
+      "discovered": {
+        "en": "Known since ancient times",
+        "es": "Conocida desde la Antigüedad"
+      },
+      "firstVisit": {
+        "en": "Luna 2 reached it in 1959; Apollo 11 landed the first people in 1969",
+        "es": "La Luna 2 la alcanzó en 1959; el Apolo 11 llevó a las primeras personas en 1969"
+      },
+      "text": {
+        "en": "Our Moon is a dry, airless world of gray dust, dark lava plains and countless craters. It always shows Earth the same face, and twelve astronauts have walked on it.",
+        "es": "La Luna es un mundo seco y sin aire, de polvo gris, llanuras oscuras de lava e incontables cráteres. Siempre le muestra la misma cara a la Tierra, y doce astronautas han caminado sobre ella."
+      },
+      "wow": {
+        "en": "The Moon is drifting away from Earth by about 3.8 cm a year, roughly as fast as your fingernails grow.",
+        "es": "La Luna se aleja de la Tierra unos 3,8 cm por año, más o menos lo que crecen tus uñas."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Tycho crater",
+            "es": "Cráter Tycho"
+          },
+          "iau": "Tycho",
+          "at": [
+            -11.22,
+            -43.3
+          ],
+          "text": {
+            "en": "A young crater 85 km wide whose bright rays spread across much of the near side; easy to spot at full Moon.",
+            "es": "Un cráter joven de 85 km cuyos rayos brillantes se extienden por gran parte de la cara visible; fácil de ver en luna llena."
+          }
+        },
+        {
+          "name": {
+            "en": "Copernicus crater",
+            "es": "Cráter Copérnico"
+          },
+          "iau": "Copernicus",
+          "at": [
+            -20.08,
+            9.62
+          ],
+          "text": {
+            "en": "A 96 km crater with terraced walls and a cluster of central peaks.",
+            "es": "Un cráter de 96 km con paredes en terrazas y un grupo de picos en el centro."
+          }
+        },
+        {
+          "name": {
+            "en": "Aristarchus crater",
+            "es": "Cráter Aristarco"
+          },
+          "iau": "Aristarchus",
+          "at": [
+            -47.49,
+            23.73
+          ],
+          "text": {
+            "en": "The brightest large crater on the Moon, about 40 km wide, next to a plateau carved by ancient lava channels.",
+            "es": "El cráter grande más brillante de la Luna, de unos 40 km, junto a una meseta surcada por antiguos canales de lava."
+          }
+        },
+        {
+          "name": {
+            "en": "Montes Apenninus",
+            "es": "Montes Apeninos"
+          },
+          "iau": "Montes Apenninus",
+          "at": [
+            0.03,
+            19.87
+          ],
+          "text": {
+            "en": "A 600 km mountain range on the edge of the Sea of Showers; Apollo 15 landed at its foot.",
+            "es": "Una cordillera de 600 km en el borde del Mar de las Lluvias; el Apolo 15 aterrizó a sus pies."
+          }
+        },
+        {
+          "name": {
+            "en": "Mare Orientale",
+            "es": "Mar Oriental"
+          },
+          "iau": "Mare Orientale",
+          "at": [
+            -94.67,
+            -19.87
+          ],
+          "text": {
+            "en": "A giant bull's-eye basin with rings of mountains, right on the western edge of the side we see.",
+            "es": "Una cuenca gigante en forma de diana, con anillos de montañas, justo en el borde oeste de la cara que vemos."
+          }
+        },
+        {
+          "name": {
+            "en": "Shackleton crater",
+            "es": "Cráter Shackleton"
+          },
+          "iau": "Shackleton",
+          "at": [
+            129.78,
+            -89.67
+          ],
+          "text": {
+            "en": "A 21 km crater at the south pole whose floor lies in permanent shadow; a target for future landings.",
+            "es": "Un cráter de 21 km en el polo sur cuyo fondo está siempre en sombra; una meta para futuros alunizajes."
+          }
+        },
+        {
+          "name": {
+            "en": "Tsiolkovskiy crater",
+            "es": "Cráter Tsiolkovski"
+          },
+          "iau": "Tsiolkovskiy",
+          "at": [
+            128.97,
+            -20.38
+          ],
+          "text": {
+            "en": "A far-side crater about 185 km wide with a dark, lava-flooded floor and a bright central peak.",
+            "es": "Un cráter de la cara oculta, de unos 185 km, con el fondo oscuro inundado de lava y un pico central brillante."
+          }
+        },
+        {
+          "name": {
+            "en": "Schröter's Valley",
+            "es": "Valle de Schröter"
+          },
+          "iau": "Vallis Schröteri",
+          "at": [
+            -51.58,
+            26.16
+          ],
+          "text": {
+            "en": "The Moon's largest winding valley, a channel carved by flowing lava.",
+            "es": "El valle sinuoso más grande de la Luna, un cauce excavado por lava."
+          }
+        }
+      ],
+      "seas": [
+        {
+          "iau": "Mare Anguis",
+          "en": "Serpent Sea",
+          "es": "Mar de la Serpiente"
+        },
+        {
+          "iau": "Mare Australe",
+          "en": "Southern Sea",
+          "es": "Mar Austral"
+        },
+        {
+          "iau": "Mare Cognitum",
+          "en": "Sea That Has Become Known",
+          "es": "Mar Conocido"
+        },
+        {
+          "iau": "Mare Crisium",
+          "en": "Sea of Crises",
+          "es": "Mar de las Crisis"
+        },
+        {
+          "iau": "Mare Fecunditatis",
+          "en": "Sea of Fecundity",
+          "es": "Mar de la Fecundidad"
+        },
+        {
+          "iau": "Mare Frigoris",
+          "en": "Sea of Cold",
+          "es": "Mar del Frío"
+        },
+        {
+          "iau": "Mare Humboldtianum",
+          "en": "Sea of Humboldt",
+          "es": "Mar de Humboldt"
+        },
+        {
+          "iau": "Mare Humorum",
+          "en": "Sea of Moisture",
+          "es": "Mar de la Humedad"
+        },
+        {
+          "iau": "Mare Imbrium",
+          "en": "Sea of Showers",
+          "es": "Mar de las Lluvias"
+        },
+        {
+          "iau": "Mare Ingenii",
+          "en": "Sea of Cleverness",
+          "es": "Mar del Ingenio"
+        },
+        {
+          "iau": "Mare Insularum",
+          "en": "Sea of Islands",
+          "es": "Mar de las Islas"
+        },
+        {
+          "iau": "Mare Marginis",
+          "en": "Sea of the Edge",
+          "es": "Mar Marginal"
+        },
+        {
+          "iau": "Mare Moscoviense",
+          "en": "Sea of Moscow",
+          "es": "Mar de Moscú"
+        },
+        {
+          "iau": "Mare Nectaris",
+          "en": "Sea of Nectar",
+          "es": "Mar del Néctar"
+        },
+        {
+          "iau": "Mare Nubium",
+          "en": "Sea of Clouds",
+          "es": "Mar de las Nubes"
+        },
+        {
+          "iau": "Mare Orientale",
+          "en": "Eastern Sea",
+          "es": "Mar Oriental"
+        },
+        {
+          "iau": "Mare Serenitatis",
+          "en": "Sea of Serenity",
+          "es": "Mar de la Serenidad"
+        },
+        {
+          "iau": "Mare Smythii",
+          "en": "Smyth's Sea",
+          "es": "Mar de Smyth"
+        },
+        {
+          "iau": "Mare Spumans",
+          "en": "Foaming Sea",
+          "es": "Mar Espumoso"
+        },
+        {
+          "iau": "Mare Tranquillitatis",
+          "en": "Sea of Tranquility",
+          "es": "Mar de la Tranquilidad"
+        },
+        {
+          "iau": "Mare Undarum",
+          "en": "Sea of Waves",
+          "es": "Mar de las Olas"
+        },
+        {
+          "iau": "Mare Vaporum",
+          "en": "Sea of Vapors",
+          "es": "Mar de los Vapores"
+        },
+        {
+          "iau": "Oceanus Procellarum",
+          "en": "Ocean of Storms",
+          "es": "Océano de las Tormentas"
+        },
+        {
+          "iau": "Lacus Aestatis",
+          "en": "Lake of Summer",
+          "es": "Lago del Verano"
+        },
+        {
+          "iau": "Lacus Autumni",
+          "en": "Lake of Autumn",
+          "es": "Lago del Otoño"
+        },
+        {
+          "iau": "Lacus Bonitatis",
+          "en": "Lake of Goodness",
+          "es": "Lago de la Bondad"
+        },
+        {
+          "iau": "Lacus Doloris",
+          "en": "Lake of Sorrow",
+          "es": "Lago del Dolor"
+        },
+        {
+          "iau": "Lacus Excellentiae",
+          "en": "Lake of Excellence",
+          "es": "Lago de la Excelencia"
+        },
+        {
+          "iau": "Lacus Felicitatis",
+          "en": "Lake of Happiness",
+          "es": "Lago de la Felicidad"
+        },
+        {
+          "iau": "Lacus Gaudii",
+          "en": "Lake of Joy",
+          "es": "Lago del Gozo"
+        },
+        {
+          "iau": "Lacus Hiemalis",
+          "en": "Lake of Winter",
+          "es": "Lago del Invierno"
+        },
+        {
+          "iau": "Lacus Lenitatis",
+          "en": "Lake of Softness",
+          "es": "Lago de la Blandura"
+        },
+        {
+          "iau": "Lacus Luxuriae",
+          "en": "Lake of Luxury",
+          "es": "Lago de la Lujuria"
+        },
+        {
+          "iau": "Lacus Mortis",
+          "en": "Lake of Death",
+          "es": "Lago de la Muerte"
+        },
+        {
+          "iau": "Lacus Oblivionis",
+          "en": "Lake of Forgetfulness",
+          "es": "Lago del Olvido"
+        },
+        {
+          "iau": "Lacus Odii",
+          "en": "Lake of Hatred",
+          "es": "Lago del Odio"
+        },
+        {
+          "iau": "Lacus Perseverantiae",
+          "en": "Lake of Perseverance",
+          "es": "Lago de la Perseverancia"
+        },
+        {
+          "iau": "Lacus Solitudinis",
+          "en": "Lake of Solitude",
+          "es": "Lago de la Soledad"
+        },
+        {
+          "iau": "Lacus Somniorum",
+          "en": "Lake of Dreams",
+          "es": "Lago de los Sueños"
+        },
+        {
+          "iau": "Lacus Spei",
+          "en": "Lake of Hope",
+          "es": "Lago de la Esperanza"
+        },
+        {
+          "iau": "Lacus Temporis",
+          "en": "Lake of Time",
+          "es": "Lago del Tiempo"
+        },
+        {
+          "iau": "Lacus Tenebrarum",
+          "en": "Lake of Darkness",
+          "es": "Lago de las Tinieblas"
+        },
+        {
+          "iau": "Lacus Timoris",
+          "en": "Lake of Fear",
+          "es": "Lago del Miedo"
+        },
+        {
+          "iau": "Lacus Veris",
+          "en": "Lake of Spring",
+          "es": "Lago de la Primavera"
+        },
+        {
+          "iau": "Sinus Aestuum",
+          "en": "Seething Bay",
+          "es": "Bahía Ardiente"
+        },
+        {
+          "iau": "Sinus Amoris",
+          "en": "Bay of Love",
+          "es": "Bahía del Amor"
+        },
+        {
+          "iau": "Sinus Asperitatis",
+          "en": "Bay of Roughness",
+          "es": "Bahía de la Aspereza"
+        },
+        {
+          "iau": "Sinus Concordiae",
+          "en": "Bay of Harmony",
+          "es": "Bahía de la Concordia"
+        },
+        {
+          "iau": "Sinus Fidei",
+          "en": "Bay of Trust",
+          "es": "Bahía de la Fidelidad"
+        },
+        {
+          "iau": "Sinus Honoris",
+          "en": "Bay of Honor",
+          "es": "Bahía del Honor"
+        },
+        {
+          "iau": "Sinus Iridum",
+          "en": "Bay of Rainbows",
+          "es": "Bahía del Arco Iris"
+        },
+        {
+          "iau": "Sinus Lunicus",
+          "en": "Bay of Lunik",
+          "es": "Bahía del Lunik"
+        },
+        {
+          "iau": "Sinus Medii",
+          "en": "Bay of the Center",
+          "es": "Bahía del Medio"
+        },
+        {
+          "iau": "Sinus Roris",
+          "en": "Bay of Dew",
+          "es": "Bahía del Rocío"
+        },
+        {
+          "iau": "Sinus Successus",
+          "en": "Bay of Success",
+          "es": "Bahía del Éxito"
+        },
+        {
+          "iau": "Sinus Viscositatis",
+          "en": "Bay of Stickiness",
+          "es": "Bahía de la Viscosidad"
+        },
+        {
+          "iau": "Palus Epidemiarum",
+          "en": "Marsh of Epidemics",
+          "es": "Pantano de las Epidemias"
+        },
+        {
+          "iau": "Palus Putredinis",
+          "en": "Marsh of Decay",
+          "es": "Pantano de la Podredumbre"
+        },
+        {
+          "iau": "Palus Somni",
+          "en": "Marsh of Sleep",
+          "es": "Pantano del Sueño"
+        }
+      ],
+      "wiki": {
+        "en": "Moon",
+        "es": "Luna"
+      },
+      "sources": [
+        {
+          "title": "NASA NSSDCA Moon Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html"
+        },
+        {
+          "title": "NASA Science: Moon facts",
+          "url": "https://science.nasa.gov/moon/facts/"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary satellite physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/sats/phys_par/"
+        },
+        {
+          "title": "IAU/USGS Gazetteer of Planetary Nomenclature",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        }
+      ]
+    },
+    {
+      "id": "mars",
+      "name": {
+        "en": "Mars",
+        "es": "Marte"
+      },
+      "kind": "planet",
+      "parent": "sun",
+      "radius": 3389.5,
+      "mass": 0.107,
+      "gravity": 3.71,
+      "day": 24.6229,
+      "solarDay": 24.6597,
+      "year": 686.98,
+      "distance": 227.956,
+      "moons": 2,
+      "temp": {
+        "en": "−65 °C on average (−153 to 20 °C)",
+        "es": "−65 °C en promedio (de −153 a 20 °C)"
+      },
+      "atmosphere": {
+        "en": "Thin: 95% carbon dioxide, at less than 1% of Earth's pressure",
+        "es": "Tenue: 95 % dióxido de carbono, con menos del 1 % de la presión de la Tierra"
+      },
+      "discovered": {
+        "en": "Known since ancient times",
+        "es": "Conocido desde la Antigüedad"
+      },
+      "firstVisit": {
+        "en": "Mariner 4 flew past in 1965",
+        "es": "La Mariner 4 pasó cerca en 1965"
+      },
+      "text": {
+        "en": "Mars is a cold, dusty desert with the tallest volcano and the biggest canyon in the solar system. Long ago it had rivers and lakes, which makes it a prime place to look for signs of past life.",
+        "es": "Marte es un desierto frío y polvoriento con el volcán más alto y el cañón más grande del sistema solar. Hace mucho tuvo ríos y lagos, por eso es uno de los mejores lugares para buscar rastros de vida antigua."
+      },
+      "wow": {
+        "en": "Sunsets on Mars are blue: fine dust in the air lets blue light through best near the setting Sun.",
+        "es": "En Marte los atardeceres son azules: el polvo fino del aire deja pasar mejor la luz azul cerca del Sol poniente."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Olympus Mons",
+            "es": "Monte Olimpo"
+          },
+          "iau": "Olympus Mons",
+          "at": [
+            -133.8,
+            18.65
+          ],
+          "text": {
+            "en": "The tallest volcano in the solar system: about 22 km high and some 600 km wide.",
+            "es": "El volcán más alto del sistema solar: unos 22 km de altura y unos 600 km de ancho."
+          }
+        },
+        {
+          "name": {
+            "en": "Valles Marineris",
+            "es": "Valles Marineris"
+          },
+          "iau": "Valles Marineris",
+          "at": [
+            -58.59,
+            -14.01
+          ],
+          "text": {
+            "en": "A canyon system nearly 4,000 km long and up to 7 km deep, long enough to cross the United States.",
+            "es": "Un sistema de cañones de casi 4000 km de largo y hasta 7 km de profundidad; atravesaría Estados Unidos de costa a costa."
+          }
+        },
+        {
+          "name": {
+            "en": "Tharsis Montes",
+            "es": "Montes Tharsis"
+          },
+          "iau": "Tharsis Montes",
+          "at": [
+            -112.58,
+            1.57
+          ],
+          "text": {
+            "en": "A row of three giant volcanoes, Arsia, Pavonis and Ascraeus Mons, on the vast Tharsis bulge.",
+            "es": "Una hilera de tres volcanes gigantes, Arsia, Pavonis y Ascraeus Mons, sobre el enorme abultamiento de Tharsis."
+          }
+        },
+        {
+          "name": {
+            "en": "Hellas Planitia",
+            "es": "Hellas Planitia"
+          },
+          "iau": "Hellas Planitia",
+          "at": [
+            70.5,
+            -42.43
+          ],
+          "text": {
+            "en": "A giant impact basin about 2,300 km wide and over 7 km deep, the lowest place on Mars.",
+            "es": "Una cuenca de impacto gigante de unos 2300 km de ancho y más de 7 km de profundidad, el lugar más bajo de Marte."
+          }
+        },
+        {
+          "name": {
+            "en": "North polar cap",
+            "es": "Casquete polar norte"
+          },
+          "iau": "Planum Boreum",
+          "at": [
+            54.96,
+            87.32
+          ],
+          "text": {
+            "en": "Layers of water ice about 3 km thick, dusted each winter with frozen carbon dioxide.",
+            "es": "Capas de hielo de agua de unos 3 km de espesor que cada invierno se cubren de dióxido de carbono congelado."
+          }
+        },
+        {
+          "name": {
+            "en": "South polar cap",
+            "es": "Casquete polar sur"
+          },
+          "iau": "Planum Australe",
+          "at": [
+            157.7,
+            -83.35
+          ],
+          "text": {
+            "en": "A thick dome of water ice capped by a thin layer of frozen carbon dioxide that never fully disappears.",
+            "es": "Una gruesa cúpula de hielo de agua cubierta por una capa delgada de dióxido de carbono congelado que nunca desaparece del todo."
+          }
+        },
+        {
+          "name": {
+            "en": "Gale crater",
+            "es": "Cráter Gale"
+          },
+          "iau": "Gale",
+          "at": [
+            137.81,
+            -5.37
+          ],
+          "text": {
+            "en": "A 154 km crater with a 5 km-high layered mountain in the middle, explored by the Curiosity rover since 2012.",
+            "es": "Un cráter de 154 km con una montaña de capas de 5 km de altura en el centro, que el rover Curiosity explora desde 2012."
+          }
+        },
+        {
+          "name": {
+            "en": "Jezero crater",
+            "es": "Cráter Jezero"
+          },
+          "iau": "Jezero",
+          "at": [
+            77.69,
+            18.41
+          ],
+          "text": {
+            "en": "An ancient lake bed with a dried-up river delta, where the Perseverance rover has collected rock samples since 2021.",
+            "es": "El lecho de un antiguo lago con un delta de río seco, donde el rover Perseverance recoge muestras de roca desde 2021."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Mars",
+        "es": "Marte (planeta)"
+      },
+      "sources": [
+        {
+          "title": "NASA NSSDCA Mars Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html"
+        },
+        {
+          "title": "NASA Science: Mars facts",
+          "url": "https://science.nasa.gov/mars/facts/"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/planets/phys_par.html"
+        },
+        {
+          "title": "IAU/USGS Gazetteer of Planetary Nomenclature",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        }
+      ]
+    },
+    {
+      "id": "ceres",
+      "name": {
+        "en": "Ceres",
+        "es": "Ceres"
+      },
+      "kind": "dwarf",
+      "parent": "sun",
+      "radius": 469.7,
+      "mass": 0.000157,
+      "gravity": 0.28,
+      "day": 9.0742,
+      "year": 1679.9,
+      "distance": 413.7,
+      "moons": 0,
+      "temp": {
+        "en": "About −95 to −35 °C in daytime",
+        "es": "De unos −95 a −35 °C durante el día"
+      },
+      "atmosphere": {
+        "en": "Almost none, though faint water vapor has been detected",
+        "es": "Casi ninguna, aunque se ha detectado un poco de vapor de agua"
+      },
+      "discovered": {
+        "en": "Giuseppe Piazzi, 1801",
+        "es": "Giuseppe Piazzi, 1801"
+      },
+      "firstVisit": {
+        "en": "The Dawn probe went into orbit in 2015",
+        "es": "La sonda Dawn entró en órbita en 2015"
+      },
+      "text": {
+        "en": "Ceres is the largest object in the asteroid belt and the only dwarf planet in the inner solar system. Under its dark, cratered crust lies salty water, and bright salt deposits mark places where that brine reached the surface.",
+        "es": "Ceres es el objeto más grande del cinturón de asteroides y el único planeta enano del sistema solar interior. Bajo su corteza oscura hay agua salada, y unos depósitos brillantes de sal marcan dónde esa salmuera llegó a la superficie."
+      },
+      "wow": {
+        "en": "Ceres alone holds about a quarter of all the mass in the asteroid belt.",
+        "es": "Ceres, por sí sola, reúne cerca de la cuarta parte de toda la masa del cinturón de asteroides."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Occator crater",
+            "es": "Cráter Occator"
+          },
+          "iau": "Occator",
+          "at": [
+            -120.66,
+            19.82
+          ],
+          "text": {
+            "en": "A 92 km crater holding the brightest spots on Ceres, salts left behind by briny water from below.",
+            "es": "Un cráter de 92 km con las manchas más brillantes de Ceres: sales que dejó el agua salada que subió desde el interior."
+          }
+        },
+        {
+          "name": {
+            "en": "Cerealia Facula",
+            "es": "Cerealia Facula"
+          },
+          "iau": "Cerealia Facula",
+          "at": [
+            -120.4,
+            19.7
+          ],
+          "text": {
+            "en": "The dazzling bright spot at the center of Occator, made mostly of sodium carbonate, a kind of salt.",
+            "es": "La mancha deslumbrante del centro de Occator, hecha sobre todo de carbonato de sodio, un tipo de sal."
+          }
+        },
+        {
+          "name": {
+            "en": "Ahuna Mons",
+            "es": "Ahuna Mons"
+          },
+          "iau": "Ahuna Mons",
+          "at": [
+            -43.8,
+            -10.48
+          ],
+          "text": {
+            "en": "A lone ice volcano about 4 km high, built by salty mud that oozed up from inside Ceres.",
+            "es": "Un volcán de hielo solitario de unos 4 km de altura, formado por lodo salado que brotó del interior de Ceres."
+          }
+        },
+        {
+          "name": {
+            "en": "Kerwan crater",
+            "es": "Cráter Kerwan"
+          },
+          "iau": "Kerwan",
+          "at": [
+            123.99,
+            -10.77
+          ],
+          "text": {
+            "en": "The largest crater on Ceres, about 280 km wide and very worn down.",
+            "es": "El cráter más grande de Ceres, de unos 280 km, muy desgastado."
+          }
+        },
+        {
+          "name": {
+            "en": "Haulani crater",
+            "es": "Cráter Haulani"
+          },
+          "iau": "Haulani",
+          "at": [
+            10.77,
+            5.8
+          ],
+          "text": {
+            "en": "A young 34 km crater with bright streaks of fresh material splashed around it.",
+            "es": "Un cráter joven de 34 km rodeado de franjas brillantes de material fresco."
+          }
+        },
+        {
+          "name": {
+            "en": "Ernutet crater",
+            "es": "Cráter Ernutet"
+          },
+          "iau": "Ernutet",
+          "at": [
+            45.52,
+            52.93
+          ],
+          "text": {
+            "en": "A crater where the Dawn probe detected organic compounds, carbon-based molecules linked to the chemistry of life.",
+            "es": "Un cráter donde la sonda Dawn detectó compuestos orgánicos, moléculas de carbono ligadas a la química de la vida."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Ceres (dwarf planet)",
+        "es": "Ceres (planeta enano)"
+      },
+      "sources": [
+        {
+          "title": "NASA Science: Ceres facts",
+          "url": "https://science.nasa.gov/dwarf-planets/ceres/facts/"
+        },
+        {
+          "title": "JPL Small-Body Database: 1 Ceres",
+          "url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=1"
+        },
+        {
+          "title": "NASA/JPL: New clues to Ceres' bright spots and origins (daytime temperatures)",
+          "url": "https://www.jpl.nasa.gov/news/new-clues-to-ceres-bright-spots-and-origins/"
+        },
+        {
+          "title": "IAU/USGS Gazetteer of Planetary Nomenclature",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        }
+      ]
+    },
+    {
+      "id": "vesta",
+      "name": {
+        "en": "Vesta",
+        "es": "Vesta"
+      },
+      "kind": "asteroid",
+      "parent": "sun",
+      "radius": 261.4,
+      "mass": 4.34e-05,
+      "gravity": 0.25,
+      "day": 5.3421,
+      "year": 1325.4,
+      "distance": 353.3,
+      "temp": {
+        "en": "Up to about 0 °C at midday; far colder at night",
+        "es": "Hasta unos 0 °C al mediodía; mucho más frío de noche"
+      },
+      "atmosphere": {
+        "en": "None",
+        "es": "Ninguna"
+      },
+      "discovered": {
+        "en": "Heinrich Wilhelm Olbers, 1807",
+        "es": "Heinrich Wilhelm Olbers, 1807"
+      },
+      "firstVisit": {
+        "en": "The Dawn probe orbited it in 2011–2012",
+        "es": "La sonda Dawn estuvo en órbita a su alrededor en 2011 y 2012"
+      },
+      "text": {
+        "en": "Vesta is the second-largest body in the asteroid belt, a battered world with an iron core and a rocky crust, like a planet that never finished growing. It is the brightest asteroid in our sky.",
+        "es": "Vesta es el segundo cuerpo más grande del cinturón de asteroides, un mundo golpeado con núcleo de hierro y corteza rocosa, como un planeta que nunca terminó de crecer. Es el asteroide más brillante de nuestro cielo."
+      },
+      "wow": {
+        "en": "About 6% of the meteorites that land on Earth were blasted off Vesta by ancient impacts.",
+        "es": "Cerca del 6 % de los meteoritos que caen en la Tierra salieron despedidos de Vesta en impactos antiguos."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Rheasilvia basin",
+            "es": "Cuenca Rheasilvia"
+          },
+          "iau": "Rheasilvia",
+          "at": [
+            86.3,
+            -71.95
+          ],
+          "text": {
+            "en": "A giant impact basin about 500 km wide, almost as wide as Vesta, with a central peak over 20 km high.",
+            "es": "Una cuenca de impacto gigante de unos 500 km, casi tan ancha como Vesta, con un pico central de más de 20 km de altura."
+          }
+        },
+        {
+          "name": {
+            "en": "Veneneia basin",
+            "es": "Cuenca Veneneia"
+          },
+          "iau": "Veneneia",
+          "at": [
+            -54.32,
+            -47.93
+          ],
+          "text": {
+            "en": "An older basin about 400 km wide, partly buried under Rheasilvia.",
+            "es": "Una cuenca más antigua, de unos 400 km, en parte enterrada bajo Rheasilvia."
+          }
+        },
+        {
+          "name": {
+            "en": "Divalia Fossae",
+            "es": "Divalia Fossae"
+          },
+          "iau": "Divalia Fossae",
+          "at": [
+            -163.77,
+            -9.05
+          ],
+          "text": {
+            "en": "Huge troughs that wrap around Vesta's equator, cracks left by the shock of the Rheasilvia impact.",
+            "es": "Enormes surcos que rodean el ecuador de Vesta, grietas que dejó la sacudida del impacto de Rheasilvia."
+          }
+        },
+        {
+          "name": {
+            "en": "Saturnalia Fossae",
+            "es": "Saturnalia Fossae"
+          },
+          "iau": "Saturnalia Fossae",
+          "at": [
+            37.05,
+            28.05
+          ],
+          "text": {
+            "en": "Older troughs in the north, linked to the Veneneia impact.",
+            "es": "Surcos más antiguos en el norte, ligados al impacto de Veneneia."
+          }
+        },
+        {
+          "name": {
+            "en": "Marcia crater",
+            "es": "Cráter Marcia"
+          },
+          "iau": "Marcia",
+          "at": [
+            -20.45,
+            8.98
+          ],
+          "text": {
+            "en": "A young crater about 68 km wide whose floor is covered in pits, probably left by escaping gases.",
+            "es": "Un cráter joven de unos 68 km con el fondo cubierto de hoyos, probablemente dejados por gases que escaparon."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "4 Vesta",
+        "es": "(4) Vesta"
+      },
+      "sources": [
+        {
+          "title": "NASA Science: 4 Vesta",
+          "url": "https://science.nasa.gov/solar-system/asteroids/4-vesta/"
+        },
+        {
+          "title": "JPL Small-Body Database: 4 Vesta",
+          "url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=4"
+        },
+        {
+          "title": "IAU/USGS Gazetteer of Planetary Nomenclature",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        }
+      ]
+    },
+    {
+      "id": "jupiter",
+      "name": {
+        "en": "Jupiter",
+        "es": "Júpiter"
+      },
+      "kind": "planet",
+      "parent": "sun",
+      "radius": 69911,
+      "mass": 318,
+      "gravity": 24.79,
+      "day": 9.925,
+      "year": 4332.589,
+      "distance": 778.479,
+      "moons": 115,
+      "temp": {
+        "en": "−108 °C at the cloud tops",
+        "es": "−108 °C en la cima de las nubes"
+      },
+      "atmosphere": {
+        "en": "About 90% hydrogen and 10% helium, with clouds of ammonia and water",
+        "es": "Cerca de 90 % hidrógeno y 10 % helio, con nubes de amoníaco y agua"
+      },
+      "discovered": {
+        "en": "Known since ancient times",
+        "es": "Conocido desde la Antigüedad"
+      },
+      "firstVisit": {
+        "en": "Pioneer 10 flew past in 1973",
+        "es": "La Pioneer 10 pasó cerca en 1973"
+      },
+      "text": {
+        "en": "Jupiter is the biggest planet, more than twice as massive as all the others put together. It is a giant ball of hydrogen and helium striped with clouds and storms, with no solid surface to stand on.",
+        "es": "Júpiter es el planeta más grande: tiene más del doble de masa que todos los demás juntos. Es una bola gigante de hidrógeno y helio, rayada de nubes y tormentas, sin una superficie sólida donde pararse."
+      },
+      "wow": {
+        "en": "Jupiter has the shortest day of any planet: it spins around once in less than 10 hours.",
+        "es": "Júpiter tiene el día más corto de todos los planetas: da una vuelta sobre sí mismo en menos de 10 horas."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Great Red Spot",
+            "es": "Gran Mancha Roja"
+          },
+          "at": [
+            0,
+            -22
+          ],
+          "text": {
+            "en": "A storm bigger than Earth that has raged for more than 300 years; it drifts in longitude and has been shrinking.",
+            "es": "Una tormenta más grande que la Tierra que dura desde hace más de 300 años; se desplaza en longitud y se ha ido encogiendo."
+          }
+        },
+        {
+          "name": {
+            "en": "Oval BA",
+            "es": "Óvalo BA"
+          },
+          "at": [
+            0,
+            -33
+          ],
+          "text": {
+            "en": "Nicknamed Red Spot Jr.: a storm born when three white ovals merged between 1998 and 2000; it turned red in 2006. It drifts too.",
+            "es": "Apodada la Pequeña Mancha Roja: una tormenta que nació cuando tres óvalos blancos se fusionaron entre 1998 y 2000, y que se volvió roja en 2006. También se desplaza."
+          }
+        },
+        {
+          "name": {
+            "en": "North polar cyclones",
+            "es": "Ciclones del polo norte"
+          },
+          "at": [
+            0,
+            90
+          ],
+          "text": {
+            "en": "The Juno probe found eight giant cyclones packed around a central one at the north pole.",
+            "es": "La sonda Juno encontró ocho ciclones gigantes apiñados alrededor de uno central en el polo norte."
+          }
+        },
+        {
+          "name": {
+            "en": "South polar cyclones",
+            "es": "Ciclones del polo sur"
+          },
+          "at": [
+            0,
+            -90
+          ],
+          "text": {
+            "en": "At the south pole, Juno found five cyclones circling a central one; a sixth squeezed in by 2019.",
+            "es": "En el polo sur, Juno encontró cinco ciclones girando alrededor de uno central; en 2019 se coló un sexto."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Jupiter",
+        "es": "Júpiter (planeta)"
+      },
+      "sources": [
+        {
+          "title": "NASA NSSDCA Jupiter Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html"
+        },
+        {
+          "title": "NASA Science: Jupiter facts",
+          "url": "https://science.nasa.gov/jupiter/jupiter-facts/"
+        },
+        {
+          "title": "NASA Science: Jupiter moons",
+          "url": "https://science.nasa.gov/jupiter/jupiter-moons/"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary satellite discovery circumstances",
+          "url": "https://ssd.jpl.nasa.gov/sats/discovery.html"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/planets/phys_par.html"
+        }
+      ]
+    },
+    {
+      "id": "io",
+      "name": {
+        "en": "Io",
+        "es": "Ío"
+      },
+      "kind": "moon",
+      "parent": "jupiter",
+      "radius": 1821.5,
+      "mass": 0.015,
+      "gravity": 1.8,
+      "day": 42.459,
+      "year": 1.769,
+      "distance": 421.8,
+      "temp": {
+        "en": "Below −130 °C on most of the surface, but some lava is hotter than 1,400 °C",
+        "es": "Menos de −130 °C en casi toda la superficie, pero algunas lavas superan los 1400 °C"
+      },
+      "atmosphere": {
+        "en": "Very thin, mostly sulfur dioxide from its volcanoes",
+        "es": "Muy tenue, sobre todo dióxido de azufre de sus volcanes"
+      },
+      "discovered": {
+        "en": "Galileo Galilei, 1610",
+        "es": "Galileo Galilei, 1610"
+      },
+      "firstVisit": {
+        "en": "Voyager 1 took the first close-ups in 1979 and spotted erupting volcanoes",
+        "es": "La Voyager 1 tomó las primeras imágenes cercanas en 1979 y descubrió volcanes en erupción"
+      },
+      "text": {
+        "en": "Io is the most volcanic world known, with hundreds of active volcanoes. With every orbit Jupiter's gravity squeezes and stretches it, heating its insides until lava bursts out.",
+        "es": "Ío es el mundo más volcánico que se conoce, con cientos de volcanes activos. En cada órbita, la gravedad de Júpiter lo aprieta y lo estira, y calienta su interior hasta que la lava estalla."
+      },
+      "wow": {
+        "en": "Some of Io's volcanic plumes shoot gas and dust hundreds of kilometers above its surface.",
+        "es": "Algunas columnas volcánicas de Ío lanzan gas y polvo a cientos de kilómetros sobre su superficie."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Loki Patera",
+            "es": "Loki Patera"
+          },
+          "iau": "Loki Patera",
+          "at": [
+            51.21,
+            13.01
+          ],
+          "text": {
+            "en": "A lava lake about 200 km across, the most powerful volcano known; it brightens again and again as fresh lava spreads.",
+            "es": "Un lago de lava de unos 200 km, el volcán más poderoso que se conoce; se ilumina una y otra vez cuando se extiende lava fresca."
+          }
+        },
+        {
+          "name": {
+            "en": "Pele",
+            "es": "Pele"
+          },
+          "iau": "Pele",
+          "at": [
+            104.72,
+            -18.71
+          ],
+          "text": {
+            "en": "A volcano whose giant plume, about 300 km high, rains red sulfur in a huge ring around it.",
+            "es": "Un volcán cuya columna gigante, de unos 300 km de altura, hace llover azufre rojo en un enorme anillo a su alrededor."
+          }
+        },
+        {
+          "name": {
+            "en": "Tvashtar Paterae",
+            "es": "Tvashtar Paterae"
+          },
+          "iau": "Tvashtar Paterae",
+          "at": [
+            -123.53,
+            62.76
+          ],
+          "text": {
+            "en": "Volcanic pits near the north pole; in 2007 the New Horizons probe caught a plume rising about 330 km from here.",
+            "es": "Cráteres volcánicos cerca del polo norte; en 2007 la sonda New Horizons captó una columna de unos 330 km de altura que salía de aquí."
+          }
+        },
+        {
+          "name": {
+            "en": "Prometheus",
+            "es": "Prometeo"
+          },
+          "iau": "Prometheus",
+          "at": [
+            -153.94,
+            -1.52
+          ],
+          "text": {
+            "en": "Nicknamed Io's Old Faithful: it was erupting when Voyager passed in 1979 and was still active when Galileo arrived years later.",
+            "es": "Apodado el Old Faithful de Ío: estaba en erupción cuando pasó la Voyager en 1979 y seguía activo cuando llegó la Galileo años después."
+          }
+        },
+        {
+          "name": {
+            "en": "Pillan Patera",
+            "es": "Pillan Patera"
+          },
+          "iau": "Pillan Patera",
+          "at": [
+            116.71,
+            -12.3
+          ],
+          "text": {
+            "en": "Site of a huge eruption in 1997, where the Galileo probe measured lava hotter than 1,400 °C.",
+            "es": "Escenario de una enorme erupción en 1997, donde la sonda Galileo midió lava a más de 1400 °C."
+          }
+        },
+        {
+          "name": {
+            "en": "Boösaule Montes",
+            "es": "Montes Boösaule"
+          },
+          "iau": "Boösaule Montes",
+          "at": [
+            90.89,
+            -3.75
+          ],
+          "text": {
+            "en": "Io's tallest mountain, about 17.5 km high, nearly twice the height of Mount Everest.",
+            "es": "La montaña más alta de Ío, de unos 17,5 km, casi el doble de la altura del Everest."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Io (moon)",
+        "es": "Ío (satélite)"
+      },
+      "sources": [
+        {
+          "title": "NASA Science: Io facts",
+          "url": "https://science.nasa.gov/jupiter/jupiter-moons/io/facts/"
+        },
+        {
+          "title": "NASA NSSDCA Jovian Satellite Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/joviansatfact.html"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary satellite physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/sats/phys_par/"
+        },
+        {
+          "title": "NASA/JPL Photojournal PIA01635: Io in eclipse reveals high-temperature hot spots",
+          "url": "https://photojournal.jpl.nasa.gov/catalog/PIA01635"
+        },
+        {
+          "title": "IAU/USGS Gazetteer of Planetary Nomenclature",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        }
+      ]
+    },
+    {
+      "id": "europa",
+      "name": {
+        "en": "Europa",
+        "es": "Europa"
+      },
+      "kind": "moon",
+      "parent": "jupiter",
+      "radius": 1560.8,
+      "mass": 0.00803,
+      "gravity": 1.31,
+      "day": 85.228,
+      "year": 3.551,
+      "distance": 671.1,
+      "temp": {
+        "en": "From about −220 °C at the poles to −130 °C at the equator",
+        "es": "De unos −220 °C en los polos a −130 °C en el ecuador"
+      },
+      "atmosphere": {
+        "en": "Very thin, mostly oxygen",
+        "es": "Muy tenue, sobre todo oxígeno"
+      },
+      "discovered": {
+        "en": "Galileo Galilei, 1610",
+        "es": "Galileo Galilei, 1610"
+      },
+      "firstVisit": {
+        "en": "Voyager 1 and 2 took the first close-ups in 1979",
+        "es": "Las Voyager 1 y 2 tomaron las primeras imágenes cercanas en 1979"
+      },
+      "text": {
+        "en": "Europa is a bright ball of ice crisscrossed by cracks and ridges. Beneath its shell lies a global ocean of salty water, with perhaps twice as much water as all of Earth's oceans: a top place to look for life.",
+        "es": "Europa es una bola brillante de hielo surcada de grietas y crestas. Bajo su corteza hay un océano global de agua salada, quizá con el doble de agua que todos los océanos de la Tierra: un gran lugar para buscar vida."
+      },
+      "wow": {
+        "en": "NASA's Europa Clipper, launched in 2024, is on its way and is due to reach Jupiter in 2030 to study Europa's ocean.",
+        "es": "La sonda Europa Clipper de la NASA, lanzada en 2024, va en camino y debe llegar a Júpiter en 2030 para estudiar el océano de Europa."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Conamara Chaos",
+            "es": "Conamara Chaos"
+          },
+          "iau": "Conamara Chaos",
+          "at": [
+            87.3,
+            9.7
+          ],
+          "text": {
+            "en": "A jumbled region where the icy crust broke into rafts that drifted and froze again, like sea ice on Earth.",
+            "es": "Una región revuelta donde la corteza de hielo se partió en balsas que se movieron y volvieron a congelarse, como el hielo marino en la Tierra."
+          }
+        },
+        {
+          "name": {
+            "en": "Pwyll crater",
+            "es": "Cráter Pwyll"
+          },
+          "iau": "Pwyll",
+          "at": [
+            88.6,
+            -25.2
+          ],
+          "text": {
+            "en": "A young crater about 45 km wide whose bright rays stretch for hundreds of kilometers.",
+            "es": "Un cráter joven de unos 45 km cuyos rayos brillantes se extienden cientos de kilómetros."
+          }
+        },
+        {
+          "name": {
+            "en": "Thera Macula",
+            "es": "Thera Macula"
+          },
+          "iau": "Thera Macula",
+          "at": [
+            178.8,
+            -46.7
+          ],
+          "text": {
+            "en": "A dark, lumpy patch where scientists think a lake of liquid water may lie just a few kilometers under the ice.",
+            "es": "Una mancha oscura y abultada donde los científicos creen que podría haber un lago de agua líquida a pocos kilómetros bajo el hielo."
+          }
+        },
+        {
+          "name": {
+            "en": "Tyre",
+            "es": "Tyre"
+          },
+          "iau": "Tyre",
+          "at": [
+            -146.6,
+            33.6
+          ],
+          "text": {
+            "en": "An impact scar about 150 km wide, ringed by circular cracks, made when an asteroid or comet punched into the ice.",
+            "es": "Una cicatriz de impacto de unos 150 km rodeada de grietas circulares, que dejó un asteroide o un cometa al chocar contra el hielo."
+          }
+        },
+        {
+          "name": {
+            "en": "Callanish",
+            "es": "Callanish"
+          },
+          "iau": "Callanish",
+          "at": [
+            25.5,
+            -16.7
+          ],
+          "text": {
+            "en": "Another ringed impact scar, about 100 km wide, surrounded by circles of troughs and ridges.",
+            "es": "Otra cicatriz de impacto con anillos, de unos 100 km, rodeada de círculos de surcos y crestas."
+          }
+        },
+        {
+          "name": {
+            "en": "Agenor Linea",
+            "es": "Agenor Linea"
+          },
+          "iau": "Agenor Linea",
+          "at": [
+            146.5,
+            -43.8
+          ],
+          "text": {
+            "en": "An unusually bright band about 1,500 km long crossing the southern hemisphere.",
+            "es": "Una franja inusualmente brillante de unos 1500 km de largo que cruza el hemisferio sur."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Europa (moon)",
+        "es": "Europa (satélite)"
+      },
+      "sources": [
+        {
+          "title": "NASA Science: Europa facts",
+          "url": "https://science.nasa.gov/jupiter/jupiter-moons/europa/europa-facts/"
+        },
+        {
+          "title": "NASA Europa Clipper: frequently asked questions",
+          "url": "https://europa.nasa.gov/europa/faq/"
+        },
+        {
+          "title": "NASA NSSDCA Jovian Satellite Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/joviansatfact.html"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary satellite physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/sats/phys_par/"
+        },
+        {
+          "title": "IAU/USGS Gazetteer of Planetary Nomenclature",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        }
+      ]
+    },
+    {
+      "id": "ganymede",
+      "name": {
+        "en": "Ganymede",
+        "es": "Ganímedes"
+      },
+      "kind": "moon",
+      "parent": "jupiter",
+      "radius": 2631.2,
+      "mass": 0.0248,
+      "gravity": 1.43,
+      "day": 171.709,
+      "year": 7.155,
+      "distance": 1070.4,
+      "temp": {
+        "en": "−183 to −113 °C in daytime",
+        "es": "De −183 a −113 °C durante el día"
+      },
+      "atmosphere": {
+        "en": "Very thin, mostly oxygen",
+        "es": "Muy tenue, sobre todo oxígeno"
+      },
+      "discovered": {
+        "en": "Galileo Galilei, 1610",
+        "es": "Galileo Galilei, 1610"
+      },
+      "firstVisit": {
+        "en": "Voyager 1 and 2 took the first close-ups in 1979",
+        "es": "Las Voyager 1 y 2 tomaron las primeras imágenes cercanas en 1979"
+      },
+      "text": {
+        "en": "Ganymede is the largest moon in the solar system, bigger than the planet Mercury. It is the only moon known to make its own magnetic field, and a salty ocean is thought to lie deep beneath its ice.",
+        "es": "Ganímedes es la luna más grande del sistema solar, más grande que el planeta Mercurio. Es la única luna que se sabe que genera su propio campo magnético, y se cree que bajo su hielo hay un océano salado."
+      },
+      "wow": {
+        "en": "Ganymede has its own auroras, and watching how they rock back and forth helped the Hubble telescope detect its hidden ocean.",
+        "es": "Ganímedes tiene sus propias auroras, y observar cómo se mecen ayudó al telescopio Hubble a detectar su océano escondido."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Galileo Regio",
+            "es": "Galileo Regio"
+          },
+          "iau": "Galileo Regio",
+          "at": [
+            -127.0,
+            45.0
+          ],
+          "text": {
+            "en": "A huge dark region about 4,000 km across, one of Ganymede's oldest surfaces, covered in craters and curved furrows.",
+            "es": "Una enorme región oscura de unos 4000 km, una de las superficies más antiguas de Ganímedes, llena de cráteres y surcos curvos."
+          }
+        },
+        {
+          "name": {
+            "en": "Uruk Sulcus",
+            "es": "Uruk Sulcus"
+          },
+          "iau": "Uruk Sulcus",
+          "at": [
+            -160.0,
+            3.4
+          ],
+          "text": {
+            "en": "A band of younger, brighter terrain where the icy crust was pulled apart into long ridges and grooves.",
+            "es": "Una franja de terreno más joven y brillante donde la corteza de hielo se estiró en largas crestas y surcos."
+          }
+        },
+        {
+          "name": {
+            "en": "Osiris crater",
+            "es": "Cráter Osiris"
+          },
+          "iau": "Osiris",
+          "at": [
+            -166.31,
+            -38.0
+          ],
+          "text": {
+            "en": "A young crater about 107 km wide with bright rays of fresh ice.",
+            "es": "Un cráter joven de unos 107 km con rayos brillantes de hielo fresco."
+          }
+        },
+        {
+          "name": {
+            "en": "Tros crater",
+            "es": "Cráter Tros"
+          },
+          "iau": "Tros",
+          "at": [
+            -27.26,
+            11.14
+          ],
+          "text": {
+            "en": "A bright crater about 94 km wide whose white rays stand out against the darker ground.",
+            "es": "Un cráter brillante de unos 94 km cuyos rayos blancos resaltan sobre el suelo más oscuro."
+          }
+        },
+        {
+          "name": {
+            "en": "Enki Catena",
+            "es": "Enki Catena"
+          },
+          "iau": "Enki Catena",
+          "at": [
+            -13.86,
+            38.84
+          ],
+          "text": {
+            "en": "A chain of 13 craters made when a comet, torn apart by Jupiter's gravity, hit Ganymede piece by piece.",
+            "es": "Una cadena de 13 cráteres formada cuando un cometa, despedazado por la gravedad de Júpiter, chocó contra Ganímedes trozo a trozo."
+          }
+        },
+        {
+          "name": {
+            "en": "Memphis Facula",
+            "es": "Memphis Facula"
+          },
+          "iau": "Memphis Facula",
+          "at": [
+            -131.91,
+            14.1
+          ],
+          "text": {
+            "en": "The faded 'ghost' of an ancient crater, smoothed out as the soft ice slowly flowed.",
+            "es": "El «fantasma» borroso de un antiguo cráter, alisado porque el hielo blando fluyó con lentitud."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Ganymede (moon)",
+        "es": "Ganímedes (satélite)"
+      },
+      "sources": [
+        {
+          "title": "NASA Science: Ganymede facts",
+          "url": "https://science.nasa.gov/jupiter/jupiter-moons/ganymede/facts/"
+        },
+        {
+          "title": "NASA NSSDCA Jovian Satellite Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/joviansatfact.html"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary satellite physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/sats/phys_par/"
+        },
+        {
+          "title": "IAU/USGS Gazetteer of Planetary Nomenclature",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        }
+      ]
+    },
+    {
+      "id": "callisto",
+      "name": {
+        "en": "Callisto",
+        "es": "Calisto"
+      },
+      "kind": "moon",
+      "parent": "jupiter",
+      "radius": 2410.3,
+      "mass": 0.018,
+      "gravity": 1.24,
+      "day": 400.536,
+      "year": 16.689,
+      "distance": 1882.7,
+      "temp": {
+        "en": "About −140 °C on average (−190 to −110 °C)",
+        "es": "Unos −140 °C en promedio (de −190 a −110 °C)"
+      },
+      "atmosphere": {
+        "en": "Very thin: carbon dioxide and some oxygen",
+        "es": "Muy tenue: dióxido de carbono y algo de oxígeno"
+      },
+      "discovered": {
+        "en": "Galileo Galilei, 1610",
+        "es": "Galileo Galilei, 1610"
+      },
+      "firstVisit": {
+        "en": "Voyager 1 and 2 took the first close-ups in 1979",
+        "es": "Las Voyager 1 y 2 tomaron las primeras imágenes cercanas en 1979"
+      },
+      "text": {
+        "en": "Callisto is the most heavily cratered object in the solar system, a dark, ancient surface that has barely changed in billions of years. It is almost as big as Mercury and may hide a salty ocean deep inside.",
+        "es": "Calisto es el objeto con más cráteres del sistema solar, una superficie oscura y antigua que casi no ha cambiado en miles de millones de años. Es casi tan grande como Mercurio y podría esconder un océano salado en su interior."
+      },
+      "wow": {
+        "en": "Because it lies outside Jupiter's fiercest radiation, NASA studies have proposed Callisto as a base for future human explorers.",
+        "es": "Como está fuera de la radiación más intensa de Júpiter, algunos estudios de la NASA han propuesto usar Calisto como base para futuros exploradores humanos."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Valhalla",
+            "es": "Valhalla"
+          },
+          "iau": "Valhalla",
+          "at": [
+            -56.0,
+            14.7
+          ],
+          "text": {
+            "en": "The largest ringed impact basin in the solar system: a bright center surrounded by rings about 3,000 km across.",
+            "es": "La mayor cuenca de impacto con anillos del sistema solar: un centro brillante rodeado de anillos de unos 3000 km."
+          }
+        },
+        {
+          "name": {
+            "en": "Asgard",
+            "es": "Asgard"
+          },
+          "iau": "Asgard",
+          "at": [
+            -139.9,
+            32.2
+          ],
+          "text": {
+            "en": "A second giant ringed basin, about 1,400 km across.",
+            "es": "Otra cuenca gigante con anillos, de unos 1400 km."
+          }
+        },
+        {
+          "name": {
+            "en": "Doh crater",
+            "es": "Cráter Doh"
+          },
+          "iau": "Doh",
+          "at": [
+            -141.4,
+            30.6
+          ],
+          "text": {
+            "en": "A crater in the middle of Asgard with a dome at its center instead of a peak.",
+            "es": "Un cráter en el centro de Asgard con una cúpula en medio en lugar de un pico."
+          }
+        },
+        {
+          "name": {
+            "en": "Gomul Catena",
+            "es": "Gomul Catena"
+          },
+          "iau": "Gomul Catena",
+          "at": [
+            -47.1,
+            35.5
+          ],
+          "text": {
+            "en": "A straight chain of craters punched by the pieces of a comet that broke apart near Jupiter.",
+            "es": "Una cadena recta de cráteres abiertos por los pedazos de un cometa que se rompió cerca de Júpiter."
+          }
+        },
+        {
+          "name": {
+            "en": "Gipul Catena",
+            "es": "Gipul Catena"
+          },
+          "iau": "Gipul Catena",
+          "at": [
+            -54.2,
+            68.5
+          ],
+          "text": {
+            "en": "A crater chain about 640 km long in the far north.",
+            "es": "Una cadena de cráteres de unos 640 km de largo en el extremo norte."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Callisto (moon)",
+        "es": "Calisto (satélite)"
+      },
+      "sources": [
+        {
+          "title": "NASA Science: Callisto facts",
+          "url": "https://science.nasa.gov/jupiter/jupiter-moons/callisto/facts/"
+        },
+        {
+          "title": "NASA NSSDCA Jovian Satellite Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/joviansatfact.html"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary satellite physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/sats/phys_par/"
+        },
+        {
+          "title": "IAU/USGS Gazetteer of Planetary Nomenclature",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        }
+      ]
+    },
+    {
+      "id": "saturn",
+      "name": {
+        "en": "Saturn",
+        "es": "Saturno"
+      },
+      "kind": "planet",
+      "parent": "sun",
+      "radius": 58232,
+      "mass": 95.2,
+      "gravity": 10.44,
+      "day": 10.656,
+      "year": 10755.699,
+      "distance": 1432.041,
+      "moons": 293,
+      "temp": {
+        "en": "−139 °C at the cloud tops",
+        "es": "−139 °C en la cima de las nubes"
+      },
+      "atmosphere": {
+        "en": "About 96% hydrogen and 3% helium",
+        "es": "Cerca de 96 % hidrógeno y 3 % helio"
+      },
+      "discovered": {
+        "en": "Known since ancient times",
+        "es": "Conocido desde la Antigüedad"
+      },
+      "firstVisit": {
+        "en": "Pioneer 11 flew past in 1979",
+        "es": "La Pioneer 11 pasó cerca en 1979"
+      },
+      "text": {
+        "en": "Saturn is a giant ball of hydrogen and helium famous for its dazzling rings, made of countless chunks of ice and rock. It is the least dense planet: on average, it is lighter than water.",
+        "es": "Saturno es una bola gigante de hidrógeno y helio famosa por sus anillos deslumbrantes, hechos de incontables trozos de hielo y roca. Es el planeta menos denso: en promedio, es más ligero que el agua."
+      },
+      "wow": {
+        "en": "Saturn has 293 known moons, more than any other planet.",
+        "es": "Saturno tiene 293 lunas conocidas, más que cualquier otro planeta."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "North polar hexagon",
+            "es": "Hexágono del polo norte"
+          },
+          "at": [
+            0,
+            77
+          ],
+          "text": {
+            "en": "A six-sided jet stream about 30,000 km wide circling the north pole, first seen by the Voyager probes in the early 1980s.",
+            "es": "Una corriente en chorro de seis lados, de unos 30 000 km, que rodea el polo norte; las sondas Voyager la vieron por primera vez a principios de los años ochenta."
+          }
+        },
+        {
+          "name": {
+            "en": "North polar vortex",
+            "es": "Vórtice del polo norte"
+          },
+          "at": [
+            0,
+            90
+          ],
+          "text": {
+            "en": "A hurricane-like storm parked on the north pole, with an eye about 2,000 km wide.",
+            "es": "Una tormenta parecida a un huracán, fija sobre el polo norte, con un ojo de unos 2000 km."
+          }
+        },
+        {
+          "name": {
+            "en": "South polar vortex",
+            "es": "Vórtice del polo sur"
+          },
+          "at": [
+            0,
+            -90
+          ],
+          "text": {
+            "en": "A huge storm with a clear eye at the south pole, ringed by towering clouds.",
+            "es": "Una tormenta enorme con un ojo despejado en el polo sur, rodeada de nubes altísimas."
+          }
+        },
+        {
+          "name": {
+            "en": "Storm Alley",
+            "es": "Callejón de las Tormentas"
+          },
+          "at": [
+            0,
+            -35
+          ],
+          "text": {
+            "en": "A band of the southern hemisphere where the Cassini probe saw storms and lightning flare up again and again; the storms drift around the planet.",
+            "es": "Una franja del hemisferio sur donde la sonda Cassini vio tormentas y rayos estallar una y otra vez; las tormentas se desplazan alrededor del planeta."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Saturn",
+        "es": "Saturno (planeta)"
+      },
+      "sources": [
+        {
+          "title": "NASA NSSDCA Saturn Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/saturnfact.html"
+        },
+        {
+          "title": "NASA Science: Saturn facts",
+          "url": "https://science.nasa.gov/saturn/facts/"
+        },
+        {
+          "title": "NASA Science: Saturn moons",
+          "url": "https://science.nasa.gov/saturn/moons/"
+        },
+        {
+          "title": "NASA/JPL: Saturn's mysterious hexagon emerges from winter darkness",
+          "url": "https://www.jpl.nasa.gov/news/saturns-mysterious-hexagon-emerges-from-winter-darkness/"
+        },
+        {
+          "title": "NASA/JPL Photojournal PIA06507: Storm Alley",
+          "url": "https://photojournal.jpl.nasa.gov/catalog/PIA06507"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary satellite discovery circumstances",
+          "url": "https://ssd.jpl.nasa.gov/sats/discovery.html"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/planets/phys_par.html"
+        }
+      ]
+    },
+    {
+      "id": "titan",
+      "name": {
+        "en": "Titan",
+        "es": "Titán"
+      },
+      "kind": "moon",
+      "parent": "saturn",
+      "radius": 2574.76,
+      "mass": 0.0225,
+      "gravity": 1.35,
+      "day": 382.69,
+      "year": 15.945,
+      "distance": 1221.87,
+      "temp": {
+        "en": "About −179 °C",
+        "es": "Unos −179 °C"
+      },
+      "atmosphere": {
+        "en": "Thick: about 95% nitrogen and 5% methane, at 1.5 times Earth's pressure",
+        "es": "Densa: cerca de 95 % nitrógeno y 5 % metano, a 1,5 veces la presión de la Tierra"
+      },
+      "discovered": {
+        "en": "Christiaan Huygens, 1655",
+        "es": "Christiaan Huygens, 1655"
+      },
+      "firstVisit": {
+        "en": "Voyager 1 flew close in 1980; the Huygens probe landed in 2005",
+        "es": "La Voyager 1 pasó cerca en 1980; la sonda Huygens aterrizó en 2005"
+      },
+      "text": {
+        "en": "Titan is Saturn's largest moon and the only moon with a thick atmosphere. Under its orange haze are rivers, lakes and seas of liquid methane and ethane: the only place besides Earth known to have liquid on its surface.",
+        "es": "Titán es la luna más grande de Saturno y la única con una atmósfera densa. Bajo su bruma anaranjada hay ríos, lagos y mares de metano y etano líquidos: el único lugar, aparte de la Tierra, con líquidos en su superficie."
+      },
+      "wow": {
+        "en": "NASA plans to send Dragonfly, a car-sized flying drone, to hop between places on Titan in the 2030s.",
+        "es": "La NASA planea enviar a Dragonfly, un dron volador del tamaño de un auto, para saltar de un lugar a otro de Titán en la década de 2030."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Kraken Mare",
+            "es": "Kraken Mare"
+          },
+          "iau": "Kraken Mare",
+          "at": [
+            50.0,
+            68.0
+          ],
+          "text": {
+            "en": "Titan's largest sea of liquid methane and ethane, bigger than the Caspian Sea.",
+            "es": "El mayor mar de metano y etano líquidos de Titán, más grande que el mar Caspio."
+          }
+        },
+        {
+          "name": {
+            "en": "Ligeia Mare",
+            "es": "Ligeia Mare"
+          },
+          "iau": "Ligeia Mare",
+          "at": [
+            112.1,
+            79.7
+          ],
+          "text": {
+            "en": "The second-largest sea, so clear that Cassini's radar reached its floor about 160 m down.",
+            "es": "El segundo mar más grande, tan transparente que el radar de Cassini llegó a su fondo, a unos 160 m."
+          }
+        },
+        {
+          "name": {
+            "en": "Punga Mare",
+            "es": "Punga Mare"
+          },
+          "iau": "Punga Mare",
+          "at": [
+            20.3,
+            85.1
+          ],
+          "text": {
+            "en": "The third-largest sea, close to the north pole.",
+            "es": "El tercer mar más grande, cerca del polo norte."
+          }
+        },
+        {
+          "name": {
+            "en": "Ontario Lacus",
+            "es": "Ontario Lacus"
+          },
+          "iau": "Ontario Lacus",
+          "at": [
+            177.0,
+            -72.0
+          ],
+          "text": {
+            "en": "The largest lake in the southern hemisphere, similar in size to Lake Ontario on Earth.",
+            "es": "El lago más grande del hemisferio sur, de tamaño parecido al lago Ontario de la Tierra."
+          }
+        },
+        {
+          "name": {
+            "en": "Xanadu",
+            "es": "Xanadu"
+          },
+          "iau": "Xanadu",
+          "at": [
+            -100.0,
+            -15.0
+          ],
+          "text": {
+            "en": "A bright, rugged highland about the size of Australia.",
+            "es": "Una meseta brillante y accidentada de tamaño parecido al de Australia."
+          }
+        },
+        {
+          "name": {
+            "en": "Shangri-La",
+            "es": "Shangri-La"
+          },
+          "iau": "Shangri-La",
+          "at": [
+            -165.0,
+            -10.0
+          ],
+          "text": {
+            "en": "A vast dark region of dunes made of hydrocarbon sand; the Huygens probe landed near its edge.",
+            "es": "Una enorme región oscura de dunas de arena de hidrocarburos; la sonda Huygens aterrizó cerca de su borde."
+          }
+        },
+        {
+          "name": {
+            "en": "Selk crater",
+            "es": "Cráter Selk"
+          },
+          "iau": "Selk",
+          "at": [
+            161.0,
+            7.0
+          ],
+          "text": {
+            "en": "A young impact crater about 80 km wide, the main destination of NASA's Dragonfly.",
+            "es": "Un cráter de impacto joven de unos 80 km, el destino principal de Dragonfly, de la NASA."
+          }
+        },
+        {
+          "name": {
+            "en": "Sotra Patera",
+            "es": "Sotra Patera"
+          },
+          "iau": "Sotra Patera",
+          "at": [
+            -40.0,
+            -14.54
+          ],
+          "text": {
+            "en": "A deep pit beside the mountain Doom Mons, one of the best candidates for an ice volcano on Titan.",
+            "es": "Un pozo profundo junto a la montaña Doom Mons, uno de los mejores candidatos a volcán de hielo en Titán."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Titan (moon)",
+        "es": "Titán (satélite)"
+      },
+      "sources": [
+        {
+          "title": "NASA Science: Titan facts",
+          "url": "https://science.nasa.gov/saturn/moons/titan/facts/"
+        },
+        {
+          "title": "NASA Science: Titan",
+          "url": "https://science.nasa.gov/saturn/moons/titan/"
+        },
+        {
+          "title": "NASA NSSDCA Saturnian Satellite Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/saturniansatfact.html"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary satellite physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/sats/phys_par/"
+        },
+        {
+          "title": "IAU/USGS Gazetteer of Planetary Nomenclature",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        }
+      ]
+    },
+    {
+      "id": "enceladus",
+      "name": {
+        "en": "Enceladus",
+        "es": "Encélado"
+      },
+      "kind": "moon",
+      "parent": "saturn",
+      "radius": 252.1,
+      "mass": 1.81e-05,
+      "gravity": 0.11,
+      "day": 32.885,
+      "year": 1.37,
+      "distance": 238.02,
+      "temp": {
+        "en": "About −201 °C",
+        "es": "Unos −201 °C"
+      },
+      "atmosphere": {
+        "en": "Almost none, but jets of water vapor spray from its south pole",
+        "es": "Casi ninguna, pero de su polo sur brotan chorros de vapor de agua"
+      },
+      "discovered": {
+        "en": "William Herschel, 1789",
+        "es": "William Herschel, 1789"
+      },
+      "firstVisit": {
+        "en": "Voyager 1 and 2 flew past in 1980 and 1981",
+        "es": "Las Voyager 1 y 2 pasaron cerca en 1980 y 1981"
+      },
+      "text": {
+        "en": "Enceladus is a small, snow-white moon that reflects almost all the sunlight that hits it. From cracks near its south pole, geysers spray water from a hidden ocean into space, feeding one of Saturn's rings.",
+        "es": "Encélado es una luna pequeña, blanca como la nieve, que refleja casi toda la luz del Sol que recibe. Desde unas grietas cerca de su polo sur, géiseres lanzan al espacio agua de un océano oculto y alimentan uno de los anillos de Saturno."
+      },
+      "wow": {
+        "en": "The Cassini probe flew right through Enceladus's geysers and tasted the spray: salty water with organic molecules from an ocean under the ice.",
+        "es": "La sonda Cassini atravesó los géiseres de Encélado y analizó el rocío: agua salada con moléculas orgánicas de un océano bajo el hielo."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Baghdad Sulcus",
+            "es": "Baghdad Sulcus"
+          },
+          "iau": "Baghdad Sulcus",
+          "at": [
+            129.46,
+            -86.91
+          ],
+          "text": {
+            "en": "One of the four 'tiger stripes': long, warm fractures at the south pole that blast out jets of ice and vapor.",
+            "es": "Una de las cuatro «rayas de tigre»: largas fracturas tibias en el polo sur que disparan chorros de hielo y vapor."
+          }
+        },
+        {
+          "name": {
+            "en": "Damascus Sulcus",
+            "es": "Damascus Sulcus"
+          },
+          "iau": "Damascus Sulcus",
+          "at": [
+            74.13,
+            -80.59
+          ],
+          "text": {
+            "en": "Another tiger stripe, with jets and warm spots along its length.",
+            "es": "Otra raya de tigre, con chorros y puntos tibios a lo largo de toda su extensión."
+          }
+        },
+        {
+          "name": {
+            "en": "Cairo Sulcus",
+            "es": "Cairo Sulcus"
+          },
+          "iau": "Cairo Sulcus",
+          "at": [
+            -154.48,
+            -81.62
+          ],
+          "text": {
+            "en": "A third tiger stripe; like the others, it is named after a city from the Arabian Nights.",
+            "es": "Una tercera raya de tigre; como las demás, lleva el nombre de una ciudad de Las mil y una noches."
+          }
+        },
+        {
+          "name": {
+            "en": "Alexandria Sulcus",
+            "es": "Alexandria Sulcus"
+          },
+          "iau": "Alexandria Sulcus",
+          "at": [
+            -137.56,
+            -75.63
+          ],
+          "text": {
+            "en": "The fourth tiger stripe, on the edge of the young, crater-free south polar region.",
+            "es": "La cuarta raya de tigre, en el borde de la joven región polar sur, sin cráteres."
+          }
+        },
+        {
+          "name": {
+            "en": "Samarkand Sulci",
+            "es": "Samarkand Sulci"
+          },
+          "iau": "Samarkand Sulci",
+          "at": [
+            32.5,
+            30.0
+          ],
+          "text": {
+            "en": "A band of grooves and ridges cutting across older, cratered plains.",
+            "es": "Una franja de surcos y crestas que cruza llanuras más antiguas llenas de cráteres."
+          }
+        },
+        {
+          "name": {
+            "en": "Ali Baba crater",
+            "es": "Cráter Alí Babá"
+          },
+          "iau": "Ali Baba",
+          "at": [
+            -17.51,
+            56.84
+          ],
+          "text": {
+            "en": "A crater in the heavily cratered north; features on Enceladus are named after the Arabian Nights.",
+            "es": "Un cráter en el norte, lleno de cráteres; los lugares de Encélado llevan nombres de Las mil y una noches."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Enceladus",
+        "es": "Encélado (satélite)"
+      },
+      "sources": [
+        {
+          "title": "NASA Science: Enceladus",
+          "url": "https://science.nasa.gov/saturn/moons/enceladus/"
+        },
+        {
+          "title": "NASA NSSDCA Saturnian Satellite Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/saturniansatfact.html"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary satellite physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/sats/phys_par/"
+        },
+        {
+          "title": "IAU/USGS Gazetteer of Planetary Nomenclature",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        }
+      ]
+    },
+    {
+      "id": "uranus",
+      "name": {
+        "en": "Uranus",
+        "es": "Urano"
+      },
+      "kind": "planet",
+      "parent": "sun",
+      "radius": 25362,
+      "mass": 14.5,
+      "gravity": 8.87,
+      "day": -17.24,
+      "year": 30685.4,
+      "distance": 2867.043,
+      "moons": 29,
+      "temp": {
+        "en": "−197 °C at the cloud tops, down to −224 °C higher up",
+        "es": "−197 °C en la cima de las nubes y hasta −224 °C más arriba"
+      },
+      "atmosphere": {
+        "en": "83% hydrogen, 15% helium and 2% methane",
+        "es": "83 % hidrógeno, 15 % helio y 2 % metano"
+      },
+      "discovered": {
+        "en": "William Herschel, 1781",
+        "es": "William Herschel, 1781"
+      },
+      "firstVisit": {
+        "en": "Voyager 2 flew past in 1986",
+        "es": "La Voyager 2 pasó cerca en 1986"
+      },
+      "text": {
+        "en": "Uranus is an ice giant that rolls around the Sun on its side, tilted about 98°. Methane in its air absorbs red light, giving it a pale blue-green color.",
+        "es": "Urano es un gigante helado que da vueltas al Sol acostado de lado, con una inclinación de unos 98°. El metano de su aire absorbe la luz roja y le da un color verde azulado pálido."
+      },
+      "wow": {
+        "en": "Each pole of Uranus gets about 42 years of nonstop sunlight, followed by 42 years of darkness.",
+        "es": "Cada polo de Urano recibe unos 42 años seguidos de luz del Sol y luego 42 años de oscuridad."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "North polar cap",
+            "es": "Casquete polar norte"
+          },
+          "at": [
+            0,
+            80
+          ],
+          "text": {
+            "en": "A bright cap of haze over the north pole that has grown as northern summer approaches.",
+            "es": "Un casquete brillante de bruma sobre el polo norte, que ha crecido a medida que se acerca el verano boreal."
+          }
+        },
+        {
+          "name": {
+            "en": "Southern bright band",
+            "es": "Banda brillante del sur"
+          },
+          "at": [
+            0,
+            -45
+          ],
+          "text": {
+            "en": "A bright band of clouds around 45° south, seen by the Hubble telescope.",
+            "es": "Una franja brillante de nubes cerca de los 45° sur, vista por el telescopio Hubble."
+          }
+        },
+        {
+          "name": {
+            "en": "Dark spot of 2006",
+            "es": "Mancha oscura de 2006"
+          },
+          "at": [
+            0,
+            27
+          ],
+          "text": {
+            "en": "Hubble found the first dark storm ever seen on Uranus here in 2006; like all storms, it drifted.",
+            "es": "Aquí el Hubble encontró en 2006 la primera tormenta oscura vista en Urano; como todas las tormentas, se desplazaba."
+          }
+        },
+        {
+          "name": {
+            "en": "South pole",
+            "es": "Polo sur"
+          },
+          "at": [
+            0,
+            -90
+          ],
+          "text": {
+            "en": "When Voyager 2 flew past in 1986, this pole was pointing almost straight at the Sun.",
+            "es": "Cuando la Voyager 2 pasó en 1986, este polo apuntaba casi directamente al Sol."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Uranus",
+        "es": "Urano (planeta)"
+      },
+      "sources": [
+        {
+          "title": "NASA NSSDCA Uranus Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/uranusfact.html"
+        },
+        {
+          "title": "NASA Science: Uranus facts",
+          "url": "https://science.nasa.gov/uranus/facts/"
+        },
+        {
+          "title": "NASA Science: Uranus moons",
+          "url": "https://science.nasa.gov/uranus/moons/"
+        },
+        {
+          "title": "NASA Science: Hubble discovers dark cloud in the atmosphere of Uranus",
+          "url": "https://science.nasa.gov/missions/hubble/hubble-discovers-dark-cloud-in-the-atmosphere-of-uranus"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary satellite discovery circumstances",
+          "url": "https://ssd.jpl.nasa.gov/sats/discovery.html"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/planets/phys_par.html"
+        }
+      ]
+    },
+    {
+      "id": "neptune",
+      "name": {
+        "en": "Neptune",
+        "es": "Neptuno"
+      },
+      "kind": "planet",
+      "parent": "sun",
+      "radius": 24622,
+      "mass": 17.1,
+      "gravity": 11.15,
+      "day": 16.11,
+      "year": 60189.018,
+      "distance": 4514.953,
+      "moons": 16,
+      "temp": {
+        "en": "−201 °C at the cloud tops",
+        "es": "−201 °C en la cima de las nubes"
+      },
+      "atmosphere": {
+        "en": "80% hydrogen, 19% helium and 1.5% methane",
+        "es": "80 % hidrógeno, 19 % helio y 1,5 % metano"
+      },
+      "discovered": {
+        "en": "Johann Galle, 1846, where Urbain Le Verrier's math predicted it",
+        "es": "Johann Galle, 1846, donde los cálculos de Urbain Le Verrier lo predecían"
+      },
+      "firstVisit": {
+        "en": "Voyager 2 flew past in 1989",
+        "es": "La Voyager 2 pasó cerca en 1989"
+      },
+      "text": {
+        "en": "Neptune is the most distant planet, a deep-blue ice giant whipped by the fastest winds in the solar system, up to about 2,000 km/h. It was found with mathematics before anyone saw it.",
+        "es": "Neptuno es el planeta más lejano, un gigante helado de azul intenso azotado por los vientos más rápidos del sistema solar, de hasta unos 2000 km/h. Se descubrió con matemáticas antes de que alguien lo viera."
+      },
+      "wow": {
+        "en": "Neptune takes 165 years to orbit the Sun: it finished its first lap since its discovery only in 2011.",
+        "es": "Neptuno tarda 165 años en dar la vuelta al Sol: completó su primera vuelta desde su descubrimiento recién en 2011."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Great Dark Spot",
+            "es": "Gran Mancha Oscura"
+          },
+          "at": [
+            0,
+            -22
+          ],
+          "text": {
+            "en": "A storm about as wide as Earth, seen by Voyager 2 in 1989; it had vanished when Hubble looked in 1994.",
+            "es": "Una tormenta casi tan ancha como la Tierra, vista por la Voyager 2 en 1989; había desaparecido cuando el Hubble la buscó en 1994."
+          }
+        },
+        {
+          "name": {
+            "en": "Scooter",
+            "es": "Scooter"
+          },
+          "at": [
+            0,
+            -42
+          ],
+          "text": {
+            "en": "A bright, fast-moving cloud seen by Voyager 2, nicknamed for the way it scooted around the planet.",
+            "es": "Una nube brillante y veloz vista por la Voyager 2, apodada así («patineta») por lo rápido que daba la vuelta al planeta."
+          }
+        },
+        {
+          "name": {
+            "en": "Small Dark Spot",
+            "es": "Pequeña Mancha Oscura"
+          },
+          "at": [
+            0,
+            -54
+          ],
+          "text": {
+            "en": "A smaller storm with a bright core, also called the Wizard's Eye, seen by Voyager 2 in 1989.",
+            "es": "Una tormenta más pequeña con un centro brillante, también llamada el Ojo del Mago, vista por la Voyager 2 en 1989."
+          }
+        },
+        {
+          "name": {
+            "en": "Northern dark spot of 2018",
+            "es": "Mancha oscura boreal de 2018"
+          },
+          "at": [
+            0,
+            23
+          ],
+          "text": {
+            "en": "A dark storm the Hubble telescope found in 2018 in the north; it later drifted toward the equator.",
+            "es": "Una tormenta oscura que el telescopio Hubble halló en 2018 en el norte; después se desplazó hacia el ecuador."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Neptune",
+        "es": "Neptuno (planeta)"
+      },
+      "sources": [
+        {
+          "title": "NASA NSSDCA Neptune Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html"
+        },
+        {
+          "title": "NASA Science: Neptune facts",
+          "url": "https://science.nasa.gov/neptune/neptune-facts/"
+        },
+        {
+          "title": "NASA Science: Neptune moons",
+          "url": "https://science.nasa.gov/neptune/neptune-moons/"
+        },
+        {
+          "title": "NASA/JPL Photojournal PIA01993: Neptune, two images (dark spots at 22° S and 54° S)",
+          "url": "https://photojournal.jpl.nasa.gov/catalog/PIA01993"
+        },
+        {
+          "title": "Simon et al. 2019, Formation of a new Great Dark Spot on Neptune in 2018",
+          "url": "https://ui.adsabs.harvard.edu/abs/2019GeoRL..46.3108S/abstract"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary satellite discovery circumstances",
+          "url": "https://ssd.jpl.nasa.gov/sats/discovery.html"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/planets/phys_par.html"
+        }
+      ]
+    },
+    {
+      "id": "triton",
+      "name": {
+        "en": "Triton",
+        "es": "Tritón"
+      },
+      "kind": "moon",
+      "parent": "neptune",
+      "radius": 1352.6,
+      "mass": 0.00358,
+      "gravity": 0.78,
+      "day": -141.044,
+      "year": 5.877,
+      "distance": 354.76,
+      "temp": {
+        "en": "About −235 °C",
+        "es": "Unos −235 °C"
+      },
+      "atmosphere": {
+        "en": "Very thin, mostly nitrogen",
+        "es": "Muy tenue, sobre todo nitrógeno"
+      },
+      "discovered": {
+        "en": "William Lassell, 1846",
+        "es": "William Lassell, 1846"
+      },
+      "firstVisit": {
+        "en": "Voyager 2 flew past in 1989",
+        "es": "La Voyager 2 pasó cerca en 1989"
+      },
+      "text": {
+        "en": "Triton is Neptune's largest moon and the only large moon that orbits backward, against its planet's spin. It was probably once a world like Pluto, captured from the Kuiper Belt, and it has geysers of nitrogen gas.",
+        "es": "Tritón es la luna más grande de Neptuno y la única luna grande que gira al revés, en contra de la rotación de su planeta. Probablemente fue un mundo como Plutón, capturado del cinturón de Kuiper, y tiene géiseres de nitrógeno."
+      },
+      "wow": {
+        "en": "Triton is slowly spiraling in toward Neptune; in billions of years it may be torn apart and become a ring.",
+        "es": "Tritón se acerca poco a poco a Neptuno en espiral; dentro de miles de millones de años podría despedazarse y convertirse en un anillo."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Bubembe Regio",
+            "es": "Bubembe Regio"
+          },
+          "iau": "Bubembe Regio",
+          "at": [
+            -25.0,
+            18.0
+          ],
+          "text": {
+            "en": "Home of the 'cantaloupe terrain', dimpled like the skin of a melon and found nowhere else.",
+            "es": "Hogar del «terreno de melón», con hoyuelos como la cáscara de un melón, que no existe en ningún otro lugar."
+          }
+        },
+        {
+          "name": {
+            "en": "Uhlanga Regio",
+            "es": "Uhlanga Regio"
+          },
+          "iau": "Uhlanga Regio",
+          "at": [
+            -3.0,
+            -37.0
+          ],
+          "text": {
+            "en": "The bright southern polar region, coated in nitrogen frost and streaked with dark dust from geysers.",
+            "es": "La brillante región polar sur, cubierta de escarcha de nitrógeno y con vetas oscuras de polvo de los géiseres."
+          }
+        },
+        {
+          "name": {
+            "en": "Mahilani plume",
+            "es": "Penacho Mahilani"
+          },
+          "iau": "Mahilani",
+          "at": [
+            -0.5,
+            -50.5
+          ],
+          "text": {
+            "en": "One of two geyser plumes Voyager 2 saw rising about 8 km above the surface.",
+            "es": "Uno de los dos penachos de géiser que la Voyager 2 vio elevarse unos 8 km sobre la superficie."
+          }
+        },
+        {
+          "name": {
+            "en": "Leviathan Patera",
+            "es": "Leviathan Patera"
+          },
+          "iau": "Leviathan Patera",
+          "at": [
+            28.5,
+            17.0
+          ],
+          "text": {
+            "en": "A large volcanic-looking pit that may have erupted icy lava.",
+            "es": "Un gran pozo de aspecto volcánico que podría haber expulsado lava helada."
+          }
+        },
+        {
+          "name": {
+            "en": "Ruach Planitia",
+            "es": "Ruach Planitia"
+          },
+          "iau": "Ruach Planitia",
+          "at": [
+            24.0,
+            28.0
+          ],
+          "text": {
+            "en": "A smooth plain ringed by walls, perhaps a frozen lake of icy lava.",
+            "es": "Una llanura lisa rodeada de paredes, quizá un lago congelado de lava helada."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Triton (moon)",
+        "es": "Tritón (satélite)"
+      },
+      "sources": [
+        {
+          "title": "NASA Science: Triton",
+          "url": "https://science.nasa.gov/neptune/moons/triton/"
+        },
+        {
+          "title": "NASA NSSDCA Neptunian Satellite Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptuniansatfact.html"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary satellite physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/sats/phys_par/"
+        },
+        {
+          "title": "IAU/USGS Gazetteer of Planetary Nomenclature",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        }
+      ]
+    },
+    {
+      "id": "pluto",
+      "name": {
+        "en": "Pluto",
+        "es": "Plutón"
+      },
+      "kind": "dwarf",
+      "parent": "sun",
+      "radius": 1188.3,
+      "mass": 0.00218,
+      "gravity": 0.62,
+      "day": -153.2928,
+      "year": 90560,
+      "distance": 5906.4,
+      "moons": 5,
+      "temp": {
+        "en": "−232 °C on average (−240 to −226 °C)",
+        "es": "−232 °C en promedio (de −240 a −226 °C)"
+      },
+      "atmosphere": {
+        "en": "Thin: mostly nitrogen, with some methane and carbon monoxide",
+        "es": "Tenue: sobre todo nitrógeno, con algo de metano y monóxido de carbono"
+      },
+      "discovered": {
+        "en": "Clyde Tombaugh, 1930",
+        "es": "Clyde Tombaugh, 1930"
+      },
+      "firstVisit": {
+        "en": "New Horizons flew past in 2015",
+        "es": "La New Horizons pasó cerca en 2015"
+      },
+      "text": {
+        "en": "Pluto is a dwarf planet in the Kuiper Belt, smaller than our Moon. When New Horizons flew past, it revealed a surprisingly active world with a vast heart-shaped glacier, mountains of ice and blue skies.",
+        "es": "Plutón es un planeta enano del cinturón de Kuiper, más pequeño que nuestra Luna. Cuando pasó la New Horizons, reveló un mundo sorprendentemente activo, con un enorme glaciar en forma de corazón, montañas de hielo y cielos azules."
+      },
+      "wow": {
+        "en": "Pluto hasn't completed a single orbit since it was discovered in 1930: one trip around the Sun takes 248 years.",
+        "es": "Plutón no ha completado ni una órbita desde que se descubrió en 1930: una vuelta al Sol le lleva 248 años."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Sputnik Planitia",
+            "es": "Sputnik Planitia"
+          },
+          "iau": "Sputnik Planitia",
+          "at": [
+            178.69,
+            19.51
+          ],
+          "text": {
+            "en": "A plain of nitrogen ice more than 1,000 km wide, the left half of Pluto's 'heart', slowly churning like a lava lamp.",
+            "es": "Una llanura de hielo de nitrógeno de más de 1000 km, la mitad izquierda del «corazón» de Plutón, que se remueve despacio como una lámpara de lava."
+          }
+        },
+        {
+          "name": {
+            "en": "Tombaugh Regio",
+            "es": "Tombaugh Regio"
+          },
+          "iau": "Tombaugh Regio",
+          "at": [
+            -176.78,
+            7.62
+          ],
+          "text": {
+            "en": "The bright 'heart' of Pluto, named after its discoverer, Clyde Tombaugh.",
+            "es": "El «corazón» brillante de Plutón, llamado así por su descubridor, Clyde Tombaugh."
+          }
+        },
+        {
+          "name": {
+            "en": "Belton Regio",
+            "es": "Belton Regio"
+          },
+          "iau": "Belton Regio",
+          "at": [
+            91.42,
+            -9.21
+          ],
+          "text": {
+            "en": "A long, dark red region along the equator, once nicknamed 'the Whale', colored by organic molecules called tholins.",
+            "es": "Una larga región de color rojo oscuro a lo largo del ecuador, antes apodada «la Ballena», teñida por moléculas orgánicas llamadas tolinas."
+          }
+        },
+        {
+          "name": {
+            "en": "Tenzing Montes",
+            "es": "Montes Tenzing"
+          },
+          "iau": "Tenzing Montes",
+          "at": [
+            177.38,
+            -15.61
+          ],
+          "text": {
+            "en": "Mountains of water ice up to about 6 km high, named after the Everest climber Tenzing Norgay.",
+            "es": "Montañas de hielo de agua de hasta unos 6 km de altura, llamadas así por el alpinista del Everest Tenzing Norgay."
+          }
+        },
+        {
+          "name": {
+            "en": "Wright Mons",
+            "es": "Monte Wright"
+          },
+          "iau": "Wright Mons",
+          "at": [
+            173.24,
+            -21.36
+          ],
+          "text": {
+            "en": "A huge mound with a deep pit at its summit, possibly a giant ice volcano.",
+            "es": "Un enorme montículo con un pozo profundo en la cima, quizá un volcán de hielo gigante."
+          }
+        },
+        {
+          "name": {
+            "en": "Tartarus Dorsa",
+            "es": "Tartarus Dorsa"
+          },
+          "iau": "Tartarus Dorsa",
+          "at": [
+            -126.91,
+            8.5
+          ],
+          "text": {
+            "en": "'Snakeskin' terrain of tall, blade-like ridges of frozen methane.",
+            "es": "Terreno de «piel de serpiente», con crestas altas y afiladas como cuchillas, de metano congelado."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Pluto",
+        "es": "Plutón (planeta enano)"
+      },
+      "sources": [
+        {
+          "title": "NASA NSSDCA Pluto Fact Sheet",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/plutofact.html"
+        },
+        {
+          "title": "NASA Science: Pluto facts",
+          "url": "https://science.nasa.gov/dwarf-planets/pluto/facts/"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/planets/phys_par.html"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary satellite discovery circumstances",
+          "url": "https://ssd.jpl.nasa.gov/sats/discovery.html"
+        },
+        {
+          "title": "IAU/USGS Gazetteer of Planetary Nomenclature",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        }
+      ]
+    },
+    {
+      "id": "charon",
+      "name": {
+        "en": "Charon",
+        "es": "Caronte"
+      },
+      "kind": "moon",
+      "parent": "pluto",
+      "radius": 606.0,
+      "mass": 0.000266,
+      "gravity": 0.29,
+      "day": 153.29,
+      "year": 6.387,
+      "distance": 19.596,
+      "temp": {
+        "en": "About −220 °C",
+        "es": "Unos −220 °C"
+      },
+      "atmosphere": {
+        "en": "None",
+        "es": "Ninguna"
+      },
+      "discovered": {
+        "en": "James Christy and Robert Harrington, 1978",
+        "es": "James Christy y Robert Harrington, 1978"
+      },
+      "firstVisit": {
+        "en": "New Horizons flew past in 2015",
+        "es": "La New Horizons pasó cerca en 2015"
+      },
+      "text": {
+        "en": "Charon is Pluto's largest moon, about half as wide as Pluto, so big that the two circle a point in space between them. It has enormous canyons and a reddish north pole.",
+        "es": "Caronte es la luna más grande de Plutón, de casi la mitad de su ancho; es tan grande que ambos giran alrededor de un punto en el espacio entre los dos. Tiene cañones enormes y un polo norte rojizo."
+      },
+      "wow": {
+        "en": "Pluto and Charon always show each other the same face: seen from one side of Pluto, Charon hangs motionless in the sky.",
+        "es": "Plutón y Caronte siempre se muestran la misma cara: desde un lado de Plutón, Caronte parece colgar inmóvil en el cielo."
+      },
+      "places": [
+        {
+          "name": {
+            "en": "Argo Chasma",
+            "es": "Argo Chasma"
+          },
+          "iau": "Argo Chasma",
+          "at": [
+            80.4,
+            27.8
+          ],
+          "text": {
+            "en": "A canyon about 9 km deep, more than five times as deep as the Grand Canyon.",
+            "es": "Un cañón de unos 9 km de profundidad, más de cinco veces más hondo que el Gran Cañón."
+          }
+        },
+        {
+          "name": {
+            "en": "Mandjet Chasma",
+            "es": "Mandjet Chasma"
+          },
+          "iau": "Mandjet Chasma",
+          "at": [
+            -65.6,
+            4.8
+          ],
+          "text": {
+            "en": "Part of a belt of giant canyons across Charon, cracks that may have opened as an inner ocean froze and expanded.",
+            "es": "Parte de un cinturón de cañones gigantes que cruza Caronte, grietas que pudieron abrirse cuando un océano interior se congeló y se expandió."
+          }
+        },
+        {
+          "name": {
+            "en": "Kubrick Mons",
+            "es": "Monte Kubrick"
+          },
+          "iau": "Kubrick Mons",
+          "at": [
+            30.8,
+            3.6
+          ],
+          "text": {
+            "en": "A mountain sitting in a moat, a puzzle on Charon's smooth southern plains.",
+            "es": "Una montaña rodeada por un foso, un enigma en las llanuras lisas del sur de Caronte."
+          }
+        },
+        {
+          "name": {
+            "en": "Clarke Montes",
+            "es": "Montes Clarke"
+          },
+          "iau": "Clarke Montes",
+          "at": [
+            7.05,
+            -5.12
+          ],
+          "text": {
+            "en": "A cluster of mountains rising from the smooth southern plains, named after the writer Arthur C. Clarke.",
+            "es": "Un grupo de montañas que se alzan en las llanuras lisas del sur, llamadas así por el escritor Arthur C. Clarke."
+          }
+        }
+      ],
+      "wiki": {
+        "en": "Charon (moon)",
+        "es": "Caronte (satélite)"
+      },
+      "sources": [
+        {
+          "title": "NASA Science: Charon",
+          "url": "https://science.nasa.gov/dwarf-planets/pluto/moons/charon/"
+        },
+        {
+          "title": "NASA NSSDCA Pluto Fact Sheet (Charon)",
+          "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/plutofact.html"
+        },
+        {
+          "title": "JPL Solar System Dynamics: planetary satellite physical parameters",
+          "url": "https://ssd.jpl.nasa.gov/sats/phys_par/"
+        },
+        {
+          "title": "NASA: A 'Super Grand Canyon' on Pluto's moon Charon",
+          "url": "https://www.nasa.gov/missions/a-super-grand-canyon-on-plutos-moon-charon"
+        },
+        {
+          "title": "IAU/USGS Gazetteer of Planetary Nomenclature",
+          "url": "https://planetarynames.wr.usgs.gov/"
+        }
+      ]
+    },
+    {
+      "id": "eris",
+      "name": {
+        "en": "Eris",
+        "es": "Eris"
+      },
+      "kind": "dwarf",
+      "parent": "sun",
+      "radius": 1163,
+      "mass": 0.00276,
+      "gravity": 0.82,
+      "year": 204517,
+      "distance": 10162.8,
+      "moons": 1,
+      "temp": {
+        "en": "−243 to −217 °C",
+        "es": "De −243 a −217 °C"
+      },
+      "atmosphere": {
+        "en": "None detected",
+        "es": "No se ha detectado"
+      },
+      "discovered": {
+        "en": "Mike Brown, Chad Trujillo and David Rabinowitz, 2005",
+        "es": "Mike Brown, Chad Trujillo y David Rabinowitz, 2005"
+      },
+      "firstVisit": {
+        "en": "No spacecraft has visited it",
+        "es": "Ninguna nave lo ha visitado"
+      },
+      "text": {
+        "en": "Eris is a dwarf planet that orbits far beyond Neptune; it is almost exactly the size of Pluto, but a bit more massive. Its discovery led astronomers to define the word 'planet' in 2006 and reclassify Pluto.",
+        "es": "Eris es un planeta enano que orbita mucho más allá de Neptuno; tiene casi el mismo tamaño que Plutón, pero algo más de masa. Su descubrimiento llevó a los astrónomos a definir la palabra «planeta» en 2006 y a reclasificar a Plutón."
+      },
+      "wow": {
+        "en": "Eris is named after the Greek goddess of discord, fitting for the world that sparked the debate over Pluto.",
+        "es": "Eris lleva el nombre de la diosa griega de la discordia, muy adecuado para el mundo que desató el debate sobre Plutón."
+      },
+      "wiki": {
+        "en": "Eris (dwarf planet)",
+        "es": "Eris (planeta enano)"
+      },
+      "sources": [
+        {
+          "title": "NASA Science: Eris",
+          "url": "https://science.nasa.gov/dwarf-planets/eris/"
+        },
+        {
+          "title": "JPL Small-Body Database: 136199 Eris",
+          "url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=136199"
+        },
+        {
+          "title": "Wikipedia: Eris (dwarf planet) (occultation radius and mass)",
+          "url": "https://en.wikipedia.org/wiki/Eris_(dwarf_planet)"
+        }
+      ]
+    },
+    {
+      "id": "haumea",
+      "name": {
+        "en": "Haumea",
+        "es": "Haumea"
+      },
+      "kind": "dwarf",
+      "parent": "sun",
+      "radius": 772,
+      "mass": 0.000662,
+      "day": 3.9154,
+      "year": 103208,
+      "distance": 6441.7,
+      "moons": 2,
+      "temp": {
+        "en": "Below −223 °C",
+        "es": "Menos de −223 °C"
+      },
+      "atmosphere": {
+        "en": "None detected",
+        "es": "No se ha detectado"
+      },
+      "discovered": {
+        "en": "Claimed in 2005 by two teams: José Luis Ortiz's in Spain and Mike Brown's in the United States",
+        "es": "Reclamado en 2005 por dos equipos: el de José Luis Ortiz, en España, y el de Mike Brown, en Estados Unidos"
+      },
+      "firstVisit": {
+        "en": "No spacecraft has visited it",
+        "es": "Ninguna nave lo ha visitado"
+      },
+      "text": {
+        "en": "Haumea is a dwarf planet in the Kuiper Belt shaped like a squashed egg, stretched by its very fast spin. It has two small moons and a thin ring, the first ring ever found around a dwarf planet.",
+        "es": "Haumea es un planeta enano del cinturón de Kuiper con forma de huevo aplastado, estirado por su giro rapidísimo. Tiene dos lunas pequeñas y un anillo delgado, el primero que se descubrió alrededor de un planeta enano."
+      },
+      "wow": {
+        "en": "A day on Haumea lasts less than 4 hours, making it one of the fastest-spinning large objects in the solar system.",
+        "es": "Un día en Haumea dura menos de 4 horas: es uno de los objetos grandes que giran más rápido en el sistema solar."
+      },
+      "wiki": {
+        "en": "Haumea",
+        "es": "Haumea (planeta enano)"
+      },
+      "sources": [
+        {
+          "title": "NASA Science: Haumea",
+          "url": "https://science.nasa.gov/dwarf-planets/haumea/"
+        },
+        {
+          "title": "JPL Small-Body Database: 136108 Haumea",
+          "url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=136108"
+        },
+        {
+          "title": "Wikipedia: Haumea (mean diameter, mass, temperature)",
+          "url": "https://en.wikipedia.org/wiki/Haumea"
+        }
+      ]
+    },
+    {
+      "id": "makemake",
+      "name": {
+        "en": "Makemake",
+        "es": "Makemake"
+      },
+      "kind": "dwarf",
+      "parent": "sun",
+      "radius": 715,
+      "day": 22.83,
+      "year": 112365,
+      "distance": 6817.3,
+      "moons": 1,
+      "temp": {
+        "en": "About −240 °C",
+        "es": "Unos −240 °C"
+      },
+      "atmosphere": {
+        "en": "None detected",
+        "es": "No se ha detectado"
+      },
+      "discovered": {
+        "en": "Mike Brown, Chad Trujillo and David Rabinowitz, 2005",
+        "es": "Mike Brown, Chad Trujillo y David Rabinowitz, 2005"
+      },
+      "firstVisit": {
+        "en": "No spacecraft has visited it",
+        "es": "Ninguna nave lo ha visitado"
+      },
+      "text": {
+        "en": "Makemake is a reddish dwarf planet in the Kuiper Belt, smaller than Pluto and coated with frozen methane. Found just after Easter 2005, it is named after the creator god of the Rapa Nui people of Easter Island.",
+        "es": "Makemake es un planeta enano rojizo del cinturón de Kuiper, más pequeño que Plutón y cubierto de metano congelado. Se descubrió justo después de la Pascua de 2005 y lleva el nombre del dios creador del pueblo rapanui de la Isla de Pascua."
+      },
+      "wow": {
+        "en": "Makemake is the second-brightest object in the Kuiper Belt after Pluto, yet its little moon is as dark as charcoal.",
+        "es": "Makemake es el segundo objeto más brillante del cinturón de Kuiper después de Plutón, pero su pequeña luna es oscura como el carbón."
+      },
+      "wiki": {
+        "en": "Makemake",
+        "es": "Makemake (planeta enano)"
+      },
+      "sources": [
+        {
+          "title": "NASA Science: Makemake",
+          "url": "https://science.nasa.gov/dwarf-planets/makemake/"
+        },
+        {
+          "title": "JPL Small-Body Database: 136472 Makemake",
+          "url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=136472"
+        }
+      ]
+    },
+    {
+      "id": "halley",
+      "name": {
+        "en": "Halley's Comet",
+        "es": "Cometa Halley"
+      },
+      "kind": "comet",
+      "parent": "sun",
+      "radius": 5.5,
+      "year": 27728,
+      "distance": 2682.1,
+      "atmosphere": {
+        "en": "Near the Sun, a glowing cloud of gas (mostly water vapor) and dust, with long tails",
+        "es": "Cerca del Sol, una nube brillante de gas (sobre todo vapor de agua) y polvo, con largas colas"
+      },
+      "discovered": {
+        "en": "Seen since ancient times; Edmond Halley predicted its return in 1705",
+        "es": "Observado desde la Antigüedad; Edmond Halley predijo su regreso en 1705"
+      },
+      "firstVisit": {
+        "en": "Vega 1, Vega 2 and Giotto flew past in 1986",
+        "es": "Las sondas Vega 1, Vega 2 y Giotto pasaron cerca en 1986"
+      },
+      "text": {
+        "en": "Halley's Comet is a dark, peanut-shaped lump of ice and dust about 15 km long that swings past the Sun about every 76 years. It is the only naked-eye comet that a person can hope to see twice in a lifetime.",
+        "es": "El cometa Halley es un bloque oscuro de hielo y polvo, con forma de maní y unos 15 km de largo, que pasa junto al Sol más o menos cada 76 años. Es el único cometa visible a simple vista que una persona puede esperar ver dos veces en su vida."
+      },
+      "wow": {
+        "en": "Two meteor showers, the Eta Aquariids in May and the Orionids in October, are dust left behind by Halley. It returns in 2061.",
+        "es": "Dos lluvias de meteoros, las eta acuáridas en mayo y las oriónidas en octubre, son polvo que dejó el Halley. Volverá en 2061."
+      },
+      "wiki": {
+        "en": "Halley's Comet",
+        "es": "Cometa Halley"
+      },
+      "sources": [
+        {
+          "title": "NASA Science: 1P/Halley",
+          "url": "https://science.nasa.gov/solar-system/comets/1p-halley/"
+        },
+        {
+          "title": "JPL Small-Body Database: 1P/Halley",
+          "url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=1P"
+        }
+      ]
+    }
+  ]
+}

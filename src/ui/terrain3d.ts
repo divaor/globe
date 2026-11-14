@@ -3,9 +3,9 @@
 // colours. A slider raises the mountains and deepens the valleys. Drag to turn, pinch or scroll to zoom.
 import { X } from 'lucide';
 import { h, icon, clear } from './dom';
-import { tiles, TERRAIN, SENTINEL, mayDownload, prefs, tileRange, lonToX, latToY, type TileSource, type Want } from '../engine/tiles';
+import { tiles, TERRAIN, SENTINEL, mayDownload, prefs, srcRange, tileX, tileY, cols, rows, shrinks, type TileSource, type Want } from '../engine/tiles';
 import { ELEVATION, RELIEF } from '../layers/imagery';
-import { terrainActions } from '../layers/terrainActions';
+import { terrainActions, type Terrain3DContext } from '../layers/terrainActions';
 import { lang } from '../app/i18n';
 import type { App } from '../app/app';
 import type { Shell } from './shell';
@@ -13,9 +13,8 @@ import type { TerrainUI } from './terrain';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
-const R = 6371; // km
 const RAD = Math.PI / 180;
-type Drape = 'satellite' | 'relief' | 'elevation';
+type Drape = string;
 
 const VS = `#version 300 es
 in vec3 a_pos;
@@ -23,8 +22,8 @@ in vec3 a_nrm;
 in vec2 a_merc;
 uniform mat4 u_mvp;
 uniform vec3 u_cam;
-uniform vec4 u_tr;   // the drape's tiles: x0, y0, nx, ny at zoom u_tn = 2^z
-uniform float u_tn;
+uniform vec4 u_tr;   // the drape's tiles: x0, y0, nx, ny of a grid of u_tn.x columns and u_tn.y rows
+uniform vec2 u_tn;
 out vec3 v_nrm;
 out vec2 v_uv;
 out float v_dist;
@@ -32,7 +31,7 @@ void main() {
   gl_Position = u_mvp * vec4(a_pos, 1.0);
   v_nrm = a_nrm;
   vec2 t = a_merc * u_tn;
-  v_uv = vec2(mod(t.x - u_tr.x, u_tn) / u_tr.z, (t.y - u_tr.y) / u_tr.w);
+  v_uv = vec2(mod(t.x - u_tr.x, u_tn.x) / u_tr.z, (t.y - u_tr.y) / u_tr.w);
   v_dist = distance(a_pos, u_cam);
 }`;
 const FS = `#version 300 es
@@ -93,11 +92,11 @@ function paletteFn(stops: [number, string][]) {
 /** The largest zoom (up to the source's) at which a box takes at most `lim` × `lim` tiles. */
 function zoomFor(box: [number, number, number, number], src: TileSource, lim: number) {
   let z = src.maxZoom;
-  for (; z > 0; z--) { const r = tileRange(box, z); if (r.nx <= lim && r.ny <= lim) break; }
+  for (; z > 0; z--) { const r = srcRange(src, box, z); if (r.nx <= lim && r.ny <= lim) break; }
   return z;
 }
 const listOf = (box: [number, number, number, number], src: TileSource, z: number): Want[] => {
-  const r = tileRange(box, z);
+  const r = srcRange(src, box, z);
   const out: Want[] = [];
   for (let j = 0; j < r.ny; j++) for (let i = 0; i < r.nx; i++) out.push({ src, z, x: (r.x0 + i) % r.n, y: r.y0 + j });
   return out;
@@ -116,21 +115,43 @@ export class Terrain3D {
 
   get isOpen() { return !!this.el; }
 
+  /** The Earth: Terrain Tiles heights, Sentinel-2 pictures or the relief and elevation colours, city names. */
+  private earth(): Terrain3DContext {
+    const cities = this.app.data.cities;
+    return {
+      R: 6371, heights: TERRAIN, drape: 'relief', sky: [0.80, 0.87, 0.93], skyCss: '',
+      drapes: [
+        { id: 'satellite', label: L('Satellite', 'Satélite'), src: SENTINEL },
+        { id: 'relief', label: L('Relief', 'Relieve'), palette: RELIEF },
+        { id: 'elevation', label: L('Elevation', 'Altitud'), palette: ELEVATION },
+      ],
+      labels: ([bw, bs, be, bn]) => {
+        const inLon = (lon: number) => (bw <= be ? lon >= bw && lon <= be : lon >= bw || lon <= be);
+        return cities.filter((c) => c.lat >= bs && c.lat <= bn && inLon(c.lon)).sort((a, b) => b.pop - a.pop).slice(0, 12).map((c) => ({ name: es() && c.es ? c.es : c.name, lon: c.lon, lat: c.lat }));
+      },
+      areaName: (box) => this.ui.areaName(box),
+    };
+  }
+
   async open() {
     if (this.el) return;
+    const world = terrainActions.context();
+    const cx = world ?? this.earth();
+    const R = cx.R;
     const v = this.app.renderer.view;
-    const full = this.ui.screenBox();
-    if (!full) { this.shell.toast(L('Turn the map so that land is on screen.', 'Gira el mapa para que se vea tierra.')); return; }
+    const full = world ? this.worldBox() : this.ui.screenBox();
+    if (!full) { this.shell.toast(world ? L('Turn the globe so that the ground is on screen.', 'Gira el globo para que se vea el suelo.') : L('Turn the map so that land is on screen.', 'Gira el mapa para que se vea tierra.')); return; }
     this.shell.sheet.close();
-    // The area: what is on screen, at most 1,500 km each way from the centre.
+    // The area: what is on screen, at most 1,500 km each way from the centre (less on a small world).
     const lon0 = v.lon, lat0 = Math.max(-80, Math.min(80, v.lat));
     const [fw, fs, fe, fn] = full;
     const spanLon = ((fe - fw + 360) % 360) || 360;
-    const maxDeg = 1500 / 111;
+    const kmPerDeg = (R * Math.PI) / 180;
+    const maxDeg = Math.min(1500, R * 0.6) / kmPerDeg;
     const halfLat = Math.min((fn - fs) / 2, maxDeg), halfLon = Math.min(spanLon / 2, maxDeg / Math.cos(lat0 * RAD));
     const box: [number, number, number, number] = [((lon0 - halfLon + 540) % 360) - 180, Math.max(-84, lat0 - halfLat), ((lon0 + halfLon + 540) % 360) - 180, Math.min(84, lat0 + halfLat)];
-    const halfKm = Math.max(halfLat * 111, halfLon * 111 * Math.cos(lat0 * RAD));
-    const name = this.ui.areaName(box);
+    const halfKm = Math.max(halfLat * kmPerDeg, halfLon * kmPerDeg * Math.cos(lat0 * RAD));
+    const name = cx.areaName(box);
 
     // ---- the overlay
     const canvas = h('canvas', { class: 't3d-canvas' }) as HTMLCanvasElement;
@@ -141,7 +162,7 @@ export class Terrain3D {
     const slider = h('input', { type: 'range', class: 't3d-slider', min: '1', max: '10', step: '0.1', 'aria-label': L('Height exaggeration', 'Exageración del relieve') }) as HTMLInputElement;
     const drapes = h('div', { class: 'chip-row t3d-drapes' });
     const labels = h('div', { class: 't3d-labels' });
-    const el = h('div', { class: 't3d', role: 'dialog', 'aria-label': L('3D terrain', 'Relieve en 3D') }, canvas, labels,
+    const el = h('div', { class: 't3d', role: 'dialog', 'aria-label': L('3D terrain', 'Relieve en 3D'), style: cx.skyCss ? { background: cx.skyCss } : undefined }, canvas, labels,
       h('div', { class: 't3d-head glass' }, h('strong', null, `⛰️ ${L('3D terrain', 'Relieve en 3D')}`), h('span', { class: 't3d-name' }, es() ? name.es : name.en), close),
       h('div', { class: 't3d-foot glass' },
         h('label', { class: 't3d-row' }, h('span', null, L('Raise the mountains', 'Elevar las montañas')), slider, kLabel),
@@ -160,8 +181,9 @@ export class Terrain3D {
 
     // ---- the heights: at most 6 × 6 terrain tiles over the area
     if (!prefs.detail) { status.textContent = L('Turn on detailed terrain in Settings to see the area in 3D.', 'Activa el relieve detallado en Ajustes para ver la zona en 3D.'); return; }
-    const zh = zoomFor(box, TERRAIN, 6);
-    const hList = listOf(box, TERRAIN, zh);
+    const HS = cx.heights;
+    const zh = zoomFor(box, HS, 6);
+    const hList = listOf(box, HS, zh);
     const got = await tiles.loadAll(hList, '3d', (n) => { status.textContent = L(`Loading the heights… ${n} of ${hList.length}`, `Cargando las alturas… ${n} de ${hList.length}`); });
     if (this.el !== el) return;
     if (!got) {
@@ -170,14 +192,14 @@ export class Terrain3D {
         : L('The heights could not be loaded; try again in a moment.', 'No se pudieron cargar las alturas; vuelve a intentarlo en un momento.');
       return;
     }
-    const hr = tileRange(box, zh);
+    const hr = srcRange(HS, box, zh);
     const HW = hr.nx * 256, HH = hr.ny * 256;
     const heights = new Float32Array(HW * HH);
     const scratch = document.createElement('canvas');
     scratch.width = 256; scratch.height = 256;
     const sctx = scratch.getContext('2d', { willReadFrequently: true })!;
     for (let j = 0; j < hr.ny; j++) for (let i = 0; i < hr.nx; i++) {
-      const bmp = tiles.get(TERRAIN, zh, (hr.x0 + i) % hr.n, hr.y0 + j);
+      const bmp = tiles.get(HS, zh, (hr.x0 + i) % hr.n, hr.y0 + j);
       if (!bmp) continue;
       sctx.clearRect(0, 0, 256, 256);
       sctx.drawImage(bmp, 0, 0);
@@ -189,8 +211,8 @@ export class Terrain3D {
     }
     // Height at a place: bilinear between the four nearest height pixels.
     const hAt = (lon: number, lat: number) => {
-      const px = ((((lonToX(lon, zh) - hr.x0) % hr.n) + hr.n) % hr.n) * 256 - 0.5;
-      const py = (latToY(lat, zh) - hr.y0) * 256 - 0.5;
+      const px = ((((tileX(HS, lon, zh) - hr.x0) % hr.n) + hr.n) % hr.n) * 256 - 0.5;
+      const py = (tileY(HS, lat, zh) - hr.y0) * 256 - 0.5;
       const x0 = Math.max(0, Math.min(HW - 2, Math.floor(px))), y0 = Math.max(0, Math.min(HH - 2, Math.floor(py)));
       const fx = Math.max(0, Math.min(1, px - x0)), fy = Math.max(0, Math.min(1, py - y0));
       const a = heights[y0 * HW + x0], b = heights[y0 * HW + x0 + 1], c = heights[(y0 + 1) * HW + x0], d = heights[(y0 + 1) * HW + x0 + 1];
@@ -208,7 +230,8 @@ export class Terrain3D {
       hg[k] = hAt(((lon + 540) % 360) - 180, lat);
       const cl = Math.cos(lat * RAD);
       unit[k * 3] = cl * Math.cos(lon * RAD); unit[k * 3 + 1] = cl * Math.sin(lon * RAD); unit[k * 3 + 2] = Math.sin(lat * RAD);
-      merc[k * 2] = (lon + 180) / 360; merc[k * 2 + 1] = latToY(lat, 0);
+      // Where the point falls in the drape's tiles, as a fraction of the world (Mercator on the Earth, a plain grid elsewhere).
+      merc[k * 2] = (lon + 180) / 360; merc[k * 2 + 1] = shrinks(HS) ? tileY(HS, lat, 0) : (90 - lat) / 180;
     }
     const c0 = [Math.cos(lat0 * RAD) * Math.cos(lon0 * RAD), Math.cos(lat0 * RAD) * Math.sin(lon0 * RAD), Math.sin(lat0 * RAD)];
     const E = [-Math.sin(lon0 * RAD), Math.cos(lon0 * RAD), 0];
@@ -259,8 +282,10 @@ export class Terrain3D {
       return b;
     };
     // A small area looks right at ×1.5; a mountain range needs more, a continent much more.
-    const maxK = Math.max(4, Math.min(25, halfKm / 20));
-    let kx = Math.max(1.5, Math.min(10, halfKm / 60));
+    const ks = cx.kScale ?? 1;
+    const maxK = Math.max(4, Math.min(25, halfKm / 20)) * ks;
+    let kx = Math.max(1.5, Math.min(10, halfKm / 60)) * ks;
+    kx = Math.round(kx * 10) / 10;
     build(kx);
     const pbuf = buf(pos, 0, 3, gl.DYNAMIC_DRAW), nbuf = buf(nrm, 1, 3, gl.DYNAMIC_DRAW);
     buf(merc, 2, 2, gl.STATIC_DRAW);
@@ -270,7 +295,7 @@ export class Terrain3D {
 
     // ---- the drape: a texture in the tiles' own (Web Mercator) space
     const tex = gl.createTexture()!;
-    let drapeRange = { z: zh, x0: hr.x0, y0: hr.y0, nx: hr.nx, ny: hr.ny, n: hr.n };
+    let drapeRange = { z: zh, x0: hr.x0, y0: hr.y0, nx: hr.nx, ny: hr.ny, n: hr.n, m: rows(HS, zh) };
     const upload = (c: HTMLCanvasElement) => {
       gl.bindTexture(gl.TEXTURE_2D, tex);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, c);
@@ -280,32 +305,34 @@ export class Terrain3D {
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
     };
     /** Relief or elevation colours from the heights (the 3D light does the shading). */
-    const colourDrape = (d: 'relief' | 'elevation') => {
+    const colourDrape = (stops: [number, string][]) => {
       const step = Math.max(1, Math.ceil(Math.max(HW, HH) / 2048));
       const c = document.createElement('canvas');
       c.width = Math.ceil(HW / step); c.height = Math.ceil(HH / step);
       const img = c.getContext('2d')!.createImageData(c.width, c.height);
-      const pal = paletteFn(d === 'elevation' ? ELEVATION : RELIEF);
+      const pal = paletteFn(stops);
       for (let y = 0; y < c.height; y++) for (let x = 0; x < c.width; x++) {
         const [r, g, b] = pal(heights[y * step * HW + x * step]);
         const q = (y * c.width + x) * 4;
         img.data[q] = r; img.data[q + 1] = g; img.data[q + 2] = b; img.data[q + 3] = 255;
       }
       c.getContext('2d')!.putImageData(img, 0, 0);
-      drapeRange = { z: zh, x0: hr.x0, y0: hr.y0, nx: hr.nx, ny: hr.ny, n: hr.n };
+      drapeRange = { z: zh, x0: hr.x0, y0: hr.y0, nx: hr.nx, ny: hr.ny, n: hr.n, m: rows(HS, zh) };
       upload(c);
     };
     let drapeToken = 0;
-    const satelliteDrape = async () => {
+    /** A drape of pictures (satellite on the Earth, a world's photo or colour-shaded heights): tiles as they arrive. */
+    const fallback = cx.drapes.find((d) => d.palette)?.palette ?? RELIEF;
+    const satelliteDrape = async (SRC: TileSource) => {
       const token = ++drapeToken;
-      const zs = zoomFor(box, SENTINEL, 8);
-      const list = listOf(box, SENTINEL, zs);
-      const r = tileRange(box, zs);
+      const zs = zoomFor(box, SRC, 8);
+      const list = listOf(box, SRC, zs);
+      const r = srcRange(SRC, box, zs);
       const c = document.createElement('canvas');
       c.width = r.nx * 256; c.height = r.ny * 256;
       const ctx = c.getContext('2d')!;
       // The relief colours first, under the pictures still on their way.
-      ctx.fillStyle = '#8fa38f'; ctx.fillRect(0, 0, c.width, c.height);
+      ctx.fillStyle = world ? '#777777' : '#8fa38f'; ctx.fillRect(0, 0, c.width, c.height);
       const drawn = new Set<string>();
       const paint = () => {
         if (token !== drapeToken) return;
@@ -313,27 +340,28 @@ export class Terrain3D {
         for (const t of list) {
           const key = `${t.x}/${t.y}`;
           if (drawn.has(key)) continue;
-          const bmp = tiles.get(SENTINEL, zs, t.x, t.y);
+          const bmp = tiles.get(SRC, zs, t.x, t.y);
           if (!bmp) continue;
           ctx.drawImage(bmp, ((t.x - r.x0 + r.n) % r.n) * 256, (t.y - r.y0) * 256);
           drawn.add(key); any = true;
         }
-        if (any) { drapeRange = { z: zs, x0: r.x0, y0: r.y0, nx: r.nx, ny: r.ny, n: r.n }; upload(c); this.info.tiles = drawn.size; dirty(); }
+        if (any) { drapeRange = { z: zs, x0: r.x0, y0: r.y0, nx: r.nx, ny: r.ny, n: r.n, m: rows(SRC, zs) }; upload(c); this.info.tiles = drawn.size; dirty(); }
       };
       paint();
       await tiles.loadAll(list, '3d', () => paint());
       paint();
-      if (!drawn.size && token === drapeToken) { colourDrape('relief'); dirty(); }
+      if (!drawn.size && token === drapeToken) { colourDrape(fallback); dirty(); }
     };
     const setDrape = (d: Drape) => {
       this.info.drape = d;
       clear(drapes);
-      for (const [id, label] of [['satellite', L('Satellite', 'Satélite')], ['relief', L('Relief', 'Relieve')], ['elevation', L('Elevation', 'Altitud')]] as [Drape, string][]) {
-        const b = h('button', { type: 'button', class: `chip${d === id ? ' on' : ''}`, 'data-drape': id }, label);
-        b.addEventListener('click', () => setDrape(id));
+      for (const dr of cx.drapes) {
+        const b = h('button', { type: 'button', class: `chip${d === dr.id ? ' on' : ''}`, 'data-drape': dr.id }, dr.label);
+        b.addEventListener('click', () => setDrape(dr.id));
         drapes.append(b);
       }
-      if (d === 'satellite') void satelliteDrape(); else { drapeToken++; colourDrape(d); }
+      const dr = cx.drapes.find((x) => x.id === d) ?? cx.drapes[0];
+      if (dr.src) void satelliteDrape(dr.src); else { drapeToken++; colourDrape(dr.palette ?? fallback); }
       dirty();
     };
 
@@ -342,11 +370,8 @@ export class Terrain3D {
     const dist0 = halfKm * 2.3;
     let dist = dist0;
     const centreH = () => (hAt(lon0, lat0) * kx) / 1000;
-    // City names (the largest in the area).
-    const [bw, bs, be, bn] = box;
-    const inLon = (lon: number) => (bw <= be ? lon >= bw && lon <= be : lon >= bw || lon <= be);
-    const cities = this.app.data.cities.filter((c) => c.lat >= bs && c.lat <= bn && inLon(c.lon)).sort((a, b) => b.pop - a.pop).slice(0, 12)
-      .map((c) => ({ el: h('div', { class: 't3d-label' }, es() && c.es ? c.es : c.name), lon: c.lon, lat: c.lat, h: hAt(c.lon, c.lat) }));
+    // Names: the largest cities in the area, or another world's biggest named places.
+    const cities = cx.labels(box).map((c) => ({ el: h('div', { class: 't3d-label' }, c.name), lon: c.lon, lat: c.lat, h: hAt(c.lon, c.lat) }));
     for (const c of cities) labels.append(c.el);
     const local = (lon: number, lat: number, hh: number) => {
       const cl = Math.cos(lat * RAD), r = R + (hh * kx) / 1000;
@@ -374,11 +399,11 @@ export class Terrain3D {
       gl.uniformMatrix4fv(U('u_mvp'), false, mvp);
       gl.uniform3f(U('u_cam'), eye[0], eye[1], eye[2]);
       gl.uniform4f(U('u_tr'), drapeRange.x0, drapeRange.y0, drapeRange.nx, drapeRange.ny);
-      gl.uniform1f(U('u_tn'), drapeRange.n);
+      gl.uniform2f(U('u_tn'), drapeRange.n, drapeRange.m);
       const ln = Math.hypot(1, 1.3, 1);
       gl.uniform3f(U('u_light'), -1 / ln, 1.3 / ln, -1 / ln);
       gl.uniform1f(U('u_fog'), dist * 3.5);
-      gl.uniform3f(U('u_sky'), 0.80, 0.87, 0.93);
+      gl.uniform3f(U('u_sky'), cx.sky[0], cx.sky[1], cx.sky[2]);
       gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, tex);
       gl.uniform1i(U('u_tex'), 0);
       gl.bindVertexArray(vao);
@@ -400,6 +425,7 @@ export class Terrain3D {
     this.info = { tiles: 0, heights: got, k: kx, maxK, drape: 'relief', ready: true, frames: 0, top };
 
     // ---- the slider and the drape
+    slider.min = String(Math.min(1, kx));
     slider.max = String(Math.round(maxK * 10) / 10);
     slider.value = String(kx);
     const showK = () => { kLabel.textContent = `×${kx.toLocaleString(es() ? 'es-ES' : 'en-GB', { maximumFractionDigits: 1 })}`; };
@@ -413,7 +439,7 @@ export class Terrain3D {
       showK(); dirty();
     });
     const active = this.app.layers.map((l) => l.def.id);
-    setDrape(active.includes('satellite') ? 'satellite' : active.includes('elevation') ? 'elevation' : 'relief');
+    setDrape(world ? cx.drape : active.includes('satellite') ? 'satellite' : active.includes('elevation') ? 'elevation' : 'relief');
     status.textContent = '';
 
     // ---- turning and zooming
@@ -440,6 +466,17 @@ export class Terrain3D {
     ro.observe(canvas);
     this.cleanup.push(() => ro.disconnect(), () => { gl.deleteTexture(tex); gl.deleteProgram(prog); gl.getExtension('WEBGL_lose_context')?.loseContext(); });
     dirty();
+  }
+
+  /** On another world, the box of what is on screen (anywhere on the globe counts). */
+  private worldBox(): [number, number, number, number] | null {
+    const v = this.app.renderer.view;
+    const pts: [number, number][] = [];
+    for (let j = 0; j <= 8; j++) for (let i = 0; i <= 8; i++) { const g = v.invert((v.w * i) / 8, (v.mapH * j) / 8); if (g) pts.push(g as [number, number]); }
+    if (!pts.length) return null;
+    const lats = pts.map((p) => p[1]);
+    const dl = Math.max(...pts.map((p) => Math.abs(((p[0] - v.lon + 540) % 360) - 180)));
+    return [((v.lon - dl + 540) % 360) - 180, Math.min(...lats), ((v.lon + dl + 540) % 360) - 180, Math.max(...lats)];
   }
 
   private cleanup: (() => void)[] = [];

@@ -1,0 +1,17 @@
+{
+  "name": { "en": "Space exploration", "es": "Exploración espacial" },
+  "categories": [
+    { "id": "rocket", "name": { "en": "Rockets and launch sites", "es": "Cohetes y bases de lanzamiento" }, "icon": "🚀", "color": "#e76f51" },
+    { "id": "orbit", "name": { "en": "Satellites and space stations", "es": "Satélites y estaciones espaciales" }, "icon": "🛰️", "color": "#4cc9f0" },
+    { "id": "crew", "name": { "en": "Astronauts and cosmonauts", "es": "Astronautas y cosmonautas" }, "icon": "🧑‍🚀", "color": "#ffd166" },
+    { "id": "probe", "name": { "en": "Probes and flybys", "es": "Sondas y sobrevuelos" }, "icon": "📡", "color": "#90be6d" },
+    { "id": "lander", "name": { "en": "Landers and rovers", "es": "Módulos de aterrizaje y vehículos" }, "icon": "🚙", "color": "#f4a261" },
+    { "id": "observatory", "name": { "en": "Observatories and telescopes", "es": "Observatorios y telescopios" }, "icon": "🔭", "color": "#9b5de5" },
+    { "id": "astronomer", "name": { "en": "Astronomers and scientists", "es": "Astrónomos y científicos" }, "icon": "🧑‍🔬", "color": "#f15bb5" },
+    { "id": "discovery", "name": { "en": "Discoveries", "es": "Descubrimientos" }, "icon": "💡", "color": "#00bbf9" },
+    { "id": "control", "name": { "en": "Mission control and engineers", "es": "Control de misión e ingenieros" }, "icon": "🎛️", "color": "#8d99ae" },
+    { "id": "place", "name": { "en": "Places on other worlds", "es": "Lugares en otros mundos" }, "icon": "🏔️", "color": "#c9ada7" },
+    { "id": "event", "name": { "en": "Turning points", "es": "Momentos clave" }, "icon": "⭐", "color": "#ef476f" }
+  ],
+  "catalog": []
+}

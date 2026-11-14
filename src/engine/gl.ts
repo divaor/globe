@@ -120,7 +120,8 @@ uniform int u_dmode;      // 0 none, 1 picture, 2 shaded relief from heights, 3 
 uniform sampler2D u_det;
 uniform sampler2D u_dpal; // height -> colour (see heightU)
 uniform vec4 u_dbox;      // x0, y0, nx, ny
-uniform float u_dn;       // 2^z
+uniform float u_dn;       // tiles round the world: 2^z (Mercator) or 2^(z+1) (a longitude/latitude grid)
+uniform int u_dgeo;       // 1: the tiles are a longitude/latitude grid (the other worlds), 0: Web Mercator
 uniform vec2 u_dsize;     // mosaic size in texels
 uniform float u_zf;       // how much the shading exaggerates slopes
 out vec4 outColor;
@@ -173,7 +174,7 @@ void main() {
   if (u_dmode > 0) {
     float latc = clamp(lat, -1.4844222, 1.4844222);
     float X = (lon / (2.0 * PI) + 0.5) * u_dn;
-    float Y = (1.0 - log(tan(PI / 4.0 + latc / 2.0)) / PI) / 2.0 * u_dn;
+    float Y = u_dgeo == 1 ? (0.5 - lat / PI) * u_dn * 0.5 : (1.0 - log(tan(PI / 4.0 + latc / 2.0)) / PI) / 2.0 * u_dn;
     vec2 uv = vec2(mod(X - u_dbox.x, u_dn) / u_dbox.z, (Y - u_dbox.y) / u_dbox.w);
     if (uv.x >= 0.0 && uv.x <= 1.0 && uv.y >= 0.0 && uv.y <= 1.0) {
       if (u_dmode == 1) {
@@ -216,6 +217,8 @@ export interface RasterPalette { tex: WebGLTexture }
 export interface RasterDetail {
   tex: WebGLTexture;
   x0: number; y0: number; nx: number; ny: number; n: number;
+  /** The tiles are a longitude/latitude grid (n columns, n/2 rows), not Web Mercator. */
+  geo?: boolean;
   /** 1 picture, 2 shaded relief from heights, 3 elevation colours from heights. */
   mode: 1 | 2 | 3;
   /** Height palette (modes 2 and 3). */
@@ -278,7 +281,7 @@ export class GLRaster {
     if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog) || 'link error');
     this.prog = prog;
     for (const n of ['u_pa', 'u_pb', 'u_t', 'u_fa', 'u_fb', 'u_zoom', 'u_translate', 'u_viewport', 'u_inv', 'u_clip',
-      'u_tex', 'u_pal', 'u_mode', 'u_opacity', 'u_sun', 'u_shade', 'u_dmode', 'u_det', 'u_dpal', 'u_dbox', 'u_dn', 'u_dsize', 'u_zf']) this.loc[n] = gl.getUniformLocation(prog, n);
+      'u_tex', 'u_pal', 'u_mode', 'u_opacity', 'u_sun', 'u_shade', 'u_dmode', 'u_det', 'u_dpal', 'u_dbox', 'u_dn', 'u_dgeo', 'u_dsize', 'u_zf']) this.loc[n] = gl.getUniformLocation(prog, n);
     this.vao = gl.createVertexArray()!;
     this.buf = gl.createBuffer()!;
     this.ibuf = gl.createBuffer()!;
@@ -466,6 +469,7 @@ export class GLRaster {
       if (det) {
         gl.uniform4f(L.u_dbox, det.x0, det.y0, det.nx, det.ny);
         gl.uniform1f(L.u_dn, det.n);
+        gl.uniform1i(L.u_dgeo, det.geo ? 1 : 0);
         gl.uniform2f(L.u_dsize, det.nx * 256, det.ny * 256);
         gl.uniform1f(L.u_zf, det.zf);
       }

@@ -54,13 +54,45 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const DATA = path.join(ROOT, 'public/data');
 
 /** The collections: where their sources and outputs live. */
-export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art', inventions: 'inventions', heritage: 'heritage' };
+export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art', inventions: 'inventions', heritage: 'heritage', space: 'space' };
 /** The collections whose deep-time steps are drawn on the continents of their age (the plate model). */
 const PALEO_KINDS = new Set(['life']);
 const srcDir = (kind) => path.join(ROOT, 'scripts/data', KINDS[kind]);
 const outDir = (kind) => path.join(DATA, KINDS[kind]);
 /** How a route goes: by sea (the lint checks it stays at sea), over land, up a river, over the ice, by air. */
-const MOVE_BY = ['sea', 'land', 'river', 'ice', 'air'];
+const MOVE_BY = ['sea', 'land', 'river', 'ice', 'air', 'space'];
+/** The other worlds a space story's steps and items may be on (their maps in public/data/worlds/). */
+let worldIds = null;
+function worlds() {
+  worldIds ??= new Set(fs.readdirSync(path.join(DATA, 'worlds')).filter((f) => f.endsWith('-2k.jpg') && !f.includes('-elev') && !f.includes('-clouds')).map((f) => f.replace('-2k.jpg', '')));
+  return worldIds;
+}
+/** Space exploration: every landing on another world (scripts/data/space/_landings.json), by id. */
+let landingData = null;
+function landings() {
+  if (!landingData) {
+    const f = path.join(ROOT, 'scripts/data/space/_landings.json');
+    landingData = new Map(fs.existsSync(f) ? readJSON(f).landings.map((l) => [l.id, l]) : []);
+  }
+  return landingData;
+}
+const LANDING_CAT = { crewed: 'crew', lander: 'lander', rover: 'lander', sample: 'lander', impact: 'lander', crash: 'lander', probe: 'probe' };
+const LANDING_ICON = { crewed: '🧑‍🚀', lander: '🚀', rover: '🚙', sample: '🧪', impact: '☄️', probe: '🪂', crash: '💥' };
+/** A landing as a catalogue item a space story can show: its id is the landing's. */
+function landingItem(l) {
+  const it = { id: l.id, name: l.name, at: l.at, world: l.world, cat: LANDING_CAT[l.kind] ?? 'lander', icon: LANDING_ICON[l.kind], type: 'event', date: l.date, text: l.text };
+  if (l.end && l.end >= l.date) it.end = l.end;
+  if (l.site) it.place = l.site;
+  if (l.details) it.details = l.details;
+  if (l.wiki) it.wiki = { en: l.wiki.en, es: l.wiki.es ?? '' };
+  const facts = [];
+  if (l.agency) facts.push({ label: { en: 'Who', es: 'Quién' }, value: l.agency });
+  if (l.crew?.length) facts.push({ label: { en: 'On the surface', es: 'En la superficie' }, value: { en: l.crew.join(', '), es: l.crew.join(', ') } });
+  if (l.rover?.km != null) facts.push({ label: l.rover.name, value: { en: `${l.rover.km} km`, es: `${String(l.rover.km).replace('.', ',')} km` } });
+  if (l.firsts) facts.push({ label: { en: 'First', es: 'Primero' }, value: l.firsts });
+  if (facts.length) it.facts = facts;
+  return it;
+}
 const ITEM_TYPES = ['person', 'work', 'place', 'invention', 'event', 'site', 'dish', 'crop', 'animal', 'structure', 'institution', 'fossil', 'culture', 'species', 'games', 'goods', 'ship', 'script', 'language', 'disease', 'instrument', 'genre'];
 
 export const ERAS = ['precambrian', 'paleozoic', 'mesozoic', 'cenozoic', 'prehistory', 'ancient', 'medieval', 'early-modern', 'modern', 'contemporary'];
@@ -446,7 +478,8 @@ function checkItem(it, where, coll, catalog = false) {
   if (it.audio != null) checkAudio(it.audio, `${where}.audio`);
   if (it.quote != null) checkQuote(it.quote, `${where}.quote`);
   if (it.whs != null) checkWhs(it.whs, `${where}.whs`);
-  const known = new Set(['id', 'name', 'at', 'cat', 'icon', 'type', 'date', 'end', 'until', 'life', 'text', 'facts', 'wiki', 'img', 'country', 'sample', 'audio', 'quote', 'whs', ...ITEM_TEXTS]);
+  if (it.world != null && (coll.kind !== 'space' || !worlds().has(it.world))) throw new Error(`${where}: "world" is for Space exploration: one of ${[...worlds()].join(', ')} (leave it out for the Earth)`);
+  const known = new Set(['id', 'name', 'at', 'cat', 'icon', 'type', 'date', 'end', 'until', 'life', 'text', 'facts', 'wiki', 'img', 'country', 'sample', 'audio', 'quote', 'whs', 'world', ...ITEM_TEXTS]);
   for (const k of Object.keys(it)) if (!known.has(k)) throw new Error(`${where}: unknown field "${k}"`);
   return t;
 }
@@ -543,7 +576,7 @@ function whsInfo(ref) {
 /** An item as the app gets it: fixed field order, with its time and icon filled in. */
 function normItem(it, coll) {
   const o = { id: it.id, name: it.name, at: it.at.map((v) => Math.round(v * 1e4) / 1e4), cat: it.cat, icon: it.icon ?? coll.cats.get(it.cat).icon, date: it.date, t: parseDate(it.date, '') };
-  for (const k of ['end', 'until', 'life', 'type', 'country', 'place', 'text', 'details', 'why', 'how', 'by', 'size', 'status', 'facts', 'sample', 'quote', 'wiki', 'img', 'podium']) if (it[k] != null) o[k] = it[k];
+  for (const k of ['end', 'until', 'life', 'type', 'country', 'place', 'text', 'details', 'why', 'how', 'by', 'size', 'status', 'facts', 'sample', 'quote', 'wiki', 'img', 'podium', 'world']) if (it[k] != null) o[k] = it[k];
   if (it.audio != null) o.audio = commonsAudio(it.audio);
   if (it.whs != null) o.whs = whsInfo(it.whs);
   if (it.until != null) o.tu = parseDate(it.until, '');
@@ -575,6 +608,8 @@ function loadCollection(kind) {
   const coll = { kind, name: c.name, cats, catalog: new Map(), part: new Map(), parts: new Set() };
   // The catalogue may be split over _collection.json and any _catalog-*.json files beside it.
   const parts = [[where, c.catalog ?? [], '']];
+  // Space exploration: every landing on another world is in the catalogue under its own id.
+  if (kind === 'space') parts.push(['space/_landings.json', [...landings().values()].map(landingItem), '']);
   for (const f of fs.readdirSync(srcDir(kind)).filter((x) => /^_catalog.*\.json$/.test(x)).sort()) {
     const part = f.replace(/^_catalog-?/, '').replace(/\.json$/, '');
     parts.push([`${KINDS[kind]}/${f}`, readJSON(path.join(srcDir(kind), f)).catalog ?? [], part]);
@@ -629,6 +664,11 @@ function validate(c, file, kind = 'wars', coll = null) {
     if (t < last) throw new Error(`${w}: date ${st.date} is before the previous step's`);
     last = t;
     text(st.title, `${w}.title`); text(st.text, `${w}.text`); text(st.details, `${w}.details`, false);
+    if (st.world != null && (kind !== 'space' || !worlds().has(st.world))) throw new Error(`${w}.world: ${kind !== 'space' ? 'only in Space exploration' : `one of ${[...worlds()].join(', ')} (leave it out for the Earth)`}`);
+    if (st.world != null && st.control && Object.values(st.control).some((v) => v != null)) throw new Error(`${w}: a step on another world can't have "control" (territory on the Earth)`);
+    const onWorld = st.world ?? 'earth';
+    for (const [j, it] of (st.places ?? []).entries()) if ((it.world ?? 'earth') !== onWorld) throw new Error(`${w}.places[${j}]: "world" must be the step's (${onWorld})`);
+    for (const id of st.show ?? []) { const it = coll?.catalog.get(id); if (it && (it.world ?? 'earth') !== onWorld) throw new Error(`${w}.show: "${id}" is on ${it.world ?? 'earth'}, the step on ${onWorld}`); }
     if (wars && i === 0 && !st.control) throw new Error(`${w}: the first step needs "control"`);
     if (wars && (st.places || st.show)) throw new Error(`${w}: "places" and "show" are for eras, food and structures`);
     if (st.games != null && (kind !== 'games' || !gamesIds().has(st.games))) throw new Error(`${w}.games: ${kind !== 'games' ? 'only in Games of the world' : `"${st.games}" is not a Games (summer-1936, winter-2026, wc-1930, wwc-1991...)`}`);
@@ -644,8 +684,8 @@ function validate(c, file, kind = 'wars', coll = null) {
       text(mv.label, `${w}.moves[${j}].label`, false);
       if (mv.by != null && !MOVE_BY.includes(mv.by)) throw new Error(`${w}.moves[${j}].by: one of ${MOVE_BY.join(', ')}`);
       if (mv.icon != null && (typeof mv.icon !== 'string' || !mv.icon || mv.icon.length > 8)) throw new Error(`${w}.moves[${j}].icon: one emoji (the traveller, a ship, a caravan...)`);
-      const extra = Object.keys(mv).filter((k) => !['side', 'path', 'label', 'by', 'icon'].includes(k));
-      if (extra.length) throw new Error(`${w}.moves[${j}]: unknown field(s) ${extra.join(', ')} (side, path, label, by, icon)`);
+      const extra = Object.keys(mv).filter((k) => !['side', 'path', 'label', 'by', 'icon', 'route'].includes(k));
+      if (extra.length) throw new Error(`${w}.moves[${j}]: unknown field(s) ${extra.join(', ')} (side, path, label, by, icon, route)`);
     }
     for (const [j, b] of (st.battles ?? []).entries()) {
       const bw = `${w}.battles[${j}]`;
@@ -680,6 +720,16 @@ function keepNumbers(v, es = false) {
 async function build(file, opts) {
   const c = readJSON(file);
   const kind = opts.kind ?? 'wars', coll = opts.coll ?? null, wars = kind === 'wars';
+  // Space exploration: a rover's or moonwalkers' drive by the landing's id ("route": "curiosity") takes its route
+  // from scripts/data/space/_landings.json.
+  for (const [i, st] of (c.steps ?? []).entries()) for (const [j, mv] of (st.moves ?? []).entries()) {
+    if (mv.route == null) continue;
+    const l = kind === 'space' ? landings().get(mv.route) : null;
+    if (!l?.route?.length) throw new Error(`${path.basename(file)} steps[${i}].moves[${j}]: "route" "${mv.route}" is not a landing with a route in space/_landings.json`);
+    if (l.world !== (st.world ?? 'earth')) throw new Error(`${path.basename(file)} steps[${i}].moves[${j}]: "${mv.route}" is on ${l.world}, the step on ${st.world ?? 'earth'}`);
+    if (mv.path == null) mv.path = l.route;
+    delete mv.route;
+  }
   validate(c, file, kind, coll);
   c.sides = c.sides ?? [];
   if (kind === 'games') {
@@ -886,7 +936,7 @@ function onLand([x, y]) {
 function seaRoutes(c, steps, warn) {
   const KM = 6371;
   steps.forEach((st, i) => (st.moves ?? []).forEach((mv, j) => {
-    if (mv.by !== 'sea') return;
+    if (mv.by !== 'sea' || st.world) return;
     const pts = [];
     for (let k = 1; k < mv.path.length; k++) {
       const a = mv.path[k - 1], b = mv.path[k], d = geoDistance(a, b) * KM, n = Math.max(1, Math.ceil(d / 8)), f = geoInterpolate(a, b);
@@ -973,9 +1023,11 @@ async function preview(c, topo, dir) {
     // Points on the far side of the globe are hidden (paths are clipped by clipAngle; points aren't).
     const proj = Object.assign((pt) => (geoDistance(centre, pt) < Math.PI / 2 - 0.005 ? proj0(pt) : null), proj0);
     const p = geoPath(proj0);
-    const parts = [`<rect width="${W}" height="${H}" fill="#ffffff"/>`, `<path d="${p({ type: 'Sphere' })}" fill="#cfe3f3"/>`,
+    // A step on another world: its map is drawn under the markers (see worldDisc), so the SVG leaves the globe clear.
+    const parts = st.world ? [`<path d="${p(geoGraticule10())}" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="0.5"/>`]
+      : [`<rect width="${W}" height="${H}" fill="#ffffff"/>`, `<path d="${p({ type: 'Sphere' })}" fill="#cfe3f3"/>`,
       `<path d="${p(geoGraticule10())}" fill="none" stroke="#b5cde2" stroke-width="0.5"/>`];
-    if (ma != null) {
+    if (st.world) { /* no Earth land */ } else if (ma != null) {
       const old = paleoLand(ma);
       parts.push(`<path d="${p(old.shelf)}" fill="#b4d2e8"/>`, `<path d="${p(old.land)}" fill="#ece6d6" stroke="#9aa5ad" stroke-width="0.4"/>`);
     } else parts.push(`<path d="${p(landF)}" fill="${st.deep ? '#e2e2e2' : '#ece6d6'}" stroke="#9aa5ad" stroke-width="0.4"/>`);
@@ -1046,9 +1098,33 @@ async function preview(c, topo, dir) {
       : st.deep ? `<text x="12" y="40" font-size="11.5" font-family="sans-serif" fill="#555">today's land: older than the plate model (1000 million years)</text>` : '';
     const title = `<text x="12" y="22" font-size="15" font-weight="bold" font-family="sans-serif">${esc(`${i + 1}/${c.steps.length} · ${fmtDate(st.date)} · ${st.title.en}`)}</text>${map}`;
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}"><defs>${markers}</defs>${parts.join('')}${title}${legend}</svg>`;
-    jobs.push(sharp(Buffer.from(svg)).png().toFile(path.join(dir, `${c.id}-${String(i + 1).padStart(2, '0')}.png`)));
+    const file = path.join(dir, `${c.id}-${String(i + 1).padStart(2, '0')}.png`);
+    if (st.world) jobs.push(worldDisc(st.world, proj0, W, H).then((disc) => sharp(disc).composite([{ input: Buffer.from(svg) }]).png().toFile(file)));
+    else jobs.push(sharp(Buffer.from(svg)).png().toFile(file));
   });
   await Promise.all(jobs);
+}
+
+/** Another world's map seen through a preview's projection: each pixel of the globe looked up in its 2k map. */
+const worldMaps = new Map();
+async function worldDisc(world, proj, W, H) {
+  const sharp = (await import('sharp')).default;
+  let m = worldMaps.get(world);
+  if (!m) {
+    const { data, info } = await sharp(path.join(DATA, 'worlds', `${world}-2k.jpg`)).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+    worldMaps.set(world, (m = { data, w: info.width, h: info.height }));
+  }
+  const out = Buffer.alloc(W * H * 3, 255);
+  const [cx, cy] = proj.translate(), r = proj.scale();
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+    if ((x - cx) ** 2 + (y - cy) ** 2 > r * r) continue;
+    const g = proj.invert([x, y]);
+    if (!g || !isFinite(g[0])) continue;
+    const u = Math.min(m.w - 1, Math.max(0, Math.floor(((g[0] + 180) / 360) * m.w))), v = Math.min(m.h - 1, Math.max(0, Math.floor(((90 - g[1]) / 180) * m.h)));
+    const o = (y * W + x) * 3, q = (v * m.w + u) * 3;
+    out[o] = m.data[q]; out[o + 1] = m.data[q + 1]; out[o + 2] = m.data[q + 2];
+  }
+  return sharp(out, { raw: { width: W, height: H, channels: 3 } }).png().toBuffer();
 }
 
 /** What the picker needs before a story is opened (not wars): its most common categories too. */

@@ -15,6 +15,7 @@ Eleven time-travel collections share the story format of Wars and conquests:
 | Writing and languages | `scripts/data/writing/` | the separate inventions of writing, how scripts spread and changed, the people who made and deciphered them, and how the great language families spread (see [Writing and languages](#writing-and-languages) below) |
 | Plagues and cures | `scripts/data/plagues/` | where epidemics began and how they travelled, month by month where the sources allow, how people lived through them, and the discoveries, vaccines and medicines that fought them (see [Plagues and cures](#plagues-and-cures) below) |
 | Natural disasters | `scripts/data/disasters/` | great eruptions, earthquakes, tsunamis, floods and storms, hour by hour where the sources allow, with their effects around the world, the science and the warnings that came after (see [Natural disasters](#natural-disasters) below) |
+| Space exploration | `scripts/data/space/` | the space race, footprints on the Moon, robots to the planets, rovers on Mars and astronomy through history; steps can happen **on another world**, drawn on its real map (see [Space exploration](#space-exploration) below) |
 
 **Read `scripts/data/conflicts/README.md` first.** It covers dates, the camera, sides and their territory
 (`control` with area expressions), `moves` (routes), `events`, `aftermath` and sources, which work the
@@ -517,4 +518,41 @@ nature saved, and the sites of a region. The app also has a World Heritage filte
   violence or of the dead; say who destroyed what when the sources agree, and who rebuilt it.
 - **Items**: sites (by kind: monuments, towns, ruins, landscapes, nature), wildlife, threats, rescue campaigns and
   rebuilding, people (archaeologists, engineers, rangers, local communities), UNESCO and its advisers, turning points.
+
+## Space exploration
+
+`scripts/data/space/` tells how people studied the sky and went to space: the space race, every landing on the
+Moon, the robots sent to the planets, the rovers on Mars, and astronomy through history. Unlike the other
+collections, **a step can happen on another world**: the globe turns into that world, with its real map (NASA and
+USGS mosaics), and the step's items, routes and events are drawn on it.
+
+- **`"world"` on a step** puts it on another world: `moon`, `mars`, `mercury`, `venus`, `jupiter`, `io`, `europa`,
+  `ganymede`, `callisto`, `saturn`, `titan`, `enceladus`, `uranus`, `neptune`, `triton`, `pluto`, `charon`, `ceres`
+  or `vesta`. Leave it out for the Earth. Such a step can't have `control` (territory on the Earth); it shows items,
+  `moves` and `events`.
+- **Items on another world** carry the same `"world"` as the step that shows them (the build checks it). Their `at`
+  is `[lon, lat]` on that world: longitude east-positive from −180 to 180, latitude planetocentric, as the IAU and
+  the missions give them (convert west longitudes: Titan's and the Galilean moons' are often west).
+- **Every landing is already in the catalogue.** `scripts/data/space/_landings.json` lists every landing on another
+  world (the Moon, Mars, Venus, Mercury, Titan, Jupiter, Saturn) with its place, date, agency, crew, rover and route.
+  Show one with its id, `"show": ["apollo-11"]`, instead of writing it again: its card has all of that, and the app's
+  world view shows the same marker. Write your own `places` for what is not a landing (a crater, a launch, a person).
+- **Drives and walks**: a `moves` entry `{ "side": "curiosity", "route": "curiosity" }` draws a rover's (or the
+  Apollo moonwalkers' rover) route from the landing data, step by step if you give each step its own part as a
+  `path` instead. `"by": "space"` marks a flight or an orbit drawn on a globe (Gagarin's orbit around the Earth, a
+  probe's path over Jupiter's clouds).
+- **Places on other worlds** (`"cat": "place"`): craters, seas, mountains and valleys with their IAU names and
+  places. `public/data/worlds/<world>-names.json` lists every named place of a world as
+  `[lon, lat, name, type, km, origin]` rows (made by `scripts/data/space/build-worlds.mjs` from the IAU Gazetteer of
+  Planetary Nomenclature): use those positions.
+- **Cameras** on another world: zoom 1 shows the whole world, 3–6 a region, up to 30 a landing site. Earth steps
+  work as in the other collections (zoom 1 for an orbit around the Earth).
+- **Sides** are optional: the space race uses the United States and the Soviet Union with `control` on Earth steps;
+  a story of rovers may give each rover a side, so its route has a colour and a legend label.
+- **Eras**: `ancient` for astronomy through history (where it starts), `modern` (to 1945), `contemporary` (after).
+- **Be fair and precise**: credit every country's and every team's achievements (the Soviet firsts, China's and
+  India's landings, the women computers and engineers), name the people who died (Komarov, the Apollo 1 crew,
+  Soyuz 11, Challenger, Columbia), give dates in UTC as the missions do, and say "about" where figures differ.
+- **Previews**: a step on another world is drawn on that world's map, so check every marker sits where it should
+  (a lander in its crater, a rover on its route).
 

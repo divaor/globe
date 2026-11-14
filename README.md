@@ -50,6 +50,16 @@ spinning full-screen as an ambient display. English and Spanish.
   the curved Earth, draped with satellite, relief or elevation colours, with a slider that raises the mountains;
   drag to turn, pinch to zoom.
   - Live: day and night with city lights, earthquakes (USGS), weather now (Open-Meteo), the ISS.
+- **Beyond Earth** (the Space button): the globe becomes another world with its real map: the Moon, Mercury,
+  Venus, Mars, Ceres, Vesta, Jupiter and Io, Europa, Ganymede and Callisto, Saturn, Titan and Enceladus, Uranus,
+  Neptune and Triton, Pluto and Charon (NASA and USGS mosaics; Solar System Scope for the giant planets). Every
+  world shows the IAU names of its places, sized as you zoom; tap one for its card: what it is, its size, and whom
+  or what it is named after, in English and Spanish. Every landing on another world is marked, with the rovers'
+  and moonwalkers' routes and a card for each mission. The Moon and Mars have a heights map, sharp tiles from NASA's
+  Solar System Treks as you zoom in, and the 3D view; other worlds sharpen too where Trek has them. **The solar
+  system** shows the Sun, the planets, the dwarf planets and Halley's Comet on their real orbits on any date from
+  3000 BC to AD 3000, playing at a day to ten years a second; tap a world for its facts and visit it. Shared links
+  open a world (`#world=mars`).
 - **Compare two filters:** any two country facts at once. Two numbers make a two-colour map (each in thirds,
   3 × 3 squares to tap) and a scatter chart linked to the globe both ways (tap a dot to fly to its country, tap
   a square to light its countries on the chart), with Spearman's ρ and Pearson's r in plain words, the
@@ -155,7 +165,8 @@ spinning full-screen as an ambient display. English and Spanish.
 - **Learn & play:** quizzes (find the country, flags, capitals, states and provinces of 48 countries, where in
   the world, when was it built or made, dishes of the world, which era, which civilization, which geologic
   period, who won, guess the link between two country facts, which journey, which faith, which script, which
-  language family, which epidemic, which disaster, what are you hearing, which book is it from, who made it, which World Heritage site, who invented it), each ending with every answer and its picture; two games of time:
+  language family, which epidemic, which disaster, what are you hearing, which book is it from, who made it, which World Heritage site, who invented it,
+  which world is this, who landed here), each ending with every answer and its picture; two games of time:
   Put them in order (four things from the stories, oldest first, then shown in order with their dates and pins on the
   map) and Time detective (a map of old borders with no names: which of four years is it from?); a daily challenge
   of seven questions, the same for everyone each day, with a streak and a result to share; your progress, with right
@@ -168,7 +179,7 @@ spinning full-screen as an ambient display. English and Spanish.
   medicine's great discoveries, tsunamis across the oceans, the year without a summer, disasters of the Ring of Fire, first lines,
   great libraries, masterpieces and where they are, sounds of the world, cities of music, Latin America's World
   Heritage, nature's wonders, lost and rebuilt, China's great inventions, from the telegraph to the Web, invented in
-  Latin America); "On this day", any day of the year: what the Time travel stories tell of it, each opening its
+  Latin America, a grand tour of the solar system, footprints on the Moon); "On this day", any day of the year: what the Time travel stories tell of it, each opening its
   step, and Wikipedia's selection of events, linked to the story that tells the same event.
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Ambient mode:** full-screen rotating globe with your filters, screen kept awake, clock, optional filter cycling.
@@ -237,6 +248,12 @@ Heritage List (`public/data/layers/heritage.json`, made by `scripts/data/world-h
 Wikipedia's lists of World Heritage Sites by year of inscription and in danger, with places, pictures and articles
 from Wikidata (CC0) and Spanish names from Spanish Wikipedia's lists by country; it also gives the country fact
 "UNESCO World Heritage Sites".
+The other worlds' maps, place names and heights come from NASA (Solar System Treks, LRO, MESSENGER, Magellan,
+Viking, MGS, Galileo, Voyager, Cassini, Dawn, New Horizons), the USGS Astrogeology Science Center and the IAU
+Gazetteer of Planetary Nomenclature, with Solar System Scope's textures (CC BY 4.0) for the giant planets
+(`scripts/data/space/`, `public/data/worlds/SOURCES.md`); the landings, the worlds' facts and the Space exploration
+stories are written from NASA, ESA, CNSA, ISRO, JAXA and the missions' pages, LROC and Wikipedia, as listed in each.
+The solar system view uses JPL's approximate planet positions (Standish) and its Small-Body Database.
 The script samples use subsets of the Noto fonts (SIL Open Font License 1.1) and, for rare Chinese characters,
 Jigmo (CC0), made by `scripts/data/build-fonts.mjs` (`public/data/fonts/`, with the licence in `OFL.txt`).
 
