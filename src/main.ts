@@ -2,6 +2,9 @@ import './styles/main.css';
 import { App } from './app/app';
 import { Shell } from './ui/shell';
 import { playlistFromLink, MINE_ID } from './ui/playlists';
+import { MyData } from './mydata/mydata';
+import { myDataPanel } from './mydata/panel';
+import { Upload } from 'lucide';
 import { coreLayers } from './layers';
 import { t } from './app/i18n';
 import { TimeTravel } from './modes';
@@ -20,7 +23,7 @@ import { Galaxy } from './sky/galaxy';
 import { Elements } from './sky/elements';
 import { worldHook } from './modes/stories';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData } } }
 
 async function boot() {
   // Read before the app rewrites the address with its own state.
@@ -58,7 +61,13 @@ async function boot() {
   learn.orrery = orrery;
   // A story step on another world shows that world under the story.
   worldHook.show = (id) => { space.surface.quiet = !!id; void space.surface.set(id); };
-  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements };
+  // Your own data: tables kept on this device become filters; the panel reads new ones.
+  const myData = new MyData(app);
+  const openMyData = () => shell.openPanel('mydata', t('cat.mine'), myDataPanel(app, myData, (msg) => { shell.sheet.close(); shell.toast(msg, 2600); }));
+  app.on('mydata', openMyData);
+  shell.addMenu({ id: 'mydata', icon: Upload, label: () => t('cat.mine'), order: 40, onClick: openMyData });
+  void myData.init();
+  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };

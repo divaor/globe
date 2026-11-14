@@ -11,7 +11,7 @@ import type { Lang } from '../app/i18n';
 
 export type CategoryId =
   | 'political' | 'people' | 'nature' | 'climate' | 'earth' | 'economy' | 'culture' | 'flora' | 'fauna'
-  | 'imagery' | 'live' | 'fun';
+  | 'imagery' | 'live' | 'fun' | 'mine';
 
 export interface I18nText { en: string; es: string }
 

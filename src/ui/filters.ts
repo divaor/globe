@@ -69,6 +69,20 @@ export function filtersPanel(app: App): FiltersPanel {
       for (const d of featured) grid.append(filterCard(app, d, tap));
       list.append(h('section', { class: 'cat cat-featured' }, h('h3', { class: 'cat-title' }, h('span', { class: 'cat-icon' }, '✨'), t('featured')), grid));
     }
+    // Your own data: your tables' filters, and a button to add one.
+    {
+      const mine = [...app.registry.values()].filter((d) => !d.hidden && d.category === 'mine' && matches(d));
+      if (mine.length || !query || matches({ name: { en: 'your data csv', es: 'tus datos csv' }, desc: { en: 'add', es: 'agregar' }, category: 'mine' } as LayerDef)) {
+        const grid = h('div', { class: 'card-grid' });
+        for (const d of mine) grid.append(filterCard(app, d, tap));
+        const addCard = h('button', { type: 'button', class: 'fcard fcard-add', 'data-id': 'my-add' },
+          h('span', { class: 'fcard-icon' }, '➕'),
+          h('span', { class: 'fcard-text' }, h('span', { class: 'fcard-name' }, t('myDataAdd')), h('span', { class: 'fcard-desc' }, t('myDataAddDesc'))));
+        addCard.addEventListener('click', () => app.emit('mydata'));
+        grid.append(addCard);
+        list.append(h('section', { class: 'cat cat-mine' }, h('h3', { class: 'cat-title' }, h('span', { class: 'cat-icon' }, '📁'), t('cat.mine'), mine.length ? h('span', { class: 'cat-count' }, String(mine.length)) : null), grid));
+      }
+    }
     for (const cat of CATEGORY_ORDER) {
       const defs = [...app.registry.values()].filter((d) => !d.hidden && !d.featured && d.category === cat.id && matches(d));
       if (!defs.length) continue;

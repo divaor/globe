@@ -880,3 +880,26 @@ html.orrery-open .learn-card { z-index: 26; }
 @media (max-width: 720px) {
   .amb-caption { left: calc(20px + var(--safe-l)); right: calc(20px + var(--safe-r, 0px)); bottom: auto; top: calc(28px + var(--safe-t)); max-width: none; text-align: left; }
 }
+
+/* Your data (v0.22.0) */
+.fcard-add { border-style: dashed; }
+.md-drop { display: flex; align-items: center; gap: 12px; padding: 18px 16px; margin: 10px 0; border: 2px dashed var(--line-strong); border-radius: 16px; cursor: pointer; color: var(--text); }
+.md-drop span { display: flex; flex-direction: column; gap: 2px; }
+.md-drop.over, .md-drop:hover { border-color: var(--accent); background: var(--chip-on); }
+.md-paste-box summary { cursor: pointer; font-size: 13.5px; font-weight: 600; padding: 6px 0; }
+.md-paste { width: 100%; box-sizing: border-box; margin-top: 6px; border-radius: 12px; border: 1px solid var(--line-strong); background: transparent; color: var(--text); font: 12.5px/1.4 ui-monospace, monospace; padding: 8px; }
+.md-samples { display: flex; flex-direction: column; gap: 6px; }
+.md-sample { display: flex; gap: 10px; align-items: center; text-align: left; padding: 8px 10px; border-radius: 12px; border: 1px solid var(--line); background: transparent; color: var(--text); font: inherit; font-size: 13.5px; cursor: pointer; }
+.md-sample:hover { background: var(--chip-on); }
+.md-preview:not(:empty) { margin-top: 12px; }
+.md-card { padding: 12px; border-radius: 14px; border: 1px solid var(--accent); background: var(--chip-on); }
+.md-found { margin: 8px 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; font-size: 13.5px; }
+.md-warn { color: #ffa94d; }
+:root[data-theme='light'] .md-warn { color: #c25e00; }
+.md-error { color: #ff8787; font-size: 13.5px; }
+.md-palettes { display: flex; flex-wrap: wrap; gap: 6px; }
+.md-pal { width: 46px; height: 20px; border-radius: 6px; border: 2px solid transparent; cursor: pointer; }
+.md-pal.on { border-color: var(--text); }
+.md-set { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.md-set-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.md-set .pill.on { color: var(--accent); }
