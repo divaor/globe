@@ -16,7 +16,8 @@
 // by another, categories, Spanish); the quizzes made from the stories (with a picture opened full screen and
 // zoomed), Guess the link and Which language
 // family?, a city tour that hops between collections, and the tours of holy places, the alphabet,
-// pandemics and tsunamis.
+// pandemics and tsunamis; Put them in order, Time detective, the daily challenge, your progress, On this day
+// with the stories, and a new city tour.
 import { createRequire } from 'node:module';
 import fs from 'node:fs';
 const require = createRequire(import.meta.url);
@@ -1229,6 +1230,113 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click());
   await page.waitForTimeout(300);
   check(!errors.length, `no page errors in quizzes and tours${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 14. Play and learn more: Put them in order, Time detective, the daily challenge (the same questions in two
+// browsers on the same day), your progress and its badges, On this day with the stories, and a new city tour.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=20,30,1.4&lang=en');
+  const menu = async (re) => {
+    await page.tap('[data-dock="more"]');
+    await page.waitForTimeout(300);
+    await page.evaluate((re) => [...document.querySelectorAll('.menu-item')].find((x) => new RegExp(re).test(x.textContent))?.click(), re);
+    await page.waitForTimeout(500);
+  };
+  const close = async () => { await page.evaluate(() => document.querySelector('.learn-card [aria-label="Close"]')?.click()); await page.waitForTimeout(500); };
+  await menu('Quiz');
+  const panel = await page.evaluate(() => ({ daily: document.querySelector('[data-quiz="daily"]')?.textContent ?? '', progress: !!document.querySelector('[data-panel="progress"]'), order: !!document.querySelector('[data-quiz="order"]'), det: !!document.querySelector('[data-quiz="detective"]') }));
+  check(/Daily challenge #\d+/.test(panel.daily) && panel.progress && panel.order && panel.det, `the Quiz panel has the daily challenge, your progress and the two new games (${panel.daily.slice(0, 60)})`);
+  // Put them in order: four things; three taps number all four; the check puts them in order with their dates.
+  await page.evaluate(() => document.querySelector('[data-quiz="order"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .order-row', { timeout: 30000 });
+  const rows = await page.evaluate(() => [...document.querySelectorAll('.learn-card .order-row')].map((r) => r.dataset.order));
+  for (let k = 0; k < 3; k++) { await page.evaluate(() => [...document.querySelectorAll('.learn-card .order-row:not(.picked)')][0]?.click()); await page.waitForTimeout(150); }
+  const nums = await page.evaluate(() => [...document.querySelectorAll('.learn-card .order-row .order-num')].map((x) => x.textContent).join(''));
+  // A tap on the second takes it and the ones after it back.
+  await page.evaluate(() => document.querySelectorAll('.learn-card .order-row.picked')[1]?.click());
+  await page.waitForTimeout(150);
+  const back = await page.evaluate(() => document.querySelectorAll('.learn-card .order-row.picked').length);
+  for (let k = 0; k < 2; k++) { await page.evaluate(() => [...document.querySelectorAll('.learn-card .order-row:not(.picked)')][0]?.click()); await page.waitForTimeout(150); }
+  await page.evaluate(() => document.querySelector('.learn-card [data-check]')?.click());
+  await page.waitForTimeout(800);
+  const ord = await page.evaluate(() => {
+    const q = window.atlas.learn.quiz, cur = q.qs[0];
+    return { fb: document.querySelector('.learn-card .quiz-fb')?.textContent ?? '', ts: [...document.querySelectorAll('.learn-card .order-row')].map((r) => cur.set.find((x) => (x.id ?? x.name.en) === r.dataset.order).t), pins: window.atlas.learn.pins.length, subs: [...document.querySelectorAll('.learn-card .order-sub')].map((x) => x.textContent) };
+  });
+  check(rows.length === 4 && nums === '1234' && back === 1 && /in the right place|All four/.test(ord.fb) && ord.ts.every((t, i) => i === 0 || t >= ord.ts[i - 1]) && ord.pins === 4, `Put them in order: 4 things, numbered as tapped, then in order with dates (${ord.subs.map((x) => x.split(' · ')[0]).join(', ')}) → ${ord.fb}`);
+  await close();
+  // Time detective: the old borders with no names, four years; the answer names them and says what the world was like.
+  await menu('Quiz');
+  await page.evaluate(() => document.querySelector('[data-quiz="detective"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .quiz-opt', { timeout: 30000 });
+  await page.waitForFunction(() => window.atlas.app.layers.some((l) => l.def.id === 'history'), null, { timeout: 30000 });
+  const det = await page.evaluate(() => ({ q: document.querySelector('.learn-card .quiz-q')?.textContent ?? '', region: document.querySelector('.learn-card .quiz-item')?.textContent ?? '', opts: [...document.querySelectorAll('.learn-card .quiz-opt')].map((b) => b.textContent), stack: window.atlas.app.layers.map((l) => l.def.id).join(','), base: window.atlas.app.renderer.baseMap, labels: window.atlas.app.renderer.settings.labels.countries }));
+  await page.evaluate(() => document.querySelector('.learn-card .quiz-opt').click());
+  await page.waitForTimeout(800);
+  const deta = await page.evaluate(() => ({ fb: document.querySelector('.learn-card .quiz-fb')?.textContent ?? '', cap: document.querySelector('.learn-card .quiz-caption')?.textContent ?? '' }));
+  check(/When is this map from/.test(det.q) && det.opts.length === 4 && new Set(det.opts).size === 4 && det.stack === 'history' && !det.base && !det.labels && /The world in/.test(deta.cap), `Time detective: ${det.region} (${det.opts.join(' / ')}), old borders without names → ${deta.fb} ${deta.cap.slice(0, 50)}`);
+  await close();
+  await page.waitForTimeout(800);
+  const after = await page.evaluate(() => ({ stack: window.atlas.app.layers.map((l) => l.def.id).join(','), base: window.atlas.app.renderer.baseMap, labels: window.atlas.app.renderer.settings.labels.countries }));
+  check(after.stack === 'political' && after.base && after.labels, `closing Time detective brings back today's map and its names (${after.stack})`);
+  // The daily challenge: seven questions; another browser gets the same ones the same day.
+  const dailyQs = async (p) => {
+    await p.evaluate(() => window.atlas.learn.startQuiz('daily', 'world'));
+    await p.waitForFunction(() => window.atlas.learn.quiz?.kind === 'daily', null, { timeout: 30000 });
+    return p.evaluate(() => window.atlas.learn.quiz.qs.map((q) => `${q.kind}:${q.item?.id ?? q.det?.year ?? (q.set ? q.set.map((x) => x.id).join('+') : q.id)}`));
+  };
+  const d1 = await dailyQs(page);
+  const other = await open({ viewport: { width: 1000, height: 700 } }, '#p=globe&l=political&c=20,30,1.4&lang=es');
+  const d2 = await dailyQs(other.page);
+  await other.ctx.close();
+  check(d1.length === 7 && JSON.stringify(d1) === JSON.stringify(d2) && d1[0].startsWith('find') && d1.some((x) => x.startsWith('order')) && d1.some((x) => x.startsWith('detective')), `the daily challenge has 7 questions, the same in a second browser (${d1.map((x) => x.split(':')[0]).join(', ')})`);
+  for (let i = 0; i < 7; i++) {
+    const k = await page.evaluate(() => { const q = window.atlas.learn.quiz; return q.qs[q.i].kind; });
+    if (k === 'find' || k === 'where') await page.evaluate(() => [...document.querySelectorAll('.learn-card button')].find((b) => /Show me/.test(b.textContent))?.click());
+    else if (k === 'order') { for (let j = 0; j < 3; j++) { await page.evaluate(() => [...document.querySelectorAll('.learn-card .order-row:not(.picked)')][0]?.click()); await page.waitForTimeout(100); } await page.evaluate(() => document.querySelector('.learn-card [data-check]')?.click()); }
+    else await page.evaluate(() => { const q = window.atlas.learn.quiz, cur = q.qs[q.i]; const b = [...document.querySelectorAll('.learn-card .quiz-opt')]; (b.find((x) => x.textContent && cur.options && cur.options.indexOf(cur.id) === b.indexOf(x)) ?? b[0])?.click(); });
+    await page.waitForTimeout(700);
+    await page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /Next|See result/.test(b.textContent))?.click());
+    await page.waitForTimeout(700);
+  }
+  const res = await page.evaluate(() => ({ head: document.querySelector('.learn-card .tool-head')?.textContent ?? '', marks: document.querySelector('.learn-card .daily-marks')?.textContent ?? '', rows: document.querySelectorAll('.learn-card .quiz-sum-row').length, share: !!document.querySelector('.learn-card [data-share]'), p: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}') }));
+  check(/Daily challenge #\d+/.test(res.head) && (res.marks.match(/🟩|🟥/gu) ?? []).length === 7 && res.rows === 7 && res.share && !!res.p.badges?.['daily-1'] && res.p.daily?.streak === 1, `the daily result: ${res.marks}, 7 rows, Share, the first daily badge and a 1-day streak`);
+  await page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /Done/.test(b.textContent))?.click());
+  await page.waitForTimeout(500);
+  await menu('Quiz');
+  const done = await page.evaluate(() => document.querySelector('[data-quiz="daily"]')?.textContent ?? '');
+  await page.evaluate(() => document.querySelector('[data-panel="progress"]').click());
+  await page.waitForTimeout(500);
+  const prog = await page.evaluate(() => ({ subjects: document.querySelectorAll('.progress [data-subject]').length, got: [...document.querySelectorAll('.progress .badge-chip.got')].map((b) => b.dataset.badge), all: document.querySelectorAll('.progress .badge-chip').length }));
+  check(/Done: \d\/7/.test(done) && prog.subjects === 6 && prog.got.includes('daily-1') && prog.all > 40, `once played, the card says "${done.slice(done.indexOf('Done'), done.indexOf('Done') + 30)}"; your progress shows 6 subjects and ${prog.all} badges (${prog.got.join(', ')} earned)`);
+  await page.evaluate(() => document.querySelector('.sheet-close, .sheet [aria-label="Close"]')?.click());
+  await page.waitForTimeout(300);
+  // On this day: 11 November in the stories (the armistice of 1918), the day after, and a story opened at its step.
+  await page.evaluate(() => window.atlas.learn.openOnThisDay(new Date(2026, 10, 11)));
+  await page.waitForSelector('.otd-story', { timeout: 30000 });
+  const otd = await page.evaluate(() => ({ date: document.querySelector('.otd-date')?.textContent ?? '', rows: [...document.querySelectorAll('.otd-story')].map((r) => r.textContent) }));
+  await page.evaluate(() => document.querySelector('[data-otd="next"]').click());
+  await page.waitForFunction(() => /12 November/.test(document.querySelector('.otd-date')?.textContent ?? ''), null, { timeout: 10000 });
+  await page.waitForSelector('.otd-story', { timeout: 30000 });
+  const story = await page.evaluate(() => document.querySelector('.otd-story').dataset.story);
+  await page.evaluate(() => document.querySelector('.otd-story').click());
+  await page.waitForFunction((k) => window.atlas.app.mode === k.split('/')[0], story, { timeout: 30000 }).catch(() => {});
+  const opened = await page.evaluate(() => ({ mode: window.atlas.app.mode, bar: document.querySelector('.wb-title')?.textContent ?? '' }));
+  check(/11 November/.test(otd.date) && otd.rows.some((r) => /1918/.test(r)) && opened.mode === story.split('/')[0], `On this day: 11 November in the stories (${otd.rows.length} entries, 1918 among them); the next day opens ${story} (${opened.bar})`);
+  if (opened.mode) await page.evaluate((m) => window.atlas.time?.modes?.find((x) => x.id === m)?.exit(), opened.mode);
+  await page.evaluate(() => document.querySelector('.warbar [aria-label="Close"], .wb-close')?.click());
+  await page.waitForTimeout(800);
+  // A new city tour: Buenos Aires starts with the May Revolution, at the Cabildo.
+  await menu('Guided tours');
+  const cities = await page.evaluate(() => document.querySelectorAll('[data-tour$="through time"]').length);
+  await page.evaluate(() => document.querySelector('[data-tour="Buenos Aires through time"]').click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-tools', { timeout: 30000 });
+  await page.waitForTimeout(3000);
+  const ba = await page.evaluate(() => { const v = window.atlas.app.renderer.view; return { mode: window.atlas.app.mode, lon: v.lon, lat: v.lat, n: document.querySelector('.learn-card .tour-tools')?.textContent ?? '', title: document.querySelector('.learn-card .tool-head strong')?.textContent ?? '' }; });
+  check(cities >= 20 && ba.mode === 'wars' && Math.abs(ba.lon + 58.37) < 0.3 && Math.abs(ba.lat + 34.61) < 0.3 && /1\/11/.test(ba.n), `${cities} city tours; Buenos Aires starts with ${ba.title} over the Cabildo`);
+  await close();
+  check(!errors.length, `no page errors in the new games, the daily challenge and On this day${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

@@ -48,6 +48,9 @@ export class HistoryMode {
   private pos = 0; // continuous snapshot index
   private savedStack: string[] = [];
   private savedProjection: string | null = null;
+  /** Time detective: a map is shown without the time bar, and its names stay hidden until the answer. */
+  private quiz = false;
+  private hideNames = false;
   readonly layer: LayerDef;
 
   constructor(private app: App, private shell: Shell) {
@@ -135,9 +138,48 @@ export class HistoryMode {
     return (i + (year - ys[i]) / (ys[i + 1] - ys[i])) / (ys.length - 1);
   }
 
-  async enter() {
+  /** The years of the maps, oldest first, with their labels. */
+  async years(): Promise<{ year: number; en: string; es: string }[]> {
+    await this.ensureIndex();
+    return this.snaps.map((s) => ({ year: s.year, en: s.label_en, es: s.label_es }));
+  }
+
+  /**
+   * Time detective: shows the map of one year, with no time bar and no names (until `names`), or puts the map
+   * back as it was (`null`). Taps stay with the quiz.
+   */
+  async quizMap(year: number | null, names = false): Promise<boolean> {
+    const app = this.app;
+    if (year === null) {
+      if (!this.quiz) return true;
+      this.quiz = false;
+      this.hideNames = false;
+      app.renderer.baseMap = true;
+      await app.setStack(this.savedStack.length ? this.savedStack : ['political']);
+      app.renderer.requestRender();
+      return true;
+    }
+    await this.ensureIndex();
+    const i = this.snaps.findIndex((s) => s.year === year);
+    if (i < 0 || this.active) return false;
+    if (!this.quiz) {
+      this.savedStack = app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id);
+      this.quiz = true;
+      app.renderer.baseMap = false;
+      await app.setStack(['history']);
+    }
+    this.hideNames = !names;
+    this.pos = i;
+    try { await this.load(i); } catch { return false; }
+    app.renderer.requestRender();
+    return true;
+  }
+
+  /** Opens the timeline (at a year's map when given: Time detective's "See it on the timeline"). */
+  async enter(year?: number) {
     if (this.active) return;
     await this.ensureIndex();
+    if (this.quiz) await this.quizMap(null);
     const app = this.app;
     this.savedStack = app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id);
     this.savedProjection = app.projection;
@@ -147,7 +189,8 @@ export class HistoryMode {
     app.renderer.baseMap = false;
     await app.setStack(['history']);
     const n = this.snaps.length;
-    const startIdx = Math.max(0, this.snaps.findIndex((s) => s.year >= 1000));
+    const at = year != null ? this.snaps.findIndex((s) => s.year === year) : -1;
+    const startIdx = at >= 0 ? at : Math.max(0, this.snaps.findIndex((s) => s.year >= 1000));
     this.pos = startIdx;
     void this.load(startIdx); void this.load(Math.min(n - 1, startIdx + 1));
     const es = lang() === 'es';
@@ -233,6 +276,7 @@ export class HistoryMode {
   }
 
   private labels(rc: RenderCtx) {
+    if (this.hideNames) return;
     const l = this.loaded.get(this.dominant());
     if (!l) return;
     const pxr = rc.view.pxPerRadian;
