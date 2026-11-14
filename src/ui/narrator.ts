@@ -2,13 +2,15 @@
 // synthesis; the app records nothing and sends nothing). Spanish prefers a Latin American voice (Mexico, the
 // United States, Colombia, Argentina...) over a voice from Spain. A text is read a sentence at a time, which keeps
 // long texts going on browsers that stop a long utterance, and lets the page show the sentence being read. While a
-// voice reads, the stories' music is turned down.
+// voice reads, the stories' music is turned down. With Spain's Spanish chosen, a voice from Spain comes first, its
+// own choice of voice is kept apart, and it reads Spain's words.
 import { duckMusic } from './audio';
-import type { Lang } from '../app/i18n';
+import { spainOn, type Lang } from '../app/i18n';
+import { toSpain } from '../app/spain';
 
 const KEY_ON = 'atlas-narrate';
 const KEY_RATE = 'atlas-voice-rate';
-const keyVoice = (l: Lang) => `atlas-voice-${l}`;
+const keyVoice = (l: Lang) => `atlas-voice-${l}${l === 'es' && spainOn() ? '-ES' : ''}`;
 
 const get = (k: string) => { try { return localStorage.getItem(k); } catch { return null; } };
 const put = (k: string, v: string | null) => { try { if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch { /* not kept */ } };
@@ -48,13 +50,14 @@ function rank(v: SpeechSynthesisVoice, l: Lang): number {
   const t = tag(v);
   let i = order.indexOf(t);
   if (i < 0) i = t.startsWith(`${l}-`) ? (l === 'es' && t === 'es-es' ? order.length + 1 : order.length - 1) : 99;
+  if (l === 'es' && spainOn() && t === 'es-es') i = -1;
   // Within a region, the better voices first: the system's own (offline) voices and those named "enhanced",
   // "premium" or "natural".
   const good = /enhanced|premium|natural|neural/i.test(v.name) ? -0.4 : 0;
   return i + good + (v.localService ? -0.2 : 0);
 }
 
-/** The voices for a language, best first (Latin American Spanish before Spain's). */
+/** The voices for a language, best first (Latin American Spanish before Spain's, unless Spain's Spanish is on). */
 export function voicesFor(l: Lang): SpeechSynthesisVoice[] {
   if (!voiceList.length) refreshVoices();
   return voiceList.filter((v) => tag(v).startsWith(l)).sort((a, b) => rank(a, l) - rank(b, l));
@@ -156,8 +159,8 @@ export function speak(text: string, o: SpeakOptions): Promise<boolean> {
       if (me !== run) { finish(false); return; }
       if (i >= parts.length) { finish(true); return; }
       const k = i++;
-      const u = new SpeechSynthesisUtterance(forSpeech(parts[k], o.lang));
-      u.lang = voice?.lang ?? (o.lang === 'es' ? 'es-MX' : 'en-US');
+      const u = new SpeechSynthesisUtterance(forSpeech(o.lang === 'es' && spainOn() ? toSpain(parts[k]) : parts[k], o.lang));
+      u.lang = voice?.lang ?? (o.lang === 'es' ? (spainOn() ? 'es-ES' : 'es-MX') : 'en-US');
       if (voice) u.voice = voice;
       u.rate = voiceRate();
       let ended = false;

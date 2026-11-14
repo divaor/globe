@@ -22,6 +22,7 @@ import { Sky } from './sky/sky';
 import { Galaxy } from './sky/galaxy';
 import { Elements } from './sky/elements';
 import { worldHook } from './modes/stories';
+import { spainView } from './ui/spainview';
 
 declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData } } }
 
@@ -75,6 +76,9 @@ async function boot() {
     } catch (e) { console.warn('filter pack failed', e); }
   }));
   await app.start();
+  // Spain's Spanish: the page's texts and the map's labels with Spain's words, when chosen.
+  spainView();
+  app.on('lang', () => spainView());
   document.getElementById('splash')?.classList.add('hide');
   setTimeout(() => document.getElementById('splash')?.remove(), 900);
   // The fonts for rare scripts: only registered here (a small list); a file is fetched when a letter shows.

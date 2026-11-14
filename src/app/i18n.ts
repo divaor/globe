@@ -323,8 +323,24 @@ export function subregion(name: string): string {
 
 let current: Lang = 'en';
 
-export function setLang(l: Lang) { current = l; document.documentElement.lang = l; }
+export function setLang(l: Lang) { current = l; document.documentElement.lang = l === 'es' && spanish === 'spain' ? 'es-ES' : l; }
 export function lang(): Lang { return current; }
+
+/**
+ * Which Spanish: the app's texts are written in Latin American Spanish; "spain" shows them with the words used in
+ * Spain (src/app/spain.ts: ordenador, patata, zumo, móvil...), applied where the texts are shown and read aloud.
+ */
+export type Spanish = 'latam' | 'spain';
+let spanish: Spanish = 'latam';
+export function setSpanish(v: Spanish) { spanish = v; setLang(current); }
+export function spanishVariant(): Spanish { return spanish; }
+/** Spanish from Spain is being shown. */
+export function spainOn(): boolean { return current === 'es' && spanish === 'spain'; }
+/** Spain's Spanish for a browser set to Spanish from Spain. */
+export function detectSpanish(): Spanish {
+  const n = (navigator.languages?.[0] || navigator.language || '').toLowerCase();
+  return n === 'es-es' || n.startsWith('es-es-') ? 'spain' : 'latam';
+}
 
 export function t(key: string, vars?: Record<string, string | number>): string {
   const row = STRINGS[key];

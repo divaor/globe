@@ -174,6 +174,8 @@ a { color: var(--accent); }
 .seg { display: flex; padding: 3px; border-radius: 12px; background: var(--chip); border: 1px solid var(--line); gap: 2px; }
 .seg-btn { flex: 1; height: 34px; border: 0; border-radius: 9px; background: none; cursor: pointer; font-size: 13px; font-weight: 600; color: var(--muted); padding: 0 8px; }
 .seg-btn.on { background: var(--glass-strong); color: var(--text); box-shadow: 0 1px 6px rgba(0,0,0,.18); }
+/* Longer choices (the language: "Español (Latinoamérica)") may take two lines. */
+.seg-wrap .seg-btn { height: auto; min-height: 34px; padding: 5px 6px; line-height: 1.2; }
 .field { margin: 12px 0; display: flex; flex-direction: column; gap: 8px; }
 .field-label { font-size: 13px; font-weight: 650; display: flex; justify-content: space-between; }
 .field-hint { color: var(--muted); font-weight: 500; }

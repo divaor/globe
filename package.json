@@ -1,7 +1,7 @@
 {
   "name": "globe",
   "private": true,
-  "version": "0.22.0",
+  "version": "0.23.0",
   "description": "Atlas Globe: a detailed, colorful, installable world globe with many map filters, projections, a political timeline and a Pangea animation.",
   "type": "module",
   "license": "GPL-3.0-or-later",
@@ -14,7 +14,7 @@
     "test:smoke": "node scripts/test/smoke.mjs",
     "test:wars": "node scripts/test/wars.mjs",
     "test:stories": "node scripts/test/stories.mjs",
-    "check:data": "node scripts/data/winding.mjs --check public/data/base/*.json public/data/layers/*.json public/data/history/world_*.json public/data/paleo/*.json public/data/conflicts/*-areas.json public/data/eras/*-areas.json public/data/food/*-areas.json public/data/structures/*-areas.json public/data/people/*-areas.json public/data/life/*-areas.json public/data/games/*-areas.json public/data/journeys/*-areas.json public/data/beliefs/*-areas.json public/data/writing/*-areas.json public/data/plagues/*-areas.json public/data/disasters/*-areas.json public/data/music/*-areas.json public/data/books/*-areas.json public/data/art/*-areas.json public/data/inventions/*-areas.json public/data/heritage/*-areas.json public/data/regions/*.json && node scripts/data/build-conflicts.mjs --check && node scripts/data/build-fonts.mjs --check && node scripts/data/build-onthisday.mjs --check && node scripts/data/history/detective.mjs --check && node scripts/test/tours.mjs && node scripts/data/space/build-space.mjs --check && node scripts/data/sky/build-sky.mjs --check && node scripts/test/sky.mjs && node scripts/test/mydata.mjs",
+    "check:data": "node scripts/data/winding.mjs --check public/data/base/*.json public/data/layers/*.json public/data/history/world_*.json public/data/paleo/*.json public/data/conflicts/*-areas.json public/data/eras/*-areas.json public/data/food/*-areas.json public/data/structures/*-areas.json public/data/people/*-areas.json public/data/life/*-areas.json public/data/games/*-areas.json public/data/journeys/*-areas.json public/data/beliefs/*-areas.json public/data/writing/*-areas.json public/data/plagues/*-areas.json public/data/disasters/*-areas.json public/data/music/*-areas.json public/data/books/*-areas.json public/data/art/*-areas.json public/data/inventions/*-areas.json public/data/heritage/*-areas.json public/data/regions/*.json && node scripts/data/build-conflicts.mjs --check && node scripts/data/build-fonts.mjs --check && node scripts/data/build-onthisday.mjs --check && node scripts/data/history/detective.mjs --check && node scripts/test/tours.mjs && node scripts/data/space/build-space.mjs --check && node scripts/data/sky/build-sky.mjs --check && node scripts/test/sky.mjs && node scripts/test/mydata.mjs && node scripts/test/spain.mjs",
     "data:fonts": "node scripts/data/build-fonts.mjs",
     "data:conflicts": "node scripts/data/build-conflicts.mjs --kind wars",
     "data:stories": "node scripts/data/build-conflicts.mjs",
@@ -24,6 +24,7 @@
     "test:tours": "node scripts/test/tours.mjs",
     "test:sky": "node scripts/test/sky.mjs",
     "test:mydata": "node scripts/test/mydata.mjs",
+    "test:spain": "node scripts/test/spain.mjs",
     "data:space": "node scripts/data/space/build-space.mjs"
   },
   "dependencies": {
