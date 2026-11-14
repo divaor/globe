@@ -1,0 +1,218 @@
+{
+  "about": "Borders of the map games that need a rule (scripts/data/play/build-borders.mjs). exclaves: borders made by a country's smaller piece on the same continent; they count, and the game explains them. overseas: borders made by an overseas region on another continent; off unless the player turns overseas regions on. links: tunnels and bridges that count as borders (ferries do not). reviewed: differences from the Factbook and Wikidata, checked by hand. skip: map units that are not countries and stay out of the games. add: land borders too small for the 1:50m map.",
+  "exclaves": [
+    {
+      "a": "POL",
+      "b": "RUS",
+      "note": "kaliningrad"
+    },
+    {
+      "a": "LTU",
+      "b": "RUS",
+      "note": "kaliningrad"
+    },
+    {
+      "a": "AZE",
+      "b": "TUR",
+      "note": "nakhchivan"
+    },
+    {
+      "a": "AGO",
+      "b": "COG",
+      "note": "cabinda"
+    },
+    {
+      "a": "HRV",
+      "b": "MNE",
+      "note": "dubrovnik"
+    },
+    {
+      "a": "EGY",
+      "b": "PSE",
+      "note": "gaza"
+    },
+    {
+      "a": "GBR",
+      "b": "IRL",
+      "note": "ulster"
+    },
+    {
+      "a": "BGR",
+      "b": "TUR",
+      "note": "thrace"
+    },
+    {
+      "a": "GRC",
+      "b": "TUR",
+      "note": "thrace"
+    },
+    {
+      "a": "IDN",
+      "b": "TLS",
+      "note": "timor"
+    },
+    {
+      "a": "IDN",
+      "b": "PNG",
+      "note": "newguinea"
+    },
+    {
+      "a": "MYS",
+      "b": "THA",
+      "note": "malaya"
+    }
+  ],
+  "overseas": [
+    {
+      "a": "BRA",
+      "b": "FRA",
+      "note": "guiana"
+    },
+    {
+      "a": "FRA",
+      "b": "SUR",
+      "note": "guiana"
+    },
+    {
+      "a": "ESP",
+      "b": "MAR",
+      "note": "ceuta",
+      "manual": true
+    }
+  ],
+  "links": [
+    {
+      "a": "FRA",
+      "b": "GBR",
+      "note": "channel"
+    },
+    {
+      "a": "DNK",
+      "b": "SWE",
+      "note": "oresund"
+    },
+    {
+      "a": "BHR",
+      "b": "SAU",
+      "note": "kingfahd"
+    },
+    {
+      "a": "MYS",
+      "b": "SGP",
+      "note": "johor"
+    }
+  ],
+  "notes": {
+    "kaliningrad": {
+      "en": "Russia's Kaliningrad region, cut off from the rest of Russia, borders Poland and Lithuania.",
+      "es": "La región rusa de Kaliningrado, separada del resto de Rusia, limita con Polonia y Lituania."
+    },
+    "nakhchivan": {
+      "en": "Azerbaijan's Nakhchivan, cut off from the rest of the country by Armenia, borders Turkey.",
+      "es": "Najicheván, de Azerbaiyán, separada del resto del país por Armenia, limita con Turquía."
+    },
+    "cabinda": {
+      "en": "Angola's Cabinda, north of the mouth of the Congo River, borders the Republic of the Congo.",
+      "es": "Cabinda, de Angola, al norte de la desembocadura del río Congo, limita con la República del Congo."
+    },
+    "dubrovnik": {
+      "en": "The Dubrovnik area, cut off from the rest of Croatia by Bosnia and Herzegovina's short coast at Neum (joined by the Pelješac Bridge since 2022), borders Montenegro.",
+      "es": "La zona de Dubrovnik, separada del resto de Croacia por la corta costa de Bosnia y Herzegovina en Neum (unida por el puente de Pelješac desde 2022), limita con Montenegro."
+    },
+    "gaza": {
+      "en": "The Gaza Strip, apart from the West Bank, borders Egypt.",
+      "es": "La Franja de Gaza, separada de Cisjordania, limita con Egipto."
+    },
+    "ulster": {
+      "en": "Northern Ireland, part of the United Kingdom, shares the island of Ireland with the Republic of Ireland.",
+      "es": "Irlanda del Norte, parte del Reino Unido, comparte la isla de Irlanda con la República de Irlanda."
+    },
+    "thrace": {
+      "en": "Turkey's European part, East Thrace, west of the Bosporus, borders Greece and Bulgaria.",
+      "es": "La parte europea de Turquía, Tracia Oriental, al oeste del Bósforo, limita con Grecia y Bulgaria."
+    },
+    "timor": {
+      "en": "Indonesia's West Timor shares the island of Timor with Timor-Leste.",
+      "es": "Timor Occidental, de Indonesia, comparte la isla de Timor con Timor Oriental."
+    },
+    "newguinea": {
+      "en": "Indonesia's Papua shares the island of New Guinea with Papua New Guinea.",
+      "es": "Papúa, de Indonesia, comparte la isla de Nueva Guinea con Papúa Nueva Guinea."
+    },
+    "malaya": {
+      "en": "Peninsular Malaysia, across the sea from Malaysian Borneo, borders Thailand.",
+      "es": "La Malasia peninsular, al otro lado del mar de la Malasia de Borneo, limita con Tailandia."
+    },
+    "guiana": {
+      "en": "French Guiana, a region of France in South America, borders Brazil and Suriname. It counts only with overseas regions turned on.",
+      "es": "La Guayana Francesa, una región de Francia en Sudamérica, limita con Brasil y Surinam. Solo cuenta con las regiones de ultramar activadas."
+    },
+    "channel": {
+      "en": "The Channel Tunnel (1994) joins the United Kingdom and France under the sea.",
+      "es": "El túnel del canal de la Mancha (1994) une el Reino Unido y Francia bajo el mar."
+    },
+    "oresund": {
+      "en": "The Øresund Bridge and tunnel (2000) join Copenhagen and Malmö.",
+      "es": "El puente y túnel de Øresund (2000) unen Copenhague y Malmö."
+    },
+    "kingfahd": {
+      "en": "The King Fahd Causeway (1986) joins Bahrain to Saudi Arabia.",
+      "es": "La calzada del Rey Fahd (1986) une Baréin con Arabia Saudita."
+    },
+    "johor": {
+      "en": "The Johor–Singapore Causeway (1924) joins Singapore to Malaysia.",
+      "es": "La calzada de Johor a Singapur (1924) une Singapur con Malasia."
+    },
+    "kazungula": {
+      "en": "Botswana and Zambia meet for about 150 metres on the Zambezi, crossed by the Kazungula Bridge since 2021.",
+      "es": "Botsuana y Zambia se tocan unos 150 metros sobre el Zambeze, cruzado por el puente de Kazungula desde 2021."
+    },
+    "ceuta": {
+      "en": "Spain's cities of Ceuta and Melilla, in North Africa, border Morocco. They count only with overseas regions turned on.",
+      "es": "Las ciudades españolas de Ceuta y Melilla, en el norte de África, limitan con Marruecos. Solo cuentan con las regiones de ultramar activadas."
+    }
+  },
+  "reviewed": [
+    {
+      "pair": "CHN|KAS",
+      "why": "Siachen Glacier is left out (skip)."
+    },
+    {
+      "pair": "IND|KAS",
+      "why": "Siachen Glacier is left out (skip)."
+    },
+    {
+      "pair": "KAS|PAK",
+      "why": "Siachen Glacier is left out (skip)."
+    },
+    {
+      "pair": "BWA|ZMB",
+      "why": "Added by hand (add): too small for the 1:50m map."
+    },
+    {
+      "pair": "ESP|MAR",
+      "why": "Ceuta and Melilla are not on the 1:50m map; added as overseas (manual)."
+    },
+    {
+      "pair": "IND|LKA",
+      "why": "A maritime border only: no land between them."
+    },
+    {
+      "pair": "DJI|SOM",
+      "why": "The map draws Somaliland between them, as the political map does."
+    }
+  ],
+  "skip": [
+    {
+      "id": "KAS",
+      "why": "Siachen Glacier: Natural Earth draws this disputed area of Kashmir as its own unit; it is not a country."
+    }
+  ],
+  "add": [
+    {
+      "a": "BWA",
+      "b": "ZMB",
+      "note": "kazungula"
+    }
+  ]
+}

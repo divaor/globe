@@ -200,6 +200,10 @@ export class Learn {
   sky: Sky | null = null;
   elements: Elements | null = null;
   orrery: { show: (jd: number, scale?: 'inner' | 'planets' | 'outer', speed?: number) => void } | null = null;
+  /** Called before a quiz or a tour starts, so a map game (play/hop.ts, set in main.ts) leaves the map to it. */
+  beforeStart: (() => void) | null = null;
+  /** Closes the quiz or tour on screen (a map game is starting). */
+  async closeAll() { this.stopTour(); await this.stopQuiz(); }
 
   constructor(private app: App, private shell: Shell, private time: TimeTravel) {
     this.card = h('section', { class: 'learn-card glass', hidden: true });
@@ -365,6 +369,7 @@ export class Learn {
   }
 
   private async startQuiz(kind: QuizKind, region: string) {
+    this.beforeStart?.();
     this.stopTour();
     this.shell.sheet.close();
     if (kind === 'region') { await this.startRegionQuiz(region, false); return; }
@@ -498,6 +503,7 @@ export class Learn {
 
   /** Ten regions of a country (or all of them) to find on the map, with the country framed below the card. */
   private async startRegionQuiz(a3: string, all: boolean) {
+    this.beforeStart?.();
     this.stopTour();
     this.shell.sheet.close();
     let list: Region[];
@@ -1828,6 +1834,7 @@ export class Learn {
   }
 
   private async startTour(tour: Tour) {
+    this.beforeStart?.();
     await this.stopQuiz();
     this.shell.sheet.close();
     if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
