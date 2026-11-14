@@ -1,5 +1,6 @@
-// Learn and play: quizzes (find the country, flags, capitals), guided tours, and "On this day".
-import { GraduationCap, Compass, CalendarDays, X, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Play, Pause, Map as MapIcon } from 'lucide';
+// Learn and play: quizzes (find the country, flags, capitals...), the games Put them in order and Time detective,
+// the daily challenge, your progress (streaks and badges), guided tours, and "On this day".
+import { GraduationCap, Compass, CalendarDays, X, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Play, Pause, Map as MapIcon, Share2 } from 'lucide';
 import { geoDistance } from 'd3-geo';
 import { h, icon, clear, add } from '../ui/dom';
 import { t, tx, lang, flagEmoji } from '../app/i18n';
@@ -18,18 +19,39 @@ import * as CM from '../compare/model';
 import { drawScatter } from '../compare/chart';
 import { direction, strengthWords, fmtR } from '../compare/compare';
 import { strength } from '../compare/stats';
+import { DETECTIVE_YEARS, detectiveQuestions, type DetData, type DetQuestion } from './detective';
+import { orderRounds } from './order';
+import { recordAnswer, recordQuiz, recordDaily, recordDailySubjects, recordTour, dailyResult, dayKey, current, progress, progressPanel, BADGES, type Badge } from './progress';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
-const shuffle = <T,>(a: T[]) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+/** Where chance comes from: Math.random, or a seeded source while the daily challenge picks its questions. */
+let rand: () => number = Math.random;
+const shuffle = <T,>(a: T[]) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+/** mulberry32: a small seeded random source. */
+function seeded(seed: number): () => number {
+  let a = seed >>> 0;
+  return () => { a = (a + 0x6d2b79f5) >>> 0; let x = a; x = Math.imul(x ^ (x >>> 15), x | 1); x ^= x + Math.imul(x ^ (x >>> 7), x | 61); return ((x ^ (x >>> 14)) >>> 0) / 4294967296; };
+}
+/** FNV-1a: a number from a string (the day). */
+const hash = (str: string) => { let x = 0x811c9dc5; for (let i = 0; i < str.length; i++) { x ^= str.charCodeAt(i); x = Math.imul(x, 0x01000193); } return x >>> 0; };
 
-type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family' | 'plague' | 'disaster' | 'listen' | 'opening' | 'artist' | 'site' | 'inventor';
+type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family' | 'plague' | 'disaster' | 'listen' | 'opening' | 'artist' | 'site' | 'inventor' | 'order' | 'detective' | 'daily';
 /** An item of a story collection, tagged with its collection. */
 interface QItem extends CollectionItem { kind: StoryKind; pop?: number }
 /** A site of data/layers/heritage.json (scripts/data/world-heritage/build.py). */
 interface WhSite { ref: number; n: [string, string]; at: [number, number]; c: 'c' | 'n' | 'm'; y: number; cc: string[]; w: [string, string]; img: string; pop: number; x?: number; merged?: number }
-/** A question; once answered, whether it was right and what the player answered. */
-interface Q { id: string; options?: string[]; item?: QItem; ok?: boolean; given?: string; pick?: string; link?: Link; lang?: string }
+/** A question; once answered, whether it was right and what the player answered. `kind`: its quiz, in a daily challenge. */
+interface Q {
+  id: string; kind?: QuizKind; options?: string[]; item?: QItem; ok?: boolean; given?: string; pick?: string; link?: Link; lang?: string;
+  /** Put them in order: the things in the order shown, and the player's order so far (their keys). */
+  set?: QItem[]; picked?: string[];
+  /** Time detective: the region and the year (`id`), with the years to choose from (`options`). */
+  det?: DetQuestion;
+}
+/** On this day: a story step or item with a full date: story key ("wars/ww1"), step (from 0), date, icon, title. */
+type OtdEntry = [string, number, string, string, string, string];
+interface OtdMonth { stories: Record<string, [string, string, string]>; days: Record<string, OtdEntry[]> }
 /** "Guess the link": two country facts, their correlation and how many countries have both. */
 interface Link { a: string; b: string; rho: number; n: number }
 const ITEM_QUIZZES: QuizKind[] = ['where', 'when', 'dish', 'era', 'civ', 'period', 'champion', 'journey', 'faith', 'script', 'plague', 'disaster', 'listen', 'opening', 'artist', 'site', 'inventor'];
@@ -65,6 +87,18 @@ const lower1 = (x: string) => x.charAt(0).toLowerCase() + x.slice(1);
 const CIV_STORIES = ['mesopotamia', 'ancient-egypt', 'indus-valley', 'persia', 'kush-aksum', 'ancient-china', 'khmer', 'west-african-empires', 'great-zimbabwe-swahili', 'olmecs-maya', 'andes'];
 const COLLECTION_DIR: Record<StoryKind, string> = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art', inventions: 'inventions', heritage: 'heritage' };
 const yearOf = (d: string) => Number(/^-?\d+/.exec(d)?.[0] ?? 0);
+/** An item's key: the same thing can be in two collections. */
+const itemKey = (x: QItem) => x.id ?? x.name.en;
+/** The quizzes whose answer is a tap on the map (the map's names are hidden), and Time detective's old borders. */
+const MAP_QUIZZES: QuizKind[] = ['find', 'where', 'region', 'detective'];
+
+/** The daily challenge: the same seven questions for everyone on a day (by the local date); the seventh's quiz changes daily. */
+const DAILY_FIRST = Date.UTC(2026, 10, 13);
+const dailyNumber = (day: string) => { const [y, m, d] = day.split('-').map(Number); return Math.round((Date.UTC(y, m - 1, d) - DAILY_FIRST) / 864e5) + 1; };
+const DAILY_ROTATE: QuizKind[] = ['site', 'inventor', 'artist', 'dish', 'champion', 'era', 'civ', 'journey', 'faith', 'plague', 'disaster', 'script', 'opening', 'period'];
+const marksOf = (qs: { ok?: boolean }[]) => qs.map((x) => (x.ok ? '🟩' : '🟥')).join('');
+/** "1 day in a row", "3 días seguidos". */
+const inARow = (n: number) => (es() ? `${n} ${n === 1 ? 'día seguido' : 'días seguidos'}` : `${n} ${n === 1 ? 'day' : 'days'} in a row`);
 
 /** Four years to choose from: the right one and three plausible others (no year 0, none in the future). */
 function yearOptions(y: number): number[] {
@@ -72,9 +106,9 @@ function yearOptions(y: number): number[] {
   const step = age > 3000 ? 500 : age > 1000 ? 100 : age > 300 ? 50 : age > 120 ? 10 : 5;
   const opts = new Set([y]);
   for (let guard = 0; opts.size < 4 && guard < 200; guard++) {
-    const f = (0.15 + Math.random() * 0.65) * (Math.random() < 0.5 ? -1 : 1);
+    const f = (0.15 + rand() * 0.65) * (rand() < 0.5 ? -1 : 1);
     let o = Math.round((y + f * age) / step) * step;
-    if (o > 2024) o = 2024 - step * (1 + Math.floor(Math.random() * 3));
+    if (o > 2024) o = 2024 - step * (1 + Math.floor(rand() * 3));
     if (o === 0) o = -1;
     if ([...opts].every((x) => Math.abs(x - o) >= step)) opts.add(o);
   }
@@ -118,9 +152,15 @@ export class Learn {
   private card: HTMLElement;
   /** `peek`: the card is folded to one line so the map can be seen; `done`: the result is up. */
   /** `region`: the continent of a country quiz, or the country of a States and provinces quiz (`all`: every region, not ten). */
-  private quiz: { kind: QuizKind; region: string; qs: Q[]; i: number; score: number; answered: boolean; savedLabels: RenderSettings['labels']; peek: boolean; fb?: { ok: boolean; text: string }; done?: boolean; best?: number; all?: boolean } | null = null;
-  private tour: { steps: TourStep[]; i: number; auto: boolean; timer: number; fold: boolean } | null = null;
+  /** `run`: right answers in a row; `day`: the daily challenge's date. */
+  private quiz: { kind: QuizKind; region: string; qs: Q[]; i: number; score: number; answered: boolean; savedLabels: RenderSettings['labels']; peek: boolean; fb?: { ok: boolean; text: string }; done?: boolean; best?: number; all?: boolean; run?: number; day?: string } | null = null;
+  private tour: { name: string; steps: TourStep[]; i: number; auto: boolean; timer: number; fold: boolean } | null = null;
   private pin: { lon: number; lat: number; text: string } | null = null;
+  /** Several numbered pins (Put them in order's answer). */
+  private pins: { lon: number; lat: number; text: string }[] = [];
+  /** Time detective: its regions and how their maps differ, and the maps' years with their labels. */
+  private det: DetData | null = null;
+  private detLabels = new Map<number, { en: string; es: string }>();
   private items: Partial<Record<StoryKind, CollectionItem[]>> = {};
   private eras = new Map<string, { name: { en: string; es: string }; icon: string }>();
   private civs = new Map<string, { name: { en: string; es: string }; icon: string }>();
@@ -151,10 +191,15 @@ export class Learn {
     shell.addMenu({ id: 'tours', icon: Compass, label: () => L('Guided tours', 'Visitas guiadas'), order: 31, onClick: () => this.openTours() });
     shell.addMenu({ id: 'onthisday', icon: CalendarDays, label: () => L('On this day', 'Tal día como hoy'), order: 32, onClick: () => void this.openOnThisDay() });
     shell.tapHandlers.unshift((_x, _y, g) => {
-      if (!this.quiz || this.quiz.answered || this.quiz.done || !['find', 'where', 'region'].includes(this.quiz.kind)) return false;
-      if (g && this.quiz.kind === 'find') this.answerFind(app.renderer.countryAt(g[0], g[1]));
-      if (g && this.quiz.kind === 'where') this.answerWhere(g as [number, number]);
-      if (g && this.quiz.kind === 'region' && this.regions) {
+      const q = this.quiz;
+      if (!q || q.done) return false;
+      const kind = this.qk();
+      // Time detective: no names before the answer; after it, a tap names the state or empire.
+      if (kind === 'detective') { if (q.answered && g) this.time.history.tap(g[0], g[1]); return true; }
+      if (q.answered || !['find', 'where', 'region'].includes(kind)) return false;
+      if (g && kind === 'find') this.answerFind(app.renderer.countryAt(g[0], g[1]));
+      if (g && kind === 'where') this.answerWhere(g as [number, number]);
+      if (g && kind === 'region' && this.regions) {
         // A tap outside the country is not an answer.
         const r = regionAt(this.regions.list, g[0], g[1], app.renderer.view);
         if (r) this.answerRegion(r.id);
@@ -167,14 +212,32 @@ export class Learn {
       drawRegions(rc, rg.list, (r) => this.regionMark(r), (r) => this.regionName(r));
     });
     app.renderer.overlays.add((rc) => {
-      if (!this.pin) return;
-      const p = rc.project(this.pin.lon, this.pin.lat);
-      if (!p) return;
       const { ctx } = rc;
-      ctx.beginPath(); ctx.arc(p[0], p[1], 9, 0, Math.PI * 2); ctx.fillStyle = '#ff6b6b'; ctx.fill();
-      ctx.lineWidth = 3; ctx.strokeStyle = '#fff'; ctx.stroke();
-      rc.labels.add({ text: this.pin.text, x: p[0] + 14, y: p[1], align: 'left', priority: 3000, size: 13, weight: 800, color: '#fff', halo: 'rgba(0,0,0,0.85)' });
+      for (const [pin, r] of [...this.pins.map((x) => [x, 7] as const), ...(this.pin ? [[this.pin, 9] as const] : [])]) {
+        const p = rc.project(pin.lon, pin.lat);
+        if (!p) continue;
+        ctx.beginPath(); ctx.arc(p[0], p[1], r, 0, Math.PI * 2); ctx.fillStyle = '#ff6b6b'; ctx.fill();
+        ctx.lineWidth = 3; ctx.strokeStyle = '#fff'; ctx.stroke();
+        rc.labels.add({ text: pin.text, x: p[0] + r + 5, y: p[1], align: 'left', priority: 3000, size: 13, weight: 800, color: '#fff', halo: 'rgba(0,0,0,0.85)' });
+      }
     });
+  }
+
+  /** The kind of the question on screen (a daily challenge mixes them). */
+  private qk(): QuizKind {
+    const q = this.quiz;
+    return q ? q.qs[q.i]?.kind ?? q.kind : 'find';
+  }
+
+  /** Counts an answer: the score, right answers in a row, and the subject's progress (a toast for a new badge). */
+  private scored(ok: boolean) {
+    const q = this.quiz!;
+    if (ok) { q.score++; q.run = (q.run ?? 0) + 1; } else q.run = 0;
+    this.badgeToast(recordAnswer(this.qk(), ok));
+  }
+
+  private badgeToast(got: Badge[]) {
+    if (got.length) this.shell.toast(`${L('New badge', 'Nueva insignia')}: ${got.map((b) => `${b.icon} ${es() ? b.es : b.en}`).join(' · ')}`, 4500);
   }
 
   // ---- Quiz -----------------------------------------------------------------------------------
@@ -187,34 +250,15 @@ export class Learn {
     });
   }
 
-  private openQuizMenu() {
-    const regions: [string, string][] = [['world', L('World', 'Mundo')], ['AF', t('cont.AF')], ['AS', t('cont.AS')], ['EU', t('cont.EU')], ['NA', t('cont.NA')], ['SA', t('cont.SA')], ['OC', t('cont.OC')]];
-    let region = 'world';
-    const regionRow = h('div', { class: 'chip-row' });
-    const drawRegions = () => {
-      clear(regionRow);
-      for (const [id, label] of regions) {
-        const b = h('button', { type: 'button', class: `chip${region === id ? ' on' : ''}` }, label);
-        b.addEventListener('click', () => { region = id; drawRegions(); });
-        regionRow.append(b);
-      }
-    };
-    drawRegions();
-    const kinds: [QuizKind, string, string, string][] = [
+  /** Every quiz: its icon, name and what it asks (the menu, and the label of a daily challenge's question). */
+  private quizTable(): [QuizKind, string, string, string][] {
+    return [
       ['find', '📍', L('Find the country', 'Encuentra el país'), L('Tap it on the globe (labels hidden).', 'Tócalo en el globo (sin etiquetas).')],
       ['flag', '🏳️', L('Flags', 'Banderas'), L('Which country has this flag?', '¿De qué país es esta bandera?')],
       ['capital', '🏛️', L('Capitals', 'Capitales'), L('Pick the right capital city.', 'Elige la capital correcta.')],
       ['region', '🗺️', L('States and provinces', 'Estados y provincias'), L('Tap the state or province in the United States, Mexico, Canada and 45 more countries.', 'Toca el estado o la provincia en Estados Unidos, México, Canadá y 45 países más.')],
-    ];
-    const list = h('div', { class: 'mode-list' });
-    for (const [k, ic, title, desc] of kinds) {
-      const best = k === 'region' ? null : localStorage.getItem(`atlas-quiz-best:${k}`);
-      const c = h('button', { type: 'button', class: 'mode-card', 'data-quiz': k }, h('span', { class: 'mode-icon' }, ic),
-        h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, title), h('span', { class: 'mode-desc' }, `${desc}${best ? ` · ${L('Best', 'Récord')}: ${best}/10` : ''}`)));
-      c.addEventListener('click', () => void (k === 'region' ? this.openRegionPicker(region) : this.startQuiz(k, region)));
-      list.append(c);
-    }
-    const more: [QuizKind, string, string, string][] = [
+      ['order', '🔢', L('Put them in order', 'Ordénalos en el tiempo'), L('Four things from the stories, such as a temple, an invention and a painting: put them in time, oldest first.', 'Cuatro cosas de las historias, como un templo, un invento y una pintura: ordénalas en el tiempo, de la más antigua a la más reciente.')],
+      ['detective', '🕵️', L('Time detective', 'Detective del tiempo'), L('A map of old borders with no names on it: when is it from?', 'Un mapa de fronteras antiguas sin nombres: ¿de cuándo es?')],
       ['where', '📍', L('Where in the world?', '¿Dónde está?'), L('Tap on the globe where a monument, a work, a dish or a fossil comes from.', 'Toca en el globo de dónde es un monumento, una obra, un plato o un fósil.')],
       ['when', '⏳', L('When was it?', '¿Cuándo fue?'), L('Pick the year it was built, made or first recorded.', 'Elige el año en que se construyó, se hizo o aparece por primera vez.')],
       ['dish', '🍲', L('Dishes of the world', 'Platos del mundo'), L('Which country does this dish come from?', '¿De qué país es este plato?')],
@@ -235,16 +279,66 @@ export class Learn {
       ['inventor', '💡', L('Who invented it?', '¿Quién lo inventó?'), L('The telephone, paper, the World Wide Web...: pick who invented it.', 'El teléfono, el papel, la World Wide Web...: elige quién lo inventó.')],
       ['link', '📈', L('Guess the link', 'Adivina la relación'), L('Do two facts about countries go together? Guess, then see the scatter plot.', '¿Van juntos dos datos de los países? Adivina y luego mira el diagrama de dispersión.')],
     ];
-    const list2 = h('div', { class: 'mode-list' });
-    for (const [k, ic, title, desc] of more) {
-      const best = localStorage.getItem(`atlas-quiz-best:${k}`);
+  }
+
+  /** "🏳️ Flags": a quiz's icon and name. */
+  private quizName(kind: QuizKind): string {
+    const r = this.quizTable().find((x) => x[0] === kind);
+    return r ? `${r[1]} ${r[2]}` : kind;
+  }
+
+  private openQuizMenu() {
+    const regions: [string, string][] = [['world', L('World', 'Mundo')], ['AF', t('cont.AF')], ['AS', t('cont.AS')], ['EU', t('cont.EU')], ['NA', t('cont.NA')], ['SA', t('cont.SA')], ['OC', t('cont.OC')]];
+    let region = 'world';
+    const regionRow = h('div', { class: 'chip-row' });
+    const drawRegions = () => {
+      clear(regionRow);
+      for (const [id, label] of regions) {
+        const b = h('button', { type: 'button', class: `chip${region === id ? ' on' : ''}` }, label);
+        b.addEventListener('click', () => { region = id; drawRegions(); });
+        regionRow.append(b);
+      }
+    };
+    drawRegions();
+    const card = ([k, ic, title, desc]: [QuizKind, string, string, string]) => {
+      const best = k === 'region' ? null : localStorage.getItem(`atlas-quiz-best:${k}`);
       const c = h('button', { type: 'button', class: 'mode-card', 'data-quiz': k }, h('span', { class: 'mode-icon' }, ic),
         h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, title), h('span', { class: 'mode-desc' }, `${desc}${best ? ` · ${L('Best', 'Récord')}: ${best}/10` : ''}`)));
-      c.addEventListener('click', () => void this.startQuiz(k, region));
-      list2.append(c);
-    }
-    this.shell.openPanel('quiz', L('Quiz', 'Concurso'), h('div', null, h('h3', { class: 'sec-title' }, L('Region', 'Región')), regionRow, h('h3', { class: 'sec-title' }, L('Game', 'Juego')), list,
+      c.addEventListener('click', () => void (k === 'region' ? this.openRegionPicker(region) : this.startQuiz(k, region)));
+      return c;
+    };
+    const table = this.quizTable();
+    const list = h('div', { class: 'mode-list' }, ...table.slice(0, 4).map(card));
+    const games = h('div', { class: 'mode-list' }, ...table.filter(([k]) => k === 'order' || k === 'detective').map(card));
+    const list2 = h('div', { class: 'mode-list' }, ...table.slice(6).map(card));
+    this.shell.openPanel('quiz', L('Quiz', 'Concurso'), h('div', null, this.dailyCards(), h('h3', { class: 'sec-title' }, L('Region', 'Región')), regionRow, h('h3', { class: 'sec-title' }, L('Game', 'Juego')), list,
+      h('h3', { class: 'sec-title' }, L('Games of time', 'Juegos del tiempo')), games,
       h('h3', { class: 'sec-title' }, L('History, culture, life, sport and travel', 'Historia, cultura, vida, deporte y viajes')), list2));
+  }
+
+  /** The top of the Quiz panel: today's challenge (or how it went) and your progress. */
+  private dailyCards(): HTMLElement {
+    const day = dayKey();
+    const done = dailyResult(day);
+    const p = progress();
+    const streak = current(p.daily);
+    const date = new Date().toLocaleDateString(es() ? 'es-ES' : 'en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+    const daily = h('button', { type: 'button', class: `mode-card daily-card${done ? ' done' : ''}`, 'data-quiz': 'daily' }, h('span', { class: 'mode-icon' }, '🗓️'),
+      h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, `${L('Daily challenge', 'Reto del día')} #${dailyNumber(day)} · ${date}`),
+        h('span', { class: 'mode-desc' }, done
+          ? `${L('Done', 'Hecho')}: ${done.s}/${done.n} ${done.m.replace(/y/g, '🟩').replace(/n/g, '🟥')}${streak ? ` · 🔥 ${streak}` : ''} · ${L('a new one tomorrow', 'mañana hay otro')}`
+          : `${L('Seven questions, the same for everyone today', 'Siete preguntas, las mismas para todos hoy')}${streak ? ` · 🔥 ${inARow(streak)}` : ''}`)));
+    daily.addEventListener('click', () => void (done ? this.showDailyDone() : this.startQuiz('daily', 'world')));
+    const earned = Object.keys(p.badges).length;
+    const prog = h('button', { type: 'button', class: 'mode-card', 'data-panel': 'progress' }, h('span', { class: 'mode-icon' }, '🏅'),
+      h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, L('Your progress', 'Tu progreso')),
+        h('span', { class: 'mode-desc' }, L(`Streaks and badges for each subject · ${earned} of ${BADGES.length} badges`, `Rachas e insignias por tema · ${earned} de ${BADGES.length} insignias`))));
+    prog.addEventListener('click', () => this.openProgress());
+    return h('div', { class: 'mode-list' }, daily, prog);
+  }
+
+  private openProgress() {
+    this.shell.openPanel('progress', L('Your progress', 'Tu progreso'), progressPanel(() => this.openProgress()));
   }
 
   private async startQuiz(kind: QuizKind, region: string) {
@@ -253,20 +347,55 @@ export class Learn {
     if (kind === 'region') { await this.startRegionQuiz(region, false); return; }
     if (kind === 'link') { await this.startLinkQuiz(); return; }
     if (kind === 'family') { await this.startFamilyQuiz(); return; }
-    if (ITEM_QUIZZES.includes(kind)) { await this.startItemQuiz(kind); return; }
-    const pool = this.pool(region);
-    const ids = shuffle(pool.slice()).slice(0, 10);
-    const qs: Q[] = ids.map((id) => {
-      if (kind === 'find') return { id };
-      const others = shuffle(pool.filter((x) => x !== id)).slice(0, 3);
-      return { id, options: shuffle([id, ...others]) };
-    });
-    const labels = { ...this.app.renderer.settings.labels };
-    if (kind === 'find') Object.assign(this.app.renderer.settings.labels, { countries: false, capitals: false, cities: false });
-    this.quiz = { kind, region, qs, i: 0, score: 0, answered: false, savedLabels: labels, peek: false };
+    if (kind === 'daily') { await this.startDaily(); return; }
+    const qs = kind === 'order' ? await this.orderQs(10) : kind === 'detective' ? await this.detectiveQs(10) : ITEM_QUIZZES.includes(kind) ? await this.itemQs(kind, 10) : this.countryQs(kind, region, 10);
+    if (!qs?.length) { this.needsData(kind === 'detective' ? L('This game needs its maps; check your connection.', 'Este juego necesita sus mapas; revisa tu conexión.') : undefined); return; }
+    await this.begin(kind, region, qs);
+  }
+
+  /** Starts a quiz with its questions (any Time travel story is closed first). */
+  private async begin(kind: QuizKind, region: string, qs: Q[], day?: string) {
+    if (this.quiz) await this.stopQuiz();
+    if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
+    this.quiz = { kind, region, qs, i: 0, score: 0, answered: false, savedLabels: { ...this.app.renderer.settings.labels }, peek: false, run: 0, day };
     this.app.select(null);
-    if (this.app.renderer.view.current.kind !== 'globe' && kind === 'find') this.app.setProjection('globe');
     this.renderQuiz();
+    await this.prepareQuestion();
+  }
+
+  /** The map for the question on screen: names hidden and the globe for the map quizzes, Time detective's old borders. */
+  private async prepareQuestion() {
+    const q = this.quiz;
+    if (!q) return;
+    const kind = this.qk(), cur = q.qs[q.i];
+    const hide = MAP_QUIZZES.includes(kind);
+    this.app.renderer.settings.labels = hide ? { ...q.savedLabels, countries: false, capitals: false, cities: false } : { ...q.savedLabels };
+    if (hide && this.app.renderer.view.current.kind !== 'globe') this.app.setProjection('globe');
+    if (kind === 'detective' && cur?.det) {
+      await this.time.history.quizMap(cur.det.year, false);
+      const r = this.det?.regions.find((x) => x.id === cur.det!.region);
+      if (r && this.quiz === q) this.app.renderer.view.flyTo({ lon: r.cam[0], lat: r.cam[1], zoom: r.cam[2] }, 1400);
+    } else await this.time.history.quizMap(null);
+    this.app.renderer.requestRender();
+  }
+
+  /** Ten countries of a region: find them on the globe, or their flag or capital among four. */
+  private countryQs(kind: QuizKind, region: string, n: number): Q[] {
+    const pool = this.pool(region);
+    return shuffle(pool.slice()).slice(0, n).map((id) => {
+      if (kind === 'find') return { id, kind };
+      const others = shuffle(pool.filter((x) => x !== id)).slice(0, 3);
+      return { id, kind, options: shuffle([id, ...others]) };
+    });
+  }
+
+  /** A quiz whose data could not be loaded says so on its card. */
+  private needsData(msg = L('This quiz needs the story collections; check your connection.', 'Este concurso necesita las colecciones de historias; revisa tu conexión.')) {
+    clear(this.card);
+    const close = h('button', { type: 'button', class: 'pill sm' }, t('close'));
+    close.addEventListener('click', () => { this.card.hidden = true; });
+    add(this.card, h('div', { class: 'tool-hint' }, msg), h('div', { class: 'tool-actions' }, close));
+    this.card.hidden = false;
   }
 
   // ---- States and provinces
@@ -336,7 +465,7 @@ export class Learn {
       this.shell.toast(L('This quiz needs its map data; check your connection.', 'Este concurso necesita sus datos de mapa; revisa tu conexión.'));
       return;
     }
-    if (this.quiz) this.stopQuiz();
+    if (this.quiz) await this.stopQuiz();
     const pick = shuffle(list.slice());
     const qs: Q[] = (all ? pick : pick.slice(0, 10)).map((r) => ({ id: r.id }));
     const labels = { ...this.app.renderer.settings.labels };
@@ -390,7 +519,7 @@ export class Learn {
     if (!q || !rg || !cur || q.answered) return;
     q.answered = true;
     const ok = id === cur.id;
-    if (ok) q.score++;
+    this.scored(ok);
     cur.ok = ok; cur.pick = id ?? undefined;
     const right = rg.list.find((r) => r.id === cur.id)!, tapped = id ? rg.list.find((r) => r.id === id) : undefined;
     const name = this.regionName(right);
@@ -469,9 +598,8 @@ export class Learn {
     }
   }
 
-  /** The quizzes about the story collections: their items make the questions. */
-  private async startItemQuiz(kind: QuizKind) {
-    if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
+  /** The questions of the quizzes about the story collections (their items), or null without enough of them. */
+  private async itemQs(kind: QuizKind, n: number): Promise<Q[] | null> {
     const needs: StoryKind[] = kind === 'dish' ? ['food'] : kind === 'era' ? ['eras'] : kind === 'civ' ? ['people'] : kind === 'period' ? ['life'] : kind === 'champion' ? ['games'] : kind === 'journey' ? ['journeys'] : kind === 'faith' ? ['beliefs'] : kind === 'script' ? ['writing'] : kind === 'plague' ? ['plagues'] : kind === 'disaster' ? ['disasters'] : kind === 'listen' ? ['music'] : kind === 'opening' ? ['books'] : kind === 'artist' ? ['art'] : kind === 'inventor' ? ['inventions'] : kind === 'site' ? [] : kind === 'where' ? ['structures', 'eras', 'food', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters', 'music', 'art', 'inventions', 'heritage'] : ['structures', 'eras', 'food', 'writing', 'plagues', 'disasters', 'books', 'art', 'inventions'];
     try { await this.loadItems(needs); } catch { /* offline: the pool stays small */ }
     const tag = (k: StoryKind): QItem[] => (this.items[k] ?? []).map((it) => ({ ...it, kind: k }));
@@ -515,15 +643,8 @@ export class Learn {
     if (HIDDEN_NAME.includes(kind) || kind === 'inventor') {
       this.optNames = new Map(pool.map((x) => kind === 'artist' || kind === 'inventor' ? [x.by!.en, x.by!] : [x.id ?? x.name.en, x.name]));
     }
-    if (pool.length < 10 || (HIDDEN_NAME.includes(kind) && this.optNames.size < 4) || (kind === 'era' && this.eras.size < 4) || (kind === 'civ' && this.civs.size < 4) || (kind === 'period' && this.periods.length < 4) || (kind === 'journey' && this.journeys.size < 4) || (kind === 'faith' && this.faiths.size < 4) || (!!sq && (set?.size ?? 0) < 4)) {
-      clear(this.card);
-      const close = h('button', { type: 'button', class: 'pill sm' }, t('close'));
-      close.addEventListener('click', () => { this.card.hidden = true; });
-      add(this.card, h('div', { class: 'tool-hint' }, L('This quiz needs the story collections; check your connection.', 'Este concurso necesita las colecciones de historias; revisa tu conexión.')), h('div', { class: 'tool-actions' }, close));
-      this.card.hidden = false;
-      return;
-    }
-    const picks = shuffle(pool.slice()).slice(0, 10);
+    if (pool.length < 10 || (HIDDEN_NAME.includes(kind) && this.optNames.size < 4) || (kind === 'era' && this.eras.size < 4) || (kind === 'civ' && this.civs.size < 4) || (kind === 'period' && this.periods.length < 4) || (kind === 'journey' && this.journeys.size < 4) || (kind === 'faith' && this.faiths.size < 4) || (!!sq && (set?.size ?? 0) < 4)) return null;
+    const picks = shuffle(pool.slice()).slice(0, n);
     const countries = [...new Set(pool.map((x) => x.country).filter((c): c is string => !!c))];
     const qs: Q[] = picks.map((it) => {
       if (kind === 'when') { const y = yearOf(it.end ?? it.date); return { id: String(y), item: it, options: yearOptions(y).map(String) }; }
@@ -564,12 +685,109 @@ export class Learn {
       if (kind === 'champion') return { id: it.podium![0].c, item: it, options: shuffle(it.podium!.slice(0, 4).map((p) => p.c)) };
       return { id: it.story, item: it };
     });
-    const labels = { ...this.app.renderer.settings.labels };
-    if (kind === 'where') Object.assign(this.app.renderer.settings.labels, { countries: false, capitals: false, cities: false });
-    this.quiz = { kind, region: 'world', qs, i: 0, score: 0, answered: false, savedLabels: labels, peek: false };
-    this.app.select(null);
-    if (kind === 'where' && this.app.renderer.view.current.kind !== 'globe') this.app.setProjection('globe');
-    this.renderQuiz();
+    return qs.map((x) => ({ ...x, kind }));
+  }
+
+  // ---- Put them in order
+
+  /** Things from the stories with a date a person can place: buildings, works, inventions and dishes (not those
+   *  built or made over more than 50 years, whose date would be unclear). */
+  private async orderPool(): Promise<QItem[]> {
+    try { await this.loadItems(['structures', 'eras', 'food', 'writing', 'plagues', 'disasters', 'books', 'art', 'inventions']); } catch { /* offline: fewer */ }
+    const tag = (k: StoryKind): QItem[] => (this.items[k] ?? []).map((it) => ({ ...it, kind: k }));
+    const is = (it: QItem, ...types: string[]) => !!it.type && types.includes(it.type);
+    const all = [...tag('structures'), ...tag('eras').filter((it) => is(it, 'work', 'invention', 'structure')), ...tag('food').filter((it) => is(it, 'dish')), ...tag('writing').filter((it) => is(it, 'script', 'work', 'invention')), ...tag('plagues').filter((it) => is(it, 'invention', 'work')), ...tag('books').filter((it) => is(it, 'work')), ...tag('art').filter((it) => is(it, 'work')), ...tag('inventions').filter((it) => is(it, 'invention'))];
+    const seen = new Set<string>();
+    // Not a name that gives its year away ("Paris 1924").
+    const dated = (it: QItem) => /\b\d{3,4}\b/.test(`${it.name.en} ${it.name.es}`);
+    return all.filter((it) => {
+      const k = itemKey(it);
+      if (seen.has(k) || !Number.isFinite(it.t) || dated(it) || (it.end && yearOf(it.end) - it.t > 50)) return false;
+      seen.add(k);
+      return true;
+    });
+  }
+
+  private async orderQs(n: number): Promise<Q[] | null> {
+    const pool = await this.orderPool();
+    if (pool.length < 40) return null;
+    return orderRounds(pool, n, 4, rand, itemKey).map((set) => ({ id: 'order', kind: 'order' as QuizKind, set, picked: [] }));
+  }
+
+  // ---- Time detective
+
+  private async loadDetective(): Promise<boolean> {
+    if (this.det && this.detLabels.size) return true;
+    try {
+      const [d, ys] = await Promise.all([loadJSON<DetData>('history/detective.json'), this.time.history.years()]);
+      this.det = d;
+      for (const y of ys) this.detLabels.set(y.year, { en: y.en, es: y.es });
+      return true;
+    } catch { return false; }
+  }
+
+  private async detectiveQs(n: number): Promise<Q[] | null> {
+    if (!(await this.loadDetective())) return null;
+    const qs = detectiveQuestions(this.det!, n, rand);
+    return qs.length ? qs.map((d) => ({ id: String(d.year), kind: 'detective' as QuizKind, options: d.options.map(String), det: d })) : null;
+  }
+
+  /** "1815", "AD 200", "500 BC" (as on the borders timeline). */
+  private yearLabel(y: number | string): string {
+    const l = this.detLabels.get(Number(y));
+    return l ? (es() ? l.es : l.en) : String(y);
+  }
+
+  // ---- Daily challenge
+
+  /** Seven questions, the same for everyone today: a country, a flag, where, when, an order, a map's year, and one
+   *  more whose quiz changes each day. Everything is loaded before the seeded choices, so they don't depend on it. */
+  private async startDaily() {
+    const day = dayKey();
+    if (dailyResult(day)) { this.showDailyDone(); return; }
+    const num = dailyNumber(day);
+    const last = DAILY_ROTATE[((num % DAILY_ROTATE.length) + DAILY_ROTATE.length) % DAILY_ROTATE.length];
+    await Promise.all([this.orderPool(), this.loadDetective(), this.itemQs('where', 0), this.itemQs('when', 0), this.itemQs(last, 0)]);
+    rand = seeded(hash(`atlas-daily:${day}`));
+    let qs: Q[] = [];
+    try {
+      const parts = [this.countryQs('find', 'world', 1), this.countryQs('flag', 'world', 1), await this.itemQs('where', 1), await this.itemQs('when', 1), await this.orderQs(1), await this.detectiveQs(1), await this.itemQs(last, 1)];
+      qs = parts.flatMap((x) => x ?? []);
+    } finally { rand = Math.random; }
+    if (qs.length < 5) { this.needsData(); return; }
+    await this.begin('daily', 'world', qs, day);
+  }
+
+  /** Today's challenge is done: how it went, the streak, and the result to share. */
+  private showDailyDone() {
+    const day = dayKey(), r = dailyResult(day);
+    if (!r) return;
+    this.shell.sheet.close();
+    this.stopTour();
+    if (this.quiz) void this.stopQuiz();
+    const marks = r.m.replace(/y/g, '🟩').replace(/n/g, '🟥');
+    clear(this.card);
+    const close = h('button', { type: 'button', class: 'icon-btn sm', 'aria-label': t('close') }, icon(X, 16));
+    close.addEventListener('click', () => { this.card.hidden = true; this.syncInset(); });
+    add(this.card, h('div', { class: 'tool-head' }, h('strong', null, `🗓️ ${L('Daily challenge', 'Reto del día')} #${dailyNumber(day)}`), close),
+      h('div', { class: 'quiz-q' }, `${r.s}/${r.n} ${marks}`),
+      h('div', { class: 'tool-hint' }, `🔥 ${inARow(current(progress().daily))} · ${L('A new challenge tomorrow.', 'Mañana hay un reto nuevo.')}`),
+      h('div', { class: 'tool-actions' }, this.shareButton(day, r.s, r.n, marks)));
+    this.card.classList.remove('peek');
+    this.card.hidden = false;
+    requestAnimationFrame(() => this.syncInset());
+  }
+
+  private shareButton(day: string, score: number, n: number, marks: string): HTMLElement {
+    const b = h('button', { type: 'button', class: 'pill primary sm', 'data-share': '' }, icon(Share2, 15), L('Share', 'Compartir'));
+    b.addEventListener('click', () => void (async () => {
+      const text = `${L('Atlas Globe · Daily challenge', 'Atlas Globe · Reto del día')} #${dailyNumber(day)}: ${score}/${n}\n${marks}\n${location.origin}${location.pathname}`;
+      if (navigator.share) {
+        try { await navigator.share({ text }); return; } catch (e) { if ((e as Error).name === 'AbortError') return; }
+      }
+      try { await navigator.clipboard.writeText(text); this.shell.toast(L('Copied: paste it anywhere', 'Copiado: pégalo donde quieras')); } catch { prompt('', text); }
+    })());
+    return b;
   }
 
   private heritageSites: QItem[] | null = null;
@@ -679,7 +897,7 @@ export class Learn {
     q.answered = true;
     const km = g ? Math.round(geoDistance(g, it.at) * 6371) : null;
     const ok = km != null && km <= 500;
-    if (ok) q.score++;
+    this.scored(ok);
     const cur = q.qs[q.i];
     cur.ok = ok;
     cur.given = km == null ? L('no answer', 'sin respuesta') : L(`${km.toLocaleString('en-GB')} km away`, `a ${km.toLocaleString('es-ES')} km`);
@@ -736,29 +954,35 @@ export class Learn {
     this.card.hidden = false;
     requestAnimationFrame(() => this.syncInset());
     if (q.done) { this.renderResult(); return; }
-    add(this.card, this.quizHead(`${L('Question', 'Pregunta')} ${q.i + 1}/${q.qs.length}`, `⭐ ${q.score}`));
+    const kind = this.qk();
+    add(this.card, this.quizHead(`${q.kind === 'daily' ? '🗓️ ' : ''}${L('Question', 'Pregunta')} ${q.i + 1}/${q.qs.length}`, `⭐ ${q.score}${(q.run ?? 0) >= 3 ? ` · 🔥 ${q.run}` : ''}`));
     if (!cur) return;
     if (q.peek) {
       // Folded: the map is in view. What to find (the tap quizzes are answered on it), or the answer.
       if (feedback) add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text), h('div', { class: 'tool-actions' }, this.nextButton()));
-      else if (q.kind === 'find') add(this.card, h('div', { class: 'quiz-peek-q' }, L(`Where is ${this.app.data.name(cur.id, lang())}?`, `¿Dónde está ${this.app.data.name(cur.id, lang())}?`)));
-      else if (q.kind === 'where' && cur.item) add(this.card, h('div', { class: 'quiz-peek-q' }, `${cur.item.icon} ${tx(cur.item.name)}`));
-      else if (q.kind === 'region') { const r = this.regions?.list.find((x) => x.id === cur.id); if (r) add(this.card, h('div', { class: 'quiz-peek-q' }, L(`Where is ${this.regionName(r)}?`, `¿Dónde está ${this.regionName(r)}?`))); }
+      else if (kind === 'find') add(this.card, h('div', { class: 'quiz-peek-q' }, L(`Where is ${this.app.data.name(cur.id, lang())}?`, `¿Dónde está ${this.app.data.name(cur.id, lang())}?`)));
+      else if (kind === 'where' && cur.item) add(this.card, h('div', { class: 'quiz-peek-q' }, `${cur.item.icon} ${tx(cur.item.name)}`));
+      else if (kind === 'region') { const r = this.regions?.list.find((x) => x.id === cur.id); if (r) add(this.card, h('div', { class: 'quiz-peek-q' }, L(`Where is ${this.regionName(r)}?`, `¿Dónde está ${this.regionName(r)}?`))); }
+      else if (kind === 'detective') add(this.card, h('div', { class: 'quiz-peek-q' }, `🕵️ ${L('When is this map from?', '¿De cuándo es este mapa?')}`));
       return;
     }
-    if (cur.item) { this.renderItemQuestion(q.kind, cur, feedback); return; }
-    if (q.kind === 'region') { this.renderRegionQuestion(cur, feedback); return; }
-    if (q.kind === 'link') { this.renderLinkQuestion(cur, feedback); return; }
-    if (q.kind === 'family') { this.renderFamilyQuestion(cur, feedback); return; }
+    // In a daily challenge, each question says which quiz it is from.
+    if (q.kind === 'daily') add(this.card, h('div', { class: 'quiz-kind' }, this.quizName(kind)));
+    if (cur.item) { this.renderItemQuestion(kind, cur, feedback); return; }
+    if (kind === 'order') { this.renderOrderQuestion(cur, feedback); return; }
+    if (kind === 'detective') { this.renderDetectiveQuestion(cur, feedback); return; }
+    if (kind === 'region') { this.renderRegionQuestion(cur, feedback); return; }
+    if (kind === 'link') { this.renderLinkQuestion(cur, feedback); return; }
+    if (kind === 'family') { this.renderFamilyQuestion(cur, feedback); return; }
     const name = this.app.data.name(cur.id, lang());
-    if (q.kind === 'find') add(this.card, h('div', { class: 'quiz-q' }, L(`Where is ${name}?`, `¿Dónde está ${name}?`)));
-    if (q.kind === 'flag') add(this.card, h('div', { class: 'quiz-q' }, L('Which country has this flag?', '¿De qué país es esta bandera?')),
+    if (kind === 'find') add(this.card, h('div', { class: 'quiz-q' }, L(`Where is ${name}?`, `¿Dónde está ${name}?`)));
+    if (kind === 'flag') add(this.card, h('div', { class: 'quiz-q' }, L('Which country has this flag?', '¿De qué país es esta bandera?')),
       h('img', { class: 'quiz-flag', src: dataUrl(`../flags/${(this.app.data.meta[cur.id].a2 ?? '').toLowerCase()}.svg`), alt: '' }));
-    if (q.kind === 'capital') add(this.card, h('div', { class: 'quiz-q' }, L(`What is the capital of ${name}?`, `¿Cuál es la capital de ${name}?`)));
+    if (kind === 'capital') add(this.card, h('div', { class: 'quiz-q' }, L(`What is the capital of ${name}?`, `¿Cuál es la capital de ${name}?`)));
     if (cur.options) {
       const opts = h('div', { class: 'quiz-opts' });
       for (const o of cur.options) {
-        const label = q.kind === 'capital' ? this.capital(o) : `${this.app.data.name(o, lang())}`;
+        const label = kind === 'capital' ? this.capital(o) : `${this.app.data.name(o, lang())}`;
         const b = h('button', { type: 'button', class: 'pill quiz-opt' }, label) as HTMLButtonElement;
         if (q.answered) { b.disabled = true; if (o === cur.id) b.classList.add('ok'); else if (o === cur.pick) b.classList.add('bad'); }
         b.addEventListener('click', () => this.answerOption(o, b));
@@ -805,9 +1029,10 @@ export class Learn {
       add(this.card, h('div', { class: 'tool-hint' }, L('Tap the place on the globe (within 500 km to score).', 'Toca el lugar en el globo (a menos de 500 km para puntuar).')), h('div', { class: 'tool-actions' }, skip));
     }
     if (feedback) {
-      const story = h('button', { type: 'button', class: 'pill sm' }, L('See it in the story', 'Verlo en la historia'));
-      story.addEventListener('click', () => {
-        this.stopQuiz();
+      // Not in a daily challenge, which would end there.
+      const story = q.kind === 'daily' || !it.story ? null : h('button', { type: 'button', class: 'pill sm' }, L('See it in the story', 'Verlo en la historia'));
+      story?.addEventListener('click', () => {
+        void this.stopQuiz();
         void this.time.stories[it.kind].open(it.story, it.step, { name: tx(it.name), at: it.at });
       });
       add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text), h('div', { class: 'tool-actions' }, story, this.nextButton()));
@@ -818,12 +1043,21 @@ export class Learn {
     const q = this.quiz!;
     if (q.answered) return;
     const cur = q.qs[q.i];
+    const kind = this.qk();
     q.answered = true;
     const ok = o === cur.id;
-    if (ok) q.score++;
+    this.scored(ok);
     cur.ok = ok; cur.pick = o;
-    cur.given = cur.item ? this.optionLabel(q.kind, o, cur) : q.kind === 'capital' ? this.capital(o) : this.app.data.name(o, lang());
+    cur.given = cur.item ? this.optionLabel(kind, o, cur) : kind === 'capital' ? this.capital(o) : this.app.data.name(o, lang());
     b.classList.add(ok ? 'ok' : 'bad');
+    if (cur.det) {
+      // Time detective: the names come out on the map.
+      cur.given = this.yearLabel(o);
+      void this.time.history.quizMap(cur.det.year, true);
+      const right = this.yearLabel(cur.id);
+      this.renderQuiz({ ok, text: ok ? L(`Correct! ${right}.`, `¡Correcto! ${right}.`) : L(`It was ${right}.`, `Era ${right}.`) });
+      return;
+    }
     if (cur.lang) {
       cur.given = this.famName(o);
       this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${this.familySentence(cur.lang, cur.id)}` });
@@ -838,19 +1072,19 @@ export class Learn {
     if (cur.item) {
       const it = cur.item;
       this.showItem(it);
-      const right = q.kind === 'when' ? itemWhen(it, Math.min(...(cur.options ?? [cur.id]).map(Number))) : this.optionLabel(q.kind, cur.id, cur);
-      if (q.kind === 'script') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It is: ', 'Es: ')}${tx(it.name)}${it.place ? ` · ${tx(it.place)}` : ''}` }); return; }
-      if (q.kind === 'listen' || q.kind === 'opening') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It was: ', 'Era: ')}${tx(it.name)}${it.by ? ` (${tx(it.by)})` : ''}${it.place ? ` · ${tx(it.place)}` : ''}` }); return; }
-      if (q.kind === 'site') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It was: ', 'Era: ')}${tx(it.name)}${it.place ? ` · ${tx(it.place)}` : ''} · ${L(`on the list since ${it.t}`, `en la lista desde ${it.t}`)}` }); return; }
-      if (q.kind === 'inventor') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${tx(it.by!)} (${itemWhen(it, it.t)}${it.place ? `, ${tx(it.place)}` : ''})` }); return; }
-      if (q.kind === 'artist') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${tx(it.by!)}${it.status ? ` · ${tx(it.status)}` : ''}` }); return; }
+      const right = kind === 'when' ? itemWhen(it, Math.min(...(cur.options ?? [cur.id]).map(Number))) : this.optionLabel(kind, cur.id, cur);
+      if (kind === 'script') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It is: ', 'Es: ')}${tx(it.name)}${it.place ? ` · ${tx(it.place)}` : ''}` }); return; }
+      if (kind === 'listen' || kind === 'opening') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It was: ', 'Era: ')}${tx(it.name)}${it.by ? ` (${tx(it.by)})` : ''}${it.place ? ` · ${tx(it.place)}` : ''}` }); return; }
+      if (kind === 'site') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It was: ', 'Era: ')}${tx(it.name)}${it.place ? ` · ${tx(it.place)}` : ''} · ${L(`on the list since ${it.t}`, `en la lista desde ${it.t}`)}` }); return; }
+      if (kind === 'inventor') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${tx(it.by!)} (${itemWhen(it, it.t)}${it.place ? `, ${tx(it.place)}` : ''})` }); return; }
+      if (kind === 'artist') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${tx(it.by!)}${it.status ? ` · ${tx(it.status)}` : ''}` }); return; }
       this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${right}.` });
       return;
     }
     this.showCountry(cur.id);
     const name = this.app.data.name(cur.id, lang());
     this.renderQuiz({ ok, text: ok ? L(`Correct! ${flagEmoji(this.app.data.meta[cur.id].a2)} ${name}`, `¡Correcto! ${flagEmoji(this.app.data.meta[cur.id].a2)} ${name}`)
-      : q.kind === 'capital' ? L(`The capital of ${name} is ${this.capital(cur.id)}.`, `La capital de ${name} es ${this.capital(cur.id)}.`) : L(`It was ${name}.`, `Era ${name}.`) });
+      : kind === 'capital' ? L(`The capital of ${name} is ${this.capital(cur.id)}.`, `La capital de ${name} es ${this.capital(cur.id)}.`) : L(`It was ${name}.`, `Era ${name}.`) });
   }
 
   private answerFind(id: string | null) {
@@ -858,7 +1092,7 @@ export class Learn {
     const cur = q.qs[q.i];
     q.answered = true;
     const ok = id === cur.id;
-    if (ok) q.score++;
+    this.scored(ok);
     cur.ok = ok;
     cur.given = id ? this.app.data.name(id, lang()) : L('no answer', 'sin respuesta');
     this.showCountry(cur.id);
@@ -877,16 +1111,24 @@ export class Learn {
     stopClip(200, 'card');
     this.app.select(null);
     this.pin = null;
+    this.pins = [];
     q.i++; q.answered = false; q.peek = false; q.fb = undefined;
     if (q.i >= q.qs.length) { this.finishQuiz(); return; }
     this.renderQuiz();
+    void this.prepareQuestion();
   }
 
   private finishQuiz() {
     const q = this.quiz!;
-    const key = q.kind === 'region' ? `atlas-quiz-best:region-${q.region}${q.all ? '-all' : ''}` : `atlas-quiz-best:${q.kind}`;
     let best = 0;
-    try { best = Number(localStorage.getItem(key) ?? 0); if (q.score > best) localStorage.setItem(key, String(q.score)); } catch { /* ignore */ }
+    if (q.kind === 'daily') {
+      // The streaks of the subjects it touched, then the challenge itself (only the day's first play counts).
+      this.badgeToast([...recordDailySubjects(q.qs.map((x) => x.kind ?? 'daily')), ...recordDaily(q.score, q.qs.length, q.qs.map((x) => (x.ok ? 'y' : 'n')).join(''))]);
+    } else {
+      const key = q.kind === 'region' ? `atlas-quiz-best:region-${q.region}${q.all ? '-all' : ''}` : `atlas-quiz-best:${q.kind}`;
+      try { best = Number(localStorage.getItem(key) ?? 0); if (q.score > best) localStorage.setItem(key, String(q.score)); } catch { /* ignore */ }
+      this.badgeToast(recordQuiz(q.kind, q.score, q.qs.length));
+    }
     q.done = true; q.best = best; q.peek = false;
     this.renderQuiz();
   }
@@ -894,8 +1136,9 @@ export class Learn {
   /** The result: the score, then every question, right or wrong, with a small picture; a tap shows it on the map. */
   private renderResult() {
     const q = this.quiz!;
-    const top = q.kind === 'site' ? L('Heritage explorer! 🏛️', '¡Explorador del patrimonio! 🏛️') : q.kind === 'inventor' ? L('Inventive mind! 💡', '¡Mente inventiva! 💡') : q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : q.kind === 'family' || q.kind === 'script' ? L('Language master! 🗣️', '¡Maestro de las lenguas! 🗣️') : q.kind === 'link' ? L('Data master! 📊', '¡Maestro de los datos! 📊') : q.kind === 'plague' ? L('Disease detective! 🔬', '¡Detective de epidemias! 🔬') : q.kind === 'disaster' ? L('Disaster expert! 🌋', '¡Experto en desastres! 🌋') : q.kind === 'listen' ? L('Golden ears! 🎧', '¡Oído de oro! 🎧') : q.kind === 'opening' ? L('Bookworm! 📚', '¡Ratón de biblioteca! 📚') : q.kind === 'artist' ? L('Art expert! 🎨', '¡Experto en arte! 🎨') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
+    const top = q.kind === 'order' ? L('Time keeper! ⏳', '¡Guardián del tiempo! ⏳') : q.kind === 'detective' ? L('Master detective! 🕵️', '¡Gran detective! 🕵️') : q.kind === 'site' ? L('Heritage explorer! 🏛️', '¡Explorador del patrimonio! 🏛️') : q.kind === 'inventor' ? L('Inventive mind! 💡', '¡Mente inventiva! 💡') : q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : q.kind === 'family' || q.kind === 'script' ? L('Language master! 🗣️', '¡Maestro de las lenguas! 🗣️') : q.kind === 'link' ? L('Data master! 📊', '¡Maestro de los datos! 📊') : q.kind === 'plague' ? L('Disease detective! 🔬', '¡Detective de epidemias! 🔬') : q.kind === 'disaster' ? L('Disaster expert! 🌋', '¡Experto en desastres! 🌋') : q.kind === 'listen' ? L('Golden ears! 🎧', '¡Oído de oro! 🎧') : q.kind === 'opening' ? L('Bookworm! 📚', '¡Ratón de biblioteca! 📚') : q.kind === 'artist' ? L('Art expert! 🎨', '¡Experto en arte! 🎨') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
     const msg = q.score >= 9 ? top : q.score >= 6 ? L('Great job! 🌍', '¡Muy bien! 🌍') : L('Keep exploring! 🧭', '¡Sigue explorando! 🧭');
+    if (q.kind === 'daily') { this.renderDailyResult(); return; }
     add(this.card, this.quizHead(`${L('Result', 'Resultado')} ${q.score}/${q.qs.length}`, ''));
     if (q.peek) return;
     const again = h('button', { type: 'button', class: 'pill primary sm' }, L('Play again', 'Jugar otra vez'));
@@ -903,14 +1146,33 @@ export class Learn {
     const done = h('button', { type: 'button', class: 'pill sm' }, L('Done', 'Terminar'));
     done.addEventListener('click', () => this.stopQuiz());
     const list = h('div', { class: 'quiz-sum', role: 'list' });
-    for (const cur of q.qs) list.append(this.resultRow(q.kind, cur));
+    for (const cur of q.qs) list.append(this.resultRow(cur.kind ?? q.kind, cur));
     add(this.card, h('div', { class: 'quiz-q' }, msg),
       q.score > (q.best ?? 0) ? h('div', { class: 'tool-hint' }, L('New personal best!', '¡Nuevo récord personal!')) : null,
       list, h('div', { class: 'tool-actions' }, again, done));
   }
 
+  /** The daily challenge's result: the score, its squares to share, the streak, and every question. */
+  private renderDailyResult() {
+    const q = this.quiz!;
+    const day = q.day ?? dayKey();
+    add(this.card, this.quizHead(`🗓️ ${L('Daily challenge', 'Reto del día')} #${dailyNumber(day)}`, `${q.score}/${q.qs.length}`));
+    if (q.peek) return;
+    const marks = marksOf(q.qs);
+    const done = h('button', { type: 'button', class: 'pill sm' }, L('Done', 'Terminar'));
+    done.addEventListener('click', () => void this.stopQuiz());
+    const list = h('div', { class: 'quiz-sum', role: 'list' });
+    for (const cur of q.qs) list.append(this.resultRow(cur.kind ?? q.kind, cur));
+    const streak = current(progress().daily);
+    add(this.card, h('div', { class: 'quiz-q daily-marks' }, `${q.score}/${q.qs.length} ${marks}`),
+      h('div', { class: 'tool-hint' }, `🔥 ${inARow(streak)} · ${L('A new challenge tomorrow.', 'Mañana hay un reto nuevo.')}`),
+      list, h('div', { class: 'tool-actions' }, this.shareButton(day, q.score, q.qs.length, marks), done));
+  }
+
   /** One question in the result: picture, what it was, the right answer and, if wrong, yours. */
   private resultRow(kind: QuizKind, cur: Q): HTMLElement {
+    if (kind === 'order') return this.orderRow(cur);
+    if (kind === 'detective') return this.detectiveRow(cur);
     if (kind === 'region') return this.regionRow(cur);
     if (kind === 'link') return this.linkRow(cur);
     if (kind === 'family') return this.familyRow(cur);
@@ -940,6 +1202,9 @@ export class Learn {
     row.addEventListener('click', () => {
       const q = this.quiz;
       if (!q) return;
+      // Back to today's map from a Time detective map.
+      void this.time.history.quizMap(null);
+      this.pins = [];
       if (it) this.showItem(it);
       else {
         const m = this.app.data.meta[cur.id];
@@ -949,6 +1214,163 @@ export class Learn {
       q.peek = true;
       this.renderQuiz();
     });
+    return row;
+  }
+
+  // ---- Put them in order: the question, the taps, the answer
+
+  /** The four things, numbered as the player taps them; after the check, in order with their dates. */
+  private renderOrderQuestion(cur: Q, feedback?: { ok: boolean; text: string }) {
+    const q = this.quiz!;
+    const set = cur.set!, picked = cur.picked ?? [];
+    const right = set.slice().sort((a, b) => a.t - b.t);
+    const from = Math.min(...set.map((x) => x.t));
+    add(this.card, h('div', { class: 'quiz-q' }, q.answered ? L('Oldest first:', 'Del más antiguo al más reciente:') : L('Put them in order: tap the oldest first.', 'Ordénalos: toca primero el más antiguo.')));
+    const list = h('div', { class: 'order-list', role: 'list' });
+    for (const it of q.answered ? right : set) {
+      const k = itemKey(it);
+      const mine = picked.indexOf(k), at = right.indexOf(it);
+      const pic = h('span', { class: 'quiz-thumb' }, it.icon);
+      void itemThumb(it).then((src) => {
+        if (!src || !pic.isConnected) return;
+        const img = h('img', { alt: '' }) as HTMLImageElement;
+        img.addEventListener('load', () => { clear(pic); pic.append(img); });
+        img.src = src;
+      });
+      const row = h('button', { type: 'button', role: 'listitem', class: `order-row${mine >= 0 ? ' picked' : ''}${q.answered ? (mine === at ? ' ok' : ' bad') : ''}`, 'data-order': k },
+        h('span', { class: 'order-num' }, q.answered ? String(at + 1) : mine >= 0 ? String(mine + 1) : ''),
+        pic,
+        h('span', { class: 'order-text' }, h('span', { class: 'order-name' }, tx(it.name)),
+          h('span', { class: 'order-sub' }, [q.answered ? itemWhen(it, from) : '', it.place ? tx(it.place) : ''].filter(Boolean).join(' · '))),
+        q.answered && mine !== at ? h('span', { class: 'order-yours' }, L(`you: ${mine + 1}`, `tú: ${mine + 1}`)) : null);
+      row.addEventListener('click', () => (q.answered ? this.showItem(it) : this.pickOrder(k)));
+      list.append(row);
+    }
+    add(this.card, list);
+    if (!q.answered && picked.length === set.length) {
+      const again = h('button', { type: 'button', class: 'pill sm' }, L('Start over', 'Volver a empezar'));
+      again.addEventListener('click', () => { cur.picked = []; this.renderQuiz(); });
+      const check = h('button', { type: 'button', class: 'pill primary sm', 'data-check': '' }, L('Check', 'Comprobar'));
+      check.addEventListener('click', () => this.answerOrder());
+      add(this.card, h('div', { class: 'tool-actions' }, again, check));
+    } else if (!q.answered && picked.length) add(this.card, h('div', { class: 'tool-hint' }, L('Tap a numbered one to take it back.', 'Toca uno con número para quitarlo.')));
+    if (feedback) add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text), h('div', { class: 'tool-actions' }, this.nextButton()));
+  }
+
+  /** A tap numbers a thing (the last one numbers itself); a tap on a numbered one takes it and those after it back. */
+  private pickOrder(k: string) {
+    const q = this.quiz!, cur = q.qs[q.i];
+    if (q.answered || !cur.set) return;
+    const picked = cur.picked ?? [];
+    const at = picked.indexOf(k);
+    if (at >= 0) cur.picked = picked.slice(0, at);
+    else {
+      picked.push(k);
+      if (picked.length === cur.set.length - 1) picked.push(itemKey(cur.set.find((x) => !picked.includes(itemKey(x)))!));
+      cur.picked = picked;
+    }
+    this.renderQuiz();
+  }
+
+  private answerOrder() {
+    const q = this.quiz!, cur = q.qs[q.i];
+    if (q.answered || !cur.set || !cur.picked) return;
+    q.answered = true;
+    const right = cur.set.slice().sort((a, b) => a.t - b.t);
+    const placed = right.filter((x, i) => itemKey(x) === cur.picked![i]).length;
+    const ok = placed === right.length;
+    cur.ok = ok;
+    cur.given = cur.picked.map((k) => tx(cur.set!.find((x) => itemKey(x) === k)!.name)).join(' → ');
+    this.scored(ok);
+    this.showSet(right);
+    this.renderQuiz({ ok, text: ok ? L('Correct! All four in order.', '¡Correcto! Los cuatro en orden.') : L(`${placed} of ${right.length} in the right place.`, `${placed} de ${right.length} en su lugar.`) });
+  }
+
+  /** Numbered pins on a round's things, oldest first, with the map turned to see them all. */
+  private showSet(right: QItem[]) {
+    this.pin = null;
+    this.pins = right.map((it, i) => ({ lon: it.at[0], lat: it.at[1], text: `${i + 1}. ${tx(it.name)}` }));
+    const rad = Math.PI / 180;
+    const v = right.map((it) => [Math.cos(it.at[1] * rad) * Math.cos(it.at[0] * rad), Math.cos(it.at[1] * rad) * Math.sin(it.at[0] * rad), Math.sin(it.at[1] * rad)]);
+    const m = [0, 1, 2].map((k) => v.reduce((a, x) => a + x[k], 0));
+    const lon = Math.atan2(m[1], m[0]) / rad, lat = Math.atan2(m[2], Math.hypot(m[0], m[1])) / rad;
+    const far = Math.max(...right.map((it) => geoDistance([lon, lat], it.at))) * 6371;
+    this.app.renderer.view.flyTo({ lon, lat, zoom: far < 400 ? 4 : far < 1200 ? 3 : far < 3000 ? 2 : 1 }, 1400);
+    this.app.renderer.requestRender();
+  }
+
+  /** A round in the result: the four in order with their dates and, if missed, the player's order. */
+  private orderRow(cur: Q): HTMLElement {
+    const right = cur.set!.slice().sort((a, b) => a.t - b.t);
+    const from = Math.min(...right.map((x) => x.t));
+    const row = h('button', { type: 'button', class: `quiz-sum-row ${cur.ok ? 'ok' : 'bad'}`, role: 'listitem' }, h('span', { class: 'quiz-thumb' }, '🔢'),
+      h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, right.map((x) => tx(x.name)).join(' → ')),
+        h('span', { class: 'quiz-sum-ans' }, [right.map((x) => itemWhen(x, from)).join(' · '), cur.ok ? '' : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : L('no answer', 'sin respuesta')].filter(Boolean).join(' · '))),
+      h('span', { class: 'quiz-sum-mark', 'aria-label': cur.ok ? L('right', 'correcto') : L('wrong', 'incorrecto') }, cur.ok ? '✓' : '✗'));
+    row.addEventListener('click', () => {
+      const q = this.quiz;
+      if (!q) return;
+      void this.time.history.quizMap(null);
+      this.showSet(right);
+      q.peek = true;
+      this.renderQuiz();
+    });
+    return row;
+  }
+
+  // ---- Time detective: the question and the answer
+
+  private detRegion(id: string) { return this.det?.regions.find((x) => x.id === id); }
+
+  /** "When is this map from?", the region, and four years; after the answer, the names and a line on that time. */
+  private renderDetectiveQuestion(cur: Q, feedback?: { ok: boolean; text: string }) {
+    const q = this.quiz!;
+    const d = cur.det!;
+    const r = this.detRegion(d.region);
+    add(this.card, h('div', { class: 'quiz-q' }, L('When is this map from?', '¿De cuándo es este mapa?')),
+      h('div', { class: 'quiz-item' }, `🕵️ ${r ? (es() ? r.es : r.en) : ''}`),
+      q.answered ? null : h('div', { class: 'tool-hint' }, L('Each colour is a state, an empire or a people of the time. Their names appear when you answer.', 'Cada color es un Estado, un imperio o un pueblo de la época. Sus nombres aparecen cuando respondes.')));
+    const opts = h('div', { class: 'quiz-opts' });
+    for (const o of cur.options ?? []) {
+      const b = h('button', { type: 'button', class: 'pill quiz-opt' }, this.yearLabel(o)) as HTMLButtonElement;
+      if (q.answered) { b.disabled = true; if (o === cur.id) b.classList.add('ok'); else if (o === cur.pick) b.classList.add('bad'); }
+      b.addEventListener('click', () => this.answerOption(o, b));
+      opts.append(b);
+    }
+    add(this.card, opts);
+    if (feedback) {
+      const cap = DETECTIVE_YEARS[d.year];
+      // Not in a daily challenge, which would end there.
+      const timeline = q.kind === 'daily' ? null : h('button', { type: 'button', class: 'pill sm' }, L('See it on the timeline', 'Verlo en la línea de tiempo'));
+      timeline?.addEventListener('click', () => void (async () => {
+        await this.stopQuiz();
+        this.shell.sheet.close();
+        await this.time.history.enter(d.year);
+      })());
+      add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text),
+        cap ? h('div', { class: 'quiz-caption' }, `${L(`The world in ${this.yearLabel(d.year)}`, `El mundo en ${this.yearLabel(d.year)}`)}: ${tx(cap)}`) : null,
+        h('div', { class: 'tool-hint' }, L('Tap a colour on the map to see its name.', 'Toca un color en el mapa para ver su nombre.')),
+        h('div', { class: 'tool-actions' }, timeline, this.nextButton()));
+    }
+  }
+
+  /** A map in the result: the region and its year and, if missed, the player's year; a tap shows it again, named. */
+  private detectiveRow(cur: Q): HTMLElement {
+    const d = cur.det!;
+    const r = this.detRegion(d.region);
+    const row = h('button', { type: 'button', class: `quiz-sum-row ${cur.ok ? 'ok' : 'bad'}`, role: 'listitem' }, h('span', { class: 'quiz-thumb' }, '🕵️'),
+      h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, `${r ? (es() ? r.es : r.en) : ''} · ${this.yearLabel(d.year)}`),
+        h('span', { class: 'quiz-sum-ans' }, cur.ok ? '' : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : L('no answer', 'sin respuesta'))),
+      h('span', { class: 'quiz-sum-mark', 'aria-label': cur.ok ? L('right', 'correcto') : L('wrong', 'incorrecto') }, cur.ok ? '✓' : '✗'));
+    row.addEventListener('click', () => void (async () => {
+      const q = this.quiz;
+      if (!q) return;
+      this.pins = [];
+      await this.time.history.quizMap(d.year, true);
+      if (r) this.app.renderer.view.flyTo({ lon: r.cam[0], lat: r.cam[1], zoom: r.cam[2] }, 1400);
+      q.peek = true;
+      this.renderQuiz();
+    })());
     return row;
   }
 
@@ -1162,18 +1584,20 @@ export class Learn {
     return row;
   }
 
-  private stopQuiz() {
+  private async stopQuiz(): Promise<void> {
     if (!this.quiz) return;
     stopClip(250, 'card');
     this.app.renderer.settings.labels = { ...this.quiz.savedLabels };
     this.quiz = null;
     this.pin = null;
+    this.pins = [];
     this.regions = null;
     this.focusRegion = null;
     this.card.hidden = true;
     this.card.classList.remove('peek');
     this.app.select(null);
     this.app.renderer.requestRender();
+    await this.time.history.quizMap(null);
   }
 
   // ---- Tours ----------------------------------------------------------------------------------
@@ -1196,10 +1620,10 @@ export class Learn {
   }
 
   private async startTour(tour: Tour) {
-    this.stopQuiz();
+    await this.stopQuiz();
     this.shell.sheet.close();
     if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
-    this.tour = { steps: tour.steps, i: 0, auto: false, timer: 0, fold: false };
+    this.tour = { name: tour.en, steps: tour.steps, i: 0, auto: false, timer: 0, fold: false };
     await this.showStep();
   }
 
@@ -1219,6 +1643,8 @@ export class Learn {
     if (s.fly) this.app.renderer.view.flyTo({ lon: s.fly[0], lat: s.fly[1], zoom: s.fly[2] }, 2200);
     this.app.renderer.requestRender();
     this.renderTour();
+    // A tour followed to its last stop counts for the tour badges.
+    if (this.tour === tr && tr.i === tr.steps.length - 1) this.badgeToast(recordTour(tr.name));
   }
 
   /** The tour card: the stop, its controls and its text (folded away to see more of the map). */
@@ -1308,18 +1734,81 @@ export class Learn {
   }
 
   // ---- On this day ----------------------------------------------------------------------------
-  private async openOnThisDay() {
-    const now = new Date();
-    const mm = String(now.getMonth() + 1).padStart(2, '0'), dd = String(now.getDate()).padStart(2, '0');
-    const body = h('div', { class: 'otd' }, h('p', { class: 'muted' }, t('dataLoading')));
-    this.shell.openPanel('onthisday', `${L('On this day', 'Tal día como hoy')} · ${now.toLocaleDateString(es() ? 'es-ES' : 'en-GB', { day: 'numeric', month: 'long' })}`, body, () => { this.pin = null; this.app.renderer.requestRender(); });
+  /** The stories' dated steps and items, a month at a time (data/onthisday/MM.json, scripts/data/build-onthisday.mjs). */
+  private otdMonths = new Map<number, OtdMonth>();
+
+  private async otdMonth(m: number): Promise<OtdMonth | null> {
+    if (!this.otdMonths.has(m)) {
+      try { this.otdMonths.set(m, await loadJSON<OtdMonth>(`onthisday/${String(m).padStart(2, '0')}.json`)); } catch { return null; }
+    }
+    return this.otdMonths.get(m)!;
+  }
+
+  /** A day of the year (today by default): what the stories tell of it, each opening its step, then Wikipedia's
+   *  selection of events, with a link to the story that tells the same event. Arrows go to the day before or after. */
+  private async openOnThisDay(day = new Date()) {
+    const loc = es() ? 'es-ES' : 'en-GB';
+    const label = day.toLocaleDateString(loc, { day: 'numeric', month: 'long' });
+    const go = (k: number) => { const d = new Date(day.getFullYear(), day.getMonth(), day.getDate() + k); void this.openOnThisDay(d); };
+    const prev = h('button', { type: 'button', class: 'icon-btn sm', 'aria-label': L('The day before', 'El día anterior'), 'data-otd': 'prev' }, icon(ChevronLeft, 18));
+    prev.addEventListener('click', () => go(-1));
+    const next = h('button', { type: 'button', class: 'icon-btn sm', 'aria-label': L('The day after', 'El día siguiente'), 'data-otd': 'next' }, icon(ChevronRight, 18));
+    next.addEventListener('click', () => go(1));
+    const today = dayKey(day) === dayKey() ? null : h('button', { type: 'button', class: 'pill sm', 'data-otd': 'today' }, L('Today', 'Hoy'));
+    today?.addEventListener('click', () => void this.openOnThisDay());
+    const stories = h('div', { class: 'otd otd-stories' }, h('p', { class: 'muted small' }, t('dataLoading')));
+    const wiki = h('div', { class: 'otd otd-wiki' }, h('p', { class: 'muted small' }, t('dataLoading')));
+    const body = h('div', null, h('div', { class: 'otd-nav' }, prev, h('strong', { class: 'otd-date' }, label), next, today),
+      h('h3', { class: 'sec-title' }, `📖 ${L('In the stories', 'En las historias')}`), stories,
+      h('h3', { class: 'sec-title' }, `🌐 ${L('Chosen by Wikipedia', 'Elegidos por Wikipedia')}`), wiki);
+    this.shell.openPanel('onthisday', L('On this day', 'Tal día como hoy'), body, () => { this.pin = null; this.app.renderer.requestRender(); });
+    const mm = day.getMonth() + 1, dd = day.getDate();
+    const month = await this.otdMonth(mm);
+    const entries = month?.days[String(dd)] ?? [];
+    this.fillOtdStories(stories, month, entries);
+    await this.fillOtdWiki(wiki, mm, dd, month, entries);
+  }
+
+  /** "1918", "44 BC". */
+  private otdYear(date: string): string {
+    const y = Number(/^-?\d+/.exec(date)?.[0] ?? 0);
+    return y < 0 ? `${-y} ${L('BC', 'a. C.')}` : String(y);
+  }
+
+  private fillOtdStories(el: HTMLElement, month: OtdMonth | null, entries: OtdEntry[]) {
+    clear(el);
+    if (!month) { el.append(h('p', { class: 'muted small' }, L('The stories need a connection the first time.', 'Las historias necesitan conexión la primera vez.'))); return; }
+    if (!entries.length) { el.append(h('p', { class: 'muted small' }, L('The stories tell nothing of this day yet.', 'Las historias aún no cuentan nada de este día.'))); return; }
+    // Newest first, as Wikipedia's list.
+    for (const e of entries.slice().reverse()) {
+      const [key, step, date, ic, en, sp] = e;
+      const st = month.stories[key];
+      const row = h('button', { type: 'button', class: 'otd-item otd-story', 'data-story': `${key}#${step}` },
+        h('span', { class: 'otd-year' }, this.otdYear(date)),
+        h('span', { class: 'otd-text' }, h('span', { class: 'otd-title' }, `${ic} ${es() ? sp : en}`), h('span', { class: 'otd-from' }, st ? `${st[0]} ${es() ? st[2] : st[1]}` : '')),
+        h('span', { class: 'otd-go' }, '📖'));
+      row.addEventListener('click', () => void this.openStoryStep(key, step));
+      el.append(row);
+    }
+  }
+
+  /** Opens a story at a step (from On this day), closing any quiz or tour. */
+  private async openStoryStep(key: string, step: number) {
+    const [kind, id] = key.split('/') as [StoryKind, string];
+    this.stopTour();
+    await this.stopQuiz();
+    this.app.emit('open-story', kind, id, step);
+  }
+
+  private async fillOtdWiki(el: HTMLElement, mm: number, dd: number, month: OtdMonth | null, entries: OtdEntry[]) {
     try {
-      const r = await fetch(`https://api.wikimedia.org/feed/v1/wikipedia/${es() ? 'es' : 'en'}/onthisday/selected/${mm}/${dd}`);
+      const r = await fetch(`https://api.wikimedia.org/feed/v1/wikipedia/${es() ? 'es' : 'en'}/onthisday/selected/${String(mm).padStart(2, '0')}/${String(dd).padStart(2, '0')}`);
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       const j = (await r.json()) as { selected?: { text: string; year: number; pages?: { title: string; normalizedtitle?: string; coordinates?: { lat: number; lon: number } }[] }[] };
-      clear(body);
+      if (!el.isConnected) return;
+      clear(el);
       const events = (j.selected ?? []).sort((a, b) => b.year - a.year);
-      if (!events.length) body.append(h('p', { class: 'muted' }, t('noResults')));
+      if (!events.length) el.append(h('p', { class: 'muted' }, t('noResults')));
       for (const ev of events) {
         const place = this.locate(ev.text, ev.pages ?? []);
         const item = h('button', { type: 'button', class: `otd-item${place ? '' : ' noplace'}` },
@@ -1329,12 +1818,16 @@ export class Learn {
           this.app.flyTo(place.lon, place.lat, Math.max(2.5, this.app.renderer.view.zoom));
           if (matchMedia('(max-width: 720px)').matches) this.shell.sheet.close();
         });
-        body.append(item);
+        // The same year in the stories: most likely the same event; a link opens its step.
+        const same = entries.find((e) => Number(/^-?\d+/.exec(e[2])?.[0]) === ev.year);
+        const story = same && month ? h('button', { type: 'button', class: 'pill sm otd-link', 'data-story': `${same[0]}#${same[1]}` }, `📖 ${es() ? month.stories[same[0]]?.[2] : month.stories[same[0]]?.[1]}`) : null;
+        story?.addEventListener('click', () => void this.openStoryStep(same![0], same![1]));
+        el.append(h('div', { class: 'otd-row' }, item, story));
       }
-      body.append(h('p', { class: 'muted small' }, L('Events from Wikipedia (CC BY-SA).', 'Acontecimientos de Wikipedia (CC BY-SA).')));
+      el.append(h('p', { class: 'muted small' }, L('Events from Wikipedia (CC BY-SA).', 'Acontecimientos de Wikipedia (CC BY-SA).')));
     } catch (e) {
-      clear(body);
-      body.append(h('p', { class: 'muted' }, L(`Needs an internet connection (${(e as Error).message}).`, `Necesita conexión a internet (${(e as Error).message}).`)));
+      clear(el);
+      el.append(h('p', { class: 'muted' }, L(`Needs an internet connection (${(e as Error).message}).`, `Necesita conexión a internet (${(e as Error).message}).`)));
     }
   }
 

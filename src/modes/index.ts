@@ -23,10 +23,12 @@ export interface Mode {
 export class TimeTravel {
   readonly modes: Mode[] = [];
   readonly stories = {} as Record<StoryKind, StoryMode>;
+  /** Borders through time (Time detective shows its maps). */
+  readonly history: HistoryMode;
   get wars() { return this.stories.wars; }
 
   constructor(private app: App, private shell: Shell) {
-    const history = new HistoryMode(app, shell);
+    const history = (this.history = new HistoryMode(app, shell));
     this.add({
       id: 'history', icon: '🏛️', title: () => t('historyTitle'), desc: () => t('historyDesc'),
       enter: () => history.enter(), exit: () => history.exit(), tap: (lon, lat) => history.tap(lon, lat),

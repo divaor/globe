@@ -146,15 +146,21 @@ spinning full-screen as an ambient display. English and Spanish.
 - **Learn & play:** quizzes (find the country, flags, capitals, states and provinces of 48 countries, where in
   the world, when was it built or made, dishes of the world, which era, which civilization, which geologic
   period, who won, guess the link between two country facts, which journey, which faith, which script, which
-  language family, which epidemic, which disaster, what are you hearing, which book is it from, who made it, which World Heritage site, who invented it), each ending with every answer and its picture; guided tours (our planet, eight cities
-  through time, history and culture, Out of Africa, capitals of the ancient world, the dinosaur trail, the five
+  language family, which epidemic, which disaster, what are you hearing, which book is it from, who made it, which World Heritage site, who invented it), each ending with every answer and its picture; two games of time:
+  Put them in order (four things from the stories, oldest first, then shown in order with their dates and pins on the
+  map) and Time detective (a map of old borders with no names: which of four years is it from?); a daily challenge
+  of seven questions, the same for everyone each day, with a streak and a result to share; your progress, with right
+  answers, day streaks and badges for six subjects, the daily challenge and the tours (kept in this browser);
+  guided tours (our planet, twenty cities through time, from Athens, Baghdad and Xi'an to Buenos Aires, Rio de
+  Janeiro and Cusco, history and culture, Out of Africa, capitals of the ancient world, the dinosaur trail, the five
   mass extinctions, Olympic cities, World Cup finals, the Winter Games, great races, along the Silk Road, around
   the world under sail, to the ends of the Earth, gold, silver and spices, holy places, pilgrims' ways, writing
   is born, code breakers, the story of the alphabet, languages of the world, pandemics that changed history,
-  medicine's great discoveries, tsunamis across the oceans, the year without a summer, the Ring of Fire, first lines,
+  medicine's great discoveries, tsunamis across the oceans, the year without a summer, disasters of the Ring of Fire, first lines,
   great libraries, masterpieces and where they are, sounds of the world, cities of music, Latin America's World
   Heritage, nature's wonders, lost and rebuilt, China's great inventions, from the telegraph to the Web, invented in
-  Latin America); "On this day" (Wikipedia).
+  Latin America); "On this day", any day of the year: what the Time travel stories tell of it, each opening its
+  step, and Wikipedia's selection of events, linked to the story that tells the same event.
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Ambient mode:** full-screen rotating globe with your filters, screen kept awake, clock, optional filter cycling.
 
@@ -196,6 +202,10 @@ Main sources: Natural Earth (public domain), NASA Blue Marble and GIBS, NOAA ETO
 GPCP, Köppen–Geiger (Kottek/Rubel), GeoNames (CC BY 4.0), aourednik/historical-basemaps (GPL-3.0),
 Merdith et al. 2021 plate model (CC BY 4.0), PB2002 plates (ODC-By), CIA World Factbook, World Bank,
 Our World in Data (CC BY 4.0), mledoze/countries (ODbL), Unicode CLDR, flag-icons (MIT).
+Time detective measures, for nine regions, which polities hold each borders map's land and how different two years
+look there (`scripts/data/history/detective.mjs`, `public/data/history/detective.json`); On this day lists the
+stories' dated steps and items by day (`scripts/data/build-onthisday.mjs`, `public/data/onthisday/`); and
+`scripts/test/tours.mjs` checks that every tour stop opens a story step that exists.
 The States and provinces quiz uses Natural Earth's admin-1 regions (`scripts/data/build-regions.mjs`; France,
 Spain, Italy and the United Kingdom grouped into their regions). The Time travel stories are written from
 Wikipedia and the sources listed in each story

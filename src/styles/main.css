@@ -388,6 +388,15 @@ html.mode-time .legend { bottom: calc(232px + var(--safe-b)); }
 .otd-item.noplace { cursor: default; }
 .otd-year { font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
 .otd-text { font-size: 13.5px; line-height: 1.4; }
+.otd-nav { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.otd-date { font-size: 16px; min-width: 120px; text-align: center; }
+.otd-nav .pill { margin-left: auto; }
+.otd-story .otd-text { display: flex; flex-direction: column; gap: 2px; }
+.otd-title { font-weight: 700; }
+.otd-from { font-size: 12px; color: var(--muted); }
+.otd-row { display: flex; flex-direction: column; border-bottom: 1px solid var(--line); }
+.otd-row > .otd-item { border-bottom: 0; }
+.otd-link { align-self: flex-start; margin: 0 0 8px 70px; height: auto; min-height: 28px; padding: 4px 10px; font-size: 12.5px; white-space: normal; text-align: left; }
 .note-input { width: 100%; border-radius: 12px; border: 1px solid var(--line); background: var(--chip); color: var(--text); font: inherit; font-size: 15px; padding: 12px; resize: vertical; }
 
 /* ---------- phones */
@@ -610,6 +619,45 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
 .quiz-sum-mark { font-weight: 800; font-size: 18px; flex: none; }
 .quiz-sum-row.ok .quiz-sum-mark { color: #20c997; }
 .quiz-sum-row.bad .quiz-sum-mark { color: #ff8787; }
+
+/* Put them in order: four rows numbered as they are tapped; after the check, in order with their dates. */
+.order-list { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+.order-row { display: flex; align-items: center; gap: 10px; padding: 6px 8px; border-radius: 12px; border: 1px solid var(--line); background: var(--chip); color: inherit; font: inherit; text-align: left; cursor: pointer; min-height: 56px; }
+.order-row.picked { border-color: var(--accent); background: var(--chip-on); }
+.order-row.ok { border-color: rgba(32, 201, 151, .7); }
+.order-row.bad { border-color: rgba(255, 107, 107, .7); }
+.order-num { width: 26px; height: 26px; flex: none; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 14px; border: 2px dashed var(--line-strong); }
+.order-row.picked .order-num, .order-row.ok .order-num, .order-row.bad .order-num { border: 0; background: var(--accent); color: #fff; }
+.order-row.ok .order-num { background: #20c997; }
+.order-row.bad .order-num { background: #e8590c; }
+.order-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
+.order-name { font-weight: 700; font-size: 14px; line-height: 1.25; }
+.order-sub { font-size: 12px; color: var(--muted); line-height: 1.3; }
+.order-yours { flex: none; font-size: 12px; font-weight: 700; color: #ff8787; }
+/* Time detective's line on the time; a daily challenge question's quiz; its squares. */
+.quiz-caption { margin-top: 8px; font-size: 13.5px; line-height: 1.45; }
+.quiz-kind { margin-top: 4px; font-size: 12.5px; font-weight: 700; color: var(--muted); }
+.daily-marks { letter-spacing: 1px; }
+.daily-card .mode-icon { font-size: 26px; }
+.daily-card { border-color: var(--accent); }
+.daily-card.done { border-color: var(--line); }
+/* Your progress: subjects, streaks and badges. */
+.progress .sec-title { margin-top: 18px; }
+.prog-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13.5px; margin: 4px 0; flex-wrap: wrap; }
+.prog-bar { flex: 1 1 120px; max-width: 220px; height: 8px; border-radius: 4px; background: var(--chip-on); overflow: hidden; }
+.prog-bar > span { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+.day-dots { display: inline-flex; gap: 4px; }
+.day-dot { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 10.5px; font-weight: 700; border: 1px solid var(--line-strong); color: var(--muted); }
+.day-dot.done { background: rgba(32, 201, 151, .3); border-color: #20c997; color: var(--text); }
+.day-dot.perfect { background: #20c997; border-color: #20c997; color: #fff; }
+.badge-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 6px; margin: 6px 0 2px; }
+.badge-chip { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 12px; border: 1px solid var(--line); background: var(--chip); opacity: .6; }
+.badge-chip.got { opacity: 1; border-color: #f0b429; background: rgba(240, 180, 41, .14); }
+.badge-icon { font-size: 22px; flex: none; filter: grayscale(1); }
+.badge-chip.got .badge-icon { filter: none; }
+.badge-text { display: flex; flex-direction: column; min-width: 0; }
+.badge-name { font-weight: 700; font-size: 13px; line-height: 1.25; }
+.badge-how { font-size: 11.5px; color: var(--muted); line-height: 1.3; }
 
 /* Games of the world: a medal table (or a World Cup's last four) in a card and in Details. */
 .mt-wrap { margin: 6px 0 2px; }
