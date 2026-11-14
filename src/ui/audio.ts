@@ -44,6 +44,9 @@ let fadingOut = false;
 /** The player was sent to the clip's start once (when the address's #t= was not honoured). */
 let jumped = false;
 let unlocked = false;
+/** Music is turned down while the narrator speaks. */
+let ducked = false;
+const level = () => target * (ducked ? 0.3 : 1);
 const subs = new Set<() => void>();
 
 const same = (a: Clip | null, b: Clip | null) => !!a && !!b && a.src === b.src && a.start === b.start;
@@ -117,14 +120,14 @@ function reset() {
 export function playClip(c: Clip, o: { volume?: number; fadeIn?: number; title?: string; from?: 'card' | 'step' } = {}) {
   const a = audio();
   target = o.volume ?? 1;
-  if (same(cur, c) && (state === 'playing' || state === 'loading')) { origin = o.from ?? origin; if (!fadingOut) fadeTo(target, 300); return; }
-  if (same(cur, c) && state === 'paused') { origin = o.from ?? origin; void a.play().catch(() => { /* blocked */ }); fadeTo(target, 200); return; }
+  if (same(cur, c) && (state === 'playing' || state === 'loading')) { origin = o.from ?? origin; if (!fadingOut) fadeTo(level(), 300); return; }
+  if (same(cur, c) && state === 'paused') { origin = o.from ?? origin; void a.play().catch(() => { /* blocked */ }); fadeTo(level(), 200); return; }
   const begin = () => {
     cur = c; origin = o.from ?? 'card'; failed = null; fadingOut = false;
     tries = [c.src, ...(c.orig !== c.src ? [c.orig] : [])];
-    a.volume = o.fadeIn ? 0 : target;
+    a.volume = o.fadeIn ? 0 : level();
     next();
-    if (o.fadeIn) fadeTo(target, o.fadeIn);
+    if (o.fadeIn) fadeTo(level(), o.fadeIn);
     const ms = (navigator as Navigator & { mediaSession?: MediaSession }).mediaSession;
     if (ms && typeof MediaMetadata !== 'undefined' && o.title) {
       try { ms.metadata = new MediaMetadata({ title: o.title, artist: tx(c.by) }); } catch { /* not shown */ }
@@ -210,4 +213,11 @@ export function clipEl(c: Clip, o: { title?: string; credit?: boolean } = {}): H
   const off = onClip(() => { if (!wrap.isConnected) { off(); cancelAnimationFrame(raf); return; } paint(); });
   paint();
   return wrap;
+}
+
+/** Turns the music down while a voice reads (narration), and back up after. */
+export function duckMusic(on: boolean) {
+  if (ducked === on) return;
+  ducked = on;
+  if (el && cur && (state === 'playing' || state === 'loading') && !fadingOut) fadeTo(level(), 450);
 }

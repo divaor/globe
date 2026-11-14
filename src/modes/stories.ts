@@ -14,7 +14,7 @@ import { geoArea, geoCentroid, geoContains, geoDistance, geoInterpolate } from '
 import { mesh } from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { Feature, Geometry, MultiLineString, Polygon } from 'geojson';
-import { Play, Pause, X, ChevronLeft, ChevronRight, ListOrdered, BookOpen, Search, Music } from 'lucide';
+import { Play, Pause, X, ChevronLeft, ChevronRight, ListOrdered, BookOpen, Search, Music, Volume2, VolumeX } from 'lucide';
 import { loadJSON, shapesFrom, chunkLines, dataUrl, type Shape, type Line } from '../data/store';
 import { t, tx, lang, fmtNumber, fmtCompact, flagEmoji } from '../app/i18n';
 import { h, icon, clear } from '../ui/dom';
@@ -22,6 +22,7 @@ import { continentSwatch, mix } from '../engine/colors';
 import { loadPaleo, fmtLat, unitName, type PaleoWorld, type Unit } from './paleo';
 import { SCRIPT_FONT, loadGlyphs, registerScriptFonts, isVertical } from '../app/scriptFonts';
 import { clipEl, playClip, stopClip, musicOn, setMusicOn, onClip, clipPlaying, unlockAudio, type Clip } from '../ui/audio';
+import { canSpeak, narrationOn, setNarrationOn, speak, stopSpeaking, onNarration } from '../ui/narrator';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { LayerDef, RenderCtx } from '../layers/types';
@@ -334,11 +335,15 @@ export class StoryMode {
   private step = 0;
   private prev = -1;
   private stepAt = 0;
+  /** The voice reading the step (with reading aloud on): not reading, reading, or read to the end, and when it ended. */
+  private voice: 'off' | 'reading' | 'done' = 'off';
+  private voiceEnd = 0;
+  private offVoice: (() => void) | null = null;
   private playing = false;
   private speed = 1;
   private raf = 0;
   private bar: HTMLElement | null = null;
-  private ui: { date: HTMLElement; title: HTMLElement; text: HTMLElement; meta: HTMLElement; play: HTMLButtonElement; track: HTMLElement; count: HTMLElement; music: HTMLButtonElement | null } | null = null;
+  private ui: { date: HTMLElement; title: HTMLElement; text: HTMLElement; meta: HTMLElement; play: HTMLButtonElement; track: HTMLElement; count: HTMLElement; music: HTMLButtonElement | null; voice: HTMLButtonElement | null } | null = null;
   /** Stops listening to the clip player (the bar's "now playing" chip follows it). */
   private offClip: (() => void) | null = null;
   private savedStack: string[] = [];
@@ -450,6 +455,7 @@ export class StoryMode {
     this.buildBar();
     this.go(this.step, { fly: !focus });
     this.playing = !focus;
+    if (this.playing) this.narrate(false);
     this.renderBar();
     this.app.emit('mode', this.kind);
     if (focus) {
@@ -481,7 +487,10 @@ export class StoryMode {
     const app = this.app;
     this.stop();
     stopClip(400);
+    if (this.voice === 'reading') stopSpeaking();
+    this.voice = 'off';
     this.offClip?.(); this.offClip = null;
+    this.offVoice?.(); this.offVoice = null;
     this.bar?.remove();
     this.bar = null; this.ui = null; this.c = null;
     window.removeEventListener('keydown', this.onKey);
@@ -597,6 +606,37 @@ export class StoryMode {
     this.stepAt = performance.now() + delay;
     this.kick();
     this.music();
+    this.narrate(!!o.user);
+  }
+
+  /**
+   * With reading aloud on, reads the step (its date, title and text) while the story plays or when the reader moved
+   * to it; playing waits for the voice before the next step.
+   */
+  private narrate(user: boolean) {
+    const c = this.c;
+    if (!c || !narrationOn() || !(this.playing || user)) {
+      if (this.voice === 'reading') stopSpeaking();
+      this.voice = 'off';
+      return;
+    }
+    const st = c.steps[this.step], i = this.step;
+    const title = tx(st.title);
+    const words = `${fmtWhen(st.date, c.t0)}. ${/[.!?…]$/.test(title) ? title : `${title}.`} ${tx(st.text)}`;
+    this.voice = 'reading';
+    void speak(words, { lang: lang() }).then((done) => {
+      if (this.c !== c || this.step !== i) return;
+      this.voice = done ? 'done' : 'off';
+      this.voiceEnd = performance.now();
+      this.kick();
+    });
+  }
+
+  /** Turns reading aloud on or off (for stories and tours alike, kept for the next visit). */
+  private setVoice(on: boolean) {
+    setNarrationOn(on);
+    if (on) this.narrate(true); else this.voice = 'off';
+    this.renderBar();
   }
 
   /** The first item the step shows that has a recording. */
@@ -638,7 +678,9 @@ export class StoryMode {
     if (!this.c) return;
     const el = now - this.stepAt;
     const last = this.c.steps.length - 1;
-    if (this.playing && el > this.stepMs()) {
+    // Reading aloud, the voice sets the pace: the next step comes a moment after it is done.
+    const due = this.voice === 'reading' ? false : this.voice === 'done' ? now - this.voiceEnd > 1300 && el > 3500 : el > this.stepMs();
+    if (this.playing && due) {
       if (this.step < last) { this.go(this.step + 1); return; }
       this.playing = false;
       this.renderBar();
@@ -655,7 +697,7 @@ export class StoryMode {
     if (!this.c) return;
     if (!this.playing && this.step === this.c.steps.length - 1) this.go(0, { user: true });
     this.playing = !this.playing;
-    if (this.playing) this.music(); else stopClip(500, 'step');
+    if (this.playing) { this.music(); if (this.voice === 'off') this.narrate(true); } else { stopClip(500, 'step'); if (this.voice === 'reading') stopSpeaking(); this.voice = 'off'; }
     this.renderBar();
     this.kick();
   }
@@ -1385,7 +1427,7 @@ export class StoryMode {
   }
 
   /** Stops playing (a tour or a quiz opened the story). */
-  pause() { if (this.playing) { this.playing = false; this.renderBar(); } }
+  pause() { if (this.playing) { this.playing = false; if (this.voice === 'reading') stopSpeaking(); this.voice = 'off'; this.renderBar(); } }
 
   /** Shows a story at a step, paused (guided tours): opens it, or just moves when it is open. */
   async show(id: string, step: number) {
@@ -1502,6 +1544,20 @@ export class StoryMode {
 
   // ---- the bar
 
+  /** The reading-aloud button shows whether it is on. */
+  private voiceButton() {
+    const b = this.ui?.voice;
+    if (!b) return;
+    const on = narrationOn();
+    const label = on ? (lang() === 'es' ? 'Dejar de leer en voz alta' : 'Stop reading aloud') : (lang() === 'es' ? 'Leer en voz alta' : 'Read aloud');
+    clear(b);
+    b.append(icon(on ? Volume2 : VolumeX, 18));
+    b.classList.toggle('on', on);
+    b.title = label;
+    b.setAttribute('aria-label', label);
+    b.setAttribute('aria-pressed', String(on));
+  }
+
   private buildBar() {
     this.bar?.remove();
     const c = this.c!;
@@ -1529,6 +1585,13 @@ export class StoryMode {
       music.addEventListener('click', () => this.setMusic(!musicOn()));
       tools.unshift(music);
     }
+    // Reading aloud (where the browser has voices).
+    let voice: HTMLButtonElement | null = null;
+    if (canSpeak()) {
+      voice = h('button', { type: 'button', class: 'icon-btn wb-voice' }) as HTMLButtonElement;
+      voice.addEventListener('click', () => this.setVoice(!narrationOn()));
+      tools.unshift(voice);
+    }
     const date = h('div', { class: 'wb-date' });
     const count = h('span', { class: 'wb-count' });
     const title = h('div', { class: 'wb-title' });
@@ -1553,7 +1616,9 @@ export class StoryMode {
         h('div', { class: 'wb-head' }, date, h('div', { class: 'wb-name' }, h('span', { class: 'wb-title-short' }, `${c.icon} ${tx(c.name)}`), count)),
         h('div', { class: 'wb-tools' }, ...tools)),
       title, text, meta, h('div', { class: 'wb-nav' }, prev, track, next));
-    this.ui = { date, title, text, meta, play, track, count, music };
+    this.ui = { date, title, text, meta, play, track, count, music, voice };
+    this.offVoice?.();
+    this.offVoice = onNarration(() => this.voiceButton());
     this.app.root.append(this.bar);
     // The "now playing" chip shows whether its clip is playing.
     this.offClip?.();
@@ -1593,6 +1658,7 @@ export class StoryMode {
     clear(ui.meta);
     const on = musicOn();
     if (ui.music) { ui.music.classList.toggle('on', on); ui.music.setAttribute('aria-pressed', String(on)); }
+    this.voiceButton();
     // With music on: what the step plays (a tap opens its card).
     const sc = on ? this.stepClip() : undefined;
     if (sc?.audio) {

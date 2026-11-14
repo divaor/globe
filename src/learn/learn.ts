@@ -1,6 +1,6 @@
 // Learn and play: quizzes (find the country, flags, capitals...), the games Put them in order and Time detective,
 // the daily challenge, your progress (streaks and badges), guided tours, and "On this day".
-import { GraduationCap, Compass, CalendarDays, X, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Play, Pause, Map as MapIcon, Share2 } from 'lucide';
+import { GraduationCap, Compass, CalendarDays, X, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Play, Pause, Map as MapIcon, Share2, Volume2, VolumeX } from 'lucide';
 import { geoDistance } from 'd3-geo';
 import { h, icon, clear, add } from '../ui/dom';
 import { t, tx, lang, flagEmoji } from '../app/i18n';
@@ -8,6 +8,7 @@ import { dataUrl, loadJSON } from '../data/store';
 import { zoomable } from '../ui/zoom';
 import { fmtWhen, itemWhen, itemThumb, sampleEl, quoteEl, type CollectionItem, type StoryKind } from '../modes/stories';
 import { clipEl, stopClip } from '../ui/audio';
+import { canSpeak, narrationOn, setNarrationOn, speak, stopSpeaking, sentences } from '../ui/narrator';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { TimeTravel } from '../modes';
@@ -163,7 +164,9 @@ export class Learn {
   /** `region`: the continent of a country quiz, or the country of a States and provinces quiz (`all`: every region, not ten). */
   /** `run`: right answers in a row; `day`: the daily challenge's date. */
   private quiz: { kind: QuizKind; region: string; qs: Q[]; i: number; score: number; answered: boolean; savedLabels: RenderSettings['labels']; peek: boolean; fb?: { ok: boolean; text: string }; done?: boolean; best?: number; all?: boolean; run?: number; day?: string } | null = null;
-  private tour: { name: string; steps: TourStep[]; i: number; auto: boolean; timer: number; fold: boolean } | null = null;
+  /** The tour being taken: its stops, the one shown, auto-play, the card folded, and the voice reading the stop
+   * (`voice`: not reading, reading, or read to the end; `after` waits after the voice before the next stop). */
+  private tour: { name: string; steps: TourStep[]; i: number; auto: boolean; timer: number; fold: boolean; voice: 'off' | 'reading' | 'done'; after: number; at: number } | null = null;
   private pin: { lon: number; lat: number; text: string } | null = null;
   /** Several numbered pins (Put them in order's answer). */
   private pins: { lon: number; lat: number; text: string }[] = [];
@@ -1828,11 +1831,22 @@ export class Learn {
     await this.stopQuiz();
     this.shell.sheet.close();
     if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
-    this.tour = { name: tour.en, steps: tour.steps, i: 0, auto: false, timer: 0, fold: false };
+    this.tour = { name: tour.en, steps: tour.steps, i: 0, auto: false, timer: 0, fold: false, voice: 'off', after: 0, at: 0 };
     await this.showStep();
   }
 
   private async showStep() {
+    const tr = this.tour!;
+    const i = tr.i;
+    tr.voice = 'off';
+    clearTimeout(tr.after);
+    if (narrationOn()) stopSpeaking();
+    await this.showStop();
+    // Read aloud once the stop is shown (unless the reader has moved on meanwhile).
+    if (this.tour === tr && tr.i === i) this.narrateStep();
+  }
+
+  private async showStop() {
     const tr = this.tour!;
     const s = tr.steps[tr.i];
     // The full-screen views (solar system, sky, galaxy, elements) close at any stop that isn't theirs.
@@ -1907,9 +1921,22 @@ export class Learn {
     fold.addEventListener('click', () => { tr.fold = !tr.fold; this.renderTour(); });
     const close = h('button', { type: 'button', class: 'icon-btn sm', 'aria-label': t('close') }, icon(X, 16));
     close.addEventListener('click', () => this.stopTour());
+    // Read aloud: on or off for tours and stories alike (kept for the next visit).
+    let voice: HTMLElement | null = null;
+    if (canSpeak()) {
+      const on = narrationOn();
+      const vLabel = on ? L('Stop reading aloud', 'Dejar de leer en voz alta') : L('Read aloud', 'Leer en voz alta');
+      voice = h('button', { type: 'button', class: `icon-btn sm tour-voice${on ? ' on' : ''}`, title: vLabel, 'aria-label': vLabel, 'aria-pressed': String(on) }, icon(on ? Volume2 : VolumeX, 16));
+      voice.addEventListener('click', () => {
+        setNarrationOn(!narrationOn());
+        if (narrationOn()) this.narrateStep(); else { tr.voice = 'off'; this.armAuto(); }
+        this.renderTour();
+      });
+    }
+    const body = es() ? s.es : s.en;
     add(this.card,
-      h('div', { class: 'tool-head' }, h('strong', null, `${s.icon ?? '🧭'} ${es() ? s.title_es : s.title_en}`), h('span', { class: 'tour-tools' }, prev, h('span', { class: 'small muted' }, `${tr.i + 1}/${tr.steps.length}`), next, auto, fold, close)),
-      tr.fold ? null : h('div', { class: 'tour-text' }, es() ? s.es : s.en));
+      h('div', { class: 'tool-head' }, h('strong', null, `${s.icon ?? '🧭'} ${es() ? s.title_es : s.title_en}`), h('span', { class: 'tour-tools' }, prev, h('span', { class: 'small muted' }, `${tr.i + 1}/${tr.steps.length}`), next, auto, voice, fold, close)),
+      tr.fold ? null : h('div', { class: 'tour-text' }, ...sentences(body).map((x, k) => h('span', { class: 'tour-s', 'data-s': String(k) }, `${x} `))));
     this.card.classList.toggle('peek', tr.fold);
     this.card.hidden = false;
     requestAnimationFrame(() => this.syncInset());
@@ -1961,16 +1988,64 @@ export class Learn {
     else if (tr.auto) { tr.i = 0; void this.showStep(); }
   }
 
+  /** The words a stop reads aloud: its title, then its text. */
+  private stopWords(s: TourStep): string {
+    const title = es() ? s.title_es : s.title_en;
+    return `${/[.!?…]$/.test(title) ? title : `${title}.`} ${es() ? s.es : s.en}`;
+  }
+
+  /** Reads the stop aloud (when reading aloud is on); auto-play then goes on when the voice is done. */
+  private narrateStep() {
+    const tr = this.tour;
+    if (!tr) return;
+    clearTimeout(tr.after);
+    if (!narrationOn()) { tr.voice = 'off'; this.armAuto(); return; }
+    clearInterval(tr.timer);
+    const s = tr.steps[tr.i], i = tr.i;
+    const titleParts = sentences(/[.!?…]$/.test(es() ? s.title_es : s.title_en) ? (es() ? s.title_es : s.title_en) : `${es() ? s.title_es : s.title_en}.`).length;
+    tr.voice = 'reading';
+    tr.at = performance.now();
+    void speak(this.stopWords(s), { lang: es() ? 'es' : 'en', onSentence: (k) => this.readingSentence(k - titleParts) }).then((done) => {
+      if (this.tour !== tr || tr.i !== i) return;
+      this.readingSentence(-1);
+      tr.voice = done ? 'done' : 'off';
+      if (done && tr.auto) this.afterVoice();
+    });
+  }
+
+  /** Marks the sentence being read in the tour card (-1: none). */
+  private readingSentence(k: number) {
+    this.card.querySelectorAll<HTMLElement>('.tour-s').forEach((el) => el.classList.toggle('reading', Number(el.dataset.s) === k));
+  }
+
+  /** After the voice, a moment to look at the map, then the next stop (at least six seconds a stop). */
+  private afterVoice() {
+    const tr = this.tour;
+    if (!tr) return;
+    clearTimeout(tr.after);
+    tr.after = window.setTimeout(() => { if (this.tour === tr && tr.auto) this.nextStep(); }, Math.max(1500, 6000 - (performance.now() - tr.at)));
+  }
+
   private armAuto() {
     const tr = this.tour;
     if (!tr) return;
     clearInterval(tr.timer);
-    if (tr.auto) tr.timer = window.setInterval(() => this.nextStep(), 9000);
+    clearTimeout(tr.after);
+    if (!tr.auto) return;
+    // Reading aloud: the voice sets the pace.
+    if (narrationOn()) {
+      if (tr.voice === 'done') this.afterVoice();
+      else if (tr.voice === 'off') this.narrateStep();
+      return;
+    }
+    tr.timer = window.setInterval(() => this.nextStep(), 9000);
   }
 
   private stopTour() {
     if (!this.tour) return;
     clearInterval(this.tour.timer);
+    clearTimeout(this.tour.after);
+    if (this.tour.voice !== 'off') stopSpeaking();
     // A tour that went beyond the Earth comes back to it.
     if (this.tour.steps.some((x) => x.world || x.orrery || x.sky || x.galaxy || x.elements)) { this.space?.closeOverlays(); if (this.space?.active) void this.space.exit(); }
     this.tour = null;

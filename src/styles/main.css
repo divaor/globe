@@ -382,6 +382,8 @@ html.mode-time .legend { bottom: calc(232px + var(--safe-b)); }
 .quiz-fb.bad { color: #ff8787; }
 .tour-tools { display: inline-flex; align-items: center; gap: 2px; }
 .tour-text { font-size: 14.5px; line-height: 1.45; margin-top: 6px; }
+.tour-s { transition: background-color .25s, color .25s; border-radius: 4px; }
+.tour-s.reading { background: color-mix(in srgb, var(--accent) 22%, transparent); }
 .otd { display: flex; flex-direction: column; gap: 4px; }
 .otd-item { display: grid; grid-template-columns: 52px 1fr 20px; gap: 10px; align-items: start; text-align: left; padding: 10px 8px; border: 0; border-bottom: 1px solid var(--line); background: none; cursor: pointer; }
 .otd-item:hover { background: var(--chip); }
@@ -560,6 +562,7 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
 .quote-from::before { content: '— '; }
 /* Music with the story (♪ in the bar) and what the step plays. */
 .wb-music.on { background: var(--chip-on); color: var(--accent); }
+.wb-voice.on, .tour-voice.on { background: var(--chip-on); color: var(--accent); }
 .story-item-clip { color: var(--accent); font-weight: 700; }
 .wb-now { border: 0; background: none; padding: 0; font: inherit; font-weight: 600; font-size: 12px; color: var(--text); cursor: pointer; }
 .wb-now .wb-note { color: var(--accent); }
