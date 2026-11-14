@@ -1,6 +1,6 @@
 // The other worlds the globe can show: their maps (built by scripts/data/space/build-worlds.mjs into data/worlds/),
 // the NASA Solar System Treks tiles that sharpen them as you zoom in, the Moon's and Mars's heights for the 3D view,
-// how each looks from space (a haze or none), and the facts researched for each (data/space/worlds.json).
+// how each looks from space (a haze or none), and the facts researched for each (data/worlds/facts.json).
 import { dataUrl, loadJSON } from '../data/store';
 import { addSource, type TileSource } from '../engine/tiles';
 import { lang } from '../app/i18n';
@@ -169,7 +169,7 @@ export const WORLDS: WorldDef[] = [
 
 export const worldById = (id: string) => WORLDS.find((w) => w.id === id);
 
-// ---- facts (researched: data/space/worlds.json) --------------------------------------------------
+// ---- facts (researched: data/worlds/facts.json) ---------------------------------------------------
 
 export interface Place { name: Text; iau?: string; at: [number, number]; text: Text }
 export interface Facts {
@@ -180,7 +180,7 @@ export interface Facts {
 }
 let facts: Promise<Map<string, Facts>> | null = null;
 export function loadFacts(): Promise<Map<string, Facts>> {
-  facts ??= loadJSON<{ worlds: Facts[] }>('space/worlds.json').then((d) => new Map(d.worlds.map((w) => [w.id, w]))).catch(() => new Map());
+  facts ??= loadJSON<{ worlds: Facts[] }>('worlds/facts.json').then((d) => new Map(d.worlds.map((w) => [w.id, w]))).catch(() => new Map());
   return facts;
 }
 

@@ -1,6 +1,7 @@
 // Checks the researched space data and writes what the app loads:
-//   scripts/data/space/_landings.json → public/data/space/landings.json (every landing on another world, with routes)
-//   scripts/data/space/_worlds.json   → public/data/space/worlds.json   (facts about each world, for cards and the orrery)
+//   scripts/data/space/_landings.json → public/data/worlds/landings.json (every landing on another world, with routes)
+//   scripts/data/space/_worlds.json   → public/data/worlds/facts.json    (facts about each world, for cards and the orrery)
+// (public/data/space/ holds the Space exploration stories, built by build-conflicts.mjs.)
 //
 //   node scripts/data/space/build-space.mjs [--check]     (--check: validate and compare, write nothing)
 import fs from 'node:fs';
@@ -9,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '../../..');
-const OUT = path.join(ROOT, 'public/data/space');
+const OUT = path.join(ROOT, 'public/data/worlds');
 const check = process.argv.includes('--check');
 const read = (f) => JSON.parse(fs.readFileSync(path.join(HERE, f), 'utf8'));
 const errors = [];
@@ -64,11 +65,11 @@ const worlds = W.worlds.map((x, i) => {
 });
 
 if (errors.length) { for (const e of errors) console.error(`FAIL ${e}`); process.exit(1); }
-const files = { 'landings.json': { source: 'Atlas Globe research (sources in scripts/data/space/_landings.json)', landings }, 'worlds.json': { source: 'NASA planetary fact sheets, JPL and the IAU (sources in scripts/data/space/_worlds.json)', worlds } };
+const files = { 'landings.json': { source: 'Atlas Globe research (sources in scripts/data/space/_landings.json)', landings }, 'facts.json': { source: 'NASA planetary fact sheets, JPL and the IAU (sources in scripts/data/space/_worlds.json)', worlds } };
 let stale = 0;
 for (const [f, v] of Object.entries(files)) {
   const p = path.join(OUT, f), text = JSON.stringify(v);
-  if (check) { if (!fs.existsSync(p) || fs.readFileSync(p, 'utf8') !== text) { console.error(`FAIL public/data/space/${f} is out of date; run node scripts/data/space/build-space.mjs`); stale++; } }
+  if (check) { if (!fs.existsSync(p) || fs.readFileSync(p, 'utf8') !== text) { console.error(`FAIL public/data/worlds/${f} is out of date; run node scripts/data/space/build-space.mjs`); stale++; } }
   else { fs.mkdirSync(OUT, { recursive: true }); fs.writeFileSync(p, text); }
 }
 if (stale) process.exit(1);

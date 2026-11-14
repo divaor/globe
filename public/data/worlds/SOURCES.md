@@ -52,9 +52,9 @@ Terrarium tiles (height = R·256 + G + B/256 − 32768 m, in steps of 16 m) on a
 
 ## Facts, landings and orbits
 
-- `public/data/space/worlds.json`: facts about each world (NASA planetary fact sheets, NASA Science, JPL Solar System
+- `facts.json`: facts about each world (NASA planetary fact sheets, NASA Science, JPL Solar System
   Dynamics, the IAU); sources per world in `scripts/data/space/_worlds.json`.
-- `public/data/space/landings.json`: every landing on another world, with the rovers' routes; sources per landing in
+- `landings.json`: every landing on another world, with the rovers' routes; sources per landing in
   `scripts/data/space/_landings.json`.
 - The solar system view computes positions from JPL's "Approximate Positions of the Planets" (E. M. Standish) and
   osculating elements from JPL's Small-Body Database (Ceres, Pluto, Eris, Haumea, Makemake, Halley's Comet).

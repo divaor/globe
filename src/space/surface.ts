@@ -24,7 +24,7 @@ export const LANDING_KIND: Record<Landing['kind'], Text> = {
 };
 let landings: Promise<Landing[]> | null = null;
 export function loadLandings(): Promise<Landing[]> {
-  landings ??= loadJSON<{ landings: Landing[] }>('space/landings.json').then((d) => d.landings).catch(() => []);
+  landings ??= loadJSON<{ landings: Landing[] }>('worlds/landings.json').then((d) => d.landings).catch(() => []);
   return landings;
 }
 
