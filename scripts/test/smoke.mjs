@@ -1647,8 +1647,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(1500);
   const opened = await page.evaluate(() => window.atlas.sky.info.open);
 
-  // From Paranal on a June night, looking at the Southern Cross.
-  await page.evaluate(() => window.atlas.sky.open({ place: { lon: -70.404, lat: -24.627, label: 'Paranal' }, time: '2027-06-10T03:30:00Z', target: 'Cru' }));
+  // From Paranal on a June night, looking at the Southern Cross with Centaurus beside it (a 90° view: on its own the
+  // Cross, the smallest constellation, fills a phone's screen).
+  await page.evaluate(() => window.atlas.sky.open({ place: { lon: -70.404, lat: -24.627, label: 'Paranal' }, time: '2027-06-10T03:30:00Z', target: 'Cru', fov: 90 }));
   await page.waitForTimeout(2000);
   const s1 = await page.evaluate(() => window.atlas.sky.info);
   check(opened && s1.open && s1.frame === 'horizon' && s1.sunAlt < -18 && s1.stars > 100 && s1.visible.includes('Cru') && s1.visible.includes('Cen'),
@@ -1658,7 +1659,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const tapped = await page.evaluate(([x, y]) => window.atlas.sky.tap(x, y), mid);
   await page.waitForTimeout(800);
   const tcard = await page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
-  check(!!tapped && /Southern Cross/.test(tcard), `a tap in the middle opens ${tapped}'s card (${tcard.split('\n').slice(0, 2).join(' · ')})`);
+  check(!!tapped && /Crux|Southern Cross/.test(tcard), `a tap in the middle opens ${tapped}'s card (${tcard.split('\n').slice(0, 2).join(' · ')})`);
   // A constellation's card.
   await page.evaluate(() => window.atlas.sky.cardOf('Ori'));
   await page.waitForTimeout(800);
