@@ -3,7 +3,7 @@
 // opens it from the picker, visits each step, checks that the details list the step's items (or
 // battles), checks that Browse lists every item, and reports page errors. Then it checks each
 // collection's "Browse everything" and a shared link. Usage (with a preview server running):
-//   node scripts/test/stories.mjs [http://localhost:4173/] [eras,food,structures,people,life,games,journeys,beliefs,writing,plagues,disasters,music,books,art,inventions,heritage | all] [id,id...]
+//   node scripts/test/stories.mjs [http://localhost:4173/] [eras,food,structures,people,life,games,journeys,beliefs,writing,plagues,disasters,music,books,art,inventions,heritage,space | all] [id,id...]
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 let chromium, devices;
@@ -11,11 +11,11 @@ try { ({ chromium, devices } = require('playwright')); } catch { ({ chromium, de
 
 const url = process.argv[2] || 'http://localhost:4173/';
 const kindsArg = process.argv[3] || 'eras,food,structures,people,life';
-const kinds = kindsArg === 'all' ? ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters', 'music', 'books', 'art', 'inventions', 'heritage'] : kindsArg.split(',');
+const kinds = kindsArg === 'all' ? ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters', 'music', 'books', 'art', 'inventions', 'heritage', 'space'] : kindsArg.split(',');
 const only = process.argv[4]?.split(',');
-const DIR = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art', inventions: 'inventions', heritage: 'heritage' };
-const HASH = { wars: 'war', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art', inventions: 'inventions', heritage: 'heritage' };
-const CARD = { wars: /Wars and conquests/, eras: /Eras and ideas/, food: /Food through time/, structures: /Great structures/, people: /Peoples and civilizations/, life: /Life through time/, games: /Games of the world/, journeys: /Journeys and trade routes/, beliefs: /Religions and philosophies/, writing: /Writing and languages/, plagues: /Plagues and cures/, disasters: /Natural disasters/, music: /Music and dance/, books: /Books and writers/, art: /Art of the world/, inventions: /Inventions/, heritage: /World Heritage/ };
+const DIR = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art', inventions: 'inventions', heritage: 'heritage', space: 'space' };
+const HASH = { wars: 'war', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art', inventions: 'inventions', heritage: 'heritage', space: 'space' };
+const CARD = { wars: /Wars and conquests/, eras: /Eras and ideas/, food: /Food through time/, structures: /Great structures/, people: /Peoples and civilizations/, life: /Life through time/, games: /Games of the world/, journeys: /Journeys and trade routes/, beliefs: /Religions and philosophies/, writing: /Writing and languages/, plagues: /Plagues and cures/, disasters: /Natural disasters/, music: /Music and dance/, books: /Books and writers/, art: /Art of the world/, inventions: /Inventions/, heritage: /World Heritage/, space: /Space exploration/ };
 
 const browser = await chromium.launch({ args: ['--disable-accelerated-2d-canvas'] });
 const ctx = await browser.newContext({ ...devices['Pixel 7'] });
@@ -64,6 +64,12 @@ for (const kind of kinds) {
       const st = data.steps[i];
       const shown = await page.evaluate(() => document.querySelector('.wb-title').textContent);
       if (!shown) problems.push(`step ${i + 1}: empty title`);
+      if (kind === 'space') {
+        // A step on another world turns the globe into it (its map and landings); an Earth step brings the Earth back.
+        const want = st.world ?? null;
+        const on = await page.waitForFunction((w) => window.atlas.space.surface.id === w && (!w || window.atlas.space.surface.ready), want, { timeout: 8000 }).then(() => true, () => false);
+        if (!on) problems.push(`step ${i + 1}: the globe shows ${await page.evaluate(() => window.atlas.space.surface.id)}, not ${want ?? 'the Earth'}`);
+      }
       if (kind === 'life') {
         // An old step is drawn on the continents of its age, and on a phone its own markers are in
         // view once the camera and the continents have moved (between the top bar and the story bar).
