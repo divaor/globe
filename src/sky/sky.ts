@@ -630,15 +630,18 @@ export class Sky {
     return { icon: '🧭', label: L('In the sky now', 'En el cielo ahora'), value: alt < 0 ? L(`Below the horizon (${num(-alt)}°), toward the ${dir}`, `Bajo el horizonte (${num(-alt)}°), hacia ${dir}`) : L(`${num(alt)}° up, toward the ${dir}`, `A ${num(alt)}° de altura, hacia ${dir}`) };
   }
 
-  private async card(p: Pick) {
+  private async card(p: Pick, o: { galaxy?: boolean } = {}) {
     const d = this.data!;
     const g = this.geo();
     const links: { label: string; href?: string; onClick?: () => void }[] = [];
+    // From the galaxy view: no "in the sky now", and a way to the sky instead.
+    const where = (v: V3) => (o.galaxy || !this.el ? null : this.where(v, g));
+    const toSky = (target: string) => { if (o.galaxy) links.push({ label: L('See it in the sky', 'Verlo en el cielo'), onClick: () => this.open({ frame: 'celestial', target, fov: 50 }) }); };
     const wiki = (w?: { en: string; es: string }) => { const t = w ? tr(w) || w.en : ''; if (t) links.push({ label: 'Wikipedia', href: `https://${w && tr(w) ? L('en', 'es') : 'en'}.wikipedia.org/wiki/${encodeURIComponent(t.replace(/ /g, '_'))}` }); };
     if (p.kind === 'body') {
       const v = this.pickDir(p, g)!;
       const rows: InfoRow[] = [];
-      const w = this.where(v, g); if (w) rows.push(w);
+      const w = where(v); if (w) rows.push(w);
       if (p.id === 'moon') rows.push({ icon: '🌓', label: L('Lit', 'Iluminada'), value: `${num(g.mo.lit * 100)} %` }, { icon: '📏', label: L('From the Earth', 'De la Tierra'), value: `${num(g.mo.earthRadii * 6371)} km` });
       else if (p.id !== 'sun') { const b = g.ss.find((x) => x.id === p.id)!; rows.push({ icon: '📏', label: L('From the Earth', 'De la Tierra'), value: `${num(b.dist, 2)} ${L('au', 'ua')} (${num(b.dist * 149.6)} ${L('million km', 'millones de km')})` }, { icon: '✨', label: L('Brightness', 'Brillo'), value: `${L('magnitude', 'magnitud')} ${num(b.mag, 1)}` }); }
       await this.space.factsCard(p.id, rows);
@@ -648,7 +651,7 @@ export class Sky {
       const s = p.star, info = d.info.get(s.hip);
       const con = d.cons.find((k) => k.id === s.con);
       const rows: InfoRow[] = [];
-      const w = this.where(mul(g.P, s.v), g); if (w) rows.push(w);
+      const w = where(mul(g.P, s.v)); if (w) rows.push(w);
       rows.push({ icon: '✨', label: L('Brightness', 'Brillo'), value: `${L('magnitude', 'magnitud')} ${num(s.mag, 2)}` });
       if (info?.ly) rows.push({ icon: '📏', label: L('Distance', 'Distancia'), value: `${num(info.ly, info.ly < 100 ? 1 : 0)} ${L('light-years', 'años luz')}` });
       if (info?.kind) rows.push({ icon: '⭐', label: L('What it is', 'Qué es'), value: tr(info.kind) });
@@ -657,28 +660,31 @@ export class Sky {
       if (desig && desig !== starName(d, s)) rows.push({ icon: '🏷️', label: L('Designation', 'Designación'), value: desig });
       rows.push({ icon: '🔢', label: 'Hipparcos', value: `HIP ${s.hip}` });
       const notes = [info?.text ? tr(info.text) : '', info?.names ? `🌍 ${tr(info.names)}` : ''].filter(Boolean);
-      if (con) links.push({ label: L(`Show ${tr(con.name)}`, `Ver ${tr(con.name)}`), onClick: () => { this.picked = { kind: 'con', con }; this.lookAt(con.id); this.dirty(); void this.card({ kind: 'con', con }); } });
+      if (con && !o.galaxy) links.push({ label: L(`Show ${tr(con.name)}`, `Ver ${tr(con.name)}`), onClick: () => { this.picked = { kind: 'con', con }; this.lookAt(con.id); this.dirty(); void this.card({ kind: 'con', con }); } });
+      toSky(String(s.hip));
+      if (!o.galaxy && info?.ly && this.space.openGalaxy) links.push({ label: L('Where in the galaxy', 'Dónde está en la galaxia'), onClick: () => this.space.openGalaxy!(String(s.hip)) });
       wiki(info?.wiki);
       this.shell.card.showCustom('⭐', starName(d, s), info?.kind ? tr(info.kind) : L('Star', 'Estrella'), rows, links, notes, info?.wiki ? wikiThumb(info.wiki) : undefined);
       return;
     }
     if (p.kind === 'object') {
-      const o = p.obj, t = OBJECT_TYPES[o.type] ?? OBJECT_TYPES.other;
-      const con = d.cons.find((k) => k.id === o.con);
+      const ob = p.obj, t = OBJECT_TYPES[ob.type] ?? OBJECT_TYPES.other;
+      const con = d.cons.find((k) => k.id === ob.con);
       const rows: InfoRow[] = [];
-      const w = this.where(mul(g.P, o.v!), g); if (w) rows.push(w);
-      if (o.ly) rows.push({ icon: '📏', label: L('Distance', 'Distancia'), value: `${num(o.ly >= 1e6 ? o.ly / 1e6 : o.ly, o.ly >= 1e6 ? 1 : 0)} ${o.ly >= 1e6 ? L('million light-years', 'millones de años luz') : L('light-years', 'años luz')}` });
-      if (o.size) rows.push({ icon: '↔️', label: L('Size', 'Tamaño'), value: tr(o.size) });
+      const w = where(mul(g.P, ob.v!)); if (w) rows.push(w);
+      if (ob.ly) rows.push({ icon: '📏', label: L('Distance', 'Distancia'), value: `${num(ob.ly >= 1e6 ? ob.ly / 1e6 : ob.ly, ob.ly >= 1e6 ? 1 : 0)} ${ob.ly >= 1e6 ? L('million light-years', 'millones de años luz') : L('light-years', 'años luz')}` });
+      if (ob.size) rows.push({ icon: '↔️', label: L('Size', 'Tamaño'), value: tr(ob.size) });
       if (con) rows.push({ icon: '✳️', label: L('Constellation', 'Constelación'), value: tr(con.name) });
-      if (/^M\d+$/.test(o.id)) rows.push({ icon: '🏷️', label: L('Catalogue', 'Catálogo'), value: `Messier ${o.id.slice(1)}` });
-      if (this.space.openGalaxy && o.ly && o.ly < 4e6) links.push({ label: L('Where in the galaxy', 'Dónde está en la galaxia'), onClick: () => this.space.openGalaxy!(o.id) });
-      wiki(o.wiki);
-      this.shell.card.showCustom(t.icon, tr(o.name), `${tr(t.name)}${con ? ` · ${tr(con.name)}` : ''}`, rows, links, o.text ? [tr(o.text)] : [], o.wiki ? wikiThumb(o.wiki) : undefined);
+      if (/^M\d+$/.test(ob.id)) rows.push({ icon: '🏷️', label: L('Catalogue', 'Catálogo'), value: `Messier ${ob.id.slice(1)}` });
+      toSky(ob.id);
+      if (!o.galaxy && this.space.openGalaxy && ob.ly && ob.ly < 4e6) links.push({ label: L('Where in the galaxy', 'Dónde está en la galaxia'), onClick: () => this.space.openGalaxy!(ob.id) });
+      wiki(ob.wiki);
+      this.shell.card.showCustom(t.icon, tr(ob.name), `${tr(t.name)}${con ? ` · ${tr(con.name)}` : ''}`, rows, links, ob.text ? [tr(ob.text)] : [], ob.wiki ? wikiThumb(ob.wiki) : undefined);
       return;
     }
     const c = p.con;
     const rows: InfoRow[] = [];
-    const w = this.where(mul(g.P, centreOf(c)), g); if (w) rows.push(w);
+    const w = where(mul(g.P, centreOf(c))); if (w) rows.push(w);
     rows.push({ icon: '🏛️', label: L('Latin name', 'Nombre en latín'), value: `${c.la} (${c.gen})` });
     rows.push({ icon: '📐', label: L('Size', 'Tamaño'), value: L(`${num(c.area)} square degrees, ${ordinal(rankBySize(d, c))} of 88`, `${num(c.area)} grados cuadrados, el ${rankBySize(d, c)}.º de 88`) });
     const b = c.brightest != null ? d.byHip.get(c.brightest) : null;
@@ -699,14 +705,26 @@ export class Sky {
   get loaded(): SkyData | null { return this.data; }
   /** The constellation drawn alone (a quiz), or null. */
   setFocus(id: string | null, bare: boolean) { this.focus = id; this.bare = bare; this.renderFoot(); this.dirty(); }
+  /** The card of a constellation, star (HIP), object or body, without touching the view (the galaxy view uses it). */
+  async cardOf(target: string, o: { galaxy?: boolean } = {}) {
+    const d = await this.load();
+    if (!d) return;
+    const p = this.resolve(d, target);
+    if (p) await this.card(p, o);
+  }
+
+  private resolve(d: SkyData, target: string): Pick | null {
+    const con = d.cons.find((c) => c.id === target);
+    const star = /^\d+$/.test(target) ? d.byHip.get(Number(target)) : undefined;
+    const obj = d.objects.find((x) => x.id === target);
+    return con ? { kind: 'con', con } : star ? { kind: 'star', star } : obj ? { kind: 'object', obj } : ['moon', 'sun', ...Object.keys(PLANET_LOOK)].includes(target) ? { kind: 'body', id: target } : null;
+  }
+
   /** Picks a thing and opens its card (search). */
   async pick(target: string) {
     const d = await this.load();
     if (!d) return;
-    const con = d.cons.find((c) => c.id === target);
-    const star = /^\d+$/.test(target) ? d.byHip.get(Number(target)) : undefined;
-    const obj = d.objects.find((o) => o.id === target);
-    const p: Pick | null = con ? { kind: 'con', con } : star ? { kind: 'star', star } : obj ? { kind: 'object', obj } : ['moon', 'sun', ...Object.keys(PLANET_LOOK)].includes(target) ? { kind: 'body', id: target } : null;
+    const p = this.resolve(d, target);
     if (!p) return;
     this.picked = p;
     this.dirty();

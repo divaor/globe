@@ -5,6 +5,7 @@
 //   public/data/sky/objects.json         deep-sky objects: the Messier catalogue and famous others (_objects.json)
 //   public/data/sky/milkyway-2k.jpg/-4k.jpg  ESO's Milky Way panorama (galactic coordinates, l = 0 in the middle,
 //                                        increasing to the left)
+//   public/data/sky/milkyway-top.jpg     the Milky Way seen from above (NASA/JPL-Caltech/ESO/R. Hurt)
 // Coordinates are J2000 right ascension and declination in degrees (RA 0..360).
 //
 //   node scripts/data/sky/build-sky.mjs <sky-src folder> [--only data|images]
@@ -158,6 +159,12 @@ if (only !== 'images') {
   }
   for (const s of RS?.stars ?? []) if (!have.has(s.hip)) fail(`_stars.json: star ${s.name?.en} (HIP ${s.hip}) is not among the stars to magnitude 6.5`);
   emit('stars.json', { source: 'd3-celestial (BSD) from XHIP (Anderson & Francis 2012) and star name cross-indexes; names after the IAU WGSN', stars, names });
+  // The researched stars (cards) and the galaxy view's nearby stars, features and Local Group.
+  if (RS) {
+    const strip = (x) => { const { sources: _s, ...rest } = x; return rest; };
+    emit('starinfo.json', { source: 'Atlas Globe research (sources in scripts/data/sky/_stars.json)', stars: RS.stars.map(strip) });
+    emit('galaxy.json', { source: 'Atlas Globe research (sources in scripts/data/sky/_stars.json)', nearby: RS.nearby.map(strip), galaxy: RS.galaxy.map(strip), localGroup: RS.localGroup.map(strip) });
+  }
 
   // ---- constellations
   const C = src('constellations.json').features;
@@ -221,6 +228,12 @@ if (only !== 'data') {
     if (check) continue;
     await sharp(path.join(SRC, 'eso0932a.jpg')).resize(w, w / 2, { kernel: 'lanczos3' }).jpeg({ quality: q, mozjpeg: true }).toFile(path.join(OUT, file));
     console.log(`wrote public/data/sky/${file} (${Math.round(fs.statSync(path.join(OUT, file)).size / 1024)} KB)`);
+  }
+  // The Milky Way from above (eso1339g): north galactic pole up, the centre above the Sun. In the 5600 px original the
+  // Sun is at (2800, 3857) and 1,000 light-years are 43.9 px (measured on the annotated eso1339e).
+  if (fs.existsSync(path.join(SRC, 'eso1339g.jpg'))) {
+    await sharp(path.join(SRC, 'eso1339g.jpg')).resize(2048, 2048, { kernel: 'lanczos3' }).jpeg({ quality: 80, mozjpeg: true }).toFile(path.join(OUT, 'milkyway-top.jpg'));
+    console.log(`wrote public/data/sky/milkyway-top.jpg (${Math.round(fs.statSync(path.join(OUT, 'milkyway-top.jpg')).size / 1024)} KB)`);
   }
 }
 if (errors.length) { for (const e of errors) console.error(`FAIL ${e}`); process.exit(1); }

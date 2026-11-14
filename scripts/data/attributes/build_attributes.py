@@ -1361,6 +1361,9 @@ for mid, m in CM.MINERALS.items():
     if m.get('note'):
         d['note'] = m['note']
     minerals[mid] = d
+# USGS Mineral Commodity Summaries 2026: replaces the approximate shares above and adds the other elements' commodities.
+import minerals_2026  # noqa: E402
+minerals = collections.OrderedDict(minerals_2026.merge(minerals))
 
 # ------------------------------------------------------------------ mains electricity (Wikipedia)
 PLUGS = {

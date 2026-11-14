@@ -15,9 +15,10 @@ import { Terrain3D } from './ui/terrain3d';
 import { Space } from './space/space';
 import { Orrery } from './space/orrery';
 import { Sky } from './sky/sky';
+import { Galaxy } from './sky/galaxy';
 import { worldHook } from './modes/stories';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy } } }
 
 async function boot() {
   // Read before the app rewrites the address with its own state.
@@ -47,11 +48,12 @@ async function boot() {
   const space = new Space(app, shell, time);
   const orrery = new Orrery(app, shell, space);
   const sky = new Sky(app, shell, space);
+  const galaxy = new Galaxy(app, shell, space, sky);
   learn.space = space;
   learn.orrery = orrery;
   // A story step on another world shows that world under the story.
   worldHook.show = (id) => { space.surface.quiet = !!id; void space.surface.set(id); };
-  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky };
+  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };

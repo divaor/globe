@@ -48,6 +48,7 @@ python3 -I scripts/data/attributes/validate_attributes.py       # coverage table
 | `compiled_symbols.py` | vocabularies for national animals/plants/colours and natural resources (en/es/emoji) |
 | `compiled_extra.py` | continents/regions, export products, Somaliland & Northern Cyprus, unit translations |
 | `compiled_minerals.py` | approximate producer shares (USGS MCS 2025 etc.) for minerals.json |
+| `minerals_usgs2026.json`, `minerals_2026.py` | world production shares from the USGS Mineral Commodity Summaries 2026 (2025 estimates; uranium from the World Nuclear Association, diamonds from the Kimberley Process), with sources per commodity: they replace the approximate shares and add the commodities of the other elements. `python3 -I scripts/data/attributes/minerals_2026.py` updates minerals.json in place |
 | `validate_attributes.py` | coverage table, type/category checks, spot checks |
 
 ## countries.json format
