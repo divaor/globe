@@ -113,7 +113,7 @@ a { color: var(--accent); }
 .menu-item:hover { background: var(--chip); }
 
 /* ---------- sheet */
-.sheet { position: absolute; top: calc(70px + var(--safe-t)); left: calc(12px + var(--safe-l)); bottom: calc(14px + var(--safe-b)); width: min(410px, calc(100vw - 24px)); border-radius: var(--radius); display: flex; flex-direction: column; overflow: hidden; background: var(--glass-strong); opacity: 0; transform: translateX(-12px); transition: opacity .18s, transform .18s; z-index: 5; }
+.sheet { position: absolute; top: calc(70px + var(--safe-t)); left: calc(12px + var(--safe-l)); bottom: calc(14px + var(--safe-b)); width: min(410px, calc(100vw - 24px)); border-radius: var(--radius); display: flex; flex-direction: column; overflow: hidden; overflow: clip; background: var(--glass-strong); opacity: 0; transform: translateX(-12px); transition: opacity .18s, transform .18s; z-index: 5; }
 .sheet.open { opacity: 1; transform: none; }
 .sheet-grip { display: none; }
 .sheet-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 10px 6px 18px; }
@@ -163,8 +163,9 @@ a { color: var(--accent); }
 /* ---------- controls */
 .slider { flex: 1; accent-color: var(--accent); height: 28px; }
 .select { height: 34px; border-radius: 10px; border: 1px solid var(--line); background: var(--glass-strong); color: var(--text); padding: 0 8px; font: inherit; font-size: 13.5px; }
-.switch { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; font-size: 14px; }
-.switch-input { position: absolute; opacity: 0; pointer-events: none; }
+.switch { position: relative; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; font-size: 14px; }
+/* The hidden checkbox sits inside its switch: focusing it (a tap) must not scroll a panel that clips its overflow. */
+.switch-input { position: absolute; left: 0; top: 50%; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
 .switch-track { position: relative; width: 40px; height: 24px; border-radius: 12px; background: var(--line-strong); transition: background .15s; flex: none; }
 .switch-thumb { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 9px; background: #fff; transition: transform .15s; box-shadow: 0 1px 4px rgba(0,0,0,.3); }
 .switch-input:checked + .switch-track { background: var(--accent); }
