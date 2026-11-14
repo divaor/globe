@@ -1803,8 +1803,11 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.click('[data-tour="Born in the stars"]');
   await page.waitForTimeout(1200);
   await page.click('.tour-voice');
-  await page.waitForTimeout(300);
-  const v1 = await page.evaluate(() => ({ spoken: window.__spoken.slice(), marked: document.querySelectorAll('.tour-s.reading').length }));
+  // The sentence is marked while the voice reads it: watched from the page on every frame (a fixed wait can miss
+  // it on a busy machine, where the stand-in voice finishes both short sentences first).
+  const marked = await page.waitForFunction(() => window.__spoken.length >= 1 && document.querySelectorAll('.tour-s.reading').length === 1, null, { timeout: 5000, polling: 'raf' }).then(() => 1, () => 0);
+  const v1 = await page.evaluate(() => ({ spoken: window.__spoken.slice() }));
+  v1.marked = marked;
   await page.click('.tour-tools [aria-label="Auto"]');
   await page.waitForFunction(() => window.atlas.learn['tour']?.i >= 1, null, { timeout: 30000 }).catch(() => {});
   const v2 = await page.evaluate(() => ({ i: window.atlas.learn['tour']?.i, n: window.__spoken.length, first: window.__spoken.findIndex((s) => /átomos/i.test(s.text)) }));
