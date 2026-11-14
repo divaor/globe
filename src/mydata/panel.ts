@@ -130,7 +130,9 @@ export function myDataPanel(app: App, my: MyData, done: (msg: string) => void): 
       hasNumbers ? h('div', { class: 'field' }, h('div', { class: 'field-label' }, L('Colours', 'Colores')), swatches) : null,
       hasNumbers ? h('div', { class: 'field' }, h('div', { class: 'field-label' }, L('Scale', 'Escala')), scale) : null,
       h('div', { class: 'settings-actions' }, add)));
-    preview.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    // Bring the preview into view inside the panel (scrollIntoView would also scroll the page under the app).
+    const body = preview.closest<HTMLElement>('.sheet-body');
+    if (body) body.scrollTo({ top: body.scrollTop + preview.getBoundingClientRect().top - body.getBoundingClientRect().top - 12, behavior: 'smooth' });
   }
 
   const renderList = () => {
