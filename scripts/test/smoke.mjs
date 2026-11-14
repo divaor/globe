@@ -207,10 +207,11 @@ async function open(opts, hash) {
     const c = body.querySelector(`.fcard[data-id="${id}"]`);
     return { top: Math.round(c.getBoundingClientRect().top), scroll: Math.round(body.scrollTop) };
   }, id);
-  // A filter that turns on in the list (Compare two filters opens its own card and closes the panel).
+  // A filter that turns on in the list (Compare two filters opens its own card and closes the panel; "Add your
+  // data" is a button that opens its panel, not a filter).
   const pickCard = () => page.evaluate(() => {
     const b = document.querySelector('.sheet-body').getBoundingClientRect();
-    return [...document.querySelectorAll('.sheet-body .fcard')].find((c) => c.getBoundingClientRect().top > b.top + 150 && c.getBoundingClientRect().bottom < b.bottom && !c.classList.contains('on') && c.dataset.id !== 'compare').dataset.id;
+    return [...document.querySelectorAll('.sheet-body .fcard')].find((c) => c.getBoundingClientRect().top > b.top + 150 && c.getBoundingClientRect().bottom < b.bottom && !c.classList.contains('on') && c.dataset.id !== 'compare' && !c.classList.contains('fcard-add')).dataset.id;
   });
   const tapAndWait = async (id) => {
     await page.tap(`.sheet-body .fcard[data-id="${id}"]`);
