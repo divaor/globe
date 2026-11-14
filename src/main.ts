@@ -23,8 +23,9 @@ import { Galaxy } from './sky/galaxy';
 import { Elements } from './sky/elements';
 import { worldHook } from './modes/stories';
 import { spainView } from './ui/spainview';
+import { BorderHop } from './play/hop';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop } } }
 
 async function boot() {
   // Read before the app rewrites the address with its own state.
@@ -60,6 +61,11 @@ async function boot() {
   learn.elements = elements;
   learn.space = space;
   learn.orrery = orrery;
+  // Map games (v0.24.0): a game and a quiz or tour never share the map.
+  const hop = new BorderHop(app, shell);
+  hop.beforeStart = () => learn.closeAll();
+  hop.exitMode = async () => { await time.modes.find((m) => m.id === app.mode)?.exit(); };
+  learn.beforeStart = () => void hop.stop();
   // A story step on another world shows that world under the story.
   worldHook.show = (id) => { space.surface.quiet = !!id; void space.surface.set(id); };
   // Your own data: tables kept on this device become filters; the panel reads new ones.
@@ -68,7 +74,7 @@ async function boot() {
   app.on('mydata', openMyData);
   shell.addMenu({ id: 'mydata', icon: Upload, label: () => t('cat.mine'), order: 40, onClick: openMyData });
   void myData.init();
-  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData };
+  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };
@@ -96,6 +102,9 @@ async function boot() {
     const id = shared ? MINE_ID : /[#&]playlist=([a-z]+)/.exec(location.hash)?.[1];
     setTimeout(() => void shell.ambient.start(id ?? undefined), 600);
   }
+  // A Border hop challenge: #hop=ESP-CHN&goal=people&beat=870.
+  // (Read from the address as it was opened: the app writes its own state to the address when it starts.)
+  if (shared.get('hop')) setTimeout(() => void hop.startChallenge(`#${shared.toString()}`), 500);
   // A shared world: #world=moon&c=lon,lat,zoom (and &map=elev).
   const world = shared.get('world');
   if (world) {

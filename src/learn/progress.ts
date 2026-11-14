@@ -33,13 +33,22 @@ export interface Progress {
   tours: string[];
   /** Badges earned, with the day. */
   badges: Record<string, string>;
+  /** Map games (v0.24.0): routes finished, three-star routes, the best score of each goal, the knowledge rounds
+   * finished, perfect least-people routes, routes across three continents, and the daily route. */
+  play: {
+    rounds: number; perfect: number; light: number; continents3: number;
+    best: Record<string, number>; knowledge: string[];
+    daily: Streak & { results: Record<string, { score: number; stars: number }> };
+  };
 }
 
-const empty = (): Progress => ({ right: {}, played: {}, perfect: {}, kinds: [], days: {}, daily: { last: '', streak: 0, best: 0, results: {} }, tours: [], badges: {} });
+const emptyPlay = (): Progress['play'] => ({ rounds: 0, perfect: 0, light: 0, continents3: 0, best: {}, knowledge: [], daily: { last: '', streak: 0, best: 0, results: {} } });
+const empty = (): Progress => ({ right: {}, played: {}, perfect: {}, kinds: [], days: {}, daily: { last: '', streak: 0, best: 0, results: {} }, tours: [], badges: {}, play: emptyPlay() });
 let cache: Progress | null = null;
 export function progress(): Progress {
   if (cache) return cache;
   try { cache = { ...empty(), ...JSON.parse(localStorage.getItem(KEY) || '{}') }; } catch { cache = empty(); }
+  cache!.play = { ...emptyPlay(), ...cache!.play };
   return cache!;
 }
 function save() { try { localStorage.setItem(KEY, JSON.stringify(progress())); } catch { /* private mode: kept for this visit */ } }
@@ -61,6 +70,8 @@ function bump(s: Streak | undefined): Streak {
 export interface Badge { id: string; icon: string; en: string; es: string; how: { en: string; es: string }; goal: number; have: (p: Progress) => number; subject?: Subject }
 
 const CITY_TOURS = TOURS.filter((x) => x.group === 'cities').map((x) => x.en);
+/** Border hop's knowledge rounds (play/route.ts RULES). */
+const KNOWLEDGE_ROUNDS = 8;
 export const BADGES: Badge[] = [
   ...(Object.keys(SUBJECTS) as Subject[]).flatMap((s): Badge[] => {
     const S = SUBJECTS[s];
@@ -80,6 +91,12 @@ export const BADGES: Badge[] = [
   { id: 'daily-perfect', icon: '💯', en: 'A perfect day', es: 'Un día perfecto', how: { en: 'Every answer of a daily challenge right', es: 'Todas las respuestas de un reto del día bien' }, goal: 1, have: (p) => Object.values(p.daily.results).filter((r) => r.s === r.n).length },
   { id: 'tours-5', icon: '🧭', en: 'Five tours', es: 'Cinco visitas', how: { en: 'Follow 5 guided tours to their last stop', es: 'Sigue 5 visitas guiadas hasta su última parada' }, goal: 5, have: (p) => p.tours.length },
   { id: 'tours-cities', icon: '🏙️', en: 'Every city', es: 'Todas las ciudades', how: { en: `Follow all ${CITY_TOURS.length} city tours to the end`, es: `Sigue las ${CITY_TOURS.length} visitas de ciudades hasta el final` }, goal: CITY_TOURS.length, have: (p) => CITY_TOURS.filter((x) => p.tours.includes(x)).length },
+  { id: 'play-1', icon: '🧭', en: 'First route', es: 'Primera ruta', how: { en: 'Finish a Border hop route', es: 'Termina una ruta de Salto de fronteras' }, goal: 1, have: (p) => p.play.rounds },
+  { id: 'play-pathfinder', icon: '⭐', en: 'Pathfinder', es: 'Explorador', how: { en: '10 three-star routes', es: '10 rutas de tres estrellas' }, goal: 10, have: (p) => p.play.perfect },
+  { id: 'play-light', icon: '🪶', en: 'Light traveller', es: 'Viajero ligero', how: { en: 'A perfect fewest-people route', es: 'Una ruta perfecta de menos gente' }, goal: 1, have: (p) => p.play.light },
+  { id: 'play-3cont', icon: '🌐', en: 'Three continents', es: 'Tres continentes', how: { en: 'One route across three continents', es: 'Una ruta por tres continentes' }, goal: 1, have: (p) => p.play.continents3 },
+  { id: 'play-knowledge', icon: '🎓', en: 'Know the map', es: 'Conoces el mapa', how: { en: 'Finish every knowledge round', es: 'Termina todas las rondas de conocimiento' }, goal: KNOWLEDGE_ROUNDS, have: (p) => p.play.knowledge.length },
+  { id: 'play-daily-7', icon: '🔥', en: 'A week of routes', es: 'Una semana de rutas', how: { en: 'The daily route 7 days in a row', es: 'La ruta del día 7 días seguidos' }, goal: 7, have: (p) => p.play.daily.best },
   { id: 'tours-all', icon: '🌍', en: 'Globetrotter', es: 'Trotamundos', how: { en: `Follow all ${TOURS.length} tours to the end`, es: `Sigue las ${TOURS.length} visitas hasta el final` }, goal: TOURS.length, have: (p) => p.tours.length },
 ];
 
@@ -140,6 +157,25 @@ export function recordTour(name: string): Badge[] {
   return award();
 }
 
+/** A Border hop route finished (not given up): its goal, score, stars, knowledge round, continents, and the day if it was the daily route. */
+export function recordHop(o: { goal: string; score: number; stars: number; rule: string | null; continents: number; day?: string }): Badge[] {
+  const p = progress(), g = p.play;
+  g.rounds++;
+  if (o.stars === 3) g.perfect++;
+  if (o.stars === 3 && o.goal === 'people') g.light++;
+  if (o.continents >= 3) g.continents3++;
+  if (o.rule && !g.knowledge.includes(o.rule)) g.knowledge.push(o.rule);
+  const k = o.rule ? `rule:${o.rule}` : o.goal;
+  g.best[k] = Math.max(g.best[k] ?? 0, o.score);
+  if (o.day && !g.daily.results[o.day]) {
+    g.daily.results[o.day] = { score: o.score, stars: o.stars };
+    const { last, streak, best } = bump(g.daily);
+    Object.assign(g.daily, { last, streak, best });
+  }
+  return award();
+}
+export const hopDaily = (day = dayKey()) => progress().play.daily.results[day];
+
 export function resetProgress() {
   cache = empty();
   save();
@@ -183,6 +219,10 @@ export function progressPanel(onReset: () => void): HTMLElement {
       h('div', { class: 'prog-row muted small' }, `${fmt(p.played[s] ?? 0)} ${(p.played[s] ?? 0) === 1 ? L('quiz played', 'concurso jugado') : L('quizzes played', 'concursos jugados')} · 🔥 ${fmt(current(p.days[s]))} ${current(p.days[s]) === 1 ? L('day in a row', 'día seguido') : L('days in a row', 'días seguidos')} (${L('best', 'mejor')} ${fmt(p.days[s]?.best ?? 0)})`),
       h('div', { class: 'badge-list' }, ...BADGES.filter((b) => b.subject === s).map(badge)));
   }
+  const g = p.play;
+  body.append(h('h3', { class: 'sec-title' }, `🗺️ ${L('Map games', 'Juegos en el mapa')}`),
+    h('div', { class: 'prog-row' }, `${fmt(g.rounds)} ${g.rounds === 1 ? L('route finished', 'ruta terminada') : L('routes finished', 'rutas terminadas')} · ⭐ ${fmt(g.perfect)} · 🔥 ${L('daily route', 'ruta del día')}: ${fmt(current(g.daily))}`),
+    h('div', { class: 'badge-list' }, ...BADGES.filter((b) => b.id.startsWith('play-')).map(badge)));
   body.append(h('h3', { class: 'sec-title' }, `🧭 ${L('Guided tours', 'Visitas guiadas')}`),
     h('div', { class: 'prog-row' }, `${fmt(p.tours.length)} ${L('of', 'de')} ${fmt(TOURS.length)} ${L('followed to the end', 'seguidas hasta el final')}`),
     h('div', { class: 'badge-list' }, ...BADGES.filter((b) => b.id.startsWith('tours-')).map(badge)));

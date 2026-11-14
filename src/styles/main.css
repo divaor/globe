@@ -817,6 +817,39 @@ html[data-theme="light"] .orr-input { color-scheme: light; }
 html.orrery-open .country-card { z-index: 25; }
 html.orrery-open .zoombar, html.orrery-open .dock, html.orrery-open .chips, html.orrery-open .legend, html.orrery-open .worldbar { visibility: hidden; }
 html.orrery-open .learn-card { z-index: 26; }
+/* Map games (play/hop.ts): Border hop's card. The two ends, the route so far as small steps, hints, the result. */
+.play-card { max-height: calc(100dvh - 210px - var(--safe-t)); overflow-y: auto; overscroll-behavior: contain; }
+.hop-ends { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 6px 0 2px; font-size: 15px; }
+.hop-dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; box-shadow: 0 0 0 2px rgba(0,0,0,.35); }
+.hop-path { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0 4px; }
+.hop-step { font-size: 12px; font-weight: 700; padding: 2px 7px; border-radius: 999px; background: rgba(93,173,226,.22); border: 1px solid rgba(93,173,226,.55); }
+.hop-step.from { background: rgba(46,204,113,.22); border-color: rgba(46,204,113,.6); }
+.hop-step.to { background: rgba(255,107,107,.22); border-color: rgba(255,107,107,.6); }
+.hop-stats { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.hop-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.hop-actions .pill { gap: 5px; }
+.hop-actions .pill:disabled { opacity: .45; cursor: default; }
+.hop-score { display: flex; align-items: baseline; gap: 10px; margin-top: 8px; font-size: 18px; font-weight: 800; }
+.hop-stars { color: #f5c542; font-size: 22px; letter-spacing: 1px; }
+.hop-sub-btn { display: flex; align-items: center; gap: 4px; margin: 12px 0 6px; padding: 0; border: 0; background: none; color: var(--text); font: inherit; font-size: 13px; font-weight: 750; cursor: pointer; }
+.play-card.peek .hop-ends { margin-bottom: 0; }
+.hop-hints { margin-top: 6px; }
+.hop-others { display: flex; flex-direction: column; gap: 4px; }
+.hop-other { font-size: 12.5px; line-height: 1.35; padding: 5px 8px; border-radius: 10px; background: var(--chip); }
+.hop-other.cur { box-shadow: inset 0 0 0 1px #f5c542; }
+.hop-other-goal { font-weight: 750; display: block; }
+.hop-other-path { color: var(--muted); }
+.hop-note { font-size: 12.5px; line-height: 1.4; margin: 8px 0 0; }
+.play-menu .toggles { margin-top: 8px; }
+/* During a game the map is the game's: the filter chips and the legend step aside. */
+html.has-game .chips, html.has-game .legend { display: none; }
+@media (max-width: 720px) {
+  .play-card { max-height: calc(100dvh - 250px - var(--safe-t)); }
+}
+/* Wide screens: the card at the top left, the globe centred in the whole window beside it. */
+@media (min-width: 1000px) {
+  .play-card { left: 16px; transform: none; top: calc(76px + var(--safe-t)); width: 400px; max-height: calc(100dvh - 190px - var(--safe-t)); }
+}
 /* The night sky (sky/sky.ts): the solar system view's frame, with a place button and a scrolling row of options. */
 .sky { background: #02040b; }
 .gal { background: #000; }

@@ -310,6 +310,36 @@ function darker(hex: string, f = 0.7): string {
   return `rgb(${c(16)},${c(8)},${c(0)})`;
 }
 
+/**
+ * A side's colour against the sea (v0.24.0). In the dark theme the sea is a deep blue, and the dark blues the older
+ * stories use for sides (#2e6f9e, #1f618d, #2b5ea7...) melt into it where an area or a route meets the sea. A
+ * saturated dark blue is lightened, its hue kept; slate greys and every other colour stay as they are.
+ */
+const seaSafeCache = new Map<string, string>();
+export function seaSafe(hex: string, dark: boolean): string {
+  if (!dark || !/^#[0-9a-f]{6}$/i.test(hex)) return hex;
+  let out = seaSafeCache.get(hex);
+  if (out) return out;
+  const n = parseInt(hex.slice(1), 16);
+  const r = ((n >> 16) & 255) / 255, g = ((n >> 8) & 255) / 255, b = (n & 255) / 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b), l = (max + min) / 2, d = max - min;
+  const s = d === 0 ? 0 : d / (1 - Math.abs(2 * l - 1));
+  let hue = 0;
+  if (d) hue = max === r ? ((g - b) / d) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
+  hue = (hue * 60 + 360) % 360;
+  out = hex;
+  if (hue >= 195 && hue <= 240 && s >= 0.4 && l < 0.45) {
+    // The same hue and saturation at a lightness of 0.62.
+    const L2 = 0.62, C = (1 - Math.abs(2 * L2 - 1)) * s, X = C * (1 - Math.abs(((hue / 60) % 2) - 1)), m = L2 - C / 2;
+    // Hues 180–240° are (0, X, C) in RGB; 240° itself (X is 0 there) is (0, 0, C).
+    const [r1, g1, b1] = hue < 240 ? [0, X, C] : [X, 0, C];
+    const to = (v: number) => Math.round((v + m) * 255).toString(16).padStart(2, '0');
+    out = `#${to(r1)}${to(g1)}${to(b1)}`;
+  }
+  seaSafeCache.set(hex, out);
+  return out;
+}
+
 /** Points along a route, following great circles, cut at `q` (0..1) of its length. */
 function routeTo(path: Pt[], q: number): Pt[] {
   const legs = path.slice(1).map((p, i) => geoDistance(path[i], p));
@@ -423,7 +453,7 @@ export class StoryMode {
             h('span', { class: 'war-sub' }, `${fmtYears(c.start, c.end)} · ${tx(c.region)}`),
             h('span', { class: 'war-sum' }, tx(c.summary)),
             h('span', { class: 'war-sides' },
-              c.sides.map((s) => h('span', { class: 'war-side' }, h('i', { style: { background: s.color } }), tx(s.name))),
+              c.sides.map((s) => h('span', { class: 'war-side' }, h('i', { style: { background: seaSafe(s.color, this.app.renderer.theme.dark) } }), tx(s.name))),
               (c.cats ?? []).map((id) => this.cats.get(id)).filter((x): x is Cat => !!x)
                 .map((k) => h('span', { class: 'war-side' }, h('b', { class: 'story-cat' }, k.icon), tx(k.name))))));
         card.addEventListener('click', () => void this.open(c.id));
@@ -807,15 +837,16 @@ export class StoryMode {
     }
     for (const side of c.sides) {
       const cur = st.control[side.id], was = old?.control[side.id];
-      if (!old || p >= 1 || cur === was) this.fillArea(rc, cur, side.color, 1);
-      else { this.fillArea(rc, was, side.color, 1 - p); this.fillArea(rc, cur, side.color, p); }
+      const col = seaSafe(side.color, theme.dark);
+      if (!old || p >= 1 || cur === was) this.fillArea(rc, cur, col, 1);
+      else { this.fillArea(rc, was, col, 1 - p); this.fillArea(rc, cur, col, p); }
     }
     ctx.beginPath();
     for (const l of rc.visibleLines(rc.level.coast)) path(l.geometry);
     ctx.strokeStyle = theme.coast; ctx.lineWidth = 0.6; ctx.stroke();
   }
 
-  private sideColor(id?: string) { return this.c?.sides.find((s) => s.id === id)?.color ?? '#59616b'; }
+  private sideColor(id?: string) { return seaSafe(this.c?.sides.find((s) => s.id === id)?.color ?? '#59616b', this.app.renderer.theme.dark); }
 
   // ---- Games of the world: the countries' colours, the arcs to the host, the teams
 
@@ -1688,7 +1719,7 @@ export class StoryMode {
     if (age) ui.meta.append(age);
     const teams = new Set(st.games?.teams.map((tm) => tm.s));
     const shown = c.sides.filter((s) => st.control[s.id] != null || teams.has(s.id) || (st.moves ?? []).some((m) => m.side === s.id));
-    for (const s of shown) ui.meta.append(h('span', { class: 'wb-side' }, h('i', { style: { background: s.color } }), tx(s.name)));
+    for (const s of shown) ui.meta.append(h('span', { class: 'wb-side' }, h('i', { style: { background: seaSafe(s.color, this.app.renderer.theme.dark) } }), tx(s.name)));
     if (c.items && st.show?.length) {
       // The kinds of things this step shows (people, works, dishes...), most common first.
       const n = new Map<string, number>();

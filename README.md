@@ -208,6 +208,24 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   Latin America, a grand tour of the solar system, footprints on the Moon, born in the stars, a night under the
   Southern sky); "On this day", any day of the year: what the Time travel stories tell of it, each opening its
   step, and Wikipedia's selection of events, linked to the story that tells the same event.
+- **Map games** (More → Map games): **Border hop**, getting from one country to a far one across land borders by
+  tapping the countries on the map, their names hidden.
+  - **Goals:** the same pair plays differently with each one. Fewest countries, fewest people, smallest area, or
+    the shortest distance from capital to capital. Spain → China is 4 countries in between at the fewest (France,
+    Germany, Poland, Russia), but 6 when the fewest people (272 million) is the goal, through Switzerland,
+    Austria and Slovakia.
+  - **Knowledge rounds:** only some countries may be crossed. Only Spanish-, Arabic-, French- or Russian-speaking
+    countries, only those that drive on the left, only Olympic hosts, or none in NATO or the EU. A refused tap says
+    why ("Brazil is not a Spanish-speaking country").
+  - **Modes:** practice by level and continent, a daily route that is the same for everyone, Blitz (five routes
+    against the clock) and challenge links that let a friend play the same round (`#hop=ESP-CHN&goal=people&beat=870`).
+  - **Scoring, one system for all map games:** the app knows the best route (par). A route scores 1,000 × par ÷
+    yours. ★★★ matches par; ★★ is one country more, or within 15 %.
+  - **Hints** cost points and stars. Names (−150) and the goal's map (−200) leave at most ★★; each next step (−300)
+    leaves ★.
+  - **After a round:** the best route for each goal, and notes on the odd borders crossed: Kaliningrad, Nakhchivan,
+    Cabinda, the Channel Tunnel…
+  - **Progress:** bests, the daily-route streak and six badges in your progress panel.
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Read aloud:** guided tours and the Time travel stories read by your device's own voices, in English or Latin
   American Spanish (a Mexican or other Latin American voice before Spain's); the sentence being read is marked, the
@@ -269,6 +287,21 @@ Time detective measures, for nine regions, which polities hold each borders map'
 look there (`scripts/data/history/detective.mjs`, `public/data/history/detective.json`); On this day lists the
 stories' dated steps and items by day (`scripts/data/build-onthisday.mjs`, `public/data/onthisday/`); and
 `scripts/test/tours.mjs` checks that every tour stop opens a story step that exists.
+
+**The map games' borders** (`scripts/data/play/build-borders.mjs` builds `public/data/play/borders.json`) come from
+the app's own 1:50m map, so a route on screen is a route in the game. Two countries are neighbours when their outlines
+share an edge (323 land borders).
+- **Hand-sorted borders** (`scripts/data/play/border-rules.json`):
+  - exclaves on the same continent count (Kaliningrad, Nakhchivan, Cabinda, Dubrovnik, Gaza, Northern Ireland, East Thrace);
+  - overseas regions on another continent (French Guiana, Ceuta and Melilla) count only when turned on;
+  - the Channel Tunnel, the Øresund Bridge, the King Fahd Causeway and the Johor–Singapore Causeway count; ferries do not.
+- **Checks against two other lists**, the CIA World Factbook's neighbours and Wikidata's "shares border with" (P47,
+  CC0, cached in `wikidata-p47.json`); each difference is reviewed in the rules file (Siachen Glacier left out,
+  Botswana–Zambia at Kazungula added, India–Sri Lanka a sea border only).
+- **The groups for knowledge rounds:** languages, driving side and NATO and EU membership come from the country facts.
+  Olympic hosts come from the Games of the world data.
+- **Tests:** `npm run test:play` checks routes and par, the odd borders, every knowledge round and level, the daily
+  route, scoring and challenge links.
 The States and provinces quiz uses Natural Earth's admin-1 regions (`scripts/data/build-regions.mjs`; France,
 Spain, Italy and the United Kingdom grouped into their regions). The Time travel stories are written from
 Wikipedia and the sources listed in each story
