@@ -14,9 +14,12 @@ import { TerrainUI } from './ui/terrain';
 import { Terrain3D } from './ui/terrain3d';
 import { Space } from './space/space';
 import { Orrery } from './space/orrery';
+import { Sky } from './sky/sky';
+import { Galaxy } from './sky/galaxy';
+import { Elements } from './sky/elements';
 import { worldHook } from './modes/stories';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements } } }
 
 async function boot() {
   // Read before the app rewrites the address with its own state.
@@ -45,11 +48,16 @@ async function boot() {
   const terrain3d = new Terrain3D(app, shell, terrain);
   const space = new Space(app, shell, time);
   const orrery = new Orrery(app, shell, space);
+  const sky = new Sky(app, shell, space);
+  const galaxy = new Galaxy(app, shell, space, sky);
+  const elements = new Elements(app, shell, space, sky);
+  learn.sky = sky;
+  learn.elements = elements;
   learn.space = space;
   learn.orrery = orrery;
   // A story step on another world shows that world under the story.
   worldHook.show = (id) => { space.surface.quiet = !!id; void space.surface.set(id); };
-  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery };
+  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };
@@ -76,6 +84,11 @@ async function boot() {
     const camera = c.length === 3 && c.every(isFinite) ? { lon: c[0], lat: c[1], zoom: c[2] } : undefined;
     setTimeout(() => void space.enter(world, { map: (shared.get('map') as 'elev' | null) ?? 'photo', camera }), 300);
   }
+  // The sky, our galaxy or the elements: #sky=Ori (#sky=1: the sky from where the globe looks), #galaxy=M42, #element=Au.
+  const skyAt = shared.get('sky'), galAt = shared.get('galaxy'), elAt = shared.get('element');
+  if (skyAt != null) setTimeout(() => sky.open(skyAt && skyAt !== '1' ? { frame: 'celestial', target: skyAt } : {}), 400);
+  else if (galAt != null) setTimeout(() => void galaxy.open(galAt && galAt !== '1' ? galAt : undefined), 400);
+  else if (elAt != null) setTimeout(() => void elements.open(elAt && elAt !== '1' ? elAt : undefined), 400);
   // A shared story: #war=<id>&step=<n> (or #eras=, #food=, #structures=, #people=, #life=).
   for (const kind of STORY_KINDS) {
     const id = shared.get(storyHashKey(kind));

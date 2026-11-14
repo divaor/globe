@@ -240,7 +240,7 @@ function mineralsLayer(): LayerDef {
     name: { en: 'Natural resources: top producers', es: 'Recursos naturales: mayores productores' },
     desc: { en: 'Who produces the world’s oil, gas, coal, gold, lithium, cobalt, rare earths, diamonds and more.', es: 'Quién produce el petróleo, gas, carbón, oro, litio, cobalto, tierras raras, diamantes y más del mundo.' },
     keywords: 'resources minerals mining oil gold lithium cobalt recursos minerales mineria petroleo oro litio',
-    credit: 'Our World in Data (energy) and USGS Mineral Commodity Summaries (approximate shares)',
+    credit: 'Our World in Data (energy); USGS Mineral Commodity Summaries 2026, World Nuclear Association, Kimberley Process',
     options: [{ id: 'res', type: 'select', label: { en: 'Resource', es: 'Recurso' }, default: keys.includes('lithium') ? 'lithium' : keys[0], choices: keys.map((k) => ({ value: k, icon: MINERALS[k].emoji, label: { en: MINERALS[k].en, es: MINERALS[k].es } })) }],
     values: share, palette: P.ylorrd, scale: 'sqrt', domain: [0, 40],
     format: (v) => `${fmtNumber(v, v < 10 ? 1 : 0)}%`, label: { en: 'Share of world production', es: 'Parte de la producción mundial' },

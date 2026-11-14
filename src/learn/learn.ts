@@ -24,6 +24,8 @@ import { orderRounds } from './order';
 import { WORLDS, worldById, tr, trIn, loadFacts } from '../space/worlds';
 import { loadLandings, type Landing } from '../space/surface';
 import { thumbUrl, type Space } from '../space/space';
+import type { Sky } from '../sky/sky';
+import { ORIGINS, originName, mainOrigin, type Elements, type Element } from '../sky/elements';
 import { recordAnswer, recordQuiz, recordDaily, recordDailySubjects, recordTour, dailyResult, dayKey, current, progress, progressPanel, BADGES, type Badge } from './progress';
 
 const es = () => lang() === 'es';
@@ -39,7 +41,7 @@ function seeded(seed: number): () => number {
 /** FNV-1a: a number from a string (the day). */
 const hash = (str: string) => { let x = 0x811c9dc5; for (let i = 0; i < str.length; i++) { x ^= str.charCodeAt(i); x = Math.imul(x, 0x01000193); } return x >>> 0; };
 
-type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family' | 'plague' | 'disaster' | 'listen' | 'opening' | 'artist' | 'site' | 'inventor' | 'order' | 'detective' | 'daily' | 'world' | 'landed';
+type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family' | 'plague' | 'disaster' | 'listen' | 'opening' | 'artist' | 'site' | 'inventor' | 'order' | 'detective' | 'daily' | 'world' | 'landed' | 'constellation' | 'element';
 /** An item of a story collection, tagged with its collection. */
 interface QItem extends CollectionItem { kind: StoryKind; pop?: number }
 /** A site of data/layers/heritage.json (scripts/data/world-heritage/build.py). */
@@ -53,6 +55,8 @@ interface Q {
   det?: DetQuestion;
   /** Which world is this? and Who landed here?: the world shown, and the landing's place. */
   space?: { world: string; at?: [number, number] };
+  /** Which constellation? (the constellation drawn alone) and Where was this element made? (its symbol). */
+  sky?: { con?: string; el?: string };
 }
 /** On this day: a story step or item with a full date: story key ("wars/ww1"), step (from 0), date, icon, title. */
 type OtdEntry = [string, number, string, string, string, string];
@@ -189,6 +193,9 @@ export class Learn {
 
   /** Beyond Earth (set in main.ts): the quizzes about other worlds show them on the globe, and tours visit them. */
   space: Space | null = null;
+  /** The sky view and the elements table (sky/), for their quizzes and tours. */
+  sky: Sky | null = null;
+  elements: Elements | null = null;
   orrery: { show: (jd: number, scale?: 'inner' | 'planets' | 'outer', speed?: number) => void } | null = null;
 
   constructor(private app: App, private shell: Shell, private time: TimeTravel) {
@@ -288,6 +295,8 @@ export class Learn {
       ['inventor', '💡', L('Who invented it?', '¿Quién lo inventó?'), L('The telephone, paper, the World Wide Web...: pick who invented it.', 'El teléfono, el papel, la World Wide Web...: elige quién lo inventó.')],
       ['world', '🪐', L('Which world is this?', '¿Qué mundo es este?'), L('A planet, a moon or a dwarf planet turns on the globe, with no names: which one is it?', 'Un planeta, una luna o un planeta enano gira en el globo, sin nombres: ¿cuál es?')],
       ['landed', '🚀', L('Who landed here?', '¿Quién aterrizó aquí?'), L('A spot on the Moon or Mars: which mission landed there?', 'Un punto en la Luna o en Marte: ¿qué misión aterrizó allí?')],
+      ['constellation', '✳️', L('Which constellation?', '¿Qué constelación?'), L('A constellation\u2019s stars and figure, with no names: which one is it?', 'Las estrellas y la figura de una constelación, sin nombres: ¿cuál es?')],
+      ['element', '⚗️', L('Where was this element made?', '¿Dónde se formó este elemento?'), L('Gold, carbon, iron...: which cosmic process made most of it?', 'El oro, el carbono, el hierro...: ¿qué proceso del cosmos formó la mayor parte?')],
       ['link', '📈', L('Guess the link', 'Adivina la relación'), L('Do two facts about countries go together? Guess, then see the scatter plot.', '¿Van juntos dos datos de los países? Adivina y luego mira el diagrama de dispersión.')],
     ];
   }
@@ -359,7 +368,7 @@ export class Learn {
     if (kind === 'link') { await this.startLinkQuiz(); return; }
     if (kind === 'family') { await this.startFamilyQuiz(); return; }
     if (kind === 'daily') { await this.startDaily(); return; }
-    const qs = kind === 'world' ? await this.worldQs(10) : kind === 'landed' ? await this.landedQs(10) : kind === 'order' ? await this.orderQs(10) : kind === 'detective' ? await this.detectiveQs(10) : ITEM_QUIZZES.includes(kind) ? await this.itemQs(kind, 10) : this.countryQs(kind, region, 10);
+    const qs = kind === 'world' ? await this.worldQs(10) : kind === 'landed' ? await this.landedQs(10) : kind === 'constellation' ? await this.constellationQs(10) : kind === 'element' ? await this.elementQs(10) : kind === 'order' ? await this.orderQs(10) : kind === 'detective' ? await this.detectiveQs(10) : ITEM_QUIZZES.includes(kind) ? await this.itemQs(kind, 10) : this.countryQs(kind, region, 10);
     if (!qs?.length) { this.needsData(kind === 'detective' ? L('This game needs its maps; check your connection.', 'Este juego necesita sus mapas; revisa tu conexión.') : undefined); return; }
     await this.begin(kind, region, qs);
   }
@@ -379,6 +388,15 @@ export class Learn {
     const q = this.quiz;
     if (!q) return;
     const kind = this.qk(), cur = q.qs[q.i];
+    // The sky, with one constellation drawn and no names (Which constellation?).
+    if (cur?.sky?.con && this.sky) {
+      if (this.space?.active) await this.space.exit();
+      await this.sky.show({ frame: 'celestial', target: cur.sky.con, bare: true, focus: cur.sky.con });
+      this.skyQuiz = true;
+      return;
+    }
+    if (this.skyQuiz) { this.sky?.close(); this.skyQuiz = false; }
+    if (cur?.sky) return;
     // Another world, with no names (Which world is this?, Who landed here?); the Earth for every other question.
     if (cur?.space && this.space) {
       await this.space.quizShow(cur.space.world, cur.space.at);
@@ -785,6 +803,84 @@ export class Learn {
     return row;
   }
 
+  // ---- The stars: Which constellation? and Where was this element made?
+
+  /** Ten constellations with a bright star to find them by, each with three others to choose from. */
+  private async constellationQs(n: number): Promise<Q[] | null> {
+    const d = await this.sky?.load();
+    if (!d) return null;
+    const pool = d.cons.filter((c) => c.lines.length && c.brightest != null && (d.byHip.get(c.brightest)?.mag ?? 9) < 3.2);
+    if (pool.length < 8) return null;
+    return shuffle(pool.slice()).slice(0, n).map((c) => ({ id: c.id, kind: 'constellation' as QuizKind, options: shuffle([c.id, ...shuffle(pool.filter((x) => x.id !== c.id)).slice(0, 3).map((x) => x.id)]), sky: { con: c.id } }));
+  }
+
+  /** The quiz opened the sky (it closes it when it ends). */
+  private skyQuiz = false;
+  private els: Element[] = [];
+  /** Ten elements made mostly (60 % or more) one way; the answer is that way, among four. */
+  private async elementQs(n: number): Promise<Q[] | null> {
+    this.els = (await this.elements?.load().catch(() => null)) ?? [];
+    const pool = this.els.filter((e) => { const m = mainOrigin(e); return m !== 'none' && (e.origin[m] ?? 0) >= 0.6; });
+    if (pool.length < 8) return null;
+    return shuffle(pool.slice()).slice(0, n).map((e) => {
+      const right = mainOrigin(e);
+      const others = shuffle(ORIGINS.map((o) => o.id).filter((x) => x !== right && x !== 'none')).slice(0, 3);
+      return { id: right, kind: 'element' as QuizKind, options: shuffle([right, ...others]), sky: { el: e.symbol } };
+    });
+  }
+  private elementOf(cur: Q): Element | undefined { return this.els.find((e) => e.symbol === cur.sky?.el); }
+
+  private renderSkyQuestion(kind: QuizKind, cur: Q, feedback?: { ok: boolean; text: string }) {
+    const q = this.quiz!;
+    if (kind === 'constellation') {
+      add(this.card, h('div', { class: 'quiz-q' }, L('Which constellation is this?', '¿Qué constelación es esta?')));
+      if (!q.answered) add(this.card, h('div', { class: 'tool-hint' }, L('Drag the sky to look around it.', 'Arrastra el cielo para mirar alrededor.')));
+    } else {
+      const e = this.elementOf(cur);
+      add(this.card, h('div', { class: 'quiz-q' }, L('Where was most of this element made?', '¿Dónde se formó la mayor parte de este elemento?')));
+      if (e) add(this.card, h('div', { class: 'quiz-element' }, h('span', { class: 'quiz-el-sym' }, e.symbol), h('span', { class: 'quiz-el-name' }, `${tr(e.name)} · ${L('atomic number', 'número atómico')} ${e.z}`)));
+    }
+    const opts = h('div', { class: 'quiz-opts' });
+    for (const o of cur.options ?? []) {
+      const b = h('button', { type: 'button', class: 'pill quiz-opt', 'data-opt': o }, this.optionLabel(kind, o, cur)) as HTMLButtonElement;
+      if (q.answered) { b.disabled = true; if (o === cur.id) b.classList.add('ok'); else if (o === cur.pick) b.classList.add('bad'); }
+      b.addEventListener('click', () => this.answerOption(o, b));
+      opts.append(b);
+    }
+    add(this.card, opts);
+    if (feedback) add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text), h('div', { class: 'tool-actions' }, this.nextButton()));
+  }
+
+  private answerSky(kind: QuizKind, cur: Q, ok: boolean) {
+    const right = this.optionLabel(kind, cur.id, cur);
+    if (kind === 'constellation') {
+      // The names come out.
+      this.sky?.setFocus(cur.id, false);
+      const c = this.sky?.loaded?.cons.find((x) => x.id === cur.id);
+      const extra = c?.meaning ? ` (${tr(c.meaning).replace(/^(The|El|La|Los|Las) /, (m) => m.toLowerCase())})` : '';
+      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It was ', 'Era ')}${right}${extra}.` });
+      return;
+    }
+    const e = this.elementOf(cur);
+    const shares = e ? Object.entries(e.origin).filter(([, f]) => f >= 0.05).sort((a, b) => b[1] - a[1]).map(([id, f]) => `${Math.round(f * 100)} % ${originName(id).toLowerCase()}`).join(', ') : right;
+    this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('Not quite. ', 'No exactamente. ')}${e ? `${tr(e.name)}: ` : ''}${shares}.${e?.made ? ` ${tr(e.made)}` : ''}` });
+  }
+
+  private skyRow(kind: QuizKind, cur: Q): HTMLElement {
+    const right = this.optionLabel(kind, cur.id, cur);
+    const e = kind === 'element' ? this.elementOf(cur) : undefined;
+    const yours = cur.ok ? '' : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : L('no answer', 'sin respuesta');
+    const pic = h('span', { class: 'quiz-thumb quiz-el-thumb' }, e ? e.symbol : '✳️');
+    const row = h('button', { type: 'button', class: `quiz-sum-row ${cur.ok ? 'ok' : 'bad'}`, role: 'listitem' }, pic,
+      h('span', { class: 'quiz-sum-text' }, h('span', { class: 'quiz-sum-name' }, e ? `${tr(e.name)}: ${right}` : right), h('span', { class: 'quiz-sum-ans' }, yours)),
+      h('span', { class: 'quiz-sum-mark', 'aria-label': cur.ok ? L('right', 'correcto') : L('wrong', 'incorrecto') }, cur.ok ? '✓' : '✗'));
+    row.addEventListener('click', () => {
+      if (e) { void this.elements?.card(e); return; }
+      void this.sky?.show({ frame: 'celestial', target: cur.id, bare: false, focus: cur.id });
+    });
+    return row;
+  }
+
   // ---- Put them in order
 
   /** Things from the stories with a date a person can place: buildings, works, inventions and dishes (not those
@@ -975,6 +1071,8 @@ export class Learn {
   private optionLabel(kind: QuizKind, o: string, q: Q): string {
     if (kind === 'world') { const w = worldById(o); return w ? tr(w.name) : o; }
     if (kind === 'landed') { const l = this.landings.find((x) => x.id === o); return l ? tr(l.name) : o; }
+    if (kind === 'constellation') { const c = this.sky?.loaded?.cons.find((x) => x.id === o); return c ? tr(c.name) : o; }
+    if (kind === 'element') return originName(o);
     if (kind === 'when') return fmtWhen(o, Math.min(...(q.options ?? [o]).map(Number)));
     if (kind === 'dish') return `${flagEmoji(this.app.data.meta[o]?.a2)} ${this.app.data.name(o, lang())}`;
     if (kind === 'era') { const e = this.eras.get(o); return e ? `${e.icon} ${tx(e.name)}` : o; }
@@ -1068,6 +1166,7 @@ export class Learn {
     // In a daily challenge, each question says which quiz it is from.
     if (q.kind === 'daily') add(this.card, h('div', { class: 'quiz-kind' }, this.quizName(kind)));
     if (cur.space) { this.renderSpaceQuestion(kind, cur, feedback); return; }
+    if (cur.sky) { this.renderSkyQuestion(kind, cur, feedback); return; }
     if (cur.item) { this.renderItemQuestion(kind, cur, feedback); return; }
     if (kind === 'order') { this.renderOrderQuestion(cur, feedback); return; }
     if (kind === 'detective') { this.renderDetectiveQuestion(cur, feedback); return; }
@@ -1148,9 +1247,10 @@ export class Learn {
     const ok = o === cur.id;
     this.scored(ok);
     cur.ok = ok; cur.pick = o;
-    cur.given = cur.item || cur.space ? this.optionLabel(kind, o, cur) : kind === 'capital' ? this.capital(o) : this.app.data.name(o, lang());
+    cur.given = cur.item || cur.space || cur.sky ? this.optionLabel(kind, o, cur) : kind === 'capital' ? this.capital(o) : this.app.data.name(o, lang());
     b.classList.add(ok ? 'ok' : 'bad');
     if (cur.space) { this.answerSpace(kind, cur, ok); return; }
+    if (cur.sky) { this.answerSky(kind, cur, ok); return; }
     if (cur.det) {
       // Time detective: the names come out on the map.
       cur.given = this.yearLabel(o);
@@ -1237,7 +1337,7 @@ export class Learn {
   /** The result: the score, then every question, right or wrong, with a small picture; a tap shows it on the map. */
   private renderResult() {
     const q = this.quiz!;
-    const top = q.kind === 'order' ? L('Time keeper! ⏳', '¡Guardián del tiempo! ⏳') : q.kind === 'detective' ? L('Master detective! 🕵️', '¡Gran detective! 🕵️') : q.kind === 'site' ? L('Heritage explorer! 🏛️', '¡Explorador del patrimonio! 🏛️') : q.kind === 'world' || q.kind === 'landed' ? L('Space explorer! 🚀', '¡Explorador del espacio! 🚀') : q.kind === 'inventor' ? L('Inventive mind! 💡', '¡Mente inventiva! 💡') : q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : q.kind === 'family' || q.kind === 'script' ? L('Language master! 🗣️', '¡Maestro de las lenguas! 🗣️') : q.kind === 'link' ? L('Data master! 📊', '¡Maestro de los datos! 📊') : q.kind === 'plague' ? L('Disease detective! 🔬', '¡Detective de epidemias! 🔬') : q.kind === 'disaster' ? L('Disaster expert! 🌋', '¡Experto en desastres! 🌋') : q.kind === 'listen' ? L('Golden ears! 🎧', '¡Oído de oro! 🎧') : q.kind === 'opening' ? L('Bookworm! 📚', '¡Ratón de biblioteca! 📚') : q.kind === 'artist' ? L('Art expert! 🎨', '¡Experto en arte! 🎨') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
+    const top = q.kind === 'order' ? L('Time keeper! ⏳', '¡Guardián del tiempo! ⏳') : q.kind === 'detective' ? L('Master detective! 🕵️', '¡Gran detective! 🕵️') : q.kind === 'site' ? L('Heritage explorer! 🏛️', '¡Explorador del patrimonio! 🏛️') : q.kind === 'world' || q.kind === 'landed' ? L('Space explorer! 🚀', '¡Explorador del espacio! 🚀') : q.kind === 'constellation' || q.kind === 'element' ? L('Star gazer! ✨', '¡Observador de estrellas! ✨') : q.kind === 'inventor' ? L('Inventive mind! 💡', '¡Mente inventiva! 💡') : q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : q.kind === 'family' || q.kind === 'script' ? L('Language master! 🗣️', '¡Maestro de las lenguas! 🗣️') : q.kind === 'link' ? L('Data master! 📊', '¡Maestro de los datos! 📊') : q.kind === 'plague' ? L('Disease detective! 🔬', '¡Detective de epidemias! 🔬') : q.kind === 'disaster' ? L('Disaster expert! 🌋', '¡Experto en desastres! 🌋') : q.kind === 'listen' ? L('Golden ears! 🎧', '¡Oído de oro! 🎧') : q.kind === 'opening' ? L('Bookworm! 📚', '¡Ratón de biblioteca! 📚') : q.kind === 'artist' ? L('Art expert! 🎨', '¡Experto en arte! 🎨') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
     const msg = q.score >= 9 ? top : q.score >= 6 ? L('Great job! 🌍', '¡Muy bien! 🌍') : L('Keep exploring! 🧭', '¡Sigue explorando! 🧭');
     if (q.kind === 'daily') { this.renderDailyResult(); return; }
     add(this.card, this.quizHead(`${L('Result', 'Resultado')} ${q.score}/${q.qs.length}`, ''));
@@ -1273,6 +1373,7 @@ export class Learn {
   /** One question in the result: picture, what it was, the right answer and, if wrong, yours. */
   private resultRow(kind: QuizKind, cur: Q): HTMLElement {
     if (cur.space) return this.spaceRow(kind, cur);
+    if (cur.sky) return this.skyRow(kind, cur);
     if (kind === 'order') return this.orderRow(cur);
     if (kind === 'detective') return this.detectiveRow(cur);
     if (kind === 'region') return this.regionRow(cur);
@@ -1700,6 +1801,7 @@ export class Learn {
     this.app.select(null);
     this.app.renderer.requestRender();
     if (this.space?.active) await this.space.exit();
+    if (this.skyQuiz) { this.sky?.close(); this.skyQuiz = false; }
     await this.time.history.quizMap(null);
   }
 
@@ -1733,8 +1835,28 @@ export class Learn {
   private async showStep() {
     const tr = this.tour!;
     const s = tr.steps[tr.i];
-    // The solar system view closes at any other stop.
-    if (!s.orrery) this.space?.closeOrrery?.();
+    // The full-screen views (solar system, sky, galaxy, elements) close at any stop that isn't theirs.
+    const done = () => { this.renderTour(); if (this.tour === tr && tr.i === tr.steps.length - 1) this.badgeToast(recordTour(tr.name)); };
+    if (!s.orrery && !s.sky && !s.galaxy && !s.elements) this.space?.closeOverlays();
+    if (s.sky && this.sky) {
+      if (this.space?.active) await this.space.exit();
+      if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
+      await this.sky.show({ fov: 90, ...s.sky });
+      done();
+      return;
+    }
+    if (s.galaxy && this.space?.openGalaxy) {
+      if (this.space.active) await this.space.exit();
+      this.space.openGalaxy(s.galaxy);
+      done();
+      return;
+    }
+    if (s.elements && this.elements) {
+      if (this.space?.active) await this.space.exit();
+      await this.elements.show(s.elements.origin ?? null, s.elements.mark ?? null);
+      done();
+      return;
+    }
     if (s.orrery && this.space?.openOrrery) {
       const [y, m, d] = s.orrery.date.split('-').map(Number);
       const jd = Date.UTC(y, m - 1, d) / 86400000 + 2440587.5;
@@ -1759,6 +1881,7 @@ export class Learn {
       if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
       if (s.projection && this.app.projection !== s.projection) this.app.setProjection(s.projection);
       if (s.stack) await this.app.setStack(s.stack);
+      for (const [id, o] of Object.entries(s.options ?? {})) for (const [k, v] of Object.entries(o)) this.app.setOption(id, k, v);
     }
     if (s.fly) this.app.renderer.view.flyTo({ lon: s.fly[0], lat: s.fly[1], zoom: s.fly[2] }, 2200);
     this.app.renderer.requestRender();
@@ -1849,7 +1972,7 @@ export class Learn {
     if (!this.tour) return;
     clearInterval(this.tour.timer);
     // A tour that went beyond the Earth comes back to it.
-    if (this.tour.steps.some((x) => x.world || x.orrery)) { this.space?.closeOrrery?.(); if (this.space?.active) void this.space.exit(); }
+    if (this.tour.steps.some((x) => x.world || x.orrery || x.sky || x.galaxy || x.elements)) { this.space?.closeOverlays(); if (this.space?.active) void this.space.exit(); }
     this.tour = null;
     this.card.hidden = true;
     this.card.classList.remove('peek');

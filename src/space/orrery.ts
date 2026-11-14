@@ -71,12 +71,14 @@ export class Orrery {
   constructor(private app: App, private shell: Shell, private space: Space) {
     space.openOrrery = () => this.open();
     space.closeOrrery = () => this.close();
+    space.closers.push({ owner: this, close: () => this.close() });
   }
 
   get isOpen() { return !!this.el; }
 
   open(jd?: number) {
     if (this.el) return;
+    this.space.closeOverlays(this);
     this.shell.sheet.close();
     this.shell.card.hide();
     if (jd != null) this.jd = jd; else this.jd = julian(new Date());

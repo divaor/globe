@@ -15,7 +15,7 @@ export const SUBJECTS: Record<Subject, { icon: string; en: string; es: string; q
   history: { icon: '🏛️', en: 'History', es: 'Historia', quizzes: ['when', 'order', 'detective', 'era', 'civ', 'journey'] },
   culture: { icon: '🎨', en: 'Arts and culture', es: 'Arte y cultura', quizzes: ['dish', 'faith', 'listen', 'opening', 'artist', 'site'] },
   languages: { icon: '🗣️', en: 'Languages', es: 'Lenguas', quizzes: ['script', 'family'] },
-  science: { icon: '🔬', en: 'Science and nature', es: 'Ciencia y naturaleza', quizzes: ['period', 'plague', 'disaster', 'inventor', 'world', 'landed'] },
+  science: { icon: '🔬', en: 'Science and nature', es: 'Ciencia y naturaleza', quizzes: ['period', 'plague', 'disaster', 'inventor', 'world', 'landed', 'constellation', 'element'] },
   sport: { icon: '🏅', en: 'Sport', es: 'Deporte', quizzes: ['champion'] },
 };
 export const subjectOf = (kind: string): Subject | null => (Object.keys(SUBJECTS) as Subject[]).find((s) => SUBJECTS[s].quizzes.includes(kind)) ?? null;

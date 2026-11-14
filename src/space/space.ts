@@ -36,6 +36,13 @@ export class Space {
   /** Set by the orrery (orrery.ts), which opens from the panel. */
   openOrrery: (() => void) | null = null;
   closeOrrery: (() => void) | null = null;
+  /** Set by the sky (sky/sky.ts), the galaxy (sky/galaxy.ts) and the elements (sky/elements.ts). */
+  openSky: ((show?: import('../sky/sky').SkyShow) => void) | null = null;
+  openGalaxy: ((target?: string) => void) | null = null;
+  openElements: ((symbol?: string) => void) | null = null;
+  /** The full-screen views (solar system, sky, galaxy, elements): one at a time. */
+  closers: { owner: object; close: () => void }[] = [];
+  closeOverlays(except?: object) { for (const c of this.closers) if (c.owner !== except) c.close(); }
 
   constructor(private app: App, private shell: Shell, private time: TimeTravel) {
     this.surface = new WorldSurface(app);
@@ -130,6 +137,17 @@ export class Space {
       orr.addEventListener('click', () => { this.shell.sheet.close(); this.openOrrery!(); });
       top.append(orr);
     }
+    const extra: [string, string, string, (() => void) | null][] = [
+      ['sky', '✨ ', L('The night sky', 'El cielo nocturno'), this.openSky ? () => this.openSky!() : null],
+      ['galaxy', '🌌 ', L('Our galaxy', 'Nuestra galaxia'), this.openGalaxy ? () => this.openGalaxy!() : null],
+      ['elements', '⚗️ ', L('Where the elements come from', 'De dónde vienen los elementos'), this.openElements ? () => this.openElements!() : null],
+    ];
+    for (const [key, ic, label, act] of extra) {
+      if (!act) continue;
+      const b = h('button', { type: 'button', class: 'pill', 'data-space': key }, ic, label);
+      b.addEventListener('click', () => { this.shell.sheet.close(); act(); });
+      top.append(b);
+    }
     const stories = this.time.stories.space;
     if (stories) {
       const st = h('button', { type: 'button', class: 'pill', 'data-space': 'stories' }, '🚀 ', L('Space stories', 'Historias del espacio'));
@@ -164,7 +182,7 @@ export class Space {
     const w = worldById(id);
     if (!w) return;
     const app = this.app;
-    this.closeOrrery?.();
+    this.closeOverlays();
     if (app.mode && app.mode !== 'world') await this.time.modes.find((m) => m.id === app.mode)?.exit();
     this.shell.sheet.close();
     this.shell.card.hide();

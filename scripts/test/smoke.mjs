@@ -1622,6 +1622,144 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 17. Stars, the galaxy and the elements: the real sky behind the globe; the sky from Paranal on a June night (the
+// Southern Cross, Scorpius, the Milky Way), a tap and a constellation's card, Jupiter and Saturn at their 2020 conjunction,
+// daylight; the galaxy from the nearest stars to the Local Group; the periodic table by origin, an element's card and its
+// mines; Which constellation? and Where was this element made?; a tour under the Southern sky; search.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {} });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(url + '#p=globe&l=political&c=-60,-20,1&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForFunction(() => window.atlas.sky.info.backdrop > 0, null, { timeout: 30000 }).catch(() => {});
+  const bd = await page.evaluate(() => window.atlas.sky.info.backdrop);
+  check(bd > 0, `the globe's backdrop is the real sky (${bd} frames drawn)`);
+
+  // The Space panel opens the sky, the galaxy and the elements.
+  await page.click('[data-dock="space"]');
+  await page.waitForTimeout(500);
+  const btns = await page.$$eval('[data-space]', (b) => b.map((x) => x.getAttribute('data-space')));
+  check(['sky', 'galaxy', 'elements'].every((k) => btns.includes(k)), `the Space panel opens the night sky, our galaxy and the elements (${btns.join(', ')})`);
+  await page.click('[data-space="sky"]');
+  await page.waitForTimeout(1500);
+  const opened = await page.evaluate(() => window.atlas.sky.info.open);
+
+  // From Paranal on a June night, looking at the Southern Cross with Centaurus beside it (a 90° view: on its own the
+  // Cross, the smallest constellation, fills a phone's screen).
+  await page.evaluate(() => window.atlas.sky.open({ place: { lon: -70.404, lat: -24.627, label: 'Paranal' }, time: '2027-06-10T03:30:00Z', target: 'Cru', fov: 90 }));
+  await page.waitForTimeout(2000);
+  const s1 = await page.evaluate(() => window.atlas.sky.info);
+  check(opened && s1.open && s1.frame === 'horizon' && s1.sunAlt < -18 && s1.stars > 100 && s1.visible.includes('Cru') && s1.visible.includes('Cen'),
+    `the sky from Paranal at night: ${s1.stars} stars, ${s1.visible.length} constellations in view (the Southern Cross, Centaurus…), the Sun ${Math.round(-s1.sunAlt)}° below the horizon`);
+  // A tap in the middle of the view: the Southern Cross, or one of its stars.
+  const mid = await page.evaluate(() => { const h = document.querySelector('.sky .orr-head').getBoundingClientRect(), f = document.querySelector('.sky .orr-foot').getBoundingClientRect(); return [innerWidth / 2, (h.bottom + f.top) / 2]; });
+  const tapped = await page.evaluate(([x, y]) => window.atlas.sky.tap(x, y), mid);
+  await page.waitForTimeout(800);
+  const tcard = await page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
+  check(!!tapped && /Crux|Southern Cross/.test(tcard), `a tap in the middle opens ${tapped}'s card (${tcard.split('\n').slice(0, 2).join(' · ')})`);
+  // A constellation's card.
+  await page.evaluate(() => window.atlas.sky.cardOf('Ori'));
+  await page.waitForTimeout(800);
+  const ocard = await page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
+  check(/Orion/.test(ocard) && /Rigel|Betelgeuse/.test(ocard) && /square degrees/.test(ocard) && /Best seen/.test(ocard), `Orion's card: ${ocard.split('\n').filter(Boolean).slice(0, 6).join(' · ').slice(0, 150)}`);
+  await page.evaluate(() => window.atlas.shell.card.hide());
+  // Jupiter and Saturn side by side on 21 December 2020, from Madrid.
+  await page.evaluate(() => window.atlas.sky.open({ place: { lon: -3.7, lat: 40.4, label: 'Madrid' }, time: '2020-12-21T17:30:00Z', target: 'jupiter', fov: 12 }));
+  await page.waitForTimeout(1500);
+  const mid2 = await page.evaluate(() => { const h = document.querySelector('.sky .orr-head').getBoundingClientRect(), f = document.querySelector('.sky .orr-foot').getBoundingClientRect(); return [innerWidth / 2, (h.bottom + f.top) / 2]; });
+  const conj = await page.evaluate(([x, y]) => window.atlas.sky.tap(x, y), mid2);
+  check(conj === 'jupiter' || conj === 'saturn', `Jupiter and Saturn together on 21 December 2020 (a tap on them: ${conj})`);
+  // In daylight the Sun is up.
+  await page.evaluate(() => window.atlas.sky.open({ time: '2027-06-10T16:00:00Z' }));
+  await page.waitForTimeout(800);
+  const day = await page.evaluate(() => window.atlas.sky.info.sunAlt);
+  check(day > 20, `at noon in Madrid the Sun is ${Math.round(day)}° up`);
+  await page.click('.sky-close');
+  await page.waitForTimeout(400);
+
+  // Our galaxy: the Milky Way from above, the nearest stars and the Local Group.
+  await page.evaluate(() => window.atlas.galaxy.open('galaxy'));
+  await page.waitForTimeout(2500);
+  const g1 = await page.evaluate(() => window.atlas.galaxy.info);
+  await page.evaluate(() => window.atlas.galaxy.go('nearby'));
+  await page.waitForTimeout(2200);
+  const g2 = await page.evaluate(() => window.atlas.galaxy.info);
+  await page.evaluate(() => window.atlas.galaxy.go('local'));
+  await page.waitForTimeout(2200);
+  const g3 = await page.evaluate(() => window.atlas.galaxy.info);
+  check(g1.labels.some((l) => /The Sun/.test(l)) && g2.R < 100 && g2.labels.some((l) => /Centauri|Proxima/.test(l)) && g3.R > 1e6 && g3.labels.some((l) => /Andromeda/.test(l)),
+    `our galaxy: the Sun on the Milky Way, then the nearest stars (${g2.labels.slice(0, 3).join(', ')}…), then the Local Group (${g3.labels.filter((l) => /Andromeda|Triangulum|Magellanic/.test(l)).slice(0, 3).join(', ')})`);
+  await page.click('.gal-close');
+
+  // Where the elements come from: 118 squares; gold's card and its mines.
+  await page.evaluate(() => window.atlas.elements.open());
+  await page.waitForSelector('.elm-cell[data-z="79"]', { timeout: 15000 }).catch(() => {});
+  const cells = await page.$$eval('.elm-cell', (c) => c.length);
+  await page.click('[data-origin="ns"]').catch(() => {});
+  const dim = await page.$$eval('.elm-cell.dim', (c) => c.length);
+  await page.click('.elm-cell[data-z="79"]');
+  await page.waitForTimeout(900);
+  const ecard = await page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
+  check(cells === 118 && dim > 50 && /Gold/.test(ecard) && /neutron/i.test(ecard) && /Mined/.test(ecard), `the periodic table: ${cells} elements, ${dim} dimmed for "merging neutron stars"; gold's card: ${ecard.split('\n').filter(Boolean).slice(0, 4).join(' · ').slice(0, 120)}`);
+  await page.evaluate(() => [...document.querySelectorAll('.country-card a, .country-card button')].find((b) => /who mines it/i.test(b.textContent))?.click());
+  await page.waitForTimeout(1200);
+  const res = await page.evaluate(() => { const l = window.atlas.app.layers.find((x) => x.def.id === 'resources'); return l ? l.options.res : null; });
+  check(res === 'gold' && !(await page.evaluate(() => window.atlas.elements.info.open)), `"Show who mines it" turns on the resources filter for gold (${res})`);
+
+  // Which constellation?: one figure, no names; the answer brings them back; the end closes the sky.
+  await page.evaluate(() => window.atlas.learn['startQuiz']('constellation', 'world'));
+  await page.waitForTimeout(2500);
+  const cq = await page.evaluate(() => ({ open: window.atlas.sky.info.open, bare: window.atlas.sky.bare, focus: window.atlas.sky.info.focus, opts: document.querySelectorAll('.learn-card .quiz-opt').length }));
+  await page.click('.learn-card .quiz-opt');
+  await page.waitForTimeout(700);
+  const ca = await page.evaluate(() => ({ bare: window.atlas.sky.bare, fb: document.querySelector('.learn-card .quiz-fb')?.textContent ?? '' }));
+  await page.evaluate(() => window.atlas.learn['stopQuiz']());
+  await page.waitForTimeout(500);
+  const cs = await page.evaluate(() => window.atlas.sky.info.open);
+  check(cq.open && cq.bare && !!cq.focus && cq.opts === 4 && !ca.bare && ca.fb.length > 4 && !cs, `Which constellation?: ${cq.focus} drawn alone with four answers; then "${ca.fb.slice(0, 50)}"; closing the quiz closes the sky`);
+  // Where was this element made?
+  await page.evaluate(() => window.atlas.learn['startQuiz']('element', 'world'));
+  await page.waitForTimeout(1200);
+  const eq = await page.evaluate(() => ({ sym: document.querySelector('.learn-card .quiz-el-sym')?.textContent ?? '', opts: document.querySelectorAll('.learn-card .quiz-opt').length }));
+  await page.click('.learn-card .quiz-opt');
+  await page.waitForTimeout(500);
+  const ea = await page.evaluate(() => document.querySelector('.learn-card .quiz-fb')?.textContent ?? '');
+  check(eq.sym.length >= 1 && eq.opts === 4 && /%/.test(ea), `Where was this element made?: ${eq.sym} with four origins; then "${ea.slice(0, 70)}"`);
+  await page.evaluate(() => window.atlas.learn['stopQuiz']());
+
+  // A tour under the Southern sky: the sky from Paranal; the tour's end closes it.
+  await page.evaluate(() => window.atlas.learn['openTours']());
+  await page.waitForTimeout(500);
+  await page.click('[data-tour="A night under the Southern sky"]');
+  await page.waitForTimeout(2500);
+  const t1 = await page.evaluate(() => ({ open: window.atlas.sky.info.open, lat: window.atlas.sky.info.lat, card: document.querySelector('.learn-card .tour-title, .learn-card strong')?.textContent ?? '' }));
+  await page.evaluate(async () => { const L = window.atlas.learn; L['tour'].i = 4; await L['showStep'](); });
+  await page.waitForTimeout(1500);
+  const t2 = await page.evaluate(() => window.atlas.sky.info.visible.includes('Cen'));
+  await page.evaluate(() => window.atlas.learn['stopTour']());
+  await page.waitForTimeout(600);
+  const t3 = await page.evaluate(() => window.atlas.sky.info.open);
+  check(t1.open && Math.abs(t1.lat + 24.6) < 0.1 && t2 && !t3, `A night under the Southern sky: from Paranal (${t1.lat.toFixed(1)}°), on to Omega Centauri; closing the tour closes the sky`);
+
+  // Search: a constellation, a star and an element.
+  await page.evaluate(() => window.atlas.shell.search.open());
+  await page.fill('.search-field', 'Orion');
+  await page.waitForTimeout(300);
+  const hits = await page.$$eval('.search-item', (r) => r.map((x) => x.textContent));
+  await page.fill('.search-field', 'Sirius');
+  await page.waitForTimeout(300);
+  const hits2 = await page.$$eval('.search-item', (r) => r.map((x) => x.textContent));
+  await page.click('.search-item');
+  await page.waitForTimeout(1800);
+  const after = await page.evaluate(() => ({ open: window.atlas.sky.info.open, card: document.querySelector('.country-card:not([hidden])')?.innerText ?? '' }));
+  check(hits.some((x) => /Orion.*Constellation/.test(x)) && hits2.some((x) => /Sirius.*Star/.test(x)) && after.open && /Sirius/.test(after.card), `search finds Orion (constellation) and Sirius (star); picking Sirius opens the sky at it with its card`);
+  check(!errors.length, `no page errors among the stars${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

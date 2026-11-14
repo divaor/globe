@@ -1,0 +1,3819 @@
+{
+ "about": {
+  "en": "World production shares by country for the metal and mineral commodities that yield chemical elements. Shares are percentages of world production, largest first; \"other countries\" and producers under 0.05% are left out. The USGS figures for 2025 are estimates, published early in 2026.",
+  "es": "Porcentaje de la producción mundial por país de los metales y minerales de los que se obtienen elementos químicos. Los porcentajes van de mayor a menor; se omiten \"otros países\" y los productores con menos del 0,05 %. Las cifras del USGS para 2025 son estimaciones, publicadas a inicios de 2026."
+ },
+ "commodities": {
+  "gold": {
+   "en": "Gold",
+   "es": "Oro",
+   "emoji": "🪙",
+   "unit": "% of world mine production (gold content)",
+   "unit_es": "% de la producción minera mundial (contenido de oro)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Au"
+   ],
+   "producers": [
+    [
+     "CHN",
+     11.5
+    ],
+    [
+     "RUS",
+     9.4
+    ],
+    [
+     "AUS",
+     8.5
+    ],
+    [
+     "CAN",
+     6.1
+    ],
+    [
+     "USA",
+     4.8
+    ],
+    [
+     "GHA",
+     4.5
+    ],
+    [
+     "MEX",
+     4.2
+    ],
+    [
+     "KAZ",
+     3.9
+    ],
+    [
+     "UZB",
+     3.9
+    ],
+    [
+     "PER",
+     3.3
+    ],
+    [
+     "IDN",
+     2.7
+    ],
+    [
+     "ZAF",
+     2.7
+    ],
+    [
+     "BRA",
+     2.4
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Gold",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-gold.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "silver": {
+   "en": "Silver",
+   "es": "Plata",
+   "emoji": "🥈",
+   "unit": "% of world mine production (silver content)",
+   "unit_es": "% de la producción minera mundial (contenido de plata)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Ag"
+   ],
+   "producers": [
+    [
+     "MEX",
+     24.2
+    ],
+    [
+     "PER",
+     13.8
+    ],
+    [
+     "CHN",
+     13.1
+    ],
+    [
+     "BOL",
+     5.8
+    ],
+    [
+     "CHL",
+     5.4
+    ],
+    [
+     "POL",
+     5.0
+    ],
+    [
+     "RUS",
+     4.6
+    ],
+    [
+     "USA",
+     4.2
+    ],
+    [
+     "AUS",
+     3.8
+    ],
+    [
+     "ARG",
+     3.1
+    ],
+    [
+     "IND",
+     3.1
+    ],
+    [
+     "KAZ",
+     2.4
+    ],
+    [
+     "CAN",
+     1.5
+    ],
+    [
+     "SWE",
+     1.5
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Silver",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-silver.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "copper": {
+   "en": "Copper",
+   "es": "Cobre",
+   "emoji": "🟠",
+   "unit": "% of world mine production (copper content)",
+   "unit_es": "% de la producción minera mundial (contenido de cobre)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Cu"
+   ],
+   "producers": [
+    [
+     "CHL",
+     23.0
+    ],
+    [
+     "COD",
+     13.9
+    ],
+    [
+     "PER",
+     11.7
+    ],
+    [
+     "CHN",
+     7.8
+    ],
+    [
+     "RUS",
+     5.6
+    ],
+    [
+     "USA",
+     4.3
+    ],
+    [
+     "ZMB",
+     4.1
+    ],
+    [
+     "AUS",
+     3.2
+    ],
+    [
+     "IDN",
+     3.1
+    ],
+    [
+     "KAZ",
+     3.1
+    ],
+    [
+     "MEX",
+     3.0
+    ],
+    [
+     "CAN",
+     2.2
+    ],
+    [
+     "POL",
+     1.8
+    ],
+    [
+     "IND",
+     0.1
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Copper",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-copper.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "iron-ore": {
+   "en": "Iron ore",
+   "es": "Mineral de hierro",
+   "emoji": "🧲",
+   "unit": "% of world mine production (usable ore)",
+   "unit_es": "% de la producción minera mundial (mineral utilizable)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Fe"
+   ],
+   "producers": [
+    [
+     "AUS",
+     37.6
+    ],
+    [
+     "BRA",
+     16.1
+    ],
+    [
+     "IND",
+     11.9
+    ],
+    [
+     "CHN",
+     11.1
+    ],
+    [
+     "IRN",
+     3.6
+    ],
+    [
+     "RUS",
+     3.3
+    ],
+    [
+     "CAN",
+     2.6
+    ],
+    [
+     "ZAF",
+     2.5
+    ],
+    [
+     "UKR",
+     2.0
+    ],
+    [
+     "USA",
+     1.5
+    ],
+    [
+     "KAZ",
+     1.3
+    ],
+    [
+     "SWE",
+     1.0
+    ],
+    [
+     "PER",
+     0.8
+    ],
+    [
+     "CHL",
+     0.7
+    ],
+    [
+     "TUR",
+     0.7
+    ],
+    [
+     "MRT",
+     0.6
+    ],
+    [
+     "MEX",
+     0.3
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Iron Ore",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-iron-ore.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "bauxite": {
+   "en": "Bauxite (aluminium ore)",
+   "es": "Bauxita (mena de aluminio)",
+   "emoji": "🟫",
+   "unit": "% of world mine production (dry bauxite)",
+   "unit_es": "% de la producción minera mundial (bauxita seca)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "The USGS withholds the United States figure to protect company data, so the shares are of world production without the United States.",
+   "note_es": "El USGS no publica la cifra de Estados Unidos para proteger datos de empresas, así que los porcentajes son de la producción mundial sin Estados Unidos.",
+   "elements": [
+    "Al"
+   ],
+   "producers": [
+    [
+     "GIN",
+     34.0
+    ],
+    [
+     "AUS",
+     22.0
+    ],
+    [
+     "CHN",
+     19.7
+    ],
+    [
+     "BRA",
+     7.5
+    ],
+    [
+     "IND",
+     5.7
+    ],
+    [
+     "IDN",
+     2.3
+    ],
+    [
+     "JAM",
+     1.4
+    ],
+    [
+     "RUS",
+     1.3
+    ],
+    [
+     "SAU",
+     1.3
+    ],
+    [
+     "KAZ",
+     1.1
+    ],
+    [
+     "TUR",
+     0.9
+    ],
+    [
+     "VNM",
+     0.9
+    ],
+    [
+     "GRC",
+     0.2
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Bauxite and Alumina",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-bauxite-alumina.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "aluminium": {
+   "en": "Aluminium (primary smelting)",
+   "es": "Aluminio (fundición primaria)",
+   "emoji": "✈️",
+   "unit": "% of world smelter production (primary aluminium)",
+   "unit_es": "% de la producción mundial de las fundiciones (aluminio primario)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Al"
+   ],
+   "producers": [
+    [
+     "CHN",
+     60.6
+    ],
+    [
+     "IND",
+     5.7
+    ],
+    [
+     "RUS",
+     5.3
+    ],
+    [
+     "CAN",
+     4.4
+    ],
+    [
+     "ARE",
+     3.6
+    ],
+    [
+     "BHR",
+     2.2
+    ],
+    [
+     "AUS",
+     2.0
+    ],
+    [
+     "NOR",
+     1.8
+    ],
+    [
+     "BRA",
+     1.6
+    ],
+    [
+     "MYS",
+     1.5
+    ],
+    [
+     "ISL",
+     1.0
+    ],
+    [
+     "USA",
+     0.9
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Aluminum",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-aluminum.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "lithium": {
+   "en": "Lithium",
+   "es": "Litio",
+   "emoji": "🔋",
+   "unit": "% of world mine production (lithium content)",
+   "unit_es": "% de la producción minera mundial (contenido de litio)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "The USGS withholds the United States figure to protect company data, so the shares are of world production without the United States.",
+   "note_es": "El USGS no publica la cifra de Estados Unidos para proteger datos de empresas, así que los porcentajes son de la producción mundial sin Estados Unidos.",
+   "elements": [
+    "Li"
+   ],
+   "producers": [
+    [
+     "AUS",
+     31.7
+    ],
+    [
+     "CHN",
+     21.4
+    ],
+    [
+     "CHL",
+     19.3
+    ],
+    [
+     "ZWE",
+     9.7
+    ],
+    [
+     "ARG",
+     7.9
+    ],
+    [
+     "BRA",
+     4.1
+    ],
+    [
+     "MLI",
+     3.2
+    ],
+    [
+     "CAN",
+     1.9
+    ],
+    [
+     "PRT",
+     0.1
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Lithium",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-lithium.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "cobalt": {
+   "en": "Cobalt",
+   "es": "Cobalto",
+   "emoji": "🔵",
+   "unit": "% of world mine production (cobalt content)",
+   "unit_es": "% de la producción minera mundial (contenido de cobalto)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Co"
+   ],
+   "producers": [
+    [
+     "COD",
+     73.1
+    ],
+    [
+     "IDN",
+     14.0
+    ],
+    [
+     "RUS",
+     2.4
+    ],
+    [
+     "AUS",
+     1.2
+    ],
+    [
+     "MDG",
+     1.2
+    ],
+    [
+     "PHL",
+     1.2
+    ],
+    [
+     "CAN",
+     1.1
+    ],
+    [
+     "PNG",
+     0.9
+    ],
+    [
+     "CHN",
+     0.6
+    ],
+    [
+     "CUB",
+     0.6
+    ],
+    [
+     "TUR",
+     0.6
+    ],
+    [
+     "USA",
+     0.1
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Cobalt",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-cobalt.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "nickel": {
+   "en": "Nickel",
+   "es": "Níquel",
+   "emoji": "⚪",
+   "unit": "% of world mine production (nickel content)",
+   "unit_es": "% de la producción minera mundial (contenido de níquel)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Ni"
+   ],
+   "producers": [
+    [
+     "IDN",
+     66.7
+    ],
+    [
+     "PHL",
+     6.9
+    ],
+    [
+     "RUS",
+     5.1
+    ],
+    [
+     "CAN",
+     3.6
+    ],
+    [
+     "NCL",
+     3.6
+    ],
+    [
+     "CHN",
+     3.1
+    ],
+    [
+     "BRA",
+     1.8
+    ],
+    [
+     "AUS",
+     1.2
+    ],
+    [
+     "USA",
+     0.3
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Nickel",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-nickel.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "rare-earths": {
+   "en": "Rare earth elements",
+   "es": "Tierras raras",
+   "emoji": "🧪",
+   "unit": "% of world mine production (rare-earth oxide equivalent)",
+   "unit_es": "% de la producción minera mundial (equivalente en óxidos de tierras raras)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "The figures count yttrium and the lanthanides. Scandium comes only as a by-product, mainly of nickel and titanium processing (about 80 tonnes of scandium oxide in 2025, mostly in China). Figures for Myanmar, Madagascar, Malaysia, Thailand and Vietnam are USGS estimates from China’s imports. Promethium is not mined: the little that is used is made in nuclear reactors.",
+   "note_es": "Las cifras incluyen el itrio y los lantánidos. El escandio solo se obtiene como subproducto, sobre todo del procesamiento del níquel y del titanio (unas 80 toneladas de óxido de escandio en 2025, en su mayoría en China). Las cifras de Myanmar, Madagascar, Malasia, Tailandia y Vietnam son estimaciones del USGS a partir de las importaciones de China. El prometio no se extrae de minas: lo poco que se usa se produce en reactores nucleares.",
+   "elements": [
+    "Sc",
+    "Y",
+    "La",
+    "Ce",
+    "Pr",
+    "Nd",
+    "Sm",
+    "Eu",
+    "Gd",
+    "Tb",
+    "Dy",
+    "Ho",
+    "Er",
+    "Tm",
+    "Yb",
+    "Lu"
+   ],
+   "producers": [
+    [
+     "CHN",
+     69.2
+    ],
+    [
+     "USA",
+     13.1
+    ],
+    [
+     "AUS",
+     7.4
+    ],
+    [
+     "MMR",
+     5.6
+    ],
+    [
+     "THA",
+     1.2
+    ],
+    [
+     "IND",
+     0.7
+    ],
+    [
+     "MDG",
+     0.7
+    ],
+    [
+     "RUS",
+     0.7
+    ],
+    [
+     "BRA",
+     0.5
+    ],
+    [
+     "NGA",
+     0.4
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Rare Earths",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-rare-earths.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "uranium": {
+   "en": "Uranium",
+   "es": "Uranio",
+   "emoji": "☢️",
+   "unit": "% of world mine production (tonnes of uranium)",
+   "unit_es": "% de la producción minera mundial (toneladas de uranio)",
+   "year": 2024,
+   "source": "World Nuclear Association, World Uranium Mining Production (updated October 2026)",
+   "note": "2024 is the latest year with country figures from the World Nuclear Association.",
+   "note_es": "2024 es el último año con cifras por país de la Asociación Nuclear Mundial (World Nuclear Association).",
+   "elements": [
+    "U"
+   ],
+   "producers": [
+    [
+     "KAZ",
+     38.6
+    ],
+    [
+     "CAN",
+     23.8
+    ],
+    [
+     "NAM",
+     12.2
+    ],
+    [
+     "AUS",
+     7.6
+    ],
+    [
+     "UZB",
+     6.6
+    ],
+    [
+     "RUS",
+     4.5
+    ],
+    [
+     "CHN",
+     2.7
+    ],
+    [
+     "NER",
+     1.6
+    ],
+    [
+     "IND",
+     0.8
+    ],
+    [
+     "UKR",
+     0.5
+    ],
+    [
+     "USA",
+     0.4
+    ],
+    [
+     "ZAF",
+     0.3
+    ]
+   ],
+   "sources": [
+    {
+     "title": "World Nuclear Association: World Uranium Mining Production",
+     "url": "https://world-nuclear.org/information-library/nuclear-fuel-cycle/mining-of-uranium/world-uranium-mining-production"
+    }
+   ]
+  },
+  "diamonds": {
+   "en": "Diamonds (natural, by carats)",
+   "es": "Diamantes (naturales, en quilates)",
+   "emoji": "💎",
+   "unit": "% of world production (carats)",
+   "unit_es": "% de la producción mundial (quilates)",
+   "year": 2025,
+   "source": "Kimberley Process Rough Diamond Statistics, Annual Global Summary 2025",
+   "license": "Public statistics (Kimberley Process Certification Scheme)",
+   "note": "Natural rough diamonds of gem and industrial quality, as reported to the Kimberley Process.",
+   "note_es": "Diamantes naturales en bruto, de calidad gema e industrial, según lo informado al Proceso de Kimberley.",
+   "elements": [
+    "C"
+   ],
+   "producers": [
+    [
+     "RUS",
+     31.9
+    ],
+    [
+     "BWA",
+     15.7
+    ],
+    [
+     "AGO",
+     15.4
+    ],
+    [
+     "CAN",
+     14.3
+    ],
+    [
+     "COD",
+     9.0
+    ],
+    [
+     "ZAF",
+     5.6
+    ],
+    [
+     "ZWE",
+     4.3
+    ],
+    [
+     "NAM",
+     2.1
+    ],
+    [
+     "LSO",
+     0.7
+    ],
+    [
+     "TZA",
+     0.4
+    ],
+    [
+     "GHA",
+     0.2
+    ],
+    [
+     "BRA",
+     0.1
+    ],
+    [
+     "CAF",
+     0.1
+    ],
+    [
+     "SLE",
+     0.1
+    ]
+   ],
+   "sources": [
+    {
+     "title": "Kimberley Process: Annual Global Summary, 2025 Production, Imports, Exports and KPC Counts",
+     "url": "https://kimberleyprocessstatistics.org/static/pdfs/public_statistics/2025/2025GlobalSummary.pdf"
+    },
+    {
+     "title": "Kimberley Process Rough Diamond Statistics: Public Statistics Area",
+     "url": "https://kimberleyprocessstatistics.org/public_statistics"
+    }
+   ]
+  },
+  "platinum": {
+   "en": "Platinum",
+   "es": "Platino",
+   "emoji": "💍",
+   "unit": "% of world mine production (platinum content)",
+   "unit_es": "% de la producción minera mundial (contenido de platino)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Rhodium, ruthenium, iridium and osmium come from the same ores, above all in South Africa and Russia; the USGS gives no country figures for them.",
+   "note_es": "El rodio, el rutenio, el iridio y el osmio salen de las mismas menas, sobre todo en Sudáfrica y Rusia; el USGS no da cifras por país para ellos.",
+   "elements": [
+    "Pt"
+   ],
+   "producers": [
+    [
+     "ZAF",
+     70.6
+    ],
+    [
+     "RUS",
+     11.8
+    ],
+    [
+     "ZWE",
+     10.6
+    ],
+    [
+     "CAN",
+     2.9
+    ],
+    [
+     "USA",
+     1.1
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Platinum-Group Metals",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-platinum-group.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "zinc": {
+   "en": "Zinc",
+   "es": "Zinc",
+   "emoji": "🔩",
+   "unit": "% of world mine production (zinc content)",
+   "unit_es": "% de la producción minera mundial (contenido de zinc)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Cadmium, indium and much of the world’s germanium are recovered as by-products of zinc ores.",
+   "note_es": "El cadmio, el indio y buena parte del germanio del mundo se recuperan como subproductos de las menas de zinc.",
+   "elements": [
+    "Zn"
+   ],
+   "producers": [
+    [
+     "CHN",
+     31.5
+    ],
+    [
+     "PER",
+     11.5
+    ],
+    [
+     "AUS",
+     8.5
+    ],
+    [
+     "IND",
+     6.7
+    ],
+    [
+     "MEX",
+     6.0
+    ],
+    [
+     "USA",
+     5.2
+    ],
+    [
+     "BOL",
+     3.8
+    ],
+    [
+     "RUS",
+     3.3
+    ],
+    [
+     "KAZ",
+     2.8
+    ],
+    [
+     "SWE",
+     1.8
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Zinc",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-zinc.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "tin": {
+   "en": "Tin",
+   "es": "Estaño",
+   "emoji": "🥫",
+   "unit": "% of world mine production (tin content)",
+   "unit_es": "% de la producción minera mundial (contenido de estaño)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Sn"
+   ],
+   "producers": [
+    [
+     "CHN",
+     24.4
+    ],
+    [
+     "IDN",
+     21.0
+    ],
+    [
+     "PER",
+     11.3
+    ],
+    [
+     "BRA",
+     9.6
+    ],
+    [
+     "COD",
+     9.3
+    ],
+    [
+     "BOL",
+     5.2
+    ],
+    [
+     "AUS",
+     4.1
+    ],
+    [
+     "MMR",
+     4.1
+    ],
+    [
+     "VNM",
+     3.8
+    ],
+    [
+     "MYS",
+     1.7
+    ],
+    [
+     "RWA",
+     1.6
+    ],
+    [
+     "RUS",
+     1.5
+    ],
+    [
+     "NGA",
+     1.2
+    ],
+    [
+     "LAO",
+     0.6
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Tin",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-tin.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "phosphate": {
+   "en": "Phosphate rock",
+   "es": "Roca fosfórica",
+   "emoji": "🌾",
+   "unit": "% of world mine production (marketable phosphate rock)",
+   "unit_es": "% de la producción minera mundial (roca fosfórica comercializable)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Morocco holds about two-thirds of the world’s known reserves (USGS: about 50 of 73 billion tonnes).",
+   "note_es": "Marruecos tiene cerca de dos tercios de las reservas conocidas del mundo (USGS: unos 50 de 73 mil millones de toneladas).",
+   "elements": [
+    "P"
+   ],
+   "producers": [
+    [
+     "CHN",
+     44.0
+    ],
+    [
+     "MAR",
+     14.4
+    ],
+    [
+     "USA",
+     8.0
+    ],
+    [
+     "RUS",
+     5.6
+    ],
+    [
+     "JOR",
+     4.8
+    ],
+    [
+     "SAU",
+     4.0
+    ],
+    [
+     "EGY",
+     2.2
+    ],
+    [
+     "BRA",
+     2.0
+    ],
+    [
+     "PER",
+     1.9
+    ],
+    [
+     "TUN",
+     1.3
+    ],
+    [
+     "VNM",
+     1.2
+    ],
+    [
+     "SEN",
+     1.1
+    ],
+    [
+     "AUS",
+     1.0
+    ],
+    [
+     "ISR",
+     1.0
+    ],
+    [
+     "ZAF",
+     0.9
+    ],
+    [
+     "DZA",
+     0.8
+    ],
+    [
+     "KAZ",
+     0.8
+    ],
+    [
+     "IND",
+     0.6
+    ],
+    [
+     "TGO",
+     0.6
+    ],
+    [
+     "TUR",
+     0.5
+    ],
+    [
+     "FIN",
+     0.4
+    ],
+    [
+     "UZB",
+     0.4
+    ],
+    [
+     "SYR",
+     0.3
+    ],
+    [
+     "MEX",
+     0.2
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Phosphate Rock",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-phosphate.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "potash": {
+   "en": "Potash",
+   "es": "Potasa",
+   "emoji": "🌱",
+   "unit": "% of world mine production (K2O equivalent)",
+   "unit_es": "% de la producción minera mundial (equivalente en K2O)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "K"
+   ],
+   "producers": [
+    [
+     "CAN",
+     30.6
+    ],
+    [
+     "RUS",
+     20.4
+    ],
+    [
+     "CHN",
+     12.9
+    ],
+    [
+     "BLR",
+     12.2
+    ],
+    [
+     "DEU",
+     6.1
+    ],
+    [
+     "LAO",
+     4.9
+    ],
+    [
+     "ISR",
+     4.1
+    ],
+    [
+     "JOR",
+     3.7
+    ],
+    [
+     "CHL",
+     1.2
+    ],
+    [
+     "USA",
+     1.0
+    ],
+    [
+     "ESP",
+     0.9
+    ],
+    [
+     "BRA",
+     0.6
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Potash",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-potash.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "graphite": {
+   "en": "Graphite (natural)",
+   "es": "Grafito (natural)",
+   "emoji": "✏️",
+   "unit": "% of world mine production (natural graphite)",
+   "unit_es": "% de la producción minera mundial (grafito natural)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "C"
+   ],
+   "producers": [
+    [
+     "CHN",
+     77.8
+    ],
+    [
+     "MDG",
+     4.4
+    ],
+    [
+     "TZA",
+     4.2
+    ],
+    [
+     "BRA",
+     3.6
+    ],
+    [
+     "MOZ",
+     3.3
+    ],
+    [
+     "RUS",
+     1.4
+    ],
+    [
+     "IND",
+     0.9
+    ],
+    [
+     "CAN",
+     0.4
+    ],
+    [
+     "NOR",
+     0.4
+    ],
+    [
+     "PRK",
+     0.4
+    ],
+    [
+     "LKA",
+     0.2
+    ],
+    [
+     "TUR",
+     0.1
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Graphite (Natural)",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-graphite.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "antimony": {
+   "en": "Antimony",
+   "es": "Antimonio",
+   "emoji": "🧯",
+   "unit": "% of world mine production (antimony content)",
+   "unit_es": "% de la producción minera mundial (contenido de antimonio)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "The USGS withholds the United States figure to protect company data, so the shares are of world production without the United States.",
+   "note_es": "El USGS no publica la cifra de Estados Unidos para proteger datos de empresas, así que los porcentajes son de la producción mundial sin Estados Unidos.",
+   "elements": [
+    "Sb"
+   ],
+   "producers": [
+    [
+     "CHN",
+     36.1
+    ],
+    [
+     "RUS",
+     28.9
+    ],
+    [
+     "TJK",
+     19.9
+    ],
+    [
+     "BOL",
+     4.5
+    ],
+    [
+     "MMR",
+     4.1
+    ],
+    [
+     "TUR",
+     2.7
+    ],
+    [
+     "AUS",
+     1.2
+    ],
+    [
+     "KAZ",
+     0.7
+    ],
+    [
+     "KGZ",
+     0.6
+    ],
+    [
+     "MEX",
+     0.5
+    ],
+    [
+     "LAO",
+     0.2
+    ],
+    [
+     "PAK",
+     0.2
+    ],
+    [
+     "VNM",
+     0.2
+    ],
+    [
+     "IRN",
+     0.1
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Antimony",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-antimony.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "arsenic": {
+   "en": "Arsenic",
+   "es": "Arsénico",
+   "emoji": "☠️",
+   "unit": "% of world arsenic trioxide production (plant output, gross weight)",
+   "unit_es": "% de la producción mundial de trióxido de arsénico (en planta, peso bruto)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Arsenic trioxide is mostly recovered from the flue dust of copper, gold and lead smelters; Morocco makes it from a cobalt-arsenic ore.",
+   "note_es": "El trióxido de arsénico se recupera sobre todo del polvo de las chimeneas de fundiciones de cobre, oro y plomo; Marruecos lo obtiene de una mena de cobalto y arsénico.",
+   "elements": [
+    "As"
+   ],
+   "producers": [
+    [
+     "PER",
+     49.2
+    ],
+    [
+     "CHN",
+     39.3
+    ],
+    [
+     "MAR",
+     8.2
+    ],
+    [
+     "BEL",
+     1.6
+    ],
+    [
+     "RUS",
+     0.8
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Arsenic",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-arsenic.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "barite": {
+   "en": "Barite (barium ore)",
+   "es": "Barita (mena de bario)",
+   "emoji": "🩻",
+   "unit": "% of world mine production (gross weight)",
+   "unit_es": "% de la producción minera mundial (peso bruto)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "The USGS withholds the United States figure to protect company data, so the shares are of world production without the United States.",
+   "note_es": "El USGS no publica la cifra de Estados Unidos para proteger datos de empresas, así que los porcentajes son de la producción mundial sin Estados Unidos.",
+   "elements": [
+    "Ba"
+   ],
+   "producers": [
+    [
+     "IND",
+     34.5
+    ],
+    [
+     "CHN",
+     25.3
+    ],
+    [
+     "MAR",
+     11.5
+    ],
+    [
+     "KAZ",
+     8.0
+    ],
+    [
+     "IRN",
+     3.4
+    ],
+    [
+     "MEX",
+     3.4
+    ],
+    [
+     "LAO",
+     3.0
+    ],
+    [
+     "TUR",
+     3.0
+    ],
+    [
+     "RUS",
+     2.6
+    ],
+    [
+     "PAK",
+     1.1
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Barite",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-barite.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "beryllium": {
+   "en": "Beryllium",
+   "es": "Berilio",
+   "emoji": "🔭",
+   "unit": "% of world mine production (beryllium content)",
+   "unit_es": "% de la producción minera mundial (contenido de berilio)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Be"
+   ],
+   "producers": [
+    [
+     "USA",
+     53.2
+    ],
+    [
+     "BRA",
+     18.5
+    ],
+    [
+     "CHN",
+     17.8
+    ],
+    [
+     "NGA",
+     9.3
+    ],
+    [
+     "MOZ",
+     0.7
+    ],
+    [
+     "MDG",
+     0.2
+    ],
+    [
+     "RWA",
+     0.2
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Beryllium",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-beryllium.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "bismuth": {
+   "en": "Bismuth",
+   "es": "Bismuto",
+   "emoji": "🌈",
+   "unit": "% of world refinery production",
+   "unit_es": "% de la producción mundial de las refinerías",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Bismuth is rarely mined for itself: it is mostly a by-product of lead ores, and in China and Vietnam also of tungsten ores.",
+   "note_es": "El bismuto casi nunca se extrae por sí mismo: sale sobre todo como subproducto de menas de plomo y, en China y Vietnam, también de tungsteno.",
+   "elements": [
+    "Bi"
+   ],
+   "producers": [
+    [
+     "CHN",
+     86.0
+    ],
+    [
+     "KOR",
+     6.1
+    ],
+    [
+     "JPN",
+     3.1
+    ],
+    [
+     "LAO",
+     3.1
+    ],
+    [
+     "KAZ",
+     1.1
+    ],
+    [
+     "BGR",
+     0.3
+    ],
+    [
+     "BOL",
+     0.3
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Bismuth",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-bismuth.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "boron": {
+   "en": "Boron (borates)",
+   "es": "Boro (boratos)",
+   "emoji": "🧼",
+   "unit": "% of reported world production (mixed boron minerals and borates, gross weight; rough guide)",
+   "unit_es": "% de la producción mundial informada (minerales de boro y boratos mezclados, peso bruto; orientativo)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "approximate": true,
+   "note": "Countries report different products (crude ore, ulexite, refined borates, boric oxide), so the USGS gives no world total and these shares only compare gross tonnages. Not included: the United States, a large producer whose figure is withheld, and Germany, which refines imported borates.",
+   "note_es": "Cada país informa un producto distinto (mineral en bruto, ulexita, boratos refinados, óxido bórico), así que el USGS no da un total mundial y estos porcentajes solo comparan toneladas brutas. No se incluyen Estados Unidos, un gran productor cuya cifra no se publica, ni Alemania, que refina boratos importados.",
+   "elements": [
+    "B"
+   ],
+   "producers": [
+    [
+     "TUR",
+     52.1
+    ],
+    [
+     "BOL",
+     13.2
+    ],
+    [
+     "CHL",
+     10.4
+    ],
+    [
+     "CHN",
+     8.0
+    ],
+    [
+     "PER",
+     7.6
+    ],
+    [
+     "ARG",
+     5.9
+    ],
+    [
+     "RUS",
+     2.8
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Boron",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-boron.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "bromine": {
+   "en": "Bromine",
+   "es": "Bromo",
+   "emoji": "🟤",
+   "unit": "% of world production (bromine content)",
+   "unit_es": "% de la producción mundial (contenido de bromo)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Bromine is taken from salty brines, such as those of the Dead Sea. The USGS withholds the United States figure to protect company data, so the shares are of world production without the United States.",
+   "note_es": "El bromo se extrae de salmueras, como las del mar Muerto. El USGS no publica la cifra de Estados Unidos para proteger datos de empresas, así que los porcentajes son de la producción mundial sin Estados Unidos.",
+   "elements": [
+    "Br"
+   ],
+   "producers": [
+    [
+     "ISR",
+     46.2
+    ],
+    [
+     "JOR",
+     25.4
+    ],
+    [
+     "CHN",
+     20.8
+    ],
+    [
+     "JPN",
+     4.6
+    ],
+    [
+     "IND",
+     1.6
+    ],
+    [
+     "UKR",
+     1.4
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Bromine",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-bromine.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "cadmium": {
+   "en": "Cadmium",
+   "es": "Cadmio",
+   "emoji": "🎨",
+   "unit": "% of world refinery production",
+   "unit_es": "% de la producción mundial de las refinerías",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Cadmium is a by-product of zinc refining.",
+   "note_es": "El cadmio es un subproducto de la refinación del zinc.",
+   "elements": [
+    "Cd"
+   ],
+   "producers": [
+    [
+     "CHN",
+     41.0
+    ],
+    [
+     "KOR",
+     18.6
+    ],
+    [
+     "CAN",
+     5.6
+    ],
+    [
+     "JPN",
+     5.6
+    ],
+    [
+     "KAZ",
+     4.7
+    ],
+    [
+     "MEX",
+     4.3
+    ],
+    [
+     "RUS",
+     4.3
+    ],
+    [
+     "AUS",
+     2.6
+    ],
+    [
+     "NLD",
+     2.6
+    ],
+    [
+     "PER",
+     2.6
+    ],
+    [
+     "NOR",
+     1.9
+    ],
+    [
+     "POL",
+     1.7
+    ],
+    [
+     "BGR",
+     1.6
+    ],
+    [
+     "UZB",
+     1.0
+    ],
+    [
+     "DEU",
+     0.9
+    ],
+    [
+     "USA",
+     0.9
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Cadmium",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-cadmium.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "chromium": {
+   "en": "Chromium (chromite ore)",
+   "es": "Cromo (cromita)",
+   "emoji": "🍴",
+   "unit": "% of world mine production (marketable chromite ore, gross weight)",
+   "unit_es": "% de la producción minera mundial (cromita comercializable, peso bruto)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Cr"
+   ],
+   "producers": [
+    [
+     "ZAF",
+     45.1
+    ],
+    [
+     "TUR",
+     17.6
+    ],
+    [
+     "KAZ",
+     13.7
+    ],
+    [
+     "IND",
+     5.9
+    ],
+    [
+     "BRA",
+     3.9
+    ],
+    [
+     "ZWE",
+     3.9
+    ],
+    [
+     "FIN",
+     3.7
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Chromium",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-chromium.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "fluorspar": {
+   "en": "Fluorspar (fluorite)",
+   "es": "Fluorita",
+   "emoji": "🦷",
+   "unit": "% of world mine production (gross weight)",
+   "unit_es": "% de la producción minera mundial (peso bruto)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "F"
+   ],
+   "producers": [
+    [
+     "CHN",
+     58.6
+    ],
+    [
+     "MEX",
+     14.7
+    ],
+    [
+     "MNG",
+     14.7
+    ],
+    [
+     "ZAF",
+     4.0
+    ],
+    [
+     "VNM",
+     1.6
+    ],
+    [
+     "ESP",
+     1.4
+    ],
+    [
+     "BRA",
+     1.0
+    ],
+    [
+     "IRN",
+     0.7
+    ],
+    [
+     "PAK",
+     0.5
+    ],
+    [
+     "THA",
+     0.5
+    ],
+    [
+     "DEU",
+     0.3
+    ],
+    [
+     "TJK",
+     0.1
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Fluorspar",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-fluorspar.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "gallium": {
+   "en": "Gallium",
+   "es": "Galio",
+   "emoji": "💡",
+   "unit": "% of world primary production (low-purity gallium)",
+   "unit_es": "% de la producción primaria mundial (galio de baja pureza)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Most gallium is a by-product of turning bauxite into alumina; the rest comes from zinc-processing residues.",
+   "note_es": "La mayor parte del galio es un subproducto de transformar la bauxita en alúmina; el resto sale de residuos del procesamiento del zinc.",
+   "elements": [
+    "Ga"
+   ],
+   "producers": [
+    [
+     "CHN",
+     99.0
+    ],
+    [
+     "RUS",
+     0.7
+    ],
+    [
+     "JPN",
+     0.3
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Gallium",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-gallium.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "helium": {
+   "en": "Helium",
+   "es": "Helio",
+   "emoji": "🎈",
+   "unit": "% of world production (separated from natural gas)",
+   "unit_es": "% de la producción mundial (separado del gas natural)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "The United States figure includes some Canadian helium purified in the United States. South Africa also produces a little (under 0.3%).",
+   "note_es": "La cifra de Estados Unidos incluye algo de helio canadiense purificado en ese país. Sudáfrica también produce un poco (menos del 0,3 %).",
+   "elements": [
+    "He"
+   ],
+   "producers": [
+    [
+     "USA",
+     42.6
+    ],
+    [
+     "QAT",
+     33.2
+    ],
+    [
+     "RUS",
+     9.5
+    ],
+    [
+     "DZA",
+     5.8
+    ],
+    [
+     "CAN",
+     3.2
+    ],
+    [
+     "CHN",
+     1.6
+    ],
+    [
+     "POL",
+     1.6
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Helium and Rare Gases",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-helium.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "indium": {
+   "en": "Indium",
+   "es": "Indio",
+   "emoji": "🖥️",
+   "unit": "% of world refinery production",
+   "unit_es": "% de la producción mundial de las refinerías",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Indium is recovered mostly from zinc ores.",
+   "note_es": "El indio se recupera sobre todo de menas de zinc.",
+   "elements": [
+    "In"
+   ],
+   "producers": [
+    [
+     "CHN",
+     69.1
+    ],
+    [
+     "KOR",
+     16.4
+    ],
+    [
+     "JPN",
+     5.9
+    ],
+    [
+     "CAN",
+     3.6
+    ],
+    [
+     "FRA",
+     1.9
+    ],
+    [
+     "BEL",
+     1.7
+    ],
+    [
+     "RUS",
+     0.5
+    ],
+    [
+     "UZB",
+     0.1
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Indium",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-indium.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "iodine": {
+   "en": "Iodine",
+   "es": "Yodo",
+   "emoji": "🩹",
+   "unit": "% of world mine production (iodine content)",
+   "unit_es": "% de la producción minera mundial (contenido de yodo)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Chile gets iodine from caliche, the same ore as its nitrates; Japan gets it from brines pumped up with natural gas. The USGS withholds the United States figure to protect company data, so the shares are of world production without the United States.",
+   "note_es": "Chile obtiene el yodo del caliche, la misma roca de su salitre; Japón lo saca de salmueras que suben con el gas natural. El USGS no publica la cifra de Estados Unidos para proteger datos de empresas, así que los porcentajes son de la producción mundial sin Estados Unidos.",
+   "elements": [
+    "I"
+   ],
+   "producers": [
+    [
+     "CHL",
+     67.6
+    ],
+    [
+     "JPN",
+     26.5
+    ],
+    [
+     "TKM",
+     2.4
+    ],
+    [
+     "IRN",
+     2.1
+    ],
+    [
+     "AZE",
+     0.6
+    ],
+    [
+     "IDN",
+     0.1
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Iodine",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-iodine.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "lead": {
+   "en": "Lead",
+   "es": "Plomo",
+   "emoji": "🚗",
+   "unit": "% of world mine production (lead content)",
+   "unit_es": "% de la producción minera mundial (contenido de plomo)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Pb"
+   ],
+   "producers": [
+    [
+     "CHN",
+     42.2
+    ],
+    [
+     "AUS",
+     10.7
+    ],
+    [
+     "PER",
+     6.4
+    ],
+    [
+     "USA",
+     6.2
+    ],
+    [
+     "RUS",
+     5.8
+    ],
+    [
+     "IND",
+     4.9
+    ],
+    [
+     "MEX",
+     4.4
+    ],
+    [
+     "BOL",
+     2.2
+    ],
+    [
+     "IRN",
+     1.6
+    ],
+    [
+     "SWE",
+     1.6
+    ],
+    [
+     "TUR",
+     1.6
+    ],
+    [
+     "TJK",
+     0.9
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Lead",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-lead.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "lime": {
+   "en": "Lime (calcium)",
+   "es": "Cal (calcio)",
+   "emoji": "🏗️",
+   "unit": "% of world lime production (quicklime and hydrated lime, plant output)",
+   "unit_es": "% de la producción mundial de cal (cal viva e hidratada, en planta)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Lime is made by heating limestone in kilns. Only countries that make at least 1 million tonnes are listed.",
+   "note_es": "La cal se obtiene calentando piedra caliza en hornos. Solo se detallan los países que producen al menos 1 millón de toneladas.",
+   "elements": [
+    "Ca"
+   ],
+   "producers": [
+    [
+     "CHN",
+     73.5
+    ],
+    [
+     "IND",
+     4.0
+    ],
+    [
+     "USA",
+     3.6
+    ],
+    [
+     "RUS",
+     2.8
+    ],
+    [
+     "BRA",
+     1.9
+    ],
+    [
+     "JPN",
+     1.4
+    ],
+    [
+     "KOR",
+     1.2
+    ],
+    [
+     "DEU",
+     1.1
+    ],
+    [
+     "IRN",
+     0.9
+    ],
+    [
+     "TUR",
+     0.9
+    ],
+    [
+     "FRA",
+     0.8
+    ],
+    [
+     "ITA",
+     0.6
+    ],
+    [
+     "AUS",
+     0.5
+    ],
+    [
+     "CAN",
+     0.4
+    ],
+    [
+     "ESP",
+     0.4
+    ],
+    [
+     "BEL",
+     0.3
+    ],
+    [
+     "BGR",
+     0.3
+    ],
+    [
+     "GBR",
+     0.3
+    ],
+    [
+     "MYS",
+     0.3
+    ],
+    [
+     "POL",
+     0.3
+    ],
+    [
+     "UKR",
+     0.3
+    ],
+    [
+     "ZAF",
+     0.2
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Lime",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-lime.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "magnesium": {
+   "en": "Magnesium (metal)",
+   "es": "Magnesio (metal)",
+   "emoji": "🪶",
+   "unit": "% of world primary smelter production",
+   "unit_es": "% de la producción primaria mundial de las fundiciones",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Mg"
+   ],
+   "producers": [
+    [
+     "CHN",
+     86.4
+    ],
+    [
+     "RUS",
+     5.5
+    ],
+    [
+     "BRA",
+     1.8
+    ],
+    [
+     "ISR",
+     1.8
+    ],
+    [
+     "TUR",
+     1.4
+    ],
+    [
+     "KAZ",
+     1.2
+    ],
+    [
+     "IRN",
+     0.5
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Magnesium Metal",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-magnesium-metal.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "magnesium-compounds": {
+   "en": "Magnesite (magnesium compounds)",
+   "es": "Magnesita (compuestos de magnesio)",
+   "emoji": "🧱",
+   "unit": "% of world magnesite mine production (gross weight)",
+   "unit_es": "% de la producción minera mundial de magnesita (peso bruto)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "The USGS withholds the United States figure to protect company data, so the shares are of world production without the United States.",
+   "note_es": "El USGS no publica la cifra de Estados Unidos para proteger datos de empresas, así que los porcentajes son de la producción mundial sin Estados Unidos.",
+   "elements": [
+    "Mg"
+   ],
+   "producers": [
+    [
+     "CHN",
+     60.5
+    ],
+    [
+     "BRA",
+     8.6
+    ],
+    [
+     "RUS",
+     8.1
+    ],
+    [
+     "TUR",
+     7.6
+    ],
+    [
+     "AUT",
+     3.1
+    ],
+    [
+     "ESP",
+     3.0
+    ],
+    [
+     "AUS",
+     1.9
+    ],
+    [
+     "SVK",
+     1.6
+    ],
+    [
+     "CAN",
+     1.1
+    ],
+    [
+     "IRN",
+     1.0
+    ],
+    [
+     "GRC",
+     0.6
+    ],
+    [
+     "IND",
+     0.4
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Magnesium Compounds",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-magnesium-compounds.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "manganese": {
+   "en": "Manganese",
+   "es": "Manganeso",
+   "emoji": "⚙️",
+   "unit": "% of world mine production (manganese content)",
+   "unit_es": "% de la producción minera mundial (contenido de manganeso)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Mn"
+   ],
+   "producers": [
+    [
+     "ZAF",
+     37.7
+    ],
+    [
+     "GAB",
+     24.8
+    ],
+    [
+     "GHA",
+     9.9
+    ],
+    [
+     "AUS",
+     7.9
+    ],
+    [
+     "BRA",
+     4.0
+    ],
+    [
+     "IND",
+     3.9
+    ],
+    [
+     "CHN",
+     3.5
+    ],
+    [
+     "CIV",
+     1.7
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Manganese",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-manganese.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "mercury": {
+   "en": "Mercury",
+   "es": "Mercurio",
+   "emoji": "🌡️",
+   "unit": "% of world mine production (mercury content)",
+   "unit_es": "% de la producción minera mundial (contenido de mercurio)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "The USGS has no figure for the United States, so it is not included.",
+   "note_es": "El USGS no tiene una cifra para Estados Unidos, así que no se incluye.",
+   "elements": [
+    "Hg"
+   ],
+   "producers": [
+    [
+     "CHN",
+     94.3
+    ],
+    [
+     "KGZ",
+     2.4
+    ],
+    [
+     "TJK",
+     1.9
+    ],
+    [
+     "MAR",
+     0.9
+    ],
+    [
+     "NOR",
+     0.5
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Mercury",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-mercury.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "molybdenum": {
+   "en": "Molybdenum",
+   "es": "Molibdeno",
+   "emoji": "🔧",
+   "unit": "% of world mine production (molybdenum content)",
+   "unit_es": "% de la producción minera mundial (contenido de molibdeno)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Mo"
+   ],
+   "producers": [
+    [
+     "CHN",
+     37.3
+    ],
+    [
+     "CHL",
+     16.2
+    ],
+    [
+     "USA",
+     15.4
+    ],
+    [
+     "PER",
+     15.0
+    ],
+    [
+     "MEX",
+     6.5
+    ],
+    [
+     "ARM",
+     2.0
+    ],
+    [
+     "KAZ",
+     1.7
+    ],
+    [
+     "MNG",
+     1.6
+    ],
+    [
+     "IRN",
+     1.3
+    ],
+    [
+     "CAN",
+     0.8
+    ],
+    [
+     "UZB",
+     0.8
+    ],
+    [
+     "RUS",
+     0.5
+    ],
+    [
+     "AUS",
+     0.4
+    ],
+    [
+     "PRK",
+     0.3
+    ],
+    [
+     "KOR",
+     0.2
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Molybdenum",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-molybdenum.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "niobium": {
+   "en": "Niobium",
+   "es": "Niobio",
+   "emoji": "🌉",
+   "unit": "% of world mine production (niobium content)",
+   "unit_es": "% de la producción minera mundial (contenido de niobio)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Nb"
+   ],
+   "producers": [
+    [
+     "BRA",
+     92.9
+    ],
+    [
+     "CAN",
+     5.4
+    ],
+    [
+     "COD",
+     0.9
+    ],
+    [
+     "RUS",
+     0.3
+    ],
+    [
+     "RWA",
+     0.2
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Niobium (Columbium)",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-niobium.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "nitrogen": {
+   "en": "Nitrogen (ammonia)",
+   "es": "Nitrógeno (amoníaco)",
+   "emoji": "🚜",
+   "unit": "% of world ammonia plant production (nitrogen content)",
+   "unit_es": "% de la producción mundial de amoníaco en planta (contenido de nitrógeno)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Ammonia is made from nitrogen in the air, mostly with natural gas or coal; it is not mined.",
+   "note_es": "El amoníaco se fabrica con el nitrógeno del aire, sobre todo usando gas natural o carbón; no se extrae de minas.",
+   "elements": [
+    "N"
+   ],
+   "producers": [
+    [
+     "CHN",
+     30.6
+    ],
+    [
+     "IND",
+     9.4
+    ],
+    [
+     "RUS",
+     9.4
+    ],
+    [
+     "USA",
+     8.8
+    ],
+    [
+     "IDN",
+     3.8
+    ],
+    [
+     "SAU",
+     3.2
+    ],
+    [
+     "IRN",
+     3.0
+    ],
+    [
+     "EGY",
+     2.5
+    ],
+    [
+     "CAN",
+     2.4
+    ],
+    [
+     "PAK",
+     2.4
+    ],
+    [
+     "TTO",
+     2.1
+    ],
+    [
+     "QAT",
+     1.9
+    ],
+    [
+     "DEU",
+     1.2
+    ],
+    [
+     "DZA",
+     1.2
+    ],
+    [
+     "NGA",
+     1.2
+    ],
+    [
+     "NLD",
+     1.2
+    ],
+    [
+     "OMN",
+     1.2
+    ],
+    [
+     "POL",
+     1.1
+    ],
+    [
+     "AUS",
+     0.9
+    ],
+    [
+     "MYS",
+     0.9
+    ],
+    [
+     "VNM",
+     0.9
+    ],
+    [
+     "UZB",
+     0.8
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Nitrogen (Fixed)—Ammonia",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-nitrogen.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "palladium": {
+   "en": "Palladium",
+   "es": "Paladio",
+   "emoji": "💨",
+   "unit": "% of world mine production (palladium content)",
+   "unit_es": "% de la producción minera mundial (contenido de paladio)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Pd"
+   ],
+   "producers": [
+    [
+     "RUS",
+     43.3
+    ],
+    [
+     "ZAF",
+     36.1
+    ],
+    [
+     "CAN",
+     8.2
+    ],
+    [
+     "ZWE",
+     7.7
+    ],
+    [
+     "USA",
+     3.2
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Platinum-Group Metals",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-platinum-group.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "rhenium": {
+   "en": "Rhenium",
+   "es": "Renio",
+   "emoji": "🚀",
+   "unit": "% of world mine production (rhenium content)",
+   "unit_es": "% de la producción minera mundial (contenido de renio)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Rhenium is recovered as a by-product of copper and molybdenum ores. Russia also produces some (no figure).",
+   "note_es": "El renio se recupera como subproducto de menas de cobre y molibdeno. Rusia también produce algo (sin cifra).",
+   "elements": [
+    "Re"
+   ],
+   "producers": [
+    [
+     "CHL",
+     37.0
+    ],
+    [
+     "CHN",
+     24.7
+    ],
+    [
+     "POL",
+     12.3
+    ],
+    [
+     "USA",
+     12.1
+    ],
+    [
+     "UZB",
+     8.6
+    ],
+    [
+     "KOR",
+     3.7
+    ],
+    [
+     "KAZ",
+     1.2
+    ],
+    [
+     "ARM",
+     0.2
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Rhenium",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-rhenium.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "salt": {
+   "en": "Salt",
+   "es": "Sal",
+   "emoji": "🧂",
+   "unit": "% of world production (all types of salt)",
+   "unit_es": "% de la producción mundial (todo tipo de sal)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Includes rock salt, sea salt from evaporation ponds and salt in brine.",
+   "note_es": "Incluye sal de roca (sal gema), sal marina de salinas y sal en salmuera.",
+   "elements": [
+    "Na",
+    "Cl"
+   ],
+   "producers": [
+    [
+     "CHN",
+     20.7
+    ],
+    [
+     "USA",
+     14.8
+    ],
+    [
+     "IND",
+     11.1
+    ],
+    [
+     "DEU",
+     5.5
+    ],
+    [
+     "CAN",
+     4.8
+    ],
+    [
+     "AUS",
+     4.4
+    ],
+    [
+     "CHL",
+     3.3
+    ],
+    [
+     "TUR",
+     3.1
+    ],
+    [
+     "MEX",
+     2.6
+    ],
+    [
+     "RUS",
+     2.6
+    ],
+    [
+     "BRA",
+     2.4
+    ],
+    [
+     "NLD",
+     2.0
+    ],
+    [
+     "FRA",
+     1.7
+    ],
+    [
+     "ESP",
+     1.5
+    ],
+    [
+     "IRN",
+     1.5
+    ],
+    [
+     "POL",
+     1.5
+    ],
+    [
+     "PAK",
+     1.1
+    ],
+    [
+     "BGR",
+     1.0
+    ],
+    [
+     "GBR",
+     1.0
+    ],
+    [
+     "SAU",
+     0.9
+    ],
+    [
+     "EGY",
+     0.8
+    ],
+    [
+     "BLR",
+     0.7
+    ],
+    [
+     "ITA",
+     0.7
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Salt",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-salt.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "selenium": {
+   "en": "Selenium",
+   "es": "Selenio",
+   "emoji": "🌙",
+   "unit": "% of world refinery production",
+   "unit_es": "% de la producción mundial de las refinerías",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Selenium is a by-product of copper refining. The USGS withholds the United States figure to protect company data, so the shares are of world production without the United States.",
+   "note_es": "El selenio es un subproducto de la refinación del cobre. El USGS no publica la cifra de Estados Unidos para proteger datos de empresas, así que los porcentajes son de la producción mundial sin Estados Unidos.",
+   "elements": [
+    "Se"
+   ],
+   "producers": [
+    [
+     "CHN",
+     52.0
+    ],
+    [
+     "JPN",
+     16.6
+    ],
+    [
+     "RUS",
+     8.3
+    ],
+    [
+     "BEL",
+     5.2
+    ],
+    [
+     "CAN",
+     3.4
+    ],
+    [
+     "IND",
+     2.3
+    ],
+    [
+     "MEX",
+     2.3
+    ],
+    [
+     "SRB",
+     1.8
+    ],
+    [
+     "POL",
+     1.7
+    ],
+    [
+     "KAZ",
+     1.3
+    ],
+    [
+     "DEU",
+     1.2
+    ],
+    [
+     "PER",
+     1.2
+    ],
+    [
+     "TUR",
+     1.1
+    ],
+    [
+     "FIN",
+     1.0
+    ],
+    [
+     "ZAF",
+     0.3
+    ],
+    [
+     "UZB",
+     0.1
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Selenium",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-selenium.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "silicon": {
+   "en": "Silicon",
+   "es": "Silicio",
+   "emoji": "💻",
+   "unit": "% of world production of silicon metal and ferrosilicon (silicon content)",
+   "unit_es": "% de la producción mundial de silicio metálico y ferrosilicio (contenido de silicio)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Made in electric furnaces from quartz. The USGS withholds the United States figure to protect company data, so the shares are of world production without the United States.",
+   "note_es": "Se produce en hornos eléctricos a partir de cuarzo. El USGS no publica la cifra de Estados Unidos para proteger datos de empresas, así que los porcentajes son de la producción mundial sin Estados Unidos.",
+   "elements": [
+    "Si"
+   ],
+   "producers": [
+    [
+     "CHN",
+     78.1
+    ],
+    [
+     "RUS",
+     4.7
+    ],
+    [
+     "BRA",
+     3.6
+    ],
+    [
+     "NOR",
+     2.9
+    ],
+    [
+     "KAZ",
+     1.3
+    ],
+    [
+     "MYS",
+     1.2
+    ],
+    [
+     "BTN",
+     1.0
+    ],
+    [
+     "FRA",
+     0.9
+    ],
+    [
+     "ISL",
+     0.9
+    ],
+    [
+     "CAN",
+     0.6
+    ],
+    [
+     "IND",
+     0.6
+    ],
+    [
+     "AUS",
+     0.5
+    ],
+    [
+     "ESP",
+     0.5
+    ],
+    [
+     "ZAF",
+     0.5
+    ],
+    [
+     "DEU",
+     0.1
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Silicon",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-silicon.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "strontium": {
+   "en": "Strontium (celestite)",
+   "es": "Estroncio (celestina)",
+   "emoji": "🎆",
+   "unit": "% of world mine production (celestite, gross weight)",
+   "unit_es": "% de la producción minera mundial (celestina, peso bruto)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Sr"
+   ],
+   "producers": [
+    [
+     "IRN",
+     55.4
+    ],
+    [
+     "ESP",
+     22.2
+    ],
+    [
+     "CHN",
+     17.8
+    ],
+    [
+     "MEX",
+     4.4
+    ],
+    [
+     "ARG",
+     0.2
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Strontium",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-strontium.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "sulfur": {
+   "en": "Sulfur",
+   "es": "Azufre",
+   "emoji": "🌋",
+   "unit": "% of world production (sulfur in all forms)",
+   "unit_es": "% de la producción mundial (azufre en todas sus formas)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Most sulfur is recovered from oil and natural gas, or as sulfuric acid at metal smelters; little is mined today.",
+   "note_es": "La mayor parte del azufre se recupera del petróleo y el gas natural, o como ácido sulfúrico en fundiciones de metales; hoy se extrae poco de minas.",
+   "elements": [
+    "S"
+   ],
+   "producers": [
+    [
+     "CHN",
+     22.6
+    ],
+    [
+     "USA",
+     9.6
+    ],
+    [
+     "RUS",
+     8.9
+    ],
+    [
+     "SAU",
+     8.6
+    ],
+    [
+     "ARE",
+     7.5
+    ],
+    [
+     "CAN",
+     6.0
+    ],
+    [
+     "KAZ",
+     5.7
+    ],
+    [
+     "IND",
+     4.4
+    ],
+    [
+     "KOR",
+     3.7
+    ],
+    [
+     "QAT",
+     3.7
+    ],
+    [
+     "JPN",
+     3.2
+    ],
+    [
+     "IRN",
+     2.5
+    ],
+    [
+     "CHL",
+     1.7
+    ],
+    [
+     "KWT",
+     1.5
+    ],
+    [
+     "POL",
+     1.3
+    ],
+    [
+     "AUS",
+     1.1
+    ],
+    [
+     "TKM",
+     1.0
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Sulfur",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-sulfur.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "tantalum": {
+   "en": "Tantalum",
+   "es": "Tántalo",
+   "emoji": "📱",
+   "unit": "% of world mine production (tantalum content)",
+   "unit_es": "% de la producción minera mundial (contenido de tántalo)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "Ta"
+   ],
+   "producers": [
+    [
+     "COD",
+     52.0
+    ],
+    [
+     "RWA",
+     16.0
+    ],
+    [
+     "NGA",
+     15.6
+    ],
+    [
+     "BRA",
+     7.6
+    ],
+    [
+     "CHN",
+     3.2
+    ],
+    [
+     "AUS",
+     2.0
+    ],
+    [
+     "ETH",
+     1.6
+    ],
+    [
+     "RUS",
+     1.2
+    ],
+    [
+     "BDI",
+     0.1
+    ],
+    [
+     "BOL",
+     0.1
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Tantalum",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-tantalum.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "tellurium": {
+   "en": "Tellurium",
+   "es": "Telurio",
+   "emoji": "☀️",
+   "unit": "% of world refinery production",
+   "unit_es": "% de la producción mundial de las refinerías",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Tellurium is a by-product of copper refining. The USGS withholds the United States figure to protect company data, so the shares are of world production without the United States.",
+   "note_es": "El telurio es un subproducto de la refinación del cobre. El USGS no publica la cifra de Estados Unidos para proteger datos de empresas, así que los porcentajes son de la producción mundial sin Estados Unidos.",
+   "elements": [
+    "Te"
+   ],
+   "producers": [
+    [
+     "CHN",
+     77.8
+    ],
+    [
+     "RUS",
+     6.5
+    ],
+    [
+     "JPN",
+     5.9
+    ],
+    [
+     "SWE",
+     4.7
+    ],
+    [
+     "CAN",
+     2.7
+    ],
+    [
+     "UZB",
+     1.8
+    ],
+    [
+     "ZAF",
+     0.5
+    ],
+    [
+     "BGR",
+     0.1
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Tellurium",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-tellurium.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "titanium": {
+   "en": "Titanium (ilmenite and rutile)",
+   "es": "Titanio (ilmenita y rutilo)",
+   "emoji": "🖌️",
+   "unit": "% of world mine production of ilmenite and rutile (TiO2 content)",
+   "unit_es": "% de la producción minera mundial de ilmenita y rutilo (contenido de TiO2)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Most titanium minerals are made into white titanium dioxide pigment for paint, paper and plastics; only a small part becomes titanium metal.",
+   "note_es": "La mayor parte de los minerales de titanio se convierte en pigmento blanco de dióxido de titanio para pinturas, papel y plásticos; solo una pequeña parte se vuelve titanio metálico.",
+   "elements": [
+    "Ti"
+   ],
+   "producers": [
+    [
+     "CHN",
+     32.6
+    ],
+    [
+     "MOZ",
+     19.4
+    ],
+    [
+     "ZAF",
+     14.3
+    ],
+    [
+     "AUS",
+     10.0
+    ],
+    [
+     "NOR",
+     4.0
+    ],
+    [
+     "SEN",
+     3.8
+    ],
+    [
+     "CAN",
+     3.7
+    ],
+    [
+     "MDG",
+     3.1
+    ],
+    [
+     "IND",
+     2.6
+    ],
+    [
+     "UKR",
+     2.1
+    ],
+    [
+     "SLE",
+     1.1
+    ],
+    [
+     "USA",
+     1.0
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Titanium Mineral Concentrates",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-titanium-minerals.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "tungsten": {
+   "en": "Tungsten",
+   "es": "Tungsteno (wolframio)",
+   "emoji": "🔨",
+   "unit": "% of world mine production (tungsten content)",
+   "unit_es": "% de la producción minera mundial (contenido de tungsteno)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "W"
+   ],
+   "producers": [
+    [
+     "CHN",
+     78.7
+    ],
+    [
+     "VNM",
+     3.5
+    ],
+    [
+     "KAZ",
+     2.8
+    ],
+    [
+     "PRK",
+     2.3
+    ],
+    [
+     "RUS",
+     2.3
+    ],
+    [
+     "BOL",
+     2.0
+    ],
+    [
+     "RWA",
+     1.5
+    ],
+    [
+     "AUS",
+     1.2
+    ],
+    [
+     "AUT",
+     1.0
+    ],
+    [
+     "ESP",
+     0.9
+    ],
+    [
+     "PRT",
+     0.8
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Tungsten",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-tungsten.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "vanadium": {
+   "en": "Vanadium",
+   "es": "Vanadio",
+   "emoji": "⛓️",
+   "unit": "% of world mine production (vanadium content)",
+   "unit_es": "% de la producción minera mundial (contenido de vanadio)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "elements": [
+    "V"
+   ],
+   "producers": [
+    [
+     "CHN",
+     72.4
+    ],
+    [
+     "RUS",
+     18.5
+    ],
+    [
+     "BRA",
+     4.7
+    ],
+    [
+     "ZAF",
+     4.4
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Vanadium",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-vanadium.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  },
+  "zirconium": {
+   "en": "Zirconium (zircon)",
+   "es": "Circonio (circón)",
+   "emoji": "🏺",
+   "unit": "% of world mine production of zirconium mineral concentrates (gross weight)",
+   "unit_es": "% de la producción minera mundial de concentrados de minerales de circonio (peso bruto)",
+   "year": 2025,
+   "source": "USGS Mineral Commodity Summaries 2026",
+   "license": "Public domain (USGS)",
+   "note": "Mostly zircon from mineral sands. Hafnium is separated from zirconium; the USGS has no country figures for hafnium.",
+   "note_es": "Sobre todo circón de arenas minerales. El hafnio se separa del circonio; el USGS no tiene cifras por país para el hafnio.",
+   "elements": [
+    "Zr",
+    "Hf"
+   ],
+   "producers": [
+    [
+     "AUS",
+     32.2
+    ],
+    [
+     "ZAF",
+     21.7
+    ],
+    [
+     "MOZ",
+     12.9
+    ],
+    [
+     "CHN",
+     8.0
+    ],
+    [
+     "USA",
+     8.0
+    ],
+    [
+     "SEN",
+     5.6
+    ],
+    [
+     "IDN",
+     4.2
+    ],
+    [
+     "MDG",
+     2.1
+    ],
+    [
+     "SLE",
+     2.0
+    ]
+   ],
+   "sources": [
+    {
+     "title": "USGS Mineral Commodity Summaries 2026: Zirconium and Hafnium",
+     "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-zirconium-hafnium.pdf"
+    },
+    {
+     "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+     "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+    }
+   ]
+  }
+ },
+ "sources": [
+  {
+   "title": "USGS, Mineral Commodity Summaries 2026 (doi:10.3133/mcs2026)",
+   "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026.pdf"
+  },
+  {
+   "title": "USGS, Mineral Commodity Summaries 2026 Data Release (doi:10.5066/P1WKQ63T), MCS2026_Commodities_Data.csv",
+   "url": "https://www.sciencebase.gov/catalog/item/69837e43b66b01367d7ec7c7"
+  },
+  {
+   "title": "World Nuclear Association: World Uranium Mining Production",
+   "url": "https://world-nuclear.org/information-library/nuclear-fuel-cycle/mining-of-uranium/world-uranium-mining-production"
+  },
+  {
+   "title": "Kimberley Process: Annual Global Summary 2025",
+   "url": "https://kimberleyprocessstatistics.org/static/pdfs/public_statistics/2025/2025GlobalSummary.pdf"
+  }
+ ]
+}
