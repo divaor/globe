@@ -822,3 +822,28 @@ html.orrery-open .learn-card { z-index: 26; }
 .sky-chips .chip { flex: none; }
 .sky-input { min-width: 0; }
 @media (max-width: 520px) { .sky .orr-foot .muted.small { display: none; } }
+/* Where the elements come from (sky/elements.ts): the periodic table, each square filled by origin. */
+.elm { background: radial-gradient(circle at 50% 40%, #0d1428 0%, #03050c 80%); overflow: auto; touch-action: auto; }
+.elm-body { position: absolute; top: calc(78px + var(--safe-t)); left: 12px; right: 12px; bottom: 12px; display: flex; flex-direction: column; gap: 10px; }
+.elm-legend { flex-wrap: wrap; }
+.elm-chip { display: inline-flex; align-items: center; gap: 6px; }
+.elm-dot { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+.elm-scroll { overflow: auto; flex: 0 1 auto; min-height: 0; -webkit-overflow-scrolling: touch; }
+.elm-grid { display: grid; grid-template-columns: repeat(18, minmax(30px, 1fr)); grid-template-rows: repeat(7, auto) 10px repeat(2, auto); gap: 3px; min-width: 600px; max-width: 1100px; margin: 0 auto; }
+.elm-cell { aspect-ratio: 1 / 1.08; border: 0; border-radius: 6px; padding: 2px 3px; color: #0b0f1a; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12); text-shadow: 0 0 3px rgba(255,255,255,0.75); }
+.elm-cell:hover, .elm-cell:focus-visible { outline: 2px solid #ffd479; outline-offset: 1px; }
+.elm-cell.dim { opacity: 0.22; }
+.elm-z { font-size: 9px; font-weight: 600; opacity: 0.85; }
+.elm-sym { font-size: clamp(12px, 1.6vw, 18px); font-weight: 800; align-self: center; margin-bottom: 2px; }
+.elm-gap { display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 10px; border: 1px dashed var(--line); border-radius: 6px; }
+.elm-note { margin: 0; }
+@media (max-width: 640px) {
+  .elm-legend { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .elm-legend::-webkit-scrollbar { display: none; }
+  .elm-legend .chip { flex: none; }
+  .elm-grid { min-width: 0; grid-template-columns: repeat(18, minmax(0, 1fr)); grid-template-rows: repeat(7, auto) 6px repeat(2, auto); gap: 2px; }
+  .elm-cell { aspect-ratio: 1 / 1.3; border-radius: 3px; padding: 0; align-items: center; justify-content: center; }
+  .elm-z { display: none; }
+  .elm-sym { font-size: 10px; margin: 0; }
+  .elm-gap { font-size: 0; }
+}

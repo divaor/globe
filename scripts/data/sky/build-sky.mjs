@@ -159,6 +159,23 @@ if (only !== 'images') {
   }
   for (const s of RS?.stars ?? []) if (!have.has(s.hip)) fail(`_stars.json: star ${s.name?.en} (HIP ${s.hip}) is not among the stars to magnitude 6.5`);
   emit('stars.json', { source: 'd3-celestial (BSD) from XHIP (Anderson & Francis 2012) and star name cross-indexes; names after the IAU WGSN', stars, names });
+  // Where the elements come from (_elements.json).
+  const RE = readOpt('_elements.json');
+  if (RE) {
+    const ORIG = ['bigbang', 'cosmic', 'lowmass', 'massive', 'wd', 'ns', 'human', 'none'];
+    const minerals = read(path.join(ROOT, 'public/data/attributes/minerals.json'));
+    const els = RE.elements.map((e) => { const { sources: _s, ...rest } = e; return rest; }).sort((a, b) => a.z - b.z);
+    if (els.length !== 118 || els.some((e, i) => e.z !== i + 1)) fail('_elements.json: all 118 elements, 1 to 118');
+    for (const e of els) {
+      const w = `_elements.json ${e.symbol} (${e.z})`;
+      if (!isText(e.name)) fail(`${w}: "name" needs en and es`);
+      const sum = Object.entries(e.origin ?? {}).reduce((s, [k, v]) => { if (!ORIG.includes(k)) fail(`${w}: origin "${k}" is not one of ${ORIG.join(', ')}`); return s + v; }, 0);
+      if (Math.abs(sum - 1) > 0.02) fail(`${w}: the origin shares add up to ${sum.toFixed(2)}, not 1`);
+      if (e.mined && !minerals[e.mined]) fail(`${w}: "mined" ${e.mined} is not in minerals.json`);
+      for (const k of ['made', 'earth', 'uses', 'fact']) if (e[k] != null && !isText(e[k])) fail(`${w}: "${k}" needs en and es`);
+    }
+    emit('elements.json', { source: 'Atlas Globe research after J. A. Johnson (2019), Science 363, 474 (sources in scripts/data/sky/_elements.json)', elements: els });
+  }
   // The researched stars (cards) and the galaxy view's nearby stars, features and Local Group.
   if (RS) {
     const strip = (x) => { const { sources: _s, ...rest } = x; return rest; };
