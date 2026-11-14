@@ -1069,6 +1069,12 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     const L = window.atlas.learn, q = L.quiz, r = L.regions.list.find((x) => x.id === q.qs[q.i].id);
     return { p: window.atlas.app.renderer.view.project(r.at[0], r.at[1]), n: r.n };
   });
+  // Every state can be tapped: none sits under the zoom buttons or the card once Mexico is framed.
+  const hidden = await page.evaluate(() => window.atlas.learn.regions.list.filter((x) => !x.far).filter((x) => {
+    const p = window.atlas.app.renderer.view.project(x.at[0], x.at[1]);
+    return !p || document.elementFromPoint(p[0], p[1])?.tagName !== 'CANVAS';
+  }).map((x) => x.n));
+  check(hidden.length === 0, `States and provinces: every state of Mexico can be tapped once it is framed${hidden.length ? ` (under the buttons: ${hidden.join(', ')})` : ''}`);
   if (tgt.p) await page.touchscreen.tap(tgt.p[0], tgt.p[1]);
   await page.waitForTimeout(800);
   const got = await page.evaluate(() => ({ score: window.atlas.learn.quiz?.score, fb: document.querySelector('.learn-card .quiz-fb')?.textContent ?? '' }));

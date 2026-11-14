@@ -504,7 +504,10 @@ export class Learn {
       // The map's height once the card's inset has settled (it eases in).
       this.syncInset();
       const mapH = Math.max(200, v.h - this.insetGoal - (this.app.mode ? v.insetBottom : this.bottomGoal));
-      v.flyTo(frameRegions(v, list, m ? [m.lx, m.ly] : list[0].at, mapH), 1400);
+      // Room on the right for the zoom buttons, so no region sits under them (Campeche on a phone).
+      const zb = document.querySelector<HTMLElement>('.zoombar')?.getBoundingClientRect();
+      const right = zb && zb.width > 0 && zb.left > v.w / 2 ? Math.max(22, v.w - zb.left + 8) : 22;
+      v.flyTo(frameRegions(v, list, m ? [m.lx, m.ly] : list[0].at, mapH, right), 1400);
       this.app.renderer.requestRender();
     }, flat ? 900 : 120);
   }

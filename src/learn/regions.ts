@@ -54,9 +54,10 @@ const RAD = Math.PI / 180;
  * The view that frames a country's regions (all but the far ones, which the player pans to) in
  * the map area left by the panels (`mapH`: its height once they have settled). Longitudes are
  * unwrapped around `mid`, the country's middle, so regions on both sides of 180° (Chukotka, the
- * Aleutians) stay together.
+ * Aleutians) stay together. `right` is the room kept on the right (the zoom buttons), so no region
+ * sits under them.
  */
-export function frameRegions(view: View, list: Region[], mid: [number, number], mapH = view.mapH): { lon: number; lat: number; zoom: number } {
+export function frameRegions(view: View, list: Region[], mid: [number, number], mapH = view.mapH, right = 22): { lon: number; lat: number; zoom: number } {
   const unwrap = (x: number) => { let d = x - mid[0]; while (d > 180) d -= 360; while (d < -180) d += 360; return mid[0] + d; };
   let w = Infinity, e = -Infinity, s = Infinity, n = -Infinity;
   for (const r of list) {
@@ -66,14 +67,16 @@ export function frameRegions(view: View, list: Region[], mid: [number, number], 
     if (east < west) east += 360;
     w = Math.min(w, west); e = Math.max(e, east); s = Math.min(s, r.core[0][1]); n = Math.max(n, r.core[1][1]);
   }
-  let lon = (w + e) / 2;
+  const lat = (s + n) / 2;
+  const cosLat = Math.cos(Math.min(80, Math.abs(lat)) * RAD);
+  const perZoom = view.pxPerRadian / view.zoom;
+  const halfW = (view.w - 22 - right) / 2, halfH = mapH / 2 - 22;
+  const dx = Math.max(1e-4, ((e - w) / 2) * RAD * cosLat), dy = Math.max(1e-4, ((n - s) / 2) * RAD);
+  const zoom = Math.max(1, Math.min(40, Math.min(halfW / dx, halfH / dy) / perZoom));
+  // The regions are centred between the left edge and the zoom buttons: the camera looks a little east of them.
+  let lon = (w + e) / 2 + ((right - 22) / 2 / (perZoom * zoom)) / cosLat / RAD;
   while (lon > 180) lon -= 360;
   while (lon < -180) lon += 360;
-  const lat = (s + n) / 2;
-  const perZoom = view.pxPerRadian / view.zoom;
-  const halfW = view.w / 2 - 22, halfH = mapH / 2 - 22;
-  const dx = Math.max(1e-4, ((e - w) / 2) * RAD * Math.cos(Math.min(80, Math.abs(lat)) * RAD)), dy = Math.max(1e-4, ((n - s) / 2) * RAD);
-  const zoom = Math.max(1, Math.min(40, Math.min(halfW / dx, halfH / dy) / perZoom));
   return { lon, lat, zoom };
 }
 
