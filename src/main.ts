@@ -51,6 +51,8 @@ async function boot() {
   const sky = new Sky(app, shell, space);
   const galaxy = new Galaxy(app, shell, space, sky);
   const elements = new Elements(app, shell, space, sky);
+  learn.sky = sky;
+  learn.elements = elements;
   learn.space = space;
   learn.orrery = orrery;
   // A story step on another world shows that world under the story.
