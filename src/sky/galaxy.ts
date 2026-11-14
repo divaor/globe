@@ -15,7 +15,7 @@ import type { InfoRow } from '../layers/types';
 
 interface Nearby { id: string; name: Text; ra: number; dec: number; ly: number; kind?: Text; hip?: number; planets?: Text; text?: Text; wiki?: Text }
 interface Feature { id: string; kind: 'centre' | 'arm' | 'feature'; name: Text; l?: number; b?: number; ly?: number; text?: Text; wiki?: Text }
-interface LG { id: string; name: Text; ra: number; dec: number; ly: number; kind?: Text; text?: Text; wiki?: Text }
+interface LG { id: string; name: Text; ra?: number; dec?: number; ly?: number; radiusLy?: number; kind?: Text; text?: Text; wiki?: Text }
 interface GalaxyData { nearby: Nearby[]; galaxy: Feature[]; localGroup: LG[] }
 
 /** A point in the galaxy: galactic Cartesian light-years from the Sun (x toward the centre, y toward l = 90°). */
@@ -94,8 +94,8 @@ export class Galaxy {
     const gd = this.gd, sd = this.sd;
     const n = gd?.nearby.find((x) => x.id === id || String(x.hip) === id);
     if (n) return { gp: toGP(vec(n.ra, n.dec), n.ly), r: 15 };
-    const lg = gd?.localGroup.find((x) => x.id === id);
-    if (lg) return { gp: toGP(vec(lg.ra, lg.dec), lg.ly), r: Math.max(150000, lg.ly * 0.4) };
+    const lg = gd?.localGroup.find((x) => x.id === id && x.ra != null);
+    if (lg) return { gp: toGP(vec(lg.ra!, lg.dec!), lg.ly!), r: Math.max(150000, lg.ly! * 0.4) };
     const f = gd?.galaxy.find((x) => x.id === id);
     if (f && f.l != null && f.ly) return { gp: toGP(fromGalactic(f.l, f.b ?? 0), f.ly), r: Math.max(8000, f.ly * 0.6) };
     const o = sd?.objects.find((x) => x.id === id);
@@ -232,7 +232,7 @@ export class Galaxy {
     // Spiral arms, the centre and other features.
     const aFeat = band(9000, 400000);
     if (this.gd && aFeat > 0) for (const f of this.gd.galaxy) {
-      if (f.l == null || !f.ly) continue;
+      if (f.l == null || !f.ly) continue; // the Sun's own entry is the Sun's marker
       const p = S(toGP(fromGalactic(f.l, f.b ?? 0), f.ly));
       if (!onScreen(p)) continue;
       ctx.globalAlpha = aFeat;
@@ -286,7 +286,21 @@ export class Galaxy {
     }
     // The Local Group.
     const aLG = band(60000, 1e8);
+    // The Local Group: a ring around the middle of the Milky Way and Andromeda.
+    const lgAll = this.gd?.localGroup.find((g) => g.id === 'local-group');
+    const m31 = this.gd?.localGroup.find((g) => g.id === 'M31');
+    if (lgAll && m31?.ra != null && aLG > 0) {
+      const a = toGP(vec(m31.ra, m31.dec!), m31.ly!);
+      const c = S([a[0] / 2, a[1] / 2]);
+      const r = (lgAll.radiusLy ?? lgAll.ly ?? 1.5e6) * s;
+      ctx.globalAlpha = aLG; ctx.strokeStyle = 'rgba(200,190,255,0.35)'; ctx.setLineDash([6, 6]); ctx.lineWidth = 1.2;
+      ctx.beginPath(); ctx.arc(c[0], c[1], r, 0, Math.PI * 2); ctx.stroke(); ctx.setLineDash([]);
+      label(tr(lgAll.name), c[0], c[1] - r - 10, 'italic 600 13px system-ui, sans-serif', '#d9d0ff', 'center', true);
+      ctx.globalAlpha = 1;
+      spots.push({ x: c[0], y: c[1] - r - 10, r: 30, open: () => this.lgCard(lgAll) });
+    }
     if (this.gd && aLG > 0) for (const g of this.gd.localGroup) {
+      if (g.ra == null || g.dec == null || !g.ly) continue;
       const gp = toGP(vec(g.ra, g.dec), g.ly);
       const p = S(gp);
       if (!onScreen(p, 60)) continue;
@@ -306,7 +320,8 @@ export class Galaxy {
       ctx.fillStyle = '#ffd25a'; ctx.shadowColor = '#ffd25a'; ctx.shadowBlur = 10;
       ctx.beginPath(); ctx.arc(p[0], p[1], 4.5, 0, Math.PI * 2); ctx.fill(); ctx.shadowBlur = 0;
       label(R > 1e5 ? L('The Milky Way (we are here)', 'La Vía Láctea (estamos aquí)') : L('The Sun (we are here)', 'El Sol (estamos aquí)'), p[0] + 8, p[1] + 1, '700 12px system-ui, sans-serif', '#ffe08a', 'left', true);
-      spots.push({ x: p[0], y: p[1], r: 14, open: () => void this.space.factsCard('sun') });
+      const sunF = this.gd?.galaxy.find((f) => f.id === 'sun');
+      spots.push({ x: p[0], y: p[1], r: 14, open: () => (sunF ? this.featureCard(sunF) : void this.space.factsCard('sun')) });
     }
     this.spots = spots;
     ui.scale.textContent = L(`${lightYears(this.R * 2)} across`, `${lightYears(this.R * 2)} de lado a lado`);
@@ -332,11 +347,18 @@ export class Galaxy {
   }
 
   private lgCard(g: LG) {
-    const rows: InfoRow[] = [{ icon: '📏', label: L('Distance', 'Distancia'), value: lightYears(g.ly) }];
-    if (g.kind) rows.push({ icon: '🌌', label: L('What it is', 'Qué es'), value: tr(g.kind) });
-    rows.push({ icon: '💡', label: L('Light from it left', 'Su luz salió'), value: g.ly >= 1e6 ? L(`${num(g.ly / 1e6, 2)} million years ago`, `hace ${num(g.ly / 1e6, 2)} millones de años`) : L(`${num(g.ly)} years ago`, `hace ${num(g.ly)} años`) });
+    const rows: InfoRow[] = [];
+    if (g.ra != null && g.ly) {
+      rows.push({ icon: '📏', label: L('Distance', 'Distancia'), value: lightYears(g.ly) });
+      rows.push({ icon: '💡', label: L('Light from it left', 'Su luz salió'), value: g.ly >= 1e6 ? L(`${num(g.ly / 1e6, 2)} million years ago`, `hace ${num(g.ly / 1e6, 2)} millones de años`) : L(`${num(g.ly)} years ago`, `hace ${num(g.ly)} años`) });
+    } else if (g.radiusLy ?? g.ly) rows.push({ icon: '↔️', label: L('Size', 'Tamaño'), value: L(`about ${lightYears((g.radiusLy ?? g.ly)! * 2)} across`, `unos ${lightYears((g.radiusLy ?? g.ly)! * 2)} de diámetro`) });
+    if (g.kind) rows.splice(1, 0, { icon: '🌌', label: L('What it is', 'Qué es'), value: tr(g.kind) });
     const inSky = this.sd?.objects.some((o) => o.id === g.id) ? g.id : undefined;
-    this.shell.card.showCustom('🌌', tr(g.name), L('Local Group', 'Grupo Local'), rows, this.links(g.wiki, inSky), g.text ? [tr(g.text)] : [], g.wiki ? wikiThumb(g.wiki) : undefined);
+    const notes = g.text ? [tr(g.text)] : [];
+    // Andromeda's card tells of the coming encounter.
+    const crash = g.id === 'M31' ? this.gd?.localGroup.find((x) => x.id === 'mw-andromeda-collision') : undefined;
+    if (crash?.text) notes.push(`💥 ${tr(crash.text)}`);
+    this.shell.card.showCustom('🌌', tr(g.name), L('Local Group', 'Grupo Local'), rows, this.links(g.wiki, inSky), notes, g.wiki ? wikiThumb(g.wiki) : undefined);
   }
 
   private featureCard(f: Feature) {

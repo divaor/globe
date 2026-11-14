@@ -189,6 +189,7 @@ if (only !== 'images') {
   const B = src('constellations.bounds.json').features;
   const borders = src('constellations.borders.json').features.map((f) => f.geometry.coordinates.map((line) => flat(densify(line.map(([lo, la]) => [ra(lo), la]))))).flat();
   const research = new Map((RC?.constellations ?? []).map((c) => [c.id, c]));
+  const LATIN_FIX = { Cru: { la: 'Crux', gen: 'Crucis' }, CrA: { la: 'Corona Australis', gen: 'Coronae Australis' } };
   const objList = RO ? RO.objects : src('messier.json').features.map((f) => ({ id: f.id, ra: ra(f.geometry.coordinates[0]), dec: f.geometry.coordinates[1] }));
   const cons = [];
   for (const f of C) {
@@ -212,7 +213,8 @@ if (only !== 'images') {
     cons.push({
       id: f.id,
       name: r?.name ?? { en: p.name.replace(/ (Caput|Cauda)$/, ''), es: (p.es || p.name).replace(/ \(.*\)$/, '') },
-      la: p.name.replace(/ (Caput|Cauda)$/, ''), gen: f.id === 'Cru' ? 'Crucis' : p.gen, rank: Number(p.rank), // d3-celestial gives "Crux"
+      // d3-celestial gives Crux's genitive as "Crux" and Corona Australis by its old name, Corona Austrina.
+      ...(LATIN_FIX[f.id] ?? { la: p.name.replace(/ (Caput|Cauda)$/, ''), gen: p.gen }), rank: Number(p.rank),
       at: lab.map(([lo, la]) => [r3(ra(lo)), r3(la)]),
       lines: (L.get(f.id) ?? []).map((line) => flat(line.map(([lo, la]) => [ra(lo), la]))),
       bounds: rings.map((rr) => flat(rr)),
