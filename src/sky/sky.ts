@@ -6,7 +6,7 @@ import { h, icon, clear } from '../ui/dom';
 import { wikiThumb } from '../modes/stories';
 import { SkyGL } from './skygl';
 import { julian, gmst, precession, mul, transpose, vec, dot, cross, norm, radec, horizon, altAz, solarSystem, moon, RAD, type V3, type M3 } from './astro';
-import { loadSky, tr, L, starName, starDesig, constellationAt, centreOf, spanOf, MONTHS, OBJECT_TYPES, type SkyData, type Star, type Constellation, type SkyObject } from './data';
+import { loadSky, loadStars, tr, L, starName, starDesig, constellationAt, centreOf, spanOf, MONTHS, OBJECT_TYPES, type SkyData, type Star, type Constellation, type SkyObject } from './data';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { Space } from '../space/space';
@@ -83,7 +83,7 @@ export class Sky {
   private picked: Pick | null = null;
   private spots: { pick: Pick; x: number; y: number; r: number }[] = [];
   /** For tests: what is drawn. */
-  info = { open: false, frames: 0, jd: 0, frame: 'horizon' as Frame, lat: 0, lon: 0, stars: 0, visible: [] as string[], sunAlt: 0, focus: null as string | null };
+  info = { backdrop: 0, open: false, frames: 0, jd: 0, frame: 'horizon' as Frame, lat: 0, lon: 0, stars: 0, visible: [] as string[], sunAlt: 0, focus: null as string | null };
 
   constructor(private app: App, private shell: Shell, private space: Space) {
     space.openSky = () => this.open();
@@ -93,11 +93,13 @@ export class Sky {
     if (this.gl) {
       this.gl.onReady = () => { app.renderer.requestRender(); this.dirty(); };
       app.renderer.backdrop = (bg, w, h, gy) => this.backdrop(bg, w, h, gy);
-      void this.load();
+      // The backdrop needs only the stars (the rest loads with the sky view or a search).
+      void loadStars().then((stars) => { if (this.starsSet) return; this.gl!.setStars(stars); this.starsSet = true; void this.gl!.loadMilkyWay(2); app.renderer.requestRender(); }).catch(() => {});
     }
   }
 
   get isOpen() { return !!this.el; }
+  private starsSet = false;
 
   async load(): Promise<SkyData | null> {
     if (this.data) return this.data;
@@ -105,7 +107,7 @@ export class Sky {
       const d = await loadSky();
       if (!this.data) {
         this.data = d;
-        this.gl?.setStars(d.stars);
+        if (!this.starsSet) { this.gl?.setStars(d.stars); this.starsSet = true; }
         void this.gl?.loadMilkyWay(2);
         this.app.renderer.requestRender();
       }
@@ -118,7 +120,7 @@ export class Sky {
   /** Draws the stars and the Milky Way behind the globe as they are now, seen from above the point the globe faces. */
   private backdrop(bg: CanvasRenderingContext2D, w: number, h: number, gy: number): boolean {
     const gl = this.gl, v = this.app.renderer.view;
-    if (!gl || !this.data || v.current.kind !== 'globe' || v.morphing) return false;
+    if (!gl || !this.starsSet || v.current.kind !== 'globe' || v.morphing) return false;
     const jd = julian(new Date());
     const a = (v.lon + gmst(jd)) * RAD, f = v.lat * RAD;
     const c: V3 = [Math.cos(f) * Math.cos(a), Math.cos(f) * Math.sin(a), Math.sin(f)];
@@ -128,6 +130,7 @@ export class Sky {
       prec: precession(jd), mw: 0.6, stars: 0.95, magLimit: 6.2,
     });
     bg.drawImage(gl.canvas, 0, 0, w, h);
+    this.info.backdrop++;
     return true;
   }
 
@@ -706,7 +709,8 @@ export class Sky {
   /** Constellations, named stars and deep-sky objects that match a search; picking one shows it in the sky. */
   private searchHits(score: (name: string) => number): Hit[] {
     const d = this.data;
-    if (!d) return [];
+    // The first search loads the sky's names (they show from the next letter on).
+    if (!d) { void this.load(); return []; }
     const out: Hit[] = [];
     const go = (target: string, fov: number) => () => { void this.show({ frame: 'celestial', target, fov }).then(() => this.pick(target)); };
     for (const c of d.cons) {

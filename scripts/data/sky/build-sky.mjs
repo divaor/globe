@@ -233,7 +233,8 @@ if (only !== 'images') {
     const T = { s: 'galaxy', e: 'galaxy', i: 'galaxy', oc: 'open', gc: 'globular', pn: 'planetary', snr: 'snr', sfr: 'nebula', rn: 'nebula', en: 'nebula', pos: 'other', sd: 'galaxy' };
     objects = src('messier.json').features.map((f) => ({ id: f.id, name: { en: f.properties.alt || f.id, es: f.properties.alt || f.id }, type: T[f.properties.type] ?? 'other', ra: r3(ra(f.geometry.coordinates[0])), dec: r3(f.geometry.coordinates[1]), mag: f.properties.mag }));
   }
-  for (const o of objects) o.con = cons.find((c) => c.bounds.some((b) => inRing(b.reduce((acc, v, i) => (i % 2 ? acc : [...acc, [v, b[i + 1]]]), []), o.ra, o.dec)))?.id ?? o.con;
+  // The constellation an object is in: the researched one (SN 1006 sits on the Lupus–Centaurus border), else from the borders.
+  for (const o of objects) o.con = o.con ?? cons.find((c) => c.bounds.some((b) => inRing(b.reduce((acc, v, i) => (i % 2 ? acc : [...acc, [v, b[i + 1]]]), []), o.ra, o.dec)))?.id;
   emit('objects.json', { source: RO ? 'Atlas Globe research (sources in scripts/data/sky/_objects.json)' : 'd3-celestial (BSD): Messier objects (SEDS)', objects });
 }
 

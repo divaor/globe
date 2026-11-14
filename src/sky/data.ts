@@ -23,20 +23,29 @@ export interface SkyObject {
 export interface StarInfo { hip: number; name: Text; kind?: Text; ly?: number; text?: Text; names?: Text; wiki?: Text }
 export interface SkyData { stars: Star[]; byHip: Map<number, Star>; cons: Constellation[]; borders: V3[][]; objects: SkyObject[]; info: Map<number, StarInfo> }
 
+let starsLoading: Promise<Star[]> | null = null;
+/** Just the stars (the globe's backdrop needs no more). */
+export function loadStars(): Promise<Star[]> {
+  if (starsLoading) return starsLoading;
+  starsLoading = loadJSON<{ stars: number[][]; names: Record<string, [string, string, string, string]> }>('sky/stars.json').then((s) => s.stars.map(([hip, ra, dec, mag, bv]) => {
+    const n = s.names[hip];
+    return { hip, ra, dec, mag, bv, v: vec(ra, dec), ...(n ? { name: n[0] || undefined, es: n[1] || undefined, desig: n[2] || undefined, con: n[3] || undefined } : {}) };
+  }));
+  starsLoading.catch(() => { starsLoading = null; });
+  return starsLoading;
+}
+
 let loading: Promise<SkyData> | null = null;
+/** Everything: the stars, constellations, deep-sky objects and the stars' cards. */
 export function loadSky(): Promise<SkyData> {
   if (loading) return loading;
   loading = (async () => {
-    const [s, c, o, si] = await Promise.all([
-      loadJSON<{ stars: number[][]; names: Record<string, [string, string, string, string]> }>('sky/stars.json'),
+    const [stars, c, o, si] = await Promise.all([
+      loadStars(),
       loadJSON<{ cons: Constellation[]; borders: number[][] }>('sky/constellations.json'),
       loadJSON<{ objects: SkyObject[] }>('sky/objects.json'),
       loadJSON<{ stars: StarInfo[] }>('sky/starinfo.json').catch(() => ({ stars: [] as StarInfo[] })),
     ]);
-    const stars: Star[] = s.stars.map(([hip, ra, dec, mag, bv]) => {
-      const n = s.names[hip];
-      return { hip, ra, dec, mag, bv, v: vec(ra, dec), ...(n ? { name: n[0] || undefined, es: n[1] || undefined, desig: n[2] || undefined, con: n[3] || undefined } : {}) };
-    });
     const pts = (flat: number[]) => { const out: V3[] = []; for (let i = 0; i < flat.length; i += 2) out.push(vec(flat[i], flat[i + 1])); return out; };
     for (const k of c.cons) { k.lv = k.lines.map(pts); k.bv = k.bounds.map(pts); }
     for (const x of o.objects) x.v = vec(x.ra, x.dec);
