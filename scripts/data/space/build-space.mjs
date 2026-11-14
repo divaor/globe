@@ -19,7 +19,7 @@ const isText = (t) => t && typeof t === 'object' && typeof t.en === 'string' && 
 const isPt = (p) => Array.isArray(p) && p.length === 2 && p.every((v) => typeof v === 'number' && isFinite(v)) && p[0] >= -180 && p[0] <= 180 && p[1] >= -90 && p[1] <= 90;
 const DATE = /^\d{4}(-\d{2}(-\d{2})?)?$/;
 const WORLDS_WITH_MAPS = new Set(fs.readdirSync(path.join(ROOT, 'public/data/worlds')).filter((f) => /-2k\.jpg$/.test(f) && !/-(elev|clouds)-/.test(f)).map((f) => f.replace('-2k.jpg', '')));
-const KINDS = ['crewed', 'lander', 'rover', 'sample', 'impact', 'probe', 'crash'];
+const KINDS = ['crewed', 'lander', 'rover', 'helicopter', 'sample', 'impact', 'probe', 'crash'];
 const round = (p) => [Math.round(p[0] * 1e5) / 1e5, Math.round(p[1] * 1e5) / 1e5];
 
 // ---- landings

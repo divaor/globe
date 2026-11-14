@@ -12,14 +12,14 @@ import type { RasterTexture } from '../engine/gl';
 
 export interface Landing {
   id: string; world: string; name: Text; craft?: Text; at: [number, number]; date: string; end?: string;
-  kind: 'crewed' | 'lander' | 'rover' | 'sample' | 'impact' | 'probe' | 'crash';
+  kind: 'crewed' | 'lander' | 'rover' | 'helicopter' | 'sample' | 'impact' | 'probe' | 'crash';
   agency: Text; flag?: string; crew?: string[]; site?: Text; rover?: { name: Text; km?: number };
   route?: [number, number][]; routeNote?: Text; firsts?: Text; text: Text; details?: Text; wiki?: Text;
 }
-export const LANDING_ICON: Record<Landing['kind'], string> = { crewed: '🧑‍🚀', lander: '🚀', rover: '🚙', sample: '🧪', impact: '☄️', probe: '🪂', crash: '💥' };
+export const LANDING_ICON: Record<Landing['kind'], string> = { crewed: '🧑‍🚀', lander: '🚀', rover: '🚙', helicopter: '🚁', sample: '🧪', impact: '☄️', probe: '🪂', crash: '💥' };
 export const LANDING_KIND: Record<Landing['kind'], Text> = {
   crewed: { en: 'Crewed landing', es: 'Alunizaje tripulado' }, lander: { en: 'Robotic lander', es: 'Módulo de aterrizaje robótico' },
-  rover: { en: 'Rover', es: 'Vehículo explorador' }, sample: { en: 'Sample return', es: 'Retorno de muestras' },
+  rover: { en: 'Rover', es: 'Vehículo explorador' }, helicopter: { en: 'Helicopter', es: 'Helicóptero' }, sample: { en: 'Sample return', es: 'Retorno de muestras' },
   impact: { en: 'Impact', es: 'Impacto' }, probe: { en: 'Descent probe', es: 'Sonda de descenso' }, crash: { en: 'Failed landing', es: 'Aterrizaje fallido' },
 };
 let landings: Promise<Landing[]> | null = null;

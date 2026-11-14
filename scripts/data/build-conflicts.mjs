@@ -76,8 +76,8 @@ function landings() {
   }
   return landingData;
 }
-const LANDING_CAT = { crewed: 'crew', lander: 'lander', rover: 'lander', sample: 'lander', impact: 'lander', crash: 'lander', probe: 'probe' };
-const LANDING_ICON = { crewed: '🧑‍🚀', lander: '🚀', rover: '🚙', sample: '🧪', impact: '☄️', probe: '🪂', crash: '💥' };
+const LANDING_CAT = { crewed: 'crew', lander: 'lander', rover: 'lander', helicopter: 'lander', sample: 'lander', impact: 'lander', crash: 'lander', probe: 'probe' };
+const LANDING_ICON = { crewed: '🧑‍🚀', lander: '🚀', rover: '🚙', helicopter: '🚁', sample: '🧪', impact: '☄️', probe: '🪂', crash: '💥' };
 /** A landing as a catalogue item a space story can show: its id is the landing's. */
 function landingItem(l) {
   const it = { id: l.id, name: l.name, at: l.at, world: l.world, cat: LANDING_CAT[l.kind] ?? 'lander', icon: LANDING_ICON[l.kind], type: 'event', date: l.date, text: l.text };

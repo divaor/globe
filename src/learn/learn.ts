@@ -718,7 +718,8 @@ export class Learn {
   /** Ten landing sites on the Moon and Mars (not the crashes), each with three other missions to the same world. */
   private async landedQs(n: number): Promise<Q[] | null> {
     this.landings = await loadLandings();
-    const pool = this.landings.filter((l) => (l.world === 'moon' || l.world === 'mars') && l.kind !== 'crash' && l.kind !== 'impact');
+    // Not the crashes and impacts, nor Ingenuity (it landed with Perseverance: two right answers).
+    const pool = this.landings.filter((l) => (l.world === 'moon' || l.world === 'mars') && l.kind !== 'crash' && l.kind !== 'impact' && l.kind !== 'helicopter');
     if (pool.length < 8) return null;
     return shuffle(pool.slice()).slice(0, n).map((l) => {
       const same = pool.filter((x) => x.world === l.world && x.id !== l.id && tr(x.name) !== tr(l.name));
