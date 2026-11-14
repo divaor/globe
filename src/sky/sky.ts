@@ -698,7 +698,9 @@ export class Sky {
     rows.push({ icon: '🌍', label: L('Seen whole from', 'Se ve completa desde'), value: visibleFrom(c.dec) });
     if (c.origin) rows.push({ icon: '📜', label: L('Origin', 'Origen'), value: tr(c.origin) });
     const objs = c.objects.map((id) => d.objects.find((o) => o.id === id)).filter((o): o is SkyObject => !!o).slice(0, 6);
-    if (objs.length) rows.push({ icon: '🔭', label: L('In it', 'En ella'), value: objs.map((o) => (o.name.en !== o.id ? `${o.id} (${tr(o.name)})` : o.id)).join(', ') });
+    // Catalogue numbers with their names ("M42 (Orion Nebula)"); things known by a name, by the name alone.
+    const cat = /^(M|NGC|IC|Mel|Cr|B)\s?\d/;
+    if (objs.length) rows.push({ icon: '🔭', label: L('In it', 'En ella'), value: objs.map((o) => (cat.test(o.id) ? (o.name.en !== o.id ? `${o.id} (${tr(o.name)})` : o.id) : tr(o.name))).join(', ') });
     const notes = [c.text ? tr(c.text) : '', c.other ? `🌍 ${tr(c.other)}` : ''].filter(Boolean);
     wiki(c.wiki);
     this.shell.card.showCustom('✳️', tr(c.name), c.meaning ? tr(c.meaning) : L('Constellation', 'Constelación'), rows, links, notes, c.wiki ? wikiThumb(c.wiki) : undefined);
