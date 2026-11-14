@@ -69,7 +69,14 @@ export function filtersPanel(app: App): FiltersPanel {
       for (const d of featured) grid.append(filterCard(app, d, tap));
       list.append(h('section', { class: 'cat cat-featured' }, h('h3', { class: 'cat-title' }, h('span', { class: 'cat-icon' }, '✨'), t('featured')), grid));
     }
-    // Your own data: your tables' filters, and a button to add one.
+    for (const cat of CATEGORY_ORDER) {
+      const defs = [...app.registry.values()].filter((d) => !d.hidden && !d.featured && d.category === cat.id && matches(d));
+      if (!defs.length) continue;
+      const grid = h('div', { class: 'card-grid' });
+      for (const d of defs) grid.append(filterCard(app, d, tap));
+      list.append(h('section', { class: 'cat' }, h('h3', { class: 'cat-title' }, h('span', { class: 'cat-icon' }, cat.icon), t(`cat.${cat.id}`), h('span', { class: 'cat-count' }, String(defs.length))), grid));
+    }
+    // Your own data, at the end: your tables' filters, and a button to add one (also in More → Your data).
     {
       const mine = [...app.registry.values()].filter((d) => !d.hidden && d.category === 'mine' && matches(d));
       if (mine.length || !query || matches({ name: { en: 'your data csv', es: 'tus datos csv' }, desc: { en: 'add', es: 'agregar' }, category: 'mine' } as LayerDef)) {
@@ -82,13 +89,6 @@ export function filtersPanel(app: App): FiltersPanel {
         grid.append(addCard);
         list.append(h('section', { class: 'cat cat-mine' }, h('h3', { class: 'cat-title' }, h('span', { class: 'cat-icon' }, '📁'), t('cat.mine'), mine.length ? h('span', { class: 'cat-count' }, String(mine.length)) : null), grid));
       }
-    }
-    for (const cat of CATEGORY_ORDER) {
-      const defs = [...app.registry.values()].filter((d) => !d.hidden && !d.featured && d.category === cat.id && matches(d));
-      if (!defs.length) continue;
-      const grid = h('div', { class: 'card-grid' });
-      for (const d of defs) grid.append(filterCard(app, d, tap));
-      list.append(h('section', { class: 'cat' }, h('h3', { class: 'cat-title' }, h('span', { class: 'cat-icon' }, cat.icon), t(`cat.${cat.id}`), h('span', { class: 'cat-count' }, String(defs.length))), grid));
     }
     if (!list.childElementCount) list.append(h('p', { class: 'muted' }, t('noResults')));
   };
