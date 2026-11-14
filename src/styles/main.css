@@ -904,3 +904,10 @@ html.orrery-open .learn-card { z-index: 26; }
 .md-set { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--line); }
 .md-set-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
 .md-set .pill.on { color: var(--accent); }
+
+/* A story shown by a guided tour: the tour card has the only controls (v0.23.0). */
+.warbar.guided .tb-play, .warbar.guided .wb-nav, .warbar.guided .wb-count, .warbar.guided .wb-voice,
+.warbar.guided .wb-list, .warbar.guided .wb-exit, .warbar.guided .wb-browse { display: none; }
+/* The sky opened from an element: a button back to it (v0.23.0); on a phone it takes the title's place. */
+.sky-back { flex: none; max-width: 46%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 600px) { .sky-back:not([hidden]) + strong { display: none; } }

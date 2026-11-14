@@ -2043,6 +2043,8 @@ export class Learn {
 
   private stopTour() {
     if (!this.tour) return;
+    // A story the tour showed gets its own controls back.
+    for (const st of Object.values(this.time.stories)) st.unguide();
     clearInterval(this.tour.timer);
     clearTimeout(this.tour.after);
     if (this.tour.voice !== 'off') stopSpeaking();

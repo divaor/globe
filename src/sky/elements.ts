@@ -175,8 +175,10 @@ export class Elements {
       rows.push({ icon: o ? ORIGIN_ICON[o.id] ?? '●' : '●', label: tr(o?.name), value: `${Math.round(f * 100)} %` });
     }
     const links: { label: string; href?: string; onClick?: () => void }[] = [];
-    if (e.sky === 'CMB') links.push({ label: L('See the oldest light', 'Ver la luz más antigua'), onClick: () => { this.close(); this.sky.open({ frame: 'celestial', target: 'HUDF', fov: 60 }); } });
-    else if (e.sky) links.push({ label: L('Where it is made, in the sky', 'Dónde se forma, en el cielo'), onClick: () => { this.close(); this.sky.open({ frame: 'celestial', target: e.sky, fov: 40 }); } });
+    // The sky opens with a button back to this element's card in the table.
+    const back = { label: `${e.symbol} ${tr(e.name)}`, go: () => void this.open(e.symbol) };
+    if (e.sky === 'CMB') links.push({ label: L('See the oldest light', 'Ver la luz más antigua'), onClick: () => { this.close(); this.sky.open({ frame: 'celestial', target: 'HUDF', fov: 60, back }); } });
+    else if (e.sky) links.push({ label: L('Where it is made, in the sky', 'Dónde se forma, en el cielo'), onClick: () => { this.close(); this.sky.open({ frame: 'celestial', target: e.sky, fov: 40, back }); } });
     const m = e.mined ? await this.mineral(e.mined) : null;
     if (m) {
       const top = m.producers.slice(0, 4).map(([id, p]) => `${this.app.data.name(id, this.app.lang)} ${Math.round(p)} %`).join(', ');
