@@ -10,8 +10,10 @@ import { Learn } from './learn/learn';
 import { registerScriptFonts } from './app/scriptFonts';
 import { PersonalMaps } from './personal/personal';
 import { Compare } from './compare/compare';
+import { TerrainUI } from './ui/terrain';
+import { Terrain3D } from './ui/terrain3d';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D } } }
 
 async function boot() {
   // Read before the app rewrites the address with its own state.
@@ -36,7 +38,9 @@ async function boot() {
   const learn = new Learn(app, shell, time);
   const personal = new PersonalMaps(app, shell);
   const compare = new Compare(app, shell, time);
-  window.atlas = { app, shell, time, tools, learn, personal, compare };
+  const terrain = new TerrainUI(app, shell);
+  const terrain3d = new Terrain3D(app, shell, terrain);
+  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };

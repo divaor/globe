@@ -3,6 +3,7 @@ import { Download } from 'lucide';
 import { h, icon, toggle, segmented, slider } from './dom';
 import { t, tx, LANGS, type Lang } from '../app/i18n';
 import type { App } from '../app/app';
+import { terrainSettings } from './terrain';
 
 declare const __APP_VERSION__: string;
 
@@ -54,6 +55,8 @@ export function settingsPanel(app: App, reopen: () => void): HTMLElement {
       { value: 'auto', label: t('qualityAuto') }, { value: 'high', label: t('qualityHigh') }, { value: 'low', label: t('qualityLow') },
     ], (v) => { s.quality = v; app.renderer.resize(app.renderer.view.w, app.renderer.view.h); save(); })),
     ...(app.renderer.gl ? [h('div', { class: 'toggles' }, toggle(s.gpuMotion, (v) => { s.gpuMotion = v; app.renderer.requestRender(); save(); }, t('gpuMotion')))] : []),
+    h('h3', { class: 'sec-title' }, app.lang === 'es' ? 'Relieve detallado' : 'Detailed terrain'),
+    terrainSettings(app, reopen),
     h('h3', { class: 'sec-title' }, t('ambient')),
     field(t('ambientSpeed'), slider(app.ambient.speed, 0.25, 4, 0.25, (v) => { app.ambient.speed = v; app.save(); })),
     h('div', { class: 'toggles' },

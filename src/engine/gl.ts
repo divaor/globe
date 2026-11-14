@@ -3,6 +3,8 @@
 // projection's seam is always at the mesh edge); the vertex shader runs the same raw projection
 // formulas as d3 (see projections.ts) and the fragment shader rotates back to geographic
 // coordinates for an exact, seamless texture lookup.
+// Zoomed in, an image can carry a *detail* mosaic: web-map tiles of the area on screen (see detail.ts), either
+// pictures (satellite) or heights (Terrarium PNGs), from which the shader draws shaded relief or elevation colours.
 import type { View } from './view';
 
 const VERT = `#version 300 es
@@ -113,8 +115,35 @@ uniform int u_mode;       // 0 rgb, 1 palette (gray value -> colour, 0 = transpa
 uniform float u_opacity;
 uniform vec3 u_sun;
 uniform int u_shade;      // darken the night side
+// Detail mosaic: tiles x0..x0+nx-1, y0..y0+ny-1 of web-map zoom z (n = 2^z tiles across the world).
+uniform int u_dmode;      // 0 none, 1 picture, 2 shaded relief from heights, 3 elevation colours from heights
+uniform sampler2D u_det;
+uniform sampler2D u_dpal; // height -> colour (see heightU)
+uniform vec4 u_dbox;      // x0, y0, nx, ny
+uniform float u_dn;       // 2^z
+uniform vec2 u_dsize;     // mosaic size in texels
+uniform float u_zf;       // how much the shading exaggerates slopes
 out vec4 outColor;
 #define PI 3.141592653589793
+
+// Terrarium: height = R * 256 + G + B / 256 - 32768 metres; alpha 0 where no tile has arrived.
+bool texelH(ivec2 q, out float hgt) {
+  ivec2 c = clamp(q, ivec2(0), ivec2(u_dsize) - 1);
+  vec4 t = texelFetch(u_det, c, 0) * 255.0;
+  hgt = t.r * 256.0 + t.g + t.b / 256.0 - 32768.0;
+  return t.a > 127.0;
+}
+bool heightAt(vec2 p, out float hgt) {
+  vec2 b = floor(p); vec2 f = p - b; ivec2 q = ivec2(b);
+  float a, c, d, e;
+  bool ok = texelH(q, a) && texelH(q + ivec2(1, 0), c) && texelH(q + ivec2(0, 1), d) && texelH(q + ivec2(1, 1), e);
+  hgt = mix(mix(a, c, f.x), mix(d, e, f.x), f.y);
+  return ok;
+}
+// Palette position: the sea in 0..0.5, the land in 0.5..1, with more room near sea level.
+float heightU(float hgt) {
+  return hgt < 0.0 ? 0.5 - 0.5 * sqrt(min(1.0, -hgt / 11000.0)) : 0.5 + 0.5 * sqrt(min(1.0, hgt / 8848.0));
+}
 
 void main() {
   vec3 d = normalize(v_dir);
@@ -141,6 +170,40 @@ void main() {
     float val = c.r;
     c = vec4(texture(u_pal, vec2(val, 0.5)).rgb, val * night);
   }
+  if (u_dmode > 0) {
+    float latc = clamp(lat, -1.4844222, 1.4844222);
+    float X = (lon / (2.0 * PI) + 0.5) * u_dn;
+    float Y = (1.0 - log(tan(PI / 4.0 + latc / 2.0)) / PI) / 2.0 * u_dn;
+    vec2 uv = vec2(mod(X - u_dbox.x, u_dn) / u_dbox.z, (Y - u_dbox.y) / u_dbox.w);
+    if (uv.x >= 0.0 && uv.x <= 1.0 && uv.y >= 0.0 && uv.y <= 1.0) {
+      if (u_dmode == 1) {
+        vec4 dc = texture(u_det, uv);
+        if (dc.a > 0.5) c = vec4(dc.rgb, 1.0);
+      } else {
+        vec2 p = uv * u_dsize - 0.5;
+        float h0, hE, hW, hN, hS;
+        if (heightAt(p, h0) && heightAt(p + vec2(1.0, 0.0), hE) && heightAt(p - vec2(1.0, 0.0), hW) && heightAt(p - vec2(0.0, 1.0), hN) && heightAt(p + vec2(0.0, 1.0), hS)) {
+          // Metres per texel at this latitude (Mercator texels are square on the ground).
+          float mpp = 40075016.686 * cos(latc) / (256.0 * u_dn);
+          vec3 nrm = normalize(vec3(-(hE - hW) / (2.0 * mpp) * u_zf, -(hN - hS) / (2.0 * mpp) * u_zf, 1.0));
+          // Light from the north-west, 45 degrees up; flat ground keeps its colour.
+          float k = clamp(dot(nrm, normalize(vec3(-1.0, 1.0, 1.41421356))) / 0.70710678, 0.25, 1.45);
+          // Sea below 10 m; from 10 m down to sea level only where the world image shows water, since land below
+          // sea level (the Netherlands' polders, the Po delta) and lagoons have the same heights.
+          bool watery = c.b > c.r + 0.06 && c.b > c.g;
+          bool sea = h0 < -10.0 || (h0 < 0.0 && watery);
+          vec3 pal = texture(u_dpal, vec2(heightU(sea ? min(h0, -1.0) : max(h0, 0.0)), 0.5)).rgb;
+          if (u_dmode == 3) c = vec4(pal * mix(1.0, k, 0.9), 1.0);
+          else if (sea) c = vec4(pal, 1.0);
+          else {
+            // Shaded relief: the base image's colours (its land cover) where it shows land, sharpened by the heights.
+            vec3 tint = watery ? pal : mix(pal, c.rgb, 0.55);
+            c = vec4(tint * mix(1.0, k, 0.85), 1.0);
+          }
+        }
+      }
+    }
+  }
   if (u_shade == 1) c.rgb *= mix(1.0, 0.18, night);
   float a = c.a * u_opacity;
   outColor = vec4(c.rgb * a, a);
@@ -149,12 +212,25 @@ void main() {
 export interface RasterTexture { tex: WebGLTexture; width: number; height: number }
 export interface RasterPalette { tex: WebGLTexture }
 
+/** A detail mosaic over a draw: tiles x0.., y0.. of zoom z (n = 2^z), `nx` × `ny` of them in `tex`. */
+export interface RasterDetail {
+  tex: WebGLTexture;
+  x0: number; y0: number; nx: number; ny: number; n: number;
+  /** 1 picture, 2 shaded relief from heights, 3 elevation colours from heights. */
+  mode: 1 | 2 | 3;
+  /** Height palette (modes 2 and 3). */
+  palette?: RasterPalette;
+  /** Slope exaggeration of the shading. */
+  zf: number;
+}
+
 export interface RasterDraw {
   texture: RasterTexture;
   opacity: number;
   mode?: 0 | 1 | 2;
   palette?: RasterPalette;
   shadeNight?: boolean;
+  detail?: RasterDetail | null;
 }
 
 export class GLRaster {
@@ -202,7 +278,7 @@ export class GLRaster {
     if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog) || 'link error');
     this.prog = prog;
     for (const n of ['u_pa', 'u_pb', 'u_t', 'u_fa', 'u_fb', 'u_zoom', 'u_translate', 'u_viewport', 'u_inv', 'u_clip',
-      'u_tex', 'u_pal', 'u_mode', 'u_opacity', 'u_sun', 'u_shade']) this.loc[n] = gl.getUniformLocation(prog, n);
+      'u_tex', 'u_pal', 'u_mode', 'u_opacity', 'u_sun', 'u_shade', 'u_dmode', 'u_det', 'u_dpal', 'u_dbox', 'u_dn', 'u_dsize', 'u_zf']) this.loc[n] = gl.getUniformLocation(prog, n);
     this.vao = gl.createVertexArray()!;
     this.buf = gl.createBuffer()!;
     this.ibuf = gl.createBuffer()!;
@@ -294,14 +370,40 @@ export class GLRaster {
     return this.texture(img);
   }
 
-  /** 256×1 palette texture from colour stops (t in 0..1). */
-  palette(stops: [number, string][]): RasterPalette {
+  /** An empty RGBA texture for a detail mosaic (`nearest` for heights, which must not be blended). */
+  detailTexture(w: number, h: number, nearest: boolean): WebGLTexture {
+    const gl = this.gl;
+    const tex = gl.createTexture()!;
+    gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, w, h, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+    const f = nearest ? gl.NEAREST : gl.LINEAR;
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, f);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, f);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    return tex;
+  }
+
+  /** Puts a tile (or a stand-in) into a detail mosaic at texel (x, y). */
+  uploadTile(tex: WebGLTexture, x: number, y: number, img: TexImageSource) {
+    const gl = this.gl;
+    gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+    gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL, gl.NONE);
+    gl.texSubImage2D(gl.TEXTURE_2D, 0, x, y, gl.RGBA, gl.UNSIGNED_BYTE, img);
+    gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL, gl.BROWSER_DEFAULT_WEBGL);
+  }
+
+  deleteTexture(tex: WebGLTexture) { this.gl.deleteTexture(tex); }
+
+  /** Palette texture from colour stops (t in 0..1), 256 texels wide by default. */
+  palette(stops: [number, string][], width = 256): RasterPalette {
     const c = document.createElement('canvas');
-    c.width = 256; c.height = 1;
+    c.width = width; c.height = 1;
     const ctx = c.getContext('2d')!;
-    const g = ctx.createLinearGradient(0, 0, 256, 0);
+    const g = ctx.createLinearGradient(0, 0, width, 0);
     for (const [t, col] of stops) g.addColorStop(Math.max(0, Math.min(1, t)), col);
-    ctx.fillStyle = g; ctx.fillRect(0, 0, 256, 1);
+    ctx.fillStyle = g; ctx.fillRect(0, 0, width, 1);
     const gl = this.gl;
     const tex = gl.createTexture()!;
     gl.bindTexture(gl.TEXTURE_2D, tex);
@@ -347,11 +449,26 @@ export class GLRaster {
     gl.uniform3f(L.u_sun, this.sun[0], this.sun[1], this.sun[2]);
     gl.uniform1i(L.u_tex, 0);
     gl.uniform1i(L.u_pal, 1);
+    gl.uniform1i(L.u_det, 2);
+    gl.uniform1i(L.u_dpal, 3);
     for (const d of draws) {
       gl.activeTexture(gl.TEXTURE0);
       gl.bindTexture(gl.TEXTURE_2D, d.texture.tex);
       gl.activeTexture(gl.TEXTURE1);
       gl.bindTexture(gl.TEXTURE_2D, (d.palette ?? this.dummyPal).tex);
+      const det = d.detail;
+      gl.uniform1i(L.u_dmode, det ? det.mode : 0);
+      // Unused samplers still need a texture of the right kind bound.
+      gl.activeTexture(gl.TEXTURE2);
+      gl.bindTexture(gl.TEXTURE_2D, det ? det.tex : this.dummyPal.tex);
+      gl.activeTexture(gl.TEXTURE3);
+      gl.bindTexture(gl.TEXTURE_2D, (det?.palette ?? this.dummyPal).tex);
+      if (det) {
+        gl.uniform4f(L.u_dbox, det.x0, det.y0, det.nx, det.ny);
+        gl.uniform1f(L.u_dn, det.n);
+        gl.uniform2f(L.u_dsize, det.nx * 256, det.ny * 256);
+        gl.uniform1f(L.u_zf, det.zf);
+      }
       gl.uniform1i(L.u_mode, d.mode ?? 0);
       gl.uniform1f(L.u_opacity, d.opacity);
       gl.uniform1i(L.u_shade, d.shadeNight ? 1 : 0);
