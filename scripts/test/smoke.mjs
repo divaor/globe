@@ -17,7 +17,8 @@
 // zoomed), Guess the link and Which language
 // family?, a city tour that hops between collections, and the tours of holy places, the alphabet,
 // pandemics and tsunamis; Put them in order, Time detective, the daily challenge, your progress, On this day
-// with the stories, and a new city tour.
+// with the stories, and a new city tour; terrain in detail (with stand-in tiles): tiles loaded and freed, memory
+// capped, detail off, only on Wi-Fi, the counter, the deeper zoom, a saved area offline, and the 3D view.
 import { createRequire } from 'node:module';
 import fs from 'node:fs';
 const require = createRequire(import.meta.url);
@@ -1338,6 +1339,142 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await close();
   check(!errors.length, `no page errors in the new games, the daily challenge and On this day${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
+}
+
+// 15. Terrain in detail, with stand-in tiles (no outside server): zoomed in, the relief is drawn from height tiles
+// that load for the area on screen and are freed as the map moves on (memory stays capped); detail can be turned
+// off or kept to Wi-Fi; the counter counts; the zoom goes deeper; a saved area works offline and can be deleted;
+// the 3D view raises the land.
+{
+  const zlib = await import('node:zlib');
+  /** A PNG of 256 × 256 RGBA pixels from a function. */
+  const png = (px) => {
+    const raw = Buffer.alloc(256 * (256 * 4 + 1));
+    for (let y = 0; y < 256; y++) { raw[y * 1025] = 0; for (let x = 0; x < 256; x++) { const [r, g, b] = px(x, y); const o = y * 1025 + 1 + x * 4; raw[o] = r; raw[o + 1] = g; raw[o + 2] = b; raw[o + 3] = 255; } }
+    const chunk = (type, data) => { const len = Buffer.alloc(4); len.writeUInt32BE(data.length); const td = Buffer.concat([Buffer.from(type), data]); const crc = Buffer.alloc(4); crc.writeUInt32BE(zlib.crc32(td)); return Buffer.concat([len, td, crc]); };
+    const ihdr = Buffer.alloc(13); ihdr.writeUInt32BE(256, 0); ihdr.writeUInt32BE(256, 4); ihdr[8] = 8; ihdr[9] = 6;
+    return Buffer.concat([Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]), chunk('IHDR', ihdr), chunk('IDAT', zlib.deflateSync(raw)), chunk('IEND', Buffer.alloc(0))]);
+  };
+  // Terrarium heights: ridges from 0 to 3,000 m (R*256 + G + B/256 - 32768).
+  const heightTile = (z, x, y) => png((px, py) => {
+    const gx = x * 256 + px, gy = y * 256 + py;
+    const hh = Math.round(1500 + 1500 * Math.sin(gx / 23) * Math.cos(gy / 31)) + 32768;
+    return [hh >> 8, hh & 255, 0];
+  });
+  const picTile = png((px, py) => [60 + (px & 63), 110 + (py & 63), 70]);
+  const run = async (opts, fn) => {
+    const ctx = await browser.newContext(opts);
+    const counts = { terrain: 0, sat: 0 };
+    await ctx.route(/^https:\/\/s3\.amazonaws\.com\/elevation-tiles-prod\/terrarium\/(\d+)\/(\d+)\/(\d+)\.png$/, (r) => { counts.terrain++; const [, z, x, y] = r.request().url().match(/terrarium\/(\d+)\/(\d+)\/(\d+)\.png$/).map(Number); return r.fulfill({ status: 200, body: heightTile(z, x, y), contentType: 'image/png', headers: { 'access-control-allow-origin': '*' } }); });
+    await ctx.route(/^https:\/\/tiles\.maps\.eox\.at\//, (r) => { counts.sat++; return r.fulfill({ status: 200, body: picTile, contentType: 'image/png', headers: { 'access-control-allow-origin': '*' } }); });
+    await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {} });
+    const page = await ctx.newPage();
+    const errors = [];
+    page.on('pageerror', (e) => errors.push(e.message));
+    await page.goto(url + '#p=globe&l=relief&c=10.4,46.4,2&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+    await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+    await page.waitForTimeout(1200);
+    try { await fn(page, ctx, counts); } finally { check(!errors.length, `no page errors with detailed terrain (${opts.isMobile ? 'phone' : 'laptop'})${errors.length ? ': ' + errors.join(' | ') : ''}`); await ctx.close(); }
+  };
+  // Moves the map, then waits two frames, so the detail has seen the new place before anyone asks it.
+  const zoomTo = (page, lon, lat, wz) => page.evaluate(async ([lo, la, w]) => {
+    const r = window.atlas.app.renderer, v = r.view;
+    v.lon = lo; v.lat = la; v.zoom *= 2 ** (w - v.webZoom); r.requestRender();
+    await new Promise((done) => requestAnimationFrame(() => requestAnimationFrame(done)));
+  }, [lon, lat, wz]);
+  const mosaic = (page) => page.evaluate(() => { const m = window.atlas.app.layers[0]?.state.mosaic; const t = window.atlas.terrain; return { loaded: m?.loaded ?? 0, total: m?.total ?? 0, inMemory: t.tiles.size, max: t.tiles.max, requests: t.stats.requests, session: t.stats.session, fromSaved: t.stats.fromSaved }; });
+  const settle = (page) => page.waitForFunction(() => { const m = window.atlas.app.layers[0]?.state.mosaic; return m && m.total > 0 && m.loaded === m.total; }, null, { timeout: 30000 }).catch(() => {});
+
+  await run({ ...devices['Pixel 7'] }, async (page, ctx, counts) => {
+    // Zoomed out: the world image alone, no tiles.
+    const far = await mosaic(page);
+    await zoomTo(page, 10.4, 46.4, 8);
+    await settle(page);
+    const a = await mosaic(page);
+    // The relief is drawn from the heights: the map's pixels change when the detail arrives (mountains get shadows).
+    const maxZoom = await page.evaluate(() => window.atlas.app.renderer.view.maxZoom);
+    check(far.requests === 0 && a.total > 0 && a.loaded === a.total && a.requests >= a.total && counts.terrain >= a.total && a.session > 0 && maxZoom > 400,
+      `zoomed in on the Alps, ${a.loaded} height tiles load for the area on screen (none zoomed out), ${(a.session / 1e3).toFixed(0)} KB counted; the zoom goes deeper (max ${maxZoom})`);
+    // Moving round the world: new tiles at each place, but memory stays capped.
+    for (let lon = -170; lon <= 175; lon += 12) {
+      await zoomTo(page, lon, 30, 10);
+      await settle(page);
+    }
+    const b = await mosaic(page);
+    check(b.inMemory <= b.max && b.requests > b.max && b.loaded === b.total, `round the world, ${b.requests} tiles fetched but only ${b.inMemory} kept in memory (cap ${b.max}); the last place is complete (${b.loaded}/${b.total})`);
+    // Detail off: no more downloads, and the zoom limit is back.
+    await page.evaluate(() => { const t = window.atlas.terrain; t.prefs.detail = false; t.tiles.clear(); window.atlas.app.syncMaxZoom(); window.atlas.app.renderer.requestRender(); });
+    await zoomTo(page, 15, 47, 8);
+    await page.waitForTimeout(2500);
+    const c = await mosaic(page);
+    const m2 = await page.evaluate(() => window.atlas.app.renderer.view.maxZoom);
+    check(c.requests === b.requests && c.total === 0 && m2 === 400, `with detail off, no tiles are fetched (${c.requests - b.requests}) and the deepest zoom is back to normal`);
+    await page.evaluate(() => { const t = window.atlas.terrain; t.prefs.detail = true; window.atlas.app.syncMaxZoom(); window.atlas.app.renderer.requestRender(); });
+    // Save the area on screen, at the "as on screen" level, heights and satellite.
+    await zoomTo(page, 10.4, 46.4, 10);
+    await settle(page);
+    await page.evaluate(() => window.atlas.terrain.openSave());
+    await page.waitForSelector('.terrain-est');
+    await page.evaluate(() => { for (const el of document.querySelectorAll('.terrain-save .switch-input')) if (!el.checked) el.click(); });
+    const est = await page.evaluate(() => document.querySelector('.terrain-est').textContent);
+    await page.evaluate(() => document.querySelector('[data-terrain="save"]').click());
+    await page.waitForFunction(() => JSON.parse(localStorage.getItem('atlas-globe:saved-areas') || '[]').length === 1, null, { timeout: 60000 });
+    const area = await page.evaluate(() => JSON.parse(localStorage.getItem('atlas-globe:saved-areas'))[0]);
+    const cached = await page.evaluate(async () => (await (await caches.open('atlas-saved-tiles')).keys()).length);
+    check(area.tiles > 0 && cached === area.tiles && area.bytes > 0 && /tiles, about/.test(est) && area.sources.length === 2, `saved "${area.name.en}": ${area.tiles} tiles (${(area.bytes / 1e6).toFixed(1)} MB), estimated beforehand as "${est}"`);
+    // Offline: the saved tiles still draw the area.
+    await ctx.setOffline(true);
+    await page.evaluate(() => { const t = window.atlas.terrain; t.tiles.clear(); window.atlas.app.layers[0].state.mosaic?.free(); window.atlas.app.renderer.requestRender(); });
+    const before = await mosaic(page);
+    await zoomTo(page, 10.4, 46.4, 10);
+    await settle(page);
+    const off = await mosaic(page);
+    check(off.total > 0 && off.loaded === off.total && off.fromSaved >= off.total && off.requests === before.requests, `offline, the saved area is sharp again from the device (${off.loaded}/${off.total} tiles, ${off.fromSaved - before.fromSaved} from the saved area, no downloads)`);
+    await ctx.setOffline(false);
+    // Delete it: the list is empty and so is the cache.
+    page.once('dialog', (d) => d.accept());
+    await page.evaluate(() => window.atlas.terrain.openSave());
+    await page.waitForSelector('[data-delete]');
+    await page.evaluate(() => document.querySelector('[data-delete]').click());
+    // (waitForFunction cannot wait on an async check: poll.)
+    let gone = { list: -1, cache: -1 };
+    for (let k = 0; k < 30; k++) {
+      gone = await page.evaluate(async () => ({ list: JSON.parse(localStorage.getItem('atlas-globe:saved-areas') || '[]').length, cache: (await (await caches.open('atlas-saved-tiles')).keys()).length }));
+      if (!gone.list && !gone.cache) break;
+      await page.waitForTimeout(300);
+    }
+    check(gone.list === 0 && gone.cache === 0, `deleting the area empties the list and its tiles (${gone.cache} left)`);
+    await page.evaluate(() => window.atlas.shell.sheet.close());
+    // 3D: the area on screen raised; the slider raises it more.
+    await zoomTo(page, 10.4, 46.4, 8);
+    await settle(page);
+    await page.evaluate(() => document.querySelector('.zoom-3d').click());
+    await page.waitForFunction(() => window.atlas.terrain3d.info.ready && window.atlas.terrain3d.info.frames > 0, null, { timeout: 60000 });
+    const t3 = await page.evaluate(() => ({ ...window.atlas.terrain3d.info }));
+    const nonEmpty = await page.evaluate(() => { const c = document.querySelector('.t3d-canvas'); const g = c.getContext('webgl2'); const px = new Uint8Array(4); g.readPixels(c.width >> 1, c.height >> 1, 1, 1, g.RGBA, g.UNSIGNED_BYTE, px); return px[3]; });
+    await page.evaluate(() => { const s = document.querySelector('.t3d-slider'); s.value = s.max; s.dispatchEvent(new Event('input')); });
+    await page.waitForTimeout(400);
+    const k2 = await page.evaluate(() => window.atlas.terrain3d.info.k);
+    await page.evaluate(() => document.querySelector('[data-drape="satellite"]').click());
+    await page.waitForFunction(() => window.atlas.terrain3d.info.tiles > 0, null, { timeout: 30000 }).catch(() => {});
+    const sat = await page.evaluate(() => window.atlas.terrain3d.info.tiles);
+    await page.evaluate(() => document.querySelector('.t3d-close').click());
+    await page.waitForTimeout(500);
+    const closed = await page.evaluate(() => ({ el: !!document.querySelector('.t3d'), cls: document.documentElement.classList.contains('t3d-open') }));
+    check(t3.heights > 0 && t3.top > 2000 && k2 > t3.k && sat > 0 && !closed.el && !closed.cls, `3D: ${t3.heights} height tiles, highest point ${Math.round(t3.top)} m, ×${t3.k.toFixed(1)} raised to ×${k2.toFixed(1)}; a satellite drape of ${sat} tiles; closing leaves the map (${nonEmpty ? 'drawn' : 'not drawn'} at the centre)`);
+  });
+  // Only on Wi-Fi, on a device that says it is on mobile data: no downloads.
+  await run({ viewport: { width: 1000, height: 700 } }, async (page) => {
+    await page.evaluate(() => { Object.defineProperty(navigator, 'connection', { configurable: true, get: () => ({ type: 'cellular' }) }); const t = window.atlas.terrain; t.prefs.wifiOnly = true; });
+    await zoomTo(page, 10.4, 46.4, 8);
+    await page.waitForTimeout(3000);
+    const m = await mosaic(page);
+    await page.evaluate(() => { Object.defineProperty(navigator, 'connection', { configurable: true, get: () => ({ type: 'wifi' }) }); window.atlas.app.renderer.requestRender(); });
+    await settle(page);
+    const w = await mosaic(page);
+    await page.evaluate(() => { window.atlas.terrain.prefs.wifiOnly = false; });
+    check(m.requests === 0 && w.loaded > 0 && w.loaded === w.total, `"Only on Wi-Fi": nothing is fetched on mobile data (${m.requests}); on Wi-Fi the area loads (${w.loaded}/${w.total})`);
+  });
 }
 
 await browser.close();

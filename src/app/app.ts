@@ -7,6 +7,8 @@ import { PROJECTIONS, type ProjectionId } from '../engine/projections';
 import { THEMES } from './theme';
 import { detectLang, setLang, type Lang } from './i18n';
 import { setLayerContext } from '../layers/context';
+import { tiles, prefs as terrainPrefs } from '../engine/tiles';
+import { DETAIL_LAYERS } from '../layers/imagery';
 import type { InfoRow, LayerDef, LayerInstance } from '../layers/types';
 
 export interface ActiveSpec { id: string; opacity: number; options?: Record<string, string | boolean> }
@@ -57,6 +59,17 @@ export class App {
       onEnd: () => { this.emit('interactEnd'); this.save(); },
     });
     this.data.onLevelLoaded = () => this.renderer.requestRender();
+    // Detailed terrain: a new frame when a tile arrives, and a deeper zoom while a detail filter is on.
+    tiles.onTile(() => this.renderer.requestRender());
+    this.on('layers', () => this.syncMaxZoom());
+  }
+
+  /** The deepest zoom: about four web-map levels deeper while detailed terrain is on under a detail filter. */
+  syncMaxZoom() {
+    const v = this.renderer.view;
+    const deep = terrainPrefs.detail && this.layers.some((l) => DETAIL_LAYERS.includes(l.def.id));
+    v.maxZoom = deep ? 6400 : 400;
+    if (v.zoom > v.maxZoom) { v.flyTo({ zoom: v.maxZoom }, 600); this.renderer.requestRender(); }
   }
 
   /** Filters requested before they were registered (packs that load in the background). */

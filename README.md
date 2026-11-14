@@ -40,6 +40,15 @@ spinning full-screen as an ambient display. English and Spanish.
     criteria and UNESCO's page, and a country's card counts its sites.
   - Where things were invented: the inventions of the Inventions stories where they were made, by age and field.
   - Imagery: NASA Blue Marble, yesterday's real satellite view (NASA GIBS), shaded relief, ETOPO.
+- **Terrain in detail:** zoomed in, Shaded relief and Elevation are drawn by the GPU from terrain heights
+  (Terrain Tiles on AWS: SRTM, GMTED, ETOPO1 and national data), and Satellite from Sentinel-2 cloudless 2016
+  (about 10 m), for just the area on screen, sharper the closer you go; the zoom goes about four levels deeper. Tiles
+  are kept in memory up to a cap and freed as you move on. In Settings: detail on or off, only on Wi-Fi (where the
+  browser says how it is connected), and how much was downloaded. **Save an area for offline use** from the
+  filter's legend: choose the detail, see the size first, and find the saved areas in Settings with their size and
+  a delete button. **3D terrain** (the mountain button by the zoom buttons): the area on screen as a landscape on
+  the curved Earth, draped with satellite, relief or elevation colours, with a slider that raises the mountains;
+  drag to turn, pinch to zoom.
   - Live: day and night with city lights, earthquakes (USGS), weather now (Open-Meteo), the ISS.
 - **Compare two filters:** any two country facts at once. Two numbers make a two-colour map (each in thirds,
   3 × 3 squares to tap) and a scatter chart linked to the globe both ways (tap a dot to fly to its country, tap

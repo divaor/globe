@@ -89,3 +89,31 @@ climatology.
 - Kottek, M. et al. (2006). World Map of the Köppen-Geiger climate classification updated. *Meteorol. Z.* 15, 259–263.
 - Rubel, F. et al. (2017). The climate of the European Alps: Shift of very high resolution Köppen-Geiger climate zones 1800–2100. *Meteorol. Z.* 26, 115–125.
 - Stöckli, R. et al. (2005). The Blue Marble Next Generation. NASA Earth Observatory.
+
+## Detail tiles (downloaded while zoomed in, not stored here)
+
+With Shaded relief, Elevation or Satellite on, zooming in downloads web-map tiles of the area on screen
+(`src/engine/tiles.ts`, `src/engine/detail.ts`); the 3D view uses the same tiles. Detail can be turned off, or kept to
+Wi-Fi, in Settings; areas saved for offline use keep their tiles in the browser's Cache Storage.
+
+| Tiles | Used for | Source | Licence |
+|---|---|---|---|
+| `https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png` (zooms 0–14) | Heights (Terrarium PNG: R × 256 + G + B / 256 − 32768 m), from which the app draws the shaded relief and the elevation colours, and the 3D landscape | Terrain Tiles, made by Mapzen and hosted on the AWS Registry of Open Data | Open data; attribution below |
+| `https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless_3857/default/g/{z}/{y}/{x}.jpg` (zooms 0–14) | Satellite pictures, about 10 m | Sentinel-2 cloudless 2016 by EOX IT Services GmbH (https://s2maps.eu). Only the 2016 edition is used: later editions are licensed for non-commercial use only | CC BY 4.0. Credit: "Sentinel-2 cloudless – https://s2maps.eu by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2016 & 2017)" |
+
+The colours of the detailed Elevation filter were fitted to `etopo-4k.jpg`, and those of the detailed Shaded relief to
+`relief-4k.jpg`: the median colour of each height band where the image is lit, from the 64 terrain tiles of zoom 3
+laid over the image (latitudes beyond 60° left out, so the ice sheets do not whiten the mountains).
+
+Terrain Tiles attribution (from the Tilezen/joerd documentation):
+- ArcticDEM terrain data DEM(s) were created from DigitalGlobe, Inc., imagery and funded under National Science Foundation awards 1043681, 1559691 and 1542736;
+- Australia terrain data © Commonwealth of Australia (Geoscience Australia) 2017;
+- Austria terrain data © offene Daten Österreichs – Digitales Geländemodell (DGM) Österreich;
+- Canada terrain data contains information licensed under the Open Government Licence – Canada;
+- Europe terrain data produced using Copernicus data and information funded by the European Union – EU-DEM layers;
+- Global ETOPO1 terrain data, U.S. National Oceanic and Atmospheric Administration;
+- Mexico terrain data source: INEGI, Continental relief, 2016;
+- New Zealand terrain data Copyright 2011 Crown copyright (c) Land Information New Zealand and the New Zealand Government;
+- Norway terrain data © Kartverket;
+- United Kingdom terrain data © Environment Agency copyright and/or database right 2015;
+- United States 3DEP (formerly NED) and global GMTED2010 and SRTM terrain data courtesy of the U.S. Geological Survey.

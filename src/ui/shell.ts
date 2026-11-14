@@ -1,6 +1,7 @@
 // The app chrome: brand + search (top left), ambient/fullscreen (top right), zoom controls, the
 // active-filter chips and the dock (bottom), plus sheets, legend, card, tooltip and toasts.
-import { Layers, Globe, Map as MapIcon, Ellipsis, Search, Maximize, Minimize, Plus, Minus, LocateFixed, MonitorPlay, Share2, Settings, Info, X } from 'lucide';
+import { Layers, Globe, Map as MapIcon, Ellipsis, Search, Maximize, Minimize, Plus, Minus, LocateFixed, MonitorPlay, Share2, Settings, Info, X, Mountain } from 'lucide';
+import { terrainActions } from '../layers/terrainActions';
 import { h, icon, button, clear, add } from './dom';
 import { t, tx } from '../app/i18n';
 import { Sheet } from './sheet';
@@ -45,7 +46,8 @@ export class Shell {
     const zoom = h('div', { class: 'zoombar glass' },
       button({ icon: Plus, title: t('zoomIn'), cls: 'icon-btn', onClick: () => app.interaction.animateZoom(1.8) }),
       button({ icon: Minus, title: t('zoomOut'), cls: 'icon-btn', onClick: () => app.interaction.animateZoom(1 / 1.8) }),
-      button({ icon: LocateFixed, title: t('resetView'), cls: 'icon-btn', onClick: () => app.resetView() }));
+      button({ icon: LocateFixed, title: t('resetView'), cls: 'icon-btn', onClick: () => app.resetView() }),
+      button({ icon: Mountain, title: app.lang === 'es' ? 'Relieve en 3D' : '3D terrain', cls: 'icon-btn zoom-3d', onClick: () => terrainActions.view3d() }));
     root.append(this.top, zoom, this.chips, this.dock, this.menu, this.tooltip, this.toastEl);
 
     this.sheet = new Sheet(root);
