@@ -811,3 +811,13 @@ html[data-theme="light"] .orr-input { color-scheme: light; }
 html.orrery-open .country-card { z-index: 25; }
 html.orrery-open .zoombar, html.orrery-open .dock, html.orrery-open .chips, html.orrery-open .legend, html.orrery-open .worldbar { visibility: hidden; }
 html.orrery-open .learn-card { z-index: 26; }
+/* The night sky (sky/sky.ts): the solar system view's frame, with a place button and a scrolling row of options. */
+.sky { background: #02040b; }
+.sky-where { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+.sky-place { background: none; border: 0; padding: 0; color: var(--text); font: inherit; font-size: 13px; font-weight: 650; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.sky-time { flex: none; font-size: 12.5px; }
+.sky-chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.sky-chips::-webkit-scrollbar { display: none; }
+.sky-chips .chip { flex: none; }
+.sky-input { min-width: 0; }
+@media (max-width: 520px) { .sky .orr-foot .muted.small { display: none; } }

@@ -53,6 +53,8 @@ export class Renderer {
   private path: GeoPath;
   private bgPath: GeoPath;
   private stars: HTMLCanvasElement | null = null;
+  /** Draws the real sky behind the globe (sky/sky.ts); false when it can't, and the plain starfield is drawn. */
+  backdrop: ((bg: CanvasRenderingContext2D, w: number, h: number, globeY: number) => boolean) | null = null;
   private graticule = geoGraticule10();
   private raf = 0;
   private lastFrame = 0;
@@ -587,6 +589,7 @@ export class Renderer {
     bg.fillStyle = g;
     bg.fillRect(0, 0, w, h);
     if (!th.stars) return;
+    if (this.backdrop && this.view.current.kind === 'globe' && !this.view.morphing && this.backdrop(bg, w, h, this.view.translate[1])) return;
     if (!this.stars || this.stars.width !== Math.round(w)) {
       const c = document.createElement('canvas');
       c.width = Math.round(w); c.height = Math.round(h);
