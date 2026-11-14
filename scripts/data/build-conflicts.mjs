@@ -1074,12 +1074,12 @@ async function preview(c, topo, dir) {
       if (xy) parts.push(`<rect x="${xy[0] - 4}" y="${xy[1] - 4}" width="8" height="8" fill="#f2c14e" stroke="#111"/>`);
     }
     if (c.items) {
-      // Items: earlier ones (and, in a time tour, every catalogue item built by now) as small dots,
-      // this step's ones as larger dots with their names.
+      // Items: earlier ones on the same world (and, in a time tour, every catalogue item built by now) as small
+      // dots, this step's ones as larger dots with their names.
       const col = new Map(c.cats.map((k) => [k.id, k.color]));
       const now = new Set(st.show);
       c.items.forEach((it, k) => {
-        if (now.has(k) || !((it.first >= 0 && it.first < i) || (it.first === -1 && it.t <= st.t)) || (it.tu != null && it.tu < st.t)) return;
+        if (now.has(k) || (it.world ?? null) !== (st.world ?? null) || !((it.first >= 0 && it.first < i) || (it.first === -1 && it.t <= st.t)) || (it.tu != null && it.tu < st.t)) return;
         const xy = proj(at(it.at, it.pl));
         if (xy) parts.push(`<circle cx="${xy[0]}" cy="${xy[1]}" r="2.6" fill="${col.get(it.cat)}" fill-opacity="0.75" stroke="#fff" stroke-width="0.8"/>`);
       });
