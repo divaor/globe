@@ -479,7 +479,8 @@ export class BorderHop {
     const v = this.app.renderer.view;
     const shown = !this.card.hidden && !!this.st;
     document.documentElement.classList.toggle('has-game', shown);
-    const r = shown ? this.card.getBoundingClientRect() : null;
+    // On a wide screen the card is beside the globe (top left), so the globe keeps the whole window.
+    const r = shown && window.innerWidth < 1000 ? this.card.getBoundingClientRect() : null;
     v.insetTop = r && r.height ? Math.round(r.bottom + 8) : 0;
     this.app.renderer.requestRender();
   }
