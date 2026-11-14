@@ -6,7 +6,7 @@ import { h, icon, clear } from '../ui/dom';
 import { dataUrl } from '../data/store';
 import { terrainActions, type Terrain3DContext } from '../layers/terrainActions';
 import { wikiThumb } from '../modes/stories';
-import { WORLDS, worldById, tr, L, loadFacts, BIG_TYPES, TYPE_NAMES, type WorldDef, type WorldMap, type Facts } from './worlds';
+import { WORLDS, worldById, tr, trIn, L, loadFacts, BIG_TYPES, TYPE_NAMES, type WorldDef, type WorldMap, type Facts } from './worlds';
 import { WorldSurface, LANDING_ICON } from './surface';
 import type { Hit } from '../ui/search';
 import type { App } from '../app/app';
@@ -49,7 +49,7 @@ export class Space {
     this.surface.onChange(() => { if (this.bar) this.buildBar(); });
     // Search finds this world's named places and landings.
     shell.search.provider = () => (this.active && this.surface.def && !this.surface.bare ? {
-      hint: () => L(`Search places on ${tr(this.surface.def!.name)}`, `Buscar lugares en ${tr(this.surface.def!.name)}`),
+      hint: () => L(`Search places on ${trIn(this.surface.def!.name)}`, `Buscar lugares en ${trIn(this.surface.def!.name)}`),
       search: (q, score) => this.searchHits(score),
     } : null);
     // The 3D view of the Moon and Mars (see ui/terrain3d.ts).

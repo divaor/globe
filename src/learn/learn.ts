@@ -21,7 +21,7 @@ import { direction, strengthWords, fmtR } from '../compare/compare';
 import { strength } from '../compare/stats';
 import { DETECTIVE_YEARS, detectiveQuestions, type DetData, type DetQuestion } from './detective';
 import { orderRounds } from './order';
-import { WORLDS, worldById, tr, loadFacts } from '../space/worlds';
+import { WORLDS, worldById, tr, trIn, loadFacts } from '../space/worlds';
 import { loadLandings, type Landing } from '../space/surface';
 import { thumbUrl, type Space } from '../space/space';
 import { recordAnswer, recordQuiz, recordDaily, recordDailySubjects, recordTour, dailyResult, dayKey, current, progress, progressPanel, BADGES, type Badge } from './progress';
@@ -735,7 +735,7 @@ export class Learn {
     const q = this.quiz!;
     const w = worldById(cur.space!.world);
     const question = kind === 'world' ? L('Which world is this?', '¿Qué mundo es este?')
-      : L(`Who landed here, on ${w ? tr(w.name) : ''}?`, `¿Quién aterrizó aquí, en ${w ? (w.id === 'moon' ? 'la Luna' : tr(w.name)) : ''}?`);
+      : L(`Who landed here, on ${w ? trIn(w.name) : ''}?`, `¿Quién aterrizó aquí, en ${w ? trIn(w.name) : ''}?`);
     add(this.card, h('div', { class: 'quiz-q' }, question));
     if (kind === 'world' && !q.answered) add(this.card, h('div', { class: 'tool-hint' }, L('Turn the globe to look around.', 'Gira el globo para mirar.')));
     const opts = h('div', { class: 'quiz-opts' });
@@ -757,7 +757,8 @@ export class Learn {
       void loadFacts().then((f) => {
         const x = f.get(cur.id);
         const wow = x?.wow ? ` ${tr(x.wow)}` : '';
-        this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It was ', 'Era ')}${right}.${wow}` });
+        const name = ok ? right : (worldById(cur.id) ? trIn(worldById(cur.id)!.name) : right);
+        this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : L('It was ', 'Era ')}${name}.${wow}` });
       });
       return;
     }

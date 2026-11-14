@@ -7,6 +7,8 @@ import { lang } from '../app/i18n';
 
 export type Text = { en: string; es: string };
 export const tr = (t: Text | undefined) => (t ? (lang() === 'es' ? t.es : t.en) : '');
+/** A world's name inside a sentence: "on the Moon", "en la Luna" (its article in lower case). */
+export const trIn = (t: Text | undefined) => tr(t).replace(/^(The|La|El) /, (m) => m.toLowerCase());
 export const L = (en: string, es: string) => (lang() === 'es' ? es : en);
 
 /** One way to see a world: a map file (hi, lo resolution) and, for some, tiles that sharpen it when zoomed in. */
