@@ -185,7 +185,8 @@ export class Elements {
     }
     const d = e.discovered;
     if (d) {
-      const when = d.year == null ? '' : d.year < 0 ? L('ancient times', 'la Antigüedad') : String(d.year);
+      // Known since ancient times: the text says so ("Known since antiquity; ...").
+      const when = d.year == null ? '' : d.year < 0 ? (d.who ? '' : L('ancient times', 'la Antigüedad')) : String(d.year);
       const who = d.who ? tr(d.who) : '';
       rows.push({ icon: '🔬', label: L('Discovered', 'Descubrimiento'), value: [when, who, d.place ? tr(d.place) : ''].filter(Boolean).join(' · ') });
       if (d.at) links.push({ label: L('Where it was discovered', 'Dónde se descubrió'), onClick: () => { this.close(); this.app.flyTo(d.at![0], d.at![1], 7); } });
