@@ -12,6 +12,7 @@ import type { Shell } from '../ui/shell';
 import type { Space } from '../space/space';
 import type { Sky } from './sky';
 import type { InfoRow } from '../layers/types';
+import type { Hit } from '../ui/search';
 
 export interface Element {
   z: number; symbol: string; name: Text;
@@ -68,6 +69,11 @@ export class Elements {
   constructor(private app: App, private shell: Shell, private space: Space, private sky: Sky) {
     space.openElements = (sym?: string) => void this.open(sym);
     space.closers.push({ owner: this, close: () => this.close() });
+    // Elements in search: the first search loads them (they show from the next letter on).
+    shell.search.extra.push((q, score) => { if (!this.els) { void this.load().catch(() => {}); return []; } return this.els.flatMap((e): Hit[] => {
+      const sc = Math.max(score(e.name.en), score(e.name.es), e.symbol.toLowerCase() === q ? 95 : 0);
+      return sc > 0 ? [{ kind: 'place', lon: 0, lat: 0, label: `${tr(e.name)} (${e.symbol})`, sub: `${L('Element', 'Elemento')} ${e.z} · ${originName(mainOrigin(e))}`, score: sc + 2, icon: '⚗️', pick: () => void this.open(e.symbol) }] : [];
+    }); });
   }
 
   get isOpen() { return !!this.el; }

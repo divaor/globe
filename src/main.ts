@@ -84,6 +84,11 @@ async function boot() {
     const camera = c.length === 3 && c.every(isFinite) ? { lon: c[0], lat: c[1], zoom: c[2] } : undefined;
     setTimeout(() => void space.enter(world, { map: (shared.get('map') as 'elev' | null) ?? 'photo', camera }), 300);
   }
+  // The sky, our galaxy or the elements: #sky=Ori (#sky=1: the sky from where the globe looks), #galaxy=M42, #element=Au.
+  const skyAt = shared.get('sky'), galAt = shared.get('galaxy'), elAt = shared.get('element');
+  if (skyAt != null) setTimeout(() => sky.open(skyAt && skyAt !== '1' ? { frame: 'celestial', target: skyAt } : {}), 400);
+  else if (galAt != null) setTimeout(() => void galaxy.open(galAt && galAt !== '1' ? galAt : undefined), 400);
+  else if (elAt != null) setTimeout(() => void elements.open(elAt && elAt !== '1' ? elAt : undefined), 400);
   // A shared story: #war=<id>&step=<n> (or #eras=, #food=, #structures=, #people=, #life=).
   for (const kind of STORY_KINDS) {
     const id = shared.get(storyHashKey(kind));

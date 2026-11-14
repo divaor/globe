@@ -22,6 +22,8 @@ export class SearchBox {
   onPick: ((lon: number, lat: number) => void) | null = null;
   /** Set while another world is on the globe (space/space.ts). */
   provider: () => SearchProvider = () => null;
+  /** More things to find from the Earth: the sky's stars, constellations and objects, the elements (sky/). */
+  extra: ((q: string, score: (name: string) => number) => Hit[])[] = [];
 
   constructor(private app: App) {
     this.input = h('input', { type: 'search', class: 'search-field', placeholder: t('searchHint'), 'aria-label': t('search'), autocomplete: 'off', spellcheck: 'false' }) as HTMLInputElement;
@@ -83,6 +85,7 @@ export class SearchBox {
         score: s + Math.log10(Math.max(10, c.pop)) * 2 + (c.capital === 2 ? 6 : 0), zoom: c.pop > 5e6 ? 14 : c.pop > 1e6 ? 22 : 34,
       });
     }
+    for (const f of this.extra) out.push(...f(q, score));
     return out.sort((a, b) => b.score - a.score).slice(0, 12);
   }
 

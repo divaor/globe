@@ -11,6 +11,7 @@ import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { Space } from '../space/space';
 import type { InfoRow } from '../layers/types';
+import type { Hit } from '../ui/search';
 
 type Frame = 'horizon' | 'celestial';
 interface Place { lon: number; lat: number; label: string }
@@ -87,6 +88,7 @@ export class Sky {
   constructor(private app: App, private shell: Shell, private space: Space) {
     space.openSky = () => this.open();
     space.closers.push({ owner: this, close: () => this.close() });
+    shell.search.extra.push((_q, score) => this.searchHits(score));
     // The real stars behind the globe.
     if (this.gl) {
       this.gl.onReady = () => { app.renderer.requestRender(); this.dirty(); };
@@ -700,6 +702,35 @@ export class Sky {
   }
 
   // ---- for quizzes, tours and search ----------------------------------------------------------------
+
+  /** Constellations, named stars and deep-sky objects that match a search; picking one shows it in the sky. */
+  private searchHits(score: (name: string) => number): Hit[] {
+    const d = this.data;
+    if (!d) return [];
+    const out: Hit[] = [];
+    const go = (target: string, fov: number) => () => { void this.show({ frame: 'celestial', target, fov }).then(() => this.pick(target)); };
+    for (const c of d.cons) {
+      const sc = Math.max(score(c.name.en), score(c.name.es), score(c.la));
+      if (sc > 0) out.push({ kind: 'place', lon: 0, lat: 0, label: tr(c.name), sub: `${L('Constellation', 'Constelación')}${c.meaning ? ` · ${tr(c.meaning)}` : ''}`, score: sc + 4, icon: '✳️', pick: go(c.id, Math.max(30, Math.min(110, spanOf(c) * 1.6))) });
+    }
+    for (const s of d.stars) {
+      const info = d.info.get(s.hip);
+      if (!s.name && !info) continue;
+      const names = [info?.name.en, info?.name.es, s.name, s.es].filter((x): x is string => !!x);
+      const sc = Math.max(...names.map(score));
+      if (sc <= 0) continue;
+      const con = d.cons.find((k) => k.id === s.con);
+      out.push({ kind: 'place', lon: 0, lat: 0, label: starName(d, s), sub: `${L('Star', 'Estrella')}${con ? ` · ${tr(con.name)}` : ''}`, score: sc + 2 - s.mag, icon: '⭐', pick: go(String(s.hip), 40) });
+    }
+    for (const o of d.objects) {
+      const sc = Math.max(score(o.name.en), score(o.name.es), score(o.id));
+      if (sc <= 0) continue;
+      const t = OBJECT_TYPES[o.type] ?? OBJECT_TYPES.other;
+      out.push({ kind: 'place', lon: 0, lat: 0, label: tr(o.name), sub: `${tr(t.name)}${o.name.en !== o.id ? ` · ${o.id}` : ''}`, score: sc + (o.famous ? 4 : 0), icon: t.icon, pick: go(o.id, 30) });
+    }
+    return out;
+  }
+
 
   /** The data, once loaded. */
   get loaded(): SkyData | null { return this.data; }
