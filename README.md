@@ -160,6 +160,11 @@ spinning full-screen as an ambient display. English and Spanish.
     sites destroyed and rebuilt, from Warsaw to Mosul; saving nature's wonders; and Latin America's history told
     through its World Heritage. Any story card for a World Heritage site says when it was listed and whether it is
     in danger, with a link to UNESCO.
+  - Space exploration: 5 stories, 90 steps and 337 items, on the Earth and on the worlds they reached (a step on
+    the Moon or Mars turns the globe into that world, with its landings and rover drives). Astronomy through
+    history, from Nabta Playa and Babylon's diaries to Mauna Kea and the Atacama; the space race, from the V-2 to
+    Apollo–Soyuz; footprints on the Moon, every landing from Luna 2 to Artemis II; robots to the planets, from
+    Mariner 2 to Juno; and wheels on Mars, from Mars 3 to where Curiosity and Perseverance are now.
   - Browse and search every item of a story or a whole collection; shared links open a story at its step.
 - **Explore:** measure distances (great circles, flight time), compare two countries, "true size" of countries.
 - **Learn & play:** quizzes (find the country, flags, capitals, states and provinces of 48 countries, where in
