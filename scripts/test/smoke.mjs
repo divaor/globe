@@ -2063,6 +2063,123 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 20. Map games: Border hop (v0.24.0). The menu (today's route, four goals, eight knowledge rounds, Blitz); a round
+// played with taps on the map (names hidden, a country that does not border refused, the Kaliningrad note, par met
+// for three stars and the best route of each goal); hints that cost points and stars; a knowledge round refusing
+// Brazil; a challenge link; the daily route kept in your progress; the map and filters put back after a game, and a
+// quiz closing it. And the dark-blue story areas lightened against the sea (Persia in Alexander's conquests).
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {} });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  const boot = async (hash) => {
+    await page.goto(url + hash, { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+    await page.reload({ waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+    await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+    await page.waitForTimeout(800);
+  };
+  await boot('#p=globe&l=political&c=10,40,1.2&lang=en');
+  const info = () => page.evaluate(() => window.atlas.hop.info);
+
+  // The menu.
+  await page.evaluate(() => window.atlas.hop.openMenu());
+  await page.waitForSelector('[data-play="daily"]', { timeout: 15000 }).catch(() => {});
+  const menu = await page.evaluate(() => ({ daily: document.querySelector('[data-play="daily"]')?.textContent ?? '', goals: document.querySelectorAll('[data-goal]').length, rules: document.querySelectorAll('[data-rule]').length, blitz: !!document.querySelector('[data-play="blitz"]') }));
+  check(/Daily route #\d+ · .+ → .+/.test(menu.daily) && menu.goals === 4 && menu.rules === 8 && menu.blitz, `Map games: ${menu.daily.split('·').slice(0, 2).join('·').trim()}; ${menu.goals} goals, ${menu.rules} knowledge rounds and Blitz`);
+
+  // A round with taps: Spain → China, fewest people.
+  await page.evaluate(() => window.atlas.hop.start({ from: 'ESP', to: 'CHN', goal: 'people', rule: null, overseas: false }, 'practice'));
+  await page.waitForTimeout(2500);
+  const hidden = await page.evaluate(() => ({ names: window.atlas.app.renderer.settings.labels.countries, layers: window.atlas.app.layers.map((l) => l.def.id).join(), sheet: !!document.querySelector('.sheet.open') }));
+  const tapAt = async (lon, lat) => { const p = await page.evaluate(([a, b]) => window.atlas.app.renderer.view.project(a, b), [lon, lat]); if (p) await page.touchscreen.tap(p[0], p[1]); await page.waitForTimeout(500); };
+  await tapAt(2.5, 46.5);
+  const t1 = await info();
+  await tapAt(30, 27);
+  const t2 = await info();
+  const refused = await page.evaluate(() => document.querySelector('.play-card .quiz-fb')?.textContent ?? '');
+  check(!hidden.names && hidden.layers === 'political' && t1.path.join() === 'ESP,FRA' && t2.path.join() === 'ESP,FRA' && /does not border/.test(refused), `a tap on France adds it (names hidden); a tap on Egypt is refused: "${refused}"`);
+  for (const id of ['CHE', 'AUT', 'SVK', 'POL', 'RUS']) await page.evaluate((x) => window.atlas.hop.step(x), id);
+  const note = await page.evaluate(() => document.querySelector('.play-card .quiz-fb')?.textContent ?? '');
+  await page.evaluate(() => window.atlas.hop.step('CHN'));
+  await page.waitForTimeout(800);
+  const d1 = await info();
+  await page.evaluate(() => document.querySelector('[data-hop="others"]')?.getAttribute('aria-expanded') === 'false' && document.querySelector('[data-hop="others"]').click());
+  await page.waitForTimeout(300);
+  const card1 = await page.evaluate(() => ({ others: document.querySelectorAll('.hop-other').length, text: document.querySelector('.play-card')?.innerText ?? '' }));
+  check(/Kaliningrad/.test(note) && d1.done?.score === 1000 && d1.done.stars === 3 && card1.others === 4 && /Fewest countries: 4 countries in between/.test(card1.text) && d1.done.badges.includes('play-1'),
+    `Spain → China with the fewest people: 1000 ★★★ (par 272 M); the best route of each goal (${card1.others}); the Kaliningrad note; badges ${d1.done?.badges.join(', ')}`);
+
+  // Hints: names, the population map and the next step; stars capped.
+  await page.evaluate(() => window.atlas.hop.start({ from: 'NOR', to: 'IND', goal: 'people', rule: null, overseas: false }, 'practice'));
+  await page.waitForTimeout(1500);
+  await page.click('[data-hop="hints"]');
+  await page.click('[data-hint="names"]');
+  await page.click('[data-hint="filter"]');
+  await page.waitForTimeout(1500);
+  const h1 = await page.evaluate(() => ({ names: window.atlas.app.renderer.settings.labels.countries, layers: window.atlas.app.layers.map((l) => l.def.id).join() }));
+  await page.click('[data-hint="step"]');
+  const h2 = await info();
+  for (let i = 0; i < 10 && !(await info()).done; i++) await page.evaluate(() => window.atlas.hop.hint('step'));
+  const h3 = await info();
+  check(h1.names && /fact-population/.test(h1.layers) && h2.path.length === 2 && h3.done && h3.done.stars === 1 && h3.done.score < 1000, `hints: names on, the population map on, the next step (${h2.path.join(' › ')}); finished with hints: ${h3.done?.score} points, ${h3.done?.stars} star`);
+
+  // A knowledge round: only Spanish-speaking countries; Brazil refused.
+  await page.evaluate(() => window.atlas.hop.start({ from: 'MEX', to: 'PRY', goal: 'count', rule: 'spa', overseas: false }, 'practice'));
+  await page.waitForTimeout(1000);
+  for (const id of ['GTM', 'HND', 'NIC', 'CRI', 'PAN', 'COL', 'BRA']) await page.evaluate((x) => window.atlas.hop.step(x), id);
+  const k = await page.evaluate(() => ({ path: window.atlas.hop.info.path, fb: document.querySelector('.play-card .quiz-fb')?.textContent ?? '' }));
+  check(!k.path.includes('BRA') && /not a Spanish-speaking country/.test(k.fb), `only Spanish-speaking countries: "${k.fb}"`);
+
+  // The map and filters come back after a game; a quiz closes a game.
+  await page.evaluate(() => window.atlas.hop.stop());
+  await page.waitForTimeout(1200);
+  const back = await page.evaluate(() => ({ names: window.atlas.app.renderer.settings.labels.countries, layers: window.atlas.app.layers.map((l) => l.def.id).join(), card: !document.querySelector('.play-card')?.hidden }));
+  await page.evaluate(() => window.atlas.hop.start({ from: 'FRA', to: 'POL', goal: 'count', rule: null, overseas: false }, 'practice'));
+  await page.waitForTimeout(800);
+  await page.evaluate(() => window.atlas.learn['startQuiz']('find', 'world'));
+  await page.waitForTimeout(1200);
+  const q = await page.evaluate(() => ({ hop: window.atlas.hop.active, quiz: !document.querySelector('.learn-card:not(.play-card)')?.hidden }));
+  await page.evaluate(() => window.atlas.learn['stopQuiz']());
+  check(back.names && back.layers === 'political' && !back.card && !q.hop && q.quiz, `after a game the names and filters are back (${back.layers}); starting a quiz closes the game`);
+
+  // A challenge link, and the daily route.
+  await boot('#hop=ESP-CHN&goal=people&beat=870');
+  await page.waitForFunction(() => window.atlas.hop.active, null, { timeout: 10000 }).catch(() => {});
+  const ch = await page.evaluate(() => ({ info: window.atlas.hop.info, text: document.querySelector('.play-card')?.innerText ?? '' }));
+  check(ch.info?.mode === 'challenge' && ch.info.from === 'ESP' && ch.info.goal === 'people' && /A friend scored 870/.test(ch.text), `a challenge link opens the same round with the score to beat (${ch.info?.from} → ${ch.info?.to})`);
+  await page.evaluate(() => window.atlas.hop.stop());
+  await page.evaluate(() => window.atlas.hop.openMenu());
+  await page.waitForSelector('[data-play="daily"]', { timeout: 10000 }).catch(() => {});
+  await page.click('[data-play="daily"]');
+  await page.waitForTimeout(1200);
+  for (let i = 0; i < 16 && !(await info())?.done; i++) await page.evaluate(() => window.atlas.hop.hint('step'));
+  const dd = await info();
+  await page.evaluate(() => window.atlas.hop.stop());
+  await page.evaluate(() => window.atlas.hop.openMenu());
+  await page.waitForTimeout(800);
+  const dm = await page.evaluate(() => ({ text: document.querySelector('[data-play="daily"]')?.textContent ?? '', saved: Object.keys(JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').play?.daily?.results ?? {}).length }));
+  check(dd?.mode === 'daily' && !!dd.done && /Done/.test(dm.text) && dm.saved === 1, `the daily route (${dd?.from} → ${dd?.to}, ${dd?.goal}) is kept: "${dm.text.split('·').slice(-2).join('·').trim()}"`);
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+
+  // Dark-blue story areas against the sea: Persia, in Alexander's conquests, stands out from the sea next to it.
+  await page.evaluate(() => window.atlas.time.stories.wars.open('alexander', 3));
+  await page.waitForTimeout(4500);
+  const blue = await page.evaluate(() => {
+    const ren = window.atlas.app.renderer, g = document.getElementById('fg').getContext('2d');
+    const px = (lon, lat) => { const p = ren.view.project(lon, lat); return p ? [...g.getImageData(Math.round(p[0] * ren.view.dpr), Math.round(p[1] * ren.view.dpr), 1, 1).data] : null; };
+    const bg = (lon, lat) => { const p = ren.view.project(lon, lat); if (!p) return null; const c = document.createElement('canvas'); c.width = ren.view.w * ren.view.dpr; c.height = ren.view.h * ren.view.dpr; const x = c.getContext('2d'); x.drawImage(document.getElementById('bg') ?? document.querySelector('canvas'), 0, 0); x.drawImage(document.getElementById('fg'), 0, 0); return [...x.getImageData(Math.round(p[0] * ren.view.dpr), Math.round(p[1] * ren.view.dpr), 1, 1).data]; };
+    return { persia: px(44.4, 32.5), sea: bg(51, 27) };
+  });
+  const lum = (c) => (c ? 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2] : 0);
+    // (The old dark blue, #2e6f9e, was about 42 brighter than the Gulf; the lightened one about 88.)
+  check(blue.persia && blue.persia[2] > blue.persia[0] + 30 && lum(blue.persia) > lum(blue.sea) + 65, `Persia's blue stands out from the Persian Gulf (${blue.persia?.slice(0, 3)} against ${blue.sea?.slice(0, 3)})`);
+  await page.evaluate(() => window.atlas.time.stories.wars.exit());
+  check(!errors.length, `no page errors in v0.24.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);
