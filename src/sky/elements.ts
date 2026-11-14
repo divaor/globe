@@ -62,6 +62,7 @@ export class Elements {
   private els: Element[] | null = null;
   private minerals: Record<string, Mineral> | null = null;
   private filter: string | null = null;
+  private mark: string | null = null;
   info = { open: false, cells: 0, filter: null as string | null };
 
   constructor(private app: App, private shell: Shell, private space: Space, private sky: Sky) {
@@ -98,11 +99,18 @@ export class Elements {
     if (symbol) { const e = els.find((x) => x.symbol === symbol); if (e) void this.card(e); }
   }
 
+  /** For tours: the table with one origin highlighted and one element marked, without a card. */
+  async show(origin: string | null, mark: string | null) {
+    this.filter = origin; this.mark = mark;
+    await this.open();
+    this.shell.card.hide();
+  }
+
   private onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') this.close(); };
 
   close() {
     if (!this.el) return;
-    this.el.remove(); this.el = null;
+    this.el.remove(); this.el = null; this.mark = null;
     this.info.open = false;
     document.documentElement.classList.remove('orrery-open');
     window.removeEventListener('keydown', this.onKey);
@@ -133,7 +141,7 @@ export class Elements {
       }
       if (acc < 0.999) stops.push(`#2a303c ${Math.round(acc * 100)}% 100%`);
       const dim = this.filter && (e.origin[this.filter] ?? 0) < 0.25;
-      const c = h('button', { type: 'button', class: `elm-cell${dim ? ' dim' : ''}`, 'data-z': String(e.z), title: tr(e.name), style: `grid-row:${row};grid-column:${col};background:linear-gradient(to top, ${stops.join(', ')})` },
+      const c = h('button', { type: 'button', class: `elm-cell${dim ? ' dim' : ''}${this.mark === e.symbol ? ' mark' : ''}`, 'data-z': String(e.z), title: tr(e.name), style: `grid-row:${row};grid-column:${col};background:linear-gradient(to top, ${stops.join(', ')})` },
         h('span', { class: 'elm-z' }, String(e.z)), h('span', { class: 'elm-sym' }, e.symbol));
       c.addEventListener('click', () => void this.card(e));
       grid.append(c);

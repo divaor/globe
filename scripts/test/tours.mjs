@@ -15,7 +15,7 @@ const files = args.filter((a) => !a.startsWith('--'));
 
 let tours = [];
 if (files.length) {
-  for (const f of files) tours.push(...(await import(pathToFileURL(path.resolve(f)).href)).TOURS);
+  for (const f of files) { const m = await import(pathToFileURL(path.resolve(f)).href); tours.push(...(m.TOURS ?? m.SKY_TOURS)); }
 } else {
   tours = (await import(pathToFileURL(path.join(ROOT, 'src/learn/tours.ts')).href)).TOURS;
 }
@@ -33,6 +33,20 @@ const km = (a, b) => {
   const r = Math.PI / 180;
   const c = Math.sin(a[1] * r) * Math.sin(b[1] * r) + Math.cos(a[1] * r) * Math.cos(b[1] * r) * Math.cos((a[0] - b[0]) * r);
   return 6371 * Math.acos(Math.max(-1, Math.min(1, c)));
+};
+
+const readJSON = (f) => { const p = path.join(ROOT, f); return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : null; };
+let targets = null;
+/** Everything a sky stop can look at: constellations, stars by HIP, deep-sky objects, the Local Group, the Sun, Moon and planets. */
+const skyTargets = () => {
+  if (targets) return targets;
+  targets = new Set(['sun', 'moon', 'mercury', 'venus', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune']);
+  for (const c of readJSON('public/data/sky/constellations.json')?.cons ?? []) targets.add(c.id);
+  for (const s of readJSON('public/data/sky/stars.json')?.stars ?? []) targets.add(String(s[0]));
+  for (const o of readJSON('public/data/sky/objects.json')?.objects ?? []) targets.add(o.id);
+  const g = readJSON('public/data/sky/galaxy.json');
+  for (const x of [...(g?.nearby ?? []), ...(g?.galaxy ?? []), ...(g?.localGroup ?? [])]) targets.add(x.id);
+  return targets;
 };
 
 let errors = 0, warnings = 0;
@@ -82,6 +96,21 @@ for (const tour of tours) {
     } else if (s.orrery) {
       if (!/^-?\d{1,4}-\d{2}-\d{2}$/.test(s.orrery.date ?? '')) err(`${at}: orrery date ${s.orrery.date} is not YYYY-MM-DD`);
       label = `solar system ${s.orrery.date}`;
+    } else if (s.sky) {
+      // A sky stop looks at a constellation, a star (HIP), a deep-sky object or a body that exists.
+      const t = s.sky.target;
+      if (t && !skyTargets().has(t)) err(`${at}: sky target "${t}" is not a constellation, star (HIP), object or body`);
+      if (s.sky.time && isNaN(new Date(s.sky.time).getTime())) err(`${at}: sky time ${s.sky.time} is not a date`);
+      if (s.sky.place && !(Math.abs(s.sky.place.lat) <= 90 && Math.abs(s.sky.place.lon) <= 180)) err(`${at}: sky place out of range`);
+      label = `sky ${t ?? ''}${s.sky.place ? ` from ${s.sky.place.label ?? `${s.sky.place.lat},${s.sky.place.lon}`}` : ''}`;
+    } else if (s.galaxy) {
+      if (!['nearby', 'neighbourhood', 'galaxy', 'local'].includes(s.galaxy) && !skyTargets().has(s.galaxy)) err(`${at}: galaxy target "${s.galaxy}" is unknown`);
+      label = `galaxy ${s.galaxy}`;
+    } else if (s.elements) {
+      const els = readJSON('public/data/sky/elements.json')?.elements ?? [];
+      if (s.elements.mark && !els.some((e) => e.symbol === s.elements.mark)) err(`${at}: no element "${s.elements.mark}"`);
+      if (s.elements.origin && !els.some((e) => (e.origin?.[s.elements.origin] ?? 0) > 0)) err(`${at}: no element made by "${s.elements.origin}"`);
+      label = `elements ${s.elements.origin ?? ''} ${s.elements.mark ?? ''}`;
     } else if (s.mode) label = `mode ${s.mode}`;
     else label = `map ${s.projection ?? ''} ${(s.stack ?? []).join('+')}`;
     if (list) console.log(`  ${String(i + 1).padStart(2)}. ${s.icon ?? ''}${s.title_en} | ${label}${s.fly ? ` | fly ${s.fly.join(', ')}` : ''}`);

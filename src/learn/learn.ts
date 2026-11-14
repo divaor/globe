@@ -1835,8 +1835,28 @@ export class Learn {
   private async showStep() {
     const tr = this.tour!;
     const s = tr.steps[tr.i];
-    // The solar system view closes at any other stop.
-    if (!s.orrery) this.space?.closeOrrery?.();
+    // The full-screen views (solar system, sky, galaxy, elements) close at any stop that isn't theirs.
+    const done = () => { this.renderTour(); if (this.tour === tr && tr.i === tr.steps.length - 1) this.badgeToast(recordTour(tr.name)); };
+    if (!s.orrery && !s.sky && !s.galaxy && !s.elements) this.space?.closeOverlays();
+    if (s.sky && this.sky) {
+      if (this.space?.active) await this.space.exit();
+      if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
+      await this.sky.show({ fov: 90, ...s.sky });
+      done();
+      return;
+    }
+    if (s.galaxy && this.space?.openGalaxy) {
+      if (this.space.active) await this.space.exit();
+      this.space.openGalaxy(s.galaxy);
+      done();
+      return;
+    }
+    if (s.elements && this.elements) {
+      if (this.space?.active) await this.space.exit();
+      await this.elements.show(s.elements.origin ?? null, s.elements.mark ?? null);
+      done();
+      return;
+    }
     if (s.orrery && this.space?.openOrrery) {
       const [y, m, d] = s.orrery.date.split('-').map(Number);
       const jd = Date.UTC(y, m - 1, d) / 86400000 + 2440587.5;
@@ -1861,6 +1881,7 @@ export class Learn {
       if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
       if (s.projection && this.app.projection !== s.projection) this.app.setProjection(s.projection);
       if (s.stack) await this.app.setStack(s.stack);
+      for (const [id, o] of Object.entries(s.options ?? {})) for (const [k, v] of Object.entries(o)) this.app.setOption(id, k, v);
     }
     if (s.fly) this.app.renderer.view.flyTo({ lon: s.fly[0], lat: s.fly[1], zoom: s.fly[2] }, 2200);
     this.app.renderer.requestRender();
@@ -1951,7 +1972,7 @@ export class Learn {
     if (!this.tour) return;
     clearInterval(this.tour.timer);
     // A tour that went beyond the Earth comes back to it.
-    if (this.tour.steps.some((x) => x.world || x.orrery)) { this.space?.closeOrrery?.(); if (this.space?.active) void this.space.exit(); }
+    if (this.tour.steps.some((x) => x.world || x.orrery || x.sky || x.galaxy || x.elements)) { this.space?.closeOverlays(); if (this.space?.active) void this.space.exit(); }
     this.tour = null;
     this.card.hidden = true;
     this.card.classList.remove('peek');

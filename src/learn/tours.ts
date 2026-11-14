@@ -1,4 +1,5 @@
 // Guided tours: short trips that fly the map, switch layers or open a step of a Time travel story.
+import type { SkyShow } from '../sky/sky';
 import type { ProjectionId } from '../engine/projections';
 import type { StoryKind } from '../modes/stories';
 
@@ -10,6 +11,14 @@ export interface TourStep {
   world?: string; map?: 'photo' | 'elev';
   /** The solar system on a date (YYYY-MM-DD): how far out, and the speed it plays at (days a second). */
   orrery?: { date: string; scale?: 'inner' | 'planets' | 'outer'; speed?: number };
+  /** The sky (sky/sky.ts): from a place at a time, looking at a target (constellation, HIP, object or body). */
+  sky?: SkyShow;
+  /** Our galaxy (sky/galaxy.ts), at a scale ("nearby", "neighbourhood", "galaxy", "local") or an object. */
+  galaxy?: string;
+  /** The elements table (sky/elements.ts), one origin highlighted and one element marked. */
+  elements?: { origin?: string; mark?: string };
+  /** Options for filters of `stack`: { resources: { res: 'gold' } }. */
+  options?: Record<string, Record<string, string>>;
 }
 /** `group` places the tour in the list: our planet (none), cities through time, history and culture, life through time, games of the world, journeys and trade routes, religions and philosophies, writing and languages, plagues and cures, natural disasters, music and dance, books and writers, or art of the world. */
 export interface Tour { icon: string; en: string; es: string; group?: 'cities' | 'history' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing' | 'plagues' | 'disasters' | 'music' | 'books' | 'art' | 'inventions' | 'heritage' | 'space'; steps: TourStep[] }
