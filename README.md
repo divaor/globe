@@ -60,6 +60,18 @@ spinning full-screen as an ambient display. English and Spanish.
   system** shows the Sun, the planets, the dwarf planets and Halley's Comet on their real orbits on any date from
   3000 BC to AD 3000, playing at a day to ten years a second; tap a world for its facts and visit it. Shared links
   open a world (`#world=mars`).
+- **Stars, the galaxy and the elements:** behind the globe, the real stars and the Milky Way, lined up for this
+  moment and the side of the Earth you face. **The night sky** from any place and time, or from where you are: 5,000
+  stars in their colours, the 88 constellations with their figures, borders and names, the Milky Way (ESO's
+  panorama), the Sun, the Moon with its phase and the planets, daylight and twilight; drag to look around, play the
+  hours, switch to the northern or southern sky, and tap a star, constellation, nebula, cluster, galaxy or planet for
+  its card (152 deep-sky objects, the brightest stars, every constellation's story). **Our galaxy**: one zoom from
+  the nearest stars through our neighbourhood and the Milky Way seen from above to Andromeda and the Local Group.
+  **Where the elements come from**: the periodic table filled with the share of each element made by the Big Bang,
+  cosmic rays, dying small stars, exploding massive stars, exploding white dwarfs and merging neutron stars (after
+  J. A. Johnson, 2019); an element's card shows where that happens in the sky, who mines it today (the resources
+  filter, now with 54 mined commodities) and where it was discovered. Search finds constellations, stars, sky objects
+  and elements; shared links open them (`#sky=Ori`, `#galaxy=M42`, `#element=Au`).
 - **Compare two filters:** any two country facts at once. Two numbers make a two-colour map (each in thirds,
   3 × 3 squares to tap) and a scatter chart linked to the globe both ways (tap a dot to fly to its country, tap
   a square to light its countries on the chart), with Spearman's ρ and Pearson's r in plain words, the
@@ -171,7 +183,7 @@ spinning full-screen as an ambient display. English and Spanish.
   the world, when was it built or made, dishes of the world, which era, which civilization, which geologic
   period, who won, guess the link between two country facts, which journey, which faith, which script, which
   language family, which epidemic, which disaster, what are you hearing, which book is it from, who made it, which World Heritage site, who invented it,
-  which world is this, who landed here), each ending with every answer and its picture; two games of time:
+  which world is this, who landed here, which constellation, where was this element made), each ending with every answer and its picture; two games of time:
   Put them in order (four things from the stories, oldest first, then shown in order with their dates and pins on the
   map) and Time detective (a map of old borders with no names: which of four years is it from?); a daily challenge
   of seven questions, the same for everyone each day, with a streak and a result to share; your progress, with right
@@ -184,7 +196,8 @@ spinning full-screen as an ambient display. English and Spanish.
   medicine's great discoveries, tsunamis across the oceans, the year without a summer, disasters of the Ring of Fire, first lines,
   great libraries, masterpieces and where they are, sounds of the world, cities of music, Latin America's World
   Heritage, nature's wonders, lost and rebuilt, China's great inventions, from the telegraph to the Web, invented in
-  Latin America, a grand tour of the solar system, footprints on the Moon); "On this day", any day of the year: what the Time travel stories tell of it, each opening its
+  Latin America, a grand tour of the solar system, footprints on the Moon, born in the stars, a night under the
+  Southern sky); "On this day", any day of the year: what the Time travel stories tell of it, each opening its
   step, and Wikipedia's selection of events, linked to the story that tells the same event.
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Ambient mode:** full-screen rotating globe with your filters, screen kept awake, clock, optional filter cycling.
@@ -259,6 +272,12 @@ Gazetteer of Planetary Nomenclature, with Solar System Scope's textures (CC BY 4
 (`scripts/data/space/`, `public/data/worlds/SOURCES.md`); the landings, the worlds' facts and the Space exploration
 stories are written from NASA, ESA, CNSA, ISRO, JAXA and the missions' pages, LROC and Wikipedia, as listed in each.
 The solar system view uses JPL's approximate planet positions (Standish) and its Small-Body Database.
+The sky's stars, constellation figures, borders and names come from d3-celestial (BSD; XHIP, the IAU, Davenhall &
+Leggett's boundaries), the Milky Way from ESO's panorama (ESO/S. Brunier, CC BY 4.0) and, seen from above, from an
+artist's impression (NASA/JPL-Caltech/ESO/R. Hurt); the constellations', stars', deep-sky objects' and elements'
+cards are written from Wikipedia, NASA, ESA, ESO and the papers listed in each, the elements' origins after Johnson
+(2019), and the mining figures are the USGS Mineral Commodity Summaries 2026 (`scripts/data/sky/`,
+`public/data/sky/SOURCES.md`).
 The script samples use subsets of the Noto fonts (SIL Open Font License 1.1) and, for rare Chinese characters,
 Jigmo (CC0), made by `scripts/data/build-fonts.mjs` (`public/data/fonts/`, with the licence in `OFL.txt`).
 
