@@ -56,13 +56,17 @@ export interface SkyShow {
   /** A quiz: no names, one constellation drawn. */
   bare?: boolean;
   focus?: string | null;
+  /** Where the sky was opened from (an element's card): a button in the header goes back there. */
+  back?: { label: string; go: () => void };
 }
 
 export class Sky {
   private gl = SkyGL.get();
   private data: SkyData | null = null;
   private el: HTMLElement | null = null;
-  private ui: { canvas: HTMLCanvasElement; place: HTMLElement; time: HTMLElement; play: HTMLButtonElement; input: HTMLInputElement; speeds: HTMLElement; chips: HTMLElement } | null = null;
+  private ui: { canvas: HTMLCanvasElement; place: HTMLElement; time: HTMLElement; play: HTMLButtonElement; input: HTMLInputElement; speeds: HTMLElement; chips: HTMLElement; backBtn: HTMLElement } | null = null;
+  /** Where the sky was opened from, to go back there (kept until the sky closes). */
+  private back: SkyShow['back'] | null = null;
   private raf = 0;
   private last = 0;
   // The moment and the place.
@@ -159,6 +163,8 @@ export class Sky {
     else if (first) { const [lon, lat] = this.app.renderer.view.center(); this.setPlace(lon, lat); }
     this.frame = s.frame ?? (s.center ? 'celestial' : first ? 'horizon' : this.frame);
     this.bare = !!s.bare;
+    if (s.back) this.back = s.back; else if (first) this.back = null;
+    if (this.ui) { this.ui.backBtn.hidden = !this.back; this.ui.backBtn.textContent = this.back ? `← ${this.back.label}` : ''; }
     this.focus = s.focus ?? null;
     if (s.fov) this.fov = s.fov;
     else if (first) this.fov = innerWidth < 600 ? 95 : 110;
@@ -203,14 +209,17 @@ export class Sky {
     here.addEventListener('click', () => this.locate());
     const speeds = h('div', { class: 'chip-row orr-speeds sky-speeds' });
     const chips = h('div', { class: 'chip-row sky-chips' });
+    // Back to where the sky was opened from (an element's card in the periodic table).
+    const backBtn = h('button', { type: 'button', class: 'pill sm sky-back', hidden: true });
+    backBtn.addEventListener('click', () => this.back?.go());
     const el = h('div', { class: 'orr sky', role: 'dialog', 'aria-label': L('The night sky', 'El cielo nocturno') }, canvas,
-      h('div', { class: 'orr-head glass' }, h('strong', null, `✨ ${L('The sky', 'El cielo')}`), h('div', { class: 'sky-where' }, place, time), close),
+      h('div', { class: 'orr-head glass' }, backBtn, h('strong', null, `✨ ${L('The sky', 'El cielo')}`), h('div', { class: 'sky-where' }, place, time), close),
       h('div', { class: 'orr-foot glass' },
         h('div', { class: 'orr-row' }, play, input, now, here),
         speeds, chips,
         h('div', { class: 'muted small' }, L('Drag to look around · pinch or scroll to zoom · tap a star, a constellation or a planet.', 'Arrastra para mirar alrededor · pellizca o usa la rueda para acercar · toca una estrella, una constelación o un planeta.'))));
     this.el = el;
-    this.ui = { canvas, place, time, play, input, speeds, chips };
+    this.ui = { canvas, place, time, play, input, speeds, chips, backBtn };
     document.documentElement.classList.add('orrery-open');
     this.app.root.append(el);
     this.bind(canvas);

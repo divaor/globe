@@ -1803,8 +1803,11 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.click('[data-tour="Born in the stars"]');
   await page.waitForTimeout(1200);
   await page.click('.tour-voice');
-  await page.waitForTimeout(300);
-  const v1 = await page.evaluate(() => ({ spoken: window.__spoken.slice(), marked: document.querySelectorAll('.tour-s.reading').length }));
+  // The sentence is marked while the voice reads it: watched from the page on every frame (a fixed wait can miss
+  // it on a busy machine, where the stand-in voice finishes both short sentences first).
+  const marked = await page.waitForFunction(() => window.__spoken.length >= 1 && document.querySelectorAll('.tour-s.reading').length === 1, null, { timeout: 5000, polling: 'raf' }).then(() => 1, () => 0);
+  const v1 = await page.evaluate(() => ({ spoken: window.__spoken.slice() }));
+  v1.marked = marked;
   await page.click('.tour-tools [aria-label="Auto"]');
   await page.waitForFunction(() => window.atlas.learn['tour']?.i >= 1, null, { timeout: 30000 }).catch(() => {});
   const v2 = await page.evaluate(() => ({ i: window.atlas.learn['tour']?.i, n: window.__spoken.length, first: window.__spoken.findIndex((s) => /átomos/i.test(s.text)) }));
@@ -1933,6 +1936,130 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => window.atlas.shell.ambient.stop());
   check(sh.playlist === 'mine' && sh.layers.join() === 'koppen' && sh.saved === 2, `a shared playlist link opens the screensaver with its views (${sh.layers.join()}, ${sh.saved} views kept)`);
   check(!errors.length, `no page errors in v0.22.0's features${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 19. v0.23.0: fixes from the phone test, and Spain's Spanish. Tapping "Only on Wi-Fi" in Settings leaves the sheet
+// where it was; Russia keeps its colour on Time detective's 1880 map as the map moves over the Middle East; a guided
+// tour that shows a story has one set of controls (the story's own play, steps and count are hidden) and the story
+// gets them back when the tour ends; an element's sky view has a button back to its card; the rumba has no clip
+// (the recording was a narrator); with "Español (España)" the texts use Spain's words (and go back), the map's
+// canvas measures Spain's words, and a voice from Spain comes first.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => {
+    try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {}
+    const voices = [
+      { name: 'Paulina', lang: 'es-MX', voiceURI: 'es-mx', localService: true },
+      { name: 'Monica', lang: 'es-ES', voiceURI: 'es-es', localService: true },
+      { name: 'Samantha', lang: 'en-US', voiceURI: 'en-us', localService: true },
+    ];
+    const synth = { getVoices: () => voices, speaking: false, pending: false, speak(u) { setTimeout(() => u.onend && u.onend(), 50); }, cancel() {}, addEventListener() {}, pause() {}, resume() {} };
+    Object.defineProperty(window, 'speechSynthesis', { value: synth, configurable: true });
+    window.SpeechSynthesisUtterance = class { constructor(t) { this.text = t; this.lang = ''; this.voice = null; this.rate = 1; } };
+  });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  const boot = async (hash) => {
+    // A new address that differs only in its hash does not load the page again: reload it.
+    await page.goto(url + hash, { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+    await page.reload({ waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+    await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+    await page.waitForTimeout(800);
+  };
+  await boot('#p=globe&l=political&c=100,45,3&lang=en');
+
+  // Settings: the Wi-Fi switch near the bottom of the sheet; a tap turns it on and nothing moves.
+  await page.evaluate(() => window.atlas.shell.openSettings());
+  await page.waitForTimeout(800);
+  await page.evaluate(() => { const b = document.querySelector('.sheet-body'), w = [...document.querySelectorAll('.switch')].find((x) => /Wi-Fi/.test(x.textContent)); b.scrollTop += w.getBoundingClientRect().bottom - b.getBoundingClientRect().bottom + 20; });
+  await page.waitForTimeout(400);
+  const where = () => page.evaluate(() => ({ head: Math.round(document.querySelector('.sheet-head').getBoundingClientRect().top), sheet: document.querySelector('.sheet').scrollTop, on: [...document.querySelectorAll('.switch')].find((x) => /Wi-Fi/.test(x.textContent)).querySelector('input').checked }));
+  const w0 = await where();
+  const box = await page.evaluate(() => { const r = [...document.querySelectorAll('.switch')].find((x) => /Wi-Fi/.test(x.textContent)).querySelector('.switch-track').getBoundingClientRect(); return [r.x + r.width / 2, r.y + r.height / 2]; });
+  await page.touchscreen.tap(box[0], box[1]);
+  await page.waitForTimeout(800);
+  const w1 = await where();
+  check(w1.on !== w0.on && w1.head === w0.head && w1.sheet === 0, `Settings: tapping "Only on Wi-Fi" switches it and the sheet stays put (head at ${w0.head} → ${w1.head}px, sheet scrolled ${w1.sheet}px)`);
+  await page.touchscreen.tap(box[0], box[1]);
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+  await page.waitForTimeout(500);
+
+  // Time detective's 1880 map: Russia still coloured after the map moves over the Middle East.
+  const shown = await page.evaluate(() => window.atlas.time.history.quizMap(1880));
+  await page.evaluate(() => window.atlas.app.flyTo(55, 35, 3));
+  await page.waitForTimeout(2500);
+  await page.evaluate(() => window.atlas.app.flyTo(62, 38, 3.2));
+  await page.waitForTimeout(2500);
+  const ru = await page.evaluate(() => {
+    const ren = window.atlas.app.renderer, g = document.getElementById('fg').getContext('2d');
+    const px = (lon, lat) => { const p = ren.view.project(lon, lat); return p ? [...g.getImageData(Math.round(p[0] * ren.view.dpr), Math.round(p[1] * ren.view.dpr), 1, 1).data] : null; };
+    return { volga: px(46, 48), urals: px(60, 52), caspian: px(51, 41.5) };
+  });
+  await page.evaluate(() => window.atlas.time.history.quizMap(null));
+  const near = (a, b) => a && b && Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]) < 30;
+  check(shown && ru.volga?.[3] === 255 && ru.urals?.[3] === 255 && near(ru.volga, ru.urals), `Time detective 1880: Russia keeps its colour over the Middle East (lower Volga ${ru.volga?.slice(0, 3)}, southern Urals ${ru.urals?.slice(0, 3)})`);
+
+  // A guided tour stopping at a story: one set of controls.
+  await page.evaluate(() => window.atlas.learn['openTours']());
+  await page.waitForTimeout(700);
+  await page.click('[data-tour="Paris through time"]');
+  await page.waitForFunction(() => document.querySelector('.warbar.guided'), null, { timeout: 20000 }).catch(() => {});
+  await page.waitForTimeout(1500);
+  const vis = (sel) => [...document.querySelectorAll(sel)].some((e) => e.getClientRects().length && getComputedStyle(e).display !== 'none');
+  const g1 = await page.evaluate((v) => { const vis = new Function(`return (${v})`)(); return { guided: !!document.querySelector('.warbar.guided'), play: vis('.warbar .tb-play'), nav: vis('.warbar .wb-nav'), count: vis('.warbar .wb-count'), tourPlay: vis('.tour-card button, .learn-card button') }; }, vis.toString());
+  await page.evaluate(() => window.atlas.learn['stopTour']());
+  await page.waitForTimeout(1200);
+  const g2 = await page.evaluate(() => ({ bar: !!document.querySelector('.warbar'), guided: !!document.querySelector('.warbar.guided') }));
+  check(g1.guided && !g1.play && !g1.nav && !g1.count && !g2.guided, `a tour at a story step shows only the tour's controls (story play ${g1.play}, steps ${g1.nav}, count ${g1.count}); after the tour the story is unguided (${g2.bar ? 'bar kept' : 'bar closed'})`);
+  await page.evaluate(() => { for (const s of Object.values(window.atlas.time.stories)) if (s.active) s.exit(); });
+  await page.waitForTimeout(1200);
+
+  // An element's sky view, and back to its card.
+  await page.evaluate(() => window.atlas.elements.open());
+  await page.waitForSelector('.elm-cell[data-z="79"]', { timeout: 15000 }).catch(() => {});
+  await page.click('.elm-cell[data-z="79"]');
+  await page.waitForTimeout(900);
+  await page.evaluate(() => [...document.querySelectorAll('.country-card a, .country-card button')].find((b) => /in the sky/i.test(b.textContent))?.click());
+  await page.waitForTimeout(2000);
+  const sk = await page.evaluate(() => ({ sky: window.atlas.sky.info.open, back: document.querySelector('.sky-back:not([hidden])')?.textContent ?? '' }));
+  await page.click('.sky-back');
+  await page.waitForTimeout(1500);
+  const bk = await page.evaluate(() => ({ sky: window.atlas.sky.info.open, table: window.atlas.elements.info.open, card: document.querySelector('.country-card:not([hidden])')?.innerText.split('\n').filter(Boolean).slice(0, 2).join(' ') ?? '' }));
+  check(sk.sky && /Au/.test(sk.back) && !bk.sky && bk.table && /Gold/.test(bk.card), `from gold's card to the sky ("${sk.back}") and back to the table with gold's card (${bk.card})`);
+  await page.evaluate(() => window.atlas.elements.close());
+  await page.waitForTimeout(500);
+
+  // The rumba: no clip (the recording only had a narrator).
+  const rumba = await page.evaluate(async () => { const j = await (await fetch('data/music/latin-rhythms.json')).json(); const it = j.items.find((i) => i.id === 'rumba'); return it ? { audio: !!it.audio } : null; });
+  check(rumba && !rumba.audio, `the Cuban rumba has no clip (${JSON.stringify(rumba)})`);
+
+  // Spain's Spanish: a share link with lang=es-ES, a story's texts with Spain's words, the canvas, the voices.
+  await boot('#p=globe&l=political&c=-60,0,1&lang=es-ES');
+  await page.evaluate(() => window.atlas.time.stories.inventions.open('who-really-invented-it', 13));
+  await page.waitForTimeout(2500);
+  const words = () => page.evaluate(() => { const t = document.body.innerText; return { ord: (t.match(/ordenador/g) ?? []).length, comp: (t.match(/computadora/g) ?? []).length, lang: document.documentElement.lang }; });
+  const es1 = await words();
+  const cv = await page.evaluate(() => { const c = document.createElement('canvas').getContext('2d'); c.font = '16px sans-serif'; return [c.measureText('papas fritas').width, c.measureText('patatas fritas').width]; });
+  await page.evaluate(() => window.atlas.app.setLang('es', 'latam'));
+  await page.waitForTimeout(800);
+  const es2 = await words();
+  await page.evaluate(() => window.atlas.app.setLang('es', 'spain'));
+  await page.waitForTimeout(800);
+  const es3 = await words();
+  check(es1.ord > 0 && es1.comp === 0 && es1.lang === 'es-ES' && es2.comp > 0 && es2.ord === 0 && es3.ord > 0 && es3.comp === 0, `Español (España): "ordenador" ×${es1.ord}, no "computadora"; Latin American Spanish brings back "computadora" ×${es2.comp}; and Spain's again`);
+  check(Math.abs(cv[0] - cv[1]) < 0.01, `the map's canvas measures Spain's words ("papas fritas" as "patatas fritas": ${cv.map((x) => x.toFixed(1)).join(' = ')})`);
+  await page.evaluate(() => window.atlas.time.stories.inventions.exit());
+  await page.waitForTimeout(800);
+  await page.evaluate(() => window.atlas.shell.openSettings());
+  await page.waitForTimeout(800);
+  const st = await page.evaluate(() => ({ seg: [...document.querySelectorAll('.seg-wrap .seg-btn')].map((b) => b.textContent + (b.classList.contains('on') ? '*' : '')), voice: document.querySelector('.voice-settings select option')?.textContent ?? '' }));
+  await page.evaluate(() => [...document.querySelectorAll('.seg-wrap .seg-btn')].find((b) => /Latinoam/.test(b.textContent))?.click());
+  await page.waitForTimeout(800);
+  const st2 = await page.evaluate(() => ({ spanish: window.atlas.app.spanish, voice: document.querySelector('.voice-settings select option')?.textContent ?? '', share: window.atlas.app.shareUrl() }));
+  check(st.seg.join() === 'English,Español (Latinoamérica),Español (España)*' && /España/.test(st.voice) && st2.spanish === 'latam' && /México/.test(st2.voice) && /lang=es(&|$)/.test(st2.share), `Settings: ${st.seg.join(' | ')}; first voice ${st.voice}, and ${st2.voice} for Latin America`);
+  check(!errors.length, `no page errors in v0.23.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

@@ -2,7 +2,7 @@
 
 A detailed, colourful, installable world globe (PWA). Stack any of ~140 map filters, morph between 14
 projections, travel through 123,000 years of borders and a billion years of plate tectonics, and leave it
-spinning full-screen as an ambient display. English and Spanish.
+spinning full-screen as an ambient display. English and Spanish (Latin America's, or Spain's words).
 
 - **App:** https://divaor.github.io/globe/ (GitHub Pages, deployed from `main`)
 - **Install:** open it in Chrome, Edge or Safari, then "Install app" / "Add to Home Screen". Works offline after the first visit.
@@ -69,7 +69,7 @@ spinning full-screen as an ambient display. English and Spanish.
   the nearest stars through our neighbourhood and the Milky Way seen from above to Andromeda and the Local Group.
   **Where the elements come from**: the periodic table filled with the share of each element made by the Big Bang,
   cosmic rays, dying small stars, exploding massive stars, exploding white dwarfs and merging neutron stars (after
-  J. A. Johnson, 2019); an element's card shows where that happens in the sky, who mines it today (the resources
+  J. A. Johnson, 2019); an element's card shows where that happens in the sky (with a button back to the element), who mines it today (the resources
   filter, now with 54 mined commodities) and where it was discovered. Search finds constellations, stars, sky objects
   and elements; shared links open them (`#sky=Ori`, `#galaxy=M42`, `#element=Au`).
 - **Your data:** a CSV (or a table pasted from a spreadsheet) becomes a filter with a legend, kept on your device
@@ -212,6 +212,16 @@ spinning full-screen as an ambient display. English and Spanish.
 - **Read aloud:** guided tours and the Time travel stories read by your device's own voices, in English or Latin
   American Spanish (a Mexican or other Latin American voice before Spain's); the sentence being read is marked, the
   next stop or step waits for the voice, and music turns down while it reads. Choose the voice and speed in Settings.
+  A guided tour that stops at a story shows one set of controls (the tour's play, back and next); the story's own
+  come back when the tour ends.
+- **Two Spanishes:** Settings → Language offers English, Español (Latinoamérica) and Español (España). The texts are
+  written once in Latin American Spanish; Spain's Spanish shows them with the words used in Spain (ordenador, patata,
+  zumo, móvil, coche, vídeo, judías, gafas, añadir, penalti, prórroga, piso, quotations with vosotros…), on the page,
+  on the map's labels and when read aloud (by a voice from Spain first). The rules (`src/app/spain.ts`) were written
+  for the phrases the app uses and keep words that mean something else here (the Pope, "Maní" the town, "departamento"
+  as a region, the human "computadoras" of Harvard and NASA). `npm run test:spain` applies them to all 52,616 Spanish
+  texts, checks agreement ("el primer ordenador electrónico", "judías negras") and, with `--list`, prints every
+  change for review. A share link carries the choice (`lang=es-ES`).
 - **Ambient mode:** full-screen rotating globe, screen kept awake, clock. Show the filters on your map, or a
   screensaver playlist: Our planet, Night and day, Restless Earth, Water and weather, Life on Earth, People and
   cultures, or Around Latin America, each view with its title and a line about it, read aloud if you like; or make

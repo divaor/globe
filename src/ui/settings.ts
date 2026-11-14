@@ -37,8 +37,16 @@ export function settingsPanel(app: App, reopen: () => void): HTMLElement {
     }
   });
 
+  type Choice = Lang | 'es-ES';
+  const langPicker = segmented<Choice>(app.lang === 'es' && app.spanish === 'spain' ? 'es-ES' : app.lang, [
+    ...LANGS.filter((l) => l.id !== 'es').map((l) => ({ value: l.id as Choice, label: l.name })),
+    { value: 'es', label: 'Español (Latinoamérica)' },
+    { value: 'es-ES', label: 'Español (España)' },
+  ], (v) => { app.setLang(v === 'es-ES' ? 'es' : v, v === 'es-ES' ? 'spain' : v === 'es' ? 'latam' : app.spanish); reopen(); });
+  langPicker.classList.add('seg-wrap');
   return h('div', { class: 'settings' },
-    field(t('language'), segmented<Lang>(app.lang, LANGS.map((l) => ({ value: l.id, label: l.name })), (v) => { app.setLang(v); reopen(); })),
+    // English, and the two Spanishes: the texts as written (Latin America) or with Spain's words.
+    field(t('language'), langPicker),
     field(t('theme'), segmented<'dark' | 'light'>(app.themeId, [{ value: 'dark', label: t('themeDark') }, { value: 'light', label: t('themeLight') }], (v) => app.setTheme(v))),
     h('h3', { class: 'sec-title' }, t('labels')),
     h('div', { class: 'toggles' },

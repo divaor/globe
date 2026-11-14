@@ -113,7 +113,7 @@ a { color: var(--accent); }
 .menu-item:hover { background: var(--chip); }
 
 /* ---------- sheet */
-.sheet { position: absolute; top: calc(70px + var(--safe-t)); left: calc(12px + var(--safe-l)); bottom: calc(14px + var(--safe-b)); width: min(410px, calc(100vw - 24px)); border-radius: var(--radius); display: flex; flex-direction: column; overflow: hidden; background: var(--glass-strong); opacity: 0; transform: translateX(-12px); transition: opacity .18s, transform .18s; z-index: 5; }
+.sheet { position: absolute; top: calc(70px + var(--safe-t)); left: calc(12px + var(--safe-l)); bottom: calc(14px + var(--safe-b)); width: min(410px, calc(100vw - 24px)); border-radius: var(--radius); display: flex; flex-direction: column; overflow: hidden; overflow: clip; background: var(--glass-strong); opacity: 0; transform: translateX(-12px); transition: opacity .18s, transform .18s; z-index: 5; }
 .sheet.open { opacity: 1; transform: none; }
 .sheet-grip { display: none; }
 .sheet-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 10px 6px 18px; }
@@ -163,8 +163,9 @@ a { color: var(--accent); }
 /* ---------- controls */
 .slider { flex: 1; accent-color: var(--accent); height: 28px; }
 .select { height: 34px; border-radius: 10px; border: 1px solid var(--line); background: var(--glass-strong); color: var(--text); padding: 0 8px; font: inherit; font-size: 13.5px; }
-.switch { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; font-size: 14px; }
-.switch-input { position: absolute; opacity: 0; pointer-events: none; }
+.switch { position: relative; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; font-size: 14px; }
+/* The hidden checkbox sits inside its switch: focusing it (a tap) must not scroll a panel that clips its overflow. */
+.switch-input { position: absolute; left: 0; top: 50%; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
 .switch-track { position: relative; width: 40px; height: 24px; border-radius: 12px; background: var(--line-strong); transition: background .15s; flex: none; }
 .switch-thumb { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 9px; background: #fff; transition: transform .15s; box-shadow: 0 1px 4px rgba(0,0,0,.3); }
 .switch-input:checked + .switch-track { background: var(--accent); }
@@ -173,6 +174,8 @@ a { color: var(--accent); }
 .seg { display: flex; padding: 3px; border-radius: 12px; background: var(--chip); border: 1px solid var(--line); gap: 2px; }
 .seg-btn { flex: 1; height: 34px; border: 0; border-radius: 9px; background: none; cursor: pointer; font-size: 13px; font-weight: 600; color: var(--muted); padding: 0 8px; }
 .seg-btn.on { background: var(--glass-strong); color: var(--text); box-shadow: 0 1px 6px rgba(0,0,0,.18); }
+/* Longer choices (the language: "Español (Latinoamérica)") may take two lines. */
+.seg-wrap .seg-btn { height: auto; min-height: 34px; padding: 5px 6px; line-height: 1.2; }
 .field { margin: 12px 0; display: flex; flex-direction: column; gap: 8px; }
 .field-label { font-size: 13px; font-weight: 650; display: flex; justify-content: space-between; }
 .field-hint { color: var(--muted); font-weight: 500; }
@@ -903,3 +906,10 @@ html.orrery-open .learn-card { z-index: 26; }
 .md-set { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--line); }
 .md-set-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
 .md-set .pill.on { color: var(--accent); }
+
+/* A story shown by a guided tour: the tour card has the only controls (v0.23.0). */
+.warbar.guided .tb-play, .warbar.guided .wb-nav, .warbar.guided .wb-count, .warbar.guided .wb-voice,
+.warbar.guided .wb-list, .warbar.guided .wb-exit, .warbar.guided .wb-browse { display: none; }
+/* The sky opened from an element: a button back to it (v0.23.0); on a phone it takes the title's place. */
+.sky-back { flex: none; max-width: 46%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 600px) { .sky-back:not([hidden]) + strong { display: none; } }

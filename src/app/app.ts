@@ -5,7 +5,7 @@ import { Renderer } from '../engine/renderer';
 import { Interaction } from '../engine/interaction';
 import { PROJECTIONS, type ProjectionId } from '../engine/projections';
 import { THEMES } from './theme';
-import { detectLang, setLang, type Lang } from './i18n';
+import { detectLang, detectSpanish, setLang, setSpanish, type Lang, type Spanish } from './i18n';
 import { setLayerContext } from '../layers/context';
 import { tiles, prefs as terrainPrefs } from '../engine/tiles';
 import { DETAIL_LAYERS } from '../layers/imagery';
@@ -15,6 +15,8 @@ export interface ActiveSpec { id: string; opacity: number; options?: Record<stri
 
 interface Saved {
   lang?: Lang;
+  /** Which Spanish (Latin America's, or Spain's words). */
+  es?: Spanish;
   theme?: 'dark' | 'light';
   projection?: ProjectionId;
   active?: ActiveSpec[];
@@ -37,6 +39,7 @@ export class App {
   readonly interaction: Interaction;
   readonly registry = new Map<string, LayerDef>();
   lang: Lang = detectLang();
+  spanish: Spanish = detectSpanish();
   themeId: 'dark' | 'light' = 'dark';
   selection: string | null = null;
   /** Ambient mode (the screensaver): its playlist ('' for the filters on the map), seconds a view, reading aloud. */
@@ -102,6 +105,7 @@ export class App {
 
   async start() {
     const saved = this.restore();
+    setSpanish(this.spanish);
     setLang(this.lang);
     this.renderer.lang = this.lang;
     this.renderer.theme = THEMES[this.themeId];
@@ -209,8 +213,11 @@ export class App {
 
   get projection(): ProjectionId { return this.renderer.view.current.id; }
 
-  setLang(l: Lang) {
+  /** The language, and for Spanish which Spanish ('latam' or 'spain'). */
+  setLang(l: Lang, spanish: Spanish = this.spanish) {
     this.lang = l;
+    this.spanish = spanish;
+    setSpanish(spanish);
     setLang(l);
     this.renderer.lang = l;
     for (const inst of this.layers) inst.def.onOptionsChanged?.(inst);
@@ -278,7 +285,7 @@ export class App {
   private snapshot(): Saved {
     const r = this.renderer;
     return {
-      lang: this.lang, theme: this.themeId, projection: this.projection,
+      lang: this.lang, es: this.spanish, theme: this.themeId, projection: this.projection,
       active: this.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, opacity: Math.round(l.opacity * 100) / 100, options: l.options })),
       labels: r.settings.labels, graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality, gpuMotion: r.settings.gpuMotion,
       labelScale: r.settings.labelScale,
@@ -301,7 +308,7 @@ export class App {
     const layers = (s.active ?? []).map((a) => (a.opacity !== 1 ? `${a.id}~${a.opacity}` : a.id)).join(',');
     const opts = (s.active ?? []).filter((a) => a.options && Object.keys(a.options).length)
       .map((a) => `${a.id}:${Object.entries(a.options!).map(([k, v]) => `${k}=${v}`).join(';')}`).join('|');
-    const p = new URLSearchParams({ p: s.projection!, l: layers, c: `${c.lon.toFixed(2)},${c.lat.toFixed(2)},${c.zoom.toFixed(2)}`, lang: s.lang! });
+    const p = new URLSearchParams({ p: s.projection!, l: layers, c: `${c.lon.toFixed(2)},${c.lat.toFixed(2)},${c.zoom.toFixed(2)}`, lang: s.lang === 'es' && s.es === 'spain' ? 'es-ES' : s.lang! });
     if (opts) p.set('o', opts);
     return p.toString();
   }
@@ -334,12 +341,14 @@ export class App {
         ...saved,
         projection: (hash.get('p') as ProjectionId) ?? saved.projection,
         active,
-        lang: (hash.get('lang') as Lang) ?? saved.lang,
+        lang: (hash.get('lang')?.slice(0, 2) as Lang) ?? saved.lang,
+        es: hash.get('lang') === 'es-ES' ? 'spain' : hash.get('lang') === 'es' ? 'latam' : saved.es,
         camera: c.length === 3 && c.every(isFinite) ? { lon: c[0], lat: c[1], zoom: c[2] } : saved.camera,
       };
     }
     const r = this.renderer;
     if (saved.lang === 'en' || saved.lang === 'es') this.lang = saved.lang;
+    if (saved.es === 'latam' || saved.es === 'spain') this.spanish = saved.es;
     if (saved.theme) this.themeId = saved.theme;
     if (saved.labels) r.settings.labels = { ...r.settings.labels, ...saved.labels };
     if (saved.graticule !== undefined) r.settings.graticule = saved.graticule;

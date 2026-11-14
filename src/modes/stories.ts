@@ -337,6 +337,9 @@ export class StoryMode {
   private stepAt = 0;
   /** The voice reading the step (with reading aloud on): not reading, reading, or read to the end, and when it ended. */
   private voice: 'off' | 'reading' | 'done' = 'off';
+  /** Shown by a guided tour: the tour card has the only controls (play, back, next, reading aloud), and the bar
+   * only tells the step. */
+  private guided = false;
   private voiceEnd = 0;
   private offVoice: (() => void) | null = null;
   private playing = false;
@@ -433,7 +436,7 @@ export class StoryMode {
   private get sheetId() { return this.wars ? 'wars' : `story-${this.kind}`; }
 
   /** Opens a story (at a step, from a shared link) and starts playing it; `focus` shows one item. */
-  async open(id: string, at = 0, focus?: { name: string; at: Pt }) {
+  async open(id: string, at = 0, focus?: { name: string; at: Pt }, guided = false) {
     this.shell.sheet.close();
     stopClip(300);
     await this.ensureIndex();
@@ -452,9 +455,10 @@ export class StoryMode {
     this.areas = new Map(shapesFrom(topo, 'areas').map((s) => [Number(s.id), { ...s, ...labelPoint(s.feature) }]));
     this.step = Math.max(0, Math.min(c.steps.length - 1, at)); this.prev = -1;
     this.textOpen = false;
+    this.guided = guided;
     this.buildBar();
     this.go(this.step, { fly: !focus });
-    this.playing = !focus;
+    this.playing = !focus && !guided;
     if (this.playing) this.narrate(false);
     this.renderBar();
     this.app.emit('mode', this.kind);
@@ -615,7 +619,8 @@ export class StoryMode {
    */
   private narrate(user: boolean) {
     const c = this.c;
-    if (!c || !narrationOn() || !(this.playing || user)) {
+    // A guided tour reads its own words.
+    if (!c || this.guided || !narrationOn() || !(this.playing || user)) {
       if (this.voice === 'reading') stopSpeaking();
       this.voice = 'off';
       return;
@@ -1431,9 +1436,22 @@ export class StoryMode {
 
   /** Shows a story at a step, paused (guided tours): opens it, or just moves when it is open. */
   async show(id: string, step: number) {
-    if (this.active && this.c?.id === id) { this.shell.card.hide(); this.go(step, { user: true }); }
-    else await this.open(id, step);
+    if (this.active && this.c?.id === id) {
+      if (!this.guided) { this.guided = true; this.bar?.classList.add('guided'); }
+      this.shell.card.hide();
+      this.go(step, { user: true });
+    } else await this.open(id, step, undefined, true);
     this.pause();
+    this.measureBar();
+  }
+
+  /** The tour that showed the story ended: the bar gets its own controls back. */
+  unguide() {
+    if (!this.guided) return;
+    this.guided = false;
+    this.bar?.classList.remove('guided');
+    this.renderBar();
+    this.measureBar();
   }
 
   /** Flies to an item and opens its card. */
@@ -1610,7 +1628,7 @@ export class StoryMode {
       tick.addEventListener('click', () => { this.playing = false; this.go(i, { user: true }); });
       track.append(tick);
     });
-    this.bar = h('section', { class: 'warbar glass', 'aria-label': tx(c.name) },
+    this.bar = h('section', { class: `warbar glass${this.guided ? ' guided' : ''}`, 'aria-label': tx(c.name) },
       h('div', { class: 'wb-top' },
         play,
         h('div', { class: 'wb-head' }, date, h('div', { class: 'wb-name' }, h('span', { class: 'wb-title-short' }, `${c.icon} ${tx(c.name)}`), count)),

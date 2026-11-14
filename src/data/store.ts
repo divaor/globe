@@ -60,9 +60,58 @@ export function loadJSON<T = unknown>(path: string): Promise<T> {
   return p as Promise<T>;
 }
 
+/**
+ * A shape's bounding box: west, south, east, north (west > east when it crosses 180°). A multipolygon's parts are
+ * bounded one by one and their longitudes joined around the globe by hand, leaving out the widest empty gap: d3's
+ * geoBounds can join a part that crosses 180° with a small one beyond it into a box a couple of degrees wide (the
+ * Russian Empire of 1880 came out as 172°W–170°W, and vanished from views of the Middle East).
+ */
 export function bboxOf(f: Feature | Geometry | { type: string }): BBox {
+  const g = ((f as Feature).type === 'Feature' ? (f as Feature).geometry : f) as Geometry | null;
+  if (g?.type === 'MultiPolygon' && g.coordinates.length > 1) {
+    let s = 90, n = -90;
+    const spans: [number, number][] = [];
+    for (const c of g.coordinates) {
+      const b = geoBounds({ type: 'Polygon', coordinates: c } as never);
+      s = Math.min(s, b[0][1]); n = Math.max(n, b[1][1]);
+      const w = b[0][0], e = b[1][0];
+      spans.push([w, e < w ? e + 360 : e]);
+    }
+    const lon = joinLongitudes(spans);
+    return [lon[0], s, lon[1], n];
+  }
   const b = geoBounds(f as never);
   return [b[0][0], b[0][1], b[1][0], b[1][1]];
+}
+
+/** The narrowest range of longitude covering all the spans ([west, east], east up to west + 360): [west, east] with
+ * west > east when it crosses 180°, or [-180, 180] when they go all the way round. */
+export function joinLongitudes(spans: [number, number][]): [number, number] {
+  if (!spans.length) return [-180, 180];
+  if (spans.some(([w, e]) => e - w >= 359.999)) return [-180, 180];
+  const iv = spans.map(([w, e]) => { const w0 = ((w + 180) % 360 + 360) % 360 - 180; return [w0, w0 + (e - w)] as [number, number]; }).sort((a, b) => a[0] - b[0]);
+  const merged: [number, number][] = [];
+  for (const [w, e] of iv) {
+    const last = merged[merged.length - 1];
+    if (last && w <= last[1]) last[1] = Math.max(last[1], e); else merged.push([w, e]);
+  }
+  // A span past 180° that reaches round to the first ones joins them.
+  while (merged.length > 1 && merged[merged.length - 1][1] - 360 >= merged[0][0]) {
+    const first = merged.shift()!;
+    const last = merged[merged.length - 1];
+    last[1] = Math.max(last[1], first[1] + 360);
+  }
+  if (merged.length === 1 && merged[0][1] - merged[0][0] >= 359.999) return [-180, 180];
+  // Leave out the widest gap between them.
+  let gap = -1, west = merged[0][0], east = merged[merged.length - 1][1];
+  for (let i = 0; i < merged.length; i++) {
+    const cur = merged[i], next = merged[(i + 1) % merged.length];
+    const g = (i + 1 < merged.length ? next[0] : next[0] + 360) - cur[1];
+    if (g > gap) { gap = g; east = cur[1]; west = next[0]; }
+  }
+  if (gap <= 0) return [-180, 180];
+  const norm = (x: number) => ((x + 180) % 360 + 360) % 360 - 180;
+  return [norm(west), norm(east) === -180 && east > 0 ? 180 : norm(east)];
 }
 
 /** Rough test: can a bbox be within `radius` (radians) of `center`? Conservative. */
