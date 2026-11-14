@@ -1843,6 +1843,8 @@ export class Learn {
   private stopTour() {
     if (!this.tour) return;
     clearInterval(this.tour.timer);
+    // A tour that went beyond the Earth comes back to it.
+    if (this.tour.steps.some((x) => x.world || x.orrery)) { this.space?.closeOrrery?.(); if (this.space?.active) void this.space.exit(); }
     this.tour = null;
     this.card.hidden = true;
     this.card.classList.remove('peek');

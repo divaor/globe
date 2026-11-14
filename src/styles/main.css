@@ -810,3 +810,4 @@ html.mode-world .zoom-3d { display: none; }
 html[data-theme="light"] .orr-input { color-scheme: light; }
 html.orrery-open .country-card { z-index: 25; }
 html.orrery-open .zoombar, html.orrery-open .dock, html.orrery-open .chips, html.orrery-open .legend, html.orrery-open .worldbar { visibility: hidden; }
+html.orrery-open .learn-card { z-index: 26; }

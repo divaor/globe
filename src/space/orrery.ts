@@ -132,11 +132,15 @@ export class Orrery {
     this.shell.card.hide();
   }
 
-  /** Plays from a date at a speed (tours use it). */
-  show(jd: number, scale: Scale = 'planets', speed?: number) {
+  /** Plays from a date at a speed in days a second, the nearest of the speeds offered (tours use it). */
+  show(jd: number, scale: Scale = 'planets', days?: number) {
     if (!this.el) this.open(jd); else this.jd = jd;
-    this.scale = scale;
-    if (speed != null) { this.speed = speed; this.playing = true; }
+    this.scale = scale; this.zoom = 1; this.pan = [0, 0];
+    if (days != null) {
+      let k = 0;
+      SPEEDS.forEach((s, i) => { if (Math.abs(Math.log(s.days / days)) < Math.abs(Math.log(SPEEDS[k].days / days))) k = i; });
+      this.speed = k; this.playing = true;
+    }
     this.renderFoot(); this.dirty();
   }
 
@@ -195,7 +199,9 @@ export class Orrery {
     ctx.clearRect(0, 0, W, H);
     // The space between the head and the foot.
     const head = this.el!.querySelector('.orr-head')!.getBoundingClientRect(), foot = this.el!.querySelector('.orr-foot')!.getBoundingClientRect();
-    const top = head.bottom + 8, bottom = foot.top - 8;
+    // A tour's card at the top (the tour shows the solar system) takes some of the room.
+    const tourCard = document.querySelector<HTMLElement>('.learn-card:not([hidden])')?.getBoundingClientRect();
+    const top = Math.max(head.bottom, tourCard && tourCard.height ? tourCard.bottom : 0) + 8, bottom = foot.top - 8;
     const cx = W / 2 + this.pan[0], cy = (top + bottom) / 2 + this.pan[1];
     const R = (Math.min(W, bottom - top) / 2 - 18) * this.zoom;
     const jd = this.jd;

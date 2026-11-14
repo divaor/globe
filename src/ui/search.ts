@@ -4,7 +4,13 @@ import { h, icon, clear, normalize } from './dom';
 import { t, fmtCompact, flagEmoji } from '../app/i18n';
 import type { App } from '../app/app';
 
-interface Hit { kind: 'country' | 'city'; id?: string; lon: number; lat: number; label: string; sub: string; score: number; zoom?: number }
+export interface Hit {
+  kind: 'country' | 'city' | 'place'; id?: string; lon: number; lat: number; label: string; sub: string; score: number; zoom?: number;
+  /** Its own icon, and what choosing it does (another world's places). */
+  icon?: string; pick?: () => void;
+}
+/** Another source of places (another world's names): returns hits, or null to search the Earth. */
+export type SearchProvider = { hint: () => string; search: (q: string, score: (name: string) => number) => Hit[] } | null;
 
 export class SearchBox {
   readonly el: HTMLElement;
@@ -14,6 +20,8 @@ export class SearchBox {
   private active = 0;
   /** Called with the chosen place (e.g. to pulse a marker). */
   onPick: ((lon: number, lat: number) => void) | null = null;
+  /** Set while another world is on the globe (space/space.ts). */
+  provider: () => SearchProvider = () => null;
 
   constructor(private app: App) {
     this.input = h('input', { type: 'search', class: 'search-field', placeholder: t('searchHint'), 'aria-label': t('search'), autocomplete: 'off', spellcheck: 'false' }) as HTMLInputElement;
@@ -32,7 +40,7 @@ export class SearchBox {
 
   open() {
     this.el.hidden = false;
-    this.input.placeholder = t('searchHint');
+    this.input.placeholder = this.provider()?.hint() ?? t('searchHint');
     this.input.value = '';
     this.update();
     setTimeout(() => this.input.focus(), 30);
@@ -58,6 +66,8 @@ export class SearchBox {
       return 0;
     };
     const es = this.app.lang === 'es';
+    const other = this.provider();
+    if (other) return other.search(q, score).sort((a, b) => b.score - a.score).slice(0, 12);
     for (const [id, m] of Object.entries(this.app.data.meta)) {
       const s = Math.max(score(m.n), score(m.es), m.ab ? score(m.ab) * 0.6 : 0, id.toLowerCase() === q ? 90 : 0);
       if (s > 0) out.push({ kind: 'country', id, lon: m.lx, lat: m.ly, label: es ? m.es : m.n, sub: `${flagEmoji(m.a2)} ${t(`cont.${m.ct}`)}`, score: s + 15 + Math.max(0, 6 - m.lr) });
@@ -84,7 +94,7 @@ export class SearchBox {
     }
     this.hits.forEach((hit, i) => {
       const item = h('button', { type: 'button', class: `search-item${i === this.active ? ' on' : ''}`, role: 'option' },
-        h('span', { class: 'si-icon' }, hit.kind === 'country' ? '🏳️' : '📍'),
+        h('span', { class: 'si-icon' }, hit.icon ?? (hit.kind === 'country' ? '🏳️' : '📍')),
         h('span', { class: 'si-text' }, h('span', { class: 'si-label' }, hit.label), h('span', { class: 'si-sub' }, hit.sub)));
       item.addEventListener('click', () => this.choose(hit));
       this.results.append(item);
@@ -93,6 +103,7 @@ export class SearchBox {
 
   private choose(hit: Hit) {
     this.close();
+    if (hit.pick) { hit.pick(); return; }
     if (hit.kind === 'country' && hit.id) this.app.flyToCountry(hit.id);
     else {
       const flat = this.app.renderer.view.current.kind === 'flat';

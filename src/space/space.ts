@@ -6,8 +6,9 @@ import { h, icon, clear } from '../ui/dom';
 import { dataUrl } from '../data/store';
 import { terrainActions, type Terrain3DContext } from '../layers/terrainActions';
 import { wikiThumb } from '../modes/stories';
-import { WORLDS, worldById, tr, L, loadFacts, BIG_TYPES, type WorldDef, type WorldMap, type Facts } from './worlds';
-import { WorldSurface } from './surface';
+import { WORLDS, worldById, tr, L, loadFacts, BIG_TYPES, TYPE_NAMES, type WorldDef, type WorldMap, type Facts } from './worlds';
+import { WorldSurface, LANDING_ICON } from './surface';
+import type { Hit } from '../ui/search';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { TimeTravel } from '../modes';
@@ -46,8 +47,33 @@ export class Space {
     app.on('lang', () => { if (this.bar) this.buildBar(); if (shell.sheet.isOpen('space')) this.open(true); });
     app.on('interactEnd', () => this.saveHash());
     this.surface.onChange(() => { if (this.bar) this.buildBar(); });
+    // Search finds this world's named places and landings.
+    shell.search.provider = () => (this.active && this.surface.def && !this.surface.bare ? {
+      hint: () => L(`Search places on ${tr(this.surface.def!.name)}`, `Buscar lugares en ${tr(this.surface.def!.name)}`),
+      search: (q, score) => this.searchHits(score),
+    } : null);
     // The 3D view of the Moon and Mars (see ui/terrain3d.ts).
     terrainActions.context = () => (this.active && this.surface.def?.heights ? this.context3d() : null);
+  }
+
+  /** The named places and landings of this world that match a search. */
+  private searchHits(score: (name: string) => number): Hit[] {
+    const s = this.surface, w = s.def!;
+    const out: Hit[] = [];
+    const ui = { card: (ic: string, title: string, sub: string, rows: InfoRow[], links?: { label: string; href?: string; onClick?: () => void }[], notes?: string[], image?: Promise<string | null>) => this.shell.card.showCustom(ic, title, sub, rows, links, notes, image) };
+    const fly = (lon: number, lat: number, zoom: number, then: () => void) => { this.app.renderer.view.flyTo({ lon, lat, zoom }, 1300); this.app.renderer.requestRender(); setTimeout(then, 1350); };
+    (s.names?.rows ?? []).forEach((r, i) => {
+      const common = s.label(r[2]);
+      const sc = Math.max(score(r[2]), common !== r[2] ? score(common) : 0);
+      if (sc <= 0) return;
+      const zoom = Math.max(1.2, Math.min(60, (0.8 * w.radius) / Math.max(1, r[4])));
+      out.push({ kind: 'place', lon: r[0], lat: r[1], label: common, sub: `${tr(TYPE_NAMES[r[3]]) || r[3]}${r[4] ? ` · ${Math.round(r[4])} km` : ''}`, score: sc + Math.log10(Math.max(1, r[4])) * 3, icon: '🏷️', pick: () => fly(r[0], r[1], zoom, () => s.nameCard(i, ui)) });
+    });
+    for (const l of s.here) {
+      const sc = score(tr(l.name));
+      if (sc > 0) out.push({ kind: 'place', lon: l.at[0], lat: l.at[1], label: tr(l.name), sub: `${tr(l.agency)} · ${l.date.slice(0, 4)}`, score: sc + 20, icon: LANDING_ICON[l.kind], pick: () => fly(l.at[0], l.at[1], 12, () => s.landingCard(l, ui)) });
+    }
+    return out;
   }
 
   /** What the 3D view needs on this world: its heights, its maps as drapes, its biggest names and its sky. */
