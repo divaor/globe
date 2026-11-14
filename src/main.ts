@@ -12,8 +12,11 @@ import { PersonalMaps } from './personal/personal';
 import { Compare } from './compare/compare';
 import { TerrainUI } from './ui/terrain';
 import { Terrain3D } from './ui/terrain3d';
+import { Space } from './space/space';
+import { Orrery } from './space/orrery';
+import { worldHook } from './modes/stories';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery } } }
 
 async function boot() {
   // Read before the app rewrites the address with its own state.
@@ -40,7 +43,13 @@ async function boot() {
   const compare = new Compare(app, shell, time);
   const terrain = new TerrainUI(app, shell);
   const terrain3d = new Terrain3D(app, shell, terrain);
-  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d };
+  const space = new Space(app, shell, time);
+  const orrery = new Orrery(app, shell, space);
+  learn.space = space;
+  learn.orrery = orrery;
+  // A story step on another world shows that world under the story.
+  worldHook.show = (id) => { space.surface.quiet = !!id; void space.surface.set(id); };
+  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };
@@ -60,6 +69,13 @@ async function boot() {
   registerSW(shell);
   // Home-screen shortcut: open straight into ambient mode.
   if (/ambient=1/.test(location.hash)) setTimeout(() => void shell.ambient.start(), 600);
+  // A shared world: #world=moon&c=lon,lat,zoom (and &map=elev).
+  const world = shared.get('world');
+  if (world) {
+    const c = (shared.get('c') ?? '').split(',').map(Number);
+    const camera = c.length === 3 && c.every(isFinite) ? { lon: c[0], lat: c[1], zoom: c[2] } : undefined;
+    setTimeout(() => void space.enter(world, { map: (shared.get('map') as 'elev' | null) ?? 'photo', camera }), 300);
+  }
   // A shared story: #war=<id>&step=<n> (or #eras=, #food=, #structures=, #people=, #life=).
   for (const kind of STORY_KINDS) {
     const id = shared.get(storyHashKey(kind));

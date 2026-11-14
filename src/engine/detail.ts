@@ -4,7 +4,7 @@
 // from the tiles in memory and asks the loader for the rest.
 import type { GLRaster, RasterDetail, RasterPalette } from './gl';
 import type { View } from './view';
-import { tiles, prefs, lonToX, latToY, tileKey, type TileSource, type Want } from './tiles';
+import { tiles, prefs, tileKey, tileX, tileY, cols, rows, shrinks, type TileSource, type Want } from './tiles';
 
 /** Most tiles across and down one mosaic can hold (4096 px), fewer on small devices (2048 px). */
 function maxTiles(gl: GLRaster): number {
@@ -18,20 +18,22 @@ function maxTiles(gl: GLRaster): number {
  * towards the poles (by the cosine of the latitude), so farther from the equator a lower zoom is enough.
  */
 export function tileZoom(view: View, src: TileSource): number {
+  // A grid tile (the other worlds) spans half the longitude of a Mercator tile of the same zoom, and doesn't shrink.
+  if (!shrinks(src)) return Math.max(src.minZoom, Math.min(src.maxZoom, Math.ceil(view.webZoom - 1 - 0.585)));
   const c = Math.max(0.05, Math.cos((view.lat * Math.PI) / 180));
   return Math.max(src.minZoom, Math.min(src.maxZoom, Math.ceil(view.webZoom + Math.log2(c) - 0.585)));
 }
 
 /** The tiles of zoom z that the screen shows: its points every 40 px (and its edges) turned into map positions. */
-export function visibleTiles(view: View, z: number): [number, number][] {
-  const n = 2 ** z;
+export function visibleTiles(view: View, src: TileSource, z: number): [number, number][] {
+  const n = cols(src, z), m = rows(src, z);
   const seen = new Set<number>();
   const out: [number, number][] = [];
   const step = 40;
   const add = (sx: number, sy: number) => {
     const g = view.invert(sx, sy);
     if (!g) return;
-    const x = Math.min(n - 1, Math.max(0, Math.floor(lonToX(g[0], z)))), y = Math.min(n - 1, Math.max(0, Math.floor(latToY(g[1], z))));
+    const x = Math.min(n - 1, Math.max(0, Math.floor(tileX(src, g[0], z)))), y = Math.min(m - 1, Math.max(0, Math.floor(tileY(src, g[1], z))));
     const k = y * n + x;
     if (!seen.has(k)) { seen.add(k); out.push([x, y]); }
   };
@@ -40,9 +42,8 @@ export function visibleTiles(view: View, z: number): [number, number][] {
 }
 
 /** The smallest block of columns (wrapping round the world) and rows that holds the tiles. */
-export function boundRange(list: [number, number][], z: number) {
+export function boundRange(list: [number, number][], n: number) {
   if (!list.length) return null;
-  const n = 2 ** z;
   const xs = [...new Set(list.map(([x]) => x))].sort((a, b) => a - b);
   // The widest gap between used columns (going round) is left out of the block.
   let gap = n - xs[xs.length - 1] + xs[0] - 1, start = xs[0];
@@ -75,9 +76,9 @@ export class DetailMosaic {
     let z = tileZoom(view, this.src);
     if (z < zStart) { this.free(); return null; }
     const lim = maxTiles(this.gl);
-    let need = visibleTiles(view, z);
-    let r = boundRange(need, z);
-    while (r && (r.nx > lim || r.ny > lim) && z > zStart) { z--; need = visibleTiles(view, z); r = boundRange(need, z); }
+    let need = visibleTiles(view, this.src, z);
+    let r = boundRange(need, cols(this.src, z));
+    while (r && (r.nx > lim || r.ny > lim) && z > zStart) { z--; need = visibleTiles(view, this.src, z); r = boundRange(need, cols(this.src, z)); }
     if (!r || r.nx > lim || r.ny > lim) { this.free(); return null; }
     // The texture is kept while the screen's tiles stay inside it; a new one gets a tile of margin all round, so a
     // small pan does not rebuild it.
@@ -87,7 +88,7 @@ export class DetailMosaic {
     if (!inside) {
       const n = r.n;
       const mx = r.nx + 2 <= lim && r.nx + 2 <= n ? 1 : 0;
-      const y0 = Math.max(0, r.y0 - 1), y1 = Math.min(n - 1, r.y0 + r.ny);
+      const y0 = Math.max(0, r.y0 - 1), y1 = Math.min(rows(this.src, z) - 1, r.y0 + r.ny);
       const ny = y1 - y0 + 1 <= lim ? y1 - y0 + 1 : r.ny;
       const range = { z, x0: (r.x0 - mx + n) % n, y0: ny === r.ny ? r.y0 : y0, nx: r.nx + 2 * mx, ny, n };
       // A fresh texture is cleared by WebGL (empty texels are transparent: the world image shows there).
@@ -101,7 +102,7 @@ export class DetailMosaic {
     }
     r = this.range;
     // Nearest the centre first.
-    const cx = lonToX(view.lon, z), cy = latToY(view.lat, z);
+    const cx = tileX(this.src, view.lon, z), cy = tileY(this.src, view.lat, z);
     const want: (Want & { d: number; i: number; j: number })[] = [];
     for (const [x, y] of need) {
       const i = (x - r.x0 + r.n) % r.n, j = y - r.y0;
@@ -130,7 +131,7 @@ export class DetailMosaic {
     this.total = want.length;
     tiles.want(want.filter((w) => !this.placed.get(tileKey(this.src, w.z, w.x, w.y))).map(({ src, z: zz, x, y }) => ({ src, z: zz, x, y })));
     if (uploads >= budget) requestRender();
-    return { tex: this.tex!, x0: r.x0, y0: r.y0, nx: r.nx, ny: r.ny, n: r.n, mode: this.mode, palette: this.palette, zf: Math.max(1, Math.min(6, 2 ** ((11 - z) * 0.4))) };
+    return { tex: this.tex!, x0: r.x0, y0: r.y0, nx: r.nx, ny: r.ny, n: r.n, geo: !shrinks(this.src), mode: this.mode, palette: this.palette, zf: Math.max(1, Math.min(6, 2 ** ((11 - z) * 0.4))) };
   }
 
   /** A tile that is not 256 px square, drawn to that size (the mosaic holds 256 px cells). */

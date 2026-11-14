@@ -1,7 +1,7 @@
 // Saved areas for offline use: the detail tiles of a box of the map, at several zooms, kept in the browser's Cache
 // Storage (see tiles.ts: the loader looks there before the network). Each area is listed with its size and can be
 // deleted; tiles another saved area still needs are kept.
-import { SAVED_CACHE, saved, fetchTileBytes, tileRange, SOURCES, type TileSource } from './tiles';
+import { SAVED_CACHE, saved, fetchTileBytes, srcRange, SOURCES, type TileSource } from './tiles';
 
 export interface SavedArea {
   id: string;
@@ -38,7 +38,7 @@ export function plan(box: [number, number, number, number], z0: number, z1: numb
     const src = SOURCES[id];
     if (!src) continue;
     for (let z = z0; z <= Math.min(z1, src.maxZoom); z++) {
-      const r = tileRange(box, z);
+      const r = srcRange(src, box, z);
       for (let j = 0; j < r.ny; j++) for (let i = 0; i < r.nx; i++) list.push({ src, z, x: (r.x0 + i) % r.n, y: r.y0 + j });
       estimate += r.nx * r.ny * (AVG[id] ?? 40_000);
     }

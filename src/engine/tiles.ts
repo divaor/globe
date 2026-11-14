@@ -8,6 +8,9 @@ export interface TileSource {
   url: (z: number, x: number, y: number) => string;
   minZoom: number; maxZoom: number;
   credit: string;
+  /** How the tiles divide the sphere: Web Mercator (2^z × 2^z tiles, the default), or a plain longitude/latitude grid
+   *  (`geo`: 2^(z+1) × 2^z tiles from 180°W, 90°N), as NASA's Solar System Treks serve the other worlds. */
+  scheme?: 'merc' | 'geo';
 }
 
 /** Heights of land and sea floor, as Terrarium PNGs (AWS Open Data). */
@@ -25,6 +28,8 @@ export const SENTINEL: TileSource = {
 };
 
 export const SOURCES: Record<string, TileSource> = { [TERRAIN.id]: TERRAIN, [SENTINEL.id]: SENTINEL };
+/** Makes a source known to saved areas (the other worlds' sources register themselves). */
+export function addSource(src: TileSource) { SOURCES[src.id] = src; }
 
 // ---- the user's choices and the download counter -------------------------------------------------
 
@@ -169,7 +174,12 @@ export class TileLoader {
         if (!r.ok) { if (r.status === 404 || r.status === 403) this.missing.add(k); return; }
         blob = await r.blob();
         counted(blob.size);
-      } catch { return; }
+      } catch {
+        // Online, a fetch that fails outright is usually a missing tile served without CORS headers (some servers'
+        // 404 pages): don't ask again this visit.
+        if (navigator.onLine) this.missing.add(k);
+        return;
+      }
     }
     try {
       const bmp = await createImageBitmap(blob, { premultiplyAlpha: 'none', colorSpaceConversion: 'none' });
@@ -250,13 +260,30 @@ export function capBox(lon: number, lat: number, r: number): [number, number, nu
   return [w, s, e, n];
 }
 
-/** The tiles of zoom z covering a box: first column x0 (columns wrap), nx columns, rows y0..y0+ny-1. */
+/** The tiles of zoom z covering a box: first column x0 (columns wrap), nx columns, rows y0..y0+ny-1 (Web Mercator). */
 export function tileRange(box: [number, number, number, number], z: number) {
-  const n = 2 ** z;
+  return srcRange(TERRAIN, box, z);
+}
+
+// ---- tile arithmetic for any source: Web Mercator or a longitude/latitude grid ----------------------
+
+const geo = (src: TileSource) => src.scheme === 'geo';
+/** Columns and rows of tiles at zoom z. */
+export const cols = (src: TileSource, z: number) => (geo(src) ? 2 ** (z + 1) : 2 ** z);
+export const rows = (src: TileSource, z: number) => 2 ** z;
+/** Where a longitude or latitude falls, in tiles of zoom z (fractional). */
+export const tileX = (src: TileSource, lon: number, z: number) => (geo(src) ? ((lon + 180) / 360) * 2 ** (z + 1) : lonToX(lon, z));
+export const tileY = (src: TileSource, lat: number, z: number) => (geo(src) ? ((90 - Math.max(-90, Math.min(90, lat))) / 180) * 2 ** z : latToY(lat, z));
+/** Mercator tiles shrink towards the poles with the cosine of the latitude; grid tiles keep their height. */
+export const shrinks = (src: TileSource) => !geo(src);
+
+/** The tiles of a source at zoom z covering a box: first column x0 (columns wrap), nx columns, rows y0..y0+ny-1. */
+export function srcRange(src: TileSource, box: [number, number, number, number], z: number) {
+  const n = cols(src, z), m = rows(src, z);
   const [w, s, e, nn] = box;
-  const x0 = Math.min(n - 1, Math.floor(lonToX(w, z)));
-  const x1 = Math.min(n - 1, Math.floor(lonToX(e, z)));
+  const x0 = Math.min(n - 1, Math.floor(tileX(src, w, z)));
+  const x1 = Math.min(n - 1, Math.floor(tileX(src, e, z)));
   const nx = w === -180 && e === 180 ? n : ((x1 - x0 + n) % n) + 1;
-  const y0 = Math.max(0, Math.floor(latToY(nn, z))), y1 = Math.min(n - 1, Math.floor(latToY(s, z)));
+  const y0 = Math.max(0, Math.floor(tileY(src, nn, z))), y1 = Math.min(m - 1, Math.floor(tileY(src, s, z)));
   return { x0, y0, nx: Math.min(nx, n), ny: Math.max(1, y1 - y0 + 1), n };
 }

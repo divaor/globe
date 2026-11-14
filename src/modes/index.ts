@@ -17,7 +17,10 @@ export interface Mode {
   desc: () => string;
   enter: () => Promise<void> | void;
   exit: () => Promise<void> | void;
-  tap?: (lon: number, lat: number) => boolean;
+  /** A tap on the map: where (lon, lat) and on screen (x, y). */
+  tap?: (lon: number, lat: number, x?: number, y?: number) => boolean;
+  /** Not listed in the Time travel panel (another world, opened from the Space panel). */
+  hidden?: boolean;
 }
 
 export class TimeTravel {
@@ -46,7 +49,7 @@ export class TimeTravel {
       await pangea.enter(Number(ma));
     })());
     // Each story collection opens its list of stories; the mode starts when one is picked.
-    const icons: Record<StoryKind, string> = { wars: '⚔️', eras: '🎨', food: '🌾', structures: '🏛️', people: '🏺', life: '🦕', games: '🏅', journeys: '🧭', beliefs: '🛐', writing: '✍️', plagues: '🦠', disasters: '🌋', music: '🎵', books: '📚', art: '🖼️', inventions: '💡', heritage: '🏛️' };
+    const icons: Record<StoryKind, string> = { wars: '⚔️', eras: '🎨', food: '🌾', structures: '🏛️', people: '🏺', life: '🦕', games: '🏅', journeys: '🧭', beliefs: '🛐', writing: '✍️', plagues: '🦠', disasters: '🌋', music: '🎵', books: '📚', art: '🖼️', inventions: '💡', heritage: '🏛️', space: '🚀' };
     for (const kind of STORY_KINDS) {
       const m = (this.stories[kind] = new StoryMode(app, shell, kind));
       this.add({
@@ -65,10 +68,10 @@ export class TimeTravel {
     })());
     shell.addDock({ id: 'time', icon: History, label: () => t('timeTravelShort'), order: 30, onClick: () => this.open() });
     // In a mode, taps go to the mode instead of selecting today's countries.
-    shell.tapHandlers.unshift((_x, _y, g) => {
+    shell.tapHandlers.unshift((x, y, g) => {
       if (!app.mode) return false;
-      const m = this.modes.find((x) => x.id === app.mode);
-      if (g && m?.tap) m.tap(g[0], g[1]);
+      const m = this.modes.find((md) => md.id === app.mode);
+      if (g && m?.tap) m.tap(g[0], g[1], x, y);
       return true;
     });
   }
@@ -87,6 +90,7 @@ export class TimeTravel {
     if (this.shell.sheet.isOpen('time')) { this.shell.sheet.close(); return; }
     const list = h('div', { class: 'mode-list' });
     for (const m of this.modes) {
+      if (m.hidden) continue;
       const on = this.app.mode === m.id;
       const card = h('button', { type: 'button', class: `mode-card${on ? ' on' : ''}` },
         h('span', { class: 'mode-icon' }, m.icon),

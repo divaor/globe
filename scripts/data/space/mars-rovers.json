@@ -1,0 +1,5667 @@
+{
+  "id": "mars-rovers",
+  "name": {
+    "en": "Wheels on Mars",
+    "es": "Ruedas en Marte"
+  },
+  "icon": "🚙",
+  "era": "contemporary",
+  "region": {
+    "en": "Mars: from Mars 3's crater to Gale, Jezero, Gusev, Meridiani and Utopia",
+    "es": "Marte: del cráter de la Mars 3 a Gale, Jezero, Gusev, Meridiani y Utopia"
+  },
+  "start": "1971-11-27",
+  "end": "2026-11",
+  "summary": {
+    "en": "Every landing and rover on Mars, from the Soviet Mars 3's 20 seconds in 1971 to Curiosity and Perseverance, still driving across ancient lakes and rivers in 2026.",
+    "es": "Todos los aterrizajes y vehículos en Marte, de los 20 segundos de la soviética Mars 3 en 1971 a Curiosity y Perseverance, que en 2026 siguen rodando sobre antiguos lagos y ríos."
+  },
+  "camera": {
+    "lon": 120,
+    "lat": 0,
+    "zoom": 1
+  },
+  "trail": true,
+  "sides": [
+    {
+      "id": "spirit",
+      "name": {
+        "en": "Spirit",
+        "es": "Spirit"
+      },
+      "color": "#3a86ff",
+      "members": {
+        "en": "NASA, Mars Exploration Rover A (2004–2010)",
+        "es": "NASA, Mars Exploration Rover A (2004-2010)"
+      }
+    },
+    {
+      "id": "opportunity",
+      "name": {
+        "en": "Opportunity",
+        "es": "Opportunity"
+      },
+      "color": "#ff006e",
+      "members": {
+        "en": "NASA, Mars Exploration Rover B (2004–2018)",
+        "es": "NASA, Mars Exploration Rover B (2004-2018)"
+      }
+    },
+    {
+      "id": "curiosity",
+      "name": {
+        "en": "Curiosity",
+        "es": "Curiosity"
+      },
+      "color": "#06d6a0",
+      "members": {
+        "en": "NASA, Mars Science Laboratory (since 2012)",
+        "es": "NASA, Mars Science Laboratory (desde 2012)"
+      }
+    },
+    {
+      "id": "perseverance",
+      "name": {
+        "en": "Perseverance",
+        "es": "Perseverance"
+      },
+      "color": "#4cc9f0",
+      "members": {
+        "en": "NASA, Mars 2020 mission (since 2021)",
+        "es": "NASA, misión Mars 2020 (desde 2021)"
+      }
+    },
+    {
+      "id": "ingenuity",
+      "name": {
+        "en": "Ingenuity's flights",
+        "es": "Los vuelos de Ingenuity"
+      },
+      "color": "#ffbe0b",
+      "members": {
+        "en": "NASA's Mars helicopter, 72 flights (2021–2024)",
+        "es": "El helicóptero de la NASA en Marte, 72 vuelos (2021-2024)"
+      }
+    },
+    {
+      "id": "zhurong",
+      "name": {
+        "en": "Zhurong",
+        "es": "Zhurong"
+      },
+      "color": "#c77dff",
+      "members": {
+        "en": "China (CNSA), Tianwen-1 mission (2021–2022)",
+        "es": "China (CNSA), misión Tianwen-1 (2021-2022)"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "date": "1971-12-02",
+      "world": "mars",
+      "title": {
+        "en": "Twenty seconds from Mars 3",
+        "es": "Veinte segundos de la Mars 3"
+      },
+      "text": {
+        "en": "On 2 December 1971 the Soviet Mars 3 lander made the first soft landing on Mars, in the middle of a planet-wide dust storm. It began to send a picture, then fell silent after about 20 seconds.",
+        "es": "El 2 de diciembre de 1971, el módulo de la soviética Mars 3 hizo el primer aterrizaje suave en Marte, en plena tormenta de polvo global. Empezó a enviar una imagen y calló a los 20 segundos."
+      },
+      "details": {
+        "en": "Mars 3 and its twin Mars 2 arrived just as dust hid the whole planet. Their computers could not wait for the storm to clear, so both released their landers at once. Mars 2's lander crashed on 27 November, the first human-made object to reach Mars. Five days later Mars 3's capsule came down by heat shield, parachute and rockets in the southern highlands, by the best estimate inside the crater Ptolemaeus. Ninety seconds after touchdown it began to transmit through its orbiter, but about 20 seconds later the signal stopped, leaving 70 lines of a grey picture with no detail. Perhaps the storm's electricity damaged its radio. It carried a tiny rover on skis, PrOP-M, which may never have been set down. In 2013 Russian space enthusiasts found what may be its parachute and lander in pictures from NASA's Mars Reconnaissance Orbiter.",
+        "es": "La Mars 3 y su gemela, la Mars 2, llegaron justo cuando el polvo ocultaba todo el planeta. Sus computadoras no podían esperar a que pasara la tormenta, así que ambas soltaron enseguida sus módulos. El de la Mars 2 se estrelló el 27 de noviembre: fue el primer objeto humano en llegar a Marte. Cinco días después, la cápsula de la Mars 3 bajó con escudo térmico, paracaídas y cohetes en las tierras altas del sur, según la mejor estimación dentro del cráter Ptolemaeus. Noventa segundos después de posarse empezó a transmitir a través de su orbitador, pero unos 20 segundos más tarde la señal se cortó, dejando 70 líneas de una imagen gris sin detalles. Quizá la electricidad de la tormenta dañó su radio. Llevaba un pequeño vehículo con esquís, el PrOP-M, que tal vez nunca llegó a bajar. En 2013, aficionados rusos al espacio hallaron lo que podrían ser su paracaídas y su módulo en fotos del Mars Reconnaissance Orbiter de la NASA."
+      },
+      "camera": {
+        "lon": -175,
+        "lat": -70,
+        "zoom": 1.1
+      },
+      "show": [
+        "mars-3",
+        "mars-2"
+      ],
+      "places": [
+        {
+          "id": "ptolemaeus-crater",
+          "name": {
+            "en": "Ptolemaeus crater",
+            "es": "Cráter Ptolemaeus"
+          },
+          "at": [
+            -157.6013,
+            -45.8762
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "1971-12-02",
+          "place": {
+            "en": "Terra Sirenum, Mars",
+            "es": "Terra Sirenum, Marte"
+          },
+          "text": {
+            "en": "A crater 165 km wide in the southern highlands, named after the ancient astronomer Ptolemy. By the best estimate, Mars 3 came down on its floor, the first craft to land softly on Mars.",
+            "es": "Un cráter de 165 km de ancho en las tierras altas del sur, llamado así por el astrónomo antiguo Ptolomeo. Según la mejor estimación, la Mars 3 se posó en su fondo: la primera nave en aterrizar suavemente en Marte."
+          },
+          "wiki": {
+            "en": "Ptolemaeus (Martian crater)",
+            "es": "Ptolemaeus (cráter marciano)"
+          }
+        },
+        {
+          "id": "prop-m",
+          "name": {
+            "en": "PrOP-M, the rover on skis",
+            "es": "PrOP-M, el vehículo con esquís"
+          },
+          "at": [
+            -158.0,
+            -45.0
+          ],
+          "world": "mars",
+          "cat": "lander",
+          "type": "invention",
+          "date": "1971-12-02",
+          "place": {
+            "en": "Ptolemaeus crater, Mars",
+            "es": "Cráter Ptolemaeus, Marte"
+          },
+          "text": {
+            "en": "A 4.5-kg box on two skis, tied to the Mars 3 lander by a 15-m cable, built to shuffle across the ground and test the soil. The lander fell silent before anyone could know if it was set down.",
+            "es": "Una caja de 4,5 kg sobre dos esquís, unida al módulo de la Mars 3 por un cable de 15 m, hecha para arrastrarse por el suelo y probarlo. El módulo calló antes de que se supiera si llegó a bajarla."
+          },
+          "details": {
+            "en": "PrOP-M could not wait for orders from Earth, minutes away by radio, so two thin bars in front felt for obstacles and told it to back off and turn. It was meant to stop every 1.5 m to push a probe into the soil and measure its density, while the lander's cameras watched. Mars 2 carried a second one, lost in its crash. They were the first rovers sent to another planet, a quarter of a century before Sojourner.",
+            "es": "El PrOP-M no podía esperar órdenes de la Tierra, a minutos de distancia por radio, así que dos barras delgadas en su frente tanteaban los obstáculos y le indicaban retroceder y girar. Debía detenerse cada 1,5 m para clavar una sonda en el suelo y medir su densidad, mientras las cámaras del módulo lo observaban. La Mars 2 llevaba otro, perdido en su choque. Fueron los primeros vehículos enviados a otro planeta, un cuarto de siglo antes que Sojourner."
+          },
+          "wiki": {
+            "en": "PrOP-M",
+            "es": ""
+          }
+        },
+        {
+          "id": "georgy-babakin",
+          "name": {
+            "en": "Georgy Babakin",
+            "es": "Gueorgui Babakin"
+          },
+          "at": [
+            -158.3,
+            -45.2
+          ],
+          "world": "mars",
+          "cat": "control",
+          "type": "person",
+          "date": "1971-12-02",
+          "life": [
+            "1914",
+            "1971"
+          ],
+          "place": {
+            "en": "Lavochkin design bureau, Khimki, near Moscow",
+            "es": "Oficina de diseño Lavochkin, Jimki, cerca de Moscú"
+          },
+          "text": {
+            "en": "The Soviet engineer who led the Lavochkin design bureau, which built Mars 2 and 3, the Venera landers and the Lunokhod rovers. He died in August 1971, months before Mars 3 landed.",
+            "es": "El ingeniero soviético que dirigió la oficina de diseño Lavochkin, que construyó las Mars 2 y 3, los módulos Venera y los vehículos Lunojod. Murió en agosto de 1971, meses antes de que aterrizara la Mars 3."
+          },
+          "wiki": {
+            "en": "Georgy Babakin",
+            "es": "Gueorgui Babakin"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1976-07-20",
+      "world": "mars",
+      "title": {
+        "en": "Viking 1 opens its eyes",
+        "es": "La Viking 1 abre los ojos"
+      },
+      "text": {
+        "en": "On 20 July 1976, seven years to the day after Apollo 11, NASA's Viking 1 landed on Chryse Planitia. Within minutes it sent the first clear picture from the surface of Mars: stones and dust by its footpad.",
+        "es": "El 20 de julio de 1976, siete años exactos después del Apolo 11, la Viking 1 de la NASA aterrizó en Chryse Planitia. A los pocos minutos envió la primera foto nítida de la superficie de Marte: piedras y polvo junto a su pata."
+      },
+      "details": {
+        "en": "Viking 1 was meant to land on 4 July, the 200th birthday of the United States, but its orbiter showed that the chosen site was too rough, and the team spent weeks finding a safer one. The lander came down on three rockets with 18 small nozzles each, to spread the exhaust and keep the soil it would study clean. Its first colour picture, the next day, showed a rusty, rock-strewn plain. At first the sky was printed blue; once the colours were checked it turned out to be a dusty pinkish tan. Viking 1 sent weather reports for more than six years, until a faulty command from Earth cut it off in November 1982. It is named the Thomas Mutch Memorial Station, after the leader of its camera team, who died in the Himalayas in 1980.",
+        "es": "La Viking 1 debía aterrizar el 4 de julio, en el bicentenario de Estados Unidos, pero su orbitador mostró que el sitio elegido era demasiado abrupto, y el equipo pasó semanas buscando uno más seguro. El módulo bajó con tres cohetes de 18 pequeñas toberas cada uno, para repartir los gases y no ensuciar el suelo que iba a estudiar. Su primera foto en color, al día siguiente, mostró una llanura oxidada y sembrada de rocas. Al principio el cielo se imprimió azul; al revisar los colores resultó ser de un tono rosado y polvoriento. La Viking 1 envió informes del tiempo durante más de seis años, hasta que una orden errónea desde la Tierra la silenció en noviembre de 1982. Se llama Estación Conmemorativa Thomas Mutch, por el jefe de su equipo de cámaras, que murió en el Himalaya en 1980."
+      },
+      "camera": {
+        "lon": -45,
+        "lat": 24,
+        "zoom": 4
+      },
+      "show": [
+        "viking-1"
+      ],
+      "places": [
+        {
+          "id": "chryse-planitia",
+          "name": {
+            "en": "Chryse Planitia",
+            "es": "Chryse Planitia"
+          },
+          "at": [
+            -40.3073,
+            28.4333
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "1976-07-20",
+          "place": {
+            "en": "Northern lowlands, Mars",
+            "es": "Tierras bajas del norte, Marte"
+          },
+          "text": {
+            "en": "The \"golden plain\", a broad lowland where floods that carved huge channels in the south spread out long ago. Viking 1 landed on its western side in 1976, and Pathfinder at its edge in 1997.",
+            "es": "La «llanura dorada», una amplia tierra baja donde hace mucho se extendieron las inundaciones que tallaron enormes canales al sur. La Viking 1 aterrizó en su lado oeste en 1976, y la Pathfinder en su borde en 1997."
+          },
+          "wiki": {
+            "en": "Chryse Planitia",
+            "es": "Chryse Planitia"
+          }
+        },
+        {
+          "id": "thomas-mutch",
+          "name": {
+            "en": "Thomas Mutch",
+            "es": "Thomas Mutch"
+          },
+          "at": [
+            -47.7,
+            22.4
+          ],
+          "world": "mars",
+          "cat": "astronomer",
+          "type": "person",
+          "date": "1976-07-20",
+          "life": [
+            "1931",
+            "1980"
+          ],
+          "place": {
+            "en": "Brown University, Providence, Rhode Island",
+            "es": "Universidad Brown, Providence, Rhode Island"
+          },
+          "text": {
+            "en": "The geologist who led the Viking landers' camera team, which took the first pictures from the surface of Mars. Viking 1's lander was renamed in his honour after he died climbing in the Himalayas in 1980.",
+            "es": "El geólogo que dirigió el equipo de cámaras de los módulos Viking, que tomaron las primeras fotos desde la superficie de Marte. La Viking 1 recibió su nombre después de que él muriera escalando en el Himalaya en 1980."
+          },
+          "wiki": {
+            "en": "Thomas A. Mutch",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1976-09-03",
+      "world": "mars",
+      "title": {
+        "en": "Looking for life",
+        "es": "En busca de vida"
+      },
+      "text": {
+        "en": "Viking 2 landed on Utopia Planitia on 3 September 1976. Both Vikings scooped soil into small labs to look for microbes. One test seemed to say yes and the others no; most scientists concluded the soil was lifeless.",
+        "es": "La Viking 2 aterrizó en Utopia Planitia el 3 de septiembre de 1976. Las dos Viking pusieron tierra en pequeños laboratorios para buscar microbios. Una prueba pareció decir que sí y las otras que no; casi todos concluyeron que no había vida."
+      },
+      "details": {
+        "en": "Each lander carried three biology experiments and an instrument to search for organic molecules, the carbon compounds of life. In the Labeled Release test, led by Gilbert Levin with Patricia Straat, nutrients tagged with radioactive carbon were dripped onto the soil, and radioactive gas came out, as if microbes were eating. But more nutrients gave no more gas, the other tests found nothing alive, and no organic molecules turned up at all. Most scientists blamed strongly oxidising chemicals made in the soil by sunlight; Levin and Straat argued for decades that Viking may have found life. Viking 2 worked until April 1980 and photographed a thin layer of frost on the ground in winter. It is named the Gerald Soffen Memorial Station, after Viking's project scientist.",
+        "es": "Cada módulo llevaba tres experimentos de biología y un instrumento para buscar moléculas orgánicas, los compuestos de carbono de la vida. En la prueba de liberación marcada, dirigida por Gilbert Levin con Patricia Straat, se echaron al suelo nutrientes marcados con carbono radiactivo, y salió gas radiactivo, como si los microbios estuvieran comiendo. Pero más nutrientes no dieron más gas, las otras pruebas no hallaron nada vivo y no apareció ni una molécula orgánica. Casi todos los científicos lo atribuyeron a sustancias muy oxidantes creadas en el suelo por la luz del Sol; Levin y Straat sostuvieron durante décadas que la Viking quizá encontró vida. La Viking 2 funcionó hasta abril de 1980 y fotografió una fina capa de escarcha en el suelo en invierno. Se llama Estación Conmemorativa Gerald Soffen, por el científico del proyecto Viking."
+      },
+      "camera": {
+        "lon": 128,
+        "lat": 47,
+        "zoom": 3
+      },
+      "show": [
+        "viking-2"
+      ],
+      "places": [
+        {
+          "id": "utopia-planitia",
+          "name": {
+            "en": "Utopia Planitia",
+            "es": "Utopia Planitia"
+          },
+          "at": [
+            117.5168,
+            46.7363
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "1976-09-03",
+          "place": {
+            "en": "Northern lowlands, Mars",
+            "es": "Tierras bajas del norte, Marte"
+          },
+          "text": {
+            "en": "A vast plain in the northern lowlands, inside one of the largest impact basins in the Solar System. Viking 2 landed here in 1976 and China's Zhurong in 2021; an ocean may once have filled it.",
+            "es": "Una enorme llanura de las tierras bajas del norte, dentro de una de las mayores cuencas de impacto del sistema solar. Aquí aterrizaron la Viking 2 en 1976 y el Zhurong chino en 2021; quizá un océano la llenó alguna vez."
+          },
+          "wiki": {
+            "en": "Utopia Planitia",
+            "es": "Utopia Planitia"
+          }
+        },
+        {
+          "id": "viking-biology",
+          "name": {
+            "en": "Viking's search for life",
+            "es": "La búsqueda de vida de las Viking"
+          },
+          "at": [
+            134.3,
+            48.0
+          ],
+          "world": "mars",
+          "cat": "discovery",
+          "type": "event",
+          "date": "1976-09-03",
+          "place": {
+            "en": "Viking 1 and 2 landing sites, Mars",
+            "es": "Sitios de aterrizaje de las Viking 1 y 2, Marte"
+          },
+          "text": {
+            "en": "The first experiments to look for living things on another planet. The soil fizzed in one test, but no organic molecules were found, and most scientists read the results as chemistry, not life.",
+            "es": "Los primeros experimentos para buscar seres vivos en otro planeta. El suelo burbujeó en una prueba, pero no se hallaron moléculas orgánicas, y casi todos los científicos lo interpretaron como química, no vida."
+          },
+          "details": {
+            "en": "The puzzle came back in 2008, when Phoenix found perchlorate in Martian soil. When heated, perchlorate destroys organic molecules and leaves chlorinated ones like those Viking had dismissed as cleaning fluids from Earth, so Viking might have missed organics that were there. The Labeled Release result is still debated, though most scientists think chemistry explains it. Curiosity found organic molecules in Gale crater's rocks in 2013 and 2018.",
+            "es": "El enigma volvió en 2008, cuando la Phoenix halló perclorato en el suelo marciano. Al calentarse, el perclorato destruye las moléculas orgánicas y deja otras con cloro, como las que la Viking había descartado como restos de líquidos de limpieza terrestres; así que la Viking pudo pasar por alto moléculas orgánicas que sí estaban. El resultado de la liberación marcada sigue en debate, aunque casi todos creen que la química lo explica. Curiosity halló moléculas orgánicas en las rocas del cráter Gale en 2013 y 2018."
+          },
+          "wiki": {
+            "en": "Viking lander biological experiments",
+            "es": "Programa Viking"
+          }
+        },
+        {
+          "id": "patricia-straat",
+          "name": {
+            "en": "Patricia Straat",
+            "es": "Patricia Straat"
+          },
+          "at": [
+            133.7,
+            48.4
+          ],
+          "world": "mars",
+          "cat": "astronomer",
+          "type": "person",
+          "date": "1976-09-03",
+          "life": [
+            "1936",
+            "2020-10-23"
+          ],
+          "place": {
+            "en": "Biospherics, Maryland",
+            "es": "Biospherics, Maryland"
+          },
+          "text": {
+            "en": "A biochemist who worked with Gilbert Levin on Viking's Labeled Release experiment. For decades she and Levin argued that its positive result may have been a sign of life on Mars.",
+            "es": "Una bioquímica que trabajó con Gilbert Levin en el experimento de liberación marcada de la Viking. Durante décadas, ella y Levin sostuvieron que su resultado positivo pudo ser una señal de vida en Marte."
+          },
+          "wiki": {
+            "en": "Patricia Ann Straat",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "1997-07-04",
+      "world": "mars",
+      "title": {
+        "en": "Sojourner, the first rover",
+        "es": "Sojourner, el primer vehículo"
+      },
+      "text": {
+        "en": "On 4 July 1997 Mars Pathfinder bounced onto Ares Vallis inside giant airbags. Then its rover Sojourner, as small as a microwave oven, rolled down a ramp: the first wheels on another planet.",
+        "es": "El 4 de julio de 1997, la Mars Pathfinder rebotó sobre Ares Vallis envuelta en enormes bolsas de aire. Luego su vehículo Sojourner, del tamaño de un horno de microondas, bajó por una rampa: las primeras ruedas en otro planeta."
+      },
+      "details": {
+        "en": "Pathfinder was built in three years for a fraction of Viking's cost, to prove a cheaper way to Mars. It slowed with a parachute and rockets, then dropped inside a cluster of airbags that bounced across the ground before rolling to a stop. Sojourner weighed 10.6 kg and drove at most a centimetre a second, never more than about 12 m from its base. In 83 sols it covered about 100 m and measured rocks the team nicknamed Barnacle Bill, Yogi and Scooby-Doo, in a field of boulders left by ancient floods. It was named after Sojourner Truth, the abolitionist and women's rights campaigner, in an essay contest won by 12-year-old Valerie Ambroise. The lander, renamed the Carl Sagan Memorial Station, last called home on 27 September 1997.",
+        "es": "La Pathfinder se construyó en tres años por una fracción del costo de las Viking, para probar un camino más barato a Marte. Frenó con paracaídas y cohetes, y luego cayó dentro de un racimo de bolsas de aire que rebotó por el suelo hasta detenerse. Sojourner pesaba 10,6 kg y avanzaba como mucho un centímetro por segundo, sin alejarse más de unos 12 m de su base. En 83 soles recorrió unos 100 m y midió rocas que el equipo apodó Barnacle Bill, Yogi y Scooby-Doo, en un campo de piedras dejado por antiguas inundaciones. Su nombre honra a Sojourner Truth, abolicionista y defensora de los derechos de las mujeres, y salió de un concurso de ensayos que ganó Valerie Ambroise, de 12 años. El módulo, rebautizado Estación Conmemorativa Carl Sagan, se comunicó por última vez el 27 de septiembre de 1997."
+      },
+      "camera": {
+        "lon": -30,
+        "lat": 16,
+        "zoom": 4.5
+      },
+      "show": [
+        "mars-pathfinder"
+      ],
+      "places": [
+        {
+          "id": "ares-vallis",
+          "name": {
+            "en": "Ares Vallis",
+            "es": "Ares Vallis"
+          },
+          "at": [
+            -25.6083,
+            10.2924
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "1997-07-04",
+          "place": {
+            "en": "Between Margaritifer Terra and Chryse Planitia, Mars",
+            "es": "Entre Margaritifer Terra y Chryse Planitia, Marte"
+          },
+          "text": {
+            "en": "A giant outflow channel, carved by catastrophic floods billions of years ago. Pathfinder landed where it opens onto Chryse Planitia, among boulders the floods carried from far upstream.",
+            "es": "Un canal gigante tallado por inundaciones catastróficas hace miles de millones de años. La Pathfinder aterrizó donde se abre a Chryse Planitia, entre rocas que las aguas arrastraron desde muy lejos."
+          },
+          "wiki": {
+            "en": "Ares Vallis",
+            "es": "Ares Vallis"
+          }
+        },
+        {
+          "id": "donna-shirley",
+          "name": {
+            "en": "Donna Shirley",
+            "es": "Donna Shirley"
+          },
+          "at": [
+            -33.24,
+            19.11
+          ],
+          "world": "mars",
+          "cat": "control",
+          "type": "person",
+          "date": "1997-07-04",
+          "place": {
+            "en": "NASA's Jet Propulsion Laboratory (JPL), Pasadena, California",
+            "es": "Laboratorio de Propulsión a Chorro (JPL) de la NASA, Pasadena, California"
+          },
+          "text": {
+            "en": "An engineer who led the JPL team that built Sojourner and managed the Mars Exploration Program at JPL, at a time when few women led space missions.",
+            "es": "Una ingeniera que dirigió el equipo del JPL que construyó Sojourner y el Programa de Exploración de Marte en el JPL, cuando pocas mujeres dirigían misiones espaciales."
+          },
+          "wiki": {
+            "en": "Donna Shirley",
+            "es": ""
+          }
+        },
+        {
+          "id": "pathfinder-rocks",
+          "name": {
+            "en": "Barnacle Bill and Yogi",
+            "es": "Barnacle Bill y Yogi"
+          },
+          "at": [
+            -33.215,
+            19.09
+          ],
+          "world": "mars",
+          "cat": "discovery",
+          "type": "place",
+          "date": "1997-07-06",
+          "place": {
+            "en": "Ares Vallis, Mars",
+            "es": "Ares Vallis, Marte"
+          },
+          "text": {
+            "en": "The first rocks on another planet measured by a rover: Sojourner pressed its X-ray spectrometer against them. Some looked volcanic, others rounded and pebbly, as if shaped by water.",
+            "es": "Las primeras rocas de otro planeta medidas por un vehículo: Sojourner apoyó en ellas su espectrómetro de rayos X. Algunas parecían volcánicas; otras, redondeadas y con guijarros, como moldeadas por el agua."
+          },
+          "wiki": {
+            "en": "Sojourner (rover)",
+            "es": "Mars Pathfinder"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2003-12-25",
+      "world": "mars",
+      "title": {
+        "en": "The landers that were lost",
+        "es": "Los módulos perdidos"
+      },
+      "text": {
+        "en": "Landing on Mars is hard. NASA's Mars Polar Lander vanished near the south pole in December 1999, and Britain's Beagle 2, carried by Europe's Mars Express, went silent on Christmas Day 2003.",
+        "es": "Aterrizar en Marte es difícil. El Mars Polar Lander de la NASA desapareció cerca del polo sur en diciembre de 1999, y el británico Beagle 2, llevado por la Mars Express europea, enmudeció el día de Navidad de 2003."
+      },
+      "details": {
+        "en": "Many Mars landings have failed. The Soviet Mars 6 radioed data all the way down in March 1974, then fell silent just before it reached the ground. Mars Polar Lander was probably undone by its software: the jolt of its legs swinging open was likely taken for touchdown, shutting off its engines some 40 m up. Weeks earlier NASA had lost the Mars Climate Orbiter to a mix-up between metric and imperial units. Beagle 2, led by the planetary scientist Colin Pillinger, was a small British lander built on a tight budget to sniff for signs of life. For eleven years its fate was a mystery. In January 2015 orbiter pictures, first spotted by the former ESA engineer Michael Croon, showed it on Isidis Planitia: it had landed, but its solar petals had not all opened, covering its antenna. Pillinger had died eight months before.",
+        "es": "Muchos aterrizajes en Marte han fracasado. La soviética Mars 6 transmitió datos durante todo su descenso en marzo de 1974 y calló justo antes de llegar al suelo. Al Mars Polar Lander probablemente lo perdió su software: la sacudida de sus patas al abrirse quizá se tomó por el contacto con el suelo, y eso apagó sus motores a unos 40 m de altura. Semanas antes, la NASA había perdido el Mars Climate Orbiter por una confusión entre unidades métricas e inglesas. El Beagle 2, dirigido por el científico planetario Colin Pillinger, era un pequeño módulo británico hecho con poco dinero para buscar rastros de vida. Durante once años su destino fue un misterio. En enero de 2015, fotos tomadas desde la órbita, revisadas primero por el exingeniero de la ESA Michael Croon, lo mostraron en Isidis Planitia: había aterrizado, pero no todos sus pétalos solares se abrieron y le taparon la antena. Pillinger había muerto ocho meses antes."
+      },
+      "camera": {
+        "lon": 50,
+        "lat": -36,
+        "zoom": 1
+      },
+      "show": [
+        "mars-6",
+        "mars-polar-lander",
+        "beagle-2"
+      ],
+      "events": [
+        {
+          "icon": "🔍",
+          "text": {
+            "en": "16 January 2015: Beagle 2 is found in orbiter pictures, partly unfolded on Isidis Planitia",
+            "es": "16 de enero de 2015: hallan al Beagle 2 en fotos tomadas desde la órbita, a medio abrir en Isidis Planitia"
+          },
+          "at": [
+            90.43,
+            11.53
+          ],
+          "date": "2015-01-16"
+        }
+      ],
+      "places": [
+        {
+          "id": "ultimi-scopuli",
+          "name": {
+            "en": "Ultimi Scopuli",
+            "es": "Ultimi Scopuli"
+          },
+          "at": [
+            179.0448,
+            -77.8791
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "1999-12-03",
+          "place": {
+            "en": "South polar layered deposits, Mars",
+            "es": "Depósitos estratificados del polo sur, Marte"
+          },
+          "text": {
+            "en": "Scarps in the layered ice and dust around Mars's south pole, where Mars Polar Lander was to dig for water ice. It was never seen again.",
+            "es": "Escarpes en las capas de hielo y polvo que rodean el polo sur de Marte, donde el Mars Polar Lander iba a excavar en busca de hielo de agua. Nunca volvió a saberse de él."
+          },
+          "wiki": {
+            "en": "Planum Australe",
+            "es": "Planum Australe"
+          }
+        },
+        {
+          "id": "isidis-planitia",
+          "name": {
+            "en": "Isidis Planitia",
+            "es": "Isidis Planitia"
+          },
+          "at": [
+            88.3772,
+            13.9357
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2003-12-25",
+          "place": {
+            "en": "Between the highlands and the northern plains, Mars",
+            "es": "Entre las tierras altas y las llanuras del norte, Marte"
+          },
+          "text": {
+            "en": "A flat plain filling an ancient impact basin, on the border between the southern highlands and the northern lowlands. Beagle 2 landed here on Christmas Day 2003.",
+            "es": "Una llanura que rellena una antigua cuenca de impacto, en el límite entre las tierras altas del sur y las tierras bajas del norte. El Beagle 2 aterrizó aquí el día de Navidad de 2003."
+          },
+          "wiki": {
+            "en": "Isidis Planitia",
+            "es": "Isidis Planitia"
+          }
+        },
+        {
+          "id": "colin-pillinger",
+          "name": {
+            "en": "Colin Pillinger",
+            "es": "Colin Pillinger"
+          },
+          "at": [
+            90.0,
+            11.2
+          ],
+          "world": "mars",
+          "cat": "astronomer",
+          "type": "person",
+          "date": "2003-12-25",
+          "life": [
+            "1943-05-09",
+            "2014-05-07"
+          ],
+          "place": {
+            "en": "The Open University, Milton Keynes, England",
+            "es": "Open University, Milton Keynes, Inglaterra"
+          },
+          "text": {
+            "en": "A British planetary scientist who rallied universities, companies, the band Blur and the artist Damien Hirst behind Beagle 2. He died in 2014, months before it was found.",
+            "es": "Un científico planetario británico que unió a universidades, empresas, la banda Blur y el artista Damien Hirst detrás del Beagle 2. Murió en 2014, meses antes de que lo encontraran."
+          },
+          "wiki": {
+            "en": "Colin Pillinger",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "2004-01-04",
+      "world": "mars",
+      "title": {
+        "en": "Spirit in Gusev crater",
+        "es": "Spirit en el cráter Gusev"
+      },
+      "text": {
+        "en": "Spirit bounced down in Gusev crater on 4 January 2004, hoping for an old lake bed. It found lava, so it drove to the Columbia Hills, climbed them and found rocks changed by water and steam.",
+        "es": "Spirit rebotó en el cráter Gusev el 4 de enero de 2004, en busca del fondo de un antiguo lago. Encontró lava, así que fue hasta las colinas Columbia, las escaló y halló rocas alteradas por agua y vapor."
+      },
+      "details": {
+        "en": "Spirit and its twin Opportunity were robot geologists the size of a golf cart, built to last 90 sols. Spirit's plain turned out to be volcanic, so it headed for the Columbia Hills, named after the seven astronauts of the shuttle Columbia, who died in 2003. In 2005 it reached the top of Husband Hill. In 2006 a front wheel died, so Spirit drove backwards, dragging it; in 2007 the dead wheel scraped up almost pure silica beside Home Plate, a sign of ancient hot springs or steam vents. In May 2009 it broke through a crust into soft sand at a spot called Troy and never got out. It sent its last signal on 22 March 2010, after 7.73 km. Spirit and Opportunity were named by Sofi Collis, a nine-year-old girl in Arizona who was born in Siberia.",
+        "es": "Spirit y su gemelo Opportunity eran geólogos robot del tamaño de un carrito de golf, hechos para durar 90 soles. La llanura de Spirit resultó ser volcánica, así que fue hacia las colinas Columbia, llamadas así por los siete astronautas del transbordador Columbia, que murieron en 2003. En 2005 llegó a la cima de Husband Hill. En 2006 se le murió una rueda delantera y Spirit siguió en reversa, arrastrándola; en 2007 esa rueda muerta destapó sílice casi pura junto a Home Plate, señal de antiguas fuentes termales o fumarolas. En mayo de 2009 rompió una costra, se hundió en arena blanda en un lugar llamado Troy y nunca salió. Envió su última señal el 22 de marzo de 2010, tras 7,73 km. Spirit y Opportunity recibieron su nombre de Sofi Collis, una niña de nueve años de Arizona nacida en Siberia."
+      },
+      "camera": {
+        "lon": 175.51,
+        "lat": -14.59,
+        "zoom": 30
+      },
+      "show": [
+        "spirit"
+      ],
+      "moves": [
+        {
+          "side": "spirit",
+          "route": "spirit",
+          "icon": "🚙"
+        }
+      ],
+      "events": [
+        {
+          "icon": "⏳",
+          "text": {
+            "en": "1 May 2009: Spirit sinks into soft sand at Troy; its last signal comes on 22 March 2010",
+            "es": "1 de mayo de 2009: Spirit se hunde en arena blanda en Troy; su última señal llega el 22 de marzo de 2010"
+          },
+          "at": [
+            175.5254,
+            -14.6004
+          ],
+          "date": "2009-05-01"
+        }
+      ],
+      "places": [
+        {
+          "id": "gusev-crater",
+          "name": {
+            "en": "Gusev crater",
+            "es": "Cráter Gusev"
+          },
+          "at": [
+            175.5244,
+            -14.5308
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2004-01-04",
+          "place": {
+            "en": "Aeolis quadrangle, Mars",
+            "es": "Cuadrángulo de Aeolis, Marte"
+          },
+          "text": {
+            "en": "A crater about 160 km wide where a long valley, Ma'adim Vallis, once seemed to pour into a lake. Spirit found its floor covered by lava, but older rocks in its hills had been soaked by water.",
+            "es": "Un cráter de unos 160 km de ancho donde un largo valle, Ma'adim Vallis, parecía desembocar en un lago. Spirit halló su fondo cubierto de lava, pero las rocas más antiguas de sus colinas habían estado empapadas de agua."
+          },
+          "wiki": {
+            "en": "Gusev (Martian crater)",
+            "es": "Gusev (cráter marciano)"
+          }
+        },
+        {
+          "id": "columbia-hills",
+          "name": {
+            "en": "Columbia Hills",
+            "es": "Colinas Columbia"
+          },
+          "at": [
+            175.53,
+            -14.605
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2004-06",
+          "place": {
+            "en": "Gusev crater, Mars",
+            "es": "Cráter Gusev, Marte"
+          },
+          "text": {
+            "en": "Low hills about 3 km from Spirit's landing site, named after the crew of the shuttle Columbia, lost on 1 February 2003. Each peak bears one of their names; Spirit climbed Husband Hill.",
+            "es": "Colinas bajas a unos 3 km del sitio de aterrizaje de Spirit, llamadas así por la tripulación del transbordador Columbia, perdida el 1 de febrero de 2003. Cada cima lleva uno de sus nombres; Spirit escaló Husband Hill."
+          },
+          "details": {
+            "en": "The seven astronauts were Rick Husband, William McCool, Michael Anderson, Kalpana Chawla, David Brown, Laurel Clark and Ilan Ramon, Israel's first astronaut. Spirit's landing site was named the Columbia Memorial Station. The rover reached the hills in June 2004 and the 106-m summit of Husband Hill in August 2005, where it took a panorama of the whole crater and of the plains it had crossed.",
+            "es": "Los siete astronautas eran Rick Husband, William McCool, Michael Anderson, Kalpana Chawla, David Brown, Laurel Clark e Ilan Ramon, el primer astronauta de Israel. El sitio de aterrizaje de Spirit se llamó Estación Conmemorativa Columbia. El vehículo llegó a las colinas en junio de 2004 y a la cima de Husband Hill, de 106 m, en agosto de 2005, desde donde tomó una panorámica de todo el cráter y de las llanuras que había cruzado."
+          },
+          "wiki": {
+            "en": "Columbia Hills (Mars)",
+            "es": "Colinas Columbia"
+          }
+        },
+        {
+          "id": "home-plate-silica",
+          "name": {
+            "en": "Silica at Home Plate",
+            "es": "Sílice en Home Plate"
+          },
+          "at": [
+            175.526,
+            -14.643
+          ],
+          "world": "mars",
+          "cat": "discovery",
+          "type": "place",
+          "date": "2007-05",
+          "place": {
+            "en": "Gusev crater, Mars",
+            "es": "Cráter Gusev, Marte"
+          },
+          "text": {
+            "en": "In 2007 Spirit's dragging wheel churned up soil that was about 90% silica beside Home Plate, a plateau of volcanic layers. On Earth such deposits form in hot springs, often full of microbes.",
+            "es": "En 2007, la rueda que Spirit arrastraba removió un suelo con cerca de 90 % de sílice junto a Home Plate, una meseta de capas volcánicas. En la Tierra, esos depósitos se forman en fuentes termales, a menudo llenas de microbios."
+          },
+          "wiki": {
+            "en": "Home Plate (Mars)",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "2004-01-25",
+      "world": "mars",
+      "title": {
+        "en": "Opportunity's hole in one",
+        "es": "El hoyo en uno de Opportunity"
+      },
+      "text": {
+        "en": "Three weeks later Opportunity rolled to a stop inside Eagle, a crater just 22 m wide on Meridiani Planum. Its rocks were full of tiny grey balls, the \"blueberries\", formed by water seeping through the ground.",
+        "es": "Tres semanas después, Opportunity rodó hasta detenerse dentro de Eagle, un cráter de apenas 22 m en Meridiani Planum. Sus rocas estaban llenas de bolitas grises, los «arándanos», formadas por agua que se filtraba en el suelo."
+      },
+      "details": {
+        "en": "Meridiani was chosen because orbiters had spotted grey hematite there, an iron mineral that often forms in water. Right beside the airbags lay layered bedrock, the first ever seen up close on Mars. Under the rover's microscope it showed sulfate salts, ripples left by flowing water and the hematite balls, which grew as groundwater soaked the rock. On 2 March 2004 the science team, led by Steve Squyres of Cornell University, announced that this place had once been drenched in liquid water. Opportunity then drove to bigger craters to read deeper layers: Endurance in 2004 and Victoria, about 800 m wide, which it explored from 2006 to 2008.",
+        "es": "Se eligió Meridiani porque las sondas en órbita habían visto allí hematita gris, un mineral de hierro que suele formarse en el agua. Junto a las bolsas de aire había roca en capas, la primera vista de cerca en Marte. Bajo el microscopio del vehículo mostró sales de sulfato, ondulaciones dejadas por agua corriente y las bolitas de hematita, que crecieron mientras el agua subterránea empapaba la roca. El 2 de marzo de 2004, el equipo científico, dirigido por Steve Squyres, de la Universidad Cornell, anunció que este lugar estuvo alguna vez empapado de agua líquida. Después, Opportunity viajó a cráteres más grandes para leer capas más profundas: Endurance en 2004 y Victoria, de unos 800 m, que exploró de 2006 a 2008."
+      },
+      "camera": {
+        "lon": -5.0,
+        "lat": -1.3,
+        "zoom": 9
+      },
+      "show": [
+        "opportunity"
+      ],
+      "places": [
+        {
+          "id": "meridiani-planum",
+          "name": {
+            "en": "Meridiani Planum",
+            "es": "Meridiani Planum"
+          },
+          "at": [
+            -3.14,
+            -0.04
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2004-01-25",
+          "place": {
+            "en": "Near the equator, on the prime meridian, Mars",
+            "es": "Cerca del ecuador, en el meridiano cero, Marte"
+          },
+          "text": {
+            "en": "A smooth plain near the equator, right on Mars's prime meridian, rich in hematite seen from orbit. Opportunity drove across it for 14 years, from Eagle crater to Endeavour.",
+            "es": "Una llanura lisa cerca del ecuador, justo sobre el meridiano cero de Marte, rica en hematita vista desde la órbita. Opportunity la recorrió durante 14 años, del cráter Eagle a Endeavour."
+          },
+          "wiki": {
+            "en": "Meridiani Planum",
+            "es": "Meridiani Planum"
+          }
+        },
+        {
+          "id": "eagle-crater",
+          "name": {
+            "en": "Eagle crater",
+            "es": "Cráter Eagle"
+          },
+          "at": [
+            -5.5266,
+            -1.9462
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2004-01-25",
+          "place": {
+            "en": "Meridiani Planum, Mars",
+            "es": "Meridiani Planum, Marte"
+          },
+          "text": {
+            "en": "A crater only 22 m wide where Opportunity's airbags rolled to a stop, a lucky \"hole in one\". Its walls showed bedrock layers for the first time on Mars.",
+            "es": "Un cráter de apenas 22 m donde se detuvieron las bolsas de aire de Opportunity, un afortunado «hoyo en uno». Sus paredes mostraron por primera vez capas de roca madre en Marte."
+          },
+          "wiki": {
+            "en": "Eagle (crater)",
+            "es": ""
+          }
+        },
+        {
+          "id": "blueberries",
+          "name": {
+            "en": "The \"blueberries\"",
+            "es": "Los «arándanos»"
+          },
+          "at": [
+            -5.52,
+            -1.94
+          ],
+          "world": "mars",
+          "cat": "discovery",
+          "type": "place",
+          "date": "2004-03-02",
+          "place": {
+            "en": "Eagle crater, Meridiani Planum, Mars",
+            "es": "Cráter Eagle, Meridiani Planum, Marte"
+          },
+          "text": {
+            "en": "Hematite balls a few millimetres across, scattered over Meridiani and set in its rocks. They grew as mineral-rich groundwater seeped through the layers: proof that water once soaked this ground.",
+            "es": "Bolitas de hematita de pocos milímetros, esparcidas por Meridiani y metidas en sus rocas. Crecieron mientras agua subterránea cargada de minerales se filtraba entre las capas: la prueba de que el agua empapó este suelo."
+          },
+          "wiki": {
+            "en": "Martian spherules",
+            "es": "Esférulas marcianas"
+          }
+        },
+        {
+          "id": "steve-squyres",
+          "name": {
+            "en": "Steve Squyres",
+            "es": "Steve Squyres"
+          },
+          "at": [
+            -5.535,
+            -1.955
+          ],
+          "world": "mars",
+          "cat": "astronomer",
+          "type": "person",
+          "date": "2004-01-25",
+          "life": [
+            "1956-01-09",
+            null
+          ],
+          "place": {
+            "en": "Cornell University, Ithaca, New York",
+            "es": "Universidad Cornell, Ithaca, Nueva York"
+          },
+          "text": {
+            "en": "A planetary scientist who proposed Spirit and Opportunity and led their science team for 15 years. He wrote about them in the book Roving Mars.",
+            "es": "Un científico planetario que propuso Spirit y Opportunity y dirigió su equipo científico durante 15 años. Contó su historia en el libro Roving Mars."
+          },
+          "wiki": {
+            "en": "Steve Squyres",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "2008-05-25",
+      "world": "mars",
+      "title": {
+        "en": "Phoenix digs up ice",
+        "es": "La Phoenix desentierra hielo"
+      },
+      "text": {
+        "en": "On 25 May 2008 Phoenix landed on the icy northern plains, near 68° north. Its scoop uncovered white lumps that slowly vanished into the thin air: water ice, just under the soil.",
+        "es": "El 25 de mayo de 2008, la Phoenix aterrizó en las llanuras heladas del norte, cerca de los 68° de latitud. Su pala dejó al descubierto trozos blancos que se esfumaron poco a poco en el aire tenue: hielo de agua bajo el suelo."
+      },
+      "details": {
+        "en": "Phoenix was built partly from a lander cancelled in 2000, hence its name. Led by Peter Smith of the University of Arizona, it was the first mission to land in the polar regions of Mars. An orbiter photographed it hanging from its parachute: the first picture of a spacecraft landing on another planet, taken by another spacecraft. In a trench nicknamed Dodo-Goldilocks, bright lumps the size of dice turned to vapour over four days, and an oven later confirmed water. Phoenix also found perchlorate, a salt that destroys organic molecules when heated, which may explain Viking's puzzling results. A Canadian laser saw snow falling from clouds. As winter came the Sun sank too low for its solar panels, and Phoenix went silent in November 2008.",
+        "es": "La Phoenix se construyó en parte con un módulo cancelado en 2000; de ahí su nombre, el del ave que renace. Dirigida por Peter Smith, de la Universidad de Arizona, fue la primera misión en aterrizar en las regiones polares de Marte. Un orbitador la fotografió colgando de su paracaídas: la primera foto de una nave aterrizando en otro planeta, tomada por otra nave. En una zanja apodada Dodo-Goldilocks, trozos brillantes del tamaño de un dado se sublimaron en cuatro días, y luego un horno confirmó que eran agua. La Phoenix también halló perclorato, una sal que destruye las moléculas orgánicas al calentarse, lo que podría explicar los enigmáticos resultados de las Viking. Un láser canadiense vio nieve cayendo de las nubes. Al llegar el invierno, el Sol bajó demasiado para sus paneles solares y la Phoenix calló en noviembre de 2008."
+      },
+      "camera": {
+        "lon": -125.15,
+        "lat": 68.27,
+        "zoom": 20
+      },
+      "show": [
+        "phoenix"
+      ],
+      "places": [
+        {
+          "id": "heimdal-crater",
+          "name": {
+            "en": "Heimdal crater",
+            "es": "Cráter Heimdal"
+          },
+          "at": [
+            -124.5606,
+            68.3254
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2008-05-25",
+          "place": {
+            "en": "Vastitas Borealis, Mars",
+            "es": "Vastitas Borealis, Marte"
+          },
+          "text": {
+            "en": "A crater 10 km wide near Phoenix's landing site. In the famous orbiter photo of Phoenix under its parachute, the lander seems to fall into Heimdal, though it was really some 20 km in front of it.",
+            "es": "Un cráter de 10 km de ancho cerca del sitio de la Phoenix. En la famosa foto de la Phoenix bajo su paracaídas tomada desde la órbita, parece caer dentro de Heimdal, aunque en realidad estaba unos 20 km por delante."
+          },
+          "wiki": {
+            "en": "Heimdal (crater)",
+            "es": ""
+          }
+        },
+        {
+          "id": "phoenix-ice",
+          "name": {
+            "en": "Ice in the Dodo-Goldilocks trench",
+            "es": "Hielo en la zanja Dodo-Goldilocks"
+          },
+          "at": [
+            -125.75,
+            68.215
+          ],
+          "world": "mars",
+          "cat": "discovery",
+          "type": "place",
+          "date": "2008-06-19",
+          "place": {
+            "en": "Phoenix landing site, Vastitas Borealis, Mars",
+            "es": "Sitio de la Phoenix, Vastitas Borealis, Marte"
+          },
+          "text": {
+            "en": "Bright lumps uncovered by Phoenix's scoop that vanished in four days: water ice sublimating in the thin air. Ice lies a few centimetres down across much of the northern plains.",
+            "es": "Trozos brillantes destapados por la pala de la Phoenix que desaparecieron en cuatro días: hielo de agua que se sublimaba en el aire tenue. Hay hielo a pocos centímetros bajo gran parte de las llanuras del norte."
+          },
+          "wiki": {
+            "en": "Water on Mars",
+            "es": "Presencia de agua en Marte"
+          }
+        },
+        {
+          "id": "perchlorate",
+          "name": {
+            "en": "Perchlorate in the soil",
+            "es": "Perclorato en el suelo"
+          },
+          "at": [
+            -125.7,
+            68.23
+          ],
+          "world": "mars",
+          "cat": "discovery",
+          "type": "place",
+          "date": "2008-08",
+          "place": {
+            "en": "Phoenix landing site, Vastitas Borealis, Mars",
+            "es": "Sitio de la Phoenix, Vastitas Borealis, Marte"
+          },
+          "text": {
+            "en": "A salt Phoenix found in the soil, later seen across Mars. It is toxic to us, but some microbes on Earth feed on it, and it keeps water liquid at very low temperatures.",
+            "es": "Una sal que la Phoenix halló en el suelo y que luego se vio en todo Marte. Es tóxica para nosotros, pero algunos microbios de la Tierra se alimentan de ella, y mantiene líquida el agua a temperaturas muy bajas."
+          },
+          "wiki": {
+            "en": "Perchlorate",
+            "es": "Perclorato"
+          }
+        },
+        {
+          "id": "peter-smith",
+          "name": {
+            "en": "Peter Smith",
+            "es": "Peter Smith"
+          },
+          "at": [
+            -125.8,
+            68.2
+          ],
+          "world": "mars",
+          "cat": "astronomer",
+          "type": "person",
+          "date": "2008-05-25",
+          "place": {
+            "en": "University of Arizona, Tucson",
+            "es": "Universidad de Arizona, Tucson"
+          },
+          "text": {
+            "en": "A planetary scientist who led Phoenix, the first Mars mission run by a university. He had built cameras for Pathfinder and for the lost Mars Polar Lander.",
+            "es": "Un científico planetario que dirigió la Phoenix, la primera misión a Marte encabezada por una universidad. Antes había hecho cámaras para la Pathfinder y para el perdido Mars Polar Lander."
+          },
+          "wiki": {
+            "en": "Peter H. Smith",
+            "es": "Peter H. Smith"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2011-08-09",
+      "world": "mars",
+      "title": {
+        "en": "Opportunity reaches Endeavour",
+        "es": "Opportunity llega a Endeavour"
+      },
+      "text": {
+        "en": "After three years and about 21 km across the plains, Opportunity reached the rim of Endeavour, a crater 22 km wide, on 9 August 2011. Its older rocks held a bright vein of gypsum, laid down by water.",
+        "es": "Tras tres años y unos 21 km por las llanuras, Opportunity llegó al borde de Endeavour, un cráter de 22 km de ancho, el 9 de agosto de 2011. Sus rocas, más antiguas, guardaban una veta brillante de yeso dejada por el agua."
+      },
+      "details": {
+        "en": "Endeavour's rim exposed rocks far older than the plains, from a time when Mars may have been wetter and milder. Rover drivers at JPL planned each drive from the rover's pictures, steering around sand ripples like the one that had trapped Opportunity for five weeks in 2005. Opportunity arrived at a spot the team named Spirit Point, after its silent twin. In late 2011 it found Homestake, a vein of gypsum, a mineral left by water flowing through cracks; Steve Squyres called it a \"slam dunk\" for liquid water. It went on to explore the rim for almost seven more years.",
+        "es": "El borde de Endeavour dejaba ver rocas mucho más antiguas que las llanuras, de una época en que Marte quizá era más húmedo y templado. Los conductores del JPL planeaban cada trayecto con las fotos del vehículo, esquivando ondas de arena como la que atrapó a Opportunity durante cinco semanas en 2005. Opportunity llegó a un punto que el equipo llamó Spirit Point, en honor a su gemelo silencioso. A fines de 2011 halló Homestake, una veta de yeso, un mineral que deja el agua al correr por las grietas; Steve Squyres dijo que era una prueba contundente de agua líquida. Siguió explorando el borde casi siete años más."
+      },
+      "camera": {
+        "lon": -5.36,
+        "lat": -2.12,
+        "zoom": 30
+      },
+      "show": [
+        "opportunity"
+      ],
+      "moves": [
+        {
+          "side": "opportunity",
+          "path": [
+            [
+              -5.52552,
+              -1.94817
+            ],
+            [
+              -5.52534,
+              -1.9485
+            ],
+            [
+              -5.52516,
+              -1.94815
+            ],
+            [
+              -5.52535,
+              -1.94864
+            ],
+            [
+              -5.52503,
+              -1.94859
+            ],
+            [
+              -5.52333,
+              -1.94759
+            ],
+            [
+              -5.52294,
+              -1.94784
+            ],
+            [
+              -5.52248,
+              -1.94739
+            ],
+            [
+              -5.51743,
+              -1.94779
+            ],
+            [
+              -5.51391,
+              -1.95005
+            ],
+            [
+              -5.51423,
+              -1.95088
+            ],
+            [
+              -5.51335,
+              -1.95183
+            ],
+            [
+              -5.51203,
+              -1.95175
+            ],
+            [
+              -5.51179,
+              -1.95147
+            ],
+            [
+              -5.51273,
+              -1.95202
+            ],
+            [
+              -5.51357,
+              -1.95186
+            ],
+            [
+              -5.51344,
+              -1.95164
+            ],
+            [
+              -5.51413,
+              -1.9512
+            ],
+            [
+              -5.51366,
+              -1.95078
+            ],
+            [
+              -5.51339,
+              -1.95093
+            ],
+            [
+              -5.51347,
+              -1.95073
+            ],
+            [
+              -5.51291,
+              -1.95151
+            ],
+            [
+              -5.51371,
+              -1.95105
+            ],
+            [
+              -5.51415,
+              -1.9512
+            ],
+            [
+              -5.51384,
+              -1.95505
+            ],
+            [
+              -5.51347,
+              -1.95495
+            ],
+            [
+              -5.51366,
+              -1.95484
+            ],
+            [
+              -5.5143,
+              -1.95621
+            ],
+            [
+              -5.51506,
+              -1.95879
+            ],
+            [
+              -5.51509,
+              -1.96156
+            ],
+            [
+              -5.51517,
+              -1.96197
+            ],
+            [
+              -5.51573,
+              -1.96205
+            ],
+            [
+              -5.51636,
+              -1.96546
+            ],
+            [
+              -5.51645,
+              -1.96915
+            ],
+            [
+              -5.51754,
+              -1.969
+            ],
+            [
+              -5.51484,
+              -1.97365
+            ],
+            [
+              -5.51585,
+              -1.97843
+            ],
+            [
+              -5.5164,
+              -1.98838
+            ],
+            [
+              -5.51674,
+              -1.99023
+            ],
+            [
+              -5.5167,
+              -1.99426
+            ],
+            [
+              -5.51619,
+              -1.99774
+            ],
+            [
+              -5.5174,
+              -2.00068
+            ],
+            [
+              -5.51766,
+              -2.00408
+            ],
+            [
+              -5.51752,
+              -2.00605
+            ],
+            [
+              -5.51733,
+              -2.00576
+            ],
+            [
+              -5.51724,
+              -2.00615
+            ],
+            [
+              -5.51725,
+              -2.01111
+            ],
+            [
+              -5.5163,
+              -2.01147
+            ],
+            [
+              -5.51633,
+              -2.01253
+            ],
+            [
+              -5.51699,
+              -2.01389
+            ],
+            [
+              -5.51722,
+              -2.01352
+            ],
+            [
+              -5.51757,
+              -2.01386
+            ],
+            [
+              -5.51849,
+              -2.01357
+            ],
+            [
+              -5.51876,
+              -2.01383
+            ],
+            [
+              -5.51906,
+              -2.01295
+            ],
+            [
+              -5.51966,
+              -2.01299
+            ],
+            [
+              -5.52055,
+              -2.01377
+            ],
+            [
+              -5.52064,
+              -2.01517
+            ],
+            [
+              -5.52016,
+              -2.01842
+            ],
+            [
+              -5.52039,
+              -2.01838
+            ],
+            [
+              -5.51831,
+              -2.02861
+            ],
+            [
+              -5.51699,
+              -2.02984
+            ],
+            [
+              -5.51669,
+              -2.03088
+            ],
+            [
+              -5.51581,
+              -2.03179
+            ],
+            [
+              -5.51576,
+              -2.03266
+            ],
+            [
+              -5.51524,
+              -2.03335
+            ],
+            [
+              -5.51527,
+              -2.03474
+            ],
+            [
+              -5.51466,
+              -2.03492
+            ],
+            [
+              -5.51392,
+              -2.0359
+            ],
+            [
+              -5.51374,
+              -2.04158
+            ],
+            [
+              -5.51366,
+              -2.04107
+            ],
+            [
+              -5.51355,
+              -2.04335
+            ],
+            [
+              -5.51323,
+              -2.04408
+            ],
+            [
+              -5.51334,
+              -2.04578
+            ],
+            [
+              -5.51292,
+              -2.0462
+            ],
+            [
+              -5.51195,
+              -2.04547
+            ],
+            [
+              -5.51163,
+              -2.04717
+            ],
+            [
+              -5.50804,
+              -2.05178
+            ],
+            [
+              -5.50667,
+              -2.05259
+            ],
+            [
+              -5.50681,
+              -2.05176
+            ],
+            [
+              -5.50568,
+              -2.05202
+            ],
+            [
+              -5.50582,
+              -2.05167
+            ],
+            [
+              -5.50525,
+              -2.05164
+            ],
+            [
+              -5.50509,
+              -2.05098
+            ],
+            [
+              -5.50422,
+              -2.05024
+            ],
+            [
+              -5.50471,
+              -2.04946
+            ],
+            [
+              -5.50445,
+              -2.04881
+            ],
+            [
+              -5.50413,
+              -2.04862
+            ],
+            [
+              -5.50353,
+              -2.04915
+            ],
+            [
+              -5.50249,
+              -2.04902
+            ],
+            [
+              -5.50268,
+              -2.04838
+            ],
+            [
+              -5.50196,
+              -2.04843
+            ],
+            [
+              -5.50185,
+              -2.04869
+            ],
+            [
+              -5.50207,
+              -2.04797
+            ],
+            [
+              -5.50143,
+              -2.04737
+            ],
+            [
+              -5.50085,
+              -2.04844
+            ],
+            [
+              -5.5007,
+              -2.04772
+            ],
+            [
+              -5.5,
+              -2.04795
+            ],
+            [
+              -5.50007,
+              -2.04818
+            ],
+            [
+              -5.49916,
+              -2.04754
+            ],
+            [
+              -5.49889,
+              -2.04792
+            ],
+            [
+              -5.49811,
+              -2.04759
+            ],
+            [
+              -5.49767,
+              -2.04881
+            ],
+            [
+              -5.49739,
+              -2.04807
+            ],
+            [
+              -5.49839,
+              -2.04752
+            ],
+            [
+              -5.4997,
+              -2.04752
+            ],
+            [
+              -5.49964,
+              -2.04802
+            ],
+            [
+              -5.50014,
+              -2.0481
+            ],
+            [
+              -5.50132,
+              -2.04766
+            ],
+            [
+              -5.50504,
+              -2.04786
+            ],
+            [
+              -5.50547,
+              -2.04848
+            ],
+            [
+              -5.50593,
+              -2.05194
+            ],
+            [
+              -5.50568,
+              -2.05204
+            ],
+            [
+              -5.50659,
+              -2.05183
+            ],
+            [
+              -5.50646,
+              -2.05208
+            ],
+            [
+              -5.50679,
+              -2.05215
+            ],
+            [
+              -5.50663,
+              -2.05257
+            ],
+            [
+              -5.50603,
+              -2.0523
+            ],
+            [
+              -5.50668,
+              -2.05243
+            ],
+            [
+              -5.50692,
+              -2.05304
+            ],
+            [
+              -5.50693,
+              -2.0557
+            ],
+            [
+              -5.5056,
+              -2.05751
+            ],
+            [
+              -5.50536,
+              -2.05695
+            ],
+            [
+              -5.50442,
+              -2.05916
+            ],
+            [
+              -5.50342,
+              -2.05927
+            ],
+            [
+              -5.5037,
+              -2.06002
+            ],
+            [
+              -5.50757,
+              -2.06226
+            ],
+            [
+              -5.50927,
+              -2.06406
+            ],
+            [
+              -5.50949,
+              -2.06693
+            ],
+            [
+              -5.51009,
+              -2.06933
+            ],
+            [
+              -5.51274,
+              -2.07278
+            ],
+            [
+              -5.51277,
+              -2.07409
+            ],
+            [
+              -5.51163,
+              -2.07518
+            ],
+            [
+              -5.51166,
+              -2.07554
+            ],
+            [
+              -5.51252,
+              -2.07622
+            ],
+            [
+              -5.51252,
+              -2.07688
+            ],
+            [
+              -5.51395,
+              -2.07852
+            ],
+            [
+              -5.51355,
+              -2.07907
+            ],
+            [
+              -5.51348,
+              -2.08053
+            ],
+            [
+              -5.51419,
+              -2.0809
+            ],
+            [
+              -5.51427,
+              -2.08234
+            ],
+            [
+              -5.51589,
+              -2.08325
+            ],
+            [
+              -5.51528,
+              -2.08987
+            ],
+            [
+              -5.51562,
+              -2.09
+            ],
+            [
+              -5.51601,
+              -2.09202
+            ],
+            [
+              -5.51689,
+              -2.09243
+            ],
+            [
+              -5.51718,
+              -2.09304
+            ],
+            [
+              -5.51717,
+              -2.09439
+            ],
+            [
+              -5.51742,
+              -2.09417
+            ],
+            [
+              -5.5171,
+              -2.09447
+            ],
+            [
+              -5.51654,
+              -2.09769
+            ],
+            [
+              -5.51803,
+              -2.09894
+            ],
+            [
+              -5.5186,
+              -2.099
+            ],
+            [
+              -5.51876,
+              -2.10092
+            ],
+            [
+              -5.51913,
+              -2.10128
+            ],
+            [
+              -5.51972,
+              -2.10481
+            ],
+            [
+              -5.51966,
+              -2.10606
+            ],
+            [
+              -5.5203,
+              -2.10698
+            ],
+            [
+              -5.52024,
+              -2.11038
+            ],
+            [
+              -5.5207,
+              -2.11161
+            ],
+            [
+              -5.52016,
+              -2.11261
+            ],
+            [
+              -5.52021,
+              -2.11894
+            ],
+            [
+              -5.52468,
+              -2.11792
+            ],
+            [
+              -5.52165,
+              -2.11892
+            ],
+            [
+              -5.52155,
+              -2.11984
+            ],
+            [
+              -5.52164,
+              -2.11923
+            ],
+            [
+              -5.52323,
+              -2.11828
+            ],
+            [
+              -5.52527,
+              -2.11807
+            ],
+            [
+              -5.52972,
+              -2.11921
+            ],
+            [
+              -5.53218,
+              -2.1207
+            ],
+            [
+              -5.53311,
+              -2.12005
+            ],
+            [
+              -5.53605,
+              -2.12216
+            ],
+            [
+              -5.53723,
+              -2.12266
+            ],
+            [
+              -5.53731,
+              -2.12635
+            ],
+            [
+              -5.53689,
+              -2.13143
+            ],
+            [
+              -5.53668,
+              -2.13196
+            ],
+            [
+              -5.53596,
+              -2.13229
+            ],
+            [
+              -5.53587,
+              -2.13582
+            ],
+            [
+              -5.53493,
+              -2.13775
+            ],
+            [
+              -5.53606,
+              -2.13758
+            ],
+            [
+              -5.53765,
+              -2.13888
+            ],
+            [
+              -5.53794,
+              -2.13942
+            ],
+            [
+              -5.5381,
+              -2.14211
+            ],
+            [
+              -5.53882,
+              -2.14277
+            ],
+            [
+              -5.5392,
+              -2.14462
+            ],
+            [
+              -5.5389,
+              -2.1448
+            ],
+            [
+              -5.53894,
+              -2.14709
+            ],
+            [
+              -5.5377,
+              -2.14851
+            ],
+            [
+              -5.53764,
+              -2.15042
+            ],
+            [
+              -5.53713,
+              -2.15052
+            ],
+            [
+              -5.53639,
+              -2.15649
+            ],
+            [
+              -5.53551,
+              -2.15684
+            ],
+            [
+              -5.53509,
+              -2.15762
+            ],
+            [
+              -5.53055,
+              -2.1576
+            ],
+            [
+              -5.5284,
+              -2.15868
+            ],
+            [
+              -5.52782,
+              -2.15794
+            ],
+            [
+              -5.52549,
+              -2.15764
+            ],
+            [
+              -5.52315,
+              -2.15801
+            ],
+            [
+              -5.51936,
+              -2.15948
+            ],
+            [
+              -5.51571,
+              -2.16182
+            ],
+            [
+              -5.51256,
+              -2.16247
+            ],
+            [
+              -5.51197,
+              -2.16351
+            ],
+            [
+              -5.50906,
+              -2.16353
+            ],
+            [
+              -5.50757,
+              -2.16314
+            ],
+            [
+              -5.50406,
+              -2.16389
+            ],
+            [
+              -5.49902,
+              -2.16602
+            ],
+            [
+              -5.49822,
+              -2.16699
+            ],
+            [
+              -5.49684,
+              -2.1677
+            ],
+            [
+              -5.49633,
+              -2.16729
+            ],
+            [
+              -5.49469,
+              -2.16767
+            ],
+            [
+              -5.49344,
+              -2.16713
+            ],
+            [
+              -5.49137,
+              -2.16799
+            ],
+            [
+              -5.49104,
+              -2.16739
+            ],
+            [
+              -5.48923,
+              -2.16651
+            ],
+            [
+              -5.48187,
+              -2.16509
+            ],
+            [
+              -5.47551,
+              -2.16737
+            ],
+            [
+              -5.47466,
+              -2.16849
+            ],
+            [
+              -5.47399,
+              -2.16868
+            ],
+            [
+              -5.47236,
+              -2.17017
+            ],
+            [
+              -5.47065,
+              -2.17023
+            ],
+            [
+              -5.4664,
+              -2.17144
+            ],
+            [
+              -5.46137,
+              -2.17139
+            ],
+            [
+              -5.45267,
+              -2.17216
+            ],
+            [
+              -5.44721,
+              -2.17191
+            ],
+            [
+              -5.44682,
+              -2.17209
+            ],
+            [
+              -5.44682,
+              -2.17319
+            ],
+            [
+              -5.44605,
+              -2.1735
+            ],
+            [
+              -5.44539,
+              -2.17313
+            ],
+            [
+              -5.44517,
+              -2.17237
+            ],
+            [
+              -5.44343,
+              -2.17243
+            ],
+            [
+              -5.44365,
+              -2.17412
+            ],
+            [
+              -5.44278,
+              -2.17563
+            ],
+            [
+              -5.437,
+              -2.1765
+            ],
+            [
+              -5.43497,
+              -2.17725
+            ],
+            [
+              -5.43392,
+              -2.1787
+            ],
+            [
+              -5.4325,
+              -2.17967
+            ],
+            [
+              -5.43155,
+              -2.18086
+            ],
+            [
+              -5.42686,
+              -2.18334
+            ],
+            [
+              -5.42137,
+              -2.18747
+            ],
+            [
+              -5.41979,
+              -2.18824
+            ],
+            [
+              -5.41947,
+              -2.18949
+            ],
+            [
+              -5.41681,
+              -2.18961
+            ],
+            [
+              -5.41052,
+              -2.19078
+            ],
+            [
+              -5.40649,
+              -2.19352
+            ],
+            [
+              -5.4029,
+              -2.19436
+            ],
+            [
+              -5.39761,
+              -2.19687
+            ],
+            [
+              -5.39594,
+              -2.19733
+            ],
+            [
+              -5.39367,
+              -2.19663
+            ],
+            [
+              -5.39143,
+              -2.19978
+            ],
+            [
+              -5.39014,
+              -2.20319
+            ],
+            [
+              -5.38555,
+              -2.20739
+            ],
+            [
+              -5.38357,
+              -2.2109
+            ],
+            [
+              -5.38215,
+              -2.21255
+            ],
+            [
+              -5.37838,
+              -2.2159
+            ],
+            [
+              -5.37607,
+              -2.21732
+            ],
+            [
+              -5.37409,
+              -2.21923
+            ],
+            [
+              -5.36732,
+              -2.22299
+            ],
+            [
+              -5.36578,
+              -2.22661
+            ],
+            [
+              -5.36424,
+              -2.22855
+            ],
+            [
+              -5.3633,
+              -2.22906
+            ],
+            [
+              -5.36278,
+              -2.23039
+            ],
+            [
+              -5.36214,
+              -2.23087
+            ]
+          ]
+        }
+      ],
+      "places": [
+        {
+          "id": "victoria-crater",
+          "name": {
+            "en": "Victoria crater",
+            "es": "Cráter Victoria"
+          },
+          "at": [
+            -5.498,
+            -2.0523
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2006-09",
+          "place": {
+            "en": "Meridiani Planum, Mars",
+            "es": "Meridiani Planum, Marte"
+          },
+          "text": {
+            "en": "A crater about 800 m wide whose scalloped cliffs show tens of metres of layered rock. Opportunity explored it for two years and drove inside it in 2007–2008.",
+            "es": "Un cráter de unos 800 m de ancho cuyos acantilados festoneados muestran decenas de metros de roca en capas. Opportunity lo exploró durante dos años y bajó a su interior en 2007-2008."
+          },
+          "wiki": {
+            "en": "Victoria (crater)",
+            "es": ""
+          }
+        },
+        {
+          "id": "endeavour-crater",
+          "name": {
+            "en": "Endeavour crater",
+            "es": "Cráter Endeavour"
+          },
+          "at": [
+            -5.1955,
+            -2.2836
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2011-08-09",
+          "place": {
+            "en": "Meridiani Planum, Mars",
+            "es": "Meridiani Planum, Marte"
+          },
+          "text": {
+            "en": "A crater 22 km wide, much older than the plains around it. Opportunity spent its last seven years on its western rim, which the team called its \"second landing site\".",
+            "es": "Un cráter de 22 km de ancho, mucho más antiguo que las llanuras que lo rodean. Opportunity pasó sus últimos siete años en su borde oeste, que el equipo llamó su «segundo sitio de aterrizaje»."
+          },
+          "wiki": {
+            "en": "Endeavour (crater)",
+            "es": ""
+          }
+        },
+        {
+          "id": "homestake-gypsum",
+          "name": {
+            "en": "Homestake, a vein of gypsum",
+            "es": "Homestake, una veta de yeso"
+          },
+          "at": [
+            -5.3541,
+            -2.2254
+          ],
+          "world": "mars",
+          "cat": "discovery",
+          "type": "place",
+          "date": "2011-12-07",
+          "place": {
+            "en": "Cape York, Endeavour crater, Mars",
+            "es": "Cabo York, cráter Endeavour, Marte"
+          },
+          "text": {
+            "en": "A bright vein as wide as a thumb, made of gypsum, a mineral that forms when water flows through cracks in rock. It was the clearest sign of liquid water that Opportunity found.",
+            "es": "Una veta brillante del ancho de un pulgar, hecha de yeso, un mineral que se forma cuando el agua corre por las grietas de la roca. Fue la señal más clara de agua líquida que halló Opportunity."
+          },
+          "wiki": {
+            "en": "Gypsum",
+            "es": "Yeso"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2012-08-06",
+      "world": "mars",
+      "title": {
+        "en": "Seven minutes of terror",
+        "es": "Siete minutos de terror"
+      },
+      "text": {
+        "en": "On 6 August 2012 a hovering, rocket-powered \"sky crane\" lowered Curiosity, a rover as big as a car, on cables into Gale crater. Its goal: the layered slopes of Mount Sharp, 5 km high.",
+        "es": "El 6 de agosto de 2012, una «grúa celeste» que flotaba con cohetes bajó con cables a Curiosity, un vehículo del tamaño de un auto, dentro del cráter Gale. Su meta: las laderas en capas del monte Sharp, de 5 km de altura."
+      },
+      "details": {
+        "en": "Curiosity weighs 900 kg, too much for airbags. So after the heat shield and parachute, a descent stage fired eight rockets, hovered and lowered the rover on nylon cords, then flew off to crash at a safe distance. Radio signals took 14 minutes to reach Earth, twice as long as the landing itself, so every move had to run on its own: the \"seven minutes of terror\" of the landing team led by Adam Steltzner. Curiosity touched down less than 2.4 km from its target, at a spot named Bradbury Landing after the writer Ray Bradbury. Its name came from Clara Ma, a 12-year-old girl from Kansas. Unlike the earlier rovers it runs on the heat of plutonium, not sunlight, which is why it is still driving.",
+        "es": "Curiosity pesa 900 kg, demasiado para unas bolsas de aire. Así que, tras el escudo térmico y el paracaídas, una etapa de descenso encendió ocho cohetes, se quedó flotando y bajó al vehículo con cuerdas de nailon; luego se alejó para estrellarse a una distancia segura. Las señales de radio tardaban 14 minutos en llegar a la Tierra, el doble que el aterrizaje, así que cada paso debía ocurrir solo: los «siete minutos de terror» del equipo de aterrizaje dirigido por Adam Steltzner. Curiosity se posó a menos de 2,4 km de su blanco, en un lugar llamado Bradbury Landing en honor al escritor Ray Bradbury. Su nombre lo propuso Clara Ma, una niña de 12 años de Kansas. A diferencia de los vehículos anteriores, funciona con el calor del plutonio y no con luz solar; por eso sigue en marcha."
+      },
+      "camera": {
+        "lon": 137.65,
+        "lat": -4.95,
+        "zoom": 9
+      },
+      "show": [
+        "curiosity"
+      ],
+      "places": [
+        {
+          "id": "gale-crater",
+          "name": {
+            "en": "Gale crater",
+            "es": "Cráter Gale"
+          },
+          "at": [
+            137.811,
+            -5.3672
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2012-08-06",
+          "place": {
+            "en": "Aeolis, near the equator, Mars",
+            "es": "Aeolis, cerca del ecuador, Marte"
+          },
+          "text": {
+            "en": "A crater 154 km wide, formed 3.5 to 3.8 billion years ago, with a mountain of layered rock in the middle. Rivers and lakes filled it again and again; Curiosity has explored it since 2012.",
+            "es": "Un cráter de 154 km de ancho, formado hace entre 3 500 y 3 800 millones de años, con una montaña de roca en capas en el centro. Ríos y lagos lo llenaron una y otra vez; Curiosity lo explora desde 2012."
+          },
+          "wiki": {
+            "en": "Gale (crater)",
+            "es": "Gale (cráter)"
+          }
+        },
+        {
+          "id": "aeolis-mons",
+          "name": {
+            "en": "Mount Sharp (Aeolis Mons)",
+            "es": "Monte Sharp (Aeolis Mons)"
+          },
+          "at": [
+            137.8453,
+            -5.0834
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2012-08-06",
+          "place": {
+            "en": "Gale crater, Mars",
+            "es": "Cráter Gale, Marte"
+          },
+          "text": {
+            "en": "A mountain about 5 km high in the middle of Gale crater, built of layers of mud, sand and salts laid down over millions of years: a history book of how Mars dried out. Curiosity has climbed it since 2014.",
+            "es": "Una montaña de unos 5 km de altura en el centro del cráter Gale, hecha de capas de lodo, arena y sales depositadas durante millones de años: un libro de historia de cómo se secó Marte. Curiosity la escala desde 2014."
+          },
+          "wiki": {
+            "en": "Mount Sharp",
+            "es": "Aeolis Mons"
+          }
+        },
+        {
+          "id": "adam-steltzner",
+          "name": {
+            "en": "Adam Steltzner",
+            "es": "Adam Steltzner"
+          },
+          "at": [
+            137.43,
+            -4.58
+          ],
+          "world": "mars",
+          "cat": "control",
+          "type": "person",
+          "date": "2012-08-06",
+          "life": [
+            "1963",
+            null
+          ],
+          "place": {
+            "en": "NASA's Jet Propulsion Laboratory (JPL), Pasadena, California",
+            "es": "Laboratorio de Propulsión a Chorro (JPL) de la NASA, Pasadena, California"
+          },
+          "text": {
+            "en": "The engineer who led the team that designed Curiosity's sky-crane landing, an idea many thought too crazy to work. He later became chief engineer of the Perseverance mission.",
+            "es": "El ingeniero que dirigió al equipo que diseñó el aterrizaje con grúa celeste de Curiosity, una idea que muchos creían demasiado loca para funcionar. Luego fue ingeniero jefe de la misión Perseverance."
+          },
+          "wiki": {
+            "en": "Adam Steltzner",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "2013-03-12",
+      "world": "mars",
+      "title": {
+        "en": "A lake fit for life",
+        "es": "Un lago apto para la vida"
+      },
+      "text": {
+        "en": "At Yellowknife Bay, half a kilometre from its landing site, Curiosity drilled its first rock. Its clay and chemistry showed that a calm lake of fresh water once lay here, where microbes could have lived.",
+        "es": "En Yellowknife Bay, a medio kilómetro de donde aterrizó, Curiosity perforó su primera roca. Su arcilla y su química mostraron que aquí hubo un lago tranquilo de agua dulce, donde podrían haber vivido microbios."
+      },
+      "details": {
+        "en": "The hole, in a mudstone named John Klein after a mission manager who had died, gave Curiosity's onboard labs their first powder of Martian rock. It held clay minerals that form in water that is neither too acidic nor too salty, and the chemical ingredients of life: carbon, hydrogen, oxygen, nitrogen, phosphorus and sulfur. On 12 March 2013 NASA announced that ancient Mars could have supported microbes. Later work by the science team, led by John Grotzinger, showed that rivers and lakes filled Gale crater again and again, perhaps for millions of years, laying down the lower layers of Mount Sharp. Curiosity has found no living things, only that life could have lived here.",
+        "es": "El agujero, en una lodolita llamada John Klein en honor a un gerente de la misión ya fallecido, dio a los laboratorios de Curiosity su primer polvo de roca marciana. Tenía arcillas que se forman en agua ni muy ácida ni muy salada, y los ingredientes químicos de la vida: carbono, hidrógeno, oxígeno, nitrógeno, fósforo y azufre. El 12 de marzo de 2013, la NASA anunció que el Marte antiguo pudo albergar microbios. Más tarde, el equipo científico, dirigido por John Grotzinger, mostró que ríos y lagos llenaron el cráter Gale una y otra vez, quizá durante millones de años, y depositaron las capas bajas del monte Sharp. Curiosity no ha hallado seres vivos; solo que la vida pudo existir aquí."
+      },
+      "camera": {
+        "lon": 137.4455,
+        "lat": -4.5895,
+        "zoom": 30
+      },
+      "show": [
+        "curiosity"
+      ],
+      "moves": [
+        {
+          "side": "curiosity",
+          "path": [
+            [
+              137.44163,
+              -4.58947
+            ],
+            [
+              137.44211,
+              -4.58934
+            ],
+            [
+              137.44359,
+              -4.59032
+            ],
+            [
+              137.44485,
+              -4.58987
+            ],
+            [
+              137.44531,
+              -4.59048
+            ],
+            [
+              137.44862,
+              -4.58991
+            ],
+            [
+              137.44883,
+              -4.59045
+            ],
+            [
+              137.44948,
+              -4.58977
+            ],
+            [
+              137.44939,
+              -4.58914
+            ]
+          ],
+          "icon": "🚙"
+        }
+      ],
+      "places": [
+        {
+          "id": "yellowknife-bay",
+          "name": {
+            "en": "Yellowknife Bay's ancient lake",
+            "es": "El antiguo lago de Yellowknife Bay"
+          },
+          "at": [
+            137.4491,
+            -4.5895
+          ],
+          "world": "mars",
+          "cat": "discovery",
+          "type": "place",
+          "date": "2013-03-12",
+          "place": {
+            "en": "Gale crater, Mars",
+            "es": "Cráter Gale, Marte"
+          },
+          "text": {
+            "en": "A shallow dip where Curiosity drilled its first rocks. Their fine mud settled in a lake of fresh water some 3.5 billion years ago: the first place on another planet shown to have been fit for life.",
+            "es": "Una pequeña depresión donde Curiosity perforó sus primeras rocas. Su lodo fino se asentó en un lago de agua dulce hace unos 3 500 millones de años: el primer lugar de otro planeta que se demostró apto para la vida."
+          },
+          "wiki": {
+            "en": "Yellowknife Bay, Mars",
+            "es": ""
+          }
+        },
+        {
+          "id": "john-grotzinger",
+          "name": {
+            "en": "John Grotzinger",
+            "es": "John Grotzinger"
+          },
+          "at": [
+            137.453,
+            -4.586
+          ],
+          "world": "mars",
+          "cat": "astronomer",
+          "type": "person",
+          "date": "2013-03-12",
+          "life": [
+            "1957",
+            null
+          ],
+          "place": {
+            "en": "Caltech, Pasadena, California",
+            "es": "Caltech, Pasadena, California"
+          },
+          "text": {
+            "en": "A geologist who studied Earth's oldest rocks and led Curiosity's science team from 2007 to 2015. His team read Gale crater's layers as the record of long-lived rivers and lakes.",
+            "es": "Un geólogo que estudió las rocas más antiguas de la Tierra y dirigió el equipo científico de Curiosity de 2007 a 2015. Su equipo leyó las capas del cráter Gale como el registro de ríos y lagos duraderos."
+          },
+          "wiki": {
+            "en": "John P. Grotzinger",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "2018-06-07",
+      "world": "mars",
+      "title": {
+        "en": "Organics and methane",
+        "es": "Moléculas orgánicas y metano"
+      },
+      "text": {
+        "en": "Climbing Mount Sharp since 2014, Curiosity found organic molecules in 3-billion-year-old mudstone, and methane that rises and falls with the seasons. Neither proves life, but both are clues.",
+        "es": "En su ascenso por el monte Sharp, iniciado en 2014, Curiosity halló moléculas orgánicas en lodolitas de 3 000 millones de años y metano que sube y baja con las estaciones. Nada de eso prueba la vida, pero son pistas."
+      },
+      "details": {
+        "en": "On Earth most methane is made by living things, but it can also come from water reacting with rock. Curiosity's laser instrument found only a trace in Gale crater's air, about 0.4 parts per billion, that swells in summer and fades in winter, with occasional spikes. Orbiters have barely seen any, a puzzle still unsolved. The organic molecules, reported by a team led by Jennifer Eigenbrode, came from rocks drilled at the foot of the mountain and baked in the rover's oven: pieces of larger molecules kept for billions of years. In 2025 Curiosity reported the largest organic molecules yet found on Mars, carbon chains up to 12 atoms long.",
+        "es": "En la Tierra, casi todo el metano lo producen seres vivos, pero también puede salir de reacciones entre agua y roca. El instrumento láser de Curiosity halló apenas un rastro en el aire del cráter Gale, unas 0,4 partes por mil millones, que crece en verano y baja en invierno, con picos ocasionales. Las sondas en órbita casi no lo han visto, un enigma aún sin resolver. Las moléculas orgánicas, anunciadas por un equipo dirigido por Jennifer Eigenbrode, salieron de rocas perforadas al pie de la montaña y horneadas en el vehículo: trozos de moléculas mayores guardados durante miles de millones de años. En 2025, Curiosity anunció las moléculas orgánicas más grandes halladas en Marte, cadenas de hasta 12 átomos de carbono."
+      },
+      "camera": {
+        "lon": 137.41,
+        "lat": -4.66,
+        "zoom": 30
+      },
+      "show": [
+        "curiosity"
+      ],
+      "moves": [
+        {
+          "side": "curiosity",
+          "path": [
+            [
+              137.44939,
+              -4.58914
+            ],
+            [
+              137.44905,
+              -4.59038
+            ],
+            [
+              137.44753,
+              -4.5902
+            ],
+            [
+              137.44365,
+              -4.59383
+            ],
+            [
+              137.4418,
+              -4.59409
+            ],
+            [
+              137.44016,
+              -4.59518
+            ],
+            [
+              137.43955,
+              -4.59656
+            ],
+            [
+              137.43701,
+              -4.59695
+            ],
+            [
+              137.4364,
+              -4.59856
+            ],
+            [
+              137.43701,
+              -4.59695
+            ],
+            [
+              137.4364,
+              -4.59856
+            ],
+            [
+              137.43335,
+              -4.60022
+            ],
+            [
+              137.43214,
+              -4.59973
+            ],
+            [
+              137.43117,
+              -4.59989
+            ],
+            [
+              137.43045,
+              -4.60057
+            ],
+            [
+              137.43072,
+              -4.60092
+            ],
+            [
+              137.43007,
+              -4.60199
+            ],
+            [
+              137.42786,
+              -4.60397
+            ],
+            [
+              137.42722,
+              -4.60626
+            ],
+            [
+              137.42651,
+              -4.60646
+            ],
+            [
+              137.42628,
+              -4.60722
+            ],
+            [
+              137.42436,
+              -4.60859
+            ],
+            [
+              137.42374,
+              -4.61109
+            ],
+            [
+              137.42235,
+              -4.61185
+            ],
+            [
+              137.42253,
+              -4.61277
+            ],
+            [
+              137.42133,
+              -4.61364
+            ],
+            [
+              137.42033,
+              -4.61762
+            ],
+            [
+              137.41911,
+              -4.61815
+            ],
+            [
+              137.4182,
+              -4.61958
+            ],
+            [
+              137.41647,
+              -4.62052
+            ],
+            [
+              137.41509,
+              -4.62248
+            ],
+            [
+              137.41313,
+              -4.62243
+            ],
+            [
+              137.41197,
+              -4.62317
+            ],
+            [
+              137.41144,
+              -4.62416
+            ],
+            [
+              137.40962,
+              -4.62555
+            ],
+            [
+              137.40923,
+              -4.62653
+            ],
+            [
+              137.40855,
+              -4.62648
+            ],
+            [
+              137.40811,
+              -4.62706
+            ],
+            [
+              137.40728,
+              -4.62654
+            ],
+            [
+              137.40342,
+              -4.62719
+            ],
+            [
+              137.40258,
+              -4.6284
+            ],
+            [
+              137.40043,
+              -4.62973
+            ],
+            [
+              137.40052,
+              -4.6323
+            ],
+            [
+              137.39973,
+              -4.63227
+            ],
+            [
+              137.39901,
+              -4.63361
+            ],
+            [
+              137.39942,
+              -4.63436
+            ],
+            [
+              137.40109,
+              -4.63476
+            ],
+            [
+              137.40217,
+              -4.63569
+            ],
+            [
+              137.40218,
+              -4.63639
+            ],
+            [
+              137.40281,
+              -4.63645
+            ],
+            [
+              137.40289,
+              -4.63779
+            ],
+            [
+              137.40225,
+              -4.63823
+            ],
+            [
+              137.40187,
+              -4.63998
+            ],
+            [
+              137.40073,
+              -4.64058
+            ],
+            [
+              137.3981,
+              -4.63991
+            ],
+            [
+              137.39538,
+              -4.64088
+            ],
+            [
+              137.39485,
+              -4.64029
+            ],
+            [
+              137.39224,
+              -4.64196
+            ],
+            [
+              137.38925,
+              -4.64245
+            ],
+            [
+              137.38657,
+              -4.64665
+            ],
+            [
+              137.38514,
+              -4.64706
+            ],
+            [
+              137.38468,
+              -4.64937
+            ],
+            [
+              137.38405,
+              -4.6495
+            ],
+            [
+              137.38403,
+              -4.6502
+            ],
+            [
+              137.38486,
+              -4.65087
+            ],
+            [
+              137.38423,
+              -4.65127
+            ],
+            [
+              137.38381,
+              -4.65237
+            ],
+            [
+              137.38405,
+              -4.65492
+            ],
+            [
+              137.38466,
+              -4.65543
+            ],
+            [
+              137.38345,
+              -4.65742
+            ],
+            [
+              137.38365,
+              -4.65819
+            ],
+            [
+              137.38305,
+              -4.65848
+            ],
+            [
+              137.3827,
+              -4.66027
+            ],
+            [
+              137.38252,
+              -4.65941
+            ],
+            [
+              137.382,
+              -4.65912
+            ],
+            [
+              137.38093,
+              -4.65938
+            ],
+            [
+              137.38055,
+              -4.65896
+            ],
+            [
+              137.37731,
+              -4.65961
+            ],
+            [
+              137.37709,
+              -4.66084
+            ],
+            [
+              137.37638,
+              -4.66159
+            ],
+            [
+              137.3779,
+              -4.66319
+            ],
+            [
+              137.37746,
+              -4.66349
+            ],
+            [
+              137.37746,
+              -4.66256
+            ],
+            [
+              137.37778,
+              -4.66338
+            ],
+            [
+              137.37747,
+              -4.66356
+            ],
+            [
+              137.37739,
+              -4.66284
+            ],
+            [
+              137.37734,
+              -4.66382
+            ],
+            [
+              137.37585,
+              -4.66474
+            ],
+            [
+              137.37488,
+              -4.6661
+            ],
+            [
+              137.37367,
+              -4.66588
+            ],
+            [
+              137.3717,
+              -4.66689
+            ],
+            [
+              137.37079,
+              -4.66659
+            ],
+            [
+              137.3702,
+              -4.66729
+            ],
+            [
+              137.37061,
+              -4.66766
+            ],
+            [
+              137.37124,
+              -4.6675
+            ],
+            [
+              137.3714,
+              -4.66795
+            ],
+            [
+              137.37127,
+              -4.66826
+            ],
+            [
+              137.37119,
+              -4.66755
+            ],
+            [
+              137.37032,
+              -4.66757
+            ],
+            [
+              137.36942,
+              -4.66884
+            ],
+            [
+              137.36915,
+              -4.67092
+            ],
+            [
+              137.36985,
+              -4.67151
+            ],
+            [
+              137.36977,
+              -4.67205
+            ],
+            [
+              137.36932,
+              -4.67283
+            ],
+            [
+              137.36853,
+              -4.67307
+            ],
+            [
+              137.36885,
+              -4.6731
+            ],
+            [
+              137.36841,
+              -4.67333
+            ],
+            [
+              137.36864,
+              -4.67381
+            ],
+            [
+              137.36605,
+              -4.67631
+            ],
+            [
+              137.36624,
+              -4.67829
+            ],
+            [
+              137.36563,
+              -4.67936
+            ],
+            [
+              137.36687,
+              -4.67927
+            ],
+            [
+              137.3674,
+              -4.68017
+            ],
+            [
+              137.36802,
+              -4.68005
+            ],
+            [
+              137.3673,
+              -4.68004
+            ],
+            [
+              137.36709,
+              -4.67898
+            ],
+            [
+              137.36583,
+              -4.67923
+            ],
+            [
+              137.36402,
+              -4.67757
+            ],
+            [
+              137.36241,
+              -4.67869
+            ],
+            [
+              137.36208,
+              -4.67831
+            ],
+            [
+              137.36084,
+              -4.67863
+            ],
+            [
+              137.35972,
+              -4.67812
+            ],
+            [
+              137.3577,
+              -4.67867
+            ],
+            [
+              137.35823,
+              -4.68067
+            ],
+            [
+              137.35734,
+              -4.6824
+            ],
+            [
+              137.35747,
+              -4.68387
+            ],
+            [
+              137.35511,
+              -4.68571
+            ],
+            [
+              137.35431,
+              -4.68703
+            ],
+            [
+              137.35439,
+              -4.68769
+            ],
+            [
+              137.35365,
+              -4.68839
+            ],
+            [
+              137.35283,
+              -4.69107
+            ],
+            [
+              137.35318,
+              -4.69257
+            ],
+            [
+              137.35273,
+              -4.69341
+            ],
+            [
+              137.35342,
+              -4.69477
+            ],
+            [
+              137.3531,
+              -4.69569
+            ],
+            [
+              137.35451,
+              -4.6968
+            ],
+            [
+              137.35517,
+              -4.69952
+            ],
+            [
+              137.35482,
+              -4.69989
+            ],
+            [
+              137.35605,
+              -4.70156
+            ],
+            [
+              137.35607,
+              -4.70252
+            ],
+            [
+              137.35547,
+              -4.70349
+            ],
+            [
+              137.35575,
+              -4.70477
+            ],
+            [
+              137.35639,
+              -4.70616
+            ],
+            [
+              137.35842,
+              -4.70779
+            ],
+            [
+              137.35866,
+              -4.70848
+            ],
+            [
+              137.35863,
+              -4.7104
+            ],
+            [
+              137.35719,
+              -4.71119
+            ],
+            [
+              137.35785,
+              -4.71081
+            ],
+            [
+              137.35781,
+              -4.71031
+            ],
+            [
+              137.35935,
+              -4.71214
+            ],
+            [
+              137.35882,
+              -4.71293
+            ],
+            [
+              137.35938,
+              -4.7138
+            ],
+            [
+              137.36079,
+              -4.71328
+            ],
+            [
+              137.36021,
+              -4.71383
+            ],
+            [
+              137.36045,
+              -4.71516
+            ],
+            [
+              137.36221,
+              -4.71829
+            ],
+            [
+              137.36419,
+              -4.71895
+            ],
+            [
+              137.36443,
+              -4.72009
+            ],
+            [
+              137.36484,
+              -4.72024
+            ],
+            [
+              137.36463,
+              -4.72069
+            ],
+            [
+              137.36575,
+              -4.72118
+            ],
+            [
+              137.36823,
+              -4.72057
+            ],
+            [
+              137.36972,
+              -4.72088
+            ],
+            [
+              137.37024,
+              -4.72182
+            ],
+            [
+              137.37112,
+              -4.72132
+            ],
+            [
+              137.37273,
+              -4.72212
+            ],
+            [
+              137.3725,
+              -4.72324
+            ],
+            [
+              137.3729,
+              -4.72376
+            ],
+            [
+              137.37249,
+              -4.72474
+            ],
+            [
+              137.37286,
+              -4.7253
+            ],
+            [
+              137.37333,
+              -4.72499
+            ],
+            [
+              137.37405,
+              -4.72549
+            ],
+            [
+              137.37409,
+              -4.72636
+            ],
+            [
+              137.37367,
+              -4.72646
+            ],
+            [
+              137.37447,
+              -4.72695
+            ],
+            [
+              137.37415,
+              -4.72737
+            ],
+            [
+              137.37444,
+              -4.72813
+            ],
+            [
+              137.37584,
+              -4.7287
+            ],
+            [
+              137.37628,
+              -4.72982
+            ],
+            [
+              137.37761,
+              -4.72851
+            ],
+            [
+              137.37768,
+              -4.72747
+            ],
+            [
+              137.37827,
+              -4.7275
+            ],
+            [
+              137.37913,
+              -4.72671
+            ],
+            [
+              137.38036,
+              -4.72477
+            ],
+            [
+              137.38155,
+              -4.7249
+            ],
+            [
+              137.38174,
+              -4.72546
+            ],
+            [
+              137.38066,
+              -4.72474
+            ],
+            [
+              137.37972,
+              -4.72469
+            ],
+            [
+              137.37913,
+              -4.72392
+            ],
+            [
+              137.37809,
+              -4.72477
+            ],
+            [
+              137.3772,
+              -4.72482
+            ],
+            [
+              137.37718,
+              -4.72417
+            ]
+          ],
+          "icon": "🚙"
+        }
+      ],
+      "places": [
+        {
+          "id": "gale-organics",
+          "name": {
+            "en": "Organic molecules in Gale's mudstone",
+            "es": "Moléculas orgánicas en las lodolitas de Gale"
+          },
+          "at": [
+            137.3775,
+            -4.6627
+          ],
+          "world": "mars",
+          "cat": "discovery",
+          "type": "place",
+          "date": "2018-06-07",
+          "place": {
+            "en": "Pahrump Hills, foot of Mount Sharp, Mars",
+            "es": "Pahrump Hills, al pie del monte Sharp, Marte"
+          },
+          "text": {
+            "en": "Carbon compounds such as thiophenes and benzene, baked out of rock from an ancient lake bed. Life makes such molecules, but so do meteorites and chemistry, so they are a clue, not proof.",
+            "es": "Compuestos de carbono como tiofenos y benceno, extraídos al hornear roca del fondo de un antiguo lago. La vida produce esas moléculas, pero también los meteoritos y la química: son una pista, no una prueba."
+          },
+          "wiki": {
+            "en": "Life on Mars",
+            "es": "Vida en Marte"
+          }
+        },
+        {
+          "id": "mars-methane",
+          "name": {
+            "en": "Methane in Gale's air",
+            "es": "Metano en el aire de Gale"
+          },
+          "at": [
+            137.4,
+            -4.7
+          ],
+          "world": "mars",
+          "cat": "discovery",
+          "type": "place",
+          "date": "2018-06-07",
+          "place": {
+            "en": "Gale crater, Mars",
+            "es": "Cráter Gale, Marte"
+          },
+          "text": {
+            "en": "A faint trace of methane that grows each summer and fades each winter. On Earth most methane comes from life, but on Mars it could come from rocks and water; no one knows yet.",
+            "es": "Un leve rastro de metano que crece cada verano y baja cada invierno. En la Tierra casi todo el metano viene de la vida, pero en Marte podría salir de rocas y agua; aún nadie lo sabe."
+          },
+          "wiki": {
+            "en": "Atmosphere of Mars",
+            "es": "Atmósfera de Marte"
+          }
+        },
+        {
+          "id": "vera-rubin-ridge",
+          "name": {
+            "en": "Vera Rubin Ridge",
+            "es": "Cresta Vera Rubin"
+          },
+          "at": [
+            137.3773,
+            -4.7242
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2017-09",
+          "place": {
+            "en": "Mount Sharp, Gale crater, Mars",
+            "es": "Monte Sharp, cráter Gale, Marte"
+          },
+          "text": {
+            "en": "A hematite-rich ridge on Mount Sharp, explored by Curiosity in 2017–2018 and named after the astronomer Vera Rubin, who found the first strong evidence for dark matter.",
+            "es": "Una cresta rica en hematita en el monte Sharp, explorada por Curiosity en 2017-2018 y llamada así por la astrónoma Vera Rubin, que halló la primera prueba sólida de la materia oscura."
+          },
+          "wiki": {
+            "en": "Vera Rubin",
+            "es": "Vera Rubin"
+          }
+        },
+        {
+          "id": "jennifer-eigenbrode",
+          "name": {
+            "en": "Jennifer Eigenbrode",
+            "es": "Jennifer Eigenbrode"
+          },
+          "at": [
+            137.372,
+            -4.668
+          ],
+          "world": "mars",
+          "cat": "astronomer",
+          "type": "person",
+          "date": "2018-06-07",
+          "place": {
+            "en": "NASA's Goddard Space Flight Center, Greenbelt, Maryland",
+            "es": "Centro de Vuelo Espacial Goddard de la NASA, Greenbelt, Maryland"
+          },
+          "text": {
+            "en": "An astrobiologist at NASA who led the study of the organic molecules Curiosity found in 3-billion-year-old rocks, published in June 2018.",
+            "es": "Una astrobióloga de la NASA que dirigió el estudio de las moléculas orgánicas que Curiosity halló en rocas de 3 000 millones de años, publicado en junio de 2018."
+          },
+          "wiki": {
+            "en": "Jennifer Eigenbrode",
+            "es": ""
+          }
+        }
+      ]
+    },
+    {
+      "date": "2018-06-10",
+      "world": "mars",
+      "title": {
+        "en": "Opportunity's last sol",
+        "es": "El último sol de Opportunity"
+      },
+      "text": {
+        "en": "On 10 June 2018 a dust storm that wrapped the whole planet blotted out the Sun. Opportunity, after 14 years and 45 km, sent its last message from Perseverance Valley, on Endeavour's rim.",
+        "es": "El 10 de junio de 2018, una tormenta de polvo que envolvió todo el planeta tapó el Sol. Opportunity, tras 14 años y 45 km, envió su último mensaje desde Perseverance Valley, en el borde de Endeavour."
+      },
+      "details": {
+        "en": "Built to last 90 sols, Opportunity worked for 5,111. In March 2015 it passed the length of a marathon, 42.2 km, at a place the team named Marathon Valley, and people at JPL ran a race to celebrate. Its last data showed the dustiest sky ever measured on Mars and almost no power. Engineers sent more than a thousand commands, but it never answered, and on 13 February 2019 NASA ended the mission. A journalist turned its final data into the words \"My battery is low and it's getting dark\": they were his, not the rover's, but they moved many people. Abigail Fraeman, who watched it land as a teenage student in 2004 and became its deputy project scientist, was among those who said goodbye. Europe's Schiaparelli test lander had crashed about 50 km to the west in 2016.",
+        "es": "Hecho para durar 90 soles, Opportunity funcionó 5 111. En marzo de 2015 superó la distancia de un maratón, 42,2 km, en un lugar que el equipo llamó Marathon Valley, y en el JPL corrieron una carrera para celebrarlo. Sus últimos datos mostraron el cielo más polvoriento jamás medido en Marte y casi nada de energía. Los ingenieros enviaron más de mil órdenes, pero nunca respondió, y el 13 de febrero de 2019 la NASA dio por terminada la misión. Un periodista resumió sus datos finales con la frase «Mi batería está baja y está oscureciendo»: eran palabras suyas, no del vehículo, pero conmovieron a mucha gente. Abigail Fraeman, que lo vio aterrizar siendo una estudiante adolescente en 2004 y llegó a ser su científica adjunta del proyecto, estuvo entre quienes se despidieron. El módulo de prueba europeo Schiaparelli se había estrellado a unos 50 km al oeste en 2016."
+      },
+      "camera": {
+        "lon": -5.3,
+        "lat": -2.25,
+        "zoom": 30
+      },
+      "show": [
+        "opportunity",
+        "schiaparelli"
+      ],
+      "moves": [
+        {
+          "side": "opportunity",
+          "path": [
+            [
+              -5.36214,
+              -2.23087
+            ],
+            [
+              -5.36187,
+              -2.2319
+            ],
+            [
+              -5.36207,
+              -2.23291
+            ],
+            [
+              -5.36161,
+              -2.23341
+            ],
+            [
+              -5.36086,
+              -2.23554
+            ],
+            [
+              -5.36101,
+              -2.23596
+            ],
+            [
+              -5.35957,
+              -2.23688
+            ],
+            [
+              -5.35897,
+              -2.23671
+            ],
+            [
+              -5.35919,
+              -2.23625
+            ],
+            [
+              -5.35853,
+              -2.23458
+            ],
+            [
+              -5.35873,
+              -2.23438
+            ],
+            [
+              -5.35833,
+              -2.23434
+            ],
+            [
+              -5.35763,
+              -2.23251
+            ],
+            [
+              -5.3564,
+              -2.23129
+            ],
+            [
+              -5.35745,
+              -2.22898
+            ],
+            [
+              -5.35727,
+              -2.22805
+            ],
+            [
+              -5.35645,
+              -2.2276
+            ],
+            [
+              -5.35588,
+              -2.22774
+            ],
+            [
+              -5.35545,
+              -2.22727
+            ],
+            [
+              -5.35526,
+              -2.22744
+            ],
+            [
+              -5.35463,
+              -2.22551
+            ],
+            [
+              -5.3541,
+              -2.2254
+            ],
+            [
+              -5.35377,
+              -2.22656
+            ],
+            [
+              -5.35323,
+              -2.22629
+            ],
+            [
+              -5.35301,
+              -2.22737
+            ],
+            [
+              -5.35463,
+              -2.23194
+            ],
+            [
+              -5.35543,
+              -2.23174
+            ],
+            [
+              -5.35557,
+              -2.23086
+            ],
+            [
+              -5.35597,
+              -2.23105
+            ],
+            [
+              -5.35571,
+              -2.2315
+            ],
+            [
+              -5.35617,
+              -2.23132
+            ],
+            [
+              -5.35634,
+              -2.23281
+            ],
+            [
+              -5.3556,
+              -2.23221
+            ],
+            [
+              -5.35534,
+              -2.23148
+            ],
+            [
+              -5.35557,
+              -2.23085
+            ],
+            [
+              -5.35584,
+              -2.23086
+            ],
+            [
+              -5.35528,
+              -2.23131
+            ],
+            [
+              -5.35524,
+              -2.23309
+            ],
+            [
+              -5.35608,
+              -2.2345
+            ],
+            [
+              -5.35715,
+              -2.23574
+            ],
+            [
+              -5.35738,
+              -2.23563
+            ],
+            [
+              -5.35771,
+              -2.23774
+            ],
+            [
+              -5.36135,
+              -2.24114
+            ],
+            [
+              -5.36117,
+              -2.24169
+            ],
+            [
+              -5.36216,
+              -2.2444
+            ],
+            [
+              -5.36303,
+              -2.24504
+            ],
+            [
+              -5.36353,
+              -2.24615
+            ],
+            [
+              -5.36293,
+              -2.24696
+            ],
+            [
+              -5.36235,
+              -2.24695
+            ],
+            [
+              -5.36183,
+              -2.25287
+            ],
+            [
+              -5.36117,
+              -2.25396
+            ],
+            [
+              -5.36081,
+              -2.25606
+            ],
+            [
+              -5.35917,
+              -2.26101
+            ],
+            [
+              -5.35808,
+              -2.26175
+            ],
+            [
+              -5.35578,
+              -2.26239
+            ],
+            [
+              -5.35532,
+              -2.26322
+            ],
+            [
+              -5.35675,
+              -2.26625
+            ],
+            [
+              -5.35684,
+              -2.26588
+            ],
+            [
+              -5.35789,
+              -2.2655
+            ],
+            [
+              -5.35893,
+              -2.26635
+            ],
+            [
+              -5.35837,
+              -2.26717
+            ],
+            [
+              -5.35971,
+              -2.26948
+            ],
+            [
+              -5.35907,
+              -2.27049
+            ],
+            [
+              -5.35965,
+              -2.27098
+            ],
+            [
+              -5.35955,
+              -2.27351
+            ],
+            [
+              -5.36054,
+              -2.27502
+            ],
+            [
+              -5.3609,
+              -2.27622
+            ],
+            [
+              -5.36077,
+              -2.27721
+            ],
+            [
+              -5.35974,
+              -2.27848
+            ],
+            [
+              -5.3592,
+              -2.2786
+            ],
+            [
+              -5.35947,
+              -2.27867
+            ],
+            [
+              -5.35945,
+              -2.2821
+            ],
+            [
+              -5.35976,
+              -2.28298
+            ],
+            [
+              -5.35935,
+              -2.28314
+            ],
+            [
+              -5.35932,
+              -2.28529
+            ],
+            [
+              -5.35863,
+              -2.28803
+            ],
+            [
+              -5.35778,
+              -2.28967
+            ],
+            [
+              -5.35829,
+              -2.29137
+            ],
+            [
+              -5.35826,
+              -2.29072
+            ],
+            [
+              -5.35713,
+              -2.29473
+            ],
+            [
+              -5.35757,
+              -2.29685
+            ],
+            [
+              -5.3587,
+              -2.2973
+            ],
+            [
+              -5.35883,
+              -2.29778
+            ],
+            [
+              -5.3594,
+              -2.29772
+            ],
+            [
+              -5.35958,
+              -2.29847
+            ],
+            [
+              -5.35815,
+              -2.30174
+            ],
+            [
+              -5.35825,
+              -2.30309
+            ],
+            [
+              -5.35772,
+              -2.30419
+            ],
+            [
+              -5.358,
+              -2.30487
+            ],
+            [
+              -5.35744,
+              -2.30592
+            ],
+            [
+              -5.35724,
+              -2.30729
+            ],
+            [
+              -5.35682,
+              -2.30842
+            ],
+            [
+              -5.35614,
+              -2.30891
+            ],
+            [
+              -5.35558,
+              -2.31004
+            ],
+            [
+              -5.35533,
+              -2.31377
+            ],
+            [
+              -5.3546,
+              -2.31398
+            ],
+            [
+              -5.35462,
+              -2.31484
+            ],
+            [
+              -5.35436,
+              -2.31489
+            ],
+            [
+              -5.35451,
+              -2.31528
+            ],
+            [
+              -5.35523,
+              -2.31549
+            ],
+            [
+              -5.35521,
+              -2.31683
+            ],
+            [
+              -5.35484,
+              -2.31664
+            ],
+            [
+              -5.35532,
+              -2.31658
+            ],
+            [
+              -5.35527,
+              -2.31611
+            ],
+            [
+              -5.35464,
+              -2.31629
+            ],
+            [
+              -5.3538,
+              -2.31528
+            ],
+            [
+              -5.35266,
+              -2.3149
+            ],
+            [
+              -5.35229,
+              -2.31529
+            ],
+            [
+              -5.35283,
+              -2.31527
+            ],
+            [
+              -5.35369,
+              -2.31601
+            ],
+            [
+              -5.35336,
+              -2.3159
+            ],
+            [
+              -5.35393,
+              -2.31536
+            ],
+            [
+              -5.35322,
+              -2.31505
+            ],
+            [
+              -5.35317,
+              -2.31404
+            ],
+            [
+              -5.35277,
+              -2.31433
+            ],
+            [
+              -5.35292,
+              -2.31408
+            ],
+            [
+              -5.35287,
+              -2.31477
+            ],
+            [
+              -5.35141,
+              -2.31592
+            ],
+            [
+              -5.34866,
+              -2.31562
+            ],
+            [
+              -5.34889,
+              -2.31608
+            ],
+            [
+              -5.34928,
+              -2.31607
+            ],
+            [
+              -5.3488,
+              -2.31699
+            ],
+            [
+              -5.34942,
+              -2.31779
+            ],
+            [
+              -5.35255,
+              -2.31865
+            ],
+            [
+              -5.3528,
+              -2.31976
+            ],
+            [
+              -5.35381,
+              -2.3204
+            ],
+            [
+              -5.35317,
+              -2.32219
+            ],
+            [
+              -5.3528,
+              -2.32594
+            ],
+            [
+              -5.35144,
+              -2.33051
+            ],
+            [
+              -5.35043,
+              -2.33124
+            ],
+            [
+              -5.3501,
+              -2.331
+            ],
+            [
+              -5.35033,
+              -2.33112
+            ],
+            [
+              -5.34997,
+              -2.33183
+            ],
+            [
+              -5.35058,
+              -2.33213
+            ],
+            [
+              -5.35072,
+              -2.33168
+            ],
+            [
+              -5.35038,
+              -2.33129
+            ],
+            [
+              -5.34932,
+              -2.33106
+            ],
+            [
+              -5.34893,
+              -2.33061
+            ],
+            [
+              -5.34898,
+              -2.33093
+            ]
+          ]
+        }
+      ],
+      "events": [
+        {
+          "icon": "📡",
+          "text": {
+            "en": "10 June 2018: Opportunity's last message, from Perseverance Valley",
+            "es": "10 de junio de 2018: último mensaje de Opportunity, desde Perseverance Valley"
+          },
+          "at": [
+            -5.349,
+            -2.3309
+          ],
+          "date": "2018-06-10"
+        }
+      ],
+      "places": [
+        {
+          "id": "marathon-valley",
+          "name": {
+            "en": "Marathon Valley",
+            "es": "Marathon Valley"
+          },
+          "at": [
+            -5.3552,
+            -2.3155
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2015-03-24",
+          "place": {
+            "en": "Rim of Endeavour crater, Mars",
+            "es": "Borde del cráter Endeavour, Marte"
+          },
+          "text": {
+            "en": "A valley across Endeavour's rim, named when Opportunity's odometer passed the length of a marathon, 42.2 km, on 24 March 2015, after 11 years and 2 months. Orbiters had spotted clay minerals there.",
+            "es": "Un valle que cruza el borde de Endeavour, bautizado cuando el odómetro de Opportunity superó la distancia de un maratón, 42,2 km, el 24 de marzo de 2015, tras 11 años y 2 meses. Desde la órbita se habían visto arcillas allí."
+          },
+          "img": "PIA20749marathonvalley.jpg"
+        },
+        {
+          "id": "perseverance-valley",
+          "name": {
+            "en": "Perseverance Valley",
+            "es": "Perseverance Valley"
+          },
+          "at": [
+            -5.349,
+            -2.3309
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2017-05",
+          "place": {
+            "en": "Rim of Endeavour crater, Mars",
+            "es": "Borde del cráter Endeavour, Marte"
+          },
+          "text": {
+            "en": "A shallow valley running down the inside of Endeavour's rim, perhaps carved by water, wind or ice long ago. Opportunity was exploring it when the 2018 dust storm ended its mission.",
+            "es": "Un valle poco profundo que baja por el interior del borde de Endeavour, quizá tallado hace mucho por agua, viento o hielo. Opportunity lo estaba explorando cuando la tormenta de polvo de 2018 terminó su misión."
+          },
+          "img": "PIA21723-MarsOpportunityRover-PerseveranceValley-20170619.jpg"
+        },
+        {
+          "id": "dust-storm-2018",
+          "name": {
+            "en": "The great dust storm of 2018",
+            "es": "La gran tormenta de polvo de 2018"
+          },
+          "at": [
+            -5.25,
+            -2.4
+          ],
+          "world": "mars",
+          "cat": "event",
+          "type": "event",
+          "date": "2018-06-10",
+          "place": {
+            "en": "Mars",
+            "es": "Marte"
+          },
+          "text": {
+            "en": "A storm that began in late May 2018 and within weeks wrapped the whole planet in dust, turning day almost into night. It cut off Opportunity's power and did not clear until October.",
+            "es": "Una tormenta que empezó a fines de mayo de 2018 y en pocas semanas envolvió todo el planeta en polvo, casi convirtiendo el día en noche. Dejó sin energía a Opportunity y no se disipó hasta octubre."
+          },
+          "wiki": {
+            "en": "Climate of Mars",
+            "es": "Clima de Marte"
+          }
+        },
+        {
+          "id": "abigail-fraeman",
+          "name": {
+            "en": "Abigail Fraeman",
+            "es": "Abigail Fraeman"
+          },
+          "at": [
+            -5.359,
+            -2.3229
+          ],
+          "world": "mars",
+          "cat": "astronomer",
+          "type": "person",
+          "date": "2018-06-10",
+          "place": {
+            "en": "NASA's Jet Propulsion Laboratory (JPL), Pasadena, California",
+            "es": "Laboratorio de Propulsión a Chorro (JPL) de la NASA, Pasadena, California"
+          },
+          "text": {
+            "en": "A planetary scientist who, as a high-school student, was in JPL's control room the night Opportunity landed. She grew up to be the rover's deputy project scientist, and later Curiosity's.",
+            "es": "Una científica planetaria que, siendo estudiante de secundaria, estuvo en la sala de control del JPL la noche en que aterrizó Opportunity. Llegó a ser científica adjunta del proyecto del vehículo, y después de Curiosity."
+          }
+        }
+      ]
+    },
+    {
+      "date": "2018-11-26",
+      "world": "mars",
+      "title": {
+        "en": "InSight hears marsquakes",
+        "es": "InSight escucha sismos"
+      },
+      "text": {
+        "en": "InSight landed on the flat plain of Elysium Planitia on 26 November 2018 to listen to the inside of Mars. Its seismometer, led by France, recorded over 1,300 marsquakes and found a large liquid iron core.",
+        "es": "InSight aterrizó en la llanura de Elysium Planitia el 26 de noviembre de 2018 para escuchar el interior de Marte. Su sismómetro, liderado por Francia, registró más de 1 300 sismos marcianos y halló un gran núcleo de hierro líquido."
+      },
+      "details": {
+        "en": "InSight did not drive: it set its instruments on the ground with a robotic arm. Its seismometer was so sensitive it felt dust devils passing by. Many quakes came from Cerberus Fossae, young cracks some 1,600 km to the east, and the largest, of magnitude 4.7, shook Mars on 4 May 2022. By timing waves that bounced through the planet, scientists measured its crust, mantle and core, which is liquid and about half as wide as Mars. The seismometer also heard fresh meteorite impacts, one of which dug up ice. Germany's heat probe, the \"mole\", never managed to dig deep into the clumpy soil. Dust slowly covered InSight's solar panels, and it fell silent in December 2022. The mission was led by Bruce Banerdt of JPL.",
+        "es": "InSight no se desplazaba: colocó sus instrumentos en el suelo con un brazo robótico. Su sismómetro era tan sensible que sentía pasar los remolinos de polvo. Muchos sismos venían de Cerberus Fossae, unas grietas jóvenes a unos 1 600 km al este, y el mayor, de magnitud 4,7, sacudió Marte el 4 de mayo de 2022. Midiendo el tiempo de las ondas que rebotaban dentro del planeta, los científicos midieron su corteza, su manto y su núcleo, que es líquido y mide cerca de la mitad del ancho de Marte. El sismómetro también oyó impactos recientes de meteoritos; uno de ellos desenterró hielo. La sonda de calor alemana, el «topo», nunca logró hundirse en el suelo grumoso. El polvo fue cubriendo los paneles solares de InSight, que calló en diciembre de 2022. La misión la dirigió Bruce Banerdt, del JPL."
+      },
+      "camera": {
+        "lon": 150,
+        "lat": 8,
+        "zoom": 2.6
+      },
+      "show": [
+        "insight"
+      ],
+      "events": [
+        {
+          "icon": "📈",
+          "text": {
+            "en": "4 May 2022: InSight records a magnitude 4.7 marsquake, the largest ever measured on Mars",
+            "es": "4 de mayo de 2022: InSight registra un sismo de magnitud 4,7, el mayor medido en Marte"
+          },
+          "at": [
+            135.6234,
+            4.5024
+          ],
+          "date": "2022-05-04"
+        }
+      ],
+      "places": [
+        {
+          "id": "elysium-planitia",
+          "name": {
+            "en": "Elysium Planitia",
+            "es": "Elysium Planitia"
+          },
+          "at": [
+            154.7372,
+            2.979
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2018-11-26",
+          "place": {
+            "en": "Near the equator, Mars",
+            "es": "Cerca del ecuador, Marte"
+          },
+          "text": {
+            "en": "A broad, smooth plain of young lava near the equator. InSight was sent here because it is flat and safe, and its job was to listen below the surface, not to look around.",
+            "es": "Una amplia llanura lisa de lava joven cerca del ecuador. InSight fue enviada aquí por ser plana y segura: su trabajo era escuchar bajo la superficie, no mirar alrededor."
+          },
+          "wiki": {
+            "en": "Elysium Planitia",
+            "es": "Elysium Planitia"
+          }
+        },
+        {
+          "id": "cerberus-fossae",
+          "name": {
+            "en": "Cerberus Fossae",
+            "es": "Cerberus Fossae"
+          },
+          "at": [
+            166.3738,
+            11.2766
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2018-11-26",
+          "place": {
+            "en": "Elysium Planitia, Mars",
+            "es": "Elysium Planitia, Marte"
+          },
+          "text": {
+            "en": "Long cracks in the ground that are among the youngest features on Mars, where lava and water may have burst out in the last few million years. Many marsquakes start here.",
+            "es": "Largas grietas en el suelo que están entre los rasgos más jóvenes de Marte, por donde quizá brotaron lava y agua en los últimos millones de años. Muchos sismos marcianos nacen aquí."
+          },
+          "wiki": {
+            "en": "Cerberus Fossae",
+            "es": "Cerberus Fossae"
+          }
+        },
+        {
+          "id": "marsquakes",
+          "name": {
+            "en": "Marsquakes and the liquid core",
+            "es": "Sismos marcianos y el núcleo líquido"
+          },
+          "at": [
+            136.2,
+            5.2
+          ],
+          "world": "mars",
+          "cat": "discovery",
+          "type": "place",
+          "date": "2022-05-04",
+          "place": {
+            "en": "Recorded at InSight's landing site, Mars",
+            "es": "Registrados en el sitio de InSight, Marte"
+          },
+          "text": {
+            "en": "InSight recorded 1,319 quakes, up to magnitude 4.7. Their waves revealed the planet's crust, mantle and liquid iron core, and showed that Mars, though it has no moving plates, still shakes.",
+            "es": "InSight registró 1 319 sismos, de hasta magnitud 4,7. Sus ondas revelaron la corteza, el manto y el núcleo de hierro líquido del planeta, y mostraron que Marte, aunque no tiene placas en movimiento, todavía tiembla."
+          },
+          "wiki": {
+            "en": "Marsquake",
+            "es": "Martemoto"
+          }
+        },
+        {
+          "id": "bruce-banerdt",
+          "name": {
+            "en": "Bruce Banerdt",
+            "es": "Bruce Banerdt"
+          },
+          "at": [
+            135.1,
+            4.1
+          ],
+          "world": "mars",
+          "cat": "astronomer",
+          "type": "person",
+          "date": "2018-11-26",
+          "place": {
+            "en": "NASA's Jet Propulsion Laboratory (JPL), Pasadena, California",
+            "es": "Laboratorio de Propulsión a Chorro (JPL) de la NASA, Pasadena, California"
+          },
+          "text": {
+            "en": "A geophysicist who spent decades trying to put a seismometer on Mars and led InSight, with partners in France, Germany, Switzerland, the United Kingdom and other countries.",
+            "es": "Un geofísico que pasó décadas intentando poner un sismómetro en Marte y dirigió InSight, con socios de Francia, Alemania, Suiza, el Reino Unido y otros países."
+          }
+        }
+      ]
+    },
+    {
+      "date": "2021-02-18",
+      "world": "mars",
+      "title": {
+        "en": "Perseverance lands at Jezero",
+        "es": "Perseverance llega a Jezero"
+      },
+      "text": {
+        "en": "On 18 February 2021 Perseverance steered itself to a safe spot in Jezero crater, by the delta of a river that fed a lake over 3.5 billion years ago. Its job: seek signs of ancient life and collect samples.",
+        "es": "El 18 de febrero de 2021, Perseverance se guió sola hasta un lugar seguro del cráter Jezero, junto al delta de un río que alimentó un lago hace más de 3 500 millones de años. Su tarea: buscar señales de vida antigua y tomar muestras."
+      },
+      "details": {
+        "en": "Perseverance landed with a sky crane like Curiosity's, but with a new trick: as it fell, it compared pictures of the ground with maps on board and chose a safe spot by itself. \"Touchdown confirmed!\" called Swati Mohan, who led guidance and control operations. The site was named Octavia E. Butler Landing, after the science-fiction writer. The rover carries a drill and 43 sample tubes, microphones that made the first recordings of sound on Mars, and a radar that sees under the ground. Its name came from Alexander Mather, a seventh-grader from Virginia. It first explored the crater floor, which turned out to be volcanic rock, then climbed the delta, whose layers were laid down in the lake.",
+        "es": "Perseverance aterrizó con una grúa celeste como la de Curiosity, pero con un truco nuevo: mientras caía, comparaba fotos del suelo con mapas a bordo y elegía sola un lugar seguro. «¡Aterrizaje confirmado!», anunció Swati Mohan, que dirigía las operaciones de guiado y control. El sitio se llamó Octavia E. Butler Landing, en honor a la escritora de ciencia ficción. El vehículo lleva un taladro y 43 tubos para muestras, micrófonos que hicieron las primeras grabaciones de sonido en Marte y un radar que ve bajo el suelo. Su nombre lo propuso Alexander Mather, un estudiante de séptimo grado de Virginia. Primero exploró el fondo del cráter, que resultó ser roca volcánica, y luego subió al delta, cuyas capas se depositaron en el lago."
+      },
+      "camera": {
+        "lon": 77.55,
+        "lat": 18.44,
+        "zoom": 18
+      },
+      "show": [
+        "perseverance"
+      ],
+      "places": [
+        {
+          "id": "jezero-crater",
+          "name": {
+            "en": "Jezero crater",
+            "es": "Cráter Jezero"
+          },
+          "at": [
+            77.6873,
+            18.4082
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2021-02-18",
+          "place": {
+            "en": "Isidis Planitia's western edge, Mars",
+            "es": "Borde oeste de Isidis Planitia, Marte"
+          },
+          "text": {
+            "en": "A crater about 45 km wide that held a lake more than 3.5 billion years ago, fed by a river that built a delta. Its name means \"lake\" in several Slavic languages.",
+            "es": "Un cráter de unos 45 km de ancho que albergó un lago hace más de 3 500 millones de años, alimentado por un río que formó un delta. Su nombre significa «lago» en varias lenguas eslavas."
+          },
+          "wiki": {
+            "en": "Jezero (crater)",
+            "es": "Jezero (cráter)"
+          }
+        },
+        {
+          "id": "jezero-delta",
+          "name": {
+            "en": "Jezero's river delta",
+            "es": "El delta del río de Jezero"
+          },
+          "at": [
+            77.4,
+            18.5
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2021-02-18",
+          "place": {
+            "en": "Mouth of Neretva Vallis, Jezero crater, Mars",
+            "es": "Desembocadura de Neretva Vallis, cráter Jezero, Marte"
+          },
+          "text": {
+            "en": "A fan of layered mud and sand left where the river of Neretva Vallis flowed into Jezero's lake. On Earth such deltas bury and keep traces of life well, so it was Perseverance's main target.",
+            "es": "Un abanico de capas de lodo y arena que dejó el río de Neretva Vallis al desembocar en el lago de Jezero. En la Tierra, los deltas entierran y conservan bien los rastros de vida; por eso fue el gran objetivo de Perseverance."
+          },
+          "wiki": {
+            "en": "Jezero (crater)",
+            "es": "Jezero (cráter)"
+          }
+        },
+        {
+          "id": "swati-mohan",
+          "name": {
+            "en": "Swati Mohan",
+            "es": "Swati Mohan"
+          },
+          "at": [
+            77.457,
+            18.448
+          ],
+          "world": "mars",
+          "cat": "control",
+          "type": "person",
+          "date": "2021-02-18",
+          "place": {
+            "en": "NASA's Jet Propulsion Laboratory (JPL), Pasadena, California",
+            "es": "Laboratorio de Propulsión a Chorro (JPL) de la NASA, Pasadena, California"
+          },
+          "text": {
+            "en": "An aerospace engineer, born in India and raised in the United States, who led guidance, navigation and control operations for Perseverance and called out each step of its landing live.",
+            "es": "Una ingeniera aeroespacial nacida en la India y criada en Estados Unidos que dirigió las operaciones de guiado, navegación y control de Perseverance y narró en vivo cada paso de su aterrizaje."
+          },
+          "wiki": {
+            "en": "Swati Mohan",
+            "es": "Swati Mohan"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2021-04-19",
+      "world": "mars",
+      "title": {
+        "en": "A helicopter flies on Mars",
+        "es": "Un helicóptero vuela en Marte"
+      },
+      "text": {
+        "en": "On 19 April 2021 Ingenuity, a 1.8-kg helicopter carried under Perseverance, rose 3 m into the thin air and landed: the first powered flight on another planet. The next day MOXIE made oxygen from Mars's air.",
+        "es": "El 19 de abril de 2021, Ingenuity, un helicóptero de 1,8 kg que viajó bajo Perseverance, se elevó 3 m en el aire tenue y aterrizó: el primer vuelo propulsado en otro planeta. Al día siguiente, MOXIE hizo oxígeno con el aire de Marte."
+      },
+      "details": {
+        "en": "Mars's air is about 1% as thick as Earth's, so Ingenuity's two rotors, 1.2 m across, spun at about 2,400 turns a minute. It carried a scrap of fabric from the Wright brothers' 1903 airplane, and its first airstrip was named Wright Brothers Field. Planned for five test flights, it made 72 in nearly three years, scouting ahead for the rover, until a broken rotor blade grounded it in January 2024. The project was led by MiMi Aung, with Håvard Grip as chief pilot. MOXIE, the size of a car battery, split carbon dioxide to make 122 g of oxygen in 16 runs, about what a small dog breathes in ten hours: a first step towards making air and rocket fuel for astronauts.",
+        "es": "El aire de Marte tiene cerca del 1 % de la densidad del de la Tierra, así que los dos rotores de Ingenuity, de 1,2 m, giraban a unas 2 400 vueltas por minuto. Llevaba un trocito de tela del avión de los hermanos Wright de 1903, y su primera pista se llamó Campo de los Hermanos Wright. Pensado para cinco vuelos de prueba, hizo 72 en casi tres años, explorando por delante del vehículo, hasta que una pala rota del rotor lo dejó en tierra en enero de 2024. El proyecto lo dirigió MiMi Aung, con Håvard Grip como piloto jefe. MOXIE, del tamaño de una batería de auto, separó dióxido de carbono para producir 122 g de oxígeno en 16 pruebas, lo que respira un perro pequeño en diez horas: un primer paso para fabricar aire y combustible para astronautas."
+      },
+      "camera": {
+        "lon": 77.4505,
+        "lat": 18.4447,
+        "zoom": 30
+      },
+      "show": [
+        "ingenuity",
+        "perseverance"
+      ],
+      "moves": [
+        {
+          "side": "ingenuity",
+          "route": "ingenuity",
+          "by": "air",
+          "icon": "🚁"
+        }
+      ],
+      "places": [
+        {
+          "id": "wright-brothers-field",
+          "name": {
+            "en": "Wright Brothers Field",
+            "es": "Campo de los Hermanos Wright"
+          },
+          "at": [
+            77.4513,
+            18.4446
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2021-04-19",
+          "place": {
+            "en": "Jezero crater, Mars",
+            "es": "Cráter Jezero, Marte"
+          },
+          "text": {
+            "en": "The patch of flat ground where Ingenuity first flew, named after the inventors of the airplane. The UN's aviation agency gave it the airport code JZRO.",
+            "es": "El terreno plano donde voló Ingenuity por primera vez, llamado así por los inventores del avión. La agencia de aviación de la ONU le dio el código de aeropuerto JZRO."
+          },
+          "wiki": {
+            "en": "Ingenuity (helicopter)",
+            "es": "Mars Helicopter Ingenuity"
+          }
+        },
+        {
+          "id": "moxie",
+          "name": {
+            "en": "MOXIE makes oxygen",
+            "es": "MOXIE fabrica oxígeno"
+          },
+          "at": [
+            77.45,
+            18.4452
+          ],
+          "world": "mars",
+          "cat": "discovery",
+          "type": "invention",
+          "date": "2021-04-20",
+          "end": "2023-08-07",
+          "place": {
+            "en": "Jezero crater, Mars",
+            "es": "Cráter Jezero, Marte"
+          },
+          "text": {
+            "en": "An experiment on Perseverance that split carbon dioxide from the Martian air to make oxygen, 122 g in all from 2021 to 2023: the first time people made something useful from another planet's resources.",
+            "es": "Un experimento de Perseverance que separó el dióxido de carbono del aire marciano para producir oxígeno, 122 g en total de 2021 a 2023: la primera vez que se fabricó algo útil con los recursos de otro planeta."
+          },
+          "wiki": {
+            "en": "Mars Oxygen ISRU Experiment",
+            "es": "Mars Oxygen ISRU Experiment"
+          }
+        },
+        {
+          "id": "mimi-aung",
+          "name": {
+            "en": "MiMi Aung",
+            "es": "MiMi Aung"
+          },
+          "at": [
+            77.4518,
+            18.4441
+          ],
+          "world": "mars",
+          "cat": "control",
+          "type": "person",
+          "date": "2021-04-19",
+          "life": [
+            "1968",
+            null
+          ],
+          "place": {
+            "en": "NASA's Jet Propulsion Laboratory (JPL), Pasadena, California",
+            "es": "Laboratorio de Propulsión a Chorro (JPL) de la NASA, Pasadena, California"
+          },
+          "text": {
+            "en": "An engineer, born in the United States and raised partly in Myanmar, who led the small team that built Ingenuity and proved that flying on Mars was possible.",
+            "es": "Una ingeniera nacida en Estados Unidos y criada en parte en Birmania que dirigió el pequeño equipo que construyó Ingenuity y demostró que se podía volar en Marte."
+          },
+          "wiki": {
+            "en": "MiMi Aung",
+            "es": "MiMi Aung"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2021-05-14",
+      "world": "mars",
+      "title": {
+        "en": "China's Zhurong in Utopia",
+        "es": "Zhurong, de China, en Utopia"
+      },
+      "text": {
+        "en": "On 14 May 2021 China's Tianwen-1 set a lander down on Utopia Planitia. Its rover Zhurong, named after a fire god of Chinese myth, rolled off on 22 May: China became the second country to drive on Mars.",
+        "es": "El 14 de mayo de 2021, la misión china Tianwen-1 posó un módulo en Utopia Planitia. Su vehículo Zhurong, llamado como un dios del fuego de los mitos chinos, bajó el 22 de mayo: China fue el segundo país en rodar sobre Marte."
+      },
+      "details": {
+        "en": "Tianwen-1, \"Questions to Heaven\", was China's first mission to Mars, and it put an orbiter, a lander and a rover there all at once. Its site in southern Utopia Planitia was picked to test whether an ocean once covered the northern lowlands. Built by the China Academy of Space Technology, the solar-powered Zhurong dropped a little camera to take a picture of itself beside its lander, then drove 1,921 m south. Its radar looked about 100 m underground and found buried, sloping layers that a 2025 study read as an ancient beach; crusts on dunes hint at small amounts of salty water in recent times. In May 2022 it went to sleep for the winter, but dust covered its panels and it never woke. The mission's chief designer was Zhang Rongqiao.",
+        "es": "Tianwen-1, «Preguntas al cielo», fue la primera misión de China a Marte, y llevó a la vez un orbitador, un módulo de aterrizaje y un vehículo. Su sitio, en el sur de Utopia Planitia, se eligió para comprobar si un océano cubrió alguna vez las tierras bajas del norte. Construido por la Academia China de Tecnología Espacial, el Zhurong, de energía solar, soltó una pequeña cámara para fotografiarse junto a su módulo y luego recorrió 1 921 m hacia el sur. Su radar miró unos 100 m bajo tierra y halló capas enterradas e inclinadas que un estudio de 2025 interpretó como una antigua playa; unas costras en las dunas sugieren un poco de agua salada en tiempos recientes. En mayo de 2022 se puso a dormir por el invierno, pero el polvo cubrió sus paneles y nunca despertó. El diseñador jefe de la misión fue Zhang Rongqiao."
+      },
+      "camera": {
+        "lon": 109.92,
+        "lat": 25.04,
+        "zoom": 26
+      },
+      "show": [
+        "zhurong"
+      ],
+      "moves": [
+        {
+          "side": "zhurong",
+          "route": "zhurong",
+          "icon": "🚙"
+        }
+      ],
+      "events": [
+        {
+          "icon": "😴",
+          "text": {
+            "en": "May 2022: Zhurong goes to sleep for the winter and never wakes up",
+            "es": "Mayo de 2022: Zhurong se pone a dormir por el invierno y nunca despierta"
+          },
+          "at": [
+            109.925,
+            25.041
+          ],
+          "date": "2022-05"
+        }
+      ],
+      "places": [
+        {
+          "id": "zhurong-beach",
+          "name": {
+            "en": "An ancient beach under Utopia",
+            "es": "Una antigua playa bajo Utopia"
+          },
+          "at": [
+            109.925,
+            25.041
+          ],
+          "world": "mars",
+          "cat": "discovery",
+          "type": "place",
+          "date": "2025-02-24",
+          "place": {
+            "en": "Zhurong's route, southern Utopia Planitia, Mars",
+            "es": "Ruta del Zhurong, sur de Utopia Planitia, Marte"
+          },
+          "text": {
+            "en": "Zhurong's radar found buried layers that slope gently seaward, like sand on Earth's beaches. A 2025 study read them as the shore of an ocean that may have filled the north of Mars.",
+            "es": "El radar del Zhurong halló capas enterradas que bajan suavemente hacia el mar, como la arena de las playas de la Tierra. Un estudio de 2025 las interpretó como la orilla de un océano que quizá llenó el norte de Marte."
+          },
+          "wiki": {
+            "en": "Zhurong (rover)",
+            "es": "Zhurong (rover)"
+          }
+        },
+        {
+          "id": "zhang-rongqiao",
+          "name": {
+            "en": "Zhang Rongqiao",
+            "es": "Zhang Rongqiao"
+          },
+          "at": [
+            109.93,
+            25.07
+          ],
+          "world": "mars",
+          "cat": "control",
+          "type": "person",
+          "date": "2021-05-14",
+          "place": {
+            "en": "China National Space Administration (CNSA), Beijing",
+            "es": "Administración Espacial Nacional China (CNSA), Pekín"
+          },
+          "text": {
+            "en": "The chief designer of Tianwen-1, who led the thousands of engineers who built China's first Mars mission. Nature named him one of the ten people who mattered in science in 2021.",
+            "es": "El diseñador jefe de Tianwen-1, que dirigió a los miles de ingenieros que construyeron la primera misión de China a Marte. La revista Nature lo eligió entre las diez personas destacadas de la ciencia en 2021."
+          },
+          "wiki": {
+            "en": "Zhang Rongqiao",
+            "es": "Zhang Rongqiao"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-11",
+      "world": "mars",
+      "title": {
+        "en": "Where the rovers are now",
+        "es": "Dónde están hoy los vehículos"
+      },
+      "text": {
+        "en": "In November 2026 two rovers are still at work. Curiosity has driven over 38 km and climbed 1 km up Mount Sharp. Perseverance, now beyond Jezero's rim, passed Opportunity's record of 45 km on 11 October.",
+        "es": "En noviembre de 2026 siguen trabajando dos vehículos. Curiosity lleva más de 38 km y ha subido 1 km por el monte Sharp. Perseverance, ya más allá del borde de Jezero, superó el 11 de octubre el récord de 45 km de Opportunity."
+      },
+      "details": {
+        "en": "Perseverance owes its record to AutoNav, software that maps hazards while the rover rolls: it chose its own path for over 90% of the way. In 2024 it found \"leopard spots\" in a rock called Cheyava Falls, which a 2025 study called a potential biosignature, a possible trace of ancient microbes but not proof. It has sealed 29 rock and soil samples and left ten tubes as a backup at Three Forks, but NASA's plan to fly them to Earth, Mars Sample Return, lost its funding in the budget the US Congress passed in January 2026, so for now they wait on Mars. China plans to launch its own sample return, Tianwen-3, around 2028. Curiosity, in its 15th year, is climbing layers rich in salts that record how Mars dried out. Engineers such as Vandi Verma, who has driven four Mars rovers, still plan their drives at JPL.",
+        "es": "Perseverance debe su récord a AutoNav, un programa que traza un mapa de los obstáculos mientras avanza: eligió su propio camino en más del 90 % del recorrido. En 2024 halló «manchas de leopardo» en una roca llamada Cheyava Falls, que un estudio de 2025 calificó de posible biofirma, un posible rastro de microbios antiguos pero no una prueba. Ha sellado 29 muestras de roca y suelo y dejó diez tubos de reserva en Three Forks, pero el plan de la NASA para traerlas a la Tierra, Mars Sample Return, se quedó sin fondos en el presupuesto que el Congreso de EE. UU. aprobó en enero de 2026, así que por ahora esperan en Marte. China planea lanzar su propia misión de retorno de muestras, Tianwen-3, hacia 2028. Curiosity, en su 15.º año, sube por capas ricas en sales que registran cómo se secó Marte. Especialistas como Vandi Verma, que ha conducido cuatro vehículos en Marte, siguen planeando sus trayectos en el JPL."
+      },
+      "camera": {
+        "lon": 108,
+        "lat": 6,
+        "zoom": 1.3
+      },
+      "show": [
+        "curiosity",
+        "perseverance"
+      ],
+      "moves": [
+        {
+          "side": "curiosity",
+          "path": [
+            [
+              137.37718,
+              -4.72417
+            ],
+            [
+              137.3772,
+              -4.72482
+            ],
+            [
+              137.37862,
+              -4.72579
+            ],
+            [
+              137.37936,
+              -4.725
+            ],
+            [
+              137.38034,
+              -4.72482
+            ],
+            [
+              137.38003,
+              -4.72576
+            ],
+            [
+              137.37806,
+              -4.72559
+            ],
+            [
+              137.37848,
+              -4.72714
+            ],
+            [
+              137.37754,
+              -4.72849
+            ],
+            [
+              137.37875,
+              -4.7285
+            ],
+            [
+              137.37947,
+              -4.72939
+            ],
+            [
+              137.38108,
+              -4.72913
+            ],
+            [
+              137.38132,
+              -4.72791
+            ],
+            [
+              137.38189,
+              -4.72794
+            ],
+            [
+              137.38417,
+              -4.72572
+            ],
+            [
+              137.38271,
+              -4.72696
+            ],
+            [
+              137.38431,
+              -4.72748
+            ],
+            [
+              137.38329,
+              -4.72912
+            ],
+            [
+              137.38359,
+              -4.72978
+            ],
+            [
+              137.38306,
+              -4.7301
+            ],
+            [
+              137.3837,
+              -4.73032
+            ],
+            [
+              137.38316,
+              -4.73164
+            ],
+            [
+              137.38351,
+              -4.73222
+            ],
+            [
+              137.38337,
+              -4.73257
+            ],
+            [
+              137.38285,
+              -4.73232
+            ],
+            [
+              137.38178,
+              -4.73281
+            ],
+            [
+              137.38133,
+              -4.73334
+            ],
+            [
+              137.38155,
+              -4.73413
+            ],
+            [
+              137.38105,
+              -4.734
+            ],
+            [
+              137.38024,
+              -4.7347
+            ],
+            [
+              137.3809,
+              -4.73442
+            ],
+            [
+              137.38036,
+              -4.73612
+            ],
+            [
+              137.38089,
+              -4.73656
+            ],
+            [
+              137.3807,
+              -4.73702
+            ],
+            [
+              137.38053,
+              -4.73563
+            ],
+            [
+              137.38145,
+              -4.73513
+            ],
+            [
+              137.38323,
+              -4.73517
+            ],
+            [
+              137.38395,
+              -4.73439
+            ],
+            [
+              137.38555,
+              -4.73407
+            ],
+            [
+              137.38613,
+              -4.73262
+            ],
+            [
+              137.38691,
+              -4.73244
+            ],
+            [
+              137.38819,
+              -4.73366
+            ],
+            [
+              137.38958,
+              -4.73266
+            ],
+            [
+              137.39119,
+              -4.73125
+            ],
+            [
+              137.3908,
+              -4.73025
+            ],
+            [
+              137.39113,
+              -4.72922
+            ],
+            [
+              137.39235,
+              -4.73081
+            ],
+            [
+              137.39303,
+              -4.73075
+            ],
+            [
+              137.3938,
+              -4.72985
+            ],
+            [
+              137.39341,
+              -4.73103
+            ],
+            [
+              137.39552,
+              -4.73267
+            ],
+            [
+              137.398,
+              -4.73327
+            ],
+            [
+              137.39863,
+              -4.73444
+            ],
+            [
+              137.39843,
+              -4.73322
+            ],
+            [
+              137.39889,
+              -4.73285
+            ],
+            [
+              137.40241,
+              -4.73391
+            ],
+            [
+              137.40318,
+              -4.73352
+            ],
+            [
+              137.4056,
+              -4.7338
+            ],
+            [
+              137.40618,
+              -4.7335
+            ],
+            [
+              137.40728,
+              -4.73392
+            ],
+            [
+              137.4079,
+              -4.73359
+            ],
+            [
+              137.41158,
+              -4.73408
+            ],
+            [
+              137.41281,
+              -4.73537
+            ],
+            [
+              137.41197,
+              -4.73552
+            ],
+            [
+              137.41196,
+              -4.73598
+            ],
+            [
+              137.41241,
+              -4.73579
+            ],
+            [
+              137.41185,
+              -4.73594
+            ],
+            [
+              137.41178,
+              -4.73727
+            ],
+            [
+              137.40877,
+              -4.73889
+            ],
+            [
+              137.4081,
+              -4.7402
+            ],
+            [
+              137.40678,
+              -4.74023
+            ],
+            [
+              137.40497,
+              -4.74151
+            ],
+            [
+              137.40323,
+              -4.74179
+            ],
+            [
+              137.40211,
+              -4.74245
+            ],
+            [
+              137.40102,
+              -4.74239
+            ],
+            [
+              137.39955,
+              -4.74358
+            ],
+            [
+              137.39845,
+              -4.74373
+            ],
+            [
+              137.39758,
+              -4.74467
+            ],
+            [
+              137.39643,
+              -4.74399
+            ],
+            [
+              137.39538,
+              -4.74641
+            ],
+            [
+              137.39503,
+              -4.74675
+            ],
+            [
+              137.3945,
+              -4.74642
+            ],
+            [
+              137.39465,
+              -4.74741
+            ],
+            [
+              137.39431,
+              -4.74768
+            ],
+            [
+              137.39474,
+              -4.74859
+            ],
+            [
+              137.39398,
+              -4.75111
+            ],
+            [
+              137.39358,
+              -4.7512
+            ],
+            [
+              137.39391,
+              -4.75142
+            ],
+            [
+              137.39345,
+              -4.75113
+            ],
+            [
+              137.3942,
+              -4.75101
+            ],
+            [
+              137.3941,
+              -4.75045
+            ],
+            [
+              137.39342,
+              -4.74954
+            ],
+            [
+              137.39164,
+              -4.74858
+            ],
+            [
+              137.39093,
+              -4.74864
+            ],
+            [
+              137.393,
+              -4.74935
+            ],
+            [
+              137.39433,
+              -4.75056
+            ],
+            [
+              137.39555,
+              -4.75256
+            ],
+            [
+              137.39526,
+              -4.75345
+            ],
+            [
+              137.39682,
+              -4.75562
+            ],
+            [
+              137.39709,
+              -4.75692
+            ],
+            [
+              137.39676,
+              -4.75725
+            ],
+            [
+              137.39724,
+              -4.75766
+            ],
+            [
+              137.39768,
+              -4.75736
+            ],
+            [
+              137.39969,
+              -4.75982
+            ],
+            [
+              137.39976,
+              -4.76044
+            ],
+            [
+              137.39788,
+              -4.76142
+            ],
+            [
+              137.39467,
+              -4.76067
+            ],
+            [
+              137.39657,
+              -4.76111
+            ],
+            [
+              137.39752,
+              -4.76215
+            ],
+            [
+              137.39832,
+              -4.76558
+            ],
+            [
+              137.39777,
+              -4.76665
+            ],
+            [
+              137.39861,
+              -4.76807
+            ],
+            [
+              137.39834,
+              -4.76845
+            ],
+            [
+              137.40009,
+              -4.76869
+            ],
+            [
+              137.40041,
+              -4.76841
+            ],
+            [
+              137.40154,
+              -4.76926
+            ],
+            [
+              137.39948,
+              -4.76974
+            ],
+            [
+              137.39897,
+              -4.77004
+            ],
+            [
+              137.39911,
+              -4.7704
+            ],
+            [
+              137.40083,
+              -4.77187
+            ],
+            [
+              137.40112,
+              -4.77266
+            ],
+            [
+              137.40063,
+              -4.77333
+            ],
+            [
+              137.40109,
+              -4.77314
+            ],
+            [
+              137.40216,
+              -4.77396
+            ],
+            [
+              137.40252,
+              -4.77468
+            ],
+            [
+              137.40459,
+              -4.77611
+            ],
+            [
+              137.40525,
+              -4.77749
+            ],
+            [
+              137.40596,
+              -4.77762
+            ],
+            [
+              137.40584,
+              -4.77925
+            ],
+            [
+              137.40741,
+              -4.7802
+            ],
+            [
+              137.40734,
+              -4.7831
+            ],
+            [
+              137.40879,
+              -4.78395
+            ],
+            [
+              137.40911,
+              -4.78466
+            ],
+            [
+              137.40844,
+              -4.78486
+            ],
+            [
+              137.40943,
+              -4.78576
+            ],
+            [
+              137.40875,
+              -4.7859
+            ],
+            [
+              137.4092,
+              -4.78727
+            ],
+            [
+              137.40849,
+              -4.78658
+            ],
+            [
+              137.40854,
+              -4.78763
+            ],
+            [
+              137.40819,
+              -4.78697
+            ],
+            [
+              137.40753,
+              -4.78681
+            ],
+            [
+              137.40818,
+              -4.78681
+            ],
+            [
+              137.4072,
+              -4.78681
+            ],
+            [
+              137.40676,
+              -4.78517
+            ],
+            [
+              137.40516,
+              -4.78364
+            ],
+            [
+              137.40443,
+              -4.78213
+            ],
+            [
+              137.40175,
+              -4.78338
+            ],
+            [
+              137.39818,
+              -4.78319
+            ],
+            [
+              137.39688,
+              -4.78359
+            ],
+            [
+              137.39659,
+              -4.78463
+            ],
+            [
+              137.39613,
+              -4.78485
+            ],
+            [
+              137.39583,
+              -4.78449
+            ],
+            [
+              137.3918,
+              -4.78818
+            ],
+            [
+              137.39129,
+              -4.78931
+            ],
+            [
+              137.39148,
+              -4.79053
+            ],
+            [
+              137.39065,
+              -4.7913
+            ],
+            [
+              137.39089,
+              -4.79283
+            ],
+            [
+              137.39003,
+              -4.7936
+            ],
+            [
+              137.38898,
+              -4.79317
+            ],
+            [
+              137.38828,
+              -4.79385
+            ],
+            [
+              137.38769,
+              -4.79712
+            ],
+            [
+              137.3844,
+              -4.7984
+            ],
+            [
+              137.3822,
+              -4.80185
+            ],
+            [
+              137.38079,
+              -4.80274
+            ],
+            [
+              137.38045,
+              -4.80251
+            ],
+            [
+              137.38002,
+              -4.8032
+            ],
+            [
+              137.37926,
+              -4.80486
+            ],
+            [
+              137.37943,
+              -4.80547
+            ],
+            [
+              137.37992,
+              -4.80548
+            ],
+            [
+              137.37946,
+              -4.80599
+            ],
+            [
+              137.37979,
+              -4.80616
+            ],
+            [
+              137.37912,
+              -4.80636
+            ],
+            [
+              137.37997,
+              -4.80697
+            ],
+            [
+              137.38006,
+              -4.80793
+            ],
+            [
+              137.38098,
+              -4.80803
+            ],
+            [
+              137.38148,
+              -4.8087
+            ],
+            [
+              137.38097,
+              -4.80799
+            ],
+            [
+              137.38167,
+              -4.80735
+            ],
+            [
+              137.38285,
+              -4.80813
+            ],
+            [
+              137.3827,
+              -4.80954
+            ],
+            [
+              137.38186,
+              -4.80991
+            ],
+            [
+              137.38161,
+              -4.81068
+            ],
+            [
+              137.38214,
+              -4.81287
+            ],
+            [
+              137.381,
+              -4.81379
+            ],
+            [
+              137.38168,
+              -4.81416
+            ],
+            [
+              137.38296,
+              -4.81686
+            ],
+            [
+              137.38333,
+              -4.82053
+            ],
+            [
+              137.38465,
+              -4.8216
+            ],
+            [
+              137.38502,
+              -4.82003
+            ],
+            [
+              137.38532,
+              -4.82004
+            ],
+            [
+              137.38572,
+              -4.82129
+            ],
+            [
+              137.38665,
+              -4.82217
+            ],
+            [
+              137.38662,
+              -4.82382
+            ],
+            [
+              137.38707,
+              -4.82449
+            ],
+            [
+              137.38882,
+              -4.8248
+            ],
+            [
+              137.38885,
+              -4.82514
+            ],
+            [
+              137.38848,
+              -4.82461
+            ],
+            [
+              137.38761,
+              -4.82464
+            ],
+            [
+              137.38877,
+              -4.82485
+            ],
+            [
+              137.38916,
+              -4.82569
+            ],
+            [
+              137.38889,
+              -4.82602
+            ]
+          ],
+          "icon": "🚙"
+        },
+        {
+          "side": "perseverance",
+          "route": "perseverance",
+          "icon": "🚙"
+        }
+      ],
+      "events": [
+        {
+          "icon": "⛰️",
+          "text": {
+            "en": "26 August 2026: Curiosity has climbed 1 km since landing",
+            "es": "26 de agosto de 2026: Curiosity ya subió 1 km desde su aterrizaje"
+          },
+          "at": [
+            137.3867,
+            -4.8237
+          ],
+          "date": "2026-08-26"
+        },
+        {
+          "icon": "🏁",
+          "text": {
+            "en": "11 October 2026: Perseverance passes Opportunity's 45.16 km, the longest drive on another world",
+            "es": "11 de octubre de 2026: Perseverance supera los 45,16 km de Opportunity, el recorrido más largo en otro mundo"
+          },
+          "at": [
+            77.2328,
+            18.4356
+          ],
+          "date": "2026-10-11"
+        }
+      ],
+      "places": [
+        {
+          "id": "cheyava-falls",
+          "name": {
+            "en": "Cheyava Falls' \"leopard spots\"",
+            "es": "Las «manchas de leopardo» de Cheyava Falls"
+          },
+          "at": [
+            77.3037,
+            18.496
+          ],
+          "world": "mars",
+          "cat": "discovery",
+          "type": "place",
+          "date": "2024-07-21",
+          "place": {
+            "en": "Neretva Vallis, Jezero crater, Mars",
+            "es": "Neretva Vallis, cráter Jezero, Marte"
+          },
+          "text": {
+            "en": "A reddish rock with tiny pale rings rimmed in black, made of iron minerals that on Earth often form with the help of microbes. NASA calls it a potential biosignature: a clue, not proof.",
+            "es": "Una roca rojiza con diminutos anillos claros bordeados de negro, hechos de minerales de hierro que en la Tierra suelen formarse con ayuda de microbios. La NASA la llama posible biofirma: una pista, no una prueba."
+          },
+          "details": {
+            "en": "Perseverance drilled a core from it, the Sapphire Canyon sample, in July 2024. In September 2025 a study in Nature led by Joel Hurowitz found that the spots hold vivianite and greigite, minerals that on Earth often form when microbes feed on organic matter in mud. Non-living chemistry could also make them, so the only way to be sure is to study the sample in labs on Earth.",
+            "es": "Perseverance extrajo de ella un núcleo, la muestra Sapphire Canyon, en julio de 2024. En septiembre de 2025, un estudio en Nature dirigido por Joel Hurowitz halló que las manchas tienen vivianita y greigita, minerales que en la Tierra suelen formarse cuando los microbios se alimentan de materia orgánica en el lodo. La química sin vida también podría producirlas, así que la única manera de estar seguros es estudiar la muestra en laboratorios de la Tierra."
+          },
+          "wiki": {
+            "en": "Cheyava Falls",
+            "es": "Cheyava Falls"
+          }
+        },
+        {
+          "id": "three-forks-depot",
+          "name": {
+            "en": "Three Forks sample depot",
+            "es": "El depósito de muestras de Three Forks"
+          },
+          "at": [
+            77.4014,
+            18.451
+          ],
+          "world": "mars",
+          "cat": "lander",
+          "type": "site",
+          "date": "2022-12-21",
+          "place": {
+            "en": "Jezero crater, Mars",
+            "es": "Cráter Jezero, Marte"
+          },
+          "text": {
+            "en": "Ten sealed tubes of rock, soil and air that Perseverance set down on the crater floor in 2022–2023, a backup in case the rover could not deliver its own samples. The first sample depot on another world.",
+            "es": "Diez tubos sellados con roca, suelo y aire que Perseverance dejó en el fondo del cráter en 2022-2023, como reserva por si el vehículo no podía entregar sus propias muestras. El primer depósito de muestras en otro mundo."
+          },
+          "wiki": {
+            "en": "Mars sample-return mission",
+            "es": ""
+          }
+        },
+        {
+          "id": "gediz-sulfur",
+          "name": {
+            "en": "Sulfur crystals in Gediz Vallis",
+            "es": "Cristales de azufre en Gediz Vallis"
+          },
+          "at": [
+            137.4089,
+            -4.7857
+          ],
+          "world": "mars",
+          "cat": "discovery",
+          "type": "place",
+          "date": "2024-05-30",
+          "place": {
+            "en": "Gediz Vallis, Mount Sharp, Mars",
+            "es": "Gediz Vallis, monte Sharp, Marte"
+          },
+          "text": {
+            "en": "In May 2024 Curiosity rolled over a rock and cracked it open, revealing yellow crystals of pure sulfur, never seen before on Mars, in a channel carved by water and debris flows.",
+            "es": "En mayo de 2024, Curiosity pasó sobre una roca y la partió, dejando ver cristales amarillos de azufre puro, nunca vistos antes en Marte, en un canal tallado por agua y avalanchas de escombros."
+          },
+          "wiki": {
+            "en": "Curiosity (rover)",
+            "es": "Curiosity"
+          }
+        },
+        {
+          "id": "lac-de-charmes",
+          "name": {
+            "en": "Lac de Charmes, beyond Jezero's rim",
+            "es": "Lac de Charmes, más allá del borde de Jezero"
+          },
+          "at": [
+            77.2331,
+            18.4356
+          ],
+          "world": "mars",
+          "cat": "place",
+          "type": "place",
+          "date": "2026-10-11",
+          "place": {
+            "en": "West of Jezero crater, Mars",
+            "es": "Al oeste del cráter Jezero, Marte"
+          },
+          "text": {
+            "en": "Plains beyond Jezero's western rim, where Perseverance studies rocks perhaps among the oldest ever explored, some 4 billion years old. It broke the off-world driving record here.",
+            "es": "Llanuras más allá del borde oeste de Jezero, donde Perseverance estudia rocas quizá entre las más antiguas jamás exploradas, de unos 4 000 millones de años. Aquí batió el récord de distancia fuera de la Tierra."
+          },
+          "wiki": {
+            "en": "Perseverance (rover)",
+            "es": "Perseverance"
+          }
+        },
+        {
+          "id": "vandi-verma",
+          "name": {
+            "en": "Vandi Verma",
+            "es": "Vandi Verma"
+          },
+          "at": [
+            77.24,
+            18.44
+          ],
+          "world": "mars",
+          "cat": "control",
+          "type": "person",
+          "date": "2026-10-11",
+          "place": {
+            "en": "NASA's Jet Propulsion Laboratory (JPL), Pasadena, California",
+            "es": "Laboratorio de Propulsión a Chorro (JPL) de la NASA, Pasadena, California"
+          },
+          "text": {
+            "en": "A roboticist born in India who has driven Spirit, Opportunity, Curiosity and Perseverance, and is chief engineer of Perseverance's robotic operations, including the self-driving that broke the record.",
+            "es": "Una especialista en robótica nacida en la India que ha conducido Spirit, Opportunity, Curiosity y Perseverance, y es ingeniera jefa de las operaciones robóticas de Perseverance, incluida la conducción autónoma que batió el récord."
+          },
+          "wiki": {
+            "en": "Vandi Verma",
+            "es": "Vandi Verma"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "In half a century, landers and rovers turned Mars from a red dot into a real place, with dry lakes, river deltas, hot springs and perhaps an ancient shore. Only the Soviet Union, the United States and China have landed working craft there. Mars was once wet and could have hosted life; whether it did may be written in the samples Perseverance has sealed, still waiting for a ride to Earth.",
+    "es": "En medio siglo, módulos y vehículos convirtieron a Marte de un punto rojo en un lugar real, con lagos secos, deltas, fuentes termales y quizá una antigua costa. Solo la Unión Soviética, Estados Unidos y China han posado allí naves que funcionaron. Marte fue húmedo y pudo albergar vida; si la tuvo puede estar escrito en las muestras que selló Perseverance, que aún esperan un viaje a la Tierra."
+  },
+  "sources": [
+    {
+      "title": "Mars 3 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mars_3"
+    },
+    {
+      "title": "Mars 2 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mars_2"
+    },
+    {
+      "title": "Viking 1 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Viking_1"
+    },
+    {
+      "title": "Viking 2 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Viking_2"
+    },
+    {
+      "title": "Viking lander biological experiments (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Viking_lander_biological_experiments"
+    },
+    {
+      "title": "Mars Pathfinder (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mars_Pathfinder"
+    },
+    {
+      "title": "Sojourner (rover) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Sojourner_(rover)"
+    },
+    {
+      "title": "Mars Polar Lander (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Mars_Polar_Lander"
+    },
+    {
+      "title": "Beagle 2 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Beagle_2"
+    },
+    {
+      "title": "ESA: Beagle 2 lander found on Mars (2015)",
+      "url": "https://sci.esa.int/web/mars-express/-/55263-beagle-2-lander-found-on-mars"
+    },
+    {
+      "title": "Spirit (rover) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Spirit_(rover)"
+    },
+    {
+      "title": "Opportunity (rover) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Opportunity_(rover)"
+    },
+    {
+      "title": "Phoenix (spacecraft) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Phoenix_(spacecraft)"
+    },
+    {
+      "title": "Curiosity (rover) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Curiosity_(rover)"
+    },
+    {
+      "title": "Eigenbrode et al., Organic matter preserved in 3-billion-year-old mudstones at Gale crater (Science, 2018)",
+      "url": "https://doi.org/10.1126/science.aas9185"
+    },
+    {
+      "title": "InSight (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/InSight"
+    },
+    {
+      "title": "Perseverance (rover) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Perseverance_(rover)"
+    },
+    {
+      "title": "Ingenuity (helicopter) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ingenuity_(helicopter)"
+    },
+    {
+      "title": "MOXIE (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/MOXIE"
+    },
+    {
+      "title": "Zhurong (rover) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Zhurong_(rover)"
+    },
+    {
+      "title": "Tianwen-1 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tianwen-1"
+    },
+    {
+      "title": "Li et al., Ancient ocean coastal deposits imaged on Mars (PNAS, 2025)",
+      "url": "https://doi.org/10.1073/pnas.2422213122"
+    },
+    {
+      "title": "NASA: Perseverance sets off-world record for total distance driven (12 October 2026)",
+      "url": "https://science.nasa.gov/blogs/perseverance-mars-rover/2026/10/12/nasas-perseverance-sets-off-world-record-for-total-distance-driven/"
+    },
+    {
+      "title": "NASA: Curiosity reaches 1-kilometer elevation gain (2026)",
+      "url": "https://science.nasa.gov/mars/curiosity-reaches-1-kilometer-elevation-gain/"
+    },
+    {
+      "title": "NASA: Curiosity's waypoints (sol 5073)",
+      "url": "https://mars.nasa.gov/mmgis-maps/MSL/Layers/json/MSL_waypoints.json"
+    },
+    {
+      "title": "NASA: Perseverance's waypoints (sol 2022)",
+      "url": "https://mars.nasa.gov/mmgis-maps/M20/Layers/json/M20_waypoints.json"
+    },
+    {
+      "title": "The Planetary Society: NASA is funded. Now what? (Mars Sample Return canceled, 2026)",
+      "url": "https://www.planetary.org/articles/nasa-is-funded-now-what"
+    },
+    {
+      "title": "IAU Gazetteer of Planetary Nomenclature: Mars",
+      "url": "https://planetarynames.wr.usgs.gov/Page/MARS/target"
+    }
+  ]
+}

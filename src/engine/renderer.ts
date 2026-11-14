@@ -68,6 +68,8 @@ export class Renderer {
   highlight: Set<string> | null = null;
   /** Draw today's countries (land, borders, labels). Time-travel modes switch it off. */
   baseMap = true;
+  /** Another world on the globe (see space/): no ocean, its own haze (or none). Null: the Earth. */
+  worldStyle: { glow: string | null } | null = null;
   moving = false;
   settings: RenderSettings = {
     labels: { countries: true, capitals: true, cities: true, seas: true, values: true },
@@ -382,7 +384,8 @@ export class Renderer {
     const R = view.zoom * view.fb;
     const [cx, cy] = [w / 2, view.translate[1] - (view.current.kind === 'flat' ? 0 : 0)];
     const gy = view.translate[1];
-    if (view.current.kind === 'globe' && !view.morphing) this.drawAtmosphere(bg, w / 2, gy, R);
+    const ws = this.worldStyle;
+    if (view.current.kind === 'globe' && !view.morphing && (!ws || ws.glow)) this.drawAtmosphere(bg, w / 2, gy, R, ws?.glow);
     bg.beginPath();
     this.bgPath({ type: 'Sphere' });
     if (view.current.kind === 'flat' && !view.morphing) {
@@ -397,7 +400,8 @@ export class Renderer {
       ? bg.createRadialGradient(w / 2 - R * 0.35, gy - R * 0.4, R * 0.05, w / 2, gy, R * 1.02)
       : bg.createLinearGradient(0, cy - R * 1.5, 0, cy + R * 1.5);
     og.addColorStop(0, th.ocean[0]); og.addColorStop(0.55, th.ocean[1]); og.addColorStop(1, th.ocean[2]);
-    bg.fillStyle = og;
+    // Another world: a plain dark ball under its map (where the map has no data).
+    bg.fillStyle = ws ? '#2a2d33' : og;
     bg.fill();
 
     // ---- the filter stack, bottom to top: imagery and data grids are rendered by WebGL and
@@ -534,9 +538,9 @@ export class Renderer {
     }
     for (const o of this.overlays) { ctx.save(); o(rc); ctx.restore(); }
 
-    // ---- selection
+    // ---- selection (not on another world, which has no countries)
     for (const [id, strong] of [[this.hover, false], [this.selection, true]] as const) {
-      if (!id) continue;
+      if (!id || this.worldStyle) continue;
       const s = level.byId.get(id);
       if (!s) continue;
       const p = this.countryPath(s);
@@ -604,12 +608,21 @@ export class Renderer {
     bg.globalAlpha = 1;
   }
 
-  private drawAtmosphere(bg: CanvasRenderingContext2D, x: number, y: number, R: number) {
+  private drawAtmosphere(bg: CanvasRenderingContext2D, x: number, y: number, R: number, glow?: string | null) {
     const th = this.theme;
     const g = bg.createRadialGradient(x, y, R * 0.92, x, y, R * 1.22);
+    if (glow) {
+      // Another world's haze: its colour, fading out.
+      const m = /rgba?\(([^)]+)\)/.exec(glow);
+      const [r, gg, b, a = '1'] = (m ? m[1] : '255,255,255,0.4').split(',').map((v) => v.trim());
+      g.addColorStop(0, `rgba(${r},${gg},${b},${a})`);
+      g.addColorStop(0.35, `rgba(${r},${gg},${b},${Number(a) * 0.4})`);
+      g.addColorStop(1, `rgba(${r},${gg},${b},0)`);
+    } else {
     g.addColorStop(0, th.dark ? 'rgba(95,180,255,0.55)' : 'rgba(120,170,220,0.45)');
     g.addColorStop(0.35, th.dark ? 'rgba(70,140,255,0.22)' : 'rgba(120,170,220,0.18)');
     g.addColorStop(1, 'rgba(60,120,255,0)');
+    }
     bg.fillStyle = g;
     bg.beginPath(); bg.arc(x, y, R * 1.25, 0, Math.PI * 2); bg.fill();
   }

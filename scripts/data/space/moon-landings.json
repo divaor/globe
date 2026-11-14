@@ -1,0 +1,1693 @@
+{
+  "id": "moon-landings",
+  "name": {
+    "en": "Footprints on the Moon",
+    "es": "Huellas en la Luna"
+  },
+  "icon": "🌕",
+  "era": "contemporary",
+  "region": {
+    "en": "The Moon: the near side, the far side and the south pole",
+    "es": "La Luna: su cara visible, su cara oculta y el polo sur"
+  },
+  "start": "1959-09-13",
+  "end": "2026-04-11",
+  "summary": {
+    "en": "From the Soviet probe that struck the Moon in 1959 to the Artemis II crew who flew around it in 2026: the twelve Apollo moonwalkers, the Soviet rovers, China's far-side landings, India near the south pole and the first company landers.",
+    "es": "Desde la sonda soviética que chocó contra la Luna en 1959 hasta la tripulación de Artemis II que la rodeó en 2026: los doce caminantes del Apolo, los vehículos soviéticos, los alunizajes chinos en la cara oculta, la India cerca del polo sur y los primeros módulos de empresas."
+  },
+  "camera": {
+    "lon": 0,
+    "lat": 20,
+    "zoom": 1
+  },
+  "sides": [
+    {
+      "id": "apollo",
+      "name": {
+        "en": "Apollo moonwalks and drives",
+        "es": "Caminatas y recorridos del Apolo"
+      },
+      "color": "#ffd166",
+      "members": {
+        "en": "NASA's astronauts on foot and in the Lunar Roving Vehicle (1969–1972)",
+        "es": "Los astronautas de la NASA a pie y en el vehículo lunar (1969-1972)"
+      }
+    },
+    {
+      "id": "lunokhod",
+      "name": {
+        "en": "Lunokhod rovers (Soviet Union)",
+        "es": "Vehículos Lunojod (Unión Soviética)"
+      },
+      "color": "#e63946",
+      "members": {
+        "en": "Driven from the Soviet Union by remote control (1970–1973)",
+        "es": "Conducidos a distancia desde la Unión Soviética (1970-1973)"
+      }
+    },
+    {
+      "id": "yutu",
+      "name": {
+        "en": "Yutu rovers (China)",
+        "es": "Vehículos Yutu (China)"
+      },
+      "color": "#f4a261",
+      "members": {
+        "en": "The 'Jade Rabbit' rovers of Chang'e 3 (2013) and Chang'e 4 (2019)",
+        "es": "Los vehículos «Conejo de Jade» de la Chang'e 3 (2013) y la Chang'e 4 (2019)"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "date": "1959-09-13",
+      "world": "moon",
+      "title": {
+        "en": "Luna 2 hits the Moon",
+        "es": "Luna 2 llega a la Luna"
+      },
+      "text": {
+        "en": "On 13 September 1959 the Soviet probe Luna 2 crashed onto the Sea of Rains near the crater Archimedes: the first human-made object to reach another world.",
+        "es": "El 13 de septiembre de 1959 la sonda soviética Luna 2 se estrelló en el mar de las Lluvias, cerca del cráter Arquímedes: el primer objeto humano que llegó a otro mundo."
+      },
+      "details": {
+        "en": "Luna 2 had no camera and no brakes: its job was to hit the target, and after a day and a half in flight it struck the plain between the craters Archimedes and Autolycus at about 3.3 km per second. It carried metal pennants with the Soviet coat of arms, and its instruments found that the Moon has no strong magnetic field. To convince doubters, Soviet scientists sent its path and timing to the British astronomer Bernard Lovell, whose radio telescope at Jodrell Bank followed it to the end. Less than a month later Luna 3 photographed the far side, which no one had ever seen. America's Ranger probes followed in 1964 and 1965, sending close-up pictures until the moment they hit.",
+        "es": "Luna 2 no llevaba cámara ni frenos: su misión era dar en el blanco, y tras un día y medio de vuelo chocó contra la llanura entre los cráteres Arquímedes y Autólico a unos 3,3 km por segundo. Llevaba banderines de metal con el escudo soviético, y sus instrumentos mostraron que la Luna no tiene un campo magnético fuerte. Para convencer a los escépticos, los científicos soviéticos enviaron su trayectoria y la hora del impacto al astrónomo británico Bernard Lovell, cuyo radiotelescopio de Jodrell Bank la siguió hasta el final. Menos de un mes después, Luna 3 fotografió la cara oculta, que nadie había visto nunca. Las sondas Ranger de Estados Unidos llegaron en 1964 y 1965 y enviaron fotos de cerca hasta el instante del choque."
+      },
+      "camera": {
+        "lon": -6,
+        "lat": 31,
+        "zoom": 4
+      },
+      "show": [
+        "luna-2"
+      ],
+      "places": [
+        {
+          "id": "archimedes-crater",
+          "name": {
+            "en": "Archimedes crater",
+            "es": "Cráter Arquímedes"
+          },
+          "at": [
+            -3.9931,
+            29.7172
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "1959-09-13",
+          "place": {
+            "en": "Mare Imbrium, near side of the Moon",
+            "es": "Mare Imbrium, cara visible de la Luna"
+          },
+          "text": {
+            "en": "A flooded crater 81 km wide on the Sea of Rains, named after the Greek mathematician. Luna 2 struck the plain just east of it, the first human-made object on the Moon.",
+            "es": "Un cráter inundado de lava de 81 km en el mar de las Lluvias, llamado así por el matemático griego. Luna 2 chocó en la llanura al este, el primer objeto humano en la Luna."
+          },
+          "wiki": {
+            "en": "Archimedes (crater)",
+            "es": "Archimedes (cráter)"
+          }
+        },
+        {
+          "id": "mare-imbrium",
+          "name": {
+            "en": "Mare Imbrium (Sea of Rains)",
+            "es": "Mare Imbrium (mar de las Lluvias)"
+          },
+          "at": [
+            -14.9086,
+            34.7244
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "1959-09-13",
+          "place": {
+            "en": "Near side of the Moon, north-west",
+            "es": "Cara visible de la Luna, noroeste"
+          },
+          "text": {
+            "en": "A plain of dark lava about 1,100 km across, filling one of the Moon's largest impact basins. Luna 2 struck it, Lunokhod 1 drove on it and Chang'e 3 landed on it.",
+            "es": "Una llanura de lava oscura de unos 1100 km que llena una de las mayores cuencas de impacto de la Luna. Luna 2 chocó en ella, el Lunojod 1 la recorrió y la Chang'e 3 alunizó en ella."
+          },
+          "wiki": {
+            "en": "Mare Imbrium",
+            "es": "Mare Imbrium"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1966-06-02",
+      "world": "moon",
+      "title": {
+        "en": "The first soft landings",
+        "es": "Los primeros alunizajes suaves"
+      },
+      "text": {
+        "en": "On 3 February 1966 the Soviet Luna 9 landed gently on the Ocean of Storms and sent back the first pictures from the surface. On 2 June America's Surveyor 1 landed on the same plain.",
+        "es": "El 3 de febrero de 1966 la soviética Luna 9 se posó suavemente en el océano de las Tormentas y envió las primeras fotos desde la superficie. El 2 de junio, la estadounidense Surveyor 1 alunizó en la misma llanura."
+      },
+      "details": {
+        "en": "Some scientists feared the Moon's plains were deep dust that would swallow a spacecraft. Luna 9 settled it: it fired its braking rocket, threw out a 99 kg capsule cushioned by airbags, and its panoramas showed firm, rocky ground. The Jodrell Bank radio telescope in England picked up the pictures, and British newspapers printed them before Moscow did. Surveyor 1, built by Hughes for NASA's Jet Propulsion Laboratory, came down on three legs and sent back 11,237 photos. Five of the seven Surveyors landed between 1966 and 1968, the last beside the bright crater Tycho; their footpads, scoops and instruments told engineers that the ground could hold a crewed lander.",
+        "es": "Algunos científicos temían que las llanuras lunares fueran polvo profundo capaz de tragarse una nave. Luna 9 resolvió la duda: encendió su cohete de frenado, soltó una cápsula de 99 kg protegida por bolsas de aire, y sus panoramas mostraron un suelo firme y rocoso. El radiotelescopio de Jodrell Bank, en Inglaterra, captó las imágenes, y los diarios británicos las publicaron antes que Moscú. La Surveyor 1, construida por Hughes para el Laboratorio de Propulsión a Chorro de la NASA, bajó sobre tres patas y envió 11 237 fotos. Cinco de las siete Surveyor alunizaron entre 1966 y 1968, la última junto al brillante cráter Tycho; sus patas, palas e instrumentos mostraron a los ingenieros que el suelo podía sostener un módulo tripulado."
+      },
+      "camera": {
+        "lon": -54,
+        "lat": 7,
+        "zoom": 3
+      },
+      "show": [
+        "luna-9",
+        "surveyor-1"
+      ],
+      "places": [
+        {
+          "id": "oceanus-procellarum",
+          "name": {
+            "en": "Oceanus Procellarum (Ocean of Storms)",
+            "es": "Oceanus Procellarum (océano de las Tormentas)"
+          },
+          "at": [
+            -56.6774,
+            20.6714
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "1966-02-03",
+          "place": {
+            "en": "Near side of the Moon, west",
+            "es": "Cara visible de la Luna, oeste"
+          },
+          "text": {
+            "en": "The largest of the Moon's dark lava plains, about 2,600 km across. Luna 9, Surveyor 1, Surveyor 3, Apollo 12 and Chang'e 5 all landed on it.",
+            "es": "La mayor de las llanuras oscuras de lava de la Luna, de unos 2600 km. Luna 9, Surveyor 1, Surveyor 3, el Apolo 12 y la Chang'e 5 alunizaron en ella."
+          },
+          "wiki": {
+            "en": "Oceanus Procellarum",
+            "es": "Oceanus Procellarum"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1969-07-20",
+      "world": "moon",
+      "title": {
+        "en": "The Eagle has landed",
+        "es": "El Águila ha alunizado"
+      },
+      "text": {
+        "en": "On 20 July 1969 Neil Armstrong and Buzz Aldrin landed the lunar module Eagle on the Sea of Tranquility while Michael Collins orbited above. Armstrong became the first person to walk on the Moon.",
+        "es": "El 20 de julio de 1969 Neil Armstrong y Buzz Aldrin posaron el módulo lunar Eagle en el mar de la Tranquilidad mientras Michael Collins orbitaba arriba. Armstrong fue el primer ser humano en caminar sobre la Luna."
+      },
+      "details": {
+        "en": "The descent was tense. Alarms flashed on the guidance computer, whose software, written by Margaret Hamilton's team at MIT, kept the vital tasks running, and Armstrong flew Eagle by hand past a field of boulders, landing with less than a minute of fuel to spare. About six and a half hours later he stepped off the ladder, at 02:56 UTC on 21 July, watched live on television around the world. In two and a half hours outside, the pair set up a seismometer and a laser reflector that still returns beams fired from Earth, and gathered 21.5 kg of rock and soil. The road there had cost lives: Gus Grissom, Ed White and Roger Chaffee died in the Apollo 1 fire in 1967. On 21 July the Soviet robot Luna 15, racing to fetch soil first, crashed into the Sea of Crises.",
+        "es": "El descenso fue tenso. Sonaron alarmas en la computadora de navegación, cuyo software, escrito por el equipo de Margaret Hamilton en el MIT, mantuvo en marcha las tareas vitales, y Armstrong pilotó el Eagle a mano por encima de un campo de rocas; alunizó con menos de un minuto de combustible de sobra. Unas seis horas y media después bajó la escalera, a las 02:56 UTC del 21 de julio, mientras el mundo lo veía en vivo por televisión. En dos horas y media afuera instalaron un sismómetro y un reflector láser que todavía devuelve los rayos disparados desde la Tierra, y recogieron 21,5 kg de rocas y suelo. El camino había costado vidas: Gus Grissom, Ed White y Roger Chaffee murieron en el incendio del Apolo 1 en 1967. El 21 de julio, el robot soviético Luna 15, que intentaba traer suelo antes, se estrelló en el mar de las Crisis."
+      },
+      "camera": {
+        "lon": 27,
+        "lat": 4.5,
+        "zoom": 5.5
+      },
+      "show": [
+        "apollo-11",
+        "surveyor-5"
+      ],
+      "places": [
+        {
+          "id": "mare-tranquillitatis",
+          "name": {
+            "en": "Mare Tranquillitatis (Sea of Tranquility)",
+            "es": "Mare Tranquillitatis (mar de la Tranquilidad)"
+          },
+          "at": [
+            30.8346,
+            8.3487
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "1969-07-20",
+          "place": {
+            "en": "Near side of the Moon, east of centre",
+            "es": "Cara visible de la Luna, al este del centro"
+          },
+          "text": {
+            "en": "A smooth lava plain about 870 km across, chosen for the first landing because it looked flat and safe. Its rocks proved to be basalt rich in titanium, about 3.6 to 3.9 billion years old.",
+            "es": "Una llanura lisa de lava de unos 870 km, elegida para el primer alunizaje porque parecía plana y segura. Sus rocas resultaron ser basaltos ricos en titanio, de unos 3600 a 3900 millones de años."
+          },
+          "wiki": {
+            "en": "Mare Tranquillitatis",
+            "es": "Mare Tranquillitatis"
+          }
+        },
+        {
+          "id": "margaret-hamilton",
+          "name": {
+            "en": "Margaret Hamilton",
+            "es": "Margaret Hamilton"
+          },
+          "at": [
+            24.3,
+            1.25
+          ],
+          "world": "moon",
+          "cat": "control",
+          "type": "person",
+          "date": "1969-07-20",
+          "life": [
+            "1936-08-17",
+            "2026-09-30"
+          ],
+          "place": {
+            "en": "MIT Instrumentation Laboratory, Cambridge, Massachusetts",
+            "es": "Laboratorio de Instrumentación del MIT, Cambridge, Massachusetts"
+          },
+          "text": {
+            "en": "American computer scientist who led the MIT team that wrote the onboard flight software of the Apollo spacecraft. During Apollo 11's landing it dropped less urgent jobs and kept guiding Eagle.",
+            "es": "Informática estadounidense que dirigió el equipo del MIT que escribió el software de vuelo de las naves Apolo. Durante el alunizaje del Apolo 11, el programa dejó de lado tareas menos urgentes y siguió guiando al Eagle."
+          },
+          "wiki": {
+            "en": "Margaret Hamilton (software engineer)",
+            "es": "Margaret Hamilton (científica)"
+          }
+        }
+      ],
+      "events": [
+        {
+          "icon": "💥",
+          "date": "1969-07-21",
+          "at": [
+            60,
+            17
+          ],
+          "text": {
+            "en": "The Soviet Luna 15 crashes into the Sea of Crises",
+            "es": "La soviética Luna 15 se estrella en el mar de las Crisis"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1969-11-19",
+      "world": "moon",
+      "title": {
+        "en": "A visit to Surveyor 3",
+        "es": "Visita a la Surveyor 3"
+      },
+      "text": {
+        "en": "Apollo 12's Pete Conrad and Alan Bean landed on the Ocean of Storms within walking distance of Surveyor 3, which had arrived two and a half years before, and took pieces of it home.",
+        "es": "Pete Conrad y Alan Bean, del Apolo 12, alunizaron en el océano de las Tormentas a poca distancia de la Surveyor 3, que había llegado dos años y medio antes, y se llevaron piezas de ella."
+      },
+      "details": {
+        "en": "Struck twice by lightning just after launch, Apollo 12 flew on and made the first pinpoint landing, proof that crews could be set down where geologists wanted. On two moonwalks Conrad and Bean set up a science station powered by a small nuclear generator, collected 34 kg of samples and walked to Surveyor 3, cutting off its camera and other parts so scientists could see how two and a half years on the Moon had changed metal and glass. Their colour TV camera failed early, after it was pointed at the Sun. Richard Gordon circled above in the command module Yankee Clipper.",
+        "es": "Alcanzado dos veces por rayos justo después del despegue, el Apolo 12 siguió adelante e hizo el primer alunizaje de precisión, prueba de que una tripulación podía bajar donde los geólogos querían. En dos caminatas, Conrad y Bean instalaron una estación científica alimentada por un pequeño generador nuclear, recogieron 34 kg de muestras y caminaron hasta la Surveyor 3, a la que le cortaron la cámara y otras piezas para estudiar cómo habían cambiado el metal y el vidrio tras dos años y medio en la Luna. Su cámara de televisión en color se dañó pronto, al apuntarla al Sol. Richard Gordon orbitaba arriba en el módulo de mando Yankee Clipper."
+      },
+      "camera": {
+        "lon": -23.42,
+        "lat": -3.01,
+        "zoom": 30
+      },
+      "show": [
+        "apollo-12",
+        "surveyor-3"
+      ]
+    },
+    {
+      "date": "1970-11-17",
+      "world": "moon",
+      "title": {
+        "en": "Lunokhod 1, the first rover",
+        "es": "Lunojod 1, el primer vehículo"
+      },
+      "text": {
+        "en": "Two months after Luna 16 brought back the first soil collected by a robot, Luna 17 landed the eight-wheeled Lunokhod 1 on the Sea of Rains. Drivers in the Soviet Union steered it for 10.5 km.",
+        "es": "Dos meses después de que Luna 16 trajera el primer suelo recogido por un robot, Luna 17 posó en el mar de las Lluvias al Lunojod 1, de ocho ruedas. Conductores en la Unión Soviética lo guiaron 10,5 km."
+      },
+      "details": {
+        "en": "Lunokhod 1 was a tub on eight wheels, about as long as a small car, with a lid lined with solar cells and a radioactive heater for the two-week lunar nights. A team on Earth drove it by television; each picture took seconds to arrive, so they had to think ahead. Built for three months, it worked for eleven lunar days, until September 1971, sending more than 20,000 pictures and testing the soil at 500 places. Its French laser reflector was lost for decades until NASA's Lunar Reconnaissance Orbiter spotted the rover in 2010; scientists still bounce lasers off it. Two months before, Luna 16 had landed on the Sea of Fertility, drilled up 101 g of soil and sent it to Earth.",
+        "es": "El Lunojod 1 era una tina sobre ocho ruedas, del largo de un auto pequeño, con una tapa cubierta de celdas solares y un calefactor radiactivo para las noches lunares de dos semanas. Un equipo en la Tierra lo conducía por televisión; cada imagen tardaba segundos en llegar, así que debían adelantarse. Hecho para tres meses, funcionó once días lunares, hasta septiembre de 1971, envió más de 20 000 imágenes y probó el suelo en 500 lugares. Su reflector láser francés estuvo perdido durante décadas, hasta que el Lunar Reconnaissance Orbiter de la NASA encontró el vehículo en 2010; los científicos aún le disparan láseres. Dos meses antes, Luna 16 había alunizado en el mar de la Fecundidad, perforado 101 g de suelo y enviado la muestra a la Tierra."
+      },
+      "camera": {
+        "lon": -34.6,
+        "lat": 39.3,
+        "zoom": 24
+      },
+      "show": [
+        "luna-17"
+      ],
+      "places": [
+        {
+          "id": "promontorium-heraclides",
+          "name": {
+            "en": "Promontorium Heraclides",
+            "es": "Promontorium Heraclides"
+          },
+          "at": [
+            -34.0972,
+            40.5986
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "1970-11-17",
+          "place": {
+            "en": "Edge of Mare Imbrium, near side of the Moon",
+            "es": "Borde del Mare Imbrium, cara visible de la Luna"
+          },
+          "text": {
+            "en": "A cape of mountains at the mouth of the Bay of Rainbows, seen from Earth as the profile of a 'Moon maiden'. Lunokhod 1 landed about 60 km to the south.",
+            "es": "Un cabo de montañas a la entrada de la bahía de los Arcoíris, que desde la Tierra parece el perfil de una «doncella de la Luna». El Lunojod 1 alunizó unos 60 km al sur."
+          },
+          "wiki": {
+            "en": "Promontorium Heraclides",
+            "es": ""
+          }
+        },
+        {
+          "id": "georgy-babakin",
+          "name": {
+            "en": "Georgy Babakin",
+            "es": "Gueorgui Babakin"
+          },
+          "at": [
+            -35.12,
+            38.16
+          ],
+          "world": "moon",
+          "cat": "control",
+          "type": "person",
+          "date": "1970-11-17",
+          "life": [
+            "1914",
+            "1971"
+          ],
+          "place": {
+            "en": "Lavochkin design bureau, Khimki, near Moscow",
+            "es": "Oficina de diseño Lavochkin, Jimki, cerca de Moscú"
+          },
+          "text": {
+            "en": "Soviet engineer who led the Lavochkin design bureau from 1965 until his death in 1971. His team finished Luna 9 and built the robots that brought back lunar soil and the Lunokhod rovers.",
+            "es": "Ingeniero soviético que dirigió la oficina de diseño Lavochkin desde 1965 hasta su muerte en 1971. Su equipo terminó la Luna 9 y construyó los robots que trajeron suelo lunar y los vehículos Lunojod."
+          },
+          "wiki": {
+            "en": "Georgy Babakin",
+            "es": "Gueorgui Babakin"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "lunokhod",
+          "route": "luna-17",
+          "by": "land",
+          "icon": "🚙"
+        }
+      ]
+    },
+    {
+      "date": "1971-02-05",
+      "world": "moon",
+      "title": {
+        "en": "Apollo 14 at Fra Mauro",
+        "es": "El Apolo 14 en Fra Mauro"
+      },
+      "text": {
+        "en": "Apollo 13 never landed: an oxygen tank exploded on the way and its crew barely made it home. In 1971 Apollo 14's Alan Shepard and Edgar Mitchell landed at its target, the Fra Mauro hills.",
+        "es": "El Apolo 13 nunca alunizó: un tanque de oxígeno explotó en el camino y su tripulación apenas logró volver. En 1971 Alan Shepard y Edgar Mitchell, del Apolo 14, alunizaron en su destino, las colinas de Fra Mauro."
+      },
+      "details": {
+        "en": "In April 1970 Jim Lovell, Jack Swigert and Fred Haise used their lunar module as a lifeboat, swung around the Moon and splashed down safely, guided by engineers who improvised every step. Apollo 14 went to their landing site, hilly ground thought to be debris thrown out by the impact that made the Sea of Rains. Shepard, the first American in space in 1961, and Mitchell pulled a two-wheeled cart up toward the rim of Cone crater and came within about 20 m of it without knowing. They brought back 42.8 kg of rocks, many of them breccias: broken rock welded together by impacts. Before leaving, Shepard hit two golf balls with a makeshift club. Stuart Roosa orbited above.",
+        "es": "En abril de 1970, Jim Lovell, Jack Swigert y Fred Haise usaron su módulo lunar como bote salvavidas, rodearon la Luna y amerizaron sanos y salvos, guiados por ingenieros que improvisaron cada paso. El Apolo 14 fue a su lugar de alunizaje, un terreno de colinas que se creía formado por los escombros del impacto que creó el mar de las Lluvias. Shepard, el primer estadounidense en el espacio en 1961, y Mitchell arrastraron un carrito de dos ruedas cuesta arriba hacia el borde del cráter Cone y quedaron a unos 20 m de él sin saberlo. Trajeron 42,8 kg de rocas, muchas de ellas brechas: roca rota soldada por los impactos. Antes de partir, Shepard golpeó dos pelotas de golf con un palo improvisado. Stuart Roosa orbitaba arriba."
+      },
+      "camera": {
+        "lon": -17.3,
+        "lat": -4.8,
+        "zoom": 20
+      },
+      "show": [
+        "apollo-14"
+      ],
+      "places": [
+        {
+          "id": "cone-crater",
+          "name": {
+            "en": "Cone crater",
+            "es": "Cráter Cone"
+          },
+          "at": [
+            -17.4336,
+            -3.6248
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "1971-02-06",
+          "place": {
+            "en": "Fra Mauro highlands, near side of the Moon",
+            "es": "Tierras altas de Fra Mauro, cara visible de la Luna"
+          },
+          "text": {
+            "en": "A young crater about 340 m wide whose impact dug up rock from deep below. Shepard and Mitchell climbed toward its rim on their second moonwalk and turned back just short of it.",
+            "es": "Un cráter joven de unos 340 m cuyo impacto sacó roca de las profundidades. Shepard y Mitchell subieron hacia su borde en su segunda caminata y dieron la vuelta muy cerca de él."
+          },
+          "wiki": {
+            "en": "Cone (crater)",
+            "es": ""
+          }
+        },
+        {
+          "id": "fra-mauro-crater",
+          "name": {
+            "en": "Fra Mauro crater",
+            "es": "Cráter Fra Mauro"
+          },
+          "at": [
+            -16.9738,
+            -6.061
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "1971-02-05",
+          "place": {
+            "en": "Near side of the Moon",
+            "es": "Cara visible de la Luna"
+          },
+          "text": {
+            "en": "An old, worn crater 97 km wide named after a Venetian mapmaker monk. The hills around it, the Fra Mauro formation, were the target of Apollo 13 and the landing site of Apollo 14.",
+            "es": "Un cráter antiguo y gastado de 97 km, llamado así por un monje cartógrafo veneciano. Las colinas que lo rodean, la formación Fra Mauro, eran el destino del Apolo 13 y el lugar de alunizaje del Apolo 14."
+          },
+          "wiki": {
+            "en": "Fra Mauro (crater)",
+            "es": "Fra Mauro (cráter)"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "apollo",
+          "route": "apollo-14",
+          "by": "land",
+          "icon": "🚶"
+        }
+      ]
+    },
+    {
+      "date": "1971-07-30",
+      "world": "moon",
+      "title": {
+        "en": "Driving by Hadley Rille",
+        "es": "Manejando junto al surco de Hadley"
+      },
+      "text": {
+        "en": "Apollo 15's David Scott and James Irwin landed between the Apennine mountains and the winding Hadley Rille, and were the first to drive on the Moon, in the Lunar Roving Vehicle.",
+        "es": "David Scott y James Irwin, del Apolo 15, alunizaron entre los montes Apeninos y el sinuoso surco de Hadley, y fueron los primeros en conducir en la Luna, en el vehículo lunar."
+      },
+      "details": {
+        "en": "Apollo 15 was the first of three longer missions built around science. In three days on the surface Scott and Irwin drove about 28 km in the battery-powered rover: to the edge of the rille, an ancient lava channel, and up the slopes of Mons Hadley Delta. At Spur crater they found the 'Genesis Rock', a pale piece of the Moon's early crust about 4 billion years old. They brought home 77 kg of samples. On camera, Scott dropped a hammer and a falcon feather together: with no air, they hit the ground at the same moment, as Galileo had predicted. Alfred Worden mapped the Moon from orbit.",
+        "es": "El Apolo 15 fue la primera de tres misiones más largas centradas en la ciencia. En tres días en la superficie, Scott e Irwin recorrieron unos 28 km en el vehículo eléctrico: hasta el borde del surco, un antiguo canal de lava, y por las laderas del monte Hadley Delta. En el cráter Spur encontraron la «Roca Génesis», un pedazo claro de la corteza primitiva de la Luna, de unos 4000 millones de años. Trajeron 77 kg de muestras. Ante la cámara, Scott soltó a la vez un martillo y una pluma de halcón: sin aire, tocaron el suelo al mismo tiempo, como había predicho Galileo. Alfred Worden cartografió la Luna desde la órbita."
+      },
+      "camera": {
+        "lon": 3.63,
+        "lat": 26.15,
+        "zoom": 30
+      },
+      "show": [
+        "apollo-15"
+      ],
+      "places": [
+        {
+          "id": "hadley-rille",
+          "name": {
+            "en": "Hadley Rille",
+            "es": "Surco de Hadley"
+          },
+          "at": [
+            3.1467,
+            25.7159
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "1971-07-31",
+          "place": {
+            "en": "Foot of the Apennine mountains, near side of the Moon",
+            "es": "Al pie de los montes Apeninos, cara visible de la Luna"
+          },
+          "text": {
+            "en": "A winding valley about 120 km long and more than a kilometre wide, carved by flowing lava. Scott and Irwin drove to its edge and sampled the lava layers in its walls.",
+            "es": "Un valle sinuoso de unos 120 km de largo y más de un kilómetro de ancho, excavado por lava que fluía. Scott e Irwin llegaron en el vehículo hasta su borde y tomaron muestras de las capas de lava de sus paredes."
+          },
+          "wiki": {
+            "en": "Hadley–Apennine",
+            "es": "Rima Hadley"
+          }
+        },
+        {
+          "id": "genesis-rock",
+          "name": {
+            "en": "Genesis Rock",
+            "es": "Roca Génesis"
+          },
+          "at": [
+            3.6668,
+            25.9819
+          ],
+          "world": "moon",
+          "cat": "discovery",
+          "date": "1971-08-01",
+          "place": {
+            "en": "Spur crater, Hadley–Apennine, the Moon",
+            "es": "Cráter Spur, Hadley-Apeninos, la Luna"
+          },
+          "text": {
+            "en": "Sample 15415, a 270 g piece of anorthosite, a pale rock made almost entirely of feldspar. It formed in the Moon's first crust, which floated on an ocean of molten rock, about 4 billion years ago.",
+            "es": "La muestra 15415, un trozo de 270 g de anortosita, una roca clara hecha casi solo de feldespato. Se formó en la primera corteza de la Luna, que flotaba sobre un océano de roca fundida, hace unos 4000 millones de años."
+          },
+          "wiki": {
+            "en": "Genesis Rock",
+            "es": "Roca Génesis"
+          }
+        },
+        {
+          "id": "mons-hadley",
+          "name": {
+            "en": "Mons Hadley",
+            "es": "Monte Hadley"
+          },
+          "at": [
+            4.1183,
+            26.6948
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "1971-07-30",
+          "place": {
+            "en": "Montes Apenninus, near side of the Moon",
+            "es": "Montes Apeninos, cara visible de la Luna"
+          },
+          "text": {
+            "en": "A mountain about 4.5 km high on the rim of the Imbrium basin, towering over the Apollo 15 landing site to the north-east.",
+            "es": "Una montaña de unos 4,5 km de alto en el borde de la cuenca Imbrium, que domina al noreste el lugar de alunizaje del Apolo 15."
+          },
+          "wiki": {
+            "en": "Mons Hadley",
+            "es": "Mons Hadley"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "apollo",
+          "route": "apollo-15",
+          "by": "land",
+          "icon": "🚙"
+        }
+      ]
+    },
+    {
+      "date": "1972-04-21",
+      "world": "moon",
+      "title": {
+        "en": "Apollo 16 in the highlands",
+        "es": "Apolo 16 en las tierras altas"
+      },
+      "text": {
+        "en": "John Young and Charlie Duke landed in the Descartes highlands expecting volcanic rock. They found breccias instead: the highlands were shaped by giant impacts, not volcanoes.",
+        "es": "John Young y Charlie Duke alunizaron en las tierras altas de Descartes esperando hallar rocas volcánicas. Encontraron brechas: las tierras altas fueron moldeadas por grandes impactos, no por volcanes."
+      },
+      "details": {
+        "en": "Apollo 16 was the only landing in the Moon's central highlands, the bright, cratered ground that covers most of the Moon. A fault in the main engine nearly called off the landing, which came six hours late. In three moonwalks Young and Duke drove 26.7 km, reached the rim of North Ray crater, where a boulder the size of a house towered over them, and collected 95.8 kg of samples. Duke left a photo of his family on the ground. Ken Mattingly, who had been dropped from Apollo 13 three days before its launch, circled above in the command module Casper. The lunar module was called Orion, the name NASA's crew capsule carries today.",
+        "es": "El Apolo 16 fue el único alunizaje en las tierras altas centrales, el terreno claro y lleno de cráteres que cubre la mayor parte de la Luna. Una falla en el motor principal casi canceló el alunizaje, que llegó seis horas tarde. En tres caminatas, Young y Duke recorrieron 26,7 km, llegaron al borde del cráter North Ray, donde una roca del tamaño de una casa se alzaba sobre ellos, y recogieron 95,8 kg de muestras. Duke dejó en el suelo una foto de su familia. Ken Mattingly, a quien habían sacado del Apolo 13 tres días antes de su lanzamiento, orbitaba arriba en el módulo de mando Casper. El módulo lunar se llamaba Orion, el nombre que hoy lleva la cápsula tripulada de la NASA."
+      },
+      "camera": {
+        "lon": 15.55,
+        "lat": -10.3,
+        "zoom": 20
+      },
+      "show": [
+        "apollo-16"
+      ],
+      "places": [
+        {
+          "id": "north-ray-crater",
+          "name": {
+            "en": "North Ray crater",
+            "es": "Cráter North Ray"
+          },
+          "at": [
+            15.4843,
+            -8.8151
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "1972-04-23",
+          "place": {
+            "en": "Descartes highlands, near side of the Moon",
+            "es": "Tierras altas de Descartes, cara visible de la Luna"
+          },
+          "text": {
+            "en": "A fresh crater about 1 km wide and 230 m deep, the farthest point Young and Duke reached. Beside it stood House Rock, a boulder as big as a house.",
+            "es": "Un cráter reciente de cerca de 1 km de ancho y 230 m de profundidad, el punto más lejano al que llegaron Young y Duke. A su lado estaba House Rock, una roca tan grande como una casa."
+          },
+          "wiki": {
+            "en": "North Ray (crater)",
+            "es": "North Ray (cráter)"
+          }
+        },
+        {
+          "id": "descartes-crater",
+          "name": {
+            "en": "Descartes crater",
+            "es": "Cráter Descartes"
+          },
+          "at": [
+            15.6667,
+            -11.7428
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "1972-04-21",
+          "place": {
+            "en": "Central highlands, near side of the Moon",
+            "es": "Tierras altas centrales, cara visible de la Luna"
+          },
+          "text": {
+            "en": "A worn crater 48 km wide named after the French philosopher René Descartes. The hilly uplands north of it, the Descartes highlands, were the landing site of Apollo 16.",
+            "es": "Un cráter gastado de 48 km, llamado así por el filósofo francés René Descartes. Las colinas al norte, las tierras altas de Descartes, fueron el lugar de alunizaje del Apolo 16."
+          },
+          "wiki": {
+            "en": "Descartes (crater)",
+            "es": "Descartes (cráter)"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "apollo",
+          "route": "apollo-16",
+          "by": "land",
+          "icon": "🚙"
+        }
+      ]
+    },
+    {
+      "date": "1972-12-11",
+      "world": "moon",
+      "title": {
+        "en": "The last footprints, so far",
+        "es": "Las últimas huellas, por ahora"
+      },
+      "text": {
+        "en": "Apollo 17's Gene Cernan and the geologist Harrison Schmitt explored the Taurus–Littrow valley for three days. On 14 December 1972 they left: no one has walked on the Moon since.",
+        "es": "Gene Cernan y el geólogo Harrison Schmitt, del Apolo 17, exploraron el valle de Taurus-Littrow durante tres días. El 14 de diciembre de 1972 partieron: desde entonces nadie ha caminado en la Luna."
+      },
+      "details": {
+        "en": "Schmitt was the only scientist to walk on the Moon. In the rover they drove about 36 km, the longest of the Apollo drives, and collected 110.5 kg of samples, the most of any mission. At Shorty crater Schmitt spotted orange soil: tiny beads of volcanic glass sprayed out by fire fountains about 3.6 billion years ago. Ronald Evans circled above. Leaving, Cernan said: 'We leave as we came and, God willing, as we shall return, with peace and hope for all mankind.' In all, twelve men walked on the Moon, and Apollo brought home 382 kg of rock and soil. The samples showed that the Moon formed about 4.5 billion years ago, most likely from the debris of a giant collision with the young Earth.",
+        "es": "Schmitt fue el único científico que caminó en la Luna. En el vehículo recorrieron unos 36 km, el trayecto más largo del Apolo, y recogieron 110,5 kg de muestras, más que ninguna otra misión. En el cráter Shorty, Schmitt vio suelo anaranjado: diminutas perlas de vidrio volcánico lanzadas por fuentes de fuego hace unos 3600 millones de años. Ronald Evans orbitaba arriba. Al partir, Cernan dijo: «Nos vamos como vinimos y, si Dios quiere, como volveremos, con paz y esperanza para toda la humanidad». En total, doce hombres caminaron en la Luna, y el Apolo trajo 382 kg de rocas y suelo. Las muestras mostraron que la Luna se formó hace unos 4500 millones de años, probablemente de los restos de un choque gigante con la joven Tierra."
+      },
+      "camera": {
+        "lon": 30.72,
+        "lat": 20.18,
+        "zoom": 30
+      },
+      "show": [
+        "apollo-17"
+      ],
+      "places": [
+        {
+          "id": "taurus-littrow-valley",
+          "name": {
+            "en": "Taurus–Littrow valley",
+            "es": "Valle de Taurus-Littrow"
+          },
+          "at": [
+            30.7867,
+            20.0702
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "1972-12-11",
+          "place": {
+            "en": "Edge of Mare Serenitatis, near side of the Moon",
+            "es": "Borde del Mare Serenitatis, cara visible de la Luna"
+          },
+          "text": {
+            "en": "A valley about 7 km wide between mountains up to 2 km high, on the edge of the Sea of Serenity. Its dark floor promised young volcanic rock, its mountains ancient crust.",
+            "es": "Un valle de unos 7 km de ancho entre montañas de hasta 2 km de alto, en el borde del mar de la Serenidad. Su suelo oscuro prometía roca volcánica joven, y sus montañas, corteza antigua."
+          },
+          "wiki": {
+            "en": "Taurus–Littrow",
+            "es": "Taurus-Littrow"
+          }
+        },
+        {
+          "id": "shorty-crater",
+          "name": {
+            "en": "Shorty crater",
+            "es": "Cráter Shorty"
+          },
+          "at": [
+            30.6254,
+            20.2172
+          ],
+          "world": "moon",
+          "cat": "discovery",
+          "type": "place",
+          "date": "1972-12-12",
+          "place": {
+            "en": "Taurus–Littrow valley, the Moon",
+            "es": "Valle de Taurus-Littrow, la Luna"
+          },
+          "text": {
+            "en": "A crater about 110 m wide where Schmitt found orange soil, made of beads of volcanic glass from fire fountains about 3.6 billion years ago. Later studies found traces of water inside them.",
+            "es": "Un cráter de unos 110 m donde Schmitt encontró suelo anaranjado, hecho de perlas de vidrio volcánico de fuentes de fuego de hace unos 3600 millones de años. Estudios posteriores hallaron rastros de agua en su interior."
+          },
+          "wiki": {
+            "en": "Shorty (crater)",
+            "es": "Shorty (cráter)"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "apollo",
+          "route": "apollo-17",
+          "by": "land",
+          "icon": "🚙"
+        }
+      ]
+    },
+    {
+      "date": "1976-08-18",
+      "world": "moon",
+      "title": {
+        "en": "The last Soviet robots",
+        "es": "Los últimos robots soviéticos"
+      },
+      "text": {
+        "en": "In 1973 Lunokhod 2 drove 39 km near the Apollo 17 valley. In 1976 Luna 24 drilled 2 m into the Sea of Crises and flew its core to Earth: the last landing for 37 years.",
+        "es": "En 1973 el Lunojod 2 recorrió 39 km cerca del valle del Apolo 17. En 1976 Luna 24 perforó 2 m en el mar de las Crisis y envió su muestra a la Tierra: el último alunizaje en 37 años."
+      },
+      "details": {
+        "en": "The Soviet Union never sent cosmonauts to the Moon: its giant N1 rocket failed in all four test launches between 1969 and 1972, and the crewed programme was cancelled. Its robots, from the Lavochkin design bureau, brought back soil from three places: Luna 16 (1970, Sea of Fertility, 101 g), Luna 20 (1972, Apollonius highlands, 55 g) and Luna 24 (170 g). Lunokhod 2 landed in Le Monnier crater in January 1973 and roamed hills and rilles until May, when dust on its radiator made it overheat; its distance stayed the record for any rover until NASA's Opportunity passed it on Mars in 2014. In 1978 Soviet scientists reported a trace of water in the Luna 24 core.",
+        "es": "La Unión Soviética nunca envió cosmonautas a la Luna: su gigantesco cohete N1 falló en los cuatro lanzamientos de prueba entre 1969 y 1972, y el programa tripulado se canceló. Sus robots, de la oficina de diseño Lavochkin, trajeron suelo de tres lugares: Luna 16 (1970, mar de la Fecundidad, 101 g), Luna 20 (1972, tierras altas de Apolonio, 55 g) y Luna 24 (170 g). El Lunojod 2 alunizó en el cráter Le Monnier en enero de 1973 y recorrió colinas y grietas hasta mayo, cuando el polvo sobre su radiador lo sobrecalentó; su distancia fue el récord de cualquier vehículo hasta que el Opportunity de la NASA la superó en Marte en 2014. En 1978, científicos soviéticos informaron de un rastro de agua en la muestra de Luna 24."
+      },
+      "camera": {
+        "lon": 46,
+        "lat": 13,
+        "zoom": 2.8
+      },
+      "show": [
+        "luna-21",
+        "luna-16",
+        "luna-20",
+        "luna-24"
+      ],
+      "places": [
+        {
+          "id": "le-monnier-crater",
+          "name": {
+            "en": "Le Monnier crater",
+            "es": "Cráter Le Monnier"
+          },
+          "at": [
+            30.5015,
+            26.656
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "1973-01-15",
+          "place": {
+            "en": "Edge of Mare Serenitatis, near side of the Moon",
+            "es": "Borde del Mare Serenitatis, cara visible de la Luna"
+          },
+          "text": {
+            "en": "A bay-shaped crater 68 km wide, its seaward wall drowned by lava, on the eastern shore of the Sea of Serenity. Lunokhod 2 landed on its floor and drove up into the hills.",
+            "es": "Un cráter de 68 km en forma de bahía, con la pared que da al mar ahogada por la lava, en la orilla este del mar de la Serenidad. El Lunojod 2 alunizó en su fondo y subió a las colinas."
+          },
+          "wiki": {
+            "en": "Le Monnier (crater)",
+            "es": "Le Monnier (cráter)"
+          }
+        },
+        {
+          "id": "mare-crisium",
+          "name": {
+            "en": "Mare Crisium (Sea of Crises)",
+            "es": "Mare Crisium (mar de las Crisis)"
+          },
+          "at": [
+            59.1037,
+            16.1774
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "1976-08-18",
+          "place": {
+            "en": "Near side of the Moon, north-east",
+            "es": "Cara visible de la Luna, noreste"
+          },
+          "text": {
+            "en": "A round lava plain about 560 km across, easy to spot from Earth. Luna 15 crashed in it, Luna 24 drilled it and, in 2025, Firefly's Blue Ghost landed on it.",
+            "es": "Una llanura redonda de lava de unos 560 km, fácil de ver desde la Tierra. Luna 15 se estrelló en ella, Luna 24 la perforó y, en 2025, la Blue Ghost de Firefly alunizó en ella."
+          },
+          "wiki": {
+            "en": "Mare Crisium",
+            "es": "Mare Crisium"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "lunokhod",
+          "route": "luna-21",
+          "by": "land",
+          "icon": "🚙",
+          "label": {
+            "en": "Lunokhod 2, 39 km",
+            "es": "Lunojod 2, 39 km"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2013-12-14",
+      "world": "moon",
+      "title": {
+        "en": "China lands Chang'e 3",
+        "es": "China posa la Chang'e 3"
+      },
+      "text": {
+        "en": "After 37 years without a landing, China's Chang'e 3 set down on the Sea of Rains with Yutu, the 'Jade Rabbit' rover. China became the third country to land softly on the Moon.",
+        "es": "Tras 37 años sin alunizajes, la china Chang'e 3 se posó en el mar de las Lluvias con Yutu, el vehículo «Conejo de Jade». China fue el tercer país en alunizar suavemente."
+      },
+      "details": {
+        "en": "The mission is named after Chang'e, the Moon goddess of Chinese legend, and the rover after her pet rabbit; the site is now called Guang Han Gong, after her palace on the Moon. China had prepared with two orbiters, Chang'e 1 (2007) and Chang'e 2 (2010), in a programme whose chief scientist was Ouyang Ziyuan. Yutu's radar looked beneath its wheels and found layers of old lava flows, but after about 114 m a fault stopped it from driving in January 2014. The lander kept working for years, and its small telescope watched the stars from the Moon.",
+        "es": "La misión lleva el nombre de Chang'e, la diosa de la Luna de la leyenda china, y el vehículo, el de su conejo; el lugar se llama hoy Guang Han Gong, por su palacio en la Luna. China se había preparado con dos orbitadores, la Chang'e 1 (2007) y la Chang'e 2 (2010), en un programa cuyo científico jefe era Ouyang Ziyuan. El radar de Yutu miró bajo sus ruedas y halló capas de antiguas coladas de lava, pero tras unos 114 m una avería le impidió seguir avanzando en enero de 2014. El módulo siguió funcionando durante años, y su pequeño telescopio observó las estrellas desde la Luna."
+      },
+      "camera": {
+        "lon": -21,
+        "lat": 41,
+        "zoom": 6
+      },
+      "show": [
+        "change-3"
+      ],
+      "places": [
+        {
+          "id": "sinus-iridum",
+          "name": {
+            "en": "Sinus Iridum (Bay of Rainbows)",
+            "es": "Sinus Iridum (bahía de los Arcoíris)"
+          },
+          "at": [
+            -31.6653,
+            45.0101
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "2013-12-14",
+          "place": {
+            "en": "North-west edge of Mare Imbrium, near side of the Moon",
+            "es": "Borde noroeste del Mare Imbrium, cara visible de la Luna"
+          },
+          "text": {
+            "en": "A bay of lava about 250 km wide, ringed by the Jura mountains. Lunokhod 1 landed south of its mouth, and Chang'e 3 east of it.",
+            "es": "Una bahía de lava de unos 250 km, rodeada por los montes Jura. El Lunojod 1 alunizó al sur de su entrada, y la Chang'e 3, al este."
+          },
+          "wiki": {
+            "en": "Sinus Iridum",
+            "es": "Sinus Iridum"
+          }
+        },
+        {
+          "id": "mare-imbrium",
+          "name": {
+            "en": "Mare Imbrium (Sea of Rains)",
+            "es": "Mare Imbrium (mar de las Lluvias)"
+          },
+          "at": [
+            -14.9086,
+            34.7244
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "1959-09-13",
+          "place": {
+            "en": "Near side of the Moon, north-west",
+            "es": "Cara visible de la Luna, noroeste"
+          },
+          "text": {
+            "en": "A plain of dark lava about 1,100 km across, filling one of the Moon's largest impact basins. Luna 2 struck it, Lunokhod 1 drove on it and Chang'e 3 landed on it.",
+            "es": "Una llanura de lava oscura de unos 1100 km que llena una de las mayores cuencas de impacto de la Luna. Luna 2 chocó en ella, el Lunojod 1 la recorrió y la Chang'e 3 alunizó en ella."
+          },
+          "wiki": {
+            "en": "Mare Imbrium",
+            "es": "Mare Imbrium"
+          }
+        },
+        {
+          "id": "ouyang-ziyuan",
+          "name": {
+            "en": "Ouyang Ziyuan",
+            "es": "Ouyang Ziyuan"
+          },
+          "at": [
+            -19.38,
+            44.03
+          ],
+          "world": "moon",
+          "cat": "astronomer",
+          "type": "person",
+          "date": "2013-12-14",
+          "place": {
+            "en": "Chinese Academy of Sciences, Beijing",
+            "es": "Academia China de Ciencias, Pekín"
+          },
+          "text": {
+            "en": "Chinese geochemist who studied meteorites and a gram of Apollo 17 Moon rock given to China in 1978, and became the chief scientist of China's lunar exploration programme.",
+            "es": "Geoquímico chino que estudió meteoritos y un gramo de roca lunar del Apolo 17 regalado a China en 1978, y llegó a ser el científico jefe del programa chino de exploración lunar."
+          },
+          "wiki": {
+            "en": "Ouyang Ziyuan",
+            "es": ""
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "yutu",
+          "route": "change-3",
+          "by": "land",
+          "icon": "🚙"
+        }
+      ]
+    },
+    {
+      "date": "2019-01-03",
+      "world": "moon",
+      "title": {
+        "en": "Landing on the far side",
+        "es": "Alunizaje en la cara oculta"
+      },
+      "text": {
+        "en": "Chang'e 4 made the first landing on the Moon's far side, in Von Kármán crater, talking to Earth through the relay satellite Queqiao. Its rover Yutu-2 became the longest-lived on the Moon.",
+        "es": "La Chang'e 4 hizo el primer alunizaje en la cara oculta de la Luna, en el cráter Von Kármán, y se comunicaba con la Tierra por el satélite repetidor Queqiao. Su vehículo, Yutu-2, es el más longevo de la Luna."
+      },
+      "details": {
+        "en": "The far side always faces away from Earth, so no radio signal reaches it directly: Queqiao, the 'Magpie Bridge', waits beyond the Moon to pass messages on. Von Kármán lies inside the South Pole–Aitken basin, the Moon's largest and oldest known impact scar. Yutu-2 found minerals that may come from deep in the Moon's mantle, and its radar mapped layers dozens of metres down. In a sealed can on the lander cotton seeds sprouted, the first plants to grow on the Moon. By 2025 Yutu-2 had crept more than 1.6 km in almost seven years. Small craters around the site are named after the stars of the Chinese tale of the Cowherd and the Weaver Girl.",
+        "es": "La cara oculta nunca mira hacia la Tierra, así que ninguna señal de radio llega directamente: Queqiao, el «Puente de las Urracas», espera más allá de la Luna para pasar los mensajes. Von Kármán está dentro de la cuenca Polo Sur-Aitken, la cicatriz de impacto más grande y antigua que se conoce en la Luna. Yutu-2 halló minerales que podrían venir del manto profundo de la Luna, y su radar cartografió capas a decenas de metros de profundidad. En una lata sellada del módulo germinaron semillas de algodón, las primeras plantas que brotaron en la Luna. Hacia 2025 Yutu-2 había avanzado más de 1,6 km en casi siete años. Pequeños cráteres alrededor llevan nombres de estrellas del cuento chino del Pastor y la Tejedora."
+      },
+      "camera": {
+        "lon": -178,
+        "lat": -48,
+        "zoom": 5
+      },
+      "show": [
+        "change-4"
+      ],
+      "places": [
+        {
+          "id": "von-karman-crater",
+          "name": {
+            "en": "Von Kármán crater",
+            "es": "Cráter Von Kármán"
+          },
+          "at": [
+            176.2451,
+            -44.4505
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "2019-01-03",
+          "place": {
+            "en": "Far side of the Moon, southern hemisphere",
+            "es": "Cara oculta de la Luna, hemisferio sur"
+          },
+          "text": {
+            "en": "A crater 186 km wide with a floor flooded by dark lava, named after the Hungarian-American engineer Theodore von Kármán. Chang'e 4 landed on its floor, the first craft on the far side.",
+            "es": "Un cráter de 186 km con el fondo inundado de lava oscura, llamado así por el ingeniero húngaro-estadounidense Theodore von Kármán. La Chang'e 4 alunizó en su fondo, la primera nave en la cara oculta."
+          },
+          "wiki": {
+            "en": "Von Kármán (lunar crater)",
+            "es": "Von Kármán (cráter)"
+          }
+        },
+        {
+          "id": "south-pole-aitken-basin",
+          "name": {
+            "en": "South Pole–Aitken basin",
+            "es": "Cuenca Polo Sur-Aitken"
+          },
+          "at": [
+            -169,
+            -53
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "2019-01-03",
+          "place": {
+            "en": "Far side of the Moon, from the south pole to the crater Aitken",
+            "es": "Cara oculta de la Luna, del polo sur al cráter Aitken"
+          },
+          "text": {
+            "en": "The largest and oldest known impact basin on the Moon, about 2,500 km across and up to 8 km deep. The crash that made it may have dug into the Moon's mantle; Chang'e 4 and Chang'e 6 landed inside it.",
+            "es": "La cuenca de impacto más grande y antigua que se conoce en la Luna, de unos 2500 km de ancho y hasta 8 km de profundidad. El choque que la formó pudo excavar el manto lunar; la Chang'e 4 y la Chang'e 6 alunizaron en ella."
+          },
+          "wiki": {
+            "en": "South Pole–Aitken basin",
+            "es": "Cuenca Aitken"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "side": "yutu",
+          "route": "change-4",
+          "by": "land",
+          "icon": "🚙"
+        }
+      ]
+    },
+    {
+      "date": "2020-12-01",
+      "world": "moon",
+      "title": {
+        "en": "Chang'e 5 brings back rocks",
+        "es": "La Chang'e 5 trae rocas"
+      },
+      "text": {
+        "en": "Chang'e 5 landed near Mons Rümker on the Ocean of Storms, scooped and drilled 1,731 g of samples and sent them to Earth: the first Moon rocks brought back since 1976.",
+        "es": "La Chang'e 5 alunizó cerca del monte Rümker, en el océano de las Tormentas, recogió 1731 g de muestras con pala y taladro y las envió a la Tierra: las primeras rocas lunares traídas desde 1976."
+      },
+      "details": {
+        "en": "Chang'e 5 was four spacecraft in one: an orbiter, a lander, an ascent stage that lifted the samples back to lunar orbit, the first robotic docking there, and a capsule that landed in Inner Mongolia on 16 December. China became the third country to bring back Moon rocks. The site was chosen because its lava looked young, and it was: the basalts are about 2 billion years old, a billion years younger than any Apollo or Luna sample, so the Moon stayed volcanically alive far longer than expected. Scientists found a new mineral, changesite-(Y), and tiny glass beads that hold water, and China lent samples to researchers abroad.",
+        "es": "La Chang'e 5 eran cuatro naves en una: un orbitador, un módulo de descenso, una etapa de ascenso que subió las muestras a la órbita lunar, con el primer acoplamiento robótico allí, y una cápsula que aterrizó en Mongolia Interior el 16 de diciembre. China fue el tercer país en traer rocas lunares. El lugar se eligió porque su lava parecía joven, y lo era: los basaltos tienen unos 2000 millones de años, mil millones menos que cualquier muestra del Apolo o de las misiones Luna, así que la Luna tuvo volcanes activos mucho más tiempo del que se creía. Los científicos hallaron un mineral nuevo, la changesita-(Y), y diminutas perlas de vidrio que guardan agua, y China prestó muestras a investigadores de otros países."
+      },
+      "camera": {
+        "lon": -54.5,
+        "lat": 42.5,
+        "zoom": 8
+      },
+      "show": [
+        "change-5"
+      ],
+      "places": [
+        {
+          "id": "mons-rumker",
+          "name": {
+            "en": "Mons Rümker",
+            "es": "Monte Rümker"
+          },
+          "at": [
+            -58.3775,
+            40.7607
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "2020-12-01",
+          "place": {
+            "en": "Northern Oceanus Procellarum, near side of the Moon",
+            "es": "Norte del Oceanus Procellarum, cara visible de la Luna"
+          },
+          "text": {
+            "en": "A low volcanic plateau about 70 km across, crowned by small domes, in the north of the Ocean of Storms. Chang'e 5 landed on the young lava plain to its north-east.",
+            "es": "Una meseta volcánica baja de unos 70 km, coronada por pequeños domos, en el norte del océano de las Tormentas. La Chang'e 5 alunizó en la llanura de lava joven al noreste."
+          },
+          "wiki": {
+            "en": "Mons Rümker",
+            "es": "Mons Rümker"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2023-08-23",
+      "world": "moon",
+      "title": {
+        "en": "India near the south pole",
+        "es": "La India cerca del polo sur"
+      },
+      "text": {
+        "en": "Four years after a crash, India's Chandrayaan-3 landed Vikram and the rover Pragyan near the south pole, where no craft had landed. Days before, Russia's Luna 25 had crashed in the same region.",
+        "es": "Cuatro años después de un fracaso, Chandrayaan-3 posó el módulo Vikram y el vehículo Pragyan cerca del polo sur, donde nadie había alunizado. Días antes, la rusa Luna 25 se había estrellado en la misma región."
+      },
+      "details": {
+        "en": "India became the fourth country to land on the Moon. The south pole matters because sunlight never reaches the floors of some craters there, and they hold water ice. India's Chandrayaan-1 helped find water: in 2008 its impact probe struck near Shackleton crater, and its NASA-built spectrometer mapped water on the surface; in 2009 NASA's LCROSS crashed a rocket stage into Cabeus crater and saw ice in the plume. In 2019 Chandrayaan-2's lander, also called Vikram, crashed after a software fault. The new Vikram landed on 23 August 2023; Pragyan drove about 100 m and confirmed sulphur in the soil, and Vikram hopped 40 cm before nightfall. Russia's Luna 25, its first Moon mission since 1976, crashed on 19 August. The site is now Statio Shiv Shakti.",
+        "es": "La India fue el cuarto país en alunizar. El polo sur importa porque el Sol nunca alumbra el fondo de algunos cráteres, que guardan hielo de agua. La Chandrayaan-1 india ayudó a hallar agua: en 2008 su sonda de impacto chocó cerca del cráter Shackleton y su espectrómetro, hecho por la NASA, cartografió agua en la superficie; en 2009 el LCROSS de la NASA estrelló una etapa de cohete en el cráter Cabeus y vio hielo en la nube. En 2019 el módulo de la Chandrayaan-2, también llamado Vikram, se estrelló por una falla de software. El nuevo Vikram alunizó el 23 de agosto de 2023; Pragyan recorrió unos 100 m y confirmó azufre en el suelo, y Vikram saltó 40 cm antes de la noche. La rusa Luna 25, primera misión lunar de Rusia desde 1976, se estrelló el 19 de agosto. El lugar se llama hoy Statio Shiv Shakti."
+      },
+      "camera": {
+        "lon": 30,
+        "lat": -78,
+        "zoom": 2.8
+      },
+      "show": [
+        "chandrayaan-3",
+        "chandrayaan-2-vikram",
+        "luna-25",
+        "chandrayaan-1-mip",
+        "lcross"
+      ],
+      "places": [
+        {
+          "id": "shackleton-crater",
+          "name": {
+            "en": "Shackleton crater",
+            "es": "Cráter Shackleton"
+          },
+          "at": [
+            129.78,
+            -89.67
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "2008-11-14",
+          "place": {
+            "en": "The Moon's south pole",
+            "es": "El polo sur de la Luna"
+          },
+          "text": {
+            "en": "A crater 21 km wide almost exactly at the south pole. Its floor lies in permanent shadow, cold enough to trap ice, while parts of its rim are lit most of the time: a prime site for future bases.",
+            "es": "Un cráter de 21 km casi exactamente en el polo sur. Su fondo está en sombra permanente, tan frío que puede guardar hielo, mientras que partes de su borde están iluminadas casi siempre: un lugar ideal para futuras bases."
+          },
+          "wiki": {
+            "en": "Shackleton (crater)",
+            "es": "Shackleton (cráter)"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2024-02-22",
+      "world": "moon",
+      "title": {
+        "en": "Japan and a company land",
+        "es": "Japón y una empresa alunizan"
+      },
+      "text": {
+        "en": "In January 2024 Japan's SLIM, the 'Moon Sniper', landed about 55 m from its target, though on its nose. In February Odysseus became the first lander built by a company to touch down.",
+        "es": "En enero de 2024 la japonesa SLIM, el «francotirador lunar», alunizó a unos 55 m de su objetivo, aunque quedó de cabeza. En febrero, Odysseus fue el primer módulo hecho por una empresa en posarse."
+      },
+      "details": {
+        "en": "SLIM steered by matching the craters below with its maps and landed beside the small crater Shioli, making Japan the fifth country to land on the Moon. One engine lost its nozzle just before touchdown, so it ended up nose-down with its solar panels facing west, yet it woke up and survived three lunar nights. It released two tiny rovers, and one, a ball the size of a baseball made with a toy company, photographed it. Odysseus, from Intuitive Machines of Houston, carried NASA instruments to Malapert A crater, 80 degrees south. It broke a leg and tipped over but worked for a week: the first US landing since 1972. Private landers had failed before: Israel's Beresheet (2019), ispace's Hakuto-R (2023), and Astrobotic's Peregrine, which never reached the Moon in January 2024.",
+        "es": "SLIM se guiaba comparando los cráteres de abajo con sus mapas y alunizó junto al pequeño cráter Shioli: Japón fue el quinto país en alunizar. Un motor perdió su tobera justo antes de tocar el suelo, así que quedó de cabeza con los paneles solares hacia el oeste, pero despertó y sobrevivió a tres noches lunares. Soltó dos diminutos vehículos, y uno de ellos, una bola del tamaño de una pelota de béisbol hecha con una empresa de juguetes, lo fotografió. Odysseus, de Intuitive Machines, de Houston, llevó instrumentos de la NASA al cráter Malapert A, a 80 grados de latitud sur. Se rompió una pata y se volcó, pero funcionó una semana: el primer alunizaje estadounidense desde 1972. Otros módulos privados habían fallado: Beresheet, de Israel (2019), Hakuto-R, de ispace (2023), y Peregrine, de Astrobotic, que nunca llegó a la Luna en enero de 2024."
+      },
+      "camera": {
+        "lon": 18,
+        "lat": -25,
+        "zoom": 1
+      },
+      "show": [
+        "slim",
+        "im-1",
+        "beresheet",
+        "hakuto-r-m1"
+      ],
+      "places": [
+        {
+          "id": "mare-nectaris",
+          "name": {
+            "en": "Mare Nectaris (Sea of Nectar)",
+            "es": "Mare Nectaris (mar del Néctar)"
+          },
+          "at": [
+            34.6021,
+            -15.1852
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "2024-01-19",
+          "place": {
+            "en": "Near side of the Moon, south-east",
+            "es": "Cara visible de la Luna, sureste"
+          },
+          "text": {
+            "en": "A round lava plain about 340 km across inside an old impact basin. SLIM landed on the slope of a small crater near its western shore, close to the great crater Theophilus.",
+            "es": "Una llanura redonda de lava de unos 340 km dentro de una antigua cuenca de impacto. SLIM alunizó en la ladera de un pequeño cráter cerca de su orilla oeste, junto al gran cráter Teófilo."
+          },
+          "wiki": {
+            "en": "Mare Nectaris",
+            "es": "Mare Nectaris"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2024-06-01",
+      "world": "moon",
+      "title": {
+        "en": "Samples from the far side",
+        "es": "Muestras de la cara oculta"
+      },
+      "text": {
+        "en": "Chang'e 6 landed in the Apollo basin on the far side, drilled and scooped 1,935 g of soil and rock, and on 25 June brought the first samples of the Moon's hidden face to Earth.",
+        "es": "La Chang'e 6 alunizó en la cuenca Apollo, en la cara oculta, recogió 1935 g de suelo y roca con taladro y pala, y el 25 de junio trajo a la Tierra las primeras muestras de la cara escondida de la Luna."
+      },
+      "details": {
+        "en": "Talking to Earth through a new relay satellite, Queqiao-2, Chang'e 6 worked inside the South Pole–Aitken basin. It carried instruments from France, Italy, the European Space Agency with Sweden, and Pakistan, whose small satellite circled the Moon. Most of its lava fragments proved to be about 2.8 billion years old and one about 4.2 billion: the far side had volcanoes for at least 1.4 billion years, though far less dark lava than the near side. The Apollo basin was named for the Apollo programme, and craters inside it honour astronauts who died: Roger Chaffee of Apollo 1 and the crews of the space shuttles Challenger (1986) and Columbia (2003).",
+        "es": "Comunicada con la Tierra por un nuevo satélite repetidor, Queqiao-2, la Chang'e 6 trabajó dentro de la cuenca Polo Sur-Aitken. Llevaba instrumentos de Francia, Italia, la Agencia Espacial Europea con Suecia, y Pakistán, cuyo pequeño satélite orbitó la Luna. La mayoría de sus fragmentos de lava resultaron tener unos 2800 millones de años, y uno, unos 4200 millones: la cara oculta tuvo volcanes durante al menos 1400 millones de años, aunque mucha menos lava oscura que la cara visible. La cuenca Apollo recibió su nombre por el programa Apolo, y cráteres en su interior honran a astronautas que murieron: Roger Chaffee, del Apolo 1, y las tripulaciones de los transbordadores Challenger (1986) y Columbia (2003)."
+      },
+      "camera": {
+        "lon": -158,
+        "lat": -42,
+        "zoom": 4
+      },
+      "show": [
+        "change-6"
+      ],
+      "places": [
+        {
+          "id": "apollo-basin",
+          "name": {
+            "en": "Apollo basin",
+            "es": "Cuenca Apollo"
+          },
+          "at": [
+            -151.4777,
+            -35.6874
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "2024-06-01",
+          "place": {
+            "en": "Far side of the Moon, inside the South Pole–Aitken basin",
+            "es": "Cara oculta de la Luna, dentro de la cuenca Polo Sur-Aitken"
+          },
+          "text": {
+            "en": "A double-ringed impact basin 524 km wide, named after the Apollo programme. Chang'e 6 landed on the lava plain in its southern part and brought back the first far-side samples.",
+            "es": "Una cuenca de impacto de doble anillo de 524 km, llamada así por el programa Apolo. La Chang'e 6 alunizó en la llanura de lava de su parte sur y trajo las primeras muestras de la cara oculta."
+          },
+          "wiki": {
+            "en": "Apollo (crater)",
+            "es": "Apolo (cráter)"
+          }
+        },
+        {
+          "id": "south-pole-aitken-basin",
+          "name": {
+            "en": "South Pole–Aitken basin",
+            "es": "Cuenca Polo Sur-Aitken"
+          },
+          "at": [
+            -169,
+            -53
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "2019-01-03",
+          "place": {
+            "en": "Far side of the Moon, from the south pole to the crater Aitken",
+            "es": "Cara oculta de la Luna, del polo sur al cráter Aitken"
+          },
+          "text": {
+            "en": "The largest and oldest known impact basin on the Moon, about 2,500 km across and up to 8 km deep. The crash that made it may have dug into the Moon's mantle; Chang'e 4 and Chang'e 6 landed inside it.",
+            "es": "La cuenca de impacto más grande y antigua que se conoce en la Luna, de unos 2500 km de ancho y hasta 8 km de profundidad. El choque que la formó pudo excavar el manto lunar; la Chang'e 4 y la Chang'e 6 alunizaron en ella."
+          },
+          "wiki": {
+            "en": "South Pole–Aitken basin",
+            "es": "Cuenca Aitken"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2025-03-06",
+      "world": "moon",
+      "title": {
+        "en": "Companies on the Moon",
+        "es": "Empresas en la Luna"
+      },
+      "text": {
+        "en": "In March 2025 Firefly's Blue Ghost made the first fully successful landing by a company, on the Sea of Crises. Days later Intuitive Machines' Athena landed near the south pole but tipped over.",
+        "es": "En marzo de 2025 la Blue Ghost de Firefly logró el primer alunizaje plenamente exitoso de una empresa, en el mar de las Crisis. Días después, Athena, de Intuitive Machines, se posó cerca del polo sur pero se volcó."
+      },
+      "details": {
+        "en": "Both carried instruments for NASA's Commercial Lunar Payload Services, which pays companies to deliver science to the Moon. Blue Ghost, from Texas, landed upright beside Mons Latreille on 2 March and worked for two weeks: it drilled about a metre into the soil, picked up GPS signals from Earth, filmed a total eclipse as the Earth passed in front of the Sun, and recorded sunset before it froze on 16 March. Athena came down on 6 March in a small crater on Mons Mouton, 84.8 degrees south, the farthest south any craft had landed, and ran out of power, lying on its side, the next day. The plateau is named after Melba Roy Mouton, a Black mathematician who led a team of NASA's 'human computers'. In June ispace's second lander, Resilience, crashed in the Sea of Cold.",
+        "es": "Las dos llevaban instrumentos del programa CLPS de la NASA, que paga a empresas para llevar ciencia a la Luna. Blue Ghost, de Texas, alunizó en posición vertical junto al monte Latreille el 2 de marzo y trabajó dos semanas: perforó cerca de un metro en el suelo, captó señales de GPS de la Tierra, filmó un eclipse total cuando la Tierra pasó delante del Sol y grabó la puesta de sol antes de congelarse el 16 de marzo. Athena bajó el 6 de marzo en un pequeño cráter del monte Mouton, a 84,8 grados de latitud sur, el alunizaje más austral hasta entonces, y se quedó sin energía, tumbada de costado, al día siguiente. La meseta lleva el nombre de Melba Roy Mouton, una matemática afroestadounidense que dirigió un equipo de «computadoras humanas» de la NASA. En junio, Resilience, el segundo módulo de ispace, se estrelló en el mar del Frío."
+      },
+      "camera": {
+        "lon": 30,
+        "lat": -12,
+        "zoom": 1
+      },
+      "show": [
+        "blue-ghost-1",
+        "im-2",
+        "hakuto-r-m2"
+      ],
+      "places": [
+        {
+          "id": "mons-mouton",
+          "name": {
+            "en": "Mons Mouton",
+            "es": "Monte Mouton"
+          },
+          "at": [
+            31,
+            -84.6
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "2025-03-06",
+          "place": {
+            "en": "Near the Moon's south pole",
+            "es": "Cerca del polo sur de la Luna"
+          },
+          "text": {
+            "en": "A flat-topped mountain near the south pole, nearly 100 km wide and some 6 km high, named after the NASA mathematician Melba Roy Mouton. Athena landed on it in 2025.",
+            "es": "Una montaña de cima plana cerca del polo sur, de casi 100 km de ancho y unos 6 km de alto, que lleva el nombre de la matemática de la NASA Melba Roy Mouton. Athena alunizó en ella en 2025."
+          },
+          "wiki": {
+            "en": "Mons Mouton",
+            "es": ""
+          }
+        },
+        {
+          "id": "melba-roy-mouton",
+          "name": {
+            "en": "Melba Roy Mouton",
+            "es": "Melba Roy Mouton"
+          },
+          "at": [
+            29.6,
+            -84.05
+          ],
+          "world": "moon",
+          "cat": "astronomer",
+          "type": "person",
+          "date": "2025-03-06",
+          "life": [
+            "1929",
+            "1990"
+          ],
+          "place": {
+            "en": "NASA's Goddard Space Flight Center, Greenbelt, Maryland",
+            "es": "Centro de Vuelo Espacial Goddard de la NASA, Greenbelt, Maryland"
+          },
+          "text": {
+            "en": "African American mathematician who led a group of 'human computers' at NASA's Goddard centre in the 1960s, tracking the Echo satellites, and rose to assistant chief of research programmes.",
+            "es": "Matemática afroestadounidense que dirigió un grupo de «computadoras humanas» en el centro Goddard de la NASA en los años sesenta, siguiendo los satélites Echo, y llegó a subjefa de programas de investigación."
+          },
+          "wiki": {
+            "en": "Melba Roy Mouton",
+            "es": "Melba Roy Mouton"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "world": "moon",
+      "title": {
+        "en": "Artemis II circles the Moon",
+        "es": "Artemis II rodea la Luna"
+      },
+      "text": {
+        "en": "On 6 April 2026 Artemis II flew four astronauts around the far side: the first crew to fly to the Moon since 1972, and the farthest humans have ever been from Earth. NASA now aims to land in 2028.",
+        "es": "El 6 de abril de 2026 Artemis II llevó a cuatro astronautas alrededor de la cara oculta: la primera tripulación que fue a la Luna desde 1972 y la que más se ha alejado de la Tierra. La NASA planea alunizar en 2028."
+      },
+      "details": {
+        "en": "Reid Wiseman, Victor Glover, Christina Koch and the Canadian Jeremy Hansen launched on 1 April in the Orion capsule they named Integrity. Glover was the first person of colour, Koch the first woman and Hansen the first non-American to travel around the Moon. They passed about 6,545 km above the far side, reached 406,771 km from Earth, saw the whole Orientale basin, which no human eye had taken in before, and watched the Sun eclipsed by the Moon. They splashed down off San Diego on 11 April. Artemis III is to test docking with the SpaceX and Blue Origin landers in Earth orbit in 2027, and Artemis IV to land near the south pole in 2028. No craft landed on the Moon in 2026 up to November; China plans to land astronauts before 2030.",
+        "es": "Reid Wiseman, Victor Glover, Christina Koch y el canadiense Jeremy Hansen despegaron el 1 de abril en la cápsula Orion, a la que llamaron Integrity. Glover fue la primera persona negra, Koch la primera mujer y Hansen el primer no estadounidense en viajar alrededor de la Luna. Pasaron a unos 6545 km sobre la cara oculta, llegaron a 406 771 km de la Tierra, vieron completa la cuenca Oriental, que ningún ojo humano había abarcado antes, y contemplaron el Sol eclipsado por la Luna. Amerizaron frente a San Diego el 11 de abril. Artemis III debe probar en 2027 el acoplamiento con los módulos de SpaceX y Blue Origin en órbita terrestre, y Artemis IV, alunizar cerca del polo sur en 2028. Ninguna nave alunizó en 2026 hasta noviembre; China planea llevar astronautas a la Luna antes de 2030."
+      },
+      "camera": {
+        "lon": -100,
+        "lat": -38,
+        "zoom": 1
+      },
+      "places": [
+        {
+          "id": "mare-orientale",
+          "name": {
+            "en": "Mare Orientale (Orientale basin)",
+            "es": "Mare Orientale (cuenca Oriental)"
+          },
+          "at": [
+            -94.6703,
+            -19.8655
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "2026-04-06",
+          "place": {
+            "en": "Western edge of the Moon, between the near and far sides",
+            "es": "Borde oeste de la Luna, entre la cara visible y la oculta"
+          },
+          "text": {
+            "en": "A bull's-eye of mountain rings nearly 1,000 km wide, one of the youngest great impact basins, hard to see from Earth on the Moon's western edge. The Artemis II crew were the first to see it whole.",
+            "es": "Una diana de anillos montañosos de casi 1000 km, una de las grandes cuencas de impacto más jóvenes, difícil de ver desde la Tierra en el borde oeste de la Luna. La tripulación de Artemis II fue la primera en verla completa."
+          },
+          "wiki": {
+            "en": "Mare Orientale",
+            "es": "Mare Orientale"
+          }
+        },
+        {
+          "id": "shackleton-crater",
+          "name": {
+            "en": "Shackleton crater",
+            "es": "Cráter Shackleton"
+          },
+          "at": [
+            129.78,
+            -89.67
+          ],
+          "world": "moon",
+          "cat": "place",
+          "type": "place",
+          "date": "2008-11-14",
+          "place": {
+            "en": "The Moon's south pole",
+            "es": "El polo sur de la Luna"
+          },
+          "text": {
+            "en": "A crater 21 km wide almost exactly at the south pole. Its floor lies in permanent shadow, cold enough to trap ice, while parts of its rim are lit most of the time: a prime site for future bases.",
+            "es": "Un cráter de 21 km casi exactamente en el polo sur. Su fondo está en sombra permanente, tan frío que puede guardar hielo, mientras que partes de su borde están iluminadas casi siempre: un lugar ideal para futuras bases."
+          },
+          "wiki": {
+            "en": "Shackleton (crater)",
+            "es": "Shackleton (cráter)"
+          }
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "en": "Twelve people have walked on the Moon, all between 1969 and 1972, and robots from the Soviet Union, the United States, China, India and Japan have landed there, joined since 2024 by companies. Their rocks told us the Moon's age and how it was born, and their instruments found water ice waiting in the polar shadows: the reason so many nations now plan to go back, this time to stay.",
+    "es": "Doce personas han caminado en la Luna, todas entre 1969 y 1972, y robots de la Unión Soviética, Estados Unidos, China, la India y Japón han alunizado allí, a los que desde 2024 se suman empresas. Sus rocas nos contaron la edad de la Luna y cómo nació, y sus instrumentos hallaron hielo de agua esperando en las sombras polares: la razón por la que tantos países planean volver, esta vez para quedarse."
+  },
+  "sources": [
+    {
+      "title": "List of missions to the Moon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/List_of_missions_to_the_Moon"
+    },
+    {
+      "title": "Luna 2 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Luna_2"
+    },
+    {
+      "title": "Luna 9 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Luna_9"
+    },
+    {
+      "title": "Surveyor program (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Surveyor_program"
+    },
+    {
+      "title": "Apollo 11 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Apollo_11"
+    },
+    {
+      "title": "Apollo 12 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Apollo_12"
+    },
+    {
+      "title": "Apollo 13 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Apollo_13"
+    },
+    {
+      "title": "Apollo 14 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Apollo_14"
+    },
+    {
+      "title": "Apollo 15 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Apollo_15"
+    },
+    {
+      "title": "Apollo 16 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Apollo_16"
+    },
+    {
+      "title": "Apollo 17 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Apollo_17"
+    },
+    {
+      "title": "Apollo 1 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Apollo_1"
+    },
+    {
+      "title": "Lunar Roving Vehicle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lunar_Roving_Vehicle"
+    },
+    {
+      "title": "Genesis Rock (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Genesis_Rock"
+    },
+    {
+      "title": "Luna 15 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Luna_15"
+    },
+    {
+      "title": "Luna 16 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Luna_16"
+    },
+    {
+      "title": "Lunokhod 1 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lunokhod_1"
+    },
+    {
+      "title": "Lunokhod 2 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Lunokhod_2"
+    },
+    {
+      "title": "Luna 20 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Luna_20"
+    },
+    {
+      "title": "Luna 24 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Luna_24"
+    },
+    {
+      "title": "Chang'e 3 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chang%27e_3"
+    },
+    {
+      "title": "Chang'e 4 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chang%27e_4"
+    },
+    {
+      "title": "Yutu-2 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Yutu-2"
+    },
+    {
+      "title": "Chang'e 5 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chang%27e_5"
+    },
+    {
+      "title": "Chandrayaan-2 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chandrayaan-2"
+    },
+    {
+      "title": "Chandrayaan-3 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chandrayaan-3"
+    },
+    {
+      "title": "Moon Impact Probe (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Moon_Impact_Probe"
+    },
+    {
+      "title": "LCROSS (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/LCROSS"
+    },
+    {
+      "title": "Luna 25 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Luna_25"
+    },
+    {
+      "title": "Beresheet (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Beresheet"
+    },
+    {
+      "title": "Hakuto-R Mission 1 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hakuto-R_Mission_1"
+    },
+    {
+      "title": "Peregrine Mission One (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Peregrine_Mission_One"
+    },
+    {
+      "title": "Smart Lander for Investigating Moon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon"
+    },
+    {
+      "title": "IM-1 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/IM-1"
+    },
+    {
+      "title": "Chang'e 6 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chang%27e_6"
+    },
+    {
+      "title": "Chang'e-6 samples reveal 2.8-billion-year-old volcanism on the far side (Chinese Academy of Sciences, 2024)",
+      "url": "https://english.cas.cn/newsroom/cas_media/202411/t20241118_694563.shtml"
+    },
+    {
+      "title": "Blue Ghost Mission 1 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Blue_Ghost_Mission_1"
+    },
+    {
+      "title": "IM-2 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/IM-2"
+    },
+    {
+      "title": "IM-2: the southernmost step in human exploration (Intuitive Machines)",
+      "url": "https://www.intuitivemachines.com/post/im-2-the-southernmost-step-in-human-exploration"
+    },
+    {
+      "title": "Hakuto-R Mission 2 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Hakuto-R_Mission_2"
+    },
+    {
+      "title": "Artemis II (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Artemis_II"
+    },
+    {
+      "title": "Artemis II Mission Milestones: An Image and Video Recap (NASA, 21 April 2026)",
+      "url": "https://www.nasa.gov/centers-and-facilities/johnson/artemis-ii-mission-milestones-an-image-and-video-recap/"
+    },
+    {
+      "title": "Artemis program (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Artemis_program"
+    },
+    {
+      "title": "NASA is Full Steam Ahead on Artemis III, IV and V (SpacePolicyOnline, 23 October 2026)",
+      "url": "https://spacepolicyonline.com/news/nasa-is-full-steam-ahead-on-artemis-iii-iv-and-v/"
+    },
+    {
+      "title": "Dodging bullets and firing blanks: no lunar landers launched in 2026 (The Space Review, 26 October 2026)",
+      "url": "https://www.thespacereview.com/article/5344/1"
+    },
+    {
+      "title": "Chang'e 7 launch postponed (CNN, 23 August 2026)",
+      "url": "https://www.cnn.com/2026/08/23/science/change-7-china-moon-mission-launch-postponed"
+    },
+    {
+      "title": "Gazetteer of Planetary Nomenclature: the Moon (IAU/USGS)",
+      "url": "https://planetarynames.wr.usgs.gov/Page/MOON/target"
+    }
+  ]
+}
