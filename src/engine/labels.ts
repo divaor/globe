@@ -151,10 +151,21 @@ export class LabelEngine {
         const g = mr + 4, hh = th + subH;
         spots.length = 0;
         const at = (tx: number, top: number) => spots.push({ tx, ty: top + th / 2 + 1, box: [tx - 2, top, tx + bw + 2, top + hh + 2] });
+        // Above or below, slid back inside the screen when the marker is near its edge.
+        const inside = (tx: number) => (bw + 8 < this.w ? Math.max(4, Math.min(this.w - bw - 4, tx)) : tx);
+        const up = l.y - mr - 3 - hh, down = l.y + mr + 1;
         at(l.x + g, l.y - th / 2 - 1);
         at(l.x - g - bw, l.y - th / 2 - 1);
-        at(l.x - bw / 2, l.y - mr - 3 - hh);
-        at(l.x - bw / 2, l.y + mr + 1);
+        at(inside(l.x - bw / 2), up);
+        at(inside(l.x - bw / 2), down);
+        // Above or below, running right from the marker or ending at it.
+        at(inside(l.x - mr), up);
+        at(inside(l.x + mr - bw), up);
+        at(inside(l.x - mr), down);
+        at(inside(l.x + mr - bw), down);
+        // A line further off, when the nearer spots are taken.
+        at(inside(l.x - bw / 2), up - hh);
+        at(inside(l.x - bw / 2), down + hh);
       }
       const free = (s: (typeof spots)[number]) => !this.collides(s.box)
         && !l.avoid?.some((o) => o !== l.own && s.box[0] < o[2] && s.box[2] > o[0] && s.box[1] < o[3] && s.box[3] > o[1]);

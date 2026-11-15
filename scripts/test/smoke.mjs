@@ -2467,7 +2467,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   // Lima: what to eat, a dish's story, Wikivoyage's overview.
   await openCity('lima', 'eat', 2500);
   const eat = await page.evaluate(() => ({ tabs: document.querySelectorAll('.guide-tabs [data-tab]').length, dishes: [...document.querySelectorAll('[data-dish]')].map((x) => x.dataset.dish), text: document.querySelector('.guide-tab')?.innerText ?? '', wv: document.querySelector('[data-wv="eat"]')?.innerText ?? '' }));
-  check(eat.tabs === 8 && eat.dishes.some((d) => /ceviche/.test(d)) && /national dish: Ceviche/.test(eat.text) && /From Wikivoyage/.test(eat.wv) && /ceviche is the dish every visitor/.test(eat.wv) && !/A restaurant/.test(eat.wv) && /CC BY-SA/.test(eat.wv),
+  check(eat.tabs === 9 && eat.dishes.some((d) => /ceviche/.test(d)) && /national dish: Ceviche/.test(eat.text) && /From Wikivoyage/.test(eat.wv) && /ceviche is the dish every visitor/.test(eat.wv) && !/A restaurant/.test(eat.wv) && /CC BY-SA/.test(eat.wv),
     `Lima, what to eat: ${eat.dishes.length} dishes (${eat.dishes.slice(0, 3).join(', ')}…), the national dish, and Wikivoyage's overview without its listings, credited`);
   await page.click('[data-dish="pisco-sour"], [data-dish]');
   await page.waitForFunction(() => !!window.atlas.app.mode, null, { timeout: 15000 }).catch(() => {});
@@ -2566,7 +2566,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => window.atlas.app.setLang('es'));
   await openCity('lima', 'facts');
   const esText = await page.evaluate(() => ({ tabs: [...document.querySelectorAll('.guide-tabs [data-tab]')].map((x) => x.textContent.replace(/^\S+\s/, '')).join(', '), facts: document.querySelector('.guide-tab')?.innerText ?? '' }));
-  check(/Comer, Ver, Museos, Arte, Edificios, Datos, Historia aquí, Más/.test(esText.tabs) && /Idiomas\s+Español, Quechua, Aimara/i.test(esText.facts) && /sol peruano/i.test(esText.facts) && /Mejores meses para ir/.test(esText.facts), `en español: ${esText.tabs}; "${(/Idiomas[^\n]*\n?[^\n]*/.exec(esText.facts) ?? [''])[0].replace(/\s+/g, ' ')}"`);
+  check(/Comer, Ver, Museos, Arte, Edificios, Personas, Datos, Historia aquí, Más/.test(esText.tabs) && /Idiomas\s+Español, Quechua, Aimara/i.test(esText.facts) && /sol peruano/i.test(esText.facts) && /Mejores meses para ir/.test(esText.facts), `en español: ${esText.tabs}; "${(/Idiomas[^\n]*\n?[^\n]*/.exec(esText.facts) ?? [''])[0].replace(/\s+/g, ' ')}"`);
   await page.evaluate(() => window.atlas.app.setLang('en'));
 
   // Offline: a city's guide comes from the service worker's cache once it has been opened.
