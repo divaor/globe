@@ -7,9 +7,8 @@ import { h } from '../../ui/dom';
 import { LC } from '../context';
 import type { App } from '../../app/app';
 import type { Shell } from '../../ui/shell';
-import type { LayerDef, LayerInstance, LayerTapUi, RenderCtx } from '../types';
+import type { LayerDef, LayerHit, LayerInstance, LayerTapUi, RenderCtx } from '../types';
 import { crowdOf, type Placed } from '../crowd';
-import type { Hit } from '../../ui/search';
 import { loadBorn, loadLives, personCard, FIELDS, fieldName, nm, years, what, type BornData, type BornPlace, type Person, type PersonLinks } from '../../lives/born';
 import { creditEl } from '../../artguide/cards';
 import { regionAt, regionType } from '../../engine/regions';
@@ -136,9 +135,54 @@ export const bornHere: LayerDef = {
     if (!data) return false;
     const hit = crowdOf<Dot>(inst, APART).pick(ui);
     if (!hit) return false;
-    const [best, people] = hit;
+    openPlace(hit[0], hit[1], inst, ui);
+    return true;
+  },
+  // The search box finds the people (Rafael Nadal, "rafa nadal", "nadl") and their places, and takes you to the dot.
+  searchHint: { en: 'people born there', es: 'personas nacidas allí' },
+  async searchLoad() { data ??= await loadBorn(); },
+  search(match, inst) {
+    if (!data) return [];
+    const died = inst.options.show === 'died';
+    const out: LayerHit[] = [];
+    for (const p of data.people) {
+      const s = Math.max(match(p.name[0]), match(p.name[1]));
+      if (s <= 0) continue;
+      const pl = (died ? p.diedAt : p.place) ?? p.place;
+      out.push({
+        label: nm(p), sub: `${years(p)} · ${what(p)} · ${nm(pl)}`, icon: (FIELDS[p.field] ?? FIELDS.other).icon,
+        lon: pl.at[0], lat: pl.at[1], score: s + Math.min(12, p.sl / 15), wz: 9, dot: pl,
+        // Shown whatever the filter's options: back to everyone, at any time, where they were born if they have no death place.
+        prepare: (i) => {
+          const want: Record<string, string> = {};
+          if (i.options.field !== 'all' && i.options.field !== p.field) want.field = 'all';
+          const per = PERIODS.find((x) => x[0] === i.options.period);
+          if (per && per[0] !== 'all' && (p.born < per[2] || p.born >= per[3])) want.period = 'all';
+          if (i.options.show === 'died' && !p.diedAt) want.show = 'born';
+          for (const [k, v] of Object.entries(want)) APP?.setOption(i.def.id, k, v);
+        },
+        open: (ui) => void personCard(ui.card, p, personLinks()),
+      });
+    }
+    // Places by their name ("Manacor"): their people, as a tap on the dot shows them.
+    const places = shown(inst);
+    for (const [pl, people] of places) {
+      const s = Math.max(match(pl.name[0]), match(pl.name[1]));
+      if (s < 60) continue;
+      out.push({
+        label: nm(pl), sub: L(`${people.length} well-known ${people.length === 1 ? 'person' : 'people'}: ${people.slice(0, 2).map(nm).join(', ')}${people.length > 2 ? '…' : ''}`, `${people.length} ${people.length === 1 ? 'persona conocida' : 'personas conocidas'}: ${people.slice(0, 2).map(nm).join(', ')}${people.length > 2 ? '…' : ''}`),
+        icon: '👶', lon: pl.at[0], lat: pl.at[1], score: s - 4 + Math.min(10, people.length), wz: 9, dot: pl,
+        open: (ui) => openPlace(pl, people, inst, ui),
+      });
+    }
+    return out.sort((a, b) => b.score - a.score).slice(0, 10);
+  },
+};
+
+/** A place's people: one person's card, or the list of them. */
+function openPlace(best: BornPlace, people: Person[], inst: LayerInstance, ui: LayerTapUi) {
     const x = personLinks();
-    if (people.length === 1) { void personCard(ui.card, people[0], x); return true; }
+    if (people.length === 1) { void personCard(ui.card, people[0], x); return; }
     const died = inst.options.show === 'died';
     const title = died ? L(`Died in ${nm(best)}`, `Murieron en ${nm(best)}`) : L(`Born in ${nm(best)}`, `Nacieron en ${nm(best)}`);
     // Which state or province and country the place is in (when the states are shown, their shapes are loaded).
@@ -157,22 +201,9 @@ export const bornHere: LayerDef = {
     }
     // (After the tap is over: on a phone, a tap on a filter's marker closes the open panel.)
     setTimeout(() => SHELL?.openPanel('born-here', `👶 ${title}`, body), 0);
-    return true;
-  },
-};
+}
 
 export default function register(app: App, shell: Shell) {
   APP = app; SHELL = shell;
   app.register([bornHere]);
-  // While the filter is on, search finds its people too ("Velázquez"): the map flies to where they were born.
-  shell.search.extra.push((_q, score) => {
-    if (!data || !app.isActive('born-here')) return [];
-    const out: Hit[] = [];
-    for (const p of data.people) {
-      const s = Math.max(score(p.name[0]), score(p.name[1]));
-      if (s > 0) out.push({ kind: 'place', lon: p.place.at[0], lat: p.place.at[1], label: nm(p), sub: `${years(p)} · ${what(p)} · ${nm(p.place)}`, score: s + Math.min(10, p.sl / 20), icon: (FIELDS[p.field] ?? FIELDS.other).icon, zoom: 8,
-        pick: () => { app.flyTo(p.place.at[0], p.place.at[1], 8); void personCard((...a) => shell.card.showCustom(...a), p, personLinks()); } });
-    }
-    return out.sort((a, b) => b.score - a.score).slice(0, 8);
-  });
 }

@@ -2,6 +2,8 @@
 // The app knows the best order (par). By air (great circles), by land (the fewest borders crossed, from the
 // border graph), or in the footsteps of a journey from the stories (Marco Polo's or Ibn Battuta's stops: after the
 // game, the order the traveller took).
+// Museum hop (v0.29.0) is the same game on the art guide: see five of the world's best-known works, from the first one,
+// with the least travel.
 import { geoDistance, geoInterpolate } from 'd3-geo';
 import { Share2, RotateCcw, Undo2, Flag } from 'lucide';
 import type { App } from '../app/app';
@@ -15,6 +17,7 @@ import { starText, scoreOf } from './score';
 import { bestTour, tourCost, km, sample } from './logic';
 import { recordGame, type Badge } from '../learn/progress';
 import { shareText } from './pin';
+import { loadArt } from '../artguide/data';
 import { L, es, type PlayHost, type HostGame } from './host';
 
 export type TourMode = 'air' | 'land' | 'history';
@@ -40,9 +43,9 @@ export class GrandTour implements HostGame {
   /** The border graph (from Border hop's data). */
   borders: (() => Promise<BorderData | null>) | null = null;
 
-  constructor(private app: App, private shell: Shell, private host: PlayHost) {}
+  constructor(private app: App, private shell: Shell, private host: PlayHost, readonly game: 'tour' | 'museum' = 'tour') {}
   private get card() { return this.host.card; }
-  get info() { const s = this.st; return s ? { mode: s.mode, stops: s.stops.map((x) => x.en), order: [...s.order], done: s.done ? { ...s.done, badges: s.done.badges.map((b) => b.id) } : null } : null; }
+  get info() { const s = this.st; return s ? { game: this.game, mode: s.mode, stops: s.stops.map((x) => x.en), order: [...s.order], done: s.done ? { ...s.done, badges: s.done.badges.map((b) => b.id) } : null } : null; }
 
   /** Six big cities (a million people or more) more than 350 km apart; by land, each in another country (a tour
    *  inside one country crosses nothing). */
@@ -69,7 +72,34 @@ export class GrandTour implements HostGame {
     };
   }
 
+  /** Museum hop: five of the best-known works, each in another museum and city, more than 300 km apart. */
+  private async masterpieces(rand: () => number): Promise<Stop[]> {
+    const art = await loadArt();
+    if (!art) return [];
+    // The best-known paintings and sculptures (not a museum's other treasures: a manuscript, a video game).
+    const top = art.works.filter((w) => w.kind === 'painting' || w.kind === 'sculpture').sort((a, b) => b.sl - a.sl).slice(0, 200);
+    const out: Stop[] = [];
+    for (const w of sample(rand, top, top.length)) {
+      const at = w.museum.at;
+      if (out.some((o) => km(o.at, at) < 300)) continue;
+      const city = window.atlas?.guide.cityLabel(w.museum.city) ?? null;
+      out.push({ en: `${w.name[0]} · ${city ?? w.museum.name[0]}`, es: `${w.name[1]} · ${city ?? w.museum.name[1]}`, at, country: this.app.renderer.countryAt(at[0], at[1]) ?? undefined });
+      if (out.length === 5) break;
+    }
+    return out;
+  }
+
   async start(o: { mode?: TourMode; region?: string; day?: string } = {}) {
+    if (this.game === 'museum') {
+      const rand = seeded(o.day ? `museum:${o.day}` : `${Date.now()}:${Math.random()}`);
+      const stops = await this.masterpieces(rand).catch(() => [] as Stop[]);
+      if (stops.length < 5) { this.shell.toast(L('This game needs its data; check your connection.', 'Este juego necesita sus datos; revisa tu conexión.')); return; }
+      await this.host.enter(this, { labels: { seas: true, countries: true } });
+      this.st = { mode: 'air', region: '', day: o.day, stops, order: [0], done: null, fold: false, msg: null };
+      this.host.fit(stops.map((x) => x.at), 6);
+      this.render();
+      return;
+    }
     const mode = o.day ? (['air', 'land', 'history'] as TourMode[])[Math.abs([...o.day].reduce((a, c) => a + c.charCodeAt(0), 0)) % 3] : o.mode ?? this.pick.mode;
     const region = o.day ? '' : o.region ?? this.pick.region;
     const rand = seeded(o.day ? `tour:${o.day}` : `${Date.now()}:${Math.random()}`);
@@ -128,7 +158,7 @@ export class GrandTour implements HostGame {
       if (d < bd) { bd = d; best = i; }
     });
     if (best >= 0) this.visit(best);
-    else { s.msg = L('Tap one of the cities (the white dots).', 'Toca una de las ciudades (los puntos blancos).'); this.render(); }
+    else { s.msg = this.game === 'museum' ? L('Tap one of the museums (the white dots).', 'Toca uno de los museos (los puntos blancos).') : L('Tap one of the cities (the white dots).', 'Toca una de las ciudades (los puntos blancos).'); this.render(); }
     return true;
   }
 
@@ -156,7 +186,7 @@ export class GrandTour implements HostGame {
     // Two land tours with the same borders: the shorter one still matters for three stars.
     const stars = land && !gaveUp && sc.stars === 3 && yours > best.cost * 1.0001 + 1 ? 2 : sc.stars;
     let badges: Badge[] = [];
-    if (!gaveUp) badges = recordGame('tour', { score: sc.score, stars, feats: stars === 3 ? ['tour-par'] : [], day: s.day });
+    if (!gaveUp) badges = recordGame(this.game, { score: sc.score, stars, feats: stars === 3 ? [this.game === 'museum' ? 'museum-par' : 'tour-par'] : [], day: s.day });
     s.done = { yours, par: best.cost, best: best.order, score: sc.score, stars, badges, gaveUp };
     this.render();
     this.app.renderer.requestRender();
@@ -176,15 +206,19 @@ export class GrandTour implements HostGame {
     clear(this.card);
     if (!s) return;
     const mode = TOUR_MODES.find((m) => m[0] === s.mode)![1];
-    const title = `🧳 ${s.day ? L('Daily Grand tour', 'Gran vuelta del día') : L('Grand tour', 'Gran vuelta')} · ${s.story ? `${s.story.icon} ${es() ? s.story.es : s.story.en}` : es() ? mode.es : mode.en}`;
+    const museum = this.game === 'museum';
+    const title = museum ? `🏛️ ${s.day ? L('Daily Museum hop', 'De museo en museo del día') : L('Museum hop', 'De museo en museo')}`
+      : `🧳 ${s.day ? L('Daily Grand tour', 'Gran vuelta del día') : L('Grand tour', 'Gran vuelta')} · ${s.story ? `${s.story.icon} ${es() ? s.story.es : s.story.en}` : es() ? mode.es : mode.en}`;
     this.card.append(this.host.head(title, { fold: s.fold, onFold: () => { s.fold = !s.fold; this.render(); }, onClose: () => void this.stop() }));
     const chips = h('div', { class: 'hop-path' }, ...s.order.map((i, k) => h('span', { class: `hop-step${k === 0 ? ' from' : ''}` }, `${k + 1}. ${this.nm(s.stops[i])}`)),
       ...s.stops.map((x, i) => (s.order.includes(i) ? null : h('span', { class: 'hop-step left' }, this.nm(x)))).filter((x): x is HTMLElement => !!x));
     if (!s.done) {
       const cost = this.legCost(s.mode, s.stops);
-      this.card.append(h('div', { class: 'hop-stats' }, s.mode === 'land'
-        ? L('Visit every city from the green one, crossing as few borders as you can.', 'Visita todas las ciudades desde la verde, cruzando la menor cantidad de fronteras.')
-        : L('Visit every city from the green one, in the shortest total distance.', 'Visita todas las ciudades desde la verde, con la menor distancia total.')));
+      this.card.append(h('div', { class: 'hop-stats' }, museum
+        ? L('See every masterpiece, from the green one, travelling as little as you can: tap their museums in order.', 'Ve todas las obras maestras desde la verde, viajando lo menos posible: toca sus museos en orden.')
+        : s.mode === 'land'
+          ? L('Visit every city from the green one, crossing as few borders as you can.', 'Visita todas las ciudades desde la verde, cruzando la menor cantidad de fronteras.')
+          : L('Visit every city from the green one, in the shortest total distance.', 'Visita todas las ciudades desde la verde, con la menor distancia total.')));
       if (s.fold) return;
       this.card.append(chips, h('div', { class: 'hop-stats' }, `${L('So far', 'Por ahora')}: ${this.cost(tourCost(s.order, cost))}`));
       if (s.msg) this.card.append(h('div', { class: 'quiz-fb bad' }, s.msg));
@@ -210,8 +244,8 @@ export class GrandTour implements HostGame {
     }
     this.card.append(chips, others);
     const share = h('button', { type: 'button', class: 'pill sm', 'data-game': 'share' }, icon(Share2, 15), L('Share', 'Compartir'));
-    share.addEventListener('click', () => void shareText(this.shell, `🧳 ${L('Grand tour', 'Gran vuelta')}${s.day ? ` ${s.day}` : ''} ${starText(d.stars)} ${d.score}\n${s.order.map((i) => this.nm(s.stops[i])).join(' › ')}`));
-    const again = h('button', { type: 'button', class: 'pill sm primary', 'data-game': 'again' }, icon(RotateCcw, 15), s.day ? L('More games', 'Más juegos') : L('Another tour', 'Otra vuelta'));
+    share.addEventListener('click', () => void shareText(this.shell, `${museum ? `🏛️ ${L('Museum hop', 'De museo en museo')}` : `🧳 ${L('Grand tour', 'Gran vuelta')}`}${s.day ? ` ${s.day}` : ''} ${starText(d.stars)} ${d.score}\n${s.order.map((i) => this.nm(s.stops[i])).join(' › ')}`));
+    const again = h('button', { type: 'button', class: 'pill sm primary', 'data-game': 'again' }, icon(RotateCcw, 15), s.day ? L('More games', 'Más juegos') : museum ? L('Another hop', 'Otra ronda') : L('Another tour', 'Otra vuelta'));
     again.addEventListener('click', () => { if (s.day) { void this.stop(); this.back?.(); } else void this.start({ mode: s.mode, region: s.region }); });
     this.card.append(h('div', { class: 'hop-actions' }, ...(d.gaveUp ? [] : [share]), again));
   }

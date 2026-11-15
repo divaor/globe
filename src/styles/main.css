@@ -1062,3 +1062,15 @@ div.guide-item { cursor: default; }
 .ms-sub-toggle:has(input:disabled) { opacity: 0.5; }
 .ms-note { margin: 6px 2px 0; }
 .born-where { margin: 0 0 4px; font-weight: 600; }
+
+/* Search (v0.29.0): where a result comes from, and the recent searches. */
+.si-tag { display: block; font-size: 11px; color: var(--accent); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search-group { font-size: 11.5px; font-weight: 650; text-transform: uppercase; letter-spacing: .04em; padding: 8px 12px 4px; }
+.search-item.recent .si-icon { color: var(--muted); }
+
+/* Climate detective's chart (v0.29.0) and the games' notes. */
+.climate-wrap { margin: 6px 0 2px; }
+.climate-chart { width: 100%; max-width: 340px; height: auto; display: block; color: var(--muted); }
+.climate-key { margin-top: 2px; }
+.game-note { line-height: 1.4; max-height: 6.5em; overflow-y: auto; }
+.life-places { max-height: 7.5em; overflow-y: auto; }

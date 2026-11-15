@@ -2181,7 +2181,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
-// 21. More map games (v0.25.0). The Map games panel (today's seven puzzles and the seven games); Pin it (a real tap,
+// 21. More map games (v0.25.0). The Map games panel (today's puzzles and the games: twelve since v0.29.0); Pin it (a real tap,
 // then pins on the spot: five rounds, the Sharpshooter badge; hard mode hides the seas' names); Higher or lower (the
 // fact's map shown, the run ending at a miss); Grand tour (a tap on a city, the best order for three stars, land and
 // history tours); Name them all (Spanish names typed in the English app, capitals without accents); Border chain (a
@@ -2209,7 +2209,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => window.atlas.play.openMenu());
   await page.waitForSelector('[data-daily]', { timeout: 15000 }).catch(() => {});
   const panel = await page.evaluate(() => ({ daily: [...document.querySelectorAll('[data-daily]')].map((b) => b.dataset.daily), games: [...document.querySelectorAll('[data-game-open]')].map((b) => b.dataset.gameOpen), head: [...document.querySelectorAll('.sheet .sec-title')].map((x) => x.textContent).join(' | ') }));
-  check(panel.daily.length === 7 && panel.games.join() === 'hop,pin,hilo,tour,names,chain,outline' && /Today · 0\/7/.test(panel.head), `Map games: ${panel.head}; ${panel.games.join(', ')}`);
+  check(panel.daily.length === 12 && panel.games.join() === 'hop,pin,hilo,tour,names,chain,outline,museum,climate,explorer,sunrise,lives' && /Today · 0\/12/.test(panel.head), `Map games: ${panel.head}; ${panel.games.join(', ')}`);
 
   // Pin it: its own panel, then a real tap and four pins on the spot.
   await page.click('[data-game-open="pin"]');
@@ -2379,7 +2379,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => window.atlas.play.openMenu());
   await page.waitForTimeout(600);
   const kept = await page.evaluate(() => ({ chain: document.querySelector('[data-daily="chain"]')?.className ?? '', text: document.querySelector('[data-daily="chain"]')?.textContent ?? '', head: [...document.querySelectorAll('.sheet .sec-title')][0]?.textContent ?? '', p: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').play }));
-  check(JSON.stringify(day1) === JSON.stringify(day2) && /done/.test(kept.chain) && /Done: \d+/.test(kept.text) && /Today · 1\/7/.test(kept.head) && kept.p.games.pin >= 1 && kept.p.games.chain >= 2,
+  check(JSON.stringify(day1) === JSON.stringify(day2) && /done/.test(kept.chain) && /Done: \d+/.test(kept.text) && /Today · 1\/12/.test(kept.head) && kept.p.games.pin >= 1 && kept.p.games.chain >= 2,
     `today's puzzles are the same in a second browser (pin ${day1.pin}; ${day1.hilo}; outlines ${day1.outline}); the daily chain is kept: "${kept.text.slice(0, 50)}", ${kept.head}`);
 
   // The panel and the progress in Spanish.
@@ -2387,7 +2387,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => window.atlas.play.openMenu());
   await page.waitForTimeout(500);
   const esPanel = await page.evaluate(() => ({ title: document.querySelector('.sheet .sheet-title, .sheet h2')?.textContent ?? '', games: [...document.querySelectorAll('[data-game-open] .mode-title')].map((x) => x.textContent) }));
-  check(/Juegos en el mapa/.test(esPanel.title) && esPanel.games.join() === 'Salto de fronteras,Pon el pin,Más o menos,Gran vuelta,Nómbralos todos,Cadena de fronteras,Silueta', `en español: ${esPanel.games.join(', ')}`);
+  check(/Juegos en el mapa/.test(esPanel.title) && esPanel.games.join() === 'Salto de fronteras,Pon el pin,Más o menos,Gran vuelta,Nómbralos todos,Cadena de fronteras,Silueta,De museo en museo,Detective del clima,Bitácora del explorador,Carrera del amanecer,¿De quién es esta vida?', `en español: ${esPanel.games.join(', ')}`);
   await page.evaluate(() => window.atlas.app.setLang('en'));
   await page.evaluate(() => window.atlas.shell.sheet.close());
 
@@ -3069,6 +3069,201 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     `en español: "Estilo del mapa", "Estados y provincias"; the card: "${(/Estado[^\n]*\n?[^\n]*Texas/.exec(esCard) ?? [''])[0].replace(/\s+/g, ' ')}"`);
 
   check(!errors.length, `no page errors in v0.28.5's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 26. Search (v0.29.0). With Who was born here? on, "rafa nadal", "Nadal Rafael" and "rafael nadl" find Rafael Nadal
+// first, from that filter; choosing him flies close to Manacor, rings his dot and opens his card. With Masterpieces off,
+// "las meninas" finds the painting (the filter turns on, its card opens). "texas" finds the state; Languages'
+// "Portuguese" highlights its countries; "40.4, -3.7" goes there. An empty box shows the recent searches; Spanish.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {} });
+  await ctx.route(/wikidata\.org|wikimedia\.org|wikipedia\.org/, (route) => route.abort());
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(url + '#p=globe&l=political,born-here&c=0,30,1.4&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.reload({ waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas?.app?.instance('born-here')?.ready && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(1000);
+  const find = async (text, wait = 600) => {
+    await page.evaluate(() => window.atlas.shell.search.open());
+    await page.fill('.search-field', text);
+    await page.waitForTimeout(wait);
+    return page.evaluate(() => [...document.querySelectorAll('.search-item')].map((x) => ({ label: x.querySelector('.si-label')?.textContent ?? '', tag: x.querySelector('.si-tag')?.textContent ?? '', sub: x.querySelector('.si-sub')?.textContent ?? '' })));
+  };
+  const choose = async (i = 0) => { await page.evaluate((k) => document.querySelectorAll('.search-item')[k]?.click(), i); await page.waitForTimeout(3000); };
+  const cardTitle = () => page.evaluate(() => document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? '');
+
+  // Rafael Nadal, however he is typed.
+  const ways = [];
+  for (const q of ['rafa nadal', 'Nadal Rafael', 'rafael nadl']) ways.push([q, (await find(q))[0]]);
+  await page.keyboard.press('Enter');
+  await page.waitForTimeout(3500);
+  const at = await page.evaluate(() => { const v = window.atlas.app.renderer.view; return { wz: v.webZoom, cam: v.camera(), ring: window.atlas.app.renderer.overlays.size }; });
+  const nadal = await cardTitle();
+  await page.evaluate(() => window.atlas.shell.card.hide());
+  check(ways.every(([, r]) => r?.label === 'Rafael Nadal' && /Who was born here/.test(r.tag)) && at.wz >= 8.5 && Math.abs(at.cam.lon - 3.21) < 0.3 && Math.abs(at.cam.lat - 39.57) < 0.3 && nadal === 'Rafael Nadal',
+    `"${ways.map(([q]) => q).join('", "')}" find Rafael Nadal first (${ways[0][1]?.tag}); choosing him flies to Manacor (web zoom ${at.wz.toFixed(1)}), rings his dot and opens his card`);
+
+  // A filter that is off: Masterpieces.
+  const men = await find('las meninas', 2500);
+  await choose(0);
+  const menOn = await page.evaluate(() => window.atlas.app.isActive('masterpieces'));
+  const menCard = await cardTitle();
+  await page.evaluate(() => { window.atlas.shell.card.hide(); window.atlas.app.deactivate('masterpieces'); });
+  check(men[0]?.label === 'Las Meninas' && /Masterpieces · turns it on/.test(men[0].tag) && /Velázquez/.test(men[0].sub) && menOn && menCard === 'Las Meninas',
+    `with Masterpieces off, "las meninas" finds it (${men[0]?.tag}); choosing it turns the filter on and opens its card`);
+
+  // A state, a legend entry, coordinates.
+  const tx = await find('texas', 1500);
+  await choose(0);
+  const txAt = await page.evaluate(() => ({ cam: window.atlas.app.renderer.view.camera(), sel: window.atlas.app.selection }));
+  await page.evaluate(() => window.atlas.app.activate('languages'));
+  await page.waitForFunction(() => window.atlas.app.instance('languages')?.ready, null, { timeout: 20000 }).catch(() => {});
+  const pt = await find('portuguese');
+  await choose(0);
+  const hl = await page.evaluate(() => [...(window.atlas.app.renderer.highlight ?? [])]);
+  await page.evaluate(() => { window.atlas.shell.legend.clearHighlight(); window.atlas.app.deactivate('languages'); });
+  const co = await find('40.4, -3.7');
+  await choose(0);
+  const coAt = await page.evaluate(() => window.atlas.app.renderer.view.camera());
+  check(tx[0]?.label === 'Texas' && /State, United States/.test(tx[0].sub) && Math.abs(txAt.cam.lon + 99.3) < 3 && txAt.sel === 'USA'
+    && pt[0]?.label === 'Portuguese' && /Languages/.test(pt[0].tag) && hl.includes('BRA') && hl.includes('PRT')
+    && /40.40° N, 3.70° W/.test(co[0]?.label ?? '') && Math.abs(coAt.lat - 40.4) < 0.05 && Math.abs(coAt.lon + 3.7) < 0.05,
+    `"texas": ${tx[0]?.label} (${tx[0]?.sub}); "portuguese" with Languages on: ${hl.length} countries highlighted; "40.4, -3.7": ${co[0]?.label}`);
+
+  // The empty box: the recent searches. Spanish.
+  await page.evaluate(() => window.atlas.shell.search.open());
+  await page.waitForTimeout(400);
+  const recent = await page.evaluate(() => [...document.querySelectorAll('.search-item.recent')].map((x) => x.textContent));
+  await page.evaluate(() => { window.atlas.shell.search.close(); window.atlas.app.setLang('es'); });
+  const esHits = await find('rafa nadal');
+  const esHint = await page.evaluate(() => document.querySelector('.search-field').placeholder);
+  await page.evaluate(() => { window.atlas.shell.search.close(); window.atlas.app.setLang('en'); });
+  check(recent.includes('Rafael Nadal') && recent.includes('Las Meninas') && /¿Quién nació aquí\?/.test(esHits[0]?.tag ?? '') && /tenista español/i.test(esHits[0]?.sub ?? '') && /personas nacidas allí/.test(esHint),
+    `an empty box: the recent searches (${recent.join(" | ")}); en español: ${esHits[0]?.sub} · "${esHint}", ${esHits[0]?.label} (${esHits[0]?.tag})`);
+
+  check(!errors.length, `no page errors in v0.29.0's search checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 27. Games with the guide, the journeys, the sun and the lives (v0.29.0): today's Museum hop, Climate detective,
+// Explorer's log, Sunrise race and Whose life is this?, each played to the end through its card (a pin on each answer
+// scores near the most, and earns the game's badge), the same puzzles in a second browser, the progress panel's new
+// badges (Around the app: a masterpiece opened counts), and Spanish.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); localStorage.removeItem('atlas-globe:progress'); } catch {} });
+  await ctx.route(/wikidata\.org|wikimedia\.org|wikipedia\.org/, (route) => route.abort());
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  const bootGames = async (p) => {
+    await p.goto(url + '#p=globe&l=political&c=0,30,1.4&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+    await p.waitForFunction(() => window.atlas?.play && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+    await p.waitForTimeout(1000);
+  };
+  await bootGames(page);
+  const info = (g) => page.evaluate((g) => window.atlas.play[g].info, g);
+  const card = () => page.evaluate(() => document.querySelector('.play-card')?.innerText ?? '');
+  const firsts = async (p) => {
+    const out = {};
+    for (const g of ['museum', 'climate', 'explorer', 'lives']) {
+      await p.evaluate((g) => window.atlas.play.daily(g), g);
+      await p.waitForFunction((g) => !!window.atlas.play[g].info, g, { timeout: 20000 }).catch(() => {});
+      const i = await p.evaluate((g) => window.atlas.play[g].info, g);
+      out[g] = g === 'museum' ? i?.stops.join(' / ') : g === 'lives' ? i?.round?.who : i?.name;
+      await p.evaluate(() => window.atlas.play.host.close());
+    }
+    return out;
+  };
+  const day1 = await firsts(page);
+
+  // Museum hop: five masterpieces, visited in the order they were given.
+  await page.evaluate(() => window.atlas.play.daily('museum'));
+  await page.waitForFunction(() => !!window.atlas.play.museum.info, null, { timeout: 20000 }).catch(() => {});
+  const mh = await info('museum');
+  const mhCard = await card();
+  for (let i = 1; i < (mh?.stops.length ?? 0); i++) await page.evaluate((i) => window.atlas.play.museum.visit(i), i);
+  const mhDone = await info('museum');
+  check(mh?.stops.length === 5 && /Museum hop/.test(mhCard) && /masterpiece/.test(mhCard) && mhDone?.done?.score > 0 && mhDone.done.par > 0,
+    `Museum hop: ${mh?.stops.slice(0, 2).join(', ')}…; in the given order ${mhDone?.done?.score} points (${Math.round(mhDone?.done?.yours)} km, best ${Math.round(mhDone?.done?.par)} km)`);
+  await page.evaluate(() => window.atlas.play.host.close());
+
+  // The three games of pins: each pin on the answer.
+  const pinAll = async (g) => {
+    await page.evaluate((g) => window.atlas.play.daily(g), g);
+    await page.waitForFunction((g) => !!window.atlas.play[g].info, g, { timeout: 20000 }).catch(() => {});
+    const first = await info(g);
+    const firstCard = await card();
+    const chart = await page.evaluate(() => !!document.querySelector('.play-card .climate-chart rect'));
+    for (let k = 0; k < (first?.n ?? 0); k++) {
+      await page.evaluate((g) => { const p = window.atlas.play[g]; const at = p.info.at; p.tap(at[Math.floor(at.length / 2)]); p.confirm(); }, g);
+      await page.waitForTimeout(250);
+      await page.evaluate((g) => window.atlas.play[g].next(), g);
+    }
+    const done = await info(g);
+    await page.evaluate(() => window.atlas.play.host.close());
+    return { first, firstCard, chart, done };
+  };
+  const cl = await pinAll('climate');
+  check(cl.first?.n === 5 && cl.chart && /Which city has this year of weather/.test(cl.firstCard) && cl.done?.done?.score >= 5 * 5000 + 4 * 1000 && cl.done.done.stars === 3 && cl.done.done.badges.includes('play-climate'),
+    `Climate detective: 5 cities, each with its year's chart (${cl.first?.name} first); a pin on each: ${cl.done?.done?.score} points with the climate zones, ${cl.done?.done?.badges.join(', ')}`);
+  const ex = await pinAll('explorer');
+  check(ex.first?.n >= 4 && /Where did they go next/.test(ex.firstCard) && /· from /.test(ex.firstCard) && ex.done?.results.every((r) => r.km < 1) && ex.done?.done?.stars === 3 && ex.done.done.badges.includes('play-explorer'),
+    `Explorer's log: "${ex.firstCard.split('\n').find((l) => / from /.test(l)) ?? ''}", ${ex.first?.n} stops; a pin on each: ${ex.done?.done?.score} points, ${ex.done?.done?.badges.join(', ')}`);
+  const sr = await pinAll('sunrise');
+  check(sr.first?.n === 5 && /sun rising right now/.test(sr.firstCard) && sr.first.at.length > 100 && sr.done?.results.every((r) => r.km < 1) && sr.done.done.badges.includes('play-sunrise'),
+    `Sunrise race: 5 questions (the sunrise line has ${sr.first?.at.length} points); a pin on each: ${sr.done?.done?.score} points, ${sr.done?.done?.badges.join(', ')}`);
+
+  // Whose life is this?: the right name at the first place, five times.
+  await page.evaluate(() => window.atlas.play.daily('lives'));
+  await page.waitForFunction(() => !!window.atlas.play.lives.info, null, { timeout: 20000 }).catch(() => {});
+  const lv = await info('lives');
+  const names = await page.evaluate(() => [...document.querySelectorAll('.play-card [data-life]')].map((b) => b.textContent.trim()));
+  for (let k = 0; k < 5; k++) {
+    await page.evaluate(() => { const p = window.atlas.play.lives; p.guess(p.info.round.who); });
+    await page.evaluate(() => window.atlas.play.lives.next());
+  }
+  const lvDone = await info('lives');
+  check(lv?.round?.choices.length === 4 && lv.round.choices.includes(lv.round.who) && names.length === 4 && names.every((n) => n.length > 3) && lvDone?.done?.score === 5000 && lvDone.done.badges.includes('play-lives'),
+    `Whose life is this?: four names (${names.join(', ')}); right at the first place five times: ${lvDone?.done?.score} points, ${lvDone?.done?.badges.join(', ')}`);
+  await page.evaluate(() => window.atlas.play.host.close());
+
+  // The same puzzles in another browser.
+  const other = await browser.newContext({ viewport: { width: 1200, height: 800 } });
+  const op = await other.newPage();
+  await bootGames(op);
+  const day2 = await firsts(op);
+  await other.close();
+  check(JSON.stringify(day1) === JSON.stringify(day2) && Object.values(day1).every(Boolean), `today's puzzles are the same in a second browser (${day1.climate}; ${day1.explorer}; ${day1.lives})`);
+
+  // The progress panel: the new badges, and around the app (a masterpiece opened counts).
+  // A masterpiece opened from the search (Masterpieces turns on, its card opens).
+  await page.evaluate(() => window.atlas.shell.search.open());
+  await page.fill('.search-field', 'las meninas');
+  await page.waitForTimeout(2500);
+  await page.evaluate(() => document.querySelector('.search-item')?.click());
+  await page.waitForTimeout(2500);
+  await page.evaluate(() => { window.atlas.shell.card.hide(); window.atlas.app.deactivate('masterpieces'); });
+  await page.evaluate(() => window.atlas.learn['openProgress']());
+  await page.waitForTimeout(600);
+  const prog = await page.evaluate(() => ({ text: document.querySelector('.progress')?.innerText ?? '', badges: [...document.querySelectorAll('.badge-chip.got')].map((b) => b.dataset.badge), all: [...document.querySelectorAll('.badge-chip')].map((b) => b.dataset.badge), seen: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').seen }));
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+  check(['play-climate', 'play-explorer', 'play-sunrise', 'play-lives'].every((b) => prog.badges.includes(b)) && ['play-museum', 'play-cartographer', 'app-trip', 'app-curator', 'app-biographer'].every((b) => prog.all.includes(b)) && /Around the app/i.test(prog.text) && /1 masterpieces opened/.test(prog.text) && prog.seen?.works?.length === 1,
+    `the progress panel: ${prog.badges.length} badges earned (${prog.badges.filter((b) => /climate|explorer|sunrise|lives/.test(b)).join(", ")}); "${(/[\d,]+ masterpieces opened[^\n]*/.exec(prog.text) ?? [""])[0]}" (${JSON.stringify(prog.seen)}); Around the app with Curator and Biographer (${prog.all.filter((b) => /^app-/.test(b)).join(", ")})`);
+
+  // Spanish.
+  await page.evaluate(() => window.atlas.app.setLang('es'));
+  await page.evaluate(() => window.atlas.play.climate.start());
+  await page.waitForFunction(() => !!window.atlas.play.climate.info, null, { timeout: 20000 }).catch(() => {});
+  const esCard = await card();
+  await page.evaluate(() => { window.atlas.play.host.close(); window.atlas.app.setLang('en'); });
+  check(/Detective del clima/.test(esCard) && /¿Qué ciudad tiene este clima/.test(esCard) && /temperatura/.test(esCard), `en español: "${esCard.split('\n').slice(0, 2).join(' · ')}"`);
+
+  check(!errors.length, `no page errors in v0.29.0's games${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

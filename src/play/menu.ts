@@ -13,6 +13,8 @@ import { GrandTour, TOUR_MODES, REGIONS, type TourMode } from './tour';
 import { NameThemAll, NAME_LISTS, CONTINENTS, type NameList } from './names';
 import { BorderChain } from './chain';
 import { Outline } from './outline';
+import { ClimateDetective, ExplorersLog, SunriseRace } from './rounds';
+import { WhoseLife } from './lifeguess';
 import { starText } from './score';
 import { GAMES, type GameId } from './logic';
 import { gameDaily, progress, dayKey } from '../learn/progress';
@@ -25,6 +27,11 @@ const GAME_TEXT: Record<GameId, { icon: string; en: string; es: string; desc: { 
   names: { icon: '📝', en: 'Name them all', es: 'Nómbralos todos', desc: { en: 'Every country, capital or neighbour, against the clock.', es: 'Todos los países, capitales o vecinos, contra el reloj.' } },
   chain: { icon: '⛓️', en: 'Border chain', es: 'Cadena de fronteras', desc: { en: 'Neighbour after neighbour, never the same twice, in 90 seconds.', es: 'Vecino tras vecino, sin repetir, en 90 segundos.' } },
   outline: { icon: '🖼️', en: 'Outline', es: 'Silueta', desc: { en: 'Guess a country from its shape.', es: 'Adivina un país por su forma.' } },
+  museum: { icon: '🏛️', en: 'Museum hop', es: 'De museo en museo', desc: { en: 'See five masterpieces travelling as little as you can.', es: 'Ve cinco obras maestras viajando lo menos posible.' } },
+  climate: { icon: '🌡️', en: 'Climate detective', es: 'Detective del clima', desc: { en: 'A city’s year of weather: pin where it is.', es: 'El clima de una ciudad a lo largo del año: ponle un pin.' } },
+  explorer: { icon: '🧭', en: 'Explorer’s log', es: 'Bitácora del explorador', desc: { en: 'Follow a journey by pinning each next stop.', es: 'Sigue un viaje poniendo un pin en cada parada.' } },
+  sunrise: { icon: '🌅', en: 'Sunrise race', es: 'Carrera del amanecer', desc: { en: 'Where is the sun rising right now? Setting? Noon?', es: '¿Dónde sale el sol ahora mismo? ¿Dónde se pone? ¿Dónde es mediodía?' } },
+  lives: { icon: '👤', en: 'Whose life is this?', es: '¿De quién es esta vida?', desc: { en: 'A life’s places, one by one: whose are they?', es: 'Los lugares de una vida, uno a uno: ¿de quién son?' } },
 };
 
 export class MapGames {
@@ -36,6 +43,11 @@ export class MapGames {
   readonly names: NameThemAll;
   readonly chain: BorderChain;
   readonly outline: Outline;
+  readonly museum: GrandTour;
+  readonly climate: ClimateDetective;
+  readonly explorer: ExplorersLog;
+  readonly sunrise: SunriseRace;
+  readonly lives: WhoseLife;
 
   constructor(private app: App, private shell: Shell) {
     this.host = new PlayHost(app, shell);
@@ -46,9 +58,14 @@ export class MapGames {
     this.names = new NameThemAll(app, shell, this.host);
     this.chain = new BorderChain(app, shell, this.host);
     this.outline = new Outline(app, shell, this.host);
+    this.museum = new GrandTour(app, shell, this.host, 'museum');
+    this.climate = new ClimateDetective(app, shell, this.host);
+    this.explorer = new ExplorersLog(app, shell, this.host);
+    this.sunrise = new SunriseRace(app, shell, this.host);
+    this.lives = new WhoseLife(app, shell, this.host);
     const back = () => void this.openMenu();
     const borders = () => this.hop.borders();
-    for (const g of [this.hop, this.pin, this.hilo, this.tour, this.names, this.chain, this.outline]) g.back = back;
+    for (const g of [this.hop, this.pin, this.hilo, this.tour, this.names, this.chain, this.outline, this.museum, this.climate, this.explorer, this.sunrise, this.lives]) g.back = back;
     for (const g of [this.tour, this.names, this.chain, this.outline]) g.borders = borders;
     shell.addMenu({ id: 'play', icon: Route, label: () => L('Map games', 'Juegos en el mapa'), order: 29, onClick: () => void this.openMenu() });
   }
@@ -102,6 +119,8 @@ export class MapGames {
     if (g === 'hop') { void this.hop.openMenu(); return; }
     if (g === 'hilo') { void this.hilo.start(); return; }
     if (g === 'chain') { void this.chain.start(); return; }
+    // The v0.29.0 games have no choices: straight to the game.
+    if (g === 'museum' || g === 'climate' || g === 'explorer' || g === 'sunrise' || g === 'lives') { void this[g].start(); return; }
     const T = GAME_TEXT[g];
     const body = h('div', { class: 'play-menu' });
     const backB = h('button', { type: 'button', class: 'pill sm', 'data-play': 'back' }, icon(ChevronLeft, 15), L('Map games', 'Juegos en el mapa'));

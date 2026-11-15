@@ -93,6 +93,25 @@ export interface LayerTapUi {
   y: number;
 }
 
+/** Something a filter shows that the search box can find (v0.29.0): a person, a museum, a site… */
+export interface LayerHit {
+  label: string;
+  sub: string;
+  icon: string;
+  lon: number;
+  lat: number;
+  /** The matcher's 0–100 (ui/match.ts), plus a little for the better known. */
+  score: number;
+  /** The web-map zoom to land at (default 9: its dot apart from its neighbours). */
+  wz?: number;
+  /** The item of the filter's crowd (layers/crowd.ts) whose dot to ring, wherever the crowd moved it. */
+  dot?: unknown;
+  /** Before the flight: what the filter needs to show it (an option put back to everything). */
+  prepare?(inst: LayerInstance): void;
+  /** Opens its card or panel, as a tap on its dot would. */
+  open?(ui: LayerTapUi): void;
+}
+
 export interface LayerInstance {
   def: LayerDef;
   opacity: number;
@@ -145,6 +164,16 @@ export interface LayerDef {
   valueLabel?(countryId: string, inst: LayerInstance): string | null;
   info?(countryId: string, inst: LayerInstance, lang: Lang): InfoRow[] | null;
   pick?(lon: number, lat: number, inst: LayerInstance, lang: Lang): InfoRow[] | null;
+  /**
+   * What the search box finds among what the filter shows (v0.29.0). `match` scores a name against what was typed
+   * (0: no match). Called with the filter's instance when it is on, and with a stand-in (its default options) when it
+   * is off, once `searchLoad` has its data.
+   */
+  search?(match: (name: string | null | undefined) => number, inst: LayerInstance, lang: Lang): LayerHit[];
+  /** Loads what `search` needs while the filter is off (the search box asks the first time something is typed). */
+  searchLoad?(): Promise<void>;
+  /** What the search box finds in it, for its hint ("people", "museums"). */
+  searchHint?: I18nText;
   /** A tap on something the filter draws (a site, a marker): open its card and return true; else false. */
   tap?(lon: number, lat: number, inst: LayerInstance, ui: LayerTapUi): boolean;
   onOptionsChanged?(inst: LayerInstance): void;
