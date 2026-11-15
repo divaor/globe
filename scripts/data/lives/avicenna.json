@@ -1,0 +1,339 @@
+{
+  "id": "avicenna",
+  "qid": "Q8011",
+  "name": { "en": "Avicenna", "es": "Avicena" },
+  "icon": "🩺",
+  "field": "science",
+  "known": { "en": "Persian physician and philosopher", "es": "Médico y filósofo persa" },
+  "born": "0980",
+  "bornAbout": true,
+  "died": "1037-06",
+  "summary": {
+    "en": "Ibn Sina, whom Europe called Avicenna, was a doctor at 17 and a wanderer for most of his life, serving and fleeing princes from Bukhara to Isfahan. His Canon of Medicine taught doctors on three continents for some 600 years.",
+    "es": "Ibn Sina, a quien Europa llamó Avicena, fue médico a los 17 años y errante casi toda su vida: sirvió a príncipes y huyó de ellos, de Bujará a Isfahán. Su Canon de medicina formó médicos en tres continentes durante unos 600 años."
+  },
+  "unsure": {
+    "en": "Most of what is known of his life comes from his own short autobiography and from his pupil al-Juzjani, who finished it. They give few dates, so the years of his journeys are approximate.",
+    "es": "Casi todo lo que se sabe de su vida viene de su breve autobiografía y de su alumno al-Juzjani, que la terminó. Dan pocas fechas, así que los años de sus viajes son aproximados."
+  },
+  "steps": [
+    {
+      "date": "0980",
+      "about": true,
+      "kind": "born",
+      "place": { "en": "Afshona, near Bukhara, Uzbekistan", "es": "Afshona, cerca de Bujará, Uzbekistán" },
+      "at": [64.3792, 39.9944],
+      "title": { "en": "Born near Bukhara", "es": "Nace cerca de Bujará" },
+      "text": {
+        "en": "Abu Ali ibn Sina, whom Europe would call Avicenna, was born in the village of Afshona. His father, from Balkh in today's Afghanistan, was an official of the Samanid emirs, who ruled from nearby Bukhara.",
+        "es": "Abu Ali ibn Sina, a quien Europa llamaría Avicena, nació en la aldea de Afshona. Su padre, originario de Balj, en el actual Afganistán, era funcionario de los emires samánidas, que gobernaban desde la cercana Bujará."
+      },
+      "details": {
+        "en": "His mother, Sitara, came from Afshona itself. The Samanids were a Persian dynasty, and their court at Bukhara rivalled Baghdad as a home of scholars and poets. Under them the Persian language, now written in Arabic letters, was reborn as a language of poetry and learning. Avicenna would write most of his books in Arabic, the language of science from Spain to India, and a few in Persian.",
+        "es": "Su madre, Sitara, era de la misma Afshona. Los samánidas eran una dinastía persa, y su corte de Bujará competía con Bagdad como hogar de sabios y poetas. Con ellos la lengua persa, escrita ahora con letras árabes, renació como lengua de poesía y de estudio. Avicena escribiría la mayoría de sus libros en árabe, la lengua de la ciencia desde España hasta la India, y unos pocos en persa."
+      },
+      "unsure": {
+        "en": "The traditional year is 980, the year 370 of the Islamic calendar. Some scholars think he was born a few years earlier.",
+        "es": "El año tradicional es 980, el año 370 del calendario islámico. Algunos estudiosos creen que nació unos años antes."
+      }
+    },
+    {
+      "date": "0985",
+      "about": true,
+      "kind": "study",
+      "place": { "en": "Bukhara, Uzbekistan", "es": "Bujará, Uzbekistán" },
+      "at": [64.4231, 39.7667],
+      "title": { "en": "The boy who learned everything", "es": "El niño que lo aprendió todo" },
+      "text": {
+        "en": "The family moved to Bukhara, the Samanid capital. By ten, he says, he knew the Quran by heart. A greengrocer taught him Indian arithmetic; then came law, logic, Euclid's geometry and Ptolemy's astronomy.",
+        "es": "La familia se mudó a Bujará, capital samánida. A los diez años, cuenta, sabía el Corán de memoria. Un verdulero le enseñó la aritmética india; luego vinieron el derecho, la lógica, la geometría de Euclides y la astronomía de Ptolomeo."
+      },
+      "details": {
+        "en": "His tutor, al-Natili, soon found that the pupil solved the problems faster than he did, and left him to read alone. At sixteen he turned to medicine, which he judged 'not one of the difficult sciences', and began treating the sick to learn from practice. Only Aristotle's Metaphysics defeated him. He read it forty times without understanding it, he wrote, until he bought for three silver coins a little book by the philosopher al-Farabi that made everything clear. In thanks he gave alms to the poor.",
+        "es": "Su maestro, al-Natili, pronto vio que el alumno resolvía los problemas más rápido que él, y lo dejó leer solo. A los dieciséis años pasó a la medicina, que juzgó «una ciencia que no es de las difíciles», y empezó a atender enfermos para aprender de la práctica. Solo la Metafísica de Aristóteles lo derrotó. La leyó cuarenta veces sin entenderla, escribió, hasta que compró por tres monedas de plata un librito del filósofo al-Farabi que lo aclaraba todo. En agradecimiento dio limosna a los pobres."
+      },
+      "unsure": {
+        "en": "These stories come from his own account of his youth, written many years later. No one else recorded them.",
+        "es": "Estas historias vienen de su propio relato de juventud, escrito muchos años después. Nadie más las registró."
+      }
+    },
+    {
+      "date": "0997",
+      "about": true,
+      "kind": "moment",
+      "place": { "en": "Bukhara, Uzbekistan", "es": "Bujará, Uzbekistán" },
+      "at": [64.4307, 39.7703],
+      "title": { "en": "The emir's doctor at seventeen", "es": "Médico del emir a los diecisiete" },
+      "text": {
+        "en": "The emir Nuh II fell ill, and his doctors called in the 17-year-old. As his reward he asked to read in the royal library. There, in room after room of books stored in chests, he found works he never saw again.",
+        "es": "El emir Nuh II enfermó, y sus médicos llamaron al joven de 17 años. Como recompensa pidió leer en la biblioteca real. Allí, en una sala tras otra de libros guardados en cofres, encontró obras que nunca volvió a ver."
+      },
+      "details": {
+        "en": "By eighteen, he wrote, he had finished with all the sciences: what came later was deeper understanding, not new knowledge. The library burned down soon afterwards, and rivals whispered that he had set the fire himself, so that no one else could learn what he had learned. He began to write books of his own. Then the world of his youth collapsed. Turkic armies took Bukhara in 999 and ended Samanid rule, and a few years later his father died.",
+        "es": "A los dieciocho años, escribió, había terminado con todas las ciencias: lo que vino después fue una comprensión más profunda, no saber nuevo. La biblioteca se quemó poco después, y sus rivales murmuraron que él mismo le había prendido fuego, para que nadie más aprendiera lo que él había aprendido. Empezó a escribir sus propios libros. Entonces el mundo de su juventud se derrumbó. Ejércitos turcos tomaron Bujará en 999 y acabaron con el poder samánida, y pocos años después murió su padre."
+      },
+      "unsure": {
+        "en": "The year is approximate: he says only that he was seventeen. Nuh II died in 997.",
+        "es": "El año es aproximado: él solo dice que tenía diecisiete años. Nuh II murió en 997."
+      }
+    },
+    {
+      "date": "1002",
+      "about": true,
+      "kind": "career",
+      "place": { "en": "Konye-Urgench (then Gurganj), Turkmenistan", "es": "Kunya-Urgench (entonces Gurganj), Turkmenistán" },
+      "label": { "en": "Gurganj", "es": "Gurganj" },
+      "at": [59.1531, 42.3261],
+      "title": { "en": "North to Khwarazm", "es": "Al norte, a Corasmia" },
+      "text": {
+        "en": "'Necessity', he wrote, forced him to leave Bukhara. He travelled to Gurganj, the capital of Khwarazm, near the Amu Darya river, where the ruler's minister, a lover of learning, gave him a salary among other scholars.",
+        "es": "La «necesidad», escribió, lo obligó a dejar Bujará. Viajó a Gurganj, la capital de Corasmia, cerca del río Amu Daria, donde el ministro del soberano, amante del saber, le dio un sueldo entre otros sabios."
+      },
+      "details": {
+        "en": "Among them was al-Biruni, the other great scientist of the age, with whom he had argued by letter about Aristotle's picture of the world: could other worlds exist? Why does ice float? The answers grew sharp on both sides. About 1012 the good years ended. A later story says that the conqueror Mahmud of Ghazni demanded the scholars of Gurganj for his own court, and that Avicenna slipped away across the Karakum desert rather than go. He himself says only that necessity drove him on again.",
+        "es": "Entre ellos estaba al-Biruni, el otro gran científico de la época, con quien había discutido por carta sobre la imagen del mundo de Aristóteles: ¿pueden existir otros mundos? ¿Por qué flota el hielo? Las respuestas se volvieron ásperas de los dos lados. Hacia 1012 se acabaron los buenos años. Un relato posterior dice que el conquistador Mahmud de Gazni exigió a los sabios de Gurganj para su propia corte, y que Avicena prefirió escapar por el desierto de Karakum. Él solo dice que la necesidad lo empujó otra vez."
+      },
+      "unsure": {
+        "en": "He left Bukhara at some time between 999 and about 1005. The story of Mahmud's summons was written down more than a century later.",
+        "es": "Dejó Bujará en algún momento entre 999 y alrededor de 1005. La historia de la orden de Mahmud se escribió más de un siglo después."
+      },
+      "places": [
+        {
+          "name": { "en": "Al-Biruni", "es": "Al-Biruni" },
+          "at": [59.1541, 42.3266],
+          "cat": "person",
+          "type": "person",
+          "date": "1004",
+          "life": ["0973", "1050"],
+          "text": {
+            "en": "A scientist from Khwarazm, seven years older than Avicenna, who later measured the size of the Earth and wrote a great study of India. He sent Avicenna eighteen hard questions about Aristotle's physics.",
+            "es": "Un científico de Corasmia, siete años mayor que Avicena, que más tarde midió el tamaño de la Tierra y escribió un gran estudio sobre la India. Le envió a Avicena dieciocho preguntas difíciles sobre la física de Aristóteles."
+          },
+          "wiki": { "en": "Al-Biruni", "es": "Al-Biruni" }
+        }
+      ]
+    },
+    {
+      "date": "1012",
+      "kind": "journey",
+      "place": { "en": "Gonbad-e Kavus (then Gurgan), Iran", "es": "Gonbad-e Kavus (entonces Gurgán), Irán" },
+      "label": { "en": "Gurgan", "es": "Gurgán" },
+      "at": [55.1672, 37.25],
+      "title": { "en": "Too late for the prince", "es": "Demasiado tarde para el príncipe" },
+      "text": {
+        "en": "He made his way from town to town to Gurgan, near the Caspian Sea, hoping to serve its ruler Qabus, a poet and a patron of scholars. When he arrived, Qabus had been overthrown by his own army and was dead.",
+        "es": "Fue de ciudad en ciudad hacia Gurgán, cerca del mar Caspio, con la esperanza de servir a su soberano Qabus, poeta y protector de sabios. Cuando llegó, a Qabus lo había derrocado su propio ejército y estaba muerto."
+      },
+      "details": {
+        "en": "In Gurgan he found something better than a prince: a young scholar named al-Juzjani, who became his pupil, stayed with him for the remaining twenty-five years, wrote down his life and saved many of his books. A local admirer bought him a house, and there, al-Juzjani says, he began the work that made him famous, the Canon of Medicine. He summed up his fortunes in a line of verse: when I became great, no land was wide enough for me; when my price went up, no one would buy.",
+        "es": "En Gurgán encontró algo mejor que un príncipe: un joven estudioso llamado al-Juzjani, que se hizo su alumno, lo acompañó los veinticinco años que le quedaban, escribió su vida y salvó muchos de sus libros. Un admirador del lugar le compró una casa, y allí, dice al-Juzjani, empezó la obra que lo hizo famoso, el Canon de medicina. Resumió su suerte en un verso: cuando me hice grande, no hubo tierra que me bastara; cuando subió mi precio, no hubo quien me comprara."
+      },
+      "unsure": {
+        "en": "Medieval Gurgan stood beside today's Gonbad-e Kavus, not at the modern city called Gorgan. Some accounts say he had begun the Canon earlier, at Gurganj.",
+        "es": "La Gurgán medieval estaba junto a la actual Gonbad-e Kavus, no en la ciudad moderna que se llama Gorgán. Algunos relatos dicen que había empezado el Canon antes, en Gurganj."
+      },
+      "places": [
+        {
+          "name": { "en": "Gonbad-e Qabus", "es": "Gonbad-e Qabus" },
+          "at": [55.169, 37.2581],
+          "cat": "place",
+          "type": "structure",
+          "date": "1006",
+          "text": {
+            "en": "The brick tomb tower of the emir Qabus, 53 metres high, built in 1006–1007 while he still ruled. It is the only building that survives of Gurgan, his capital.",
+            "es": "La torre funeraria de ladrillo del emir Qabus, de 53 metros de altura, construida en 1006–1007, cuando él todavía gobernaba. Es el único edificio que queda de Gurgán, su capital."
+          },
+          "wiki": { "en": "Gonbad-e Qabus (tower)", "es": "Gonbad-e Qābus" },
+          "whs": 1398
+        }
+      ]
+    },
+    {
+      "date": "1014",
+      "about": true,
+      "kind": "career",
+      "place": { "en": "Ray, near Tehran, Iran", "es": "Ray, cerca de Teherán, Irán" },
+      "at": [51.44, 35.5935],
+      "title": { "en": "Physician at Ray", "es": "Médico en Ray" },
+      "text": {
+        "en": "At Ray, an old city beside today's Tehran, he became physician to the Buyid court: the young emir Majd al-Dawla, who suffered from a deep melancholy, and his mother, the Sayyida, who really ruled. He stayed about a year.",
+        "es": "En Ray, una antigua ciudad junto a la actual Teherán, fue médico de la corte de los buyíes: el joven emir Majd al-Dawla, que sufría una profunda melancolía, y su madre, la Sayyida, que era quien gobernaba. Se quedó cerca de un año."
+      }
+    },
+    {
+      "date": "1015",
+      "kind": "power",
+      "place": { "en": "Hamadan, Iran", "es": "Hamadán, Irán" },
+      "at": [48.5147, 34.7983],
+      "title": { "en": "Doctor, then vizier", "es": "Médico, y después visir" },
+      "text": {
+        "en": "In Hamadan he cured the emir Shams al-Dawla of a painful colic and was made his vizier, the head of the government. The soldiers mutinied and demanded his death. The emir sent him away, then called him back.",
+        "es": "En Hamadán curó al emir Shams al-Dawla de un cólico doloroso y fue nombrado su visir, el jefe del gobierno. Los soldados se amotinaron y exigieron su muerte. El emir lo alejó, y después lo volvió a llamar."
+      },
+      "details": {
+        "en": "His days belonged to the state, so he taught at night. After dark his pupils gathered at his house: one read aloud from the Canon of Medicine, another from the Book of Healing, the great encyclopedia of logic, nature, mathematics and philosophy that he had begun at al-Juzjani's request. Then, the pupil remembered, the singers came in and the wine was brought. In Hamadan he completed the Canon: about a million words that set in order everything then known of the body, its illnesses and their cures.",
+        "es": "Sus días eran del Estado, así que enseñaba de noche. Al oscurecer, sus alumnos se reunían en su casa: uno leía en voz alta el Canon de medicina, otro el Libro de la curación, la gran enciclopedia de lógica, naturaleza, matemáticas y filosofía que había empezado a pedido de al-Juzjani. Después, recordaba el alumno, entraban los cantores y se servía el vino. En Hamadán terminó el Canon: cerca de un millón de palabras que ponían en orden todo lo que entonces se sabía del cuerpo, sus enfermedades y sus remedios."
+      },
+      "unsure": {
+        "en": "The Canon took more than ten years to write. Most sources say it was finished at Hamadan and give the year 1025, though he may have left for Isfahan a year earlier.",
+        "es": "El Canon tardó más de diez años en escribirse. La mayoría de las fuentes dice que se terminó en Hamadán y da el año 1025, aunque quizá él se había ido a Isfahán un año antes."
+      },
+      "places": [
+        {
+          "name": { "en": "The Canon of Medicine", "es": "El Canon de medicina" },
+          "at": [48.5146, 34.7988],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1025",
+          "by": { "en": "Avicenna (Ibn Sina)", "es": "Avicena (Ibn Sina)" },
+          "text": {
+            "en": "Five books: the principles of medicine, simple drugs, diseases from head to toe, fevers and other ills of the whole body, and mixed remedies. Put into Latin in Toledo, it was taught in Europe into the 17th century.",
+            "es": "Cinco libros: principios de la medicina, medicamentos simples, enfermedades de la cabeza a los pies, fiebres y otros males de todo el cuerpo, y remedios compuestos. Traducido al latín en Toledo, se enseñó en Europa hasta el siglo XVII."
+          },
+          "wiki": { "en": "The Canon of Medicine", "es": "El canon de medicina" }
+        }
+      ]
+    },
+    {
+      "date": "1023",
+      "about": true,
+      "kind": "struggle",
+      "place": { "en": "Hamadan, Iran", "es": "Hamadán, Irán" },
+      "at": [48.5147, 34.7983],
+      "title": { "en": "In hiding, then in prison", "es": "Escondido, y después preso" },
+      "text": {
+        "en": "When the emir died in 1021, Avicenna would not serve his heir. He hid in a friend's house, writing fifty pages a day. His secret letters to the ruler of Isfahan were found, and he was locked in the fortress of Fardajan.",
+        "es": "Cuando el emir murió en 1021, Avicena no quiso servir a su heredero. Se escondió en casa de un amigo y escribía cincuenta páginas por día. Descubrieron sus cartas secretas al soberano de Isfahán y lo encerraron en la fortaleza de Fardajan."
+      },
+      "details": {
+        "en": "In hiding, without a single book to consult, he wrote a large part of the Book of Healing from memory. In the fortress, where he spent four months, he went on writing. Among the pages of these years is one of the most famous thought experiments in philosophy: imagine a person created all at once, floating in empty air, eyes covered, limbs apart, feeling nothing at all. Would that person still know that he exists? Yes, said Avicenna: so the self is something we know apart from the body. Then the army of Isfahan took Hamadan, and he was freed.",
+        "es": "Escondido, sin un solo libro que consultar, escribió de memoria una gran parte del Libro de la curación. En la fortaleza, donde pasó cuatro meses, siguió escribiendo. Entre las páginas de estos años está uno de los experimentos mentales más famosos de la filosofía: imagina a una persona creada de golpe, flotando en el aire vacío, con los ojos tapados y los miembros separados, sin sentir absolutamente nada. ¿Sabría esa persona que existe? Sí, dijo Avicena: entonces el yo es algo que conocemos aparte del cuerpo. Después el ejército de Isfahán tomó Hamadán, y quedó libre."
+      },
+      "unsure": {
+        "en": "The dates of the hiding and of the prison, between 1021 and 1024, are approximate. Fardajan stood somewhere outside Hamadan; its exact site is uncertain, and the marker shows the city.",
+        "es": "Las fechas del escondite y de la prisión, entre 1021 y 1024, son aproximadas. Fardajan estaba en algún lugar fuera de Hamadán; su sitio exacto es incierto, y el marcador señala la ciudad."
+      },
+      "places": [
+        {
+          "name": { "en": "The Book of Healing", "es": "El libro de la curación" },
+          "at": [48.52, 34.8],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1027",
+          "by": { "en": "Avicenna (Ibn Sina)", "es": "Avicena (Ibn Sina)" },
+          "text": {
+            "en": "Not a book of medicine, in spite of its name: an encyclopedia of logic, the sciences of nature, mathematics and metaphysics, meant to cure the soul of ignorance. Finished about 1027; partly put into Latin in Toledo.",
+            "es": "No es un libro de medicina, a pesar de su nombre: es una enciclopedia de lógica, ciencias de la naturaleza, matemáticas y metafísica, pensada para curar al alma de la ignorancia. Terminado hacia 1027; traducido en parte al latín en Toledo."
+          },
+          "wiki": { "en": "The Book of Healing", "es": "El libro de la curación" }
+        }
+      ]
+    },
+    {
+      "date": "1024",
+      "about": true,
+      "kind": "career",
+      "place": { "en": "Isfahan, Iran", "es": "Isfahán, Irán" },
+      "at": [51.6746, 32.6525],
+      "title": { "en": "Thirteen years in Isfahan", "es": "Trece años en Isfahán" },
+      "text": {
+        "en": "Dressed as wandering Sufis, he, his brother, al-Juzjani and two slaves slipped out of Hamadan and reached Isfahan. Its ruler, Ala al-Dawla, received him with honour, and he served him for the rest of his life.",
+        "es": "Vestidos de sufíes errantes, él, su hermano, al-Juzjani y dos esclavos salieron a escondidas de Hamadán y llegaron a Isfahán. Su soberano, Ala al-Dawla, lo recibió con honores, y él lo sirvió el resto de su vida."
+      },
+      "details": {
+        "en": "Every Friday evening the prince gathered scholars to debate before him, and no one, says al-Juzjani, could match Avicenna. Here he finished the Book of Healing, made a shorter version of it, and wrote a handbook of philosophy in Persian, the Book of Knowledge, at a time when learned books were written in Arabic. He designed instruments for observing the stars, and he rode with the prince on campaign, writing even on the march. In 1030 soldiers from Ghazni plundered the city and carried off his books; one large work, still in draft, was lost for good.",
+        "es": "Cada viernes por la noche el príncipe reunía a los sabios para que debatieran ante él, y nadie, dice al-Juzjani, podía igualar a Avicena. Aquí terminó el Libro de la curación, hizo una versión más corta y escribió un manual de filosofía en persa, el Libro del conocimiento, en una época en que los libros eruditos se escribían en árabe. Diseñó instrumentos para observar las estrellas, y acompañó al príncipe en sus campañas, escribiendo incluso durante la marcha. En 1030 soldados de Gazni saquearon la ciudad y se llevaron sus libros; una obra grande, todavía en borrador, se perdió para siempre."
+      },
+      "unsure": {
+        "en": "He reached Isfahan in 1023 or 1024.",
+        "es": "Llegó a Isfahán en 1023 o 1024."
+      }
+    },
+    {
+      "date": "1037-06",
+      "kind": "died",
+      "place": { "en": "Hamadan, Iran", "es": "Hamadán, Irán" },
+      "at": [48.5132, 34.7915],
+      "title": { "en": "The last campaign", "es": "La última campaña" },
+      "text": {
+        "en": "Worn out by work and by a colic that he treated himself, Avicenna set out with the prince's army once more. He collapsed on the road and died at Hamadan in June 1037, aged about 57. He is buried there.",
+        "es": "Agotado por el trabajo y por un cólico que él mismo se trataba, Avicena partió una vez más con el ejército del príncipe. Se desplomó en el camino y murió en Hamadán en junio de 1037, a los 57 años, más o menos. Allí está enterrado."
+      },
+      "details": {
+        "en": "Al-Juzjani, who was with him, wrote that the master knew his strength was gone and stopped treating himself. He gave what he owned to the poor, freed his slaves, and read the Quran through from beginning to end every three days until he died, in the month of Ramadan. Some 240 of his works survive, in Arabic and Persian. A new mausoleum was raised over his grave in the 1950s.",
+        "es": "Al-Juzjani, que estaba con él, escribió que el maestro supo que ya no tenía fuerzas y dejó de tratarse. Dio lo que tenía a los pobres, liberó a sus esclavos y leyó el Corán de principio a fin cada tres días hasta que murió, en el mes de Ramadán. Se conservan unas 240 de sus obras, en árabe y en persa. En la década de 1950 se levantó un nuevo mausoleo sobre su tumba."
+      },
+      "unsure": {
+        "en": "Sources give different days for his death, such as 22 or 24 June 1037. They agree on the month of Ramadan in the year 428 of the Islamic calendar.",
+        "es": "Las fuentes dan días distintos para su muerte, como el 22 o el 24 de junio de 1037. Coinciden en el mes de Ramadán del año 428 del calendario islámico."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Avicenna Mausoleum, Hamadan", "es": "Mausoleo de Avicena, Hamadán" },
+      "at": [48.5132, 34.7915],
+      "kind": "grave",
+      "text": {
+        "en": "His tomb lies under a pointed tower raised on twelve columns, built in the 1950s and inspired by the tower of Qabus. The building holds a small museum and a library.",
+        "es": "Su tumba está bajo una torre puntiaguda sostenida por doce columnas, construida en la década de 1950 e inspirada en la torre de Qabus. El edificio tiene un pequeño museo y una biblioteca."
+      }
+    },
+    {
+      "name": { "en": "Avicenna Museum, Afshona", "es": "Museo de Avicena, Afshona" },
+      "at": [64.3792, 39.9944],
+      "kind": "museum",
+      "text": {
+        "en": "A museum in the village where he was born, opened for the thousandth anniversary of his birth in 1980, about 25 km north of Bukhara.",
+        "es": "Un museo en la aldea donde nació, abierto para el milenario de su nacimiento, en 1980, a unos 25 km al norte de Bujará."
+      }
+    },
+    {
+      "name": { "en": "Historic centre of Bukhara", "es": "Centro histórico de Bujará" },
+      "at": [64.4333, 39.7667],
+      "kind": "site",
+      "text": {
+        "en": "The city of his youth. Little of Samanid Bukhara is left, but the Samanid Mausoleum, a cube of patterned brick built before he was born, is one building he surely knew.",
+        "es": "La ciudad de su juventud. Queda poco de la Bujará samánida, pero el Mausoleo samánida, un cubo de ladrillo labrado construido antes de que él naciera, es un edificio que sin duda conoció."
+      },
+      "wiki": { "en": "Bukhara", "es": "Bujará" },
+      "whs": 602
+    },
+    {
+      "name": { "en": "Kunya-Urgench", "es": "Kunya-Urgench" },
+      "at": [59.1531, 42.3261],
+      "kind": "site",
+      "text": {
+        "en": "The ruins of Gurganj, the capital of Khwarazm, where he worked beside al-Biruni. Most of the monuments that stand today were built in the centuries after him.",
+        "es": "Las ruinas de Gurganj, la capital de Corasmia, donde trabajó junto a al-Biruni. La mayoría de los monumentos que hoy siguen en pie se construyeron en los siglos posteriores a él."
+      },
+      "wiki": { "en": "Konye-Urgench", "es": "Kunya-Urgench" },
+      "whs": 1199
+    },
+    {
+      "name": { "en": "Gonbad-e Qabus tower", "es": "Torre de Gonbad-e Qabus" },
+      "at": [55.169, 37.2581],
+      "kind": "site",
+      "text": {
+        "en": "The 53-metre brick tower built in 1006 as the tomb of the emir Qabus, whom Avicenna came too late to serve. It marks the place of medieval Gurgan, where he met his pupil al-Juzjani.",
+        "es": "La torre de ladrillo de 53 metros construida en 1006 como tumba del emir Qabus, a quien Avicena llegó demasiado tarde para servir. Señala el lugar de la Gurgán medieval, donde conoció a su alumno al-Juzjani."
+      },
+      "wiki": { "en": "Gonbad-e Qabus (tower)", "es": "Gonbad-e Qābus" },
+      "whs": 1398
+    }
+  ],
+  "legacy": {
+    "en": "For some 600 years the Canon of Medicine was the book from which doctors learned, from Samarkand to Montpellier. Avicenna taught them to observe, to test each drug with care, and to see that water, soil and the mind itself can make a body ill. His philosophy shaped Muslim, Jewish and Christian thinkers alike, among them Thomas Aquinas. Iran, Uzbekistan and Tajikistan all honour him as their own.",
+    "es": "Durante unos 600 años el Canon de medicina fue el libro con el que aprendían los médicos, de Samarcanda a Montpellier. Avicena les enseñó a observar, a probar con cuidado cada medicamento y a ver que el agua, el suelo y la propia mente pueden enfermar al cuerpo. Su filosofía marcó por igual a pensadores musulmanes, judíos y cristianos, entre ellos Tomás de Aquino. Irán, Uzbekistán y Tayikistán lo honran como suyo."
+  },
+  "sources": [
+    { "title": "Wikipedia: Avicenna", "url": "https://en.wikipedia.org/wiki/Avicenna" },
+    { "title": "Wikipedia (es): Avicena", "url": "https://es.wikipedia.org/wiki/Avicena" },
+    { "title": "Encyclopaedia Iranica: Avicenna, ii. Biography (Dimitri Gutas)", "url": "https://www.iranicaonline.org/articles/avicenna-ii" },
+    { "title": "Wikipedia: The Canon of Medicine", "url": "https://en.wikipedia.org/wiki/The_Canon_of_Medicine" },
+    { "title": "Stanford Encyclopedia of Philosophy: Ibn Sina [Avicenna]", "url": "https://plato.stanford.edu/entries/ibn-sina/" },
+    { "title": "UNESCO World Heritage Centre: Gonbad-e Qābus", "url": "https://whc.unesco.org/en/list/1398" }
+  ]
+}

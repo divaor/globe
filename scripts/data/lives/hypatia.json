@@ -1,0 +1,239 @@
+{
+  "id": "hypatia",
+  "qid": "Q11903",
+  "name": { "en": "Hypatia", "es": "Hipatia" },
+  "icon": "🌌",
+  "field": "science",
+  "known": { "en": "Philosopher and mathematician of Alexandria", "es": "Filósofa y matemática de Alejandría" },
+  "born": "0360",
+  "bornAbout": true,
+  "died": "0415-03",
+  "summary": {
+    "en": "The best-known woman scholar of the ancient world taught mathematics, astronomy and philosophy in Alexandria, to Christians and pagans alike. In 415 a mob killed her in the middle of a fight for power over the city.",
+    "es": "La sabia más conocida del mundo antiguo enseñó matemáticas, astronomía y filosofía en Alejandría, a cristianos y paganos por igual. En 415 una turba la mató en medio de una lucha por el poder en la ciudad."
+  },
+  "unsure": {
+    "en": "Nothing she wrote survives under her own name, and nothing is known of her childhood. Her life is pieced together from a pupil's letters and a handful of historians, some of them writing long after her death. Her birth is placed anywhere from 350 to 370.",
+    "es": "No se conserva nada escrito por ella con su nombre, y no se sabe nada de su infancia. Su vida se reconstruye con las cartas de un alumno y con un puñado de historiadores, algunos muy posteriores a su muerte. Su nacimiento se sitúa entre 350 y 370."
+  },
+  "steps": [
+    {
+      "date": "0360",
+      "about": true,
+      "kind": "born",
+      "place": { "en": "Alexandria, Egypt", "es": "Alejandría, Egipto" },
+      "at": [29.9158, 31.2018],
+      "title": { "en": "Daughter of Theon", "es": "Hija de Teón" },
+      "text": {
+        "en": "Hypatia was born in Alexandria, the great Greek-speaking city of Roman Egypt. Her father, Theon, was its leading mathematician, and he was her teacher.",
+        "es": "Hipatia nació en Alejandría, la gran ciudad de habla griega del Egipto romano. Su padre, Teón, era el matemático más importante de la ciudad, y fue su maestro."
+      },
+      "details": {
+        "en": "Theon headed a school of mathematics and philosophy. His edition of Euclid's Elements, the great textbook of geometry, was the one the world used for many centuries. Nothing is known of Hypatia's mother. Alexandria was then nearly 700 years old and one of the largest cities of the Roman Empire: a port where Greeks, Egyptians and Jews lived side by side, and where the old gods and the fast-growing Christian Church competed for the people.",
+        "es": "Teón dirigía una escuela de matemáticas y filosofía. Su edición de los Elementos de Euclides, el gran manual de geometría, fue la que el mundo usó durante muchos siglos. De la madre de Hipatia no se sabe nada. Alejandría tenía entonces casi 700 años y era una de las ciudades más grandes del Imperio romano: un puerto donde convivían griegos, egipcios y judíos, y donde los dioses antiguos y la Iglesia cristiana, que crecía rápido, se disputaban a la gente."
+      },
+      "unsure": {
+        "en": "Her year of birth is unknown. Scholars have proposed dates from about 350 to 370; one chronicler calls her an old woman when she died, which would favour an earlier date.",
+        "es": "No se conoce el año de su nacimiento. Los estudiosos han propuesto fechas entre 350 y 370; un cronista la llama anciana cuando murió, lo que apoyaría una fecha más temprana."
+      },
+      "places": [
+        {
+          "name": { "en": "Theon of Alexandria", "es": "Teón de Alejandría" },
+          "at": [29.9092, 31.2089],
+          "cat": "person",
+          "type": "person",
+          "date": "0364",
+          "life": ["0335", "0405"],
+          "text": {
+            "en": "Mathematician and astronomer, called 'the man from the Museum' by a Byzantine encyclopedia. He recorded eclipses of the Sun and the Moon at Alexandria in 364 and wrote guides to Ptolemy's astronomy for students.",
+            "es": "Matemático y astrónomo, a quien una enciclopedia bizantina llama «el hombre del Museo». Registró eclipses de Sol y de Luna en Alejandría en 364 y escribió guías de la astronomía de Ptolomeo para estudiantes."
+          }
+        }
+      ]
+    },
+    {
+      "date": "0385",
+      "about": true,
+      "kind": "made",
+      "place": { "en": "Alexandria, Egypt", "es": "Alejandría, Egipto" },
+      "at": [29.9158, 31.2018],
+      "title": { "en": "Her father's pupil, and more", "es": "Alumna de su padre, y algo más" },
+      "text": {
+        "en": "With her father she corrected the text of Ptolemy's Almagest, the handbook of astronomy: one volume says it was 'revised by my daughter Hypatia, the philosopher'. A historian of her day wrote that she surpassed him.",
+        "es": "Con su padre corrigió el texto del Almagesto de Ptolomeo, el manual de astronomía: un volumen dice que fue «revisado por mi hija Hipatia, la filósofa». Un historiador de su tiempo escribió que ella lo superó."
+      },
+      "details": {
+        "en": "She also wrote explanations of two hard books: the Arithmetica of Diophantus, a collection of number problems that is an ancestor of algebra, and the work of Apollonius on the curves you get by slicing a cone: circles, ellipses, parabolas. These were books for students, with worked examples and checks of each answer. She was a teacher and an editor more than a discoverer, and in an age when every book was copied by hand, that is how knowledge was kept alive. Parts of her notes on Diophantus may survive inside the copies we have.",
+        "es": "También escribió explicaciones de dos libros difíciles: la Aritmética de Diofanto, una colección de problemas con números que es un antepasado del álgebra, y la obra de Apolonio sobre las curvas que salen al cortar un cono: círculos, elipses, parábolas. Eran libros para estudiantes, con ejemplos resueltos y la comprobación de cada respuesta. Fue más maestra y editora que descubridora, y en una época en que cada libro se copiaba a mano, así se mantenía vivo el saber. Es posible que partes de sus notas sobre Diofanto se conserven dentro de las copias que tenemos."
+      },
+      "unsure": {
+        "en": "None of her works can be dated, and none survives under her name. Scholars still argue about which parts of the surviving texts are hers.",
+        "es": "Ninguna de sus obras se puede fechar, y ninguna se conserva con su nombre. Los estudiosos todavía discuten qué partes de los textos que tenemos son suyas."
+      },
+      "places": [
+        {
+          "name": { "en": "Ptolemy", "es": "Ptolomeo" },
+          "at": [29.9187, 31.2001],
+          "cat": "person",
+          "type": "person",
+          "date": "0150",
+          "life": ["0100", "0170"],
+          "text": {
+            "en": "The astronomer of Alexandria whose Almagest, written about AD 150, described the heavens with the Earth at the centre. More than two centuries later, Theon and Hypatia were still teaching from it and correcting its text.",
+            "es": "El astrónomo de Alejandría cuyo Almagesto, escrito hacia el año 150, describía el cielo con la Tierra en el centro. Más de dos siglos después, Teón e Hipatia seguían enseñando con él y corrigiendo su texto."
+          },
+          "wiki": { "en": "Ptolemy", "es": "Claudio Ptolomeo" }
+        }
+      ]
+    },
+    {
+      "date": "0391",
+      "kind": "struggle",
+      "place": { "en": "Alexandria, Egypt", "es": "Alejandría, Egipto" },
+      "at": [29.8969, 31.1819],
+      "title": { "en": "The Serapeum falls", "es": "Cae el Serapeo" },
+      "text": {
+        "en": "After the emperor banned the old worship, Christians led by Bishop Theophilus stormed and destroyed the Serapeum, Alexandria's greatest temple, where pagan philosophers taught. Hypatia's school was left in peace.",
+        "es": "Cuando el emperador prohibió los cultos antiguos, cristianos encabezados por el obispo Teófilo asaltaron y destruyeron el Serapeo, el mayor templo de Alejandría, donde enseñaban filósofos paganos. La escuela de Hipatia quedó en paz."
+      },
+      "details": {
+        "en": "Hypatia was a pagan, but of a quiet kind. She and her father followed the philosophy of Plotinus, which looked for the divine through reason, and kept away from the temple rites practised at the Serapeum. Bishop Theophilus let her teach, and Christians filled her classroom. The great Library of Alexandria, which later stories tie to her, had vanished long before: its quarter of the city was laid waste in a war in 272, a century before she taught.",
+        "es": "Hipatia era pagana, pero de un tipo discreto. Ella y su padre seguían la filosofía de Plotino, que buscaba lo divino por medio de la razón, y se mantenían lejos de los ritos del Serapeo. El obispo Teófilo la dejó enseñar, y los cristianos llenaban su aula. La gran Biblioteca de Alejandría, que relatos posteriores unen a su nombre, había desaparecido mucho antes: su barrio fue arrasado en una guerra en 272, un siglo antes de que ella enseñara."
+      },
+      "unsure": {
+        "en": "The year is given as 391 or 392. Whether any books were still kept in the temple when it fell is not recorded.",
+        "es": "El año se da como 391 o 392. No consta si todavía se guardaban libros en el templo cuando cayó."
+      },
+      "places": [
+        {
+          "name": { "en": "Library of Alexandria", "es": "Biblioteca de Alejandría" },
+          "at": [29.9092, 31.2089],
+          "cat": "place",
+          "type": "institution",
+          "date": "-0285",
+          "text": {
+            "en": "Founded by the Greek kings of Egypt in the 3rd century BC, the great Library had been gone for about a century when Hypatia taught. She did not die defending it, as later stories say.",
+            "es": "Fundada por los reyes griegos de Egipto en el siglo III a. C., la gran Biblioteca había desaparecido hacía cerca de un siglo cuando Hipatia enseñaba. No murió defendiéndola, como dicen relatos posteriores."
+          },
+          "wiki": { "en": "Library of Alexandria", "es": "Biblioteca de Alejandría" }
+        }
+      ]
+    },
+    {
+      "date": "0395",
+      "about": true,
+      "kind": "career",
+      "place": { "en": "Alexandria, Egypt", "es": "Alejandría, Egipto" },
+      "at": [29.9158, 31.2018],
+      "title": { "en": "The philosopher in her cloak", "es": "La filósofa del manto" },
+      "text": {
+        "en": "Wrapped in the rough cloak of a philosopher, Hypatia explained Plato and Aristotle in public and taught mathematics and astronomy to her own pupils. They came from all over the eastern Mediterranean.",
+        "es": "Envuelta en el áspero manto de los filósofos, Hipatia explicaba a Platón y a Aristóteles en público, y enseñaba matemáticas y astronomía a sus propios alumnos. Llegaban de todo el Mediterráneo oriental."
+      },
+      "details": {
+        "en": "The best known is Synesius of Cyrene, who studied with her in the 390s and later became a Christian bishop. Seven of his letters to her survive; in one he calls her 'mother, sister, teacher'. With her guidance he had a silver astrolabe made, a flat disc that maps the sky and tells the hour by the stars, and he asked her to build him a hydroscope, a float that shows how dense a liquid is. She invented neither, but she knew how they worked. About the year 400 she took over her father's school.",
+        "es": "El más conocido es Sinesio de Cirene, que estudió con ella en la década de 390 y más tarde fue obispo cristiano. Se conservan siete cartas suyas a Hipatia; en una la llama «madre, hermana, maestra». Con su guía mandó hacer un astrolabio de plata, un disco plano que representa el cielo y da la hora por las estrellas, y le pidió que le construyera un hidroscopio, un flotador que muestra qué tan denso es un líquido. Ella no inventó ninguno de los dos, pero sabía cómo funcionaban. Hacia el año 400 quedó al frente de la escuela de su padre."
+      },
+      "unsure": {
+        "en": "The dates are approximate: Synesius was her pupil in the early 390s, and a letter of about 395 already speaks of her fame.",
+        "es": "Las fechas son aproximadas: Sinesio fue su alumno a comienzos de la década de 390, y una carta de alrededor de 395 ya habla de su fama."
+      },
+      "places": [
+        {
+          "name": { "en": "Synesius of Cyrene", "es": "Sinesio de Cirene" },
+          "at": [29.9187, 31.1985],
+          "cat": "person",
+          "type": "person",
+          "date": "0395",
+          "life": ["0373", "0414"],
+          "text": {
+            "en": "A rich young man from Cyrene, in today's Libya, and her most devoted pupil. He became bishop of Ptolemais about 410 and went on writing to her until the last years of his life.",
+            "es": "Un joven rico de Cirene, en la actual Libia, y su alumno más fiel. Fue obispo de Ptolemaida hacia 410 y siguió escribiéndole hasta los últimos años de su vida."
+          }
+        }
+      ]
+    },
+    {
+      "date": "0414",
+      "kind": "struggle",
+      "place": { "en": "Alexandria, Egypt", "es": "Alejandría, Egipto" },
+      "at": [29.9158, 31.2018],
+      "title": { "en": "Between bishop and governor", "es": "Entre el obispo y el gobernador" },
+      "text": {
+        "en": "A new bishop, Cyril, fought the Roman governor, Orestes, for control of Alexandria. Orestes often asked Hypatia's advice. A rumour spread among the city's Christians that she was the one keeping the two men apart.",
+        "es": "Un nuevo obispo, Cirilo, se enfrentó al gobernador romano, Orestes, por el control de Alejandría. Orestes pedía a menudo consejo a Hipatia. Entre los cristianos corrió el rumor de que era ella quien impedía que se reconciliaran."
+      },
+      "details": {
+        "en": "Cyril had become bishop in 412, after street fighting against a rival. In 414, after deadly clashes between Christians and Jews, he closed the synagogues and expelled Jews from the city, and the governor, himself a Christian, complained to the emperor. Monks who backed the bishop attacked Orestes in the street; one struck him on the head with a stone, and the governor had that man tortured to death. Hypatia, by now one of the most respected people in Alexandria, was trusted by leaders of both faiths. It made her a target.",
+        "es": "Cirilo había llegado a obispo en 412, después de peleas callejeras contra un rival. En 414, tras choques mortales entre cristianos y judíos, cerró las sinagogas y expulsó a judíos de la ciudad, y el gobernador, que también era cristiano, se quejó ante el emperador. Monjes que apoyaban al obispo atacaron a Orestes en la calle; uno lo hirió en la cabeza con una piedra, y el gobernador mandó torturar a ese hombre hasta la muerte. Hipatia, para entonces una de las personas más respetadas de Alejandría, tenía la confianza de dirigentes de las dos religiones. Eso la puso en la mira."
+      },
+      "places": [
+        {
+          "name": { "en": "Cyril of Alexandria", "es": "Cirilo de Alejandría" },
+          "at": [29.8925, 31.1975],
+          "cat": "person",
+          "type": "person",
+          "date": "0412",
+          "life": ["0376", "0444"],
+          "text": {
+            "en": "Bishop of Alexandria from 412 to 444 and one of the leading theologians of the early Church, honoured as a saint. Ancient writers disagree about his part in Hypatia's death; no proof links him to it.",
+            "es": "Obispo de Alejandría de 412 a 444 y uno de los principales teólogos de la Iglesia antigua, venerado como santo. Los autores antiguos no coinciden sobre su papel en la muerte de Hipatia; ninguna prueba lo vincula con ella."
+          }
+        }
+      ]
+    },
+    {
+      "date": "0415-03",
+      "kind": "died",
+      "place": { "en": "Alexandria, Egypt", "es": "Alejandría, Egipto" },
+      "at": [29.9158, 31.2018],
+      "title": { "en": "Murdered in Lent", "es": "Asesinada en Cuaresma" },
+      "text": {
+        "en": "In March 415 a Christian mob led by a church reader named Peter pulled Hypatia from her carriage, dragged her into a church that had once been a temple of the emperors, and killed her there. Her remains were burned.",
+        "es": "En marzo de 415 una turba cristiana encabezada por un lector de la iglesia llamado Pedro sacó a Hipatia de su carruaje, la arrastró a una iglesia que había sido templo de los emperadores y allí la mató. Sus restos fueron quemados."
+      },
+      "details": {
+        "en": "The fullest account comes from a Christian historian of her own time, Socrates of Constantinople, and he was appalled: nothing, he wrote, could be further from the spirit of Christianity. He blamed the jealousies of city politics, not her philosophy or her science. A later pagan writer, Damascius, accused Bishop Cyril of ordering the killing, which has never been proved. The emperor's court held an inquiry and cut down the corps of church attendants that answered to the bishop, but no one is known to have been punished. Her school died with her.",
+        "es": "El relato más completo es de un historiador cristiano de su propio tiempo, Sócrates de Constantinopla, y quedó horrorizado: nada, escribió, puede estar más lejos del espíritu del cristianismo. Culpó a las envidias de la política de la ciudad, no a su filosofía ni a su ciencia. Un autor pagano posterior, Damascio, acusó al obispo Cirilo de ordenar el crimen, algo que nunca se ha probado. La corte del emperador abrió una investigación y redujo el cuerpo de asistentes de la iglesia que obedecía al obispo, pero no se sabe que nadie fuera castigado. Su escuela murió con ella."
+      },
+      "unsure": {
+        "en": "The church, the Caesareum, stood near the eastern harbour, and nothing of it can be seen today; the marker shows the city. The day is not known: the sources say only that it was in Lent, in March 415.",
+        "es": "La iglesia, el Caesareum, estaba cerca del puerto oriental, y hoy no se ve nada de ella; el marcador señala la ciudad. No se conoce el día: las fuentes solo dicen que fue en Cuaresma, en marzo de 415."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Serapeum and Pompey's Pillar, Alexandria", "es": "Serapeo y Columna de Pompeyo, Alejandría" },
+      "at": [29.8969, 31.1819],
+      "kind": "site",
+      "text": {
+        "en": "The hill of the temple destroyed in her lifetime. A tall granite column raised for the emperor Diocletian still stands among sphinxes, above the underground galleries of the sanctuary.",
+        "es": "La colina del templo destruido en vida de ella. Una alta columna de granito levantada en honor del emperador Diocleciano sigue en pie entre esfinges, sobre las galerías subterráneas del santuario."
+      },
+      "wiki": { "en": "Serapeum of Alexandria", "es": "Serapeum de Alejandría" }
+    },
+    {
+      "name": { "en": "Bibliotheca Alexandrina", "es": "Bibliotheca Alexandrina" },
+      "at": [29.9092, 31.2089],
+      "kind": "site",
+      "text": {
+        "en": "The great modern library opened in 2002 on the seafront, close to where the ancient Library once stood, with a planetarium and museums of the city's past. It revives the Alexandria of scholars to which Hypatia belonged.",
+        "es": "La gran biblioteca moderna inaugurada en 2002 frente al mar, cerca de donde estuvo la Biblioteca antigua, con un planetario y museos sobre el pasado de la ciudad. Revive la Alejandría de los sabios a la que perteneció Hipatia."
+      },
+      "wiki": { "en": "Bibliotheca Alexandrina", "es": "Bibliotheca Alexandrina" }
+    }
+  ],
+  "legacy": {
+    "en": "Hypatia is the first woman mathematician whose life is reasonably well recorded, and for centuries she has stood for the freedom to think. Each age has remade her: a martyr of philosophy, a heroine of the Enlightenment, a symbol for women in science. Philosophy went on being taught in Alexandria for two centuries after her, and the books she and her father edited carried Greek mathematics and astronomy to later ages.",
+    "es": "Hipatia es la primera matemática cuya vida conocemos razonablemente bien, y desde hace siglos representa la libertad de pensar. Cada época la ha rehecho a su manera: mártir de la filosofía, heroína de la Ilustración, símbolo de las mujeres en la ciencia. La filosofía se siguió enseñando en Alejandría dos siglos más, y los libros que ella y su padre editaron llevaron las matemáticas y la astronomía griegas a las épocas siguientes."
+  },
+  "sources": [
+    { "title": "Wikipedia: Hypatia", "url": "https://en.wikipedia.org/wiki/Hypatia" },
+    { "title": "Wikipedia (es): Hipatia", "url": "https://es.wikipedia.org/wiki/Hipatia" },
+    { "title": "Socrates of Constantinople, Church History, book VII, chapter 15 (New Advent)", "url": "https://www.newadvent.org/fathers/26017.htm" },
+    { "title": "Wikipedia: Serapeum of Alexandria", "url": "https://en.wikipedia.org/wiki/Serapeum_of_Alexandria" },
+    { "title": "Wikipedia: Library of Alexandria", "url": "https://en.wikipedia.org/wiki/Library_of_Alexandria" },
+    { "title": "Encyclopaedia Britannica: Hypatia", "url": "https://www.britannica.com/biography/Hypatia" }
+  ]
+}

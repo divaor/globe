@@ -1,0 +1,439 @@
+{
+  "id": "galileo",
+  "qid": "Q307",
+  "name": { "en": "Galileo Galilei", "es": "Galileo Galilei" },
+  "icon": "🔭",
+  "field": "science",
+  "known": { "en": "Italian astronomer and physicist", "es": "Astrónomo y físico italiano" },
+  "born": "1564-02-15",
+  "died": "1642-01-08",
+  "summary": {
+    "en": "He turned a spyglass on the sky and saw mountains on the Moon and moons around Jupiter; he rolled balls down slopes and found the laws of motion. For saying that the Earth moves he was tried in Rome and died a prisoner in his own house.",
+    "es": "Apuntó un catalejo al cielo y vio montañas en la Luna y lunas alrededor de Júpiter; hizo rodar bolas por pendientes y encontró las leyes del movimiento. Por decir que la Tierra se mueve fue juzgado en Roma y murió preso en su propia casa."
+  },
+  "steps": [
+    {
+      "date": "1564-02-15",
+      "kind": "born",
+      "place": { "en": "Pisa, Italy", "es": "Pisa, Italia" },
+      "at": [10.4, 43.7167],
+      "title": { "en": "Born in Pisa", "es": "Nace en Pisa" },
+      "text": {
+        "en": "Galileo was born in Pisa, the eldest child of Vincenzo Galilei, a lute player and music theorist from Florence, and Giulia Ammannati. He was ten when he joined his family in Florence.",
+        "es": "Galileo nació en Pisa. Era el hijo mayor de Vincenzo Galilei, un laudista y teórico de la música florentino, y de Giulia Ammannati. Tenía diez años cuando se reunió con su familia en Florencia."
+      },
+      "details": {
+        "en": "His father tested ideas about music by experiment: he hung weights on strings to find out how their notes change with the pull. The boy learned the lute, and learned to trust what can be tried and measured. He went to school with the monks of Vallombrosa, in the hills south-east of Florence, and wanted to stay as a monk; his father took him home. His birthday is given in the Julian calendar then in use: ten days were dropped from the calendar when he was eighteen.",
+        "es": "Su padre ponía a prueba las ideas sobre la música con experimentos: colgaba pesos de unas cuerdas para ver cómo cambiaban sus notas con la tensión. El niño aprendió a tocar el laúd, y a confiar en lo que se puede probar y medir. Fue a la escuela con los monjes de Vallombrosa, en las colinas al sureste de Florencia, y quiso quedarse como monje; su padre se lo llevó a casa. Su cumpleaños se da en el calendario juliano, el que se usaba entonces: cuando él tenía dieciocho años se quitaron diez días del calendario."
+      },
+      "unsure": {
+        "en": "The exact house is not certain. A plaque on a house in Via Giuseppe Giusti marks the one that most historians accept.",
+        "es": "No se sabe con certeza cuál fue la casa. Una placa en una casa de la Via Giuseppe Giusti señala la que acepta la mayoría de los historiadores."
+      }
+    },
+    {
+      "date": "1581",
+      "kind": "study",
+      "place": { "en": "Pisa, Italy", "es": "Pisa, Italia" },
+      "at": [10.3985, 43.7165],
+      "title": { "en": "The reluctant medical student", "es": "Estudiante de medicina a su pesar" },
+      "text": {
+        "en": "His father sent him to the University of Pisa to become a doctor. He fell in love with geometry instead, argued with his professors, and left after four years without a degree.",
+        "es": "Su padre lo mandó a la Universidad de Pisa para que fuera médico. Él se enamoró de la geometría, discutió con sus profesores y se fue a los cuatro años sin título."
+      },
+      "details": {
+        "en": "The story goes that he watched a lamp swinging in Pisa Cathedral and timed it with his pulse: wide swings or small, each seemed to take the same time. His first biographer told it some seventy years later, and it may be a legend. But Galileo did study pendulums closely, and found that the time of a swing depends on the length of the cord, not on the weight that hangs from it. He learned his mathematics from Ostilio Ricci, a teacher at the Tuscan court, and his hero was Archimedes.",
+        "es": "Se cuenta que miró una lámpara que se balanceaba en la catedral de Pisa y la midió con su pulso: grande o pequeña, cada oscilación parecía durar lo mismo. Su primer biógrafo lo contó unos setenta años después, y puede ser una leyenda. Pero Galileo sí estudió de cerca los péndulos, y encontró que el tiempo de una oscilación depende del largo de la cuerda, no del peso que cuelga. Aprendió matemáticas con Ostilio Ricci, un maestro de la corte toscana, y su héroe era Arquímedes."
+      },
+      "unsure": {
+        "en": "He enrolled in 1580 or 1581: sources differ. The lamp now called Galileo's lamp was hung in the cathedral only in 1587, after he had left.",
+        "es": "Se inscribió en 1580 o 1581: las fuentes no coinciden. La lámpara que hoy llaman de Galileo se colgó en la catedral recién en 1587, cuando él ya se había ido."
+      },
+      "places": [
+        {
+          "name": { "en": "Pisa Cathedral", "es": "Catedral de Pisa" },
+          "at": [10.3958, 43.7233],
+          "cat": "place",
+          "type": "structure",
+          "date": "1064",
+          "text": {
+            "en": "The great marble cathedral of Pisa, begun in 1064. A bronze lamp in its nave is called Galileo's lamp, after the story of the student who timed its swings with his pulse.",
+            "es": "La gran catedral de mármol de Pisa, comenzada en 1064. Una lámpara de bronce de su nave se llama lámpara de Galileo, por la historia del estudiante que midió sus oscilaciones con el pulso."
+          },
+          "wiki": { "en": "Pisa Cathedral", "es": "Catedral de Pisa" },
+          "whs": 395
+        }
+      ]
+    },
+    {
+      "date": "1589",
+      "kind": "career",
+      "place": { "en": "Pisa, Italy", "es": "Pisa, Italia" },
+      "at": [10.3985, 43.7165],
+      "title": { "en": "Professor at twenty-five", "es": "Profesor a los veinticinco" },
+      "text": {
+        "en": "A treatise on a balance inspired by Archimedes made his name, and Pisa gave him its chair of mathematics. Poorly paid, he mocked the professors' gowns in verse and began to doubt Aristotle's account of how things fall.",
+        "es": "Un breve tratado sobre una balanza inspirada en Arquímedes le dio fama, y Pisa le entregó su cátedra de matemáticas. Mal pagado, se burló en verso de las togas de los profesores y empezó a dudar de Aristóteles sobre cómo caen las cosas."
+      },
+      "details": {
+        "en": "Aristotle taught that a heavy body falls faster than a light one, in proportion to its weight. Galileo's first biographer says he climbed the Leaning Tower and dropped two weights before the whole university to show that they land together. Galileo never mentions it, and most historians think it did not happen like that. What he certainly did, then and later, was to reason the matter out and test it with balls rolling down sloping boards. In 1591 his father died, leaving him to provide for the family, and the next year he found a better post.",
+        "es": "Aristóteles enseñaba que un cuerpo pesado cae más rápido que uno liviano, en proporción a su peso. El primer biógrafo de Galileo dice que subió a la Torre inclinada y dejó caer dos pesos ante toda la universidad para mostrar que llegan juntos al suelo. Galileo nunca lo menciona, y la mayoría de los historiadores cree que no ocurrió así. Lo que sí hizo, entonces y después, fue razonar el asunto y probarlo con bolas que rodaban por tablas inclinadas. En 1591 murió su padre, y él quedó a cargo de la familia; al año siguiente encontró un puesto mejor."
+      },
+      "unsure": {
+        "en": "The tower experiment is known only from his pupil Viviani, who wrote in 1654, twelve years after Galileo's death.",
+        "es": "El experimento de la torre solo se conoce por su discípulo Viviani, que escribió en 1654, doce años después de la muerte de Galileo."
+      },
+      "places": [
+        {
+          "name": { "en": "Leaning Tower of Pisa", "es": "Torre de Pisa" },
+          "at": [10.3964, 43.7231],
+          "cat": "place",
+          "type": "structure",
+          "date": "1173",
+          "text": {
+            "en": "The cathedral's bell tower, which began to lean while it was being built. By tradition Galileo dropped weights from the top to show that heavy and light bodies fall together; historians doubt that he did.",
+            "es": "El campanario de la catedral, que empezó a inclinarse mientras lo construían. Según la tradición, Galileo dejó caer pesos desde lo alto para mostrar que los cuerpos pesados y los livianos caen juntos; los historiadores lo dudan."
+          },
+          "wiki": { "en": "Leaning Tower of Pisa", "es": "Torre de Pisa" },
+          "whs": 395
+        }
+      ]
+    },
+    {
+      "date": "1592",
+      "kind": "career",
+      "place": { "en": "Padua, Italy", "es": "Padua, Italia" },
+      "at": [11.8772, 45.4071],
+      "title": { "en": "Eighteen years in Padua", "es": "Dieciocho años en Padua" },
+      "text": {
+        "en": "Venice gave him the chair of mathematics at Padua, its university. He stayed eighteen years, which he later called the best of his life: teaching, making instruments to sell, and working out how bodies move.",
+        "es": "Venecia le dio la cátedra de matemáticas en Padua, su universidad. Se quedó dieciocho años, que después llamó los mejores de su vida: enseñaba, fabricaba instrumentos para vender y descifraba cómo se mueven los cuerpos."
+      },
+      "details": {
+        "en": "By timing balls on a sloping plank he found the law of falling: a body speeds up steadily, so that in twice the time it covers four times the distance, and, the air apart, heavy and light fall alike. He lived with a Venetian woman, Marina Gamba, whom he never married, and they had three children, Virginia, Livia and Vincenzo. To pay his sisters' dowries he took student lodgers and sold a brass calculating compass of his own design. He was already a follower of Copernicus, he told Kepler in a letter of 1597, but did not dare to say so in public.",
+        "es": "Midiendo el tiempo de unas bolas sobre una tabla inclinada encontró la ley de la caída: un cuerpo se acelera de manera constante, de modo que en el doble de tiempo recorre cuatro veces la distancia, y, sin contar el aire, lo pesado y lo liviano caen igual. Vivió con una veneciana, Marina Gamba, con quien nunca se casó, y tuvieron tres hijos: Virginia, Livia y Vincenzo. Para pagar las dotes de sus hermanas alojaba estudiantes y vendía un compás de cálculo de latón diseñado por él. Ya era seguidor de Copérnico, le dijo a Kepler en una carta de 1597, pero no se atrevía a decirlo en público."
+      }
+    },
+    {
+      "date": "1609-08-25",
+      "kind": "moment",
+      "place": { "en": "Venice, Italy", "es": "Venecia, Italia" },
+      "at": [12.3388, 45.434],
+      "title": { "en": "A spyglass for the Doge", "es": "Un catalejo para el dux" },
+      "text": {
+        "en": "Hearing of a Dutch tube that brought far things near, Galileo ground his own lenses and built a better one. From St Mark's bell tower he showed Venice's rulers ships at sea two hours before the naked eye could see them.",
+        "es": "Al saber de un tubo holandés que acercaba lo lejano, Galileo pulió sus propias lentes y construyó uno mejor. Desde el campanario de San Marcos mostró a los gobernantes de Venecia barcos en el mar dos horas antes de que se vieran a simple vista."
+      },
+      "details": {
+        "en": "The telescope was not his invention: a spectacle-maker in the Netherlands, Hans Lipperhey, had asked for a patent on one in 1608. Galileo's first magnified three or four times; the one he showed in Venice, eight or nine times; within months he reached twenty. The delighted Senate doubled his salary and made his post one for life. Then he did something few had thought of doing: he pointed it at the night sky.",
+        "es": "El telescopio no fue invento suyo: un fabricante de anteojos de los Países Bajos, Hans Lipperhey, había pedido una patente en 1608. El primero de Galileo aumentaba tres o cuatro veces; el que mostró en Venecia, ocho o nueve; en pocos meses llegó a veinte. El Senado, encantado, le duplicó el sueldo y le dio el puesto de por vida. Entonces hizo algo que a pocos se les había ocurrido: lo apuntó al cielo de la noche."
+      }
+    },
+    {
+      "date": "1610-01-07",
+      "kind": "made",
+      "place": { "en": "Padua, Italy", "es": "Padua, Italia" },
+      "at": [11.8823, 45.4036],
+      "title": { "en": "Moons around Jupiter", "es": "Lunas alrededor de Júpiter" },
+      "text": {
+        "en": "From his house in Padua he saw mountains on the Moon and countless stars in the Milky Way. On 7 January 1610 he noticed three little stars beside Jupiter, then a fourth. Night after night they moved: they were moons.",
+        "es": "Desde su casa de Padua vio montañas en la Luna e incontables estrellas en la Vía Láctea. El 7 de enero de 1610 notó tres estrellitas junto a Júpiter, y después una cuarta. Noche tras noche se movían: eran lunas."
+      },
+      "details": {
+        "en": "Here was a world with satellites of its own: not everything in the sky circles the Earth. He rushed a short book into print in Venice on 13 March 1610, the Starry Messenger, with his drawings of the Moon, and named the new moons after the Medici, the ruling family of Florence, whose service he hoped to enter. Many scholars refused to believe it; some would not even look. From Prague the emperor's mathematician, Johannes Kepler, who had no telescope yet, wrote at once in his support. Later that year Galileo saw that Venus has phases like the Moon, as it must if it circles the Sun.",
+        "es": "Era un mundo con satélites propios: no todo en el cielo gira alrededor de la Tierra. Imprimió a toda prisa un librito en Venecia, el 13 de marzo de 1610, el Mensajero sideral, con sus dibujos de la Luna, y les puso a las nuevas lunas el nombre de los Médici, la familia que gobernaba Florencia, a cuyo servicio quería entrar. Muchos sabios se negaron a creerlo; algunos ni siquiera quisieron mirar. Desde Praga, el matemático del emperador, Johannes Kepler, que todavía no tenía telescopio, escribió enseguida en su apoyo. Ese mismo año Galileo vio que Venus tiene fases como la Luna, como debe ser si gira alrededor del Sol."
+      },
+      "places": [
+        {
+          "name": { "en": "Sidereus Nuncius (The Starry Messenger)", "es": "Sidereus nuncius (El mensajero sideral)" },
+          "at": [12.3356, 45.438],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1610-03-13",
+          "by": { "en": "Galileo Galilei", "es": "Galileo Galilei" },
+          "text": {
+            "en": "A booklet of about sixty pages printed in Venice: the first book of science based on what a telescope shows, with his own drawings of the Moon and of Jupiter's moons night by night. It sold out within days.",
+            "es": "Un librito de unas sesenta páginas impreso en Venecia: el primer libro de ciencia basado en lo que muestra un telescopio, con sus propios dibujos de la Luna y de las lunas de Júpiter noche por noche. Se agotó en pocos días."
+          },
+          "wiki": { "en": "Sidereus Nuncius", "es": "Sidereus nuncius" }
+        },
+        {
+          "id": "kepler",
+          "name": { "en": "Johannes Kepler", "es": "Johannes Kepler" },
+          "at": [14.4148, 50.0859],
+          "cat": "person",
+          "type": "person",
+          "date": "1610-04",
+          "life": ["1571-12-27", "1630-11-15"],
+          "text": {
+            "en": "The emperor's mathematician in Prague, who had just shown that the planets move in ellipses. He backed Galileo's discoveries in print within weeks. The two wrote to each other but never met.",
+            "es": "El matemático del emperador en Praga, que acababa de mostrar que los planetas se mueven en elipses. Apoyó por escrito los descubrimientos de Galileo en pocas semanas. Los dos se escribieron, pero nunca se conocieron."
+          },
+          "wiki": { "en": "Johannes Kepler", "es": "Johannes Kepler" }
+        }
+      ]
+    },
+    {
+      "date": "1610-09",
+      "kind": "career",
+      "place": { "en": "Florence, Italy", "es": "Florencia, Italia" },
+      "at": [11.2542, 43.7714],
+      "title": { "en": "Philosopher to the Grand Duke", "es": "Filósofo del gran duque" },
+      "text": {
+        "en": "Cosimo II de' Medici, Grand Duke of Tuscany, made him his mathematician and philosopher, with a high salary and no classes to teach. Galileo went home to Florence. Marina Gamba stayed behind in Padua.",
+        "es": "Cosme II de Médici, gran duque de Toscana, lo nombró su matemático y filósofo, con un buen sueldo y sin clases que dar. Galileo volvió a Florencia. Marina Gamba se quedó en Padua."
+      },
+      "details": {
+        "en": "Free of teaching, he studied the dark spots on the Sun, which showed that the Sun turns and is not a perfect, unchanging globe. He also began to say openly that Copernicus was right. In 1613 he placed his daughters, aged thirteen and twelve, in the convent of San Matteo at Arcetri: born outside marriage, they had, he judged, no hope of husbands. The elder, Sister Maria Celeste, became the great support of his old age. In 1614 a Dominican friar preached against him in Florence, and soon a letter of his about the Bible and science was sent to the Inquisition in Rome.",
+        "es": "Libre de las clases, estudió las manchas oscuras del Sol, que mostraban que el Sol gira y que no es un globo perfecto e inmutable. También empezó a decir abiertamente que Copérnico tenía razón. En 1613 metió a sus hijas, de trece y doce años, en el convento de San Matteo, en Arcetri: nacidas fuera del matrimonio, no tenían, a su juicio, esperanza de casarse. La mayor, sor María Celeste, fue el gran apoyo de su vejez. En 1614 un fraile dominico predicó contra él en Florencia, y poco después una carta suya sobre la Biblia y la ciencia fue enviada a la Inquisición de Roma."
+      },
+      "places": [
+        {
+          "name": { "en": "Cosimo II de' Medici", "es": "Cosme II de Médici" },
+          "at": [11.2501, 43.7652],
+          "cat": "person",
+          "type": "person",
+          "date": "1610-07",
+          "life": ["1590-05-12", "1621-02-28"],
+          "text": {
+            "en": "Grand Duke of Tuscany from 1609, and once Galileo's pupil in mathematics. The four moons of Jupiter were named the Medicean Stars in honour of him and his three brothers. His court lived in the Pitti Palace.",
+            "es": "Gran duque de Toscana desde 1609, y antes alumno de matemáticas de Galileo. Las cuatro lunas de Júpiter se llamaron Astros mediceos en honor de él y de sus tres hermanos. Su corte vivía en el Palacio Pitti."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1616-02-26",
+      "kind": "struggle",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4866, 41.8928],
+      "title": { "en": "Warned in Rome", "es": "Advertido en Roma" },
+      "text": {
+        "en": "Galileo went to Rome to defend Copernicus, and lost. The Inquisition's experts called the Sun-centred system absurd and contrary to Scripture, and on 26 February 1616 Cardinal Bellarmine ordered him to give the idea up.",
+        "es": "Galileo fue a Roma a defender a Copérnico, y perdió. Los expertos de la Inquisición declararon absurdo y contrario a la Escritura el sistema con el Sol en el centro, y el 26 de febrero de 1616 el cardenal Belarmino le ordenó abandonar la idea."
+      },
+      "details": {
+        "en": "Five years before, the same city had feasted him. The Jesuit astronomers confirmed his discoveries, and the Academy of the Lynxes, one of the first scientific societies, made him a member; at a banquet in his honour his instrument was first called a telescope. Now Copernicus's book was suspended 'until corrected'. Galileo had argued that the Bible teaches how to go to heaven, not how the heavens go. What exactly he was forbidden that day, to believe the idea, to defend it or even to discuss it, was never clear, and seventeen years later it decided his trial.",
+        "es": "Cinco años antes, la misma ciudad lo había festejado. Los astrónomos jesuitas confirmaron sus descubrimientos, y la Academia de los Linces, una de las primeras sociedades científicas, lo hizo miembro; en un banquete en su honor su instrumento se llamó por primera vez telescopio. Ahora el libro de Copérnico quedaba suspendido «hasta que se corrija». Galileo había sostenido que la Biblia enseña cómo se va al cielo, no cómo va el cielo. Qué se le prohibió exactamente ese día, creer en la idea, defenderla o incluso discutirla, nunca quedó claro, y diecisiete años después eso decidió su juicio."
+      },
+      "places": [
+        {
+          "name": { "en": "Accademia dei Lincei", "es": "Academia de los Linces" },
+          "at": [12.4615, 41.9018],
+          "cat": "place",
+          "type": "institution",
+          "date": "1603",
+          "text": {
+            "en": "Founded in Rome in 1603 by the young prince Federico Cesi and named after the sharp-eyed lynx. It made Galileo a member in 1611 and published his books; he signed himself 'Galileo Galilei, Lynx' ever after.",
+            "es": "Fundada en Roma en 1603 por el joven príncipe Federico Cesi, con el nombre del lince de vista aguda. Hizo miembro a Galileo en 1611 y publicó sus libros; desde entonces él firmó «Galileo Galilei, Linceo»."
+          },
+          "wiki": { "en": "Accademia dei Lincei", "es": "Academia Nacional de los Linces" }
+        }
+      ]
+    },
+    {
+      "date": "1632-02",
+      "kind": "made",
+      "place": { "en": "Florence, Italy", "es": "Florencia, Italia" },
+      "at": [11.2542, 43.7714],
+      "title": { "en": "The Dialogue", "es": "El Diálogo" },
+      "text": {
+        "en": "An admirer, Maffeo Barberini, had become Pope Urban VIII and let him write about the two systems of the world, provided he took no side. The Dialogue, printed in Florence in February 1632, took a side on every page.",
+        "es": "Un admirador, Maffeo Barberini, había llegado a papa como Urbano VIII y le permitió escribir sobre los dos sistemas del mundo, siempre que no tomara partido. El Diálogo, impreso en Florencia en febrero de 1632, tomaba partido en cada página."
+      },
+      "details": {
+        "en": "It is a four-day conversation in Italian, not Latin, so that anyone could read it. Salviati speaks for Copernicus, Sagredo is the open-minded friend, and Simplicio defends Aristotle and loses every round. To those who said that a moving Earth would leave birds and clouds behind, Galileo answered with a ship: shut in a cabin below deck, you cannot tell by any experiment whether the ship is at rest or sailing smoothly. The Pope found his own favourite argument in the mouth of Simplicio. By summer the sale of the book was stopped, and its author, nearly seventy and ill, was summoned to Rome.",
+        "es": "Es una conversación de cuatro días en italiano, no en latín, para que cualquiera pudiera leerla. Salviati habla por Copérnico, Sagredo es el amigo de mente abierta y Simplicio defiende a Aristóteles y pierde todas las discusiones. A quienes decían que una Tierra en movimiento dejaría atrás a los pájaros y a las nubes, Galileo les respondió con un barco: encerrado en un camarote bajo cubierta, ningún experimento te permite saber si el barco está quieto o navega suavemente. El papa encontró su argumento preferido en boca de Simplicio. En el verano se detuvo la venta del libro, y su autor, con casi setenta años y enfermo, fue citado a Roma."
+      },
+      "places": [
+        {
+          "name": { "en": "Dialogue Concerning the Two Chief World Systems", "es": "Diálogo sobre los dos máximos sistemas del mundo" },
+          "at": [11.2558, 43.7696],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1632-02",
+          "by": { "en": "Galileo Galilei", "es": "Galileo Galilei" },
+          "text": {
+            "en": "Galileo's defence of the Sun-centred system, written as a debate among three friends. The Church banned it in 1633 and kept it on its list of forbidden books until 1835.",
+            "es": "La defensa que hizo Galileo del sistema con el Sol en el centro, escrita como un debate entre tres amigos. La Iglesia lo prohibió en 1633 y lo mantuvo en su lista de libros prohibidos hasta 1835."
+          },
+          "wiki": { "en": "Dialogue Concerning the Two Chief World Systems", "es": "Diálogos sobre los dos máximos sistemas del mundo" }
+        }
+      ]
+    },
+    {
+      "date": "1633-06-22",
+      "kind": "struggle",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4783, 41.8981],
+      "title": { "en": "On his knees before the Inquisition", "es": "De rodillas ante la Inquisición" },
+      "text": {
+        "en": "On 22 June 1633, in the convent of Santa Maria sopra Minerva, the judges declared Galileo 'vehemently suspected of heresy'. At 69, on his knees, he read aloud that he abjured, cursed and detested the motion of the Earth.",
+        "es": "El 22 de junio de 1633, en el convento de Santa Maria sopra Minerva, los jueces declararon a Galileo «vehementemente sospechoso de herejía». A los 69 años, de rodillas, leyó que abjuraba, maldecía y detestaba el movimiento de la Tierra."
+      },
+      "details": {
+        "en": "He had been questioned four times since April, the last time under the formal threat of torture. Three of the ten cardinals did not sign the sentence. The Dialogue was banned, and he was condemned to prison for as long as the Church pleased, which was changed the next day to confinement in a house. The words 'And yet it moves' are first recorded more than a century later; had he said them aloud, he would not have walked out of the building. In 1992 Pope John Paul II declared that Galileo's judges had been wrong.",
+        "es": "Lo habían interrogado cuatro veces desde abril, la última bajo la amenaza formal de tortura. Tres de los diez cardenales no firmaron la sentencia. El Diálogo fue prohibido, y a él lo condenaron a prisión por el tiempo que la Iglesia quisiera, pena que al día siguiente se cambió por el encierro en una casa. Las palabras «Y sin embargo se mueve» aparecen escritas por primera vez más de un siglo después; si las hubiera dicho en voz alta, no habría salido del edificio. En 1992 el papa Juan Pablo II declaró que los jueces de Galileo se habían equivocado."
+      }
+    },
+    {
+      "date": "1633-12",
+      "kind": "struggle",
+      "place": { "en": "Arcetri, Florence, Italy", "es": "Arcetri, Florencia, Italia" },
+      "at": [11.2576, 43.7476],
+      "title": { "en": "A prisoner in his own house", "es": "Preso en su propia casa" },
+      "text": {
+        "en": "After five months in the keeping of a friend, the archbishop of Siena, he was allowed home to his rented villa at Arcetri, above Florence, on condition that he saw few visitors and never left. He lived there eight years.",
+        "es": "Después de cinco meses bajo la custodia de un amigo, el arzobispo de Siena, le permitieron volver a su villa alquilada de Arcetri, sobre Florencia, a condición de recibir pocas visitas y no salir nunca. Vivió allí ocho años."
+      },
+      "details": {
+        "en": "He had taken the villa to be near his daughters' convent, a few minutes' walk away. Maria Celeste, who had sent him letters, medicines and mended shirts all through the trial, took upon herself the weekly prayers of penance imposed on him. She died four months after his return, at thirty-three. 'A woman of exquisite mind', he wrote, and for a time he could not work. 124 of her letters to him survive; his letters to her are lost.",
+        "es": "Había alquilado la villa para estar cerca del convento de sus hijas, a pocos minutos a pie. María Celeste, que durante todo el juicio le había mandado cartas, remedios y camisas remendadas, tomó para sí las oraciones de penitencia que le habían impuesto a él cada semana. Murió cuatro meses después de su regreso, a los treinta y tres años. «Una mujer de ingenio exquisito», escribió él, y por un tiempo no pudo trabajar. Se conservan 124 cartas de ella a su padre; las de él se perdieron."
+      },
+      "unsure": {
+        "en": "He reached Arcetri in December 1633; some accounts give 1634.",
+        "es": "Llegó a Arcetri en diciembre de 1633; algunos relatos dan 1634."
+      }
+    },
+    {
+      "date": "1638",
+      "kind": "made",
+      "place": { "en": "Arcetri, Florence, Italy", "es": "Arcetri, Florencia, Italia" },
+      "at": [11.2576, 43.7476],
+      "title": { "en": "Two New Sciences", "es": "Dos nuevas ciencias" },
+      "text": {
+        "en": "Forbidden to publish anything, he wrote his greatest book. The manuscript was carried out of Italy and printed at Leiden, in the Protestant Netherlands, in 1638. By then he was blind.",
+        "es": "Con prohibición de publicar cualquier cosa, escribió su libro más grande. El manuscrito salió de Italia a escondidas y se imprimió en Leiden, en los Países Bajos protestantes, en 1638. Para entonces estaba ciego."
+      },
+      "details": {
+        "en": "It gathers the work of forty years: how beams break and why a large animal needs thicker bones, how a body falls and how a cannonball flies. A thing in motion, he showed, keeps moving until something stops it; a shot follows a curve called a parabola, made of a steady drift forward and a quickening fall. Newton built on it fifty years later. Young men came to help the blind old man: Vincenzo Viviani, at seventeen, and then Evangelista Torricelli. The English poet John Milton visited too, and remembered 'the famous Galileo, grown old, a prisoner to the Inquisition'.",
+        "es": "Reúne el trabajo de cuarenta años: cómo se rompen las vigas y por qué un animal grande necesita huesos más gruesos, cómo cae un cuerpo y cómo vuela una bala de cañón. Una cosa en movimiento, mostró, sigue moviéndose hasta que algo la detiene; un disparo sigue una curva llamada parábola, hecha de un avance parejo y de una caída que se acelera. Newton construyó sobre eso cincuenta años después. Unos jóvenes llegaron a ayudar al anciano ciego: Vincenzo Viviani, a los diecisiete años, y después Evangelista Torricelli. También lo visitó el poeta inglés John Milton, que recordó al «famoso Galileo, ya viejo, prisionero de la Inquisición»."
+      },
+      "places": [
+        {
+          "name": { "en": "Two New Sciences", "es": "Dos nuevas ciencias" },
+          "at": [11.2581, 43.748],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1638",
+          "by": { "en": "Galileo Galilei", "es": "Galileo Galilei" },
+          "text": {
+            "en": "Discourses and Mathematical Demonstrations Relating to Two New Sciences: the strength of materials and the science of motion. Written at Arcetri and printed by the Elzevirs in Leiden, beyond the reach of the Inquisition.",
+            "es": "Discursos y demostraciones matemáticas en torno a dos nuevas ciencias: la resistencia de los materiales y la ciencia del movimiento. Escrito en Arcetri e impreso por los Elzevir en Leiden, fuera del alcance de la Inquisición."
+          },
+          "wiki": { "en": "Two New Sciences", "es": "Dos nuevas ciencias" }
+        },
+        {
+          "name": { "en": "Evangelista Torricelli", "es": "Evangelista Torricelli" },
+          "at": [11.2571, 43.7472],
+          "cat": "person",
+          "type": "person",
+          "date": "1641-10",
+          "life": ["1608-10-15", "1647-10-25"],
+          "text": {
+            "en": "Galileo's last assistant, who came to live at the villa three months before the old man died and followed him as mathematician to the Grand Duke. In 1644 he described the first barometer.",
+            "es": "El último ayudante de Galileo, que llegó a vivir a la villa tres meses antes de que el anciano muriera y lo sucedió como matemático del gran duque. En 1644 describió el primer barómetro."
+          },
+          "wiki": { "en": "Evangelista Torricelli", "es": "Evangelista Torricelli" }
+        }
+      ]
+    },
+    {
+      "date": "1642-01-08",
+      "kind": "died",
+      "place": { "en": "Arcetri, Florence, Italy", "es": "Arcetri, Florencia, Italia" },
+      "at": [11.2576, 43.7476],
+      "title": { "en": "He dies at Arcetri", "es": "Muere en Arcetri" },
+      "text": {
+        "en": "Galileo died at his villa on 8 January 1642, aged 77, with his pupils Viviani and Torricelli beside him. The Grand Duke wanted a great tomb for him. The Pope forbade it, and he was laid in a small room in Santa Croce.",
+        "es": "Galileo murió en su villa el 8 de enero de 1642, a los 77 años, con sus discípulos Viviani y Torricelli a su lado. El gran duque quiso hacerle una gran tumba. El papa lo prohibió, y lo dejaron en un cuartito de la Santa Croce."
+      },
+      "details": {
+        "en": "Blind, he had worked almost to the end. In 1641 he explained to his son how a pendulum could keep a clock in step, a design that was built only after his death, and with Torricelli he was planning a new chapter for his last book. Viviani, who was nineteen, spent the rest of a long life defending his master's memory.",
+        "es": "Ciego, trabajó casi hasta el final. En 1641 le explicó a su hijo cómo un péndulo podía mantener en hora un reloj, un diseño que se construyó recién después de su muerte, y con Torricelli planeaba un nuevo capítulo para su último libro. Viviani, que tenía diecinueve años, dedicó el resto de una larga vida a defender la memoria de su maestro."
+      }
+    },
+    {
+      "date": "1737-03-12",
+      "kind": "honour",
+      "place": { "en": "Florence, Italy", "es": "Florencia, Italia" },
+      "at": [11.2627, 43.7685],
+      "title": { "en": "A tomb at last", "es": "Por fin una tumba" },
+      "text": {
+        "en": "Ninety-five years after his death, Galileo's body was carried into the nave of Santa Croce and laid in a marble tomb facing Michelangelo's. Viviani, who had left money for it in his will, lies with him.",
+        "es": "Noventa y cinco años después de su muerte, el cuerpo de Galileo fue llevado a la nave de la Santa Croce y puesto en una tumba de mármol frente a la de Miguel Ángel. Viviani, que dejó dinero para ella en su testamento, descansa con él."
+      },
+      "details": {
+        "en": "During the move, admirers took three fingers and a tooth from the body as relics. The middle finger of his right hand is shown today in the Museo Galileo. The Church had allowed most of his works to be printed again from 1718, and it took the Dialogue off its list of forbidden books in 1835.",
+        "es": "Durante el traslado, unos admiradores se llevaron del cuerpo tres dedos y un diente como reliquias. El dedo medio de su mano derecha se muestra hoy en el Museo Galileo. La Iglesia había permitido volver a imprimir la mayoría de sus obras desde 1718, y sacó el Diálogo de su lista de libros prohibidos en 1835."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Museo Galileo, Florence", "es": "Museo Galileo, Florencia" },
+      "at": [11.2558, 43.7678],
+      "kind": "museum",
+      "text": {
+        "en": "Beside the Arno, next to the Uffizi: the only two telescopes of his that survive, the lens with which he found Jupiter's moons, his calculating compass, and the middle finger of his right hand.",
+        "es": "Junto al Arno, al lado de los Uffizi: los dos únicos telescopios suyos que se conservan, la lente con la que encontró las lunas de Júpiter, su compás de cálculo y el dedo medio de su mano derecha."
+      },
+      "wiki": { "en": "Museo Galileo", "es": "Museo Galileo" },
+      "whs": 174
+    },
+    {
+      "name": { "en": "Basilica of Santa Croce, Florence", "es": "Basílica de la Santa Croce, Florencia" },
+      "at": [11.2627, 43.7685],
+      "kind": "grave",
+      "text": {
+        "en": "His tomb of 1737 stands just inside the door, on the left, facing Michelangelo's across the nave. The church is the burial place of many great Italians.",
+        "es": "Su tumba de 1737 está apenas se entra, a la izquierda, frente a la de Miguel Ángel, al otro lado de la nave. La iglesia es el lugar de sepultura de muchos grandes italianos."
+      },
+      "whs": 174
+    },
+    {
+      "name": { "en": "Villa Il Gioiello, Arcetri", "es": "Villa Il Gioiello, en Arcetri" },
+      "at": [11.2576, 43.7476],
+      "kind": "house",
+      "text": {
+        "en": "The house in the hills south of Florence where he lived under arrest from 1633 and died in 1642. It belongs to the University of Florence, which opens it for guided visits: ask before you go.",
+        "es": "La casa en las colinas al sur de Florencia donde vivió bajo arresto desde 1633 y murió en 1642. Pertenece a la Universidad de Florencia, que la abre para visitas guiadas: conviene averiguar antes de ir."
+      }
+    },
+    {
+      "name": { "en": "Cathedral Square, Pisa", "es": "Plaza de los Milagros, Pisa" },
+      "at": [10.3948, 43.7234],
+      "kind": "site",
+      "text": {
+        "en": "The cathedral with the bronze lamp that bears his name, and the Leaning Tower of the famous story of the falling weights. Both stories may be legends, but he knew these buildings as a boy, a student and a young professor.",
+        "es": "La catedral con la lámpara de bronce que lleva su nombre, y la Torre inclinada de la famosa historia de los pesos que caen. Las dos historias pueden ser leyendas, pero él conoció estos edificios de niño, de estudiante y de joven profesor."
+      },
+      "wiki": { "en": "Piazza dei Miracoli", "es": "Plaza de los Milagros" },
+      "whs": 395
+    },
+    {
+      "name": { "en": "Palazzo Bo, University of Padua", "es": "Palazzo Bo, Universidad de Padua" },
+      "at": [11.8772, 45.4071],
+      "kind": "site",
+      "text": {
+        "en": "The old seat of the university where he taught for eighteen years. Guided tours show the great hall where he is said to have taught, the rough wooden lectern said to be his, and the anatomical theatre built in his time.",
+        "es": "La antigua sede de la universidad donde enseñó dieciocho años. Las visitas guiadas muestran el aula magna donde, se dice, daba clase, la tosca cátedra de madera que se le atribuye y el teatro anatómico construido en su época."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Galileo taught science to trust experiment and measurement above authority, and to write the laws of nature in mathematics. His telescope opened the sky, and his study of motion led to Newton. His trial has remained the great symbol of the clash between free inquiry and power. Four moons of Jupiter, a spacecraft that explored them and Europe's satellite navigation system bear his name.",
+    "es": "Galileo enseñó a la ciencia a confiar en el experimento y la medición por encima de la autoridad, y a escribir las leyes de la naturaleza en matemáticas. Su telescopio abrió el cielo, y su estudio del movimiento llevó a Newton. Su juicio sigue siendo el gran símbolo del choque entre la libertad de investigar y el poder. Cuatro lunas de Júpiter, una nave espacial que las exploró y el sistema europeo de navegación por satélite llevan su nombre."
+  },
+  "sources": [
+    { "title": "Wikipedia: Galileo Galilei", "url": "https://en.wikipedia.org/wiki/Galileo_Galilei" },
+    { "title": "Wikipedia (es): Galileo Galilei", "url": "https://es.wikipedia.org/wiki/Galileo_Galilei" },
+    { "title": "Museo Galileo, Florence", "url": "https://www.museogalileo.it/en/" },
+    { "title": "The Galileo Project (Rice University): chronology", "url": "http://galileo.rice.edu/chron/galileo.html" },
+    { "title": "Stanford Encyclopedia of Philosophy: Galileo Galilei", "url": "https://plato.stanford.edu/entries/galileo/" },
+    { "title": "Wikipedia: Galileo affair", "url": "https://en.wikipedia.org/wiki/Galileo_affair" }
+  ]
+}
