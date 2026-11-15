@@ -1,0 +1,311 @@
+{
+  "id": "goya",
+  "qid": "Q5432",
+  "name": { "en": "Francisco Goya", "es": "Francisco de Goya" },
+  "icon": "🎨",
+  "field": "arts",
+  "known": { "en": "Spanish court painter and printmaker", "es": "Pintor de la corte y grabador español" },
+  "born": "1746-03-30",
+  "died": "1828-04-16",
+  "summary": {
+    "en": "The son of a gilder from a tiny Aragonese village became the king's painter, went deaf, saw his country torn by war and ended his life in exile, painting nightmares for himself.",
+    "es": "El hijo de un dorador de un pueblito aragonés llegó a ser pintor del rey, quedó sordo, vio a su país destrozado por la guerra y terminó su vida en el exilio, pintando pesadillas para sí mismo."
+  },
+  "steps": [
+    {
+      "date": "1746-03-30",
+      "kind": "born",
+      "place": { "en": "Fuendetodos, Spain", "es": "Fuendetodos, España" },
+      "at": [-0.9587, 41.3424],
+      "title": { "en": "Born in an Aragonese village", "es": "Nace en un pueblo aragonés" },
+      "text": {
+        "en": "Francisco José de Goya y Lucientes was born in Fuendetodos, a hamlet in Aragon, where his mother's family had a small house. His father was a gilder of altarpieces.",
+        "es": "Francisco José de Goya y Lucientes nació en Fuendetodos, una aldea de Aragón, donde la familia de su madre tenía una casita. Su padre era dorador de retablos."
+      },
+      "details": {
+        "en": "The family soon moved to Zaragoza, the capital of Aragon, where the boy grew up. The small house in Fuendetodos where he was born can still be visited.",
+        "es": "La familia se mudó pronto a Zaragoza, la capital de Aragón, donde el niño creció. La casita de Fuendetodos donde nació todavía se puede visitar."
+      }
+    },
+    {
+      "date": "1760",
+      "kind": "study",
+      "about": true,
+      "place": { "en": "Zaragoza, Spain", "es": "Zaragoza, España" },
+      "at": [-0.8773, 41.6561],
+      "title": { "en": "Apprentice to Luzán", "es": "Aprendiz de Luzán" },
+      "text": {
+        "en": "At about 14 he began to learn painting in the workshop of José Luzán, who had trained in Naples. He spent four years copying prints and drawing.",
+        "es": "A los 14 años aprox. empezó a aprender pintura en el taller de José Luzán, formado en Nápoles. Pasó cuatro años copiando grabados y dibujando."
+      },
+      "unsure": {
+        "en": "The exact year he entered Luzán's workshop is not documented; sources say 1759 or 1760.",
+        "es": "No hay documento del año exacto en que entró al taller de Luzán; las fuentes dicen 1759 o 1760."
+      }
+    },
+    {
+      "date": "1770",
+      "kind": "journey",
+      "about": true,
+      "place": { "en": "Parma, Italy", "es": "Parma, Italia" },
+      "at": [10.3262, 44.7993],
+      "title": { "en": "Italy", "es": "Italia" },
+      "text": {
+        "en": "After twice failing to win a prize at the Royal Academy in Madrid, he went to Italy at his own cost. In 1771 he came second in a painting contest at the Academy of Parma.",
+        "es": "Después de fracasar dos veces en ganar un premio en la Academia Real de Madrid, viajó a Italia por su cuenta. En 1771 ganó el segundo lugar en un concurso de pintura de la Academia de Parma."
+      },
+      "details": {
+        "en": "He also spent time in Rome. Most of what we know of this trip comes from his own notebook, and little is certain about where he stayed. He came home in 1771 with a trained eye and a record as a prize-winner.",
+        "es": "También estuvo un tiempo en Roma. Casi todo lo que sabemos de este viaje viene de su propio cuaderno, y poco es seguro sobre dónde se alojó. Volvió en 1771 con el ojo formado y el antecedente de un premio."
+      },
+      "unsure": {
+        "en": "Where he lived and travelled in Italy is little documented; Parma and Rome are the places we know of.",
+        "es": "Se sabe poco de dónde vivió y viajó en Italia; Parma y Roma son los lugares que conocemos."
+      }
+    },
+    {
+      "date": "1772",
+      "kind": "made",
+      "place": { "en": "Zaragoza, Spain", "es": "Zaragoza, España" },
+      "at": [-0.8783, 41.6569],
+      "title": { "en": "Frescoes in the Pilar", "es": "Frescos en el Pilar" },
+      "text": {
+        "en": "Back in Zaragoza he won his first great commission: painting a vault in the Basilica of Our Lady of the Pillar. He would paint another there in 1780.",
+        "es": "De vuelta en Zaragoza ganó su primer gran encargo: pintar una bóveda de la Basílica de Nuestra Señora del Pilar. Pintaría otra allí en 1780."
+      },
+      "places": [
+        {
+          "name": { "en": "Adoration of the Name of God", "es": "Adoración del nombre de Dios" },
+          "at": [-0.8783, 41.6569],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🖼️",
+          "date": "1772",
+          "by": { "en": "Francisco Goya", "es": "Francisco de Goya" },
+          "text": {
+            "en": "His fresco in the Pilar, painted in 1772. It is still on the vault of the basilica, in Zaragoza.",
+            "es": "Su fresco en el Pilar, pintado en 1772. Sigue en la bóveda de la basílica, en Zaragoza."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1775",
+      "kind": "career",
+      "place": { "en": "Madrid, Spain", "es": "Madrid, España" },
+      "at": [-3.7026, 40.4165],
+      "title": { "en": "Designs for the tapestry factory", "es": "Diseños para la fábrica de tapices" },
+      "text": {
+        "en": "Invited to Madrid by the painter Mengs, he began to paint cartoons for the Royal Tapestry Factory: bright scenes of picnics, games and dances of ordinary Spaniards.",
+        "es": "Invitado a Madrid por el pintor Mengs, empezó a pintar cartones para la Real Fábrica de Tapices: escenas alegres de meriendas, juegos y bailes de gente común."
+      },
+      "details": {
+        "en": "He painted tapestry designs for about 15 years, and they brought him to the court's notice. In 1786 he was named painter to King Charles III, and in 1789, painter to Charles IV.",
+        "es": "Pintó diseños para tapices durante unos 15 años, y con ellos llegó a ser conocido en la corte. En 1786 fue nombrado pintor del rey Carlos III, y en 1789, pintor de Carlos IV."
+      }
+    },
+    {
+      "date": "1793",
+      "kind": "struggle",
+      "about": true,
+      "place": { "en": "Cádiz, Spain", "es": "Cádiz, España" },
+      "at": [-6.2891, 36.5267],
+      "title": { "en": "The illness that left him deaf", "es": "La enfermedad que lo dejó sordo" },
+      "text": {
+        "en": "In the winter of 1792 and 1793 he fell gravely ill while staying with a friend on Spain's southern coast. He recovered but was left completely deaf, and he was 46.",
+        "es": "En el invierno de 1792 a 1793 cayó gravemente enfermo mientras visitaba a un amigo en la costa sur de España. Se recuperó, pero quedó completamente sordo, a los 46 años."
+      },
+      "details": {
+        "en": "The cause of his illness is still debated. After it his art changed: he began to paint small pictures of madmen, fires and shipwrecks \"to occupy an imagination mortified by my sufferings\", as he wrote, and his portraits grew more searching.",
+        "es": "La causa de su enfermedad aún se discute. Después su arte cambió: empezó a pintar cuadros pequeños de locos, incendios y naufragios \"para ocupar la imaginación mortificada por mis padecimientos\", como escribió, y sus retratos se volvieron más penetrantes."
+      },
+      "unsure": {
+        "en": "Sources place him in Seville and then in Cádiz, at the house of his friend Sebastián Martínez, and are not sure of the dates.",
+        "es": "Las fuentes lo sitúan en Sevilla y luego en Cádiz, en la casa de su amigo Sebastián Martínez, y no están seguras de las fechas."
+      }
+    },
+    {
+      "date": "1799-02",
+      "kind": "made",
+      "place": { "en": "Madrid, Spain", "es": "Madrid, España" },
+      "at": [-3.7026, 40.4165],
+      "title": { "en": "The Caprichos", "es": "Los Caprichos" },
+      "text": {
+        "en": "He put on sale 80 etchings that mocked vice, greed and superstition, among them \"The sleep of reason produces monsters\". The Inquisition took notice and he withdrew them after a few days.",
+        "es": "Puso a la venta 80 aguafuertes que se burlaban del vicio, la codicia y la superstición, entre ellos \"El sueño de la razón produce monstruos\". La Inquisición se fijó en ellos y él los retiró a los pocos días."
+      },
+      "details": {
+        "en": "The same year he was named First Court Painter. In 1800 he painted The Family of Charles IV, and the Duchess of Alba and the royal favourite Godoy also sat for him. He gave the plates of the Caprichos to the king in exchange for a pension for his son.",
+        "es": "Ese mismo año fue nombrado Primer Pintor de Cámara. En 1800 pintó La familia de Carlos IV, y también posaron para él la duquesa de Alba y el favorito del rey, Godoy. Entregó las planchas de los Caprichos al rey a cambio de una pensión para su hijo."
+      }
+    },
+    {
+      "date": "1808-10",
+      "kind": "struggle",
+      "about": true,
+      "place": { "en": "Zaragoza, Spain", "es": "Zaragoza, España" },
+      "at": [-0.8773, 41.6561],
+      "title": { "en": "The ruins of Zaragoza", "es": "Las ruinas de Zaragoza" },
+      "text": {
+        "en": "Napoleon had invaded Spain. After the first siege of Zaragoza, General Palafox called Goya to his ruined home town to see the damage and paint the heroes.",
+        "es": "Napoleón había invadido España. Tras el primer sitio de Zaragoza, el general Palafox llamó a Goya a su ciudad en ruinas para que viera los daños y pintara a los héroes."
+      },
+      "details": {
+        "en": "What Goya saw, and what he heard of the war over the next six years, grew into The Disasters of War, 82 etchings of killing, hunger and cruelty on both sides. He did not publish them; they appeared in 1863, long after his death.",
+        "es": "Lo que Goya vio, y lo que supo de la guerra en los seis años siguientes, dio origen a Los desastres de la guerra, 82 aguafuertes de muerte, hambre y crueldad de ambos bandos. No los publicó; aparecieron en 1863, mucho después de su muerte."
+      },
+      "unsure": {
+        "en": "The date of the visit is approximate; it happened in the autumn of 1808.",
+        "es": "La fecha de la visita es aproximada; ocurrió en el otoño de 1808."
+      }
+    },
+    {
+      "date": "1814",
+      "kind": "made",
+      "place": { "en": "Madrid, Spain", "es": "Madrid, España" },
+      "at": [-3.7026, 40.4165],
+      "title": { "en": "The Second and Third of May", "es": "El dos y el tres de mayo" },
+      "text": {
+        "en": "With the French gone and the king restored, Goya offered to paint the Madrid uprising of 1808 and its punishment. The Third of May shows the executions: a man in white, arms raised, facing the firing squad.",
+        "es": "Con los franceses fuera y el rey restituido, Goya se ofreció a pintar el levantamiento de Madrid de 1808 y su castigo. El tres de mayo muestra los fusilamientos: un hombre de blanco, con los brazos en alto, frente al pelotón."
+      },
+      "places": [
+        {
+          "name": { "en": "The Third of May 1808", "es": "El 3 de mayo de 1808" },
+          "at": [-3.6922, 40.4139],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🖼️",
+          "date": "1814",
+          "by": { "en": "Francisco Goya", "es": "Francisco de Goya" },
+          "text": {
+            "en": "Painted in 1814 with its companion, The Second of May. Both hang in the Prado Museum in Madrid.",
+            "es": "Pintado en 1814 junto con su pareja, El 2 de mayo. Los dos cuelgan en el Museo del Prado, en Madrid."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1819",
+      "kind": "made",
+      "place": { "en": "Madrid, Spain", "es": "Madrid, España" },
+      "at": [-3.726, 40.4115],
+      "title": { "en": "The House of the Deaf Man", "es": "La Quinta del Sordo" },
+      "text": {
+        "en": "At 72 he bought a country house by the Manzanares river and covered its walls with the \"Black Paintings\": witches, a duel with clubs and Saturn devouring his son. He painted them for himself and never named them.",
+        "es": "A los 72 años compró una casa de campo junto al río Manzanares y cubrió sus muros con las \"Pinturas negras\": brujas, un duelo a garrotazos y Saturno devorando a su hijo. Las pintó para sí mismo y nunca les puso nombre."
+      },
+      "details": {
+        "en": "That year he nearly died of another illness. Fifty years later the paintings were moved from the plaster to canvas, which damaged them, and they are now in the Prado. The house itself was demolished in the 1900s.",
+        "es": "Ese año estuvo a punto de morir por otra enfermedad. Cincuenta años después las pinturas se pasaron del muro al lienzo, lo que las dañó, y hoy están en el Prado. La casa se demolió a comienzos del siglo XX."
+      },
+      "unsure": {
+        "en": "Scholars debate whether Goya painted all the Black Paintings himself and which of the names later given to them are right.",
+        "es": "Los especialistas discuten si Goya pintó todas las Pinturas negras él mismo y cuáles de los nombres que se les dieron después son correctos."
+      },
+      "places": [
+        {
+          "name": { "en": "Saturn Devouring His Son", "es": "Saturno devorando a su hijo" },
+          "at": [-3.6922, 40.4139],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🖼️",
+          "date": "1820",
+          "by": { "en": "Francisco Goya", "es": "Francisco de Goya" },
+          "text": {
+            "en": "One of the Black Paintings, painted around 1820 to 1823 on the wall of his dining room. It is now in the Prado.",
+            "es": "Una de las Pinturas negras, pintada hacia 1820 a 1823 en un muro del comedor. Hoy está en el Prado."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1824",
+      "kind": "struggle",
+      "place": { "en": "Bordeaux, France", "es": "Burdeos, Francia" },
+      "at": [-0.5805, 44.8412],
+      "title": { "en": "Exile in Bordeaux", "es": "El exilio en Burdeos" },
+      "text": {
+        "en": "After a liberal government fell and the absolute king took revenge on its supporters, Goya, who had served the French king as well, left for France. He settled in Bordeaux with Leocadia Weiss and her daughter.",
+        "es": "Cuando cayó un gobierno liberal y el rey absoluto se vengó de sus partidarios, Goya, que también había servido al rey francés, se fue a Francia. Se instaló en Burdeos con Leocadia Weiss y su hija."
+      },
+      "details": {
+        "en": "At almost 80 he learned the new art of lithography and made the Bulls of Bordeaux, and he painted The Milkmaid of Bordeaux. He visited Madrid once, in 1826, to ask the king for retirement from his post.",
+        "es": "A los casi 80 años aprendió la nueva técnica de la litografía e hizo Los toros de Burdeos, y pintó La lechera de Burdeos. Visitó Madrid una vez, en 1826, para pedir al rey la jubilación de su cargo."
+      }
+    },
+    {
+      "date": "1828-04-16",
+      "kind": "died",
+      "place": { "en": "Bordeaux, France", "es": "Burdeos, Francia" },
+      "at": [-0.5805, 44.8412],
+      "title": { "en": "He dies in Bordeaux", "es": "Muere en Burdeos" },
+      "text": {
+        "en": "Goya died at 82, after a stroke, in his exile in France. He was buried in the Chartreuse cemetery in Bordeaux.",
+        "es": "Goya murió a los 82 años, tras un derrame, en su exilio en Francia. Lo enterraron en el cementerio de la Cartuja de Burdeos."
+      }
+    },
+    {
+      "date": "1919",
+      "kind": "honour",
+      "place": { "en": "Madrid, Spain", "es": "Madrid, España" },
+      "at": [-3.7256, 40.4254],
+      "title": { "en": "Home to Madrid", "es": "De regreso en Madrid" },
+      "text": {
+        "en": "His remains were brought back to Spain and buried in the chapel of San Antonio de la Florida, under the dome he had painted in 1798. The skull was missing.",
+        "es": "Sus restos fueron traídos a España y sepultados en la ermita de San Antonio de la Florida, bajo la cúpula que él había pintado en 1798. Faltaba el cráneo."
+      },
+      "unsure": {
+        "en": "The remains lay first in San Isidro cemetery in Madrid; in 1928 they were moved to a twin chapel built beside the original.",
+        "es": "Los restos estuvieron primero en el cementerio de San Isidro de Madrid; en 1928 pasaron a una ermita gemela construida junto a la original."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Prado Museum", "es": "Museo del Prado" },
+      "at": [-3.6922, 40.4139],
+      "kind": "museum",
+      "text": {
+        "en": "The world's largest Goya collection: The Third of May, The Clothed and Naked Maja, the Black Paintings and the tapestry cartoons.",
+        "es": "La mayor colección de Goya del mundo: El 3 de mayo, La maja vestida y La maja desnuda, las Pinturas negras y los cartones para tapices."
+      }
+    },
+    {
+      "name": { "en": "Chapel of San Antonio de la Florida", "es": "Ermita de San Antonio de la Florida" },
+      "at": [-3.7256, 40.4254],
+      "kind": "grave",
+      "text": {
+        "en": "Goya's frescoes of 1798 cover the dome, and he is buried beneath them.",
+        "es": "Los frescos de Goya de 1798 cubren la cúpula, y él está sepultado debajo."
+      }
+    },
+    {
+      "name": { "en": "Birthplace of Goya", "es": "Casa natal de Goya" },
+      "at": [-0.9587, 41.3424],
+      "kind": "house",
+      "text": {
+        "en": "The small house in Fuendetodos where he was born, restored as a museum. Nearby is a museum of his etchings.",
+        "es": "La casita de Fuendetodos donde nació, restaurada como museo. Cerca hay un museo de sus grabados."
+      }
+    },
+    {
+      "name": { "en": "Basilica of Our Lady of the Pillar", "es": "Basílica de Nuestra Señora del Pilar" },
+      "at": [-0.8783, 41.6569],
+      "kind": "site",
+      "text": {
+        "en": "In Zaragoza, with his early frescoes in the vaults.",
+        "es": "En Zaragoza, con sus primeros frescos en las bóvedas."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Goya is both the last of the old masters and the first of the modern painters. He showed the war as it was, and the monsters that sleep inside people. Manet, Picasso and the Expressionists all learned from him.",
+    "es": "Goya es a la vez el último de los grandes maestros antiguos y el primero de los pintores modernos. Mostró la guerra como era, y los monstruos que duermen dentro de las personas. Manet, Picasso y los expresionistas aprendieron de él."
+  },
+  "sources": [
+    { "title": "Wikipedia: Francisco Goya", "url": "https://en.wikipedia.org/wiki/Francisco_Goya" },
+    { "title": "Wikipedia: Royal Chapel of St. Anthony of La Florida", "url": "https://en.wikipedia.org/wiki/Royal_Chapel_of_St._Anthony_of_La_Florida" },
+    { "title": "Patrimonio Nacional: Ermita de San Antonio de la Florida", "url": "https://www.patrimonionacional.es/en/visita/chapel-san-antonio-de-la-florida" }
+  ]
+}
