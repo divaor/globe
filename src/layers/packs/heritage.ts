@@ -12,7 +12,8 @@ import { loadJSON } from '../../data/store';
 import { h } from '../../ui/dom';
 import { LC } from '../context';
 import type { App } from '../../app/app';
-import type { InfoRow, LayerDef, LayerInstance, LayerTapUi, Legend, RenderCtx } from '../types';
+import type { InfoRow, LayerDef, LayerInstance, Legend, RenderCtx } from '../types';
+import { crowdOf, type Placed } from '../crowd';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -54,18 +55,6 @@ function summaryEl(titles: { en: string; es: string }): HTMLElement | null {
   const p = h('p', { class: 'card-note card-summary' });
   void summary(titles).then((s) => { if (s?.extract) p.textContent = shorten(s.extract); else p.remove(); });
   return p;
-}
-/** The nearest marker drawn within 18 px of a tap. */
-function nearest<T>(list: T[], at: (x: T) => [number, number], ui: LayerTapUi): T | null {
-  let best: T | null = null, bd = 18 * 18;
-  for (const x of list) {
-    const [lon, lat] = at(x);
-    const p = ui.project(lon, lat);
-    if (!p) continue;
-    const d = (p[0] - ui.x) ** 2 + (p[1] - ui.y) ** 2;
-    if (d < bd) { bd = d; best = x; }
-  }
-  return best;
 }
 const countryName = (id: string) => { const m = LC.data.meta[id]; return m ? (es() ? m.es : m.n) : id; };
 
@@ -123,6 +112,14 @@ function togglePlay(inst: LayerInstance) {
   LC.notify?.();
 }
 
+/** The zoom from which sites that overlap move apart, each with a line to its place (layers/crowd.ts). */
+const SITES_APART = 7;
+const siteR = (z: number) => Math.max(2.4, Math.min(7, 1.6 + z * 1.1));
+/** This frame's dots (a site in danger takes the room of its ring); the better-known site keeps its place. */
+function siteDots(rc: RenderCtx, inst: LayerInstance): Placed<Site>[] {
+  const r = siteR(rc.webZoom), year = playYear(inst) ?? LAST;
+  return crowdOf<Site>(inst, SITES_APART).place(rc, () => visible(inst), (s) => s.at, (s) => (inDanger(s, year) ? r + 3 : r), (s) => 1 + s.pop, `${inst.options.show ?? 'all'}|${playYear(inst) ?? ''}`);
+}
 export const heritage: LayerDef = {
   id: 'heritage', category: 'culture', icon: '🏛️', kind: 'overlay', stackOrder: 4,
   name: { en: 'World Heritage sites', es: 'Patrimonio de la Humanidad' },
@@ -163,23 +160,24 @@ export const heritage: LayerDef = {
       if (year >= LAST) setTimeout(() => { if (st.playing && playYear(inst) === LAST) { st.playing = false; LC.notify?.(); LC.requestRender(); } }, 1600);
     }
     const byYear = inst.options.colour === 'year';
-    const r = Math.max(2.4, Math.min(7, 1.6 + rc.webZoom * 1.1));
+    const r = siteR(rc.webZoom);
     const edge = rc.theme.dark ? 'rgba(0,0,0,0.65)' : 'rgba(255,255,255,0.95)';
-    const sites = visible(inst);
+    const colour = (s: Site) => (gone(s) != null && year == null ? '#9aa0a6' : byYear ? yearColor(s.y) : CAT_COLOR[s.c]);
+    const dots = siteDots(rc, inst);
+    crowdOf<Site>(inst, SITES_APART).leaders(rc, colour);
     const danger: [number, number][] = [];
-    for (const s of sites) {
-      const p = rc.project(s.at[0], s.at[1]);
-      if (!p) continue;
+    for (const d of dots) {
+      const s = d.it;
       ctx.beginPath();
-      ctx.arc(p[0], p[1], r, 0, Math.PI * 2);
+      ctx.arc(d.x, d.y, r, 0, Math.PI * 2);
       if (gone(s) != null && year == null) {
         ctx.strokeStyle = '#9aa0a6'; ctx.lineWidth = 2; ctx.stroke();
         continue;
       }
-      ctx.fillStyle = byYear ? yearColor(s.y) : CAT_COLOR[s.c];
+      ctx.fillStyle = colour(s);
       ctx.fill();
       ctx.strokeStyle = edge; ctx.lineWidth = 1; ctx.stroke();
-      if (inDanger(s, year ?? LAST)) danger.push(p);
+      if (inDanger(s, year ?? LAST)) danger.push([d.x, d.y]);
     }
     ctx.strokeStyle = DANGER; ctx.lineWidth = 1.8;
     for (const p of danger) { ctx.beginPath(); ctx.arc(p[0], p[1], r + 2.6, 0, Math.PI * 2); ctx.stroke(); }
@@ -189,11 +187,13 @@ export const heritage: LayerDef = {
     const color = rc.theme.dark ? '#ffe3b3' : '#7a4a00';
     // Only the best-known sites are named until the map is close (many official names are long).
     const minPop = rc.webZoom < 6 ? 90 : rc.webZoom < 8 ? 40 : 0;
-    for (const s of visible(inst)) {
+    const crowd = crowdOf<Site>(inst, SITES_APART);
+    for (const d of siteDots(rc, inst)) {
+      const s = d.it;
       if (s.pop < minPop) continue;
-      const p = rc.project(s.at[0], s.at[1]);
-      if (!p) continue;
-      rc.labels.add({ text: siteName(s), x: p[0] + 7, y: p[1], align: 'left', priority: 520 + Math.min(300, s.pop), size: 10.5, weight: 650, color, halo: rc.theme.labelHalo });
+      const l = { text: siteName(s), priority: 520 + Math.min(300, s.pop), size: 10.5, weight: 650, color, halo: rc.theme.labelHalo };
+      // (To the right of its dot; one of a pile that has moved apart, on whichever side is free.)
+      if (d.box) crowd.name(rc, d, l); else rc.labels.add({ ...l, x: d.x + 7, y: d.y, align: 'left' });
     }
   },
   legend(inst): Legend | null {
@@ -237,7 +237,7 @@ export const heritage: LayerDef = {
     return rows;
   },
   tap(_lon, _lat, inst, ui) {
-    const s = nearest(visible(inst), (x) => x.at, ui);
+    const s = crowdOf<Site>(inst, SITES_APART).pick(ui);
     if (!s) return false;
     const rows: InfoRow[] = [];
     const left = gone(s);
@@ -296,6 +296,14 @@ function shownInventions(inst: LayerInstance): Invention[] {
     && it.t >= age.from && it.t < age.to && (cat === 'all' || it.cat === cat));
 }
 
+/** The zoom from which inventions that overlap move apart (their markers are big: a city's would cover a country from far). */
+const INVENTIONS_APART = 7.5;
+const inventionSize = (z: number) => Math.max(15, Math.min(30, 11 + z * 3));
+/** This frame's markers. */
+const inventionDots = (rc: RenderCtx, inst: LayerInstance): Placed<Invention>[] => {
+  const r = inventionSize(rc.webZoom) * 0.5;
+  return crowdOf<Invention>(inst, INVENTIONS_APART).place(rc, () => shownInventions(inst), (it) => it.at, () => r, undefined, `${inst.options.age ?? 'all'}|${inst.options.field ?? 'all'}`);
+};
 export const inventionsMap: LayerDef = {
   id: 'inventions', category: 'culture', icon: '💡', kind: 'overlay', stackOrder: 4,
   name: { en: 'Where things were invented', es: 'Dónde se inventaron las cosas' },
@@ -326,24 +334,25 @@ export const inventionsMap: LayerDef = {
   onOptionsChanged() { LC.requestRender(); },
   drawOverlay(rc, inst) {
     const { ctx } = rc;
-    const size = Math.max(15, Math.min(30, 11 + rc.webZoom * 3));
+    const size = inventionSize(rc.webZoom);
     ctx.font = `${size * 0.72}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`;
     ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    for (const it of shownInventions(inst)) {
-      const p = rc.project(it.at[0], it.at[1]);
-      if (!p) continue;
-      ctx.beginPath(); ctx.arc(p[0], p[1], size * 0.5, 0, Math.PI * 2);
+    const colour = (it: Invention) => invCats.get(it.cat)?.color ?? '#f39c12';
+    const dots = inventionDots(rc, inst);
+    crowdOf<Invention>(inst, INVENTIONS_APART).leaders(rc, colour);
+    for (const d of dots) {
+      ctx.beginPath(); ctx.arc(d.x, d.y, size * 0.5, 0, Math.PI * 2);
       ctx.fillStyle = rc.theme.dark ? 'rgba(10,20,40,0.72)' : 'rgba(255,255,255,0.85)'; ctx.fill();
-      ctx.strokeStyle = invCats.get(it.cat)?.color ?? '#f39c12'; ctx.lineWidth = 2; ctx.stroke();
-      ctx.fillText(it.icon, p[0], p[1] + 1);
+      ctx.strokeStyle = colour(d.it); ctx.lineWidth = 2; ctx.stroke();
+      ctx.fillStyle = rc.theme.label; ctx.fillText(d.it.icon, d.x, d.y + 1);
     }
   },
   labels(rc, inst) {
     if (rc.webZoom < 3) return;
-    const size = Math.max(15, Math.min(30, 11 + rc.webZoom * 3));
-    for (const it of shownInventions(inst)) {
-      const p = rc.project(it.at[0], it.at[1]);
-      if (p) rc.labels.add({ text: tx2(it.name), sub: when(it), x: p[0], y: p[1] + size * 0.8, priority: 600, size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
+    const size = inventionSize(rc.webZoom);
+    const crowd = crowdOf<Invention>(inst, INVENTIONS_APART);
+    for (const d of inventionDots(rc, inst)) {
+      crowd.name(rc, d, { text: tx2(d.it.name), sub: when(d.it), priority: 600, size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo }, size * 0.8);
     }
   },
   legend(inst) {
@@ -356,7 +365,7 @@ export const inventionsMap: LayerDef = {
     };
   },
   tap(_lon, _lat, inst, ui) {
-    const it = nearest(shownInventions(inst), (x) => x.at, ui);
+    const it = crowdOf<Invention>(inst, INVENTIONS_APART).pick(ui);
     if (!it) return false;
     const rows: InfoRow[] = [{ label: L('When', 'Cuándo'), value: when(it), icon: '📅' }];
     if (it.place) rows.push({ label: L('Where', 'Dónde'), value: tx2(it.place), icon: '📍' });

@@ -49,7 +49,7 @@ import { geoArea, geoCircle, geoDistance, geoGraticule10, geoInterpolate, geoOrt
 import { rewindTopology } from './winding.mjs';
 import { paleoMa, tooOld, plateFor, rotate, paleoLand, PALEO_YEARS } from './paleo-rot.mjs';
 import { attachGames, gamesIds, gamesSides } from './games/attach.mjs';
-import { expandLife, FIELDS as LIFE_FIELDS, PAIRS as LIFE_PAIRS } from './lives/expand.mjs';
+import { expandLife, FIELDS as LIFE_FIELDS, PAIRS as LIFE_PAIRS, STEP_KINDS as LIFE_STEPS } from './lives/expand.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DATA = path.join(ROOT, 'public/data');
@@ -1176,6 +1176,8 @@ function collectionItems(results) {
 function repeatedNames(kind, items) {
   const norm = (x) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
   const by = new Map();
+  // (A life's own step markers carry the step's title, which may be a work's name too: "The Two Fridas".)
+  if (kind === 'lives') items = items.filter((it) => !LIFE_STEPS.includes(it.cat));
   for (const it of items) { const k = norm(it.name.en); by.set(k, [...(by.get(k) ?? []), it]); }
   for (const list of by.values()) {
     if (list.length > 1) console.warn(`  warn ${kind}: "${list[0].name.en}" is listed ${list.length} times (${list.map((it) => it.story).join(', ')}); give them one id`);

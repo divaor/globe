@@ -7,7 +7,8 @@ import { h } from '../../ui/dom';
 import { LC } from '../context';
 import type { App } from '../../app/app';
 import type { Shell } from '../../ui/shell';
-import type { LayerDef, LayerInstance, LayerTapUi } from '../types';
+import type { LayerDef, LayerInstance, LayerTapUi, RenderCtx } from '../types';
+import { crowdOf, type Placed } from '../crowd';
 import type { Hit } from '../../ui/search';
 import { loadBorn, loadLives, personCard, FIELDS, fieldName, nm, years, what, type BornData, type BornPlace, type Person, type PersonLinks } from '../../lives/born';
 import { creditEl } from '../../artguide/cards';
@@ -38,7 +39,7 @@ export function personLinks(): PersonLinks {
   };
 }
 
-let memo: { key: string; places: Map<BornPlace, Person[]> } | null = null;
+let memo: { key: string; places: Map<BornPlace, Person[]>; dots: [BornPlace, Person[]][] } | null = null;
 /** The places on the map with the filter's options: each with its people, the best known first. */
 function shown(inst: LayerInstance): Map<BornPlace, Person[]> {
   const field = String(inst.options.field ?? 'all'), per = PERIODS.find((p) => p[0] === inst.options.period) ?? PERIODS[0], died = inst.options.show === 'died';
@@ -52,12 +53,22 @@ function shown(inst: LayerInstance): Map<BornPlace, Person[]> {
     if (!pl) continue;
     (places.get(pl) ?? places.set(pl, []).get(pl)!).push(p);
   }
-  memo = { key, places };
+  memo = { key, places, dots: [...places] };
   return places;
 }
 /** Zoomed out, only the places of the very best known; more as the map comes closer. */
 const least = (z: number) => (z < 1.8 ? 120 : z < 2.6 ? 95 : z < 3.6 ? 78 : z < 4.8 ? 64 : z < 6 ? 54 : 0);
 const radius = (n: number, z: number) => Math.min(13, (2.6 + Math.sqrt(n) * 1.5) * Math.min(1.5, 0.85 + z * 0.07));
+/** The zoom from which places that overlap move apart (layers/crowd.ts): a district and its city, a palace and its town. */
+const APART = 9;
+type Dot = [BornPlace, Person[]];
+/** This frame's dots: the places shown at this zoom, each with its people. The place of the better-known person keeps its spot. */
+function dots(rc: RenderCtx, inst: LayerInstance): Placed<Dot>[] {
+  const min = least(rc.webZoom);
+  shown(inst);
+  return crowdOf<Dot>(inst, APART).place(rc, () => memo!.dots.filter((d) => d[1][0].sl >= min),
+    (d) => d[0].at, (d) => radius(d[1].length, rc.webZoom), (d) => 1 + d[1][0].sl, memo!.key);
+}
 
 /** The people of a place, as a list; a tap opens each one's card. */
 export function peopleList(people: Person[], onPick: (p: Person) => void, max = 60): HTMLElement {
@@ -90,23 +101,22 @@ export const bornHere: LayerDef = {
   drawOverlay(rc, inst) {
     if (!data) return;
     const { ctx } = rc;
-    const min = least(rc.webZoom);
-    for (const [pl, people] of shown(inst)) {
-      if (people[0].sl < min) continue;
-      const p = rc.project(pl.at[0], pl.at[1]);
-      if (!p) continue;
-      ctx.beginPath(); ctx.arc(p[0], p[1], radius(people.length, rc.webZoom), 0, Math.PI * 2);
-      ctx.fillStyle = (FIELDS[people[0].field] ?? FIELDS.other).color; ctx.globalAlpha = 0.88; ctx.fill();
-      ctx.globalAlpha = 1; ctx.lineWidth = 1.2; ctx.strokeStyle = 'rgba(0,0,0,0.5)'; ctx.stroke();
+    const colour = (d: Dot) => (FIELDS[d[1][0].field] ?? FIELDS.other).color;
+    const list = dots(rc, inst);
+    crowdOf<Dot>(inst, APART).leaders(rc, colour);
+    const alpha = ctx.globalAlpha;
+    for (const p of list) {
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = colour(p.it); ctx.globalAlpha = alpha * 0.88; ctx.fill();
+      ctx.globalAlpha = alpha; ctx.lineWidth = 1.2; ctx.strokeStyle = 'rgba(0,0,0,0.5)'; ctx.stroke();
     }
   },
   labels(rc, inst) {
     if (!data || rc.webZoom < 1.6) return;
-    const min = least(rc.webZoom);
-    for (const [pl, people] of shown(inst)) {
-      if (people[0].sl < min) continue;
-      const p = rc.project(pl.at[0], pl.at[1]);
-      if (p) rc.labels.add({ text: nm(people[0]), sub: people.length > 1 ? `${nm(pl)} +${people.length - 1}` : nm(pl), x: p[0], y: p[1] + radius(people.length, rc.webZoom) + 8, priority: 300 + Math.min(400, people[0].sl), size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
+    const crowd = crowdOf<Dot>(inst, APART);
+    for (const p of dots(rc, inst)) {
+      const [pl, people] = p.it;
+      crowd.name(rc, p, { text: nm(people[0]), sub: people.length > 1 ? `${nm(pl)} +${people.length - 1}` : nm(pl), priority: 300 + Math.min(400, people[0].sl), size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
     }
   },
   legend(inst) {
@@ -123,16 +133,9 @@ export const bornHere: LayerDef = {
   },
   tap(_lon, _lat, inst, ui: LayerTapUi) {
     if (!data) return false;
-    const places = shown(inst);
-    let best: BornPlace | null = null, bd = 18 * 18;
-    for (const pl of places.keys()) {
-      const p = ui.project(pl.at[0], pl.at[1]);
-      if (!p) continue;
-      const d = (p[0] - ui.x) ** 2 + (p[1] - ui.y) ** 2;
-      if (d < bd) { bd = d; best = pl; }
-    }
-    if (!best) return false;
-    const people = places.get(best)!;
+    const hit = crowdOf<Dot>(inst, APART).pick(ui);
+    if (!hit) return false;
+    const [best, people] = hit;
     const x = personLinks();
     if (people.length === 1) { void personCard(ui.card, people[0], x); return true; }
     const died = inst.options.show === 'died';

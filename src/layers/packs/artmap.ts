@@ -2,12 +2,14 @@
 // - Art museums: the museums of the art guide, sized by visitors a year.
 // - Masterpieces: the best-known works where they hang, one dot a museum with how many there are, by kind and period.
 // - Architectural styles: notable buildings with their architects, coloured by style.
-// A tap opens the museum's, the work's or the building's card, which links to the city's guide.
+// A tap opens the museum's, the work's or the building's card, which links to the city's guide. Close up, dots that
+// overlap move apart, each with a line to its place (layers/crowd.ts), so every one can be tapped.
 import { lang, fmtCompact } from '../../app/i18n';
 import { LC } from '../context';
 import type { App } from '../../app/app';
-import type { LayerDef, LayerInstance, LayerTapUi, RenderCtx } from '../types';
-import { loadArt, loadArch, nm, KINDS, PERIODS, type ArtData, type ArchData, type Work, type Museum } from '../../artguide/data';
+import type { LayerDef, LayerInstance, RenderCtx } from '../types';
+import { crowdOf, type Placed } from '../crowd';
+import { loadArt, loadArch, nm, KINDS, PERIODS, type ArtData, type ArchData, type Work, type Museum, type Building } from '../../artguide/data';
 import { museumCard, buildingCard } from '../../artguide/cards';
 
 const es = () => lang() === 'es';
@@ -18,19 +20,13 @@ let arch: ArchData | null = null;
 const cityName = (id: string | null) => (id ? (window.atlas?.guide.cityLabel(id) ?? null) : null);
 const openCity = (tab: string) => (city: string) => APP?.emit('open-guide', city, tab);
 
-function nearest<T>(list: T[], at: (x: T) => [number, number], ui: LayerTapUi, px = 18): T | null {
-  let best: T | null = null, bd = px * px;
-  for (const x of list) {
-    const p = ui.project(...at(x));
-    if (!p) continue;
-    const d = (p[0] - ui.x) ** 2 + (p[1] - ui.y) ** 2;
-    if (d < bd) { bd = d; best = x; }
-  }
-  return best;
-}
-
 // ---- Art museums ------------------------------------------------------------------------------------------------
 const museumR = (m: Museum, z: number) => Math.max(4, Math.min(18, (m.visitors ? 3 + Math.sqrt(m.visitors / 1e6) * 5 : 4) * Math.min(1.6, 0.8 + z * 0.08)));
+/** The zoom from which a city's museums move apart (and the buildings, which are many more: closer). */
+const MUSEUMS_APART = 6, BUILDINGS_APART = 8.5;
+/** This frame's museum dots. */
+const museumDots = (rc: RenderCtx, inst: LayerInstance): Placed<Museum>[] =>
+  crowdOf<Museum>(inst, MUSEUMS_APART).place(rc, () => art?.museums ?? [], (m) => m.at, (m) => museumR(m, rc.webZoom));
 export const artMuseums: LayerDef = {
   id: 'art-museums', category: 'culture', icon: '🏛️', kind: 'overlay', stackOrder: 4,
   name: { en: 'Art museums', es: 'Museos de arte' },
@@ -38,31 +34,32 @@ export const artMuseums: LayerDef = {
   keywords: 'museum museums art gallery louvre prado visitors museos arte galería',
   credit: 'Wikidata (CC0)',
   async load() { art ??= await loadArt(); },
-  drawOverlay(rc) {
+  drawOverlay(rc, inst) {
     if (!art) return;
     const { ctx } = rc;
-    for (const m of art.museums) {
-      const p = rc.project(m.at[0], m.at[1]);
-      if (!p) continue;
-      ctx.beginPath(); ctx.arc(p[0], p[1], museumR(m, rc.webZoom), 0, Math.PI * 2);
-      ctx.fillStyle = m.visitors ? 'rgba(124,92,255,0.75)' : 'rgba(124,92,255,0.45)'; ctx.fill();
+    const crowd = crowdOf<Museum>(inst, MUSEUMS_APART);
+    const dots = museumDots(rc, inst);
+    crowd.leaders(rc, () => '#7c5cff');
+    for (const p of dots) {
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.it.visitors ? 'rgba(124,92,255,0.75)' : 'rgba(124,92,255,0.45)'; ctx.fill();
       ctx.lineWidth = 1.5; ctx.strokeStyle = '#fff'; ctx.stroke();
     }
   },
-  labels(rc) {
+  labels(rc, inst) {
     if (!art || rc.webZoom < 2.5) return;
-    for (const m of art.museums) {
-      const p = rc.project(m.at[0], m.at[1]);
-      if (p) rc.labels.add({ text: nm(m), x: p[0], y: p[1] + museumR(m, rc.webZoom) + 8, priority: 500 + Math.min(300, m.sl), size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
+    const crowd = crowdOf<Museum>(inst, MUSEUMS_APART);
+    for (const p of museumDots(rc, inst)) {
+      crowd.name(rc, p, { text: nm(p.it), priority: 500 + Math.min(300, p.it.sl), size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
     }
   },
   legend() {
     return { kind: 'categories', title: L(`${art?.museums.length ?? ''} art museums`, `${art?.museums.length ?? ''} museos de arte`),
       items: [{ color: 'rgba(124,92,255,0.75)', label: L('Bigger: more visitors a year', 'Más grande: más visitantes al año') }, { color: 'rgba(124,92,255,0.45)', label: L('Visitors not known', 'Visitantes desconocidos') }],
-      note: L('Tap one for its best-known works and the city’s art guide.', 'Toca uno para ver sus obras más conocidas y la guía de arte de la ciudad.') };
+      note: L('Tap one for its best-known works and the city’s art guide. Close up, museums that overlap move apart.', 'Toca uno para ver sus obras más conocidas y la guía de arte de la ciudad. De cerca, los museos que se enciman se separan.') };
   },
-  tap(_lon, _lat, _inst, ui) {
-    const m = art && nearest(art.museums, (x) => x.at, ui);
+  tap(_lon, _lat, inst, ui) {
+    const m = crowdOf<Museum>(inst, MUSEUMS_APART).pick(ui);
     if (!m || !art) return false;
     museumCard(ui.card, m, art.byMuseum.get(m.id) ?? [], cityName(m.city), openCity('art'));
     return true;
@@ -70,17 +67,26 @@ export const artMuseums: LayerDef = {
 };
 
 // ---- Masterpieces ---------------------------------------------------------------------------------------------------
-function shownWorks(inst: LayerInstance): Map<Museum, Work[]> {
+let worksMemo: { key: string; list: [Museum, Work[]][] } | null = null;
+const worksKey = (inst: LayerInstance) => `${inst.options.kind ?? 'all'}|${inst.options.period ?? 'all'}`;
+/** The museums with works of the kind and period chosen, each with those works (the same list until the choice changes). */
+function shownWorks(inst: LayerInstance): [Museum, Work[]][] {
+  if (!art) return [];
+  const key = worksKey(inst);
+  if (worksMemo?.key === key) return worksMemo.list;
   const out = new Map<Museum, Work[]>();
-  if (!art) return out;
   const kind = String(inst.options.kind ?? 'all'), per = PERIODS.find((p) => p[0] === inst.options.period) ?? PERIODS[0];
   for (const w of art.works) {
     if (kind !== 'all' && w.kind !== kind) continue;
     if (per[0] !== 'all' && (w.year == null || w.year < per[2] || w.year >= per[3])) continue;
     (out.get(w.museum) ?? out.set(w.museum, []).get(w.museum)!).push(w);
   }
-  return out;
+  worksMemo = { key, list: [...out] };
+  return worksMemo.list;
 }
+/** This frame's dots: a museum and its works that the filter shows. */
+const workDots = (rc: RenderCtx, inst: LayerInstance): Placed<[Museum, Work[]]>[] =>
+  crowdOf<[Museum, Work[]]>(inst, MUSEUMS_APART).place(rc, () => shownWorks(inst), (x) => x[0].at, (x) => Math.max(7, Math.min(16, 5 + Math.sqrt(x[1].length) * 2.4)), undefined, worksKey(inst));
 export const masterpieces: LayerDef = {
   id: 'masterpieces', category: 'culture', icon: '🖼️', kind: 'overlay', stackOrder: 4,
   name: { en: 'Masterpieces', es: 'Obras maestras' },
@@ -95,33 +101,33 @@ export const masterpieces: LayerDef = {
   onOptionsChanged() { LC.requestRender(); },
   drawOverlay(rc, inst) {
     const { ctx } = rc;
+    const crowd = crowdOf<[Museum, Work[]]>(inst, MUSEUMS_APART);
+    const dots = workDots(rc, inst);
+    crowd.leaders(rc, () => '#f5c542');
     ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    for (const [m, ws] of shownWorks(inst)) {
-      const p = rc.project(m.at[0], m.at[1]);
-      if (!p) continue;
-      const r = Math.max(7, Math.min(16, 5 + Math.sqrt(ws.length) * 2.4));
-      ctx.beginPath(); ctx.arc(p[0], p[1], r, 0, Math.PI * 2);
+    for (const p of dots) {
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fillStyle = '#f5c542'; ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = 'rgba(0,0,0,0.55)'; ctx.stroke();
-      ctx.fillStyle = '#1b1b1b'; ctx.font = '800 10.5px system-ui, sans-serif'; ctx.fillText(String(ws.length), p[0], p[1] + 0.5);
+      ctx.fillStyle = '#1b1b1b'; ctx.font = '800 10.5px system-ui, sans-serif'; ctx.fillText(String(p.it[1].length), p.x, p.y + 0.5);
     }
   },
   labels(rc, inst) {
     if (rc.webZoom < 2.5) return;
-    for (const [m, ws] of shownWorks(inst)) {
-      const p = rc.project(m.at[0], m.at[1]);
-      if (p) rc.labels.add({ text: nm(ws[0]), sub: nm(m), x: p[0], y: p[1] + 22, priority: 400 + Math.min(300, ws[0].sl), size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
+    const crowd = crowdOf<[Museum, Work[]]>(inst, MUSEUMS_APART);
+    for (const p of workDots(rc, inst)) {
+      const [m, ws] = p.it;
+      crowd.name(rc, p, { text: nm(ws[0]), sub: nm(m), priority: 400 + Math.min(300, ws[0].sl), size: 10.5, weight: 700, color: rc.theme.label, halo: rc.theme.labelHalo });
     }
   },
   legend(inst) {
-    const n = [...shownWorks(inst).values()].reduce((s, l) => s + l.length, 0);
+    const n = shownWorks(inst).reduce((s, x) => s + x[1].length, 0);
     return { kind: 'categories', title: L(`${n} masterpieces`, `${n} obras maestras`), items: [{ color: '#f5c542', label: L('A museum: how many of them it holds', 'Un museo: cuántas tiene') }],
       note: L('Each with the best-known work there. Tap one for its works.', 'Cada uno con la obra más conocida que tiene. Toca uno para ver sus obras.') };
   },
   tap(_lon, _lat, inst, ui) {
-    const shown = shownWorks(inst);
-    const m = nearest([...shown.keys()], (x) => x.at, ui);
-    if (!m) return false;
-    museumCard(ui.card, m, shown.get(m)!, cityName(m.city), openCity('art'));
+    const hit = crowdOf<[Museum, Work[]]>(inst, MUSEUMS_APART).pick(ui);
+    if (!hit) return false;
+    museumCard(ui.card, hit[0], hit[1], cityName(hit[0].city), openCity('art'));
     return true;
   },
 };
@@ -135,6 +141,11 @@ function shownBuildings(inst: LayerInstance) {
   const st = String(inst.options.style ?? 'all');
   return (arch?.buildings ?? []).filter((b) => b.style && (st === 'all' || b.style.key === st));
 }
+/** This frame's building dots; the better-known building keeps its place. */
+function buildingDots(rc: RenderCtx, inst: LayerInstance): Placed<Building>[] {
+  const r = Math.max(3, Math.min(7, 2 + rc.webZoom * 0.6));
+  return crowdOf<Building>(inst, BUILDINGS_APART).place(rc, () => shownBuildings(inst), (b) => b.at, () => r, (b) => 1 + b.sl, String(inst.options.style ?? 'all'));
+}
 export const architecture: LayerDef = {
   id: 'architecture', category: 'culture', icon: '📐', kind: 'overlay', stackOrder: 4,
   name: { en: 'Architectural styles', es: 'Estilos arquitectónicos' },
@@ -146,19 +157,20 @@ export const architecture: LayerDef = {
   onOptionsChanged() { LC.requestRender(); },
   drawOverlay(rc: RenderCtx, inst) {
     const { ctx } = rc;
-    const r = Math.max(3, Math.min(7, 2 + rc.webZoom * 0.6));
-    for (const b of shownBuildings(inst)) {
-      const p = rc.project(b.at[0], b.at[1]);
-      if (!p) continue;
-      ctx.beginPath(); ctx.arc(p[0], p[1], r, 0, Math.PI * 2);
-      ctx.fillStyle = b.style!.color; ctx.fill(); ctx.lineWidth = 1.2; ctx.strokeStyle = 'rgba(0,0,0,0.55)'; ctx.stroke();
+    const crowd = crowdOf<Building>(inst, BUILDINGS_APART);
+    const dots = buildingDots(rc, inst);
+    crowd.leaders(rc, (b) => b.style!.color);
+    for (const p of dots) {
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.it.style!.color; ctx.fill(); ctx.lineWidth = 1.2; ctx.strokeStyle = 'rgba(0,0,0,0.55)'; ctx.stroke();
     }
   },
   labels(rc, inst) {
     if (rc.webZoom < 4) return;
-    for (const b of shownBuildings(inst)) {
-      const p = rc.project(b.at[0], b.at[1]);
-      if (p) rc.labels.add({ text: nm(b), sub: b.architects[0] ? nm(b.architects[0]) : undefined, x: p[0], y: p[1] + 14, priority: 300 + Math.min(300, b.sl), size: 10, weight: 650, color: rc.theme.label, halo: rc.theme.labelHalo });
+    const crowd = crowdOf<Building>(inst, BUILDINGS_APART);
+    for (const p of buildingDots(rc, inst)) {
+      const b = p.it;
+      crowd.name(rc, p, { text: nm(b), sub: b.architects[0] ? nm(b.architects[0]) : undefined, priority: 300 + Math.min(300, b.sl), size: 10, weight: 650, color: rc.theme.label, halo: rc.theme.labelHalo }, p.r + 7);
     }
   },
   legend(inst) {
@@ -169,7 +181,7 @@ export const architecture: LayerDef = {
       note: L('Buildings Wikidata gives a style for. Tap one for its architect.', 'Edificios con un estilo en Wikidata. Toca uno para ver su arquitecto.') };
   },
   tap(_lon, _lat, inst, ui) {
-    const b = nearest(shownBuildings(inst), (x) => x.at, ui, 14);
+    const b = crowdOf<Building>(inst, BUILDINGS_APART).pick(ui, 14);
     if (!b) return false;
     buildingCard(ui.card, b, cityName(b.city), openCity('buildings'));
     return true;

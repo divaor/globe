@@ -26,6 +26,7 @@ import { canSpeak, narrationOn, setNarrationOn, speak, stopSpeaking, onNarration
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { LayerDef, RenderCtx } from '../layers/types';
+import { spread, leader, leaderInk, type Spot } from '../layers/crowd';
 
 type Text = { en: string; es: string };
 type Range = number | [number, number];
@@ -168,8 +169,6 @@ export interface Entry {
   sides: { name: Text; color: string }[]; items?: number; cats?: string[];
   life?: Life;
 }
-/** Where an item's marker is drawn this frame: (x, y), moved apart from crowded neighbours, and (ax, ay), its true place. */
-interface Spot { k: number; x: number; y: number; ax: number; ay: number; r: number; wt: number }
 /** A collection's items.json row: an item and where it first appears. */
 export interface CollectionItem extends Omit<Item, 'first'> {
   story: string; step: number;
@@ -1284,18 +1283,13 @@ export class StoryMode {
   /** A thin line from each moved marker to a dot at its true place (under all the markers). */
   private drawLeaders(rc: RenderCtx, spots: Map<number, Spot>, scale: (k: number) => number) {
     const { ctx } = rc;
-    const ink = rc.theme.dark ? 'rgba(232,238,247,0.8)' : 'rgba(28,34,46,0.62)';
+    const ink = leaderInk(rc.theme.dark);
     ctx.save();
     for (const sp of spots.values()) {
-      const dx = sp.x - sp.ax, dy = sp.y - sp.ay, d = Math.hypot(dx, dy);
       const s = scale(sp.k);
-      if (d < sp.r * 0.7 || s <= 0) continue;
+      if (Math.hypot(sp.x - sp.ax, sp.y - sp.ay) < sp.r * 0.7 || s <= 0) continue;
       ctx.globalAlpha = Math.min(1, s);
-      ctx.beginPath(); ctx.moveTo(sp.ax, sp.ay); ctx.lineTo(sp.x - (dx / d) * sp.r * s, sp.y - (dy / d) * sp.r * s);
-      ctx.lineWidth = 1.4; ctx.strokeStyle = ink; ctx.stroke();
-      ctx.beginPath(); ctx.arc(sp.ax, sp.ay, 2.8, 0, Math.PI * 2);
-      ctx.fillStyle = this.catOf(this.c!.items![sp.k].cat)?.color ?? '#59616b'; ctx.fill();
-      ctx.lineWidth = 1; ctx.strokeStyle = '#fff'; ctx.stroke();
+      leader(ctx, sp.ax, sp.ay, sp.x, sp.y, sp.r * s, ink, this.catOf(this.c!.items![sp.k].cat)?.color ?? '#59616b');
     }
     ctx.restore();
   }
@@ -2044,48 +2038,6 @@ function fmtShort(v: [number, number]): string {
   return v[0] === v[1] ? f(v[0]) : `${f(v[0])}–${f(v[1])}`;
 }
 
-/** Shrinks an element's text until it fits on its one line (long dates on phones). */
-/**
- * Moves overlapping markers apart until every pair is at least their radii plus `gap` apart; a
- * heavier marker (wt) moves less. Markers on the very same spot fan out in fixed directions, so
- * the layout is the same from frame to frame.
- */
-function spread(pts: Spot[], gap: number) {
-  const n = pts.length;
-  if (n < 2) return;
-  const cell = 2 * Math.max(...pts.map((p) => p.r)) + gap;
-  const key = (gx: number, gy: number) => (gx + 32768) * 65536 + (gy + 32768);
-  for (let iter = 0; iter < 60; iter++) {
-    const grid = new Map<number, number[]>();
-    pts.forEach((p, i) => {
-      const g = key(Math.floor(p.x / cell), Math.floor(p.y / cell));
-      const b = grid.get(g);
-      if (b) b.push(i); else grid.set(g, [i]);
-    });
-    let moved = false;
-    for (let i = 0; i < n; i++) {
-      const a = pts[i];
-      const gx = Math.floor(a.x / cell), gy = Math.floor(a.y / cell);
-      for (let dx = -1; dx <= 1; dx++) for (let dy = -1; dy <= 1; dy++) {
-        for (const j of grid.get(key(gx + dx, gy + dy)) ?? []) {
-          if (j <= i) continue;
-          const b = pts[j];
-          const need = a.r + b.r + gap;
-          let ux = b.x - a.x, uy = b.y - a.y;
-          const d = Math.hypot(ux, uy);
-          if (d >= need) continue;
-          if (d < 0.01) { const t = (i * 0.618 + j * 0.382) * Math.PI * 2; ux = Math.cos(t); uy = Math.sin(t); } else { ux /= d; uy /= d; }
-          const push = need - d, fa = b.wt / (a.wt + b.wt), fb = 1 - fa;
-          a.x -= ux * push * fa; a.y -= uy * push * fa;
-          b.x += ux * push * fb; b.y += uy * push * fb;
-          moved = true;
-        }
-      }
-    }
-    if (!moved) break;
-  }
-}
-
 /** The first `n` characters of a text, cut back to the end of a word. */
 function cutAt(s: string, n: number): string {
   if (n >= s.length) return s;
@@ -2093,6 +2045,7 @@ function cutAt(s: string, n: number): string {
   return (sp > n * 0.6 ? x.slice(0, sp) : x).replace(/[\s,;:.\-–—(]+$/, '');
 }
 
+/** Shrinks an element's text until it fits on its one line (long dates on phones). */
 function fitLine(el: HTMLElement, min = 13) {
   el.style.fontSize = '';
   let size = parseFloat(getComputedStyle(el).fontSize);

@@ -2707,6 +2707,30 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(/\d{3} art museums/.test(lm) && /Louvre/.test(louvre) && /Mona Lisa/.test(louvre) && /Visitors/.test(louvre) && /\d+ masterpieces/.test(lmp) && /\d+ buildings by style/.test(la) && /Gothic/.test(la),
     `filters: "${line(lm, /\d+ art museums/)}", a tap on the Louvre opens its card (Mona Lisa among its works); "${line(lmp, /\d+ masterpieces/)}" (sculpture); "${line(la, /\d+ buildings by style/)}" (Gothic)`);
 
+  // Crowded museums (v0.28.0, from the v0.27.0 phone test): at full zoom over Washington the Smithsonian's
+  // museums, which overlap at their places, move apart, each with a line to its place, and a tap on each opens
+  // its own card.
+  await page.evaluate(() => window.atlas.app.activate('art-museums'));
+  await page.evaluate(() => { const r = window.atlas.app.renderer; r.view.flyTo({ lon: -77.025, lat: 38.892, zoom: r.view.maxZoom }, 0); r.requestRender(); });
+  await page.waitForTimeout(1500);
+  const dc = await page.evaluate(() => {
+    const v = window.atlas.app.renderer.view, c = window.atlas.app.instance('art-museums').state.crowd;
+    const on = c.placed.filter((p) => p.x > 0 && p.x < v.w && p.y > 0 && p.y < v.h);
+    let gap = Infinity;
+    for (const a of on) for (const b of on) if (a !== b) gap = Math.min(gap, Math.hypot(a.x - b.x, a.y - b.y) - a.r - b.r);
+    return { gap, moved: on.filter((p) => Math.hypot(p.x - p.ax, p.y - p.ay) > p.r).length, dots: on.map((p) => ({ name: p.it.name[0], x: p.x, y: p.y })) };
+  });
+  const dcTaps = [];
+  for (const d of dc.dots) {
+    await page.touchscreen.tap(d.x, d.y);
+    await page.waitForTimeout(600);
+    dcTaps.push([d.name, await page.evaluate(() => document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? '')]);
+    await page.evaluate(() => window.atlas.shell.card.hide());
+  }
+  await page.evaluate(() => window.atlas.app.deactivate('art-museums'));
+  check(dc.dots.length >= 4 && dc.gap >= 2 && dc.moved >= 3 && dcTaps.every(([a, b]) => a === b),
+    `crowded museums: at full zoom over Washington ${dc.dots.length} museums are apart (${dc.gap.toFixed(1)} px between the closest), ${dc.moved} with a line to their place, and a tap on each opens its own card${dcTaps.every(([a, b]) => a === b) ? '' : ` (not: ${dcTaps.filter(([a, b]) => a !== b).map(([a, b]) => `${a} → "${b}"`).join('; ')})`}`);
+
 
   // Now in, on the Mona Lisa's story card.
   await page.evaluate(async () => { const it = (await fetch('data/art/items.json').then((r) => r.json())).items.find((x) => x.id === 'mona-lisa'); window.atlas.time.stories.art.itemCard(it); });

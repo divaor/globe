@@ -41,6 +41,11 @@ const RULES = [
 /** People known above all for a crime are left off the list. */
 const DROP = /^(serial killer|murderer|criminal|terrorist|pornographic actor|drug trafficker|mobster|gangster|assassin|spree killer|mass murderer|rapist|war criminal|concentration camp guard|executioner|holocaust perpetrator|drug lord|outlaw|robber|fraudster)$/;
 
+/** Names Wikidata gets wrong just now (a slip in a label): [name, nombre]. */
+const NAME_FIX = {
+  Q84284: ['Christian Doppler', 'Christian Doppler'],
+  Q131248: ['Lee Kuan Yew', 'Lee Kuan Yew'],
+};
 const DROP_DESC = /\b(who (assassinated|killed|murdered|shot)|serial killer|mass murderer|murderer|assassin\b|killer\b|terrorist|militant\b|arsonist|outlaw|gangster|mobster|mafia boss|drug lord|war criminal|rapist|kidnapper|hijacker|pornographic)/i;
 
 /**
@@ -158,6 +163,7 @@ export function build() {
   const people = [];
   for (const p of raw) {
     if ((p.occ.length && p.occ.every((o) => DROP.test(o.toLowerCase()))) || DROP_DESC.test(p.den)) continue;
+    if (NAME_FIX[p.id]) [p.en, p.es] = NAME_FIX[p.id];
     // A life written for Lives on the map says its own field.
     const f = FIELDS.indexOf(LIFE_FIELD.get(p.id) ?? fieldOf(p.den, p.occ));
     // A death before the birth, or a life of over 120 years, is a mistake in the data: keep the birth only.
