@@ -1,6 +1,6 @@
 // The app chrome: brand + search (top left), ambient/fullscreen (top right), zoom controls, the
 // active-filter chips and the dock (bottom), plus sheets, legend, card, tooltip and toasts.
-import { Layers, Globe, Map as MapIcon, Ellipsis, Search, Maximize, Minimize, Plus, Minus, LocateFixed, MonitorPlay, Share2, Settings, Info, X, Mountain } from 'lucide';
+import { Layers, Layers2, Globe, Map as MapIcon, Ellipsis, Search, Maximize, Minimize, Plus, Minus, LocateFixed, MonitorPlay, Share2, Settings, Info, X, Mountain } from 'lucide';
 import { terrainActions } from '../layers/terrainActions';
 import { h, icon, button, clear, add } from './dom';
 import { t, tx } from '../app/i18n';
@@ -13,6 +13,9 @@ import { SearchBox } from './search';
 import { Ambient } from './ambient';
 import { screensaverPanel } from './playlists';
 import { settingsPanel, aboutPanel } from './settings';
+import { MapStyleMenu } from './mapstyle';
+import { mapView } from '../engine/style';
+import { regionAt, regionType } from '../engine/regions';
 import type { App } from '../app/app';
 import type { IconNode } from 'lucide';
 
@@ -25,6 +28,7 @@ export class Shell {
   readonly legend: LegendCard;
   readonly search: SearchBox;
   readonly ambient: Ambient;
+  readonly mapStyle: MapStyleMenu;
   private dock: HTMLElement;
   private chips: HTMLElement;
   private tooltip: HTMLElement;
@@ -49,7 +53,13 @@ export class Shell {
       button({ icon: Minus, title: t('zoomOut'), cls: 'icon-btn', onClick: () => app.interaction.animateZoom(1 / 1.8) }),
       button({ icon: LocateFixed, title: t('resetView'), cls: 'icon-btn', onClick: () => app.resetView() }),
       button({ icon: Mountain, title: app.lang === 'es' ? 'Relieve en 3D' : '3D terrain', cls: 'icon-btn zoom-3d', onClick: () => terrainActions.view3d() }));
+    // The map style under every filter (Atlas, Map, Satellite) and the states and provinces.
+    const styleBtn = button({ icon: Layers2, title: app.lang === 'es' ? 'Estilo del mapa y estados' : 'Map style and states', cls: 'icon-btn zoom-style', onClick: () => this.mapStyle.toggle(styleBtn) });
+    styleBtn.setAttribute('aria-haspopup', 'dialog');
+    styleBtn.setAttribute('aria-expanded', 'false');
+    zoom.append(styleBtn);
     root.append(this.top, zoom, this.chips, this.dock, this.menu, this.tooltip, this.toastEl);
+    this.mapStyle = new MapStyleMenu(app, root);
 
     this.sheet = new Sheet(root);
     this.legend = new LegendCard(app, root);
@@ -72,6 +82,7 @@ export class Shell {
     app.on('projection', () => this.renderDock());
     app.on('lang', () => { this.renderTop(); this.renderDock(); this.renderChips(); this.reopenSheet(); });
     app.on('ambient', () => this.legend.render());
+    app.on('mapview', () => this.legend.render());
     app.on('tap', (x, y) => this.onTap(x as number, y as number));
     app.on('hover', (x, y) => this.onHover(x as number, y as number));
     app.on('interact', () => { this.menu.hidden = true; this.tooltip.hidden = true; });
@@ -226,6 +237,12 @@ export class Shell {
     }
     const id = this.app.renderer.countryAt(g[0], g[1]);
     const picks = this.app.pickAt(g[0], g[1]).map((p) => ({ title: tx(p.def.name), rows: p.rows }));
+    // With the states and provinces on, the card says which one was tapped.
+    const rg = id && mapView.regions && this.app.renderer.baseMap ? regionAt(g[0], g[1]) : null;
+    if (rg) {
+      const es = this.app.lang === 'es';
+      picks.unshift({ title: es ? 'Estado o provincia' : 'State or province', rows: [{ icon: '📍', label: regionType(rg, es) ?? (es ? 'Región' : 'Region'), value: es ? rg.es : rg.name }] });
+    }
     this.card.setPicks(picks);
     if (this.sheet.isOpen() && matchMedia('(max-width: 720px)').matches) this.sheet.close();
     this.app.select(id);
@@ -250,7 +267,11 @@ export class Shell {
     const top = [...this.app.layers].reverse().find((l) => l.ready && l.def.info && l.def.id !== 'political');
     const extra = top?.def.info?.(id, top, this.app.lang)?.[0];
     clear(this.tooltip);
-    add(this.tooltip, h('strong', null, this.app.lang === 'es' ? m.es : m.n), extra ? h('span', { class: 'tt-sub' }, `${extra.label}: ${extra.value}`) : null);
+    // The state or province under the pointer, when they are shown.
+    const g = mapView.regions && r.baseMap ? r.view.invert(x, y) : null;
+    const rg = g ? regionAt(g[0], g[1]) : null;
+    const es = this.app.lang === 'es';
+    add(this.tooltip, h('strong', null, es ? m.es : m.n), rg ? h('span', { class: 'tt-sub' }, `📍 ${es ? rg.es : rg.name}`) : null, extra ? h('span', { class: 'tt-sub' }, `${extra.label}: ${extra.value}`) : null);
     this.tooltip.style.transform = `translate(${Math.round(x + 14)}px, ${Math.round(y + 12)}px)`;
     this.tooltip.hidden = false;
   }
