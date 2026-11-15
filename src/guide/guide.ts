@@ -63,6 +63,8 @@ export class TravelGuide {
   private pin: { at: [number, number]; text: string } | null = null;
   /** The panel is closing to show something on the map: the dots and the pin stay. */
   private keep = false;
+  /** The guide moved the map's centre up, above its panel (phones). */
+  private insetSet = false;
   private query = '';
   private city: string | null = null;
   private tab: Tab = 'eat';
@@ -242,6 +244,17 @@ export class TravelGuide {
     }
     body.append(h('p', { class: 'muted small guide-note' }, L('Not in the guide: hotels, restaurants by name, prices, visas and safety advice, which change too often to keep right. Wikivoyage and official sites have them.', 'No están en la guía: hoteles, restaurantes por nombre, precios, visados ni consejos de seguridad, que cambian demasiado para mantenerlos al día. Wikivoyage y los sitios oficiales los tienen.')));
     this.shell.openPanel('guide', L('Travel guide', 'Guía de viaje'), body, () => this.closed());
+    requestAnimationFrame(() => this.inset(true));
+  }
+
+  /** On a phone the panel covers the lower part of the screen: the map centres in the part above it. */
+  private inset(on: boolean) {
+    const v = this.app.renderer.view;
+    if (on && !this.app.mode) {
+      const r = document.querySelector('.sheet:not([hidden])')?.getBoundingClientRect();
+      v.insetBottom = r && r.left < 40 && r.top > 80 ? Math.max(0, Math.round(window.innerHeight - r.top)) : 0;
+      this.insetSet = true;
+    } else if (!on && this.insetSet) { v.insetBottom = 0; this.insetSet = false; }
     this.app.renderer.requestRender();
   }
 
@@ -249,6 +262,7 @@ export class TravelGuide {
     // A city's guide or the map view may follow: they decide what stays drawn.
     setTimeout(() => {
       if (this.shell.sheet.isOpen('guide') || this.shell.sheet.isOpen('guide-city')) return;
+      this.inset(false);
       if (this.keep) { this.keep = false; return; }
       this.picking = false;
       if (!this.onMap) this.pin = null;
@@ -316,6 +330,7 @@ export class TravelGuide {
     await this.load();
     const c = this.byId.get(id);
     if (!c) return;
+    const opening = this.city !== id || !this.shell.sheet.isOpen('guide-city');
     this.city = id; this.tab = tab; this.picking = true;
     const body = h('div', { class: 'guide guide-city', 'data-city': id });
     const inTrip = this.trip.includes(id);
@@ -339,6 +354,8 @@ export class TravelGuide {
     }
     body.append(tabs, content);
     this.shell.openPanel('guide-city', `${this.flag(c.country)} ${this.cityName(c)}`, body, () => this.closed());
+    // The city comes into view, above the panel on a phone (once, when its guide opens).
+    if (opening) requestAnimationFrame(() => { this.inset(true); this.app.renderer.view.flyTo({ lon: c.at[0], lat: c.at[1], zoom: Math.max(this.app.renderer.view.zoom, 4.5) }); });
     content.append(h('p', { class: 'muted small' }, L('Loading…', 'Cargando…')));
     const g = await this.cityGuide(id);
     if (this.city !== id || this.tab !== tab || !content.isConnected) return;
