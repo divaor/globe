@@ -1,0 +1,325 @@
+{
+  "id": "hannibal",
+  "qid": "Q36456",
+  "name": { "en": "Hannibal", "es": "Aníbal" },
+  "icon": "🐘",
+  "field": "leaders",
+  "known": { "en": "Carthaginian general", "es": "General cartaginés" },
+  "born": "-0247",
+  "died": "-0183",
+  "diedAbout": true,
+  "summary": {
+    "en": "Sworn as a boy never to be a friend of Rome, he led an army and its elephants over the Alps and for 15 years beat the Romans on their own soil. He lost the war, and died in exile rather than be handed over.",
+    "es": "De niño juró no ser nunca amigo de Roma. Llevó un ejército con elefantes a través de los Alpes y durante 15 años venció a los romanos en su propia tierra. Perdió la guerra, y murió en el exilio para no ser entregado."
+  },
+  "unsure": {
+    "en": "No Carthaginian account of Hannibal survives: his story was written by Greeks and Romans, his enemies' side, and some places, such as his pass over the Alps and the field of Zama, have never been found.",
+    "es": "No se conserva ningún relato cartaginés sobre Aníbal: su historia la escribieron griegos y romanos, el bando enemigo, y algunos lugares, como su paso por los Alpes y el campo de Zama, nunca se han encontrado."
+  },
+  "steps": [
+    {
+      "date": "-0247",
+      "kind": "born",
+      "place": { "en": "Carthage, Tunisia", "es": "Cartago, Túnez" },
+      "at": [10.3235, 36.8526],
+      "title": { "en": "Hamilcar's son", "es": "El hijo de Amílcar" },
+      "text": {
+        "en": "Hannibal was born in Carthage, the great trading city of North Africa, as it was losing its first war with Rome. His father, Hamilcar, called Barca, 'thunderbolt', was its best general.",
+        "es": "Aníbal nació en Cartago, la gran ciudad comercial del norte de África, cuando esta perdía su primera guerra con Roma. Su padre, Amílcar, llamado Barca, «el rayo», era su mejor general."
+      },
+      "details": {
+        "en": "His name means 'Baal is gracious'. Carthage, founded by Phoenicians from Tyre, was a republic of merchants whose ships and colonies ringed the western Mediterranean. In 241 BC it had to give up Sicily and pay Rome a crushing fine. Then its own unpaid soldiers rebelled, and it was Hamilcar who put the revolt down in three years of savage war. The boy grew up with two younger brothers, Hasdrubal and Mago, who would fight beside him.",
+        "es": "Su nombre significa «Baal es bondadoso». Cartago, fundada por fenicios de Tiro, era una república de comerciantes cuyos barcos y colonias rodeaban el Mediterráneo occidental. En 241 a. C. tuvo que entregar Sicilia y pagarle a Roma una multa aplastante. Después se rebelaron sus propios soldados, a los que no les había pagado, y fue Amílcar quien aplastó la revuelta en tres años de guerra feroz. El niño creció con dos hermanos menores, Asdrúbal y Magón, que pelearían a su lado."
+      }
+    },
+    {
+      "date": "-0237",
+      "kind": "journey",
+      "via": [[3.0875, 36.7323], [-0.6359, 35.6991], [-5.3204, 35.8892]],
+      "place": { "en": "Cádiz, Spain", "es": "Cádiz, España" },
+      "at": [-6.2891, 36.5267],
+      "title": { "en": "An oath, and Spain", "es": "Un juramento, y España" },
+      "text": {
+        "en": "Hamilcar set out to build a new empire in Spain, rich in silver and soldiers, and took his son, not yet ten. First, Hannibal said later, his father made him swear at an altar never to be a friend of Rome.",
+        "es": "Amílcar partió a levantar un nuevo imperio en España, rica en plata y soldados, y llevó a su hijo, que aún no tenía diez años. Antes, contaría Aníbal, su padre le hizo jurar ante un altar que nunca sería amigo de Roma."
+      },
+      "details": {
+        "en": "The army marched along the African coast and crossed at the Pillars of Hercules to Gades, today's Cádiz, an old Phoenician port. Hannibal did not see Carthage again until he was a man of 45. He grew up in army camps while his father, and then his brother-in-law Hasdrubal, conquered the south and east of Spain. In the winter of 229 or 228 BC Hamilcar drowned in a river while covering his sons' escape from an ambush.",
+        "es": "El ejército marchó por la costa africana y cruzó por las Columnas de Hércules hasta Gades, la actual Cádiz, un viejo puerto fenicio. Aníbal no volvió a ver Cartago hasta que fue un hombre de 45 años. Creció en campamentos militares mientras su padre, y después su cuñado Asdrúbal, conquistaban el sur y el este de España. En el invierno de 229 o 228 a. C. Amílcar se ahogó en un río mientras cubría la huida de sus hijos de una emboscada."
+      }
+    },
+    {
+      "date": "-0221",
+      "kind": "power",
+      "place": { "en": "Cartagena, Spain", "es": "Cartagena, España" },
+      "at": [-0.984, 37.602],
+      "title": { "en": "Commander at twenty-six", "es": "Comandante a los veintiséis" },
+      "text": {
+        "en": "When Hasdrubal was murdered, the army in Spain chose Hannibal, 26, as its general, and Carthage confirmed the choice. His base was New Carthage, today's Cartagena, the port Hasdrubal had founded.",
+        "es": "Cuando Asdrúbal fue asesinado, el ejército de España eligió general a Aníbal, de 26 años, y Cartago confirmó la elección. Su base era Cartago Nova, la actual Cartagena, el puerto que Asdrúbal había fundado."
+      },
+      "details": {
+        "en": "Livy, no friend of his, describes the young general: the old soldiers thought they saw Hamilcar come back; he ate and slept when the work allowed, often on the ground among the sentries in a soldier's cloak, and was the first into battle and the last out. In two years he pushed Carthaginian power north towards the river Ebro, the limit agreed with Rome. He married a woman from the Spanish town of Castulo, whom a later poet calls Imilce.",
+        "es": "Tito Livio, que no lo quería, describe al joven general: los viejos soldados creían ver a Amílcar de vuelta; comía y dormía cuando el trabajo lo permitía, muchas veces en el suelo entre los centinelas y envuelto en un manto de soldado, y era el primero en entrar en combate y el último en salir. En dos años llevó el poder cartaginés hacia el norte, hasta cerca del río Ebro, el límite acordado con Roma. Se casó con una mujer de la ciudad hispana de Cástulo, a la que un poeta posterior llama Himilce."
+      }
+    },
+    {
+      "date": "-0219",
+      "kind": "moment",
+      "place": { "en": "Sagunto, Spain", "es": "Sagunto, España" },
+      "at": [-0.2775, 39.6758],
+      "title": { "en": "The siege of Saguntum", "es": "El sitio de Sagunto" },
+      "text": {
+        "en": "Saguntum, a town south of the Ebro, was a friend of Rome. Hannibal besieged it for eight months, was wounded by a javelin, and took it by storm. Rome demanded that Carthage hand him over. Carthage chose war.",
+        "es": "Sagunto, una ciudad al sur del Ebro, era amiga de Roma. Aníbal la sitió durante ocho meses, fue herido por una jabalina y la tomó por asalto. Roma exigió que Cartago lo entregara. Cartago eligió la guerra."
+      },
+      "details": {
+        "en": "Many of the people of Saguntum were killed or sold as slaves. In Carthage, the story goes, the Roman envoy held up a fold of his toga before the senate and said it held peace or war: which would they have? 'Whichever you like,' they answered. 'Then war,' he said, and let the fold drop. The Second Punic War would last seventeen years.",
+        "es": "A muchos habitantes de Sagunto los mataron o los vendieron como esclavos. En Cartago, cuenta la historia, el enviado romano levantó ante el senado un pliegue de su toga y dijo que allí traía la paz o la guerra: ¿cuál querían? «La que prefieras», le contestaron. «Entonces la guerra», dijo, y dejó caer el pliegue. La segunda guerra púnica duraría diecisiete años."
+      }
+    },
+    {
+      "date": "-0218",
+      "kind": "journey",
+      "icon": "🐘",
+      "via": [[0.5216, 40.8125], [2.9718, 42.6043], [4.8102, 44.1381]],
+      "place": { "en": "Col de la Traversette, near Crissolo, Italy", "es": "Col de la Traversette, cerca de Crissolo, Italia" },
+      "label": { "en": "The Alps", "es": "Los Alpes" },
+      "at": [7.0664, 44.7106],
+      "title": { "en": "Over the Alps", "es": "A través de los Alpes" },
+      "text": {
+        "en": "In autumn he led more than 40,000 men, their horses and 37 elephants up from the Rhône and over the Alps: fifteen days of snow, rockfalls and attacks by mountain tribes. About 26,000 soldiers reached Italy.",
+        "es": "En otoño llevó a más de 40 000 hombres, sus caballos y 37 elefantes desde el Ródano hasta el otro lado de los Alpes: quince días de nieve, derrumbes y ataques de tribus de montaña. Unos 26 000 soldados llegaron a Italia."
+      },
+      "details": {
+        "en": "He had left New Carthage in the spring, crossed the Pyrenees and slipped past a Roman army at the Rhône, where the elephants were floated over on rafts covered with earth. At the top of the pass, Polybius says, he showed his tired men the plain of the Po far below. Coming down was worse: a landslide had carried the path away, and it had to be rebuilt. Most of the elephants survived the mountains and died in the cold of the first winter. That December he beat the Romans at the river Trebia.",
+        "es": "Había salido de Cartago Nova en primavera, cruzó los Pirineos y esquivó a un ejército romano en el Ródano, donde los elefantes pasaron en balsas cubiertas de tierra. En lo alto del paso, dice Polibio, les mostró a sus hombres agotados la llanura del Po, allá abajo. La bajada fue peor: un derrumbe se había llevado el camino, y hubo que rehacerlo. Casi todos los elefantes sobrevivieron a las montañas y murieron con el frío del primer invierno. Ese diciembre venció a los romanos en el río Trebia."
+      },
+      "unsure": {
+        "en": "No one knows which pass he used: the Col de la Traversette, where the marker stands, is supported by a 2016 study of churned-up ground of the right age, but the Col du Clapier and other passes have their defenders.",
+        "es": "Nadie sabe qué paso usó: al Col de la Traversette, donde está el marcador, lo apoya un estudio de 2016 sobre un suelo removido de la edad correcta, pero el Col du Clapier y otros pasos tienen sus defensores."
+      }
+    },
+    {
+      "date": "-0217-06-21",
+      "kind": "moment",
+      "via": [[9.6934, 45.0524]],
+      "place": { "en": "Tuoro sul Trasimeno, Italy", "es": "Tuoro sul Trasimeno, Italia" },
+      "label": { "en": "Lake Trasimene", "es": "Lago Trasimeno" },
+      "at": [12.0747, 43.2065],
+      "title": { "en": "Ambush at Lake Trasimene", "es": "Emboscada en el lago Trasimeno" },
+      "text": {
+        "en": "On a misty morning he trapped a Roman army on the narrow shore of Lake Trasimene, between the hills and the water. Some 15,000 Romans died, the consul Flaminius among them, in one of history's greatest ambushes.",
+        "es": "Una mañana de niebla atrapó a un ejército romano en la orilla del lago Trasimeno, entre los cerros y el agua. Murieron unos 15 000 romanos, con el cónsul Flaminio, en una de las mayores emboscadas de la historia."
+      },
+      "details": {
+        "en": "That spring he had crossed the Apennines and the flooded marshes of the Arno, where his army waded for four days and three nights. He rode the last surviving elephant, caught an infection and lost the sight of one eye. After the battle he sent the Romans' Italian allies home without ransom: he had come, he told them, to fight Rome, not Italy. He hoped they would change sides.",
+        "es": "Esa primavera había cruzado los Apeninos y los pantanos inundados del Arno, donde su ejército marchó por el agua cuatro días y tres noches. Él iba montado en el último elefante que le quedaba, tuvo una infección y perdió la vista de un ojo. Después de la batalla mandó a sus casas, sin rescate, a los aliados italianos de los romanos: había venido, les dijo, a pelear contra Roma, no contra Italia. Esperaba que cambiaran de bando."
+      },
+      "unsure": {
+        "en": "The date, 21 June, is that of the Roman calendar of the time, which may have run weeks ahead of the seasons; the fighting is placed on the north shore of the lake, around today's Tuoro.",
+        "es": "La fecha, 21 de junio, es la del calendario romano de entonces, que quizá iba semanas adelantado respecto de las estaciones; el combate se ubica en la orilla norte del lago, alrededor de la actual Tuoro."
+      }
+    },
+    {
+      "date": "-0216-08-02",
+      "kind": "moment",
+      "place": { "en": "Cannae, near Barletta, Italy", "es": "Cannas, cerca de Barletta, Italia" },
+      "at": [16.1517, 41.2964],
+      "title": { "en": "The battle of Cannae", "es": "La batalla de Cannas" },
+      "text": {
+        "en": "Rome sent its largest army yet, some 80,000 men. Hannibal, with far fewer, let his centre give way, closed his African infantry and his cavalry around the Romans and destroyed them. About 50,000 died in one afternoon.",
+        "es": "Roma envió su mayor ejército, unos 80 000 hombres. Aníbal, con muchos menos, dejó ceder su centro, cerró su infantería africana y su caballería sobre los romanos y los destruyó. Unos 50 000 murieron en una tarde."
+      },
+      "details": {
+        "en": "It was the worst day in Rome's history. Among the dead were a consul, eighty senators and so many knights that Hannibal's brother is said to have poured out their gold rings by the bushel before the senate of Carthage. Generals have studied the battle ever since. But he did not march on Rome. 'You know how to win a victory, Hannibal,' his cavalry commander Maharbal is said to have told him; 'you do not know how to use one.' Rome refused to talk of peace, and raised new legions.",
+        "es": "Fue el peor día de la historia de Roma. Entre los muertos había un cónsul, ochenta senadores y tantos caballeros que, según se cuenta, el hermano de Aníbal derramó sus anillos de oro por montones ante el senado de Cartago. Los generales han estudiado la batalla desde entonces. Pero él no marchó sobre Roma. «Sabes vencer, Aníbal», se dice que le reprochó Maharbal, el jefe de su caballería; «no sabes aprovechar la victoria». Roma se negó a hablar de paz, y reclutó nuevas legiones."
+      }
+    },
+    {
+      "date": "-0211",
+      "kind": "moment",
+      "via": [[14.2534, 41.0816]],
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.5113, 41.8919],
+      "title": { "en": "Hannibal at the gates", "es": "Aníbal a las puertas" },
+      "text": {
+        "en": "Much of southern Italy had joined him, with Capua, its second city. When the Romans besieged Capua he marched on Rome itself to draw them off, and rode up to its walls. The city did not panic. He turned away.",
+        "es": "Gran parte del sur de Italia se le había unido, con Capua, su segunda ciudad. Cuando los romanos sitiaron Capua, marchó sobre Roma para alejarlos, y cabalgó hasta sus murallas. La ciudad no entró en pánico. Él se retiró."
+      },
+      "details": {
+        "en": "He had no siege engines and too few men to take a walled city of that size. Livy tells that while he camped a few kilometres away, the very field his tents stood on was sold at auction in Rome at its normal price. Capua fell that year, and its leaders were executed. 'Hannibal at the gates' stayed in Latin for centuries as a cry of alarm. Rome now avoided battle with him, and beat his allies and his brothers instead.",
+        "es": "No tenía máquinas de asedio, y sus hombres eran pocos para tomar una ciudad amurallada de ese tamaño. Tito Livio cuenta que, mientras él acampaba a pocos kilómetros, el mismo terreno donde estaba su campamento se vendió en subasta en Roma a su precio normal. Capua cayó ese año, y sus jefes fueron ejecutados. «Aníbal a las puertas» quedó en latín durante siglos como grito de alarma. Desde entonces Roma evitó darle batalla, y venció en cambio a sus aliados y a sus hermanos."
+      }
+    },
+    {
+      "date": "-0203",
+      "kind": "journey",
+      "place": { "en": "Crotone, Italy", "es": "Crotona, Italia" },
+      "at": [17.205, 39.0294],
+      "title": { "en": "He leaves Italy", "es": "Deja Italia" },
+      "text": {
+        "en": "After fifteen years in Italy, never beaten in a great battle, he was called home: Scipio had invaded Africa. He sailed from Croton, where he had set up in the temple of Hera a bronze tablet listing his deeds.",
+        "es": "Tras quince años en Italia, sin perder una gran batalla, lo llamaron de vuelta: Escipión había invadido África. Zarpó de Crotona, donde había dejado en el templo de Hera una placa de bronce con sus hazañas."
+      },
+      "details": {
+        "en": "By then he was penned into the toe of Italy. His brother Hasdrubal had crossed the Alps with a second army in 207 BC, and was killed at the river Metaurus before they could join forces; the Romans threw his head into Hannibal's camp. In Spain the young Scipio had taken New Carthage and the silver mines. The tablet, in Punic and Greek, was read by the historian Polybius, who took his figures from it. One column of the temple still stands on the cape, alone above the sea.",
+        "es": "Para entonces estaba arrinconado en la punta de la bota italiana. Su hermano Asdrúbal había cruzado los Alpes con un segundo ejército en 207 a. C., y murió en el río Metauro antes de que pudieran reunirse; los romanos arrojaron su cabeza al campamento de Aníbal. En España el joven Escipión había tomado Cartago Nova y las minas de plata. La placa, en púnico y en griego, la leyó el historiador Polibio, que sacó de ella sus cifras. Una columna del templo sigue en pie en el cabo, sola sobre el mar."
+      }
+    },
+    {
+      "date": "-0202",
+      "kind": "struggle",
+      "by": "sea",
+      "via": [[15.6, 36.5], [10.637, 35.8254]],
+      "place": { "en": "Zama, near Siliana, Tunisia", "es": "Zama, cerca de Siliana, Túnez" },
+      "at": [9.2856, 36.1119],
+      "title": { "en": "Defeat at Zama", "es": "Derrota en Zama" },
+      "text": {
+        "en": "In the only great battle he ever lost, Hannibal met Scipio in the plains south-west of Carthage. His 80 elephants were turned aside, the Numidian cavalry, now on Rome's side, struck his rear, and his army was destroyed.",
+        "es": "En la única gran batalla que perdió, Aníbal enfrentó a Escipión en las llanuras al suroeste de Cartago. Sus 80 elefantes fueron desviados, la caballería númida, ya aliada de Roma, lo atacó por detrás, y su ejército cayó."
+      },
+      "details": {
+        "en": "The two generals are said to have met before the battle, between the armies; Hannibal offered peace, and Scipio refused. Afterwards it was Hannibal himself who told Carthage to accept Rome's terms: almost no fleet, no wars without Rome's leave, and a huge fine to be paid over fifty years. Scipio took the name Africanus. Hannibal was 45, and had been away from his city for some 35 years.",
+        "es": "Se cuenta que los dos generales se reunieron antes de la batalla, entre los ejércitos; Aníbal ofreció la paz, y Escipión la rechazó. Después fue el propio Aníbal quien le dijo a Cartago que aceptara las condiciones de Roma: casi ninguna flota, ninguna guerra sin permiso de Roma y una multa enorme a pagar en cincuenta años. Escipión tomó el nombre de Africano. Aníbal tenía 45 años, y llevaba unos 35 lejos de su ciudad."
+      },
+      "unsure": {
+        "en": "The battlefield has never been found: ancient writers name Zama or Naraggara, and modern guesses run from the country around Siliana to the Algerian border, far to the west; the marker is at the site of Zama.",
+        "es": "El campo de batalla nunca se ha encontrado: los autores antiguos nombran Zama o Naraggara, y las propuestas modernas van de la región de Siliana a la frontera con Argelia, mucho más al oeste; el marcador está en el sitio de Zama."
+      },
+      "places": [
+        {
+          "name": { "en": "Scipio Africanus", "es": "Escipión el Africano" },
+          "at": [9.2856, 36.1119],
+          "cat": "person",
+          "type": "person",
+          "date": "-0202",
+          "life": ["-0236", "-0183"],
+          "text": {
+            "en": "The Roman general who learned from Hannibal's methods and turned them against him: he took Spain, carried the war to Africa and won at Zama in his early thirties. He died within a year or two of Hannibal.",
+            "es": "El general romano que aprendió de los métodos de Aníbal y los volvió contra él: tomó España, llevó la guerra a África y venció en Zama con poco más de treinta años. Murió con uno o dos años de diferencia de Aníbal."
+          }
+        }
+      ]
+    },
+    {
+      "date": "-0196",
+      "kind": "power",
+      "place": { "en": "Carthage, Tunisia", "es": "Cartago, Túnez" },
+      "at": [10.3235, 36.8526],
+      "title": { "en": "Reformer of Carthage", "es": "Reformador de Cartago" },
+      "text": {
+        "en": "Elected chief magistrate of Carthage, he broke the power of its judges-for-life and cleaned up the public accounts, so that the fine to Rome could be paid without new taxes. His enemies denounced him to Rome.",
+        "es": "Elegido primer magistrado de Cartago, acabó con el poder de sus jueces vitalicios y saneó las cuentas públicas, de modo que la multa a Roma pudo pagarse sin nuevos impuestos. Sus enemigos lo denunciaron ante Roma."
+      }
+    },
+    {
+      "date": "-0195",
+      "kind": "struggle",
+      "by": "sea",
+      "via": [[11.4, 37.3], [24.0, 34.2], [35.1939, 33.2733], [35.7, 36.0], [33.5, 35.85], [30.6, 36.0], [28.6, 36.2], [28.35, 36.6], [27.25, 36.58], [26.7, 36.75], [26.65, 37.25], [26.95, 37.55]],
+      "place": { "en": "Selçuk (ancient Ephesus), Turkey", "es": "Selçuk (antigua Éfeso), Turquía" },
+      "label": { "en": "Ephesus", "es": "Éfeso" },
+      "at": [27.3419, 37.9411],
+      "title": { "en": "Flight to the East", "es": "La huida a Oriente" },
+      "text": {
+        "en": "When Roman envoys came to Carthage to demand him, he slipped away by night and sailed to Tyre, Carthage's mother city. He went on to Ephesus to join Antiochus III, the Seleucid king, who was drifting into war with Rome.",
+        "es": "Cuando unos enviados romanos llegaron a Cartago a reclamarlo, escapó de noche y navegó a Tiro, la ciudad madre de Cartago. Siguió hasta Éfeso para unirse a Antíoco III, el rey seléucida, que iba hacia la guerra con Roma."
+      },
+      "details": {
+        "en": "He urged the king to carry the war into Italy and offered to lead the invasion. The court distrusted him and gave him a small fleet instead, which the ships of Rhodes beat off the south coast of Asia Minor in 190 BC. Livy tells that Scipio met him at Ephesus and asked who the greatest generals were. Alexander, said Hannibal, then Pyrrhus, then himself. And if you had beaten me? 'Then I would put myself first.'",
+        "es": "Le pidió al rey que llevara la guerra a Italia y se ofreció a dirigir la invasión. La corte desconfiaba de él y le dio en cambio una pequeña flota, que los barcos de Rodas derrotaron frente a la costa sur de Asia Menor en 190 a. C. Tito Livio cuenta que Escipión se encontró con él en Éfeso y le preguntó quiénes eran los mayores generales. Alejandro, dijo Aníbal, después Pirro, después él mismo. ¿Y si me hubieras vencido? «Entonces me pondría primero»."
+      }
+    },
+    {
+      "date": "-0183",
+      "about": true,
+      "kind": "died",
+      "place": { "en": "Gebze, Turkey", "es": "Gebze, Turquía" },
+      "label": { "en": "Libyssa", "es": "Libisa" },
+      "at": [29.4306, 40.8028],
+      "title": { "en": "Poison at Libyssa", "es": "Veneno en Libisa" },
+      "text": {
+        "en": "Rome beat Antiochus, and Hannibal fled again, at last to King Prusias of Bithynia. When a Roman envoy came to demand him and soldiers ringed his house at Libyssa, he took the poison he carried with him. He was about 64.",
+        "es": "Roma venció a Antíoco, y Aníbal huyó de nuevo, hasta la corte de Prusias de Bitinia. Cuando un enviado romano lo reclamó y los soldados rodearon su casa de Libisa, tomó el veneno que llevaba consigo. Tenía unos 64 años."
+      },
+      "details": {
+        "en": "'Let us free the Romans from their long anxiety,' Livy has him say, 'since they find it too long to wait for an old man's death.' In his years of wandering he is said to have stayed in Crete and in Armenia, and for Prusias he won a sea fight by having pots full of snakes thrown onto the enemy's decks. His old opponent Scipio died in the same years, far from Rome and out of favour. Carthage outlived Hannibal by less than forty years: Rome destroyed it in 146 BC.",
+        "es": "«Libremos a los romanos de su larga inquietud», le hace decir Tito Livio, «ya que les parece demasiado esperar la muerte de un viejo». En sus años errantes se dice que estuvo en Creta y en Armenia, y para Prusias ganó un combate naval haciendo arrojar vasijas llenas de serpientes sobre las cubiertas enemigas. Su viejo adversario Escipión murió por esos mismos años, lejos de Roma y caído en desgracia. Cartago sobrevivió a Aníbal menos de cuarenta años: Roma la destruyó en 146 a. C."
+      },
+      "unsure": {
+        "en": "Ancient writers give 183, 182 or 181 BC; Libyssa lay on the coast near today's Gebze, but neither the town nor his tomb has been identified for certain.",
+        "es": "Los autores antiguos dan 183, 182 o 181 a. C.; Libisa estaba en la costa, cerca de la actual Gebze, pero ni la ciudad ni su tumba se han identificado con certeza."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Carthage: Byrsa hill and the Punic ports", "es": "Cartago: la colina de Birsa y los puertos púnicos" },
+      "at": [10.3239, 36.8522],
+      "kind": "site",
+      "text": {
+        "en": "Rome left little of his city, but on Byrsa hill you can walk among Punic houses built about the time he governed it, and by the shore lie its two harbours: a round one for warships, and one for merchant ships.",
+        "es": "Roma dejó poco de su ciudad, pero en la colina de Birsa se camina entre casas púnicas construidas más o menos cuando él la gobernó, y junto a la costa están sus dos puertos: uno redondo para los barcos de guerra y otro para los mercantes."
+      },
+      "wiki": { "en": "Carthage", "es": "Cartago" },
+      "whs": 37
+    },
+    {
+      "name": { "en": "Punic Wall, Cartagena", "es": "Muralla Púnica, Cartagena" },
+      "at": [-0.9786, 37.6042],
+      "kind": "site",
+      "text": {
+        "en": "A stretch of the wall built when the city was founded as New Carthage, kept inside a small museum: the defences Hannibal knew, in the port he set out from for Italy.",
+        "es": "Un tramo de la muralla construida cuando la ciudad se fundó como Cartago Nova, conservado dentro de un pequeño museo: las defensas que conoció Aníbal, en el puerto del que partió hacia Italia."
+      }
+    },
+    {
+      "name": { "en": "Sagunto Castle", "es": "Castillo de Sagunto" },
+      "at": [-0.2775, 39.6758],
+      "kind": "site",
+      "text": {
+        "en": "A long ridge of walls above the town, built and rebuilt by Iberians, Romans, Moors and Spaniards on the site of the city he besieged, with a Roman theatre on the slope below.",
+        "es": "Una larga cresta de murallas sobre la ciudad, construidas y reconstruidas por íberos, romanos, musulmanes y españoles en el lugar de la ciudad que él sitió, con un teatro romano en la ladera."
+      }
+    },
+    {
+      "name": { "en": "Battlefield of Lake Trasimene, Tuoro", "es": "Campo de batalla del lago Trasimeno, Tuoro" },
+      "at": [12.0747, 43.2065],
+      "kind": "site",
+      "text": {
+        "en": "A signposted trail runs through the fields between the hills and the lake where the Roman army was trapped, with panels for each stage of the battle.",
+        "es": "Un sendero señalizado recorre los campos entre los cerros y el lago donde quedó atrapado el ejército romano, con paneles para cada etapa de la batalla."
+      }
+    },
+    {
+      "name": { "en": "Cannae (Canne della Battaglia)", "es": "Cannas (Canne della Battaglia)" },
+      "at": [16.1517, 41.2964],
+      "kind": "site",
+      "text": {
+        "en": "The hill of the ancient village of Cannae, with a small museum and a wide view over the plain of the river Ofanto, where the battle was fought.",
+        "es": "La colina de la antigua aldea de Cannas, con un pequeño museo y una amplia vista sobre la llanura del río Ofanto, donde se libró la batalla."
+      }
+    },
+    {
+      "name": { "en": "Hannibal Memorial, Gebze", "es": "Monumento a Aníbal, Gebze" },
+      "at": [29.4416, 40.7823],
+      "kind": "memorial",
+      "text": {
+        "en": "A stone monument with his portrait on a hill above the Gulf of Izmit, in the grounds of a research centre near the place where he died. It was Atatürk, the founder of modern Turkey, who asked that he be honoured here.",
+        "es": "Un monumento de piedra con su retrato en una colina sobre el golfo de İzmit, en los terrenos de un centro de investigación cercano al lugar donde murió. Fue Atatürk, el fundador de la Turquía moderna, quien pidió que se lo honrara aquí."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Hannibal is remembered as one of the greatest generals in history: Cannae is still studied in military schools, and the march over the Alps became a byword for daring. But the fear he left behind had a price. Two generations later Rome, urged on by men who had grown up in his shadow, destroyed Carthage and enslaved its people. His story survives only in the words of his enemies.",
+    "es": "A Aníbal se lo recuerda como uno de los mayores generales de la historia: Cannas todavía se estudia en las escuelas militares, y la marcha por los Alpes quedó como sinónimo de audacia. Pero el miedo que dejó tuvo un precio. Dos generaciones después Roma, empujada por hombres que habían crecido a su sombra, destruyó Cartago y esclavizó a su gente. Su historia solo sobrevive en las palabras de sus enemigos."
+  },
+  "sources": [
+    { "title": "Wikipedia: Hannibal", "url": "https://en.wikipedia.org/wiki/Hannibal" },
+    { "title": "Encyclopaedia Britannica: Hannibal", "url": "https://www.britannica.com/biography/Hannibal-Carthaginian-general-247-183-BCE" },
+    { "title": "Livius.org: Hannibal Barca", "url": "https://www.livius.org/articles/person/hannibal-3-barca/" },
+    { "title": "Polybius, The Histories, Book 3 (LacusCurtius)", "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/3*.html" },
+    { "title": "Wikipedia: Hannibal's crossing of the Alps", "url": "https://en.wikipedia.org/wiki/Hannibal%27s_crossing_of_the_Alps" }
+  ]
+}

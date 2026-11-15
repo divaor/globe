@@ -1,0 +1,372 @@
+{
+  "id": "humboldt",
+  "qid": "Q6694",
+  "name": { "en": "Alexander von Humboldt", "es": "Alexander von Humboldt" },
+  "icon": "🌋",
+  "field": "science",
+  "known": { "en": "Prussian naturalist and explorer", "es": "Naturalista y explorador prusiano" },
+  "born": "1769-09-14",
+  "died": "1859-05-06",
+  "summary": {
+    "en": "A Prussian nobleman spent five years and much of his fortune exploring Spanish America, from the Orinoco to the Andes and Mexico, measuring everything. He came home seeing nature as one living web, and taught the world to see it so.",
+    "es": "Un noble prusiano dedicó cinco años y buena parte de su fortuna a explorar la América española, del Orinoco a los Andes y México, midiéndolo todo. Volvió viendo la naturaleza como una sola red viva, y le enseñó al mundo a verla así."
+  },
+  "steps": [
+    {
+      "date": "1769-09-14",
+      "kind": "born",
+      "place": { "en": "Berlin, Germany", "es": "Berlín, Alemania" },
+      "at": [13.3833, 52.5167],
+      "title": { "en": "Born in Berlin", "es": "Nace en Berlín" },
+      "text": {
+        "en": "Alexander von Humboldt was born into a rich Prussian noble family and grew up with his brother Wilhelm between Berlin and Tegel castle. His jars of plants, shells and insects earned him the name of the little apothecary.",
+        "es": "Alexander von Humboldt nació en una rica familia noble de Prusia y creció con su hermano Wilhelm entre Berlín y el castillo de Tegel. Por sus frascos de plantas, conchas e insectos le decían el pequeño boticario."
+      },
+      "places": [
+        {
+          "name": { "en": "Schloss Tegel", "es": "Palacio de Tegel" },
+          "at": [13.2764, 52.595],
+          "cat": "place",
+          "type": "structure",
+          "date": "1769",
+          "text": {
+            "en": "The Humboldts' country house by a lake north-west of Berlin, where the brothers grew up. Wilhelm had it rebuilt in the 1820s by the architect Schinkel, and both brothers are buried in its park.",
+            "es": "La casa de campo de los Humboldt junto a un lago, al noroeste de Berlín, donde crecieron los hermanos. Wilhelm la hizo reconstruir en la década de 1820 por el arquitecto Schinkel, y los dos están enterrados en su parque."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1789",
+      "kind": "study",
+      "place": { "en": "Göttingen, Germany", "es": "Gotinga, Alemania" },
+      "at": [9.9379, 51.534],
+      "title": { "en": "A friend from Cook's voyage", "es": "Un amigo del viaje de Cook" },
+      "text": {
+        "en": "At Göttingen university Humboldt met Georg Forster, who as a youth had sailed round the world with Captain Cook. In 1790 they travelled down the Rhine to England and to Paris in revolution, and he dreamed of the tropics.",
+        "es": "En Gotinga Humboldt conoció a Georg Forster, que de joven había dado la vuelta al mundo con el capitán Cook. En 1790 viajaron por el Rin hasta Inglaterra y el París de la revolución, y él empezó a soñar con el trópico."
+      }
+    },
+    {
+      "date": "1792",
+      "kind": "career",
+      "place": { "en": "Bad Steben, Germany", "es": "Bad Steben, Alemania" },
+      "at": [11.6444, 50.3665],
+      "title": { "en": "Inspector of mines", "es": "Inspector de minas" },
+      "text": {
+        "en": "Trained at the Freiberg mining academy, Humboldt became at 22 an inspector of mines in Franconia. He went down the shafts himself, invented a safety lamp and a breathing mask, and paid for a free school for miners.",
+        "es": "Formado en la academia de minas de Freiberg, Humboldt fue a los 22 años inspector de minas en Franconia. Bajaba a los pozos, inventó una lámpara de seguridad y una máscara para respirar, y pagó una escuela para mineros."
+      },
+      "places": [
+        {
+          "id": "goethe",
+          "name": { "en": "Goethe", "es": "Goethe" },
+          "at": [11.5899, 50.9288],
+          "cat": "person",
+          "type": "person",
+          "date": "1794",
+          "life": ["1749-08-28", "1832-03-22"],
+          "place": { "en": "Jena, Germany", "es": "Jena, Alemania" },
+          "text": {
+            "en": "Germany's greatest poet also studied plants, bones and rocks. They met in Jena in the 1790s and stayed friends for life; an hour with Humboldt, Goethe said, taught him more than days of reading.",
+            "es": "El mayor poeta de Alemania estudiaba también plantas, huesos y rocas. Se conocieron en Jena en la década de 1790 y fueron amigos de por vida; una hora con Humboldt, decía Goethe, le enseñaba más que días de lectura."
+          },
+          "wiki": { "en": "Johann Wolfgang von Goethe", "es": "Johann Wolfgang von Goethe" }
+        }
+      ]
+    },
+    {
+      "date": "1799-06-05",
+      "kind": "journey",
+      "place": { "en": "A Coruña, Spain", "es": "La Coruña, España" },
+      "at": [-8.396, 43.3713],
+      "title": { "en": "A passport from the king", "es": "Un pasaporte del rey" },
+      "text": {
+        "en": "His mother's death in 1796 left Humboldt rich and free. With the French botanist Aimé Bonpland he won from King Carlos IV a rare permit to explore Spain's American colonies, and on 5 June 1799 they sailed from A Coruña.",
+        "es": "La muerte de su madre en 1796 dejó a Humboldt rico y libre. Con el botánico francés Aimé Bonpland obtuvo del rey Carlos IV un raro permiso para explorar la América española, y el 5 de junio de 1799 zarparon de La Coruña."
+      }
+    },
+    {
+      "date": "1799-07-16",
+      "kind": "journey",
+      "by": "sea",
+      "via": [[-9.8, 43.2], [-16.2, 28.5], [-61.5, 11.7], [-64.6, 11.4], [-64.5, 10.7]],
+      "place": { "en": "Cumaná, Venezuela", "es": "Cumaná, Venezuela" },
+      "at": [-64.1786, 10.4639],
+      "title": { "en": "First days in the tropics", "es": "Primeros días en el trópico" },
+      "text": {
+        "en": "The Pizarro put in at Cumaná, on the coast of Venezuela. Humboldt and Bonpland ran about like fools, he wrote, unable to settle on anything: each new plant, bird and insect made them drop the last.",
+        "es": "La Pizarro recaló en Cumaná, en la costa de Venezuela. Humboldt y Bonpland corrían como locos, escribió él, sin poder decidirse por nada: cada planta, cada pájaro y cada insecto nuevo les hacía soltar el anterior."
+      },
+      "details": {
+        "en": "On the way out they had stopped at Tenerife and climbed the volcano Teide. In Cumaná's market Humboldt saw enslaved Africans sold, their teeth inspected like those of horses, and he hated slavery for the rest of his life. He felt his first earthquake there, and on a November night in 1799 watched thousands of shooting stars, a shower that later helped astronomers to understand meteors. Inland he explored the cave of the guácharos, birds that live in the dark.",
+        "es": "En el viaje de ida habían hecho escala en Tenerife y subido al volcán Teide. En el mercado de Cumaná Humboldt vio cómo se vendía a africanos esclavizados, a quienes les revisaban los dientes como a los caballos, y odió la esclavitud por el resto de su vida. Allí sintió su primer terremoto, y una noche de noviembre de 1799 vio miles de estrellas fugaces, una lluvia que después ayudó a los astrónomos a entender los meteoros. Tierra adentro exploró la cueva de los guácharos, aves que viven en la oscuridad."
+      },
+      "places": [
+        {
+          "name": { "en": "Aimé Bonpland", "es": "Aimé Bonpland" },
+          "at": [-64.18, 10.45],
+          "cat": "person",
+          "type": "person",
+          "date": "1799-07-16",
+          "life": ["1773", "1858"],
+          "text": {
+            "en": "The French botanist, four years younger than Humboldt, shared every hardship of the five years and collected most of the plants. He later went back to South America for good, and died in Argentina.",
+            "es": "El botánico francés, cuatro años menor que Humboldt, compartió todas las penurias de los cinco años y recogió la mayor parte de las plantas. Después volvió a Sudamérica para siempre, y murió en la Argentina."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1800-05",
+      "kind": "journey",
+      "by": "river",
+      "via": [[-66.8792, 10.488], [-67.4293, 8.9242], [-67.4718, 7.8896], [-67.5834, 5.6605], [-67.6993, 4.0456]],
+      "place": { "en": "San Carlos de Río Negro, southern Venezuela", "es": "San Carlos de Río Negro, sur de Venezuela" },
+      "label": { "en": "Casiquiare", "es": "Casiquiare" },
+      "at": [-67.0609, 1.9203],
+      "title": { "en": "The Orinoco and the Casiquiare", "es": "El Orinoco y el Casiquiare" },
+      "text": {
+        "en": "After crossing the plains, Humboldt and Bonpland travelled 75 days by canoe on the Orinoco and its branches. They mapped the Casiquiare, a natural channel that joins the river systems of the Orinoco and the Amazon.",
+        "es": "Después de cruzar los Llanos, Humboldt y Bonpland viajaron 75 días en canoa por el Orinoco y sus brazos. Trazaron el mapa del Casiquiare, un canal natural que une las cuencas del Orinoco y del Amazonas."
+      },
+      "details": {
+        "en": "Missionaries and the peoples of the forest had long used the channel, but geographers in Europe doubted that it existed; Humboldt fixed its position by the stars. Indigenous paddlers and guides carried the expedition through rapids, clouds of mosquitoes and hunger. On the plains he had studied electric eels, caught by driving horses into their pool, and on the Orinoco he watched the making of curare, the arrow poison. By Lake Valencia he noticed that felling forests dries the land and changes the climate: one of the first warnings of its kind.",
+        "es": "Los misioneros y los pueblos de la selva usaban el canal desde hacía mucho, pero los geógrafos de Europa dudaban de que existiera; Humboldt fijó su posición con las estrellas. Remeros y guías indígenas llevaron la expedición entre raudales, nubes de mosquitos y hambre. En los Llanos había estudiado las anguilas eléctricas, capturadas haciendo entrar caballos a su laguna, y en el Orinoco vio preparar el curare, el veneno de las flechas. Junto al lago de Valencia notó que talar los bosques seca la tierra y cambia el clima: una de las primeras advertencias de ese tipo."
+      }
+    },
+    {
+      "date": "1802-06-23",
+      "kind": "moment",
+      "via": [[-65.5452, 3.1745], [-63.5469, 8.1237], [-64.1786, 10.4639], [-82.383, 23.133], [-75.4933, 10.3982], [-74.7358, 5.2086], [-74.0817, 4.6097], [-78.525, -0.2298]],
+      "place": { "en": "Chimborazo, near Riobamba, Ecuador", "es": "Chimborazo, cerca de Riobamba, Ecuador" },
+      "label": { "en": "Chimborazo", "es": "Chimborazo" },
+      "at": [-78.817, -1.469],
+      "title": { "en": "The climb of Chimborazo", "es": "El ascenso al Chimborazo" },
+      "text": {
+        "en": "Chimborazo was then thought the highest mountain on Earth. With Bonpland, the young Quito nobleman Carlos Montúfar and one other companion, Humboldt climbed higher than anyone on record until a crevasse stopped them.",
+        "es": "El Chimborazo se creía entonces la montaña más alta de la Tierra. Con Bonpland, el joven noble quiteño Carlos Montúfar y un acompañante más, Humboldt subió más alto que nadie antes, hasta que una grieta los detuvo."
+      },
+      "details": {
+        "en": "Their hands bled on the rocks and their gums bled in the thin air, and they crept along a ridge in places only a few inches wide. Afterwards Humboldt began the drawing that made him famous: the mountain cut open, with every plant written at the height where it grows, from palms at the foot to lichens beside the snow. To climb a tropical mountain, he saw, is like travelling from the equator towards the pole. Nature was one connected whole.",
+        "es": "Les sangraban las manos en las rocas y las encías por el aire delgado, y avanzaron por una cresta que en algunos tramos tenía pocos centímetros de ancho. Después Humboldt empezó el dibujo que lo hizo famoso: la montaña en corte, con cada planta escrita a la altura donde crece, desde las palmas al pie hasta los líquenes junto a la nieve. Subir una montaña tropical, comprendió, es como viajar del ecuador hacia el polo. La naturaleza era un todo conectado."
+      },
+      "unsure": {
+        "en": "His barometer gave 5,875 m; modern estimates put the highest point he reached lower, near 5,600 m. The summit is about 6,260 m high.",
+        "es": "Su barómetro marcó 5875 m; los cálculos modernos sitúan el punto más alto que alcanzó más abajo, cerca de los 5600 m. La cumbre mide unos 6260 m."
+      },
+      "places": [
+        {
+          "name": { "en": "Carlos Montúfar", "es": "Carlos Montúfar" },
+          "at": [-78.525, -0.2298],
+          "cat": "person",
+          "type": "person",
+          "date": "1802",
+          "life": ["1780", "1816"],
+          "place": { "en": "Quito, Ecuador", "es": "Quito, Ecuador" },
+          "text": {
+            "en": "The son of a Quito marquis joined Humboldt at 21 and went on with him to Peru, Mexico and Europe. He came home to fight for independence, and the Spanish shot him in 1816.",
+            "es": "Hijo de un marqués quiteño, se unió a Humboldt a los 21 años y siguió con él al Perú, México y Europa. Volvió a su tierra a luchar por la independencia, y los españoles lo fusilaron en 1816."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1802-10",
+      "kind": "made",
+      "via": [[-78.5003, -7.1638], [-79.03, -8.116]],
+      "place": { "en": "Callao, Peru", "es": "El Callao, Perú" },
+      "label": { "en": "Callao", "es": "El Callao" },
+      "at": [-77.1345, -12.0516],
+      "title": { "en": "The cold current", "es": "La corriente fría" },
+      "text": {
+        "en": "On the coast of Peru Humboldt lowered his thermometer into the sea and found it much colder than the air: a great cold current flows north along the shore. It bears his name, though he said fishermen had always known it.",
+        "es": "En la costa del Perú Humboldt midió el mar con su termómetro y lo halló mucho más frío que el aire: una gran corriente fría sube junto a la costa. Lleva su nombre, pero él decía que los pescadores siempre la conocieron."
+      },
+      "details": {
+        "en": "At Callao he timed the planet Mercury crossing the face of the Sun, to fix the longitude of Lima. He also sent to Europe samples of guano, the seabird droppings that Peruvians had used since before the Incas to feed their fields, and chemists in Paris found it a rich fertilizer. Forty years later guano was a fortune for Peru, dug on the islands by Chinese labourers who worked and died there in conditions close to slavery.",
+        "es": "En el Callao midió el paso del planeta Mercurio por delante del Sol, para fijar la longitud de Lima. También envió a Europa muestras de guano, el excremento de aves marinas que los peruanos usaban desde antes de los incas para abonar sus campos, y los químicos de París comprobaron que era un abono muy rico. Cuarenta años después el guano fue una fortuna para el Perú, extraído en las islas por trabajadores chinos que vivían y morían allí en condiciones cercanas a la esclavitud."
+      }
+    },
+    {
+      "date": "1803-04",
+      "kind": "career",
+      "by": "sea",
+      "via": [[-78.3, -11.0], [-79.6, -9.0], [-81.9, -5.5], [-81.7, -3.7], [-80.5, -3.0], [-81.4, -2.3], [-88.0, 6.0], [-96.0, 13.5], [-99.9089, 16.8494]],
+      "place": { "en": "Mexico City, Mexico", "es": "Ciudad de México, México" },
+      "at": [-99.1332, 19.4326],
+      "title": { "en": "A year in New Spain", "es": "Un año en la Nueva España" },
+      "text": {
+        "en": "From Acapulco Humboldt climbed to Mexico City, then the largest city in the Americas. For a year he studied its archives, mines and volcanoes, measured Aztec monuments and drew the most exact map of the country yet made.",
+        "es": "Desde Acapulco Humboldt subió a la Ciudad de México, entonces la mayor ciudad de América. Durante un año estudió sus archivos, minas y volcanes, midió monumentos aztecas y trazó el mejor mapa del país hasta entonces."
+      },
+      "details": {
+        "en": "He asked for the great stone statue of the goddess Coatlicue, dug up and buried again by the authorities, to be uncovered so that he could draw it. He went down the silver mines of Guanajuato and climbed Jorullo, a volcano born only 44 years before. His book on New Spain gave the world the first statistics of Mexico, and a verdict: nowhere had he seen such inequality between rich and poor. On the way home he was the guest of President Jefferson in Washington.",
+        "es": "Pidió que desenterraran la gran estatua de piedra de la diosa Coatlicue, hallada y vuelta a enterrar por las autoridades, para poder dibujarla. Bajó a las minas de plata de Guanajuato y subió al Jorullo, un volcán nacido solo 44 años antes. Su libro sobre la Nueva España le dio al mundo las primeras estadísticas de México, y un juicio: en ningún lugar había visto tanta desigualdad entre ricos y pobres. De regreso fue huésped del presidente Jefferson en Washington."
+      },
+      "places": [
+        {
+          "name": { "en": "Aztec Sun Stone", "es": "Piedra del Sol" },
+          "at": [-99.186, 19.426],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🗿",
+          "date": "1502",
+          "by": { "en": "Mexica sculptors", "es": "Escultores mexicas" },
+          "text": {
+            "en": "The great Mexica calendar stone, found under the main square in 1790 and set against the cathedral tower, where Humboldt studied it with admiration. It is now in the National Museum of Anthropology.",
+            "es": "La gran piedra calendárica mexica, hallada bajo la plaza mayor en 1790 y colocada junto a la torre de la catedral, donde Humboldt la estudió con admiración. Hoy está en el Museo Nacional de Antropología."
+          },
+          "wiki": { "en": "Aztec sun stone", "es": "Piedra del Sol" }
+        }
+      ]
+    },
+    {
+      "date": "1804-08",
+      "kind": "made",
+      "by": "sea",
+      "via": [[-96.1429, 19.1809], [-90.0, 22.6], [-82.4, 23.3], [-80.0, 24.6], [-79.2, 27.5], [-75.5, 34.0], [-74.3, 37.5], [-74.9, 38.75], [-75.4, 39.35], [-75.1636, 39.9528], [-75.4, 39.35], [-74.9, 38.75], [-50.0, 43.0], [-20.0, 46.0], [-1.7, 45.7], [-0.5805, 44.8412]],
+      "place": { "en": "Paris, France", "es": "París, Francia" },
+      "at": [2.337, 48.8574],
+      "title": { "en": "Thirty volumes in Paris", "es": "Treinta tomos en París" },
+      "text": {
+        "en": "Humboldt came back to Europe famous, with some 60,000 plant specimens and trunks of notes. In Paris, the capital of science, he spent more than twenty years and his whole fortune publishing the journey in thirty volumes.",
+        "es": "Humboldt volvió a Europa famoso, con unas 60 000 muestras de plantas y baúles de apuntes. Se instaló en París, la capital de la ciencia, y gastó más de veinte años y toda su fortuna en publicar el viaje en treinta tomos."
+      },
+      "details": {
+        "en": "In Paris in 1804 he met a young Venezuelan, Simón Bolívar, and they talked about the future of Spanish America; Bolívar later called him the true discoverer of America. Humboldt drew the first maps with lines joining places of equal temperature, the isotherms of every weather map today. He also wrote against slavery in Cuba so plainly that his book was banned on the island.",
+        "es": "En París conoció en 1804 a un joven venezolano, Simón Bolívar, y hablaron del futuro de la América española; Bolívar lo llamó después el verdadero descubridor de América. Humboldt dibujó los primeros mapas con líneas que unen lugares de igual temperatura, las isotermas de todos los mapas del tiempo de hoy. También escribió contra la esclavitud en Cuba con tanta claridad que su libro fue prohibido en la isla."
+      },
+      "places": [
+        {
+          "id": "simon-bolivar",
+          "name": { "en": "Simón Bolívar", "es": "Simón Bolívar" },
+          "at": [2.3488, 48.8534],
+          "cat": "person",
+          "type": "person",
+          "date": "1804",
+          "life": ["1783-07-24", "1830-12-17"],
+          "text": {
+            "en": "The future Liberator was 21 and newly widowed when he met Humboldt in Paris in 1804. Years later, in the middle of his wars, he still wrote to him as a friend.",
+            "es": "El futuro Libertador tenía 21 años y acababa de enviudar cuando conoció a Humboldt en París, en 1804. Años después, en plena guerra, todavía le escribía como a un amigo."
+          },
+          "wiki": { "en": "Simón Bolívar", "es": "Simón Bolívar" }
+        }
+      ]
+    },
+    {
+      "date": "1827-11",
+      "kind": "moment",
+      "place": { "en": "Berlin, Germany", "es": "Berlín, Alemania" },
+      "at": [13.3933, 52.5181],
+      "title": { "en": "The Cosmos lectures", "es": "Las conferencias del Cosmos" },
+      "text": {
+        "en": "Called home by the king of Prussia, Humboldt gave free public lectures on the whole physical world, from stars to mosses. Berlin's largest hall filled with princes, craftsmen, students and, unusually then, many women.",
+        "es": "Llamado por el rey de Prusia, Humboldt dio conferencias gratuitas sobre el universo, de las estrellas a los musgos. La mayor sala de Berlín se llenó de príncipes, artesanos, estudiantes y, cosa rara entonces, mujeres."
+      }
+    },
+    {
+      "date": "1829-08",
+      "kind": "journey",
+      "by": "land",
+      "icon": "🐎",
+      "via": [[30.3141, 59.9386], [37.6178, 55.752], [49.1221, 55.7887], [60.6153, 56.8573], [68.2546, 58.1981]],
+      "place": { "en": "Barnaul, Russia", "es": "Barnaúl, Rusia" },
+      "at": [83.7279, 53.362],
+      "title": { "en": "Across Russia to the Altai", "es": "Por Rusia hasta el Altái" },
+      "text": {
+        "en": "At 59, invited by the tsar, Humboldt crossed Russia by carriage: over the Urals and through Siberia to the Altai mountains and the border of China, then home by the Caspian Sea. He covered some 15,000 km in half a year.",
+        "es": "A los 59 años, invitado por el zar, Humboldt cruzó Rusia en carruaje: por los Urales y Siberia hasta los montes Altái y la frontera de China, y de vuelta por el mar Caspio. Recorrió unos 15 000 km en medio año."
+      },
+      "details": {
+        "en": "The tsar wanted his opinion of the gold and platinum mines of the Urals, and wished to hear nothing about the serfs who worked them; Humboldt kept his thoughts for private letters. He foretold that diamonds would be found in the Urals, and they were, during his visit. He turned 60 at Miass, in the southern Urals. Back home he persuaded Russia and Britain to set up a chain of stations round the world to measure the Earth's magnetism: an early piece of world-wide science.",
+        "es": "El zar quería su opinión sobre las minas de oro y platino de los Urales, y no quería oír nada sobre los siervos que las trabajaban; Humboldt guardó sus ideas para sus cartas privadas. Predijo que en los Urales se hallarían diamantes, y se hallaron durante su visita. Cumplió 60 años en Miass, al sur de los Urales. De regreso convenció a Rusia y a Gran Bretaña de instalar una cadena de estaciones alrededor del mundo para medir el magnetismo de la Tierra: un ejemplo temprano de ciencia mundial."
+      }
+    },
+    {
+      "date": "1845",
+      "kind": "made",
+      "place": { "en": "Berlin, Germany", "es": "Berlín, Alemania" },
+      "at": [13.3833, 52.5167],
+      "title": { "en": "Cosmos", "es": "Cosmos" },
+      "text": {
+        "en": "At 75 Humboldt published the first volume of Cosmos, his attempt to describe the whole physical world, from distant nebulae to the geography of plants, in one work. It became a bestseller in many languages.",
+        "es": "A los 75 años Humboldt publicó el primer tomo de Cosmos, su intento de describir en una sola obra todo el mundo físico, de las nebulosas lejanas a la geografía de las plantas. Fue un éxito de ventas en muchos idiomas."
+      },
+      "details": {
+        "en": "He wrote at night, after his duties at the Prussian court, in a study crowded with maps, stuffed birds and letters: in some years he received several thousand. Four volumes appeared in his lifetime and a fifth after his death. He used his place at court for others: he found posts and money for young scientists, and in 1857 he helped to pass a law that freed any slave who set foot on Prussian soil. He had spent all he had, and died in debt to his own servant.",
+        "es": "Escribía de noche, después de sus deberes en la corte de Prusia, en un estudio atestado de mapas, pájaros disecados y cartas: algunos años recibió varios miles. Cuatro tomos salieron en vida suya y un quinto después de su muerte. Usó su lugar en la corte para otros: consiguió puestos y dinero para científicos jóvenes, y en 1857 ayudó a aprobar una ley que daba la libertad a todo esclavo que pisara suelo prusiano. Había gastado todo lo que tenía, y murió endeudado con su propio criado."
+      }
+    },
+    {
+      "date": "1859-05-06",
+      "kind": "died",
+      "place": { "en": "Berlin, Germany", "es": "Berlín, Alemania" },
+      "at": [13.3833, 52.5167],
+      "title": { "en": "He dies in Berlin", "es": "Muere en Berlín" },
+      "text": {
+        "en": "Humboldt died at 89 in his Berlin flat. The city gave him a state funeral, and he was buried at Tegel beside his brother Wilhelm. Ten years later his centenary was celebrated from Mexico City to Melbourne.",
+        "es": "Humboldt murió a los 89 años en su departamento de Berlín. Tuvo un funeral de Estado y fue enterrado en Tegel junto a su hermano Wilhelm. Diez años después su centenario se celebró de la Ciudad de México a Melbourne."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Humboldt family grave, Tegel", "es": "Tumba de la familia Humboldt, Tegel" },
+      "at": [13.2686, 52.595],
+      "kind": "grave",
+      "text": {
+        "en": "Alexander and Wilhelm lie in the family burial ground in the park of Schloss Tegel, below a tall column crowned by a statue of Hope. The house, still owned by their descendants, opens for guided tours on some days.",
+        "es": "Alexander y Wilhelm descansan en el cementerio familiar del parque de Tegel, al pie de una columna coronada por una estatua de la Esperanza. El palacio, aún de sus descendientes, abre algunos días para visitas guiadas."
+      }
+    },
+    {
+      "name": { "en": "Humboldt statue, Humboldt University", "es": "Estatua de Humboldt, Universidad Humboldt" },
+      "at": [13.3941, 52.5177],
+      "kind": "memorial",
+      "text": {
+        "en": "Marble statues of the two brothers sit in front of the university on Unter den Linden. On Alexander's pedestal the University of Havana had carved, in Spanish: to the second discoverer of Cuba.",
+        "es": "Las estatuas de mármol de los dos hermanos están sentadas frente a la universidad, en Unter den Linden. En el pedestal de Alexander, la Universidad de La Habana hizo grabar en español: al segundo descubridor de Cuba."
+      }
+    },
+    {
+      "name": { "en": "Humboldt Forum", "es": "Humboldt Forum" },
+      "at": [13.4028, 52.5175],
+      "kind": "museum",
+      "text": {
+        "en": "Berlin's museum of the cultures of the world, in the rebuilt royal palace, is named after the two brothers. Its collections include thousands of objects from the Americas.",
+        "es": "El museo berlinés de las culturas del mundo, en el palacio real reconstruido, lleva el nombre de los dos hermanos. Sus colecciones incluyen miles de objetos de las Américas."
+      },
+      "wiki": { "en": "Humboldt Forum", "es": "Humboldt Forum" }
+    },
+    {
+      "name": { "en": "Teide National Park, Tenerife", "es": "Parque Nacional del Teide, Tenerife" },
+      "at": [-16.6427, 28.2765],
+      "kind": "site",
+      "text": {
+        "en": "The volcano Humboldt climbed in June 1799, on his way to America. Between the coast and the summit, more than 3,700 m up, he noted how the plants change with height: the idea he carried to the Andes.",
+        "es": "El volcán al que Humboldt subió en junio de 1799, camino a América. Entre la costa y la cumbre, a más de 3700 m, anotó cómo cambian las plantas con la altura: la idea que llevó a los Andes."
+      },
+      "wiki": { "en": "Teide National Park", "es": "Parque nacional del Teide" },
+      "whs": 1258
+    },
+    {
+      "name": { "en": "Chimborazo", "es": "Chimborazo" },
+      "at": [-78.817, -1.469],
+      "kind": "site",
+      "text": {
+        "en": "Ecuador's highest mountain stands in a wildlife reserve where vicuñas graze. A road reaches the first mountain hut at about 4,800 m, and walkers go on to a second at 5,000 m, in the thin air Humboldt described.",
+        "es": "La montaña más alta del Ecuador está en una reserva de fauna donde pastan vicuñas. Un camino llega al primer refugio, a unos 4800 m, y a pie se sigue hasta un segundo a 5000 m, en el aire delgado que describió Humboldt."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Humboldt showed that climate, plants, mountains, seas and people form one connected system, and that human beings can damage it. Weather maps, the geography of plants and the study of the oceans grew from his measurements, and Darwin took his books aboard the Beagle. More places, plants and animals bear his name than any other person's, from a penguin to an ocean current. In Latin America he is remembered as Alejandro de Humboldt.",
+    "es": "Humboldt mostró que el clima, las plantas, las montañas, los mares y las personas forman un solo sistema conectado, y que los seres humanos pueden dañarlo. Los mapas del tiempo, la geografía de las plantas y el estudio de los océanos nacieron de sus mediciones, y Darwin llevó sus libros a bordo del Beagle. Más lugares, plantas y animales llevan su nombre que el de cualquier otra persona, desde un pingüino hasta una corriente del océano. En América Latina se lo recuerda como Alejandro de Humboldt."
+  },
+  "sources": [
+    { "title": "Wikipedia: Alexander von Humboldt", "url": "https://en.wikipedia.org/wiki/Alexander_von_Humboldt" },
+    { "title": "Wikipedia (español): Alexander von Humboldt", "url": "https://es.wikipedia.org/wiki/Alexander_von_Humboldt" },
+    { "title": "Andrea Wulf, The Invention of Nature: Alexander von Humboldt's New World (2015)", "url": "https://en.wikipedia.org/wiki/The_Invention_of_Nature" }
+  ]
+}

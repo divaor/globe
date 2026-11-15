@@ -1,0 +1,315 @@
+{
+  "id": "charles-darwin",
+  "qid": "Q1035",
+  "name": { "en": "Charles Darwin", "es": "Charles Darwin" },
+  "icon": "🐢",
+  "field": "science",
+  "known": { "en": "English naturalist", "es": "Naturalista inglés" },
+  "born": "1809-02-12",
+  "died": "1882-04-19",
+  "summary": {
+    "en": "A seasick young naturalist sailed round the world on HMS Beagle and came home with a dangerous idea. Twenty years later he showed how every species, humans included, has evolved from earlier ones by natural selection.",
+    "es": "Un joven naturalista que se mareaba dio la vuelta al mundo en el HMS Beagle y volvió con una idea peligrosa. Veinte años después mostró cómo todas las especies, incluida la humana, evolucionaron de otras anteriores por selección natural."
+  },
+  "steps": [
+    {
+      "date": "1809-02-12",
+      "kind": "born",
+      "place": { "en": "Shrewsbury, England", "es": "Shrewsbury, Inglaterra" },
+      "at": [-2.763, 52.713],
+      "title": { "en": "Born at The Mount", "es": "Nace en The Mount" },
+      "text": {
+        "en": "Charles Darwin was born in Shrewsbury on the same day as Abraham Lincoln. His father was a doctor; his mother, a daughter of the potter Josiah Wedgwood, died when he was eight. At school he collected beetles and stones.",
+        "es": "Charles Darwin nació en Shrewsbury el mismo día que Abraham Lincoln. Su padre era médico; su madre, hija del ceramista Josiah Wedgwood, murió cuando él tenía ocho años. En la escuela coleccionaba escarabajos y piedras."
+      }
+    },
+    {
+      "date": "1825-10",
+      "kind": "study",
+      "place": { "en": "Edinburgh, Scotland", "es": "Edimburgo, Escocia" },
+      "at": [-3.1872, 55.9474],
+      "title": { "en": "A medical student who fled", "es": "Un estudiante de medicina que huyó" },
+      "text": {
+        "en": "At 16 Darwin was sent to Edinburgh to study medicine. He fled from an operation on a child, done without anaesthetic. He learned more from John Edmonstone, a freed slave from Guyana, who taught him to stuff birds.",
+        "es": "A los 16 años Darwin fue enviado a Edimburgo a estudiar medicina. Huyó de una operación a un niño, hecha sin anestesia. Aprendió más de John Edmonstone, un esclavo liberto de Guyana, que le enseñó a disecar aves."
+      }
+    },
+    {
+      "date": "1828-01",
+      "kind": "study",
+      "place": { "en": "Cambridge, England", "es": "Cambridge, Inglaterra" },
+      "at": [0.1222, 52.2054],
+      "title": { "en": "Beetles at Cambridge", "es": "Escarabajos en Cambridge" },
+      "text": {
+        "en": "At Christ's College Darwin was meant to train as a clergyman. He preferred hunting beetles and walking with the botanist John Henslow, who taught him to observe and, in 1831, proposed him for a voyage round the world.",
+        "es": "En el Christ's College Darwin debía prepararse para ser clérigo. Prefería cazar escarabajos y pasear con el botánico John Henslow, que le enseñó a observar y, en 1831, lo propuso para un viaje alrededor del mundo."
+      }
+    },
+    {
+      "date": "1831-12-27",
+      "kind": "journey",
+      "place": { "en": "Plymouth, England", "es": "Plymouth, Inglaterra" },
+      "at": [-4.143, 50.3715],
+      "title": { "en": "The Beagle sails", "es": "Zarpa el Beagle" },
+      "text": {
+        "en": "HMS Beagle left Plymouth to chart the coasts of South America, with Darwin, 22, aboard as naturalist and companion to Captain Robert FitzRoy. The voyage was planned for two years. It lasted almost five.",
+        "es": "El HMS Beagle zarpó de Plymouth para cartografiar las costas de Sudamérica, con Darwin, de 22 años, como naturalista y acompañante del capitán Robert FitzRoy. El viaje estaba planeado para dos años. Duró casi cinco."
+      },
+      "places": [
+        {
+          "name": { "en": "Robert FitzRoy", "es": "Robert FitzRoy" },
+          "at": [-4.1427, 50.3755],
+          "cat": "person",
+          "type": "person",
+          "date": "1831-12-27",
+          "life": ["1805-07-05", "1865-04-30"],
+          "text": {
+            "en": "The Beagle's captain, 26 years old, a brilliant navigator with a quick temper. He later governed New Zealand and founded Britain's weather service. A devout man, he came to regret having carried Darwin.",
+            "es": "El capitán del Beagle, de 26 años, un navegante brillante y de mal genio. Después gobernó Nueva Zelanda y fundó el servicio meteorológico británico. Hombre muy religioso, llegó a lamentar haber llevado a Darwin."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1832-02-28",
+      "kind": "moment",
+      "by": "sea",
+      "via": [[-6.0, 48.8], [-10.5, 43.5], [-19.0, 30.0], [-23.5125, 14.9315], [-29.35, 0.92], [-32.42, -3.85], [-34.0, -8.0], [-36.5, -11.5]],
+      "place": { "en": "Salvador, Brazil", "es": "Salvador, Brasil" },
+      "at": [-38.491, -12.9756],
+      "title": { "en": "A chaos of delight", "es": "Un caos de deleite" },
+      "text": {
+        "en": "At Bahia, today Salvador, Darwin walked for the first time in a tropical rainforest, dazed by its flowers, insects and silence. In the same country he saw slavery at work, and it sickened him for life.",
+        "es": "En Bahía, hoy Salvador, Darwin caminó por primera vez por una selva tropical, aturdido por sus flores, sus insectos y su silencio. En ese mismo país vio la esclavitud de cerca, y le repugnó para siempre."
+      },
+      "details": {
+        "en": "He came from a family that campaigned against slavery, and Brazil showed him what the word meant: he heard a slave being tortured in a nearby house, and met a landowner who was about to sell the women and children of his estate away from the men. When Captain FitzRoy defended the system, the two quarrelled so fiercely that Darwin thought he would have to leave the ship. On sailing from Brazil for the last time, in 1836, he wrote: I thank God I shall never again visit a slave-country.",
+        "es": "Venía de una familia que hacía campaña contra la esclavitud, y Brasil le mostró lo que esa palabra significaba: oyó torturar a un esclavo en una casa vecina, y conoció a un hacendado que estuvo a punto de vender a las mujeres y los niños de su finca lejos de los hombres. Cuando el capitán FitzRoy defendió el sistema, pelearon con tanta furia que Darwin creyó que tendría que dejar el barco. Al zarpar de Brasil por última vez, en 1836, escribió: doy gracias a Dios de que nunca volveré a visitar un país de esclavos."
+      }
+    },
+    {
+      "date": "1832-09",
+      "kind": "made",
+      "by": "sea",
+      "via": [[-38.0, -15.0], [-38.5, -19.0], [-40.5, -23.3], [-43.1, -23.05], [-45.5, -25.5], [-47.8, -28.5], [-51.5, -33.5], [-54.5, -35.3], [-56.2, -35.0], [-56.0, -36.5], [-57.2, -38.5], [-60.5, -39.3], [-61.9, -39.05]],
+      "place": { "en": "Punta Alta, Argentina", "es": "Punta Alta, Argentina" },
+      "at": [-62.075, -38.8805],
+      "title": { "en": "Bones of giants", "es": "Huesos de gigantes" },
+      "text": {
+        "en": "At Punta Alta, near Bahía Blanca, Darwin dug from a low cliff the bones of huge extinct animals: giant sloths and an armoured beast like an enormous armadillo. Why were they so like the small ones still living there?",
+        "es": "En Punta Alta, cerca de Bahía Blanca, Darwin sacó de una barranca huesos de grandes animales extinguidos: perezosos gigantes y un acorazado como un armadillo enorme. ¿Por qué se parecían tanto a los pequeños de hoy?"
+      },
+      "details": {
+        "en": "Among them was Megatherium, a ground sloth as big as an elephant. Over the next two years he rode hundreds of kilometres across the Pampas with gauchos, living on meat and sleeping on his saddle. On the Río Colorado he met General Juan Manuel de Rosas, whose army was hunting down the Indigenous peoples of the plains, and he wrote about the killing with horror. In Patagonia he found that a second, smaller kind of rhea replaced the common one further south: another puzzle about species.",
+        "es": "Entre ellos estaba el megaterio, un perezoso terrestre del tamaño de un elefante. En los dos años siguientes recorrió a caballo cientos de kilómetros por la Pampa con gauchos, comiendo carne y durmiendo sobre su montura. En el río Colorado conoció al general Juan Manuel de Rosas, cuyo ejército perseguía a los pueblos indígenas de la llanura, y escribió con horror sobre la matanza. En la Patagonia descubrió que un segundo ñandú, más pequeño, reemplazaba al común más al sur: otro enigma sobre las especies."
+      }
+    },
+    {
+      "date": "1835-03-04",
+      "kind": "moment",
+      "by": "sea",
+      "via": [[-61.5, -40.5], [-63.0, -43.0], [-64.8, -46.5], [-67.0, -50.5], [-68.2, -52.45], [-69.5, -52.55], [-70.6, -53.3], [-71.0, -54.0], [-72.2, -54.35], [-73.6, -54.2], [-76.0, -52.0], [-76.0, -46.0], [-74.7, -41.5], [-73.9, -39.9], [-73.9, -37.5], [-73.2, -36.6]],
+      "place": { "en": "Concepción, Chile", "es": "Concepción, Chile" },
+      "at": [-73.0498, -36.827],
+      "title": { "en": "The earth moves", "es": "La tierra se mueve" },
+      "text": {
+        "en": "On 20 February 1835 Darwin felt a great earthquake at Valdivia. Two weeks later he found Concepción in ruins and the coast nearby lifted by up to three metres, mussels rotting above the tide: land rises in jolts.",
+        "es": "El 20 de febrero de 1835 Darwin sintió un gran terremoto en Valdivia. Dos semanas después halló Concepción en ruinas y la costa cercana levantada hasta tres metros, con mejillones en seco: la tierra sube a sacudidas."
+      },
+      "details": {
+        "en": "High in the Andes a few weeks later he found beds of seashells at 4,000 metres and a grove of trees turned to stone. The mountains, he reasoned, had been lifted from the sea little by little over an immense time; and if small changes added over ages could raise the Andes, perhaps they could change living things too. Where land rises, the sea floor elsewhere must sink: from that thought came his theory of coral atolls, reefs that keep growing upwards while their islands go down. He tested it a year later at the Cocos Islands, on the way home.",
+        "es": "Unas semanas después, en lo alto de los Andes, encontró capas de conchas marinas a 4000 metros y un grupo de árboles convertidos en piedra. Las montañas, razonó, habían salido del mar poco a poco a lo largo de un tiempo inmenso; y si pequeños cambios sumados durante eras podían levantar los Andes, quizá también podían cambiar a los seres vivos. Donde la tierra sube, en otra parte el fondo del mar debe hundirse: de esa idea nació su teoría de los atolones de coral, arrecifes que siguen creciendo hacia arriba mientras sus islas se hunden. La puso a prueba un año después en las islas Cocos, camino a casa."
+      },
+      "places": [
+        {
+          "name": { "en": "The earthquake of 1835", "es": "El terremoto de 1835" },
+          "at": [-73.0, -36.8],
+          "cat": "place",
+          "type": "event",
+          "icon": "🌊",
+          "date": "1835-02-20",
+          "text": {
+            "en": "A quake of about magnitude 8.5 and the tsunami that followed destroyed Concepción and its port, Talcahuano. FitzRoy and Darwin measured how far it had raised the coast.",
+            "es": "Un terremoto de magnitud cercana a 8,5 y el maremoto que lo siguió destruyeron Concepción y su puerto, Talcahuano. FitzRoy y Darwin midieron cuánto había levantado la costa."
+          },
+          "wiki": { "en": "1835 Concepción earthquake", "es": "Terremoto de Concepción de 1835" }
+        }
+      ]
+    },
+    {
+      "date": "1835-09-15",
+      "kind": "made",
+      "by": "sea",
+      "via": [[-73.2, -36.6], [-73.6, -36.0], [-72.2, -33.0], [-72.0, -30.0], [-71.2, -27.0], [-70.9, -23.3], [-70.6, -20.2], [-73.5, -17.0], [-76.5, -15.5], [-77.6, -12.3], [-77.3, -12.1]],
+      "place": { "en": "Puerto Baquerizo Moreno, Galápagos Islands, Ecuador", "es": "Puerto Baquerizo Moreno, islas Galápagos, Ecuador" },
+      "label": { "en": "Galápagos", "es": "Galápagos" },
+      "at": [-89.6102, -0.9017],
+      "title": { "en": "Five weeks in the Galápagos", "es": "Cinco semanas en las Galápagos" },
+      "text": {
+        "en": "On the volcanic Galápagos Islands Darwin rode giant tortoises, studied iguanas that swim in the sea and shot small birds. The vice-governor told him he could tell which island a tortoise came from by its shell.",
+        "es": "En las volcánicas islas Galápagos Darwin montó tortugas gigantes, estudió iguanas que nadan en el mar y cazó pájaros pequeños. El vicegobernador le dijo que podía saber de qué isla venía una tortuga por su caparazón."
+      },
+      "details": {
+        "en": "He noticed that the mockingbirds differed from island to island, and began to wonder. The little finches, with beaks that range from thick nutcrackers to fine tweezers, he did not even label by island. Only in London, when the bird expert John Gould told him they were a dozen separate species found nowhere else, did he see what they meant: one ancestor from the mainland had given rise to many forms, each fitted to its island and its food.",
+        "es": "Notó que los cucuves, o sinsontes, eran distintos de una isla a otra, y empezó a hacerse preguntas. A los pequeños pinzones, con picos que van de gruesos cascanueces a finas pinzas, ni siquiera los rotuló por isla. Solo en Londres, cuando el experto en aves John Gould le dijo que eran una docena de especies distintas que no existían en ningún otro lugar, comprendió lo que significaban: un antepasado llegado del continente había dado origen a muchas formas, cada una adaptada a su isla y a su alimento."
+      },
+      "unsure": {
+        "en": "He landed first on San Cristóbal, then on Floreana, Isabela and Santiago. The marker is at San Cristóbal's port, which did not exist in 1835.",
+        "es": "Desembarcó primero en San Cristóbal, y después en Floreana, Isabela y Santiago. El marcador está en el puerto de San Cristóbal, que no existía en 1835."
+      }
+    },
+    {
+      "date": "1837-07",
+      "kind": "made",
+      "by": "sea",
+      "via": [[-149.5684, -17.5347], [174.25, -35.2], [173.0, -34.2], [151.35, -33.85], [150.6, -37.6], [148.6, -41.5], [148.1, -43.3], [147.5, -43.15], [147.3294, -42.8794], [147.5, -43.15], [147.3, -43.6], [146.5, -43.9], [130.0, -37.0], [118.2, -35.2], [117.8837, -35.0269], [117.0, -35.5], [114.6, -34.6], [96.8225, -12.1568], [57.4, -20.0], [55.0, -22.5], [45.0, -27.5], [31.5, -31.5], [25.5, -35.0], [19.8, -35.4], [18.1, -34.3], [-5.7182, -15.9249], [-14.4119, -7.9286], [-38.4, -13.05], [-37.0, -12.0], [-34.5, -8.2], [-33.5, -5.0], [-27.0, 38.5], [-5.0711, 50.1544]],
+      "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+      "at": [-0.1275, 51.5072],
+      "title": { "en": "The secret notebook", "es": "El cuaderno secreto" },
+      "text": {
+        "en": "The Beagle came home in October 1836 by way of Tahiti, Australia and the Cape, and Darwin settled in London. In July 1837 he opened a notebook, drew a small branching tree and wrote above it: I think.",
+        "es": "El Beagle volvió en octubre de 1836 por Tahití, Australia y el Cabo, y Darwin se instaló en Londres. En julio de 1837 abrió un cuaderno, dibujó un arbolito con ramas y escribió encima: yo pienso."
+      },
+      "details": {
+        "en": "All living things, he suspected, descend from common ancestors, like the branches of one tree. The next autumn he read the economist Thomas Malthus on how populations outgrow their food, and saw the mechanism. Every plant and animal produces more young than can survive. Those that happen to vary in a helpful way live to breed and pass the variation on, and over many generations the species changes. He called it natural selection. He kept it almost secret for twenty years: telling a friend, he wrote, was like confessing a murder.",
+        "es": "Sospechaba que todos los seres vivos descienden de antepasados comunes, como las ramas de un solo árbol. Al otoño siguiente leyó al economista Thomas Malthus, que explicaba cómo las poblaciones crecen más que sus alimentos, y vio el mecanismo. Toda planta y todo animal produce más crías de las que pueden sobrevivir. Las que por azar varían de un modo útil viven para reproducirse y transmiten esa variación, y al cabo de muchas generaciones la especie cambia. Lo llamó selección natural. Lo mantuvo casi en secreto durante veinte años: contárselo a un amigo, escribió, era como confesar un asesinato."
+      }
+    },
+    {
+      "date": "1842-09",
+      "kind": "home",
+      "place": { "en": "Downe, near Orpington, England", "es": "Downe, cerca de Orpington, Inglaterra" },
+      "label": { "en": "Down House", "es": "Down House" },
+      "at": [0.0533, 51.3314],
+      "title": { "en": "Forty years at Down House", "es": "Cuarenta años en Down House" },
+      "text": {
+        "en": "With Emma Wedgwood, the cousin he had married in 1839, and their children, Darwin moved to a house in the village of Down, 25 km from London. He lived and worked there for the rest of his life, often ill.",
+        "es": "Con Emma Wedgwood, la prima con quien se había casado en 1839, y sus hijos, Darwin se mudó a una casa en el pueblo de Down, a 25 km de Londres. Allí vivió y trabajó el resto de su vida, a menudo enfermo."
+      },
+      "details": {
+        "en": "Emma was deeply religious and feared that his ideas would part them in the next life, yet she nursed him for forty years. They had ten children; three died young, and the death of ten-year-old Annie in 1851 was the great grief of his life. He walked his thinking path, the Sandwalk, every day. In the garden and greenhouse he bred pigeons, grew orchids and fed insect-eating plants, and for eight years he studied little but barnacles. All of it was evidence.",
+        "es": "Emma era muy religiosa y temía que las ideas de él los separaran en la otra vida, pero lo cuidó durante cuarenta años. Tuvieron diez hijos; tres murieron pequeños, y la muerte de Annie, de diez años, en 1851, fue el gran dolor de su vida. Todos los días recorría su sendero para pensar, el Sandwalk. En el jardín y el invernadero crio palomas, cultivó orquídeas y alimentó plantas carnívoras, y durante ocho años casi no estudió más que percebes. Todo era evidencia."
+      }
+    },
+    {
+      "date": "1859-11-24",
+      "kind": "made",
+      "place": { "en": "Downe, near Orpington, England", "es": "Downe, cerca de Orpington, Inglaterra" },
+      "label": { "en": "Down House", "es": "Down House" },
+      "at": [0.0533, 51.3314],
+      "title": { "en": "On the Origin of Species", "es": "El origen de las especies" },
+      "text": {
+        "en": "A letter from Alfred Russel Wallace, who had hit on the same idea in the Malay islands, forced Darwin to publish. On the Origin of Species came out in London on 24 November 1859, and the whole printing was taken at once.",
+        "es": "Una carta de Alfred Russel Wallace, que había tenido la misma idea en las islas malayas, obligó a Darwin a publicar. El origen de las especies salió en Londres el 24 de noviembre de 1859, y la edición se agotó enseguida."
+      },
+      "details": {
+        "en": "Wallace's essay reached Down in June 1858, while Darwin's baby son lay dying of scarlet fever. Friends had papers by both men read together at the Linnean Society in London on 1 July; neither was there. Darwin then wrote his book in thirteen months. It said almost nothing about human beings. Churchmen and many scientists attacked it, his friend Thomas Huxley defended it in public, and within a decade most naturalists accepted that species evolve.",
+        "es": "El ensayo de Wallace llegó a Down en junio de 1858, mientras el hijo menor de Darwin, un bebé, moría de escarlatina. Unos amigos hicieron leer juntos trabajos de los dos en la Sociedad Linneana de Londres el 1 de julio; ninguno estuvo presente. Darwin escribió entonces su libro en trece meses. Casi no decía nada sobre los seres humanos. Clérigos y muchos científicos lo atacaron, su amigo Thomas Huxley lo defendió en público, y en una década la mayoría de los naturalistas aceptó que las especies evolucionan."
+      },
+      "places": [
+        {
+          "name": { "en": "Alfred Russel Wallace", "es": "Alfred Russel Wallace" },
+          "at": [-0.139, 51.509],
+          "cat": "person",
+          "type": "person",
+          "date": "1858-07-01",
+          "life": ["1823-01-08", "1913-11-07"],
+          "place": { "en": "Linnean Society, London", "es": "Sociedad Linneana, Londres" },
+          "text": {
+            "en": "A collector who earned his living sending specimens from the Malay Archipelago, he thought of natural selection during a fever in 1858. He never grudged Darwin the fame, and named the theory Darwinism.",
+            "es": "Un recolector que se ganaba la vida enviando ejemplares desde el archipiélago malayo; se le ocurrió la selección natural durante una fiebre, en 1858. Nunca le envidió la fama a Darwin, y llamó darwinismo a la teoría."
+          },
+          "wiki": { "en": "Alfred Russel Wallace", "es": "Alfred Russel Wallace" }
+        }
+      ]
+    },
+    {
+      "date": "1882-04-19",
+      "kind": "died",
+      "place": { "en": "Downe, near Orpington, England", "es": "Downe, cerca de Orpington, Inglaterra" },
+      "label": { "en": "Down House", "es": "Down House" },
+      "at": [0.0533, 51.3314],
+      "title": { "en": "He dies at Down House", "es": "Muere en Down House" },
+      "text": {
+        "en": "Darwin died at home at 73, with Emma beside him. His last book, a few months earlier, was about earthworms. In The Descent of Man he had argued that humans too descend from earlier animals, and are all one species.",
+        "es": "Darwin murió en casa a los 73 años, con Emma a su lado. Su último libro, meses antes, trataba de las lombrices. En El origen del hombre sostuvo que también los humanos descienden de otros animales y son una sola especie."
+      },
+      "details": {
+        "en": "The Descent of Man (1871) held that all peoples share a common origin, an answer to those who claimed that the races were separate creations. But it also ranked 'civilised' above 'savage' peoples in the manner of its time, and others soon bent the theory into excuses for empire and for eugenics, the breeding of 'better' humans, which his cousin Francis Galton proposed. Darwin himself hated cruelty to people and to animals all his life.",
+        "es": "El origen del hombre (1871) sostenía que todos los pueblos tienen un origen común, una respuesta a quienes decían que las razas eran creaciones separadas. Pero también puso a los pueblos «civilizados» por encima de los «salvajes», a la manera de su época, y otros pronto torcieron la teoría para justificar el imperio y la eugenesia, la cría de humanos «mejores», que propuso su primo Francis Galton. Darwin mismo odió toda su vida la crueldad con las personas y con los animales."
+      }
+    },
+    {
+      "date": "1882-04-26",
+      "kind": "honour",
+      "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+      "at": [-0.1274, 51.4994],
+      "title": { "en": "Buried near Newton", "es": "Enterrado cerca de Newton" },
+      "text": {
+        "en": "Darwin had expected a grave in the village churchyard. But scientists and members of Parliament asked for more, and a week after his death he was buried in Westminster Abbey, a few steps from Isaac Newton.",
+        "es": "Darwin esperaba una tumba en el cementerio del pueblo. Pero científicos y miembros del Parlamento pidieron algo más, y a la semana de su muerte fue enterrado en la abadía de Westminster, a pocos pasos de Isaac Newton."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Down House", "es": "Down House" },
+      "at": [0.0533, 51.3314],
+      "kind": "house",
+      "text": {
+        "en": "His home for forty years, kept by English Heritage: the study where he wrote, with his chair and microscope, the greenhouse, the garden experiments and the Sandwalk where he paced and thought.",
+        "es": "Su hogar durante cuarenta años, a cargo de English Heritage: el estudio donde escribió, con su sillón y su microscopio, el invernadero, los experimentos del jardín y el Sandwalk, el sendero donde caminaba y pensaba."
+      }
+    },
+    {
+      "name": { "en": "Westminster Abbey", "es": "Abadía de Westminster" },
+      "at": [-0.1274, 51.4994],
+      "kind": "grave",
+      "text": {
+        "en": "His grave is in the north aisle of the nave, close to Newton's monument. The ashes of Stephen Hawking were laid between the two in 2018.",
+        "es": "Su tumba está en la nave lateral norte, cerca del monumento a Newton. Las cenizas de Stephen Hawking se colocaron entre los dos en 2018."
+      },
+      "wiki": { "en": "Westminster Abbey", "es": "Abadía de Westminster" },
+      "whs": 426
+    },
+    {
+      "name": { "en": "Christ's College, Cambridge", "es": "Christ's College, Cambridge" },
+      "at": [0.1222, 52.2054],
+      "kind": "site",
+      "text": {
+        "en": "His student rooms have been restored as they were around 1830, and a bronze statue of the young Darwin sits in the college garden. Check when the rooms are open.",
+        "es": "Sus habitaciones de estudiante fueron restauradas como eran hacia 1830, y una estatua de bronce del joven Darwin está sentada en el jardín del college. Conviene averiguar cuándo abren las habitaciones."
+      }
+    },
+    {
+      "name": { "en": "Natural History Museum, London", "es": "Museo de Historia Natural, Londres" },
+      "at": [-0.176, 51.496],
+      "kind": "museum",
+      "text": {
+        "en": "A marble Darwin sits at the head of the great staircase of the main hall, and the museum keeps many of the animals and fossils he sent home from the Beagle.",
+        "es": "Un Darwin de mármol está sentado en lo alto de la gran escalera del salón principal, y el museo guarda muchos de los animales y fósiles que él envió desde el Beagle."
+      }
+    },
+    {
+      "name": { "en": "Charles Darwin Research Station", "es": "Estación Científica Charles Darwin" },
+      "at": [-90.3041, -0.7419],
+      "kind": "site",
+      "text": {
+        "en": "On Santa Cruz Island in the Galápagos, scientists breed giant tortoises from several islands and return them to the wild. Visitors walk among the young tortoises and see the shell shapes that set Darwin thinking.",
+        "es": "En la isla Santa Cruz de las Galápagos se crían tortugas gigantes de varias islas para devolverlas a la naturaleza. Se puede caminar entre las jóvenes y ver las formas de caparazón que intrigaron a Darwin."
+      },
+      "wiki": { "en": "Charles Darwin Research Station", "es": "Estación Científica Charles Darwin" }
+    }
+  ],
+  "legacy": {
+    "en": "Darwin showed that all living things are related, and that species change through natural selection: small inherited differences, tested over countless generations by the struggle to survive and to breed. The idea is the foundation of modern biology, from medicine to the study of DNA, which has confirmed his tree of life. It also changed for ever how human beings see their own place in nature.",
+    "es": "Darwin mostró que todos los seres vivos están emparentados, y que las especies cambian por selección natural: pequeñas diferencias heredadas, puestas a prueba durante incontables generaciones por la lucha por sobrevivir y reproducirse. La idea es la base de la biología moderna, desde la medicina hasta el estudio del ADN, que ha confirmado su árbol de la vida. También cambió para siempre la manera en que los seres humanos ven su propio lugar en la naturaleza."
+  },
+  "sources": [
+    { "title": "Wikipedia: Charles Darwin", "url": "https://en.wikipedia.org/wiki/Charles_Darwin" },
+    { "title": "Wikipedia (español): Charles Darwin", "url": "https://es.wikipedia.org/wiki/Charles_Darwin" },
+    { "title": "The Complete Work of Charles Darwin Online", "url": "https://darwin-online.org.uk/" },
+    { "title": "Darwin Correspondence Project (University of Cambridge)", "url": "https://www.darwinproject.ac.uk/" },
+    { "title": "English Heritage: Home of Charles Darwin, Down House", "url": "https://www.english-heritage.org.uk/visit/places/home-of-charles-darwin-down-house/" }
+  ]
+}

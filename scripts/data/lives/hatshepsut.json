@@ -10,8 +10,8 @@
   "died": "-1458",
   "diedAbout": true,
   "summary": {
-    "en": "A king's daughter and a king's widow, she took the throne of Egypt herself and ruled for some twenty years of peace, trade and building. After her death her name was cut out of her monuments.",
-    "es": "Hija de un rey y viuda de otro, tomó para sí el trono de Egipto y gobernó unos veinte años de paz, comercio y grandes obras. Después de su muerte, su nombre fue borrado de sus monumentos."
+    "en": "A king's daughter and a king's widow, she took the throne of Egypt herself and ruled for some twenty largely peaceful years of trade and building. After her death her name was cut out of her monuments.",
+    "es": "Hija de un rey y viuda de otro, tomó para sí el trono de Egipto y gobernó unos veinte años, en general pacíficos, de comercio y grandes obras. Después de su muerte, su nombre fue borrado de sus monumentos."
   },
   "unsure": {
     "en": "Hatshepsut left no account of her life: what we know comes from her monuments, made to praise her, and from the tombs of her officials, and the years are historians' estimates that can shift by a decade or more.",
@@ -20,6 +20,7 @@
   "steps": [
     {
       "date": "-1507",
+      "about": true,
       "kind": "born",
       "place": { "en": "Luxor (ancient Thebes), Egypt", "es": "Luxor (antigua Tebas), Egipto" },
       "label": { "en": "Thebes", "es": "Tebas" },
@@ -74,6 +75,7 @@
           "cat": "person",
           "type": "person",
           "date": "-1479",
+          "life": ["-1481", "-1425"],
           "text": {
             "en": "Her nephew and stepson, king in name from early childhood. After her death he ruled alone until about 1425 BC and led Egypt's armies to their widest conquests.",
             "es": "Su sobrino e hijastro, rey de nombre desde muy niño. Tras la muerte de ella gobernó solo hasta cerca de 1425 a. C. y llevó a los ejércitos de Egipto a sus mayores conquistas."
@@ -111,7 +113,7 @@
       "title": { "en": "A temple under the cliffs", "es": "Un templo bajo los acantilados" },
       "text": {
         "en": "On the west bank of the Nile, facing Karnak, she began her great monument: a temple of three terraces and long colonnades set against a wall of cliffs. She called it Djeser-djeseru, 'holy of holies'.",
-        "es": "En la orilla oeste del Nilo, frente a Karnak, empezó su gran monumento: un templo de tres terrazas y largas columnatas apoyado en una pared de acantilados. Lo llamó Dyeser-Dyeseru, «el sagrado entre los sagrados»."
+        "es": "En la orilla oeste del Nilo, frente a Karnak, empezó su gran monumento: un templo de tres terrazas y largas columnatas apoyado en una pared de acantilados. Lo llamó Dyeser-Dyeseru, «el más sagrado de los sagrados»."
       },
       "details": {
         "en": "The work took about fifteen years. It was overseen by Senenmut, a man of modest birth who became steward of her estates and tutor of her daughter. On its walls she told her own story: her birth as the child of Amun, her crowning, the moving of her obelisks and the voyage to Punt. Next to it stood a temple five centuries older, built by King Mentuhotep II, which gave her builders the idea of the terraces.",
@@ -192,14 +194,15 @@
     },
     {
       "date": "-1458",
+      "about": true,
       "kind": "died",
       "place": { "en": "Luxor (ancient Thebes), Egypt", "es": "Luxor (antigua Tebas), Egipto" },
       "label": { "en": "Thebes", "es": "Tebas" },
       "at": [32.6421, 25.6989],
       "title": { "en": "The end of her reign", "es": "El final de su reinado" },
       "text": {
-        "en": "Hatshepsut died in the twenty-second year of the shared reign, aged about 50. Thutmose III, by then a grown man and a general, ruled alone for another 33 years.",
-        "es": "Hatshepsut murió en el año veintidós del reinado compartido, con unos 50 años. Tutmosis III, ya un hombre adulto y un general, gobernó solo otros 33 años."
+        "en": "Hatshepsut died in the twenty-second year of the shared reign, aged about 50, and was buried as a king in the Valley of the Kings. Thutmose III, by then a grown man and a general, ruled alone for another 33 years.",
+        "es": "Hatshepsut murió en el año veintidós del reinado compartido, con unos 50 años, y fue enterrada como un rey en el Valle de los Reyes. Tutmosis III, ya un hombre adulto y un general, gobernó solo otros 33 años."
       },
       "details": {
         "en": "Nothing shows that he pushed her aside. Only some twenty years later, near the end of his own reign, did masons begin to chisel her name and image from temple walls and smash her statues at Deir el-Bahari. Historians once read it as a stepson's revenge. Most now think it was a matter of state: to leave a clean line of male kings from Thutmose I to Thutmose III's own son. The broken statues, dug up in the 1920s and pieced together, are now in Cairo and in the Metropolitan Museum of Art in New York.",
@@ -208,23 +211,22 @@
       "unsure": {
         "en": "Where and how she died is not recorded; the year comes from a stela at Armant that dates the start of Thutmose III's sole rule.",
         "es": "No hay registro de dónde ni cómo murió; el año sale de una estela de Armant que fecha el comienzo del reinado en solitario de Tutmosis III."
-      }
-    },
-    {
-      "date": "-1458",
-      "about": true,
-      "kind": "journey",
-      "place": { "en": "Valley of the Kings, Luxor, Egypt", "es": "Valle de los Reyes, Luxor, Egipto" },
-      "at": [32.6034, 25.7391],
-      "title": { "en": "A king's tomb", "es": "Una tumba de rey" },
-      "text": {
-        "en": "She was buried as a king in the Valley of the Kings, in tomb KV20: a tunnel more than 200 metres long that curves down into the rock behind her temple. She had arranged for her father to lie there beside her.",
-        "es": "Fue enterrada como un rey en el Valle de los Reyes, en la tumba KV20: un túnel de más de 200 metros que baja en curva por la roca, detrás de su templo. Había dispuesto que su padre descansara allí junto a ella."
       },
-      "unsure": {
-        "en": "When Howard Carter cleared the tomb in 1903 and 1904 he found two stone sarcophagi, hers and her father's, both empty: the bodies had been moved in ancient times, no one knows exactly when.",
-        "es": "Cuando Howard Carter despejó la tumba en 1903 y 1904 encontró dos sarcófagos de piedra, el de ella y el de su padre, los dos vacíos: los cuerpos habían sido trasladados en la Antigüedad, nadie sabe exactamente cuándo."
-      }
+      "places": [
+        {
+          "name": { "en": "Her tomb, KV20", "es": "Su tumba, la KV20" },
+          "at": [32.6034, 25.7391],
+          "cat": "place",
+          "type": "site",
+          "date": "-1458",
+          "text": {
+            "en": "A tunnel more than 200 metres long that curves down into the rock behind her temple, where she had arranged to lie beside her father. Howard Carter cleared it in 1903 and 1904: both stone sarcophagi were empty.",
+            "es": "Un túnel de más de 200 metros que baja en curva por la roca, detrás de su templo, donde había dispuesto descansar junto a su padre. Howard Carter lo despejó en 1903 y 1904: los dos sarcófagos de piedra estaban vacíos."
+          },
+          "wiki": { "en": "Valley of the Kings", "es": "Valle de los Reyes" },
+          "whs": 87
+        }
+      ]
     },
     {
       "date": "2007-06-27",
@@ -289,8 +291,8 @@
     }
   ],
   "legacy": {
-    "en": "Hatshepsut showed that a woman could hold the most male office of the ancient world, and hold it well: her two decades were years of peace, trade and some of Egypt's finest building. Her successors cut her from the lists of kings, and for three thousand years she was forgotten. In the 19th century scholars reading the damaged walls of Deir el-Bahari found her again.",
-    "es": "Hatshepsut mostró que una mujer podía ocupar el cargo más masculino del mundo antiguo, y ocuparlo bien: sus dos décadas fueron años de paz, comercio y algunas de las mejores construcciones de Egipto. Sus sucesores la quitaron de las listas de reyes, y durante tres mil años quedó olvidada. En el siglo XIX, los estudiosos que leían las paredes dañadas de Deir el-Bahari la encontraron de nuevo."
+    "en": "Hatshepsut showed that a woman could hold the most male office of the ancient world, and hold it well: her two decades were largely peaceful years of trade and of some of Egypt's finest building. Her successors cut her from the lists of kings, and for three thousand years she was forgotten. In the 19th century scholars reading the damaged walls of Deir el-Bahari found her again.",
+    "es": "Hatshepsut mostró que una mujer podía ocupar el cargo más masculino del mundo antiguo, y ocuparlo bien: sus dos décadas fueron años en general pacíficos, de comercio y de algunas de las mejores construcciones de Egipto. Sus sucesores la quitaron de las listas de reyes, y durante tres mil años quedó olvidada. En el siglo XIX, los estudiosos que leían las paredes dañadas de Deir el-Bahari la encontraron de nuevo."
   },
   "sources": [
     { "title": "Wikipedia: Hatshepsut", "url": "https://en.wikipedia.org/wiki/Hatshepsut" },
