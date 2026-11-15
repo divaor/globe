@@ -1026,3 +1026,20 @@ div.guide-item { cursor: default; }
 .art-dot { display: inline-block; width: 10px; height: 10px; border-radius: 5px; margin-right: 2px; }
 .art-credit { font-size: 11.5px; }
 .art-credit a { color: var(--muted); }
+
+/* Lives on the map (v0.28.0): the list of lives, the place and age of a step, what is not certain. */
+.lives-search-box { display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--chip); color: var(--muted); }
+.lives-search { flex: 1; min-width: 0; border: 0; background: none; color: var(--text); font: inherit; font-size: 15px; outline: none; }
+.lives-search-box:focus-within { border-color: var(--accent); }
+.lives-fields { flex-wrap: wrap; }
+.lives-pairs .sec-title { margin-top: 6px; }
+.lives-pair-row { flex-wrap: wrap; }
+.lives-cards { display: flex; flex-direction: column; gap: 8px; }
+.lives-beside { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 12px; border-radius: 12px; background: color-mix(in srgb, var(--accent) 16%, transparent); font-weight: 600; font-size: 13px; }
+.lives-beside[hidden], .lives-pairs[hidden] { display: none; }
+.lives-actions { flex-wrap: wrap; margin: 12px 0 4px; }
+.wb-place { font-weight: 600; }
+.wb-met { color: var(--accent); }
+.wb-unsure { border: 0; background: none; padding: 0; font: inherit; font-weight: 600; font-size: 12px; color: var(--muted); cursor: pointer; text-decoration: underline dotted; text-underline-offset: 3px; }
+.story-unsure { margin: 8px 0; padding: 8px 12px; border-radius: 10px; background: color-mix(in srgb, var(--muted) 14%, transparent); font-size: 13.5px; }
+.story-where { margin: 0 0 6px; }

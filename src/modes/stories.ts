@@ -32,14 +32,14 @@ type Range = number | [number, number];
 type Pt = [number, number];
 /** A camera; `pl`, the plate under the point it looks at, moves it with its continent on an old map. */
 interface Cam { lon: number; lat: number; zoom: number; pl?: string }
-interface Side { id: string; name: Text; color: string; members?: Text }
+export interface Side { id: string; name: Text; color: string; members?: Text }
 type Losses = { [side: string]: Range | Text | undefined; note?: Text };
 interface Battle { name: Text; at: Pt; date?: string; winner?: string; casualties?: Losses; result?: Text; details?: Text }
 /**
  * A route; on an old map each point moves with its plate (`pls`). Journeys: `by` how it went (a sea
  * route is dashed) and `icon`, the traveller, a ship or a caravan, drawn at its head as it goes.
  */
-interface Move { side: string; path: Pt[]; label?: Text; pls?: (string | null)[]; by?: 'sea' | 'land' | 'river' | 'ice' | 'air'; icon?: string }
+export interface Move { side: string; path: Pt[]; label?: Text; pls?: (string | null)[]; by?: 'sea' | 'land' | 'river' | 'ice' | 'air'; icon?: string }
 interface WarEvent { icon: string; text: Text; at?: Pt; date?: string; pl?: string }
 /** A marker of the stories other than wars: a person, work, site, dish, structure... */
 export interface Whs { ref: number; n: [string, string]; y: number; c: 'c' | 'n' | 'm'; d?: 1; x?: number; m?: number; into?: [string, string] }
@@ -135,7 +135,7 @@ export interface Team {
 }
 /** A Games or a World Cup: its name ("Berlin 1936"), the main stadium (or the final's), its teams. */
 export interface Games { id: string; kind: 'summer' | 'winter' | 'wc' | 'wwc'; name: Text; host: Pt; teams: Team[]; nations?: number }
-interface Step {
+export interface Step {
   date: string; t: number; title: Text; text: Text; details?: Text; control: Record<string, number | null>;
   moves?: Move[]; battles?: Battle[]; events?: WarEvent[]; deaths?: Range; camera?: Cam; aftermath?: boolean; show?: number[];
   /** Life through time: drawn on the continents of `ma` million years ago, or (`deep`, older than the plate model) on today's land greyed. */
@@ -144,17 +144,29 @@ interface Step {
   games?: Games;
   /** Space exploration: the world the step happens on (the Moon, Mars...); the Earth when left out. */
   world?: string;
+  /** Lives on the map: where the step happens and its short name, what the step is (born, study, journey...), their
+   * age then, an approximate date, and what is not certain about it. */
+  place?: Text; label?: Text; at?: Pt; lk?: string; age?: number; age0?: number; ageAbout?: boolean; about?: boolean; unsure?: Text;
+  /** Two lives side by side: whose step it is (a side's id), and that their paths cross here. */
+  who?: string; met?: boolean;
 }
-interface Conflict {
+/** Lives on the map: when and where the person was born, when they died, their field, Wikidata id and Wikipedia articles. */
+export interface Life { born: string; died: string; field: string; qid: string; place: Text; at: Pt; bornAbout?: boolean; diedAbout?: boolean; wiki?: Text; unsure?: Text;
+  /** Where each step happens (null: the places to visit today). */
+  path?: (Pt | null)[] }
+export interface Conflict {
   id: string; name: Text; icon: string; era: string; region: Text; summary: Text; start: string; end: string; t0: number; t1: number;
   camera: Cam; sides: Side[]; casualties?: Losses; casualtiesNote?: Text; outcome: Text; sources: { title: string; url: string }[]; steps: Step[];
   kind?: string; items?: Item[]; cats?: Cat[]; catalog?: 'all' | 'shown';
   /** The routes of earlier steps stay on the map, faded: the journey so far (Journeys: on unless false). */
   trail?: boolean;
+  /** Lives on the map: the person; and, for two lives side by side, both. */
+  life?: Life; lives?: [Life, Life];
 }
-interface Entry {
+export interface Entry {
   id: string; name: Text; icon: string; era: string; region: Text; summary: Text; start: string; end: string; t0: number; t1: number; steps: number;
   sides: { name: Text; color: string }[]; items?: number; cats?: string[];
+  life?: Life;
 }
 /** Where an item's marker is drawn this frame: (x, y), moved apart from crowded neighbours, and (ax, ay), its true place. */
 interface Spot { k: number; x: number; y: number; ax: number; ay: number; r: number; wt: number }
@@ -166,10 +178,10 @@ export interface CollectionItem extends Omit<Item, 'first'> {
 }
 
 /** The collections of stories. */
-export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing' | 'plagues' | 'disasters' | 'music' | 'books' | 'art' | 'inventions' | 'heritage' | 'space';
+export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing' | 'plagues' | 'disasters' | 'music' | 'books' | 'art' | 'inventions' | 'heritage' | 'space' | 'lives';
 /** A collection's icon and name (for lists outside Time travel, such as the travel guide's History here). */
 export const storyKind = (k: StoryKind) => ({ icon: KINDS[k].icon, name: KINDS[k].name });
-export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters', 'music', 'books', 'art', 'inventions', 'heritage', 'space'];
+export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters', 'music', 'books', 'art', 'inventions', 'heritage', 'space', 'lives'];
 /** `paleo`: its old steps are drawn on the continents of their age. `worlds`: its steps may happen on another world. */
 const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text; paleo?: boolean; worlds?: boolean }> = {
   wars: { dir: 'conflicts', hash: 'war', icon: '⚔️', name: { en: 'Wars and conquests', es: 'Guerras y conquistas' } },
@@ -190,7 +202,18 @@ const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: 
   inventions: { dir: 'inventions', hash: 'inventions', icon: '💡', name: { en: 'Inventions', es: 'Inventos' } },
   heritage: { dir: 'heritage', hash: 'heritage', icon: '🏛️', name: { en: 'World Heritage', es: 'Patrimonio de la Humanidad' } },
   space: { dir: 'space', hash: 'space', icon: '🚀', name: { en: 'Space exploration', es: 'Exploración espacial' }, worlds: true },
+  lives: { dir: 'lives', hash: 'lives', icon: '👤', name: { en: 'Lives on the map', es: 'Vidas en el mapa' } },
 };
+/**
+ * Lives on the map (set by lives/lives.ts): its own list of lives, two lives side by side ("a~b"), and what it adds
+ * to a step's details and to a marker's card.
+ */
+export const livesHook: {
+  pick?: () => Promise<void>;
+  openPair?: (id: string, at: number) => Promise<void>;
+  details?: (c: Conflict, st: Step) => HTMLElement[];
+  links?: (c: Conflict | null, it: Omit<Item, 'first'>) => { label: string; href?: string; onClick?: () => void }[];
+} = {};
 /** Set by space/space.ts: shows another world under a story's step (null: the Earth). */
 /** Where a work of art is now (set by the art guide, v0.27.0): its museum and city, and the city's art guide. */
 export const nowInHook: { get?: (itemId: string) => { name: string; open: (() => void) | null } | null } = {};
@@ -362,6 +385,9 @@ function routeTo(path: Pt[], q: number): Pt[] {
 
 export class StoryMode {
   private index: Entry[] = [];
+  /** Lives on the map: the fields its lives are listed by, and the pairs worth seeing side by side. */
+  private fields: { id: string; name: Text; icon: string; color: string }[] = [];
+  private pairs: { a: string; b: string }[] = [];
   private cats = new Map<string, Cat>();
   private all: CollectionItem[] | null = null;
   private c: Conflict | null = null;
@@ -423,8 +449,9 @@ export class StoryMode {
 
   private async ensureIndex() {
     if (!this.index.length) {
-      const idx = await loadJSON<{ conflicts?: Entry[]; stories?: Entry[]; categories?: Cat[] }>(`${this.dir}/index.json`);
+      const idx = await loadJSON<{ conflicts?: Entry[]; stories?: Entry[]; categories?: Cat[]; fields?: { id: string; name: Text; icon: string; color: string }[]; pairs?: { a: string; b: string }[] }>(`${this.dir}/index.json`);
       this.index = idx.conflicts ?? idx.stories ?? [];
+      this.fields = idx.fields ?? []; this.pairs = idx.pairs ?? [];
       this.cats = new Map((idx.categories ?? []).map((c) => [c.id, c]));
     }
     if (!this.snaps.length) {
@@ -439,6 +466,8 @@ export class StoryMode {
   /** The list of stories, by era (from the Time travel menu or the bar's list button). */
   async pick() {
     await this.ensureIndex();
+    // Lives on the map lists its lives by field, with a search box and two lives side by side.
+    if (this.kind === 'lives' && livesHook.pick) return livesHook.pick();
     const wrap = h('div', { class: 'war-list' }, h('p', { class: 'muted small' }, this.tr('Intro')));
     if (!this.wars) {
       const browse = h('button', { type: 'button', class: 'pill story-browse-all' }, icon(Search, 16), t('storyBrowseAll'));
@@ -471,10 +500,29 @@ export class StoryMode {
 
   /** Opens a story (at a step, from a shared link) and starts playing it; `focus` shows one item. */
   async open(id: string, at = 0, focus?: { name: string; at: Pt }, guided = false) {
+    // Lives on the map: "a~b" is two lives side by side.
+    if (this.kind === 'lives' && id.includes('~') && livesHook.openPair) return livesHook.openPair(id, at);
     this.shell.sheet.close();
     stopClip(300);
     await this.ensureIndex();
     const [c, topo] = await Promise.all([loadJSON<Conflict>(`${this.dir}/${id}.json`), loadJSON<Topology>(`${this.dir}/${id}-areas.json`)]);
+    await this.play(c, topo, at, focus, guided);
+  }
+
+  /** The collection's list of stories (and, for Lives on the map, its fields and the pairs worth comparing). */
+  async list(): Promise<{ stories: Entry[]; fields: { id: string; name: Text; icon: string; color: string }[]; pairs: { a: string; b: string }[] }> {
+    await this.ensureIndex();
+    return { stories: this.index, fields: this.fields, pairs: this.pairs };
+  }
+  /** The story on screen, if any. */
+  get story(): Conflict | null { return this.active ? this.c : null; }
+  get sheet() { return this.sheetId; }
+
+  /** Plays a story that is already loaded (two lives side by side are put together in the browser; `topo` null: no areas). */
+  async play(c: Conflict, topo: Topology | null, at = 0, focus?: { name: string; at: Pt }, guided = false) {
+    this.shell.sheet.close();
+    stopClip(300);
+    await this.ensureIndex();
     if (this.paleoKind && !this.paleo && c.steps.some((st) => st.ma != null)) {
       // The continents of the old steps (about 2 MB, once).
       this.shell.toast(t('dataLoading'), 1500);
@@ -486,7 +534,7 @@ export class StoryMode {
     // Markers may show a script's letter (𐤀, Ꭰ...): fetch its font, then draw again.
     const letters = (c.items ?? []).map((it) => it.icon).join('');
     if (/[^\u0000-\u052f\u2000-\u2bff\ufe0f\u{1f000}-\u{1faff}]/u.test(letters)) void loadGlyphs(letters).then((ok) => { if (ok && this.c === c) this.app.renderer.requestRender(); });
-    this.areas = new Map(shapesFrom(topo, 'areas').map((s) => [Number(s.id), { ...s, ...labelPoint(s.feature) }]));
+    this.areas = new Map(topo ? shapesFrom(topo, 'areas').map((s) => [Number(s.id), { ...s, ...labelPoint(s.feature) }]) : []);
     this.step = Math.max(0, Math.min(c.steps.length - 1, at)); this.prev = -1;
     this.textOpen = false;
     this.guided = guided;
@@ -1428,7 +1476,8 @@ export class StoryMode {
     const c = this.c;
     const cat = this.catOf(it.cat);
     const rows: { label: string; value: string; icon: string }[] = [];
-    rows.push({ label: it.life ? t('storyLived') : t('storyWhen'), value: itemWhen(it, c?.t0 ?? 1), icon: '📅' });
+    // (A place to visit today, in Lives on the map, has no date of its own.)
+    if (!(it.cat === 'visit' && (c?.life || c?.lives))) rows.push({ label: it.life ? t('storyLived') : t('storyWhen'), value: itemWhen(it, c?.t0 ?? 1), icon: '📅' });
     if (it.place) rows.push({ label: t('storyWhere'), value: tx(it.place), icon: '📍' });
     const then = this.latThen(it);
     if (then) rows.push({ label: t('lifeLatThen'), value: then, icon: '🧭' });
@@ -1449,6 +1498,8 @@ export class StoryMode {
       rows.push({ label: lang() === 'es' ? 'Hoy en' : 'Now in', value: now.name, icon: '🏛️' });
       if (now.open) links.push({ label: lang() === 'es' ? 'Guía de arte de la ciudad' : 'The city’s art guide', onClick: now.open });
     }
+    // A person with a life in Lives on the map: follow it. A place to visit: its city's guide.
+    links.push(...(livesHook.links?.(c, it) ?? []));
     const sub = [cat ? `${cat.icon} ${tx(cat.name)}` : '', c ? tx(c.name) : ''].filter(Boolean).join(' · ');
     // A Games' host city: its medal table (or a World Cup's last four) under the facts.
     const g = it.type === 'games' ? c?.steps.find((st) => st.games && `games-${st.games.id}` === it.id)?.games : undefined;
@@ -1694,9 +1745,11 @@ export class StoryMode {
     const c = this.c, ui = this.ui;
     if (!c || !ui) return;
     const d = c.steps[this.step].date;
-    ui.date.textContent = fmtWhen(d, c.t0);
+    // Lives on the map: an approximate date is "c. 470 BC" ("h. 470 a. C.").
+    const about = c.steps[this.step].about ? (lang() === 'es' ? 'h. ' : 'c. ') : '';
+    ui.date.textContent = about + fmtWhen(d, c.t0);
     fitLine(ui.date);
-    if (ui.date.scrollWidth > ui.date.clientWidth) { ui.date.textContent = fmtWhen(d, c.t0, true); fitLine(ui.date); }
+    if (ui.date.scrollWidth > ui.date.clientWidth) { ui.date.textContent = about + fmtWhen(d, c.t0, true); fitLine(ui.date); }
   }
 
   private renderBar() {
@@ -1708,7 +1761,7 @@ export class StoryMode {
     void document.fonts?.ready.then(() => { if (this.ui === ui) this.fitDate(); });
     ui.count.textContent = ` · ${t('warStepOf', { k: this.step + 1, n: c.steps.length })}`;
     clear(ui.title);
-    ui.title.append(...(st.aftermath ? [h('span', { class: 'wb-tag' }, t('warAftermath')), ' '] : []), stepTitle(st));
+    ui.title.append(...(st.aftermath ? [h('span', { class: 'wb-tag' }, t(c.life || c.lives ? 'livesToday' : 'warAftermath')), ' '] : []), stepTitle(st));
     this.fitText();
     clear(ui.play);
     ui.play.append(icon(this.playing ? Pause : Play, 22));
@@ -1727,8 +1780,18 @@ export class StoryMode {
     }
     const age = this.ageChip(st);
     if (age) ui.meta.append(age);
+    // Lives on the map: where the step happens and how old they were, that their paths cross (two lives), and a
+    // note when historians are not sure (a tap opens it).
+    if (st.place) ui.meta.append(h('span', { class: 'wb-side wb-place' }, `📍 ${tx(st.label ?? st.place)}${st.age ? ` · ${ageText(st)}` : ''}`));
+    if (st.met) ui.meta.append(h('span', { class: 'wb-side wb-met' }, `🤝 ${t('livesMet')}`));
+    if (st.unsure) {
+      const q = h('button', { type: 'button', class: 'wb-side wb-unsure', title: tx(st.unsure) }, `❔ ${t('livesUnsure')}`);
+      q.addEventListener('click', () => this.openDetails());
+      ui.meta.append(q);
+    }
     const teams = new Set(st.games?.teams.map((tm) => tm.s));
-    const shown = c.sides.filter((s) => st.control[s.id] != null || teams.has(s.id) || (st.moves ?? []).some((m) => m.side === s.id));
+    // One life needs no side (its name is the story's); of two lives, the step's own.
+    const shown = c.lives ? c.sides.filter((s) => s.id === st.who) : c.life ? [] : c.sides.filter((s) => st.control[s.id] != null || teams.has(s.id) || (st.moves ?? []).some((m) => m.side === s.id));
     for (const s of shown) ui.meta.append(h('span', { class: 'wb-side' }, h('i', { style: { background: seaSafe(s.color, this.app.renderer.theme.dark) } }), tx(s.name)));
     if (c.items && st.show?.length) {
       // The kinds of things this step shows (people, works, dishes...), most common first.
@@ -1824,9 +1887,12 @@ export class StoryMode {
     const st = c.steps[this.step];
     const body = h('div', { class: 'war-details' });
     if (this.step === 0) body.append(h('p', { class: 'war-summary' }, tx(c.summary)));
+    if (this.step === 0 && c.life?.unsure) body.append(h('p', { class: 'story-unsure' }, `❔ ${tx(c.life.unsure)}`));
+    if (st.place) body.append(h('p', { class: 'muted small story-where' }, `📍 ${tx(st.place)}${st.age ? ` · ${ageText(st)}` : ''}`));
     // The bar's text first (it may have been cut there), then the longer notes.
     if (st.details && tx(st.details) !== tx(st.text)) body.append(h('p', { class: 'war-lead' }, tx(st.text)));
     body.append(h('p', null, tx(st.details) || tx(st.text)));
+    if (st.unsure) body.append(h('p', { class: 'story-unsure' }, `❔ ${t('livesUnsure')}: ${tx(st.unsure)}`));
     if (st.battles?.length) {
       body.append(h('h3', { class: 'sec-title' }, `⚔️ ${t('warBattles')}`));
       for (const b of st.battles) {
@@ -1872,6 +1938,8 @@ export class StoryMode {
       all.addEventListener('click', () => this.browse());
       body.append(all);
     }
+    // Lives on the map: the person's Wikipedia article, where their works are now, another life beside this one.
+    if (c.life || c.lives) body.append(...(livesHook.details?.(c, st) ?? []));
     body.append(h('h3', { class: 'sec-title' }, `📚 ${t('warSources')}`),
       h('ul', { class: 'war-sources' }, c.sources.map((s) => h('li', null, h('a', { href: s.url, target: '_blank', rel: 'noopener' }, s.title)))));
     const title = `${fmtWhen(st.date, c.t0)} · ${stepTitle(st)}`;
@@ -1884,6 +1952,11 @@ export class StoryMode {
 }
 
 const yearOf = (d: string) => /^-?\d+/.exec(d)?.[0] ?? d;
+/** Lives on the map: "aged 22", "aged 42–43" (a step dated by its year only), "aged about 30" (a birth not sure). */
+function ageText(st: Step): string {
+  const n = st.age0 != null && st.age0 !== st.age ? `${st.age0}–${st.age}` : String(st.age);
+  return t(st.ageAbout ? 'livesAgedAbout' : 'livesAged', { n });
+}
 
 /** "1st", "2nd", "23rd" ("1.º" in Spanish). */
 function ordinal(n: number): string {

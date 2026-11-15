@@ -49,12 +49,13 @@ import { geoArea, geoCircle, geoDistance, geoGraticule10, geoInterpolate, geoOrt
 import { rewindTopology } from './winding.mjs';
 import { paleoMa, tooOld, plateFor, rotate, paleoLand, PALEO_YEARS } from './paleo-rot.mjs';
 import { attachGames, gamesIds, gamesSides } from './games/attach.mjs';
+import { expandLife, FIELDS as LIFE_FIELDS, PAIRS as LIFE_PAIRS } from './lives/expand.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DATA = path.join(ROOT, 'public/data');
 
 /** The collections: where their sources and outputs live. */
-export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art', inventions: 'inventions', heritage: 'heritage', space: 'space' };
+export const KINDS = { wars: 'conflicts', eras: 'eras', food: 'food', structures: 'structures', people: 'people', life: 'life', games: 'games', journeys: 'journeys', beliefs: 'beliefs', writing: 'writing', plagues: 'plagues', disasters: 'disasters', music: 'music', books: 'books', art: 'art', inventions: 'inventions', heritage: 'heritage', space: 'space', lives: 'lives' };
 /** The collections whose deep-time steps are drawn on the continents of their age (the plate model). */
 const PALEO_KINDS = new Set(['life']);
 const srcDir = (kind) => path.join(ROOT, 'scripts/data', KINDS[kind]);
@@ -718,8 +719,9 @@ function keepNumbers(v, es = false) {
 // Build one conflict.
 
 async function build(file, opts) {
-  const c = readJSON(file);
   const kind = opts.kind ?? 'wars', coll = opts.coll ?? null, wars = kind === 'wars';
+  // Lives on the map: a life is written in a short format of its own (scripts/data/lives/README.md) and made a story here.
+  const c = kind === 'lives' ? expandLife(readJSON(file), file, { parseDate, lint: opts.lint }) : readJSON(file);
   // Space exploration: a rover's or moonwalkers' drive by the landing's id ("route": "curiosity") takes its route
   // from scripts/data/space/_landings.json.
   for (const [i, st] of (c.steps ?? []).entries()) for (const [j, mv] of (st.moves ?? []).entries()) {
@@ -944,7 +946,9 @@ function seaRoutes(c, steps, warn) {
     }
     let along = 0, run = 0, from = null;
     const total = pts.reduce((sum, p, k) => sum + (k ? geoDistance(pts[k - 1], p) * KM : 0), 0);
-    const report = () => { if (run > 40) warn(`steps[${i}].moves[${j}] goes by sea but crosses ~${Math.round(run)} km of land from [${from.map((v) => v.toFixed(2)).join(', ')}]; add points around the coast`); run = 0; from = null; };
+    // A life's voyage is drawn from town to town: an inland start or end (Paris, Mexico City) is not a mistake.
+    const most = c.life ? 400 : 40;
+    const report = () => { if (run > most) warn(`steps[${i}].moves[${j}] goes by sea but crosses ~${Math.round(run)} km of land from [${from.map((v) => v.toFixed(2)).join(', ')}]; add points around the coast`); run = 0; from = null; };
     pts.forEach((p, k) => {
       const step = k ? geoDistance(pts[k - 1], p) * KM : 0;
       along += step;
@@ -1138,6 +1142,8 @@ function storyEntry(m) {
     id: m.id, name: m.name, icon: m.icon, era: m.era, region: m.region, summary: m.summary, start: m.start, end: m.end,
     t0: m.t0, t1: m.t1, steps: m.steps.length, items: m.items.length, sides: sides.map((s) => ({ name: s.name, color: s.color })),
     cats: [...count].sort((a, b) => b[1] - a[1]).slice(0, 6).map(([id]) => id),
+    // Lives on the map: when and where they were born, when they died, their field and Wikidata id.
+    ...(m.life ? { life: m.life } : {}),
   };
 }
 
@@ -1211,6 +1217,11 @@ function find(q) {
 function indexOf(kind, coll, metas) {
   metas = [...metas].sort((a, b) => a.t0 - b.t0);
   if (kind === 'wars') return { conflicts: metas.map(indexEntry) };
+  if (kind === 'lives') {
+    // Lives: listed by field, with the pairs worth seeing side by side (when both lives are written).
+    const have = new Set(metas.map((m) => m.id));
+    return { name: coll.name, categories: [...coll.cats.values()], fields: [...LIFE_FIELDS.values()], pairs: LIFE_PAIRS.filter((x) => have.has(x.a) && have.has(x.b)), stories: metas.map(storyEntry) };
+  }
   return { name: coll.name, categories: [...coll.cats.values()], stories: metas.map(storyEntry) };
 }
 

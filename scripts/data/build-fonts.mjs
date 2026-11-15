@@ -108,8 +108,9 @@ function collect() {
     const d = path.join(ROOT, 'scripts/data', dir);
     // The travel guide's and the art guide's Wikidata answers (names in every script) are shown in their panels, in
     // the device's own fonts, not in a script font.
-    if (!fs.statSync(d).isDirectory() || dir === 'guide' || dir === 'artguide') continue;
-    for (const f of fs.readdirSync(d).filter((x) => x.endsWith('.json')).sort()) {
+    // (So are the people of Who was born here?, and the facts the lives are checked against.)
+    if (!fs.statSync(d).isDirectory() || dir === 'guide' || dir === 'artguide' || dir === 'born') continue;
+    for (const f of fs.readdirSync(d).filter((x) => x.endsWith('.json') && !(dir === 'lives' && (x === '_facts.json' || x === '_people.json'))).sort()) {
       try { walk(JSON.parse(fs.readFileSync(path.join(d, f), 'utf8')), `${dir}/${f}`); } catch { /* not a story */ }
     }
   }

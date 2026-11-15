@@ -39,10 +39,10 @@ type Ref = [StoryKind, string, number, string, string, string, number, number, s
 type Museum = [string, string, string, string, number, number, [number, number] | null, string | null];
 export interface CityGuide { id: string; eat: Dish[]; grown: Dish[]; whs: Site[]; trips: Site[]; sights: Ref[]; history: Ref[]; museums: Museum[] }
 
-export type Tab = 'eat' | 'see' | 'museums' | 'art' | 'buildings' | 'facts' | 'history' | 'more';
+export type Tab = 'eat' | 'see' | 'museums' | 'art' | 'buildings' | 'people' | 'facts' | 'history' | 'more';
 const TABS: [Tab, string, { en: string; es: string }][] = [
   ['eat', '🍽️', { en: 'Eat', es: 'Comer' }], ['see', '🏛️', { en: 'See', es: 'Ver' }], ['museums', '🖼️', { en: 'Museums', es: 'Museos' }],
-  ['art', '🎨', { en: 'Art', es: 'Arte' }], ['buildings', '📐', { en: 'Buildings', es: 'Edificios' }],
+  ['art', '🎨', { en: 'Art', es: 'Arte' }], ['buildings', '📐', { en: 'Buildings', es: 'Edificios' }], ['people', '👤', { en: 'People', es: 'Personas' }],
   ['facts', 'ℹ️', { en: 'Facts', es: 'Datos' }], ['history', '📜', { en: 'History here', es: 'Historia aquí' }], ['more', '📖', { en: 'Read more', es: 'Más' }],
 ];
 const MONTHS = { en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], es: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'] };
@@ -73,6 +73,8 @@ export class TravelGuide {
   private wv = new Map<string, Promise<{ paras: string[]; url: string; lang: string } | null>>();
   /** The art and architecture guide (v0.27.0): the Art and Buildings tabs. */
   art: ArtGuide | null = null;
+  /** Lives on the map (v0.28.0): the People tab (who was born here, the lives that pass through). */
+  lives: { peopleTab(el: HTMLElement, c: GuideCity, name: string): Promise<void> } | null = null;
   /** For the smoke test: what the guide shows. */
   get info() { return { trip: [...this.trip], city: this.city, tab: this.tab, picking: this.picking, onMap: this.onMap, pin: this.pin }; }
 
@@ -372,6 +374,7 @@ export class TravelGuide {
     else if (tab === 'museums') this.museumsTab(content, c, g);
     else if (tab === 'art') await this.art?.artTab(content, c.id, this.cityName(c));
     else if (tab === 'buildings') await this.art?.buildingsTab(content, c.id, this.cityName(c));
+    else if (tab === 'people') await this.lives?.peopleTab(content, c, this.cityName(c));
     else if (tab === 'facts') await this.factsTab(content, c);
     else if (tab === 'history') this.historyTab(content, g);
     else this.moreTab(content, c);

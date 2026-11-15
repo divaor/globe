@@ -1,0 +1,347 @@
+{
+  "id": "frida-kahlo",
+  "qid": "Q5588",
+  "name": { "en": "Frida Kahlo", "es": "Frida Kahlo" },
+  "icon": "🎨",
+  "field": "arts",
+  "known": { "en": "Mexican painter", "es": "Pintora mexicana" },
+  "born": "1907-07-06",
+  "died": "1954-07-13",
+  "summary": {
+    "en": "A bus crash at 18 left her in pain for life. From her bed in Coyoacán she painted herself, her body and Mexico, and became one of the best-known artists of the 20th century.",
+    "es": "Un choque de autobús a los 18 años la dejó con dolor de por vida. Desde su cama en Coyoacán se pintó a sí misma, a su cuerpo y a México, y llegó a ser una de las artistas más conocidas del siglo XX."
+  },
+  "steps": [
+    {
+      "date": "1907-07-06",
+      "kind": "born",
+      "place": { "en": "Coyoacán, Mexico", "es": "Coyoacán, México" },
+      "at": [-99.1625, 19.355],
+      "title": { "en": "Born in the Blue House", "es": "Nace en la Casa Azul" },
+      "text": {
+        "en": "Frida was born in the house her father had built in Coyoacán, then a village outside Mexico City. She lived most of her life in it, and died in it.",
+        "es": "Frida nació en la casa que su padre había construido en Coyoacán, entonces un pueblo en las afueras de la Ciudad de México. Allí vivió casi toda su vida, y allí murió."
+      },
+      "details": {
+        "en": "Her father, Guillermo Kahlo, was a German photographer; her mother, Matilde Calderón, came from Oaxaca. At six Frida caught polio, which left her right leg thin and short. Later she liked to say she was born in 1910, the year the Mexican Revolution began.",
+        "es": "Su padre, Guillermo Kahlo, era un fotógrafo alemán; su madre, Matilde Calderón, venía de Oaxaca. A los seis años Frida tuvo polio, que le dejó la pierna derecha delgada y corta. Más tarde le gustaba decir que había nacido en 1910, el año en que empezó la Revolución mexicana."
+      }
+    },
+    {
+      "date": "1922",
+      "kind": "study",
+      "place": { "en": "Mexico City, Mexico", "es": "Ciudad de México, México" },
+      "at": [-99.1306, 19.4359],
+      "title": { "en": "A girl at the Preparatoria", "es": "Una chica en la Preparatoria" },
+      "text": {
+        "en": "At 15 she entered the National Preparatory School, one of about 35 girls among 2,000 students. She meant to become a doctor.",
+        "es": "A los 15 años entró a la Escuela Nacional Preparatoria: era una de unas 35 chicas entre 2000 estudiantes. Quería ser médica."
+      },
+      "details": {
+        "en": "The school was in the old college of San Ildefonso, in the centre of the city. That year the painter Diego Rivera was at work there on his first mural, The Creation. Frida watched him paint, and played tricks on him.",
+        "es": "La escuela estaba en el antiguo colegio de San Ildefonso, en el centro de la ciudad. Ese año el pintor Diego Rivera hacía allí su primer mural, La creación. Frida lo miraba pintar, y le hacía bromas."
+      },
+      "places": [
+        {
+          "id": "the-creation-rivera",
+          "name": { "en": "The Creation", "es": "La creación" },
+          "at": [-99.1303, 19.4363],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🖌️",
+          "date": "1922",
+          "by": { "en": "Diego Rivera", "es": "Diego Rivera" },
+          "text": {
+            "en": "Diego Rivera's first mural, painted in 1922 and 1923 in the school's amphitheatre. It is still there.",
+            "es": "El primer mural de Diego Rivera, pintado en 1922 y 1923 en el anfiteatro de la escuela. Sigue allí."
+          },
+          "wiki": { "en": "Colegio de San Ildefonso", "es": "Antiguo Colegio de San Ildefonso" }
+        }
+      ]
+    },
+    {
+      "date": "1925-09-17",
+      "kind": "struggle",
+      "place": { "en": "Mexico City, Mexico", "es": "Ciudad de México, México" },
+      "at": [-99.1347, 19.4232],
+      "title": { "en": "The bus crash", "es": "El choque del autobús" },
+      "text": {
+        "en": "A tram hit the bus that was taking her home from school. A handrail went through her body, and her spine, pelvis and right leg were broken.",
+        "es": "Un tranvía chocó con el autobús que la llevaba de la escuela a su casa. Un pasamanos le atravesó el cuerpo, y se le rompieron la columna, la pelvis y la pierna derecha."
+      },
+      "details": {
+        "en": "She was 18. She spent months in bed in a plaster corset and gave up the idea of medicine. Her mother had an easel made that she could use lying down, and hung a mirror over the bed. Frida began to paint, and her first subject was herself. She had more than thirty operations in her life.",
+        "es": "Tenía 18 años. Pasó meses en cama con un corsé de yeso y dejó la idea de estudiar medicina. Su madre mandó hacer un caballete que pudiera usar acostada, y colgó un espejo sobre la cama. Frida empezó a pintar, y su primer tema fue ella misma. Tuvo más de treinta operaciones en su vida."
+      }
+    },
+    {
+      "date": "1929-08-21",
+      "kind": "love",
+      "place": { "en": "Coyoacán, Mexico", "es": "Coyoacán, México" },
+      "at": [-99.1622, 19.35],
+      "title": { "en": "She marries Diego Rivera", "es": "Se casa con Diego Rivera" },
+      "text": {
+        "en": "Frida, 22, married Diego Rivera, 42 and already Mexico's most famous painter, in Coyoacán's town hall. Her mother called it the marriage of an elephant and a dove.",
+        "es": "Frida, de 22 años, se casó con Diego Rivera, de 42 y ya el pintor más famoso de México, en el ayuntamiento de Coyoacán. Su madre lo llamó la boda de un elefante y una paloma."
+      },
+      "details": {
+        "en": "She had shown him her paintings the year before, and he told her to go on. After the wedding she began to wear the long skirts and embroidered blouses of the women of Tehuantepec, which became part of her art.",
+        "es": "Ella le había mostrado sus cuadros el año anterior, y él le dijo que siguiera. Después de la boda empezó a vestir las faldas largas y las blusas bordadas de las mujeres de Tehuantepec, que pasaron a ser parte de su arte."
+      },
+      "places": [
+        {
+          "id": "diego-rivera",
+          "name": { "en": "Diego Rivera", "es": "Diego Rivera" },
+          "at": [-99.1616, 19.3495],
+          "cat": "person",
+          "type": "person",
+          "date": "1929-08-21",
+          "life": ["1886-12-08", "1957-11-24"],
+          "text": {
+            "en": "The great muralist of Mexico. He and Frida married in 1929, divorced in 1939 and married again in 1940.",
+            "es": "El gran muralista de México. Él y Frida se casaron en 1929, se divorciaron en 1939 y se volvieron a casar en 1940."
+          },
+          "wiki": { "en": "Diego Rivera", "es": "Diego Rivera" }
+        }
+      ]
+    },
+    {
+      "date": "1930-11",
+      "kind": "journey",
+      "place": { "en": "San Francisco, United States", "es": "San Francisco, Estados Unidos" },
+      "at": [-122.4194, 37.7749],
+      "title": { "en": "San Francisco", "es": "San Francisco" },
+      "text": {
+        "en": "Rivera had murals to paint in San Francisco, and Frida went with him. There she painted the two of them as a wedding portrait, the first work she showed in public.",
+        "es": "Rivera tenía murales que pintar en San Francisco, y Frida fue con él. Allí los pintó a los dos en un retrato de bodas, la primera obra que mostró en público."
+      },
+      "places": [
+        {
+          "name": { "en": "Frieda and Diego Rivera", "es": "Frieda y Diego Rivera" },
+          "at": [-122.401, 37.7857],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🖼️",
+          "date": "1931",
+          "by": { "en": "Frida Kahlo", "es": "Frida Kahlo" },
+          "text": {
+            "en": "Her wedding portrait, painted in San Francisco in 1931: small Frida beside huge Diego, who holds the brushes. It is in the San Francisco Museum of Modern Art.",
+            "es": "Su retrato de bodas, pintado en San Francisco en 1931: una Frida pequeña junto a un Diego enorme, que sostiene los pinceles. Está en el Museo de Arte Moderno de San Francisco."
+          },
+          "wiki": { "en": "Frieda and Diego Rivera", "es": "Frieda y Diego Rivera" }
+        }
+      ]
+    },
+    {
+      "date": "1932-07-04",
+      "kind": "struggle",
+      "place": { "en": "Detroit, United States", "es": "Detroit, Estados Unidos" },
+      "at": [-83.0846, 42.3674],
+      "title": { "en": "Henry Ford Hospital", "es": "Hospital Henry Ford" },
+      "text": {
+        "en": "While Rivera painted the car factories of Detroit, Frida lost a pregnancy and nearly died. She painted it: herself on a hospital bed, alone under the city's chimneys.",
+        "es": "Mientras Rivera pintaba las fábricas de autos de Detroit, Frida perdió un embarazo y estuvo a punto de morir. Lo pintó: ella sola en una cama de hospital, bajo las chimeneas de la ciudad."
+      },
+      "details": {
+        "en": "She painted Henry Ford Hospital on a small sheet of metal, like the ex-votos that Mexicans hang in churches to give thanks for a rescue. From then on she painted what had happened to her, without softening it. Her mother died in Mexico that September.",
+        "es": "Pintó Hospital Henry Ford sobre una pequeña lámina de metal, como los exvotos que los mexicanos cuelgan en las iglesias para agradecer un milagro. Desde entonces pintó lo que le había pasado, sin suavizarlo. Su madre murió en México ese septiembre."
+      },
+      "places": [
+        {
+          "id": "detroit-industry-murals",
+          "name": { "en": "Detroit Industry Murals", "es": "Murales de la industria de Detroit" },
+          "at": [-83.0645, 42.3594],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🖌️",
+          "date": "1932",
+          "end": "1933",
+          "by": { "en": "Diego Rivera", "es": "Diego Rivera" },
+          "text": {
+            "en": "Rivera's 27 frescoes of workers and machines at the Detroit Institute of Arts, painted while Frida was in the city.",
+            "es": "Los 27 frescos de obreros y máquinas que Rivera pintó en el Instituto de Artes de Detroit mientras Frida estaba en la ciudad."
+          },
+          "wiki": { "en": "Detroit Industry Murals", "es": "Detroit Industry Murals" }
+        }
+      ]
+    },
+    {
+      "date": "1937-01-11",
+      "kind": "home",
+      "place": { "en": "Coyoacán, Mexico", "es": "Coyoacán, México" },
+      "at": [-99.1625, 19.355],
+      "title": { "en": "Trotsky at the Blue House", "es": "Trotski en la Casa Azul" },
+      "text": {
+        "en": "Leon Trotsky, driven out of the Soviet Union by Stalin, was given refuge in Mexico. Frida met his ship at Tampico, and he and his wife lived in the Blue House for two years.",
+        "es": "León Trotski, expulsado de la Unión Soviética por Stalin, recibió asilo en México. Frida fue a recibir su barco a Tampico, y él y su esposa vivieron dos años en la Casa Azul."
+      },
+      "places": [
+        {
+          "name": { "en": "Leon Trotsky", "es": "León Trotski" },
+          "at": [-99.1589, 19.3583],
+          "cat": "person",
+          "type": "person",
+          "date": "1937-01-11",
+          "life": ["1879-11-07", "1940-08-21"],
+          "text": {
+            "en": "A leader of the Russian Revolution, in exile. In 1939 he moved to a house a few streets away, where one of Stalin's agents killed him in 1940. That house is a museum too.",
+            "es": "Uno de los líderes de la Revolución rusa, en el exilio. En 1939 se mudó a una casa a pocas calles, donde un agente de Stalin lo mató en 1940. Esa casa también es un museo."
+          },
+          "wiki": { "en": "Leon Trotsky", "es": "León Trotski" }
+        }
+      ]
+    },
+    {
+      "date": "1938-11-01",
+      "kind": "moment",
+      "place": { "en": "New York, United States", "es": "Nueva York, Estados Unidos" },
+      "at": [-73.9727, 40.7625],
+      "title": { "en": "Her first exhibition", "es": "Su primera exposición" },
+      "text": {
+        "en": "The Julien Levy Gallery in New York showed 25 of her paintings, her first exhibition of her own. About half of them sold.",
+        "es": "La galería Julien Levy de Nueva York mostró 25 de sus cuadros, su primera exposición individual. Se vendió cerca de la mitad."
+      },
+      "details": {
+        "en": "The poet André Breton, the leader of the Surrealists, wrote that her art was a ribbon around a bomb. Frida did not think of herself as a Surrealist: she said she never painted dreams, only her own reality.",
+        "es": "El poeta André Breton, líder de los surrealistas, escribió que su arte era una cinta alrededor de una bomba. Frida no se consideraba surrealista: decía que nunca pintó sueños, solo su propia realidad."
+      }
+    },
+    {
+      "date": "1939-03-10",
+      "kind": "moment",
+      "by": "sea",
+      "place": { "en": "Paris, France", "es": "París, Francia" },
+      "at": [2.3089, 48.8744],
+      "title": { "en": "Paris, and the Louvre", "es": "París, y el Louvre" },
+      "text": {
+        "en": "Her paintings were shown in Paris in an exhibition called Mexique. The French state bought one, The Frame: the first painting by a Mexican artist of her century to enter the Louvre's collections.",
+        "es": "Sus cuadros se mostraron en París en una exposición llamada Mexique. El Estado francés compró uno, El marco: la primera pintura de un artista mexicano de su siglo que entró a las colecciones del Louvre."
+      },
+      "places": [
+        {
+          "name": { "en": "The Frame", "es": "El marco" },
+          "at": [2.3522, 48.8606],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🖼️",
+          "date": "1938",
+          "by": { "en": "Frida Kahlo", "es": "Frida Kahlo" },
+          "text": {
+            "en": "A small self-portrait framed by painted glass with birds and flowers. Bought in Paris in 1939, it is now in the Centre Pompidou.",
+            "es": "Un pequeño autorretrato enmarcado en vidrio pintado con pájaros y flores. Comprado en París en 1939, hoy está en el Centro Pompidou."
+          },
+          "wiki": { "en": "The Frame (painting)", "es": "El marco" }
+        }
+      ]
+    },
+    {
+      "date": "1939-11-06",
+      "kind": "made",
+      "place": { "en": "Coyoacán, Mexico", "es": "Coyoacán, México" },
+      "at": [-99.1625, 19.355],
+      "title": { "en": "The Two Fridas", "es": "Las dos Fridas" },
+      "text": {
+        "en": "Back home, she and Rivera divorced. In those months she painted her largest work, The Two Fridas: two of her, hand in hand, with their hearts joined by one vein.",
+        "es": "De vuelta en casa, ella y Rivera se divorciaron. En esos meses pintó su obra más grande, Las dos Fridas: dos de ella, tomadas de la mano, con los corazones unidos por una vena."
+      },
+      "places": [
+        {
+          "name": { "en": "The Two Fridas", "es": "Las dos Fridas" },
+          "at": [-99.179, 19.4247],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🖼️",
+          "date": "1939",
+          "by": { "en": "Frida Kahlo", "es": "Frida Kahlo" },
+          "text": {
+            "en": "Painted in Coyoacán in 1939, the year of her divorce. Mexico's fine arts institute bought it in 1947, and it hangs in the Museum of Modern Art in Mexico City.",
+            "es": "Pintada en Coyoacán en 1939, el año de su divorcio. El Instituto Nacional de Bellas Artes la compró en 1947, y está en el Museo de Arte Moderno de la Ciudad de México."
+          },
+          "wiki": { "en": "The Two Fridas", "es": "Las dos Fridas" }
+        }
+      ]
+    },
+    {
+      "date": "1940-12-08",
+      "kind": "love",
+      "place": { "en": "San Francisco, United States", "es": "San Francisco, Estados Unidos" },
+      "at": [-122.4193, 37.7793],
+      "title": { "en": "Married again", "es": "Casados otra vez" },
+      "text": {
+        "en": "Frida had gone to San Francisco to be treated by her friend Dr Leo Eloesser. There, a year after the divorce, she and Rivera married for the second time, on his 54th birthday.",
+        "es": "Frida había ido a San Francisco para que la tratara su amigo, el doctor Leo Eloesser. Allí, un año después del divorcio, ella y Rivera se casaron por segunda vez, el día en que él cumplía 54 años."
+      }
+    },
+    {
+      "date": "1953-04-13",
+      "kind": "moment",
+      "place": { "en": "Mexico City, Mexico", "es": "Ciudad de México, México" },
+      "at": [-99.1655, 19.4257],
+      "title": { "en": "To her exhibition, in her bed", "es": "A su exposición, en su cama" },
+      "text": {
+        "en": "Her only exhibition of her own in Mexico opened when her doctors had ordered her to stay in bed. So her four-poster bed was set up in the gallery, and she arrived by ambulance.",
+        "es": "Su única exposición individual en México se inauguró cuando los médicos le habían ordenado no levantarse. Así que armaron su cama con dosel en la galería, y ella llegó en ambulancia."
+      },
+      "details": {
+        "en": "The photographer Lola Álvarez Bravo organized it, sure that Frida had little time left. That August her right leg was cut off below the knee. In her diary she wrote: feet, what do I want them for, if I have wings to fly?",
+        "es": "La organizó la fotógrafa Lola Álvarez Bravo, segura de que a Frida le quedaba poco tiempo. Ese agosto le amputaron la pierna derecha por debajo de la rodilla. En su diario escribió: pies, para qué los quiero, si tengo alas para volar."
+      }
+    },
+    {
+      "date": "1954-07-13",
+      "kind": "died",
+      "place": { "en": "Coyoacán, Mexico", "es": "Coyoacán, México" },
+      "at": [-99.1625, 19.355],
+      "title": { "en": "She dies in the Blue House", "es": "Muere en la Casa Azul" },
+      "text": {
+        "en": "Frida died at 47 in the house where she was born. Eleven days before, in a wheelchair, she had joined a march against the overthrow of Guatemala's elected president.",
+        "es": "Frida murió a los 47 años en la casa donde nació. Once días antes, en silla de ruedas, había ido a una marcha contra el derrocamiento del presidente electo de Guatemala."
+      },
+      "details": {
+        "en": "Her body lay in state in the Palace of Fine Arts. Her ashes are kept at the Blue House in a pre-Columbian urn. Rivera gave the house to the Mexican people, and it opened as a museum in 1958, a year after his own death.",
+        "es": "Su cuerpo fue velado en el Palacio de Bellas Artes. Sus cenizas se guardan en la Casa Azul, en una urna prehispánica. Rivera donó la casa al pueblo de México, y abrió como museo en 1958, un año después de la muerte de él."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Frida Kahlo Museum (the Blue House)", "es": "Museo Frida Kahlo (la Casa Azul)" },
+      "at": [-99.1625, 19.355],
+      "kind": "house",
+      "text": {
+        "en": "The house where she was born, lived and died, with her studio, her bed with its mirror, her dresses and her ashes. Book ahead: it is one of the most visited museums in Mexico City.",
+        "es": "La casa donde nació, vivió y murió, con su estudio, su cama con espejo, sus vestidos y sus cenizas. Conviene reservar: es uno de los museos más visitados de la Ciudad de México."
+      },
+      "wiki": { "en": "Frida Kahlo Museum", "es": "Museo Frida Kahlo" }
+    },
+    {
+      "name": { "en": "Diego Rivera and Frida Kahlo House-Studio Museum", "es": "Museo Casa Estudio Diego Rivera y Frida Kahlo" },
+      "at": [-99.2014, 19.3497],
+      "kind": "house",
+      "text": {
+        "en": "Two modern houses joined by a bridge, his red and white and hers blue, built for them by Juan O'Gorman in San Ángel. They lived here from 1934.",
+        "es": "Dos casas modernas unidas por un puente, la de él roja y blanca y la de ella azul, que Juan O'Gorman construyó para ellos en San Ángel. Vivieron aquí desde 1934."
+      },
+      "wiki": { "en": "Museo Casa Estudio Diego Rivera y Frida Kahlo", "es": "Museo Casa Estudio Diego Rivera y Frida Kahlo" }
+    },
+    {
+      "name": { "en": "Museum of Modern Art, Mexico City", "es": "Museo de Arte Moderno, Ciudad de México" },
+      "at": [-99.179, 19.4247],
+      "kind": "museum",
+      "text": {
+        "en": "Home of The Two Fridas, in Chapultepec Park.",
+        "es": "Aquí está Las dos Fridas, en el Bosque de Chapultepec."
+      },
+      "wiki": { "en": "Museo de Arte Moderno", "es": "Museo de Arte Moderno (México)" }
+    }
+  ],
+  "legacy": {
+    "en": "In her lifetime Frida Kahlo was known above all as Diego Rivera's wife. Since the 1970s her 55 self-portraits, about a third of everything she painted, have made her one of the most recognized artists in the world, and a symbol for women, for people who live with pain and for Mexico itself.",
+    "es": "En vida, a Frida Kahlo se la conocía sobre todo como la esposa de Diego Rivera. Desde los años setenta sus 55 autorretratos, cerca de un tercio de todo lo que pintó, la han convertido en una de las artistas más reconocidas del mundo, y en un símbolo para las mujeres, para quienes viven con dolor y para México."
+  },
+  "sources": [
+    { "title": "Wikipedia: Frida Kahlo", "url": "https://en.wikipedia.org/wiki/Frida_Kahlo" },
+    { "title": "Museo Frida Kahlo: biography", "url": "https://www.museofridakahlo.org.mx/" },
+    { "title": "Hayden Herrera, Frida: A Biography of Frida Kahlo (1983)", "url": "https://en.wikipedia.org/wiki/Frida:_A_Biography_of_Frida_Kahlo" }
+  ]
+}
