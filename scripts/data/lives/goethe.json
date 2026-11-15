@@ -1,0 +1,582 @@
+{
+  "id": "goethe",
+  "qid": "Q5879",
+  "name": { "en": "Johann Wolfgang von Goethe", "es": "Johann Wolfgang von Goethe" },
+  "icon": "✍️",
+  "field": "letters",
+  "known": { "en": "German poet, novelist and playwright", "es": "Poeta, novelista y dramaturgo alemán" },
+  "born": "1749-08-28",
+  "died": "1832-03-22",
+  "summary": {
+    "en": "Poet, novelist, scientist and minister of a small German duchy. At 25 a short novel, Werther, made him famous across Europe; he spent sixty years on Faust, and turned Weimar into the capital of German letters.",
+    "es": "Poeta, novelista, científico y ministro de un pequeño ducado alemán. A los 25 años una novela breve, Werther, lo hizo famoso en toda Europa; trabajó sesenta años en el Fausto, y convirtió a Weimar en la capital de las letras alemanas."
+  },
+  "steps": [
+    {
+      "date": "1749-08-28",
+      "kind": "born",
+      "place": { "en": "Frankfurt am Main, Germany", "es": "Fráncfort del Meno, Alemania" },
+      "at": [8.6776, 50.1112],
+      "title": { "en": "Born in Frankfurt", "es": "Nace en Fráncfort" },
+      "text": {
+        "en": "Goethe was born at midday, as the clock struck twelve by his own account, in a large house in Frankfurt. His father, a lawyer of private means, had him taught at home: Latin, Greek, French, English, drawing and music.",
+        "es": "Goethe nació al mediodía, cuando el reloj daba las doce según él mismo, en una casa patricia de Fráncfort. Su padre, un jurista que vivía de sus rentas, lo hizo educar en casa: latín, griego, francés, inglés, dibujo y música."
+      },
+      "details": {
+        "en": "His mother, Catharina Elisabeth Textor, the daughter of the city's chief magistrate, was 18 and told the stories; his father kept the lesson plan. A puppet theatre that his grandmother gave the children at Christmas 1753 started him inventing plays. When French troops occupied Frankfurt during the Seven Years' War an officer was lodged in the house, and the boy went often to the French theatre. In 1764 he watched an emperor crowned in the city. The house was destroyed by bombs in 1944 and rebuilt as it was, with the furniture, which had been moved to safety.",
+        "es": "Su madre, Catharina Elisabeth Textor, hija del principal magistrado de la ciudad, tenía 18 años y era la que contaba los cuentos; su padre llevaba el plan de estudios. Un teatro de títeres que la abuela les regaló a los niños en la Navidad de 1753 lo hizo empezar a inventar obras. Cuando las tropas francesas ocuparon Fráncfort durante la guerra de los Siete Años, alojaron a un oficial en la casa, y el chico fue muchas veces al teatro francés. En 1764 vio coronar a un emperador en la ciudad. La casa fue destruida por las bombas en 1944 y reconstruida tal como era, con los muebles, que habían sido puestos a salvo."
+      }
+    },
+    {
+      "date": "1765-10-19",
+      "kind": "study",
+      "place": { "en": "Leipzig, Germany", "es": "Leipzig, Alemania" },
+      "at": [12.3807, 51.3388],
+      "title": { "en": "A law student in Leipzig", "es": "Estudiante de derecho en Leipzig" },
+      "text": {
+        "en": "At 16 he was sent to study law in Leipzig, the elegant city he later called \"a little Paris\". He preferred drawing lessons, the theatre and poetry. In 1768 a haemorrhage nearly killed him, and he went home an invalid.",
+        "es": "A los 16 años lo mandaron a estudiar derecho a Leipzig, la ciudad elegante que después llamó «un pequeño París». Prefería las clases de dibujo, el teatro y la poesía. En 1768 una hemorragia casi lo mata, y volvió a su casa enfermo."
+      },
+      "places": [
+        {
+          "name": { "en": "Auerbachs Keller", "es": "Auerbachs Keller" },
+          "at": [12.3755, 51.3396],
+          "cat": "place",
+          "type": "site",
+          "date": "1765",
+          "text": {
+            "en": "A wine cellar where he drank as a student, among old paintings of Doctor Faust riding out on a barrel. He set a scene of Faust in it, and it still serves wine today.",
+            "es": "Una taberna donde bebía de estudiante, entre viejas pinturas del doctor Fausto saliendo montado en un barril. Allí ambientó una escena del Fausto, y todavía hoy se sirve vino."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1770-04",
+      "kind": "study",
+      "via": [[8.6776, 50.1112]],
+      "place": { "en": "Strasbourg, France", "es": "Estrasburgo, Francia" },
+      "at": [7.7496, 48.5807],
+      "title": { "en": "Strasbourg: Herder and Friederike", "es": "Estrasburgo: Herder y Friederike" },
+      "text": {
+        "en": "He finished his law studies in Strasbourg in 1771. There the critic Herder opened his eyes to Shakespeare, folk song and Gothic art, and for Friederike Brion, a pastor's daughter, he wrote his first great love poems.",
+        "es": "Terminó sus estudios de derecho en Estrasburgo en 1771. Allí el crítico Herder le descubrió a Shakespeare, la canción popular y el arte gótico, y para Friederike Brion, hija de un pastor, escribió sus primeros grandes poemas de amor."
+      },
+      "places": [
+        {
+          "name": { "en": "Johann Gottfried Herder", "es": "Johann Gottfried Herder" },
+          "at": [7.7489, 48.5813],
+          "cat": "person",
+          "type": "person",
+          "date": "1770-09",
+          "life": ["1744-08-25", "1803-12-18"],
+          "text": {
+            "en": "Five years older and already a known critic, he was in Strasbourg for an eye operation. For months Goethe visited him daily. In 1776 Goethe had him called to Weimar as head of the church.",
+            "es": "Cinco años mayor y ya un crítico conocido, estaba en Estrasburgo para operarse de un ojo. Durante meses Goethe lo visitó a diario. En 1776 Goethe lo hizo llamar a Weimar como jefe de la iglesia."
+          }
+        },
+        {
+          "name": { "en": "Strasbourg Cathedral", "es": "Catedral de Estrasburgo" },
+          "at": [7.7511, 48.5819],
+          "cat": "place",
+          "type": "structure",
+          "date": "1770",
+          "text": {
+            "en": "He climbed its tower again and again, to cure his fear of heights, and wrote an essay in praise of its builder: Gothic art, then despised, was the work of genius.",
+            "es": "Subió a su torre una y otra vez, para curarse del vértigo, y escribió un ensayo en elogio de su constructor: el arte gótico, entonces despreciado, era obra de un genio."
+          },
+          "wiki": { "en": "Strasbourg Cathedral", "es": "Catedral de Estrasburgo" }
+        },
+        {
+          "name": { "en": "Friederike Brion", "es": "Friederike Brion" },
+          "at": [7.9854, 48.8002],
+          "cat": "person",
+          "type": "person",
+          "date": "1770-10",
+          "life": ["1752", "1813"],
+          "text": {
+            "en": "The pastor's daughter of Sessenheim, a few hours' ride from the city. He loved her, wrote her songs that Germans still know by heart, and left; his farewell came in a letter from Frankfurt. She never married.",
+            "es": "La hija del pastor de Sessenheim, a pocas horas a caballo de la ciudad. Él la quiso, le escribió canciones que los alemanes todavía saben de memoria, y se fue; su adiós llegó en una carta desde Fráncfort. Ella nunca se casó."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1772-05",
+      "kind": "love",
+      "place": { "en": "Wetzlar, Germany", "es": "Wetzlar, Alemania" },
+      "at": [8.5041, 50.5553],
+      "title": { "en": "Lotte in Wetzlar", "es": "Lotte en Wetzlar" },
+      "text": {
+        "en": "As a law trainee in Wetzlar he fell in love with Charlotte Buff, 19, who was engaged to his friend Kestner. After four months he left without a goodbye. Weeks later a young man he knew there shot himself for love.",
+        "es": "Como practicante de derecho en Wetzlar se enamoró de Charlotte Buff, de 19 años, comprometida con su amigo Kestner. A los cuatro meses se fue sin despedirse. Semanas después, un joven que conoció allí se pegó un tiro por amor."
+      },
+      "places": [
+        {
+          "name": { "en": "Charlotte Buff", "es": "Charlotte Buff" },
+          "at": [8.5047, 50.5556],
+          "cat": "person",
+          "type": "person",
+          "date": "1772-06",
+          "life": ["1753-01-11", "1828-01-16"],
+          "text": {
+            "en": "She kept house for her widowed father and her many brothers and sisters, married Kestner in 1773 and lived to see herself famous as the Lotte of Werther. Her family home is a museum.",
+            "es": "Llevaba la casa de su padre viudo y de sus muchos hermanos, se casó con Kestner en 1773 y llegó a verse famosa como la Lotte del Werther. La casa de su familia es un museo."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1774",
+      "kind": "made",
+      "place": { "en": "Frankfurt am Main, Germany", "es": "Fráncfort del Meno, Alemania" },
+      "at": [8.6776, 50.1112],
+      "title": { "en": "Werther makes him famous", "es": "Werther lo hace famoso" },
+      "text": {
+        "en": "Back home he practised a little law and wrote a great deal. Early in 1774, in a few weeks, he turned Wetzlar into a novel in letters, The Sorrows of Young Werther. At 25 he was the most famous writer in Europe.",
+        "es": "De vuelta en casa ejerció un poco de abogado y escribió muchísimo. A comienzos de 1774, en pocas semanas, convirtió Wetzlar en una novela en cartas, Las penas del joven Werther. A los 25 años era el escritor más famoso de Europa."
+      },
+      "details": {
+        "en": "Young men dressed like Werther, in a blue coat and a yellow waistcoat; moralists blamed the book for suicides, and some cities banned it. Goethe had already stirred Germany with Götz von Berlichingen, a play about a rebel knight written in Shakespeare's free manner, and he had begun a play about Doctor Faust. Visitors crowded the house. In 1775 he became engaged to Lili Schönemann, a banker's daughter, and broke it off that autumn, when a young duke invited him to Weimar.",
+        "es": "Los jóvenes se vestían como Werther, con frac azul y chaleco amarillo; los moralistas culparon al libro de varios suicidios, y algunas ciudades lo prohibieron. Goethe ya había sacudido a Alemania con Götz von Berlichingen, un drama sobre un caballero rebelde escrito con la libertad de Shakespeare, y había empezado una obra sobre el doctor Fausto. La casa se llenó de visitantes. En 1775 se comprometió con Lili Schönemann, hija de un banquero, y rompió el compromiso ese otoño, cuando un joven duque lo invitó a Weimar."
+      },
+      "places": [
+        {
+          "name": { "en": "The Sorrows of Young Werther", "es": "Las penas del joven Werther" },
+          "at": [8.6781, 50.1115],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1774",
+          "by": { "en": "Goethe", "es": "Goethe" },
+          "text": {
+            "en": "A young man's letters about a hopeless love, ending in his suicide. Written in his parents' house from February 1774 and published that autumn, it was the first German book read all over Europe.",
+            "es": "Las cartas de un joven sobre un amor imposible, que terminan con su suicidio. Escrita en la casa de sus padres desde febrero de 1774 y publicada ese otoño, fue el primer libro alemán leído en toda Europa."
+          },
+          "wiki": { "en": "The Sorrows of Young Werther", "es": "Las penas del joven Werther" }
+        },
+        {
+          "name": { "en": "Götz von Berlichingen", "es": "Götz von Berlichingen" },
+          "at": [8.6771, 50.1109],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1773",
+          "by": { "en": "Goethe", "es": "Goethe" },
+          "text": {
+            "en": "His first success: a drama about a 16th-century knight with an iron hand, drafted in six weeks in 1771 and published in 1773. It broke every rule of the French stage.",
+            "es": "Su primer éxito: un drama sobre un caballero del siglo XVI con una mano de hierro, esbozado en seis semanas en 1771 y publicado en 1773. Rompía todas las reglas del teatro francés."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1775-11-07",
+      "kind": "career",
+      "place": { "en": "Weimar, Germany", "es": "Weimar, Alemania" },
+      "at": [11.329, 50.9803],
+      "title": { "en": "To Weimar, for good", "es": "A Weimar, para siempre" },
+      "text": {
+        "en": "He came for a visit, invited by Carl August, the 18-year-old duke of a small state, and stayed 56 years. Within months he sat on the duke's privy council, in charge of roads, mines and, later, the treasury.",
+        "es": "Llegó de visita, invitado por Carlos Augusto, el duque de 18 años de un pequeño Estado, y se quedó 56 años. A los pocos meses ya era miembro del consejo privado del duque, a cargo de los caminos, las minas y, más tarde, el tesoro."
+      },
+      "details": {
+        "en": "Weimar had about 6,000 inhabitants and a palace that had just burned down. The duke gave him a cottage in the meadows by the river Ilm, where he wrote the Erlking and lived until 1782, when he rented the house on the Frauenplan. That year the emperor made him a nobleman: von Goethe. His work on the mines of Ilmenau turned him towards geology, botany and anatomy. And for ten years he wrote almost daily to Charlotte von Stein, a married lady of the court, seven years older, who taught the stormy young poet restraint.",
+        "es": "Weimar tenía unos 6000 habitantes y un palacio que acababa de quemarse. El duque le regaló una casita en los prados junto al río Ilm, donde escribió El rey de los elfos y vivió hasta 1782, cuando alquiló la casa del Frauenplan. Ese año el emperador lo hizo noble: von Goethe. Su trabajo en las minas de Ilmenau lo llevó hacia la geología, la botánica y la anatomía. Y durante diez años le escribió casi a diario a Charlotte von Stein, una dama casada de la corte, siete años mayor, que le enseñó mesura al joven poeta tempestuoso."
+      },
+      "places": [
+        {
+          "name": { "en": "Duke Carl August", "es": "El duque Carlos Augusto" },
+          "at": [11.3323, 50.9805],
+          "cat": "person",
+          "type": "person",
+          "date": "1775-11-07",
+          "life": ["1757-09-03", "1828-06-14"],
+          "text": {
+            "en": "Ruler of Saxe-Weimar-Eisenach from 1775. He made Goethe his minister and his friend for more than fifty years, and gave him a garden house, a town house and the freedom to write.",
+            "es": "Soberano de Sajonia-Weimar-Eisenach desde 1775. Hizo de Goethe su ministro y su amigo durante más de cincuenta años, y le dio una casa con jardín, una casa en la ciudad y libertad para escribir."
+          }
+        },
+        {
+          "name": { "en": "Charlotte von Stein", "es": "Charlotte von Stein" },
+          "at": [11.3312, 50.9786],
+          "cat": "person",
+          "type": "person",
+          "date": "1776-01",
+          "life": ["1742-12-25", "1827-01-06"],
+          "text": {
+            "en": "Lady-in-waiting, wife of the duke's master of the horse, and Goethe's closest confidante for ten years. His secret flight to Italy in 1786 broke the bond.",
+            "es": "Dama de la corte, esposa del caballerizo mayor del duque, y la confidente más cercana de Goethe durante diez años. Su fuga secreta a Italia en 1786 rompió el vínculo."
+          }
+        },
+        {
+          "name": { "en": "Goethe's Garden House", "es": "Casa del jardín de Goethe" },
+          "at": [11.3369, 50.9761],
+          "cat": "place",
+          "type": "structure",
+          "date": "1776",
+          "text": {
+            "en": "An old vineyard cottage in the park on the Ilm, a present from the duke and his first home of his own in Weimar. He lived in it until 1782 and kept it as a retreat all his life.",
+            "es": "Una vieja casita de viñedo en el parque del Ilm, regalo del duque y su primera casa propia en Weimar. Vivió en ella hasta 1782 y la conservó como refugio toda la vida."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1786-10-29",
+      "kind": "journey",
+      "via": [[12.8712, 50.2327], [12.1016, 49.0151], [11.5755, 48.1374], [11.5063, 47.0057], [10.9938, 45.4385], [12.3326, 45.4371], [11.3387, 44.4938]],
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4771, 41.909],
+      "title": { "en": "The escape to Italy", "es": "La fuga a Italia" },
+      "text": {
+        "en": "Worn out by ten years of office work, he slipped away from the spa of Karlsbad before dawn, under a false name, and reached Rome eight weeks later. He stayed in Italy almost two years, drawing and finishing his plays.",
+        "es": "Agotado tras diez años de oficina, se escabulló del balneario de Karlsbad antes del amanecer, con nombre falso, y llegó a Roma ocho semanas después. Se quedó en Italia casi dos años, dibujando y terminando sus dramas."
+      },
+      "details": {
+        "en": "In Rome he lodged on the Corso with the painter Tischbein, and passed for a painter himself. In 1787 he went on to Naples, climbed Vesuvius and sailed to Sicily; in a garden in Palermo he looked for the first plant, from which all the others might derive. He recast his play Iphigenia in verse and finished Egmont. \"I too in Arcadia\" is the motto he later set over the book of the journey. He came home to Weimar in June 1788 a changed man, and many friends there found him cold.",
+        "es": "En Roma se alojó en el Corso con el pintor Tischbein, y él mismo pasaba por pintor. En 1787 siguió hasta Nápoles, subió al Vesubio y navegó a Sicilia; en un jardín de Palermo buscó la planta original, de la que podrían derivar todas las demás. Reescribió en verso su drama Ifigenia y terminó Egmont. «Yo también en Arcadia» es el lema que más tarde puso al frente del libro del viaje. Volvió a Weimar en junio de 1788 convertido en otro hombre, y muchos amigos lo encontraron frío."
+      },
+      "places": [
+        {
+          "name": { "en": "Iphigenia in Tauris", "es": "Ifigenia en Táuride" },
+          "at": [12.4764, 41.9084],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1787",
+          "by": { "en": "Goethe", "es": "Goethe" },
+          "text": {
+            "en": "A drama on a Greek myth, written in prose in Weimar in 1779 and given its final form in verse in Rome. Its heroine ends a chain of murders by telling the truth.",
+            "es": "Un drama sobre un mito griego, escrito en prosa en Weimar en 1779 y llevado a su forma definitiva, en verso, en Roma. Su heroína corta una cadena de crímenes diciendo la verdad."
+          }
+        },
+        {
+          "name": { "en": "Palermo", "es": "Palermo" },
+          "at": [13.3636, 38.1166],
+          "cat": "place",
+          "type": "site",
+          "date": "1787-04",
+          "text": {
+            "en": "He sailed from Naples to Sicily at the end of March 1787 and crossed the island from Palermo to Messina. Without Sicily, he wrote, Italy leaves no picture in the soul.",
+            "es": "Navegó de Nápoles a Sicilia a fines de marzo de 1787 y cruzó la isla de Palermo a Mesina. Sin Sicilia, escribió, Italia no deja ninguna imagen en el alma."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1788-07",
+      "kind": "love",
+      "place": { "en": "Weimar, Germany", "es": "Weimar, Alemania" },
+      "at": [11.3286, 50.9775],
+      "title": { "en": "Christiane Vulpius", "es": "Christiane Vulpius" },
+      "text": {
+        "en": "Weeks after his return a young woman who made artificial flowers brought him a petition for her brother. Christiane Vulpius, 23, became his companion and the mother of his son. Weimar society shunned her for 18 years.",
+        "es": "Semanas después de su regreso, una joven que hacía flores artificiales le llevó una petición para su hermano. Christiane Vulpius, de 23 años, fue su compañera y la madre de su hijo. La sociedad de Weimar la rechazó durante 18 años."
+      },
+      "details": {
+        "en": "Their son August was born at Christmas 1789; four other children died as infants. Goethe gave up most of his offices but kept the ones he liked: from 1791 he directed the court theatre, and he looked after the university and the libraries. In 1792 he rode with the duke's regiment into revolutionary France and watched the cannonade of Valmy. From that year the house on the Frauenplan, a gift of the duke, was his home, and he filled it with casts, minerals, drawings and books.",
+        "es": "Su hijo August nació en la Navidad de 1789; otros cuatro hijos murieron de bebés. Goethe dejó casi todos sus cargos, pero conservó los que le gustaban: desde 1791 dirigió el teatro de la corte, y se ocupó de la universidad y de las bibliotecas. En 1792 entró con el regimiento del duque en la Francia revolucionaria y presenció el cañoneo de Valmy. Desde ese año la casa del Frauenplan, regalo del duque, fue su hogar, y la llenó de yesos, minerales, dibujos y libros."
+      },
+      "places": [
+        {
+          "name": { "en": "Christiane Vulpius", "es": "Christiane Vulpius" },
+          "at": [11.3292, 50.9778],
+          "cat": "person",
+          "type": "person",
+          "date": "1788-07",
+          "life": ["1765-06-01", "1816-06-06"],
+          "text": {
+            "en": "The daughter of a poor Weimar clerk. She ran Goethe's household for 28 years, and he married her in 1806. His mother welcomed her at once; the ladies of the court never did.",
+            "es": "Hija de un empleado pobre de Weimar. Llevó la casa de Goethe durante 28 años, y él se casó con ella en 1806. La madre de Goethe la aceptó enseguida; las damas de la corte, nunca."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1794-07",
+      "kind": "love",
+      "place": { "en": "Jena, Germany", "es": "Jena, Alemania" },
+      "at": [11.5899, 50.9288],
+      "title": { "en": "The friendship with Schiller", "es": "La amistad con Schiller" },
+      "text": {
+        "en": "After a meeting of a science society in Jena, Goethe and the poet Friedrich Schiller began talking about plants, and went on for ten years. Their letters and shared projects became the heart of German classicism.",
+        "es": "Al salir de una reunión científica en Jena, Goethe y el poeta Friedrich Schiller se pusieron a hablar de plantas, y siguieron hablando diez años. Sus cartas y sus proyectos compartidos fueron el corazón del clasicismo alemán."
+      },
+      "details": {
+        "en": "They had kept apart for six years. Now Schiller, ten years younger and already ill, pushed Goethe back to his desk. The novel Wilhelm Meister's Apprenticeship was finished; ballads such as The Sorcerer's Apprentice were written in a friendly contest in 1797; the fragment of Faust was taken up again. Jena, with its university, was Goethe's second home. Schiller moved to Weimar in 1799 and died there in 1805. Goethe wrote that he had lost half of his own existence.",
+        "es": "Se habían evitado durante seis años. Ahora Schiller, diez años menor y ya enfermo, empujó a Goethe de vuelta a su escritorio. Terminó la novela Los años de aprendizaje de Wilhelm Meister; baladas como El aprendiz de brujo nacieron de una competencia amistosa en 1797; retomó el fragmento del Fausto. Jena, con su universidad, era el segundo hogar de Goethe. Schiller se mudó a Weimar en 1799 y murió allí en 1805. Goethe escribió que había perdido la mitad de su propia existencia."
+      },
+      "places": [
+        {
+          "name": { "en": "Friedrich Schiller", "es": "Friedrich Schiller" },
+          "at": [11.5832, 50.9255],
+          "cat": "person",
+          "type": "person",
+          "date": "1794-07",
+          "life": ["1759-11-10", "1805-05-09"],
+          "text": {
+            "en": "Playwright, poet and professor of history at Jena. His garden house there, where Goethe often visited him, is a museum. The two stand side by side in bronze before the theatre of Weimar.",
+            "es": "Dramaturgo, poeta y profesor de historia en Jena. Su casa con jardín, donde Goethe lo visitaba a menudo, es hoy un museo. Los dos están juntos, en bronce, frente al teatro de Weimar."
+          }
+        },
+        {
+          "id": "humboldt",
+          "name": { "en": "Alexander von Humboldt", "es": "Alexander von Humboldt" },
+          "at": [11.5875, 50.9287],
+          "cat": "person",
+          "type": "person",
+          "date": "1794-12",
+          "life": ["1769-09-14", "1859-05-06"],
+          "text": {
+            "en": "The young naturalist came to Jena in the 1790s, before his voyage to the Americas, and dissected and experimented with Goethe. Later he dedicated his book on the geography of plants to him.",
+            "es": "El joven naturalista fue a Jena en la década de 1790, antes de su viaje a América, e hizo disecciones y experimentos con Goethe. Más tarde le dedicó su libro sobre la geografía de las plantas."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1806-10-19",
+      "kind": "love",
+      "place": { "en": "Weimar, Germany", "es": "Weimar, Alemania" },
+      "at": [11.3274, 50.9834],
+      "title": { "en": "War, and a wedding", "es": "La guerra, y una boda" },
+      "text": {
+        "en": "On 14 October 1806 Napoleon crushed the Prussians at Jena, and French soldiers looted Weimar. Some broke into Goethe's house, and Christiane faced them down. Five days later he married her, after 18 years together.",
+        "es": "El 14 de octubre de 1806 Napoleón aplastó a los prusianos en Jena, y los soldados franceses saquearon Weimar. Algunos irrumpieron en casa de Goethe, y Christiane les hizo frente. Cinco días después él se casó con ella, tras 18 años juntos."
+      },
+      "details": {
+        "en": "The wedding was held quietly in the sacristy of the court church. The Germany of his youth was gone: the old empire had been dissolved that summer. Goethe answered with work. Faust, Part One came out in 1808 and the novel Elective Affinities in 1809. The Theory of Colours, which he valued above all his poetry, followed in 1810, and then his autobiography, Poetry and Truth. Christiane died in 1816.",
+        "es": "La boda se celebró sin ruido en la sacristía de la iglesia de la corte. La Alemania de su juventud ya no existía: el viejo imperio había sido disuelto ese verano. Goethe respondió trabajando. La primera parte del Fausto salió en 1808 y la novela Las afinidades electivas en 1809. La Teoría de los colores, que él valoraba más que toda su poesía, llegó en 1810, y después su autobiografía, Poesía y verdad. Christiane murió en 1816."
+      },
+      "places": [
+        {
+          "name": { "en": "Faust, Part One", "es": "Fausto, primera parte" },
+          "at": [11.3286, 50.9775],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1808",
+          "by": { "en": "Goethe", "es": "Goethe" },
+          "text": {
+            "en": "The scholar Faust, tired of books, makes a pact with the devil Mephistopheles and ruins the girl Gretchen. Begun in Frankfurt in the 1770s, finished at the house on the Frauenplan and published in 1808.",
+            "es": "El sabio Fausto, harto de los libros, hace un pacto con el diablo Mefistófeles y arruina a la joven Margarita. Empezada en Fráncfort en la década de 1770, terminada en la casa del Frauenplan y publicada en 1808."
+          }
+        },
+        {
+          "name": { "en": "Theory of Colours", "es": "Teoría de los colores" },
+          "at": [11.3281, 50.9772],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🌈",
+          "date": "1810",
+          "by": { "en": "Goethe", "es": "Goethe" },
+          "text": {
+            "en": "Twenty years of experiments on how the eye sees colour, written against Newton's optics. Physicists rejected it; painters and psychologists have read it ever since.",
+            "es": "Veinte años de experimentos sobre cómo el ojo ve el color, escritos contra la óptica de Newton. Los físicos la rechazaron; los pintores y los psicólogos la leen desde entonces."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1808-10-02",
+      "kind": "moment",
+      "place": { "en": "Erfurt, Germany", "es": "Erfurt, Alemania" },
+      "at": [11.0293, 50.9746],
+      "title": { "en": "Napoleon receives him", "es": "Napoleón lo recibe" },
+      "text": {
+        "en": "During the congress of Erfurt the emperor received him over breakfast. \"Vous êtes un homme!\", Napoleon is said to have exclaimed. They talked about Werther, which Napoleon said he had read seven times, and about tragedy.",
+        "es": "Durante el congreso de Erfurt el emperador lo recibió mientras desayunaba. «Vous êtes un homme!» («¡Usted es un hombre!»), dicen que exclamó. Hablaron del Werther, que Napoleón decía haber leído siete veces, y de la tragedia."
+      },
+      "unsure": {
+        "en": "Goethe wrote down the conversation only years later, and the witnesses differ on the emperor's exact words.",
+        "es": "Goethe puso por escrito la conversación recién años más tarde, y los testigos no coinciden en las palabras exactas del emperador."
+      },
+      "places": [
+        {
+          "id": "napoleon",
+          "name": { "en": "Napoleon", "es": "Napoleón" },
+          "at": [11.0299, 50.9749],
+          "cat": "person",
+          "type": "person",
+          "date": "1808-10-02",
+          "life": ["1769-08-15", "1821-05-05"],
+          "text": {
+            "en": "Master of Europe in 1808, he met the Tsar and the German princes at Erfurt. He saw Goethe twice, invited him to Paris and gave him the cross of the Legion of Honour, which Goethe wore proudly.",
+            "es": "Dueño de Europa en 1808, se reunió en Erfurt con el zar y los príncipes alemanes. Vio a Goethe dos veces, lo invitó a París y le dio la cruz de la Legión de Honor, que Goethe llevó con orgullo."
+          },
+          "wiki": { "en": "Napoleon", "es": "Napoleón Bonaparte" }
+        }
+      ]
+    },
+    {
+      "date": "1823",
+      "kind": "love",
+      "place": { "en": "Mariánské Lázně (then Marienbad), Czechia", "es": "Mariánské Lázně (entonces Marienbad), Chequia" },
+      "label": { "en": "Marienbad", "es": "Marienbad" },
+      "at": [12.7085, 49.977],
+      "title": { "en": "The Marienbad Elegy", "es": "La Elegía de Marienbad" },
+      "text": {
+        "en": "He spent many summers at Bohemia's spas. At Marienbad, past seventy, he fell in love with Ulrike von Levetzow, 19, and had the grand duke ask for her hand. She did not accept. On the way home he wrote his great elegy.",
+        "es": "Pasó muchos veranos en los balnearios de Bohemia. En Marienbad, con más de setenta años, se enamoró de Ulrike von Levetzow, de 19, e hizo que el gran duque pidiera su mano. Ella no aceptó. En el viaje de regreso escribió su gran elegía."
+      },
+      "places": [
+        {
+          "name": { "en": "Ulrike von Levetzow", "es": "Ulrike von Levetzow" },
+          "at": [12.7091, 49.9774],
+          "cat": "person",
+          "type": "person",
+          "date": "1823",
+          "life": ["1804-02-04", "1899-11-13"],
+          "text": {
+            "en": "He had known her and her family since the summer of 1821. She never married, lived to be 95 and always said that it had been no love affair.",
+            "es": "Él la conocía, a ella y a su familia, desde el verano de 1821. Nunca se casó, vivió hasta los 95 años y siempre dijo que aquello no había sido un amorío."
+          }
+        },
+        {
+          "id": "beethoven",
+          "name": { "en": "Ludwig van Beethoven", "es": "Ludwig van Beethoven" },
+          "at": [13.8245, 50.6404],
+          "cat": "person",
+          "type": "person",
+          "date": "1812-07",
+          "life": ["1770-12", "1827-03-26"],
+          "text": {
+            "en": "The two met at the spa of Teplitz in July 1812. Beethoven, who had written music for Goethe's Egmont, found him too fond of the court; Goethe found Beethoven's talent astonishing and his character \"utterly untamed\".",
+            "es": "Se conocieron en el balneario de Teplitz en julio de 1812. A Beethoven, que había puesto música al Egmont, Goethe le pareció demasiado cortesano; a Goethe, el talento de Beethoven le pareció asombroso, y su carácter, «del todo indómito»."
+          },
+          "wiki": { "en": "Ludwig van Beethoven", "es": "Ludwig van Beethoven" }
+        }
+      ]
+    },
+    {
+      "date": "1832-03-22",
+      "kind": "died",
+      "place": { "en": "Weimar, Germany", "es": "Weimar, Alemania" },
+      "at": [11.3286, 50.9775],
+      "title": { "en": "More light", "es": "Más luz" },
+      "text": {
+        "en": "Goethe died at 82, towards noon, in the armchair beside his bed. The summer before, he had finished the second part of Faust, begun sixty years earlier, and sealed it to be printed after his death.",
+        "es": "Goethe murió a los 82 años, cerca del mediodía, en el sillón junto a su cama. El verano anterior había terminado la segunda parte del Fausto, empezado sesenta años antes, y la selló para que se imprimiera después de su muerte."
+      },
+      "unsure": {
+        "en": "His last words are usually given as \"More light!\". They come from a friend's report, and may be a tidy version of a request to open another shutter.",
+        "es": "Suele decirse que sus últimas palabras fueron «¡Más luz!». Vienen del relato de un amigo, y quizá sean la versión pulida de un pedido de que abrieran otro postigo."
+      },
+      "details": {
+        "en": "He had outlived almost everyone: Schiller, Christiane, the duke and, in 1830, his only son, who died in Rome. In his last years a young assistant, Johann Peter Eckermann, wrote down his talk, and the Conversations with Goethe became a classic of their own. He was buried on 26 March in the ducal vault of Weimar, beside Schiller's coffin. His grandsons kept the house closed for decades; the last of them left it to the state, with everything in it.",
+        "es": "Había sobrevivido a casi todos: a Schiller, a Christiane, al duque y, en 1830, a su único hijo, que murió en Roma. En sus últimos años un joven ayudante, Johann Peter Eckermann, fue anotando lo que decía, y las Conversaciones con Goethe se convirtieron en un clásico por derecho propio. Fue enterrado el 26 de marzo en la cripta ducal de Weimar, junto al ataúd de Schiller. Sus nietos tuvieron la casa cerrada durante décadas; el último se la dejó al Estado, con todo lo que había adentro."
+      },
+      "places": [
+        {
+          "name": { "en": "Faust, Part Two", "es": "Fausto, segunda parte" },
+          "at": [11.3291, 50.9772],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1832",
+          "by": { "en": "Goethe", "es": "Goethe" },
+          "text": {
+            "en": "Faust at an emperor's court, in ancient Greece with Helen of Troy, and at the end winning land from the sea. Finished in 1831 and published months after Goethe's death.",
+            "es": "Fausto en la corte de un emperador, en la Grecia antigua con Helena de Troya, y al final ganándole tierras al mar. Terminada en 1831 y publicada meses después de la muerte de Goethe."
+          }
+        },
+        {
+          "name": { "en": "West-Eastern Divan", "es": "Diván de Oriente y Occidente" },
+          "at": [11.328, 50.9778],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1819",
+          "by": { "en": "Goethe", "es": "Goethe" },
+          "text": {
+            "en": "A book of poems written in answer to the Persian poet Hafez, whom he read in translation in his sixties: a German poet's greeting to the literature of the East.",
+            "es": "Un libro de poemas escrito en respuesta al poeta persa Hafez, a quien leyó traducido pasados los sesenta años: el saludo de un poeta alemán a la literatura de Oriente."
+          },
+          "wiki": { "en": "West–östlicher Divan", "es": "Diván de Oriente y Occidente" }
+        },
+        {
+          "name": { "en": "The Ducal Vault", "es": "La cripta ducal" },
+          "at": [11.3256, 50.9726],
+          "cat": "place",
+          "type": "structure",
+          "date": "1832-03-26",
+          "text": {
+            "en": "The mausoleum of the dukes of Weimar, finished in 1828. Goethe's coffin stands in it beside Schiller's, among those of the ruling family.",
+            "es": "El mausoleo de los duques de Weimar, terminado en 1828. El ataúd de Goethe está allí junto al de Schiller, entre los de la familia reinante."
+          }
+        }
+      ]
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Goethe House, Frankfurt", "es": "Casa de Goethe, Fráncfort" },
+      "at": [8.6776, 50.1112],
+      "kind": "house",
+      "text": {
+        "en": "The house where he was born and wrote Werther, rebuilt after the war and furnished with the family's own things: his father's library, the puppet theatre, the room on the top floor where he wrote.",
+        "es": "La casa donde nació y escribió el Werther, reconstruida después de la guerra y amueblada con las cosas de la familia: la biblioteca de su padre, el teatro de títeres, el cuarto del último piso donde escribía."
+      }
+    },
+    {
+      "name": { "en": "Goethe National Museum, Weimar", "es": "Museo Nacional Goethe, Weimar" },
+      "at": [11.3286, 50.9775],
+      "kind": "house",
+      "text": {
+        "en": "His home for almost fifty years, on the Frauenplan, with the study and library as he left them. The house closed for restoration in November 2026; the museum beside it, with his collections, stays open.",
+        "es": "Su hogar durante casi cincuenta años, en el Frauenplan, con el estudio y la biblioteca tal como los dejó. La casa cerró por restauración en noviembre de 2026; el museo de al lado, con sus colecciones, sigue abierto."
+      }
+    },
+    {
+      "name": { "en": "Goethe's Garden House, Weimar", "es": "Casa del jardín de Goethe, Weimar" },
+      "at": [11.3369, 50.9761],
+      "kind": "house",
+      "text": {
+        "en": "The cottage in the park on the Ilm that the duke gave him in 1776, with his standing desk and the garden he laid out himself.",
+        "es": "La casita del parque del Ilm que el duque le regaló en 1776, con su escritorio para escribir de pie y el jardín que él mismo trazó."
+      }
+    },
+    {
+      "name": { "en": "Ducal Vault, Weimar", "es": "Cripta ducal, Weimar" },
+      "at": [11.3256, 50.9726],
+      "kind": "grave",
+      "text": {
+        "en": "In the Historic Cemetery: you go down a staircase to the vault where the coffins of Goethe and Schiller stand side by side.",
+        "es": "En el Cementerio Histórico: se baja por una escalera a la cripta donde están, uno junto al otro, los ataúdes de Goethe y de Schiller."
+      }
+    },
+    {
+      "name": { "en": "Casa di Goethe, Rome", "es": "Casa di Goethe, Roma" },
+      "at": [12.4771, 41.909],
+      "kind": "museum",
+      "text": {
+        "en": "The flat on the Via del Corso, near the Piazza del Popolo, that he shared with the painter Tischbein in 1786 to 1788, now a museum of his Italian journey.",
+        "es": "El departamento de la Via del Corso, cerca de la Piazza del Popolo, que compartió con el pintor Tischbein entre 1786 y 1788, hoy un museo de su viaje a Italia."
+      }
+    },
+    {
+      "name": { "en": "Lotte's House, Wetzlar", "es": "Casa de Lotte, Wetzlar" },
+      "at": [8.5041, 50.5553],
+      "kind": "house",
+      "text": {
+        "en": "The home of the Buff family, where Goethe spent the summer evenings of 1772, with furniture of the time and early editions of Werther in many languages.",
+        "es": "La casa de la familia Buff, donde Goethe pasó las tardes del verano de 1772, con muebles de la época y primeras ediciones del Werther en muchos idiomas."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Goethe gave German literature its central figure and the world Faust, the scholar who bargains with the devil to know and live everything. He spoke of a \"world literature\" above nations; his poems became songs by Schubert and many others; and Germany's cultural institutes around the world carry his name.",
+    "es": "Goethe le dio a la literatura alemana su figura central, y al mundo a Fausto, el sabio que pacta con el diablo para saberlo y vivirlo todo. Habló de una «literatura universal» por encima de las naciones; sus poemas se volvieron canciones de Schubert y de muchos otros; y los institutos culturales de Alemania en todo el mundo llevan su nombre."
+  },
+  "sources": [
+    { "title": "Wikipedia: Johann Wolfgang von Goethe", "url": "https://en.wikipedia.org/wiki/Johann_Wolfgang_von_Goethe" },
+    {
+      "title": "Wilhelm Flitner, Goethe, Johann Wolfgang von, in Neue Deutsche Biographie 6 (1964)",
+      "url": "https://www.deutsche-biographie.de/gnd118540238.html#ndbcontent"
+    },
+    { "title": "Klassik Stiftung Weimar: Goethe National Museum", "url": "https://www.klassik-stiftung.de/goethe-nationalmuseum/" },
+    { "title": "Frankfurter Goethe-Haus (Freies Deutsches Hochstift)", "url": "https://frankfurter-goethe-haus.de/" },
+    { "title": "Casa di Goethe, Rome", "url": "https://www.casadigoethe.it/en/" }
+  ]
+}

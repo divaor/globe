@@ -1,0 +1,505 @@
+{
+  "id": "shakespeare",
+  "qid": "Q692",
+  "name": { "en": "William Shakespeare", "es": "William Shakespeare" },
+  "icon": "🎭",
+  "field": "letters",
+  "known": { "en": "English playwright and poet", "es": "Dramaturgo y poeta inglés" },
+  "born": "1564-04",
+  "died": "1616-04-23",
+  "summary": {
+    "en": "A glover's son from a market town who went to London and wrote Hamlet, Macbeth and Romeo and Juliet for the stage of the Globe. Four centuries on, his plays are performed in every language.",
+    "es": "El hijo de un guantero de pueblo que se fue a Londres y escribió Hamlet, Macbeth y Romeo y Julieta para el escenario del Globe. Cuatro siglos después, sus obras se representan en todos los idiomas."
+  },
+  "unsure": {
+    "en": "No diary or personal letter of his survives: his life is known from church, legal and theatre records, and the years 1585 to 1592 are a blank. Dates are Old Style, as England then counted them.",
+    "es": "No se conserva ningún diario ni carta personal suya: su vida se conoce por registros de iglesias, tribunales y teatros, y los años 1585 a 1592 son un vacío. Las fechas siguen el calendario antiguo que usaba Inglaterra."
+  },
+  "steps": [
+    {
+      "date": "1564-04",
+      "kind": "born",
+      "place": { "en": "Stratford-upon-Avon, England", "es": "Stratford-upon-Avon, Inglaterra" },
+      "at": [-1.708, 52.1939],
+      "title": { "en": "Born in Henley Street", "es": "Nace en Henley Street" },
+      "text": {
+        "en": "William was the third child, and the first to survive, of John Shakespeare, a glove-maker, and Mary Arden. He was baptized in Holy Trinity Church on 26 April 1564. That year plague killed some 200 townspeople.",
+        "es": "William fue el tercer hijo, y el primero que sobrevivió, de John Shakespeare, guantero, y Mary Arden. Lo bautizaron en la iglesia de la Santísima Trinidad el 26 de abril de 1564. Ese año la peste mató a unos 200 vecinos."
+      },
+      "unsure": {
+        "en": "His birth date was not recorded. It is celebrated on 23 April, three days before the baptism: a date first proposed in the 18th century, and also the day he died.",
+        "es": "Su fecha de nacimiento no quedó registrada. Se celebra el 23 de abril, tres días antes del bautismo: una fecha propuesta por primera vez en el siglo XVIII, y también el día en que murió."
+      },
+      "details": {
+        "en": "John Shakespeare made gloves of soft white leather in this house and rose through the town's offices: when William was four he became bailiff, much like a mayor. Not long after, he withdrew from public life, and nobody knows why. Mary Arden came from a farming family in nearby Wilmcote. The house stayed with their descendants until 1806. In 1847 it was bought at auction for £3,000, after a public campaign backed by Charles Dickens, and it has been a museum ever since.",
+        "es": "John Shakespeare hacía guantes de cuero blanco y suave en esta casa, y fue subiendo en los cargos del pueblo: cuando William tenía cuatro años llegó a ser «bailiff», algo parecido a un alcalde. Poco después se retiró de la vida pública, y nadie sabe por qué. Mary Arden venía de una familia de granjeros de Wilmcote, cerca de allí. La casa siguió en manos de sus descendientes hasta 1806. En 1847 fue comprada en una subasta por 3000 libras, tras una campaña pública que apoyó Charles Dickens, y desde entonces es un museo."
+      }
+    },
+    {
+      "date": "1571",
+      "about": true,
+      "kind": "study",
+      "place": { "en": "Stratford-upon-Avon, England", "es": "Stratford-upon-Avon, Inglaterra" },
+      "at": [-1.708, 52.1905],
+      "title": { "en": "Latin at the grammar school", "es": "Latín en la escuela" },
+      "text": {
+        "en": "As the son of a town official he almost certainly went to the King's New School, a short walk from home. From about seven to fifteen he would have read, written and recited Latin: Ovid, Virgil, Terence.",
+        "es": "Como hijo de un funcionario del pueblo, casi seguro fue a la King's New School, a pocos pasos de su casa. Entre los siete y los quince años habrá leído, escrito y recitado en latín: Ovidio, Virgilio, Terencio."
+      },
+      "unsure": {
+        "en": "The school's records from those years are lost, so there is no proof that he was a pupil; his father's rank and the Latin in his plays make it very likely. He never went to university.",
+        "es": "Los registros de la escuela de esos años se perdieron, así que no hay prueba de que fuera alumno; el cargo de su padre y el latín de sus obras lo hacen muy probable. Nunca fue a la universidad."
+      }
+    },
+    {
+      "date": "1582-11",
+      "kind": "love",
+      "place": { "en": "Shottery, Stratford-upon-Avon, England", "es": "Shottery, Stratford-upon-Avon, Inglaterra" },
+      "at": [-1.7316, 52.1907],
+      "title": { "en": "He marries Anne Hathaway", "es": "Se casa con Anne Hathaway" },
+      "text": {
+        "en": "At 18 he married Anne Hathaway, 26, a farmer's daughter from the hamlet of Shottery, who was three months pregnant. Susanna was baptized in May 1583, and the twins Hamnet and Judith in February 1585.",
+        "es": "A los 18 años se casó con Anne Hathaway, de 26, hija de un granjero de la aldea de Shottery, que estaba embarazada de tres meses. Susanna fue bautizada en mayo de 1583, y los mellizos Hamnet y Judith en febrero de 1585."
+      },
+      "unsure": {
+        "en": "A licence was issued at Worcester on 27 November 1582, but no record gives the day or the church of the wedding. The marker is Anne's family home.",
+        "es": "En Worcester se emitió una licencia el 27 de noviembre de 1582, pero ningún registro dice el día ni la iglesia de la boda. El marcador es la casa de la familia de Anne."
+      },
+      "places": [
+        {
+          "name": { "en": "Anne Hathaway", "es": "Anne Hathaway" },
+          "at": [-1.7311, 52.1904],
+          "cat": "person",
+          "type": "person",
+          "date": "1582-11",
+          "life": ["1556", "1623-08-06"],
+          "text": {
+            "en": "His wife for 33 years. She stayed in Stratford with the children while he worked in London, outlived him by seven years, and is buried beside him.",
+            "es": "Su esposa durante 33 años. Se quedó en Stratford con los hijos mientras él trabajaba en Londres, lo sobrevivió siete años y está enterrada a su lado."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1592",
+      "kind": "career",
+      "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+      "at": [-0.0955, 51.5072],
+      "title": { "en": "An \"upstart crow\" in London", "es": "Un «cuervo advenedizo» en Londres" },
+      "text": {
+        "en": "After seven years with no trace of him, Shakespeare turns up in London as an actor whose Henry VI is playing at the Rose. A pamphlet of 1592 sneers at him as an \"upstart crow\", \"the only Shake-scene in a country\".",
+        "es": "Tras siete años sin rastro de él, Shakespeare aparece en Londres como un actor cuyo Enrique VI se representa en el teatro Rose. Un panfleto de 1592 lo llama «cuervo advenedizo» y, jugando con su apellido, «Shake-scene»."
+      },
+      "unsure": {
+        "en": "Nothing is recorded of him between February 1585 and 1592: the \"lost years\". When, why and how he reached London is unknown; the tales of deer poaching or schoolteaching are later guesses.",
+        "es": "No hay ningún registro de él entre febrero de 1585 y 1592: los «años perdidos». No se sabe cuándo, por qué ni cómo llegó a Londres; las historias de que cazaba ciervos a escondidas o fue maestro son conjeturas posteriores."
+      },
+      "details": {
+        "en": "The pamphlet, published under the name of the dying playwright Robert Greene, mocks an actor who dares to write verse like a university man, and twists a line from Henry VI, Part 3. So by 1592 his plays were known well enough to parody. Then plague shut London's playhouses for most of two years. Shakespeare turned to poetry: Venus and Adonis in 1593, the first of his works to be printed, and The Rape of Lucrece in 1594, both dedicated to the young Earl of Southampton.",
+        "es": "El panfleto, publicado con el nombre del dramaturgo Robert Greene, ya moribundo, se burla de un actor que se atreve a escribir versos como un universitario, y deforma un verso de la tercera parte de Enrique VI. Para 1592, entonces, sus obras ya eran lo bastante conocidas como para parodiarlas. Después la peste cerró los teatros de Londres durante casi dos años. Shakespeare se volcó a la poesía: Venus y Adonis en 1593, su primera obra impresa, y La violación de Lucrecia en 1594, ambas dedicadas al joven conde de Southampton."
+      },
+      "places": [
+        {
+          "name": { "en": "Venus and Adonis", "es": "Venus y Adonis" },
+          "at": [-0.0972, 51.5138],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1593",
+          "by": { "en": "William Shakespeare", "es": "William Shakespeare" },
+          "text": {
+            "en": "His first printed work, a long poem that sold edition after edition. It was printed by Richard Field, a Stratford man, and sold at the sign of the White Greyhound in St Paul's Churchyard.",
+            "es": "Su primera obra impresa, un poema largo que se reeditó una y otra vez. Lo imprimió Richard Field, que también era de Stratford, y se vendía bajo el cartel del Galgo Blanco, junto a la catedral de San Pablo."
+          },
+          "wiki": { "en": "Venus and Adonis (Shakespeare poem)", "es": "Venus y Adonis (poema)" }
+        }
+      ]
+    },
+    {
+      "date": "1594",
+      "kind": "career",
+      "place": { "en": "Shoreditch, London, England", "es": "Shoreditch, Londres, Inglaterra" },
+      "at": [-0.0794, 51.5247],
+      "title": { "en": "The Lord Chamberlain's Men", "es": "La compañía del Lord Chambelán" },
+      "text": {
+        "en": "When the playhouses reopened he joined a new company, the Lord Chamberlain's Men, as actor, playwright and shareholder. Its home was the Theatre in Shoreditch; its star was Richard Burbage. He never left it.",
+        "es": "Cuando los teatros reabrieron entró en una compañía nueva, la del Lord Chambelán, como actor, autor y socio. Su casa era The Theatre, en Shoreditch; su estrella, Richard Burbage. Nunca la dejó."
+      },
+      "details": {
+        "en": "He wrote about two plays a year for the company for almost twenty years. From the Shoreditch years come Romeo and Juliet, A Midsummer Night's Dream, Richard II, The Merchant of Venice and the Henry IV plays, with Falstaff. The Theatre, built in 1576, was one of London's first playhouses. It stood outside the city walls, beyond the reach of the city officials, who thought plays brought noise, crowds and thieves. Archaeologists found its foundations in 2008.",
+        "es": "Escribió unas dos obras por año para la compañía durante casi veinte años. De los años de Shoreditch son Romeo y Julieta, El sueño de una noche de verano, Ricardo II, El mercader de Venecia y las dos partes de Enrique IV, con Falstaff. The Theatre, construido en 1576, fue uno de los primeros teatros de Londres. Estaba fuera de las murallas, lejos del alcance de las autoridades de la ciudad, que creían que el teatro traía ruido, multitudes y ladrones. Los arqueólogos hallaron sus cimientos en 2008."
+      },
+      "places": [
+        {
+          "name": { "en": "Romeo and Juliet", "es": "Romeo y Julieta" },
+          "at": [-0.0789, 51.525],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1595",
+          "by": { "en": "William Shakespeare", "es": "William Shakespeare" },
+          "text": {
+            "en": "Written about 1595 and printed in 1597, when it had already been played often \"with great applause\". It was probably first staged here or at the Curtain, a few streets away.",
+            "es": "Escrita hacia 1595 e impresa en 1597, cuando ya se había representado muchas veces «con gran aplauso». Probablemente se estrenó aquí o en el Curtain, a pocas calles."
+          }
+        },
+        {
+          "name": { "en": "A Midsummer Night's Dream", "es": "El sueño de una noche de verano" },
+          "at": [-0.0799, 51.5244],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1595",
+          "by": { "en": "William Shakespeare", "es": "William Shakespeare" },
+          "text": {
+            "en": "A comedy of lovers, fairies and amateur actors lost in a wood, written about 1595 or 1596 for the Lord Chamberlain's Men.",
+            "es": "Una comedia de enamorados, hadas y actores aficionados perdidos en un bosque, escrita hacia 1595 o 1596 para la compañía del Lord Chambelán."
+          }
+        },
+        {
+          "name": { "en": "Richard Burbage", "es": "Richard Burbage" },
+          "at": [-0.0794, 51.5252],
+          "cat": "person",
+          "type": "person",
+          "date": "1594",
+          "life": ["1567", "1619"],
+          "text": {
+            "en": "The company's leading actor and the son of the man who built the Theatre. Shakespeare wrote Hamlet, Othello and King Lear for him, and left him money in his will to buy a ring.",
+            "es": "El primer actor de la compañía e hijo del hombre que construyó The Theatre. Shakespeare escribió para él Hamlet, Otelo y El rey Lear, y en su testamento le dejó dinero para comprar un anillo."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1596-08-11",
+      "kind": "struggle",
+      "place": { "en": "Stratford-upon-Avon, England", "es": "Stratford-upon-Avon, Inglaterra" },
+      "at": [-1.7074, 52.1864],
+      "title": { "en": "Hamnet is buried", "es": "El entierro de Hamnet" },
+      "text": {
+        "en": "His only son, Hamnet, was buried at Holy Trinity Church at the age of 11. The cause of his death is unknown. Hamnet's twin, Judith, and their elder sister Susanna lived on in Stratford with their mother.",
+        "es": "Su único hijo varón, Hamnet, fue enterrado en la iglesia de la Santísima Trinidad a los 11 años. No se sabe de qué murió. Su melliza Judith y la hermana mayor, Susanna, siguieron viviendo en Stratford con su madre."
+      },
+      "unsure": {
+        "en": "It is not known whether Shakespeare, at work in London or on tour with his company, was in Stratford for the burial: news took at least two days to reach London.",
+        "es": "No se sabe si Shakespeare, que trabajaba en Londres o estaba de gira con su compañía, estuvo en Stratford para el entierro: una noticia tardaba al menos dos días en llegar a Londres."
+      }
+    },
+    {
+      "date": "1597",
+      "kind": "home",
+      "place": { "en": "Stratford-upon-Avon, England", "es": "Stratford-upon-Avon, Inglaterra" },
+      "at": [-1.7076, 52.1907],
+      "title": { "en": "New Place, a gentleman's house", "es": "New Place, casa de un caballero" },
+      "text": {
+        "en": "With his theatre earnings he bought New Place, one of the largest houses in Stratford, for his wife and daughters. The year before, his father had been granted a coat of arms: the glover's son was now a gentleman.",
+        "es": "Con lo que ganaba en el teatro compró New Place, una de las casas más grandes de Stratford, para su esposa y sus hijas. El año anterior su padre había recibido un escudo de armas: el hijo del guantero ya era un caballero."
+      },
+      "details": {
+        "en": "The deed of spring 1597 names a house, two barns and two gardens. He went on working in London, about three days' journey away, and went on investing at home: in 1602 he paid £320 for 107 acres of farmland. The family motto, in old French, was Non sanz droict: not without right. New Place was his home until he died in it. A later owner pulled the house down in 1759; its outline and its gardens can be visited.",
+        "es": "La escritura de la primavera de 1597 nombra una casa, dos graneros y dos jardines. Él siguió trabajando en Londres, a unos tres días de viaje, y siguió invirtiendo en su pueblo: en 1602 pagó 320 libras por unas 43 hectáreas de tierras de cultivo. El lema de la familia, en francés antiguo, era Non sanz droict: no sin derecho. New Place fue su hogar hasta que murió allí. Un dueño posterior demolió la casa en 1759; hoy se pueden visitar su trazado y sus jardines."
+      }
+    },
+    {
+      "date": "1599",
+      "kind": "made",
+      "place": { "en": "Southwark, London, England", "es": "Southwark, Londres, Inglaterra" },
+      "at": [-0.0947, 51.5068],
+      "title": { "en": "The Globe", "es": "El Globe" },
+      "text": {
+        "en": "His company took down the Theatre, carried its timbers across the Thames and built the Globe on Bankside, with Shakespeare as a part-owner. Julius Caesar was probably his first play staged there, in 1599.",
+        "es": "Su compañía desarmó The Theatre, cruzó las vigas al otro lado del Támesis y levantó el Globe en Bankside, con Shakespeare como uno de los dueños. Julio César fue probablemente su primera obra representada allí, en 1599."
+      },
+      "details": {
+        "en": "Five of the actors, Shakespeare among them, bought shares in the new house, so he earned from the tickets as well as from his writing. The Globe was a ring of timber galleries around a yard open to the sky, where a place to stand cost a penny. Hamlet, Othello, King Lear and Macbeth were all played here in the next few years. In 1601 his father died, and the house in Henley Street became his.",
+        "es": "Cinco de los actores, Shakespeare entre ellos, compraron partes del nuevo teatro, así que él ganaba con las entradas además de con sus textos. El Globe era un anillo de galerías de madera alrededor de un patio a cielo abierto, donde un lugar de pie costaba un penique. Hamlet, Otelo, El rey Lear y Macbeth se representaron aquí en los años siguientes. En 1601 murió su padre, y la casa de Henley Street pasó a ser suya."
+      },
+      "places": [
+        {
+          "name": { "en": "Julius Caesar", "es": "Julio César" },
+          "at": [-0.0952, 51.5065],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1599",
+          "by": { "en": "William Shakespeare", "es": "William Shakespeare" },
+          "text": {
+            "en": "Written in 1599. A Swiss traveller, Thomas Platter, saw it at a playhouse on Bankside that September, the earliest record of a play at the new Globe.",
+            "es": "Escrita en 1599. Un viajero suizo, Thomas Platter, la vio en un teatro de Bankside ese septiembre: el registro más antiguo de una obra en el nuevo Globe."
+          }
+        },
+        {
+          "name": { "en": "Hamlet", "es": "Hamlet" },
+          "at": [-0.0942, 51.5071],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1600",
+          "by": { "en": "William Shakespeare", "es": "William Shakespeare" },
+          "text": {
+            "en": "Written about 1600 and first played at the Globe, with Richard Burbage as the prince. It is the longest of his plays, and was in print by 1603.",
+            "es": "Escrita hacia 1600 y estrenada en el Globe, con Richard Burbage como el príncipe. Es la más larga de sus obras, y ya estaba impresa en 1603."
+          },
+          "wiki": { "en": "Hamlet", "es": "Hamlet" }
+        },
+        {
+          "name": { "en": "Macbeth", "es": "Macbeth" },
+          "at": [-0.0945, 51.5063],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1606",
+          "by": { "en": "William Shakespeare", "es": "William Shakespeare" },
+          "text": {
+            "en": "A tragedy of a Scottish king, written about 1606, soon after a king of Scots took the English throne. An astrologer, Simon Forman, described seeing it at the Globe in 1611.",
+            "es": "Una tragedia sobre un rey de Escocia, escrita hacia 1606, poco después de que un rey escocés subiera al trono inglés. Un astrólogo, Simon Forman, contó que la vio en el Globe en 1611."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1603-05-19",
+      "kind": "honour",
+      "place": { "en": "Westminster, London, England", "es": "Westminster, Londres, Inglaterra" },
+      "at": [-0.1259, 51.5046],
+      "title": { "en": "The King's Men", "es": "Los Hombres del Rey" },
+      "text": {
+        "en": "Within ten days of reaching London, the new king, James I, took Shakespeare's company under his own patronage. As the King's Men they played often at court: Othello at Whitehall in 1604, King Lear in 1606.",
+        "es": "A los diez días de llegar a Londres, el nuevo rey, Jacobo I, tomó a la compañía de Shakespeare bajo su protección. Como los Hombres del Rey actuaron a menudo en la corte: Otelo en Whitehall en 1604, El rey Lear en 1606."
+      },
+      "places": [
+        {
+          "name": { "en": "Othello", "es": "Otelo" },
+          "at": [-0.1264, 51.5049],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1604",
+          "by": { "en": "William Shakespeare", "es": "William Shakespeare" },
+          "text": {
+            "en": "The first record of the play is at court: the King's Men acted it in the Banqueting House at Whitehall on 1 November 1604.",
+            "es": "El primer registro de la obra es en la corte: los Hombres del Rey la representaron en la Banqueting House de Whitehall el 1 de noviembre de 1604."
+          }
+        },
+        {
+          "name": { "en": "King Lear", "es": "El rey Lear" },
+          "at": [-0.1254, 51.5043],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1606",
+          "by": { "en": "William Shakespeare", "es": "William Shakespeare" },
+          "text": {
+            "en": "Played before King James at Whitehall on 26 December 1606, as the title page of its first edition records.",
+            "es": "Representada ante el rey Jacobo en Whitehall el 26 de diciembre de 1606, según consta en la portada de su primera edición."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1609",
+      "kind": "career",
+      "place": { "en": "Blackfriars, London, England", "es": "Blackfriars, Londres, Inglaterra" },
+      "at": [-0.1029, 51.5127],
+      "title": { "en": "Indoors at Blackfriars", "es": "Bajo techo en Blackfriars" },
+      "text": {
+        "en": "From 1609 the King's Men spent the winters indoors, playing by candlelight at Blackfriars. For its small stage he wrote his last plays, The Winter's Tale and The Tempest among them. That year his Sonnets were printed.",
+        "es": "Desde 1609 los Hombres del Rey pasaron los inviernos bajo techo, a la luz de las velas, en Blackfriars. Para ese escenario pequeño escribió sus últimas obras, como Cuento de invierno y La tempestad. Ese año se imprimieron sus Sonetos."
+      },
+      "places": [
+        {
+          "name": { "en": "The Tempest", "es": "La tempestad" },
+          "at": [-0.1034, 51.513],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1611",
+          "by": { "en": "William Shakespeare", "es": "William Shakespeare" },
+          "text": {
+            "en": "Written about 1611 with the candlelit Blackfriars in mind, and played before the king at Whitehall that November. Prospero's farewell to his magic is often read as Shakespeare's own goodbye.",
+            "es": "Escrita hacia 1611 pensando en el Blackfriars iluminado con velas, y representada ante el rey en Whitehall ese noviembre. La despedida de Próspero de su magia suele leerse como el adiós del propio Shakespeare."
+          }
+        },
+        {
+          "name": { "en": "Shakespeare's Sonnets", "es": "Sonetos" },
+          "at": [-0.0972, 51.5138],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1609",
+          "by": { "en": "William Shakespeare", "es": "William Shakespeare" },
+          "text": {
+            "en": "154 sonnets, most of them written in the 1590s and passed around among friends, printed in 1609 and sold by the booksellers around St Paul's. Nobody knows who the young man and the dark lady were.",
+            "es": "154 sonetos, casi todos escritos en la década de 1590 y leídos entre amigos, impresos en 1609 y vendidos por los libreros de los alrededores de San Pablo. Nadie sabe quiénes eran el joven y la dama morena."
+          },
+          "wiki": { "en": "Shakespeare's sonnets", "es": "Sonetos (Shakespeare)" }
+        },
+        {
+          "name": { "en": "Blackfriars Gatehouse", "es": "La casa de la puerta de Blackfriars" },
+          "at": [-0.1018, 51.5128],
+          "cat": "place",
+          "type": "site",
+          "date": "1613-03-10",
+          "text": {
+            "en": "In March 1613 he bought the gatehouse of the old priory, a few steps from the playhouse, for £140. It is the only property he is known to have owned in London.",
+            "es": "En marzo de 1613 compró por 140 libras la casa de la puerta del antiguo convento, a pocos pasos del teatro. Es la única propiedad que se sabe que tuvo en Londres."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1613-06-29",
+      "kind": "struggle",
+      "place": { "en": "Southwark, London, England", "es": "Southwark, Londres, Inglaterra" },
+      "at": [-0.0947, 51.5068],
+      "title": { "en": "The Globe burns down", "es": "Se incendia el Globe" },
+      "text": {
+        "en": "During a performance of his Henry VIII, a stage cannon set the thatched roof alight and the Globe burned to the ground in about an hour. Nobody was hurt: one man's burning breeches were put out with a bottle of beer.",
+        "es": "Durante una función de su Enrique VIII, un cañón de escena prendió fuego al techo de paja y el Globe ardió por completo en una hora. No hubo heridos: a un hombre le apagaron los calzones en llamas con una botella de cerveza."
+      },
+      "unsure": {
+        "en": "No record says whether Shakespeare was in the playhouse that day. By then he was spending more time in Stratford, and he wrote very little afterwards.",
+        "es": "Ningún registro dice si Shakespeare estaba en el teatro ese día. Para entonces pasaba más tiempo en Stratford, y después casi no escribió."
+      },
+      "details": {
+        "en": "The company rebuilt the Globe within a year on the same foundations, this time with a tiled roof. That second Globe stood until Parliament closed the theatres in 1642, and was pulled down soon after. In 1997 a careful reconstruction, with the first thatched roof allowed in London since the Great Fire of 1666, opened one street nearer the river.",
+        "es": "La compañía reconstruyó el Globe en menos de un año sobre los mismos cimientos, esta vez con techo de tejas. Ese segundo Globe siguió en pie hasta que el Parlamento cerró los teatros en 1642, y lo demolieron poco después. En 1997 se inauguró, una calle más cerca del río, una reconstrucción fiel, con el primer techo de paja permitido en Londres desde el Gran Incendio de 1666."
+      }
+    },
+    {
+      "date": "1616-04-23",
+      "kind": "died",
+      "place": { "en": "Stratford-upon-Avon, England", "es": "Stratford-upon-Avon, Inglaterra" },
+      "at": [-1.7076, 52.1907],
+      "title": { "en": "Death at New Place", "es": "Muere en New Place" },
+      "text": {
+        "en": "Shakespeare died at 52, four weeks after signing his will, and was buried two days later in the chancel of Holy Trinity Church. The date is Old Style: by the calendar we use today it was 3 May.",
+        "es": "Shakespeare murió a los 52 años, cuatro semanas después de firmar su testamento, y fue enterrado dos días más tarde en la iglesia de la Santísima Trinidad. La fecha es del calendario antiguo: en el nuestro fue el 3 de mayo."
+      },
+      "unsure": {
+        "en": "The cause of his death is unknown. The story that he caught a fever after a night of drinking with Ben Jonson was written down about fifty years later, and has no proof.",
+        "es": "No se sabe de qué murió. La historia de que le dio fiebre tras una noche de copas con Ben Jonson se escribió unos cincuenta años después, y no tiene pruebas."
+      },
+      "details": {
+        "en": "He left New Place and most of his property to his elder daughter, Susanna, money to Judith, and to his wife, in a line squeezed between two others, his \"second best bed\". Three fellow actors got money to buy rings in his memory. The stone over his grave bears no name, only four lines that bless whoever spares the stones and curse whoever moves his bones. The painted bust on the wall above was in place by 1623; it is one of only two likenesses accepted by people who knew him.",
+        "es": "Dejó New Place y casi todos sus bienes a su hija mayor, Susanna, dinero a Judith, y a su esposa, en una línea apretada entre otras dos, su «segunda mejor cama». Tres compañeros actores recibieron dinero para comprar anillos en su memoria. La lápida de su tumba no lleva nombre, solo cuatro versos que bendicen a quien respete las piedras y maldicen a quien mueva sus huesos. El busto pintado que está en la pared, encima, ya estaba colocado en 1623; es uno de los dos únicos retratos aceptados por gente que lo conoció."
+      },
+      "places": [
+        {
+          "name": { "en": "Shakespeare's grave", "es": "La tumba de Shakespeare" },
+          "at": [-1.7074, 52.1864],
+          "cat": "place",
+          "type": "site",
+          "date": "1616-04-25",
+          "text": {
+            "en": "He was buried on 25 April 1616 in the chancel of Holy Trinity, the church where he had been baptized 52 years before. His wife, his daughter Susanna and her husband lie beside him.",
+            "es": "Fue enterrado el 25 de abril de 1616 en el presbiterio de la Santísima Trinidad, la iglesia donde lo habían bautizado 52 años antes. A su lado están su esposa, su hija Susanna y el marido de ella."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1623",
+      "kind": "honour",
+      "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+      "at": [-0.093, 51.5165],
+      "title": { "en": "The First Folio", "es": "El Primer Folio" },
+      "text": {
+        "en": "Seven years after his death two fellow actors, John Heminges and Henry Condell, gathered 36 of his plays in one large book. Half of them, Macbeth, Julius Caesar and The Tempest among them, had never been printed.",
+        "es": "Siete años después de su muerte, dos compañeros actores, John Heminges y Henry Condell, reunieron 36 de sus obras en un solo libro grande. La mitad, entre ellas Macbeth, Julio César y La tempestad, nunca se había impreso."
+      },
+      "details": {
+        "en": "Without the book those plays would probably be lost. In it his friend and rival Ben Jonson wrote that Shakespeare was \"not of an age, but for all time\". About 750 copies were printed and 235 are known today, 82 of them in the Folger Shakespeare Library in Washington. A monument to Heminges and Condell, with a bust of Shakespeare on top, stands in the garden of St Mary Aldermanbury, the London parish where both men lived and were buried. Anne Shakespeare died that same year.",
+        "es": "Sin ese libro, esas obras probablemente se habrían perdido. En él su amigo y rival Ben Jonson escribió que Shakespeare no era «de una época, sino de todos los tiempos». Se imprimieron unos 750 ejemplares y hoy se conocen 235, de los cuales 82 están en la Biblioteca Folger Shakespeare de Washington. Un monumento a Heminges y Condell, rematado por un busto de Shakespeare, se levanta en el jardín de St Mary Aldermanbury, la parroquia de Londres donde los dos vivieron y fueron enterrados. Anne Shakespeare murió ese mismo año."
+      },
+      "places": [
+        {
+          "name": { "en": "First Folio", "es": "Primer Folio" },
+          "at": [-0.1277, 51.5299],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1623",
+          "by": { "en": "William Shakespeare", "es": "William Shakespeare" },
+          "text": {
+            "en": "Mr. William Shakespeares Comedies, Histories, & Tragedies, with his portrait engraved on the title page. The British Library in London keeps five copies.",
+            "es": "Las Comedias, historias y tragedias del señor William Shakespeare, con su retrato grabado en la portada. La Biblioteca Británica, en Londres, guarda cinco ejemplares."
+          }
+        }
+      ]
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Shakespeare's Birthplace", "es": "Casa natal de Shakespeare" },
+      "at": [-1.708, 52.1939],
+      "kind": "house",
+      "text": {
+        "en": "The timber-framed house in Henley Street, Stratford, where he was born and grew up, with his father's glove workshop. It has been open to visitors since 1847.",
+        "es": "La casa de entramado de madera de Henley Street, en Stratford, donde nació y creció, con el taller de guantes de su padre. Recibe visitantes desde 1847."
+      }
+    },
+    {
+      "name": { "en": "Anne Hathaway's Cottage", "es": "Casa de Anne Hathaway" },
+      "at": [-1.7316, 52.1907],
+      "kind": "house",
+      "text": {
+        "en": "The thatched farmhouse in Shottery, begun in 1463, where his wife was born and where he courted her. The Hathaways lived in it for 13 generations, and some of their furniture is still there.",
+        "es": "La granja con techo de paja de Shottery, empezada en 1463, donde nació su esposa y donde él la cortejó. Los Hathaway vivieron allí durante 13 generaciones, y todavía quedan algunos de sus muebles."
+      }
+    },
+    {
+      "name": { "en": "Shakespeare's New Place", "es": "New Place" },
+      "at": [-1.7076, 52.1907],
+      "kind": "site",
+      "text": {
+        "en": "The site of the big house he owned from 1597 and died in. The house was demolished in 1759; a garden marks its outline, with sculptures inspired by the plays.",
+        "es": "El lugar de la casa grande que tuvo desde 1597 y donde murió. La casa fue demolida en 1759; un jardín marca su trazado, con esculturas inspiradas en sus obras."
+      }
+    },
+    {
+      "name": { "en": "Holy Trinity Church, Stratford", "es": "Iglesia de la Santísima Trinidad, Stratford" },
+      "at": [-1.7074, 52.1864],
+      "kind": "grave",
+      "text": {
+        "en": "The church by the Avon where he was baptized and is buried, under a stone with a four-line curse. His painted bust looks down from the chancel wall.",
+        "es": "La iglesia junto al río Avon donde fue bautizado y está enterrado, bajo una lápida con una maldición de cuatro versos. Su busto pintado mira desde la pared del presbiterio."
+      }
+    },
+    {
+      "name": { "en": "Shakespeare's Schoolroom", "es": "El aula de Shakespeare" },
+      "at": [-1.708, 52.1905],
+      "kind": "site",
+      "text": {
+        "en": "The 15th-century guildhall of Stratford and the upstairs schoolroom where he is thought to have studied in the 1570s. It is still part of a working school.",
+        "es": "La casa gremial de Stratford, del siglo XV, y el aula del piso alto donde se cree que estudió en la década de 1570. Todavía es parte de una escuela en funcionamiento."
+      }
+    },
+    {
+      "name": { "en": "Shakespeare's Globe, London", "es": "Shakespeare's Globe, Londres" },
+      "at": [-0.0972, 51.5081],
+      "kind": "site",
+      "text": {
+        "en": "A careful rebuilding of the 1599 playhouse, opened in 1997 one street from the original site. You can still stand in the open yard for a play, as audiences did in his day.",
+        "es": "Una reconstrucción fiel del teatro de 1599, inaugurada en 1997 a una calle del sitio original. Todavía se puede ver una obra de pie en el patio abierto, como el público de su tiempo."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Shakespeare left some 38 plays, 154 sonnets and two long poems. His plays are staged more often than any other playwright's, in almost every language, and have been turned into operas, films and novels; words and phrases of his are part of everyday English. In Stratford-upon-Avon the Royal Shakespeare Company performs them all year round.",
+    "es": "Shakespeare dejó unas 38 obras de teatro, 154 sonetos y dos poemas largos. Sus obras se representan más que las de cualquier otro dramaturgo, en casi todos los idiomas, y se han convertido en óperas, películas y novelas; palabras y frases suyas son parte del inglés de todos los días. En Stratford-upon-Avon, la Royal Shakespeare Company las representa todo el año."
+  },
+  "sources": [
+    { "title": "Wikipedia: William Shakespeare", "url": "https://en.wikipedia.org/wiki/William_Shakespeare" },
+    { "title": "Folger Shakespeare Library: Shakespeare's life", "url": "https://www.folger.edu/explore/shakespeares-life/" },
+    {
+      "title": "Shakespeare Documented (Folger Shakespeare Library): timeline of Shakespeare's life",
+      "url": "https://shakespearedocumented.folger.edu/timeline-shakespeares-life"
+    },
+    {
+      "title": "Shakespeare Birthplace Trust: William Shakespeare biography",
+      "url": "https://www.shakespeare.org.uk/explore-shakespeare/shakespedia/william-shakespeare/william-shakespeare-biography/"
+    },
+    { "title": "Shakespeare's Globe: the Globe", "url": "https://www.shakespearesglobe.com/discover/shakespeares-world/the-globe/" }
+  ]
+}
