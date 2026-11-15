@@ -3035,7 +3035,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForFunction(() => window.atlas.app.renderer.baseImagery?.ready, null, { timeout: 30000 }).catch(() => {});
   await page.waitForTimeout(1200);
   const sat = await page.evaluate(() => ({ ready: !!window.atlas.app.renderer.baseImagery?.ready, max: window.atlas.app.renderer.view.maxZoom, chips: [...document.querySelectorAll('.chips .fchip-name')].map((c) => c.textContent).join(', ') }));
-  check(sat.ready && sat.max > 400 && /Who was born here/.test(sat.chips) && !/Satellite/.test(sat.chips), `Satellite: NASA's picture under the filters (${sat.chips}), and the deeper zoom (${sat.max})`);
+  check(sat.ready && sat.max > 400 && /Political map/.test(sat.chips) && !/Satellite/.test(sat.chips), `Satellite: NASA's picture under the filters (${sat.chips}), and the deeper zoom (${sat.max})`);
 
   // The names off, then the states off; kept after a reload and in the address.
   await page.click('.mapstyle [data-ms="names"]');
