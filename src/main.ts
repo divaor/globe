@@ -25,8 +25,9 @@ import { worldHook } from './modes/stories';
 import { spainView } from './ui/spainview';
 import { MapGames } from './play/menu';
 import type { BorderHop } from './play/hop';
+import { TravelGuide } from './guide/guide';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide } } }
 
 async function boot() {
   // Read before the app rewrites the address with its own state.
@@ -68,6 +69,8 @@ async function boot() {
   play.host.beforeStart = () => learn.closeAll();
   play.host.exitMode = async () => { await time.modes.find((m) => m.id === app.mode)?.exit(); };
   learn.beforeStart = () => void play.host.close();
+  // The travel guide (v0.26.0).
+  const guide = new TravelGuide(app, shell, time, learn);
   // A story step on another world shows that world under the story.
   worldHook.show = (id) => { space.surface.quiet = !!id; void space.surface.set(id); };
   // Your own data: tables kept on this device become filters; the panel reads new ones.
@@ -76,7 +79,7 @@ async function boot() {
   app.on('mydata', openMyData);
   shell.addMenu({ id: 'mydata', icon: Upload, label: () => t('cat.mine'), order: 40, onClick: openMyData });
   void myData.init();
-  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play };
+  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };
@@ -107,6 +110,9 @@ async function boot() {
   // A Border hop challenge: #hop=ESP-CHN&goal=people&beat=870.
   // (Read from the address as it was opened: the app writes its own state to the address when it starts.)
   if (shared.get('hop')) setTimeout(() => void hop.startChallenge(`#${shared.toString()}`), 500);
+  // A shared trip (#trip=lima,cusco) or a city's guide (#guide=kyoto).
+  if (shared.get('trip')) setTimeout(() => void guide.openShared(shared.get('trip')!), 500);
+  else if (shared.get('guide')) setTimeout(() => void guide.openCity(shared.get('guide')!), 500);
   // A shared world: #world=moon&c=lon,lat,zoom (and &map=elev).
   const world = shared.get('world');
   if (world) {

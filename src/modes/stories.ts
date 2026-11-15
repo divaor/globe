@@ -167,6 +167,8 @@ export interface CollectionItem extends Omit<Item, 'first'> {
 
 /** The collections of stories. */
 export type StoryKind = 'wars' | 'eras' | 'food' | 'structures' | 'people' | 'life' | 'games' | 'journeys' | 'beliefs' | 'writing' | 'plagues' | 'disasters' | 'music' | 'books' | 'art' | 'inventions' | 'heritage' | 'space';
+/** A collection's icon and name (for lists outside Time travel, such as the travel guide's History here). */
+export const storyKind = (k: StoryKind) => ({ icon: KINDS[k].icon, name: KINDS[k].name });
 export const STORY_KINDS: StoryKind[] = ['wars', 'eras', 'food', 'structures', 'people', 'life', 'games', 'journeys', 'beliefs', 'writing', 'plagues', 'disasters', 'music', 'books', 'art', 'inventions', 'heritage', 'space'];
 /** `paleo`: its old steps are drawn on the continents of their age. `worlds`: its steps may happen on another world. */
 const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: Text; paleo?: boolean; worlds?: boolean }> = {

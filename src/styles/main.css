@@ -961,3 +961,58 @@ html.has-game .chips, html.has-game .legend { display: none; }
 /* The sky opened from an element: a button back to it (v0.23.0); on a phone it takes the title's place. */
 .sky-back { flex: none; max-width: 46%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 @media (max-width: 600px) { .sky-back:not([hidden]) + strong { display: none; } }
+
+/* ---- Travel guide (v0.26.0) ---- */
+.guide-search { width: 100%; height: 40px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--chip); color: var(--text); font: inherit; font-size: 15px; margin: 6px 0; }
+.guide-results:empty { display: none; }
+.guide-results { display: flex; flex-direction: column; gap: 4px; margin-bottom: 4px; }
+.guide-row { display: flex; align-items: center; gap: 8px; }
+.guide-city-name { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left; padding: 8px 10px; border-radius: 12px; border: 1px solid var(--line); background: var(--chip); color: inherit; font: inherit; font-weight: 650; cursor: pointer; min-width: 0; }
+.icon-btn.on { background: var(--chip-on); color: var(--accent); }
+.guide-trip { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; counter-reset: trip; }
+.guide-trip-row { display: flex; align-items: center; gap: 6px; padding: 6px 8px; border-radius: 12px; background: var(--chip); border: 1px solid var(--line); counter-increment: trip; }
+.guide-trip-row::before { content: counter(trip); flex: none; width: 22px; height: 22px; border-radius: 11px; background: #e8590c; color: #fff; font-size: 12px; font-weight: 800; display: grid; place-items: center; }
+.guide-trip-name { flex: 1; min-width: 0; text-align: left; border: 0; background: none; color: inherit; font: inherit; font-weight: 650; cursor: pointer; padding: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.guide-trip-btns { display: flex; gap: 2px; flex: none; }
+.guide-leg { font-size: 12px; color: var(--muted); padding: 1px 0 1px 38px; }
+.guide-actions { flex-wrap: wrap; }
+.guide-note { margin-top: 18px; }
+.guide-head { display: flex; gap: 12px; align-items: center; margin: 2px 0 8px; }
+.guide-flag { font-size: 34px; line-height: 1; }
+.guide-title { font-size: 21px; font-weight: 800; }
+.guide-tabs { margin: 12px 0 4px; flex-wrap: wrap; }
+.guide-tab { min-height: 120px; }
+.guide-list { display: flex; flex-direction: column; gap: 4px; }
+.guide-item { display: flex; gap: 10px; align-items: center; width: 100%; text-align: left; padding: 7px 10px; border-radius: 12px; border: 1px solid var(--line); background: var(--chip); color: inherit; font: inherit; cursor: pointer; }
+div.guide-item { cursor: default; }
+.guide-item-ic { flex: none; width: 34px; height: 34px; display: grid; place-items: center; font-size: 21px; border-radius: 8px; overflow: hidden; }
+.guide-thumb { width: 34px; height: 34px; object-fit: cover; border-radius: 8px; }
+.guide-item-text { display: flex; flex-direction: column; min-width: 0; }
+.guide-item-title { font-weight: 650; font-size: 14px; }
+.guide-item-sub { font-size: 12px; color: var(--muted); }
+.guide-item-wrap { display: flex; gap: 6px; align-items: center; }
+.guide-item-wrap .guide-item { flex: 1; min-width: 0; }
+.guide-links { display: flex; gap: 4px; flex: none; }
+.guide-links a { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 15px; background: var(--chip); border: 1px solid var(--line); color: var(--muted); font-weight: 800; font-size: 13px; text-decoration: none; }
+.guide-national { margin: 6px 0 2px; font-size: 14px; }
+.guide-wv { margin-top: 16px; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--line); background: var(--chip); font-size: 14px; line-height: 1.5; }
+.guide-wv p { margin: 6px 0; }
+.guide-wv-head { font-size: 13px; }
+.guide-facts .row { grid-template-columns: 22px minmax(110px, auto) 1fr; }
+.guide-facts .row-value { overflow-wrap: anywhere; }
+.guide-chart { width: 100%; max-width: 460px; height: auto; display: block; margin: 4px 0; }
+.guide-chart .gc-best { fill: rgba(63, 208, 224, 0.13); }
+.guide-chart .gc-rain { fill: #4c8fd6; opacity: .75; }
+.guide-chart .gc-range { stroke: #ffb067; stroke-width: 3; stroke-linecap: round; opacity: .5; }
+.guide-chart .gc-line { fill: none; stroke: #ff922b; stroke-width: 2.5; stroke-linejoin: round; }
+.guide-chart .gc-month { fill: var(--muted); font-size: 10px; font-weight: 700; }
+.guide-chart .gc-temp { fill: var(--text); font-size: 9.5px; font-weight: 700; }
+.guide-print { display: none; }
+@media print {
+  html.printing body > *:not(.guide-print) { display: none !important; }
+  html.printing .guide-print { display: block; color: #000; background: #fff; font: 12pt/1.45 Georgia, serif; padding: 0; }
+  html.printing, html.printing body { background: #fff !important; height: auto !important; overflow: visible !important; }
+  .guide-print h1 { font-size: 20pt; margin: 0 0 12pt; }
+  .guide-print h2 { font-size: 15pt; margin: 16pt 0 4pt; border-bottom: 1px solid #999; }
+  .guide-print section { break-inside: avoid; }
+}

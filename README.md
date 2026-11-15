@@ -248,6 +248,24 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
     at the first try) and one for playing all seven.
   - **In the quiz:** "Which country in between?" (two countries that do not touch, and the one country you cross)
     is a quiz of its own and one of the daily challenge's eight questions.
+- **Travel guide** (More → Travel guide): pick the cities you want to visit (690: every capital, every city of a
+  million people or more, and towns rich in sights such as Cusco, Luxor or Kraków) by searching, by tapping their dot
+  on the map, with Plan a trip on a country's card, or from your Want to go list. Each city's guide has:
+  - **Eat:** the city's dishes, then the rest of the country's and nearby countries', each opening its story in Food
+    through time; the national dish; what was first grown nearby; and Wikivoyage's "Eat" overview, read live and
+    credited.
+  - **See:** World Heritage sites in the city and a day trip away, great structures, and the city's guided tour.
+  - **Museums:** the best known within a few km of the centre (from Wikidata), by kind, with visitors a year where
+    known.
+  - **Facts:** languages, money, plugs and voltage, the driving side, the calling code, the time there against yours,
+    today's sunrise and sunset, and the weather month by month with the best months to go.
+  - **History here:** what the Time travel stories tell of the place, each opening its story at that step.
+  - **Read more:** the city's Wikivoyage and Wikipedia pages.
+
+  **The trip** is drawn on the map in order, with the distance and flight time of each leg and a Best order button.
+  It is kept on this device, shared as a link (`#trip=lima,cuzco,la-paz`; `#guide=kyoto` opens one city) and prints
+  as a page. Not in the guide: hotels, restaurants by name, prices, visas and safety advice, which change too often to
+  keep right.
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Read aloud:** guided tours and the Time travel stories read by your device's own voices, in English or Latin
   American Spanish (a Mexican or other Latin American voice before Spain's); the sentence being read is marked, the
@@ -309,6 +327,12 @@ Time detective measures, for nine regions, which polities hold each borders map'
 look there (`scripts/data/history/detective.mjs`, `public/data/history/detective.json`); On this day lists the
 stories' dated steps and items by day (`scripts/data/build-onthisday.mjs`, `public/data/onthisday/`); and
 `scripts/test/tours.mjs` checks that every tour stop opens a story step that exists.
+
+**The travel guide** (`scripts/data/guide/build-guide.mjs` builds `public/data/guide/`): its 690 cities are the
+app's own, each with its Wikidata id from Natural Earth's populated places; what to eat, see and what the stories
+tell come from the app's collections; museums near each city and its Wikivoyage and Wikipedia page names come from
+Wikidata (CC0); the weather is CRU CL 2.0's monthly normals for 1961–1990 (University of East Anglia, New et al. 2002).
+Wikivoyage's text is read live in the browser and credited, not stored in the app.
 
 **The map games' borders** (`scripts/data/play/build-borders.mjs` builds `public/data/play/borders.json`) come from
 the app's own 1:50m map, so a route on screen is a route in the game. Two countries are neighbours when their outlines
