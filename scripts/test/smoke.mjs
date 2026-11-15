@@ -1288,7 +1288,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(800);
   const after = await page.evaluate(() => ({ stack: window.atlas.app.layers.map((l) => l.def.id).join(','), base: window.atlas.app.renderer.baseMap, labels: window.atlas.app.renderer.settings.labels.countries }));
   check(after.stack === 'political' && after.base && after.labels, `closing Time detective brings back today's map and its names (${after.stack})`);
-  // The daily challenge: seven questions; another browser gets the same ones the same day.
+  // The daily challenge: eight questions (one of them Which country in between?); another browser gets the same ones
+  // the same day.
   const dailyQs = async (p) => {
     await p.evaluate(() => window.atlas.learn.startQuiz('daily', 'world'));
     await p.waitForFunction(() => window.atlas.learn.quiz?.kind === 'daily', null, { timeout: 30000 });
@@ -1298,8 +1299,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const other = await open({ viewport: { width: 1000, height: 700 } }, '#p=globe&l=political&c=20,30,1.4&lang=es');
   const d2 = await dailyQs(other.page);
   await other.ctx.close();
-  check(d1.length === 7 && JSON.stringify(d1) === JSON.stringify(d2) && d1[0].startsWith('find') && d1.some((x) => x.startsWith('order')) && d1.some((x) => x.startsWith('detective')), `the daily challenge has 7 questions, the same in a second browser (${d1.map((x) => x.split(':')[0]).join(', ')})`);
-  for (let i = 0; i < 7; i++) {
+  check(d1.length === 8 && JSON.stringify(d1) === JSON.stringify(d2) && d1[0].startsWith('find') && d1.some((x) => x.startsWith('hop')) && d1.some((x) => x.startsWith('order')) && d1.some((x) => x.startsWith('detective')), `the daily challenge has 8 questions, the same in a second browser (${d1.map((x) => x.split(':')[0]).join(', ')})`);
+  for (let i = 0; i < 8; i++) {
     const k = await page.evaluate(() => { const q = window.atlas.learn.quiz; return q.qs[q.i].kind; });
     if (k === 'find' || k === 'where') await page.evaluate(() => [...document.querySelectorAll('.learn-card button')].find((b) => /Show me/.test(b.textContent))?.click());
     else if (k === 'order') { for (let j = 0; j < 3; j++) { await page.evaluate(() => [...document.querySelectorAll('.learn-card .order-row:not(.picked)')][0]?.click()); await page.waitForTimeout(100); } await page.evaluate(() => document.querySelector('.learn-card [data-check]')?.click()); }
@@ -1309,7 +1310,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     await page.waitForTimeout(700);
   }
   const res = await page.evaluate(() => ({ head: document.querySelector('.learn-card .tool-head')?.textContent ?? '', marks: document.querySelector('.learn-card .daily-marks')?.textContent ?? '', rows: document.querySelectorAll('.learn-card .quiz-sum-row').length, share: !!document.querySelector('.learn-card [data-share]'), p: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}') }));
-  check(/Daily challenge #\d+/.test(res.head) && (res.marks.match(/🟩|🟥/gu) ?? []).length === 7 && res.rows === 7 && res.share && !!res.p.badges?.['daily-1'] && res.p.daily?.streak === 1, `the daily result: ${res.marks}, 7 rows, Share, the first daily badge and a 1-day streak`);
+  check(/Daily challenge #\d+/.test(res.head) && (res.marks.match(/🟩|🟥/gu) ?? []).length === 8 && res.rows === 8 && res.share && !!res.p.badges?.['daily-1'] && res.p.daily?.streak === 1, `the daily result: ${res.marks}, 8 rows, Share, the first daily badge and a 1-day streak`);
   await page.evaluate(() => [...document.querySelectorAll('.learn-card .tool-actions button')].find((b) => /Done/.test(b.textContent))?.click());
   await page.waitForTimeout(500);
   await menu('Quiz');
@@ -1317,7 +1318,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => document.querySelector('[data-panel="progress"]').click());
   await page.waitForTimeout(500);
   const prog = await page.evaluate(() => ({ subjects: document.querySelectorAll('.progress [data-subject]').length, got: [...document.querySelectorAll('.progress .badge-chip.got')].map((b) => b.dataset.badge), all: document.querySelectorAll('.progress .badge-chip').length }));
-  check(/Done: \d\/7/.test(done) && prog.subjects === 6 && prog.got.includes('daily-1') && prog.all > 40, `once played, the card says "${done.slice(done.indexOf('Done'), done.indexOf('Done') + 30)}"; your progress shows 6 subjects and ${prog.all} badges (${prog.got.join(', ')} earned)`);
+  check(/Done: \d\/8/.test(done) && prog.subjects === 6 && prog.got.includes('daily-1') && prog.all > 40, `once played, the card says "${done.slice(done.indexOf('Done'), done.indexOf('Done') + 30)}"; your progress shows 6 subjects and ${prog.all} badges (${prog.got.join(', ')} earned)`);
   await page.evaluate(() => document.querySelector('.sheet-close, .sheet [aria-label="Close"]')?.click());
   await page.waitForTimeout(300);
   // On this day: 11 November in the stories (the armistice of 1918), the day after, and a story opened at its step.
@@ -2177,6 +2178,240 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(blue.persia && blue.persia[2] > blue.persia[0] + 30 && lum(blue.persia) > lum(blue.sea) + 65, `Persia's blue stands out from the Persian Gulf (${blue.persia?.slice(0, 3)} against ${blue.sea?.slice(0, 3)})`);
   await page.evaluate(() => window.atlas.time.stories.wars.exit());
   check(!errors.length, `no page errors in v0.24.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 21. More map games (v0.25.0). The Map games panel (today's seven puzzles and the seven games); Pin it (a real tap,
+// then pins on the spot: five rounds, the Sharpshooter badge; hard mode hides the seas' names); Higher or lower (the
+// fact's map shown, the run ending at a miss); Grand tour (a tap on a city, the best order for three stars, land and
+// history tours); Name them all (Spanish names typed in the English app, capitals without accents); Border chain (a
+// tap on a neighbour, refusals); Outline (the shape drawn, a wrong guess showing a neighbour); the daily puzzles the
+// same in a second browser and kept in the panel; the map put back, a quiz closing a game and a game closing a
+// quiz; and "Which country in between?" in the quiz.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {} });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  const boot = async (p, hash) => {
+    await p.goto(url + hash, { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+    await p.reload({ waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+    await p.waitForFunction(() => window.atlas?.play && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+    await p.waitForTimeout(800);
+  };
+  await boot(page, '#p=globe&l=political&c=10,30,1.2&lang=en');
+  const info = (g) => page.evaluate((x) => window.atlas.play[x].info, g);
+  const tapAt = async (lon, lat) => { const p = await page.evaluate(([a, b]) => window.atlas.app.renderer.view.project(a, b), [lon, lat]); if (p) await page.touchscreen.tap(p[0], p[1]); await page.waitForTimeout(400); return !!p; };
+  const mapState = () => page.evaluate(() => ({ names: window.atlas.app.renderer.settings.labels.countries, seas: window.atlas.app.renderer.settings.labels.seas, layers: window.atlas.app.layers.map((l) => l.def.id).join(), game: document.documentElement.classList.contains('has-game'), card: !document.querySelector('.play-card')?.hidden }));
+
+  // The panel.
+  await page.evaluate(() => window.atlas.play.openMenu());
+  await page.waitForSelector('[data-daily]', { timeout: 15000 }).catch(() => {});
+  const panel = await page.evaluate(() => ({ daily: [...document.querySelectorAll('[data-daily]')].map((b) => b.dataset.daily), games: [...document.querySelectorAll('[data-game-open]')].map((b) => b.dataset.gameOpen), head: [...document.querySelectorAll('.sheet .sec-title')].map((x) => x.textContent).join(' | ') }));
+  check(panel.daily.length === 7 && panel.games.join() === 'hop,pin,hilo,tour,names,chain,outline' && /Today · 0\/7/.test(panel.head), `Map games: ${panel.head}; ${panel.games.join(', ')}`);
+
+  // Pin it: its own panel, then a real tap and four pins on the spot.
+  await page.click('[data-game-open="pin"]');
+  await page.waitForSelector('[data-play="start"]', { timeout: 5000 }).catch(() => {});
+  const pinPanel = await page.evaluate(() => ({ packs: document.querySelectorAll('.sheet .chip-row [data-v]').length, back: !!document.querySelector('[data-play="back"]') }));
+  await page.click('.sheet .chip-row [data-v="capitals"]');
+  await page.click('[data-play="start"]');
+  await page.waitForFunction(() => !!window.atlas.play.pin.info, null, { timeout: 15000 }).catch(() => {});
+  await page.waitForTimeout(1500);
+  const pinMap = await mapState();
+  const p0 = await info('pin');
+  await tapAt(p0.place[2], p0.place[3]);
+  const tapped = await info('pin');
+  await page.click('[data-game="confirm"]').catch(() => {});
+  await page.waitForTimeout(600);
+  const r1 = await info('pin');
+  const pinCard = await page.evaluate(() => document.querySelector('.play-card')?.innerText ?? '');
+  for (let i = 0; i < 4; i++) {
+    await page.evaluate(() => window.atlas.play.pin.next());
+    await page.evaluate(() => { const g = window.atlas.play.pin, p = g.info.place; g.tap([p[2], p[3]]); g.confirm(); });
+  }
+  await page.evaluate(() => window.atlas.play.pin.next());
+  const pd = await info('pin');
+  check(pinPanel.packs === 8 && pinPanel.back && !pinMap.names && pinMap.game && pinMap.card && tapped.pin && r1.results[0].km < 400 && /\d+ km/.test(pinCard) && pd.done && pd.done.score > 20000 && pd.done.stars === 3 && pd.done.badges.includes('play-sharp'),
+    `Pin it: ${pinPanel.packs} packs; names hidden; a tap on ${p0.place[0]} lands ${Math.round(r1.results[0].km)} km off; five rounds ${pd.done?.score} ${'★'.repeat(pd.done?.stars ?? 0)}; badges ${pd.done?.badges.join(', ')}`);
+  await page.evaluate(() => window.atlas.play.pin.start({ pack: 'heritage', hard: true }));
+  await page.waitForTimeout(600);
+  const hard = await mapState();
+  check(hard.seas === false && hard.names === false && (await info('pin')).pack === 'heritage', 'Pin it hard mode: no names at all, not even the seas');
+
+  // Higher or lower: the fact's map comes out with the answer; a miss ends the run.
+  await page.evaluate(() => window.atlas.play.hilo.start());
+  await page.waitForTimeout(800);
+  const h0 = await info('hilo');
+  const rightOf = (q) => (q.va >= q.vb ? q.a : q.b), wrongOf = (q) => (q.va >= q.vb ? q.b : q.a);
+  await page.click(`[data-hilo="${rightOf(h0.q)}"]`).catch(() => {});
+  await page.waitForTimeout(1500);
+  const h1 = await info('hilo');
+  const hiloMap = await mapState();
+  const hiloVal = await page.evaluate(() => document.querySelectorAll('.play-card .hilo-val').length);
+  await page.evaluate(() => window.atlas.play.hilo.next());
+  await page.waitForTimeout(400);
+  const h2 = await info('hilo');
+  await page.evaluate((id) => window.atlas.play.hilo.answer(id), wrongOf(h2.q));
+  await page.evaluate(() => window.atlas.play.hilo.next());
+  await page.waitForTimeout(400);
+  const hd = await info('hilo');
+  check(h1.ok && h1.run === 1 && hiloMap.layers.includes(`fact-${h0.q.fact}`) && hiloVal === 2 && hd.done && hd.done.run === 1 && hd.done.score > 0,
+    `Higher or lower: ${h0.q.fact} of ${h0.q.a} and ${h0.q.b}, right (its map shown, both values); a miss ends the run at ${hd.done?.run} with ${hd.done?.score} points`);
+
+  // Grand tour: a tap on a city; the best order gets three stars. (A fixed day that is not today: the same stops twice,
+  // without playing today's puzzle. That day's tour is by land: once, a second start picked other cities.)
+  await page.evaluate(() => window.atlas.play.tour.start({ mode: 'air', day: '2030-01-01' }));
+  await page.waitForTimeout(2500);
+  const t0 = await info('tour');
+  const city = await page.evaluate(() => { const s = window.atlas.play.tour['st']; return s.stops[1].at; });
+  await tapAt(city[0], city[1]);
+  const t1 = await info('tour');
+  for (let i = 2; i < 6; i++) await page.evaluate((x) => window.atlas.play.tour.visit(x), i);
+  const td = await info('tour');
+  await page.evaluate(() => window.atlas.play.tour.start({ mode: 'air', day: '2030-01-01' }));
+  await page.waitForTimeout(800);
+  const t2 = await info('tour');
+  for (const i of td.done.best.slice(1)) await page.evaluate((x) => window.atlas.play.tour.visit(x), i);
+  const tp = await info('tour');
+  check(t0.stops.length === 6 && t1.order.join() === '0,1' && td.done && td.done.score <= 1000 && JSON.stringify(t2.stops) === JSON.stringify(t0.stops) && tp.done?.score === 1000 && tp.done.stars === 3 && tp.done.badges.includes('play-tour'),
+    `Grand tour (${t0.mode}, the same cities twice): ${t0.stops.join(', ')}; a tap visits ${t0.stops[1]}; in order ${td.done?.score}, in the best order ${tp.done?.score} ${'★'.repeat(tp.done?.stars ?? 0)}`);
+  await page.evaluate(() => window.atlas.play.tour.start({ mode: 'land' }));
+  await page.waitForTimeout(1500);
+  const tl = await info('tour');
+  await page.evaluate(() => window.atlas.play.tour.start({ mode: 'history' }));
+  await page.waitForTimeout(2500);
+  const th = await info('tour');
+  const thText = await page.evaluate(() => document.querySelector('.play-card')?.innerText ?? '');
+  await page.evaluate(() => window.atlas.play.tour.giveUp());
+  const tg = await info('tour');
+  check(tl?.mode === 'land' && tl.stops.length === 6 && th?.mode === 'history' && th.stops.length === 6 && tg.done?.gaveUp, `Grand tour by land (${tl?.stops.slice(0, 3).join(', ')}…) and a historical journey (${thText.split('\n')[0].slice(0, 60)}); giving up shows the best order`);
+
+  // Name them all: South America, Spanish names count in the English app; capitals without accents.
+  await page.evaluate(() => window.atlas.play.names.start({ list: 'countries', area: 'SA' }));
+  await page.waitForTimeout(800);
+  const n0 = await info('names');
+  await page.fill('.play-card .names-input', 'Brasil');
+  await page.waitForTimeout(200);
+  const n1 = await info('names');
+  const typed = await page.evaluate((ids) => { const g = window.atlas.play.names; for (const id of ids) g.try(window.atlas.app.data.name(id, 'en')); return g.info; }, n0.ids);
+  const nd = typed;
+  await page.evaluate(() => window.atlas.play.names.start({ list: 'capitals', area: 'SA' }));
+  await page.waitForTimeout(500);
+  const caps = await page.evaluate(() => { const g = window.atlas.play.names; return ['Bogota', 'asuncion', 'BRASÍLIA', 'Paris'].map((x) => g.try(x)); });
+  check(n0.ids.length >= 12 && n1.found.includes('BRA') && nd.done && nd.done.stars === 3 && nd.done.badges.includes('play-names') && caps.join() === 'true,true,true,false',
+    `Name them all: ${n0.ids.length} South American countries ("Brasil" counts), all named ${nd.done?.score} ★★★; capitals typed without accents (Bogota, asuncion, BRASÍLIA; not Paris)`);
+
+  // Border chain: a tap on a neighbour, then refusals.
+  await page.evaluate(() => window.atlas.play.chain.start({ day: '2030-01-01' }));
+  await page.waitForTimeout(2000);
+  const c0 = await page.evaluate(() => window.atlas.play.chain.info);
+  const nb = await page.evaluate(async (first) => { const d = await window.atlas.play.hop.borders(); const n = d.land.filter((x) => x[0] === first || x[1] === first).map((x) => (x[0] === first ? x[1] : x[0])); const all = Object.keys(d.countries); return { n, far: all.find((x) => !n.includes(x) && x !== first && window.atlas.app.data.meta[x]) }; }, c0.chain[0]);
+  const target = await page.evaluate((ids) => { const m = window.atlas.app.data.meta; return ids.map((id) => [id, m[id]?.area ?? 0]).sort((a, b) => b[1] - a[1])[0][0]; }, nb.n);
+  const tm = await page.evaluate((id) => { const m = window.atlas.app.data.meta[id]; return [m.lx, m.ly]; }, target);
+  await tapAt(tm[0], tm[1]);
+  const c1 = await page.evaluate(() => window.atlas.play.chain.info);
+  await page.evaluate((id) => window.atlas.play.chain.add(id), nb.far);
+  const refuse1 = await page.evaluate(() => document.querySelector('.play-card .quiz-fb')?.textContent ?? '');
+  await page.evaluate((id) => window.atlas.play.chain.add(id), c0.chain[0]);
+  const refuse2 = await page.evaluate(() => document.querySelector('.play-card .quiz-fb')?.textContent ?? '');
+  await page.evaluate(() => window.atlas.play.chain.finish('stop'));
+  const cd = await page.evaluate(() => window.atlas.play.chain.info);
+  check(c1.chain.length === 2 && c1.chain[1] === target && /does not border/.test(refuse1) && /already in the chain/.test(refuse2) && cd.done && cd.done.score >= 100,
+    `Border chain from ${c0.chain[0]}: a tap on ${target} adds it; "${refuse1}"; "${refuse2}"; stopped at ${cd.done?.score} points`);
+
+  // Outline: the shape drawn alone; a wrong guess shows a neighbour or a clue; then right at the second try.
+  await page.evaluate(() => window.atlas.play.outline.start());
+  await page.waitForTimeout(1000);
+  const o0 = await info('outline');
+  const ink = await page.evaluate(() => { const c = document.querySelector('.play-card .outline-canvas'); if (!c) return 0; const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data; let n = 0; for (let i = 3; i < d.length; i += 4) if (d[i] > 0) n++; return n / (c.width * c.height); });
+  const wrong = await page.evaluate((id) => (id === 'FRA' ? 'Germany' : 'France'), o0.ids[0]);
+  await page.fill('.play-card .names-input', wrong);
+  await page.press('.play-card .names-input', 'Enter');
+  await page.waitForTimeout(300);
+  const o1 = await info('outline');
+  const miss = await page.evaluate(() => document.querySelector('.play-card')?.innerText ?? '');
+  await page.evaluate((id) => window.atlas.play.outline.guess(window.atlas.app.data.name(id, 'en')), o0.ids[0]);
+  const o2 = await info('outline');
+  check(o0.ids.length === 5 && ink > 0.02 && o1.tries === 1 && (o1.shown.length === 1 || /It is in|begins with/.test(miss)) && /Not /.test(miss) && o2.results[0]?.pts === 700,
+    `Outline: ${o0.ids.join(', ')}; the shape covers ${(ink * 100).toFixed(0)} % of its box; "${wrong}" is wrong (${o1.shown.length ? `${o1.shown[0]} shown around it` : 'a clue'}), right at the second try: ${o2.results[0]?.pts}`);
+
+  // A quiz closes a game, a game closes a quiz, and the map comes back.
+  await page.evaluate(() => window.atlas.learn['startQuiz']('flag', 'world'));
+  await page.waitForTimeout(800);
+  const q1 = await page.evaluate(() => ({ outline: !!window.atlas.play.outline.info, quiz: !!window.atlas.learn.quiz }));
+  await page.evaluate(() => window.atlas.play.chain.start());
+  await page.waitForTimeout(800);
+  const q2 = await page.evaluate(() => ({ chain: !!window.atlas.play.chain.info, quiz: !!window.atlas.learn.quiz }));
+  await page.evaluate(() => window.atlas.play.host.close());
+  await page.waitForTimeout(1000);
+  const back = await mapState();
+  check(!q1.outline && q1.quiz && q2.chain && !q2.quiz && back.names && back.seas !== false && back.layers === 'political' && !back.game && !back.card, `a quiz closes a game and a game closes a quiz; afterwards the names and filters are back (${back.layers})`);
+
+  // Today's puzzles: the same in a second browser, and kept in the panel once played.
+  const firstOf = async (p) => {
+    await p.evaluate(() => window.atlas.play.daily('pin'));
+    await p.waitForFunction(() => !!window.atlas.play.pin.info, null, { timeout: 15000 });
+    const pin = await p.evaluate(() => window.atlas.play.pin.info.place[0]);
+    await p.evaluate(() => window.atlas.play.daily('hilo'));
+    await p.waitForFunction(() => !!window.atlas.play.hilo.info, null, { timeout: 15000 });
+    const hilo = await p.evaluate(() => { const q = window.atlas.play.hilo.info.q; return `${q.fact}:${q.a}-${q.b}`; });
+    await p.evaluate(() => window.atlas.play.daily('outline'));
+    await p.waitForFunction(() => !!window.atlas.play.outline.info, null, { timeout: 15000 });
+    const outline = await p.evaluate(() => window.atlas.play.outline.info.ids.join());
+    await p.evaluate(() => window.atlas.play.host.close());
+    return { pin, hilo, outline };
+  };
+  const day1 = await firstOf(page);
+  const other = await browser.newContext({ viewport: { width: 1200, height: 800 } });
+  const op = await other.newPage();
+  await boot(op, '#p=globe&l=political&c=10,30,1.2&lang=en');
+  const day2 = await firstOf(op);
+  await other.close();
+  await page.evaluate(() => window.atlas.play.daily('chain'));
+  await page.waitForTimeout(1500);
+  await page.evaluate(() => window.atlas.play.chain.finish('stop'));
+  await page.evaluate(() => window.atlas.play.host.close());
+  await page.evaluate(() => window.atlas.play.openMenu());
+  await page.waitForTimeout(600);
+  const kept = await page.evaluate(() => ({ chain: document.querySelector('[data-daily="chain"]')?.className ?? '', text: document.querySelector('[data-daily="chain"]')?.textContent ?? '', head: [...document.querySelectorAll('.sheet .sec-title')][0]?.textContent ?? '', p: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').play }));
+  check(JSON.stringify(day1) === JSON.stringify(day2) && /done/.test(kept.chain) && /Done: \d+/.test(kept.text) && /Today · 1\/7/.test(kept.head) && kept.p.games.pin >= 1 && kept.p.games.chain >= 2,
+    `today's puzzles are the same in a second browser (pin ${day1.pin}; ${day1.hilo}; outlines ${day1.outline}); the daily chain is kept: "${kept.text.slice(0, 50)}", ${kept.head}`);
+
+  // The panel and the progress in Spanish.
+  await page.evaluate(() => window.atlas.app.setLang('es'));
+  await page.evaluate(() => window.atlas.play.openMenu());
+  await page.waitForTimeout(500);
+  const esPanel = await page.evaluate(() => ({ title: document.querySelector('.sheet .sheet-title, .sheet h2')?.textContent ?? '', games: [...document.querySelectorAll('[data-game-open] .mode-title')].map((x) => x.textContent) }));
+  check(/Juegos en el mapa/.test(esPanel.title) && esPanel.games.join() === 'Salto de fronteras,Pon el pin,Más o menos,Gran vuelta,Nómbralos todos,Cadena de fronteras,Silueta', `en español: ${esPanel.games.join(', ')}`);
+  await page.evaluate(() => window.atlas.app.setLang('en'));
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+
+  // Which country in between? in the quiz: two countries filled on the map, four choices, the way across.
+  await page.evaluate(() => window.atlas.learn['startQuiz']('hop', 'SA'));
+  await page.waitForFunction(() => window.atlas.learn.quiz?.kind === 'hop', null, { timeout: 15000 }).catch(() => {});
+  await page.waitForTimeout(1800);
+  const hq = await page.evaluate(() => { const q = window.atlas.learn.quiz, cur = q.qs[q.i], m = window.atlas.app.data.meta; return { n: q.qs.length, cur, sa: m[cur.hop.a].ct === 'SA' || m[cur.hop.b].ct === 'SA', text: document.querySelector('.learn-card .quiz-q')?.textContent ?? '', opts: document.querySelectorAll('.learn-card .quiz-opt').length, names: window.atlas.app.renderer.settings.labels.countries }; });
+  const hb = await page.evaluate(async (cur) => { const d = await window.atlas.play.hop.borders(); const nb = (x) => d.land.filter((e) => e[0] === x || e[1] === x).map((e) => (e[0] === x ? e[1] : e[0])); return { a: nb(cur.hop.a).includes(cur.id), b: nb(cur.hop.b).includes(cur.id), touch: nb(cur.hop.a).includes(cur.hop.b), wrongBoth: cur.options.filter((o) => o !== cur.id && nb(cur.hop.a).includes(o) && nb(cur.hop.b).includes(o)).length }; }, hq.cur);
+  // Green pixels around the first country's centre (its name is drawn on the centre itself).
+  const fill = await page.evaluate((cur) => {
+    const ren = window.atlas.app.renderer, g = document.getElementById('fg').getContext('2d'), m = window.atlas.app.data.meta[cur.hop.a];
+    const p = ren.view.project(m.lx, m.ly);
+    if (!p) return 0;
+    const r = Math.round(30 * ren.view.dpr), d = g.getImageData(Math.round(p[0] * ren.view.dpr) - r, Math.round(p[1] * ren.view.dpr) - r, 2 * r, 2 * r).data;
+    let n = 0;
+    for (let i = 0; i < d.length; i += 4) if (d[i + 1] > d[i] + 60 && d[i + 1] > d[i + 2] + 30) n++;
+    return n / (d.length / 4);
+  }, hq.cur);
+  await page.evaluate(() => { const q = window.atlas.learn.quiz, cur = q.qs[q.i]; const b = [...document.querySelectorAll('.learn-card .quiz-opt')]; b[cur.options.indexOf(cur.id)].click(); });
+  await page.waitForTimeout(500);
+  const hfb = await page.evaluate(() => document.querySelector('.learn-card .quiz-fb')?.textContent ?? '');
+  await page.evaluate(() => window.atlas.learn['stopQuiz']());
+  check(hq.n === 10 && hq.sa && /^Which country do you cross from .+ to .+\?$/.test(hq.text) && hq.opts === 4 && !hq.names && hb.a && hb.b && !hb.touch && hb.wrongBoth === 0 && fill > 0.05 && /^Correct! .+ → .+ → .+/.test(hfb),
+    `Which country in between? (South America first): "${hq.text}" (four choices, names hidden, the first country in green: ${(fill * 100).toFixed(0)} % of the pixels around it); "${hfb}"`);
+
+  check(!errors.length, `no page errors in v0.25.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

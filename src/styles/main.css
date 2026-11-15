@@ -841,6 +841,21 @@ html.orrery-open .learn-card { z-index: 26; }
 .hop-other-path { color: var(--muted); }
 .hop-note { font-size: 12.5px; line-height: 1.4; margin: 8px 0 0; }
 .play-menu .toggles { margin-top: 8px; }
+.play-menu > .pill { margin-bottom: 8px; }
+.play-daily .mode-card { padding: 10px 14px; }
+/* Grand tour: cities not visited yet. */
+.hop-step.left { background: rgba(255,255,255,.08); border-color: var(--line); color: var(--muted); }
+/* Name them all and Outline: the answer box, the clock and the count. */
+.names-bar { display: flex; justify-content: space-between; align-items: center; margin: 6px 0; font-weight: 750; font-size: 14px; }
+.names-input { width: 100%; height: 42px; margin: 4px 0 2px; padding: 0 12px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--chip); color: var(--text); font: inherit; font-size: 16px; }
+.names-input:focus { outline: 2px solid var(--accent); outline-offset: 0; }
+.names-input.miss { animation: names-miss .35s; }
+@keyframes names-miss { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+.names-recent { max-height: 110px; overflow-y: auto; }
+#app .outline-canvas { position: static; inset: auto; display: block; margin: 8px auto 4px; border-radius: 12px; background: rgba(8,14,26,.55); }
+/* Higher or lower: the two countries, and their values once answered. */
+.hilo-opt { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.hilo-val { flex-basis: 100%; font-size: 13px; font-weight: 800; color: var(--text); }
 /* During a game the map is the game's: the filter chips and the legend step aside. */
 html.has-game .chips, html.has-game .legend { display: none; }
 @media (max-width: 720px) {
