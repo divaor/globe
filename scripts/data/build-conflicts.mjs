@@ -1217,7 +1217,8 @@ function find(q) {
 
 /** A collection's picker list (and, but for wars, its name and categories). */
 function indexOf(kind, coll, metas) {
-  metas = [...metas].sort((a, b) => a.t0 - b.t0);
+  // (Two that start on the same day, Darwin and Lincoln, in the order of their ids: the list must not depend on the build.)
+  metas = [...metas].sort((a, b) => a.t0 - b.t0 || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
   if (kind === 'wars') return { conflicts: metas.map(indexEntry) };
   if (kind === 'lives') {
     // Lives: listed by field, with the pairs worth seeing side by side (when both lives are written).
