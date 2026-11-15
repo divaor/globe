@@ -266,6 +266,21 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   It is kept on this device, shared as a link (`#trip=lima,cuzco,la-paz`; `#guide=kyoto` opens one city) and prints
   as a page. Not in the guide: hotels, restaurants by name, prices, visas and safety advice, which change too often to
   keep right.
+- **Art and architecture** (More → Art and architecture): which masterpieces and buildings you can see in which city.
+  - **Masterpieces where they are now:** for 182 museums, their best-known works (2,226, ranked by how many
+    Wikipedias write about them), with a picture, the artist and the date; each picture shows its licence and author,
+    read live from Wikimedia Commons.
+  - **The city's art guide** (the travel guide's Art tab): "In Madrid you can see 110 of the world's best-known
+    works", museum by museum, filtered by painting, sculpture, antiquities or other treasures, by period and by artist.
+  - **Buildings** (the guide's Buildings tab): a city's notable buildings with their architects, by style.
+  - **Artist and architect trails:** every museum that holds an artist's best-known works (Van Gogh, 56 works in 21
+    museums), or every building of an architect (Gaudí's twelve), on the map, and Plan a trip turns the trail into a
+    trip in the travel guide.
+  - **Map filters:** art museums (sized by visitors a year), masterpieces (where they hang, by kind and period) and
+    architectural styles (4,877 buildings, 2,763 of them with a style, from Gothic to Art Nouveau and today's towers).
+  - **Now in:** the art items of the Time travel stories say where each work is today ("Now in: Louvre Museum,
+    Paris"), with a link to that city's art guide.
+  - **Play:** the quiz "Which museum is it in?" and a masterpieces pack in Pin it.
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Read aloud:** guided tours and the Time travel stories read by your device's own voices, in English or Latin
   American Spanish (a Mexican or other Latin American voice before Spain's); the sentence being read is marked, the
@@ -333,6 +348,12 @@ app's own, each with its Wikidata id from Natural Earth's populated places; what
 tell come from the app's collections; museums near each city and its Wikivoyage and Wikipedia page names come from
 Wikidata (CC0); the weather is CRU CL 2.0's monthly normals for 1961–1990 (University of East Anglia, New et al. 2002).
 Wikivoyage's text is read live in the browser and credited, not stored in the app.
+
+**Art and architecture** (`scripts/data/artguide/build-artguide.mjs` builds `public/data/artguide/`): every museum
+near the travel guide's cities with articles in 20 Wikipedias or more, with its works now in its collection or a part
+of it (the Louvre's Department of Paintings), keeping those with three works or more; notable buildings that name
+their architect (or, without one, a style); and where our art items are now. All from Wikidata (CC0), fetched once and
+kept in `scripts/data/artguide/`; pictures are Wikimedia Commons files, loaded by the browser with their licences.
 
 **The map games' borders** (`scripts/data/play/build-borders.mjs` builds `public/data/play/borders.json`) come from
 the app's own 1:50m map, so a route on screen is a route in the game. Two countries are neighbours when their outlines

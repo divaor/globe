@@ -192,6 +192,8 @@ const KINDS: Record<StoryKind, { dir: string; hash: string; icon: string; name: 
   space: { dir: 'space', hash: 'space', icon: '🚀', name: { en: 'Space exploration', es: 'Exploración espacial' }, worlds: true },
 };
 /** Set by space/space.ts: shows another world under a story's step (null: the Earth). */
+/** Where a work of art is now (set by the art guide, v0.27.0): its museum and city, and the city's art guide. */
+export const nowInHook: { get?: (itemId: string) => { name: string; open: (() => void) | null } | null } = {};
 export const worldHook: { show: ((id: string | null) => void) | null } = { show: null };
 const worldOf = (x: { world?: string } | null | undefined) => x?.world ?? 'earth';
 export const storyHashKey = (k: StoryKind) => KINDS[k].hash;
@@ -1439,8 +1441,14 @@ export class StoryMode {
     if (it.why) notes.push(`${t('storyWhy')}: ${tx(it.why)}`);
     if (it.how) notes.push(`${t('storyHow')}: ${tx(it.how)}`);
     if (it.details) notes.push(tx(it.details));
-    const links = it.wiki ? [{ label: t('wikipedia'), href: wikiUrl(it.wiki) }] : [];
+    const links: { label: string; href?: string; onClick?: () => void }[] = it.wiki ? [{ label: t('wikipedia'), href: wikiUrl(it.wiki) }] : [];
     if (it.whs) links.push({ label: 'UNESCO', href: whsUrl(it.whs.ref) });
+    // A work of art: where it is now, and that city's art guide.
+    const now = it.type === 'work' ? (it.id ? nowInHook.get?.(it.id) : null) : null;
+    if (now) {
+      rows.push({ label: lang() === 'es' ? 'Hoy en' : 'Now in', value: now.name, icon: '🏛️' });
+      if (now.open) links.push({ label: lang() === 'es' ? 'Guía de arte de la ciudad' : 'The city’s art guide', onClick: now.open });
+    }
     const sub = [cat ? `${cat.icon} ${tx(cat.name)}` : '', c ? tx(c.name) : ''].filter(Boolean).join(' · ');
     // A Games' host city: its medal table (or a World Cup's last four) under the facts.
     const g = it.type === 'games' ? c?.steps.find((st) => st.games && `games-${st.games.id}` === it.id)?.games : undefined;

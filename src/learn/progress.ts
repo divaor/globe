@@ -13,7 +13,7 @@ export type Subject = 'geo' | 'history' | 'culture' | 'languages' | 'science' | 
 export const SUBJECTS: Record<Subject, { icon: string; en: string; es: string; quizzes: string[] }> = {
   geo: { icon: '🗺️', en: 'Geography', es: 'Geografía', quizzes: ['find', 'flag', 'capital', 'region', 'hop', 'where', 'link'] },
   history: { icon: '🏛️', en: 'History', es: 'Historia', quizzes: ['when', 'order', 'detective', 'era', 'civ', 'journey'] },
-  culture: { icon: '🎨', en: 'Arts and culture', es: 'Arte y cultura', quizzes: ['dish', 'faith', 'listen', 'opening', 'artist', 'site'] },
+  culture: { icon: '🎨', en: 'Arts and culture', es: 'Arte y cultura', quizzes: ['dish', 'faith', 'listen', 'opening', 'artist', 'site', 'museum'] },
   languages: { icon: '🗣️', en: 'Languages', es: 'Lenguas', quizzes: ['script', 'family'] },
   science: { icon: '🔬', en: 'Science and nature', es: 'Ciencia y naturaleza', quizzes: ['period', 'plague', 'disaster', 'inventor', 'world', 'landed', 'constellation', 'element'] },
   sport: { icon: '🏅', en: 'Sport', es: 'Deporte', quizzes: ['champion'] },

@@ -1,7 +1,8 @@
 // Pin it's places (v0.25.0): what the game asks you to pin, gathered from the app's own data into one small file
-// (public/data/play/pins.json), so a phone does not load every story to play. Seven packs:
+// (public/data/play/pins.json), so a phone does not load every story to play. Eight packs:
 // capitals (the app's cities), World Heritage sites (the World Heritage list), great structures, battles (every
-// war in Time travel), dishes, inventions and museums (the stories' items). Each place: its name in English and
+// war in Time travel), dishes, inventions and museums (the stories' items), and masterpieces (the art guide's
+// best-known works where they hang today, v0.27.0). Each place: its name in English and
 // Spanish, where it is, an icon, and what is said after the answer (its country, or the place and date).
 // Usage: node scripts/data/play/build-pins.mjs [--check]
 import fs from 'node:fs';
@@ -46,6 +47,17 @@ packs.structures = items('structures', (x) => x.type === 'structure' || x.type =
 packs.dishes = items('food', (x) => x.type === 'dish');
 packs.inventions = items('inventions', (x) => x.type === 'invention');
 packs.museums = items('art', (x) => x.cat === 'museum' && x.type === 'institution');
+// Masterpieces (v0.27.0): the art guide's best-known works where they hang, with the museum and its city.
+{
+  const a = read('artguide/collections.json'), g = read('guide/index.json');
+  const city = new Map(g.cities.map((c) => [c[0], [c[1], c[2]]]));
+  const icon = { painting: '🎨', sculpture: '🗿', antiquity: '🏺', object: '💎' };
+  packs.masterpieces = a.works.filter((w) => w[8] >= 20).map((w) => {
+    const m = a.museums[w[4]], c = city.get(m[5]);
+    const mn = [m[1], m[2] || m[1]];
+    return place([w[1], w[2] || w[1]], [m[3], m[4]], icon[w[3]] ?? '🖼️', [`${mn[0]}${c ? `, ${c[0]}` : ''}`, `${mn[1]}${c ? `, ${c[1]}` : ''}`]);
+  });
+}
 // Battles: every war in Time travel, with the war and the year.
 {
   const seen = new Set();

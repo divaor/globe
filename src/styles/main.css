@@ -1016,3 +1016,13 @@ div.guide-item { cursor: default; }
   .guide-print h2 { font-size: 15pt; margin: 16pt 0 4pt; border-bottom: 1px solid #999; }
   .guide-print section { break-inside: avoid; }
 }
+
+/* ---- Art and architecture (v0.27.0) ---- */
+.chip.sm { height: 28px; padding: 0 10px; font-size: 12.5px; }
+.art-filters { margin: 6px 0; flex-wrap: wrap; }
+.art-artist-select { width: 100%; height: 36px; border-radius: 10px; border: 1px solid var(--line-strong); background: var(--chip); color: var(--text); font: inherit; padding: 0 10px; margin: 4px 0 6px; }
+.art-museum-head { border: 0; background: none; color: inherit; font: inherit; text-transform: none; letter-spacing: 0; font-size: 14px; font-weight: 750; padding: 0; cursor: pointer; text-align: left; }
+.sec-title.art-museum { text-transform: none; letter-spacing: 0; }
+.art-dot { display: inline-block; width: 10px; height: 10px; border-radius: 5px; margin-right: 2px; }
+.art-credit { font-size: 11.5px; }
+.art-credit a { color: var(--muted); }
