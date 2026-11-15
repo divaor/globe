@@ -2221,6 +2221,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(1500);
   const pinMap = await mapState();
   const p0 = await info('pin');
+  // A player turns the globe to the place first (Pin it doesn't): it may be on the far side after the earlier sections.
+  await page.evaluate(([a, b]) => { const r = window.atlas.app.renderer; r.view.flyTo({ lon: a, lat: b }, 0); r.requestRender(); }, [p0.place[2], p0.place[3]]);
+  await page.waitForTimeout(600);
   await tapAt(p0.place[2], p0.place[3]);
   const tapped = await info('pin');
   await page.click('[data-game="confirm"]').catch(() => {});
@@ -2233,8 +2236,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   }
   await page.evaluate(() => window.atlas.play.pin.next());
   const pd = await info('pin');
-  check(pinPanel.packs === 9 && pinPanel.back && !pinMap.names && pinMap.game && pinMap.card && tapped.pin && r1.results[0].km < 400 && /\d+ km/.test(pinCard) && pd.done && pd.done.score > 20000 && pd.done.stars === 3 && pd.done.badges.includes('play-sharp'),
-    `Pin it: ${pinPanel.packs} packs; names hidden; a tap on ${p0.place[0]} lands ${Math.round(r1.results[0].km)} km off; five rounds ${pd.done?.score} ${'★'.repeat(pd.done?.stars ?? 0)}; badges ${pd.done?.badges.join(', ')}`);
+  check(pinPanel.packs === 9 && pinPanel.back && !pinMap.names && pinMap.game && pinMap.card && tapped.pin && r1.results?.[0]?.km < 400 && /\d+ km/.test(pinCard) && pd.done && pd.done.score > 20000 && pd.done.stars === 3 && pd.done.badges.includes('play-sharp'),
+    `Pin it: ${pinPanel.packs} packs; names hidden; a tap on ${p0.place[0]} lands ${Math.round(r1.results?.[0]?.km)} km off; five rounds ${pd.done?.score} ${'★'.repeat(pd.done?.stars ?? 0)}; badges ${pd.done?.badges.join(', ')}`);
   await page.evaluate(() => window.atlas.play.pin.start({ pack: 'heritage', hard: true }));
   await page.waitForTimeout(600);
   const hard = await mapState();

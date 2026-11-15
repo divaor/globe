@@ -140,7 +140,9 @@ export class View {
     }
     if (this.fly) {
       const f = this.fly;
-      const p = Math.min(1, (now - f.start) / f.duration);
+      // A zero duration jumps straight there (0 / 0 would make the camera NaN); a frame stamped just before the
+      // flight began must not run it backwards.
+      const p = f.duration > 0 ? Math.min(1, Math.max(0, (now - f.start) / f.duration)) : 1;
       const e = easeInOut(p);
       this.lon = lerp(f.from.lon, f.to.lon, e);
       this.lat = lerp(f.from.lat, f.to.lat, e);
