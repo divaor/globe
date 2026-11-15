@@ -23,9 +23,10 @@ let failures = 0;
 for (const entry of index) {
   if (only && !only.includes(entry.id)) continue;
   const before = errors.length;
-  // In the mode, the bar's list button switches conflicts; otherwise Time travel opens the list.
+  // In the mode, the bar's list button switches conflicts (not its first button: read aloud comes first where the
+  // browser has voices); otherwise Time travel opens the list.
   const inMode = await page.evaluate(() => window.atlas.app.mode === 'wars');
-  if (inMode) await page.evaluate(() => document.querySelector('.wb-tools .icon-btn').click());
+  if (inMode) await page.evaluate(() => document.querySelector('.wb-tools .wb-list').click());
   else {
     await page.tap('[data-dock="time"]');
     await page.waitForTimeout(300);

@@ -27,6 +27,8 @@ import { loadLandings, type Landing } from '../space/surface';
 import { thumbUrl, type Space } from '../space/space';
 import type { Sky } from '../sky/sky';
 import { ORIGINS, originName, mainOrigin, type Elements, type Element } from '../sky/elements';
+import { Borders, type BorderData } from '../play/route';
+import type { RenderCtx } from '../layers/types';
 import { recordAnswer, recordQuiz, recordDaily, recordDailySubjects, recordTour, dailyResult, dayKey, current, progress, progressPanel, BADGES, type Badge } from './progress';
 
 const es = () => lang() === 'es';
@@ -42,7 +44,7 @@ function seeded(seed: number): () => number {
 /** FNV-1a: a number from a string (the day). */
 const hash = (str: string) => { let x = 0x811c9dc5; for (let i = 0; i < str.length; i++) { x ^= str.charCodeAt(i); x = Math.imul(x, 0x01000193); } return x >>> 0; };
 
-type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family' | 'plague' | 'disaster' | 'listen' | 'opening' | 'artist' | 'site' | 'inventor' | 'order' | 'detective' | 'daily' | 'world' | 'landed' | 'constellation' | 'element';
+type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family' | 'plague' | 'disaster' | 'listen' | 'opening' | 'artist' | 'site' | 'inventor' | 'order' | 'detective' | 'daily' | 'world' | 'landed' | 'constellation' | 'element' | 'hop';
 /** An item of a story collection, tagged with its collection. */
 interface QItem extends CollectionItem { kind: StoryKind; pop?: number }
 /** A site of data/layers/heritage.json (scripts/data/world-heritage/build.py). */
@@ -58,6 +60,8 @@ interface Q {
   space?: { world: string; at?: [number, number] };
   /** Which constellation? (the constellation drawn alone) and Where was this element made? (its symbol). */
   sky?: { con?: string; el?: string };
+  /** Which country in between?: the two countries that do not touch (the answer, `id`, is the one between them). */
+  hop?: { a: string; b: string };
 }
 /** On this day: a story step or item with a full date: story key ("wars/ww1"), step (from 0), date, icon, title. */
 type OtdEntry = [string, number, string, string, string, string];
@@ -100,9 +104,11 @@ const yearOf = (d: string) => Number(/^-?\d+/.exec(d)?.[0] ?? 0);
 /** An item's key: the same thing can be in two collections. */
 const itemKey = (x: QItem) => x.id ?? x.name.en;
 /** The quizzes whose answer is a tap on the map (the map's names are hidden), and Time detective's old borders. */
-const MAP_QUIZZES: QuizKind[] = ['find', 'where', 'region', 'detective'];
+/** Which country in between? leaves out the borders that only an exclave makes. */
+const HOP_SKIP = ['kaliningrad', 'nakhchivan', 'cabinda'];
+const MAP_QUIZZES: QuizKind[] = ['find', 'where', 'region', 'detective', 'hop'];
 
-/** The daily challenge: the same seven questions for everyone on a day (by the local date); the seventh's quiz changes daily. */
+/** The daily challenge: the same eight questions for everyone on a day (by the local date); the eighth's quiz changes daily. */
 const DAILY_FIRST = Date.UTC(2026, 10, 13);
 const dailyNumber = (day: string) => { const [y, m, d] = day.split('-').map(Number); return Math.round((Date.UTC(y, m - 1, d) - DAILY_FIRST) / 864e5) + 1; };
 const DAILY_ROTATE: QuizKind[] = ['site', 'inventor', 'artist', 'dish', 'champion', 'era', 'civ', 'journey', 'faith', 'plague', 'disaster', 'script', 'opening', 'period'];
@@ -234,6 +240,7 @@ export class Learn {
       if (!q || q.kind !== 'region' || !rg) return;
       drawRegions(rc, rg.list, (r) => this.regionMark(r), (r) => this.regionName(r));
     });
+    app.renderer.overlays.add((rc) => this.drawHop(rc));
     app.renderer.overlays.add((rc) => {
       const { ctx } = rc;
       for (const [pin, r] of [...this.pins.map((x) => [x, 7] as const), ...(this.pin ? [[this.pin, 9] as const] : [])]) {
@@ -280,6 +287,7 @@ export class Learn {
       ['flag', '🏳️', L('Flags', 'Banderas'), L('Which country has this flag?', '¿De qué país es esta bandera?')],
       ['capital', '🏛️', L('Capitals', 'Capitales'), L('Pick the right capital city.', 'Elige la capital correcta.')],
       ['region', '🗺️', L('States and provinces', 'Estados y provincias'), L('Tap the state or province in the United States, Mexico, Canada and 45 more countries.', 'Toca el estado o la provincia en Estados Unidos, México, Canadá y 45 países más.')],
+      ['hop', '🧭', L('Which country in between?', '¿Qué país hay en medio?'), L('Two countries that do not touch, and one country between them: which one do you cross?', 'Dos países que no se tocan y un país entre ellos: ¿cuál cruzas?')],
       ['order', '🔢', L('Put them in order', 'Ordénalos en el tiempo'), L('Four things from the stories, such as a temple, an invention and a painting: put them in time, oldest first.', 'Cuatro cosas de las historias, como un templo, un invento y una pintura: ordénalas en el tiempo, de la más antigua a la más reciente.')],
       ['detective', '🕵️', L('Time detective', 'Detective del tiempo'), L('A map of old borders with no names on it: when is it from?', 'Un mapa de fronteras antiguas sin nombres: ¿de cuándo es?')],
       ['where', '📍', L('Where in the world?', '¿Dónde está?'), L('Tap on the globe where a monument, a work, a dish or a fossil comes from.', 'Toca en el globo de dónde es un monumento, una obra, un plato o un fósil.')],
@@ -335,9 +343,9 @@ export class Learn {
       return c;
     };
     const table = this.quizTable();
-    const list = h('div', { class: 'mode-list' }, ...table.slice(0, 4).map(card));
+    const list = h('div', { class: 'mode-list' }, ...table.slice(0, 5).map(card));
     const games = h('div', { class: 'mode-list' }, ...table.filter(([k]) => k === 'order' || k === 'detective').map(card));
-    const list2 = h('div', { class: 'mode-list' }, ...table.slice(6).map(card));
+    const list2 = h('div', { class: 'mode-list' }, ...table.slice(7).map(card));
     this.shell.openPanel('quiz', L('Quiz', 'Concurso'), h('div', null, this.dailyCards(), h('h3', { class: 'sec-title' }, L('Region', 'Región')), regionRow, h('h3', { class: 'sec-title' }, L('Game', 'Juego')), list,
       h('h3', { class: 'sec-title' }, L('Games of time', 'Juegos del tiempo')), games,
       h('h3', { class: 'sec-title' }, L('History, culture, life, sport and travel', 'Historia, cultura, vida, deporte y viajes')), list2));
@@ -354,7 +362,7 @@ export class Learn {
       h('span', { class: 'mode-text' }, h('span', { class: 'mode-title' }, `${L('Daily challenge', 'Reto del día')} #${dailyNumber(day)} · ${date}`),
         h('span', { class: 'mode-desc' }, done
           ? `${L('Done', 'Hecho')}: ${done.s}/${done.n} ${done.m.replace(/y/g, '🟩').replace(/n/g, '🟥')}${streak ? ` · 🔥 ${streak}` : ''} · ${L('a new one tomorrow', 'mañana hay otro')}`
-          : `${L('Seven questions, the same for everyone today', 'Siete preguntas, las mismas para todos hoy')}${streak ? ` · 🔥 ${inARow(streak)}` : ''}`)));
+          : `${L('Eight questions, the same for everyone today', 'Ocho preguntas, las mismas para todos hoy')}${streak ? ` · 🔥 ${inARow(streak)}` : ''}`)));
     daily.addEventListener('click', () => void (done ? this.showDailyDone() : this.startQuiz('daily', 'world')));
     const earned = Object.keys(p.badges).length;
     const prog = h('button', { type: 'button', class: 'mode-card', 'data-panel': 'progress' }, h('span', { class: 'mode-icon' }, '🏅'),
@@ -376,8 +384,8 @@ export class Learn {
     if (kind === 'link') { await this.startLinkQuiz(); return; }
     if (kind === 'family') { await this.startFamilyQuiz(); return; }
     if (kind === 'daily') { await this.startDaily(); return; }
-    const qs = kind === 'world' ? await this.worldQs(10) : kind === 'landed' ? await this.landedQs(10) : kind === 'constellation' ? await this.constellationQs(10) : kind === 'element' ? await this.elementQs(10) : kind === 'order' ? await this.orderQs(10) : kind === 'detective' ? await this.detectiveQs(10) : ITEM_QUIZZES.includes(kind) ? await this.itemQs(kind, 10) : this.countryQs(kind, region, 10);
-    if (!qs?.length) { this.needsData(kind === 'detective' ? L('This game needs its maps; check your connection.', 'Este juego necesita sus mapas; revisa tu conexión.') : undefined); return; }
+    const qs = kind === 'world' ? await this.worldQs(10) : kind === 'landed' ? await this.landedQs(10) : kind === 'constellation' ? await this.constellationQs(10) : kind === 'element' ? await this.elementQs(10) : kind === 'order' ? await this.orderQs(10) : kind === 'detective' ? await this.detectiveQs(10) : kind === 'hop' ? await this.hopQs(10, region) : ITEM_QUIZZES.includes(kind) ? await this.itemQs(kind, 10) : this.countryQs(kind, region, 10);
+    if (!qs?.length) { this.needsData(kind === 'detective' ? L('This game needs its maps; check your connection.', 'Este juego necesita sus mapas; revisa tu conexión.') : kind === 'hop' ? L('This quiz needs the border data; check your connection.', 'Este concurso necesita los datos de fronteras; revisa tu conexión.') : undefined); return; }
     await this.begin(kind, region, qs);
   }
 
@@ -421,6 +429,8 @@ export class Learn {
       const r = this.det?.regions.find((x) => x.id === cur.det!.region);
       if (r && this.quiz === q) this.app.renderer.view.flyTo({ lon: r.cam[0], lat: r.cam[1], zoom: r.cam[2] }, 1400);
     } else await this.time.history.quizMap(null);
+    this.hopShow = kind === 'hop' && cur?.hop ? cur : null;
+    if (this.hopShow && this.quiz === q) this.fitCountries([cur.hop!.a, cur.hop!.b, cur.id]);
     this.app.renderer.requestRender();
   }
 
@@ -940,20 +950,120 @@ export class Learn {
     return l ? (es() ? l.es : l.en) : String(y);
   }
 
+  // ---- Which country in between? (a Border hop of one country, from the Map games' border data)
+
+  private hopGraph: Borders | null | undefined;
+  private hopList: [string, string, string][] | null = null;
+  private hopShow: Q | null = null;
+  /** Two countries that do not touch, no more than 2,500 km apart, with just one neighbour in common by land ([a, between,
+   *  b]). Borders that only an exclave makes (Kaliningrad, Nakhchivan, Cabinda) are left out: from Germany to Russia is
+   *  not via Poland. */
+  private async hopPairs(): Promise<[string, string, string][]> {
+    if (this.hopList) return this.hopList;
+    if (this.hopGraph === undefined) {
+      try {
+        const data = await loadJSON<BorderData>('play/borders.json');
+        this.hopGraph = new Borders({ ...data, links: [], land: data.land.filter((x) => !HOP_SKIP.includes(x[2] ?? '')) });
+      } catch { this.hopGraph = null; }
+    }
+    const g = this.hopGraph;
+    if (!g) return [];
+    const ok = new Set(this.pool('world'));
+    const out: [string, string, string][] = [];
+    for (const a of [...ok].sort()) {
+      const na = new Set(g.neighbours(a));
+      for (const m of na) {
+        if (!this.app.data.meta[m]) continue;
+        for (const b of g.neighbours(m)) {
+          if (b <= a || !ok.has(b) || na.has(b)) continue;
+          const common = g.neighbours(b).filter((x) => na.has(x));
+          // Near enough to be a question about a region, not "Mongolia to Norway through Russia".
+          const pa = this.app.data.meta[a], pb = this.app.data.meta[b];
+          if (common.length === 1 && geoDistance([pa.lx, pa.ly], [pb.lx, pb.ly]) * 6371 <= 2500) out.push([a, m, b]);
+        }
+      }
+    }
+    this.hopList = out.sort((x, y) => x.join().localeCompare(y.join()));
+    return this.hopList;
+  }
+
+  /** Questions: the country between two others, among four (the wrong ones border one of the two, never both). */
+  private async hopQs(n: number, region = 'world'): Promise<Q[]> {
+    const all = await this.hopPairs();
+    const g = this.hopGraph;
+    if (!g || !n) return [];
+    const meta = this.app.data.meta;
+    // A continent's pairs first; when it has too few (South America, Oceania), others make up the ten.
+    const here = (x: [string, string, string]) => region === 'world' || meta[x[0]]?.ct === region || meta[x[2]]?.ct === region;
+    const mine = shuffle(all.filter(here)).slice(0, n);
+    const list = [...mine, ...shuffle(all.filter((x) => !here(x))).slice(0, n - mine.length)];
+    const pool = this.pool('world');
+    return list.map(([a, m, b]) => {
+      const near = [...new Set([...g.neighbours(a), ...g.neighbours(b)])].filter((x) => x !== m && x !== a && x !== b && meta[x]).sort();
+      const wrong = shuffle(near).slice(0, 3);
+      if (wrong.length < 3) wrong.push(...shuffle(pool.filter((x) => meta[x].ct === meta[m].ct && ![m, a, b, ...wrong].includes(x)).sort()).slice(0, 3 - wrong.length));
+      const [x, y] = rand() < 0.5 ? [a, b] : [b, a];
+      return { id: m, kind: 'hop' as QuizKind, options: shuffle([m, ...wrong]), hop: { a: x, b: y } };
+    });
+  }
+
+  private hopQuestion(hp: { a: string; b: string }): string {
+    const A = this.app.data.name(hp.a, lang()), B = this.app.data.name(hp.b, lang());
+    return L(`Which country do you cross from ${A} to ${B}?`, `¿Qué país cruzas para ir de ${A} a ${B}?`);
+  }
+
+  /** "Peru → Bolivia → Paraguay". */
+  private hopWay(cur: Q): string {
+    return [cur.hop!.a, cur.id, cur.hop!.b].map((x) => this.app.data.name(x, lang())).join(' → ');
+  }
+
+  /** Frames a few countries on the globe. */
+  private fitCountries(ids: string[]) {
+    const pts = ids.map((id) => this.app.data.meta[id]).filter(Boolean).map((m) => [m.lx, m.ly] as [number, number]);
+    if (!pts.length) return;
+    let x = 0, y = 0, z = 0;
+    for (const [lo, la] of pts) { const p = (lo * Math.PI) / 180, q = (la * Math.PI) / 180; x += Math.cos(q) * Math.cos(p); y += Math.cos(q) * Math.sin(p); z += Math.sin(q); }
+    const lon = (Math.atan2(y, x) * 180) / Math.PI, lat = (Math.atan2(z, Math.hypot(x, y)) * 180) / Math.PI;
+    let span = 0;
+    for (const p of pts) for (const q of pts) span = Math.max(span, (geoDistance(p, q) * 180) / Math.PI);
+    const zoom = Math.max(1.1, Math.min(6.5, 140 / Math.max(8, span * 1.6))) * (window.innerWidth < 600 ? 0.85 : 1);
+    this.app.renderer.view.flyTo({ lon, lat, zoom });
+  }
+
+  /** The two countries (green and gold), and once answered the one between them (magenta, outlined), with their names. */
+  private drawHop(rc: RenderCtx) {
+    const q = this.quiz, cur = this.hopShow;
+    if (!q || !cur?.hop) return;
+    const reveal = q.done || (q.answered && q.qs[q.i] === cur);
+    const { ctx } = rc;
+    ctx.save(); ctx.globalAlpha = 0.85;
+    rc.fillCountry(cur.hop.a, '#2ecc71');
+    rc.fillCountry(cur.hop.b, '#f5c542');
+    // Magenta: unlike a blue, it stands out among the political map's colours (Poland among Europe's blues).
+    if (reveal) rc.fillCountry(cur.id, '#e84393');
+    ctx.restore();
+    for (const id of reveal ? [cur.hop.a, cur.id, cur.hop.b] : [cur.hop.a, cur.hop.b]) {
+      const m = this.app.data.meta[id], p = m && rc.project(m.lx, m.ly);
+      // The answer's name first, so it is the one kept when the names would overlap.
+      if (p) rc.labels.add({ text: this.app.data.name(id, lang()), x: p[0], y: p[1], align: 'center', priority: id === cur.id ? 3200 : 3000, size: 12.5, weight: 800, color: '#fff', halo: 'rgba(0,0,0,0.85)' });
+    }
+  }
+
   // ---- Daily challenge
 
-  /** Seven questions, the same for everyone today: a country, a flag, where, when, an order, a map's year, and one
-   *  more whose quiz changes each day. Everything is loaded before the seeded choices, so they don't depend on it. */
+  /** Eight questions, the same for everyone today: a country, a flag, the country in between two others, where, when,
+   *  an order, a map's year, and one more whose quiz changes each day. Everything is loaded before the seeded choices,
+   *  so they don't depend on it. */
   private async startDaily() {
     const day = dayKey();
     if (dailyResult(day)) { this.showDailyDone(); return; }
     const num = dailyNumber(day);
     const last = DAILY_ROTATE[((num % DAILY_ROTATE.length) + DAILY_ROTATE.length) % DAILY_ROTATE.length];
-    await Promise.all([this.orderPool(), this.loadDetective(), this.itemQs('where', 0), this.itemQs('when', 0), this.itemQs(last, 0)]);
+    await Promise.all([this.orderPool(), this.loadDetective(), this.hopPairs(), this.itemQs('where', 0), this.itemQs('when', 0), this.itemQs(last, 0)]);
     rand = seeded(hash(`atlas-daily:${day}`));
     let qs: Q[] = [];
     try {
-      const parts = [this.countryQs('find', 'world', 1), this.countryQs('flag', 'world', 1), await this.itemQs('where', 1), await this.itemQs('when', 1), await this.orderQs(1), await this.detectiveQs(1), await this.itemQs(last, 1)];
+      const parts = [this.countryQs('find', 'world', 1), this.countryQs('flag', 'world', 1), await this.hopQs(1), await this.itemQs('where', 1), await this.itemQs('when', 1), await this.orderQs(1), await this.detectiveQs(1), await this.itemQs(last, 1)];
       qs = parts.flatMap((x) => x ?? []);
     } finally { rand = Math.random; }
     if (qs.length < 5) { this.needsData(); return; }
@@ -1170,6 +1280,7 @@ export class Learn {
       else if (kind === 'where' && cur.item) add(this.card, h('div', { class: 'quiz-peek-q' }, `${cur.item.icon} ${tx(cur.item.name)}`));
       else if (kind === 'region') { const r = this.regions?.list.find((x) => x.id === cur.id); if (r) add(this.card, h('div', { class: 'quiz-peek-q' }, L(`Where is ${this.regionName(r)}?`, `¿Dónde está ${this.regionName(r)}?`))); }
       else if (kind === 'detective') add(this.card, h('div', { class: 'quiz-peek-q' }, `🕵️ ${L('When is this map from?', '¿De cuándo es este mapa?')}`));
+      else if (kind === 'hop' && cur.hop) add(this.card, h('div', { class: 'quiz-peek-q' }, this.hopQuestion(cur.hop)));
       return;
     }
     // In a daily challenge, each question says which quiz it is from.
@@ -1187,6 +1298,7 @@ export class Learn {
     if (kind === 'flag') add(this.card, h('div', { class: 'quiz-q' }, L('Which country has this flag?', '¿De qué país es esta bandera?')),
       h('img', { class: 'quiz-flag', src: dataUrl(`../flags/${(this.app.data.meta[cur.id].a2 ?? '').toLowerCase()}.svg`), alt: '' }));
     if (kind === 'capital') add(this.card, h('div', { class: 'quiz-q' }, L(`What is the capital of ${name}?`, `¿Cuál es la capital de ${name}?`)));
+    if (kind === 'hop' && cur.hop) add(this.card, h('div', { class: 'quiz-q' }, this.hopQuestion(cur.hop)));
     if (cur.options) {
       const opts = h('div', { class: 'quiz-opts' });
       for (const o of cur.options) {
@@ -1291,6 +1403,13 @@ export class Learn {
       this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${right}.` });
       return;
     }
+    if (cur.hop) {
+      // The way across comes out on the map: the country between them is filled in and outlined.
+      this.app.renderer.selection = cur.id;
+      this.app.renderer.requestRender();
+      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${this.hopWay(cur)}` });
+      return;
+    }
     this.showCountry(cur.id);
     const name = this.app.data.name(cur.id, lang());
     this.renderQuiz({ ok, text: ok ? L(`Correct! ${flagEmoji(this.app.data.meta[cur.id].a2)} ${name}`, `¡Correcto! ${flagEmoji(this.app.data.meta[cur.id].a2)} ${name}`)
@@ -1389,7 +1508,7 @@ export class Learn {
     if (kind === 'link') return this.linkRow(cur);
     if (kind === 'family') return this.familyRow(cur);
     const it = cur.item;
-    const name = it ? tx(it.name) : this.app.data.name(cur.id, lang());
+    const name = it ? tx(it.name) : cur.hop ? this.hopWay(cur) : this.app.data.name(cur.id, lang());
     const right = it
       ? (kind === 'where' ? (it.place ? tx(it.place) : '') : kind === 'when' ? itemWhen(it, Math.min(...(cur.options ?? [cur.id]).map(Number))) : this.optionLabel(kind, cur.id, cur))
       : kind === 'capital' ? this.capital(cur.id) : '';
@@ -1418,6 +1537,7 @@ export class Learn {
       void this.time.history.quizMap(null);
       this.pins = [];
       if (it) this.showItem(it);
+      else if (cur.hop) { this.pin = null; this.hopShow = cur; this.app.renderer.selection = cur.id; this.fitCountries([cur.hop.a, cur.hop.b, cur.id]); }
       else {
         const m = this.app.data.meta[cur.id];
         this.pin = m ? { lon: m.lx, lat: m.ly, text: name } : null;
@@ -1801,6 +1921,7 @@ export class Learn {
     stopClip(250, 'card');
     this.app.renderer.settings.labels = { ...this.quiz.savedLabels };
     this.quiz = null;
+    this.hopShow = null;
     this.pin = null;
     this.pins = [];
     this.regions = null;

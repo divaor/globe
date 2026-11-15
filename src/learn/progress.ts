@@ -11,7 +11,7 @@ const KEY = 'atlas-globe:progress';
 export type Subject = 'geo' | 'history' | 'culture' | 'languages' | 'science' | 'sport';
 /** The subjects and their quizzes (the daily challenge counts each question for its own quiz's subject). */
 export const SUBJECTS: Record<Subject, { icon: string; en: string; es: string; quizzes: string[] }> = {
-  geo: { icon: '🗺️', en: 'Geography', es: 'Geografía', quizzes: ['find', 'flag', 'capital', 'region', 'where', 'link'] },
+  geo: { icon: '🗺️', en: 'Geography', es: 'Geografía', quizzes: ['find', 'flag', 'capital', 'region', 'hop', 'where', 'link'] },
   history: { icon: '🏛️', en: 'History', es: 'Historia', quizzes: ['when', 'order', 'detective', 'era', 'civ', 'journey'] },
   culture: { icon: '🎨', en: 'Arts and culture', es: 'Arte y cultura', quizzes: ['dish', 'faith', 'listen', 'opening', 'artist', 'site'] },
   languages: { icon: '🗣️', en: 'Languages', es: 'Lenguas', quizzes: ['script', 'family'] },
@@ -39,10 +39,14 @@ export interface Progress {
     rounds: number; perfect: number; light: number; continents3: number;
     best: Record<string, number>; knowledge: string[];
     daily: Streak & { results: Record<string, { score: number; stars: number }> };
+    /** v0.25.0: times each map game was played, today's puzzles played (by day, by game), and feats done once. */
+    games: Record<string, number>;
+    dailies: Record<string, Record<string, { score: number; stars: number }>>;
+    feats: string[];
   };
 }
 
-const emptyPlay = (): Progress['play'] => ({ rounds: 0, perfect: 0, light: 0, continents3: 0, best: {}, knowledge: [], daily: { last: '', streak: 0, best: 0, results: {} } });
+const emptyPlay = (): Progress['play'] => ({ rounds: 0, perfect: 0, light: 0, continents3: 0, best: {}, knowledge: [], daily: { last: '', streak: 0, best: 0, results: {} }, games: {}, dailies: {}, feats: [] });
 const empty = (): Progress => ({ right: {}, played: {}, perfect: {}, kinds: [], days: {}, daily: { last: '', streak: 0, best: 0, results: {} }, tours: [], badges: {}, play: emptyPlay() });
 let cache: Progress | null = null;
 export function progress(): Progress {
@@ -96,6 +100,13 @@ export const BADGES: Badge[] = [
   { id: 'play-light', icon: '🪶', en: 'Light traveller', es: 'Viajero ligero', how: { en: 'A perfect fewest-people route', es: 'Una ruta perfecta de menos gente' }, goal: 1, have: (p) => p.play.light },
   { id: 'play-3cont', icon: '🌐', en: 'Three continents', es: 'Tres continentes', how: { en: 'One route across three continents', es: 'Una ruta por tres continentes' }, goal: 1, have: (p) => p.play.continents3 },
   { id: 'play-knowledge', icon: '🎓', en: 'Know the map', es: 'Conoces el mapa', how: { en: 'Finish every knowledge round', es: 'Termina todas las rondas de conocimiento' }, goal: KNOWLEDGE_ROUNDS, have: (p) => p.play.knowledge.length },
+  { id: 'play-sharp', icon: '🎯', en: 'Sharpshooter', es: 'Puntería', how: { en: 'A Pin it pin within 25 km', es: 'Un pin de Pon el pin a menos de 25 km' }, goal: 1, have: (p) => Number(p.play.feats.includes('pin-25km')) },
+  { id: 'play-hilo', icon: '📈', en: 'Ten in a row', es: 'Diez seguidas', how: { en: '10 right in a row in Higher or lower', es: '10 aciertos seguidos en Más o menos' }, goal: 1, have: (p) => Number(p.play.feats.includes('hilo-10')) },
+  { id: 'play-tour', icon: '🧳', en: 'Perfect tour', es: 'Viaje perfecto', how: { en: 'A Grand tour in the best order', es: 'Una gran vuelta en el mejor orden' }, goal: 1, have: (p) => Number(p.play.feats.includes('tour-par')) },
+  { id: 'play-names', icon: '📝', en: 'Name them all', es: 'Todos nombrados', how: { en: 'Every country of a continent, named', es: 'Todos los países de un continente, nombrados' }, goal: 1, have: (p) => Number(p.play.feats.includes('names-all')) },
+  { id: 'play-chain', icon: '⛓️', en: 'Long chain', es: 'Cadena larga', how: { en: 'A Border chain of 15 countries', es: 'Una cadena de fronteras de 15 países' }, goal: 1, have: (p) => Number(p.play.feats.includes('chain-15')) },
+  { id: 'play-outline', icon: '🖼️', en: 'Sharp eye', es: 'Buen ojo', how: { en: 'Five outlines, each at the first try', es: 'Cinco siluetas, cada una al primer intento' }, goal: 1, have: (p) => Number(p.play.feats.includes('outline-5')) },
+  { id: 'play-every', icon: '🗺️', en: 'Every map game', es: 'Todos los juegos', how: { en: 'Play all seven map games', es: 'Juega los siete juegos en el mapa' }, goal: 7, have: (p) => Object.keys(p.play.games).length + (p.play.rounds > 0 && !p.play.games.hop ? 1 : 0) }, // (routes finished before v0.25.0 count for Border hop)
   { id: 'play-daily-7', icon: '🔥', en: 'A week of routes', es: 'Una semana de rutas', how: { en: 'The daily route 7 days in a row', es: 'La ruta del día 7 días seguidos' }, goal: 7, have: (p) => p.play.daily.best },
   { id: 'tours-all', icon: '🌍', en: 'Globetrotter', es: 'Trotamundos', how: { en: `Follow all ${TOURS.length} tours to the end`, es: `Sigue las ${TOURS.length} visitas hasta el final` }, goal: TOURS.length, have: (p) => p.tours.length },
 ];
@@ -161,6 +172,7 @@ export function recordTour(name: string): Badge[] {
 export function recordHop(o: { goal: string; score: number; stars: number; rule: string | null; continents: number; day?: string }): Badge[] {
   const p = progress(), g = p.play;
   g.rounds++;
+  g.games.hop = (g.games.hop ?? 0) + 1;
   if (o.stars === 3) g.perfect++;
   if (o.stars === 3 && o.goal === 'people') g.light++;
   if (o.continents >= 3) g.continents3++;
@@ -175,6 +187,22 @@ export function recordHop(o: { goal: string; score: number; stars: number; rule:
   return award();
 }
 export const hopDaily = (day = dayKey()) => progress().play.daily.results[day];
+
+/** A map game played to its end (v0.25.0): its score and stars, the feats it did (badges), and the day if it was
+ * today's puzzle (only the first play of a day counts for the day). */
+export function recordGame(game: string, o: { score: number; stars: number; feats?: string[]; day?: string }): Badge[] {
+  const g = progress().play;
+  g.games[game] = (g.games[game] ?? 0) + 1;
+  g.best[game] = Math.max(g.best[game] ?? 0, o.score);
+  for (const f of o.feats ?? []) if (!g.feats.includes(f)) g.feats.push(f);
+  if (o.day) {
+    const d = (g.dailies[o.day] ??= {});
+    if (!d[game]) d[game] = { score: o.score, stars: o.stars };
+  }
+  return award();
+}
+/** Today's puzzle of a map game, if played. */
+export const gameDaily = (game: string, day = dayKey()) => (game === 'hop' ? progress().play.daily.results[day] : progress().play.dailies[day]?.[game]);
 
 export function resetProgress() {
   cache = empty();

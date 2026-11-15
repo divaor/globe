@@ -192,10 +192,11 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   the world, when was it built or made, dishes of the world, which era, which civilization, which geologic
   period, who won, guess the link between two country facts, which journey, which faith, which script, which
   language family, which epidemic, which disaster, what are you hearing, which book is it from, who made it, which World Heritage site, who invented it,
-  which world is this, who landed here, which constellation, where was this element made), each ending with every answer and its picture; two games of time:
+  which world is this, who landed here, which constellation, where was this element made, which country in between),
+  each ending with every answer and its picture; two games of time:
   Put them in order (four things from the stories, oldest first, then shown in order with their dates and pins on the
   map) and Time detective (a map of old borders with no names: which of four years is it from?); a daily challenge
-  of seven questions, the same for everyone each day, with a streak and a result to share; your progress, with right
+  of eight questions, the same for everyone each day, with a streak and a result to share; your progress, with right
   answers, day streaks and badges for six subjects, the daily challenge and the tours (kept in this browser);
   guided tours (our planet, twenty cities through time, from Athens, Baghdad and Xi'an to Buenos Aires, Rio de
   Janeiro and Cusco, history and culture, Out of Africa, capitals of the ancient world, the dinosaur trail, the five
@@ -208,8 +209,25 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   Latin America, a grand tour of the solar system, footprints on the Moon, born in the stars, a night under the
   Southern sky); "On this day", any day of the year: what the Time travel stories tell of it, each opening its
   step, and Wikipedia's selection of events, linked to the story that tells the same event.
-- **Map games** (More → Map games): **Border hop**, getting from one country to a far one across land borders by
-  tapping the countries on the map, their names hidden.
+- **Map games** (More → Map games): seven games played on the map, each with a new puzzle every day that is the
+  same for everyone (the panel's Today list), a best score and badges. The map, its labels and filters come back as
+  they were when a game ends.
+  - **Pin it:** drop a pin where a place is, five rounds. A pin on the spot scores 5,000; 1,500 km off scores about
+    1,840. Seven packs of places from the app's own data: capitals, World Heritage sites, great structures, battles,
+    dishes, inventions and museums, or all of them mixed. Hard mode hides every name, even the seas'.
+  - **Higher or lower:** which of two countries has more people, more forest, more coastline…? Twenty facts, the
+    answer shown on the map as that fact's filter. The run goes on until the first wrong answer.
+  - **Grand tour:** visit six cities in the shortest way you can find. By air (the shortest flight), by land (the
+    fewest borders crossed, then the shortest), or a historical journey whose stops are the story's own places
+    (Marco Polo, Ibn Battuta…). Scored against the best order, found by the app.
+  - **Name them all:** every country of a continent, every capital, or every neighbour of a country, typed against
+    the clock (ten seconds each). English and Spanish names both count.
+  - **Border chain:** from a country, a neighbour, then its neighbour, never the same one twice, in 90 seconds.
+    Crossing into another continent earns a bonus; a dead end stops the chain.
+  - **Outline:** a country's shape, alone. Each wrong guess shows its neighbours around it (or, for an island, its
+    continent and first letter). Hard mode turns the shape.
+  - **Border hop**, getting from one country to a far one across land borders by tapping the countries on the map,
+    their names hidden.
   - **Goals:** the same pair plays differently with each one. Fewest countries, fewest people, smallest area, or
     the shortest distance from capital to capital. Spain → China is 4 countries in between at the fewest (France,
     Germany, Poland, Russia), but 6 when the fewest people (272 million) is the goal, through Switzerland,
@@ -225,7 +243,11 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
     leaves ★.
   - **After a round:** the best route for each goal, and notes on the odd borders crossed: Kaliningrad, Nakhchivan,
     Cabinda, the Channel Tunnel…
-  - **Progress:** bests, the daily-route streak and six badges in your progress panel.
+  - **Progress:** bests, the daily-route streak and badges in your progress panel: six for Border hop, one for each
+    other game (a pin within 25 km, a run of ten, a tour at par, a whole list named, a chain of fifteen, five shapes
+    at the first try) and one for playing all seven.
+  - **In the quiz:** "Which country in between?" (two countries that do not touch, and the one country you cross)
+    is a quiz of its own and one of the daily challenge's eight questions.
 - **Personal:** visited / want-to-go travel map with stats, notes per country, PNG / 4K / phone wallpaper export.
 - **Read aloud:** guided tours and the Time travel stories read by your device's own voices, in English or Latin
   American Spanish (a Mexican or other Latin American voice before Spain's); the sentence being read is marked, the

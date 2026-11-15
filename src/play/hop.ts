@@ -6,12 +6,13 @@
 // everyone; Blitz, five routes against the clock; and a link that lets a friend play the same round.
 // The routes and the scoring are in route.ts and score.ts (checked by scripts/test/play.mjs).
 import { geoDistance, geoInterpolate } from 'd3-geo';
-import { Route, X, Undo2, Lightbulb, Flag, Share2, Link2, RotateCcw, Play, ChevronDown, ChevronUp, Map as MapIcon } from 'lucide';
+import { Undo2, Lightbulb, Flag, Share2, Link2, RotateCcw, Play, ChevronDown, ChevronUp, ChevronLeft } from 'lucide';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
 import { h, icon, clear, toggle } from '../ui/dom';
-import { lang, t, fmtCompact, fmtNumber } from '../app/i18n';
+import { lang, fmtCompact, fmtNumber } from '../app/i18n';
+import type { PlayHost, HostGame } from './host';
 import { loadJSON } from '../data/store';
 import { Borders, GOALS, RULES, makeRound, dailyRound, seeded, type BorderData, type Goal, type Level, type Round, type Rule } from './route';
 import { scoreOf, starText, challengeHash, readChallenge, hopNumber, HINT_COST, type Hint } from './score';
@@ -50,27 +51,18 @@ interface State {
   fold: boolean; showHints: boolean; showOthers: boolean;
 }
 
-export class BorderHop {
-  private card: HTMLElement;
+export class BorderHop implements HostGame {
   private data: BorderData | null = null;
   private st: State | null = null;
-  private saved: { labels: App['renderer']['settings']['labels']; stack: string[] } | null = null;
   /** The choices of the menu, kept between games. */
   private pick = { goal: 'count' as Goal, level: 'medium' as Level, continent: '', overseas: false };
-  /** Called before a game starts (main.ts closes a quiz or tour then). */
-  beforeStart: (() => Promise<void> | void) | null = null;
-  /** Leaves a Time travel story (main.ts), so the game has the map to itself. */
-  exitMode: (() => Promise<void>) | null = null;
+  /** Back to the Map games panel (menu.ts). */
+  back: (() => void) | null = null;
 
-  constructor(private app: App, private shell: Shell) {
-    this.card = h('section', { class: 'learn-card play-card glass', hidden: true, 'aria-live': 'polite' });
-    app.root.append(this.card);
-    new ResizeObserver(() => this.syncInset()).observe(this.card);
-    shell.addMenu({ id: 'play', icon: Route, label: () => L('Map games', 'Juegos en el mapa'), order: 29, onClick: () => void this.openMenu() });
-    shell.tapHandlers.unshift((_x, _y, g) => this.tap(g));
-    app.renderer.overlays.add((rc) => this.draw(rc));
-    app.on('lang', () => { if (this.st) this.render(); });
-  }
+  constructor(private app: App, private shell: Shell, private host: PlayHost) {}
+  private get card() { return this.host.card; }
+  /** The border graph, for the other map games (Border chain, Name them all, Grand tour by land). */
+  async borders(): Promise<BorderData | null> { return this.load(); }
 
   get active() { return !!this.st; }
   /** For tests: the game on screen. */
@@ -92,6 +84,11 @@ export class BorderHop {
     if (!data) { this.shell.toast(L('Map games need their data; check your connection.', 'Los juegos en el mapa necesitan sus datos; revisa tu conexión.')); return; }
     const p = this.pick;
     const body = h('div', { class: 'play-menu' });
+    if (this.back) {
+      const b = h('button', { type: 'button', class: 'pill sm', 'data-play': 'back' }, icon(ChevronLeft, 15), L('Map games', 'Juegos en el mapa'));
+      b.addEventListener('click', () => this.back?.());
+      body.append(b);
+    }
     const chips = <T extends string>(list: [T, { en: string; es: string }][], cur: () => T, set: (v: T) => void) => {
       const row = h('div', { class: 'chip-row' });
       const draw = () => {
@@ -140,7 +137,7 @@ export class BorderHop {
       h('h3', { class: 'sec-title' }, L('Knowledge rounds', 'Rondas de conocimiento')),
       h('p', { class: 'muted small' }, L('Only some countries may be crossed: you need to know which.', 'Solo se pueden cruzar algunos países: hay que saber cuáles.')), rules,
       h('p', { class: 'muted small' }, L('Scoring: the best route scores 1,000; yours scores 1,000 × best ÷ yours. ★★★ matches the best; ★★ is one country more (or within 15 %). Hints cost points and stars: names −150 and a map of the goal −200 leave at most ★★; each next step −300 leaves ★.', 'Puntuación: la mejor ruta vale 1.000; la tuya, 1.000 × la mejor ÷ la tuya. ★★★ iguala la mejor; ★★ es un país más (o hasta un 15 % más). Las pistas cuestan puntos y estrellas: nombres −150 y un mapa del objetivo −200 dejan como mucho ★★; cada siguiente paso −300 deja ★.')));
-    this.shell.openPanel('play', L('Map games', 'Juegos en el mapa'), body);
+    this.shell.openPanel('play-hop', L('Border hop', 'Salto de fronteras'), body);
   }
 
   private goalName(goal: Goal, rule: string | null) {
@@ -158,6 +155,21 @@ export class BorderHop {
       ?? makeRound(g, rand, { goal: rule ? 'count' : p.goal, level: p.level, rule });
     if (!round) { this.shell.toast(L('No route found here; try another level or place.', 'No hay ruta aquí; prueba otra dificultad u otro lugar.')); return; }
     await this.start(round, 'practice');
+  }
+
+  /** Today's route (the same for everyone). */
+  async startDaily() {
+    if (!(await this.load())) return;
+    const day = dayKey();
+    const r = dailyRound(this.graph(false), day, hopNumber(day));
+    if (r) await this.start(r, 'daily', { day });
+  }
+  /** Today's route, for the panel: its two countries and goal. */
+  async today(): Promise<{ from: string; to: string; goal: string } | null> {
+    if (!(await this.load())) return null;
+    const day = dayKey();
+    const r = dailyRound(this.graph(false), day, hopNumber(day));
+    return r ? { from: this.name(r.from), to: this.name(r.to), goal: this.goalName(r.goal, r.rule) } : null;
   }
 
   async startBlitz() {
@@ -178,19 +190,12 @@ export class BorderHop {
 
   async start(round: Round, mode: Mode, extra: { day?: string; beat?: number; blitz?: State['blitz'] } = {}) {
     if (!(await this.load())) return;
-    await this.beforeStart?.();
-    this.shell.sheet.close();
-    this.app.select(null);
-    if (this.app.mode) await this.exitMode?.();
     const g = this.graph(round.overseas);
     const rule = round.rule ? RULES.find((r) => r.id === round.rule) ?? null : null;
     if (!g.best(round.from, round.to, round.goal, rule)) { this.shell.toast(L('These two countries are not joined by land.', 'Estos dos países no están unidos por tierra.')); return; }
+    await this.host.enter(this);
     const r = this.app.renderer;
-    if (!this.saved) this.saved = { labels: { ...r.settings.labels }, stack: this.app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id) };
-    r.settings.labels = { ...this.saved.labels, countries: false, capitals: false, cities: false };
-    if (this.app.layers.some((l) => !l.def.hidden && l.def.id !== 'political')) await this.app.setStack(['political']);
     this.st = { round, rule, mode, level: this.pick.level, continent: this.pick.continent, g, path: [round.from], hints: [], t0: Date.now(), msg: null, flash: null, done: null, fold: false, showHints: false, showOthers: !this.narrow(), ...extra };
-    this.card.hidden = false;
     this.render();
     this.fit();
     r.requestRender();
@@ -208,33 +213,20 @@ export class BorderHop {
     const c = s.g.data.countries;
     const a = c[s.round.from].cap ?? [this.app.data.meta[s.round.from].lx, this.app.data.meta[s.round.from].ly];
     const b = c[s.round.to].cap ?? [this.app.data.meta[s.round.to].lx, this.app.data.meta[s.round.to].ly];
-    const mid = geoInterpolate(a, b)(0.5);
-    const span = (geoDistance(a, b) * 180) / Math.PI;
-    let zoom = Math.max(1.05, Math.min(6, 140 / Math.max(8, span * 1.5)));
-    if (this.app.renderer.view.current.kind === 'flat') zoom = Math.max(1, zoom * 0.7);
-    if (window.innerWidth < 600) zoom *= 0.85;
-    this.app.renderer.view.flyTo({ lon: mid[0], lat: mid[1], zoom });
+    this.host.fit([a, b]);
   }
 
   async stop() {
     if (!this.st) return;
     this.st = null;
-    this.card.hidden = true;
-    const r = this.app.renderer;
-    if (this.saved) {
-      r.settings.labels = { ...this.saved.labels };
-      const stack = this.saved.stack;
-      this.saved = null;
-      const now = this.app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id);
-      if (stack.join() !== now.join()) await this.app.setStack(stack.length ? stack : ['political']);
-    }
     if (/[#&]hop=/.test(location.hash)) history.replaceState(null, '', location.pathname + location.search);
-    this.syncInset();
-    r.requestRender();
+    await this.host.leave(this);
   }
+  /** Another map game is starting. */
+  drop() { this.st = null; }
 
   // ---- Playing -----------------------------------------------------------------------------------------------
-  private tap(g: number[] | null): boolean {
+  tap(g: [number, number] | null): boolean {
     const s = this.st;
     if (!s || s.done) return false;
     if (!g) return true;
@@ -298,7 +290,7 @@ export class BorderHop {
     if (k === 'names') r.settings.labels = { ...r.settings.labels, countries: true };
     if (k === 'filter') {
       const layer = !s.rule ? GOAL_LAYER[s.round.goal] : undefined;
-      if (layer && this.app.registry.has(layer)) await this.app.setStack(['political', layer]);
+      if (layer) await this.host.showLayer(layer);
       if (s.round.goal === 'km' && !s.rule) r.settings.labels = { ...r.settings.labels, capitals: true };
     }
     if (k === 'step') {
@@ -382,21 +374,14 @@ export class BorderHop {
   }
 
   // ---- The card ----------------------------------------------------------------------------------------------
-  private render() {
+  render() {
     const s = this.st;
     clear(this.card);
     if (!s) return;
     const { round } = s;
     const T = GOAL_TEXT[round.goal];
-    const close = h('button', { type: 'button', class: 'icon-btn sm', 'aria-label': t('close') }, icon(X, 16));
-    close.addEventListener('click', () => void this.stop());
     const tag = s.mode === 'daily' ? `${L('Daily route', 'Ruta del día')} #${hopNumber(s.day!)}` : s.mode === 'blitz' ? `${L('Blitz', 'Contrarreloj')} ${s.blitz!.results.length + (s.done ? 0 : 1)}/${BLITZ_ROUNDS}` : s.mode === 'challenge' ? L('Challenge', 'Desafío') : L('Border hop', 'Salto de fronteras');
-    const foldLabel = s.fold ? L('Back to the game', 'Volver al juego') : L('See the map', 'Ver el mapa');
-    const fold = h('button', { type: 'button', class: `pill sm quiz-peek${s.fold ? ' on' : ''}`, title: foldLabel, 'aria-label': foldLabel, 'aria-expanded': String(!s.fold), 'data-hop': 'fold' },
-      icon(s.fold ? ChevronDown : MapIcon, 15), s.fold ? L('Game', 'Juego') : L('Map', 'Mapa'));
-    fold.addEventListener('click', () => this.toggleFold());
-    const head = h('div', { class: 'tool-head' }, h('strong', null, `${s.rule ? s.rule.icon : T.icon} ${tag} · ${this.goalName(round.goal, round.rule)}`), fold, close);
-    this.card.classList.toggle('peek', s.fold);
+    const head = this.host.head(`${s.rule ? s.rule.icon : T.icon} ${tag} · ${this.goalName(round.goal, round.rule)}`, { fold: s.fold, onFold: () => this.toggleFold(), onClose: () => void this.stop() });
     const dot = (c: string) => h('span', { class: 'hop-dot', style: `background:${c}` });
     const route = h('div', { class: 'hop-ends' }, dot(COLORS.from), h('strong', null, this.name(round.from)), ' → ', dot(COLORS.to), h('strong', null, this.name(round.to)));
     this.card.append(head, route);
@@ -475,18 +460,8 @@ export class BorderHop {
     this.card.append(h('div', { class: 'hop-actions' }, ...(d.gaveUp || s.blitz ? [] : [shareB, chal]), nextB));
   }
 
-  private syncInset() {
-    const v = this.app.renderer.view;
-    const shown = !this.card.hidden && !!this.st;
-    document.documentElement.classList.toggle('has-game', shown);
-    // On a wide screen the card is beside the globe (top left), so the globe keeps the whole window.
-    const r = shown && window.innerWidth < 1000 ? this.card.getBoundingClientRect() : null;
-    v.insetTop = r && r.height ? Math.round(r.bottom + 8) : 0;
-    this.app.renderer.requestRender();
-  }
-
   // ---- The map -----------------------------------------------------------------------------------------------
-  private draw(rc: RenderCtx) {
+  draw(rc: RenderCtx) {
     const s = this.st;
     if (!s) return;
     const { ctx } = rc;
