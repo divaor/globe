@@ -130,7 +130,29 @@ check(cm.has(P.norm('mexico city')) && cm.has(P.norm('México')) && cb.has(P.nor
 check(G.chainScore(1, 1) === 0 && G.chainScore(15, 2) === 1600 && G.chainStars(15) === 3 && G.chainStars(8) === 2 && G.chainStars(7) === 1, `Border chain: 15 countries over two continents ${G.chainScore(15, 2)} ${S.starText(G.chainStars(15))}`);
 check(G.outlinePoints(1) === 1000 && G.outlinePoints(3) === 500 && G.outlinePoints(5) === 150 && G.outlinePoints(6) === 0 && G.outlineStars(5000) === 3 && G.outlineStars(2500) === 2 && G.outlineStars(1000) === 1,
   `Outline: 1,000 at the first try, 500 at the third, 150 at the fifth; five at the first try ${S.starText(G.outlineStars(5000))}`);
-check(G.GAMES.length === 7 && G.GAMES[0] === 'hop' && new Set(G.GAMES).size === 7, `seven map games: ${G.GAMES.join(', ')}`);
+check(G.GAMES.length === 12 && G.GAMES[0] === 'hop' && new Set(G.GAMES).size === 12 && ['museum', 'climate', 'explorer', 'sunrise', 'lives'].every((g) => G.GAMES.includes(g)), `twelve map games: ${G.GAMES.join(', ')}`);
+
+// v0.29.0: Sunrise race's lines. On the March equinox at noon UTC the sun is over 0°, 0°: it rises along 90° W and sets
+// along 90° E; noon is the Greenwich meridian and midnight the 180th.
+const sub = [0, 0];
+const rise = G.sunLine(sub, 'rise'), set = G.sunLine(sub, 'set'), noon = G.sunLine(sub, 'noon'), mid = G.sunLine(sub, 'midnight');
+const onArc = (line) => line.every((p) => Math.abs(G.km(p, sub) - 10007.5) < 2);
+check(onArc(rise) && onArc(set) && rise.every((p) => p[0] < 0 || Math.abs(p[1]) > 89) && set.every((p) => p[0] > 0 || Math.abs(p[1]) > 89) && rise.length + set.length >= 358,
+  `Sunrise race: the day–night line is 90° from the sun (10,008 km), sunrise on its west half (${rise.length} points), sunset on its east half (${set.length})`);
+check(G.nearestKm([-90, 10], rise) < 1 && G.nearestKm([90, 10], rise) > 9000 && G.nearestKm([0, 45], noon) < 1 && G.nearestKm([180, 0], mid) < 1 && G.nearestKm([0, 0], G.sunLine(sub, 'overhead')) === 0,
+  `a pin on the line scores 0 km off (90° W for sunrise, 0° for noon, 180° for midnight); 90° E is ${Math.round(G.nearestKm([90, 10], rise))} km from the sunrise`);
+const june = [-45, 23.44], nNoon = G.sunLine(june, 'noon'), nMid = G.sunLine(june, 'midnight');
+check(nNoon.every((p) => p[0] === -45) && Math.max(...nNoon.map((p) => p[1])) === 90 && Math.min(...nNoon.map((p) => p[1])) === -66 && nMid.every((p) => p[0] === 135) && Math.max(...nMid.map((p) => p[1])) === 66,
+  'in June noon reaches the North Pole and stops short of the Antarctic (the polar night); midnight the other way round');
+const east = G.destination([0, 0], 90, 90);
+check(Math.abs(east[0] - 90) < 1e-6 && Math.abs(east[1]) < 1e-6 && Math.abs(G.destination([10, 50], 10, 0)[1] - 60) < 1e-6, `a point 90° east of 0°, 0° is ${east.map((x) => x.toFixed(1)).join(', ')}; 10° north of 50° N is 60° N`);
+
+// Climate detective and Whose life is this?
+check(G.climateBonus('Cfb', 'Cfb') === 1000 && G.climateBonus('Cfb', 'Csa') === 400 && G.climateBonus('Cfb', 'BWh') === 0 && G.climateBonus('Cfb', null) === 0 && G.climateStars(5 * 6000) === 3 && G.climateStars(5 * 2500) === 1,
+  'Climate detective: +1,000 for the same climate zone, +400 for the same group (C), nothing at sea; all right is three stars');
+check(G.lifePoints(1, true) === 1000 && G.lifePoints(3, true) === 600 && G.lifePoints(9, true) === 200 && G.lifePoints(1, false) === 0 && G.lifeStars(5000) === 3 && G.lifeStars(3000) === 2,
+  'Whose life is this?: 1,000 at the first place, 600 at the third, never under 200; a wrong name 0');
+check(G.roundStars(5 * 4600, 5) === 3 && G.roundStars(5 * 2500, 5) === 2 && G.roundStars(5 * 1500, 5) === 1, 'Explorer’s log and Sunrise race: within about 150 km every time is three stars, about 1,000 km two, further one');
 
 console.log(fails ? `\n${fails} check(s) failed` : '\nmap-game checks passed');
 process.exit(fails ? 1 : 0);

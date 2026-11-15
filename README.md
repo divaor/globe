@@ -24,7 +24,14 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   when you zoom in). States and provinces (the first-level divisions of every country, 4,596 of them) show from
   country zoom with thin dashed lines and their names, on by default and each with its switch; a tap says which one
   ("State: Texas") and Who was born here? names a place's state.
-- **Navigation:** drag with fling, pinch, mouse wheel, double-tap, keyboard; search any country or city.
+- **Navigation:** drag with fling, pinch, mouse wheel, double-tap, keyboard.
+- **Search:** countries, cities, states and provinces, coordinates ("40.4, -3.7"), and what the filters show: the
+  people of Who was born here?, museums, masterpieces and their artists, buildings and their architects, World
+  Heritage sites, inventions and your own places. The filters that are on come first; a filter that is off is searched
+  too, and choosing its result turns it on. Names match in any word order, by the start of each word and with a typo
+  or two ("rafa nadal", "Nadal Rafael", "rafael nadl"). A result takes you to its dot: close enough that it stands apart
+  from its neighbours, ringed, with its card open. With a filter whose legend lists categories on, its entries are
+  found too ("Portuguese" with Languages highlights its countries). An empty box shows your recent searches.
 - **14 projections, smooth morph:** Globe, Plate Carrée, Mercator, Miller, Robinson, Winkel Tripel, Equal Earth,
   Natural Earth, Mollweide, Gall–Peters, Eckert IV, azimuthal equidistant, Lambert azimuthal, stereographic.
   Every filter (vector and imagery) works in every projection.
@@ -232,7 +239,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   Latin America, a grand tour of the solar system, footprints on the Moon, born in the stars, a night under the
   Southern sky); "On this day", any day of the year: what the Time travel stories tell of it, each opening its
   step, and Wikipedia's selection of events, linked to the story that tells the same event.
-- **Map games** (More → Map games): seven games played on the map, each with a new puzzle every day that is the
+- **Map games** (More → Map games): twelve games played on the map, each with a new puzzle every day that is the
   same for everyone (the panel's Today list), a best score and badges. The map, its labels and filters come back as
   they were when a game ends.
   - **Pin it:** drop a pin where a place is, five rounds. A pin on the spot scores 5,000; 1,500 km off scores about
@@ -249,6 +256,18 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
     Crossing into another continent earns a bonus; a dead end stops the chain.
   - **Outline:** a country's shape, alone. Each wrong guess shows its neighbours around it (or, for an island, its
     continent and first letter). Hard mode turns the shape.
+  - **Museum hop:** five of the world's best-known paintings and sculptures, each in another museum; see them all
+    from the first one with the least travel (the Grand tour's best order, on the art guide).
+  - **Climate detective:** a city's year of weather, its temperature and rain month by month (the travel guide's
+    climate normals); pin where it is. A bonus for a pin in the city's own climate zone (the Köppen filter's zones).
+  - **Explorer's log:** follow Ibn Battuta, Magellan and Elcano, Cook, Lewis and Clark, Humboldt or Darwin by pinning
+    each next stop of the journey; the story's step is told after each pin.
+  - **Sunrise race:** where is the sun rising right now? Setting? Where is it noon, or midnight, and where is the sun
+    straight overhead? Scored by the distance to the line, with day and night drawn after each pin.
+  - **Whose life is this?:** a life's places appear one at a time with their years; pick the person among four. Fewer
+    places, more points.
+  - Badges for each, Cartographer for three stars in every game, and around the app: Curator (50 masterpieces
+    opened), Biographer (10 lives followed to the end) and a travel guide trip across three continents.
   - **Border hop**, getting from one country to a far one across land borders by tapping the countries on the map,
     their names hidden.
   - **Goals:** the same pair plays differently with each one. Fewest countries, fewest people, smallest area, or

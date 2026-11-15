@@ -3,6 +3,7 @@
 import { h } from '../ui/dom';
 import { lang } from '../app/i18n';
 import { TOURS } from './tours';
+import { GAMES } from '../play/logic';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -43,16 +44,24 @@ export interface Progress {
     games: Record<string, number>;
     dailies: Record<string, Record<string, { score: number; stars: number }>>;
     feats: string[];
+    /** v0.29.0: the most stars each map game has given. */
+    stars: Record<string, number>;
   };
+  /** v0.29.0: things seen around the app (masterpieces opened, lives followed to the end) and done once (a trip across
+   * three continents). */
+  seen: { works: string[]; lives: string[] };
+  feats: string[];
 }
 
-const emptyPlay = (): Progress['play'] => ({ rounds: 0, perfect: 0, light: 0, continents3: 0, best: {}, knowledge: [], daily: { last: '', streak: 0, best: 0, results: {} }, games: {}, dailies: {}, feats: [] });
-const empty = (): Progress => ({ right: {}, played: {}, perfect: {}, kinds: [], days: {}, daily: { last: '', streak: 0, best: 0, results: {} }, tours: [], badges: {}, play: emptyPlay() });
+const emptyPlay = (): Progress['play'] => ({ rounds: 0, perfect: 0, light: 0, continents3: 0, best: {}, knowledge: [], daily: { last: '', streak: 0, best: 0, results: {} }, games: {}, dailies: {}, feats: [], stars: {} });
+const empty = (): Progress => ({ right: {}, played: {}, perfect: {}, kinds: [], days: {}, daily: { last: '', streak: 0, best: 0, results: {} }, tours: [], badges: {}, play: emptyPlay(), seen: { works: [], lives: [] }, feats: [] });
 let cache: Progress | null = null;
 export function progress(): Progress {
   if (cache) return cache;
   try { cache = { ...empty(), ...JSON.parse(localStorage.getItem(KEY) || '{}') }; } catch { cache = empty(); }
   cache!.play = { ...emptyPlay(), ...cache!.play };
+  cache!.seen = { works: cache!.seen?.works ?? [], lives: cache!.seen?.lives ?? [] };
+  cache!.feats ??= [];
   return cache!;
 }
 function save() { try { localStorage.setItem(KEY, JSON.stringify(progress())); } catch { /* private mode: kept for this visit */ } }
@@ -106,7 +115,18 @@ export const BADGES: Badge[] = [
   { id: 'play-names', icon: '📝', en: 'Name them all', es: 'Todos nombrados', how: { en: 'Every country of a continent, named', es: 'Todos los países de un continente, nombrados' }, goal: 1, have: (p) => Number(p.play.feats.includes('names-all')) },
   { id: 'play-chain', icon: '⛓️', en: 'Long chain', es: 'Cadena larga', how: { en: 'A Border chain of 15 countries', es: 'Una cadena de fronteras de 15 países' }, goal: 1, have: (p) => Number(p.play.feats.includes('chain-15')) },
   { id: 'play-outline', icon: '🖼️', en: 'Sharp eye', es: 'Buen ojo', how: { en: 'Five outlines, each at the first try', es: 'Cinco siluetas, cada una al primer intento' }, goal: 1, have: (p) => Number(p.play.feats.includes('outline-5')) },
-  { id: 'play-every', icon: '🗺️', en: 'Every map game', es: 'Todos los juegos', how: { en: 'Play all seven map games', es: 'Juega los siete juegos en el mapa' }, goal: 7, have: (p) => Object.keys(p.play.games).length + (p.play.rounds > 0 && !p.play.games.hop ? 1 : 0) }, // (routes finished before v0.25.0 count for Border hop)
+  { id: 'play-every', icon: '🗺️', en: 'Every map game', es: 'Todos los juegos', how: { en: `Play all ${GAMES.length} map games`, es: `Juega los ${GAMES.length} juegos en el mapa` }, goal: GAMES.length, have: (p) => GAMES.filter((g) => p.play.games[g] || (g === 'hop' && p.play.rounds > 0)).length }, // (routes finished before v0.25.0 count for Border hop)
+  // v0.29.0: the games with the guide, the journeys, the sun and the lives.
+  { id: 'play-museum', icon: '🏛️', en: 'Art lover', es: 'Amante del arte', how: { en: 'A Museum hop in the best order', es: 'Un De museo en museo en el mejor orden' }, goal: 1, have: (p) => Number(p.play.feats.includes('museum-par')) },
+  { id: 'play-climate', icon: '🌡️', en: 'Weather wise', es: 'Experto en clima', how: { en: 'Four climate zones right in one Climate detective', es: 'Cuatro zonas climáticas acertadas en un Detective del clima' }, goal: 1, have: (p) => Number(p.play.feats.includes('climate-zones')) },
+  { id: 'play-explorer', icon: '🧭', en: 'Navigator', es: 'Navegante', how: { en: 'Every stop of an Explorer’s log within 500 km', es: 'Todas las paradas de una Bitácora a menos de 500 km' }, goal: 1, have: (p) => Number(p.play.feats.includes('explorer-500')) },
+  { id: 'play-sunrise', icon: '🌅', en: 'Dawn chaser', es: 'Cazador del alba', how: { en: 'The sunrise within 100 km', es: 'El amanecer a menos de 100 km' }, goal: 1, have: (p) => Number(p.play.feats.includes('sunrise-100')) },
+  { id: 'play-lives', icon: '👤', en: 'Know them by their places', es: 'Por sus lugares los conocerás', how: { en: 'A life guessed from its first place', es: 'Una vida adivinada con su primer lugar' }, goal: 1, have: (p) => Number(p.play.feats.includes('life-first')) },
+  { id: 'play-cartographer', icon: '🏅', en: 'Cartographer', es: 'Cartógrafo', how: { en: 'Three stars in every map game', es: 'Tres estrellas en todos los juegos en el mapa' }, goal: GAMES.length, have: (p) => GAMES.filter((g) => (p.play.stars[g] ?? 0) >= 3 || (g === 'hop' && p.play.perfect > 0)).length },
+  // Around the app.
+  { id: 'app-trip', icon: '🧳', en: 'Three-continent trip', es: 'Viaje por tres continentes', how: { en: 'A travel guide trip across three continents', es: 'Un viaje de la guía por tres continentes' }, goal: 1, have: (p) => Number(p.feats.includes('trip-3cont')) },
+  { id: 'app-curator', icon: '🖼️', en: 'Curator', es: 'Curador', how: { en: 'Open 50 masterpieces', es: 'Abre 50 obras maestras' }, goal: 50, have: (p) => p.seen.works.length },
+  { id: 'app-biographer', icon: '📖', en: 'Biographer', es: 'Biógrafo', how: { en: 'Follow 10 lives to their last step', es: 'Sigue 10 vidas hasta su último paso' }, goal: 10, have: (p) => p.seen.lives.length },
   { id: 'play-daily-7', icon: '🔥', en: 'A week of routes', es: 'Una semana de rutas', how: { en: 'The daily route 7 days in a row', es: 'La ruta del día 7 días seguidos' }, goal: 7, have: (p) => p.play.daily.best },
   { id: 'tours-all', icon: '🌍', en: 'Globetrotter', es: 'Trotamundos', how: { en: `Follow all ${TOURS.length} tours to the end`, es: `Sigue las ${TOURS.length} visitas hasta el final` }, goal: TOURS.length, have: (p) => p.tours.length },
 ];
@@ -194,6 +214,7 @@ export function recordGame(game: string, o: { score: number; stars: number; feat
   const g = progress().play;
   g.games[game] = (g.games[game] ?? 0) + 1;
   g.best[game] = Math.max(g.best[game] ?? 0, o.score);
+  g.stars[game] = Math.max(g.stars[game] ?? 0, o.stars);
   for (const f of o.feats ?? []) if (!g.feats.includes(f)) g.feats.push(f);
   if (o.day) {
     const d = (g.dailies[o.day] ??= {});
@@ -201,6 +222,21 @@ export function recordGame(game: string, o: { score: number; stars: number; feat
   }
   return award();
 }
+/** Something seen around the app (a masterpiece's card, a life to its end): counted once. */
+export function recordSeen(kind: 'works' | 'lives', id: string): Badge[] {
+  const s = progress().seen;
+  if (s[kind].includes(id)) return [];
+  s[kind].push(id);
+  return award();
+}
+/** Something done once around the app (a trip across three continents). */
+export function recordFeat(id: string): Badge[] {
+  const p = progress();
+  if (p.feats.includes(id)) return [];
+  p.feats.push(id);
+  return award();
+}
+
 /** Today's puzzle of a map game, if played. */
 export const gameDaily = (game: string, day = dayKey()) => (game === 'hop' ? progress().play.daily.results[day] : progress().play.dailies[day]?.[game]);
 
@@ -251,6 +287,9 @@ export function progressPanel(onReset: () => void): HTMLElement {
   body.append(h('h3', { class: 'sec-title' }, `🗺️ ${L('Map games', 'Juegos en el mapa')}`),
     h('div', { class: 'prog-row' }, `${fmt(g.rounds)} ${g.rounds === 1 ? L('route finished', 'ruta terminada') : L('routes finished', 'rutas terminadas')} · ⭐ ${fmt(g.perfect)} · 🔥 ${L('daily route', 'ruta del día')}: ${fmt(current(g.daily))}`),
     h('div', { class: 'badge-list' }, ...BADGES.filter((b) => b.id.startsWith('play-')).map(badge)));
+  body.append(h('h3', { class: 'sec-title' }, `🌍 ${L('Around the app', 'Por la app')}`),
+    h('div', { class: 'prog-row' }, `🖼️ ${fmt(p.seen.works.length)} ${L('masterpieces opened', 'obras maestras abiertas')} · 📖 ${fmt(p.seen.lives.length)} ${L('lives followed to the end', 'vidas seguidas hasta el final')}`),
+    h('div', { class: 'badge-list' }, ...BADGES.filter((b) => b.id.startsWith('app-')).map(badge)));
   body.append(h('h3', { class: 'sec-title' }, `🧭 ${L('Guided tours', 'Visitas guiadas')}`),
     h('div', { class: 'prog-row' }, `${fmt(p.tours.length)} ${L('of', 'de')} ${fmt(TOURS.length)} ${L('followed to the end', 'seguidas hasta el final')}`),
     h('div', { class: 'badge-list' }, ...BADGES.filter((b) => b.id.startsWith('tours-')).map(badge)));

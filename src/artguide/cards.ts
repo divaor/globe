@@ -1,6 +1,7 @@
 // Cards for a work of art and a building (v0.27.0), shown by the map filters, the trails and the travel guide: the
 // picture from Wikimedia Commons with its licence and author (read live from Commons), what it is, where it is now,
 // and links to its Wikipedia article and to the guide of its city.
+import { recordSeen } from '../learn/progress';
 import { h } from '../ui/dom';
 import { lang, fmtCompact } from '../app/i18n';
 import type { InfoRow } from '../layers/types';
@@ -22,6 +23,9 @@ export function creditEl(file: string | null): HTMLElement | null {
 }
 
 export function workCard(card: CardFn, w: Work, cityName: string | null, openCity: ((city: string) => void) | null) {
+  // Each masterpiece opened counts once for the Curator badge.
+  const got = recordSeen('works', w.id);
+  if (got.length) window.atlas?.shell.toast(`${got[0].icon} ${es() ? `Nueva insignia: ${got[0].es}` : `New badge: ${got[0].en}`}`, 4000);
   const kind = KINDS.find((k) => k[0] === w.kind)?.[1];
   const rows: InfoRow[] = [];
   if (w.artist) rows.push({ label: L('By', 'De'), value: nm(w.artist), icon: '🧑‍🎨' });

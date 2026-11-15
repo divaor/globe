@@ -17,6 +17,7 @@ import type { Feature, Geometry, MultiLineString, Polygon } from 'geojson';
 import { Play, Pause, X, ChevronLeft, ChevronRight, ListOrdered, BookOpen, Search, Music, Volume2, VolumeX } from 'lucide';
 import { loadJSON, shapesFrom, chunkLines, dataUrl, type Shape, type Line } from '../data/store';
 import { t, tx, lang, fmtNumber, fmtCompact, flagEmoji } from '../app/i18n';
+import { recordSeen } from '../learn/progress';
 import { h, icon, clear } from '../ui/dom';
 import { continentSwatch, mix } from '../engine/colors';
 import { loadPaleo, fmtLat, unitName, type PaleoWorld, type Unit } from './paleo';
@@ -692,6 +693,11 @@ export class StoryMode {
     this.kick();
     this.music();
     this.narrate(!!o.user);
+    // A life followed to its last step counts for the Biographer badge (two lives side by side count for both).
+    if (this.kind === 'lives' && i === c.steps.length - 1) {
+      const got = c.id.split('~').flatMap((id) => recordSeen('lives', id));
+      if (got.length) this.shell.toast(`${got[0].icon} ${lang() === 'es' ? `Nueva insignia: ${got[0].es}` : `New badge: ${got[0].en}`}`, 4000);
+    }
   }
 
   /**

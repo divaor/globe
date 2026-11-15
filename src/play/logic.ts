@@ -104,9 +104,62 @@ export const OUTLINE_ROUNDS = 5;
 export const outlinePoints = (tries: number) => [0, 1000, 700, 500, 300, 150][tries] ?? 0;
 export const outlineStars = (total: number) => starsFor(total / (1000 * OUTLINE_ROUNDS) / 0.9);
 
+// ---- v0.29.0: games with the guide, the journeys, the sun and the lives -------------------------------------------
+/** The nearest a pin comes to any point of a line (the sun's lines, sampled every degree), in km. */
+export function nearestKm(p: [number, number], line: [number, number][]): number {
+  let best = Infinity;
+  for (const q of line) { const d = km(p, q); if (d < best) best = d; }
+  return best;
+}
+
+/** The point at `deg` degrees of arc from `from`, heading `bearing` degrees (clockwise from north). */
+export function destination(from: [number, number], deg: number, bearing: number): [number, number] {
+  const r = Math.PI / 180, d = deg * r, b = bearing * r, la = from[1] * r, lo = from[0] * r;
+  const lat2 = Math.asin(Math.sin(la) * Math.cos(d) + Math.cos(la) * Math.sin(d) * Math.cos(b));
+  const lon2 = lo + Math.atan2(Math.sin(b) * Math.sin(d) * Math.cos(la), Math.cos(d) - Math.sin(la) * Math.sin(lat2));
+  return [((((lon2 / r) + 540) % 360) - 180), lat2 / r];
+}
+
+export type SunGoal = 'rise' | 'noon' | 'set' | 'midnight' | 'overhead';
+/**
+ * Where the sun is doing something right now, from the point straight under it (`sub`, [lon, lat]): rising (the half
+ * of the day–night line west of it, where the morning starts), setting (the half east of it), noon (its meridian, where
+ * the sun is up) and midnight (the opposite meridian), sampled every degree; overhead is the point itself.
+ */
+export function sunLine(sub: [number, number], goal: SunGoal): [number, number][] {
+  if (goal === 'overhead') return [sub];
+  if (goal === 'noon' || goal === 'midnight') {
+    const lon = goal === 'noon' ? sub[0] : ((sub[0] + 360) % 360) - 180;
+    const out: [number, number][] = [];
+    // At noon the sun is up where the latitude is within 90° of its own; at midnight it is down there.
+    for (let lat = -90; lat <= 90; lat++) if (goal === 'noon' ? Math.abs(lat - sub[1]) < 90 : Math.abs(lat + sub[1]) < 90) out.push([lon, lat]);
+    return out;
+  }
+  const out: [number, number][] = [];
+  for (let b = 0; b < 360; b++) {
+    const p = destination(sub, 90, b);
+    const west = ((p[0] - sub[0] + 540) % 360) - 180 < 0;
+    if (west === (goal === 'rise')) out.push(p);
+  }
+  return out;
+}
+
+/** Climate detective: the points of a pin, plus 1,000 for the city's own climate zone or 400 for its group (A–E). */
+export const CLIMATE_ROUNDS = 5;
+export const climateBonus = (city: string | null, pin: string | null) => (!city || !pin ? 0 : city === pin ? 1000 : city[0] === pin[0] ? 400 : 0);
+export const climateStars = (total: number) => starsFor(total / ((PIN_MAX + 1000) * CLIMATE_ROUNDS) / 0.85);
+
+/** Explorer's log and Sunrise race score their pins like Pin it, out of what was asked. */
+export const roundStars = (total: number, rounds: number) => starsFor(total / (PIN_MAX * rounds) / 0.9);
+
+/** Whose life is this?: 1,000 at the first place shown, 200 less for each place more, nothing for a wrong name. */
+export const LIFE_ROUNDS = 5;
+export const lifePoints = (shown: number, right: boolean) => (right ? Math.max(200, 1000 - 200 * (shown - 1)) : 0);
+export const lifeStars = (total: number) => starsFor(total / (1000 * LIFE_ROUNDS) / 0.9);
+
 // ---- Daily -------------------------------------------------------------------------------------------------
 /** The map games, in the order of the panel and of the daily puzzles. */
-export const GAMES = ['hop', 'pin', 'hilo', 'tour', 'names', 'chain', 'outline'] as const;
+export const GAMES = ['hop', 'pin', 'hilo', 'tour', 'names', 'chain', 'outline', 'museum', 'climate', 'explorer', 'sunrise', 'lives'] as const;
 export type GameId = (typeof GAMES)[number];
 
 /** A city's names for matching typed capitals: its English and Spanish names, without accents or punctuation. */

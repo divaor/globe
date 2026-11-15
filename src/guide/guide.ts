@@ -3,6 +3,7 @@
 // by month). The trip is drawn on the map in order, can be put in the best order, kept on this device, shared as a
 // link and printed. Wikivoyage's "Eat" overview is read live in the browser and credited (it is not stored here).
 // Data: public/data/guide (scripts/data/guide/build-guide.mjs).
+import { recordFeat } from '../learn/progress';
 import { Luggage, Plus, Check, X, ArrowUp, ArrowDown, Map as MapIcon, Shuffle, Share2, Printer, Trash2, Star, ExternalLink, ChevronLeft, Compass } from 'lucide';
 import { geoInterpolate } from 'd3-geo';
 import type { App } from '../app/app';
@@ -126,7 +127,16 @@ export class TravelGuide {
   private flag(id: string) { return flagEmoji(this.app.data.meta[id]?.a2); }
 
   // ---- The trip ------------------------------------------------------------------------------------------------
-  private save() { try { localStorage.setItem(KEY, JSON.stringify(this.trip)); } catch { /* private mode */ } this.app.renderer.requestRender(); }
+  private save() {
+    try { localStorage.setItem(KEY, JSON.stringify(this.trip)); } catch { /* private mode */ }
+    this.app.renderer.requestRender();
+    // A trip across three continents earns a badge.
+    const conts = new Set(this.trip.map((id) => this.app.data.meta[this.byId.get(id)?.country ?? '']?.ct).filter(Boolean));
+    if (conts.size >= 3) {
+      const got = recordFeat('trip-3cont');
+      if (got.length) this.shell.toast(`${got[0].icon} ${this.app.lang === 'es' ? `Nueva insignia: ${got[0].es}` : `New badge: ${got[0].en}`}`, 4000);
+    }
+  }
   add(id: string) { if (this.byId.has(id) && !this.trip.includes(id)) { this.trip.push(id); this.save(); } }
   remove(id: string) { this.trip = this.trip.filter((x) => x !== id); this.save(); }
   move(id: string, by: number) {
