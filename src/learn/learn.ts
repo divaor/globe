@@ -1030,7 +1030,7 @@ export class Learn {
     this.app.renderer.view.flyTo({ lon, lat, zoom });
   }
 
-  /** The two countries (green and gold), and once answered the one between them (blue), with their names. */
+  /** The two countries (green and gold), and once answered the one between them (magenta, outlined), with their names. */
   private drawHop(rc: RenderCtx) {
     const q = this.quiz, cur = this.hopShow;
     if (!q || !cur?.hop) return;
@@ -1039,7 +1039,8 @@ export class Learn {
     ctx.save(); ctx.globalAlpha = 0.85;
     rc.fillCountry(cur.hop.a, '#2ecc71');
     rc.fillCountry(cur.hop.b, '#f5c542');
-    if (reveal) rc.fillCountry(cur.id, '#5dade2');
+    // Magenta: unlike a blue, it stands out among the political map's colours (Poland among Europe's blues).
+    if (reveal) rc.fillCountry(cur.id, '#e84393');
     ctx.restore();
     for (const id of reveal ? [cur.hop.a, cur.id, cur.hop.b] : [cur.hop.a, cur.hop.b]) {
       const m = this.app.data.meta[id], p = m && rc.project(m.lx, m.ly);
@@ -1403,7 +1404,8 @@ export class Learn {
       return;
     }
     if (cur.hop) {
-      // The way across comes out on the map: the country between them is filled in.
+      // The way across comes out on the map: the country between them is filled in and outlined.
+      this.app.renderer.selection = cur.id;
       this.app.renderer.requestRender();
       this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${this.hopWay(cur)}` });
       return;
@@ -1535,7 +1537,7 @@ export class Learn {
       void this.time.history.quizMap(null);
       this.pins = [];
       if (it) this.showItem(it);
-      else if (cur.hop) { this.pin = null; this.hopShow = cur; this.fitCountries([cur.hop.a, cur.hop.b, cur.id]); }
+      else if (cur.hop) { this.pin = null; this.hopShow = cur; this.app.renderer.selection = cur.id; this.fitCountries([cur.hop.a, cur.hop.b, cur.id]); }
       else {
         const m = this.app.data.meta[cur.id];
         this.pin = m ? { lon: m.lx, lat: m.ly, text: name } : null;

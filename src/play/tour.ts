@@ -178,7 +178,7 @@ export class GrandTour implements HostGame {
     const mode = TOUR_MODES.find((m) => m[0] === s.mode)![1];
     const title = `🧳 ${s.day ? L('Daily Grand tour', 'Gran vuelta del día') : L('Grand tour', 'Gran vuelta')} · ${s.story ? `${s.story.icon} ${es() ? s.story.es : s.story.en}` : es() ? mode.es : mode.en}`;
     this.card.append(this.host.head(title, { fold: s.fold, onFold: () => { s.fold = !s.fold; this.render(); }, onClose: () => void this.stop() }));
-    const chips = h('div', { class: 'hop-path' }, ...s.order.map((i, k) => h('span', { class: `hop-step${k === 0 ? ' from' : ''}` }, `${k}. ${this.nm(s.stops[i])}`)),
+    const chips = h('div', { class: 'hop-path' }, ...s.order.map((i, k) => h('span', { class: `hop-step${k === 0 ? ' from' : ''}` }, `${k + 1}. ${this.nm(s.stops[i])}`)),
       ...s.stops.map((x, i) => (s.order.includes(i) ? null : h('span', { class: 'hop-step left' }, this.nm(x)))).filter((x): x is HTMLElement => !!x));
     if (!s.done) {
       const cost = this.legCost(s.mode, s.stops);
@@ -245,7 +245,7 @@ export class GrandTour implements HostGame {
       ctx.beginPath(); ctx.arc(p[0], p[1], i === 0 ? 8 : 7, 0, Math.PI * 2);
       ctx.fillStyle = i === 0 ? '#2ecc71' : k >= 0 ? '#5dade2' : '#ffffff'; ctx.fill();
       ctx.lineWidth = 2; ctx.strokeStyle = 'rgba(0,0,0,0.7)'; ctx.stroke();
-      rc.labels.add({ text: `${k >= 0 ? `${k}. ` : ''}${this.nm(x)}`, x: p[0] + 10, y: p[1], align: 'left', priority: 3200, size: 13, weight: 800, color: '#fff', halo: 'rgba(0,0,0,0.85)' });
+      rc.labels.add({ text: `${k >= 0 ? `${k + 1}. ` : ''}${this.nm(x)}`, x: p[0] + 10, y: p[1], align: 'left', priority: 3200, size: 13, weight: 800, color: '#fff', halo: 'rgba(0,0,0,0.85)' });
     });
   }
 }
