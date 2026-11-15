@@ -106,7 +106,9 @@ function collect() {
   };
   for (const dir of fs.readdirSync(path.join(ROOT, 'scripts/data'))) {
     const d = path.join(ROOT, 'scripts/data', dir);
-    if (!fs.statSync(d).isDirectory()) continue;
+    // The travel guide's Wikidata answers (museum and city names in every script) are shown in its panel, in the
+    // device's own fonts, not in a script font.
+    if (!fs.statSync(d).isDirectory() || dir === 'guide') continue;
     for (const f of fs.readdirSync(d).filter((x) => x.endsWith('.json')).sort()) {
       try { walk(JSON.parse(fs.readFileSync(path.join(d, f), 'utf8')), `${dir}/${f}`); } catch { /* not a story */ }
     }
