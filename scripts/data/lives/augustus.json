@@ -1,0 +1,288 @@
+{
+  "id": "augustus",
+  "qid": "Q1405",
+  "name": { "en": "Augustus", "es": "Augusto" },
+  "icon": "👑",
+  "field": "leaders",
+  "known": { "en": "First Roman emperor", "es": "Primer emperador romano" },
+  "born": "-0063-09-23",
+  "died": "0014-08-19",
+  "summary": {
+    "en": "At 18 he inherited Caesar's name and an army. After years of civil war he made himself the first emperor, kept the look of a republic and gave Rome two centuries of peace.",
+    "es": "A los 18 años heredó el nombre de César y un ejército. Tras años de guerra civil se hizo el primer emperador, conservó la apariencia de una república y le dio a Roma dos siglos de paz."
+  },
+  "steps": [
+    {
+      "date": "-0063-09-23",
+      "kind": "born",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4828, 41.8931],
+      "title": { "en": "Gaius Octavius is born", "es": "Nace Cayo Octavio" },
+      "text": {
+        "en": "He was born Gaius Octavius, the son of a provincial senator and of Julius Caesar's niece Atia. Suetonius says the house stood on the Palatine hill, in a spot called the Ox Heads.",
+        "es": "Nació como Cayo Octavio, hijo de un senador de provincia y de Atia, sobrina de Julio César. Suetonio dice que la casa estaba en el monte Palatino, en un lugar llamado las Cabezas de Buey."
+      },
+      "details": {
+        "en": "His father died when he was four, and his mother raised him. He was a sickly boy and was never a good soldier; his friend Agrippa won most of his battles. At 12 he gave the funeral speech for his grandmother Julia, and Caesar, his great-uncle, took notice of the boy.",
+        "es": "Su padre murió cuando tenía cuatro años, y lo crió su madre. Era un niño enfermizo y nunca fue buen soldado; su amigo Agripa ganó la mayoría de sus batallas. A los 12 años dio el discurso fúnebre de su abuela Julia, y César, su tío abuelo, se fijó en el muchacho."
+      }
+    },
+    {
+      "date": "-0044-03",
+      "about": true,
+      "kind": "study",
+      "place": { "en": "Fier (Apollonia), Albania", "es": "Fier (Apolonia), Albania" },
+      "label": { "en": "Apollonia", "es": "Apolonia" },
+      "at": [19.4718, 40.7233],
+      "title": { "en": "The news in Apollonia", "es": "La noticia en Apolonia" },
+      "text": {
+        "en": "At 18 he was studying and training with the army at Apollonia, on the coast of Illyria, when Caesar was murdered. He learned that Caesar had adopted him in his will, and sailed for Italy.",
+        "es": "A los 18 años estudiaba y se entrenaba con el ejército en Apolonia, en la costa de Iliria, cuando mataron a César. Supo que César lo había adoptado en su testamento, y zarpó hacia Italia."
+      },
+      "details": {
+        "en": "His friends told him not to take the name: it was dangerous, and Caesar's heirs had many enemies. He took it anyway, and from then on was Gaius Julius Caesar, with the title Octavianus only in the mouths of his enemies. To win the loyalty of Caesar's veterans he paid every citizen the sum Caesar had promised in the will.",
+        "es": "Sus amigos le dijeron que no tomara el nombre: era peligroso, y los herederos de César tenían muchos enemigos. Lo tomó de todos modos, y desde entonces fue Cayo Julio César, y lo de Octaviano solo lo decían sus enemigos. Para ganarse a los veteranos de César pagó a cada ciudadano la suma que César había prometido en el testamento."
+      },
+      "places": [
+        {
+          "name": { "en": "Julius Caesar", "es": "Julio César" },
+          "id": "julius-caesar",
+          "at": [12.4769, 41.8953],
+          "cat": "person",
+          "type": "person",
+          "date": "-0044-03-15",
+          "life": ["-0100-07", "-0044-03-15"],
+          "text": {
+            "en": "His great-uncle, murdered on the Ides of March. He had no son, and named the 18-year-old as his heir.",
+            "es": "Su tío abuelo, asesinado en los idus de marzo. No tenía hijos, y nombró heredero al joven de 18 años."
+          }
+        }
+      ]
+    },
+    {
+      "date": "-0043-11",
+      "about": true,
+      "kind": "power",
+      "place": { "en": "Bologna, Italy", "es": "Bolonia, Italia" },
+      "at": [11.3387, 44.4938],
+      "title": { "en": "The pact with Antony and Lepidus", "es": "El pacto con Antonio y Lépido" },
+      "text": {
+        "en": "Octavian met Mark Antony and Lepidus on a small river island near Bologna. They agreed to share power for five years as a board of three, and to hunt down Caesar's killers.",
+        "es": "Octavio se reunió con Marco Antonio y Lépido en una pequeña isla de río cerca de Bolonia. Acordaron compartir el poder por cinco años como una junta de tres, y dar caza a los asesinos de César."
+      },
+      "details": {
+        "en": "To pay their legions the three drew up lists of enemies to be killed and their property seized: the proscriptions. Hundreds of senators and thousands of others died. Among them was Cicero, killed on Antony's wish; Octavian had at first tried to spare him. It is the darkest stain on his name.",
+        "es": "Para pagar a sus legiones, los tres hicieron listas de enemigos que debían morir y cuyos bienes serían confiscados: las proscripciones. Murieron cientos de senadores y miles de otras personas. Entre ellos Cicerón, muerto por deseo de Antonio; Octavio al principio intentó salvarlo. Es la peor mancha de su nombre."
+      },
+      "unsure": {
+        "en": "The meeting place, an island in a river near Bononia (Bologna), is not known exactly; the pact became law in Rome on 27 November.",
+        "es": "El lugar de la reunión, una isla de un río cerca de Bononia (Bolonia), no se conoce con exactitud; el pacto pasó a ser ley en Roma el 27 de noviembre."
+      }
+    },
+    {
+      "date": "-0042-10",
+      "kind": "moment",
+      "place": { "en": "Philippi, Greece", "es": "Filipos, Grecia" },
+      "at": [24.284, 41.0132],
+      "title": { "en": "Philippi", "es": "Filipos" },
+      "text": {
+        "en": "Two battles in the plain of Philippi, in Macedonia, defeated Brutus and Cassius, the leaders of Caesar's killers. Both took their own lives. Octavian had been ill, and Antony won most of the fighting.",
+        "es": "Dos batallas en la llanura de Filipos, en Macedonia, derrotaron a Bruto y Casio, los jefes de los asesinos de César. Los dos se quitaron la vida. Octavio había estado enfermo, y fue Antonio quien ganó la mayor parte del combate."
+      },
+      "unsure": {
+        "en": "The two battles were about three weeks apart in October 42 BC; sources do not agree on the dates.",
+        "es": "Las dos batallas fueron con unas tres semanas de diferencia, en octubre del 42 a. C.; las fuentes no coinciden en las fechas."
+      }
+    },
+    {
+      "date": "-0031-09-02",
+      "kind": "moment",
+      "place": { "en": "Actium, near Préveza, Greece", "es": "Accio, cerca de Préveza, Grecia" },
+      "label": { "en": "Actium", "es": "Accio" },
+      "at": [20.7505, 38.9562],
+      "by": "sea",
+      "title": { "en": "The battle of Actium", "es": "La batalla de Accio" },
+      "text": {
+        "en": "The two rivals fought at sea at last. Octavian's admiral Agrippa trapped the fleet of Antony and Cleopatra off western Greece, and Antony fled with her to Egypt. Their army surrendered.",
+        "es": "Los dos rivales por fin lucharon en el mar. El almirante de Octavio, Agripa, atrapó la flota de Antonio y Cleopatra frente a Grecia occidental, y Antonio huyó con ella a Egipto. Su ejército se rindió."
+      },
+      "details": {
+        "en": "Octavian followed to Alexandria in the summer of 30 BC. Antony and Cleopatra killed themselves, and Octavian took Egypt, with its huge wealth, as his own. After the victory he founded a city, Nikopolis, on the northern shore of the gulf to mark the battle.",
+        "es": "Octavio los siguió a Alejandría en el verano del 30 a. C. Antonio y Cleopatra se mataron, y Octavio tomó Egipto, con su enorme riqueza, como propiedad suya. Tras la victoria fundó una ciudad, Nicópolis, en la orilla norte del golfo para recordar la batalla."
+      },
+      "places": [
+        {
+          "name": { "en": "Cleopatra", "es": "Cleopatra" },
+          "id": "cleopatra",
+          "at": [20.7505, 38.9562],
+          "cat": "person",
+          "type": "person",
+          "date": "-0031-09-02",
+          "life": ["-0069", "-0030-08"],
+          "text": {
+            "en": "The queen of Egypt, who had brought 60 ships and the war chest to Antony's side. She slipped out of the battle with her squadron.",
+            "es": "La reina de Egipto, que había puesto 60 naves y el tesoro de guerra del lado de Antonio. Salió de la batalla con su escuadra."
+          }
+        }
+      ]
+    },
+    {
+      "date": "-0027-01-16",
+      "kind": "power",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4828, 41.8931],
+      "title": { "en": "He becomes Augustus", "es": "Se convierte en Augusto" },
+      "text": {
+        "en": "Octavian said he gave up all his powers to the Senate. The Senate begged him to keep them, and gave him a new name: Augustus, meaning the revered one. Historians count this as the start of the Roman Empire.",
+        "es": "Octavio dijo que devolvía todos sus poderes al Senado. El Senado le rogó que los conservara, y le dio un nuevo nombre: Augusto, que significa el venerado. Los historiadores cuentan esto como el comienzo del Imperio romano."
+      },
+      "details": {
+        "en": "He never called himself king. He was the first citizen, the princeps, and kept the Senate, the consuls and the old offices, but he held the army and the real power. He ruled for 41 years, rebuilt much of Rome, set up the first fire brigade and police in the city, and wrote an account of his deeds, the Res Gestae, which was carved on bronze at his tomb.",
+        "es": "Nunca se llamó rey. Era el primer ciudadano, el princeps, y mantuvo el Senado, los cónsules y los viejos cargos, pero tenía el ejército y el poder verdadero. Gobernó 41 años, reconstruyó gran parte de Roma, creó los primeros bomberos y la primera policía de la ciudad, y escribió un relato de sus hechos, las Res Gestae, que se grabó en bronce junto a su tumba."
+      }
+    },
+    {
+      "date": "-0009-01-30",
+      "kind": "made",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4755, 41.9065],
+      "title": { "en": "The Altar of Peace", "es": "El Ara de la Paz" },
+      "text": {
+        "en": "The Senate had voted in 13 BC to build an altar of Augustan Peace, and it was dedicated on 30 January 9 BC. Its carved walls show Augustus' family walking in a procession.",
+        "es": "El Senado votó en el 13 a. C. construir un altar de la Paz Augusta, y se consagró el 30 de enero del 9 a. C. Sus muros tallados muestran a la familia de Augusto en una procesión."
+      },
+      "details": {
+        "en": "The Ara Pacis marks what Augustus was proudest of: the end of the civil wars and of the long wars in Gaul and Spain. The altar was buried by the mud of the Tiber over the centuries; its pieces were dug out in 1568 and in 1937-38, and it now stands in a glass museum by the river, a few steps from his tomb.",
+        "es": "El Ara Pacis recuerda lo que más enorgullecía a Augusto: el fin de las guerras civiles y de las largas guerras de la Galia y de Hispania. El barro del Tíber lo fue enterrando con los siglos; sus piezas se desenterraron en 1568 y en 1937-38, y hoy se alza en un museo de vidrio junto al río, a pocos pasos de su tumba."
+      },
+      "places": [
+        {
+          "id": "ara-pacis",
+          "name": { "en": "Ara Pacis Augustae", "es": "Ara Pacis Augustae" },
+          "at": [12.4755, 41.9065],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🏛️",
+          "date": "-0009",
+          "by": { "en": "Roman sculptors", "es": "Escultores romanos" },
+          "text": {
+            "en": "The marble Altar of Augustan Peace, with a procession of his family. It is in the Museo dell'Ara Pacis in Rome.",
+            "es": "El altar de mármol de la Paz Augusta, con una procesión de su familia. Está en el Museo dell'Ara Pacis, en Roma."
+          },
+          "wiki": { "en": "Ara Pacis", "es": "Ara Pacis" }
+        }
+      ]
+    },
+    {
+      "date": "0009-09",
+      "about": true,
+      "kind": "struggle",
+      "place": { "en": "Kalkriese, near Ostercappeln, Germany", "es": "Kalkriese, cerca de Ostercappeln, Alemania" },
+      "at": [8.1262, 52.4072],
+      "title": { "en": "Three legions lost", "es": "Tres legiones perdidas" },
+      "text": {
+        "en": "In the forests of Germany, a Roman governor named Varus and three legions were ambushed and destroyed by Arminius, a German chief who had served in Rome's army. Rome gave up its plan to conquer lands east of the Rhine.",
+        "es": "En los bosques de Germania, un gobernador romano llamado Varo y tres legiones cayeron en una emboscada y fueron destruidos por Arminio, un jefe germano que había servido en el ejército de Roma. Roma abandonó su plan de conquistar las tierras al este del Rin."
+      },
+      "details": {
+        "en": "Augustus was 71. Suetonius says he was so shaken that he let his hair and beard grow for months and sometimes hit his head on a door, shouting: Quinctilius Varus, give me back my legions! The Rhine stayed the northern frontier for centuries.",
+        "es": "Augusto tenía 71 años. Suetonio cuenta que quedó tan afectado que dejó crecer el pelo y la barba por meses y a veces se golpeaba la cabeza contra una puerta, gritando: ¡Quintilio Varo, devuélveme mis legiones! El Rin siguió siendo la frontera norte durante siglos."
+      },
+      "unsure": {
+        "en": "Kalkriese, near Osnabrück, is the site where many Roman objects have been found, and most scholars link it to the battle; it is not certain that all of it happened here.",
+        "es": "Kalkriese, cerca de Osnabrück, es el sitio donde se han hallado muchos objetos romanos, y la mayoría de los estudiosos lo une a la batalla; no es seguro que todo ocurriera aquí."
+      }
+    },
+    {
+      "date": "0014-08-19",
+      "kind": "died",
+      "place": { "en": "Nola, Italy", "es": "Nola, Italia" },
+      "at": [14.5282, 40.9261],
+      "title": { "en": "He dies at Nola", "es": "Muere en Nola" },
+      "text": {
+        "en": "Augustus fell ill on a trip to southern Italy and died at Nola, in the house where his father had died. He was 75. According to Suetonius, his last words were a question: had he played his part well in the comedy of life?",
+        "es": "Augusto cayó enfermo en un viaje por el sur de Italia y murió en Nola, en la casa donde había muerto su padre. Tenía 75 años. Según Suetonio, sus últimas palabras fueron una pregunta: si había representado bien su papel en la comedia de la vida."
+      },
+      "details": {
+        "en": "His wife Livia was with him, and his stepson Tiberius, whom he had chosen as heir, hurried to the bedside. Some Roman writers whispered that Livia hastened his death with poisoned figs; there is no evidence for it.",
+        "es": "Lo acompañaba su esposa Livia, y su hijastro Tiberio, a quien había escogido como heredero, llegó de prisa a su lado. Algunos escritores romanos susurraron que Livia apresuró su muerte con higos envenenados; no hay pruebas de ello."
+      },
+      "unsure": {
+        "en": "The house at Nola is known only from the ancient writers; nothing of it has been found.",
+        "es": "La casa de Nola se conoce solo por los autores antiguos; no se ha encontrado nada de ella."
+      }
+    },
+    {
+      "date": "0014-09",
+      "about": true,
+      "kind": "honour",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4764, 41.9061],
+      "title": { "en": "A funeral for an emperor", "es": "Funeral de un emperador" },
+      "text": {
+        "en": "His body was carried to Rome by leading citizens, and burned on a pyre in the Campus Martius. An ex-praetor swore he saw him rise to the sky. His ashes were placed in the Mausoleum he had built, and the Senate made him a god.",
+        "es": "Los ciudadanos principales llevaron su cuerpo a Roma, y lo quemaron en una pira en el Campo de Marte. Un exmagistrado juró haberlo visto subir al cielo. Sus cenizas se pusieron en el Mausoleo que él había construido, y el Senado lo declaró dios."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Mausoleum of Augustus", "es": "Mausoleo de Augusto" },
+      "at": [12.4764, 41.9061],
+      "kind": "grave",
+      "text": {
+        "en": "A huge round tomb where his ashes lay, and later those of his family and several emperors. It was left in ruins for centuries and has been restored; check opening times.",
+        "es": "Una enorme tumba circular donde estuvieron sus cenizas y luego las de su familia y varios emperadores. Estuvo en ruinas durante siglos y fue restaurada; conviene revisar los horarios."
+      },
+      "wiki": { "en": "Mausoleum of Augustus", "es": "Mausoleo de Augusto" }
+    },
+    {
+      "name": { "en": "Ara Pacis Museum", "es": "Museo del Ara Pacis" },
+      "at": [12.4755, 41.9065],
+      "kind": "museum",
+      "text": {
+        "en": "A modern glass building by the Tiber houses the Altar of Peace, with its carved processions.",
+        "es": "Un edificio moderno de vidrio junto al Tíber guarda el Altar de la Paz, con sus procesiones talladas."
+      },
+      "wiki": { "en": "Ara Pacis", "es": "Ara Pacis" }
+    },
+    {
+      "name": { "en": "Palatine Hill", "es": "Monte Palatino" },
+      "at": [12.4871, 41.8893],
+      "kind": "site",
+      "text": {
+        "en": "Augustus lived on this hill, and the word palace comes from its name. The ruins include the House of Augustus, with painted rooms.",
+        "es": "Augusto vivió en esta colina, y la palabra palacio viene de su nombre. Entre las ruinas está la Casa de Augusto, con salas pintadas."
+      },
+      "wiki": { "en": "Palatine Hill", "es": "Palatino" }
+    },
+    {
+      "name": { "en": "Augustus of Prima Porta, Vatican Museums", "es": "Augusto de Prima Porta, Museos Vaticanos" },
+      "at": [12.4544, 41.9065],
+      "kind": "museum",
+      "text": {
+        "en": "A marble statue of Augustus as a general with his arm raised, the best-known image of him. It was found in 1863 in a villa of his wife Livia north of Rome.",
+        "es": "Una estatua de mármol de Augusto como general, con el brazo levantado, la imagen más conocida de él. Fue hallada en 1863 en una villa de su esposa Livia al norte de Roma."
+      },
+      "wiki": { "en": "Augustus of Prima Porta", "es": "Augusto de Prima Porta" }
+    },
+    {
+      "name": { "en": "Museum and Park Kalkriese", "es": "Museo y Parque Kalkriese" },
+      "at": [8.1262, 52.4072],
+      "kind": "museum",
+      "text": {
+        "en": "A museum and a park on the place where the Roman army is thought to have been ambushed, with weapons and armour found in the soil.",
+        "es": "Un museo y un parque en el lugar donde se cree que emboscaron al ejército romano, con armas y armaduras halladas en la tierra."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Augustus ended a century of civil war and ruled for 41 years, and the system he built, the Principate, lasted for over two centuries. The month of August is named for him. The price was the loss of the free Republic, and the blood of the proscriptions that put him in power.",
+    "es": "Augusto puso fin a un siglo de guerras civiles y gobernó 41 años, y el sistema que construyó, el Principado, duró más de dos siglos. El mes de agosto lleva su nombre. El precio fue la pérdida de la República libre, y la sangre de las proscripciones que lo llevaron al poder."
+  },
+  "sources": [
+    { "title": "Wikipedia: Augustus", "url": "https://en.wikipedia.org/wiki/Augustus" },
+    { "title": "Suetonius, Life of Augustus (Lives of the Twelve Caesars)", "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Augustus*.html" },
+    { "title": "Res Gestae Divi Augusti (Augustus' own account)", "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Res_Gestae/home.html" }
+  ]
+}

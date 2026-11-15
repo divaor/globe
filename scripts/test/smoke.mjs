@@ -2467,7 +2467,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   // Lima: what to eat, a dish's story, Wikivoyage's overview.
   await openCity('lima', 'eat', 2500);
   const eat = await page.evaluate(() => ({ tabs: document.querySelectorAll('.guide-tabs [data-tab]').length, dishes: [...document.querySelectorAll('[data-dish]')].map((x) => x.dataset.dish), text: document.querySelector('.guide-tab')?.innerText ?? '', wv: document.querySelector('[data-wv="eat"]')?.innerText ?? '' }));
-  check(eat.tabs === 8 && eat.dishes.some((d) => /ceviche/.test(d)) && /national dish: Ceviche/.test(eat.text) && /From Wikivoyage/.test(eat.wv) && /ceviche is the dish every visitor/.test(eat.wv) && !/A restaurant/.test(eat.wv) && /CC BY-SA/.test(eat.wv),
+  check(eat.tabs === 9 && eat.dishes.some((d) => /ceviche/.test(d)) && /national dish: Ceviche/.test(eat.text) && /From Wikivoyage/.test(eat.wv) && /ceviche is the dish every visitor/.test(eat.wv) && !/A restaurant/.test(eat.wv) && /CC BY-SA/.test(eat.wv),
     `Lima, what to eat: ${eat.dishes.length} dishes (${eat.dishes.slice(0, 3).join(', ')}…), the national dish, and Wikivoyage's overview without its listings, credited`);
   await page.click('[data-dish="pisco-sour"], [data-dish]');
   await page.waitForFunction(() => !!window.atlas.app.mode, null, { timeout: 15000 }).catch(() => {});
@@ -2566,7 +2566,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => window.atlas.app.setLang('es'));
   await openCity('lima', 'facts');
   const esText = await page.evaluate(() => ({ tabs: [...document.querySelectorAll('.guide-tabs [data-tab]')].map((x) => x.textContent.replace(/^\S+\s/, '')).join(', '), facts: document.querySelector('.guide-tab')?.innerText ?? '' }));
-  check(/Comer, Ver, Museos, Arte, Edificios, Datos, Historia aquí, Más/.test(esText.tabs) && /Idiomas\s+Español, Quechua, Aimara/i.test(esText.facts) && /sol peruano/i.test(esText.facts) && /Mejores meses para ir/.test(esText.facts), `en español: ${esText.tabs}; "${(/Idiomas[^\n]*\n?[^\n]*/.exec(esText.facts) ?? [''])[0].replace(/\s+/g, ' ')}"`);
+  check(/Comer, Ver, Museos, Arte, Edificios, Personas, Datos, Historia aquí, Más/.test(esText.tabs) && /Idiomas\s+Español, Quechua, Aimara/i.test(esText.facts) && /sol peruano/i.test(esText.facts) && /Mejores meses para ir/.test(esText.facts), `en español: ${esText.tabs}; "${(/Idiomas[^\n]*\n?[^\n]*/.exec(esText.facts) ?? [''])[0].replace(/\s+/g, ' ')}"`);
   await page.evaluate(() => window.atlas.app.setLang('en'));
 
   // Offline: a city's guide comes from the service worker's cache once it has been opened.
@@ -2707,6 +2707,30 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(/\d{3} art museums/.test(lm) && /Louvre/.test(louvre) && /Mona Lisa/.test(louvre) && /Visitors/.test(louvre) && /\d+ masterpieces/.test(lmp) && /\d+ buildings by style/.test(la) && /Gothic/.test(la),
     `filters: "${line(lm, /\d+ art museums/)}", a tap on the Louvre opens its card (Mona Lisa among its works); "${line(lmp, /\d+ masterpieces/)}" (sculpture); "${line(la, /\d+ buildings by style/)}" (Gothic)`);
 
+  // Crowded museums (v0.28.0, from the v0.27.0 phone test): at full zoom over Washington the Smithsonian's
+  // museums, which overlap at their places, move apart, each with a line to its place, and a tap on each opens
+  // its own card.
+  await page.evaluate(() => window.atlas.app.activate('art-museums'));
+  await page.evaluate(() => { const r = window.atlas.app.renderer; r.view.flyTo({ lon: -77.025, lat: 38.892, zoom: r.view.maxZoom }, 0); r.requestRender(); });
+  await page.waitForTimeout(1500);
+  const dc = await page.evaluate(() => {
+    const v = window.atlas.app.renderer.view, c = window.atlas.app.instance('art-museums').state.crowd;
+    const on = c.placed.filter((p) => p.x > 0 && p.x < v.w && p.y > 0 && p.y < v.h);
+    let gap = Infinity;
+    for (const a of on) for (const b of on) if (a !== b) gap = Math.min(gap, Math.hypot(a.x - b.x, a.y - b.y) - a.r - b.r);
+    return { gap, moved: on.filter((p) => Math.hypot(p.x - p.ax, p.y - p.ay) > p.r).length, dots: on.map((p) => ({ name: p.it.name[0], x: p.x, y: p.y })) };
+  });
+  const dcTaps = [];
+  for (const d of dc.dots) {
+    await page.touchscreen.tap(d.x, d.y);
+    await page.waitForTimeout(600);
+    dcTaps.push([d.name, await page.evaluate(() => document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? '')]);
+    await page.evaluate(() => window.atlas.shell.card.hide());
+  }
+  await page.evaluate(() => window.atlas.app.deactivate('art-museums'));
+  check(dc.dots.length >= 4 && dc.gap >= 2 && dc.moved >= 3 && dcTaps.every(([a, b]) => a === b),
+    `crowded museums: at full zoom over Washington ${dc.dots.length} museums are apart (${dc.gap.toFixed(1)} px between the closest), ${dc.moved} with a line to their place, and a tap on each opens its own card${dcTaps.every(([a, b]) => a === b) ? '' : ` (not: ${dcTaps.filter(([a, b]) => a !== b).map(([a, b]) => `${a} → "${b}"`).join('; ')})`}`);
+
 
   // Now in, on the Mona Lisa's story card.
   await page.evaluate(async () => { const it = (await fetch('data/art/items.json').then((r) => r.json())).items.find((x) => x.id === 'mona-lisa'); window.atlas.time.stories.art.itemCard(it); });
@@ -2743,6 +2767,181 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(/Arte, Edificios/.test(esText.tabs) && /En Madrid puedes ver \d+ de las obras más conocidas del mundo/.test(esText.text) && /Las meninas|Las Meninas/.test(esText.text), `en español: ${esText.tabs}; "${(/En Madrid[^.]+/.exec(esText.text) ?? [''])[0]}"`);
 
   check(!errors.length, `no page errors in v0.27.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 24. Lives on the map (v0.28.0). The list of lives (fields, the search box, the pairs); a life step by step (Frida
+// Kahlo: the place and her age, the route from the last place, the details with her Wikipedia article and where her
+// works are now); a step dated by its year only ("aged 42–43"); the places to visit today and a place's card with
+// its city's guide; two lives side by side (Frida Kahlo and Diego Rivera: both lives' steps, a handshake at their
+// wedding, and the same pair from a shared link); Who was born here? (Salzburg lists Mozart first, his card with a
+// portrait's licence from recorded answers, by field); a city's People tab; search finds a life; On this day; Spanish.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {} });
+  // Wikidata and Commons, as recorded: a person's portrait, its licence and author; pictures as a small grey square.
+  await ctx.route(/wikidata\.org\/w\/api\.php/, (route) => route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' },
+    body: JSON.stringify({ claims: { P18: [{ mainsnak: { datavalue: { value: 'Wolfgang-amadeus-mozart 1.jpg' } } }] } }) }));
+  await ctx.route(/commons\.wikimedia\.org\/w\/api\.php/, (route) => route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' },
+    body: JSON.stringify({ query: { pages: { 1: { imageinfo: [{ extmetadata: { LicenseShortName: { value: 'Public domain' }, Artist: { value: '<a href="#">Barbara Krafft</a>' } } }] } } } }) }));
+  const png = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==', 'base64');
+  await ctx.route(/Special:FilePath|upload\.wikimedia\.org/, (route) => route.fulfill({ status: 200, contentType: 'image/png', body: png }));
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(url + '#p=globe&l=political&c=-60,20,1.3&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.reload({ waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas?.lives && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(800);
+  const cardText = () => page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
+  const bar = () => page.evaluate(() => ({ date: document.querySelector('.wb-date')?.textContent ?? '', title: document.querySelector('.wb-title')?.textContent ?? '', meta: [...document.querySelectorAll('.wb-meta > *')].map((x) => x.textContent), name: document.querySelector('.wb-title-short')?.textContent ?? '' }));
+  const goStep = (k) => page.evaluate((n) => { const m = window.atlas.time.stories.lives; m['playing'] = false; m['go'](n, { user: true }); }, k);
+
+  // The list: every life, the fields, the pairs; the search box finds a life by its birthplace.
+  await page.evaluate(() => window.atlas.time.enter('lives'));
+  await page.waitForSelector('.lives-cards [data-war]', { timeout: 15000 }).catch(() => {});
+  const all = await page.evaluate(async () => (await fetch('data/lives/index.json').then((r) => r.json())).stories.length);
+  const list = await page.evaluate(() => ({ cards: document.querySelectorAll('.lives-cards [data-war]').length, fields: [...document.querySelectorAll('.lives-fields [data-field]')].map((b) => b.dataset.field), pairs: [...document.querySelectorAll('[data-pair]')].map((b) => b.dataset.pair), frida: document.querySelector('.lives-cards [data-war="frida-kahlo"]')?.innerText ?? '' }));
+  await page.fill('.lives-search', 'coyoac');
+  await page.waitForTimeout(300);
+  const found = await page.evaluate(() => [...document.querySelectorAll('.lives-cards [data-war]')].map((b) => b.dataset.war));
+  await page.fill('.lives-search', '');
+  await page.click('.lives-fields [data-field="arts"]');
+  await page.waitForTimeout(300);
+  const arts = await page.evaluate(() => [...document.querySelectorAll('.lives-cards [data-war]')].map((b) => b.dataset.war));
+  await page.click('.lives-fields [data-field="all"]');
+  check(list.cards === all && all >= 3 && list.fields[0] === 'all' && list.fields.includes('arts') && list.pairs.includes('frida-kahlo~diego-rivera') && /1907–1954 · Mexican painter/.test(list.frida) && /Coyoacán/.test(list.frida)
+    && found.join() === 'frida-kahlo' && arts.includes('frida-kahlo') && arts.includes('diego-rivera') && arts.length < all,
+  `Lives on the map: ${list.cards} lives in ${list.fields.length - 1} fields, ${list.pairs.length} pairs; "coyoac" finds ${found.join()}; ${arts.length} in Art`);
+
+  // A life, step by step: the place and her age, the route from the last place.
+  await page.click('.lives-cards [data-war="frida-kahlo"]');
+  await page.waitForFunction(() => window.atlas.time.stories.lives.story?.id === 'frida-kahlo', null, { timeout: 15000 }).catch(() => {});
+  await goStep(4);
+  await page.waitForTimeout(2500);
+  const b5 = await bar();
+  const s5 = await page.evaluate(() => { const c = window.atlas.time.stories.lives.story, st = c.steps[4]; const v = window.atlas.app.renderer.view; return { moves: st.moves?.map((m) => [m.side, m.path.length, m.path[0], m.path[m.path.length - 1]]), trail: c.trail, sides: c.sides.length, on: !!v.project(st.at[0], st.at[1]), hash: location.hash }; });
+  check(/November 1930/.test(b5.date) && b5.title === 'San Francisco' && b5.meta.some((x) => /📍 San Francisco · aged 23/.test(x)) && !b5.meta.some((x) => /Frida Kahlo/.test(x)) && s5.trail && s5.sides === 1 && s5.on
+    && s5.moves?.length === 1 && Math.abs(s5.moves[0][2][0] + 99.16) < 0.01 && Math.abs(s5.moves[0][3][0] + 122.42) < 0.01 && /#lives=frida-kahlo&step=5/.test(s5.hash),
+  `Frida Kahlo, step 5: ${b5.date}, "${b5.meta[0]}", the route from Coyoacán to San Francisco, ${s5.hash.split('&p=')[0]}`);
+  await page.click('.wb-more');
+  await page.waitForSelector('.war-details', { timeout: 5000 }).catch(() => {});
+  await page.waitForSelector('[data-lives="works"]', { timeout: 8000 }).catch(() => {});
+  const det = await page.evaluate(() => ({ where: document.querySelector('.story-where')?.textContent ?? '', wiki: document.querySelector('.lives-actions a')?.getAttribute('href') ?? '', works: !!document.querySelector('[data-lives="works"]'), buildings: !!document.querySelector('[data-lives="buildings"]'), beside: !!document.querySelector('[data-lives="beside"]'), rows: document.querySelectorAll('.war-details .story-item, .war-details [class*="item"]').length }));
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+  check(/San Francisco, United States · aged 23/.test(det.where) && /en\.wikipedia\.org\/wiki\/Frida_Kahlo/.test(det.wiki) && det.works && !det.buildings && det.beside,
+    `her details: "${det.where}", her Wikipedia article, Where their works are now, Beside another life`);
+
+  // The places to visit today, and a place's card with its city's guide.
+  const last = await page.evaluate(() => window.atlas.time.stories.lives.story.steps.length - 1);
+  await goStep(last);
+  await page.waitForTimeout(2200);
+  const bt = await bar();
+  await page.evaluate(() => { const m = window.atlas.time.stories.lives, c = m.story; m.itemCard(c.items[c.steps[c.steps.length - 1].show[0]]); });
+  await page.waitForTimeout(600);
+  const visit = await cardText();
+  check(/Today/i.test(bt.title) && /In their footsteps today/.test(bt.title) && /Frida Kahlo Museum/.test(visit) && /To visit today/.test(visit) && !/\bWhen\b/.test(visit) && /Mexico City: the guide/.test(visit),
+    `today: "${bt.title.replace(/\s+/g, ' ').trim()}"; the Blue House's card (no date) links to "${(/[^\n]*: the guide/.exec(visit) ?? [''])[0]}"`);
+  await page.evaluate(() => window.atlas.shell.card.hide());
+
+  // A step dated by its year only: his age is one of two.
+  await page.evaluate(() => window.atlas.time.stories.lives.open('diego-rivera'));
+  await page.waitForFunction(() => window.atlas.time.stories.lives.story?.id === 'diego-rivera', null, { timeout: 15000 }).catch(() => {});
+  const yk = await page.evaluate(() => window.atlas.time.stories.lives.story.steps.findIndex((s) => s.age0 != null && s.age0 !== s.age));
+  await goStep(yk);
+  await page.waitForTimeout(1200);
+  const by = await bar();
+  check(yk > 0 && by.meta.some((x) => /aged \d+–\d+/.test(x)), `Diego Rivera, a step dated by its year (${by.date}): "${by.meta[0]}"`);
+
+  // Two lives side by side.
+  await page.evaluate(() => window.atlas.time.stories.lives.pick());
+  await page.waitForSelector('[data-pair="frida-kahlo~diego-rivera"]', { timeout: 10000 }).catch(() => {});
+  await page.click('[data-pair="frida-kahlo~diego-rivera"]');
+  await page.waitForFunction(() => window.atlas.time.stories.lives.story?.id === 'frida-kahlo~diego-rivera', null, { timeout: 15000 }).catch(() => {});
+  const wed = await page.evaluate(() => { const m = window.atlas.time.stories.lives; m['playing'] = false; const k = m.story.steps.findIndex((s) => s.who === 'a' && s.date === '1929-08-21'); m['go'](k, { user: true }); return k; });
+  await page.waitForTimeout(2200);
+  const bp = await bar();
+  const pair = await page.evaluate(() => { const c = window.atlas.time.stories.lives.story; return { n: c.steps.length, sides: c.sides.map((s) => s.color), sorted: c.steps.every((s, i) => i === 0 || s.t >= c.steps[i - 1].t), who: [...new Set(c.steps.map((s) => s.who))].sort().join(), events: c.steps.flatMap((s) => (s.events ?? []).map((e) => e.text.en)), hash: location.hash }; });
+  check(/Frida Kahlo and Diego Rivera/.test(bp.name) && pair.n >= 25 && pair.sides.length === 2 && pair.sides[0] !== pair.sides[1] && pair.sorted && pair.who === 'a,b'
+    && bp.meta.some((x) => /Their paths cross/.test(x)) && bp.meta.some((x) => x === 'Frida Kahlo') && pair.events.some((e) => /Both in Coyoacán, 1929/.test(e)) && new RegExp(`#lives=frida-kahlo~diego-rivera&step=${wed + 1}`).test(pair.hash),
+  `two lives side by side: ${bp.name.trim()}, ${pair.n} steps in date order in two colours; at their wedding "${bp.meta.filter((x) => /cross|Kahlo/.test(x)).join('", "')}" ("${pair.events.find((e) => /1929/.test(e))}")`);
+  // The same pair from a shared link, in another browser.
+  const page2 = await ctx.newPage();
+  await page2.goto(url + `#lives=frida-kahlo~diego-rivera&step=${wed + 1}&lang=en`, { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page2.waitForFunction(() => window.atlas?.time?.stories.lives.story?.id === 'frida-kahlo~diego-rivera', null, { timeout: 30000 }).catch(() => {});
+  await page2.waitForTimeout(1500);
+  const shared = await page2.evaluate(() => ({ id: window.atlas.time.stories.lives.story?.id, title: document.querySelector('.wb-title')?.textContent ?? '' }));
+  await page2.close();
+  check(shared.id === 'frida-kahlo~diego-rivera' && /She marries Diego Rivera/.test(shared.title), `a shared link opens the two lives at that step ("${shared.title}")`);
+  await page.evaluate(() => window.atlas.time.stories.lives.exit());
+  await page.waitForTimeout(600);
+
+  // Who was born here?
+  await page.evaluate(() => window.atlas.app.activate('born-here'));
+  await page.waitForFunction(() => /people were born/.test(document.body.innerText) || window.atlas.app.instance('born-here')?.ready, null, { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(1500);
+  const legend = await page.evaluate(() => { const l = window.atlas.app.instance('born-here'); const g = l.def.legend(l); return { title: g.title, items: g.items.map((i) => i.label) }; });
+  await page.evaluate(() => { const r = window.atlas.app.renderer; r.view.flyTo({ lon: 13.045, lat: 47.8, zoom: 7 }, 0); r.requestRender(); });
+  await page.waitForTimeout(1500);
+  const sp = await page.evaluate(() => window.atlas.app.renderer.view.project(13.045, 47.8));
+  await page.touchscreen.tap(sp[0], sp[1]);
+  await page.waitForSelector('.born-panel [data-person]', { timeout: 8000 }).catch(() => {});
+  await page.waitForTimeout(500);
+  const salz = await page.evaluate(() => ({ open: window.atlas.shell.sheet.isOpen('born-here'), place: document.querySelector('.born-panel')?.dataset.place, people: [...document.querySelectorAll('.born-panel [data-person] .guide-item-title')].map((x) => x.textContent), sub: document.querySelector('.born-panel [data-person] .guide-item-sub')?.textContent ?? '' }));
+  await page.click('.born-panel [data-person="Q254"]');
+  await page.waitForSelector('.country-card:not([hidden]) [data-credit]', { timeout: 8000 }).catch(() => {});
+  await page.waitForTimeout(700);
+  const mozart = await cardText();
+  check(/Where [\d.,]+\s?[kK]? people were born|Where 12/.test(legend.title) && legend.items.length >= 8 && legend.items.some((x) => /Music/.test(x)) && salz.open && salz.place === 'Salzburg' && salz.people[0] === 'Wolfgang Amadeus Mozart' && /1756–1791 · Austrian composer/.test(salz.sub)
+    && /Born\s+1756 · Salzburg/.test(mozart) && /Died\s+1791 · Vienna/.test(mozart) && /Picture: Public domain · Barbara Krafft/.test(mozart),
+  `Who was born here?: "${legend.title}" in ${legend.items.length} fields; Salzburg lists ${salz.people.slice(0, 3).join(', ')}…; Mozart's card with his portrait's licence`);
+  await page.evaluate(() => window.atlas.shell.card.hide());
+  await page.evaluate(() => window.atlas.app.setOption('born-here', 'field', 'sport'));
+  await page.waitForTimeout(400);
+  const sport = await page.evaluate(() => { const l = window.atlas.app.instance('born-here'); const g = l.def.legend(l); return g.items.map((i) => i.label); });
+  await page.evaluate(() => { window.atlas.app.setOption('born-here', 'field', 'all'); window.atlas.app.deactivate('born-here'); });
+  check(sport.length === 1 && /Sport/.test(sport[0]), `by field: ${sport.join()}`);
+
+  // A city's People tab: the lives that pass through, who was born there, who died there.
+  await page.evaluate(() => window.atlas.guide.openCity('mexico-city', 'people'));
+  await page.waitForSelector('.guide-tab [data-person]', { timeout: 15000 }).catch(() => {});
+  const ppl = await page.evaluate(() => ({ lives: [...document.querySelectorAll('.guide-tab [data-life]')].map((b) => b.dataset.life), born: document.querySelectorAll('.guide-tab [data-people="born"] [data-person]').length, first: document.querySelector('.guide-tab [data-people="born"] .guide-item-title')?.textContent, died: document.querySelectorAll('.guide-tab [data-people="died"] [data-person]').length, text: document.querySelector('.guide-tab')?.innerText ?? '' }));
+  await page.click('.guide-tab [data-life="frida-kahlo"]');
+  await page.waitForFunction(() => window.atlas.time.stories.lives.story?.id === 'frida-kahlo', null, { timeout: 15000 }).catch(() => {});
+  await page.waitForTimeout(800);
+  const fromGuide = await page.evaluate(() => { const m = window.atlas.time.stories.lives; return { id: m.story?.id, place: document.querySelector('.wb-place')?.textContent ?? '' }; });
+  check(ppl.lives.includes('frida-kahlo') && ppl.lives.includes('diego-rivera') && ppl.born >= 10 && ppl.died >= 3 && /Born in Mexico City \(\d+\)/i.test(ppl.text) && fromGuide.id === 'frida-kahlo' && /Mexico City|Coyoacán/.test(fromGuide.place),
+    `Mexico City's People tab: ${ppl.lives.length} lives pass through, ${ppl.born} born here (${ppl.first} first), ${ppl.died} died here; a life opens at its first step here ("${fromGuide.place}")`);
+  await page.evaluate(() => window.atlas.time.stories.lives.exit());
+  await page.waitForTimeout(500);
+
+  // Search finds a life; On this day has her birthday.
+  await page.evaluate(() => window.atlas.shell.search.open());
+  await page.fill('.search-field', 'frida');
+  await page.waitForTimeout(500);
+  await page.fill('.search-field', 'frida k');
+  await page.waitForTimeout(400);
+  const hit = await page.evaluate(() => [...document.querySelectorAll('.search-item')].map((x) => x.innerText.replace(/\n/g, ' · ')).find((x) => /Lives on the map/.test(x)) ?? '');
+  await page.evaluate(() => [...document.querySelectorAll('.search-item')].find((x) => /Lives on the map/.test(x.innerText))?.click());
+  await page.waitForFunction(() => window.atlas.time.stories.lives.story?.id === 'frida-kahlo', null, { timeout: 15000 }).catch(() => {});
+  const otd = await page.evaluate(async () => { const m = await fetch('data/onthisday/07.json').then((r) => r.json()); return (m.days['6'] ?? []).filter((e) => e[0] === 'lives/frida-kahlo').map((e) => e[4]); });
+  check(/Frida Kahlo/.test(hit) && /1907–1954/.test(hit) && (await page.evaluate(() => window.atlas.time.stories.lives.story?.id)) === 'frida-kahlo' && otd.includes('Born in the Blue House'),
+    `search: "${hit}" opens her life; On this day, 6 July: "${otd.join()}"`);
+
+  // Spanish.
+  await page.evaluate(() => window.atlas.app.setLang('es'));
+  await goStep(4);
+  await page.waitForTimeout(1200);
+  const es5 = await bar();
+  await page.evaluate(() => window.atlas.time.stories.lives.pick());
+  await page.waitForSelector('.lives-cards [data-war]', { timeout: 10000 }).catch(() => {});
+  const esList = await page.evaluate(() => ({ title: document.querySelector('.sheet-title, .sheet-head h2')?.textContent ?? document.querySelector('.sheet')?.innerText.split('\n')[0] ?? '', frida: document.querySelector('.lives-cards [data-war="frida-kahlo"]')?.innerText ?? '', pairs: document.querySelector('.lives-pairs')?.innerText ?? '' }));
+  await page.evaluate(() => { window.atlas.shell.sheet.close(); window.atlas.app.setLang('en'); });
+  await page.evaluate(() => window.atlas.time.stories.lives.exit());
+  check(es5.meta.some((x) => /a los 23 años/.test(x)) && /noviembre de 1930/.test(es5.date) && /Vidas en el mapa/.test(esList.title) && /Pintora mexicana/.test(esList.frida) && /Dos vidas lado a lado/i.test(esList.pairs),
+    `en español: ${esList.title.trim()}; "${es5.date}", "${es5.meta[0]}"; ${esList.frida.split('\n')[1] ?? ''}`);
+
+  check(!errors.length, `no page errors in v0.28.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

@@ -1,0 +1,440 @@
+{
+  "id": "cervantes",
+  "qid": "Q5682",
+  "name": { "en": "Miguel de Cervantes", "es": "Miguel de Cervantes" },
+  "icon": "✍️",
+  "field": "letters",
+  "known": { "en": "Author of Don Quixote", "es": "Autor del Quijote" },
+  "born": "1547-09-29",
+  "died": "1616-04-22",
+  "summary": {
+    "en": "A soldier maimed at Lepanto, five years a captive in Algiers, a tax collector jailed in Seville: at 57 he published Don Quixote, the book often called the first modern novel.",
+    "es": "Soldado herido en Lepanto, cinco años cautivo en Argel, recaudador preso en Sevilla: a los 57 años publicó el Quijote, el libro al que muchos llaman la primera novela moderna."
+  },
+  "unsure": {
+    "en": "Only his baptism is recorded, not his birth, and little is certain about his first twenty years or about 1597 to 1604, the years when Don Quixote was written.",
+    "es": "Solo consta su bautismo, no su nacimiento, y poco se sabe con certeza de sus primeros veinte años y de 1597 a 1604, los años en que escribió el Quijote."
+  },
+  "steps": [
+    {
+      "date": "1547-09-29",
+      "kind": "born",
+      "place": { "en": "Alcalá de Henares, Spain", "es": "Alcalá de Henares, España" },
+      "at": [-3.367, 40.4821],
+      "title": { "en": "Born in Alcalá de Henares", "es": "Nace en Alcalá de Henares" },
+      "text": {
+        "en": "Miguel was the fourth of seven children of Rodrigo de Cervantes, a barber-surgeon always in debt, and Leonor de Cortinas. He was baptized on 9 October 1547 in the church of Santa María la Mayor.",
+        "es": "Miguel fue el cuarto de los siete hijos de Rodrigo de Cervantes, un cirujano siempre endeudado, y de Leonor de Cortinas. Lo bautizaron el 9 de octubre de 1547 en la iglesia de Santa María la Mayor."
+      },
+      "unsure": {
+        "en": "His birth was not recorded. The date given, 29 September, is a guess: it is the feast of Saint Michael, whose name he bears, and children were baptized within days.",
+        "es": "Su nacimiento no quedó registrado. La fecha que se da, el 29 de septiembre, es una suposición: es la fiesta de San Miguel, cuyo nombre lleva, y a los niños se los bautizaba a los pocos días."
+      },
+      "details": {
+        "en": "His father bled and bandaged patients for a living, a trade halfway between barber and doctor, and kept moving ahead of his creditors: to Valladolid, where he was jailed for debt in 1551, then to Córdoba and Seville. Nobody knows whether the children went with him, or where Miguel first went to school. The family house was rebuilt in 1956 on its original plot and is now a museum. The church of his baptism burned in 1936; its tower and one chapel still stand.",
+        "es": "Su padre vivía de sangrar y vendar enfermos, un oficio a medio camino entre barbero y médico, y se mudaba una y otra vez huyendo de sus acreedores: a Valladolid, donde lo encarcelaron por deudas en 1551, y después a Córdoba y Sevilla. Nadie sabe si los hijos iban con él, ni dónde aprendió Miguel las primeras letras. La casa familiar fue reconstruida en 1956 en su solar original y hoy es un museo. La iglesia de su bautismo se quemó en 1936; quedan en pie la torre y una capilla."
+      }
+    },
+    {
+      "date": "1568",
+      "kind": "study",
+      "place": { "en": "Madrid, Spain", "es": "Madrid, España" },
+      "at": [-3.7126, 40.4142],
+      "title": { "en": "A pupil of López de Hoyos", "es": "Discípulo de López de Hoyos" },
+      "text": {
+        "en": "The family settled in Madrid in 1566. At the town's grammar school the humanist Juan López de Hoyos called Miguel his \"dear and beloved pupil\" and printed four of his poems in a book on the queen's death, in 1569.",
+        "es": "La familia se instaló en Madrid en 1566. En el Estudio de la Villa, el humanista Juan López de Hoyos llamó a Miguel su «caro y amado discípulo» e incluyó cuatro poemas suyos en un libro por la muerte de la reina, en 1569."
+      },
+      "unsure": {
+        "en": "Nothing sure is known of his earlier schooling, and he never enrolled at a university: the old claim that he studied at Salamanca has no proof.",
+        "es": "No se sabe nada seguro de sus estudios anteriores, y nunca se matriculó en una universidad: la vieja idea de que estudió en Salamanca no tiene pruebas."
+      }
+    },
+    {
+      "date": "1569-12",
+      "kind": "journey",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.5113, 41.8919],
+      "title": { "en": "A sudden flight to Rome", "es": "La huida a Roma" },
+      "text": {
+        "en": "A royal warrant of September 1569 ordered the arrest of a student, Miguel de Cervantes, sentenced to lose his right hand for wounding a man in a duel. By December he was in Rome, serving the prelate Giulio Acquaviva.",
+        "es": "Una orden real de septiembre de 1569 mandó prender a un estudiante llamado Miguel de Cervantes, condenado a perder la mano derecha por herir a un hombre en duelo. En diciembre ya servía en Roma al prelado Giulio Acquaviva."
+      },
+      "unsure": {
+        "en": "It is not proven that the Cervantes of the warrant was the writer, though most biographers think so: it would explain why he left Spain so suddenly.",
+        "es": "No está probado que el Cervantes de la orden fuera el escritor, aunque la mayoría de los biógrafos lo cree: explicaría por qué salió de España tan de repente."
+      }
+    },
+    {
+      "date": "1571-10-07",
+      "kind": "moment",
+      "by": "sea",
+      "via": [[12.3, 41.6], [13.1, 41.1], [14.2, 40.7], [15.5, 39.5], [15.6, 38.23], [15.75, 37.85], [16.3, 37.8], [19.6, 39.4], [20.45, 38.55], [20.85, 38.2]],
+      "place": { "en": "Gulf of Patras, off Missolonghi, Greece", "es": "Golfo de Patras, frente a Mesolongi, Grecia" },
+      "label": { "en": "Lepanto", "es": "Lepanto" },
+      "at": [21.25, 38.25],
+      "title": { "en": "The Battle of Lepanto", "es": "La batalla de Lepanto" },
+      "text": {
+        "en": "Aboard the galley Marquesa, sick with fever, he refused to stay below deck while the Holy League's fleet broke the Ottoman navy. Three gunshots hit him: two in the chest, and one that crippled his left hand for life.",
+        "es": "En la galera Marquesa, enfermo de fiebre, se negó a quedarse bajo cubierta mientras la flota de la Santa Liga deshacía a la armada otomana. Recibió tres disparos: dos en el pecho y uno que le inutilizó la mano izquierda."
+      },
+      "details": {
+        "en": "He had enlisted, like his brother Rodrigo, in the company of Captain Diego de Urbina. The fleet of Spain, Venice and the pope, led by Don John of Austria, met the Turks at the mouth of the Gulf of Patras, west of the port then called Lepanto. Cervantes kept on soldiering afterwards, at Navarino and Tunis. He never got the use of his hand back and never regretted the day. He called it \"the greatest occasion that past or present ages have seen, or that those to come can hope to see\".",
+        "es": "Se había alistado, como su hermano Rodrigo, en la compañía del capitán Diego de Urbina. La flota de España, Venecia y el papa, al mando de don Juan de Austria, se enfrentó a los turcos en la boca del golfo de Patras, al oeste del puerto que entonces se llamaba Lepanto. Cervantes siguió después de soldado, en Navarino y en Túnez. Nunca recuperó el uso de la mano y nunca se arrepintió de aquel día. Lo llamó «la más alta ocasión que vieron los siglos pasados, los presentes, ni esperan ver los venideros»."
+      },
+      "places": [
+        {
+          "name": { "en": "Messina", "es": "Mesina" },
+          "at": [15.5526, 38.1939],
+          "cat": "place",
+          "type": "site",
+          "date": "1571",
+          "text": {
+            "en": "The Holy League's fleet gathered here and sailed in September 1571. After the battle Cervantes spent the winter in the city's hospital, recovering from his wounds.",
+            "es": "Aquí se reunió la flota de la Santa Liga, que zarpó en septiembre de 1571. Después de la batalla, Cervantes pasó el invierno en el hospital de la ciudad, recuperándose de sus heridas."
+          }
+        },
+        {
+          "name": { "en": "Naples", "es": "Nápoles" },
+          "at": [14.2681, 40.8522],
+          "cat": "place",
+          "type": "site",
+          "date": "1572",
+          "text": {
+            "en": "Then a city of the Spanish crown, and his base as a soldier until 1575. He remembered it fondly all his life, and in 1610 hoped in vain to return with the new viceroy.",
+            "es": "Entonces una ciudad de la corona española, y su base como soldado hasta 1575. La recordó con cariño toda la vida, y en 1610 esperó en vano volver con el nuevo virrey."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1575-09-26",
+      "kind": "struggle",
+      "by": "sea",
+      "via": [[20.3, 37.9], [16.3, 37.8], [15.75, 37.85], [15.6, 38.23], [15.5, 39.5], [14.2, 40.7], [12.9, 41.1], [11.5, 42.1], [9.9, 43], [8.9, 44.2], [7.3, 43.5], [6.3, 42.9], [5, 43.15], [3.45, 42.3], [3.65, 39.9]],
+      "place": { "en": "Algiers, Algeria", "es": "Argel, Argelia" },
+      "at": [3.0578, 36.7845],
+      "title": { "en": "Captive in Algiers", "es": "Cautivo en Argel" },
+      "text": {
+        "en": "On 26 September 1575 corsairs seized the galley Sol off the Catalan coast, with Miguel and his brother Rodrigo aboard. The letters of praise he carried made him look rich: his ransom was set at 500 gold escudos.",
+        "es": "El 26 de septiembre de 1575 unos corsarios apresaron la galera Sol frente a la costa catalana, con Miguel y su hermano Rodrigo a bordo. Por las cartas de recomendación que llevaba lo creyeron rico: pidieron 500 escudos de oro por él."
+      },
+      "details": {
+        "en": "He was sailing home from Naples with letters from Don John of Austria, hoping they would win him a reward at court. Instead he was a slave in Algiers for five years. He tried to escape four times, twice by land and twice by sea; once he hid with fourteen other captives in a garden cave for five months. Each plan was betrayed or failed, and each time he took all the blame himself. Nobody knows why he was not put to death. Rodrigo was ransomed first, in 1577. Algiers came back later in his plays and in the captive's tale in Don Quixote.",
+        "es": "Volvía de Nápoles con cartas de don Juan de Austria, y esperaba que le valieran un premio en la corte. En cambio fue esclavo en Argel durante cinco años. Intentó fugarse cuatro veces, dos por tierra y dos por mar; una vez se escondió cinco meses con otros catorce cautivos en la cueva de un jardín. Todos los planes fallaron o fueron delatados, y cada vez él asumió toda la culpa. Nadie sabe por qué no lo mataron. A Rodrigo lo rescataron primero, en 1577. Argel volvió después en sus comedias y en la historia del cautivo del Quijote."
+      }
+    },
+    {
+      "date": "1580-10-27",
+      "kind": "moment",
+      "by": "sea",
+      "place": { "en": "Dénia, Spain", "es": "Denia, España" },
+      "at": [0.1057, 38.8408],
+      "title": { "en": "Ransomed and home", "es": "Rescatado y de vuelta" },
+      "text": {
+        "en": "Trinitarian friars paid his ransom on 19 September 1580, when his master was about to take him to Constantinople. On 27 October he stepped ashore at Dénia, free after five years. He was 33.",
+        "es": "Unos frailes trinitarios pagaron su rescate el 19 de septiembre de 1580, cuando su amo estaba por llevárselo a Constantinopla. El 27 de octubre desembarcó en Denia, libre después de cinco años. Tenía 33."
+      }
+    },
+    {
+      "date": "1584-12-12",
+      "kind": "love",
+      "place": { "en": "Esquivias, Spain", "es": "Esquivias, España" },
+      "at": [-3.7675, 40.1025],
+      "title": { "en": "A wedding in Esquivias", "es": "Boda en Esquivias" },
+      "text": {
+        "en": "At 37 he married Catalina de Salazar y Palacios, 19, an hidalgo's daughter, in the parish church of this village of vineyards near Toledo. That autumn his only child, Isabel, had been born of an affair in Madrid.",
+        "es": "A los 37 años se casó con Catalina de Salazar y Palacios, de 19, hija de un hidalgo, en la iglesia de este pueblo de viñedos cerca de Toledo. Ese otoño había nacido su única hija, Isabel, de una relación en Madrid."
+      },
+      "places": [
+        {
+          "name": { "en": "Catalina de Salazar", "es": "Catalina de Salazar" },
+          "at": [-3.7698, 40.1043],
+          "cat": "person",
+          "type": "person",
+          "date": "1584-12-12",
+          "life": ["1565", "1626"],
+          "text": {
+            "en": "His wife for 31 years, though they lived apart for long stretches. She had his last novel printed after his death. The house of her relatives the Quijadas, in Esquivias, is now a museum.",
+            "es": "Su esposa durante 31 años, aunque vivieron separados largas temporadas. Hizo imprimir su última novela después de su muerte. La casa de sus parientes los Quijada, en Esquivias, hoy es un museo."
+          }
+        },
+        {
+          "name": { "en": "La Galatea", "es": "La Galatea" },
+          "at": [-3.36, 40.4821],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1585",
+          "by": { "en": "Miguel de Cervantes", "es": "Miguel de Cervantes" },
+          "text": {
+            "en": "His first book, a pastoral novel printed in his home town, Alcalá de Henares, in March 1585. In those years he also wrote plays for Madrid's new playhouses; two survive, one of them The Siege of Numantia.",
+            "es": "Su primer libro, una novela pastoril impresa en su ciudad natal, Alcalá de Henares, en marzo de 1585. En esos años también escribió comedias para los nuevos corrales de Madrid; quedan dos, una de ellas La Numancia."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1587",
+      "kind": "career",
+      "place": { "en": "Seville, Spain", "es": "Sevilla, España" },
+      "at": [-5.9732, 37.3828],
+      "title": { "en": "The king's commissary", "es": "Comisario del rey" },
+      "text": {
+        "en": "He left his wife in Esquivias and went to Seville to requisition wheat and oil for the Armada being readied against England. For ten years he rode the roads of Andalusia, resented by farmers and priests alike.",
+        "es": "Dejó a su esposa en Esquivias y se fue a Sevilla a requisar trigo y aceite para la Armada que se preparaba contra Inglaterra. Durante diez años recorrió los caminos de Andalucía, mal visto por campesinos y curas."
+      },
+      "details": {
+        "en": "In 1590 he asked the king for one of four vacant posts in the Americas: accountant of New Granada, governor of Soconusco in Guatemala, accountant of the galleys of Cartagena or magistrate of La Paz. An official wrote on the petition: \"Let him look for some favour over here.\" From 1594 he collected overdue taxes in the kingdom of Granada. Seville, then Spain's great port and its gateway to the Indies, gave him something else: the thieves, rogues and talking dogs of his best short stories.",
+        "es": "En 1590 le pidió al rey uno de cuatro cargos vacantes en América: contador del Nuevo Reino de Granada, gobernador de Soconusco en Guatemala, contador de las galeras de Cartagena o corregidor de La Paz. Un funcionario anotó en la solicitud: «Busque por acá en que se le haga merced». Desde 1594 cobró impuestos atrasados en el reino de Granada. Sevilla, entonces el gran puerto de España y su puerta a las Indias, le dio otra cosa: los ladrones, los pícaros y los perros que hablan de sus mejores novelas cortas."
+      },
+      "places": [
+        {
+          "name": { "en": "Écija", "es": "Écija" },
+          "at": [-5.0826, 37.5422],
+          "cat": "place",
+          "type": "site",
+          "date": "1587",
+          "text": {
+            "en": "His first task as commissary: he seized wheat that belonged to the Church, and the vicar general of Seville excommunicated him for it.",
+            "es": "Su primer encargo como comisario: requisó trigo que pertenecía a la Iglesia, y el vicario general de Sevilla lo excomulgó por eso."
+          }
+        },
+        {
+          "name": { "en": "Castro del Río", "es": "Castro del Río" },
+          "at": [-4.4806, 37.6912],
+          "cat": "place",
+          "type": "site",
+          "date": "1592",
+          "text": {
+            "en": "In 1592 the magistrate of Écija had him jailed here, accused of selling wheat without permission. He was soon set free.",
+            "es": "En 1592 el corregidor de Écija lo hizo encarcelar aquí, acusado de vender trigo sin permiso. Lo soltaron pronto."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1597-09",
+      "kind": "struggle",
+      "place": { "en": "Seville, Spain", "es": "Sevilla, España" },
+      "at": [-5.9939, 37.3896],
+      "title": { "en": "The Royal Prison of Seville", "es": "La Cárcel Real de Sevilla" },
+      "text": {
+        "en": "The banker who kept the taxes he had collected went bankrupt, and a judge locked Cervantes in Seville's Royal Prison for several months. There, his own prologue hints, Don Quixote was first conceived.",
+        "es": "El banquero que guardaba los impuestos que había cobrado quebró, y un juez encerró a Cervantes varios meses en la Cárcel Real de Sevilla. Allí, según da a entender su propio prólogo, se engendró el Quijote."
+      },
+      "unsure": {
+        "en": "The prologue says only that the book was begotten \"in a prison\". Most scholars think he meant Seville's; others say Castro del Río, and a local legend a cellar in Argamasilla de Alba.",
+        "es": "El prólogo solo dice que el libro se engendró «en una cárcel». La mayoría de los estudiosos cree que es la de Sevilla; otros dicen que la de Castro del Río, y una leyenda local, una cueva de Argamasilla de Alba."
+      },
+      "details": {
+        "en": "The prison stood on Calle Sierpes and held a world of its own, with its ranks, its rules and its slang. The king ordered him released so that he could settle his accounts in Madrid; the day he walked out is not known. He seems to have left Seville for good in 1600. The next four years, when Don Quixote was written, are almost a blank: he is glimpsed in Toledo in 1600 and in Esquivias in 1602. The prison was pulled down in the 19th century, and plaques mark the place.",
+        "es": "La cárcel estaba en la calle Sierpes y era un mundo aparte, con sus jerarquías, sus reglas y su jerga. El rey ordenó soltarlo para que rindiera cuentas en Madrid; no se sabe qué día salió. Al parecer dejó Sevilla para siempre en 1600. Los cuatro años siguientes, cuando escribió el Quijote, son casi un vacío: se lo ve en Toledo en 1600 y en Esquivias en 1602. La cárcel fue demolida en el siglo XIX, y unas placas señalan el lugar."
+      }
+    },
+    {
+      "date": "1605-01",
+      "kind": "made",
+      "place": { "en": "Valladolid, Spain", "es": "Valladolid, España" },
+      "at": [-4.7272, 41.6483],
+      "title": { "en": "Don Quixote appears", "es": "Aparece el Quijote" },
+      "text": {
+        "en": "In 1604 he followed the court to Valladolid. The first part of Don Quixote, printed in Madrid in the last days of that year, was on sale by January 1605 and was a success at once. He was 57.",
+        "es": "En 1604 siguió a la corte hasta Valladolid. La primera parte del Quijote, impresa en Madrid en los últimos días de ese año, ya se vendía en enero de 1605 y fue un éxito inmediato. Él tenía 57 años."
+      },
+      "details": {
+        "en": "He lived on the main floor of a house by the sheep market, outside the walls, with his wife, two sisters, his daughter Isabel and a niece. Within months there were pirate editions in Lisbon and copies on ships bound for the Americas, and that June Don Quixote and Sancho already paraded as figures in Valladolid's festivities. On the night of 27 June a knight, Gaspar de Ezpeleta, was stabbed near the house. Cervantes helped him; he died two days later. A judge briefly jailed the writer and several neighbours, and the trial papers later helped to identify the house.",
+        "es": "Vivía en el piso principal de una casa junto al Rastro de los Carneros, fuera de las murallas, con su esposa, dos hermanas, su hija Isabel y una sobrina. A los pocos meses ya había ediciones piratas en Lisboa y ejemplares en barcos rumbo a América, y ese junio don Quijote y Sancho ya desfilaban como figuras en las fiestas de Valladolid. La noche del 27 de junio un caballero, Gaspar de Ezpeleta, fue apuñalado cerca de la casa. Cervantes lo socorrió; murió dos días después. Un juez encarceló unos días al escritor y a varios vecinos, y los papeles del proceso sirvieron más tarde para identificar la casa."
+      },
+      "places": [
+        {
+          "name": { "en": "Don Quixote, Part One", "es": "Don Quijote de la Mancha, primera parte" },
+          "at": [-3.697, 40.4114],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1605",
+          "by": { "en": "Miguel de Cervantes", "es": "Miguel de Cervantes" },
+          "text": {
+            "en": "Printed on Juan de la Cuesta's press in Calle de Atocha, Madrid, for the bookseller Francisco de Robles. A plaque of 1905 marks the building.",
+            "es": "Impresa en el taller de Juan de la Cuesta, en la calle de Atocha de Madrid, por cuenta del librero Francisco de Robles. Una placa de 1905 señala el edificio."
+          },
+          "wiki": { "en": "Don Quixote", "es": "Don Quijote de la Mancha" }
+        }
+      ]
+    },
+    {
+      "date": "1613",
+      "kind": "made",
+      "place": { "en": "Madrid, Spain", "es": "Madrid, España" },
+      "at": [-3.7001, 40.4138],
+      "title": { "en": "The Exemplary Novels", "es": "Las Novelas ejemplares" },
+      "text": {
+        "en": "He moved back to Madrid with the court in 1606 and lived among actors and poets. In 1613, at 65, he published twelve short novels, from Rinconete and Cortadillo to The Dialogue of the Dogs.",
+        "es": "Volvió a Madrid con la corte en 1606 y vivió entre actores y poetas. En 1613, a los 65 años, publicó doce novelas cortas, de Rinconete y Cortadillo a El coloquio de los perros."
+      },
+      "places": [
+        {
+          "name": { "en": "Exemplary Novels", "es": "Novelas ejemplares" },
+          "at": [-3.6978, 40.4108],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1613",
+          "by": { "en": "Miguel de Cervantes", "es": "Miguel de Cervantes" },
+          "text": {
+            "en": "Twelve short novels, printed in Madrid by Juan de la Cuesta. In the prologue Cervantes boasts of being the first to write novels in Spanish that were his own, neither translated nor copied.",
+            "es": "Doce novelas cortas, impresas en Madrid por Juan de la Cuesta. En el prólogo Cervantes se jacta de ser el primero que noveló en lengua castellana con historias propias, ni traducidas ni copiadas."
+          }
+        },
+        {
+          "name": { "en": "Lope de Vega", "es": "Lope de Vega" },
+          "at": [-3.6974, 40.4144],
+          "cat": "person",
+          "type": "person",
+          "date": "1610",
+          "life": ["1562-11-25", "1635-08-27"],
+          "text": {
+            "en": "Spain's most popular playwright, his neighbour and his rival: each mocked the other in print. Lope's house, in the street now named after Cervantes, is a museum.",
+            "es": "El dramaturgo más popular de España, su vecino y su rival: cada uno se burló del otro por escrito. La casa de Lope, en la calle que hoy lleva el nombre de Cervantes, es un museo."
+          },
+          "wiki": { "en": "Lope de Vega", "es": "Lope de Vega" }
+        }
+      ]
+    },
+    {
+      "date": "1615-11",
+      "kind": "made",
+      "place": { "en": "Madrid, Spain", "es": "Madrid, España" },
+      "at": [-3.6987, 40.4145],
+      "title": { "en": "The second Don Quixote", "es": "El segundo Quijote" },
+      "text": {
+        "en": "In 1614 someone hiding behind the name Avellaneda published a false sequel and mocked him as old and one-handed. Cervantes answered late in 1615 with his own second part, which ends with Don Quixote's death.",
+        "es": "En 1614 alguien oculto tras el nombre de Avellaneda publicó una continuación falsa y se burló de él por viejo y manco. Cervantes respondió a fines de 1615 con su propia segunda parte, que termina con la muerte de don Quijote."
+      },
+      "details": {
+        "en": "Who Avellaneda was is still unknown. Cervantes was well into his own sequel when the fake appeared, and he worked it into the story: Don Quixote meets readers of the false book and changes his route, from Zaragoza to Barcelona, to prove it wrong. In the prologue he answered the taunt about his hand: it was maimed, he wrote, not in a tavern but in the greatest battle of the age. By then the first part could be read in English and French, and French visitors to Madrid were asking about its author.",
+        "es": "Todavía no se sabe quién fue Avellaneda. Cervantes tenía muy avanzada su continuación cuando apareció la falsa, y la metió en la historia: don Quijote se cruza con lectores del libro apócrifo y cambia su ruta, de Zaragoza a Barcelona, para desmentirlo. En el prólogo contestó la burla sobre su mano: no la perdió en una taberna, escribió, sino en la mayor batalla de su tiempo. Para entonces la primera parte ya se leía en inglés y en francés, y unos visitantes franceses preguntaban en Madrid por su autor."
+      },
+      "places": [
+        {
+          "name": { "en": "Don Quixote, Part Two", "es": "Don Quijote de la Mancha, segunda parte" },
+          "at": [-3.6978, 40.4108],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1615",
+          "by": { "en": "Miguel de Cervantes", "es": "Miguel de Cervantes" },
+          "text": {
+            "en": "Printed ten years after the first, again by Juan de la Cuesta, whose press had moved to Calle de San Eugenio. A plaque marks that building too.",
+            "es": "Impresa diez años después de la primera, otra vez por Juan de la Cuesta, cuyo taller se había mudado a la calle de San Eugenio. También allí hay una placa."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1616-04-22",
+      "kind": "died",
+      "place": { "en": "Madrid, Spain", "es": "Madrid, España" },
+      "at": [-3.6987, 40.4145],
+      "title": { "en": "One foot in the stirrup", "es": "El pie en el estribo" },
+      "text": {
+        "en": "Three days after writing the farewell that opens his last novel, Cervantes died at home, aged 68, probably of diabetes. He was buried the next day, 23 April, in a convent a few streets away.",
+        "es": "Tres días después de escribir la despedida que abre su última novela, Cervantes murió en su casa, a los 68 años, probablemente de diabetes. Lo enterraron al día siguiente, 23 de abril, en un convento a pocas calles."
+      },
+      "details": {
+        "en": "\"With one foot already in the stirrup\": so begins the dedication of The Trials of Persiles and Sigismunda, which his widow had printed in 1617. The parish register noted the day of the burial, so 23 April passed for the day of his death, and it is now World Book Day. Shakespeare died on 23 April 1616 too, but by England's old calendar, ten days behind Spain's. The convent was rebuilt and the grave lost. In 2015 researchers found bones in its crypt that they believe include his, and reburied them in the church.",
+        "es": "«Puesto ya el pie en el estribo»: así empieza la dedicatoria de Los trabajos de Persiles y Sigismunda, que su viuda hizo imprimir en 1617. El registro de la parroquia anotó el día del entierro, así que el 23 de abril pasó por el día de su muerte, y hoy es el Día Mundial del Libro. Shakespeare también murió un 23 de abril de 1616, pero según el viejo calendario de Inglaterra, diez días atrasado respecto del español. El convento fue reconstruido y la tumba se perdió. En 2015 unos investigadores hallaron en la cripta huesos que creen que incluyen los suyos, y volvieron a enterrarlos en la iglesia."
+      },
+      "places": [
+        {
+          "name": { "en": "Convent of the Barefoot Trinitarians", "es": "Convento de las Trinitarias Descalzas" },
+          "at": [-3.697, 40.4137],
+          "cat": "place",
+          "type": "structure",
+          "date": "1616-04-23",
+          "text": {
+            "en": "He chose to be buried here: the Trinitarian order had ransomed him from Algiers. The convent stands in the street now named after Lope de Vega.",
+            "es": "Eligió que lo enterraran aquí: la orden trinitaria lo había rescatado de Argel. El convento está en la calle que hoy lleva el nombre de Lope de Vega."
+          }
+        }
+      ]
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Cervantes Birthplace Museum", "es": "Museo Casa Natal de Cervantes" },
+      "at": [-3.367, 40.4821],
+      "kind": "house",
+      "text": {
+        "en": "In Alcalá de Henares: a Castilian home of the 16th century, rebuilt in 1956 on the plot where the family house stood. Bronze figures of Don Quixote and Sancho sit on a bench at the door.",
+        "es": "En Alcalá de Henares: una casa castellana del siglo XVI, reconstruida en 1956 en el solar donde estuvo la vivienda de la familia. En la puerta, don Quijote y Sancho, en bronce, esperan sentados en un banco."
+      }
+    },
+    {
+      "name": { "en": "Cervantes House, Valladolid", "es": "Casa de Cervantes, Valladolid" },
+      "at": [-4.7272, 41.6483],
+      "kind": "house",
+      "text": {
+        "en": "The house where he was living when Don Quixote came out, identified thanks to the papers of the Ezpeleta trial. Its rooms are furnished as a home of his time.",
+        "es": "La casa donde vivía cuando salió el Quijote, identificada gracias a los papeles del proceso Ezpeleta. Sus habitaciones están amuebladas como una vivienda de su época."
+      }
+    },
+    {
+      "name": { "en": "Cervantes House, Esquivias", "es": "Casa de Cervantes, Esquivias" },
+      "at": [-3.7698, 40.1043],
+      "kind": "house",
+      "text": {
+        "en": "A 16th-century manor of the Quijadas, relatives of his wife, with its wine cellar and farmyard. Tradition says the couple lived here; scholars are not sure. The church where they married is a short walk away.",
+        "es": "Una casona del siglo XVI de los Quijada, parientes de su esposa, con su bodega y su patio de labranza. La tradición dice que la pareja vivió aquí; los estudiosos no están seguros. La iglesia donde se casaron queda a pocos pasos."
+      }
+    },
+    {
+      "name": { "en": "Trinitarian convent, Madrid", "es": "Convento de las Trinitarias, Madrid" },
+      "at": [-3.6976, 40.4135],
+      "kind": "grave",
+      "text": {
+        "en": "A convent of cloistered nuns in the Barrio de las Letras. A memorial set up in its church in 2015 holds the remains believed to be his. The church usually opens only for mass.",
+        "es": "Un convento de monjas de clausura en el Barrio de las Letras. Un monumento colocado en su iglesia en 2015 guarda los restos que se cree que son los suyos. La iglesia suele abrir solo para la misa."
+      }
+    },
+    {
+      "name": { "en": "Print shop of Don Quixote", "es": "Imprenta del Quijote, Madrid" },
+      "at": [-3.697, 40.4114],
+      "kind": "site",
+      "text": {
+        "en": "At Calle de Atocha 87, Madrid, stood the press of Juan de la Cuesta, where the first edition was printed in 1604. A plaque of 1905 marks the building, today the seat of the Sociedad Cervantina.",
+        "es": "En la calle de Atocha 87 estuvo la imprenta de Juan de la Cuesta, donde se hizo la primera edición en 1604. Una placa de 1905 señala el edificio, hoy sede de la Sociedad Cervantina."
+      }
+    },
+    {
+      "name": { "en": "Cervantes Monument, Madrid", "es": "Monumento a Cervantes, Madrid" },
+      "at": [-3.7126, 40.4232],
+      "kind": "memorial",
+      "text": {
+        "en": "In the Plaza de España, a stone Cervantes sits above bronze figures of Don Quixote on Rocinante and Sancho Panza on his donkey.",
+        "es": "En la Plaza de España, un Cervantes de piedra mira desde lo alto las figuras de bronce de don Quijote sobre Rocinante y Sancho Panza en su burro."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Don Quixote, often called the first modern novel, is one of the most translated books ever written, and its knight and squire are known to people who have never read it. Spanish is called \"the language of Cervantes\", its highest literary prize carries his name, and the day he was buried, 23 April, is World Book Day.",
+    "es": "El Quijote, al que muchos llaman la primera novela moderna, es uno de los libros más traducidos de la historia, y su caballero y su escudero son conocidos incluso por quienes nunca lo leyeron. Al español se lo llama «la lengua de Cervantes», su mayor premio literario lleva su nombre, y el día de su entierro, el 23 de abril, es el Día Mundial del Libro."
+  },
+  "sources": [
+    { "title": "Wikipedia: Miguel de Cervantes", "url": "https://en.wikipedia.org/wiki/Miguel_de_Cervantes" },
+    {
+      "title": "Jean Canavaggio, Biografía de Miguel de Cervantes Saavedra (Biblioteca Virtual Miguel de Cervantes)",
+      "url": "https://www.cervantesvirtual.com/portales/miguel_de_cervantes/autor_biografia/"
+    },
+    {
+      "title": "Florencio Sevilla Arroyo and Begoña Rodríguez, Cronología de Cervantes (Biblioteca Virtual Miguel de Cervantes)",
+      "url": "https://www.cervantesvirtual.com/portales/miguel_de_cervantes/autor_cronologia/"
+    },
+    { "title": "Cervantes Project, Texas A&M University: Chronology of Cervantes", "url": "https://cervantes.library.tamu.edu/V2/CPI/biografia/chron.html" },
+    {
+      "title": "Museo Casa de Cervantes, Valladolid (Ministerio de Cultura)",
+      "url": "https://www.cultura.gob.es/museocasacervantes/cervantes/cervantes-en-valladolid.html"
+    }
+  ]
+}

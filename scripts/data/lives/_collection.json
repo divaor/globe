@@ -1,0 +1,45 @@
+{
+  "name": { "en": "Lives on the map", "es": "Vidas en el mapa" },
+  "categories": [
+    { "id": "born", "name": { "en": "Born", "es": "Nacimiento" }, "icon": "👶", "color": "#f6c453" },
+    { "id": "home", "name": { "en": "Home and family", "es": "Hogar y familia" }, "icon": "🏠", "color": "#8fbf6a" },
+    { "id": "study", "name": { "en": "Studies", "es": "Estudios" }, "icon": "🎓", "color": "#5fa8d3" },
+    { "id": "career", "name": { "en": "Work and career", "es": "Trabajo y carrera" }, "icon": "💼", "color": "#8d99ae" },
+    { "id": "made", "name": { "en": "Works and discoveries", "es": "Obras y descubrimientos" }, "icon": "✨", "color": "#ffb703" },
+    { "id": "moment", "name": { "en": "Great moments", "es": "Grandes momentos" }, "icon": "🌟", "color": "#e76f51" },
+    { "id": "journey", "name": { "en": "Journeys", "es": "Viajes" }, "icon": "🧭", "color": "#2a9d8f" },
+    { "id": "love", "name": { "en": "Love and friendship", "es": "Amor y amistad" }, "icon": "❤️", "color": "#e63946" },
+    { "id": "struggle", "name": { "en": "Hard times", "es": "Tiempos difíciles" }, "icon": "⛓️", "color": "#7b6d8d" },
+    { "id": "power", "name": { "en": "Power and office", "es": "Poder y cargos" }, "icon": "👑", "color": "#9b5de5" },
+    { "id": "honour", "name": { "en": "Honours", "es": "Honores" }, "icon": "🏆", "color": "#f4a261" },
+    { "id": "died", "name": { "en": "Death", "es": "Muerte" }, "icon": "🕯️", "color": "#adb5bd" },
+    { "id": "visit", "name": { "en": "To visit today", "es": "Para visitar hoy" }, "icon": "🏛️", "color": "#06d6a0" },
+    { "id": "person", "name": { "en": "People", "es": "Personas" }, "icon": "👤", "color": "#c77dff" },
+    { "id": "opus", "name": { "en": "Works", "es": "Obras" }, "icon": "📜", "color": "#ffd166" },
+    { "id": "place", "name": { "en": "Places", "es": "Lugares" }, "icon": "📍", "color": "#74c0fc" }
+  ],
+  "fields": [
+    { "id": "science", "name": { "en": "Science", "es": "Ciencia" }, "icon": "🔬", "color": "#339af0" },
+    { "id": "letters", "name": { "en": "Writers", "es": "Escritores" }, "icon": "✍️", "color": "#f08c00" },
+    { "id": "arts", "name": { "en": "Art", "es": "Arte" }, "icon": "🎨", "color": "#e64980" },
+    { "id": "music", "name": { "en": "Music", "es": "Música" }, "icon": "🎵", "color": "#7950f2" },
+    { "id": "leaders", "name": { "en": "Leaders", "es": "Líderes" }, "icon": "👑", "color": "#e03131" },
+    { "id": "rights", "name": { "en": "Rights and freedom", "es": "Derechos y libertad" }, "icon": "✊", "color": "#2f9e44" },
+    { "id": "thought", "name": { "en": "Thinkers", "es": "Pensadores" }, "icon": "💭", "color": "#5c7cfa" },
+    { "id": "sport", "name": { "en": "Sport", "es": "Deporte" }, "icon": "🏅", "color": "#0ca678" }
+  ],
+  "pairs": [
+    { "a": "frida-kahlo", "b": "diego-rivera" },
+    { "a": "simon-bolivar", "b": "jose-de-san-martin" },
+    { "a": "charles-darwin", "b": "abraham-lincoln" },
+    { "a": "mozart", "b": "haydn" },
+    { "a": "pele", "b": "maradona" },
+    { "a": "chopin", "b": "liszt" },
+    { "a": "galileo", "b": "kepler" },
+    { "a": "john-lennon", "b": "elvis-presley" },
+    { "a": "cervantes", "b": "shakespeare" },
+    { "a": "julius-caesar", "b": "cleopatra" },
+    { "a": "gandhi", "b": "nelson-mandela" },
+    { "a": "van-gogh", "b": "claude-monet" }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "id": "socrates",
+  "qid": "Q913",
+  "name": { "en": "Socrates", "es": "Sócrates" },
+  "icon": "🏛️",
+  "field": "thought",
+  "known": { "en": "Philosopher of Athens", "es": "Filósofo de Atenas" },
+  "born": "-0469",
+  "bornAbout": true,
+  "died": "-0399",
+  "summary": {
+    "en": "He wrote nothing, sought no office and almost never left Athens except to fight for it. By asking questions in its streets he changed philosophy for good, and at 70 the city he loved put him to death.",
+    "es": "No escribió nada, no buscó cargos y casi nunca salió de Atenas más que para pelear por ella. Con sus preguntas en la calle cambió la filosofía para siempre, y a los 70 años la ciudad que amaba lo condenó a muerte."
+  },
+  "unsure": {
+    "en": "Socrates wrote nothing: we know him through his students Plato and Xenophon and the jokes of the playwright Aristophanes, who do not always agree, and only the dates of his battles, his trial and his death are firm.",
+    "es": "Sócrates no escribió nada: lo conocemos por sus discípulos Platón y Jenofonte y por las bromas del comediógrafo Aristófanes, que no siempre coinciden, y solo son firmes las fechas de sus batallas, su juicio y su muerte."
+  },
+  "steps": [
+    {
+      "date": "-0469",
+      "about": true,
+      "kind": "born",
+      "place": { "en": "Athens, Greece", "es": "Atenas, Grecia" },
+      "label": { "en": "Alopece, Athens", "es": "Alópece, Atenas" },
+      "at": [23.75, 37.95],
+      "title": { "en": "A stonemason's son", "es": "El hijo de un cantero" },
+      "text": {
+        "en": "Socrates was born in Alopece, a village just outside the walls of Athens. His father, Sophroniscus, was a stonemason; his mother, Phaenarete, a midwife. Athens was becoming the richest city in Greece.",
+        "es": "Sócrates nació en Alópece, una aldea a las puertas de las murallas de Atenas. Su padre, Sofronisco, era cantero; su madre, Fenáreta, partera. Atenas se estaba convirtiendo en la ciudad más rica de Grecia."
+      },
+      "details": {
+        "en": "He was a young man when the Parthenon went up, and tradition says he learned his father's trade before he gave it up for talk. He liked to say that he practised his mother's craft instead: he did not teach, he helped other people give birth to their own ideas. He was famously ugly, with a snub nose and bulging eyes, went barefoot in every season and wore the same old cloak.",
+        "es": "Era joven cuando se levantó el Partenón, y la tradición dice que aprendió el oficio de su padre antes de dejarlo por la conversación. Le gustaba decir que en realidad practicaba el oficio de su madre: no enseñaba, ayudaba a los demás a dar a luz sus propias ideas. Era famoso por su fealdad, de nariz chata y ojos saltones, andaba descalzo en cualquier estación y llevaba siempre el mismo manto viejo."
+      },
+      "unsure": {
+        "en": "The year is worked out from Plato, who says he was 70 at his trial in 399 BC, which gives 470 or 469 BC; the site of Alopece, south-east of the Acropolis, is known only roughly.",
+        "es": "El año se calcula a partir de Platón, que dice que tenía 70 años en su juicio de 399 a. C., lo que da 470 o 469 a. C.; el lugar de Alópece, al sureste de la Acrópolis, se conoce solo de forma aproximada."
+      }
+    },
+    {
+      "date": "-0435",
+      "about": true,
+      "kind": "career",
+      "place": { "en": "Athens, Greece", "es": "Atenas, Grecia" },
+      "at": [23.7225, 37.975],
+      "title": { "en": "Questions in the Agora", "es": "Preguntas en el ágora" },
+      "text": {
+        "en": "He spent his days in the Agora, the main square of Athens, asking politicians, poets and craftsmen what courage, justice or goodness really are. Few could answer, and the young came to listen.",
+        "es": "Pasaba los días en el ágora, la plaza principal de Atenas, preguntando a políticos, poetas y artesanos qué son en realidad el valor, la justicia o el bien. Pocos sabían responder, y los jóvenes iban a escuchar."
+      },
+      "details": {
+        "en": "According to Plato, it began with an oracle. His friend Chaerephon asked the god at Delphi whether anyone was wiser than Socrates, and the priestess said no one. Puzzled, he set out to find a wiser man, and decided he was wiser in one thing only: the others thought they knew what they did not, and he knew that he did not know. Unlike the travelling teachers called sophists he took no fees, and his family lived poorly for it.",
+        "es": "Según Platón, todo empezó con un oráculo. Su amigo Querefonte le preguntó al dios de Delfos si había alguien más sabio que Sócrates, y la sacerdotisa respondió que nadie. Desconcertado, él salió a buscar a un hombre más sabio, y concluyó que lo era en una sola cosa: los demás creían saber lo que no sabían, y él sabía que no sabía. A diferencia de los maestros ambulantes llamados sofistas, no cobraba, y su familia vivió pobremente por eso."
+      },
+      "unsure": {
+        "en": "No date is known for the oracle or for the start of his questioning; historians usually place both in the 430s BC, when he was in his thirties.",
+        "es": "No se conoce la fecha del oráculo ni la del comienzo de sus preguntas; los historiadores suelen ubicar las dos cosas en la década de 430 a. C., cuando él tenía treinta y tantos años."
+      },
+      "places": [
+        {
+          "name": { "en": "The oracle of Delphi", "es": "El oráculo de Delfos" },
+          "at": [22.5013, 38.4823],
+          "cat": "place",
+          "type": "site",
+          "date": "-0435",
+          "text": {
+            "en": "The sanctuary of Apollo, in the mountains north-west of Athens, where the oracle is said to have declared that no one was wiser than Socrates. 'Know yourself' was carved at the entrance of its temple.",
+            "es": "El santuario de Apolo, en las montañas al noroeste de Atenas, donde se dice que el oráculo declaró que nadie era más sabio que Sócrates. En la entrada de su templo estaba grabado «Conócete a ti mismo»."
+          },
+          "wiki": { "en": "Delphi", "es": "Delfos" },
+          "whs": 393
+        }
+      ]
+    },
+    {
+      "date": "-0432",
+      "kind": "struggle",
+      "by": "sea",
+      "place": { "en": "Nea Poteidaia (ancient Potidaea), Greece", "es": "Nea Poteidaia (antigua Potidea), Grecia" },
+      "label": { "en": "Potidaea", "es": "Potidea" },
+      "at": [23.3283, 40.1941],
+      "title": { "en": "A soldier at Potidaea", "es": "Soldado en Potidea" },
+      "text": {
+        "en": "In his late thirties he sailed north as a heavy-armed foot soldier to the siege of Potidaea, a city that had revolted against Athens. In the battle, Plato says, he saved the life of the young Alcibiades.",
+        "es": "Con casi cuarenta años navegó al norte como soldado de infantería pesada, al sitio de Potidea, una ciudad que se había rebelado contra Atenas. En la batalla, dice Platón, le salvó la vida al joven Alcibíades."
+      },
+      "details": {
+        "en": "Plato has Alcibiades tell the story years later. Socrates bore hunger and the northern winter better than anyone, walking barefoot on the ice. One summer morning he stopped to think a problem through and stood on the same spot until the next sunrise, while other soldiers brought out their bedding to watch. When the generals wanted to give a prize for bravery, he asked that it go to Alcibiades.",
+        "es": "Platón hace que Alcibíades lo cuente años después. Sócrates soportaba el hambre y el invierno del norte mejor que nadie, y caminaba descalzo sobre el hielo. Una mañana de verano se detuvo a pensar un problema y se quedó de pie en el mismo lugar hasta el amanecer siguiente, mientras otros soldados sacaban sus mantas para mirarlo. Cuando los generales quisieron dar un premio al valor, pidió que fuera para Alcibíades."
+      },
+      "places": [
+        {
+          "name": { "en": "Alcibiades", "es": "Alcibíades" },
+          "at": [23.3283, 40.1941],
+          "cat": "person",
+          "type": "person",
+          "date": "-0432",
+          "life": ["-0450", "-0404"],
+          "text": {
+            "en": "A brilliant, reckless young noble, born about 450 BC, who admired Socrates and shared his tent on campaign. He later led Athens into disaster and changed sides twice, and his career was held against his old teacher.",
+            "es": "Un joven noble brillante y temerario, nacido hacia 450 a. C., que admiraba a Sócrates y compartió su tienda de campaña. Después llevó a Atenas al desastre y cambió dos veces de bando, y eso pesó contra su viejo maestro."
+          }
+        }
+      ]
+    },
+    {
+      "date": "-0424",
+      "kind": "struggle",
+      "via": [[23.7278, 37.9838]],
+      "place": { "en": "Dilesi (ancient Delium), Greece", "es": "Dilesi (antigua Delio), Grecia" },
+      "label": { "en": "Delium", "es": "Delio" },
+      "at": [23.6708, 38.3376],
+      "title": { "en": "The retreat from Delium", "es": "La retirada de Delio" },
+      "text": {
+        "en": "The Thebans and their allies routed the Athenian army at Delium, on the coast north of Athens. Socrates, in his mid-forties, walked off the field in good order, so plainly ready to fight that the pursuers left him alone.",
+        "es": "Los tebanos y sus aliados vencieron a los atenienses en Delio, en la costa al norte de Atenas. Sócrates, de cuarenta y tantos años, se retiró en buen orden, tan dispuesto a pelear que los perseguidores lo dejaron en paz."
+      },
+      "details": {
+        "en": "The general Laches, who retreated beside him, said afterwards that if every Athenian had behaved like Socrates, the city would not have lost the battle. Two years later he served once more in the north, at Amphipolis. Apart from these three campaigns he is hardly known to have left Athens: he said that fields and trees had nothing to teach him, and the people of the city did.",
+        "es": "El general Laques, que se retiró a su lado, dijo después que si todos los atenienses se hubieran portado como Sócrates, la ciudad no habría perdido la batalla. Dos años más tarde sirvió otra vez en el norte, en Anfípolis. Fuera de estas tres campañas casi no se sabe que haya salido de Atenas: decía que los campos y los árboles no tenían nada que enseñarle, y la gente de la ciudad sí."
+      }
+    },
+    {
+      "date": "-0423",
+      "kind": "moment",
+      "place": { "en": "Athens, Greece", "es": "Atenas, Grecia" },
+      "at": [23.7278, 37.9703],
+      "title": { "en": "Mocked in The Clouds", "es": "Burlado en Las nubes" },
+      "text": {
+        "en": "At the spring festival Aristophanes staged The Clouds, a comedy in which a 'Socrates' hangs in a basket studying the sky and teaches young men to cheat their fathers. All Athens now knew his name.",
+        "es": "En el festival de primavera Aristófanes estrenó Las nubes, una comedia donde un «Sócrates» cuelga de un canasto estudiando el cielo y enseña a los jóvenes a engañar a sus padres. Toda Atenas conocía ya su nombre."
+      },
+      "details": {
+        "en": "The play came last in the contest, and the picture was unfair: Socrates took no fees and cared little for the stars. But it stuck. At his trial, twenty-four years later, he said his most dangerous accusers were not the men who had charged him but the old gossip his judges had heard as children, 'in the comedy of Aristophanes'. A story told much later says he stood up in the theatre, so that strangers could see the real man.",
+        "es": "La obra quedó última en el concurso, y el retrato era injusto: Sócrates no cobraba y poco le importaban las estrellas. Pero quedó grabado. En su juicio, veinticuatro años después, dijo que sus acusadores más peligrosos no eran los hombres que lo habían denunciado, sino los viejos rumores que sus jueces habían oído de niños, «en la comedia de Aristófanes». Una historia contada mucho después dice que se puso de pie en el teatro, para que los forasteros vieran al verdadero."
+      },
+      "places": [
+        {
+          "name": { "en": "The Clouds", "es": "Las nubes" },
+          "at": [23.7278, 37.9703],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "-0423",
+          "by": { "en": "Aristophanes", "es": "Aristófanes" },
+          "text": {
+            "en": "A comedy first played in the Theatre of Dionysus in 423 BC. It is the only full portrait of Socrates that survives from his own lifetime, written when he was in his forties.",
+            "es": "Una comedia estrenada en el Teatro de Dioniso en 423 a. C. Es el único retrato completo de Sócrates que se conserva de su propio tiempo, escrito cuando él tenía cuarenta y tantos años."
+          },
+          "wiki": { "en": "Theatre of Dionysus", "es": "Teatro de Dioniso" }
+        }
+      ]
+    },
+    {
+      "date": "-0406",
+      "kind": "moment",
+      "place": { "en": "Athens, Greece", "es": "Atenas, Grecia" },
+      "at": [23.7194, 37.9717],
+      "title": { "en": "One man against the crowd", "es": "Un hombre contra la multitud" },
+      "text": {
+        "en": "Chosen by lot for the city council, Socrates was among its presidents when the Assembly demanded to try eight generals in a single vote for leaving shipwrecked sailors to drown. He alone refused: it was against the law.",
+        "es": "Elegido por sorteo para el consejo, Sócrates era uno de sus presidentes cuando la Asamblea exigió juzgar a ocho generales en una sola votación por dejar ahogarse a unos náufragos. Solo él se negó: era ilegal."
+      },
+      "details": {
+        "en": "The fleet had just won the battle of Arginusae, off Lesbos, but a storm kept the generals from picking up the crews of the wrecked ships. The crowd shouted that it was monstrous to stop the people doing what they wished, and threatened to put the objectors on trial too. The other presidents gave way. The six generals who had come home were condemned and executed. The Athenians soon regretted it.",
+        "es": "La flota acababa de ganar la batalla de las Arginusas, frente a Lesbos, pero una tormenta impidió a los generales recoger a las tripulaciones de los barcos hundidos. La multitud gritó que era monstruoso impedir que el pueblo hiciera lo que quisiera, y amenazó con juzgar también a los que se oponían. Los demás presidentes cedieron. Los seis generales que habían vuelto fueron condenados y ejecutados. Los atenienses se arrepintieron pronto."
+      }
+    },
+    {
+      "date": "-0404",
+      "kind": "struggle",
+      "place": { "en": "Athens, Greece", "es": "Atenas, Grecia" },
+      "at": [23.7225, 37.975],
+      "title": { "en": "He disobeys the Thirty", "es": "Desobedece a los Treinta" },
+      "text": {
+        "en": "Athens lost its long war, and Sparta set up a government of thirty men who ruled by terror. They ordered Socrates and four others to arrest an innocent man, Leon of Salamis. The four went. Socrates went home.",
+        "es": "Atenas perdió su larga guerra, y Esparta impuso un gobierno de treinta hombres que mandó con terror. Ordenaron a Sócrates y a otros cuatro arrestar a un inocente, León de Salamina. Los cuatro fueron. Él se fue a su casa."
+      },
+      "details": {
+        "en": "The order was given in the Tholos, the round office building on the Agora whose foundations can still be seen. Leon was put to death, and Socrates said he would probably have been killed too if the Thirty had not fallen within months. Yet their leader, Critias, had once been his companion, as Alcibiades had. When democracy returned, many Athenians remembered whose friends those men had been.",
+        "es": "La orden se dio en el Tholos, el edificio redondo de oficinas del ágora cuyos cimientos todavía se ven. A León lo mataron, y Sócrates dijo que probablemente lo habrían matado a él también si los Treinta no hubieran caído a los pocos meses. Pero el jefe de los Treinta, Critias, había sido en otro tiempo su compañero, igual que Alcibíades. Cuando volvió la democracia, muchos atenienses recordaron de quién habían sido amigos esos hombres."
+      }
+    },
+    {
+      "date": "-0399",
+      "kind": "struggle",
+      "place": { "en": "Athens, Greece", "es": "Atenas, Grecia" },
+      "at": [23.7225, 37.975],
+      "title": { "en": "On trial for his life", "es": "Un juicio de vida o muerte" },
+      "text": {
+        "en": "Three citizens charged him with not honouring the city's gods and with corrupting the young. A jury of about 500 found him guilty by a narrow margin. He refused to beg or to promise silence, and was sentenced to death.",
+        "es": "Tres ciudadanos lo acusaron de no honrar a los dioses de la ciudad y de corromper a los jóvenes. Un jurado de unos 500 lo declaró culpable por poco. No quiso suplicar ni prometer silencio, y lo condenaron a muerte."
+      },
+      "details": {
+        "en": "Plato, who was there, wrote his version of the defence. Socrates said a god had set him on Athens like a gadfly on a big, lazy horse, and that he would not stop asking questions: 'the unexamined life is not worth living'. Asked to propose his own penalty, he suggested free meals for life at public expense, then a fine his friends offered to pay. More jurors voted for death than had voted him guilty.",
+        "es": "Platón, que estaba allí, escribió su versión de la defensa. Sócrates dijo que un dios lo había puesto sobre Atenas como un tábano sobre un caballo grande y perezoso, y que no dejaría de hacer preguntas: «una vida sin examen no merece ser vivida». Cuando le pidieron que propusiera su propia pena, sugirió comidas gratis de por vida a costa de la ciudad, y después una multa que sus amigos ofrecieron pagar. Más jurados votaron por la muerte que los que lo habían declarado culpable."
+      },
+      "unsure": {
+        "en": "Plato gives the vote, about 280 to 220; the court building where the trial was held has not been identified for certain, and the marker is on the Agora.",
+        "es": "Platón da la votación, unos 280 contra 220; el edificio del tribunal donde se hizo el juicio no se ha identificado con certeza, y el marcador está en el ágora."
+      },
+      "places": [
+        {
+          "id": "plato",
+          "name": { "en": "Plato", "es": "Platón" },
+          "at": [23.7225, 37.975],
+          "cat": "person",
+          "type": "person",
+          "date": "-0399",
+          "life": ["-0428", "-0348"],
+          "text": {
+            "en": "His student, then in his late twenties, who was in court that day. He made Socrates the main speaker of his dialogues, and it is largely through them that the world knows him.",
+            "es": "Su discípulo, que entonces no llegaba a los treinta años y estuvo en el tribunal ese día. Hizo de Sócrates el personaje principal de sus diálogos, y es sobre todo por ellos que el mundo lo conoce."
+          },
+          "wiki": { "en": "Plato", "es": "Platón" }
+        }
+      ]
+    },
+    {
+      "date": "-0399",
+      "kind": "died",
+      "place": { "en": "Athens, Greece", "es": "Atenas, Grecia" },
+      "at": [23.7212, 37.9738],
+      "title": { "en": "The cup of hemlock", "es": "La copa de cicuta" },
+      "text": {
+        "en": "A sacred ship's voyage delayed the execution for a month, and he spent it in prison talking with friends. He refused their plan of escape, drank the hemlock at sunset, and died at 70.",
+        "es": "El viaje de un barco sagrado retrasó un mes la ejecución, y él lo pasó en la cárcel conversando con sus amigos. Rechazó el plan de fuga que le propusieron, bebió la cicuta al atardecer y murió a los 70 años."
+      },
+      "details": {
+        "en": "Plato's Phaedo describes the last day, in a cell crowded with friends. He sent his wife Xanthippe and their three sons home, argued until evening that a philosopher need not fear death, then bathed and took the cup calmly, scolding his friends for crying. His last words were to his old friend Crito: they owed a cock to Asclepius, the god of healing, and the debt must be paid. Plato was not there; he says he was ill.",
+        "es": "El Fedón de Platón describe el último día, en una celda llena de amigos. Mandó a casa a su esposa Jantipa y a sus tres hijos, sostuvo hasta la tarde que un filósofo no tiene por qué temer a la muerte, después se bañó y tomó la copa con calma, mientras regañaba a sus amigos por llorar. Sus últimas palabras fueron para su viejo amigo Critón: le debían un gallo a Asclepio, el dios de la medicina, y había que pagar la deuda. Platón no estuvo; dice que estaba enfermo."
+      },
+      "unsure": {
+        "en": "A ruined building just outside the south-west corner of the Agora has been identified, plausibly but not certainly, as the city prison; the 'Prison of Socrates' shown on a nearby hill is a later legend.",
+        "es": "Un edificio en ruinas justo fuera de la esquina suroeste del ágora ha sido identificado, de forma verosímil pero no segura, como la cárcel de la ciudad; la «Prisión de Sócrates» que se muestra en una colina cercana es una leyenda posterior."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Ancient Agora of Athens", "es": "Ágora antigua de Atenas" },
+      "at": [23.7225, 37.975],
+      "kind": "site",
+      "text": {
+        "en": "The square where he spent his days. You can see the foundations of the round Tholos and of the building thought to be the prison, and in the museum a small figure of him and tiny clay bottles found there, perhaps used for the poison.",
+        "es": "La plaza donde pasaba los días. Se ven los cimientos del Tholos redondo y del edificio que se cree que fue la cárcel, y en el museo una pequeña figura de él y unos frasquitos de barro hallados allí, quizá usados para el veneno."
+      },
+      "wiki": { "en": "Ancient Agora of Athens", "es": "Ágora de Atenas" }
+    },
+    {
+      "name": { "en": "Theatre of Dionysus", "es": "Teatro de Dioniso" },
+      "at": [23.7278, 37.9703],
+      "kind": "site",
+      "text": {
+        "en": "On the south slope of the Acropolis, the theatre where The Clouds was first played in 423 BC. The stone seats are later, but the place is the same.",
+        "es": "En la ladera sur de la Acrópolis, el teatro donde se estrenó Las nubes en 423 a. C. Las gradas de piedra son posteriores, pero el lugar es el mismo."
+      },
+      "wiki": { "en": "Theatre of Dionysus", "es": "Teatro de Dioniso" }
+    },
+    {
+      "name": { "en": "The Pnyx", "es": "La Pnyx" },
+      "at": [23.7194, 37.9717],
+      "kind": "site",
+      "text": {
+        "en": "The hill where the citizens' Assembly met, with its speaker's platform cut in the rock. Here, in 406 BC, Socrates refused to put an illegal motion to the vote.",
+        "es": "La colina donde se reunía la Asamblea de los ciudadanos, con su tribuna de oradores tallada en la roca. Aquí, en 406 a. C., Sócrates se negó a someter a votación una propuesta ilegal."
+      },
+      "wiki": { "en": "Pnyx", "es": "Pnyx" }
+    },
+    {
+      "name": { "en": "The 'Prison of Socrates', Philopappos Hill", "es": "La «Prisión de Sócrates», colina de Filopapo" },
+      "at": [23.7208, 37.9694],
+      "kind": "site",
+      "text": {
+        "en": "Rooms cut in the rock at the foot of Philopappos Hill, long shown to visitors as his prison. They were probably part of an ancient house: the name is a legend, but a much-loved one.",
+        "es": "Unas habitaciones talladas en la roca al pie de la colina de Filopapo, que desde hace mucho se muestran a los visitantes como su prisión. Probablemente eran parte de una casa antigua: el nombre es una leyenda, pero muy querida."
+      }
+    },
+    {
+      "name": { "en": "Statue of Socrates, Academy of Athens", "es": "Estatua de Sócrates, Academia de Atenas" },
+      "at": [23.7336, 37.9798],
+      "kind": "memorial",
+      "text": {
+        "en": "Marble statues of Socrates and Plato, seated, flank the entrance of the Academy of Athens, a 19th-century building in the city centre. They are the work of the sculptor Leonidas Drosis.",
+        "es": "Las estatuas de mármol de Sócrates y Platón, sentados, flanquean la entrada de la Academia de Atenas, un edificio del siglo XIX en el centro de la ciudad. Son obra del escultor Leonidas Drosis."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Socrates turned philosophy from the stars to human life: how should we live, and how do we know what we think we know? Teaching by questions is still called the Socratic method. Because he left no writings, every age has drawn its own Socrates from the pages of Plato, and his death remains the great example of a person who chose to die sooner than stop thinking freely.",
+    "es": "Sócrates llevó la filosofía de las estrellas a la vida humana: ¿cómo debemos vivir, y cómo sabemos lo que creemos saber? Enseñar con preguntas todavía se llama método socrático. Como no dejó nada escrito, cada época ha sacado su propio Sócrates de las páginas de Platón, y su muerte sigue siendo el gran ejemplo de alguien que prefirió morir antes que dejar de pensar con libertad."
+  },
+  "sources": [
+    { "title": "Wikipedia: Socrates", "url": "https://en.wikipedia.org/wiki/Socrates" },
+    { "title": "Stanford Encyclopedia of Philosophy: Socrates", "url": "https://plato.stanford.edu/entries/socrates/" },
+    { "title": "Wikipedia: Trial of Socrates", "url": "https://en.wikipedia.org/wiki/Trial_of_Socrates" },
+    { "title": "Encyclopaedia Britannica: Socrates", "url": "https://www.britannica.com/biography/Socrates" },
+    { "title": "Athenian Agora Excavations (American School of Classical Studies at Athens)", "url": "https://agora.ascsa.net/" }
+  ]
+}

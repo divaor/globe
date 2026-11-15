@@ -11,7 +11,7 @@ const L = (en: string, sp: string) => (es() ? sp : en);
 export type CardFn = (icon: string, title: string, sub: string, rows: InfoRow[], links?: { label: string; href?: string; onClick?: () => void }[], notes?: string[], image?: Promise<string | null>, extra?: HTMLElement | null) => void;
 
 /** A line under a picture: its licence and author, once Commons answers. */
-function creditEl(file: string | null): HTMLElement | null {
+export function creditEl(file: string | null): HTMLElement | null {
   if (!file) return null;
   const p = h('p', { class: 'card-note art-credit', 'data-credit': file }, h('a', { href: commonsPage(file), target: '_blank', rel: 'noopener' }, L('Picture: Wikimedia Commons', 'Imagen: Wikimedia Commons')));
   void commonsCredit(file).then((c) => {

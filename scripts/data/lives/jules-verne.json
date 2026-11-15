@@ -1,0 +1,371 @@
+{
+  "id": "jules-verne",
+  "qid": "Q33977",
+  "name": { "en": "Jules Verne", "es": "Julio Verne" },
+  "icon": "🎈",
+  "field": "letters",
+  "known": { "en": "French novelist of the Extraordinary Voyages", "es": "Novelista francés de los Viajes extraordinarios" },
+  "born": "1828-02-08",
+  "died": "1905-03-24",
+  "summary": {
+    "en": "A lawyer's son from the port of Nantes, he took readers under the sea, round the world and to the Moon. His own travels were modest, and he wrote most of his books at a small desk in Amiens.",
+    "es": "Hijo de un abogado del puerto de Nantes, llevó a sus lectores bajo el mar, alrededor del mundo y a la Luna. Sus propios viajes fueron modestos, y escribió casi todos sus libros en un pequeño escritorio de Amiens."
+  },
+  "steps": [
+    {
+      "date": "1828-02-08",
+      "kind": "born",
+      "place": { "en": "Nantes, France", "es": "Nantes, Francia" },
+      "at": [-1.5566, 47.2124],
+      "title": { "en": "Born on the Île Feydeau", "es": "Nace en la isla Feydeau" },
+      "text": {
+        "en": "Jules Verne was born on the Île Feydeau, then an island in the Loire in the middle of Nantes, a port busy with ships from the Americas. His father was a lawyer; his mother came from a family of shipowners.",
+        "es": "Julio Verne nació en la isla Feydeau, entonces una isla del Loira en pleno Nantes, un puerto lleno de barcos que venían de América. Su padre era abogado; su madre venía de una familia de armadores."
+      },
+      "details": {
+        "en": "He was the eldest of five children. The island's tall houses had been built by shipowners grown rich on sugar and the slave trade. The family spent its summers at Chantenay, down the river, where the boys watched the ships go by. A family story, probably embroidered, says that at 11 he slipped aboard the Coralie, bound for the Indies, and that his father caught up with him at Paimbœuf, the next port. He is said to have promised to travel only in his imagination from then on. The river's arms around the island were filled in during the 20th century.",
+        "es": "Era el mayor de cinco hermanos. Las casas altas de la isla las habían construido armadores enriquecidos con el azúcar y la trata de esclavos. La familia pasaba los veranos en Chantenay, río abajo, donde los chicos veían pasar los barcos. Una historia familiar, seguramente adornada, cuenta que a los 11 años se coló en el Coralie, que zarpaba hacia las Indias, y que su padre lo alcanzó en Paimbœuf, el puerto siguiente. Dicen que prometió viajar desde entonces solo con la imaginación. Los brazos del río que rodeaban la isla se rellenaron en el siglo XX."
+      }
+    },
+    {
+      "date": "1848-11",
+      "kind": "study",
+      "place": { "en": "Paris, France", "es": "París, Francia" },
+      "at": [2.3436, 48.8486],
+      "title": { "en": "A law student among playwrights", "es": "Un estudiante de derecho entre dramaturgos" },
+      "text": {
+        "en": "At 20 he came to Paris to finish his law studies, in the year of the 1848 revolution. He passed his exams, but spent his evenings in literary salons and theatres and wrote plays of his own.",
+        "es": "A los 20 años llegó a París para terminar sus estudios de derecho, el año de la revolución de 1848. Aprobó los exámenes, pero pasaba las noches en salones literarios y teatros, y escribía sus propias obras."
+      },
+      "details": {
+        "en": "Alexandre Dumas, the author of The Three Musketeers, took a liking to him and staged his one-act comedy The Broken Straws in 1850. Verne took his degree and then refused to go home and take over his father's practice. He scraped a living as secretary of the Théâtre Lyrique, wrote librettos for operettas, and published his first tales of travel in a family magazine. In the National Library he read all he could about geography, engineering and exploration.",
+        "es": "Alejandro Dumas, el autor de Los tres mosqueteros, le tomó simpatía y estrenó en 1850 su comedia en un acto Las pajas rotas. Verne se recibió de abogado y se negó a volver a casa para hacerse cargo del estudio de su padre. Se ganó la vida a duras penas como secretario del Théâtre Lyrique, escribió libretos de operetas y publicó sus primeros relatos de viajes en una revista familiar. En la Biblioteca Nacional leía todo lo que encontraba sobre geografía, ingeniería y exploraciones."
+      },
+      "places": [
+        {
+          "name": { "en": "Alexandre Dumas", "es": "Alejandro Dumas" },
+          "at": [2.3488, 48.8534],
+          "cat": "person",
+          "type": "person",
+          "date": "1850",
+          "life": ["1802-07-24", "1870-12-05"],
+          "text": {
+            "en": "The most popular novelist in France. He staged Verne's first play, The Broken Straws, at his own Théâtre Historique in 1850; it ran for twelve nights.",
+            "es": "El novelista más popular de Francia. Estrenó la primera obra de Verne, Las pajas rotas, en su propio Théâtre Historique en 1850; estuvo doce noches en cartel."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1857-01",
+      "kind": "love",
+      "place": { "en": "Paris, France", "es": "París, Francia" },
+      "at": [2.3522, 48.8567],
+      "title": { "en": "Marriage and the stock exchange", "es": "El matrimonio y la Bolsa" },
+      "text": {
+        "en": "He married Honorine de Viane, a young widow from Amiens with two daughters. To support them he bought a share in a stockbroker's firm, and wrote early every morning before the Bourse opened.",
+        "es": "Se casó con Honorine de Viane, una joven viuda de Amiens con dos hijas. Para mantenerlas compró una parte en una agencia de bolsa, y escribía cada mañana, muy temprano, antes de que abriera la Bolsa."
+      }
+    },
+    {
+      "date": "1863-01",
+      "kind": "made",
+      "place": { "en": "Paris, France", "es": "París, Francia" },
+      "at": [2.3522, 48.8567],
+      "title": { "en": "Five Weeks in a Balloon", "es": "Cinco semanas en globo" },
+      "text": {
+        "en": "The publisher Pierre-Jules Hetzel brought out Verne's first novel, a balloon flight across Africa. It sold at once, and Hetzel signed him up for adventure novels built on science, two or three volumes a year.",
+        "es": "El editor Pierre-Jules Hetzel publicó su primera novela, un vuelo en globo sobre África. Se vendió enseguida, y Hetzel lo contrató para escribir novelas de aventuras con base científica: dos o tres tomos por año."
+      },
+      "details": {
+        "en": "The series was called the Extraordinary Voyages. Within three years it had taken readers down an Icelandic volcano and off to the Moon in a shell fired from a giant cannon. Hetzel was a demanding editor: he made Verne change endings and tone down his politics, and he turned down a gloomy novel about Paris in the 20th century, with its motor cars and electric lights. That manuscript turned up in a family safe and was published in 1994.",
+        "es": "La serie se llamó Viajes extraordinarios. En tres años ya había llevado a los lectores al fondo de un volcán de Islandia y rumbo a la Luna en un proyectil disparado por un cañón gigante. Hetzel era un editor exigente: le hizo cambiar finales y moderar sus opiniones políticas, y le rechazó una novela sombría sobre el París del siglo XX, con sus autos y sus luces eléctricas. Ese manuscrito apareció en una caja fuerte de la familia y se publicó en 1994."
+      },
+      "places": [
+        {
+          "name": { "en": "Pierre-Jules Hetzel", "es": "Pierre-Jules Hetzel" },
+          "at": [2.3339, 48.8555],
+          "cat": "person",
+          "type": "person",
+          "date": "1862",
+          "life": ["1814-01-15", "1886-03-17"],
+          "text": {
+            "en": "The publisher of Victor Hugo and George Sand, and Verne's editor and friend for 24 years. His shop was in the Rue Jacob. He printed the novels first in his magazine for young readers, then as illustrated books.",
+            "es": "Editor de Victor Hugo y George Sand, y durante 24 años editor y amigo de Verne. Su casa editorial estaba en la calle Jacob. Publicaba las novelas primero en su revista para jóvenes y luego como libros ilustrados."
+          }
+        },
+        {
+          "name": { "en": "Journey to the Centre of the Earth", "es": "Viaje al centro de la Tierra" },
+          "at": [2.3488, 48.8534],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1864",
+          "by": { "en": "Jules Verne", "es": "Julio Verne" },
+          "text": {
+            "en": "Published in 1864. A German professor, his nephew and an Icelandic guide climb down a volcano and find an underground sea and living monsters. They come out through Stromboli, in Italy.",
+            "es": "Publicada en 1864. Un profesor alemán, su sobrino y un guía islandés bajan por un volcán y encuentran un mar subterráneo y monstruos vivos. Salen por el Estrómboli, en Italia."
+          }
+        },
+        {
+          "name": { "en": "From the Earth to the Moon", "es": "De la Tierra a la Luna" },
+          "at": [2.3488, 48.8534],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1865",
+          "by": { "en": "Jules Verne", "es": "Julio Verne" },
+          "text": {
+            "en": "Published in 1865. An American gun club fires three men at the Moon from Florida, the state from which the Apollo crews set out a century later. The Frenchman aboard is a portrait of Verne's friend Nadar.",
+            "es": "Publicada en 1865. Un club de artilleros dispara a tres hombres hacia la Luna desde Florida, de donde un siglo después partieron las misiones Apolo. El francés de a bordo es un retrato de Nadar, amigo de Verne."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1867-04-09",
+      "kind": "journey",
+      "by": "sea",
+      "via": [[-3.2, 53.5], [-5.6, 52.2], [-8.5, 51.0], [-30.0, 49.0], [-52.0, 44.0], [-66.0, 41.0], [-73.5, 40.4]],
+      "place": { "en": "New York, United States", "es": "Nueva York, Estados Unidos" },
+      "at": [-74.006, 40.7143],
+      "title": { "en": "To America on the Great Eastern", "es": "A América en el Great Eastern" },
+      "text": {
+        "en": "With his brother Paul he crossed the Atlantic from Liverpool on the Great Eastern, then the largest ship in the world. He had about a week ashore: New York, the Hudson and Niagara Falls. He never returned.",
+        "es": "Con su hermano Paul cruzó el Atlántico desde Liverpool en el Great Eastern, entonces el barco más grande del mundo. Tuvo cerca de una semana en tierra: Nueva York, el Hudson y las cataratas del Niágara. Nunca volvió."
+      },
+      "details": {
+        "en": "The voyage gave him a novel, A Floating City. It was the only time he saw the country where so many of his heroes live or travel, from the gunners of Baltimore who shoot for the Moon to Phileas Fogg crossing the prairies by train. That same year, at the World's Fair in Paris, he studied a model of the French navy's submarine Plongeur and the new uses of electricity.",
+        "es": "El viaje le dio una novela, Una ciudad flotante. Fue la única vez que vio el país donde viven o viajan tantos de sus héroes, desde los artilleros de Baltimore que apuntan a la Luna hasta Phileas Fogg cruzando las praderas en tren. Ese mismo año, en la Exposición Universal de París, estudió una maqueta del Plongeur, el submarino de la marina francesa, y los nuevos usos de la electricidad."
+      },
+      "places": [
+        {
+          "name": { "en": "SS Great Eastern", "es": "El Great Eastern" },
+          "at": [-2.9917, 53.4072],
+          "cat": "place",
+          "type": "ship",
+          "icon": "🚢",
+          "date": "1867-03-26",
+          "text": {
+            "en": "Brunel's iron giant, 211 metres long and built for 4,000 passengers. Verne and his brother sailed from Liverpool on 26 March 1867 and reached New York, after a storm, on 9 April.",
+            "es": "El gigante de hierro de Brunel, de 211 metros de largo y construido para 4000 pasajeros. Verne y su hermano zarparon de Liverpool el 26 de marzo de 1867 y, tras una tormenta, llegaron a Nueva York el 9 de abril."
+          },
+          "wiki": { "en": "SS Great Eastern", "es": "Great Eastern" }
+        }
+      ]
+    },
+    {
+      "date": "1869",
+      "kind": "made",
+      "by": "sea",
+      "via": [[-73.5, 40.4], [-66.0, 41.0], [-52.0, 44.0], [-30.0, 48.5], [-6.2, 48.9], [-2.2, 49.95], [1.3, 50.3]],
+      "place": { "en": "Le Crotoy, France", "es": "Le Crotoy, Francia" },
+      "at": [1.625, 50.216],
+      "title": { "en": "Twenty Thousand Leagues Under the Seas", "es": "Veinte mil leguas de viaje submarino" },
+      "text": {
+        "en": "From 1866 he spent his summers in this fishing port on the Somme estuary, and in 1868 he bought a boat, the Saint-Michel. Here, ashore and afloat, he wrote the voyage of Captain Nemo's Nautilus.",
+        "es": "Desde 1866 veraneaba en este puerto pesquero del estuario del Somme, y en 1868 compró un barco, el Saint-Michel. Aquí, en tierra y a bordo, escribió el viaje del Nautilus del capitán Nemo."
+      },
+      "details": {
+        "en": "The Saint-Michel was a small sailing boat, and Verne took it along the Channel coast, to Le Havre and as far as London. The novel ran in Hetzel's magazine in 1869 and 1870, and the long voyage of the Nautilus, under every ocean, was the success that made his name. That year he was made a knight of the Legion of Honour, and when war with Prussia broke out he served in the National Guard. In 1871 the family moved to Amiens.",
+        "es": "El Saint-Michel era un pequeño velero, y Verne lo llevó por la costa del canal de la Mancha, hasta Le Havre y hasta Londres. La novela salió en la revista de Hetzel en 1869 y 1870, y el largo viaje del Nautilus bajo todos los océanos fue el éxito que consagró su nombre. Ese año lo nombraron caballero de la Legión de Honor, y cuando estalló la guerra con Prusia sirvió en la Guardia Nacional. En 1871 la familia se mudó a Amiens."
+      },
+      "places": [
+        {
+          "name": { "en": "Twenty Thousand Leagues Under the Seas", "es": "Veinte mil leguas de viaje submarino" },
+          "at": [1.625, 50.216],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1869",
+          "end": "1870",
+          "by": { "en": "Jules Verne", "es": "Julio Verne" },
+          "text": {
+            "en": "Professor Aronnax is held aboard the Nautilus, the electric submarine of the mysterious Captain Nemo. The title gives the distance they travel, some 80,000 km, not the depth. Published in 1869 and 1870.",
+            "es": "El profesor Aronnax queda retenido a bordo del Nautilus, el submarino eléctrico del misterioso capitán Nemo. El título indica la distancia que recorren, unos 80 000 km, no la profundidad. Se publicó en 1869 y 1870."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1872-11-06",
+      "kind": "made",
+      "place": { "en": "Amiens, France", "es": "Amiens, Francia" },
+      "at": [2.2978, 49.8919],
+      "title": { "en": "Around the World in Eighty Days", "es": "La vuelta al mundo en ochenta días" },
+      "text": {
+        "en": "Verne had settled in Amiens, his wife's home town, in 1871. Here he wrote the wager of Phileas Fogg, which a Paris newspaper printed day by day. Some readers took the journey for a real one.",
+        "es": "Verne se había instalado en 1871 en Amiens, la ciudad natal de su esposa. Aquí escribió la apuesta de Phileas Fogg, que un diario de París publicó día a día. Algunos lectores creyeron que el viaje era real."
+      },
+      "details": {
+        "en": "The story ran in Le Temps from 6 November to 22 December 1872; Fogg reaches London on 21 December. A stage version opened in Paris two years later, and its long run made Verne rich. In Amiens he kept strict hours: up at five, at his desk until late morning, then a reading room where he combed newspapers and science journals for ideas. The Mysterious Island and Michael Strogoff followed.",
+        "es": "La historia salió en Le Temps del 6 de noviembre al 22 de diciembre de 1872; Fogg llega a Londres el 21 de diciembre. Dos años después se estrenó en París una versión teatral que estuvo mucho tiempo en cartel y lo hizo rico. En Amiens tenía horarios estrictos: se levantaba a las cinco, escribía hasta media mañana y luego iba a una sala de lectura, donde revisaba diarios y revistas científicas en busca de ideas. Después vinieron La isla misteriosa y Miguel Strogoff."
+      },
+      "places": [
+        {
+          "name": { "en": "Around the World in Eighty Days", "es": "La vuelta al mundo en ochenta días" },
+          "at": [2.3, 49.9],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1872",
+          "by": { "en": "Jules Verne", "es": "Julio Verne" },
+          "text": {
+            "en": "Phileas Fogg bets £20,000 that he can circle the globe in 80 days, by steamer, train, elephant and sledge. Written in Amiens in 1872, it is the most popular of all his books.",
+            "es": "Phileas Fogg apuesta 20 000 libras a que puede dar la vuelta al mundo en 80 días, en vapor, tren, elefante y trineo. Escrita en Amiens en 1872, es el más popular de todos sus libros."
+          }
+        },
+        {
+          "name": { "en": "The Mysterious Island", "es": "La isla misteriosa" },
+          "at": [2.3, 49.9],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1874",
+          "end": "1875",
+          "by": { "en": "Jules Verne", "es": "Julio Verne" },
+          "text": {
+            "en": "Five Northerners held in Richmond, the Confederate capital, escape by balloon and are wrecked on a desert island, which they tame with chemistry and engineering. Captain Nemo returns in the last chapters.",
+            "es": "Cinco norteños retenidos en Richmond, la capital confederada, escapan en globo y naufragan en una isla desierta, que dominan a fuerza de química e ingeniería. El capitán Nemo reaparece en los últimos capítulos."
+          }
+        },
+        {
+          "name": { "en": "Michael Strogoff", "es": "Miguel Strogoff" },
+          "at": [2.3, 49.9],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1876",
+          "by": { "en": "Jules Verne", "es": "Julio Verne" },
+          "text": {
+            "en": "A courier of the tsar crosses Siberia in the middle of a Tartar invasion. Published in 1876, it was for decades one of his best-loved novels, and a hit on the stage.",
+            "es": "Un correo del zar cruza Siberia en plena invasión tártara. Publicada en 1876, fue durante décadas una de sus novelas más queridas, y un éxito en el teatro."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1884-07",
+      "kind": "journey",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4541, 41.9027],
+      "title": { "en": "The last cruise", "es": "El último crucero" },
+      "text": {
+        "en": "In 1884 Verne took his wife on a cruise in his steam yacht, the Saint-Michel III, round Spain to North Africa and Italy. In Rome, Pope Leo XIII received him in a private audience.",
+        "es": "En 1884 Verne llevó a su esposa de crucero en su yate de vapor, el Saint-Michel III, bordeando España hasta el norte de África e Italia. En Roma, el papa León XIII lo recibió en audiencia privada."
+      },
+      "details": {
+        "en": "He had bought the yacht in 1876 or 1877 and had sailed it to Lisbon and Algiers, to Scotland and to Copenhagen. This was its longest voyage, and his last: the next year he sold it, and after that he hardly left Amiens. For a man whose heroes cross every ocean and continent, he had travelled modestly: Britain, Scandinavia, one week in America and a few cruises in European and North African waters. The rest he found in atlases, travellers' accounts and scientific journals.",
+        "es": "Había comprado el yate en 1876 o 1877 y lo había llevado a Lisboa y Argel, a Escocia y a Copenhague. Este fue su viaje más largo, y el último: al año siguiente lo vendió, y desde entonces casi no salió de Amiens. Para un hombre cuyos héroes cruzan todos los océanos y continentes, había viajado poco: Gran Bretaña, Escandinavia, una semana en América y algunos cruceros por aguas de Europa y el norte de África. Lo demás lo encontró en atlas, relatos de viajeros y revistas científicas."
+      }
+    },
+    {
+      "date": "1886-03-09",
+      "kind": "struggle",
+      "place": { "en": "Amiens, France", "es": "Amiens, Francia" },
+      "at": [2.302, 49.8879],
+      "title": { "en": "Shot by his nephew", "es": "Baleado por su sobrino" },
+      "text": {
+        "en": "As Verne came home, his nephew Gaston, who was mentally ill, fired a pistol at him twice. One bullet lodged in his left leg and could not be removed. He limped for the rest of his life.",
+        "es": "Cuando Verne volvía a su casa, su sobrino Gaston, que sufría una enfermedad mental, le disparó dos veces con una pistola. Una bala se le alojó en la pierna izquierda y no pudieron extraerla. Cojeó el resto de su vida."
+      },
+      "details": {
+        "en": "Gaston, the son of his brother Paul, spent the rest of his life in asylums. A week later Verne's publisher Hetzel died, and the next year his mother. The house with the brick tower at the corner of Rue Charles-Dubois had been his home since 1882; it is a museum today. His later novels grew darker: in them machines serve tyrants and madmen, and progress no longer saves anyone.",
+        "es": "Gaston, hijo de su hermano Paul, pasó el resto de su vida internado. Una semana después murió Hetzel, el editor de Verne, y al año siguiente su madre. La casa de la torre de ladrillo, en la esquina de la calle Charles-Dubois, era su hogar desde 1882; hoy es un museo. Sus últimas novelas se volvieron más sombrías: en ellas las máquinas sirven a tiranos y locos, y el progreso ya no salva a nadie."
+      }
+    },
+    {
+      "date": "1888-05",
+      "kind": "power",
+      "place": { "en": "Amiens, France", "es": "Amiens, Francia" },
+      "at": [2.2978, 49.8919],
+      "title": { "en": "Councillor Verne", "es": "El concejal Verne" },
+      "text": {
+        "en": "Verne was elected to the city council of Amiens and served for fifteen years, looking after schools, theatres and fairs. In 1889 he gave the opening speech at the city's new circus, which now bears his name.",
+        "es": "Verne fue elegido concejal de Amiens y lo fue durante quince años, a cargo de escuelas, teatros y ferias. En 1889 pronunció el discurso inaugural del nuevo circo de la ciudad, que hoy lleva su nombre."
+      },
+      "details": {
+        "en": "A conservative by temperament, he surprised his friends by standing on the list of the republican mayor; he said he only wanted to be useful to his town. In November 1889 the American reporter Nellie Bly, racing round the world to beat Phileas Fogg, made a detour to Amiens to shake his hand. He told her that if she did it in 79 days he would applaud with both hands. She took 72.",
+        "es": "Conservador por temperamento, sorprendió a sus amigos al presentarse en la lista del alcalde republicano; dijo que solo quería ser útil a su ciudad. En noviembre de 1889 la periodista estadounidense Nellie Bly, que daba la vuelta al mundo para ganarle a Phileas Fogg, se desvió hasta Amiens para estrecharle la mano. Él le dijo que si lo lograba en 79 días la aplaudiría con las dos manos. Ella tardó 72."
+      },
+      "places": [
+        {
+          "name": { "en": "Cirque Jules Verne", "es": "Circo Jules Verne" },
+          "at": [2.2955, 49.8884],
+          "cat": "place",
+          "type": "structure",
+          "icon": "🎪",
+          "date": "1889",
+          "text": {
+            "en": "Amiens's permanent circus, designed by Émile Ricquier and opened in June 1889 with a speech by Councillor Verne. It is still used for circus shows and concerts.",
+            "es": "El circo estable de Amiens, proyectado por Émile Ricquier e inaugurado en junio de 1889 con un discurso del concejal Verne. Todavía se usa para espectáculos de circo y conciertos."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1905-03-24",
+      "kind": "died",
+      "place": { "en": "Amiens, France", "es": "Amiens, Francia" },
+      "at": [2.2978, 49.8919],
+      "title": { "en": "He dies in Amiens", "es": "Muere en Amiens" },
+      "text": {
+        "en": "Diabetic and almost blind, Verne went on writing to the end. He died at 77 in his house on the Boulevard Longueville, now Boulevard Jules-Verne, leaving several novels in his drawers.",
+        "es": "Diabético y casi ciego, Verne siguió escribiendo hasta el final. Murió a los 77 años en su casa del bulevar Longueville, hoy bulevar Jules-Verne, y dejó varias novelas en los cajones."
+      },
+      "details": {
+        "en": "Thousands followed his coffin to the cemetery of La Madeleine. Two years later a sculpture was set on the grave: Verne pushing up the stone slab and reaching for the sky. His son Michel published the remaining novels, some of them heavily rewritten, as scholars found when the manuscripts came to light in the 1970s.",
+        "es": "Miles de personas siguieron el féretro hasta el cementerio de La Madeleine. Dos años después se colocó sobre la tumba una escultura: Verne levanta la losa y tiende el brazo hacia el cielo. Su hijo Michel publicó las novelas que quedaban, algunas muy reescritas, como descubrieron los estudiosos cuando los manuscritos salieron a la luz en la década de 1970."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Jules Verne House, Amiens", "es": "Casa de Julio Verne, Amiens" },
+      "at": [2.302, 49.8879],
+      "kind": "house",
+      "text": {
+        "en": "The house with the tower where he lived from 1882 to 1900. Its floors show his study, as small as a ship's cabin, his library, and the posters, models and games his books inspired.",
+        "es": "La casa de la torre donde vivió de 1882 a 1900. En sus pisos se ven su estudio, pequeño como el camarote de un barco, su biblioteca, y los afiches, maquetas y juegos que inspiraron sus libros."
+      }
+    },
+    {
+      "name": { "en": "Verne's grave, La Madeleine cemetery", "es": "Tumba de Verne, cementerio de La Madeleine" },
+      "at": [2.2836, 49.9139],
+      "kind": "grave",
+      "text": {
+        "en": "Albert Roze's sculpture of 1907 shows him breaking out of his tomb, one arm raised to the sky. It is called Towards Immortality and Eternal Youth.",
+        "es": "La escultura de Albert Roze, de 1907, lo muestra saliendo de la tumba con un brazo tendido hacia el cielo. Se llama Hacia la inmortalidad y la eterna juventud."
+      }
+    },
+    {
+      "name": { "en": "Cirque Jules Verne, Amiens", "es": "Circo Jules Verne, Amiens" },
+      "at": [2.2955, 49.8884],
+      "kind": "site",
+      "text": {
+        "en": "The circus he opened as a city councillor in 1889, a short walk from his house and still in use.",
+        "es": "El circo que inauguró como concejal en 1889, a pocos pasos de su casa y todavía en uso."
+      }
+    },
+    {
+      "name": { "en": "Jules Verne Museum, Nantes", "es": "Museo Julio Verne, Nantes" },
+      "at": [-1.5773, 47.2016],
+      "kind": "museum",
+      "text": {
+        "en": "A 19th-century house on the hill of Sainte-Anne, above the Loire and the port he watched as a boy, with manuscripts, first editions and objects that belonged to him.",
+        "es": "Una casa del siglo XIX en la colina de Sainte-Anne, sobre el Loira y el puerto que miraba de chico, con manuscritos, primeras ediciones y objetos que le pertenecieron."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Verne wrote more than sixty novels of the Extraordinary Voyages and is one of the most translated authors in the world. He did not so much predict the future as teach readers to expect it: submarine builders, polar explorers and rocket pioneers said his books had set them on their way. The first nuclear submarine, launched in 1954, was named Nautilus.",
+    "es": "Verne escribió más de sesenta novelas de los Viajes extraordinarios y es uno de los autores más traducidos del mundo. Más que predecir el futuro, enseñó a sus lectores a esperarlo: constructores de submarinos, exploradores polares y pioneros de los cohetes dijeron que sus libros los habían puesto en camino. El primer submarino nuclear, botado en 1954, se llamó Nautilus."
+  },
+  "sources": [
+    { "title": "William Butcher, A Chronology of Jules Verne", "url": "https://ibiblio.org/julesverne/articles/chronology%20pb.pdf" },
+    { "title": "New World Encyclopedia: Jules Verne", "url": "https://www.newworldencyclopedia.org/entry/Jules_Verne" },
+    { "title": "Encyclopedia.com: Jules Verne", "url": "https://www.encyclopedia.com/people/literature-and-arts/french-literature-biographies/jules-verne" },
+    { "title": "Andrew Nash: Jules Verne and the Great Eastern", "url": "https://JulesVerne.ca/greateastern.html" },
+    { "title": "Wikipedia: Exposition Universelle (1867)", "url": "https://en.wikipedia.org/wiki/Exposition_Universelle_(1867)" }
+  ]
+}

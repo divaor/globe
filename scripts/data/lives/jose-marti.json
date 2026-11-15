@@ -1,0 +1,412 @@
+{
+  "id": "jose-marti",
+  "qid": "Q103285",
+  "name": { "en": "José Martí", "es": "José Martí" },
+  "icon": "✍️",
+  "field": "letters",
+  "known": { "en": "Cuban poet and independence leader", "es": "Poeta y líder de la independencia cubana" },
+  "born": "1853-01-28",
+  "died": "1895-05-19",
+  "summary": {
+    "en": "Jailed at 16 and put to hard labour in chains, he spent most of his life in exile writing poems, essays and newspaper chronicles. From New York he united Cuba's exiles for a war of independence, and died in its first weeks.",
+    "es": "Preso a los 16 años y condenado a trabajos forzados, pasó casi toda su vida en el exilio escribiendo poemas, ensayos y crónicas. Desde Nueva York unió a los exiliados cubanos para una guerra de independencia, y murió al empezar."
+  },
+  "steps": [
+    {
+      "date": "1853-01-28",
+      "kind": "born",
+      "place": { "en": "Havana, Cuba", "es": "La Habana, Cuba" },
+      "at": [-82.3536, 23.13],
+      "title": { "en": "Born on Paula Street", "es": "Nace en la calle Paula" },
+      "text": {
+        "en": "José Julián Martí was born in a small house on Paula Street, in old Havana, the only son of a Spanish army sergeant from Valencia and a mother from the Canary Islands. He grew up with seven younger sisters, in poverty.",
+        "es": "José Julián Martí nació en una casa pequeña de la calle Paula, en La Habana Vieja, único hijo varón de un sargento del ejército español nacido en Valencia y de una madre canaria. Creció con siete hermanas menores, en la pobreza."
+      },
+      "details": {
+        "en": "Cuba was still a Spanish colony, and its sugar plantations were worked by enslaved Africans. At 12 he entered a school run by the poet Rafael María de Mendive, who opposed Spanish rule and paid for the boy's further studies. In April 1865, when news came that Abraham Lincoln had been murdered, Martí and his schoolmates went into mourning for the president who had freed the slaves.",
+        "es": "Cuba seguía siendo una colonia española, y sus ingenios de azúcar los trabajaban africanos esclavizados. A los 12 años entró a una escuela dirigida por el poeta Rafael María de Mendive, contrario al dominio español, que le pagó los estudios. En abril de 1865, al llegar la noticia del asesinato de Abraham Lincoln, Martí y sus compañeros guardaron luto por el presidente que había liberado a los esclavos."
+      }
+    },
+    {
+      "date": "1869-10-21",
+      "kind": "struggle",
+      "place": { "en": "Havana, Cuba", "es": "La Habana, Cuba" },
+      "at": [-82.3765, 23.1408],
+      "title": { "en": "Prisoner at sixteen", "es": "Preso a los dieciséis" },
+      "text": {
+        "en": "In Cuba's first war of independence, police found a letter in which Martí and a friend scolded a classmate for joining the Spanish army. He was 16. Sentenced to six years, he was sent to break stone in the quarries.",
+        "es": "En la primera guerra de independencia de Cuba, la policía halló una carta en la que Martí y un amigo reprochaban a un compañero alistarse en el ejército español. Tenía 16 años. Condenado a seis años, picó piedra en las canteras."
+      },
+      "details": {
+        "en": "The quarries were those of San Lázaro, on the edge of Havana. He had already written a patriotic play, Abdala, and published a newspaper with his friend Fermín Valdés Domínguez. In the quarries he worked in the sun in chains that left scars on his legs for life. His parents pleaded for him, and in 1870 the sentence was changed: first to confinement on the Isle of Pines, then to exile in Spain. He was 17.",
+        "es": "Eran las canteras de San Lázaro, en las afueras de La Habana. Ya había escrito un drama patriótico, Abdala, y publicado un periódico con su amigo Fermín Valdés Domínguez. En las canteras trabajó bajo el sol con unos grilletes que le dejaron cicatrices en las piernas para siempre. Sus padres suplicaron por él, y en 1870 le cambiaron la pena: primero por el confinamiento en la isla de Pinos, luego por el destierro a España. Tenía 17 años."
+      },
+      "places": [
+        {
+          "name": { "en": "Exile on the Isle of Pines", "es": "Confinado en la isla de Pinos" },
+          "at": [-82.8066, 21.8876],
+          "cat": "place",
+          "type": "site",
+          "icon": "🏝️",
+          "date": "1870-10",
+          "text": {
+            "en": "Martí spent some weeks on the farm El Abra, near Nueva Gerona, on today's Isle of Youth, before he was shipped to Spain in January 1871.",
+            "es": "Martí pasó unas semanas en la finca El Abra, cerca de Nueva Gerona, en la actual isla de la Juventud, antes de ser embarcado a España en enero de 1871."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1871-01",
+      "kind": "struggle",
+      "by": "sea",
+      "via": [[-82.35, 23.25], [-80.0, 24.0], [-75.0, 26.5], [-40.0, 34.0], [-12.0, 36.5], [-6.3, 36.53]],
+      "place": { "en": "Madrid, Spain", "es": "Madrid, España" },
+      "at": [-3.7026, 40.4165],
+      "title": { "en": "Exile in Madrid", "es": "Desterrado en Madrid" },
+      "text": {
+        "en": "Landing at Cádiz, the young exile went on to Madrid, enrolled in law and wrote Political Prison in Cuba, a pamphlet that told Spaniards what their government did to Cuban prisoners.",
+        "es": "Desembarcó en Cádiz y siguió hasta Madrid, donde se inscribió en Derecho y escribió El presidio político en Cuba, un folleto que contaba a los españoles lo que su gobierno hacía con los presos cubanos."
+      },
+      "details": {
+        "en": "He lived poorly, gave private lessons, and haunted the Ateneo, the National Library and the theatres. In November 1871 eight medical students were shot in Havana, accused without proof of defacing a Spanish grave; Martí wrote on their anniversary a text that circulated in Madrid. When Spain became a republic in February 1873, he hung the Cuban flag from his balcony and wrote to its leaders that a republic that refused Cuba its freedom betrayed its own principles.",
+        "es": "Vivía con estrechez, daba clases particulares y frecuentaba el Ateneo, la Biblioteca Nacional y los teatros. En noviembre de 1871 ocho estudiantes de medicina fueron fusilados en La Habana, acusados sin pruebas de profanar una tumba española; Martí escribió en el aniversario un texto que circuló por Madrid. Cuando España se volvió república en febrero de 1873, colgó la bandera cubana de su balcón y escribió a sus dirigentes que una república que negaba a Cuba la libertad traicionaba sus propios principios."
+      }
+    },
+    {
+      "date": "1873-05",
+      "kind": "study",
+      "place": { "en": "Zaragoza, Spain", "es": "Zaragoza, España" },
+      "at": [-0.8867, 41.6473],
+      "title": { "en": "Two degrees in Zaragoza", "es": "Dos títulos en Zaragoza" },
+      "text": {
+        "en": "With his friend Fermín, also exiled, Martí moved to Zaragoza to finish his studies. In June 1874 he graduated in civil and canon law, and in October in philosophy and letters.",
+        "es": "Con su amigo Fermín, también desterrado, Martí se trasladó a Zaragoza para terminar sus estudios. En junio de 1874 se graduó en Derecho Civil y Canónico, y en octubre en Filosofía y Letras."
+      },
+      "details": {
+        "en": "Forbidden to return to Cuba, he decided to join his family, who had moved to Mexico. He crossed France late in 1874; in Paris he met the poet Auguste Vacquerie and Victor Hugo, whose book about his sons Martí translated into Spanish soon after. In December he sailed from Le Havre.",
+        "es": "Como tenía prohibido volver a Cuba, decidió reunirse con su familia, que se había mudado a México. Cruzó Francia a fines de 1874; en París conoció al poeta Auguste Vacquerie y a Victor Hugo, cuyo libro sobre sus hijos Martí tradujo al español poco después. En diciembre se embarcó en El Havre."
+      },
+      "places": [
+        {
+          "id": "victor-hugo",
+          "name": { "en": "Victor Hugo", "es": "Victor Hugo" },
+          "at": [2.3488, 48.8534],
+          "cat": "person",
+          "type": "person",
+          "date": "1874-11",
+          "life": ["1802-02-26", "1885-05-22"],
+          "text": {
+            "en": "The French novelist, back in Paris after nineteen years of exile, received the young Cuban. Martí's translation of Hugo's Mes fils appeared in a Mexican review in 1875.",
+            "es": "El novelista francés, de vuelta en París tras diecinueve años de exilio, recibió al joven cubano. La traducción que hizo Martí de Mis hijos, de Hugo, apareció en una revista mexicana en 1875."
+          },
+          "wiki": { "en": "Victor Hugo", "es": "Victor Hugo" }
+        }
+      ]
+    },
+    {
+      "date": "1875-03",
+      "kind": "career",
+      "by": "sea",
+      "via": [[2.3488, 48.8534], [0.1079, 49.4935], [-1.5, 49.85], [-6.0, 48.9], [-30.0, 35.0], [-65.0, 25.0], [-82.5, 24.4], [-90.0, 22.5], [-96.1429, 19.1809]],
+      "place": { "en": "Mexico City, Mexico", "es": "Ciudad de México, México" },
+      "at": [-99.1306, 19.4337],
+      "title": { "en": "A journalist in Mexico", "es": "Periodista en México" },
+      "text": {
+        "en": "In Mexico City Martí wrote for the Revista Universal, translated Victor Hugo and had a play staged. At the house of a Cuban exile he met Carmen Zayas-Bazán, whom he married in 1877.",
+        "es": "En la Ciudad de México Martí escribió para la Revista Universal, tradujo a Victor Hugo y estrenó una obra de teatro. En la casa de un exiliado cubano conoció a Carmen Zayas-Bazán, con quien se casó en 1877."
+      },
+      "details": {
+        "en": "He lived on Moneda Street, near the Zócalo, and his neighbour upstairs, Manuel Mercado, became his closest friend; he wrote him his last letter twenty years later. In Mexico he began to think of Latin America as one family of peoples with their own history, Indigenous and mestizo, not copies of Europe or the United States. When Porfirio Díaz seized power by force at the end of 1876, Martí, who had written against the revolt, left the country.",
+        "es": "Vivía en la calle Moneda, cerca del Zócalo, y su vecino del piso de arriba, Manuel Mercado, se convirtió en su mejor amigo; veinte años después le escribiría su última carta. En México empezó a pensar en América Latina como una familia de pueblos con su propia historia, indígena y mestiza, no como copia de Europa ni de los Estados Unidos. Cuando Porfirio Díaz tomó el poder por la fuerza a fines de 1876, Martí, que había escrito contra la revuelta, salió del país."
+      }
+    },
+    {
+      "date": "1877",
+      "kind": "career",
+      "place": { "en": "Guatemala City, Guatemala", "es": "Ciudad de Guatemala, Guatemala" },
+      "at": [-90.5133, 14.6407],
+      "title": { "en": "The girl from Guatemala", "es": "La niña de Guatemala" },
+      "text": {
+        "en": "In Guatemala Martí taught literature and philosophy, and his torrent of words earned him the nickname 'Doctor Torrent'. A pupil, María García Granados, fell in love with him.",
+        "es": "En Guatemala Martí enseñó literatura y filosofía, y su torrente de palabras le valió el apodo de «doctor Torrente». Una alumna, María García Granados, se enamoró de él."
+      },
+      "details": {
+        "en": "She was the daughter of a former president. Martí was engaged to Carmen, and married her in Mexico at the end of 1877. María died in May 1878. Years later he wrote of her in one of his best-known poems, 'the girl from Guatemala, the one who died of love'. He soon fell out with the government of Justo Rufino Barrios and left. After the Ten Years' War ended in 1878 he was allowed back to Havana, where his son José Francisco was born that November.",
+        "es": "Ella era hija de un expresidente. Martí estaba comprometido con Carmen, y se casó con ella en México a fines de 1877. María murió en mayo de 1878. Años después él la recordó en uno de sus poemas más conocidos: «la niña de Guatemala, la que se murió de amor». Pronto chocó con el gobierno de Justo Rufino Barrios y se marchó. Al terminar la guerra de los Diez Años, en 1878, pudo volver a La Habana, donde nació su hijo José Francisco ese noviembre."
+      }
+    },
+    {
+      "date": "1880-01",
+      "kind": "career",
+      "by": "sea",
+      "via": [[-90.5133, 14.6407], [-82.383, 23.133], [-82.35, 23.25], [-80.0, 24.0], [-79.5, 27.0], [-75.0, 35.0], [-73.8, 40.4]],
+      "place": { "en": "New York, United States", "es": "Nueva York, Estados Unidos" },
+      "at": [-74.006, 40.7143],
+      "title": { "en": "Fifteen years in New York", "es": "Quince años en Nueva York" },
+      "text": {
+        "en": "Deported again to Spain in 1879 for plotting, Martí made his way to New York. He made it his home for the rest of his life, writing chronicles of the United States for newspapers across Latin America.",
+        "es": "Deportado otra vez a España en 1879 por conspirar, Martí se fue a Nueva York. Allí vivió el resto de su vida, escribiendo crónicas sobre los Estados Unidos para periódicos de toda América Latina."
+      },
+      "details": {
+        "en": "Apart from a few months in Caracas in 1881, where he founded a review that angered the dictator Guzmán Blanco, he stayed. He described Coney Island, the Brooklyn Bridge, the Statue of Liberty, the trial of President Garfield's murderer and the hanging of the Chicago anarchists for La Nación of Buenos Aires and other papers, worked as a translator and served as consul of Uruguay, Argentina and Paraguay. He admired the country's freedom and energy, and feared its appetite for Cuba. His wife and son came and went; in 1891 Carmen took the boy back to Havana, and he never saw them again.",
+        "es": "Salvo unos meses en Caracas en 1881, donde fundó una revista que irritó al dictador Guzmán Blanco, se quedó. Describió Coney Island, el puente de Brooklyn, la Estatua de la Libertad, el juicio al asesino del presidente Garfield y la ejecución de los anarquistas de Chicago para La Nación de Buenos Aires y otros diarios, trabajó como traductor y fue cónsul de Uruguay, Argentina y Paraguay. Admiraba la libertad y la energía del país, y temía su apetito por Cuba. Su esposa y su hijo iban y venían; en 1891 Carmen se llevó al niño de vuelta a La Habana, y él no volvió a verlos."
+      },
+      "places": [
+        {
+          "name": { "en": "Ismaelillo", "es": "Ismaelillo" },
+          "at": [-74.006, 40.7143],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1882",
+          "by": { "en": "José Martí", "es": "José Martí" },
+          "text": {
+            "en": "Fifteen short poems for his little son, far away in Cuba, published in New York in 1882. Their fresh, simple music opened the way for the modernismo of Spanish American poetry.",
+            "es": "Quince poemas breves para su hijo pequeño, lejos en Cuba, publicados en Nueva York en 1882. Su música fresca y sencilla abrió el camino al modernismo de la poesía hispanoamericana."
+          }
+        },
+        {
+          "name": { "en": "La Edad de Oro", "es": "La Edad de Oro" },
+          "at": [-74.006, 40.7143],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1889",
+          "by": { "en": "José Martí", "es": "José Martí" },
+          "text": {
+            "en": "A magazine for the children of the Americas, written almost entirely by Martí, with stories, poems and articles such as 'Three Heroes', on Bolívar, Hidalgo and San Martín. Only four issues appeared.",
+            "es": "Una revista para los niños de América, escrita casi toda por Martí, con cuentos, poemas y artículos como «Tres héroes», sobre Bolívar, Hidalgo y San Martín. Solo salieron cuatro números."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1891-01-01",
+      "kind": "made",
+      "place": { "en": "New York, United States", "es": "Nueva York, Estados Unidos" },
+      "at": [-74.006, 40.7143],
+      "title": { "en": "Our America", "es": "Nuestra América" },
+      "text": {
+        "en": "In his essay Our America Martí asked the Latin American republics to govern themselves by their own peoples, Indigenous, Black and mestizo, and warned them of the giant to the north. In October came his Simple Verses.",
+        "es": "En su ensayo Nuestra América, Martí pidió a las repúblicas latinoamericanas conocerse y gobernarse según sus propios pueblos, indígenas, negros y mestizos, y las previno contra el gigante del norte. En octubre salieron sus Versos sencillos."
+      },
+      "details": {
+        "en": "The essay appeared on 1 January 1891 in La Revista Ilustrada of New York and was soon reprinted in Mexico. 'There is no hatred of races, because there are no races,' he wrote. He had just followed the first Pan-American Conference in Washington and seen the United States try to lead the hemisphere. In New York, in May 1893, he met the young Nicaraguan poet Rubén Darío, who would carry the modernismo Martí had helped begin across the Spanish-speaking world.",
+        "es": "El ensayo apareció el 1 de enero de 1891 en La Revista Ilustrada de Nueva York y pronto se reprodujo en México. «No hay odio de razas, porque no hay razas», escribió. Acababa de seguir la primera Conferencia Panamericana en Washington y había visto a los Estados Unidos intentar dirigir el continente. En Nueva York, en mayo de 1893, conoció al joven poeta nicaragüense Rubén Darío, que llevaría por todo el mundo hispano el modernismo que Martí había ayudado a iniciar."
+      },
+      "places": [
+        {
+          "name": { "en": "Simple Verses", "es": "Versos sencillos" },
+          "at": [-74.0972, 42.1961],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📖",
+          "date": "1891-10",
+          "by": { "en": "José Martí", "es": "José Martí" },
+          "text": {
+            "en": "Short rhymed poems written in the Catskill Mountains, at Haines Falls, where his doctor had sent him to rest. Lines from them became the words of the song 'Guantanamera'.",
+            "es": "Poemas breves y rimados escritos en las montañas Catskill, en Haines Falls, adonde su médico lo había mandado a descansar. Versos suyos se convirtieron en la letra de la canción «Guantanamera»."
+          }
+        },
+        {
+          "id": "ruben-dario",
+          "name": { "en": "Rubén Darío", "es": "Rubén Darío" },
+          "at": [-73.99, 40.74],
+          "cat": "person",
+          "type": "person",
+          "date": "1893-05-24",
+          "life": ["1867-01-18", "1916-02-06"],
+          "text": {
+            "en": "The Nicaraguan poet met Martí at a gathering of Cubans in New York's Hardman Hall on 24 May 1893. Martí greeted him as a son; Darío honoured him as a master.",
+            "es": "El poeta nicaragüense conoció a Martí en un acto de cubanos en el Hardman Hall de Nueva York, el 24 de mayo de 1893. Martí lo saludó como a un hijo; Darío lo honró como a un maestro."
+          },
+          "wiki": { "en": "Rubén Darío", "es": "Rubén Darío" }
+        }
+      ]
+    },
+    {
+      "date": "1891-11-26",
+      "kind": "moment",
+      "place": { "en": "Ybor City, Tampa, United States", "es": "Ybor City, Tampa, Estados Unidos" },
+      "at": [-82.4412, 27.96],
+      "title": { "en": "'For the good of all'", "es": "«Para el bien de todos»" },
+      "text": {
+        "en": "In Tampa's cigar-making quarter, Martí spoke to Cuban tobacco workers: the free Cuba they would fight for must be a republic 'with all, and for the good of all', Black and white, rich and poor.",
+        "es": "En el barrio tabacalero de Tampa, Martí habló a los obreros cubanos del tabaco: la Cuba libre por la que iban a pelear debía ser una república «con todos, y para el bien de todos», negros y blancos, ricos y pobres."
+      },
+      "details": {
+        "en": "Thousands of Cubans rolled cigars in the factories of Ybor City and Key West, and many had fought in the Ten Years' War. Martí's speech at the Liceo Cubano, and another the next night, 'The New Pines', won them over: the workers pledged part of their wages to the cause. Once he spoke from the steps of a cigar factory. In December 1892, in Tampa, someone tried to poison him; he recovered in the house of Paulina Pedroso, an Afro-Cuban patriot.",
+        "es": "Miles de cubanos torcían tabaco en las fábricas de Ybor City y Cayo Hueso, y muchos habían peleado en la guerra de los Diez Años. El discurso de Martí en el Liceo Cubano, y otro la noche siguiente, «Los pinos nuevos», los conquistaron: los obreros comprometieron parte de su salario para la causa. Una vez habló desde la escalera de una fábrica de tabaco. En diciembre de 1892, en Tampa, alguien intentó envenenarlo; se recuperó en la casa de Paulina Pedroso, una patriota afrocubana."
+      }
+    },
+    {
+      "date": "1892-01-05",
+      "kind": "power",
+      "by": "sea",
+      "place": { "en": "Key West, United States", "es": "Cayo Hueso, Estados Unidos" },
+      "at": [-81.7816, 24.5552],
+      "title": { "en": "The Cuban Revolutionary Party", "es": "El Partido Revolucionario Cubano" },
+      "text": {
+        "en": "In Key West the delegates of the exile clubs approved Martí's bases for a Cuban Revolutionary Party, to win independence for Cuba and Puerto Rico. In March he founded its newspaper, Patria, in New York.",
+        "es": "En Cayo Hueso los delegados de los clubes del exilio aprobaron las bases de Martí para un Partido Revolucionario Cubano, que buscaría la independencia de Cuba y Puerto Rico. En marzo fundó en Nueva York su periódico, Patria."
+      },
+      "details": {
+        "en": "The party was proclaimed on 10 April 1892, and the clubs elected Martí its delegate, its leader. He wanted the civilians of the party to prepare and govern the war, so that a victorious general could not become a dictator: he had broken with the generals Máximo Gómez and Antonio Maceo in 1884 over just that. Now he travelled from Florida to Jamaica, Haiti, Costa Rica and Mexico, raising money, buying arms and reconciling the old soldiers.",
+        "es": "El partido se proclamó el 10 de abril de 1892, y los clubes eligieron a Martí su Delegado, su jefe. Quería que los civiles del partido prepararan y gobernaran la guerra, para que ningún general victorioso se convirtiera en dictador: por eso mismo había roto en 1884 con los generales Máximo Gómez y Antonio Maceo. Ahora viajó de Florida a Jamaica, Haití, Costa Rica y México, reuniendo dinero, comprando armas y reconciliando a los viejos soldados."
+      }
+    },
+    {
+      "date": "1895-03-25",
+      "kind": "made",
+      "by": "sea",
+      "via": [[-81.8026, 24.5553], [-79.5, 23.6], [-75.5, 23.0], [-72.5, 20.6]],
+      "place": { "en": "Montecristi (San Fernando de Monte Cristi), Dominican Republic", "es": "Montecristi (San Fernando de Monte Cristi), República Dominicana" },
+      "label": { "en": "Montecristi", "es": "Montecristi" },
+      "at": [-71.646, 19.848],
+      "title": { "en": "The Manifesto of Montecristi", "es": "El Manifiesto de Montecristi" },
+      "text": {
+        "en": "The war began in Cuba on 24 February 1895. A month later, in the Dominican town of Montecristi, Martí and General Máximo Gómez signed its manifesto: a war without hatred of Spaniards, for a Cuba without racial barriers.",
+        "es": "La guerra comenzó en Cuba el 24 de febrero de 1895. Un mes después, en el pueblo dominicano de Montecristi, Martí y el general Máximo Gómez firmaron su manifiesto: una guerra sin odio a los españoles, por una Cuba sin distinciones de raza."
+      },
+      "details": {
+        "en": "In January the United States had seized three ships loaded with the party's weapons in Florida, the work of years. Martí gave the order for the rising anyway. On 1 April he wrote his literary will, leaving his papers to his friend Gonzalo de Quesada, and that day set out for Cuba with Gómez and four other men. He had never been a soldier, and he insisted on going: the man who had called Cubans to war could not stay behind.",
+        "es": "En enero los Estados Unidos habían confiscado en Florida tres barcos cargados con las armas del partido, el trabajo de años. Martí dio de todos modos la orden del alzamiento. El 1 de abril escribió su testamento literario, en el que dejaba sus papeles a su amigo Gonzalo de Quesada, y ese día partió hacia Cuba con Gómez y otros cuatro hombres. Nunca había sido soldado, e insistió en ir: el hombre que había llamado a los cubanos a la guerra no podía quedarse atrás."
+      },
+      "places": [
+        {
+          "name": { "en": "Máximo Gómez", "es": "Máximo Gómez" },
+          "at": [-71.646, 19.848],
+          "cat": "person",
+          "type": "person",
+          "date": "1895-03-25",
+          "life": ["1836-11-18", "1905-06-17"],
+          "text": {
+            "en": "A Dominican-born veteran of the Ten Years' War who lived in Montecristi. Martí persuaded him to command the new war; he led the Cuban army until Spain's defeat in 1898.",
+            "es": "Veterano dominicano de la guerra de los Diez Años que vivía en Montecristi. Martí lo convenció de dirigir la nueva guerra; mandó el ejército cubano hasta la derrota de España en 1898."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1895-04-11",
+      "kind": "moment",
+      "by": "sea",
+      "via": [[-71.75, 20.0], [-73.0, 20.3], [-73.8, 20.0], [-74.4, 19.95]],
+      "place": { "en": "Playitas de Cajobabo, eastern Cuba", "es": "Playitas de Cajobabo, oriente de Cuba" },
+      "label": { "en": "Playitas", "es": "Playitas" },
+      "at": [-74.4958, 20.0742],
+      "title": { "en": "Landing on a stormy night", "es": "Desembarco en una noche de tormenta" },
+      "text": {
+        "en": "After weeks of setbacks, a ship left the six men offshore. On the night of 11 April they rowed through a storm to a stony beach in eastern Cuba. Martí was home after sixteen years of exile.",
+        "es": "Tras semanas de contratiempos, un barco dejó a los seis hombres frente a la costa. La noche del 11 de abril remaron en plena tormenta hasta una playa de piedras del oriente de Cuba. Martí volvía tras dieciséis años de exilio."
+      },
+      "details": {
+        "en": "'Great joy,' he wrote in his campaign diary. For five weeks he marched through the mountains with the rebels, sleeping in the open, writing about the people and plants he saw. The generals named him major general. On 5 May, at the farm of La Mejorana, he met Antonio Maceo, who wanted the army, not civilians, to lead the war; they did not agree.",
+        "es": "«Dicha grande», escribió en su diario de campaña. Durante cinco semanas marchó por las montañas con los insurrectos, durmiendo a la intemperie y escribiendo sobre la gente y las plantas que veía. Los jefes lo nombraron mayor general. El 5 de mayo, en la finca La Mejorana, se reunió con Antonio Maceo, que quería que la guerra la dirigieran los militares y no los civiles; no se pusieron de acuerdo."
+      }
+    },
+    {
+      "date": "1895-05-19",
+      "kind": "died",
+      "place": { "en": "Dos Ríos, near Jiguaní, Cuba", "es": "Dos Ríos, cerca de Jiguaní, Cuba" },
+      "label": { "en": "Dos Ríos", "es": "Dos Ríos" },
+      "at": [-76.2738, 20.4744],
+      "title": { "en": "Death at Dos Ríos", "es": "Muerte en Dos Ríos" },
+      "text": {
+        "en": "Near the meeting of the Cauto and Contramaestre rivers the rebels clashed with a Spanish column. Gómez told Martí to stay back; he rode forward on a white horse and was shot dead. He was 42.",
+        "es": "Cerca de la unión de los ríos Cauto y Contramaestre, los insurrectos chocaron con una columna española. Gómez le ordenó a Martí quedarse atrás; él avanzó en un caballo blanco y cayó muerto de un balazo. Tenía 42 años."
+      },
+      "details": {
+        "en": "Riding with a single young aide, Ángel de la Guardia, he came upon Spanish soldiers hidden in the brush. The Spaniards took his body and buried it, then dug it up when they learned who he was. The day before, he had written an unfinished letter to Manuel Mercado saying that all he had done was meant to stop the United States from spreading over the Antilles with Cuba's independence: 'I have lived inside the monster, and I know its entrails.' The war went on without him; in 1898 the United States entered it, and Cuba became independent in 1902 under American tutelage.",
+        "es": "Iba con un solo joven ayudante, Ángel de la Guardia, cuando se topó con soldados españoles ocultos en la maleza. Los españoles se llevaron su cuerpo y lo enterraron, y luego lo desenterraron al saber quién era. La víspera había escrito a Manuel Mercado una carta inconclusa en la que decía que todo lo que había hecho era para impedir, con la independencia de Cuba, que los Estados Unidos se extendieran por las Antillas: «Viví en el monstruo, y le conozco las entrañas». La guerra siguió sin él; en 1898 los Estados Unidos entraron en ella, y Cuba fue independiente en 1902 bajo tutela estadounidense."
+      }
+    },
+    {
+      "date": "1951-06-30",
+      "kind": "journey",
+      "place": { "en": "Santiago de Cuba, Cuba", "es": "Santiago de Cuba, Cuba" },
+      "at": [-75.8395, 20.0357],
+      "title": { "en": "The mausoleum of Santa Ifigenia", "es": "El mausoleo de Santa Ifigenia" },
+      "text": {
+        "en": "Martí was first buried at Remanganaguas, then laid in a niche of Santa Ifigenia cemetery, in Santiago de Cuba, in May 1895. On 30 June 1951 his remains moved to the great mausoleum built there for him.",
+        "es": "Martí fue enterrado primero en Remanganaguas, y en mayo de 1895 en un nicho del cementerio de Santa Ifigenia, en Santiago de Cuba. El 30 de junio de 1951 sus restos pasaron al gran mausoleo construido allí para él."
+      },
+      "unsure": {
+        "en": "Sources give different days in May 1895 for the burial in Santa Ifigenia.",
+        "es": "Las fuentes dan distintos días de mayo de 1895 para el entierro en Santa Ifigenia."
+      },
+      "details": {
+        "en": "Every Cuban government since has claimed him: the republic before 1959, the revolution after it, and the exiles who oppose it. The mausoleum is guarded day and night, and since 2016 Fidel Castro's ashes lie a few steps away. Lines from his Simple Verses are sung around the world in 'Guantanamera'.",
+        "es": "Desde entonces todos los gobiernos cubanos lo han reclamado: la república antes de 1959, la revolución después, y los exiliados que se le oponen. El mausoleo tiene guardia de honor día y noche, y desde 2016 las cenizas de Fidel Castro descansan a pocos pasos. Versos de sus Versos sencillos se cantan en todo el mundo en la «Guantanamera»."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "José Martí's birthplace, Havana", "es": "Casa Natal de José Martí, La Habana" },
+      "at": [-82.3537, 23.13],
+      "kind": "house",
+      "text": {
+        "en": "The small two-storey house on Leonor Pérez (formerly Paula) Street, near the old railway station, kept as a museum since 1925 with his papers, portraits and belongings.",
+        "es": "La pequeña casa de dos plantas de la calle Leonor Pérez (antes Paula), cerca de la antigua estación de trenes, museo desde 1925 con sus documentos, retratos y objetos."
+      },
+      "whs": 204
+    },
+    {
+      "name": { "en": "Fragua Martiana, Havana", "es": "Fragua Martiana, La Habana" },
+      "at": [-82.3765, 23.1408],
+      "kind": "museum",
+      "text": {
+        "en": "A museum on the site of the San Lázaro quarries where he did forced labour at 16, with what remains of the old quarry.",
+        "es": "Un museo en el lugar de las canteras de San Lázaro donde hizo trabajos forzados a los 16 años, con lo que queda de la antigua cantera."
+      }
+    },
+    {
+      "name": { "en": "José Martí Memorial, Havana", "es": "Memorial José Martí, La Habana" },
+      "at": [-82.3864, 23.1221],
+      "kind": "memorial",
+      "text": {
+        "en": "A star-shaped tower 109 metres high on the Plaza de la Revolución, with a great marble statue of Martí at its foot and a museum of his life inside.",
+        "es": "Una torre en forma de estrella de 109 metros en la plaza de la Revolución, con una gran estatua de mármol de Martí al pie y un museo sobre su vida en su interior."
+      }
+    },
+    {
+      "name": { "en": "José Martí Park, Ybor City, Tampa", "es": "Parque Amigos de José Martí, Ybor City, Tampa" },
+      "at": [-82.4453, 27.9608],
+      "kind": "memorial",
+      "text": {
+        "en": "A small park with his statue on the site of the boarding house where he recovered after being poisoned in 1892. The land was given to Cuba in 1956.",
+        "es": "Un pequeño parque con su estatua en el lugar de la casa de huéspedes donde se recuperó del envenenamiento de 1892. El terreno fue donado a Cuba en 1956."
+      }
+    },
+    {
+      "name": { "en": "Dos Ríos memorial", "es": "Monumento de Dos Ríos" },
+      "at": [-76.2738, 20.4744],
+      "kind": "site",
+      "text": {
+        "en": "An obelisk marks the spot where he fell, in the open country of Granma province.",
+        "es": "Un obelisco marca el lugar donde cayó, en el campo abierto de la provincia de Granma."
+      }
+    },
+    {
+      "name": { "en": "Martí's mausoleum, Santa Ifigenia cemetery", "es": "Mausoleo de Martí, cementerio de Santa Ifigenia" },
+      "at": [-75.8395, 20.0357],
+      "kind": "grave",
+      "text": {
+        "en": "His tomb in Santiago de Cuba, a hexagonal stone tower built so that sunlight reaches his coffin, after his verse about dying 'facing the sun'. A guard of honour stands watch.",
+        "es": "Su tumba en Santiago de Cuba, una torre hexagonal de piedra construida para que la luz del sol llegue a su féretro, por su verso de morir «de cara al sol». Una guardia de honor la custodia."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Martí wrote the poems that opened modernismo in Spanish and the essays that taught Latin Americans to see their continent as one, and he organized the war that ended Spanish rule in Cuba. He did not live to shape the republic, and since his death rulers and rebels of every kind have claimed his words. Cubans call him the Apostle.",
+    "es": "Martí escribió los poemas que abrieron el modernismo en español y los ensayos que enseñaron a los latinoamericanos a ver su continente como uno solo, y organizó la guerra que acabó con el dominio español en Cuba. No vivió para dar forma a la república, y desde su muerte gobernantes y rebeldes de todo signo han reclamado sus palabras. Los cubanos lo llaman el Apóstol."
+  },
+  "sources": [
+    { "title": "Wikipedia: José Martí", "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Mart%C3%AD" },
+    { "title": "New World Encyclopedia: José Martí", "url": "https://www.newworldencyclopedia.org/entry/Jose_Marti" },
+    { "title": "Wikipedia: Versos sencillos", "url": "https://en.wikipedia.org/wiki/Versos_sencillos" },
+    { "title": "CubaNet: De Dos Ríos a Santa Ifigenia, el recorrido funerario de José Martí", "url": "https://www.cubanet.org/de-dos-rios-a-santa-ifigenia-el-recorrido-funerario-de-jose-marti/" }
+  ]
+}

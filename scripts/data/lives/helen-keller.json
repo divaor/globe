@@ -1,0 +1,223 @@
+{
+  "id": "helen-keller",
+  "qid": "Q38203",
+  "name": { "en": "Helen Keller", "es": "Helen Keller" },
+  "icon": "🤟",
+  "field": "rights",
+  "known": { "en": "Deafblind author and activist", "es": "Autora y activista sordociega" },
+  "born": "1880-06-27",
+  "died": "1968-06-01",
+  "summary": {
+    "en": "Deaf and blind from the age of 19 months, she learned language through a gifted teacher, graduated from college, and spent her life writing and campaigning for people with disabilities, workers and women.",
+    "es": "Sorda y ciega desde los 19 meses, aprendió el lenguaje gracias a una maestra excepcional, se graduó de la universidad y dedicó su vida a escribir y a luchar por las personas con discapacidad, los trabajadores y las mujeres."
+  },
+  "steps": [
+    {
+      "date": "1880-06-27",
+      "kind": "born",
+      "place": { "en": "Tuscumbia, Alabama, United States", "es": "Tuscumbia, Alabama, Estados Unidos" },
+      "at": [-87.7064, 34.7398],
+      "title": { "en": "Born at Ivy Green", "es": "Nace en Ivy Green" },
+      "text": {
+        "en": "Helen was born in a white cottage on her family's farm, Ivy Green, in northern Alabama. At 19 months a fever left her unable to see or hear, and she was cut off from the world.",
+        "es": "Helen nació en una casita blanca de la finca de su familia, Ivy Green, en el norte de Alabama. A los 19 meses una fiebre la dejó sin ver ni oír, y quedó aislada del mundo."
+      },
+      "details": {
+        "en": "Her father, Arthur Keller, had been an officer in the Confederate army; her mother, Kate, was educated and determined. Without language, Helen grew into a wild and frustrated child, communicating with about 60 home-made signs. Her parents did not know what to do until they heard of a school in Boston.",
+        "es": "Su padre, Arthur Keller, había sido oficial del ejército confederado; su madre, Kate, era instruida y decidida. Sin lenguaje, Helen creció como una niña salvaje y frustrada, que se comunicaba con unas 60 señas hechas en casa. Sus padres no sabían qué hacer hasta que supieron de una escuela en Boston."
+      }
+    },
+    {
+      "date": "1887-04-05",
+      "kind": "moment",
+      "place": { "en": "Tuscumbia, Alabama, United States", "es": "Tuscumbia, Alabama, Estados Unidos" },
+      "at": [-87.7064, 34.7398],
+      "title": { "en": "Water", "es": "Agua" },
+      "text": {
+        "en": "Her teacher, Anne Sullivan, had come a month before. At the garden pump she spelled w-a-t-e-r into Helen's hand while cool water ran over the other. Suddenly Helen understood that everything has a name.",
+        "es": "Su maestra, Anne Sullivan, había llegado un mes antes. En la bomba del jardín le deletreó a-g-u-a en una mano mientras el agua fría corría por la otra. De pronto Helen entendió que todo tiene un nombre."
+      },
+      "details": {
+        "en": "Sullivan was 20, half blind herself, and a graduate of the Perkins School. She had begun to spell words into Helen's palm in March. Helen learned 30 words that day. She later called it the most important day of her life, and said her soul was awakened."
+        ,
+        "es": "Sullivan tenía 20 años, era casi ciega ella misma y se había graduado en la escuela Perkins. Había empezado a deletrear palabras en la palma de Helen en marzo. Ese día Helen aprendió 30 palabras. Más tarde lo llamó el día más importante de su vida, y dijo que su alma despertó."
+      },
+      "places": [
+        {
+          "id": "anne-sullivan",
+          "name": { "en": "Anne Sullivan", "es": "Anne Sullivan" },
+          "at": [-87.7064, 34.7398],
+          "cat": "person",
+          "type": "person",
+          "date": "1887-03-03",
+          "life": ["1866-04-14", "1936-10-20"],
+          "text": {
+            "en": "Her teacher and companion for almost 50 years, until Sullivan's death in 1936. Keller always called her Teacher.",
+            "es": "Su maestra y compañera durante casi 50 años, hasta la muerte de Sullivan en 1936. Keller siempre la llamó la Maestra."
+          },
+          "wiki": { "en": "Anne Sullivan", "es": "Anne Sullivan" }
+        }
+      ]
+    },
+    {
+      "date": "1888",
+      "about": true,
+      "kind": "study",
+      "by": "land",
+      "icon": "🚂",
+      "place": { "en": "Boston, Massachusetts, United States", "es": "Boston, Massachusetts, Estados Unidos" },
+      "at": [-71.0598, 42.3584],
+      "title": { "en": "The Perkins school", "es": "La escuela Perkins" },
+      "text": {
+        "en": "Anne Sullivan took her to the Perkins Institution for the Blind in Boston, where she learned to read in raised type and to write, and met other blind children for the first time.",
+        "es": "Anne Sullivan la llevó a la Institución Perkins para ciegos en Boston, donde aprendió a leer en relieve y a escribir, y conoció por primera vez a otros niños ciegos."
+      },
+      "details": {
+        "en": "At about 10, with a teacher's help, she began to speak aloud, though her voice was never easy to understand. At 11 she wrote a short story that was accused of copying another writer's. She was cleared, but the experience hurt her for years. She wanted to go to college, and Sullivan agreed to go with her."
+        ,
+        "es": "Alrededor de los 10 años, con ayuda de una maestra, empezó a hablar en voz alta, aunque su voz nunca fue fácil de entender. A los 11 escribió un cuento al que acusaron de copiar a otro autor. La declararon inocente, pero la experiencia la afectó durante años. Quería ir a la universidad, y Sullivan aceptó acompañarla."
+      },
+      "unsure": {
+        "en": "She first visited Perkins in 1888 and returned for longer stays in the years after; the exact dates of her time there vary by source.",
+        "es": "Visitó Perkins por primera vez en 1888 y volvió para estancias más largas en los años siguientes; las fechas exactas de su paso por allí varían según la fuente."
+      }
+    },
+    {
+      "date": "1900",
+      "kind": "study",
+      "place": { "en": "Cambridge, Massachusetts, United States", "es": "Cambridge, Massachusetts, Estados Unidos" },
+      "at": [-71.1247, 42.3819],
+      "title": { "en": "Radcliffe College", "es": "El Radcliffe College" },
+      "text": {
+        "en": "In 1900 she entered Radcliffe, Harvard's college for women. Sullivan sat beside her and spelled the lectures into her hand, and Helen wrote her papers on a typewriter.",
+        "es": "En 1900 entró a Radcliffe, la universidad para mujeres de Harvard. Sullivan se sentaba a su lado y le deletreaba las clases en la mano, y Helen escribía sus trabajos a máquina."
+      },
+      "details": {
+        "en": "While a student she wrote The Story of My Life (1903), her autobiography, with help from Sullivan and the editor John Macy, who later married Sullivan. Henry Rogers, a wealthy friend of Mark Twain, paid her costs. She later wrote that college was not the Athens of learning she had imagined, with too little time to think."
+        ,
+        "es": "Siendo estudiante escribió La historia de mi vida (1903), su autobiografía, con ayuda de Sullivan y del editor John Macy, que más tarde se casó con Sullivan. Henry Rogers, un rico amigo de Mark Twain, pagó sus gastos. Más tarde escribió que la universidad no era la Atenas del saber que había imaginado, con muy poco tiempo para pensar."
+      }
+    },
+    {
+      "date": "1904-06-28",
+      "kind": "honour",
+      "place": { "en": "Cambridge, Massachusetts, United States", "es": "Cambridge, Massachusetts, Estados Unidos" },
+      "at": [-71.1247, 42.3819],
+      "title": { "en": "A degree with honours", "es": "Un título con honores" },
+      "text": {
+        "en": "In June 1904 she graduated from Radcliffe with a bachelor's degree, cum laude. She was the first deafblind person to earn one.",
+        "es": "En junio de 1904 se graduó de Radcliffe con una licenciatura, cum laude. Fue la primera persona sordociega que la obtuvo."
+      }
+    },
+    {
+      "date": "1924",
+      "kind": "career",
+      "by": "land",
+      "place": { "en": "New York, United States", "es": "Nueva York, Estados Unidos" },
+      "at": [-74.006, 40.7143],
+      "title": { "en": "A voice for the blind", "es": "Una voz para los ciegos" },
+      "text": {
+        "en": "From 1924 she worked for the American Foundation for the Blind, raising money and speaking in many countries. She had also joined the Socialist Party and, in 1920, helped to found the American Civil Liberties Union.",
+        "es": "Desde 1924 trabajó para la Fundación Estadounidense para Ciegos, reuniendo fondos y dando charlas en muchos países. También se había unido al Partido Socialista y, en 1920, ayudó a fundar la Unión Estadounidense por las Libertades Civiles."
+      },
+      "details": {
+        "en": "She spoke for workers, for women's right to vote and for peace, and against war. She opposed child labour and racism, and in 1946 began to tour war veterans' hospitals. For these views some newspapers, which had praised her as a marvel, now attacked her. She replied that she had not changed; they had just never listened."
+        ,
+        "es": "Habló a favor de los trabajadores, del voto de las mujeres y de la paz, y contra la guerra. Se opuso al trabajo infantil y al racismo, y en 1946 empezó a visitar hospitales de veteranos de guerra. Por estas ideas algunos periódicos, que antes la elogiaban como una maravilla, la atacaron. Ella respondió que no había cambiado; que ellos nunca la habían escuchado."
+      }
+    },
+    {
+      "date": "1937-04",
+      "kind": "journey",
+      "place": { "en": "Tokyo, Japan", "es": "Tokio, Japón" },
+      "at": [139.6917, 35.6895],
+      "title": { "en": "A visit to Japan", "es": "Una visita a Japón" },
+      "text": {
+        "en": "In 1937 she went to Japan with her companion Polly Thomson, welcomed by crowds. She came back in 1948 and 1955, part of a lifetime of tours that took her to dozens of countries.",
+        "es": "En 1937 viajó a Japón con su compañera Polly Thomson, recibida por multitudes. Volvió en 1948 y 1955, parte de una vida de giras que la llevó a decenas de países."
+      },
+      "unsure": {
+        "en": "The 1937 trip began in April; the dates of her later visits are given only as years.",
+        "es": "El viaje de 1937 empezó en abril; de las visitas posteriores solo se dan los años."
+      }
+    },
+    {
+      "date": "1964-09-14",
+      "kind": "honour",
+      "place": { "en": "Washington, D.C., United States", "es": "Washington D. C., Estados Unidos" },
+      "at": [-77.0364, 38.8951],
+      "title": { "en": "Medal of Freedom", "es": "Medalla de la Libertad" },
+      "text": {
+        "en": "President Lyndon Johnson gave her the Presidential Medal of Freedom, the highest civilian honour in the United States, at the White House.",
+        "es": "El presidente Lyndon Johnson le entregó la Medalla Presidencial de la Libertad, el mayor honor civil de Estados Unidos, en la Casa Blanca."
+      }
+    },
+    {
+      "date": "1968-06-01",
+      "kind": "died",
+      "place": { "en": "Easton, Connecticut, United States", "es": "Easton, Connecticut, Estados Unidos" },
+      "at": [-73.3008, 41.2658],
+      "title": { "en": "She dies at Arcan Ridge", "es": "Muere en Arcan Ridge" },
+      "text": {
+        "en": "Helen Keller died in her sleep at Arcan Ridge, her home in Easton, Connecticut, less than a month before her 88th birthday.",
+        "es": "Helen Keller murió dormida en Arcan Ridge, su casa de Easton, Connecticut, poco menos de un mes antes de cumplir 88 años."
+      },
+      "details": {
+        "en": "She had lived there since 1939 with Polly Thomson, with her dogs, in a house built for her. She had suffered a series of small strokes in the years before. Anne Sullivan had died in 1936, and Thomson in 1960."
+        ,
+        "es": "Vivía allí desde 1939 con Polly Thomson y sus perros, en una casa construida para ella. Había sufrido varios derrames pequeños en los años anteriores. Anne Sullivan había muerto en 1936, y Thomson en 1960."
+      }
+    },
+    {
+      "date": "1968-06-05",
+      "kind": "honour",
+      "by": "land",
+      "place": { "en": "Washington, D.C., United States", "es": "Washington D. C., Estados Unidos" },
+      "at": [-77.0706, 38.9306],
+      "title": { "en": "A funeral at the Cathedral", "es": "Funeral en la Catedral" },
+      "text": {
+        "en": "Her funeral was held at the Washington National Cathedral. Her ashes were placed there beside those of Anne Sullivan and Polly Thomson.",
+        "es": "Su funeral se celebró en la Catedral Nacional de Washington. Sus cenizas fueron colocadas allí junto a las de Anne Sullivan y Polly Thomson."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Ivy Green, Helen Keller's birthplace", "es": "Ivy Green, casa natal de Helen Keller" },
+      "at": [-87.7064, 34.7398],
+      "kind": "house",
+      "text": {
+        "en": "The cottage in Tuscumbia where she was born, with the garden pump where she learned the word water. It is a museum, and every summer a play about her life is staged there.",
+        "es": "La casa de Tuscumbia donde nació, con la bomba del jardín donde aprendió la palabra agua. Es un museo, y cada verano se representa allí una obra sobre su vida."
+      }
+    },
+    {
+      "name": { "en": "Washington National Cathedral", "es": "Catedral Nacional de Washington" },
+      "at": [-77.0706, 38.9306],
+      "kind": "grave",
+      "text": {
+        "en": "Her ashes are kept here, with those of Anne Sullivan and Polly Thomson.",
+        "es": "Aquí se guardan sus cenizas, junto a las de Anne Sullivan y Polly Thomson."
+      },
+      "wiki": { "en": "Washington National Cathedral", "es": "Catedral Nacional de Washington" }
+    },
+    {
+      "name": { "en": "Perkins School for the Blind", "es": "Escuela Perkins para ciegos" },
+      "at": [-71.1753, 42.3633],
+      "kind": "museum",
+      "text": {
+        "en": "The school that taught Sullivan and then Keller, now in Watertown, with a museum and an archive of Keller's letters and belongings.",
+        "es": "La escuela que formó a Sullivan y después a Keller, hoy en Watertown, con un museo y un archivo de cartas y objetos de Keller."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Keller showed that a person without sight or hearing could learn, write and lead, and she did it in public for 70 years. She spoke for the rights of disabled people, and for workers and women, and helped found the American Civil Liberties Union. Her story is told in books, films and schools around the world.",
+    "es": "Keller demostró que una persona sin vista ni oído podía aprender, escribir y liderar, y lo hizo a la vista del público durante 70 años. Habló por los derechos de las personas con discapacidad, de los trabajadores y de las mujeres, y ayudó a fundar la Unión Estadounidense por las Libertades Civiles. Su historia se cuenta en libros, películas y escuelas de todo el mundo."
+  },
+  "sources": [
+    { "title": "Wikipedia: Helen Keller", "url": "https://en.wikipedia.org/wiki/Helen_Keller" },
+    { "title": "Perkins School for the Blind: Helen Keller timeline", "url": "https://www.perkins.org/resource/helen-keller-timeline/" },
+    { "title": "American Foundation for the Blind: Chronology of Helen Keller's life", "url": "https://afb.org/about-afb/history/helen-keller/biography-and-chronology/chronology" }
+  ]
+}

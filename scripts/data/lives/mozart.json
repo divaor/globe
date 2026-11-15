@@ -1,0 +1,474 @@
+{
+  "id": "mozart",
+  "qid": "Q254",
+  "name": { "en": "Wolfgang Amadeus Mozart", "es": "Wolfgang Amadeus Mozart" },
+  "icon": "🎹",
+  "field": "music",
+  "known": { "en": "Composer of the Classical era, born in Salzburg", "es": "Compositor del Clasicismo, nacido en Salzburgo" },
+  "born": "1756-01-27",
+  "died": "1791-12-05",
+  "summary": {
+    "en": "A child prodigy shown at the courts of Europe, he broke with his prince to live as a free musician in Vienna. In ten years there he wrote The Marriage of Figaro, Don Giovanni and The Magic Flute, and died at 35.",
+    "es": "Niño prodigio exhibido en las cortes de Europa, rompió con su príncipe para vivir como músico libre en Viena. En diez años allí escribió Las bodas de Fígaro, Don Giovanni y La flauta mágica, y murió a los 35."
+  },
+  "steps": [
+    {
+      "date": "1756-01-27",
+      "kind": "born",
+      "place": { "en": "Salzburg, Austria", "es": "Salzburgo, Austria" },
+      "at": [13.0433, 47.8],
+      "title": { "en": "Born in the Getreidegasse", "es": "Nace en la Getreidegasse" },
+      "text": {
+        "en": "Wolfgang was the seventh child of Leopold Mozart, a violinist at the court of the Prince-Archbishop of Salzburg. Only he and his sister Maria Anna, called Nannerl, lived past infancy.",
+        "es": "Wolfgang fue el séptimo hijo de Leopold Mozart, violinista de la corte del príncipe-arzobispo de Salzburgo. Solo él y su hermana Maria Anna, a quien llamaban Nannerl, sobrevivieron a la primera infancia."
+      },
+      "details": {
+        "en": "He was baptized the next day in the cathedral as Joannes Chrysostomus Wolfgangus Theophilus; Amadeus is the Latin form of the last name, 'loved by God'. Salzburg was then a small state of its own, ruled by its archbishop. At three the boy picked out chords at his sister's keyboard, and at five he was making up little pieces that his father wrote down. Leopold, the author of a famous book on violin playing, gave up most of his own career to teach his children.",
+        "es": "Lo bautizaron al día siguiente en la catedral como Joannes Chrysostomus Wolfgangus Theophilus; Amadeus es la forma latina del último nombre, «amado de Dios». Salzburgo era entonces un pequeño Estado propio, gobernado por su arzobispo. A los tres años el niño buscaba acordes en el teclado de su hermana, y a los cinco inventaba piezas breves que su padre anotaba. Leopold, autor de un famoso libro sobre cómo tocar el violín, dejó casi toda su propia carrera para enseñar a sus hijos."
+      },
+      "places": [
+        {
+          "name": { "en": "Maria Anna 'Nannerl' Mozart", "es": "Maria Anna «Nannerl» Mozart" },
+          "at": [13.0438, 47.803],
+          "cat": "person",
+          "type": "person",
+          "date": "1756",
+          "life": ["1751-07-30", "1829-10-29"],
+          "text": {
+            "en": "His elder sister, a brilliant keyboard player, shared the stage with him on their childhood tours. Once she was grown, her father kept her at home in Salzburg.",
+            "es": "Su hermana mayor, brillante intérprete de teclado, compartió el escenario con él en las giras de la infancia. Cuando creció, su padre la dejó en casa, en Salzburgo."
+          },
+          "wiki": { "en": "Maria Anna Mozart", "es": "Maria Anna Mozart" }
+        }
+      ]
+    },
+    {
+      "date": "1764-04-23",
+      "kind": "journey",
+      "place": { "en": "London, United Kingdom", "es": "Londres, Reino Unido" },
+      "at": [-0.142, 51.501],
+      "title": { "en": "The child prodigy on tour", "es": "El niño prodigio de gira" },
+      "text": {
+        "en": "On a journey of three and a half years, Leopold showed his two children at the courts of Munich, Paris and London. In London Wolfgang, eight, played for King George III and wrote his first symphonies.",
+        "es": "En un viaje de tres años y medio, Leopold presentó a sus dos hijos en las cortes de Múnich, París y Londres. En Londres, Wolfgang, de ocho años, tocó para el rey Jorge III y escribió sus primeras sinfonías."
+      },
+      "details": {
+        "en": "He had already played for Empress Maria Theresa in Vienna at six. The family left Salzburg in June 1763 and stayed fifteen months in London. Johann Christian Bach, the youngest son of Johann Sebastian and music master to the queen, sat the boy on his knee at the harpsichord, and the two played by turns; his graceful style marked Mozart for life. A member of the Royal Society tested the child and reported that he was a true genius, and truly eight. They were home at the end of 1766.",
+        "es": "A los seis años ya había tocado en Viena para la emperatriz María Teresa. La familia salió de Salzburgo en junio de 1763 y pasó quince meses en Londres. Johann Christian Bach, hijo menor de Johann Sebastian y maestro de música de la reina, sentó al niño en sus rodillas ante el clave, y los dos tocaron por turnos; su estilo elegante marcó a Mozart para siempre. Un miembro de la Royal Society examinó al niño e informó que era un verdadero genio, y que de verdad tenía ocho años. Volvieron a casa a fines de 1766."
+      },
+      "places": [
+        {
+          "name": { "en": "Johann Christian Bach", "es": "Johann Christian Bach" },
+          "at": [-0.1412, 51.5016],
+          "cat": "person",
+          "type": "person",
+          "date": "1764",
+          "life": ["1735-09-05", "1782-01-01"],
+          "text": {
+            "en": "The 'London Bach', a composer of operas and symphonies who had settled in England. He was the first great musician to treat the boy as a colleague, and Mozart admired him all his life.",
+            "es": "El «Bach de Londres», compositor de óperas y sinfonías establecido en Inglaterra. Fue el primer gran músico que trató al niño como a un colega, y Mozart lo admiró toda su vida."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1770-04-11",
+      "kind": "moment",
+      "place": { "en": "Vatican City, Rome", "es": "Ciudad del Vaticano, Roma" },
+      "at": [12.454, 41.903],
+      "via": [[13.044, 47.7994]],
+      "title": { "en": "The Miserere, from memory", "es": "El Miserere, de memoria" },
+      "text": {
+        "en": "In Holy Week the 14-year-old heard Allegri's Miserere in the Sistine Chapel, music that the Pope's choir kept for itself, and wrote it down from memory. In July the Pope made him a Knight of the Golden Spur.",
+        "es": "En Semana Santa, a los 14 años, oyó en la Capilla Sixtina el Miserere de Allegri, música que el coro del papa guardaba para sí, y lo escribió de memoria. En julio el papa lo nombró caballero de la Espuela de Oro."
+      },
+      "details": {
+        "en": "Father and son had crossed the Alps in December 1769, on the first of three journeys to Italy. In Bologna the learned Padre Martini gave him lessons, and the city's Philharmonic Academy admitted him at 14, six years under its minimum age. In Milan, on 26 December 1770, he directed from the harpsichord his first big opera, Mitridate, which ran for more than twenty nights. He hoped for a post at an Italian court. Empress Maria Theresa advised her son in Milan not to burden himself with such 'useless people'.",
+        "es": "Padre e hijo habían cruzado los Alpes en diciembre de 1769, en el primero de tres viajes a Italia. En Bolonia el sabio padre Martini le dio lecciones, y la Academia Filarmónica de la ciudad lo admitió a los 14 años, seis menos que la edad mínima. En Milán, el 26 de diciembre de 1770, dirigió desde el clave su primera gran ópera, Mitridate, que se dio más de veinte noches. Esperaba un puesto en alguna corte italiana. La emperatriz María Teresa le aconsejó a su hijo, en Milán, que no cargara con esa «gente inútil»."
+      },
+      "unsure": {
+        "en": "The story comes from his father's letters. Copies of the Miserere already existed outside Rome, so it was a feat of memory rather than the theft of a secret.",
+        "es": "La historia viene de las cartas de su padre. Ya existían copias del Miserere fuera de Roma, así que fue una hazaña de memoria más que el robo de un secreto."
+      }
+    },
+    {
+      "date": "1772",
+      "kind": "career",
+      "place": { "en": "Salzburg, Austria", "es": "Salzburgo, Austria" },
+      "at": [13.047, 47.798],
+      "title": { "en": "In the Archbishop's service", "es": "Al servicio del arzobispo" },
+      "text": {
+        "en": "At 16 Mozart became a paid concertmaster at the court of Salzburg's new Prince-Archbishop, Hieronymus Colloredo. For most of the next eight years he wrote symphonies, masses and concertos for a town he found too small.",
+        "es": "A los 16 años Mozart fue concertino con sueldo en la corte del nuevo príncipe-arzobispo de Salzburgo, Hieronymus Colloredo. Casi ocho años escribió sinfonías, misas y conciertos para una ciudad que le quedaba chica."
+      },
+      "details": {
+        "en": "In 1773 the family moved across the river to a bigger apartment, the Dancing Master's House. He wrote his violin concertos in these years, and in 1777 the first of his great piano concertos. Colloredo wanted short masses and obedient servants, and grudged every request for leave. In 1777 Mozart asked to be released and set off to look for a better post. He came back in 1779, with nothing found, as court organist.",
+        "es": "En 1773 la familia se mudó al otro lado del río, a un departamento más grande, la Casa del Maestro de Baile. En estos años escribió sus conciertos para violín, y en 1777 el primero de sus grandes conciertos para piano. Colloredo quería misas cortas y sirvientes obedientes, y le escatimaba cada permiso. En 1777 Mozart pidió su baja y salió a buscar un puesto mejor. Volvió en 1779, sin haber encontrado nada, como organista de la corte."
+      }
+    },
+    {
+      "date": "1778-07-03",
+      "kind": "struggle",
+      "place": { "en": "Paris, France", "es": "París, Francia" },
+      "at": [2.345, 48.863],
+      "title": { "en": "His mother dies in Paris", "es": "Su madre muere en París" },
+      "text": {
+        "en": "Mozart, 22, had come to Paris with his mother, Anna Maria, in search of a post. Paris took little notice of him. She fell ill in their rented rooms and died on 3 July, with her son at her bedside.",
+        "es": "Mozart, de 22 años, había llegado a París con su madre, Anna Maria, en busca de un puesto. París casi no le prestó atención. Ella enfermó en el cuarto que alquilaban y murió el 3 de julio, con su hijo junto a la cama."
+      },
+      "details": {
+        "en": "They had left Salzburg in September 1777; Leopold could not get leave, so his wife went in his place. Munich and Augsburg had nothing to offer. In Mannheim, home of the best orchestra in Germany, Wolfgang stayed four months and fell in love with a young singer, Aloysia Weber, until his father ordered him on to Paris. That night he wrote two letters: one asked a family friend to prepare his father, the other told Leopold only that she was very ill. She was buried the next day in the cemetery of Saint-Eustache. On the way home, Aloysia turned him down.",
+        "es": "Habían salido de Salzburgo en septiembre de 1777; a Leopold no le dieron permiso, así que su esposa fue en su lugar. Múnich y Augsburgo no tenían nada que ofrecer. En Mannheim, sede de la mejor orquesta de Alemania, Wolfgang se quedó cuatro meses y se enamoró de una joven cantante, Aloysia Weber, hasta que su padre le ordenó seguir a París. Esa noche escribió dos cartas: en una le pedía a un amigo que preparara a su padre; en la otra le decía a Leopold solo que ella estaba muy enferma. La enterraron al día siguiente en el cementerio de Saint-Eustache. En el viaje de regreso, Aloysia lo rechazó."
+      }
+    },
+    {
+      "date": "1781-06-08",
+      "kind": "struggle",
+      "place": { "en": "Vienna, Austria", "es": "Viena, Austria" },
+      "at": [16.3725, 48.2083],
+      "via": [[13.044, 47.7994]],
+      "title": { "en": "Free, with a kick", "es": "Libre, de una patada" },
+      "text": {
+        "en": "Called to Vienna by the Archbishop and treated as a servant, Mozart asked to be released. After weeks of quarrels the steward, Count Arco, threw him out, he wrote, 'with a kick on the backside'. He stayed in Vienna.",
+        "es": "Llamado a Viena por el arzobispo y tratado como un criado, Mozart pidió su baja. Tras semanas de peleas, el mayordomo, el conde Arco, lo echó, según escribió, «con una patada en el trasero». Se quedó en Viena."
+      },
+      "details": {
+        "en": "He had just had a great success in Munich with his opera Idomeneo. At the Archbishop's table in Vienna he sat below the valets and above the cooks, and he was forbidden to play anywhere else for money. Leopold begged him to give in. Wolfgang answered that Vienna was the best place in the world for his trade: he would teach, give concerts and write operas. Hardly any musician of his rank had tried to live without a master. For a few years it worked.",
+        "es": "Acababa de tener un gran éxito en Múnich con su ópera Idomeneo. En la mesa del arzobispo en Viena se sentaba por debajo de los ayudas de cámara y por encima de los cocineros, y tenía prohibido tocar por dinero en otra parte. Leopold le rogó que cediera. Wolfgang le contestó que Viena era el mejor lugar del mundo para su oficio: daría clases y conciertos y escribiría óperas. Casi ningún músico de su nivel había intentado vivir sin un patrón. Durante unos años funcionó."
+      }
+    },
+    {
+      "date": "1782-08-04",
+      "kind": "love",
+      "place": { "en": "Vienna, Austria", "es": "Viena, Austria" },
+      "at": [16.373, 48.208],
+      "title": { "en": "He marries Constanze Weber", "es": "Se casa con Constanze Weber" },
+      "text": {
+        "en": "Less than three weeks after the triumph of his opera The Abduction from the Seraglio, Mozart married Constanze Weber, Aloysia's sister, in St Stephen's Cathedral. His father's reluctant consent arrived the next day.",
+        "es": "A menos de tres semanas del triunfo de su ópera El rapto en el serrallo, Mozart se casó con Constanze Weber, hermana de Aloysia, en la catedral de San Esteban. El permiso de su padre, a disgusto, llegó al día siguiente."
+      },
+      "places": [
+        {
+          "name": { "en": "Constanze Mozart", "es": "Constanze Mozart" },
+          "at": [16.3736, 48.2076],
+          "cat": "person",
+          "type": "person",
+          "date": "1782-08-04",
+          "life": ["1762-01-05", "1842-03-06"],
+          "text": {
+            "en": "A trained singer from a family of musicians. Of their six children two sons lived. Widowed at 29 and left with debts, she organized concerts and the printing of his music, and kept his manuscripts together.",
+            "es": "Cantante de formación, de una familia de músicos. De sus seis hijos sobrevivieron dos varones. Viuda a los 29 años y con deudas, organizó conciertos y la edición de su música, y mantuvo reunidos sus manuscritos."
+          }
+        },
+        {
+          "name": { "en": "The Abduction from the Seraglio", "es": "El rapto en el serrallo" },
+          "at": [16.3667, 48.2083],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1782-07-16",
+          "by": { "en": "Wolfgang Amadeus Mozart", "es": "Wolfgang Amadeus Mozart" },
+          "text": {
+            "en": "A comic opera in German, set in a Turkish palace, written for Emperor Joseph II's company at the Burgtheater. In Mozart's lifetime it was the most often performed of his operas.",
+            "es": "Una ópera cómica en alemán, ambientada en un palacio turco, escrita para la compañía del emperador José II en el Burgtheater. En vida de Mozart fue la más representada de sus óperas."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1784-09-29",
+      "kind": "home",
+      "place": { "en": "Vienna, Austria", "es": "Viena, Austria" },
+      "at": [16.3753, 48.2078],
+      "title": { "en": "The good years in the Domgasse", "es": "Los años buenos de la Domgasse" },
+      "text": {
+        "en": "The Mozarts moved into a large apartment behind the cathedral, the finest they ever had. He was the most admired pianist in Vienna, and in these rooms he wrote piano concertos, quartets and The Marriage of Figaro.",
+        "es": "Los Mozart se mudaron a un amplio departamento detrás de la catedral, el mejor que tuvieron. Él era el pianista más admirado de Viena, y en estas salas escribió conciertos para piano, cuartetos y Las bodas de Fígaro."
+      },
+      "details": {
+        "en": "He composed in the morning, taught at midday and played at night; in one spring he gave more than twenty concerts in five weeks, and much of the nobility subscribed to his own series. He joined the Freemasons, kept a pet starling that could whistle a tune from one of his concertos, loved billiards and fine clothes, and spent what he earned. In February 1785 his father came to visit and heard Joseph Haydn, after playing through the new quartets, call Wolfgang the greatest composer he knew.",
+        "es": "Componía por la mañana, daba clases al mediodía y tocaba por la noche; en una primavera dio más de veinte conciertos en cinco semanas, y buena parte de la nobleza se suscribía a su propia serie. Entró en la masonería, tenía un estornino que silbaba una melodía de uno de sus conciertos, le encantaban el billar y la ropa fina, y gastaba lo que ganaba. En febrero de 1785 su padre fue a visitarlo y oyó a Joseph Haydn, después de tocar los cuartetos nuevos, decir que Wolfgang era el mayor compositor que conocía."
+      },
+      "places": [
+        {
+          "id": "haydn",
+          "name": { "en": "Joseph Haydn", "es": "Joseph Haydn" },
+          "at": [16.3757, 48.2081],
+          "cat": "person",
+          "type": "person",
+          "date": "1785-02-12",
+          "life": ["1732-03-31", "1809-05-31"],
+          "text": {
+            "en": "The most famous composer of the day, 24 years older, and Mozart's friend. Mozart dedicated six string quartets to him in 1785, calling them his children and Haydn their guide.",
+            "es": "El compositor más famoso de la época, 24 años mayor, y amigo de Mozart. En 1785 Mozart le dedicó seis cuartetos de cuerdas, a los que llamó sus hijos, y a Haydn su guía."
+          },
+          "wiki": { "en": "Joseph Haydn", "es": "Joseph Haydn" }
+        }
+      ]
+    },
+    {
+      "date": "1786-05-01",
+      "kind": "moment",
+      "place": { "en": "Vienna, Austria", "es": "Viena, Austria" },
+      "at": [16.3667, 48.2083],
+      "title": { "en": "Figaro at the Burgtheater", "es": "Fígaro en el Burgtheater" },
+      "text": {
+        "en": "An opera made from a French play that Vienna had banned for mocking the nobility opened at the Burgtheater, with Mozart conducting. So many numbers were encored in the first nights that the emperor limited the repeats.",
+        "es": "Una ópera basada en una comedia francesa prohibida en Viena por burlarse de los nobles se estrenó en el Burgtheater, dirigida por Mozart. Al principio se repitieron tantos números que el emperador limitó los bises."
+      },
+      "places": [
+        {
+          "name": { "en": "The Marriage of Figaro", "es": "Las bodas de Fígaro" },
+          "at": [16.3671, 48.2086],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1786-05-01",
+          "by": { "en": "Wolfgang Amadeus Mozart", "es": "Wolfgang Amadeus Mozart" },
+          "text": {
+            "en": "A comic opera in Italian in which a valet and a maid outwit their master, the Count, in one crazy day. The old Burgtheater where it was first played stood on the Michaelerplatz.",
+            "es": "Una ópera cómica en italiano en la que un criado y una doncella burlan a su amo, el conde, en un solo día de locos. El viejo Burgtheater donde se estrenó estaba en la Michaelerplatz."
+          },
+          "wiki": { "en": "The Marriage of Figaro", "es": "Las bodas de Fígaro" }
+        },
+        {
+          "name": { "en": "Lorenzo Da Ponte", "es": "Lorenzo Da Ponte" },
+          "at": [16.3662, 48.2079],
+          "cat": "person",
+          "type": "person",
+          "date": "1786-05-01",
+          "life": ["1749-03-10", "1838-08-17"],
+          "text": {
+            "en": "A Venetian poet and priest, born into a Jewish family, who wrote the words of Figaro, Don Giovanni and Così fan tutte. He ended his long life teaching Italian in New York.",
+            "es": "Poeta y sacerdote veneciano, nacido en una familia judía, que escribió los textos de Fígaro, Don Giovanni y Così fan tutte. Terminó su larga vida enseñando italiano en Nueva York."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1787-10-29",
+      "kind": "moment",
+      "place": { "en": "Prague, Czech Republic", "es": "Praga, República Checa" },
+      "at": [14.424, 50.086],
+      "title": { "en": "Don Giovanni in Prague", "es": "Don Giovanni en Praga" },
+      "text": {
+        "en": "Prague had gone wild for Figaro and ordered a new opera from him. Mozart conducted the first night of Don Giovanni at the Estates Theatre. Tradition says he wrote the overture only a night or two before.",
+        "es": "Praga se había vuelto loca por Fígaro y le encargó una ópera nueva. Mozart dirigió el estreno de Don Giovanni en el Teatro de los Estados. La tradición dice que escribió la obertura apenas una o dos noches antes."
+      },
+      "details": {
+        "en": "On his first visit, in January 1787, he had written home that people in Prague talked of nothing but Figaro, and that nothing else was played, sung or whistled. The city gave him the warmest welcome of his life, and he gave it a symphony, now called the 'Prague', and the story of Don Juan, the seducer who is dragged down to hell by the statue of a man he has killed. That same year his father died in Salzburg, and the emperor made him court chamber composer, at less than half his predecessor's pay.",
+        "es": "En su primera visita, en enero de 1787, había escrito a casa que en Praga no se hablaba más que de Fígaro, y que no se tocaba, cantaba ni silbaba otra cosa. La ciudad le dio la acogida más cálida de su vida, y él le dio una sinfonía, hoy llamada «Praga», y la historia de Don Juan, el seductor al que arrastra al infierno la estatua de un hombre que ha matado. Ese mismo año su padre murió en Salzburgo, y el emperador lo nombró compositor de cámara de la corte, por menos de la mitad del sueldo de su antecesor."
+      },
+      "places": [
+        {
+          "name": { "en": "Don Giovanni", "es": "Don Giovanni" },
+          "at": [14.4245, 50.0863],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1787-10-29",
+          "by": { "en": "Wolfgang Amadeus Mozart", "es": "Wolfgang Amadeus Mozart" },
+          "text": {
+            "en": "An opera in two acts to words by Lorenzo Da Ponte, half comedy and half tragedy. The theatre where Mozart first conducted it is still in use.",
+            "es": "Una ópera en dos actos con texto de Lorenzo Da Ponte, mitad comedia y mitad tragedia. El teatro donde Mozart la dirigió por primera vez sigue en uso."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1788-08-10",
+      "kind": "made",
+      "place": { "en": "Vienna, Austria", "es": "Viena, Austria" },
+      "at": [16.3725, 48.2083],
+      "title": { "en": "Three symphonies in one summer", "es": "Tres sinfonías en un verano" },
+      "text": {
+        "en": "In about six weeks of the summer of 1788, in cheaper lodgings in the suburbs, Mozart wrote his last three symphonies. In those same weeks he was writing to a fellow Freemason to beg for loans.",
+        "es": "En unas seis semanas del verano de 1788, en un alojamiento más barato de los suburbios, Mozart escribió sus tres últimas sinfonías. En esas mismas semanas le escribía a un compañero masón para pedirle préstamos."
+      },
+      "details": {
+        "en": "War with the Ottoman Empire had emptied Vienna of the nobles who paid for concerts, and fashion had moved on. His court post brought him 800 florins a year for writing dances for the palace balls. His baby daughter Theresia died that June. Nobody knows for what occasion he wrote the three symphonies, or whether he heard them all played. The last, in C major, finished on 10 August, was later nicknamed the 'Jupiter'.",
+        "es": "La guerra con el Imperio otomano había vaciado Viena de los nobles que pagaban los conciertos, y la moda había cambiado. Su puesto en la corte le daba 800 florines al año por escribir danzas para los bailes de palacio. Su hijita Theresia murió ese junio. Nadie sabe para qué ocasión escribió las tres sinfonías, ni si llegó a oírlas todas. La última, en do mayor, terminada el 10 de agosto, recibió más tarde el apodo de «Júpiter»."
+      },
+      "places": [
+        {
+          "name": { "en": "Symphony No. 40", "es": "Sinfonía n.º 40" },
+          "at": [16.3719, 48.2087],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎼",
+          "date": "1788-07-25",
+          "by": { "en": "Wolfgang Amadeus Mozart", "es": "Wolfgang Amadeus Mozart" },
+          "text": {
+            "en": "The 'great' G minor symphony, finished on 25 July 1788, with one of the best-known opening themes in all music. It is one of only two symphonies he wrote in a minor key.",
+            "es": "La «gran» sinfonía en sol menor, terminada el 25 de julio de 1788, con uno de los temas iniciales más conocidos de toda la música. Es una de las dos únicas sinfonías que escribió en tonalidad menor."
+          }
+        },
+        {
+          "name": { "en": "Eine kleine Nachtmusik", "es": "Pequeña serenata nocturna" },
+          "at": [16.3731, 48.2079],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🌙",
+          "date": "1787-08-10",
+          "by": { "en": "Wolfgang Amadeus Mozart", "es": "Wolfgang Amadeus Mozart" },
+          "text": {
+            "en": "A serenade for strings that he entered in his own catalogue on 10 August 1787 in Vienna. Nobody knows for whom he wrote it, and it was not printed until long after his death.",
+            "es": "Una serenata para cuerdas que anotó en su propio catálogo el 10 de agosto de 1787, en Viena. Nadie sabe para quién la escribió, y no se imprimió hasta mucho después de su muerte."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1791-09-30",
+      "kind": "moment",
+      "place": { "en": "Vienna, Austria", "es": "Viena, Austria" },
+      "at": [16.3666, 48.1983],
+      "title": { "en": "Papageno takes the stage", "es": "Papageno sale a escena" },
+      "text": {
+        "en": "In a suburban theatre run by his friend Emanuel Schikaneder, who wrote the words and played the bird-catcher Papageno, Mozart conducted the first night of The Magic Flute. It filled the house night after night.",
+        "es": "En un teatro de los suburbios dirigido por su amigo Emanuel Schikaneder, que escribió el texto e hizo el papel del pajarero Papageno, Mozart dirigió el estreno de La flauta mágica. Llenó la sala noche tras noche."
+      },
+      "details": {
+        "en": "That last year he worked without pause: an opera for the emperor's coronation in Prague, a clarinet concerto, The Magic Flute. In July a stranger had ordered a Requiem and paid in advance, on condition that Mozart did not ask who wanted it; it was a count who meant to pass it off as his own. In October Mozart took his small son and the court composer Antonio Salieri to see the Flute, and wrote to Constanze that Salieri had cried 'bravo' at every number.",
+        "es": "Ese último año trabajó sin pausa: una ópera para la coronación del emperador en Praga, un concierto para clarinete, La flauta mágica. En julio un desconocido le había encargado un réquiem, pagado por adelantado, con la condición de que Mozart no preguntara quién lo quería; era un conde que pensaba hacerlo pasar por suyo. En octubre Mozart llevó a su hijo pequeño y al compositor de la corte, Antonio Salieri, a ver La flauta, y le escribió a Constanze que Salieri había gritado «bravo» en cada número."
+      },
+      "places": [
+        {
+          "name": { "en": "The Magic Flute", "es": "La flauta mágica" },
+          "at": [16.367, 48.1986],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎭",
+          "date": "1791-09-30",
+          "by": { "en": "Wolfgang Amadeus Mozart", "es": "Wolfgang Amadeus Mozart" },
+          "text": {
+            "en": "A fairy-tale opera in German with spoken dialogue, full of the symbols of the Freemasons: a prince, a bird-catcher, the Queen of the Night and trials by fire and water.",
+            "es": "Una ópera de cuento de hadas en alemán, con diálogos hablados y llena de símbolos de la masonería: un príncipe, un pajarero, la Reina de la Noche y pruebas de fuego y de agua."
+          },
+          "wiki": { "en": "The Magic Flute", "es": "La flauta mágica" }
+        },
+        {
+          "name": { "en": "Emanuel Schikaneder", "es": "Emanuel Schikaneder" },
+          "at": [16.3661, 48.198],
+          "cat": "person",
+          "type": "person",
+          "date": "1791-09-30",
+          "life": ["1751-09-01", "1812-09-21"],
+          "text": {
+            "en": "Actor, singer, playwright and theatre director, a friend of the Mozart family since his years in Salzburg. He wrote the text of The Magic Flute and was its first Papageno.",
+            "es": "Actor, cantante, dramaturgo y director de teatro, amigo de la familia Mozart desde sus años en Salzburgo. Escribió el texto de La flauta mágica y fue su primer Papageno."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1791-12-05",
+      "kind": "died",
+      "place": { "en": "Vienna, Austria", "es": "Viena, Austria" },
+      "at": [16.3729, 48.2069],
+      "title": { "en": "He dies at thirty-five", "es": "Muere a los treinta y cinco años" },
+      "text": {
+        "en": "Mozart fell ill in late November, with fever and swollen limbs, and died at home just before one in the morning of 5 December, aged 35. The Requiem was unfinished.",
+        "es": "Mozart enfermó a fines de noviembre, con fiebre y los miembros hinchados, y murió en su casa poco antes de la una de la madrugada del 5 de diciembre, a los 35 años. El Réquiem quedó sin terminar."
+      },
+      "details": {
+        "en": "On his last afternoon, a friend recalled, he sang through parts of it with visitors at his bedside, and broke off in tears. The register calls his illness a 'severe miliary fever'; doctors today suspect rheumatic fever or kidney disease. There is no evidence that he was poisoned, by Salieri or by anyone. After a blessing at St Stephen's he was buried, as was usual then for a citizen of Vienna, in an unmarked common grave at St Marx cemetery; the exact spot is lost. His pupil Franz Xaver Süssmayr completed the Requiem so that Constanze could deliver it.",
+        "es": "En su última tarde, recordó un amigo, cantó partes de él con unos visitantes junto a su cama, y se interrumpió llorando. El registro llama a su enfermedad «fiebre miliar aguda»; los médicos de hoy sospechan una fiebre reumática o una enfermedad de los riñones. No hay ninguna prueba de que lo envenenaran, ni Salieri ni nadie. Tras una bendición en San Esteban lo enterraron, como era habitual entonces para un vecino de Viena, en una fosa común sin marcar del cementerio de St. Marx; el lugar exacto se perdió. Su alumno Franz Xaver Süssmayr terminó el Réquiem para que Constanze pudiera entregarlo."
+      },
+      "places": [
+        {
+          "name": { "en": "Requiem", "es": "Réquiem" },
+          "at": [16.3733, 48.2072],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🕯️",
+          "date": "1791",
+          "by": { "en": "Wolfgang Amadeus Mozart", "es": "Wolfgang Amadeus Mozart" },
+          "text": {
+            "en": "A Mass for the dead in D minor, his last work. Mozart finished only the opening and sketched much of the rest; the score was completed after his death by Süssmayr.",
+            "es": "Una misa de difuntos en re menor, su última obra. Mozart solo terminó el comienzo y dejó esbozado mucho del resto; la partitura la completó Süssmayr después de su muerte."
+          }
+        },
+        {
+          "name": { "en": "St Marx Cemetery", "es": "Cementerio de St. Marx" },
+          "at": [16.4017, 48.1828],
+          "cat": "place",
+          "type": "site",
+          "date": "1791-12",
+          "text": {
+            "en": "The cemetery outside the city walls where Mozart was buried in December 1791. Graves there were reused after some years, and nobody marked his.",
+            "es": "El cementerio fuera de las murallas de la ciudad donde enterraron a Mozart en diciembre de 1791. Allí las tumbas se volvían a usar al cabo de unos años, y nadie señaló la suya."
+          }
+        }
+      ]
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Mozart's birthplace, Salzburg", "es": "Casa natal de Mozart, Salzburgo" },
+      "at": [13.0433, 47.8],
+      "kind": "house",
+      "text": {
+        "en": "The yellow house at Getreidegasse 9 where he was born and lived until he was 17, with his childhood violin, his clavichord and family portraits. The family's later home across the river is a museum too.",
+        "es": "La casa amarilla de Getreidegasse 9 donde nació y vivió hasta los 17 años, con su violín de niño, su clavicordio y retratos de la familia. La casa donde vivieron después, al otro lado del río, también es un museo."
+      },
+      "wiki": { "en": "Mozart's birthplace", "es": "" }
+    },
+    {
+      "name": { "en": "Salzburg Cathedral", "es": "Catedral de Salzburgo" },
+      "at": [13.047, 47.798],
+      "kind": "site",
+      "text": {
+        "en": "The font in which he was baptized is still here. He was the cathedral's organist from 1779, and many of his masses were written for it.",
+        "es": "Aquí sigue la pila en la que lo bautizaron. Fue organista de la catedral desde 1779, y muchas de sus misas se escribieron para ella."
+      }
+    },
+    {
+      "name": { "en": "Mozarthaus, Vienna", "es": "Mozarthaus, Viena" },
+      "at": [16.3753, 48.2078],
+      "kind": "house",
+      "text": {
+        "en": "Domgasse 5, the only one of his Vienna homes still standing. He lived here from 1784 to 1787 and wrote The Marriage of Figaro in it.",
+        "es": "Domgasse 5, la única de sus casas de Viena que sigue en pie. Vivió aquí de 1784 a 1787 y en ella escribió Las bodas de Fígaro."
+      }
+    },
+    {
+      "name": { "en": "St Stephen's Cathedral, Vienna", "es": "Catedral de San Esteban, Viena" },
+      "at": [16.373, 48.208],
+      "kind": "site",
+      "text": {
+        "en": "He married Constanze here in 1782. In 1791 he was named the cathedral's deputy music director, without pay, and that December his coffin was blessed in a side chapel.",
+        "es": "Aquí se casó con Constanze en 1782. En 1791 lo nombraron vicedirector de música de la catedral, sin sueldo, y ese diciembre bendijeron su ataúd en una capilla lateral."
+      }
+    },
+    {
+      "name": { "en": "Mozart's grave memorial, St Marx Cemetery", "es": "Monumento en la tumba de Mozart, cementerio de St. Marx" },
+      "at": [16.4017, 48.1828],
+      "kind": "grave",
+      "text": {
+        "en": "Nobody knows exactly where he lies. A broken column and a mourning angel mark the spot that was judged the most likely, in a quiet old cemetery that is now a park.",
+        "es": "Nadie sabe con exactitud dónde yace. Una columna rota y un ángel de luto señalan el lugar que se consideró más probable, en un viejo cementerio tranquilo que hoy es un parque."
+      }
+    },
+    {
+      "name": { "en": "Estates Theatre, Prague", "es": "Teatro de los Estados, Praga" },
+      "at": [14.424, 50.086],
+      "kind": "site",
+      "text": {
+        "en": "The theatre where Mozart conducted the first Don Giovanni in 1787 has hardly changed, and the opera is still performed in it.",
+        "es": "El teatro donde Mozart dirigió el primer Don Giovanni en 1787 casi no ha cambiado, y la ópera se sigue representando en él."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "In thirty-five years Mozart wrote more than 600 works and left masterpieces in every kind of music of his time: opera, symphony, concerto, chamber and church music. Haydn called him the greatest composer he knew, and Beethoven studied him all his life. The Marriage of Figaro, Don Giovanni and The Magic Flute are among the most performed operas in the world.",
+    "es": "En treinta y cinco años Mozart escribió más de 600 obras y dejó obras maestras en todos los géneros de su época: ópera, sinfonía, concierto, música de cámara y música sacra. Haydn lo llamó el mayor compositor que conocía, y Beethoven lo estudió toda su vida. Las bodas de Fígaro, Don Giovanni y La flauta mágica están entre las óperas más representadas del mundo."
+  },
+  "sources": [
+    { "title": "Wikipedia: Wolfgang Amadeus Mozart", "url": "https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart" },
+    { "title": "Wikipedia (español): Wolfgang Amadeus Mozart", "url": "https://es.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart" },
+    { "title": "Encyclopaedia Britannica: Wolfgang Amadeus Mozart", "url": "https://www.britannica.com/biography/Wolfgang-Amadeus-Mozart" },
+    { "title": "Mozarteum Foundation Salzburg: Mozart's life and the Mozart museums", "url": "https://mozarteum.at/en" },
+    { "title": "Mozarthaus Vienna", "url": "https://www.mozarthausvienna.at/en" }
+  ]
+}

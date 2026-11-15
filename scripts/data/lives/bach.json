@@ -1,0 +1,426 @@
+{
+  "id": "bach",
+  "qid": "Q1339",
+  "name": { "en": "Johann Sebastian Bach", "es": "Johann Sebastian Bach" },
+  "icon": "🎹",
+  "field": "music",
+  "known": { "en": "German composer and organist of the Baroque", "es": "Compositor y organista alemán del Barroco" },
+  "born": "1685-03-31",
+  "died": "1750-07-28",
+  "summary": {
+    "en": "He never left Germany, and in his day he was known above all as an organist. From the churches and small courts of Thuringia and Saxony came the St Matthew Passion, the Brandenburg Concertos and music that composers have studied ever since.",
+    "es": "Nunca salió de Alemania, y en su tiempo lo conocían sobre todo como organista. De las iglesias y pequeñas cortes de Turingia y Sajonia salieron la Pasión según san Mateo, los Conciertos de Brandeburgo y una música que aún se estudia."
+  },
+  "steps": [
+    {
+      "date": "1685-03-31",
+      "kind": "born",
+      "place": { "en": "Eisenach, Germany", "es": "Eisenach, Alemania" },
+      "at": [10.3244, 50.9747],
+      "title": { "en": "Born into a family of musicians", "es": "Nace en una familia de músicos" },
+      "text": {
+        "en": "Johann Sebastian was the eighth and last child of Ambrosius Bach, who led the town musicians of Eisenach. The Bachs had been musicians in Thuringia for generations.",
+        "es": "Johann Sebastian fue el octavo y último hijo de Ambrosius Bach, que dirigía a los músicos municipales de Eisenach. Los Bach eran músicos en Turingia desde hacía generaciones."
+      },
+      "details": {
+        "en": "By the old calendar still used in Protestant Germany it was 21 March; he was baptized two days later in St George's Church. His father taught him the violin, and he went to the Latin school that Martin Luther had attended two centuries earlier. Above the town stands the Wartburg, the castle where Luther translated the New Testament. Bach remained a convinced Lutheran all his life.",
+        "es": "Según el calendario antiguo que aún usaba la Alemania protestante era el 21 de marzo; lo bautizaron dos días después en la iglesia de San Jorge. Su padre le enseñó a tocar el violín, y fue a la escuela de latín a la que había asistido Martín Lutero dos siglos antes. Sobre la ciudad se levanta el Wartburg, el castillo donde Lutero tradujo el Nuevo Testamento. Bach fue toda su vida un luterano convencido."
+      }
+    },
+    {
+      "date": "1695",
+      "kind": "home",
+      "place": { "en": "Ohrdruf, near Gotha, Germany", "es": "Ohrdruf, cerca de Gotha, Alemania" },
+      "at": [10.7333, 50.8281],
+      "title": { "en": "An orphan in his brother's house", "es": "Huérfano en casa de su hermano" },
+      "text": {
+        "en": "Before his tenth birthday he had lost both parents. He went to live with his eldest brother, Johann Christoph, organist in the small town of Ohrdruf, who gave him his first keyboard lessons.",
+        "es": "Antes de cumplir diez años había perdido a su madre y a su padre. Se fue a vivir con su hermano mayor, Johann Christoph, organista en el pequeño pueblo de Ohrdruf, que le dio sus primeras lecciones de teclado."
+      },
+      "details": {
+        "en": "The obituary written by one of his sons tells that the boy longed for a book of keyboard pieces by famous composers, which his brother kept locked behind a lattice door. For six months he pulled it out at night, rolled up, through the grille, and copied it by moonlight. His brother found the copy and took it away. He stayed five years in Ohrdruf, and was among the best pupils of the town's school.",
+        "es": "La necrológica que escribió uno de sus hijos cuenta que el niño deseaba un libro de piezas para teclado de compositores famosos, que su hermano guardaba bajo llave tras una puerta de rejilla. Durante seis meses lo sacó de noche, enrollado, por entre la reja, y lo copió a la luz de la luna. Su hermano encontró la copia y se la quitó. Pasó cinco años en Ohrdruf, y estuvo entre los mejores alumnos de la escuela del pueblo."
+      }
+    },
+    {
+      "date": "1700",
+      "kind": "study",
+      "place": { "en": "Lüneburg, Germany", "es": "Luneburgo, Alemania" },
+      "at": [10.4144, 53.2525],
+      "title": { "en": "A choir scholar in the north", "es": "Becario de coro en el norte" },
+      "text": {
+        "en": "Just turned 15, he travelled some 300 km north with a school friend to Lüneburg. The choir of St Michael's gave poor boys with good voices free schooling, board and a little pay.",
+        "es": "Con 15 años recién cumplidos, viajó unos 300 km hacia el norte con un compañero de escuela hasta Luneburgo. El coro de San Miguel daba a los muchachos pobres con buena voz estudios gratuitos, comida y un pequeño pago."
+      },
+      "details": {
+        "en": "His voice soon broke, but he stayed about two years, studying and listening. The organist Georg Böhm taught him: a manuscript found in Weimar in the 2000s shows the 15-year-old copying difficult organ music at Böhm's house. More than once he made the journey to Hamburg to hear the old master Johann Adam Reincken, and he came to know the French style from a court orchestra of French musicians.",
+        "es": "Pronto le cambió la voz, pero se quedó unos dos años, estudiando y escuchando. El organista Georg Böhm fue su maestro: un manuscrito hallado en Weimar en la década de 2000 muestra al muchacho de 15 años copiando música difícil para órgano en casa de Böhm. Más de una vez hizo el viaje a Hamburgo para oír al viejo maestro Johann Adam Reincken, y conoció el estilo francés gracias a una orquesta de corte formada por músicos franceses."
+      }
+    },
+    {
+      "date": "1703-08-09",
+      "kind": "career",
+      "place": { "en": "Arnstadt, Germany", "es": "Arnstadt, Alemania" },
+      "at": [10.9464, 50.8343],
+      "title": { "en": "Organist at eighteen", "es": "Organista a los dieciocho años" },
+      "text": {
+        "en": "Called to try out the new organ of Arnstadt's New Church, the 18-year-old played so well that the town hired him as its organist. It was his first real post.",
+        "es": "Lo llamaron para probar el órgano nuevo de la Iglesia Nueva de Arnstadt, y el joven de 18 años tocó tan bien que la ciudad lo contrató como organista. Fue su primer puesto de verdad."
+      },
+      "details": {
+        "en": "He was well paid and had few duties, and he used the time to compose and to master the instrument. But he was a difficult employee. He came to blows in the street with a student bassoonist he had insulted. The church council scolded him for confusing the congregation with strange harmonies in the hymns, for neglecting the choir of schoolboys, and for letting a young woman make music in the organ loft.",
+        "es": "Le pagaban bien y tenía pocas obligaciones, y aprovechó el tiempo para componer y dominar el instrumento. Pero era un empleado difícil. Se fue a las manos en la calle con un estudiante que tocaba el fagot, al que había insultado. El consejo de la iglesia lo reprendió por confundir a los fieles con armonías extrañas en los himnos, por descuidar el coro de escolares y por dejar que una joven hiciera música en la tribuna del órgano."
+      }
+    },
+    {
+      "date": "1705",
+      "kind": "journey",
+      "icon": "🚶",
+      "place": { "en": "Lübeck, Germany", "es": "Lübeck, Alemania" },
+      "at": [10.685, 53.868],
+      "title": { "en": "On foot to hear Buxtehude", "es": "A pie para oír a Buxtehude" },
+      "text": {
+        "en": "In the autumn of 1705, with four weeks' leave, Bach walked some 400 km to Lübeck to hear Dieterich Buxtehude, the great organist of the north, at St Mary's Church. He stayed away almost four months.",
+        "es": "En el otoño de 1705, con cuatro semanas de permiso, Bach caminó unos 400 km hasta Lübeck para oír a Dieterich Buxtehude, el gran organista del norte, en la iglesia de Santa María. Estuvo fuera casi cuatro meses."
+      },
+      "details": {
+        "en": "Buxtehude was nearly seventy. Every Advent he gave evening concerts in the church with singers and a large orchestra, and Bach arrived in time for them. The old man was also looking for a successor, who by custom was expected to marry his daughter; Handel had come to look at the post two years before, and left. Bach went back to Arnstadt early in 1706 with his head full of new music, and to a reprimand from his employers.",
+        "es": "Buxtehude tenía casi setenta años. Cada Adviento daba en la iglesia conciertos vespertinos con cantantes y una gran orquesta, y Bach llegó a tiempo para oírlos. El anciano buscaba además un sucesor, que según la costumbre debía casarse con su hija; Händel había ido a ver el puesto dos años antes, y se marchó. Bach volvió a Arnstadt a comienzos de 1706 con la cabeza llena de música nueva, y a recibir una reprimenda de sus patrones."
+      },
+      "places": [
+        {
+          "name": { "en": "Dieterich Buxtehude", "es": "Dieterich Buxtehude" },
+          "at": [10.6856, 53.8676],
+          "cat": "person",
+          "type": "person",
+          "date": "1705",
+          "life": ["1637", "1707-05-09"],
+          "text": {
+            "en": "Organist of St Mary's in Lübeck from 1668 and the most admired organ composer of northern Germany. The young Bach modelled his early organ works on Buxtehude's.",
+            "es": "Organista de Santa María de Lübeck desde 1668 y el compositor para órgano más admirado del norte de Alemania. El joven Bach tomó sus obras como modelo para sus primeras piezas para órgano."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1707-06",
+      "kind": "career",
+      "place": { "en": "Mühlhausen, Germany", "es": "Mühlhausen, Alemania" },
+      "at": [10.4588, 51.2072],
+      "via": [[10.9464, 50.8343]],
+      "title": { "en": "Mühlhausen, and a wedding", "es": "Mühlhausen, y una boda" },
+      "text": {
+        "en": "Bach became organist of St Blasius's Church in the free city of Mühlhausen. That October he married his second cousin Maria Barbara Bach in the village church of Dornheim, near Arnstadt.",
+        "es": "Bach fue nombrado organista de la iglesia de San Blas, en la ciudad libre de Mühlhausen. Ese octubre se casó con su prima segunda Maria Barbara Bach en la iglesia del pueblo de Dornheim, cerca de Arnstadt."
+      },
+      "details": {
+        "en": "The city paid him well and printed, at its own cost, the festive cantata he wrote for the swearing-in of its council in February 1708, Gott ist mein König (God is my King). It was the first of his works to appear in print. But the town's clergy were divided over how much music belonged in church, and after a year he accepted a better offer from the Duke of Weimar. He parted on good terms, and went on advising Mühlhausen on the rebuilding of its organ.",
+        "es": "La ciudad le pagaba bien e imprimió por su cuenta la cantata festiva que escribió para la toma de posesión de su concejo en febrero de 1708, Gott ist mein König (Dios es mi rey). Fue la primera de sus obras que se imprimió. Pero el clero de la ciudad estaba dividido sobre cuánta música cabía en la iglesia, y al cabo de un año aceptó una oferta mejor del duque de Weimar. Se fue en buenos términos, y siguió asesorando a Mühlhausen en la reconstrucción de su órgano."
+      },
+      "places": [
+        {
+          "name": { "en": "Maria Barbara Bach", "es": "Maria Barbara Bach" },
+          "at": [10.4581, 51.2079],
+          "cat": "person",
+          "type": "person",
+          "date": "1707-10-17",
+          "life": ["1684-10-20", "1720-07"],
+          "text": {
+            "en": "His first wife, the daughter of an organist of the Bach family. They married on 17 October 1707 and had seven children; four grew up, among them the composers Wilhelm Friedemann and Carl Philipp Emanuel.",
+            "es": "Su primera esposa, hija de un organista de la familia Bach. Se casaron el 17 de octubre de 1707 y tuvieron siete hijos; cuatro llegaron a adultos, entre ellos los compositores Wilhelm Friedemann y Carl Philipp Emanuel."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1708-07",
+      "kind": "career",
+      "place": { "en": "Weimar, Germany", "es": "Weimar, Alemania" },
+      "at": [11.3294, 50.9811],
+      "title": { "en": "Court organist in Weimar", "es": "Organista de la corte de Weimar" },
+      "text": {
+        "en": "For nine years Bach served Duke Wilhelm Ernst of Saxe-Weimar, first as organist and from 1714 as concertmaster. Here he wrote most of his great organ works, and six of his children were born.",
+        "es": "Durante nueve años Bach sirvió al duque Guillermo Ernesto de Sajonia-Weimar, primero como organista y desde 1714 como concertino. Aquí escribió la mayoría de sus grandes obras para órgano, y nacieron seis de sus hijos."
+      },
+      "details": {
+        "en": "The palace chapel, tall and narrow, was known as the Castle of Heaven, and its organ sat high under the roof. A young prince of the house brought home the newest Italian concertos, and Bach arranged several by Vivaldi for organ and harpsichord, learning from them how to build a long movement. In 1716 the post of music director fell vacant and he was passed over. He accepted an offer from the Prince of Köthen, and pressed so hard to be released that the duke had him locked up for almost four weeks, from 6 November to 2 December 1717.",
+        "es": "La capilla del palacio, alta y estrecha, se conocía como el Castillo del Cielo, y su órgano estaba arriba, bajo el techo. Un joven príncipe de la casa trajo los conciertos italianos más nuevos, y Bach arregló varios de Vivaldi para órgano y clave, y aprendió de ellos a construir un movimiento largo. En 1716 quedó vacante el puesto de director de música y no se lo dieron. Aceptó una oferta del príncipe de Köthen, e insistió tanto en que lo dejaran ir que el duque lo tuvo encerrado casi cuatro semanas, del 6 de noviembre al 2 de diciembre de 1717."
+      }
+    },
+    {
+      "date": "1717-12",
+      "kind": "career",
+      "place": { "en": "Köthen, Germany", "es": "Köthen, Alemania" },
+      "at": [11.9736, 51.7511],
+      "title": { "en": "Music director to a prince", "es": "Director de música de un príncipe" },
+      "text": {
+        "en": "Freed from arrest in Weimar, Bach became Kapellmeister to Prince Leopold of Anhalt-Köthen, a young ruler who loved music. The court church was Calvinist and wanted little music, so Bach wrote for instruments.",
+        "es": "Libre de su arresto en Weimar, Bach fue maestro de capilla del príncipe Leopoldo de Anhalt-Köthen, un joven que amaba la música. La corte, calvinista, pedía poca música en la iglesia, así que escribió para instrumentos."
+      },
+      "details": {
+        "en": "Leopold played the violin, the viola da gamba and the harpsichord, and kept a small orchestra of excellent players. For them, and for his own children and pupils, Bach wrote in six years the suites for solo cello, the sonatas and partitas for solo violin, the first book of The Well-Tempered Clavier and the six concertos he sent to the Margrave of Brandenburg. Years later he remembered a gracious prince who both loved and understood music, in whose service he had expected to spend the rest of his life.",
+        "es": "Leopoldo tocaba el violín, la viola da gamba y el clave, y mantenía una pequeña orquesta de músicos excelentes. Para ellos, y para sus propios hijos y alumnos, Bach escribió en seis años las suites para violonchelo solo, las sonatas y partitas para violín solo, el primer libro de El clave bien temperado y los seis conciertos que envió al margrave de Brandeburgo. Años después recordaba a un príncipe bondadoso que amaba y entendía la música, a cuyo servicio había pensado pasar el resto de su vida."
+      },
+      "places": [
+        {
+          "name": { "en": "Brandenburg Concertos", "es": "Conciertos de Brandeburgo" },
+          "at": [11.9743, 51.7517],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎻",
+          "date": "1721-03-24",
+          "by": { "en": "Johann Sebastian Bach", "es": "Johann Sebastian Bach" },
+          "text": {
+            "en": "Six concertos, each for a different group of instruments, which Bach dedicated on 24 March 1721 to Christian Ludwig, Margrave of Brandenburg. The manuscript, now in Berlin, was not printed until 1850.",
+            "es": "Seis conciertos, cada uno para un grupo distinto de instrumentos, que Bach dedicó el 24 de marzo de 1721 a Cristián Luis, margrave de Brandeburgo. El manuscrito, hoy en Berlín, no se imprimió hasta 1850."
+          }
+        },
+        {
+          "name": { "en": "The Well-Tempered Clavier", "es": "El clave bien temperado" },
+          "at": [11.9729, 51.7505],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎹",
+          "date": "1722",
+          "by": { "en": "Johann Sebastian Bach", "es": "Johann Sebastian Bach" },
+          "text": {
+            "en": "A prelude and a fugue in each of the 24 major and minor keys, dated 1722 and written for young musicians eager to learn. A second book followed some twenty years later.",
+            "es": "Un preludio y una fuga en cada una de las 24 tonalidades mayores y menores, con fecha de 1722 y escritos para los jóvenes músicos deseosos de aprender. Unos veinte años después siguió un segundo libro."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1720-07",
+      "kind": "struggle",
+      "place": { "en": "Köthen, Germany", "es": "Köthen, Alemania" },
+      "at": [11.9736, 51.7511],
+      "title": { "en": "Maria Barbara is dead", "es": "Maria Barbara ha muerto" },
+      "text": {
+        "en": "Back from a journey with the prince to the spa of Carlsbad, Bach learned on entering his house that his wife Maria Barbara, in good health when he left, had died and been buried on 7 July. Four children were left.",
+        "es": "De vuelta de un viaje con el príncipe al balneario de Carlsbad, Bach supo al entrar a su casa que su esposa Maria Barbara, sana cuando él partió, había muerto y había sido enterrada el 7 de julio. Quedaban cuatro hijos."
+      },
+      "details": {
+        "en": "The eldest child was eleven. On 3 December 1721 he married Anna Magdalena Wilcke, a court singer of twenty and the daughter of a trumpeter. They had thirteen children, of whom six grew up. She sang, ran a house full of children, pupils and relatives, and copied out his music in a hand so like his own that the two are hard to tell apart. Of Bach's twenty children ten lived to be adults, and four sons became composers.",
+        "es": "La hija mayor tenía once años. El 3 de diciembre de 1721 se casó con Anna Magdalena Wilcke, una cantante de la corte de veinte años, hija de un trompetista. Tuvieron trece hijos, de los cuales seis llegaron a adultos. Ella cantaba, llevaba una casa llena de hijos, alumnos y parientes, y copiaba la música de él con una letra tan parecida a la suya que cuesta distinguirlas. De los veinte hijos de Bach, diez llegaron a adultos, y cuatro varones fueron compositores."
+      },
+      "places": [
+        {
+          "name": { "en": "Anna Magdalena Bach", "es": "Anna Magdalena Bach" },
+          "at": [11.9729, 51.7517],
+          "cat": "person",
+          "type": "person",
+          "date": "1721-12-03",
+          "life": ["1701-09-22", "1760-02-27"],
+          "text": {
+            "en": "A professional singer at the court of Köthen, and Bach's second wife from 1721. He filled two little music books for her. After his death she lived in Leipzig on charity.",
+            "es": "Cantante profesional de la corte de Köthen, y segunda esposa de Bach desde 1721. Él llenó para ella dos pequeños cuadernos de música. Tras la muerte de él, vivió en Leipzig de la caridad."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1723-05-22",
+      "kind": "career",
+      "place": { "en": "Leipzig, Germany", "es": "Leipzig, Alemania" },
+      "at": [12.3726, 51.3393],
+      "title": { "en": "Cantor of St Thomas", "es": "Cantor de Santo Tomás" },
+      "text": {
+        "en": "The Leipzig council wanted Telemann, then another man; Bach was its third choice. As cantor of St Thomas's School he taught the boys and provided the music of the city's main churches. He stayed 27 years.",
+        "es": "El concejo de Leipzig quería a Telemann, y luego a otro; Bach fue su tercera opción. Como cantor de la escuela de Santo Tomás enseñaba a los alumnos y dirigía la música de las iglesias principales. Se quedó 27 años."
+      },
+      "details": {
+        "en": "The family moved into the school beside the church. In his first years he composed a new cantata for almost every Sunday and feast day, rehearsed it with his schoolboys and a few town musicians, and performed it within the week; about two hundred survive. He quarrelled with the council over money, discipline and the quality of his singers, and in 1730 wrote to an old friend that his masters were odd people with little love of music. From 1729 he also led a students' orchestra that played every week in Zimmermann's coffee house.",
+        "es": "La familia se instaló en la escuela, junto a la iglesia. En los primeros años compuso una cantata nueva para casi todos los domingos y días de fiesta, la ensayaba con sus escolares y unos pocos músicos de la ciudad, y la interpretaba en la misma semana; se conservan unas doscientas. Discutió con el concejo por el dinero, la disciplina y la calidad de sus cantores, y en 1730 le escribió a un viejo amigo que sus superiores eran gente rara, con poco amor por la música. Desde 1729 dirigió además una orquesta de estudiantes que tocaba cada semana en el café de Zimmermann."
+      }
+    },
+    {
+      "date": "1727-04-11",
+      "kind": "moment",
+      "place": { "en": "Leipzig, Germany", "es": "Leipzig, Alemania" },
+      "at": [12.3726, 51.3393],
+      "title": { "en": "Good Friday at St Thomas", "es": "Viernes Santo en Santo Tomás" },
+      "text": {
+        "en": "At Good Friday vespers, two choirs and two orchestras told the story of Christ's last days for nearly three hours. The St Matthew Passion was heard a few more times in Bach's life, and then not again until 1829.",
+        "es": "En las vísperas del Viernes Santo, dos coros y dos orquestas contaron en casi tres horas los últimos días de Cristo. La Pasión según san Mateo se oyó pocas veces más en vida de Bach, y no volvió a sonar hasta 1829."
+      },
+      "details": {
+        "en": "Three years earlier he had given Leipzig the shorter, fiercer St John Passion. In the St Matthew a tenor sings the Gospel, soloists reflect on it in arias, and the hymns that everyone in the church knew return again and again. After his death it lay forgotten until 1829, when the 20-year-old Felix Mendelssohn conducted it in Berlin and set off the rediscovery of Bach.",
+        "es": "Tres años antes había dado a Leipzig la Pasión según san Juan, más breve y más áspera. En la de san Mateo un tenor canta el Evangelio, los solistas lo meditan en arias, y los himnos que todos en la iglesia conocían vuelven una y otra vez. Tras su muerte quedó olvidada hasta 1829, cuando Felix Mendelssohn, de 20 años, la dirigió en Berlín e inició el redescubrimiento de Bach."
+      },
+      "unsure": {
+        "en": "The first performance was long dated to 1729; most scholars now place it on Good Friday 1727.",
+        "es": "Durante mucho tiempo el estreno se fechó en 1729; hoy la mayoría de los estudiosos lo sitúa en el Viernes Santo de 1727."
+      },
+      "places": [
+        {
+          "name": { "en": "St Matthew Passion", "es": "Pasión según san Mateo" },
+          "at": [12.3727, 51.3394],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎼",
+          "date": "1727-04-11",
+          "by": { "en": "Johann Sebastian Bach", "es": "Johann Sebastian Bach" },
+          "text": {
+            "en": "The Passion of Christ according to the Gospel of Matthew, set for soloists, double choir and double orchestra. Bach wrote out the fair copy of the score himself in 1736, with the Gospel words in red ink.",
+            "es": "La pasión de Cristo según el Evangelio de Mateo, para solistas, doble coro y doble orquesta. Bach escribió de su mano la copia en limpio de la partitura en 1736, con las palabras del Evangelio en tinta roja."
+          },
+          "wiki": { "en": "St Matthew Passion", "es": "Pasión según San Mateo" }
+        }
+      ]
+    },
+    {
+      "date": "1733-07-27",
+      "kind": "made",
+      "place": { "en": "Dresden, Germany", "es": "Dresde, Alemania" },
+      "at": [13.737, 51.053],
+      "title": { "en": "A Mass for the Elector", "es": "Una misa para el elector" },
+      "text": {
+        "en": "In Dresden, the capital of Saxony, Bach presented the new Elector with the Kyrie and Gloria of a great Latin Mass and asked for a court title. It came three years later. The music grew into the Mass in B minor.",
+        "es": "En Dresde, la capital de Sajonia, Bach presentó al nuevo elector el Kyrie y el Gloria de una gran misa en latín y le pidió un título de la corte. Llegó tres años después. Esa música creció hasta ser la Misa en si menor."
+      },
+      "details": {
+        "en": "He wanted the title as a shield in his disputes with the Leipzig authorities. Dresden had the finest orchestra in Germany and an opera he liked to visit with his eldest son, who became an organist there that same summer. In his last years Bach added the Credo and the remaining movements, many of them reworked from the best of his earlier music. He completed the Mass in 1749 and never heard it performed whole.",
+        "es": "Quería el título como escudo en sus disputas con las autoridades de Leipzig. Dresde tenía la mejor orquesta de Alemania y una ópera que le gustaba visitar con su hijo mayor, que ese mismo verano obtuvo allí un puesto de organista. En sus últimos años Bach añadió el Credo y los demás movimientos, muchos de ellos reelaborados a partir de lo mejor de su música anterior. Terminó la misa en 1749 y nunca la oyó completa."
+      },
+      "places": [
+        {
+          "name": { "en": "Mass in B minor", "es": "Misa en si menor" },
+          "at": [13.7381, 51.0524],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎼",
+          "date": "1749",
+          "by": { "en": "Johann Sebastian Bach", "es": "Johann Sebastian Bach" },
+          "text": {
+            "en": "A complete Latin Mass by a Lutheran cantor, put together between 1733 and 1749. The parts he wrote out for the Elector in 1733 are still in Dresden; the full score is in the Berlin State Library.",
+            "es": "Una misa completa en latín escrita por un cantor luterano, reunida entre 1733 y 1749. Las partes que copió para el elector en 1733 siguen en Dresde; la partitura completa está en la Biblioteca Estatal de Berlín."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1747-05-07",
+      "kind": "moment",
+      "place": { "en": "Potsdam, Germany", "es": "Potsdam, Alemania" },
+      "at": [13.061, 52.395],
+      "via": [[12.3726, 51.3393]],
+      "title": { "en": "Old Bach before the king", "es": "El viejo Bach ante el rey" },
+      "text": {
+        "en": "Frederick II of Prussia, told that 'old Bach' had arrived, broke off his evening concert, took him through the palace to try his new pianos, and gave him a theme on which to improvise a fugue.",
+        "es": "Federico II de Prusia, al saber que había llegado «el viejo Bach», interrumpió su concierto de la tarde, lo llevó por el palacio a probar sus pianos nuevos y le dio un tema para que improvisara una fuga."
+      },
+      "details": {
+        "en": "Bach's son Carl Philipp Emanuel was the king's harpsichordist. The 62-year-old had just stepped down from the coach and was given no time to change his clothes. He improvised a fugue in three parts on the king's long, twisting theme, to general astonishment; asked for one in six parts, he chose an easier subject of his own. Back in Leipzig he worked out everything the royal theme could yield, the six-part fugue included, had it engraved, and sent it to Potsdam two months later as The Musical Offering.",
+        "es": "Carl Philipp Emanuel, hijo de Bach, era el clavecinista del rey. El viajero, de 62 años, acababa de bajar del carruaje y no le dieron tiempo de cambiarse de ropa. Improvisó una fuga a tres voces sobre el largo y sinuoso tema del rey, ante el asombro general; cuando le pidieron una a seis voces, eligió un tema propio, más fácil. De vuelta en Leipzig desarrolló todo lo que el tema real podía dar, incluida la fuga a seis voces, lo hizo grabar y dos meses después lo envió a Potsdam con el título de Ofrenda musical."
+      },
+      "unsure": {
+        "en": "The meeting is generally placed in Potsdam's City Palace; the king's new summer palace, Sanssouci, had been inaugurated only days before.",
+        "es": "En general se sitúa el encuentro en el Palacio de la Ciudad de Potsdam; el nuevo palacio de verano del rey, Sanssouci, se había inaugurado apenas unos días antes."
+      },
+      "places": [
+        {
+          "name": { "en": "The Musical Offering", "es": "Ofrenda musical" },
+          "at": [13.0603, 52.3956],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🎼",
+          "date": "1747-07-07",
+          "by": { "en": "Johann Sebastian Bach", "es": "Johann Sebastian Bach" },
+          "text": {
+            "en": "Two fugues, ten canons and a trio sonata, all built on the theme the king gave him. Bach signed the dedication on 7 July 1747, two months after his visit.",
+            "es": "Dos fugas, diez cánones y una sonata en trío, todo construido sobre el tema que le dio el rey. Bach firmó la dedicatoria el 7 de julio de 1747, dos meses después de su visita."
+          }
+        },
+        {
+          "id": "frederick-the-great",
+          "name": { "en": "Frederick the Great", "es": "Federico el Grande" },
+          "at": [13.0618, 52.3944],
+          "cat": "person",
+          "type": "person",
+          "date": "1747-05-07",
+          "life": ["1712-01-24", "1786-08-17"],
+          "text": {
+            "en": "Frederick II, King of Prussia from 1740, a soldier who played the flute every evening and composed. He collected the new pianos built by Gottfried Silbermann, and had Bach try them all.",
+            "es": "Federico II, rey de Prusia desde 1740, un militar que tocaba la flauta todas las tardes y componía. Coleccionaba los nuevos pianos construidos por Gottfried Silbermann, e hizo que Bach los probara todos."
+          },
+          "wiki": { "en": "Frederick the Great", "es": "Federico II el Grande" }
+        }
+      ]
+    },
+    {
+      "date": "1750-07-28",
+      "kind": "died",
+      "place": { "en": "Leipzig, Germany", "es": "Leipzig, Alemania" },
+      "at": [12.3726, 51.3393],
+      "title": { "en": "He dies in Leipzig", "es": "Muere en Leipzig" },
+      "text": {
+        "en": "Almost blind, Bach was operated on twice in the spring of 1750 by a travelling English eye surgeon. The operations failed and his health gave way. He died on the evening of 28 July, aged 65.",
+        "es": "Casi ciego, Bach fue operado dos veces en la primavera de 1750 por un cirujano de ojos inglés que iba de ciudad en ciudad. Las operaciones fracasaron y su salud se derrumbó. Murió la tarde del 28 de julio, a los 65 años."
+      },
+      "details": {
+        "en": "He left unfinished The Art of Fugue, a cycle of fugues on a single theme; in the last one he had just worked in the notes that spell B-A-C-H in German when the manuscript breaks off. He was buried in St John's cemetery, in a grave that was soon forgotten. Anna Magdalena died in poverty ten years later. In 1894 bones believed to be his were dug up when St John's Church was rebuilt, and an anatomist identified them. Since 1950 they have rested in the chancel of St Thomas's.",
+        "es": "Dejó sin terminar El arte de la fuga, un ciclo de fugas sobre un solo tema; en la última acababa de introducir las notas que en alemán forman B-A-C-H cuando el manuscrito se interrumpe. Fue enterrado en el cementerio de San Juan, en una tumba que pronto se olvidó. Anna Magdalena murió en la pobreza diez años después. En 1894, al reconstruirse la iglesia de San Juan, se desenterraron unos huesos que se creyó que eran los suyos, y un anatomista los identificó. Desde 1950 descansan en el presbiterio de Santo Tomás."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Bach House, Eisenach", "es": "Casa de Bach, Eisenach" },
+      "at": [10.3226, 50.9715],
+      "kind": "museum",
+      "text": {
+        "en": "A museum since 1907, in an old house long taken for his birthplace; the real one stood a few streets away and is gone. Instruments of his time are played for visitors.",
+        "es": "Museo desde 1907, en una casa antigua que por mucho tiempo se creyó su casa natal; la verdadera estaba a pocas calles y ya no existe. Para los visitantes se tocan instrumentos de su época."
+      }
+    },
+    {
+      "name": { "en": "Bach Church, Arnstadt", "es": "Iglesia de Bach, Arnstadt" },
+      "at": [10.9464, 50.8343],
+      "kind": "site",
+      "text": {
+        "en": "The New Church of his first post, renamed after him in 1935. The organ he was hired to play in 1703 has been rebuilt as it was.",
+        "es": "La Iglesia Nueva de su primer puesto, que lleva su nombre desde 1935. El órgano que lo contrataron para tocar en 1703 fue reconstruido tal como era."
+      }
+    },
+    {
+      "name": { "en": "St Blasius's Church, Mühlhausen", "es": "Iglesia de San Blas, Mühlhausen" },
+      "at": [10.4588, 51.2072],
+      "kind": "site",
+      "text": {
+        "en": "The Gothic church where he was organist in 1707 and 1708. Its present organ was built in the 1950s to the plan Bach himself drew up for the instrument.",
+        "es": "La iglesia gótica donde fue organista en 1707 y 1708. Su órgano actual se construyó en la década de 1950 según el plan que el propio Bach trazó para el instrumento."
+      }
+    },
+    {
+      "name": { "en": "St Thomas Church, Leipzig", "es": "Iglesia de Santo Tomás, Leipzig" },
+      "at": [12.3726, 51.3393],
+      "kind": "grave",
+      "text": {
+        "en": "His grave lies in the chancel, under a bronze plate. The boys' choir he directed, the Thomanerchor, still sings here, and his statue stands outside.",
+        "es": "Su tumba está en el presbiterio, bajo una placa de bronce. El coro de niños que él dirigió, el Thomanerchor, sigue cantando aquí, y afuera se levanta su estatua."
+      },
+      "wiki": { "en": "St. Thomas Church, Leipzig", "es": "Iglesia de Santo Tomás (Leipzig)" }
+    },
+    {
+      "name": { "en": "Bach Museum, Leipzig", "es": "Museo Bach, Leipzig" },
+      "at": [12.3723, 51.3387],
+      "kind": "museum",
+      "text": {
+        "en": "Facing the church, in the house of a merchant family who were friends of the Bachs: manuscripts in his hand, instruments, and the archive where his music is studied.",
+        "es": "Frente a la iglesia, en la casa de una familia de comerciantes amiga de los Bach: manuscritos de su mano, instrumentos y el archivo donde se estudia su música."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Bach gathered up everything the music of his age knew and carried it further than anyone had thought possible. The public forgot him for decades, but musicians never did: Mozart, Beethoven and Chopin learned from his fugues, and since his rediscovery in the 19th century he has stood at the centre of Western music. Three of his pieces travel beyond the solar system on the golden records of the Voyager spacecraft.",
+    "es": "Bach reunió todo lo que sabía la música de su tiempo y lo llevó más lejos de lo que nadie creía posible. El público lo olvidó durante décadas, pero los músicos nunca: Mozart, Beethoven y Chopin aprendieron de sus fugas, y desde su redescubrimiento en el siglo XIX ocupa el centro de la música occidental. Tres piezas suyas viajan más allá del sistema solar en los discos de oro de las sondas Voyager."
+  },
+  "sources": [
+    { "title": "Wikipedia: Johann Sebastian Bach", "url": "https://en.wikipedia.org/wiki/Johann_Sebastian_Bach" },
+    { "title": "Wikipedia (español): Johann Sebastian Bach", "url": "https://es.wikipedia.org/wiki/Johann_Sebastian_Bach" },
+    { "title": "Encyclopaedia Britannica: Johann Sebastian Bach", "url": "https://www.britannica.com/biography/Johann-Sebastian-Bach" },
+    { "title": "Bach-Archiv Leipzig and Bach Museum", "url": "https://www.bach-leipzig.de/" },
+    { "title": "Bachhaus Eisenach", "url": "https://www.bachhaus.de/" }
+  ]
+}

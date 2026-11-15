@@ -1,0 +1,373 @@
+{
+  "id": "michael-faraday",
+  "qid": "Q8750",
+  "name": { "en": "Michael Faraday", "es": "Michael Faraday" },
+  "icon": "🧲",
+  "field": "science",
+  "known": { "en": "English physicist and chemist", "es": "Físico y químico inglés" },
+  "born": "1791-09-22",
+  "died": "1867-08-25",
+  "summary": {
+    "en": "A blacksmith's son who went to work at 13 and learned science from the books he bound. In a London basement he made the first electric motor, the first transformer and the first generator.",
+    "es": "Hijo de un herrero, empezó a trabajar a los 13 años y aprendió ciencia en los libros que encuadernaba. En un sótano de Londres hizo el primer motor eléctrico, el primer transformador y el primer generador."
+  },
+  "steps": [
+    {
+      "date": "1791-09-22",
+      "kind": "born",
+      "place": { "en": "Newington Butts, London, England", "es": "Newington Butts, Londres, Inglaterra" },
+      "at": [-0.1011, 51.4928],
+      "title": { "en": "A blacksmith's son", "es": "El hijo de un herrero" },
+      "text": {
+        "en": "Michael Faraday was born in Newington Butts, then a village just south of London. His father, a blacksmith in poor health, had come from the north of England that year to look for work.",
+        "es": "Michael Faraday nació en Newington Butts, entonces un pueblo al sur de Londres. Su padre, un herrero de mala salud, había llegado ese año del norte de Inglaterra en busca de trabajo."
+      },
+      "details": {
+        "en": "The family soon moved north of the Thames, to rooms over a coach house in a London mews. They belonged to the Sandemanians, a small, strict Christian church that read the Bible literally; Faraday stayed in it all his life and became one of its elders. At a day school he learned to read, write and count, and little more. He never studied mathematics, and later did his thinking with experiments and pictures instead.",
+        "es": "La familia pronto se mudó al norte del Támesis, a unos cuartos sobre una cochera en un callejón de Londres. Pertenecían a los sandemanianos, una iglesia cristiana pequeña y estricta que leía la Biblia al pie de la letra; Faraday siguió en ella toda su vida y llegó a ser uno de sus ancianos. En una escuela de barrio aprendió a leer, escribir y contar, y poco más. Nunca estudió matemáticas, y más tarde pensó con experimentos e imágenes."
+      }
+    },
+    {
+      "date": "1804",
+      "kind": "study",
+      "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+      "at": [-0.1543, 51.5185],
+      "title": { "en": "The bookbinder's apprentice", "es": "El aprendiz de encuadernador" },
+      "text": {
+        "en": "At 13 he began running errands for George Riebau, a bookseller in Blandford Street, and a year later became his apprentice. For seven years he bound books by day and read them after work.",
+        "es": "A los 13 años empezó a hacer mandados para George Riebau, un librero de Blandford Street, y un año después pasó a ser su aprendiz. Durante siete años encuadernó libros de día y los leyó después del trabajo."
+      },
+      "details": {
+        "en": "Two of them changed his life: the article on electricity in the Encyclopaedia Britannica and Jane Marcet's Conversations on Chemistry, a book for beginners. He tried their experiments at the back of the shop with whatever he could afford. From 1810 he went to evening science lectures at the house of John Tatum. Riebau, who had fled the French Revolution, encouraged him. A plaque of 1876 marks the shop, at 48 Blandford Street.",
+        "es": "Dos de ellos le cambiaron la vida: el artículo sobre la electricidad de la Encyclopaedia Britannica y las Conversaciones sobre química de Jane Marcet, un libro para principiantes. Repetía sus experimentos en el fondo de la tienda con lo poco que podía comprar. Desde 1810 fue a clases nocturnas de ciencia en casa de John Tatum. Riebau, que había huido de la Revolución francesa, lo alentó. Una placa de 1876 señala la tienda, en el número 48 de Blandford Street."
+      }
+    },
+    {
+      "date": "1813-03-01",
+      "kind": "career",
+      "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+      "at": [-0.1425, 51.5098],
+      "title": { "en": "Davy's laboratory assistant", "es": "Ayudante de laboratorio de Davy" },
+      "text": {
+        "en": "A customer gave him tickets to hear the famous chemist Humphry Davy. Faraday wrote up the lectures, bound the 386 pages and sent them to Davy. On 1 March 1813 he started work as his laboratory assistant.",
+        "es": "Un cliente le regaló entradas para oír al químico Humphry Davy. Faraday pasó en limpio las conferencias, encuadernó las 386 páginas y se las envió. El 1 de marzo de 1813 empezó a trabajar como su ayudante de laboratorio."
+      },
+      "details": {
+        "en": "Davy, his eyes hurt by an explosion in the laboratory, first took him on for a few days as a secretary, and warned him that science paid badly. Then an assistant was dismissed for fighting, and Davy sent for the young bookbinder. Faraday, 21, moved into rooms in the Royal Institution, in Albemarle Street. Its basement laboratory was to be his workplace for half a century, and the building his home for most of that time.",
+        "es": "Davy, con los ojos lastimados por una explosión en el laboratorio, primero lo tomó unos días como secretario, y le advirtió que la ciencia pagaba mal. Después despidieron a un ayudante por pelear, y Davy mandó llamar al joven encuadernador. Faraday, de 21 años, se mudó a unas habitaciones de la Royal Institution, en Albemarle Street. El laboratorio del sótano iba a ser su lugar de trabajo durante medio siglo, y el edificio su casa durante casi todo ese tiempo."
+      },
+      "places": [
+        {
+          "name": { "en": "Humphry Davy", "es": "Humphry Davy" },
+          "at": [-0.1421, 51.5096],
+          "cat": "person",
+          "type": "person",
+          "date": "1813-03-01",
+          "life": ["1778-12-17", "1829-05-29"],
+          "text": {
+            "en": "The most admired chemist of his day: with the electric battery he discovered sodium and potassium, and he invented the miners' safety lamp. He gave Faraday his start, then tried to keep him out of the Royal Society.",
+            "es": "El químico más admirado de su tiempo: con la pila eléctrica descubrió el sodio y el potasio, e inventó la lámpara de seguridad de los mineros. Le dio a Faraday su oportunidad, y luego quiso cerrarle la Royal Society."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1814",
+      "kind": "journey",
+      "place": { "en": "Florence, Italy", "es": "Florencia, Italia" },
+      "at": [11.2463, 43.7792],
+      "title": { "en": "A diamond burns in Florence", "es": "Un diamante arde en Florencia" },
+      "text": {
+        "en": "Davy took him across Europe as his assistant and, to Faraday's dismay, his valet. In Florence they burned a diamond with the Grand Duke's great lens and confirmed that it is nothing but carbon, like charcoal.",
+        "es": "Davy lo llevó por Europa como su ayudante y, para disgusto de Faraday, como su criado. En Florencia quemaron un diamante con la gran lente del Gran Duque y confirmaron que no es más que carbono, como el carbón."
+      },
+      "details": {
+        "en": "They left London on 13 October 1813 and were away for eighteen months. Britain and France were at war, but the French government let the famous chemist travel. In Paris Faraday met Ampère and watched Davy show that a strange violet substance was a new element, iodine. In Milan he met Volta, the inventor of the battery. Lady Davy treated him as a servant, and he came close to going home. He returned in April 1815 with some French and Italian and the acquaintance of Europe's best scientists. The tour was the only university he ever had.",
+        "es": "Salieron de Londres el 13 de octubre de 1813 y estuvieron fuera dieciocho meses. Gran Bretaña y Francia estaban en guerra, pero el gobierno francés dejó viajar al famoso químico. En París, Faraday conoció a Ampère y vio a Davy demostrar que una extraña sustancia violeta era un elemento nuevo, el yodo. En Milán conoció a Volta, el inventor de la pila. Lady Davy lo trataba como a un sirviente, y él estuvo a punto de volverse. Regresó en abril de 1815 con algo de francés e italiano y conociendo a los mejores científicos de Europa. El viaje fue la única universidad que tuvo."
+      },
+      "places": [
+        {
+          "name": { "en": "The Grand Duke's burning lens", "es": "La lente del Gran Duque" },
+          "at": [11.2559, 43.7677],
+          "cat": "place",
+          "type": "site",
+          "icon": "🔍",
+          "date": "1814",
+          "text": {
+            "en": "The lens that Davy and Faraday used, 45 cm wide and made around 1690, survives. It is shown in Room XVII of the Museo Galileo in Florence.",
+            "es": "La lente que usaron Davy y Faraday, de 45 cm de ancho y hecha hacia 1690, todavía existe. Se exhibe en la sala XVII del Museo Galileo de Florencia."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1821-09",
+      "kind": "made",
+      "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+      "at": [-0.1425, 51.5098],
+      "title": { "en": "The first electric motor", "es": "El primer motor eléctrico" },
+      "text": {
+        "en": "In the basement laboratory he hung a wire into a cup of mercury with a magnet standing in it. When current flowed, the wire circled the magnet without stopping: electricity had become motion.",
+        "es": "En el laboratorio del sótano colgó un alambre dentro de una copa de mercurio con un imán en el centro. Al pasar la corriente, el alambre giró alrededor del imán sin detenerse: la electricidad se había vuelto movimiento."
+      },
+      "details": {
+        "en": "The year before, the Danish scientist Hans Christian Ørsted had found that an electric current moves a compass needle. Faraday reasoned that the magnetic force must run in circles round the wire, and built this device to show it. Every electric motor, from a fan to a train, descends from it. That June he had married Sarah Barnard, the sister of a friend, from his own small church. They lived above the laboratory, had no children and stayed together for 46 years.",
+        "es": "El año anterior, el danés Hans Christian Ørsted había descubierto que una corriente eléctrica mueve la aguja de una brújula. Faraday razonó que la fuerza magnética debía dar vueltas alrededor del alambre, y construyó este aparato para mostrarlo. Todos los motores eléctricos, del ventilador al tren, descienden de él. En junio de ese año se había casado con Sarah Barnard, hermana de un amigo y de su misma iglesia. Vivieron sobre el laboratorio, no tuvieron hijos y estuvieron juntos 46 años."
+      },
+      "places": [
+        {
+          "name": { "en": "Faraday's electric motor", "es": "El motor eléctrico de Faraday" },
+          "at": [-0.1428, 51.5099],
+          "cat": "opus",
+          "type": "invention",
+          "icon": "⚙️",
+          "date": "1822",
+          "by": { "en": "Michael Faraday", "es": "Michael Faraday" },
+          "text": {
+            "en": "A wire, a magnet and a bath of mercury. This one, built in 1822, is the only motor made by Faraday that survives. It is shown in his own laboratory, in the basement of the Royal Institution.",
+            "es": "Un alambre, un imán y un baño de mercurio. Este, construido en 1822, es el único motor hecho por Faraday que se conserva. Se exhibe en su propio laboratorio, en el sótano de la Royal Institution."
+          }
+        },
+        {
+          "name": { "en": "Sarah Barnard", "es": "Sarah Barnard" },
+          "at": [-0.1421, 51.5096],
+          "cat": "person",
+          "type": "person",
+          "date": "1821-06-12",
+          "life": ["1800", "1879"],
+          "text": {
+            "en": "Michael and Sarah married on 12 June 1821. Asked once why she did not study chemistry, she answered that she was content to be the pillow of his mind.",
+            "es": "Michael y Sarah se casaron el 12 de junio de 1821. Una vez le preguntaron por qué no estudiaba química, y contestó que le bastaba con ser la almohada de su mente."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1825",
+      "kind": "made",
+      "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+      "at": [-0.1425, 51.5098],
+      "title": { "en": "Benzene, and science for everyone", "es": "El benceno, y ciencia para todos" },
+      "text": {
+        "en": "Now director of the laboratory, Faraday found a new liquid in the oily dregs of lighting gas: benzene, the starting point of many plastics, dyes and medicines. He also began to open science to the public.",
+        "es": "Ya director del laboratorio, Faraday halló un líquido nuevo en los restos aceitosos del gas de alumbrado: el benceno, base de muchos plásticos, tintes y medicinas. También empezó a abrirle la ciencia al público."
+      },
+      "details": {
+        "en": "London was starting to light its houses with gas, and Faraday studied the liquid left at the bottom. Two years earlier he had been the first to turn a gas, chlorine, into a liquid. In 1825 the Royal Institution gave its first Christmas Lectures for children, and soon afterwards its Friday Evening Discourses for adults. Both were his idea, and both are still held. He trained himself to speak well, and became the best-loved science lecturer of his time.",
+        "es": "Londres empezaba a alumbrar sus casas con gas, y Faraday estudió el líquido que quedaba en el fondo. Dos años antes había sido el primero en convertir un gas, el cloro, en líquido. En 1825 la Royal Institution dio sus primeras Conferencias de Navidad para niños, y poco después sus Discursos de los viernes para adultos. Las dos fueron idea suya, y las dos continúan hoy. Aprendió a hablar bien en público, y fue el conferencista de ciencia más querido de su tiempo."
+      }
+    },
+    {
+      "date": "1831-08-29",
+      "kind": "made",
+      "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+      "at": [-0.1425, 51.5098],
+      "title": { "en": "Electricity from a magnet", "es": "Electricidad a partir de un imán" },
+      "text": {
+        "en": "On 29 August 1831 he wound two coils of wire round an iron ring. Each time he switched the current on or off in one coil, a needle twitched on the other: magnetism was making electricity.",
+        "es": "El 29 de agosto de 1831 enrolló dos bobinas de alambre en un anillo de hierro. Cada vez que conectaba o cortaba la corriente en una, una aguja se movía en la otra: el magnetismo producía electricidad."
+      },
+      "details": {
+        "en": "It was the first transformer. The effect lasted only an instant, and Faraday saw why: what drives a current is a change in magnetism. On 17 October he pushed a bar magnet in and out of a coil, and current flowed for as long as the magnet moved. Soon he was spinning a copper disc between the poles of a magnet and drawing off a steady current: the first electric generator. Nearly all the electricity we use, whether it comes from coal, wind, water or the atom, is still made by moving magnets past coils of wire.",
+        "es": "Era el primer transformador. El efecto duraba solo un instante, y Faraday entendió por qué: lo que impulsa una corriente es un cambio en el magnetismo. El 17 de octubre metió y sacó una barra imantada de una bobina, y hubo corriente mientras el imán se movía. Poco después hacía girar un disco de cobre entre los polos de un imán y sacaba de él una corriente continua: el primer generador eléctrico. Casi toda la electricidad que usamos, venga del carbón, del viento, del agua o del átomo, se sigue produciendo al mover imanes junto a bobinas de alambre."
+      },
+      "places": [
+        {
+          "name": { "en": "Faraday's induction ring", "es": "El anillo de inducción de Faraday" },
+          "at": [-0.1428, 51.5099],
+          "cat": "opus",
+          "type": "invention",
+          "icon": "⚡",
+          "date": "1831-08-29",
+          "by": { "en": "Michael Faraday", "es": "Michael Faraday" },
+          "text": {
+            "en": "An iron ring 17 cm across, wound by hand with copper wire insulated with cotton: the first transformer. Faraday made it in the basement of the Royal Institution, and it is on show there in the Faraday Museum.",
+            "es": "Un anillo de hierro de 17 cm de ancho, envuelto a mano con alambre de cobre aislado con algodón: el primer transformador. Faraday lo hizo en el sótano de la Royal Institution, y allí se exhibe, en el Museo Faraday."
+          }
+        },
+        {
+          "name": { "en": "Faraday's generator", "es": "El generador de Faraday" },
+          "at": [-0.1421, 51.5096],
+          "cat": "opus",
+          "type": "invention",
+          "icon": "🧲",
+          "date": "1831-10",
+          "by": { "en": "Michael Faraday", "es": "Michael Faraday" },
+          "text": {
+            "en": "A coil of wire on a hollow tube and a bar magnet to slide through it, made in October 1831. It proved that a moving magnet makes a current flow. It is shown in the Faraday Museum too.",
+            "es": "Una bobina de alambre sobre un tubo hueco y una barra imantada para deslizar por dentro, hechos en octubre de 1831. Probó que un imán en movimiento hace circular una corriente. También se exhibe en el Museo Faraday."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1836",
+      "about": true,
+      "kind": "made",
+      "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+      "at": [-0.1425, 51.5098],
+      "title": { "en": "Inside the cage of sparks", "es": "Dentro de la jaula de chispas" },
+      "text": {
+        "en": "In the lecture hall he built a cube of wood, wire and tinfoil, over three and a half metres a side, and went inside while it was charged until sparks flew from its walls. His instruments felt nothing.",
+        "es": "En la sala de conferencias armó un cubo de madera, alambre y papel de estaño de más de tres metros y medio de lado, y se metió adentro mientras lo cargaban hasta sacarle chispas. Sus instrumentos no sintieron nada."
+      },
+      "details": {
+        "en": "We call it a Faraday cage. Electric charge stays on the outside of a metal shell or mesh, so whatever is inside is shielded. That is why the people in a car or a plane are safe when lightning strikes it, and why the door of a microwave oven has a metal mesh. In the same years he passed currents through liquids and found that the amount of a substance they set free depends exactly on how much electricity flows. With the Cambridge scholar William Whewell he made up the words of this new science: electrode, anode, cathode and ion.",
+        "es": "Hoy la llamamos jaula de Faraday. La carga eléctrica se queda en la parte de afuera de una cubierta o una malla de metal, así que lo que está adentro queda protegido. Por eso quienes viajan en un auto o en un avión están a salvo si les cae un rayo, y por eso la puerta del horno de microondas tiene una malla metálica. En esos mismos años hizo pasar corrientes por líquidos y descubrió que la cantidad de sustancia que liberan depende exactamente de cuánta electricidad circula. Con el erudito de Cambridge William Whewell inventó las palabras de esta nueva ciencia: electrodo, ánodo, cátodo e ion."
+      }
+    },
+    {
+      "date": "1845-09-13",
+      "kind": "made",
+      "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+      "at": [-0.1425, 51.5098],
+      "title": { "en": "A magnet twists light", "es": "Un imán tuerce la luz" },
+      "text": {
+        "en": "Overwork broke his health in 1839. Back at the bench, on 13 September 1845 he sent a beam of light through a block of heavy glass beside a powerful electromagnet. The magnet twisted the light.",
+        "es": "El exceso de trabajo le quebró la salud en 1839. De vuelta en el laboratorio, el 13 de septiembre de 1845 hizo pasar un rayo de luz por un bloque de vidrio pesado junto a un potente electroimán. El imán torció la luz."
+      },
+      "details": {
+        "en": "A letter from William Thomson, a mathematician of 21 who would become Lord Kelvin, had set him searching again. This was the first sign that light is related to magnetism and electricity. Weeks later he found that everything, even glass and water, responds to a strong enough magnet. He came to picture space itself as filled with invisible lines of force: what we now call a field. Faraday knew almost no mathematics. In the 1860s James Clerk Maxwell turned his pictures into equations, and they showed that light is an electromagnetic wave.",
+        "es": "Una carta de William Thomson, un matemático de 21 años que llegaría a ser lord Kelvin, lo había puesto a buscar de nuevo. Era la primera señal de que la luz está relacionada con el magnetismo y la electricidad. Semanas después descubrió que todo, hasta el vidrio y el agua, responde a un imán suficientemente fuerte. Llegó a imaginar el espacio mismo lleno de líneas de fuerza invisibles: lo que hoy llamamos un campo. Faraday casi no sabía matemáticas. En la década de 1860 James Clerk Maxwell convirtió sus imágenes en ecuaciones, y estas mostraron que la luz es una onda electromagnética."
+      },
+      "places": [
+        {
+          "name": { "en": "Faraday's magnetic laboratory", "es": "El laboratorio magnético de Faraday" },
+          "at": [-0.1428, 51.5099],
+          "cat": "place",
+          "type": "site",
+          "date": "1845",
+          "text": {
+            "en": "The basement room, once a servants' hall, where he made these discoveries. It is kept as it looked in the 1850s, with his great electromagnet, and is the heart of the Faraday Museum.",
+            "es": "La habitación del sótano, antes comedor de los sirvientes, donde hizo estos descubrimientos. Se conserva como era en la década de 1850, con su gran electroimán, y es el corazón del Museo Faraday."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1858",
+      "kind": "home",
+      "place": { "en": "Hampton Court, London, England", "es": "Hampton Court, Londres, Inglaterra" },
+      "at": [-0.3426, 51.4053],
+      "title": { "en": "A house from the Queen", "es": "Una casa de la reina" },
+      "text": {
+        "en": "Queen Victoria gave him the use of a house on the green beside Hampton Court Palace. He and Sarah spent more and more of each year there as his memory failed.",
+        "es": "La reina Victoria le cedió el uso de una casa junto al palacio de Hampton Court. Él y Sarah pasaron allí cada vez más tiempo, a medida que a él le fallaba la memoria."
+      },
+      "details": {
+        "en": "He wanted no titles. Twice he was asked to be president of the Royal Society, and twice he declined; to his friend John Tyndall he said: I must remain plain Michael Faraday to the last. In 1861 he gave up lecturing, and in 1865 he ended his work for the Royal Institution, after more than fifty years.",
+        "es": "No quiso títulos. Dos veces le pidieron que presidiera la Royal Society, y dos veces dijo que no; a su amigo John Tyndall le explicó: debo seguir siendo simplemente Michael Faraday hasta el final. En 1861 dejó de dar conferencias, y en 1865 terminó su trabajo en la Royal Institution, después de más de cincuenta años."
+      }
+    },
+    {
+      "date": "1860-12",
+      "kind": "moment",
+      "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+      "at": [-0.1425, 51.5098],
+      "title": { "en": "The story of a candle", "es": "La historia de una vela" },
+      "text": {
+        "en": "At 69 Faraday gave his last Christmas Lectures for children: six talks on everything a burning candle can teach. Printed in 1861 as The Chemical History of a Candle, they are still in print.",
+        "es": "A los 69 años Faraday dio sus últimas Conferencias de Navidad para niños: seis charlas sobre todo lo que puede enseñar una vela encendida. Publicadas en 1861 como La historia química de una vela, se siguen imprimiendo."
+      },
+      "details": {
+        "en": "He had given the Christmas Lectures nineteen times since 1827. There is no better door, he told his young audience, by which to enter the study of nature than the flame of a candle. He served the public outside the lecture hall too: he worked for years to improve lighthouses, investigated a deadly explosion in a coal mine, and in 1855 wrote to The Times that the Thames had become a sewer.",
+        "es": "Había dado las Conferencias de Navidad diecinueve veces desde 1827. No hay mejor puerta, les dijo a los niños, para entrar al estudio de la naturaleza que la llama de una vela. También sirvió al público fuera de la sala: trabajó durante años para mejorar los faros, investigó una explosión mortal en una mina de carbón, y en 1855 escribió al diario The Times que el Támesis se había vuelto una cloaca."
+      },
+      "places": [
+        {
+          "name": { "en": "The Chemical History of a Candle", "es": "La historia química de una vela" },
+          "at": [-0.1421, 51.5096],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🕯️",
+          "date": "1861",
+          "by": { "en": "Michael Faraday", "es": "Michael Faraday" },
+          "text": {
+            "en": "Six lectures for young people, edited by William Crookes and published in 1861. With the simplest experiments they explain what a flame is, what air and water are made of and how we breathe.",
+            "es": "Seis conferencias para jóvenes, editadas por William Crookes y publicadas en 1861. Con experimentos muy sencillos explican qué es una llama, de qué están hechos el aire y el agua y cómo respiramos."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1867-08-25",
+      "kind": "died",
+      "place": { "en": "Hampton Court, London, England", "es": "Hampton Court, Londres, Inglaterra" },
+      "at": [-0.3426, 51.4053],
+      "title": { "en": "He dies at Hampton Court", "es": "Muere en Hampton Court" },
+      "text": {
+        "en": "Faraday died at 75, in his chair, in the house by Hampton Court Palace. As he had wished, the funeral was small and plain. He lies under a simple stone in Highgate Cemetery, in London.",
+        "es": "Faraday murió a los 75 años, en su sillón, en la casa junto al palacio de Hampton Court. Como él quería, el funeral fue pequeño y sencillo. Descansa bajo una lápida simple en el cementerio de Highgate, en Londres."
+      },
+      "details": {
+        "en": "His grave is in the plot of his own small church, the Sandemanians. In 1931, a hundred years after the induction ring, a memorial stone to him was unveiled in the floor of Westminster Abbey, next to the grave of Isaac Newton.",
+        "es": "Su tumba está en la parcela de su pequeña iglesia, la de los sandemanianos. En 1931, cien años después del anillo de inducción, se descubrió una lápida en su memoria en el piso de la abadía de Westminster, junto a la tumba de Isaac Newton."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Faraday Museum, Royal Institution", "es": "Museo Faraday, Royal Institution" },
+      "at": [-0.1425, 51.5098],
+      "kind": "museum",
+      "text": {
+        "en": "A free museum in the building where he lived and worked. In the basement are his magnetic laboratory, arranged as in the 1850s, the induction ring, his first generator and the only one of his motors that survives.",
+        "es": "Un museo gratuito en el edificio donde vivió y trabajó. En el sótano están su laboratorio magnético, arreglado como en la década de 1850, el anillo de inducción, su primer generador y el único de sus motores que se conserva."
+      }
+    },
+    {
+      "name": { "en": "Faraday's grave, Highgate Cemetery", "es": "Tumba de Faraday, cementerio de Highgate" },
+      "at": [-0.147, 51.567],
+      "kind": "grave",
+      "text": {
+        "en": "His plain headstone stands in the plot of the Sandemanian church. Check the cemetery's opening times and tours before you go.",
+        "es": "Su lápida sencilla está en la parcela de la iglesia sandemaniana. Conviene consultar los horarios y las visitas guiadas antes de ir."
+      }
+    },
+    {
+      "name": { "en": "Riebau's bookshop, 48 Blandford Street", "es": "La librería de Riebau, Blandford Street 48" },
+      "at": [-0.1543, 51.5185],
+      "kind": "site",
+      "text": {
+        "en": "The house in Marylebone where he was an apprentice. A plaque put up in 1876 reads: Michael Faraday, man of science, apprentice here.",
+        "es": "La casa de Marylebone donde fue aprendiz. Una placa colocada en 1876 dice: Michael Faraday, hombre de ciencia, aprendiz aquí."
+      }
+    },
+    {
+      "name": { "en": "Michael Faraday Memorial, Elephant and Castle", "es": "Monumento a Michael Faraday, Elephant and Castle" },
+      "at": [-0.1006, 51.495],
+      "kind": "memorial",
+      "text": {
+        "en": "A box of polished steel put up in 1961 close to where he was born. Fittingly, it houses an electrical substation of the London Underground.",
+        "es": "Una caja de acero pulido levantada en 1961 cerca de donde nació. Como corresponde, adentro hay una subestación eléctrica del metro de Londres."
+      }
+    },
+    {
+      "name": { "en": "Faraday memorial, Westminster Abbey", "es": "Lápida de Faraday, abadía de Westminster" },
+      "at": [-0.1274, 51.4994],
+      "kind": "memorial",
+      "text": {
+        "en": "His memorial is set in the floor of the nave, just north of Isaac Newton's grave and beside the memorial to James Clerk Maxwell.",
+        "es": "Su lápida conmemorativa está en el piso de la nave, justo al norte de la tumba de Isaac Newton y junto a la de James Clerk Maxwell."
+      },
+      "wiki": { "en": "Westminster Abbey", "es": "Abadía de Westminster" },
+      "whs": 426
+    }
+  ],
+  "legacy": {
+    "en": "Almost all the electricity we use is still made as Faraday showed in 1831, by moving magnets past coils of wire, and every electric motor descends from his turning wire. His picture of invisible fields filling space, put into equations by James Clerk Maxwell, led to radio and to much of modern physics. The farad, the unit of electrical capacitance, is named after him.",
+    "es": "Casi toda la electricidad que usamos se sigue produciendo como Faraday mostró en 1831, moviendo imanes junto a bobinas de alambre, y todos los motores eléctricos descienden de su alambre giratorio. Su imagen de campos invisibles que llenan el espacio, puesta en ecuaciones por James Clerk Maxwell, llevó a la radio y a buena parte de la física moderna. El faradio, la unidad de capacidad eléctrica, lleva su nombre."
+  },
+  "sources": [
+    { "title": "Royal Institution: Michael Faraday (1791-1867)", "url": "https://www.rigb.org/explore-science/explore/person/michael-faraday-1791-1867" },
+    { "title": "Royal Institution: Michael Faraday's ring-coil apparatus", "url": "https://www.rigb.org/explore-science/explore/collection/michael-faradays-ring-coil-apparatus" },
+    { "title": "Royal Institution: History of the Christmas Lectures", "url": "https://www.rigb.org/christmas-lectures/history-christmas-lectures" },
+    { "title": "L. Pearce Williams, 'Faraday, Michael', Complete Dictionary of Scientific Biography (Encyclopedia.com)", "url": "https://www.encyclopedia.com/people/science-and-technology/physics-biographies/michael-faraday" },
+    { "title": "MacTutor History of Mathematics: Michael Faraday", "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Faraday/" },
+    { "title": "Institution of Engineering and Technology, Archives biographies: Michael Faraday", "url": "https://www.theiet.org/membership/library-and-archives/the-iet-archives/biographies/michael-faraday" },
+    { "title": "English Heritage blue plaques: Michael Faraday, 48 Blandford Street", "url": "https://www.english-heritage.org.uk/visit/blue-plaques/michael-faraday/" },
+    { "title": "Museo Galileo, Florence: the burning lens (inv. 2545)", "url": "https://catalogue.museogalileo.it/object/Lens.html" },
+    { "title": "Westminster Abbey: Michael Faraday", "url": "https://www.westminster-abbey.org/abbey-commemorations/commemorations/michael-faraday" },
+    { "title": "Michael Faraday, Experimental Researches in Electricity, vol. 1 (Project Gutenberg)", "url": "https://www.gutenberg.org/ebooks/14986" }
+  ]
+}

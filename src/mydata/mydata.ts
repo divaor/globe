@@ -11,8 +11,12 @@ import { loadJSON, shapesFrom, type Shape } from '../data/store';
 import { setExtraField } from '../compare/model';
 import type { App } from '../app/app';
 import type { LayerDef, LayerInstance, Legend, LegendAction, RenderCtx, InfoRow } from '../layers/types';
+import { crowdOf } from '../layers/crowd';
 import type { Built, Geo, RegionMeta } from './parse';
 import { regionId } from './parse';
+
+/** The zoom from which the reader's points that overlap move apart. */
+const POINTS_APART = 7;
 
 /** A table kept on this device. */
 export interface MySet {
@@ -267,6 +271,8 @@ export class MyData {
     }
 
     // Points.
+    type Dot = { p: (typeof set.points)[number]; i: number; r: number };
+    let dots: Dot[] | null = null;
     const sizeCol = cols.find((c) => c.kind === 'number');
     const sizeMax = (() => { const v = sizeCol ? Object.values(set.values[sizeCol.key]?.[''] ?? {}) as number[] : []; return v.length ? Math.max(...v.map(Math.abs)) : 0; })();
     const radius = (i: number) => {
@@ -279,18 +285,20 @@ export class MyData {
       drawOverlay(rc: RenderCtx, inst) {
         const c = colOf(inst), sc = scaleOf(inst), vals = valuesOf(inst);
         const { ctx } = rc;
-        const order = set.points.map((p, i) => ({ p, i, r: radius(i) })).sort((a, b) => b.r - a.r);
+        // The bigger first; close up, points that overlap move apart, each with a line to its place (layers/crowd.ts).
+        const crowd = crowdOf<Dot>(inst, POINTS_APART);
+        const order = crowd.place(rc, () => (dots ??= set.points.map((p, i) => ({ p, i, r: radius(i) })).sort((a, b) => b.r - a.r)), (d) => [d.p.lon, d.p.lat], (d) => d.r);
+        const colour = (d: Dot) => { const v = vals[`p${d.i}`]; return c?.kind === 'category' && v !== undefined ? sc.color(v) : c?.kind === 'number' && v !== undefined && c !== sizeCol ? sc.color(v) : 'rgba(255, 146, 43, 0.85)'; };
+        crowd.leaders(rc, colour);
+        const alpha = ctx.globalAlpha;
         ctx.lineWidth = 1.2;
-        for (const { p, i, r } of order) {
-          const xy = rc.project(p.lon, p.lat);
-          if (!xy) continue;
-          const v = vals[`p${i}`];
+        for (const d of order) {
           ctx.beginPath();
-          ctx.arc(xy[0], xy[1], r, 0, Math.PI * 2);
-          ctx.fillStyle = c?.kind === 'category' && v !== undefined ? sc.color(v) : c?.kind === 'number' && v !== undefined && c !== sizeCol ? sc.color(v) : 'rgba(255, 146, 43, 0.85)';
-          ctx.globalAlpha = 0.85;
+          ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+          ctx.fillStyle = colour(d.it);
+          ctx.globalAlpha = alpha * 0.85;
           ctx.fill();
-          ctx.globalAlpha = 1;
+          ctx.globalAlpha = alpha;
           ctx.strokeStyle = rc.theme.dark ? 'rgba(255,255,255,0.85)' : 'rgba(20,20,30,0.7)';
           ctx.stroke();
         }
@@ -298,11 +306,10 @@ export class MyData {
         ctx.font = `600 ${11.5 * (rc.dpr ? 1 : 1)}px system-ui, sans-serif`;
         ctx.textBaseline = 'middle';
         const placed: [number, number, number, number][] = [];
-        for (const { p, r } of order) {
+        for (const d of order) {
+          const p = d.it.p;
           if (!p.label) continue;
-          const xy = rc.project(p.lon, p.lat);
-          if (!xy) continue;
-          const w = ctx.measureText(p.label).width, x = xy[0] + r + 4, y = xy[1];
+          const w = ctx.measureText(p.label).width, x = d.x + d.r + 4, y = d.y;
           if (placed.some((q) => x < q[2] && x + w > q[0] && y - 7 < q[3] && y + 7 > q[1])) continue;
           placed.push([x, y - 7, x + w, y + 7]);
           ctx.lineJoin = 'round'; ctx.lineWidth = 3; ctx.strokeStyle = rc.theme.dark ? 'rgba(0,0,0,0.65)' : 'rgba(255,255,255,0.85)';
@@ -316,16 +323,9 @@ export class MyData {
         const lg = c?.kind === 'category' || (c?.kind === 'number' && c !== sizeCol) ? scaleOf(inst).legend : { kind: 'categories' as const, title: set.name, items: [{ color: 'rgba(255, 146, 43, 0.85)', shape: 'dot' as const, label: L(`${set.points.length} places`, `${set.points.length} lugares`) }] };
         return withActions({ ...lg, note: sizeCol ? L(`Size: ${sizeCol.name}`, `Tamaño: ${sizeCol.name}`) : undefined }, inst);
       },
-      tap: (lon, lat, inst, ui) => {
-        let best = -1, bd = 16;
-        set.points.forEach((p, i) => {
-          const xy = ui.project(p.lon, p.lat);
-          if (!xy) return;
-          const d = Math.hypot(xy[0] - ui.x, xy[1] - ui.y) - radius(i) + 4;
-          if (d < bd) { bd = d; best = i; }
-        });
-        if (best < 0) return false;
-        const p = set.points[best];
+      tap: (_lon, _lat, inst, ui) => {
+        const p = crowdOf<Dot>(inst, POINTS_APART).pick(ui, 16)?.p;
+        if (!p) return false;
         const rows: InfoRow[] = set.header.map((name, j) => ({ label: name, value: p.row[j] ?? '' })).filter((r) => r.value !== '');
         ui.card('📍', p.label || `${p.lat.toFixed(3)}, ${p.lon.toFixed(3)}`, set.name, rows);
         return true;

@@ -1,0 +1,278 @@
+{
+  "id": "archimedes",
+  "qid": "Q8739",
+  "name": { "en": "Archimedes", "es": "Arquímedes" },
+  "icon": "📐",
+  "field": "science",
+  "known": { "en": "Greek mathematician and inventor", "es": "Matemático e inventor griego" },
+  "born": "-0287",
+  "bornAbout": true,
+  "died": "-0212",
+  "diedAbout": true,
+  "summary": {
+    "en": "The greatest mathematician of antiquity lived and died in Syracuse, in Sicily. He measured the circle and the sphere, explained why ships float, and with his machines helped hold off a Roman army for two years.",
+    "es": "El mayor matemático de la Antigüedad vivió y murió en Siracusa, en Sicilia. Midió el círculo y la esfera, explicó por qué flotan los barcos y, con sus máquinas, ayudó a frenar dos años a un ejército romano."
+  },
+  "unsure": {
+    "en": "Almost everything told about his life comes from writers who lived long after him. His own books give his ideas but hardly any dates, so the years of his birth, his travels and his works are historians' estimates.",
+    "es": "Casi todo lo que se cuenta de su vida viene de autores que vivieron mucho después. Sus propios libros dan sus ideas pero casi ninguna fecha, así que los años de su nacimiento, sus viajes y sus obras son cálculos de los historiadores."
+  },
+  "steps": [
+    {
+      "date": "-0287",
+      "about": true,
+      "kind": "born",
+      "place": { "en": "Syracuse, Sicily, Italy", "es": "Siracusa, Sicilia, Italia" },
+      "at": [15.2833, 37.0833],
+      "title": { "en": "Born in Greek Syracuse", "es": "Nace en la Siracusa griega" },
+      "text": {
+        "en": "Archimedes was born in Syracuse, a rich Greek city on the east coast of Sicily. In one of his books he names his father: Phidias, an astronomer.",
+        "es": "Arquímedes nació en Siracusa, una rica ciudad griega de la costa este de Sicilia. En uno de sus libros nombra a su padre: Fidias, un astrónomo."
+      },
+      "details": {
+        "en": "Greeks from Corinth had founded Syracuse about 450 years earlier, and it had grown into one of the largest cities of the Greek world. When Archimedes was a boy, a general named Hiero took power there and soon became king. Hiero II ruled for more than fifty years and made a lasting alliance with Rome. He was the friend and patron of Archimedes and, according to Plutarch, his relative.",
+        "es": "Griegos de Corinto habían fundado Siracusa unos 450 años antes, y había llegado a ser una de las ciudades más grandes del mundo griego. Cuando Arquímedes era niño, un general llamado Hierón tomó el poder y poco después se hizo rey. Hierón II gobernó más de cincuenta años y selló una alianza duradera con Roma. Fue amigo y protector de Arquímedes y, según Plutarco, también su pariente."
+      },
+      "unsure": {
+        "en": "The year comes from a Byzantine writer of the 12th century, John Tzetzes, who says Archimedes died at 75. No older source gives his age.",
+        "es": "El año sale de un autor bizantino del siglo XII, Juan Tzetzes, quien dice que Arquímedes murió a los 75 años. Ninguna fuente más antigua da su edad."
+      }
+    },
+    {
+      "date": "-0265",
+      "about": true,
+      "kind": "study",
+      "by": "sea",
+      "place": { "en": "Alexandria, Egypt", "es": "Alejandría, Egipto" },
+      "at": [29.9158, 31.2018],
+      "title": { "en": "Among the scholars of Alexandria", "es": "Entre los sabios de Alejandría" },
+      "text": {
+        "en": "As a young man he probably studied in Alexandria, the city of the great Library, where the followers of Euclid taught. All his life he sent his discoveries to friends there.",
+        "es": "De joven probablemente estudió en Alejandría, la ciudad de la gran Biblioteca, donde enseñaban los seguidores de Euclides. Toda su vida envió sus descubrimientos a amigos de allí."
+      },
+      "details": {
+        "en": "His letters name them: the astronomer Conon of Samos, whom he admired; then Dositheus, who had known Conon; and Eratosthenes, the head of the Library. A later tradition says that in Egypt he invented the water screw, a spiral turning inside a tube that lifts water uphill. Farmers along the Nile watered their fields with such screws, and the machine still bears his name.",
+        "es": "Sus cartas los nombran: el astrónomo Conón de Samos, a quien admiraba; después Dositeo, que había conocido a Conón; y Eratóstenes, el director de la Biblioteca. Una tradición posterior dice que en Egipto inventó el tornillo de agua, una espiral que gira dentro de un tubo y hace subir el agua. Los campesinos del Nilo regaban sus campos con tornillos así, y la máquina todavía lleva su nombre."
+      },
+      "unsure": {
+        "en": "No ancient text says plainly that he studied in Alexandria, and none gives a date. Historians think it likely because of his friends there and the tradition that he invented the screw in Egypt.",
+        "es": "Ningún texto antiguo dice claramente que estudió en Alejandría, y ninguno da una fecha. Los historiadores lo creen probable por sus amigos de allí y por la tradición de que inventó el tornillo en Egipto."
+      },
+      "places": [
+        {
+          "id": "library-of-alexandria",
+          "name": { "en": "Library of Alexandria", "es": "Biblioteca de Alejandría" },
+          "at": [29.9092, 31.2089],
+          "cat": "place",
+          "type": "institution",
+          "date": "-0285",
+          "text": {
+            "en": "The greatest library of the ancient world, part of the Museum, where the Greek kings of Egypt paid scholars to study. Nothing of it remains; a modern library stands near the place.",
+            "es": "La mayor biblioteca del mundo antiguo, parte del Museo, donde los reyes griegos de Egipto pagaban a los sabios para que estudiaran. No queda nada de ella; una biblioteca moderna se levanta cerca del lugar."
+          },
+          "wiki": { "en": "Library of Alexandria", "es": "Biblioteca de Alejandría" }
+        },
+        {
+          "name": { "en": "Eratosthenes", "es": "Eratóstenes" },
+          "at": [29.9105, 31.2115],
+          "cat": "person",
+          "type": "person",
+          "date": "-0245",
+          "life": ["-0276", "-0194"],
+          "text": {
+            "en": "Head of the Library from about 245 BC, famous for measuring the size of the Earth. Archimedes sent him The Method, the book that explains how he made his discoveries.",
+            "es": "Director de la Biblioteca desde alrededor de 245 a. C., famoso por medir el tamaño de la Tierra. Arquímedes le envió El método, el libro donde explica cómo hacía sus descubrimientos."
+          },
+          "wiki": { "en": "Eratosthenes", "es": "Eratóstenes" }
+        }
+      ]
+    },
+    {
+      "date": "-0250",
+      "about": true,
+      "kind": "made",
+      "by": "sea",
+      "place": { "en": "Syracuse, Sicily, Italy", "es": "Siracusa, Sicilia, Italia" },
+      "at": [15.2875, 37.0692],
+      "title": { "en": "The king's crown", "es": "La corona del rey" },
+      "text": {
+        "en": "King Hiero suspected his goldsmith of mixing silver into a golden crown. According to the Roman writer Vitruvius, Archimedes saw how to test it as he stepped into his bath, and cried 'Eureka!': I have found it.",
+        "es": "El rey Hierón sospechaba que su orfebre había mezclado plata en una corona de oro. Según el escritor romano Vitruvio, Arquímedes vio cómo comprobarlo al meterse en la bañera, y gritó «¡Eureka!»: lo encontré."
+      },
+      "details": {
+        "en": "Vitruvius wrote two centuries later, and his picture of the naked scholar running home through the streets may be a legend. The science is real. In his book On Floating Bodies, Archimedes proved that anything placed in water is pushed up by a force equal to the weight of the water it pushes aside. That is why a ship of heavy timber, or of steel, can float. It also tells pure gold from a mixture: silver is lighter than gold, so a crown with silver in it takes up more room.",
+        "es": "Vitruvio escribió dos siglos después, y su imagen del sabio desnudo corriendo a casa por las calles quizá sea una leyenda. La ciencia es real. En su libro Sobre los cuerpos flotantes, Arquímedes demostró que todo lo que se mete en el agua recibe un empuje hacia arriba igual al peso del agua que desplaza. Por eso puede flotar un barco de madera pesada, o de acero. Y sirve para distinguir el oro puro de una mezcla: la plata es más liviana que el oro, así que una corona con plata ocupa más espacio."
+      },
+      "unsure": {
+        "en": "The story has no date. Vitruvius, the first to tell it, wrote about 200 years after the event, and Archimedes' own books do not mention it.",
+        "es": "La historia no tiene fecha. Vitruvio, el primero en contarla, escribió unos 200 años después del hecho, y los libros del propio Arquímedes no la mencionan."
+      },
+      "places": [
+        {
+          "name": { "en": "Hiero II", "es": "Hierón II" },
+          "at": [15.2931, 37.0594],
+          "cat": "person",
+          "type": "person",
+          "date": "-0270",
+          "life": ["-0308", "-0215"],
+          "text": {
+            "en": "King of Syracuse for more than fifty years, and Rome's ally. He set Archimedes to work on ships and on the city's defences. His palace stood on the island of Ortygia.",
+            "es": "Rey de Siracusa durante más de cincuenta años, y aliado de Roma. Puso a Arquímedes a trabajar en barcos y en las defensas de la ciudad. Su palacio estaba en la isla de Ortigia."
+          }
+        }
+      ]
+    },
+    {
+      "date": "-0240",
+      "about": true,
+      "kind": "moment",
+      "place": { "en": "Syracuse, Sicily, Italy", "es": "Siracusa, Sicilia, Italia" },
+      "at": [15.2875, 37.0692],
+      "title": { "en": "A place to stand", "es": "Un punto de apoyo" },
+      "text": {
+        "en": "'Give me a place to stand and I will move the Earth,' Archimedes is said to have boasted. To prove it, Plutarch says, he sat on the shore and with ropes and pulleys drew a loaded ship towards him by hand.",
+        "es": "«Denme un punto de apoyo y moveré el mundo», cuentan que dijo Arquímedes. Para probarlo, dice Plutarco, se sentó en la orilla y con cuerdas y poleas arrastró hacia él, a mano, un barco cargado."
+      },
+      "details": {
+        "en": "Behind the tale is real mathematics. Archimedes proved the law of the lever: a small weight far from the pivot balances a large one close to it, so a long enough lever, or enough pulleys, lets one person move what a hundred could not. King Hiero put him to work. An ancient account says he had a hand in the Syracusia, one of the largest ships of antiquity, with a gymnasium, a garden and a bath on board, and that one man could pump out its hold with his water screw.",
+        "es": "Detrás del cuento hay matemáticas de verdad. Arquímedes demostró la ley de la palanca: un peso pequeño lejos del punto de apoyo equilibra a uno grande que está cerca, así que con una palanca bastante larga, o con suficientes poleas, una persona mueve lo que cien no podrían. El rey Hierón lo puso a trabajar. Un relato antiguo dice que participó en la construcción de la Siracusia, uno de los barcos más grandes de la Antigüedad, con gimnasio, jardín y baño a bordo, y que un solo hombre podía vaciar su bodega con su tornillo de agua."
+      },
+      "unsure": {
+        "en": "Plutarch and Pappus, who report the boast, wrote 300 and more than 500 years later. The great ship is described by Athenaeus, about AD 200, who copied an older account.",
+        "es": "Plutarco y Papo, que cuentan la frase, escribieron 300 y más de 500 años después. El gran barco lo describe Ateneo, hacia el año 200 d. C., que copió un relato más antiguo."
+      },
+      "places": [
+        {
+          "name": { "en": "Archimedes' screw", "es": "Tornillo de Arquímedes" },
+          "at": [15.2866, 37.0755],
+          "cat": "opus",
+          "type": "invention",
+          "icon": "🌀",
+          "date": "-0250",
+          "by": { "en": "Archimedes", "es": "Arquímedes" },
+          "text": {
+            "en": "A spiral that turns inside a tube and carries water upwards. It is first recorded on King Hiero's great ship. Whether Archimedes invented it or saw it in Egypt is debated; it is still used in pumps today.",
+            "es": "Una espiral que gira dentro de un tubo y lleva el agua hacia arriba. Aparece por primera vez en el gran barco del rey Hierón. Se discute si Arquímedes la inventó o la vio en Egipto; todavía se usa en bombas de agua."
+          },
+          "wiki": { "en": "Archimedes' screw", "es": "Tornillo de Arquímedes" }
+        }
+      ]
+    },
+    {
+      "date": "-0225",
+      "about": true,
+      "kind": "made",
+      "place": { "en": "Syracuse, Sicily, Italy", "es": "Siracusa, Sicilia, Italia" },
+      "at": [15.2875, 37.0692],
+      "title": { "en": "The sphere and the cylinder", "es": "La esfera y el cilindro" },
+      "text": {
+        "en": "At home in Syracuse he measured what no one had measured: the area of a circle, the surface and volume of a sphere. A ball, he proved, fills exactly two thirds of the can that just holds it.",
+        "es": "En su casa de Siracusa midió lo que nadie había medido: el área del círculo, la superficie y el volumen de la esfera. Una pelota, demostró, llena exactamente dos tercios de la lata en la que cabe justa."
+      },
+      "details": {
+        "en": "To pin down pi, the number that links a circle's width to the distance around it, he trapped the circle between two figures of 96 sides and showed that pi lies between 3 10/71 and 3 1/7. To find areas and volumes he cut shapes into thinner and thinner slices and added them up, an idea that returned 1,900 years later as calculus. In The Sand Reckoner he invented names for numbers huge enough to count the grains of sand that would fill the universe. Plutarch says he forgot to eat, and drew figures in the ashes of the fire.",
+        "es": "Para acorralar a pi, el número que une el ancho de un círculo con su contorno, encerró el círculo entre dos figuras de 96 lados y mostró que pi está entre 3 10/71 y 3 1/7. Para hallar áreas y volúmenes cortaba las figuras en rebanadas cada vez más finas y las sumaba, una idea que volvió 1900 años después con el cálculo. En El arenario inventó nombres para números tan enormes que alcanzaban para contar los granos de arena que llenarían el universo. Plutarco dice que se olvidaba de comer, y que dibujaba figuras en las cenizas del fuego."
+      },
+      "unsure": {
+        "en": "None of his books is dated. Historians place most of them in the second half of his life, between about 250 and 212 BC.",
+        "es": "Ninguno de sus libros tiene fecha. Los historiadores sitúan la mayoría en la segunda mitad de su vida, entre 250 y 212 a. C., aproximadamente."
+      }
+    },
+    {
+      "date": "-0213",
+      "kind": "struggle",
+      "place": { "en": "Syracuse, Sicily, Italy", "es": "Siracusa, Sicilia, Italia" },
+      "at": [15.2866, 37.0754],
+      "title": { "en": "One old man against Rome", "es": "Un anciano contra Roma" },
+      "text": {
+        "en": "Syracuse sided with Carthage, and a Roman fleet and army attacked its walls. Archimedes, in his seventies, had armed them: catapults for every distance, and cranes that seized ships and tipped them over.",
+        "es": "Siracusa se puso del lado de Cartago, y una flota y un ejército romanos atacaron sus murallas. Arquímedes, con más de setenta años, las había armado: catapultas para cada distancia y grúas que atrapaban los barcos y los volcaban."
+      },
+      "details": {
+        "en": "King Hiero had died in 215 BC, and the city broke its long alliance with Rome in the middle of the war against Hannibal. The historian Polybius, whose account is the oldest we have, describes stone-throwers and an iron claw let down on a chain, which lifted a ship's bow out of the water and let it drop. The Roman general Marcellus gave up the assault and settled down to starve the city out. The famous story that Archimedes burned the ships with mirrors appears only in writers of much later centuries.",
+        "es": "El rey Hierón había muerto en 215 a. C., y la ciudad rompió su larga alianza con Roma en plena guerra contra Aníbal. El historiador Polibio, cuyo relato es el más antiguo que tenemos, describe máquinas que lanzaban piedras y una garra de hierro que bajaba con una cadena, levantaba la proa de un barco fuera del agua y la dejaba caer. El general romano Marcelo renunció al asalto y decidió rendir la ciudad por hambre. La famosa historia de que Arquímedes quemó los barcos con espejos aparece solo en autores de siglos muy posteriores."
+      },
+      "unsure": {
+        "en": "Historians date the start of the siege to 214 or 213 BC. The burning mirrors are not in Polybius, Livy or Plutarch, who describe the siege, and are most likely a legend.",
+        "es": "Los historiadores fechan el comienzo del sitio en 214 o 213 a. C. Los espejos ardientes no están en Polibio, Tito Livio ni Plutarco, que describen el sitio, y lo más probable es que sean una leyenda."
+      },
+      "places": [
+        {
+          "name": { "en": "Marcus Claudius Marcellus", "es": "Marco Claudio Marcelo" },
+          "at": [15.2833, 37.0833],
+          "cat": "person",
+          "type": "person",
+          "date": "-0213",
+          "life": ["-0270", "-0208"],
+          "text": {
+            "en": "The Roman general who besieged Syracuse. Polybius has him joke that Archimedes was using his ships to ladle water from the sea. He took the city in 212 BC and carried its treasures to Rome.",
+            "es": "El general romano que sitió Siracusa. Polibio le hace bromear con que Arquímedes usaba sus barcos como cucharones para sacar agua del mar. Tomó la ciudad en 212 a. C. y se llevó sus tesoros a Roma."
+          }
+        }
+      ]
+    },
+    {
+      "date": "-0212",
+      "about": true,
+      "kind": "died",
+      "place": { "en": "Syracuse, Sicily, Italy", "es": "Siracusa, Sicilia, Italia" },
+      "at": [15.2866, 37.0754],
+      "title": { "en": "Killed over his diagrams", "es": "Muerto sobre sus figuras" },
+      "text": {
+        "en": "After some two years the Romans broke in and sacked the city. Marcellus, it is said, had ordered that Archimedes be spared, but a soldier killed him: bent over a diagram, according to Livy and Plutarch.",
+        "es": "Después de unos dos años los romanos entraron y saquearon la ciudad. Marcelo, se dice, había ordenado que respetaran a Arquímedes, pero un soldado lo mató: inclinado sobre una figura, según Tito Livio y Plutarco."
+      },
+      "details": {
+        "en": "Plutarch gives three versions of the death. In the best known, a soldier ordered him to come to Marcellus; Archimedes would not move until he had finished his problem, and the soldier ran him through. The last words 'Do not disturb my circles' were put in his mouth by later writers. Marcellus, the ancient authors say, mourned him and protected his family, and took two of his models of the heavens home to Rome. Archimedes had asked for one thing on his tomb: a sphere inside a cylinder, the discovery he loved best.",
+        "es": "Plutarco da tres versiones de la muerte. En la más conocida, un soldado le ordenó que fuera a ver a Marcelo; Arquímedes no quiso moverse hasta terminar su problema, y el soldado lo atravesó con la espada. Las últimas palabras, «No toques mis círculos», se las pusieron en la boca autores posteriores. Marcelo, dicen los antiguos, lo lloró y protegió a su familia, y se llevó a Roma dos de sus modelos del cielo. Arquímedes había pedido una sola cosa para su tumba: una esfera dentro de un cilindro, el descubrimiento que más quería."
+      },
+      "unsure": {
+        "en": "The city fell in 212 BC by the usual reckoning; some historians say 211. The accounts of his death were written 150 to 300 years later and do not agree.",
+        "es": "La ciudad cayó en 212 a. C. según el cálculo habitual; algunos historiadores dicen 211. Los relatos de su muerte se escribieron entre 150 y 300 años después y no coinciden."
+      }
+    },
+    {
+      "date": "-0075",
+      "kind": "honour",
+      "place": { "en": "Syracuse, Sicily, Italy", "es": "Siracusa, Sicilia, Italia" },
+      "at": [15.2833, 37.0833],
+      "title": { "en": "Cicero finds the tomb", "es": "Cicerón encuentra la tumba" },
+      "text": {
+        "en": "In 75 BC a young Roman official, Cicero, went looking for the grave. The Syracusans told him there was none. Among the brambles by a city gate he spotted a small column with a sphere and a cylinder on top.",
+        "es": "En 75 a. C. un joven funcionario romano, Cicerón, salió a buscar la tumba. Los siracusanos le dijeron que no existía. Entre las zarzas, junto a una puerta de la ciudad, vio una pequeña columna con una esfera y un cilindro encima."
+      },
+      "details": {
+        "en": "Cicero tells the story himself. He remembered some lines of verse said to be carved on the tomb, which spoke of a sphere and a cylinder. Slaves cleared the thorns with sickles, and half of the worn inscription could still be read. So a famous Greek city, he wrote proudly, would not have known the tomb of its cleverest citizen if a man from the small town of Arpinum had not pointed it out. The tomb was lost again, and no one knows where it stood.",
+        "es": "Lo cuenta el propio Cicerón. Recordaba unos versos que, según decían, estaban grabados en la tumba y hablaban de una esfera y un cilindro. Unos esclavos despejaron los espinos con hoces, y todavía se podía leer la mitad de la inscripción gastada. Así, escribió con orgullo, una famosa ciudad griega no habría conocido la tumba de su ciudadano más ingenioso si no se la hubiera señalado un hombre del pequeño pueblo de Arpino. La tumba volvió a perderse, y nadie sabe dónde estaba."
+      },
+      "unsure": {
+        "en": "The place is unknown: copies of Cicero's text name the gate differently, as that of Agrigentum or of Achradina. The rock-cut 'Tomb of Archimedes' shown in Syracuse today is a Roman tomb made long after his time.",
+        "es": "El lugar se desconoce: las copias del texto de Cicerón nombran la puerta de distinta manera, como la de Agrigento o la de Acradina. La «Tumba de Arquímedes» excavada en la roca que hoy se muestra en Siracusa es una tumba romana muy posterior a su época."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Ortygia, the old heart of Syracuse", "es": "Ortigia, el corazón antiguo de Siracusa" },
+      "at": [15.2931, 37.0594],
+      "kind": "site",
+      "text": {
+        "en": "The island where Greek Syracuse began and where King Hiero had his palace. The cathedral is built around the columns of a Greek temple that Archimedes knew, and one of the main squares is named after him. On the mainland, the archaeological park of Neapolis keeps the Greek theatre, rebuilt in Hiero's reign, and the king's great altar.",
+        "es": "La isla donde empezó la Siracusa griega y donde el rey Hierón tenía su palacio. La catedral está construida alrededor de las columnas de un templo griego que Arquímedes conoció, y una de las plazas principales lleva su nombre. En tierra firme, el parque arqueológico de Neápolis conserva el teatro griego, reconstruido en el reinado de Hierón, y el gran altar del rey."
+      },
+      "whs": 1200
+    }
+  ],
+  "legacy": {
+    "en": "Archimedes showed that nature can be measured and proved: the lever, floating bodies, the circle and the sphere. His way of adding up thin slices pointed towards calculus, and Galileo, who learned from his books, called him divine. One of them, The Method, lay hidden under the prayers of a medieval manuscript until 1906. The Fields Medal, the great prize of mathematics, carries his portrait.",
+    "es": "Arquímedes mostró que la naturaleza se puede medir y demostrar: la palanca, los cuerpos que flotan, el círculo y la esfera. Su manera de sumar rebanadas finas anunciaba el cálculo, y Galileo, que aprendió de sus libros, lo llamó divino. Uno de ellos, El método, estuvo escondido bajo las oraciones de un manuscrito medieval hasta 1906. La Medalla Fields, el gran premio de las matemáticas, lleva su retrato."
+  },
+  "sources": [
+    { "title": "Wikipedia: Archimedes", "url": "https://en.wikipedia.org/wiki/Archimedes" },
+    { "title": "Wikipedia (es): Arquímedes", "url": "https://es.wikipedia.org/wiki/Arqu%C3%ADmedes" },
+    { "title": "Plutarch, Life of Marcellus, chapters 14–19 (LacusCurtius)", "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Marcellus*.html" },
+    { "title": "Polybius, Histories, book 8: the siege of Syracuse (LacusCurtius)", "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/8*.html" },
+    { "title": "MacTutor History of Mathematics: Archimedes of Syracuse", "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Archimedes/" },
+    { "title": "Wikipedia: Archimedes' screw", "url": "https://en.wikipedia.org/wiki/Archimedes%27_screw" }
+  ]
+}

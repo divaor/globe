@@ -1,0 +1,306 @@
+{
+  "id": "aristotle",
+  "qid": "Q868",
+  "name": { "en": "Aristotle", "es": "Aristóteles" },
+  "icon": "📚",
+  "field": "thought",
+  "known": { "en": "Greek philosopher and scientist", "es": "Filósofo y científico griego" },
+  "born": "-0384",
+  "died": "-0322",
+  "summary": {
+    "en": "Plato's student and Alexander the Great's teacher, he studied everything from fish to politics and founded his own school in Athens. To medieval scholars he was simply 'the Philosopher'.",
+    "es": "Discípulo de Platón y maestro de Alejandro Magno, estudió de todo, de los peces a la política, y fundó su propia escuela en Atenas. Para los sabios medievales fue, sin más, «el Filósofo»."
+  },
+  "unsure": {
+    "en": "The outline of his life is firm, but the details come from biographies written centuries later, and no one knows when most of his books were written.",
+    "es": "Las líneas generales de su vida son firmes, pero los detalles vienen de biografías escritas siglos después, y nadie sabe cuándo se escribió la mayoría de sus libros."
+  },
+  "steps": [
+    {
+      "date": "-0384",
+      "kind": "born",
+      "place": { "en": "Olympiada (ancient Stagira), Greece", "es": "Olympiada (antigua Estagira), Grecia" },
+      "label": { "en": "Stagira", "es": "Estagira" },
+      "at": [23.7942, 40.5908],
+      "title": { "en": "A doctor's son from Stagira", "es": "El hijo de un médico de Estagira" },
+      "text": {
+        "en": "Aristotle was born in Stagira, a small Greek city on the coast of Chalkidiki. His father, Nicomachus, was physician to the king of Macedon, Amyntas III, the grandfather of Alexander the Great.",
+        "es": "Aristóteles nació en Estagira, una pequeña ciudad griega de la costa de la Calcídica. Su padre, Nicómaco, era médico del rey de Macedonia, Amintas III, el abuelo de Alejandro Magno."
+      },
+      "details": {
+        "en": "Medicine ran in the family, which claimed descent from the healing god Asclepius, and a doctor's son learned early to look closely at living bodies. Both his parents died while he was a boy, and a relative named Proxenus brought him up. Philip II of Macedon destroyed Stagira in 348 BC; years later, at Aristotle's request, it was rebuilt. Its walls still stand on a headland above the sea.",
+        "es": "La medicina era cosa de familia: decían descender de Asclepio, el dios que cura, y el hijo de un médico aprendía pronto a mirar de cerca los cuerpos vivos. Sus padres murieron cuando era un niño, y lo crio un pariente llamado Próxeno. Filipo II de Macedonia destruyó Estagira en 348 a. C.; años después, a pedido de Aristóteles, fue reconstruida. Sus murallas siguen en pie en un promontorio sobre el mar."
+      }
+    },
+    {
+      "date": "-0367",
+      "kind": "study",
+      "by": "sea",
+      "place": { "en": "Athens, Greece", "es": "Atenas, Grecia" },
+      "at": [23.7081, 37.9924],
+      "title": { "en": "Twenty years with Plato", "es": "Veinte años con Platón" },
+      "text": {
+        "en": "At 17 he came to Athens and joined the Academy, the school Plato had founded in a grove outside the walls. He stayed twenty years, first as a student, then as a teacher and writer.",
+        "es": "A los 17 años llegó a Atenas y entró a la Academia, la escuela que Platón había fundado en una arboleda fuera de las murallas. Se quedó veinte años, primero como alumno y después como maestro y escritor."
+      },
+      "details": {
+        "en": "Plato is said to have called him 'the mind of the school'. But the student came to doubt his teacher's central idea, that the things we see are shadows of perfect Forms existing somewhere beyond them. For Aristotle the place to look for truth was this world. A later saying sums up his attitude: Plato is dear to me, but dearer still is truth.",
+        "es": "Se dice que Platón lo llamaba «la mente de la escuela». Pero el alumno llegó a dudar de la idea central de su maestro: que las cosas que vemos son sombras de unas Formas perfectas que existen más allá de ellas. Para Aristóteles, el lugar donde buscar la verdad era este mundo. Un dicho posterior resume su actitud: Platón es mi amigo, pero más amiga es la verdad."
+      },
+      "places": [
+        {
+          "id": "plato",
+          "name": { "en": "Plato", "es": "Platón" },
+          "at": [23.7081, 37.9924],
+          "cat": "person",
+          "type": "person",
+          "date": "-0367",
+          "life": ["-0428", "-0348"],
+          "text": {
+            "en": "The founder of the Academy, and Aristotle's teacher for twenty years. When Plato died, in 348 or 347 BC, the school passed to his nephew Speusippus, and Aristotle left Athens.",
+            "es": "El fundador de la Academia, y maestro de Aristóteles durante veinte años. Cuando Platón murió, en 348 o 347 a. C., la escuela pasó a su sobrino Espeusipo, y Aristóteles se fue de Atenas."
+          },
+          "wiki": { "en": "Plato", "es": "Platón" }
+        }
+      ]
+    },
+    {
+      "date": "-0347",
+      "kind": "career",
+      "by": "sea",
+      "place": { "en": "Behram (ancient Assos), Turkey", "es": "Behram (antigua Aso), Turquía" },
+      "label": { "en": "Assos", "es": "Aso" },
+      "at": [26.3397, 39.4916],
+      "title": { "en": "A court of philosophers", "es": "Una corte de filósofos" },
+      "text": {
+        "en": "When Plato died, Aristotle left Athens and crossed the Aegean to Assos, where the ruler Hermias, a former slave who loved philosophy, gathered thinkers around him. There he married Pythias, a young relative of Hermias.",
+        "es": "Al morir Platón, Aristóteles dejó Atenas y cruzó el Egeo hasta Aso, donde el gobernante Hermias, un antiguo esclavo amante de la filosofía, reunía pensadores. Allí se casó con Pitias, una joven pariente de Hermias."
+      },
+      "details": {
+        "en": "With him went Xenocrates, another of Plato's students. A few years later the Persians seized Hermias by a trick and tortured him to death; he is said to have sent word to his friends that he had done nothing unworthy of philosophy. Aristotle wrote a hymn in his memory, which his enemies in Athens would one day use against him.",
+        "es": "Con él fue Jenócrates, otro discípulo de Platón. Unos años después los persas atraparon a Hermias con un engaño y lo torturaron hasta la muerte; se dice que mandó decir a sus amigos que no había hecho nada indigno de la filosofía. Aristóteles escribió un himno en su memoria, que sus enemigos de Atenas usarían un día contra él."
+      }
+    },
+    {
+      "date": "-0345",
+      "about": true,
+      "kind": "made",
+      "by": "sea",
+      "place": { "en": "Mytilene, Lesbos, Greece", "es": "Mitilene, Lesbos, Grecia" },
+      "at": [26.5553, 39.1077],
+      "title": { "en": "The lagoon of Lesbos", "es": "La laguna de Lesbos" },
+      "text": {
+        "en": "On the island of Lesbos, with his friend Theophrastus, he spent about two years studying living things: fish, octopuses, sea urchins, birds, bees. Biology as a science begins with these notes.",
+        "es": "En la isla de Lesbos, con su amigo Teofrasto, pasó unos dos años estudiando seres vivos: peces, pulpos, erizos de mar, aves, abejas. La biología como ciencia empieza con estos apuntes."
+      },
+      "details": {
+        "en": "Many of his observations come from a sheltered lagoon in the middle of the island, now the Gulf of Kalloni, where he questioned fishermen and cut animals open to see how they worked. He described the chick growing inside the egg day by day, saw that dolphins breathe air and suckle their young, and sorted some 500 kinds of animals into groups. Some of what he reported was confirmed only in the 19th century.",
+        "es": "Muchas de sus observaciones vienen de una laguna protegida en el centro de la isla, hoy el golfo de Kalloni, donde interrogaba a los pescadores y abría animales para ver cómo funcionaban. Describió día por día al pollo que crece dentro del huevo, vio que los delfines respiran aire y amamantan a sus crías, y ordenó en grupos unas 500 clases de animales. Algunas de las cosas que contó solo se confirmaron en el siglo XIX."
+      },
+      "unsure": {
+        "en": "Ancient sources say only that he went to Mytilene, the island's main city; that he worked at the lagoon is inferred from how often his books mention it.",
+        "es": "Las fuentes antiguas solo dicen que fue a Mitilene, la ciudad principal de la isla; que trabajó en la laguna se deduce de las muchas veces que sus libros la mencionan."
+      },
+      "places": [
+        {
+          "name": { "en": "Theophrastus", "es": "Teofrasto" },
+          "at": [25.931, 39.171],
+          "cat": "person",
+          "type": "person",
+          "date": "-0345",
+          "life": ["-0371", "-0287"],
+          "text": {
+            "en": "Born about 371 BC at Eresos, in the west of Lesbos, he became Aristotle's closest colleague and did for plants what Aristotle did for animals. He led the Lyceum after him for some 35 years.",
+            "es": "Nacido hacia 371 a. C. en Ereso, al oeste de Lesbos, fue el colega más cercano de Aristóteles e hizo con las plantas lo que este hizo con los animales. Después de él dirigió el Liceo unos 35 años."
+          },
+          "wiki": { "en": "Theophrastus", "es": "Teofrasto" }
+        }
+      ]
+    },
+    {
+      "date": "-0343",
+      "kind": "career",
+      "by": "sea",
+      "place": { "en": "Naousa (ancient Mieza), Greece", "es": "Naousa (antigua Mieza), Grecia" },
+      "label": { "en": "Mieza", "es": "Mieza" },
+      "at": [22.0984, 40.6307],
+      "title": { "en": "Tutor of Alexander", "es": "Maestro de Alejandro" },
+      "text": {
+        "en": "Philip II of Macedon called him to teach his son Alexander, then 13. For about three years Aristotle taught the prince and his friends at Mieza, in a sanctuary of the Nymphs among springs and caves.",
+        "es": "Filipo II de Macedonia lo llamó para educar a su hijo Alejandro, que tenía 13 años. Durante unos tres años Aristóteles enseñó al príncipe y a sus amigos en Mieza, en un santuario de las Ninfas entre manantiales y cuevas."
+      },
+      "details": {
+        "en": "Plutarch, four centuries later, says visitors were still shown the stone seats and shaded walks where they talked. Aristotle is said to have prepared a copy of the Iliad for the boy, who kept it under his pillow on campaign. Their ideas parted later: the teacher thought Greeks were born to rule other peoples, while the king set out to rule Greeks and Persians together. Among the fellow pupils were probably Hephaestion and Ptolemy, the future king of Egypt.",
+        "es": "Plutarco, cuatro siglos después, cuenta que a los visitantes todavía les mostraban los asientos de piedra y los paseos con sombra donde conversaban. Se dice que Aristóteles preparó para el muchacho una copia de la Ilíada, que él guardaba bajo la almohada en campaña. Más tarde sus ideas se separaron: el maestro creía que los griegos habían nacido para mandar a otros pueblos, y el rey se propuso gobernar juntos a griegos y persas. Entre los compañeros de clase estaban probablemente Hefestión y Ptolomeo, el futuro rey de Egipto."
+      },
+      "unsure": {
+        "en": "The ruins near Naousa were identified as the sanctuary of Mieza in the 1960s; how long the lessons lasted is not certain, as Alexander was governing Macedon by the age of 16.",
+        "es": "Las ruinas cercanas a Naousa fueron identificadas como el santuario de Mieza en la década de 1960; no se sabe con certeza cuánto duraron las clases, porque Alejandro ya gobernaba Macedonia a los 16 años."
+      },
+      "places": [
+        {
+          "name": { "en": "Alexander the Great", "es": "Alejandro Magno" },
+          "at": [22.0984, 40.6307],
+          "cat": "person",
+          "type": "person",
+          "date": "-0343",
+          "life": ["-0356", "-0323"],
+          "text": {
+            "en": "Son of Philip II, king of Macedon at 20. In eleven years he conquered the Persian Empire as far as India, and he is said to have sent his old teacher plants and animals from the lands he crossed.",
+            "es": "Hijo de Filipo II, rey de Macedonia a los 20 años. En once años conquistó el Imperio persa hasta la India, y se dice que le enviaba a su viejo maestro plantas y animales de las tierras que cruzaba."
+          },
+          "wiki": { "en": "Alexander the Great", "es": "Alejandro Magno" }
+        }
+      ]
+    },
+    {
+      "date": "-0335",
+      "kind": "career",
+      "place": { "en": "Athens, Greece", "es": "Atenas, Grecia" },
+      "at": [23.7433, 37.9741],
+      "title": { "en": "He founds the Lyceum", "es": "Funda el Liceo" },
+      "text": {
+        "en": "Back in Athens at 49, he began teaching at the Lyceum, a public sports ground in a grove sacred to Apollo. His students were called Peripatetics, perhaps from the covered walk, the peripatos, where they met.",
+        "es": "De vuelta en Atenas a los 49 años, empezó a enseñar en el Liceo, un gimnasio público en una arboleda de Apolo. A sus alumnos los llamaron peripatéticos, quizá por el paseo cubierto, el peripatos, donde se reunían."
+      },
+      "details": {
+        "en": "It was more a research institute than a school. He and his colleagues collected books, maps and specimens, and wrote up the constitutions of 158 Greek cities. In twelve years he lectured on logic, physics, the heavens, living things, the soul, ethics, politics, poetry and public speaking. As a foreigner he could not own land in Athens, so the school used public buildings. The remains of its wrestling ground were found in 1996.",
+        "es": "Era más un instituto de investigación que una escuela. Él y sus colegas reunieron libros, mapas y especímenes, y describieron las constituciones de 158 ciudades griegas. En doce años dio clases de lógica, física, los cielos, los seres vivos, el alma, ética, política, poesía y oratoria. Como extranjero no podía tener tierras en Atenas, así que la escuela usaba edificios públicos. Los restos de su palestra, el lugar de lucha, se encontraron en 1996."
+      },
+      "places": [
+        {
+          "name": { "en": "Nicomachean Ethics", "es": "Ética a Nicómaco" },
+          "at": [23.7433, 37.9741],
+          "cat": "opus",
+          "type": "work",
+          "date": "-0335",
+          "by": { "en": "Aristotle", "es": "Aristóteles" },
+          "text": {
+            "en": "His lectures on how to live well, from the Lyceum years: happiness comes from a life of good habits guided by reason, and each virtue lies between two extremes. Like most of his books, it reads like lecture notes.",
+            "es": "Sus clases sobre cómo vivir bien, de los años del Liceo: la felicidad nace de una vida de buenos hábitos guiada por la razón, y cada virtud está entre dos extremos. Como casi todos sus libros, se lee como apuntes de clase."
+          }
+        }
+      ]
+    },
+    {
+      "date": "-0323",
+      "kind": "struggle",
+      "place": { "en": "Chalcis, Greece", "es": "Calcis, Grecia" },
+      "at": [23.5971, 38.4624],
+      "title": { "en": "Flight from Athens", "es": "La huida de Atenas" },
+      "text": {
+        "en": "When Alexander died, Athens turned on everything Macedonian. Charged with impiety, Aristotle left for his mother's family estate at Chalcis: Athens, he is said to have remarked, should not sin twice against philosophy.",
+        "es": "Al morir Alejandro, Atenas se volvió contra todo lo macedonio. Acusado de impiedad, Aristóteles se fue a la finca de su familia materna en Calcis: Atenas, se cuenta que dijo, no debía pecar dos veces contra la filosofía."
+      },
+      "details": {
+        "en": "The charge, brought by a priest named Eurymedon, rested on the hymn he had written years before for his dead friend Hermias, which was said to honour a man as if he were a god. The real reason was politics: he was a friend of Antipater, the Macedonian governor of Greece. He left the Lyceum in the hands of Theophrastus. The first 'sin' he had in mind was the death of Socrates, seventy-six years earlier.",
+        "es": "La acusación, presentada por un sacerdote llamado Eurimedonte, se apoyaba en el himno que había escrito años antes para su amigo muerto Hermias, del que se decía que honraba a un hombre como si fuera un dios. La verdadera razón era política: era amigo de Antípatro, el gobernador macedonio de Grecia. Dejó el Liceo en manos de Teofrasto. El primer «pecado» en el que pensaba era la muerte de Sócrates, setenta y seis años antes."
+      },
+      "places": [
+        {
+          "id": "socrates",
+          "name": { "en": "Socrates", "es": "Sócrates" },
+          "at": [23.7212, 37.9738],
+          "cat": "person",
+          "type": "person",
+          "date": "-0399",
+          "life": ["-0469", "-0399"],
+          "text": {
+            "en": "The teacher of Aristotle's own teacher, Plato. Athens tried him for impiety and put him to death in 399 BC, fifteen years before Aristotle was born.",
+            "es": "El maestro de Platón, que a su vez fue maestro de Aristóteles. Atenas lo juzgó por impiedad y lo condenó a muerte en 399 a. C., quince años antes de que naciera Aristóteles."
+          },
+          "wiki": { "en": "Socrates", "es": "Sócrates" }
+        }
+      ]
+    },
+    {
+      "date": "-0322",
+      "kind": "died",
+      "place": { "en": "Chalcis, Greece", "es": "Calcis, Grecia" },
+      "at": [23.5971, 38.4624],
+      "title": { "en": "Death at Chalcis", "es": "Muerte en Calcis" },
+      "text": {
+        "en": "Aristotle died at Chalcis within a year, at 62, of a disease of the stomach. His will, which survives, provides for his children and his companion Herpyllis, and frees several of the people he held as slaves.",
+        "es": "Aristóteles murió en Calcis antes de un año, a los 62, de una enfermedad del estómago. Su testamento, que se conserva, protege a sus hijos y a su compañera Herpilis, y libera a varias personas que tenía esclavizadas."
+      },
+      "details": {
+        "en": "He asked that the bones of his wife Pythias, who had died years before, be laid beside his, as she had wished. The will names Antipater as executor and friends, Theophrastus among them, as guardians of his daughter, also called Pythias, and his young son Nicomachus. His library went to Theophrastus. According to an old story, his manuscripts later lay hidden in a cellar in Asia Minor for more than a century, before they were taken to Rome and edited into the books we read today.",
+        "es": "Pidió que los huesos de su esposa Pitias, muerta años antes, se pusieran junto a los suyos, como ella había querido. El testamento nombra albacea a Antípatro y deja a unos amigos, entre ellos Teofrasto, como tutores de su hija, también llamada Pitias, y de su hijo pequeño Nicómaco. Su biblioteca pasó a Teofrasto. Según una vieja historia, sus manuscritos estuvieron después escondidos más de un siglo en un sótano de Asia Menor, antes de que los llevaran a Roma y los editaran en los libros que leemos hoy."
+      },
+      "unsure": {
+        "en": "His grave is unknown: a late tradition says the people of Stagira brought his ashes home and held a yearly festival for him, and in 2016 an archaeologist proposed that a building there was his tomb, but nothing found proves it.",
+        "es": "No se conoce su tumba: una tradición tardía dice que la gente de Estagira llevó sus cenizas a casa y le dedicó una fiesta anual, y en 2016 un arqueólogo propuso que un edificio de allí era su tumba, pero nada de lo hallado lo prueba."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Ancient Stagira", "es": "Antigua Estagira" },
+      "at": [23.7942, 40.5908],
+      "kind": "site",
+      "text": {
+        "en": "The ruins of his city on a wooded headland beside the village of Olympiada: long stretches of wall, the citadel and houses, with the sea on three sides. One building has been proposed, without proof, as his tomb.",
+        "es": "Las ruinas de su ciudad en un promontorio con bosque junto al pueblo de Olympiada: largos tramos de muralla, la ciudadela y casas, con el mar por tres lados. Se ha propuesto, sin pruebas, que uno de los edificios es su tumba."
+      }
+    },
+    {
+      "name": { "en": "Aristotle's Park, Stagira", "es": "Parque de Aristóteles, Estagira" },
+      "at": [23.7481, 40.5294],
+      "kind": "memorial",
+      "text": {
+        "en": "A hillside park in the modern village of Stagira, a few kilometres inland from the ancient city, with a marble statue of him and outdoor instruments, such as a prism, a pendulum and a sundial, for trying out the physics he wrote about.",
+        "es": "Un parque en el pueblo actual de Estagira, a pocos kilómetros tierra adentro de la ciudad antigua, con una estatua de mármol y aparatos al aire libre, como un prisma, un péndulo y un reloj de sol, para probar la física de la que escribió."
+      }
+    },
+    {
+      "name": { "en": "School of Aristotle, Mieza", "es": "Escuela de Aristóteles, Mieza" },
+      "at": [22.0984, 40.6307],
+      "kind": "site",
+      "text": {
+        "en": "Near Naousa, among springs and plane trees: the rock ledges and caves of the sanctuary of the Nymphs where he taught the young Alexander.",
+        "es": "Cerca de Naousa, entre manantiales y plátanos de sombra: las terrazas de roca y las cuevas del santuario de las Ninfas donde enseñó al joven Alejandro."
+      },
+      "wiki": { "en": "Mieza (Macedonia)", "es": "Mieza (Macedonia)" }
+    },
+    {
+      "name": { "en": "Lyceum of Aristotle, Athens", "es": "Liceo de Aristóteles, Atenas" },
+      "at": [23.7433, 37.9741],
+      "kind": "site",
+      "text": {
+        "en": "The foundations of the wrestling school of the Lyceum, found by chance in 1996 and open as a small park since 2014, in the centre of Athens.",
+        "es": "Los cimientos de la palestra del Liceo, encontrados por casualidad en 1996 y abiertos como un pequeño parque desde 2014, en el centro de Atenas."
+      },
+      "wiki": { "en": "Lyceum (classical)", "es": "Liceo (Antigua Grecia)" }
+    },
+    {
+      "name": { "en": "Plato's Academy park, Athens", "es": "Parque de la Academia de Platón, Atenas" },
+      "at": [23.7081, 37.9924],
+      "kind": "site",
+      "text": {
+        "en": "A public park in a quiet district of Athens covers the grounds of the Academy, where he studied and taught for twenty years. Low walls of the ancient buildings can be seen among the trees.",
+        "es": "Un parque público en un barrio tranquilo de Atenas cubre los terrenos de la Academia, donde estudió y enseñó veinte años. Entre los árboles se ven muros bajos de los edificios antiguos."
+      },
+      "wiki": { "en": "Platonic Academy", "es": "Academia de Atenas" }
+    },
+    {
+      "name": { "en": "Assos", "es": "Aso (Assos)" },
+      "at": [26.3397, 39.4916],
+      "kind": "site",
+      "text": {
+        "en": "The ancient city on a steep hill above the sea, facing Lesbos: a temple of Athena at the top, with city walls and a theatre below, around the Turkish village of Behramkale.",
+        "es": "La ciudad antigua en un cerro empinado sobre el mar, frente a Lesbos: un templo de Atenea en lo alto, con murallas y un teatro más abajo, alrededor del pueblo turco de Behramkale."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Aristotle invented formal logic, founded biology and wrote the first systematic books on ethics, politics, physics and poetry. Translated into Arabic and then Latin, he was the master of medieval scholars from Baghdad to Paris, and modern science began partly as an argument with him. He also taught that some people are slaves by nature and that women are inferior to men, ideas used for centuries to defend slavery and inequality.",
+    "es": "Aristóteles inventó la lógica formal, fundó la biología y escribió los primeros libros sistemáticos de ética, política, física y poesía. Traducido al árabe y después al latín, fue el maestro de los sabios medievales de Bagdad a París, y la ciencia moderna empezó en parte como una discusión con él. También enseñó que algunas personas son esclavas por naturaleza y que las mujeres son inferiores a los hombres, ideas que se usaron durante siglos para defender la esclavitud y la desigualdad."
+  },
+  "sources": [
+    { "title": "Wikipedia: Aristotle", "url": "https://en.wikipedia.org/wiki/Aristotle" },
+    { "title": "Stanford Encyclopedia of Philosophy: Aristotle", "url": "https://plato.stanford.edu/entries/aristotle/" },
+    { "title": "Encyclopaedia Britannica: Aristotle", "url": "https://www.britannica.com/biography/Aristotle" },
+    { "title": "Wikipedia: Lyceum (classical)", "url": "https://en.wikipedia.org/wiki/Lyceum_(classical)" },
+    { "title": "School of Aristotle, Naoussa (Mieza)", "url": "https://sxoliaristotelous.gr/en/school" }
+  ]
+}

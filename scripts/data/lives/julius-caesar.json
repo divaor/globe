@@ -1,0 +1,282 @@
+{
+  "id": "julius-caesar",
+  "qid": "Q1048",
+  "name": { "en": "Julius Caesar", "es": "Julio César" },
+  "icon": "👑",
+  "field": "leaders",
+  "known": { "en": "Roman general and dictator", "es": "General y dictador romano" },
+  "born": "-0100-07",
+  "bornAbout": true,
+  "died": "-0044-03-15",
+  "summary": {
+    "en": "He conquered Gaul, crossed the Rubicon, won a civil war and made himself dictator for life. Two years later, on the Ides of March, senators stabbed him to death. Rome never returned to the Republic.",
+    "es": "Conquistó la Galia, cruzó el Rubicón, ganó una guerra civil y se hizo dictador vitalicio. Dos años después, en los idus de marzo, unos senadores lo apuñalaron. Roma nunca volvió a la República."
+  },
+  "unsure": {
+    "en": "The year of Caesar's birth is debated (100 BC is the usual answer; some scholars prefer 102 or 101), and the exact sites of several events, such as the Rubicon crossing, are not certain.",
+    "es": "El año del nacimiento de César se discute (100 a. C. es la respuesta habitual; algunos estudiosos prefieren 102 o 101), y no se conoce con certeza el sitio exacto de varios hechos, como el cruce del Rubicón."
+  },
+  "steps": [
+    {
+      "date": "-0100-07",
+      "about": true,
+      "kind": "born",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4828, 41.8931],
+      "title": { "en": "Born in Rome", "es": "Nace en Roma" },
+      "text": {
+        "en": "Gaius Julius Caesar was born into an old patrician family that was neither rich nor powerful. Tradition says he grew up in the Subura, a crowded district of the city.",
+        "es": "Cayo Julio César nació en una antigua familia patricia que no era rica ni poderosa. La tradición dice que creció en la Subura, un barrio abarrotado de la ciudad."
+      },
+      "details": {
+        "en": "His aunt Julia was married to Gaius Marius, the great popular general, and that tie shaped his life. When the dictator Sulla took power, the young Caesar refused to divorce his wife Cornelia, daughter of a Marian leader. Sulla put him on his lists of enemies, and Caesar had to hide and then leave Italy.",
+        "es": "Su tía Julia estaba casada con Cayo Mario, el gran general popular, y ese lazo marcó su vida. Cuando el dictador Sila tomó el poder, el joven César se negó a divorciarse de su esposa Cornelia, hija de un jefe mariano. Sila lo puso en sus listas de enemigos, y César tuvo que esconderse y luego salir de Italia."
+      },
+      "unsure": {
+        "en": "Ancient writers give 12 or 13 July, and the year is argued: 100 BC is the usual date. His house in the Subura is a tradition, not a proved site.",
+        "es": "Los autores antiguos dan el 12 o el 13 de julio, y el año se discute: 100 a. C. es la fecha habitual. Su casa en la Subura es una tradición, no un sitio probado."
+      }
+    },
+    {
+      "date": "-0075",
+      "about": true,
+      "kind": "study",
+      "place": { "en": "Rhodes, Greece", "es": "Rodas, Grecia" },
+      "at": [28.222, 36.4356],
+      "title": { "en": "Captured by pirates, then Rhodes", "es": "Prisionero de piratas, y luego Rodas" },
+      "text": {
+        "en": "Sailing to study speech with a famous teacher on Rhodes, Caesar was taken by pirates. He told them to ask for more ransom, paid it, and then hunted them down and had them crucified.",
+        "es": "Cuando navegaba a Rodas para estudiar oratoria con un maestro famoso, unos piratas lo capturaron. Les dijo que pidieran un rescate mayor, lo pagó, y luego los persiguió y los hizo crucificar."
+      },
+      "details": {
+        "en": "The story comes from Plutarch and Suetonius, who wrote more than a century later, so the details may have grown in the telling. It fits what Caesar became: a man who never forgot a debt, and who could be cold. He then studied on Rhodes and returned to Rome to practise law and seek office.",
+        "es": "La historia viene de Plutarco y Suetonio, que escribieron más de un siglo después, así que los detalles pueden haber crecido al contarse. Encaja con lo que César llegó a ser: un hombre que no olvidaba una deuda, y que podía ser frío. Luego estudió en Rodas y volvió a Roma a ejercer como abogado y buscar cargos."
+      },
+      "unsure": {
+        "en": "The year (about 75 BC) and the story of the pirates rest on later writers; the pirates held him near the island of Pharmacusa, off the coast of Asia Minor.",
+        "es": "El año (hacia 75 a. C.) y la historia de los piratas dependen de autores posteriores; lo retuvieron cerca de la isla de Farmacusa, frente a la costa de Asia Menor."
+      }
+    },
+    {
+      "date": "-0059",
+      "kind": "power",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4828, 41.8931],
+      "title": { "en": "Consul, and the three-man pact", "es": "Cónsul, y el pacto de los tres" },
+      "text": {
+        "en": "Caesar won the consulship with the backing of two men he had joined in a secret pact: Pompey, the great general, and Crassus, the richest man in Rome. Together they ran the state.",
+        "es": "César ganó el consulado con el apoyo de dos hombres con quienes había hecho un pacto secreto: Pompeyo, el gran general, y Craso, el hombre más rico de Roma. Juntos manejaron el Estado."
+      },
+      "details": {
+        "en": "Historians call this pact the First Triumvirate. Caesar pushed through land for Pompey's veterans and used his office to win, as governor, a command in Gaul for five years, later extended. His fellow consul, Bibulus, shut himself in his house, and people joked that the year was the consulship of Julius and Caesar."
+        ,
+        "es": "Los historiadores llaman a ese pacto el Primer Triunvirato. César consiguió tierras para los veteranos de Pompeyo y usó su cargo para obtener el mando de la Galia por cinco años, luego prorrogado. Su colega Bíbulo se encerró en su casa, y se bromeaba con que aquel año el consulado fue de Julio y César."
+      }
+    },
+    {
+      "date": "-0058-03",
+      "kind": "journey",
+      "place": { "en": "Geneva, Switzerland", "es": "Ginebra, Suiza" },
+      "at": [6.1466, 46.2017],
+      "title": { "en": "The war in Gaul begins", "es": "Empieza la guerra de la Galia" },
+      "text": {
+        "en": "A tribe, the Helvetii, wanted to cross Roman land on a mass migration. Caesar raced to Geneva, broke the bridge over the Rhône and began eight years of war that took all of Gaul.",
+        "es": "Una tribu, los helvecios, quería cruzar tierras romanas en una migración masiva. César llegó a toda prisa a Ginebra, cortó el puente sobre el Ródano y empezó ocho años de guerra que le dieron toda la Galia."
+      },
+      "details": {
+        "en": "Caesar wrote his own account of the campaigns, the Commentaries on the Gallic War, in plain, fast Latin. It made him famous at home. Ancient writers say a million people died in Gaul and as many were enslaved; such figures are exaggerated, but the conquest was brutal and ended the Gauls' freedom.",
+        "es": "César escribió su propio relato de las campañas, los Comentarios sobre la guerra de las Galias, en un latín claro y rápido. Lo hizo famoso en su patria. Los autores antiguos dicen que murió un millón de personas en la Galia y otras tantas fueron esclavizadas; esas cifras son exageradas, pero la conquista fue brutal y acabó con la libertad de los galos."
+      }
+    },
+    {
+      "date": "-0052-09",
+      "about": true,
+      "kind": "moment",
+      "place": { "en": "Alise-Sainte-Reine, France", "es": "Alise-Sainte-Reine, Francia" },
+      "label": { "en": "Alesia", "es": "Alesia" },
+      "at": [4.4859, 47.5378],
+      "title": { "en": "The siege of Alesia", "es": "El sitio de Alesia" },
+      "text": {
+        "en": "The Gaulish chief Vercingetorix shut himself in the hill fort of Alesia. Caesar ringed it with two lines of walls and beat both the city and the relief army that came to save it.",
+        "es": "El jefe galo Vercingétorix se encerró en el fuerte de Alesia. César lo rodeó con dos líneas de muros y venció tanto a la ciudad como al ejército de socorro que venía a salvarla."
+      },
+      "details": {
+        "en": "Caesar's engineers built about 18 km of siege works facing the town and 21 km facing outward, with ditches, towers and traps. Vercingetorix gave himself up to spare his men. He was taken to Rome, held six years, and killed after Caesar's triumph in 46 BC.",
+        "es": "Los ingenieros de César levantaron unos 18 km de obras de asedio frente a la ciudad y 21 km hacia afuera, con fosos, torres y trampas. Vercingétorix se entregó para salvar a sus hombres. Lo llevaron a Roma, lo tuvieron seis años preso y lo mataron después del triunfo de César en el 46 a. C."
+      },
+      "unsure": {
+        "en": "Most historians place Alesia at Alise-Sainte-Reine, where digs found the siege lines; a few have argued for other sites.",
+        "es": "La mayoría de los historiadores sitúa Alesia en Alise-Sainte-Reine, donde las excavaciones hallaron las líneas del asedio; unos pocos han propuesto otros sitios."
+      },
+      "places": [
+        {
+          "name": { "en": "Vercingetorix", "es": "Vercingétorix" },
+          "at": [4.4692, 47.5357],
+          "cat": "person",
+          "type": "person",
+          "date": "-0052",
+          "life": ["-0082", "-0046"],
+          "text": {
+            "en": "Chief of the Arverni and leader of the great Gaulish revolt. He surrendered at Alesia. A museum park stands beside the site today.",
+            "es": "Jefe de los arvernos y líder de la gran revuelta gala. Se rindió en Alesia. Hoy un parque museo se alza junto al sitio."
+          }
+        }
+      ]
+    },
+    {
+      "date": "-0049-01-10",
+      "kind": "moment",
+      "place": { "en": "Savignano sul Rubicone, Italy", "es": "Savignano sul Rubicone, Italia" },
+      "label": { "en": "The Rubicon", "es": "El Rubicón" },
+      "at": [12.3991, 44.0925],
+      "title": { "en": "He crosses the Rubicon", "es": "Cruza el Rubicón" },
+      "text": {
+        "en": "The Senate ordered Caesar to disband his army. He led one legion over the small river Rubicon, the border of Italy, and so began a civil war. According to Suetonius he said: the die is cast.",
+        "es": "El Senado ordenó a César licenciar su ejército. Él cruzó con una legión el pequeño río Rubicón, el límite de Italia, y así empezó una guerra civil. Según Suetonio dijo: la suerte está echada."
+      },
+      "details": {
+        "en": "A general who entered Italy with troops broke the law and was a traitor. Caesar knew that if he went home as a private man, his enemies would put him on trial. Pompey and most of the Senate fled Rome and then Italy, and in about two months Caesar held the whole peninsula.",
+        "es": "Un general que entraba a Italia con tropas violaba la ley y era un traidor. César sabía que si volvía como particular, sus enemigos lo llevarían a juicio. Pompeyo y casi todo el Senado huyeron de Roma y luego de Italia, y en unos dos meses César dominaba toda la península."
+      },
+      "unsure": {
+        "en": "Which stream was the ancient Rubicon is uncertain: the rivers of this coast have changed course. Savignano sul Rubicone is the town that took the name, and the site shown is only approximate.",
+        "es": "No es seguro cuál era el antiguo Rubicón: los ríos de esta costa han cambiado de curso. Savignano sul Rubicone es el pueblo que tomó el nombre, y el sitio mostrado es solo aproximado."
+      },
+      "icon": "🐎",
+      "by": "land"
+    },
+    {
+      "date": "-0048-08-09",
+      "kind": "moment",
+      "place": { "en": "Fársala (Pharsalus), Greece", "es": "Fársala (Farsalia), Grecia" },
+      "label": { "en": "Pharsalus", "es": "Farsalia" },
+      "at": [22.3847, 39.2947],
+      "title": { "en": "Victory at Pharsalus", "es": "La victoria de Farsalia" },
+      "text": {
+        "en": "In Greece, Caesar's 22,000 men beat Pompey's much larger army. Pompey fled to Egypt, where the king's ministers had him killed as Caesar arrived.",
+        "es": "En Grecia, los 22 000 hombres de César vencieron al ejército mucho mayor de Pompeyo. Pompeyo huyó a Egipto, donde los ministros del rey lo mataron cuando César llegaba."
+      },
+      "unsure": {
+        "en": "Ancient sources give the numbers in different ways. The battlefield lay in Thessaly, near Fársala, and its exact spot is still argued.",
+        "es": "Las fuentes antiguas dan las cifras de maneras distintas. El campo de batalla estaba en Tesalia, cerca de Fársala, y su lugar exacto todavía se discute."
+      }
+    },
+    {
+      "date": "-0048-10",
+      "kind": "love",
+      "place": { "en": "Alexandria, Egypt", "es": "Alejandría, Egipto" },
+      "at": [29.9158, 31.2018],
+      "title": { "en": "Caesar and Cleopatra", "es": "César y Cleopatra" },
+      "text": {
+        "en": "Caesar reached Alexandria days after Pompey's murder and found Egypt at war with itself. He took the side of the young queen Cleopatra, and was besieged in the palace for months.",
+        "es": "César llegó a Alejandría días después del asesinato de Pompeyo y encontró a Egipto en guerra consigo mismo. Se puso del lado de la joven reina Cleopatra, y estuvo sitiado en el palacio durante meses."
+      },
+      "details": {
+        "en": "His troops won in March 47 BC and Cleopatra was left on the throne. Caesar and Cleopatra became lovers, and she bore a son, Caesarion, that summer. Caesar did not publicly accept the boy, and the ancients disagreed whether he was Caesar's child. The great Library may have been damaged by fire in the fighting.",
+        "es": "Sus tropas vencieron en marzo del 47 a. C. y Cleopatra quedó en el trono. César y Cleopatra fueron amantes, y ella tuvo un hijo, Cesarión, ese verano. César no lo reconoció en público, y los antiguos discutían si era hijo suyo. La gran Biblioteca pudo sufrir daños por un incendio en los combates."
+      },
+      "places": [
+        {
+          "name": { "en": "Cleopatra", "es": "Cleopatra" },
+          "at": [29.9158, 31.2018],
+          "cat": "person",
+          "type": "person",
+          "date": "-0048",
+          "life": ["-0069", "-0030-08"],
+          "text": {
+            "en": "The last active ruler of Ptolemaic Egypt, then about 21. Her ties with Caesar, and then with Mark Antony, tied her country to Rome's civil wars.",
+            "es": "La última gobernante activa del Egipto ptolemaico, entonces de unos 21 años. Su relación con César, y luego con Marco Antonio, ató su país a las guerras civiles de Roma."
+          },
+          "id": "cleopatra"
+        }
+      ]
+    },
+    {
+      "date": "-0046-09",
+      "kind": "honour",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4828, 41.8931],
+      "title": { "en": "Four triumphs and a new calendar", "es": "Cuatro triunfos y un nuevo calendario" },
+      "text": {
+        "en": "After winning the last wars against Pompey's sons and allies, Caesar held four triumphal parades in a single month. He also reformed the calendar, which had drifted by weeks from the seasons.",
+        "es": "Tras ganar las últimas guerras contra los hijos y aliados de Pompeyo, César celebró cuatro desfiles triunfales en un solo mes. También reformó el calendario, que se había desfasado semanas respecto de las estaciones."
+      },
+      "details": {
+        "en": "The new Julian calendar had 365 days and a leap day every fourth year. The year 46 BC was stretched to 445 days to set things right. Versions of it are still in use: the Gregorian calendar we use now is a small correction of Caesar's. The month of July is named for him.",
+        "es": "El nuevo calendario juliano tenía 365 días y un día bisiesto cada cuatro años. El año 46 a. C. se alargó a 445 días para corregir el desajuste. Sus versiones siguen en uso: el calendario gregoriano de hoy es una pequeña corrección del de César. El mes de julio lleva su nombre."
+      }
+    },
+    {
+      "date": "-0044-03-15",
+      "kind": "died",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4769, 41.8953],
+      "title": { "en": "The Ides of March", "es": "Los idus de marzo" },
+      "text": {
+        "en": "A month after being named dictator for life, Caesar went to a Senate meeting in Pompey's theatre. A group of senators led by Brutus and Cassius stabbed him, and he fell at the foot of Pompey's statue.",
+        "es": "Un mes después de ser nombrado dictador vitalicio, César fue a una reunión del Senado en el teatro de Pompeyo. Un grupo de senadores encabezado por Bruto y Casio lo apuñaló, y cayó al pie de la estatua de Pompeyo."
+      },
+      "details": {
+        "en": "More than sixty men were in the plot, and many were men he had pardoned. The ancient doctor who examined the body counted 23 wounds, only one of them deadly. The killers hoped to save the Republic. Instead came thirteen more years of civil war, and it ended with Caesar's heir, Octavian, as Rome's first emperor.",
+        "es": "Más de sesenta hombres estaban en la conjura, y muchos eran hombres a quienes él había perdonado. Según los relatos antiguos, el médico que examinó el cuerpo contó 23 heridas y solo una era mortal. Los asesinos esperaban salvar la República. Vinieron en cambio trece años más de guerra civil, y terminaron con el heredero de César, Octavio, como primer emperador de Roma."
+      },
+      "unsure": {
+        "en": "The meeting was held in a hall of the Theatre of Pompey complex; the remains at Largo Argentina are the site most scholars accept.",
+        "es": "La reunión fue en una sala del complejo del Teatro de Pompeyo; los restos de Largo Argentina son el sitio que aceptan la mayoría de los estudiosos."
+      },
+      "places": [
+        {
+          "name": { "en": "Augustus", "es": "Augusto" },
+          "at": [12.4861, 41.892],
+          "cat": "person",
+          "type": "person",
+          "date": "-0044-03-15",
+          "life": ["-0063-09-23", "0014-08-19"],
+          "text": {
+            "en": "Caesar's grand-nephew Octavian, then 18 and studying in Greece. His will named him the heir. He became Augustus, the first Roman emperor.",
+            "es": "El sobrino nieto de César, Octavio, que tenía 18 años y estudiaba en Grecia. El testamento lo nombró heredero. Llegó a ser Augusto, el primer emperador romano."
+          },
+          "id": "augustus"
+        }
+      ]
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Largo di Torre Argentina", "es": "Largo di Torre Argentina" },
+      "at": [12.4769, 41.8953],
+      "kind": "site",
+      "text": {
+        "en": "A sunken square in the middle of Rome with the ruins of four temples. A hall of Pompey's complex stood by it, where Caesar was killed. Cats now live among the stones.",
+        "es": "Una plaza hundida en pleno centro de Roma con las ruinas de cuatro templos. A su lado estaba una sala del complejo de Pompeyo, donde mataron a César. Hoy viven gatos entre las piedras."
+      }
+    },
+    {
+      "name": { "en": "Temple of Caesar, Roman Forum", "es": "Templo de César, Foro Romano" },
+      "at": [12.4861, 41.892],
+      "kind": "memorial",
+      "text": {
+        "en": "Caesar's body was burned in the Forum, and Augustus later built this temple on the spot. Only its base remains, and people still leave flowers on it.",
+        "es": "El cuerpo de César fue quemado en el Foro, y Augusto construyó después este templo en el lugar. Solo queda su base, y la gente todavía deja flores allí."
+      }
+    },
+    {
+      "name": { "en": "Alésia MuséoParc", "es": "MuséoParc Alésia" },
+      "at": [4.4692, 47.5357],
+      "kind": "museum",
+      "text": {
+        "en": "A museum on the battlefield of Alesia, with the Roman siege lines rebuilt on the ground and a view of the hill where Vercingetorix held out.",
+        "es": "Un museo en el campo de batalla de Alesia, con las líneas del sitio romano reconstruidas sobre el terreno y vista de la colina donde resistió Vercingétorix."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Caesar ended the Roman Republic in all but name and opened the way to the Empire: the titles Caesar, Kaiser and Tsar come from his name. His calendar, his clear prose and his own story of Gaul shaped the West, and so did the argument over whether he was a tyrant or a reformer.",
+    "es": "César acabó con la República romana en todo menos el nombre y abrió el camino al Imperio: los títulos César, káiser y zar vienen de su nombre. Su calendario, su prosa clara y su propio relato de la Galia marcaron a Occidente, y también la discusión sobre si fue un tirano o un reformador."
+  },
+  "sources": [
+    { "title": "Wikipedia: Julius Caesar", "url": "https://en.wikipedia.org/wiki/Julius_Caesar" },
+    { "title": "Suetonius, Life of Julius Caesar (Lives of the Twelve Caesars)", "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Julius*.html" },
+    { "title": "Plutarch, Life of Caesar", "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Caesar*.html" }
+  ]
+}
