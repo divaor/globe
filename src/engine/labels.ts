@@ -99,7 +99,11 @@ export class LabelEngine {
     this.items.sort((a, b) => b.priority - a.priority);
     ctx.textBaseline = 'middle';
     ctx.lineJoin = 'round';
+    // A name already shown a few px away is not shown again (a city the map names and an overlay names too).
+    const shown: { text: string; x: number; y: number }[] = [];
     for (const l of this.items) {
+      if (shown.some((s) => s.text === l.text && Math.abs(s.x - l.x) < 40 && Math.abs(s.y - l.y) < 24)) continue;
+      shown.push({ text: l.text, x: l.x, y: l.y });
       const spacing = l.caps ? l.size * this.scale * 0.12 : 0;
       const text = l.caps ? l.text.toUpperCase() : l.text;
       const font = this.font(l);

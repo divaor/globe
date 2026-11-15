@@ -1954,7 +1954,8 @@ export class Learn {
     this.shell.openPanel('tours', L('Guided tours', 'Visitas guiadas'), body);
   }
 
-  private async startTour(tour: Tour) {
+  /** Starts a guided tour (also from the travel guide's city tours). */
+  async startTour(tour: Tour) {
     this.beforeStart?.();
     await this.stopQuiz();
     this.shell.sheet.close();

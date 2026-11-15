@@ -2415,6 +2415,174 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 22. Travel guide (v0.26.0). The panel and its search (Cusco found by its other name); a trip built with +; a city's
+// guide, tab by tab: what to eat (a dish opens its story; Wikivoyage's Eat section, from a recorded answer since this
+// machine cannot reach it), what to see (the city's tour, a World Heritage site shown with a pin), museums (the Prado),
+// the practical facts and the weather by month, History here, Read more; the best order; the trip drawn on the map;
+// the share link and a city link (#guide=) in a new browser; the printable page; Plan a trip on a country's card;
+// the Want to go list; Spanish; and a city's guide again offline, from the service worker's cache.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {} });
+  // Wikivoyage, as recorded: a section list with Eat, and its text (prose, then a listing the guide leaves out).
+  await ctx.route(/wikivoyage\.org\/w\/api\.php/, (route) => {
+    const u = new URL(route.request().url());
+    const body = u.searchParams.get('prop') === 'sections'
+      ? { parse: { sections: [{ line: 'Understand', index: '1', anchor: 'Understand' }, { line: 'Eat', index: '5', anchor: 'Eat' }] } }
+      : { parse: { text: { '*': '<div class="mw-parser-output"><p>Lima is famous for its food, and ceviche is the dish every visitor should try, with fish fresh from the Pacific.</p><ul><li><b>A restaurant</b> listing the guide does not show</li></ul></div>' } } };
+    return route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify(body) });
+  });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  const boot = async (p, hash) => {
+    await p.goto(url + hash, { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+    await p.reload({ waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+    await p.waitForFunction(() => window.atlas?.guide && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+    await p.waitForTimeout(800);
+  };
+  await boot(page, '#p=globe&l=political&c=-70,-10,1.3&lang=en');
+  const g = () => page.evaluate(() => window.atlas.guide.info);
+  const tabText = () => page.evaluate(() => document.querySelector('.guide-tab')?.innerText ?? '');
+  const openCity = async (id, tab, wait = 900) => { await page.evaluate(([i, t]) => window.atlas.guide.openCity(i, t), [id, tab]); await page.waitForTimeout(wait); };
+
+  // The panel, its search, and a trip built with +.
+  await page.evaluate(() => window.atlas.guide.open());
+  await page.waitForSelector('.guide-search', { timeout: 10000 }).catch(() => {});
+  await page.fill('.guide-search', 'cusco');
+  await page.waitForTimeout(300);
+  const found = await page.evaluate(() => [...document.querySelectorAll('.guide-results [data-guide-city]')].map((x) => x.dataset.guideCity));
+  await page.click('.guide-results [data-add="cuzco"]');
+  await page.fill('.guide-search', 'lima');
+  await page.waitForTimeout(300);
+  await page.click('.guide-results [data-add="lima"]');
+  await page.waitForTimeout(300);
+  const t1 = await g();
+  const legs = await page.evaluate(() => [...document.querySelectorAll('.guide-leg')].map((x) => x.textContent));
+  check(found[0] === 'cuzco' && t1.trip.join() === 'cuzco,lima' && /^✈️ 5\d\d km · about 1 h/.test(legs[0] ?? ''), `the guide: "cusco" finds Cuzco; a trip of ${t1.trip.join(' → ')}, ${legs[0]}`);
+
+  // Lima: what to eat, a dish's story, Wikivoyage's overview.
+  await openCity('lima', 'eat', 2500);
+  const eat = await page.evaluate(() => ({ tabs: document.querySelectorAll('.guide-tabs [data-tab]').length, dishes: [...document.querySelectorAll('[data-dish]')].map((x) => x.dataset.dish), text: document.querySelector('.guide-tab')?.innerText ?? '', wv: document.querySelector('[data-wv="eat"]')?.innerText ?? '' }));
+  check(eat.tabs === 6 && eat.dishes.some((d) => /ceviche/.test(d)) && /national dish: Ceviche/.test(eat.text) && /From Wikivoyage/.test(eat.wv) && /ceviche is the dish every visitor/.test(eat.wv) && !/A restaurant/.test(eat.wv) && /CC BY-SA/.test(eat.wv),
+    `Lima, what to eat: ${eat.dishes.length} dishes (${eat.dishes.slice(0, 3).join(', ')}…), the national dish, and Wikivoyage's overview without its listings, credited`);
+  await page.click('[data-dish="pisco-sour"], [data-dish]');
+  await page.waitForFunction(() => !!window.atlas.app.mode, null, { timeout: 15000 }).catch(() => {});
+  const story = await page.evaluate(() => ({ mode: window.atlas.app.mode, sheet: document.querySelector('.sheet:not([hidden])') ? 'open' : 'closed' }));
+  check(!!story.mode && story.sheet === 'closed', `a dish opens its story (${story.mode}) and the guide steps aside`);
+  await page.evaluate(() => window.atlas.time.modes.find((m) => m.id === window.atlas.app.mode)?.exit());
+  await page.waitForTimeout(800);
+
+  // Cuzco: what to see, with the city's tour; a site shown with a pin.
+  await openCity('cuzco', 'see');
+  const see = await page.evaluate(() => ({ tour: document.querySelector('[data-guide="tour"]')?.textContent ?? '', whs: [...document.querySelectorAll('[data-whs]')].map((x) => x.textContent), text: document.querySelector('.guide-tab')?.innerText ?? '' }));
+  await page.click('[data-whs]');
+  await page.waitForTimeout(1200);
+  const pin = await g();
+  check(/Cusco through time/.test(see.tour) && see.whs.some((x) => /City of Cuzco/.test(x)) && see.whs.some((x) => /Machu Picchu/.test(x)) && /Sacsayhuamán/.test(see.text) && pin.pin && /Cuzco/.test(pin.pin.text),
+    `Cuzco, what to see: the tour "${see.tour.trim()}", ${see.whs.length} World Heritage sites (Machu Picchu a day trip away), Sacsayhuamán; a tap shows "${pin.pin?.text}" on the map`);
+
+  // Madrid: museums, facts and the weather by month.
+  await openCity('madrid', 'museums');
+  const mus = await page.evaluate(() => ({ ids: [...document.querySelectorAll('[data-museum]')].map((x) => x.dataset.museum), heads: [...document.querySelectorAll('.guide-tab .sec-title')].map((x) => x.textContent), text: document.querySelector('.guide-tab')?.innerText ?? '' }));
+  check(mus.ids.includes('Q160112') && mus.ids.includes('Q460889') && mus.heads.includes('Art') && /visitors a year/.test(mus.text), `Madrid's museums: ${mus.ids.length}, the Prado and the Reina Sofía under ${mus.heads.join(', ')}, with visitors a year`);
+  await openCity('madrid', 'facts');
+  const facts = await tabText();
+  const chart = await page.evaluate(() => ({ months: document.querySelectorAll('.guide-chart .gc-month').length, best: document.querySelectorAll('.guide-chart .gc-best').length }));
+  check(/Spanish/.test(facts) && /euro \(EUR\)/i.test(facts) && /type C, F · 230 V · 50 Hz/.test(facts) && /\+34/.test(facts) && /on the right/.test(facts) && /Sunrise and sunset today\s+\d\d:\d\d · \d\d:\d\d/.test(facts) && chart.months === 12 && chart.best >= 3 && /Best months to go: May–June, September–October/.test(facts),
+    `Madrid's facts: Spanish, the euro, plugs C and F at 230 V, +34, sunrise and sunset; the weather chart with ${chart.best} best months: "${(/Best months to go: [^.]+/.exec(facts) ?? [''])[0]}"`);
+  await openCity('lima', 'history');
+  const hist = await page.evaluate(() => [...document.querySelectorAll('[data-history]')].map((x) => x.dataset.history));
+  await openCity('lima', 'more');
+  const more = await page.evaluate(() => [...document.querySelectorAll('.guide-more a')].map((a) => a.href));
+  check(hist.length >= 5 && new Set(hist.map((x) => x.split('/')[0])).size >= 3 && more.some((h) => /en\.wikivoyage\.org\/wiki\/Lima/.test(h)) && more.some((h) => /es\.wikipedia\.org/.test(h)),
+    `Lima, History here: ${hist.length} story items from ${new Set(hist.map((x) => x.split('/')[0])).size} collections; Read more: ${more.length} links (Wikivoyage, Wikipedia)`);
+
+  // The best order, the map, the share link and the printable page.
+  await page.evaluate(() => { const gd = window.atlas.guide; gd.trip = []; for (const id of ['lima', 'kyoto', 'madrid', 'mexico-city']) gd.add(id); });
+  await page.evaluate(() => window.atlas.guide.open());
+  await page.waitForTimeout(400);
+  const before = await page.evaluate(() => document.querySelector('[data-guide="total"]')?.textContent ?? '');
+  await page.click('[data-guide="best"]');
+  await page.waitForTimeout(500);
+  const after = await page.evaluate(() => ({ trip: window.atlas.guide.info.trip, total: document.querySelector('[data-guide="total"]')?.textContent ?? '' }));
+  check(after.trip.join() === 'lima,mexico-city,madrid,kyoto' && parseInt(after.total.replace(/\D/g, ''), 10) < parseInt(before.replace(/\D/g, ''), 10), `Best order: ${after.trip.join(' → ')} (${before.trim()} before, ${after.total.trim()} after)`);
+  await page.click('[data-guide="map"]');
+  await page.waitForTimeout(2500);
+  const onMap = await page.evaluate(() => {
+    const ren = window.atlas.app.renderer, c = document.getElementById('fg').getContext('2d');
+    const p = ren.view.project(-77.04, -12.05);
+    if (!p) return null;
+    // Orange pixels of Lima's numbered marker (#e8590c) around its centre.
+    const r = Math.round(12 * ren.view.dpr), d = c.getImageData(Math.round(p[0] * ren.view.dpr) - r, Math.round(p[1] * ren.view.dpr) - r, 2 * r, 2 * r).data;
+    let n = 0;
+    for (let i = 0; i < d.length; i += 4) if (d[i] > 140 && d[i] > 1.8 * d[i + 1] && d[i + 1] > 35 && d[i + 2] < 60) n++;
+    return { orange: n, onMap: window.atlas.guide.info.onMap, sheet: !document.querySelector('.sheet:not([hidden])') };
+  });
+  check(onMap && onMap.onMap && onMap.sheet && onMap.orange > 40, `the trip on the map: the guide closes and Lima's numbered marker is drawn (${onMap?.orange} orange pixels)`);
+  const share = await page.evaluate(() => window.atlas.guide.shareUrl());
+  const printed = await page.evaluate(async () => (await window.atlas.guide.printView()).innerText);
+  check(/#trip=lima,mexico-city,madrid,kyoto$/.test(share) && /1\. Lima, Peru/.test(printed) && /4\. Kyoto, Japan/.test(printed) && /Best months/.test(printed) && /Museums: .*Prado/.test(printed), `the share link (${share.split('#')[1]}) and the printable page (${printed.split('\n').length} lines, a section a city)`);
+  const other = await browser.newContext({ viewport: { width: 1200, height: 800 } });
+  await other.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {} });
+  // A link opened in a new page loads once (the app then writes its own state to the address).
+  const fresh = async (hash) => {
+    const p = await other.newPage();
+    await p.goto(url + hash, { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+    await p.waitForFunction(() => window.atlas?.guide && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+    return p;
+  };
+  const op = await fresh(`#${share.split('#')[1]}`);
+  await op.waitForFunction(() => window.atlas.guide.info.trip.length === 4 && !!document.querySelector('.guide-trip'), null, { timeout: 10000 }).catch(() => {});
+  const shared = await op.evaluate(() => ({ trip: window.atlas.guide.info.trip, saved: JSON.parse(localStorage.getItem('atlas-globe:trip') || '[]'), panel: !!document.querySelector('.guide-trip') }));
+  const op2 = await fresh('#guide=kyoto');
+  await op2.waitForFunction(() => window.atlas.guide.info.city === 'kyoto' && !!document.querySelector('.guide-title'), null, { timeout: 10000 }).catch(() => {});
+  const cityLink = await op2.evaluate(() => document.querySelector('.guide-title')?.textContent ?? '');
+  await other.close();
+  check(shared.trip.join() === 'lima,mexico-city,madrid,kyoto' && shared.saved.length === 4 && shared.panel && cityLink === 'Kyoto', `the shared link opens the same trip in another browser (kept there); #guide=kyoto opens ${cityLink}'s guide`);
+
+  // Plan a trip on a country's card; the Want to go list; a tap on a city's dot.
+  await page.evaluate(() => window.atlas.app.select('PER'));
+  await page.waitForSelector('[data-guide="plan"]', { timeout: 5000 }).catch(() => {});
+  await page.click('[data-guide="plan"]');
+  await page.waitForTimeout(800);
+  const plan = await page.evaluate(() => ({ q: document.querySelector('.guide-search')?.value, res: [...document.querySelectorAll('.guide-results [data-guide-city]')].map((x) => x.dataset.guideCity) }));
+  await page.evaluate(() => { localStorage.setItem('atlas-globe:personal', JSON.stringify({ visited: [], wish: ['JPN', 'ITA'], notes: {} })); window.atlas.guide.trip = []; });
+  await page.evaluate(() => window.atlas.guide.open());
+  await page.waitForTimeout(400);
+  await page.click('[data-guide="wish"]');
+  await page.waitForTimeout(400);
+  const wish = await g();
+  const tapped = await page.evaluate(() => { const gd = window.atlas.guide, ren = window.atlas.app.renderer; ren.view.flyTo({ lon: 12.5, lat: 41.9, zoom: 5 }, 0); ren.requestRender(); const p = ren.view.project(12.496, 41.903); return p ? gd['tap'](p[0], p[1]) : null; });
+  await page.waitForTimeout(800);
+  const afterTap = await g();
+  check(plan.q === 'Peru' && plan.res.includes('lima') && plan.res.includes('cuzco') && wish.trip.includes('tokyo') && wish.trip.includes('rome') && tapped && afterTap.city === 'rome',
+    `Plan a trip on Peru's card searches its cities (${plan.res.slice(0, 4).join(', ')}…); the Want to go list adds ${wish.trip.join(' and ')}; a tap on Rome's dot opens its guide`);
+
+  // Spanish.
+  await page.evaluate(() => window.atlas.app.setLang('es'));
+  await openCity('lima', 'facts');
+  const esText = await page.evaluate(() => ({ tabs: [...document.querySelectorAll('.guide-tabs [data-tab]')].map((x) => x.textContent.replace(/^\S+\s/, '')).join(', '), facts: document.querySelector('.guide-tab')?.innerText ?? '' }));
+  check(/Comer, Ver, Museos, Datos, Historia aquí, Más/.test(esText.tabs) && /Idiomas\s+Español, Quechua, Aimara/i.test(esText.facts) && /sol peruano/i.test(esText.facts) && /Mejores meses para ir/.test(esText.facts), `en español: ${esText.tabs}; "${(/Idiomas[^\n]*\n?[^\n]*/.exec(esText.facts) ?? [''])[0].replace(/\s+/g, ' ')}"`);
+  await page.evaluate(() => window.atlas.app.setLang('en'));
+
+  // Offline: a city's guide comes from the service worker's cache once it has been opened.
+  await page.evaluate(async () => { await navigator.serviceWorker?.ready; });
+  await boot(page, '#p=globe&l=political&c=0,30,1.2&lang=en');
+  const controlled = await page.evaluate(() => !!navigator.serviceWorker?.controller);
+  await openCity('kyoto', 'see', 1500);
+  const cached = await page.evaluate(async () => (await (await caches.open('atlas-data')).keys()).some((r) => /guide\/c\/kyoto\.json/.test(r.url)));
+  await ctx.setOffline(true);
+  await page.evaluate(() => { window.atlas.guide['guides'].delete('kyoto'); });
+  await openCity('kyoto', 'museums', 1500);
+  const off = await tabText();
+  await ctx.setOffline(false);
+  check(controlled && cached && /Kyoto National Museum|museum/i.test(off) && !/could not be loaded/.test(off), `offline, Kyoto's guide opens again from the device (${off.split('\n').filter(Boolean).length} lines)`);
+
+  check(!errors.length, `no page errors in v0.26.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);
