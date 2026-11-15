@@ -1151,7 +1151,7 @@ function storyEntry(m) {
 function collectionItems(results) {
   const out = [];
   const seen = new Map();
-  for (const r of [...results].sort((a, b) => a.meta.t0 - b.meta.t0)) {
+  for (const r of [...results].sort((a, b) => a.meta.t0 - b.meta.t0 || (a.meta.id < b.meta.id ? -1 : a.meta.id > b.meta.id ? 1 : 0))) {
     const m = r.meta;
     m.items.forEach((it) => {
       let step = it.first;
