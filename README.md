@@ -39,6 +39,14 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
     years from the first 12 sites of 1978; a tap on a site opens its picture, Wikipedia's summary, its year,
     criteria and UNESCO's page, and a country's card counts its sites.
   - Where things were invented: the inventions of the Inventions stories where they were made, by age and field.
+  - Who was born here?: where 12,215 of the world's best-known people were born (or died), from Wikidata: a dot is a
+    place, in the colour of its best-known person's field, bigger for more people; by field (leaders, science,
+    writers, art, music, film and stage, sport, thought, explorers) and by when they were born. A tap lists the
+    place's people; a person's card has their portrait, years, birth and death places, Wikipedia, their life in
+    Lives on the map when there is one, and the city's guide. Living people appear by birthplace only.
+  - Close up, the dots of these filters that overlap (two museums in one building, a city's birthplaces) move
+    apart, each with a thin line to its true place, so every one can be tapped; the layout holds still while
+    you drag the map.
   - Imagery: NASA Blue Marble, yesterday's real satellite view (NASA GIBS), shaded relief, ETOPO.
 - **Terrain in detail:** zoomed in, Shaded relief and Elevation are drawn by the GPU from terrain heights
   (Terrain Tiles on AWS: SRTM, GMTED, ETOPO1 and national data), and Satellite from Sentinel-2 cloudless 2016
@@ -186,6 +194,15 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
     history, from Nabta Playa and Babylon's diaries to Mauna Kea and the Atacama; the space race, from the V-2 to
     Apollo–Soyuz; footprints on the Moon, every landing from Luna 2 to Artemis II; robots to the planets, from
     Mariner 2 to Juno; and wheels on Mars, from Mars 3 to where Curiosity and Perseverance are now.
+  - Lives on the map: 31 lives (more being written) of scientists, writers, artists, composers, leaders, campaigners and athletes,
+    from Hatshepsut and Confucius to Muhammad Ali, followed place by place: where they were born, studied, worked,
+    made their great works, were exiled or imprisoned, and died, each step with their age, the route from the last
+    place (by sea, by air, on foot) and the borders of that year. Only the places that mattered, not every stop of
+    a tour; where historians are not sure of a place or a date the step says so. The last step shows the places
+    you can visit today (birth houses, museums, graves). Two lives side by side (Frida Kahlo and Diego
+    Rivera, Mozart and Haydn…) in two colours, with a handshake where their paths crossed. A city's guide has a People tab (the
+    lives that pass through it, who was born and who died there), search finds every life, and On this day has
+    their births and deaths. Lives are written only for people who have died.
   - Browse and search every item of a story or a whole collection; shared links open a story at its step.
 - **Explore:** measure distances (great circles, flight time), compare two countries, "true size" of countries.
 - **Learn & play:** quizzes (find the country, flags, capitals, states and provinces of 48 countries, where in
@@ -354,6 +371,14 @@ near the travel guide's cities with articles in 20 Wikipedias or more, with its 
 of it (the Louvre's Department of Paintings), keeping those with three works or more; notable buildings that name
 their architect (or, without one, a style); and where our art items are now. All from Wikidata (CC0), fetched once and
 kept in `scripts/data/artguide/`; pictures are Wikimedia Commons files, loaded by the browser with their licences.
+
+**Lives on the map** (`scripts/data/lives/`, one file per person in the format of `scripts/data/lives/README.md`,
+built by `scripts/data/build-conflicts.mjs --kind lives`): written from Wikipedia and the sources each life lists,
+checked against Wikidata's dates and places (the build warns where they differ) and against the GeoNames gazetteer
+(CC BY 4.0) for the coordinates. **Who was born here?** (`scripts/data/born/build-born.mjs` builds
+`public/data/born/`): people with articles in 48 Wikipedias or more, with their places of birth and death, from
+Wikidata (CC0) through the QLever SPARQL service of the University of Freiburg; people known for a crime are left
+out. Portraits are read live from Wikidata and Wikimedia Commons, with their licences.
 
 **The map games' borders** (`scripts/data/play/build-borders.mjs` builds `public/data/play/borders.json`) come from
 the app's own 1:50m map, so a route on screen is a route in the game. Two countries are neighbours when their outlines
