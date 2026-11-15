@@ -1,0 +1,342 @@
+{
+  "id": "raphael",
+  "qid": "Q5597",
+  "name": { "en": "Raphael", "es": "Rafael" },
+  "icon": "🎨",
+  "field": "arts",
+  "known": { "en": "Painter and architect of the High Renaissance", "es": "Pintor y arquitecto del Alto Renacimiento" },
+  "born": "1483-04-06",
+  "bornAbout": true,
+  "died": "1520-04-06",
+  "summary": {
+    "en": "A court painter's son from Urbino who, by 25, was painting the pope's rooms in the Vatican. He died at 37, on his birthday by tradition, and was buried in the Pantheon.",
+    "es": "El hijo de un pintor de corte de Urbino que, a los 25 años, ya pintaba las estancias del papa en el Vaticano. Murió a los 37, en su cumpleaños según la tradición, y fue sepultado en el Panteón."
+  },
+  "unsure": {
+    "en": "The day of his birth is uncertain: sources give 28 March or 6 April 1483. The sources agree that he died on Good Friday, 6 April 1520.",
+    "es": "El día de su nacimiento es incierto: las fuentes dan el 28 de marzo o el 6 de abril de 1483. Todas coinciden en que murió el Viernes Santo, 6 de abril de 1520."
+  },
+  "steps": [
+    {
+      "date": "1483-04-06",
+      "kind": "born",
+      "place": { "en": "Urbino, Italy", "es": "Urbino, Italia" },
+      "at": [12.6354, 43.727],
+      "title": { "en": "Born at the court of Urbino", "es": "Nace en la corte de Urbino" },
+      "text": {
+        "en": "Raffaello Santi was born in Urbino, a small hill town whose duke had made it a centre of learning. His father, Giovanni Santi, was the duke's painter and a poet.",
+        "es": "Raffaello Santi nació en Urbino, una pequeña ciudad en las colinas que su duque había convertido en centro del saber. Su padre, Giovanni Santi, era pintor del duque y poeta."
+      },
+      "unsure": {
+        "en": "The exact day of birth is uncertain; 6 April is the traditional one.",
+        "es": "El día exacto del nacimiento es incierto; el 6 de abril es el tradicional."
+      },
+      "details": {
+        "en": "He grew up in the family house and learned in his father's workshop. His mother died when he was eight and his father when he was eleven. As a teenager he was already working as a master, and by 17 he had his first commission for an altarpiece.",
+        "es": "Creció en la casa familiar y aprendió en el taller de su padre. Su madre murió cuando él tenía ocho años y su padre cuando tenía once. De adolescente ya trabajaba como maestro, y a los 17 recibió su primer encargo de un retablo."
+      }
+    },
+    {
+      "date": "1500",
+      "about": true,
+      "kind": "study",
+      "place": { "en": "Perugia, Italy", "es": "Perugia, Italia" },
+      "at": [12.3888, 43.1122],
+      "title": { "en": "In the school of Perugino", "es": "En la escuela del Perugino" },
+      "text": {
+        "en": "He learned the soft, calm style of Pietro Perugino, then the best-known painter in Umbria. In 1504 he signed The Marriage of the Virgin, which already outdid his master's design.",
+        "es": "Aprendió el estilo suave y sereno de Pietro Perugino, entonces el pintor más conocido de Umbría. En 1504 firmó El desposorio de la Virgen, que ya superaba el diseño de su maestro."
+      },
+      "unsure": {
+        "en": "That he was Perugino's pupil comes from Vasari's account; no document shows it. Raphael worked mostly in Perugia and nearby Città di Castello.",
+        "es": "Que fue alumno del Perugino lo cuenta Vasari; ningún documento lo prueba. Raphael trabajó sobre todo en Perugia y en la cercana Città di Castello."
+      },
+      "places": [
+        {
+          "name": { "en": "The Marriage of the Virgin", "es": "El desposorio de la Virgen" },
+          "at": [9.1884, 45.4722],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🖼️",
+          "date": "1504",
+          "by": { "en": "Raphael", "es": "Rafael" },
+          "text": {
+            "en": "Painted for a church in Città di Castello, with his name and the year on the temple. It hangs in the Brera Gallery in Milan.",
+            "es": "Pintado para una iglesia de Città di Castello, con su nombre y el año en el templo. Cuelga en la Pinacoteca de Brera, en Milán."
+          },
+          "wiki": { "en": "The Marriage of the Virgin (Raphael)", "es": "Los desposorios de la Virgen" }
+        }
+      ]
+    },
+    {
+      "date": "1504-10",
+      "kind": "career",
+      "place": { "en": "Florence, Italy", "es": "Florencia, Italia" },
+      "at": [11.2463, 43.7792],
+      "title": { "en": "A student of Florence", "es": "Estudiante de Florencia" },
+      "text": {
+        "en": "At 21 he went to Florence with a letter of introduction to the city's head of state. He studied the works of Leonardo and Michelangelo and painted a series of Madonnas that made him known.",
+        "es": "A los 21 años fue a Florencia con una carta de presentación para el jefe de gobierno de la ciudad. Estudió las obras de Leonardo y Miguel Ángel y pintó una serie de Madonas que lo dieron a conocer."
+      },
+      "details": {
+        "en": "From Leonardo he learned to give figures a pyramid-shaped order and a turn of the head and body. He also painted portraits of local merchants and their wives. He kept his base in Florence until 1508, though he travelled to other towns for commissions.",
+        "es": "De Leonardo aprendió a darles a las figuras un orden piramidal y un giro de cabeza y cuerpo. También pintó retratos de comerciantes locales y de sus esposas. Mantuvo su base en Florencia hasta 1508, aunque viajaba a otras ciudades por encargos."
+      },
+      "places": [
+        {
+          "id": "leonardo-da-vinci",
+          "name": { "en": "Leonardo da Vinci", "es": "Leonardo da Vinci" },
+          "at": [11.2561, 43.7694],
+          "cat": "person",
+          "type": "person",
+          "date": "1504",
+          "life": ["1452-04-15", "1519-05-02"],
+          "text": {
+            "en": "The master whose drawings and unfinished battle cartoon Raphael studied closely in Florence.",
+            "es": "El maestro cuyos dibujos y cartón de batalla inconcluso estudió Rafael de cerca en Florencia."
+          },
+          "wiki": { "en": "Leonardo da Vinci", "es": "Leonardo da Vinci" }
+        }
+      ]
+    },
+    {
+      "date": "1508",
+      "kind": "career",
+      "place": { "en": "Vatican City", "es": "Ciudad del Vaticano" },
+      "at": [12.4546, 41.9049],
+      "title": { "en": "Called to Rome by the pope", "es": "Llamado a Roma por el papa" },
+      "text": {
+        "en": "Pope Julius II invited him to Rome. At 25 he was asked to paint the rooms that served as the pope's private library and offices, where other painters had already begun.",
+        "es": "El papa Julio II lo invitó a Roma. A los 25 años se le pidió pintar las salas que servían de biblioteca y despacho privado del papa, donde otros pintores ya habían empezado."
+      },
+      "details": {
+        "en": "Julius was so pleased with his first room that he had the other painters' work chipped off the walls. Raphael lived the rest of his short life in Rome. He led a large workshop of assistants, and was the favourite of the papal court.",
+        "es": "Julio quedó tan contento con la primera sala que mandó picar la obra de los otros pintores. Rafael vivió en Roma el resto de su breve vida. Dirigía un gran taller de ayudantes, y era el favorito de la corte papal."
+      },
+      "places": [
+        {
+          "name": { "en": "Julius II", "es": "Julio II" },
+          "at": [12.4544, 41.9029],
+          "cat": "person",
+          "type": "person",
+          "date": "1508",
+          "life": ["1443-12-05", "1513-02-21"],
+          "text": {
+            "en": "The warrior pope who also hired Michelangelo and Bramante, and made Rome the capital of the arts.",
+            "es": "El papa guerrero que también contrató a Miguel Ángel y a Bramante, e hizo de Roma la capital de las artes."
+          },
+          "wiki": { "en": "Pope Julius II", "es": "Julio II" }
+        },
+        {
+          "id": "michelangelo",
+          "name": { "en": "Michelangelo", "es": "Miguel Ángel" },
+          "at": [12.4544, 41.9031],
+          "cat": "person",
+          "type": "person",
+          "date": "1508",
+          "life": ["1475-03-06", "1564-02-18"],
+          "text": {
+            "en": "Painting the Sistine ceiling in the chapel nearby. Their rivalry spurred both men.",
+            "es": "Pintaba el techo de la Capilla Sixtina, muy cerca. La rivalidad los empujó a ambos."
+          },
+          "wiki": { "en": "Michelangelo", "es": "Miguel Ángel" }
+        }
+      ]
+    },
+    {
+      "date": "1509",
+      "kind": "made",
+      "place": { "en": "Vatican City", "es": "Ciudad del Vaticano" },
+      "at": [12.4546, 41.9049],
+      "title": { "en": "The School of Athens", "es": "La escuela de Atenas" },
+      "text": {
+        "en": "In the Stanza della Segnatura he painted philosophers and scientists from ancient Greece, in a grand hall. Plato and Aristotle stand at the centre, in debate.",
+        "es": "En la Stanza della Segnatura pintó a filósofos y científicos de la antigua Grecia en una gran sala. Platón y Aristóteles están en el centro, en pleno debate."
+      },
+      "details": {
+        "en": "Tradition says that Plato has the face of Leonardo, and that Raphael put himself in the right-hand corner, looking out at us. The room was painted between 1508 and 1511. It was followed by the Stanza d'Eliodoro and the Stanza dell'Incendio, which kept him busy until his death.",
+        "es": "La tradición dice que Platón tiene la cara de Leonardo y que Rafael se pintó a sí mismo en la esquina derecha, mirándonos. La sala se pintó entre 1508 y 1511. Le siguieron la Stanza d'Eliodoro y la Stanza dell'Incendio, que lo ocuparon hasta su muerte."
+      },
+      "places": [
+        {
+          "name": { "en": "The School of Athens", "es": "La escuela de Atenas" },
+          "at": [12.4546, 41.9049],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🖌️",
+          "date": "1511",
+          "by": { "en": "Raphael", "es": "Rafael" },
+          "text": {
+            "en": "A fresco about seven metres wide. It is still on the wall of the room where he painted it, in the Vatican Museums.",
+            "es": "Un fresco de unos siete metros de ancho. Sigue en el muro de la sala donde lo pintó, en los Museos Vaticanos."
+          },
+          "wiki": { "en": "The School of Athens", "es": "La escuela de Atenas" }
+        }
+      ]
+    },
+    {
+      "date": "1512",
+      "about": true,
+      "kind": "made",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4673, 41.8936],
+      "title": { "en": "Galatea at the Farnesina", "es": "Galatea en la Farnesina" },
+      "text": {
+        "en": "For the banker Agostino Chigi he painted the sea nymph Galatea in a villa on the Tiber. Chigi, a friend of the pope, was one of the richest men in Europe.",
+        "es": "Para el banquero Agostino Chigi pintó a la ninfa marina Galatea en una villa junto al Tíber. Chigi, amigo del papa, era uno de los hombres más ricos de Europa."
+      },
+      "places": [
+        {
+          "name": { "en": "Triumph of Galatea", "es": "El triunfo de Galatea" },
+          "at": [12.4673, 41.8936],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🖌️",
+          "date": "1512",
+          "by": { "en": "Raphael", "es": "Rafael" },
+          "text": {
+            "en": "A fresco of the nymph riding a shell over the waves. It is still in the villa, now called the Villa Farnesina, and can be visited.",
+            "es": "Un fresco de la ninfa sobre una concha en medio de las olas. Sigue en la villa, hoy llamada Villa Farnesina, y se puede visitar."
+          },
+          "wiki": { "en": "Triumph of Galatea", "es": "El triunfo de Galatea" }
+        }
+      ]
+    },
+    {
+      "date": "1514",
+      "kind": "power",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4537, 41.9022],
+      "title": { "en": "Architect of St Peter's", "es": "Arquitecto de San Pedro" },
+      "text": {
+        "en": "When the architect Bramante died, Pope Leo X named Raphael to lead the building of the new St Peter's. In 1515 he was also put in charge of the ancient marbles of Rome.",
+        "es": "Cuando murió el arquitecto Bramante, el papa León X nombró a Rafael para dirigir la construcción del nuevo San Pedro. En 1515 también quedó a cargo de los mármoles antiguos de Roma."
+      },
+      "details": {
+        "en": "As papal overseer of antiquities, he had to stop builders from burning ancient marble for lime. He drew up a plan to map and measure the ancient city. He wrote a letter to the pope on the matter, warning that Rome's ruins were being lost.",
+        "es": "Como supervisor papal de las antigüedades, debía impedir que los constructores quemaran mármol antiguo para hacer cal. Preparó un plan para trazar y medir la ciudad antigua. Le escribió al papa una carta sobre el asunto, advirtiéndole que se estaban perdiendo las ruinas de Roma."
+      }
+    },
+    {
+      "date": "1516",
+      "kind": "made",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4528, 41.9058],
+      "title": { "en": "The Transfiguration", "es": "La Transfiguración" },
+      "text": {
+        "en": "Cardinal Giulio de' Medici asked him for a great altarpiece of the Transfiguration of Christ. It was Raphael's last painting, still unfinished when he died.",
+        "es": "El cardenal Giulio de Médici le encargó un gran retablo de la Transfiguración de Cristo. Fue la última pintura de Rafael, y quedó sin terminar cuando murió."
+      },
+      "details": {
+        "en": "His pupils Giulio Romano and Gianfrancesco Penni finished it. Vasari says it was placed at the head of Raphael's body when he lay in state. It is now in the Vatican Pinacoteca.",
+        "es": "Sus alumnos Giulio Romano y Gianfrancesco Penni la terminaron. Según Vasari, la pusieron a la cabeza del cuerpo de Rafael cuando lo velaron. Hoy está en la Pinacoteca Vaticana."
+      },
+      "places": [
+        {
+          "name": { "en": "The Transfiguration", "es": "La Transfiguración" },
+          "at": [12.4528, 41.9058],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🖼️",
+          "date": "1520",
+          "by": { "en": "Raphael", "es": "Rafael" },
+          "text": {
+            "en": "A very large oil painting, with Christ shining above and a boy needing a cure below. It hangs in the Vatican Pinacoteca.",
+            "es": "Una pintura al óleo muy grande, con Cristo resplandeciente arriba y un muchacho que necesita una cura abajo. Cuelga en la Pinacoteca Vaticana."
+          },
+          "wiki": { "en": "Transfiguration (Raphael)", "es": "La Transfiguración (Rafael)" }
+        }
+      ]
+    },
+    {
+      "date": "1520-04-06",
+      "kind": "died",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4828, 41.8931],
+      "title": { "en": "He dies at 37", "es": "Muere a los 37 años" },
+      "text": {
+        "en": "After about a week of fever, Raphael died in Rome on Good Friday. He was engaged to a cardinal's niece, and had never married.",
+        "es": "Después de una semana de fiebre, Rafael murió en Roma un Viernes Santo. Estaba comprometido con la sobrina de un cardenal y nunca se casó."
+      },
+      "unsure": {
+        "en": "The cause of his death is not known; his doctors blamed a fever and bled him.",
+        "es": "Se desconoce la causa de su muerte; sus médicos hablaron de una fiebre y lo sangraron."
+      }
+    },
+    {
+      "date": "1520-04-07",
+      "kind": "honour",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4769, 41.8986],
+      "title": { "en": "Buried in the Pantheon", "es": "Sepultado en el Panteón" },
+      "text": {
+        "en": "All Rome came to mourn him. At his own wish he was buried in the Pantheon, the ancient temple that he had studied and drawn.",
+        "es": "Toda Roma fue a despedirlo. Según su propio deseo, fue sepultado en el Panteón, el antiguo templo que había estudiado y dibujado."
+      },
+      "unsure": {
+        "en": "The exact day of the burial is not firmly recorded; it followed his death within a few days.",
+        "es": "No está registrado con certeza el día exacto del entierro; fue pocos días después de su muerte."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Casa Santi (Raphael's house), Urbino", "es": "Casa Santi (casa de Rafael), Urbino" },
+      "at": [12.6354, 43.727],
+      "kind": "house",
+      "text": {
+        "en": "The house where he was born and grew up, now a museum with a fresco from his father's workshop.",
+        "es": "La casa donde nació y creció, hoy un museo, con un fresco del taller de su padre."
+      }
+    },
+    {
+      "name": { "en": "Vatican Museums: the Raphael Rooms", "es": "Museos Vaticanos: las Estancias de Rafael" },
+      "at": [12.4546, 41.9049],
+      "kind": "museum",
+      "text": {
+        "en": "The four rooms he painted for the popes, including the School of Athens.",
+        "es": "Las cuatro salas que pintó para los papas, incluida La escuela de Atenas."
+      },
+      "wiki": { "en": "Raphael Rooms", "es": "Estancias de Rafael" }
+    },
+    {
+      "name": { "en": "Vatican Pinacoteca", "es": "Pinacoteca Vaticana" },
+      "at": [12.4528, 41.9058],
+      "kind": "museum",
+      "text": {
+        "en": "Home of the Transfiguration and other altarpieces.",
+        "es": "Aquí están La Transfiguración y otros retablos."
+      }
+    },
+    {
+      "name": { "en": "Villa Farnesina", "es": "Villa Farnesina" },
+      "at": [12.4673, 41.8936],
+      "kind": "site",
+      "text": {
+        "en": "Agostino Chigi's villa, with Raphael's Galatea and frescoes by his workshop.",
+        "es": "La villa de Agostino Chigi, con la Galatea de Rafael y frescos de su taller."
+      },
+      "wiki": { "en": "Villa Farnesina", "es": "Villa Farnesina" }
+    },
+    {
+      "name": { "en": "Tomb of Raphael, Pantheon", "es": "Tumba de Rafael, Panteón" },
+      "at": [12.4769, 41.8986],
+      "kind": "grave",
+      "text": {
+        "en": "His sarcophagus is in a niche on the left of the Pantheon, with a Latin verse by a friend.",
+        "es": "Su sarcófago está en una hornacina a la izquierda del Panteón, con un verso en latín de un amigo."
+      },
+      "wiki": { "en": "Pantheon, Rome", "es": "Panteón de Agripa" }
+    }
+  ],
+  "legacy": {
+    "en": "For three centuries Raphael was held to be the most perfect of painters, because his figures are clear, calm and harmonious. His workshop and its engravings spread the style of the High Renaissance across Europe.",
+    "es": "Durante tres siglos se consideró a Rafael el más perfecto de los pintores, porque sus figuras son claras, serenas y armónicas. Su taller y sus grabados difundieron el estilo del Alto Renacimiento por toda Europa."
+  },
+  "sources": [
+    { "title": "Wikipedia: Raphael", "url": "https://en.wikipedia.org/wiki/Raphael" },
+    { "title": "Wikipedia: Rafael Sanzio", "url": "https://es.wikipedia.org/wiki/Rafael_Sanzio" },
+    { "title": "Vatican Museums: the Raphael Rooms", "url": "https://www.museivaticani.va/" },
+    { "title": "Casa Natale di Raffaello, Urbino", "url": "https://www.accademiaraffaello.it/" }
+  ]
+}
