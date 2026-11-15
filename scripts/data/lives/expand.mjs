@@ -21,7 +21,7 @@ const VISIT = { house: '🏠', museum: '🏛️', grave: '🪦', memorial: '🗿
 const BY = ['land', 'sea', 'air', 'river'];
 const TOP = new Set(['id', 'qid', 'name', 'icon', 'field', 'known', 'born', 'died', 'bornAbout', 'diedAbout', 'summary', 'unsure', 'steps', 'visit', 'legacy', 'sources', 'wiki', 'era']);
 const STEP = new Set(['date', 'about', 'kind', 'place', 'label', 'at', 'title', 'text', 'details', 'unsure', 'by', 'icon', 'via', 'places']);
-const VIS = new Set(['name', 'at', 'kind', 'text', 'details', 'wiki', 'img', 'whs', 'date']);
+const VIS = new Set(['id', 'name', 'at', 'kind', 'text', 'details', 'wiki', 'img', 'whs', 'date']);
 
 let factsCache;
 export function facts() {

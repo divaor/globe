@@ -140,7 +140,8 @@ their workshop or laboratory, their grave, a great memorial, the museum with the
 }
 ```
 
-`kind` is `house`, `museum`, `grave`, `memorial` or `site`. `at` must be the place itself (4 decimals). Only
+`kind` is `house`, `museum`, `grave`, `memorial` or `site`. `at` must be the place itself (4 decimals). A place that
+another life lists too (Westminster Abbey, a hall of fame) gets the same `id` in both (`"id": "westminster-abbey"`). Only
 list places that exist and can be visited now; a life with none has no `visit`. The build adds a last step,
 "In their footsteps today", that shows them.
 
