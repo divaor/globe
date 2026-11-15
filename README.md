@@ -18,6 +18,12 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
 
 - **Political map (default):** every country has its own shade; the colour family shows its continent.
   Capitals, cities and sea names appear as you zoom. Tap a country for a card with its flag and facts.
+- **Map style and states:** a button by the zoom controls picks the look under every filter: Atlas (a colour per
+  country), Map (a plain road-map look without the roads: one light land colour, a light sea, clear borders and more
+  cities, their dots and names bigger the more people live there) or Satellite (NASA's Blue Marble, and Sentinel-2
+  when you zoom in). States and provinces (the first-level divisions of every country, 4,596 of them) show from
+  country zoom with thin dashed lines and their names, on by default and each with its switch; a tap says which one
+  ("State: Texas") and Who was born here? names a place's state.
 - **Navigation:** drag with fling, pinch, mouse wheel, double-tap, keyboard; search any country or city.
 - **14 projections, smooth morph:** Globe, Plate Carrée, Mercator, Miller, Robinson, Winkel Tripel, Equal Earth,
   Natural Earth, Mollweide, Gall–Peters, Eckert IV, azimuthal equidistant, Lambert azimuthal, stereographic.
@@ -394,7 +400,9 @@ share an edge (323 land borders).
   Olympic hosts come from the Games of the world data.
 - **Tests:** `npm run test:play` checks routes and par, the odd borders, every knowledge round and level, the daily
   route, scoring and challenge links.
-The States and provinces quiz uses Natural Earth's admin-1 regions (`scripts/data/build-regions.mjs`; France,
+The states and provinces drawn on the map, their names (with Spanish names) and the one a tap or a born-here place is
+in come from Natural Earth's 1:10m admin-1 regions (public domain, `public/data/base/admin1.json`, loaded the first
+time they are shown). The States and provinces quiz uses Natural Earth's admin-1 regions (`scripts/data/build-regions.mjs`; France,
 Spain, Italy and the United Kingdom grouped into their regions). The Time travel stories are written from
 Wikipedia and the sources listed in each story
 (`scripts/data/conflicts/README.md`, `scripts/data/STORIES.md`); item pictures are Wikipedia page images,

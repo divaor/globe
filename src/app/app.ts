@@ -8,7 +8,8 @@ import { THEMES } from './theme';
 import { detectLang, detectSpanish, setLang, setSpanish, type Lang, type Spanish } from './i18n';
 import { setLayerContext } from '../layers/context';
 import { tiles, prefs as terrainPrefs } from '../engine/tiles';
-import { DETAIL_LAYERS } from '../layers/imagery';
+import { DETAIL_LAYERS, satellite } from '../layers/imagery';
+import { mapView, styledTheme, MAP_STYLES, type MapStyle } from '../engine/style';
 import type { InfoRow, LayerDef, LayerInstance } from '../layers/types';
 
 export interface ActiveSpec { id: string; opacity: number; options?: Record<string, string | boolean> }
@@ -28,6 +29,8 @@ interface Saved {
   labelScale?: number;
   ambient?: { speed: number; cycle: boolean; clock: boolean; playlist?: string; secs?: number; narrate?: boolean };
   camera?: { lon: number; lat: number; zoom: number };
+  /** The map style and the states and provinces (engine/style.ts). */
+  view?: { style?: MapStyle; regions?: boolean; regionNames?: boolean };
 }
 
 type Listener = (...args: unknown[]) => void;
@@ -71,7 +74,7 @@ export class App {
   /** The deepest zoom: about four web-map levels deeper while detailed terrain is on under a detail filter. */
   syncMaxZoom() {
     const v = this.renderer.view;
-    const deep = terrainPrefs.detail && this.layers.some((l) => DETAIL_LAYERS.includes(l.def.id));
+    const deep = terrainPrefs.detail && (this.layers.some((l) => DETAIL_LAYERS.includes(l.def.id)) || (mapView.style === 'satellite' && !!this.renderer.baseImagery));
     v.maxZoom = deep ? 6400 : 400;
     if (v.zoom > v.maxZoom) { v.flyTo({ zoom: v.maxZoom }, 600); this.renderer.requestRender(); }
   }
@@ -108,8 +111,9 @@ export class App {
     setSpanish(this.spanish);
     setLang(this.lang);
     this.renderer.lang = this.lang;
-    this.renderer.theme = THEMES[this.themeId];
+    this.applyTheme();
     document.documentElement.dataset.theme = this.themeId;
+    void this.syncBaseImagery();
     await this.data.init();
     const active = saved.active?.length ? saved.active : [{ id: 'political', opacity: 1 }];
     for (const a of active) void this.activate(a.id, a);
@@ -228,12 +232,58 @@ export class App {
 
   setTheme(id: 'dark' | 'light') {
     this.themeId = id;
-    this.renderer.theme = THEMES[id];
+    this.applyTheme();
     document.documentElement.dataset.theme = id;
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', id === 'dark' ? '#07101f' : '#f4f1ea');
     this.emit('theme');
     this.renderer.requestRender();
     this.save();
+  }
+
+  /** The map's theme: the app's light or dark theme in the chosen map style. */
+  private applyTheme() {
+    this.renderer.theme = styledTheme(THEMES[this.themeId], mapView.style);
+    // Over the light Map style, text drawn straight on the map (the brand) turns dark.
+    document.documentElement.classList.toggle('map-light', mapView.style === 'map');
+  }
+
+  /** The map style (Atlas, Map, Satellite) and the states and provinces with their names; for every filter. */
+  setMapView(v: Partial<typeof mapView>) {
+    Object.assign(mapView, v);
+    this.applyTheme();
+    void this.syncBaseImagery();
+    this.emit('mapview');
+    this.renderer.requestRender();
+    this.save();
+  }
+
+  private satelliteBase: LayerInstance | null = null;
+
+  /** In the Satellite style, NASA's picture (Sentinel-2 zoomed in) goes under every filter; it needs WebGL. */
+  private async syncBaseImagery() {
+    const r = this.renderer;
+    if (mapView.style !== 'satellite' || !r.gl) {
+      // Its detail tiles are let go; the world picture stays loaded for the next time.
+      if (r.baseImagery) satellite.onDeactivate?.(r.baseImagery);
+      r.baseImagery = null;
+      this.syncMaxZoom();
+      return;
+    }
+    let inst = this.satelliteBase;
+    if (!inst) {
+      inst = this.satelliteBase = { def: satellite, opacity: 1, options: {}, ready: false, state: {} };
+      try {
+        await satellite.load!({ data: this.data, gl: r.gl, lang: () => this.lang, requestRender: () => r.requestRender() }, inst);
+        inst.ready = true;
+      } catch (e) {
+        console.error('satellite style', e);
+        this.satelliteBase = null;
+        return;
+      }
+    }
+    if (mapView.style === 'satellite') r.baseImagery = inst;
+    this.syncMaxZoom();
+    r.requestRender();
   }
 
   select(id: string | null) {
@@ -291,6 +341,7 @@ export class App {
       labelScale: r.settings.labelScale,
       ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock, playlist: this.ambient.playlist, secs: this.ambient.secs, narrate: this.ambient.narrate },
       camera: r.view.camera(),
+      view: { ...mapView },
     };
   }
 
@@ -310,6 +361,10 @@ export class App {
       .map((a) => `${a.id}:${Object.entries(a.options!).map(([k, v]) => `${k}=${v}`).join(';')}`).join('|');
     const p = new URLSearchParams({ p: s.projection!, l: layers, c: `${c.lon.toFixed(2)},${c.lat.toFixed(2)},${c.zoom.toFixed(2)}`, lang: s.lang === 'es' && s.es === 'spain' ? 'es-ES' : s.lang! });
     if (opts) p.set('o', opts);
+    // The map style and the states, when not the usual ones.
+    if (s.view?.style && s.view.style !== 'atlas') p.set('m', s.view.style);
+    if (s.view?.regions === false) p.set('st', '0');
+    else if (s.view?.regionNames === false) p.set('sn', '0');
     return p.toString();
   }
 
@@ -344,6 +399,7 @@ export class App {
         lang: (hash.get('lang')?.slice(0, 2) as Lang) ?? saved.lang,
         es: hash.get('lang') === 'es-ES' ? 'spain' : hash.get('lang') === 'es' ? 'latam' : saved.es,
         camera: c.length === 3 && c.every(isFinite) ? { lon: c[0], lat: c[1], zoom: c[2] } : saved.camera,
+        view: { style: (hash.get('m') as MapStyle) ?? 'atlas', regions: hash.get('st') !== '0', regionNames: hash.get('sn') !== '0' },
       };
     }
     const r = this.renderer;
@@ -356,6 +412,11 @@ export class App {
     if (saved.quality) r.settings.quality = saved.quality;
     if (saved.gpuMotion !== undefined) r.settings.gpuMotion = saved.gpuMotion;
     if (saved.labelScale) r.settings.labelScale = saved.labelScale;
+    if (saved.view) {
+      if (saved.view.style && MAP_STYLES.includes(saved.view.style)) mapView.style = saved.view.style;
+      if (typeof saved.view.regions === 'boolean') mapView.regions = saved.view.regions;
+      if (typeof saved.view.regionNames === 'boolean') mapView.regionNames = saved.view.regionNames;
+    }
     if (saved.ambient) Object.assign(this.ambient, saved.ambient);
     // Before playlists, "cycle through filters" played the filters of what is now the playlist Our planet.
     if (saved.ambient?.cycle && saved.ambient.playlist === undefined) this.ambient.playlist = 'planet';

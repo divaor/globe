@@ -20,6 +20,9 @@ export interface Theme {
   sea: string;
   city: string;
   capital: string;
+  /** Lines between states and provinces, and their names. */
+  region: string;
+  regionLabel: string;
   selection: string;
   shade: number;                  // strength of the 3D limb shading on the globe
 }
@@ -45,6 +48,8 @@ export const THEMES: Record<'dark' | 'light', Theme> = {
     sea: 'rgba(170,215,255,0.72)',
     city: '#ffffff',
     capital: '#ff5a5f',
+    region: 'rgba(255,255,255,0.5)',
+    regionLabel: 'rgba(222,234,250,0.92)',
     selection: '#ffe066',
     shade: 0.42,
   },
@@ -68,6 +73,8 @@ export const THEMES: Record<'dark' | 'light', Theme> = {
     sea: 'rgba(30,80,140,0.62)',
     city: '#1d2433',
     capital: '#d6283a',
+    region: 'rgba(70,60,50,0.42)',
+    regionLabel: '#5b5345',
     selection: '#e8590c',
     shade: 0.18,
   },

@@ -44,6 +44,9 @@ export class LabelEngine {
   private w = 0; private h = 0;
   scale = 1; // user label size multiplier
 
+  /** The names drawn in the last frame, where they were drawn (the tests read them). */
+  drawn: { text: string; x: number; y: number }[] = [];
+
   begin(w: number, h: number) {
     this.items.length = 0;
     this.grid.clear();
@@ -103,6 +106,7 @@ export class LabelEngine {
 
   draw(ctx: CanvasRenderingContext2D) {
     this.items.sort((a, b) => b.priority - a.priority);
+    this.drawn = [];
     ctx.textBaseline = 'middle';
     ctx.lineJoin = 'round';
     // A name already shown a few px away is not shown again (a city the map names and an overlay names too).
@@ -190,6 +194,7 @@ export class LabelEngine {
       ctx.strokeText(text, tx, ty);
       ctx.fillStyle = l.color;
       ctx.fillText(text, tx, ty);
+      this.drawn.push({ text, x: tx, y: ty });
       if (l.sub) {
         ctx.font = subFont;
         (ctx as unknown as { letterSpacing: string }).letterSpacing = '0px';

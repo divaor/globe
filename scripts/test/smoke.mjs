@@ -2945,6 +2945,133 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 25. Map view (v0.28.5). States and provinces, on by default: their lines and names over the US from country zoom (Texas
+// named), with a filter on (Who was born here?, whose names give way to the states'); a tap on Texas says "State: Texas"
+// on the card; Salzburg's born-here panel names its state and country. The style button in the zoom controls: the Map
+// style (one light land colour, the Political map's colours gone and its legend saying so), Satellite (NASA's picture
+// under the filters, the deeper zoom), the names and the states switched off, all kept after a reload and in the link;
+// Spanish.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {} });
+  await ctx.route(/wikidata\.org|wikimedia\.org|wikipedia\.org/, (route) => route.abort());
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(url + '#p=globe&l=political,born-here&c=-98,38,1.4&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.reload({ waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas?.app && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(1000);
+  const at = (lon, lat, wz) => page.evaluate(([lon, lat, wz]) => { const r = window.atlas.app.renderer, v = r.view; v.flyTo({ lon, lat, zoom: v.zoom * Math.pow(2, wz - v.webZoom) }, 0); r.requestRender(); }, [lon, lat, wz]);
+  const drawn = () => page.evaluate(() => window.atlas.app.renderer.labels.drawn.map((l) => l.text));
+  // How many pixels of the map change when the states are switched on (the same frame drawn twice).
+  const linesPx = () => page.evaluate(() => {
+    const app = window.atlas.app, r = app.renderer, fg = document.getElementById('fg');
+    const grab = () => { r['draw'](performance.now()); return fg.getContext('2d').getImageData(0, 0, fg.width, fg.height).data; };
+    app.setMapView({ regions: false }); const a = grab();
+    app.setMapView({ regions: true }); const b = grab();
+    let n = 0;
+    for (let i = 0; i < a.length; i += 4) if (Math.abs(a[i] - b[i]) + Math.abs(a[i + 1] - b[i + 1]) + Math.abs(a[i + 2] - b[i + 2]) > 30) n++;
+    return n;
+  });
+
+  // States and provinces, on by default, over the US with Who was born here? on.
+  await page.waitForFunction(() => window.atlas.app.instance('born-here')?.ready, null, { timeout: 30000 }).catch(() => {});
+  await at(-98, 38, 4.4);
+  await page.waitForTimeout(2500);
+  const on = await page.evaluate(() => ({ regions: window.atlas.app.renderer.labels.drawn.length > 0 }));
+  const usPx = await linesPx();
+  await page.waitForTimeout(800);
+  const usNames = await drawn();
+  const states = usNames.filter((t) => /^(TEXAS|KANSAS|NEBRASKA|OKLAHOMA|COLORADO|MONTANA|WYOMING|IOWA|MISSOURI|NEW MEXICO|SOUTH DAKOTA|NORTH DAKOTA)$/.test(t));
+  check(on.regions && usPx > 2000 && states.includes('TEXAS') && states.length >= 4,
+    `states and provinces, on by default: over the US with Who was born here? on, the lines (${usPx} pixels) and ${states.length} state names (${states.slice(0, 4).join(', ')}…)`);
+
+  // Salzburg's born-here panel names its state and country.
+  await page.evaluate(() => { const r = window.atlas.app.renderer; r.view.flyTo({ lon: 13.045, lat: 47.8, zoom: 7 }, 0); r.requestRender(); });
+  await page.waitForTimeout(1500);
+  const sp = await page.evaluate(() => window.atlas.app.renderer.view.project(13.045, 47.8));
+  await page.touchscreen.tap(sp[0], sp[1]);
+  await page.waitForSelector('.born-panel .born-where', { timeout: 8000 }).catch(() => {});
+  const where = await page.evaluate(() => document.querySelector('.born-panel .born-where')?.textContent ?? '');
+  await page.evaluate(() => { window.atlas.shell.sheet.close(); window.atlas.shell.card.hide(); });
+  check(/Salzburg/.test(where) && /Austria/.test(where), `Salzburg's born-here panel: "${where}"`);
+
+  // A tap on Texas: the card names the state.
+  await page.evaluate(() => window.atlas.app.deactivate('born-here'));
+  await at(-99.5, 31.3, 5);
+  await page.waitForTimeout(1500);
+  const tp = await page.evaluate(() => window.atlas.app.renderer.view.project(-99.5, 31.3));
+  await page.touchscreen.tap(tp[0], tp[1]);
+  await page.waitForTimeout(900);
+  const card = await page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
+  await page.evaluate(() => window.atlas.shell.card.hide());
+  check(/United States/.test(card) && /State\s*\n?\s*Texas/.test(card), `a tap on Texas: the card says "${(/State[^\n]*\n?[^\n]*Texas/.exec(card) ?? [''])[0].replace(/\s+/g, ' ')}"`);
+
+  // The style button: the Map style.
+  await at(-98, 38, 4.4);
+  await page.click('.zoom-style');
+  await page.waitForSelector('.mapstyle:not([hidden]) [data-style="map"]', { timeout: 5000 }).catch(() => {});
+  const tiles = await page.evaluate(() => [...document.querySelectorAll('.mapstyle [data-style]')].map((b) => `${b.dataset.style}${b.getAttribute('aria-checked') === 'true' ? '*' : ''}`));
+  await page.click('.mapstyle [data-style="map"]');
+  await page.waitForTimeout(1500);
+  const mp = await page.evaluate(() => {
+    const r = window.atlas.app.renderer, fg = document.getElementById('fg');
+    r['draw'](performance.now());
+    // The land in the Great Plains at eight points: most are the Map style's light grey land (a name or a line may
+    // cover a few), none the Political map's colour.
+    const d = r.view.dpr, g = fg.getContext('2d');
+    const pts = [[-100.5, 39.3], [-101, 41.5], [-99, 37.5], [-103, 39], [-97.5, 40.2], [-104.5, 41], [-98, 35.6], [-102, 36.6]];
+    const px = pts.map(([lon, lat]) => { const p = r.view.project(lon, lat); return [...g.getImageData(Math.round(p[0] * d), Math.round(p[1] * d), 1, 1).data].slice(0, 3); });
+    const land = px.filter(([R, G, B]) => R > 200 && Math.abs(R - G) < 14 && Math.abs(G - B) < 16).length;
+    const pol = window.atlas.app.instance('political');
+    return { land: r.theme.land, landPx: land, light: document.documentElement.classList.contains('map-light'), note: pol.def.legend(pol, 'en')?.note ?? '' };
+  });
+  check(tiles.join() === 'atlas*,map,satellite' && mp.land === '#f2f0e9' && mp.landPx >= 5 && mp.light && /countries are in one colour/.test(mp.note),
+    `the style button: ${tiles.join(', ')}; Map: the land ${mp.land} (${mp.landPx} of 8 points in the Great Plains), the Political map's legend: "${mp.note.split('.')[0]}"`);
+
+  // Satellite: NASA's picture under the filters, and the deeper zoom.
+  await page.click('.mapstyle [data-style="satellite"]');
+  await page.waitForFunction(() => window.atlas.app.renderer.baseImagery?.ready, null, { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(1200);
+  const sat = await page.evaluate(() => ({ ready: !!window.atlas.app.renderer.baseImagery?.ready, max: window.atlas.app.renderer.view.maxZoom, chips: [...document.querySelectorAll('.chips .fchip-name')].map((c) => c.textContent).join(', ') }));
+  check(sat.ready && sat.max > 400 && /Political map/.test(sat.chips) && !/Satellite/.test(sat.chips), `Satellite: NASA's picture under the filters (${sat.chips}), and the deeper zoom (${sat.max})`);
+
+  // The names off, then the states off; kept after a reload and in the address.
+  await page.click('.mapstyle [data-ms="names"]');
+  await page.waitForTimeout(800);
+  const noNames = await drawn();
+  await page.click('.mapstyle [data-ms="regions"]');
+  await page.waitForTimeout(1200);
+  const hash = await page.evaluate(() => location.hash);
+  await page.reload({ waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas?.app && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(1000);
+  const kept = await page.evaluate(() => { const r = window.atlas.app.renderer; return { style: r.theme.region === 'rgba(255,255,255,0.5)' && r.theme.label === '#ffffff', hash: location.hash }; });
+  check(!noNames.includes('TEXAS') && /[#&]m=satellite/.test(hash) && /[&]st=0/.test(hash) && kept.style && /m=satellite/.test(kept.hash),
+    `the names off (no "TEXAS"), then the states off; after a reload still Satellite and no states (${hash.split('&').filter((x) => /^(m|st|sn)=/.test(x)).join('&')})`);
+
+  // Spanish: the panel, and the card's row.
+  await page.evaluate(() => { window.atlas.app.setLang('es'); window.atlas.app.setMapView({ style: 'atlas', regions: true }); window.atlas.app.deactivate('born-here'); });
+  await page.click('.zoom-style');
+  await page.waitForTimeout(400);
+  const esPanel = await page.evaluate(() => document.querySelector('.mapstyle')?.innerText ?? '');
+  await page.click('.zoom-style');
+  await page.evaluate(async () => { const { app } = window.atlas; app.renderer.requestRender(); });
+  await at(-99.5, 31.3, 5);
+  await page.waitForTimeout(2000);
+  const tp2 = await page.evaluate(() => window.atlas.app.renderer.view.project(-99.5, 31.3));
+  await page.touchscreen.tap(tp2[0], tp2[1]);
+  await page.waitForTimeout(900);
+  const esCard = await page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
+  await page.evaluate(() => { window.atlas.shell.card.hide(); window.atlas.app.setLang('en'); });
+  check(/Estilo del mapa/.test(esPanel) && /Estados y provincias/.test(esPanel) && /Satélite/.test(esPanel) && /Estado\s*\n?\s*Texas/.test(esCard),
+    `en español: "Estilo del mapa", "Estados y provincias"; the card: "${(/Estado[^\n]*\n?[^\n]*Texas/.exec(esCard) ?? [''])[0].replace(/\s+/g, ' ')}"`);
+
+  check(!errors.length, `no page errors in v0.28.5's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

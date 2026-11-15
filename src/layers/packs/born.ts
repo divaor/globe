@@ -12,6 +12,7 @@ import { crowdOf, type Placed } from '../crowd';
 import type { Hit } from '../../ui/search';
 import { loadBorn, loadLives, personCard, FIELDS, fieldName, nm, years, what, type BornData, type BornPlace, type Person, type PersonLinks } from '../../lives/born';
 import { creditEl } from '../../artguide/cards';
+import { regionAt, regionType } from '../../engine/regions';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -140,7 +141,12 @@ export const bornHere: LayerDef = {
     if (people.length === 1) { void personCard(ui.card, people[0], x); return true; }
     const died = inst.options.show === 'died';
     const title = died ? L(`Died in ${nm(best)}`, `Murieron en ${nm(best)}`) : L(`Born in ${nm(best)}`, `Nacieron en ${nm(best)}`);
+    // Which state or province and country the place is in (when the states are shown, their shapes are loaded).
+    const rg = regionAt(best.at[0], best.at[1]);
+    const cid = APP?.renderer.countryAt(best.at[0], best.at[1]);
+    const where = [rg ? `${L(rg.name, rg.es)}${regionType(rg, APP?.lang === 'es') ? ` (${regionType(rg, APP?.lang === 'es')!.toLowerCase()})` : ''}` : null, cid ? APP!.data.name(cid, APP!.lang) : null].filter(Boolean).join(', ');
     const body = h('div', { class: 'guide born-panel', 'data-place': best.name[0] },
+      where ? h('p', { class: 'born-where' }, `📍 ${where}`) : null,
       h('p', { class: 'muted small' }, L(`${people.length} well-known people, the best known first. Tap one for their card.`, `${people.length} personas conocidas, las más conocidas primero. Toca una para ver su ficha.`)),
       peopleList(people, (p) => { SHELL?.sheet.close(); void personCard((...a) => SHELL!.card.showCustom(...a), p, x); }, 200));
     if (best.city) {

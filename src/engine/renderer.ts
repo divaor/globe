@@ -13,6 +13,8 @@ import type { LayerInstance, RenderCtx } from '../layers/types';
 import { THEMES, type Theme } from '../app/theme';
 import type { Lang } from '../app/i18n';
 import { sunVector } from '../layers/sun';
+import { mapView } from './style';
+import { loadRegions, regions } from './regions';
 
 export interface RenderSettings {
   labels: { countries: boolean; capitals: boolean; cities: boolean; seas: boolean; values: boolean };
@@ -70,6 +72,8 @@ export class Renderer {
   highlight: Set<string> | null = null;
   /** Draw today's countries (land, borders, labels). Time-travel modes switch it off. */
   baseMap = true;
+  /** The satellite picture under every filter in the Satellite map style (see engine/style.ts); set by the app. */
+  baseImagery: LayerInstance | null = null;
   /** Another world on the globe (see space/): no ocean, its own haze (or none). Null: the Earth. */
   worldStyle: { glow: string | null } | null = null;
   moving = false;
@@ -416,7 +420,12 @@ export class Renderer {
     const path = this.path;
     this.framePaths.clear();
     const countries = rc.visibleShapes(level.countries);
-    const ready = this.layers.filter((l) => l.ready);
+    // The map style (engine/style.ts): the Political map's colours only in Atlas; in Satellite, the picture goes
+    // under every filter (unless one is already at the bottom).
+    const style = this.baseMap && !this.worldStyle ? mapView.style : 'atlas';
+    let ready = this.layers.filter((l) => l.ready && !(style !== 'atlas' && l.def.id === 'political'));
+    const base = this.baseImagery;
+    if (style === 'satellite' && base?.ready && !(ready[0]?.def.kind === 'raster' && ready[0].def.group === 'imagery')) ready = [base, ...ready];
     const bottom = ready[0];
     const opaqueBase = !!bottom && bottom.def.kind === 'raster' && bottom.def.group === 'imagery' && bottom.opacity > 0.9 && !!this.gl;
     // The grey land is pointless under a filter that paints every country opaquely (political map).
@@ -525,6 +534,23 @@ export class Renderer {
     ctx.beginPath();
     for (const l of rc.visibleLines(level.borders)) path(l.geometry);
     ctx.strokeStyle = th.border; ctx.lineWidth = bw; ctx.stroke();
+    }
+
+    // ---- states and provinces: thin dashed lines from country zoom on, fading in
+    if (this.baseMap && !this.worldStyle && mapView.regions) {
+      const rg = regions();
+      if (!rg) void loadRegions().then(() => this.requestRender(), () => {});
+      else if (view.webZoom >= 2.6) {
+        ctx.save();
+        ctx.globalAlpha = Math.min(1, (view.webZoom - 2.6) / 0.8);
+        ctx.beginPath();
+        for (const l of rc.visibleLines(rg.lines)) path(l.geometry);
+        ctx.lineCap = 'butt';
+        // Dashed when still; while the map moves, solid (dashes cost more to draw).
+        if (!rc.moving) ctx.setLineDash(view.webZoom < 4 ? [2.5, 2] : [4, 2.5]);
+        ctx.strokeStyle = th.region; ctx.lineWidth = Math.max(0.7, bw * 0.9); ctx.stroke();
+        ctx.restore();
+      }
     }
 
     // Labels are collected from here on (overlays add some: a quiz pin, measured distances), drawn last.
@@ -654,6 +680,8 @@ export class Renderer {
         });
       }
     }
+    // The Map style shows more cities, their dots and names bigger the more people live there.
+    const mapLook = mapView.style === 'map' && !this.worldStyle;
     if (set.capitals || set.cities) {
       const cities = this.data.cities;
       let shown = 0;
@@ -661,7 +689,7 @@ export class Renderer {
         if (c.minZoom > wz + 1.2) break;
         const isCap = c.capital === 2;
         if (isCap ? !set.capitals : !set.cities) continue;
-        if (!isCap && c.minZoom > wz + 0.2) continue;
+        if (!isCap && c.minZoom > wz + (mapLook ? 0.9 : 0.2)) continue;
         if (isCap && c.minZoom > wz + 1.2) continue;
         const p = rc.project(c.lon, c.lat);
         if (!p) continue;
@@ -669,13 +697,31 @@ export class Renderer {
         labels.add({
           text: es && c.es ? c.es : c.name, x: p[0], y: p[1],
           priority: (isCap ? 700 : 400) + big * 60 - c.minZoom * 20,
-          size: 10.5 + big * 1.2 + (isCap ? 0.6 : 0), weight: isCap ? 650 : 500,
+          size: 10.5 + big * (mapLook ? 2 : 1.2) + (isCap ? 0.6 : 0), weight: isCap || (mapLook && big) ? 650 : 500,
           color: th.city, halo: th.labelHalo,
           marker: isCap ? { kind: 'capital', color: th.capital, r: 3.6, stroke: th.dark ? '#fff' : '#fff' }
-            : { kind: 'dot', color: th.dark ? '#ffffff' : '#2b3548', r: 2 + big * 0.5, stroke: th.labelHalo },
-          keepMarker: isCap,
+            : { kind: 'dot', color: mapLook ? (th.dark ? '#dfe5ee' : '#5b6068') : th.dark ? '#ffffff' : '#2b3548', r: mapLook ? 2.2 + big : 2 + big * 0.5, stroke: th.labelHalo },
+          keepMarker: isCap || (mapLook && big > 0),
         });
-        if (++shown > 420) break;
+        if (++shown > (mapLook ? 600 : 420)) break;
+      }
+    }
+    // States and provinces: a name where the region is big enough on screen for it, the big ones first. They go
+    // before a filter's marker names (Who was born here?), so you can tell which state a place is in.
+    const rg = mapView.regions && mapView.regionNames && !this.worldStyle ? regions() : null;
+    if (rg && wz >= 3) {
+      const k = view.pxPerRadian;
+      let shown = 0;
+      for (const r of rg.regions) {
+        const px = r.size * k;
+        if (px < 56) break;
+        const p = rc.project(r.lon, r.lat);
+        if (!p || p[0] < -40 || p[1] < -20 || p[0] > view.w + 40 || p[1] > view.h + 20) continue;
+        labels.add({
+          text: es ? r.es : r.name, x: p[0], y: p[1], priority: 650 + Math.min(100, px / 8),
+          size: Math.max(9, Math.min(12.5, 8.2 + px / 110)), weight: 600, caps: true, color: th.regionLabel, halo: th.labelHalo,
+        });
+        if (++shown > 160) break;
       }
     }
     if (set.seas && this.marine.length) {
