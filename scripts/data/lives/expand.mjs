@@ -20,7 +20,7 @@ const AFTER_DEATH = new Set(['journey', 'honour']);
 const VISIT = { house: '🏠', museum: '🏛️', grave: '🪦', memorial: '🗿', site: '📍' };
 const BY = ['land', 'sea', 'air', 'river'];
 const TOP = new Set(['id', 'qid', 'name', 'icon', 'field', 'known', 'born', 'died', 'bornAbout', 'diedAbout', 'summary', 'unsure', 'steps', 'visit', 'legacy', 'sources', 'wiki', 'era']);
-const STEP = new Set(['date', 'about', 'kind', 'place', 'label', 'at', 'title', 'text', 'details', 'unsure', 'by', 'icon', 'via', 'places']);
+const STEP = new Set(['date', 'about', 'kind', 'place', 'label', 'at', 'title', 'text', 'details', 'unsure', 'by', 'icon', 'via', 'places', 'away']);
 const VIS = new Set(['id', 'name', 'at', 'kind', 'text', 'details', 'wiki', 'img', 'whs', 'date']);
 
 let factsCache;
@@ -182,7 +182,12 @@ export function expandLife(c, file, { parseDate, lint = false }) {
     if (st.about) o.about = true;
     if (st.unsure) o.unsure = st.unsure;
     const d = prev ? km(prev, st.at) : 0;
-    if (prev && d > 15) {
+    // A step told where it happened, though they were not there (crowned Empress of India in Delhi): no route, and the
+    // next route starts from where they were.
+    if (st.away) {
+      o.away = true;
+      o.camera = { lon: round(st.at[0]), lat: round(st.at[1]), zoom: 5.5 };
+    } else if (prev && d > 15) {
       const by = st.by ?? 'land';
       const mv = { side: 'life', path: [prev, ...(st.via ?? []), st.at].map((p) => p.map(round)), by };
       const ic = st.icon ?? (by === 'sea' ? SHIP(year(st.date)) : by === 'air' ? '✈️' : by === 'river' ? '🛶' : null);
@@ -196,7 +201,7 @@ export function expandLife(c, file, { parseDate, lint = false }) {
       ...(st.places ?? []),
     ];
     out.push(o);
-    prev = st.at;
+    if (!st.away) prev = st.at;
   }
   if (c.visit?.length) {
     c.visit.forEach((v, i) => {

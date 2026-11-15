@@ -78,6 +78,7 @@ One file per person, `scripts/data/lives/<id>.json` (the ids are in `_people.jso
 | `icon` | optional: one emoji for the traveller, when you know how they went: 🚶 on foot, 🐎 on horseback, 🚂 by train, 🚗 by car |
 | `via` | optional: `[[lon, lat], …]`, points on the way here, for a voyage that would otherwise be drawn across land (Europe to India round the Cape: add points off West Africa, the Cape and Mozambique) |
 | `places` | optional: up to 3 markers of this step: a work made here, a person met, a building (below) |
+| `away` | optional: `true` for an event of their life that happened where they were not (Victoria proclaimed Empress of India in Delhi): no route is drawn to it, and the next route starts from where they were. Say in the text that they were not there |
 
 ### Choosing the steps
 

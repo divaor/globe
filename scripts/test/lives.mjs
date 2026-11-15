@@ -43,6 +43,8 @@ for (const [id, c] of lives) {
     steps++;
     if (st.unsure) unsure++;
     if (!two(st.place) || !Array.isArray(st.at)) { why.push(`step ${i + 1}: no place`); continue; }
+    // (A step where they were not, "away", has no route; the next one starts from where they were.)
+    if (st.away) { if ((st.moves ?? []).length) why.push(`step ${i + 1}: a route to a place they were not`); continue; }
     // (A step dated by its year only may be a year either way: its lower age counts.)
     if (st.age != null) { if (st.age < age) why.push(`step ${i + 1}: aged ${st.age} after ${age}`); age = st.age0 ?? st.age; }
     // The route to a step starts where the last step was, and ends at the step.
