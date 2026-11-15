@@ -16,6 +16,9 @@ import { settingsPanel, aboutPanel } from './settings';
 import { MapStyleMenu } from './mapstyle';
 import { mapView } from '../engine/style';
 import { regionAt, regionType } from '../engine/regions';
+import { regionView } from './search';
+import { ring } from './ring';
+import type { LayerDef, LayerHit, LayerInstance } from '../layers/types';
 import type { App } from '../app/app';
 import type { IconNode } from 'lucide';
 
@@ -66,6 +69,18 @@ export class Shell {
     this.card = new CountryCard(app, root);
     this.search = new SearchBox(app);
     root.append(this.search.el);
+    this.search.onLayerHit = (def, inst, hit) => void this.goToHit(def, inst, hit);
+    this.search.onLegendItem = (inst, it) => {
+      this.legend.highlightItem(inst, it);
+      this.flyToCountries(it.ids ?? []);
+    };
+    this.search.onRegion = (r) => {
+      const v = regionView(r);
+      const flat = app.renderer.view.current.kind === 'flat';
+      app.flyTo(v.lon, v.lat, Math.max(2, Math.min(200, 120 / Math.max(0.3, v.span))) * (flat ? 0.6 : 1));
+      app.select(app.data.meta[r.country] ? r.country : app.renderer.countryAt(r.lon, r.lat));
+      ring(app, { shape: r.shape.feature, ms: 5000 });
+    };
     this.ambient = new Ambient(app, root);
 
     this.addDock({ id: 'filters', icon: Layers, label: () => t('filters'), order: 10, onClick: () => this.openFilters() });
@@ -215,6 +230,58 @@ export class Shell {
     this.toastEl.hidden = false;
     clearTimeout(this.toastTimer);
     this.toastTimer = window.setTimeout(() => (this.toastEl.hidden = true), ms);
+  }
+
+  /**
+   * A filter's search result: the filter turned on if it was off, the map flown close to it (its dot apart from its
+   * neighbours), its dot ringed wherever the crowd moved it, and its card opened, as a tap on it would.
+   */
+  private async goToHit(def: LayerDef, on: LayerInstance | null, hit: LayerHit) {
+    const app = this.app;
+    let inst = on;
+    if (!inst) {
+      await app.activate(def.id);
+      inst = app.instance(def.id) ?? null;
+      for (let i = 0; i < 100 && inst && !inst.ready && !inst.error; i++) await new Promise((r) => setTimeout(r, 100));
+      if (!inst?.ready) return;
+    }
+    hit.prepare?.(inst);
+    const v = app.renderer.view;
+    const flat = v.current.kind === 'flat';
+    const zoom = v.zoom * Math.pow(2, (hit.wz ?? 9) - v.webZoom) * (flat ? 0.8 : 1);
+    v.flyTo({ lon: hit.lon, lat: hit.lat, zoom: Math.min(v.maxZoom, zoom) });
+    app.renderer.requestRender();
+    const crowd = () => (inst!.state.crowd as { placed?: { it: unknown; x: number; y: number }[] } | undefined)?.placed;
+    ring(app, {
+      at: () => {
+        if (hit.dot !== undefined) {
+          const p = crowd()?.find((x) => x.it === hit.dot || (Array.isArray(x.it) && x.it[0] === hit.dot) || (x.it as { p?: unknown })?.p === hit.dot);
+          if (p) return [p.x, p.y];
+        }
+        return v.project(hit.lon, hit.lat);
+      },
+    });
+    if (hit.open) {
+      const p = v.project(hit.lon, hit.lat) ?? [0, 0];
+      hit.open({ card: (...a: Parameters<CountryCard['showCustom']>) => { app.select(null); this.card.showCustom(...a); }, project: (lon, lat) => v.project(lon, lat), x: p[0], y: p[1] });
+    }
+  }
+
+  /** Flies to show a set of countries (a legend entry found by the search). */
+  private flyToCountries(ids: string[]) {
+    if (ids.length === 1) { this.app.flyToCountry(ids[0], false); return; }
+    const level = this.app.data.best('50m');
+    let w = 180, s = 90, e = -180, n = -90, x = 0, y = 0, k = 0;
+    for (const id of ids) {
+      const sh = level.byId.get(id);
+      const m = this.app.data.meta[id];
+      if (!sh || !m) continue;
+      w = Math.min(w, sh.bbox[0]); s = Math.min(s, sh.bbox[1]); e = Math.max(e, sh.bbox[2]); n = Math.max(n, sh.bbox[3]);
+      x += m.lx; y += m.ly; k++;
+    }
+    if (!k) return;
+    const span = Math.max(e - w, (n - s) * 1.4);
+    this.app.flyTo(x / k, y / k, Math.max(1, Math.min(30, 140 / Math.max(2, span))));
   }
 
   /** Tools (ruler, true size...) can claim taps; return true to stop the default selection. */

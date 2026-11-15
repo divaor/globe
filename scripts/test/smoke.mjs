@@ -3072,6 +3072,83 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 26. Search (v0.29.0). With Who was born here? on, "rafa nadal", "Nadal Rafael" and "rafael nadl" find Rafael Nadal
+// first, from that filter; choosing him flies close to Manacor, rings his dot and opens his card. With Masterpieces off,
+// "las meninas" finds the painting (the filter turns on, its card opens). "texas" finds the state; Languages'
+// "Portuguese" highlights its countries; "40.4, -3.7" goes there. An empty box shows the recent searches; Spanish.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {} });
+  await ctx.route(/wikidata\.org|wikimedia\.org|wikipedia\.org/, (route) => route.abort());
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(url + '#p=globe&l=political,born-here&c=0,30,1.4&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.reload({ waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas?.app?.instance('born-here')?.ready && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(1000);
+  const find = async (text, wait = 600) => {
+    await page.evaluate(() => window.atlas.shell.search.open());
+    await page.fill('.search-field', text);
+    await page.waitForTimeout(wait);
+    return page.evaluate(() => [...document.querySelectorAll('.search-item')].map((x) => ({ label: x.querySelector('.si-label')?.textContent ?? '', tag: x.querySelector('.si-tag')?.textContent ?? '', sub: x.querySelector('.si-sub')?.textContent ?? '' })));
+  };
+  const choose = async (i = 0) => { await page.evaluate((k) => document.querySelectorAll('.search-item')[k]?.click(), i); await page.waitForTimeout(3000); };
+  const cardTitle = () => page.evaluate(() => document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? '');
+
+  // Rafael Nadal, however he is typed.
+  const ways = [];
+  for (const q of ['rafa nadal', 'Nadal Rafael', 'rafael nadl']) ways.push([q, (await find(q))[0]]);
+  await page.keyboard.press('Enter');
+  await page.waitForTimeout(3500);
+  const at = await page.evaluate(() => { const v = window.atlas.app.renderer.view; return { wz: v.webZoom, cam: v.camera(), ring: window.atlas.app.renderer.overlays.size }; });
+  const nadal = await cardTitle();
+  await page.evaluate(() => window.atlas.shell.card.hide());
+  check(ways.every(([, r]) => r?.label === 'Rafael Nadal' && /Who was born here/.test(r.tag)) && at.wz >= 8.5 && Math.abs(at.cam.lon - 3.21) < 0.3 && Math.abs(at.cam.lat - 39.57) < 0.3 && nadal === 'Rafael Nadal',
+    `"${ways.map(([q]) => q).join('", "')}" find Rafael Nadal first (${ways[0][1]?.tag}); choosing him flies to Manacor (web zoom ${at.wz.toFixed(1)}), rings his dot and opens his card`);
+
+  // A filter that is off: Masterpieces.
+  const men = await find('las meninas', 2500);
+  await choose(0);
+  const menOn = await page.evaluate(() => window.atlas.app.isActive('masterpieces'));
+  const menCard = await cardTitle();
+  await page.evaluate(() => { window.atlas.shell.card.hide(); window.atlas.app.deactivate('masterpieces'); });
+  check(men[0]?.label === 'Las Meninas' && /Masterpieces · turns it on/.test(men[0].tag) && /Velázquez/.test(men[0].sub) && menOn && menCard === 'Las Meninas',
+    `with Masterpieces off, "las meninas" finds it (${men[0]?.tag}); choosing it turns the filter on and opens its card`);
+
+  // A state, a legend entry, coordinates.
+  const tx = await find('texas', 1500);
+  await choose(0);
+  const txAt = await page.evaluate(() => ({ cam: window.atlas.app.renderer.view.camera(), sel: window.atlas.app.selection }));
+  await page.evaluate(() => window.atlas.app.activate('languages'));
+  await page.waitForFunction(() => window.atlas.app.instance('languages')?.ready, null, { timeout: 20000 }).catch(() => {});
+  const pt = await find('portuguese');
+  await choose(0);
+  const hl = await page.evaluate(() => [...(window.atlas.app.renderer.highlight ?? [])]);
+  await page.evaluate(() => { window.atlas.shell.legend.clearHighlight(); window.atlas.app.deactivate('languages'); });
+  const co = await find('40.4, -3.7');
+  await choose(0);
+  const coAt = await page.evaluate(() => window.atlas.app.renderer.view.camera());
+  check(tx[0]?.label === 'Texas' && /State, United States/.test(tx[0].sub) && Math.abs(txAt.cam.lon + 99.3) < 3 && txAt.sel === 'USA'
+    && pt[0]?.label === 'Portuguese' && /Languages/.test(pt[0].tag) && hl.includes('BRA') && hl.includes('PRT')
+    && /40.40° N, 3.70° W/.test(co[0]?.label ?? '') && Math.abs(coAt.lat - 40.4) < 0.05 && Math.abs(coAt.lon + 3.7) < 0.05,
+    `"texas": ${tx[0]?.label} (${tx[0]?.sub}); "portuguese" with Languages on: ${hl.length} countries highlighted; "40.4, -3.7": ${co[0]?.label}`);
+
+  // The empty box: the recent searches. Spanish.
+  await page.evaluate(() => window.atlas.shell.search.open());
+  await page.waitForTimeout(400);
+  const recent = await page.evaluate(() => [...document.querySelectorAll('.search-item.recent')].map((x) => x.textContent));
+  await page.evaluate(() => { window.atlas.shell.search.close(); window.atlas.app.setLang('es'); });
+  const esHits = await find('rafa nadal');
+  const esHint = await page.evaluate(() => document.querySelector('.search-field').placeholder);
+  await page.evaluate(() => { window.atlas.shell.search.close(); window.atlas.app.setLang('en'); });
+  check(recent.includes('Rafael Nadal') && recent.includes('Las Meninas') && /¿Quién nació aquí\?/.test(esHits[0]?.tag ?? '') && /tenista español/i.test(esHits[0]?.sub ?? '') && /personas nacidas allí/.test(esHint),
+    `an empty box: the recent searches (${recent.join(" | ")}); en español: ${esHits[0]?.sub} · "${esHint}", ${esHits[0]?.label} (${esHits[0]?.tag})`);
+
+  check(!errors.length, `no page errors in v0.29.0's search checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);

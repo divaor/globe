@@ -10,7 +10,7 @@ import { fmtNumber, fmtCompact, lang } from '../app/i18n';
 import { loadJSON, shapesFrom, type Shape } from '../data/store';
 import { setExtraField } from '../compare/model';
 import type { App } from '../app/app';
-import type { LayerDef, LayerInstance, Legend, LegendAction, RenderCtx, InfoRow } from '../layers/types';
+import type { LayerDef, LayerHit, LayerInstance, LayerTapUi, Legend, LegendAction, RenderCtx, InfoRow } from '../layers/types';
 import { crowdOf } from '../layers/crowd';
 import type { Built, Geo, RegionMeta } from './parse';
 import { regionId } from './parse';
@@ -280,6 +280,11 @@ export class MyData {
       const v = set.values[sizeCol.key]?.['']?.[`p${i}`] as number | undefined;
       return v === undefined ? 3.5 : 3.5 + 13 * Math.sqrt(Math.abs(v) / sizeMax);
     };
+    /** A place's card: its row of the table. */
+    const card = (p: (typeof set.points)[number], ui: LayerTapUi) => {
+      const rows: InfoRow[] = set.header.map((name, j) => ({ label: name, value: p.row[j] ?? '' })).filter((r) => r.value !== '');
+      ui.card('📍', p.label || `${p.lat.toFixed(3)}, ${p.lon.toFixed(3)}`, set.name, rows);
+    };
     return {
       ...base, kind: 'overlay',
       drawOverlay(rc: RenderCtx, inst) {
@@ -326,10 +331,15 @@ export class MyData {
       tap: (_lon, _lat, inst, ui) => {
         const p = crowdOf<Dot>(inst, POINTS_APART).pick(ui, 16)?.p;
         if (!p) return false;
-        const rows: InfoRow[] = set.header.map((name, j) => ({ label: name, value: p.row[j] ?? '' })).filter((r) => r.value !== '');
-        ui.card('📍', p.label || `${p.lat.toFixed(3)}, ${p.lon.toFixed(3)}`, set.name, rows);
+        card(p, ui);
         return true;
       },
+      // Your places by their label.
+      searchHint: { en: set.name, es: set.name },
+      search: (match) => set.points.flatMap((p): LayerHit[] => {
+        const sc = match(p.label);
+        return sc > 0 ? [{ label: p.label, sub: set.name, icon: '📍', lon: p.lon, lat: p.lat, score: sc, wz: 10, dot: p, open: (ui) => card(p, ui) }] : [];
+      }).sort((a, b) => b.score - a.score).slice(0, 6),
       onOptionsChanged: (inst) => { delete inst.state.scale; },
     };
   }

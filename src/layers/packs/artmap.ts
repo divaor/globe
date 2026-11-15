@@ -7,10 +7,10 @@
 import { lang, fmtCompact } from '../../app/i18n';
 import { LC } from '../context';
 import type { App } from '../../app/app';
-import type { LayerDef, LayerInstance, RenderCtx } from '../types';
+import type { LayerDef, LayerHit, LayerInstance, RenderCtx } from '../types';
 import { crowdOf, type Placed } from '../crowd';
 import { loadArt, loadArch, nm, KINDS, PERIODS, type ArtData, type ArchData, type Work, type Museum, type Building } from '../../artguide/data';
-import { museumCard, buildingCard } from '../../artguide/cards';
+import { museumCard, buildingCard, workCard } from '../../artguide/cards';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
@@ -63,6 +63,20 @@ export const artMuseums: LayerDef = {
     if (!m || !art) return false;
     museumCard(ui.card, m, art.byMuseum.get(m.id) ?? [], cityName(m.city), openCity('art'));
     return true;
+  },
+  searchHint: { en: 'museums', es: 'museos' },
+  async searchLoad() { art ??= await loadArt(); },
+  search(match) {
+    const out: LayerHit[] = [];
+    for (const m of art?.museums ?? []) {
+      const s = Math.max(match(m.name[0]), match(m.name[1]));
+      if (s <= 0) continue;
+      const works = art!.byMuseum.get(m.id) ?? [];
+      out.push({ label: nm(m), sub: [cityName(m.city), m.visitors ? L(`${fmtCompact(m.visitors)} visitors a year`, `${fmtCompact(m.visitors)} visitantes al año`) : null, works.length ? L(`${works.length} works`, `${works.length} obras`) : null].filter(Boolean).join(' · '),
+        icon: '🏛️', lon: m.at[0], lat: m.at[1], score: s + Math.min(10, m.sl / 30), wz: 13, dot: m,
+        open: (ui) => museumCard(ui.card, m, works, cityName(m.city), openCity('art')) });
+    }
+    return out.sort((a, b) => b.score - a.score).slice(0, 8);
   },
 };
 
@@ -130,6 +144,32 @@ export const masterpieces: LayerDef = {
     museumCard(ui.card, hit[0], hit[1], cityName(hit[0].city), openCity('art'));
     return true;
   },
+  // Works by their title ("Las Meninas", "girl pearl earring") and artists ("Velázquez": their trail).
+  searchHint: { en: 'works and artists', es: 'obras y artistas' },
+  async searchLoad() { art ??= await loadArt(); },
+  search(match) {
+    if (!art) return [];
+    const out: LayerHit[] = [];
+    for (const w of art.works) {
+      const s = Math.max(match(w.name[0]), match(w.name[1]));
+      if (s <= 0) continue;
+      out.push({ label: nm(w), sub: [w.artist ? nm(w.artist) : null, w.year != null ? String(w.year) : null, `${nm(w.museum)}${cityName(w.museum.city) ? `, ${cityName(w.museum.city)}` : ''}`].filter(Boolean).join(' · '),
+        icon: '🖼️', lon: w.museum.at[0], lat: w.museum.at[1], score: s + Math.min(18, w.sl / 8), wz: 13, dot: w.museum,
+        prepare: (i) => { if (!shownWorks(i).some((x) => x[1].includes(w))) { APP?.setOption(i.def.id, 'kind', 'all'); APP?.setOption(i.def.id, 'period', 'all'); } },
+        open: (ui) => workCard(ui.card, w, cityName(w.museum.city), openCity('art')) });
+    }
+    for (const a of art.artists) {
+      const s = Math.max(match(a.name[0]), match(a.name[1]));
+      if (s <= 0) continue;
+      const ws = art.byArtist.get(a.id) ?? [];
+      if (!ws.length) continue;
+      const top = ws[0].museum, ms = new Set(ws.map((w) => w.museum.id)).size;
+      out.push({ label: nm(a), sub: L(`${ws.length} works in ${ms} museums: the trail`, `${ws.length} obras en ${ms} museos: el recorrido`), icon: '🧑‍🎨',
+        lon: top.at[0], lat: top.at[1], score: s + 4 + Math.min(10, a.sl / 15), wz: 5, dot: top,
+        open: () => void window.atlas?.art?.openArtist(a.id) });
+    }
+    return out.sort((a, b) => b.score - a.score).slice(0, 8);
+  },
 };
 
 // ---- Architectural styles ------------------------------------------------------------------------------------------
@@ -185,6 +225,32 @@ export const architecture: LayerDef = {
     if (!b) return false;
     buildingCard(ui.card, b, cityName(b.city), openCity('buildings'));
     return true;
+  },
+  // Buildings by their name ("Sagrada Família") and architects ("Gaudí": their trail).
+  searchHint: { en: 'buildings and architects', es: 'edificios y arquitectos' },
+  async searchLoad() { arch ??= await loadArch(); },
+  search(match) {
+    if (!arch) return [];
+    const out: LayerHit[] = [];
+    for (const b of arch.buildings) {
+      if (!b.style) continue;
+      const s = Math.max(match(b.name[0]), match(b.name[1]));
+      if (s <= 0) continue;
+      out.push({ label: nm(b), sub: [b.architects[0] ? nm(b.architects[0]) : null, b.style ? nm(b.style) : null, cityName(b.city)].filter(Boolean).join(' · '),
+        icon: '📐', lon: b.at[0], lat: b.at[1], score: s + Math.min(18, b.sl / 8), wz: 14, dot: b,
+        prepare: (i) => { if (i.options.style !== 'all' && i.options.style !== b.style?.key) APP?.setOption(i.def.id, 'style', 'all'); },
+        open: (ui) => buildingCard(ui.card, b, cityName(b.city), openCity('buildings')) });
+    }
+    for (const a of arch.architects) {
+      const s = Math.max(match(a.name[0]), match(a.name[1]));
+      if (s <= 0) continue;
+      const bs = (arch.byArchitect.get(a.id) ?? []).filter((b) => b.style);
+      if (!bs.length) continue;
+      out.push({ label: nm(a), sub: L(`${bs.length} buildings: the trail`, `${bs.length} edificios: el recorrido`), icon: '👷',
+        lon: bs[0].at[0], lat: bs[0].at[1], score: s + 2 + Math.min(10, a.sl / 15), wz: 6, dot: bs[0],
+        open: () => void window.atlas?.art?.openArchitect(a.id) });
+    }
+    return out.sort((a, b) => b.score - a.score).slice(0, 8);
   },
 };
 

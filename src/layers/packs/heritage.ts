@@ -12,7 +12,7 @@ import { loadJSON } from '../../data/store';
 import { h } from '../../ui/dom';
 import { LC } from '../context';
 import type { App } from '../../app/app';
-import type { InfoRow, LayerDef, LayerInstance, Legend, RenderCtx } from '../types';
+import type { InfoRow, LayerDef, LayerHit, LayerInstance, LayerTapUi, Legend, RenderCtx } from '../types';
 import { crowdOf, type Placed } from '../crowd';
 
 const es = () => lang() === 'es';
@@ -239,6 +239,29 @@ export const heritage: LayerDef = {
   tap(_lon, _lat, inst, ui) {
     const s = crowdOf<Site>(inst, SITES_APART).pick(ui);
     if (!s) return false;
+    siteCard(s, ui);
+    return true;
+  },
+  // Sites by their name, in English or Spanish ("Machu Picchu", "Alhambra").
+  searchHint: { en: 'World Heritage sites', es: 'sitios del Patrimonio Mundial' },
+  async searchLoad() { if (!doc) { doc = await loadJSON<HeritageDoc>('layers/heritage.json'); byPop = doc.sites.slice().sort((a, b) => a.pop - b.pop); } },
+  search(match) {
+    const out: LayerHit[] = [];
+    for (const s of doc?.sites ?? []) {
+      const sc = Math.max(match(s.n[0]), match(s.n[1]));
+      if (sc <= 0) continue;
+      out.push({ label: siteName(s), sub: [catName(s.c), s.cc.map(countryName).join(', '), String(s.y)].filter(Boolean).join(' · '),
+        icon: s.c === 'n' ? '🌿' : s.c === 'm' ? '⛰️' : '🏛️', lon: s.at[0], lat: s.at[1], score: sc + Math.min(10, s.pop / 20), wz: 9, dot: s,
+        // Shown whatever the filter's options were (a removed site with the removed ones).
+        prepare: (i) => { const want = gone(s) != null ? 'removed' : 'all'; if (!visible(i).includes(s)) { APP?.setOption(i.def.id, 'show', want); (i.state as { playing?: boolean; year?: number }).playing = false; } },
+        open: (ui) => siteCard(s, ui) });
+    }
+    return out.sort((a, b) => b.score - a.score).slice(0, 8);
+  },
+};
+
+/** A site's card: its picture, Wikipedia's summary, when it was listed, its criteria, UNESCO's page. */
+function siteCard(s: Site, ui: LayerTapUi) {
     const rows: InfoRow[] = [];
     const left = gone(s);
     rows.push({ label: L('Listed', 'Inscrito'), value: left != null ? (s.x ? L(`${s.y}; removed from the list in ${s.x}`, `${s.y}; retirado de la lista en ${s.x}`) : L(`${s.y}; part of another site since ${left}`, `${s.y}; parte de otro sitio desde ${left}`)) : String(s.y), icon: '📅' });
@@ -258,9 +281,7 @@ export const heritage: LayerDef = {
     const name = siteName(s);
     const sub = [L('World Heritage', 'Patrimonio de la Humanidad'), s.cc.length === 1 ? countryName(s.cc[0]) : ''].filter(Boolean).join(' · ');
     ui.card(s.c === 'n' ? '🌿' : s.c === 'm' ? '⛰️' : '🏛️', name, sub, rows, links, [], image, summaryEl(titles));
-    return true;
-  },
-};
+}
 
 // ---- Inventions map -----------------------------------------------------------------------------------------------
 interface Invention {
@@ -367,6 +388,28 @@ export const inventionsMap: LayerDef = {
   tap(_lon, _lat, inst, ui) {
     const it = crowdOf<Invention>(inst, INVENTIONS_APART).pick(ui);
     if (!it) return false;
+    inventionCard(it, ui);
+    return true;
+  },
+  // Inventions by their name, and by who made them ("Edison").
+  searchHint: { en: 'inventions', es: 'inventos' },
+  async searchLoad() { await inventionsMap.load!({} as never, {} as never); },
+  search(match) {
+    const out: LayerHit[] = [];
+    for (const it of inventions) {
+      const sc = Math.max(match(it.name.en), match(it.name.es), it.by ? Math.max(match(it.by.en), match(it.by.es)) - 8 : 0);
+      if (sc <= 0) continue;
+      out.push({ label: tx2(it.name), sub: [when(it), it.place ? tx2(it.place) : '', it.by ? tx2(it.by) : ''].filter(Boolean).join(' · '),
+        icon: it.icon, lon: it.at[0], lat: it.at[1], score: sc, wz: 9, dot: it,
+        prepare: (i) => { if (!shownInventions(i).includes(it)) { APP?.setOption(i.def.id, 'age', 'all'); APP?.setOption(i.def.id, 'field', 'all'); } },
+        open: (ui) => inventionCard(it, ui) });
+    }
+    return out.sort((a, b) => b.score - a.score).slice(0, 8);
+  },
+};
+
+/** An invention's card, which can open the story it comes from. */
+function inventionCard(it: Invention, ui: LayerTapUi) {
     const rows: InfoRow[] = [{ label: L('When', 'Cuándo'), value: when(it), icon: '📅' }];
     if (it.place) rows.push({ label: L('Where', 'Dónde'), value: tx2(it.place), icon: '📍' });
     if (it.by) rows.push({ label: L('Invented by', 'Inventado por'), value: tx2(it.by), icon: '🧑‍🔬' });
@@ -378,9 +421,7 @@ export const inventionsMap: LayerDef = {
     const image = it.img ? Promise.resolve(commons(it.img)) : it.wiki ? summary(it.wiki).then((x) => x?.thumb ?? null) : undefined;
     const cat = invCats.get(it.cat);
     ui.card(it.icon, tx2(it.name), [cat ? `${cat.icon} ${tx2(cat.name)}` : '', L('Inventions', 'Inventos')].filter(Boolean).join(' · '), rows, links, notes, image);
-    return true;
-  },
-};
+}
 
 export default function register(app: App) {
   APP = app;

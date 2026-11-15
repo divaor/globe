@@ -189,6 +189,17 @@ export class LegendCard {
       h('div', { class: 'lg-bi-x' }, `→ ${lg.x}`));
   }
 
+  /** Highlights a legend entry's countries, as a tap on it would (the search box). */
+  highlightItem(inst: LayerInstance, it: LegendItem) {
+    const key = `${inst.def.id}:${it.label}`;
+    this.activeItem = key;
+    this.app.renderer.highlight = new Set(it.ids);
+    this.app.renderer.requestRender();
+    this.render();
+    this.showBanner(inst, it);
+    this.app.emit('highlight');
+  }
+
   clearHighlight() {
     this.banner.hidden = true;
     if (!this.activeItem && !this.app.renderer.highlight) return;
