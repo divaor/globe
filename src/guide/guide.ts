@@ -10,6 +10,7 @@ import type { Shell } from '../ui/shell';
 import type { TimeTravel } from '../modes';
 import type { Learn } from '../learn/learn';
 import type { RenderCtx } from '../layers/types';
+import type { ArtGuide } from '../artguide/artguide';
 import type { StoryKind } from '../modes/stories';
 import { storyKind } from '../modes/stories';
 import { TOURS } from '../learn/tours';
@@ -38,9 +39,10 @@ type Ref = [StoryKind, string, number, string, string, string, number, number, s
 type Museum = [string, string, string, string, number, number, [number, number] | null, string | null];
 export interface CityGuide { id: string; eat: Dish[]; grown: Dish[]; whs: Site[]; trips: Site[]; sights: Ref[]; history: Ref[]; museums: Museum[] }
 
-type Tab = 'eat' | 'see' | 'museums' | 'facts' | 'history' | 'more';
+export type Tab = 'eat' | 'see' | 'museums' | 'art' | 'buildings' | 'facts' | 'history' | 'more';
 const TABS: [Tab, string, { en: string; es: string }][] = [
   ['eat', '🍽️', { en: 'Eat', es: 'Comer' }], ['see', '🏛️', { en: 'See', es: 'Ver' }], ['museums', '🖼️', { en: 'Museums', es: 'Museos' }],
+  ['art', '🎨', { en: 'Art', es: 'Arte' }], ['buildings', '📐', { en: 'Buildings', es: 'Edificios' }],
   ['facts', 'ℹ️', { en: 'Facts', es: 'Datos' }], ['history', '📜', { en: 'History here', es: 'Historia aquí' }], ['more', '📖', { en: 'Read more', es: 'Más' }],
 ];
 const MONTHS = { en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], es: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'] };
@@ -69,6 +71,8 @@ export class TravelGuide {
   private city: string | null = null;
   private tab: Tab = 'eat';
   private wv = new Map<string, Promise<{ paras: string[]; url: string; lang: string } | null>>();
+  /** The art and architecture guide (v0.27.0): the Art and Buildings tabs. */
+  art: ArtGuide | null = null;
   /** For the smoke test: what the guide shows. */
   get info() { return { trip: [...this.trip], city: this.city, tab: this.tab, picking: this.picking, onMap: this.onMap, pin: this.pin }; }
 
@@ -114,6 +118,8 @@ export class TravelGuide {
     return this.attrs[country] ?? {};
   }
   cityName(c: GuideCity) { return es() ? c.es : c.name; }
+  /** A guide city's name, by its id (null when the guide does not know it). */
+  cityLabel(id: string): string | null { const c = this.byId.get(id); return c ? this.cityName(c) : null; }
   private countryName(id: string) { return this.app.data.name(id, lang()); }
   private flag(id: string) { return flagEmoji(this.app.data.meta[id]?.a2); }
 
@@ -364,6 +370,8 @@ export class TravelGuide {
     if (tab === 'eat') await this.eatTab(content, c, g);
     else if (tab === 'see') this.seeTab(content, c, g);
     else if (tab === 'museums') this.museumsTab(content, c, g);
+    else if (tab === 'art') await this.art?.artTab(content, c.id, this.cityName(c));
+    else if (tab === 'buildings') await this.art?.buildingsTab(content, c.id, this.cityName(c));
     else if (tab === 'facts') await this.factsTab(content, c);
     else if (tab === 'history') this.historyTab(content, g);
     else this.moreTab(content, c);
@@ -384,7 +392,7 @@ export class TravelGuide {
     void this.time.stories[kind]?.open(story, step, { name, at }).catch(() => {});
   }
   /** Shows a place on the map with a pin. */
-  private showPlace(at: [number, number], text: string, zoom = 9) {
+  showPlace(at: [number, number], text: string, zoom = 9) {
     this.pin = { at, text };
     this.picking = true;
     this.keep = true;

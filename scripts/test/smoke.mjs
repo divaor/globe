@@ -2221,6 +2221,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(1500);
   const pinMap = await mapState();
   const p0 = await info('pin');
+  // A player turns the globe to the place first (Pin it doesn't): it may be on the far side after the earlier sections.
+  await page.evaluate(([a, b]) => { const r = window.atlas.app.renderer; r.view.flyTo({ lon: a, lat: b }, 0); r.requestRender(); }, [p0.place[2], p0.place[3]]);
+  await page.waitForTimeout(600);
   await tapAt(p0.place[2], p0.place[3]);
   const tapped = await info('pin');
   await page.click('[data-game="confirm"]').catch(() => {});
@@ -2233,8 +2236,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   }
   await page.evaluate(() => window.atlas.play.pin.next());
   const pd = await info('pin');
-  check(pinPanel.packs === 8 && pinPanel.back && !pinMap.names && pinMap.game && pinMap.card && tapped.pin && r1.results[0].km < 400 && /\d+ km/.test(pinCard) && pd.done && pd.done.score > 20000 && pd.done.stars === 3 && pd.done.badges.includes('play-sharp'),
-    `Pin it: ${pinPanel.packs} packs; names hidden; a tap on ${p0.place[0]} lands ${Math.round(r1.results[0].km)} km off; five rounds ${pd.done?.score} ${'★'.repeat(pd.done?.stars ?? 0)}; badges ${pd.done?.badges.join(', ')}`);
+  check(pinPanel.packs === 9 && pinPanel.back && !pinMap.names && pinMap.game && pinMap.card && tapped.pin && r1.results?.[0]?.km < 400 && /\d+ km/.test(pinCard) && pd.done && pd.done.score > 20000 && pd.done.stars === 3 && pd.done.badges.includes('play-sharp'),
+    `Pin it: ${pinPanel.packs} packs; names hidden; a tap on ${p0.place[0]} lands ${Math.round(r1.results?.[0]?.km)} km off; five rounds ${pd.done?.score} ${'★'.repeat(pd.done?.stars ?? 0)}; badges ${pd.done?.badges.join(', ')}`);
   await page.evaluate(() => window.atlas.play.pin.start({ pack: 'heritage', hard: true }));
   await page.waitForTimeout(600);
   const hard = await mapState();
@@ -2464,7 +2467,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   // Lima: what to eat, a dish's story, Wikivoyage's overview.
   await openCity('lima', 'eat', 2500);
   const eat = await page.evaluate(() => ({ tabs: document.querySelectorAll('.guide-tabs [data-tab]').length, dishes: [...document.querySelectorAll('[data-dish]')].map((x) => x.dataset.dish), text: document.querySelector('.guide-tab')?.innerText ?? '', wv: document.querySelector('[data-wv="eat"]')?.innerText ?? '' }));
-  check(eat.tabs === 6 && eat.dishes.some((d) => /ceviche/.test(d)) && /national dish: Ceviche/.test(eat.text) && /From Wikivoyage/.test(eat.wv) && /ceviche is the dish every visitor/.test(eat.wv) && !/A restaurant/.test(eat.wv) && /CC BY-SA/.test(eat.wv),
+  check(eat.tabs === 8 && eat.dishes.some((d) => /ceviche/.test(d)) && /national dish: Ceviche/.test(eat.text) && /From Wikivoyage/.test(eat.wv) && /ceviche is the dish every visitor/.test(eat.wv) && !/A restaurant/.test(eat.wv) && /CC BY-SA/.test(eat.wv),
     `Lima, what to eat: ${eat.dishes.length} dishes (${eat.dishes.slice(0, 3).join(', ')}…), the national dish, and Wikivoyage's overview without its listings, credited`);
   await page.click('[data-dish="pisco-sour"], [data-dish]');
   await page.waitForFunction(() => !!window.atlas.app.mode, null, { timeout: 15000 }).catch(() => {});
@@ -2563,7 +2566,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.evaluate(() => window.atlas.app.setLang('es'));
   await openCity('lima', 'facts');
   const esText = await page.evaluate(() => ({ tabs: [...document.querySelectorAll('.guide-tabs [data-tab]')].map((x) => x.textContent.replace(/^\S+\s/, '')).join(', '), facts: document.querySelector('.guide-tab')?.innerText ?? '' }));
-  check(/Comer, Ver, Museos, Datos, Historia aquí, Más/.test(esText.tabs) && /Idiomas\s+Español, Quechua, Aimara/i.test(esText.facts) && /sol peruano/i.test(esText.facts) && /Mejores meses para ir/.test(esText.facts), `en español: ${esText.tabs}; "${(/Idiomas[^\n]*\n?[^\n]*/.exec(esText.facts) ?? [''])[0].replace(/\s+/g, ' ')}"`);
+  check(/Comer, Ver, Museos, Arte, Edificios, Datos, Historia aquí, Más/.test(esText.tabs) && /Idiomas\s+Español, Quechua, Aimara/i.test(esText.facts) && /sol peruano/i.test(esText.facts) && /Mejores meses para ir/.test(esText.facts), `en español: ${esText.tabs}; "${(/Idiomas[^\n]*\n?[^\n]*/.exec(esText.facts) ?? [''])[0].replace(/\s+/g, ' ')}"`);
   await page.evaluate(() => window.atlas.app.setLang('en'));
 
   // Offline: a city's guide comes from the service worker's cache once it has been opened.
@@ -2580,6 +2583,166 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(controlled && cached && /Kyoto National Museum|museum/i.test(off) && !/could not be loaded/.test(off), `offline, Kyoto's guide opens again from the device (${off.split('\n').filter(Boolean).length} lines)`);
 
   check(!errors.length, `no page errors in v0.26.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 23. Art and architecture (v0.27.0). The panel (the three map filters, artists and architects, search); Velázquez's
+// trail (the Prado among his museums, drawn on the map, Plan a trip into the travel guide); Gaudí's buildings and a
+// building's card; Madrid's Art tab, filtered to Velázquez's paintings of 1600–1800 (Las Meninas), with a work's card
+// and its picture's licence (from a recorded Commons answer); Barcelona's Buildings tab by style; the three filters,
+// with a tap on the Louvre; Now in on the Mona Lisa's story card, opening Paris's art guide; "Which museum is it
+// in?"; Pin it's masterpieces; and Spanish.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {} });
+  // Commons, as recorded: a file's licence and author; pictures as a small grey square.
+  await ctx.route(/commons\.wikimedia\.org\/w\/api\.php/, (route) => route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' },
+    body: JSON.stringify({ query: { pages: { 1: { imageinfo: [{ extmetadata: { LicenseShortName: { value: 'Public domain' }, Artist: { value: '<a href="#">Diego Velázquez</a>' } } }] } } } }) }));
+  const png = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==', 'base64');
+  await ctx.route(/Special:FilePath|upload\.wikimedia\.org/, (route) => route.fulfill({ status: 200, contentType: 'image/png', body: png }));
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(url + '#p=globe&l=political&c=0,40,1.3&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.reload({ waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas?.art && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(800);
+  const cardText = () => page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
+
+  // The panel.
+  await page.evaluate(() => window.atlas.art.open());
+  await page.waitForSelector('[data-artist]', { timeout: 15000 }).catch(() => {});
+  const panel = await page.evaluate(() => ({ filters: [...document.querySelectorAll('[data-art-filter]')].map((b) => b.dataset.artFilter), artists: document.querySelectorAll('[data-artist]').length, architects: document.querySelectorAll('[data-architect]').length, text: document.querySelector('.art-menu')?.innerText ?? '' }));
+  await page.fill('.art-menu .guide-search', 'gaud');
+  await page.waitForTimeout(300);
+  const found = await page.evaluate(() => [...document.querySelectorAll('[data-architect] .guide-item-title')].map((b) => b.textContent));
+  check(panel.filters.join() === 'art-museums,masterpieces,architecture' && panel.artists >= 20 && panel.architects >= 15 && /\d+ best-known works in \d+ museums/.test(panel.text) && found[0] === 'Antoni Gaudí',
+    `Art and architecture: three filters, ${panel.artists} artists and ${panel.architects} architects; "gaud" finds ${found[0]}`);
+
+  // Velázquez's trail: on the map, then into the travel guide.
+  const velazquez = await page.evaluate(async () => { const r = await fetch('data/artguide/collections.json').then((x) => x.json()); return r.artists.find((a) => a[1] === 'Diego Velázquez')[0]; });
+  await page.evaluate((id) => window.atlas.art.openArtist(id), velazquez);
+  await page.waitForTimeout(800);
+  const trail = await page.evaluate(() => ({ museums: [...document.querySelectorAll('[data-trail-museum]')].map((b) => b.dataset.trailMuseum), works: document.querySelectorAll('.art-trail [data-work]').length }));
+  await page.click('[data-art="map"]');
+  await page.waitForTimeout(2500);
+  const drawn = await page.evaluate(() => {
+    const ren = window.atlas.app.renderer, c = document.getElementById('fg').getContext('2d');
+    const p = ren.view.project(-3.692, 40.414);
+    if (!p) return -1;
+    const r = Math.round(12 * ren.view.dpr), d = c.getImageData(Math.round(p[0] * ren.view.dpr) - r, Math.round(p[1] * ren.view.dpr) - r, 2 * r, 2 * r).data;
+    let n = 0;
+    for (let i = 0; i < d.length; i += 4) if (d[i + 2] > 180 && d[i] > 90 && d[i] < 160 && d[i + 1] < 120) n++;
+    return n;
+  });
+  await page.evaluate((id) => window.atlas.art.openArtist(id), velazquez);
+  await page.waitForTimeout(600);
+  await page.click('[data-art="plan"]');
+  await page.waitForTimeout(800);
+  const planned = await page.evaluate(() => ({ trip: window.atlas.guide.info.trip, panel: !!document.querySelector('.guide-trip') }));
+  check(trail.museums.includes('Q160112') && trail.works >= 10 && drawn > 30 && planned.trip.includes('madrid') && planned.trip.length >= 5 && planned.panel,
+    `Velázquez's trail: ${trail.works} works in ${trail.museums.length} museums, the Prado among them, drawn on the map (${drawn} purple pixels at the Prado); Plan a trip makes a trip of ${planned.trip.length} cities (${planned.trip.slice(0, 4).join(', ')}…)`);
+
+  // Gaudí's buildings, and a building's card.
+  const gaudi = await page.evaluate(async () => { const r = await fetch('data/artguide/architecture.json').then((x) => x.json()); return r.architects.find((a) => a[1] === 'Antoni Gaudí')[0]; });
+  await page.evaluate((id) => window.atlas.art.openArchitect(id), gaudi);
+  await page.waitForTimeout(800);
+  const gb = await page.evaluate(() => [...document.querySelectorAll('.art-trail [data-building] .guide-item-title')].map((b) => b.textContent));
+  await page.click('.art-trail [data-building="Q48435"]');
+  await page.waitForTimeout(1200);
+  const sagrada = await cardText();
+  check(gb.length >= 8 && gb.some((x) => /Casa Milà/.test(x)) && /Architect\s+Antoni Gaudí/.test(sagrada) && /Style\s+Art Nouveau/.test(sagrada) && /City\s+Barcelona/.test(sagrada),
+    `Gaudí's trail: ${gb.length} buildings (${gb.slice(0, 3).join(', ')}…); the Sagrada Família's card names him, Art Nouveau and Barcelona`);
+  await page.evaluate(() => window.atlas.shell.card.hide());
+
+  // Madrid's Art tab, filtered; a work's card with its picture's licence.
+  await page.evaluate(() => window.atlas.guide.openCity('madrid', 'art'));
+  await page.waitForSelector('.guide-tab [data-work]', { timeout: 15000 }).catch(() => {});
+  const all = await page.evaluate(() => ({ text: document.querySelector('.guide-tab')?.innerText ?? '', works: document.querySelectorAll('.guide-tab [data-work]').length, museums: [...document.querySelectorAll('[data-art-museum]')].map((b) => b.dataset.artMuseum) }));
+  await page.click('.guide-tab [data-kind="painting"]');
+  await page.waitForTimeout(400);
+  await page.click('.guide-tab [data-period="baroque"]');
+  await page.waitForTimeout(400);
+  await page.selectOption('.guide-tab .art-artist-select', velazquez);
+  await page.waitForTimeout(500);
+  const filtered = await page.evaluate(() => [...document.querySelectorAll('.guide-tab [data-work] .guide-item-title')].map((b) => b.textContent));
+  await page.click('.guide-tab [data-work="Q208758"]');
+  await page.waitForTimeout(1500);
+  const meninas = await page.evaluate(() => ({ text: document.querySelector('.country-card:not([hidden])')?.innerText ?? '', credit: document.querySelector('.country-card .art-credit')?.textContent ?? '', pin: window.atlas.guide.info.pin }));
+  check(/In Madrid you can see \d+ of the world’s best-known works, in \d+ museums/.test(all.text) && all.museums.includes('Q160112') && filtered.includes('Las Meninas') && filtered.length >= 3 && filtered.length < all.works
+    && /By\s+Diego Velázquez/.test(meninas.text) && /Now in\s+Museo del Prado, Madrid/.test(meninas.text) && /Public domain · Diego Velázquez · Wikimedia Commons/.test(meninas.credit) && /Prado/.test(meninas.pin?.text ?? ''),
+    `Madrid's Art tab: ${all.works} works in ${all.museums.length} museums; Velázquez's paintings of 1600–1800: ${filtered.length} (${filtered.slice(0, 3).join(', ')}…); Las Meninas' card with "${meninas.credit}"`);
+  await page.evaluate(() => window.atlas.shell.card.hide());
+
+  // Barcelona's buildings by style.
+  await page.evaluate(() => window.atlas.guide.openCity('barcelona', 'buildings'));
+  await page.waitForSelector('.guide-tab [data-building]', { timeout: 15000 }).catch(() => {});
+  const bAll = await page.evaluate(() => document.querySelectorAll('.guide-tab [data-building]').length);
+  await page.click('.guide-tab [data-style="nouveau"]');
+  await page.waitForTimeout(400);
+  const bNouveau = await page.evaluate(() => [...document.querySelectorAll('.guide-tab [data-building]')].map((b) => b.innerText.replace(/\s+/g, ' ')));
+  check(bAll >= 20 && bNouveau.length >= 5 && bNouveau.length < bAll && bNouveau.every((x) => /Art Nouveau/.test(x)) && bNouveau.some((x) => /Holy Family/.test(x)), `Barcelona's Buildings tab: ${bAll} buildings, ${bNouveau.length} Art Nouveau (the Sagrada Família among them)`);
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+
+  // The three filters; a tap on the Louvre.
+  const legend = async (id, opts) => {
+    await page.evaluate(([i, o]) => { const a = window.atlas.app; return a.activate(i).then(() => { if (o) { const inst = a.instance(i); Object.assign(inst.options, o); inst.def.onOptionsChanged?.(inst); a.emit('legend'); } }); }, [id, opts]);
+    await page.waitForTimeout(1200);
+    // The legend's title and items (the phone's legend starts folded).
+    return page.evaluate((i) => { const inst = window.atlas.app.instance(i); const l = inst?.def.legend?.(inst); return l ? [l.title, ...(l.items ?? []).map((x) => x.label)].join('\n') : ''; }, id);
+  };
+  const lm = await legend('art-museums');
+  await page.evaluate(() => window.atlas.app.renderer.view.flyTo({ lon: 2.336, lat: 48.861, zoom: 30 }, 0));
+  await page.waitForTimeout(1500);
+  const lp = await page.evaluate(() => window.atlas.app.renderer.view.project(2.3376, 48.8611));
+  if (lp) await page.touchscreen.tap(lp[0], lp[1]);
+  await page.waitForTimeout(1200);
+  const louvre = await cardText();
+  await page.evaluate(() => { window.atlas.shell.card.hide(); window.atlas.app.deactivate('art-museums'); });
+  const lmp = await legend('masterpieces', { kind: 'sculpture' });
+  await page.evaluate(() => window.atlas.app.deactivate('masterpieces'));
+  const la = await legend('architecture', { style: 'gothic' });
+  await page.evaluate(() => window.atlas.app.deactivate('architecture'));
+  const line = (t, re) => (re.exec(t) ?? [''])[0];
+  check(/\d{3} art museums/.test(lm) && /Louvre/.test(louvre) && /Mona Lisa/.test(louvre) && /Visitors/.test(louvre) && /\d+ masterpieces/.test(lmp) && /\d+ buildings by style/.test(la) && /Gothic/.test(la),
+    `filters: "${line(lm, /\d+ art museums/)}", a tap on the Louvre opens its card (Mona Lisa among its works); "${line(lmp, /\d+ masterpieces/)}" (sculpture); "${line(la, /\d+ buildings by style/)}" (Gothic)`);
+
+
+  // Now in, on the Mona Lisa's story card.
+  await page.evaluate(async () => { const it = (await fetch('data/art/items.json').then((r) => r.json())).items.find((x) => x.id === 'mona-lisa'); window.atlas.time.stories.art.itemCard(it); });
+  await page.waitForTimeout(800);
+  const mona = await cardText();
+  await page.evaluate(() => [...document.querySelectorAll('.country-card a, .country-card button')].find((b) => /art guide/.test(b.textContent))?.click());
+  await page.waitForTimeout(1500);
+  const paris = await page.evaluate(() => ({ city: window.atlas.guide.info.city, tab: window.atlas.guide.info.tab }));
+  check(/Now in\s+Louvre Museum, Paris/.test(mona) && paris.city === 'paris' && paris.tab === 'art', `the Mona Lisa's story card: "Now in Louvre Museum, Paris", and its link opens Paris's art guide`);
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+
+  // Which museum is it in?; Pin it's masterpieces.
+  await page.evaluate(() => window.atlas.learn['startQuiz']('museum', 'world'));
+  await page.waitForFunction(() => window.atlas.learn.quiz?.kind === 'museum', null, { timeout: 15000 }).catch(() => {});
+  await page.waitForTimeout(800);
+  const q = await page.evaluate(() => ({ n: window.atlas.learn.quiz.qs.length, text: document.querySelector('.learn-card .quiz-q')?.textContent, img: document.querySelector('.learn-card .quiz-img')?.getAttribute('src') ?? '', opts: document.querySelectorAll('.learn-card .quiz-opt').length }));
+  await page.evaluate(() => { const qq = window.atlas.learn.quiz, cur = qq.qs[qq.i]; [...document.querySelectorAll('.learn-card .quiz-opt')][cur.options.indexOf(cur.id)].click(); });
+  await page.waitForTimeout(500);
+  const qfb = await page.evaluate(() => document.querySelector('.learn-card .quiz-fb')?.textContent ?? '');
+  await page.evaluate(() => window.atlas.learn['stopQuiz']());
+  await page.evaluate(() => window.atlas.play.pin.start({ pack: 'masterpieces' }));
+  await page.waitForTimeout(800);
+  const pin = await page.evaluate(() => window.atlas.play.pin.info);
+  await page.evaluate(() => window.atlas.play.host.close());
+  check(q.n === 10 && q.text === 'Which museum is it in?' && /Special:FilePath/.test(q.img) && q.opts === 4 && /^Correct! It is in .+, .+\.$/.test(qfb) && pin?.pack === 'masterpieces' && /, /.test(pin.place[5]),
+    `"Which museum is it in?": ten works with their pictures, four museums each ("${qfb}"); Pin it's masterpieces (${pin?.place[0]}, ${pin?.place[5]})`);
+
+  // Spanish.
+  await page.evaluate(() => window.atlas.app.setLang('es'));
+  await page.evaluate(() => window.atlas.guide.openCity('madrid', 'art'));
+  await page.waitForSelector('.guide-tab [data-work]', { timeout: 15000 }).catch(() => {});
+  const esText = await page.evaluate(() => ({ tabs: [...document.querySelectorAll('.guide-tabs [data-tab]')].map((x) => x.textContent.replace(/^\S+\s/, '')).join(', '), text: document.querySelector('.guide-tab')?.innerText ?? '' }));
+  await page.evaluate(() => window.atlas.app.setLang('en'));
+  check(/Arte, Edificios/.test(esText.tabs) && /En Madrid puedes ver \d+ de las obras más conocidas del mundo/.test(esText.text) && /Las meninas|Las Meninas/.test(esText.text), `en español: ${esText.tabs}; "${(/En Madrid[^.]+/.exec(esText.text) ?? [''])[0]}"`);
+
+  check(!errors.length, `no page errors in v0.27.0's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 
