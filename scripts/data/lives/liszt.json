@@ -1,0 +1,480 @@
+{
+  "id": "liszt",
+  "qid": "Q41309",
+  "name": {
+    "en": "Franz Liszt",
+    "es": "Franz Liszt"
+  },
+  "icon": "🎹",
+  "field": "music",
+  "known": {
+    "en": "Hungarian pianist and composer",
+    "es": "Pianista y compositor húngaro"
+  },
+  "born": "1811-10-22",
+  "died": "1886-07-31",
+  "summary": {
+    "en": "The first superstar of the piano, who filled the halls of Europe, then gave up the stage to compose, teach and help other musicians, and ended his life as a Catholic abbé.",
+    "es": "La primera superestrella del piano, que llenó las salas de Europa, y luego dejó los escenarios para componer, enseñar y ayudar a otros músicos, y terminó su vida como abate católico."
+  },
+  "steps": [
+    {
+      "date": "1811-10-22",
+      "kind": "born",
+      "place": {
+        "en": "Raiding, Austria",
+        "es": "Raiding, Austria"
+      },
+      "at": [
+        16.5291,
+        47.5669
+      ],
+      "title": {
+        "en": "Born in a Hungarian village",
+        "es": "Nace en una aldea húngara"
+      },
+      "text": {
+        "en": "Franz was born in Doborján, then in the Kingdom of Hungary and now Raiding in Austria. His father, a steward on Prince Esterházy's estate, played several instruments and taught him the piano.",
+        "es": "Franz nació en Doborján, entonces en el Reino de Hungría y hoy Raiding, en Austria. Su padre, administrador en las tierras del príncipe Esterházy, tocaba varios instrumentos y le enseñó el piano."
+      },
+      "details": {
+        "en": "The boy played in public at about nine, and some Hungarian noblemen offered to pay for his education. Liszt grew up speaking German, not Hungarian, but he always thought of himself as a Hungarian.",
+        "es": "El niño tocó en público a los nueve años, más o menos, y algunos nobles húngaros se ofrecieron a pagar su educación. Liszt creció hablando alemán, no húngaro, pero siempre se consideró húngaro."
+      }
+    },
+    {
+      "date": "1822",
+      "kind": "study",
+      "about": true,
+      "place": {
+        "en": "Vienna, Austria",
+        "es": "Viena, Austria"
+      },
+      "at": [
+        16.3721,
+        48.2085
+      ],
+      "title": {
+        "en": "A pupil of Czerny in Vienna",
+        "es": "Alumno de Czerny en Viena"
+      },
+      "text": {
+        "en": "His father took the family to Vienna, where Franz studied piano with Carl Czerny, a pupil of Beethoven, and composition with Antonio Salieri. He gave his first big concert there before he was twelve.",
+        "es": "Su padre llevó a la familia a Viena, donde Franz estudió piano con Carl Czerny, alumno de Beethoven, y composición con Antonio Salieri. Dio allí su primer gran concierto antes de cumplir doce años."
+      },
+      "details": {
+        "en": "A story says that Beethoven, deaf and ill, attended one of his concerts in 1823 and kissed the boy on the forehead. Liszt told it himself, in later years, but historians doubt that it happened as told.",
+        "es": "Cuenta una historia que Beethoven, sordo y enfermo, asistió a uno de sus conciertos en 1823 y besó al niño en la frente. El propio Liszt la contaba, años después, pero los historiadores dudan de que ocurriera como se dice."
+      },
+      "unsure": {
+        "en": "The family moved to Vienna about 1821 or 1822, and the kiss from Beethoven is a story that cannot be confirmed.",
+        "es": "La familia se mudó a Viena hacia 1821 o 1822, y el beso de Beethoven es una historia que no se puede confirmar."
+      },
+      "places": [
+        {
+          "id": "beethoven",
+          "name": {
+            "en": "Ludwig van Beethoven",
+            "es": "Ludwig van Beethoven"
+          },
+          "at": [
+            16.3721,
+            48.2085
+          ],
+          "cat": "person",
+          "type": "person",
+          "date": "1823",
+          "life": [
+            "1770-12-16",
+            "1827-03-26"
+          ],
+          "text": {
+            "en": "The Viennese master. Liszt later played his sonatas across Europe and raised the money for his monument in Bonn.",
+            "es": "El maestro vienés. Liszt tocó después sus sonatas por toda Europa y reunió el dinero para su monumento en Bonn."
+          },
+          "wiki": {
+            "en": "Ludwig van Beethoven",
+            "es": "Ludwig van Beethoven"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1823-12",
+      "kind": "career",
+      "by": "land",
+      "place": {
+        "en": "Paris, France",
+        "es": "París, Francia"
+      },
+      "at": [
+        2.3488,
+        48.8534
+      ],
+      "title": {
+        "en": "Paris, the child prodigy",
+        "es": "París, el niño prodigio"
+      },
+      "text": {
+        "en": "The family moved to Paris, and the Conservatoire refused to admit the boy because he was a foreigner. He studied privately and performed in the salons as a prodigy.",
+        "es": "La familia se mudó a París, y el Conservatorio se negó a admitir al niño porque era extranjero. Estudió en privado y tocó en los salones como prodigio."
+      },
+      "details": {
+        "en": "He made his name in Paris and London as a boy. His father died in 1827 when Franz was fifteen, and the grief nearly ended his career. He gave lessons to aristocrats, read widely, and fell in love for the first time.",
+        "es": "Se hizo un nombre en París y Londres siendo niño. Su padre murió en 1827, cuando Franz tenía quince años, y el dolor casi acabó con su carrera. Daba clases a aristócratas, leía mucho y se enamoró por primera vez."
+      }
+    },
+    {
+      "date": "1832-04",
+      "kind": "moment",
+      "place": {
+        "en": "Paris, France",
+        "es": "París, Francia"
+      },
+      "at": [
+        2.3488,
+        48.8534
+      ],
+      "title": {
+        "en": "He hears Paganini",
+        "es": "Escucha a Paganini"
+      },
+      "text": {
+        "en": "At 20 he heard the violinist Niccolò Paganini play in Paris. He was overwhelmed, and set himself to do for the piano what Paganini had done for the violin.",
+        "es": "A los 20 años escuchó al violinista Niccolò Paganini en París. Quedó deslumbrado, y se propuso hacer por el piano lo que Paganini había hecho por el violín."
+      },
+      "details": {
+        "en": "He shut himself in his room for months and practiced several hours a day. Out of this came the Paganini Studies and a new kind of pianist: one who plays alone, from memory, on a stage, and who holds the audience as a star.",
+        "es": "Se encerró en su cuarto durante meses y practicó varias horas al día. De ahí salieron los Estudios de Paganini y un nuevo tipo de pianista: el que toca solo, de memoria, en un escenario, y que cautiva al público como una estrella."
+      },
+      "places": [
+        {
+          "id": "paganini",
+          "name": {
+            "en": "Niccolò Paganini",
+            "es": "Niccolò Paganini"
+          },
+          "at": [
+            2.3488,
+            48.8534
+          ],
+          "cat": "person",
+          "type": "person",
+          "date": "1832",
+          "life": [
+            "1782-10-27",
+            "1840-05-27"
+          ],
+          "text": {
+            "en": "The Italian violin virtuoso, then touring Paris. His playing set the model that Liszt followed on the piano.",
+            "es": "El virtuoso italiano del violín, entonces de gira en París. Su manera de tocar fue el modelo que Liszt siguió en el piano."
+          },
+          "wiki": {
+            "en": "Niccolò Paganini",
+            "es": "Niccolò Paganini"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1835",
+      "kind": "love",
+      "by": "land",
+      "place": {
+        "en": "Geneva, Switzerland",
+        "es": "Ginebra, Suiza"
+      },
+      "at": [
+        6.1457,
+        46.2022
+      ],
+      "title": {
+        "en": "He leaves Paris with Marie",
+        "es": "Deja París con Marie"
+      },
+      "text": {
+        "en": "Liszt left Paris with the Countess Marie d'Agoult, who left her husband and her daughter for him. They lived in Geneva and traveled in Italy. They had three children; one, Cosima, later married Richard Wagner.",
+        "es": "Liszt dejó París con la condesa Marie d'Agoult, que abandonó a su marido y a su hija por él. Vivieron en Ginebra y viajaron por Italia. Tuvieron tres hijos; una, Cosima, se casó más tarde con Richard Wagner."
+      },
+      "details": {
+        "en": "In Geneva he taught at the new conservatory and wrote the first of his Years of Pilgrimage. Their daughters Blandine and Cosima were born in 1835 and 1837, and a son, Daniel, in 1839. The couple separated in 1844. Marie wrote novels as Daniel Stern.",
+        "es": "En Ginebra enseñó en el nuevo conservatorio y escribió el primero de sus Años de peregrinaje. Sus hijas Blandine y Cosima nacieron en 1835 y 1837, y un hijo, Daniel, en 1839. La pareja se separó en 1844. Marie escribió novelas con el nombre de Daniel Stern."
+      }
+    },
+    {
+      "date": "1845-08",
+      "kind": "honour",
+      "place": {
+        "en": "Bonn, Germany",
+        "es": "Bonn, Alemania"
+      },
+      "at": [
+        7.0955,
+        50.7344
+      ],
+      "title": {
+        "en": "A monument for Beethoven",
+        "es": "Un monumento para Beethoven"
+      },
+      "text": {
+        "en": "The city of Bonn was raising a statue to its most famous son, and the money ran short. Liszt gave concerts to pay for it, and at the unveiling in August 1845 he played and conducted.",
+        "es": "La ciudad de Bonn levantaba una estatua a su hijo más famoso, y el dinero no alcanzaba. Liszt dio conciertos para pagarla, y en la inauguración, en agosto de 1845, tocó y dirigió."
+      }
+    },
+    {
+      "date": "1847-02",
+      "kind": "love",
+      "place": {
+        "en": "Kyiv, Ukraine",
+        "es": "Kiev, Ucrania"
+      },
+      "at": [
+        30.5238,
+        50.4547
+      ],
+      "title": {
+        "en": "He meets Princess Carolyne",
+        "es": "Conoce a la princesa Carolyne"
+      },
+      "text": {
+        "en": "On a tour in the Russian Empire, Liszt met Princess Carolyne zu Sayn-Wittgenstein in Kyiv. She became his companion for years and persuaded him to stop touring and devote himself to composing.",
+        "es": "En una gira por el Imperio ruso, Liszt conoció en Kiev a la princesa Carolyne zu Sayn-Wittgenstein. Fue su compañera por años y lo persuadió de dejar las giras y dedicarse a componer."
+      }
+    },
+    {
+      "date": "1848-02",
+      "kind": "career",
+      "place": {
+        "en": "Weimar, Germany",
+        "es": "Weimar, Alemania"
+      },
+      "at": [
+        11.329,
+        50.9803
+      ],
+      "title": {
+        "en": "Court conductor in Weimar",
+        "es": "Director de la corte en Weimar"
+      },
+      "text": {
+        "en": "At 36 he gave up his career as a touring pianist and took a post as court music director at Weimar, the city of Goethe and Schiller. He lived there for 13 years.",
+        "es": "A los 36 años dejó su carrera de pianista de gira y aceptó un cargo de director de música de la corte de Weimar, la ciudad de Goethe y Schiller. Vivió allí 13 años."
+      },
+      "details": {
+        "en": "At Weimar he wrote most of his orchestral works, the symphonic poems, which he invented, and his Sonata in B minor. He taught a generation of pianists, and opened his house to young composers: Wagner, Berlioz and many more. He gave his time to the music of others, often unpaid.",
+        "es": "En Weimar escribió la mayor parte de sus obras orquestales, los poemas sinfónicos, que él inventó, y su Sonata en si menor. Formó a una generación de pianistas y abrió su casa a jóvenes compositores: Wagner, Berlioz y muchos más. Dedicó su tiempo a la música de otros, a menudo sin cobrar."
+      }
+    },
+    {
+      "date": "1850-08-28",
+      "kind": "moment",
+      "place": {
+        "en": "Weimar, Germany",
+        "es": "Weimar, Alemania"
+      },
+      "at": [
+        11.329,
+        50.9803
+      ],
+      "title": {
+        "en": "He premieres Lohengrin",
+        "es": "Estrena Lohengrin"
+      },
+      "text": {
+        "en": "Liszt conducted the first performance of Wagner's Lohengrin at the Weimar court theatre, while Wagner was a political exile in Switzerland, wanted by the German police.",
+        "es": "Liszt dirigió el estreno de Lohengrin de Wagner en el teatro de la corte de Weimar, mientras Wagner vivía exiliado en Suiza, buscado por la policía alemana."
+      },
+      "places": [
+        {
+          "id": "wagner",
+          "name": {
+            "en": "Richard Wagner",
+            "es": "Richard Wagner"
+          },
+          "at": [
+            11.329,
+            50.9803
+          ],
+          "cat": "person",
+          "type": "person",
+          "date": "1850-08-28",
+          "life": [
+            "1813-05-22",
+            "1883-02-13"
+          ],
+          "text": {
+            "en": "The German composer, and later the husband of Liszt's daughter Cosima. Liszt backed his work for years, when few others would.",
+            "es": "El compositor alemán, y más tarde marido de Cosima, la hija de Liszt. Liszt apoyó su obra durante años, cuando pocos más lo hacían."
+          },
+          "wiki": {
+            "en": "Richard Wagner",
+            "es": "Richard Wagner"
+          }
+        }
+      ]
+    },
+    {
+      "date": "1865-04",
+      "kind": "struggle",
+      "place": {
+        "en": "Rome, Italy",
+        "es": "Roma, Italia"
+      },
+      "at": [
+        12.4828,
+        41.8931
+      ],
+      "title": {
+        "en": "Abbé Liszt",
+        "es": "El abate Liszt"
+      },
+      "text": {
+        "en": "He left Weimar for Rome in 1861, after a plan to marry Carolyne failed. In 1865 he took minor orders in the Catholic church and became known as the Abbé Liszt.",
+        "es": "Dejó Weimar por Roma en 1861, después de que fracasara su plan de casarse con Carolyne. En 1865 recibió las órdenes menores de la Iglesia católica y se lo conoció como el abate Liszt."
+      },
+      "details": {
+        "en": "In his years of sorrow, his son Daniel died in 1859 and his daughter Blandine in 1862. He wrote sacred music, such as the oratorio Christus, and from 1869 lived part of the year at the Villa d'Este in Tivoli, where he wrote the piano piece called The Fountains of the Villa d'Este.",
+        "es": "En sus años de dolor murieron su hijo Daniel, en 1859, y su hija Blandine, en 1862. Escribió música sacra, como el oratorio Christus, y desde 1869 vivió parte del año en la Villa d'Este de Tivoli, donde escribió la pieza para piano llamada Las fuentes de la Villa d'Este."
+      }
+    },
+    {
+      "date": "1875",
+      "kind": "power",
+      "place": {
+        "en": "Budapest, Hungary",
+        "es": "Budapest, Hungría"
+      },
+      "at": [
+        19.0665,
+        47.507
+      ],
+      "title": {
+        "en": "The Academy in Budapest",
+        "es": "La Academia de Budapest"
+      },
+      "text": {
+        "en": "In his old age he divided the year between Rome, Weimar and Budapest, and he became the first president of the new Academy of Music in Budapest, which today bears his name. He taught there without pay.",
+        "es": "Ya mayor repartió el año entre Roma, Weimar y Budapest, y fue el primer presidente de la nueva Academia de Música de Budapest, que hoy lleva su nombre. Enseñaba allí sin cobrar."
+      }
+    },
+    {
+      "date": "1886-07-31",
+      "kind": "died",
+      "place": {
+        "en": "Bayreuth, Germany",
+        "es": "Bayreuth, Alemania"
+      },
+      "at": [
+        11.5827,
+        49.9406
+      ],
+      "title": {
+        "en": "He dies at Bayreuth",
+        "es": "Muere en Bayreuth"
+      },
+      "text": {
+        "en": "Liszt went to Bayreuth for the festival, which his daughter Cosima ran after Wagner's death. He caught pneumonia and died at 74, in a house near Wagner's villa.",
+        "es": "Liszt fue a Bayreuth para el festival, que su hija Cosima dirigía tras la muerte de Wagner. Contrajo neumonía y murió a los 74 años, en una casa cercana a la villa de Wagner."
+      },
+      "details": {
+        "en": "His grave is in the town cemetery of Bayreuth. In Hungary and in Weimar he is remembered as a national figure, and his house in Weimar and his last apartment in Budapest are museums.",
+        "es": "Su tumba está en el cementerio de Bayreuth. En Hungría y en Weimar se lo recuerda como una figura nacional, y su casa de Weimar y su último departamento de Budapest son museos."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": {
+        "en": "Liszt's birthplace, Raiding",
+        "es": "Casa natal de Liszt, Raiding"
+      },
+      "at": [
+        16.5291,
+        47.5669
+      ],
+      "kind": "house",
+      "text": {
+        "en": "The house where he was born, now a small museum and concert hall in the village.",
+        "es": "La casa donde nació, hoy un pequeño museo y sala de conciertos en la aldea."
+      }
+    },
+    {
+      "name": {
+        "en": "Liszt House, Weimar",
+        "es": "Casa de Liszt, Weimar"
+      },
+      "at": [
+        11.33,
+        50.9749
+      ],
+      "kind": "house",
+      "text": {
+        "en": "The garden house where he lived and taught in the last years of his life, with his piano and furniture.",
+        "es": "La casa del jardín donde vivió y enseñó en los últimos años de su vida, con su piano y sus muebles."
+      }
+    },
+    {
+      "name": {
+        "en": "Liszt Academy of Music, Budapest",
+        "es": "Academia de Música Franz Liszt, Budapest"
+      },
+      "at": [
+        19.0644,
+        47.5031
+      ],
+      "kind": "site",
+      "text": {
+        "en": "The music school he helped found, in a fine Art Nouveau building. There are concerts throughout the year.",
+        "es": "La escuela de música que ayudó a fundar, en un hermoso edificio modernista. Hay conciertos durante todo el año."
+      }
+    },
+    {
+      "name": {
+        "en": "Liszt Ferenc Memorial Museum, Budapest",
+        "es": "Museo Memorial Ferenc Liszt, Budapest"
+      },
+      "at": [
+        19.0665,
+        47.507
+      ],
+      "kind": "museum",
+      "text": {
+        "en": "His last apartment in Budapest, kept as it was, with his pianos and his desk.",
+        "es": "Su último departamento en Budapest, conservado tal como estaba, con sus pianos y su escritorio."
+      }
+    },
+    {
+      "name": {
+        "en": "Franz Liszt Museum, Bayreuth",
+        "es": "Museo Franz Liszt, Bayreuth"
+      },
+      "at": [
+        11.5827,
+        49.9406
+      ],
+      "kind": "museum",
+      "text": {
+        "en": "The house where he died, next to Wagner's villa Wahnfried.",
+        "es": "La casa donde murió, junto a la villa Wahnfried de Wagner."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Liszt invented the modern piano recital and the symphonic poem, and pushed harmony toward the 20th century. He gave away much of what he earned and lifted the careers of Wagner, Berlioz, Grieg and many others. His Hungarian Rhapsodies are still among the best-known piano pieces.",
+    "es": "Liszt inventó el recital moderno de piano y el poema sinfónico, y empujó la armonía hacia el siglo XX. Regaló gran parte de lo que ganó e impulsó las carreras de Wagner, Berlioz, Grieg y muchos otros. Sus Rapsodias húngaras siguen entre las piezas para piano más conocidas."
+  },
+  "sources": [
+    {
+      "title": "Wikipedia: Franz Liszt",
+      "url": "https://en.wikipedia.org/wiki/Franz_Liszt"
+    },
+    {
+      "title": "Liszt Ferenc Memorial Museum, Budapest",
+      "url": "https://www.lisztmuseum.hu/"
+    },
+    {
+      "title": "Wikipedia: Lohengrin",
+      "url": "https://en.wikipedia.org/wiki/Lohengrin_(opera)"
+    }
+  ]
+}
