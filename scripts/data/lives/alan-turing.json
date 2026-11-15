@@ -1,0 +1,377 @@
+{
+  "id": "alan-turing",
+  "qid": "Q7251",
+  "name": { "en": "Alan Turing", "es": "Alan Turing" },
+  "icon": "💻",
+  "field": "science",
+  "known": { "en": "English mathematician, father of computer science", "es": "Matemático inglés, padre de la informática" },
+  "born": "1912-06-23",
+  "died": "1954-06-07",
+  "summary": {
+    "en": "He imagined the computer before anyone built one, and helped break the Nazis' Enigma codes. Then his own country convicted him for being gay. He died at 41; the apology and the pardon came more than half a century later.",
+    "es": "Imaginó la computadora antes de que nadie la construyera, y ayudó a descifrar los códigos Enigma de los nazis. Después su propio país lo condenó por ser gay. Murió a los 41 años; la disculpa y el indulto llegaron más de medio siglo después."
+  },
+  "steps": [
+    {
+      "date": "1912-06-23",
+      "kind": "born",
+      "place": { "en": "Maida Vale, London, England", "es": "Maida Vale, Londres, Inglaterra" },
+      "label": { "en": "London", "es": "Londres" },
+      "at": [-0.1846, 51.5243],
+      "title": { "en": "Born in London", "es": "Nace en Londres" },
+      "text": {
+        "en": "Alan Mathison Turing was born in a nursing home called Warrington Lodge, in London. His father was an official in British India; his parents went back there, leaving Alan and his brother with foster families.",
+        "es": "Alan Mathison Turing nació en una clínica llamada Warrington Lodge, en Londres. Su padre era funcionario en la India británica; sus padres volvieron allí, y dejaron a Alan y a su hermano con familias de acogida."
+      },
+      "details": {
+        "en": "He saw his parents only on their leaves until his father retired in 1926. As a boy he did chemistry experiments of his own, and loved a book called Natural Wonders Every Child Should Know. At ten he went to a boarding school in Sussex, where a teacher once sketched him 'watching the daisies grow' when he was supposed to be playing hockey. The building where he was born is now the Colonnade Hotel.",
+        "es": "Vio a sus padres solo cuando venían de licencia, hasta que su padre se jubiló en 1926. De niño hacía sus propios experimentos de química, y adoraba un libro llamado Maravillas de la naturaleza que todo niño debe conocer. A los diez años lo mandaron a un internado de Sussex, donde un maestro lo dibujó una vez «mirando crecer las margaritas» cuando debía estar jugando al hockey. El edificio donde nació es hoy el hotel Colonnade."
+      }
+    },
+    {
+      "date": "1926-05",
+      "kind": "study",
+      "icon": "🚲",
+      "place": { "en": "Sherborne, England", "es": "Sherborne, Inglaterra" },
+      "at": [-2.5188, 50.9478],
+      "title": { "en": "A misfit at Sherborne", "es": "Un inadaptado en Sherborne" },
+      "text": {
+        "en": "Turing started at Sherborne School during the General Strike of 1926. With no trains running, the boy of 13 cycled the 60 miles there. The school wanted gentlemen for the Empire; he wanted only science.",
+        "es": "Turing entró a la escuela de Sherborne durante la huelga general de 1926. Como no había trenes, el chico de 13 años hizo en bicicleta los casi cien kilómetros. La escuela quería caballeros para el Imperio; él solo quería ciencia."
+      },
+      "details": {
+        "en": "His English master called his handwriting the worst he had ever seen, and the headmaster wrote that if he was to be only a scientist he was wasting his time at a public school. On his own he read Einstein on relativity. In 1928 he became close to an older boy, Christopher Morcom, with whom he could at last share his ideas. Morcom died suddenly in February 1930. Turing resolved to do the work his friend could not, and began to ask how a mind could live in matter.",
+        "es": "Su profesor de inglés dijo que su letra era la peor que había visto, y el director escribió que, si solo iba a ser científico, estaba perdiendo el tiempo en esa escuela. Por su cuenta leyó a Einstein sobre la relatividad. En 1928 se hizo muy amigo de un chico mayor, Christopher Morcom, con quien por fin podía compartir sus ideas. Morcom murió de repente en febrero de 1930. Turing decidió hacer el trabajo que su amigo ya no podría, y empezó a preguntarse cómo puede vivir una mente en la materia."
+      },
+      "places": [
+        {
+          "name": { "en": "Christopher Morcom", "es": "Christopher Morcom" },
+          "at": [-2.5175, 50.9472],
+          "cat": "person",
+          "type": "person",
+          "date": "1928",
+          "life": ["1911-07-13", "1930-02-13"],
+          "text": {
+            "en": "A gifted pupil a year above Turing, who shared his passion for science. Turing was powerfully drawn to him, and his early death marked him for life.",
+            "es": "Un alumno brillante, un año mayor que Turing, que compartía su pasión por la ciencia. Turing se sintió profundamente atraído por él, y su muerte temprana lo marcó para siempre."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1931",
+      "kind": "study",
+      "place": { "en": "Cambridge, England", "es": "Cambridge, Inglaterra" },
+      "at": [0.1167, 52.2042],
+      "title": { "en": "At King's College", "es": "En el King's College" },
+      "text": {
+        "en": "At 19 Turing came to King's College to study mathematics. It gave him, he found, his first real home. He graduated with distinction in 1934, and in 1935 the college made him a Fellow.",
+        "es": "A los 19 años Turing llegó al King's College a estudiar matemáticas. Allí encontró su primer verdadero hogar. Se graduó con honores en 1934, y en 1935 el college lo nombró miembro."
+      },
+      "details": {
+        "en": "Here he accepted that he was gay, and the free spirit of King's let him live it more openly than most places in England could. He rowed, ran long distances and argued about the war that seemed to be coming. His fellowship came for a piece of probability theory that he had worked out on his own, not knowing that it had just been discovered elsewhere. Then, in the spring of 1935, a lecture course by the mathematician Max Newman set him the question that made his name.",
+        "es": "Aquí aceptó que era gay, y el espíritu libre del King's le permitió vivirlo más abiertamente que en casi cualquier otro lugar de Inglaterra. Remaba, corría largas distancias y discutía sobre la guerra que parecía acercarse. Lo nombraron miembro del college por un trabajo de probabilidad que había resuelto solo, sin saber que alguien acababa de descubrirlo. Después, en la primavera de 1935, un curso del matemático Max Newman le planteó la pregunta que lo haría famoso."
+      }
+    },
+    {
+      "date": "1936-04",
+      "kind": "made",
+      "place": { "en": "Cambridge, England", "es": "Cambridge, Inglaterra" },
+      "at": [0.1167, 52.2042],
+      "title": { "en": "The machine on paper", "es": "La máquina de papel" },
+      "text": {
+        "en": "Is there a method that can decide whether any statement in mathematics can be proved? To answer, Turing imagined a simple machine reading and writing symbols on a tape, and showed that no such method can exist.",
+        "es": "¿Existe un método que decida si cualquier afirmación matemática se puede demostrar? Para responder, Turing imaginó una máquina simple que lee y escribe símbolos en una cinta, y mostró que ese método no puede existir."
+      },
+      "details": {
+        "en": "His imaginary machine follows a short table of rules, one tiny step at a time, like a very patient clerk. Turing argued that anything that can be worked out by following rules can be done by such a machine. Then came the great leap: one machine, if given the rule table of any other as instructions, could do that machine's work. An American logician, Alonzo Church, reached the same answer by another road at almost the same moment, so Turing's paper, On Computable Numbers, only appeared at the end of 1936.",
+        "es": "Su máquina imaginaria sigue una breve tabla de reglas, de a un pasito por vez, como un empleado muy paciente. Turing sostuvo que todo lo que se puede calcular siguiendo reglas lo puede hacer una máquina así. Después vino el gran salto: una sola máquina, si recibe como instrucciones la tabla de reglas de cualquier otra, puede hacer el trabajo de esa otra. Un lógico estadounidense, Alonzo Church, llegó a la misma respuesta por otro camino casi al mismo tiempo, así que el artículo de Turing, Sobre los números computables, salió recién a fines de 1936."
+      },
+      "places": [
+        {
+          "name": { "en": "The universal Turing machine", "es": "La máquina universal de Turing" },
+          "at": [0.1177, 52.2036],
+          "cat": "opus",
+          "type": "work",
+          "icon": "📼",
+          "date": "1936",
+          "by": { "en": "Alan Turing", "es": "Alan Turing" },
+          "text": {
+            "en": "One machine that can do any job that can be written as instructions, if you give it the right ones: the idea behind every computer and phone. In 1936 it existed only on paper.",
+            "es": "Una sola máquina capaz de hacer cualquier tarea que se pueda escribir como instrucciones, si le das las correctas: la idea detrás de cada computadora y cada teléfono. En 1936 existía solo en papel."
+          },
+          "wiki": { "en": "Universal Turing machine", "es": "Máquina de Turing universal" }
+        }
+      ]
+    },
+    {
+      "date": "1936-09",
+      "kind": "study",
+      "by": "sea",
+      "via": [[-1.3, 50.7], [-5.5, 49.8], [-40.0, 45.0], [-66.0, 41.5], [-73.8, 40.4]],
+      "place": { "en": "Princeton, United States", "es": "Princeton, Estados Unidos" },
+      "at": [-74.6561, 40.3453],
+      "title": { "en": "Two years in Princeton", "es": "Dos años en Princeton" },
+      "text": {
+        "en": "Turing crossed the Atlantic to study for a doctorate at Princeton with Alonzo Church. He went deeper into logic, and in his spare time built part of an electric machine for multiplying numbers, to make secret codes.",
+        "es": "Turing cruzó el Atlántico para hacer un doctorado en Princeton con Alonzo Church. Profundizó en la lógica, y en sus ratos libres construyó parte de una máquina eléctrica para multiplicar números, con la que hacer códigos secretos."
+      },
+      "details": {
+        "en": "His thesis, finished in 1938, was perhaps his most difficult mathematics: an attempt to bring order into the problems that no machine can solve. The great Hungarian-American mathematician John von Neumann noticed his work and offered him a post at Princeton. Turing turned it down and went home in 1938. War with Germany looked likely, and he had begun to think about ciphers.",
+        "es": "Su tesis, terminada en 1938, fue quizá su matemática más difícil: un intento de poner orden en los problemas que ninguna máquina puede resolver. El gran matemático húngaro-estadounidense John von Neumann se fijó en su trabajo y le ofreció un puesto en Princeton. Turing no aceptó y volvió a casa en 1938. Una guerra con Alemania parecía probable, y él había empezado a pensar en las cifras secretas."
+      },
+      "places": [
+        {
+          "name": { "en": "Alonzo Church", "es": "Alonzo Church" },
+          "at": [-74.6524, 40.3458],
+          "cat": "person",
+          "type": "person",
+          "date": "1936-09",
+          "life": ["1903-06-14", "1995-08-11"],
+          "text": {
+            "en": "The American logician who supervised Turing's doctorate. Their two answers to the same question are joined today in the 'Church–Turing thesis': what can be computed at all is what such a machine can compute.",
+            "es": "El lógico estadounidense que dirigió el doctorado de Turing. Sus dos respuestas a la misma pregunta se unen hoy en la «tesis de Church-Turing»: lo que se puede calcular es justo lo que puede calcular una máquina así."
+          },
+          "wiki": { "en": "Alonzo Church", "es": "Alonzo Church" }
+        }
+      ]
+    },
+    {
+      "date": "1939-09-04",
+      "kind": "career",
+      "by": "sea",
+      "via": [[-73.8, 40.4], [-66.0, 41.5], [-40.0, 45.0], [-5.5, 49.8], [-1.3, 50.7]],
+      "place": { "en": "Bletchley, England", "es": "Bletchley, Inglaterra" },
+      "at": [-0.7411, 51.9975],
+      "title": { "en": "Breaking Enigma at Bletchley Park", "es": "Contra Enigma en Bletchley Park" },
+      "text": {
+        "en": "The day after Britain declared war, Turing reported to Bletchley Park, the country house where the codebreakers worked. He designed the Bombe, a machine that found the daily settings of the German Enigma cipher.",
+        "es": "Al día siguiente de que Gran Bretaña declarara la guerra, Turing se presentó en Bletchley Park, la casa de campo donde trabajaban los descifradores. Diseñó la Bomba, una máquina que encontraba la clave diaria de la cifra alemana Enigma."
+      },
+      "details": {
+        "en": "He built on the work of Polish mathematicians who had broken Enigma before the war. From 1940 the Bombes made reading the German air force's messages routine. Turing then took on the navy's Enigma, which most thought unbreakable, and led the team in Hut 8 that read the signals of the U-boats hunting convoys in the Atlantic. Colleagues called him 'Prof': shabby, awkward and the hero of many stories about bicycles and gas masks. He proposed to a fellow codebreaker, Joan Clarke, then told her he was gay, and the engagement ended. All of this stayed secret until the 1970s.",
+        "es": "Partió del trabajo de matemáticos polacos que habían descifrado Enigma antes de la guerra. Desde 1940 las Bombas volvieron rutina la lectura de los mensajes de la fuerza aérea alemana. Turing se ocupó entonces de la Enigma naval, que casi todos creían indescifrable, y dirigió al equipo de la Barraca 8, que leía las señales de los submarinos que cazaban convoyes en el Atlántico. Sus colegas lo llamaban «el Profe»: desaliñado, torpe y protagonista de muchas anécdotas de bicicletas y máscaras antigás. Le propuso matrimonio a una compañera, Joan Clarke, y después le contó que era gay, y el compromiso terminó. Todo esto fue secreto hasta los años setenta."
+      },
+      "places": [
+        {
+          "name": { "en": "The Bombe", "es": "La Bomba" },
+          "at": [-0.7405, 51.9978],
+          "cat": "opus",
+          "type": "invention",
+          "icon": "⚙️",
+          "date": "1940-03",
+          "by": { "en": "Alan Turing and Gordon Welchman", "es": "Alan Turing y Gordon Welchman" },
+          "text": {
+            "en": "A large machine of spinning drums that tested thousands of Enigma settings and threw out every one that contradicted a guessed word. Over 200 were built; a working copy runs at Bletchley Park today.",
+            "es": "Una gran máquina de tambores giratorios que probaba miles de claves de Enigma y descartaba las que contradecían una palabra adivinada. Se fabricaron más de 200; hoy funciona una copia en Bletchley Park."
+          },
+          "wiki": { "en": "Bombe", "es": "Bombe" }
+        },
+        {
+          "name": { "en": "Joan Clarke", "es": "Joan Clarke" },
+          "at": [-0.7419, 51.9972],
+          "cat": "person",
+          "type": "person",
+          "date": "1941",
+          "life": ["1917-06-24", "1996-09-04"],
+          "text": {
+            "en": "A mathematician who worked beside Turing in Hut 8 on the naval Enigma. They were briefly engaged, and she stayed a codebreaker after the war.",
+            "es": "Una matemática que trabajó junto a Turing en la Barraca 8 contra la Enigma naval. Estuvieron comprometidos por un tiempo, y ella siguió descifrando códigos después de la guerra."
+          },
+          "wiki": { "en": "Joan Clarke", "es": "Joan Clarke" }
+        }
+      ]
+    },
+    {
+      "date": "1945",
+      "kind": "career",
+      "place": { "en": "Teddington, London, England", "es": "Teddington, Londres, Inglaterra" },
+      "label": { "en": "Teddington", "es": "Teddington" },
+      "at": [-0.3436, 51.4253],
+      "title": { "en": "Designing a real computer", "es": "El diseño de una computadora real" },
+      "text": {
+        "en": "After the war the National Physical Laboratory hired Turing to build his universal machine in electronics. His plan for the ACE, the Automatic Computing Engine, was approved in March 1946.",
+        "es": "Después de la guerra, el Laboratorio Nacional de Física contrató a Turing para construir su máquina universal con electrónica. Su plan para el ACE, el Motor de Cálculo Automático, fue aprobado en marzo de 1946."
+      },
+      "details": {
+        "en": "It was one of the first complete designs of a stored-program computer, and its prospectus was visionary: the same machine would do sums, algebra, codebreaking or chess. But the laboratory would not build it, and he left in frustration in 1948. Meanwhile he ran hard to clear his head. He became one of Britain's best marathon runners: his best time, 2 hours 46 minutes, was only eleven minutes slower than the winner of the 1948 Olympic marathon.",
+        "es": "Fue uno de los primeros diseños completos de una computadora con programa almacenado, y su presentación era visionaria: la misma máquina haría cuentas, álgebra, descifrado de códigos o ajedrez. Pero el laboratorio no la construía, y él se fue frustrado en 1948. Mientras tanto corría mucho para despejarse. Llegó a ser uno de los mejores maratonistas de Gran Bretaña: su mejor tiempo, 2 horas y 46 minutos, fue solo once minutos más lento que el del ganador del maratón olímpico de 1948."
+      },
+      "places": [
+        {
+          "name": { "en": "Pilot ACE", "es": "Pilot ACE" },
+          "at": [-0.1747, 51.4975],
+          "cat": "opus",
+          "type": "invention",
+          "icon": "🖥️",
+          "date": "1950",
+          "by": { "en": "Alan Turing (design) and the NPL", "es": "Alan Turing (diseño) y el NPL" },
+          "text": {
+            "en": "A smaller version of Turing's design, built after he left and working in 1950. It has been shown at the Science Museum in London since 1958.",
+            "es": "Una versión reducida del diseño de Turing, construida después de que él se fue y en funcionamiento en 1950. Se exhibe en el Museo de Ciencias de Londres desde 1958."
+          },
+          "wiki": { "en": "Pilot ACE", "es": "Pilot ACE" }
+        }
+      ]
+    },
+    {
+      "date": "1948-10",
+      "kind": "career",
+      "place": { "en": "Manchester, England", "es": "Mánchester, Inglaterra" },
+      "at": [-2.2325, 53.4675],
+      "title": { "en": "Can machines think?", "es": "¿Pueden pensar las máquinas?" },
+      "text": {
+        "en": "Turing moved to Manchester University, where the first stored-program computer had run that June. He wrote programs for it, and in 1950 asked in a famous paper whether a machine could think.",
+        "es": "Turing se mudó a la Universidad de Mánchester, donde ese junio había funcionado la primera computadora con programa almacenado. Escribió programas para ella, y en 1950 preguntó en un artículo famoso si una máquina podía pensar."
+      },
+      "details": {
+        "en": "The engineers Freddie Williams and Tom Kilburn had built the machine, nicknamed the Baby; Turing's title was deputy director of the computing laboratory, and his job was to make it useful. In February 1951 a factory-built version, the Ferranti Mark 1, came into use, and Turing wrote its programming manual. He also set it to hunt for very large prime numbers.",
+        "es": "Los ingenieros Freddie Williams y Tom Kilburn habían construido la máquina, apodada «el Bebé»; Turing era subdirector del laboratorio de computación, y su trabajo era volverla útil. En febrero de 1951 empezó a funcionar una versión de fábrica, la Ferranti Mark 1, y Turing escribió su manual de programación. También la puso a buscar números primos muy grandes."
+      },
+      "places": [
+        {
+          "name": { "en": "The Turing test", "es": "La prueba de Turing" },
+          "at": [-2.2338, 53.4668],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🤖",
+          "date": "1950",
+          "by": { "en": "Alan Turing", "es": "Alan Turing" },
+          "text": {
+            "en": "From his paper Computing Machinery and Intelligence (1950): if a judge chatting in writing cannot tell a machine from a person, should we not say the machine thinks? It is still argued over in the age of AI.",
+            "es": "De su artículo Computing Machinery and Intelligence (1950): si un juez que conversa por escrito no puede distinguir a una máquina de una persona, ¿no deberíamos decir que la máquina piensa? Se sigue discutiendo en la era de la IA."
+          },
+          "wiki": { "en": "Turing test", "es": "Prueba de Turing" }
+        }
+      ]
+    },
+    {
+      "date": "1951-11-09",
+      "kind": "made",
+      "place": { "en": "Wilmslow, England", "es": "Wilmslow, Inglaterra" },
+      "at": [-2.239, 53.325],
+      "title": { "en": "How the leopard gets its spots", "es": "Las manchas del leopardo" },
+      "text": {
+        "en": "From his house in Wilmslow, near Manchester, Turing turned to biology. He sent the Royal Society, which had elected him a Fellow that July, a paper on how living things grow their patterns.",
+        "es": "Desde su casa en Wilmslow, cerca de Mánchester, Turing se volcó a la biología. Mandó a la Royal Society, que lo había elegido miembro ese julio, un artículo sobre cómo los seres vivos forman sus patrones."
+      },
+      "details": {
+        "en": "He had bought the house in 1950, on the edge of the Cheshire countryside, and ran the lanes around it. His question went back to the daisies of his childhood: how does a round, even ball of cells turn into something with stripes, spots or the spirals of a sunflower? He showed that two chemicals reacting and spreading at different speeds can do it by themselves. To test the idea he used the Manchester computer, one of the first scientists to use a computer for his own research.",
+        "es": "Había comprado la casa en 1950, al borde del campo de Cheshire, y corría por los caminos de los alrededores. Su pregunta venía de las margaritas de su infancia: ¿cómo una bola pareja de células se convierte en algo con rayas, manchas o las espirales de un girasol? Mostró que dos sustancias químicas que reaccionan y se difunden a distinta velocidad pueden lograrlo por sí solas. Para probar la idea usó la computadora de Mánchester: fue uno de los primeros científicos en usar una computadora para su propia investigación."
+      },
+      "places": [
+        {
+          "name": { "en": "Turing patterns", "es": "Los patrones de Turing" },
+          "at": [-2.2375, 53.3258],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🐆",
+          "date": "1952",
+          "by": { "en": "Alan Turing", "es": "Alan Turing" },
+          "text": {
+            "en": "Published in 1952 as The Chemical Basis of Morphogenesis. Long overlooked, it is now a founding paper of the science of how patterns form in nature.",
+            "es": "Publicado en 1952 como La base química de la morfogénesis. Olvidado durante mucho tiempo, hoy es uno de los artículos fundadores de la ciencia que estudia cómo se forman los patrones en la naturaleza."
+          },
+          "wiki": { "en": "Turing pattern", "es": "Patrón de Turing" }
+        }
+      ]
+    },
+    {
+      "date": "1952-03-31",
+      "kind": "struggle",
+      "place": { "en": "Knutsford, England", "es": "Knutsford, Inglaterra" },
+      "at": [-2.3748, 53.3029],
+      "title": { "en": "Convicted for being gay", "es": "Condenado por ser gay" },
+      "text": {
+        "en": "Sex between men was a crime in Britain. When the police learned of Turing's relationship with a 19-year-old man, both were arrested, and on 31 March 1952 Turing was convicted in court at Knutsford.",
+        "es": "El sexo entre hombres era un delito en Gran Bretaña. Cuando la policía supo de la relación de Turing con un joven de 19 años, los arrestaron a los dos, y el 31 de marzo de 1952 un tribunal de Knutsford condenó a Turing."
+      },
+      "details": {
+        "en": "He made no real defence and told everyone he saw nothing wrong in what he had done. To stay out of prison he had to accept a year of injections of the female hormone oestrogen, meant to take away his sexual desire: chemical castration. Worse, he lost his security clearance and with it his secret work for GCHQ, the successor of Bletchley Park, for in the Cold War gay men were treated as security risks. Police watched his foreign visitors. He went on working, on biology, physics and logic, but he could talk to no one about the secret part of it.",
+        "es": "No se defendió en serio y les dijo a todos que no veía nada malo en lo que había hecho. Para no ir a prisión tuvo que aceptar un año de inyecciones de estrógeno, una hormona femenina, para quitarle el deseo sexual: una castración química. Peor aún, perdió su autorización de seguridad y con ella su trabajo secreto para el GCHQ, sucesor de Bletchley Park, porque en la Guerra Fría a los gays se los trataba como un riesgo para la seguridad. La policía vigilaba a sus visitas extranjeras. Siguió trabajando, en biología, física y lógica, pero no podía hablar con nadie de la parte secreta."
+      }
+    },
+    {
+      "date": "1954-06-07",
+      "kind": "died",
+      "place": { "en": "Wilmslow, England", "es": "Wilmslow, Inglaterra" },
+      "at": [-2.239, 53.325],
+      "title": { "en": "He dies at Wilmslow", "es": "Muere en Wilmslow" },
+      "text": {
+        "en": "Turing died at home at 41, poisoned by cyanide; his cleaner found him the next day, with a half-eaten apple beside his bed. The inquest ruled suicide. His mother always believed it was an accident.",
+        "es": "Turing murió en su casa a los 41 años, envenenado con cianuro; su empleada lo encontró al día siguiente, con una manzana a medio comer junto a la cama. La investigación judicial dictaminó suicidio. Su madre siempre creyó que fue un accidente."
+      },
+      "details": {
+        "en": "He did chemistry experiments at home, and his mother thought he had got cyanide on his fingers in one of them. His biographer Andrew Hodges thinks it more likely that he planned his death so that she, alone, could go on believing that. No one around him had seen it coming. He left behind unfinished work on the growth of plants and on the physics of the very small.",
+        "es": "Hacía experimentos de química en su casa, y su madre pensaba que se había manchado los dedos con cianuro en uno de ellos. Su biógrafo Andrew Hodges cree más probable que él planeara su muerte para que ella, y solo ella, pudiera seguir creyendo eso. Nadie a su alrededor lo había visto venir. Dejó sin terminar trabajos sobre el crecimiento de las plantas y sobre la física de lo muy pequeño."
+      }
+    },
+    {
+      "date": "2009-09-10",
+      "kind": "honour",
+      "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+      "at": [-0.1277, 51.5035],
+      "title": { "en": "An apology, and a pardon", "es": "Una disculpa, y un indulto" },
+      "text": {
+        "en": "After a public petition, Prime Minister Gordon Brown apologised for the way Britain had treated Turing. On 24 December 2013 the Queen granted him a posthumous pardon.",
+        "es": "Después de una petición pública, el primer ministro Gordon Brown pidió disculpas por cómo Gran Bretaña había tratado a Turing. El 24 de diciembre de 2013 la reina le concedió un indulto póstumo."
+      },
+      "details": {
+        "en": "A pardon is normally given only to people found innocent, and at the request of their family; neither was the case here, which made this one unique. Hodges and others argued that it was the British state, not Turing, that needed pardoning, and pointed to the many thousands of other men convicted under the same law. In 2017 a law nicknamed the Alan Turing law extended pardons to them. Since 2021 Turing's face has been on the Bank of England's £50 note.",
+        "es": "Normalmente un indulto se da solo a quien se demuestra inocente, y a pedido de su familia; aquí no se cumplía ninguna de las dos cosas, y por eso este fue único. Hodges y otros sostuvieron que no era Turing quien necesitaba perdón sino el Estado británico, y recordaron a los miles de hombres condenados por la misma ley. En 2017 una ley apodada «ley Alan Turing» extendió el indulto a ellos. Desde 2021 el rostro de Turing está en el billete de 50 libras del Banco de Inglaterra."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Bletchley Park", "es": "Bletchley Park" },
+      "at": [-0.7411, 51.9975],
+      "kind": "museum",
+      "text": {
+        "en": "The codebreakers' house and huts, saved in 1991 and now a museum. You can see Hut 8, where he led the naval Enigma team, and a rebuilt Bombe at work.",
+        "es": "La casa y las barracas de los descifradores, salvadas en 1991 y hoy un museo. Se puede ver la Barraca 8, donde dirigió al equipo contra la Enigma naval, y una Bomba reconstruida en funcionamiento."
+      },
+      "wiki": { "en": "Bletchley Park", "es": "Bletchley Park" }
+    },
+    {
+      "name": { "en": "Alan Turing Memorial, Manchester", "es": "Monumento a Alan Turing, Mánchester" },
+      "at": [-2.236, 53.4767],
+      "kind": "memorial",
+      "text": {
+        "en": "A bronze Turing sits on a bench in Sackville Park, holding an apple, between the university and the streets of Manchester's gay village. It was unveiled on his birthday in 2001.",
+        "es": "Un Turing de bronce está sentado en un banco del parque Sackville, con una manzana en la mano, entre la universidad y las calles del barrio gay de Mánchester. Se inauguró el día de su cumpleaños de 2001."
+      },
+      "wiki": { "en": "Alan Turing Memorial", "es": "Monumento a Alan Turing" }
+    },
+    {
+      "name": { "en": "Science Museum, London", "es": "Museo de Ciencias, Londres" },
+      "at": [-0.1747, 51.4975],
+      "kind": "museum",
+      "text": {
+        "en": "Home of the Pilot ACE, the computer built to Turing's design, among the machines that started the computer age.",
+        "es": "Aquí está el Pilot ACE, la computadora construida según su diseño, entre las máquinas que dieron comienzo a la era de la computación."
+      },
+      "wiki": { "en": "Science Museum, London", "es": "Museo de Ciencias de Londres" }
+    },
+    {
+      "name": { "en": "Turing's birthplace, Maida Vale", "es": "Casa natal de Turing, Maida Vale" },
+      "at": [-0.1846, 51.5243],
+      "kind": "memorial",
+      "text": {
+        "en": "A blue plaque on the Colonnade Hotel in Warrington Crescent, unveiled by his biographer Andrew Hodges in 1998, marks the nursing home where he was born.",
+        "es": "Una placa azul en el hotel Colonnade de Warrington Crescent, descubierta por su biógrafo Andrew Hodges en 1998, señala la clínica donde nació."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Turing gave the world the idea of the universal machine, which every computer carries out, asked whether machines can think long before artificial intelligence existed, and showed how living patterns can arise from chemistry. His wartime codebreaking helped the Allies win the Battle of the Atlantic. The prize often called the Nobel of computing bears his name, and his story has made him a symbol of the cost of prejudice.",
+    "es": "Turing le dio al mundo la idea de la máquina universal, que cada computadora pone en práctica, se preguntó si las máquinas pueden pensar mucho antes de que existiera la inteligencia artificial, y mostró cómo los patrones de los seres vivos pueden nacer de la química. Su trabajo descifrando códigos en la guerra ayudó a los Aliados a ganar la batalla del Atlántico. El premio al que suelen llamar el Nobel de la informática lleva su nombre, y su historia lo convirtió en un símbolo del precio de los prejuicios."
+  },
+  "sources": [
+    { "title": "Andrew Hodges: Alan Turing, a short biography (from the Oxford Dictionary of Scientific Biography)", "url": "https://www.turing.org.uk/publications/dnb.html" },
+    { "title": "Andrew Hodges: The Alan Turing Internet Scrapbook", "url": "https://www.turing.org.uk/scrapbook/index.html" },
+    { "title": "MacTutor History of Mathematics: Alan Turing", "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Turing/" },
+    { "title": "GOV.UK: Royal pardon for WW2 code-breaker Dr Alan Turing (24 December 2013)", "url": "https://www.gov.uk/government/news/royal-pardon-for-ww2-code-breaker-dr-alan-turing" },
+    { "title": "Bank of England: the polymer £50 note", "url": "https://www.bankofengland.co.uk/banknotes/polymer-50-pound-note" }
+  ]
+}

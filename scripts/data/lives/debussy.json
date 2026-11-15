@@ -1,0 +1,272 @@
+{
+  "id": "debussy",
+  "qid": "Q4700",
+  "name": { "en": "Claude Debussy", "es": "Claude Debussy" },
+  "icon": "🎹",
+  "field": "music",
+  "known": { "en": "French composer of Impressionist music", "es": "Compositor francés de la música impresionista" },
+  "born": "1862-08-22",
+  "died": "1918-03-25",
+  "summary": {
+    "en": "A pianist's son from a china shop who broke the rules of the Paris Conservatoire and wrote music of colour, water and light that opened the way to the 20th century.",
+    "es": "El hijo de un vendedor de porcelana que rompió las reglas del Conservatorio de París y escribió una música de color, agua y luz que abrió el camino al siglo XX."
+  },
+  "steps": [
+    {
+      "date": "1862-08-22",
+      "kind": "born",
+      "place": { "en": "Saint-Germain-en-Laye, France", "es": "Saint-Germain-en-Laye, Francia" },
+      "at": [2.0926, 48.8969],
+      "title": { "en": "Born above a china shop", "es": "Nace sobre una tienda de porcelana" },
+      "text": {
+        "en": "Achille-Claude Debussy was born in a small town west of Paris, the eldest child of a couple who sold china and crockery. Nobody in his family was a musician.",
+        "es": "Achille-Claude Debussy nació en un pueblo al oeste de París, el mayor de los hijos de una pareja que vendía porcelana y loza. Nadie en su familia era músico."
+      },
+      "details": {
+        "en": "The shop failed within a few years and the family moved to Paris. His father later took part in the Paris Commune of 1871 and was jailed. It was in prison that he met a musician whose mother-in-law, Madame Mauté de Fleurville, taught the boy piano and sent him to the Conservatoire.",
+        "es": "La tienda quebró a los pocos años y la familia se mudó a París. Su padre participó en la Comuna de París de 1871 y fue encarcelado. En la cárcel conoció a un músico cuya suegra, Madame Mauté de Fleurville, le dio clases de piano al niño y lo preparó para el Conservatorio."
+      },
+      "unsure": {
+        "en": "Accounts differ on how Madame Mauté de Fleurville came to teach him, and on whether she was really a pupil of Chopin, as she claimed.",
+        "es": "Los relatos difieren sobre cómo Madame Mauté de Fleurville llegó a ser su maestra, y sobre si de verdad fue alumna de Chopin, como ella decía."
+      }
+    },
+    {
+      "date": "1872",
+      "kind": "study",
+      "place": { "en": "Paris, France", "es": "París, Francia" },
+      "at": [2.3522, 48.8567],
+      "title": { "en": "A rebel at the Conservatoire", "es": "Un rebelde en el Conservatorio" },
+      "text": {
+        "en": "At ten he entered the Paris Conservatoire, where he stayed for eleven years. He played brilliantly, but his teachers were shocked by the chords he invented at the piano.",
+        "es": "A los diez años entró al Conservatorio de París, donde estuvo once años. Tocaba con brillo, pero sus maestros se escandalizaban con los acordes que inventaba al piano."
+      },
+      "details": {
+        "en": "Asked what rule he followed, he is said to have answered: my own pleasure. In 1884 he won the Prix de Rome, the Conservatoire's great prize, with a cantata called The Prodigal Child.",
+        "es": "Cuando le preguntaron qué regla seguía, se dice que respondió: mi propio placer. En 1884 ganó el Premio de Roma, el gran premio del Conservatorio, con una cantata llamada El hijo pródigo."
+      },
+      "unsure": {
+        "en": "The famous answer about his own pleasure comes from a pupil's recollection, not from a document.",
+        "es": "La famosa respuesta sobre su propio placer viene del recuerdo de un alumno, no de un documento."
+      }
+    },
+    {
+      "date": "1885",
+      "kind": "study",
+      "place": { "en": "Rome, Italy", "es": "Roma, Italia" },
+      "at": [12.4825, 41.9083],
+      "title": { "en": "Unhappy at the Villa Medici", "es": "Descontento en la Villa Médici" },
+      "text": {
+        "en": "As the Prix de Rome winner he had to spend years at the Villa Medici. He found it dull and the academy conservative, and left in 1887, two years early.",
+        "es": "Como ganador del Premio de Roma debía pasar años en la Villa Médici. La encontró aburrida y el ambiente de la academia, conservador, y se fue en 1887, dos años antes de lo debido."
+      }
+    },
+    {
+      "date": "1888",
+      "kind": "journey",
+      "place": { "en": "Bayreuth, Germany", "es": "Bayreuth, Alemania" },
+      "at": [11.5783, 49.9427],
+      "title": { "en": "Wagner, then no more Wagner", "es": "Wagner, y luego basta de Wagner" },
+      "text": {
+        "en": "He went to Bayreuth in 1888 and again in 1889 to hear Wagner's operas. He came home admiring them and sure that French music had to find a different way.",
+        "es": "Fue a Bayreuth en 1888 y otra vez en 1889 a oír las óperas de Wagner. Volvió admirándolas, pero convencido de que la música francesa debía encontrar otro camino."
+      },
+      "places": [
+        {
+          "name": { "en": "Richard Wagner", "es": "Richard Wagner" },
+          "at": [11.5783, 49.9427],
+          "cat": "person",
+          "type": "person",
+          "date": "1888",
+          "life": ["1813-05-22", "1883-02-13"],
+          "text": {
+            "en": "The German composer whose festival theatre drew Debussy to Bayreuth. He had died in 1883, but his operas set the bar every young composer measured himself against.",
+            "es": "El compositor alemán cuyo teatro de festivales atrajo a Debussy a Bayreuth. Había muerto en 1883, pero sus óperas eran la vara con que se medía todo joven compositor."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1889",
+      "kind": "moment",
+      "place": { "en": "Paris, France", "es": "París, Francia" },
+      "at": [2.3126, 48.8626],
+      "title": { "en": "The gamelan at the Exposition", "es": "El gamelán de la Exposición" },
+      "text": {
+        "en": "At the Universal Exposition he heard a Javanese gamelan orchestra, with its bronze gongs and bells. Its layered rhythms and shimmering sound stayed with him for the rest of his life.",
+        "es": "En la Exposición Universal oyó una orquesta de gamelán javanés, con sus gongs y campanas de bronce. Sus ritmos en capas y su sonido reluciente lo acompañaron toda la vida."
+      }
+    },
+    {
+      "date": "1894-12-22",
+      "kind": "moment",
+      "place": { "en": "Paris, France", "es": "París, Francia" },
+      "at": [2.3522, 48.8567],
+      "title": { "en": "Afternoon of a Faun", "es": "Preludio a la siesta de un fauno" },
+      "text": {
+        "en": "His orchestral Prelude to the Afternoon of a Faun, based on a poem by Mallarmé, was first played at a concert in Paris. It begins with a solo flute, and many call it the start of modern music.",
+        "es": "Su Preludio a la siesta de un fauno, para orquesta y basado en un poema de Mallarmé, se estrenó en un concierto en París. Empieza con una flauta sola, y muchos lo consideran el comienzo de la música moderna."
+      },
+      "details": {
+        "en": "The concert was given by the Société nationale de musique at the Salle d'Harcourt, under Gustave Doret. Mallarmé, who was in the audience, wrote to thank him the next day. Nearly twenty years later the dancer Vaslav Nijinsky made a ballet to the music, which scandalized Paris in 1912.",
+        "es": "El concierto lo dio la Société nationale de musique en la Salle d'Harcourt, dirigida por Gustave Doret. Mallarmé, que estaba entre el público, le escribió al día siguiente para agradecerle. Casi veinte años después, el bailarín Vaslav Nijinsky hizo un ballet con esta música, que escandalizó a París en 1912."
+      },
+      "places": [
+        {
+          "name": { "en": "Stéphane Mallarmé", "es": "Stéphane Mallarmé" },
+          "at": [2.3522, 48.8567],
+          "cat": "person",
+          "type": "person",
+          "date": "1894",
+          "life": ["1842-03-18", "1898-09-09"],
+          "text": {
+            "en": "The Symbolist poet whose poem The Afternoon of a Faun inspired the music. Debussy visited the weekly gatherings he held at his flat on Tuesday evenings.",
+            "es": "El poeta simbolista cuyo poema La siesta de un fauno inspiró la música. Debussy iba a las reuniones que daba los martes por la noche en su departamento."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1902-04-30",
+      "kind": "moment",
+      "place": { "en": "Paris, France", "es": "París, Francia" },
+      "at": [2.3378, 48.8711],
+      "title": { "en": "Pelléas et Mélisande", "es": "Pelléas et Mélisande" },
+      "text": {
+        "en": "His only completed opera opened at the Opéra-Comique after ten years of work. The first night was rowdy, but within weeks Paris was talking about it, and it was soon staged across Europe.",
+        "es": "Su única ópera terminada se estrenó en la Ópera Cómica tras diez años de trabajo. La primera noche fue ruidosa, pero a las pocas semanas París hablaba de ella, y pronto se montó por toda Europa."
+      },
+      "details": {
+        "en": "The play was by the Belgian Maurice Maeterlinck, and Mélisande was sung by the Scottish soprano Mary Garden. Debussy had set it to music in a new way: the voices speak and float over the orchestra instead of singing big arias. Maeterlinck, who had wanted his partner to sing the role, was furious and tried to stop the production.",
+        "es": "La obra de teatro era del belga Maurice Maeterlinck, y Mélisande la cantó la soprano escocesa Mary Garden. Debussy la había puesto en música de una manera nueva: las voces hablan y flotan sobre la orquesta, sin grandes arias. Maeterlinck, que quería que su pareja cantara el papel, se enfureció e intentó impedir la puesta."
+      },
+      "places": [
+        {
+          "name": { "en": "Maurice Maeterlinck", "es": "Maurice Maeterlinck" },
+          "at": [2.3378, 48.8711],
+          "cat": "person",
+          "type": "person",
+          "date": "1902",
+          "life": ["1862-08-29", "1949-05-06"],
+          "text": {
+            "en": "The Belgian Symbolist playwright who wrote Pelléas and Mélisande. He won the Nobel Prize in Literature in 1911.",
+            "es": "El dramaturgo simbolista belga que escribió Pelléas y Mélisande. Ganó el Premio Nobel de Literatura en 1911."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1905",
+      "kind": "made",
+      "by": "sea",
+      "place": { "en": "Eastbourne, England", "es": "Eastbourne, Inglaterra" },
+      "at": [0.2828, 50.761],
+      "title": { "en": "La mer on the English coast", "es": "El mar, en la costa inglesa" },
+      "text": {
+        "en": "He had left his wife for Emma Bardac, and Paris society turned its back on him. They went to Eastbourne, and in a seaside hotel he finished La mer, his three sketches of the sea.",
+        "es": "Había dejado a su esposa por Emma Bardac, y la sociedad parisina le dio la espalda. Se fueron a Eastbourne, y en un hotel junto al mar terminó El mar, sus tres bosquejos sinfónicos del océano."
+      },
+      "details": {
+        "en": "He had begun La mer in Burgundy, far from any sea, working from memory and from the pictures of Hokusai and Turner. It was first played in Paris in October 1905 and was received coldly. Today it is one of the most loved orchestral works of the century.",
+        "es": "Había comenzado El mar en Borgoña, lejos de cualquier costa, trabajando de memoria y a partir de imágenes de Hokusai y de Turner. Se estrenó en París en octubre de 1905 y la recibieron con frialdad. Hoy es una de las obras orquestales más queridas del siglo."
+      },
+      "unsure": {
+        "en": "The exact month of the stay in Eastbourne is not given here; it was in the summer of 1905.",
+        "es": "Aquí no se da el mes exacto de la estancia en Eastbourne; fue en el verano de 1905."
+      },
+      "places": [
+        {
+          "name": { "en": "La mer", "es": "El mar" },
+          "at": [0.2828, 50.761],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🌊",
+          "date": "1905",
+          "by": { "en": "Claude Debussy", "es": "Claude Debussy" },
+          "text": {
+            "en": "Three symphonic sketches for orchestra: From Dawn to Noon on the Sea, Play of the Waves, and Dialogue of the Wind and the Sea.",
+            "es": "Tres bosquejos sinfónicos para orquesta: De la aurora al mediodía en el mar, Juego de olas y Diálogo del viento y el mar."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1905",
+      "kind": "home",
+      "place": { "en": "Paris, France", "es": "París, Francia" },
+      "at": [2.2765, 48.8636],
+      "title": { "en": "A house near the Bois", "es": "Una casa junto al Bosque" },
+      "text": {
+        "en": "That year he moved into a house off the avenue du Bois de Boulogne, now avenue Foch, with Emma and their daughter Chouchou. He lived here for the last thirteen years of his life.",
+        "es": "Ese año se instaló con Emma y su hija Chouchou en una casa junto a la avenida del Bois de Boulogne, hoy avenida Foch. Vivió aquí los últimos trece años de su vida."
+      },
+      "details": {
+        "en": "Here he wrote the two books of Preludes for piano, Children's Corner for his daughter, and the ballet Jeux. He and Emma married in 1908. In 1909 he learned he had cancer, and during the First World War he grew weak and thin.",
+        "es": "Aquí escribió los dos libros de Preludios para piano, El rincón de los niños para su hija, y el ballet Juegos. Él y Emma se casaron en 1908. En 1909 supo que tenía cáncer, y durante la Primera Guerra Mundial se fue debilitando."
+      }
+    },
+    {
+      "date": "1918-03-25",
+      "kind": "died",
+      "place": { "en": "Paris, France", "es": "París, Francia" },
+      "at": [2.2765, 48.8636],
+      "title": { "en": "He dies as Paris is shelled", "es": "Muere mientras bombardean París" },
+      "text": {
+        "en": "Debussy died at 55 at his home, while German guns shelled the city. The funeral crossed a nearly empty Paris, and he was buried at the Passy cemetery.",
+        "es": "Debussy murió a los 55 años en su casa, mientras la artillería alemana bombardeaba la ciudad. El cortejo cruzó un París casi vacío y lo enterraron en el cementerio de Passy."
+      },
+      "unsure": {
+        "en": "Some sources say he was first laid in Père Lachaise cemetery and moved to Passy in 1919.",
+        "es": "Algunas fuentes dicen que primero lo sepultaron en el cementerio de Père Lachaise y que lo trasladaron a Passy en 1919."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Musée Claude Debussy", "es": "Museo Claude Debussy" },
+      "at": [2.0926, 48.8969],
+      "kind": "museum",
+      "text": {
+        "en": "A small museum in the house on rue au Pain where he was born, with his letters, scores and a collection of objects from his life.",
+        "es": "Un pequeño museo en la casa de la calle au Pain donde nació, con sus cartas, partituras y objetos de su vida."
+      }
+    },
+    {
+      "name": { "en": "Debussy's grave, Passy Cemetery", "es": "Tumba de Debussy, cementerio de Passy" },
+      "at": [2.284, 48.8626],
+      "kind": "grave",
+      "text": {
+        "en": "A quiet grave in a small hillside cemetery in the 16th arrondissement, not far from where he lived.",
+        "es": "Una tumba tranquila en un pequeño cementerio en una ladera del distrito 16, no lejos de donde vivió."
+      }
+    },
+    {
+      "name": { "en": "Villa Medici", "es": "Villa Médici" },
+      "at": [12.4825, 41.9083],
+      "kind": "site",
+      "text": {
+        "en": "The French academy in Rome, on the Pincian Hill, where he spent two unhappy years. Its gardens and rooms can be visited on guided tours.",
+        "es": "La academia francesa en Roma, en la colina del Pincio, donde pasó dos años de descontento. Sus jardines y salas se visitan en recorridos guiados."
+      }
+    },
+    {
+      "name": { "en": "Opéra-Comique", "es": "Ópera Cómica" },
+      "at": [2.3378, 48.8711],
+      "kind": "site",
+      "text": {
+        "en": "The Paris theatre where Pelléas et Mélisande was first staged. It still puts on operas.",
+        "es": "El teatro de París donde se estrenó Pelléas et Mélisande. Aún presenta óperas."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Debussy freed music from the old rules of harmony and gave it colour, atmosphere and silence. Ravel, Stravinsky, Bartók and the composers of jazz and film all learned from him.",
+    "es": "Debussy liberó a la música de las viejas reglas de la armonía y le dio color, atmósfera y silencio. Ravel, Stravinski, Bartók y los compositores de jazz y de cine aprendieron de él."
+  },
+  "sources": [
+    { "title": "Wikipedia: Claude Debussy", "url": "https://en.wikipedia.org/wiki/Claude_Debussy" },
+    { "title": "Wikipedia: Prélude à l'après-midi d'un faune", "url": "https://en.wikipedia.org/wiki/Pr%C3%A9lude_%C3%A0_l%27apr%C3%A8s-midi_d%27un_faune" },
+    { "title": "IMSLP: Prélude à l'après-midi d'un faune (first performance)", "url": "https://imslp.org/wiki/Pr%C3%A9lude_%C3%A0_l'apr%C3%A8s-midi_d'un_faune,_CD_87_(Debussy,_Claude)" },
+    { "title": "Musée Claude Debussy, Saint-Germain-en-Laye", "url": "https://www.saintgermainenlaye.fr/" }
+  ]
+}

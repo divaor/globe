@@ -1,0 +1,435 @@
+{
+  "id": "nikola-tesla",
+  "qid": "Q9036",
+  "name": { "en": "Nikola Tesla", "es": "Nikola Tesla" },
+  "icon": "⚡",
+  "field": "science",
+  "known": { "en": "Serbian-American inventor", "es": "Inventor serbio-estadounidense" },
+  "born": "1856-07-10",
+  "died": "1943-01-07",
+  "summary": {
+    "en": "A Serb from a mountain village in Croatia, he gave the world the motor and the system of alternating current that carry electricity to every home. He dreamed of power without wires, and died poor in a New York hotel.",
+    "es": "Serbio de un pueblo de montaña de Croacia, le dio al mundo el motor y el sistema de corriente alterna que llevan la electricidad a todas las casas. Soñó con la energía sin cables, y murió pobre en un hotel de Nueva York."
+  },
+  "steps": [
+    {
+      "date": "1856-07-10",
+      "kind": "born",
+      "place": { "en": "Smiljan, near Gospić, Croatia", "es": "Smiljan, cerca de Gospić, Croacia" },
+      "at": [15.3097, 44.5597],
+      "title": { "en": "Born at midnight", "es": "Nace a medianoche" },
+      "text": {
+        "en": "Nikola Tesla was born in the priest's house beside the Orthodox church of Smiljan, a Serb village on Austria's military frontier, today in Croatia. Family tradition says it was at midnight, in a lightning storm.",
+        "es": "Nikola Tesla nació en la casa del sacerdote, junto a la iglesia ortodoxa de Smiljan, un pueblo serbio en la frontera militar de Austria, hoy en Croacia. La tradición familiar dice que fue al dar la medianoche, en plena tormenta eléctrica."
+      },
+      "details": {
+        "en": "His father, Milutin, was the village priest and wanted his son to be one too. His mother, Đuka, came from a line of inventors: she made her own tools and wove her own cloth, and Tesla said he owed her whatever inventiveness he had. His elder brother Dane, the family's great hope, died after an accident with the family's horse, and the Teslas moved to the town of Gospić. As a schoolboy Nikola read about Niagara Falls, pictured a great wheel turned by the water, and told an uncle he would go to America to build it.",
+        "es": "Su padre, Milutin, era el sacerdote del pueblo y quería que su hijo también lo fuera. Su madre, Đuka, venía de una familia de inventores: fabricaba sus propias herramientas y tejía sus propias telas, y Tesla decía que a ella le debía todo su ingenio. Su hermano mayor, Dane, la gran esperanza de la familia, murió tras un accidente con el caballo de la casa, y los Tesla se mudaron a la ciudad de Gospić. De escolar, Nikola leyó sobre las cataratas del Niágara, imaginó una gran rueda movida por el agua y le dijo a un tío que iría a América a construirla."
+      }
+    },
+    {
+      "date": "1875",
+      "kind": "study",
+      "place": { "en": "Graz, Austria", "es": "Graz, Austria" },
+      "at": [15.45, 47.0689],
+      "title": { "en": "A spark in the classroom", "es": "Una chispa en el aula" },
+      "text": {
+        "en": "After cholera nearly killed him, his father let him study engineering, not theology. At the Graz Polytechnic he saw a dynamo throw sparks and said a motor could run without them. His professor called it impossible.",
+        "es": "Después de que el cólera casi lo mata, su padre lo dejó estudiar ingeniería y no teología. En el Politécnico de Graz vio un dínamo que echaba chispas y dijo que un motor podía funcionar sin ellas. Su profesor dijo que era imposible."
+      },
+      "details": {
+        "en": "In his first year he worked from three in the morning until eleven at night and got the highest marks. Then the military frontier that paid his scholarship was dissolved, the money stopped, and he took to cards and billiards. He left without a degree. He drifted to Maribor, went home when his father died, tried Prague, and in 1881 found work at the telegraph office in Budapest. The problem of the motor never left him.",
+        "es": "En su primer año estudiaba desde las tres de la mañana hasta las once de la noche, y sacó las notas más altas. Después se disolvió la frontera militar que le pagaba la beca, el dinero se acabó, y él se dio a los naipes y al billar. Se fue sin título. Pasó por Maribor, volvió a casa cuando murió su padre, probó suerte en Praga, y en 1881 encontró trabajo en la oficina de telégrafos de Budapest. El problema del motor nunca lo abandonó."
+      }
+    },
+    {
+      "date": "1881",
+      "kind": "made",
+      "place": { "en": "Budapest, Hungary", "es": "Budapest, Hungría" },
+      "at": [19.0847, 47.5139],
+      "title": { "en": "The field that spins", "es": "El campo que gira" },
+      "text": {
+        "en": "One evening in 1882, walking in Budapest's City Park and reciting Goethe's Faust to a friend, Tesla suddenly saw the answer. He drew it in the sand with a stick: a motor turned by a magnetic field that itself spins.",
+        "es": "Una tarde de 1882, mientras caminaba por el Parque de la Ciudad de Budapest y le recitaba a un amigo el Fausto de Goethe, Tesla vio de pronto la solución. La dibujó en la arena con un palo: un motor movido por un campo magnético que gira."
+      },
+      "details": {
+        "en": "The idea was to feed two or more alternating currents, each a little out of step with the next, into coils set in a ring. Their combined magnetic pull sweeps round and round and drags the rotor with it, with no sparking contacts at all. Tesla had worked himself into a breakdown over the problem. Now, he wrote, he saw the machine as sharp and solid as metal and stone, and told his friend: see my motor here; watch me reverse it.",
+        "es": "La idea era alimentar con dos o más corrientes alternas, cada una un poco desfasada de la siguiente, unas bobinas colocadas en anillo. La atracción magnética de todas juntas da vueltas y vueltas y arrastra al rotor, sin ningún contacto que eche chispas. Tesla se había enfermado de agotamiento con el problema. Ahora, escribió, veía la máquina tan nítida y sólida como el metal y la piedra, y le dijo a su amigo: mira mi motor aquí; mira cómo lo invierto."
+      },
+      "unsure": {
+        "en": "The scene is known only from Tesla's own memoir, written 37 years later; the exact day is not recorded.",
+        "es": "La escena se conoce solo por las memorias del propio Tesla, escritas 37 años después; no se sabe el día exacto."
+      },
+      "places": [
+        {
+          "name": { "en": "The rotating magnetic field", "es": "El campo magnético rotativo" },
+          "at": [19.0862, 47.5148],
+          "cat": "opus",
+          "type": "work",
+          "icon": "🧲",
+          "date": "1882",
+          "by": { "en": "Nikola Tesla", "es": "Nikola Tesla" },
+          "text": {
+            "en": "Alternating currents that rise and fall one after another make a magnetic pull travel in a circle, like an invisible spinning magnet. The Italian Galileo Ferraris reached the same idea on his own a few years later.",
+            "es": "Unas corrientes alternas que suben y bajan una tras otra hacen que una atracción magnética viaje en círculo, como un imán invisible que gira. El italiano Galileo Ferraris llegó por su cuenta a la misma idea pocos años después."
+          },
+          "wiki": { "en": "Rotating magnetic field", "es": "Campo magnético rotativo" }
+        }
+      ]
+    },
+    {
+      "date": "1882",
+      "kind": "career",
+      "place": { "en": "Paris, France", "es": "París, Francia" },
+      "at": [2.3559, 48.8381],
+      "title": { "en": "Edison's man in Paris", "es": "El hombre de Edison en París" },
+      "text": {
+        "en": "Tesla joined Edison's French company, installing and repairing electric lights. Sent to Strasbourg in 1883 to fix a faulty plant, he built his first small motor there in his spare time. It ran just as he had imagined.",
+        "es": "Tesla entró a la compañía francesa de Edison, a instalar y reparar alumbrado eléctrico. En 1883 lo mandaron a Estrasburgo a arreglar una central, y allí, en sus ratos libres, construyó su primer motor. Funcionó tal como lo había imaginado."
+      },
+      "details": {
+        "en": "He lived on the Boulevard Saint-Marcel, swam in the Seine each morning and walked an hour to the factory at Ivry. In Strasbourg he showed the motor to a former mayor and to possible backers, who watched politely and did not invest. The bonus he had been promised for the repair never came. The manager of the works, an old friend of Edison's, urged him to try America.",
+        "es": "Vivía en el bulevar Saint-Marcel, nadaba en el Sena cada mañana y caminaba una hora hasta la fábrica de Ivry. En Estrasburgo mostró el motor a un exalcalde y a posibles inversores, que miraron con cortesía y no pusieron dinero. El premio que le habían prometido por la reparación nunca llegó. El gerente de la fábrica, viejo amigo de Edison, lo animó a probar suerte en América."
+      }
+    },
+    {
+      "date": "1884-06-06",
+      "kind": "journey",
+      "by": "sea",
+      "via": [[0.0, 49.7], [-2.5, 49.9], [-6.5, 49.3], [-40.0, 45.0], [-66.0, 41.5], [-73.8, 40.4]],
+      "place": { "en": "New York, United States", "es": "Nueva York, Estados Unidos" },
+      "at": [-74.0168, 40.7035],
+      "title": { "en": "Four cents in New York", "es": "Cuatro centavos en Nueva York" },
+      "text": {
+        "en": "Tesla stepped ashore in New York with, by his own account, four cents in his pocket and the plan of a motor nobody wanted. Thomas Edison hired him at once to repair and redesign his direct-current dynamos.",
+        "es": "Tesla desembarcó en Nueva York con, según contó él mismo, cuatro centavos en el bolsillo y el plan de un motor que nadie quería. Thomas Edison lo contrató enseguida para reparar y rediseñar sus dínamos de corriente continua."
+      },
+      "details": {
+        "en": "Edison would not hear of alternating current. Tesla worked for him for most of a year, often from half past ten in the morning until five the next morning. He wrote later that the manager had promised him 50,000 dollars for redesigning the machines, and that it turned out to be a joke; he resigned. Backers then set up a lighting company in his name and pushed him out of it with worthless shares. In the winter of 1886 the engineer was digging ditches for two dollars a day.",
+        "es": "Edison no quería saber nada de la corriente alterna. Tesla trabajó para él casi un año, muchas veces desde las diez y media de la mañana hasta las cinco de la mañana siguiente. Después escribió que el gerente le había prometido 50 000 dólares por rediseñar las máquinas, y que resultó ser una broma; renunció. Unos inversores crearon entonces una compañía de alumbrado con su nombre y lo echaron de ella con acciones sin valor. En el invierno de 1886 el ingeniero cavaba zanjas por dos dólares al día."
+      },
+      "places": [
+        {
+          "name": { "en": "Thomas Edison", "es": "Thomas Edison" },
+          "at": [-73.9936, 40.7355],
+          "cat": "person",
+          "type": "person",
+          "date": "1884-06",
+          "life": ["1847-02-11", "1931-10-18"],
+          "text": {
+            "en": "America's most famous inventor, whose lamps and power stations ran on direct current. He gave Tesla his first American job and praised his work; a few years later they were on opposite sides of the 'war of the currents'.",
+            "es": "El inventor más famoso de Estados Unidos, cuyas lámparas y centrales funcionaban con corriente continua. Le dio a Tesla su primer trabajo en América y elogió su labor; pocos años después estaban en bandos opuestos de la «guerra de las corrientes»."
+          },
+          "wiki": { "en": "Thomas Edison", "es": "Thomas Alva Edison" }
+        }
+      ]
+    },
+    {
+      "date": "1888-05-16",
+      "kind": "made",
+      "place": { "en": "New York, United States", "es": "Nueva York, Estados Unidos" },
+      "at": [-74.0099, 40.709],
+      "title": { "en": "The alternating-current motor", "es": "El motor de corriente alterna" },
+      "text": {
+        "en": "In a small laboratory on Liberty Street Tesla at last built his motors, and on 16 May 1888 he presented them to America's electrical engineers. Within weeks George Westinghouse bought his alternating-current patents.",
+        "es": "En un pequeño laboratorio de la calle Liberty, Tesla por fin construyó sus motores, y el 16 de mayo de 1888 los presentó ante los ingenieros eléctricos de Estados Unidos. A las pocas semanas George Westinghouse compró sus patentes de corriente alterna."
+      },
+      "details": {
+        "en": "Direct current, which Edison sold, flows one way and fades within a couple of kilometres. Alternating current changes direction many times a second: its pressure can be raised to travel far along thin wires and lowered again where it is used. What it lacked was a good motor, and Tesla supplied it. Westinghouse paid 25,000 dollars in cash, 50,000 in notes and a royalty on every horsepower sold. When the company was in trouble a few years later, Tesla gave up the royalty. It cost him a fortune.",
+        "es": "La corriente continua, la que vendía Edison, fluye en un solo sentido y se debilita a los pocos kilómetros. La corriente alterna cambia de sentido muchas veces por segundo: su presión se puede subir para que viaje lejos por cables delgados, y bajar otra vez donde se usa. Le faltaba un buen motor, y Tesla se lo dio. Westinghouse pagó 25 000 dólares en efectivo, 50 000 en pagarés y una regalía por cada caballo de fuerza vendido. Cuando la empresa pasó apuros, unos años después, Tesla renunció a la regalía. Le costó una fortuna."
+      },
+      "places": [
+        {
+          "name": { "en": "The induction motor", "es": "El motor de inducción" },
+          "at": [-74.0088, 40.7082],
+          "cat": "opus",
+          "type": "invention",
+          "icon": "⚙️",
+          "date": "1888-05",
+          "by": { "en": "Nikola Tesla", "es": "Nikola Tesla" },
+          "text": {
+            "en": "A motor with no brushes to wear out or spark: a spinning magnetic field drags the rotor round. Most of the electric motors in factories, lifts and washing machines still work this way.",
+            "es": "Un motor sin escobillas que se gasten o echen chispas: un campo magnético que gira arrastra al rotor. La mayoría de los motores eléctricos de las fábricas, los ascensores y las lavadoras siguen funcionando así."
+          },
+          "wiki": { "en": "Induction motor", "es": "Motor asíncrono" }
+        },
+        {
+          "name": { "en": "George Westinghouse", "es": "George Westinghouse" },
+          "at": [-74.011, 40.7097],
+          "cat": "person",
+          "type": "person",
+          "date": "1888-07",
+          "life": ["1846-10-06", "1914-03-12"],
+          "text": {
+            "en": "The Pittsburgh industrialist who staked his company on alternating current, against Edison. He bought Tesla's patents in July 1888, and Tesla spent the following year at his works helping to turn them into machines.",
+            "es": "El industrial de Pittsburgh que apostó su empresa a la corriente alterna, contra Edison. Compró las patentes de Tesla en julio de 1888, y Tesla pasó el año siguiente en su fábrica ayudando a convertirlas en máquinas."
+          },
+          "wiki": { "en": "George Westinghouse", "es": "George Westinghouse" }
+        }
+      ]
+    },
+    {
+      "date": "1891",
+      "kind": "made",
+      "place": { "en": "New York, United States", "es": "Nueva York, Estados Unidos" },
+      "at": [-73.999, 40.7283],
+      "title": { "en": "The wizard's laboratory", "es": "El laboratorio del mago" },
+      "text": {
+        "en": "In 1891 Tesla became an American citizen and invented the Tesla coil, which turns ordinary current into very high voltages. In his laboratory he lit lamps with no wires and let sparks stream harmlessly from his hands.",
+        "es": "En 1891 Tesla se hizo ciudadano estadounidense e inventó la bobina de Tesla, que convierte la corriente común en voltajes altísimos. En su laboratorio encendía lámparas sin cables y dejaba que las chispas le salieran de las manos sin hacerle daño."
+      },
+      "details": {
+        "en": "His lectures in New York, London and Paris made him famous, and visitors such as Mark Twain climbed to the fourth-floor laboratory on South Fifth Avenue to try the experiments themselves. In 1893 he set out the principles of radio, and in 1898 he steered a small boat by radio signals in a tank at Madison Square Garden. But on 13 March 1895 the building burned to the ground. Models, notes and instruments were lost, and nothing was insured. Within weeks he had started again in Houston Street.",
+        "es": "Sus conferencias en Nueva York, Londres y París lo hicieron famoso, y visitantes como Mark Twain subían al laboratorio del cuarto piso, en la Quinta Avenida Sur, a probar ellos mismos los experimentos. En 1893 expuso los principios de la radio, y en 1898 dirigió un barquito con señales de radio en un estanque del Madison Square Garden. Pero el 13 de marzo de 1895 el edificio se quemó por completo. Se perdieron modelos, apuntes e instrumentos, y nada estaba asegurado. A las pocas semanas había empezado de nuevo en la calle Houston."
+      },
+      "places": [
+        {
+          "name": { "en": "The Tesla coil", "es": "La bobina de Tesla" },
+          "at": [-73.9978, 40.729],
+          "cat": "opus",
+          "type": "invention",
+          "icon": "⚡",
+          "date": "1891",
+          "by": { "en": "Nikola Tesla", "es": "Nikola Tesla" },
+          "text": {
+            "en": "Two coils of wire tuned to each other, as a singer's note is tuned to a wine glass, raise electricity to hundreds of thousands of volts. It powered early radio transmitters; today it makes the sparks of science museums.",
+            "es": "Dos bobinas de alambre afinadas entre sí, como la nota de un cantante con una copa de cristal, elevan la electricidad a cientos de miles de voltios. Alimentó los primeros transmisores de radio; hoy produce las largas chispas de los museos de ciencia."
+          },
+          "wiki": { "en": "Tesla coil", "es": "Bobina de Tesla" }
+        },
+        {
+          "id": "mark-twain",
+          "name": { "en": "Mark Twain", "es": "Mark Twain" },
+          "at": [-74.0002, 40.7277],
+          "cat": "person",
+          "type": "person",
+          "date": "1894",
+          "life": ["1835-11-30", "1910-04-21"],
+          "text": {
+            "en": "The writer was a friend and a regular guest at Tesla's demonstrations. As a sick boy in Croatia Tesla had read Twain's early books, and said they helped him get well; when he told Twain so, the humorist wept.",
+            "es": "El escritor era su amigo y un invitado habitual a las demostraciones de Tesla. De niño, enfermo en Croacia, Tesla había leído los primeros libros de Twain, y decía que lo ayudaron a curarse; cuando se lo contó, el humorista lloró."
+          },
+          "wiki": { "en": "Mark Twain", "es": "Mark Twain" }
+        },
+        {
+          "name": { "en": "The radio-controlled boat", "es": "El barco a control remoto" },
+          "at": [-73.9856, 40.7428],
+          "cat": "opus",
+          "type": "invention",
+          "icon": "🚤",
+          "date": "1898",
+          "by": { "en": "Nikola Tesla", "es": "Nikola Tesla" },
+          "text": {
+            "en": "Shown at the Electrical Exhibition in Madison Square Garden in 1898: a model boat that obeyed commands sent by radio, the first remote control. Tesla foresaw machines that would one day act by themselves.",
+            "es": "Presentado en la Exposición Eléctrica del Madison Square Garden en 1898: un barco en miniatura que obedecía órdenes enviadas por radio, el primer control remoto. Tesla previó máquinas que algún día actuarían por sí solas."
+          },
+          "wiki": { "en": "Radio control", "es": "Radiocontrol" }
+        }
+      ]
+    },
+    {
+      "date": "1893-05-01",
+      "kind": "moment",
+      "place": { "en": "Chicago, United States", "es": "Chicago, Estados Unidos" },
+      "at": [-87.58, 41.79],
+      "title": { "en": "The City of Light", "es": "La Ciudad de la Luz" },
+      "text": {
+        "en": "Westinghouse won the contract to light the Chicago World's Fair and did it with Tesla's alternating current. Millions of visitors saw a white city glowing at night with tens of thousands of lamps.",
+        "es": "Westinghouse ganó el contrato para iluminar la Exposición Mundial de Chicago, y lo hizo con la corriente alterna de Tesla. Millones de visitantes vieron una ciudad blanca que brillaba de noche con decenas de miles de lámparas."
+      },
+      "details": {
+        "en": "It was the showdown of the 'war of the currents'. Edison's side had spent years warning that alternating current killed: an ally electrocuted animals in public, and helped to bring in the electric chair. The fair settled the matter. The Westinghouse plant made three times as much power as the rest of Chicago used. Tesla had a stand of his own, where a copper egg spun and stood on end inside a rotating magnetic field, and glass tubes glowed without wires. That October Westinghouse was chosen to harness Niagara Falls.",
+        "es": "Fue el duelo final de la «guerra de las corrientes». El bando de Edison llevaba años advirtiendo que la corriente alterna mataba: un aliado suyo electrocutó animales en público, y ayudó a imponer la silla eléctrica. La feria zanjó el asunto. La central de Westinghouse producía el triple de la energía que usaba el resto de Chicago. Tesla tenía su propio puesto, donde un huevo de cobre giraba y se paraba de punta dentro de un campo magnético rotativo, y unos tubos de vidrio brillaban sin cables. Ese octubre eligieron a Westinghouse para aprovechar las cataratas del Niágara."
+      }
+    },
+    {
+      "date": "1896-07-19",
+      "kind": "moment",
+      "place": { "en": "Niagara Falls, United States", "es": "Niagara Falls, Estados Unidos" },
+      "at": [-79.0429, 43.0819],
+      "title": { "en": "Niagara harnessed", "es": "El Niágara domado" },
+      "text": {
+        "en": "Tesla came to see the new power station at Niagara Falls: each of its great generators carried a plate with his name and his patents. That November, at midnight, their current reached Buffalo, 35 kilometres away.",
+        "es": "Tesla fue a ver la nueva central eléctrica de las cataratas del Niágara: cada uno de sus grandes generadores llevaba una placa con su nombre y sus patentes. Ese noviembre, a medianoche, su corriente llegó a Buffalo, a 35 kilómetros."
+      },
+      "details": {
+        "en": "Cannons, steam whistles and bells greeted the current in Buffalo, where it drove the city's trams. Niagara proved that power could be made by falling water in one place and used far away, and alternating current became the way the whole world is supplied. For Tesla it closed a circle. The schoolboy who had pictured a wheel under the Falls stood beside them thirty years later, and wrote that he marvelled at the mystery of the mind.",
+        "es": "Cañonazos, silbatos de vapor y campanas recibieron la corriente en Buffalo, donde movió los tranvías de la ciudad. El Niágara demostró que la energía se podía producir con una caída de agua en un lugar y usarse muy lejos, y la corriente alterna pasó a ser la forma en que se abastece el mundo entero. Para Tesla se cerraba un círculo. El escolar que había imaginado una rueda bajo las cataratas estaba junto a ellas treinta años después, y escribió que se maravillaba ante el misterio de la mente."
+      }
+    },
+    {
+      "date": "1899-05-17",
+      "kind": "made",
+      "place": { "en": "Colorado Springs, United States", "es": "Colorado Springs, Estados Unidos" },
+      "at": [-104.801, 38.8349],
+      "title": { "en": "Lightning made by hand", "es": "Rayos hechos a mano" },
+      "text": {
+        "en": "On a hill at the edge of Colorado Springs Tesla built a wooden station with a tall mast and a giant coil, to learn whether power and messages could be sent through the Earth itself. His sparks reached 30 metres.",
+        "es": "En una colina al borde de Colorado Springs, Tesla construyó una estación de madera con un mástil alto y una bobina gigante, para averiguar si la energía y los mensajes podían enviarse a través de la Tierra. Sus chispas llegaron a medir 30 metros."
+      },
+      "details": {
+        "en": "He stayed eight months, working mostly at night. He came to believe that the Earth could carry electrical waves right round the globe, and one night his receiver picked up rhythmic pulses that he took for signals from another planet. Other scientists doubted both claims. He left in January 1900, sure that he could now build a world wireless system. The town's power company later sued him for unpaid electricity, and the station was pulled down and sold as lumber to settle the bill.",
+        "es": "Se quedó ocho meses, y trabajaba sobre todo de noche. Llegó a creer que la Tierra podía llevar ondas eléctricas alrededor de todo el globo, y una noche su receptor captó unos pulsos rítmicos que tomó por señales de otro planeta. Otros científicos dudaron de las dos cosas. Se fue en enero de 1900, seguro de que ya podía construir un sistema inalámbrico mundial. La compañía eléctrica del pueblo lo demandó después por electricidad sin pagar, y la estación fue desarmada y vendida como madera para saldar la cuenta."
+      }
+    },
+    {
+      "date": "1901",
+      "kind": "struggle",
+      "place": { "en": "Shoreham, Long Island, United States", "es": "Shoreham, Long Island, Estados Unidos" },
+      "at": [-72.8982, 40.9484],
+      "title": { "en": "The tower at Wardenclyffe", "es": "La torre de Wardenclyffe" },
+      "text": {
+        "en": "With 150,000 dollars from the banker J. P. Morgan, Tesla built a laboratory and a 57-metre tower on Long Island. It was meant to send messages, and one day power, around the world without wires. It never did.",
+        "es": "Con 150 000 dólares del banquero J. P. Morgan, Tesla construyó en Long Island un laboratorio y una torre de 57 metros. Debía enviar mensajes, y algún día energía, a todo el mundo sin cables. Nunca lo hizo."
+      },
+      "details": {
+        "en": "In December 1901 Guglielmo Marconi sent a radio signal across the Atlantic with far simpler equipment. Tesla asked Morgan for more money, to add wireless power to the plan; the banker refused. By 1906 the workmen had been laid off. Tesla signed the site over to the owner of the Waldorf-Astoria hotel to cover years of unpaid bills, and on 4 July 1917 the tower was blown up for scrap. The year before, he had told a court under oath that he owned nothing. The scheme could not have worked as he hoped: the physics was against him as well as the money.",
+        "es": "En diciembre de 1901 Guglielmo Marconi envió una señal de radio al otro lado del Atlántico con equipos mucho más simples. Tesla le pidió más dinero a Morgan para sumar al plan la energía sin cables; el banquero se negó. Para 1906 los obreros habían sido despedidos. Tesla le cedió el terreno al dueño del hotel Waldorf-Astoria para cubrir años de cuentas sin pagar, y el 4 de julio de 1917 la torre fue dinamitada para vender el metal. El año anterior había declarado bajo juramento ante un tribunal que no poseía nada. El plan no podía funcionar como él esperaba: tenía en contra la física, además del dinero."
+      },
+      "places": [
+        {
+          "name": { "en": "J. P. Morgan", "es": "J. P. Morgan" },
+          "at": [-72.8998, 40.9476],
+          "cat": "person",
+          "type": "person",
+          "date": "1901",
+          "life": ["1837-04-17", "1913-03-31"],
+          "text": {
+            "en": "The most powerful banker in America put 150,000 dollars into Tesla's wireless station in 1901, in return for a 51 per cent share in his patents. When the costs rose and Marconi got there first, he would add nothing more.",
+            "es": "El banquero más poderoso de Estados Unidos puso 150 000 dólares en la estación inalámbrica de Tesla en 1901, a cambio del 51 por ciento de sus patentes. Cuando los costos subieron y Marconi llegó primero, no quiso poner nada más."
+          },
+          "wiki": { "en": "J. P. Morgan", "es": "J. P. Morgan" }
+        }
+      ]
+    },
+    {
+      "date": "1934-01-02",
+      "kind": "struggle",
+      "place": { "en": "New York, United States", "es": "Nueva York, Estados Unidos" },
+      "at": [-73.9936, 40.7528],
+      "title": { "en": "A hotel room and the pigeons", "es": "El hotel y las palomas" },
+      "text": {
+        "en": "At 77 Tesla moved into room 3327 of the Hotel New Yorker. The Westinghouse company paid the rent and 125 dollars a month: he had been put out of other hotels for unpaid bills. He lived here alone for his last nine years.",
+        "es": "A los 77 años Tesla se mudó al cuarto 3327 del Hotel New Yorker. La compañía Westinghouse pagaba el alquiler y 125 dólares al mes: de otros hoteles lo habían echado por no pagar. Aquí vivió, solo, sus últimos nueve años."
+      },
+      "details": {
+        "en": "He had earned fortunes and spent them on laboratories, and he had sold or given away his best patents early. Now he walked to Bryant Park to feed the pigeons and nursed the injured ones in his room; one white pigeon, he said, he had loved as a man loves a woman. On his birthdays he called in reporters and announced inventions that never came, among them a 'death beam' that would bring down ten thousand aircraft and make war impossible. In 1937 a taxi knocked him down one night on his way to the birds. He refused a doctor and kept to his room for months.",
+        "es": "Había ganado fortunas y las había gastado en laboratorios, y había vendido o regalado temprano sus mejores patentes. Ahora caminaba hasta Bryant Park para dar de comer a las palomas, y cuidaba a las heridas en su cuarto; a una paloma blanca, decía, la había querido como un hombre quiere a una mujer. En sus cumpleaños llamaba a los periodistas y anunciaba inventos que nunca llegaron, entre ellos un «rayo de la muerte» que derribaría diez mil aviones y haría imposible la guerra. En 1937 un taxi lo atropelló una noche, cuando iba a ver a los pájaros. No quiso médico, y no salió de su cuarto durante meses."
+      }
+    },
+    {
+      "date": "1943-01-07",
+      "kind": "died",
+      "place": { "en": "New York, United States", "es": "Nueva York, Estados Unidos" },
+      "at": [-73.9936, 40.7528],
+      "title": { "en": "He dies in room 3327", "es": "Muere en el cuarto 3327" },
+      "text": {
+        "en": "Tesla died in his bed at 86, alone, with a 'do not disturb' sign on the door; a maid found him the next day. More than two thousand people came to his funeral in the Cathedral of St. John the Divine.",
+        "es": "Tesla murió en su cama a los 86 años, solo, con un cartel de «no molestar» en la puerta; una mucama lo encontró al día siguiente. Más de dos mil personas fueron a su funeral en la catedral de San Juan el Divino."
+      },
+      "details": {
+        "en": "Within two days United States officials had sealed his trunks of papers: it was wartime, and the old man had talked of secret weapons. An engineer called in to study them found nothing of that kind. In June 1943 the Supreme Court struck down Marconi's main radio patent, pointing to work that Tesla and others had done before him. His heir was a nephew, Sava Kosanović, a Yugoslav diplomat. Tesla left more than 160,000 documents, and debts.",
+        "es": "A los dos días, funcionarios de Estados Unidos habían sellado sus baúles de papeles: era tiempo de guerra, y el anciano había hablado de armas secretas. Un ingeniero llamado a estudiarlos no encontró nada de eso. En junio de 1943 la Corte Suprema anuló la principal patente de radio de Marconi, señalando trabajos que Tesla y otros habían hecho antes que él. Su heredero fue un sobrino, Sava Kosanović, diplomático yugoslavo. Tesla dejó más de 160 000 documentos, y deudas."
+      },
+      "places": [
+        {
+          "name": { "en": "Cathedral of St. John the Divine", "es": "Catedral de San Juan el Divino" },
+          "at": [-73.9617, 40.8036],
+          "cat": "place",
+          "type": "structure",
+          "date": "1943-01-12",
+          "text": {
+            "en": "Tesla's funeral was held here on 12 January 1943, with Serbian Orthodox and Episcopal clergy. Two days earlier New York's mayor, Fiorello La Guardia, had read a tribute to him on the radio.",
+            "es": "El funeral de Tesla se hizo aquí el 12 de enero de 1943, con clero ortodoxo serbio y episcopal. Dos días antes el alcalde de Nueva York, Fiorello La Guardia, había leído por radio un homenaje."
+          },
+          "wiki": { "en": "Cathedral of St. John the Divine", "es": "Catedral de San Juan el Divino" }
+        }
+      ]
+    },
+    {
+      "date": "1957",
+      "kind": "journey",
+      "place": { "en": "Belgrade, Serbia", "es": "Belgrado, Serbia" },
+      "at": [20.4707, 44.8051],
+      "title": { "en": "His ashes go to Belgrade", "es": "Sus cenizas van a Belgrado" },
+      "text": {
+        "en": "Tesla's papers, models and belongings were shipped to Yugoslavia in 1951, and a museum for them opened in Belgrade in 1955. Two years later his ashes followed. They rest there in a gilded sphere.",
+        "es": "Los papeles, modelos y pertenencias de Tesla fueron enviados por barco a Yugoslavia en 1951, y en 1955 se abrió en Belgrado un museo para ellos. Dos años después llegaron sus cenizas. Descansan allí en una esfera dorada."
+      },
+      "details": {
+        "en": "Tesla had seen Belgrade only once, in 1892, when thousands of people met his train. The archive kept here is on UNESCO's Memory of the World Register. In 1960 the world's scientists named the unit of magnetic field strength the tesla. He had said that he was equally proud of his Serbian origin and of his Croatian homeland.",
+        "es": "Tesla había estado en Belgrado una sola vez, en 1892, cuando miles de personas fueron a recibir su tren. El archivo que se guarda aquí está en el Registro de la Memoria del Mundo de la UNESCO. En 1960 los científicos del mundo llamaron tesla a la unidad de intensidad del campo magnético. Él había dicho que estaba igual de orgulloso de su origen serbio y de su patria croata."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Nikola Tesla Memorial Center, Smiljan", "es": "Centro Memorial Nikola Tesla, Smiljan" },
+      "at": [15.3097, 44.5597],
+      "kind": "house",
+      "text": {
+        "en": "The restored house where he was born, beside the church where his father preached, with models of his inventions and a demonstration of electricity sent without wires. It opened on his 150th birthday, in 2006.",
+        "es": "La casa restaurada donde nació, junto a la iglesia donde predicaba su padre, con modelos de sus inventos y una demostración de electricidad enviada sin cables. Se inauguró en 2006, a 150 años de su nacimiento."
+      }
+    },
+    {
+      "name": { "en": "Nikola Tesla Museum, Belgrade", "es": "Museo Nikola Tesla, Belgrado" },
+      "at": [20.4707, 44.8051],
+      "kind": "museum",
+      "text": {
+        "en": "His ashes, his personal belongings and working models of his machines, shown on guided tours in Serbian and English. The museum keeps his whole archive: more than 160,000 documents.",
+        "es": "Sus cenizas, sus objetos personales y modelos de sus máquinas que funcionan, en visitas guiadas en serbio y en inglés. El museo guarda todo su archivo: más de 160 000 documentos."
+      },
+      "wiki": { "en": "Nikola Tesla Museum", "es": "Museo Nikola Tesla" }
+    },
+    {
+      "name": { "en": "Tesla statue on Goat Island, Niagara Falls", "es": "Estatua de Tesla en Goat Island, cataratas del Niágara" },
+      "at": [-79.0668, 43.0817],
+      "kind": "memorial",
+      "text": {
+        "en": "A bronze Tesla by the Croatian sculptor Frano Kršinić, a gift from Yugoslavia in 1976, sits beside the Falls he helped to harness. The stone transformer house of the first power station still stands upriver, on Buffalo Avenue.",
+        "es": "Un Tesla de bronce del escultor croata Frano Kršinić, regalo de Yugoslavia en 1976, está sentado junto a las cataratas que ayudó a aprovechar. La casa de transformadores de la primera central, de piedra, sigue en pie río arriba, en la avenida Buffalo."
+      }
+    },
+    {
+      "name": { "en": "Hotel New Yorker, New York", "es": "Hotel New Yorker, Nueva York" },
+      "at": [-73.9936, 40.7528],
+      "kind": "site",
+      "text": {
+        "en": "Still a hotel. A plaque on the 34th Street side remembers him, and room 3327, where he died, bears his name.",
+        "es": "Sigue siendo un hotel. Una placa del lado de la calle 34 lo recuerda, y el cuarto 3327, donde murió, lleva su nombre."
+      },
+      "wiki": { "en": "New Yorker Hotel", "es": "Wyndham New Yorker Hotel" }
+    },
+    {
+      "name": { "en": "Nikola Tesla Corner, Bryant Park", "es": "Esquina Nikola Tesla, Bryant Park" },
+      "at": [-73.9848, 40.7536],
+      "kind": "site",
+      "text": {
+        "en": "The corner of Sixth Avenue and 40th Street in New York, by the park where he fed the pigeons, has carried his name since 1994.",
+        "es": "La esquina de la Sexta Avenida y la calle 40 de Nueva York, junto al parque donde alimentaba a las palomas, lleva su nombre desde 1994."
+      }
+    },
+    {
+      "name": { "en": "Wardenclyffe, Shoreham", "es": "Wardenclyffe, Shoreham" },
+      "at": [-72.8982, 40.9484],
+      "kind": "site",
+      "text": {
+        "en": "His last laboratory, a brick building designed by the architect Stanford White, still stands on Long Island. A non-profit group owns it and is turning it into a science centre: check its website before you go.",
+        "es": "Su último laboratorio, un edificio de ladrillo diseñado por el arquitecto Stanford White, sigue en pie en Long Island. Una organización sin fines de lucro es la dueña y lo está convirtiendo en un centro de ciencias: conviene consultar su sitio web antes de ir."
+      },
+      "wiki": { "en": "Wardenclyffe Tower", "es": "Wardenclyffe Tower" }
+    }
+  ],
+  "legacy": {
+    "en": "Almost all the electricity in the world is made, sent and used as alternating current, in systems that grew from Tesla's patents of 1888, and his induction motor turns in countless machines. He foresaw radio, remote control and wireless power long before they were practical. He cared little for money and paid for it in his old age. Serbia and Croatia both honour him as a son.",
+    "es": "Casi toda la electricidad del mundo se produce, se transporta y se usa como corriente alterna, en sistemas que nacieron de las patentes de Tesla de 1888, y su motor de inducción gira en incontables máquinas. Previó la radio, el control remoto y la energía sin cables mucho antes de que fueran prácticos. El dinero le importó poco, y lo pagó en su vejez. Serbia y Croacia lo honran por igual como a un hijo."
+  },
+  "sources": [
+    { "title": "Nikola Tesla Museum, Belgrade: history of the museum", "url": "https://tesla-museum.org/en/museum/history/" },
+    { "title": "Memorial Center Nikola Tesla, Smiljan: timeline of Nikola Tesla's life", "url": "https://mcnikolatesla.hr/nikola-tesla-timeline/" },
+    { "title": "Nikola Tesla, My Inventions (Electrical Experimenter, 1919)", "url": "https://teslauniverse.com/nikola-tesla/articles/my-inventions-i-my-early-life" },
+    { "title": "Tesla Universe: Nikola Tesla timeline", "url": "https://teslauniverse.com/nikola-tesla/timeline" },
+    { "title": "Engineering and Technology History Wiki (IEEE): Nikola Tesla", "url": "https://ethw.org/Nikola_Tesla" }
+  ]
+}

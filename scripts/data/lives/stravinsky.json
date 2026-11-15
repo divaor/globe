@@ -1,0 +1,251 @@
+{
+  "id": "stravinsky",
+  "qid": "Q7314",
+  "name": { "en": "Igor Stravinsky", "es": "Ígor Stravinski" },
+  "icon": "🎼",
+  "field": "music",
+  "known": { "en": "Russian-born composer of The Rite of Spring", "es": "Compositor ruso, autor de La consagración de la primavera" },
+  "born": "1882-06-17",
+  "died": "1971-04-06",
+  "summary": {
+    "en": "A Russian who changed music three times: first with ballets that shocked Paris, then with a cool new classicism, and at the end with strict twelve-tone music. He lived in six countries and was buried in Venice.",
+    "es": "Un ruso que cambió la música tres veces: primero con ballets que escandalizaron a París, luego con un nuevo clasicismo frío, y al final con música dodecafónica. Vivió en seis países y fue enterrado en Venecia."
+  },
+  "steps": [
+    {
+      "date": "1882-06-17",
+      "kind": "born",
+      "place": { "en": "Lomonosov (then Oranienbaum), Russia", "es": "Lomonósov (entonces Oranienbaum), Rusia" },
+      "label": { "en": "Oranienbaum", "es": "Oranienbaum" },
+      "at": [29.7725, 59.9061],
+      "title": { "en": "Born by the Gulf of Finland", "es": "Nace junto al golfo de Finlandia" },
+      "text": {
+        "en": "Igor was born in a seaside town near St Petersburg, where his family spent the summer. His father was a leading bass at the imperial opera. By the Russian calendar of the day his birthday was 5 June.",
+        "es": "Ígor nació en un pueblo costero cerca de San Petersburgo, donde su familia pasaba el verano. Su padre era un bajo destacado de la ópera imperial. Según el calendario ruso de entonces, su cumpleaños era el 5 de junio."
+      },
+      "details": {
+        "en": "Fyodor Stravinsky sang at the Mariinsky Theatre, and the house was full of scores and visiting musicians. His mother did not think much of his music, and his parents sent him to study law. He was a lonely, bookish boy who improvised at the piano for hours.",
+        "es": "Fiódor Stravinski cantaba en el Teatro Mariinski, y la casa estaba llena de partituras y de músicos que la visitaban. A su madre no le entusiasmaba su música, y sus padres lo enviaron a estudiar derecho. Era un niño solitario y lector que improvisaba al piano durante horas."
+      }
+    },
+    {
+      "date": "1903",
+      "kind": "study",
+      "place": { "en": "Saint Petersburg, Russia", "es": "San Petersburgo, Rusia" },
+      "at": [30.3167, 59.95],
+      "title": { "en": "A pupil of Rimsky-Korsakov", "es": "Alumno de Rimski-Kórsakov" },
+      "text": {
+        "en": "While he studied law at the university, he took private lessons from the composer Nikolai Rimsky-Korsakov, who taught him to orchestrate. He stayed with him until the master died in 1908.",
+        "es": "Mientras estudiaba derecho en la universidad, tomó clases particulares con el compositor Nikolái Rimski-Kórsakov, quien le enseñó a orquestar. Siguió con él hasta la muerte del maestro, en 1908."
+      },
+      "details": {
+        "en": "At the premiere of a short orchestral piece, Fireworks, in 1909, the impresario Sergei Diaghilev was in the audience. He asked the unknown young man to orchestrate music for his Paris company, the Ballets Russes. It changed his life.",
+        "es": "En el estreno de una breve pieza orquestal, Fuegos artificiales, en 1909, estaba entre el público el empresario Serguéi Diaguilev. Le pidió al joven desconocido que orquestara música para su compañía de París, los Ballets Rusos. Eso le cambió la vida."
+      },
+      "unsure": {
+        "en": "The lessons began in 1902 or 1903 depending on the source.",
+        "es": "Según la fuente, las clases comenzaron en 1902 o 1903."
+      }
+    },
+    {
+      "date": "1910-06-25",
+      "kind": "moment",
+            "place": { "en": "Paris, France", "es": "París, Francia" },
+      "at": [2.332, 48.8714],
+      "title": { "en": "The Firebird", "es": "El pájaro de fuego" },
+      "text": {
+        "en": "At 28 he was a star overnight. The Ballets Russes first danced The Firebird at the Paris Opéra, with fairy-tale music that no one had expected from an unknown newcomer.",
+        "es": "A los 28 años se volvió una estrella de la noche a la mañana. Los Ballets Rusos bailaron por primera vez El pájaro de fuego en la Ópera de París, con una música de cuento de hadas que nadie esperaba de un recién llegado."
+      },
+      "places": [
+        {
+          "name": { "en": "Sergei Diaghilev", "es": "Serguéi Diaguilev" },
+          "at": [2.332, 48.8714],
+          "cat": "person",
+          "type": "person",
+          "date": "1910-06-25",
+          "life": ["1872-03-31", "1929-08-19"],
+          "text": {
+            "en": "The Russian impresario who founded the Ballets Russes. He launched Stravinsky and later gave works to Picasso, Ravel and Debussy. He died in Venice and lies near Stravinsky.",
+            "es": "El empresario ruso que fundó los Ballets Rusos. Lanzó a Stravinski y encargó obras a Picasso, Ravel y Debussy. Murió en Venecia y yace cerca de Stravinski."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1913-05-29",
+      "kind": "moment",
+      "place": { "en": "Paris, France", "es": "París, Francia" },
+      "at": [2.3029, 48.8658],
+      "title": { "en": "The Rite of Spring", "es": "La consagración de la primavera" },
+      "text": {
+        "en": "The opening night of The Rite of Spring at the new Théâtre des Champs-Élysées became famous for the uproar: shouts, whistles and arguments in the hall drowned out the dancers.",
+        "es": "La noche del estreno de La consagración de la primavera en el nuevo Théâtre des Champs-Élysées quedó famosa por el alboroto: gritos, silbidos y discusiones en la sala tapaban a los bailarines."
+      },
+      "details": {
+        "en": "The ballet shows a pagan ceremony in which a young girl dances herself to death to bring the spring. Vaslav Nijinsky made the dances, Pierre Monteux conducted. The harsh chords and stamping rhythms were like nothing heard before. Within a year the music, played without the ballet, was a triumph.",
+        "es": "El ballet muestra una ceremonia pagana en que una joven baila hasta morir para que llegue la primavera. Los bailes los creó Vaslav Nijinsky, y dirigió Pierre Monteux. Los acordes ásperos y los ritmos martillados no se parecían a nada oído antes. En menos de un año la música, tocada sin el ballet, fue un triunfo."
+      },
+      "unsure": {
+        "en": "How violent the riot really was is debated: witnesses disagreed, and some later accounts grew with the telling.",
+        "es": "Se discute qué tan violento fue en realidad el alboroto: los testigos no coincidían, y algunos relatos posteriores crecieron con los años."
+      }
+    },
+    {
+      "date": "1915",
+      "kind": "struggle",
+      "place": { "en": "Morges, Switzerland", "es": "Morges, Suiza" },
+      "at": [6.4985, 46.5113],
+      "title": { "en": "Exile on Lake Geneva", "es": "Exilio junto al lago Lemán" },
+      "text": {
+        "en": "The First World War and then the Russian Revolution cut him off from home and from his income. He lived in Switzerland until 1920, writing small works for small groups of players.",
+        "es": "La Primera Guerra Mundial y luego la Revolución rusa lo separaron de su patria y de sus ingresos. Vivió en Suiza hasta 1920, escribiendo obras pequeñas para pequeños grupos de instrumentistas."
+      },
+      "details": {
+        "en": "He had left Russia for Switzerland in 1914 and moved to Morges in 1915. He never saw Russia again for forty-eight years. In 1918, with the writer Charles-Ferdinand Ramuz, he wrote The Soldier's Tale, a piece that a travelling company could stage with seven players and a few actors.",
+        "es": "Había salido de Rusia hacia Suiza en 1914 y se mudó a Morges en 1915. No volvió a ver Rusia durante cuarenta y ocho años. En 1918, con el escritor Charles-Ferdinand Ramuz, escribió La historia del soldado, una pieza que una compañía ambulante podía montar con siete músicos y unos pocos actores."
+      }
+    },
+    {
+      "date": "1924",
+      "kind": "home",
+      "place": { "en": "Nice, France", "es": "Niza, Francia" },
+      "at": [7.2661, 43.7031],
+      "title": { "en": "The years in Nice", "es": "Los años en Niza" },
+      "text": {
+        "en": "After some years near Paris, he moved to Nice, where he lived until 1931. In these years he wrote the Symphony of Psalms and worked as a pianist, touring to earn his living.",
+        "es": "Tras unos años cerca de París, se mudó a Niza, donde vivió hasta 1931. En esos años escribió la Sinfonía de los Salmos y trabajó como pianista, de gira para ganarse la vida."
+      }
+    },
+    {
+      "date": "1941",
+      "kind": "home",
+            "place": { "en": "West Hollywood, United States", "es": "West Hollywood, Estados Unidos" },
+      "at": [-118.3722, 34.0878],
+      "title": { "en": "A refugee in Hollywood", "es": "Un refugiado en Hollywood" },
+      "text": {
+        "en": "War drove him from Europe. He came to the United States in 1939, married his second wife, Vera, in 1940, and settled in Los Angeles, where he lived for nearly thirty years among other exiles.",
+        "es": "La guerra lo sacó de Europa. Llegó a Estados Unidos en 1939, se casó con su segunda esposa, Vera, en 1940, y se instaló en Los Ángeles, donde vivió casi treinta años entre otros exiliados."
+      },
+      "details": {
+        "en": "Other exiles in Los Angeles included Arnold Schoenberg and Thomas Mann. He became an American citizen in 1945. Sunny California, far from the Paris he had known, produced works like the Symphony in Three Movements.",
+        "es": "Entre los otros exiliados en Los Ángeles estaban Arnold Schoenberg y Thomas Mann. Se hizo ciudadano estadounidense en 1945. Desde la soleada California, lejos del París que había conocido, produjo obras como la Sinfonía en tres movimientos."
+      },
+      "unsure": {
+        "en": "He arrived in the United States in 1939 and lived in Hollywood from 1940; he moved to the house in West Hollywood, which is the one marked, in 1941.",
+        "es": "Llegó a Estados Unidos en 1939 y vivió en Hollywood desde 1940; en 1941 se mudó a la casa de West Hollywood, que es la que se marca."
+      }
+    },
+    {
+      "date": "1951-09-11",
+      "kind": "honour",
+      "place": { "en": "Venice, Italy", "es": "Venecia, Italia" },
+      "at": [12.3339, 45.4337],
+      "title": { "en": "The Rake's Progress", "es": "La carrera del libertino" },
+      "text": {
+        "en": "His only full-length opera, The Rake's Progress, opened at La Fenice with Stravinsky himself conducting. The libretto, based on Hogarth's engravings, was by W. H. Auden and Chester Kallman.",
+        "es": "Su única ópera de larga duración, La carrera del libertino, se estrenó en La Fenice con el propio Stravinski en el podio. El libreto, basado en los grabados de Hogarth, era de W. H. Auden y Chester Kallman."
+      },
+      "details": {
+        "en": "The music looks back to Mozart: arias, ensembles and a harpsichord. This was the peak of his neoclassical period. Soon afterwards, to everyone's surprise, he began to use the twelve-tone method of Schoenberg, who had just died.",
+        "es": "La música mira hacia Mozart: arias, conjuntos y un clavecín. Fue la cumbre de su período neoclásico. Poco después, para sorpresa de todos, empezó a usar el método dodecafónico de Schoenberg, que acababa de morir."
+      },
+      "places": [
+        {
+          "name": { "en": "W. H. Auden", "es": "W. H. Auden" },
+          "at": [12.3339, 45.4337],
+          "cat": "person",
+          "type": "person",
+          "date": "1951",
+          "life": ["1907-02-21", "1973-09-29"],
+          "text": {
+            "en": "The English-born American poet who wrote the words of The Rake's Progress with Chester Kallman. The two were introduced by a friend.",
+            "es": "El poeta angloestadounidense que escribió el texto de La carrera del libertino con Chester Kallman. Stravinski lo había pedido tras leer sus poemas."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1962-09",
+      "kind": "journey",
+      "by": "air",
+      "place": { "en": "Saint Petersburg (then Leningrad), Russia", "es": "San Petersburgo (entonces Leningrado), Rusia" },
+      "label": { "en": "Leningrad", "es": "Leningrado" },
+      "at": [30.3167, 59.95],
+      "title": { "en": "Home after 48 years", "es": "De regreso tras 48 años" },
+      "text": {
+        "en": "At 80 he returned to the Soviet Union for the first time since 1914, to conduct in Leningrad and Moscow. He walked the streets of his youth and was deeply moved to hear his own music played there.",
+        "es": "A los 80 años volvió a la Unión Soviética por primera vez desde 1914, para dirigir en Leningrado y Moscú. Recorrió las calles de su juventud y se emocionó mucho al oír su música tocada allí."
+      },
+      "unsure": {
+        "en": "He arrived in late September 1962; the exact day is not given here.",
+        "es": "Llegó a fines de septiembre de 1962; aquí no se da el día exacto."
+      }
+    },
+    {
+      "date": "1971-04-06",
+      "kind": "died",
+      "place": { "en": "New York, United States", "es": "Nueva York, Estados Unidos" },
+      "at": [-74.0061, 40.7128],
+      "title": { "en": "He dies in New York", "es": "Muere en Nueva York" },
+      "text": {
+        "en": "Stravinsky died at 88 in his apartment in New York, where he had moved in 1969 after he could no longer manage in California.",
+        "es": "Stravinski murió a los 88 años en su departamento de Nueva York, adonde se había mudado en 1969 porque ya no podía arreglárselas en California."
+      }
+    },
+    {
+      "date": "1971-04-15",
+      "kind": "journey",
+      "place": { "en": "Venice, Italy", "es": "Venecia, Italia" },
+      "at": [12.3456, 45.4466],
+      "title": { "en": "Buried on San Michele", "es": "Sepultado en San Michele" },
+      "text": {
+        "en": "His body was flown to Venice, a city he loved. After a funeral procession by gondola, he was buried on the cemetery island of San Michele, a few steps from Diaghilev.",
+        "es": "Su cuerpo fue llevado en avión a Venecia, una ciudad que amaba. Tras un cortejo fúnebre en góndolas, lo enterraron en la isla-cementerio de San Michele, a pocos pasos de Diaguilev."
+      },
+      "unsure": {
+        "en": "The date of the funeral in Venice is given as 15 April in most accounts.",
+        "es": "La fecha del funeral en Venecia suele indicarse como el 15 de abril."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Stravinsky's grave, San Michele", "es": "Tumba de Stravinski, San Michele" },
+      "at": [12.3456, 45.4466],
+      "kind": "grave",
+      "text": {
+        "en": "A plain stone in the Orthodox section of Venice's cemetery island, reached by water bus from the city. Diaghilev's grave is close by.",
+        "es": "Una lápida sencilla en la sección ortodoxa de la isla-cementerio de Venecia, a la que se llega en vaporetto. La tumba de Diaguilev está muy cerca."
+      }
+    },
+    {
+      "name": { "en": "Théâtre des Champs-Élysées", "es": "Théâtre des Champs-Élysées" },
+      "at": [2.3029, 48.8658],
+      "kind": "site",
+      "text": {
+        "en": "The Paris theatre, an early work in concrete, where The Rite of Spring was first heard. Concerts and opera are still given there.",
+        "es": "El teatro de París, una obra temprana en concreto, donde se oyó por primera vez La consagración de la primavera. Allí siguen dándose conciertos y óperas."
+      }
+    },
+    {
+      "name": { "en": "La Fenice", "es": "La Fenice" },
+      "at": [12.3339, 45.4337],
+      "kind": "site",
+      "text": {
+        "en": "The Venice opera house of The Rake's Progress, rebuilt after a fire in 1996. You can tour it or hear a performance.",
+        "es": "La ópera de Venecia donde se estrenó La carrera del libertino, reconstruida tras un incendio en 1996. Se puede visitar o asistir a una función."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "Stravinsky gave twentieth-century music its rhythm. The Rite of Spring is the work that most composers name as the one that changed everything, and his ballets, symphonies and operas show how a composer can reinvent himself again and again.",
+    "es": "Stravinski le dio su ritmo a la música del siglo XX. La consagración de la primavera es la obra que la mayoría de los compositores señalan como la que lo cambió todo, y sus ballets, sinfonías y óperas muestran cómo un compositor puede reinventarse una y otra vez."
+  },
+  "sources": [
+    { "title": "Wikipedia: Igor Stravinsky", "url": "https://en.wikipedia.org/wiki/Igor_Stravinsky" },
+    { "title": "Wikipedia: Ígor Stravinski", "url": "https://es.wikipedia.org/wiki/%C3%8Dgor_Stravinski" },
+    { "title": "Wikipedia: The Rite of Spring", "url": "https://en.wikipedia.org/wiki/The_Rite_of_Spring" },
+    { "title": "Wikipedia: The Rake's Progress", "url": "https://en.wikipedia.org/wiki/The_Rake%27s_Progress_(opera)" }
+  ]
+}

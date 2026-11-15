@@ -1,0 +1,239 @@
+{
+  "id": "john-lennon",
+  "qid": "Q1203",
+  "name": { "en": "John Lennon", "es": "John Lennon" },
+  "icon": "🎸",
+  "field": "music",
+  "known": { "en": "Singer and songwriter of the Beatles", "es": "Cantante y compositor de los Beatles" },
+  "born": "1940-10-09",
+  "died": "1980-12-08",
+  "summary": {
+    "en": "A boy raised by his aunt in Liverpool started a school band and, with the Beatles, changed the music of the 1960s. Later he sang for peace, and was shot dead outside his home in New York.",
+    "es": "Un chico criado por su tía en Liverpool formó una banda escolar y, con los Beatles, cambió la música de los años sesenta. Después cantó por la paz, y lo mataron a tiros frente a su casa en Nueva York."
+  },
+  "steps": [
+    {
+      "date": "1940-10-09",
+      "kind": "born",
+      "place": { "en": "Liverpool, England", "es": "Liverpool, Inglaterra" },
+      "at": [-2.9647, 53.4032],
+      "title": { "en": "Born during an air raid", "es": "Nace durante un bombardeo" },
+      "text": {
+        "en": "John was born at the Liverpool Maternity Hospital while German bombers were attacking the port. His father was a merchant seaman who was away at sea.",
+        "es": "John nació en la Maternidad de Liverpool mientras los bombarderos alemanes atacaban el puerto. Su padre era marino mercante y estaba lejos, en el mar."
+      }
+    },
+    {
+      "date": "1946",
+      "kind": "home",
+      "place": { "en": "Woolton, Liverpool, England", "es": "Woolton, Liverpool, Inglaterra" },
+      "at": [-2.8814, 53.3772],
+      "title": { "en": "Raised at Mendips", "es": "Criado en Mendips" },
+      "text": {
+        "en": "At about five he went to live with his strict aunt Mimi and her husband in a suburban house called Mendips. He stayed until 1963, and later wrote about the neighbourhood in songs.",
+        "es": "Hacia los cinco años se fue a vivir con su estricta tía Mimi y el esposo de ella a una casa de barrio llamada Mendips. Se quedó hasta 1963, y más tarde escribió sobre el vecindario en sus canciones."
+      },
+      "details": {
+        "en": "His parents had separated and he lived with Mimi. His mother, Julia, lived nearby and taught him banjo chords and rock and roll. In July 1958 a car driven by an off-duty policeman killed her, when John was 17. The loss marked him all his life. Mimi gave him his first guitar, though she told him it would never earn him a living.",
+        "es": "Sus padres se habían separado y él vivía con Mimi. Su madre, Julia, vivía cerca y le enseñó acordes de banjo y rock and roll. En julio de 1958 la mató un auto manejado por un policía fuera de servicio, cuando John tenía 17 años. La pérdida lo marcó toda la vida. Mimi le regaló su primera guitarra, aunque le decía que nunca le daría para vivir."
+      }
+    },
+    {
+      "date": "1957-07-06",
+      "kind": "love",
+      "place": { "en": "Woolton, Liverpool, England", "es": "Woolton, Liverpool, Inglaterra" },
+      "at": [-2.8695, 53.376],
+      "title": { "en": "Meeting Paul McCartney", "es": "Conoce a Paul McCartney" },
+      "text": {
+        "en": "At 16, John played with his skiffle group, the Quarrymen, at the church fete in Woolton. A boy of 15 named Paul McCartney was introduced to him that day, and soon joined the band.",
+        "es": "A los 16 años, John tocó con su grupo de skiffle, los Quarrymen, en la kermés de la iglesia de Woolton. Ese día le presentaron a un chico de 15 años, Paul McCartney, que pronto se unió a la banda."
+      }
+    },
+    {
+      "date": "1960-08",
+      "kind": "career",
+      "place": { "en": "Hamburg, Germany", "es": "Hamburgo, Alemania" },
+      "at": [9.9579, 53.5512],
+      "title": { "en": "Learning in Hamburg", "es": "Aprendiendo en Hamburgo" },
+      "text": {
+        "en": "Now called the Beatles, the band played in the clubs of Hamburg's red-light district, for hours every night. There they became a tight, loud group, ready to go back and conquer Liverpool.",
+        "es": "Ya con el nombre de Beatles, la banda tocó en los clubes del barrio rojo de Hamburgo, durante horas cada noche. Allí se volvieron un grupo sólido y potente, listo para volver y conquistar Liverpool."
+      },
+      "details": {
+        "en": "They went to Hamburg five times between 1960 and 1962. Conditions were rough: the young men slept in a cinema storeroom and played on pills and beer. In 1960 Germany deported George Harrison for being under age, and Paul and Pete Best too after a fire. Stuart Sutcliffe, John's friend, stayed in Hamburg and died there of a brain haemorrhage in April 1962.",
+        "es": "Fueron a Hamburgo cinco veces entre 1960 y 1962. Las condiciones eran duras: los jóvenes dormían en el depósito de un cine y tocaban a base de pastillas y cerveza. En 1960 Alemania deportó a George Harrison por ser menor de edad, y también a Paul y a Pete Best tras un incendio. Stuart Sutcliffe, amigo de John, se quedó en Hamburgo y murió allí de una hemorragia cerebral en abril de 1962."
+      }
+    },
+    {
+      "date": "1961-11-09",
+      "kind": "career",
+      "place": { "en": "Liverpool, England", "es": "Liverpool, Inglaterra" },
+      "at": [-2.9879, 53.4063],
+      "title": { "en": "The Cavern and Brian Epstein", "es": "El Cavern y Brian Epstein" },
+      "text": {
+        "en": "A local record-shop manager, Brian Epstein, came to the Cavern Club in a cellar to hear the Beatles at lunchtime. He became their manager and got them a record contract.",
+        "es": "Brian Epstein, gerente de una tienda de discos local, fue al club Cavern, un sótano, a oír a los Beatles a la hora del almuerzo. Se volvió su manager y les consiguió un contrato discográfico."
+      },
+      "places": [
+        {
+          "name": { "en": "Brian Epstein", "es": "Brian Epstein" },
+          "at": [-2.9879, 53.4063],
+          "cat": "person",
+          "type": "person",
+          "date": "1961-11-09",
+          "life": ["1934-09-19", "1967-08-27"],
+          "text": {
+            "en": "The Beatles' manager from 1962. He cleaned up their look and their stage act. He died of an overdose in 1967, at 32.",
+            "es": "Manager de los Beatles desde 1962. Les pulió la imagen y el espectáculo. Murió por una sobredosis en 1967, a los 32 años."
+          }
+        }
+      ]
+    },
+    {
+      "date": "1962-06-06",
+      "kind": "career",
+      "by": "land",
+      "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+      "at": [-0.1782, 51.532],
+      "title": { "en": "Abbey Road", "es": "Abbey Road" },
+      "text": {
+        "en": "The Beatles first played at EMI's Abbey Road studios. Their first single, \"Love Me Do\", came out that October, and the next one went to number one. Almost all their later records were made here.",
+        "es": "Los Beatles tocaron por primera vez en los estudios de EMI en Abbey Road. Su primer sencillo, \"Love Me Do\", salió en octubre, y el siguiente llegó al primer lugar. Casi todos sus discos posteriores se hicieron aquí."
+      }
+    },
+    {
+      "date": "1964-02-09",
+      "kind": "moment",
+      "by": "air",
+      "place": { "en": "New York, United States", "es": "Nueva York, Estados Unidos" },
+      "at": [-73.9829, 40.7638],
+      "title": { "en": "The Ed Sullivan Show", "es": "El Show de Ed Sullivan" },
+      "text": {
+        "en": "On a Sunday evening the Beatles played live on American television. About 73 million people watched, and Beatlemania began there.",
+        "es": "Un domingo por la noche los Beatles tocaron en vivo en la televisión estadounidense. Lo vieron unos 73 millones de personas, y allí empezó la Beatlemanía."
+      },
+      "details": {
+        "en": "They had landed at New York's airport two days earlier, met by thousands of screaming fans. The show was broadcast from a CBS theatre on Broadway, now called the Ed Sullivan Theater. Their first American record, \"I Want to Hold Your Hand\", was already number one.",
+        "es": "Habían aterrizado en el aeropuerto de Nueva York dos días antes, recibidos por miles de fans gritando. El programa se transmitió desde un teatro de CBS en Broadway, hoy llamado Ed Sullivan Theater. Su primer disco en Estados Unidos, \"I Want to Hold Your Hand\", ya era número uno."
+      }
+    },
+    {
+      "date": "1966-11-09",
+      "kind": "love",
+      "by": "air",
+      "place": { "en": "London, England", "es": "Londres, Inglaterra" },
+      "at": [-0.1371, 51.5077],
+      "title": { "en": "He meets Yoko Ono", "es": "Conoce a Yoko Ono" },
+      "text": {
+        "en": "At the Indica Gallery, the day before her show opened, John met the Japanese artist Yoko Ono. He climbed her ladder to read a tiny word on the ceiling: \"YES\".",
+        "es": "En la galería Indica, el día antes de que abriera su muestra, John conoció a la artista japonesa Yoko Ono. Subió por su escalera para leer una palabrita en el techo: \"YES\"."
+      }
+    },
+    {
+      "date": "1969-06-01",
+      "kind": "moment",
+      "by": "air",
+      "place": { "en": "Montreal, Canada", "es": "Montreal, Canadá" },
+      "at": [-73.5685, 45.5002],
+      "title": { "en": "Give Peace a Chance", "es": "Give Peace a Chance" },
+      "text": {
+        "en": "John and Yoko, newly married, spent a week in bed in a Montreal hotel room to protest the war in Vietnam. There, with friends and reporters singing along, they recorded \"Give Peace a Chance\".",
+        "es": "John y Yoko, recién casados, pasaron una semana en la cama de una habitación de hotel en Montreal para protestar contra la guerra de Vietnam. Allí, con amigos y periodistas cantando, grabaron \"Give Peace a Chance\"."
+      },
+      "details": {
+        "en": "It was their second \"bed-in\"; the first was in Amsterdam in March. The Beatles were breaking up, and John had left the band in private that year. The song became an anthem of the peace movement, sung by half a million people at a rally in Washington that November.",
+        "es": "Fue su segundo \"bed-in\"; el primero fue en Ámsterdam, en marzo. Los Beatles se estaban separando, y John había dejado el grupo en privado ese año. La canción fue un himno del movimiento por la paz, cantada por medio millón de personas en una marcha en Washington en noviembre."
+      }
+    },
+    {
+      "date": "1971-05",
+      "kind": "made",
+      "by": "air",
+      "place": { "en": "Ascot, England", "es": "Ascot, Inglaterra" },
+      "at": [-0.6344, 51.4065],
+      "title": { "en": "Imagine", "es": "Imagine" },
+      "text": {
+        "en": "At his country house, Tittenhurst Park, John made his album Imagine in a studio built in the grounds. The title song, a dream of a world without borders or possessions, was recorded there.",
+        "es": "En su casa de campo, Tittenhurst Park, John hizo su disco Imagine en un estudio construido en el terreno. Allí se grabó la canción del título, el sueño de un mundo sin fronteras ni posesiones."
+      }
+    },
+    {
+      "date": "1973",
+      "kind": "home",
+      "by": "air",
+      "place": { "en": "New York, United States", "es": "Nueva York, Estados Unidos" },
+      "at": [-73.9759, 40.7768],
+      "title": { "en": "A New Yorker at the Dakota", "es": "Neoyorquino en el Dakota" },
+      "text": {
+        "en": "John and Yoko left England for New York in 1971, and he never went back. In 1973 they moved into the Dakota, an old apartment building beside Central Park. Their son, Sean, was born there in 1975.",
+        "es": "John y Yoko dejaron Inglaterra por Nueva York en 1971, y él nunca volvió. En 1973 se mudaron al Dakota, un viejo edificio de departamentos junto a Central Park. Su hijo, Sean, nació en 1975."
+      },
+      "details": {
+        "en": "The United States tried to deport him for years over an old drug conviction, until a court ruled for him in 1975. After Sean's birth he stopped making records for five years to look after the boy, and baked bread. In 1980 he returned to music with the album Double Fantasy.",
+        "es": "Estados Unidos intentó deportarlo durante años por una antigua condena por drogas, hasta que un tribunal falló a su favor en 1975. Tras el nacimiento de Sean dejó de grabar durante cinco años para cuidar al niño, y horneaba pan. En 1980 volvió a la música con el disco Double Fantasy."
+      }
+    },
+    {
+      "date": "1980-12-08",
+      "kind": "died",
+      "place": { "en": "New York, United States", "es": "Nueva York, Estados Unidos" },
+      "at": [-73.9759, 40.7768],
+      "title": { "en": "Shot outside his home", "es": "Asesinado frente a su casa" },
+      "text": {
+        "en": "That night, coming home from a studio, John was shot by a fan, Mark David Chapman, in the entrance of the Dakota. He died soon after at a hospital. He was 40.",
+        "es": "Esa noche, al volver de un estudio, John recibió disparos de un fan, Mark David Chapman, en la entrada del Dakota. Murió poco después en un hospital. Tenía 40 años."
+      },
+      "details": {
+        "en": "Crowds gathered at the Dakota all night, and fans around the world held vigils. He was cremated; Yoko Ono did not hold a funeral. Strawberry Fields, a part of Central Park across the street, was dedicated to his memory in 1985 and has a mosaic with a single word: Imagine.",
+        "es": "Multitudes se reunieron en el Dakota toda la noche, y fans de todo el mundo hicieron vigilias. Lo cremaron; Yoko Ono no hizo funeral. Strawberry Fields, una parte de Central Park frente al edificio, se dedicó a su memoria en 1985 y tiene un mosaico con una sola palabra: Imagine."
+      }
+    }
+  ],
+  "visit": [
+    {
+      "name": { "en": "Strawberry Fields, Central Park", "es": "Strawberry Fields, Central Park" },
+      "at": [-73.9746, 40.7754],
+      "kind": "memorial",
+      "text": {
+        "en": "A quiet corner of Central Park across from the Dakota, with the \"Imagine\" mosaic. Fans gather here every year on 8 December.",
+        "es": "Un rincón tranquilo de Central Park frente al Dakota, con el mosaico \"Imagine\". Los fans se reúnen aquí cada 8 de diciembre."
+      }
+    },
+    {
+      "name": { "en": "Mendips, John Lennon's childhood home", "es": "Mendips, la casa de infancia de John Lennon" },
+      "at": [-2.8814, 53.3772],
+      "kind": "house",
+      "text": {
+        "en": "His aunt's house in Woolton, kept as it was in the 1950s and open to visitors with the National Trust.",
+        "es": "La casa de su tía en Woolton, conservada como en los años cincuenta y abierta a visitas con el National Trust."
+      }
+    },
+    {
+      "name": { "en": "The Cavern Club", "es": "El Cavern Club" },
+      "at": [-2.9879, 53.4063],
+      "kind": "site",
+      "text": {
+        "en": "The cellar club on Mathew Street where the Beatles played hundreds of times. It was rebuilt in the 1980s and still has live music.",
+        "es": "El club de sótano de la calle Mathew donde los Beatles tocaron cientos de veces. Se reconstruyó en los años ochenta y todavía tiene música en vivo."
+      }
+    },
+    {
+      "name": { "en": "Abbey Road Studios", "es": "Estudios de Abbey Road" },
+      "at": [-0.1782, 51.532],
+      "kind": "site",
+      "text": {
+        "en": "The studios where the Beatles recorded. Fans photograph themselves on the zebra crossing outside, as on the cover of the album Abbey Road.",
+        "es": "Los estudios donde grabaron los Beatles. Los fans se fotografían en el paso de cebra de afuera, como en la portada del disco Abbey Road."
+      }
+    }
+  ],
+  "legacy": {
+    "en": "With Paul McCartney, Lennon wrote some of the most-played songs of the 20th century, and the Beatles showed that pop music could be art. His solo work and his campaign for peace made him a symbol far beyond music. His death at 40 is still mourned.",
+    "es": "Junto con Paul McCartney, Lennon escribió algunas de las canciones más tocadas del siglo XX, y los Beatles mostraron que la música pop podía ser arte. Su obra en solitario y su campaña por la paz lo volvieron un símbolo mucho más allá de la música. Su muerte a los 40 años aún se llora."
+  },
+  "sources": [
+    { "title": "Wikipedia: John Lennon", "url": "https://en.wikipedia.org/wiki/John_Lennon" },
+    { "title": "National Trust: Mendips, John Lennon's childhood home", "url": "https://www.nationaltrust.org.uk/visit/liverpool/mendips-the-childhood-home-of-john-lennon" },
+    { "title": "Rock & Roll Hall of Fame: The Beatles", "url": "https://www.rockhall.com/inductees/beatles" }
+  ]
+}
