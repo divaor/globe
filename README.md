@@ -194,13 +194,13 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
     history, from Nabta Playa and Babylon's diaries to Mauna Kea and the Atacama; the space race, from the V-2 to
     Apollo–Soyuz; footprints on the Moon, every landing from Luna 2 to Artemis II; robots to the planets, from
     Mariner 2 to Juno; and wheels on Mars, from Mars 3 to where Curiosity and Perseverance are now.
-  - Lives on the map: 31 lives (more being written) of scientists, writers, artists, composers, leaders, campaigners and athletes,
-    from Hatshepsut and Confucius to Muhammad Ali, followed place by place: where they were born, studied, worked,
+  - Lives on the map: 168 lives of scientists, writers, artists, composers from Monteverdi to Bowie, leaders, campaigners
+    and athletes, from Hatshepsut and Confucius to Kobe Bryant, followed place by place: where they were born, studied, worked,
     made their great works, were exiled or imprisoned, and died, each step with their age, the route from the last
     place (by sea, by air, on foot) and the borders of that year. Only the places that mattered, not every stop of
     a tour; where historians are not sure of a place or a date the step says so. The last step shows the places
-    you can visit today (birth houses, museums, graves). Two lives side by side (Frida Kahlo and Diego
-    Rivera, Mozart and Haydn…) in two colours, with a handshake where their paths crossed. A city's guide has a People tab (the
+    you can visit today (birth houses, museums, graves). Twelve pairs of lives side by side (Chopin and Liszt, Pelé and
+    Maradona, Darwin and Lincoln, born the same day…) in two colours, with a handshake where their paths crossed. A city's guide has a People tab (the
     lives that pass through it, who was born and who died there), search finds every life, and On this day has
     their births and deaths. Lives are written only for people who have died.
   - Browse and search every item of a story or a whole collection; shared links open a story at its step.
