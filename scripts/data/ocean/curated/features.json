@@ -2534,10 +2534,13 @@
       "depth_m": 1371,
       "rank": 2,
       "text": {
-        "en": "The most active undersea volcano off North America sits on the Juan de Fuca Ridge, with its summit about 1,400 m down. It erupted in 1998, 2011 and 2015, and instruments wired to the shore record how it swells between eruptions.",
-        "es": "El volcán submarino más activo frente a Norteamérica está en la dorsal de Juan de Fuca, con su cima a unos 1 400 m de profundidad. Hizo erupción en 1998, 2011 y 2015, e instrumentos conectados por cable con la costa registran cómo se hincha entre erupciones."
+        "en": "This active volcano on the Juan de Fuca Ridge has its summit about 1,400 m down. It erupted in 1998, 2011 and 2015, and instruments wired to the shore by a seafloor cable record how it swells between eruptions.",
+        "es": "Este volcán activo de la dorsal de Juan de Fuca tiene su cima a unos 1 400 m de profundidad. Hizo erupción en 1998, 2011 y 2015, e instrumentos conectados con la costa por un cable submarino registran cómo se hincha entre erupciones."
       },
       "src": "https://www.ngdc.noaa.gov/gazetteer/feature/26190",
+      "src_more": [
+        "https://oceanobservatories.org/array/cabled-array/"
+      ],
       "gebco": 26190
     },
     {
@@ -2722,6 +2725,530 @@
       },
       "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28972",
       "gebco": 28972
+    },
+    {
+      "id": "sigsbee-abyssal-plain",
+      "name": {
+        "en": "Sigsbee Abyssal Plain",
+        "es": "Llanura abisal de Sigsbee"
+      },
+      "kind": "plain",
+      "lon": -92.651,
+      "lat": 24.033,
+      "depth_m": 3740,
+      "rank": 2,
+      "text": {
+        "en": "The flat floor of the deep Gulf of Mexico lies about 3,700 m down. It is named after Charles Sigsbee, a US Navy officer who commanded the survey ship Blake in the 1870s.",
+        "es": "El fondo plano de la parte profunda del golfo de México está a unos 3 700 m. Lleva el nombre de Charles Sigsbee, oficial de la Marina de Estados Unidos que comandó el buque hidrográfico Blake en la década de 1870."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/23353",
+      "gebco": 23353
+    },
+    {
+      "id": "argentine-abyssal-plain",
+      "name": {
+        "en": "Argentine Abyssal Plain",
+        "es": "Llanura abisal Argentina"
+      },
+      "kind": "plain",
+      "lon": -53.5,
+      "lat": -47.0,
+      "depth_m": 6050,
+      "rank": 2,
+      "text": {
+        "en": "Far off Patagonia, this very flat plain lies about 6,000 m down at the bottom of the Argentine Basin. It is named after Argentina.",
+        "es": "Lejos de la costa de la Patagonia, esta llanura muy plana está a unos 6 000 m de profundidad, en el fondo de la cuenca Argentina. Debe su nombre a la Argentina."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28337",
+      "gebco": 28337
+    },
+    {
+      "id": "hatteras-abyssal-plain",
+      "name": {
+        "en": "Hatteras Abyssal Plain",
+        "es": "Llanura abisal de Hatteras"
+      },
+      "kind": "plain",
+      "lon": -70.5,
+      "lat": 29.0,
+      "depth_m": 5430,
+      "rank": 3,
+      "text": {
+        "en": "Off the southeastern United States, this broad flat plain lies about 5,400 m down. It is named after Cape Hatteras in North Carolina.",
+        "es": "Frente al sureste de Estados Unidos, esta amplia llanura está a unos 5 400 m de profundidad. Debe su nombre al cabo Hatteras, en Carolina del Norte."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28683",
+      "gebco": 28683
+    },
+    {
+      "id": "nares-abyssal-plain",
+      "name": {
+        "en": "Nares Abyssal Plain",
+        "es": "Llanura abisal de Nares"
+      },
+      "kind": "plain",
+      "lon": -64.5,
+      "lat": 23.5,
+      "depth_m": 5850,
+      "rank": 3,
+      "text": {
+        "en": "North of Puerto Rico and south of Bermuda, this plain lies about 5,800 m down, one of the deepest flat areas of the Atlantic. It is named after Sir George Nares, captain of HMS Challenger on its great voyage of the 1870s.",
+        "es": "Al norte de Puerto Rico y al sur de las Bermudas, esta llanura está a unos 5 800 m de profundidad, una de las zonas planas más profundas del Atlántico. Lleva el nombre de sir George Nares, capitán del HMS Challenger en su gran viaje de la década de 1870."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28894",
+      "gebco": 28894
+    },
+    {
+      "id": "demerara-abyssal-plain",
+      "name": {
+        "en": "Demerara Abyssal Plain",
+        "es": "Llanura abisal de Demerara"
+      },
+      "kind": "plain",
+      "lon": -51.0,
+      "lat": 10.0,
+      "depth_m": 4900,
+      "rank": 3,
+      "text": {
+        "en": "Off the Guianas in the western Atlantic, this plain lies about 4,900 m down. It is named after the Demerara River of Guyana.",
+        "es": "Frente a las Guayanas, en el Atlántico occidental, esta llanura está a unos 4 900 m de profundidad. Debe su nombre al río Demerara, de Guyana."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28562",
+      "gebco": 28562
+    },
+    {
+      "id": "porcupine-abyssal-plain",
+      "name": {
+        "en": "Porcupine Abyssal Plain",
+        "es": "Llanura abisal de Porcupine"
+      },
+      "kind": "plain",
+      "lon": -16.0,
+      "lat": 49.0,
+      "depth_m": 4850,
+      "rank": 2,
+      "text": {
+        "en": "Southwest of Ireland, this plain lies about 4,850 m down and is one of the best-studied patches of deep seafloor, watched by scientists since 1989. It is named after HMS Porcupine, which dredged the deep sea here in 1869 and 1870.",
+        "es": "Al suroeste de Irlanda, esta llanura está a unos 4 850 m de profundidad y es uno de los fondos profundos mejor estudiados, observado por científicos desde 1989. Debe su nombre al HMS Porcupine, que dragó el fondo profundo de esta zona en 1869 y 1870."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28926",
+      "gebco": 28926
+    },
+    {
+      "id": "iberian-abyssal-plain",
+      "name": {
+        "en": "Iberian Abyssal Plain",
+        "es": "Llanura abisal Ibérica"
+      },
+      "kind": "plain",
+      "lon": -14.0,
+      "lat": 41.5,
+      "depth_m": 5350,
+      "rank": 3,
+      "text": {
+        "en": "West of Portugal and Spain, this plain lies about 5,300 m down. It is named after the Iberian Peninsula.",
+        "es": "Al oeste de Portugal y España, esta llanura está a unos 5 300 m de profundidad. Debe su nombre a la península ibérica."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28694",
+      "gebco": 28694
+    },
+    {
+      "id": "weddell-abyssal-plain",
+      "name": {
+        "en": "Weddell Abyssal Plain",
+        "es": "Llanura abisal de Weddell"
+      },
+      "kind": "plain",
+      "lon": -21.849,
+      "lat": -66.615,
+      "depth_m": 4920,
+      "rank": 3,
+      "text": {
+        "en": "The floor of the Weddell Sea, off Antarctica, lies about 4,900 m down. It is named after James Weddell, a British sealer who sailed into the sea in 1823; cold, dense water formed here spreads across the world ocean as Antarctic Bottom Water.",
+        "es": "El fondo del mar de Weddell, frente a la Antártida, está a unos 4 900 m de profundidad. Lleva el nombre de James Weddell, cazador de focas británico que navegó por ese mar en 1823; el agua fría y densa que se forma aquí se extiende por el océano mundial como Agua Antártica de Fondo."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28997",
+      "gebco": 28997
+    },
+    {
+      "id": "canada-abyssal-plain",
+      "name": {
+        "en": "Canada Abyssal Plain",
+        "es": "Llanura abisal de Canadá"
+      },
+      "kind": "plain",
+      "lon": -151.867,
+      "lat": 75.572,
+      "depth_m": 3850,
+      "rank": 3,
+      "text": {
+        "en": "Under the sea ice north of Alaska and Canada, the flat floor of the Canada Basin lies about 3,800 m down. It is named after Canada.",
+        "es": "Bajo el hielo marino al norte de Alaska y Canadá, el fondo plano de la cuenca de Canadá está a unos 3 800 m de profundidad. Debe su nombre a Canadá."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28516",
+      "gebco": 28516
+    },
+    {
+      "id": "somali-abyssal-plain",
+      "name": {
+        "en": "Somali Abyssal Plain",
+        "es": "Llanura abisal de Somalia"
+      },
+      "kind": "plain",
+      "lon": 52.5,
+      "lat": 5.0,
+      "depth_m": 5100,
+      "rank": 3,
+      "text": {
+        "en": "Off the Horn of Africa in the western Indian Ocean, this plain lies about 5,100 m down. It is named after Somalia.",
+        "es": "Frente al Cuerno de África, en el oeste del océano Índico, esta llanura está a unos 5 100 m de profundidad. Debe su nombre a Somalia."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28967",
+      "gebco": 28967
+    },
+    {
+      "id": "monterey-canyon",
+      "name": {
+        "en": "Monterey Canyon",
+        "es": "Cañón de Monterey"
+      },
+      "kind": "canyon",
+      "lon": -122.083,
+      "lat": 36.667,
+      "depth_m": 3600,
+      "rank": 1,
+      "text": {
+        "en": "One of the largest submarine canyons off North America begins close to the shore in Monterey Bay, California, and winds down to more than 3,500 m. It lies in a national marine sanctuary and is one of the most closely studied canyons in the world.",
+        "es": "Uno de los mayores cañones submarinos de Norteamérica empieza cerca de la orilla en la bahía de Monterey, California, y baja serpenteando hasta más de 3 500 m. Está en un santuario marino nacional y es uno de los cañones más estudiados del mundo."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/15274",
+      "gebco": 15274
+    },
+    {
+      "id": "congo-canyon",
+      "name": {
+        "en": "Congo Canyon",
+        "es": "Cañón del Congo"
+      },
+      "kind": "canyon",
+      "lon": 11.759,
+      "lat": -6.002,
+      "line": [
+        [
+          10.9,
+          -5.78
+        ],
+        [
+          11.76,
+          -6.0
+        ],
+        [
+          11.96,
+          -6.02
+        ],
+        [
+          12.34,
+          -6.02
+        ]
+      ],
+      "depth_m": 4000,
+      "rank": 2,
+      "text": {
+        "en": "Unlike most submarine canyons, this one starts inside the mouth of the Congo River and links it directly to the deep sea. In January 2020 a flow of sediment rushed down it for more than 1,130 km, speeding up to 8 m a second, and broke both undersea internet cables along West Africa.",
+        "es": "A diferencia de la mayoría de los cañones submarinos, este empieza dentro de la desembocadura del río Congo y lo une directamente con el mar profundo. En enero de 2020, un flujo de sedimentos bajó por él más de 1 130 km, acelerando hasta 8 m por segundo, y rompió los dos cables submarinos de internet de la costa de África occidental."
+      },
+      "src": "https://www.nature.com/articles/s41467-022-31689-3",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/21172"
+      ],
+      "gebco": 21172
+    },
+    {
+      "id": "zhemchug-canyon",
+      "name": {
+        "en": "Zhemchug Canyon",
+        "es": "Cañón Zhemchug"
+      },
+      "kind": "canyon",
+      "lon": -174.513,
+      "lat": 58.053,
+      "depth_m": 3811,
+      "rank": 2,
+      "text": {
+        "en": "Cut into the edge of the Bering Sea shelf, this is one of the largest submarine canyons on Earth, dropping from about 60 m to more than 3,800 m. It is named after the Russian research vessel Zhemchug, which explored it.",
+        "es": "Excavado en el borde de la plataforma del mar de Bering, es uno de los mayores cañones submarinos de la Tierra: baja desde unos 60 m hasta más de 3 800 m. Debe su nombre al buque de investigación ruso Zhemchug, que lo exploró."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/29559",
+      "gebco": 29559
+    },
+    {
+      "id": "hudson-canyon",
+      "name": {
+        "en": "Hudson Canyon",
+        "es": "Cañón del Hudson"
+      },
+      "kind": "canyon",
+      "lon": -72.25,
+      "lat": 39.5,
+      "depth_m": 2700,
+      "rank": 2,
+      "text": {
+        "en": "Off New York and New Jersey, this canyon cuts the edge of the continental shelf at the end of the drowned valley of the Hudson River. It is the largest submarine canyon off the US east coast.",
+        "es": "Frente a Nueva York y Nueva Jersey, este cañón corta el borde de la plataforma continental al final del valle sumergido del río Hudson. Es el mayor cañón submarino frente a la costa este de Estados Unidos."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/13991",
+      "gebco": 13991
+    },
+    {
+      "id": "nazare-canyon",
+      "name": {
+        "en": "Nazaré Canyon",
+        "es": "Cañón de Nazaré"
+      },
+      "kind": "canyon",
+      "lon": -10.201,
+      "lat": 39.584,
+      "line": [
+        [
+          -11.0,
+          39.88
+        ],
+        [
+          -10.63,
+          39.77
+        ],
+        [
+          -10.55,
+          39.63
+        ],
+        [
+          -10.2,
+          39.58
+        ],
+        [
+          -10.09,
+          39.52
+        ],
+        [
+          -9.92,
+          39.5
+        ],
+        [
+          -9.78,
+          39.53
+        ],
+        [
+          -9.71,
+          39.48
+        ],
+        [
+          -9.56,
+          39.53
+        ],
+        [
+          -9.48,
+          39.53
+        ],
+        [
+          -9.43,
+          39.59
+        ],
+        [
+          -9.22,
+          39.65
+        ]
+      ],
+      "depth_m": 4950,
+      "rank": 2,
+      "text": {
+        "en": "One of Europe's largest submarine canyons cuts into the coast of Portugal at Nazaré and drops to about 5,000 m. Its head comes so close to the shore that it focuses ocean swells into the giant waves surfed there.",
+        "es": "Uno de los mayores cañones submarinos de Europa corta la costa de Portugal en Nazaré y baja hasta unos 5 000 m. Su cabecera llega tan cerca de la orilla que concentra el oleaje en las olas gigantes que se surfean allí."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22621",
+      "gebco": 22621
+    },
+    {
+      "id": "bering-canyon",
+      "name": {
+        "en": "Bering Canyon",
+        "es": "Cañón de Bering"
+      },
+      "kind": "canyon",
+      "lon": -166.337,
+      "lat": 54.318,
+      "depth_m": 2193,
+      "rank": 3,
+      "text": {
+        "en": "This canyon runs along the edge of the Bering Sea shelf north of the Aleutian Islands. About 700 km long, it is one of the longest submarine canyons on Earth.",
+        "es": "Este cañón corre a lo largo del borde de la plataforma del mar de Bering, al norte de las islas Aleutianas. Con unos 700 km de largo, es uno de los cañones submarinos más largos de la Tierra."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/29560",
+      "gebco": 29560
+    },
+    {
+      "id": "great-bahama-canyon",
+      "name": {
+        "en": "Great Bahama Canyon",
+        "es": "Cañón de Gran Bahama"
+      },
+      "kind": "canyon",
+      "lon": -76.994,
+      "lat": 25.823,
+      "depth_m": 4600,
+      "rank": 3,
+      "text": {
+        "en": "This canyon cuts between the limestone platforms of the Bahamas, and its floor lies more than 4,500 m down. It is named after the nearby Great Bahama Bank.",
+        "es": "Este cañón corta entre las plataformas de piedra caliza de las Bahamas, y su fondo está a más de 4 500 m de profundidad. Debe su nombre al cercano Gran Banco de las Bahamas."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/21684",
+      "gebco": 21684
+    },
+    {
+      "id": "cap-breton-canyon",
+      "name": {
+        "en": "Cap Breton Canyon",
+        "es": "Cañón de Capbreton"
+      },
+      "kind": "canyon",
+      "lon": -2.517,
+      "lat": 43.683,
+      "depth_m": 2000,
+      "rank": 3,
+      "text": {
+        "en": "In the Bay of Biscay, this canyon starts very close to the beach at Capbreton in southwest France. Within a few dozen kilometres of the coast its floor is already more than 2,000 m deep.",
+        "es": "En el golfo de Vizcaya, este cañón empieza muy cerca de la playa de Capbreton, en el suroeste de Francia. A pocas decenas de kilómetros de la costa, su fondo ya supera los 2 000 m de profundidad."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/12423",
+      "gebco": 12423
+    },
+    {
+      "id": "mar-del-plata-canyon",
+      "name": {
+        "en": "Mar del Plata Canyon",
+        "es": "Cañón de Mar del Plata"
+      },
+      "kind": "canyon",
+      "lon": -53.5,
+      "lat": -38.0,
+      "depth_m": 3600,
+      "rank": 3,
+      "text": {
+        "en": "This canyon cuts the continental slope far off the coast of Buenos Aires province, Argentina, and drops to more than 3,500 m. It is named after the city of Mar del Plata.",
+        "es": "Este cañón corta el talud continental lejos de la costa de la provincia de Buenos Aires, en la Argentina, y baja a más de 3 500 m. Lleva el nombre de la ciudad de Mar del Plata."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/30981",
+      "gebco": 30981
+    },
+    {
+      "id": "biobio-canyon",
+      "name": {
+        "en": "Biobio Canyon",
+        "es": "Cañón del Biobío"
+      },
+      "kind": "canyon",
+      "lon": -74.15,
+      "lat": -36.633,
+      "depth_m": 3700,
+      "rank": 3,
+      "text": {
+        "en": "Off central Chile, this canyon carries sediment from the mouth of the Biobío River down the continental slope towards the Peru-Chile Trench. It is named after the river.",
+        "es": "Frente al centro de Chile, este cañón lleva sedimentos desde la desembocadura del río Biobío, talud abajo, hacia la fosa de Perú-Chile. Debe su nombre al río."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/20952",
+      "gebco": 20952
+    },
+    {
+      "id": "bengal-fan",
+      "name": {
+        "en": "Bengal Fan",
+        "es": "Abanico de Bengala"
+      },
+      "kind": "fan",
+      "lon": 85.841,
+      "lat": 6.029,
+      "depth_m": 3900,
+      "rank": 1,
+      "text": {
+        "en": "The largest submarine fan on Earth covers the whole floor of the Bay of Bengal and reaches far south of Sri Lanka. It is built of sediment worn from the Himalayas and carried to the sea by the Ganges and Brahmaputra rivers.",
+        "es": "El mayor abanico submarino de la Tierra cubre todo el fondo del golfo de Bengala y llega mucho más al sur de Sri Lanka. Está hecho de sedimentos arrancados al Himalaya y llevados al mar por los ríos Ganges y Brahmaputra."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/20936",
+      "gebco": 20936
+    },
+    {
+      "id": "indus-fan",
+      "name": {
+        "en": "Indus Fan",
+        "es": "Abanico del Indo"
+      },
+      "kind": "fan",
+      "lon": 66.0,
+      "lat": 23.0,
+      "depth_m": 3000,
+      "rank": 2,
+      "text": {
+        "en": "The second-largest submarine fan on Earth spreads across the floor of the Arabian Sea. It is built of sediment carried down from the Himalayas and the Karakoram by the Indus River.",
+        "es": "El segundo mayor abanico submarino de la Tierra se extiende por el fondo del mar Arábigo. Está hecho de sedimentos que el río Indo baja del Himalaya y el Karakórum."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/21879",
+      "gebco": 21879
+    },
+    {
+      "id": "amazon-cone",
+      "name": {
+        "en": "Amazon Cone",
+        "es": "Cono del Amazonas"
+      },
+      "kind": "fan",
+      "lon": -46.75,
+      "lat": 4.5,
+      "depth_m": 3500,
+      "rank": 2,
+      "text": {
+        "en": "Off northern Brazil, the Amazon River has built this huge fan of mud and sand down the continental slope to depths of more than 4,000 m. Channels wind across its surface like rivers on land.",
+        "es": "Frente al norte de Brasil, el río Amazonas ha formado este enorme abanico de lodo y arena talud abajo, hasta más de 4 000 m de profundidad. Sobre su superficie serpentean canales como ríos en tierra firme."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/11734",
+      "gebco": 11734
+    },
+    {
+      "id": "mississippi-fan",
+      "name": {
+        "en": "Mississippi Fan",
+        "es": "Abanico del Misisipi"
+      },
+      "kind": "fan",
+      "lon": -87.5,
+      "lat": 27.0,
+      "depth_m": 2900,
+      "rank": 2,
+      "text": {
+        "en": "Sediment carried by the Mississippi River has built this fan across much of the deep Gulf of Mexico. It spreads out from the foot of the continental slope south of Louisiana.",
+        "es": "Los sedimentos que lleva el río Misisipi han formado este abanico sobre gran parte del fondo profundo del golfo de México. Se extiende desde el pie del talud continental, al sur de Luisiana."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22509",
+      "gebco": 22509
+    },
+    {
+      "id": "congo-fan",
+      "name": {
+        "en": "Congo Fan",
+        "es": "Abanico del Congo"
+      },
+      "kind": "fan",
+      "lon": 8.317,
+      "lat": -5.503,
+      "depth_m": 4000,
+      "rank": 3,
+      "text": {
+        "en": "At the end of the Congo Canyon, sediment from the Congo River spreads out into a large fan on the floor of the South Atlantic, about 4,000 m down.",
+        "es": "Al final del cañón del Congo, los sedimentos del río Congo se extienden en un gran abanico sobre el fondo del Atlántico Sur, a unos 4 000 m de profundidad."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/21173",
+      "src_more": [
+        "https://www.nature.com/articles/s41467-022-31689-3"
+      ],
+      "gebco": 21173
     }
   ]
 }

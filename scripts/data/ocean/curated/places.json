@@ -143,7 +143,7 @@
         "es": "Reserva Nacional Kawésqar, Chile"
       },
       "lon": -75.2,
-      "lat": -51.0,
+      "lat": -51,
       "text": {
         "en": "Giant kelp lines the fjords and channels of this reserve in Chilean Patagonia, named after the Kawésqar people of these waters. Its forests reach from glacier-fed inlets out to the open Pacific.",
         "es": "El kelp gigante bordea los fiordos y canales de esta reserva de la Patagonia chilena, que lleva el nombre del pueblo kawésqar de estas aguas. Sus bosques van desde ensenadas alimentadas por glaciares hasta el Pacífico abierto."
@@ -294,7 +294,7 @@
         "en": "Molène archipelago, Brittany",
         "es": "Archipiélago de Molène, Bretaña"
       },
-      "lon": -5.0,
+      "lon": -5,
       "lat": 48.42,
       "text": {
         "en": "In the Iroise Marine Natural Park, the Molène archipelago holds dense forests of Laminaria kelp. More than half of France's harvest of Laminaria digitata comes from here, under rules that rest each area in turn.",
@@ -351,7 +351,7 @@
       "ring": [
         [
           -131.9,
-          34.0
+          34
         ],
         [
           -133.1,
@@ -362,7 +362,7 @@
           29.3
         ],
         [
-          -142.0,
+          -142,
           27.8
         ],
         [
@@ -375,10 +375,10 @@
         ],
         [
           -153.7,
-          30.0
+          30
         ],
         [
-          -153.0,
+          -153,
           32.4
         ],
         [
@@ -417,7 +417,7 @@
       "ring": [
         [
           -86.5,
-          -30.0
+          -30
         ],
         [
           -87.9,
@@ -428,7 +428,7 @@
           -35.5
         ],
         [
-          -100.0,
+          -100,
           -36.3
         ],
         [
@@ -441,7 +441,7 @@
         ],
         [
           -113.5,
-          -30.0
+          -30
         ],
         [
           -111.3,
@@ -452,7 +452,7 @@
           -24.5
         ],
         [
-          -100.0,
+          -100,
           -23.7
         ],
         [
@@ -481,47 +481,47 @@
       },
       "ring": [
         [
-          -75.0,
-          25.0
+          -75,
+          25
         ],
         [
-          -73.0,
-          31.0
+          -73,
+          31
         ],
         [
-          -71.0,
+          -71,
           35.5
         ],
         [
-          -64.0,
-          38.0
+          -64,
+          38
         ],
         [
-          -54.0,
-          38.0
+          -54,
+          38
         ],
         [
-          -45.0,
-          36.0
+          -45,
+          36
         ],
         [
-          -41.0,
-          31.0
+          -41,
+          31
         ],
         [
-          -43.0,
+          -43,
           25.5
         ],
         [
-          -50.0,
+          -50,
           22.5
         ],
         [
-          -60.0,
-          22.0
+          -60,
+          22
         ],
         [
-          -69.0,
+          -69,
           22.5
         ]
       ],
@@ -544,7 +544,7 @@
       "ring": [
         [
           -0.5,
-          -30.0
+          -30
         ],
         [
           -1.9,
@@ -555,7 +555,7 @@
           -35.5
         ],
         [
-          -14.0,
+          -14,
           -36.3
         ],
         [
@@ -568,7 +568,7 @@
         ],
         [
           -27.5,
-          -30.0
+          -30
         ],
         [
           -25.3,
@@ -579,7 +579,7 @@
           -24.5
         ],
         [
-          -14.0,
+          -14,
           -23.7
         ],
         [
@@ -609,7 +609,7 @@
       "ring": [
         [
           99.7,
-          -30.0
+          -30
         ],
         [
           97.7,
@@ -620,7 +620,7 @@
           -35.8
         ],
         [
-          80.0,
+          80,
           -36.7
         ],
         [
@@ -633,7 +633,7 @@
         ],
         [
           60.3,
-          -30.0
+          -30
         ],
         [
           63.4,
@@ -644,7 +644,7 @@
           -24.2
         ],
         [
-          80.0,
+          80,
           -23.3
         ],
         [
@@ -666,51 +666,17 @@
       ]
     }
   ],
-  "rise": [],
-  "rise_draft": [
+  "rise": [
     {
-      "id": "jakarta",
+      "id": "new-orleans",
       "name": {
-        "en": "Jakarta",
-        "es": "Yakarta"
+        "en": "New Orleans",
+        "es": "Nueva Orleans"
       },
-      "lon": 106.8456,
-      "lat": -6.2088,
-      "elev_m_unverified": 8,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "bangkok",
-      "name": {
-        "en": "Bangkok",
-        "es": "Bangkok"
-      },
-      "lon": 100.5018,
-      "lat": 13.7563,
-      "elev_m_unverified": 1.5,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "dhaka",
-      "name": {
-        "en": "Dhaka",
-        "es": "Daca"
-      },
-      "lon": 90.4125,
-      "lat": 23.8103,
-      "elev_m_unverified": 4,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "shanghai",
-      "name": {
-        "en": "Shanghai",
-        "es": "Shanghái"
-      },
-      "lon": 121.4737,
-      "lat": 31.2304,
-      "elev_m_unverified": 4,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
+      "lon": -90.0715,
+      "lat": 29.9511,
+      "elev_m": 0,
+      "src": "GeoNames 4335045 (New Orleans): elevation, CC BY 4.0"
     },
     {
       "id": "miami",
@@ -720,30 +686,8 @@
       },
       "lon": -80.1918,
       "lat": 25.7617,
-      "elev_m_unverified": 2,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "new-orleans",
-      "name": {
-        "en": "New Orleans",
-        "es": "Nueva Orleans"
-      },
-      "lon": -90.0715,
-      "lat": 29.9511,
-      "elev_m_unverified": 0,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "amsterdam",
-      "name": {
-        "en": "Amsterdam",
-        "es": "Ámsterdam"
-      },
-      "lon": 4.9041,
-      "lat": 52.3676,
-      "elev_m_unverified": -2,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
+      "elev_m": 2,
+      "src": "GeoNames 4164138 (Miami): elevation, CC BY 4.0"
     },
     {
       "id": "venice",
@@ -753,129 +697,8 @@
       },
       "lon": 12.3155,
       "lat": 45.4408,
-      "elev_m_unverified": 1,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "alexandria",
-      "name": {
-        "en": "Alexandria",
-        "es": "Alejandría"
-      },
-      "lon": 29.9187,
-      "lat": 31.2001,
-      "elev_m_unverified": 5,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "lagos",
-      "name": {
-        "en": "Lagos",
-        "es": "Lagos"
-      },
-      "lon": 3.3792,
-      "lat": 6.5244,
-      "elev_m_unverified": 2,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "ho-chi-minh-city",
-      "name": {
-        "en": "Ho Chi Minh City",
-        "es": "Ciudad Ho Chi Minh"
-      },
-      "lon": 106.6297,
-      "lat": 10.8231,
-      "elev_m_unverified": 3,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "kolkata",
-      "name": {
-        "en": "Kolkata",
-        "es": "Calcuta"
-      },
-      "lon": 88.3639,
-      "lat": 22.5726,
-      "elev_m_unverified": 6,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "mumbai",
-      "name": {
-        "en": "Mumbai",
-        "es": "Bombay"
-      },
-      "lon": 72.8777,
-      "lat": 19.076,
-      "elev_m_unverified": 10,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "buenos-aires",
-      "name": {
-        "en": "Buenos Aires",
-        "es": "Buenos Aires"
-      },
-      "lon": -58.3816,
-      "lat": -34.6037,
-      "elev_m_unverified": 25,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "guayaquil",
-      "name": {
-        "en": "Guayaquil",
-        "es": "Guayaquil"
-      },
-      "lon": -79.8891,
-      "lat": -2.1709,
-      "elev_m_unverified": 4,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "rio-de-janeiro",
-      "name": {
-        "en": "Rio de Janeiro",
-        "es": "Río de Janeiro"
-      },
-      "lon": -43.1729,
-      "lat": -22.9068,
-      "elev_m_unverified": 5,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "tokyo",
-      "name": {
-        "en": "Tokyo",
-        "es": "Tokio"
-      },
-      "lon": 139.7671,
-      "lat": 35.6812,
-      "elev_m_unverified": 5,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "london",
-      "name": {
-        "en": "London",
-        "es": "Londres"
-      },
-      "lon": -0.1276,
-      "lat": 51.5072,
-      "elev_m_unverified": 11,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "new-york",
-      "name": {
-        "en": "New York",
-        "es": "Nueva York"
-      },
-      "lon": -74.006,
-      "lat": 40.7128,
-      "elev_m_unverified": 10,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
+      "elev_m": 2,
+      "src": "GeoNames 3164603 (Venice): elevation, CC BY 4.0"
     },
     {
       "id": "osaka",
@@ -885,206 +708,8 @@
       },
       "lon": 135.5023,
       "lat": 34.6937,
-      "elev_m_unverified": 3,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "manila",
-      "name": {
-        "en": "Manila",
-        "es": "Manila"
-      },
-      "lon": 120.9842,
-      "lat": 14.5995,
-      "elev_m_unverified": 5,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "barranquilla",
-      "name": {
-        "en": "Barranquilla",
-        "es": "Barranquilla"
-      },
-      "lon": -74.7813,
-      "lat": 10.9685,
-      "elev_m_unverified": 18,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "havana",
-      "name": {
-        "en": "Havana",
-        "es": "La Habana"
-      },
-      "lon": -82.3666,
-      "lat": 23.1136,
-      "elev_m_unverified": 10,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "rotterdam",
-      "name": {
-        "en": "Rotterdam",
-        "es": "Róterdam"
-      },
-      "lon": 4.4777,
-      "lat": 51.9244,
-      "elev_m_unverified": -1,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "hamburg",
-      "name": {
-        "en": "Hamburg",
-        "es": "Hamburgo"
-      },
-      "lon": 9.9937,
-      "lat": 53.5511,
-      "elev_m_unverified": 6,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "saint-petersburg",
-      "name": {
-        "en": "Saint Petersburg",
-        "es": "San Petersburgo"
-      },
-      "lon": 30.3351,
-      "lat": 59.9343,
-      "elev_m_unverified": 3,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "lisbon",
-      "name": {
-        "en": "Lisbon",
-        "es": "Lisboa"
-      },
-      "lon": -9.1393,
-      "lat": 38.7223,
-      "elev_m_unverified": 5,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "karachi",
-      "name": {
-        "en": "Karachi",
-        "es": "Karachi"
-      },
-      "lon": 67.0011,
-      "lat": 24.8607,
-      "elev_m_unverified": 8,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "chennai",
-      "name": {
-        "en": "Chennai",
-        "es": "Chennai"
-      },
-      "lon": 80.2707,
-      "lat": 13.0827,
-      "elev_m_unverified": 7,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "yangon",
-      "name": {
-        "en": "Yangon",
-        "es": "Rangún"
-      },
-      "lon": 96.1951,
-      "lat": 16.8661,
-      "elev_m_unverified": 10,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "singapore",
-      "name": {
-        "en": "Singapore",
-        "es": "Singapur"
-      },
-      "lon": 103.8198,
-      "lat": 1.3521,
-      "elev_m_unverified": 15,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "hong-kong",
-      "name": {
-        "en": "Hong Kong",
-        "es": "Hong Kong"
-      },
-      "lon": 114.1694,
-      "lat": 22.3193,
-      "elev_m_unverified": 5,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "tianjin",
-      "name": {
-        "en": "Tianjin",
-        "es": "Tianjin"
-      },
-      "lon": 117.3616,
-      "lat": 39.3434,
-      "elev_m_unverified": 5,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "guangzhou",
-      "name": {
-        "en": "Guangzhou",
-        "es": "Cantón"
-      },
-      "lon": 113.2644,
-      "lat": 23.1291,
-      "elev_m_unverified": 10,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "houston",
-      "name": {
-        "en": "Houston",
-        "es": "Houston"
-      },
-      "lon": -95.3698,
-      "lat": 29.7604,
-      "elev_m_unverified": 15,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "boston",
-      "name": {
-        "en": "Boston",
-        "es": "Boston"
-      },
-      "lon": -71.0589,
-      "lat": 42.3601,
-      "elev_m_unverified": 5,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "montevideo",
-      "name": {
-        "en": "Montevideo",
-        "es": "Montevideo"
-      },
-      "lon": -56.1645,
-      "lat": -34.9011,
-      "elev_m_unverified": 43,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
-    },
-    {
-      "id": "cartagena",
-      "name": {
-        "en": "Cartagena",
-        "es": "Cartagena de Indias"
-      },
-      "lon": -75.4794,
-      "lat": 10.391,
-      "elev_m_unverified": 2,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
+      "elev_m": 4,
+      "src": "GeoNames 1853909 (Osaka): terrain height (SRTM), CC BY 4.0"
     },
     {
       "id": "basra",
@@ -1094,8 +719,294 @@
       },
       "lon": 47.7804,
       "lat": 30.5085,
-      "elev_m_unverified": 2,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
+      "elev_m": 4,
+      "src": "GeoNames 99532 (Basrah): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "ho-chi-minh-city",
+      "name": {
+        "en": "Ho Chi Minh City",
+        "es": "Ciudad Ho Chi Minh"
+      },
+      "lon": 106.6297,
+      "lat": 10.8231,
+      "elev_m": 7,
+      "src": "GeoNames 1566083 (Ho Chi Minh City): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "mumbai",
+      "name": {
+        "en": "Mumbai",
+        "es": "Bombay"
+      },
+      "lon": 72.8777,
+      "lat": 19.076,
+      "elev_m": 8,
+      "src": "GeoNames 1275339 (Mumbai): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "karachi",
+      "name": {
+        "en": "Karachi",
+        "es": "Karachi"
+      },
+      "lon": 67.0011,
+      "lat": 24.8607,
+      "elev_m": 8,
+      "src": "GeoNames 1174872 (Karachi): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "alexandria",
+      "name": {
+        "en": "Alexandria",
+        "es": "Alejandría"
+      },
+      "lon": 29.9187,
+      "lat": 31.2001,
+      "elev_m": 9,
+      "src": "GeoNames 361058 (Alexandria): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "rotterdam",
+      "name": {
+        "en": "Rotterdam",
+        "es": "Róterdam"
+      },
+      "lon": 4.4777,
+      "lat": 51.9244,
+      "elev_m": 9,
+      "src": "GeoNames 2747891 (Rotterdam): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "hamburg",
+      "name": {
+        "en": "Hamburg",
+        "es": "Hamburgo"
+      },
+      "lon": 9.9937,
+      "lat": 53.5511,
+      "elev_m": 9,
+      "src": "GeoNames 2911298 (Hamburg): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "new-york",
+      "name": {
+        "en": "New York",
+        "es": "Nueva York"
+      },
+      "lon": -74.006,
+      "lat": 40.7128,
+      "elev_m": 10,
+      "src": "GeoNames 5128581 (New York City): elevation, CC BY 4.0"
+    },
+    {
+      "id": "lagos",
+      "name": {
+        "en": "Lagos",
+        "es": "Lagos"
+      },
+      "lon": 3.3792,
+      "lat": 6.5244,
+      "elev_m": 11,
+      "src": "GeoNames 2332459 (Lagos): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "kolkata",
+      "name": {
+        "en": "Kolkata",
+        "es": "Calcuta"
+      },
+      "lon": 88.3639,
+      "lat": 22.5726,
+      "elev_m": 11,
+      "src": "GeoNames 1275004 (Kolkata): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "saint-petersburg",
+      "name": {
+        "en": "Saint Petersburg",
+        "es": "San Petersburgo"
+      },
+      "lon": 30.3351,
+      "lat": 59.9343,
+      "elev_m": 11,
+      "src": "GeoNames 498817 (Saint Petersburg): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "tianjin",
+      "name": {
+        "en": "Tianjin",
+        "es": "Tianjin"
+      },
+      "lon": 117.3616,
+      "lat": 39.3434,
+      "elev_m": 11,
+      "src": "GeoNames 1792947 (Tianjin): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "bangkok",
+      "name": {
+        "en": "Bangkok",
+        "es": "Bangkok"
+      },
+      "lon": 100.5018,
+      "lat": 13.7563,
+      "elev_m": 12,
+      "src": "GeoNames 1609350 (Bangkok): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "shanghai",
+      "name": {
+        "en": "Shanghai",
+        "es": "Shanghái"
+      },
+      "lon": 121.4737,
+      "lat": 31.2304,
+      "elev_m": 12,
+      "src": "GeoNames 1796236 (Shanghai): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "rio-de-janeiro",
+      "name": {
+        "en": "Rio de Janeiro",
+        "es": "Río de Janeiro"
+      },
+      "lon": -43.1729,
+      "lat": -22.9068,
+      "elev_m": 12,
+      "src": "GeoNames 3451190 (Rio de Janeiro): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "houston",
+      "name": {
+        "en": "Houston",
+        "es": "Houston"
+      },
+      "lon": -95.3698,
+      "lat": 29.7604,
+      "elev_m": 12,
+      "src": "GeoNames 4699066 (Houston): elevation, CC BY 4.0"
+    },
+    {
+      "id": "amsterdam",
+      "name": {
+        "en": "Amsterdam",
+        "es": "Ámsterdam"
+      },
+      "lon": 4.9041,
+      "lat": 52.3676,
+      "elev_m": 13,
+      "src": "GeoNames 2759794 (Amsterdam): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "manila",
+      "name": {
+        "en": "Manila",
+        "es": "Manila"
+      },
+      "lon": 120.9842,
+      "lat": 14.5995,
+      "elev_m": 13,
+      "src": "GeoNames 1701668 (Manila): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "guayaquil",
+      "name": {
+        "en": "Guayaquil",
+        "es": "Guayaquil"
+      },
+      "lon": -79.8891,
+      "lat": -2.1709,
+      "elev_m": 14,
+      "src": "GeoNames 3657509 (Guayaquil): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "chennai",
+      "name": {
+        "en": "Chennai",
+        "es": "Chennai"
+      },
+      "lon": 80.2707,
+      "lat": 13.0827,
+      "elev_m": 14,
+      "src": "GeoNames 1264527 (Chennai): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "boston",
+      "name": {
+        "en": "Boston",
+        "es": "Boston"
+      },
+      "lon": -71.0589,
+      "lat": 42.3601,
+      "elev_m": 14,
+      "src": "GeoNames 4930956 (Boston): elevation, CC BY 4.0"
+    },
+    {
+      "id": "guangzhou",
+      "name": {
+        "en": "Guangzhou",
+        "es": "Cantón"
+      },
+      "lon": 113.2644,
+      "lat": 23.1291,
+      "elev_m": 15,
+      "src": "GeoNames 1809858 (Guangzhou): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "jakarta",
+      "name": {
+        "en": "Jakarta",
+        "es": "Yakarta"
+      },
+      "lon": 106.8456,
+      "lat": -6.2088,
+      "elev_m": 16,
+      "src": "GeoNames 1642911 (Jakarta): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "cartagena",
+      "name": {
+        "en": "Cartagena",
+        "es": "Cartagena de Indias"
+      },
+      "lon": -75.4794,
+      "lat": 10.391,
+      "elev_m": 20,
+      "src": "GeoNames 3687238 (Cartagena): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "dhaka",
+      "name": {
+        "en": "Dhaka",
+        "es": "Daca"
+      },
+      "lon": 90.4125,
+      "lat": 23.8103,
+      "elev_m": 23,
+      "src": "GeoNames 1185241 (Dhaka): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "singapore",
+      "name": {
+        "en": "Singapore",
+        "es": "Singapur"
+      },
+      "lon": 103.8198,
+      "lat": 1.3521,
+      "elev_m": 23,
+      "src": "GeoNames 1880252 (Singapore): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "barranquilla",
+      "name": {
+        "en": "Barranquilla",
+        "es": "Barranquilla"
+      },
+      "lon": -74.7813,
+      "lat": 10.9685,
+      "elev_m": 24,
+      "src": "GeoNames 3689147 (Barranquilla): terrain height (SRTM), CC BY 4.0"
     },
     {
       "id": "dar-es-salaam",
@@ -1105,8 +1016,74 @@
       },
       "lon": 39.2083,
       "lat": -6.7924,
-      "elev_m_unverified": 10,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
+      "elev_m": 24,
+      "src": "GeoNames 160263 (Dar es Salaam): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "london",
+      "name": {
+        "en": "London",
+        "es": "Londres"
+      },
+      "lon": -0.1276,
+      "lat": 51.5072,
+      "elev_m": 25,
+      "src": "GeoNames 2643743 (London): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "yangon",
+      "name": {
+        "en": "Yangon",
+        "es": "Rangún"
+      },
+      "lon": 96.1951,
+      "lat": 16.8661,
+      "elev_m": 30,
+      "src": "GeoNames 1298824 (Yangon): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "buenos-aires",
+      "name": {
+        "en": "Buenos Aires",
+        "es": "Buenos Aires"
+      },
+      "lon": -58.3816,
+      "lat": -34.6037,
+      "elev_m": 31,
+      "src": "GeoNames 3435910 (Buenos Aires): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "montevideo",
+      "name": {
+        "en": "Montevideo",
+        "es": "Montevideo"
+      },
+      "lon": -56.1645,
+      "lat": -34.9011,
+      "elev_m": 34,
+      "src": "GeoNames 3441575 (Montevideo): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "havana",
+      "name": {
+        "en": "Havana",
+        "es": "La Habana"
+      },
+      "lon": -82.3666,
+      "lat": 23.1136,
+      "elev_m": 41,
+      "src": "GeoNames 3553478 (Havana): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "tokyo",
+      "name": {
+        "en": "Tokyo",
+        "es": "Tokio"
+      },
+      "lon": 139.7671,
+      "lat": 35.6812,
+      "elev_m": 44,
+      "src": "GeoNames 1850147 (Tokyo): terrain height (SRTM), CC BY 4.0"
     },
     {
       "id": "abidjan",
@@ -1116,8 +1093,8 @@
       },
       "lon": -4.0083,
       "lat": 5.36,
-      "elev_m_unverified": 18,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
+      "elev_m": 50,
+      "src": "GeoNames 2293538 (Abidjan): terrain height (SRTM), CC BY 4.0"
     },
     {
       "id": "sydney",
@@ -1127,8 +1104,30 @@
       },
       "lon": 151.2093,
       "lat": -33.8688,
-      "elev_m_unverified": 20,
-      "check": "Estimate from memory, not checked against a source: confirm the typical city-centre height from a reliable source, then rename to elev_m, add src and move the entry to \"rise\"."
+      "elev_m": 58,
+      "src": "GeoNames 2147714 (Sydney): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "hong-kong",
+      "name": {
+        "en": "Hong Kong",
+        "es": "Hong Kong"
+      },
+      "lon": 114.1694,
+      "lat": 22.3193,
+      "elev_m": 60,
+      "src": "GeoNames 1819729 (Hong Kong): terrain height (SRTM), CC BY 4.0"
+    },
+    {
+      "id": "lisbon",
+      "name": {
+        "en": "Lisbon",
+        "es": "Lisboa"
+      },
+      "lon": -9.1393,
+      "lat": 38.7223,
+      "elev_m": 68,
+      "src": "GeoNames 2267057 (Lisbon): terrain height (SRTM), CC BY 4.0"
     }
   ]
 }
