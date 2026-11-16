@@ -163,14 +163,16 @@ export const rivers: LayerDef = {
       ctx.stroke();
     }
   },
-  labels(rc) {
+  labels(rc, inst) {
     const set = (rc.lod === '10m' && water['10m']) || water['50m'];
     if (!set) return;
     const wz = rc.webZoom;
     const es = lang() === 'es';
+    // A view of its own (an ambient playlist's) names just a few rivers and lakes, by their English names.
+    const named = inst?.options.named ? new Set(String(inst.options.named).split(',')) : null;
     for (const s of [...set.rivers, ...set.lakes]) {
       const p = s.feature.properties;
-      if (!p.n || p.sr > wz * 1.6 - 2.5) continue;
+      if (!p.n || (named ? !named.has(p.n) : p.sr > wz * 1.6 - 2.5)) continue;
       const pt = rc.project(s.c[0], s.c[1]);
       if (!pt) continue;
       rc.labels.add({ text: es && p.es ? p.es : p.n, x: pt[0], y: pt[1], priority: 360 - p.sr * 20, size: 10, italic: true, weight: 600, color: rc.theme.dark ? '#9fd8ff' : '#1f5f99', halo: rc.theme.labelHalo });

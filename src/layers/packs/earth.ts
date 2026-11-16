@@ -5,7 +5,7 @@ import { loadJSON, shapesFrom, type Shape } from '../../data/store';
 import { oklch } from '../../engine/colors';
 import { lang, fmtNumber } from '../../app/i18n';
 import type { App } from '../../app/app';
-import type { LayerDef, RenderCtx } from '../types';
+import type { LayerDef, LayerHit, RenderCtx } from '../types';
 
 // ---- Tectonic plates -------------------------------------------------------------------------
 interface PlateP { c: string; n: string }
@@ -295,6 +295,18 @@ const volcanoes: LayerDef = {
       items: ERUPTED.filter((e) => show !== 'recent' || e.min >= 1900).map((e, k) => ({ color: e.color, label: `${es ? e.es : e.en} · ${fmtNumber(gvp.filter((v) => eraOf(v.y) === k).length)}`, shape: 'dot' as const })),
       note: es ? 'Los triángulos grandes son 53 volcanes famosos. Toca uno para ver su tipo, altura y última erupción.' : 'The big triangles are 53 famous volcanoes. Tap one for its type, height and last eruption.',
     };
+  },
+  // Search (v0.32.0): every volcano of the Smithsonian's list by name.
+  searchHint: { en: 'volcanoes', es: 'volcanes' },
+  async searchLoad() { if (!gvp.length) { try { gvp = (await loadJSON<{ volcanoes: Gvp[] }>('earth/volcanoes.json')).volcanoes; } catch { gvp = []; } } },
+  search(match) {
+    const out: LayerHit[] = [];
+    for (const v of gvp) {
+      const sc = match(v.n);
+      if (sc < 50) continue;
+      out.push({ label: v.n, sub: `🌋 ${v.c}${v.y != null ? ` · ${yearText(v.y)}` : ''}`, icon: '🌋', lon: v.lon, lat: v.lat, score: sc + (famous.has(v.n) ? 8 : 0) + (v.y != null && v.y >= 1900 ? 4 : 0), wz: 7 });
+    }
+    return out.sort((a, b) => b.score - a.score).slice(0, 6);
   },
   pick(lon, lat) {
     const es = lang() === 'es';

@@ -29,6 +29,8 @@ export class Ambient {
   private run = 0;
   /** The place the globe sways around (a playlist view of a place), and when the sway started. */
   private place: { lon: number; lat: number; zoom: number; t0: number } | null = null;
+  /** Inside the Earth (v0.32.0): cuts the globe open for a playlist's view. */
+  cut: { showCut(o: { peel?: number; focus?: string; lon?: number }): void; hideCut(): void } | null = null;
   /** For tests: the playlist and the view shown, and what was read aloud. */
   info = { playlist: '', index: -1, title: '', words: '', views: 0 };
 
@@ -152,6 +154,9 @@ export class Ambient {
     await app.setStack(it.stack);
     // Each view's filters with its own options (and nothing left from the view before).
     for (const lid of it.stack) app.setOptions(lid, it.options?.[lid] ?? {});
+    // The Earth cut open (Inside the Earth), or not.
+    if (it.cut) this.cut?.showCut({ ...it.cut, lon: it.fly?.[0] ?? view.lon });
+    else this.cut?.hideCut();
     if (it.fly) {
       const [lon, lat, zoom] = it.fly;
       view.flyTo({ lon, lat, zoom }, 2600);
@@ -197,6 +202,7 @@ export class Ambient {
     clearInterval(this.clockTimer);
     clearTimeout(this.nextTimer);
     if (this.list) stopSpeaking();
+    this.cut?.hideCut();
     // A playlist changed the map: what was on it before comes back, and is saved again once it is back.
     const release = () => { if (!app.ambient.on) { app.held = null; app.save(); } };
     const changed = !!this.saved;

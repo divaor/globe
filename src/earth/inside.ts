@@ -88,8 +88,24 @@ export class InsideEarth {
     app.renderer.requestRender();
   }
 
+  /** Cut open by a tour or ambient mode: no panel, no chip, centred on `lon`. hideCut() takes it away again. */
+  private byTour = false;
+  showCut(o: { peel?: number; focus?: string; lon?: number }) {
+    const app = this.app;
+    if (!this.active) {
+      this.active = true; this.byTour = true;
+      if (app.projection !== 'globe') app.setProjection('globe');
+    }
+    if (o.lon != null) this.st.lon1 = Math.round(o.lon) - 45;
+    this.peelGoal = o.peel ?? 0;
+    this.st.focus = (o.focus as Layer['id'] | undefined) ?? null;
+    app.renderer.requestRender();
+  }
+  hideCut() { if (this.active && this.byTour) { this.byTour = false; this.stop(); } }
+
   /** Takes the cut away. */
   stop() {
+    this.byTour = false;
     this.active = false;
     this.st.peel = this.peelGoal = 0; this.st.focus = null; this.dig = null;
     this.chip?.remove(); this.chip = null;

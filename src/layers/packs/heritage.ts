@@ -103,6 +103,9 @@ function visible(inst: LayerInstance): Site[] {
   if (!doc) return [];
   const show = String(inst.options.show ?? 'all');
   const year = playYear(inst);
+  // A view of its own (an ambient playlist's) shows just a few sites, by their numbers on the list.
+  const pick = inst.options.pick ? new Set(String(inst.options.pick).split(',').map(Number)) : null;
+  if (pick) return byPop.filter((s) => pick.has(s.ref));
   return byPop.filter((s) => {
     const left = gone(s);
     if (year != null) return s.y <= year && (left == null || left > year) && (show === 'all' || show === s.c || (show === 'danger' && inDanger(s, year)));
@@ -144,7 +147,7 @@ const siteR = (z: number) => Math.max(2.4, Math.min(7, 1.6 + z * 1.1));
 /** This frame's dots (a site in danger takes the room of its ring); the better-known site keeps its place. */
 function siteDots(rc: RenderCtx, inst: LayerInstance): Placed<Site>[] {
   const r = siteR(rc.webZoom), year = playYear(inst) ?? LAST;
-  return crowdOf<Site>(inst, SITES_APART).place(rc, () => visible(inst), (s) => s.at, (s) => (inDanger(s, year) ? r + 3 : r), (s) => 1 + s.pop, `${inst.options.show ?? 'all'}|${playYear(inst) ?? ''}`);
+  return crowdOf<Site>(inst, SITES_APART).place(rc, () => visible(inst), (s) => s.at, (s) => (inDanger(s, year) ? r + 3 : r), (s) => 1 + s.pop, `${inst.options.show ?? 'all'}|${playYear(inst) ?? ''}|${inst.options.pick ?? ''}`);
 }
 export const heritage: LayerDef = {
   id: 'heritage', category: 'culture', icon: '🏛️', kind: 'overlay', stackOrder: 4,
@@ -213,10 +216,12 @@ export const heritage: LayerDef = {
     for (const p of danger) { ctx.beginPath(); ctx.arc(p[0], p[1], r + 2.6, 0, Math.PI * 2); ctx.stroke(); }
   },
   labels(rc, inst) {
-    if (!doc || rc.webZoom < 4) return;
+    const picked = !!inst.options.pick;
+    if (!doc || (rc.webZoom < 4 && !picked)) return;
     const color = rc.theme.dark ? '#ffe3b3' : '#7a4a00';
-    // Only the best-known sites are named until the map is close (many official names are long).
-    const minPop = rc.webZoom < 6 ? 90 : rc.webZoom < 8 ? 40 : 0;
+    // Only the best-known sites are named until the map is close (many official names are long); a few picked
+    // ones always are.
+    const minPop = picked ? 0 : rc.webZoom < 6 ? 90 : rc.webZoom < 8 ? 40 : 0;
     const crowd = crowdOf<Site>(inst, SITES_APART);
     for (const d of siteDots(rc, inst)) {
       const s = d.it;

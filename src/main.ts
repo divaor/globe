@@ -90,6 +90,8 @@ async function boot() {
   guide.plants = plants;
   // Inside the Earth (v0.32.0): More → Inside the Earth, the globe cut open, dig down from here, seismic waves.
   const inside = new InsideEarth(app, shell);
+  learn.inside = inside;
+  shell.ambient.cut = inside;
   // A story step on another world shows that world under the story.
   worldHook.show = (id) => { space.surface.quiet = !!id; void space.surface.set(id); };
   // Your own data: tables kept on this device become filters; the panel reads new ones.

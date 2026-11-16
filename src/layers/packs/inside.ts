@@ -3,7 +3,7 @@
 // wonders (caves, geysers and hot springs, impact craters, mines).
 import type { App } from '../../app/app';
 import type { Shell } from '../../ui/shell';
-import type { LayerDef, LayerInstance, LayerTapUi, RenderCtx } from '../types';
+import type { LayerDef, LayerHit, LayerInstance, LayerTapUi, RenderCtx } from '../types';
 import { loadJSON } from '../../data/store';
 import { fmtNumber, lang } from '../../app/i18n';
 import { L } from '../../play/host';
@@ -357,6 +357,17 @@ export const undergroundLayer: LayerDef = {
       items: (Object.keys(KIND) as (keyof typeof KIND)[]).filter((k) => show === 'all' || k === show).map((k) => ({ color: KIND[k].color, icon: KIND[k].e, label: `${es() ? KIND[k].es : KIND[k].en} · ${fmtNumber(wonders.filter((w) => w.k === k).length)}`, shape: 'dot' as const })),
       note: L('The famous ones are bigger; zoom in for the rest.', 'Los famosos son más grandes; acércate para ver el resto.'),
     };
+  },
+  searchHint: { en: 'caves, geysers, craters and mines', es: 'cuevas, géiseres, cráteres y minas' },
+  async searchLoad() { if (!wonders.length) wonders = (await loadJSON<{ wonders: Wonder[] }>('earth/wonders.json')).wonders; },
+  search(match) {
+    const out: LayerHit[] = [];
+    for (const w of wonders) {
+      const sc = Math.max(match(w.n[0]), match(w.n[1]));
+      if (sc < 50) continue;
+      out.push({ label: es() ? w.n[1] : w.n[0], sub: `${KIND[w.k].e} ${es() ? KIND[w.k].es : KIND[w.k].en}${w.place ? ` · ${es() ? w.place[1] : w.place[0]}` : ''}`, icon: KIND[w.k].e, lon: w.at[0], lat: w.at[1], score: sc + (w.top ? 8 : 0), wz: 8 });
+    }
+    return out.sort((a, b) => b.score - a.score).slice(0, 6);
   },
   tap(_lon, _lat, inst, ui) {
     const show = String(inst.options.show ?? 'all');
