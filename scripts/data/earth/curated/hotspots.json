@@ -1,0 +1,828 @@
+{
+  "hotspots": [
+    {
+      "id": "hawaii",
+      "name": {
+        "en": "Hawaiian hotspot",
+        "es": "Punto caliente de Hawái"
+      },
+      "lon": -155.3,
+      "lat": 19.2,
+      "text": {
+        "en": "The Hawaiian hotspot is a plume of hot rock rising under the middle of the Pacific plate; today it feeds Kīlauea, Mauna Loa and the undersea volcano Kamaʻehuakanaloa (formerly Lōʻihi). As the plate drifted northwest over it for more than 80 million years, it built the Hawaiian Islands and the 6,000 km Hawaiian–Emperor chain of drowned seamounts, which turns sharply at a bend about 47 million years old.",
+        "es": "El punto caliente de Hawái es una columna de roca caliente que sube bajo el centro de la placa del Pacífico; hoy alimenta el Kīlauea, el Mauna Loa y el volcán submarino Kamaʻehuakanaloa (antes Lōʻihi). Mientras la placa se deslizaba hacia el noroeste sobre él durante más de 80 millones de años, formó las islas de Hawái y la cadena Hawái-Emperador, de 6 000 km de montes submarinos hundidos, que gira bruscamente en un codo de unos 47 millones de años."
+      },
+      "chain": [
+        {
+          "name": {
+            "en": "Kīlauea (Island of Hawaiʻi)",
+            "es": "Kīlauea (isla de Hawái)"
+          },
+          "lon": -155.287,
+          "lat": 19.421,
+          "age_ma": 0,
+          "src": "https://volcano.si.edu/volcano.cfm?vn=332010"
+        },
+        {
+          "name": {
+            "en": "Kamaʻehuakanaloa (Lōʻihi), undersea",
+            "es": "Kamaʻehuakanaloa (Lōʻihi), submarino"
+          },
+          "lon": -155.27,
+          "lat": 18.92,
+          "age_ma": 0,
+          "src": "https://volcano.si.edu/volcano.cfm?vn=332000"
+        },
+        {
+          "name": {
+            "en": "West Maui (Maui)",
+            "es": "Maui Oeste (Maui)"
+          },
+          "lon": -156.59,
+          "lat": 20.89,
+          "age_ma": 1.3,
+          "src": "https://pubs.usgs.gov/pp/1987/1350/pdf/chapters/pp1350_ch1.pdf"
+        },
+        {
+          "name": {
+            "en": "Waiʻanae (Oʻahu)",
+            "es": "Waiʻanae (Oʻahu)"
+          },
+          "lon": -158.15,
+          "lat": 21.47,
+          "age_ma": 3,
+          "src": "https://pubs.usgs.gov/pp/1987/1350/pdf/chapters/pp1350_ch1.pdf",
+          "note": "Waiʻanae shield lavas about 3.0–3.9 Ma; Koʻolau, the island's other volcano, about 2.6 Ma."
+        },
+        {
+          "name": {
+            "en": "Kauaʻi",
+            "es": "Kauaʻi"
+          },
+          "lon": -159.53,
+          "lat": 22.07,
+          "age_ma": 5.1,
+          "src": "https://pubs.usgs.gov/pp/1987/1350/pdf/chapters/pp1350_ch1.pdf"
+        },
+        {
+          "name": {
+            "en": "Nihoa",
+            "es": "Nihoa"
+          },
+          "lon": -161.921,
+          "lat": 23.06,
+          "age_ma": 7.2,
+          "src": "https://pubs.usgs.gov/pp/1987/1350/pdf/chapters/pp1350_ch1.pdf"
+        },
+        {
+          "name": {
+            "en": "Mokumanamana (Necker Island)",
+            "es": "Mokumanamana (isla Necker)"
+          },
+          "lon": -164.7,
+          "lat": 23.575,
+          "age_ma": 10.3,
+          "src": "https://pubs.usgs.gov/pp/1987/1350/pdf/chapters/pp1350_ch1.pdf"
+        },
+        {
+          "name": {
+            "en": "Midway Atoll",
+            "es": "Atolón Midway"
+          },
+          "lon": -177.37,
+          "lat": 28.21,
+          "age_ma": 27.7,
+          "src": "https://www.usgs.gov/publications/revised-age-midway-volcano-hawaiian-volcanic-chain",
+          "note": "27.7 ± 0.6 Ma (Dalrymple et al. 1977); some later work gives about 27 Ma."
+        },
+        {
+          "name": {
+            "en": "Daikakuji Guyot (the bend)",
+            "es": "Guyot Daikakuji (el codo)"
+          },
+          "lon": 172.3,
+          "lat": 32.1,
+          "age_ma": 47.5,
+          "src": "https://doi.org/10.1002/ggge.20267",
+          "note": "Volcanism at the bend began by at least 47.5 Ma (O'Connor et al. 2013); Sharp & Clague (2006) put the start of the bend at about 50 Ma."
+        },
+        {
+          "name": {
+            "en": "Kōko Guyot",
+            "es": "Guyot Kōko"
+          },
+          "lon": 171.58,
+          "lat": 35.25,
+          "age_ma": 50,
+          "src": "https://doi.org/10.1126/science.1128489",
+          "note": "Published ages range about 48–52 Ma by sample and method."
+        },
+        {
+          "name": {
+            "en": "Nintoku Seamount",
+            "es": "Monte submarino Nintoku"
+          },
+          "lon": 170.38,
+          "lat": 41.33,
+          "age_ma": 56,
+          "src": "https://doi.org/10.1029/2004GC000704"
+        },
+        {
+          "name": {
+            "en": "Suiko Seamount",
+            "es": "Monte submarino Suiko"
+          },
+          "lon": 170.03,
+          "lat": 44.78,
+          "age_ma": 61,
+          "src": "https://doi.org/10.1029/2004GC000704",
+          "note": "40Ar/39Ar about 61 Ma; an older K-Ar date gave 64.7 Ma."
+        },
+        {
+          "name": {
+            "en": "Detroit Seamount (south)",
+            "es": "Monte submarino Detroit (sur)"
+          },
+          "lon": 167.73,
+          "lat": 50.95,
+          "age_ma": 76,
+          "src": "https://doi.org/10.1029/2004GC000704",
+          "note": "ODP Site 1203, about 75.8 Ma."
+        },
+        {
+          "name": {
+            "en": "Detroit Seamount (north)",
+            "es": "Monte submarino Detroit (norte)"
+          },
+          "lon": 168.33,
+          "lat": 51.45,
+          "age_ma": 81,
+          "src": "https://www-odp.tamu.edu/publications/145_SR/145TOC.HTM",
+          "note": "ODP Site 884, about 81 Ma (Keller, Duncan & Fisk 1995)."
+        },
+        {
+          "name": {
+            "en": "Meiji Seamount",
+            "es": "Monte submarino Meiji"
+          },
+          "lon": 164.5,
+          "lat": 53.2,
+          "age_ma": 82,
+          "src": "https://doi.org/10.1029/2004GC000704",
+          "note": "No reliable radiometric age; about 82–85 Ma is an estimate from its position at the old end of the chain."
+        }
+      ],
+      "src": [
+        "https://pubs.usgs.gov/pp/1987/1350/pdf/chapters/pp1350_ch1.pdf",
+        "https://doi.org/10.1126/science.1128489",
+        "https://doi.org/10.1002/ggge.20267",
+        "https://doi.org/10.1029/2004GC000704",
+        "https://www.usgs.gov/observatories/hvo"
+      ]
+    },
+    {
+      "id": "yellowstone",
+      "name": {
+        "en": "Yellowstone hotspot",
+        "es": "Punto caliente de Yellowstone"
+      },
+      "lon": -110.5,
+      "lat": 44.6,
+      "text": {
+        "en": "The Yellowstone hotspot is a column of hot mantle under the North American plate; it keeps a large body of magma under Yellowstone National Park and heats its geysers. As the continent moved southwest over it, it left a trail of giant calderas more than 600 km long, now mostly buried under the lava plains of the Snake River Plain in Idaho.",
+        "es": "El punto caliente de Yellowstone es una columna de manto caliente bajo la placa norteamericana; mantiene una gran masa de magma bajo el Parque Nacional Yellowstone y calienta sus géiseres. Mientras el continente se movía hacia el suroeste sobre él, dejó un rastro de calderas gigantes de más de 600 km, hoy casi todo enterrado bajo las llanuras de lava de la llanura del río Snake, en Idaho."
+      },
+      "chain": [
+        {
+          "name": {
+            "en": "McDermitt volcanic field (Nevada–Oregon)",
+            "es": "Campo volcánico de McDermitt (Nevada-Oregón)"
+          },
+          "lon": -117.9,
+          "lat": 42.0,
+          "age_ma": 16.5,
+          "src": "https://www.mantleplumes.org/WebDocuments/Pierce2009.pdf",
+          "note": "Calderas in the field date from about 16.4 to 15.5 Ma; some papers give 16.1 Ma for the main caldera."
+        },
+        {
+          "name": {
+            "en": "Bruneau–Jarbidge field (Idaho)",
+            "es": "Campo de Bruneau-Jarbidge (Idaho)"
+          },
+          "lon": -115.5,
+          "lat": 42.4,
+          "age_ma": 12.5,
+          "src": "https://www.mantleplumes.org/WebDocuments/Pierce2009.pdf"
+        },
+        {
+          "name": {
+            "en": "Twin Falls field (Idaho)",
+            "es": "Campo de Twin Falls (Idaho)"
+          },
+          "lon": -114.5,
+          "lat": 42.6,
+          "age_ma": 10.8,
+          "src": "https://www.mantleplumes.org/WebDocuments/Pierce2009.pdf",
+          "note": "Often rounded to 10.5 Ma."
+        },
+        {
+          "name": {
+            "en": "Picabo field (Idaho)",
+            "es": "Campo de Picabo (Idaho)"
+          },
+          "lon": -113.6,
+          "lat": 43.35,
+          "age_ma": 10.2,
+          "src": "https://www.mantleplumes.org/WebDocuments/Pierce2009.pdf"
+        },
+        {
+          "name": {
+            "en": "Heise field (Idaho)",
+            "es": "Campo de Heise (Idaho)"
+          },
+          "lon": -112.0,
+          "lat": 43.75,
+          "age_ma": 6.6,
+          "src": "https://www.mantleplumes.org/WebDocuments/Pierce2009.pdf"
+        },
+        {
+          "name": {
+            "en": "Huckleberry Ridge caldera (first Yellowstone super-eruption)",
+            "es": "Caldera de Huckleberry Ridge (primera supererupción de Yellowstone)"
+          },
+          "lon": -111.0,
+          "lat": 44.4,
+          "age_ma": 2.08,
+          "src": "https://www.usgs.gov/volcanoes/yellowstone",
+          "note": "Often given as 2.1 Ma."
+        },
+        {
+          "name": {
+            "en": "Henrys Fork caldera (Mesa Falls eruption)",
+            "es": "Caldera de Henrys Fork (erupción de Mesa Falls)"
+          },
+          "lon": -111.33,
+          "lat": 44.33,
+          "age_ma": 1.3,
+          "src": "https://www.usgs.gov/volcanoes/yellowstone/science/pyroclastic-flows-yellowstone"
+        },
+        {
+          "name": {
+            "en": "Yellowstone caldera (Lava Creek eruption)",
+            "es": "Caldera de Yellowstone (erupción de Lava Creek)"
+          },
+          "lon": -110.55,
+          "lat": 44.55,
+          "age_ma": 0.631,
+          "src": "https://www.usgs.gov/observatories/yvo/news/thinking-outside-caldera-understanding-basaltic-eruptions-yellowstone",
+          "note": "USGS now uses 631,000 years; older sources and the Smithsonian give 640,000 years."
+        }
+      ],
+      "src": [
+        "https://www.mantleplumes.org/WebDocuments/Pierce2009.pdf",
+        "https://www.usgs.gov/volcanoes/yellowstone",
+        "https://www.usgs.gov/volcanoes/yellowstone/science/pyroclastic-flows-yellowstone",
+        "https://volcano.si.edu/volcano.cfm?vn=325010"
+      ]
+    },
+    {
+      "id": "iceland",
+      "name": {
+        "en": "Iceland hotspot",
+        "es": "Punto caliente de Islandia"
+      },
+      "lon": -17.5,
+      "lat": 64.5,
+      "text": {
+        "en": "The Iceland hotspot lies under the Mid-Atlantic Ridge, so Iceland grows both from a rising plume and from two plates pulling apart. When the plume arrived, about 62 to 56 million years ago, it spread lava over Greenland, the Faroe Islands and northern Britain and Ireland (the North Atlantic igneous province), and since then it has built the shallow Greenland–Iceland–Faroe ridge and Iceland itself.",
+        "es": "El punto caliente de Islandia está bajo la dorsal mesoatlántica, así que Islandia crece por una columna de manto que sube y por dos placas que se separan. Cuando llegó la columna, hace entre 62 y 56 millones de años, cubrió de lava Groenlandia, las islas Feroe y el norte de Gran Bretaña e Irlanda (la provincia ígnea del Atlántico Norte); desde entonces formó la dorsal poco profunda Groenlandia-Islandia-Feroe y la propia Islandia."
+      },
+      "chain": [
+        {
+          "name": {
+            "en": "West Greenland lavas (Disko and Nuussuaq)",
+            "es": "Lavas del oeste de Groenlandia (Disko y Nuussuaq)"
+          },
+          "lon": -53.5,
+          "lat": 69.8,
+          "age_ma": 62,
+          "src": "https://www.lyellcollection.org/doi/full/10.1144/sp447.10",
+          "note": "Oldest lavas of the province, about 62–60 Ma."
+        },
+        {
+          "name": {
+            "en": "Antrim lavas, Giant's Causeway (Northern Ireland)",
+            "es": "Lavas de Antrim, Calzada del Gigante (Irlanda del Norte)"
+          },
+          "lon": -6.512,
+          "lat": 55.241,
+          "age_ma": 60,
+          "src": "https://academic.oup.com/gji/article/182/1/183/560521",
+          "note": "Lower, middle and upper Antrim lava formations dated 62.6, 61.3 and 59.6 Ma."
+        },
+        {
+          "name": {
+            "en": "Faroe Islands",
+            "es": "Islas Feroe"
+          },
+          "lon": -6.9,
+          "lat": 62.0,
+          "age_ma": 56,
+          "src": "https://doi.org/10.1126/science.1135274",
+          "note": "Faroe lavas span about 60–55 Ma; the upper basalts are about 55.9 Ma."
+        },
+        {
+          "name": {
+            "en": "East Greenland flood basalts (Blosseville Coast)",
+            "es": "Basaltos del este de Groenlandia (costa de Blosseville)"
+          },
+          "lon": -25.5,
+          "lat": 68.7,
+          "age_ma": 56,
+          "src": "https://doi.org/10.1126/science.1135274"
+        },
+        {
+          "name": {
+            "en": "Westfjords (oldest rocks in Iceland)",
+            "es": "Fiordos del Oeste (rocas más antiguas de Islandia)"
+          },
+          "lon": -23.0,
+          "lat": 66.0,
+          "age_ma": 16,
+          "src": "https://doi.org/10.1029/2022JB026265",
+          "note": "Oldest exposed rocks about 15–16 Ma; some sources say up to 18 Ma."
+        },
+        {
+          "name": {
+            "en": "Bárðarbunga, under Vatnajökull",
+            "es": "Bárðarbunga, bajo el Vatnajökull"
+          },
+          "lon": -17.53,
+          "lat": 64.64,
+          "age_ma": 0,
+          "src": "https://volcano.si.edu/volcano.cfm?vn=373030"
+        }
+      ],
+      "src": [
+        "https://www.lyellcollection.org/doi/full/10.1144/sp447.10",
+        "https://academic.oup.com/gji/article/182/1/183/560521",
+        "https://doi.org/10.1126/science.1135274",
+        "https://doi.org/10.1029/2022JB026265",
+        "https://volcano.si.edu/volcano.cfm?vn=373030"
+      ]
+    },
+    {
+      "id": "reunion",
+      "name": {
+        "en": "Réunion hotspot",
+        "es": "Punto caliente de La Reunión"
+      },
+      "lon": 55.708,
+      "lat": -21.244,
+      "text": {
+        "en": "The Réunion hotspot feeds Piton de la Fournaise, one of the most active volcanoes on Earth, on the island of Réunion in the Indian Ocean. Its plume head erupted the Deccan Traps of India about 66 million years ago; as India moved north, the hotspot left the Laccadive, Maldive and Chagos ridges, and after a mid-ocean ridge split the track, the Mascarene Plateau, Mauritius and Réunion.",
+        "es": "El punto caliente de La Reunión alimenta el Piton de la Fournaise, uno de los volcanes más activos de la Tierra, en la isla de La Reunión, en el océano Índico. La cabeza de su columna formó los traps del Decán, en la India, hace unos 66 millones de años; mientras la India avanzaba hacia el norte, el punto caliente dejó las dorsales de Laquedivas, Maldivas y Chagos y, después de que una dorsal oceánica partiera el rastro, la meseta de las Mascareñas, Mauricio y La Reunión."
+      },
+      "chain": [
+        {
+          "name": {
+            "en": "Deccan Traps (Western Ghats, India)",
+            "es": "Traps del Decán (Ghats occidentales, India)"
+          },
+          "lon": 73.66,
+          "lat": 17.92,
+          "age_ma": 66,
+          "src": "https://doi.org/10.1126/science.aau2422",
+          "note": "Main eruptions about 66.3–65.6 Ma, around the end-Cretaceous extinction."
+        },
+        {
+          "name": {
+            "en": "Maldives Ridge (ODP Site 715)",
+            "es": "Dorsal de las Maldivas (sitio ODP 715)"
+          },
+          "lon": 73.83,
+          "lat": 5.08,
+          "age_ma": 57,
+          "src": "https://www-odp.tamu.edu/publications/115_SR/VOLUME/CHAPTERS/sr115_04.pdf",
+          "note": "About 57 Ma (Duncan & Hargraves 1990); value not rechecked against the paper's table."
+        },
+        {
+          "name": {
+            "en": "Chagos Bank (ODP Site 713)",
+            "es": "Banco de Chagos (sitio ODP 713)"
+          },
+          "lon": 73.39,
+          "lat": -4.19,
+          "age_ma": 49,
+          "src": "https://www-odp.tamu.edu/publications/115_SR/VOLUME/CHAPTERS/sr115_04.pdf",
+          "note": "About 49 Ma (Duncan & Hargraves 1990); value not rechecked against the paper's table."
+        },
+        {
+          "name": {
+            "en": "Nazareth Bank, Mascarene Plateau (ODP Site 706)",
+            "es": "Banco de Nazareth, meseta de las Mascareñas (sitio ODP 706)"
+          },
+          "lon": 61.37,
+          "lat": -13.11,
+          "age_ma": 33,
+          "src": "https://www-odp.tamu.edu/publications/115_SR/VOLUME/CHAPTERS/sr115_04.pdf",
+          "note": "32.9 ± 0.7 Ma."
+        },
+        {
+          "name": {
+            "en": "Mauritius",
+            "es": "Mauricio"
+          },
+          "lon": 57.55,
+          "lat": -20.25,
+          "age_ma": 8.9,
+          "src": "https://www.sciencedirect.com/science/article/abs/pii/S0377027311002034",
+          "note": "Start of shield building (Moore et al. 2011); older studies gave about 7.8–8.3 Ma."
+        },
+        {
+          "name": {
+            "en": "Piton des Neiges (Réunion)",
+            "es": "Piton des Neiges (La Reunión)"
+          },
+          "lon": 55.48,
+          "lat": -21.1,
+          "age_ma": 2,
+          "src": "https://doi.org/10.1029/2004GC000784"
+        },
+        {
+          "name": {
+            "en": "Piton de la Fournaise (Réunion)",
+            "es": "Piton de la Fournaise (La Reunión)"
+          },
+          "lon": 55.708,
+          "lat": -21.244,
+          "age_ma": 0,
+          "src": "https://volcano.si.edu/volcano.cfm?vn=233020"
+        }
+      ],
+      "src": [
+        "https://doi.org/10.1126/science.aau2422",
+        "https://www-odp.tamu.edu/publications/115_SR/VOLUME/CHAPTERS/sr115_04.pdf",
+        "https://www.sciencedirect.com/science/article/abs/pii/S0377027311002034",
+        "https://volcano.si.edu/volcano.cfm?vn=233020"
+      ]
+    },
+    {
+      "id": "galapagos",
+      "name": {
+        "en": "Galápagos hotspot",
+        "es": "Punto caliente de Galápagos"
+      },
+      "lon": -91.55,
+      "lat": -0.37,
+      "text": {
+        "en": "The Galápagos hotspot lies under Fernandina and western Isabela, just south of the Galápagos spreading ridge where the Cocos and Nazca plates move apart. It built the islands, which get older towards the east, and two drowned ridges of old volcanoes: the Carnegie Ridge on the Nazca plate towards Ecuador and the Cocos Ridge on the Cocos plate towards Costa Rica.",
+        "es": "El punto caliente de Galápagos está bajo Fernandina y el oeste de Isabela, un poco al sur de la dorsal de Galápagos, donde las placas de Cocos y de Nazca se separan. Formó las islas, que son más antiguas hacia el este, y dos dorsales sumergidas de volcanes viejos: la de Carnegie, sobre la placa de Nazca, hacia Ecuador, y la de Cocos, sobre la placa de Cocos, hacia Costa Rica."
+      },
+      "chain": [
+        {
+          "name": {
+            "en": "Drowned islands on the Cocos Ridge (off Costa Rica)",
+            "es": "Islas sumergidas de la dorsal de Cocos (frente a Costa Rica)"
+          },
+          "lon": -84.5,
+          "lat": 8.0,
+          "age_ma": 14.5,
+          "src": "https://doi.org/10.1130/0091-7613(1999)027<0499:DMYOGA>2.3.CO;2",
+          "note": "Seamounts dated 13–14.5 Ma (Werner et al. 1999); position approximate."
+        },
+        {
+          "name": {
+            "en": "Drowned islands on the Carnegie Ridge",
+            "es": "Islas sumergidas de la dorsal de Carnegie"
+          },
+          "lon": -88.0,
+          "lat": -1.3,
+          "age_ma": 9,
+          "src": "https://doi.org/10.1038/355246a0",
+          "note": "Drowned islands east of the archipelago dated about 5–9 Ma (Christie et al. 1992); position approximate."
+        },
+        {
+          "name": {
+            "en": "Española",
+            "es": "Española"
+          },
+          "lon": -89.68,
+          "lat": -1.38,
+          "age_ma": 3,
+          "src": "https://doi.org/10.1029/93JB02018",
+          "note": "Dated lavas about 2.6–3.3 Ma; popular sources say 3–4 Ma. Oldest of the present islands."
+        },
+        {
+          "name": {
+            "en": "San Cristóbal",
+            "es": "San Cristóbal"
+          },
+          "lon": -89.43,
+          "lat": -0.85,
+          "age_ma": 2.4,
+          "src": "https://doi.org/10.1029/93JB02018"
+        },
+        {
+          "name": {
+            "en": "Fernandina",
+            "es": "Fernandina"
+          },
+          "lon": -91.55,
+          "lat": -0.37,
+          "age_ma": 0,
+          "src": "https://volcano.si.edu/volcano.cfm?vn=353010"
+        }
+      ],
+      "src": [
+        "https://doi.org/10.1029/93JB02018",
+        "https://doi.org/10.1038/355246a0",
+        "https://www.galapagos.org/about_galapagos/history/",
+        "https://volcano.si.edu/volcano.cfm?vn=353010"
+      ]
+    },
+    {
+      "id": "canary",
+      "name": {
+        "en": "Canary hotspot",
+        "es": "Punto caliente de Canarias"
+      },
+      "lon": -18.0,
+      "lat": 27.75,
+      "text": {
+        "en": "The Canary hotspot lies under the western Canary Islands, off northwest Africa; El Hierro erupted under the sea in 2011–2012 and La Palma on land in 2021. Because the African plate moves very slowly, each island stays active for millions of years, and the islands get older towards the east, to Fuerteventura and Lanzarote, about 15 to 20 million years old.",
+        "es": "El punto caliente de Canarias está bajo las islas Canarias occidentales, frente al noroeste de África; El Hierro tuvo una erupción submarina en 2011-2012 y La Palma una en tierra en 2021. Como la placa africana se mueve muy despacio, cada isla sigue activa durante millones de años, y las islas son más antiguas hacia el este, hasta Fuerteventura y Lanzarote, de unos 15 a 20 millones de años."
+      },
+      "note": "Whether a deep mantle plume feeds the Canaries is still debated; ages are of the oldest rocks above sea level (submarine volcanism is older).",
+      "chain": [
+        {
+          "name": {
+            "en": "Fuerteventura",
+            "es": "Fuerteventura"
+          },
+          "lon": -14.0,
+          "lat": 28.4,
+          "age_ma": 20.6,
+          "src": "https://doi.org/10.1017/S0016756898001447",
+          "note": "Oldest subaerial lavas; submarine volcanism began much earlier."
+        },
+        {
+          "name": {
+            "en": "Lanzarote",
+            "es": "Lanzarote"
+          },
+          "lon": -13.63,
+          "lat": 29.05,
+          "age_ma": 15.5,
+          "src": "https://doi.org/10.1017/S0016756898001447"
+        },
+        {
+          "name": {
+            "en": "Gran Canaria",
+            "es": "Gran Canaria"
+          },
+          "lon": -15.6,
+          "lat": 27.96,
+          "age_ma": 14.5,
+          "src": "https://doi.org/10.1017/S0016756898001447"
+        },
+        {
+          "name": {
+            "en": "Tenerife",
+            "es": "Tenerife"
+          },
+          "lon": -16.6,
+          "lat": 28.27,
+          "age_ma": 11.6,
+          "src": "https://doi.org/10.1017/S0016756898001447",
+          "note": "Some studies give under 7.5 Ma for the oldest dated subaerial rocks."
+        },
+        {
+          "name": {
+            "en": "La Palma",
+            "es": "La Palma"
+          },
+          "lon": -17.85,
+          "lat": 28.65,
+          "age_ma": 1.7,
+          "src": "https://doi.org/10.1017/S0016756898001447"
+        },
+        {
+          "name": {
+            "en": "El Hierro",
+            "es": "El Hierro"
+          },
+          "lon": -18.0,
+          "lat": 27.75,
+          "age_ma": 1.1,
+          "src": "https://doi.org/10.1017/S0016756898001447"
+        }
+      ],
+      "src": [
+        "https://doi.org/10.1017/S0016756898001447",
+        "https://www.mantleplumes.org/Canary.html"
+      ]
+    },
+    {
+      "id": "afar",
+      "name": {
+        "en": "Afar hotspot",
+        "es": "Punto caliente de Afar"
+      },
+      "lon": 41.0,
+      "lat": 11.5,
+      "text": {
+        "en": "The Afar hotspot lies under the Afar region of Ethiopia, Eritrea and Djibouti, where the Red Sea, the Gulf of Aden and the East African Rift meet. About 30 million years ago its plume head poured out the Ethiopian and Yemeni flood basalts, up to about 2 km thick, and today it feeds volcanoes such as Erta Ale while Africa slowly splits apart.",
+        "es": "El punto caliente de Afar está bajo la región de Afar, en Etiopía, Eritrea y Yibuti, donde se unen el mar Rojo, el golfo de Adén y el Rift de África Oriental. Hace unos 30 millones de años, la cabeza de su columna derramó los basaltos de Etiopía y Yemen, de hasta unos 2 km de espesor, y hoy alimenta volcanes como el Erta Ale mientras África se parte lentamente."
+      },
+      "note": "Africa moves slowly over this hotspot, so it has no clear age-progressive track; the points below show its flood basalts and present activity.",
+      "chain": [
+        {
+          "name": {
+            "en": "Ethiopian flood basalts (Simien Mountains)",
+            "es": "Basaltos de Etiopía (montes Simien)"
+          },
+          "lon": 38.2,
+          "lat": 13.2,
+          "age_ma": 30,
+          "src": "https://doi.org/10.1038/39853",
+          "note": "Bulk erupted about 31–29 Ma; the top of the lava pile is as young as about 25 Ma."
+        },
+        {
+          "name": {
+            "en": "Yemen flood basalts",
+            "es": "Basaltos de Yemen"
+          },
+          "lon": 44.2,
+          "lat": 15.4,
+          "age_ma": 30,
+          "src": "https://www.mantleplumes.org/Afar.html"
+        },
+        {
+          "name": {
+            "en": "Erta Ale (Ethiopia)",
+            "es": "Erta Ale (Etiopía)"
+          },
+          "lon": 40.67,
+          "lat": 13.6,
+          "age_ma": 0,
+          "src": "https://volcano.si.edu/volcano.cfm?vn=221080"
+        }
+      ],
+      "src": [
+        "https://doi.org/10.1038/39853",
+        "https://www.mantleplumes.org/Afar.html",
+        "https://volcano.si.edu/volcano.cfm?vn=221080"
+      ]
+    },
+    {
+      "id": "tristan",
+      "name": {
+        "en": "Tristan hotspot",
+        "es": "Punto caliente de Tristán"
+      },
+      "lon": -12.28,
+      "lat": -37.09,
+      "text": {
+        "en": "The Tristan hotspot lies under the South Atlantic near Tristan da Cunha and Gough Island, east of the Mid-Atlantic Ridge. About 132 million years ago, as South America and Africa began to split, its plume head erupted the Paraná–Etendeka flood basalts of Brazil and Namibia; since then it has built the Walvis Ridge on the African plate and the Rio Grande Rise on the South American plate.",
+        "es": "El punto caliente de Tristán está bajo el Atlántico Sur, cerca de Tristán de Acuña y la isla Gough, al este de la dorsal mesoatlántica. Hace unos 132 millones de años, cuando Sudamérica y África empezaban a separarse, la cabeza de su columna formó los basaltos de Paraná-Etendeka, en Brasil y Namibia; desde entonces construyó la dorsal de Walvis, sobre la placa africana, y la elevación de Río Grande, sobre la sudamericana."
+      },
+      "chain": [
+        {
+          "name": {
+            "en": "Paraná flood basalts (southern Brazil)",
+            "es": "Basaltos de Paraná (sur de Brasil)"
+          },
+          "lon": -51.0,
+          "lat": -27.5,
+          "age_ma": 134,
+          "src": "https://www.sciencedirect.com/science/article/abs/pii/S0040195112005033",
+          "note": "Paraná–Etendeka lavas about 135–132 Ma."
+        },
+        {
+          "name": {
+            "en": "Etendeka flood basalts (Namibia)",
+            "es": "Basaltos de Etendeka (Namibia)"
+          },
+          "lon": 13.8,
+          "lat": -20.3,
+          "age_ma": 132,
+          "src": "https://www.sciencedirect.com/science/article/pii/S0024493724001646"
+        },
+        {
+          "name": {
+            "en": "Walvis Ridge, northeast end",
+            "es": "Dorsal de Walvis, extremo noreste"
+          },
+          "lon": 10.5,
+          "lat": -20.0,
+          "age_ma": 114,
+          "src": "https://www.sciencedirect.com/science/article/abs/pii/S0040195112005033",
+          "note": "114.1 ± 0.4 Ma; position approximate."
+        },
+        {
+          "name": {
+            "en": "Walvis Ridge (DSDP Site 525)",
+            "es": "Dorsal de Walvis (sitio DSDP 525)"
+          },
+          "lon": 2.99,
+          "lat": -29.07,
+          "age_ma": 72,
+          "src": "https://doi.org/10.1029/JB095iB11p17475",
+          "note": "Ages at this site range about 69–79 Ma by method; ages along the ridge are scattered."
+        },
+        {
+          "name": {
+            "en": "Tristan da Cunha",
+            "es": "Tristán de Acuña"
+          },
+          "lon": -12.28,
+          "lat": -37.09,
+          "age_ma": 0.2,
+          "src": "https://www.nature.com/articles/ncomms8799",
+          "note": "Island about 0.2 Ma old; last eruption 1961."
+        }
+      ],
+      "src": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S0040195112005033",
+        "https://doi.org/10.1029/JB095iB11p17475",
+        "https://www.nature.com/articles/ncomms8799"
+      ]
+    },
+    {
+      "id": "kerguelen",
+      "name": {
+        "en": "Kerguelen hotspot",
+        "es": "Punto caliente de Kerguelen"
+      },
+      "lon": 73.5,
+      "lat": -53.1,
+      "text": {
+        "en": "The Kerguelen hotspot lies in the far southern Indian Ocean, under Heard Island, whose Big Ben volcano still erupts, and the Kerguelen Islands. Over about 120 million years it built the Rajmahal Traps of India, the vast undersea Kerguelen Plateau and Broken Ridge, and the Ninetyeast Ridge, a line of volcanoes about 5,000 km long left as India moved north.",
+        "es": "El punto caliente de Kerguelen está en el extremo sur del océano Índico, bajo la isla Heard, cuyo volcán Big Ben sigue activo, y las islas Kerguelen. En unos 120 millones de años formó los traps de Rajmahal, en la India, la enorme meseta submarina de Kerguelen y la dorsal Broken, y la dorsal del Noventa Este, una línea de volcanes de unos 5 000 km que quedó atrás mientras la India avanzaba hacia el norte."
+      },
+      "note": "Where the plume sits today is debated (under Heard Island or the Kerguelen Islands).",
+      "chain": [
+        {
+          "name": {
+            "en": "Rajmahal Traps (India)",
+            "es": "Traps de Rajmahal (India)"
+          },
+          "lon": 87.7,
+          "lat": 25.0,
+          "age_ma": 118,
+          "src": "https://indplex.geolex.org/formations/Rajmahal%20Traps%20Fm",
+          "note": "About 117–118 Ma."
+        },
+        {
+          "name": {
+            "en": "Ninetyeast Ridge, north (ODP Site 758)",
+            "es": "Dorsal del Noventa Este, norte (sitio ODP 758)"
+          },
+          "lon": 90.36,
+          "lat": 5.38,
+          "age_ma": 77,
+          "src": "https://www.researchgate.net/publication/234257938_A_Simple_Linear_Age_Progression_for_the_Ninetyeast_Ridge_Indian_Ocean_New_Constraints_on_Indian_Plate_Tectonics_and_Hotspot_Dynamics",
+          "note": "Pringle et al. 2008; older sources give about 82 Ma."
+        },
+        {
+          "name": {
+            "en": "Ninetyeast Ridge, south",
+            "es": "Dorsal del Noventa Este, sur"
+          },
+          "lon": 87.9,
+          "lat": -31.0,
+          "age_ma": 43,
+          "src": "https://www.researchgate.net/publication/234257938_A_Simple_Linear_Age_Progression_for_the_Ninetyeast_Ridge_Indian_Ocean_New_Constraints_on_Indian_Plate_Tectonics_and_Hotspot_Dynamics",
+          "note": "Pringle et al. 2008; older sources give about 38 Ma."
+        },
+        {
+          "name": {
+            "en": "Kerguelen Islands",
+            "es": "Islas Kerguelen"
+          },
+          "lon": 69.5,
+          "lat": -49.3,
+          "age_ma": 29,
+          "src": "https://www-odp.tamu.edu/publications/183_SR/VOLUME/SYNTH/SYNTH.PDF",
+          "note": "Flood basalts of the archipelago about 30–24 Ma (Nicolaysen et al. 2000); not rechecked."
+        },
+        {
+          "name": {
+            "en": "Heard Island (Big Ben)",
+            "es": "Isla Heard (Big Ben)"
+          },
+          "lon": 73.51,
+          "lat": -53.11,
+          "age_ma": 0,
+          "src": "https://volcano.si.edu/volcano.cfm?vn=234010"
+        }
+      ],
+      "src": [
+        "https://www-odp.tamu.edu/publications/183_SR/VOLUME/SYNTH/SYNTH.PDF",
+        "https://www.nature.com/articles/s41467-024-54092-6",
+        "https://volcano.si.edu/volcano.cfm?vn=234010"
+      ]
+    }
+  ]
+}

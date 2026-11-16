@@ -156,7 +156,9 @@ export class InsideEarth {
     tabs.classList.add('inside-tabs');
     const body = h('div', { class: 'inside' }, tabs,
       this.tab === 'layers' ? this.layersTab() : this.tab === 'dig' ? this.digTab() : wavesPanel());
-    this.shell.openPanel('inside', L('Inside the Earth', 'El interior de la Tierra'), body, () => this.inset(false));
+    // The chip says the Earth is still cut open once the panel is closed; while it is open, it would cover the globe.
+    if (this.chip) this.chip.hidden = true;
+    this.shell.openPanel('inside', L('Inside the Earth', 'El interior de la Tierra'), body, () => { this.inset(false); if (this.chip) this.chip.hidden = false; });
     requestAnimationFrame(() => this.inset(true));
   }
 

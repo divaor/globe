@@ -44,13 +44,15 @@ const FONT = `system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Ar
 
 /** A name that was on screen: where its point was, when it was last placed, when it first appeared, on which side of
  *  its point, and since when it has had no room (it is fading out). */
-interface Seen { x: number; y: number; last: number; born: number; spot: number; lost?: number }
+interface Seen { x: number; y: number; last: number; f: number; born: number; spot: number; lost?: number }
 
 export class LabelEngine {
   private items: LabelSpec[] = [];
   /** The names drawn lately: as the map turns they keep their place and side, and new ones fade in (no flicker). */
   /** By name: several things can share one (three saguaros), each matched to the nearest seen a moment ago. */
   private seen = new Map<string, Seen[]>();
+  /** Frames drawn so far: "a moment ago" is the last few frames, however slowly they come (a busy phone). */
+  private frame = 0;
   /** A name is still fading in or out: the renderer draws another frame. */
   fading = false;
   private grid = new Map<number, [number, number, number, number][]>();
@@ -127,6 +129,7 @@ export class LabelEngine {
   }
 
   draw(ctx: CanvasRenderingContext2D, now = performance.now()) {
+    this.frame++;
     // A name shown a moment ago keeps its place against a neighbour of about the same rank (the map moving brings
     // them in and out of each other's way every frame, which made names blink): it gets a little more priority.
     // Keyed by the name (not its size: a country's name grows and shrinks as the globe turns it towards you).
@@ -138,15 +141,16 @@ export class LabelEngine {
     const byKey = new Map<string, LabelSpec[]>();
     this.items.forEach((l, i) => (byKey.get(keys[i]) ?? byKey.set(keys[i], []).get(keys[i])!).push(l));
     for (const [k, specs] of byKey) {
-      const recent = (this.seen.get(k) ?? []).filter((m) => now - m.last < 400);
+      // Placed in one of the last few frames (slow frames), or in the last 400 ms (fast ones, while it fades out).
+      const recent = (this.seen.get(k) ?? []).filter((m) => this.frame - m.f <= 3 || now - m.last < 400);
       if (!recent.length) continue;
       if (specs.length === 1 && recent.length === 1) {
         const l = specs[0], m = recent[0];
-        if ((m.x - l.x) ** 2 + (m.y - l.y) ** 2 < 80 * 80) got.set(l, m);
+        if ((m.x - l.x) ** 2 + (m.y - l.y) ** 2 < 120 * 120) got.set(l, m);
         continue;
       }
       const pairs: [number, LabelSpec, Seen][] = [];
-      for (const l of specs) for (const m of recent) { const d = (m.x - l.x) ** 2 + (m.y - l.y) ** 2; if (d < 80 * 80) pairs.push([d, l, m]); }
+      for (const l of specs) for (const m of recent) { const d = (m.x - l.x) ** 2 + (m.y - l.y) ** 2; if (d < 120 * 120) pairs.push([d, l, m]); }
       pairs.sort((a, b) => a[0] - b[0]);
       const used = new Set<Seen>();
       for (const [, l, m] of pairs) if (!got.has(l) && !used.has(m)) { got.set(l, m); used.add(m); }
@@ -281,8 +285,8 @@ export class LabelEngine {
       // A name new on screen fades in (as does one back after it had faded out).
       const born = was && !(was.lost != null && now - was.lost >= FADE_OUT) ? was.born : now;
       const spotIx = spots.indexOf(spot);
-      if (was) Object.assign(was, { x: l.x, y: l.y, last: now, born, spot: spotIx, lost: undefined });
-      else (this.seen.get(k) ?? this.seen.set(k, []).get(k)!).push({ x: l.x, y: l.y, last: now, born, spot: spotIx });
+      if (was) Object.assign(was, { x: l.x, y: l.y, last: now, f: this.frame, born, spot: spotIx, lost: undefined });
+      else (this.seen.get(k) ?? this.seen.set(k, []).get(k)!).push({ x: l.x, y: l.y, last: now, f: this.frame, born, spot: spotIx });
       const alpha = Math.min(1, (now - born) / FADE_IN);
       if (alpha < 1) this.fading = true;
       ctx.globalAlpha = baseAlpha * alpha;
@@ -293,9 +297,9 @@ export class LabelEngine {
     }
     (ctx as unknown as { letterSpacing: string }).letterSpacing = '0px';
     ctx.globalAlpha = baseAlpha;
-    // Names gone for a while are forgotten.
-    if (this.seen.size > 400) for (const [key, list] of this.seen) {
-      const keep = list.filter((m) => now - m.last <= 2000);
+    // Names gone for a while (two seconds and a hundred frames) are forgotten, every hundred frames.
+    if (this.frame % 100 === 0) for (const [key, list] of this.seen) {
+      const keep = list.filter((m) => now - m.last <= 2000 || this.frame - m.f <= 100);
       if (keep.length) this.seen.set(key, keep); else this.seen.delete(key);
     }
   }

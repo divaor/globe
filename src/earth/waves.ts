@@ -48,31 +48,26 @@ export function wavesPanel(): HTMLElement {
     };
     rimArc(104, 180, 'rgba(250,82,82,0.85)', 4, 9);
     rimArc(104, 140, 'rgba(148,163,184,0.95)', 4, 4);
-    // The waves: P fronts reach out through the mantle and on into the core; S fronts stop at the core.
-    const fronts = (tab: [number, number][], color: string, intoCore: boolean) => {
-      const deg = reach(tab, t);
+    // The waves: rings spreading from the quake. Where a ring meets the surface is how far the wave has got (the
+    // tables' distance); S rings stop at the liquid core, P rings go on into it, more slowly.
+    const kc = kOf(LAYERS[4].top);
+    const ring = (deg: number, color: string, intoCore: boolean) => {
       if (deg <= 0) return;
-      ctx.strokeStyle = color; ctx.lineWidth = 2.2;
-      // A front drawn as a curve from the rim at ±deg, bowing down through the mantle (deeper for farther waves).
-      for (const sgn of [1, -1]) {
-        ctx.beginPath();
-        const steps = 24;
-        for (let i = 0; i <= steps; i++) {
-          const f = i / steps, a = sgn * deg * f;
-          const depth = Math.sin(Math.PI * f) * Math.min(0.55, deg / 180) * (intoCore ? 1 : 0.8);
-          const k = Math.max(intoCore ? 0.05 : kOf(LAYERS[4].top) + 0.01, 1 - depth);
-          const [x, y] = pt(a, k);
-          if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y);
-        }
-        ctx.stroke();
-      }
+      const rho = 2 * Math.sin(((deg / 2) * Math.PI) / 180) * R;
+      const [fx, fy] = pt(0, 1);
+      ctx.save();
+      ctx.beginPath(); ctx.arc(C, C, R, 0, Math.PI * 2);
+      if (!intoCore) { ctx.arc(C, C, R * kc, 0, Math.PI * 2, true); }
+      ctx.clip('evenodd');
+      ctx.beginPath(); ctx.arc(fx, fy, rho, 0, Math.PI * 2);
+      ctx.strokeStyle = color; ctx.lineWidth = 2.4; ctx.stroke();
+      ctx.restore();
+      // Where it reaches the surface.
+      for (const sgn of [1, -1]) { const [x, y] = pt(sgn * Math.min(deg, 180), 1); ctx.beginPath(); ctx.arc(x, y, 3.5, 0, Math.PI * 2); ctx.fillStyle = color; ctx.fill(); }
     };
-    fronts(S_TIME, '#ff6b6b', false);
-    fronts(P_TIME, '#74c0fc', true);
-    if (t >= PKP_TIME[0][1]) { // P waves through the core, out beyond the shadow.
-      ctx.strokeStyle = '#74c0fc'; ctx.lineWidth = 2.2;
-      for (const sgn of [1, -1]) { ctx.beginPath(); const [x0, y0] = pt(0, 0.98); const [x1, y1] = pt(sgn * 150, 1); ctx.moveTo(x0, y0); ctx.quadraticCurveTo(C + sgn * R * 0.2, C + R * 0.1, x1, y1); ctx.stroke(); }
-    }
+    ring(reach(S_TIME, t), '#ff6b6b', false);
+    ring(reach(P_TIME, t), '#74c0fc', true);
+    if (t >= PKP_TIME[0][1]) ring(reach(PKP_TIME, t), '#74c0fc', true);
     // The quake.
     const [qx, qy] = pt(0, 1);
     ctx.beginPath(); ctx.arc(qx, qy, 5, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = '#111'; ctx.stroke();
