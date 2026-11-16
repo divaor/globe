@@ -2212,6 +2212,516 @@
       },
       "src": "https://www.ngdc.noaa.gov/gazetteer/feature/12029",
       "gebco": 12029
+    },
+    {
+      "id": "emperor-seamount-chain",
+      "name": {
+        "en": "Emperor Seamount Chain",
+        "es": "Cadena de montes submarinos del Emperador"
+      },
+      "kind": "seamount",
+      "lon": 170.552,
+      "lat": 41.131,
+      "line": [
+        [
+          167.5,
+          51.5
+        ],
+        [
+          168.88,
+          48.38
+        ],
+        [
+          169.45,
+          46.05
+        ],
+        [
+          170.0,
+          45.64
+        ],
+        [
+          170.3,
+          43.66
+        ],
+        [
+          170.55,
+          41.13
+        ],
+        [
+          170.78,
+          37.93
+        ],
+        [
+          171.67,
+          35.28
+        ],
+        [
+          171.62,
+          33.25
+        ],
+        [
+          173.0,
+          32.0
+        ]
+      ],
+      "depth_m": 1000,
+      "rank": 1,
+      "text": {
+        "en": "This line of drowned volcanoes runs north from the Hawaiian chain almost to the Aleutian Trench. With the Hawaiian Ridge it forms a 6,000 km trail left by the Hawaiian hotspot, and the sharp bend between the two is about 47 million years old. Its peaks are named after emperors of Japan.",
+        "es": "Esta línea de volcanes sumergidos va hacia el norte desde la cadena de Hawái casi hasta la fosa de las Aleutianas. Con la dorsal de Hawái forma un rastro de 6 000 km que dejó el punto caliente de Hawái, y el codo brusco entre ambas tiene unos 47 millones de años. Sus picos llevan nombres de emperadores de Japón."
+      },
+      "src": "https://pubs.usgs.gov/gip/dynamic/Hawaiian.html",
+      "src_more": [
+        "https://doi.org/10.1126/science.1128489",
+        "https://www.ngdc.noaa.gov/gazetteer/feature/28599"
+      ],
+      "gebco": 28599
+    },
+    {
+      "id": "hawaiian-ridge",
+      "name": {
+        "en": "Hawaiian Ridge",
+        "es": "Dorsal de Hawái"
+      },
+      "kind": "seamount",
+      "lon": -161.739,
+      "lat": 23.004,
+      "line": [
+        [
+          -155.5,
+          19.4
+        ],
+        [
+          -160.0,
+          22.0
+        ],
+        [
+          -161.74,
+          23.0
+        ],
+        [
+          -164.44,
+          23.42
+        ],
+        [
+          -165.56,
+          23.89
+        ],
+        [
+          -166.29,
+          23.82
+        ],
+        [
+          -168.29,
+          25.17
+        ],
+        [
+          -173.92,
+          26.12
+        ],
+        [
+          -180.0,
+          28.97
+        ],
+        [
+          178.66,
+          30.27
+        ],
+        [
+          177.53,
+          30.38
+        ],
+        [
+          176.0,
+          31.0
+        ]
+      ],
+      "depth_m": 1000,
+      "rank": 1,
+      "text": {
+        "en": "This chain of volcanoes runs about 2,600 km northwest from the Island of Hawaiʻi to Midway and then continues as the Emperor Seamount Chain. The Pacific plate has carried each volcano away from the Hawaiian hotspot, so they get older, lower and more worn down towards the northwest.",
+        "es": "Esta cadena de volcanes va unos 2 600 km hacia el noroeste desde la isla de Hawái hasta Midway y luego continúa como la cadena de montes submarinos del Emperador. La placa del Pacífico ha alejado cada volcán del punto caliente de Hawái, así que son más viejos, más bajos y más desgastados hacia el noroeste."
+      },
+      "src": "https://pubs.usgs.gov/gip/dynamic/Hawaiian.html",
+      "gebco": 30900
+    },
+    {
+      "id": "louisville-ridge",
+      "name": {
+        "en": "Louisville Ridge",
+        "es": "Dorsal de Louisville"
+      },
+      "kind": "seamount",
+      "lon": -169.443,
+      "lat": -36.063,
+      "line": [
+        [
+          -174.5,
+          -27.0
+        ],
+        [
+          -173.43,
+          -28.48
+        ],
+        [
+          -173.19,
+          -30.12
+        ],
+        [
+          -172.09,
+          -31.52
+        ],
+        [
+          -171.38,
+          -33.58
+        ],
+        [
+          -170.33,
+          -35.41
+        ],
+        [
+          -169.44,
+          -36.06
+        ],
+        [
+          -169.86,
+          -36.65
+        ],
+        [
+          -168.92,
+          -37.76
+        ],
+        [
+          -167.5,
+          -39.06
+        ],
+        [
+          -165.61,
+          -40.55
+        ],
+        [
+          -161.5,
+          -43.0
+        ]
+      ],
+      "depth_m": 1500,
+      "rank": 2,
+      "text": {
+        "en": "This chain of seamounts and flat-topped guyots on the Pacific plate is the trail of a hotspot. It crosses the South Pacific to the northwest and meets the Tonga and Kermadec trenches near 26° S, where its oldest seamounts are sinking into the trench.",
+        "es": "Esta cadena de montes submarinos y guyots de cima plana, sobre la placa del Pacífico, es el rastro de un punto caliente. Cruza el Pacífico Sur hacia el noroeste y llega a las fosas de Tonga y Kermadec cerca de los 26° S, donde sus montes más antiguos se hunden en la fosa."
+      },
+      "src": "https://link.springer.com/article/10.1007/s11001-024-09550-7",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/14809"
+      ],
+      "gebco": 14809
+    },
+    {
+      "id": "new-england-seamounts",
+      "name": {
+        "en": "New England Seamounts",
+        "es": "Montes submarinos de Nueva Inglaterra"
+      },
+      "kind": "seamount",
+      "lon": -59.985,
+      "lat": 37.399,
+      "line": [
+        [
+          -67.42,
+          39.92
+        ],
+        [
+          -66.25,
+          39.8
+        ],
+        [
+          -65.38,
+          39.42
+        ],
+        [
+          -64.0,
+          38.83
+        ],
+        [
+          -62.8,
+          38.4
+        ],
+        [
+          -60.67,
+          38.17
+        ],
+        [
+          -59.98,
+          37.4
+        ]
+      ],
+      "depth_m": 1500,
+      "rank": 2,
+      "text": {
+        "en": "More than 30 extinct volcanoes run southeast from the edge of Georges Bank into the North Atlantic. The four nearest the coast lie in the US Northeast Canyons and Seamounts Marine National Monument, created in 2016.",
+        "es": "Más de 30 volcanes extintos se extienden hacia el sureste desde el borde del banco Georges hasta el Atlántico Norte. Los cuatro más cercanos a la costa están en el Monumento Nacional Marino Cañones y Montes Submarinos del Noreste, de Estados Unidos, creado en 2016."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/30862",
+      "gebco": 30862
+    },
+    {
+      "id": "musicians-seamounts",
+      "name": {
+        "en": "Musicians Seamounts",
+        "es": "Montes submarinos de los Músicos"
+      },
+      "kind": "seamount",
+      "lon": -158.0,
+      "lat": 26.0,
+      "depth_m": 3000,
+      "rank": 3,
+      "text": {
+        "en": "About 25 seamounts north of the Hawaiian Ridge carry the names of classical composers, such as Haydn, Mozart, Beethoven and Brahms. Scientists at the Scripps Institution of Oceanography named and mapped them in the late 1950s.",
+        "es": "Unos 25 montes submarinos al norte de la dorsal de Hawái llevan nombres de compositores clásicos, como Haydn, Mozart, Beethoven y Brahms. Científicos de la Institución Scripps de Oceanografía les dieron nombre y los cartografiaron a fines de la década de 1950."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22594",
+      "gebco": 22594
+    },
+    {
+      "id": "magellan-seamounts",
+      "name": {
+        "en": "Magellan Seamounts",
+        "es": "Montes submarinos de Magallanes"
+      },
+      "kind": "seamount",
+      "lon": 155.2,
+      "lat": 15.667,
+      "line": [
+        [
+          151.0,
+          18.0
+        ],
+        [
+          154.2,
+          17.14
+        ],
+        [
+          155.2,
+          15.67
+        ],
+        [
+          156.18,
+          14.12
+        ],
+        [
+          157.0,
+          11.0
+        ]
+      ],
+      "depth_m": 1300,
+      "rank": 3,
+      "text": {
+        "en": "This chain of guyots, flat-topped seamounts that were once islands, lies in the western Pacific between the Mariana Islands and the Marshall Islands. Their summits are now more than 1,000 m below the surface.",
+        "es": "Esta cadena de guyots, montes submarinos de cima plana que alguna vez fueron islas, está en el Pacífico occidental, entre las islas Marianas y las islas Marshall. Hoy sus cimas están a más de 1 000 m bajo la superficie."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22379",
+      "gebco": 22379
+    },
+    {
+      "id": "axial-seamount",
+      "name": {
+        "en": "Axial Seamount",
+        "es": "Monte submarino Axial"
+      },
+      "kind": "seamount",
+      "lon": -130.01,
+      "lat": 45.96,
+      "depth_m": 1371,
+      "rank": 2,
+      "text": {
+        "en": "The most active undersea volcano off North America sits on the Juan de Fuca Ridge, with its summit about 1,400 m down. It erupted in 1998, 2011 and 2015, and instruments wired to the shore record how it swells between eruptions.",
+        "es": "El volcán submarino más activo frente a Norteamérica está en la dorsal de Juan de Fuca, con su cima a unos 1 400 m de profundidad. Hizo erupción en 1998, 2011 y 2015, e instrumentos conectados por cable con la costa registran cómo se hincha entre erupciones."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/26190",
+      "gebco": 26190
+    },
+    {
+      "id": "loihi-seamount",
+      "name": {
+        "en": "Loihi Seamount",
+        "es": "Monte submarino Kamaʻehuakanaloa (Loihi)"
+      },
+      "kind": "seamount",
+      "lon": -155.267,
+      "lat": 18.933,
+      "depth_m": 975,
+      "rank": 2,
+      "text": {
+        "en": "This active undersea volcano rises to about 975 m below sea level, 30 km south of the Island of Hawaiʻi. It was renamed Kamaʻehuakanaloa in 2021, and it may one day grow into a new Hawaiian island.",
+        "es": "Este volcán submarino activo se eleva hasta unos 975 m bajo el nivel del mar, 30 km al sur de la isla de Hawái. En 2021 recibió el nombre de Kamaʻehuakanaloa, y algún día podría convertirse en una nueva isla hawaiana."
+      },
+      "src": "https://www.usgs.gov/volcanoes/kama%E2%80%98ehuakanaloa",
+      "src_more": [
+        "https://oceanexplorer.noaa.gov/ocean-fact/volcanic-hotspot/"
+      ],
+      "gebco": 22330
+    },
+    {
+      "id": "davidson-seamount",
+      "name": {
+        "en": "Davidson Seamount",
+        "es": "Monte submarino Davidson"
+      },
+      "kind": "seamount",
+      "lon": -122.717,
+      "lat": 35.717,
+      "depth_m": 1250,
+      "rank": 2,
+      "text": {
+        "en": "About 120 km off central California, this 42 km long seamount is one of the largest known in US waters. Its summit lies about 1,250 m down, and its slopes hold forests of deep-sea corals and vast fields of sponges.",
+        "es": "A unos 120 km de la costa central de California, este monte submarino de 42 km de largo es uno de los más grandes conocidos en aguas de Estados Unidos. Su cima está a unos 1 250 m de profundidad, y sus laderas guardan bosques de corales de aguas profundas y enormes campos de esponjas."
+      },
+      "src": "https://sanctuaries.noaa.gov/notes/2025/davidson-seamount-dna.html",
+      "gebco": 12848
+    },
+    {
+      "id": "marsili-seamount",
+      "name": {
+        "en": "Marsili Seamount",
+        "es": "Monte submarino Marsili"
+      },
+      "kind": "seamount",
+      "lon": 14.4,
+      "lat": 39.283,
+      "depth_m": 500,
+      "rank": 2,
+      "text": {
+        "en": "The largest volcano in Europe lies hidden under the southern Tyrrhenian Sea, west of Calabria. It is about 70 km long and rises some 3,000 m from the seafloor, with its summit about 500 m below the surface.",
+        "es": "El volcán más grande de Europa está oculto bajo el sur del mar Tirreno, al oeste de Calabria. Mide unos 70 km de largo y se eleva unos 3 000 m sobre el fondo, con su cima a unos 500 m bajo la superficie."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/14972",
+      "gebco": 14972
+    },
+    {
+      "id": "eratosthenes-seamount",
+      "name": {
+        "en": "Eratosthenes Seamount",
+        "es": "Monte submarino Eratóstenes"
+      },
+      "kind": "seamount",
+      "lon": 32.667,
+      "lat": 33.667,
+      "depth_m": 800,
+      "rank": 3,
+      "text": {
+        "en": "South of Cyprus, this large flat-topped seamount is a block of continental crust that is now colliding with the island as Africa pushes north. It is named after the Greek scholar Eratosthenes.",
+        "es": "Al sur de Chipre, este gran monte submarino de cima plana es un bloque de corteza continental que hoy choca con la isla mientras África empuja hacia el norte. Debe su nombre al sabio griego Eratóstenes."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28620",
+      "gebco": 28620
+    },
+    {
+      "id": "gorringe-ridge",
+      "name": {
+        "en": "Gorringe Ridge",
+        "es": "Dorsal de Gorringe"
+      },
+      "kind": "seamount",
+      "lon": -11.417,
+      "lat": 36.583,
+      "depth_m": 60,
+      "rank": 3,
+      "text": {
+        "en": "About 200 km off southwest Portugal, this huge ridge rises from abyssal depths of about 5,000 m. Its two peaks, Gettysburg and Ormonde seamounts, come to less than 100 m below the surface.",
+        "es": "A unos 200 km del suroeste de Portugal, esta enorme dorsal se eleva desde profundidades abisales de unos 5 000 m. Sus dos picos, los montes submarinos Gettysburg y Ormonde, llegan a menos de 100 m bajo la superficie."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/17942",
+      "gebco": 17942
+    },
+    {
+      "id": "vema-seamount",
+      "name": {
+        "en": "Vema Seamount",
+        "es": "Monte submarino Vema"
+      },
+      "kind": "seamount",
+      "lon": 8.342,
+      "lat": -31.682,
+      "depth_m": 45,
+      "rank": 3,
+      "text": {
+        "en": "Far out in the South Atlantic, west of South Africa, this seamount rises from more than 4,000 m to less than 50 m below the surface. It is named after the research vessel Vema of the Lamont-Doherty Geological Observatory.",
+        "es": "En pleno Atlántico Sur, al oeste de Sudáfrica, este monte submarino se eleva desde más de 4 000 m hasta menos de 50 m bajo la superficie. Debe su nombre al buque de investigación Vema, del Observatorio Geológico Lamont-Doherty."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/33623",
+      "gebco": 33623
+    },
+    {
+      "id": "bowie-seamount",
+      "name": {
+        "en": "SG̲áan K̲ínghlas-Bowie Seamount",
+        "es": "Monte submarino SG̲áan K̲ínghlas-Bowie"
+      },
+      "kind": "seamount",
+      "lon": -135.651,
+      "lat": 53.3,
+      "depth_m": 24,
+      "rank": 3,
+      "text": {
+        "en": "Off the coast of British Columbia, this seamount rises from more than 3,000 m to only 24 m below the surface. Its first name comes from Haida oral history, in which it is home to the supernatural being SG̲áan K̲ínghlas; the second honours the American geodesist William Bowie.",
+        "es": "Frente a la costa de la Columbia Británica, este monte submarino se eleva desde más de 3 000 m hasta solo 24 m bajo la superficie. Su primer nombre viene de la historia oral haida, según la cual es el hogar del ser sobrenatural SG̲áan K̲ínghlas; el segundo honra al geodesta estadounidense William Bowie."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/32778",
+      "gebco": 32778
+    },
+    {
+      "id": "monowai-seamount",
+      "name": {
+        "en": "Monowai Seamount",
+        "es": "Monte submarino Monowai"
+      },
+      "kind": "seamount",
+      "lon": -177.188,
+      "lat": -25.887,
+      "depth_m": 96,
+      "rank": 3,
+      "text": {
+        "en": "This active undersea volcano in the Kermadec arc, north of New Zealand, has its summit about 100 m below the surface. It is named after the New Zealand Navy survey ship Monowai, a name that joins the Greek mono (one) and the Māori wai (water).",
+        "es": "Este volcán submarino activo del arco de Kermadec, al norte de Nueva Zelanda, tiene su cima a unos 100 m bajo la superficie. Debe su nombre al buque hidrográfico Monowai, de la Armada de Nueva Zelanda, un nombre que une el griego mono (uno) y el maorí wai (agua)."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/30240",
+      "gebco": 30240
+    },
+    {
+      "id": "great-meteor-bank",
+      "name": {
+        "en": "Great Meteor Bank",
+        "es": "Banco Gran Meteor"
+      },
+      "kind": "guyot",
+      "lon": -28.5,
+      "lat": 30.0,
+      "depth_m": 290,
+      "rank": 2,
+      "text": {
+        "en": "South of the Azores, this huge flat-topped seamount rises from more than 4,000 m to a summit plain about 300 m below the surface. It is named after the German research ship Meteor, whose 1937 cruise found it.",
+        "es": "Al sur de las Azores, este enorme monte submarino de cima plana se eleva desde más de 4 000 m hasta una llanura cumbre a unos 300 m bajo la superficie. Debe su nombre al buque de investigación alemán Meteor, que lo descubrió en su crucero de 1937."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28668",
+      "gebco": 28668
+    },
+    {
+      "id": "suiko-guyot",
+      "name": {
+        "en": "Suiko Guyot",
+        "es": "Guyot Suiko"
+      },
+      "kind": "guyot",
+      "lon": 170.333,
+      "lat": 44.583,
+      "depth_m": 1000,
+      "rank": 3,
+      "text": {
+        "en": "This flat-topped seamount in the Emperor chain was once a volcanic island built by the Hawaiian hotspot; its top now lies about 1,000 m down. Like its neighbours, it is named after a ruler of Japan, the empress Suiko.",
+        "es": "Este monte submarino de cima plana de la cadena del Emperador fue una isla volcánica formada por el punto caliente de Hawái; hoy su cima está a unos 1 000 m de profundidad. Como sus vecinos, lleva el nombre de un gobernante de Japón: la emperatriz Suiko."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28972",
+      "gebco": 28972
     }
   ]
 }

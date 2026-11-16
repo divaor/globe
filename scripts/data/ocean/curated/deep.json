@@ -140,8 +140,8 @@
         "es": "Oscuridad. Estas fosas son los lugares más profundos y menos explorados de la Tierra."
       },
       "temp": {
-        "en": "Just above freezing.",
-        "es": "Apenas por encima del punto de congelación."
+        "en": "Just above freezing: the water was 1.51 °C at 6,957 m in the Java Trench.",
+        "es": "Apenas por encima del punto de congelación: el agua estaba a 1,51 °C a 6 957 m en la fosa de Java."
       },
       "life": {
         "en": "Snailfish, shrimp-like amphipods, sea cucumbers and tube worms. No fish has been seen deeper than 8,336 m, but tube worms and clams fed by seeping chemicals live as deep as 9,533 m.",
@@ -156,6 +156,7 @@
         "https://www.whoi.edu/press-room/news-tip/faq-nereus/",
         "https://www.uwa.edu.au/news/article/2023/april/scientists-break-new-record-after-finding-worlds-deepest-fish",
         "https://doi.org/10.1038/s41586-025-09317-z",
+        "https://www.guinnessworldrecords.com/world-records/83167-deepest-octopus",
         "https://oceanservice.noaa.gov/facts/oceandepth.html"
       ],
       "note": {
@@ -1307,6 +1308,647 @@
         "https://doi.org/10.1002/gdj3.122",
         "https://www.guinnessworldrecords.com/world-records/deepest-descent-in-the-sea-by-a-manned-vessel"
       ]
+    }
+  ],
+  "vents": [
+    {
+      "id": "galapagos-rift",
+      "kind": "white-smoker",
+      "name": {
+        "en": "Galápagos Rift (Rose Garden)",
+        "es": "Rift de las Galápagos (Rose Garden)"
+      },
+      "lon": -86.2267,
+      "lat": 0.8058,
+      "depth_m": 2550,
+      "year": 1977,
+      "text": {
+        "en": "The first deep-sea hot springs ever found. In 1977 scientists in Alvin saw warm water shimmering out of the seafloor, surrounded by giant tube worms, clams and mussels: a whole ecosystem living without sunlight.",
+        "es": "Las primeras fuentes termales profundas jamás halladas. En 1977, científicos a bordo del Alvin vieron agua tibia que brotaba del fondo, rodeada de gusanos de tubo gigantes, almejas y mejillones: todo un ecosistema que vive sin luz solar."
+      },
+      "note": {
+        "en": "These vents release warm water (up to about 22 °C), not black smoke; they are grouped with the white smokers here. Depth 2,450 to 2,550 m.",
+        "es": "Estas fuentes liberan agua tibia (hasta unos 22 °C) y no humo negro; aquí se agrupan con las fumarolas blancas. Profundidad de 2 450 a 2 550 m."
+      },
+      "src": "https://doi.org/10.1126/science.203.4385.1073",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "epr-21n",
+      "kind": "black-smoker",
+      "name": {
+        "en": "East Pacific Rise, 21° N",
+        "es": "Dorsal del Pacífico Oriental, 21° N"
+      },
+      "lon": -109.0833,
+      "lat": 20.8333,
+      "depth_m": 2600,
+      "year": 1979,
+      "text": {
+        "en": "Here, in 1979, Alvin found the first black smokers: chimneys gushing water at about 350 °C, blackened by metal sulphides.",
+        "es": "Aquí, en 1979, el Alvin halló las primeras fumarolas negras: chimeneas que expulsan agua a unos 350 °C, ennegrecida por sulfuros metálicos."
+      },
+      "src": "https://doi.org/10.1126/science.207.4438.1421",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "lost-city",
+      "kind": "alkaline",
+      "name": {
+        "en": "Lost City",
+        "es": "Lost City (Ciudad Perdida)"
+      },
+      "lon": -42.1183,
+      "lat": 30.125,
+      "depth_m": 800,
+      "year": 2000,
+      "text": {
+        "en": "Pale carbonate towers rise from an undersea massif 15 km from the Mid-Atlantic Ridge. The water is only 40 to 90 °C and alkaline, probably heated by reactions between seawater and mantle rock rather than by magma.",
+        "es": "Torres claras de carbonato se alzan sobre un macizo submarino a 15 km de la dorsal Mesoatlántica. El agua sale a solo 40 a 90 °C y es alcalina; probablemente la calientan reacciones entre el agua de mar y las rocas del manto, no el magma."
+      },
+      "note": {
+        "en": "Depth 720 to 800 m.",
+        "es": "Profundidad de 720 a 800 m."
+      },
+      "src": "https://doi.org/10.1038/35084000",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "tag",
+      "kind": "black-smoker",
+      "name": {
+        "en": "TAG (Trans-Atlantic Geotraverse)",
+        "es": "TAG (Trans-Atlantic Geotraverse)"
+      },
+      "lon": -44.8267,
+      "lat": 26.1367,
+      "depth_m": 3670,
+      "year": 1985,
+      "text": {
+        "en": "The first high-temperature vents found on the Mid-Atlantic Ridge. Fluids up to about 369 °C pour from a large mound of metal sulphides, and shrimp swarm over the chimneys.",
+        "es": "Las primeras fuentes de alta temperatura halladas en la dorsal Mesoatlántica. Fluidos de hasta unos 369 °C brotan de un gran montículo de sulfuros metálicos, y los camarones pululan sobre las chimeneas."
+      },
+      "note": {
+        "en": "Depth 3,436 to 3,670 m.",
+        "es": "Profundidad de 3 436 a 3 670 m."
+      },
+      "src": "https://doi.org/10.1038/321033a0",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "snake-pit",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Snake Pit",
+        "es": "Snake Pit"
+      },
+      "lon": -44.95,
+      "lat": 23.3683,
+      "depth_m": 3500,
+      "year": 1985,
+      "text": {
+        "en": "Black smokers up to about 366 °C stand on a volcanic ridge in the middle of the Mid-Atlantic rift valley. It was the first active vent deposit ever drilled.",
+        "es": "Fumarolas negras de hasta unos 366 °C se alzan sobre una cresta volcánica en medio del valle del rift mesoatlántico. Fue el primer depósito hidrotermal activo que se perforó."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "rainbow",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Rainbow",
+        "es": "Rainbow"
+      },
+      "lon": -33.902,
+      "lat": 36.23,
+      "depth_m": 2320,
+      "year": 1997,
+      "text": {
+        "en": "Hot, acidic fluids up to about 362 °C rise through mantle rock laid bare by faults, south-west of the Azores. Dense swarms of Rimicaris shrimp cover its chimneys.",
+        "es": "Fluidos calientes y ácidos, de hasta unos 362 °C, suben a través de rocas del manto que las fallas dejaron al descubierto, al suroeste de las Azores. Densos enjambres de camarones Rimicaris cubren sus chimeneas."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "menez-gwen",
+      "kind": "white-smoker",
+      "name": {
+        "en": "Menez Gwen",
+        "es": "Menez Gwen"
+      },
+      "lon": -31.525,
+      "lat": 37.8417,
+      "depth_m": 865,
+      "year": 1994,
+      "text": {
+        "en": "On the summit of a young volcano near the Azores, small white chimneys of anhydrite vent fluids at up to 281 °C. Mussels cover the rocks, and deep-sea fish and crabs come visiting.",
+        "es": "En la cima de un volcán joven cerca de las Azores, pequeñas chimeneas blancas de anhidrita expulsan fluidos de hasta 281 °C. Los mejillones cubren las rocas, y peces y cangrejos de aguas profundas llegan de visita."
+      },
+      "note": {
+        "en": "Depth 840 to 865 m.",
+        "es": "Profundidad de 840 a 865 m."
+      },
+      "src": "https://doi.org/10.1038/377201a0",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "lucky-strike",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Lucky Strike",
+        "es": "Lucky Strike"
+      },
+      "lon": -32.2733,
+      "lat": 37.2933,
+      "depth_m": 1740,
+      "year": 1993,
+      "text": {
+        "en": "One of the largest vent fields known, with about 21 chimneys around a solidified lava lake on top of a big undersea volcano near the Azores. Mussels dominate its animal life.",
+        "es": "Uno de los campos hidrotermales más grandes conocidos, con unas 21 chimeneas alrededor de un lago de lava solidificado en la cima de un gran volcán submarino cerca de las Azores. Los mejillones dominan su fauna."
+      },
+      "note": {
+        "en": "Depth 1,600 to 1,740 m.",
+        "es": "Profundidad de 1 600 a 1 740 m."
+      },
+      "src": "https://doi.org/10.1016/S0012-821X(97)00027-7",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "beebe",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Beebe Vent Field",
+        "es": "Campo hidrotermal Beebe"
+      },
+      "lon": -81.7182,
+      "lat": 18.5466,
+      "depth_m": 4957,
+      "year": 2010,
+      "text": {
+        "en": "The deepest hydrothermal vents known, about 4,960 m down in the Cayman Trough. Water gushes out at up to 398 °C, and more than 2,000 shrimp can crowd onto a single square metre.",
+        "es": "Las fuentes hidrotermales más profundas conocidas, a unos 4 960 m en la fosa de las Caimán. El agua brota a hasta 398 °C, y más de 2 000 camarones pueden amontonarse en un solo metro cuadrado."
+      },
+      "src": "https://doi.org/10.1038/ncomms1636",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "lokis-castle",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Loki's Castle",
+        "es": "Castillo de Loki"
+      },
+      "lon": 8.15,
+      "lat": 73.55,
+      "depth_m": 2400,
+      "year": 2008,
+      "text": {
+        "en": "The first black smokers found on the Arctic Mid-Ocean Ridge, between Norway and Greenland. Four chimneys up to 13 m tall vent fluids at 310 to 320 °C. Microbes found nearby were named Lokiarchaeota after it.",
+        "es": "Las primeras fumarolas negras halladas en la dorsal mesoceánica del Ártico, entre Noruega y Groenlandia. Cuatro chimeneas de hasta 13 m de alto expulsan fluidos a 310–320 °C. Unos microbios hallados cerca recibieron el nombre de Lokiarchaeota por este lugar."
+      },
+      "src": "https://doi.org/10.1038/ncomms1124",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "champagne",
+      "kind": "white-smoker",
+      "name": {
+        "en": "Champagne vent (NW Eifuku)",
+        "es": "Fuente Champagne (NW Eifuku)"
+      },
+      "lon": 144.043,
+      "lat": 21.485,
+      "depth_m": 1604,
+      "year": 2004,
+      "text": {
+        "en": "On a volcano in the Mariana Arc, white smokers at about 105 °C release droplets of liquid carbon dioxide that rise like bubbles in champagne. It was the first time liquid CO2 was seen venting from bare rock on an arc volcano.",
+        "es": "En un volcán del arco de las Marianas, fumarolas blancas a unos 105 °C liberan gotitas de dióxido de carbono líquido que suben como burbujas de champán. Fue la primera vez que se vio CO2 líquido brotar de roca desnuda en un volcán de arco."
+      },
+      "note": {
+        "en": "Depth 1,573 to 1,604 m.",
+        "es": "Profundidad de 1 573 a 1 604 m."
+      },
+      "src": "https://doi.org/10.1029/2005GC001152",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "kairei",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Kairei",
+        "es": "Kairei"
+      },
+      "lon": 70.04,
+      "lat": -25.3195,
+      "depth_m": 2460,
+      "year": 2000,
+      "text": {
+        "en": "The first vent field seen directly in the Indian Ocean, found by the robot Kaikō. It is home to the scaly-foot snail, whose foot is covered in scales made with iron sulphide.",
+        "es": "El primer campo hidrotermal observado directamente en el océano Índico, hallado por el robot Kaikō. Allí vive el caracol de pie escamoso, cuyo pie está cubierto de escamas hechas con sulfuro de hierro."
+      },
+      "note": {
+        "en": "Depth 2,415 to 2,460 m.",
+        "es": "Profundidad de 2 415 a 2 460 m."
+      },
+      "src": "https://doi.org/10.2108/zsj.18.717",
+      "src_more": [
+        "https://doi.org/10.1126/science.1087696",
+        "https://www.jamstec.go.jp/e/about/equipment/ships/kaiko.html",
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "endeavour",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Endeavour Segment (Main Endeavour Field)",
+        "es": "Segmento Endeavour (campo principal)"
+      },
+      "lon": -129.0981,
+      "lat": 47.9487,
+      "depth_m": 2220,
+      "year": 1984,
+      "text": {
+        "en": "About 250 km south-west of Vancouver Island, large sulphide chimneys 20 to 30 m tall vent fluids up to about 400 °C. In 2003 the vents became the first marine protected area under Canada's Oceans Act.",
+        "es": "A unos 250 km al suroeste de la isla de Vancouver, grandes chimeneas de sulfuros de 20 a 30 m de alto expulsan fluidos de hasta unos 400 °C. En 2003 las fuentes se convirtieron en la primera área marina protegida según la Ley de Océanos de Canadá."
+      },
+      "note": {
+        "en": "Since 2024 the area is part of a larger protected area. Twelve species living here are known nowhere else.",
+        "es": "Desde 2024 la zona forma parte de un área protegida más grande. Doce especies que viven aquí no se conocen en ningún otro lugar."
+      },
+      "src": "https://www.dfo-mpo.gc.ca/oceans/mpa-zpm/endeavour/index-eng.html",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "guaymas-basin",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Guaymas Basin",
+        "es": "Cuenca de Guaymas"
+      },
+      "lon": -111.4109,
+      "lat": 27.0148,
+      "depth_m": 2000,
+      "year": 1982,
+      "text": {
+        "en": "In the Gulf of California, fluids up to about 359 °C rise through thick seafloor mud and cook its organic matter into petroleum. Tube worms and thick bacterial mats grow on the sediment.",
+        "es": "En el golfo de California, fluidos de hasta unos 359 °C atraviesan gruesas capas de lodo del fondo y convierten su materia orgánica en petróleo. Gusanos de tubo y gruesos tapetes de bacterias crecen sobre el sedimento."
+      },
+      "src": "https://doi.org/10.1016/0012-821X(85)90070-6",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "ashadze-1",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Ashadze-1",
+        "es": "Ashadze-1"
+      },
+      "lon": -44.8633,
+      "lat": 12.9733,
+      "depth_m": 4200,
+      "year": 2003,
+      "text": {
+        "en": "Black smokers on mantle rock about 4,100 to 4,200 m down on the Mid-Atlantic Ridge. Until the Beebe field was found in 2010, they were the deepest known.",
+        "es": "Fumarolas negras sobre roca del manto, a unos 4 100 a 4 200 m en la dorsal Mesoatlántica. Hasta que se halló el campo Beebe en 2010, eran las más profundas conocidas."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "logatchev-1",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Logatchev-1",
+        "es": "Logatchev-1"
+      },
+      "lon": -44.9785,
+      "lat": 14.752,
+      "depth_m": 3050,
+      "year": 1994,
+      "text": {
+        "en": "The first vent field found on mantle rock instead of volcanic crust. Fluids up to about 370 °C pour from craters and chimneys on the wall of the Mid-Atlantic rift valley.",
+        "es": "El primer campo hidrotermal hallado sobre roca del manto y no sobre corteza volcánica. Fluidos de hasta unos 370 °C brotan de cráteres y chimeneas en la pared del valle del rift mesoatlántico."
+      },
+      "note": {
+        "en": "First seen in 1993–94; depth 2,925 to 3,050 m.",
+        "es": "Visto por primera vez en 1993–94; profundidad de 2 925 a 3 050 m."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "longqi",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Longqi (Dragon)",
+        "es": "Longqi (Dragón)"
+      },
+      "lon": 49.6494,
+      "lat": -37.7838,
+      "depth_m": 2785,
+      "year": 2007,
+      "text": {
+        "en": "The first black smokers found on an ultraslow-spreading ridge, the Southwest Indian Ridge, where the plates part by only about 1.2 cm a year. Fluids reach about 379 °C.",
+        "es": "Las primeras fumarolas negras halladas en una dorsal de expansión ultralenta, la dorsal Suroeste de la India, donde las placas se separan solo unos 1,2 cm al año. Los fluidos llegan a unos 379 °C."
+      },
+      "src": "https://doi.org/10.1130/G32389.1",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "aurora",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Aurora",
+        "es": "Aurora"
+      },
+      "lon": -6.25,
+      "lat": 82.8833,
+      "depth_m": 4100,
+      "year": 2001,
+      "text": {
+        "en": "Far north, under the Arctic sea ice near 83° N on the Gakkel Ridge. Signs of venting were first detected in 2001, and in 2014 a towed camera found the active vents.",
+        "es": "Muy al norte, bajo el hielo marino del Ártico, cerca de los 83° N en la dorsal de Gakkel. En 2001 se detectaron las primeras señales de actividad, y en 2014 una cámara remolcada halló las fuentes activas."
+      },
+      "note": {
+        "en": "Depth 3,900 to 4,100 m. The database used gives no vent temperature; it is listed as a black smoker because sulphide chimneys were found.",
+        "es": "Profundidad de 3 900 a 4 100 m. La base de datos usada no da temperatura; se clasifica como fumarola negra porque se hallaron chimeneas de sulfuros."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "axial-ashes",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Axial Seamount (ASHES)",
+        "es": "Monte submarino Axial (ASHES)"
+      },
+      "lon": -130.014,
+      "lat": 45.9333,
+      "depth_m": 1540,
+      "year": 1984,
+      "text": {
+        "en": "Inside the caldera of Axial Seamount, an active undersea volcano on the Juan de Fuca Ridge off Oregon, chimneys vent fluids at up to about 348 °C.",
+        "es": "Dentro de la caldera del monte submarino Axial, un volcán submarino activo en la dorsal de Juan de Fuca frente a Oregón, las chimeneas expulsan fluidos de hasta unos 348 °C."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "pacmanus",
+      "kind": "black-smoker",
+      "name": {
+        "en": "PACMANUS",
+        "es": "PACMANUS"
+      },
+      "lon": 151.67,
+      "lat": -3.725,
+      "depth_m": 1800,
+      "year": 1991,
+      "text": {
+        "en": "Chimneys on a ridge of light-coloured volcanic rock in the Manus Basin, off Papua New Guinea. Its metal-rich deposits have drawn interest from deep-sea mining companies.",
+        "es": "Chimeneas sobre una cresta de roca volcánica clara en la cuenca de Manus, frente a Papúa Nueva Guinea. Sus depósitos ricos en metales han atraído el interés de empresas de minería submarina."
+      },
+      "note": {
+        "en": "Depth 1,650 to 1,800 m.",
+        "es": "Profundidad de 1 650 a 1 800 m."
+      },
+      "src": "https://doi.org/10.2113/gsecongeo.88.8.2226",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "iheya-north",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Iheya North",
+        "es": "Iheya Norte"
+      },
+      "lon": 126.8966,
+      "lat": 27.7908,
+      "depth_m": 1100,
+      "year": 1995,
+      "text": {
+        "en": "In the Okinawa Trough near Okinawa, Japan, fluids at up to 317 °C have been measured boiling at the seafloor. Mussels, tube worms and squat lobsters crowd the vents.",
+        "es": "En la depresión de Okinawa, cerca de Okinawa (Japón), se han medido fluidos de hasta 317 °C que hierven en el fondo marino. Mejillones, gusanos de tubo y langostillas se apiñan junto a las fuentes."
+      },
+      "note": {
+        "en": "Depth 970 to 1,100 m.",
+        "es": "Profundidad de 970 a 1 100 m."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "brothers-volcano",
+      "kind": "black-smoker",
+      "name": {
+        "en": "Brothers volcano",
+        "es": "Volcán Brothers"
+      },
+      "lon": 179.0667,
+      "lat": -34.8667,
+      "depth_m": 1800,
+      "year": 1998,
+      "text": {
+        "en": "A submarine volcano on the Kermadec Arc, north-east of New Zealand, with black smokers on the walls of its caldera. It was the first high-temperature venting found along this arc.",
+        "es": "Un volcán submarino del arco de Kermadec, al noreste de Nueva Zelanda, con fumarolas negras en las paredes de su caldera. Fue la primera actividad hidrotermal de alta temperatura hallada en este arco."
+      },
+      "note": {
+        "en": "Depth 1,150 to 1,800 m.",
+        "es": "Profundidad de 1 150 a 1 800 m."
+      },
+      "src": "https://doi.org/10.2113/gsecongeo.100.6.1097",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "east-scotia-e9",
+      "kind": "black-smoker",
+      "name": {
+        "en": "East Scotia Ridge (E9)",
+        "es": "Dorsal de Escocia Oriental (E9)"
+      },
+      "lon": -29.93,
+      "lat": -60.05,
+      "depth_m": 2402,
+      "year": 2009,
+      "text": {
+        "en": "When found, these were the most southerly black smokers known, in the Southern Ocean near the South Sandwich Islands. A new species of yeti crab crowds the vents, with stalked barnacles, snails and a predatory sea star.",
+        "es": "Cuando se hallaron, eran las fumarolas negras más australes conocidas, en el océano Austral cerca de las islas Sandwich del Sur. Una nueva especie de cangrejo yeti abunda junto a las fuentes, con percebes de pedúnculo, caracoles y una estrella de mar depredadora."
+      },
+      "note": {
+        "en": "First seen by towed camera in 2009, sampled in 2010.",
+        "es": "Vistas por primera vez con una cámara remolcada en 2009 y muestreadas en 2010."
+      },
+      "src": "https://doi.org/10.1371/journal.pbio.1001234",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "kolumbo",
+      "kind": "white-smoker",
+      "name": {
+        "en": "Kolumbo volcano",
+        "es": "Volcán Kolumbo"
+      },
+      "lon": 25.4833,
+      "lat": 36.525,
+      "depth_m": 500,
+      "year": 2006,
+      "text": {
+        "en": "In the crater of an undersea volcano 7 km north-east of Santorini, chimneys up to 4 m tall vent fluids at up to about 220 °C. Red and orange bacterial mats cover the crater floor.",
+        "es": "En el cráter de un volcán submarino a 7 km al noreste de Santorini, chimeneas de hasta 4 m de alto expulsan fluidos de hasta unos 220 °C. Tapetes de bacterias rojos y anaranjados cubren el fondo del cráter."
+      },
+      "note": {
+        "en": "Grouped with the white smokers because its fluids are cooler than typical black smokers.",
+        "es": "Se agrupa con las fumarolas blancas porque sus fluidos son más fríos que los de una fumarola negra típica."
+      },
+      "src": "https://doi.org/10.1029/2006EO340001",
+      "src_more": [
+        "https://doi.org/10.1594/PANGAEA.917894"
+      ]
+    },
+    {
+      "id": "white-lady",
+      "kind": "white-smoker",
+      "name": {
+        "en": "White Lady",
+        "es": "White Lady (Dama Blanca)"
+      },
+      "lon": 173.9167,
+      "lat": -16.9833,
+      "depth_m": 2000,
+      "year": 1988,
+      "text": {
+        "en": "In the North Fiji Basin, white anhydrite chimneys release clear fluids at about 265 to 285 °C. Snails, mussels, worms and barnacles live around them.",
+        "es": "En la cuenca Norte de Fiyi, chimeneas blancas de anhidrita liberan fluidos transparentes a unos 265 a 285 °C. A su alrededor viven caracoles, mejillones, gusanos y percebes."
+      },
+      "src": "https://doi.org/10.1594/PANGAEA.917894"
+    },
+    {
+      "id": "brine-pool",
+      "kind": "seep",
+      "name": {
+        "en": "Brine Pool (NR1)",
+        "es": "Lago de salmuera (NR1)"
+      },
+      "lon": -91.28,
+      "lat": 27.72,
+      "depth_m": 650,
+      "year": 1990,
+      "text": {
+        "en": "An underwater lake of brine nearly four times as salty as seawater, ringed by mussels that live off methane with the help of bacteria. The brine is so dense that a submersible can float on it.",
+        "es": "Un lago submarino de salmuera casi cuatro veces más salada que el agua de mar, rodeado de mejillones que viven del metano gracias a unas bacterias. La salmuera es tan densa que un sumergible puede flotar sobre ella."
+      },
+      "note": {
+        "en": "Gulf of Mexico, south of Louisiana. Described in 1990. Coordinates approximate.",
+        "es": "Golfo de México, al sur de Luisiana. Se describió en 1990. Coordenadas aproximadas."
+      },
+      "src": "https://doi.org/10.1126/science.248.4959.1096",
+      "src_more": [
+        "https://archive.oceanexplorer.noaa.gov/explorations/06mexico/background/plan/plan.html"
+      ]
+    },
+    {
+      "id": "florida-escarpment",
+      "kind": "seep",
+      "name": {
+        "en": "Florida Escarpment seeps",
+        "es": "Filtraciones del escarpe de Florida"
+      },
+      "lon": -84.92,
+      "lat": 26.03,
+      "depth_m": 3300,
+      "year": 1984,
+      "text": {
+        "en": "The first cold seeps found, at the foot of a huge limestone cliff in the Gulf of Mexico. Salty, sulphide-rich water oozes out at the temperature of the seafloor and feeds tube worms and mussels like those at hot vents.",
+        "es": "Las primeras filtraciones frías halladas, al pie de un enorme acantilado de piedra caliza en el golfo de México. Agua salada y rica en sulfuro brota a la temperatura del fondo y alimenta gusanos de tubo y mejillones parecidos a los de las fuentes calientes."
+      },
+      "note": {
+        "en": "Depth and coordinates approximate.",
+        "es": "Profundidad y coordenadas aproximadas."
+      },
+      "src": "https://doi.org/10.1126/science.226.4677.965"
+    },
+    {
+      "id": "hydrate-ridge",
+      "kind": "seep",
+      "name": {
+        "en": "Hydrate Ridge",
+        "es": "Hydrate Ridge (cresta de hidratos)"
+      },
+      "lon": -125.1468,
+      "lat": 44.5699,
+      "depth_m": 775,
+      "text": {
+        "en": "Off Oregon, methane ice lies on and under the seafloor, and streams of bubbles rise hundreds of metres. Microbes that eat methane without oxygen were described from here in 2000.",
+        "es": "Frente a Oregón hay hielo de metano sobre y bajo el fondo marino, y columnas de burbujas suben cientos de metros. Aquí se describieron en 2000 microbios que consumen metano sin oxígeno."
+      },
+      "src": "https://oceanobservatories.org/site/rs01sum2/",
+      "src_more": [
+        "https://doi.org/10.1038/35036572"
+      ]
+    },
+    {
+      "id": "hakon-mosby",
+      "kind": "seep",
+      "name": {
+        "en": "Håkon Mosby mud volcano",
+        "es": "Volcán de lodo Håkon Mosby"
+      },
+      "lon": 14.733,
+      "lat": 72.0,
+      "depth_m": 1250,
+      "text": {
+        "en": "A mud volcano off northern Norway that pushes warm, methane-rich mud up through the seafloor. Tube worms and bacterial mats live on it, and its microbes eat part of the methane before it escapes.",
+        "es": "Un volcán de lodo frente al norte de Noruega que empuja lodo tibio y rico en metano a través del fondo marino. Sobre él viven gusanos de tubo y tapetes de bacterias, y sus microbios consumen parte del metano antes de que escape."
+      },
+      "src": "https://doi.org/10.1038/nature05227"
+    },
+    {
+      "id": "kuril-kamchatka-seeps",
+      "kind": "seep",
+      "name": {
+        "en": "Kuril–Kamchatka Trench seeps",
+        "es": "Filtraciones de la fosa de las Kuriles-Kamchatka"
+      },
+      "lon": 151.7,
+      "lat": 45.0,
+      "depth_m": 9533,
+      "year": 2024,
+      "text": {
+        "en": "The deepest seep communities known. In 2024 the submersible Fendouzhe found dense fields of thin tube worms and clams along 2,500 km of trench floor, as deep as 9,533 m.",
+        "es": "Las comunidades de filtraciones más profundas conocidas. En 2024 el sumergible Fendouzhe halló densos campos de gusanos de tubo delgados y almejas a lo largo de 2 500 km de fondo de fosa, hasta a 9 533 m."
+      },
+      "note": {
+        "en": "Published in 2025; communities span 5,800 to 9,533 m in the Kuril–Kamchatka and western Aleutian trenches. The paper gives no position for the deepest site; coordinates approximate.",
+        "es": "Se publicó en 2025; las comunidades van de 5 800 a 9 533 m en las fosas de las Kuriles-Kamchatka y el oeste de las Aleutianas. El artículo no da la posición del sitio más profundo; coordenadas aproximadas."
+      },
+      "src": "https://doi.org/10.1038/s41586-025-09317-z"
     }
   ]
 }
