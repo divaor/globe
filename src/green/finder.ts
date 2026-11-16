@@ -7,6 +7,7 @@
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import { h, clear } from '../ui/dom';
+import { planStar } from '../guide/plan';
 import { lang, fmtCompact } from '../app/i18n';
 import { matcher } from '../ui/match';
 import { liveRange, natureTabs, type Live, type Wild } from '../wild/finder';
@@ -247,16 +248,18 @@ export class Plants {
 
   // ---- The travel guide: nature's spectacles near a city ---------------------------------------------------------
   /** Nature's spectacles within about 600 km of a city: those on this month first, then the nearest. */
-  async spectaclesNearby(el: HTMLElement, at: [number, number], city: string) {
+  async spectaclesNearby(el: HTMLElement, at: [number, number], city: string, cityId?: string) {
     const near = (await spectaclesNear(at, 600)).slice(0, 6);
     if (!near.length) return;
     const m = new Date().getMonth() + 1;
     el.append(h('h3', { class: 'sec-title' }, L('Nature’s calendar nearby', 'Calendario de la naturaleza cerca')));
     const list = h('div', { class: 'guide-list' });
     for (const { s, km, now } of near) {
-      list.append(this.row(s.e, tt(s.n), [monthsText(s), `${fmtCompact(Math.round(km))} km`, now ? (s.peak === m ? L('at its best now', 'en su mejor momento ahora') : L('on now', 'ahora')) : ''].filter(Boolean).join(' · '), () => {
+      const r = this.row(s.e, tt(s.n), [monthsText(s), `${fmtCompact(Math.round(km))} km`, now ? (s.peak === m ? L('at its best now', 'en su mejor momento ahora') : L('on now', 'ahora')) : ''].filter(Boolean).join(' · '), () => {
         this.shell.sheet.close(); this.app.flyTo(s.at[0], s.at[1], 8); openSpectacle(s);
-      }, { 'data-spectacle': s.id }));
+      }, { 'data-spectacle': s.id });
+      // ☆: into the trip, under this city.
+      list.append(cityId ? h('div', { class: 'guide-item-wrap' }, r, planStar({ id: `spectacle:${s.id}`, kind: 'spectacle', city: cityId, n: [s.n.en, s.n.es], at: s.at, why: [{ t: [`${monthsText(s)} · ${s.place.en}`, `${monthsText(s)} · ${s.place.es}`] }] })) : r);
     }
     el.append(list, h('p', { class: 'muted small' }, L(`Blossoms, autumn colours and animal spectacles within reach of ${city}.`, `Floraciones, colores de otoño y espectáculos animales al alcance de ${city}.`)));
   }

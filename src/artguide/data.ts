@@ -101,3 +101,17 @@ export const PERIODS: [string, { en: string; es: string }, number, number][] = [
   ['modern', { en: 'Since 1900', es: 'Desde 1900' }, 1900, Infinity],
 ];
 export const kindIcon = (k: WorkKind) => KINDS.find((x) => x[0] === k)?.[2] ?? '🖼️';
+
+// ---- The trip's places (v0.31.2) ------------------------------------------------------------------------------------
+/** A museum as a place of the trip, with the works to see there as its reasons. */
+export const museumPlace = (m: Museum, works: Work[] = []) => ({
+  id: `museum:${m.id}`, kind: 'museum' as const, city: m.city, n: m.name, at: m.at, url: m.web ?? wikiOf(m.id),
+  ...(works.length ? { why: works.map((w) => ({ k: `work:${w.id}`, t: [w.name[0], w.name[1]] as [string, string] })) } : {}),
+});
+/** A work's reason to go to its museum. */
+export const workWhy = (w: Work) => ({ k: `work:${w.id}`, t: [`${w.name[0]}${w.artist ? ` (${w.artist.name[0]})` : ''}`, `${w.name[1]}${w.artist ? ` (${w.artist.name[1]})` : ''}`] as [string, string] });
+/** A building as a place of the trip (its city: the guide's, or the nearest one). */
+export const buildingPlace = (b: Building) => ({
+  id: `building:${b.id}`, kind: 'building' as const, city: b.city, n: b.name, at: b.at, url: wikiOf(b.id),
+  ...(b.architects.length ? { why: [{ t: [b.architects.map((a) => a.name[0]).join(', '), b.architects.map((a) => a.name[1]).join(', ')] as [string, string] }] } : {}),
+});

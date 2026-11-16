@@ -1041,6 +1041,43 @@ div.guide-item { cursor: default; }
 .guide-item-wrap .guide-item { flex: 1; min-width: 0; }
 .guide-links { display: flex; gap: 4px; flex: none; }
 .guide-links a { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 15px; background: var(--chip); border: 1px solid var(--line); color: var(--muted); font-weight: 800; font-size: 13px; text-decoration: none; }
+/* The trip's places (guide/plan.ts, v0.31.2): the ☆ beside a row, ★ once in the trip. */
+.plan-star { flex: none; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 17px; border: 1px solid var(--line); background: var(--chip);
+  color: var(--muted); cursor: pointer; }
+.plan-star.on { color: #f5b301; border-color: rgba(245, 179, 1, 0.5); background: rgba(245, 179, 1, 0.14); }
+.plan-star.on svg { fill: currentColor; }
+.sec-title.art-museum { display: flex; align-items: center; gap: 8px; }
+.sec-title.art-museum .art-museum-head { flex: 1; min-width: 0; text-align: left; }
+/* A city's places in the trip panel, under its row. */
+.guide-trip-places { list-style: none; padding: 0 0 2px 30px; }
+.guide-trip-places ol { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-direction: column; gap: 2px; counter-reset: place; }
+.guide-place-row { display: flex; align-items: center; gap: 4px; padding: 3px 4px 3px 6px; border-radius: 10px; border: 1px dashed var(--line); counter-increment: place; }
+.guide-place-row::before { content: counter(place); flex: none; width: 18px; height: 18px; border-radius: 9px; background: #1098ad; color: #fff; font-size: 10.5px; font-weight: 800;
+  display: grid; place-items: center; }
+.guide-place-name { flex: 1; min-width: 0; display: flex; align-items: center; gap: 6px; border: 0; background: none; color: var(--text); text-align: left; cursor: pointer; padding: 2px; font-size: 13px; }
+.guide-place-ic { flex: none; }
+.guide-place-text { display: flex; flex-direction: column; min-width: 0; }
+.guide-place-text > span { overflow: hidden; text-overflow: ellipsis; }
+.guide-place-text .small { white-space: nowrap; }
+.icon-btn.xs { width: 26px; height: 26px; }
+/* Your data on another device (app/backup.ts). */
+.backup-status:empty { display: none; }
+.backup-status { margin-top: 8px; padding: 8px 10px; border-radius: 12px; border: 1px solid var(--line); background: var(--chip); font-size: 13.5px; }
+.backup-status p { margin: 0 0 6px; }
+.backup-warn { color: #e8590c; font-weight: 600; }
+/* The trip's details and export (guide/export.ts). */
+.trip-export { margin-top: 10px; }
+.trip-details { border: 1px solid var(--line); border-radius: 12px; padding: 6px 10px; background: var(--chip); }
+.trip-details summary { cursor: pointer; font-weight: 700; font-size: 13.5px; padding: 4px 0; }
+.trip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px; }
+.trip-field { display: flex; flex-direction: column; gap: 2px; margin: 4px 0; min-width: 0; }
+.trip-field-label { font-size: 11.5px; font-weight: 700; color: var(--muted); }
+.trip-input { width: 100%; min-width: 0; box-sizing: border-box; padding: 6px 8px; border-radius: 9px; border: 1px solid var(--line-strong); background: var(--glass-strong);
+  color: var(--text); font: inherit; font-size: 13.5px; }
+textarea.trip-input { resize: vertical; }
+.trip-days { display: flex; flex-direction: column; gap: 3px; }
+.trip-day-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 13px; }
+.trip-day-row .trip-day { width: 70px; flex: none; }
 .guide-national { margin: 6px 0 2px; font-size: 14px; }
 .guide-wv { margin-top: 16px; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--line); background: var(--chip); font-size: 14px; line-height: 1.5; }
 .guide-wv p { margin: 6px 0; }

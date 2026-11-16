@@ -5,6 +5,7 @@ import { canSpeak, narrationOn, setNarrationOn, voicesFor, voiceFor, setVoice, v
 import { t, tx, LANGS, type Lang } from '../app/i18n';
 import type { App } from '../app/app';
 import { terrainSettings } from './terrain';
+import { backupSettings } from '../app/backup';
 
 declare const __APP_VERSION__: string;
 
@@ -23,7 +24,7 @@ export async function install() {
 const field = (label: string, control: HTMLElement, hint?: string) =>
   h('div', { class: 'field' }, h('div', { class: 'field-label' }, label, hint ? h('span', { class: 'field-hint' }, hint) : null), control);
 
-export function settingsPanel(app: App, reopen: () => void): HTMLElement {
+export function settingsPanel(app: App, reopen: () => void, toast: (m: string) => void = () => {}): HTMLElement {
   const s = app.renderer.settings;
   const save = () => { app.renderer.requestRender(); app.save(); };
   const standalone = matchMedia('(display-mode: standalone)').matches || (navigator as unknown as { standalone?: boolean }).standalone;
@@ -75,6 +76,9 @@ export function settingsPanel(app: App, reopen: () => void): HTMLElement {
     h('p', { class: 'muted small' }, app.lang === 'es'
       ? 'Las listas de reproducción del salvapantallas están en Más → Modo ambiente.'
       : 'The screensaver’s playlists are in More → Ambient mode.'),
+    // Your data on another device (v0.31.2): a backup to bring everything back on a phone or another computer.
+    h('h3', { class: 'sec-title' }, app.lang === 'es' ? 'Tus datos en otro dispositivo' : 'Your data on another device'),
+    backupSettings(toast),
     h('div', { class: 'settings-actions' }, installBtn),
     h('p', { class: 'muted small' }, `${t('version')} ${__APP_VERSION__}`),
   );

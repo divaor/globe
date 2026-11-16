@@ -9,6 +9,8 @@ import { geoDistance } from 'd3-geo';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import { h, icon, clear } from '../ui/dom';
+import { planStar } from '../guide/plan';
+import { wikiOf } from '../artguide/data';
 import { lang, fmtCompact } from '../app/i18n';
 import { matcher } from '../ui/match';
 import { COLS, ROWS, cellAt, loadWild, loadParks, nm, groupName, GROUPS, type Animal, type Park, type WildData } from './data';
@@ -272,7 +274,7 @@ export class Wild {
 
   // ---- The travel guide's Wildlife nearby ------------------------------------------------------------------------
   /** Parks and reserves within about 150 km of a city, the nearest first, with the animals each is best for. */
-  async wildlifeNearby(el: HTMLElement, at: [number, number], city: string) {
+  async wildlifeNearby(el: HTMLElement, at: [number, number], city: string, cityId?: string) {
     const d = await this.load();
     if (!d || !this.parks) return;
     const near = this.parks.map((p) => [p, geoDistance(p.at, at) * 6371] as const).filter(([, km]) => km <= 150)
@@ -284,9 +286,11 @@ export class Wild {
       const list = h('div', { class: 'guide-list' });
       for (const [p, km] of near) {
         const best = p.f.map((id) => d.byId.get(id)).filter((a): a is Animal => !!a).slice(0, 4);
-        list.append(this.row(p.k === 'np' ? '🏞️' : '🌿', nm(p), [`${fmtCompact(Math.round(km))} km`, best.map((a) => a.e).join(' ')].filter(Boolean).join(' · '), () => {
+        const r = this.row(p.k === 'np' ? '🏞️' : '🌿', nm(p), [`${fmtCompact(Math.round(km))} km`, best.map((a) => a.e).join(' ')].filter(Boolean).join(' · '), () => {
           this.shell.sheet.close(); this.app.flyTo(p.at[0], p.at[1], 30); parkCard(this.cardFn, p, d, links);
-        }, { 'data-park': p.id }));
+        }, { 'data-park': p.id });
+        // ☆: into the trip, under this city.
+        list.append(cityId ? h('div', { class: 'guide-item-wrap' }, r, planStar({ id: `park:${p.id}`, kind: 'park', city: cityId, n: p.n, at: p.at, url: wikiOf(p.id), ...(best.length ? { why: [{ t: [best.map((a) => a.n[0]).join(', '), best.map((a) => a.n[1]).join(', ')] }] } : {}) })) : r);
       }
       el.append(list);
     }

@@ -7,6 +7,7 @@ import { lang, fmtCompact } from '../app/i18n';
 import { recordSeen } from '../learn/progress';
 import { commons, wikiOf } from '../artguide/data';
 import { creditEl } from '../artguide/cards';
+import { planLink } from '../guide/plan';
 import { STATUS, statusName } from '../wild/data';
 import { floweringEl } from '../wild/inat';
 import type { InfoRow } from '../layers/types';
@@ -98,6 +99,7 @@ export function gardenCard(card: CardFn, g: Garden, d: GreenData | null, x: Gree
   if (credit) extra.append(credit);
   const links: Link[] = [
     { label: L('Plan a trip', 'Planear un viaje'), onClick: () => x.planTrip(g.at, nm(g)) },
+    planLink({ id: `garden:${g.id}`, kind: 'garden', n: g.n, at: g.at, url: wikiOf(g.id) }),
     { label: 'Wikipedia', href: wikiOf(g.id) },
   ];
   card(arb ? '🌳' : '🌺', nm(g), g.cc ? x.countryName(g.cc) : '', rows, links, [], g.img ? Promise.resolve(commons(g.img, 480)) : undefined, extra);
@@ -119,7 +121,7 @@ export function treeCard(card: CardFn, t: FamousTree, x: GreenLinks) {
   const links: Link[] = [];
   const plant = t.plant ? x.plantById(t.plant) : null;
   if (plant) links.push({ label: L(`${nm(plant)}: its card`, `${nm(plant)}: su ficha`), onClick: () => x.openPlant(plant) });
-  if (!t.secret) links.push({ label: L('Plan a trip', 'Planear un viaje'), onClick: () => x.planTrip(t.at, nm(t)) });
+  if (!t.secret) links.push({ label: L('Plan a trip', 'Planear un viaje'), onClick: () => x.planTrip(t.at, nm(t)) }, planLink({ id: `tree:${t.id}`, kind: 'tree', n: t.n, at: t.at, ...(t.q ? { url: wikiOf(t.q) } : {}), ...(t.rec ? { why: [{ t: [t.rec.en, t.rec.es] }] } : {}) }));
   if (t.q) links.push({ label: 'Wikipedia', href: wikiOf(t.q) });
   links.push(...sourceLinks(t.src, 2));
   const icon = t.rec ? '🏆' : '🌳';
@@ -178,7 +180,8 @@ export function spectacleCard(card: CardFn, s: Spectacle, x: GreenLinks, plantOf
   const plant = s.sci ? plantOf(s.sci) : null;
   if (plant) links.push({ label: L(`${nm(plant)}: its card`, `${nm(plant)}: su ficha`), onClick: () => x.openPlant(plant) });
   else if (s.sci && s.kind === 'animal') links.push({ label: L('The animal’s card', 'La ficha del animal'), onClick: () => { if (!x.openAnimal(s.sci!)) x.toast(L('Not one of our animals.', 'No es uno de nuestros animales.')); } });
-  links.push({ label: L('Plan a trip', 'Planear un viaje'), onClick: () => x.planTrip(s.at, tt(s.n)) });
+  links.push({ label: L('Plan a trip', 'Planear un viaje'), onClick: () => x.planTrip(s.at, tt(s.n)) },
+    planLink({ id: `spectacle:${s.id}`, kind: 'spectacle', n: [s.n.en, s.n.es], at: s.at, why: [{ t: [`${monthsText(s)} · ${s.place.en}`, `${monthsText(s)} · ${s.place.es}`] }] }));
   links.push(...sourceLinks(s.src));
   card(s.e, tt(s.n), `${k.icon} ${es() ? k.es : k.en}`, rows, links, notes);
 }
