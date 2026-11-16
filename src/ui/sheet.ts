@@ -3,6 +3,8 @@ import { X } from 'lucide';
 import { h, button, clear } from './dom';
 import { t } from '../app/i18n';
 
+const HEIGHTS = 'atlas-globe:sheet-heights';
+
 export class Sheet {
   readonly el: HTMLElement;
   private body: HTMLElement;
@@ -27,14 +29,50 @@ export class Sheet {
     root.append(this.el);
     // Remember where each panel was scrolled to, so it opens again at the same place.
     this.body.addEventListener('scroll', () => { if (this.current && !this.el.hidden) this.scrolls.set(this.current, this.body.scrollTop); }, { passive: true });
-    // Swipe down on the grip/header closes the sheet on phones.
-    let y0 = -1;
+    // On a phone, dragging the grip or the header up or down makes the sheet taller or shorter (each panel keeps its
+    // height); dragged nearly to the bottom, it closes.
+    let y0 = -1, h0 = 0, moved = false;
     const head = this.el.querySelector('.sheet-head') as HTMLElement;
+    const phone = () => matchMedia('(max-width: 720px)').matches;
+    const end = (e: PointerEvent, cancel = false) => {
+      if (y0 < 0) return;
+      const dy = e.clientY - y0;
+      y0 = -1;
+      this.el.style.transition = '';
+      if (cancel) return;
+      if (!moved) { if (dy > 60) this.close(); return; }
+      const hNow = this.el.getBoundingClientRect().height;
+      if (hNow < window.innerHeight * 0.24) { this.size(null); this.close(); return; }
+      if (this.current) { this.heights[this.current] = Math.round((hNow / window.innerHeight) * 1000) / 1000; try { localStorage.setItem(HEIGHTS, JSON.stringify(this.heights)); } catch { /* private window */ } }
+      document.dispatchEvent(new CustomEvent('sheet-resized'));
+    };
     for (const el of [grip, head]) {
-      el.addEventListener('pointerdown', (e) => { y0 = e.clientY; });
-      el.addEventListener('pointerup', (e) => { if (y0 >= 0 && e.clientY - y0 > 60) this.close(); y0 = -1; });
+      el.addEventListener('pointerdown', (e) => {
+        if (!phone() || (e.target as Element).closest('button')) return;
+        y0 = e.clientY; h0 = this.el.getBoundingClientRect().height; moved = false;
+        el.setPointerCapture?.(e.pointerId);
+      });
+      el.addEventListener('pointermove', (e) => {
+        if (y0 < 0) return;
+        const dy = e.clientY - y0;
+        if (!moved && Math.abs(dy) < 8) return;
+        moved = true;
+        this.el.style.transition = 'none';
+        this.size(`${Math.round(Math.max(90, Math.min(window.innerHeight * 0.92, h0 - dy)))}px`);
+      });
+      el.addEventListener('pointerup', (e) => end(e));
+      el.addEventListener('pointercancel', (e) => end(e, true));
     }
   }
+
+  /** A height the reader gave the sheet (only phones use it: wider screens keep their side panel), or none. */
+  private size(height: string | null) {
+    this.el.classList.toggle('sized', !!height);
+    if (height) this.el.style.setProperty('--sheet-h', height); else this.el.style.removeProperty('--sheet-h');
+  }
+
+  /** The heights the reader gave each panel on a phone (shares of the screen's height). */
+  private heights: Record<string, number> = (() => { try { return JSON.parse(localStorage.getItem(HEIGHTS) || '{}'); } catch { return {}; } })();
 
   /** Shows `content` in the sheet; `bar` (a search box...) sits above it, outside the scrolling part. */
   open(id: string, title: string, content: HTMLElement, onClose?: () => void, bar?: HTMLElement) {
@@ -48,6 +86,9 @@ export class Sheet {
     this.body.append(content);
     this.el.hidden = false;
     this.el.dataset.sheet = id;
+    // The height the reader last gave this panel, else its own (CSS).
+    const hh = this.heights[id];
+    this.size(hh ? `${Math.round(hh * 1000) / 10}vh` : null);
     this.body.scrollTop = this.scrolls.get(id) ?? 0;
     requestAnimationFrame(() => this.el.classList.add('open'));
     this.onCloseCb = onClose ?? null;

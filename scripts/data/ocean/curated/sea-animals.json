@@ -374,7 +374,7 @@
         28
       ],
       "text": {
-        "en": "The world's heaviest worm does not eat: bacteria living inside its body turn sulfur from hot vent water into energy for it. Its red gills look like plumes about 30 cm long.",
+        "en": "The world's heaviest worm does not eat: bacteria living inside its body turn sulphur from hot vent water into energy for it. Its red gills look like plumes about 30 cm long.",
         "es": "El gusano más pesado del mundo no come: bacterias que viven dentro de su cuerpo convierten el azufre del agua de las fuentes hidrotermales en energía para él. Sus branquias rojas parecen plumas de unos 30 cm."
       },
       "src": "https://www.mbari.org/animal/giant-tubeworm/"
@@ -3294,6 +3294,1156 @@
         "es": "Un pez plano de aguas profundas y heladas que prefiere fondos de -0,5 a 6 °C y a menudo se captura nadando muy por encima del fondo."
       },
       "src": "https://www.fishbase.se/summary/Reinhardtius-hippoglossoides.html"
+    },
+    {
+      "id": "antarctic-krill",
+      "e": "🦐",
+      "name": {
+        "en": "Antarctic krill",
+        "es": "Kril antártico"
+      },
+      "sci": "Euphausia superba",
+      "group": "crustacean",
+      "depth": [
+        0,
+        300
+      ],
+      "usual": 70,
+      "oceans": [
+        "southern"
+      ],
+      "lat": [
+        -78,
+        -48
+      ],
+      "text": {
+        "en": "Only about 6 cm long, but its swarms can stretch for tens of kilometres and feed penguins, whales and seals. Its larvae shelter under the sea ice.",
+        "es": "Mide apenas unos 6 cm, pero sus enjambres pueden extenderse decenas de kilómetros y alimentan a pingüinos, ballenas y focas. Sus larvas se refugian bajo el hielo marino."
+      },
+      "src": "https://oceana.org/marine-life/antarctic-krill/",
+      "src_more": [
+        "https://www.sealifebase.se/summary/Euphausia-superba.html"
+      ]
+    },
+    {
+      "id": "humboldt-squid",
+      "e": "🦑",
+      "name": {
+        "en": "Humboldt squid",
+        "es": "Calamar de Humboldt"
+      },
+      "sci": "Dosidicus gigas",
+      "group": "cephalopod",
+      "depth": [
+        0,
+        1000
+      ],
+      "usual": 300,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        -45,
+        40
+      ],
+      "text": {
+        "en": "Grows up to 3 m long and 50 kg and hunts in groups of up to 1,200. It spends the day as deep as 1,000 m and rises to the surface at night, flashing red when disturbed.",
+        "es": "Llega a 3 m de largo y 50 kg y caza en grupos de hasta 1 200. Pasa el día hasta a 1 000 m de profundidad y de noche sube a la superficie; se pone rojo cuando lo molestan."
+      },
+      "src": "https://oceana.org/marine-life/humboldt-squid/"
+    },
+    {
+      "id": "chambered-nautilus",
+      "e": "🐚",
+      "name": {
+        "en": "Chambered nautilus",
+        "es": "Nautilo"
+      },
+      "sci": "Nautilus pompilius",
+      "group": "cephalopod",
+      "depth": [
+        0,
+        750
+      ],
+      "usual": 150,
+      "oceans": [
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -24,
+        20
+      ],
+      "text": {
+        "en": "A living fossil with more than 90 tentacles. It pumps water and gas in and out of the chambers of its spiral shell to rise and sink, usually between 60 and 240 m.",
+        "es": "Un fósil viviente con más de 90 tentáculos. Bombea agua y gas dentro y fuera de las cámaras de su concha en espiral para subir y bajar, casi siempre entre 60 y 240 m."
+      },
+      "src": "https://oceana.org/marine-life/chambered-nautilus/",
+      "src_more": [
+        "https://www.sealifebase.se/summary/Nautilus-pompilius.html"
+      ]
+    },
+    {
+      "id": "giant-pacific-octopus",
+      "e": "🐙",
+      "name": {
+        "en": "Giant Pacific octopus",
+        "es": "Pulpo gigante del Pacífico"
+      },
+      "sci": "Enteroctopus dofleini",
+      "group": "cephalopod",
+      "depth": [
+        0,
+        1500
+      ],
+      "usual": 50,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        22,
+        67
+      ],
+      "text": {
+        "en": "Usually lives from tide pools down to 110 m, hiding in dens among kelp, but it has been found more than 1,500 m below the surface.",
+        "es": "Suele vivir desde las pozas de marea hasta 110 m, escondido en guaridas entre los bosques de algas, pero se ha encontrado a más de 1 500 m bajo la superficie."
+      },
+      "src": "https://oceana.org/marine-life/giant-pacific-octopus/"
+    },
+    {
+      "id": "peacock-mantis-shrimp",
+      "e": "🦐",
+      "name": {
+        "en": "Peacock mantis shrimp",
+        "es": "Camarón mantis pavo real"
+      },
+      "sci": "Odontodactylus scyllarus",
+      "group": "crustacean",
+      "depth": [
+        0,
+        100
+      ],
+      "usual": 10,
+      "oceans": [
+        "indian",
+        "pacific"
+      ],
+      "lat": [
+        -30,
+        30
+      ],
+      "text": {
+        "en": "Strikes with club-like arms as fast as a small bullet, cracking the shells of crabs and scallops. Each eye moves on its own and detects 12 different wavelengths of colour.",
+        "es": "Golpea con sus brazos en forma de mazo tan rápido como una bala pequeña y rompe los caparazones de cangrejos y las conchas de vieiras. Cada ojo se mueve por separado y detecta 12 longitudes de onda de color distintas."
+      },
+      "src": "https://oceana.org/marine-life/peacock-mantis-shrimp/",
+      "src_more": [
+        "https://www.sealifebase.se/summary/Odontodactylus-scyllarus.html"
+      ]
+    },
+    {
+      "id": "red-king-crab",
+      "e": "🦀",
+      "name": {
+        "en": "Red king crab",
+        "es": "Cangrejo rey rojo"
+      },
+      "sci": "Paralithodes camtschaticus",
+      "group": "crustacean",
+      "depth": [
+        0,
+        461
+      ],
+      "usual": 150,
+      "oceans": [
+        "pacific",
+        "arctic"
+      ],
+      "lat": [
+        36,
+        67
+      ],
+      "text": {
+        "en": "Can weigh 11 kg with legs spanning 1.5 m. Adults feed in deeper water and females return to the shallows to hatch their eggs, while the young gather in pods of thousands.",
+        "es": "Puede pesar 11 kg y abarcar 1,5 m con las patas. Los adultos comen en aguas más profundas y las hembras vuelven a la costa para que nazcan sus huevos, mientras los jóvenes se juntan en grupos de miles."
+      },
+      "src": "https://www.fisheries.noaa.gov/species/red-king-crab",
+      "src_more": [
+        "https://www.sealifebase.se/summary/Paralithodes-camtschaticus.html",
+        "https://oceana.org/marine-life/red-king-crab/"
+      ]
+    },
+    {
+      "id": "portuguese-man-o-war",
+      "e": "🪼",
+      "name": {
+        "en": "Portuguese man o' war",
+        "es": "Carabela portuguesa"
+      },
+      "sci": "Physalia physalis",
+      "group": "cnidarian",
+      "depth": [
+        0,
+        30
+      ],
+      "usual": 0,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "caribbean"
+      ],
+      "lat": [
+        -40,
+        45
+      ],
+      "text": {
+        "en": "Not a jellyfish but a colony of four kinds of polyps. A gas-filled float sails it on the wind while stinging tentacles trail up to 30 m below.",
+        "es": "No es una medusa, sino una colonia de cuatro tipos de pólipos. Un flotador lleno de gas la impulsa con el viento mientras sus tentáculos urticantes cuelgan hasta 30 m."
+      },
+      "src": "https://oceana.org/marine-life/portuguese-man-o-war/"
+    },
+    {
+      "id": "giant-clam",
+      "e": "🐚",
+      "name": {
+        "en": "Giant clam",
+        "es": "Almeja gigante"
+      },
+      "sci": "Tridacna gigas",
+      "group": "mollusc",
+      "depth": [
+        0,
+        20
+      ],
+      "usual": 10,
+      "oceans": [
+        "indian",
+        "pacific"
+      ],
+      "lat": [
+        -25,
+        25
+      ],
+      "text": {
+        "en": "The biggest bivalve, up to 1.5 m long, lives on reefs no deeper than 20 m. Most of its food comes from tiny algae living in its tissues.",
+        "es": "El bivalvo más grande, de hasta 1,5 m, vive en arrecifes a no más de 20 m. La mayor parte de su alimento viene de algas diminutas que viven en sus tejidos."
+      },
+      "src": "https://oceana.org/marine-life/giant-clam/"
+    },
+    {
+      "id": "queen-conch",
+      "e": "🐚",
+      "name": {
+        "en": "Queen conch",
+        "es": "Caracol rosado"
+      },
+      "sci": "Aliger gigas",
+      "group": "mollusc",
+      "depth": [
+        0,
+        30
+      ],
+      "usual": 10,
+      "oceans": [
+        "atlantic"
+      ],
+      "seas": [
+        "caribbean"
+      ],
+      "lat": [
+        10,
+        32
+      ],
+      "text": {
+        "en": "A large sea snail that grazes algae on seagrass beds and sand flats, mostly in water less than 30 m deep. It can weigh 2.3 kg and live 30 years.",
+        "es": "Un gran caracol marino que pasta algas en praderas marinas y fondos de arena, casi siempre a menos de 30 m. Puede pesar 2,3 kg y vivir 30 años."
+      },
+      "src": "https://www.fisheries.noaa.gov/species/queen-conch",
+      "src_more": [
+        "https://oceana.org/marine-life/queen-conch/"
+      ]
+    },
+    {
+      "id": "elkhorn-coral",
+      "e": "🪸",
+      "name": {
+        "en": "Elkhorn coral",
+        "es": "Coral cuerno de alce"
+      },
+      "sci": "Acropora palmata",
+      "group": "cnidarian",
+      "depth": [
+        0.3,
+        4.6
+      ],
+      "usual": 2,
+      "oceans": [
+        "atlantic"
+      ],
+      "seas": [
+        "caribbean"
+      ],
+      "lat": [
+        10,
+        27
+      ],
+      "text": {
+        "en": "Builds Caribbean reefs in clear, wave-washed water only 0.3 to 4.6 m deep, with colonies up to 1.8 m tall and 3.6 m across.",
+        "es": "Construye arrecifes del Caribe en aguas claras y batidas por las olas de 0,3 a 4,6 m de profundidad, con colonias de hasta 1,8 m de alto y 3,6 m de ancho."
+      },
+      "src": "https://www.fisheries.noaa.gov/species/elkhorn-coral"
+    },
+    {
+      "id": "snow-crab",
+      "e": "🦀",
+      "name": {
+        "en": "Snow crab",
+        "es": "Cangrejo de las nieves"
+      },
+      "sci": "Chionoecetes opilio",
+      "group": "crustacean",
+      "depth": [
+        4,
+        1400
+      ],
+      "usual": 150,
+      "oceans": [
+        "arctic",
+        "atlantic",
+        "pacific"
+      ],
+      "lat": [
+        29,
+        79
+      ],
+      "text": {
+        "en": "Prefers soft sand or mud, usually less than 200 m deep, where it can burrow to hide from predators and feed on small animals in the sediment.",
+        "es": "Prefiere fondos blandos de arena o lodo, casi siempre a menos de 200 m, donde puede enterrarse para esconderse de los depredadores y comer pequeños animales del sedimento."
+      },
+      "src": "https://www.fisheries.noaa.gov/species/alaska-snow-crab",
+      "src_more": [
+        "https://www.sealifebase.se/summary/Chionoecetes-opilio.html"
+      ]
+    },
+    {
+      "id": "caribbean-spiny-lobster",
+      "e": "🦞",
+      "name": {
+        "en": "Caribbean spiny lobster",
+        "es": "Langosta espinosa del Caribe"
+      },
+      "sci": "Panulirus argus",
+      "group": "crustacean",
+      "depth": [
+        0,
+        90
+      ],
+      "usual": 20,
+      "oceans": [
+        "atlantic"
+      ],
+      "seas": [
+        "caribbean"
+      ],
+      "lat": [
+        -24,
+        35
+      ],
+      "text": {
+        "en": "Covered in forward-pointing spines instead of big claws. It moults about 25 times in its first 5 to 7 years and forages at night.",
+        "es": "Está cubierta de espinas que apuntan hacia adelante en lugar de grandes pinzas. Muda unas 25 veces en sus primeros 5 a 7 años y busca alimento de noche."
+      },
+      "src": "https://www.fisheries.noaa.gov/species/caribbean-spiny-lobster"
+    },
+    {
+      "id": "giant-manta-ray",
+      "e": "🐟",
+      "name": {
+        "en": "Giant oceanic manta ray",
+        "es": "Mantarraya gigante"
+      },
+      "sci": "Mobula birostris",
+      "group": "fish",
+      "depth": [
+        0,
+        1000
+      ],
+      "usual": 10,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "caribbean"
+      ],
+      "lat": [
+        -38,
+        42
+      ],
+      "text": {
+        "en": "The world's largest ray, up to about 8 m across. It feeds on plankton in water less than 10 m deep but dives to 200 to 450 m and can pass 1,000 m.",
+        "es": "La raya más grande del mundo, de hasta unos 8 m de ancho. Come plancton a menos de 10 m de profundidad, pero baja a 200 a 450 m y puede pasar de 1 000 m."
+      },
+      "src": "https://www.fisheries.noaa.gov/species/giant-manta-ray"
+    },
+    {
+      "id": "scaly-foot-snail",
+      "e": "🐚",
+      "name": {
+        "en": "Scaly-foot snail",
+        "es": "Caracol de pie escamoso"
+      },
+      "sci": "Chrysomallon squamiferum",
+      "group": "mollusc",
+      "depth": [
+        2424,
+        2785
+      ],
+      "usual": 2600,
+      "oceans": [
+        "indian"
+      ],
+      "lat": [
+        -38,
+        -19
+      ],
+      "text": {
+        "en": "Lives only at hydrothermal vents in the Indian Ocean. Hundreds of scales on its foot, and its shell, can be coated in iron sulphide, making it the only animal known to use iron sulphide in its skeleton.",
+        "es": "Vive solo en fuentes hidrotermales del océano Índico. Cientos de escamas de su pie, y su concha, pueden estar cubiertas de sulfuro de hierro: es el único animal conocido que lo usa en su esqueleto."
+      },
+      "src": "https://australian.museum/learn/news/blog/first-animal-officially-endangered-by-deep-sea-mining/",
+      "src_more": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6789796/"
+      ]
+    },
+    {
+      "id": "xenophyophore",
+      "e": "🦠",
+      "name": {
+        "en": "Xenophyophore",
+        "es": "Xenofióforo"
+      },
+      "sci": "Xenophyophorea",
+      "group": "other",
+      "depth": [
+        3500,
+        10641
+      ],
+      "usual": 5000,
+      "oceans": [
+        "pacific",
+        "atlantic",
+        "indian"
+      ],
+      "lat": [
+        -60,
+        60
+      ],
+      "text": {
+        "en": "A single cell that can grow over 10 cm wide, among the largest cells in existence. Landers filmed them 10,641 m down in the Mariana Trench.",
+        "es": "Una sola célula que puede medir más de 10 cm, de las células más grandes que existen. Unos módulos con cámara las filmaron a 10 641 m en la fosa de las Marianas."
+      },
+      "src": "https://today.ucsd.edu/story/researchers_identify_mysterious_life_forms_in_the_extreme_deep_sea",
+      "src_more": [
+        "https://nora.nerc.ac.uk/id/eprint/538744/1/1-s2.0-S0079661124002179-main.pdf"
+      ]
+    },
+    {
+      "id": "hirondellea-amphipod",
+      "e": "🦐",
+      "name": {
+        "en": "Challenger Deep amphipod",
+        "es": "Anfípodo de la fosa de las Marianas"
+      },
+      "sci": "Hirondellea gigas",
+      "group": "crustacean",
+      "depth": [
+        6770,
+        10897
+      ],
+      "usual": 9000,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        7,
+        50
+      ],
+      "text": {
+        "en": "Swarms the bottom of north-west Pacific trenches down to the Challenger Deep, about 10,900 m. It makes an enzyme that digests sunken wood and plant debris.",
+        "es": "Abunda en el fondo de las fosas del noroeste del Pacífico, hasta la fosa Challenger, a unos 10 900 m. Produce una enzima que digiere madera y restos de plantas hundidos."
+      },
+      "src": "https://www.jamstec.go.jp/e/about/press_release/20120816",
+      "src_more": [
+        "https://www.frontiersin.org/articles/10.3389/fmars.2022.824640/full"
+      ]
+    },
+    {
+      "id": "yeti-crab",
+      "e": "🦀",
+      "name": {
+        "en": "Yeti crab",
+        "es": "Cangrejo yeti"
+      },
+      "sci": "Kiwa hirsuta",
+      "group": "crustacean",
+      "depth": [
+        2216,
+        2228
+      ],
+      "usual": 2220,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        -38,
+        -30
+      ],
+      "text": {
+        "en": "A blind crab whose long arms are covered in pale, hair-like bristles full of bacteria, which it may farm for food. It was found in 2005 at vents about 2,200 m deep south of Easter Island.",
+        "es": "Un cangrejo ciego cuyos largos brazos están cubiertos de cerdas pálidas llenas de bacterias, que quizá cultiva para comer. Se descubrió en 2005 en fuentes hidrotermales a unos 2 200 m al sur de la isla de Pascua."
+      },
+      "src": "https://www.mbari.org/discovery-of-yeti-crab/",
+      "src_more": [
+        "https://www.sealifebase.se/summary/Kiwa-hirsuta.html"
+      ]
+    },
+    {
+      "id": "turquets-octopus",
+      "e": "🐙",
+      "name": {
+        "en": "Turquet's octopus",
+        "es": "Pulpo de Turquet"
+      },
+      "sci": "Pareledone turqueti",
+      "group": "cephalopod",
+      "depth": [
+        0,
+        4000
+      ],
+      "usual": 500,
+      "oceans": [
+        "southern"
+      ],
+      "lat": [
+        -78,
+        -53
+      ],
+      "text": {
+        "en": "Its DNA shows that octopus populations on either side of West Antarctica once mixed through open seaways, a sign that the ice sheet collapsed between about 129,000 and 116,000 years ago, when the world was only about 1 °C warmer.",
+        "es": "Su ADN muestra que las poblaciones de ambos lados de la Antártida Occidental se mezclaron por pasos marinos abiertos, señal de que la capa de hielo colapsó hace entre unos 129 000 y 116 000 años, cuando el mundo era apenas 1 °C más cálido."
+      },
+      "src": "https://www.eurekalert.org/news-releases/1029286",
+      "src_more": [
+        "https://www.sealifebase.se/summary/Pareledone-turqueti.html"
+      ]
+    },
+    {
+      "id": "dumbo-octopus",
+      "e": "🐙",
+      "name": {
+        "en": "Dumbo octopus",
+        "es": "Pulpo dumbo"
+      },
+      "sci": "Grimpoteuthis spp.",
+      "group": "cephalopod",
+      "depth": [
+        1000,
+        6957
+      ],
+      "usual": 4000,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -60,
+        60
+      ],
+      "text": {
+        "en": "Flaps ear-like fins to swim over the seafloor. One filmed at 6,957 m in the Java Trench in the Indian Ocean is the deepest octopus on record.",
+        "es": "Agita aletas como orejas para nadar sobre el fondo. Uno filmado a 6 957 m en la fosa de Java, en el océano Índico, es el pulpo más profundo registrado."
+      },
+      "src": "https://www.guinnessworldrecords.com/world-records/83167-deepest-octopus",
+      "record": true
+    },
+    {
+      "id": "japanese-spider-crab",
+      "e": "🦀",
+      "name": {
+        "en": "Japanese spider crab",
+        "es": "Cangrejo araña japonés"
+      },
+      "sci": "Macrocheira kaempferi",
+      "group": "crustacean",
+      "depth": [
+        50,
+        600
+      ],
+      "usual": 125,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        30,
+        42
+      ],
+      "text": {
+        "en": "The largest living arthropod, with legs spanning up to 3.5 m and a weight of 20 kg. Adults live as deep as 600 m, while the young stay near 50 m.",
+        "es": "El artrópodo vivo más grande, con patas que abarcan hasta 3,5 m y un peso de 20 kg. Los adultos viven hasta a 600 m y los jóvenes se quedan cerca de 50 m."
+      },
+      "src": "https://www.aquarium-larochelle.com/en/species-encyclopedia/japanese-giant-spider-crab",
+      "src_more": [
+        "https://www.sealifebase.se/summary/Macrocheira-kaempferi.html"
+      ]
+    },
+    {
+      "id": "giant-isopod",
+      "e": "🦐",
+      "name": {
+        "en": "Giant isopod",
+        "es": "Isópodo gigante"
+      },
+      "sci": "Bathynomus giganteus",
+      "group": "crustacean",
+      "depth": [
+        310,
+        2300
+      ],
+      "usual": 550,
+      "oceans": [
+        "atlantic"
+      ],
+      "seas": [
+        "caribbean"
+      ],
+      "lat": [
+        -30,
+        35
+      ],
+      "text": {
+        "en": "The largest known isopod, a giant cousin of woodlice. A stretchy gut lets this scavenger gorge on carcasses and store fat for lean times.",
+        "es": "El isópodo más grande conocido, primo gigante de las cochinillas de humedad. Su intestino elástico le permite atiborrarse de cadáveres y guardar grasa para tiempos de escasez."
+      },
+      "src": "https://www.sealifebase.se/summary/Bathynomus-giganteus.html"
+    },
+    {
+      "id": "giant-squid",
+      "e": "🦑",
+      "name": {
+        "en": "Giant squid",
+        "es": "Calamar gigante"
+      },
+      "sci": "Architeuthis dux",
+      "group": "cephalopod",
+      "depth": [
+        200,
+        1000
+      ],
+      "usual": 700,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian",
+        "southern"
+      ],
+      "lat": [
+        -55,
+        70
+      ],
+      "text": {
+        "en": "Can grow to 10 m or more. It was first filmed in the deep in 2012 off Japan, after scientists hung a camera about 700 m down.",
+        "es": "Puede superar los 10 m de largo. Se filmó por primera vez en las profundidades en 2012 frente a Japón, tras colgar una cámara a unos 700 m."
+      },
+      "src": "https://www.nature.com/articles/nature.2013.12202",
+      "src_more": [
+        "https://www.sealifebase.se/summary/Architeuthis-dux.html"
+      ]
+    },
+    {
+      "id": "plastic-amphipod",
+      "e": "🦐",
+      "name": {
+        "en": "Plastic amphipod",
+        "es": "Anfípodo del plástico"
+      },
+      "sci": "Eurythenes plasticus",
+      "group": "crustacean",
+      "depth": [
+        6010,
+        6949
+      ],
+      "usual": 6500,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        11,
+        24
+      ],
+      "text": {
+        "en": "Described in 2020 from the Mariana Trench, more than 6,000 m down, and named for a plastic fibre found in its gut, very similar to the PET used in drinks bottles.",
+        "es": "Se describió en 2020 en la fosa de las Marianas, a más de 6 000 m, y se nombró por una fibra de plástico hallada en su intestino, muy parecida al PET de las botellas."
+      },
+      "src": "https://www.guinnessworldrecords.com/world-records/626040-first-new-species-contaminated-with-plastic"
+    },
+    {
+      "id": "warty-deep-sea-octopus",
+      "e": "🐙",
+      "name": {
+        "en": "Warty deep-sea octopus",
+        "es": "Pulpo verrugoso de profundidad"
+      },
+      "sci": "Graneledone pacifica",
+      "group": "cephalopod",
+      "depth": [
+        90,
+        3000
+      ],
+      "usual": 1400,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        23,
+        60
+      ],
+      "text": {
+        "en": "One mother guarded about 160 eggs on a rock ledge off California for four and a half years without leaving, the longest incubation known for any animal.",
+        "es": "Una madre cuidó unos 160 huevos sobre una cornisa rocosa frente a California durante cuatro años y medio sin moverse, la incubación más larga conocida en un animal."
+      },
+      "src": "https://www.mbari.org/animal/warty-deep-sea-octopus/"
+    },
+    {
+      "id": "bomber-worm",
+      "e": "🪱",
+      "name": {
+        "en": "Green bomber worm",
+        "es": "Gusano bombardero verde"
+      },
+      "sci": "Swima bombiviridis",
+      "group": "worm",
+      "depth": [
+        2700,
+        3600
+      ],
+      "usual": 3150,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        25,
+        45
+      ],
+      "text": {
+        "en": "Carries eight sacs of glowing fluid behind its head. When attacked it drops one, which bursts into green light while the worm swims away, and later grows it back.",
+        "es": "Lleva ocho bolsas de líquido luminoso detrás de la cabeza. Si lo atacan suelta una, que estalla en luz verde mientras el gusano escapa, y después la regenera."
+      },
+      "src": "https://www.mbari.org/animal/bomber-worm/"
+    },
+    {
+      "id": "pigbutt-worm",
+      "e": "🪱",
+      "name": {
+        "en": "Pigbutt worm",
+        "es": "Gusano trasero de cerdo"
+      },
+      "sci": "Chaetopterus pugaporcinus",
+      "group": "worm",
+      "depth": [
+        820,
+        2200
+      ],
+      "usual": 1300,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        32,
+        38
+      ],
+      "text": {
+        "en": "A bristle worm the size of a hazelnut that drifts in the midwater instead of living on the seafloor. Its swollen middle probably helps it float.",
+        "es": "Un gusano poliqueto del tamaño de una avellana que flota a media agua en lugar de vivir en el fondo. Su parte central hinchada probablemente lo ayuda a flotar."
+      },
+      "src": "https://www.mbari.org/animal/pigbutt-worm/"
+    },
+    {
+      "id": "crowned-sea-cucumber",
+      "e": "🥒",
+      "name": {
+        "en": "Crowned sea cucumber",
+        "es": "Pepino de mar coronado"
+      },
+      "sci": "Peniagone spp.",
+      "group": "echinoderm",
+      "depth": [
+        220,
+        8600
+      ],
+      "usual": 4000,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian",
+        "southern"
+      ],
+      "lat": [
+        -70,
+        60
+      ],
+      "text": {
+        "en": "Abundant on abyssal plains, where it eats sinking detritus and recycles it for the seafloor. It can also swim up and drift on slow currents to reach new food falls.",
+        "es": "Abunda en las llanuras abisales, donde come detritos que caen de arriba y los recicla para el fondo. También puede nadar y dejarse llevar por corrientes lentas para llegar a nuevas fuentes de alimento."
+      },
+      "src": "https://www.mbari.org/animal/crowned-sea-cucumber/"
+    },
+    {
+      "id": "acorn-worm",
+      "e": "🪱",
+      "name": {
+        "en": "Deep-sea acorn worm",
+        "es": "Gusano bellota de profundidad"
+      },
+      "sci": "Enteropneusta",
+      "group": "worm",
+      "depth": [
+        0,
+        8100
+      ],
+      "usual": 4000,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian",
+        "southern"
+      ],
+      "lat": [
+        -70,
+        70
+      ],
+      "text": {
+        "en": "Despite its looks it is more closely related to us than to worms, with a simple nerve cord and gill-like breathing structures. It eats its way through the mud of the abyssal seafloor.",
+        "es": "Aunque parece un gusano, está más emparentado con nosotros que con los gusanos: tiene un cordón nervioso sencillo y estructuras para respirar parecidas a branquias. Se alimenta del lodo del fondo abisal."
+      },
+      "src": "https://www.mbari.org/animal/acorn-worm/"
+    },
+    {
+      "id": "giant-cusk-eel",
+      "e": "🐟",
+      "name": {
+        "en": "Giant cusk-eel",
+        "es": "Brótula gigante"
+      },
+      "sci": "Spectrunculus grandis",
+      "group": "fish",
+      "depth": [
+        2000,
+        4300
+      ],
+      "usual": 3150,
+      "oceans": [
+        "pacific",
+        "atlantic"
+      ],
+      "lat": [
+        -50,
+        60
+      ],
+      "text": {
+        "en": "One of the largest bony fish of the abyss, nicknamed a swimming nose: it sniffs out worms, crustaceans, sea stars and the remains of whales and octopuses.",
+        "es": "Uno de los peces óseos más grandes del abismo, apodado nariz nadadora: olfatea gusanos, crustáceos, estrellas de mar y restos de ballenas y pulpos."
+      },
+      "src": "https://www.mbari.org/animal/giant-cusk-eel/"
+    },
+    {
+      "id": "predatory-tunicate",
+      "e": "👄",
+      "name": {
+        "en": "Predatory tunicate",
+        "es": "Tunicado depredador"
+      },
+      "sci": "Megalodicopia spp.",
+      "group": "other",
+      "depth": [
+        200,
+        3900
+      ],
+      "usual": 900,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        20,
+        60
+      ],
+      "text": {
+        "en": "Sits on deep rocks with a huge hooded mouth facing the current, snapping shut its lips like a trap to catch small crustaceans.",
+        "es": "Vive fijo en rocas profundas con una enorme boca en forma de capucha de cara a la corriente y cierra los labios como una trampa para atrapar pequeños crustáceos."
+      },
+      "src": "https://www.mbari.org/animal/predatory-tunicate/"
+    },
+    {
+      "id": "mystery-mollusc",
+      "e": "🐚",
+      "name": {
+        "en": "Mystery mollusc",
+        "es": "Molusco misterioso"
+      },
+      "sci": "Bathydevius caudactylus",
+      "group": "mollusc",
+      "depth": [
+        1000,
+        4000
+      ],
+      "usual": 2500,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        32,
+        46
+      ],
+      "text": {
+        "en": "The first sea slug known to live in the open deep water. It swims through the midnight zone and traps shrimp with a large hood, like a Venus flytrap.",
+        "es": "La primera babosa de mar conocida que vive en aguas abiertas profundas. Nada por la zona de medianoche y atrapa camarones con una gran capucha, como una planta atrapamoscas."
+      },
+      "src": "https://www.mbari.org/animal/mystery-mollusc/"
+    },
+    {
+      "id": "psychedelic-jelly",
+      "e": "🪼",
+      "name": {
+        "en": "Psychedelic jelly",
+        "es": "Medusa psicodélica"
+      },
+      "sci": "Crossota millsae",
+      "group": "cnidarian",
+      "depth": [
+        1000,
+        3300
+      ],
+      "usual": 1800,
+      "oceans": [
+        "pacific",
+        "arctic",
+        "atlantic"
+      ],
+      "seas": [
+        "caribbean"
+      ],
+      "lat": [
+        10,
+        80
+      ],
+      "text": {
+        "en": "Ruby red, orange and purple, it is one of the few jellies that give birth to live young, carrying several babies of different sizes under its bell.",
+        "es": "De color rubí, naranja y púrpura, es una de las pocas medusas que paren crías vivas: lleva varias de distintos tamaños bajo su campana."
+      },
+      "src": "https://www.mbari.org/animal/psychedelic-jelly/"
+    },
+    {
+      "id": "barrel-amphipod",
+      "e": "🦐",
+      "name": {
+        "en": "Barrel amphipod",
+        "es": "Anfípodo del barril"
+      },
+      "sci": "Phronima sedentaria",
+      "group": "crustacean",
+      "depth": [
+        0,
+        600
+      ],
+      "usual": 300,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        -45,
+        50
+      ],
+      "text": {
+        "en": "Kills a jelly-like salp, eats out its insides and carries the hollow barrel around as a home, where it raises its young.",
+        "es": "Mata a una salpa gelatinosa, se come su interior y lleva consigo el barril hueco como casa, donde cría a sus pequeños."
+      },
+      "src": "https://www.mbari.org/animal/barrel-amphipod/"
+    },
+    {
+      "id": "bloody-belly-comb-jelly",
+      "e": "🪼",
+      "name": {
+        "en": "Bloody-belly comb jelly",
+        "es": "Ctenóforo de vientre rojo"
+      },
+      "sci": "Lampocteis cruentiventer",
+      "group": "other",
+      "depth": [
+        250,
+        1500
+      ],
+      "usual": 600,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        23,
+        55
+      ],
+      "text": {
+        "en": "Its blood-red stomach hides the glow of the luminous prey it has eaten, since red looks black in the deep. It swims by beating rows of shimmering hairs.",
+        "es": "Su estómago rojo sangre oculta el brillo de las presas luminosas que ha comido, porque en lo profundo el rojo parece negro. Nada batiendo hileras de pelillos brillantes."
+      },
+      "src": "https://www.mbari.org/animal/bloody-belly-comb-jelly/"
+    },
+    {
+      "id": "basket-star",
+      "e": "⭐",
+      "name": {
+        "en": "Basket star",
+        "es": "Estrella canasta"
+      },
+      "sci": "Gorgonocephalus eucnemis",
+      "group": "echinoderm",
+      "depth": [
+        100,
+        1800
+      ],
+      "usual": 425,
+      "oceans": [
+        "pacific",
+        "arctic",
+        "atlantic"
+      ],
+      "lat": [
+        25,
+        80
+      ],
+      "text": {
+        "en": "Spreads a tangle of branching arms, armed with tiny hooks and sticky mucus, to catch plankton drifting over seamounts. Each catch is curled up and passed to the mouth.",
+        "es": "Extiende una maraña de brazos ramificados, con ganchitos y moco pegajoso, para atrapar plancton que pasa sobre los montes submarinos. Enrolla cada presa y la lleva a la boca."
+      },
+      "src": "https://www.mbari.org/animal/basket-star/"
+    },
+    {
+      "id": "fingered-goblet-sponge",
+      "e": "🧽",
+      "name": {
+        "en": "Fingered goblet sponge",
+        "es": "Esponja copa de dedos"
+      },
+      "sci": "Heterochone calyx",
+      "group": "sponge",
+      "depth": [
+        90,
+        3000
+      ],
+      "usual": 500,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        30,
+        60
+      ],
+      "text": {
+        "en": "A glass sponge up to 2 m tall whose skeleton is fused silica. Off British Columbia it helps build sponge reefs covering more than 700 square kilometres, thousands of years old.",
+        "es": "Una esponja de vidrio de hasta 2 m de alto cuyo esqueleto es de sílice fundida. Frente a la Columbia Británica ayuda a formar arrecifes de esponjas de más de 700 kilómetros cuadrados y miles de años de antigüedad."
+      },
+      "src": "https://www.mbari.org/animal/fingered-goblet-sponge/"
+    },
+    {
+      "id": "pom-pom-anemone",
+      "e": "🪸",
+      "name": {
+        "en": "Pom-pom anemone",
+        "es": "Anémona pompón"
+      },
+      "sci": "Liponema brevicorne",
+      "group": "cnidarian",
+      "depth": [
+        100,
+        4100
+      ],
+      "usual": 640,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        30,
+        60
+      ],
+      "text": {
+        "en": "Rolls itself into a ball and tumbles across the muddy seafloor with the current, like a tumbleweed, until it finds a better place to feed.",
+        "es": "Se enrolla como una bola y rueda por el fondo fangoso con la corriente, como una planta rodadora, hasta encontrar un lugar mejor para comer."
+      },
+      "src": "https://www.mbari.org/animal/pom-pom-anemone/"
+    },
+    {
+      "id": "redhead-larvacean",
+      "e": "🫧",
+      "name": {
+        "en": "Redhead larvacean",
+        "es": "Larváceo cabeza roja"
+      },
+      "sci": "Mesochordaeus erythrocephalus",
+      "group": "other",
+      "depth": [
+        200,
+        750
+      ],
+      "usual": 400,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        30,
+        45
+      ],
+      "text": {
+        "en": "A tadpole-shaped animal that builds a house of mucus to filter marine snow. Abandoned houses sink and carry a large amount of carbon down into the deep sea.",
+        "es": "Un animal con forma de renacuajo que construye una casa de moco para filtrar nieve marina. Las casas abandonadas se hunden y llevan mucho carbono a las profundidades."
+      },
+      "src": "https://www.mbari.org/animal/redhead-larvacean/"
+    },
+    {
+      "id": "flapjack-octopus",
+      "e": "🐙",
+      "name": {
+        "en": "Flapjack octopus",
+        "es": "Pulpo panqueque"
+      },
+      "sci": "Opisthoteuthis sp.",
+      "group": "cephalopod",
+      "depth": [
+        130,
+        2350
+      ],
+      "usual": 550,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -50,
+        60
+      ],
+      "text": {
+        "en": "Rests on the mud like a flat, fluffy orange pancake. When startled it swims off by flapping stubby fins, pulsing its webbed arms and jetting water.",
+        "es": "Descansa sobre el lodo como un panqueque naranja, plano y esponjoso. Si se asusta, escapa agitando sus aletas cortas, pulsando sus brazos palmeados y expulsando agua."
+      },
+      "src": "https://www.mbari.org/animal/flapjack-octopus/"
     }
   ]
 }

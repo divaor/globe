@@ -53,6 +53,8 @@ export class DeepSea {
       void this.diveAt(g[0], g[1]);
       return true;
     });
+    // The reader made the panel taller or shorter: the globe centres again in what is left above it.
+    document.addEventListener('sheet-resized', () => { if (this.shell.sheet.isOpen('deep')) this.inset(true); });
     app.on('lang', () => { if (this.shell.sheet.isOpen('deep')) this.render(); });
     // Where the reader dives: a pin on the globe while the panel is open.
     app.renderer.overlays.add((rc) => {

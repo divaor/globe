@@ -4330,6 +4330,46 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(dig.tab === 'dig' && /Spain/.test(dig.head) && /crust here is about 3\d km thick/.test(dig.body) && dig.marks >= 20 && /Granite, Variscan/.test(dig.rocks) && /New Zealand/.test(dig.body) && /core/i.test(read) && /°C/.test(read) && /GPa/.test(read),
     `dig down from Madrid: ${dig.head}; crust ${/about (\d+) km thick/.exec(dig.body)?.[1]} km; ${dig.marks} things at their depths; "${dig.rocks.slice(0, 60)}…"; deep down: "${read.slice(0, 60)}"; the other side: New Zealand`);
 
+  // The panel on a phone (v0.33.0, from a phone test): the readout is readable in the light theme, a swipe on the
+  // column scrolls the panel (it used to read the depth instead), and dragging the grip makes the panel taller (the
+  // globe centres above it, and the panel remembers it); dragged to the bottom, it closes.
+  await page.evaluate(() => { window.atlas.app.setTheme('light'); document.querySelector('.sheet-body').scrollTop = 0; });
+  await page.waitForTimeout(400);
+  const startH = await page.evaluate(() => Math.round(document.querySelector('.sheet').getBoundingClientRect().height / innerHeight * 100));
+  const contrast = await page.evaluate(() => {
+    const rgb = (c) => (c.match(/[\d.]+/g) ?? []).slice(0, 3).map(Number);
+    const lum = ([r, g, b]) => { const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
+    const cs = getComputedStyle(document.querySelector('.dig-read')), a = lum(rgb(cs.backgroundColor)), b = lum(rgb(cs.color));
+    return Math.round(((Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05)) * 10) / 10;
+  });
+  const cdp = await ctx.newCDPSession(page);
+  const swipe = async (x, y0, y1) => {
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x, y: y0 }] });
+    for (let i = 1; i <= 10; i++) { await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x, y: y0 + ((y1 - y0) * i) / 10 }] }); await page.waitForTimeout(16); }
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+    await page.waitForTimeout(500);
+  };
+  const colAt = await page.evaluate(() => { const r = document.querySelector('.dig-svg').getBoundingClientRect(), b = document.querySelector('.sheet-body').getBoundingClientRect(); return [Math.round(r.left + r.width * 0.3), Math.round(Math.min(b.bottom - 30, r.top + 120))]; });
+  await swipe(colAt[0], colAt[1], colAt[1] - 220);
+  const scrolled = await page.evaluate(() => document.querySelector('.sheet-body').scrollTop);
+  const grip = await page.locator('.sheet-grip').boundingBox();
+  const gx = grip.x + grip.width / 2, gy = grip.y + grip.height / 2;
+  await page.mouse.move(gx, gy); await page.mouse.down(); await page.mouse.move(gx, gy - 100, { steps: 5 }); await page.mouse.move(gx, gy - 200, { steps: 5 }); await page.mouse.up();
+  await page.waitForTimeout(600);
+  const taller = await page.evaluate(() => ({ h: Math.round(document.querySelector('.sheet').getBoundingClientRect().height / innerHeight * 100), inset: window.atlas.app.renderer.view.insetBottom, sheet: Math.round(document.querySelector('.sheet').getBoundingClientRect().height), kept: JSON.parse(localStorage.getItem('atlas-globe:sheet-heights') || '{}').inside }));
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+  await page.waitForTimeout(500);
+  await page.evaluate(() => window.atlas.inside.open('dig'));
+  await page.waitForTimeout(800);
+  const again = await page.evaluate(() => Math.round(document.querySelector('.sheet').getBoundingClientRect().height / innerHeight * 100));
+  const g2 = await page.locator('.sheet-grip').boundingBox();
+  await page.mouse.move(g2.x + g2.width / 2, g2.y + 5); await page.mouse.down(); await page.mouse.move(g2.x + g2.width / 2, 700, { steps: 8 }); await page.mouse.move(g2.x + g2.width / 2, 820, { steps: 4 }); await page.mouse.up();
+  await page.waitForTimeout(700);
+  const closed = await page.evaluate(() => !window.atlas.inside.info.open);
+  await page.evaluate(() => { window.atlas.app.setTheme('dark'); try { localStorage.removeItem('atlas-globe:sheet-heights'); } catch {} });
+  check(contrast >= 4.5 && startH >= 50 && startH <= 60 && scrolled > 100 && taller.h >= startH + 15 && Math.abs(taller.inset - taller.sheet) <= 2 && taller.kept > 0.6 && Math.abs(again - taller.h) <= 1 && closed,
+    `the panel on a phone: readout contrast ${contrast}:1 in the light theme; opens at ${startH}% of the screen; a swipe on the column scrolls it ${scrolled} px; the grip drags it to ${taller.h}% (globe centred above it, kept: ${taller.kept}), ${again}% when opened again; dragged down, it ${closed ? 'closes' : 'stays open'}`);
+
   // Seismic waves.
   await page.evaluate(() => window.atlas.inside.open('waves'));
   await page.waitForTimeout(500);

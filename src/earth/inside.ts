@@ -59,6 +59,8 @@ export class InsideEarth {
       if (g) void this.digAt(g[0], g[1]);
       return true;
     });
+    // The reader made the panel taller or shorter: the globe centres again in what is left above it.
+    document.addEventListener('sheet-resized', () => { if (this.shell.sheet.isOpen('inside')) this.inset(true); });
     app.on('lang', () => { if (this.shell.sheet.isOpen('inside')) this.render(); if (this.active) this.showChip(); });
   }
 

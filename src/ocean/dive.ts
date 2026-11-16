@@ -128,7 +128,9 @@ export function diveColumn(o: { floor: number; lat: number; animals: SeaAnimal[]
   let down = false;
   svg.addEventListener('pointerdown', (e) => { if ((e.target as Element).closest?.('.dive-animal')) return; down = true; at(e); });
   svg.addEventListener('pointermove', (e) => { if (down) at(e); });
+  // A vertical swipe scrolls the panel (the browser takes it over and cancels the pointer); a tap reads the depth.
   window.addEventListener('pointerup', () => { down = false; });
+  svg.addEventListener('pointercancel', () => { down = false; });
   show(Math.min(floor, 200));
   return h('div', { class: 'dive-col' }, read, svg);
 }
