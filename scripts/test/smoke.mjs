@@ -4518,9 +4518,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await cam(150, 20, 1.6);
   await page.waitForTimeout(2000);
   const far = await page.evaluate(() => window.atlas.app.renderer.labels.drawn.map((d) => d.text));
-  await cam(141, 33, 4.5);
+  await cam(141, 33, 9);
   await page.waitForTimeout(2000);
-  const near = await page.evaluate(() => window.atlas.app.renderer.labels.drawn.map((d) => d.text).filter((t) => /Seamount|Knoll|Canyon|Trough|Basin|Ridge|Bank|Spur|Hill/.test(t)));
+  const near = await page.evaluate(() => window.atlas.app.renderer.labels.drawn.map((d) => d.text).filter((t) => /Seamount|Knoll|Canyon|Trough|Basin|Ridge|Bank|Spur|Hill|Hole|Valley|Plateau/.test(t) && !/Trench/.test(t)));
   const featHits = await page.evaluate(async () => { const d = window.atlas.app.registry.get('sea-features'); await d.searchLoad(); return d.search((t) => (/mariana/i.test(t ?? '') ? 90 : 0), window.atlas.app.instance('sea-features'), 'en').map((x) => x.label); });
   const mar = await page.evaluate(async () => (await (await fetch('data/ocean/features.json')).json()).famous.find((f) => /^Mariana Trench$/.test(f.name.en)) ?? null);
   if (mar) { await cam(mar.lon, mar.lat, 2.5); await page.waitForTimeout(1500); await tapAt(mar.lon, mar.lat); }
@@ -4569,12 +4569,12 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const dive = await page.evaluate(() => ({ info: window.atlas.deep.info, text: document.querySelector('.deep')?.innerText ?? '', animals: [...document.querySelectorAll('.dive-animal')].map((g) => g.dataset.animal), recs: document.querySelectorAll('.dive-svg .dive-rec').length, obis: document.querySelector('.deep-obis')?.innerText ?? '', feats: JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').feats ?? null }));
   await page.evaluate(() => document.querySelector('.dive-svg').scrollIntoView({ block: 'end' }));
   await page.waitForTimeout(400);
-  const box = await page.evaluate(() => { const r = document.querySelector('.dive-svg').getBoundingClientRect(); return [r.left + r.width * 0.42, r.top + r.height * 0.6]; });
+  const box = await page.evaluate(() => { const r = document.querySelector('.dive-svg').getBoundingClientRect(); return [r.left + r.width * 0.42, r.top + r.height * 0.88]; });
   await page.touchscreen.tap(box[0], box[1]);
   await page.waitForTimeout(300);
   const read = await page.evaluate(() => document.querySelector('.dive-read')?.textContent ?? '');
   const badge = await page.evaluate(() => [...document.querySelectorAll('.toast')].map((t) => t.textContent).join(' '));
-  check(dive.info.floor > 9000 && /hadal zone/i.test(dive.text) && dive.animals.length >= 10 && dive.recs >= 8 && /Hirondellea gigas/.test(dive.obis) && /(Midnight|Abyss)/.test(read) && /times the air/.test(read),
+  check(dive.info.floor > 9000 && /hadal zone/i.test(dive.text) && dive.animals.length >= 10 && dive.recs >= 8 && /Hirondellea gigas/.test(dive.obis) && /Hadal/.test(read) && /times the air/.test(read),
     `dive at the Challenger Deep: the floor ${dive.info.floor} m; ${dive.animals.length} animals at their depths, ${dive.recs} records; "${read.slice(0, 70)}…"; seen near there: ${dive.obis.split('\n')[1] ?? ''}${badge ? `; ${badge.trim().slice(0, 40)}` : ''}`);
   await page.evaluate(() => window.atlas.shell.sheet.close());
 

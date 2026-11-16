@@ -2381,6 +2381,919 @@
         "es": "La datación por radiocarbono del cristalino mostró que vive al menos 272 años, el más viejo casi 400, y madura hacia los 150. Suele estar entre 200 y 600 m."
       },
       "src": "https://www.fishbase.se/summary/Somniosus-microcephalus.html"
+    },
+    {
+      "id": "coelacanth",
+      "e": "🐟",
+      "name": {
+        "en": "Coelacanth",
+        "es": "Celacanto"
+      },
+      "sci": "Latimeria chalumnae",
+      "group": "fish",
+      "depth": [
+        150,
+        700
+      ],
+      "usual": 215,
+      "oceans": [
+        "indian"
+      ],
+      "lat": [
+        -34,
+        -3
+      ],
+      "text": {
+        "en": "Known as the living fossil, it shelters in caves by day and drifts out to hunt at night. Its pregnancy is thought to last about three years, the longest known in vertebrates.",
+        "es": "Conocido como fósil viviente, se refugia en cuevas de día y sale a cazar a la deriva de noche. Se cree que su gestación dura unos tres años, la más larga conocida en vertebrados."
+      },
+      "src": "https://www.fishbase.se/summary/Latimeria-chalumnae.html"
+    },
+    {
+      "id": "sixgill-shark",
+      "e": "🦈",
+      "name": {
+        "en": "Bluntnose sixgill shark",
+        "es": "Tiburón de seis branquias"
+      },
+      "sci": "Hexanchus griseus",
+      "group": "shark",
+      "depth": [
+        0,
+        2500
+      ],
+      "usual": 640,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        -48,
+        65
+      ],
+      "text": {
+        "en": "Stays near the bottom by day and rises towards the surface at night to feed. A female can give birth to almost 100 young.",
+        "es": "Pasa el día cerca del fondo y de noche sube hacia la superficie para comer. Una hembra puede parir casi 100 crías."
+      },
+      "src": "https://www.fishbase.se/summary/Hexanchus-griseus.html"
+    },
+    {
+      "id": "frilled-shark",
+      "e": "🦈",
+      "name": {
+        "en": "Frilled shark",
+        "es": "Tiburón anguila"
+      },
+      "sci": "Chlamydoselachus anguineus",
+      "group": "shark",
+      "depth": [
+        0,
+        1570
+      ],
+      "usual": 700,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -58,
+        74
+      ],
+      "text": {
+        "en": "A primitive, eel-like shark that eats other sharks, squid and fish. It usually lives between 120 and 1,280 m, though it has been caught at the surface.",
+        "es": "Un tiburón primitivo con forma de anguila que come otros tiburones, calamares y peces. Suele vivir entre 120 y 1 280 m, aunque se ha capturado en la superficie."
+      },
+      "src": "https://www.fishbase.se/summary/Chlamydoselachus-anguineus.html"
+    },
+    {
+      "id": "goblin-shark",
+      "e": "🦈",
+      "name": {
+        "en": "Goblin shark",
+        "es": "Tiburón duende"
+      },
+      "sci": "Mitsukurina owstoni",
+      "group": "shark",
+      "depth": [
+        30,
+        1300
+      ],
+      "usual": 615,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -55,
+        48
+      ],
+      "text": {
+        "en": "Its jaws can shoot forward from its head to snap up small prey. It is usually found between 270 and 960 m.",
+        "es": "Sus mandíbulas pueden salir disparadas hacia adelante para atrapar presas pequeñas. Suele estar entre 270 y 960 m."
+      },
+      "src": "https://www.fishbase.se/summary/Mitsukurina-owstoni.html"
+    },
+    {
+      "id": "megamouth-shark",
+      "e": "🦈",
+      "name": {
+        "en": "Megamouth shark",
+        "es": "Tiburón boquiancho"
+      },
+      "sci": "Megachasma pelagios",
+      "group": "shark",
+      "depth": [
+        5,
+        600
+      ],
+      "usual": 145,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -40,
+        40
+      ],
+      "text": {
+        "en": "A large filter-feeder, probably less active than whale and basking sharks, that strains small shrimps, copepods and jellyfish. A bright white band above its upper jaw may help it feed.",
+        "es": "Un gran filtrador, probablemente menos activo que los tiburones ballena y peregrino, que cuela camarones pequeños, copépodos y medusas. Una banda blanca brillante sobre su mandíbula superior podría ayudarlo a comer."
+      },
+      "src": "https://www.fishbase.se/summary/Megachasma-pelagios.html"
+    },
+    {
+      "id": "cookiecutter-shark",
+      "e": "🦈",
+      "name": {
+        "en": "Cookiecutter shark",
+        "es": "Tiburón cortagalletas"
+      },
+      "sci": "Isistius brasiliensis",
+      "group": "shark",
+      "depth": [
+        0,
+        3700
+      ],
+      "usual": 500,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -47,
+        35
+      ],
+      "text": {
+        "en": "Rises from below 1,000 m to near the surface every night. It latches on to tunas, billfish and whales with sucking lips and twists out a round plug of flesh.",
+        "es": "Cada noche sube desde más de 1 000 m hasta cerca de la superficie. Se pega a atunes, peces espada y cetáceos con sus labios de ventosa y arranca un trozo redondo de carne."
+      },
+      "src": "https://www.fishbase.se/summary/Isistius-brasiliensis.html"
+    },
+    {
+      "id": "kitefin-shark",
+      "e": "🦈",
+      "name": {
+        "en": "Kitefin shark",
+        "es": "Tiburón carocho"
+      },
+      "sci": "Dalatias licha",
+      "group": "shark",
+      "depth": [
+        37,
+        1800
+      ],
+      "usual": 450,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        -56,
+        72
+      ],
+      "text": {
+        "en": "The largest known glowing vertebrate. Light from its belly may hide its silhouette from below as it hunts deep-water fish, skates and other sharks.",
+        "es": "El vertebrado luminoso más grande que se conoce. La luz de su vientre podría ocultar su silueta vista desde abajo mientras caza peces de aguas profundas, rayas y otros tiburones."
+      },
+      "src": "https://www.fishbase.se/summary/Dalatias-licha.html"
+    },
+    {
+      "id": "rabbit-fish-chimaera",
+      "e": "🐟",
+      "name": {
+        "en": "Rabbit fish (chimaera)",
+        "es": "Quimera europea"
+      },
+      "sci": "Chimaera monstrosa",
+      "group": "fish",
+      "depth": [
+        40,
+        1400
+      ],
+      "usual": 400,
+      "oceans": [
+        "atlantic"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        27,
+        75
+      ],
+      "text": {
+        "en": "A sluggish cousin of sharks that roots for invertebrates on the upper slope, usually at 300 to 500 m. Its single back spine is mildly venomous.",
+        "es": "Un pariente lento de los tiburones que busca invertebrados en el talud superior, casi siempre entre 300 y 500 m. Su única espina dorsal es levemente venenosa."
+      },
+      "src": "https://www.fishbase.se/summary/Chimaera-monstrosa.html"
+    },
+    {
+      "id": "orange-roughy",
+      "e": "🐟",
+      "name": {
+        "en": "Orange roughy",
+        "es": "Reloj anaranjado"
+      },
+      "sci": "Hoplostethus atlanticus",
+      "group": "fish",
+      "depth": [
+        180,
+        1809
+      ],
+      "usual": 650,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -56,
+        65
+      ],
+      "text": {
+        "en": "Grows very slowly over seamounts and steep slopes and is one of the longest-lived fish known, reaching about 149 years.",
+        "es": "Crece muy despacio sobre montes submarinos y laderas empinadas, y es uno de los peces más longevos que se conocen: llega a unos 149 años."
+      },
+      "src": "https://www.fishbase.se/summary/Hoplostethus-atlanticus.html"
+    },
+    {
+      "id": "patagonian-toothfish",
+      "e": "🐟",
+      "name": {
+        "en": "Patagonian toothfish",
+        "es": "Merluza negra"
+      },
+      "sci": "Dissostichus eleginoides",
+      "group": "fish",
+      "depth": [
+        0,
+        2144
+      ],
+      "usual": 800,
+      "oceans": [
+        "southern",
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -66,
+        -33
+      ],
+      "text": {
+        "en": "Young fish settle on the bottom at 150 to 400 m, and adults move deeper than 1,000 m. Killer whales and sperm whales dive to steal it from fishing lines.",
+        "es": "Los jóvenes se asientan en el fondo a 150 a 400 m y los adultos bajan a más de 1 000 m. Orcas y cachalotes bucean para robarla de los palangres."
+      },
+      "src": "https://www.fishbase.se/summary/Dissostichus-eleginoides.html",
+      "src_more": [
+        "https://hakaimagazine.com/news/a-record-breaking-dive-by-a-hungry-killer-whale/"
+      ]
+    },
+    {
+      "id": "blackfin-icefish",
+      "e": "🐟",
+      "name": {
+        "en": "Blackfin icefish",
+        "es": "Pez de hielo"
+      },
+      "sci": "Chaenocephalus aceratus",
+      "group": "fish",
+      "depth": [
+        5,
+        770
+      ],
+      "usual": 300,
+      "oceans": [
+        "southern"
+      ],
+      "lat": [
+        -65,
+        -53
+      ],
+      "text": {
+        "en": "Icefish have no red blood cells: oxygen travels dissolved in their clear blood plasma, which works in the cold, oxygen-rich Antarctic water.",
+        "es": "Los peces de hielo no tienen glóbulos rojos: el oxígeno viaja disuelto en su plasma transparente, algo posible en el agua antártica, fría y rica en oxígeno."
+      },
+      "src": "https://www.bas.ac.uk/about/antarctica/wildlife/fish/",
+      "src_more": [
+        "https://www.fishbase.se/summary/Chaenocephalus-aceratus.html"
+      ]
+    },
+    {
+      "id": "blobfish",
+      "e": "🐡",
+      "name": {
+        "en": "Blobfish",
+        "es": "Pez gota"
+      },
+      "sci": "Psychrolutes microporos",
+      "group": "fish",
+      "depth": [
+        1013,
+        1340
+      ],
+      "usual": 1200,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        -50,
+        -25
+      ],
+      "text": {
+        "en": "The famous 'Mr Blobby' was trawled from 1,013 to 1,340 m off New Zealand in 2003. Its flabby body is not built for life out of water, which is why it looked like a blob on deck.",
+        "es": "El famoso 'Mr Blobby' se sacó con red de entre 1 013 y 1 340 m frente a Nueva Zelanda en 2003. Su cuerpo flácido no está hecho para vivir fuera del agua, por eso en cubierta parecía una masa informe."
+      },
+      "src": "https://australian.museum/learn/animals/fishes/fathead-psychrolutes-aka-mr-blobby/"
+    },
+    {
+      "id": "tripod-fish",
+      "e": "🐟",
+      "name": {
+        "en": "Tripod fish",
+        "es": "Pez trípode"
+      },
+      "sci": "Bathypterois grallator",
+      "group": "fish",
+      "depth": [
+        878,
+        4720
+      ],
+      "usual": 2000,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -27,
+        45
+      ],
+      "text": {
+        "en": "Perches on the seafloor on three long, stiff fin rays like a tripod, facing the current to catch drifting crustaceans.",
+        "es": "Se posa en el fondo sobre tres radios de aletas largos y rígidos, como un trípode, de cara a la corriente para atrapar crustáceos a la deriva."
+      },
+      "src": "https://www.fishbase.se/summary/Bathypterois-grallator.html"
+    },
+    {
+      "id": "abyssal-grenadier",
+      "e": "🐟",
+      "name": {
+        "en": "Abyssal grenadier (rattail)",
+        "es": "Granadero abisal"
+      },
+      "sci": "Coryphaenoides armatus",
+      "group": "fish",
+      "depth": [
+        282,
+        5180
+      ],
+      "usual": 2500,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian",
+        "southern"
+      ],
+      "lat": [
+        -61,
+        65
+      ],
+      "text": {
+        "en": "Common in the deep waters of most oceans. Young fish eat crustaceans and sea cucumbers on the bottom; adults hunt fish, squid and sea urchins.",
+        "es": "Es común en las aguas profundas de casi todos los océanos. Los jóvenes comen crustáceos y pepinos de mar del fondo; los adultos cazan peces, calamares y erizos."
+      },
+      "src": "https://www.fishbase.se/summary/Coryphaenoides-armatus.html"
+    },
+    {
+      "id": "roundnose-grenadier",
+      "e": "🐟",
+      "name": {
+        "en": "Roundnose grenadier",
+        "es": "Granadero de roca"
+      },
+      "sci": "Coryphaenoides rupestris",
+      "group": "fish",
+      "depth": [
+        180,
+        2600
+      ],
+      "usual": 800,
+      "oceans": [
+        "atlantic"
+      ],
+      "lat": [
+        20,
+        73
+      ],
+      "text": {
+        "en": "Forms large schools at 600 to 900 m on North Atlantic slopes, where deep-sea fishing has overexploited it.",
+        "es": "Forma grandes cardúmenes a 600 a 900 m en los taludes del Atlántico Norte, donde la pesca de profundidad lo ha sobreexplotado."
+      },
+      "src": "https://www.fishbase.se/summary/Coryphaenoides-rupestris.html"
+    },
+    {
+      "id": "kermadec-snailfish",
+      "e": "🐟",
+      "name": {
+        "en": "Kermadec snailfish",
+        "es": "Pez caracol de Kermadec"
+      },
+      "sci": "Notoliparis kermadecensis",
+      "group": "fish",
+      "depth": [
+        5879,
+        7669
+      ],
+      "usual": 7000,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        -36,
+        -26
+      ],
+      "text": {
+        "en": "A pale snailfish of the Kermadec Trench north of New Zealand, reported to be abundant between 6,456 and 7,554 m.",
+        "es": "Un pez caracol pálido de la fosa de Kermadec, al norte de Nueva Zelanda, que es abundante entre 6 456 y 7 554 m."
+      },
+      "src": "https://www.fishbase.se/summary/Notoliparis-kermadecensis.html"
+    },
+    {
+      "id": "faceless-cusk",
+      "e": "🐟",
+      "name": {
+        "en": "Faceless cusk",
+        "es": "Brótula sin cara"
+      },
+      "sci": "Typhlonus nasus",
+      "group": "fish",
+      "depth": [
+        3935,
+        5100
+      ],
+      "usual": 4000,
+      "oceans": [
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -40,
+        10
+      ],
+      "text": {
+        "en": "Its tiny eyes are buried under the skin, so it seems to have no face. One was hauled up from about 4,000 m off eastern Australia in 2017, the first seen there in over a century.",
+        "es": "Sus ojos diminutos están ocultos bajo la piel, así que parece no tener cara. En 2017 se sacó uno de unos 4 000 m frente al este de Australia, el primero visto allí en más de un siglo."
+      },
+      "src": "https://collections.museumsvictoria.com.au/specimens/2358490",
+      "src_more": [
+        "https://www.fishbase.se/summary/Typhlonus-nasus.html"
+      ]
+    },
+    {
+      "id": "highfin-lizardfish",
+      "e": "🐟",
+      "name": {
+        "en": "Highfin lizardfish",
+        "es": "Pez lagarto abisal"
+      },
+      "sci": "Bathysaurus mollis",
+      "group": "fish",
+      "depth": [
+        1550,
+        4903
+      ],
+      "usual": 2500,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -20,
+        50
+      ],
+      "text": {
+        "en": "A lone ambush hunter of the abyss that lies on the bottom in water colder than 4 °C, commonly below 2,000 m.",
+        "es": "Un cazador solitario del abismo que espera al acecho en el fondo, en agua de menos de 4 °C, por lo general a más de 2 000 m."
+      },
+      "src": "https://www.fishbase.se/summary/Bathysaurus-mollis.html"
+    },
+    {
+      "id": "vent-eelpout",
+      "e": "🐟",
+      "name": {
+        "en": "Vent eelpout",
+        "es": "Pez anguila de fuentes hidrotermales"
+      },
+      "sci": "Thermarces cerberus",
+      "group": "fish",
+      "depth": [
+        2300,
+        2630
+      ],
+      "usual": 2450,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        -20,
+        21
+      ],
+      "text": {
+        "en": "A fish that lives among the tube worms and mussels of hydrothermal vents on the East Pacific Rise and the Galápagos Rift.",
+        "es": "Un pez que vive entre los gusanos tubícolas y los mejillones de las fuentes hidrotermales de la dorsal del Pacífico Oriental y el rift de Galápagos."
+      },
+      "src": "https://www.fishbase.se/summary/Thermarces-cerberus.html"
+    },
+    {
+      "id": "atlantic-hagfish",
+      "e": "🐍",
+      "name": {
+        "en": "Atlantic hagfish",
+        "es": "Pez bruja del Atlántico"
+      },
+      "sci": "Myxine glutinosa",
+      "group": "fish",
+      "depth": [
+        20,
+        1200
+      ],
+      "usual": 240,
+      "oceans": [
+        "atlantic",
+        "arctic"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        24,
+        72
+      ],
+      "text": {
+        "en": "Hides in the mud and defends itself with slime. It feeds on dead and dying fish by boring into their bodies.",
+        "es": "Se esconde en el lodo y se defiende con baba. Se alimenta de peces muertos o moribundos, perforando su cuerpo."
+      },
+      "src": "https://www.fishbase.se/summary/Myxine-glutinosa.html"
+    },
+    {
+      "id": "lancetfish",
+      "e": "🐟",
+      "name": {
+        "en": "Longnose lancetfish",
+        "es": "Lanzón picudo"
+      },
+      "sci": "Alepisaurus ferox",
+      "group": "fish",
+      "depth": [
+        0,
+        1830
+      ],
+      "usual": 300,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -57,
+        66
+      ],
+      "text": {
+        "en": "A long hunter of the open ocean that is male and female at the same time. Opah, tunas, sharks and fur seals eat it.",
+        "es": "Un cazador alargado del mar abierto que es macho y hembra a la vez. Lo comen opahs, atunes, tiburones y lobos marinos."
+      },
+      "src": "https://www.fishbase.se/summary/Alepisaurus-ferox.html"
+    },
+    {
+      "id": "opah",
+      "e": "🐟",
+      "name": {
+        "en": "Opah (moonfish)",
+        "es": "Opah o pez luna real"
+      },
+      "sci": "Lampris guttatus",
+      "group": "fish",
+      "depth": [
+        0,
+        300
+      ],
+      "usual": 150,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        -60,
+        75
+      ],
+      "text": {
+        "en": "The first fish known to be fully warm-blooded. Its gills work like a car radiator, so its muscles stay about 5 °C warmer than the water as it hunts squid 45 to 300 m down.",
+        "es": "El primer pez que se sabe que es de sangre caliente en todo el cuerpo. Sus branquias funcionan como un radiador, así que sus músculos están unos 5 °C más calientes que el agua mientras caza calamares a 45 a 300 m."
+      },
+      "src": "https://www.fisheries.noaa.gov/feature-story/warm-blood-makes-opah-agile-predator",
+      "src_more": [
+        "https://www.fishbase.se/summary/Lampris-guttatus.html"
+      ]
+    },
+    {
+      "id": "glacier-lanternfish",
+      "e": "🐟",
+      "name": {
+        "en": "Glacier lanternfish",
+        "es": "Pez linterna glacial"
+      },
+      "sci": "Benthosema glaciale",
+      "group": "fish",
+      "depth": [
+        0,
+        1407
+      ],
+      "usual": 350,
+      "oceans": [
+        "atlantic",
+        "arctic"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        7,
+        81
+      ],
+      "text": {
+        "en": "Dotted with light organs, it spends the day at 375 to 800 m and rises to 12 to 200 m at night to eat copepods.",
+        "es": "Con el cuerpo salpicado de órganos luminosos, pasa el día a 375 a 800 m y de noche sube a 12 a 200 m para comer copépodos."
+      },
+      "src": "https://www.fishbase.se/summary/Benthosema-glaciale.html"
+    },
+    {
+      "id": "antarctic-lanternfish",
+      "e": "🐟",
+      "name": {
+        "en": "Antarctic lanternfish",
+        "es": "Pez linterna antártico"
+      },
+      "sci": "Electrona antarctica",
+      "group": "fish",
+      "depth": [
+        1,
+        1010
+      ],
+      "usual": 100,
+      "oceans": [
+        "southern"
+      ],
+      "lat": [
+        -78,
+        -45
+      ],
+      "text": {
+        "en": "Probably the most common lanternfish south of the Antarctic Polar Front, where it lives in the top 100 m and eats krill and copepods.",
+        "es": "Probablemente el pez linterna más común al sur del frente polar antártico, donde vive en los primeros 100 m y come kril y copépodos."
+      },
+      "src": "https://www.fishbase.se/summary/Electrona-antarctica.html"
+    },
+    {
+      "id": "silver-hatchetfish",
+      "e": "🐟",
+      "name": {
+        "en": "Silver hatchetfish",
+        "es": "Pez hacha plateado"
+      },
+      "sci": "Argyropelecus aculeatus",
+      "group": "fish",
+      "depth": [
+        100,
+        2056
+      ],
+      "usual": 450,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -35,
+        40
+      ],
+      "text": {
+        "en": "A thin, silvery fish with light organs that lives at 300 to 600 m by day and rises to 100 to 300 m at night, feeding at dusk on tiny crustaceans.",
+        "es": "Un pez delgado y plateado con órganos luminosos que vive a 300 a 600 m de día y sube a 100 a 300 m de noche; al anochecer come crustáceos diminutos."
+      },
+      "src": "https://www.fishbase.se/summary/Argyropelecus-aculeatus.html"
+    },
+    {
+      "id": "black-seadevil",
+      "e": "🐟",
+      "name": {
+        "en": "Humpback anglerfish (black seadevil)",
+        "es": "Pez diablo negro"
+      },
+      "sci": "Melanocetus johnsonii",
+      "group": "fish",
+      "depth": [
+        100,
+        4500
+      ],
+      "usual": 800,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -50,
+        50
+      ],
+      "text": {
+        "en": "Lures prey with a glowing bait and can swallow fish bigger than itself: a 6.6 cm female was found with a 24 cm viperfish in her stomach.",
+        "es": "Atrae a sus presas con un cebo luminoso y puede tragar peces más grandes que él: una hembra de 6,6 cm tenía en el estómago un pez víbora de 24 cm."
+      },
+      "src": "https://www.fishbase.se/summary/Melanocetus-johnsonii.html",
+      "src_more": [
+        "https://www.mbari.org/animal/deep-sea-anglerfish/"
+      ]
+    },
+    {
+      "id": "triplewart-seadevil",
+      "e": "🐟",
+      "name": {
+        "en": "Triplewart seadevil",
+        "es": "Pez diablo de tres verrugas"
+      },
+      "sci": "Cryptopsaras couesii",
+      "group": "fish",
+      "depth": [
+        0,
+        3085
+      ],
+      "usual": 875,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -52,
+        66
+      ],
+      "text": {
+        "en": "Males are dwarfs, at most about 1 cm long when free, that fasten on to a female and live as part of her body.",
+        "es": "Los machos son enanos, de apenas 1 cm cuando nadan libres, que se fijan a una hembra y viven como parte de su cuerpo."
+      },
+      "src": "https://www.fishbase.se/summary/Cryptopsaras-couesii.html"
+    },
+    {
+      "id": "pelican-eel",
+      "e": "🐍",
+      "name": {
+        "en": "Pelican eel (gulper eel)",
+        "es": "Anguila pelícano"
+      },
+      "sci": "Eurypharynx pelecanoides",
+      "group": "fish",
+      "depth": [
+        500,
+        7625
+      ],
+      "usual": 1300,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -50,
+        67
+      ],
+      "text": {
+        "en": "Named for its huge, pouch-like mouth, it mostly eats small crustaceans and probably breeds only once before dying. It is usually found at 1,200 to 1,400 m.",
+        "es": "Debe su nombre a su enorme boca en forma de bolsa; come sobre todo crustáceos pequeños y probablemente se reproduce una sola vez antes de morir. Suele estar entre 1 200 y 1 400 m."
+      },
+      "src": "https://www.fishbase.se/summary/Eurypharynx-pelecanoides.html"
+    },
+    {
+      "id": "black-swallower",
+      "e": "🐟",
+      "name": {
+        "en": "Black swallower",
+        "es": "Tragón negro"
+      },
+      "sci": "Chiasmodon niger",
+      "group": "fish",
+      "depth": [
+        700,
+        2745
+      ],
+      "usual": 1390,
+      "oceans": [
+        "atlantic"
+      ],
+      "lat": [
+        -5,
+        46
+      ],
+      "text": {
+        "en": "Swallows whole fish that are often longer than itself. Most are caught deeper than 750 m.",
+        "es": "Traga peces enteros que a menudo son más largos que él. La mayoría se capturan a más de 750 m."
+      },
+      "src": "https://www.fishbase.se/summary/Chiasmodon-niger.html"
+    },
+    {
+      "id": "snipe-eel",
+      "e": "🐍",
+      "name": {
+        "en": "Slender snipe eel",
+        "es": "Anguila tijera"
+      },
+      "sci": "Nemichthys scolopaceus",
+      "group": "fish",
+      "depth": [
+        0,
+        4337
+      ],
+      "usual": 400,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "lat": [
+        -42,
+        55
+      ],
+      "text": {
+        "en": "A long, slender eel that usually lives below 400 m and feeds on crustaceans while swimming with its mouth open.",
+        "es": "Una anguila larga y delgada que suele vivir por debajo de 400 m y come crustáceos mientras nada con la boca abierta."
+      },
+      "src": "https://www.fishbase.se/summary/Nemichthys-scolopaceus.html"
+    },
+    {
+      "id": "greenland-halibut",
+      "e": "🐟",
+      "name": {
+        "en": "Greenland halibut",
+        "es": "Fletán negro"
+      },
+      "sci": "Reinhardtius hippoglossoides",
+      "group": "fish",
+      "depth": [
+        1,
+        2200
+      ],
+      "usual": 750,
+      "oceans": [
+        "arctic",
+        "atlantic",
+        "pacific"
+      ],
+      "lat": [
+        33,
+        79
+      ],
+      "text": {
+        "en": "A flatfish of icy deep water that prefers bottom temperatures of -0.5 to 6 °C and is often caught swimming well above the seafloor.",
+        "es": "Un pez plano de aguas profundas y heladas que prefiere fondos de -0,5 a 6 °C y a menudo se captura nadando muy por encima del fondo."
+      },
+      "src": "https://www.fishbase.se/summary/Reinhardtius-hippoglossoides.html"
     }
   ]
 }

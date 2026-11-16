@@ -32,8 +32,12 @@ if (gebco) {
     t2(f.name, `feature ${f.id}.name`); t2(f.text, `feature ${f.id}.text`); at(f.lon, f.lat, `feature ${f.id}`);
     return { id: f.id, name: f.name, kind: f.kind, lon: r3(f.lon), lat: r3(f.lat), ...(f.line?.length > 1 ? { line: f.line.map(([x, y]) => [r3(x), r3(y)]) } : {}), ...(f.depth_m ? { depth_m: f.depth_m } : {}), rank: f.rank ?? 3, text: f.text };
   });
+  // GEBCO keeps a name apart from its generic term ("Mariana" + "Trench"): the famous ones are left out of the rows,
+  // by their gazetteer id or their full name.
   const famousNames = new Set(famous.map((f) => f.name.en.toLowerCase()));
-  const rows = gebco.rows.filter((r) => !famousNames.has(r[1].toLowerCase())).map((r) => [r[0], r[1], r[2], r[3], r[4]]);
+  const famousIds = new Set((cf?.features ?? []).map((f) => Number(f.gebco)).filter(Boolean));
+  const full = (r) => `${r[1]} ${gebco.types[r[2]]}`.toLowerCase();
+  const rows = gebco.rows.filter((r) => !famousIds.has(r[0]) && !famousNames.has(r[1].toLowerCase()) && !famousNames.has(full(r))).map((r) => [r[0], r[1], r[2], r[3], r[4]]);
   const notes = Object.fromEntries(gebco.rows.filter((r) => r[5] || r[6]).map((r) => [String(r[0]), [r[5] ?? null, r[6] ?? null]]));
   write('features.json', { types: gebco.types, generic: cf?.generic ?? {}, rows, famous });
   write('features-notes.json', notes);

@@ -203,13 +203,11 @@ interface Features { types: string[]; generic: Record<string, string>; rows: [nu
 let feats: Features | null = null;
 let notes: Record<string, [number | null, string | null]> | null = null;
 const loadFeatures = async () => (feats ??= await loadJSON<Features>('ocean/features.json'));
-/** A GEBCO name in Spanish: its generic term put first ("Ridge" → "Dorsal …"). */
+/** A GEBCO name with its generic term, which the gazetteer keeps apart: "Ake-No-Myojo Seamount", "Monte submarino Ake-No-Myojo". */
 function featureName(name: string, type: string): string {
-  if (!es() || !feats) return name;
-  const g = feats.generic[type];
-  if (!g) return name;
-  const re = new RegExp(`\\s*\\b${type.replace(/s$/, '')}s?\\b\\s*`, 'i');
-  return re.test(name) ? `${g} ${name.replace(re, ' ').trim()}` : name;
+  if (!type || type === 'UNKNOWN') return name;
+  if (es()) { const g = feats?.generic[type]; return g ? `${g} ${name}` : `${name} ${type}`; }
+  return new RegExp(`\\b${type}\\b`, 'i').test(name) ? name : `${name} ${type}`;
 }
 const KIND_COLOUR: Record<string, string> = { trench: '#9775fa', ridge: '#ff922b', seamount: '#ffd43b', guyot: '#ffd43b', plain: '#74c0fc', canyon: '#63e6be', plateau: '#a9e34b', basin: '#74c0fc', fracture: '#adb5bd', rise: '#ffa94d', other: '#dee2e6' };
 export const seaFeatures: LayerDef = {
@@ -239,7 +237,7 @@ export const seaFeatures: LayerDef = {
       const p = rc.project(f.lon, f.lat);
       if (p) rc.labels.add({ text: T(f.name), x: p[0], y: p[1], priority: 820 - f.rank * 60, size: f.rank === 1 ? 11.5 : 10.5, weight: 650, italic: true, color: rc.theme.dark ? '#c5d8ff' : '#1d3a7a', halo: rc.theme.labelHalo });
     }
-    if (z < 4) return;
+    if (z < 3.5) return;
     for (const r of feats.rows) {
       const p = rc.project(r[3], r[4]);
       if (!p || p[0] < 0 || p[1] < 0 || p[0] > rc.view.w || p[1] > rc.view.h) continue;
@@ -257,7 +255,7 @@ export const seaFeatures: LayerDef = {
       ], [{ label: L('🤿 Dive here', '🤿 Bucear aquí'), onClick: () => void window.atlas?.deep.diveAt(f.lon, f.lat) }], [T(f.text)]);
       return true;
     }
-    if (rcZoom() < 4) return false;
+    if (rcZoom() < 3.5) return false;
     const r = pickNear(feats.rows, (x) => [x[3], x[4]], ui, 14);
     if (!r) return false;
     const type = feats.types[r[2]];
