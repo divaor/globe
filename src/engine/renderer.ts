@@ -44,6 +44,8 @@ export type Overlay = (rc: RenderCtx) => void;
 export class Renderer {
   readonly view = new View();
   readonly labels = new LabelEngine();
+  /** The filters' own names (ambient mode can hide them, with the map's, when names are off). */
+  layerLabels = true;
   readonly gl: GLRaster | null;
   private bg: CanvasRenderingContext2D;
   private fg: CanvasRenderingContext2D;
@@ -604,8 +606,10 @@ export class Renderer {
 
     // ---- labels
     if (this.baseMap) this.baseLabels(rc);
-    for (const l of this.layers) if (l.ready && l.def.labels) l.def.labels(rc, l);
+    if (this.layerLabels) for (const l of this.layers) if (l.ready && l.def.labels) l.def.labels(rc, l);
     this.labels.draw(ctx);
+    // A name is fading in: one more frame.
+    if (this.labels.fading) this.requestRender();
   }
 
   private drawSpace(bg: CanvasRenderingContext2D, w: number, h: number) {

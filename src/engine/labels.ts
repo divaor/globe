@@ -34,10 +34,21 @@ export interface LabelSpec {
 /** An area of the screen: left, top, right, bottom. */
 export type Box = [number, number, number, number];
 
+/** How much more priority a name already on screen gets, and how long a new one takes to fade in (ms). */
+const STICK = 40;
+const FADE_IN = 220;
+
 const FONT = `system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif`;
+
+/** A name that was on screen: when it was last drawn, when it first appeared, and on which side of its point. */
+interface Seen { last: number; born: number; spot: number }
 
 export class LabelEngine {
   private items: LabelSpec[] = [];
+  /** The names drawn lately: as the map turns they keep their place and side, and new ones fade in (no flicker). */
+  private seen = new Map<string, Seen>();
+  /** A name is still fading in: the renderer draws another frame. */
+  fading = false;
   private grid = new Map<number, [number, number, number, number][]>();
   private cell = 64;
   private widths = new Map<string, number>();
@@ -104,14 +115,22 @@ export class LabelEngine {
     }
   }
 
-  draw(ctx: CanvasRenderingContext2D) {
-    this.items.sort((a, b) => b.priority - a.priority);
+  draw(ctx: CanvasRenderingContext2D, now = performance.now()) {
+    // A name shown a moment ago keeps its place against a neighbour of about the same rank (the map moving brings
+    // them in and out of each other's way every frame, which made names blink): it gets a little more priority.
+    const keyOf = (l: LabelSpec) => `${l.text}|${l.size}`;
+    const recent = (k: string) => { const m = this.seen.get(k); return m && now - m.last < 400 ? m : null; };
+    const ranked = this.items.map((l) => ({ l, k: keyOf(l), p: l.priority + (recent(keyOf(l)) ? STICK : 0) }));
+    ranked.sort((a, b) => b.p - a.p);
+    this.items = ranked.map((r) => r.l);
     this.drawn = [];
+    this.fading = false;
+    const baseAlpha = ctx.globalAlpha;
     ctx.textBaseline = 'middle';
     ctx.lineJoin = 'round';
     // A name already shown a few px away is not shown again (a city the map names and an overlay names too).
     const shown: { text: string; x: number; y: number }[] = [];
-    for (const l of this.items) {
+    for (const { l, k } of ranked) {
       if (shown.some((s) => s.text === l.text && Math.abs(s.x - l.x) < 40 && Math.abs(s.y - l.y) < 24)) continue;
       shown.push({ text: l.text, x: l.x, y: l.y });
       const spacing = l.caps ? l.size * this.scale * 0.12 : 0;
@@ -173,7 +192,10 @@ export class LabelEngine {
       }
       const free = (s: (typeof spots)[number]) => !this.collides(s.box)
         && !l.avoid?.some((o) => o !== l.own && s.box[0] < o[2] && s.box[2] > o[0] && s.box[1] < o[3] && s.box[3] > o[1]);
-      const spot = (l.gap != null && spots.find((s) => s.box[0] >= 0 && s.box[2] <= this.w && free(s))) || spots.find(free);
+      // The side it was on stays first, so a name does not hop from one side of its dot to the other.
+      const was = recent(k);
+      const order = was && was.spot > 0 && was.spot < spots.length ? [spots[was.spot], ...spots.filter((_, i) => i !== was.spot)] : spots;
+      const spot = (l.gap != null && order.find((s) => s.box[0] >= 0 && s.box[2] <= this.w && free(s))) || order.find(free);
       if (!spot) {
         // No room for the text: keep a lone marker (capitals) only where it covers nothing.
         if (hasMarker && l.keepMarker) {
@@ -182,6 +204,12 @@ export class LabelEngine {
         }
         continue;
       }
+      // A name new on screen fades in.
+      const born = was ? was.born : now;
+      this.seen.set(k, { last: now, born, spot: spots.indexOf(spot) });
+      const alpha = Math.min(1, (now - born) / FADE_IN);
+      if (alpha < 1) this.fading = true;
+      ctx.globalAlpha = baseAlpha * alpha;
       if (hasMarker) this.drawMarker(ctx, l);
       this.insert(spot.box);
       const { tx, ty } = spot;
@@ -208,6 +236,9 @@ export class LabelEngine {
       }
     }
     (ctx as unknown as { letterSpacing: string }).letterSpacing = '0px';
+    ctx.globalAlpha = baseAlpha;
+    // Names gone for a while are forgotten.
+    if (this.seen.size > 400) for (const [key, m] of this.seen) if (now - m.last > 2000) this.seen.delete(key);
   }
 
   private drawMarker(ctx: CanvasRenderingContext2D, l: LabelSpec) {
