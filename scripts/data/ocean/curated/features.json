@@ -1420,7 +1420,7 @@
       },
       "src": "https://www.ngdc.noaa.gov/gazetteer/feature/12540",
       "src_more": [
-        "https://doi.org/10.1126/science.1087476"
+        "https://doi.org/10.1126/science.1087696"
       ],
       "gebco": 12540
     },
@@ -2458,8 +2458,8 @@
       "depth_m": 1500,
       "rank": 2,
       "text": {
-        "en": "More than 30 extinct volcanoes run southeast from the edge of Georges Bank into the North Atlantic. The four nearest the coast lie in the US Northeast Canyons and Seamounts Marine National Monument, created in 2016.",
-        "es": "Más de 30 volcanes extintos se extienden hacia el sureste desde el borde del banco Georges hasta el Atlántico Norte. Los cuatro más cercanos a la costa están en el Monumento Nacional Marino Cañones y Montes Submarinos del Noreste, de Estados Unidos, creado en 2016."
+        "en": "A long chain of extinct volcanoes runs southeast from the edge of Georges Bank into the North Atlantic. The four nearest the coast lie in the US Northeast Canyons and Seamounts Marine National Monument, created in 2016.",
+        "es": "Una larga cadena de volcanes extintos se extiende hacia el sureste desde el borde del banco Georges hasta el Atlántico Norte. Los cuatro más cercanos a la costa están en el Monumento Nacional Marino Cañones y Montes Submarinos del Noreste, de Estados Unidos, creado en 2016."
       },
       "src": "https://www.ngdc.noaa.gov/gazetteer/feature/30862",
       "gebco": 30862
@@ -2476,8 +2476,8 @@
       "depth_m": 3000,
       "rank": 3,
       "text": {
-        "en": "About 25 seamounts north of the Hawaiian Ridge carry the names of classical composers, such as Haydn, Mozart, Beethoven and Brahms. Scientists at the Scripps Institution of Oceanography named and mapped them in the late 1950s.",
-        "es": "Unos 25 montes submarinos al norte de la dorsal de Hawái llevan nombres de compositores clásicos, como Haydn, Mozart, Beethoven y Brahms. Científicos de la Institución Scripps de Oceanografía les dieron nombre y los cartografiaron a fines de la década de 1950."
+        "en": "About 25 seamounts north of the Hawaiian Ridge carry the names of famous composers, such as Haydn, Mozart, Beethoven and Verdi. Scientists at the Scripps Institution of Oceanography named them in 1959.",
+        "es": "Unos 25 montes submarinos al norte de la dorsal de Hawái llevan nombres de compositores famosos, como Haydn, Mozart, Beethoven y Verdi. Científicos de la Institución Scripps de Oceanografía les dieron nombre en 1959."
       },
       "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22594",
       "gebco": 22594
@@ -2757,7 +2757,7 @@
       "rank": 2,
       "text": {
         "en": "Far off Patagonia, this very flat plain lies about 6,000 m down at the bottom of the Argentine Basin. It is named after Argentina.",
-        "es": "Lejos de la costa de la Patagonia, esta llanura muy plana está a unos 6 000 m de profundidad, en el fondo de la cuenca Argentina. Debe su nombre a la Argentina."
+        "es": "Lejos de la costa de la Patagonia, esta llanura muy plana está a unos 6 000 m de profundidad, en el fondo de la cuenca Argentina. Debe su nombre a Argentina."
       },
       "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28337",
       "gebco": 28337
@@ -3134,7 +3134,7 @@
       "rank": 3,
       "text": {
         "en": "This canyon cuts the continental slope far off the coast of Buenos Aires province, Argentina, and drops to more than 3,500 m. It is named after the city of Mar del Plata.",
-        "es": "Este cañón corta el talud continental lejos de la costa de la provincia de Buenos Aires, en la Argentina, y baja a más de 3 500 m. Lleva el nombre de la ciudad de Mar del Plata."
+        "es": "Este cañón corta el talud continental lejos de la costa de la provincia de Buenos Aires, en Argentina, y baja a más de 3 500 m. Lleva el nombre de la ciudad de Mar del Plata."
       },
       "src": "https://www.ngdc.noaa.gov/gazetteer/feature/30981",
       "gebco": 30981
@@ -3394,8 +3394,8 @@
       "depth_m": 2500,
       "rank": 3,
       "text": {
-        "en": "South of Africa, this volcanic plateau rises from the deep seafloor to about 2,500 m below the surface. It lies in the path of the Agulhas Current, after which it is named.",
-        "es": "Al sur de África, esta meseta volcánica se eleva desde el fondo profundo hasta unos 2 500 m bajo la superficie. Está en el camino de la corriente de las Agujas, que le da nombre."
+        "en": "South of Africa, this volcanic plateau rises from the deep seafloor to about 2,500 m below the surface. It lies in the path of the strong Agulhas Current.",
+        "es": "Al sur de África, esta meseta volcánica se eleva desde el fondo profundo hasta unos 2 500 m bajo la superficie. Está en el camino de la fuerte corriente de las Agujas."
       },
       "src": "https://www.ngdc.noaa.gov/gazetteer/feature/11606",
       "gebco": 11606
@@ -3609,8 +3609,8 @@
       "depth_m": 5000,
       "rank": 2,
       "text": {
-        "en": "This long scar runs west across the Pacific from Cape Mendocino in California. Scripps scientists mapped it from 1950, and it became the first feature to be called a fracture zone.",
-        "es": "Esta larga cicatriz cruza el Pacífico hacia el oeste desde el cabo Mendocino, en California. Científicos de Scripps la cartografiaron desde 1950, y fue el primer accidente al que se llamó zona de fractura."
+        "en": "This long scar runs west across the Pacific from Cape Mendocino in California. Scripps scientists mapped it from 1950, and it became the model for the scientific term fracture zone.",
+        "es": "Esta larga cicatriz cruza el Pacífico hacia el oeste desde el cabo Mendocino, en California. Científicos de Scripps la cartografiaron desde 1950, y se convirtió en el modelo del término científico zona de fractura."
       },
       "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22467",
       "gebco": 22467
@@ -3787,6 +3787,609 @@
         "https://www.ngdc.noaa.gov/gazetteer/feature/11992"
       ],
       "gebco": 11992
+    },
+    {
+      "id": "canada-basin",
+      "name": {
+        "en": "Canada Basin",
+        "es": "Cuenca de Canadá"
+      },
+      "kind": "basin",
+      "lon": -143.272,
+      "lat": 77.354,
+      "depth_m": 3800,
+      "rank": 2,
+      "text": {
+        "en": "This deep basin of the Arctic Ocean lies north of Alaska and Canada, under drifting sea ice. Its flat floor is about 3,800 m down.",
+        "es": "Esta cuenca profunda del océano Ártico está al norte de Alaska y Canadá, bajo el hielo marino a la deriva. Su fondo plano está a unos 3 800 m de profundidad."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28517",
+      "gebco": 28517
+    },
+    {
+      "id": "amundsen-basin",
+      "name": {
+        "en": "Amundsen Basin",
+        "es": "Cuenca de Amundsen"
+      },
+      "kind": "basin",
+      "lon": 125.0,
+      "lat": 81.75,
+      "depth_m": 4200,
+      "rank": 3,
+      "text": {
+        "en": "This deep Arctic basin lies between the Gakkel and Lomonosov ridges, and the seafloor beneath the North Pole, about 4,200 m down, is part of it. It is named after the Norwegian explorer Roald Amundsen.",
+        "es": "Esta cuenca profunda del Ártico está entre las dorsales de Gakkel y de Lomonósov, y el fondo marino bajo el polo norte, a unos 4 200 m, forma parte de ella. Lleva el nombre del explorador noruego Roald Amundsen."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/18898",
+      "gebco": 18898
+    },
+    {
+      "id": "north-american-basin",
+      "name": {
+        "en": "North American Basin",
+        "es": "Cuenca Norteamericana"
+      },
+      "kind": "basin",
+      "lon": -60.0,
+      "lat": 30.0,
+      "depth_m": 5400,
+      "rank": 3,
+      "text": {
+        "en": "This vast basin of the western North Atlantic stretches from the Mid-Atlantic Ridge towards North America and the Caribbean. Much of its floor is more than 5,000 m deep.",
+        "es": "Esta vasta cuenca del Atlántico Norte occidental se extiende desde la dorsal mesoatlántica hacia Norteamérica y el Caribe. Gran parte de su fondo supera los 5 000 m de profundidad."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/15589",
+      "gebco": 15589
+    },
+    {
+      "id": "argentine-basin",
+      "name": {
+        "en": "Argentine Basin",
+        "es": "Cuenca Argentina"
+      },
+      "kind": "basin",
+      "lon": -43.0,
+      "lat": -43.0,
+      "depth_m": 5200,
+      "rank": 2,
+      "text": {
+        "en": "This deep basin of the South Atlantic lies off Argentina and Uruguay, and much of its floor is more than 5,000 m deep. The Argentine Abyssal Plain covers its deepest part.",
+        "es": "Esta cuenca profunda del Atlántico Sur está frente a Argentina y Uruguay, y gran parte de su fondo supera los 5 000 m. La llanura abisal Argentina cubre su parte más profunda."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/11920",
+      "gebco": 11920
+    },
+    {
+      "id": "brazil-basin",
+      "name": {
+        "en": "Brazil Basin",
+        "es": "Cuenca de Brasil"
+      },
+      "kind": "basin",
+      "lon": -25.0,
+      "lat": -15.0,
+      "depth_m": 5300,
+      "rank": 2,
+      "text": {
+        "en": "Between Brazil and the Mid-Atlantic Ridge, this basin of the South Atlantic is more than 5,000 m deep in many places. Cold Antarctic Bottom Water flows into it from the south.",
+        "es": "Entre Brasil y la dorsal mesoatlántica, esta cuenca del Atlántico Sur supera los 5 000 m de profundidad en muchos lugares. El Agua Antártica de Fondo, muy fría, entra en ella desde el sur."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/12288",
+      "gebco": 12288
+    },
+    {
+      "id": "cape-basin",
+      "name": {
+        "en": "Cape Basin",
+        "es": "Cuenca del Cabo"
+      },
+      "kind": "basin",
+      "lon": 6.75,
+      "lat": -35.75,
+      "depth_m": 5100,
+      "rank": 3,
+      "text": {
+        "en": "Off South Africa and Namibia, south of the Walvis Ridge, this basin of the South Atlantic is about 5,000 m deep.",
+        "es": "Frente a Sudáfrica y Namibia, al sur de la dorsal de Walvis, esta cuenca del Atlántico Sur tiene unos 5 000 m de profundidad."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/12433",
+      "gebco": 12433
+    },
+    {
+      "id": "mexico-basin",
+      "name": {
+        "en": "Mexico Basin",
+        "es": "Cuenca del Golfo de México"
+      },
+      "kind": "basin",
+      "lon": -95.0,
+      "lat": 22.5,
+      "depth_m": 3740,
+      "rank": 2,
+      "text": {
+        "en": "The deep central part of the Gulf of Mexico forms this basin, whose floor lies about 3,700 m down. It was formerly called the Sigsbee Deep.",
+        "es": "La parte central y profunda del golfo de México forma esta cuenca, cuyo fondo está a unos 3 700 m. Antes se llamaba fosa de Sigsbee."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22485",
+      "gebco": 22485
+    },
+    {
+      "id": "venezuela-basin",
+      "name": {
+        "en": "Venezuela Basin",
+        "es": "Cuenca de Venezuela"
+      },
+      "kind": "basin",
+      "lon": -67.0,
+      "lat": 14.0,
+      "depth_m": 5000,
+      "rank": 3,
+      "text": {
+        "en": "South of Puerto Rico and Hispaniola and north of Venezuela, this basin of the Caribbean Sea is about 5,000 m deep. It is named after Venezuela.",
+        "es": "Al sur de Puerto Rico y La Española y al norte de Venezuela, esta cuenca del mar Caribe tiene unos 5 000 m de profundidad. Debe su nombre a Venezuela."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/23823",
+      "gebco": 23823
+    },
+    {
+      "id": "peru-basin",
+      "name": {
+        "en": "Peru Basin",
+        "es": "Cuenca de Perú"
+      },
+      "kind": "basin",
+      "lon": -83.0,
+      "lat": -14.0,
+      "depth_m": 4900,
+      "rank": 3,
+      "text": {
+        "en": "Far off the coast of Peru, this deep basin lies more than 4,000 m down. Its floor is one of the areas of the ocean richest in metal nodules.",
+        "es": "Lejos de la costa de Perú, esta cuenca profunda está a más de 4 000 m. Su fondo es una de las zonas del océano más ricas en nódulos metálicos."
+      },
+      "src": "https://www.isa.org.jm/exploration-contracts/polymetallic-nodules/",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/22944"
+      ],
+      "gebco": 22944
+    },
+    {
+      "id": "central-pacific-basin",
+      "name": {
+        "en": "Central Pacific Basin",
+        "es": "Cuenca del Pacífico central"
+      },
+      "kind": "basin",
+      "lon": -179.999,
+      "lat": 9.0,
+      "depth_m": 5900,
+      "rank": 2,
+      "text": {
+        "en": "This vast basin southwest of Hawaii has a floor mostly 5,000 to 6,000 m deep, dotted with tall seamounts. Recent mapping found one of them to be almost 1,000 m taller than earlier maps showed.",
+        "es": "Esta vasta cuenca al suroeste de Hawái tiene un fondo casi todo entre 5 000 y 6 000 m de profundidad, salpicado de altos montes submarinos. Cartografías recientes mostraron que uno de ellos es casi 1 000 m más alto de lo que indicaban mapas anteriores."
+      },
+      "src": "https://oceanexplorer.noaa.gov/ocean-fact/seamounts/",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/12546"
+      ],
+      "gebco": 12546
+    },
+    {
+      "id": "northwest-pacific-basin",
+      "name": {
+        "en": "Northwest Pacific Basin",
+        "es": "Cuenca del Pacífico noroccidental"
+      },
+      "kind": "basin",
+      "lon": 155.0,
+      "lat": 34.0,
+      "depth_m": 5700,
+      "rank": 2,
+      "text": {
+        "en": "This vast deep basin east of Japan, much of it 5,500 to 6,000 m deep, holds some of the oldest seafloor in the Pacific. The plate carries it slowly west towards the trenches off Japan and the Kuril Islands.",
+        "es": "Esta vasta cuenca profunda al este de Japón, casi toda entre 5 500 y 6 000 m, guarda parte del fondo marino más antiguo del Pacífico. La placa lo lleva lentamente hacia el oeste, hacia las fosas frente a Japón y las islas Kuriles."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22721",
+      "gebco": 22721
+    },
+    {
+      "id": "philippine-basin",
+      "name": {
+        "en": "Philippine Basin",
+        "es": "Cuenca de Filipinas"
+      },
+      "kind": "basin",
+      "lon": 130.0,
+      "lat": 16.0,
+      "depth_m": 5600,
+      "rank": 2,
+      "text": {
+        "en": "This deep basin of the Philippine Sea lies east of the Philippines, with much of its floor 5,000 to 6,000 m deep. It is named after the Philippines.",
+        "es": "Esta cuenca profunda del mar de Filipinas está al este de Filipinas, y gran parte de su fondo tiene entre 5 000 y 6 000 m de profundidad. Debe su nombre a Filipinas."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22960",
+      "gebco": 22960
+    },
+    {
+      "id": "wharton-basin",
+      "name": {
+        "en": "Wharton Basin",
+        "es": "Cuenca de Wharton"
+      },
+      "kind": "basin",
+      "lon": 93.0,
+      "lat": -23.0,
+      "depth_m": 5100,
+      "rank": 2,
+      "text": {
+        "en": "This deep basin of the eastern Indian Ocean stretches from west of Australia north to Sumatra, and much of its floor is more than 5,000 m deep. In April 2012 a magnitude 8.6 earthquake broke the seafloor here, inside the plate rather than at its edge.",
+        "es": "Esta cuenca profunda del este del océano Índico se extiende desde el oeste de Australia hasta Sumatra, y gran parte de su fondo supera los 5 000 m. En abril de 2012, un sismo de magnitud 8,6 rompió aquí el fondo marino dentro de la placa y no en su borde."
+      },
+      "src": "https://www.usgs.gov/programs/earthquake-hazards/science/20-largest-earthquakes-world",
+      "src_more": [
+        "https://link.springer.com/article/10.1007/s11001-024-09550-7"
+      ],
+      "gebco": 23926
+    },
+    {
+      "id": "mid-indian-ocean-basin",
+      "name": {
+        "en": "Mid-Indian Ocean Basin",
+        "es": "Cuenca central del Índico"
+      },
+      "kind": "basin",
+      "lon": 80.0,
+      "lat": -10.0,
+      "depth_m": 5300,
+      "rank": 2,
+      "text": {
+        "en": "This broad basin in the middle of the Indian Ocean, east of the Central Indian Ridge, has a floor about 5,000 m deep. It is one of the areas of the ocean richest in metal nodules.",
+        "es": "Esta amplia cuenca en el centro del océano Índico, al este de la dorsal índica central, tiene un fondo de unos 5 000 m de profundidad. Es una de las zonas del océano más ricas en nódulos metálicos."
+      },
+      "src": "https://www.isa.org.jm/exploration-contracts/polymetallic-nodules/",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/22487"
+      ],
+      "gebco": 22487
+    },
+    {
+      "id": "mozambique-basin",
+      "name": {
+        "en": "Mozambique Basin",
+        "es": "Cuenca de Mozambique"
+      },
+      "kind": "basin",
+      "lon": 40.0,
+      "lat": -25.5,
+      "depth_m": 4500,
+      "rank": 3,
+      "text": {
+        "en": "Off southern Mozambique and eastern South Africa, this basin is 4,000 to 5,000 m deep. It is also called the Natal Basin.",
+        "es": "Frente al sur de Mozambique y el este de Sudáfrica, esta cuenca tiene entre 4 000 y 5 000 m de profundidad. También se la llama cuenca de Natal."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22557",
+      "gebco": 22557
+    },
+    {
+      "id": "tasman-basin",
+      "name": {
+        "en": "Tasman Basin",
+        "es": "Cuenca de Tasmania"
+      },
+      "kind": "basin",
+      "lon": 157.561,
+      "lat": -42.827,
+      "depth_m": 4700,
+      "rank": 3,
+      "text": {
+        "en": "Under the Tasman Sea, between Australia and New Zealand, this basin is about 4,700 m deep. It opened as Zealandia split away from Australia.",
+        "es": "Bajo el mar de Tasmania, entre Australia y Nueva Zelanda, esta cuenca tiene unos 4 700 m de profundidad. Se abrió cuando Zelandia se separó de Australia."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/23608",
+      "gebco": 23608
+    },
+    {
+      "id": "norwegian-basin",
+      "name": {
+        "en": "Norwegian Basin",
+        "es": "Cuenca de Noruega"
+      },
+      "kind": "basin",
+      "lon": -4.0,
+      "lat": 67.0,
+      "depth_m": 3500,
+      "rank": 3,
+      "text": {
+        "en": "Off the coast of Norway, between the Faroe Islands and Jan Mayen, this basin of the Norwegian Sea is about 3,500 m deep. It is named after Norway.",
+        "es": "Frente a la costa de Noruega, entre las islas Feroe y Jan Mayen, esta cuenca del mar de Noruega tiene unos 3 500 m de profundidad. Debe su nombre a Noruega."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22726",
+      "gebco": 22726
+    },
+    {
+      "id": "bermuda-rise",
+      "name": {
+        "en": "Bermuda Rise",
+        "es": "Elevación de las Bermudas"
+      },
+      "kind": "rise",
+      "lon": -62.5,
+      "lat": 32.667,
+      "depth_m": 4600,
+      "rank": 2,
+      "text": {
+        "en": "This broad, gentle swell of the western North Atlantic seafloor carries the islands of Bermuda on its top. Around them, most of the rise lies about 4,500 m down.",
+        "es": "Este amplio y suave abultamiento del fondo del Atlántico Norte occidental lleva en su cima las islas Bermudas. A su alrededor, la mayor parte de la elevación está a unos 4 500 m de profundidad."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/12165",
+      "gebco": 12165
+    },
+    {
+      "id": "rio-grande-rise",
+      "name": {
+        "en": "Rio Grande Rise",
+        "es": "Elevación de Río Grande"
+      },
+      "kind": "rise",
+      "lon": -35.0,
+      "lat": -31.0,
+      "depth_m": 1600,
+      "rank": 2,
+      "text": {
+        "en": "Off southern Brazil, this huge undersea rise comes to within about 600 m of the surface. With the Walvis Ridge off Namibia, it is a trail left by the Tristan hotspot as the South Atlantic opened.",
+        "es": "Frente al sur de Brasil, esta enorme elevación submarina llega a unos 600 m de la superficie. Junto con la dorsal de Walvis, frente a Namibia, es un rastro que dejó el punto caliente de Tristán mientras se abría el Atlántico Sur."
+      },
+      "src": "https://doi.org/10.1029/JB095iB11p17475",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/23103"
+      ],
+      "gebco": 23103
+    },
+    {
+      "id": "shatsky-rise",
+      "name": {
+        "en": "Shatsky Rise",
+        "es": "Elevación de Shatsky"
+      },
+      "kind": "rise",
+      "lon": 162.167,
+      "lat": 37.175,
+      "depth_m": 3500,
+      "rank": 2,
+      "text": {
+        "en": "This volcanic plateau east of Japan was built by huge eruptions about 145 million years ago. Its largest part, Tamu Massif, was once described as the largest single volcano on Earth. It is named after the Russian geologist Nikolay Shatsky.",
+        "es": "Esta meseta volcánica al este de Japón se formó por enormes erupciones hace unos 145 millones de años. Su parte mayor, el macizo Tamu, llegó a describirse como el volcán individual más grande de la Tierra. Lleva el nombre del geólogo ruso Nikolái Shatski."
+      },
+      "src": "https://doi.org/10.1038/ngeo1934",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/23308"
+      ],
+      "gebco": 23308
+    },
+    {
+      "id": "chatham-rise",
+      "name": {
+        "en": "Chatham Rise",
+        "es": "Elevación de Chatham"
+      },
+      "kind": "rise",
+      "lon": -179.999,
+      "lat": -43.5,
+      "depth_m": 400,
+      "rank": 3,
+      "text": {
+        "en": "This ridge-like rise runs about 1,400 km east from near Banks Peninsula in New Zealand. Its western half is flat-topped at 200 to 400 m deep, while the eastern half gradually deepens to about 3,000 m; the Chatham Islands rise from it.",
+        "es": "Esta elevación alargada se extiende unos 1 400 km hacia el este desde cerca de la península de Banks, en Nueva Zelanda. Su mitad occidental tiene la cima plana a entre 200 y 400 m de profundidad, y la oriental se hunde poco a poco hasta unos 3 000 m; de ella emergen las islas Chatham."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/33429",
+      "gebco": 33429
+    },
+    {
+      "id": "lord-howe-rise",
+      "name": {
+        "en": "Lord Howe Rise",
+        "es": "Elevación de Lord Howe"
+      },
+      "kind": "rise",
+      "lon": 162.351,
+      "lat": -31.253,
+      "depth_m": 1250,
+      "rank": 2,
+      "text": {
+        "en": "This long, broad rise in the Tasman Sea is a drowned part of Zealandia, mostly between 1,000 and 1,500 m deep. It is named after Lord Howe Island.",
+        "es": "Esta elevación larga y amplia del mar de Tasmania es una parte sumergida de Zelandia, casi toda entre 1 000 y 1 500 m de profundidad. Debe su nombre a la isla Lord Howe."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22334",
+      "gebco": 22334
+    },
+    {
+      "id": "maud-rise",
+      "name": {
+        "en": "Maud Rise",
+        "es": "Elevación de Maud"
+      },
+      "kind": "rise",
+      "lon": 2.95,
+      "lat": -65.476,
+      "depth_m": 2600,
+      "rank": 3,
+      "text": {
+        "en": "Off Antarctica, this undersea rise stirs the ocean above it, and huge openings in the winter sea ice have formed over it, in the 1970s and again in 2016 and 2017. It is named after Queen Maud of Norway.",
+        "es": "Frente a la Antártida, esta elevación submarina agita el océano sobre ella, y sobre ella se han abierto enormes huecos en el hielo marino invernal, en la década de 1970 y de nuevo en 2016 y 2017. Lleva el nombre de la reina Maud de Noruega."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/22430",
+      "gebco": 22430
+    },
+    {
+      "id": "grand-banks",
+      "name": {
+        "en": "Grand Banks of Newfoundland",
+        "es": "Grandes Bancos de Terranova"
+      },
+      "kind": "bank",
+      "lon": -51.291,
+      "lat": 46.1,
+      "depth_m": 80,
+      "rank": 2,
+      "text": {
+        "en": "Off Newfoundland, these shallow banks, mostly less than 100 m deep, were for centuries among the richest cod grounds on Earth. In 1929 an earthquake at their southern edge set off a huge undersea slide that broke 12 transatlantic cables and a tsunami that killed 28 people.",
+        "es": "Frente a Terranova, estos bancos poco profundos, casi todos a menos de 100 m, fueron durante siglos una de las zonas de pesca de bacalao más ricas de la Tierra. En 1929, un sismo en su borde sur desató un enorme deslizamiento submarino que rompió 12 cables transatlánticos y un tsunami que mató a 28 personas."
+      },
+      "src": "https://earthquakescanada.nrcan.gc.ca/historic-historique/events/19291118-en.php",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/30427"
+      ],
+      "gebco": 30427
+    },
+    {
+      "id": "georges-bank",
+      "name": {
+        "en": "Georges Bank",
+        "es": "Banco Georges"
+      },
+      "kind": "bank",
+      "lon": -67.0,
+      "lat": 41.5,
+      "depth_m": 60,
+      "rank": 2,
+      "text": {
+        "en": "This shallow bank between Cape Cod and Nova Scotia is one of the richest fishing grounds of the North Atlantic. In 1984 the International Court of Justice drew the boundary that divides it between the United States and Canada.",
+        "es": "Este banco poco profundo, entre el cabo Cod y Nueva Escocia, es una de las zonas de pesca más ricas del Atlántico Norte. En 1984, la Corte Internacional de Justicia trazó el límite que lo divide entre Estados Unidos y Canadá."
+      },
+      "src": "https://www.icj-cij.org/case/67",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/13558"
+      ],
+      "gebco": 13558
+    },
+    {
+      "id": "dogger-bank",
+      "name": {
+        "en": "Dogger Bank",
+        "es": "Banco Dogger"
+      },
+      "kind": "bank",
+      "lon": 2.333,
+      "lat": 54.833,
+      "depth_m": 25,
+      "rank": 2,
+      "text": {
+        "en": "This large sandbank in the middle of the North Sea lies only about 15 to 35 m deep. It was dry land, joining Britain to mainland Europe, until rising seas drowned it about 8,000 years ago.",
+        "es": "Este gran banco de arena en el centro del mar del Norte está a solo unos 15 a 35 m de profundidad. Fue tierra firme que unía Gran Bretaña con el continente europeo hasta que la subida del mar la cubrió, hace unos 8 000 años."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/12964",
+      "gebco": 12964
+    },
+    {
+      "id": "great-bahama-bank",
+      "name": {
+        "en": "Great Bahama Bank",
+        "es": "Gran Banco de las Bahamas"
+      },
+      "kind": "bank",
+      "lon": -78.0,
+      "lat": 23.5,
+      "depth_m": 5,
+      "rank": 2,
+      "text": {
+        "en": "This vast platform of limestone sand in the Bahamas is mostly less than 10 m deep. Its edges drop steeply into deep water, such as the Tongue of the Ocean and the Great Bahama Canyon.",
+        "es": "Esta vasta plataforma de arena caliza de las Bahamas tiene casi toda menos de 10 m de profundidad. Sus bordes caen en picada hacia aguas profundas, como la Lengua del Océano y el cañón de Gran Bahama."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/13685",
+      "gebco": 13685
+    },
+    {
+      "id": "campeche-bank",
+      "name": {
+        "en": "Campeche Bank",
+        "es": "Banco de Campeche"
+      },
+      "kind": "bank",
+      "lon": -90.0,
+      "lat": 22.0,
+      "depth_m": 45,
+      "rank": 2,
+      "text": {
+        "en": "This wide, shallow shelf off Mexico's Yucatán Peninsula is named after the state of Campeche. Beneath its sediments lies the offshore half of the Chicxulub crater, left by the asteroid impact that ended the age of the dinosaurs 66 million years ago.",
+        "es": "Esta amplia plataforma poco profunda frente a la península de Yucatán, en México, lleva el nombre del estado de Campeche. Bajo sus sedimentos está la mitad submarina del cráter de Chicxulub, que dejó el impacto del asteroide que acabó con la era de los dinosaurios hace 66 millones de años."
+      },
+      "src": "https://doi.org/10.1126/science.aah6561",
+      "src_more": [
+        "https://www.ngdc.noaa.gov/gazetteer/feature/12406"
+      ],
+      "gebco": 12406
+    },
+    {
+      "id": "agulhas-bank",
+      "name": {
+        "en": "Agulhas Bank",
+        "es": "Banco de las Agujas"
+      },
+      "kind": "bank",
+      "lon": 20.75,
+      "lat": -35.333,
+      "depth_m": 100,
+      "rank": 3,
+      "text": {
+        "en": "This broad, shallow shelf off the southern tip of Africa is mostly less than 200 m deep. It takes its name from Cape Agulhas, the southernmost point of the continent.",
+        "es": "Esta amplia plataforma poco profunda frente al extremo sur de África tiene casi toda menos de 200 m de profundidad. Toma su nombre del cabo de las Agujas, el punto más austral del continente."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/11604",
+      "gebco": 11604
+    },
+    {
+      "id": "saya-de-malha-bank",
+      "name": {
+        "en": "Saya de Malha Bank",
+        "es": "Banco de Saya de Malha"
+      },
+      "kind": "bank",
+      "lon": 60.379,
+      "lat": -10.299,
+      "depth_m": 140,
+      "rank": 3,
+      "text": {
+        "en": "On the Mascarene Plateau, this is the largest submerged bank in the world, with vast seagrass meadows in its shallow waters. Portuguese sailors named it about 500 years ago on their way from the Cape of Good Hope to India.",
+        "es": "En la meseta de las Mascareñas, es el mayor banco sumergido del mundo, con enormes praderas de pastos marinos en sus aguas poco profundas. Navegantes portugueses le dieron nombre hace unos 500 años, en su viaje del cabo de Buena Esperanza a la India."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/16526",
+      "gebco": 16526
+    },
+    {
+      "id": "burdwood-bank",
+      "name": {
+        "en": "Burdwood Bank",
+        "es": "Banco Burdwood (Namuncurá)"
+      },
+      "kind": "bank",
+      "lon": -59.0,
+      "lat": -54.25,
+      "depth_m": 100,
+      "rank": 2,
+      "text": {
+        "en": "East of Tierra del Fuego and south of the Falkland Islands (Malvinas), this bank rises to less than 100 m below the surface. Argentina protects it as the Namuncurá-Burdwood Bank marine protected area, created in 2013.",
+        "es": "Al este de Tierra del Fuego y al sur de las islas Malvinas, este banco llega a menos de 100 m bajo la superficie. Argentina lo protege como área marina protegida Namuncurá-Banco Burdwood, creada en 2013."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28639",
+      "gebco": 28639
+    },
+    {
+      "id": "graham-bank",
+      "name": {
+        "en": "Graham Bank",
+        "es": "Banco Graham"
+      },
+      "kind": "bank",
+      "lon": 12.717,
+      "lat": 37.167,
+      "depth_m": 10,
+      "rank": 3,
+      "text": {
+        "en": "In 1831 a volcanic island rose from the sea here, south of Sicily, was claimed by Britain, France and the Kingdom of the Two Sicilies, and was washed away within months. Its broken lava now forms a bank a few metres below the surface.",
+        "es": "En 1831 surgió aquí del mar, al sur de Sicilia, una isla volcánica que reclamaron Gran Bretaña, Francia y el Reino de las Dos Sicilias, y que las olas deshicieron en pocos meses. Su lava rota forma hoy un banco a pocos metros bajo la superficie."
+      },
+      "src": "https://www.ngdc.noaa.gov/gazetteer/feature/28667",
+      "gebco": 28667
     }
   ]
 }

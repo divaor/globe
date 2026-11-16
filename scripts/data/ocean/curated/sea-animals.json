@@ -1472,6 +1472,915 @@
         "es": "Pasa toda su vida en mar abierto y cerca del 87 por ciento del tiempo bajo el agua, y bucea hasta 50 m."
       },
       "src": "https://doi.org/10.1242/jeb.127.1.27"
+    },
+    {
+      "id": "whale-shark",
+      "e": "🦈",
+      "name": {
+        "en": "Whale shark",
+        "es": "Tiburón ballena"
+      },
+      "sci": "Rhincodon typus",
+      "group": "shark",
+      "depth": [
+        0,
+        1928
+      ],
+      "usual": 50,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "caribbean",
+        "red-sea"
+      ],
+      "lat": [
+        -48,
+        45
+      ],
+      "text": {
+        "en": "The world's largest fish is harmless: it feeds on plankton and small fish, often hanging upright at the surface. It usually stays in the top 100 m but has been recorded at 1,928 m.",
+        "es": "El pez más grande del mundo es inofensivo: come plancton y peces pequeños, a menudo en posición vertical junto a la superficie. Suele quedarse en los primeros 100 m, pero se ha registrado a 1 928 m."
+      },
+      "src": "https://www.fishbase.se/summary/Rhincodon-typus.html"
+    },
+    {
+      "id": "reef-manta",
+      "e": "🐟",
+      "name": {
+        "en": "Reef manta ray",
+        "es": "Mantarraya de arrecife"
+      },
+      "sci": "Mobula alfredi",
+      "group": "fish",
+      "depth": [
+        0,
+        120
+      ],
+      "usual": 20,
+      "oceans": [
+        "indian",
+        "pacific"
+      ],
+      "seas": [
+        "red-sea"
+      ],
+      "lat": [
+        -34,
+        32
+      ],
+      "text": {
+        "en": "Glides close to coasts and reefs filtering plankton, with famous gatherings in the Maldives, Mozambique and Hawaii. It can measure 4.5 m from wingtip to wingtip.",
+        "es": "Planea cerca de costas y arrecifes filtrando plancton, con agrupaciones famosas en Maldivas, Mozambique y Hawái. Puede medir 4,5 m de punta a punta de sus aletas."
+      },
+      "src": "https://www.fishbase.se/summary/Mobula-alfredi.html"
+    },
+    {
+      "id": "tiger-shark",
+      "e": "🦈",
+      "name": {
+        "en": "Tiger shark",
+        "es": "Tiburón tigre"
+      },
+      "sci": "Galeocerdo cuvier",
+      "group": "shark",
+      "depth": [
+        0,
+        800
+      ],
+      "usual": 70,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "caribbean",
+        "red-sea"
+      ],
+      "lat": [
+        -44,
+        62
+      ],
+      "text": {
+        "en": "Eats almost anything, from sea turtles, seabirds and other sharks to cans and pieces of metal. It is usually found from the surface to 140 m and hunts mostly at night.",
+        "es": "Come casi de todo, desde tortugas marinas, aves y otros tiburones hasta latas y trozos de metal. Suele estar entre la superficie y 140 m y caza sobre todo de noche."
+      },
+      "src": "https://www.fishbase.se/summary/Galeocerdo-cuvier.html"
+    },
+    {
+      "id": "scalloped-hammerhead",
+      "e": "🦈",
+      "name": {
+        "en": "Scalloped hammerhead",
+        "es": "Tiburón martillo común"
+      },
+      "sci": "Sphyrna lewini",
+      "group": "shark",
+      "depth": [
+        0,
+        1043
+      ],
+      "usual": 25,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "caribbean",
+        "red-sea"
+      ],
+      "lat": [
+        -39,
+        46
+      ],
+      "text": {
+        "en": "Young hammerheads form huge schools, and adults have been filmed by a baited camera at 512 m. It has been recorded as deep as 1,043 m.",
+        "es": "Los jóvenes forman cardúmenes enormes, y una cámara con cebo filmó adultos a 512 m. Se ha registrado hasta a 1 043 m de profundidad."
+      },
+      "src": "https://www.fishbase.se/summary/Sphyrna-lewini.html"
+    },
+    {
+      "id": "blue-shark",
+      "e": "🦈",
+      "name": {
+        "en": "Blue shark",
+        "es": "Tiburón azul"
+      },
+      "sci": "Prionace glauca",
+      "group": "shark",
+      "depth": [
+        0,
+        1082
+      ],
+      "usual": 110,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        -55,
+        70
+      ],
+      "text": {
+        "en": "A slender open-ocean traveller: one tagged in New Zealand was caught again 1,200 km off Chile. Females can give birth to dozens of pups at a time.",
+        "es": "Un viajero esbelto del mar abierto: uno marcado en Nueva Zelanda fue capturado de nuevo a 1 200 km de Chile. Las hembras pueden parir decenas de crías a la vez."
+      },
+      "src": "https://www.fishbase.se/summary/Prionace-glauca.html"
+    },
+    {
+      "id": "basking-shark",
+      "e": "🦈",
+      "name": {
+        "en": "Basking shark",
+        "es": "Tiburón peregrino"
+      },
+      "sci": "Cetorhinus maximus",
+      "group": "shark",
+      "depth": [
+        0,
+        2000
+      ],
+      "usual": 10,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        -58,
+        75
+      ],
+      "text": {
+        "en": "The second-largest shark filters plankton at the surface in summer and moves to deeper water in winter. It can cross oceans, from Britain to Newfoundland.",
+        "es": "El segundo tiburón más grande filtra plancton en la superficie en verano y baja a aguas más profundas en invierno. Puede cruzar océanos, de Gran Bretaña a Terranova."
+      },
+      "src": "https://www.fishbase.se/summary/Cetorhinus-maximus.html"
+    },
+    {
+      "id": "ocean-sunfish",
+      "e": "🐡",
+      "name": {
+        "en": "Ocean sunfish",
+        "es": "Pez luna"
+      },
+      "sci": "Mola mola",
+      "group": "fish",
+      "depth": [
+        0,
+        1515
+      ],
+      "usual": 50,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        -65,
+        75
+      ],
+      "text": {
+        "en": "Often drifts on its side at the surface, yet it has been recorded at 1,515 m. It has no swim bladder and a skeleton made mostly of cartilage.",
+        "es": "A menudo flota de lado en la superficie, pero se ha registrado a 1 515 m. No tiene vejiga natatoria y su esqueleto es sobre todo de cartílago."
+      },
+      "src": "https://www.fishbase.se/summary/Mola-mola.html"
+    },
+    {
+      "id": "atlantic-bluefin-tuna",
+      "e": "🐟",
+      "name": {
+        "en": "Atlantic bluefin tuna",
+        "es": "Atún rojo del Atlántico"
+      },
+      "sci": "Thunnus thynnus",
+      "group": "fish",
+      "depth": [
+        0,
+        985
+      ],
+      "usual": 50,
+      "oceans": [
+        "atlantic"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        -58,
+        69
+      ],
+      "text": {
+        "en": "Can weigh up to 900 kg and live for 40 years. It usually hunts schooling fish and squid in the top 100 m but has been recorded at 985 m.",
+        "es": "Puede pesar hasta 900 kg y vivir 40 años. Suele cazar peces de cardumen y calamares en los primeros 100 m, pero se ha registrado a 985 m."
+      },
+      "src": "https://www.fishbase.se/summary/Thunnus-thynnus.html"
+    },
+    {
+      "id": "swordfish",
+      "e": "🐟",
+      "name": {
+        "en": "Swordfish",
+        "es": "Pez espada"
+      },
+      "sci": "Xiphias gladius",
+      "group": "fish",
+      "depth": [
+        0,
+        2878
+      ],
+      "usual": 275,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        -50,
+        69
+      ],
+      "text": {
+        "en": "Uses its sword to kill prey, hunting from the surface to the seafloor. It is usually found above 550 m but has been recorded at 2,878 m.",
+        "es": "Usa su espada para matar a sus presas y caza desde la superficie hasta el fondo. Suele estar por encima de 550 m, pero se ha registrado a 2 878 m."
+      },
+      "src": "https://www.fishbase.se/summary/Xiphias-gladius.html"
+    },
+    {
+      "id": "european-sardine",
+      "e": "🐟",
+      "name": {
+        "en": "European sardine",
+        "es": "Sardina europea"
+      },
+      "sci": "Sardina pilchardus",
+      "group": "fish",
+      "depth": [
+        10,
+        100
+      ],
+      "usual": 40,
+      "oceans": [
+        "atlantic"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        14,
+        68
+      ],
+      "text": {
+        "en": "Swims in schools at 25 to 55 m by day and rises to 10 to 35 m at night. Each female lays 50,000 to 60,000 eggs in batches.",
+        "es": "Nada en cardúmenes a 25 a 55 m de día y sube a 10 a 35 m de noche. Cada hembra pone de 50 000 a 60 000 huevos en tandas."
+      },
+      "src": "https://www.fishbase.se/summary/Sardina-pilchardus.html"
+    },
+    {
+      "id": "peruvian-anchoveta",
+      "e": "🐟",
+      "name": {
+        "en": "Peruvian anchoveta",
+        "es": "Anchoveta peruana"
+      },
+      "sci": "Engraulis ringens",
+      "group": "fish",
+      "depth": [
+        3,
+        80
+      ],
+      "usual": 20,
+      "oceans": [
+        "pacific"
+      ],
+      "lat": [
+        -44,
+        1
+      ],
+      "text": {
+        "en": "Forms huge schools near the surface within about 80 km of the coast, filtering the rich plankton of the Humboldt Current. Pelicans and guano birds depend on it.",
+        "es": "Forma cardúmenes enormes cerca de la superficie a menos de unos 80 km de la costa, filtrando el plancton de la corriente de Humboldt. Pelícanos y aves guaneras dependen de ella."
+      },
+      "src": "https://www.fishbase.se/summary/Engraulis-ringens.html"
+    },
+    {
+      "id": "atlantic-herring",
+      "e": "🐟",
+      "name": {
+        "en": "Atlantic herring",
+        "es": "Arenque del Atlántico"
+      },
+      "sci": "Clupea harengus",
+      "group": "fish",
+      "depth": [
+        0,
+        364
+      ],
+      "usual": 100,
+      "oceans": [
+        "atlantic",
+        "arctic"
+      ],
+      "lat": [
+        32,
+        80
+      ],
+      "text": {
+        "en": "Spends the day in deeper water and rises at night. Tight schools, silver sides, sharp hearing and a very fast escape help it dodge fish, birds and marine mammals.",
+        "es": "Pasa el día en aguas más profundas y sube de noche. Los cardúmenes compactos, sus costados plateados, su buen oído y su huida veloz lo ayudan a escapar de peces, aves y mamíferos marinos."
+      },
+      "src": "https://www.fishbase.se/summary/Clupea-harengus.html"
+    },
+    {
+      "id": "atlantic-cod",
+      "e": "🐟",
+      "name": {
+        "en": "Atlantic cod",
+        "es": "Bacalao del Atlántico"
+      },
+      "sci": "Gadus morhua",
+      "group": "fish",
+      "depth": [
+        0,
+        600
+      ],
+      "usual": 175,
+      "oceans": [
+        "atlantic",
+        "arctic"
+      ],
+      "lat": [
+        37,
+        83
+      ],
+      "text": {
+        "en": "By day schools swim 30 to 80 m above the seabed, then spread out at night to feed. It is usually found at 150 to 200 m.",
+        "es": "De día los cardúmenes nadan de 30 a 80 m por encima del fondo y de noche se dispersan para comer. Suele encontrarse entre 150 y 200 m."
+      },
+      "src": "https://www.fishbase.se/summary/Gadus-morhua.html"
+    },
+    {
+      "id": "clown-anemonefish",
+      "e": "🐠",
+      "name": {
+        "en": "Clown anemonefish",
+        "es": "Pez payaso"
+      },
+      "sci": "Amphiprion ocellaris",
+      "group": "fish",
+      "depth": [
+        1,
+        15
+      ],
+      "usual": 9,
+      "oceans": [
+        "indian",
+        "pacific"
+      ],
+      "lat": [
+        -17,
+        30
+      ],
+      "text": {
+        "en": "Lives among the stinging tentacles of large sea anemones in shallow, calm lagoons. All start life as males, and the largest fish can become female.",
+        "es": "Vive entre los tentáculos urticantes de grandes anémonas en lagunas tranquilas y poco profundas. Todos nacen machos y el pez más grande puede volverse hembra."
+      },
+      "src": "https://www.fishbase.se/summary/Amphiprion-ocellaris.html"
+    },
+    {
+      "id": "red-sea-anemonefish",
+      "e": "🐠",
+      "name": {
+        "en": "Red Sea anemonefish",
+        "es": "Pez payaso del mar Rojo"
+      },
+      "sci": "Amphiprion bicinctus",
+      "group": "fish",
+      "depth": [
+        1,
+        30
+      ],
+      "usual": 10,
+      "oceans": [
+        "indian"
+      ],
+      "seas": [
+        "red-sea"
+      ],
+      "lat": [
+        -7,
+        31
+      ],
+      "text": {
+        "en": "Pairs live in sea anemones on Red Sea reefs and stay together. The male guards the eggs and fans them with fresh water.",
+        "es": "Las parejas viven en anémonas de los arrecifes del mar Rojo y permanecen juntas. El macho cuida los huevos y los abanica con agua fresca."
+      },
+      "src": "https://www.fishbase.se/summary/Amphiprion-bicinctus.html"
+    },
+    {
+      "id": "bumphead-parrotfish",
+      "e": "🐠",
+      "name": {
+        "en": "Bumphead parrotfish",
+        "es": "Pez loro cabezón"
+      },
+      "sci": "Bolbometopon muricatum",
+      "group": "fish",
+      "depth": [
+        0,
+        40
+      ],
+      "usual": 15,
+      "oceans": [
+        "indian",
+        "pacific"
+      ],
+      "seas": [
+        "red-sea"
+      ],
+      "lat": [
+        -26,
+        34
+      ],
+      "text": {
+        "en": "The largest parrotfish grazes on algae and live coral, sometimes ramming the reef with its head. At night groups sleep in caves and shipwrecks.",
+        "es": "El pez loro más grande come algas y coral vivo, a veces golpeando el arrecife con la cabeza. De noche los grupos duermen en cuevas y barcos hundidos."
+      },
+      "src": "https://www.fishbase.se/summary/Bolbometopon-muricatum.html"
+    },
+    {
+      "id": "blue-tang",
+      "e": "🐠",
+      "name": {
+        "en": "Palette surgeonfish (blue tang)",
+        "es": "Cirujano azul"
+      },
+      "sci": "Paracanthurus hepatus",
+      "group": "fish",
+      "depth": [
+        2,
+        40
+      ],
+      "usual": 25,
+      "oceans": [
+        "indian",
+        "pacific"
+      ],
+      "lat": [
+        -30,
+        30
+      ],
+      "text": {
+        "en": "Feeds on plankton a metre or two above current-swept reefs. When alarmed, young fish wedge themselves tightly among coral branches.",
+        "es": "Come plancton a uno o dos metros sobre arrecifes barridos por corrientes. Cuando se asustan, los jóvenes se meten apretados entre las ramas del coral."
+      },
+      "src": "https://www.fishbase.se/summary/Paracanthurus-hepatus.html"
+    },
+    {
+      "id": "red-lionfish",
+      "e": "🐠",
+      "name": {
+        "en": "Red lionfish",
+        "es": "Pez león"
+      },
+      "sci": "Pterois volitans",
+      "group": "fish",
+      "depth": [
+        2,
+        55
+      ],
+      "usual": 20,
+      "oceans": [
+        "pacific",
+        "indian",
+        "atlantic"
+      ],
+      "seas": [
+        "caribbean"
+      ],
+      "lat": [
+        -40,
+        43
+      ],
+      "text": {
+        "en": "Hunts small fish and shrimp at night, herding them into a corner with its wide fins before swallowing them in one gulp. Its spines are venomous.",
+        "es": "Caza peces pequeños y camarones de noche, acorralándolos con sus amplias aletas antes de tragarlos de un bocado. Sus espinas son venenosas."
+      },
+      "src": "https://www.fishbase.se/summary/Pterois-volitans.html"
+    },
+    {
+      "id": "humphead-wrasse",
+      "e": "🐠",
+      "name": {
+        "en": "Humphead wrasse",
+        "es": "Pez Napoleón"
+      },
+      "sci": "Cheilinus undulatus",
+      "group": "fish",
+      "depth": [
+        0,
+        100
+      ],
+      "usual": 30,
+      "oceans": [
+        "indian",
+        "pacific"
+      ],
+      "seas": [
+        "red-sea"
+      ],
+      "lat": [
+        -23,
+        30
+      ],
+      "text": {
+        "en": "Roams reef slopes by day and rests in caves at night. It is one of the few predators of toxic animals such as boxfish and crown-of-thorns starfish.",
+        "es": "Recorre las laderas del arrecife de día y descansa en cuevas de noche. Es uno de los pocos depredadores de animales tóxicos como los peces cofre y la estrella corona de espinas."
+      },
+      "src": "https://www.fishbase.se/summary/Cheilinus-undulatus.html"
+    },
+    {
+      "id": "short-snouted-seahorse",
+      "e": "🐠",
+      "name": {
+        "en": "Short-snouted seahorse",
+        "es": "Caballito de mar de hocico corto"
+      },
+      "sci": "Hippocampus hippocampus",
+      "group": "fish",
+      "depth": [
+        0,
+        60
+      ],
+      "usual": 10,
+      "oceans": [
+        "atlantic"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        7,
+        53
+      ],
+      "text": {
+        "en": "Copies the green or yellow colour of seaweed to hide, and spends its days in a home range as small as 0.7 square metres.",
+        "es": "Imita el color verde o amarillo de las algas para esconderse y pasa sus días en un territorio de apenas 0,7 metros cuadrados."
+      },
+      "src": "https://www.fishbase.se/summary/Hippocampus-hippocampus.html"
+    },
+    {
+      "id": "flying-fish",
+      "e": "🐟",
+      "name": {
+        "en": "Tropical two-wing flying fish",
+        "es": "Pez volador"
+      },
+      "sci": "Exocoetus volitans",
+      "group": "fish",
+      "depth": [
+        0,
+        20
+      ],
+      "usual": 1,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "caribbean"
+      ],
+      "lat": [
+        -36,
+        44
+      ],
+      "text": {
+        "en": "Lives right at the surface and escapes swordfish and tuna by leaping out of the water and gliding long distances on its fins.",
+        "es": "Vive justo en la superficie y escapa de peces espada y atunes saltando fuera del agua y planeando largas distancias con sus aletas."
+      },
+      "src": "https://www.fishbase.se/summary/Exocoetus-volitans.html"
+    },
+    {
+      "id": "mahi-mahi",
+      "e": "🐟",
+      "name": {
+        "en": "Mahi-mahi",
+        "es": "Dorado"
+      },
+      "sci": "Coryphaena hippurus",
+      "group": "fish",
+      "depth": [
+        0,
+        85
+      ],
+      "usual": 8,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "mediterranean",
+        "caribbean"
+      ],
+      "lat": [
+        -40,
+        50
+      ],
+      "text": {
+        "en": "A fast-growing hunter of the open sea that can mature only four to five months after hatching. It is usually found just 5 to 10 m down.",
+        "es": "Un cazador de mar abierto que crece rápido y puede madurar apenas cuatro a cinco meses después de nacer. Suele estar a solo 5 a 10 m de profundidad."
+      },
+      "src": "https://www.fishbase.se/summary/Coryphaena-hippurus.html"
+    },
+    {
+      "id": "polar-cod",
+      "e": "🐟",
+      "name": {
+        "en": "Polar cod",
+        "es": "Bacalao polar"
+      },
+      "sci": "Boreogadus saida",
+      "group": "fish",
+      "depth": [
+        0,
+        1383
+      ],
+      "usual": 200,
+      "oceans": [
+        "arctic"
+      ],
+      "lat": [
+        52,
+        87
+      ],
+      "text": {
+        "en": "Lives with the Arctic sea ice, from the surface down to 1,383 m, and even enters almost fresh river mouths. It feeds mostly on small crustaceans.",
+        "es": "Vive junto al hielo marino del Ártico, desde la superficie hasta 1 383 m, y hasta entra en desembocaduras casi dulces. Se alimenta sobre todo de crustáceos pequeños."
+      },
+      "src": "https://www.fishbase.se/summary/Boreogadus-saida.html"
+    },
+    {
+      "id": "antarctic-silverfish",
+      "e": "🐟",
+      "name": {
+        "en": "Antarctic silverfish",
+        "es": "Pez plateado antártico"
+      },
+      "sci": "Pleuragramma antarctica",
+      "group": "fish",
+      "depth": [
+        0,
+        1000
+      ],
+      "usual": 500,
+      "oceans": [
+        "southern"
+      ],
+      "lat": [
+        -78,
+        -60
+      ],
+      "text": {
+        "en": "Thought to be the only truly open-water fish of Antarctic seas. Larvae live near the surface, while adults stay below 400 m.",
+        "es": "Se cree que es el único pez de verdad pelágico de los mares antárticos. Las larvas viven cerca de la superficie y los adultos por debajo de 400 m."
+      },
+      "src": "https://www.fishbase.se/summary/Pleuragramma-antarctica.html"
+    },
+    {
+      "id": "goliath-grouper",
+      "e": "🐟",
+      "name": {
+        "en": "Atlantic goliath grouper",
+        "es": "Mero guasa"
+      },
+      "sci": "Epinephelus itajara",
+      "group": "fish",
+      "depth": [
+        0,
+        100
+      ],
+      "usual": 25,
+      "oceans": [
+        "atlantic"
+      ],
+      "seas": [
+        "caribbean"
+      ],
+      "lat": [
+        -33,
+        36
+      ],
+      "text": {
+        "en": "Can weigh more than 315 kg. It guards a home cave or shipwreck, and eats spiny lobsters, turtles and even stingrays.",
+        "es": "Puede pesar más de 315 kg. Defiende una cueva o un barco hundido como hogar y come langostas, tortugas y hasta rayas."
+      },
+      "src": "https://www.fishbase.se/summary/Epinephelus-itajara.html"
+    },
+    {
+      "id": "caribbean-reef-shark",
+      "e": "🦈",
+      "name": {
+        "en": "Caribbean reef shark",
+        "es": "Tiburón de arrecife del Caribe"
+      },
+      "sci": "Carcharhinus perezi",
+      "group": "shark",
+      "depth": [
+        1,
+        65
+      ],
+      "usual": 20,
+      "oceans": [
+        "atlantic"
+      ],
+      "seas": [
+        "caribbean"
+      ],
+      "lat": [
+        -35,
+        33
+      ],
+      "text": {
+        "en": "Patrols drop-offs at the outer edge of reefs, usually less than 30 m deep, and sometimes rests motionless on the bottom.",
+        "es": "Patrulla los bordes exteriores de los arrecifes, casi siempre a menos de 30 m, y a veces descansa inmóvil sobre el fondo."
+      },
+      "src": "https://www.fishbase.se/summary/Carcharhinus-perezi.html"
+    },
+    {
+      "id": "giant-moray",
+      "e": "🐍",
+      "name": {
+        "en": "Giant moray",
+        "es": "Morena gigante"
+      },
+      "sci": "Gymnothorax javanicus",
+      "group": "fish",
+      "depth": [
+        0,
+        50
+      ],
+      "usual": 20,
+      "oceans": [
+        "indian",
+        "pacific"
+      ],
+      "seas": [
+        "red-sea"
+      ],
+      "lat": [
+        -25,
+        30
+      ],
+      "text": {
+        "en": "The largest moray of the Indian and Pacific oceans, perhaps reaching 3 m. It hides alone in reef holes and hunts fish.",
+        "es": "La morena más grande de los océanos Índico y Pacífico, que quizá llega a 3 m. Se esconde sola en agujeros del arrecife y caza peces."
+      },
+      "src": "https://www.fishbase.se/summary/Gymnothorax-javanicus.html"
+    },
+    {
+      "id": "atlantic-wolffish",
+      "e": "🐟",
+      "name": {
+        "en": "Atlantic wolffish",
+        "es": "Pez lobo del Atlántico"
+      },
+      "sci": "Anarhichas lupus",
+      "group": "fish",
+      "depth": [
+        1,
+        600
+      ],
+      "usual": 60,
+      "oceans": [
+        "atlantic",
+        "arctic"
+      ],
+      "lat": [
+        40,
+        82
+      ],
+      "text": {
+        "en": "Lives alone on rocky bottoms and crushes hard-shelled molluscs, crabs, lobsters and sea urchins with its strong teeth.",
+        "es": "Vive solo en fondos rocosos y tritura moluscos de concha dura, cangrejos, langostas y erizos de mar con sus fuertes dientes."
+      },
+      "src": "https://www.fishbase.se/summary/Anarhichas-lupus.html"
+    },
+    {
+      "id": "oarfish",
+      "e": "🐟",
+      "name": {
+        "en": "Oarfish",
+        "es": "Pez remo"
+      },
+      "sci": "Regalecus glesne",
+      "group": "fish",
+      "depth": [
+        20,
+        1000
+      ],
+      "usual": 100,
+      "oceans": [
+        "atlantic",
+        "pacific",
+        "indian"
+      ],
+      "seas": [
+        "mediterranean"
+      ],
+      "lat": [
+        -52,
+        72
+      ],
+      "text": {
+        "en": "A long, silver ribbon of a fish that can shed the rear part of its body several times in its life without harming any vital organs.",
+        "es": "Un pez largo como una cinta plateada que puede desprenderse de la parte trasera de su cuerpo varias veces en su vida sin dañar órganos vitales."
+      },
+      "src": "https://www.fishbase.se/summary/Regalecus-glesne.html"
+    },
+    {
+      "id": "greenland-shark",
+      "e": "🦈",
+      "name": {
+        "en": "Greenland shark",
+        "es": "Tiburón de Groenlandia"
+      },
+      "sci": "Somniosus microcephalus",
+      "group": "shark",
+      "depth": [
+        0,
+        2200
+      ],
+      "usual": 400,
+      "oceans": [
+        "arctic",
+        "atlantic"
+      ],
+      "lat": [
+        27,
+        83
+      ],
+      "text": {
+        "en": "Radiocarbon dating of eye lenses showed it lives at least 272 years, the oldest nearly 400, and matures at about 150. It is usually found at 200 to 600 m.",
+        "es": "La datación por radiocarbono del cristalino mostró que vive al menos 272 años, el más viejo casi 400, y madura hacia los 150. Suele estar entre 200 y 600 m."
+      },
+      "src": "https://www.fishbase.se/summary/Somniosus-microcephalus.html"
     }
   ]
 }
