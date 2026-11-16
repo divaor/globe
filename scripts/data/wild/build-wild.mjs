@@ -9,6 +9,7 @@
 //   node scripts/data/wild/build-wild.mjs --check   in check:data: fails if the files are out of date, or a known
 //                                                   animal is missing or lives in the wrong place
 import fs from 'node:fs';
+import crypto from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { EXTRA, NATIVE, NAMES, STORY, emojiOf } from './choose.mjs';
@@ -20,6 +21,15 @@ const read = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
 const CHECK = process.argv.includes('--check');
 
 import { COLS, ROWS, DEG, cellOfHash, cellCenter, cellAt, neighbours, countriesOf, continentOf, circleCells, packCells, packCounts, unpackCells, dropStrays } from './grid.mjs';
+
+/** The folder Commons keeps a file in ("a/ab", from the MD5 of its name): the app streams the call's MP3 copy from
+ * upload.wikimedia.org/wikipedia/commons/transcoded/a/ab/<name>/<name>.mp3, which every phone plays, and falls back
+ * to the original (an Ogg, FLAC or WAV recording some phones do not play, or download slowly). */
+function commonsDir(file) {
+  const name = (file.charAt(0).toUpperCase() + file.slice(1)).replace(/ /g, '_');
+  const h = crypto.createHash('md5').update(name).digest('hex');
+  return `${h[0]}/${h.slice(0, 2)}`;
+}
 
 // ---- Names ----------------------------------------------------------------------------------------------------
 const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
@@ -197,7 +207,7 @@ const animals = picked.map((a) => {
     id: a.id, q: a.qid, sci: a.sci, n: [en, es], g: a.g, ...(a.g2 ? { g2: a.g2 } : {}), e: emojiOf(a.sci, a.tax),
     fam: a.tax?.family ?? null, ord: a.tax?.order ?? null, cls: a.tax?.class ?? null, st: status, sl: a.sl,
     ...(Object.keys(facts).length ? { f: facts } : {}),
-    ...(s.img ? { img: s.img } : {}), ...(s.audio ? { snd: s.audio } : {}),
+    ...(s.img ? { img: s.img } : {}), ...(s.audio ? { snd: s.audio, sndh: commonsDir(s.audio) } : {}),
     ...(a.gone ? { gone: a.gone, last: e.place } : {}), ...(e?.story ?? STORY[a.sci] ? { story: e?.story ?? STORY[a.sci] } : {}),
     cc: [...cc].sort(), home: a.home, best: (best.get(a.id) ?? []).map((pi) => parks[pi].qid),
     c: packCells(cs), k: packCounts(cs.map((c) => a.cells.get(c))),

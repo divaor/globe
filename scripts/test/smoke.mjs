@@ -3669,7 +3669,9 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 // list grow" has play and pause, a year slider (that stays put while the legend is redrawn) and a speed slider; a
 // story opened from On this day has its controls, and its X comes back to the day; a quiz and the daily challenge
 // put the filters away (no site names on "Where is…?") and bring them back after. A guided tour plays by itself
-// and stops at its last stop; the screen stays on while a tour or a story plays.
+// and stops at its last stop; the screen stays on while a tour or a story plays. The travel guide leaves "← Montreal"
+// after showing an animal or a park; an animal's call plays Commons' MP3 copy, and goes on in the small player when
+// its card closes.
 {
   const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political,inventions&c=-93,16.7,6&lang=en&theme=dark');
   await page.evaluate(() => window.atlas.app.setTheme('dark'));
@@ -3847,6 +3849,73 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(800);
   check(s1.playing && s1.held === 1 && s2 === 0, `a story playing keeps the screen on (${s1.held} held); paused, it lets it sleep (${s2})`);
   check(!errors.length, `no page errors in the tour and wake checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+{
+  // The travel guide: an animal or a park opened from Montreal's See tab leaves "← Montreal", back to the same tab. An
+  // animal's call plays Commons' MP3 copy (answered here by a stand-in tone) with the app's player; closed, its card
+  // leaves the small player in the top bar, whose ■ stops it.
+  const n = 8000 * 20, wav = Buffer.alloc(44 + n);
+  wav.write('RIFF', 0); wav.writeUInt32LE(36 + n, 4); wav.write('WAVE', 8); wav.write('fmt ', 12); wav.writeUInt32LE(16, 16); wav.writeUInt16LE(1, 20); wav.writeUInt16LE(1, 22);
+  wav.writeUInt32LE(8000, 24); wav.writeUInt32LE(8000, 28); wav.writeUInt16LE(1, 32); wav.writeUInt16LE(8, 34); wav.write('data', 36); wav.writeUInt32LE(n, 40);
+  for (let i = 0; i < n; i++) wav[44 + i] = 128 + Math.round(60 * Math.sin((2 * Math.PI * 330 * i) / 8000));
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=-73.6,45.5,5&lang=en');
+  const asked = [];
+  await ctx.route('https://upload.wikimedia.org/**', (route) => {
+    const u = route.request().url();
+    if (!/\/transcoded\/|\.(ogg|oga|opus|mp3|flac|wav)$/i.test(u)) return route.continue();
+    asked.push(u);
+    const m = /bytes=(\d+)-(\d*)/.exec(route.request().headers()['range'] ?? '');
+    if (!m) return route.fulfill({ status: 200, body: wav, contentType: 'audio/wav', headers: { 'accept-ranges': 'bytes' } });
+    const a = Number(m[1]), b = m[2] ? Math.min(Number(m[2]), wav.length - 1) : wav.length - 1;
+    return route.fulfill({ status: 206, body: wav.subarray(a, b + 1), contentType: 'audio/wav', headers: { 'accept-ranges': 'bytes', 'content-range': `bytes ${a}-${b}/${wav.length}` } });
+  });
+  await page.evaluate(() => window.atlas.guide.openCity('montreal', 'see'));
+  await page.waitForSelector('[data-guide="wildlife"] [data-animal]', { timeout: 30000 }).catch(() => {});
+  // An animal with a call (the moose, if it is one of Montreal's).
+  const pick = await page.evaluate(async () => {
+    const ids = [...document.querySelectorAll('[data-guide="wildlife"] [data-animal]')].map((b) => b.dataset.animal);
+    const d = await (await fetch('data/wild/animals.json')).json();
+    const withCall = ids.filter((id) => d.animals.find((a) => a.id === id)?.snd);
+    return withCall.includes('alces-alces') ? 'alces-alces' : withCall[0] ?? ids[0];
+  });
+  await page.evaluate((id) => document.querySelector(`[data-guide="wildlife"] [data-animal="${id}"]`)?.click(), pick);
+  await page.waitForTimeout(1200);
+  const g1 = await page.evaluate(() => ({ card: document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? '', back: document.querySelector('.guide-back')?.textContent ?? '', sheet: !!document.querySelector('.sheet:not([hidden])') }));
+  // Its call.
+  await page.evaluate(() => document.querySelector('.country-card:not([hidden]) .wild-sound .clip-play')?.click());
+  await page.waitForFunction(() => /playing/.test(document.querySelector('.country-card:not([hidden]) .wild-sound .item-clip')?.className ?? ''), null, { timeout: 10000 }).catch(() => {});
+  const call = await page.evaluate(() => ({ cls: document.querySelector('.country-card:not([hidden]) .wild-sound .item-clip')?.className ?? '', native: !!document.querySelector('.country-card audio') }));
+  check(!!g1.card && /Montreal/.test(g1.back) && /playing/.test(call.cls) && !call.native && asked.some((u) => /\/transcoded\/.+\.mp3$/.test(u)),
+    `an animal from Montreal's See tab (${g1.card}) leaves "${g1.back.trim()}"; its call plays Commons' MP3 copy in the app's player (${asked.length} asked: ${(asked[0] ?? '').replace(/^.*\//, '')})`);
+  // Its card closed: the call goes on, in the small player; its ■ stops it.
+  await page.evaluate(() => document.querySelector('.country-card:not([hidden]) .card-close')?.click());
+  await page.waitForFunction(() => { const m = document.querySelector('.clip-mini'); return m && !m.hidden; }, null, { timeout: 5000 }).catch(() => {});
+  const mini = await page.evaluate(() => ({ shown: !document.querySelector('.clip-mini')?.hidden, name: document.querySelector('.clip-mini-name')?.textContent ?? '', playing: !document.querySelector('audio') || true }));
+  await page.evaluate(() => document.querySelector('.clip-mini-stop')?.click());
+  await page.waitForTimeout(600);
+  const stopped = await page.evaluate(() => !!document.querySelector('.clip-mini')?.hidden);
+  check(mini.shown && !!mini.name && stopped, `with its card closed the call goes on in the small player ("${mini.name}"), and its ■ stops it (${stopped ? 'gone' : 'still there'})`);
+  // Back to Montreal, on its See tab; then a park, and back again.
+  await page.evaluate(() => document.querySelector('.guide-back-go')?.click());
+  await page.waitForTimeout(1200);
+  const g2 = await page.evaluate(() => ({ city: document.querySelector('.guide-city')?.dataset.city, tab: document.querySelector('.guide-tabs .chip.on')?.dataset.tab, chip: !!document.querySelector('.guide-back') }));
+  // A sight in Paris opens its story; "← Paris" leaves the story and comes back.
+  await page.evaluate(() => window.atlas.guide.openCity('paris', 'see'));
+  await page.waitForSelector('.guide-city [data-sight]', { timeout: 20000 }).catch(() => {});
+  const park = await page.evaluate(() => { const b = document.querySelector('.guide-city [data-sight]'); b?.click(); return b?.querySelector('.guide-item-title')?.textContent ?? ''; });
+  await page.waitForTimeout(2500);
+  const g3 = await page.evaluate(() => ({ back: /Paris/.test(document.querySelector('.guide-back')?.textContent ?? ''), mode: window.atlas.app.mode }));
+  await page.evaluate(() => document.querySelector('.guide-back-go')?.click());
+  await page.waitForTimeout(1200);
+  const g4 = await page.evaluate(() => (window.atlas.app.mode ? `still in ${window.atlas.app.mode}` : document.querySelector('.guide-city')?.dataset.city));
+  // Its X closes the guide without leaving a way back.
+  await page.evaluate(() => window.atlas.shell.sheet.isOpen('guide-city') && document.querySelector('.sheet-head .icon-btn')?.click());
+  await page.waitForTimeout(600);
+  const g5 = await page.evaluate(() => !!document.querySelector('.guide-back'));
+  check(g2.city === 'montreal' && g2.tab === 'see' && !g2.chip && !!park && g3.back && !!g3.mode && g4 === 'paris' && !g5,
+    `"← Montreal" reopens its See tab (${g2.city}, ${g2.tab}); a sight in Paris (${park}) opens its story (${g3.mode}) and "← Paris" leaves it for the guide (${g4}); the guide's own X leaves no way back`);
+  check(!errors.length, `no page errors in the travel guide's way back and the calls${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

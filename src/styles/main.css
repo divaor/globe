@@ -596,6 +596,27 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
   background: rgba(3, 7, 16, 0.94); touch-action: none; user-select: none; -webkit-user-select: none; }
 .zoom-img { max-width: none; flex: none; transform-origin: 0 0; will-change: transform; -webkit-user-drag: none; }
 .zoom-img.anim { transition: transform 0.2s ease-out; }
+/* The small player: a card's clip that goes on after its card closed, with its stop button (ui/audio.ts). In the top
+   bar between its two ends; on a phone, just under its right end. */
+.clip-mini { display: flex; align-items: center; gap: 6px; height: 40px; padding: 0 4px 0 12px; margin: 2px 8px 0; border-radius: 999px;
+  min-width: 0; max-width: 280px; animation: pop .18s ease-out; }
+.clip-mini[hidden] { display: none; }
+.clip-mini-note { color: var(--accent); font-weight: 800; animation: clip-mini-beat 1.2s ease-in-out infinite; }
+@keyframes clip-mini-beat { 50% { opacity: 0.35; } }
+.clip-mini-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; font-weight: 650; }
+.clip-mini-stop { flex: none; width: 32px; height: 32px; display: grid; place-items: center; border: 0; border-radius: 999px; cursor: pointer;
+  background: var(--chip-on); color: var(--accent); }
+@media (max-width: 720px) {
+  .clip-mini { position: absolute; top: 54px; right: 0; margin: 0; max-width: min(240px, calc(100vw - 150px)); }
+}
+/* "← Montreal": back to a city's travel guide after a tap in it showed something else (guide/guide.ts). */
+.guide-back { position: absolute; top: calc(70px + var(--safe-t)); left: calc(12px + var(--safe-l)); z-index: 3; display: flex; align-items: center;
+  max-width: calc(100vw - 24px); border-radius: 999px; padding: 3px; animation: pop .18s ease-out; }
+.guide-back button { border: 0; background: none; color: var(--text); cursor: pointer; display: inline-flex; align-items: center; }
+.guide-back-go { gap: 6px; padding: 6px 8px 6px 6px; font-size: 14px; font-weight: 650; min-width: 0; }
+.guide-back-go span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.guide-back-x { width: 30px; height: 30px; justify-content: center; border-radius: 999px; color: var(--muted) !important; }
+html.ambient .guide-back { display: none; }
 /* A legend's timeline (World Heritage's "Watch the list grow"): play and pause, the years, the speed (ui/legend.ts). */
 .lg-player { display: grid; gap: 4px; margin: 8px 0 2px; }
 .lg-play-row { display: flex; align-items: center; gap: 8px; min-width: 0; }
@@ -1098,7 +1119,6 @@ div.guide-item { cursor: default; }
 .wild-card-extra { display: flex; flex-direction: column; gap: 4px; }
 .wild-sound { margin-top: 6px; }
 .wild-sound-title { font-size: 12.5px; font-weight: 700; margin-bottom: 2px; }
-.wild-audio { width: 100%; height: 34px; }
 .wild-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 6px; }
 .wild-page-head { display: flex; align-items: center; gap: 10px; margin: 10px 0 6px; }
 .wild-page-emoji { font-size: 34px; line-height: 1; }

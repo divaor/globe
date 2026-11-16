@@ -26,7 +26,8 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   ("State: Texas") and Who was born here? names a place's state.
 - **Navigation:** drag with fling, pinch, mouse wheel, double-tap, keyboard. A card's or quiz's picture opens full
   screen to pinch and zoom; a picture that may be see-through (a PNG, SVG or GIF: drawings, diagrams, glyphs) sits on
-  paper, so its dark lines show in the dark theme and full screen.
+  paper, so its dark lines show in the dark theme and full screen. A sound started from a card (an animal's call,
+  a piece of music) goes on when the card closes, in a small player in the top bar whose ■ stops it.
 - **Nature (More → Nature):** the animal finder, "Where can I see…?": any animal by its English, Spanish or Latin
   name. The 405 work offline; any other of GBIF's species is looked up live and its range is GBIF's live map of every
   sighting shared. For each, the best parks to see it (ranked by sightings), when to go (sightings by month, live from
@@ -345,7 +346,9 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
     is a quiz of its own and one of the daily challenge's eight questions.
 - **Travel guide** (More → Travel guide): pick the cities you want to visit (690: every capital, every city of a
   million people or more, and towns rich in sights such as Cusco, Luxor or Kraków) by searching, by tapping their dot
-  on the map, with Plan a trip on a country's card, or from your Want to go list. Each city's guide has:
+  on the map, with Plan a trip on a country's card, or from your Want to go list. Whatever a city's guide opens (an
+  animal, a park, a site on the map, a story) leaves a "← Montreal" chip at the top, back to the city at the same tab.
+  Each city's guide has:
   - **Eat:** the city's dishes, then the rest of the country's and nearby countries', each opening its story in Food
     through time; the national dish; what was first grown nearby; and Wikivoyage's "Eat" overview, read live and
     credited.
@@ -470,7 +473,9 @@ square's sightings), animals carried around the world keep only their native con
 land animal's sightings is taken as zoos and escapes, and dogs are taken away from wolves and house pigs from wild
 boars, square by square. The gone animals' last ranges are drawn by hand from historical records. Parks, reserves,
 zoos and aquariums come from Wikidata; an animal's best parks are those in its squares with the most sightings.
-Pictures and calls are Wikimedia Commons files, loaded by the browser with their licences. The 31 migrations
+Pictures and calls are Wikimedia Commons files, loaded by the browser with their licences; a call plays whole from
+Commons' MP3 copy of the recording (its folder, from the MD5 of the file's name, is kept as `sndh`), else from the
+original. The 31 migrations
 (`migrations.json`) were researched from papers, tracking studies and park services, with their sources.
 
 **Green planet** (`scripts/data/green/`: `fetch-green.mjs` asks once and keeps the answers in `.cache/green`;

@@ -16,7 +16,7 @@ export interface Animal {
   i: number; id: string; q: string; sci: string; n: [string, string]; g: Group; g2?: Group; e: string;
   fam: string | null; ord: string | null; cls: string | null; st: Status | null; sl: number;
   f?: { kg?: number[]; m?: number[]; h?: number[]; y?: number[]; w?: number[] };
-  img?: string; snd?: string; gone?: number; last?: { en: string; es: string }; story?: number;
+  img?: string; snd?: string; sndh?: string; gone?: number; last?: { en: string; es: string }; story?: number;
   cc: string[]; home: string; best: string[];
   /** Its squares, sorted, and how many sightings each has (0–9, log₂). */
   cells: Int32Array; counts: Uint8Array;
