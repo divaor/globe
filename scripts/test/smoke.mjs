@@ -1837,8 +1837,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.click('.ss .settings-actions .pill.primary');
   await page.waitForTimeout(300);
   const mine = await page.evaluate(() => JSON.parse(localStorage.getItem('atlas-playlist') || '[]'));
-  check(['', 'planet', 'night', 'restless', 'water', 'life', 'wild', 'people', 'latam'].every((k) => pls.includes(k)) && mine.length === 1 && mine[0].stack.includes('political'),
-    `ambient mode offers 8 playlists and my own (${pls.length} cards); "Add this view" adds the map to my playlist`);
+  check(['', 'planet', 'night', 'restless', 'water', 'life', 'wild', 'green', 'people', 'latam'].every((k) => pls.includes(k)) && mine.length === 1 && mine[0].stack.includes('political'),
+    `ambient mode offers 9 playlists and my own (${pls.length} cards); "Add this view" adds the map to my playlist`);
   await page.evaluate(() => { window.__spoken.length = 0; window.atlas.app.ambient.secs = 4; window.atlas.app.ambient.narrate = true; });
   await page.click('[data-playlist="restless"]');
   // The view's filters load, the map arrives, then the voice reads its line.
@@ -2236,7 +2236,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   }
   await page.evaluate(() => window.atlas.play.pin.next());
   const pd = await info('pin');
-  check(pinPanel.packs === 10 && pinPanel.back && !pinMap.names && pinMap.game && pinMap.card && tapped.pin && r1.results?.[0]?.km < 400 && /\d+ km/.test(pinCard) && pd.done && pd.done.score > 20000 && pd.done.stars === 3 && pd.done.badges.includes('play-sharp'),
+  check(pinPanel.packs === 11 && pinPanel.back && !pinMap.names && pinMap.game && pinMap.card && tapped.pin && r1.results?.[0]?.km < 400 && /\d+ km/.test(pinCard) && pd.done && pd.done.score > 20000 && pd.done.stars === 3 && pd.done.badges.includes('play-sharp'),
     `Pin it: ${pinPanel.packs} packs; names hidden; a tap on ${p0.place[0]} lands ${Math.round(r1.results?.[0]?.km)} km off; five rounds ${pd.done?.score} ${'★'.repeat(pd.done?.stars ?? 0)}; badges ${pd.done?.badges.join(', ')}`);
   await page.evaluate(() => window.atlas.play.pin.start({ pack: 'heritage', hard: true }));
   await page.waitForTimeout(600);
@@ -3451,6 +3451,213 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const es = await legend();
   check(/animales donde viven/.test(es) && /Mamíferos/.test(es), 'Spanish: "animales donde viven", Mamíferos…');
   check(!errors.length, `no page errors in Wild world${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 29. Green planet (v0.31.0), on a phone, with GBIF and iNaturalist answered from fixtures. Plants of the world over
+// the Sonoran desert: a varied carpet; a tap opens a plant's card (when it flowers, the Botanist count); "Show where it
+// grows" in green, with its best parks and gardens; the search finds the saguaro; More → Nature → Plants: the finder
+// (ours, and any plant from GBIF's live map with when it flowers), What grows here?; Famous trees, Botanical gardens,
+// Ecoregions (a tap: biome, realm, our plants and animals), the breathing planet by month, Nature's calendar and What's
+// on this month, Where our food first grew; the two quizzes; a tour stop with a tree's range; Kyoto's Facts tab; Spanish.
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); localStorage.removeItem('atlas-globe:progress'); } catch {} });
+  await ctx.route(/wikidata\.org|wikimedia\.org|wikipedia\.org/, (route) => route.abort());
+  await ctx.route(/api\.gbif\.org\/v1\/species\/search/, (route) => route.fulfill({ contentType: 'application/json', body: JSON.stringify({ results: [{ key: 2878688, nubKey: 2878688, canonicalName: 'Quercus lobata', scientificName: 'Quercus lobata Née', class: 'Magnoliopsida', family: 'Fagaceae', vernacularNames: [{ vernacularName: 'valley oak', language: 'eng' }, { vernacularName: 'roble del valle', language: 'spa' }] }] }) }));
+  await ctx.route(/api\.gbif\.org\/v2\/map\/occurrence\/density\/0\/(\d)\/0\.mvt/, (route) => {
+    const x = /density\/0\/(\d)\/0/.exec(route.request().url())[1];
+    route.fulfill({ contentType: 'application/x-protobuf', body: fs.readFileSync(new URL(`./fixtures/gbif-manx-shearwater-0-${x}-0.mvt`, import.meta.url)) });
+  });
+  await ctx.route(/api\.inaturalist\.org\/v1\/taxa\?/, (route) => route.fulfill({ contentType: 'application/json', body: JSON.stringify({ results: [{ id: 50220, name: 'Carnegiea gigantea' }] }) }));
+  // Flowering (term 12, value 13): the saguaro's spring; anything else, a year of sightings.
+  await ctx.route(/api\.inaturalist\.org\/v1\/observations\/histogram/, (route) => route.fulfill({ contentType: 'application/json', body: JSON.stringify({ results: { month_of_year: /term_value_id=13/.test(route.request().url()) ? { 1: 0, 2: 0, 3: 4, 4: 90, 5: 400, 6: 260, 7: 30, 8: 2, 9: 0, 10: 0, 11: 0, 12: 0 } : { 1: 20, 2: 30, 3: 60, 4: 200, 5: 500, 6: 400, 7: 120, 8: 60, 9: 40, 10: 30, 11: 20, 12: 20 } } }) }));
+  await ctx.route(/api\.inaturalist\.org\/v1\/observations\/species_counts/, (route) => route.fulfill({ contentType: 'application/json', body: JSON.stringify({ results: [
+    { count: 900, taxon: { id: 50220, name: 'Carnegiea gigantea', preferred_common_name: 'saguaro', iconic_taxon_name: 'Plantae' } },
+    { count: 600, taxon: { id: 2, name: 'Parkinsonia microphylla', preferred_common_name: 'yellow paloverde', iconic_taxon_name: 'Plantae' } },
+  ] }) }));
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(url + '#p=globe&l=political,plants&c=-111.5,31.5,7&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas?.app?.instance('plants')?.ready && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(1500);
+  const legend = () => page.evaluate(() => { if (document.querySelector('.legend-body')?.hidden) document.querySelector('.legend-toggle')?.click(); return document.querySelector('.legend')?.innerText ?? ''; });
+  const cardText = () => page.evaluate(() => document.querySelector('.country-card:not([hidden])')?.innerText ?? '');
+  const drawn = () => page.evaluate(() => (window.atlas.app.instance('plants').state.drawn ?? []).map((d) => ({ id: d.a.id, e: d.a.e, x: d.x, y: d.y })));
+
+  let d = await drawn();
+  const kinds = new Set(d.map((x) => x.e));
+  check(d.length >= 15 && kinds.size >= 6 && d.some((x) => ['carnegiea-gigantea', 'opuntia-ficus-indica', 'agave-americana', 'ferocactus-wislizeni', 'cylindropuntia-fulgida', 'stenocereus-thurberi', 'opuntia-engelmannii'].includes(x.id)),
+    `Plants of the world over the Sonoran desert: ${d.length} plants, ${kinds.size} different emoji, its cacti among them`);
+
+  // A plant's card, with when it flowers.
+  const W = await page.evaluate(() => [innerWidth, innerHeight]);
+  const one = d.find((x) => x.id === 'carnegiea-gigantea' && x.x > 50 && x.x < W[0] - 50 && x.y > 120 && x.y < W[1] * 0.55) ?? d.find((x) => x.x > 50 && x.x < W[0] - 50 && x.y > 120 && x.y < W[1] * 0.55);
+  await page.mouse.click(one.x, one.y);
+  await page.waitForTimeout(1500);
+  let card = await cardText();
+  const months = await page.evaluate(() => document.querySelectorAll('.country-card:not([hidden]) [data-green="flowering"] .wild-month').length);
+  const seen = await page.evaluate(() => JSON.parse(localStorage.getItem('atlas-globe:progress') || '{}').seen?.plants ?? []);
+  check(/Group/.test(card) && /Grows wild in/.test(card) && /When it flowers/.test(card) && /Show where it grows/.test(card) && months === 12 && seen.includes(one.id),
+    `a tap opens ${one.id}'s card (group, where it grows, when it flowers: 12 months from iNaturalist) and counts it for the Botanist badge`);
+
+  // Where it grows, and its best parks and gardens.
+  await page.evaluate(() => { const b = [...document.querySelectorAll('.country-card button, .country-card a')].find((x) => /Show where it grows/.test(x.textContent)); b?.click(); });
+  await page.waitForTimeout(2500);
+  const lg = await legend();
+  const focus = await page.evaluate(() => window.atlas.plants.info.focus);
+  d = await drawn();
+  check(focus === one.id && /where it grows/i.test(lg) && /All plants/.test(lg) && d.every((x) => x.id === one.id),
+    `"Show where it grows": its squares in green, the carpet shows only it (${d.length} times); the legend offers all plants again`);
+  d = await drawn();
+  const again = d.find((x) => x.x > 30 && x.x < W[0] - 30 && x.y > 100 && x.y < W[1] * 0.6) ?? d[0];
+  await page.mouse.click(again.x, again.y);
+  await page.waitForTimeout(800);
+  await page.evaluate(() => { const b = [...document.querySelectorAll('.country-card button, .country-card a')].find((x) => /Best places to see it/.test(x.textContent)); b?.click(); });
+  await page.waitForTimeout(2500);
+  const best = await page.evaluate(() => [...document.querySelectorAll('[data-green="best"] .guide-item')].map((x) => x.getAttribute('data-park') ? 'park' : x.getAttribute('data-garden') ? 'garden' : '?'));
+  check(best.length >= 3 && best.includes('park'), `"Best places to see it": ${best.length} places (${best.join(', ')})`);
+  await page.evaluate(() => { window.atlas.shell.sheet.close(); window.atlas.shell.card.hide(); });
+
+  // The search finds the saguaro.
+  await page.evaluate(() => window.atlas.shell.search.open());
+  await page.fill('.search-field', 'saguaro');
+  await page.waitForTimeout(800);
+  const hits = await page.evaluate(() => [...document.querySelectorAll('.search-item')].map((x) => x.querySelector('.si-label')?.textContent ?? ''));
+  await page.evaluate(() => [...document.querySelectorAll('.search-item')].find((x) => /^Saguaro$/.test(x.querySelector('.si-label')?.textContent ?? ''))?.click());
+  await page.waitForTimeout(3000);
+  const sf = await page.evaluate(() => ({ focus: window.atlas.plants.info.focus, title: document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? '' }));
+  check(hits.includes('Saguaro') && sf.focus === 'carnegiea-gigantea' && sf.title === 'Saguaro', `the search finds the saguaro (${hits.slice(0, 3).join(', ')}): its range and its card`);
+  await page.evaluate(() => window.atlas.shell.card.hide());
+
+  // More → Nature → Plants: the finder, ours and GBIF's.
+  await page.evaluate(() => window.atlas.wild.open());
+  await page.waitForTimeout(800);
+  await page.click('[data-nature-tab="plants"]');
+  await page.waitForTimeout(800);
+  await page.fill('[data-green="find"]', 'oak');
+  await page.waitForTimeout(1500);
+  const finder = await page.evaluate(() => ({ ours: [...document.querySelectorAll('[data-green="ours"] [data-plant]')].map((x) => x.getAttribute('data-plant')), live: [...document.querySelectorAll('[data-green="live"] [data-gbif]')].map((x) => x.textContent) }));
+  await page.evaluate(() => document.querySelector('[data-green="live"] [data-gbif]')?.click());
+  await page.waitForTimeout(3000);
+  const live = await page.evaluate(() => ({ focus: window.atlas.plants.info.focus, months: document.querySelectorAll('[data-green="when"] .wild-month').length, head: document.querySelector('.wild-page-head')?.textContent ?? '' }));
+  check(finder.ours.includes('quercus-robur') && finder.live.some((t) => /Valley oak/.test(t)) && live.focus === 'gbif:2878688' && live.months === 12,
+    `the plant finder: our English oak, and GBIF's valley oak with its live map and when it flowers (${live.months} months)`);
+
+  // What grows here?
+  await page.evaluate(() => window.atlas.plants.whatGrowsHere([-111.0, 32.3]));
+  await page.waitForTimeout(1500);
+  const here = await page.evaluate(() => [...document.querySelectorAll('[data-green="here-list"] .guide-item-title')].map((x) => x.textContent));
+  check(here.length === 2 && /🌵/.test(here[0]), `What grows here?: iNaturalist's most-seen plants within 50 km, ours with their emoji (${here.join(', ')})`);
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+
+  // Famous trees and Botanical gardens.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'trees', 'gardens']));
+  await page.waitForFunction(() => window.atlas.app.instance('trees')?.ready && window.atlas.app.instance('gardens')?.ready, null, { timeout: 20000 });
+  await page.waitForTimeout(800);
+  const tg = await legend();
+  check(/Record holders \(\d/.test(tg) && /Arboretums \(\d/.test(tg), 'Famous trees (record holders) and Botanical gardens (arboretums) in the legend');
+
+  // Ecoregions: a tap in the Serengeti.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'ecoregions']));
+  await page.waitForFunction(() => window.atlas.app.instance('ecoregions')?.ready, null, { timeout: 20000 });
+  await page.evaluate(() => window.atlas.app.renderer.view.flyTo({ lon: 34.8, lat: -2.4, zoom: 5 }, 0));
+  await page.waitForFunction(() => { const v = window.atlas.app.renderer.view; if (!v.project(34.8, -2.4)) v.flyTo({ lon: 34.8, lat: -2.4, zoom: 5 }, 0); return !!v.project(34.8, -2.4); }, null, { timeout: 10000 }).catch(() => {});
+  await page.waitForTimeout(1200);
+  const exy = await page.evaluate(() => window.atlas.app.renderer.view.project(34.8, -2.4));
+  await page.mouse.click(exy[0], exy[1]);
+  await page.waitForTimeout(2500);
+  card = await cardText();
+  const eco = await page.evaluate(() => ({ plants: document.querySelectorAll('.country-card:not([hidden]) [data-eco] [data-plant]').length, animals: document.querySelectorAll('.country-card:not([hidden]) [data-eco] [data-animal-sci]').length }));
+  check(/Biome/.test(card) && /Afrotropic/.test(card) && /savanna/i.test(card) && eco.animals >= 3,
+    `Ecoregions: a tap in the Serengeti opens its card (biome, realm; ${eco.plants} of our plants, ${eco.animals} of our animals)`);
+  await page.evaluate(() => window.atlas.shell.card.hide());
+
+  // The breathing planet in April.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'greenness']));
+  await page.waitForFunction(() => window.atlas.app.instance('greenness')?.ready || window.atlas.app.instance('greenness')?.error, null, { timeout: 30000 });
+  await page.evaluate(() => window.atlas.app.setOption('greenness', 'month', '4'));
+  await page.waitForTimeout(1000);
+  const gr = await legend();
+  const grOk = await page.evaluate(() => ({ ready: window.atlas.app.instance('greenness')?.ready, error: window.atlas.app.instance('greenness')?.error ?? null }));
+  check(grOk.ready && /The breathing planet · April/.test(gr) && /Play the year/.test(gr), `The breathing planet: April's greenness from NASA (${grOk.error ?? 'drawn by the GPU'}), ◀ ▶ and Play the year`);
+
+  // Nature's calendar in April, and What's on.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'calendar']));
+  await page.waitForFunction(() => window.atlas.app.instance('calendar')?.ready, null, { timeout: 20000 });
+  await page.evaluate(() => { window.atlas.app.setOption('calendar', 'month', '4'); window.atlas.app.renderer.view.flyTo({ lon: 135.8, lat: 35, zoom: 3 }, 0); });
+  await page.waitForTimeout(1000);
+  const cal = await legend();
+  await page.evaluate(() => [...document.querySelectorAll('.legend button')].find((b) => /What’s on this month/.test(b.textContent))?.click());
+  await page.waitForTimeout(1500);
+  const on = await page.evaluate(() => [...document.querySelectorAll('[data-green="whats-on"] [data-spectacle]')].map((x) => x.getAttribute('data-spectacle')));
+  check(/Nature’s calendar · April/.test(cal) && on.length >= 10 && on.slice(0, 6).some((id) => /sakura|cherry|wisteria|nemophila/.test(id)),
+    `Nature's calendar in April: ${on.length} spectacles, the nearest to Japan first (${on.slice(0, 3).join(', ')})`);
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+
+  // Where our food first grew: maize's journey.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'crops']));
+  await page.waitForFunction(() => window.atlas.app.instance('crops')?.ready, null, { timeout: 20000 });
+  await page.evaluate(() => window.atlas.shell.search.open());
+  await page.fill('.search-field', 'maize');
+  await page.waitForTimeout(800);
+  await page.evaluate(() => [...document.querySelectorAll('.search-item')].find((x) => /Maize/.test(x.querySelector('.si-label')?.textContent ?? ''))?.click());
+  await page.waitForTimeout(2500);
+  card = await cardText();
+  await page.evaluate(() => { const b = [...document.querySelectorAll('.country-card button, .country-card a')].find((x) => /Show its journey/.test(x.textContent)); b?.click(); });
+  await page.waitForTimeout(1500);
+  const cr = await legend();
+  check(/First grown/.test(card) && /BC/.test(card) && /its journey/.test(cr), `Where our food first grew: maize's card (first grown, BC) and its journey in the legend`);
+
+  // The quizzes: tap where a plant grows; pick the month.
+  await page.evaluate(() => window.atlas.app.setStack(['political']));
+  await page.evaluate(() => window.atlas.learn['startQuiz']('grows', 'world'));
+  await page.waitForTimeout(2000);
+  const gq = await page.evaluate(() => ({ q: document.querySelector('.learn-card .quiz-q')?.textContent ?? '', at: window.atlas.learn.quiz?.qs[0]?.item?.at }));
+  await page.evaluate((at) => window.atlas.app.renderer.view.flyTo({ lon: at[0], lat: at[1], zoom: 3 }, 0), gq.at);
+  await page.waitForTimeout(800);
+  const gxy = await page.evaluate((at) => window.atlas.app.renderer.view.project(at[0], at[1]), gq.at);
+  await page.mouse.click(gxy[0], gxy[1]);
+  await page.waitForTimeout(800);
+  const gfb = await page.evaluate(() => document.querySelector('.learn-card .quiz-fb')?.textContent ?? '');
+  await page.evaluate(() => window.atlas.learn['stopQuiz']());
+  await page.evaluate(() => window.atlas.learn['startQuiz']('season', 'world'));
+  await page.waitForTimeout(2500);
+  const sq = await page.evaluate(() => ({ q: document.querySelector('.learn-card .quiz-q')?.textContent ?? '', opts: [...document.querySelectorAll('.learn-card .quiz-opt')].map((x) => x.textContent), id: window.atlas.learn.quiz?.qs[0]?.id }));
+  await page.evaluate(() => document.querySelector('.learn-card .quiz-opt')?.click());
+  await page.waitForTimeout(800);
+  const sfb = await page.evaluate(() => document.querySelector('.learn-card .quiz-fb')?.textContent ?? '');
+  await page.evaluate(() => window.atlas.learn['stopQuiz']());
+  check(/Where does this plant grow wild/.test(gq.q) && /Correct!/.test(gfb) && /best month/.test(sq.q) && sq.opts.length === 4 && sq.opts.every((o) => /^[A-Z][a-z]+$/.test(o)) && sfb.length > 20,
+    `Where does it grow?: a tap where it grows scores ("${gfb.slice(0, 45)}"); When is it?: four months (${sq.opts.join(', ')}), then "${sfb.slice(0, 40)}"`);
+
+  // A tour stop shows a tree's range.
+  await page.evaluate(() => window.atlas.learn['openTours']());
+  await page.waitForTimeout(600);
+  await page.evaluate(() => document.querySelector('[data-tour="Giants and ancients: the great trees"]')?.click());
+  await page.waitForTimeout(3500);
+  await page.evaluate(() => [...document.querySelectorAll('.learn-card button')].find((x) => x.getAttribute('aria-label') === 'Next')?.click());
+  await page.waitForTimeout(3500);
+  const tour = await page.evaluate(() => ({ focus: window.atlas.plants.info.focus, plants: window.atlas.app.isActive('plants'), trees: window.atlas.app.isActive('trees') }));
+  check(tour.plants && tour.trees && tour.focus === 'sequoia-sempervirens', `Giants and ancients: its Hyperion stop shows where coast redwoods grow (${tour.focus})`);
+  await page.evaluate(() => window.atlas.learn['stopTour']());
+
+  // The travel guide's Facts tab: nature's calendar near Kyoto.
+  await page.evaluate(() => window.atlas.guide.openCity('kyoto', 'facts'));
+  await page.waitForTimeout(2500);
+  const kyoto = await page.evaluate(() => [...document.querySelectorAll('[data-guide="spectacles"] [data-spectacle]')].map((x) => x.getAttribute('data-spectacle')));
+  check(kyoto.includes('sakura-kyoto') && kyoto.includes('autumn-kyoto'), `Kyoto's Facts tab: nature's calendar nearby (${kyoto.slice(0, 4).join(', ')})`);
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+
+  // Spanish.
+  await page.evaluate(() => window.atlas.app.setLang('es'));
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'plants']));
+  await page.waitForFunction(() => window.atlas.app.instance('plants')?.ready, null, { timeout: 20000 });
+  await page.waitForTimeout(1000);
+  const es = await legend();
+  check(/plantas donde crecen/.test(es) && /Árboles/.test(es) && /Cactus y suculentas/.test(es), 'Spanish: "plantas donde crecen", Árboles, Cactus y suculentas…');
+  check(!errors.length, `no page errors in Green planet${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

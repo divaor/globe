@@ -16,7 +16,7 @@ export const SUBJECTS: Record<Subject, { icon: string; en: string; es: string; q
   history: { icon: '🏛️', en: 'History', es: 'Historia', quizzes: ['when', 'order', 'detective', 'era', 'civ', 'journey'] },
   culture: { icon: '🎨', en: 'Arts and culture', es: 'Arte y cultura', quizzes: ['dish', 'faith', 'listen', 'opening', 'artist', 'site', 'museum'] },
   languages: { icon: '🗣️', en: 'Languages', es: 'Lenguas', quizzes: ['script', 'family'] },
-  science: { icon: '🔬', en: 'Science and nature', es: 'Ciencia y naturaleza', quizzes: ['period', 'plague', 'disaster', 'inventor', 'world', 'landed', 'constellation', 'element', 'habitat', 'lives'] },
+  science: { icon: '🔬', en: 'Science and nature', es: 'Ciencia y naturaleza', quizzes: ['period', 'plague', 'disaster', 'inventor', 'world', 'landed', 'constellation', 'element', 'habitat', 'lives', 'grows', 'season'] },
   sport: { icon: '🏅', en: 'Sport', es: 'Deporte', quizzes: ['champion'] },
 };
 export const subjectOf = (kind: string): Subject | null => (Object.keys(SUBJECTS) as Subject[]).find((s) => SUBJECTS[s].quizzes.includes(kind)) ?? null;
@@ -49,18 +49,18 @@ export interface Progress {
   };
   /** v0.29.0: things seen around the app (masterpieces opened, lives followed to the end) and done once (a trip across
    * three continents). */
-  seen: { works: string[]; lives: string[]; animals: string[] };
+  seen: { works: string[]; lives: string[]; animals: string[]; plants: string[] };
   feats: string[];
 }
 
 const emptyPlay = (): Progress['play'] => ({ rounds: 0, perfect: 0, light: 0, continents3: 0, best: {}, knowledge: [], daily: { last: '', streak: 0, best: 0, results: {} }, games: {}, dailies: {}, feats: [], stars: {} });
-const empty = (): Progress => ({ right: {}, played: {}, perfect: {}, kinds: [], days: {}, daily: { last: '', streak: 0, best: 0, results: {} }, tours: [], badges: {}, play: emptyPlay(), seen: { works: [], lives: [], animals: [] }, feats: [] });
+const empty = (): Progress => ({ right: {}, played: {}, perfect: {}, kinds: [], days: {}, daily: { last: '', streak: 0, best: 0, results: {} }, tours: [], badges: {}, play: emptyPlay(), seen: { works: [], lives: [], animals: [], plants: [] }, feats: [] });
 let cache: Progress | null = null;
 export function progress(): Progress {
   if (cache) return cache;
   try { cache = { ...empty(), ...JSON.parse(localStorage.getItem(KEY) || '{}') }; } catch { cache = empty(); }
   cache!.play = { ...emptyPlay(), ...cache!.play };
-  cache!.seen = { works: cache!.seen?.works ?? [], lives: cache!.seen?.lives ?? [], animals: cache!.seen?.animals ?? [] };
+  cache!.seen = { works: cache!.seen?.works ?? [], lives: cache!.seen?.lives ?? [], animals: cache!.seen?.animals ?? [], plants: cache!.seen?.plants ?? [] };
   cache!.feats ??= [];
   return cache!;
 }
@@ -129,6 +129,8 @@ export const BADGES: Badge[] = [
   { id: 'app-biographer', icon: '📖', en: 'Biographer', es: 'Biógrafo', how: { en: 'Follow 10 lives to their last step', es: 'Sigue 10 vidas hasta su último paso' }, goal: 10, have: (p) => p.seen.lives.length },
   // v0.30.0: animals found (an animal's card opened, from the map, the finder or a park).
   { id: 'app-naturalist', icon: '🔭', en: 'Naturalist', es: 'Naturalista', how: { en: 'Find 25 animals', es: 'Encuentra 25 animales' }, goal: 25, have: (p) => p.seen.animals.length },
+  // v0.31.0: plants found (a plant's card opened, from the map, the finder, a garden or a famous tree).
+  { id: 'app-botanist', icon: '🌿', en: 'Botanist', es: 'Botánico', how: { en: 'Find 25 plants', es: 'Encuentra 25 plantas' }, goal: 25, have: (p) => p.seen.plants?.length ?? 0 },
   { id: 'play-daily-7', icon: '🔥', en: 'A week of routes', es: 'Una semana de rutas', how: { en: 'The daily route 7 days in a row', es: 'La ruta del día 7 días seguidos' }, goal: 7, have: (p) => p.play.daily.best },
   { id: 'tours-all', icon: '🌍', en: 'Globetrotter', es: 'Trotamundos', how: { en: `Follow all ${TOURS.length} tours to the end`, es: `Sigue las ${TOURS.length} visitas hasta el final` }, goal: TOURS.length, have: (p) => p.tours.length },
 ];
@@ -225,8 +227,9 @@ export function recordGame(game: string, o: { score: number; stars: number; feat
   return award();
 }
 /** Something seen around the app (a masterpiece's card, a life to its end): counted once. */
-export function recordSeen(kind: 'works' | 'lives' | 'animals', id: string): Badge[] {
+export function recordSeen(kind: 'works' | 'lives' | 'animals' | 'plants', id: string): Badge[] {
   const s = progress().seen;
+  s[kind] ??= [];
   if (s[kind].includes(id)) return [];
   s[kind].push(id);
   return award();

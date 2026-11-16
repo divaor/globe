@@ -14,7 +14,7 @@ import { PIN_ROUNDS, PIN_MAX, pinPoints, pinStars, sample, km } from './logic';
 import { recordGame, dayKey, type Badge } from '../learn/progress';
 import { L, es, type PlayHost, type HostGame } from './host';
 
-export type Pack = 'mixed' | 'capitals' | 'heritage' | 'structures' | 'battles' | 'dishes' | 'inventions' | 'museums' | 'masterpieces' | 'animals';
+export type Pack = 'mixed' | 'capitals' | 'heritage' | 'structures' | 'battles' | 'dishes' | 'inventions' | 'museums' | 'masterpieces' | 'animals' | 'trees';
 export const PACKS: [Pack, { en: string; es: string }][] = [
   ['mixed', { en: 'A bit of everything', es: 'Un poco de todo' }], ['capitals', { en: 'Capitals', es: 'Capitales' }],
   ['heritage', { en: 'World Heritage', es: 'Patrimonio Mundial' }], ['structures', { en: 'Great structures', es: 'Grandes construcciones' }],
@@ -22,6 +22,7 @@ export const PACKS: [Pack, { en: string; es: string }][] = [
   ['inventions', { en: 'Inventions', es: 'Inventos' }], ['museums', { en: 'Museums', es: 'Museos' }],
   ['masterpieces', { en: 'Masterpieces', es: 'Obras maestras' }],
   ['animals', { en: 'Animals (where best to see them)', es: 'Animales (dónde verlos mejor)' }],
+  ['trees', { en: 'Famous trees', es: 'Árboles famosos' }],
 ];
 /** [name, nombre, lon, lat, icon, note, nota] */
 type Place = [string, string, number, number, string, string, string];

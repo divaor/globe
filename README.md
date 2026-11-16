@@ -34,6 +34,13 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   (tap where an animal lives) and Who lives here? (which of four animals lives in a place); Pin it adds an Animals pack;
   three tours (The Big Five safari, Animals of the Amazon, Life on the ice); the Naturalist badge (find 25 animals);
   a nature question in the daily challenge; and an Animals of the world playlist for ambient mode.
+  Its Plants tab is the plant finder, "Where does it grow?": the 305 plants offline and any other plant on GBIF live,
+  each with its best parks and botanical gardens, when it flowers (the sightings people marked in flower on
+  iNaturalist, worldwide or near a park) and Plan a trip; What grows here? (the plants seen most within 50 km); the
+  green filters; and What's on this month. The travel guide's Facts tab adds nature's calendar nearby; the quizzes
+  Where does it grow? (tap where a plant grows wild) and When is it? (the best month for a spectacle); Pin it adds a
+  Famous trees pack; two tours (Giants and ancients: the great trees; A year of blossoms); the Botanist badge (find 25
+  plants); and a Green planet playlist for ambient mode.
 - **Search:** countries, cities, states and provinces, coordinates ("40.4, -3.7"), and what the filters show: the
   people of Who was born here?, museums, masterpieces and their artists, buildings and their architects, World
   Heritage sites, inventions and your own places. The filters that are on come first; a filter that is off is searched
@@ -64,6 +71,24 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
     places to see it, Its relatives, and its step of the Lost and saved story.
   - Wildlife parks (2,100 national parks and nature reserves, each with the animals it is one of the best places to
     see) and Zoos and aquariums (1,300).
+  - Plants of the world: 305 plants where they grow wild (107 trees, 67 flowers, 45 cacti and succulents, 43
+    carnivorous and strange plants, and 43 food plants in their wild homes), from sightings shared on GBIF, as a carpet
+    like the animals'. A plant's card has its picture, group and family, Red List status, height and lifespan, the
+    countries it grows wild in, when it flowers (live from iNaturalist), and Show where it grows (in green, with its
+    best parks and gardens as numbered stars), Best places to see it, Its relatives and, for a crop's wild form, where
+    it was first grown.
+  - Famous trees (the record holders, checked by hand: the tallest, Hyperion, and the oldest, Methuselah, shown at
+    their park because their places are kept secret; and Wikidata's remarkable trees) and Botanical gardens (1,300
+    gardens and arboretums, each with the plants that grow wild around it).
+  - Ecoregions: RESOLVE's 846 ecoregions coloured by biome, each in its own colour, or by how much of it is protected;
+    a tap gives its biome, realm, area and protection and the plants and animals of ours that live in it.
+  - The breathing planet: NASA's twelve monthly pictures of how green the land is (MODIS NDVI, 2024), playing as a year
+    or one month at a time: spring sweeping north in April and May, and south in October.
+  - Nature's calendar: 150 spectacles of plants and animals (cherry blossom, flowering deserts, autumn forests, the
+    great herds, the turtles' nesting nights…) by month, the best month marked; What's on this month lists them, the
+    nearest to the middle of the map first.
+  - Where our food first grew: 57 crops where people first grew them, when, and how they spread around the world
+    (arrows to where and when they arrived), each linked to its plant and to its step of the Food stories.
   - Earth science: tectonic plates by boundary type, volcanoes, animated ocean currents.
   - Economy & energy: GDP, income groups, top producers of 21 resources (oil, lithium, cobalt…), CO₂, renewables…
   - Culture & fun: flags on the map, national colours, driving side, calling codes, Olympic medals and more.
@@ -438,6 +463,22 @@ boars, square by square. The gone animals' last ranges are drawn by hand from hi
 zoos and aquariums come from Wikidata; an animal's best parks are those in its squares with the most sightings.
 Pictures and calls are Wikimedia Commons files, loaded by the browser with their licences. The 31 migrations
 (`migrations.json`) were researched from papers, tracking studies and park services, with their sources.
+
+**Green planet** (`scripts/data/green/`: `fetch-green.mjs` asks once and keeps the answers in `.cache/green`;
+`build-green.mjs` builds `public/data/green/` with no network). The plants: a hand list of 305 plants in five groups
+(`names.json`, every name checked by hand in English and Latin American Spanish), found on Wikidata (CC0, through
+QLever) and matched to GBIF's taxonomy. Where each grows: GBIF's ad hoc map tiles as for the animals (CC0 and CC BY
+sightings, no living specimens of gardens, no fossils, since 1970, in squares of 1.40625°); lone squares are dropped,
+plants planted far from home keep only their native continents (`choose-green.mjs`), and a continent with under 5% of
+a plant's sightings is taken as gardens and escapes. A plant's best places are the parks (Wild world's) and botanical
+gardens in its squares with the most sightings. Botanical gardens, arboretums and remarkable trees (with their species,
+"individual of taxon") come from Wikidata; the record trees were checked by hand with their sources (`trees.json`).
+Ecoregions: RESOLVE Ecoregions 2017 (Dinerstein et al., CC BY 4.0), simplified with mapshaper (`fetch-green.mjs eco`),
+with Spanish names from Wikidata's ecoregions where they exist. The breathing planet: NASA's MODIS Terra monthly NDVI
+for 2024 from GIBS (public domain), as twelve WebP pictures (`fetch-green.mjs ndvi`). Nature's calendar
+(`calendar-plants.json`, `calendar-animals.json`) and the first crops (`crops.json`) were researched from park
+services, tourism boards, archaeobotany papers and FAO, each with its sources. When a plant flowers is read live from
+iNaturalist (sightings annotated as flowering).
 
 **The map games' borders** (`scripts/data/play/build-borders.mjs` builds `public/data/play/borders.json`) come from
 the app's own 1:50m map, so a route on screen is a route in the game. Two countries are neighbours when their outlines

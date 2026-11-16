@@ -77,6 +77,8 @@ export class TravelGuide {
   art: ArtGuide | null = null;
   /** Wild world (v0.30.0): the See tab's Wildlife nearby. */
   wild: Wild | null = null;
+  /** Green planet (v0.31.0): nature's spectacles near the city, in its Facts tab. */
+  plants: { spectaclesNearby(el: HTMLElement, at: [number, number], city: string): Promise<void> } | null = null;
   /** Lives on the map (v0.28.0): the People tab (who was born here, the lives that pass through). */
   lives: { peopleTab(el: HTMLElement, c: GuideCity, name: string): Promise<void> } | null = null;
   /** For the smoke test: what the guide shows. */
@@ -516,6 +518,7 @@ export class TravelGuide {
     if (i > 0) { const p = this.byId.get(this.trip[i - 1])!; const d = km(p.at, c.at); rows.push(['✈️', L(`From ${this.cityName(p)}`, `Desde ${this.cityName(p)}`), `${fmtNumber(Math.round(d))} km · ${L('about', 'unas')} ${hoursText(flightHours(d))} ${L('by air', 'en avión')}`]); }
     el.append(h('div', { class: 'rows guide-facts' }, ...rows.map(([ic, label, value]) => h('div', { class: 'row' }, h('span', { class: 'row-ic' }, ic), h('span', { class: 'row-label' }, label), h('span', { class: 'row-value' }, value)))));
     if (c.climate) el.append(this.weather(c.climate));
+    if (this.plants) { const box = h('div', { 'data-guide': 'spectacles' }); el.append(box); void this.plants.spectaclesNearby(box, c.at, this.cityName(c)); }
   }
 
   /** Temperature and rain by month, the best months marked. */

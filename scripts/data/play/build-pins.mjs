@@ -1,8 +1,9 @@
 // Pin it's places (v0.25.0): what the game asks you to pin, gathered from the app's own data into one small file
-// (public/data/play/pins.json), so a phone does not load every story to play. Nine packs:
+// (public/data/play/pins.json), so a phone does not load every story to play. Ten packs:
 // capitals (the app's cities), World Heritage sites (the World Heritage list), great structures, battles (every
-// war in Time travel), dishes, inventions and museums (the stories' items), and masterpieces (the art guide's
-// best-known works where they hang today, v0.27.0), and animals (each at the best park to see it, v0.30.0). Each place: its name in English and
+// war in Time travel), dishes, inventions and museums (the stories' items), masterpieces (the art guide's
+// best-known works where they hang today, v0.27.0), animals (each at the best park to see it, v0.30.0) and famous
+// trees (v0.31.0). Each place: its name in English and
 // Spanish, where it is, an icon, and what is said after the answer (its country, or the place and date).
 // Usage: node scripts/data/play/build-pins.mjs [--check]
 import fs from 'node:fs';
@@ -65,6 +66,16 @@ packs.museums = items('art', (x) => x.cat === 'museum' && x.type === 'institutio
   packs.animals = w.animals.filter((a) => !a.gone && a.sl >= 30 && a.best.length && parks.has(a.best[0])).map((a) => {
     const p = parks.get(a.best[0]), c = p.cc ? country(p.cc) : null;
     return place(a.n, p.at, a.e, [`${p.n[0]}${c ? `, ${c[0]}` : ''}`, `${p.n[1]}${c ? `, ${c[1]}` : ''}`]);
+  });
+}
+// Trees (v0.31.0): Green planet's famous trees where they stand (not those kept secret, nor those gone), with their
+// species and country after the answer.
+{
+  const t = read('green/trees.json');
+  packs.trees = t.trees.filter((x) => !x.secret && !x.status && (x.rec || x.sl >= 4)).map((x) => {
+    const c = x.cc ? country(x.cc) : null;
+    const sp = x.sp ? [x.sp[0], x.sp[1]] : null;
+    return place(x.n, x.at, x.rec ? '🏆' : '🌳', [[sp?.[0], c?.[0]].filter(Boolean).join(', '), [sp?.[1], c?.[1]].filter(Boolean).join(', ')]);
   });
 }
 // Battles: every war in Time travel, with the war and the year.

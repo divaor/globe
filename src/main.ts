@@ -29,8 +29,9 @@ import { TravelGuide } from './guide/guide';
 import { ArtGuide } from './artguide/artguide';
 import { Lives } from './lives/lives';
 import { Wild } from './wild/finder';
+import { Plants } from './green/finder';
 
-declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild } } }
+declare global { interface Window { atlas?: { app: App; shell: Shell; time: TimeTravel; tools: Tools; learn: Learn; personal: PersonalMaps; compare: Compare; terrain: TerrainUI; terrain3d: Terrain3D; space: Space; orrery: Orrery; sky: Sky; galaxy: Galaxy; elements: Elements; myData: MyData; hop: BorderHop; play: MapGames; guide: TravelGuide; art: ArtGuide; lives: Lives; wild: Wild; plants: Plants } } }
 
 async function boot() {
   // Read before the app rewrites the address with its own state.
@@ -83,6 +84,9 @@ async function boot() {
   // Wild world (v0.30.0): More → Nature, the animal finder and What lives here?.
   const wild = new Wild(app, shell);
   guide.wild = wild;
+  // Green planet (v0.31.0): More → Nature → Plants, the plant finder and What grows here?.
+  const plants = new Plants(app, shell, wild);
+  guide.plants = plants;
   // A story step on another world shows that world under the story.
   worldHook.show = (id) => { space.surface.quiet = !!id; void space.surface.set(id); };
   // Your own data: tables kept on this device become filters; the panel reads new ones.
@@ -91,7 +95,7 @@ async function boot() {
   app.on('mydata', openMyData);
   shell.addMenu({ id: 'mydata', icon: Upload, label: () => t('cat.mine'), order: 40, onClick: openMyData });
   void myData.init();
-  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild };
+  window.atlas = { app, shell, time, tools, learn, personal, compare, terrain, terrain3d, space, orrery, sky, galaxy, elements, myData, hop, play, guide, art, lives, wild, plants };
   await Promise.all(Object.values(packs).map(async (load) => {
     try {
       const mod = (await load()) as { default?: (app: App, shell: Shell) => void | Promise<void> };

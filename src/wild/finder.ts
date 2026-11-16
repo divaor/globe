@@ -14,19 +14,18 @@ import { matcher } from '../ui/match';
 import { COLS, ROWS, cellAt, loadWild, loadParks, nm, groupName, GROUPS, type Animal, type Park, type WildData } from './data';
 import { animalCard, parkCard, statusBadge, type CardFn } from './cards';
 import { decodeTile } from './mvt';
+import { months, monthBars } from './inat';
 import { links, showFocus, currentFocus, type Focus } from '../layers/packs/wild';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
-const MONTHS = { en: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'], es: ['E', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'] };
-const MONTH_NAMES = { en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'] };
 const BASIS = ['HUMAN_OBSERVATION', 'PRESERVED_SPECIMEN', 'MACHINE_OBSERVATION', 'OCCURRENCE', 'MATERIAL_SAMPLE'];
 
 /** A species from GBIF's search. */
-interface Live { key: number; sci: string; name: string; cls: string | null; family: string | null }
+export interface Live { key: number; sci: string; name: string; cls: string | null; family: string | null }
 
 /** GBIF's live map of a species (every sighting shared, no zoo animals), in our grid's squares. */
-async function liveRange(key: number): Promise<{ cells: Int32Array; counts: Uint8Array } | null> {
+export async function liveRange(key: number): Promise<{ cells: Int32Array; counts: Uint8Array } | null> {
   const q = new URLSearchParams({ srs: 'EPSG:4326', taxonKey: String(key), bin: 'square', squareSize: '32' });
   for (const b of BASIS) q.append('basisOfRecord', b);
   const tiles = await Promise.all([0, 1].map(async (x) => {
@@ -52,43 +51,6 @@ async function liveRange(key: number): Promise<{ cells: Int32Array; counts: Uint
   return { cells, counts: Uint8Array.from(cells, (c) => Math.min(9, Math.floor(Math.log2(Math.max(1, m.get(c)!))))) };
 }
 
-/** iNaturalist's id for a species (for its months), by its Latin name. */
-const inatIds = new Map<string, Promise<number | null>>();
-function inatId(sci: string): Promise<number | null> {
-  if (!inatIds.has(sci)) inatIds.set(sci, fetch(`https://api.inaturalist.org/v1/taxa?q=${encodeURIComponent(sci)}&rank=species,subspecies&per_page=5`)
-    .then((r) => (r.ok ? r.json() : null))
-    .then((j: { results?: { id: number; name: string }[] } | null) => j?.results?.find((t) => t.name.toLowerCase() === sci.toLowerCase())?.id ?? j?.results?.[0]?.id ?? null)
-    .catch(() => { inatIds.delete(sci); return null; }));
-  return inatIds.get(sci)!;
-}
-/** Checked sightings by month (January first), worldwide or within `km` of a place. */
-async function months(sci: string, at?: [number, number], km = 60): Promise<number[] | null> {
-  const id = await inatId(sci);
-  if (!id) return null;
-  const where = at ? `&lat=${at[1]}&lng=${at[0]}&radius=${km}` : '';
-  const r = await fetch(`https://api.inaturalist.org/v1/observations/histogram?taxon_id=${id}&date_field=observed&interval=month_of_year&quality_grade=research${where}`).catch(() => null);
-  if (!r?.ok) return null;
-  const j = (await r.json()) as { results?: { month_of_year?: Record<string, number> } };
-  const m = j.results?.month_of_year;
-  return m ? Array.from({ length: 12 }, (_, i) => m[String(i + 1)] ?? 0) : null;
-}
-
-/** Twelve bars, the best months highlighted. */
-function monthBars(v: number[]): HTMLElement {
-  const max = Math.max(1, ...v), total = v.reduce((a, b) => a + b, 0);
-  const sorted = [...v].sort((a, b) => b - a), top = sorted[2] ?? 0;
-  const bars = h('div', { class: 'wild-months', role: 'img', 'aria-label': L('Sightings by month', 'Avistamientos por mes') });
-  v.forEach((n, i) => {
-    const best = n >= top && n > 0;
-    bars.append(h('div', { class: `wild-month${best ? ' best' : ''}`, title: `${(es() ? MONTH_NAMES.es : MONTH_NAMES.en)[i]}: ${fmtCompact(n)}` },
-      h('div', { class: 'wild-month-bar', style: `height:${Math.round((n / max) * 100)}%` }), h('div', { class: 'wild-month-lab' }, (es() ? MONTHS.es : MONTHS.en)[i])));
-  });
-  const bestMonths = v.map((n, i) => [n, i] as const).filter(([n]) => n >= top && n > 0).map(([, i]) => (es() ? MONTH_NAMES.es : MONTH_NAMES.en)[i]);
-  return h('div', {}, bars, h('p', { class: 'muted small' }, total
-    ? L(`${fmtCompact(total)} checked sightings on iNaturalist. Most in ${bestMonths.join(', ')}.`, `${fmtCompact(total)} avistamientos verificados en iNaturalist. La mayoría en ${bestMonths.join(', ')}.`)
-    : L('No checked sightings on iNaturalist here yet.', 'Aún no hay avistamientos verificados en iNaturalist aquí.')));
-}
-
 const ICONIC: Record<string, { icon: string; en: string; es: string; taxa: string }> = {
   all: { icon: '🐾', en: 'All', es: 'Todos', taxa: 'Mammalia,Aves,Reptilia,Amphibia,Actinopterygii,Mollusca,Arachnida,Insecta' },
   mammals: { icon: '🦁', en: 'Mammals', es: 'Mamíferos', taxa: 'Mammalia' },
@@ -99,7 +61,20 @@ const ICONIC: Record<string, { icon: string; en: string; es: string; taxa: strin
 };
 const ICONIC_EMOJI: Record<string, string> = { Mammalia: '🐾', Aves: '🐦', Reptilia: '🦎', Amphibia: '🐸', Actinopterygii: '🐟', Mollusca: '🐚', Arachnida: '🕷️', Insecta: '🦋' };
 
+/** Animals or plants: the switch at the top of the Nature panel (v0.31.0). */
+export function natureTabs(on: 'animals' | 'plants', animals: () => void, plants: () => void): HTMLElement {
+  const row = h('div', { class: 'seg nature-tabs', role: 'tablist' });
+  for (const [k, ic, en, sp, go] of [['animals', '🐾', 'Animals', 'Animales', animals], ['plants', '🌿', 'Plants', 'Plantas', plants]] as const) {
+    const b = h('button', { type: 'button', class: `seg-btn${k === on ? ' on' : ''}`, role: 'tab', 'aria-selected': String(k === on), 'data-nature-tab': k }, `${ic} ${es() ? sp : en}`);
+    b.addEventListener('click', () => { if (k !== on) go(); });
+    row.append(b);
+  }
+  return row;
+}
+
 export class Wild {
+  /** The plant finder (green/finder.ts), for the switch at the top of the panel. */
+  plants: { open(query?: string): Promise<void> } | null = null;
   private data: WildData | null = null;
   private parks: Park[] | null = null;
   /** What lives here?: waiting for a tap on the map. */
@@ -146,6 +121,7 @@ export class Wild {
     const d = await this.load();
     if (!d) { this.shell.toast(L('Nature needs its data; check your connection.', 'Naturaleza necesita sus datos; revisa tu conexión.')); return; }
     const body = h('div', { class: 'guide wild-panel', 'data-wild': 'nature' });
+    body.append(natureTabs('animals', () => void this.open(), () => void this.plants?.open()));
     body.append(h('p', { class: 'muted small' }, L(`Where animals live and where to go to see them: ${d.animals.length} animals on the map, any other species live from GBIF.`, `Dónde viven los animales y adónde ir a verlos: ${d.animals.length} animales en el mapa y cualquier otra especie en vivo desde GBIF.`)));
     const filters = h('div', { class: 'chip-row' });
     for (const [id, ic, en, sp] of [['wild', '🐾', 'Animals of the world', 'Animales del mundo'], ['wild-parks', '🏞️', 'Wildlife parks', 'Parques de vida silvestre'], ['wild-zoos', '🦓', 'Zoos and aquariums', 'Zoológicos y acuarios'], ['migrations', '🦋', 'Great migrations', 'Grandes migraciones']]) {
