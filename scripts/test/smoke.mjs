@@ -2697,7 +2697,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const lm = await legend('art-museums');
   await page.evaluate(() => window.atlas.app.renderer.view.flyTo({ lon: 2.336, lat: 48.861, zoom: 30 }, 0));
   await page.waitForTimeout(1500);
-  const lp = await page.evaluate(() => window.atlas.app.renderer.view.project(2.3376, 48.8611));
+  // Close up, Paris's museums move apart (each with a line to its place): the tap is on the Louvre's dot as drawn.
+  const lp = await page.evaluate(() => { const p = window.atlas.app.instance('art-museums').state.crowd?.placed.find((x) => /^Louvre/.test(x.it.name[0])); return p ? [p.x, p.y] : window.atlas.app.renderer.view.project(2.3376, 48.8611); });
   if (lp) await page.touchscreen.tap(lp[0], lp[1]);
   await page.waitForTimeout(1200);
   const louvre = await cardText();

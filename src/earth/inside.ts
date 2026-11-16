@@ -59,13 +59,6 @@ export class InsideEarth {
       if (g) void this.digAt(g[0], g[1]);
       return true;
     });
-    // Peeling eases from layer to layer.
-    app.renderer.tickers.add(() => {
-      if (!this.active || Math.abs(this.st.peel - this.peelGoal) < 0.001) { if (this.active) this.st.peel = this.peelGoal; return false; }
-      this.st.peel += (this.peelGoal - this.st.peel) * 0.18;
-      if (Math.abs(this.st.peel - this.peelGoal) < 0.01) this.st.peel = this.peelGoal;
-      return true;
-    });
     app.on('lang', () => { if (this.shell.sheet.isOpen('inside')) this.render(); if (this.active) this.showChip(); });
   }
 
@@ -99,7 +92,7 @@ export class InsideEarth {
     if (o.lon != null) this.st.lon1 = Math.round(o.lon) - 45;
     this.peelGoal = o.peel ?? 0;
     this.st.focus = (o.focus as Layer['id'] | undefined) ?? null;
-    app.renderer.requestRender();
+    this.easePeel();
   }
   hideCut() { if (this.active && this.byTour) { this.byTour = false; this.stop(); } }
 
@@ -108,6 +101,7 @@ export class InsideEarth {
     this.byTour = false;
     this.active = false;
     this.st.peel = this.peelGoal = 0; this.st.focus = null; this.dig = null;
+    this.app.renderer.tickers.delete(this.peelTicker);
     this.chip?.remove(); this.chip = null;
     if (this.shell.sheet.isOpen('inside')) this.shell.sheet.close();
     this.inset(false);
@@ -117,7 +111,26 @@ export class InsideEarth {
   /** The cut turned to face us again. */
   cutHere() { this.st.lon1 = Math.round(this.app.renderer.view.lon) - 45; this.app.renderer.requestRender(); }
 
-  setPeel(n: number) { this.peelGoal = Math.max(0, Math.min(5, n)); this.app.renderer.requestRender(); }
+  setPeel(n: number) { this.peelGoal = Math.max(0, Math.min(5, n)); this.easePeel(); }
+
+  /**
+   * Peeling eases from layer to layer. Its ticker is there only while it eases: the renderer takes any ticker as the
+   * map moving (and draws the lighter map data meanwhile).
+   */
+  private readonly peelTicker = (): boolean => {
+    const done = !this.active || Math.abs(this.st.peel - this.peelGoal) < 0.01;
+    if (done) {
+      if (this.active) this.st.peel = this.peelGoal;
+      this.app.renderer.tickers.delete(this.peelTicker);
+      return true; // this last frame draws where it stopped
+    }
+    this.st.peel += (this.peelGoal - this.st.peel) * 0.18;
+    return true;
+  };
+  private easePeel() {
+    if (Math.abs(this.st.peel - this.peelGoal) > 0.001) this.app.renderer.tickers.add(this.peelTicker);
+    this.app.renderer.requestRender();
+  }
   setFocus(id: Layer['id'] | null) { this.st.focus = id; this.app.renderer.requestRender(); }
 
   async digAt(lon: number, lat: number) {
