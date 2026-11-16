@@ -457,7 +457,8 @@ more than 22% of a group, plus a hand list of each region's best known and of th
 (`choose.mjs`); every name checked by hand in English and Latin American Spanish (`names.json`). Where each lives:
 GBIF's ad hoc map tiles, counting only sightings shared under CC0 or CC BY (never CC BY-NC), without zoo animals or
 fossils, since 1970, in GBIF's squares of 1.40625° (about 150 km, never finer); lone squares with one or two sightings
-are dropped, animals carried around the world keep only their native continents, a continent with under 2% of a
+are dropped, as is a lone square holding a zoo or an aquarium (unless it has a quarter of the animal's busiest
+square's sightings), animals carried around the world keep only their native continents, a continent with under 2% of a
 land animal's sightings is taken as zoos and escapes, and dogs are taken away from wolves and house pigs from wild
 boars, square by square. The gone animals' last ranges are drawn by hand from historical records. Parks, reserves,
 zoos and aquariums come from Wikidata; an animal's best parks are those in its squares with the most sightings.
@@ -469,8 +470,8 @@ Pictures and calls are Wikimedia Commons files, loaded by the browser with their
 (`names.json`, every name checked by hand in English and Latin American Spanish), found on Wikidata (CC0, through
 QLever) and matched to GBIF's taxonomy. Where each grows: GBIF's ad hoc map tiles as for the animals (CC0 and CC BY
 sightings, no living specimens of gardens, no fossils, since 1970, in squares of 1.40625°); lone squares are dropped,
-plants planted far from home keep only their native continents (`choose-green.mjs`), and a continent with under 5% of
-a plant's sightings is taken as gardens and escapes. A plant's best places are the parks (Wild world's) and botanical
+as is a lone square holding a botanical garden, plants planted far from home keep only their native continents
+(`choose-green.mjs`), and a continent with under 5% of a plant's sightings is taken as gardens and escapes. A plant's best places are the parks (Wild world's) and botanical
 gardens in its squares with the most sightings. Botanical gardens, arboretums and remarkable trees (with their species,
 "individual of taxon") come from Wikidata; the record trees were checked by hand with their sources (`trees.json`).
 Ecoregions: RESOLVE Ecoregions 2017 (Dinerstein et al., CC BY 4.0), simplified with mapshaper (`fetch-green.mjs eco`),
