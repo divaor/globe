@@ -1809,7 +1809,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const marked = await page.waitForFunction(() => window.__spoken.length >= 1 && document.querySelectorAll('.tour-s.reading').length === 1, null, { timeout: 5000, polling: 'raf' }).then(() => 1, () => 0);
   const v1 = await page.evaluate(() => ({ spoken: window.__spoken.slice() }));
   v1.marked = marked;
-  await page.click('.tour-tools [aria-label="Auto"]');
+  // (A tour plays by itself from the start: no need to press ▶.)
   await page.waitForFunction(() => window.atlas.learn['tour']?.i >= 1, null, { timeout: 30000 }).catch(() => {});
   const v2 = await page.evaluate(() => ({ i: window.atlas.learn['tour']?.i, n: window.__spoken.length, first: window.__spoken.findIndex((s) => /átomos/i.test(s.text)) }));
   check(v1.spoken[0]?.voice === 'Paulina' && /Los primeros átomos/.test(v1.spoken[0]?.text) && v1.marked === 1 && v2.i === 1 && v2.n >= 3,
@@ -3668,7 +3668,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 // opens the story paused with all its controls, its X going back to the inventions map; World Heritage's "Watch the
 // list grow" has play and pause, a year slider (that stays put while the legend is redrawn) and a speed slider; a
 // story opened from On this day has its controls, and its X comes back to the day; a quiz and the daily challenge
-// put the filters away (no site names on "Where is…?") and bring them back after.
+// put the filters away (no site names on "Where is…?") and bring them back after. A guided tour plays by itself
+// and stops at its last stop; the screen stays on while a tour or a story plays.
 {
   const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political,inventions&c=-93,16.7,6&lang=en&theme=dark');
   await page.evaluate(() => window.atlas.app.setTheme('dark'));
@@ -3794,6 +3795,58 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const after2 = await page.evaluate(() => window.atlas.app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id).join(','));
   check(daily.kind === 'daily' && daily.stack === 'political' && after2 === 'political,heritage', `the daily challenge puts the filters away too (${daily.stack}) and its X brings them back (${after2})`);
   check(!errors.length, `no page errors in the phone-test fixes${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+{
+  // A guided tour plays by itself from its first stop and stops at its last (↺ plays it again); the screen is kept
+  // on while a tour or a story plays (the Screen Wake Lock, answered here by a stand-in that records each lock).
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => {
+    try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {}
+    window.__wake = { held: 0, asked: 0 };
+    Object.defineProperty(navigator, 'wakeLock', { configurable: true, value: { request: async () => {
+      window.__wake.asked++; window.__wake.held++;
+      let gone = false;
+      return { release: async () => { if (!gone) { gone = true; window.__wake.held--; } }, addEventListener() {} };
+    } } });
+  });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(url + '#p=globe&l=political&c=0,20,1.2&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.evaluate(() => window.atlas.learn['openTours']());
+  await page.waitForTimeout(600);
+  await page.evaluate(() => document.querySelector('[data-tour="Giants and ancients: the great trees"]')?.click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-auto', { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(2500);
+  const t0 = await page.evaluate(() => ({ auto: window.atlas.learn['tour']?.auto, state: document.querySelector('.tour-auto')?.dataset.state, n: window.atlas.learn['tour']?.steps.length, wake: { ...window.__wake } }));
+  check(t0.auto === true && t0.state === 'playing' && t0.wake.held === 1, `a guided tour plays by itself from its first stop (${t0.state}) and keeps the screen on (${t0.wake.held} lock held)`);
+  // To the last stop; it plays on to its end and stops there.
+  await page.evaluate(() => { const tr = window.atlas.learn['tour']; tr.i = tr.steps.length - 2; document.querySelector('.learn-card [aria-label="Next"]')?.click(); });
+  await page.waitForFunction(() => document.querySelector('.tour-auto')?.dataset.state === 'again', null, { timeout: 25000 }).catch(() => {});
+  await page.waitForTimeout(1500);
+  const t1 = await page.evaluate(() => ({ i: window.atlas.learn['tour']?.i, auto: window.atlas.learn['tour']?.auto, state: document.querySelector('.tour-auto')?.dataset.state, title: document.querySelector('.tour-auto')?.getAttribute('title'), wake: { ...window.__wake } }));
+  check(t1.i === t0.n - 1 && t1.auto === false && t1.state === 'again' && t1.wake.held === 0, `at its end it stays on its last stop (${(t1.i ?? 0) + 1}/${t0.n}, "${t1.title}") instead of starting over, and lets the screen sleep (${t1.wake.held} held)`);
+  await page.evaluate(() => document.querySelector('.tour-auto')?.click());
+  await page.waitForTimeout(2500);
+  const t2 = await page.evaluate(() => ({ i: window.atlas.learn['tour']?.i, auto: window.atlas.learn['tour']?.auto, held: window.__wake.held }));
+  await page.evaluate(() => window.atlas.learn['stopTour']());
+  await page.waitForTimeout(500);
+  const t3 = await page.evaluate(() => window.__wake.held);
+  check(t2.i === 0 && t2.auto === true && t2.held === 1 && t3 === 0, `↺ plays it again from its first stop (${(t2.i ?? 0) + 1}, held ${t2.held}); closing the tour lets go of the screen (${t3})`);
+  // A Time travel story playing keeps the screen on; paused, it does not.
+  await page.evaluate(() => window.atlas.time.stories.eras.open('scientific-revolution'));
+  await page.waitForSelector('.warbar', { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(2000);
+  const s1 = await page.evaluate(() => ({ playing: document.querySelector('.warbar .tb-play')?.getAttribute('aria-label') === 'Pause', held: window.__wake.held }));
+  await page.evaluate(() => document.querySelector('.warbar .tb-play')?.click());
+  await page.waitForTimeout(500);
+  const s2 = await page.evaluate(() => window.__wake.held);
+  await page.evaluate(() => document.querySelector('.warbar .wb-exit')?.click());
+  await page.waitForTimeout(800);
+  check(s1.playing && s1.held === 1 && s2 === 0, `a story playing keeps the screen on (${s1.held} held); paused, it lets it sleep (${s2})`);
+  check(!errors.length, `no page errors in the tour and wake checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

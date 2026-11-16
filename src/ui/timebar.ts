@@ -3,6 +3,7 @@
 import { Play, Pause, X, SkipBack, ListOrdered } from 'lucide';
 import { h, icon, clear } from './dom';
 import { t } from '../app/i18n';
+import { keepAwake } from './wake';
 
 export interface TimeBarOptions {
   title: string;
@@ -185,6 +186,8 @@ export class TimeBar {
     if (this.o.caption) this.subEl.textContent = this.o.caption(this.pos) || this.o.title;
     clear(this.rangeLabel);
     this.rangeLabel.append(h('span', null, `${t('tbFrom')} ${this.o.format(this.start)}`), h('span', null, `${t('tbTo')} ${this.o.format(this.end)}`));
+    // The screen stays on while the years play (borders through time, the moving continents).
+    keepAwake('timebar', this.playing);
     clear(this.playBtn);
     this.playBtn.append(icon(this.playing ? Pause : Play, 22));
     this.playBtn.setAttribute('aria-label', this.playing ? 'Pause' : 'Play');
@@ -199,6 +202,7 @@ export class TimeBar {
 
   destroy() {
     this.playing = false;
+    keepAwake('timebar', false);
     cancelAnimationFrame(this.raf);
     this.el.remove();
   }

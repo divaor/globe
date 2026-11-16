@@ -1,6 +1,7 @@
 // Learn and play: quizzes (find the country, flags, capitals...), the games Put them in order and Time detective,
 // the daily challenge, your progress (streaks and badges), guided tours, and "On this day".
-import { GraduationCap, Compass, CalendarDays, X, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Play, Pause, Map as MapIcon, Share2, Volume2, VolumeX } from 'lucide';
+import { GraduationCap, Compass, CalendarDays, X, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, Play, Pause, RotateCcw, Map as MapIcon, Share2, Volume2, VolumeX } from 'lucide';
+import { keepAwake } from '../ui/wake';
 import { geoDistance } from 'd3-geo';
 import { h, icon, clear, add } from '../ui/dom';
 import { t, tx, lang, flagEmoji } from '../app/i18n';
@@ -2214,7 +2215,8 @@ export class Learn {
     await this.stopQuiz();
     this.shell.sheet.close();
     if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
-    this.tour = { name: tour.en, steps: tour.steps, i: 0, auto: false, timer: 0, fold: false, voice: 'off', after: 0, at: 0 };
+    // It plays from the start by itself (the pause button stops it), and stops at its last stop.
+    this.tour = { name: tour.en, steps: tour.steps, i: 0, auto: true, timer: 0, fold: false, voice: 'off', after: 0, at: 0 };
     await this.showStep();
   }
 
@@ -2295,14 +2297,22 @@ export class Learn {
   private renderTour() {
     const tr = this.tour;
     if (!tr) return;
+    // The screen stays on while the tour plays by itself or reads aloud.
+    keepAwake('tour', tr.auto || narrationOn());
     const s = tr.steps[tr.i];
     clear(this.card);
     const prev = h('button', { type: 'button', class: 'icon-btn sm', 'aria-label': 'Previous' }, icon(ChevronLeft, 18));
     prev.addEventListener('click', () => { if (tr.i > 0) { tr.i--; void this.showStep(); } });
     const next = h('button', { type: 'button', class: 'icon-btn sm', 'aria-label': 'Next' }, icon(ChevronRight, 18));
     next.addEventListener('click', () => this.nextStep());
-    const auto = h('button', { type: 'button', class: 'icon-btn sm', 'aria-label': 'Auto' }, icon(tr.auto ? Pause : Play, 16));
-    auto.addEventListener('click', () => { tr.auto = !tr.auto; this.armAuto(); this.renderTour(); });
+    // At the last stop, once it has played through, ▶ becomes ↺: play it again from the start.
+    const again = !tr.auto && tr.i === tr.steps.length - 1;
+    const autoLabel = tr.auto ? L('Pause', 'Pausa') : again ? L('Start again', 'Empezar de nuevo') : L('Play', 'Reproducir');
+    const auto = h('button', { type: 'button', class: 'icon-btn sm tour-auto', 'aria-label': 'Auto', title: autoLabel, 'aria-pressed': String(tr.auto), 'data-state': tr.auto ? 'playing' : again ? 'again' : 'paused' }, icon(tr.auto ? Pause : again ? RotateCcw : Play, 16));
+    auto.addEventListener('click', () => {
+      if (again) { tr.auto = true; tr.i = 0; void this.showStep(); this.renderTour(); return; }
+      tr.auto = !tr.auto; this.armAuto(); this.renderTour();
+    });
     const foldLabel = tr.fold ? L('Show the text', 'Mostrar el texto') : L('Hide the text', 'Ocultar el texto');
     const fold = h('button', { type: 'button', class: 'icon-btn sm tour-fold', title: foldLabel, 'aria-label': foldLabel, 'aria-expanded': String(!tr.fold) }, icon(tr.fold ? ChevronDown : ChevronUp, 16));
     fold.addEventListener('click', () => { tr.fold = !tr.fold; this.renderTour(); });
@@ -2372,7 +2382,13 @@ export class Learn {
     const tr = this.tour;
     if (!tr) return;
     if (tr.i + 1 < tr.steps.length) { tr.i++; void this.showStep(); }
-    else if (tr.auto) { tr.i = 0; void this.showStep(); }
+    else if (tr.auto) {
+      // The end: it stays at the last stop (↺ plays it again).
+      tr.auto = false;
+      clearInterval(tr.timer);
+      clearTimeout(tr.after);
+      this.renderTour();
+    }
   }
 
   /** The words a stop reads aloud: its title, then its text. */
@@ -2438,6 +2454,7 @@ export class Learn {
     // A tour that went beyond the Earth comes back to it.
     if (this.tour.steps.some((x) => x.world || x.orrery || x.sky || x.galaxy || x.elements)) { this.space?.closeOverlays(); if (this.space?.active) void this.space.exit(); }
     this.tour = null;
+    keepAwake('tour', false);
     this.card.hidden = true;
     this.card.classList.remove('peek');
   }

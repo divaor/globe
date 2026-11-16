@@ -286,10 +286,12 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   great libraries, masterpieces and where they are, sounds of the world, cities of music, Latin America's World
   Heritage, nature's wonders, lost and rebuilt, China's great inventions, from the telegraph to the Web, invented in
   Latin America, a grand tour of the solar system, footprints on the Moon, born in the stars, a night under the
-  Southern sky); "On this day", any day of the year: what the Time travel stories tell of it, each opening its
+  Southern sky: each plays by itself from its first stop and stops at its last, where ↺ plays it again); "On this
+  day", any day of the year: what the Time travel stories tell of it, each opening its
   step (the story's X comes back to the day), and Wikipedia's selection of events, linked to the story that tells
   the same event. A story opened from a card ("Open its story") or a list starts paused at its step with all its
-  controls; its X goes back to the map and filters there were.
+  controls; its X goes back to the map and filters there were. While a tour, a story or the years of a timeline
+  play by themselves (or are read aloud), the screen is kept on, where the browser can (the Screen Wake Lock).
 - **Map games** (More → Map games): twelve games played on the map, each with a new puzzle every day that is the
   same for everyone (the panel's Today list), a best score and badges. The map, its labels and filters come back as
   they were when a game ends.

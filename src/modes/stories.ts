@@ -17,6 +17,7 @@ import type { Feature, Geometry, MultiLineString, Polygon } from 'geojson';
 import { Play, Pause, X, ChevronLeft, ChevronRight, ListOrdered, BookOpen, Search, Music, Volume2, VolumeX } from 'lucide';
 import { loadJSON, shapesFrom, chunkLines, dataUrl, type Shape, type Line } from '../data/store';
 import { t, tx, lang, fmtNumber, fmtCompact, flagEmoji } from '../app/i18n';
+import { keepAwake } from '../ui/wake';
 import { recordSeen } from '../learn/progress';
 import { h, icon, clear } from '../ui/dom';
 import { continentSwatch, mix } from '../engine/colors';
@@ -582,6 +583,7 @@ export class StoryMode {
     this.offVoice?.(); this.offVoice = null;
     this.bar?.remove();
     this.bar = null; this.ui = null; this.c = null; this.back = null;
+    keepAwake(`story:${this.kind}`, false);
     window.removeEventListener('keydown', this.onKey);
     window.removeEventListener('resize', this.onResize);
     app.renderer.view.insetBottom = 0;
@@ -1795,6 +1797,8 @@ export class StoryMode {
     clear(ui.title);
     ui.title.append(...(st.aftermath ? [h('span', { class: 'wb-tag' }, t(c.life || c.lives ? 'livesToday' : 'warAftermath')), ' '] : []), stepTitle(st));
     this.fitText();
+    // The screen stays on while the story plays by itself or reads aloud.
+    keepAwake(`story:${this.kind}`, this.playing || this.voice === 'reading');
     clear(ui.play);
     ui.play.append(icon(this.playing ? Pause : Play, 22));
     ui.play.setAttribute('aria-label', this.playing ? 'Pause' : 'Play');
