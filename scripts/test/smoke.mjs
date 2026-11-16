@@ -4308,10 +4308,11 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await page.waitForTimeout(500);
   const facts = await page.evaluate(() => ({ focus: window.atlas.inside.info.focus, text: document.querySelector('.inside-facts')?.textContent ?? '' }));
   await page.evaluate(() => window.atlas.inside.setPeel(5));
-  await page.waitForTimeout(2500);
+  await page.waitForFunction(() => window.atlas.inside.info.peel >= 4.95, null, { timeout: 10000 }).catch(() => {});
+  await page.waitForTimeout(800);
   const peeled = await page.evaluate(() => ({ peel: window.atlas.inside.info.peel, names: window.atlas.app.renderer.labels.drawn.map((d) => d.text) }));
   check(facts.focus === 'outer-core' && /How we know/.test(facts.text) && /°C/.test(facts.text) && peeled.peel >= 4.95 && peeled.names.every((n) => /core/i.test(n)),
-    `a layer's facts ("${facts.text.slice(0, 70)}…"); peeled to the inner core, only its names left (${peeled.names.join(', ')})`);
+    `a layer's facts (${facts.focus}: "${facts.text.slice(0, 70)}…"); peeled to the inner core (${peeled.peel.toFixed(2)} of 5), only its names left (${peeled.names.join(', ')})`);
   await page.evaluate(() => { window.atlas.inside.setPeel(0); window.atlas.inside.setFocus(null); });
 
   // Dig down from Madrid.

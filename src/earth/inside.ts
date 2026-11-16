@@ -117,14 +117,15 @@ export class InsideEarth {
    * Peeling eases from layer to layer. Its ticker is there only while it eases: the renderer takes any ticker as the
    * map moving (and draws the lighter map data meanwhile).
    */
-  private readonly peelTicker = (): boolean => {
+  private readonly peelTicker = (dt: number): boolean => {
     const done = !this.active || Math.abs(this.st.peel - this.peelGoal) < 0.01;
     if (done) {
       if (this.active) this.st.peel = this.peelGoal;
       this.app.renderer.tickers.delete(this.peelTicker);
       return true; // this last frame draws where it stopped
     }
-    this.st.peel += (this.peelGoal - this.st.peel) * 0.18;
+    // By time, not by frame: about half a second to the next layer, however slowly the frames come.
+    this.st.peel += (this.peelGoal - this.st.peel) * (1 - Math.exp(-dt / 85));
     return true;
   };
   private easePeel() {
