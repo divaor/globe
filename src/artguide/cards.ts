@@ -22,7 +22,7 @@ export function creditEl(file: string | null): HTMLElement | null {
   return p;
 }
 
-export function workCard(card: CardFn, w: Work, cityName: string | null, openCity: ((city: string) => void) | null) {
+export function workCard(card: CardFn, w: Work, cityName: string | null, openCity: ((city: string) => void) | null, showOnMap?: () => void) {
   // Each masterpiece opened counts once for the Curator badge.
   const got = recordSeen('works', w.id);
   if (got.length) window.atlas?.shell.toast(`${got[0].icon} ${es() ? `Nueva insignia: ${got[0].es}` : `New badge: ${got[0].en}`}`, 4000);
@@ -33,16 +33,18 @@ export function workCard(card: CardFn, w: Work, cityName: string | null, openCit
   rows.push({ label: L('Now in', 'Hoy en'), value: `${nm(w.museum)}${cityName ? `, ${cityName}` : ''}`, icon: '🏛️' });
   if (kind) rows.push({ label: L('Kind', 'Tipo'), value: es() ? kind.es : kind.en, icon: kindIcon(w.kind) });
   const links: { label: string; href?: string; onClick?: () => void }[] = [{ label: 'Wikipedia', href: wikiOf(w.id) }];
+  if (showOnMap) links.unshift({ label: L('Show on the map', 'Ver en el mapa'), onClick: showOnMap });
   if (openCity) links.push({ label: L('The city’s art guide', 'Guía de arte de la ciudad'), onClick: () => openCity(w.museum.city) });
   card(kindIcon(w.kind), nm(w), [w.artist ? nm(w.artist) : '', yearText(w.year)].filter(Boolean).join(' · '), rows, links, [], w.img ? Promise.resolve(commons(w.img, 480)) : undefined, creditEl(w.img));
 }
 
-export function museumCard(card: CardFn, m: Museum, works: Work[], cityName: string | null, openCity: ((city: string) => void) | null) {
+export function museumCard(card: CardFn, m: Museum, works: Work[], cityName: string | null, openCity: ((city: string) => void) | null, showOnMap?: () => void) {
   const rows: InfoRow[] = [];
   if (cityName) rows.push({ label: L('City', 'Ciudad'), value: cityName, icon: '📍' });
   if (m.visitors) rows.push({ label: L('Visitors', 'Visitantes'), value: L(`${fmtCompact(m.visitors)} a year`, `${fmtCompact(m.visitors)} al año`), icon: '👥' });
   rows.push({ label: L('Best-known works here', 'Obras más conocidas aquí'), value: String(works.length), icon: '🖼️' });
   const links: { label: string; href?: string; onClick?: () => void }[] = [{ label: 'Wikipedia', href: wikiOf(m.id) }];
+  if (showOnMap) links.unshift({ label: L('Show on the map', 'Ver en el mapa'), onClick: showOnMap });
   if (m.web) links.push({ label: L('Official site', 'Sitio oficial'), href: m.web });
   if (openCity) links.push({ label: L('The city’s art guide', 'Guía de arte de la ciudad'), onClick: () => openCity(m.city) });
   const top = works.slice(0, 6).map((w) => `${kindIcon(w.kind)} ${nm(w)}${w.artist ? ` (${nm(w.artist)})` : ''}`);
@@ -50,13 +52,14 @@ export function museumCard(card: CardFn, m: Museum, works: Work[], cityName: str
   card('🏛️', nm(m), cityName ?? '', rows, links, top.length ? [`${L('Among them', 'Entre ellas')}: ${top.join(' · ')}`] : [], img ? Promise.resolve(commons(img, 480)) : undefined, creditEl(img));
 }
 
-export function buildingCard(card: CardFn, b: Building, cityName: string | null, openCity: ((city: string) => void) | null) {
+export function buildingCard(card: CardFn, b: Building, cityName: string | null, openCity: ((city: string) => void) | null, showOnMap?: () => void) {
   const rows: InfoRow[] = [];
   if (b.architects.length) rows.push({ label: b.architects.length > 1 ? L('Architects', 'Arquitectos') : L('Architect', 'Arquitecto'), value: b.architects.map(nm).join(', '), icon: '📐' });
   if (b.style) rows.push({ label: L('Style', 'Estilo'), value: nm(b.style), icon: '🏛️' });
   if (b.year != null) rows.push({ label: L('Built', 'Construido'), value: yearText(b.year), icon: '📅' });
   if (cityName) rows.push({ label: L('City', 'Ciudad'), value: cityName, icon: '📍' });
   const links: { label: string; href?: string; onClick?: () => void }[] = [{ label: 'Wikipedia', href: wikiOf(b.id) }];
+  if (showOnMap) links.unshift({ label: L('Show on the map', 'Ver en el mapa'), onClick: showOnMap });
   if (openCity && b.city) links.push({ label: L('The city’s guide', 'Guía de la ciudad'), onClick: () => openCity(b.city!) });
   card('🏛️', nm(b), [b.style ? nm(b.style) : '', yearText(b.year)].filter(Boolean).join(' · '), rows, links, [], b.img ? Promise.resolve(commons(b.img, 480)) : undefined, creditEl(b.img));
 }

@@ -3,12 +3,12 @@
 // the first item it shows that has one. One clip plays at a time, on one audio element: phones that only let sound
 // start from a tap let it play later clips on its own once a tap has started it. The recordings are streamed by
 // the reader's browser from Commons (its MP3 copy, else the original file), only when they are asked for.
-import { Play, Pause } from 'lucide';
+import { Play, Pause, Square } from 'lucide';
 import { h, icon, clear } from './dom';
 import { lang, tx } from '../app/i18n';
 
-/** A clip as the data gives it: the MP3 copy and the original file on Commons, its page, the seconds to play,
- * who made the recording and its licence. */
+/** A clip as the data gives it: the MP3 copy and the original file on Commons, its page, the seconds to play
+ * (`end` not after `start`: the whole recording, an animal's call), who made the recording and its licence. */
 export interface Clip { src: string; orig: string; page: string; start: number; end: number; by: { en: string; es: string }; license: string }
 type State = 'idle' | 'loading' | 'playing' | 'paused' | 'error';
 
@@ -33,6 +33,8 @@ const SILENCE = (() => {
 
 let el: HTMLAudioElement | null = null;
 let cur: Clip | null = null;
+/** The name of the clip playing (for the phone's lock screen and the small player). */
+let curTitle = '';
 let state: State = 'idle';
 /** Where the clip playing was started: a card's play button, or a step with music on. */
 let origin: 'card' | 'step' = 'card';
@@ -71,6 +73,7 @@ function audio(): HTMLAudioElement {
       const sk = a.seekable;
       if (sk.length && sk.end(sk.length - 1) >= cur.start) { a.currentTime = cur.start; return; }
     }
+    if (cur.end <= cur.start) return; // the whole recording: it stops at its end
     const left = cur.end - a.currentTime;
     if (left <= 0.05) { reset(); return; }
     if (left < FADE_OUT && !fadingOut) { fadingOut = true; fadeTo(0, left * 1000); }
@@ -123,7 +126,7 @@ export function playClip(c: Clip, o: { volume?: number; fadeIn?: number; title?:
   if (same(cur, c) && (state === 'playing' || state === 'loading')) { origin = o.from ?? origin; if (!fadingOut) fadeTo(level(), 300); return; }
   if (same(cur, c) && state === 'paused') { origin = o.from ?? origin; void a.play().catch(() => { /* blocked */ }); fadeTo(level(), 200); return; }
   const begin = () => {
-    cur = c; origin = o.from ?? 'card'; failed = null; fadingOut = false;
+    cur = c; curTitle = o.title ?? ''; origin = o.from ?? 'card'; failed = null; fadingOut = false;
     tries = [c.src, ...(c.orig !== c.src ? [c.orig] : [])];
     a.volume = o.fadeIn ? 0 : level();
     next();
@@ -180,15 +183,17 @@ export function clipEl(c: Clip, o: { title?: string; credit?: boolean } = {}): H
   const note = h('div', { class: 'clip-note', hidden: true }, es ? 'No se pudo reproducir esta grabación aquí; escúchala en Wikimedia Commons.' : 'This recording could not be played here; listen to it on Wikimedia Commons.');
   const credit = o.credit === false ? null : h('div', { class: 'clip-credit' }, `♪ ${tx(c.by)} · ${c.license} · `, h('a', { href: c.page, target: '_blank', rel: 'noopener' }, 'Wikimedia Commons'));
   const wrap = h('div', { class: 'item-clip' }, h('div', { class: 'clip-row' }, btn, h('div', { class: 'clip-main' }, h('div', { class: 'clip-label' }, es ? 'Escucha un fragmento' : 'Listen to a clip'), bar), time), note, credit);
-  const len = Math.max(1, c.end - c.start);
+  // Its length: the seconds to play, or the whole recording's once the player knows it.
+  const whole = c.end <= c.start;
+  const length = () => (whole ? (same(cur, c) && el && Number.isFinite(el.duration) && el.duration > 0 ? el.duration : 0) : Math.max(1, c.end - c.start));
   let raf = 0;
   // How far it has played, every frame while it plays (from the next frame on: the card is on the page by then).
   const progress = () => {
     raf = 0;
-    const mine = same(cur, c);
-    const at = mine && el ? Math.max(0, Math.min(len, el.currentTime - c.start)) : 0;
-    fill.style.width = `${(at / len) * 100}%`;
-    time.textContent = `${mmss(at)} / ${mmss(len)}`;
+    const mine = same(cur, c), len = length();
+    const at = mine && el ? Math.max(0, len ? Math.min(len, el.currentTime - c.start) : el.currentTime - c.start) : 0;
+    fill.style.width = `${len ? (at / len) * 100 : 0}%`;
+    time.textContent = len ? `${mmss(at)} / ${mmss(len)}` : mmss(at);
     if (mine && (state === 'playing' || state === 'loading')) raf = requestAnimationFrame(() => { if (wrap.isConnected) progress(); else off(); });
   };
   const paint = () => {
@@ -212,7 +217,50 @@ export function clipEl(c: Clip, o: { title?: string; credit?: boolean } = {}): H
   });
   const off = onClip(() => { if (!wrap.isConnected) { off(); cancelAnimationFrame(raf); return; } paint(); });
   paint();
+  shown.set(wrap, c);
   return wrap;
+}
+
+// ---- The small player: a clip started from a card goes on when the card closes (music, a call), with a way to stop it
+
+/** The clips' players on the page (a card's, a quiz's). */
+const shown = new Map<HTMLElement, Clip>();
+let mini: HTMLElement | null = null;
+let miniTimer = 0;
+
+/** Is the clip playing on screen, in a card or a quiz? */
+function onScreen(c: Clip): boolean {
+  for (const [w, x] of [...shown]) {
+    if (!w.isConnected) { shown.delete(w); continue; }
+    if (same(x, c) && w.getClientRects().length) return true;
+  }
+  return false;
+}
+
+/** The small player, in the top bar: "♪ Moose ■", while a clip started from a card plays and its card is gone. Its ■
+ * stops the clip, and the player goes with it. */
+export function clipMini(): HTMLElement {
+  if (mini) return mini;
+  const es = () => lang() === 'es';
+  const name = h('span', { class: 'clip-mini-name' });
+  const stop = h('button', { type: 'button', class: 'clip-mini-stop' }, icon(Square, 14)) as HTMLButtonElement;
+  stop.addEventListener('click', (e) => { e.stopPropagation(); stopClip(); });
+  mini = h('div', { class: 'clip-mini glass', role: 'status', hidden: true }, h('span', { class: 'clip-mini-note', 'aria-hidden': 'true' }, '♪'), name, stop);
+  const update = () => {
+    const live = !!cur && origin === 'card' && (state === 'playing' || state === 'loading');
+    const show = live && !onScreen(cur!);
+    if (mini!.hidden === !show && (!show || name.textContent === curTitle)) { /* unchanged */ } else {
+      name.textContent = curTitle || (es() ? 'Sonido' : 'Sound');
+      stop.title = es() ? 'Detener' : 'Stop';
+      stop.setAttribute('aria-label', `${stop.title}: ${name.textContent}`);
+      mini!.hidden = !show;
+    }
+    // While a card's clip plays, look every half second whether its card is still there.
+    clearTimeout(miniTimer);
+    if (live) miniTimer = window.setTimeout(update, 500);
+  };
+  onClip(update);
+  return mini;
 }
 
 /** Turns the music down while a voice reads (narration), and back up after. */

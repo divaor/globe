@@ -8,6 +8,7 @@ import { Sheet } from './sheet';
 import { filtersPanel } from './filters';
 import { projectionsPanel } from './projections';
 import { CountryCard } from './card';
+import { clipMini } from './audio';
 import { LegendCard } from './legend';
 import { SearchBox } from './search';
 import { Ambient } from './ambient';
@@ -123,6 +124,8 @@ export class Shell {
     searchBtn.addEventListener('click', () => this.search.open());
     this.top.append(
       h('div', { class: 'top-left' }, brand, searchBtn),
+      // A clip from a card that goes on after its card closed, with its stop button (ui/audio.ts).
+      clipMini(),
       h('div', { class: 'top-right glass' },
         button({ icon: MonitorPlay, title: t('ambient'), cls: 'icon-btn', onClick: () => void this.ambient.start() }),
         button({ icon: fs ? Minimize : Maximize, title: t('fullscreen'), cls: 'icon-btn', onClick: () => this.toggleFullscreen() })),

@@ -193,6 +193,7 @@ export class TravelGuide {
     const idx = await this.load();
     if (!idx) { this.shell.toast(L('The travel guide needs its data; check your connection.', 'La guía de viaje necesita sus datos; revisa tu conexión.')); return; }
     this.query = query; this.picking = true; this.onMap = false; this.city = null;
+    this.hideBack();
     const body = h('div', { class: 'guide' });
     body.append(h('p', { class: 'muted small' }, L(`Pick the cities you want to visit: for each one, what to eat, what to see, its museums and the practical facts. ${idx.length} cities; tap a dot on the map, or search.`, `Elige las ciudades que quieres visitar: de cada una, qué comer, qué ver, sus museos y los datos prácticos. ${idx.length} ciudades; toca un punto en el mapa o busca.`)));
     // Search.
@@ -282,9 +283,13 @@ export class TravelGuide {
   }
 
   private closed() {
+    const fromTap = performance.now() - this.leftAt < 2000, city = this.city, tab = this.tab;
+    this.leftAt = 0;
     // A city's guide or the map view may follow: they decide what stays drawn.
     setTimeout(() => {
       if (this.shell.sheet.isOpen('guide') || this.shell.sheet.isOpen('guide-city')) return;
+      // Closed by a tap inside a city's guide (not by its X): "← Montreal" brings the reader back to it.
+      if (fromTap && city) this.showBack(city, tab);
       this.inset(false);
       if (this.keep) { this.keep = false; return; }
       this.picking = false;
@@ -292,6 +297,30 @@ export class TravelGuide {
       this.app.renderer.requestRender();
     }, 0);
   }
+
+  /** When a tap in a city's guide last took the reader away from it. */
+  private leftAt = 0;
+  /** "← Montreal": back to the city's guide, at the tab it was on, after a tap in it showed something else. */
+  private backChip: HTMLElement | null = null;
+  private showBack(id: string, tab: Tab) {
+    const c = this.byId.get(id);
+    if (!c) return;
+    this.hideBack();
+    const label = L(`Back to ${this.cityName(c)}`, `Volver a ${this.cityName(c)}`);
+    const go = h('button', { type: 'button', class: 'guide-back-go', title: label, 'aria-label': label, 'data-guide-back': id }, icon(ChevronLeft, 16), h('span', null, `${this.flag(c.country)} ${this.cityName(c)}`));
+    // What it showed goes (a card, a story), and the city's guide comes back at its tab.
+    go.addEventListener('click', () => void (async () => {
+      this.hideBack();
+      this.shell.card.hide();
+      if (this.app.mode) await this.time.modes.find((m) => m.id === this.app.mode)?.exit();
+      await this.openCity(id, tab);
+    })());
+    const x = h('button', { type: 'button', class: 'guide-back-x', title: L('Close', 'Cerrar'), 'aria-label': L('Close', 'Cerrar') }, icon(X, 14));
+    x.addEventListener('click', () => this.hideBack());
+    this.backChip = h('div', { class: 'guide-back glass', role: 'navigation', 'aria-label': L('Travel guide', 'Guía de viaje') }, go, x);
+    this.app.root.append(this.backChip);
+  }
+  private hideBack() { this.backChip?.remove(); this.backChip = null; }
 
   /** The guide's cities matching what is typed: by name (English or Spanish) or by country. */
   search(q: string): GuideCity[] {
@@ -355,7 +384,11 @@ export class TravelGuide {
     if (!c) return;
     const opening = this.city !== id || !this.shell.sheet.isOpen('guide-city');
     this.city = id; this.tab = tab; this.picking = true;
+    this.hideBack();
     const body = h('div', { class: 'guide guide-city', 'data-city': id });
+    // A tap on something in the city's guide that takes the reader away from it (an animal, a park, a site on the map,
+    // a story…) leaves a way back to it (see closed()).
+    body.addEventListener('click', (e) => { if ((e.target as HTMLElement).closest?.('button, [role="button"]')) this.leftAt = performance.now(); }, true);
     const inTrip = this.trip.includes(id);
     const back = h('button', { type: 'button', class: 'pill sm', 'data-guide': 'back' }, icon(ChevronLeft, 15), L('Your trip', 'Tu viaje'));
     back.addEventListener('click', () => void this.open(this.query));
@@ -455,7 +488,7 @@ export class TravelGuide {
     const tour = TOURS.find((t) => t.group === 'cities' && names.some((n) => plain(t.en) === `${n} through time`));
     if (tour) {
       const b = h('button', { type: 'button', class: 'pill primary sm', 'data-guide': 'tour' }, icon(Compass, 15), `${tour.icon} ${es() ? tour.es : tour.en}`);
-      b.addEventListener('click', () => { this.picking = false; this.shell.sheet.close(); void this.learn.startTour(tour); });
+      b.addEventListener('click', () => { this.picking = false; this.leftAt = 0; this.shell.sheet.close(); void this.learn.startTour(tour); });
       el.append(h('div', { class: 'tool-actions' }, b), h('p', { class: 'muted small' }, L(`A guided tour of ${this.cityName(c)} through its history, ${tour.steps.length} stops.`, `Una visita guiada por la historia de ${this.cityName(c)}, ${tour.steps.length} paradas.`)));
     }
     const site = (s: Site, far: boolean) => {

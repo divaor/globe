@@ -3,7 +3,7 @@
 // filters, and "Plan a trip" into the travel guide. The travel guide gains two tabs for each city, Art ("In Madrid
 // you can see…", museum by museum, by kind, period and artist) and Buildings (by architect and style). The cards of
 // our art items say where each work is now.
-import { Palette, Map as MapIcon, Luggage, ChevronLeft } from 'lucide';
+import { Palette, Map as MapIcon, Luggage, ChevronLeft, X } from 'lucide';
 import type { App } from '../app/app';
 import type { Shell } from '../ui/shell';
 import type { RenderCtx } from '../layers/types';
@@ -11,14 +11,15 @@ import type { TravelGuide } from '../guide/guide';
 import { h, icon, clear } from '../ui/dom';
 import { lang, fmtCompact } from '../app/i18n';
 import { nowInHook } from '../modes/stories';
-import { loadArt, loadArch, loadNowIn, nm, yearText, commons, kindIcon, KINDS, PERIODS, type Work, type Building, type ArtData } from './data';
+import { loadArt, loadArch, loadNowIn, nm, yearText, commons, kindIcon, KINDS, PERIODS, type Work, type Building, type Museum, type ArtData } from './data';
 import { workCard, buildingCard, museumCard } from './cards';
 
 const es = () => lang() === 'es';
 const L = (en: string, sp: string) => (es() ? sp : en);
 const fold = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
-interface TrailPoint { at: [number, number]; n: number; label: string }
+/** A dot of a trail on the map: a museum (with how many of the artist's works) or a building; a tap opens its card. */
+interface TrailPoint { at: [number, number]; n: number; label: string; open?: () => void }
 
 export class ArtGuide {
   /** A trail on the map: an artist's museums or an architect's buildings. */
@@ -30,6 +31,8 @@ export class ArtGuide {
   constructor(private app: App, private shell: Shell, private guide: TravelGuide) {
     shell.addMenu({ id: 'art', icon: Palette, label: () => L('Art and architecture', 'Arte y arquitectura'), order: 28.5, onClick: () => void this.open() });
     app.renderer.overlays.add((rc) => this.draw(rc));
+    // A tap on a trail's dot opens its card (a museum and the artist's works there, or a building).
+    shell.tapHandlers.unshift((x, y) => this.tap(x, y));
     // A city's guide from a card ("The city's art guide").
     app.on('open-guide', (city: unknown, tab: unknown) => void this.guide.openCity(String(city), (tab as 'art') ?? 'art'));
     // Our art items' cards: where each work is now.
@@ -45,15 +48,45 @@ export class ArtGuide {
 
   private cardFn = (...a: Parameters<Shell['card']['showCustom']>) => { this.app.select(null); this.shell.card.showCustom(...a); };
   private openCity = (city: string) => { this.shell.card.hide(); void this.guide.openCity(city, 'art'); };
-  showWork(w: Work) { workCard(this.cardFn, w, this.guide.cityLabel(w.museum.city), this.openCity); }
-  showBuilding(b: Building) { buildingCard(this.cardFn, b, b.city ? this.guide.cityLabel(b.city) : null, (c) => { this.shell.card.hide(); void this.guide.openCity(c, 'buildings'); }); }
+  showWork(w: Work) { workCard(this.cardFn, w, this.guide.cityLabel(w.museum.city), this.openCity, () => this.showAt(w.museum.at, nm(w.museum), () => this.showWork(w))); }
+  showBuilding(b: Building) { buildingCard(this.cardFn, b, b.city ? this.guide.cityLabel(b.city) : null, (c) => { this.shell.card.hide(); void this.guide.openCity(c, 'buildings'); }, () => this.showAt(b.at, nm(b), () => this.showBuilding(b))); }
+  showMuseum(m: Museum, works: Work[]) { museumCard(this.cardFn, m, works, this.guide.cityLabel(m.city), this.openCity, () => this.showAt(m.at, nm(m), () => this.showMuseum(m, works))); }
+
+  /** "Show on the map": the card goes and the map flies to the place, drawn as a dot that opens the card again (on the
+   * trail on screen, if it is one of its dots; else on its own). */
+  private showAt(at: [number, number], label: string, open: () => void) {
+    const onTrail = this.trail?.pts.some((p) => Math.abs(p.at[0] - at[0]) < 1e-6 && Math.abs(p.at[1] - at[1]) < 1e-6);
+    if (!onTrail) this.setTrail({ title: label, pts: [{ at, n: 1, label, open }] });
+    this.shell.card.hide();
+    this.shell.sheet.close();
+    this.app.renderer.view.flyTo({ lon: at[0], lat: at[1], zoom: Math.max(this.app.renderer.view.zoom, 13) });
+    this.app.renderer.requestRender();
+  }
+
+  /** A tap on a trail's dot. */
+  private tap(x: number, y: number): boolean {
+    const t = this.trail;
+    if (!t || this.app.mode) return false;
+    const v = this.app.renderer.view;
+    let best: TrailPoint | null = null, bestD = Infinity;
+    for (const p of t.pts) {
+      if (!p.open) continue;
+      const q = v.project(p.at[0], p.at[1]);
+      if (!q) continue;
+      const d = Math.hypot(q[0] - x, q[1] - y), r = 6 + Math.min(10, Math.sqrt(p.n) * 3) + 10;
+      if (d <= r && d < bestD) { best = p; bestD = d; }
+    }
+    if (!best) return false;
+    best.open!();
+    return true;
+  }
 
   // ---- The panel ------------------------------------------------------------------------------------------------
   async open() {
     await this.guide.load();
     const [art, arch] = await Promise.all([loadArt(), loadArch()]);
     if (!art || !arch) { this.shell.toast(L('Art and architecture needs its data; check your connection.', 'Arte y arquitectura necesita sus datos; revisa tu conexión.')); return; }
-    this.trail = null;
+    this.setTrail(null);
     const body = h('div', { class: 'guide art-menu' });
     body.append(h('p', { class: 'muted small' }, L(`Which masterpieces and buildings you can see in which city: ${art.works.length} best-known works in ${art.museums.length} museums, and ${arch.buildings.length} buildings with their architects and styles (from Wikidata).`, `Qué obras maestras y edificios puedes ver en qué ciudad: ${art.works.length} obras muy conocidas en ${art.museums.length} museos y ${arch.buildings.length} edificios con sus arquitectos y estilos (de Wikidata).`)));
     // The map filters.
@@ -110,7 +143,7 @@ export class ArtGuide {
   }
   private trailButtons(cities: string[], pts: TrailPoint[], title: string): HTMLElement {
     const show = h('button', { type: 'button', class: 'pill sm primary', 'data-art': 'map' }, icon(MapIcon, 15), L('Show on the map', 'Ver en el mapa'));
-    show.addEventListener('click', () => { this.trail = { title, pts }; this.shell.sheet.close(); this.fit(pts.map((p) => p.at)); this.app.renderer.requestRender(); });
+    show.addEventListener('click', () => { this.setTrail({ title, pts }); this.shell.sheet.close(); this.fit(pts.map((p) => p.at)); this.app.renderer.requestRender(); });
     const plan = h('button', { type: 'button', class: 'pill sm', 'data-art': 'plan' }, icon(Luggage, 15), L('Plan a trip', 'Planear un viaje'));
     plan.addEventListener('click', () => {
       const before = this.guide.trip.length;
@@ -134,11 +167,11 @@ export class ArtGuide {
     const body = h('div', { class: 'guide art-trail', 'data-trail': id });
     body.append(this.back(), h('div', { class: 'guide-title' }, `🧑‍🎨 ${nm(a)}`),
       h('p', { class: 'muted small' }, L(`${ws.length} best-known works in ${museums.length} museums in ${new Set(museums.map(([m]) => art.museumById.get(m)!.city)).size} cities.`, `${ws.length} obras muy conocidas en ${museums.length} museos de ${new Set(museums.map(([m]) => art.museumById.get(m)!.city)).size} ciudades.`)));
-    const pts: TrailPoint[] = museums.map(([mid, list]) => { const m = art.museumById.get(mid)!; return { at: m.at, n: list.length, label: nm(m) }; });
+    const pts: TrailPoint[] = museums.map(([mid, list]) => { const m = art.museumById.get(mid)!; return { at: m.at, n: list.length, label: nm(m), open: () => this.showMuseum(m, art.byMuseum.get(m.id) ?? []) }; });
     body.append(this.trailButtons([...new Set(museums.map(([m]) => art.museumById.get(m)!.city))], pts, nm(a)));
     for (const [mid, list] of museums) {
       const m = art.museumById.get(mid)!;
-      const head = this.row('🏛️', nm(m), `${this.guide.cityLabel(m.city) ?? ''} · ${L(`${list.length} works`, `${list.length} obras`)}`, () => museumCard(this.cardFn, m, art.byMuseum.get(m.id) ?? [], this.guide.cityLabel(m.city), this.openCity), { 'data-trail-museum': m.id });
+      const head = this.row('🏛️', nm(m), `${this.guide.cityLabel(m.city) ?? ''} · ${L(`${list.length} works`, `${list.length} obras`)}`, () => this.showMuseum(m, art.byMuseum.get(m.id) ?? []), { 'data-trail-museum': m.id });
       body.append(h('h3', { class: 'sec-title' }, nm(m)), h('div', { class: 'guide-list' }, head, ...list.map((w) => this.row(this.thumb(w.img, kindIcon(w.kind)), nm(w), yearText(w.year), () => this.showWork(w), { 'data-work': w.id }))));
     }
     this.shell.openPanel('art-trail', `🧑‍🎨 ${nm(a)}`, body);
@@ -152,7 +185,7 @@ export class ArtGuide {
     const bs = (arch.byArchitect.get(id) ?? []).slice().sort((x, y) => y.sl - x.sl);
     const body = h('div', { class: 'guide art-trail', 'data-trail': id });
     body.append(this.back(), h('div', { class: 'guide-title' }, `📐 ${nm(a)}`), h('p', { class: 'muted small' }, L(`${bs.length} buildings.`, `${bs.length} edificios.`)));
-    const pts: TrailPoint[] = bs.map((b) => ({ at: b.at, n: 1, label: nm(b) }));
+    const pts: TrailPoint[] = bs.map((b) => ({ at: b.at, n: 1, label: nm(b), open: () => this.showBuilding(b) }));
     body.append(this.trailButtons([...new Set(bs.map((b) => b.city).filter((c): c is string => !!c))], pts, nm(a)));
     body.append(h('div', { class: 'guide-list' }, ...bs.map((b) => this.row(this.thumb(b.img, '🏛️'), nm(b), [b.city ? this.guide.cityLabel(b.city) : '', b.style ? nm(b.style) : '', yearText(b.year)].filter(Boolean).join(' · '), () => this.showBuilding(b), { 'data-building': b.id }))));
     this.shell.openPanel('art-trail', `📐 ${nm(a)}`, body);
@@ -252,5 +285,20 @@ export class ArtGuide {
     ctx.restore();
   }
   /** Puts the trail away (from the guide or a tap elsewhere). */
-  clearTrail() { if (this.trail) { this.trail = null; this.app.renderer.requestRender(); } }
+  clearTrail() { if (this.trail) this.setTrail(null); }
+
+  /** The trail on the map, and its chip at the top ("📐 Archibald Leitch · 23 ✕"): its ✕ puts it away. */
+  private chip: HTMLElement | null = null;
+  private setTrail(t: { title: string; pts: TrailPoint[] } | null) {
+    this.trail = t;
+    this.chip?.remove();
+    this.chip = null;
+    if (t) {
+      const x = h('button', { type: 'button', class: 'art-trail-x', title: L('Take it off the map', 'Quitarlo del mapa'), 'aria-label': L('Take it off the map', 'Quitarlo del mapa') }, icon(X, 14));
+      x.addEventListener('click', () => this.clearTrail());
+      this.chip = h('div', { class: 'art-trail-chip glass', role: 'status' }, h('span', { class: 'art-trail-name' }, `📍 ${t.title}${t.pts.length > 1 ? ` · ${t.pts.length}` : ''}`), x);
+      this.app.root.append(this.chip);
+    }
+    this.app.renderer.requestRender();
+  }
 }

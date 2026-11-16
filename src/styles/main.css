@@ -596,6 +596,52 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
   background: rgba(3, 7, 16, 0.94); touch-action: none; user-select: none; -webkit-user-select: none; }
 .zoom-img { max-width: none; flex: none; transform-origin: 0 0; will-change: transform; -webkit-user-drag: none; }
 .zoom-img.anim { transition: transform 0.2s ease-out; }
+/* The small player: a card's clip that goes on after its card closed, with its stop button (ui/audio.ts). In the top
+   bar between its two ends; on a phone, just under its right end. */
+.clip-mini { display: flex; align-items: center; gap: 6px; height: 40px; padding: 0 4px 0 12px; margin: 2px 8px 0; border-radius: 999px;
+  min-width: 0; max-width: 280px; animation: pop .18s ease-out; }
+.clip-mini[hidden] { display: none; }
+.clip-mini-note { color: var(--accent); font-weight: 800; animation: clip-mini-beat 1.2s ease-in-out infinite; }
+@keyframes clip-mini-beat { 50% { opacity: 0.35; } }
+.clip-mini-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; font-weight: 650; }
+.clip-mini-stop { flex: none; width: 32px; height: 32px; display: grid; place-items: center; border: 0; border-radius: 999px; cursor: pointer;
+  background: var(--chip-on); color: var(--accent); }
+@media (max-width: 720px) {
+  .clip-mini { position: absolute; top: 54px; right: 0; margin: 0; max-width: min(240px, calc(100vw - 150px)); }
+}
+/* An art trail on the map (artguide.ts): its name and how many places, with ✕ to take it off. Under the top bar, in
+   the middle; the dots themselves open their cards. */
+.art-trail-chip { position: absolute; top: calc(70px + var(--safe-t)); left: 50%; transform: translateX(-50%); z-index: 3; display: flex;
+  align-items: center; gap: 4px; max-width: calc(100vw - 150px); padding: 3px 3px 3px 12px; border-radius: 999px; font-size: 13px; font-weight: 650; }
+.art-trail-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.art-trail-x { flex: none; width: 30px; height: 30px; display: grid; place-items: center; border: 0; border-radius: 999px; background: none;
+  color: var(--muted); cursor: pointer; }
+html.mode-story .art-trail-chip, html.ambient .art-trail-chip { display: none; }
+@media (max-width: 720px) { .art-trail-chip { top: calc(118px + var(--safe-t)); max-width: calc(100vw - 32px); } }
+/* "← Montreal": back to a city's travel guide after a tap in it showed something else (guide/guide.ts). */
+.guide-back { position: absolute; top: calc(70px + var(--safe-t)); left: calc(12px + var(--safe-l)); z-index: 3; display: flex; align-items: center;
+  max-width: calc(100vw - 24px); border-radius: 999px; padding: 3px; animation: pop .18s ease-out; }
+.guide-back button { border: 0; background: none; color: var(--text); cursor: pointer; display: inline-flex; align-items: center; }
+.guide-back-go { gap: 6px; padding: 6px 8px 6px 6px; font-size: 14px; font-weight: 650; min-width: 0; }
+.guide-back-go span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.guide-back-x { width: 30px; height: 30px; justify-content: center; border-radius: 999px; color: var(--muted) !important; }
+html.ambient .guide-back { display: none; }
+/* A legend's timeline (World Heritage's "Watch the list grow"): play and pause, the years, the speed (ui/legend.ts). */
+.lg-player { display: grid; gap: 4px; margin: 8px 0 2px; }
+.lg-play-row { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.lg-player .slider { flex: 1; min-width: 0; width: auto; margin: 0; }
+.lg-play { flex: none; width: 36px; height: 36px; display: grid; place-items: center; border: 0; border-radius: 999px; cursor: pointer;
+  background: var(--accent-grad); color: #fff; font-size: 14px; line-height: 1; }
+.lg-play.on { background: var(--chip-on); color: var(--accent); }
+.lg-play:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.lg-play-now { flex: none; min-width: 2.6em; text-align: right; font-weight: 750; font-variant-numeric: tabular-nums; }
+.lg-speed-row { padding-left: 4px; }
+.lg-speed-end { flex: none; font-size: 15px; }
+.lg-pace { flex: none; min-width: 7.5em; font-size: 12px; color: var(--muted); }
+/* A picture that may be see-through (PNG, SVG, GIF: drawings, diagrams, glyphs) sits on paper, in both themes, so its
+   dark lines show on a dark card and in the full-screen view (ui/zoom.ts). */
+.card-img.see-through, .quiz-img.see-through { background: #f7f4ec; padding: 6px; }
+.zoom-img.see-through { background: #f7f4ec; }
 .zoom-close { position: absolute; top: calc(12px + var(--safe-t, 0px)); right: 12px; width: 44px; height: 44px; display: grid; place-items: center;
   border: 0; border-radius: 999px; background: rgba(255, 255, 255, 0.14); color: #fff; cursor: pointer; }
 .zoom-hint { position: absolute; bottom: calc(20px + var(--safe-b, 0px)); left: 50%; transform: translateX(-50%); padding: 6px 12px; border-radius: 999px;
@@ -1082,7 +1128,6 @@ div.guide-item { cursor: default; }
 .wild-card-extra { display: flex; flex-direction: column; gap: 4px; }
 .wild-sound { margin-top: 6px; }
 .wild-sound-title { font-size: 12.5px; font-weight: 700; margin-bottom: 2px; }
-.wild-audio { width: 100%; height: 34px; }
 .wild-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 6px; }
 .wild-page-head { display: flex; align-items: center; gap: 10px; margin: 10px 0 6px; }
 .wild-page-emoji { font-size: 34px; line-height: 1; }

@@ -12,7 +12,7 @@ import { loadJSON } from '../../data/store';
 import { h } from '../../ui/dom';
 import { LC } from '../context';
 import type { App } from '../../app/app';
-import type { InfoRow, LayerDef, LayerHit, LayerInstance, LayerTapUi, Legend, RenderCtx } from '../types';
+import type { InfoRow, LayerDef, LayerHit, LayerInstance, LayerTapUi, Legend, LegendPlayer, RenderCtx } from '../types';
 import { crowdOf, type Placed } from '../crowd';
 
 const es = () => lang() === 'es';
@@ -82,11 +82,20 @@ function inDanger(s: Site, year = LAST): boolean {
 }
 const siteName = (s: Site) => (es() ? s.n[1] || s.n[0] : s.n[0]);
 
-/** The year shown while "Watch the list grow" plays, else null. */
+/** "Watch the list grow": the year on the timeline (null: today's list), whether it plays, how fast (years a second),
+ * when it last moved, and the last whole year drawn. */
+interface Timeline { year: number | null; playing: boolean; speed: number; at: number; last: number }
+/** The speeds of the timeline's speed slider, in years a second (the whole list in 96 to 6 seconds). */
+const SPEEDS = [0.5, 1, 2, 4, 8];
+function timeline(inst: LayerInstance): Timeline {
+  const st = inst.state as Partial<Timeline>;
+  st.year ??= null; st.playing ??= false; st.speed ??= 2; st.at ??= 0; st.last ??= -1;
+  return st as Timeline;
+}
+/** The year shown on the timeline, else null. */
 function playYear(inst: LayerInstance): number | null {
-  const st = inst.state as { playing?: boolean; t0?: number };
-  if (!st.playing || st.t0 == null) return null;
-  return Math.min(LAST, FIRST + Math.floor((performance.now() - st.t0) / 280));
+  const y = timeline(inst).year;
+  return y == null ? null : Math.min(LAST, Math.floor(y));
 }
 /** The sites shown now: by the "Show" choice, and up to the year playing. */
 function visible(inst: LayerInstance): Site[] {
@@ -103,11 +112,27 @@ function visible(inst: LayerInstance): Site[] {
 }
 const yearColor = (y: number) => samplePalette(SEQUENTIAL.plasma.slice(1), (y - FIRST) / (LAST - FIRST));
 
+/** Plays or pauses the timeline (from the first year when it is not on, or has reached today). */
 function togglePlay(inst: LayerInstance) {
-  const st = inst.state as { playing?: boolean; t0?: number; last?: number };
+  const st = timeline(inst);
+  if (st.year == null || (!st.playing && st.year >= LAST)) st.year = FIRST;
   st.playing = !st.playing;
-  st.t0 = performance.now();
-  st.last = -1;
+  st.at = performance.now();
+  LC.requestRender();
+  LC.notify?.();
+}
+/** Moves the timeline to a year (it goes on playing from there if it was). */
+function seek(inst: LayerInstance, year: number) {
+  const st = timeline(inst);
+  st.year = Math.max(FIRST, Math.min(LAST, year));
+  st.at = performance.now();
+  LC.requestRender();
+  LC.notify?.();
+}
+/** Back to today's list. */
+function leaveTimeline(inst: LayerInstance) {
+  const st = timeline(inst);
+  st.year = null; st.playing = false;
   LC.requestRender();
   LC.notify?.();
 }
@@ -140,25 +165,29 @@ export const heritage: LayerDef = {
       { value: 'year', label: { en: 'Year listed', es: 'Año de inscripción' } },
     ] },
   ],
-  animated: (inst) => !!(inst.state as { playing?: boolean }).playing,
+  animated: (inst) => timeline(inst).playing,
   async load() {
     if (doc) return;
     doc = await loadJSON<HeritageDoc>('layers/heritage.json');
     byPop = doc.sites.slice().sort((a, b) => a.pop - b.pop);
   },
   onOptionsChanged() { LC.requestRender(); },
-  onDeactivate(inst) { (inst.state as { playing?: boolean }).playing = false; },
+  onDeactivate(inst) { const st = timeline(inst); st.playing = false; st.year = null; },
   drawOverlay(rc: RenderCtx, inst) {
     if (!doc) return;
     const { ctx } = rc;
-    const st = inst.state as { playing?: boolean; t0?: number; last?: number };
-    const year = playYear(inst);
-    if (year != null && year !== st.last) {
-      st.last = year;
-      LC.notify?.();
-      // Hold the last year a moment, then stop.
-      if (year >= LAST) setTimeout(() => { if (st.playing && playYear(inst) === LAST) { st.playing = false; LC.notify?.(); LC.requestRender(); } }, 1600);
+    const st = timeline(inst);
+    if (st.playing && st.year != null) {
+      // (A frame after a long wait, the tab hidden, moves on by a quarter of a second at most.)
+      const now = performance.now();
+      st.year = Math.min(LAST, st.year + (Math.min(250, now - st.at) / 1000) * st.speed);
+      st.at = now;
+      // It stops at today's list, still on the timeline, until it is played again or left.
+      if (st.year >= LAST) { st.playing = false; LC.notify?.(); }
     }
+    const year = playYear(inst);
+    if (year != null && year !== st.last) { st.last = year; LC.notify?.(); }
+    if (year == null) st.last = -1;
     const byYear = inst.options.colour === 'year';
     const r = siteR(rc.webZoom);
     const edge = rc.theme.dark ? 'rgba(0,0,0,0.65)' : 'rgba(255,255,255,0.95)';
@@ -201,22 +230,30 @@ export const heritage: LayerDef = {
     const year = playYear(inst);
     const sites = visible(inst);
     const count = (f: (s: Site) => boolean) => sites.filter(f).length;
-    const playing = !!(inst.state as { playing?: boolean }).playing;
-    const actions = [{ label: playing ? L('⏸ Stop', '⏸ Detener') : L('▶ Watch the list grow', '▶ Ver crecer la lista'), onClick: () => togglePlay(inst), primary: !playing }];
+    const st = timeline(inst);
+    const actions = year == null
+      ? [{ label: L('▶ Watch the list grow', '▶ Ver crecer la lista'), onClick: () => togglePlay(inst), primary: true }]
+      : [{ label: L('Back to today’s list', 'Volver a la lista de hoy'), onClick: () => leaveTimeline(inst) }];
+    const player: LegendPlayer | undefined = year == null ? undefined : {
+      min: FIRST, max: LAST, value: year, playing: st.playing, speeds: SPEEDS, speed: st.speed,
+      label: (v) => String(v),
+      speedLabel: (v) => { const n = v.toLocaleString(lang()); return v === 1 ? L('1 year a second', '1 año por segundo') : L(`${n} years a second`, `${n} años por segundo`); },
+      onToggle: () => togglePlay(inst), onSeek: (v) => seek(inst, v), onSpeed: (v) => { st.speed = v; },
+    };
     const title = year != null
       ? L(`${year}: ${fmtNumber(sites.length)} sites`, `${year}: ${fmtNumber(sites.length)} sitios`)
       : String(inst.options.show) === 'removed' ? L('Removed from the list', 'Retirados de la lista')
       : L(`${fmtNumber(sites.length)} World Heritage sites`, `${fmtNumber(sites.length)} sitios del Patrimonio Mundial`);
-    const note = year != null ? L('Each year, the sites on the list.', 'Cada año, los sitios de la lista.')
+    const note = year != null ? L('The sites on the list in each year. Drag to any year, or change the speed.', 'Los sitios de la lista en cada año. Arrastra hasta cualquier año o cambia la velocidad.')
       : L('UNESCO’s list after its July 2026 session. Ringed in red: in danger. Tap a site for its card.', 'La lista de la UNESCO tras su sesión de julio de 2026. Con anillo rojo: en peligro. Toca un sitio para ver su ficha.');
     if (inst.options.colour === 'year') {
-      return { kind: 'gradient', title, stops: SEQUENTIAL.plasma.slice(1), min: String(FIRST), max: String(LAST), note, actions };
+      return { kind: 'gradient', title, stops: SEQUENTIAL.plasma.slice(1), min: String(FIRST), max: String(LAST), note, actions, player };
     }
     if (String(inst.options.show) === 'removed' && year == null) {
       return { kind: 'categories', title, items: sites.map((s) => ({ color: '#9aa0a6', label: `${siteName(s)} (${s.y}–${gone(s)})`, shape: 'dot' as const })), note: L('Sites taken off the list, and the years they were on it.', 'Sitios retirados de la lista y los años en que estuvieron en ella.'), actions };
     }
     return {
-      kind: 'categories', title, note, actions,
+      kind: 'categories', title, note, actions, player,
       items: [
         { color: CAT_COLOR.c, label: `${catName('c', true)}: ${fmtNumber(count((s) => s.c === 'c'))}`, shape: 'dot' },
         { color: CAT_COLOR.n, label: `${catName('n', true)}: ${fmtNumber(count((s) => s.c === 'n'))}`, shape: 'dot' },
@@ -253,7 +290,7 @@ export const heritage: LayerDef = {
       out.push({ label: siteName(s), sub: [catName(s.c), s.cc.map(countryName).join(', '), String(s.y)].filter(Boolean).join(' · '),
         icon: s.c === 'n' ? '🌿' : s.c === 'm' ? '⛰️' : '🏛️', lon: s.at[0], lat: s.at[1], score: sc + Math.min(10, s.pop / 20), wz: 9, dot: s,
         // Shown whatever the filter's options were (a removed site with the removed ones).
-        prepare: (i) => { const want = gone(s) != null ? 'removed' : 'all'; if (!visible(i).includes(s)) { APP?.setOption(i.def.id, 'show', want); (i.state as { playing?: boolean; year?: number }).playing = false; } },
+        prepare: (i) => { const want = gone(s) != null ? 'removed' : 'all'; if (!visible(i).includes(s)) { APP?.setOption(i.def.id, 'show', want); leaveTimeline(i); } },
         open: (ui) => siteCard(s, ui) });
     }
     return out.sort((a, b) => b.score - a.score).slice(0, 8);
@@ -304,11 +341,15 @@ const AGES: { value: string; label: { en: string; es: string }; from: number; to
 ];
 const tx2 = (x?: { en: string; es: string }) => (x ? (es() ? x.es || x.en : x.en) : '');
 /** Years of a date string, for "12,000 years ago" or "1876". */
+/** An invention's year as its story says it: from its date ("-36" is 36 BC; `t`, the year on a line with no year
+ * zero, is one more for the years BC, so it read "35 BC" for the Long Count). */
 function when(it: Invention): string {
-  if (it.t < -10000) return L(`${fmtNumber(-it.t)} years ago`, `hace ${fmtNumber(-it.t)} años`);
-  if (it.t < 0) return L(`${Math.ceil(-it.t)} BC`, `${Math.ceil(-it.t)} a. C.`);
-  if (it.t < 1000) return L(`AD ${Math.floor(it.t)}`, `${Math.floor(it.t)} d. C.`);
-  return String(Math.floor(it.t));
+  const y = Number.parseInt(it.date, 10);
+  if (!Number.isFinite(y)) return String(Math.floor(it.t));
+  if (y < -10000) return L(`${fmtNumber(-y)} years ago`, `hace ${fmtNumber(-y)} años`);
+  if (y < 0) return L(`${-y} BC`, `${-y} a. C.`);
+  if (y < 1000) return L(`AD ${y}`, `${y} d. C.`);
+  return String(y);
 }
 function shownInventions(inst: LayerInstance): Invention[] {
   const age = AGES.find((a) => a.value === inst.options.age) ?? AGES[0];

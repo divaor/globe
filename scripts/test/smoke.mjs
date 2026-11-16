@@ -1809,7 +1809,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const marked = await page.waitForFunction(() => window.__spoken.length >= 1 && document.querySelectorAll('.tour-s.reading').length === 1, null, { timeout: 5000, polling: 'raf' }).then(() => 1, () => 0);
   const v1 = await page.evaluate(() => ({ spoken: window.__spoken.slice() }));
   v1.marked = marked;
-  await page.click('.tour-tools [aria-label="Auto"]');
+  // (A tour plays by itself from the start: no need to press ▶.)
   await page.waitForFunction(() => window.atlas.learn['tour']?.i >= 1, null, { timeout: 30000 }).catch(() => {});
   const v2 = await page.evaluate(() => ({ i: window.atlas.learn['tour']?.i, n: window.__spoken.length, first: window.__spoken.findIndex((s) => /átomos/i.test(s.text)) }));
   check(v1.spoken[0]?.voice === 'Paulina' && /Los primeros átomos/.test(v1.spoken[0]?.text) && v1.marked === 1 && v2.i === 1 && v2.n >= 3,
@@ -3660,6 +3660,303 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   const es = await legend();
   check(/plantas donde crecen/.test(es) && /Árboles/.test(es) && /Cactus y suculentas/.test(es), 'Spanish: "plantas donde crecen", Árboles, Cactus y suculentas…');
   check(!errors.length, `no page errors in Green planet${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
+// 30. Fixes from the phone test (v0.31.1), on a phone. A see-through picture (the Maya Long Count's glyphs) sits on
+// paper on a dark card and full screen; the Long Count's card says 36 BC, as its story does, and "Open its story"
+// opens the story paused with all its controls, its X going back to the inventions map; World Heritage's "Watch the
+// list grow" has play and pause, a year slider (that stays put while the legend is redrawn) and a speed slider; a
+// story opened from On this day has its controls, and its X comes back to the day; a quiz and the daily challenge
+// put the filters away (no site names on "Where is…?") and bring them back after. A guided tour plays by itself
+// and stops at its last stop; the screen stays on while a tour or a story plays. The travel guide leaves "← Montreal"
+// after showing an animal or a park; an animal's call plays Commons' MP3 copy, and goes on in the small player when
+// its card closes. An architect's trail: its dots open their cards, and a card's Show on the map flies there.
+{
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political,inventions&c=-93,16.7,6&lang=en&theme=dark');
+  await page.evaluate(() => window.atlas.app.setTheme('dark'));
+  await page.waitForFunction(() => /\d+ inventions/.test(document.querySelector('.legend')?.textContent ?? ''), null, { timeout: 30000 }).catch(() => {});
+
+  // Pictures: a see-through PNG on paper, a JPEG as it is.
+  // (A black ring on nothing, drawn by the page: a PNG keeps what is see-through, a JPEG fills it in.)
+  const drawn = (type) => page.evaluate((type) => { const c = document.createElement('canvas'); c.width = c.height = 64; const g = c.getContext('2d'); g.lineWidth = 6; g.beginPath(); g.arc(32, 32, 20, 0, 7); g.stroke(); return c.toDataURL(type); }, type);
+  const png = await drawn('image/png');
+  const pic = async (src) => {
+    await page.evaluate((src) => window.atlas.shell.card.showCustom('🖼️', 'Picture', '', [], [], [], Promise.resolve(src)), src);
+    await page.waitForFunction(() => { const i = document.querySelector('.country-card:not([hidden]) .card-img'); return i && !i.hidden; }, null, { timeout: 5000 }).catch(() => {});
+    return page.evaluate(() => { const i = document.querySelector('.country-card:not([hidden]) .card-img'); return i ? { cls: i.className, bg: getComputedStyle(i).backgroundColor } : null; });
+  };
+  const p1 = await pic(png);
+  await page.evaluate(() => document.querySelector('.country-card:not([hidden]) .card-img')?.click());
+  await page.waitForTimeout(500);
+  const z = await page.evaluate(() => { const i = document.querySelector('.zoom-img'); return i ? { cls: i.className, bg: getComputedStyle(i).backgroundColor } : null; });
+  await page.keyboard.press('Escape');
+  const jpg = await drawn('image/jpeg');
+  const p2 = await pic(jpg);
+  check(/see-through/.test(p1?.cls ?? '') && p1.bg === 'rgb(247, 244, 236)' && /see-through/.test(z?.cls ?? '') && z.bg === 'rgb(247, 244, 236)' && !/see-through/.test(p2?.cls ?? 'see-through'),
+    `a see-through picture sits on paper on a dark card (${p1?.bg}) and full screen (${z?.bg}); a JPEG does not (${p2?.cls})`);
+  await page.evaluate(() => window.atlas.shell.card.hide());
+
+  // The Long Count: 36 BC on its card, and its story opened with all its controls.
+  await page.evaluate(() => { window.atlas.app.renderer.view.flyTo({ lon: -93.004, lat: 16.7028, zoom: 7 }, 0); window.atlas.app.renderer.requestRender(); });
+  await page.waitForTimeout(1200);
+  const xy = await page.evaluate(() => window.atlas.app.renderer.view.project(-93.004, 16.7028));
+  if (xy) await page.touchscreen.tap(xy[0], xy[1]);
+  await page.waitForFunction(() => /Long Count/.test(document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? ''), null, { timeout: 8000 }).catch(() => {});
+  const card = await page.evaluate(() => document.querySelector('.country-card:not([hidden]) .rows')?.textContent ?? '');
+  check(/When\s*36 BC/.test(card), `the Long Count's card says 36 BC, as its story does (${/When[^W]*/.exec(card)?.[0] ?? card.slice(0, 40)})`);
+  await page.evaluate(() => [...document.querySelectorAll('.country-card:not([hidden]) button')].find((b) => /Open its story/.test(b.textContent))?.click());
+  await page.waitForSelector('.warbar', { timeout: 20000 }).catch(() => {});
+  await page.waitForTimeout(1500);
+  const bar = await page.evaluate(() => {
+    const vis = (sel) => { const e = document.querySelector(sel); return !!e && getComputedStyle(e).display !== 'none' && e.getBoundingClientRect().width > 0; };
+    return { mode: window.atlas.app.mode, guided: !!document.querySelector('.warbar.guided'), exit: vis('.warbar .wb-exit'), play: vis('.warbar .tb-play'), nav: vis('.warbar .wb-nav'), paused: document.querySelector('.warbar .tb-play')?.getAttribute('aria-label'), title: document.querySelector('.warbar .wb-title')?.textContent ?? '' };
+  });
+  check(bar.mode === 'inventions' && !bar.guided && bar.exit && bar.play && bar.nav && bar.paused === 'Play', `"Open its story" opens the story paused with its play, steps and X (${bar.mode}: ${bar.title}; guided ${bar.guided}, X ${bar.exit}, play ${bar.play} "${bar.paused}", steps ${bar.nav})`);
+  await page.evaluate(() => document.querySelector('.warbar .wb-exit')?.click());
+  await page.waitForTimeout(1500);
+  await page.evaluate(() => { if (document.querySelector('.legend-body')?.hidden) document.querySelector('.legend-toggle')?.click(); });
+  const back = await page.evaluate(() => ({ mode: window.atlas.app.mode, bar: !!document.querySelector('.warbar'), stack: window.atlas.app.layers.map((l) => l.def.id).join(','), legend: document.querySelector('.legend')?.textContent ?? '' }));
+  check(!back.mode && !back.bar && /inventions/.test(back.stack) && /\d+ inventions/.test(back.legend), `its X goes back to the inventions map (${back.stack}; ${/\d+ inventions/.exec(back.legend)?.[0]})`);
+
+  // On this day: a story opened from the list has its controls, and its X comes back to the same day.
+  await page.evaluate(() => window.atlas.learn['openOnThisDay'](new Date(2026, 10, 14)));
+  await page.waitForSelector('.otd-story', { timeout: 30000 }).catch(() => {});
+  const otdStory = await page.evaluate(() => document.querySelector('.otd-story')?.dataset.story ?? '');
+  await page.evaluate(() => document.querySelector('.otd-story')?.click());
+  await page.waitForSelector('.warbar', { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(1500);
+  const ob = await page.evaluate(() => {
+    const x = document.querySelector('.warbar .wb-exit');
+    return { mode: window.atlas.app.mode, guided: !!document.querySelector('.warbar.guided'), x: !!x && getComputedStyle(x).display !== 'none', label: x?.getAttribute('aria-label') ?? '' };
+  });
+  await page.evaluate(() => document.querySelector('.warbar .wb-exit')?.click());
+  await page.waitForTimeout(2000);
+  const od = await page.evaluate(() => ({ mode: window.atlas.app.mode, date: document.querySelector('.otd-date')?.textContent ?? '', open: !!document.querySelector('.otd-stories') }));
+  check(!!otdStory && ob.mode === otdStory.split('/')[0] && !ob.guided && ob.x && /back to the list/.test(ob.label) && !od.mode && od.open && /14 November/.test(od.date),
+    `On this day, 14 November: ${otdStory} opens with its controls, and its X ("${ob.label}") comes back to the list (${od.date})`);
+  await page.evaluate(() => window.atlas.shell.sheet.close());
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'inventions']));
+
+  // World Heritage: play, pause, the year and speed sliders, back to today's list.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'heritage']));
+  await page.waitForFunction(() => /World Heritage sites/.test(document.querySelector('.legend')?.textContent ?? ''), null, { timeout: 30000 }).catch(() => {});
+  await page.evaluate(() => { if (document.querySelector('.legend-body')?.hidden) document.querySelector('.legend-toggle')?.click(); });
+  await page.evaluate(() => [...document.querySelectorAll('.legend button')].find((b) => /Watch the list grow/.test(b.textContent))?.click());
+  await page.waitForTimeout(1500);
+  const seek0 = await page.$('.lg-seek');
+  const y = () => page.evaluate(() => Number(/(\d{4}): [\d,]+ sites/.exec(document.querySelector('.legend')?.textContent ?? '')?.[1] ?? 0));
+  const y1 = await y();
+  await page.waitForTimeout(1500);
+  const y2 = await y();
+  const same = await page.evaluate((el) => el === document.querySelector('.lg-seek') && el.isConnected, seek0);
+  check(y1 >= 1978 && y2 > y1 && same, `"Watch the list grow" plays (${y1} → ${y2}) under a year slider that stays put as the legend is redrawn (${same})`);
+  await page.evaluate(() => document.querySelector('.lg-play')?.click());
+  const p0 = await y();
+  await page.waitForTimeout(1500);
+  const p1y = await y();
+  const play = await page.evaluate(() => document.querySelector('.lg-play')?.getAttribute('aria-label'));
+  check(p0 === p1y && play === 'Play', `⏸ pauses it (${p0} → ${p1y}; the button now says ${play})`);
+  await page.evaluate(() => { const s = document.querySelector('.lg-seek'); s.value = '2000'; s.dispatchEvent(new Event('input', { bubbles: true })); });
+  await page.waitForTimeout(500);
+  const at2000 = await page.evaluate(() => /2000: ([\d,]+) sites/.exec(document.querySelector('.legend')?.textContent ?? '')?.[1] ?? '');
+  await page.evaluate(() => { const s = document.querySelector('.lg-speed'); s.value = '0'; s.dispatchEvent(new Event('input', { bubbles: true })); });
+  await page.waitForTimeout(300);
+  const slow = await page.evaluate(() => document.querySelector('.lg-pace')?.textContent ?? '');
+  await page.evaluate(() => document.querySelector('.lg-play')?.click());
+  await page.waitForTimeout(2600);
+  const s1 = await y();
+  await page.evaluate(() => { const s = document.querySelector('.lg-speed'); s.value = s.max; s.dispatchEvent(new Event('input', { bubbles: true })); });
+  await page.waitForTimeout(300);
+  const fast = await page.evaluate(() => document.querySelector('.lg-pace')?.textContent ?? '');
+  await page.waitForTimeout(1500);
+  const s2 = await y();
+  check(Number(at2000.replace(/,/g, '')) > 500 && /0\.5 years a second/.test(slow) && s1 - 2000 <= 2 && /8 years a second/.test(fast) && s2 - s1 >= 6,
+    `the year slider goes to 2000 (${at2000} sites); slowest ${slow} (2000 → ${s1} in 2.6 s), fastest ${fast} (→ ${s2} in 1.5 s)`);
+  await page.evaluate(() => [...document.querySelectorAll('.legend button')].find((b) => /Back to today’s list/.test(b.textContent))?.click());
+  await page.waitForTimeout(600);
+  const today = await page.evaluate(() => ({ leg: document.querySelector('.legend')?.textContent ?? '', player: !!document.querySelector('.lg-player') }));
+  check(/[\d,]+ World Heritage sites/.test(today.leg) && /Watch the list grow/.test(today.leg) && !today.player, `"Back to today’s list" ends the timeline (${/[\d,]+ World Heritage sites/.exec(today.leg)?.[0]})`);
+
+  // A quiz puts the filters away and brings them back; so does the daily challenge.
+  await page.evaluate(() => window.atlas.learn['startQuiz']('find', 'world'));
+  await page.waitForFunction(() => window.atlas.learn.quiz?.kind === 'find', null, { timeout: 20000 }).catch(() => {});
+  await page.waitForTimeout(800);
+  const inQuiz = await page.evaluate(() => window.atlas.app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id).join(','));
+  await page.evaluate(() => window.atlas.learn['stopQuiz']());
+  await page.waitForTimeout(1500);
+  const after = await page.evaluate(() => window.atlas.app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id).join(','));
+  check(inQuiz === 'political' && after === 'political,heritage', `"Where is…?" puts the World Heritage filter away (${inQuiz}) and brings it back after (${after})`);
+  await page.evaluate(() => { try { for (const k of Object.keys(localStorage)) if (/daily/.test(k)) localStorage.removeItem(k); } catch {} });
+  await page.evaluate(() => window.atlas.learn['startQuiz']('daily', 'world'));
+  await page.waitForFunction(() => window.atlas.learn.quiz?.kind === 'daily', null, { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(800);
+  const daily = await page.evaluate(() => ({ kind: window.atlas.learn.quiz?.kind, stack: window.atlas.app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id).join(',') }));
+  await page.evaluate(() => document.querySelector('.learn-card .tool-head button[aria-label="Close"]')?.click());
+  await page.waitForTimeout(1500);
+  const after2 = await page.evaluate(() => window.atlas.app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id).join(','));
+  check(daily.kind === 'daily' && daily.stack === 'political' && after2 === 'political,heritage', `the daily challenge puts the filters away too (${daily.stack}) and its X brings them back (${after2})`);
+  check(!errors.length, `no page errors in the phone-test fixes${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+{
+  // A guided tour plays by itself from its first stop and stops at its last (↺ plays it again); the screen is kept
+  // on while a tour or a story plays (the Screen Wake Lock, answered here by a stand-in that records each lock).
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => {
+    try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {}
+    window.__wake = { held: 0, asked: 0 };
+    Object.defineProperty(navigator, 'wakeLock', { configurable: true, value: { request: async () => {
+      window.__wake.asked++; window.__wake.held++;
+      let gone = false;
+      return { release: async () => { if (!gone) { gone = true; window.__wake.held--; } }, addEventListener() {} };
+    } } });
+  });
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(url + '#p=globe&l=political&c=0,20,1.2&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.evaluate(() => window.atlas.learn['openTours']());
+  await page.waitForTimeout(600);
+  await page.evaluate(() => document.querySelector('[data-tour="Giants and ancients: the great trees"]')?.click());
+  await page.waitForSelector('.learn-card:not([hidden]) .tour-auto', { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(2500);
+  const t0 = await page.evaluate(() => ({ auto: window.atlas.learn['tour']?.auto, state: document.querySelector('.tour-auto')?.dataset.state, n: window.atlas.learn['tour']?.steps.length, wake: { ...window.__wake } }));
+  check(t0.auto === true && t0.state === 'playing' && t0.wake.held === 1, `a guided tour plays by itself from its first stop (${t0.state}) and keeps the screen on (${t0.wake.held} lock held)`);
+  // To the last stop; it plays on to its end and stops there.
+  await page.evaluate(() => { const tr = window.atlas.learn['tour']; tr.i = tr.steps.length - 2; document.querySelector('.learn-card [aria-label="Next"]')?.click(); });
+  await page.waitForFunction(() => document.querySelector('.tour-auto')?.dataset.state === 'again', null, { timeout: 25000 }).catch(() => {});
+  await page.waitForTimeout(1500);
+  const t1 = await page.evaluate(() => ({ i: window.atlas.learn['tour']?.i, auto: window.atlas.learn['tour']?.auto, state: document.querySelector('.tour-auto')?.dataset.state, title: document.querySelector('.tour-auto')?.getAttribute('title'), wake: { ...window.__wake } }));
+  check(t1.i === t0.n - 1 && t1.auto === false && t1.state === 'again' && t1.wake.held === 0, `at its end it stays on its last stop (${(t1.i ?? 0) + 1}/${t0.n}, "${t1.title}") instead of starting over, and lets the screen sleep (${t1.wake.held} held)`);
+  await page.evaluate(() => document.querySelector('.tour-auto')?.click());
+  await page.waitForTimeout(2500);
+  const t2 = await page.evaluate(() => ({ i: window.atlas.learn['tour']?.i, auto: window.atlas.learn['tour']?.auto, held: window.__wake.held }));
+  await page.evaluate(() => window.atlas.learn['stopTour']());
+  await page.waitForTimeout(500);
+  const t3 = await page.evaluate(() => window.__wake.held);
+  check(t2.i === 0 && t2.auto === true && t2.held === 1 && t3 === 0, `↺ plays it again from its first stop (${(t2.i ?? 0) + 1}, held ${t2.held}); closing the tour lets go of the screen (${t3})`);
+  // A Time travel story playing keeps the screen on; paused, it does not.
+  await page.evaluate(() => window.atlas.time.stories.eras.open('scientific-revolution'));
+  await page.waitForSelector('.warbar', { timeout: 30000 }).catch(() => {});
+  await page.waitForTimeout(2000);
+  const s1 = await page.evaluate(() => ({ playing: document.querySelector('.warbar .tb-play')?.getAttribute('aria-label') === 'Pause', held: window.__wake.held }));
+  await page.evaluate(() => document.querySelector('.warbar .tb-play')?.click());
+  await page.waitForTimeout(500);
+  const s2 = await page.evaluate(() => window.__wake.held);
+  await page.evaluate(() => document.querySelector('.warbar .wb-exit')?.click());
+  await page.waitForTimeout(800);
+  check(s1.playing && s1.held === 1 && s2 === 0, `a story playing keeps the screen on (${s1.held} held); paused, it lets it sleep (${s2})`);
+  check(!errors.length, `no page errors in the tour and wake checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+{
+  // The travel guide: an animal or a park opened from Montreal's See tab leaves "← Montreal", back to the same tab. An
+  // animal's call plays Commons' MP3 copy (answered here by a stand-in tone) with the app's player; closed, its card
+  // leaves the small player in the top bar, whose ■ stops it.
+  const n = 8000 * 20, wav = Buffer.alloc(44 + n);
+  wav.write('RIFF', 0); wav.writeUInt32LE(36 + n, 4); wav.write('WAVE', 8); wav.write('fmt ', 12); wav.writeUInt32LE(16, 16); wav.writeUInt16LE(1, 20); wav.writeUInt16LE(1, 22);
+  wav.writeUInt32LE(8000, 24); wav.writeUInt32LE(8000, 28); wav.writeUInt16LE(1, 32); wav.writeUInt16LE(8, 34); wav.write('data', 36); wav.writeUInt32LE(n, 40);
+  for (let i = 0; i < n; i++) wav[44 + i] = 128 + Math.round(60 * Math.sin((2 * Math.PI * 330 * i) / 8000));
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=-73.6,45.5,5&lang=en');
+  const asked = [];
+  await ctx.route('https://upload.wikimedia.org/**', (route) => {
+    const u = route.request().url();
+    if (!/\/transcoded\/|\.(ogg|oga|opus|mp3|flac|wav)$/i.test(u)) return route.continue();
+    asked.push(u);
+    const m = /bytes=(\d+)-(\d*)/.exec(route.request().headers()['range'] ?? '');
+    if (!m) return route.fulfill({ status: 200, body: wav, contentType: 'audio/wav', headers: { 'accept-ranges': 'bytes' } });
+    const a = Number(m[1]), b = m[2] ? Math.min(Number(m[2]), wav.length - 1) : wav.length - 1;
+    return route.fulfill({ status: 206, body: wav.subarray(a, b + 1), contentType: 'audio/wav', headers: { 'accept-ranges': 'bytes', 'content-range': `bytes ${a}-${b}/${wav.length}` } });
+  });
+  await page.evaluate(() => window.atlas.guide.openCity('montreal', 'see'));
+  await page.waitForSelector('[data-guide="wildlife"] [data-animal]', { timeout: 30000 }).catch(() => {});
+  // An animal with a call (the moose, if it is one of Montreal's).
+  const pick = await page.evaluate(async () => {
+    const ids = [...document.querySelectorAll('[data-guide="wildlife"] [data-animal]')].map((b) => b.dataset.animal);
+    const d = await (await fetch('data/wild/animals.json')).json();
+    const withCall = ids.filter((id) => d.animals.find((a) => a.id === id)?.snd);
+    return withCall.includes('alces-alces') ? 'alces-alces' : withCall[0] ?? ids[0];
+  });
+  await page.evaluate((id) => document.querySelector(`[data-guide="wildlife"] [data-animal="${id}"]`)?.click(), pick);
+  await page.waitForTimeout(1200);
+  const g1 = await page.evaluate(() => ({ card: document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? '', back: document.querySelector('.guide-back')?.textContent ?? '', sheet: !!document.querySelector('.sheet:not([hidden])') }));
+  // Its call.
+  await page.evaluate(() => document.querySelector('.country-card:not([hidden]) .wild-sound .clip-play')?.click());
+  await page.waitForFunction(() => /playing/.test(document.querySelector('.country-card:not([hidden]) .wild-sound .item-clip')?.className ?? ''), null, { timeout: 10000 }).catch(() => {});
+  const call = await page.evaluate(() => ({ cls: document.querySelector('.country-card:not([hidden]) .wild-sound .item-clip')?.className ?? '', native: !!document.querySelector('.country-card audio') }));
+  check(!!g1.card && /Montreal/.test(g1.back) && /playing/.test(call.cls) && !call.native && asked.some((u) => /\/transcoded\/.+\.mp3$/.test(u)),
+    `an animal from Montreal's See tab (${g1.card}) leaves "${g1.back.trim()}"; its call plays Commons' MP3 copy in the app's player (${asked.length} asked: ${(asked[0] ?? '').replace(/^.*\//, '')})`);
+  // Its card closed: the call goes on, in the small player; its ■ stops it.
+  await page.evaluate(() => document.querySelector('.country-card:not([hidden]) .card-close')?.click());
+  await page.waitForFunction(() => { const m = document.querySelector('.clip-mini'); return m && !m.hidden; }, null, { timeout: 5000 }).catch(() => {});
+  const mini = await page.evaluate(() => ({ shown: !document.querySelector('.clip-mini')?.hidden, name: document.querySelector('.clip-mini-name')?.textContent ?? '', playing: !document.querySelector('audio') || true }));
+  await page.evaluate(() => document.querySelector('.clip-mini-stop')?.click());
+  await page.waitForTimeout(600);
+  const stopped = await page.evaluate(() => !!document.querySelector('.clip-mini')?.hidden);
+  check(mini.shown && !!mini.name && stopped, `with its card closed the call goes on in the small player ("${mini.name}"), and its ■ stops it (${stopped ? 'gone' : 'still there'})`);
+  // Back to Montreal, on its See tab; then a park, and back again.
+  await page.evaluate(() => document.querySelector('.guide-back-go')?.click());
+  await page.waitForTimeout(1200);
+  const g2 = await page.evaluate(() => ({ city: document.querySelector('.guide-city')?.dataset.city, tab: document.querySelector('.guide-tabs .chip.on')?.dataset.tab, chip: !!document.querySelector('.guide-back') }));
+  // A sight in Paris opens its story; "← Paris" leaves the story and comes back.
+  await page.evaluate(() => window.atlas.guide.openCity('paris', 'see'));
+  await page.waitForSelector('.guide-city [data-sight]', { timeout: 20000 }).catch(() => {});
+  const park = await page.evaluate(() => { const b = document.querySelector('.guide-city [data-sight]'); b?.click(); return b?.querySelector('.guide-item-title')?.textContent ?? ''; });
+  await page.waitForTimeout(2500);
+  const g3 = await page.evaluate(() => ({ back: /Paris/.test(document.querySelector('.guide-back')?.textContent ?? ''), mode: window.atlas.app.mode }));
+  await page.evaluate(() => document.querySelector('.guide-back-go')?.click());
+  await page.waitForTimeout(1200);
+  const g4 = await page.evaluate(() => (window.atlas.app.mode ? `still in ${window.atlas.app.mode}` : document.querySelector('.guide-city')?.dataset.city));
+  // Its X closes the guide without leaving a way back.
+  await page.evaluate(() => window.atlas.shell.sheet.isOpen('guide-city') && document.querySelector('.sheet-head .icon-btn')?.click());
+  await page.waitForTimeout(600);
+  const g5 = await page.evaluate(() => !!document.querySelector('.guide-back'));
+  check(g2.city === 'montreal' && g2.tab === 'see' && !g2.chip && !!park && g3.back && !!g3.mode && g4 === 'paris' && !g5,
+    `"← Montreal" reopens its See tab (${g2.city}, ${g2.tab}); a sight in Paris (${park}) opens its story (${g3.mode}) and "← Paris" leaves it for the guide (${g4}); the guide's own X leaves no way back`);
+  check(!errors.length, `no page errors in the travel guide's way back and the calls${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+{
+  // An architect's trail on the map: a tap on a dot opens its building's card, whose "Show on the map" flies there;
+  // the trail's chip takes it off the map. A building opened from a city's guide goes on the map as a dot of its own.
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=2.17,41.4,5&lang=en');
+  await page.evaluate(() => window.atlas.guide.load());
+  const gaudi = await page.evaluate(async () => { const r = await fetch('data/artguide/architecture.json').then((x) => x.json()); return r.architects.find((a) => a[1] === 'Antoni Gaudí')[0]; });
+  await page.evaluate((id) => window.atlas.art.openArchitect(id), gaudi);
+  await page.waitForSelector('[data-art="map"]', { timeout: 20000 }).catch(() => {});
+  await page.evaluate(() => document.querySelector('[data-art="map"]')?.click());
+  await page.waitForTimeout(2500);
+  // Close in on Barcelona, where his buildings are, and tap the Sagrada Família's dot.
+  const pt = await page.evaluate(() => window.atlas.art['trail']?.pts.find((p) => /Sagrada|Holy Family/.test(p.label)) ?? null);
+  await page.evaluate((at) => { window.atlas.app.renderer.view.flyTo({ lon: at[0], lat: at[1], zoom: 14 }, 0); window.atlas.app.renderer.requestRender(); }, pt?.at ?? [2.17, 41.4]);
+  await page.waitForTimeout(1500);
+  const chip = await page.evaluate(() => document.querySelector('.art-trail-chip')?.textContent ?? '');
+  const xy = await page.evaluate((at) => window.atlas.app.renderer.view.project(at[0], at[1]), pt?.at ?? [0, 0]);
+  if (xy) await page.touchscreen.tap(xy[0], xy[1]);
+  await page.waitForTimeout(1200);
+  const card = await page.evaluate(() => ({ title: document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? '', links: [...document.querySelectorAll('.country-card:not([hidden]) .card-actions .pill')].map((b) => b.textContent) }));
+  check(!!pt && /Antoni Gaudí/.test(chip) && /Sagrada|Holy Family/.test(card.title) && card.links.includes('Show on the map'), `Gaudí's trail on the map ("${chip.trim()}"): a tap on a dot opens ${card.title}, with Show on the map (${card.links.join(', ')})`);
+  // Show on the map: the card goes, the map stays on the trail at the place.
+  await page.evaluate(() => window.atlas.app.renderer.view.flyTo({ lon: 0, lat: 20, zoom: 3 }, 0));
+  await page.evaluate(() => [...document.querySelectorAll('.country-card:not([hidden]) .card-actions .pill')].find((b) => b.textContent === 'Show on the map')?.click());
+  await page.waitForTimeout(2500);
+  const there = await page.evaluate((at) => { const v = window.atlas.app.renderer.view; return { card: !!document.querySelector('.country-card:not([hidden])'), near: Math.abs(v.lon - at[0]) < 0.05 && Math.abs(v.lat - at[1]) < 0.05, zoom: v.zoom, n: window.atlas.art['trail']?.pts.length }; }, pt?.at ?? [0, 0]);
+  check(!there.card && there.near && there.zoom >= 13 && there.n > 1, `Show on the map flies to it (zoom ${Math.round(there.zoom)}) with the card put away, the trail kept (${there.n} dots)`);
+  await page.evaluate(() => document.querySelector('.art-trail-x')?.click());
+  await page.waitForTimeout(400);
+  const off = await page.evaluate(() => ({ trail: window.atlas.art['trail'], chip: !!document.querySelector('.art-trail-chip') }));
+  // A building from Barcelona's Buildings tab: Show on the map puts it on the map as its own dot.
+  await page.evaluate(() => window.atlas.guide.openCity('barcelona', 'buildings'));
+  await page.waitForSelector('.guide-tab [data-building]', { timeout: 15000 }).catch(() => {});
+  await page.evaluate(() => document.querySelector('.guide-tab [data-building]')?.click());
+  await page.waitForTimeout(1500);
+  await page.evaluate(() => [...document.querySelectorAll('.country-card:not([hidden]) .card-actions .pill')].find((b) => b.textContent === 'Show on the map')?.click());
+  await page.waitForTimeout(2500);
+  const one = await page.evaluate(() => ({ n: window.atlas.art['trail']?.pts.length, chip: document.querySelector('.art-trail-chip')?.textContent ?? '' }));
+  check(off.trail === null && !off.chip && one.n === 1 && !!one.chip, `the chip's ✕ takes the trail off the map; a building from Barcelona's guide goes on the map as its own dot ("${one.chip.trim()}")`);
+  check(!errors.length, `no page errors on the art trails${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

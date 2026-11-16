@@ -31,7 +31,20 @@ export interface LegendItem {
 /** A button under a legend (open a chart, swap two filters...). */
 export interface LegendAction { label: string; icon?: string; onClick: () => void; primary?: boolean }
 
-interface LegendBase { title?: string; note?: string; actions?: LegendAction[] }
+/**
+ * A timeline under a legend (World Heritage's "Watch the list grow"): play and pause, a slider through the years and
+ * one for how fast it plays. The legend keeps its controls while it is redrawn, so a slider can be dragged as it plays.
+ */
+export interface LegendPlayer {
+  min: number; max: number; value: number; playing: boolean;
+  /** The speeds to choose from, slow to fast (units a second), and the one in use. */
+  speeds: number[]; speed: number;
+  /** The value and a speed in words ("1995", "2 years a second"). */
+  label: (v: number) => string; speedLabel: (v: number) => string;
+  onToggle: () => void; onSeek: (v: number) => void; onSpeed: (v: number) => void;
+}
+
+interface LegendBase { title?: string; note?: string; actions?: LegendAction[]; player?: LegendPlayer }
 
 export type Legend = LegendBase & (
   | { kind: 'categories'; items: LegendItem[] }

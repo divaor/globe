@@ -2,6 +2,7 @@
 // from Wikimedia Commons, with their licence and author), what it is, its Red List status, size, weight and lifespan,
 // the countries it lives in, and three buttons: where it lives, the best places to see it, and its relatives.
 import { h } from '../ui/dom';
+import { clipEl, type Clip } from '../ui/audio';
 import { lang, fmtCompact } from '../app/i18n';
 import { recordSeen } from '../learn/progress';
 import { commons, commonsPage, commonsCredit, wikiOf } from '../artguide/data';
@@ -32,15 +33,23 @@ export function statusBadge(a: Animal): HTMLElement | null {
   return h('span', { class: 'wild-status', style: `background:${s.color};color:${s.ink}`, 'data-status': a.st }, a.st === 'EX' && a.gone ? L(`Extinct · ${a.gone}`, `Extinto · ${a.gone}`) : statusName(a.st));
 }
 
-/** A line under a recording: its licence and author, once Commons answers. */
-function soundEl(file: string): HTMLElement {
-  const audio = h('audio', { controls: '', preload: 'none', src: `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file.replace(/ /g, '_'))}`, class: 'wild-audio' });
+/** An animal's call: played by the app's player (one sound at a time, the small player in the top bar to stop it once
+ * its card is closed) from Commons' MP3 copy, which every phone plays and which comes down quickly, else from the
+ * original recording (an Ogg, FLAC or WAV file), whole; with its licence and author once Commons answers. */
+function soundEl(a: Animal): HTMLElement {
+  const file = a.snd!;
+  const name = (file.charAt(0).toUpperCase() + file.slice(1)).replace(/ /g, '_'), enc = encodeURIComponent(name);
+  const orig = a.sndh ? `https://upload.wikimedia.org/wikipedia/commons/${a.sndh}/${enc}` : `https://commons.wikimedia.org/wiki/Special:FilePath/${enc}`;
+  const src = a.sndh && !/\.mp3$/i.test(name) ? `https://upload.wikimedia.org/wikipedia/commons/transcoded/${a.sndh}/${enc}/${enc}.mp3` : orig;
+  const clip: Clip = { src, orig, page: commonsPage(file), start: 0, end: 0, by: { en: '', es: '' }, license: '' };
+  const player = clipEl(clip, { title: `${a.e} ${nm(a)}`, credit: false });
+  player.querySelector('.clip-label')!.textContent = L('Listen to its call', 'Escucha su sonido');
   const credit = h('p', { class: 'card-note art-credit' }, h('a', { href: commonsPage(file), target: '_blank', rel: 'noopener' }, L('Sound: Wikimedia Commons', 'Sonido: Wikimedia Commons')));
   void commonsCredit(file).then((c) => {
     if (!c || !credit.isConnected) return;
     credit.firstChild!.textContent = L(`Sound: ${c.licence}${c.author ? ` · ${c.author}` : ''} · Wikimedia Commons`, `Sonido: ${c.licence}${c.author ? ` · ${c.author}` : ''} · Wikimedia Commons`);
   });
-  return h('div', { class: 'wild-sound' }, h('div', { class: 'wild-sound-title' }, `🔊 ${L('Its call', 'Su sonido')}`), audio, credit);
+  return h('div', { class: 'wild-sound' }, h('div', { class: 'wild-sound-title' }, `🔊 ${L('Its call', 'Su sonido')}`), player, credit);
 }
 
 export function animalCard(card: CardFn, a: Animal, x: WildLinks) {
@@ -67,7 +76,7 @@ export function animalCard(card: CardFn, a: Animal, x: WildLinks) {
   if (badge) extra.append(h('p', { class: 'wild-status-row' }, h('span', { class: 'muted small' }, L('Red List: ', 'Lista Roja: ')), badge));
   const credit = creditEl(a.img ?? null);
   if (credit) extra.append(credit);
-  if (a.snd) extra.append(soundEl(a.snd));
+  if (a.snd) extra.append(soundEl(a));
   card(a.e, nm(a), a.sci, rows, links, [], a.img ? Promise.resolve(commons(a.img, 480)) : undefined, extra);
 }
 

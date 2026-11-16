@@ -57,14 +57,17 @@ export class TimeTravel {
         enter: () => m.pick(), exit: () => m.exit(), tap: (lon, lat) => m.tap(lon, lat),
       });
     }
-    // A filter's card (the inventions map) opens the story its item comes from, at its step.
-    app.on('open-story', (kind, id, step) => void (async () => {
+    // A filter's card (the inventions map, an animal, a plant, a life) or On this day opens the story its item comes
+    // from, at its step, paused and with all its controls (guided tours call show(), which leaves those to the tour).
+    // (`back`: where the story's X goes back to, the list it was opened from.)
+    app.on('open-story', (kind, id, step, back) => void (async () => {
       const k = kind as StoryKind;
       const m = this.stories[k];
       if (!m) return;
       if (app.mode && app.mode !== k) await this.modes.find((x) => x.id === app.mode)?.exit();
       shell.sheet.close();
-      await m.show(String(id), Number(step));
+      shell.card.hide();
+      await m.openAt(String(id), Number(step), typeof back === 'function' ? (back as () => void) : undefined);
     })());
     shell.addDock({ id: 'time', icon: History, label: () => t('timeTravelShort'), order: 30, onClick: () => this.open() });
     // In a mode, taps go to the mode instead of selecting today's countries.
