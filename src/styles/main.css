@@ -609,6 +609,15 @@ html.mode-time.mode-story .zoombar { bottom: calc(var(--wb-h, 200px) + 96px + va
 @media (max-width: 720px) {
   .clip-mini { position: absolute; top: 54px; right: 0; margin: 0; max-width: min(240px, calc(100vw - 150px)); }
 }
+/* An art trail on the map (artguide.ts): its name and how many places, with ✕ to take it off. Under the top bar, in
+   the middle; the dots themselves open their cards. */
+.art-trail-chip { position: absolute; top: calc(70px + var(--safe-t)); left: 50%; transform: translateX(-50%); z-index: 3; display: flex;
+  align-items: center; gap: 4px; max-width: calc(100vw - 150px); padding: 3px 3px 3px 12px; border-radius: 999px; font-size: 13px; font-weight: 650; }
+.art-trail-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.art-trail-x { flex: none; width: 30px; height: 30px; display: grid; place-items: center; border: 0; border-radius: 999px; background: none;
+  color: var(--muted); cursor: pointer; }
+html.mode-story .art-trail-chip, html.ambient .art-trail-chip { display: none; }
+@media (max-width: 720px) { .art-trail-chip { top: calc(118px + var(--safe-t)); max-width: calc(100vw - 32px); } }
 /* "← Montreal": back to a city's travel guide after a tap in it showed something else (guide/guide.ts). */
 .guide-back { position: absolute; top: calc(70px + var(--safe-t)); left: calc(12px + var(--safe-l)); z-index: 3; display: flex; align-items: center;
   max-width: calc(100vw - 24px); border-radius: 999px; padding: 3px; animation: pop .18s ease-out; }

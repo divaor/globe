@@ -3671,7 +3671,7 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
 // put the filters away (no site names on "Where is…?") and bring them back after. A guided tour plays by itself
 // and stops at its last stop; the screen stays on while a tour or a story plays. The travel guide leaves "← Montreal"
 // after showing an animal or a park; an animal's call plays Commons' MP3 copy, and goes on in the small player when
-// its card closes.
+// its card closes. An architect's trail: its dots open their cards, and a card's Show on the map flies there.
 {
   const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political,inventions&c=-93,16.7,6&lang=en&theme=dark');
   await page.evaluate(() => window.atlas.app.setTheme('dark'));
@@ -3916,6 +3916,47 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   check(g2.city === 'montreal' && g2.tab === 'see' && !g2.chip && !!park && g3.back && !!g3.mode && g4 === 'paris' && !g5,
     `"← Montreal" reopens its See tab (${g2.city}, ${g2.tab}); a sight in Paris (${park}) opens its story (${g3.mode}) and "← Paris" leaves it for the guide (${g4}); the guide's own X leaves no way back`);
   check(!errors.length, `no page errors in the travel guide's way back and the calls${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+{
+  // An architect's trail on the map: a tap on a dot opens its building's card, whose "Show on the map" flies there;
+  // the trail's chip takes it off the map. A building opened from a city's guide goes on the map as a dot of its own.
+  const { page, errors, ctx } = await open({ ...devices['Pixel 7'] }, '#p=globe&l=political&c=2.17,41.4,5&lang=en');
+  await page.evaluate(() => window.atlas.guide.load());
+  const gaudi = await page.evaluate(async () => { const r = await fetch('data/artguide/architecture.json').then((x) => x.json()); return r.architects.find((a) => a[1] === 'Antoni Gaudí')[0]; });
+  await page.evaluate((id) => window.atlas.art.openArchitect(id), gaudi);
+  await page.waitForSelector('[data-art="map"]', { timeout: 20000 }).catch(() => {});
+  await page.evaluate(() => document.querySelector('[data-art="map"]')?.click());
+  await page.waitForTimeout(2500);
+  // Close in on Barcelona, where his buildings are, and tap the Sagrada Família's dot.
+  const pt = await page.evaluate(() => window.atlas.art['trail']?.pts.find((p) => /Sagrada|Holy Family/.test(p.label)) ?? null);
+  await page.evaluate((at) => { window.atlas.app.renderer.view.flyTo({ lon: at[0], lat: at[1], zoom: 14 }, 0); window.atlas.app.renderer.requestRender(); }, pt?.at ?? [2.17, 41.4]);
+  await page.waitForTimeout(1500);
+  const chip = await page.evaluate(() => document.querySelector('.art-trail-chip')?.textContent ?? '');
+  const xy = await page.evaluate((at) => window.atlas.app.renderer.view.project(at[0], at[1]), pt?.at ?? [0, 0]);
+  if (xy) await page.touchscreen.tap(xy[0], xy[1]);
+  await page.waitForTimeout(1200);
+  const card = await page.evaluate(() => ({ title: document.querySelector('.country-card:not([hidden]) .card-title')?.textContent ?? '', links: [...document.querySelectorAll('.country-card:not([hidden]) .card-actions .pill')].map((b) => b.textContent) }));
+  check(!!pt && /Antoni Gaudí/.test(chip) && /Sagrada|Holy Family/.test(card.title) && card.links.includes('Show on the map'), `Gaudí's trail on the map ("${chip.trim()}"): a tap on a dot opens ${card.title}, with Show on the map (${card.links.join(', ')})`);
+  // Show on the map: the card goes, the map stays on the trail at the place.
+  await page.evaluate(() => window.atlas.app.renderer.view.flyTo({ lon: 0, lat: 20, zoom: 3 }, 0));
+  await page.evaluate(() => [...document.querySelectorAll('.country-card:not([hidden]) .card-actions .pill')].find((b) => b.textContent === 'Show on the map')?.click());
+  await page.waitForTimeout(2500);
+  const there = await page.evaluate((at) => { const v = window.atlas.app.renderer.view; return { card: !!document.querySelector('.country-card:not([hidden])'), near: Math.abs(v.lon - at[0]) < 0.05 && Math.abs(v.lat - at[1]) < 0.05, zoom: v.zoom, n: window.atlas.art['trail']?.pts.length }; }, pt?.at ?? [0, 0]);
+  check(!there.card && there.near && there.zoom >= 13 && there.n > 1, `Show on the map flies to it (zoom ${Math.round(there.zoom)}) with the card put away, the trail kept (${there.n} dots)`);
+  await page.evaluate(() => document.querySelector('.art-trail-x')?.click());
+  await page.waitForTimeout(400);
+  const off = await page.evaluate(() => ({ trail: window.atlas.art['trail'], chip: !!document.querySelector('.art-trail-chip') }));
+  // A building from Barcelona's Buildings tab: Show on the map puts it on the map as its own dot.
+  await page.evaluate(() => window.atlas.guide.openCity('barcelona', 'buildings'));
+  await page.waitForSelector('.guide-tab [data-building]', { timeout: 15000 }).catch(() => {});
+  await page.evaluate(() => document.querySelector('.guide-tab [data-building]')?.click());
+  await page.waitForTimeout(1500);
+  await page.evaluate(() => [...document.querySelectorAll('.country-card:not([hidden]) .card-actions .pill')].find((b) => b.textContent === 'Show on the map')?.click());
+  await page.waitForTimeout(2500);
+  const one = await page.evaluate(() => ({ n: window.atlas.art['trail']?.pts.length, chip: document.querySelector('.art-trail-chip')?.textContent ?? '' }));
+  check(off.trail === null && !off.chip && one.n === 1 && !!one.chip, `the chip's ✕ takes the trail off the map; a building from Barcelona's guide goes on the map as its own dot ("${one.chip.trim()}")`);
+  check(!errors.length, `no page errors on the art trails${errors.length ? ': ' + errors.join(' | ') : ''}`);
   await ctx.close();
 }
 

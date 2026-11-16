@@ -372,8 +372,9 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
     works", museum by museum, filtered by painting, sculpture, antiquities or other treasures, by period and by artist.
   - **Buildings** (the guide's Buildings tab): a city's notable buildings with their architects, by style.
   - **Artist and architect trails:** every museum that holds an artist's best-known works (Van Gogh, 56 works in 21
-    museums), or every building of an architect (Gaudí's twelve), on the map, and Plan a trip turns the trail into a
-    trip in the travel guide.
+    museums), or every building of an architect (Gaudí's twelve), on the map (a tap on a dot opens its museum or
+    building, and the trail's chip at the top takes it off), and Plan a trip turns the trail into a trip in the
+    travel guide. A work's, museum's or building's card opened from these lists has Show on the map.
   - **Map filters:** art museums (sized by visitors a year), masterpieces (where they hang, by kind and period) and
     architectural styles (4,877 buildings, 2,763 of them with a style, from Gothic to Art Nouveau and today's towers).
   - **Now in:** the art items of the Time travel stories say where each work is today ("Now in: Louvre Museum,
