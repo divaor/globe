@@ -50,12 +50,15 @@ let focus: PlantFocus | null = null;
 
 const showOf = (inst: LayerInstance) => String(inst.options.show ?? 'all') as 'all' | PlantGroup;
 const statusOf = (inst: LayerInstance) => String(inst.options.status ?? 'all') as 'all' | 'endangered';
+/** A view's own plants (an ambient playlist's: the deserts' cacti), by scientific name, comma-separated. */
+const pickOf = (inst: LayerInstance) => String(inst.options.pick ?? '');
 function okFor(inst: LayerInstance): (p: Plant) => boolean {
-  const show = showOf(inst), status = statusOf(inst);
+  const show = showOf(inst), status = statusOf(inst), pick = pickOf(inst);
   if (focus?.plant) { const f = focus.plant; return (p) => p === f; }
+  if (pick) { const only = new Set(pick.split(',')); return (p) => only.has(p.sci); }
   return (p) => (status === 'all' || threatened(p.st)) && (show === 'all' || p.g === show);
 }
-const keyOf = (inst: LayerInstance) => (focus ? `focus:${focus.id}` : `${showOf(inst)}|${statusOf(inst)}`);
+const keyOf = (inst: LayerInstance) => (focus ? `focus:${focus.id}` : `${showOf(inst)}|${statusOf(inst)}|${pickOf(inst)}`);
 
 /** How much a plant stands for a place: its fame, and much more for plants of a small range (the saguaro in the
  * Sonoran desert) than for those found on whole continents. */
@@ -489,14 +492,24 @@ export const ecoregions: LayerDef = {
     { value: 'biome', label: { en: 'Biome', es: 'Bioma' }, icon: '🌿' },
     { value: 'own', label: { en: 'Each ecoregion', es: 'Cada ecorregión' }, icon: '🎨' },
     { value: 'protection', label: { en: 'How protected', es: 'Cuánto está protegida' }, icon: '🛡️' },
+  ] },
+  // One biome in its colours and named (the deserts, the rainforests), the others dimmed (v0.31.3).
+  { id: 'only', label: { en: 'Highlight', es: 'Resaltar' }, type: 'select', default: 'all', choices: [
+    { value: 'all', label: { en: 'All biomes', es: 'Todos los biomas' } },
+    ...Object.keys(BIOMES).map((b) => ({ value: b, label: { en: BIOMES[Number(b)].en, es: BIOMES[Number(b)].es } })),
   ] }],
   load: loadEco,
   onOptionsChanged() { LC.requestRender(); },
   drawFill(rc, inst) {
     const { ctx, path } = rc;
     const by = String(inst.options.by ?? 'biome');
+    const only = Number(inst.options.only ?? 0) || 0;
+    const dim = rc.theme.dark ? 'rgba(62,72,88,0.55)' : 'rgba(196,201,209,0.6)';
     const groups = new Map<string, Shape<EcoProps>[]>();
-    for (const s of rc.visibleShapes(eco)) { const c = colorOf(s.feature.properties, by); (groups.get(c) ?? groups.set(c, []).get(c)!).push(s); }
+    for (const s of rc.visibleShapes(eco)) {
+      const c = only && s.feature.properties.b !== only ? dim : colorOf(s.feature.properties, by);
+      (groups.get(c) ?? groups.set(c, []).get(c)!).push(s);
+    }
     for (const [c, list] of groups) {
       ctx.beginPath();
       for (const s of list) path(s.feature as never);
@@ -507,15 +520,21 @@ export const ecoregions: LayerDef = {
     for (const s of rc.visibleShapes(eco)) path(s.feature as never);
     ctx.stroke();
   },
-  labels(rc) {
-    if (rc.webZoom < 3.4) return;
+  labels(rc, inst) {
+    // With a biome highlighted, only its ecoregions are named, before the plants and animals on them; a view of its
+    // own (an ambient playlist's) may name just a few, by their English names, comma-separated.
+    const only = Number(inst.options.only ?? 0) || 0;
+    const named = inst.options.named ? new Set(String(inst.options.named).split(',')) : null;
+    if (rc.webZoom < (only ? 2.6 : 3.4)) return;
     for (const s of rc.visibleShapes(eco)) {
       const p = s.feature.properties;
+      if ((only && p.b !== only) || (named && !named.has(p.n))) continue;
       const [w, so, e, n] = s.bbox;
       const span = (e < w ? e + 360 : e) - w;
       if (span < 32 / rc.webZoom ** 2 && rc.webZoom < 5) continue;
       const lon = w + span / 2, at = rc.project(lon > 180 ? lon - 360 : lon, (so + n) / 2);
-      if (at) rc.labels.add({ text: es() && p.es ? p.es : p.n, x: at[0], y: at[1], priority: 120 + Math.min(200, span * 4), size: 10, weight: 600, color: rc.theme.label, halo: rc.theme.labelHalo });
+      // A highlighted one may sit just beside its middle when a plant's disc is there.
+      if (at) rc.labels.add({ text: es() && p.es ? p.es : p.n, x: at[0], y: at[1], priority: (only ? 520 : 120) + Math.min(200, span * 4), size: only ? 10.5 : 10, weight: only ? 700 : 600, color: rc.theme.label, halo: rc.theme.labelHalo, ...(only ? { gap: 2, avoid: [] } : {}) });
     }
   },
   legend(inst) {
@@ -525,9 +544,11 @@ export const ecoregions: LayerDef = {
       items: [1, 2, 3, 4].map((k) => ({ color: PROTECTION[k].color, label: `${tt(PROTECTION[k])} (${eco.filter((s) => s.feature.properties.h === k).length})` })),
       note: L('“Half protected”: at least half of it is protected land. “Imperiled”: little natural land left to save (RESOLVE, Nature Needs Half).', '“Protegida en la mitad”: al menos la mitad es tierra protegida. “En peligro”: queda poca tierra natural que salvar (RESOLVE, Nature Needs Half).'),
     };
+    const only = Number(inst.options.only ?? 0) || 0;
     return {
       kind: 'categories', title: L('Ecoregions by biome', 'Ecorregiones por bioma'),
-      items: Object.keys(BIOMES).map(Number).map((b) => ({ color: BIOMES[b].color, label: `${biomeName(b)} (${eco.filter((s) => s.feature.properties.b === b).length})` })),
+      items: Object.keys(BIOMES).map(Number).filter((b) => !only || b === only).map((b) => ({ color: BIOMES[b].color, label: `${biomeName(b)} (${eco.filter((s) => s.feature.properties.b === b).length})` }))
+        .concat(only ? [{ color: '#5a6476', label: L('The other biomes', 'Los demás biomas') }] : []),
       note: by === 'own' ? L('Each ecoregion in its own colour from RESOLVE’s map. Tap one for what lives there.', 'Cada ecorregión con su propio color del mapa de RESOLVE. Toca una para ver qué vive allí.') : L('Tap an ecoregion for its plants and animals.', 'Toca una ecorregión para ver sus plantas y animales.'),
     };
   },

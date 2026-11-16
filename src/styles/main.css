@@ -139,7 +139,10 @@ html.map-light .brand-name { color: #1d2433; text-shadow: 0 0 6px rgba(255,255,2
 .arow-name { font-weight: 650; font-size: 14px; flex: 1; min-width: 0; }
 .arow-tools { display: flex; gap: 2px; }
 .arow-opacity, .arow-opt { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
-.arow-opt .select { flex: 1; }
+/* The labels the same width and the controls the rest of the row: a select with a long choice (Status: "Critically
+   endangered") no longer grows past the row. */
+.arow-opacity > .small, .arow-opt > .small { flex: none; width: 6.6em; }
+.arow-opt .select { flex: 1; min-width: 0; width: 0; }
 .badge { font-size: 11px; padding: 2px 8px; border-radius: 10px; background: var(--chip-on); color: var(--accent); }
 .badge.err { background: rgba(255,107,107,.15); color: var(--danger); }
 .chip-row { display: flex; flex-wrap: wrap; gap: 6px; }

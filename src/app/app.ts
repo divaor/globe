@@ -12,6 +12,8 @@ import { DETAIL_LAYERS, satellite } from '../layers/imagery';
 import { mapView, styledTheme, MAP_STYLES, type MapStyle } from '../engine/style';
 import type { InfoRow, LayerDef, LayerInstance } from '../layers/types';
 
+/** Ambient mode's names: the view's own only, all of the map's, or none. */
+export type AmbientNames = 'view' | 'all' | 'none';
 export interface ActiveSpec { id: string; opacity: number; options?: Record<string, string | boolean> }
 
 interface Saved {
@@ -27,7 +29,7 @@ interface Saved {
   quality?: 'auto' | 'high' | 'low';
   gpuMotion?: boolean;
   labelScale?: number;
-  ambient?: { speed: number; cycle: boolean; clock: boolean; playlist?: string; secs?: number; narrate?: boolean };
+  ambient?: { speed: number; cycle: boolean; clock: boolean; playlist?: string; secs?: number; narrate?: boolean; names?: AmbientNames };
   camera?: { lon: number; lat: number; zoom: number };
   /** The map style and the states and provinces (engine/style.ts). */
   view?: { style?: MapStyle; regions?: boolean; regionNames?: boolean };
@@ -46,7 +48,10 @@ export class App {
   themeId: 'dark' | 'light' = 'dark';
   selection: string | null = null;
   /** Ambient mode (the screensaver): its playlist ('' for the filters on the map), seconds a view, reading aloud. */
-  ambient = { on: false, speed: 1, cycle: false, clock: true, playlist: '', secs: 40, narrate: false };
+  /** Ambient mode; `names`: the view's own names only (the map's countries, cities and seas hidden), all, or none. */
+  ambient: { on: boolean; speed: number; cycle: boolean; clock: boolean; playlist: string; secs: number; narrate: boolean; names: AmbientNames } = { on: false, speed: 1, cycle: false, clock: true, playlist: '', secs: 40, narrate: false, names: 'view' };
+  /** While ambient mode plays (its playlist's filters, fewer names), what is saved is the map from before it. */
+  held: Saved | null = null;
   private listeners = new Map<string, Set<Listener>>();
   private saveTimer = 0;
   /** Modes such as 'timeline' or 'pangea' take over the map; null = normal exploring. */
@@ -182,6 +187,19 @@ export class App {
     const inst = this.instance(id);
     if (!inst) return;
     inst.opacity = v;
+    this.renderer.requestRender();
+    this.save();
+  }
+
+  /** Replaces a filter's options: its defaults, then these. */
+  setOptions(id: string, options: Record<string, string | boolean>) {
+    const inst = this.instance(id);
+    if (!inst) return;
+    const next: Record<string, string | boolean> = {};
+    for (const o of inst.def.options ?? []) next[o.id] = o.default;
+    inst.options = Object.assign(next, options);
+    inst.def.onOptionsChanged?.(inst);
+    this.emit('layers');
     this.renderer.requestRender();
     this.save();
   }
@@ -332,14 +350,14 @@ export class App {
   }
 
   // ---- persistence ------------------------------------------------------------------------
-  private snapshot(): Saved {
+  snapshot(): Saved {
     const r = this.renderer;
     return {
       lang: this.lang, es: this.spanish, theme: this.themeId, projection: this.projection,
       active: this.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, opacity: Math.round(l.opacity * 100) / 100, options: l.options })),
       labels: r.settings.labels, graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality, gpuMotion: r.settings.gpuMotion,
       labelScale: r.settings.labelScale,
-      ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock, playlist: this.ambient.playlist, secs: this.ambient.secs, narrate: this.ambient.narrate },
+      ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock, playlist: this.ambient.playlist, secs: this.ambient.secs, narrate: this.ambient.narrate, names: this.ambient.names },
       camera: r.view.camera(),
       view: { ...mapView },
     };
@@ -348,7 +366,8 @@ export class App {
   save() {
     clearTimeout(this.saveTimer);
     this.saveTimer = window.setTimeout(() => {
-      const s = this.snapshot();
+      // Ambient mode's own settings are saved as they are now; the rest as before it started.
+      const s = this.held ? { ...this.held, ambient: this.snapshot().ambient } : this.snapshot();
       try { localStorage.setItem(STORE_KEY, JSON.stringify(s)); } catch { /* private mode */ }
       if (!this.mode) history.replaceState(null, '', `#${this.shareHash(s)}`);
     }, 400);

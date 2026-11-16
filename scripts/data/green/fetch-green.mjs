@@ -185,6 +185,9 @@ async function eco() {
     const en = val(r, 'en'); const e = val(r, 'es');
     if (en && e && e !== en && !/[A-Z][a-z]+ (forests|woodlands|grasslands|desert|scrub|tundra|savanna)\b/.test(e)) es.set(norm(en), e);
   }
+  // Wikidata's Spanish labels that name something else (checked by hand).
+  const ES_FIX = { 'chihuahuan desert': 'Desierto de Chihuahua' };
+  for (const [k, v] of Object.entries(ES_FIX)) es.set(k, v);
   const t = read(topo);
   const geoms = t.objects.eco.geometries;
   for (const g of geoms) {

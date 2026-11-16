@@ -4,7 +4,7 @@
 import { h } from './dom';
 import { t, tx } from '../app/i18n';
 import type { App } from '../app/app';
-import type { Ticker } from '../engine/renderer';
+import type { Ticker, RenderSettings } from '../engine/renderer';
 import { playlist, itemTitle, itemWords, type PlayItem, type Playlist } from './playlists';
 import { canSpeak, speak, stopSpeaking } from './narrator';
 import type { ProjectionId } from '../engine/projections';
@@ -19,6 +19,8 @@ export class Ambient {
   private clockTimer = 0;
   private nextTimer = 0;
   private hintTimer = 0;
+  /** The map's names before ambient mode changed them. */
+  private names: { labels: RenderSettings['labels']; scale: number; layer: boolean; regions: boolean } | null = null;
   /** What was on the map before: filters with their options, projection and place, put back on exit. */
   private saved: { stack: { id: string; options: Record<string, string | boolean> }[]; projection: ProjectionId; camera: { lon: number; lat: number; zoom: number } } | null = null;
   /** The playlist playing, and where in it. */
@@ -62,6 +64,9 @@ export class Ambient {
     if (app.ambient.on) return;
     app.ambient.on = true;
     app.ambient.playlist = id;
+    // What is saved while it plays: the map as it is now (kept from a moment ago if ambient mode is restarted while the
+    // map is still coming back).
+    app.held ??= app.snapshot();
     app.save();
     app.select(null);
     document.documentElement.classList.add('ambient');
@@ -69,6 +74,20 @@ export class Ambient {
     try { await document.documentElement.requestFullscreen?.({ navigationUI: 'hide' } as FullscreenOptions); } catch { /* not allowed: still run windowed */ }
     await this.lock();
     const view = app.renderer.view;
+    // Names: by default only the view's own (the filters'), a little smaller; the map's countries, cities, seas, states
+    // and provinces hidden (turning, they came and went and covered the view). All of them, or none, in the screensaver's settings.
+    const r = app.renderer;
+    this.names = { labels: { ...r.settings.labels }, scale: r.settings.labelScale, layer: r.layerLabels, regions: r.regionLabels };
+    if (app.ambient.names !== 'all') r.settings.labels = { ...r.settings.labels, countries: false, capitals: false, cities: false, seas: false };
+    r.layerLabels = app.ambient.names !== 'none';
+    r.regionLabels = app.ambient.names === 'all';
+    // Names keep off the caption (at the top of a phone's screen, over the map).
+    r.keepOut = () => {
+      if (this.captionEl.hidden) return [];
+      const c = this.captionEl.getBoundingClientRect(), m = r.canvasRect();
+      return c.width ? [[c.left - m.left - 4, c.top - m.top - 4, c.right - m.left + 4, c.bottom - m.top + 4]] : [];
+    };
+    r.settings.labelScale = this.names.scale * 0.85;
     this.list = id ? playlist(id) : null;
     if (this.list) {
       this.saved = { stack: app.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, options: { ...l.options } })), projection: app.projection, camera: view.camera() };
@@ -131,7 +150,8 @@ export class Ambient {
     const proj = it.projection ?? 'globe';
     if (app.projection !== proj) app.setProjection(proj);
     await app.setStack(it.stack);
-    for (const [lid, o] of Object.entries(it.options ?? {})) for (const [key, v] of Object.entries(o)) app.setOption(lid, key, v);
+    // Each view's filters with its own options (and nothing left from the view before).
+    for (const lid of it.stack) app.setOptions(lid, it.options?.[lid] ?? {});
     if (it.fly) {
       const [lon, lat, zoom] = it.fly;
       view.flyTo({ lon, lat, zoom }, 2600);
@@ -177,17 +197,30 @@ export class Ambient {
     clearInterval(this.clockTimer);
     clearTimeout(this.nextTimer);
     if (this.list) stopSpeaking();
-    // A playlist changed the map: what was on it before comes back.
+    // A playlist changed the map: what was on it before comes back, and is saved again once it is back.
+    const release = () => { if (!app.ambient.on) { app.held = null; app.save(); } };
+    const changed = !!this.saved;
     if (this.saved) {
       const s = this.saved;
       if (app.projection !== s.projection) app.setProjection(s.projection);
       void app.setStack(s.stack.map((x) => x.id)).then(() => {
-        for (const x of s.stack) for (const [k, v] of Object.entries(x.options)) if (app.instance(x.id)?.options[k] !== v) app.setOption(x.id, k, v);
+        for (const x of s.stack) app.setOptions(x.id, x.options);
+        setTimeout(release, 1300);
       });
       app.renderer.view.flyTo(s.camera, 1200);
     }
     this.saved = null;
     this.list = null;
+    // The names as they were.
+    if (this.names) {
+      app.renderer.settings.labels = this.names.labels;
+      app.renderer.settings.labelScale = this.names.scale;
+      app.renderer.layerLabels = this.names.layer;
+      app.renderer.regionLabels = this.names.regions;
+      app.renderer.keepOut = null;
+      this.names = null;
+    }
+    if (!changed) release();
     this.captionEl.hidden = true;
     app.interaction.enabled = true;
     document.documentElement.classList.remove('ambient');

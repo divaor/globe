@@ -4115,6 +4115,159 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
   await ctx.close();
 }
 
+// 32. Ambient Green planet and steady names (v0.31.3), on a phone. While the globe turns, no name is cut off for a
+// frame and back (a simulated 60 fps clock: names lost to a neighbour fade out instead), and the map stops drawing
+// once the names have faded in. Ambient mode shows only the view's own names by default (a little smaller), all or
+// none as chosen in Settings or the screensaver's panel, and puts the map's names back afterwards, saved or not. The
+// Green planet's deserts and strange plants play over ecoregions with captions that say what is where. The legend's
+// selects are the same width. The Outline game frames a country's main body (the Netherlands without the Caribbean).
+{
+  const ctx = await browser.newContext({ ...devices['Pixel 7'] });
+  await ctx.addInitScript(() => { try { localStorage.setItem('atlas-globe:hinted', '1'); } catch {} });
+  await ctx.route(/wikidata\.org|wikimedia\.org|wikipedia\.org|wikivoyage\.org/, (r) => r.abort());
+  const page = await ctx.newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(url + '#p=globe&l=political&c=10,46,3&lang=en', { waitUntil: 'networkidle', timeout: 45000 }).catch(() => {});
+  await page.waitForFunction(() => window.atlas && (document.getElementById('splash')?.classList.contains('hide') ?? true), null, { timeout: 60000 });
+  await page.waitForTimeout(1500);
+  // Turning the globe, 150 frames at 60 fps (the clock is simulated: this browser draws slower than a phone).
+  const turn = await page.evaluate(async () => {
+    const app = window.atlas.app, v = app.renderer.view, L = app.renderer.labels;
+    const raf = () => new Promise((r) => requestAnimationFrame(() => r()));
+    const realNow = performance.now.bind(performance);
+    let virt = realNow();
+    performance.now = () => virt;
+    const full = [], seen = [], cands = [];
+    try {
+      v.lon = 0; v.lat = 46; v.zoom = 3; app.renderer.requestRender();
+      for (let i = 0; i < 10; i++) { virt += 16.7; await raf(); }
+      for (let i = 0; i < 150; i++) {
+        v.lon += 0.35; virt += 16.7; app.renderer.requestRender();
+        await raf();
+        full.push(new Set(L.drawn.map((d) => d.text)));
+        seen.push(new Set([...L.drawn.map((d) => d.text), ...L.ghosts]));
+        cands.push(new Set(L.items.map((l) => (l.caps ? l.text.toUpperCase() : l.text))));
+      }
+    } finally { performance.now = realNow; }
+    // A cut: a name drawn in full, then gone without fading while still on the map, and back within 10 frames.
+    let cuts = 0, fades = 0;
+    for (let i = 1; i < seen.length - 1; i++) for (const n of full[i - 1]) {
+      if (!full[i].has(n) && seen[i].has(n)) fades++;
+      if (seen[i].has(n) || !cands[i].has(n)) continue;
+      for (let j = i + 1; j < Math.min(seen.length, i + 11); j++) if (seen[j].has(n)) { cuts++; break; }
+    }
+    return { cuts, fades, avg: Math.round(full.reduce((a, f) => a + f.size, 0) / full.length) };
+  });
+  await page.waitForTimeout(1500);
+  const still = await page.evaluate(() => window.atlas.app.renderer.labels.fading);
+  check(turn.cuts === 0 && turn.avg >= 40 && !still,
+    `turning the globe: no name cut off and back (${turn.cuts} cuts in 150 frames, ${turn.avg} names a frame, ${turn.fades} faded out instead); still, the names stop fading`);
+
+  // Ambient mode, the view's own names (the default): the map's countries, cities and seas go, the filter's stay, a
+  // little smaller; after it, the names are back, and what was saved meanwhile kept them.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'plants']));
+  await page.evaluate(() => window.atlas.app.renderer.view.flyTo({ lon: -105, lat: 28, zoom: 3.4 }, 10));
+  await page.waitForTimeout(2500);
+  const before = await page.evaluate(() => { const r = window.atlas.app.renderer; return { scale: r.settings.labelScale, labels: { ...r.settings.labels }, names: r.labels.drawn.map((d) => d.text) }; });
+  const amb = async (names) => {
+    await page.evaluate((names) => { window.atlas.app.ambient.names = names; return window.atlas.shell.ambient.start(''); }, names);
+    await page.waitForTimeout(1800);
+    await page.evaluate(() => window.atlas.app.save());
+    await page.waitForTimeout(700);
+    const r = await page.evaluate(() => { const r = window.atlas.app.renderer; const saved = JSON.parse(localStorage.getItem('atlas-globe:v1') || '{}'); return { scale: r.settings.labelScale, countries: r.settings.labels.countries, cities: r.settings.labels.cities, layer: r.layerLabels, names: r.labels.drawn.map((d) => d.text), saved: saved.labels?.countries, savedScale: saved.labelScale }; });
+    await page.evaluate(() => window.atlas.shell.ambient.stop());
+    await page.waitForTimeout(800);
+    return r;
+  };
+  const plantName = (names) => names.some((n) => /Saguaro|cholla|Agave|Peyote|Prickly pear|cardón|Organ pipe|barrel/i.test(n));
+  const countryName = (names) => names.some((n) => /^(MEXICO|UNITED STATES)$/.test(n));
+  const v1 = await amb('view');
+  const after = await page.evaluate(() => { const r = window.atlas.app.renderer; return { scale: r.settings.labelScale, countries: r.settings.labels.countries, layer: r.layerLabels }; });
+  check(countryName(before.names) && !v1.countries && !v1.cities && v1.layer && Math.abs(v1.scale - before.scale * 0.85) < 0.01 && !countryName(v1.names) && !v1.names.some((n) => /^[A-Z ]{4,}$/.test(n))
+    && v1.saved !== false && Math.abs((v1.savedScale ?? 1) - before.scale) < 0.01 && after.countries === before.labels.countries && after.scale === before.scale && after.layer,
+    `ambient mode with the view's names: no country, state or sea names (${v1.names.length} names: ${v1.names.slice(0, 4).join(', ')}), at ${v1.scale.toFixed(2)}×; afterwards the names are back (saved meanwhile: countries ${v1.saved}, ${v1.savedScale}×)`);
+  const v2 = await amb('none');
+  const v3 = await amb('all');
+  check(v2.names.length === 0 && !v2.layer && countryName(v3.names),
+    `ambient names: None shows none (${v2.names.length}); All shows the map's (${v3.names.length}: ${v3.names.slice(0, 4).join(', ')})`);
+
+  // The setting is in Settings (and in the screensaver's panel), in Spanish too, and is kept.
+  await page.evaluate(() => window.atlas.shell.openSettings(true));
+  await page.waitForTimeout(500);
+  const segs = await page.$$eval('.ambient-names .seg-btn', (b) => b.map((x) => x.textContent));
+  await page.evaluate(() => [...document.querySelectorAll('.ambient-names .seg-btn')].find((b) => /None/.test(b.textContent))?.click());
+  await page.waitForTimeout(700);
+  const kept = await page.evaluate(() => JSON.parse(localStorage.getItem('atlas-globe:v1') || '{}').ambient?.names);
+  await page.evaluate(() => window.atlas.app.setLang('es'));
+  await page.evaluate(() => window.atlas.shell.openScreensaver());
+  await page.waitForTimeout(500);
+  const esSeg = await page.evaluate(() => document.querySelector('.ambient-names')?.textContent ?? '');
+  await page.evaluate(() => { window.atlas.app.setLang('en'); window.atlas.app.ambient.names = 'view'; window.atlas.shell.sheet?.close?.(); });
+  check(segs.join('|') === 'Only the view’s|All|None' && kept === 'none' && /Nombres en el mapa/.test(esSeg) && /Solo los de la vista/.test(esSeg),
+    `"Names on the map" in Settings (${segs.join(', ')}); None is kept; in Spanish in the screensaver's panel ("${esSeg.slice(0, 50)}")`);
+
+  // The Green planet: the deserts of North America and Borneo's strange plants over the ecoregions, with captions.
+  await page.evaluate(() => { const a = window.atlas.app.ambient; a.secs = 60; a.narrate = false; a.names = 'view'; });
+  await page.evaluate(() => window.atlas.shell.ambient.start('green'));
+  await page.waitForTimeout(800);
+  const view = async (k) => {
+    await page.evaluate((k) => { const a = window.atlas.shell.ambient; a.idx = k - 1; void a.next(); }, k);
+    await page.waitForFunction((k) => window.atlas.shell.ambient.info.index === k, k, { timeout: 30000 }).catch(() => {});
+    await page.waitForTimeout(4000);
+    return page.evaluate(() => {
+      const app = window.atlas.app;
+      return { ...window.atlas.shell.ambient.info, layers: app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id), opts: Object.fromEntries(app.layers.map((l) => [l.def.id, l.options])), cap: document.querySelector('.amb-caption')?.innerText ?? '', names: app.renderer.labels.drawn.map((d) => d.text), cam: app.renderer.view.camera() };
+    });
+  };
+  const desert = await view(2);
+  await page.evaluate(() => window.atlas.app.save());
+  await page.waitForTimeout(700);
+  const savedDuring = await page.evaluate(() => (JSON.parse(localStorage.getItem('atlas-globe:v1') || '{}').active ?? []).map((a) => a.id).join());
+  const borneo = await view(3);
+  await page.evaluate(() => window.atlas.shell.ambient.stop());
+  await page.waitForTimeout(2500);
+  const back = await page.evaluate(() => ({ layers: window.atlas.app.layers.filter((l) => !l.def.hidden).map((l) => l.def.id).join(), plants: { ...window.atlas.app.instance('plants')?.options }, saved: (JSON.parse(localStorage.getItem('atlas-globe:v1') || '{}').active ?? []).map((a) => a.id).join() }));
+  const deserts = ['Sonoran desert', 'Chihuahuan desert', 'Mojave desert', 'Baja California desert'];
+  check(desert.layers.join() === 'ecoregions,plants' && desert.opts.ecoregions?.only === '13' && desert.opts.plants?.pick && /deserts of North America/.test(desert.cap) && /Sonoran/.test(desert.cap) && /saguaro/.test(desert.cap)
+    && Math.abs(desert.cam.lon + 110) < 3 && plantName(desert.names) && desert.names.filter((n) => deserts.includes(n)).length >= 3
+    && desert.names.every((n) => deserts.includes(n) || /Saguaro|Organ pipe|cardón|cholla|barrel|Engelmann|Claret|Parry|Peyote/i.test(n)),
+    `Green planet, the deserts lit up (the other biomes dimmed); "${desert.cap.replace(/\s+/g, ' ').slice(0, 90)}…"; named on the map, only the deserts and their cacti: ${desert.names.join(', ')}`);
+  check(borneo.layers.join() === 'ecoregions,plants' && borneo.opts.ecoregions?.only === '1' && /Borneo and Sumatra/.test(borneo.cap) && /corpse lily/.test(borneo.cap) && Math.abs(borneo.cam.lon - 108) < 3
+    && borneo.names.some((n) => /^Borneo/.test(n)) && !borneo.names.some((n) => /Luzon|Java|Annamites/.test(n)) && borneo.names.some((n) => /Corpse lily|Titan arum|pitcher|rafflesia|bat flower/i.test(n)),
+    `Green planet, strange plants over Borneo and Sumatra's rainforests: ${borneo.names.join(', ')}`);
+  check(savedDuring === 'political,plants' && back.layers === 'political,plants' && !back.plants.pick && back.plants.show === 'all' && back.saved === 'political,plants',
+    `while a playlist plays, the map from before it is what is saved (${savedDuring}); afterwards it is back as it was (${back.layers}, plants: ${back.plants.show}${back.plants.pick ? ', still picked' : ''})`);
+
+  // The legend's selects, Show and Status of Animals of the world: the same width, inside the row.
+  await page.evaluate(() => window.atlas.app.setStack(['political', 'wild']));
+  await page.waitForTimeout(1500);
+  await page.evaluate(() => window.atlas.app.setOption('wild', 'status', 'endangered'));
+  await page.evaluate(() => window.atlas.shell.openFilters(true));
+  await page.waitForTimeout(800);
+  const sel = await page.evaluate(() => {
+    const row = [...document.querySelectorAll('.arow')].find((r) => r.querySelectorAll('.arow-opt .select').length >= 2);
+    if (!row) return null;
+    const rb = row.getBoundingClientRect();
+    const ss = [...row.querySelectorAll('.arow-opt .select')].map((x) => x.getBoundingClientRect());
+    return { n: ss.length, widths: ss.map((b) => Math.round(b.width)), rights: ss.map((b) => Math.round(b.right)), lefts: ss.map((b) => Math.round(b.left)), row: [Math.round(rb.left), Math.round(rb.right)], text: [...row.querySelectorAll('.arow-opt .select')].map((x) => x.selectedOptions[0]?.textContent) };
+  });
+  check(sel && Math.max(...sel.widths) - Math.min(...sel.widths) <= 1 && Math.max(...sel.lefts) - Math.min(...sel.lefts) <= 1 && Math.max(...sel.rights) <= sel.row[1],
+    `Animals of the world's selects line up: ${sel?.n} selects ${sel?.widths.join(' / ')} px wide (${(sel?.text ?? []).join(', ')}), inside the row`);
+
+  // The Outline game frames a country's main body.
+  const ink = await page.evaluate(() => Object.fromEntries(['NLD', 'FRA', 'PRT', 'NZL'].map((id) => {
+    const c = window.atlas.play.outline.shape(id, [], 0, 300);
+    const d = c.getContext('2d').getImageData(0, 0, c.width, c.height).data;
+    let n = 0; for (let i = 3; i < d.length; i += 4) if (d[i] > 0) n++;
+    return [id, Math.round((n / (c.width * c.height)) * 100)];
+  })));
+  check(Object.values(ink).every((x) => x >= 8),
+    `Outline frames the main body: ${Object.entries(ink).map(([k, v]) => `${k} ${v} %`).join(', ')} of the box (the Netherlands' Caribbean, France's overseas departments and the Azores left out of the frame)`);
+  check(!errors.length, `no page errors in v0.31.3's checks${errors.length ? ': ' + errors.join(' | ') : ''}`);
+  await ctx.close();
+}
+
 await browser.close();
 console.log(failures.length ? `\n${failures.length} check(s) failed` : '\nall checks passed');
 process.exit(failures.length ? 1 : 0);
