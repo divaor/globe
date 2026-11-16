@@ -1,0 +1,1131 @@
+{
+  "migrations": [
+    {
+      "id": "arctic-tern",
+      "emoji": "🕊️",
+      "name": { "en": "Arctic tern", "es": "Charrán ártico" },
+      "species": "Sterna paradisaea",
+      "group": "birds",
+      "km": 70900,
+      "kmNote": { "en": "a yearly loop (average of tracked birds)", "es": "un circuito anual (promedio de aves rastreadas)" },
+      "loop": true,
+      "text": { "en": "Terns tracked from Greenland and Iceland flew about 71,000 km a year, pole to pole and back: the longest migration known. They live two summers a year and see more daylight than any other animal.", "es": "Charranes rastreados desde Groenlandia e Islandia volaron unos 71 000 km al año, de polo a polo y de vuelta: la migración más larga conocida. Viven dos veranos al año y ven más luz que ningún otro animal." },
+      "months": [[-15,-62],[-35,-70],[-35,-70],[-25,-55],[-45,28],[-20.5,74.3],[-20.5,74.3],[-35,51],[-32,42],[-19,18],[8,-25],[0,-52]],
+      "path": [[-20.5,74.3],[-22,68],[-30,58],[-35,51],[-32,42],[-22,30],[-19,18],[-14,5],[-2,-10],[8,-25],[10,-38],[0,-52],[-15,-62],[-35,-70],[-25,-55],[-18,-40],[-25,-20],[-33,-5],[-40,10],[-45,28],[-40,45],[-30,60],[-22,68],[-20.5,74.3]],
+      "moments": [
+        {
+          "month": 6,
+          "text": { "en": "Nesting on Arctic coasts under the midnight sun.", "es": "Anidan en las costas árticas bajo el sol de medianoche." }
+        },
+        {
+          "month": 8,
+          "text": { "en": "A month-long feeding stop in the middle of the North Atlantic, about 1,000 km north of the Azores.", "es": "Una parada de casi un mes para comer en medio del Atlántico Norte, unos 1 000 km al norte de las Azores." }
+        },
+        {
+          "month": 2,
+          "text": { "en": "Southern summer: terns feed along the pack ice of the Weddell Sea, off Antarctica.", "es": "Verano austral: los charranes comen junto al hielo del mar de Weddell, frente a la Antártida." }
+        },
+        {
+          "month": 5,
+          "text": { "en": "Going home is faster: an S-shaped route up the middle of the Atlantic that rides the winds.", "es": "El regreso es más rápido: una ruta en forma de S por el centro del Atlántico, aprovechando los vientos." }
+        }
+      ],
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2836663/",
+        "https://phys.org/news/2010-01-arctic-terns-longest-animal-migration.html"
+      ]
+    },
+    {
+      "id": "monarch",
+      "emoji": "🦋",
+      "name": { "en": "Monarch butterfly (eastern population)", "es": "Mariposa monarca (población del este)" },
+      "species": "Danaus plexippus",
+      "group": "insects",
+      "km": 4500,
+      "kmNote": { "en": "one way in autumn, up to about (a single generation)", "es": "solo ida en otoño, hasta unos (una sola generación)" },
+      "loop": false,
+      "text": { "en": "Each autumn a \"super generation\" flies from Canada and the eastern US to a few fir-covered mountains in central Mexico, a place none of them has seen. In spring, three or four generations relay back north.", "es": "Cada otoño una \"supergeneración\" vuela desde Canadá y el este de EE. UU. hasta unos bosques de oyameles del centro de México, un lugar que ninguna ha visto. En primavera, tres o cuatro generaciones vuelven al norte en relevos." },
+      "months": [[-100.3,19.6],[-100.3,19.6],[-100.3,25.6],[-97.5,30.5],[-88,38.5],[-83,41.5],[-79.5,44],[-79.5,44],[-88,38.5],[-97.5,30.5],[-100.3,19.6],[-100.3,19.6]],
+      "path": [[-79.5,44],[-83,41.5],[-88,38.5],[-94,34.5],[-97.5,30.5],[-99.5,27.5],[-100.3,25.6],[-100.6,22.5],[-100.3,19.6]],
+      "moments": [
+        {
+          "month": 1,
+          "text": { "en": "Millions cling to oyamel firs in Michoacán and the State of Mexico, resting through winter.", "es": "Millones se cuelgan de los oyameles en Michoacán y el Estado de México y descansan todo el invierno." }
+        },
+        {
+          "month": 3,
+          "text": { "en": "The same butterflies head north and lay eggs on milkweed in northern Mexico and Texas, then die.", "es": "Las mismas mariposas vuelan al norte, ponen huevos en algodoncillos del norte de México y Texas, y mueren." }
+        },
+        {
+          "month": 7,
+          "text": { "en": "Three or four short-lived summer generations spread across the eastern US and southern Canada.", "es": "Tres o cuatro generaciones de verano, de vida corta, se extienden por el este de EE. UU. y el sur de Canadá." }
+        },
+        {
+          "month": 9,
+          "text": { "en": "The super generation flies south. It can live about eight months and does not breed until spring.", "es": "La supergeneración vuela al sur. Puede vivir unos ocho meses y no se reproduce hasta la primavera." }
+        },
+        {
+          "month": 11,
+          "text": { "en": "Arrival in central Mexico around the Day of the Dead, in early November.", "es": "Llegan al centro de México hacia el Día de Muertos, a principios de noviembre." }
+        }
+      ],
+      "sources": [
+        "https://monarchwatch.org/migration/",
+        "https://monarchconservation.org/monarch-status/the-monarchs-annual-cycle",
+        "https://monarchs.nwf.org/wp-content/uploads/2024/04/MigrationMap-NWF-2024.pdf",
+        "https://relay.nationalgeographic.com/proxy/distribution/public/amp/news/2017/10/monarch-butterfly-migration"
+      ]
+    },
+    {
+      "id": "wildebeest",
+      "emoji": "🐃",
+      "name": { "en": "Wildebeest (the Great Migration)", "es": "Ñu (la Gran Migración)" },
+      "species": "Connochaetes taurinus",
+      "group": "mammals",
+      "km": 1000,
+      "kmNote": { "en": "a yearly loop, roughly (estimates vary widely)", "es": "un circuito anual, aproximado (las estimaciones varían mucho)" },
+      "loop": true,
+      "text": { "en": "Over a million wildebeest, with hundreds of thousands of zebras and gazelles, circle the Serengeti and the Masai Mara each year, following the rains to fresh grass.", "es": "Más de un millón de ñus, con cientos de miles de cebras y gacelas, recorren en círculo el Serengueti y el Masái Mara cada año, siguiendo las lluvias hacia el pasto fresco." },
+      "months": [[34.98,-3],[34.98,-3],[34.95,-2.9],[34.85,-2.65],[34.8,-2.4],[34.2,-2.1],[34.9,-1.6],[35.05,-1.4],[35.05,-1.4],[35.2,-1.65],[35.2,-1.98],[35.15,-2.6]],
+      "path": [[34.98,-3],[34.85,-2.65],[34.8,-2.4],[34.45,-2.25],[34.2,-2.1],[34.45,-1.85],[34.9,-1.6],[35.05,-1.4],[35.2,-1.65],[35.2,-1.98],[35.15,-2.6],[34.98,-3]],
+      "moments": [
+        {
+          "month": 2,
+          "text": { "en": "About 8,000 calves a day are born on the short-grass plains around Ndutu, up to half a million in a few weeks.", "es": "Nacen unas 8 000 crías al día en las praderas de pasto corto de Ndutu, hasta medio millón en pocas semanas." }
+        },
+        {
+          "month": 6,
+          "text": { "en": "The herds cross the Grumeti River in the Western Corridor, where big crocodiles wait.", "es": "Las manadas cruzan el río Grumeti, en el Corredor Occidental, donde esperan grandes cocodrilos." }
+        },
+        {
+          "month": 8,
+          "text": { "en": "Peak of the Mara River crossings, between Tanzania and Kenya's Masai Mara.", "es": "Mayor número de cruces del río Mara, entre Tanzania y el Masái Mara de Kenia." }
+        },
+        {
+          "month": 11,
+          "text": { "en": "The short rains call the herds back south through the eastern Serengeti.", "es": "Las lluvias cortas llaman a las manadas de vuelta al sur por el este del Serengueti." }
+        }
+      ],
+      "sources": [
+        "https://science.nasa.gov/earth/earth-observatory/circling-the-serengeti-145568/",
+        "https://www.nationalgeographic.com/animals/article/wildebeest-great-migration-africa-serengeti",
+        "https://www.asiliaafrica.com/the-great-migration/when/"
+      ]
+    },
+    {
+      "id": "humpback-whale",
+      "emoji": "🐋",
+      "name": { "en": "Humpback whale (South Pacific)", "es": "Ballena jorobada (Pacífico sur)" },
+      "species": "Megaptera novaeangliae",
+      "group": "sea",
+      "km": 16000,
+      "kmNote": { "en": "round trip (about 8,000 km each way)", "es": "ida y vuelta (unos 8 000 km cada tramo)" },
+      "loop": false,
+      "text": { "en": "Humpbacks that feed off the Antarctic Peninsula swim to the warm coasts of Ecuador, Colombia and Panama to give birth: one of the longest mammal migrations known.", "es": "Las jorobadas que se alimentan frente a la península Antártica nadan hasta las costas cálidas de Ecuador, Colombia y Panamá para tener sus crías: una de las migraciones de mamíferos más largas que se conocen." },
+      "months": [[-62.5,-64.5],[-62.5,-64.5],[-62.5,-64.5],[-62.5,-64.5],[-77,-40],[-81.2,-1.5],[-78.4,3],[-77.7,6.3],[-78.4,3],[-81.2,-1.5],[-75,-25],[-77,-50]],
+      "path": [[-62.5,-64.5],[-66,-59],[-77,-50],[-77,-40],[-75,-30],[-75,-20],[-80.5,-8],[-81.7,-4.8],[-81.2,-1.5],[-78.4,3],[-77.7,6.3],[-79,8.2]],
+      "moments": [
+        {
+          "month": 2,
+          "text": { "en": "Summer feast: whales gulp krill in the bays of the Antarctic Peninsula.", "es": "Banquete de verano: las ballenas tragan kril en las bahías de la península Antártica." }
+        },
+        {
+          "month": 7,
+          "text": { "en": "Calving season off Ecuador and Colombia; males sing long, complex songs.", "es": "Temporada de nacimientos frente a Ecuador y Colombia; los machos cantan canciones largas y complejas." }
+        },
+        {
+          "month": 9,
+          "text": { "en": "Mothers rest with newborn calves in warm, shallow water off Colombia's Pacific coast.", "es": "Las madres descansan con sus crías recién nacidas en aguas cálidas y poco profundas del Pacífico colombiano." }
+        },
+        {
+          "month": 11,
+          "text": { "en": "Mothers and calves head back south toward the krill.", "es": "Madres y crías regresan al sur, hacia el kril." }
+        }
+      ],
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2390682",
+        "https://cascadiaresearch.org/files/Acevedo_et_al.pdf"
+      ]
+    },
+    {
+      "id": "grey-whale",
+      "emoji": "🐳",
+      "name": { "en": "Grey whale", "es": "Ballena gris" },
+      "species": "Eschrichtius robustus",
+      "group": "sea",
+      "km": 19000,
+      "kmNote": { "en": "round trip, about (16,000–22,000 km)", "es": "ida y vuelta, aproximado (16 000–22 000 km)" },
+      "loop": false,
+      "text": { "en": "Eastern Pacific grey whales swim between Arctic feeding seas and the warm lagoons of Baja California, where calves are born, hugging the coast almost all the way.", "es": "Las ballenas grises del Pacífico oriental nadan entre los mares árticos donde comen y las lagunas cálidas de Baja California, donde nacen las crías, casi siempre cerca de la costa." },
+      "months": [[-121.2,34.6],[-114.6,27.9],[-118.5,33.5],[-124.9,44],[-158,55.3],[-168.5,61.5],[-168.5,68.5],[-167,71],[-168.5,68.5],[-168.8,65.6],[-164.5,54.4],[-124.9,44]],
+      "path": [[-114.6,27.9],[-117.3,32],[-118.5,33.5],[-121.2,34.6],[-122.9,37.4],[-124.7,40.5],[-124.9,44],[-125.2,47.5],[-128.3,50.5],[-133,53],[-136.3,57],[-140.5,59.4],[-147,59.3],[-151.8,56.8],[-158,55.3],[-164.5,54.4],[-167.5,57.5],[-168.5,61.5],[-168.8,65.6],[-168.5,68.5],[-167,71]],
+      "moments": [
+        {
+          "month": 2,
+          "text": { "en": "Calving season in the lagoons of Baja California, where some whales come right up to small boats.", "es": "Temporada de nacimientos en las lagunas de Baja California, donde algunas ballenas se acercan a las lanchas." }
+        },
+        {
+          "month": 3,
+          "text": { "en": "Heading north: newly pregnant females go first; mothers with calves leave the lagoons last.", "es": "Rumbo al norte: primero van las hembras recién preñadas; las madres con crías dejan las lagunas al final." }
+        },
+        {
+          "month": 7,
+          "text": { "en": "Summer feeding: whales suck tiny crustaceans from the muddy floor of the Bering and Chukchi seas.", "es": "Alimentación de verano: las ballenas succionan pequeños crustáceos del fondo lodoso de los mares de Bering y de Chukchi." }
+        },
+        {
+          "month": 12,
+          "text": { "en": "Southbound whales pass Oregon and California, a winter treat for whale-watchers.", "es": "Las ballenas que bajan pasan frente a Oregón y California, un regalo de invierno para quienes las observan." }
+        }
+      ],
+      "sources": [
+        "https://www.fisheries.noaa.gov/species/gray-whale",
+        "https://oceantoday.noaa.gov/graywhalemigration/",
+        "https://archive.journeynorth.org/jnorth/tm/gwhale/MigrationRoute.html"
+      ]
+    },
+    {
+      "id": "bar-tailed-godwit",
+      "emoji": "🐦",
+      "name": { "en": "Bar-tailed godwit", "es": "Aguja colipinta" },
+      "species": "Limosa lapponica baueri",
+      "group": "birds",
+      "km": 29000,
+      "kmNote": { "en": "a yearly loop, with a non-stop leg of about 12,000 km", "es": "un circuito anual, con un tramo sin escalas de unos 12 000 km" },
+      "loop": true,
+      "text": { "en": "Godwits fly from Alaska to New Zealand in one go: about 11,000–13,000 km in 8 to 11 days, without eating, drinking or resting. The record, set in 2022 to Tasmania, is 13,560 km.", "es": "Las agujas vuelan de Alaska a Nueva Zelanda de un tirón: unos 11 000 a 13 000 km en 8 a 11 días, sin comer, beber ni descansar. El récord, de 2022 hasta Tasmania, es de 13 560 km." },
+      "months": [[175.3,-37.2],[175.3,-37.2],[175.3,-37.2],[124.3,39.8],[-163.5,61],[-163.5,61],[-163.5,61],[-162.7,55.3],[-162.7,55.3],[175.3,-37.2],[175.3,-37.2],[175.3,-37.2]],
+      "path": [[-163.5,61],[-162.7,55.3],[-168,45],[-174,30],[-178,15],[179,0],[176,-15],[174,-30],[175.3,-37.2],[168,-25],[155,-5],[142,15],[130,30],[124.3,39.8],[135,45],[150,52],[162,57],[175,60],[-175,61],[-163.5,61]],
+      "moments": [
+        {
+          "month": 3,
+          "text": { "en": "Godwits leave New Zealand and fly about 10,000 km non-stop to the Yellow Sea, between China and Korea.", "es": "Las agujas dejan Nueva Zelanda y vuelan unos 10 000 km sin parar hasta el mar Amarillo, entre China y Corea." }
+        },
+        {
+          "month": 4,
+          "text": { "en": "Refuelling on the Yellow Sea mudflats, which are shrinking fast.", "es": "Recargan energía en las planicies de lodo del mar Amarillo, que se reducen rápidamente." }
+        },
+        {
+          "month": 6,
+          "text": { "en": "Nesting on the tundra of western Alaska.", "es": "Anidan en la tundra del oeste de Alaska." }
+        },
+        {
+          "month": 9,
+          "text": { "en": "Fat godwits wait on the Alaska Peninsula for a tail wind, then set off on the longest non-stop flight of any land bird.", "es": "Gordas de reservas, esperan en la península de Alaska un viento a favor y emprenden el vuelo sin escalas más largo de un ave terrestre." }
+        }
+      ],
+      "sources": [
+        "https://www.sciencenews.org/article/avian-airlines-alaska-new-zealand-nonstop",
+        "https://www.nationalgeographic.com/animals/article/alaska-bird-longest-mirgation",
+        "https://shorebirds.org.nz/news-2/e7-a-godwit-on-a-mission",
+        "https://www.cbc.ca/news/science/godwit-migration-alaska-tasmania-record-1.6632658"
+      ]
+    },
+    {
+      "id": "white-stork",
+      "emoji": "🐦",
+      "name": { "en": "White stork (eastern route)", "es": "Cigüeña blanca (ruta oriental)" },
+      "species": "Ciconia ciconia",
+      "group": "birds",
+      "km": 20000,
+      "kmNote": { "en": "round trip, for storks wintering in southern Africa", "es": "ida y vuelta, para las que pasan el invierno en el sur de África" },
+      "loop": false,
+      "text": { "en": "Storks soar on rising warm air and avoid long sea crossings, so eastern birds funnel over the Bosphorus and Israel, then follow the Nile into Africa. Some go all the way to South Africa.", "es": "Las cigüeñas planean en corrientes de aire caliente y evitan cruzar el mar, así que las del este pasan por el Bósforo e Israel y siguen el Nilo hacia África. Algunas llegan hasta Sudáfrica." },
+      "months": [[27,-27],[33.5,0],[35.5,32.5],[20,47],[13,52.5],[13,52.5],[13,52.5],[29,41.1],[32.8,24],[32.5,15.6],[34,-6],[30.5,-19]],
+      "path": [[13,52.5],[20,47],[26,43],[29,41.1],[33,38.5],[36.3,36],[35.5,32.5],[34.5,29.5],[32.8,24],[32.5,15.6],[31.5,7],[33.5,0],[34,-6],[32.5,-13],[30.5,-19],[27,-27]],
+      "moments": [
+        {
+          "month": 3,
+          "text": { "en": "Spring passage over Israel and the Bosphorus.", "es": "Paso de primavera sobre Israel y el Bósforo." }
+        },
+        {
+          "month": 5,
+          "text": { "en": "Back on the same rooftop and chimney nests across Central and Eastern Europe.", "es": "De vuelta en los mismos nidos de techos y chimeneas de Europa central y oriental." }
+        },
+        {
+          "month": 8,
+          "text": { "en": "Big flocks circle over Istanbul to cross the Bosphorus, the shortest way over the sea.", "es": "Grandes bandadas giran sobre Estambul para cruzar el Bósforo, el paso más corto sobre el mar." }
+        },
+        {
+          "month": 1,
+          "text": { "en": "Some spend the southern summer on the grasslands of South Africa, about 10,000 km from their nests.", "es": "Algunas pasan el verano austral en los pastizales de Sudáfrica, a unos 10 000 km de sus nidos." }
+        }
+      ],
+      "sources": [
+        "https://www.tau.ac.il/~pinhas/papers/2003/Shamoun-Baranes_et_al_JAB_2003.pdf",
+        "https://internationalornithology.org/PROCEEDINGS_Durban/Symposium/S49/S49.5.htm"
+      ]
+    },
+    {
+      "id": "caribou",
+      "emoji": "🦌",
+      "name": { "en": "Caribou (Porcupine herd)", "es": "Caribú (manada Porcupine)" },
+      "species": "Rangifer tarandus granti",
+      "group": "mammals",
+      "km": 2400,
+      "kmNote": { "en": "a yearly loop, up to (it varies a lot from year to year)", "es": "un circuito anual, como máximo (varía mucho de un año a otro)" },
+      "loop": true,
+      "text": { "en": "About 218,000 caribou (2017 count) cross the Alaska–Yukon border twice a year, between winter forests and the Arctic coastal plain where their calves are born.", "es": "Unos 218 000 caribúes (censo de 2017) cruzan dos veces al año la frontera entre Alaska y Yukón, entre los bosques de invierno y la llanura costera ártica donde nacen sus crías." },
+      "months": [[-138.5,65.3],[-138.5,65.3],[-138.5,65.3],[-136.5,66.8],[-140,69],[-144,69.7],[-146,69.3],[-145.5,68.2],[-145.5,67.2],[-142,66.6],[-139.5,65.8],[-138.5,65.3]],
+      "path": [[-138.5,65.3],[-136.5,66.8],[-137.5,68],[-140,69],[-144,69.7],[-146,69.3],[-145.5,68.2],[-145.5,67.2],[-142,66.6],[-139.5,65.8],[-138.5,65.3]],
+      "moments": [
+        {
+          "month": 4,
+          "text": { "en": "Pregnant cows lead the spring migration north, often still over snow.", "es": "Las hembras preñadas encabezan la migración de primavera hacia el norte, a menudo aún sobre la nieve." }
+        },
+        {
+          "month": 6,
+          "text": { "en": "Calving peaks in the first week of June on the coastal plain of the Arctic National Wildlife Refuge.", "es": "Los nacimientos llegan al máximo la primera semana de junio en la llanura costera del Refugio Nacional de Vida Silvestre del Ártico." }
+        },
+        {
+          "month": 7,
+          "text": { "en": "Huge groups bunch up on windy coasts and ridges to escape mosquitoes.", "es": "Se juntan en enormes grupos en costas y lomas con viento para escapar de los mosquitos." }
+        },
+        {
+          "month": 10,
+          "text": { "en": "Rut, then the herd drifts south into the forests to dig through the snow for lichens.", "es": "Celo; luego la manada baja a los bosques a escarbar la nieve en busca de líquenes." }
+        }
+      ],
+      "sources": [
+        "https://pcmb.ca/wp-content/uploads/2023/03/PCTC-2023-AHM-Presentation-pdf.pdf",
+        "https://www.discoverwildlife.com/animal-facts/caribou-migration",
+        "https://trustees.org/on-beings-and-biomes-caribou-and-their-migrations/"
+      ]
+    },
+    {
+      "id": "sockeye-salmon",
+      "emoji": "🐟",
+      "name": { "en": "Sockeye salmon (Fraser River)", "es": "Salmón rojo (río Fraser)" },
+      "species": "Oncorhynchus nerka",
+      "group": "fish",
+      "km": 2400,
+      "kmNote": { "en": "one way, the homeward run in the last year", "es": "solo ida, el viaje de regreso del último año" },
+      "loop": false,
+      "text": { "en": "After about two years in the Gulf of Alaska, sockeye find their way back to the stream where they hatched, swimming hundreds of kilometres up the Fraser River without eating. They spawn and die.", "es": "Tras unos dos años en el golfo de Alaska, los salmones rojos vuelven al arroyo donde nacieron y remontan cientos de kilómetros por el río Fraser sin comer. Desovan y mueren." },
+      "months": [[-150,54],[-149,54.1],[-148,54.2],[-146.5,54.3],[-145,54.4],[-139,54.3],[-128.5,51],[-124.9,49.9],[-121.45,49.78],[-119.6,50.9],null,[-150,54]],
+      "path": [[-150,54],[-143,54.5],[-136,54],[-131.5,51.6],[-128.5,51],[-127.3,50.7],[-126,50.45],[-124.9,49.9],[-123.4,49.1],[-122.3,49.2],[-121.45,49.78],[-121.3,50.4],[-120.3,50.7],[-119.6,50.9]],
+      "moments": [
+        {
+          "month": 3,
+          "text": { "en": "Growing fat on plankton and small fish far out in the Gulf of Alaska.", "es": "Engordan con plancton y peces pequeños mar adentro, en el golfo de Alaska." }
+        },
+        {
+          "month": 8,
+          "text": { "en": "Sockeye gather off the Fraser's mouth; their silver bodies start turning red.", "es": "Los salmones se juntan frente a la boca del Fraser; sus cuerpos plateados empiezan a ponerse rojos." }
+        },
+        {
+          "month": 9,
+          "text": { "en": "Fish fight through the narrow canyon of Hells Gate.", "es": "Los peces luchan contra la corriente en el estrecho cañón de Hells Gate." }
+        },
+        {
+          "month": 10,
+          "text": { "en": "Spawning peaks on the Adams River; the biggest runs come every four years (2022, 2026).", "es": "El desove llega al máximo en el río Adams; las mayores corridas ocurren cada cuatro años (2022, 2026)." }
+        },
+        {
+          "month": 11,
+          "text": { "en": "The spawners die and feed bears, eagles and the forest; eggs wait in the gravel.", "es": "Los salmones mueren y alimentan a osos, águilas y al bosque; los huevos esperan en la grava." }
+        }
+      ],
+      "sources": [
+        "https://psf.ca/blog/celebrate-the-2022-adams-river-sockeye-run/",
+        "https://www.salmonexplorer.ca/explore/data/run-timing/fraser/sockeye/all-cus",
+        "https://www.psc.org/publications/workshop-reports/late-run-fraser-river-sockeye-review/"
+      ]
+    },
+    {
+      "id": "leatherback-turtle",
+      "emoji": "🐢",
+      "name": { "en": "Leatherback turtle (Atlantic)", "es": "Tortuga laúd (Atlántico)" },
+      "species": "Dermochelys coriacea",
+      "group": "reptiles",
+      "km": 12000,
+      "kmNote": { "en": "Nova Scotia to Trinidad, as swum by two tracked turtles (they wander)", "es": "de Nueva Escocia a Trinidad, lo que nadaron dos tortugas rastreadas (dan muchas vueltas)" },
+      "loop": false,
+      "text": { "en": "The largest living turtle feeds on jellyfish off Nova Scotia in summer, then swims to Caribbean beaches such as Trinidad's to nest. A warm body and thick fat let it hunt in cold water.", "es": "La tortuga más grande del mundo come medusas frente a Nueva Escocia en verano y luego nada a playas del Caribe, como las de Trinidad, para anidar. Su cuerpo tibio y su grasa le permiten cazar en aguas frías." },
+      "months": [[-61.5,22],[-60.8,15.5],[-60.9,10.7],[-60.9,10.7],[-60.9,10.7],[-60.9,10.7],[-63,30],[-63,43.5],[-59.5,45.8],[-63,43.5],[-63,30],[-62.3,26]],
+      "path": [[-59.5,45.8],[-63,43.5],[-64,38],[-63,30],[-61.5,22],[-60.8,15.5],[-60.4,11.6],[-60.9,10.7]],
+      "moments": [
+        {
+          "month": 5,
+          "text": { "en": "Nesting peaks on Trinidad's beaches, such as Matura and Grande Riviere.", "es": "La anidación llega al máximo en playas de Trinidad como Matura y Grande Riviere." }
+        },
+        {
+          "month": 7,
+          "text": { "en": "After nesting, females head north along the Gulf Stream.", "es": "Después de anidar, las hembras van al norte siguiendo la corriente del Golfo." }
+        },
+        {
+          "month": 9,
+          "text": { "en": "A summer feast of jellyfish off Nova Scotia and Cape Breton.", "es": "Un festín de medusas en verano frente a Nueva Escocia y la isla de Cabo Bretón." }
+        },
+        {
+          "month": 10,
+          "text": { "en": "Cooling water sends them south again.", "es": "El agua que se enfría las manda otra vez al sur." }
+        }
+      ],
+      "sources": [
+        "https://www.theweathernetwork.com/en/news/nature/animals/leatherback-sea-turtles-travelled-12000-km-from-canada-to-trinidad",
+        "https://signalhfx.ca/researchers-track-turtle-from-nova-scotia-to-trinidad-and-back/",
+        "https://www.earthdata.nasa.gov/news/feature-articles/mysterious-lives-leatherbacks"
+      ]
+    },
+    {
+      "id": "european-eel",
+      "emoji": "🐟",
+      "name": { "en": "European eel", "es": "Anguila europea" },
+      "species": "Anguilla anguilla",
+      "group": "fish",
+      "km": 6000,
+      "kmNote": { "en": "one way, the adults' swim back to the Sargasso Sea", "es": "solo ida, el nado de los adultos hasta el mar de los Sargazos" },
+      "loop": true,
+      "text": { "en": "Every European eel is born in the Sargasso Sea. The larvae drift on the Gulf Stream to Europe; years later, adult silver eels swim about 6,000 km back to spawn once and die.", "es": "Todas las anguilas europeas nacen en el mar de los Sargazos. Las larvas viajan a la deriva con la corriente del Golfo hasta Europa; años después, las adultas nadan unos 6 000 km de vuelta para desovar una vez y morir." },
+      "months": [[-3,46],[-62,26],[-70,28.5],[-77,32.5],[-74.5,35.5],[-68,39],[-58,41.5],[-48,44],[-38,46.5],[-28,48],[-18,48.5],[-9,47.5]],
+      "path": [[-62,26],[-70,28.5],[-77,32.5],[-74.5,35.5],[-68,39],[-58,41.5],[-48,44],[-38,46.5],[-28,48],[-18,48.5],[-9,47.5],[-3,46],[-8,43.9],[-15,40],[-25,37],[-38,32],[-50,28],[-62,26]],
+      "moments": [
+        {
+          "month": 2,
+          "text": { "en": "Spawning peaks somewhere in the Sargasso Sea; no one has ever seen wild eels spawn.", "es": "El desove llega al máximo en algún lugar del mar de los Sargazos; nadie ha visto desovar a una anguila en libertad." }
+        },
+        {
+          "month": 6,
+          "text": { "en": "Leaf-shaped, see-through larvae ride the Gulf Stream and the North Atlantic Drift; the trip can take a year or more.", "es": "Larvas transparentes con forma de hoja viajan en la corriente del Golfo y la del Atlántico Norte; el viaje puede durar un año o más." }
+        },
+        {
+          "month": 12,
+          "text": { "en": "Near Europe the larvae turn into transparent \"glass eels\".", "es": "Cerca de Europa las larvas se transforman en transparentes anguilas de cristal." }
+        },
+        {
+          "month": 1,
+          "text": { "en": "Glass eels swarm into rivers. Many years later, as silver eels, they leave on dark autumn nights for the long swim back, via the Azores.", "es": "Las anguilas de cristal entran en masa a los ríos. Muchos años después, ya adultas, parten en noches oscuras de otoño para el largo viaje de vuelta, por las Azores." }
+        }
+      ],
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5052013",
+        "https://www.sustainableeelgroup.org/seg_conservation/the-long-and-dangerous-road-to-the-sargasso-sea/",
+        "https://www.sciencenews.org/?p=20907"
+      ]
+    },
+    {
+      "id": "christmas-island-red-crab",
+      "emoji": "🦀",
+      "name": { "en": "Christmas Island red crab", "es": "Cangrejo rojo de la isla de Navidad" },
+      "species": "Gecarcoidea natalis",
+      "group": "crabs",
+      "km": 8,
+      "kmNote": { "en": "one way, at most about (a walk of 5–9 days)", "es": "solo ida, como máximo (una caminata de 5 a 9 días)" },
+      "loop": false,
+      "text": { "en": "With the first wet-season rains, tens of millions of land crabs leave the rainforest and march to the sea to breed. Roads close and the island turns red.", "es": "Con las primeras lluvias de la temporada húmeda, decenas de millones de cangrejos terrestres dejan la selva y marchan al mar para reproducirse. Se cierran calles y la isla se pinta de rojo." },
+      "months": [[105.68,-10.425],[105.635,-10.475],[105.635,-10.475],[105.635,-10.475],[105.635,-10.475],[105.635,-10.475],[105.635,-10.475],[105.635,-10.475],[105.635,-10.475],[105.635,-10.475],[105.66,-10.447],[105.685,-10.42]],
+      "path": [[105.635,-10.475],[105.645,-10.463],[105.655,-10.452],[105.665,-10.441],[105.675,-10.43],[105.685,-10.42]],
+      "moments": [
+        {
+          "month": 8,
+          "text": { "en": "Dry season: the crabs hide in damp burrows in the forest.", "es": "Temporada seca: los cangrejos se refugian en madrigueras húmedas del bosque." }
+        },
+        {
+          "month": 11,
+          "text": { "en": "The first rains set off the march to the coast; park staff put up barriers and crab bridges.", "es": "Las primeras lluvias desatan la marcha hacia la costa; el personal del parque pone barreras y puentes para cangrejos." }
+        },
+        {
+          "month": 12,
+          "text": { "en": "Before dawn, on a falling high tide in the moon's last quarter, each female releases up to 100,000 eggs into the sea.", "es": "Antes del amanecer, con la marea alta en descenso y la luna en cuarto menguante, cada hembra suelta hasta 100 000 huevos al mar." }
+        },
+        {
+          "month": 1,
+          "text": { "en": "About a month later, millions of tiny baby crabs swarm ashore and walk into the forest.", "es": "Cerca de un mes después, millones de cangrejitos diminutos salen del mar y caminan hacia el bosque." }
+        }
+      ],
+      "sources": [
+        "https://christmasislandnationalpark.gov.au/news/millions-of-crabs-march-on-christmas-island/",
+        "https://www.nationalgeographic.com/animals/invertebrates/facts/christmas-island-red-crab",
+        "https://www.1news.co.nz/2023/12/24/tens-of-millions-of-crabs-swarm-christmas-island-in-annual-migration/"
+      ]
+    },
+    {
+      "id": "bar-headed-goose",
+      "emoji": "🦆",
+      "name": { "en": "Bar-headed goose", "es": "Ganso indio" },
+      "species": "Anser indicus",
+      "group": "birds",
+      "km": 6000,
+      "kmNote": { "en": "round trip, roughly", "es": "ida y vuelta, aproximado" },
+      "loop": false,
+      "text": { "en": "Bar-headed geese cross the Himalaya between Mongolian lakes and Indian wetlands, climbing through high valleys in one push of about 8 hours, at 5,000–6,000 m, where the air is thin.", "es": "Los gansos indios cruzan el Himalaya entre los lagos de Mongolia y los humedales de la India, subiendo por valles altos en un solo tramo de unas 8 horas, a 5 000–6 000 m, donde el aire es escaso." },
+      "months": [[93.4,26.6],[93.4,26.6],[91,26.6],[92.5,31.8],[99.7,48.2],[99.7,48.2],[99.7,48.2],[99.7,48.2],[99,41],[91.1,29.6],[93.4,26.6],[93.4,26.6]],
+      "path": [[99.7,48.2],[100.5,45],[99,41],[97.5,37.5],[95,34.5],[92.5,31.8],[91.1,29.6],[90.6,28],[91,26.6],[93.4,26.6]],
+      "moments": [
+        {
+          "month": 3,
+          "text": { "en": "The spring crossing (March–April): geese climb over the Himalaya in about 8 hours, setting off early when the air is calm.", "es": "El cruce de primavera (marzo y abril): los gansos suben sobre el Himalaya en unas 8 horas y salen temprano, cuando el aire está en calma." }
+        },
+        {
+          "month": 5,
+          "text": { "en": "Nesting on lakeshores in Mongolia and on the Tibetan Plateau.", "es": "Anidan en orillas de lagos de Mongolia y de la meseta tibetana." }
+        },
+        {
+          "month": 10,
+          "text": { "en": "Heading south, they rest on Tibetan lakes before the big crossing.", "es": "Rumbo al sur, descansan en lagos del Tíbet antes del gran cruce." }
+        },
+        {
+          "month": 12,
+          "text": { "en": "Winter on rivers and wetlands of India, such as the Brahmaputra in Assam.", "es": "Invierno en ríos y humedales de la India, como el Brahmaputra en Assam." }
+        }
+      ],
+      "sources": [
+        "https://www.ceom.ou.edu/media/docs/upload/Hawkes_2011_The_trans-Himalayan_flights_of_bar-headed_geese_PNAS.pdf",
+        "https://www.usgs.gov/publications/geographic-variation-bar-headed-geese-anser-indicus-connectivity-wintering-and",
+        "https://earthsky.org/earth/highest-flying-bird-crosses-the-himalayas-in-record-time/"
+      ]
+    },
+    {
+      "id": "amur-falcon",
+      "emoji": "🦅",
+      "name": { "en": "Amur falcon", "es": "Halcón del Amur" },
+      "species": "Falco amurensis",
+      "group": "birds",
+      "km": 22000,
+      "kmNote": { "en": "a yearly loop (tracked birds: 22,000–29,000 km)", "es": "un circuito anual (aves rastreadas: 22 000–29 000 km)" },
+      "loop": true,
+      "text": { "en": "Small falcons from eastern Asia roost by the hundreds of thousands in Nagaland, India, then cross the Arabian Sea non-stop, about 5,700 km in five days, to spend the winter in southern Africa.", "es": "Estos halcones pequeños de Asia oriental se reúnen por cientos de miles en Nagaland (India) y luego cruzan el mar Arábigo sin escalas, unos 5 700 km en cinco días, para pasar el invierno en el sur de África." },
+      "months": [[29.9,-27.8],[29.9,-27.8],[33,-18],[45,4],[90,23.5],[124,48],[124,48],[124,48],[116,40],[94.2,26.1],[65,14],[30.5,-18]],
+      "path": [[124,48],[116,40],[106,31],[97,26.5],[94.2,26.1],[86,23],[76,19],[65,14],[50,8.5],[38,-1],[34,-8],[30.5,-18],[29.9,-27.8],[33,-18],[38,-6],[45,4],[60,12],[73,17.5],[80,20],[90,23.5],[96,24.5],[103,28],[112,36],[124,48]],
+      "moments": [
+        {
+          "month": 10,
+          "text": { "en": "Huge roosts form in Nagaland, where villages that once trapped the falcons now protect them.", "es": "Se forman dormideros enormes en Nagaland, donde aldeas que antes cazaban a los halcones ahora los protegen." }
+        },
+        {
+          "month": 11,
+          "text": { "en": "Non-stop over the Arabian Sea from India to Somalia, about 5,700 km in five days.", "es": "Sin escalas sobre el mar Arábigo, de la India a Somalia: unos 5 700 km en cinco días." }
+        },
+        {
+          "month": 1,
+          "text": { "en": "Summer in southern Africa, hunting insects over grasslands and farms.", "es": "Verano en el sur de África, cazando insectos sobre pastizales y campos." }
+        },
+        {
+          "month": 4,
+          "text": { "en": "Back over the Arabian Sea from Somalia to India, then on to China and Mongolia.", "es": "De nuevo sobre el mar Arábigo, de Somalia a la India, y luego a China y Mongolia." }
+        }
+      ],
+      "sources": [
+        "https://www.cms.int/node/1034",
+        "https://www.easternmirrornagaland.com/historic-amur-falcon-migration-plotted-nagaland-to-south-africa-south-africa-to-mangolia-mangolia-to-nagaland",
+        "https://www.pressreader.com/india/hindustan-times-chandigarh/20181126/282037623217728",
+        "https://datazone.birdlife.org/species/factsheet/amur-falcon-falco-amurensis/details"
+      ]
+    },
+    {
+      "id": "common-swift",
+      "emoji": "🐦",
+      "name": { "en": "Common swift", "es": "Vencejo común" },
+      "species": "Apus apus",
+      "group": "birds",
+      "km": 19000,
+      "kmNote": { "en": "a yearly loop, estimated from the route (Swedish birds)", "es": "un circuito anual, estimado según la ruta (aves de Suecia)" },
+      "loop": true,
+      "text": { "en": "Swifts feed, drink and even mate in flight. Tracked swifts stayed airborne for about ten months, landing only to nest; birds from Sweden spent the winter over the Congo basin.", "es": "Los vencejos comen, beben y hasta se aparean en el aire. Vencejos rastreados pasaron unos diez meses volando sin parar y solo se posaron para anidar; los de Suecia pasaron el invierno sobre la cuenca del Congo." },
+      "months": [[22,-3],[22,-3],[22,-3],[22,-3],[16.5,57],[16.5,57],[16.5,57],[-4,40],[-8,15],[18,0],[22,-3],[22,-3]],
+      "path": [[16.5,57],[10,52],[3,46],[-4,40],[-9,33],[-13,25],[-8,15],[0,10],[10,5],[18,0],[22,-3],[12,0],[2,3],[-9.5,6.8],[-7,14],[-3,25],[-1,35],[3,44],[10,51],[16.5,57]],
+      "moments": [
+        {
+          "month": 1,
+          "text": { "en": "Winter high over the Congo rainforest, hunting insects in the air.", "es": "Invierno en lo alto, sobre la selva del Congo, cazando insectos en el aire." }
+        },
+        {
+          "month": 5,
+          "text": { "en": "A fast spring trip, often more than 300 km a day, with a short stop over Liberia, brings them back to Europe.", "es": "Un viaje rápido de primavera, a menudo de más de 300 km al día, con una breve parada sobre Liberia, los trae de vuelta a Europa." }
+        },
+        {
+          "month": 6,
+          "text": { "en": "Their only time on land: a few weeks of nesting in holes under roofs.", "es": "Su único tiempo en tierra: unas semanas de anidación en huecos bajo los techos." }
+        },
+        {
+          "month": 9,
+          "text": { "en": "A pause over the Sahel of West Africa to feed before the last leg south-east.", "es": "Una pausa sobre el Sahel de África occidental para comer antes del último tramo al sureste." }
+        }
+      ],
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3399846",
+        "https://www.audubon.org/magazine/common-swift-new-record-holder-longest-uninterrupted-flight",
+        "https://www.nature.com/news/record-breaking-common-swifts-fly-for-10-months-without-landing-1.20873"
+      ]
+    },
+    {
+      "id": "ruby-throated-hummingbird",
+      "emoji": "🐦",
+      "name": { "en": "Ruby-throated hummingbird", "es": "Colibrí garganta de rubí" },
+      "species": "Archilochus colubris",
+      "group": "birds",
+      "km": 7000,
+      "kmNote": { "en": "round trip, for birds from southern Canada", "es": "ida y vuelta, para las aves del sur de Canadá" },
+      "loop": false,
+      "text": { "en": "A bird of about 3 grams doubles its weight in fat, then may cross the Gulf of Mexico non-stop, some 800 km of open water, between eastern North America and Central America.", "es": "Un ave de unos 3 gramos duplica su peso con grasa y luego puede cruzar el golfo de México sin parar, unos 800 km de mar abierto, entre el este de Norteamérica y Centroamérica." },
+      "months": [[-88,15],[-88,15],[-89.6,21.2],[-86.5,35],[-82,42.5],[-80,45],[-80,45],[-84,40],[-88,30.6],[-89.6,21.2],[-89,17.5],[-88,15]],
+      "path": [[-80,45],[-84,40],[-86.5,35],[-88,30.6],[-88.8,25.5],[-89.6,21.2],[-89,17.5],[-88,15],[-86.5,13],[-84.5,10.3]],
+      "moments": [
+        {
+          "month": 3,
+          "text": { "en": "Spring: birds leave the Yucatán at dusk and fly through the night and much of the next day to reach the US Gulf Coast.", "es": "Primavera: salen de Yucatán al anochecer y vuelan toda la noche y buena parte del día siguiente hasta la costa del golfo en EE. UU." }
+        },
+        {
+          "month": 6,
+          "text": { "en": "Nesting in eastern forests and gardens; the female raises the chicks alone.", "es": "Anidan en bosques y jardines del este; la hembra cría sola a los polluelos." }
+        },
+        {
+          "month": 9,
+          "text": { "en": "Gulf Coast gardens fill with hummingbirds fattening up before the crossing.", "es": "Los jardines de la costa del golfo se llenan de colibríes que engordan antes del cruce." }
+        },
+        {
+          "month": 12,
+          "text": { "en": "Winter in southern Mexico and Central America.", "es": "Invierno en el sur de México y Centroamérica." }
+        }
+      ],
+      "sources": [
+        "https://journeynorth.org/tm/humm/migration_route.html",
+        "https://www.fws.gov/media/ruby-throated-hummingbird-4",
+        "https://csmonitor.com/Science/2016/0311/These-tiny-birds-can-fly-over-1-000-miles-nonstop"
+      ]
+    },
+    {
+      "id": "sooty-shearwater",
+      "emoji": "🐦",
+      "name": { "en": "Sooty shearwater", "es": "Pardela sombría" },
+      "species": "Ardenna grisea",
+      "group": "birds",
+      "km": 64000,
+      "kmNote": { "en": "a yearly loop, a figure eight (tracked birds)", "es": "un circuito anual en forma de ocho (aves rastreadas)" },
+      "loop": true,
+      "text": { "en": "Tracked from New Zealand, sooty shearwaters flew a giant figure eight over the whole Pacific, about 64,000 km, to spend the northern summer off Japan, Alaska or California.", "es": "Rastreadas desde Nueva Zelanda, las pardelas sombrías volaron un enorme ocho sobre todo el Pacífico, unos 64 000 km, para pasar el verano del norte frente a Japón, Alaska o California." },
+      "months": [[168.5,-47],[168.5,-47],[168.5,-47],[-165,0],[150,43],[150,43],[150,43],[158,46],[-170,38],[180,-30],[168.5,-47],[168.5,-47]],
+      "path": [[168.5,-47],[-178,-38],[-163,-20],[-165,0],[-178,15],[165,28],[153,38],[150,43],[158,46],[175,45],[-170,38],[-160,20],[-158,5],[-170,-15],[180,-30],[168.5,-47]],
+      "moments": [
+        {
+          "month": 2,
+          "text": { "en": "Chicks grow fat in burrows on islands off southern New Zealand, where they are known as tītī, or muttonbirds.", "es": "Los pichones engordan en madrigueras de islas del sur de Nueva Zelanda, donde los llaman tītī." }
+        },
+        {
+          "month": 4,
+          "text": { "en": "Adults head north and cross the equator, at times covering about 900 km a day.", "es": "Los adultos vuelan al norte y cruzan el ecuador, a veces recorriendo unos 900 km al día." }
+        },
+        {
+          "month": 6,
+          "text": { "en": "Northern summer feeding: these birds stay off Japan, while others choose Alaska or California.", "es": "Alimentación en el verano del norte: estas aves se quedan frente a Japón; otras eligen Alaska o California." }
+        },
+        {
+          "month": 9,
+          "text": { "en": "A strikingly synchronized return down a narrow corridor in the central Pacific.", "es": "Un regreso muy sincronizado por un corredor estrecho en el Pacífico central." }
+        }
+      ],
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/16908846/",
+        "https://news.ucsc.edu/2006/08/study-documents-the-marathon-migrations-of-sooty-shearwaters/",
+        "https://niwa.co.nz/news/muttonbirds-pursue-endless-summer-across-pacific"
+      ]
+    },
+    {
+      "id": "red-knot",
+      "emoji": "🐦",
+      "name": { "en": "Red knot (rufa)", "es": "Playero rojizo (rufa)" },
+      "species": "Calidris canutus rufa",
+      "group": "birds",
+      "km": 30000,
+      "kmNote": { "en": "round trip (about 15,000 km each way)", "es": "ida y vuelta (unos 15 000 km cada tramo)" },
+      "loop": true,
+      "text": { "en": "Red knots fly from Tierra del Fuego to the Canadian Arctic and back each year. In May they stop at Delaware Bay to gorge on horseshoe crab eggs, nearly doubling their weight in about two weeks.", "es": "Los playeros rojizos vuelan cada año de Tierra del Fuego al Ártico canadiense y de regreso. En mayo paran en la bahía de Delaware a comer huevos de cangrejo herradura y casi duplican su peso en unas dos semanas." },
+      "months": [[-68.5,-53.2],[-68.5,-53.2],[-64.9,-40.8],[-50.9,-31.3],[-75.1,39.1],[-89.5,66.5],[-89.5,66.5],[-80,51.8],[-55,5.9],[-58,-28],[-68.5,-53.2],[-68.5,-53.2]],
+      "path": [[-68.5,-53.2],[-64.9,-40.8],[-57.5,-37],[-50.9,-31.3],[-48.5,-26],[-39,-14],[-35.5,-6],[-44.3,-1.5],[-60,15],[-70,30],[-75.1,39.1],[-80,52],[-84,64],[-95,69],[-83,59],[-80,51.8],[-64,50.2],[-70,41.7],[-60,20],[-55,5.9],[-52,-10],[-58,-28],[-64,-42],[-68.5,-53.2]],
+      "moments": [
+        {
+          "month": 1,
+          "text": { "en": "Winter on the vast tidal flats of Bahía Lomas (Chile) and Río Grande (Argentina), in Tierra del Fuego.", "es": "Invierno en las enormes planicies de marea de bahía Lomas (Chile) y Río Grande (Argentina), en Tierra del Fuego." }
+        },
+        {
+          "month": 5,
+          "text": { "en": "Delaware Bay: horseshoe crabs spawn on the beaches and the knots feast on their eggs.", "es": "Bahía de Delaware: los cangrejos herradura desovan en las playas y los playeros se dan un festín con sus huevos." }
+        },
+        {
+          "month": 6,
+          "text": { "en": "Nesting on stony Arctic tundra, sometimes still patchy with snow.", "es": "Anidan en la tundra pedregosa del Ártico, a veces todavía con manchas de nieve." }
+        },
+        {
+          "month": 8,
+          "text": { "en": "Adults leave first; the young make their first trip south on their own.", "es": "Los adultos se van primero; los jóvenes hacen solos su primer viaje al sur." }
+        }
+      ],
+      "sources": [
+        "https://www.nrdc.org/stories/tiny-seabirds-colossal-migration-danger-all-sides",
+        "https://delawareaudubon.org/horseshoe-crabs-red-knots",
+        "https://www.usgs.gov/publications/stopover-population-estimate-and-migration-ecology-red-knots-c-c-rufa-delaware-bay-1"
+      ]
+    },
+    {
+      "id": "emperor-penguin",
+      "emoji": "🐧",
+      "name": { "en": "Emperor penguin", "es": "Pingüino emperador" },
+      "species": "Aptenodytes forsteri",
+      "group": "birds",
+      "km": 120,
+      "kmNote": { "en": "one way, the longest walks from open water to a colony", "es": "solo ida, las caminatas más largas del mar abierto a una colonia" },
+      "loop": false,
+      "text": { "en": "Emperors breed on sea ice in the Antarctic winter. In autumn they walk to the colony, sometimes 120 km from open water; then males hold the egg on their feet for about two months, eating nothing.", "es": "Los pingüinos emperador se reproducen sobre el hielo marino en el invierno antártico. En otoño caminan hasta la colonia, a veces a 120 km del mar abierto; luego los machos sostienen el huevo sobre las patas unos dos meses sin comer." },
+      "months": [[63.7,-63.5],[63.5,-62],[63.8,-65],[63.98,-67.38],[63.98,-67.38],[63.98,-67.38],[63.98,-67.38],[63.98,-67.38],[63.98,-67.38],[64,-66.9],[63.9,-66.2],[63.8,-65]],
+      "path": [[63.5,-62],[63.7,-63.5],[63.8,-65],[63.9,-66.2],[64,-66.9],[63.98,-67.38]],
+      "moments": [
+        {
+          "month": 4,
+          "text": { "en": "The sea ice is thick again: emperors gather at the colony to court.", "es": "El hielo marino vuelve a estar grueso: los emperadores se reúnen en la colonia para el cortejo." }
+        },
+        {
+          "month": 6,
+          "text": { "en": "Each female lays one egg, passes it to her mate and walks back to sea to feed.", "es": "Cada hembra pone un huevo, se lo pasa a su pareja y regresa caminando al mar para comer." }
+        },
+        {
+          "month": 7,
+          "text": { "en": "Midwinter darkness: males huddle against blizzards; chicks hatch in July and August.", "es": "Oscuridad de pleno invierno: los machos se apiñan contra las ventiscas; los pichones nacen en julio y agosto." }
+        },
+        {
+          "month": 12,
+          "text": { "en": "The ice breaks up, chicks go to sea and adults leave to fatten up for the moult.", "es": "El hielo se rompe, los pichones se van al mar y los adultos salen a engordar para la muda." }
+        },
+        {
+          "month": 2,
+          "text": { "en": "A month of moulting on the pack ice, living on their fat.", "es": "Un mes de muda sobre el hielo a la deriva, viviendo de su grasa." }
+        }
+      ],
+      "sources": [
+        "https://www.antarctica.gov.au/about-antarctica/animals/penguins/emperor-penguin/breeding-cycle/",
+        "https://www.livescience.com/24977-emperor-penguins-rest-ice-antarctic.html"
+      ]
+    },
+    {
+      "id": "straw-coloured-fruit-bat",
+      "emoji": "🦇",
+      "name": { "en": "Straw-coloured fruit bat (Kasanka)", "es": "Murciélago frugívoro pajizo (Kasanka)" },
+      "species": "Eidolon helvum",
+      "group": "mammals",
+      "km": 2500,
+      "kmNote": { "en": "round trip, roughly (to the Congo basin)", "es": "ida y vuelta, aproximado (hasta la cuenca del Congo)" },
+      "loop": false,
+      "text": { "en": "From late October, about 5–10 million fruit bats pack into a tiny swamp forest in Zambia's Kasanka National Park to feast on ripe wild fruit: one of the largest gatherings of mammals on Earth.", "es": "Desde fines de octubre, unos 5 a 10 millones de murciélagos frugívoros se apiñan en un pequeño bosque pantanoso del Parque Nacional Kasanka (Zambia) para comer fruta silvestre: una de las mayores reuniones de mamíferos del mundo." },
+      "months": [[27.5,-9.5],[25.5,-7.5],[23.5,-5.5],[22,-4],[22,-4],[22,-4],[22,-4],[22,-4],[25.5,-7.5],[29,-11],[30.25,-12.55],[30.25,-12.55]],
+      "path": [[30.25,-12.55],[29,-11],[27.5,-9.5],[25.5,-7.5],[23.5,-5.5],[22,-4]],
+      "moments": [
+        {
+          "month": 10,
+          "text": { "en": "The first bats arrive at Kasanka toward the end of October.", "es": "Los primeros murciélagos llegan a Kasanka hacia fines de octubre." }
+        },
+        {
+          "month": 11,
+          "text": { "en": "Peak: at dusk millions of bats pour out of the roost in a vast dark cloud.", "es": "Apogeo: al atardecer millones de murciélagos salen del dormidero en una enorme nube oscura." }
+        },
+        {
+          "month": 1,
+          "text": { "en": "The colony breaks up; tracked bats flew north-west toward the Congo, about 90 km a day.", "es": "La colonia se dispersa; murciélagos rastreados volaron al noroeste, hacia el Congo, unos 90 km al día." }
+        },
+        {
+          "month": 6,
+          "text": { "en": "Where most of them spend the rest of the year is still largely unknown.", "es": "Dónde pasa la mayoría el resto del año sigue siendo, en gran parte, un misterio." }
+        }
+      ],
+      "sources": [
+        "https://africageographic.com/stories/kasanka-bat-migration/",
+        "https://www.discoverwildlife.com/animal-facts/mammals/straw-fruit-bat-gathering"
+      ]
+    },
+    {
+      "id": "saiga",
+      "emoji": "🦌",
+      "name": { "en": "Saiga antelope (Betpak-Dala)", "es": "Antílope saiga (Betpak-Dala)" },
+      "species": "Saiga tatarica",
+      "group": "mammals",
+      "km": 500,
+      "kmNote": { "en": "one way, up to (about 250 km on average)", "es": "solo ida, como máximo (unos 250 km en promedio)" },
+      "loop": false,
+      "text": { "en": "Saiga, with their odd bulbous noses, roam the steppe of Kazakhstan: north in spring to give birth in early May, south in autumn ahead of the snow. Once down to tens of thousands, they now number millions.", "es": "Los saigas, con su curiosa nariz abultada, recorren la estepa de Kazajistán: al norte en primavera para parir a inicios de mayo, y al sur en otoño, antes de la nieve. Llegaron a ser unas decenas de miles; hoy son millones." },
+      "months": [[66.8,46.9],[66.8,46.9],[65.8,47.5],[64.8,48.1],[64,48.6],[64.2,49.4],[64.5,50],[64.5,50],[64.2,49.4],[64.2,49.4],[64,48.6],[65.8,47.5]],
+      "path": [[66.8,46.9],[65.8,47.5],[64.8,48.1],[64,48.6],[64.2,49.4],[64.5,50]],
+      "moments": [
+        {
+          "month": 2,
+          "text": { "en": "Winter in the southern deserts, where snow is thinner; harsh winters can still kill many.", "es": "Invierno en los desiertos del sur, donde hay menos nieve; aun así, los inviernos duros pueden matar a muchos." }
+        },
+        {
+          "month": 5,
+          "text": { "en": "Calving: tens of thousands of females give birth within about a week in early May, around the Irgiz-Turgai reserve.", "es": "Nacimientos: decenas de miles de hembras paren en una semana, a inicios de mayo, cerca de la reserva de Irgiz-Turgai." }
+        },
+        {
+          "month": 7,
+          "text": { "en": "Summer on the northern grasslands.", "es": "Verano en los pastizales del norte." }
+        },
+        {
+          "month": 11,
+          "text": { "en": "The rut, in the Irgiz-Turgai reserve, before the herds move south.", "es": "El celo, en la reserva de Irgiz-Turgai, antes de que las manadas bajen al sur." }
+        }
+      ],
+      "sources": [
+        "https://www.cms.int/sites/default/files/publication/Fact_Sheet_on_Saiga_Antelope_Migration_BetpakDala_KAZ.pdf",
+        "https://saigaresourcecentre.com/node/358",
+        "https://www.inform.kz/ru/chislennost-saygakov-v-kazahstane-dostigla-41-mln-osobey-nurken-sharbiev-946812"
+      ]
+    },
+    {
+      "id": "white-eared-kob",
+      "emoji": "🦌",
+      "name": { "en": "White-eared kob", "es": "Cobo de orejas blancas" },
+      "species": "Kobus kob leucotis",
+      "group": "mammals",
+      "km": 600,
+      "kmNote": { "en": "round trip, on the longest routes", "es": "ida y vuelta, en las rutas más largas" },
+      "loop": false,
+      "text": { "en": "A 2023 aerial survey counted about 5 million white-eared kob, plus tiang and gazelles: some 6 million antelope in all, the largest land mammal migration known, in South Sudan.", "es": "Un censo aéreo de 2023 contó unos 5 millones de cobos de orejas blancas, además de tiang y gacelas: unos 6 millones de antílopes en total, la mayor migración de mamíferos terrestres conocida, en Sudán del Sur." },
+      "months": [[33.5,7.3],[33.8,7.8],[33.8,7.8],[33.8,7.8],[33.2,6.3],[32.6,5.9],[32.6,5.9],[32.6,5.9],[33.2,6.3],[33.2,6.3],[33.6,6.7],[33.5,7.3]],
+      "path": [[31.9,5.5],[32.6,5.9],[33.2,6.3],[33.6,6.7],[33.5,7.3],[33.8,7.8]],
+      "moments": [
+        {
+          "month": 3,
+          "text": { "en": "Dry season: herds crowd near northern rivers and wetlands; some cross into Ethiopia's Gambella National Park.", "es": "Temporada seca: las manadas se concentran cerca de ríos y humedales del norte; algunas entran al Parque Nacional Gambella, en Etiopía." }
+        },
+        {
+          "month": 5,
+          "text": { "en": "The rains return and the kob head back south-west to fresh grass.", "es": "Vuelven las lluvias y los cobos regresan al suroeste, hacia el pasto fresco." }
+        },
+        {
+          "month": 8,
+          "text": { "en": "Wet season on the grassy plains in and between Badingilo and Boma national parks.", "es": "Temporada de lluvias en las llanuras de pasto dentro y entre los parques nacionales Badingilo y Boma." }
+        },
+        {
+          "month": 11,
+          "text": { "en": "As the plains dry out, herds start moving north-east toward water.", "es": "Al secarse las llanuras, las manadas empiezan a moverse al noreste, hacia el agua." }
+        }
+      ],
+      "sources": [
+        "https://africageographic.com/stories/worlds-largest-overland-mammal-migration-confirmed-in-south-sudan/",
+        "https://www.cms.int/en/news/new-maps-document-world’s-largest-land-animal-migration-across-south-sudan-and-ethiopia",
+        "https://geographical.co.uk/wildlife/south-sudan-survey-reveals-migration-of-six-million-antelope"
+      ]
+    },
+    {
+      "id": "desert-elephants",
+      "emoji": "🐘",
+      "name": { "en": "Desert elephants of Mali", "es": "Elefantes del desierto de Malí" },
+      "species": "Loxodonta africana",
+      "group": "mammals",
+      "km": 500,
+      "kmNote": { "en": "a yearly loop, about (estimates 450–600 km)", "es": "un circuito anual, aproximado (estimaciones de 450 a 600 km)" },
+      "loop": true,
+      "text": { "en": "Mali's last few hundred elephants, on the edge of the Sahara, walk a loop of about 500 km a year: from lake to lake in the dry season, then south to fresh pastures with the rains.", "es": "Los últimos cientos de elefantes de Malí, al borde del Sahara, recorren un circuito de unos 500 km al año: de lago en lago en la estación seca y luego al sur, hacia pastos frescos, con las lluvias." },
+      "months": [[-1.2,15.7],[-1.55,15.55],[-1.8,15.35],[-1.8,15.35],[-1.8,15.35],[-2.05,15.05],[-1.9,14.8],[-1.9,14.8],[-1.4,14.75],[-1,14.95],[-0.9,15.3],[-1.2,15.7]],
+      "path": [[-1.8,15.35],[-2.05,15.05],[-1.9,14.8],[-1.4,14.75],[-1,14.95],[-0.9,15.3],[-1.2,15.7],[-1.55,15.55],[-1.8,15.35]],
+      "moments": [
+        {
+          "month": 1,
+          "text": { "en": "Moving from lake to lake as each one dries up.", "es": "Van de lago en lago a medida que cada uno se seca." }
+        },
+        {
+          "month": 5,
+          "text": { "en": "Peak dry season: the herds converge on Lake Banzena, the last water for many kilometres, until the rains.", "es": "Lo más duro de la seca: las manadas se reúnen en el lago Banzena, la última agua en muchos kilómetros, hasta que llueve." }
+        },
+        {
+          "month": 7,
+          "text": { "en": "Rains bring fresh grass, and the elephants head south toward the border with Burkina Faso.", "es": "Las lluvias traen pasto fresco y los elefantes van al sur, hacia la frontera con Burkina Faso." }
+        },
+        {
+          "month": 10,
+          "text": { "en": "They move along the border area, then turn north again.", "es": "Recorren la zona fronteriza y luego vuelven a girar al norte." }
+        }
+      ],
+      "sources": [
+        "https://www.savetheelephants.org/news/the-desert-elephants-of-mali",
+        "https://www.savetheelephants.org/wp-content/uploads/2016/11/Wall-et-al.-2013-Characterizing-properties-and-drivers-of-long-dist.pdf",
+        "https://www.thenewhumanitarian.org/node/242913",
+        "https://www.wild.org/wp-content/uploads/2009/06/Afr-Geo-June-07-Mali-Elephants.pdf"
+      ]
+    },
+    {
+      "id": "southern-right-whale",
+      "emoji": "🐋",
+      "name": { "en": "Southern right whale", "es": "Ballena franca austral" },
+      "species": "Eubalaena australis",
+      "group": "sea",
+      "km": 5000,
+      "kmNote": { "en": "round trip, roughly (Península Valdés to South Georgia)", "es": "ida y vuelta, aproximado (de península Valdés a Georgia del Sur)" },
+      "loop": false,
+      "text": { "en": "Each winter, right whales come to the calm gulfs of Península Valdés, Argentina, to give birth and nurse, then head out to feed over the Patagonian shelf and toward South Georgia.", "es": "Cada invierno, las ballenas francas llegan a los golfos tranquilos de península Valdés (Argentina) para parir y amamantar, y luego se van a comer sobre la plataforma patagónica y hacia Georgia del Sur." },
+      "months": [[-37.5,-53.5],[-37.5,-53.5],[-45,-53],[-55,-51],[-60,-48.5],[-63.8,-43.2],[-64.6,-42.75],[-64.6,-42.75],[-64.6,-42.75],[-64.6,-42.75],[-63.8,-43.2],[-60,-48.5]],
+      "path": [[-64.6,-42.75],[-63.8,-43.2],[-62,-45.5],[-60,-48.5],[-55,-51],[-45,-53],[-37.5,-53.5]],
+      "moments": [
+        {
+          "month": 6,
+          "text": { "en": "The first whales arrive in Golfo Nuevo and Golfo San José.", "es": "Llegan las primeras ballenas a los golfos Nuevo y San José." }
+        },
+        {
+          "month": 9,
+          "text": { "en": "Peak season: mothers and newborn calves rest close to shore, easy to see from the beach.", "es": "Temporada alta: madres y crías recién nacidas descansan cerca de la costa, fáciles de ver desde la playa." }
+        },
+        {
+          "month": 12,
+          "text": { "en": "The whales leave to feed on tiny crustaceans over the shelf edge and in the Scotia Sea.", "es": "Las ballenas se van a comer pequeños crustáceos sobre el borde de la plataforma y en el mar del Scotia." }
+        },
+        {
+          "month": 2,
+          "text": { "en": "Feeding grounds vary from whale to whale and from year to year.", "es": "Las zonas de alimentación cambian de una ballena a otra y de un año a otro." }
+        }
+      ],
+      "sources": [
+        "https://ballenas.org.ar/descargas/publicaciones-cientificas/2016/90.%20Tracking%20southern%20right%20whales%20through%20the%20southwest%20Atlantic_%20An%20update%20on%20movements%2C%20migratory%20routes%20and%20feeding%20grounds.pdf",
+        "https://iucn-csg.org/satellite-tagging-southern-right-whales-off-patagonia-to-help-understand-the-reasons-for-recent-die-offs/",
+        "https://www.wcs.org/get-involved/updates/new-tracking-data-important-insights-and-new-questions-in-whale-mystery"
+      ]
+    },
+    {
+      "id": "white-shark",
+      "emoji": "🦈",
+      "name": { "en": "White shark (the White Shark Café)", "es": "Tiburón blanco (el Café del Tiburón Blanco)" },
+      "species": "Carcharodon carcharias",
+      "group": "sea",
+      "km": 4000,
+      "kmNote": { "en": "round trip, roughly", "es": "ida y vuelta, aproximado" },
+      "loop": false,
+      "text": { "en": "White sharks that hunt seals off central California swim out each winter to an empty patch of ocean halfway to Hawaii, nicknamed the White Shark Café, and return in late summer.", "es": "Los tiburones blancos que cazan focas frente al centro de California nadan cada invierno hasta una zona de mar abierto a medio camino de Hawái, apodada el Café del Tiburón Blanco, y vuelven a fines del verano." },
+      "months": [[-127.5,31.5],[-131,27],[-134,24],[-135,23],[-135,23],[-135,23],[-131,27],[-124.5,35.5],[-123,37.7],[-123,37.7],[-123,37.7],[-124.5,35.5]],
+      "path": [[-123,37.7],[-124.5,35.5],[-127.5,31.5],[-131,27],[-134,24],[-135,23]],
+      "moments": [
+        {
+          "month": 10,
+          "text": { "en": "\"Sharktober\": peak season for white sharks hunting seals and sea lions around the Farallon Islands.", "es": "\"Sharktober\": temporada alta de tiburones blancos cazando focas y lobos marinos en las islas Farallón." }
+        },
+        {
+          "month": 12,
+          "text": { "en": "The sharks head west into the open Pacific.", "es": "Los tiburones se van al oeste, al Pacífico abierto." }
+        },
+        {
+          "month": 4,
+          "text": { "en": "At the Café, sharks dive again and again to several hundred metres; scientists think they may be feeding or mating.", "es": "En el Café, los tiburones bajan una y otra vez a cientos de metros; los científicos creen que quizá comen o se aparean." }
+        },
+        {
+          "month": 8,
+          "text": { "en": "Back to the coast in late August and September.", "es": "De vuelta a la costa a fines de agosto y en septiembre." }
+        }
+      ],
+      "sources": [
+        "https://schmidtocean.org/scientists-voyage-to-the-white-shark-cafe/",
+        "https://www.livescience.com/63614-great-white-sharks-lair.html",
+        "https://baynature.org/magazine/winter2010/beyond-jaws/"
+      ]
+    },
+    {
+      "id": "sardine-run",
+      "emoji": "🐟",
+      "name": { "en": "Sardine run (South Africa)", "es": "Carrera de las sardinas (Sudáfrica)" },
+      "species": "Sardinops sagax",
+      "group": "fish",
+      "km": 1200,
+      "kmNote": { "en": "one way, roughly (Agulhas Bank to Durban)", "es": "solo ida, aproximado (del banco de las Agujas a Durban)" },
+      "loop": false,
+      "text": { "en": "In winter, shoals of sardines, some kilometres long, push north from the Agulhas Bank along South Africa's east coast, chased by dolphins, sharks, gannets and whales.", "es": "En invierno, cardúmenes de sardinas, algunos de varios kilómetros, avanzan al norte desde el banco de las Agujas por la costa este de Sudáfrica, perseguidos por delfines, tiburones, alcatraces y ballenas." },
+      "months": [[21,-35.6],[21,-35.6],[21,-35.6],[21,-35.6],[26.5,-34.1],[29.8,-31.75],[31.15,-29.9],[31.15,-29.9],[21,-35.6],[21,-35.6],[21,-35.6],[21,-35.6]],
+      "path": [[21,-35.6],[24.5,-34.6],[26.5,-34.1],[28.2,-33.2],[29.8,-31.75],[30.75,-30.7],[31.15,-29.9]],
+      "moments": [
+        {
+          "month": 5,
+          "text": { "en": "Shoals gather off the Eastern Cape as the inshore water cools.", "es": "Los cardúmenes se juntan frente al Cabo Oriental cuando el agua costera se enfría." }
+        },
+        {
+          "month": 6,
+          "text": { "en": "Off the Wild Coast, dolphins herd sardines into \"bait balls\" while gannets dive from above.", "es": "Frente a la Costa Salvaje, los delfines arrinconan a las sardinas en \"bolas de carnada\" y los alcatraces del Cabo se zambullen desde el aire." }
+        },
+        {
+          "month": 7,
+          "text": { "en": "The run reaches KwaZulu-Natal, where people net sardines right off the beach.", "es": "La carrera llega a KwaZulu-Natal, donde la gente atrapa sardinas con redes desde la playa." }
+        },
+        {
+          "month": 9,
+          "text": { "en": "Most of the year the sardines live and spawn over the cool Agulhas Bank.", "es": "Gran parte del año las sardinas viven y desovan en el frío banco de las Agujas." }
+        }
+      ],
+      "sources": [
+        "https://www.wits.ac.za/news/latest-news/opinion/2019/2019-07/we-tracked-south-africas-sardine-run-over-66-years-heres-what-we-found.html",
+        "https://www.aquarium.co.za/news/the-sardine-run-is-underway-but-where-have-all-the-fish-gone",
+        "https://divemagazine.com/scuba-diving-news/south-africas-sardine-run-is-starting-soon"
+      ]
+    },
+    {
+      "id": "atlantic-bluefin-tuna",
+      "emoji": "🐟",
+      "name": { "en": "Atlantic bluefin tuna (western)", "es": "Atún rojo del Atlántico (del oeste)" },
+      "species": "Thunnus thynnus",
+      "group": "fish",
+      "km": 9000,
+      "kmNote": { "en": "round trip, roughly", "es": "ida y vuelta, aproximado" },
+      "loop": false,
+      "text": { "en": "Western bluefin spawn in the Gulf of Mexico in spring, then swim north to feed off New England and Canada. These warm-bodied giants dive to about 1,000 m, and some cross the whole Atlantic.", "es": "El atún rojo del oeste desova en el golfo de México en primavera y luego nada al norte para comer frente a Nueva Inglaterra y Canadá. Estos gigantes de cuerpo tibio bajan a unos 1 000 m y algunos cruzan todo el Atlántico." },
+      "months": [[-75.2,35.2],[-76.8,32],[-81,24.2],[-89.5,27],[-89.5,27],[-81,24.2],[-69.5,41.2],[-67.5,43],[-62.8,46.8],[-62.8,46.8],[-67.5,43],[-75.2,35.2]],
+      "path": [[-89.5,27],[-85.5,24.8],[-81,24.2],[-79.6,27.5],[-76.8,32],[-75.2,35.2],[-72.5,38.5],[-69.5,41.2],[-67.5,43],[-65,43.2],[-60,45.3],[-60.5,47.2],[-62.8,46.8]],
+      "moments": [
+        {
+          "month": 1,
+          "text": { "en": "Winter off North Carolina, where many giant tuna have been tagged.", "es": "Invierno frente a Carolina del Norte, donde se han marcado muchos atunes gigantes." }
+        },
+        {
+          "month": 4,
+          "text": { "en": "Spawning along the edge of the Gulf of Mexico's continental shelf, peaking in April and May.", "es": "Desove en el borde de la plataforma continental del golfo de México, con su máximo en abril y mayo." }
+        },
+        {
+          "month": 6,
+          "text": { "en": "Out through the Florida Straits and north with the Gulf Stream.", "es": "Salen por el estrecho de Florida y suben al norte con la corriente del Golfo." }
+        },
+        {
+          "month": 9,
+          "text": { "en": "Feeding on herring and mackerel in the Gulf of St. Lawrence, putting on fat.", "es": "Comen arenques y caballas en el golfo de San Lorenzo y acumulan grasa." }
+        }
+      ],
+      "sources": [
+        "https://www.sciencedaily.com/releases/2005/04/050427201515.htm",
+        "https://www.seagrantfish.lsu.edu/pdfs/2006-Teo-et-al.pdf",
+        "https://www.iccat.int/GBYP/Docs/Data_Recovery_Phase_6_Electronic_Tags_Stanford_University.pdf"
+      ]
+    },
+    {
+      "id": "green-turtle",
+      "emoji": "🐢",
+      "name": { "en": "Green turtle (Ascension Island)", "es": "Tortuga verde (isla Ascensión)" },
+      "species": "Chelonia mydas",
+      "group": "reptiles",
+      "km": 4600,
+      "kmNote": { "en": "round trip (about 2,300 km each way)", "es": "ida y vuelta (unos 2 300 km cada tramo)" },
+      "loop": false,
+      "text": { "en": "Green turtles that graze seagrass off Brazil swim about 2,300 km across the open Atlantic to nest on Ascension Island, a speck of land in mid-ocean, usually every few years.", "es": "Las tortugas verdes que comen pastos marinos frente a Brasil nadan unos 2 300 km por el Atlántico abierto para anidar en la isla Ascensión, un puntito de tierra en medio del océano, por lo general cada pocos años." },
+      "months": [[-14.5,-7.9],[-14.5,-7.9],[-14.5,-7.9],[-14.5,-7.9],[-14.5,-7.9],[-25,-6.8],[-35,-4.8],[-38.4,-3.6],[-38.4,-3.6],[-38.4,-3.6],[-30,-6],[-20,-7.4]],
+      "path": [[-38.4,-3.6],[-35,-4.8],[-30,-6],[-25,-6.8],[-20,-7.4],[-14.5,-7.9]],
+      "moments": [
+        {
+          "month": 1,
+          "text": { "en": "Males and females mate in the waters off Ascension.", "es": "Machos y hembras se aparean en las aguas de Ascensión." }
+        },
+        {
+          "month": 3,
+          "text": { "en": "Peak nesting: more than 20,000 nests a year on Ascension's beaches.", "es": "Máxima anidación: más de 20 000 nidos al año en las playas de Ascensión." }
+        },
+        {
+          "month": 6,
+          "text": { "en": "Females head home: first a fairly straight ocean crossing, then along the Brazilian coast.", "es": "Las hembras vuelven a casa: primero cruzan el océano casi en línea recta y luego siguen la costa de Brasil." }
+        },
+        {
+          "month": 9,
+          "text": { "en": "Grazing on seagrass and seaweed along the coast of Brazil.", "es": "Comen pastos marinos y algas en la costa de Brasil." }
+        }
+      ],
+      "sources": [
+        "https://int-res.com/abstracts/meps/v189/p263-273",
+        "https://research-portal.st-andrews.ac.uk/en/publications/biphasal-long-distance-migration-in-green-turtles/",
+        "https://www.ukotcf.org.uk/wp-content/uploads/2020/07/Ascension_GreenTurtle01.pdf",
+        "https://www.bluemarinefoundation.com/deep-dive-the-green-turtles-of-ascension-island/"
+      ]
+    },
+    {
+      "id": "painted-lady",
+      "emoji": "🦋",
+      "name": { "en": "Painted lady butterfly", "es": "Mariposa vanesa de los cardos" },
+      "species": "Vanessa cardui",
+      "group": "insects",
+      "km": 12000,
+      "kmNote": { "en": "round trip, over several generations", "es": "ida y vuelta, en varias generaciones" },
+      "loop": false,
+      "text": { "en": "Painted ladies fly a 12,000 km round trip between tropical Africa and Europe, crossing the Sahara twice a year. No single butterfly does it all: each of several generations flies one leg.", "es": "Las vanesas de los cardos hacen un viaje de ida y vuelta de 12 000 km entre el África tropical y Europa, cruzando el Sahara dos veces al año. Ninguna lo hace completo: cada una de varias generaciones vuela un tramo." },
+      "months": [[8,10],[5,16],[-3,31],[-4,37.5],[0,43],[2,48.5],[-1.5,52.5],[10,59.5],[2,48.5],[-4,37.5],[2,24],[8,10]],
+      "path": [[8,10],[5,16],[2,24],[-3,31],[-4,37.5],[0,43],[2,48.5],[-1.5,52.5],[10,59.5]],
+      "moments": [
+        {
+          "month": 3,
+          "text": { "en": "Spring generations breed in North Africa, then cross the Mediterranean.", "es": "Las generaciones de primavera se reproducen en el norte de África y luego cruzan el Mediterráneo." }
+        },
+        {
+          "month": 5,
+          "text": { "en": "Millions reach Europe; in boom years, such as 2009 and 2019, they fill the skies.", "es": "Millones llegan a Europa; en años de auge, como 2009 y 2019, llenan el cielo." }
+        },
+        {
+          "month": 9,
+          "text": { "en": "Autumn: new butterflies fly south high in the air, riding favourable winds.", "es": "Otoño: las nuevas mariposas vuelan al sur a gran altura, aprovechando los vientos a favor." }
+        },
+        {
+          "month": 11,
+          "text": { "en": "They cross the Sahara again to breed in the savannas of tropical Africa.", "es": "Cruzan otra vez el Sahara para reproducirse en las sabanas del África tropical." }
+        }
+      ],
+      "sources": [
+        "https://www.sciencenews.org/article/painted-lady-butterflies-migration-sahara-africa",
+        "https://www.eurekalert.org/news-releases/482742",
+        "https://www.reading.ac.uk/news/2021/Research-News/PR857585"
+      ]
+    },
+    {
+      "id": "globe-skimmer",
+      "emoji": "🦗",
+      "name": { "en": "Globe skimmer dragonfly", "es": "Libélula planeadora" },
+      "species": "Pantala flavescens",
+      "group": "insects",
+      "km": 16000,
+      "kmNote": { "en": "a yearly loop over about four generations (proposed: 14,000–18,000 km)", "es": "un circuito anual de unas cuatro generaciones (propuesto: 14 000–18 000 km)" },
+      "loop": true,
+      "text": { "en": "Each October millions of globe skimmers appear in the Maldives, which have no fresh water to breed in. They seem to ride monsoon winds from India to East Africa and back, over 3,500 km of open ocean.", "es": "Cada octubre aparecen millones de libélulas planeadoras en las Maldivas, que no tienen agua dulce para criar. Parecen viajar con los vientos del monzón de la India a África oriental y de vuelta, sobre 3 500 km de mar abierto." },
+      "months": [[35,-15],[35,-15],[37,-3],[37,-3],[45,5],[65,20],[72.5,21.5],[77.5,12.5],[75.5,10],[73.5,4.2],[55.5,-4.6],[39.5,-6]],
+      "path": [[77.5,12.5],[75.5,10],[73.5,4.2],[55.5,-4.6],[39.5,-6],[35,-15],[37,-3],[45,5],[55,13],[65,20],[72.5,21.5],[77.5,12.5]],
+      "moments": [
+        {
+          "month": 10,
+          "text": { "en": "Swarms reach the Maldives with the first north-east winds.", "es": "Los enjambres llegan a las Maldivas con los primeros vientos del noreste." }
+        },
+        {
+          "month": 11,
+          "text": { "en": "Arrivals in the Seychelles, more than 2,000 km farther west.", "es": "Llegadas a las Seychelles, a más de 2 000 km al oeste." }
+        },
+        {
+          "month": 1,
+          "text": { "en": "Breeding in fresh rain pools of East and southern Africa.", "es": "Se reproducen en charcos de lluvia del este y el sur de África." }
+        },
+        {
+          "month": 6,
+          "text": { "en": "With the south-west monsoon, a new generation may fly back to India, a leg not yet proven.", "es": "Con el monzón del suroeste, una nueva generación quizá vuelve a la India, un tramo aún no comprobado." }
+        }
+      ],
+      "sources": [
+        "https://news.mongabay.com/2009/07/dragonflies-migrate-14000-18000-km-from-india-to-s-africa",
+        "https://resolve.cambridge.org/core/journals/journal-of-tropical-ecology/article/abs/do-dragonflies-migrate-across-the-western-indian-ocean/227EEFD644DBD0E5220AF176D6958192",
+        "https://www.lunduniversity.lu.se/article/study-supports-theory-dragonflies-migrate-across-indian-ocean"
+      ]
+    },
+    {
+      "id": "bogong-moth",
+      "emoji": "🦋",
+      "name": { "en": "Bogong moth", "es": "Polilla bogong" },
+      "species": "Agrotis infusa",
+      "group": "insects",
+      "km": 2000,
+      "kmNote": { "en": "round trip, up to about", "es": "ida y vuelta, hasta unos" },
+      "loop": false,
+      "text": { "en": "Bogong moths fly up to about 1,000 km by night to cool caves in the Australian Alps, steering by the starry sky, and rest there all summer. Their numbers have crashed since 2017.", "es": "Las polillas bogong vuelan de noche hasta unos 1 000 km hacia cuevas frescas de los Alpes australianos, guiándose por el cielo estrellado, y allí reposan todo el verano. Su población se desplomó desde 2017." },
+      "months": [[148.3,-36.45],[148.3,-36.45],[148.5,-34.5],[149.5,-30],[150.5,-27.5],[150.5,-27.5],[150.5,-27.5],[150.5,-27.5],[149.5,-30],[148.8,-32.5],[148.4,-35.6],[148.3,-36.45]],
+      "path": [[150.5,-27.5],[149.5,-30],[148.8,-32.5],[148.5,-34.5],[148.4,-35.6],[148.3,-36.45]],
+      "moments": [
+        {
+          "month": 10,
+          "text": { "en": "Spring: newly emerged moths fly south-east by night toward the mountains.", "es": "Primavera: las polillas recién nacidas vuelan de noche al sureste, hacia las montañas." }
+        },
+        {
+          "month": 12,
+          "text": { "en": "Moths cover the walls of cool alpine caves, resting through the hot months.", "es": "Las polillas cubren las paredes de cuevas frescas de la montaña y reposan durante los meses calurosos." }
+        },
+        {
+          "month": 1,
+          "text": { "en": "For thousands of years, Aboriginal peoples gathered in the mountains to feast on the fatty moths.", "es": "Durante miles de años, los pueblos aborígenes se reunieron en las montañas para comer estas polillas ricas en grasa." }
+        },
+        {
+          "month": 4,
+          "text": { "en": "Autumn: the same moths fly back to the plains to mate, lay eggs and die.", "es": "Otoño: las mismas polillas vuelven a las llanuras para aparearse, poner huevos y morir." }
+        }
+      ],
+      "sources": [
+        "https://www.npr.org/2025/06/18/nx-s1-5434328/how-migrating-australian-moths-find-caves-hundreds-of-miles-away",
+        "https://www.frontiersin.org/articles/10.3389/finsc.2023.1230501/text"
+      ]
+    }
+  ]
+}

@@ -1074,3 +1074,21 @@ div.guide-item { cursor: default; }
 .climate-key { margin-top: 2px; }
 .game-note { line-height: 1.4; max-height: 6.5em; overflow-y: auto; }
 .life-places { max-height: 7.5em; overflow-y: auto; }
+
+/* ---- Wild world (v0.30.0): animal cards, the finder, What lives here? ---- */
+.wild-status { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; line-height: 1.5; white-space: nowrap; }
+.wild-status-row { margin: 6px 0 2px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.guide-item .wild-status { margin-left: auto; align-self: center; font-size: 11px; }
+.wild-card-extra { display: flex; flex-direction: column; gap: 4px; }
+.wild-sound { margin-top: 6px; }
+.wild-sound-title { font-size: 12.5px; font-weight: 700; margin-bottom: 2px; }
+.wild-audio { width: 100%; height: 34px; }
+.wild-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 6px; }
+.wild-page-head { display: flex; align-items: center; gap: 10px; margin: 10px 0 6px; }
+.wild-page-emoji { font-size: 34px; line-height: 1; }
+.wild-months { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; height: 92px; align-items: end; margin: 6px 0 4px; }
+.wild-month { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+.wild-month-bar { width: 100%; min-height: 2px; border-radius: 4px 4px 0 0; background: var(--muted); opacity: 0.55; }
+.wild-month.best .wild-month-bar { background: var(--accent, #e8590c); opacity: 1; }
+.wild-month-lab { font-size: 11px; color: var(--muted); margin-top: 3px; }
+.wild-month.best .wild-month-lab { color: inherit; font-weight: 700; }

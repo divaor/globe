@@ -79,9 +79,24 @@ export const PLAYLISTS: Playlist[] = [
       { stack: ['vegetation'], say: T('What grows where: rainforest, savanna, desert, forest, taiga and tundra.', 'Qué crece dónde: selva, sabana, desierto, bosque, taiga y tundra.') },
       { stack: ['realms'], say: T('The animal realms: regions whose animals share a long history.', 'Las regiones zoogeográficas: zonas cuyos animales comparten una larga historia.') },
       { stack: ['vegetation', 'animals'], say: T('Famous animals where they live in the wild.', 'Animales famosos donde viven en libertad.') },
-      { stack: ['satellite', 'migrations'], say: T('Great migrations: terns, monarch butterflies, whales and wildebeest.', 'Las grandes migraciones: charranes, mariposas monarca, ballenas y ñus.') },
+      { stack: ['satellite', 'migrations'], say: T('Great migrations: terns, monarch butterflies, whales, wildebeest and red crabs.', 'Las grandes migraciones: charranes, mariposas monarca, ballenas, ñus y cangrejos rojos.') },
       { stack: ['hotspots'], say: T('Biodiversity hotspots: places with many species found nowhere else, and under threat.', 'Los puntos calientes de biodiversidad: lugares con muchas especies que no viven en ningún otro sitio, y amenazadas.') },
       { stack: ['national-animals'], say: T('Each country’s national animal.', 'El animal nacional de cada país.') },
+    ],
+  },
+  {
+    // v0.30.0: Wild world.
+    id: 'wild', icon: '🦁', name: T('Animals of the world', 'Animales del mundo'), desc: T('Where animals live, from the savanna to the ice, and their great journeys.', 'Dónde viven los animales, de la sabana al hielo, y sus grandes viajes.'),
+    items: [
+      { stack: ['vegetation', 'wild'], say: T('About 400 animals, each where people have seen it in the wild.', 'Unos 400 animales, cada uno donde se ha visto en libertad.') },
+      { stack: ['wild'], fly: [34.5, -2.5, 4], title: T('The Serengeti', 'El Serengueti'), say: T('The African savanna: lions, elephants, giraffes, zebras and wildebeest.', 'La sabana africana: leones, elefantes, jirafas, cebras y ñus.') },
+      { stack: ['wild'], fly: [-62, -4, 3.2], title: T('The Amazon', 'La Amazonía'), say: T('The Amazon: jaguars, macaws, river dolphins, anacondas and sloths.', 'La Amazonía: jaguares, guacamayos, delfines de río, anacondas y perezosos.') },
+      { stack: ['wild'], fly: [110, 0, 3.2], title: T('Borneo and Sumatra', 'Borneo y Sumatra'), say: T('The islands of orangutans, tigers, rhinoceroses and hornbills.', 'Las islas de los orangutanes, los tigres, los rinocerontes y los cálaos.') },
+      { stack: ['wild'], fly: [134, -25, 2.6], title: T('Australia', 'Australia'), say: T('Kangaroos, koalas, wombats, emus and the platypus: animals found nowhere else.', 'Canguros, koalas, wombats, emúes y el ornitorrinco: animales que no viven en ningún otro lugar.') },
+      { stack: ['wild'], options: { wild: { status: 'endangered' } }, say: T('Threatened animals, ringed by how close they are to the edge.', 'Los animales amenazados, con un anillo según lo cerca que están del límite.') },
+      { stack: ['wild'], options: { wild: { status: 'gone' } }, say: T('Animals lost in the last 500 years, where they once lived: the dodo, the thylacine, the passenger pigeon.', 'Animales perdidos en los últimos 500 años, donde vivían: el dodo, el tilacino, la paloma migratoria.') },
+      { stack: ['satellite', 'migrations'], say: T('Great migrations through the year: 31 journeys by land, sea and air.', 'Las grandes migraciones a lo largo del año: 31 viajes por tierra, mar y aire.') },
+      { stack: ['wild-parks'], say: T('National parks and nature reserves: the best places to see wild animals.', 'Parques nacionales y reservas naturales: los mejores lugares para ver animales salvajes.') },
     ],
   },
   {

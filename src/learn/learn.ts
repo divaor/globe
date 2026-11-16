@@ -28,6 +28,8 @@ import { thumbUrl, type Space } from '../space/space';
 import type { Sky } from '../sky/sky';
 import { ORIGINS, originName, mainOrigin, type Elements, type Element } from '../sky/elements';
 import { Borders, type BorderData } from '../play/route';
+import { loadWild, cellAt, cellCenter, livesIn, type WildData, type Animal } from '../wild/data';
+import { drawAnimalRange, rangeKm, focusAnimal } from '../layers/packs/wild';
 import { loadArt, nm as artName, yearText, commons as commonsUrl, type ArtData } from '../artguide/data';
 import type { RenderCtx } from '../layers/types';
 import { recordAnswer, recordQuiz, recordDaily, recordDailySubjects, recordTour, dailyResult, dayKey, current, progress, progressPanel, BADGES, type Badge } from './progress';
@@ -45,7 +47,7 @@ function seeded(seed: number): () => number {
 /** FNV-1a: a number from a string (the day). */
 const hash = (str: string) => { let x = 0x811c9dc5; for (let i = 0; i < str.length; i++) { x ^= str.charCodeAt(i); x = Math.imul(x, 0x01000193); } return x >>> 0; };
 
-type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family' | 'plague' | 'disaster' | 'listen' | 'opening' | 'artist' | 'site' | 'inventor' | 'order' | 'detective' | 'daily' | 'world' | 'landed' | 'constellation' | 'element' | 'hop' | 'museum';
+type QuizKind = 'find' | 'flag' | 'capital' | 'where' | 'when' | 'dish' | 'era' | 'civ' | 'period' | 'region' | 'champion' | 'link' | 'journey' | 'faith' | 'script' | 'family' | 'plague' | 'disaster' | 'listen' | 'opening' | 'artist' | 'site' | 'inventor' | 'order' | 'detective' | 'daily' | 'world' | 'landed' | 'constellation' | 'element' | 'hop' | 'museum' | 'habitat' | 'lives';
 /** An item of a story collection, tagged with its collection. */
 interface QItem extends CollectionItem { kind: StoryKind; pop?: number }
 /** A site of data/layers/heritage.json (scripts/data/world-heritage/build.py). */
@@ -65,6 +67,8 @@ interface Q {
   hop?: { a: string; b: string };
   /** Which museum is it in?: the work shown (the answer, `id`, is its museum). */
   art?: { work: string };
+  /** Who lives here? (v0.30.0): the place shown (the answer, `id`, is an animal that lives there). */
+  wild?: { at: [number, number] };
 }
 /** On this day: a story step or item with a full date: story key ("wars/ww1"), step (from 0), date, icon, title. */
 type OtdEntry = [string, number, string, string, string, string];
@@ -109,12 +113,12 @@ const itemKey = (x: QItem) => x.id ?? x.name.en;
 /** The quizzes whose answer is a tap on the map (the map's names are hidden), and Time detective's old borders. */
 /** Which country in between? leaves out the borders that only an exclave makes. */
 const HOP_SKIP = ['kaliningrad', 'nakhchivan', 'cabinda'];
-const MAP_QUIZZES: QuizKind[] = ['find', 'where', 'region', 'detective', 'hop'];
+const MAP_QUIZZES: QuizKind[] = ['find', 'where', 'region', 'detective', 'hop', 'habitat'];
 
 /** The daily challenge: the same eight questions for everyone on a day (by the local date); the eighth's quiz changes daily. */
 const DAILY_FIRST = Date.UTC(2026, 10, 13);
 const dailyNumber = (day: string) => { const [y, m, d] = day.split('-').map(Number); return Math.round((Date.UTC(y, m - 1, d) - DAILY_FIRST) / 864e5) + 1; };
-const DAILY_ROTATE: QuizKind[] = ['site', 'inventor', 'artist', 'dish', 'champion', 'era', 'civ', 'journey', 'faith', 'plague', 'disaster', 'script', 'opening', 'period'];
+const DAILY_ROTATE: QuizKind[] = ['site', 'inventor', 'artist', 'habitat', 'dish', 'champion', 'era', 'civ', 'lives', 'journey', 'faith', 'plague', 'disaster', 'habitat', 'script', 'opening', 'period', 'lives'];
 const marksOf = (qs: { ok?: boolean }[]) => qs.map((x) => (x.ok ? '🟩' : '🟥')).join('');
 /** "1 day in a row", "3 días seguidos". */
 const inARow = (n: number) => (es() ? `${n} ${n === 1 ? 'día seguido' : 'días seguidos'}` : `${n} ${n === 1 ? 'day' : 'days'} in a row`);
@@ -228,9 +232,9 @@ export class Learn {
       const kind = this.qk();
       // Time detective: no names before the answer; after it, a tap names the state or empire.
       if (kind === 'detective') { if (q.answered && g) this.time.history.tap(g[0], g[1]); return true; }
-      if (q.answered || !['find', 'where', 'region'].includes(kind)) return false;
+      if (q.answered || !['find', 'where', 'region', 'habitat'].includes(kind)) return false;
       if (g && kind === 'find') this.answerFind(app.renderer.countryAt(g[0], g[1]));
-      if (g && kind === 'where') this.answerWhere(g as [number, number]);
+      if (g && (kind === 'where' || kind === 'habitat')) this.answerWhere(g as [number, number]);
       if (g && kind === 'region' && this.regions) {
         // A tap outside the country is not an answer.
         const r = regionAt(this.regions.list, g[0], g[1], app.renderer.view);
@@ -244,6 +248,8 @@ export class Learn {
       drawRegions(rc, rg.list, (r) => this.regionMark(r), (r) => this.regionName(r));
     });
     app.renderer.overlays.add((rc) => this.drawHop(rc));
+    // Where does it live? and Who lives here?: the animal's range once answered.
+    app.renderer.overlays.add((rc) => { if (this.quiz && this.wildShow) drawAnimalRange(rc, this.wildShow); });
     app.renderer.overlays.add((rc) => {
       const { ctx } = rc;
       for (const [pin, r] of [...this.pins.map((x) => [x, 7] as const), ...(this.pin ? [[this.pin, 9] as const] : [])]) {
@@ -311,6 +317,8 @@ export class Learn {
       ['artist', '🎨', L('Who made it?', '¿Quién lo hizo?'), L('Look at a masterpiece and pick the artist who made it.', 'Mira una obra maestra y elige al artista que la hizo.')],
       ['site', '🏛️', L('Which World Heritage site?', '¿Qué sitio del Patrimonio Mundial?'), L('Look at a picture of a World Heritage site and name it.', 'Mira la foto de un sitio del Patrimonio Mundial y di cuál es.')],
       ['museum', '🖼️', L('Which museum is it in?', '¿En qué museo está?'), L('A masterpiece: which museum holds it today?', 'Una obra maestra: ¿qué museo la tiene hoy?')],
+      ['habitat', '🐾', L('Where does it live?', '¿Dónde vive?'), L('A photo of an animal: tap a place on the globe where it lives in the wild.', 'La foto de un animal: toca en el globo un lugar donde vive en libertad.')],
+      ['lives', '🔭', L('Who lives here?', '¿Quién vive aquí?'), L('The globe flies to a place: which of four animals lives there?', 'El globo vuela a un lugar: ¿cuál de cuatro animales vive allí?')],
       ['inventor', '💡', L('Who invented it?', '¿Quién lo inventó?'), L('The telephone, paper, the World Wide Web...: pick who invented it.', 'El teléfono, el papel, la World Wide Web...: elige quién lo inventó.')],
       ['world', '🪐', L('Which world is this?', '¿Qué mundo es este?'), L('A planet, a moon or a dwarf planet turns on the globe, with no names: which one is it?', 'Un planeta, una luna o un planeta enano gira en el globo, sin nombres: ¿cuál es?')],
       ['landed', '🚀', L('Who landed here?', '¿Quién aterrizó aquí?'), L('A spot on the Moon or Mars: which mission landed there?', 'Un punto en la Luna o en Marte: ¿qué misión aterrizó allí?')],
@@ -388,8 +396,8 @@ export class Learn {
     if (kind === 'link') { await this.startLinkQuiz(); return; }
     if (kind === 'family') { await this.startFamilyQuiz(); return; }
     if (kind === 'daily') { await this.startDaily(); return; }
-    const qs = kind === 'world' ? await this.worldQs(10) : kind === 'landed' ? await this.landedQs(10) : kind === 'constellation' ? await this.constellationQs(10) : kind === 'element' ? await this.elementQs(10) : kind === 'order' ? await this.orderQs(10) : kind === 'detective' ? await this.detectiveQs(10) : kind === 'hop' ? await this.hopQs(10, region) : kind === 'museum' ? await this.museumQs(10) : ITEM_QUIZZES.includes(kind) ? await this.itemQs(kind, 10) : this.countryQs(kind, region, 10);
-    if (!qs?.length) { this.needsData(kind === 'detective' ? L('This game needs its maps; check your connection.', 'Este juego necesita sus mapas; revisa tu conexión.') : kind === 'hop' ? L('This quiz needs the border data; check your connection.', 'Este concurso necesita los datos de fronteras; revisa tu conexión.') : kind === 'museum' ? L('This quiz needs the art guide; check your connection.', 'Este concurso necesita la guía de arte; revisa tu conexión.') : undefined); return; }
+    const qs = kind === 'world' ? await this.worldQs(10) : kind === 'landed' ? await this.landedQs(10) : kind === 'constellation' ? await this.constellationQs(10) : kind === 'element' ? await this.elementQs(10) : kind === 'order' ? await this.orderQs(10) : kind === 'detective' ? await this.detectiveQs(10) : kind === 'hop' ? await this.hopQs(10, region) : kind === 'museum' ? await this.museumQs(10) : kind === 'habitat' ? await this.habitatQs(10) : kind === 'lives' ? await this.livesQs(10) : ITEM_QUIZZES.includes(kind) ? await this.itemQs(kind, 10) : this.countryQs(kind, region, 10);
+    if (!qs?.length) { this.needsData(kind === 'detective' ? L('This game needs its maps; check your connection.', 'Este juego necesita sus mapas; revisa tu conexión.') : kind === 'hop' ? L('This quiz needs the border data; check your connection.', 'Este concurso necesita los datos de fronteras; revisa tu conexión.') : kind === 'museum' ? L('This quiz needs the art guide; check your connection.', 'Este concurso necesita la guía de arte; revisa tu conexión.') : kind === 'habitat' || kind === 'lives' ? L('This quiz needs the animal data; check your connection.', 'Este concurso necesita los datos de animales; revisa tu conexión.') : undefined); return; }
     await this.begin(kind, region, qs);
   }
 
@@ -408,6 +416,17 @@ export class Learn {
     const q = this.quiz;
     if (!q) return;
     const kind = this.qk(), cur = q.qs[q.i];
+    this.wildShow = null;
+    // Who lives here?: the place, with a pin.
+    if (cur?.wild) {
+      if (this.space?.active) await this.space.exit();
+      await this.time.history.quizMap(null);
+      this.app.renderer.settings.labels = { ...q.savedLabels };
+      this.pin = { lon: cur.wild.at[0], lat: cur.wild.at[1], text: '?' };
+      this.app.renderer.view.flyTo({ lon: cur.wild.at[0], lat: cur.wild.at[1], zoom: Math.max(4, Math.min(8, this.app.renderer.view.zoom)) }, 1400);
+      this.app.renderer.requestRender();
+      return;
+    }
     // The sky, with one constellation drawn and no names (Which constellation?).
     if (cur?.sky?.con && this.sky) {
       if (this.space?.active) await this.space.exit();
@@ -1093,6 +1112,59 @@ export class Learn {
     add(this.card, h('div', { class: 'quiz-q' }, L('Which museum is it in?', '¿En qué museo está?')), h('div', { class: 'quiz-item' }, `🖼️ ${this.workTitle(w.id)}`), zoomable(img));
   }
 
+  // ---- Where does it live? and Who lives here? (Wild world, v0.30.0)
+
+  private wildQuiz: WildData | null = null;
+  private wildShow: Animal | null = null;
+  private async loadWildQuiz() { this.wildQuiz ??= await loadWild(); return this.wildQuiz; }
+  /** The best-known animals with a picture, not gone, each kind of animal once (one big cat, one penguin). */
+  private wildPool(d: WildData): Animal[] {
+    return d.animals.filter((a) => !a.gone && a.img && a.cells.length >= 3 && a.sl >= 40).sort((a, b) => b.sl - a.sl || a.id.localeCompare(b.id)).slice(0, 220);
+  }
+  /** Questions: an animal with its photo; tap where it lives. */
+  private async habitatQs(n: number): Promise<Q[]> {
+    const d = await this.loadWildQuiz();
+    if (!d || !n) return [];
+    const out: Q[] = [];
+    const fams = new Set<string>();
+    for (const a of shuffle(this.wildPool(d).slice())) {
+      if (out.length >= n || fams.has(a.fam ?? a.id)) continue;
+      fams.add(a.fam ?? a.id);
+      const top = a.cells[a.counts.indexOf(Math.max(...a.counts))] ?? a.cells[0];
+      const names = (l: 'en' | 'es') => a.cc.slice(0, 3).map((c) => this.app.data.name(c, l)).join(', ');
+      const item = { id: a.id, name: { en: a.n[0], es: a.n[1] }, at: cellCenter(top), icon: a.e, img: a.img, type: 'species', kind: 'life', cat: 'mammal', text: { en: '', es: '' }, story: '', step: 0, place: { en: names('en'), es: names('es') } } as unknown as QItem;
+      out.push({ id: a.id, kind: 'habitat', item });
+    }
+    return out;
+  }
+  /** Questions: a place where an animal lives (where it is seen most); it and three that don't live near there. */
+  private async livesQs(n: number): Promise<Q[]> {
+    const d = await this.loadWildQuiz();
+    if (!d || !n) return [];
+    const pool = this.wildPool(d);
+    const out: Q[] = [];
+    const used = new Set<string>();
+    for (const a of shuffle(pool.slice())) {
+      if (out.length >= n || used.has(a.fam ?? a.id)) continue;
+      // A square where it is seen often, away from the edges of its range.
+      const strong = Array.from(a.cells).filter((_, i) => a.counts[i] >= Math.max(...a.counts) - 2);
+      const c = strong[Math.floor(rand() * strong.length)] ?? a.cells[0];
+      const at = cellCenter(c);
+      const near = new Set<number>();
+      for (let dy = -2; dy <= 2; dy++) for (let dx = -2; dx <= 2; dx++) near.add(cellAt(at[0] + dx * 1.40625, at[1] + dy * 1.40625));
+      const wrong = shuffle(pool.filter((b) => b !== a && b.g === a.g && b.fam !== a.fam && ![...near].some((k) => livesIn(b, k)))).slice(0, 3);
+      if (wrong.length < 3) continue;
+      used.add(a.fam ?? a.id);
+      out.push({ id: a.id, kind: 'lives', options: shuffle([a.id, ...wrong.map((b) => b.id)]), wild: { at } });
+    }
+    return out;
+  }
+  /** "🐆 Jaguar". */
+  private animalLabel(id: string): string {
+    const a = this.wildQuiz?.byId.get(id);
+    return a ? `${a.e} ${es() ? a.n[1] : a.n[0]}` : id;
+  }
+
   // ---- Daily challenge
 
   /** Eight questions, the same for everyone today: a country, a flag, the country in between two others, where, when,
@@ -1103,11 +1175,12 @@ export class Learn {
     if (dailyResult(day)) { this.showDailyDone(); return; }
     const num = dailyNumber(day);
     const last = DAILY_ROTATE[((num % DAILY_ROTATE.length) + DAILY_ROTATE.length) % DAILY_ROTATE.length];
-    await Promise.all([this.orderPool(), this.loadDetective(), this.hopPairs(), this.itemQs('where', 0), this.itemQs('when', 0), this.itemQs(last, 0)]);
+    const wildDay = last === 'habitat' || last === 'lives';
+    await Promise.all([this.orderPool(), this.loadDetective(), this.hopPairs(), this.itemQs('where', 0), this.itemQs('when', 0), wildDay ? this.loadWildQuiz() : this.itemQs(last, 0)]);
     rand = seeded(hash(`atlas-daily:${day}`));
     let qs: Q[] = [];
     try {
-      const parts = [this.countryQs('find', 'world', 1), this.countryQs('flag', 'world', 1), await this.hopQs(1), await this.itemQs('where', 1), await this.itemQs('when', 1), await this.orderQs(1), await this.detectiveQs(1), await this.itemQs(last, 1)];
+      const parts = [this.countryQs('find', 'world', 1), this.countryQs('flag', 'world', 1), await this.hopQs(1), await this.itemQs('where', 1), await this.itemQs('when', 1), await this.orderQs(1), await this.detectiveQs(1), last === 'habitat' ? await this.habitatQs(1) : last === 'lives' ? await this.livesQs(1) : await this.itemQs(last, 1)];
       qs = parts.flatMap((x) => x ?? []);
     } finally { rand = Math.random; }
     if (qs.length < 5) { this.needsData(); return; }
@@ -1199,6 +1272,7 @@ export class Learn {
 
   /** The question for an item. */
   private itemQuestion(kind: QuizKind, it: QItem): string {
+    if (kind === 'habitat') return L('Where does this animal live in the wild?', '¿Dónde vive este animal en libertad?');
     const ty = it.type ?? '';
     // The dish catalogue has drinks, spices and sauces too.
     const drink = it.cat === 'drink', spice = it.cat === 'spice';
@@ -1255,8 +1329,11 @@ export class Learn {
     const q = this.quiz!;
     const it = q.qs[q.i].item!;
     q.answered = true;
-    const km = g ? Math.round(geoDistance(g, it.at) * 6371) : null;
-    const ok = km != null && km <= 500;
+    // Where does it live?: how far the tap is from the nearest square where it lives (none, inside its range).
+    const animal = this.qk() === 'habitat' ? this.wildQuiz?.byId.get(it.id ?? '') ?? null : null;
+    const km = g ? Math.round(animal ? rangeKm(animal, g) : geoDistance(g, it.at) * 6371) : null;
+    const ok = km != null && km <= (animal ? 300 : 500);
+    if (animal) { this.wildShow = animal; this.app.renderer.requestRender(); }
     this.scored(ok);
     const cur = q.qs[q.i];
     cur.ok = ok;
@@ -1264,6 +1341,11 @@ export class Learn {
     this.showItem(it);
     const where = it.place ? tx(it.place) : '';
     const dist = km == null ? '' : L(`${km.toLocaleString('en-GB')} km away. `, `A ${km.toLocaleString('es-ES')} km. `);
+    if (animal) {
+      const near = km === 0 ? L('Right where it lives! ', '¡Justo donde vive! ') : km != null ? L(`${km.toLocaleString('en-GB')} km from where it lives. `, `A ${km.toLocaleString('es-ES')} km de donde vive. `) : '';
+      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${near}${tx(it.name)}: ${L('it lives in the orange squares', 'vive en los cuadros naranjas')}${where ? ` (${where})` : ''}.` });
+      return;
+    }
     this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${dist}${tx(it.name)}${where ? `: ${where}` : ''}.` });
   }
 
@@ -1321,7 +1403,7 @@ export class Learn {
       // Folded: the map is in view. What to find (the tap quizzes are answered on it), or the answer.
       if (feedback) add(this.card, h('div', { class: `quiz-fb ${feedback.ok ? 'ok' : 'bad'}` }, feedback.text), h('div', { class: 'tool-actions' }, this.nextButton()));
       else if (kind === 'find') add(this.card, h('div', { class: 'quiz-peek-q' }, L(`Where is ${this.app.data.name(cur.id, lang())}?`, `¿Dónde está ${this.app.data.name(cur.id, lang())}?`)));
-      else if (kind === 'where' && cur.item) add(this.card, h('div', { class: 'quiz-peek-q' }, `${cur.item.icon} ${tx(cur.item.name)}`));
+      else if ((kind === 'where' || kind === 'habitat') && cur.item) add(this.card, h('div', { class: 'quiz-peek-q' }, `${cur.item.icon} ${tx(cur.item.name)}`));
       else if (kind === 'region') { const r = this.regions?.list.find((x) => x.id === cur.id); if (r) add(this.card, h('div', { class: 'quiz-peek-q' }, L(`Where is ${this.regionName(r)}?`, `¿Dónde está ${this.regionName(r)}?`))); }
       else if (kind === 'detective') add(this.card, h('div', { class: 'quiz-peek-q' }, `🕵️ ${L('When is this map from?', '¿De cuándo es este mapa?')}`));
       else if (kind === 'hop' && cur.hop) add(this.card, h('div', { class: 'quiz-peek-q' }, this.hopQuestion(cur.hop)));
@@ -1344,10 +1426,11 @@ export class Learn {
     if (kind === 'capital') add(this.card, h('div', { class: 'quiz-q' }, L(`What is the capital of ${name}?`, `¿Cuál es la capital de ${name}?`)));
     if (kind === 'hop' && cur.hop) add(this.card, h('div', { class: 'quiz-q' }, this.hopQuestion(cur.hop)));
     if (kind === 'museum' && cur.art) this.museumQuestion(cur);
+    if (kind === 'lives' && cur.wild) add(this.card, h('div', { class: 'quiz-q' }, L('Which of these animals lives here, in the wild?', '¿Cuál de estos animales vive aquí, en libertad?')), h('div', { class: 'tool-hint' }, L('The globe shows the place.', 'El globo muestra el lugar.')));
     if (cur.options) {
       const opts = h('div', { class: 'quiz-opts' });
       for (const o of cur.options) {
-        const label = kind === 'capital' ? this.capital(o) : kind === 'museum' ? this.museumLabel(o) : `${this.app.data.name(o, lang())}`;
+        const label = kind === 'capital' ? this.capital(o) : kind === 'museum' ? this.museumLabel(o) : kind === 'lives' ? this.animalLabel(o) : `${this.app.data.name(o, lang())}`;
         const b = h('button', { type: 'button', class: 'pill quiz-opt' }, label) as HTMLButtonElement;
         if (q.answered) { b.disabled = true; if (o === cur.id) b.classList.add('ok'); else if (o === cur.pick) b.classList.add('bad'); }
         b.addEventListener('click', () => this.answerOption(o, b));
@@ -1391,7 +1474,7 @@ export class Learn {
     } else if (!q.answered) {
       const skip = h('button', { type: 'button', class: 'pill sm' }, L('Show me', 'Muéstramelo'));
       skip.addEventListener('click', () => this.answerWhere(null));
-      add(this.card, h('div', { class: 'tool-hint' }, L('Tap the place on the globe (within 500 km to score).', 'Toca el lugar en el globo (a menos de 500 km para puntuar).')), h('div', { class: 'tool-actions' }, skip));
+      add(this.card, h('div', { class: 'tool-hint' }, kind === 'habitat' ? L('Tap a place where it lives (within 300 km of its range to score).', 'Toca un lugar donde vive (a menos de 300 km de su área para puntuar).') : L('Tap the place on the globe (within 500 km to score).', 'Toca el lugar en el globo (a menos de 500 km para puntuar).')), h('div', { class: 'tool-actions' }, skip));
     }
     if (feedback) {
       // Not in a daily challenge, which would end there.
@@ -1413,7 +1496,7 @@ export class Learn {
     const ok = o === cur.id;
     this.scored(ok);
     cur.ok = ok; cur.pick = o;
-    cur.given = cur.item || cur.space || cur.sky ? this.optionLabel(kind, o, cur) : kind === 'capital' ? this.capital(o) : kind === 'museum' ? this.museumLabel(o) : this.app.data.name(o, lang());
+    cur.given = cur.item || cur.space || cur.sky ? this.optionLabel(kind, o, cur) : kind === 'capital' ? this.capital(o) : kind === 'museum' ? this.museumLabel(o) : kind === 'lives' ? this.animalLabel(o) : this.app.data.name(o, lang());
     b.classList.add(ok ? 'ok' : 'bad');
     if (cur.space) { this.answerSpace(kind, cur, ok); return; }
     if (cur.sky) { this.answerSky(kind, cur, ok); return; }
@@ -1446,6 +1529,13 @@ export class Learn {
       if (kind === 'inventor') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${tx(it.by!)} (${itemWhen(it, it.t)}${it.place ? `, ${tx(it.place)}` : ''})` }); return; }
       if (kind === 'artist') { this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${tx(it.by!)}${it.status ? ` · ${tx(it.status)}` : ''}` }); return; }
       this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${tx(it.name)}: ${right}.` });
+      return;
+    }
+    if (cur.wild) {
+      // Its range comes out on the map.
+      const a = this.wildQuiz?.byId.get(cur.id);
+      if (a) { this.wildShow = a; this.app.renderer.requestRender(); }
+      this.renderQuiz({ ok, text: `${ok ? L('Correct! ', '¡Correcto! ') : ''}${L(`${this.animalLabel(cur.id)} lives here: its range is in orange.`, `${this.animalLabel(cur.id)} vive aquí: su área está en naranja.`)}` });
       return;
     }
     if (cur.art) {
@@ -1517,7 +1607,7 @@ export class Learn {
   /** The result: the score, then every question, right or wrong, with a small picture; a tap shows it on the map. */
   private renderResult() {
     const q = this.quiz!;
-    const top = q.kind === 'order' ? L('Time keeper! ⏳', '¡Guardián del tiempo! ⏳') : q.kind === 'detective' ? L('Master detective! 🕵️', '¡Gran detective! 🕵️') : q.kind === 'site' ? L('Heritage explorer! 🏛️', '¡Explorador del patrimonio! 🏛️') : q.kind === 'world' || q.kind === 'landed' ? L('Space explorer! 🚀', '¡Explorador del espacio! 🚀') : q.kind === 'constellation' || q.kind === 'element' ? L('Star gazer! ✨', '¡Observador de estrellas! ✨') : q.kind === 'inventor' ? L('Inventive mind! 💡', '¡Mente inventiva! 💡') : q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : q.kind === 'family' || q.kind === 'script' ? L('Language master! 🗣️', '¡Maestro de las lenguas! 🗣️') : q.kind === 'link' ? L('Data master! 📊', '¡Maestro de los datos! 📊') : q.kind === 'plague' ? L('Disease detective! 🔬', '¡Detective de epidemias! 🔬') : q.kind === 'disaster' ? L('Disaster expert! 🌋', '¡Experto en desastres! 🌋') : q.kind === 'listen' ? L('Golden ears! 🎧', '¡Oído de oro! 🎧') : q.kind === 'opening' ? L('Bookworm! 📚', '¡Ratón de biblioteca! 📚') : q.kind === 'artist' ? L('Art expert! 🎨', '¡Experto en arte! 🎨') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
+    const top = q.kind === 'habitat' || q.kind === 'lives' ? L('Nature expert! 🐾', '¡Experto en naturaleza! 🐾') : q.kind === 'order' ? L('Time keeper! ⏳', '¡Guardián del tiempo! ⏳') : q.kind === 'detective' ? L('Master detective! 🕵️', '¡Gran detective! 🕵️') : q.kind === 'site' ? L('Heritage explorer! 🏛️', '¡Explorador del patrimonio! 🏛️') : q.kind === 'world' || q.kind === 'landed' ? L('Space explorer! 🚀', '¡Explorador del espacio! 🚀') : q.kind === 'constellation' || q.kind === 'element' ? L('Star gazer! ✨', '¡Observador de estrellas! ✨') : q.kind === 'inventor' ? L('Inventive mind! 💡', '¡Mente inventiva! 💡') : q.kind === 'champion' ? L('Sports master! 🏆', '¡Maestro del deporte! 🏆') : q.kind === 'family' || q.kind === 'script' ? L('Language master! 🗣️', '¡Maestro de las lenguas! 🗣️') : q.kind === 'link' ? L('Data master! 📊', '¡Maestro de los datos! 📊') : q.kind === 'plague' ? L('Disease detective! 🔬', '¡Detective de epidemias! 🔬') : q.kind === 'disaster' ? L('Disaster expert! 🌋', '¡Experto en desastres! 🌋') : q.kind === 'listen' ? L('Golden ears! 🎧', '¡Oído de oro! 🎧') : q.kind === 'opening' ? L('Bookworm! 📚', '¡Ratón de biblioteca! 📚') : q.kind === 'artist' ? L('Art expert! 🎨', '¡Experto en arte! 🎨') : ITEM_QUIZZES.includes(q.kind) ? L('History master! 🏆', '¡Maestro de la historia! 🏆') : L('Geography master! 🏆', '¡Maestro de la geografía! 🏆');
     const msg = q.score >= 9 ? top : q.score >= 6 ? L('Great job! 🌍', '¡Muy bien! 🌍') : L('Keep exploring! 🧭', '¡Sigue explorando! 🧭');
     if (q.kind === 'daily') { this.renderDailyResult(); return; }
     add(this.card, this.quizHead(`${L('Result', 'Resultado')} ${q.score}/${q.qs.length}`, ''));
@@ -1563,7 +1653,7 @@ export class Learn {
     const name = it ? tx(it.name) : cur.hop ? this.hopWay(cur) : cur.art ? this.workTitle(cur.art.work) : this.app.data.name(cur.id, lang());
     const right = it
       ? (kind === 'where' ? (it.place ? tx(it.place) : '') : kind === 'when' ? itemWhen(it, Math.min(...(cur.options ?? [cur.id]).map(Number))) : this.optionLabel(kind, cur.id, cur))
-      : kind === 'capital' ? this.capital(cur.id) : kind === 'museum' ? this.museumLabel(cur.id) : '';
+      : kind === 'capital' ? this.capital(cur.id) : kind === 'museum' ? this.museumLabel(cur.id) : kind === 'lives' ? this.animalLabel(cur.id) : '';
     const yours = cur.ok ? '' : kind === 'where' || kind === 'find' ? (cur.given ?? '') : cur.given ? L(`you said ${cur.given}`, `dijiste ${cur.given}`) : L('no answer', 'sin respuesta');
     const pic = h('span', { class: 'quiz-thumb' }, it ? it.icon : '');
     if (it) {
@@ -1974,6 +2064,7 @@ export class Learn {
     this.app.renderer.settings.labels = { ...this.quiz.savedLabels };
     this.quiz = null;
     this.hopShow = null;
+    this.wildShow = null;
     this.pin = null;
     this.pins = [];
     this.regions = null;
@@ -1990,7 +2081,7 @@ export class Learn {
   // ---- Tours ----------------------------------------------------------------------------------
   private openTours() {
     const body = h('div');
-    const groups: [Tour['group'], string][] = [[undefined, L('Our planet', 'Nuestro planeta')], ['cities', L('Cities through time', 'Ciudades a través del tiempo')], ['history', L('History and culture', 'Historia y cultura')], ['life', L('Life through time', 'La vida en el tiempo')], ['games', L('Games of the world', 'Juegos del mundo')], ['journeys', L('Journeys and trade routes', 'Viajes y rutas comerciales')], ['beliefs', L('Religions and philosophies', 'Religiones y filosofías')], ['writing', L('Writing and languages', 'Escritura y lenguas')], ['plagues', L('Plagues and cures', 'Epidemias y curas')], ['disasters', L('Natural disasters', 'Desastres naturales')], ['music', L('Music and dance', 'Música y baile')], ['books', L('Books and writers', 'Libros y escritores')], ['art', L('Art of the world', 'Arte del mundo')], ['inventions', L('Inventions', 'Inventos')], ['heritage', L('World Heritage', 'Patrimonio de la Humanidad')], ['space', L('Beyond Earth', 'Más allá de la Tierra')]];
+    const groups: [Tour['group'], string][] = [[undefined, L('Our planet', 'Nuestro planeta')], ['cities', L('Cities through time', 'Ciudades a través del tiempo')], ['history', L('History and culture', 'Historia y cultura')], ['life', L('Life through time', 'La vida en el tiempo')], ['games', L('Games of the world', 'Juegos del mundo')], ['journeys', L('Journeys and trade routes', 'Viajes y rutas comerciales')], ['beliefs', L('Religions and philosophies', 'Religiones y filosofías')], ['writing', L('Writing and languages', 'Escritura y lenguas')], ['plagues', L('Plagues and cures', 'Epidemias y curas')], ['disasters', L('Natural disasters', 'Desastres naturales')], ['music', L('Music and dance', 'Música y baile')], ['books', L('Books and writers', 'Libros y escritores')], ['art', L('Art of the world', 'Arte del mundo')], ['inventions', L('Inventions', 'Inventos')], ['heritage', L('World Heritage', 'Patrimonio de la Humanidad')], ['space', L('Beyond Earth', 'Más allá de la Tierra')], ['nature', L('Wild world', 'Mundo salvaje')]];
     for (const [group, title] of groups) {
       const list = h('div', { class: 'mode-list' });
       const tours = TOURS.filter((x) => x.group === group);
@@ -2077,6 +2168,8 @@ export class Learn {
       if (s.projection && this.app.projection !== s.projection) this.app.setProjection(s.projection);
       if (s.stack) await this.app.setStack(s.stack);
       for (const [id, o] of Object.entries(s.options ?? {})) for (const [k, v] of Object.entries(o)) this.app.setOption(id, k, v);
+      // Wild world: one animal's range at this stop, or every animal again.
+      if (s.wild || this.app.isActive('wild')) await focusAnimal(s.wild ?? null);
     }
     if (s.fly) this.app.renderer.view.flyTo({ lon: s.fly[0], lat: s.fly[1], zoom: s.fly[2] }, 2200);
     this.app.renderer.requestRender();

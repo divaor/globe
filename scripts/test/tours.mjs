@@ -51,6 +51,7 @@ const skyTargets = () => {
 
 let errors = 0, warnings = 0;
 const err = (m) => { errors++; console.log(`ERROR ${m}`); };
+let WILD = null;
 const warn = (m) => { warnings++; console.log(`warn  ${m}`); };
 const names = new Set();
 for (const tour of tours) {
@@ -66,6 +67,17 @@ for (const tour of tours) {
   tour.steps.forEach((s, i) => {
     const at = `${tn} #${i + 1}`;
     for (const k of ['title_en', 'title_es', 'en', 'es']) if (!s[k] || !String(s[k]).trim()) err(`${at}: no ${k}`);
+    // Wild world (v0.30.0): the animal whose range the stop shows, which must live near where the stop flies.
+    if (s.wild) {
+      WILD ??= JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/wild/animals.json'), 'utf8')).animals;
+      const a = WILD.find((x) => x.id === s.wild);
+      if (!a) err(`${at}: no animal "${s.wild}" in Animals of the world`);
+      else if (s.fly) {
+        let c = -1; const cells = a.c.split('.').map((d) => (c += parseInt(d, 36)));
+        const near = Math.min(...cells.map((k) => km([-180 + ((k % 256) + 0.5) * 1.40625, -90 + (Math.floor(k / 256) + 0.5) * 1.40625], s.fly)));
+        if (near > 400) warn(`${at}: ${s.wild} lives ${Math.round(near)} km from where the stop flies`);
+      }
+    }
     for (const k of ['en', 'es']) if (s[k] && s[k].length > 280) warn(`${at}: the ${k} text is long (${s[k].length} characters)`);
     if (s.fly) {
       const [lon, lat, z] = s.fly;

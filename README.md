@@ -25,6 +25,15 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   country zoom with thin dashed lines and their names, on by default and each with its switch; a tap says which one
   ("State: Texas") and Who was born here? names a place's state.
 - **Navigation:** drag with fling, pinch, mouse wheel, double-tap, keyboard.
+- **Nature (More → Nature):** the animal finder, "Where can I see…?": any animal by its English, Spanish or Latin
+  name. The 405 work offline; any other of GBIF's species is looked up live and its range is GBIF's live map of every
+  sighting shared. For each, the best parks to see it (ranked by sightings), when to go (sightings by month, live from
+  iNaturalist, worldwide or at a park) and Plan a trip (the nearest travel-guide city). What lives here?: tap the map
+  or press Near me for the animals people have seen most within 50 km, with photos (live from iNaturalist), or offline
+  those of the 405 that live there. The travel guide's See tab adds Wildlife nearby; the quizzes Where does it live?
+  (tap where an animal lives) and Who lives here? (which of four animals lives in a place); Pin it adds an Animals pack;
+  three tours (The Big Five safari, Animals of the Amazon, Life on the ice); the Naturalist badge (find 25 animals);
+  a nature question in the daily challenge; and an Animals of the world playlist for ambient mode.
 - **Search:** countries, cities, states and provinces, coordinates ("40.4, -3.7"), and what the filters show: the
   people of Who was born here?, museums, masterpieces and their artists, buildings and their architects, World
   Heritage sites, inventions and your own places. The filters that are on come first; a filter that is off is searched
@@ -42,8 +51,19 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
     systems (the script of each country's main language, with a letter of each), religion…
   - Climate & weather: Köppen climate zones, temperature, rainfall, sea temperature, animated winds.
   - Landforms & water: mountain ranges, deserts, plateaus, peaks, rivers and lakes, shaded relief, elevation.
-  - Flora & fauna: vegetation zones, forest cover, animal realms with the Wallace Line, 60 iconic animals,
-    animated migrations, biodiversity hotspots, national animals and plants.
+  - Flora & fauna: vegetation zones, forest cover, animal realms with the Wallace Line, 60 iconic animals, great
+    migrations through the year (31 journeys by land, sea and air: where each traveller is in every month, with the
+    year's key moments), biodiversity hotspots, national animals and plants.
+  - Animals of the world: 405 animals covering the globe where they live (379 today and 26 lost since 1500), from
+    sightings shared on GBIF. Zoomed out, each part of the world shows its best-known animal that its neighbours
+    don't; zoom in for more, with their names. Show all or one group (mammals, birds, reptiles and amphibians, fish
+    and sea life, insects and other small creatures), only the threatened (ringed by Red List category) or the Gone
+    (the dodo, the thylacine, the passenger pigeon… where they once lived). An animal's card has its picture and call,
+    its group and family, its Red List status, size and lifespan where Wikidata has them, the countries it lives in,
+    and Show where it lives (its squares, darker where more people saw it, its best parks as numbered stars), Best
+    places to see it, Its relatives, and its step of the Lost and saved story.
+  - Wildlife parks (2,100 national parks and nature reserves, each with the animals it is one of the best places to
+    see) and Zoos and aquariums (1,300).
   - Earth science: tectonic plates by boundary type, volcanoes, animated ocean currents.
   - Economy & energy: GDP, income groups, top producers of 21 resources (oil, lithium, cobalt…), CO₂, renewables…
   - Culture & fun: flags on the map, national colours, driving side, calling codes, Olympic medals and more.
@@ -404,6 +424,20 @@ checked against Wikidata's dates and places (the build warns where they differ) 
 `public/data/born/`): people with articles in 48 Wikipedias or more, with their places of birth and death, from
 Wikidata (CC0) through the QLever SPARQL service of the University of Freiburg; people known for a crime are left
 out. Portraits are read live from Wikidata and Wikimedia Commons, with their licences.
+
+**Wild world** (`scripts/data/wild/`: `fetch-wild.mjs` asks once and keeps the answers in `.cache/wild`;
+`build-wild.mjs` builds `public/data/wild/` with no network). The animals: species on Wikidata (CC0, through QLever)
+with a conservation status, chosen by how many Wikipedias have an article, by group and with no continent holding
+more than 22% of a group, plus a hand list of each region's best known and of the animals lost since 1500
+(`choose.mjs`); every name checked by hand in English and Latin American Spanish (`names.json`). Where each lives:
+GBIF's ad hoc map tiles, counting only sightings shared under CC0 or CC BY (never CC BY-NC), without zoo animals or
+fossils, since 1970, in GBIF's squares of 1.40625° (about 150 km, never finer); lone squares with one or two sightings
+are dropped, animals carried around the world keep only their native continents, a continent with under 2% of a
+land animal's sightings is taken as zoos and escapes, and dogs are taken away from wolves and house pigs from wild
+boars, square by square. The gone animals' last ranges are drawn by hand from historical records. Parks, reserves,
+zoos and aquariums come from Wikidata; an animal's best parks are those in its squares with the most sightings.
+Pictures and calls are Wikimedia Commons files, loaded by the browser with their licences. The 31 migrations
+(`migrations.json`) were researched from papers, tracking studies and park services, with their sources.
 
 **The map games' borders** (`scripts/data/play/build-borders.mjs` builds `public/data/play/borders.json`) come from
 the app's own 1:50m map, so a route on screen is a route in the game. Two countries are neighbours when their outlines

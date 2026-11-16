@@ -7256,6 +7256,177 @@
           "km": 30
         }
       ]
+    },
+    "kakapo_range": {
+      "land": [
+        [
+          166.0,
+          -34.0
+        ],
+        [
+          179.0,
+          -34.0
+        ],
+        [
+          179.0,
+          -47.7
+        ],
+        [
+          166.0,
+          -47.7
+        ]
+      ]
+    },
+    "kakapo_islands": {
+      "union": [
+        {
+          "poly": [
+            [
+              167.6033,
+              -46.775
+            ],
+            [
+              167.6183,
+              -46.757
+            ],
+            [
+              167.6483,
+              -46.757
+            ],
+            [
+              167.6633,
+              -46.775
+            ],
+            [
+              167.6483,
+              -46.793
+            ],
+            [
+              167.6183,
+              -46.793
+            ]
+          ]
+        },
+        {
+          "poly": [
+            [
+              166.495,
+              -45.758
+            ],
+            [
+              166.51,
+              -45.74
+            ],
+            [
+              166.54,
+              -45.74
+            ],
+            [
+              166.555,
+              -45.758
+            ],
+            [
+              166.54,
+              -45.776
+            ],
+            [
+              166.51,
+              -45.776
+            ]
+          ]
+        },
+        {
+          "poly": [
+            [
+              166.4987,
+              -46.05
+            ],
+            [
+              166.5077,
+              -46.039
+            ],
+            [
+              166.5257,
+              -46.039
+            ],
+            [
+              166.5347,
+              -46.05
+            ],
+            [
+              166.5257,
+              -46.061
+            ],
+            [
+              166.5077,
+              -46.061
+            ]
+          ]
+        }
+      ]
+    },
+    "kakapo_last": {
+      "minus": [
+        {
+          "union": [
+            {
+              "land": [
+                [
+                  166.3,
+                  -44.35
+                ],
+                [
+                  168.25,
+                  -44.35
+                ],
+                [
+                  168.0,
+                  -45.0
+                ],
+                [
+                  167.75,
+                  -45.5
+                ],
+                [
+                  167.55,
+                  -46.0
+                ],
+                [
+                  167.3,
+                  -46.3
+                ],
+                [
+                  166.3,
+                  -46.3
+                ]
+              ]
+            },
+            {
+              "land": [
+                [
+                  167.4,
+                  -47.02
+                ],
+                [
+                  168.4,
+                  -47.02
+                ],
+                [
+                  168.4,
+                  -47.4
+                ],
+                [
+                  167.4,
+                  -47.4
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "ref": "kakapo_islands"
+        }
+      ]
     }
   },
   "steps": [
@@ -9836,6 +10007,190 @@
       ]
     },
     {
+      "date": "2019-09-17",
+      "title": {
+        "en": "The kākāpō's record year",
+        "es": "El año récord del kakapo"
+      },
+      "camera": {
+        "lon": 169.0,
+        "lat": -44.9,
+        "zoom": 11
+      },
+      "text": {
+        "en": "Cats, stoats and rats brought by people left only 51 known kākāpō in 1995. Safe on predator-free islands, these parrots had a record breeding season and by September 2019 numbered 213; in 2026, 325.",
+        "es": "Los gatos, armiños y ratas que trajo la gente dejaron solo 51 kakapos conocidos en 1995. A salvo en islas sin depredadores, estos loros tuvieron una temporada de cría récord y en septiembre de 2019 eran 213; en 2026, 325."
+      },
+      "details": {
+        "en": "The kākāpō is the world's heaviest parrot, a green bird of New Zealand that cannot fly and feeds at night. Māori hunted it for food and feathers, and the dogs and Polynesian rats that came with them preyed on it; then European settlers cleared forests and brought cats, stoats and more rats. By the 1970s only males were left in Fiordland, and cats were killing the last breeding birds on Stewart Island, so between 1980 and 1997 every survivor was moved to islands without predators. Each bird has a name and a radio transmitter, and rangers watch every nest. Kākāpō breed only when rimu trees fruit heavily, every two to four years. In 2019, 71 chicks survived, more than twice the old record, though a fungal disease killed nine birds. An even bigger season in 2026 lifted the count to 325.",
+        "es": "El kakapo es el loro más pesado del mundo, un ave verde de Nueva Zelanda que no vuela y come de noche. Los maoríes lo cazaban para comer y por sus plumas, y lo atacaban los perros y las ratas polinesias que trajeron; luego, los colonos europeos talaron bosques y trajeron gatos, armiños y más ratas. En la década de 1970 solo quedaban machos en Fiordland, y los gatos mataban a los últimos reproductores de la isla Stewart, así que entre 1980 y 1997 todos los sobrevivientes se llevaron a islas sin depredadores. Cada ave tiene nombre y un radiotransmisor, y los guardaparques vigilan cada nido. Solo se reproducen cuando los rimus se llenan de frutos, cada dos a cuatro años. En 2019 sobrevivieron 71 polluelos, más del doble del récord anterior, aunque un hongo mató a nueve aves. Una temporada aún mayor, en 2026, elevó la cifra a 325."
+      },
+      "control": {
+        "lived": {
+          "minus": [
+            {
+              "ref": "kakapo_range"
+            },
+            {
+              "ref": "kakapo_last"
+            },
+            {
+              "ref": "kakapo_islands"
+            }
+          ]
+        },
+        "last": {
+          "ref": "kakapo_last"
+        },
+        "today": {
+          "ref": "kakapo_islands"
+        },
+        "back": null
+      },
+      "places": [
+        {
+          "id": "kakapo",
+          "name": {
+            "en": "Kākāpō",
+            "es": "Kakapo"
+          },
+          "at": [
+            167.6333,
+            -46.775
+          ],
+          "cat": "flyer",
+          "icon": "🦜",
+          "type": "species",
+          "date": "1845",
+          "place": {
+            "en": "Whenua Hou/Codfish Island, New Zealand",
+            "es": "Whenua Hou o isla Codfish, Nueva Zelanda"
+          },
+          "text": {
+            "en": "The world's heaviest parrot: a moss-green bird that cannot fly and comes out at night. To call females, males dig bowls in the ground and boom from them for hours.",
+            "es": "El loro más pesado del mundo: un ave verde musgo que no vuela y sale de noche. Para llamar a las hembras, los machos cavan hoyos en el suelo y desde ellos emiten durante horas un retumbo grave."
+          },
+          "facts": [
+            {
+              "label": {
+                "en": "1995",
+                "es": "1995"
+              },
+              "value": {
+                "en": "51 known birds, 20 of them females",
+                "es": "51 aves conocidas, 20 de ellas hembras"
+              }
+            },
+            {
+              "label": {
+                "en": "September 2019",
+                "es": "Septiembre de 2019"
+              },
+              "value": {
+                "en": "213, after 71 chicks survived",
+                "es": "213, tras sobrevivir 71 polluelos"
+              }
+            },
+            {
+              "label": {
+                "en": "September 2026",
+                "es": "Septiembre de 2026"
+              },
+              "value": {
+                "en": "325",
+                "es": "325"
+              }
+            }
+          ],
+          "wiki": {
+            "en": "Kākāpō",
+            "es": "Strigops habroptilus"
+          }
+        },
+        {
+          "id": "anchor-island",
+          "name": {
+            "en": "Pukenui/Anchor Island",
+            "es": "Pukenui o isla Anchor"
+          },
+          "at": [
+            166.525,
+            -45.758
+          ],
+          "cat": "site",
+          "icon": "🏝️",
+          "type": "place",
+          "date": "2005",
+          "place": {
+            "en": "Dusky Sound, Fiordland, New Zealand",
+            "es": "Dusky Sound, Fiordland, Nueva Zelanda"
+          },
+          "text": {
+            "en": "Cleared of stoats and deer by 2005, it has been a home for kākāpō ever since. Nearby, in the 1890s, the conservationist Richard Henry moved hundreds of kākāpō to Resolution Island, but stoats swam across.",
+            "es": "Libre de armiños y ciervos desde 2005, desde entonces es un hogar para los kakapos. Cerca, en la década de 1890, el conservacionista Richard Henry llevó cientos de kakapos a la isla Resolution, pero los armiños llegaron nadando."
+          },
+          "wiki": {
+            "en": "Anchor Island",
+            "es": "Isla Anchor"
+          }
+        },
+        {
+          "id": "rakiura-kakapo",
+          "name": {
+            "en": "The last kākāpō of Rakiura",
+            "es": "Los últimos kakapos de Rakiura"
+          },
+          "at": [
+            167.9,
+            -47.13
+          ],
+          "cat": "flyer",
+          "icon": "🪶",
+          "type": "event",
+          "date": "1977",
+          "place": {
+            "en": "Southern Stewart Island/Rakiura, New Zealand",
+            "es": "Sur de la isla Stewart (Rakiura), Nueva Zelanda"
+          },
+          "text": {
+            "en": "In 1977 searchers found kākāpō in the south of Stewart Island, and in 1980 the first females. Feral cats were killing them, so from 1980 to 1997 every bird was moved to safe islands.",
+            "es": "En 1977 se hallaron kakapos en el sur de la isla Stewart, y en 1980 las primeras hembras. Los gatos asilvestrados los estaban matando, así que de 1980 a 1997 se trasladaron todos a islas seguras."
+          },
+          "wiki": {
+            "en": "Stewart Island",
+            "es": "Isla Stewart"
+          }
+        },
+        {
+          "id": "fiordland-kakapo",
+          "name": {
+            "en": "Fiordland's last kākāpō",
+            "es": "Los últimos kakapos de Fiordland"
+          },
+          "at": [
+            167.831,
+            -44.639
+          ],
+          "cat": "site",
+          "icon": "⛰️",
+          "type": "place",
+          "date": "1974",
+          "place": {
+            "en": "Sinbad Gully, near Milford Sound, Fiordland",
+            "es": "Valle Sinbad, cerca de Milford Sound, Fiordland"
+          },
+          "text": {
+            "en": "In the 1970s searchers found 18 kākāpō in Fiordland's steep valleys, all of them males. One, Richard Henry, caught in 1975, lived until 2010 and has descendants today.",
+            "es": "En la década de 1970 se hallaron 18 kakapos en los empinados valles de Fiordland, todos machos. Uno de ellos, Richard Henry, capturado en 1975, vivió hasta 2010 y hoy tiene descendientes."
+          },
+          "wiki": {
+            "en": "Fiordland National Park",
+            "es": "Parque nacional de Fiordland"
+          }
+        }
+      ]
+    },
+    {
       "date": "2025-05",
       "title": {
         "en": "Lions and pandas hold on",
@@ -10289,6 +10644,30 @@
     {
       "title": "Condor reintroduction and recovery (US National Park Service, Grand Canyon)",
       "url": "https://www.nps.gov/grca/learn/nature/condor-reintroduction-and-recovery.htm"
+    },
+    {
+      "title": "Kākāpō (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kākāpō"
+    },
+    {
+      "title": "Kākāpō recovery: history (Department of Conservation, New Zealand)",
+      "url": "https://www.doc.govt.nz/our-work/kakapo-recovery/what-we-do/history/"
+    },
+    {
+      "title": "Kākāpō population reaches a record high of 213 (Department of Conservation, 17 September 2019)",
+      "url": "https://www.doc.govt.nz/news/media-releases/2019/kakapo-population-reaches-a-record-high-of-213/"
+    },
+    {
+      "title": "Kākāpō population reaches new milestone (Department of Conservation, 2026)",
+      "url": "https://www.doc.govt.nz/news/media-releases/2026-media-releases/kakapo-population-reaches-new-milestone/"
+    },
+    {
+      "title": "A single fungal strain was the unexpected cause of a mass aspergillosis outbreak in the world's largest and only flightless parrot (iScience, 2022)",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9668684/"
+    },
+    {
+      "title": "Large forest birds: kākāpō (Te Ara, the Encyclopedia of New Zealand)",
+      "url": "https://teara.govt.nz/en/large-forest-birds/page-5"
     }
   ]
 }
