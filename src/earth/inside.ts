@@ -244,11 +244,19 @@ export class InsideEarth {
     if (!q) { q = rocksAt(lon, lat).catch(() => null); this.rocks.set(key, q); }
     void q.then((r) => {
       if (!rockEl.isConnected) return;
-      rockEl.textContent = r
-        ? L(`🪨 Under your feet: ${r.name || r.lith}${r.lith && r.name ? ` (${r.lith})` : ''}, ${r.age}${r.ma ? `: ${ageText(r.ma[0])} to ${ageText(r.ma[1])} old` : ''}. From Macrostrat's geological map.`,
-          `🪨 Bajo tus pies: ${r.name || r.lith}${r.lith && r.name ? ` (${r.lith})` : ''}, ${r.age}${r.ma ? `: de ${ageText(r.ma[0])} a ${ageText(r.ma[1])} de antigüedad` : ''}. Del mapa geológico de Macrostrat.`)
-        : L('🪨 No geological map answered for this place (Macrostrat covers the land, best in North America; it needs the internet).',
+      if (!r) {
+        rockEl.textContent = L('🪨 No geological map answered for this place (Macrostrat covers the land, best in North America; it needs the internet).',
           '🪨 Ningún mapa geológico respondió para este lugar (Macrostrat cubre la tierra firme, mejor en Norteamérica; necesita internet).');
+        return;
+      }
+      // Its name, then what it is and its age where the name does not already say them ("Gravel, Holocene").
+      const name = r.name || r.lith, low = name.toLowerCase();
+      const lith = r.lith && r.name && !low.includes(r.lith.toLowerCase()) ? ` (${r.lith})` : '';
+      const age = r.age && !low.includes(r.age.toLowerCase()) ? `, ${r.age}` : '';
+      const old = !r.ma ? '' : r.ma[0] < 0.001 ? L(`: up to ${ageText(r.ma[1])} old`, `: de hasta ${ageText(r.ma[1])} de antigüedad`)
+        : L(`: ${ageText(r.ma[0])} to ${ageText(r.ma[1])} old`, `: de ${ageText(r.ma[0])} a ${ageText(r.ma[1])} de antigüedad`);
+      rockEl.textContent = L(`🪨 Under your feet: ${name}${lith}${age}${old}. From Macrostrat's geological map.`,
+        `🪨 Bajo tus pies: ${name}${lith}${age}${old}. Del mapa geológico de Macrostrat.`);
     });
     // Straight through the centre: the antipode.
     const alon = lon > 0 ? lon - 180 : lon + 180, alat = -lat;

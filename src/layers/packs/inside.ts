@@ -145,7 +145,7 @@ function startSlice() {
   SHELL?.toast(L('Tap where the slice starts, then where it ends (across Japan, the Andes or Tonga).', 'Toca donde empieza el corte y luego donde termina (a través de Japón, los Andes o Tonga).'), 4000);
   APP?.renderer.requestRender();
 }
-export function setSlice(a: [number, number], b: [number, number]) { slice = { a, b, picking: false }; openSlice(); APP?.renderer.requestRender(); }
+export function setSlice(a: [number, number], b: [number, number]) { slice = { a, b, picking: false }; SHELL?.hideToast(); openSlice(); APP?.renderer.requestRender(); }
 export const sliceInfo = () => ({ ...slice });
 function openSlice() {
   const q = quakes, inst = APP?.instance('quake-depths');

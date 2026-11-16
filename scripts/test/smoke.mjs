@@ -4193,7 +4193,8 @@ for (const proj of ['equirectangular', 'mercator', 'miller']) {
     `ambient mode with the view's names: no country, state or sea names (${v1.names.length} names: ${v1.names.slice(0, 4).join(', ')}), at ${v1.scale.toFixed(2)}×; afterwards the names are back (saved meanwhile: countries ${v1.saved}, ${v1.savedScale}×)`);
   const v2 = await amb('none');
   const v3 = await amb('all');
-  check(v2.names.length === 0 && !v2.layer && countryName(v3.names),
+  // (Names keep off the clock too, so which countries are named depends on where the clock is: any will do.)
+  check(v2.names.length === 0 && !v2.layer && v3.names.some((n) => /^[A-Z][A-Z .'-]{3,}$/.test(n)),
     `ambient names: None shows none (${v2.names.length}); All shows the map's (${v3.names.length}: ${v3.names.slice(0, 4).join(', ')})`);
 
   // The setting is in Settings (and in the screensaver's panel), in Spanish too, and is kept.

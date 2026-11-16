@@ -83,11 +83,15 @@ export class Ambient {
     if (app.ambient.names !== 'all') r.settings.labels = { ...r.settings.labels, countries: false, capitals: false, cities: false, seas: false };
     r.layerLabels = app.ambient.names !== 'none';
     r.regionLabels = app.ambient.names === 'all';
-    // Names keep off the caption (at the top of a phone's screen, over the map).
+    // Names keep off the caption (at the top of a phone's screen, over the map) and the clock.
     r.keepOut = () => {
-      if (this.captionEl.hidden) return [];
-      const c = this.captionEl.getBoundingClientRect(), m = r.canvasRect();
-      return c.width ? [[c.left - m.left - 4, c.top - m.top - 4, c.right - m.left + 4, c.bottom - m.top + 4]] : [];
+      const m = r.canvasRect(), out: [number, number, number, number][] = [];
+      for (const el of [this.captionEl, this.clockEl]) {
+        if (el.hidden) continue;
+        const c = el.getBoundingClientRect();
+        if (c.width) out.push([c.left - m.left - 4, c.top - m.top - 4, c.right - m.left + 4, c.bottom - m.top + 4]);
+      }
+      return out;
     };
     r.settings.labelScale = this.names.scale * 0.85;
     this.list = id ? playlist(id) : null;

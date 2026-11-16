@@ -441,7 +441,7 @@ spinning full-screen as an ambient display. English and Spanish (Latin America's
   world, Green planet, People and cultures, or Around Latin America, each view with its title and a line about it,
   read aloud if you like; or make your own playlist from views of the map (filters and place) and share it as a link.
   Names on the map (in Settings and the screensaver's panel): only the view's own (the default: the filters' names, a
-  little smaller, without the map's countries, cities, states and seas), all, or none; they keep off the caption. A
+  little smaller, without the map's countries, cities, states and seas), all, or none; they keep off the caption and the clock. A
   playlist's view shows the context its caption speaks of: the Green planet's deserts of North America and Borneo's
   strange plants; the Serengeti's, the Amazon's and Borneo's own animals in their lit-up biome; the Amazon and the Nile
   named among the rivers; the volcanoes a caption names; Latin America's Indigenous languages lit up by region and its
