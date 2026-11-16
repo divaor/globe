@@ -12,6 +12,8 @@ import { DETAIL_LAYERS, satellite } from '../layers/imagery';
 import { mapView, styledTheme, MAP_STYLES, type MapStyle } from '../engine/style';
 import type { InfoRow, LayerDef, LayerInstance } from '../layers/types';
 
+/** Ambient mode's names: the view's own only, all of the map's, or none. */
+export type AmbientNames = 'view' | 'all' | 'none';
 export interface ActiveSpec { id: string; opacity: number; options?: Record<string, string | boolean> }
 
 interface Saved {
@@ -27,7 +29,7 @@ interface Saved {
   quality?: 'auto' | 'high' | 'low';
   gpuMotion?: boolean;
   labelScale?: number;
-  ambient?: { speed: number; cycle: boolean; clock: boolean; playlist?: string; secs?: number; narrate?: boolean };
+  ambient?: { speed: number; cycle: boolean; clock: boolean; playlist?: string; secs?: number; narrate?: boolean; names?: AmbientNames };
   camera?: { lon: number; lat: number; zoom: number };
   /** The map style and the states and provinces (engine/style.ts). */
   view?: { style?: MapStyle; regions?: boolean; regionNames?: boolean };
@@ -46,7 +48,8 @@ export class App {
   themeId: 'dark' | 'light' = 'dark';
   selection: string | null = null;
   /** Ambient mode (the screensaver): its playlist ('' for the filters on the map), seconds a view, reading aloud. */
-  ambient = { on: false, speed: 1, cycle: false, clock: true, playlist: '', secs: 40, narrate: false };
+  /** Ambient mode; `names`: the view's own names only (the map's countries, cities and seas hidden), all, or none. */
+  ambient: { on: boolean; speed: number; cycle: boolean; clock: boolean; playlist: string; secs: number; narrate: boolean; names: AmbientNames } = { on: false, speed: 1, cycle: false, clock: true, playlist: '', secs: 40, narrate: false, names: 'view' };
   private listeners = new Map<string, Set<Listener>>();
   private saveTimer = 0;
   /** Modes such as 'timeline' or 'pangea' take over the map; null = normal exploring. */
@@ -339,7 +342,7 @@ export class App {
       active: this.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, opacity: Math.round(l.opacity * 100) / 100, options: l.options })),
       labels: r.settings.labels, graticule: r.settings.graticule, shading: r.settings.shading, quality: r.settings.quality, gpuMotion: r.settings.gpuMotion,
       labelScale: r.settings.labelScale,
-      ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock, playlist: this.ambient.playlist, secs: this.ambient.secs, narrate: this.ambient.narrate },
+      ambient: { speed: this.ambient.speed, cycle: this.ambient.cycle, clock: this.ambient.clock, playlist: this.ambient.playlist, secs: this.ambient.secs, narrate: this.ambient.narrate, names: this.ambient.names },
       camera: r.view.camera(),
       view: { ...mapView },
     };

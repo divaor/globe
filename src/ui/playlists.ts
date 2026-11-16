@@ -1,9 +1,9 @@
 // Screensaver playlists for ambient mode: ready-made runs of filters and places, each with a line to read aloud,
 // and the reader's own playlist (views added from the map, kept in this browser, shareable as a link).
 import { ArrowUp, ArrowDown, X, Plus, Play, Share2 } from 'lucide';
-import { h, icon, toggle, slider } from './dom';
+import { h, icon, toggle, slider, segmented } from './dom';
 import { tx } from '../app/i18n';
-import type { App } from '../app/app';
+import type { App, AmbientNames } from '../app/app';
 import type { I18nText } from '../layers/types';
 import type { ProjectionId } from '../engine/projections';
 import { canSpeak } from './narrator';
@@ -105,8 +105,12 @@ export const PLAYLISTS: Playlist[] = [
     items: [
       { stack: ['greenness'], say: T('The breathing planet: how green the land is, month by month. Spring sweeps north, then south.', 'El planeta que respira: qué tan verde está la tierra mes a mes. La primavera sube al norte y luego baja al sur.') },
       { stack: ['vegetation', 'plants'], say: T('About 300 plants, each where it grows wild: trees, flowers, cacti and the wild forms of our food.', 'Unas 300 plantas, cada una donde crece silvestre: árboles, flores, cactus y las formas silvestres de nuestros alimentos.') },
-      { stack: ['plants'], options: { plants: { show: 'cacti' } }, fly: [-110, 28, 3.4], title: T('The deserts of North America', 'Los desiertos de Norteamérica'), say: T('Saguaros, chollas, barrel cacti and agaves: the Sonoran and Chihuahuan deserts.', 'Saguaros, choyas, biznagas y agaves: los desiertos de Sonora y Chihuahua.') },
-      { stack: ['plants'], options: { plants: { show: 'strange' } }, say: T('Carnivorous and strange plants: flytraps, pitcher plants, sundews and the corpse flower.', 'Plantas carnívoras y extrañas: atrapamoscas, plantas jarro, droseras y la flor cadáver.') },
+      { stack: ['ecoregions', 'plants'], options: { ecoregions: { by: 'biome' }, plants: { show: 'cacti' } }, fly: [-109, 29, 3.6], title: T('The deserts of North America', 'Los desiertos de Norteamérica'),
+        say: T('The sand-coloured ecoregions are the Sonoran and Chihuahuan deserts, with the Mojave to the north. Their cacti and agaves: saguaro, organ pipe, the giant cardón, teddy-bear and jumping chollas, fishhook barrel cactus, Engelmann’s prickly pear, claret cup, Parry’s agave and peyote.',
+          'Las ecorregiones color arena son los desiertos de Sonora y Chihuahua, con el de Mojave al norte. Sus cactus y agaves: saguaro, pitaya dulce, cardón, choya güera y choya brincadora, biznaga de agua, nopal de Engelmann, pitaya de copa, agave de Parry y peyote.') },
+      { stack: ['ecoregions', 'plants'], options: { ecoregions: { by: 'biome' }, plants: { show: 'strange' } }, fly: [108, 0, 3.2], title: T('Strange plants of Borneo and Sumatra', 'Plantas extrañas de Borneo y Sumatra'),
+        say: T('In the rainforests of Borneo and Sumatra (the dark green ecoregions): the corpse lily, the biggest flower on Earth, the titan arum, the giant and fanged pitcher plants that trap insects, Keith’s rafflesia and the black bat flower.',
+          'En las selvas de Borneo y Sumatra (las ecorregiones verde oscuro): la rafflesia, la flor más grande de la Tierra, la flor cadáver, las plantas jarro gigante y de colmillos que atrapan insectos, la rafflesia de Keith y la flor murciélago.') },
       { stack: ['trees'], fly: [-120, 40, 3.2], title: T('Giants of California', 'Gigantes de California'), say: T('The tallest, the biggest and the oldest trees on Earth all grow in California.', 'Los árboles más altos, más grandes y más viejos de la Tierra crecen en California.') },
       { stack: ['ecoregions'], say: T('846 ecoregions, each with its own mix of plants and animals, coloured by biome.', '846 ecorregiones, cada una con su propia mezcla de plantas y animales, coloreadas por bioma.') },
       { stack: ['calendar'], say: T('Nature’s calendar: what is in bloom, turning gold or on the move this month.', 'El calendario de la naturaleza: qué está en flor, dorándose o en movimiento este mes.') },
@@ -268,6 +272,13 @@ export function screensaverPanel(app: App, start: (id: string) => void, toast: (
       h('div', { class: 'field' }, h('div', { class: 'field-label' }, es ? 'Segundos en cada vista: ' : 'Seconds on each view: ', h('span', { class: 'ss-secs' }, String(amb.secs))),
         slider(amb.secs, 15, 120, 5, (v) => { amb.secs = v; app.save(); const l = root.querySelector('.ss-secs'); if (l) l.textContent = String(v); })),
       h('div', { class: 'field' }, h('div', { class: 'field-label' }, es ? 'Velocidad de giro' : 'Rotation speed'), slider(amb.speed, 0.25, 4, 0.25, (v) => { amb.speed = v; app.save(); })),
+      // Names on the map while it plays: the view's own (default), all the map's, or none.
+      h('div', { class: 'field' }, h('div', { class: 'field-label' }, es ? 'Nombres en el mapa' : 'Names on the map'),
+        segmented<AmbientNames>(amb.names, [
+          { value: 'view', label: es ? 'Solo los de la vista' : 'Only the view’s' },
+          { value: 'all', label: es ? 'Todos' : 'All' },
+          { value: 'none', label: es ? 'Ninguno' : 'None' },
+        ], (v) => { amb.names = v; app.save(); })),
       h('div', { class: 'toggles' },
         ...(canSpeak() ? [toggle(amb.narrate, (v) => { amb.narrate = v; app.save(); }, es ? 'Leer cada vista en voz alta' : 'Read each view aloud')] : []),
         toggle(amb.clock, (v) => { amb.clock = v; app.save(); }, es ? 'Mostrar el reloj' : 'Show the clock')),

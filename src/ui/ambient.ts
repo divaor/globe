@@ -4,7 +4,7 @@
 import { h } from './dom';
 import { t, tx } from '../app/i18n';
 import type { App } from '../app/app';
-import type { Ticker } from '../engine/renderer';
+import type { Ticker, RenderSettings } from '../engine/renderer';
 import { playlist, itemTitle, itemWords, type PlayItem, type Playlist } from './playlists';
 import { canSpeak, speak, stopSpeaking } from './narrator';
 import type { ProjectionId } from '../engine/projections';
@@ -20,6 +20,8 @@ export class Ambient {
   private nextTimer = 0;
   private hintTimer = 0;
   /** What was on the map before: filters with their options, projection and place, put back on exit. */
+  /** The map's names before ambient mode changed them. */
+  private names: { labels: RenderSettings['labels']; scale: number; layer: boolean } | null = null;
   private saved: { stack: { id: string; options: Record<string, string | boolean> }[]; projection: ProjectionId; camera: { lon: number; lat: number; zoom: number } } | null = null;
   /** The playlist playing, and where in it. */
   private list: Playlist | null = null;
@@ -69,6 +71,13 @@ export class Ambient {
     try { await document.documentElement.requestFullscreen?.({ navigationUI: 'hide' } as FullscreenOptions); } catch { /* not allowed: still run windowed */ }
     await this.lock();
     const view = app.renderer.view;
+    // Names: by default only the view's own (the filters'), a little smaller; the map's countries, cities and seas
+    // hidden (turning, they came and went and covered the view). All of them, or none, in the screensaver's settings.
+    const r = app.renderer;
+    this.names = { labels: { ...r.settings.labels }, scale: r.settings.labelScale, layer: r.layerLabels };
+    if (app.ambient.names !== 'all') r.settings.labels = { ...r.settings.labels, countries: false, capitals: false, cities: false, seas: false };
+    r.layerLabels = app.ambient.names !== 'none';
+    r.settings.labelScale = this.names.scale * 0.85;
     this.list = id ? playlist(id) : null;
     if (this.list) {
       this.saved = { stack: app.layers.filter((l) => !l.def.hidden).map((l) => ({ id: l.def.id, options: { ...l.options } })), projection: app.projection, camera: view.camera() };
@@ -188,6 +197,13 @@ export class Ambient {
     }
     this.saved = null;
     this.list = null;
+    // The names as they were.
+    if (this.names) {
+      app.renderer.settings.labels = this.names.labels;
+      app.renderer.settings.labelScale = this.names.scale;
+      app.renderer.layerLabels = this.names.layer;
+      this.names = null;
+    }
     this.captionEl.hidden = true;
     app.interaction.enabled = true;
     document.documentElement.classList.remove('ambient');
